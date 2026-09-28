@@ -2,17 +2,6 @@
  "packet": "e-008",
  "words": [
   {
-   "tr": "Kesin süre tebligattan itibaren işler",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "The filing deadline runs from the service of documents."
-   ],
-   "ctx": [
-    "C1.3 Legal and contract language · yazma kalıbı"
-   ]
-  },
-  {
    "tr": "Kursiyerin yapması gerekmeyen şey ne?",
    "kind": "question",
    "n": 1,
@@ -1731,6 +1720,17 @@
    ],
    "ctx": [
     "B1.1 My career so far"
+   ]
+  },
+  {
+   "tr": "Kayıt yapıp başvurumu takip edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can register and follow an application."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications"
    ]
   }
  ]

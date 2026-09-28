@@ -2209,7 +2209,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -3137,7 +3137,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -4188,7 +4188,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -6864,7 +6864,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -7798,7 +7798,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz: young. Genç demek."
+      "text": "Sıradaki kelime: young. Genç demek."
      },
      {
       "lang": "tr",
@@ -8747,7 +8747,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -12178,7 +12178,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün insanların nasıl biri olduğunu anlatmayı öğreneceğiz: iyi kalpli mi, komik mi, sessiz mi. Beş kelime ve üç kalıp var. Hazır mısın, başlıyoruz?"
+      "text": "Merhaba! Bugün insanların nasıl biri olduğunu anlatmayı öğreneceğiz: iyi kalpli mi, komik mi, sessiz mi. Birkaç yeni kelime ve üç kalıp var. Hazır mısın, başlıyoruz?"
      }
     ],
     "expect": {
@@ -12645,7 +12645,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevap kısacık olur:"
+      "text": "Şimdi o soruya dönelim; cevabı kısacık olur:"
      },
      {
       "lang": "en",
@@ -12696,7 +12696,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Beş kelimeyi bir daha duyalım:"
+      "text": "İlk beş kelimeyi bir daha duyalım:"
      },
      {
       "lang": "en",
@@ -13151,7 +13151,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kelime daha:"
+      "text": "Bu kelimeyi garsonla konuşurken de duyacaksın:"
      },
      {
       "lang": "en",
@@ -13159,7 +13159,7 @@
      },
      {
       "lang": "tr",
-      "text": "yani sipariş demek. Garson gelince şunu duyarsın:"
+      "text": "Garson gelince şunu sorar:"
      },
      {
       "lang": "en",
@@ -14609,7 +14609,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kelimelerimiz de yanında: buy, money, price, bag, take. Şimdi büfede küçük bir konuşma yapalım."
+      "text": "Kelimelerimizden bazıları da yanında: buy, money, coin, bag, take. Şimdi büfede küçük bir konuşma yapalım."
      }
     ]
    }
@@ -16971,7 +16971,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -17704,7 +17704,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kelime daha:"
+      "text": "Hatırlıyor musun?"
      },
      {
       "lang": "en",
@@ -17712,7 +17712,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: süt. Lütfen tekrar et:"
+      "text": "Süt demek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -19569,7 +19569,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Günü kapatalım. Son kelimemiz:"
+      "text": "Günü kapatalım. Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -19685,27 +19685,27 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim. Günlük işlerini geniş zamanla anlatırsın: I"
+      "text": "Özetleyelim. Günlük işlerini geniş zamanla anlatırsın:"
      },
      {
       "lang": "en",
-      "text": "wake up,"
-     },
-     {
-      "lang": "tr",
-      "text": "I"
+      "text": "I wake up,"
      },
      {
       "lang": "en",
-      "text": "get up,"
+      "text": "I get up,"
      },
      {
       "lang": "en",
       "text": "I have breakfast,"
      },
      {
+      "lang": "en",
+      "text": "I work, I sleep."
+     },
+     {
       "lang": "tr",
-      "text": "I work, I sleep. Saat için"
+      "text": "Saat için"
      },
      {
       "lang": "en",
@@ -21811,7 +21811,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. İki kelimeli beş fiil öğrendin:"
+      "text": "Toparlayalım. Öğrendiğin iki kelimeli fiillerden bazıları:"
      },
      {
       "lang": "en",
@@ -22027,7 +22027,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -23841,7 +23841,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -24231,7 +24231,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün beş kelime öğrendik: free, watch, read, music, walk. Ve en önemlisi şu kuralı: like'tan sonra gelen fiil -ing alır."
+      "text": "Bugün öğrendiğimiz kelimelerden bazıları: free, watch, read, music, walk. Ve en önemlisi şu kural: like'tan sonra gelen fiil -ing alır."
      },
      {
       "lang": "en",
@@ -27416,7 +27416,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün beş kelime öğrendin:"
+      "text": "Bugün öğrendiğin kelimelerden bazıları:"
      },
      {
       "lang": "en",
@@ -28535,7 +28535,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -29553,7 +29553,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -29667,7 +29667,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün beş kelime öğrendin:"
+      "text": "Bugün öğrendiğin kelimelerden bazıları:"
      },
      {
       "lang": "en",
@@ -31475,7 +31475,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün telefonundan ya da internetten sipariş vereceksin: ne istediğini söyleyeceksin, adresini vereceksin ve teslimatın ne zaman geleceğini soracaksın. Beş kelime, üç kalıp. Hazır mısın?"
+      "text": "Merhaba! Bugün telefonundan ya da internetten sipariş vereceksin: ne istediğini söyleyeceksin, adresini vereceksin ve teslimatın ne zaman geleceğini soracaksın. Yeni kelimeler, üç kalıp. Hazır mısın?"
      }
     ],
     "expect": {
@@ -31606,7 +31606,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -32278,7 +32278,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -34334,7 +34334,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -35070,7 +35070,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir üretim daha. Şoföre sor: Uzak mı?"
+      "text": "Son bir cümle daha. Şoföre sor: Uzak mı?"
      }
     ],
     "expect": {
@@ -36135,8 +36135,6 @@
      "kind": "produce",
      "target": "You can visit the park.",
      "accept": [
-      "You can visit a park.",
-      "We can visit the park.",
       "You can see the park."
      ],
      "hint": [
@@ -36435,7 +36433,6 @@
      "target": "Can I see the museum?",
      "accept": [
       "Can I visit the museum?",
-      "Can we see the museum?",
       "Can I see the museum today?"
      ],
      "hint": [
@@ -41489,7 +41486,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün beş kelime öğrendin: rule, noise, quiet, clean, allow. Ve iki kalıp: must ile zorunluluk, can't ile yasak."
+      "text": "Bugün öğrendiğin kelimelerden bazıları: rule, noise, quiet, clean, allow. Ve iki kalıp: must ile zorunluluk, can't ile yasak."
      },
      {
       "lang": "tr",
@@ -43348,8 +43345,7 @@
      "kind": "produce",
      "target": "This box is very heavy.",
      "accept": [
-      "The box is very heavy.",
-      "This box is heavy."
+      "The box is very heavy."
      ],
      "hint": [
       {
@@ -43662,7 +43658,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -44409,7 +44405,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -44858,7 +44854,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -46538,7 +46534,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Bugün beş kelime öğrendik: music, song, listen, band, guitar."
+      "text": "Harika iş çıkardın. Bugün öğrendiğimiz kelimelerden bazıları: music, song, listen, band, guitar."
      },
      {
       "lang": "tr",
@@ -47953,7 +47949,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Bugün beş kelime öğrendin: weather, rain, cold, hot, sunny. Ve üç kalıp:"
+      "text": "Harika iş çıkardın. Bugün öğrendiğin kelimelerden bazıları: weather, rain, cold, hot, sunny. Ve üç kalıp:"
      },
      {
       "lang": "en",
@@ -49123,7 +49119,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -49886,7 +49882,7 @@
    },
    {
     "de": "afraid",
-    "tr": "korkarım (üzgünüm ki)"
+    "tr": "korkmuş / korkarım ki"
    },
    {
     "de": "other",
@@ -50664,7 +50660,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz: \"birlikte\"."
+      "text": "Sıradaki kelime: \"birlikte\"."
      },
      {
       "lang": "en",
@@ -52952,7 +52948,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün beş kelime öğrendik: doctor, appointment, sick, help ve tomorrow."
+      "text": "Bugün öğrendiğimiz kelimelerden bazıları: doctor, appointment, sick, help ve tomorrow."
      },
      {
       "lang": "tr",
@@ -54749,9 +54745,7 @@
      "kind": "produce",
      "target": "I'll be better tomorrow.",
      "accept": [
-      "I will be better tomorrow.",
-      "I'll be back tomorrow.",
-      "I will be back tomorrow."
+      "I will be better tomorrow."
      ],
      "hint": [
       {
@@ -55249,7 +55243,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -56095,7 +56089,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Beş kelimeyi bir daha duyalım:"
+      "text": "İlk beş kelimeyi bir daha duyalım:"
      },
      {
       "lang": "en",
@@ -56371,7 +56365,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -57023,7 +57017,6 @@
      "kind": "produce",
      "target": "My tooth hurts.",
      "accept": [
-      "My teeth hurt.",
       "My tooth is hurting."
      ],
      "hint": [
@@ -57295,7 +57288,6 @@
      "kind": "produce",
      "target": "My teeth are clean.",
      "accept": [
-      "My tooth is clean.",
       "My teeth are clean now."
      ],
      "hint": [
@@ -57738,7 +57730,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz:"
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -58709,7 +58701,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok iyi gidiyorsun. Bugün beş kelime öğrendik:"
+      "text": "Çok iyi gidiyorsun. Bugün öğrendiğimiz kelimelerden bazıları:"
      },
      {
       "lang": "en",
@@ -58717,7 +58709,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Bir de mesajların kısaltmalarını:"
+      "text": ". Bir de mesajlardaki kısaltmalar:"
      },
      {
       "lang": "en",
@@ -60533,7 +60525,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Beş kelime öğrendik: letter mektup, package paket, stamp pul, address adres, send göndermek. Üç kalıbın var:"
+      "text": "Toparlayalım. Öğrendiğimiz kelimelerden bazıları: letter mektup, package paket, stamp pul, address adres, send göndermek. Üç kalıbın var:"
      },
      {
       "lang": "en",

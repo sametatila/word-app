@@ -120,7 +120,7 @@
  { "tr": "Enjoy da düzenli: geçmişte", "kind": "say.tr", "de": "Enjoy ist auch regelmäßig; die Vergangenheit:" },
  { "tr": "Fiş, satın alma kanıtıdır.", "kind": "say.tr", "de": "Die Quittung ist der Kaufnachweis." },
  { "tr": "Görevli genelde şöyle der:", "kind": "say.tr", "de": "Der Mitarbeiter sagt meist so:" },
- { "tr": "I work, I sleep. Saat için", "kind": "say.tr", "de": "I work, I sleep. Für die Uhrzeit" },
+ { "tr": "Saat için", "kind": "say.tr", "de": "Für die Uhrzeit" },
  { "tr": "İki kelime daha ekleyelim.", "kind": "say.tr", "de": "Fügen wir noch zwei Wörter an." },
  { "tr": "İki kelime daha. İş demek:", "kind": "say.tr", "de": "Noch zwei Wörter. Job heißt:" },
  { "tr": "İkinci kalıbımız bir soru:", "kind": "say.tr", "de": "Unsere zweite Wendung ist eine Frage:" },
@@ -147,5 +147,6 @@
  { "tr": "sensin. Tek başına", "kind": "say.tr", "de": "bist du. Allein heißt" },
  { "tr": "\"sen\" ya da \"siz\" demek. Lütfen tekrar et:", "kind": "say.tr", "de": "„du“ oder „Sie“. Bitte wiederhole:" },
  { "tr": "gazap", "kind": "vocab.tr", "de": "der Zorn" },
- { "tr": "hafif", "kind": "vocab.tr", "de": "leicht" }
+ { "tr": "hafif", "kind": "vocab.tr", "de": "leicht" },
+ { "tr": "bitti", "kind": "vocab.tr", "de": "fertig" }
 ]

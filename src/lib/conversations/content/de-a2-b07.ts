@@ -415,7 +415,7 @@ export const deA2B07: Conversation[] = [
     ],
     chat: {
       scene:
-        "Bir otele vardın ve giriş yapıyorsun. Rezervasyonunu bildir, oda hakkında bir şey sor ve kahvaltı saatini öğren.",
+        "Bir otele vardın ve giriş yapıyorsun. Rezervasyonunu bildir, oda hakkında bir şey sor, kahvaltı ve çıkış saatini öğren.",
       partner: "resepsiyonda çalışan güler yüzlü bir görevli",
       opening: "Herzlich willkommen! Haben Sie reserviert?",
       openingTr: "Hoş geldiniz! Rezervasyonunuz var mı?",
@@ -1155,13 +1155,13 @@ export const deA2B07: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Yağmur yağarsa hayvanat bahçesine gidiyoruz.' Almancası:"),
-          de("Wenn es regnet, gehen wir in den Zoo."),
+          tr("Örnek: 'Güneş açarsa hayvanat bahçesine gidiyoruz.' Almancası:"),
+          de("Wenn die Sonne scheint, gehen wir in den Zoo."),
           tr("Lütfen"),
-          de("Wenn es regnet, gehen wir in den Zoo"),
+          de("Wenn die Sonne scheint, gehen wir in den Zoo"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Wenn es regnet, gehen wir in den Zoo" },
+        expect: { kind: "repeat", target: "Wenn die Sonne scheint, gehen wir in den Zoo" },
       },
       {
         say: [tr("Sıra sende: 'Vaktimiz olursa şehirde dolaşırız.' nasıl dersin?")],

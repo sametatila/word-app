@@ -2,17 +2,6 @@
  "packet": "e-014",
  "words": [
   {
-   "tr": "Malların 4 Martta gönderildiği iddia ediliyor. Bizim dosyamızda 10 Mart yazıyor.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "It is claimed that the goods were dispatched on March 4. Our file says March 10."
-   ],
-   "ctx": [
-    "B2.2 Negotiating and complaining · Representative"
-   ]
-  },
-  {
    "tr": "Oyunun yaptığı şey o dönemin bedelini adlandırmak. Bağlam ilk sahneden belliydi.",
    "kind": "turn",
    "n": 1,
@@ -79,17 +68,6 @@
    ]
   },
   {
-   "tr": "Katılıyorum. Hükmü yeniden okuyunca sapmanın kılavuz içinde olduğunu düşünüyorum.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "Agreed. Having read the provision again, I think the deviation was within the guideline."
-   ],
-   "ctx": [
-    "B2.3 The passive in all its forms · Manager"
-   ]
-  },
-  {
    "tr": "Konuşma öğretmenin telaffuzunun düzeldiğini söyledi. Hatalara rağmen düzeyin iyi.",
    "kind": "turn",
    "n": 1,
@@ -98,6 +76,17 @@
    ],
    "ctx": [
     "B1.6 Learning and progress · Tutor"
+   ]
+  },
+  {
+   "tr": "Malların 4 Mart'ta gönderildiği iddia ediliyor. Bizim dosyamızda 10 Mart yazıyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "It is claimed that the goods were dispatched on March 4. Our file says March 10."
+   ],
+   "ctx": [
+    "B2.2 Negotiating and complaining · Representative"
    ]
   },
   {
@@ -290,6 +279,17 @@
    ],
    "ctx": [
     "B2.5 Science and technology · Researcher"
+   ]
+  },
+  {
+   "tr": "Katılıyorum. Hükmü yeniden okuyunca sapmanın kılavuzun dışında olduğunu düşünüyorum.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Agreed. Having read the provision again, I think the deviation was outside the guideline."
+   ],
+   "ctx": [
+    "B2.3 The passive in all its forms · Manager"
    ]
   },
   {

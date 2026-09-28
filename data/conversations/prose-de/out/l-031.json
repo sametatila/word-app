@@ -82,7 +82,7 @@
  { "tr": "Burası ağrıyor. Ve:", "kind": "say.tr", "de": "Hier tut es weh. Und:" },
  { "tr": "Cebinde şunlar var:", "kind": "say.tr", "de": "In deiner Tasche hast du:" },
  { "tr": "Cevap demek. Söyle:", "kind": "say.tr", "de": "Heißt Antwort. Sag:" },
- { "tr": "Cevap kısacık olur:", "kind": "say.tr", "de": "Die Antwort wird ganz kurz:" },
+ { "tr": "Şimdi o soruya dönelim; cevabı kısacık olur:", "kind": "say.tr", "de": "Kommen wir jetzt auf diese Frage zurück; die Antwort wird ganz kurz:" },
  { "tr": "Cümle içinde dinle:", "kind": "say.tr", "de": "Hör es im Satz:" },
  { "tr": "çalışmak demek. Ve:", "kind": "say.tr", "de": "heißt arbeiten. Und:" },
  { "tr": "Çoğulu yine es ile:", "kind": "say.tr", "de": "Der Plural wieder mit es:" },

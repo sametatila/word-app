@@ -124,7 +124,7 @@
  { "tr": "Sen de sor: \"Patatesler taze mi?\"", "kind": "say.tr", "de": "Frag du auch: „Sind die Kartoffeln frisch?“" },
  { "tr": "Sen kur: Formu henüz doldurmadım.", "kind": "say.tr", "de": "Bilde du: Ich habe das Formular noch nicht ausgefüllt." },
  { "tr": "Sen sor bakalım: Dün evde miydin?", "kind": "say.tr", "de": "Frag du mal: Warst du gestern zu Hause?" },
- { "tr": "Son kelimemiz: young. Genç demek.", "kind": "say.tr", "de": "Unser letztes Wort: young. Heißt jung." },
+ { "tr": "Sıradaki kelime: young. Genç demek.", "kind": "say.tr", "de": "Das nächste Wort: young. Heißt jung." },
  { "tr": "sonra fiil. Bu sıra hiç bozulmaz.", "kind": "say.tr", "de": "dann das Verb. Diese Reihenfolge ändert sich nie." },
  { "tr": "sonra kişi, en sonda fiil. Lütfen", "kind": "say.tr", "de": "dann die Person, ganz zum Schluss das Verb. Bitte" },
  { "tr": "Söz verirken ise 'will' kullanır:", "kind": "say.tr", "de": "Beim Versprechen benutzt man „will“:" },

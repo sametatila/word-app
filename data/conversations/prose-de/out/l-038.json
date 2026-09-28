@@ -62,7 +62,7 @@
  { "tr": "Gördün mü, sadece yer değişti.", "kind": "say.tr", "de": "Siehst du, nur die Stelle hat gewechselt." },
  { "tr": "Görüyorsun, rests değil, rest.", "kind": "say.tr", "de": "Du siehst, nicht rests, sondern rest." },
  { "tr": "gözlerini açmak, yani uyanmak.", "kind": "say.tr", "de": "die Augen öffnen, also aufwachen." },
- { "tr": "Günü kapatalım. Son kelimemiz:", "kind": "say.tr", "de": "Schließen wir den Tag. Unser letztes Wort:" },
+ { "tr": "Günü kapatalım. Sıradaki kelime:", "kind": "say.tr", "de": "Schließen wir den Tag. Das nächste Wort:" },
  { "tr": "Hâlâ kimse gelmedi demek için:", "kind": "say.tr", "de": "Um zu sagen, noch ist niemand gekommen:" },
  { "tr": "Hava geçen haftadan daha kötü.", "kind": "say.tr", "de": "Das Wetter ist schlechter als letzte Woche." },
  { "tr": "Havaalanına gitmek istiyorsan:", "kind": "say.tr", "de": "Wenn du zum Flughafen willst:" },

@@ -2176,14 +2176,14 @@ export const deA1B03: Conversation[] = [
       {
         say: [
           tr(
-            "Artık tabağına ne geleceğini kendin belirleyebilirsin. Şimdi işyerinin yemekhanesindesin ve aşçı bugün ne olduğunu anlatıyor.",
+            "Artık tabağına ne geleceğini kendin belirleyebilirsin. Şimdi iş yerinin yemekhanesindesin ve aşçı bugün ne olduğunu anlatıyor.",
           ),
         ],
       },
     ],
     chat: {
       scene:
-        "İşyerinin yemekhanesinde sıradasın ve bugünün yemeğinde yiyemediğin bir şey olabilir. Neyi yemediğini söyle, alerjini anlat ve o malzeme olmadan bir seçenek olup olmadığını sor.",
+        "İş yerinin yemekhanesinde sıradasın ve bugünün yemeğinde yiyemediğin bir şey olabilir. Neyi yemediğini söyle, alerjini anlat ve o malzeme olmadan bir seçenek olup olmadığını sor.",
       partner: "yemeğini anlatmayı seven, sabırlı bir aşçı",
       opening: "Heute gibt es Suppe und Wurst. Was möchten Sie?",
       openingTr: "Bugün çorba ve sosis var. Ne istersiniz?",

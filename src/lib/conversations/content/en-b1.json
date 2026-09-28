@@ -7329,7 +7329,7 @@
      },
      {
       "lang": "tr",
-      "text": "deriz. Şunu kur: Bugün tamir edeceğini söyledi."
+      "text": "deriz. Şunu kur (sözü aynı gün aktarıyorsun): Bugün tamir edeceğini söyledi."
      }
     ],
     "expect": {
@@ -7363,12 +7363,12 @@
      },
      {
       "lang": "en",
-      "text": "He said he will come on Monday."
+      "text": "He said he will come the next day."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "He said he will come on Monday.",
+     "statement": "He said he will come the next day.",
      "answer": false,
      "why": [
       {
@@ -7377,7 +7377,7 @@
       },
       {
        "lang": "en",
-       "text": "He said he would come on Monday."
+       "text": "He said he would come the next day."
       }
      ]
     }
@@ -9228,7 +9228,7 @@
      "kind": "produce",
      "target": "I enjoy walking to the market.",
      "accept": [
-      "I enjoy walking to the stores.",
+      "I enjoy walking to the local market.",
       "I like walking to the market."
      ],
      "hint": [
@@ -12653,7 +12653,7 @@
      },
      {
       "lang": "tr",
-      "text": "Başkan katılıp katılmadığımızı sordu."
+      "text": "Başkan aynı fikirde olup olmadığımızı sordu."
      }
     ],
     "expect": {
@@ -14082,7 +14082,7 @@
      "target": "Have you ever worked abroad?",
      "accept": [
       "Have you ever worked in another country?",
-      "Have you ever lived abroad?"
+      "Have you ever had a job abroad?"
      ],
      "hint": [
       {
@@ -16292,7 +16292,7 @@
      "kind": "produce",
      "target": "The language is changed in the settings.",
      "accept": [
-      "The language is changed in the setting.",
+      "The language is changed in settings.",
       "The language can be changed in the settings."
      ],
      "hint": [
@@ -17811,7 +17811,7 @@
      "target": "You should avoid using it outside.",
      "accept": [
       "You should avoid using it outdoors.",
-      "You should avoid using it in the rain."
+      "You should avoid using it outside the house."
      ],
      "hint": [
       {
@@ -19112,7 +19112,7 @@
      "target": "The letter was sent two days ago.",
      "accept": [
       "The letter was mailed two days ago.",
-      "The letter was sent two days before."
+      "Two days ago the letter was sent."
      ],
      "hint": [
       {
@@ -20537,7 +20537,7 @@
      "kind": "produce",
      "target": "She told me to wait for the letter.",
      "accept": [
-      "She told me to wait for the email.",
+      "She told me I should wait for the letter.",
       "She told me to wait for their letter."
      ],
      "hint": [
@@ -21076,7 +21076,7 @@
      "kind": "produce",
      "target": "You are not covered unless you call within a week.",
      "accept": [
-      "You are not covered unless you call in a week.",
+      "You aren't covered unless you call within a week.",
       "You are not covered unless you phone within a week."
      ],
      "hint": [
@@ -31984,12 +31984,12 @@
      },
      {
       "lang": "en",
-      "text": "They had already decided before I had spoken."
+      "text": "They already decided before I had spoken."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They had already decided before I had spoken.",
+     "statement": "They already decided before I had spoken.",
      "answer": false,
      "why": [
       {
@@ -32399,7 +32399,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Fiyatlar önümüzdeki ay düşecek."
+      "text": "Şimdi sıra sende: Belirtilere bakılırsa fiyatlar önümüzdeki ay düşecek."
      }
     ],
     "expect": {
@@ -36979,15 +36979,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Ağrı geçmezse tekrar git."
+      "text": "Bir tane daha: Ağrı geçmezse hekime tekrar git."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Unless the pain stops, go again.",
+     "target": "Unless the pain stops, see the doctor again.",
      "accept": [
-      "Unless the pain goes away, go again.",
-      "Unless the pain stops, go there again."
+      "Unless the pain goes away, see the doctor again.",
+      "Unless the pain stops, go to the doctor again."
      ],
      "hint": [
       {
@@ -37004,7 +37004,7 @@
       },
       {
        "lang": "en",
-       "text": "Unless the pain stops, go again."
+       "text": "Unless the pain stops, see the doctor again."
       },
       {
        "lang": "tr",
@@ -40575,7 +40575,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Suyun içinden aktığı uzun boşluğa"
+      "text": "Suyu taşıyan uzun, içi boş parçaya"
      },
      {
       "lang": "en",
@@ -41605,10 +41605,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Before they built the bridge, this was a lake.",
+     "target": "Before they built the bridge, this had been a lake.",
      "accept": [
-      "Before they built the bridge, this was a small lake.",
-      "Before the bridge was built, this was a lake."
+      "Before they built the bridge, this place had been a lake.",
+      "Before the bridge was built, this had been a lake."
      ],
      "hint": [
       {
@@ -41617,7 +41617,7 @@
       },
       {
        "lang": "en",
-       "text": "Before they built the bridge, this was a lake."
+       "text": "Before they built the bridge, this had been a lake."
       },
       {
        "lang": "tr",
@@ -44514,7 +44514,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sesli sevinmeye"
+      "text": "Sesli gülmeye"
      },
      {
       "lang": "en",
@@ -46774,8 +46774,8 @@
     "tr": "geliştirmek / ortaya koymak"
    },
    {
-    "de": "model",
-    "tr": "örnek kişi"
+    "de": "role model",
+    "tr": "örnek alınan kişi"
    },
    {
     "de": "freedom",
@@ -47103,7 +47103,7 @@
      },
      {
       "lang": "en",
-      "text": "model"
+      "text": "role model"
      },
      {
       "lang": "tr",

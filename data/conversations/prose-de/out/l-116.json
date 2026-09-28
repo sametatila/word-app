@@ -225,9 +225,9 @@
   "de": "Du erzählst einer Freundin eine Nachricht über Migration und willst den Menschen nicht auf eine Zahl reduzieren. Benenne den Menschen, die Statistik und das Recht mit drei verschiedenen Wortverbindungen."
  },
  {
-  "tr": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
   "kind": "scene",
-  "de": "Du baust eine These über Gleichheit und willst sie nicht als deinen Wunsch, sondern als Maßstab sagen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
+  "de": "Du baust eine These über Gleichheit und willst sie nicht als deinen Wunsch, sondern als Maßstab sagen. Bilde den Wunsch, das Wäre-nicht und die Forderung in festen Formen."
  },
  {
   "tr": "Aynı davranışın iki ayrı ad aldığı bir olayı anlatıyorsun ve açıkça suçlamak istemiyorsun. Üç cümlede eksilterek eleştir ve dinleyenin hangi adı seçtiğini sor.",
@@ -253,11 +253,6 @@
   "tr": "İnsanı, tabloyu ve hukuku üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du den Menschen, die Statistik und das Recht mit drei verschiedenen Wortverbindungen benannt hast."
- },
- {
-  "tr": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
-  "kind": "goal",
-  "de": "Das Gespräch gilt als geschafft, wenn du die Forderung, das Wäre-nicht und die Bedingung in drei festen Formen gebaut hast."
  },
  {
   "tr": "Üç ayrı kip derecesiyle anlattıysan ve her birinde mesafeni söylediysen konuşma başarılı sayılır.",
@@ -318,11 +313,6 @@
   "tr": "adı hükümden ayırır",
   "kind": "pattern.tr",
   "de": "trennt den Namen vom Urteil"
- },
- {
-  "tr": "koşulu kalıpla kurar",
-  "kind": "pattern.tr",
-  "de": "baut die Bedingung mit der Formel"
  },
  {
   "tr": "övmekle uymayı ayırır",
@@ -407,7 +397,7 @@
  {
   "tr": "net göç",
   "kind": "vocab.tr",
-  "de": "Nettozuwanderung"
+  "de": "Wanderungssaldo"
  },
  {
   "tr": "erginlenme",
@@ -793,11 +783,6 @@
   "tr": "Eylemi başa taşımak için",
   "kind": "hint.tr",
   "de": "Um die Handlung nach vorn zu holen –"
- },
- {
-  "tr": "Koşulu kalıpla kurmak için",
-  "kind": "hint.tr",
-  "de": "Um die Bedingung mit der Formel zu bauen –"
  },
  {
   "tr": "Övmekle uymayı ayırmak için",
@@ -1270,9 +1255,9 @@
   "de": "hält die wiedergebende Person für jemanden mit dem Recht zu lesen,"
  },
  {
-  "tr": "Dışa göç ve iç göç net göçü üretiyor.",
+  "tr": "Dışa göç ve iç göç net göçü biçimlendiriyor.",
   "kind": "say.tr",
-  "de": "Abwanderung und Binnenwanderung ergeben die Nettozuwanderung."
+  "de": "Abwanderung und Binnenwanderung prägen den Wanderungssaldo."
  },
  {
   "tr": "Şimdi dışarıda kalanı başa alacaksın.",
@@ -1490,11 +1475,6 @@
   "de": "Der Wert, den ein Mensch allein als Mensch trägt, heißt"
  },
  {
-  "tr": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:",
-  "kind": "say.tr",
-  "de": "Unsere letzte Wendung baut die Bedingung mit der Formel. Sprich nach:"
- },
- {
   "tr": "Kişiliği görünmeyen, herkese aynı davranan tutuma",
   "kind": "say.tr",
   "de": "Eine Haltung ohne erkennbare Person, die alle gleich behandelt, heißt"
@@ -1585,9 +1565,9 @@
   "de": "Sie verlangen, dass jedes Teilhabemodell den Mietern ein Stimmrecht gebe."
  },
  {
-  "tr": "Şimdi sen kur: Dışa göç ve geri dönüş net göçü üretiyor.",
+  "tr": "Şimdi sen kur: Dışa göç ve geri dönüş net göçü biçimlendiriyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Abwanderung und Rückkehr ergeben die Nettozuwanderung."
+  "de": "Bilde du jetzt: Abwanderung und Rückkehr prägen den Wanderungssaldo."
  },
  {
   "tr": "Toplumsal katman değişti, değerleri değişmedi.",

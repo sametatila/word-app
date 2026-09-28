@@ -99,7 +99,7 @@
  { "tr": "yeterince. Yeterince su içmelisin:", "kind": "say.tr", "de": "genug. Du solltest genug Wasser trinken:" },
  { "tr": "yukarı demek. Ama ikisi birleşince", "kind": "say.tr", "de": "heißt nach oben. Aber zusammen ergeben sie" },
  { "tr": "— bu hafta çoktan iki daire gördüm.", "kind": "say.tr", "de": "— diese Woche habe ich schon zwei Wohnungen gesehen." },
- { "tr": ". Bir de mesajların kısaltmalarını:", "kind": "say.tr", "de": ". Und dazu die Kurzformen der Nachrichten:" },
+ { "tr": ". Bir de mesajlardaki kısaltmalar:", "kind": "say.tr", "de": ". Und dazu die Kurzformen der Nachrichten:" },
  { "tr": ". Burada isim yok, sadece renk var.", "kind": "say.tr", "de": ". Hier gibt es kein Substantiv, nur die Farbe." },
  { "tr": ". Göndermek demek. Şimdi sen söyle:", "kind": "say.tr", "de": ". Heißt senden. Jetzt sag du:" },
  { "tr": ". Günlük konuşmada bunu kısaltırız:", "kind": "say.tr", "de": ". Im Alltag kürzen wir das:" },

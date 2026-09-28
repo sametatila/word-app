@@ -16,7 +16,7 @@
  { "tr": "Planını gelecek biçimlerinden biriyle yaz", "kind": "writing.checklist", "de": "Schreib deinen Plan mit einer Zukunftsform" },
  { "tr": "Resmî bir kapanış kullan („Best regards“)", "kind": "writing.checklist", "de": "Verwende einen förmlichen Schluss („Best regards“)" },
  { "tr": "Seni duyuyorum ama göremiyorum. Sorun ne?", "kind": "turn", "de": "Ich höre dich, aber ich sehe dich nicht. Was ist los?" },
- { "tr": "„Net göç“ diye basılan rakamı ne üretiyor?", "kind": "question", "de": "Woraus entsteht die Zahl, die als „net migration“ gedruckt wird?" },
+ { "tr": "„Net göç“ diye basılan rakamı ne biçimlendiriyor?", "kind": "question", "de": "Was prägt die Zahl, die als „net migration“ gedruckt wird?" },
  { "tr": "Affedersiniz, gar nerede? Buradan uzak mı?", "kind": "speaking", "de": "Entschuldigung, wo ist der Bahnhof? Ist es weit von hier?" },
  { "tr": "Arabulucu öteki kişi hakkında ne söylüyor?", "kind": "question", "de": "Was sagt die Vermittlerin über die andere Person?" },
  { "tr": "Bir kahve ve bir sandviç istiyorum lütfen.", "kind": "speaking", "de": "Ich hätte gern einen Kaffee und ein Sandwich, bitte." },

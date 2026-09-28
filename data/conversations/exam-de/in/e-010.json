@@ -2,15 +2,6 @@
  "packet": "e-010",
  "words": [
   {
-   "tr": "Belediyeye mahallen için bir öneri yazısı yaz.",
-   "kind": "writing.prompt",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B1.9 The city and the environment · yazma"
-   ]
-  },
-  {
    "tr": "Bence telefonlar faydalı ama uygulamaya bağlı.",
    "kind": "speaking",
    "n": 1,
@@ -1191,6 +1182,23 @@
     "It asks for a longer answer",
     "It repeats the question",
     "It closes the file"
+   ]
+  },
+  {
+   "tr": "„Net göç“ diye basılan rakamı ne biçimlendiriyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What shapes the figure printed as “net migration”?"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · okuma sorusu"
+   ],
+   "options": [
+    "Out-migration and internal migration together",
+    "The number of new arrivals only",
+    "The participation model",
+    "The census of last spring"
    ]
   },
   {

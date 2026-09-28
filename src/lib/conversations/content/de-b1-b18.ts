@@ -72,7 +72,7 @@ export const deB1B18: Conversation[] = [
       { say: [tr("İkinci kalıbımız eseri tanımlıyor: bahsetmek fiilinin sabit edatı zamirin önüne geliyor.")] },
       { say: [tr("Şimdi: 'Bu, sana bahsettiğim bale.'")], expect: produce("Das ist das Ballett, von dem ich dir erzählt habe", [tr("Edat zamirin önünde, yardımcı fiil sonda:"), de("Das ist das Ballett, von dem ich dir erzählt habe."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Das ist die Oper, die ich gestern war."), tr("cümlesi doğru mu?")], expect: truefalse("Das ist die Oper, die ich gestern war.", false, [tr("Bir yerde bulunmak yer edatı ister ve o edat zamirin önüne gelir:"), de("Das ist die Oper, in der ich gestern war.")]) },
-      { say: [tr("Son: 'Dinleyiciler flüte uzun uzun alkış tuttu.'")], expect: produce("Die Zuhörer klatschten lange für die Flöte", [tr("Çoğul özne, geçmiş zaman, edatlı öbek sonda:"), de("Die Zuhörer klatschten lange für die Flöte."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Flüt solosundan sonra dinleyiciler uzun uzun alkışladı.'")], expect: produce("Nach dem Flötensolo klatschten die Zuhörer lange", [tr("Edatlı öbek başta, fiil ikinci sırada, çoğul özne arkasında:"), de("Nach dem Flötensolo klatschten die Zuhörer lange."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi bir arkadaşına operada geçen akşamını anlatacaksın.")] },
     ],
     chat: {

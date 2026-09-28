@@ -88,17 +88,6 @@
    ]
   },
   {
-   "tr": "Hedef yükseltilmiş olsa da ikramiyeyi konuşabilir miyiz?",
-   "kind": "speaking",
-   "n": 1,
-   "de": [
-    "Could we discuss the bonus, although the target was raised?"
-   ],
-   "ctx": [
-    "B1.1 My career so far · konuşma"
-   ]
-  },
-  {
    "tr": "Öneriyoruz. Süre olmasaydı yazılı bir cevap da isterdim.",
    "kind": "turn",
    "n": 1,
@@ -663,6 +652,17 @@
    ],
    "ctx": [
     "B1.5 Offices and applications · Visitor"
+   ]
+  },
+  {
+   "tr": "Hedefe tam ulaşmamış olsak da ikramiyeyi konuşabilir miyiz?",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "Could we discuss the bonus, although we did not fully reach the target?"
+   ],
+   "ctx": [
+    "B1.1 My career so far · konuşma"
    ]
   },
   {

@@ -504,7 +504,7 @@ export const deB2B06: Conversation[] = [
       { say: [tr("Sıra sende: 'Bu vergi her yıl tahsil ediliyor.'")], expect: produce("Diese Steuer wird jährlich erhoben", [tr("Şimdiki zaman edilgeni; ortaç sonda:"), de("Diese Steuer wird jährlich erhoben."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Sosyal yardımlar her yıl güncelleniyor.'")], expect: produce("Die Sozialleistungen werden jedes Jahr angepasst", [tr("Çoğul edilgen; ortaç sonda:"), de("Die Sozialleistungen werden jedes Jahr angepasst."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Vergi artışı parlamentoda karara bağlanıyor.'")], expect: produce("Die Steuererhöhung wird im Parlament beschlossen", [tr("Tekil edilgen; yer bildiren edat yönelme hâlinde:"), de("Die Steuererhöhung wird im Parlament beschlossen."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Was wird mit diesem Geld finanziert werden?"), tr("cümlesi doğru mu?")], expect: truefalse("Was wird mit diesem Geld finanziert werden?", false, [tr("Şimdiki zaman edilgeninde sondaki ikinci werden fazladır:"), de("Was wird mit diesem Geld finanziert?")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Was wird mit diesem Geld finanzieren?"), tr("cümlesi doğru mu?")], expect: truefalse("Was wird mit diesem Geld finanzieren?", false, [tr("Edilgende sona mastar değil ortaç gelir:"), de("Was wird mit diesem Geld finanziert?")]) },
       { say: [tr("Son: 'Bu paranın nereye gittiğini bilmek istiyorum.'")], expect: produce("Ich möchte wissen, wohin dieses Geld fließt", [tr("Dolaylı soruda fiil sonda:"), de("Ich möchte wissen, wohin dieses Geld fließt."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette verginin nereye harcanması gerektiğini tartışacaksın.")] },
     ],

@@ -21,7 +21,7 @@
  { "tr": "Tasarruf için öğüt veriyorsun.", "kind": "speaking.situation", "de": "Du gibst einen Rat zum Sparen." },
  { "tr": "We move that the board grant …", "kind": "focus", "de": "We move that the board grant …" },
  { "tr": "Yazar şimdi her ay ne yapıyor?", "kind": "question", "de": "Was macht die Autorin jetzt jeden Monat?" },
- { "tr": "90. Dümdüz gidin, sonra sola dönün.", "kind": "turn", "de": "90. Gehen Sie geradeaus und dann links." },
+ { "tr": "90 tutuyor. Dümdüz gidin, sonra sola dönün.", "kind": "turn", "de": "Das macht 90. Gehen Sie geradeaus und dann links." },
  { "tr": "Aynı tedbire sahada ne deniyor?", "kind": "question", "de": "Wie heißt dieselbe Maßnahme in der Werkstatt?" },
  { "tr": "Bazı kullanıcılar ne düşünüyor?", "kind": "question", "de": "Was denken manche Nutzer?" },
  { "tr": "Bilirkişi raporu neyi yapmıyor?", "kind": "question", "de": "Was leistet das Gutachten nicht?" },

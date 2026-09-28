@@ -114,7 +114,7 @@
  { "tr": "Telefonum. Aynı şekilde my password, parolam.", "kind": "say.tr", "de": "Mein Handy. Genauso my password, mein Passwort." },
  { "tr": "Teşekkürler, gitmeden önce işimi bitireceğim.", "kind": "say.tr", "de": "Danke, ich mache meine Arbeit fertig, bevor ich gehe." },
  { "tr": "to rest yanlış. Ve he, she, it ile bile değişmez:", "kind": "say.tr", "de": "to rest ist falsch. Und selbst bei he, she, it bleibt es gleich:" },
- { "tr": "Toparlayalım. İki kelimeli beş fiil öğrendin:", "kind": "say.tr", "de": "Fassen wir zusammen. Du hast fünf zweiteilige Verben gelernt:" },
+ { "tr": "Toparlayalım. Öğrendiğin iki kelimeli fiillerden bazıları:", "kind": "say.tr", "de": "Fassen wir zusammen. Einige der zweiteiligen Verben, die du gelernt hast:" },
  { "tr": "Türkçesi 'satın almak' demek. Geçmiş hâli ise", "kind": "say.tr", "de": "Auf Deutsch heißt es „kaufen“. Die Vergangenheit dagegen" },
  { "tr": "Türkçesi öğretmen demek. Lütfen sen de söyle:", "kind": "say.tr", "de": "Auf Deutsch heißt es Lehrer. Bitte sag du auch:" },
  { "tr": "Uçağa binme işine İngilizcede boarding denir.", "kind": "say.tr", "de": "Das Einsteigen ins Flugzeug heißt auf Englisch boarding." },
@@ -148,5 +148,6 @@
  { "tr": "ama günlük konuşmada neredeyse hep kısaltırız:", "kind": "say.tr", "de": "aber im Alltag kürzen wir fast immer:" },
  { "tr": "Başka bir şey? Eğer yeterse cevabın çok kolay:", "kind": "say.tr", "de": "Noch etwas? Wenn es reicht, ist deine Antwort leicht:" },
  { "tr": "Başlamak fiili start. İkisini birleştiriyorum:", "kind": "say.tr", "de": "Das Verb anfangen ist start. Ich verbinde beide:" },
- { "tr": "Ben bakarım. Bu kararı bir saniye önce verdin.", "kind": "say.tr", "de": "Ich gehe ran. Diese Entscheidung ist eine Sekunde alt." }
+ { "tr": "Ben bakarım. Bu kararı bir saniye önce verdin.", "kind": "say.tr", "de": "Ich gehe ran. Diese Entscheidung ist eine Sekunde alt." },
+ { "tr": "güvenlik açığı", "kind": "vocab.tr", "de": "die Sicherheitslücke" }
 ]

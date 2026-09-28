@@ -514,7 +514,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
     reading: {
       title: "Kritik: Ein Abend, der bleibt",
       titleTr: "Eleştiri: Akılda kalan bir akşam",
-      genre: "Sanat eleştirisi",
+      genre: "Tiyatro eleştirisi",
       text: "Kritik\n\nDie am Samstag gezeigte Inszenierung ist keine leichte Kost. Das Stück, dessen Vorlage über hundert Jahre alt ist, wurde vollständig in die Gegenwart verlegt — und gewinnt dadurch mehr, als es verliert.\n\nBesonders das neu gestaltete Bühnenbild überzeugt: eine leere Fläche, deren einzige Möbel drei Stühle sind. Es wirkt, indem es nichts erklärt. Die Schauspielerin, deren Rolle den Abend trägt, spielt leise und genau; ihr Gegenspieler bleibt dagegen blass.\n\nSchwächen gibt es auch. Der zweite Akt ist zwanzig Minuten zu lang, und die eingespielte Musik nimmt einigen Szenen die Ruhe. Je stiller der Abend wird, desto stärker wirkt er — genau das scheint die Regie an zwei Stellen zu vergessen.\n\nNach der Premiere gab es langen Applaus. Empfehlenswert ist der Abend allen, die sich auf ein langsames Stück einlassen wollen.",
       questions: [
         { de: "Was ist am Bühnenbild besonders?", tr: "Dekorun özelliği ne?", options: ["Es ist sehr aufwendig", "Es ist fast leer, nur drei Stühle", "Es zeigt eine alte Stadt", "Es wechselt ständig"], answer: 1 },

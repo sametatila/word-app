@@ -147,5 +147,6 @@
  { "tr": "cümlesi resmî bir yazı için doğru mu?", "en": "— is that sentence right for a formal letter?" },
  { "tr": "Deyimde nesne belirtili; ortaç sonda:", "en": "In the idiom the object is definite; the participle last:" },
  { "tr": "dişil olduğu için olumsuzluk kelimesi", "en": "because it is feminine, the negative word" },
- { "tr": "Dönüşlü fiil; ayrılabilen önek sonda:", "en": "A reflexive verb; the separable prefix last:" }
+ { "tr": "Dönüşlü fiil; ayrılabilen önek sonda:", "en": "A reflexive verb; the separable prefix last:" },
+ { "tr": "aktarımı arabulucu için tarafsız mı?", "en": "is this report neutral for a mediator?" }
 ]

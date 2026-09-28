@@ -401,7 +401,7 @@ export const deB1B05: Conversation[] = [
       { say: [tr("Hazırsın. Sohbette sigortayı arayacaksın: ne oldu, ne zaman oldu, sonra ne yaptın.")] },
     ],
     chat: {
-      scene: "Sigorta şirketini arıyorsun ve bir hasarı bildiriyorsun: ne oldu, ne zaman oldu, sonra ne yaptın. Sıralamayı önce olan işi bir basamak geriye çekerek anlat.",
+      scene: "Sigorta şirketini arıyorsun ve bir hasarı bildiriyorsun: ne oldu, ne zaman oldu, sonra ne yaptın. Daha önce olanı Plusquamperfekt ile anlat.",
       partner: "soruları sırayla soran, sakin bir sigorta görevlisi",
       opening: "Versicherung Nordstern, guten Tag. Sie möchten einen Schaden melden — was ist genau passiert?",
       openingTr: "Nordstern Sigorta, iyi günler. Hasar bildirmek istiyorsunuz — tam olarak ne oldu?",
@@ -502,7 +502,7 @@ export const deB1B05: Conversation[] = [
       { say: [tr("Kalıbımız:"), de("Hiermit wird Frau Kaya bevollmächtigt."), tr("Tekil bir kişi yetkilendirildiği için yardımcı fiil tekil, ortaç en sonda.")] },
       { say: [tr("Tekrar et:"), de("Hiermit wird Frau Kaya bevollmächtigt")], expect: repeat("Hiermit wird Frau Kaya bevollmächtigt") },
       { say: [tr("Sıra sende: 'Kız kardeşim beni dairede temsil ediyor.'")], expect: produce("Meine Schwester vertritt mich auf dem Amt", [tr("Etken cümle; bu fiil kök ünlüsünü değiştirir: vertritt:"), de("Meine Schwester vertritt mich auf dem Amt."), tr("Tekrar dene.")]) },
-      { say: [tr("Şimdi belge dilinde: 'Vekâletname benim adıma imzalanıyor.'")], expect: produce("Die Vollmacht wird in meinem Namen unterschrieben", [tr("Edilgen: yardımcı fiil ikinci sırada, ortaç sonda:"), de("Die Vollmacht wird in meinem Namen unterschrieben."), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi belge dilinde: 'Vekâletname benim tarafımdan imzalanıyor.'")], expect: produce("Die Vollmacht wird von mir unterschrieben", [tr("Edilgen: yardımcı fiil ikinci sırada, ortaç sonda:"), de("Die Vollmacht wird von mir unterschrieben."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Asıl nüsha ibraz edilmeli.'")], expect: produce("Das Original muss vorgelegt werden", [tr("Modal fiille edilgen: ortaç ve werden en sonda:"), de("Das Original muss vorgelegt werden."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Hiermit werde meine Tochter bevollmächtigt."), tr("cümlesi doğru mu?")], expect: truefalse("Hiermit werde meine Tochter bevollmächtigt.", false, [tr("Özne üçüncü tekil kişi, yani yardımcı fiil de tekil çekilir:"), de("Hiermit wird meine Tochter bevollmächtigt.")]) },
       { say: [tr("Son: 'Vekâleti her zaman geri alabilirim.'")], expect: produce("Ich kann die Vollmacht jederzeit widerrufen", [tr("Modal fiil çekimli, mastar en sonda:"), de("Ich kann die Vollmacht jederzeit widerrufen."), tr("Tekrar dene.")]) },

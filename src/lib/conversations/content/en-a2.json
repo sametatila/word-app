@@ -1187,7 +1187,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir üretim daha. Bir arkadaşına dün akşamki partiyi soruyorsun. Şunu İngilizce sor: Ne giyiyordun?"
+      "text": "Bir cümle daha. Bir arkadaşına dün akşamki partiyi soruyorsun. Şunu İngilizce sor: Ne giyiyordun?"
      }
     ],
     "expect": {
@@ -6336,7 +6336,6 @@
      "kind": "produce",
      "target": "Who did you go with?",
      "accept": [
-      "Who were you with?",
       "Who did you go there with?"
      ],
      "hint": [
@@ -10470,7 +10469,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. would like to kalıbından sonra fiilin yalın hâli gelir, ing takısı gelmez."
+       "text": "Doğru. would like to kalıbından sonra fiilin yalın hâli gelir, -ing eki gelmez."
       }
      ]
     }
@@ -20179,7 +20178,7 @@
      },
      {
       "lang": "tr",
-      "text": "Beş yeni kelime, üç kalıp. Hazırsan başlıyoruz, hazır mısın?"
+      "text": "Beş temel kelime, üç kalıp. Hazırsan başlıyoruz, hazır mısın?"
      }
     ],
     "expect": {
@@ -20836,7 +20835,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: beş kelime aldın — bright, quiet, spacious, balcony, view. Üç kalıp öğrendin: nerede oturduğunu söylemek için"
+      "text": "Özetleyelim: beş temel kelime aldın — bright, quiet, spacious, balcony, view. Üç kalıp öğrendin: nerede oturduğunu söylemek için"
      },
      {
       "lang": "en",
@@ -28913,8 +28912,7 @@
      "kind": "produce",
      "target": "She always checks the orders.",
      "accept": [
-      "She always checks orders.",
-      "He always checks the orders."
+      "She always checks orders."
      ],
      "hint": [
       {
@@ -33595,7 +33593,6 @@
      "kind": "produce",
      "target": "I expected better quality.",
      "accept": [
-      "I expected a better quality.",
       "I expected better quality from this store."
      ],
      "hint": [
@@ -34922,7 +34919,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. I'd like to kalıbından sonra fiil yalın gelir, ing takısı almaz."
+       "text": "Doğru. I'd like to kalıbından sonra fiil yalın gelir, -ing eki almaz."
       }
      ]
     }
@@ -38125,8 +38122,7 @@
      "kind": "produce",
      "target": "This jacket is more expensive than that one.",
      "accept": [
-      "This jacket is more expensive than that jacket.",
-      "This jacket is more expensive."
+      "This jacket is more expensive than that jacket."
      ],
      "hint": [
       {
@@ -41647,8 +41643,7 @@
      "kind": "produce",
      "target": "It's opposite the museum.",
      "accept": [
-      "It is opposite the museum.",
-      "The museum is opposite."
+      "It is opposite the museum."
      ],
      "hint": [
       {
@@ -43501,7 +43496,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İki koşul kelimesi daha ekleyelim, çünkü mutlaka karşına çıkacak. Deposit: depozito, yani geri alacağın güvence bedeli. Mileage: mil sınırı; Amerika'da yol mil ile ölçülür."
+      "text": "İki koşul kelimesi daha ekleyelim, çünkü mutlaka karşına çıkacak. Deposit: depozito, yani geri alacağın güvence bedeli. Mileage: kat edilen mesafe; unlimited mileage, mil sınırı yok demek. Amerika'da yol mil ile ölçülür."
      },
      {
       "lang": "tr",
@@ -46301,7 +46296,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün beş kelime öğrendik: invite, join, free, sorry ve maybe."
+      "text": "Bugün beş temel kelime öğrendik: invite, join, free, sorry ve maybe."
      },
      {
       "lang": "tr",
@@ -46968,7 +46963,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Bugün beş kelime öğrendik: birthday, present, surprise, celebrate, candle."
+      "text": "Harika iş çıkardın. Bugün beş temel kelime öğrendik: birthday, present, surprise, celebrate, candle."
      },
      {
       "lang": "tr",
@@ -51308,7 +51303,7 @@
    },
    {
     "de": "guy",
-    "tr": "eleman"
+    "tr": "adam"
    },
    {
     "de": "by the way",
@@ -51817,7 +51812,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: eleman. Lütfen tekrar et:"
+      "text": "Türkçesi: adam. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -53682,7 +53677,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün beş kelime öğrendik:"
+      "text": "Bugün beş temel kelime öğrendik:"
      },
      {
       "lang": "en",
@@ -56154,8 +56149,7 @@
      "kind": "produce",
      "target": "I downloaded it to practice English.",
      "accept": [
-      "I downloaded the app to practice English.",
-      "I downloaded it for practicing English."
+      "I downloaded the app to practice English."
      ],
      "hint": [
       {
@@ -58456,7 +58450,7 @@
    },
    {
     "de": "done",
-    "tr": "tamam"
+    "tr": "bitti"
    },
    {
     "de": "pay attention",
@@ -61359,9 +61353,6 @@
     "expect": {
      "kind": "produce",
      "target": "I lost my wallet on the bus.",
-     "accept": [
-      "I lost my wallet in the bus."
-     ],
      "hint": [
       {
        "lang": "tr",
@@ -61732,7 +61723,7 @@
    }
   ],
   "chat": {
-   "scene": "Bir alışveriş merkezinde cüzdanını kaybettin ve içindeki polis noktasına gittin. Olayı anlatıp kayıp bildirimi yapacaksın.",
+   "scene": "Bir alışveriş merkezinde cüzdanını kaybettin ve en yakın polis karakoluna gittin. Olayı anlatıp kayıp bildirimi yapacaksın.",
    "partner": "karakoldaki polis memuru",
    "opening": "Good afternoon. Would you like to report something?",
    "openingTr": "İyi günler. Bir bildirimde mi bulunacaksınız?",
@@ -63239,7 +63230,7 @@
    },
    {
     "de": "advance",
-    "tr": "peşin"
+    "tr": "avans; ilerleme"
    }
   ],
   "patterns": [
@@ -63672,7 +63663,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: peşin. Lütfen tekrar et:"
+      "text": "Türkçesi: avans; ilerleme. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -65122,7 +65113,6 @@
      "kind": "produce",
      "target": "I expect an answer within a week.",
      "accept": [
-      "I expect an answer in a week.",
       "I expect an answer within one week."
      ],
      "hint": [

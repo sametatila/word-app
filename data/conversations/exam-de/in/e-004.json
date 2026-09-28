@@ -211,23 +211,6 @@
    ]
   },
   {
-   "tr": "39 derecede ne yapmalı?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What must you do with 39 degrees?"
-   ],
-   "ctx": [
-    "A1.9 Health and the body · okuma sorusu"
-   ],
-   "options": [
-    "Take more tablets",
-    "Call the doctor",
-    "Only drink water",
-    "Wait a week"
-   ]
-  },
-  {
    "tr": "Ailemi tanıtabiliyorum.",
    "kind": "cando",
    "n": 1,
@@ -1803,6 +1786,17 @@
    ],
    "ctx": [
     "B2.8 Money and career strategy"
+   ]
+  },
+  {
+   "tr": "Daha erken bir şey var mı?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Do you have anything earlier?"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · yazma kalıbı"
    ]
   }
  ]

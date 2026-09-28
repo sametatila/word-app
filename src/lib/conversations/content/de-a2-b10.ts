@@ -1167,7 +1167,7 @@ export const deA2B10: Conversation[] = [
           kind: "produce",
           target: "Unsere Nachbarn bauen ein neues Haus",
           hint: [
-            tr("Çoğul özneye fiil uyar ve cinssiz isimde sıfat belirtme hâlinde ek alır:"),
+            tr("Çoğul özneye fiil uyar ve nötr isimde sıfat belirtme hâlinde ek alır:"),
             de("Unsere Nachbarn bauen ein neues Haus."),
             tr("Tekrar dene."),
           ],

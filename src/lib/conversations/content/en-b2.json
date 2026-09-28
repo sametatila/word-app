@@ -9106,7 +9106,7 @@
      "kind": "produce",
      "target": "Ana, who wrote the letter, is the director.",
      "accept": [
-      "Ana, who sent the letter, is the director.",
+      "Ana, who wrote the letter, is the manager.",
       "Ana, who wrote that letter, is the director."
      ],
      "hint": [
@@ -10077,7 +10077,7 @@
      "target": "It is reported that the source is unclear.",
      "accept": [
       "It is reported the source is unclear.",
-      "It is reported that the source is unknown."
+      "It is reported that the source is not clear."
      ],
      "hint": [
       {
@@ -10772,7 +10772,7 @@
      "kind": "produce",
      "target": "Filtered on Friday, the liquid was clean.",
      "accept": [
-      "Filtered on Friday, the liquid was clear.",
+      "Filtered on Friday, the fluid was clean.",
       "Filtered on Friday, that liquid was clean."
      ],
      "hint": [
@@ -12522,7 +12522,7 @@
      "target": "What was changed is the date.",
      "accept": [
       "What was changed is that date.",
-      "What was changed is the deadline."
+      "What has been changed is the date."
      ],
      "hint": [
       {
@@ -12748,7 +12748,7 @@
      "kind": "produce",
      "target": "What is missing is the receipt.",
      "accept": [
-      "What is missing is the proof.",
+      "What is missing is the sales receipt.",
       "What's missing is the receipt."
      ],
      "hint": [
@@ -12846,7 +12846,7 @@
    },
    {
     "de": "vulnerability",
-    "tr": "açık"
+    "tr": "güvenlik açığı"
    },
    {
     "de": "negligence",
@@ -14521,7 +14521,7 @@
      "kind": "produce",
      "target": "It seems to have been moved last week.",
      "accept": [
-      "It seems to have been moved last Monday.",
+      "It seems to have been relocated last week.",
       "It seems to have been shifted last week."
      ],
      "hint": [
@@ -15359,7 +15359,7 @@
    },
    {
     "de": "embargo",
-    "tr": "yayın yasağı"
+    "tr": "yayın ambargosu"
    },
    {
     "de": "transparency",
@@ -16118,7 +16118,7 @@
      "target": "The rumor can't have started here.",
      "accept": [
       "The rumor can't have begun here.",
-      "The story can't have started here."
+      "The rumor can't have started in this place."
      ],
      "hint": [
       {
@@ -17300,7 +17300,7 @@
   "course": "en",
   "icon": "question",
   "title": "Checking a claim",
-  "titleTr": "Doğruluk kontrolü",
+  "titleTr": "Bir iddiayı sınamak",
   "summary": "Bir iddiayı sınamayı öğretir; yumuşatıcı bağlayıcılar bulguyu kesin hüküm olmaktan çıkarır.",
   "minutes": 11,
   "focusId": "Hedging and discourse markers",
@@ -17311,7 +17311,7 @@
    },
    {
     "de": "methodology",
-    "tr": "yöntem düzeni"
+    "tr": "metodoloji"
    },
    {
     "de": "projection",
@@ -17420,7 +17420,7 @@
      },
      {
       "lang": "tr",
-      "text": "Görünüşe göre yöntem düzeni hiç yayımlanmamış."
+      "text": "Görünüşe göre metodoloji hiç yayımlanmamış."
      }
     ],
     "expect": {
@@ -18240,7 +18240,7 @@
      "target": "If the letter had come earlier, the piece would have changed.",
      "accept": [
       "If the letter had arrived earlier, the piece would have changed.",
-      "If the note had come earlier, the piece would have changed."
+      "If the letter had arrived sooner, the piece would have changed."
      ],
      "hint": [
       {
@@ -18513,7 +18513,7 @@
      "kind": "produce",
      "target": "Never before has such a letter been shown.",
      "accept": [
-      "Never before has such a letter been published.",
+      "Never before has a letter like this been shown.",
       "Never before has this letter been shown."
      ],
      "hint": [
@@ -19316,7 +19316,7 @@
   "course": "en",
   "icon": "pen",
   "title": "The comparison of the reports",
-  "titleTr": "Raporun kendisi",
+  "titleTr": "Raporların karşılaştırılması",
   "summary": "Çözümleme yazısının dilini öğretir; fiil isme dönünce yazı kişiden çıkar ve metne odaklanır.",
   "minutes": 11,
   "focusId": "Nominalisation and formal register",
@@ -20025,7 +20025,7 @@
      "target": "It is reported that the test was repeated.",
      "accept": [
       "It is reported the test was repeated.",
-      "It is reported that the trial was repeated."
+      "It is reported that the experiment was repeated."
      ],
      "hint": [
       {
@@ -20252,7 +20252,7 @@
      "target": "The sample is thought to have been too small.",
      "accept": [
       "The sample is believed to have been too small.",
-      "The group is thought to have been too small."
+      "The sample is believed to have been too small in size."
      ],
      "hint": [
       {
@@ -20533,7 +20533,7 @@
      "kind": "produce",
      "target": "Having cooled the liquid, add the powder.",
      "accept": [
-      "Having cooled the liquid, add the salt.",
+      "Having cooled the liquid, add the powder to it.",
       "Having cooled the liquid, add that powder."
      ],
      "hint": [
@@ -20786,7 +20786,7 @@
   "course": "en",
   "icon": "pen",
   "title": "The automation of the process",
-  "titleTr": "Bulgunun kendisi",
+  "titleTr": "Sürecin otomasyonu",
   "summary": "Bilimsel yazının dilini öğretir; fiil isme dönünce yazı kişiden çıkar ve bulguya odaklanır.",
   "minutes": 11,
   "focusId": "Nominalisation and formal register",
@@ -20994,7 +20994,7 @@
      "target": "The automation of the test took a month.",
      "accept": [
       "The automation of that test took a month.",
-      "The automation of the test took one month."
+      "The automation of the experiment took a month."
      ],
      "hint": [
       {
@@ -21960,7 +21960,7 @@
      "target": "The system, which was updated in June, failed.",
      "accept": [
       "The system, which was updated in June, broke.",
-      "The device, which was updated in June, failed."
+      "The system, which had been updated in June, failed."
      ],
      "hint": [
       {
@@ -22069,7 +22069,7 @@
      "target": "The tool is slow, which is why we waited.",
      "accept": [
       "The tool is very slow, which is why we waited.",
-      "The program is slow, which is why we waited."
+      "The tool is slow, which is why we held off."
      ],
      "hint": [
       {
@@ -22186,8 +22186,8 @@
      "kind": "produce",
      "target": "The system to which we refer uses encryption.",
      "accept": [
-      "The system to which we refer uses a code.",
-      "The device to which we refer uses encryption."
+      "The system to which we refer relies on encryption.",
+      "The system to which we are referring uses encryption."
      ],
      "hint": [
       {
@@ -22460,7 +22460,7 @@
      "kind": "produce",
      "target": "What the study determines is the range.",
      "accept": [
-      "What the study determines is the limit.",
+      "What the study establishes is the range.",
       "What this study determines is the range."
      ],
      "hint": [
@@ -24950,7 +24950,7 @@
      "target": "The measurement of poverty begins here.",
      "accept": [
       "The measurement of poverty starts here.",
-      "The measurement of inequality begins here."
+      "The measurement of poverty begins right here."
      ],
      "hint": [
       {
@@ -25173,7 +25173,7 @@
      "target": "The reduction of fear takes a generation.",
      "accept": [
       "The reduction of fear takes one generation.",
-      "The reduction of prejudice takes a generation."
+      "The reduction of fear takes a whole generation."
      ],
      "hint": [
       {
@@ -25447,7 +25447,7 @@
      "target": "The national debt is said to be falling.",
      "accept": [
       "The national debt is said to be shrinking.",
-      "The national debt is said to be rising."
+      "The national debt is said to be decreasing."
      ],
      "hint": [
       {
@@ -25552,7 +25552,7 @@
      "target": "The deficit is expected to fall again.",
      "accept": [
       "The deficit is expected to shrink again.",
-      "The deficit is expected to grow again."
+      "The deficit is expected to decrease again."
      ],
      "hint": [
       {
@@ -25670,7 +25670,7 @@
      "target": "The tax burden is thought to have fallen.",
      "accept": [
       "The tax burden is thought to have dropped.",
-      "The tax burden is thought to have doubled."
+      "The tax burden is thought to have decreased."
      ],
      "hint": [
       {
@@ -25944,7 +25944,7 @@
      "target": "What drives the rent is inflation.",
      "accept": [
       "What drives the rent is inflation now.",
-      "What drives the price is inflation."
+      "What is driving the rent is inflation."
      ],
      "hint": [
       {
@@ -26073,7 +26073,7 @@
      "target": "It was the exchange rate that changed first.",
      "accept": [
       "It was the exchange rate that moved first.",
-      "It was the interest rate that changed first."
+      "It was the exchange rate that shifted first."
      ],
      "hint": [
       {
@@ -26167,7 +26167,7 @@
      "target": "What a consumer feels is not the number.",
      "accept": [
       "What a consumer feels is not the figure.",
-      "What a consumer feels is not the average."
+      "What a consumer feels is not the statistic."
      ],
      "hint": [
       {
@@ -26465,7 +26465,7 @@
      "target": "Facing a housing shortage, students left.",
      "accept": [
       "Facing a housing shortage, the students left.",
-      "Facing a housing shortage, families moved out."
+      "Facing a housing shortage, students moved out."
      ],
      "hint": [
       {
@@ -26574,7 +26574,7 @@
      "target": "Built quickly, the school is overcrowded.",
      "accept": [
       "Built quickly, that school is overcrowded.",
-      "Built quickly, the residential area is overcrowded."
+      "Built fast, the school is overcrowded."
      ],
      "hint": [
       {
@@ -26648,7 +26648,7 @@
      "target": "Having lost its green space, the town feels urban.",
      "accept": [
       "Having lost its green space, the town feels more urban.",
-      "Having lost its green space, the district feels urban."
+      "Having lost its green space, the town now feels urban."
      ],
      "hint": [
       {
@@ -26922,7 +26922,7 @@
      "target": "The report, which counts every child, is public.",
      "accept": [
       "The report, which counts every child, is open.",
-      "The report, which counts every migrant, is public."
+      "The report, which counts each child, is public."
      ],
      "hint": [
       {
@@ -27027,7 +27027,7 @@
      "target": "My neighbor, whose passport is recent, votes today.",
      "accept": [
       "My neighbor, whose passport is new, votes today.",
-      "My neighbor, whose citizenship is recent, votes today."
+      "My neighbor, whose passport is recent, is voting today."
      ],
      "hint": [
       {
@@ -27129,7 +27129,7 @@
      "target": "The law, which mentions asylum, is new.",
      "accept": [
       "The law, which mentions asylum, is recent.",
-      "The law, which mentions migration, is new."
+      "The law, which refers to asylum, is new."
      ],
      "hint": [
       {
@@ -27638,7 +27638,7 @@
      "target": "Rarely does a rally end early.",
      "accept": [
       "Rarely does a rally finish early.",
-      "Rarely does an election campaign end early."
+      "Rarely does a rally end so early."
      ],
      "hint": [
       {
@@ -27912,7 +27912,7 @@
      "target": "By summer the upturn will have started.",
      "accept": [
       "By summer the upturn will have begun.",
-      "By spring the upturn will have started."
+      "By summer the recovery will have started."
      ],
      "hint": [
       {
@@ -28021,7 +28021,7 @@
      "target": "Next year we will be watching the price.",
      "accept": [
       "Next year we will be following the price.",
-      "Next year we will be watching the investment."
+      "Next year we will be monitoring the price."
      ],
      "hint": [
       {
@@ -28139,7 +28139,7 @@
      "target": "By then the debt will have doubled.",
      "accept": [
       "By then the debt will have doubled in size.",
-      "By then the market share will have doubled."
+      "By then the debt will have grown twofold."
      ],
      "hint": [
       {
@@ -28413,7 +28413,7 @@
      "target": "The bill must have been short.",
      "accept": [
       "The bill must have been brief.",
-      "The bill must have been unclear."
+      "The draft law must have been short."
      ],
      "hint": [
       {
@@ -28522,7 +28522,7 @@
      "target": "They can't have read the file.",
      "accept": [
       "They cannot have read the file.",
-      "They can't have read the regulation."
+      "They couldn't have read the file."
      ],
      "hint": [
       {
@@ -28640,7 +28640,7 @@
      "target": "We should have funded supervision.",
      "accept": [
       "We should have paid for supervision.",
-      "We should have funded enforcement."
+      "We should have allocated funds to supervision."
      ],
      "hint": [
       {
@@ -28922,7 +28922,7 @@
      "target": "If the firm had avoided bankruptcy, we would have grown.",
      "accept": [
       "If the firm had avoided bankruptcy, we would have expanded.",
-      "If the firm had avoided bankruptcy, we would have stayed."
+      "If the company had avoided bankruptcy, we would have grown."
      ],
      "hint": [
       {
@@ -29027,7 +29027,7 @@
      "target": "If the pay had been fair, the staff would be calm now.",
      "accept": [
       "If the pay had been fair, the workers would be calm now.",
-      "If the severance pay had been fair, the town would be calm now."
+      "If the pay had been fair, the employees would be calm now."
      ],
      "hint": [
       {
@@ -29145,7 +29145,7 @@
      "target": "If the notice had been legal, the case would have ended.",
      "accept": [
       "If the notice had been lawful, the case would have ended.",
-      "If the dismissal had been legal, the case would have ended."
+      "If the notice had been legal, the case would have been over."
      ],
      "hint": [
       {
@@ -29419,7 +29419,7 @@
      "target": "It seems to be a guess.",
      "accept": [
       "It seems to be an estimate.",
-      "It seems to be a generalization."
+      "It appears to be a guess."
      ],
      "hint": [
       {
@@ -29528,7 +29528,7 @@
      "target": "Apparently the number is plausible.",
      "accept": [
       "Apparently that number is plausible.",
-      "Apparently the claim is plausible."
+      "Apparently the figure is plausible."
      ],
      "hint": [
       {
@@ -29646,7 +29646,7 @@
      "target": "On balance the claim is arguably questionable.",
      "accept": [
       "On balance that claim is arguably questionable.",
-      "On balance the figure is arguably questionable."
+      "On balance the claim is arguably doubtful."
      ],
      "hint": [
       {
@@ -29920,7 +29920,7 @@
      "target": "The restoration of the frame took two years.",
      "accept": [
       "The restoration of the frame took two full years.",
-      "The restoration of the canvas took two years."
+      "The repair of the frame took two years."
      ],
      "hint": [
       {
@@ -30021,7 +30021,7 @@
      "target": "The acquisition of the letter is documented.",
      "accept": [
       "The acquisition of that letter is documented.",
-      "The acquisition of the artwork is documented."
+      "The acquisition of the letter is on record."
      ],
      "hint": [
       {
@@ -30147,7 +30147,7 @@
      "target": "The display of the letter begins in May.",
      "accept": [
       "The display of that letter begins in May.",
-      "The display of the exhibit begins in May."
+      "The display of the letter starts in May."
      ],
      "hint": [
       {
@@ -30420,8 +30420,8 @@
      "kind": "produce",
      "target": "The composer is said to be abroad.",
      "accept": [
-      "The composer is said to be away.",
-      "The composer is said to be sick."
+      "The composer is said to be overseas.",
+      "The composer is said to be out of the country."
      ],
      "hint": [
       {
@@ -30529,8 +30529,8 @@
      "kind": "produce",
      "target": "The screenplay is expected to win.",
      "accept": [
-      "The screenplay is expected to succeed.",
-      "The screenplay is expected to change."
+      "The screenplay is expected to win an award.",
+      "The script is expected to win."
      ],
      "hint": [
       {
@@ -30648,7 +30648,7 @@
      "target": "The premiere is thought to have been canceled.",
      "accept": [
       "The premiere is thought to have been called off.",
-      "The premiere is thought to have been delayed."
+      "The gala is thought to have been canceled."
      ],
      "hint": [
       {
@@ -30930,7 +30930,7 @@
      "target": "What the film does is name the cost.",
      "accept": [
       "What this film does is name the cost.",
-      "What the drama does is name the cost."
+      "What the movie does is name the cost."
      ],
      "hint": [
       {
@@ -31039,7 +31039,7 @@
      "target": "It was the parody that changed him.",
      "accept": [
       "It was that parody that changed him.",
-      "It was the tragedy that changed him."
+      "It was the parody which changed him."
      ],
      "hint": [
       {
@@ -31121,7 +31121,7 @@
      "target": "What a parody keeps is the rhythm.",
      "accept": [
       "What a parody keeps is the beat.",
-      "What a parody keeps is the context."
+      "What a parody preserves is the rhythm."
      ],
      "hint": [
       {
@@ -31500,7 +31500,7 @@
      "target": "Wanting a new life, she left the city.",
      "accept": [
       "Wanting a new life, she left the town.",
-      "Wanting a new role, she left the company."
+      "Wanting a new life, she left the city behind."
      ],
      "hint": [
       {
@@ -31626,7 +31626,7 @@
      "target": "Praised for years, the writer stayed modest.",
      "accept": [
       "Praised for years, the author stayed modest.",
-      "Praised for years, the actor stayed modest."
+      "Praised for years, the writer remained modest."
      ],
      "hint": [
       {
@@ -31915,8 +31915,8 @@
      "kind": "produce",
      "target": "The market, which keeps an old custom, is free.",
      "accept": [
-      "The market, which keeps an old custom, is open.",
-      "The folk festival, which keeps an old custom, is free."
+      "The market, which keeps an old custom, is free of charge.",
+      "The market, which upholds an old custom, is free."
      ],
      "hint": [
       {
@@ -32025,7 +32025,7 @@
      "target": "My uncle, whose interpretation of the dance is famous, dances first.",
      "accept": [
       "My uncle, whose reading of the dance is famous, dances first.",
-      "My aunt, whose interpretation of the dance is famous, dances first."
+      "My uncle, whose interpretation of the dance is famous, is the first to dance."
      ],
      "hint": [
       {
@@ -32106,8 +32106,8 @@
      "kind": "produce",
      "target": "The parade, which keeps an old custom, is free.",
      "accept": [
-      "The parade, which keeps an old custom, is open.",
-      "The folk festival, which keeps an old custom, is free."
+      "The parade, which keeps an old custom, is free of charge.",
+      "The parade, which upholds an old custom, is free."
      ],
      "hint": [
       {
@@ -32405,7 +32405,7 @@
      "target": "Never has a win caused such outrage.",
      "accept": [
       "Never has a victory caused such outrage.",
-      "Never has a defeat caused such outrage."
+      "Never has a win sparked such outrage."
      ],
      "hint": [
       {
@@ -32510,7 +32510,7 @@
      "target": "Only after the show do they cheer on the rest.",
      "accept": [
       "Only after the show do they cheer on the others.",
-      "Only after the final do they cheer on the rest."
+      "Only after the performance do they cheer on the rest."
      ],
      "hint": [
       {
@@ -32584,7 +32584,7 @@
      "target": "Rarely does a singer leave the stage early.",
      "accept": [
       "Rarely does a singer leave the stage so early.",
-      "Rarely does a fan leave the grandstand early."
+      "Rarely does a singer walk off the stage early."
      ],
      "hint": [
       {
@@ -32858,7 +32858,7 @@
      "target": "By July we will have archived the letters.",
      "accept": [
       "By July we will have archived those letters.",
-      "By June we will have archived the letters."
+      "By July we'll have archived the letters."
      ],
      "hint": [
       {
@@ -32967,7 +32967,7 @@
      "target": "Next month we will be waiting for the answer.",
      "accept": [
       "Next month we will be waiting for a reply.",
-      "Next month we will be waiting for approval."
+      "Next month we'll be waiting for the answer."
      ],
      "hint": [
       {
@@ -33085,7 +33085,7 @@
      "target": "By fall we will have decided to commission the film.",
      "accept": [
       "By fall we will have decided to commission a film.",
-      "By fall we will have decided to commission the work."
+      "By fall we'll have decided to commission the film."
      ],
      "hint": [
       {
@@ -33359,7 +33359,7 @@
      "target": "The opening must have been hasty.",
      "accept": [
       "The opening must have been rushed.",
-      "The ending must have been hasty."
+      "The opening must have been hurried."
      ],
      "hint": [
       {
@@ -33464,7 +33464,7 @@
      "target": "They can't have missed the ending.",
      "accept": [
       "They cannot have missed the ending.",
-      "They can't have missed the shortcoming."
+      "They couldn't have missed the ending."
      ],
      "hint": [
       {
@@ -33582,7 +33582,7 @@
      "target": "We should have noticed the first line.",
      "accept": [
       "We should have seen the first line.",
-      "We should have noticed the revealing line."
+      "We should have noticed the opening line."
      ],
      "hint": [
       {
@@ -33880,7 +33880,7 @@
      "target": "If she had portrayed the street, the work would have been grand.",
      "accept": [
       "If she had portrayed the road, the work would have been grand.",
-      "If she had portrayed the room, the work would have been grand."
+      "If she had depicted the street, the work would have been grand."
      ],
      "hint": [
       {
@@ -33989,7 +33989,7 @@
      "target": "If the story had been more elegant, the hall would be full now.",
      "accept": [
       "If the story had been more elegant, the theater would be full now.",
-      "If the depiction had been more elegant, the hall would be full now."
+      "If the tale had been more elegant, the hall would be full now."
      ],
      "hint": [
       {
@@ -34063,7 +34063,7 @@
      "target": "If the music had been stylish, the play would have lasted.",
      "accept": [
       "If the music had been stylish, the play would have continued.",
-      "If the set had been stylish, the play would have lasted."
+      "If the music had been chic, the play would have lasted."
      ],
      "hint": [
       {
@@ -34345,7 +34345,7 @@
      "target": "It seems to be a fair view.",
      "accept": [
       "It seems to be a fair reading.",
-      "It seems to be an opposing view."
+      "It seems to be a fair perspective."
      ],
      "hint": [
       {
@@ -34450,7 +34450,7 @@
      "target": "Apparently the review is convincing.",
      "accept": [
       "Apparently that review is convincing.",
-      "Apparently the counterargument is convincing."
+      "Apparently the critique is convincing."
      ],
      "hint": [
       {
@@ -34532,7 +34532,7 @@
      "target": "On balance the film is arguably weak, especially since the book was strong.",
      "accept": [
       "On balance the film is arguably poor, especially since the book was strong.",
-      "On balance the ending is arguably weak, especially since the start was strong."
+      "On balance the movie is arguably weak, especially since the book was strong."
      ],
      "hint": [
       {
@@ -34806,7 +34806,7 @@
      "target": "The preparation of the report took a week.",
      "accept": [
       "The preparation of that report took a week.",
-      "The preparation of the cost estimate took a week."
+      "The preparation of the report took one week."
      ],
      "hint": [
       {
@@ -35029,7 +35029,7 @@
      "target": "The checking of the account is monthly.",
      "accept": [
       "The checking of that account is monthly.",
-      "The checking of the bookkeeping is monthly."
+      "The audit of the account is monthly."
      ],
      "hint": [
       {
@@ -35303,7 +35303,7 @@
      "target": "The expansion is said to be over.",
      "accept": [
       "The expansion is said to be finished.",
-      "The expansion is said to be paused."
+      "The expansion is said to have ended."
      ],
      "hint": [
       {
@@ -35408,7 +35408,7 @@
      "target": "The profitability is expected to rise.",
      "accept": [
       "The profitability is expected to grow.",
-      "The profitability is expected to fall."
+      "The profitability is expected to increase."
      ],
      "hint": [
       {
@@ -35526,7 +35526,7 @@
      "target": "The plan is thought to have changed.",
      "accept": [
       "That plan is thought to have changed.",
-      "The business model is thought to have changed."
+      "The plan is believed to have changed."
      ],
      "hint": [
       {
@@ -35808,7 +35808,7 @@
      "target": "What decides a career is timing.",
      "accept": [
       "What decides a career is the timing.",
-      "What decides a career is strategy."
+      "What determines a career is timing."
      ],
      "hint": [
       {
@@ -35913,7 +35913,7 @@
      "target": "It was the pay that drove her out.",
      "accept": [
       "It was the salary that drove her out.",
-      "It was the leadership style that drove her out."
+      "It was the pay that pushed her out."
      ],
      "hint": [
       {
@@ -35995,7 +35995,7 @@
      "target": "What we aim for is not a title.",
      "accept": [
       "What we aim for is not the title.",
-      "What we aim for is not a dead end."
+      "What we are aiming for is not a title."
      ],
      "hint": [
       {
@@ -36285,7 +36285,7 @@
      "target": "Having read the report, they decided.",
      "accept": [
       "Having read that report, they decided.",
-      "Having read the personnel file, they decided."
+      "Having read the report, they made a decision."
      ],
      "hint": [
       {
@@ -36476,7 +36476,7 @@
      "target": "Asked to lead, she agreed.",
      "accept": [
       "Asked to manage, she agreed.",
-      "Asked to supervise, she agreed."
+      "Asked to lead, she accepted."
      ],
      "hint": [
       {
@@ -36750,7 +36750,7 @@
      "target": "The offer, which is a permanent position, arrived yesterday.",
      "accept": [
       "The offer, which is a permanent position, came yesterday.",
-      "The offer, which is a permanent position, arrived today."
+      "The offer, which is a permanent job, arrived yesterday."
      ],
      "hint": [
       {
@@ -36855,7 +36855,7 @@
      "target": "My friend, whose notice period is short, leaves in May.",
      "accept": [
       "My friend, whose notice period is brief, leaves in May.",
-      "My colleague, whose notice period is short, leaves in May."
+      "My friend, whose notice period is short, is leaving in May."
      ],
      "hint": [
       {
@@ -36973,7 +36973,7 @@
      "target": "The offer, which has a fixed term, pays more.",
      "accept": [
       "That offer, which has a fixed term, pays more.",
-      "The other job, which has a fixed term, pays more."
+      "The offer, which is for a fixed term, pays more."
      ],
      "hint": [
       {
@@ -37255,7 +37255,7 @@
      "target": "Never has a job been so hard to find.",
      "accept": [
       "Never has work been so hard to find.",
-      "Never has a skilled worker been so hard to find."
+      "Never has a job been this hard to find."
      ],
      "hint": [
       {
@@ -37356,7 +37356,7 @@
      "target": "Only after the call do they see the overqualified.",
      "accept": [
       "Only after the call do they meet the overqualified.",
-      "Only after the test do they call the overqualified."
+      "Only after the phone call do they see the overqualified."
      ],
      "hint": [
       {
@@ -37482,7 +37482,7 @@
      "target": "Rarely does a manager answer so fast.",
      "accept": [
       "Rarely does a boss answer so fast.",
-      "Rarely does human resources answer so fast."
+      "Rarely does a manager reply so fast."
      ],
      "hint": [
       {
@@ -37764,7 +37764,7 @@
      "target": "By spring we will have saved enough to pay off the loan.",
      "accept": [
       "By spring we will have saved enough to pay off the debt.",
-      "By December we will have saved enough to pay off the loan."
+      "By spring we'll have saved enough to pay off the loan."
      ],
      "hint": [
       {
@@ -37861,7 +37861,7 @@
      "target": "Next month we will be preparing for the first installment.",
      "accept": [
       "Next month we will be preparing for the first payment.",
-      "Next month we will be preparing for the due date."
+      "Next month we'll be preparing for the first installment."
      ],
      "hint": [
       {
@@ -37979,7 +37979,7 @@
      "target": "By the payment deadline we will have decided how to use up the budget.",
      "accept": [
       "By the payment deadline we will have decided how to use up the money.",
-      "By the payment deadline we will have decided how to use up the rest."
+      "By the payment deadline we'll have decided how to use up the budget."
      ],
      "hint": [
       {
@@ -38253,7 +38253,7 @@
      "target": "The bank must have warned them.",
      "accept": [
       "The bank must have told them.",
-      "The creditor must have warned them."
+      "The bank must have alerted them."
      ],
      "hint": [
       {
@@ -38362,7 +38362,7 @@
      "target": "They can't have signed the paper alone.",
      "accept": [
       "They cannot have signed the paper alone.",
-      "They can't have signed the mortgage alone."
+      "They couldn't have signed the paper alone."
      ],
      "hint": [
       {
@@ -38480,7 +38480,7 @@
      "target": "We should have asked for a longer plan.",
      "accept": [
       "We should have asked for a longer schedule.",
-      "We should have asked for an interest-free plan."
+      "We should have requested a longer plan."
      ],
      "hint": [
       {
@@ -38769,8 +38769,8 @@
      "kind": "produce",
      "target": "If the liability insurance had covered it, we would have paid less.",
      "accept": [
-      "If the liability insurance had covered it, we would have paid little.",
-      "If the liability insurance had covered it, we would have paid nothing."
+      "If the liability insurance had covered it, we'd have paid less.",
+      "If our liability insurance had covered it, we would have paid less."
      ],
      "hint": [
       {
@@ -38874,8 +38874,8 @@
      "kind": "produce",
      "target": "If the plan had started earlier, the pension would be higher now.",
      "accept": [
-      "If the plan had started earlier, the payment would be higher now.",
-      "If the pension insurance had started earlier, the company pension would be higher now."
+      "If the plan had begun earlier, the pension would be higher now.",
+      "If the plan had started earlier, the pension would be bigger now."
      ],
      "hint": [
       {
@@ -38957,7 +38957,7 @@
      "target": "If the savings had grown, we would have stopped earlier.",
      "accept": [
       "If the savings had grown, we would have stopped sooner.",
-      "If the retirement savings had grown, we would have stopped working."
+      "If the savings had grown, we would have quit earlier."
      ],
      "hint": [
       {
@@ -39231,7 +39231,7 @@
      "target": "It seems to be fair.",
      "accept": [
       "It seems to be reasonable.",
-      "It seems to be proportional."
+      "It appears to be fair."
      ],
      "hint": [
       {
@@ -39340,7 +39340,7 @@
      "target": "Apparently the answer came for operational reasons.",
      "accept": [
       "Apparently the reply came for operational reasons.",
-      "Apparently the raise was refused for operational reasons."
+      "Apparently the response came for operational reasons."
      ],
      "hint": [
       {
@@ -39458,7 +39458,7 @@
      "target": "On balance the training is arguably the point.",
      "accept": [
       "On balance the training is arguably the issue.",
-      "On balance the work-life balance is arguably the point."
+      "On balance the training is arguably the main issue."
      ],
      "hint": [
       {
@@ -39732,7 +39732,7 @@
      "target": "The measurement of memory takes an hour.",
      "accept": [
       "The measurement of memory takes one hour.",
-      "The measurement of perception takes an hour."
+      "The measuring of memory takes an hour."
      ],
      "hint": [
       {
@@ -39829,7 +39829,7 @@
      "target": "The naming of a feeling helps.",
      "accept": [
       "The naming of an emotion helps.",
-      "The naming of a behavior pattern helps."
+      "The naming of a feeling is helpful."
      ],
      "hint": [
       {
@@ -39955,7 +39955,7 @@
      "target": "The building of trust is slow.",
      "accept": [
       "The building of confidence is slow.",
-      "The building of self-confidence is slow."
+      "The building of trust is a slow process."
      ],
      "hint": [
       {
@@ -40228,8 +40228,8 @@
      "kind": "produce",
      "target": "She is said to feel calm.",
      "accept": [
-      "She is said to feel fine.",
-      "She is said to feel distrust."
+      "She is said to feel relaxed.",
+      "She is said to be feeling calm."
      ],
      "hint": [
       {
@@ -40338,7 +40338,7 @@
      "target": "The admiration is expected to grow.",
      "accept": [
       "The admiration is expected to rise.",
-      "The admiration is expected to fade."
+      "The admiration is expected to increase."
      ],
      "hint": [
       {
@@ -40456,7 +40456,7 @@
      "target": "The remark is thought to have been genuine.",
      "accept": [
       "That remark is thought to have been genuine.",
-      "The appreciation is thought to have been genuine."
+      "The remark is believed to have been genuine."
      ],
      "hint": [
       {
@@ -40730,7 +40730,7 @@
      "target": "What really hurt was not the silence.",
      "accept": [
       "What really hurt was not that silence.",
-      "What really hurt was not the rage."
+      "What really hurt wasn't the silence."
      ],
      "hint": [
       {
@@ -40839,7 +40839,7 @@
      "target": "It was the distance that ended it.",
      "accept": [
       "It was that distance that ended it.",
-      "It was the jealousy that ended it."
+      "It was the distance which ended it."
      ],
      "hint": [
       {
@@ -40956,8 +40956,8 @@
      "kind": "produce",
      "target": "What stays is the doubt.",
      "accept": [
-      "What stays is the question.",
-      "What stays is the remorse."
+      "What remains is the doubt.",
+      "What is left is the doubt."
      ],
      "hint": [
       {
@@ -41239,7 +41239,7 @@
      "target": "Having tried to help, she stopped.",
      "accept": [
       "Having tried to help, she gave up.",
-      "Having tried to mediate, she stopped."
+      "Having tried to assist, she stopped."
      ],
      "hint": [
       {
@@ -41462,7 +41462,7 @@
      "target": "Asked to stay, they refused.",
      "accept": [
       "Asked to remain, they refused.",
-      "Asked to reconcile, they refused."
+      "Asked to stay, they declined."
      ],
      "hint": [
       {
@@ -41845,7 +41845,7 @@
      "target": "My brother, whose manner is composed, asked once.",
      "accept": [
       "My brother, whose manner is calm, asked once.",
-      "My colleague, whose manner is composed, asked once."
+      "My brother, whose manner is collected, asked once."
      ],
      "hint": [
       {
@@ -41963,7 +41963,7 @@
      "target": "My sister, who is sociable, stayed calm.",
      "accept": [
       "My sister, who is outgoing, stayed calm.",
-      "My sister, who is ambitious, stayed calm."
+      "My sister, who is sociable, remained calm."
      ],
      "hint": [
       {
@@ -42245,7 +42245,7 @@
      "target": "Never has a day felt so heavy.",
      "accept": [
       "Never has a day seemed so heavy.",
-      "Never has a burden felt so heavy."
+      "Never had a day felt so heavy."
      ],
      "hint": [
       {
@@ -42342,7 +42342,7 @@
      "target": "Only after the night does the coping begin.",
      "accept": [
       "Only after that night does the coping begin.",
-      "Only after the talk does the coping begin."
+      "Only after the night does coping begin."
      ],
      "hint": [
       {
@@ -42468,7 +42468,7 @@
      "target": "Rarely does a loss pass quietly.",
      "accept": [
       "Rarely does a loss go quietly.",
-      "Rarely does a trauma pass quietly."
+      "Rarely does a loss go by quietly."
      ],
      "hint": [
       {
@@ -42742,7 +42742,7 @@
      "target": "By next winter we will have passed the turning point.",
      "accept": [
       "By next winter we will have passed that turning point.",
-      "By next summer we will have passed the turning point."
+      "By next winter we'll have passed the turning point."
      ],
      "hint": [
       {
@@ -42851,7 +42851,7 @@
      "target": "Next year we will be building a routine.",
      "accept": [
       "Next year we will be building a habit.",
-      "Next year we will be building a sense of security."
+      "Next year we will be establishing a routine."
      ],
      "hint": [
       {
@@ -42969,7 +42969,7 @@
      "target": "By then the school year will have ended.",
      "accept": [
       "By then the term will have ended.",
-      "By then his puberty will have ended."
+      "By then the school year will have finished."
      ],
      "hint": [
       {
@@ -43242,8 +43242,8 @@
      "kind": "produce",
      "target": "She must have failed to hear it.",
      "accept": [
-      "She must have failed to notice it.",
-      "He must have failed to empathize."
+      "She must have been unable to hear it.",
+      "She must not have heard it."
      ],
      "hint": [
       {
@@ -43348,7 +43348,7 @@
      "target": "They can't have been unkind.",
      "accept": [
       "They cannot have been unkind.",
-      "They can't have been unforgiving."
+      "They can't have been hurtful."
      ],
      "hint": [
       {
@@ -43465,8 +43465,8 @@
      "kind": "produce",
      "target": "We should have been more patient.",
      "accept": [
-      "We should have been calmer.",
-      "We should have been more open-minded."
+      "We should have had more patience.",
+      "We ought to have been more patient."
      ],
      "hint": [
       {
@@ -43588,7 +43588,7 @@
     "tr": "sonucu bugüne taşır"
    },
    {
-    "de": "If the reliability had been there, we would have stayed.",
+    "de": "If there had been more reliability, we would have stayed.",
     "tr": "gerçekleşmemiş bir geçmişi anlatır"
    }
   ],
@@ -43692,16 +43692,16 @@
      },
      {
       "lang": "en",
-      "text": "If the reliability had been there, we would have stayed."
+      "text": "If there had been more reliability, we would have stayed."
      },
      {
       "lang": "tr",
-      "text": "Güvenilirlik olsaydı kalırdık."
+      "text": "Güvenilir olsalardı kalırdık."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "If the reliability had been there, we would have stayed."
+     "target": "If there had been more reliability, we would have stayed."
     }
    },
    {
@@ -43748,7 +43748,7 @@
      "target": "If we had talked, the house would have been sold.",
      "accept": [
       "If we had talked, the apartment would have been sold.",
-      "If we had talked, custody would have been shared."
+      "If we had talked, the house would have sold."
      ],
      "hint": [
       {
@@ -43857,7 +43857,7 @@
      "target": "If the answer had been fair, the family would be calm now.",
      "accept": [
       "If the reply had been fair, the family would be calm now.",
-      "If the child support had been fair, the family would be calm now."
+      "If the answer had been fair, the family would be at peace now."
      ],
      "hint": [
       {
@@ -43975,7 +43975,7 @@
      "target": "If the trust had been there, we would have stayed.",
      "accept": [
       "If the trust had been there, we would have remained.",
-      "If the reliability had been there, we would have stayed."
+      "If there had been trust, we would have stayed."
      ],
      "hint": [
       {
@@ -44248,8 +44248,8 @@
      "kind": "produce",
      "target": "It seems to be a small signal.",
      "accept": [
-      "It seems to be a quiet signal.",
-      "It seems to be a nonverbal signal."
+      "It seems to be a small sign.",
+      "It appears to be a small signal."
      ],
      "hint": [
       {
@@ -44354,7 +44354,7 @@
      "target": "Apparently the silence carried it.",
      "accept": [
       "Apparently that silence carried it.",
-      "Apparently the tone of voice carried it."
+      "Apparently it was the silence that carried it."
      ],
      "hint": [
       {
@@ -44472,7 +44472,7 @@
      "target": "On balance the timing is arguably the problem.",
      "accept": [
       "On balance the moment is arguably the problem.",
-      "On balance the choice of words is arguably the problem."
+      "On balance the timing is arguably the issue."
      ],
      "hint": [
       {
@@ -44770,7 +44770,7 @@
      "target": "The filing of the report is done.",
      "accept": [
       "The filing of that report is done.",
-      "The filing of the enclosure is done."
+      "The filing of the report is complete."
      ],
      "hint": [
       {
@@ -44980,7 +44980,7 @@
      "target": "The sending of a letter is recorded.",
      "accept": [
       "The sending of that letter is recorded.",
-      "The sending of a certified letter is recorded."
+      "The sending of a letter is logged."
      ],
      "hint": [
       {
@@ -45254,7 +45254,7 @@
      "target": "The case file is said to be closed.",
      "accept": [
       "The case file is said to be finished.",
-      "The case file is said to be complete."
+      "The case file is said to have been closed."
      ],
      "hint": [
       {
@@ -45359,7 +45359,7 @@
      "target": "The legal basis is expected to hold.",
      "accept": [
       "The legal basis is expected to stand.",
-      "The legal basis is expected to change."
+      "The legal grounds are expected to hold."
      ],
      "hint": [
       {
@@ -45477,7 +45477,7 @@
      "target": "The payment is thought to have started.",
      "accept": [
       "The payment is thought to have begun.",
-      "The proceedings are thought to have started."
+      "The payment is believed to have started."
      ],
      "hint": [
       {
@@ -45750,8 +45750,8 @@
      "kind": "produce",
      "target": "What caused the delay was a missing file.",
      "accept": [
-      "What caused the delay was a lost file.",
-      "What caused the delay was a scheduling conflict."
+      "What caused the delay was a missing document.",
+      "What caused the delay was an incomplete file."
      ],
      "hint": [
       {
@@ -45856,7 +45856,7 @@
      "target": "It was the extra week that saved us.",
      "accept": [
       "It was that extra week that saved us.",
-      "It was the deadline extension that saved us."
+      "It was the additional week that saved us."
      ],
      "hint": [
       {
@@ -45974,7 +45974,7 @@
      "target": "What we lack is a clear plan.",
      "accept": [
       "What we lack is a clear schedule.",
-      "What we lack is buffer time."
+      "What is missing is a clear plan."
      ],
      "hint": [
       {
@@ -46256,7 +46256,7 @@
      "target": "Having read the letter, we changed the plan.",
      "accept": [
       "Having read that letter, we changed the plan.",
-      "Having read the interim report, we changed the plan."
+      "Having read the letter, we altered the plan."
      ],
      "hint": [
       {
@@ -46365,7 +46365,7 @@
      "target": "Wanting to carry out the plan, they waited.",
      "accept": [
       "Wanting to carry out that plan, they waited.",
-      "Wanting to carry out the test, they waited."
+      "Wanting to implement the plan, they waited."
      ],
      "hint": [
       {
@@ -46483,7 +46483,7 @@
      "target": "Asked to write, she wrote again.",
      "accept": [
       "Asked to reply, she wrote again.",
-      "Asked to follow up, she wrote again."
+      "Asked to write, she rewrote it."
      ],
      "hint": [
       {
@@ -46757,7 +46757,7 @@
      "target": "My manager, whose area of responsibility is wide, answered.",
      "accept": [
       "My boss, whose area of responsibility is wide, answered.",
-      "My colleague, whose area of responsibility is wide, answered."
+      "My manager, whose area of responsibility is broad, answered."
      ],
      "hint": [
       {
@@ -46854,7 +46854,7 @@
      "target": "The rule, which is a new arrangement, works.",
      "accept": [
       "That rule, which is a new arrangement, works.",
-      "The plan, which is a new arrangement, works."
+      "The rule, which is a new arrangement, is working."
      ],
      "hint": [
       {
@@ -46980,7 +46980,7 @@
      "target": "The list, which nobody read, is old.",
      "accept": [
       "That list, which nobody read, is old.",
-      "The division of tasks, which nobody read, is old."
+      "The list, which no one read, is old."
      ],
      "hint": [
       {
@@ -47262,7 +47262,7 @@
      "target": "Never has a letter come so promptly.",
      "accept": [
       "Never has a note come so promptly.",
-      "Never has an answer come so promptly."
+      "Never has a letter arrived so promptly."
      ],
      "hint": [
       {
@@ -47363,7 +47363,7 @@
      "target": "Only after the second letter do they send a reminder.",
      "accept": [
       "Only after the second note do they send a reminder.",
-      "Only after the third letter do they send a reminder."
+      "Only after the second letter do they send out a reminder."
      ],
      "hint": [
       {
@@ -47489,7 +47489,7 @@
      "target": "Rarely does a letter arrive so swiftly.",
      "accept": [
       "Rarely does a note arrive so swiftly.",
-      "Rarely does a reply arrive so swiftly."
+      "Rarely does a letter arrive so quickly."
      ],
      "hint": [
       {
@@ -47763,7 +47763,7 @@
      "target": "By April we will have signed the supplementary agreement.",
      "accept": [
       "By April we will have signed that supplementary agreement.",
-      "By March we will have signed the supplementary agreement."
+      "By April we'll have signed the supplementary agreement."
      ],
      "hint": [
       {
@@ -47868,7 +47868,7 @@
      "target": "Next month we will be checking the file.",
      "accept": [
       "Next month we will be checking that file.",
-      "Next month we will be checking the price adjustment."
+      "Next month we'll be checking the file."
      ],
      "hint": [
       {
@@ -47986,7 +47986,7 @@
      "target": "By then the last invoice will have been paid.",
      "accept": [
       "By then the final invoice will have been paid.",
-      "By then the remaining amount will have been paid."
+      "By then the last bill will have been paid."
      ],
      "hint": [
       {
@@ -48079,7 +48079,7 @@
    },
    {
     "de": "redeem",
-    "tr": "bozdurmak"
+    "tr": "karşılığında kullanmak"
    },
    {
     "de": "store credit",
@@ -48260,7 +48260,7 @@
      "target": "The label must have been misleading.",
      "accept": [
       "That label must have been misleading.",
-      "The ad must have been misleading."
+      "The label must have been deceptive."
      ],
      "hint": [
       {
@@ -48369,7 +48369,7 @@
      "target": "They can't have meant to hide it.",
      "accept": [
       "They cannot have meant to hide it.",
-      "They can't have meant to deceive us."
+      "They couldn't have meant to hide it."
      ],
      "hint": [
       {
@@ -48776,7 +48776,7 @@
      "kind": "produce",
      "target": "If the discount had applied, we would have ordered.",
      "accept": [
-      "If the voucher had arrived, we would have ordered."
+      "If the discount had been valid, we would have ordered."
      ],
      "hint": [
       {
@@ -48881,7 +48881,7 @@
      "target": "If the contract had been clear, the fee would be lower now.",
      "accept": [
       "If the agreement had been clear, the fee would be lower now.",
-      "If the rate plan had been clear, the base fee would be lower now."
+      "If the contract had been clear, the fee would be lower today."
      ],
      "hint": [
       {
@@ -49237,7 +49237,7 @@
      "target": "It seems to be settled, in view of your note.",
      "accept": [
       "It seems to be settled, in view of that note.",
-      "It seems to be settled, in view of your letter."
+      "It seems to be settled, given your note."
      ],
      "hint": [
       {
@@ -49345,8 +49345,8 @@
      "kind": "produce",
      "target": "Apparently we can close this, provided that the form is complete.",
      "accept": [
-      "Apparently we can close this, provided that the report is complete.",
-      "Apparently we can close this, provided that the file is complete."
+      "Apparently we can close this, provided the form is complete.",
+      "Apparently we can close this, provided that the form is filled in."
      ],
      "hint": [
       {
@@ -49464,7 +49464,7 @@
      "target": "On balance, one more point is arguably worth making.",
      "accept": [
       "On balance, another point is arguably worth making.",
-      "On balance, one last point is arguably worth making."
+      "On balance, one further point is arguably worth making."
      ],
      "hint": [
       {

@@ -230,9 +230,9 @@
   "de": "Du fasst ein Strategiepapier mündlich zusammen, und die Zuhörerin überträgt die Maßstäbe auf ihren eigenen Markt. Verbinde drei Abschnitte mit Adressen nach oben, nach unten und zurück."
  },
  {
-  "tr": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
   "kind": "scene",
-  "de": "Du willst in deiner Firma eine Unregelmäßigkeit melden und die Forderung nicht in deinem Namen, sondern im Namen eines Maßstabs sagen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
+  "de": "Du willst in deiner Firma eine Unregelmäßigkeit melden und die Forderung nicht in deinem Namen, sondern im Namen eines Maßstabs sagen. Bilde den Wunsch, das Wäre-nicht und die Forderung in festen Formen."
  },
  {
   "tr": "Faiz kararı üstüne bir tartışmadasın ve aracın işe yaradığını inkâr etmeden bedelini söylemek istiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
@@ -423,11 +423,6 @@
   "tr": "risk iştahı",
   "kind": "vocab.tr",
   "de": "Risikobereitschaft"
- },
- {
-  "tr": "yokluğundan",
-  "kind": "vocab.tr",
-  "de": "mangels"
  },
  {
   "tr": "aşırı borçlu",
@@ -1913,5 +1908,10 @@
   "tr": "dendiğinde işletmenin kime kalacağı yazılmamış olur ve risk sessizce karşı tarafa geçer. Bir teklifi okumak, adlandırılmayanı aramaktır.",
   "kind": "say.tr",
   "de": "ist nicht geschrieben, wem der Betrieb zufällt, und das Risiko geht still auf die andere Seite über. Eine Ausschreibung zu lesen heißt, das Unbenannte zu suchen."
+ },
+ {
+  "tr": "yokluğundan",
+  "kind": "vocab.tr",
+  "de": "mangels"
  }
 ]

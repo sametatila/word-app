@@ -220,9 +220,9 @@
   "de": "Du bist in einer Debatte über den Milchpreis und willst die Bäuerin nicht wie einen Börsenposten beschreiben. Benenne die Börse, den Haushalt und den Direktverkauf mit drei verschiedenen Wortverbindungen."
  },
  {
-  "tr": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
   "kind": "scene",
-  "de": "Du bist auf einer agrarpolitischen Sitzung und willst deine These nicht wie den Vorteil deines eigenen Hofes aussehen lassen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
+  "de": "Du bist auf einer agrarpolitischen Sitzung und willst deine These nicht wie den Vorteil deines eigenen Hofes aussehen lassen. Bilde den Wunsch, das Wäre-nicht und die Forderung in festen Formen."
  },
  {
   "tr": "Bir tohum sözleşmesini çiftçi arkadaşına anlatıyorsun ve hangi hakkın eksiltildiğini göstermek istiyorsun. Üç cümlede birer öğe düşür ve eksilen hakkı adlandır.",
@@ -1180,7 +1180,7 @@
   "de": "und die Lockerung der Handelsregeln heißt"
  },
  {
-  "tr": "Toprağı satıp değerlenmesini beklemeye",
+  "tr": "Toprağı satın alıp değerlenmesini beklemeye",
   "kind": "say.tr",
   "de": "Boden zu kaufen und auf Wertzuwachs zu warten heißt"
  },
@@ -1370,9 +1370,9 @@
   "de": "Jetzt gibst du eine Etikettenaussage mit zwei Verben wieder."
  },
  {
-  "tr": "Kıraç tarlalar atıl duruyor, harap ahırlar durmuyor.",
+  "tr": "Kıraç tarlalar atıl duruyor, harap ahırlar boş.",
   "kind": "say.tr",
-  "de": "Die kargen Felder liegen brach, die baufälligen Ställe nicht."
+  "de": "Die kargen Felder liegen brach, die baufälligen Ställe stehen leer."
  },
  {
   "tr": "Bir toprağın adı, ona ne yapılabileceğinin de adıdır.",
@@ -1420,9 +1420,9 @@
   "de": "Jetzt die Regel von heute. Beim Boden heißt der Name Erlaubnis:"
  },
  {
-  "tr": "Süt kotası, dediler, üstelik küçük çiftliğe iyi geliyor.",
+  "tr": "Adil bir süt kotası, dediler, üstelik küçük çiftliğe iyi geliyor.",
   "kind": "say.tr",
-  "de": "Die Milchquote, sagten sie, und dazu gut für den kleinen Hof."
+  "de": "Eine gerechte Milchquote, sagten sie, und dazu gut für den kleinen Hof."
  },
  {
   "tr": "Şimdi sen kur: Yağmur olmasaydı tarımsal dönüşüm dururdu.",
@@ -1535,9 +1535,9 @@
   "de": "Wer ein Etikett wiedergibt, sagt auch, wie sehr er es sich zu eigen macht."
  },
  {
-  "tr": "Bir tane daha: Süt kotası, dediler, üstelik bölgeye iyi geliyor.",
+  "tr": "Bir tane daha: Adil bir süt kotası, dediler, üstelik bölgeye iyi geliyor.",
   "kind": "say.tr",
-  "de": "Noch eins: Die Milchquote, sagten sie, und dazu gut für die Region."
+  "de": "Noch eins: Eine gerechte Milchquote, sagten sie, und dazu gut für die Region."
  },
  {
   "tr": "Burada endüstriyel hayvancılık yok, insancıl barındırma var.",
@@ -1575,9 +1575,9 @@
   "de": "Überdüngen könnte flussabwärts Nitratbelastung bedeuten."
  },
  {
-  "tr": "Bir tane daha: Harap ahırlar atıl duruyor, kıraç tarlalar durmuyor.",
+  "tr": "Bir tane daha: Yamaçtaki tarlalar atıl duruyor, vadidekiler durmuyor.",
   "kind": "say.tr",
-  "de": "Noch eins: Die baufälligen Ställe liegen brach, die kargen Felder nicht."
+  "de": "Noch eins: Die Felder am Hang liegen brach, die im Tal nicht."
  },
  {
   "tr": "Kırdan kente göçün arkasında başarısız bir çiftliğin devri duruyor.",

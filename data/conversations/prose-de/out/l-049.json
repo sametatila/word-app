@@ -8,7 +8,7 @@
  { "tr": "Bu soruyu çok kullanacaksın. Lütfen tekrar et:", "kind": "say.tr", "de": "Diese Frage wirst du oft brauchen. Bitte wiederhole:" },
  { "tr": "Burada küçük bir ayrım var. Bir şey kırıldıysa", "kind": "say.tr", "de": "Hier gibt es eine kleine Unterscheidung. Ist etwas zerbrochen:" },
  { "tr": "Cevabınızı bekliyorum. Altına da isminden önce", "kind": "say.tr", "de": "Ich erwarte Ihre Antwort. Darunter, vor deinen Namen, schreibst du" },
- { "tr": "Çok iyi gidiyorsun. Bugün beş kelime öğrendik:", "kind": "say.tr", "de": "Du machst das sehr gut. Heute haben wir fünf Wörter gelernt:" },
+ { "tr": "Çok iyi gidiyorsun. Bugün öğrendiğimiz kelimelerden bazıları:", "kind": "say.tr", "de": "Du machst das sehr gut. Einige der Wörter, die wir heute gelernt haben:" },
  { "tr": "Deneme zamanı. Sen kur: Televizyon çalışmıyor.", "kind": "say.tr", "de": "Zeit zum Üben. Bilde du: Der Fernseher geht nicht." },
  { "tr": "Deneyelim. 'Hafta sonu evdeyim' cümlesini kur.", "kind": "say.tr", "de": "Probieren wir es. Bilde „Am Wochenende bin ich zu Hause“." },
  { "tr": "denir. Nesne it gibi bir zamirse ortaya girer:", "kind": "say.tr", "de": "sagt man. Ist das Objekt ein Pronomen wie it, rückt es in die Mitte:" },

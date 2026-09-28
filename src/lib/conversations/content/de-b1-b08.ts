@@ -453,7 +453,7 @@ export const deB1B08: Conversation[] = [
       { say: [tr("Hazırsın. Sohbette acil servis hemşiresine olanı anlatacaksın: ne oldu, ne zaman, sonra ne yaptın.")] },
     ],
     chat: {
-      scene: "Acil serviste hemşireye olanı anlatıyorsun: ne oldu, hangi sırayla oldu, şu an neren ağrıyor. Sıralamayı önce olan işi geriye çekerek kur.",
+      scene: "Acil serviste hemşireye olanı anlatıyorsun: ne oldu, hangi sırayla oldu, şu an neren ağrıyor. Daha önce olanı Plusquamperfekt ile anlat.",
       partner: "hızlı ve net soru soran bir acil servis hemşiresi",
       opening: "Bleiben Sie ruhig sitzen. Erzählen Sie kurz: Was ist passiert und wann war das?",
       openingTr: "Kalkmayın, oturduğunuz yerde kalın. Kısaca anlatın: Ne oldu ve ne zaman oldu?",

@@ -69,7 +69,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Mülakatta deneyimini anlatıyorsun.", de: "I have worked in this industry for six years, although I started in a small team.", tr: "Altı yıldır bu sektörde çalışıyorum, ama küçük bir ekipte başladım." },
-      { situation: "Şefinle ikramiyeyi konuşuyorsun.", de: "Could we discuss the bonus, although the target was raised?", tr: "Hedef yükseltilmiş olsa da ikramiyeyi konuşabilir miyiz?" },
+      { situation: "Şefinle ikramiyeyi konuşuyorsun.", de: "Could we discuss the bonus, although we did not fully reach the target?", tr: "Hedefe tam ulaşmamış olsak da ikramiyeyi konuşabilir miyiz?" },
     ],
     writing: {
       prompt: "Bir iş ilanı için niyet mektubu yaz.",

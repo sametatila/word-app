@@ -144,7 +144,7 @@
  { "tr": "Tam tersi.", "kind": "why.tr", "de": "Genau umgekehrt." },
  { "tr": "Doğru. Soru", "kind": "why.tr", "de": "Richtig. Die Frage" },
  { "tr": "Doğrusu bu.", "kind": "why.tr", "de": "— das ist richtig." },
- { "tr": "kullanırsın.", "kind": "why.tr", "de": "— ohne Ausnahme." },
+ { "tr": "kullanırsın.", "kind": "why.tr", "de": "." },
  { "tr": "Yanlış, çünkü", "kind": "why.tr", "de": "Falsch, denn" },
  { "tr": "'in kısası ise", "kind": "why.tr", "de": "— die Kurzform davon ist" },
  { "tr": "Doğrusu şöyle:", "kind": "why.tr", "de": "Richtig heißt es:" }

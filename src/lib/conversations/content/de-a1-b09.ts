@@ -869,7 +869,7 @@ export const deA1B09: Conversation[] = [
         expect: { kind: "repeat", target: "Musst du arbeiten" },
       },
       {
-        say: [tr("Bir üretim daha: 'Hemen doktora gitmelisin.' nasıl dersin?")],
+        say: [tr("Bir cümle daha: 'Hemen doktora gitmelisin.' nasıl dersin?")],
         expect: {
           kind: "produce",
           target: "Du musst sofort zum Arzt",
@@ -1615,7 +1615,7 @@ export const deA1B09: Conversation[] = [
 ],
     patterns: [
       { de: "Rufen Sie den Notarzt!", tr: "acil doktoru çağırmasını söyler" },
-      { de: "Hier ist ein Unfall.", tr: "kaza olduğunu bildirir" },
+      { de: "Hier ist ein Unfall passiert.", tr: "kaza olduğunu bildirir" },
       { de: "Bleiben Sie ruhig.", tr: "sakin kalmasını söyler" },
     ],
     lecture: [
@@ -1743,13 +1743,13 @@ export const deA1B09: Conversation[] = [
       {
         say: [
           tr("Telefondaki görevliye ne olduğunu söylemen gerek:"),
-          de("Hier ist ein Unfall."),
-          tr("Yani 'Burada bir kaza var.' Sonra nerede olduğunu söylersin; adres yeter, cümle kurmana bile gerek yok."),
+          de("Hier ist ein Unfall passiert."),
+          tr("Yani 'Burada bir kaza oldu.' Sonra nerede olduğunu söylersin; adres yeter, cümle kurmana bile gerek yok."),
         ],
       },
       {
-        say: [tr("Lütfen"), de("Hier ist ein Unfall"), tr("de.")],
-        expect: { kind: "repeat", target: "Hier ist ein Unfall" },
+        say: [tr("Lütfen"), de("Hier ist ein Unfall passiert"), tr("de.")],
+        expect: { kind: "repeat", target: "Hier ist ein Unfall passiert" },
       },
       {
         say: [
@@ -2219,7 +2219,7 @@ export const deA1B09: Conversation[] = [
         ],
       },
       {
-        say: [tr("Bir üretim daha: 'Diş hekimine gitmem lazım.' nasıl dersin?")],
+        say: [tr("Bir cümle daha: 'Diş hekimine gitmem lazım.' nasıl dersin?")],
         expect: {
           kind: "produce",
           target: "Ich muss zum Zahnarzt",

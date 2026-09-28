@@ -130,7 +130,7 @@ export const deC1B08: Conversation[] = [
       { say: [tr("Bir tane daha: 'İfadeyi biraz yumuşatmak isterim.'")], expect: produce("Die Aussage möchte ich etwas abschwächen", [tr("Nesne öne alınmış; ayrılabilen mastar sonda:"), de("Die Aussage möchte ich etwas abschwächen."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ungeachtet der Kosten wurde das Projekt bewilligt."), tr("cümlesi doğru mu?")], expect: truefalse("Ungeachtet der Kosten wurde das Projekt bewilligt.", true, [tr("Doğru. Bu edat tamlayan hâli istiyor ve tümleç başta olduğu için çekimli fiil ikinci sırada.")]) },
       { say: [tr("Son: 'Karşı görüşü de duymak gerekir.'")], expect: produce("Die Gegenposition muss man auch hören", [tr("Nesne öne alınmış; mastar sonda:"), de("Die Gegenposition muss man auch hören."), tr("Tekrar dene.")]) },
-      { say: [tr("Hazırsın. Sohbette bir kararı imtiyaz vererek savunacaksın.")] },
+      { say: [tr("Hazırsın. Sohbette bir kararı taviz vererek savunacaksın.")] },
     ],
     chat: {
       scene: "Tartışmalı bir kararı savunuyorsun. Karşı tarafın maliyet itirazını kabul et, buna rağmen kararın neden doğru olduğunu söyle, kendi ifadeni bir yerde yumuşat ve bir sınır çiz.",
@@ -393,7 +393,7 @@ export const deC1B08: Conversation[] = [
       { say: [tr("Sıra sende: 'Duyguyu taklit etmek hissetmekle aynı şey değildir.'")], expect: produce("Gefühle zu simulieren ist nicht dasselbe wie sie zu empfinden", [tr("İkinci mastar öbeği de nesnesini taşımalı:"), de("Gefühle zu simulieren ist nicht dasselbe wie sie zu empfinden."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Sorumluluk kime isnat edilecek?'")], expect: produce("Wem wird die Verantwortung zugerechnet", [tr("Soru zamiri yönelme hâlinde; edilgen sonda:"), de("Wem wird die Verantwortung zugerechnet?"), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bir makine sorumlu tutulamaz.'")], expect: produce("Eine Maschine kann nicht haftbar gemacht werden", [tr("Kipli edilgen; sonda ortaç ve werden:"), de("Eine Maschine kann nicht haftbar gemacht werden."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Es wirkt, als ob Maschinen fühlen."), tr("cümlesi doğru mu?")], expect: truefalse("Es wirkt, als ob Maschinen fühlen.", false, [tr("Bu yapı gerçek olmayanı işaretler ve dilek kipi ister; düz kip cümleyi bir iddiaya çevirir:"), de("Es wirkt, als ob Maschinen fühlten.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Es wirkt, als ob Maschinen fühlen."), tr("cümlesi doğru mu?")], expect: truefalse("Es wirkt, als ob Maschinen fühlen.", false, [tr("Bu yapı gerçek olmayanı işaretler; çoğulda fühlen düz kiple aynı göründüğü için dilek kipi II gerekir:"), de("Es wirkt, als ob Maschinen fühlten.")]) },
       { say: [tr("Son: 'Sınırı nereye çekiyoruz?'")], expect: produce("Wo ziehen wir die Grenze", [tr("Soru kelimesi başta; nesne belirtme hâlinde:"), de("Wo ziehen wir die Grenze?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette yapay zekânın sorumluluğunu tartışacaksın.")] },
     ],

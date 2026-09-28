@@ -72,7 +72,7 @@ export const deB1B15: Conversation[] = [
       { say: [tr("İkinci kalıbımız sıranın önemli olduğunu söylüyor. Öznesiz bir edilgen: yapan da yapılan da söylenmiyor, yalnız işlem.")] },
       { say: [tr("Şimdi: 'Ancak ondan sonra açılır.'")], expect: produce("Erst danach wird eingeschaltet", [tr("Öznesiz edilgen, yardımcı fiil tekil:"), de("Erst danach wird eingeschaltet."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Klimaanlage wird nach der Anleitung anschließen."), tr("cümlesi doğru mu?")], expect: truefalse("Die Klimaanlage wird nach der Anleitung anschließen.", false, [tr("Edilgende asıl fiil ortaç hâlinde olmalı, mastar hâlinde değil:"), de("Die Klimaanlage wird nach der Anleitung angeschlossen.")]) },
-      { say: [tr("Son: 'Cihaz yalnız kapalı alanda kullanılır.'")], expect: produce("Das Gerät wird nur in Innenräumen gebraucht", [tr("Yer tümleci ortada, ortaç sonda:"), de("Das Gerät wird nur in Innenräumen gebraucht."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Cihaz yalnız kapalı alanda kullanılabilir.'")], expect: produce("Das Gerät darf nur in Innenräumen gebraucht werden", [tr("Kip fiili ikinci sırada, yer tümleci ortada, ortaç ve werden sonda:"), de("Das Gerät darf nur in Innenräumen gebraucht werden."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi bir arkadaşına telefonda cihazı nasıl kuracağını anlatacaksın.")] },
     ],
     chat: {
@@ -439,7 +439,7 @@ export const deB1B15: Conversation[] = [
       word("Son", { de: "umgekehrt", tr: "tersine" }),
       { say: [tr("İlk kalıbımız eskiyi bugünle karşılaştırıyor: zaman zarfı, sıfatın karşılaştırma biçimi ve kıyas sözcüğü.")] },
       { say: [tr("Örnek:"), de("Früher war die Technik langsamer als heute."), tr("Tekrar et:"), de("Früher war die Technik langsamer als heute")], expect: repeat("Früher war die Technik langsamer als heute") },
-      { say: [tr("Sıra sende: 'Kaset bugünkü kadar pratik değildi.'")], expect: produce("Die Kassette war nicht so praktisch wie heute", [tr("Eşitlik karşılaştırmasında başka bir kıyas sözcüğü kullanılır:"), de("Die Kassette war nicht so praktisch wie heute."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Kaset bugünkü telefon kadar pratik değildi.'")], expect: produce("Die Kassette war nicht so praktisch wie das Handy heute", [tr("Eşitlik karşılaştırmasında başka bir kıyas sözcüğü kullanılır:"), de("Die Kassette war nicht so praktisch wie das Handy heute."), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıbımız değişimi söylüyor: bir zaman zarfı ve tersine anlamına gelen sözcük. Cümle zarfla başladığı için fiil ikinci sıraya geçiyor.")] },
       { say: [tr("Şimdi: 'Artık durum tam tersi.'")], expect: produce("Mittlerweile ist es genau umgekehrt", [tr("Zarf başta, fiil ikinci sırada:"), de("Mittlerweile ist es genau umgekehrt."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Der Sender sendet mehr oft als früher."), tr("cümlesi doğru mu?")], expect: truefalse("Der Sender sendet mehr oft als früher.", false, [tr("Karşılaştırma ayrı bir sözcükle değil, zarfa gelen ekle yapılır:"), de("Der Sender sendet öfter als früher.")]) },

@@ -245,9 +245,9 @@
   "de": "Du beschreibst den Umbau in deinem Viertel, indem du den Unterschied zwischen der Sprache der Stadt und dem Gesehenen zeigst. Kritisiere in drei Sätzen mit Auslassung und benutze die Wörter der Stadt selbst."
  },
  {
-  "tr": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
   "kind": "scene",
-  "de": "Du verteidigst gegen eine Bauentscheidung die Umweltpflicht und willst das nicht wie eine persönliche Meinung sagen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
+  "de": "Du verteidigst gegen eine Bauentscheidung die Umweltpflicht und willst das nicht wie eine persönliche Meinung sagen. Bilde den Wunsch, das Wäre-nicht und die Forderung in festen Formen."
  },
  {
   "tr": "Süreci, yeri ve bizi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
@@ -1948,5 +1948,10 @@
   "tr": "dediğinde bir tarih verilmiş olur ama bir söz verilmemiş olur. Eksiltilen yarı, plana bakan kişinin sorması gereken sorudur.",
   "kind": "say.tr",
   "de": "– sagst du das, ist ein Datum genannt, aber kein Versprechen gegeben. Die weggelassene Hälfte ist die Frage, die stellen muss, wer den Plan liest."
+ },
+ {
+  "tr": "Bu kelimeyi garsonla konuşurken de duyacaksın:",
+  "kind": "say.tr",
+  "de": "Dieses Wort hörst du auch im Gespräch mit der Bedienung:"
  }
 ]

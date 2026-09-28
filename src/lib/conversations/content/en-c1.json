@@ -219,10 +219,7 @@
     "expect": {
      "kind": "produce",
      "target": "The greeting alone sets the register.",
-     "accept": [
-      "The opening alone sets the register.",
-      "The salutation alone sets the register."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -329,8 +326,7 @@
      "kind": "produce",
      "target": "Quoted verbatim, the answer reads differently.",
      "accept": [
-      "Quoted verbatim, the reply reads differently.",
-      "Quoted verbatim, the line reads differently."
+      "Quoted verbatim, the reply reads differently."
      ],
      "hint": [
       {
@@ -439,8 +435,7 @@
      "kind": "produce",
      "target": "The piece is stylistically formal.",
      "accept": [
-      "The text is stylistically formal.",
-      "The piece is stylistically journalistic."
+      "The text is stylistically formal."
      ],
      "hint": [
       {
@@ -709,8 +704,7 @@
      "kind": "produce",
      "target": "I would if I could, and so would he.",
      "accept": [
-      "I would if I could, and he would too.",
-      "I would if I could, and so would she."
+      "I would if I could, and he would too."
      ],
      "hint": [
       {
@@ -817,10 +811,7 @@
     "expect": {
      "kind": "produce",
      "target": "Some call it style; others, register.",
-     "accept": [
-      "Some call it style; others, tone.",
-      "Some call it discourse; others, argumentation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -944,8 +935,7 @@
      "kind": "produce",
      "target": "The first answer is careful; the second is not.",
      "accept": [
-      "The first reply is careful; the second is not.",
-      "The first reading is careful; the second is not."
+      "The first reply is careful; the second is not."
      ],
      "hint": [
       {
@@ -1234,8 +1224,7 @@
      "kind": "produce",
      "target": "Into the room creeps a doubt.",
      "accept": [
-      "Into the room creeps a suspicion.",
-      "Into the sentence creeps a connotation."
+      "Into the room creeps a suspicion."
      ],
      "hint": [
       {
@@ -1343,8 +1332,7 @@
      "kind": "produce",
      "target": "What the writer does next is an allusion.",
      "accept": [
-      "What the author does next is an allusion.",
-      "What the essayist does next is an allusion."
+      "What the author does next is an allusion."
      ],
      "hint": [
       {
@@ -1444,10 +1432,7 @@
     "expect": {
      "kind": "produce",
      "target": "The subtext we know; the connotation we guess.",
-     "accept": [
-      "The subtext we know; the meaning we guess.",
-      "The denotation we know; the subtext we guess."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -1734,10 +1719,7 @@
     "expect": {
      "kind": "produce",
      "target": "I insist that the group convene tomorrow.",
-     "accept": [
-      "I insist that the team convene tomorrow.",
-      "I insist that the board convene tomorrow."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -1844,8 +1826,7 @@
      "kind": "produce",
      "target": "Were it not for the pending vote, we would adjourn.",
      "accept": [
-      "Were it not for the pending ballot, we would adjourn.",
-      "Were it not for her firm chairing, we would adjourn."
+      "Were it not for the pending ballot, we would adjourn."
      ],
      "hint": [
       {
@@ -1962,8 +1943,7 @@
      "kind": "produce",
      "target": "They ask that no one exert influence.",
      "accept": [
-      "They ask that nobody exert influence.",
-      "They ask that no one exert pressure."
+      "They ask that nobody exert influence."
      ],
      "hint": [
       {
@@ -2038,7 +2018,7 @@
   "icon": "handshake",
   "title": "The tone of concession",
   "titleTr": "Ödün vermenin tonu",
-  "summary": "Karşı tarafa hak verirken kendi savını korumayı öğretir; granted, albeit ve whereas üç ayrı sıcaklıkta.",
+  "summary": "Karşı tarafa hak verirken kendi savını korumayı öğretir; granted, albeit, whereas ve much as dört ayrı sıcaklıkta.",
   "minutes": 12,
   "focusId": "Concessive and contrastive range",
   "vocab": [
@@ -2255,10 +2235,7 @@
     "expect": {
      "kind": "produce",
      "target": "Granted, the cost is high, albeit explicable.",
-     "accept": [
-      "Granted, the price is high, albeit explicable.",
-      "Granted, the figure is high, albeit explicable."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -2364,10 +2341,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as I'd like to weigh up both texts equally, one is clearly stronger.",
-     "accept": [
-      "Much as I'd like to weigh up both essays equally, one is clearly stronger.",
-      "Much as I'd like to weigh up both sides equally, one is clearly stronger."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -2482,10 +2456,7 @@
     "expect": {
      "kind": "produce",
      "target": "He would concede the point, whereas she would gloss over it.",
-     "accept": [
-      "He would concede the point, whereas she would skip it.",
-      "She would concede the point, whereas he would gloss over it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -2772,10 +2743,7 @@
     "expect": {
      "kind": "produce",
      "target": "To have money at one's disposal is not to spend it.",
-     "accept": [
-      "To have money at one's disposal is not to use it.",
-      "To have money at one's disposal is not to waste it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -2873,10 +2841,7 @@
     "expect": {
      "kind": "produce",
      "target": "They grapple with why the product did not catch on.",
-     "accept": [
-      "They grapple with why the app did not catch on.",
-      "They grapple with why the idea did not catch on."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -2984,8 +2949,7 @@
      "kind": "produce",
      "target": "Let it play out before you call it a crisis.",
      "accept": [
-      "Let it play out before you name it a crisis.",
-      "Let it play out before you call it damage control."
+      "Let it play out before you name it a crisis."
      ],
      "hint": [
       {
@@ -3269,10 +3233,7 @@
     "expect": {
      "kind": "produce",
      "target": "He claimed it; she admitted it; they alleged it.",
-     "accept": [
-      "He claimed it; she conceded it; they alleged it.",
-      "He claimed it; she accepted it; they alleged it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -3374,10 +3335,7 @@
     "expect": {
      "kind": "produce",
      "target": "They unmask the source without naming names.",
-     "accept": [
-      "They unmask the speaker without naming names.",
-      "They unmask the mouthpiece without naming names."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -3492,10 +3450,7 @@
     "expect": {
      "kind": "produce",
      "target": "She claimed it; he conceded it; they alleged it.",
-     "accept": [
-      "She claimed it; he admitted it; they alleged it.",
-      "He claimed it; she conceded it; they alleged it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -3774,10 +3729,7 @@
     "expect": {
      "kind": "produce",
      "target": "The number may well be lower than presumed.",
-     "accept": [
-      "The value may well be lower than presumed.",
-      "The figure may well be higher than presumed."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -3884,8 +3836,7 @@
      "kind": "produce",
      "target": "It might have been expected to stay stable.",
      "accept": [
-      "It might have been expected to remain stable.",
-      "It might have been expected to stay precarious."
+      "It might have been expected to remain stable."
      ],
      "hint": [
       {
@@ -4001,10 +3952,7 @@
     "expect": {
      "kind": "produce",
      "target": "The cost would tend to be incalculable.",
-     "accept": [
-      "The price would tend to be incalculable.",
-      "The risk would tend to be incalculable."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -4280,8 +4228,7 @@
      "kind": "produce",
      "target": "Not exactly quiet, that one.",
      "accept": [
-      "Not exactly silent, that one.",
-      "Not exactly cheap, that one."
+      "Not exactly silent, that one."
      ],
      "hint": [
       {
@@ -4389,8 +4336,7 @@
      "kind": "produce",
      "target": "I wouldn't say no to a shorter meeting.",
      "accept": [
-      "I wouldn't say no to a briefer meeting.",
-      "I wouldn't say no to a less patronizing tone."
+      "I wouldn't say no to a briefer meeting."
      ],
      "hint": [
       {
@@ -4515,8 +4461,7 @@
      "kind": "produce",
      "target": "Hardly patronizing, is it?",
      "accept": [
-      "Hardly condescending, is it?",
-      "Hardly modest, is it?"
+      "Hardly condescending, is it?"
      ],
      "hint": [
       {
@@ -4797,8 +4742,7 @@
      "kind": "produce",
      "target": "This alone explains the distance.",
      "accept": [
-      "This alone explains the gap.",
-      "This alone explains the proximity."
+      "This alone explains the gap."
      ],
      "hint": [
       {
@@ -4905,10 +4849,7 @@
     "expect": {
      "kind": "produce",
      "target": "Such patience is rare.",
-     "accept": [
-      "Such calm is rare.",
-      "Such composure is rare."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -5024,8 +4965,7 @@
      "kind": "produce",
      "target": "The latter answer leaves an unease.",
      "accept": [
-      "The latter reply leaves an unease.",
-      "The latter reading leaves an unease."
+      "The latter reply leaves an unease."
      ],
      "hint": [
       {
@@ -5313,10 +5253,7 @@
     "expect": {
      "kind": "produce",
      "target": "Granted, there is little time, albeit some.",
-     "accept": [
-      "Granted, there is little room, albeit some.",
-      "Granted, there is little leeway, albeit some."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -5419,8 +5356,7 @@
      "kind": "produce",
      "target": "Much as I acknowledge the flaw, the plan stays viable.",
      "accept": [
-      "Much as I acknowledge the fault, the plan stays viable.",
-      "Much as I acknowledge the snag, the plan stays viable."
+      "Much as I acknowledge the fault, the plan stays viable."
      ],
      "hint": [
       {
@@ -5528,10 +5464,7 @@
     "expect": {
      "kind": "produce",
      "target": "The loss is irreversible, whereas the delay is not.",
-     "accept": [
-      "The damage is irreversible, whereas the delay is not.",
-      "The step is irreversible, whereas the delay is not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -5590,7 +5523,7 @@
    }
   ],
   "chat": {
-   "scene": "Bir toplantıda savunduğun görüşe karşı çıkıyorsun ama karşındakiyle çalışmaya devam edeceksin. Teslimi, kusuru görmeyi ve ayrımı ödün sözleriyle kur.",
+   "scene": "Bir toplantıda karşındakinin savunduğu görüşe karşı çıkıyorsun ama onunla çalışmaya devam edeceksin. Teslimi, kusuru görmeyi ve ayrımı ödün sözleriyle kur.",
    "partner": "karşı çıkışı kişisel alan, «demek bana güvenmiyorsun» diyen bir meslektaş",
    "opening": "So you don't trust my judgment?",
    "openingTr": "Demek kararıma güvenmiyorsun?",
@@ -5843,8 +5776,7 @@
      "kind": "produce",
      "target": "He postulates it; she refutes it; they substantiate it.",
      "accept": [
-      "He postulates it; she disproves it; they substantiate it.",
-      "She postulates it; he refutes it; they substantiate it."
+      "He postulates it; she disproves it; they substantiate it."
      ],
      "hint": [
       {
@@ -5951,10 +5883,7 @@
     "expect": {
      "kind": "produce",
      "target": "The text openly claims what the ideology merely assumes.",
-     "accept": [
-      "The paper openly claims what the ideology merely assumes.",
-      "The manifesto openly claims what the ideology merely assumes."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -6018,8 +5947,7 @@
      "kind": "produce",
      "target": "To quote a claim is not to falsify it.",
      "accept": [
-      "To cite a claim is not to falsify it.",
-      "To report a claim is not to falsify it."
+      "To cite a claim is not to falsify it."
      ],
      "hint": [
       {
@@ -6300,8 +6228,7 @@
      "kind": "produce",
      "target": "Not exactly careful, are they?",
      "accept": [
-      "Not exactly cautious, are they?",
-      "Not exactly scrupulous, are they?"
+      "Not exactly cautious, are they?"
      ],
      "hint": [
       {
@@ -6405,8 +6332,7 @@
      "kind": "produce",
      "target": "I wouldn't call that fair.",
      "accept": [
-      "I wouldn't call that just.",
-      "I wouldn't call that virtuous."
+      "I wouldn't call that just."
      ],
      "hint": [
       {
@@ -6523,8 +6449,7 @@
      "kind": "produce",
      "target": "Hardly patronizing, is it?",
      "accept": [
-      "Hardly condescending, is it?",
-      "Hardly alarmism, is it?"
+      "Hardly condescending, is it?"
      ],
      "hint": [
       {
@@ -6797,8 +6722,7 @@
      "kind": "produce",
      "target": "Some serve the public; others, themselves.",
      "accept": [
-      "Some serve the people; others, themselves.",
-      "Some serve the common good; others, themselves."
+      "Some serve the people; others, themselves."
      ],
      "hint": [
       {
@@ -6901,10 +6825,7 @@
     "expect": {
      "kind": "produce",
      "target": "One report is nonpartisan; the other is not.",
-     "accept": [
-      "One paper is nonpartisan; the other is not.",
-      "One committee is nonpartisan; the other is not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -7019,10 +6940,7 @@
     "expect": {
      "kind": "produce",
      "target": "The council would if it could.",
-     "accept": [
-      "The board would if it could.",
-      "The electorate would if it could."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -7326,8 +7244,7 @@
      "kind": "produce",
      "target": "To resign oneself is to forfeit the case.",
      "accept": [
-      "To resign oneself is to lose the case.",
-      "To resign oneself is to forfeit the argument."
+      "To resign oneself is to lose the case."
      ],
      "hint": [
       {
@@ -7431,8 +7348,7 @@
      "kind": "produce",
      "target": "They internalize a rule they cannot change.",
      "accept": [
-      "They internalize a rule they cannot alter.",
-      "They internalize a rule they cannot invalidate."
+      "They internalize a rule they cannot alter."
      ],
      "hint": [
       {
@@ -7497,8 +7413,7 @@
      "kind": "produce",
      "target": "What we enshrine we rarely question.",
      "accept": [
-      "What we enshrine we rarely doubt.",
-      "What we enshrine we rarely comprehend."
+      "What we enshrine we rarely doubt."
      ],
      "hint": [
       {
@@ -7779,8 +7694,7 @@
      "kind": "produce",
      "target": "What the article does is polarize.",
      "accept": [
-      "What the piece does is polarize.",
-      "What the debate does is polarize."
+      "What the piece does is polarize."
      ],
      "hint": [
       {
@@ -7883,10 +7797,7 @@
     "expect": {
      "kind": "produce",
      "target": "Into the report creeps an urge to idealize.",
-     "accept": [
-      "Into the text creeps an urge to idealize.",
-      "Into the account creeps an urge to idealize."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -7994,7 +7905,6 @@
      "kind": "produce",
      "target": "The past we glorify; the future we stylize.",
      "accept": [
-      "The past we glorify; the present we stylize.",
       "The past we glorify; tomorrow we stylize."
      ],
      "hint": [
@@ -8267,10 +8177,7 @@
     "expect": {
      "kind": "produce",
      "target": "We move that the council grant worker participation.",
-     "accept": [
-      "We move that the committee grant worker participation.",
-      "We move that the board grant worker participation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -8376,10 +8283,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for the law, cohesion would fail.",
-     "accept": [
-      "Were it not for the rule, cohesion would fail.",
-      "Were it not for the rule of law, cohesion would fail."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -8495,8 +8399,7 @@
      "kind": "produce",
      "target": "They ask that no guest abstain.",
      "accept": [
-      "They ask that no visitor abstain.",
-      "They ask that no member abstain."
+      "They ask that no visitor abstain."
      ],
      "hint": [
       {
@@ -8776,10 +8679,7 @@
     "expect": {
      "kind": "produce",
      "target": "The phrase may well marginalize older readers.",
-     "accept": [
-      "The sentence may well marginalize older readers.",
-      "The wording may well marginalize older readers."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -8881,10 +8781,7 @@
     "expect": {
      "kind": "produce",
      "target": "It might have been expected to cost less.",
-     "accept": [
-      "It might have been expected to charge less.",
-      "The new contract might have been expected to exploit workers less."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -8921,7 +8818,7 @@
      },
      {
       "lang": "tr",
-      "text": "bir olayı skandala çevirmeye ise"
+      "text": "insanlarda infial uyandırmaya ise"
      },
      {
       "lang": "en",
@@ -8941,16 +8838,16 @@
      },
      {
       "lang": "en",
-      "text": "Debates coarsen when they scandalize."
+      "text": "Debates coarsen when they scandalize the public."
      },
      {
       "lang": "tr",
-      "text": "Tartışmalar skandal yarattıklarında kabalaşıyor."
+      "text": "Tartışmalar kamuoyunda infial uyandırdığında kabalaşıyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Debates coarsen when they scandalize."
+     "target": "Debates coarsen when they scandalize the public."
     }
    },
    {
@@ -8999,10 +8896,7 @@
     "expect": {
      "kind": "produce",
      "target": "Such a rule would tend to problematize everything.",
-     "accept": [
-      "Such a law would tend to problematize everything.",
-      "Such a text would tend to problematize everything."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -9281,10 +9175,7 @@
     "expect": {
      "kind": "produce",
      "target": "A wave of outrage reads differently in each paper.",
-     "accept": [
-      "A wave of outrage reads differently in each text.",
-      "A wave of outrage reads differently in each register."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -9386,10 +9277,7 @@
     "expect": {
      "kind": "produce",
      "target": "Quoted in a law, the same words become opinion manipulation.",
-     "accept": [
-      "Quoted in a rule, the same words become opinion manipulation.",
-      "Quoted in a ruling, the same words become opinion manipulation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -9771,8 +9659,7 @@
      "kind": "produce",
      "target": "This alone holds the argument together.",
      "accept": [
-      "This alone holds the case together.",
-      "This alone holds the chain of argument together."
+      "This alone holds the case together."
      ],
      "hint": [
       {
@@ -9879,10 +9766,7 @@
     "expect": {
      "kind": "produce",
      "target": "Such an approach is rare.",
-     "accept": [
-      "Such a method is rare.",
-      "Such an explanatory approach is rare."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -9997,10 +9881,7 @@
     "expect": {
      "kind": "produce",
      "target": "The latter reflects the paradigm.",
-     "accept": [
-      "The latter shows the paradigm.",
-      "The latter reflects the current state of research."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -10272,8 +10153,7 @@
      "kind": "produce",
      "target": "We request that our representative lodge the appeal today.",
      "accept": [
-      "We request that our agent lodge the appeal today.",
-      "We request that our lawyer lodge the appeal today."
+      "We request that our agent lodge the appeal today."
      ],
      "hint": [
       {
@@ -10376,10 +10256,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for the deadline, the claim would stand.",
-     "accept": [
-      "Were it not for the date, the claim would stand.",
-      "Were it not for the limitation period, the claim would stand."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -10495,8 +10372,7 @@
      "kind": "produce",
      "target": "They ask that no claim be ruled inadmissible without a hearing.",
      "accept": [
-      "They ask that no request be ruled inadmissible without a hearing.",
-      "They ask that no evidence be ruled inadmissible without a hearing."
+      "They ask that no request be ruled inadmissible without a hearing."
      ],
      "hint": [
       {
@@ -10784,10 +10660,7 @@
     "expect": {
      "kind": "produce",
      "target": "A misdemeanor in one text is a civil infraction in another.",
-     "accept": [
-      "A misdemeanor in one law is a civil infraction in another.",
-      "A misdemeanor in one report is a civil infraction in another."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -10894,8 +10767,7 @@
      "kind": "produce",
      "target": "In the spoken register, the conviction becomes 'he was found guilty.'",
      "accept": [
-      "In the spoken register, the conviction becomes 'they found him guilty.'",
-      "In the spoken register, the acquittal becomes \"he was cleared.\""
+      "In the spoken register, the conviction becomes 'they found him guilty.'"
      ],
      "hint": [
       {
@@ -11004,8 +10876,7 @@
      "kind": "produce",
      "target": "Written as a decision, the same step reads colder.",
      "accept": [
-      "Written as a ruling, the same step reads colder.",
-      "Written as an administrative decision, the same step reads colder."
+      "Written as a ruling, the same step reads colder."
      ],
      "hint": [
       {
@@ -11281,10 +11152,7 @@
     "expect": {
      "kind": "produce",
      "target": "He stated it; she conceded it; they alleged it.",
-     "accept": [
-      "He stated it; she admitted it; they alleged it.",
-      "She stated it; he conceded it; they alleged it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -11387,8 +11255,7 @@
      "kind": "produce",
      "target": "The expert report openly claims what the letter merely assumes.",
      "accept": [
-      "The expert report openly claims what the note merely assumes.",
-      "The expert report openly claims what the file merely assumes."
+      "The expert report openly claims what the note merely assumes."
      ],
      "hint": [
       {
@@ -11512,10 +11379,7 @@
     "expect": {
      "kind": "produce",
      "target": "To record a claim is not to accept it.",
-     "accept": [
-      "To record a request is not to accept it.",
-      "To record a revocation is not to accept it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -11772,7 +11636,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bugünün kuralı. Hukukta eşdizim değiştirilemez:"
+      "text": "Şimdi bugünün kuralı. Hukuk metninde yerleşik eşdizim seçilir:"
      },
      {
       "lang": "en",
@@ -11788,7 +11652,7 @@
      },
      {
       "lang": "tr",
-      "text": "denmez; aynı biçimde"
+      "text": "gündelik dilde kalır; aynı biçimde"
      },
      {
       "lang": "en",
@@ -11811,8 +11675,7 @@
      "kind": "produce",
      "target": "To enact a law is not to enforce it.",
      "accept": [
-      "To enact a statute is not to enforce it.",
-      "To enact a rule is not to enforce it."
+      "To enact a statute is not to enforce it."
      ],
      "hint": [
       {
@@ -11920,8 +11783,7 @@
      "kind": "produce",
      "target": "They outvoted the board before the new members were sworn in.",
      "accept": [
-      "They outvoted the council before the new members were sworn in.",
-      "They outvoted the group before the new members were sworn in."
+      "They outvoted the council before the new members were sworn in."
      ],
      "hint": [
       {
@@ -12022,8 +11884,7 @@
      "kind": "produce",
      "target": "What a contract grants, discretion can take.",
      "accept": [
-      "What an agreement grants, discretion can take.",
-      "What a term of office grants, discretion can take."
+      "What an agreement grants, discretion can take."
      ],
      "hint": [
       {
@@ -12311,10 +12172,7 @@
     "expect": {
      "kind": "produce",
      "target": "Some articles name theft; others, bodily harm.",
-     "accept": [
-      "Some articles name fraud; others, bodily harm.",
-      "Some articles name arson; others, bodily harm."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -12420,10 +12278,7 @@
     "expect": {
      "kind": "produce",
      "target": "The court would apprehend him if it could.",
-     "accept": [
-      "The office would apprehend him if it could.",
-      "The police would apprehend him if they could."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -12480,16 +12335,16 @@
      },
      {
       "lang": "en",
-      "text": "The fire can devastate before the resuscitation begins."
+      "text": "The fire can devastate a house; the resuscitation cannot wait."
      },
      {
       "lang": "tr",
-      "text": "Yangın, yeniden canlandırma başlamadan harap edebilir."
+      "text": "Yangın bir evi harap edebilir; yeniden canlandırma bekleyemez."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The fire can devastate before the resuscitation begins."
+     "target": "The fire can devastate a house; the resuscitation cannot wait."
     }
    },
    {
@@ -12530,10 +12385,7 @@
     "expect": {
      "kind": "produce",
      "target": "One path is impassable; the other is not.",
-     "accept": [
-      "One route is impassable; the other is not.",
-      "One road is impassable; the other is not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -12828,10 +12680,7 @@
     "expect": {
      "kind": "produce",
      "target": "Granted, the delay is real, albeit recent.",
-     "accept": [
-      "Granted, the gap is real, albeit recent.",
-      "Granted, the insolvency is real, albeit recent."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -12937,10 +12786,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as we acknowledge the debt, the client is not insolvent.",
-     "accept": [
-      "Much as we acknowledge the loan, the client is not insolvent.",
-      "Much as we acknowledge the indebtedness, the client is not insolvent."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -13040,8 +12886,7 @@
      "kind": "produce",
      "target": "The fee is irrevocable, whereas the levy is not.",
      "accept": [
-      "The charge is irrevocable, whereas the levy is not.",
-      "The levy is irrevocable, whereas the fee is not."
+      "The charge is irrevocable, whereas the levy is not."
      ],
      "hint": [
       {
@@ -13321,10 +13166,7 @@
     "expect": {
      "kind": "produce",
      "target": "The premium may well be raised.",
-     "accept": [
-      "The fee may well be raised.",
-      "The deductible may well be raised."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -13431,8 +13273,7 @@
      "kind": "produce",
      "target": "It might have been expected to cover the loss.",
      "accept": [
-      "It might have been expected to cover the damage.",
-      "It might have been expected to cover long-term disability."
+      "It might have been expected to cover the damage."
      ],
      "hint": [
       {
@@ -13548,10 +13389,7 @@
     "expect": {
      "kind": "produce",
      "target": "The cost would tend to fall first.",
-     "accept": [
-      "The price would tend to fall first.",
-      "Liquidity would tend to fall first."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -13838,9 +13676,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the union secured is worker representation on the board.",
-     "accept": [
-      "What the staff secured is worker representation on the board."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -13939,8 +13775,7 @@
      "kind": "produce",
      "target": "Into the file comes a warning strike.",
      "accept": [
-      "Into the case comes a warning strike.",
-      "Into the dispute comes a warning strike."
+      "Into the case comes a warning strike."
      ],
      "hint": [
       {
@@ -14057,8 +13892,7 @@
      "kind": "produce",
      "target": "The overtime we accepted; the cut in sick pay we did not.",
      "accept": [
-      "The extra hours we accepted; the cut in sick pay we did not.",
-      "The reduced hours we accepted; the cut in sick pay we did not."
+      "The extra hours we accepted; the cut in sick pay we did not."
      ],
      "hint": [
       {
@@ -14339,8 +14173,7 @@
      "kind": "produce",
      "target": "This clause alone binds both parties.",
      "accept": [
-      "This clause alone binds the parties.",
-      "This clause alone binds the sponsor to the affidavit of support."
+      "This clause alone binds the parties."
      ],
      "hint": [
       {
@@ -14443,10 +14276,7 @@
     "expect": {
      "kind": "produce",
      "target": "Such a delay is rare.",
-     "accept": [
-      "Such a case is rare.",
-      "Such a hardship case is rare."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -14561,10 +14391,7 @@
     "expect": {
      "kind": "produce",
      "target": "The latter falls to the local office.",
-     "accept": [
-      "The latter falls to the city office.",
-      "The latter falls to the federal agency."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -14839,10 +14666,7 @@
     "expect": {
      "kind": "produce",
      "target": "Not exactly cheap, is it?",
-     "accept": [
-      "Not exactly low, is it?",
-      "Not exactly lucrative, is it?"
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -14948,10 +14772,7 @@
     "expect": {
      "kind": "produce",
      "target": "I wouldn't call that careful.",
-     "accept": [
-      "I wouldn't call that cautious.",
-      "I wouldn't call that thrifty."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -15066,10 +14887,7 @@
     "expect": {
      "kind": "produce",
      "target": "Hardly thrifty, is it?",
-     "accept": [
-      "Hardly careful, is it?",
-      "Hardly cyclical, is it?"
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -15348,10 +15166,7 @@
     "expect": {
      "kind": "produce",
      "target": "In colloquial language the same word lands differently.",
-     "accept": [
-      "In colloquial language the same phrase lands differently.",
-      "In colloquial language the same line lands differently."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -15445,10 +15260,7 @@
     "expect": {
      "kind": "produce",
      "target": "Said emphatically, a weak claim sounds like a fact.",
-     "accept": [
-      "Said emphatically, a weak point sounds like a fact.",
-      "Said emphatically, an empty phrase sounds like a claim."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -15564,8 +15376,7 @@
      "kind": "produce",
      "target": "A feel for language tells you which word fits.",
      "accept": [
-      "A feel for language tells you which term fits.",
-      "A feel for language tells you which register fits."
+      "A feel for language tells you which term fits."
      ],
      "hint": [
       {
@@ -15877,10 +15688,7 @@
     "expect": {
      "kind": "produce",
      "target": "To streamline a text is not to circumvent a question.",
-     "accept": [
-      "To streamline a report is not to circumvent a question.",
-      "To streamline a talk is not to circumvent a question."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -15982,10 +15790,7 @@
     "expect": {
      "kind": "produce",
      "target": "A quick wit cannot cure a fear.",
-     "accept": [
-      "A quick wit cannot cure a worry.",
-      "A quick wit cannot cure a fear of speaking."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -16069,8 +15874,7 @@
      "kind": "produce",
      "target": "What we repeat tends to become entrenched.",
      "accept": [
-      "What we repeat tends to become fixed.",
-      "What we pay homage to tends to become entrenched."
+      "What we repeat tends to become fixed."
      ],
      "hint": [
       {
@@ -16366,10 +16170,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the narrator does is withhold.",
-     "accept": [
-      "What the voice does is withhold.",
-      "What the narrative perspective does is withhold."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -16471,10 +16272,7 @@
     "expect": {
      "kind": "produce",
      "target": "Into the novel creeps a monologue.",
-     "accept": [
-      "Into the story creeps a monologue.",
-      "Into the novella creeps a monologue."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -16574,8 +16372,7 @@
      "kind": "produce",
      "target": "The canon we know; the topos we argue about.",
      "accept": [
-      "The canon we know; the motif we argue about.",
-      "The topos we know; the canon we argue about."
+      "The canon we know; the motif we argue about."
      ],
      "hint": [
       {
@@ -16880,8 +16677,7 @@
      "kind": "produce",
      "target": "He contextualizes it; she deciphers it; they dissect it.",
      "accept": [
-      "He contextualizes it; she decodes it; they dissect it.",
-      "She contextualizes it; he deciphers it; they dissect it."
+      "He contextualizes it; she decodes it; they dissect it."
      ],
      "hint": [
       {
@@ -16988,10 +16784,7 @@
     "expect": {
      "kind": "produce",
      "target": "The framework openly claims what the reading merely assumes.",
-     "accept": [
-      "The model openly claims what the reading merely assumes.",
-      "The interpretive framework openly claims what the reading merely assumes."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -17090,10 +16883,7 @@
     "expect": {
      "kind": "produce",
      "target": "To call a text normative is not to read it.",
-     "accept": [
-      "To call a text biased is not to read it.",
-      "To call a text ideological is not to read it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -17372,10 +17162,7 @@
     "expect": {
      "kind": "produce",
      "target": "The Enlightenment demanded that thought be free.",
-     "accept": [
-      "The Enlightenment demanded that the mind be free.",
-      "The Enlightenment demanded that reason be free."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -17477,10 +17264,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for logic, epistemology would be simpler.",
-     "accept": [
-      "Were it not for language, epistemology would be simpler.",
-      "Were it not for metaphysics, epistemology would be simpler."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -17587,10 +17371,7 @@
     "expect": {
      "kind": "produce",
      "target": "They ask that no reading be paradoxical.",
-     "accept": [
-      "They ask that no answer be paradoxical.",
-      "They ask that no claim be paradoxical."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -17909,10 +17690,7 @@
     "expect": {
      "kind": "produce",
      "target": "The line is fragmentary; the reader, patient.",
-     "accept": [
-      "The poem is fragmentary; the reader, patient.",
-      "The poem is fragmentary; the reader, contemplative."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -17982,10 +17760,7 @@
     "expect": {
      "kind": "produce",
      "target": "A reminiscence survives as lore, a name as a cipher.",
-     "accept": [
-      "A reminiscence survives as lore, a face as a cipher.",
-      "A reminiscence survives as lore, a relic as a cipher."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -18048,10 +17823,7 @@
     "expect": {
      "kind": "produce",
      "target": "The decade felt epochal; the year did not.",
-     "accept": [
-      "The century felt epochal; the year did not.",
-      "The zeitgeist felt epochal; the decade did not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -18370,10 +18142,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as we like to call it distance, it is really otherness.",
-     "accept": [
-      "Much as we like to call it silence, it is really otherness.",
-      "Much as we like to call it strangeness, it is really otherness."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -18468,8 +18237,7 @@
      "kind": "produce",
      "target": "His demeanor, albeit cold, fits the milieu.",
      "accept": [
-      "Her demeanor, albeit cold, fits the milieu.",
-      "Her demeanor, albeit formal, fits the milieu."
+      "Her demeanor, albeit cold, fits the milieu."
      ],
      "hint": [
       {
@@ -18526,8 +18294,7 @@
      "kind": "produce",
      "target": "Although a sign of purity, the artifact bears a stigma.",
      "accept": [
-      "Although a mark of purity, the artifact bears a stigma.",
-      "Although a symbol of purity, the artifact bears a stigma."
+      "Although a mark of purity, the artifact bears a stigma."
      ],
      "hint": [
       {
@@ -18855,10 +18622,7 @@
     "expect": {
      "kind": "produce",
      "target": "The chapter may well be mundane rather than highly symbolic.",
-     "accept": [
-      "The scene may well be plain rather than highly symbolic.",
-      "The scene may well be mundane rather than highly symbolic."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -18952,10 +18716,7 @@
     "expect": {
      "kind": "produce",
      "target": "A time-honored image might permeate a whole century.",
-     "accept": [
-      "A time-honored habit might permeate a whole century.",
-      "A time-honored reading might permeate a whole field."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -19010,10 +18771,7 @@
     "expect": {
      "kind": "produce",
      "target": "A family may hand down its exoticism and ostracize the doubter.",
-     "accept": [
-      "A school may hand down its exoticism and ostracize the doubter.",
-      "A culture may hand down its exoticism and ostracize the doubter."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -19293,8 +19051,7 @@
      "kind": "produce",
      "target": "The food was hearty; the welcome, less so.",
      "accept": [
-      "The dinner was hearty; the welcome, less so.",
-      "The meal was hearty; the welcome, less so."
+      "The dinner was hearty; the welcome, less so."
      ],
      "hint": [
       {
@@ -19413,10 +19170,7 @@
     "expect": {
      "kind": "produce",
      "target": "We never argue here; we just name the estrangement later.",
-     "accept": [
-      "We never fight here; we just name the estrangement later.",
-      "We never become estranged here; we just name the estrangement later."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -19471,10 +19225,7 @@
     "expect": {
      "kind": "produce",
      "target": "A quiet child, they said, and rather inquisitive.",
-     "accept": [
-      "A calm child, they said, and rather inquisitive.",
-      "A headstrong child, they said, and rather inquisitive."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -19801,10 +19552,7 @@
     "expect": {
      "kind": "produce",
      "target": "The multilayeredness described above explains the habit discussed below.",
-     "accept": [
-      "The multilayeredness described above explains the pattern discussed below.",
-      "The multilayeredness described above explains the predisposition discussed below."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -19906,10 +19654,7 @@
     "expect": {
      "kind": "produce",
      "target": "This fear, as noted earlier, grows out of an old resentment.",
-     "accept": [
-      "This doubt, as noted earlier, grows out of an old resentment.",
-      "This wrath, as noted earlier, grows out of an old resentment."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -19964,10 +19709,7 @@
     "expect": {
      "kind": "produce",
      "target": "Where emancipation stagnates, the argument does not subside.",
-     "accept": [
-      "Where progress stagnates, the argument does not subside.",
-      "Where emancipation stagnates, the anger does not subside."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -20294,10 +20036,7 @@
     "expect": {
      "kind": "produce",
      "target": "In the newspaper it is a subculture; in the ministry, cultural policy.",
-     "accept": [
-      "In the report it is a subculture; in the ministry, cultural policy.",
-      "In the arts section it is a subculture; in the ministry, cultural policy."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -20371,10 +20110,7 @@
     "expect": {
      "kind": "produce",
      "target": "What one calls a cultural scene, another calls a problem.",
-     "accept": [
-      "What one calls a cultural scene, another calls a threat.",
-      "What one calls a cultural scene, another calls a parallel society."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -20473,10 +20209,7 @@
     "expect": {
      "kind": "produce",
      "target": "High culture is a register; the canon is a claim.",
-     "accept": [
-      "High culture is a register; the list is a claim.",
-      "High culture is a register; dominant culture is a claim."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -20787,10 +20520,7 @@
     "expect": {
      "kind": "produce",
      "target": "What exclusion does is create a marginal group.",
-     "accept": [
-      "What the border does is create a marginal group.",
-      "What marginalization does is create a marginal group."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -20896,10 +20626,7 @@
     "expect": {
      "kind": "produce",
      "target": "Behind the wall stands xenophobia.",
-     "accept": [
-      "Behind the fence stands xenophobia.",
-      "Behind the demarcation line stands xenophobia."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -20962,10 +20689,7 @@
     "expect": {
      "kind": "produce",
      "target": "Foreign rule we inherit; statelessness we remember.",
-     "accept": [
-      "Foreign rule we inherit; the border we remember.",
-      "Statelessness we inherit; foreign rule we remember."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -21079,7 +20803,7 @@
    },
    {
     "de": "They ask that every participation model give tenants a vote.",
-    "tr": "koşulu kalıpla kurar"
+    "tr": "talebi kalıpla kurar"
    }
   ],
   "lecture": [
@@ -21202,7 +20926,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+      "text": "Son kalıbımız talebi kalıpla kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -21244,10 +20968,7 @@
     "expect": {
      "kind": "produce",
      "target": "The principle of equality demands that the school be free.",
-     "accept": [
-      "The principle of equality demands that the school be open.",
-      "The principle of equality demands that human dignity be untouchable for all, not just for some."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -21353,10 +21074,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for the fees, class society would fade.",
-     "accept": [
-      "Were it not for the rents, class society would fade.",
-      "Were it not for educational inequality, class society would fade."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -21427,14 +21145,11 @@
     "expect": {
      "kind": "produce",
      "target": "They ask that every school give parents a vote.",
-     "accept": [
-      "They ask that every school give families a vote.",
-      "They ask that every participation model give tenants a vote."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
-       "text": "Koşulu kalıpla kurmak için"
+       "text": "Talebi kalıpla kurmak için"
       },
       {
        "lang": "en",
@@ -21475,7 +21190,7 @@
      },
      {
       "lang": "tr",
-      "text": "koşul"
+      "text": "talep"
      },
      {
       "lang": "en",
@@ -21489,11 +21204,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
    "partner": "her savı kişisel görüş sayan, «bu senin fikrin» diyen biri",
    "opening": "That's just your opinion, right?",
    "openingTr": "Bu senin fikrin, değil mi?",
-   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -21741,10 +21456,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as we like to call it a course, they mean assimilation.",
-     "accept": [
-      "Much as we like to call it help, they mean assimilation.",
-      "Much as we like to call it acculturation, they mean assimilation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -21842,10 +21554,7 @@
     "expect": {
      "kind": "produce",
      "target": "The course, albeit free, is not a culture of welcome.",
-     "accept": [
-      "The course, albeit good, is not a culture of welcome.",
-      "The integration course, albeit useful, is not a culture of welcome."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -21908,10 +21617,7 @@
     "expect": {
      "kind": "produce",
      "target": "Although a sign of hybridity, the effort is asked of one side only.",
-     "accept": [
-      "Although a sign of hybridity, the work is asked of one side only.",
-      "Although a sign of hybridity, adaptability is asked of one side only."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -22028,7 +21734,7 @@
     "tr": "iki eşdizimi karşı karşıya koyar"
    },
    {
-    "de": "Out-migration and internal migration produce net migration.",
+    "de": "Out-migration and internal migration shape net migration.",
     "tr": "üç eşdizimi tek cümlede bağlar"
    },
    {
@@ -22140,16 +21846,16 @@
      },
      {
       "lang": "en",
-      "text": "Out-migration and internal migration produce net migration."
+      "text": "Out-migration and internal migration shape net migration."
      },
      {
       "lang": "tr",
-      "text": "Dışa göç ve iç göç net göçü üretiyor."
+      "text": "Dışa göç ve iç göç net göçü biçimlendiriyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Out-migration and internal migration produce net migration."
+     "target": "Out-migration and internal migration shape net migration."
     }
    },
    {
@@ -22231,8 +21937,7 @@
      "kind": "produce",
      "target": "An immigrant background is not a number.",
      "accept": [
-      "An immigrant background is not a statistic.",
-      "An immigrant background is not a migration flow."
+      "An immigrant background is not a statistic."
      ],
      "hint": [
       {
@@ -22325,16 +22030,13 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Dışa göç ve geri dönüş net göçü üretiyor."
+      "text": "Şimdi sen kur: Dışa göç ve geri dönüş net göçü biçimlendiriyor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Out-migration and return produce net migration.",
-     "accept": [
-      "Out-migration and arrival produce net migration.",
-      "Out-migration and internal migration produce net migration."
-     ],
+     "target": "Out-migration and return shape net migration.",
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -22342,7 +22044,7 @@
       },
       {
        "lang": "en",
-       "text": "produce"
+       "text": "shape"
       },
       {
        "lang": "tr",
@@ -22350,7 +22052,7 @@
       },
       {
        "lang": "en",
-       "text": "Out-migration and return produce net migration."
+       "text": "Out-migration and return shape net migration."
       },
       {
        "lang": "tr",
@@ -22397,10 +22099,7 @@
     "expect": {
      "kind": "produce",
      "target": "An influx is counted; a treaty is signed.",
-     "accept": [
-      "An influx is counted; a contract is signed.",
-      "An influx is counted; a refugee convention is signed."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -22711,10 +22410,7 @@
     "expect": {
      "kind": "produce",
      "target": "One reinterprets the past; another guards the interpretive authority.",
-     "accept": [
-      "One rereads the past; another guards the interpretive authority.",
-      "One reinterprets the culture of remembrance; another guards the interpretive authority."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -22808,10 +22504,7 @@
     "expect": {
      "kind": "produce",
      "target": "The exegesis openly claims what the museum merely assumes.",
-     "accept": [
-      "The exegesis openly claims what the archive merely assumes.",
-      "The exegesis openly claims what the tradition merely assumes."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -22874,10 +22567,7 @@
     "expect": {
      "kind": "produce",
      "target": "To call a tradition venerable is not to obey it.",
-     "accept": [
-      "To call a rule venerable is not to obey it.",
-      "To call customary law venerable is not to obey it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -23196,10 +22886,7 @@
     "expect": {
      "kind": "produce",
      "target": "Kinship may well shape the household more than the law.",
-     "accept": [
-      "Kinship may well shape the family more than the law.",
-      "Kinship may well shape the lifeworld more than the law."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -23297,10 +22984,7 @@
     "expect": {
      "kind": "produce",
      "target": "Reciprocity might be fair only in name.",
-     "accept": [
-      "Reciprocity might be equal only in name.",
-      "Reciprocity might be reciprocal only in name."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -23363,10 +23047,7 @@
     "expect": {
      "kind": "produce",
      "target": "Socialization may set the pecking order before school.",
-     "accept": [
-      "Socialization may set the pecking order before the work.",
-      "Socialization may set the pecking order before the initiation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -23685,10 +23366,7 @@
     "expect": {
      "kind": "produce",
      "target": "The dinner was opulent; the welcome, faceless.",
-     "accept": [
-      "The table was opulent; the welcome, faceless.",
-      "The banquet was opulent; the welcome, faceless."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -23778,10 +23456,7 @@
     "expect": {
      "kind": "produce",
      "target": "We have no rule-breaking here; we have a local custom.",
-     "accept": [
-      "We have no problem here; we have a local custom.",
-      "We have no deviance here; we have a local custom."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -23844,10 +23519,7 @@
     "expect": {
      "kind": "produce",
      "target": "Healthy rule-breaking, they said, and rather good for the evening.",
-     "accept": [
-      "Healthy rule-breaking, they said, and rather good for the mood.",
-      "Healthy taboo breaking, they said, and rather good for the mood."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -24174,10 +23846,7 @@
     "expect": {
      "kind": "produce",
      "target": "The language change described above becomes the habit discussed below.",
-     "accept": [
-      "The language change described above becomes the rule discussed below.",
-      "The language change described above becomes the language norm discussed below."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -24271,10 +23940,7 @@
     "expect": {
      "kind": "produce",
      "target": "This semantic change, as noted earlier, comes from everyday speech.",
-     "accept": [
-      "This semantic change, as noted earlier, comes from everyday use.",
-      "This semantic change, as noted earlier, comes from everyday language usage."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -24337,10 +24003,7 @@
     "expect": {
      "kind": "produce",
      "target": "Where the context is missing, the literal meaning does not hold.",
-     "accept": [
-      "Where the page is missing, the literal meaning does not hold.",
-      "Where the semantic context is missing, the literal meaning does not hold."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -24659,10 +24322,7 @@
     "expect": {
      "kind": "produce",
      "target": "The diaspora keeps the language; the enclave, the silence.",
-     "accept": [
-      "The diaspora keeps the songs; the enclave, the silence.",
-      "The diaspora keeps the heritage language; the enclave, the silence."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -24752,10 +24412,7 @@
     "expect": {
      "kind": "produce",
      "target": "The old religion survives as spirituality, the doubt as a question.",
-     "accept": [
-      "The old religion survives as spirituality, the silence as a question.",
-      "The old religion survives as spirituality, the crisis of faith as a question."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -24818,10 +24475,7 @@
     "expect": {
      "kind": "produce",
      "target": "The neighborhood changed; its values did not.",
-     "accept": [
-      "The city changed; its values did not.",
-      "The social stratum changed; its values did not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -25132,10 +24786,7 @@
     "expect": {
      "kind": "produce",
      "target": "In the report it is a saving; on the floor, work intensification.",
-     "accept": [
-      "In the report it is a gain; on the floor, work intensification.",
-      "In the report it is an efficiency gain; on the floor, work intensification."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -25229,10 +24880,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the firm calls flexibilization, the staff calls precarization.",
-     "accept": [
-      "What the boss calls flexibilization, the staff calls precarization.",
-      "What management calls flexibilization, the union calls precarization."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -25295,10 +24943,7 @@
     "expect": {
      "kind": "produce",
      "target": "Standardization is a method; the merger is a program.",
-     "accept": [
-      "Standardization is a method; the plan is a program.",
-      "Standardization is a method; rationalization is a program."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -25617,10 +25262,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the hierarchy does is hide the power imbalance.",
-     "accept": [
-      "What the system does is hide the power imbalance.",
-      "What the power structure does is hide the power imbalance."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -25714,10 +25356,7 @@
     "expect": {
      "kind": "produce",
      "target": "Behind the reform stands the authority to give orders.",
-     "accept": [
-      "Behind the rule stands the authority to give orders.",
-      "Behind the delegation stands the authority to give orders."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -25780,10 +25419,7 @@
     "expect": {
      "kind": "produce",
      "target": "Room to maneuver we notice; subordination we do not.",
-     "accept": [
-      "Room to maneuver we notice; the pressure we do not.",
-      "Subordination we notice; room to maneuver we do not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -26086,10 +25722,7 @@
     "expect": {
      "kind": "produce",
      "target": "Collective bargaining rights demand that the talks be free from pressure.",
-     "accept": [
-      "Collective bargaining rights demand that the talks be free from interference.",
-      "Collective bargaining rights demand that the conduct of negotiations be free from state interference."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -26183,10 +25816,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for trust, no code of conduct would hold.",
-     "accept": [
-      "Were it not for goodwill, no code of conduct would hold.",
-      "Were it not for consensus building, no code of conduct would hold."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -26249,9 +25879,7 @@
     "expect": {
      "kind": "produce",
      "target": "The union asks that the firm make every contract permanent.",
-     "accept": [
-      "The union representative asks that the firm make every apprenticeship contract permanent."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -26562,10 +26190,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as they would like to spin off the team, the real work stays in-house.",
-     "accept": [
-      "Much as they would like to spin off the branch, the real work stays in-house.",
-      "Much as they would like to spin off the unit, the real work stays in-house."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -26659,10 +26284,7 @@
     "expect": {
      "kind": "produce",
      "target": "The rule, albeit permeable, does not remove the job insecurity.",
-     "accept": [
-      "The line, albeit permeable, does not remove the job insecurity.",
-      "The border, albeit permeable, does not remove the job insecurity."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -26725,10 +26347,7 @@
     "expect": {
      "kind": "produce",
      "target": "Although well paid, many still work on the side.",
-     "accept": [
-      "Although well placed, many still work on the side.",
-      "Although gainfully employed, many still work on the side."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -27047,10 +26666,7 @@
     "expect": {
      "kind": "produce",
      "target": "Deskilling is not the opposite of training.",
-     "accept": [
-      "Deskilling is not the opposite of learning.",
-      "Deskilling is not the opposite of professionalization."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -27144,10 +26760,7 @@
     "expect": {
      "kind": "produce",
      "target": "Lateral hiring and staff development arrive together.",
-     "accept": [
-      "Lateral hiring and training arrive together.",
-      "Lateral hiring and a competency-based approach arrive together."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -27210,10 +26823,7 @@
     "expect": {
      "kind": "produce",
      "target": "A skilled labor shortage is announced; a pool is counted.",
-     "accept": [
-      "A skilled labor shortage is announced; a number is counted.",
-      "A skilled labor shortage is announced; a labor reserve is counted."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -27540,10 +27150,7 @@
     "expect": {
      "kind": "produce",
      "target": "One obscures the split; another undermines the professional ethic.",
-     "accept": [
-      "One obscures the plan; another undermines the professional ethic.",
-      "One obscures the segmentation; another undermines the professional ethic."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -27625,10 +27232,7 @@
     "expect": {
      "kind": "produce",
      "target": "The regulation openly claims what everyday practice merely assumes.",
-     "accept": [
-      "The handbook openly claims what everyday practice merely assumes.",
-      "The written rule openly claims what everyday practice merely assumes."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -27691,10 +27295,7 @@
     "expect": {
      "kind": "produce",
      "target": "To call it a rule is not to call it a platitude.",
-     "accept": [
-      "To call it an order is not to call it a platitude.",
-      "To call it disciplining is not to call it a platitude."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -28014,8 +27615,7 @@
      "kind": "produce",
      "target": "Knowledge work may well end in burnout.",
      "accept": [
-      "Knowledge work may well end in exhaustion.",
-      "Knowledge work may well end in self-exploitation."
+      "Knowledge work may well end in exhaustion."
      ],
      "hint": [
       {
@@ -28110,10 +27710,7 @@
     "expect": {
      "kind": "produce",
      "target": "A role conflict might look like a time problem.",
-     "accept": [
-      "A role conflict might look like a planning problem.",
-      "A role conflict might look like a pacing problem."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -28176,10 +27773,7 @@
     "expect": {
      "kind": "produce",
      "target": "Piecework may weaken trust and strain the interpersonal side.",
-     "accept": [
-      "Piecework may weaken teams and strain the interpersonal side.",
-      "Piecework may weaken collegiality and strain the interpersonal side."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -28466,10 +28060,7 @@
     "expect": {
      "kind": "produce",
      "target": "The program was a success; the transition rate, less so.",
-     "accept": [
-      "The center was a success; the transition rate, less so.",
-      "The excellence initiative was a success; the transition rate, less so."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -28579,10 +28170,7 @@
     "expect": {
      "kind": "produce",
      "target": "We have no ranking here; we have a competitive logic.",
-     "accept": [
-      "We have no contest here; we have a competitive logic.",
-      "We have no elite formation here; we have a competitive logic."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -28639,16 +28227,13 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Yayın baskısı, dediler, üstelik kariyere iyi geliyor."
+      "text": "Bir tane daha: Sağlıklı bir yayın baskısı, dediler, üstelik kariyere iyi geliyor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Publication pressure, they said, and rather good for the career.",
-     "accept": [
-      "Publication pressure, they said, and rather good for the field.",
-      "Healthy publication pressure, they said, and rather good for quality."
-     ],
+     "target": "Healthy publication pressure, they said, and rather good for the career.",
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -28664,7 +28249,7 @@
       },
       {
        "lang": "en",
-       "text": "Publication pressure, they said, and rather good for the career."
+       "text": "Healthy publication pressure, they said, and rather good for the career."
       },
       {
        "lang": "tr",
@@ -28975,10 +28560,7 @@
     "expect": {
      "kind": "produce",
      "target": "The structural change described above creates the risk discussed below.",
-     "accept": [
-      "The structural change described above creates the cost discussed below.",
-      "The structural change described above threatens the core business discussed below."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -29076,10 +28658,7 @@
     "expect": {
      "kind": "produce",
      "target": "The delay, as noted earlier, was flagged in the feasibility study.",
-     "accept": [
-      "The cost, as noted earlier, was flagged in the feasibility study.",
-      "The distortion of competition, as noted earlier, was flagged in the feasibility study."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -29142,10 +28721,7 @@
     "expect": {
      "kind": "produce",
      "target": "Where the responsibility is unclear, the performance indicator does not help.",
-     "accept": [
-      "Where the owner is unclear, the performance indicator does not help.",
-      "Where the operational responsibility is unclear, the performance indicator does not help."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -29464,10 +29040,7 @@
     "expect": {
      "kind": "produce",
      "target": "The pension level fell; the contribution did not.",
-     "accept": [
-      "The pension level fell; the tax did not.",
-      "The pension level fell; the full retirement age did not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -29561,10 +29134,7 @@
     "expect": {
      "kind": "produce",
      "target": "The contract promises twilight years, the job self-fulfillment.",
-     "accept": [
-      "The state promises twilight years, the job self-fulfillment.",
-      "The intergenerational contract promises twilight years, the job self-fulfillment."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -29619,10 +29189,7 @@
     "expect": {
      "kind": "produce",
      "target": "The participation rate rose; the earmarked money, not at all.",
-     "accept": [
-      "The number rose; the earmarked money, not at all.",
-      "The labor force participation rate rose; the earmarked money, not at all."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -29823,7 +29390,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toprağı satıp değerlenmesini beklemeye"
+      "text": "Toprağı satın alıp değerlenmesini beklemeye"
      },
      {
       "lang": "en",
@@ -29941,10 +29508,7 @@
     "expect": {
      "kind": "produce",
      "target": "In the plan it is land consumption; in the village, a meadow.",
-     "accept": [
-      "In the plan it is land consumption; in the village, a garden.",
-      "In the plan it is land consumption; in the village, an arable field."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -30034,10 +29598,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the office calls land consolidation, the farmer calls land speculation.",
-     "accept": [
-      "What the state calls land consolidation, the farmer calls land speculation.",
-      "What the council calls land consolidation, the neighbor calls land speculation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -30100,10 +29661,7 @@
     "expect": {
      "kind": "produce",
      "target": "A land use conflict is a dispute; the road is a fact.",
-     "accept": [
-      "A land use conflict is a dispute; the permit is a fact.",
-      "A land use conflict is a dispute; paving over land is a fact."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -30216,7 +29774,7 @@
     "tr": "yer öbeğini başa alır"
    },
    {
-    "de": "The barren fields lie fallow; the dilapidated barns do not.",
+    "de": "The barren fields lie fallow; the dilapidated barns stand empty.",
     "tr": "iki nesneyi başa alıp ikiye böler"
    }
   ],
@@ -30368,16 +29926,16 @@
      },
      {
       "lang": "en",
-      "text": "The barren fields lie fallow; the dilapidated barns do not."
+      "text": "The barren fields lie fallow; the dilapidated barns stand empty."
      },
      {
       "lang": "tr",
-      "text": "Kıraç tarlalar atıl duruyor, harap ahırlar durmuyor."
+      "text": "Kıraç tarlalar atıl duruyor, harap ahırlar boş."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The barren fields lie fallow; the dilapidated barns do not."
+     "target": "The barren fields lie fallow; the dilapidated barns stand empty."
     }
    },
    {
@@ -30414,10 +29972,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the purchase does is dress up a territorial claim as investment.",
-     "accept": [
-      "What the deal does is dress up a territorial claim as investment.",
-      "What land grabbing does is dress up a territorial claim as investment."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -30511,10 +30066,7 @@
     "expect": {
      "kind": "produce",
      "target": "Behind the sale stands a failed farm succession.",
-     "accept": [
-      "Behind the move stands a failed farm succession.",
-      "Behind the rural exodus stands a failed farm succession."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -30571,15 +30123,14 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Harap ahırlar atıl duruyor, kıraç tarlalar durmuyor."
+      "text": "Bir tane daha: Yamaçtaki tarlalar atıl duruyor, vadidekiler durmuyor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The dilapidated barns lie fallow; the barren fields do not.",
+     "target": "The hillside fields lie fallow; the valley fields do not.",
      "accept": [
-      "The empty barns lie fallow; the barren fields do not.",
-      "The barren fields lie fallow; the dilapidated barns do not."
+      "The fields on the hillside lie fallow; the fields in the valley do not."
      ],
      "hint": [
       {
@@ -30588,7 +30139,7 @@
       },
       {
        "lang": "en",
-       "text": "The dilapidated barns lie fallow; the barren fields do not."
+       "text": "The hillside fields lie fallow; the valley fields do not."
       },
       {
        "lang": "tr",
@@ -30694,7 +30245,7 @@
    },
    {
     "de": "They ask that every supplier meet a sustainability standard.",
-    "tr": "koşulu kalıpla kurar"
+    "tr": "talebi kalıpla kurar"
    }
   ],
   "lecture": [
@@ -30841,7 +30392,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+      "text": "Son kalıbımız talebi kalıpla kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -30883,10 +30434,7 @@
     "expect": {
      "kind": "produce",
      "target": "Food sovereignty demands that the market be local.",
-     "accept": [
-      "Food sovereignty demands that the supply be local.",
-      "Food sovereignty demands that the agricultural reform be decided locally."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -30984,10 +30532,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for the rain, the agricultural transition would stall.",
-     "accept": [
-      "Were it not for the support, the agricultural transition would stall.",
-      "Were it not for the agricultural subsidy, the agricultural transition would stall."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -31050,14 +30595,11 @@
     "expect": {
      "kind": "produce",
      "target": "They ask that every farm meet a sustainability standard.",
-     "accept": [
-      "They ask that every producer meet a sustainability standard.",
-      "They ask that every supplier meet a sustainability standard."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
-       "text": "Koşulu kalıpla kurmak için"
+       "text": "Talebi kalıpla kurmak için"
       },
       {
        "lang": "en",
@@ -31098,7 +30640,7 @@
      },
      {
       "lang": "tr",
-      "text": "koşul"
+      "text": "talep"
      },
      {
       "lang": "en",
@@ -31112,11 +30654,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
    "partner": "her savı çıkar sayan, «senin tarlan için istiyorsun» diyen biri",
    "opening": "You want this for your own field, don't you?",
    "openingTr": "Bunu kendi tarlan için istiyorsun, değil mi?",
-   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -31364,10 +30906,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as we praise agroecology, the yield feeds the city.",
-     "accept": [
-      "Much as we praise agroecology, the big farm feeds the city.",
-      "Much as we praise agroecology, the monoculture feeds the city."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -31465,10 +31004,7 @@
     "expect": {
      "kind": "produce",
      "target": "The plan, albeit soil-conserving, does not restore soil fertility.",
-     "accept": [
-      "The rule, albeit soil-conserving, does not restore soil fertility.",
-      "The method, albeit soil-conserving, does not restore soil fertility."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -31531,10 +31067,7 @@
     "expect": {
      "kind": "produce",
      "target": "Although near-natural, a species-rich field yields less.",
-     "accept": [
-      "Although careful, a species-rich field yields less.",
-      "Although site-adapted, a species-rich field yields less."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -31853,10 +31386,7 @@
     "expect": {
      "kind": "produce",
      "target": "A world market price is not a wage.",
-     "accept": [
-      "A world market price is not an income.",
-      "A world market price is not a producer price."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -31954,10 +31484,7 @@
     "expect": {
      "kind": "produce",
      "target": "Trade liberalization and security of supply pull apart.",
-     "accept": [
-      "Trade liberalization and the standard pull apart.",
-      "Trade liberalization and market regulation pull apart."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -32020,10 +31547,7 @@
     "expect": {
      "kind": "produce",
      "target": "Price volatility is measured; a treaty is signed.",
-     "accept": [
-      "Price volatility is measured; a contract is signed.",
-      "Price volatility is measured; a free trade agreement is signed."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -32334,10 +31858,7 @@
     "expect": {
      "kind": "produce",
      "target": "One defends the label; another doubts the traceability.",
-     "accept": [
-      "One defends the claim; another doubts the traceability.",
-      "One defends the country-of-origin labeling; another doubts the traceability."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -32431,10 +31952,7 @@
     "expect": {
      "kind": "produce",
      "target": "The report openly claims what the field research merely suggests.",
-     "accept": [
-      "The brochure openly claims what the field research merely suggests.",
-      "The sustainability report openly claims what the field research merely suggests."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -32497,10 +32015,7 @@
     "expect": {
      "kind": "produce",
      "target": "To call it advice is not to call it agronomic advice.",
-     "accept": [
-      "To call it help is not to call it agronomic advice.",
-      "To call it knowledge transfer is not to call it agronomic advice."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -32836,8 +32351,7 @@
      "kind": "produce",
      "target": "Soil erosion may well deplete the slope in one generation.",
      "accept": [
-      "Soil erosion may well deplete the hill in one generation.",
-      "Soil erosion may well deplete the field in one generation."
+      "Soil erosion may well deplete the hill in one generation."
      ],
      "hint": [
       {
@@ -32920,10 +32434,7 @@
     "expect": {
      "kind": "produce",
      "target": "To overfertilize might mean nitrate pollution in the well.",
-     "accept": [
-      "To overfertilize might mean nitrate pollution in the river.",
-      "To overfertilize might mean nitrate pollution downstream."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -32986,10 +32497,7 @@
     "expect": {
      "kind": "produce",
      "target": "Pesticide use may kill what should pollinate and let the spray seep away.",
-     "accept": [
-      "Pesticide use may kill what should pollinate and let the poison seep away.",
-      "Pesticide use may kill what should pollinate and let the crop protection product seep away."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -33110,7 +32618,7 @@
     "tr": "yalanlayıp aynı şeyi doğrular"
    },
    {
-    "de": "The milk quota, they said, and rather good for the small farm.",
+    "de": "A fair milk quota, they said, and rather good for the small farm.",
     "tr": "övgüyü aktarıp tersine çevirir"
    }
   ],
@@ -33230,16 +32738,16 @@
      },
      {
       "lang": "en",
-      "text": "The milk quota, they said, and rather good for the small farm."
+      "text": "A fair milk quota, they said, and rather good for the small farm."
      },
      {
       "lang": "tr",
-      "text": "Süt kotası, dediler, üstelik küçük çiftliğe iyi geliyor."
+      "text": "Adil bir süt kotası, dediler, üstelik küçük çiftliğe iyi geliyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The milk quota, they said, and rather good for the small farm."
+     "target": "A fair milk quota, they said, and rather good for the small farm."
     }
    },
    {
@@ -33268,10 +32776,7 @@
     "expect": {
      "kind": "produce",
      "target": "The field was lush; the barn, less so.",
-     "accept": [
-      "The meadow was lush; the barn, less so.",
-      "The pasture was lush; the barn, less so."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -33369,10 +32874,7 @@
     "expect": {
      "kind": "produce",
      "target": "We have no factory farming here; we have modern housing.",
-     "accept": [
-      "We have no factory farming here; we have new housing.",
-      "We have no factory farming here; we have humane housing."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -33445,16 +32947,13 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Süt kotası, dediler, üstelik bölgeye iyi geliyor."
+      "text": "Bir tane daha: Adil bir süt kotası, dediler, üstelik bölgeye iyi geliyor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The milk quota, they said, and rather good for the region.",
-     "accept": [
-      "The milk quota, they said, and rather good for the village.",
-      "The milk quota, they said, and rather good for the small farm."
-     ],
+     "target": "A fair milk quota, they said, and rather good for the region.",
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -33470,7 +32969,7 @@
       },
       {
        "lang": "en",
-       "text": "The milk quota, they said, and rather good for the region."
+       "text": "A fair milk quota, they said, and rather good for the region."
       },
       {
        "lang": "tr",
@@ -33781,10 +33280,7 @@
     "expect": {
      "kind": "produce",
      "target": "The climate adaptation described above raises the costs discussed below.",
-     "accept": [
-      "The climate adaptation described above raises the risks discussed below.",
-      "The climate adaptation described above raises the questions of climate justice discussed below."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -33878,10 +33374,7 @@
     "expect": {
      "kind": "produce",
      "target": "This measure, as noted earlier, is also a question of environmental ethics.",
-     "accept": [
-      "This rule, as noted earlier, is also a question of environmental ethics.",
-      "Environmental compatibility, as noted earlier, is also a question of environmental ethics."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -33944,10 +33437,7 @@
     "expect": {
      "kind": "produce",
      "target": "Where a farm is import-dependent, no measure works across the board.",
-     "accept": [
-      "Where a country is import-dependent, no measure works across the board.",
-      "Where a region is import-dependent, no measure works across the board."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -34234,10 +33724,7 @@
     "expect": {
      "kind": "produce",
      "target": "The right to save seed survives as custom, the patent as law.",
-     "accept": [
-      "The right to save seed survives as custom, the license as law.",
-      "The right to save seed survives as custom, the seed company's claim as a patent."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -34359,10 +33846,7 @@
     "expect": {
      "kind": "produce",
      "target": "They reforest the hillside; the valley, they deforest.",
-     "accept": [
-      "They reforest the hillside; the field, they deforest.",
-      "They reforest the hillside; the plain, they deforest."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -34417,10 +33901,7 @@
     "expect": {
      "kind": "produce",
      "target": "The rain fell; the harvest did not.",
-     "accept": [
-      "The snow fell; the harvest did not.",
-      "The precipitation fell; the harvest did not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -34739,10 +34220,7 @@
     "expect": {
      "kind": "produce",
      "target": "In the brochure it is a saving; in the study, decarbonization.",
-     "accept": [
-      "In the brochure it is a cut; in the study, decarbonization.",
-      "In the brochure it is emission reduction; in the study, decarbonization."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -34828,10 +34306,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the city calls an energy transition, the district calls a transportation shift.",
-     "accept": [
-      "What the state calls an energy transition, the district calls a transportation shift.",
-      "What the ministry calls an energy transition, the district calls a transportation shift."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -34894,10 +34369,7 @@
     "expect": {
      "kind": "produce",
      "target": "Climate neutrality is a balance; the sticker is a label.",
-     "accept": [
-      "Climate neutrality is a balance; the claim is a label.",
-      "Climate neutrality is a balance; climate-neutral is a label."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -35208,10 +34680,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the industry does is hide the pollutant load.",
-     "accept": [
-      "What the plant does is hide the pollutant load.",
-      "What overexploitation does is hide the pollutant load."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -35309,10 +34778,7 @@
     "expect": {
      "kind": "produce",
      "target": "Behind the growth stands a lost carbon sink.",
-     "accept": [
-      "Behind the road stands a lost carbon sink.",
-      "Behind the resource consumption stands a lost carbon sink."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -35375,10 +34841,7 @@
     "expect": {
      "kind": "produce",
      "target": "The permafrost we count; species extinction we do not.",
-     "accept": [
-      "The ice we count; species extinction we do not.",
-      "Species extinction we count; the permafrost we do not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -35492,7 +34955,7 @@
    },
    {
     "de": "They ask that every ecosystem service be counted before the expropriation.",
-    "tr": "koşulu kalıpla kurar"
+    "tr": "talebi kalıpla kurar"
    }
   ],
   "lecture": [
@@ -35639,7 +35102,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+      "text": "Son kalıbımız talebi kalıpla kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -35681,10 +35144,7 @@
     "expect": {
      "kind": "produce",
      "target": "The precautionary principle demands that the safety review be given priority.",
-     "accept": [
-      "The precautionary principle demands that the review be given priority.",
-      "The precautionary principle demands that the responsibility to protect be given priority."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -35778,10 +35238,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for the forest, the village would have no commons to share.",
-     "accept": [
-      "Were it not for the river, the village would have no commons to share.",
-      "Were it not for its natural capital, the village would have no commons to share."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -35844,14 +35301,11 @@
     "expect": {
      "kind": "produce",
      "target": "They ask that every service be counted before the expropriation.",
-     "accept": [
-      "They ask that every loss be counted before the expropriation.",
-      "They ask that every ecosystem service be counted before the expropriation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
-       "text": "Koşulu kalıpla kurmak için"
+       "text": "Talebi kalıpla kurmak için"
       },
       {
        "lang": "en",
@@ -35892,7 +35346,7 @@
      },
      {
       "lang": "tr",
-      "text": "koşul"
+      "text": "talep"
      },
      {
       "lang": "en",
@@ -35906,11 +35360,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
    "partner": "her çevre savını duygusal bulan, «bu senin görüşün» diyen bir yetkili",
    "opening": "That's your personal view, isn't it?",
    "openingTr": "Bu senin kişisel görüşün, değil mi?",
-   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -36158,10 +35612,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as I agree with the criticism, the growth imperative pays the pensions.",
-     "accept": [
-      "Much as I agree with the warning, the growth imperative pays the pensions.",
-      "Much as I agree with the criticism of growth, the growth imperative pays the pensions."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -36255,10 +35706,7 @@
     "expect": {
      "kind": "produce",
      "target": "The progress, albeit real, does not deliver sufficiency.",
-     "accept": [
-      "The gain, albeit real, does not deliver sufficiency.",
-      "The decoupling, albeit real, does not deliver sufficiency."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -36321,10 +35769,7 @@
     "expect": {
      "kind": "produce",
      "target": "Although aware of the limits, the circular economy still needs growth.",
-     "accept": [
-      "Although aware of the risk, the circular economy still needs growth.",
-      "Although aware of finiteness, the circular economy still needs growth."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -36643,10 +36088,7 @@
     "expect": {
      "kind": "produce",
      "target": "Waste prevention is not recycling.",
-     "accept": [
-      "Waste prevention is not reuse.",
-      "Waste prevention is not the same as a closed loop."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -36740,10 +36182,7 @@
     "expect": {
      "kind": "produce",
      "target": "They reclaim the glass and sell it as a recycled raw material.",
-     "accept": [
-      "They reclaim the paper and sell it as a recycled raw material.",
-      "They reclaim the metal and sell it as a recycled raw material."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -36806,10 +36245,7 @@
     "expect": {
      "kind": "produce",
      "target": "Obsolescence is designed; repair is paid for.",
-     "accept": [
-      "Obsolescence is designed; the fix is paid for.",
-      "Obsolescence is designed; longevity is paid for."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -37120,10 +36556,7 @@
     "expect": {
      "kind": "produce",
      "target": "One reports an incentive effect; another doubts the result.",
-     "accept": [
-      "One reports an incentive effect; another doubts the number.",
-      "One reports an incentive effect; another doubts the transformation process."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -37222,8 +36655,7 @@
      "kind": "produce",
      "target": "The sponsor openly claims what the academic journal merely suggests.",
      "accept": [
-      "The funder openly claims what the academic journal merely suggests.",
-      "The press release openly claims what the academic journal merely suggests."
+      "The funder openly claims what the academic journal merely suggests."
      ],
      "hint": [
       {
@@ -37287,10 +36719,7 @@
     "expect": {
      "kind": "produce",
      "target": "To dilute a claim is not to call it volatile.",
-     "accept": [
-      "To dilute a warning is not to call it volatile.",
-      "To dilute a finding is not to call it volatile."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -37609,10 +37038,7 @@
     "expect": {
      "kind": "produce",
      "target": "A feedback loop may well push the region past a tipping point.",
-     "accept": [
-      "A feedback loop may well push the ice past a tipping point.",
-      "A feedback loop may well push the system past a tipping point."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -37706,10 +37132,7 @@
     "expect": {
      "kind": "produce",
      "target": "The regenerative capacity might hold if the leaves can decompose.",
-     "accept": [
-      "The regenerative capacity might hold if the wood can decompose.",
-      "The regenerative capacity might hold if the litter can decompose."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -37772,10 +37195,7 @@
     "expect": {
      "kind": "produce",
      "target": "Warm water may secrete more gas and lose its thermal balance.",
-     "accept": [
-      "Warm air may secrete more gas and lose its thermal balance.",
-      "Warm soil may secrete more gas and lose its thermal balance."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -38078,10 +37498,7 @@
     "expect": {
      "kind": "produce",
      "target": "The street was revitalized; the neighbors, less so.",
-     "accept": [
-      "The park was revitalized; the neighbors, less so.",
-      "The square was revitalized; the neighbors, less so."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -38167,10 +37584,7 @@
     "expect": {
      "kind": "produce",
      "target": "We have no gentrification here; we plan and refurbish.",
-     "accept": [
-      "We have no gentrification here; we build and refurbish.",
-      "We have no gentrification here; we densify and refurbish."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -38233,10 +37647,7 @@
     "expect": {
      "kind": "produce",
      "target": "Car-friendly, they said, and rather good for the stores.",
-     "accept": [
-      "Car-friendly, they said, and rather good for the center.",
-      "Car-friendly, they said, and rather good against traffic gridlock."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -38563,10 +37974,7 @@
     "expect": {
      "kind": "produce",
      "target": "The spatial planning outlined above is made concrete in the map below.",
-     "accept": [
-      "The spatial planning outlined above is made concrete in the rules below.",
-      "The spatial planning outlined above is made concrete in the zoning plan below."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -38664,10 +38072,7 @@
     "expect": {
      "kind": "produce",
      "target": "That decision, as noted, works in urban design terms only.",
-     "accept": [
-      "That plan, as noted, works in urban design terms only.",
-      "That change of use, as noted, works in urban design terms only."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -38730,10 +38135,7 @@
     "expect": {
      "kind": "produce",
      "target": "In terms of scale, a small quarter serves accessibility better.",
-     "accept": [
-      "In terms of scale, a dense quarter serves accessibility better.",
-      "In terms of scale, a fine-grained quarter serves accessibility better."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -39028,10 +38430,7 @@
     "expect": {
      "kind": "produce",
      "target": "The moratorium survives as a promise, the permit as a date.",
-     "accept": [
-      "The moratorium survives as a promise, the decision as a date.",
-      "The moratorium survives as a promise, the construction freeze as a date."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -39173,10 +38572,7 @@
     "expect": {
      "kind": "produce",
      "target": "The houses fall into neglect; the schools, into ruin.",
-     "accept": [
-      "The houses fall into neglect; the stores, into ruin.",
-      "The houses fall into neglect; the halls, into ruin."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -39223,10 +38619,7 @@
     "expect": {
      "kind": "produce",
      "target": "The dismantling began; the rebuilding did not.",
-     "accept": [
-      "The dismantling began; the work did not.",
-      "The dismantling began; the repurposing did not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -39545,10 +38938,7 @@
     "expect": {
      "kind": "produce",
      "target": "In the press release it is a dip; in the model, stagnation.",
-     "accept": [
-      "In the press release it is a pause; in the model, stagnation.",
-      "In the press release it is a downturn; in the model, stagnation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -39638,10 +39028,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the ministry calls a devaluation, the real economy calls a loss.",
-     "accept": [
-      "What the report calls a devaluation, the real economy calls a loss.",
-      "What the bank calls a devaluation, the real economy calls a loss."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -39705,8 +39092,7 @@
      "kind": "produce",
      "target": "Deflation is a number; the forecast is a story.",
      "accept": [
-      "Deflation is a number; the outlook is a story.",
-      "Deflation is a number; the business cycle is a story."
+      "Deflation is a number; the outlook is a story."
      ],
      "hint": [
       {
@@ -40019,8 +39405,7 @@
      "kind": "produce",
      "target": "What the deficit does is hide a market failure.",
      "accept": [
-      "What the shortfall does is hide a market failure.",
-      "What the budget deficit does is hide a market failure."
+      "What the shortfall does is hide a market failure."
      ],
      "hint": [
       {
@@ -40115,10 +39500,7 @@
     "expect": {
      "kind": "produce",
      "target": "Behind the rescue stands a speculative bubble.",
-     "accept": [
-      "Behind the loan stands a speculative bubble.",
-      "Behind the bailout package stands a speculative bubble."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -40181,10 +39563,7 @@
     "expect": {
      "kind": "produce",
      "target": "The trade deficit we insure; the systemic risk we do not.",
-     "accept": [
-      "The debt we insure; the systemic risk we do not.",
-      "The systemic risk we insure; the trade deficit we do not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -40298,7 +39677,7 @@
    },
    {
     "de": "They ask that every whistleblower be heard before the misconduct is buried.",
-    "tr": "koşulu kalıpla kurar"
+    "tr": "talebi kalıpla kurar"
    }
   ],
   "lecture": [
@@ -40445,7 +39824,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+      "text": "Son kalıbımız talebi kalıpla kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -40487,10 +39866,7 @@
     "expect": {
      "kind": "produce",
      "target": "The financial regulator demands that the report be complete.",
-     "accept": [
-      "The financial regulator demands that the file be complete.",
-      "The financial regulator demands that the disclosure be complete."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -40584,10 +39960,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for the silence, no reporting office would be needed.",
-     "accept": [
-      "Were it not for the secrecy, no reporting office would be needed.",
-      "Were it not for the lack of transparency, no reporting office would be needed."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -40650,14 +40023,11 @@
     "expect": {
      "kind": "produce",
      "target": "They ask that every report be heard before the misconduct is buried.",
-     "accept": [
-      "They ask that every case be heard before the misconduct is buried.",
-      "They ask that every whistleblower be heard before the misconduct is buried."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
-       "text": "Koşulu kalıpla kurmak için"
+       "text": "Talebi kalıpla kurmak için"
       },
       {
        "lang": "en",
@@ -40698,7 +40068,7 @@
      },
      {
       "lang": "tr",
-      "text": "koşul"
+      "text": "talep"
      },
      {
       "lang": "en",
@@ -40712,11 +40082,11 @@
    }
   ],
   "chat": {
-   "scene": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
    "partner": "her bildirimi kişisel husumet sayan, «kime kızgınsın» diyen bir yönetici",
    "opening": "Who are you angry with here?",
    "openingTr": "Burada kime kızgınsın?",
-   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -40980,10 +40350,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as I welcome the policy, the key interest rate hurts the young.",
-     "accept": [
-      "Much as I welcome the tool, the key interest rate hurts the young.",
-      "Much as I welcome the monetary policy, the key interest rate hurts the young."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -41065,10 +40432,7 @@
     "expect": {
      "kind": "produce",
      "target": "An expansionary move, albeit restrictive later, buys time.",
-     "accept": [
-      "An expansionary cut, albeit restrictive later, buys time.",
-      "An expansionary step, albeit restrictive later, buys time."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -41131,10 +40495,7 @@
     "expect": {
      "kind": "produce",
      "target": "Although countercyclical, the budget arrives too late.",
-     "accept": [
-      "Although countercyclical, the plan arrives too late.",
-      "Although countercyclical, the fiscal policy arrives too late."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -41453,10 +40814,7 @@
     "expect": {
      "kind": "produce",
      "target": "A marginal cost is not a fixed cost.",
-     "accept": [
-      "A marginal cost is not a total cost.",
-      "A marginal cost is not an opportunity cost."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -41554,10 +40912,7 @@
     "expect": {
      "kind": "produce",
      "target": "An economy of scale lowers the price.",
-     "accept": [
-      "An economy of scale lowers the unit cost.",
-      "An economy of scale lowers the capital requirement."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -41620,10 +40975,7 @@
     "expect": {
      "kind": "produce",
      "target": "Follow-on costs are estimated; a delay is announced.",
-     "accept": [
-      "Follow-on costs are estimated; a change is announced.",
-      "Follow-on costs are estimated; a cost overrun is announced."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -41934,10 +41286,7 @@
     "expect": {
      "kind": "produce",
      "target": "One alleges fraud; another proves embezzlement.",
-     "accept": [
-      "One alleges theft; another proves embezzlement.",
-      "One alleges accounting fraud; another proves embezzlement."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -42032,8 +41381,7 @@
      "kind": "produce",
      "target": "The journalist openly claims what the auditors merely assume.",
      "accept": [
-      "The reporter openly claims what the auditors merely assume.",
-      "The whistleblower openly claims what the auditors merely assume."
+      "The reporter openly claims what the auditors merely assume."
      ],
      "hint": [
       {
@@ -42097,10 +41445,7 @@
     "expect": {
      "kind": "produce",
      "target": "To feign a debt is not to embezzle a gain.",
-     "accept": [
-      "To feign a need is not to embezzle a gain.",
-      "To feign a loss is not to embezzle a gain."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -42419,10 +41764,7 @@
     "expect": {
      "kind": "produce",
      "target": "The investment cycle may well turn before the rate falls.",
-     "accept": [
-      "The investment cycle may well turn before the price falls.",
-      "The investment cycle may well turn before the savings rate falls."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -42520,10 +41862,7 @@
     "expect": {
      "kind": "produce",
      "target": "A high savings rate might not mean solvency.",
-     "accept": [
-      "A high income might not mean solvency.",
-      "A high savings potential might not mean solvency."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -42586,10 +41925,7 @@
     "expect": {
      "kind": "produce",
      "target": "A solvent bank may still carry a default risk and lose its risk appetite.",
-     "accept": [
-      "A solvent fund may still carry a default risk and lose its risk appetite.",
-      "A solvent firm may still carry a default risk and lose its risk appetite."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -42868,10 +42204,7 @@
     "expect": {
      "kind": "produce",
      "target": "The campaign was thorough; the audit, less so.",
-     "accept": [
-      "The report was thorough; the audit, less so.",
-      "The greenwashing was thorough; the audit, less so."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -43005,10 +42338,7 @@
     "expect": {
      "kind": "produce",
      "target": "We have no favoritism here; we have an old boys' network.",
-     "accept": [
-      "We have no bias here; we have an old boys' network.",
-      "We have no nepotism here; we have an old boys' network."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -43071,10 +42401,7 @@
     "expect": {
      "kind": "produce",
      "target": "Creative labeling, they said, and rather good for the brand.",
-     "accept": [
-      "Creative labeling, they said, and rather good for the image.",
-      "Creative labeling, they said, and rather good for our reputation."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -43401,10 +42728,7 @@
     "expect": {
      "kind": "produce",
      "target": "The market penetration described above leads to the risk discussed below.",
-     "accept": [
-      "The market penetration described above leads to the cost discussed below.",
-      "The market penetration described above leads to the market saturation discussed below."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -43499,8 +42823,7 @@
      "kind": "produce",
      "target": "Our advantage, as noted earlier, rests on a monopoly position.",
      "accept": [
-      "Our lead, as noted earlier, rests on a monopoly position.",
-      "Our competitiveness, as noted earlier, rests on a monopoly position."
+      "Our lead, as noted earlier, rests on a monopoly position."
      ],
      "hint": [
       {
@@ -43565,8 +42888,7 @@
      "kind": "produce",
      "target": "Where a rival can undercut us, no agreement helps.",
      "accept": [
-      "Where a rival can undercut us, no deal helps.",
-      "Where a rival can undercut us, no price fixing helps."
+      "Where a rival can undercut us, no deal helps."
      ],
      "hint": [
       {
@@ -43887,8 +43209,7 @@
      "kind": "produce",
      "target": "The bidding process survives as a form, the audit as a delay.",
      "accept": [
-      "The bidding process survives as a form, the review as a delay.",
-      "The bidding process survives as a form, the permitting process as a delay."
+      "The bidding process survives as a form, the review as a delay."
      ],
      "hint": [
       {
@@ -43991,10 +43312,7 @@
     "expect": {
      "kind": "produce",
      "target": "The consortium builds; the risk, it does not name.",
-     "accept": [
-      "The consortium builds; the cost, it does not name.",
-      "The consortium builds; the operating model, it does not name."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -44041,10 +43359,7 @@
     "expect": {
      "kind": "produce",
      "target": "The conflicting goals stayed; the deadline did not.",
-     "accept": [
-      "The conflicting goals stayed; the budget did not.",
-      "The conflicting goals stayed; the cumbersome wording did not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -44339,10 +43654,7 @@
     "expect": {
      "kind": "produce",
      "target": "In the essay it is rhetoric; in the speech, pathos.",
-     "accept": [
-      "In the essay it is rhetoric; in the ad, pathos.",
-      "In the essay it is rhetoric; in the pamphlet, pathos."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -44452,10 +43764,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the editor calls a literary movement, the reader calls a fad.",
-     "accept": [
-      "What the teacher calls a literary movement, the reader calls a fad.",
-      "What the critic calls a literary movement, the reader calls a passing fashion."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -44519,8 +43828,7 @@
      "kind": "produce",
      "target": "A stylistic device is a choice; a slip is a mistake.",
      "accept": [
-      "A stylistic device is a choice; a lapse is a mistake.",
-      "A stylistic device is a choice; a break in style is a mistake."
+      "A stylistic device is a choice; a lapse is a mistake."
      ],
      "hint": [
       {
@@ -44832,10 +44140,7 @@
     "expect": {
      "kind": "produce",
      "target": "What the argument does is hide a flaw in reasoning.",
-     "accept": [
-      "What the chain does is hide a flaw in reasoning.",
-      "What the line of argument does is hide a flaw in reasoning."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -44933,10 +44238,7 @@
     "expect": {
      "kind": "produce",
      "target": "Behind the consensus stands a school of thought.",
-     "accept": [
-      "Behind the rule stands a school of thought.",
-      "Behind the prevailing doctrine stands a school of thought."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -44999,10 +44301,7 @@
     "expect": {
      "kind": "produce",
      "target": "The debate among experts we name; the contentious issue we do not.",
-     "accept": [
-      "The debate we name; the contentious issue we do not.",
-      "The contentious issue we name; the debate among experts we do not."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -45090,7 +44389,7 @@
    },
    {
     "de": "freedom of contract",
-    "tr": "irade serbestisi"
+    "tr": "sözleşme özgürlüğü"
    },
    {
     "de": "judicial review",
@@ -45116,7 +44415,7 @@
    },
    {
     "de": "They ask that freedom of contract be tested by judicial review.",
-    "tr": "koşulu kalıpla kurar"
+    "tr": "talebi kalıpla kurar"
    }
   ],
   "lecture": [
@@ -45255,7 +44554,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+      "text": "Son kalıbımız talebi kalıpla kuruyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -45263,7 +44562,7 @@
      },
      {
       "lang": "tr",
-      "text": "İrade serbestisinin yargısal denetimden geçirilmesini istiyorlar."
+      "text": "Sözleşme özgürlüğünün yargısal denetimden geçirilmesini istiyorlar."
      }
     ],
     "expect": {
@@ -45297,10 +44596,7 @@
     "expect": {
      "kind": "produce",
      "target": "Academic freedom demands that no research be stopped for political reasons.",
-     "accept": [
-      "Academic freedom demands that no study be stopped for political reasons.",
-      "Freedom of conscience demands that no one be forced to act against their beliefs."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -45398,10 +44694,7 @@
     "expect": {
      "kind": "produce",
      "target": "Were it not for the courts, the public would never see these files.",
-     "accept": [
-      "Were it not for the press, the public would never see these files.",
-      "Were it not for freedom of information, the public would never see these files."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -45464,14 +44757,11 @@
     "expect": {
      "kind": "produce",
      "target": "They ask that every contract be tested by judicial review.",
-     "accept": [
-      "They ask that every decision be tested by judicial review.",
-      "They ask that freedom of contract be tested by judicial review."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
-       "text": "Koşulu kalıpla kurmak için"
+       "text": "Talebi kalıpla kurmak için"
       },
       {
        "lang": "en",
@@ -45512,7 +44802,7 @@
      },
      {
       "lang": "tr",
-      "text": "koşul"
+      "text": "talep"
      },
      {
       "lang": "en",
@@ -45526,11 +44816,11 @@
    }
   ],
   "chat": {
-   "scene": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+   "scene": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
    "partner": "her hak savını çıkar sayan, «size mi lazım bu» diyen biri",
    "opening": "You need this for yourselves, don't you?",
    "openingTr": "Bu size lazım, değil mi?",
-   "goal": "İsteği, «olmasaydı» anlamını ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "goal": "İsteği, «olmasaydı» anlamını ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
  },
@@ -45778,10 +45068,7 @@
     "expect": {
      "kind": "produce",
      "target": "Much as doubt unsettles us, no maxim survives without doubt.",
-     "accept": [
-      "Much as the question unsettles us, no maxim survives without doubt.",
-      "Much as relativism unsettles us, no maxim survives without doubt."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -45875,10 +45162,7 @@
     "expect": {
      "kind": "produce",
      "target": "A rule, albeit ancient, is not a virtue.",
-     "accept": [
-      "A custom, albeit ancient, is not a virtue.",
-      "A commandment, albeit ancient, is not a virtue."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -45941,10 +45225,7 @@
     "expect": {
      "kind": "produce",
      "target": "Although a form of humility, altruism can be a duty too.",
-     "accept": [
-      "Although a form of virtue, altruism can be a duty too.",
-      "Although a form of integrity, altruism can be a duty too."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -46263,10 +45544,7 @@
     "expect": {
      "kind": "produce",
      "target": "A reference value is not a limit.",
-     "accept": [
-      "A reference value is not a rule.",
-      "A reference value is not a guideline value."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -46360,10 +45638,7 @@
     "expect": {
      "kind": "produce",
      "target": "Repeatability exposes the mistake.",
-     "accept": [
-      "Repeatability exposes the gap.",
-      "Repeatability exposes the source of error."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -46426,10 +45701,7 @@
     "expect": {
      "kind": "produce",
      "target": "A significance level is chosen; a pattern is found.",
-     "accept": [
-      "A significance level is chosen; a trend is found.",
-      "A significance level is chosen; an outlier is found."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -46732,10 +46004,7 @@
     "expect": {
      "kind": "produce",
      "target": "One advocates the plan; another merely affirms it.",
-     "accept": [
-      "One advocates the idea; another merely affirms it.",
-      "One advocates the claim; another merely affirms it."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -46833,10 +46102,7 @@
     "expect": {
      "kind": "produce",
      "target": "To misrepresent a number is a distortion, not a truism.",
-     "accept": [
-      "To misrepresent a quote is a distortion, not a truism.",
-      "To misrepresent a study is a distortion, not a truism."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -46900,8 +46166,7 @@
      "kind": "produce",
      "target": "Persuasiveness is not the same as being true.",
      "accept": [
-      "Persuasiveness is not the same as being right.",
-      "Persuasiveness is not the same as being justifiable."
+      "Persuasiveness is not the same as being right."
      ],
      "hint": [
       {
@@ -47221,10 +46486,7 @@
     "expect": {
      "kind": "produce",
      "target": "A self-image may well outlive the truth.",
-     "accept": [
-      "A self-image may well outlive the facts.",
-      "A self-image may well outlive self-knowledge."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -47318,10 +46580,7 @@
     "expect": {
      "kind": "produce",
      "target": "Self-deception might look like a habit.",
-     "accept": [
-      "Self-deception might look like a choice.",
-      "Self-deception might look like a defense mechanism."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -47384,10 +46643,7 @@
     "expect": {
      "kind": "produce",
      "target": "A coping strategy may hide fear and stay latent.",
-     "accept": [
-      "A coping strategy may hide anger and stay latent.",
-      "A coping strategy may hide transference and stay latent."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -47666,10 +46922,7 @@
     "expect": {
      "kind": "produce",
      "target": "The reply was measured; the tone, less so.",
-     "accept": [
-      "The letter was measured; the tone, less so.",
-      "The answer was measured; the tone, less so."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -47763,10 +47016,7 @@
     "expect": {
      "kind": "produce",
      "target": "We have no cold replies here; we have telling silences.",
-     "accept": [
-      "We have no sharp replies here; we have telling silences.",
-      "We have no curt replies here; we have telling silences."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -47845,10 +47095,7 @@
     "expect": {
      "kind": "produce",
      "target": "A penchant for detail, they said, and rather good against haste.",
-     "accept": [
-      "A penchant for detail, they said, and rather good against error.",
-      "A penchant for detail, they said, and rather charming."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -48175,10 +47422,7 @@
     "expect": {
      "kind": "produce",
      "target": "The impact assessment above must be weighed against the cost estimate below.",
-     "accept": [
-      "The impact assessment above must be weighed against the risk analysis below.",
-      "The impact assessment above must be weighed against the benefit assessment below."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -48272,10 +47516,7 @@
     "expect": {
      "kind": "produce",
      "target": "That decision, as noted earlier, rested on a technology assessment.",
-     "accept": [
-      "That step, as noted earlier, rested on a technology assessment.",
-      "That pivotal decision, as noted earlier, rested on a technology assessment."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -48338,10 +47579,7 @@
     "expect": {
      "kind": "produce",
      "target": "Where the risk is real, a coherent plan is not enough.",
-     "accept": [
-      "Where the danger is real, a coherent plan is not enough.",
-      "Where irreversibility is real, a coherent plan is not enough."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -48660,10 +47898,7 @@
     "expect": {
      "kind": "produce",
      "target": "The pursuit survives as a habit, the goal as a memory.",
-     "accept": [
-      "The pursuit survives as a habit, the plan as a memory.",
-      "The pursuit survives as a habit, the end in itself as a memory."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",
@@ -48758,8 +47993,7 @@
      "kind": "produce",
      "target": "The transience stayed; the calm did not.",
      "accept": [
-      "The transience stayed; the quiet did not.",
-      "The transience stayed; the equanimity did not."
+      "The transience stayed; the quiet did not."
      ],
      "hint": [
       {
@@ -48823,10 +48057,7 @@
     "expect": {
      "kind": "produce",
      "target": "Serenity we learn; the rest, we choose.",
-     "accept": [
-      "Serenity we learn; the tone, we choose.",
-      "Serenity we learn; sincerity, we choose."
-     ],
+     "accept": [],
      "hint": [
       {
        "lang": "tr",

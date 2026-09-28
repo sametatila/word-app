@@ -68,7 +68,7 @@
  { "tr": "Yeni modelin farkı ne?", "kind": "question", "de": "Was ist am neuen Modell anders?" },
  { "tr": "„başvuru işleme alınır“", "kind": "focus", "de": "„der Antrag wird bearbeitet“" },
  { "tr": "„can“ ile bir cümle kur", "kind": "writing.checklist", "de": "Bilde einen Satz mit „can“" },
- { "tr": "39 derecede ne yapmalı?", "kind": "question", "de": "Was tut man bei 39 Grad?" },
+ { "tr": "39 derece ateşte ne yapmalı?", "kind": "question", "de": "Was tut man bei 39 Grad Fieber?" },
  { "tr": "Birini tarif ediyorsun.", "kind": "speaking.situation", "de": "Du beschreibst eine Person." },
  { "tr": "Buyurun. Ne istersiniz?", "kind": "turn", "de": "Bitte sehr. Was möchten Sie?" },
  { "tr": "Daha önce söylemeliydim", "kind": "listening.title", "de": "Ich hätte es früher sagen sollen" },

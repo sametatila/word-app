@@ -1,7 +1,6 @@
 [
  { "tr": "-den", "kind": "vocab.tr", "de": "aus / von" },
  { "tr": "acil", "kind": "vocab.tr", "de": "dringend" },
- { "tr": "açık", "kind": "vocab.tr", "de": "Schwachstelle" },
  { "tr": "adam", "kind": "vocab.tr", "de": "Mann" },
  { "tr": "ağır", "kind": "vocab.tr", "de": "schwer" },
  { "tr": "ağrı", "kind": "vocab.tr", "de": "Schmerz" },
@@ -122,7 +121,6 @@
  { "tr": "şimdi", "kind": "vocab.tr", "de": "jetzt" },
  { "tr": "şoför", "kind": "vocab.tr", "de": "Fahrer" },
  { "tr": "taksi", "kind": "vocab.tr", "de": "Taxi" },
- { "tr": "tamam", "kind": "vocab.tr", "de": "erledigt" },
  { "tr": "tarih", "kind": "vocab.tr", "de": "Datum" },
  { "tr": "tatil", "kind": "vocab.tr", "de": "Urlaub" },
  { "tr": "teyze", "kind": "vocab.tr", "de": "Tante" },

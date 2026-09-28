@@ -2,17 +2,6 @@
  "packet": "e-005",
  "words": [
   {
-   "tr": "Daha erken bir şey var mı?",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "Do you have anything earlier?"
-   ],
-   "ctx": [
-    "A2.3 At the doctor's · yazma kalıbı"
-   ]
-  },
-  {
    "tr": "daha sessiz, daha aydınlık",
    "kind": "focus",
    "n": 1,
@@ -892,6 +881,23 @@
    ],
    "ctx": [
     "A2.7 Traveling · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "39 derece ateşte ne yapmalı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What must you do with a fever of 39 degrees?"
+   ],
+   "ctx": [
+    "A1.9 Health and the body · okuma sorusu"
+   ],
+   "options": [
+    "Take more tablets",
+    "Call the doctor",
+    "Only drink water",
+    "Wait a week"
    ]
   },
   {

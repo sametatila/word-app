@@ -2,17 +2,6 @@
  "packet": "e-003",
  "words": [
   {
-   "tr": "Saat …'de başlıyor",
-   "kind": "phrase",
-   "n": 1,
-   "de": [
-    "It starts at … o'clock."
-   ],
-   "ctx": [
-    "A1.8 Free time · yazma kalıbı"
-   ]
-  },
-  {
    "tr": "Saat …'de yiyoruz.",
    "kind": "phrase",
    "n": 1,
@@ -54,6 +43,15 @@
    ],
    "ctx": [
     "B2.10 Formal correspondence"
+   ]
+  },
+  {
+   "tr": "Tiyatro eleştirisi",
+   "kind": "reading.genre",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.7 Culture and the arts · okuma türü"
    ]
   },
   {

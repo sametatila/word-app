@@ -27,7 +27,7 @@
  { "tr": "Bir tane daha: 'Bunu elle tutulur hâle getirmek istiyorum.'", "en": "One more: 'I want to make this tangible.'" },
  { "tr": "Bir tane daha: 'Reklamı yapılan ürünü kendisi kullanmıyor.'", "en": "One more: 'She does not use the advertised product herself.'" },
  { "tr": "Bir tane daha: 'Üç maddelik bir sıralama akılda kalıcıdır.'", "en": "One more: 'A list of three points sticks in the mind.'" },
- { "tr": "Bir üretim daha: 'Diş hekimine gitmem lazım.' nasıl dersin?", "en": "One more to produce: how do you say 'I need to see the dentist.'?" },
+ { "tr": "Bir cümle daha: 'Diş hekimine gitmem lazım.' nasıl dersin?", "en": "One more sentence: how do you say 'I need to see the dentist.'?" },
  { "tr": "Biz biçiminde fiil değişmez, sözlükteki hâliyle aynı kalır:", "en": "In the we-form the verb does not change, it stays as in the dictionary:" },
  { "tr": "Bu dönüşlü fiilin edatı belirtme ister, o yüzden zamir die:", "en": "This reflexive verb's preposition takes the accusative, so the pronoun is die:" },
  { "tr": "Bu fiilin sabit edatı auf ve arkasından yönelme hâli gelir:", "en": "This verb's fixed preposition is auf and the dative follows:" },
@@ -99,7 +99,7 @@
  { "tr": "Son: 'Uzmanların bu konuda ne düşündüğünü sorabilir miyim?'", "en": "Last: 'May I ask what the experts think about this?'" },
  { "tr": "Son: 'Vardiyalı çalışmaya karşı bir dengeye ihtiyacım var.'", "en": "Last: 'I need something to balance out the shift work.'" },
  { "tr": "Soru sözcüğü başta, dilek kipi ikinci sırada, mastar sonda:", "en": "The question word first, the subjunctive second, the infinitive last:" },
- { "tr": "Şimdi belge dilinde: 'Vekâletname benim adıma imzalanıyor.'", "en": "Now in document language: 'The power of attorney is signed in my name.'" },
+ { "tr": "Şimdi belge dilinde: 'Vekâletname benim tarafımdan imzalanıyor.'", "en": "Now in document language: 'The power of attorney is signed by me.'" },
  { "tr": "Şimdi bina yöneticisini arıyorsun ve arızayı bildiriyorsun.", "en": "Now you are calling the building manager to report the fault." },
  { "tr": "Şimdi bir toplantıdasın. Görüşünü söyle ve bir öneri getir.", "en": "Now you are in a meeting. Give your view and make a suggestion." },
  { "tr": "Şimdi duyulan bilgiyle: 'Katılım geçen seferden yüksekmiş.'", "en": "Now with hearsay: 'Turnout is said to be higher than last time.'" },
@@ -146,6 +146,6 @@
  { "tr": "Bir tane daha: 'Sorunuzun neyle ilgili olduğunu sorabilir miyim?'", "en": "One more: 'May I ask what your question refers to?'" },
  { "tr": "Bir tane daha: 'Üçüncü taraflara aktarım hariç tutulmuştur.'", "en": "One more: 'Passing on to third parties is excluded.'" },
  { "tr": "Bir tane daha: 'Yaklaşan değişiklik herkesi ilgilendiriyor.'", "en": "One more: 'The coming change concerns everyone.'" },
- { "tr": "Bir üretim daha: 'Annem ve babam kutlamaya geliyor.' nasıl dersin?", "en": "One more to produce: how do you say 'My parents are coming to the party.'?" },
+ { "tr": "Bir cümle daha: 'Annem ve babam kutlamaya geliyor.' nasıl dersin?", "en": "One more sentence: how do you say 'My parents are coming to the party.'?" },
  { "tr": "Bu fiil kurallı ve ön eki yok, o yüzden ortaç düz kuruluyor.", "en": "This verb is regular and has no prefix, so the participle is plain." }
 ]

@@ -630,15 +630,15 @@ export const deB1B02: Conversation[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Es wäre schön, wenn Sie abends leiser sind."),
+          de("Es wäre schön, wenn Sie abends leiser waren."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Es wäre schön, wenn Sie abends leiser sind.",
+          statement: "Es wäre schön, wenn Sie abends leiser waren.",
           answer: false,
           why: [
-            tr("Ana bölüm yumuşak biçimdeyse koşul bölümü de aynı biçimi almalı; yoksa cümle yarı kibar kalır. Doğrusu"),
+            tr("Ana bölüm yumuşak biçimdeyse koşul bölümü de aynı biçimi almalı. waren düz geçmiş zamandır; yumuşak biçim noktalı wären. Doğrusu:"),
             de("Es wäre schön, wenn Sie abends leiser wären."),
           ],
         },

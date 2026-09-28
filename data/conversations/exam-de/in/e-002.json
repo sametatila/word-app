@@ -909,15 +909,6 @@
    ]
   },
   {
-   "tr": "Sanat eleştirisi",
-   "kind": "reading.genre",
-   "n": 1,
-   "de": [],
-   "ctx": [
-    "B2.7 Culture and the arts · okuma türü"
-   ]
-  },
-  {
    "tr": "süregelen ilişki",
    "kind": "focus",
    "n": 1,
@@ -1731,6 +1722,17 @@
    ],
    "ctx": [
     "A2.10 Offices and official business"
+   ]
+  },
+  {
+   "tr": "Saat …'de başlıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It starts at … o'clock."
+   ],
+   "ctx": [
+    "A1.8 Free time · yazma kalıbı"
    ]
   }
  ]

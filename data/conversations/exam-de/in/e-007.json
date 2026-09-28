@@ -623,17 +623,6 @@
    ]
   },
   {
-   "tr": "90. Dümdüz gidin, sonra sola dönün.",
-   "kind": "turn",
-   "n": 1,
-   "de": [
-    "90. Go straight ahead, then turn left."
-   ],
-   "ctx": [
-    "A1.6 In town · Clerk"
-   ]
-  },
-  {
    "tr": "advocates / affirms / misrepresents",
    "kind": "focus",
    "n": 1,
@@ -1723,6 +1712,17 @@
    ],
    "ctx": [
     "A1.6 In town · Clerk"
+   ]
+  },
+  {
+   "tr": "Kesin süre tebligattan itibaren işler",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The filing deadline runs from the service of documents."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language · yazma kalıbı"
    ]
   }
  ]

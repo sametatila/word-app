@@ -680,9 +680,9 @@
   "de": "Es gab eine Verzögerung, deshalb konnte es niemand reparieren."
  },
  {
-  "tr": "deriz. Şunu kur: Bugün tamir edeceğini söyledi.",
+  "tr": "deriz. Şunu kur (sözü aynı gün aktarıyorsun): Bugün tamir edeceğini söyledi.",
   "kind": "say.tr",
-  "de": "sagen wir. Bau das: Sie hat gesagt, dass sie es heute repariert."
+  "de": "sagen wir. Bau das (du gibst die Aussage am selben Tag wieder): Sie hat gesagt, dass sie es heute repariert."
  },
  {
   "tr": "deriz. Şunu kur: Pazara yürümekten hoşlanıyorum.",

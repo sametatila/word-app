@@ -208,7 +208,7 @@ export const deC1B10: Conversation[] = [
       { de: "nachhallen", tr: "yankılanmak" },
       { de: "die Tugend", tr: "erdem" },
       { de: "durchdringen", tr: "nüfuz etmek" },
-      { de: "stiften", tr: "bağışlamak / kurmak" },
+      { de: "stiften", tr: "yaratmak / kurmak" },
     ],
     patterns: [
       { de: "Eine gute Rede spannt einen Bogen.", tr: "yay kurar" },
@@ -224,7 +224,7 @@ export const deC1B10: Conversation[] = [
       word("Beşinci", { de: "nachhallen", tr: "yankılanmak" }),
       word("Altıncı", { de: "die Tugend", tr: "erdem" }),
       word("Yedinci", { de: "durchdringen", tr: "nüfuz etmek" }),
-      word("Son", { de: "stiften", tr: "bağışlamak / kurmak" }),
+      word("Son", { de: "stiften", tr: "yaratmak / kurmak" }),
       { say: [tr("Örnek:"), de("Eine gute Rede spannt einen Bogen."), tr("Tekrar et:"), de("Eine gute Rede spannt einen Bogen")], expect: repeat("Eine gute Rede spannt einen Bogen") },
       { say: [tr("Sıra sende: 'İlk cümle dinleyiciyi yakalamalı.'")], expect: produce("Der erste Satz muss das Publikum packen", [tr("Nesne belirtme hâlinde; mastar sonda:"), de("Der erste Satz muss das Publikum packen."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Doruk sona doğru gelir.'")], expect: produce("Der Höhepunkt kommt gegen Ende", [tr("Edat belirtme hâli ister; belirteçsiz isim:"), de("Der Höhepunkt kommt gegen Ende."), tr("Tekrar dene.")]) },

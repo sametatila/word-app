@@ -418,7 +418,7 @@ export const deA2B02: Conversation[] = [
           statement: "Ich habe Pilot werden gewollt.",
           answer: false,
           why: [
-            tr("Kip fiilleri geçmişte genellikle Perfekt kurmaz, kısa biçimlerini kullanır. Doğrusu:"),
+            tr("Mastarla birlikte kip fiilinin Perfekt'i gewollt değil wollen olur (Ich habe Pilot werden wollen); ama kip fiilleri geçmişte genellikle Perfekt kurmaz, kısa biçimlerini kullanır. En doğalı:"),
             de("Ich wollte Pilot werden."),
           ],
         },
@@ -1891,7 +1891,7 @@ export const deA2B02: Conversation[] = [
       {
         say: [
           tr(
-            "Bu modülde geçmişi anlatmanın bütün araçlarını topladın: Perfekt, kip fiillerinin kısa geçmişi ve dönüşlü fiiller. Bugün üçünü bir hikâyede bir arada kullanacağız. Önce sekiz kelime.",
+            "Bu modülde geçmişi anlatmanın bütün araçlarını topladın: Perfekt, kip fiillerinin kısa geçmişi ve dönüşlü fiiller. Bugün başarı hikâyende Perfekt'e odaklanıyoruz; sohbette ötekileri de kullanabilirsin. Önce sekiz kelime.",
           ),
         ],
       },

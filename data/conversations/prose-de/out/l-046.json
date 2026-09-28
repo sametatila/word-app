@@ -7,7 +7,7 @@
  { "tr": "Sıra sende. Şunu sor: Futbol oynar mısın?", "kind": "say.tr", "de": "Du bist dran. Frag das: Spielst du Fußball?" },
  { "tr": "Sırada tarih var. Tarih demek olan kelime", "kind": "say.tr", "de": "Als Nächstes das Datum. Das Wort für Datum ist" },
  { "tr": "Sinemaya gidince bir şey almak gerekiyor:", "kind": "say.tr", "de": "Im Kino musst du etwas kaufen:" },
- { "tr": "Son bir üretim daha. Şoföre sor: Uzak mı?", "kind": "say.tr", "de": "Noch ein letzter Satz. Frag den Fahrer: Ist es weit?" },
+ { "tr": "Son bir cümle daha. Şoföre sor: Uzak mı?", "kind": "say.tr", "de": "Noch ein letzter Satz. Frag den Fahrer: Ist es weit?" },
  { "tr": "Soru sorarken de aynı kural geçerli. Başa", "kind": "say.tr", "de": "Beim Fragen gilt dieselbe Regel. Vorn steht" },
  { "tr": "Süreyi sormak için tek bir kalıp yetiyor:", "kind": "say.tr", "de": "Zum Fragen nach der Dauer reicht eine Wendung:" },
  { "tr": "Şimdi cümleyi sen kur: Düğün çok güzeldi.", "kind": "say.tr", "de": "Jetzt bildest du den Satz: Die Hochzeit war sehr schön." },

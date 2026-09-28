@@ -5,12 +5,12 @@
   "de": "Hätten sie es gedruckt"
  },
  {
-  "tr": "Raporun kendisi",
+  "tr": "Raporların karşılaştırılması",
   "kind": "titleTr",
   "de": "Der Vergleich der Berichte"
  },
  {
-  "tr": "Doğruluk kontrolü",
+  "tr": "Bir iddiayı sınamak",
   "kind": "titleTr",
   "de": "Eine Behauptung prüfen"
  },
@@ -300,7 +300,7 @@
   "de": "Verlagsmarke"
  },
  {
-  "tr": "yöntem düzeni",
+  "tr": "metodoloji",
   "kind": "vocab.tr",
   "de": "Methodik"
  },
@@ -715,7 +715,7 @@
   "de": "Wenn eine Firma eine andere übernimmt, heißt das"
  },
  {
-  "tr": "Görünüşe göre yöntem düzeni hiç yayımlanmamış.",
+  "tr": "Görünüşe göre metodoloji hiç yayımlanmamış.",
   "kind": "say.tr",
   "de": "Anscheinend wurde die Methodik nie veröffentlicht."
  },

@@ -2322,7 +2322,7 @@ export const deA1B01: Conversation[] = [
       },
       {
         say: [
-          tr("Bir üretim daha. Formdaki 'ikamet yeri' alanının Almancası"),
+          tr("Bir cümle daha. Formdaki 'ikamet yeri' alanının Almancası"),
           de("der Wohnort"),
           tr("'İkamet yerim Berlin.' nasıl dersin?"),
         ],

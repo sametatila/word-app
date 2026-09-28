@@ -2,7 +2,6 @@
  { "tr": "İlan", "kind": "reading.genre", "de": "Anzeige" },
  { "tr": "Duyuru", "kind": "reading.genre", "de": "Aushang" },
  { "tr": "Deneme yazısı", "kind": "reading.title", "de": "Essay" },
- { "tr": "Gazete yorumu", "kind": "reading.title", "de": "Zeitungskommentar" },
  { "tr": "Sıkıntının bedelini kim ödüyor?", "kind": "reading.title", "de": "Wer zahlt für die Wohnungsnot?" },
  { "tr": "Kişisel yazı", "kind": "reading.genre", "de": "Persönlicher Text" },
  { "tr": "Okur mektubu", "kind": "reading.title", "de": "Leserbrief" },
@@ -116,7 +115,6 @@
  { "tr": "Hiç gittin mi?", "kind": "listening.title", "de": "Warst du schon einmal dort?" },
  { "tr": "Tarif etmek ve karar vermek", "kind": "plan.title", "de": "Beschreiben und entscheiden" },
  { "tr": "Kafenin menüsü", "kind": "reading.title", "de": "Café Green — Speisekarte" },
- { "tr": "Kira ne kadar?", "kind": "turn", "de": "Wie hoch ist die Miete?" },
  { "tr": "kural ve yasak", "kind": "focus", "de": "Regel und Verbot" },
  { "tr": "Maaş görüşmesi", "kind": "listening.title", "de": "Das Gehaltsgespräch" },
  { "tr": "Nasıl yazalım?", "kind": "listening.title", "de": "Wie formulieren wir das?" },
@@ -128,7 +126,7 @@
  { "tr": "Sonuçlar geldi", "kind": "listening.title", "de": "Die Ergebnisse sind da" },
  { "tr": "Süreç duyurusu", "kind": "reading.title", "de": "Wartungshinweis — das neue Verfahren" },
  { "tr": "Şikâyetini yaz", "kind": "writing.checklist", "de": "Schreib deine Beschwerde" },
- { "tr": "Tanışma ve ben", "kind": "plan.title", "de": "Vorstellen und ich" },
+ { "tr": "Tanışma ve ben", "kind": "plan.title", "de": "Sich vorstellen" },
  { "tr": "Tanıtım yazısı", "kind": "reading.genre", "de": "Vorstellungstext" },
  { "tr": "temkinli sonuç", "kind": "focus", "de": "vorsichtiges Fazit" },
  { "tr": "Üslup ve dil düzeyi", "kind": "plan.title", "de": "Register und Ton" },
@@ -149,5 +147,7 @@
  { "tr": "Kültür ve sanat", "kind": "plan.title", "de": "Kultur und Kunst" },
  { "tr": "Lea ne yapacak?", "kind": "question", "de": "Was wird Lea tun?" },
  { "tr": "Nerelisin Elif?", "kind": "turn", "de": "Woher kommst du, Elif?" },
- { "tr": "Okulda ekranlar", "kind": "listening.title", "de": "Bildschirme in der Schule" }
+ { "tr": "Okulda ekranlar", "kind": "listening.title", "de": "Bildschirme in der Schule" },
+ { "tr": "Gazete yorumu", "kind": "reading.genre", "de": "Zeitungskommentar" },
+ { "tr": "Kira ne kadar?", "kind": "phrase", "de": "Wie hoch ist die Miete?" }
 ]

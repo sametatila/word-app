@@ -360,9 +360,9 @@
   "de": "fester Schritt"
  },
  {
-  "tr": "Sesli sevinmeye",
+  "tr": "Sesli gülmeye",
   "kind": "say.tr",
-  "de": "Sich hörbar freuen heißt"
+  "de": "Hörbar lachen heißt"
  },
  {
   "tr": "Kendiyle övünene",
@@ -893,5 +893,10 @@
   "tr": "ile başlangıç eklenir; duygunun BAŞLADIĞI AN anlatılıyorsa past simple kullanılır. Aynı duygu iki zamanla da söylenebilir.",
   "kind": "say.tr",
   "de": "wird der Anfang angehängt; erzählst du den MOMENT, IN DEM DAS GEFÜHL BEGANN, steht Past Simple. Dasselbe Gefühl lässt sich in beiden Zeiten sagen."
+ },
+ {
+  "tr": "Bugün beş temel kelime öğrendik:",
+  "kind": "say.tr",
+  "de": "Heute haben wir fünf Grundwörter gelernt:"
  }
 ]

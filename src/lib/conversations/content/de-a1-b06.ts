@@ -180,6 +180,7 @@ export const deA1B06: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Gehen Sie links",
+          accept: ["Gehen Sie nach links"],
           hint: [
             tr("Fiil başa gelir, hemen arkasına 'siz':"),
             de("Gehen Sie links."),
@@ -1039,7 +1040,7 @@ export const deA1B06: Conversation[] = [
       },
       {
         say: [
-          tr("Yola çıktınız. Merak ettiğin şeyi sorabilirsin:"),
+          tr("Yola çıktın. Merak ettiğin şeyi sorabilirsin:"),
           de("Wie lange dauert es?"),
           tr("Cevap kısa gelir:"),
           de("Ungefähr zwanzig Minuten."),

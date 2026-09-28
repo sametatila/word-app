@@ -119,7 +119,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       titleTr: "İtiraz edilen hesap",
       situation: "Bir müşteri temsilcisi ile tedarikçi bir talebi görüşüyor.",
       turns: [
-        { speaker: "Representative", de: "It is claimed that the goods were dispatched on March 4. Our file says March 10.", tr: "Malların 4 Martta gönderildiği iddia ediliyor. Bizim dosyamızda 10 Mart yazıyor." },
+        { speaker: "Representative", de: "It is claimed that the goods were dispatched on March 4. Our file says March 10.", tr: "Malların 4 Mart'ta gönderildiği iddia ediliyor. Bizim dosyamızda 10 Mart yazıyor." },
         { speaker: "Supplier", de: "The delay is said to be minimal. Admittedly, our position was rather rigid last month.", tr: "Gecikmenin çok az olduğu söyleniyor. Doğrusu geçen ay tutumumuz biraz katıydı." },
         { speaker: "Representative", de: "What we contest is not the date but the liability for the damages.", tr: "İtiraz ettiğimiz şey tarih değil, zararın sorumluluğu." },
         { speaker: "Supplier", de: "You must have misread the clause; the threshold applies only above ten thousand.", tr: "Maddeyi yanlış okumuş olmalısınız; eşik yalnızca on binin üstünde geçerli." },
@@ -202,7 +202,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Engineer", de: "The maintenance can't have been done last week; the inventory shows no entry at all.", tr: "Bakım geçen hafta yapılmış olamaz; envanterde hiç kayıt yok." },
         { speaker: "Manager", de: "Someone should have lowered the pressure before the trial. Being loaded first, the crate stayed in the workshop.", tr: "Denemeden önce basıncın düşürülmesi gerekirdi. İlk yüklendiği için sandık atölyede kaldı." },
         { speaker: "Engineer", de: "Nowhere is it written that a second check is optional. That is the guideline, not my opinion.", tr: "İkinci kontrolün isteğe bağlı olduğu hiçbir yerde yazmıyor. Bu kılavuz, benim görüşüm değil." },
-        { speaker: "Manager", de: "Agreed. Having read the provision again, I think the deviation was within the guideline.", tr: "Katılıyorum. Hükmü yeniden okuyunca sapmanın kılavuz içinde olduğunu düşünüyorum." },
+        { speaker: "Manager", de: "Agreed. Having read the provision again, I think the deviation was outside the guideline.", tr: "Katılıyorum. Hükmü yeniden okuyunca sapmanın kılavuzun dışında olduğunu düşünüyorum." },
         { speaker: "Engineer", de: "By Friday the pilot will have been finished, and the report will be written by the workshop.", tr: "Cumaya kadar pilot bitmiş olacak, rapor da atölye tarafından yazılacak." },
         { speaker: "Manager", de: "Apparently the whole outage lasted roughly two hours; hence the loss is modest.", tr: "Görünüşe göre kesinti kabaca iki saat sürmüş; dolayısıyla zarar ölçülü." },
       ],
@@ -525,7 +525,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
     reading: {
       title: "A strong start and a hasty end",
       titleTr: "Güçlü bir başlangıç, aceleye gelmiş bir son",
-      genre: "Sanat eleştirisi",
+      genre: "Tiyatro eleştirisi",
       text: "A STRONG START AND A HASTY END\n\nThe premiere was said to be the highlight of the season, and for two acts the claim held.\n\nWhat the drama does is name the cost of an era without turning it into a parody. Having rehearsed for three months, the company plays the first scenes with a persistence that fascinates: the worldview of the period is carried by the costumes, not by a speech.\n\nThen the ending. The last act must have been cut at short notice: the depiction of the final night is neither grand nor revealing; it just stops. If the director had portrayed the empty room, the tragedy would have landed. As it is, the audience applauds the performers and leaves the work open.\n\nNever has a premiere in this hall divided a jury so sharply. On balance the evening is arguably worth seeing — especially since the first hour is undisputed — but it is not timeless.",
       questions: [
         { de: "How does the company carry the worldview of the period?", tr: "Topluluk dönemin dünya görüşünü nasıl taşıyor?", options: ["Through the costumes", "Through a long speech", "Through the music", "Through the parody"], answer: 0 },

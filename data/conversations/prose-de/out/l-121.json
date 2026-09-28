@@ -220,9 +220,9 @@
   "de": "Du erzählst einem Freund von der Kühle in einer Sitzung und willst niemanden offen beschuldigen. Kritisiere in drei Sätzen mit Auslassung und frag, was die Zuhörerin ergänzt hat."
  },
  {
-  "tr": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, «olmasaydı» anlamını ve koşulu kalıplaşmış biçimlerle kur.",
+  "tr": "Bir özgürlüğün kısıtlanmasına karşı çıkıyorsun ve bunu kendi grubunun talebi gibi göstermek istemiyorsun. İsteği, «olmasaydı» anlamını ve talebi kalıplaşmış biçimlerle kur.",
   "kind": "scene",
-  "de": "Du widersprichst der Einschränkung einer Freiheit und willst das nicht wie die Forderung deiner eigenen Gruppe aussehen lassen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
+  "de": "Du widersprichst der Einschränkung einer Freiheit und willst das nicht wie die Forderung deiner eigenen Gruppe aussehen lassen. Bilde den Wunsch, das Wäre-nicht und die Forderung in festen Formen."
  },
  {
   "tr": "Bir arkadaşınla kendi tepkilerinden söz ediyorsun ve kendine dair kesin hükümler vermek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde neyi bilmediğini söyle.",
@@ -590,9 +590,9 @@
   "de": "Unumkehrbarkeit"
  },
  {
-  "tr": "irade serbestisi",
+  "tr": "sözleşme özgürlüğü",
   "kind": "vocab.tr",
-  "de": "Privatautonomie"
+  "de": "Vertragsfreiheit"
  },
  {
   "tr": "kendini kandırma",
@@ -1555,9 +1555,9 @@
   "de": "Das heißt, eine These zu übernehmen und zu vertreten. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "İrade serbestisinin yargısal denetimden geçirilmesini istiyorlar.",
+  "tr": "Sözleşme özgürlüğünün yargısal denetimden geçirilmesini istiyorlar.",
   "kind": "say.tr",
-  "de": "Sie verlangen, dass die Privatautonomie der richterlichen Kontrolle unterzogen werde."
+  "de": "Sie verlangen, dass die Vertragsfreiheit der richterlichen Kontrolle unterzogen werde."
  },
  {
   "tr": "Bilgi edinme özgürlüğü olmasaydı kamuoyu bu dosyaları hiç göremezdi.",

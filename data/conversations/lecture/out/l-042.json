@@ -81,7 +81,7 @@
  { "tr": "Türkçesi 'büyütmek, yetiştirmek' demek; çocuk için kullanılır. Lütfen", "en": "It means 'to raise'; used for a child. Please say" },
  { "tr": "Türkçesi 'yaşlı' demek; yaş söylerken de bu kelime kullanılır. Lütfen", "en": "It means 'old'; this word is used for saying an age too. Please say" },
  { "tr": "Yan cümle başta olduğu için ana cümlede özne fiilin arkasına düşüyor.", "en": "Because the subclause is first the subject falls behind the verb in the main clause." },
- { "tr": "Yan cümlede geçmişin geçmişi, ana cümlede şimdiki ya da geçmiş zaman.", "en": "The past of the past in the subclause, the present or past in the main clause." },
+ { "tr": "Yan cümlede geçmişin geçmişi, ana cümlede geçmiş zaman.", "en": "The past of the past in the subclause, the past in the main clause." },
  { "tr": "Yani 'Başım ağrıyor.' Ağrıyan yer özne oluyor, tıpkı Türkçedeki gibi.", "en": "That is, 'My head hurts.' The sore part becomes the subject, just like in English." },
  { "tr": "Yolda olduğunu bildirir; geç kalınca telefonda en çok söylenen cümle.", "en": "It says you are on your way; the sentence said most on the phone when late." },
  { "tr": "'Lütfen bir salata getir' demek; ikiye bölünen fiil yine sonda. Lütfen", "en": "It means 'Please bring a salad'; the split verb is last again. Please say" },
@@ -148,5 +148,6 @@
  { "tr": "Hazırsın. Sohbette bir maddenin geçerli olup olmadığını tartışacaksın.", "en": "You are ready. In the chat you will debate whether a clause holds." },
  { "tr": "Hazırsın. Sohbette bir Türkçe deyimin Almanca karşılığını arayacaksın.", "en": "You are ready. In the chat you will look for the German equivalent of an English idiom." },
  { "tr": "Hazırsın. Şimdi bir arkadaşınla nerede kalacağınıza karar vereceksiniz.", "en": "You are ready. Now you will decide with a friend where to stay." },
- { "tr": "İki parça da birer tümleçtir, yani ikisinden sonra da fiil hemen gelir.", "en": "Both parts are complements, so the verb comes right after each of them." }
+ { "tr": "İki parça da birer tümleçtir, yani ikisinden sonra da fiil hemen gelir.", "en": "Both parts are complements, so the verb comes right after each of them." },
+ { "tr": "Kip fiili ikinci sırada, yer tümleci ortada, ortaç ve werden sonda:", "en": "The modal verb second, the place phrase in the middle, the participle and werden last:" }
 ]

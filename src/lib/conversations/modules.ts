@@ -283,7 +283,7 @@ export const MODULE_THEMES_NATIVE: Partial<Record<NativeLang, Record<string, str
     "Tarif etmek ve karar vermek": "Describing and deciding",
   },
   de: {
-    "Tanışma ve ben": "Vorstellen und ich",
+    "Tanışma ve ben": "Sich vorstellen",
     "Aile ve insanlar": "Familie und Menschen",
     "Yeme-içme": "Essen und Trinken",
     "Günlük düzen": "Tagesablauf",

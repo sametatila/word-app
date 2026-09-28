@@ -1558,8 +1558,8 @@ export const deA1B02: Conversation[] = [
       scene:
         "Bir arkadaşın yeni tanıştığı kişiden söz ediyor ve sen nasıl göründüğünü merak ediyorsun. Boyunu, saçını ve gözlük takıp takmadığını sor.",
       partner: "anlatmaya bayılan, biraz abartan bir arkadaş",
-      opening: "Ich habe einen neuen Kollegen, er ist sehr groß. Wie sieht dein bester Freund aus?",
-      openingTr: "Yeni bir iş arkadaşım var, çok uzun boylu. Senin en yakın arkadaşın nasıl görünüyor?",
+      opening: "Ich habe einen neuen Kollegen. Er sieht sehr interessant aus. Was möchtest du wissen?",
+      openingTr: "Yeni bir iş arkadaşım var. Çok ilginç görünüyor. Ne öğrenmek istersin?",
       goal: "Kişinin boyu, saçı ve gözlüğü anlatılmış; onu kalabalıkta tanıyabilecek kadar tarif edilmiş olur.",
       minTurns: 6,
     },
@@ -2187,7 +2187,7 @@ export const deA1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Wir feiern zusammen" },
       },
       {
-        say: [tr("Bir üretim daha: 'Annem ve babam kutlamaya geliyor.' nasıl dersin?")],
+        say: [tr("Bir cümle daha: 'Annem ve babam kutlamaya geliyor.' nasıl dersin?")],
         expect: {
           kind: "produce",
           target: "Meine Eltern kommen zum Fest",

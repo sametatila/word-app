@@ -62,7 +62,7 @@
  { "tr": "Bağlaçtan sonra fiil sona gidiyor:", "en": "After the conjunction the verb goes to the end:" },
  { "tr": "Belirsiz zamir özne; mastar sonda:", "en": "An indefinite pronoun as subject; the infinitive last:" },
  { "tr": "Belirtili çoğul özne; sıfat sonda:", "en": "A definite plural subject; the adjective last:" },
- { "tr": "Çoğul özne, zamir die, fiil sonda:", "en": "A plural subject, the pronoun die, the verb last:" },
+ { "tr": "Zutaten çoğul; yan cümlede nesne olsa da zamir die, fiil sonda:", "en": "Zutaten is plural; even though it is the object in the subclause, the pronoun is die, the verb last:" },
  { "tr": "Deyim olduğu gibi; belirteç sabit:", "en": "The idiom as it stands; the article fixed:" },
  { "tr": "Deyimde isimler belirteçsiz kalır:", "en": "In the idiom the nouns stay without articles:" },
  { "tr": "Dolaylı soruda fiil en sona gider:", "en": "In an indirect question the verb goes right to the end:" },

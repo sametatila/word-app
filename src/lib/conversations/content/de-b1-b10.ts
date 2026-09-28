@@ -220,7 +220,7 @@ export const deB1B10: Conversation[] = [
       { de: "Selbst wenn …, …", tr: "en kötü ihtimali karşılar" },
     ],
     lecture: [
-      { say: [tr("Merhaba! Bugün kaygıyı konuşacağız. Kaygının dili sorudur: 'ya olmazsa'. Ama bir de cevabı var: 'olsa bile'. İkisini de kuracağız. Hazır mısın?")], expect: { kind: "confirm" } },
+      { say: [tr("Merhaba! Bugün kaygıyı konuşacağız. Kaygının dili sorudur: 'ya ters giderse?' Ama bir de cevabı var: 'ters gitse bile'. İkisini de kuracağız. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("İkincisi ilkinden daha güçlü: en kötü ihtimali kabul edip yine de devam etmek. Almancada bunun iki kelimelik bir bağlacı var. Önce kelimeler.")] },
       word("İlk", { de: "die Sicherheit", tr: "güvence" }),
       word("İkinci", { de: "sich fürchten", tr: "korkmak" }),
@@ -237,7 +237,7 @@ export const deB1B10: Conversation[] = [
       { say: [tr("Bir tane daha: 'Bunun üstesinden geleceğime eminim.'")], expect: produce("Ich bin sicher, dass ich das bewältige", [tr("Yan cümlede fiil en sona gider:"), de("Ich bin sicher, dass ich das bewältige."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Selbst wenn es geht schief, mache ich weiter."), tr("cümlesi doğru mu?")], expect: truefalse("Selbst wenn es geht schief, mache ich weiter.", false, [tr("Yan cümlede çekimli fiil en sona gider:"), de("Selbst wenn es schiefgeht, mache ich weiter.")]) },
       { say: [tr("Son: 'Genel olarak umutluyum.'")], expect: produce("Insgesamt bin ich zuversichtlich", [tr("Tümleç başta, fiil ikinci sırada:"), de("Insgesamt bin ich zuversichtlich."), tr("Tekrar dene.")]) },
-      { say: [tr("Hazırsın. Sohbette bir yakınınla gelecek kaygını konuşacaksın: neden korkuyorsun, olsa bile ne yaparsın.")] },
+      { say: [tr("Hazırsın. Sohbette bir yakınınla gelecek kaygını konuşacaksın: neden korkuyorsun, ters gitse bile ne yaparsın.")] },
     ],
     chat: {
       scene: "Bir yakınınla gelecek kaygını konuşuyorsun: neyin ters gitmesinden korkuyorsun, en kötü ihtimalde ne yaparsın, seni ne rahatlatıyor.",
@@ -294,7 +294,7 @@ export const deB1B10: Conversation[] = [
       { say: [tr("Hazırsın. Sohbette uzun zamandır görüşmediğin biriyle karşılaşacaksın: ne oldu, neden koptu, şimdi nasıl.")] },
     ],
     chat: {
-      scene: "Yıllar sonra eski bir arkadaşınla karşılaştın: aradan ne geçti, dostluk neden koptu, şimdi nasıl. Sırayı önce olan işi geriye çekerek anlat.",
+      scene: "Yıllar sonra eski bir arkadaşınla karşılaştın: aradan ne geçti, dostluk neden koptu, şimdi nasıl. Daha önce olanı Plusquamperfekt ile anlat.",
       partner: "arayı açtığı için üzgün, konuşkan eski bir arkadaş",
       opening: "Ich glaub es nicht — wie lange ist das her? Erzähl, was ist bei dir alles passiert?",
       openingTr: "İnanamıyorum — ne kadar oldu? Anlat, sende neler oldu?",

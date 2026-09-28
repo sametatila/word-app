@@ -15,7 +15,7 @@
  },
  {
   "conversation": "de-b1-notaufnahme",
-  "sceneEn": "You are telling the nurse in the emergency room what happened: what happened, in what order, and where it hurts now. Order it by pulling the earlier event back.",
+  "sceneEn": "You are telling the nurse in the emergency room what happened: what happened, in what order, and where it hurts now. Use the past perfect for what happened earlier.",
   "partnerEn": "an emergency nurse who asks quick, clear questions",
   "openingEn": "Just stay sitting quietly. Tell me briefly: what happened and when was that?",
   "goalEn": "What happened has been told in order and where it hurts now has been said."
@@ -134,7 +134,7 @@
  },
  {
   "conversation": "de-b1-freundschaft-pflegen",
-  "sceneEn": "You have run into an old friend after years: what has happened in between, why the friendship lapsed, how things are now. Order it by pulling the earlier event back.",
+  "sceneEn": "You have run into an old friend after years: what has happened in between, why the friendship lapsed, how things are now. Use the past perfect for what happened earlier.",
   "partnerEn": "a talkative old friend who is sorry to have lost touch",
   "openingEn": "I don't believe it — how long has it been? Tell me, what's been happening with you?",
   "goalEn": "What happened in between has been described, the reason for the lapse has been discussed and you have promised to meet again."

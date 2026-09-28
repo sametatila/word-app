@@ -2,17 +2,6 @@
  "packet": "e-009",
  "words": [
   {
-   "tr": "Kayıt yapıp başvurumu takip edebiliyorum.",
-   "kind": "cando",
-   "n": 1,
-   "de": [
-    "I can register and follow an application."
-   ],
-   "ctx": [
-    "B1.5 Offices and applications"
-   ]
-  },
-  {
    "tr": "Kendi kurumunun eksiğini kabul ediyorsun.",
    "kind": "speaking.situation",
    "n": 1,
@@ -119,23 +108,6 @@
    ],
    "ctx": [
     "A1.1 Nice to meet you · Elif"
-   ]
-  },
-  {
-   "tr": "„Net göç“ diye basılan rakamı ne üretiyor?",
-   "kind": "question",
-   "n": 1,
-   "de": [
-    "What produces the figure printed as “net migration”?"
-   ],
-   "ctx": [
-    "C1.5 Belonging and its words · okuma sorusu"
-   ],
-   "options": [
-    "Out-migration and internal migration together",
-    "The number of new arrivals only",
-    "The participation model",
-    "The census of last spring"
    ]
   },
   {
@@ -448,6 +420,17 @@
     "It confirms the caption",
     "It quotes the association",
     "It states a legal standard"
+   ]
+  },
+  {
+   "tr": "90 tutuyor. Dümdüz gidin, sonra sola dönün.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "That's 90. Go straight ahead, then turn left."
+   ],
+   "ctx": [
+    "A1.6 In town · Clerk"
    ]
   },
   {
@@ -1665,6 +1648,15 @@
    ],
    "ctx": [
     "B1.9 The city and the environment · Chair"
+   ]
+  },
+  {
+   "tr": "Belediyeye mahallen için bir öneri yazısı yaz.",
+   "kind": "writing.prompt",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.9 The city and the environment · yazma"
    ]
   }
  ]

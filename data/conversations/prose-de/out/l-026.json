@@ -22,7 +22,6 @@
  { "tr": "Şimdi küçük bir konuşma yapacağız; öğrendiklerini gerçek bir sohbette kullan. Kolay gelsin!", "kind": "say.tr", "de": "Jetzt führen wir ein kurzes Gespräch; nutze das Gelernte in einem echten Gespräch. Viel Erfolg!" },
  { "tr": ";", "kind": "say.tr", "de": ";" },
  { "tr": ":", "kind": "say.tr", "de": ":" },
- { "tr": "I", "kind": "say.tr", "de": "I" },
  { "tr": ").", "kind": "say.tr", "de": ")." },
  { "tr": "My", "kind": "say.tr", "de": "My" },
  { "tr": "Şu", "kind": "say.tr", "de": "Der Teil" },

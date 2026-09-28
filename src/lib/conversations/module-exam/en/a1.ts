@@ -436,7 +436,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Passenger", de: "Good. How much is a ticket to New York?", tr: "Güzel. New York'a bilet kaç para?" },
         { speaker: "Clerk", de: "One-way or round-trip?", tr: "Tek yön mü gidiş dönüş mü?" },
         { speaker: "Passenger", de: "A round-trip ticket, please. And where is the platform?", tr: "Gidiş dönüş lütfen. Peron nerede?" },
-        { speaker: "Clerk", de: "90. Go straight ahead, then turn left.", tr: "90. Dümdüz gidin, sonra sola dönün." },
+        { speaker: "Clerk", de: "That's 90. Go straight ahead, then turn left.", tr: "90 tutuyor. Dümdüz gidin, sonra sola dönün." },
       ],
       questions: [
         { de: "Which platform does the train leave from?", tr: "Tren hangi perondan kalkıyor?", options: ["Platform one", "Platform two", "Platform three", "Platform ten"], answer: 2 },
@@ -668,10 +668,10 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       title: "Medicine for a headache",
       titleTr: "İlaç kullanma bilgisi",
       genre: "Bilgi metni",
-      text: "Medicine for a headache\n\nAdults: one tablet, three times a day, after food.\nChildren: do not take this medicine.\nDo not take more than five tablets a day.\nWith 39 degrees: call the doctor.\n\nTake the tablet with a glass of water.\nKeep the medicine in a dark and cold place.",
+      text: "Medicine for a headache\n\nAdults: one tablet, three times a day, after food.\nChildren: do not take this medicine.\nDo not take more than five tablets a day.\nWith a fever of 39 degrees: call the doctor.\n\nTake the tablet with a glass of water.\nKeep the medicine in a cool, dark place.",
       questions: [
         { de: "How many times a day does an adult take a tablet?", tr: "Bir yetişkin günde kaç kez tablet alıyor?", options: ["One time", "Two times", "Three times", "Every hour"], answer: 2 },
-        { de: "What must you do with 39 degrees?", tr: "39 derecede ne yapmalı?", options: ["Take more tablets", "Call the doctor", "Only drink water", "Wait a week"], answer: 1 },
+        { de: "What must you do with a fever of 39 degrees?", tr: "39 derece ateşte ne yapmalı?", options: ["Take more tablets", "Call the doctor", "Only drink water", "Wait a week"], answer: 1 },
       ],
     },
     speaking: [

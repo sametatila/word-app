@@ -203,7 +203,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "Reading the label",
       titleTr: "Prospektüs",
       genre: "Bilgi metni",
-      text: "COUGH SYRUP — please read before use\n\nDose for adults: one spoon twice a day, after meals.\nChildren over six: one spoon a day.\n\nDo not take the syrup for more than seven days. If you feel dizzy, stop and call your doctor.\n\nSide effects: some people feel tired after the first dose.\n\nYou should keep the bottle in a cool, dark place. Do not use it if the bottle has been open for more than four weeks.",
+      text: "COUGH SYRUP — please read before use\n\nDose for adults: one teaspoon twice a day, after meals.\nChildren over six: one teaspoon a day.\n\nDo not take the syrup for more than seven days. If you feel dizzy, stop and call your doctor.\n\nSide effects: some people feel tired after the first dose.\n\nYou should keep the bottle in a cool, dark place. Do not use it if the bottle has been open for more than four weeks.",
       questions: [
         { de: "How often should an adult take the syrup?", tr: "Bir yetişkin şurubu ne sıklıkta almalı?", options: ["Once a day", "Twice a day", "Three times a day", "After every meal"], answer: 1 },
         { de: "What should you do if you feel dizzy?", tr: "Baş dönmesi olursa ne yapmalı?", options: ["Take a bigger dose", "Stop and call the doctor", "Wait seven days", "Drink more water"], answer: 1 },

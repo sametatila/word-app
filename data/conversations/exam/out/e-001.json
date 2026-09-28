@@ -29,7 +29,6 @@
  { "tr": "Not", "kind": "reading.genre", "en": "Note" },
  { "tr": "Form", "kind": "reading.genre", "en": "Form" },
  { "tr": "Menü", "kind": "reading.genre", "en": "Menu" },
- { "tr": "koşul", "kind": "focus", "en": "condition" },
  { "tr": "Yolculuk ve ulaşım", "kind": "plan.title", "en": "Travel and transportation" },
  { "tr": "Neden?", "kind": "turn", "en": "Why?" },
  { "tr": "Sağlık", "kind": "plan.title", "en": "Health" },
@@ -148,5 +147,6 @@
  { "tr": "Talep ve cevap", "kind": "reading.title", "en": "Inquiry and reply" },
  { "tr": "Tanışma ve ben", "kind": "plan.title", "en": "Introductions and me" },
  { "tr": "Tanıtım yazısı", "kind": "reading.genre", "en": "Descriptive piece" },
- { "tr": "tarih söylemek", "kind": "focus", "en": "giving the date" }
+ { "tr": "tarih söylemek", "kind": "focus", "en": "giving the date" },
+ { "tr": "koşul", "kind": "focus", "en": "Conditions" }
 ]

@@ -762,7 +762,7 @@ export const deA2B06: Conversation[] = [
           tr("İlk kalıbımız:"),
           de("Ich suche ein hellblaues Hemd."),
           tr(
-            "Cinssiz bir isim, o yüzden sıfat 'es' ile bitiyor. Artikel ismin cinsini göstermediği zaman o işi sıfat üstleniyor.",
+            "Nötr bir isim, o yüzden sıfat 'es' ile bitiyor. Artikel ismin cinsini göstermediği zaman o işi sıfat üstleniyor.",
           ),
         ],
       },
@@ -801,7 +801,7 @@ export const deA2B06: Conversation[] = [
           kind: "produce",
           target: "Ich möchte ein kariertes Hemd",
           hint: [
-            tr("Cinssiz bir isimde sıfat iki harfle biter:"),
+            tr("Nötr bir isimde sıfat iki harfle biter:"),
             de("Ich möchte ein kariertes Hemd."),
             tr("Tekrar dene."),
           ],
@@ -819,7 +819,7 @@ export const deA2B06: Conversation[] = [
           answer: true,
           why: [
             tr(
-              "İsim cinssiz ve belirsiz artikelden sonra geliyor; sıfat da o cinsi gösteren eki almış. Cümle doğru.",
+              "İsim nötr ve belirsiz artikelden sonra geliyor; sıfat da o cinsi gösteren eki almış. Cümle doğru.",
             ),
           ],
         },

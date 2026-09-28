@@ -1,7 +1,7 @@
 [
  { "tr": "Evet, kahvaltı yediden ona kadar. Oda anahtarınız — 204.", "kind": "turn", "de": "Ja, Frühstück gibt es von sieben bis zehn. Ihr Zimmerschlüssel — 204." },
  { "tr": "Hayatını kısaca anlatan bir metin yaz: eskiden ve şimdi.", "kind": "writing.prompt", "de": "Schreib einen kurzen Text über dein Leben: damals und heute." },
- { "tr": "Hedef yükseltilmiş olsa da ikramiyeyi konuşabilir miyiz?", "kind": "speaking", "de": "Können wir über die Prämie sprechen, obwohl das Ziel angehoben wurde?" },
+ { "tr": "Hedefe tam ulaşmamış olsak da ikramiyeyi konuşabilir miyiz?", "kind": "speaking", "de": "Können wir über die Prämie sprechen, obwohl wir das Ziel nicht ganz erreicht haben?" },
  { "tr": "Size söylediğinde teslim aracı çoktan çıkmıştı. Fişiniz var mı?", "kind": "turn", "de": "Als sie es Ihnen sagte, war der Lieferwagen schon weg. Haben Sie den Kassenbon?" },
  { "tr": "Onu nerede okudunuz? Dergideki yazı eski araştırmayla ilgili olmalı.", "kind": "turn", "de": "Wo haben Sie das gelesen? Der Artikel in der Zeitschrift muss von der alten Studie handeln." },
  { "tr": "Öneriyoruz. Süre olmasaydı yazılı bir cevap da isterdim.", "kind": "turn", "de": "Das tun wir. Ohne die Frist würde ich auch um eine schriftliche Antwort bitten." },
