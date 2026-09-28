@@ -41,7 +41,8 @@ import { candoIdsForConversation } from "../game/candoMap";
 import { fetchCando } from "../game/cando";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { sfx } from "../lib/sfx";
-import { CONVERSATION_TRY_CEILING } from "../lib/learningRules";
+import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "../lib/learningRules";
+import { produceMiss } from "../lib/sentenceMatch";
 import { track } from "../lib/track";
 import { reduceMotion } from "../lib/reduceMotion";
 import { ApiError } from "../api/client";
@@ -229,12 +230,25 @@ export function ConversationScreen() {
    */
   /** Konuşmanın bir sonraki tekrarı kaç gün sonra — kayıt yanıtından. */
   const [nextDays, setNextDays] = useState<number | null>(null);
-  /** Sunucunun hükmü: konuşma sayıldı mı (asgari tur doldu mu). */
+  /** Sunucunun hükmü: sohbet bitti VE anlatım isabeti eşiği geçti mi — tekrar
+   *  merdivenini yürüten hüküm; "konuşma sayıldı" değil (bkz. `Summary`). */
   const [passed, setPassed] = useState<boolean | null>(null);
   const [handsFree, setHandsFree] = useState(true);
   const handsFreeRef = useRef(true);
   const [roleTurns, setRoleTurns] = useState(0);
   const [roleMsgs, setRoleMsgs] = useState<ChatMsg[]>([]);
+  /*
+   * SOHBETİN DÜZELTMELERİ AYRI TUTULUYOR (denetim T16).
+   *
+   * Özet düzeltmeleri `roleMsgs`teki karşı taraf cevaplarından `parseReply`
+   * ile yeniden çıkarıyordu; ama `roleMsgs` cevabın TEMİZLENMİŞ gövdesini
+   * saklıyor (`[FIX]`/`[SAY]` satırları ayıklanmış) ve sayı hep sıfırdı —
+   * konuşmada düzeltme balonu görülse de özet "hiç düzeltme gerekmedi"
+   * diyordu. `roleMsgs` modele geri giden geçmiş olduğu için ona dokunulmadı
+   * (modelin gördüğü şey değişmesin); düzeltmeler geldikleri anda buraya
+   * yazılıyor ve yarım kayıtla birlikte saklanıyor.
+   */
+  const [corrections, setCorrections] = useState<string[]>([]);
   /*
    * SAĞLAYICI KAPALIYSA SENARYO YOLU. `null` = model çalışıyor. Web aynı
    * durumda konuşmaya ait senaryoya düşüyor ve konuşma sürüyor; mobil yalnız
@@ -405,9 +419,9 @@ export function ConversationScreen() {
   // Konuşma ilerledikçe de sakla: sohbet, tur sayısı, senaryo yolunun durumu.
   useEffect(() => {
     if (!conversation || phase !== "chat" || kaydedilen.current === true || !roleMsgs.length) return;
-    void saveConversationResume(conversation.id, conversation.lecture.length, correct, { phase: "chat", roleMsgs, roleTurns, offline });
+    void saveConversationResume(conversation.id, conversation.lecture.length, correct, { phase: "chat", roleMsgs, roleTurns, offline, corrections });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [roleMsgs, roleTurns, phase]);
+  }, [roleMsgs, roleTurns, phase, corrections]);
 
   /**
    * Konuşma BAŞLADI - web `conversation-player` ile aynı olay, aynı değer (1 kaldığı
@@ -619,6 +633,12 @@ export function ConversationScreen() {
         push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
         speakTarget(expect.target);
         setTimeout(advance, 900);
+      } else if (produceMiss(text, expect.target, expect.accept) === "other") {
+        /* Cevap hedefin bozulmuş hâli değil, BAŞKA bir cümle: adımın kural
+           ipucu ("'weil'den sonra fiil en sona gider") burada yanlış teşhis
+           olurdu — öğrenci kuralı uygulamış olabilir (denetim T16). İstenen
+           cümle söyleniyor. Web `conversation-player` aynı hakemle aynı dal. */
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.produce_other") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
       } else if (expect.hint?.length) {
         push({ role: "teacher", segments: expect.hint, tone: "hint" });
       }
@@ -687,6 +707,8 @@ export function ConversationScreen() {
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.resumed") }], tone: "hint" });
     setRoleMsgs(msgs);
     setRoleTurns(r.roleTurns ?? msgs.filter((m) => m.role === "user").length);
+    /* Eski kayıtta alan yok: düzeltmeler o zaman kaybolmuştu, boş başlıyor. */
+    setCorrections(Array.isArray(r.corrections) ? r.corrections : []);
     if (r.offline) {
       offlineRef.current = true;
       setOffline(r.offline as OfflineState);
@@ -718,6 +740,7 @@ export function ConversationScreen() {
       setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
       push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], content: { sub: String(turn), snapshot: { phase: "chat", scripted: true, you: text, reply: bodyText } } });
       setSuggestions(parsed.suggestions);
+      if (parsed.corrections.length) setCorrections((c) => [...c, ...parsed.corrections]);
       pushHint(r.hint);
       if (r.speak) speakTarget(r.speak);
       setBusy(false);
@@ -731,6 +754,8 @@ export function ConversationScreen() {
       setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
       push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined, report: { ref: `${conversation.id}:${turn}`, text: reply } });
       setSuggestions(parsed.suggestions);
+      /* Düzeltme balonda gösterildiği anda özete de yazılıyor (bkz. `corrections`). */
+      if (parsed.corrections.length) setCorrections((c) => [...c, ...parsed.corrections]);
       if (bodyText) speakTarget(bodyText);
     } catch (e) {
       if (isAiConsentDeclined(e)) {
@@ -750,6 +775,7 @@ export function ConversationScreen() {
         setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
         push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], content: { sub: String(turn), snapshot: { phase: "chat", scripted: true, you: text, reply: bodyText } } });
         setSuggestions(parsed.suggestions);
+        if (parsed.corrections.length) setCorrections((c) => [...c, ...parsed.corrections]);
         pushHint(r.hint);
         if (r.speak) speakTarget(r.speak);
       } else if (e instanceof ApiError && e.status === 403 && e.message === "premium_required") {
@@ -793,7 +819,6 @@ export function ConversationScreen() {
        `conversation-player` aynı adı aynı değerle yazıyor; mobilde çevrimdışı yol
        yeni geldiği için ölçüm de şimdi geliyor. */
     if (offline) track("production_attempt", offlineSummary(conversation, offline).score, "chat");
-    bumpStats(); // konuşma bitti: XP/seri değişti
     /* "Şimdilik bırak" konuşmayı BİTMİŞ işaretlemiyor ve kaldığı yeri silmiyor:
        bir sonraki açılışta konuşmaya dönülüyor. Sunucuya yine yazılıyor ki
        Patika adımı "denendi" görünsün ve sıra ilerlesin. */
@@ -833,6 +858,11 @@ export function ConversationScreen() {
          konuşma geri geliyordu. Sonuç kendi günüyle kuyruğa alınıyor. */
       await queueConversationResult(payload);
     }
+    /* SAYILAR KAYITTAN SONRA TAZELENİYOR (denetim T16). Sinyal isteğin
+       ÖNÜNDE çalıyordu: başlık, Patika ve günün görevleri sunucuya kayıt
+       düşmeden yeniden çekiliyor ve "Bir konuşma tamamla" 0/1'de kalıyordu.
+       Web `lernomi:stats`ı zaten yanıttan sonra yayınlıyor. */
+    bumpStats(); // konuşma bitti: XP/seri/görev değişti
   }
 
   const nextConversation = useMemo(() => {
@@ -937,7 +967,7 @@ export function ConversationScreen() {
           </View>
         </>
       ) : phase === "summary" ? (
-        <Summary conversation={conversation} correct={correct} total={scoreTotal} next={nextConversation} roleMsgs={roleMsgs} nextDays={nextDays} colors={colors} insets={insets}
+        <Summary conversation={conversation} correct={correct} total={scoreTotal} next={nextConversation} roleMsgs={roleMsgs} corrections={corrections} nextDays={nextDays} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
           onNext={nextConversation ? () => nav.replace("Conversation", { id: nextConversation.id }) : undefined}
           passed={passed}
@@ -1268,8 +1298,8 @@ function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onS
   );
 }
 
-function Summary({ conversation, correct, total, next, roleMsgs, nextDays, passed, turnsDone, colors, insets, onBack, onNext, onExam, onResume }: {
-  conversation: Conversation; correct: number; total: number; next: Conversation | null; roleMsgs: ChatMsg[]; nextDays: number | null; colors: Palette;
+function Summary({ conversation, correct, total, next, roleMsgs, corrections, nextDays, passed, turnsDone, colors, insets, onBack, onNext, onExam, onResume }: {
+  conversation: Conversation; correct: number; total: number; next: Conversation | null; roleMsgs: ChatMsg[]; corrections: string[]; nextDays: number | null; colors: Palette;
   passed: boolean | null;
   /** Yerel hüküm: asgari tur doldu mu. Sunucu yanıtı gelmezse (çevrimdışı) başlık buna bakıyor. */
   turnsDone: boolean;
@@ -1299,18 +1329,37 @@ function Summary({ conversation, correct, total, next, roleMsgs, nextDays, passe
       .catch(() => { /* etiket alınamadı */ });
     return () => { alive = false; };
   }, [conversation]);
-  /* Düzeltmeler karşı tarafın cevaplarından çıkarılıyor — web ile aynı kural
-     ve aynı ayrıştırıcı (`parseReply`). */
-  const corrections = roleMsgs.filter((m) => m.role === "assistant").flatMap((m) => parseReply(m.content).corrections);
+  /* Düzeltmeler sohbet sırasında toplanıyor (bkz. ekranın `corrections`
+     durumu): `roleMsgs` temizlenmiş gövdeyi tuttuğu için buradan yeniden
+     çıkarmak her zaman sıfır veriyordu. Web aynı listeyi ham cevaplardan,
+     aynı ayrıştırıcıyla (`parseReply`) çıkarıyor. */
   const userTurns = roleMsgs.filter((m) => m.role === "user").length;
   const talked = roleMsgs.length > 1;
   /*
-    KONUŞMA YARIM KALDI: sunucu açıkça "sayılmadı" dediyse ya da asgari tur
-    dolmadıysa. Yalnız sunucuya bakılıyordu; çevrimdışı "Şimdilik bırak"ta
-    yanıt gelmiyor ve yarım konuşma "bitti" damgası alıyordu. Web aynı iki
-    koşula bakıyor.
+    İKİ AYRI KOŞUL, İKİ AYRI SONUÇ (denetim T16).
+
+    Özet sunucunun `passed: false` hükmünü "asgari tur dolmadı" diye
+    okuyordu; oysa hüküm iki koşulun VE'si: sohbet bitti mi (`chatDone`) ve
+    anlatımın puanlı adımlarında ilk denemede oran eşiği geçti mi
+    (`CONVERSATION_PASS_RATIO`). 10/9 turla biten, alıştırmada 2/3 yapan
+    konuşma "yarım kaldı · en az 9 tur gerekiyor" dedi — Patika ise adımı
+    doğru olarak bitmiş saymıştı.
+
+    Neyin neye bağlı olduğu (sunucu `recordConversation`, `immersion/progress`,
+    `lib/quests`):
+      - Patika adımı ve "konuşma sayıldı": yalnız sohbetin bitmesi.
+      - Günün görevi "Bir konuşma tamamla": o gün yazılan her kayıt.
+      - XP: isabete ve sohbete göre; eşik yok.
+      - Tekrar merdiveni: `passed` — eşiğin altında aralık başa (1 gün) döner.
+    Yani YARIM yalnız tur eksikse; isabet düşükse konuşma tamamlanmış ve
+    sayılmıştır, yalnız yakında yeniden gelir. İkisi ayrı söyleniyor.
+
+    `passed === false` ve tur tamamsa sebep tanımı gereği isabettir; sunucu
+    yanıtı yoksa (çevrimdışı) aynı eşik yerelde sayılıyor.
   */
-  const unfinished = passed === false || !turnsDone;
+  const unfinished = !turnsDone;
+  const need = conversationPassNeed(total);
+  const scoreLow = (total > 0 && correct < need) || (passed === false && turnsDone);
   /*
     SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
     altta sabit düğmeler (en çok üç). Eskiden 110'luk maskot, dev başlık, üç
@@ -1327,19 +1376,22 @@ function Summary({ conversation, correct, total, next, roleMsgs, nextDays, passe
           figure={total ? `${correct}/${total}` : null}
           sub={tx("conversationp.n_turns", { n: userTurns })}
           quiet={unfinished}
-          pill={unfinished ? { text: tx("conversationp.pill_min_turns", { n: conversation.chat.minTurns }), tone: "bad" } : null}
+          pill={unfinished ? { text: tx("conversationp.pill_min_turns", { n: conversation.chat.minTurns }), tone: "bad" } : scoreLow ? { text: tx("conversationp.pill_score_low", { need, total }), tone: "brand" } : null}
         />
         {/* Tur sayısı KONUŞMANIN UZUNLUĞU, isabetten ayrı bir şey söylüyor;
             eşikle birlikte yazılıyor ki eksik kalanı görünsün. Tekrar günü
             aralıklı tekrar merdiveninden (kayıt yanıtı). */}
         <StatRow items={[
-          { value: formatPercent(pct), label: tx("conversation.accuracy") },
+          { value: formatPercent(pct), label: tx("conversation.accuracy"), tone: scoreLow ? "bad" : null },
           { value: `${userTurns}/${conversation.chat.minTurns}`, label: tx("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
           ...(!unfinished && nextDays !== null ? [{ value: tx("profile.days", { n: nextDays }), label: tx("conversationp.stat_review") }] : []),
         ]} />
 
         {/* KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK — not + "Konuşmaya dön". */}
         {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: conversation.chat.minTurns })} /> : null}
+        {/* İSABET EŞİĞİN ALTINDA — tur notundan AYRI: konuşma sayıldıysa bunu
+            söylüyor, yalnız tekrar aralığının neden uzamadığını açıklıyor. */}
+        {scoreLow ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx(unfinished ? "conversationp.score_low_note_unfinished" : "conversationp.score_low_note", { correct, total, need })} /> : null}
         {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
         {/* Misafirin ilk tamamlanan konuşması: kaybedecek bir şeyi olduğu ilk an. */}
         <GuestMilestoneCard milestone="first_conversation" when={!unfinished} />

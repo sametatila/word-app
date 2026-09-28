@@ -2173,4 +2173,8 @@ export const de: Record<string, string> = {
   "conversationp.stat_turns": "Beiträge",
   "conversationp.stat_review": "Wiederholung in",
   "conversationp.pill_min_turns": "Mindestens {n} Beiträge nötig",
+  "conversationp.produce_other": "Das ist ein anderer Satz als der hier gefragte. Gefragt ist:",
+  "conversationp.pill_score_low": "{need}/{total} richtig nötig für einen längeren Abstand",
+  "conversationp.score_low_note": "Das Gespräch ist abgeschlossen und zählt auf deinem Pfad. In den Übungen der Erklärung hattest du beim ersten Versuch {correct}/{total} richtig; damit der Wiederholungsabstand wächst, brauchst du mindestens {need}/{total} — deshalb kommt das Gespräch bald wieder.",
+  "conversationp.score_low_note_unfinished": "In den Übungen der Erklärung hattest du beim ersten Versuch außerdem {correct}/{total} richtig; damit der Wiederholungsabstand wächst, brauchst du mindestens {need}/{total}.",
 };

@@ -6,6 +6,7 @@ import { allConversations, conversationsFor, levelIndex } from "./index";
 import { scoredSteps, type Conversation } from "./types";
 import { awardActivity } from "@/lib/award";
 import { xpDelta, xpForConversation } from "@/lib/xp";
+import { CONVERSATION_PASS_RATIO } from "./chat-const";
 
 /**
  * Konuşma ilerlemesi ve kuralların tekrar zamanlaması.
@@ -24,8 +25,9 @@ import { xpDelta, xpForConversation } from "@/lib/xp";
 const LADDER = [1, 3, 7, 16, 35];
 
 /** Puanlanan adımların (üretim + doğru/yanlış) bu oranı ilk denemede
- *  doğruysa konuşma "geçildi" sayılıyor. */
-const PASS_RATIO = 0.7;
+ *  doğruysa konuşma "geçildi" sayılıyor. Sabit istemciyle ORTAK
+ *  (`chat-const`): özet, olumsuz hükmün sebebini aynı sayıdan söylüyor. */
+const PASS_RATIO = CONVERSATION_PASS_RATIO;
 
 export type ConversationState = {
   conversationId: string;

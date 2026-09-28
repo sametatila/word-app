@@ -14455,6 +14455,47 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
   }
 
+  /* -- 235b. KONUSMA OZETI HUKMUN SEBEBINI SOYLUYOR MU (denetim T16) --------
+   *
+   * Iki oynatici da sunucunun `passed: false` hukmunu "asgari tur dolmadi"
+   * diye okuyordu; oysa hukum sohbetin bitmesi VE anlatim isabetinin esigi
+   * gecmesi. 10/9 turla biten, 2/3 yapan konusma "en az 9 tur gerekiyor"
+   * dedi. Esik (`CONVERSATION_PASS_RATIO`) iki tarafta adli sabit; "yarim"
+   * yalniz tur eksikse, isabet notu ayri. Uretim adiminda baska bir cumleye
+   * kural ipucu yerine "istenen cumleden farkli" deniyor (`produceMiss`,
+   * govdesi 17. bolumde hakemle birlikte karsilastiriliyor). */
+  {
+    const dm = sil(read("mobile/src/screens/ConversationScreen.tsx"));
+    const dw = sil(read("src/components/conversations/conversation-player.tsx"));
+    const sm = read("mobile/src/lib/learningRules.ts");
+    const sw = read("src/lib/conversations/chat-const.ts");
+    const esikFn = (src) => {
+      const i = src.indexOf("export function conversationPassNeed");
+      return i < 0 ? "YOK" : src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ");
+    };
+    sameList(
+      "konusma ozetinin hukum sebebi",
+      [
+        "esik=" + ((sm.match(/CONVERSATION_PASS_RATIO = ([\d.]+)/) ?? [])[1] ?? "YOK"),
+        "gereken=" + esikFn(sm),
+        "yarim=" + (/const unfinished = !turnsDone;/.test(dm) ? "yalniz tur" : "BASKA"),
+        "isabet notu=" + (/scoreLow \?[\s\S]{0,200}conversationp\.score_low_note_unfinished" : "conversationp\.score_low_note"/.test(dm) ? "var" : "YOK"),
+        "isabet bandi=" + (/conversationp\.pill_score_low/.test(dm) ? "var" : "YOK"),
+        "uretim ipucu=" + (/produceMiss\([\s\S]{0,120}=== "other"[\s\S]{0,800}conversationp\.produce_other/.test(dm) ? "hakemden" : "YOK"),
+      ],
+      [
+        "esik=" + ((sw.match(/CONVERSATION_PASS_RATIO = ([\d.]+)/) ?? [])[1] ?? "YOK"),
+        "gereken=" + esikFn(sw),
+        "yarim=" + (/const unfinished = !chatDone;/.test(dw) ? "yalniz tur" : "BASKA"),
+        "isabet notu=" + (/scoreLow \?[\s\S]{0,200}conversationp\.score_low_note_unfinished" : "conversationp\.score_low_note"/.test(dw) ? "var" : "YOK"),
+        "isabet bandi=" + (/conversationp\.pill_score_low/.test(dw) ? "var" : "YOK"),
+        "uretim ipucu=" + (/produceMiss\([\s\S]{0,120}=== "other"[\s\S]{0,800}conversationp\.produce_other/.test(dw) ? "hakemden" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 234. KONUŞMADA MIKROFON YOLU KAPANIRSA SEBEBI SOYLENIYOR MU ---------
    *
    * Android `sttOk === false` olunca ekrani kalici olarak YAZMA yoluna

@@ -2,7 +2,7 @@
  * Cümle eşleştirme birim testi — `npm run test:match` (WP-10, adım 3).
  * Veritabanı yok; `lib/sentence-match` saf.
  */
-import { foldSentence, matchSentence } from "../src/lib/sentence-match";
+import { foldSentence, matchSentence, produceMiss } from "../src/lib/sentence-match";
 
 let failures = 0;
 function check(name: string, cond: boolean, detail = "") {
@@ -59,6 +59,20 @@ m = matchSentence("Der Zug fährt gleich ab.", "Der Zug fährt gleich ab.");
 check("ayrılabilir fiil tam", m.verdict === "exact");
 m = matchSentence("Der Zug abfährt gleich.", "Der Zug fährt gleich ab.");
 check("ayrılabilir fiil birleşik yazılmış → wrong (eksik/fazla)", m.verdict === "wrong");
+
+/* Konuşma üretim adımının yanlış cevabı: kural ipucu mu, "istenen cümleden
+   farklı" mı (denetim T16). Hedef ve eşdeğeri içerikten (de-b1-bewerbung). */
+console.log("\n7) Üretim adımı geri bildirimi");
+const W = "Ich möchte die Stelle, weil ich Deutsch spreche";
+const WA = ["Ich möchte diese Stelle, weil ich Deutsch spreche"];
+check("başka anlamda doğru kurulmuş cümle → other (kural uyarısı yok)", produceMiss("Ich möchte diese Stelle, weil ich viel Erfahrung habe.", W, WA) === "other");
+check("hedef + iki eklenmiş kelime, sıra doğru → other", produceMiss("Ich möchte die Stelle, weil ich sehr gut Deutsch spreche", W, WA) === "other");
+check("başka dilde cevap → other", produceMiss("Bu pozisyonu istiyorum", W, WA) === "other");
+check("fiil sonda değil → hint", produceMiss("Ich möchte die Stelle, weil ich spreche Deutsch.", W, WA) === "hint");
+check("sıra bozuk + eklenmiş kelimeler → hint", produceMiss("Ich möchte die Stelle weil ich spreche sehr gut Deutsch", W, WA) === "hint");
+check("tek kelime farkı (çekim) → hint", produceMiss("Ich wohne seit ein Jahr hier", "Ich wohne seit einem Jahr hier") === "hint");
+check("fazladan tek kelime (zu) → hint", produceMiss("Ich muss zu arbeiten", "Ich muss arbeiten") === "hint");
+check("yarım cümle → hint", produceMiss("Ich möchte die Stelle", W, WA) === "hint");
 
 console.log(failures === 0 ? "\nTÜM TESTLER GEÇTİ" : `\n${failures} TEST BAŞARISIZ`);
 process.exit(failures === 0 ? 0 : 1);

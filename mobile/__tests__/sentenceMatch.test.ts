@@ -1,4 +1,5 @@
-import { matchSentence, foldSentence } from "../src/lib/sentenceMatch";
+import { matchSentence, foldSentence, produceMiss } from "../src/lib/sentenceMatch";
+import { conversationPassNeed } from "../src/lib/learningRules";
 import { levenshtein, classifyOrder } from "../src/lib/errors";
 
 /**
@@ -66,5 +67,34 @@ describe("cümle hakemi", () => {
     expect(levenshtein("abc", "abc")).toBe(0);
     // Bildirme cümlesinde fiil ikinci sırada; yeri değişmişse "fiilin yeri".
     expect(classifyOrder(["heute", "ich", "gehe"], ["ich", "gehe", "heute"], "")).toBe("verb_position");
+  });
+});
+
+/**
+ * Konuşma üretim adımının yanlış cevabı (denetim T16): başka bir cümle kural
+ * ipucunu ("'weil'den sonra fiil en sona gider") almıyor, "istenen cümleden
+ * farklı" deniyor. Web aynı durumları `npm run test:match` 7. bölümde sınıyor.
+ */
+describe("üretim adımı geri bildirimi", () => {
+  const W = "Ich möchte die Stelle, weil ich Deutsch spreche";
+  const WA = ["Ich möchte diese Stelle, weil ich Deutsch spreche"];
+
+  it("başka anlamda doğru kurulmuş cümle kural uyarısı almıyor", () => {
+    expect(produceMiss("Ich möchte diese Stelle, weil ich viel Erfahrung habe.", W, WA, "de")).toBe("other");
+    expect(produceMiss("Ich möchte die Stelle, weil ich sehr gut Deutsch spreche", W, WA, "de")).toBe("other");
+  });
+
+  it("kurulum hatası ipucunu alıyor", () => {
+    expect(produceMiss("Ich möchte die Stelle, weil ich spreche Deutsch.", W, WA, "de")).toBe("hint");
+    expect(produceMiss("Ich wohne seit ein Jahr hier", "Ich wohne seit einem Jahr hier", [], "de")).toBe("hint");
+    expect(produceMiss("Ich muss zu arbeiten", "Ich muss arbeiten", [], "de")).toBe("hint");
+  });
+
+  it("geçme eşiği sunucunun karşılaştırmasıyla aynı", () => {
+    // 0,7 × 3 kayan noktada 2,0999…: üç adımda gereken 3/3.
+    expect(conversationPassNeed(3)).toBe(3);
+    expect(conversationPassNeed(4)).toBe(3);
+    expect(conversationPassNeed(5)).toBe(4);
+    expect(conversationPassNeed(10)).toBe(7);
   });
 });

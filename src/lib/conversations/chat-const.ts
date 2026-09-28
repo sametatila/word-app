@@ -31,6 +31,38 @@ export const MAX_MIN_TURNS = 9;
 export const CONVERSATION_TRY_CEILING = 3;
 
 /**
+ * Konuşmanın "geçildi" sayılma eşiği: anlatımın puanlanan adımlarında
+ * (üretim + doğru/yanlış) ilk denemede doğru oranı.
+ *
+ * Sayı `lib/conversations/progress` içinde sunucuya gömülüydü ve istemci onu
+ * bilmiyordu: özet `passed === false` gördüğünde SEBEBİNİ bilemiyor, her
+ * olumsuz hükmü "asgari tur dolmadı" diye okuyordu (denetim T16: 10/9 turla
+ * biten konuşma "en az 9 tur gerekiyor" dedi, asıl sebep 2/3 isabetti). Sabit
+ * burada, çünkü bu dosya istemciye de iniyor; sunucu da buradan okuyor.
+ *
+ * "Geçildi" yalnız TEKRAR MERDİVENİNİ yürütüyor (bkz. `recordConversation`):
+ * Patika adımı `chatDone`a, günlük görev "bugün bir kayıt var mı"ya, XP
+ * isabete bakıyor. Eşiğin altında kalan konuşma sayılıyor; yalnız aralığı
+ * uzamıyor.
+ *
+ * Mobil karşılığı `mobile/src/lib/learningRules.ts` `CONVERSATION_PASS_RATIO`.
+ */
+export const CONVERSATION_PASS_RATIO = 0.7;
+
+/**
+ * Eşiği geçmek için gereken en az doğru sayısı.
+ *
+ * Oran sunucudaki karşılaştırmanın (`correct / total >= oran`) AYNISIYLA
+ * sayılıyor, çarpıp yuvarlayarak değil: 0,7 × 3 kayan noktada 2,0999… ve
+ * yuvarlama hatası özete sunucunun vermediği bir hüküm yazdırırdı. Üç
+ * puanlı adımlı konuşmada gereken 3/3 — tek hata eşiğin altında bırakıyor.
+ */
+export function conversationPassNeed(total: number): number {
+  for (let k = 0; k <= total; k++) if (k / total >= CONVERSATION_PASS_RATIO) return k;
+  return total;
+}
+
+/**
  * Sunucuya taşınan geçmiş mesaj sayısı.
  *
  * Sabit 16'ydı ve tur sayısı dörtken sorun değildi. Dokuz tura çıkınca sessiz

@@ -32,7 +32,8 @@ import { UnlockProgress } from "@/components/unlock-progress";
 import type { SurfaceView } from "@/lib/premium/unlock-copy";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 import { RoundExit } from "@/components/round-exit";
-import { CONVERSATION_TRY_CEILING } from "@/lib/conversations/chat-const";
+import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "@/lib/conversations/chat-const";
+import { produceMiss } from "@/lib/sentence-match";
 import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
@@ -879,7 +880,17 @@ function ConversationPlayerBody({
       // İlk yanlış: üretimde içerikteki hedefe özgü ipucu; tekrarla eksik
       // kelimeler söyleniyor — "yanlış" demek öğretmez, neyin eksik olduğu öğretir.
       if (e.kind === "produce") {
-        interject(e.hint, reopen);
+        /* Cevap hedefin bozulmuş hâli değil de BAŞKA bir cümleyse adımın kural
+           ipucu ("'weil'den sonra fiil en sona gider") yanlış teşhis olurdu —
+           öğrenci kuralı uygulamış olabilir (denetim T16). O zaman istenen
+           cümle söyleniyor. Hüküm hakemin hizalamasından (`produceMiss`);
+           mobil `ConversationScreen` aynı dal. */
+        interject(
+          produceMiss(said, e.target, e.accept ?? [], targetLangOf(conversation.course)) === "other"
+            ? [nar("conversationp.produce_other"), { lang: "de", text: e.target }]
+            : e.hint,
+          reopen,
+        );
       } else {
         const missing =
           best.kind === "partial" || best.kind === "different" ? best.missing : [];
@@ -1225,9 +1236,18 @@ function ConversationPlayerBody({
   /* Alistirma isabeti - ozetin maskotu, konfetisi ve yuzde karosu ayni
      sayidan besleniyor (Android `Summary` `pct` ile ayni hesap). */
   const pct = scoredTotal ? Math.round((correctCount / scoredTotal) * 100) : 100;
-  /* Konuşma YARIM: sunucu açıkça "sayılmadı" dediyse ya da asgari tur dolmadıysa
-     (mobil `Summary` `unfinished` ile aynı iki koşul). */
-  const unfinished = saved?.passed === false || !chatDone;
+  /* İKİ AYRI KOŞUL, İKİ AYRI SONUÇ (denetim T16). Sunucunun `passed: false`
+     hükmü "asgari tur dolmadı" diye okunuyordu; oysa hüküm sohbetin bitmesi
+     VE anlatımın puanlı adımlarında ilk denemede oranın eşiği
+     (`CONVERSATION_PASS_RATIO`) geçmesi. Patika adımı ve "konuşma sayıldı"
+     yalnız sohbetin bitmesine, günün görevi o günkü her kayda, tekrar
+     merdiveni `passed`a bakıyor. Yani YARIM yalnız tur eksikse; isabet
+     düşükse konuşma sayılmış, yalnız yakında yeniden gelecek. Tur tamamken
+     `passed === false`ın sebebi tanımı gereği isabet; yanıt yoksa aynı eşik
+     yerelde sayılıyor. Mobil `Summary` aynı iki koşul. */
+  const unfinished = !chatDone;
+  const need = conversationPassNeed(scoredTotal);
+  const scoreLow = (scoredTotal > 0 && correctCount < need) || (saved?.passed === false && chatDone);
 
   // ─────────────────────────── görünüm ───────────────────────────
 
@@ -1803,13 +1823,19 @@ function ConversationPlayerBody({
                 figure={scoredTotal ? `${correctCount}/${scoredTotal}` : null}
                 sub={t("conversationp.n_turns", { n: userTurns })}
                 quiet={unfinished}
-                pill={unfinished ? { text: t("conversationp.pill_min_turns", { n: conversation.chat.minTurns }), tone: "bad" } : null}
+                pill={
+                  unfinished
+                    ? { text: t("conversationp.pill_min_turns", { n: conversation.chat.minTurns }), tone: "bad" }
+                    : scoreLow
+                      ? { text: t("conversationp.pill_score_low", { need, total: scoredTotal }), tone: "brand" }
+                      : null
+                }
               />
               {/* Tur sayısı konuşmanın UZUNLUĞU, isabetten ayrı bir şey; eşikle
                   birlikte yazılıyor. Tekrar günü aralıklı tekrar merdiveninden. */}
               <StatRow
                 items={[
-                  { value: formatPercent(pct, lang), label: t("conversation.accuracy") },
+                  { value: formatPercent(pct, lang), label: t("conversation.accuracy"), tone: scoreLow ? "bad" : null },
                   { value: `${userTurns}/${conversation.chat.minTurns}`, label: t("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
                   ...(!unfinished && saved ? [{ value: t("profile.days", { n: saved.nextDays }), label: t("conversationp.stat_review") }] : []),
                 ]}
@@ -1817,6 +1843,15 @@ function ConversationPlayerBody({
 
               {unfinished ? (
                 <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("conversationp.min_turns_note", { n: conversation.chat.minTurns })} />
+              ) : null}
+              {/* İsabet eşiğin altında — tur notundan ayrı: konuşma sayıldıysa
+                  bunu söylüyor, yalnız tekrar aralığının neden uzamadığını açıklıyor. */}
+              {scoreLow ? (
+                <FlowNote
+                  tone="warn"
+                  icon={<AlertIcon size={16} />}
+                  text={t(unfinished ? "conversationp.score_low_note_unfinished" : "conversationp.score_low_note", { correct: correctCount, total: scoredTotal, need })}
+                />
               ) : null}
               {extras.cando.length ? (
                 <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={`${t("conversationp.i_can")} ${extras.cando.join(" · ")}`} />

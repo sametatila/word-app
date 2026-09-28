@@ -2173,4 +2173,8 @@ export const en: Record<string, string> = {
   "conversationp.stat_turns": "Turns",
   "conversationp.stat_review": "Review in",
   "conversationp.pill_min_turns": "At least {n} turns needed",
+  "conversationp.produce_other": "That's a different sentence from the one asked for here. The one asked for:",
+  "conversationp.pill_score_low": "{need}/{total} correct needed for a longer interval",
+  "conversationp.score_low_note": "The conversation is complete and counts on your Path. You got {correct}/{total} of the explanation exercises right on the first try; for the review interval to grow you need at least {need}/{total}, so this conversation will come back soon.",
+  "conversationp.score_low_note_unfinished": "In the explanation exercises you also got {correct}/{total} right on the first try; for the review interval to grow you need at least {need}/{total}.",
 };

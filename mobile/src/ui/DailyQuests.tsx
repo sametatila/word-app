@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { t } from "../lib/i18n";
 import { View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import type { RootTabParams } from "../navigation/RootTabs";
@@ -14,7 +14,7 @@ import { PressableScale } from "./PressableScale";
 import { fetchQuests, claimQuest, ALL_DONE_ID, ALL_DONE_XP, type Quest, type QuestBoard } from "../game/quests";
 import { sfx } from "../lib/sfx";
 import { todayStr } from "../game/session";
-import { bumpStats } from "../lib/statsSignal";
+import { bumpStats, useStatsBump } from "../lib/statsSignal";
 import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -137,14 +137,28 @@ export function DailyQuests() {
     }
   }
 
-  useEffect(() => {
-    if (!user) { setBoard({ quests: [], allDone: false, allClaimed: false }); return; }
-    let alive = true;
-    fetchQuests()
-      .then((b) => { if (alive) setBoard(Array.isArray(b?.quests) ? b : { quests: [], allDone: false, allClaimed: false }); })
-      .catch(() => { if (alive) setBoard({ quests: [], allDone: false, allClaimed: false }); });
-    return () => { alive = false; };
-  }, [user]);
+  /*
+   * PANO ODAKTA VE SAYILAR DEĞİŞİNCE TAZELENİYOR (denetim T16).
+   *
+   * Kart yalnız kullanıcı değişince çekiyordu ve Öğren bir SEKME — hiç
+   * yeniden kurulmuyor. Konuşmayı bitirip dönen öğrenci "Bir konuşma tamamla"yı
+   * 0/1 görüyordu; sunucu kaydı almıştı, pano uygulama yeniden açılana dek
+   * eski kaldı. Web kartı her sayfa açılışında çekiyor. Tazelemede eski pano
+   * ekranda kalıyor (iskelet yeniden çizilmiyor); hata eski panoyu silmiyor.
+   */
+  const bump = useStatsBump();
+  useFocusEffect(
+    useCallback(() => {
+      if (!user) { setBoard({ quests: [], allDone: false, allClaimed: false }); return; }
+      /* `bump` yalnız tetik: değişince istek yeniden atılıyor (bkz. useLearningPath). */
+      if (bump < 0) return;
+      let alive = true;
+      fetchQuests()
+        .then((b) => { if (alive) setBoard(Array.isArray(b?.quests) ? b : { quests: [], allDone: false, allClaimed: false }); })
+        .catch(() => { if (alive) setBoard((prev) => prev ?? { quests: [], allDone: false, allClaimed: false }); });
+      return () => { alive = false; };
+    }, [user, bump]),
+  );
 
   if (board === null) {
     return (

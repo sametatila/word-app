@@ -216,3 +216,42 @@ export const VERDICT_KEYS: Record<Verdict, string> = {
   order: "match.order",
   wrong: "match.wrong",
 };
+
+/**
+ * Konuşma anlatımındaki üretim adımının YANLIŞ cevabına hangi geri bildirim.
+ *
+ * Adımın elle yazılmış ipucu (`hint`) tipik hatayı söylüyor: "'weil'den sonra
+ * fiil en sona gider: …". Oynatıcılar onu her yanlışta okuyordu ve cevap
+ * istenenden BAŞKA bir cümleyse ipucu yanlış teşhis oluyordu: "Bu pozisyonu
+ * istiyorum çünkü Almanca konuşuyorum" istenirken "Ich möchte diese Stelle,
+ * weil ich viel Erfahrung habe." yazan öğrenci fiili doğru yere koymuştu ama
+ * "fiil en sona gider" uyarısı aldı (denetim T16).
+ *
+ * Üretim adımı serbest cümle değil ÇEVİRİ (3342 adımın hepsinde tek hedef ve
+ * eşdeğer biçimler, `accept`); başka anlamdaki cümleyi doğru saymak adımın
+ * ölçtüğünü bozardı. Burada değişen yalnız SÖYLENEN: cevap hedefin bozulmuş
+ * hâli değil de başka bir cümleyse "istenen cümleden farklı, istenen şu"
+ * deniyor ve kural uyarısı verilmiyor.
+ *
+ * Ölçü hakemin kendi hizalaması (`matchSentence`):
+ *   - sıra ya da yazım sapması → "hint": kelimeler bilinmiş, kurulum bozuk;
+ *     ipucunun konusu tam olarak bu.
+ *   - hedefin en az iki kelimesi yok VE en az iki yabancı kelime var → "other":
+ *     öğrenci başka bir şey söylemiş.
+ *   - hedefin hepsi sırasıyla var, üstüne en az iki kelime eklenmiş → "other":
+ *     cümle kurulmuş, fazlası istenmemiş (kural uyarısı haksız olurdu).
+ *   - tek kelimelik fark (yanlış çekim, fazladan "zu", eksik artikel) →
+ *     "hint": ipuçlarının çoğu tam bu hataları anlatıyor.
+ */
+export type ProduceMiss = "hint" | "other";
+
+export function produceMiss(typed: string, target: string, alternatives: string[] = [], lang: TargetLang = "de"): ProduceMiss {
+  const m = matchSentence(typed, target, alternatives, lang);
+  if (m.verdict !== "wrong") return "hint";
+  const missing = m.target.filter((t) => t.mark === "missing").length;
+  const moved = m.target.filter((t) => t.mark === "moved").length;
+  const extra = m.typed.filter((t) => t.mark === "extra").length;
+  if (extra >= 2 && missing >= 2) return "other";
+  if (extra >= 2 && missing === 0 && moved === 0) return "other";
+  return "hint";
+}

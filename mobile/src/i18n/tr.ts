@@ -2186,4 +2186,8 @@ export const tr: Record<string, string> = {
   "conversationp.stat_turns": "Tur",
   "conversationp.stat_review": "Tekrar",
   "conversationp.pill_min_turns": "En az {n} tur gerekiyor",
+  "conversationp.produce_other": "Bu, burada istenen cümleden farklı bir cümle. İstenen:",
+  "conversationp.pill_score_low": "Aralığın uzaması için {need}/{total} doğru gerekiyor",
+  "conversationp.score_low_note": "Konuşma tamamlandı ve Patika'da sayıldı. Anlatımdaki alıştırmalarda ilk denemede {correct}/{total} doğru yaptın; tekrar aralığının uzaması için en az {need}/{total} gerekiyor, bu yüzden konuşma yakında yeniden karşına gelecek.",
+  "conversationp.score_low_note_unfinished": "Anlatımdaki alıştırmalarda da ilk denemede {correct}/{total} doğru yaptın; tekrar aralığının uzaması için en az {need}/{total} gerekiyor.",
 };

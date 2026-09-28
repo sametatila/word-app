@@ -267,13 +267,16 @@ export type ConversationResume = {
   roleMsgs?: { role: "user" | "assistant"; content: string }[];
   roleTurns?: number;
   offline?: unknown;
+  /** Sohbette gelen düzeltmeler — `roleMsgs` temizlenmiş gövdeyi tuttuğu için
+   *  oradan yeniden çıkarılamıyor (bkz. ConversationScreen `corrections`). */
+  corrections?: string[];
 };
 
 export async function saveConversationResume(
   id: string,
   cursor: number,
   correct: number,
-  extra?: Pick<ConversationResume, "phase" | "roleMsgs" | "roleTurns" | "offline">,
+  extra?: Pick<ConversationResume, "phase" | "roleMsgs" | "roleTurns" | "offline" | "corrections">,
 ): Promise<void> {
   try {
     await AsyncStorage.setItem(RESUME_PREFIX + id, JSON.stringify({ cursor, correct, at: Date.now(), ...extra }));

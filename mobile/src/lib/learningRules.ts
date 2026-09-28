@@ -45,6 +45,27 @@ export const BOSS_SECONDS = 60;
 export const CONVERSATION_TRY_CEILING = 3;
 
 /**
+ * Konuşmanın "geçildi" sayılma eşiği: anlatımın puanlanan adımlarında ilk
+ * denemede doğru oranı. Hükmü sunucu veriyor (`passed`); özet bu sayıyla
+ * hükmün SEBEBİNİ söylüyor — eskiden her olumsuz hükmü "asgari tur dolmadı"
+ * diye okuyordu (denetim T16). "Geçildi" yalnız tekrar merdivenini yürütüyor;
+ * Patika adımı sohbetin bitmesine bakıyor.
+ *
+ * Web karşılığı `src/lib/conversations/chat-const.ts` `CONVERSATION_PASS_RATIO`.
+ */
+export const CONVERSATION_PASS_RATIO = 0.7;
+
+/**
+ * Eşiği geçmek için gereken en az doğru sayısı — sunucunun `correct / total
+ * >= oran` karşılaştırmasıyla birebir (çarpıp yuvarlamak kayan noktada 3
+ * adımda 2 derdi; gerçekte 3/3 gerekiyor). Web `conversationPassNeed`.
+ */
+export function conversationPassNeed(total: number): number {
+  for (let k = 0; k <= total; k++) if (k / total >= CONVERSATION_PASS_RATIO) return k;
+  return total;
+}
+
+/**
  * Söyleyiş drilinde tek kaydın üst sınırı (ms).
  *
  * Satır içinde adsız bir `9000` yazılıydı; web aynı dril için 8 saniye
