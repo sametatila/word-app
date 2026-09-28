@@ -39,7 +39,7 @@ export const a1U17: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "HAUSORDNUNG\n\n1. Von 22 bis 7 Uhr bitte leise sein. Man darf nicht laut sein.\n\n2. Der Müll kommt in den Keller. Bitte stellen Sie den Müll nicht in den Flur.\n\n3. Im Flur darf man keine Möbel, keine Kartons und kein Gepäck stellen.\n\n4. Die Waschmaschine im Keller: von 8 bis 20 Uhr. Bitte danach sauber machen.\n\n5. Sie haben einen Schlüssel für den Keller und für den Eingang. Bitte geben Sie ihn nicht an Bekannte weiter!\n\nEine Frage? Der Vermieter wohnt im Haus, Wohnung 1.",
+      "HAUSORDNUNG\n\n1. Von 22 bis 7 Uhr bitte leise sein. Man darf nicht laut sein.\n\n2. Der Müll kommt in den Keller. Bitte stellen Sie den Müll nicht in den Flur.\n\n3. Im Flur darf man keine Möbel, keine Kartons und kein Gepäck stellen.\n\n4. Die Waschmaschine im Keller: von 8 bis 20 Uhr. Bitte danach sauber machen.\n\n5. Sie haben einen Schlüssel für den Keller und für den Eingang. Er ist nur für Sie, nicht für Bekannte!\n\nEine Frage? Der Vermieter wohnt im Haus, Wohnung 1.",
     questions: [
       {
         text: "Wann muss man leise sein?",

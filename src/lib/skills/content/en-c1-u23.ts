@@ -361,6 +361,8 @@ export const enC1U23: SkillExercise[] = [
       { de: "a factory", tr: "fabrika" },
       { de: "an answer", tr: "cevap" },
       { de: "leads to", tr: "yol açıyor" },
+      { de: "revenue", tr: "ciro" },
+      { de: "slipped past", tr: "gizlice geçirilmek" },
     ],
     minutes: 8,
     segments: [

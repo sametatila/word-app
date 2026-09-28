@@ -101,6 +101,7 @@ export const enA2U17: SkillExercise[] = [
       { de: "full", tr: "dolu" },
       { de: "fill", tr: "doldurmak" },
       { de: "Understood", tr: "anlaşıldı" },
+      { de: "tank", tr: "depo" },
     ],
     minutes: 5,
     text:

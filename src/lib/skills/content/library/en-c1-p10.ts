@@ -234,6 +234,7 @@ export const enC1P10: SkillExercise[] = [
       { de: "accountable", tr: "hesap verir" },
       { de: "to rebuild", tr: "yeniden kurmak" },
       { de: "regional", tr: "bölgesel" },
+      { de: "produce", tr: "ortaya koymak" },
     ],
     minutes: 16,
     tasks: [

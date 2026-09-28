@@ -116,7 +116,6 @@ export const a2U21: SkillExercise[] = [
       { de: "misstrauisch", tr: "şüpheci", en: "suspicious" },
       { de: "wahrscheinlich", tr: "muhtemelen", en: "probably" },
       { de: "mitbekommen", tr: "duymak / farkına varmak", en: "to catch wind of" },
-      { de: "herausfinden", tr: "öğrenmek / ortaya çıkarmak", en: "to find out" },
       { de: "nirgends", tr: "hiçbir yerde", en: "nowhere" },
       { de: "lang", tr: "uzun", en: "long" },
       { de: "aller", tr: "hepsinden", en: "of all" },
@@ -127,7 +126,7 @@ export const a2U21: SkillExercise[] = [
       "Jeden Tag bekommen wir Nachrichten mit, die uns wütend machen. Manche stimmen. Manche sind eine Lüge. Drei Fragen helfen.\n\n" +
       "ERSTENS: Wer sagt das? Ein Zeitungsartikel mit Namen und Datum ist etwas anderes als ein Bild ohne Quelle. Wenn nirgends steht, wer es geschrieben hat, seien Sie misstrauisch.\n\n" +
       "ZWEITENS: Steht es woanders auch? Suchen Sie zwei Minuten. Wenn ein großer Radiosender und eine Zeitschrift dasselbe berichten, ist es wahrscheinlich richtig. Wenn Sie es nur an einer Stelle finden, warten Sie.\n\n" +
-      "DRITTENS: Wie alt ist es? Sehr viele Bilder sind echt, aber zehn Jahre alt. Das Datum herauszufinden dauert selten länger als eine Minute.\n\n" +
+      "DRITTENS: Wie alt ist es? Sehr viele Bilder sind echt, aber zehn Jahre alt. Das Datum zu finden dauert selten länger als eine Minute.\n\n" +
       "Und wenn Sie unsicher bleiben: nicht teilen. Ich habe gehört, dass die Hälfte aller falschen Nachrichten von Leuten weitergegeben wird, die es gut meinen.",
     questions: [
       {

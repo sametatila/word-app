@@ -248,6 +248,7 @@ export const enB2U06: SkillExercise[] = [
       { de: "figures", tr: "rakamlar" },
       { de: "argue", tr: "tartışmak" },
       { de: "an accident", tr: "rastlantı" },
+      { de: "add", tr: "eklemek" },
     ],
     minutes: 7,
     segments: [

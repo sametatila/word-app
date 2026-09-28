@@ -109,6 +109,7 @@ export const b1U34: SkillExercise[] = [
       { de: "zerstören", tr: "yıkmak", en: "to destroy" },
       { de: "die Jugend", tr: "gençlik", en: "youth" },
       { de: "der Tod", tr: "ölüm", en: "death" },
+      { de: "befragen", tr: "röportaj yapmak", en: "to interview" },
     ],
     text:
       "Mein Großvater hat über den Krieg nie geredet. Erst als er über " +

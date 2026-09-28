@@ -96,7 +96,7 @@ export const a1U21: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 21,
-    title: "Mir tut alles weh",
+    title: "Krank im Bett",
     genre: "message",
     intro: "Ali hasta. Arkadaşına yazıyor.",
     gloss: [
@@ -107,7 +107,7 @@ export const a1U21: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo Max,\n\nheute kann ich leider nicht zum Sport kommen. Ich bin krank. Mein Kopf tut weh und der Hals auch — heute tut mir alles weh. Ich habe Fieber und liege im Bett.\n\nMeine Schwester kümmert sich um mich. Sie kocht und kauft Tee. Sehr nett!\n\nMorgen habe ich einen Termin beim Arzt — um 9 Uhr. Hoffentlich ist es nichts Schlimmes.\n\nDiesmal klappt es leider nicht. Aber am Mittwoch bin ich sicher wieder da.\n\nAli",
+      "Hallo Max,\n\nheute kann ich leider nicht zum Sport kommen. Ich bin krank. Mein Kopf tut weh und der Hals auch. Ich habe Fieber und liege im Bett.\n\nMeine Schwester kümmert sich um mich. Sie kocht und kauft Tee. Sehr nett!\n\nMorgen habe ich einen Termin beim Arzt — um 9 Uhr. Hoffentlich ist es nichts Schlimmes.\n\nDiesmal klappt es leider nicht. Aber am Mittwoch bin ich sicher wieder da.\n\nAli",
     questions: [
       {
         text: "Was tut Ali weh?",

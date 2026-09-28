@@ -51,6 +51,7 @@ export const enC1P20: SkillExercise[] = [
       { de: "fund", tr: "fon" },
       { de: "specific", tr: "belirli" },
       { de: "restrictions", tr: "kısıtlama" },
+      { de: "produce", tr: "sağlamak" },
     ],
     minutes: 10,
     text:

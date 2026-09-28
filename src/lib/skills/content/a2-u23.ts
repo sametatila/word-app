@@ -389,6 +389,7 @@ export const a2U23: SkillExercise[] = [
       { de: "im Voraus", tr: "önceden", en: "in advance" },
       { de: "das Bürgeramt", tr: "nüfus dairesi", en: "citizens' registration office" },
       { de: "die Abmeldung", tr: "çıkış bildirimi", en: "deregistration" },
+      { de: "heruntergeladen", tr: "indirilmiş", en: "downloaded" },
     ],
     minutes: 8,
     tasks: [

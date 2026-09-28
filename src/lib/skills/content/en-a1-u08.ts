@@ -98,6 +98,8 @@ export const enA1U08: SkillExercise[] = [
       { de: "moment", tr: "an" },
       { de: "problem", tr: "sorun" },
       { de: "a quarter to", tr: "çeyrek kala" },
+      { de: "receipt", tr: "fiş" },
+      { de: "back", tr: "geri" },
     ],
     minutes: 4,
     text:

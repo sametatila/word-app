@@ -76,6 +76,7 @@ export const enC1U12: SkillExercise[] = [
       { de: "denying", tr: "yadsımak" },
       { de: "a time word", tr: "zaman sözcüğü" },
       { de: "never hear about it", tr: "hiç haberi olmayacak" },
+      { de: "masculine", tr: "eril" },
     ],
     minutes: 12,
     text:
@@ -180,6 +181,7 @@ export const enC1U12: SkillExercise[] = [
       { de: "dead", tr: "ölü" },
       { de: "a root", tr: "kök" },
       { de: "a policy", tr: "politika" },
+      { de: "produce", tr: "ortaya çıkarmak" },
     ],
     minutes: 12,
     text:

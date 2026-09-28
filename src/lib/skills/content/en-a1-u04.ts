@@ -181,6 +181,7 @@ export const enA1U04: SkillExercise[] = [
       { de: "home", tr: "ev" },
       { de: "Why not?", tr: "neden yok" },
       { de: "pet", tr: "evcil hayvan" },
+      { de: "go", tr: "gitmek" },
     ],
     minutes: 4,
     segments: [

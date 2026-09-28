@@ -918,5 +918,10 @@
   "tr": "fark etmesine izin verilen",
   "kind": "gloss.tr",
   "de": "was bemerkt werden darf"
+ },
+ {
+  "tr": "süre sınırı",
+  "kind": "gloss.tr",
+  "de": "die Frist"
  }
 ]

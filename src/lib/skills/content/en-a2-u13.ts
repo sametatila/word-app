@@ -105,6 +105,7 @@ export const enA2U13: SkillExercise[] = [
       { de: "goods", tr: "mallar" },
       { de: "easier", tr: "daha kolay" },
       { de: "Here it is", tr: "buyurun" },
+      { de: "time limit", tr: "süre sınırı" },
     ],
     minutes: 5,
     text:

@@ -83,6 +83,7 @@ export const enC1U22: SkillExercise[] = [
       { de: "a principle", tr: "ilke" },
       { de: "assigned", tr: "atanmış" },
       { de: "a definition", tr: "tanım" },
+      { de: "produces", tr: "üretiyor" },
     ],
     minutes: 12,
     text:

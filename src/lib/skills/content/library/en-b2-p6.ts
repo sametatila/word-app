@@ -35,6 +35,7 @@ export const enB2P6: SkillExercise[] = [
       { de: "relationship", tr: "ilişki" },
       { de: "caution", tr: "uyarı" },
       { de: "organizations", tr: "kurum" },
+      { de: "produces", tr: "doğuruyor" },
     ],
     minutes: 8,
     text:

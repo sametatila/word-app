@@ -112,6 +112,8 @@ export const b1U08: SkillExercise[] = [
       { de: "die Tat", tr: "eylem", en: "deed" },
       { de: "die Papiere", tr: "belgeler", en: "documents" },
       { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "verlieren", tr: "kaybetmek", en: "to lose" },
+      { de: "einsteigen", tr: "binmek", en: "to get on" },
     ],
     text:
       "Es geschah an einem Dienstag im November. Eine Frau, die jeden Morgen den gleichen " +

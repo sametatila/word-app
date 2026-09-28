@@ -110,7 +110,7 @@ export const a2U05: SkillExercise[] = [
       "In den Sommerferien war ich immer bei meinen Großeltern auf dem Land. Sie hatten sieben Enkelkinder, aber ich war das einzige, das jedes Jahr blieb.\n\n" +
       "Bei ihnen gab es einen alten Kamin im Wohnzimmer. Im Juli hat ihn natürlich niemand angemacht, aber er hat immer nach Holz gerochen. In der Küche stand ein sehr großer Topf, und am Freitag hat meine Großmutter darin Suppe gekocht.\n\n" +
       "Am liebsten habe ich beim Backen geholfen. Ich durfte den Teig rühren, und danach durfte ich die Schüssel auslecken.\n\n" +
-      "Reich waren sie nicht. Sie haben fünf Kinder allein großgezogen. Aber sie waren die liebevollsten Menschen, die ich je gekannt habe. Später habe ich von ihnen das kleine Haus geerbt.",
+      "Reich waren sie nicht. Sie haben fünf Kinder allein großgezogen. Aber sie waren die liebevollsten Menschen, die ich gekannt habe. Später habe ich von ihnen das kleine Haus geerbt.",
     questions: [
       {
         text: "Wie viele Enkelkinder hatten die Großeltern?",

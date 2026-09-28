@@ -145,6 +145,7 @@ export const enC1P8: SkillExercise[] = [
       { de: "individual", tr: "bireysel" },
       { de: "valuable", tr: "değerli" },
       { de: "invent", tr: "icat etmek" },
+      { de: "produce", tr: "ortaya koymak" },
     ],
     minutes: 10,
     segments: [

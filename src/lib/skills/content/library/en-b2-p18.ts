@@ -37,6 +37,7 @@ export const enB2P18: SkillExercise[] = [
       { de: "groceries", tr: "market alışverişi" },
       { de: "association", tr: "dernek" },
       { de: "withdrawal", tr: "para çekme" },
+      { de: "earnings", tr: "kazanç" },
     ],
     minutes: 8,
     text:

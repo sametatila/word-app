@@ -114,6 +114,7 @@ export const b1U10: SkillExercise[] = [
       { de: "besonders", tr: "özellikle", en: "especially" },
       { de: "das Gesuch", tr: "dilekçe", en: "petition" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "entfernt", tr: "uzakta", en: "away" },
     ],
     text:
       "Mein Lieblingsort liegt zwanzig Minuten von meiner Wohnung entfernt. Man geht die " +

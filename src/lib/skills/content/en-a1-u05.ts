@@ -244,6 +244,7 @@ export const enA1U05: SkillExercise[] = [
       { de: "photo", tr: "fotoğraf" },
       { de: "grandparents", tr: "büyükanne ve büyükbaba" },
       { de: "Is this …?", tr: "bu … mi" },
+      { de: "take", tr: "çekmek" },
     ],
     minutes: 4,
     segments: [

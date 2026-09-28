@@ -200,6 +200,7 @@ export const enB1U19: SkillExercise[] = [
       { de: "range", tr: "aralık" },
       { de: "sentence", tr: "cümle" },
       { de: "whole", tr: "bütün" },
+      { de: "beforehand", tr: "önceden" },
     ],
     minutes: 6,
     segments: [

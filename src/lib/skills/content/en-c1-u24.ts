@@ -177,6 +177,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "counted", tr: "sayılan" },
       { de: "honest", tr: "dürüst" },
       { de: "sharp", tr: "keskin" },
+      { de: "produced", tr: "doğurdu" },
     ],
     minutes: 12,
     text:
@@ -269,6 +270,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "a machine", tr: "cihaz" },
       { de: "exposes", tr: "açığa çıkarıyor" },
       { de: "a source", tr: "kaynak" },
+      { de: "produces", tr: "üretiyor" },
     ],
     minutes: 8,
     segments: [

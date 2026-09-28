@@ -47,6 +47,7 @@ export const a2U11: SkillExercise[] = [
       { de: "bieten", tr: "sağlamak", en: "to provide" },
       { de: "per", tr: "yoluyla", en: "by" },
       { de: "das Anschreiben", tr: "ön yazı", en: "cover letter" },
+      { de: "der Mindestlohn", tr: "asgari ücret", en: "minimum wage" },
     ],
     minutes: 4,
     text:
@@ -340,6 +341,7 @@ export const a2U11: SkillExercise[] = [
       { de: "der Service", tr: "hizmet", en: "service" },
       { de: "bieten", tr: "sağlamak", en: "to provide" },
       { de: "per", tr: "yoluyla", en: "by" },
+      { de: "der Mindestlohn", tr: "asgari ücret", en: "minimum wage" },
     ],
     minutes: 8,
     tasks: [

@@ -105,6 +105,7 @@ export const enA1U14: SkillExercise[] = [
       { de: "of course", tr: "tabii ki" },
       { de: "machine", tr: "makine" },
       { de: "know", tr: "bilmek" },
+      { de: "flight", tr: "uçuş" },
     ],
     minutes: 4,
     text:

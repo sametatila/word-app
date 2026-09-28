@@ -44,7 +44,7 @@ export const b1U03: SkillExercise[] = [
       "Die Form ist einfach, aber wichtig: Eine Kündigung muss schriftlich sein. " +
       "Eine Mail reicht nicht; nötig ist ein Brief mit Unterschrift. " +
       "Schreiben Sie kurz, ohne Sorge und ohne böse Worte. Der Grund muss nicht im Brief stehen.\n\n" +
-      "Zusätzlich sollten Sie ein gutes Verhältnis zur Firma behalten. Sie brauchen später vielleicht " +
+      "Zusätzlich sollten Sie ein gutes Verhältnis zur Firma haben. Sie brauchen später vielleicht " +
       "einen Kontakt in dieser Branche, und die Welt ist klein. " +
       "Fragen Sie auch nach einem Zeugnis, denn das ist Ihr Recht.\n\n" +
       "Anders ist es, wenn die Firma Sie entlässt. Dann gelten andere Bedingungen und Sie " +

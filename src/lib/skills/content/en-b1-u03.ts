@@ -343,6 +343,7 @@ export const enB1U03: SkillExercise[] = [
       { de: "said that", tr: "dedi ki" },
       { de: "told me to", tr: "bana söyledi" },
       { de: "asked if", tr: "sordu" },
+      { de: "real", tr: "gerçek" },
     ],
     minutes: 8,
     tasks: [

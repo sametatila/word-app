@@ -65,6 +65,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "a habit", tr: "alışkanlık" },
       { de: "trust", tr: "güven" },
       { de: "slowly", tr: "yavaşça" },
+      { de: "endorse", tr: "onaylamak" },
     ],
     minutes: 12,
     text:

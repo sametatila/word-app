@@ -144,6 +144,7 @@ export const c1U12: SkillExercise[] = [
       { de: "erzeugen", tr: "yaratmak", en: "to create" },
       { de: "das Beispiel", tr: "örnek", en: "example" },
       { de: "die Erklärung", tr: "açıklama", en: "explanation" },
+      { de: "verallgemeinern", tr: "genellemek", en: "to generalize" },
     ],
     minutes: 7,
     text:

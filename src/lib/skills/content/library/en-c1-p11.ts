@@ -148,6 +148,7 @@ export const enC1P11: SkillExercise[] = [
       { de: "appear", tr: "görünmek" },
       { de: "deliberately", tr: "bilerek" },
       { de: "affected", tr: "etkilenen" },
+      { de: "produced", tr: "ortaya çıkardı" },
     ],
     minutes: 10,
     segments: [

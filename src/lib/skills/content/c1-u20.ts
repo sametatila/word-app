@@ -153,6 +153,7 @@ export const c1U20: SkillExercise[] = [
       { de: "täuschen", tr: "aldatmak", en: "to deceive" },
       { de: "die Debatte", tr: "tartışma", en: "debate" },
       { de: "mild", tr: "yumuşak", en: "mild" },
+      { de: "abwegig", tr: "saçma", en: "far-fetched" },
     ],
     minutes: 8,
     text:

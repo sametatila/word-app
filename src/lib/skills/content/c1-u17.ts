@@ -143,6 +143,7 @@ export const c1U17: SkillExercise[] = [
       { de: "raten", tr: "tahmin etmek", en: "to guess" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "besonders", tr: "özellikle", en: "especially" },
+      { de: "finit", tr: "çekimli", en: "finite" },
     ],
     minutes: 7,
     text:

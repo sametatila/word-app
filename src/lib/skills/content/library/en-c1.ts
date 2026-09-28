@@ -256,6 +256,7 @@ export const enC1: SkillExercise[] = [
       { de: "warmth", tr: "sıcaklık" },
       { de: "organization", tr: "kurum" },
       { de: "commitment", tr: "taahhüt" },
+      { de: "the editor", tr: "yayın yönetmeni" },
     ],
     minutes: 15,
     tasks: [

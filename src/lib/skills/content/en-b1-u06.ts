@@ -272,6 +272,7 @@ export const enB1U06: SkillExercise[] = [
       { de: "sentence", tr: "cümle" },
       { de: "instead of", tr: "yerine" },
       { de: "the real risk", tr: "asıl risk" },
+      { de: "strict", tr: "katı" },
     ],
     minutes: 6,
     segments: [

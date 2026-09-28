@@ -184,6 +184,7 @@ export const enA1U17: SkillExercise[] = [
       { de: "full", tr: "dolu" },
       { de: "fast", tr: "hızlı" },
       { de: "know", tr: "bilmek" },
+      { de: "wash the dishes", tr: "bulaşık yıkamak" },
     ],
     minutes: 4,
     segments: [

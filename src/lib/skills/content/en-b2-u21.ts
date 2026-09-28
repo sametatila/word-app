@@ -406,6 +406,8 @@ export const enB2U21: SkillExercise[] = [
       { de: "the building", tr: "inşası" },
       { de: "the naming", tr: "adlandırılması" },
       { de: "is said to feel", tr: "duyduğu söyleniyor" },
+      { de: "verb", tr: "fiil" },
+      { de: "verbs", tr: "fiiller" },
     ],
     minutes: 9,
     tasks: [

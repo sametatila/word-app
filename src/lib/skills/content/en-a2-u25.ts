@@ -47,6 +47,7 @@ export const enA2U25: SkillExercise[] = [
       { de: "Sincerely", tr: "saygılarımla" },
       { de: "on the list", tr: "listede" },
       { de: "the twelfth", tr: "on ikisi" },
+      { de: "truck", tr: "kamyon" },
     ],
     minutes: 5,
     text:

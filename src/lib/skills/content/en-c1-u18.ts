@@ -279,6 +279,7 @@ export const enC1U18: SkillExercise[] = [
       { de: "a list", tr: "liste" },
       { de: "frozen", tr: "donmuş" },
       { de: "a sensor", tr: "algılayıcı" },
+      { de: "produces", tr: "üretiyor" },
     ],
     minutes: 8,
     segments: [

@@ -31,6 +31,7 @@ export const enB1P11: SkillExercise[] = [
       { de: "to complain", tr: "şikâyet etmek" },
       { de: "top floor", tr: "en üst kat" },
       { de: "engineer", tr: "teknisyen" },
+      { de: "groceries", tr: "market alışverişi" },
     ],
     minutes: 6,
     text:

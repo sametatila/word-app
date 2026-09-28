@@ -38,6 +38,7 @@ export const enA1U24: SkillExercise[] = [
       { de: "important", tr: "önemli" },
       { de: "soon", tr: "yakında" },
       { de: "password", tr: "parola" },
+      { de: "know", tr: "bilmek" },
     ],
     minutes: 4,
     text:

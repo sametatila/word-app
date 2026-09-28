@@ -90,6 +90,7 @@ export const enC1U16: SkillExercise[] = [
       { de: "made up", tr: "uydurulan" },
       { de: "a front slot", tr: "baştaki yuva" },
       { de: "no person", tr: "hiç kimse" },
+      { de: "the infinitive", tr: "mastar" },
     ],
     minutes: 12,
     text:

@@ -236,6 +236,7 @@ export const enC1P5: SkillExercise[] = [
       { de: "rely", tr: "bel bağlamak" },
       { de: "judgment", tr: "yargı" },
       { de: "majority", tr: "çoğunluk" },
+      { de: "produced", tr: "oluşturulmuş" },
     ],
     minutes: 14,
     tasks: [

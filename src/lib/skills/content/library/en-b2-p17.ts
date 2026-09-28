@@ -140,6 +140,7 @@ export const enB2P17: SkillExercise[] = [
       { de: "positive", tr: "olumlu" },
       { de: "vary", tr: "farklılık göstermek" },
       { de: "caution", tr: "temkin" },
+      { de: "produced", tr: "doğurdu" },
     ],
     minutes: 8,
     segments: [

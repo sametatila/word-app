@@ -369,6 +369,7 @@ export const enC1U21: SkillExercise[] = [
       { de: "a gain", tr: "kazanç" },
       { de: "private", tr: "özel" },
       { de: "a taxpayer", tr: "vergi mükellefi" },
+      { de: "produced", tr: "doğurdu" },
     ],
     minutes: 8,
     segments: [

@@ -74,9 +74,7 @@ const warnings: string[] = [];
  */
 const EXEMPT = new Map<string, string>([
   ["Das „a“ allein ist kein „ei“, sondern ein kurzes „e“. „banana“ = be-NÄ-ne.", "be-NÄ-ne: schwa hecesi"],
-  ["„the“ = de, „children“ = TSCHIL-dren, „cinema“ = SI-ne-me. In allen dreien steckt ein schwacher Vokal.", "SI-ne-me: schwa hecesi"],
   ["„cup of“ = ka-pof. Auch „want a“ wächst zusammen: wo-ne.", "wo-ne: schwa hecesi"],
-  ["ve-rite your name", "kaynak içeriği: öğrencinin yanlış okuyuşu, çevrilmiyor"],
 ]);
 const exemptSeen = new Set<string>();
 

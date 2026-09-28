@@ -32,6 +32,7 @@ export const enB2P10: SkillExercise[] = [
       { de: "harmful", tr: "zararlı" },
       { de: "compete", tr: "rekabet etmek" },
       { de: "organizations", tr: "kurumlar" },
+      { de: "produces", tr: "üretiyor" },
     ],
     minutes: 8,
     text:

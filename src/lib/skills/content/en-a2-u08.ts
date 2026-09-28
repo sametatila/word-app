@@ -41,6 +41,7 @@ export const enA2U08: SkillExercise[] = [
       { de: "experience", tr: "deneyim" },
       { de: "half", tr: "yarısı" },
       { de: "company", tr: "şirket" },
+      { de: "prepared", tr: "hazırlıklı" },
     ],
     minutes: 5,
     text:

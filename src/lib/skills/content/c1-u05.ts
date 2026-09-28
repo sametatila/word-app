@@ -58,6 +58,7 @@ export const c1U05: SkillExercise[] = [
       { de: "offen", tr: "açık", en: "open" },
       { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
       { de: "der Text", tr: "metin", en: "text" },
+      { de: "befriedigend", tr: "yeterli", en: "satisfactory" },
     ],
     minutes: 7,
     text:

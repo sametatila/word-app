@@ -39,6 +39,7 @@ export const enC1P2: SkillExercise[] = [
       { de: "recommendation", tr: "öneri" },
       { de: "cite", tr: "kaynak göstermek" },
       { de: "considerably", tr: "önemli ölçüde" },
+      { de: "produce", tr: "ortaya çıkarmak" },
     ],
     minutes: 10,
     text:
@@ -148,6 +149,7 @@ export const enC1P2: SkillExercise[] = [
       { de: "medical", tr: "tıbbi" },
       { de: "outdoors", tr: "açık havada" },
       { de: "rise", tr: "yükselmek" },
+      { de: "produces", tr: "doğuruyor" },
     ],
     minutes: 10,
     segments: [
@@ -243,6 +245,7 @@ export const enC1P2: SkillExercise[] = [
       { de: "approximately", tr: "yaklaşık" },
       { de: "underestimate", tr: "olduğundan düşük tahmin etmek" },
       { de: "organizations", tr: "kurum" },
+      { de: "produced", tr: "ortaya çıkardı" },
     ],
     minutes: 14,
     tasks: [

@@ -53,6 +53,8 @@ export const c1U18: SkillExercise[] = [
       { de: "die Aussage", tr: "ifade", en: "statement" },
       { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
       { de: "der Text", tr: "metin", en: "text" },
+      { de: "rationell", tr: "tutumlu", en: "economical" },
+      { de: "vernünftig", tr: "makul", en: "reasonable" },
     ],
     minutes: 7,
     text:
@@ -139,6 +141,7 @@ export const c1U18: SkillExercise[] = [
       { de: "außen", tr: "dıştan", en: "on the outside" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "innen", tr: "içte", en: "on the inside" },
+      { de: "einzig", tr: "tek", en: "single" },
     ],
     minutes: 7,
     text:
