@@ -139,5 +139,7 @@
  { "tr": "Neden yazdığını söyle.", "kind": "rubric.points.tr", "en": "Say why you are writing." },
  { "tr": "Yeni bir randevu iste.", "kind": "rubric.points.tr", "en": "Ask for a new appointment." },
  { "tr": "Ortak bir sonuca varmak", "kind": "rubric.points.tr", "en": "reaching a joint result" },
- { "tr": "Sorulara karşılık vermek", "kind": "rubric.points.tr", "en": "answering follow-up questions" }
+ { "tr": "Sorulara karşılık vermek", "kind": "rubric.points.tr", "en": "answering follow-up questions" },
+ { "tr": "Sıra sendeyken sözcükle bir soru kurmak", "kind": "rubric.points.tr", "en": "Asking a question with the word when it is your turn" },
+ { "tr": "Bazı kartlarda partnerin sorusunu cevaplamak", "kind": "rubric.points.tr", "en": "Answering your partner's question on some cards" }
 ]

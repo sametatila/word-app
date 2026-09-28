@@ -145,5 +145,9 @@
  { "tr": "Bir tarih öner ve gerekçelendir.", "kind": "exchange.hint", "en": "Propose a date and give reasons." },
  { "tr": "Bir tutar öner ve toplamı söyle.", "kind": "exchange.hint", "en": "Propose an amount and say the total." },
  { "tr": "İsteğini söyle ve nedenini ekle.", "kind": "exchange.hint", "en": "Say what you want and add why." },
- { "tr": "Ödeme için somut bir düzen öner.", "kind": "exchange.hint", "en": "Propose a concrete arrangement for paying." }
+ { "tr": "Ödeme için somut bir düzen öner.", "kind": "exchange.hint", "en": "Propose a concrete arrangement for paying." },
+ { "tr": "«Weg» için bir soru kur.", "kind": "exchange.hint", "en": "Ask a question for «Weg»." },
+ { "tr": "«Kasse» için bir soru kur.", "kind": "exchange.hint", "en": "Ask a question for «Kasse»." },
+ { "tr": "«Pause» için bir soru kur.", "kind": "exchange.hint", "en": "Ask a question for «Pause»." },
+ { "tr": "«Verein» için bir soru kur.", "kind": "exchange.hint", "en": "Ask a question for «Verein»." }
 ]

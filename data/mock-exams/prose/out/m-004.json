@@ -148,5 +148,9 @@
  { "tr": "öneride bulunmak ve gerekçelendirmek", "kind": "exchange.expect", "en": "making a suggestion and giving reasons" },
  { "tr": "tercih bildirmek ve gerekçelendirmek", "kind": "exchange.expect", "en": "stating a preference and giving reasons" },
  { "tr": "bir tarih önermek ve gerekçelendirmek", "kind": "exchange.expect", "en": "proposing a date and giving reasons" },
- { "tr": "izin sormak (Darf ich … / Kann ich …)", "kind": "exchange.expect", "en": "asking for permission (Darf ich … / Kann ich …)" }
+ { "tr": "izin sormak (Darf ich … / Kann ich …)", "kind": "exchange.expect", "en": "asking for permission (Darf ich … / Kann ich …)" },
+ { "tr": "Weg sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "Ask a question with the word Weg" },
+ { "tr": "Kasse sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "Ask a question with the word Kasse" },
+ { "tr": "Pause sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "Ask a question with the word Pause" },
+ { "tr": "Verein sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "Ask a question with the word Verein" }
 ]

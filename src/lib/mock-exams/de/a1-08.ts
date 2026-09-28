@@ -875,7 +875,7 @@ Nuray`,
           prompt:
             "Thema: Freizeit. Bilden Sie zu jedem Stichwort eine Frage und beantworten Sie sie: Sport — Wochenende — Wetter — Verein — Urlaub.",
           promptTr:
-            "Konu: Boş zaman. Her anahtar sözcük için bir soru kur ve cevapla: spor — hafta sonu — hava — kulüp — tatil.",
+            "Konu: Boş zaman. Her anahtar sözcük için bir soru kur ve cevapla: spor — hafta sonu — hava — kulüp — tatil. Bazı kartlarda soruyu partnerin sorar, sen cevaplarsın.",
           prepSeconds: 30,
           exchange: [
             {
@@ -898,8 +898,14 @@ Nuray`,
             { who: "you", hint: "Kötü havada ne yaptığını söyle.", expect: "hava koşuluna bağlı bir etkinlik söylemek", seconds: 25 },
             {
               who: "partner",
-              de: "Danke. Letzte Frage: Wohin fahren Sie im Urlaub?",
-              tr: "Teşekkürler. Son soru: Tatilde nereye gidersin?",
+              de: "Danke. Ihr nächstes Stichwort ist: Verein. Stellen Sie mir bitte eine Frage.",
+              tr: "Teşekkürler. Sıradaki sözcüğün: kulüp. Bana bir soru sor.",
+            },
+            { who: "you", hint: "«Verein» için bir soru kur.", expect: "Verein sözcüğüyle bir soru kurmak", seconds: 25 },
+            {
+              who: "partner",
+              de: "Ich schwimme in einem Verein. Und jetzt die letzte Frage an Sie: Wohin fahren Sie im Urlaub?",
+              tr: "Bir kulüpte yüzüyorum. Şimdi sana son soru: Tatilde nereye gidersin?",
             },
             { who: "you", hint: "Bir yer söyle.", expect: "bir yer ifadesiyle cevap vermek (ans Meer, in die Berge …)", seconds: 25 },
           ],
@@ -907,15 +913,15 @@ Nuray`,
           rubric: {
             minutes: 4,
             points: [
-              { de: "zu jedem Stichwort eine Frage", tr: "Her sözcük için bir soru" },
-              { de: "auf die Fragen antworten", tr: "Sorulara cevap vermek" },
+              { de: "bei den eigenen Stichwörtern eine Frage stellen", tr: "Sıra sendeyken sözcükle bir soru kurmak" },
+              { de: "bei manchen Stichwörtern auf die Frage des Partners antworten", tr: "Bazı kartlarda partnerin sorusunu cevaplamak" },
             ],
             sample:
               "Welchen Sport machst du? — Ich spiele Fußball. Was machst du am Wochenende? — Ich treffe Freunde. Wie ist das Wetter morgen? — Es soll regnen. Bist du in einem Verein? — Ja, seit zwei Jahren. Wohin fährst du im Urlaub? — Ans Meer.",
             criteria: [
-              "Beş sözcüğün her biri için bir soru kuruldu mu?",
+              "Sıranın sende olduğu her kartta sözcükle bir soru kuruldu mu? Bazı kartlarda soruyu partner sorar, sen cevaplarsın; beş kartın hepsi böylece kapsanır.",
               "Sorular doğru kuruldu mu? (W-sorusunda fiil ikinci, evet/hayır sorusunda fiil başta)",
-              "Cevaplar soruya uygun mu?",
+              "Partnerin sorduğu kartlarda cevap soruya uygun mu?",
               "Hava ve yer ifadeleri söylenebiliyor mu?",
             ],
           },

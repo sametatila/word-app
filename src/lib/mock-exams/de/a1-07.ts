@@ -870,7 +870,7 @@ Elif Yalcin`,
           prompt:
             "Thema: Einkaufen. Bilden Sie zu jedem Stichwort eine Frage und beantworten Sie sie: Markt — Preis — Tüte — Kasse — Öffnungszeiten.",
           promptTr:
-            "Konu: Alışveriş. Her anahtar sözcük için bir soru kur ve cevapla: pazar — fiyat — poşet — kasa — açılış saatleri.",
+            "Konu: Alışveriş. Her anahtar sözcük için bir soru kur ve cevapla: pazar — fiyat — poşet — kasa — açılış saatleri. Bazı kartlarda soruyu partnerin sorar, sen cevaplarsın.",
           prepSeconds: 30,
           exchange: [
             {
@@ -893,8 +893,14 @@ Elif Yalcin`,
             { who: "you", hint: "Soruyu cevapla — poşet götürüyor musun?", expect: "evet/hayır sorusuna tam bir cümleyle cevap vermek", seconds: 25 },
             {
               who: "partner",
-              de: "Danke. Letzte Frage: Wann hat Ihr Supermarkt offen?",
-              tr: "Teşekkürler. Son soru: Süpermarketin ne zaman açık?",
+              de: "Danke. Ihr nächstes Stichwort ist: Kasse. Stellen Sie mir bitte eine Frage.",
+              tr: "Teşekkürler. Sıradaki sözcüğün: kasa. Bana bir soru sor.",
+            },
+            { who: "you", hint: "«Kasse» için bir soru kur.", expect: "Kasse sözcüğüyle bir soru kurmak", seconds: 25 },
+            {
+              who: "partner",
+              de: "Die Kasse ist vorne am Eingang. Und jetzt die letzte Frage an Sie: Wann hat Ihr Supermarkt offen?",
+              tr: "Kasa önde, girişte. Şimdi sana son soru: Süpermarketin ne zaman açık?",
             },
             { who: "you", hint: "Bir saat aralığı söyle.", expect: "bir saat aralığıyla cevap vermek (von acht bis zwanzig Uhr …)", seconds: 25 },
           ],
@@ -902,15 +908,15 @@ Elif Yalcin`,
           rubric: {
             minutes: 4,
             points: [
-              { de: "zu jedem Stichwort eine Frage", tr: "Her sözcük için bir soru" },
-              { de: "auf die Fragen antworten", tr: "Sorulara cevap vermek" },
+              { de: "bei den eigenen Stichwörtern eine Frage stellen", tr: "Sıra sendeyken sözcükle bir soru kurmak" },
+              { de: "bei manchen Stichwörtern auf die Frage des Partners antworten", tr: "Bazı kartlarda partnerin sorusunu cevaplamak" },
             ],
             sample:
               "Wo ist der Markt? — Am Bahnhof. Was kostet das Brot? — Zwei Euro vierzig. Brauchst du eine Tüte? — Nein, ich habe eine dabei. Wo ist die Kasse? — Ganz vorne. Wann hat der Laden offen? — Von acht bis zwanzig Uhr.",
             criteria: [
-              "Beş sözcüğün her biri için bir soru kuruldu mu?",
+              "Sıranın sende olduğu her kartta sözcükle bir soru kuruldu mu? Bazı kartlarda soruyu partner sorar, sen cevaplarsın; beş kartın hepsi böylece kapsanır.",
               "Sorular doğru kuruldu mu? (W-sorusunda fiil ikinci, evet/hayır sorusunda fiil başta)",
-              "Cevaplar soruya uygun mu?",
+              "Partnerin sorduğu kartlarda cevap soruya uygun mu?",
               "Fiyat ve saat söylenebiliyor mu?",
             ],
           },

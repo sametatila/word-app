@@ -908,7 +908,7 @@ Mert`,
           prompt:
             "Thema: Verkehr. Bilden Sie zu jedem Stichwort eine Frage und beantworten Sie sie: Bus — Fahrrad — Auto — Ticket — Weg.",
           promptTr:
-            "Konu: Ulaşım. Her anahtar sözcük için bir soru kur ve cevapla: otobüs — bisiklet — araba — bilet — yol.",
+            "Konu: Ulaşım. Her anahtar sözcük için bir soru kur ve cevapla: otobüs — bisiklet — araba — bilet — yol. Bazı kartlarda soruyu partnerin sorar, sen cevaplarsın.",
           prepSeconds: 30,
           exchange: [
             {
@@ -931,24 +931,30 @@ Mert`,
             { who: "you", hint: "Soruyu cevapla — araban var mı?", expect: "evet/hayır sorusuna tam bir cümleyle cevap vermek", seconds: 25 },
             {
               who: "partner",
-              de: "Danke. Letzte Frage: Was kostet bei Ihnen eine Fahrt mit dem Bus?",
-              tr: "Teşekkürler. Son soru: Sizde otobüs bileti kaç para?",
+              de: "Danke. Noch eine Frage: Was kostet bei Ihnen eine Fahrt mit dem Bus?",
+              tr: "Teşekkürler. Bir soru daha: Sizde otobüs bileti kaç para?",
             },
             { who: "you", hint: "Bir fiyat söyle.", expect: "bir fiyatı Almanca söylemek (Euro ve Cent)", seconds: 25 },
+            {
+              who: "partner",
+              de: "Danke. Ihr letztes Stichwort ist: Weg. Stellen Sie mir bitte eine Frage.",
+              tr: "Teşekkürler. Son sözcüğün: yol. Bana bir soru sor.",
+            },
+            { who: "you", hint: "«Weg» için bir soru kur.", expect: "Weg sözcüğüyle bir soru kurmak", seconds: 25 },
           ],
           items: [],
           rubric: {
             minutes: 4,
             points: [
-              { de: "zu jedem Stichwort eine Frage", tr: "Her sözcük için bir soru" },
-              { de: "auf die Fragen antworten", tr: "Sorulara cevap vermek" },
+              { de: "bei den eigenen Stichwörtern eine Frage stellen", tr: "Sıra sendeyken sözcükle bir soru kurmak" },
+              { de: "bei manchen Stichwörtern auf die Frage des Partners antworten", tr: "Bazı kartlarda partnerin sorusunu cevaplamak" },
             ],
             sample:
               "Wann kommt der Bus? — Um Viertel nach acht. Fährst du Fahrrad? — Ja, im Sommer jeden Tag. Hast du ein Auto? — Nein, ich habe kein Auto. Was kostet das Ticket? — Zwei Euro achtzig. Wie lange ist der Weg? — Zwanzig Minuten.",
             criteria: [
-              "Beş sözcüğün her biri için bir soru kuruldu mu?",
+              "Sıranın sende olduğu her kartta sözcükle bir soru kuruldu mu? Bazı kartlarda soruyu partner sorar, sen cevaplarsın; beş kartın hepsi böylece kapsanır.",
               "Sorular doğru kuruldu mu? (W-sorusunda fiil ikinci, evet/hayır sorusunda fiil başta)",
-              "Cevaplar soruya uygun mu?",
+              "Partnerin sorduğu kartlarda cevap soruya uygun mu?",
               "Fiyat ve saat gibi sayılar söylenebiliyor mu?",
             ],
           },

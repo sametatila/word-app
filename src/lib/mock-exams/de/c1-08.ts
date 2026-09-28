@@ -493,35 +493,52 @@ Was sich sagen lässt: Wer heute pflanzt, entscheidet über einen Bestand, {{25}
               genre: "Informationsveranstaltung",
               genreTr: "Bilgilendirme konuşması",
               title: "Die Aue am Mühlbach — Bürgerinformation",
-              situation: "Su işleri dairesinden biri bir dere projesini anlatıyor; konuşan tek kişi.",
+              situation: "Su işleri dairesinden Dr. Kessler bir dere projesini anlatıyor; sonunda dinleyicilerden bir sakin söz alıyor.",
               plays: 1,
               segments: [
                 {
-                  text: "Guten Abend. Mein Name ist Beate Ahrens, ich arbeite beim Wasserwirtschaftsamt. Ich stelle Ihnen heute das Vorhaben am Mühlbach vor und beginne mit dem, was es nicht ist: Es ist keine Rückkehr zu einem früheren Zustand. Diesen Zustand könnten wir gar nicht bestimmen.",
+                  speaker: "Frau Dr. Kessler",
+                  text: "Guten Abend. Mein Name ist Katrin Kessler, ich arbeite beim Wasserwirtschaftsamt. Ich stelle Ihnen heute das Vorhaben am Mühlbach vor und beginne mit dem, was es nicht ist: Es ist keine Rückkehr zu einem früheren Zustand. Diesen Zustand könnten wir gar nicht bestimmen.",
                 },
                 {
+                  speaker: "Frau Dr. Kessler",
                   text: "Es geht um eine Strecke von zwei Komma vier Kilometern zwischen der Brücke am Sägewerk und der Gemeindegrenze. Der Bach wurde dort in den fünfziger Jahren begradigt.",
                 },
                 {
+                  speaker: "Frau Dr. Kessler",
                   text: "Das Ziel ist nicht ein bestimmtes Bild, sondern eine Funktion: Rückhalt bei Hochwasser. Gerechnet wird mit rund vierzigtausend Kubikmetern, die die Fläche bei einem größeren Ereignis aufnehmen kann.",
                 },
                 {
+                  speaker: "Frau Dr. Kessler",
                   text: "Zur Fläche: Wir brauchen etwa achtzehn Hektar. Vierzehn davon gehören bereits der Gemeinde. Über die restlichen vier verhandeln wir, und zwar über Tausch, nicht über Enteignung. Das sage ich deutlich, weil das die häufigste Sorge ist.",
                 },
                 {
+                  speaker: "Frau Dr. Kessler",
                   text: "Die Bauzeit beträgt voraussichtlich zwei Jahre. Der Weg am Nordufer bleibt durchgehend offen; gesperrt wird nur der südliche Uferweg, und der auch nicht dauerhaft.",
                 },
                 {
+                  speaker: "Frau Dr. Kessler",
                   text: "Zur Finanzierung: Achtzig Prozent trägt das Land, den Rest die Gemeinde. Für die Unterhaltung danach ist ausschließlich die Gemeinde zuständig, und das über mindestens fünfundzwanzig Jahre.",
                 },
                 {
+                  speaker: "Frau Dr. Kessler",
                   text: "Ein Punkt, der oft unterschätzt wird: Die Wirkung zeigt sich nicht sofort. Bei vergleichbaren Vorhaben hat es etwa sieben Jahre gedauert, bis die Vegetation den Rückhalt tatsächlich stabilisiert hat.",
                 },
                 {
+                  speaker: "Frau Dr. Kessler",
                   text: "Was wir messen werden: den Wasserstand, die Fließgeschwindigkeit und die Zahl der Arten auf drei festen Probeflächen. Die Ergebnisse veröffentlichen wir jährlich im Amtsblatt.",
                 },
                 {
-                  text: "Und was wir von Ihnen brauchen: Einwendungen bitte schriftlich bis zum dreißigsten September. Danach ist eine Berücksichtigung im Verfahren nicht mehr möglich.",
+                  speaker: "Frau Dr. Kessler",
+                  text: "Und was wir von Ihnen brauchen: Einwendungen bitte schriftlich bis zum dreißigsten September. Danach ist eine Berücksichtigung im Verfahren nicht mehr möglich. Ich sehe schon eine Wortmeldung. Bitte sehr.",
+                },
+                {
+                  speaker: "Frau Ahrens",
+                  text: "Beate Ahrens, ich wohne am Südufer. Das Ziel halte ich für richtig. Aber der südliche Uferweg ist für uns der einzige barrierefreie Weg in den Ortskern, und eine Sperrung ohne Ersatz nehme ich so nicht hin. Ich werde schriftlich Einwendungen erheben.",
+                },
+                {
+                  speaker: "Frau Dr. Kessler",
+                  text: "Das ist ein berechtigter Punkt, Frau Ahrens. Schicken Sie ihn uns bitte fristgerecht, dann wird er im Verfahren geprüft.",
                 },
               ],
             },
@@ -1129,7 +1146,7 @@ Beate {{10}}`,
               text: "Lücke 10 (Nachname der Absenderin)",
               accept: ["Ahrens"],
               explain:
-                "Mektubu yazan kişi dinleme bölümünde konuşan uzmanla aynı adı taşıyor: Beate Ahrens.",
+                "Mektubu yazan, dinleme bölümünün sonunda söz alan sakin: \"Beate Ahrens, ich wohne am Südufer … Ich werde schriftlich Einwendungen erheben.\"",
             },
           ],
         },

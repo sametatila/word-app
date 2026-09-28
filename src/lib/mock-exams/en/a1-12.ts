@@ -951,7 +951,7 @@ Eyup`,
           exchange: [
             { who: "partner", de: "Good morning. Can I help you?", tr: "Günaydın. Yardımcı olabilir miyim?" },
             { who: "you", hint: "Adını söyle ve bugünün ilk günün olduğunu belirt.", expect: "kendini tanıtmak ve durumu tam bir cümleyle söylemek", seconds: 25 },
-            { who: "partner", de: "Welcome! Mira is waiting for you.", tr: "Hoş geldin! Mira seni bekliyor." },
+            { who: "partner", de: "Welcome! Mira is waiting for you.", tr: "Hoş geldiniz! Mira sizi bekliyor." },
             { who: "you", hint: "Bir odanın nerede olduğunu sor.", expect: "yer sormak", seconds: 25 },
             { who: "partner", de: "Room 5 is on the second floor. Anything else?", tr: "Beş numaralı oda ikinci katta. Başka bir şey var mı?" },
             { who: "you", hint: "Molanın saatini kibarca sor.", expect: "kibarca saat sormak", seconds: 25 },

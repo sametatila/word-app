@@ -143,5 +143,7 @@
  { "tr": "Kanıt sunuldu mu?", "kind": "rubric.criteria", "en": "Was proof provided?" },
  { "tr": "Tavsiye somut mu?", "kind": "rubric.criteria", "en": "Is the advice concrete?" },
  { "tr": "Görüş gerekçeli mi?", "kind": "rubric.criteria", "en": "Is the opinion argued?" },
- { "tr": "Talep ve süre net mi?", "kind": "rubric.criteria", "en": "Are the demand and the deadline clear?" }
+ { "tr": "Talep ve süre net mi?", "kind": "rubric.criteria", "en": "Are the demand and the deadline clear?" },
+ { "tr": "Partnerin sorduğu kartlarda cevap soruya uygun mu?", "kind": "rubric.criteria", "en": "On the cards your partner asks about, does the answer fit the question?" },
+ { "tr": "Sıranın sende olduğu her kartta sözcükle bir soru kuruldu mu? Bazı kartlarda soruyu partner sorar, sen cevaplarsın; beş kartın hepsi böylece kapsanır.", "kind": "rubric.criteria", "en": "On every card where it was your turn, was a question asked with the word? On some cards your partner asks and you answer; this way all five cards are covered." }
 ]

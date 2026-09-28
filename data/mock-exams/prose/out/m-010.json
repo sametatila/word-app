@@ -133,5 +133,5 @@
  { "tr": "Ev hayvanı konusunda soru sor ve cevapla. Anahtar sözcükler: masraf — zaman — tatil — veteriner.", "kind": "promptTr", "en": "Ask and answer questions on the topic of pets. Key words: cost — time — vacation — vet." },
  { "tr": "Anlat: Ne iş yapıyorsun ya da ne öğreniyorsun, bunun nesini seviyorsun? Yaklaşık iki dakika konuş.", "kind": "promptTr", "en": "Talk about this: what work do you do or what are you studying, and what do you like about it? Speak for about two minutes." },
  { "tr": "Bir daire teslimindeki konuşmayı dinleyeceksin. a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.", "kind": "promptTr", "en": "You will hear a conversation at an apartment handover. Choose a, b or c. You can listen to the recording twice." },
- { "tr": "Konu: Öğrenme. Her anahtar sözcük için bir soru kur ve cevapla: kurs — ödev — kitap — sınav — mola.", "kind": "promptTr", "en": "Topic: learning. Form a question for each key word and answer it: course — homework — book — exam — break." }
+ { "tr": "Konu: Öğrenme. Her anahtar sözcük için bir soru kur ve cevapla: kurs — ödev — kitap — sınav — mola. Bazı kartlarda soruyu partnerin sorar, sen cevaplarsın.", "kind": "promptTr", "en": "Topic: learning. Form a question for each key word and answer it: course — homework — book — exam — break. On some cards your partner asks the question and you answer." }
 ]

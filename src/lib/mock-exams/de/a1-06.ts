@@ -898,7 +898,7 @@ Diego Rivas`,
           prompt:
             "Thema: Lernen. Bilden Sie zu jedem Stichwort eine Frage und beantworten Sie sie: Kurs — Hausaufgaben — Buch — Prüfung — Pause.",
           promptTr:
-            "Konu: Öğrenme. Her anahtar sözcük için bir soru kur ve cevapla: kurs — ödev — kitap — sınav — mola.",
+            "Konu: Öğrenme. Her anahtar sözcük için bir soru kur ve cevapla: kurs — ödev — kitap — sınav — mola. Bazı kartlarda soruyu partnerin sorar, sen cevaplarsın.",
           prepSeconds: 30,
           exchange: [
             {
@@ -921,24 +921,30 @@ Diego Rivas`,
             { who: "you", hint: "Soruyu cevapla — kitapla çalışmayı seviyor musun?", expect: "beğeni bildiren tam bir cümleyle cevap vermek", seconds: 25 },
             {
               who: "partner",
-              de: "Danke. Letzte Frage: Wann haben Sie Ihre nächste Prüfung?",
-              tr: "Teşekkürler. Son soru: Bir sonraki sınavın ne zaman?",
+              de: "Danke. Noch eine Frage: Wann haben Sie Ihre nächste Prüfung?",
+              tr: "Teşekkürler. Bir soru daha: Bir sonraki sınavın ne zaman?",
             },
             { who: "you", hint: "Bir zaman söyle.", expect: "bir zaman ifadesiyle cevap vermek (im Juni, nächste Woche …)", seconds: 25 },
+            {
+              who: "partner",
+              de: "Danke. Ihr letztes Stichwort ist: Pause. Stellen Sie mir bitte eine Frage.",
+              tr: "Teşekkürler. Son sözcüğün: mola. Bana bir soru sor.",
+            },
+            { who: "you", hint: "«Pause» için bir soru kur.", expect: "Pause sözcüğüyle bir soru kurmak", seconds: 25 },
           ],
           items: [],
           rubric: {
             minutes: 4,
             points: [
-              { de: "zu jedem Stichwort eine Frage", tr: "Her sözcük için bir soru" },
-              { de: "auf die Fragen antworten", tr: "Sorulara cevap vermek" },
+              { de: "bei den eigenen Stichwörtern eine Frage stellen", tr: "Sıra sendeyken sözcükle bir soru kurmak" },
+              { de: "bei manchen Stichwörtern auf die Frage des Partners antworten", tr: "Bazı kartlarda partnerin sorusunu cevaplamak" },
             ],
             sample:
               "Wo ist dein Kurs? — In der Volkshochschule. Machst du die Hausaufgaben? — Ja, jeden Tag. Wie heißt dein Buch? — Es heißt Schritte. Wann ist die Prüfung? — Im Juni. Wie lang ist die Pause? — Fünfzehn Minuten.",
             criteria: [
-              "Beş sözcüğün her biri için bir soru kuruldu mu?",
+              "Sıranın sende olduğu her kartta sözcükle bir soru kuruldu mu? Bazı kartlarda soruyu partner sorar, sen cevaplarsın; beş kartın hepsi böylece kapsanır.",
               "Sorular doğru kuruldu mu? (W-sorusunda fiil ikinci, evet/hayır sorusunda fiil başta)",
-              "Cevaplar soruya uygun mu?",
+              "Partnerin sorduğu kartlarda cevap soruya uygun mu?",
               "Zaman ifadeleri söylenebiliyor mu?",
             ],
           },

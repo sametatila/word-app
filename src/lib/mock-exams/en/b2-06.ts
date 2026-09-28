@@ -134,7 +134,7 @@ That result is worth {{6}} in mind, because a comparison that nobody acts on is 
               title: "What a recycling rate measures",
               body: `Nobody disputes that recycling rates have risen. What is disputed is {{7}} the rise actually means.
 
-A council that weighs everything collected can report a high figure; one that weighs the material {{8}} it has been sorted reports a much lower one.
+A city that weighs everything collected can report a high figure; one that weighs the material {{8}} it has been sorted reports a much lower one.
 
 The difference is easy to state and, {{9}} practice, easy to ignore.
 
@@ -354,13 +354,13 @@ The most likely future is therefore a revised one, with different regions adjust
               title: "I measured everything in my apartment for a year",
               body: `For a year I recorded the electricity used by every appliance in my apartment, and I want to describe what that taught me, because most of it was not about electricity.
 
-The measuring itself was easy. A plug meter costs fifteen pounds and the readings are not in dispute. What took the year was working out which numbers mattered, and the answer turned out to be almost none of them.
+The measuring itself was easy. A plug meter costs fifteen dollars and the readings are not in dispute. What took the year was working out which numbers mattered, and the answer turned out to be almost none of them.
 
-The fridge, which I had suspected for years, used about eleven pounds a month and could not be improved without buying a new one, which would have cost more than eight years of the difference. The television used less than the router that was never turned off. The kettle, boiled roughly nine times a day, used more than everything else in the kitchen together, and I still boil it nine times a day.
+The fridge, which I had suspected for years, used about eleven dollars a month and could not be improved without buying a new one, which would have cost more than eight years of the difference. The television used less than the router that was never turned off. The kettle, boiled roughly nine times a day, used more than everything else in the kitchen together, and I still boil it nine times a day.
 
 I should be careful here, because the obvious conclusion is the wrong one. The point is not that individual behavior is pointless; it is that the largest number in my apartment was the heating, and the heating is a decision made by whoever owns the building. Faced with that, a plug meter is a hobby. If I had known it at the start, I would have spent the year reading the lease instead.
 
-Nevertheless, I do not regret the year. What it changed was not my bill but my patience with a certain kind of advice, and that has been worth rather more than the fifteen pounds.`,
+Nevertheless, I do not regret the year. What it changed was not my bill but my patience with a certain kind of advice, and that has been worth rather more than the fifteen dollars.`,
               gloss: [
                 { de: "a plug meter", tr: "priz ölçer", en: "das Strommessgerät" },
                 { de: "a router", tr: "modem, yönlendirici", en: "der Router" },
@@ -441,15 +441,15 @@ Nevertheless, I do not regret the year. What it changed was not my bill but my p
 
 Consider insulation. It pays for itself in about seven years, which is a good investment for whoever owns the building and no investment at all for a tenant with a twelve-month contract. {{29}}
 
-The same difficulty appears with appliances. A landlord buying a fridge for an apartment they will never live in has no reason to pay forty pounds more for a better grade. {{30}}
+The same difficulty appears with appliances. A landlord buying a fridge for an apartment they will never live in has no reason to pay forty dollars more for a better grade. {{30}}
 
-Some countries now require a minimum standard before a property may be let. The change is slow and it is resisted, mainly because it turns a preference into a cost. {{31}}
+Some countries now require a minimum standard before a property may be rented out. The change is slow and it is resisted, mainly because it turns a preference into a cost. {{31}}
 
 None of this argues that behavior is irrelevant, since a household that heats one room instead of four uses less whatever the walls are like. It argues for asking who holds the decision before designing the advice.`,
               gloss: [
                 { de: "insulation", tr: "yalıtım", en: "die Dämmung" },
                 { de: "a tenant", tr: "kiracı", en: "der Mieter" },
-                { de: "to let a property", tr: "kiraya vermek", en: "eine Immobilie vermieten" },
+                { de: "to rent out a property", tr: "kiraya vermek", en: "eine Immobilie vermieten" },
               ],
             },
           ],
@@ -486,7 +486,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               text: "Gap 30",
               answer: "c",
               explain:
-                "Paragraf mal sahibinin durumunu veriyor: «has no reason to pay forty pounds more for a better grade». (c) aynı olayı kiracı açısından tamamlıyor: yıllarca yüksek fatura, ucuz makinenin faturasını ise hiç görmüyor.",
+                "Paragraf mal sahibinin durumunu veriyor: «has no reason to pay forty dollars more for a better grade». (c) aynı olayı kiracı açısından tamamlıyor: yıllarca yüksek fatura, ucuz makinenin faturasını ise hiç görmüyor.",
             },
             {
               kind: "match",
@@ -513,12 +513,12 @@ None of this argues that behavior is irrelevant, since a household that heats on
             {
               key: "a",
               label: "a — Cosmin, landlord",
-              body: "I put in new windows last year and my rent has not gone up by a pound. That is fine; I own the building and I will own it in twenty years. But when people say landlords have no incentive, they are describing the tax rules, not my character, and the rules are the thing you can actually change.",
+              body: "I put in new windows last year and my rent has not gone up by a dollar. That is fine; I own the building and I will own it in twenty years. But when people say landlords have no incentive, they are describing the tax rules, not my character, and the rules are the thing you can actually change.",
             },
             {
               key: "b",
               label: "b — Yrsa, energy adviser",
-              body: "Tenants are blamed for bills that begin with the building. An apartment with single glazing costs more to heat than one with double, and no amount of turning things off closes that gap. The advice we are funded to give is the advice that fits on a pamphlet.",
+              body: "Tenants are blamed for bills that begin with the building. An apartment with single-pane windows costs more to heat than one with double-pane windows, and no amount of turning things off closes that gap. The advice we are funded to give is the advice that fits on a pamphlet.",
             },
             {
               key: "c",
@@ -575,7 +575,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               text: "Which text describes an improvement the speaker paid for personally?",
               answer: "a",
               explain:
-                "Cosmin yatırımı ve karşılığını veriyor: «I put in new windows last year and my rent has not gone up by a pound». Bunu bir şikâyet olarak değil, kendi durumunun açıklaması olarak anlatıyor.",
+                "Cosmin yatırımı ve karşılığını veriyor: «I put in new windows last year and my rent has not gone up by a dollar». Bunu bir şikâyet olarak değil, kendi durumunun açıklaması olarak anlatıyor.",
             },
           ],
         },
@@ -630,7 +630,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               plays: 2,
               segments: [
                 { speaker: "Eva", text: "How much did the new fridge save?" },
-                { speaker: "Nils", text: "Four pounds a month." },
+                { speaker: "Nils", text: "Four dollars a month." },
                 { speaker: "Eva", text: "That is not nothing." },
                 { speaker: "Nils", text: "It cost four hundred. I will be dead before it pays for itself, and I say that as somebody of thirty-one." },
               ],
@@ -654,7 +654,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               situation: "Ofiste atık düzeni değişiyor.",
               plays: 2,
               segments: [
-                { text: "A note for everybody in the office. The bins by the desks are going. There will be one point on each floor, with four containers, and the cleaners will no longer sort anything. Anything in the wrong container goes to landfill." },
+                { text: "A note for everybody in the office. The trash cans by the desks are going. There will be one point on each floor, with four containers, and the cleaners will no longer sort anything. Anything in the wrong container goes to landfill." },
               ],
             },
             {
@@ -665,7 +665,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               situation: "Bir kişi teknisyen randevusu için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, about Thursday. I can meet the engineer and let him in, but I have to leave at twelve for the school. If he starts at eight he should be finished by then; if not, Quim said he can come for the afternoon." },
+                { text: "Hi, about Thursday. I can meet the technician and let him in, but I have to leave at twelve for the school. If he starts at eight he should be finished by then; if not, Quim said he can come for the afternoon." },
               ],
             },
             {
@@ -676,7 +676,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               situation: "Bir danışman bina yöneticilerine sesleniyor.",
               plays: 2,
               segments: [
-                { text: "The most common mistake I see in a first year of managing a building is buying equipment before measuring. A better meter costs two hundred pounds and tells you where the money goes; a new boiler costs six thousand and might be in the wrong place entirely." },
+                { text: "The most common mistake I see in a first year of managing a building is buying equipment before measuring. A better meter costs two hundred dollars and tells you where the money goes; a new boiler costs six thousand and might be in the wrong place entirely." },
               ],
             },
             {
@@ -726,7 +726,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               options: ["The saving is much larger than expected", "The fridge was badly made", "The saving will never cover the cost"],
               answer: 2,
               explain:
-                "Hesap kayıtta: ayda dört pound tasarruf, dört yüz pound maliyet. «I will be dead before it pays for itself» sözü bunu abartarak vurguluyor.",
+                "Hesap kayıtta: ayda dört dolar tasarruf, dört yüz dolar maliyet. «I will be dead before it pays for itself» sözü bunu abartarak vurguluyor.",
             },
             {
               kind: "mcq",
@@ -745,7 +745,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               no: 5,
               ref: "a5",
               text: "What is changing?",
-              options: ["The cleaners will sort all of the waste", "Bins move to one point per floor", "Landfill costs will be published"],
+              options: ["The cleaners will sort all of the waste", "Trash cans move to one point per floor", "Landfill costs will be published"],
               answer: 1,
               explain:
                 "Duyuru düzeni veriyor: «There will be one point on each floor, with four containers». Temizlikçiler tam tersine artık ayırmayacak.",
@@ -759,7 +759,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               options: ["Canceling the appointment", "Asking somebody to replace her for the day", "Agreeing to help for part of the day"],
               answer: 2,
               explain:
-                "Konuşmacı geliyor ama sınır koyuyor: «I can meet the engineer and let him in, but I have to leave at twelve». Quim yalnız öğleden sonrayı devralıyor, günün tamamını değil.",
+                "Konuşmacı geliyor ama sınır koyuyor: «I can meet the technician and let him in, but I have to leave at twelve». Quim yalnız öğleden sonrayı devralıyor, günün tamamını değil.",
             },
             {
               kind: "mcq",
@@ -770,7 +770,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               options: ["Replacing the boiler first", "Measuring before buying", "Buying the cheapest equipment"],
               answer: 1,
               explain:
-                "Öğüt sıraya dair: «buying equipment before measuring» hata olarak adlandırılıyor. İki yüz poundluk sayaç paranın nereye gittiğini gösteriyor; altı bin poundluk kazan yanlış yerde olabilir.",
+                "Öğüt sıraya dair: «buying equipment before measuring» hata olarak adlandırılıyor. İki yüz dolarlık sayaç paranın nereye gittiğini gösteriyor; altı bin dolarlık kazan yanlış yerde olabilir.",
             },
             {
               kind: "mcq",
@@ -804,7 +804,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began with four hundred properties on the program and we have now completed three hundred and twenty. In that time we have carried out about twelve thousand individual measures. Here is the first finding: the measure that saves most per pound is not new windows, it is attic insulation, because it is cheap and almost nothing has been done since 1985. Second, the sequence matters more than the total. A property done in the right order costs about fifteen percent less than the same work done piece by piece. Third, the way we tell tenants. We tried a letter, a phone call and a visit, and the visit produced three times the response of the other two, which is expensive and we are doing it anyway. Fourth, a caution: our own survey shows that the households in the worst properties are the hardest to reach, and we have not solved that. And finally, money. Ninety percent of our funding comes from one national program that ends in two years.",
+                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began with four hundred properties on the program and we have now completed three hundred and twenty. In that time we have carried out about twelve thousand individual measures. Here is the first finding: the measure that saves most per dollar is not new windows, it is attic insulation, because it is cheap and almost nothing has been done since 1985. Second, the sequence matters more than the total. A property done in the right order costs about fifteen percent less than the same work done piece by piece. Third, the way we tell tenants. We tried a letter, a phone call and a visit, and the visit produced three times the response of the other two, which is expensive and we are doing it anyway. Fourth, a caution: our own survey shows that the households in the worst properties are the hardest to reach, and we have not solved that. And finally, money. Ninety percent of our funding comes from one national program that ends in two years.",
                 },
               ],
             },
@@ -820,7 +820,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
 
 About {{11}} individual measures have been carried out.
 
-The measure that saves most per pound is {{12}}.
+The measure that saves most per dollar is {{12}}.
 
 Work done in the right order costs about {{13}} percent less.
 
@@ -930,7 +930,7 @@ The households hardest to reach are those in the {{15}} properties.
             { key: "d", label: "The speaker has changed their own practice." },
             { key: "e", label: "Things are better than they used to be." },
             { key: "f", label: "The problem is the scale, not the principle." },
-            { key: "g", label: "Households should refuse to pay the standing charge." },
+            { key: "g", label: "Households should refuse to pay the fixed monthly charge." },
             { key: "h", label: "New rules help far less than people assume." },
           ],
           texts: [
@@ -942,7 +942,7 @@ The households hardest to reach are those in the {{15}} properties.
               situation: "Birinci konuşmacı programın ölçeğinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I have no objection to the standard at all. My objection is arithmetical. There are twenty-eight million homes, we are doing about a quarter of a million a year, and at that rate the last one is finished in the twenty-second century." },
+                { text: "I have no objection to the standard at all. My objection is arithmetical. There are about a hundred and forty million homes, we are doing about a million a year, and at that rate the last one is finished in the twenty-second century." },
               ],
             },
             {
@@ -986,7 +986,7 @@ The households hardest to reach are those in the {{15}} properties.
               situation: "Beşinci konuşmacı kendi kurumlarının bir rakamını ele alıyor.",
               plays: 2,
               segments: [
-                { text: "The figure on our website is correct: ninety percent of our properties are rated C or above. What it does not say is that the rating is modeled rather than measured, and that nobody has been inside two thirds of them." },
+                { text: "The figure on our website is correct: ninety percent of our properties have a good energy rating. What it does not say is that the rating is modeled rather than measured, and that nobody has been inside two thirds of them." },
               ],
             },
             {
@@ -1010,7 +1010,7 @@ The households hardest to reach are those in the {{15}} properties.
               text: "Speaker 1",
               answer: "f",
               explain:
-                "Konuşmacı ilkeyi açıkça savunuyor: «I have no objection to the standard at all. My objection is arithmetical» ve sayıları veriyor: yirmi sekiz milyon konut, yılda çeyrek milyon.",
+                "Konuşmacı ilkeyi açıkça savunuyor: «I have no objection to the standard at all. My objection is arithmetical» ve sayıları veriyor: yaklaşık yüz kırk milyon konut, yılda bir milyon.",
             },
             {
               kind: "match",
@@ -1257,13 +1257,13 @@ Landlords should be required to improve, but only alongside inspection and a lim
               { de: "Say what it does well, with an example.", tr: "Neyi iyi yaptığını bir örnekle söyle." },
               { de: "Say who should not buy it, and why.", tr: "Kimin almaması gerektiğini ve nedenini söyle." },
             ],
-            sample: `A plug meter is a small device that sits between a socket and an appliance and tells you exactly what that appliance costs to run. Mine cost fifteen pounds.
+            sample: `A plug meter is a small device that sits between an outlet and an appliance and tells you exactly what that appliance costs to run. Mine cost fifteen dollars.
 
-What it does well is settle arguments. For three years I had blamed the television for the winter bills. The meter showed that the television used about a pound a month and that the router, which is never switched off, used more than twice that. Neither number is large, and that is itself the useful finding.
+What it does well is settle arguments. For three years I had blamed the television for the winter bills. The meter showed that the television used about a dollar a month and that the router, which is never switched off, used more than twice that. Neither number is large, and that is itself the useful finding.
 
 It is not for everyone. If you live in an apartment with electric heating, the meter will tell you what you already know, because the heating will be four fifths of the bill and there is nothing to plug it into. Anybody who rents and cannot change an appliance should also be careful: knowing the number and being unable to act on it is worse than not knowing.
 
-For a homeowner deciding which machine to replace first, however, it is fifteen pounds well spent.`,
+For a homeowner deciding which machine to replace first, however, it is fifteen dollars well spent.`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "\"İyi yaptığı şey\" somut bir örnekle mi desteklendi?",
@@ -1352,7 +1352,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
           format: "speaking",
           goal: "interaction",
           prompt:
-            "A council has money for two measures to reduce energy use in rented apartments. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
+            "A city council has money for two measures to reduce energy use in rented apartments. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
           promptTr:
             "Bir belediyenin kiralık dairelerde enerji tüketimini azaltmak için iki önleme parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
@@ -1373,7 +1373,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The strongest is free attic insulation, because it is the cheapest measure per pound saved and almost nothing has been done since the nineteen-eighties. You are right that inspectors repair nothing, and I want to concede that; what I would defend is a small number of them aimed only at the properties that claim a good rating without ever having been entered. The pamphlet seems like a cure worse than the disease: it moves responsibility to the person who cannot act. So I would recommend the insulation and the targeted inspection, and reject the pamphlet.",
+              "The strongest is free attic insulation, because it is the cheapest measure per dollar saved and almost nothing has been done since the nineteen-eighties. You are right that inspectors repair nothing, and I want to concede that; what I would defend is a small number of them aimed only at the properties that claim a good rating without ever having been entered. The pamphlet seems like a cure worse than the disease: it moves responsibility to the person who cannot act. So I would recommend the insulation and the targeted inspection, and reject the pamphlet.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

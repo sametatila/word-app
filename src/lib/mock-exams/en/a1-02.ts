@@ -48,7 +48,7 @@ export const EN_A1_02: MockPaper = {
 
 Good news! I have an apartment on Green Street. It is on the fourth floor and it is very quiet.
 
-The rent is 480 pounds a month. Water is in the price, but not electricity.
+The rent is 480 dollars a month. Water is in the price, but not electricity.
 
 There is no elevator, so I carry everything up the stairs. My back is not happy!
 
@@ -150,13 +150,13 @@ Anna (office)`,
               genre: "Notice",
               genreTr: "Duyuru",
               title: "Room to Rent",
-              body: `A big room in an apartment with two students. 320 pounds a month.
+              body: `A big room in an apartment with two students. 320 dollars a month.
 
 Free from September 1. Bus 14 stops in front of the house.
 
 No animals, please. We share the kitchen and the bathroom.
 
-Call Marek: 07700 900 118.`,
+Call Marek: (614) 555-0118.`,
             },
             {
               kind: "text",
@@ -166,7 +166,7 @@ Call Marek: 07700 900 118.`,
               title: "Help at Home",
               body: `We clean apartments and small offices. Monday to Saturday.
 
-15 pounds an hour. Two hours minimum.
+15 dollars an hour. Two hours minimum.
 
 We also wash windows and water your plants while you are on vacation.
 
@@ -180,7 +180,7 @@ Write to us: hello@helpathome.co`,
               title: "Evening Courses",
               body: `Cooking, guitar and photography. Every evening from 6 to 8.
 
-One course: 40 pounds for ten weeks. The first evening is free.
+One course: 40 dollars for ten weeks. The first evening is free.
 
 Small groups: eight people only.
 
@@ -206,7 +206,7 @@ Ask at the desk in the town hall.`,
               options: ["Room to Rent", "Help at Home", "Evening Courses"],
               answer: 0,
               explain:
-                "İlan hem tarihi hem fiyatı veriyor: «Free from September 1», ayda 320 pound. Öteki iki duyuru oturmakla ilgili değil; ikincisi ev temizliği, üçüncüsü kurs.",
+                "İlan hem tarihi hem fiyatı veriyor: «Free from September 1», ayda 320 dolar. Öteki iki duyuru oturmakla ilgili değil; ikincisi ev temizliği, üçüncüsü kurs.",
             },
             {
               kind: "mcq",
@@ -226,7 +226,7 @@ Ask at the desk in the town hall.`,
               options: ["Room to Rent", "Help at Home", "Evening Courses"],
               answer: 2,
               explain:
-                "Kurs duyurusunda «The first evening is free» yazıyor: ilk akşam ücretsiz. On haftalık ücret 40 pound ama madde yalnız ilk akşamı soruyor.",
+                "Kurs duyurusunda «The first evening is free» yazıyor: ilk akşam ücretsiz. On haftalık ücret 40 dolar ama madde yalnız ilk akşamı soruyor.",
             },
             {
               kind: "mcq",
@@ -466,7 +466,7 @@ Rita`,
               plays: 2,
               segments: [
                 { speaker: "Caller", text: "Hello, how much is one month at your gym?" },
-                { speaker: "Staff", text: "Twenty-five pounds a month, or eight pounds for one week." },
+                { speaker: "Staff", text: "Twenty-five dollars a month, or eight dollars for one week." },
                 { speaker: "Caller", text: "I am here for ten days only. So one week, and then I'll ask again." },
               ],
             },
@@ -542,7 +542,7 @@ Rita`,
               options: ["One month", "Nothing today", "One week"],
               answer: 2,
               explain:
-                "Arayan on gün kalacağını söyleyip «So one week» diyor. Aylık ücret (25 pound) kayıtta geçiyor ama seçilmiyor; sayıyı duyup karar cümlesini duymayan öğrenci ilk şıkkı seçer.",
+                "Arayan on gün kalacağını söyleyip «So one week» diyor. Aylık ücret (25 dolar) kayıtta geçiyor ama seçilmiyor; sayıyı duyup karar cümlesini duymayan öğrenci ilk şıkkı seçer.",
             },
             {
               kind: "mcq",
@@ -705,7 +705,7 @@ Rita`,
                 { speaker: "Visitor", text: "Two tickets, please. One adult and one child." },
                 { speaker: "Clerk", text: "Children under seven are free. How old is your son?" },
                 { speaker: "Visitor", text: "He is five." },
-                { speaker: "Clerk", text: "Then one ticket: nine pounds." },
+                { speaker: "Clerk", text: "Then one ticket: nine dollars." },
               ],
             },
             {
@@ -769,7 +769,7 @@ Rita`,
               options: ["One ticket", "Two tickets", "No tickets, both are free"],
               answer: 0,
               explain:
-                "Çocuk beş yaşında ve «Children under seven are free»; bu yüzden görevli tek bilet kesiyor: dokuz pound. Ziyaretçi iki bilet istiyor, ama ödenen bir tane.",
+                "Çocuk beş yaşında ve «Children under seven are free»; bu yüzden görevli tek bilet kesiyor: dokuz dolar. Ziyaretçi iki bilet istiyor, ama ödenen bir tane.",
             },
             {
               kind: "mcq",
@@ -822,9 +822,9 @@ Rita`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your friend Omar Haddad wants a place in the evening cooking course. He was born on March 14, 1998. He lives at 7 Mill Lane, Leeds. His phone number is 07700 900 245. He wants the Tuesday group. Five things are missing on the form. Write them in the gaps.",
+            "Your friend Omar Haddad wants a place in the evening cooking course. He was born on March 14, 1998. He lives at 7 Mill Street, Columbus, OH 43215. His phone number is (614) 555-0245. He wants the Tuesday group. Five things are missing on the form. Write them in the gaps.",
           promptTr:
-            "Arkadaşın Omar Haddad akşam yemek kursuna kaydolmak istiyor. 14 Mart 1998 doğumlu. 7 Mill Lane, Leeds adresinde oturuyor. Telefonu 07700 900 245. Salı grubunu istiyor. Formda beş bilgi eksik; boşluklara yaz.",
+            "Arkadaşın Omar Haddad akşam yemek kursuna kaydolmak istiyor. 14 Mart 1998 doğumlu. 7 Mill Street, Columbus, OH 43215 adresinde oturuyor. Telefonu (614) 555-0245. Salı grubunu istiyor. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
             {
               kind: "text",
@@ -836,7 +836,7 @@ Rita`,
 First name:         {{1}}
 Date of birth:      {{2}}
 Street and number:  {{3}}
-Town:               {{4}}
+City:               {{4}}
 Phone:              {{5}}
 Group:              Tuesday`,
             },
@@ -865,27 +865,27 @@ Group:              Tuesday`,
               id: "en-a1-02-w1-3",
               no: 3,
               text: "Street and number",
-              accept: ["7 Mill Lane", "Mill Lane 7"],
+              accept: ["7 Mill Street", "7 Mill St", "Mill Street 7"],
               explain:
-                "Adres yönergede «7 Mill Lane, Leeds» olarak veriliyor; bu satır yalnız sokağı ve numarayı istiyor. Şehir bir sonraki satırda ayrı soruluyor, buraya yazılmaz.",
+                "Adres yönergede «7 Mill Street, Columbus, OH 43215» olarak veriliyor; bu satır yalnız sokağı ve numarayı istiyor. Şehir bir sonraki satırda ayrı soruluyor, buraya yazılmaz.",
             },
             {
               kind: "gap",
               id: "en-a1-02-w1-4",
               no: 4,
-              text: "Town",
-              accept: ["Leeds"],
+              text: "City",
+              accept: ["Columbus", "Columbus, OH", "Columbus, Ohio"],
               explain:
-                "Adresin şehir kısmı «Leeds». Formda sokak ile şehir ayrı satırlarda; bilgiyi doğru satıra yerleştirmek A1 form doldurmanın ölçütlerinden biri.",
+                "Adresin şehir kısmı «Columbus»; OH eyalet kısaltması, 43215 posta kodu (zip code). Formda sokak ile şehir ayrı satırlarda; bilgiyi doğru satıra yerleştirmek A1 form doldurmanın ölçütlerinden biri.",
             },
             {
               kind: "gap",
               id: "en-a1-02-w1-5",
               no: 5,
               text: "Phone",
-              accept: ["07700 900 245", "07700900245"],
+              accept: ["(614) 555-0245", "6145550245"],
               explain:
-                "Telefon numarası yönergede «07700 900 245» olarak veriliyor. Boşluklu ve boşluksuz yazım kabul edilir; baştaki sıfır düşürülmemeli.",
+                "Telefon numarası yönergede «(614) 555-0245» olarak veriliyor. Parantezli, tireli ya da bitişik yazım kabul edilir; baştaki alan kodu (614) düşürülmemeli.",
             },
           ],
         },
@@ -950,7 +950,7 @@ Omar`,
               { de: "one good and one bad thing", tr: "Bir iyi ve bir kötü yan" },
             ],
             sample:
-              "I live in Leeds. I have a small apartment on the third floor. There are two rooms, a kitchen and a bathroom. I go to work by bus. It takes twenty minutes. The good thing is the park next to my house. The bad thing is the noise from the street.",
+              "I live in Columbus. I have a small apartment on the third floor. There are two rooms, a kitchen and a bathroom. I go to work by bus. It takes twenty minutes. The good thing is the park next to my house. The bad thing is the noise from the street.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "`There is / There are` kalıbı odaları anlatmak için kullanıldı mı?",
@@ -987,7 +987,7 @@ Omar`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "What do you do on the weekend? — I visit my sister. Do you like sports? — Yes, I play soccer. What music do you listen to? — I like old rock music. Do you meet your friends during the week? — Yes, on Thursday. How much is a movie ticket? — About nine pounds.",
+              "What do you do on the weekend? — I visit my sister. Do you like sports? — Yes, I play soccer. What music do you listen to? — I like old rock music. Do you meet your friends during the week? — Yes, on Thursday. How much is a movie ticket? — About nine dollars.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Do you … / What … / How much …)",

@@ -364,7 +364,7 @@ I stopped anyway, and not because of an argument I read.
 
 I stopped because of a woman in her fifties who came for the third module and asked, in the break, whether her son should start now, at eleven, so that he would not have to do this later. I said something reassuring, and then I went home and sat in the car.
 
-The honest description of my work is this: I was charging people for the cost of somebody else's prejudice, and I was charging them forty pounds an hour for it.
+The honest description of my work is this: I was charging people for the cost of somebody else's prejudice, and I was charging them forty dollars an hour for it.
 
 I am aware of the obvious reply. If the prejudice exists, my course was the only thing on offer that did anything about it this year. That reply is correct and I have no answer to it, which is why I lasted six years and not two. If I had found an answer to it, I would have stopped much sooner.
 
@@ -983,7 +983,7 @@ The study took {{16}} years.`,
               situation: "İkinci konuşmacı kursun maliyetini kimin taşıdığını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Forty pounds an hour, paid by a twenty-four-year-old, to repair something a firm in another city is doing to her. Whatever that is, it is not a solution. It is an invoice sent to the wrong address." },
+                { text: "Forty dollars an hour, paid by a twenty-four-year-old, to repair something a firm in another city is doing to her. Whatever that is, it is not a solution. It is an invoice sent to the wrong address." },
               ],
             },
             {
