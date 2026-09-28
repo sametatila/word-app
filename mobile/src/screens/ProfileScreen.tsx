@@ -167,6 +167,17 @@ export function ProfileScreen() {
               <ChevronRightIcon color={colors.onPrimary} size={22} />
             </PressableScale>
           ) : null}
+
+          {/* MİSAFİR SİLME YOLU PROFİLDE (mağaza ön inceleme B24). Gizlilik §11,
+              şartlar, destek sayfası ve inceleme notları üç dilde "Profil › Misafir
+              verilerini sil" diyor; profil yeniden çizilince (3e90264ea) satır
+              yalnız Ayarlar'ın dibinde kalmıştı ve inceleyici notu izleyip
+              bulamazdı. Kapı `test:legal`. */}
+          {guest ? (
+            <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("guest.delete_row")} accessibilityRole="button" style={{ alignItems: "center", paddingVertical: spacing.md }}>
+              <Text variant="bodyStrong" color={colors.dangerText}>{t("guest.delete_row")}</Text>
+            </PressableScale>
+          ) : null}
         </View>
       </ScrollView>
     </View>

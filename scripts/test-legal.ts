@@ -327,11 +327,18 @@ console.log("\nUygulama içi yollar");
     check(`web silme sayfası · ${locale}: hesap silme yolu arayüzle aynı`, (web[locale]["del.in_app_path"] ?? "").includes(path));
   }
 
-  // Yolun uygulamada gerçekten var olduğu: Profil → Ayarlar, Ayarlar'ın Hesap grubunda silme satırı.
+  /* Yolun uygulamada gerçekten var olduğu: Profil → Ayarlar, Ayarlar'da "Hesap"
+     satırı, Hesap ekranında silme satırı. Ayarlar 2de783c98'den beri kısa liste +
+     grup ekranları: "Hesap" satırı `section: "account"`u açıyor, o bölümün gövdesi
+     `account: (` ile başlayan blok. */
   const settings = readFileSync("mobile/src/screens/SettingsScreen.tsx", "utf8");
-  const groupAt = settings.indexOf('<Group title={t("settings.group_account")}');
-  const accountGroup = groupAt < 0 ? "" : settings.slice(groupAt, settings.indexOf("</Group>", groupAt));
-  check("uygulama: Ayarlar › Hesap grubunda hesap silme satırı var", accountGroup.includes('nav.navigate("DeleteAccount")'));
+  const sectionAt = settings.indexOf("account: (");
+  const accountSection = sectionAt < 0 ? "" : settings.slice(sectionAt, settings.indexOf("</Group>", settings.indexOf("settings.delete_account", sectionAt)));
+  check(
+    "uygulama: Ayarlar listesinde Hesap satırı Hesap ekranını açıyor",
+    /label=\{t\("settings\.group_account"\)\}[^\n]*section: "account"/.test(settings),
+  );
+  check("uygulama: Ayarlar › Hesap grubunda hesap silme satırı var", accountSection.includes('nav.navigate("DeleteAccount")') && accountSection.includes('t("settings.delete_account")'));
   check("uygulama: Profil ekranından Ayarlar açılıyor", readFileSync("mobile/src/screens/ProfileScreen.tsx", "utf8").includes('nav.navigate("Settings")'));
   check("uygulama: yürüyüş modu Öğren sekmesinden açılıyor", readFileSync("mobile/src/screens/LearnScreen.tsx", "utf8").includes('nav.navigate("Walk")'));
 

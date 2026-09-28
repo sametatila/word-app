@@ -11,8 +11,10 @@ import { en } from "../src/i18n/en";
 describe("tekil biçim", () => {
   it("İngilizcede bir sayısında ismi tekilleştirir", async () => {
     await setLang("en");
-    expect(t("friends.count_friends", { n: 1 })).toBe("1 friend");
-    expect(t("friends.count_friends", { n: 3 })).toBe("3 friends");
+    /* Önce `friends.count_friends` ("1 friend") ölçülüyordu; o anahtar
+       arkadaşlar ekranı yeniden düzenlenince kullanılmaz olup silindi. */
+    expect(t("dailyquests.rewards_ready", { n: 1 })).toBe("1 reward ready");
+    expect(t("dailyquests.rewards_ready", { n: 3 })).toBe("3 rewards ready");
   });
 
   it("Almancada ismi ve edatı tekilleştirir", async () => {
