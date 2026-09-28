@@ -632,7 +632,7 @@ export const trWeb: Record<string, string> = {
   "immw.review": "Quiz",
   "immw.grammar_exercise": "Dil bilgisi alıştırması",
   "profw.load_failed": "Profil yüklenemedi",
-  "bossw.title": "Modül sınavı",
+  "bossw.title": "Modül testi",
   /* "Başarı belgesi", resmî sertifika değil (içerik denetimi CNT-11). */
   "certw.this_document": "Bu başarı belgesi",
   "certw.awarded_to": "adına, sınavı {pct} ile geçtiği için verilmiştir.",
