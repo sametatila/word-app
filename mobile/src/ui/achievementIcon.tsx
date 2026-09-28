@@ -4,12 +4,13 @@ import {
   FlameIcon, GlobeIcon, GrammarIcon, HeadphonesIcon, KeyboardIcon, MapIcon, MicIcon,
   MoonIcon, MountainIcon, PenIcon, PuzzleIcon, RunIcon, SchoolIcon, SortIcon,
   SparkIcon, StackIcon, StarIcon, SunIcon, TagIcon, TargetIcon, TranslateIcon, TrophyIcon,
-  UserPlusIcon,
+  UserPlusIcon, WriteIcon,
 } from "./icons";
 
 /**
  * Rozet ikonu adından bileşen — web `components/achievement-badge.tsx`
- * `ICONS` haritasının karşılığı, aynı yirmi dokuz ad.
+ * `ICONS` haritasının karşılığı, aynı adlar (`WriteIcon`: İngilizce
+ * kursun boşluk rozeti, pratik ekranındaki boşluk doldurma ikonu).
  *
  * Sunucu her rozete kendi ikonunu veriyor (`lib/achievements` `icon`) ve web
  * baştan beri onu çiziyor. Mobil alanı hiç okumuyordu: rozet duvarında da,
@@ -25,7 +26,7 @@ const ICONS: Record<string, (p: { color?: string; size?: number }) => React.Reac
   FlameIcon, GlobeIcon, GrammarIcon, HeadphonesIcon, KeyboardIcon, MapIcon, MicIcon,
   MoonIcon, MountainIcon, PenIcon, PuzzleIcon, RunIcon, SchoolIcon, SortIcon,
   SparkIcon, StackIcon, StarIcon, SunIcon, TagIcon, TargetIcon, TranslateIcon, TrophyIcon,
-  UserPlusIcon,
+  UserPlusIcon, WriteIcon,
 };
 
 export function AchievementIcon({ name, color, size }: { name: string; color: string; size: number }) {

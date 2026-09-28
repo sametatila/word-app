@@ -1456,11 +1456,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   ciftYon("/api/me alanlari", govde("src/app/api/me/route.ts", "name: profile.displayName"), typeFields("mobile/src/lib/useMe.ts", "Me"));
 
   /* Rozet satiri: sunucu tarafinda `AchievementRow` alanlari + tanimdan
-     gelenler (`...def`). Tanim alanlari `AchievementDef`de yaziyor. */
+     gelenler (`...def`). Tanim alanlari `AchievementDef`de yaziyor.
+     `only` (rozetin hangi kurslarda oldugu) yalniz sunucunun karari: satira
+     girmeden ayiklaniyor (`achievementBoard`), istemci onu hic gormuyor. */
   const rowWeb = [...new Set([
     ...typeFields("src/lib/achievements.ts", "AchievementRow"),
     ...typeFields("src/lib/achievements.ts", "AchievementDef"),
-  ])].filter((a) => !["metric", "titleKey", "hintKey"].includes(a)).sort();
+  ])].filter((a) => !["metric", "titleKey", "hintKey", "only"].includes(a)).sort();
   ciftYon("rozet satiri alanlari", rowWeb, typeFields("mobile/src/data/achievements.ts", "Achievement"));
 
   /*

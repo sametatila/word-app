@@ -4,7 +4,7 @@ import path from "node:path";
 import { and, eq, gte, isNotNull, lt, lte, max, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { avatarItems, leagueMembers, profiles } from "@/lib/db/schema";
-import { unlockedAchievementIds } from "@/lib/achievements";
+import { achievementForCourse, unlockedAchievementIds } from "@/lib/achievements";
 import { isPremium } from "@/lib/premium";
 import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
 import type { UnlockedPart } from "@/lib/avatar-layers";
@@ -108,10 +108,16 @@ export function unlockHint(lang: NativeLang, key: string): string {
  * çizer (kilidin tanımı istemcide tutulmuyor, bkz. `lib/avatar-unlocks`).
  */
 export async function lockedAvatarParts(userId: string, lang: NativeLang): Promise<Record<string, string>> {
-  const [keys, owned] = await Promise.all([avatarUnlockKeys(userId), ownedAvatarItemIds(userId)]);
+  const [keys, owned, prof] = await Promise.all([
+    avatarUnlockKeys(userId),
+    ownedAvatarItemIds(userId),
+    db.select({ course: profiles.course }).from(profiles).where(eq(profiles.userId, userId)).limit(1),
+  ]);
   const out: Record<string, string> = {};
   for (const [id, key] of Object.entries(PART_UNLOCKS)) {
-    if (!keys.has(key) && !owned.has(id)) out[id] = unlockHint(lang, key);
+    // İpucu kullanıcının KURSUNDAKİ rozetten: İngilizce öğrenene artikel
+    // şapkası için "300 boşluğu doldur" (`achievementForCourse`).
+    if (!keys.has(key) && !owned.has(id)) out[id] = unlockHint(lang, achievementForCourse(key, prof[0]?.course));
   }
   return out;
 }

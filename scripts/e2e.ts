@@ -48,7 +48,7 @@ import { cleanForSpeech } from "../src/lib/tts/edge";
 import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
 import { itemCount } from "../src/lib/skills/meta";
 import { GAME_LABEL_KEYS, PLAYABLE_GAMES, type Answer, type Round } from "../src/lib/types";
-import { achievementBoard, markAchievementsSeen } from "../src/lib/achievements";
+import { achievementBoard, catalogFor, markAchievementsSeen, unlockedAchievementIds } from "../src/lib/achievements";
 import { xpForWager } from "../src/lib/xp";
 import { seededShuffle } from "../src/lib/shuffle";
 import { foldTurkish, parseConfirm } from "../src/lib/voice-intent";
@@ -1466,6 +1466,58 @@ async function main() {
   await achievementBoard(USER);
   const rowsAfter = await db.select().from(achievements).where(eq(achievements.userId, USER));
   check("tekrar hesaplamak kayıt çoğaltmıyor", rowsBefore.length === rowsAfter.length);
+
+  /*
+    KURSA UYGUN KATALOG (2026-09-29). İngilizce öğrenen artikel/çoğul
+    rozetlerini görmüyor, yerlerine kendi iki rozetini görüyor; `allGames`
+    kursun dokuz oyununu istiyor; öteki kursta kazanılan rozet duvarda açık
+    kalıyor ve toplam, kursunu bitirenin %100'e ulaşacağı biçimde sayılıyor.
+    Kursa göre sayılan ölçü yalnız şu anki kursun kelimelerine bakıyor:
+    Almanca kelimelerde biriken boşluk doldurma İngilizce rozeti açmıyor.
+  */
+  const EN_WORD = 990_001;
+  const DE_ONLY = 990_002;
+  await db.delete(reviews).where(eq(reviews.userId, USER));
+  await db.delete(words).where(inArray(words.id, [EN_WORD, DE_ONLY]));
+  await db.insert(words).values([
+    { id: EN_WORD, de: "e2e-en", tr: "e2e", typ: "Sonstiges", niveau: "A1", course: "en" },
+    { id: DE_ONLY, de: "e2e-de", tr: "e2e", typ: "Sonstiges", niveau: "A1", course: "de" },
+  ]);
+  const deBoard = await achievementBoard(USER);
+  check("Almancada artikel rozeti listede", deBoard.rows.some((r) => r.id === "artikel300"));
+  check("Almancada İngilizce kursun rozeti yok", !deBoard.rows.some((r) => r.id === "cloze300"));
+  check("Almancada bütün oyunlar hedefi 11", deBoard.rows.find((r) => r.id === "allGames")?.target === 11);
+  check("satır tanımın kurs kararını taşımıyor", deBoard.rows.every((r) => !("only" in r)));
+
+  // Almancada kazanılmış çoğul rozeti; sonra İngilizceye geçiş.
+  await db.insert(achievements).values({ userId: USER, achievementId: "plural150", seen: true });
+  // 300 boşluk doldurma ALMANCA kelimede: İngilizce rozeti açmamalı.
+  const clozeOn = (wordId: number) =>
+    Array.from({ length: 300 }, () => ({ userId: USER, wordId, game: "cloze", correct: true, quality: 5 }));
+  await db.insert(reviews).values(clozeOn(DE_ONLY));
+  await db.update(profiles).set({ course: "en" }).where(eq(profiles.userId, USER));
+  const enBoard = await achievementBoard(USER);
+  const enRow = (id: string) => enBoard.rows.find((r) => r.id === id);
+  check("İngilizcede artikel rozeti yok", !enRow("artikel300"));
+  check("İngilizcede boşluk ve harf bulmacası rozetleri var", Boolean(enRow("cloze300") && enRow("scramble150")));
+  check("İngilizcede bütün oyunlar hedefi 9", enRow("allGames")?.target === 9, `(${enRow("allGames")?.target})`);
+  check("öteki kursta kazanılan rozet duvarda ve açık", enRow("plural150")?.unlocked === true);
+  check("Almanca kelimedeki boşluklar İngilizce rozeti açmıyor", enRow("cloze300")?.unlocked === false && enRow("cloze300")?.done === 0);
+  check("toplam = kurs kataloğu + öteki kursta kazanılan", enBoard.total === catalogFor("en").length + 1, `(${enBoard.total})`);
+  check("toplam satır sayısıyla aynı (%100'e ulaşılabilir)", enBoard.total === enBoard.rows.length);
+
+  await db.insert(reviews).values(clozeOn(EN_WORD));
+  const enBoard2 = await achievementBoard(USER);
+  check("İngilizce kelimede 300 boşluk rozeti açıyor", enBoard2.rows.find((r) => r.id === "cloze300")?.unlocked === true);
+  const keys = await unlockedAchievementIds(USER);
+  check("boşluk rozeti artikel parçasının kilidini de açıyor", keys.has("cloze300") && keys.has("artikel300"));
+  check("kazanılmış rozet kaydı silinmedi", (await db.select().from(achievements).where(and(eq(achievements.userId, USER), eq(achievements.achievementId, "plural150")))).length === 1);
+
+  await db.update(profiles).set({ course: "de" }).where(eq(profiles.userId, USER));
+  const backDe = await achievementBoard(USER);
+  check("Almancaya dönünce İngilizce rozeti de açık kalıyor", backDe.rows.find((r) => r.id === "cloze300")?.unlocked === true);
+  await db.delete(reviews).where(eq(reviews.userId, USER));
+  await db.delete(words).where(inArray(words.id, [EN_WORD, DE_ONLY]));
 
   console.log("\n18) Tohumlu karıştırma — sunucu ve tarayıcı aynı sırayı üretir");
   // Bu değişmez bir süs değil: harf bulmacası ve cümle kurma görevinde

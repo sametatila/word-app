@@ -32,6 +32,7 @@ import {
   TranslateIcon,
   UserPlusIcon,
   TrophyIcon,
+  WriteIcon,
 } from "@/components/icons";
 
 /**
@@ -118,6 +119,7 @@ const ICONS: Record<string, (p: { size?: number; className?: string }) => React.
   TranslateIcon,
   TrophyIcon,
   UserPlusIcon,
+  WriteIcon,
 };
 
 export type BadgeRow = {

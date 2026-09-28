@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { achievementBoard, markAchievementsSeen } from "@/lib/achievements";
+import { achievementBoard, markAchievementsSeen, unlockKeysOf } from "@/lib/achievements";
 import { ensureProfile } from "@/lib/session";
 import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { partsForKeys } from "@/lib/avatar-items";
@@ -23,10 +23,16 @@ export async function GET(req: Request) {
     const board = await achievementBoard(userId, lang);
     /* Kutlanacak rozetin açtığı avatar parçaları (`parts`, yoksa alan yok):
        kutlama kartı "yeni aksesuar" diye gösteriyor. Yalnız `fresh`e; duvar
-       (`rows`) bunu taşımıyor. */
+       (`rows`) bunu taşımıyor.
+       Kursun karşılık rozeti (`cloze300` → `artikel300`) o rozete bağlı
+       parçayı da açıyor (`unlockKeysOf`); karşılık zaten kazanılmışsa (öteki
+       kursta) parça yeni değil, kartta da yeni diye çıkmıyor. */
+    const freshIds = new Set(board.fresh.map((r) => r.id));
+    const opened = new Set(board.rows.filter((r) => r.unlocked && !freshIds.has(r.id)).map((r) => r.id));
     const fresh = await Promise.all(
       board.fresh.map(async (r) => {
-        const parts = await partsForKeys([r.id], lang, req.headers.get("host"));
+        const keys = unlockKeysOf(r.id).filter((k) => k === r.id || !opened.has(k));
+        const parts = await partsForKeys(keys, lang, req.headers.get("host"));
         return parts.length ? { ...r, parts } : r;
       }),
     );

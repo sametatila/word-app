@@ -2,7 +2,8 @@ import "server-only";
 import { and, count, desc, eq, gt, gte, inArray, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
-import { PLAYABLE_GAMES } from "@/lib/types";
+import { PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
+import { supportsGame, targetLangOf, type TargetLang } from "@/lib/courses";
 import { GROUP_LABEL_KEYS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import { onAchievementsUnlocked } from "@/lib/social/hooks";
 import {
@@ -83,6 +84,11 @@ export type Metric =
   | "bestWriting"
   | "speakings"
   | "gameTranslate"
+  // KURSA GÖRE sayılanlar: yalnız kullanıcının ŞU ANKİ kursunun kelimelerine
+  // verilen doğrular (bkz. collectMetrics). İngilizce kursun rozetleri
+  // Almancada biriken boşluk doldurmayla açılmasın diye.
+  | "gameCloze"
+  | "gameScramble"
   | "gamesPlayed"
   | "fullQuestDays"
   /* Davet ettiği kaç kişi GERÇEKTEN çalışmaya başladı (üç günlük seri).
@@ -108,7 +114,43 @@ export type AchievementDef = {
   tier: Tier;
   group: Group;
   metric: Metric;
+  /**
+   * Hedef. `gamesPlayed` için bu sayı ÜST SINIR (bütün oyunlar); asıl hedef
+   * kursun oyun sayısı ve `targetFor` onu veriyor.
+   */
   target: number;
+  /**
+   * Rozet hangi kurslarda VAR — yoksa her kursta. Yalnız sunucuda; satıra
+   * (API) girmiyor.
+   */
+  only?: CourseScope;
+};
+
+/**
+ * KURSA UYGUN BAŞARIM (Samet, 2026-09-29: "kursa uygun başarımlar olmalı").
+ *
+ * Katalog tek listeydi ve her kursa aynen gösteriliyordu. İngilizce öğrenen
+ * üç rozeti hiç kazanamıyordu: `artikel300` ile `plural150` Almancanın
+ * cinsiyetli isim sistemine dayanan iki oyunu sayıyor (İngilizcede bu oyunlar
+ * yok), `allGames` ise on bir oyun istiyordu ve İngilizce kursta dokuz oyun
+ * var. Tahta "2/53" diyordu ve İngilizce öğrenen %100'e hiç ulaşamazdı.
+ *
+ * - `game`: oyuna bağlı rozet. Oyun kursta üretilemiyorsa (`supportsGame`,
+ *   kurs kayıt defterinin TEK kararı) rozet o kursun kataloğunda yok.
+ *   Kurs listesi burada yazılmıyor: Fransızca eklendiğinde artikel rozetleri
+ *   `hasArticles` bayrağıyla kendiliğinden gelir.
+ * - `targetLang`: kursun hedef diline özgü rozet. İngilizce kurs artikel ve
+ *   çoğul rozetlerinin yerine kendi iki rozetini alıyor; İngilizce öğrenen
+ *   daha az rozetle kalmıyor.
+ * - `insteadOf`: bu rozet hangi rozetin KARŞILIĞI. Avatar kilitleri rozet
+ *   kimliğine bağlı (`lib/avatar-unlocks`); karşılık, o parçayı öteki kursta
+ *   da açıyor (`unlockedAchievementIds`) — yoksa artikel rozetine bağlı
+ *   şapka İngilizce öğrenene hiç açılmazdı.
+ */
+export type CourseScope = {
+  game?: PlayableGame;
+  targetLang?: TargetLang;
+  insteadOf?: string;
 };
 
 /**
@@ -136,20 +178,36 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "answers500", titleKey: "ach.answers500.title", hintKey: "ach.answers500.hint", icon: "CheckIcon", tier: "bronze", group: "games", metric: "correctAnswers", target: 500 },
   { id: "answers2500", titleKey: "ach.answers2500.title", hintKey: "ach.answers2500.hint", icon: "CheckIcon", tier: "silver", group: "games", metric: "correctAnswers", target: 2500 },
   { id: "answers10000", titleKey: "ach.answers10000.title", hintKey: "ach.answers10000.hint", icon: "CheckIcon", tier: "gold", group: "games", metric: "correctAnswers", target: 10000 },
-  { id: "artikel300", titleKey: "ach.artikel300.title", hintKey: "ach.artikel300.hint", icon: "TagIcon", tier: "silver", group: "games", metric: "gameArtikel", target: 300 },
+  { id: "artikel300", titleKey: "ach.artikel300.title", hintKey: "ach.artikel300.hint", icon: "TagIcon", tier: "silver", group: "games", metric: "gameArtikel", target: 300, only: { game: "artikel" } },
+  /*
+    İNGİLİZCE KURSUN KARŞILIKLARI. Artikel ve çoğul Almancanın zor yanı;
+    İngilizcenin zor yanı başka: kelimenin anlamı BAĞLAMDA oturuyor (edat,
+    eşdizim, deyimsel fiil) ve yazımı sesinden çıkarılamıyor. Kursun ikisini
+    de çalıştıran oyunları var — boşluk doldurma ve harf bulmacası — ve
+    ikisinin cevabı `reviews`ta oyun adıyla duruyor, yeni bir sayaç gerekmiyor.
+    Hedef ve kademe karşılık oldukları rozetle aynı.
+  */
+  { id: "cloze300", titleKey: "ach.cloze300.title", hintKey: "ach.cloze300.hint", icon: "WriteIcon", tier: "silver", group: "games", metric: "gameCloze", target: 300, only: { targetLang: "en", insteadOf: "artikel300" } },
   { id: "listen200", titleKey: "ach.listen200.title", hintKey: "ach.listen200.hint", icon: "HeadphonesIcon", tier: "silver", group: "games", metric: "gameListen", target: 200 },
   { id: "typing200", titleKey: "ach.typing200.title", hintKey: "ach.typing200.hint", icon: "KeyboardIcon", tier: "silver", group: "games", metric: "gameTyping", target: 200 },
   { id: "order150", titleKey: "ach.order150.title", hintKey: "ach.order150.hint", icon: "SortIcon", tier: "silver", group: "games", metric: "gameOrder", target: 150 },
-  { id: "plural150", titleKey: "ach.plural150.title", hintKey: "ach.plural150.hint", icon: "StackIcon", tier: "silver", group: "games", metric: "gamePlural", target: 150 },
+  { id: "plural150", titleKey: "ach.plural150.title", hintKey: "ach.plural150.hint", icon: "StackIcon", tier: "silver", group: "games", metric: "gamePlural", target: 150, only: { game: "plural" } },
+  { id: "scramble150", titleKey: "ach.scramble150.title", hintKey: "ach.scramble150.hint", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gameScramble", target: 150, only: { targetLang: "en", insteadOf: "plural150" } },
   { id: "speak100", titleKey: "ach.speak100.title", hintKey: "ach.speak100.hint", icon: "MicIcon", tier: "silver", group: "games", metric: "gameSpeak", target: 100 },
   { id: "speak500", titleKey: "ach.speak500.title", hintKey: "ach.speak500.hint", icon: "MicIcon", tier: "gold", group: "games", metric: "gameSpeak", target: 500 },
 
   { id: "translate200", titleKey: "ach.translate200.title", hintKey: "ach.translate200.hint", icon: "TranslateIcon", tier: "silver", group: "games", metric: "gameTranslate", target: 200 },
   /*
-    Keşif rozeti: sayı değil ÇEŞİT. On bir oyunun bazıları yalnızca karışık
+    Keşif rozeti: sayı değil ÇEŞİT. Oyunların bazıları yalnızca karışık
     turda ve seyrek çıkıyor; kullanıcıların çoğu "Çoğul Bilmece"nin ya da
     "Doğru mu Yanlış mı"nın varlığını bilmiyor. Hepsini bir kez oynatmak,
     listeyi göstermekten daha iyi bir tanıtım.
+
+    "Hepsi" KURSUN oyunları: Almancada on bir, İngilizcede dokuz (`targetFor`).
+    Metin bu yüzden sayı yazmıyor ("kursundaki her oyunda"); sayı ilerleme
+    çubuğunda zaten görünüyor. `{n}` yer tutucusu da seçilmedi: aynı ipucu
+    avatar kilidinde değişkensiz çevriliyor (`avatar-items` `unlockHint`) ve
+    orada "{n}" diye çıkardı.
   */
   { id: "allGames", titleKey: "ach.allGames.title", hintKey: "ach.allGames.hint", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gamesPlayed", target: PLAYABLE_GAMES.length },
 
@@ -233,6 +291,50 @@ export const ACHIEVEMENTS: AchievementDef[] = [
 
 const BY_ID = new Map(ACHIEVEMENTS.map((a) => [a.id, a]));
 
+/** Kursun oynanabilir oyunları — `allGames`in hedefi bunların sayısı. */
+export function courseGames(course: string | null | undefined): PlayableGame[] {
+  return PLAYABLE_GAMES.filter((g) => supportsGame(course, g));
+}
+
+/** Rozet bu kursun kataloğunda mı (bkz. `CourseScope`). */
+export function inCourse(def: AchievementDef, course: string | null | undefined): boolean {
+  const o = def.only;
+  if (!o) return true;
+  if (o.game && !supportsGame(course, o.game)) return false;
+  if (o.targetLang && targetLangOf(course) !== o.targetLang) return false;
+  return true;
+}
+
+/** Kursun rozet kataloğu — tanım sırası korunur. */
+export function catalogFor(course: string | null | undefined): AchievementDef[] {
+  return ACHIEVEMENTS.filter((d) => inCourse(d, course));
+}
+
+/** Rozetin bu kurstaki hedefi: `allGames` kursun oyun sayısı, gerisi sabit. */
+export function targetFor(def: AchievementDef, course: string | null | undefined): number {
+  return def.metric === "gamesPlayed" ? courseGames(course).length : def.target;
+}
+
+/**
+ * Bu rozetin sağladığı avatar kilidi anahtarları: kendisi + karşılık olduğu
+ * rozet (`insteadOf`). `cloze300` hem kendini hem `artikel300`ü açar.
+ */
+export function unlockKeysOf(id: string): string[] {
+  const alt = BY_ID.get(id)?.only?.insteadOf;
+  return alt ? [id, alt] : [id];
+}
+
+/**
+ * Kilit ipucunda gösterilecek rozet: rozet kullanıcının kursunda yoksa
+ * kursundaki KARŞILIĞI. İngilizce öğrenene artikel şapkasının ipucu olarak
+ * "300 artikeli doğru bil" demek, açılamayacak bir yol göstermek olurdu.
+ */
+export function achievementForCourse(id: string, course: string | null | undefined): string {
+  const def = BY_ID.get(id);
+  if (!def || inCourse(def, course)) return id;
+  return ACHIEVEMENTS.find((d) => d.only?.insteadOf === id && inCourse(d, course))?.id ?? id;
+}
+
 // Grup tanımı arayüzle ortak (bkz. lib/achievement-groups): sunucu tarafı
 // `server-only` olduğu için arayüz onu içe aktaramıyordu ve liste elle
 // kopyalanmıştı. Yeni bir grup eklenince rozetler açılıyor ama duvarda hiç
@@ -250,9 +352,11 @@ type Metrics = Record<Metric, number>;
  * toplanıp bütün tanımlar bu tek pakete karşı değerlendiriliyor; yeni bir
  * rozet eklemek çoğu zaman hiç yeni sorgu gerektirmiyor.
  */
-async function collectMetrics(userId: string): Promise<Metrics> {
+async function collectMetrics(userId: string): Promise<{ metrics: Metrics; course: string }> {
   const [profile] = await db.select().from(profiles).where(eq(profiles.userId, userId)).limit(1);
   const tz = profile?.timezone || "Europe/Istanbul";
+  // Katalog ve kursa göre sayılan ölçüler bu kursa bakıyor (bkz. CourseScope).
+  const course = profile?.course ?? "de";
 
   const [
     masteredRow,
@@ -274,12 +378,19 @@ async function collectMetrics(userId: string): Promise<Metrics> {
       .from(userWords)
       .where(and(eq(userWords.userId, userId), gte(userWords.intervalDays, 21))),
 
-    // Oyun bazlı doğru sayıları tek geçişte; toplam da buradan çıkıyor.
+    /*
+      Oyun bazlı doğru sayıları tek geçişte; toplam da buradan çıkıyor.
+      KURSA AYRILMIŞ: cevap kaydı kursu taşımıyor, kelime taşıyor. Kursa
+      göre sayılan rozetler (`allGames`, İngilizce kursun iki rozeti) yalnız
+      şu anki kursun satırlarını alıyor; genel sayılar hepsinin toplamı.
+      LEFT JOIN: kelimesi bulunamayan eski bir cevap toplamdan düşmesin.
+    */
     db
-      .select({ game: reviews.game, n: sql<number>`count(*)::int` })
+      .select({ game: reviews.game, course: words.course, n: sql<number>`count(*)::int` })
       .from(reviews)
+      .leftJoin(words, eq(words.id, reviews.wordId))
       .where(and(eq(reviews.userId, userId), eq(reviews.correct, true)))
-      .groupBy(reviews.game),
+      .groupBy(reviews.game, words.course),
 
     db
       .select({ n: sql<number>`count(*)::int` })
@@ -401,11 +512,16 @@ async function collectMetrics(userId: string): Promise<Metrics> {
       .where(and(eq(referrals.inviterUserId, userId), gte(profiles.longestStreak, 3))),
   ]);
 
-  const games = new Map(gameRows.map((r) => [r.game, Number(r.n)]));
+  const games = new Map<string, number>();
+  const here = new Map<string, number>();
+  for (const r of gameRows) {
+    games.set(r.game, (games.get(r.game) ?? 0) + Number(r.n));
+    if (r.course === course) here.set(r.game, (here.get(r.game) ?? 0) + Number(r.n));
+  }
   const correctTotal = gameRows.reduce((s, r) => s + Number(r.n), 0);
   const courses = Number(courseRow[0]?.n ?? 0);
 
-  return {
+  const metrics: Metrics = {
     longestStreak: profile?.longestStreak ?? 0,
     mastered: Number(masteredRow[0]?.n ?? 0),
     correctAnswers: correctTotal,
@@ -431,12 +547,16 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     bestWriting: Number(assessRow[0]?.bestWriting ?? 0),
     speakings: Number(assessRow[0]?.speakings ?? 0),
     gameTranslate: games.get("translate") ?? 0,
-    // Kaç FARKLI oyunda en az bir doğru var. Hiç doğru yapılmamış bir oyunu
-    // "oynandı" saymak, keşif rozetini rastgele bir dokunuşla açardı.
-    gamesPlayed: PLAYABLE_GAMES.filter((g) => (games.get(g) ?? 0) > 0).length,
+    gameCloze: here.get("cloze") ?? 0,
+    gameScramble: here.get("scramble") ?? 0,
+    // Kursun oyunlarından kaç FARKLISINDA, bu kursta, en az bir doğru var.
+    // Hiç doğru yapılmamış bir oyunu "oynandı" saymak, keşif rozetini
+    // rastgele bir dokunuşla açardı.
+    gamesPlayed: courseGames(course).filter((g) => (here.get(g) ?? 0) > 0).length,
     fullQuestDays: Number(questRow[0]?.n ?? 0),
     invitedActive: Number(inviteRow[0]?.n ?? 0),
   };
+  return { metrics, course };
 }
 
 /**
@@ -446,7 +566,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
  * sözleşmesi DEĞİŞMİYOR ve mobilin yayınlanmış sürümleri aynı alanları
  * okumaya devam ediyor, yalnız artık kendi dillerinde.
  */
-export type AchievementRow = Omit<AchievementDef, "titleKey" | "hintKey"> & {
+export type AchievementRow = Omit<AchievementDef, "titleKey" | "hintKey" | "only"> & {
   title: string;
   hint: string;
   done: number;
@@ -455,7 +575,9 @@ export type AchievementRow = Omit<AchievementDef, "titleKey" | "hintKey"> & {
 };
 
 export type AchievementBoard = {
+  /** Kursun kataloğu + başka kursta kazanılmış rozetler (bkz. achievementBoard). */
   rows: AchievementRow[];
+  /** `rows` üzerinden: kursunu bitiren %100'e ulaşır. */
   unlockedCount: number;
   total: number;
   /** Henüz kutlanmamış rozetler — özet ekranı bunları patlatır ve işaretler. */
@@ -475,7 +597,7 @@ export async function achievementBoard(
   /** Rozet adlarının çevrileceği dil — çağıranın profilinden gelir. */
   lang: NativeLang = DEFAULT_NATIVE,
 ): Promise<AchievementBoard> {
-  const [metrics, owned] = await Promise.all([
+  const [{ metrics, course }, owned] = await Promise.all([
     collectMetrics(userId),
     db
       .select({
@@ -489,12 +611,30 @@ export async function achievementBoard(
 
   const ownedMap = new Map(owned.map((o) => [o.id, o]));
 
-  const rows: AchievementRow[] = ACHIEVEMENTS.map((def) => {
-    const done = Math.min(def.target, metrics[def.metric] ?? 0);
-    const earned = (metrics[def.metric] ?? 0) >= def.target;
+  /*
+    HANGİ ROZETLER: kursun kataloğu + kazanılmış olup kursta olmayanlar.
+
+    İki kurs çalışan biri Almancada `artikel300`ü aldı, sonra İngilizceye
+    geçti. Rozet kazanılmış bir emek; silinmiyor ve duvardan da düşmüyor —
+    açık haliyle kalıyor. Kazanılmamış olanlar ise yalnız kursta varsa
+    görünüyor: İngilizce öğrenene kilitli bir artikel rozeti göstermek,
+    ulaşamayacağı bir hedef göstermek olurdu. Kursta olmayan rozet de YENİ
+    açılmıyor (ölçüsü o kursa ait); kurs değişince orada sayılıyor.
+
+    Toplam (`total`) bu satırların sayısı: başka kursta kazanılmış rozet hem
+    paya hem paydaya giriyor, yani kursunu bitiren yine %100'e ulaşıyor.
+  */
+  const rows: AchievementRow[] = ACHIEVEMENTS.filter((def) => inCourse(def, course) || ownedMap.has(def.id)).map((def) => {
+    const target = targetFor(def, course);
+    const done = Math.min(target, metrics[def.metric] ?? 0);
+    const earned = inCourse(def, course) && (metrics[def.metric] ?? 0) >= target;
     const rec = ownedMap.get(def.id);
+    // `only` yalnız sunucunun kararı; API sözleşmesine girmiyor.
+    const pub: AchievementDef = { ...def };
+    delete pub.only;
     return {
-      ...def,
+      ...pub,
+      target,
       title: translate(lang, def.titleKey),
       hint: translate(lang, def.hintKey),
       done,
@@ -561,13 +701,17 @@ export async function markAchievementsSeen(userId: string, ids: string[]) {
  * Tahtanın tamamı (`achievementBoard`) her ölçüyü yeniden hesaplıyor; burada
  * gereken tek şey "hangileri açık". Profil kaydında o hesabı yaptırmak,
  * avatar değiştirmeyi otuz sorguya bağlamak olurdu.
+ *
+ * Kursun KARŞILIK rozetleri de sayılıyor (`unlockKeysOf`): `cloze300`
+ * kazanan, `artikel300`e bağlı parçayı da açmış olur. Kilit tablosu tek
+ * anahtar taşıyor ve öyle kalıyor; "ya bu ya karşılığı" kararı burada.
  */
 export async function unlockedAchievementIds(userId: string): Promise<Set<string>> {
   const rows = await db
     .select({ id: achievements.achievementId })
     .from(achievements)
     .where(eq(achievements.userId, userId));
-  return new Set(rows.map((r) => r.id));
+  return new Set(rows.flatMap((r) => unlockKeysOf(r.id)));
 }
 
 /** Profil başlığındaki özet — tahtanın tamamını çekmeden. */

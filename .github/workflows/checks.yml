@@ -434,6 +434,7 @@ jobs:
           npm run test:track
           npm run test:walkqueue
           npm run test:why
+          npm run test:achievements
       # Anadil ekseninin kapısı. Buradaki hata sessiz: anlam yanlış dilde
       # gelince uygulama çalışmaya devam eder, yalnız kullanıcı anlamadığı
       # dilde soru görür. En kritik kural sınanıyor — karşılık yoksa Türkçeye
