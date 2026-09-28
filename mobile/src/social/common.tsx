@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, BoltIcon } from "../ui/icons";
-import { useTheme, spacing, radii, softShadow, onTint, soft as softOf, ds } from "../theme";
+import { useTheme, spacing, radii, softShadow, onTint, onSolid, soft as softOf, ds } from "../theme";
 import type { Palette } from "../theme/colors";
 import type { ReactionKind } from "../api/social";
 import { READABLE_TEXT_MAX } from "../lib/useLayout";
@@ -81,7 +81,7 @@ export function IconTile({ icon: Icon, tint, size = 42, solid = false, iconSize 
     <View style={[{ width: size, height: size, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: solid ? tint : softOf(tint) }, solid ? softShadow(tint, 6) : {}]}>
       {/* Dolu karonun ikonu `onFill`: sabit beyaz koyu temada okunmuyordu
           (1.76-2.76, grafik eşiği 3.0). Bkz. `theme/colors.ts`. */}
-      <Icon color={solid ? colors.onFill : onTint(tint, colors)} size={iconSize ?? Math.round(size * 0.5)} />
+      <Icon color={solid ? onSolid(tint, colors) : onTint(tint, colors)} size={iconSize ?? Math.round(size * 0.5)} />
     </View>
   );
 }

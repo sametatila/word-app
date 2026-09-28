@@ -155,8 +155,8 @@ export function PremiumPaywall({
       <BackButton fallback="/profile" />
       <header className="mt-2 flex flex-col items-center text-center">
         <div
-          className="flex h-20 w-20 items-center justify-center rounded-card on-fill"
-          style={{ background: "var(--color-brand)", boxShadow: "0 12px 24px -10px var(--color-brand)" }}
+          className="flex h-20 w-20 items-center justify-center rounded-card"
+          style={{ background: "var(--brand-fill)", color: "var(--on-brand)", boxShadow: "0 12px 24px -10px var(--brand-fill)" }}
         >
           <CrownIcon size={42} />
         </div>
@@ -419,8 +419,8 @@ function PromoBox({ prefill }: { prefill: string }) {
           type="button"
           onClick={apply}
           disabled={busy || !code.trim()}
-          className="rounded-panel px-4 py-2 text-strong on-fill disabled:opacity-60"
-          style={{ background: "var(--color-brand)" }}
+          className="rounded-panel px-4 py-2 text-strong disabled:opacity-60"
+          style={{ background: "var(--brand-fill)", color: "var(--on-brand)" }}
         >
           {t("promo.apply")}
         </button>

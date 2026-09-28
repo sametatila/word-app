@@ -239,8 +239,8 @@ function AiConsentDialog({
           <div className="flex flex-col items-center gap-3 text-center">
             {/* Simge süs: kısa ekranda yerini sağlayıcı listesine bırakıyor. */}
             <span
-              className="flex h-[72px] w-[72px] items-center justify-center rounded-card on-fill glow-tint short:hidden"
-              style={{ background: "var(--color-brand)", "--tint-fill": "var(--color-brand)" } as React.CSSProperties}
+              className="flex h-[72px] w-[72px] items-center justify-center rounded-card glow-tint short:hidden"
+              style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
             >
               <Icon size={36} />
             </span>

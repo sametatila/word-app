@@ -14,6 +14,9 @@ export const orange = {
   500: "#f87612", 600: "#db5f08", 700: "#b44909", 800: "#8f3a0f", 900: "#74310f",
 } as const;
 
+/** Koyu temanın dolu turuncusu: beyaz yazıyla 4.60 (AA). Web `.dark --brand-fill`. */
+const DARK_FILL = "#c2530a";
+
 export type Palette = {
   primary: string; primaryStrong: string; primarySoft: string; onPrimary: string;
   /**
@@ -48,6 +51,12 @@ export type Palette = {
    * aynı - orada `primary` zaten 7.41 veriyor.
    */
   primaryText: string;
+  /**
+   * BEYAZ bir hap/düğme ÜSTÜNDE marka yazısı (dolu turuncu kartın içindeki
+   * "Başla" gibi). Açıkta 700 (5.39); koyuda `primaryText` (400) beyaz
+   * üstünde 2.3'e düşüyor, orada koyu dolgu tonu #c2530a (4.60).
+   */
+  primaryOnWhite: string;
   bg: string; surface: string; surface2: string; surfaceGlass: string; elevated: string;
   border: string; hairline: string;
   text: string; textMuted: string; textFaint: string;
@@ -104,7 +113,7 @@ export type Palette = {
 };
 
 export const light: Palette = {
-  primary: orange[500], primaryStrong: orange[600], primarySoft: orange[100], onPrimary: "#ffffff", onPrimaryMuted: "#ffffffcc", onPrimarySoft: orange[800], primaryText: orange[700],
+  primary: orange[500], primaryStrong: orange[600], primarySoft: orange[100], onPrimary: "#ffffff", onPrimaryMuted: "#ffffffcc", onPrimarySoft: orange[800], primaryText: orange[700], primaryOnWhite: orange[700],
   bg: "#f6f6f4", surface: "#ffffff", surface2: "#efefec", surfaceGlass: "rgba(255,255,255,0.72)", elevated: "#ffffff",
   border: "#e3e3df", hairline: "#ececea",
   text: "#1b1b1d", textMuted: "#66666c", textFaint: "#a3a3a8",
@@ -117,7 +126,11 @@ export const light: Palette = {
 };
 
 export const dark: Palette = {
-  primary: orange[400], primaryStrong: orange[500], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#1b1b1d", onPrimaryMuted: "rgba(27,27,29,0.80)", onPrimarySoft: orange[400], primaryText: orange[400],
+  /* Dolu turuncu koyu temada BEYAZ yazı taşıyor (Samet, 2026-09-28): 400 +
+     mürekkep 8.08 veriyordu ama "turuncunun üstünde siyah" koyu temanın tek
+     yabancı parçasıydı. 500 + beyaz 2.77 ile okunmuyor; #c2530a + beyaz 4.60
+     (AA). Yazı ve ikon olarak turuncu `primaryText` (400) parlak kalıyor. */
+  primary: DARK_FILL, primaryStrong: orange[700], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#ffffff", onPrimaryMuted: "#ffffffcc", onPrimarySoft: orange[400], primaryText: orange[400], primaryOnWhite: DARK_FILL,
   bg: "#111113", surface: "#1a1a1d", surface2: "#242428", surfaceGlass: "rgba(36,36,40,0.6)", elevated: "#242428",
   border: "#2e2e33", hairline: "#232327",
   text: "#f2f2f3", textMuted: "#9c9ca3", textFaint: "#6b6b72",
@@ -143,6 +156,15 @@ export const dark: Palette = {
  * Tanınmayan bir renk (ör. `textMuted`) olduğu gibi dönüyor: bu eşleme bir
  * düzeltme, bir dönüşüm değil.
  */
+/**
+ * DOLU karonun (zemin = `tint`) üstündeki ikon/yazı. Marka dolgusu kendi
+ * mürekkebini taşıyor (`onPrimary`, iki temada beyaz); öteki vurgular
+ * `onFill` (açıkta beyaz, koyuda mürekkep).
+ */
+export function onSolid(tint: string, colors: Palette): string {
+  return tint === colors.primary ? colors.onPrimary : colors.onFill;
+}
+
 export function onTint(tint: string, colors: Palette): string {
   if (tint === colors.primary) return colors.onPrimarySoft;
   if (tint === colors.success) return colors.successText;

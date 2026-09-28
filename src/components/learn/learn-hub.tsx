@@ -117,7 +117,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
 <p className="mt-1 text-body opacity-90">{t("learn.daily_pitch")}</p>
             <span
               className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-strong"
-              style={{ background: "var(--on-brand)", color: "var(--color-brand)" }}
+              style={{ background: "#ffffff", color: "var(--on-brand-inv)" }}
             >
               {t("common.start")} <ArrowRightIcon size={18} />
             </span>
