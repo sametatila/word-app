@@ -25,7 +25,7 @@ export const dynamic = "force-dynamic";
  * Cevap WebView önbelleğine yazıldığı için ardından gelen `new Audio(u)` ağa ikinci kez çıkmıyor.
  */
 const HTML = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;background:#14100e">
+<body style="margin:0;background:#111113">
 <script>
 (function () {
   var a = null;

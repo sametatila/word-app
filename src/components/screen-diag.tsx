@@ -72,7 +72,7 @@ export function ScreenDiag() {
   return (
     <div
       className="fixed left-2 top-2 z-50 rounded-panel px-3 py-2 font-mono text-micro leading-tight"
-      style={{ background: "rgba(20,16,14,0.92)", color: "#f4eee4" }}
+      style={{ background: "rgba(17,17,19,0.92)", color: "#efefec" }}
     >
       {rows.map(([k, v]) => (
         <div key={k} className="flex gap-2">

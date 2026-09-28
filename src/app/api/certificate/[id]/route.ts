@@ -85,15 +85,15 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   const rows = exam.sections
     .map(
       (s, i) =>
-        `<text x="72" y="${rowTop + i * 26}" font-size="15" fill="#5b4636">${esc(SECTION_TITLE_TARGET[target][s.id as ExamSectionId] ?? s.id)} · ${esc(SECTION_TITLE_KEYS[s.id as ExamSectionId] ? translate(lang, SECTION_TITLE_KEYS[s.id as ExamSectionId]) : s.id)}</text>` +
-        `<text x="380" y="${rowTop + i * 26}" font-size="15" fill="#5b4636" text-anchor="end">${esc(formatPercent(s.pct, lang))}</text>`,
+        `<text x="72" y="${rowTop + i * 26}" font-size="15" fill="#4d4d52">${esc(SECTION_TITLE_TARGET[target][s.id as ExamSectionId] ?? s.id)} · ${esc(SECTION_TITLE_KEYS[s.id as ExamSectionId] ? translate(lang, SECTION_TITLE_KEYS[s.id as ExamSectionId]) : s.id)}</text>` +
+        `<text x="380" y="${rowTop + i * 26}" font-size="15" fill="#4d4d52" text-anchor="end">${esc(formatPercent(s.pct, lang))}</text>`,
     )
     .join("");
   const candoRows = cando
     .map(
       (c, i) =>
-        `<text x="430" y="${rowTop + i * 44}" font-size="14" fill="#3b2a1e">✓ ${esc(c.de.length > 52 ? `${c.de.slice(0, 51)}…` : c.de)}</text>` +
-        `<text x="444" y="${rowTop + i * 44 + 17}" font-size="12" fill="#8a6a4f">${esc(c.tr.length > 56 ? `${c.tr.slice(0, 55)}…` : c.tr)}</text>`,
+        `<text x="430" y="${rowTop + i * 44}" font-size="14" fill="#1b1b1d">✓ ${esc(c.de.length > 52 ? `${c.de.slice(0, 51)}…` : c.de)}</text>` +
+        `<text x="444" y="${rowTop + i * 44 + 17}" font-size="12" fill="#66666c">${esc(c.tr.length > 56 ? `${c.tr.slice(0, 55)}…` : c.tr)}</text>`,
     )
     .join("");
   /*
@@ -105,27 +105,27 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   */
   const height = Math.max(608, rowTop + Math.max(exam.sections.length * 26, cando.length * 44) + 158);
   const disclaimerRows = [lang, ...(["tr", "en", "de"] as const).filter((l) => l !== lang)]
-    .map((l, i) => `<text x="400" y="${height - 112 + i * 16}" text-anchor="middle" font-size="11" fill="#8a6a4f">${esc(translate(l, "certw.disclaimer"))}</text>`)
+    .map((l, i) => `<text x="400" y="${height - 112 + i * 16}" text-anchor="middle" font-size="11" fill="#66666c">${esc(translate(l, "certw.disclaimer"))}</text>`)
     .join("");
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="${height}" viewBox="0 0 800 ${height}">
-  <rect width="800" height="${height}" rx="24" fill="#fbf6ef"/>
+  <rect width="800" height="${height}" rx="24" fill="#f8f8f6"/>
   <rect x="20" y="20" width="760" height="${height - 40}" rx="18" fill="none" stroke="#c8792d" stroke-width="3"/>
   <g font-family="sans-serif">
-    <text x="400" y="80" text-anchor="middle" font-size="20" fill="#8a6a4f" letter-spacing="4">LERNOMI</text>
-    <text x="400" y="120" text-anchor="middle" font-size="16" fill="#8a6a4f">${esc(kicker)}</text>
-    <text x="400" y="166" text-anchor="middle" font-size="34" font-weight="700" fill="#3b2a1e">${esc(title)}</text>
-    ${subtitle ? `<text x="400" y="196" text-anchor="middle" font-size="17" fill="#8a6a4f">${esc(subtitle)}</text>` : ""}
-    <text x="400" y="240" text-anchor="middle" font-size="18" fill="#5b4636">${esc(translate(lang, "certw.this_document"))}</text>
+    <text x="400" y="80" text-anchor="middle" font-size="20" fill="#66666c" letter-spacing="4">LERNOMI</text>
+    <text x="400" y="120" text-anchor="middle" font-size="16" fill="#66666c">${esc(kicker)}</text>
+    <text x="400" y="166" text-anchor="middle" font-size="34" font-weight="700" fill="#1b1b1d">${esc(title)}</text>
+    ${subtitle ? `<text x="400" y="196" text-anchor="middle" font-size="17" fill="#66666c">${esc(subtitle)}</text>` : ""}
+    <text x="400" y="240" text-anchor="middle" font-size="18" fill="#4d4d52">${esc(translate(lang, "certw.this_document"))}</text>
     <text x="400" y="278" text-anchor="middle" font-size="28" font-weight="700" fill="#c8792d">${name}</text>
-    <text x="400" y="306" text-anchor="middle" font-size="16" fill="#5b4636">${esc(translate(lang, "certw.awarded_to", { pct: formatPercent(exam.total, lang) }))}</text>
-    <text x="72" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">${esc(translate(lang, "certw.sections"))}</text>
-    ${cando.length ? `<text x="430" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">${esc(face.canDo)}</text>` : ""}
+    <text x="400" y="306" text-anchor="middle" font-size="16" fill="#4d4d52">${esc(translate(lang, "certw.awarded_to", { pct: formatPercent(exam.total, lang) }))}</text>
+    <text x="72" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#66666c">${esc(translate(lang, "certw.sections"))}</text>
+    ${cando.length ? `<text x="430" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#66666c">${esc(face.canDo)}</text>` : ""}
     ${rows}
     ${candoRows}
     ${disclaimerRows}
-    <text x="72" y="${height - 44}" font-size="14" fill="#8a6a4f">${date}</text>
-    <text x="728" y="${height - 44}" text-anchor="end" font-size="14" fill="#8a6a4f">${esc(translate(lang, "certw.pass_rule"))}</text>
+    <text x="72" y="${height - 44}" font-size="14" fill="#66666c">${date}</text>
+    <text x="728" y="${height - 44}" text-anchor="end" font-size="14" fill="#66666c">${esc(translate(lang, "certw.pass_rule"))}</text>
   </g>
 </svg>`;
   return new NextResponse(svg, { headers: { "content-type": "image/svg+xml; charset=utf-8", "cache-control": "private, max-age=3600" } });

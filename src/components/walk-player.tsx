@@ -1751,7 +1751,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       {diag ? (
         <div
           className="mt-4 rounded-panel px-3 py-2 font-mono text-micro leading-snug"
-          style={{ background: "rgba(20,16,14,0.92)", color: "#f4eee4" }}
+          style={{ background: "rgba(17,17,19,0.92)", color: "#efefec" }}
         >
           <div style={{ opacity: 0.6 }}>dinlemeler · yol: tarayıcı</div>
           {diag.length ? diag.map((l, i) => <div key={i}>{l}</div>) : <div>—</div>}

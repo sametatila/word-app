@@ -75,8 +75,8 @@ export const viewport: Viewport = {
    * tek renk.
    */
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fbf7f2" },
-    { media: "(prefers-color-scheme: dark)", color: "#17120e" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f6f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#111113" },
   ],
   width: "device-width",
   initialScale: 1,

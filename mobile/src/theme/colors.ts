@@ -105,29 +105,29 @@ export type Palette = {
 
 export const light: Palette = {
   primary: orange[500], primaryStrong: orange[600], primarySoft: orange[100], onPrimary: "#ffffff", onPrimaryMuted: "#ffffffcc", onPrimarySoft: orange[800], primaryText: orange[700],
-  bg: "#fbf7f2", surface: "#ffffff", surface2: "#f5efe8", surfaceGlass: "rgba(255,255,255,0.72)", elevated: "#ffffff",
-  border: "#ece3d8", hairline: "#f1eae0",
-  text: "#241a12", textMuted: "#7c6c5d", textFaint: "#b7a695",
+  bg: "#f6f6f4", surface: "#ffffff", surface2: "#efefec", surfaceGlass: "rgba(255,255,255,0.72)", elevated: "#ffffff",
+  border: "#e3e3df", hairline: "#ececea",
+  text: "#1b1b1d", textMuted: "#66666c", textFaint: "#a3a3a8",
   success: "#2f9a61", danger: "#dc3f55", streak: "#b8940f", info: "#1b93ac", accent: "#9256bc",
-  streakDeep: "#86690e", badgeInk: "#1e1916", onFill: "#ffffff",
+  streakDeep: "#86690e", badgeInk: "#1b1b1d", onFill: "#ffffff",
   successText: "#237a4c", dangerText: "#b62e43", streakText: "#86690e", infoText: "#16748a", accentText: "#77439d",
   successSoft: "#e2f2e9", dangerSoft: "#fde6ea",
   gradientA: ["#fb8f2a", "#f87612"], gradientB: ["#ffab54", "#db5f08"],
-  shadowTint: "#5a3418", shadowStrength: 0.16,
+  shadowTint: "#000000", shadowStrength: 0.1,
 };
 
 export const dark: Palette = {
-  primary: orange[400], primaryStrong: orange[500], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#1a1008", onPrimaryMuted: "rgba(26,16,8,0.80)", onPrimarySoft: orange[400], primaryText: orange[400],
-  bg: "#17120e", surface: "#211a14", surface2: "#2b221a", surfaceGlass: "rgba(43,34,26,0.6)", elevated: "#2b221a",
-  border: "#3a2e23", hairline: "#2b221a",
-  text: "#f6efe6", textMuted: "#a9998a", textFaint: "#7c6c5d",
+  primary: orange[400], primaryStrong: orange[500], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#1b1b1d", onPrimaryMuted: "rgba(27,27,29,0.80)", onPrimarySoft: orange[400], primaryText: orange[400],
+  bg: "#111113", surface: "#1a1a1d", surface2: "#242428", surfaceGlass: "rgba(36,36,40,0.6)", elevated: "#242428",
+  border: "#2e2e33", hairline: "#232327",
+  text: "#f2f2f3", textMuted: "#9c9ca3", textFaint: "#6b6b72",
   success: "#6fd19b", danger: "#f79ba6", streak: "#ddb62c", info: "#6fd1e3", accent: "#cda6e8",
-  streakDeep: "#86690e", badgeInk: "#1e1916", onFill: "#1e1916",
+  streakDeep: "#86690e", badgeInk: "#1b1b1d", onFill: "#1b1b1d",
   // Koyu temada dolgu ve yazı ayrımı gerekmiyor: bu tonlar yüzey üstünde
   // 8.3-9.7 veriyor. Aynı değerler, ikinci bir ton uydurulmadı.
   successText: "#6fd19b", dangerText: "#f79ba6", streakText: "#ddb62c", infoText: "#6fd1e3", accentText: "#cda6e8",
   successSoft: "rgba(111,209,155,0.16)", dangerSoft: "rgba(247,155,166,0.16)",
-  gradientA: ["#fb8f2a", "#db5f08"], gradientB: ["#f87612", "#8f3a0f"],
+  gradientA: ["#fb8f2a", "#db5f08"], gradientB: ["#f87612", "#b44909"],
   shadowTint: "#000000", shadowStrength: 0.45,
 };
 

@@ -31,8 +31,8 @@ export default async function Image() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "0 90px",
-          background: "linear-gradient(135deg, #2c2521 0%, #1e1916 55%, #14100e 100%)",
-          color: "#f4eee4",
+          background: "linear-gradient(135deg, #26262a 0%, #1b1b1d 55%, #111113 100%)",
+          color: "#efefec",
           fontFamily: "sans-serif",
         }}
       >
@@ -62,7 +62,7 @@ export default async function Image() {
               alignItems: "center",
               justifyContent: "center",
               background: "linear-gradient(135deg, #fb8f2a, #db5f08)",
-              color: "#1a1008",
+              color: "#1b1b1d",
               fontSize: 38,
               fontWeight: 800,
             }}
@@ -85,7 +85,7 @@ export default async function Image() {
           {t("meta.tagline")}
         </div>
 
-        <div style={{ display: "flex", fontSize: 34, color: "#a79684", marginTop: 30 }}>
+        <div style={{ display: "flex", fontSize: 34, color: "#a3a3a8", marginTop: 30 }}>
           {t("meta.og_sub")}
         </div>
 

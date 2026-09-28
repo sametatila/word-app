@@ -80,17 +80,17 @@
    * Soğuk gri değil: sıcak bir maskotun çevresinde nötr grinin kendisi mavi
    * görünüyor.
    */
-  --color-ink-50: #fbf8f4;
-  --color-ink-100: #f4eee4;
-  --color-ink-200: #e8dece;
-  --color-ink-300: #d2c4af;
-  --color-ink-400: #a79684;
-  --color-ink-500: #7c6c5d;
-  --color-ink-600: #5a4e43;
-  --color-ink-700: #40372f;
-  --color-ink-800: #2c2521;
-  --color-ink-900: #1e1916;
-  --color-ink-950: #14100e;
+  --color-ink-50: #f8f8f6;
+  --color-ink-100: #efefec;
+  --color-ink-200: #e3e3df;
+  --color-ink-300: #cacac6;
+  --color-ink-400: #a3a3a8;
+  --color-ink-500: #66666c;
+  --color-ink-600: #4d4d52;
+  --color-ink-700: #38383c;
+  --color-ink-800: #26262a;
+  --color-ink-900: #1b1b1d;
+  --color-ink-950: #111113;
 
   /*
    * Turuncu — MARKANIN KENDİSİ, logo zemininden. Rampa mobil uygulamanınkiyle
@@ -404,9 +404,9 @@
  * ── GÖLGE ─────────────────────────────────────────────────────────────────
  *
  * Mobil `softShadow(color, elevation)`: iOS'ta y ofseti yüksekliğin 0.7'si,
- * bulanıklık 1.6'sı, opaklık 0.16. Aynı formül burada üç basamağa dondurulmuş
- * halde. Renk de aynı: `#5a3418` — nötr siyah yerine sıcak bir kahve, çünkü
- * zemin de sıcak; siyah gölge kremin üstünde gri bir kir gibi duruyor.
+ * bulanıklık 1.6'sı, opaklık 0.1. Aynı formül burada üç basamağa dondurulmuş
+ * halde. Renk nötr siyah: B paletinde (2026-09-28) zemin kremden nötre döndü,
+ * eski sıcak kahve gölge (`#5a3418`) nötr zeminde çamur gibi duruyordu.
  *
  * `@theme` İÇİNDE DEĞİL, `:root` içinde: Tailwind `--shadow-*` anahtarlarını
  * ürettiği sınıfın içine DEĞER olarak gömüyor, yani `.dark` altında yeniden
@@ -442,16 +442,17 @@
  *
  * Saydamlık %40: dolgu rengi tam opak konsa gölge bir halka gibi duruyor;
  * mobilin 0.16 opaklığı + Android'in kendi elevation gölgesi birlikte bu
- * yumuşaklığı veriyor.
+ * yumuşaklığı veriyor. Koyu temada %15 (`--glow-mix`): koyu zeminde renkli
+ * hale ekranı boğuyordu (B paleti, 2026-09-28).
  */
 @utility glow-tint-sm {
-  box-shadow: 0 4px 10px -2px color-mix(in srgb, var(--tint-fill) 40%, transparent);
+  box-shadow: 0 4px 10px -2px color-mix(in srgb, var(--tint-fill) var(--glow-mix), transparent);
 }
 @utility glow-tint {
-  box-shadow: 0 7px 16px -4px color-mix(in srgb, var(--tint-fill) 40%, transparent);
+  box-shadow: 0 7px 16px -4px color-mix(in srgb, var(--tint-fill) var(--glow-mix), transparent);
 }
 @utility glow-tint-lg {
-  box-shadow: 0 11px 26px -6px color-mix(in srgb, var(--tint-fill) 40%, transparent);
+  box-shadow: 0 11px 26px -6px color-mix(in srgb, var(--tint-fill) var(--glow-mix), transparent);
 }
 
 /*
@@ -505,14 +506,14 @@
    * #a9998a'sı alındı (6.23; web'in eski #a79684'ü 6.00 — ikisi de geçiyordu,
    * o yüzden referans Android oldu). Sönük metin iki uygulamada BİREBİR aynı.
    */
-  --bg: #fbf7f2;
+  --bg: #f6f6f4;
   --surface: #ffffff;
-  --surface-2: #f5efe8;
-  --border: #ece3d8;
+  --surface-2: #efefec;
+  --border: #e3e3df;
   /* Kart içi ayraç — kenarlıktan daha sönük. Mobilde `hairline`. */
-  --hairline: #f1eae0;
-  --text: #241a12;
-  --text-muted: #7c6c5d;
+  --hairline: #ececea;
+  --text: #1b1b1d;
+  --text-muted: #66666c;
   /*
    * Yumuşak marka dolgusu — mobil `primarySoft` (`colors.ts`).
    *
@@ -545,7 +546,7 @@
    * şevronu mobildekinden koyu çıkıyordu. Taşıyıcı DEĞİL: yalnız yön gösteren
    * süs öğelerinde (şevron gibi), metinde değil.
    */
-  --text-faint: #b7a695;
+  --text-faint: #a3a3a8;
   /*
    * SEMANTİK renk adları — mobil paletinde `success` / `danger` var, web'de
    * yalnız görsel adlar (`mint` / `rose`) vardı. Deneme sınavı ekranları
@@ -564,12 +565,13 @@
   /* Opaklık 0.14 yazılıydı; mobil formülün sabiti 0.16 ve öteki iki basamak
      onu kullanıyor. Tek basamağın ayrı bir değer taşımasının yazılı bir
      sebebi yoktu - türetildiği formüle eşitlendi (bkz. web-parity 11.46). */
-  --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.16); /* mobil elevation 6 */
-  --shadow-soft: 0 7px 16px -4px rgb(90 52 24 / 0.16); /* mobil elevation 10 */
-  --shadow-soft-lg: 0 11px 26px -6px rgb(90 52 24 / 0.16); /* mobil elevation 16 */
+  --shadow-soft-sm: 0 4px 10px -2px rgb(0 0 0 / 0.1); /* mobil elevation 6 */
+  --shadow-soft: 0 7px 16px -4px rgb(0 0 0 / 0.1); /* mobil elevation 10 */
+  --shadow-soft-lg: 0 11px 26px -6px rgb(0 0 0 / 0.1); /* mobil elevation 16 */
   /* Sonuç katmanı YUKARI doğru gölge veriyor: altındaki içerikten
      ayrıldığı tek yer üst kenarı. */
-  --shadow-sheet: 0 -10px 28px -12px rgb(90 52 24 / 0.3);
+  --shadow-sheet: 0 -10px 28px -12px rgb(0 0 0 / 0.18);
+  --glow-mix: 40%;
 
   color-scheme: light;
 }
@@ -596,7 +598,7 @@
    * Açık tema değişmedi - orada iki platform zaten aynı (beyaz / 500, 2.77).
    */
   --brand-fill: var(--color-brand-400);
-  --on-brand: #1a1008;
+  --on-brand: #1b1b1d;
   --color-mint: var(--color-mint-300);
   --color-rose: var(--color-rose-300);
   --color-flame: var(--color-flame-300);
@@ -608,19 +610,19 @@
    * maskotun kontur renginden türetilmişti ve bir tık daha soğuk/koyuydu;
    * mobilinki aynı fikri biraz daha sıcak tutuyor. İki taraf tek değer.
    */
-  --bg: #17120e;
-  --surface: #211a14;
-  --surface-2: #2b221a;
-  --border: #3a2e23;
-  --hairline: #2b221a;
-  --text: #f6efe6;
-  --text-muted: #a9998a;
+  --bg: #111113;
+  --surface: #1a1a1d;
+  --surface-2: #242428;
+  --border: #2e2e33;
+  --hairline: #232327;
+  --text: #f2f2f3;
+  --text-muted: #9c9ca3;
   /* Koyu temada mobil `primarySoft` bir ALFA: rgba(248,118,18,0.16). */
   --brand-soft: color-mix(in srgb, var(--color-brand-500) 16%, transparent);
   /* Koyu temada zemin alfa: marka 400 orada 5.93 veriyor, ton değişmiyor. */
   --on-brand-soft: var(--color-brand-400);
   --on-fill: var(--color-ink-900);
-  --text-faint: #7c6c5d;
+  --text-faint: #6b6b72;
   /* Koyu temada mobil de alfa kullanıyor: rgba(…,0.16). */
   --color-success-soft: color-mix(in srgb, var(--color-mint-300) 16%, transparent);
   --color-danger-soft: color-mix(in srgb, var(--color-rose-300) 16%, transparent);
@@ -634,6 +636,7 @@
   --shadow-soft: 0 7px 16px -4px rgb(0 0 0 / 0.45);
   --shadow-soft-lg: 0 11px 26px -6px rgb(0 0 0 / 0.5);
   --shadow-sheet: 0 -10px 28px -10px rgb(0 0 0 / 0.6);
+  --glow-mix: 15%;
 
   color-scheme: dark;
 }

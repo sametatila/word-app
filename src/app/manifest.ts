@@ -36,7 +36,7 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
      * veriyor, bu yalnız onun yetişemediği yerdeki yedek.
      */
     background_color: "#fa7c13",
-    theme_color: "#fbf7f2",
+    theme_color: "#f6f6f4",
     lang,
     categories: ["education"],
     // Ana ekran simgesine uzun basınca çıkan hızlı erişimler.

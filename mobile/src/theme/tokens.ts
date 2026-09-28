@@ -100,7 +100,7 @@ export const lineHeightRatio: Record<keyof typeof typography, number> = {
 };
 
 /** Yumuşak modern gölge (fitness örneği): geniş, düşük opaklık. */
-export function softShadow(color: string, elevation = 8, opacity = 0.16) {
+export function softShadow(color: string, elevation = 8, opacity = 0.1) {
   return Platform.select({
     ios: { shadowColor: color, shadowOffset: { width: 0, height: elevation * 0.7 }, shadowOpacity: opacity, shadowRadius: elevation * 1.6 },
     android: { elevation, shadowColor: color },

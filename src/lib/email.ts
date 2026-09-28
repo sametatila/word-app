@@ -146,8 +146,8 @@ export async function sendEmail(
  *
  * E-posta istemcileri CSS değişkenini (`var(--bg)`) atıyor, o yüzden buradaki
  * her renk elle yazılıyor. Yazılan değerler `globals.css`in AÇIK tema
- * jetonları: `--bg` #fbf7f2, `--text` #241a12, `--text-muted` #7c6c5d,
- * `--text-faint` #b7a695, `--border` #ece3d8, `--surface` #ffffff, marka
+ * jetonları: `--bg` #f6f6f4, `--text` #1b1b1d, `--text-muted` #66666c,
+ * `--text-faint` #a3a3a8, `--border` #e3e3df, `--surface` #ffffff, marka
  * yazısı `--color-brand` (brand-700 #b44909), düğme `--brand-fill`
  * (brand-500 #f87612) + `--on-brand` beyaz.
  *
@@ -173,13 +173,13 @@ function escapeHtml(s: string): string {
 
 function template(lang: NativeLang, heading: string, body: string, cta: string, url: string): string {
   const safeUrl = escapeHtml(url);
-  return `<!doctype html><html lang="${lang}"><body style="margin:0;background:#fbf7f2;font-family:-apple-system,Segoe UI,sans-serif;color:#241a12">
+  return `<!doctype html><html lang="${lang}"><body style="margin:0;background:#f6f6f4;font-family:-apple-system,Segoe UI,sans-serif;color:#1b1b1d">
   <div style="max-width:480px;margin:0 auto;padding:32px 24px">
     <div style="font-size:22px;font-weight:800;color:#b44909;margin-bottom:16px">Lernomi</div>
     <h1 style="font-size:20px;margin:0 0 12px">${heading}</h1>
-    <p style="font-size:15px;line-height:1.6;color:#7c6c5d;margin:0 0 24px">${body}</p>
+    <p style="font-size:15px;line-height:1.6;color:#66666c;margin:0 0 24px">${body}</p>
     <a href="${safeUrl}" style="display:inline-block;background:#f87612;color:#ffffff;text-decoration:none;padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px">${cta}</a>
-    <p style="font-size:12px;color:#b7a695;margin:28px 0 0;word-break:break-all">${translate(lang, "email.fallback_link", { url: safeUrl })}</p>
+    <p style="font-size:12px;color:#a3a3a8;margin:28px 0 0;word-break:break-all">${translate(lang, "email.fallback_link", { url: safeUrl })}</p>
   </div></body></html>`;
 }
 
@@ -192,13 +192,13 @@ function template(lang: NativeLang, heading: string, body: string, cta: string, 
  * Kod büyük ve seçilebilir duruyor, gerisi metin.
  */
 function codeTemplate(lang: NativeLang, heading: string, body: string, code: string, note: string): string {
-  return `<!doctype html><html lang="${lang}"><body style="margin:0;background:#fbf7f2;font-family:-apple-system,Segoe UI,sans-serif;color:#241a12">
+  return `<!doctype html><html lang="${lang}"><body style="margin:0;background:#f6f6f4;font-family:-apple-system,Segoe UI,sans-serif;color:#1b1b1d">
   <div style="max-width:480px;margin:0 auto;padding:32px 24px">
     <div style="font-size:22px;font-weight:800;color:#b44909;margin-bottom:16px">Lernomi</div>
     <h1 style="font-size:20px;margin:0 0 12px">${heading}</h1>
-    <p style="font-size:15px;line-height:1.6;color:#7c6c5d;margin:0 0 20px">${body}</p>
-    <div style="font-size:32px;font-weight:800;letter-spacing:8px;background:#ffffff;border:1px solid #ece3d8;border-radius:12px;padding:18px 12px;text-align:center">${escapeHtml(code)}</div>
-    <p style="font-size:12px;color:#b7a695;margin:24px 0 0;line-height:1.6">${note}</p>
+    <p style="font-size:15px;line-height:1.6;color:#66666c;margin:0 0 20px">${body}</p>
+    <div style="font-size:32px;font-weight:800;letter-spacing:8px;background:#ffffff;border:1px solid #e3e3df;border-radius:12px;padding:18px 12px;text-align:center">${escapeHtml(code)}</div>
+    <p style="font-size:12px;color:#a3a3a8;margin:24px 0 0;line-height:1.6">${note}</p>
   </div></body></html>`;
 }
 

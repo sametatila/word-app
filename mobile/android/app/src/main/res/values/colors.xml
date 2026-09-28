@@ -3,7 +3,7 @@
     <color name="ic_launcher_background">#FA7C13</color>
     <!-- Pencere zemini: JS tema zeminiyle aynı (theme/colors.ts bg) — açılışta ve tema geçişinde
          beyaz/siyah flaş olmasın. Koyu değer values-night'ta. -->
-    <color name="window_bg">#FBF7F2</color>
+    <color name="window_bg">#F6F6F4</color>
     <!-- Bildirim vurgu rengi: panelde küçük ikonun ve uygulama adının rengi, Android 12+
          ikon dairesinin zemini. Tek değer, values-night'ta karşılığı YOK: sistem açık/koyu
          panelde metin kontrastını bu rengin üstünden kendisi ayarlıyor, beyaz ikon da
