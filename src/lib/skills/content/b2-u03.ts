@@ -105,7 +105,7 @@ export const b2U03: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 3,
-    title: "Sehr geehrte Damen und Herren",
+    title: "Vier Monate ohne Antwort",
     genre: "formal",
     intro: "Bir müşteri üçüncü kez yazıyor. Öfke tonla mı, dilbilgisiyle mi taşınıyor?",
     gloss: [

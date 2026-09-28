@@ -274,7 +274,7 @@ export const a2U06: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 6,
-    title: "sollen, dürfen und „mir ist …“",
+    title: "Was der Arzt sagt",
     genre: "grammar",
     intro: "Aktarılan tavsiye, izin ve belirtinin hâli. Üçü de kolayca karışır.",
     gloss: [

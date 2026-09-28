@@ -306,7 +306,7 @@ export const a1U20: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 20,
-    title: "Danke, aber leider …",
+    title: "Keine Zeit am Samstag",
     genre: "message",
     intro: "Bir arkadaşın davetini reddet — ama kapıyı açık bırak.",
     gloss: [

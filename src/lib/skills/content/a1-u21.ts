@@ -150,7 +150,7 @@ export const a1U21: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 21,
-    title: "Einen Termin machen",
+    title: "Ein Anruf in der Praxis",
     genre: "phone",
     intro: "Muayenehaneye telefon. Randevu alınıyor.",
     gloss: [
@@ -307,7 +307,7 @@ export const a1U21: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 21,
-    title: "Ich bin krank",
+    title: "Krank zu Hause",
     genre: "message",
     intro: "Hasta olduğun için gelemeyeceğini haber ver.",
     gloss: [

@@ -282,7 +282,7 @@ export const a2U07: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 7,
-    title: "Ich habe mir den Knöchel verletzt",
+    title: "Kleine Verletzungen",
     genre: "grammar",
     intro: "Vücudunun bir yerini incittiğini söylemenin Almanca yolu. Türkçeden birebir çevrilmez.",
     gloss: [

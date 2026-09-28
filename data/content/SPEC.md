@@ -49,8 +49,10 @@ kapı geçerlidir, belge düzeltilir. Konuşmalar: `data/conversations-plan/SPEC
   aynı ünitedeki başka egzersizin başlığı. A1–A2'de yalnız basit sözcükler; büyük
   harf yalnız ilk sözcükte ve özel adlarda. Hedef dildeki başlık çevrilmez
   (`nativeTitles` yalnız Türkçe yazılmış başlığı anadile çeviriyor), yani yeni
-  başlık anadil sözlüğüne girmez. Kapı İngilizce kursta hata (`test:content`);
-  Almanca kursta konuşma adını taşıyan 180 başlık var, hepsi konu adı, kapı dışı.
+  başlık anadil sözlüğüne girmez. Kapı iki kursta da hata (`test:content`), bir
+  farkla: Almanca kursta başlık KENDİ ünitesinin konuşma adını taşıyabilir (178
+  başlık, hepsi konu adı: „Die Hausordnung“); başka ünitenin konuşma adı hata.
+  Ünite, seviyenin konuşma sırasıyla dörderli dilimdir.
 - `gloss`: her `de` metinde geçer (`data/meanings/contains.mjs`; okuma/dinlemede
   soru ve şıklar da sayılır), aynı madde iki kez yok, `tr` dolu.
 - **Okuma/dinleme:** ≥ 3 soru, her soruda `explain`. `mcq`/`truefalse` 2–4 şık;

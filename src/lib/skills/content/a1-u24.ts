@@ -331,7 +331,7 @@ export const a1U24: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 24,
-    title: "Mein Wochenende",
+    title: "Mein letztes Wochenende",
     genre: "forum",
     intro: "Hafta sonunu geçmiş zamanla anlat.",
     gloss: [

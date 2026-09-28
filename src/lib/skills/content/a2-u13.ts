@@ -281,7 +281,7 @@ export const a2U13: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 13,
-    title: "als, wie und am …sten",
+    title: "Die billigste Jacke",
     genre: "grammar",
     intro: "Karşılaştırma ile en üstünlük. İkisinde de klasik bir hata var.",
     gloss: [

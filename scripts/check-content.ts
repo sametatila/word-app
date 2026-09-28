@@ -195,33 +195,46 @@ function checkSkills(list: SkillExercise[]) {
   for (const [k, u] of baslik)
     if (u.size > 1) E("[skills]", `başlık iki ünitede birden: "${k}" → ünite ${[...u].sort((a, b) => a - b).join(", ")}`);
 
-  /* BAŞLIK METNİN KONUSU (İngilizce kurs, 2026-09-28). Patika'da beceri kartı
-     konuşma kartlarının arasında duruyor. İngilizce kursta 750 başlığın 439'u
-     aynı ünitenin konuşma adını tekrar ediyordu ("Writing a résumé" hem
-     konuşma hem okuma) ve 197'si egzersizin kendi kalıp cümlesiydi ("I had
-     finished my degree before I started there"): öğrenci kartın neyle ilgili
-     olduğunu göremiyordu. Kural `data/content/SPEC.md` "Başlık". Almanca kurs
-     bu kapının DIŞINDA: orada 180 başlık konuşma adını taşıyor ama hepsi konu
-     adı; ayrıca ele alınacak. */
+  /* BAŞLIK METNİN KONUSU (İngilizce kurs 2026-09-28, Almanca aynı gün).
+     Patika'da beceri kartı konuşma kartlarının arasında duruyor. İngilizce
+     kursta 750 başlığın 439'u aynı ünitenin konuşma adını tekrar ediyordu
+     ("Writing a résumé" hem konuşma hem okuma) ve 197'si egzersizin kendi
+     kalıp cümlesiydi ("I had finished my degree before I started there"):
+     öğrenci kartın neyle ilgili olduğunu göremiyordu. Kural
+     `data/content/SPEC.md` "Başlık".
+     Almanca kursta dört kural var, biri gevşek: konuşma adı yalnız BAŞKA
+     ünitenin konuşmasıysa hata. Aynı ünitenin konuşma adını taşıyan 178
+     başlık gerçek konu adı ("Die Hausordnung" hem konuşma hem okuma), üslup
+     kararı; başka ünitenin adı ise öğrenciye o konuşmayı açtığını sandırıyor
+     (a1-u21 "Einen Termin machen", konuşması ünite 24'te). Ünite = seviyenin
+     konuşma sırasıyla dörderli dilim (`scripts/lib/vocab-gate.cjs` `cumFor`). */
   const norm = (s: string) => foldSentence(s);
-  const convTitles = new Map<string, Set<string>>();
+  /** "kurs seviye başlık" → konuşmanın ünite(ler)i. */
+  const convTitles = new Map<string, Set<number>>();
+  const convIndex = new Map<string, number>();
   for (const c of CONVERSATIONS) {
-    const k = `${c.course} ${c.level}`;
-    const s = convTitles.get(k) ?? new Set<string>();
-    s.add(norm(c.title)); convTitles.set(k, s);
+    const lv = `${c.course} ${c.level}`;
+    const i = convIndex.get(lv) ?? 0; convIndex.set(lv, i + 1);
+    const k = `${lv} ${norm(c.title)}`;
+    const s = convTitles.get(k) ?? new Set<number>();
+    s.add(Math.floor(i / 4) + 1); convTitles.set(k, s);
   }
   const inUnit = new Map<string, string[]>();
   for (const e of list) {
-    if (e.unit == null || e.course !== "en") continue;
+    const course = e.course ?? "de";
+    if (e.unit == null || (course !== "en" && course !== "de")) continue;
     const w = `[skills] ${e.id} «${e.title}»`;
     const t = norm(e.title);
-    if (convTitles.get(`en ${e.level}`)?.has(t)) E(w, "başlık bir konuşmanın adı — metnin konusunu ver");
+    const convUnits = convTitles.get(`${course} ${e.level} ${t}`);
+    if (course === "en" && convUnits) E(w, "başlık bir konuşmanın adı — metnin konusunu ver");
+    if (course === "de" && convUnits && !convUnits.has(e.unit))
+      E(w, `başlık başka ünitenin konuşması (ünite ${[...convUnits].join(", ")}) — metnin konusunu ver`);
     const drill = ((e as { tasks?: { answer?: string; alternatives?: string[] }[] }).tasks ?? [])
       .flatMap((k) => [k.answer, ...(k.alternatives ?? [])])
       .filter((x): x is string => typeof x === "string");
     if (drill.some((a) => norm(a) === t)) E(w, "başlık egzersizin kalıp cümlesi — metnin konusunu ver");
     if (/…|\.\.\./.test(e.title)) E(w, "başlıkta üç nokta — kalıp değil konu");
-    const k = `${e.level} ${e.unit}`;
+    const k = `${course} ${e.level} ${e.unit}`;
     const seen = inUnit.get(k) ?? [];
     if (seen.includes(t)) E(w, "başlık aynı ünitede iki egzersizde");
     seen.push(t); inUnit.set(k, seen);

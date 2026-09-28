@@ -342,7 +342,7 @@ export const b1U07: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 7,
-    title: "Je mehr, desto …",
+    title: "Eine neue Gewohnheit",
     genre: "opinion",
     intro: "Bir şeyin artmasıyla neyin değiştiğini anlat. Orantıyı doğru kur.",
     minutes: 12,

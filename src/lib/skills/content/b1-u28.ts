@@ -297,7 +297,7 @@ export const b1U28: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 28,
-    title: "Preise vergleichen",
+    title: "Drei Händler, ein Gerät",
     genre: "report",
     intro: "Bir alışverişi karşılaştır. Belirsiz öncülden sonra 'was' gelir.",
     minutes: 8,

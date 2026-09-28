@@ -263,7 +263,7 @@ export const a1U17: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 17,
-    title: "Man darf nicht …",
+    title: "Regeln im Haus",
     genre: "grammar",
     intro: "Kural ve yardım isteme cümleleri.",
     gloss: [

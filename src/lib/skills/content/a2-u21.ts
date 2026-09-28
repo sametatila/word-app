@@ -365,7 +365,7 @@ export const a2U21: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 21,
-    title: "Zu viel am Handy?",
+    title: "Meine Zeit am Handy",
     genre: "forum",
     intro: "Foruma yaz: telefonu ne zaman eline alıyorsun, ne değiştirmek istiyorsun?",
     gloss: [
