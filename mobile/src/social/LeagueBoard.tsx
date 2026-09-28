@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { social, tierName, type LeagueRow, type LeagueView } from "../api/social";
+import { LEAGUE_TIERS, social, tierName, type LeagueRow, type LeagueView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { ReportSheet } from "../ui/ReportSheet";
@@ -81,9 +81,10 @@ export function LeagueBoard() {
         </View>
       )}
       <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
+        {/* "En üst ligdesin" yalnız en üst ligde (küçük grupta bronzda da çıkıyordu). */}
         {view.promote > 0
           ? t("league.explain_up", { n: view.promote })
-          : view.rows.length >= 2 && view.demote === 0
+          : view.rows.length >= 2 && view.tier >= LEAGUE_TIERS.length - 1
             ? t("league.explain_top")
             : t("league.explain_none")}
         {view.demote > 0 ? ` · ${t("league.explain_down", { n: view.demote })}` : ""}

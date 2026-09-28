@@ -8,6 +8,7 @@ import { ReportDialog } from "@/components/report-dialog";
 import { EmptyCard } from "@/components/empty-card";
 import { RowSkeleton, SkeletonCard, SkeletonLine, SkeletonPill } from "@/components/skeleton";
 import { social, tierKey, type LeagueRowView, type LeagueView } from "@/lib/social/client";
+import { LEAGUE_TIERS } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 
@@ -167,11 +168,13 @@ export function LeagueBoard() {
           </ol>
         )}
 
-        {/* Açıklama Android'de `micro`, sönük, ortalı ve üstünde 12 boşluk. */}
+        {/* Açıklama Android'de `micro`, sönük, ortalı ve üstünde 12 boşluk.
+            "En üst ligdesin" yalnız en üst ligde: küçük grupta (5 kişiden az)
+            yükselen de düşen de sıfır ve bronzda da bu cümle çıkıyordu. */}
         <p className="muted mt-3 text-center text-micro">
           {view.promote > 0
             ? t("league.explain_up", { n: view.promote })
-            : view.rows.length >= 2 && view.demote === 0
+            : view.rows.length >= 2 && view.tier >= LEAGUE_TIERS.length - 1
               ? t("league.explain_top")
               : t("league.explain_none")}
           {view.demote > 0 ? ` · ${t("league.explain_down", { n: view.demote })}` : ""}
