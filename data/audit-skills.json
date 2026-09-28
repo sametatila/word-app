@@ -40,6 +40,11 @@
   "detail": "\"aussehen\""
  },
  {
+  "id": "a1-u5-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "a1-u5-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"glauben\""
@@ -110,6 +115,11 @@
   "detail": "\"zurückgeben\""
  },
  {
+  "id": "a1-u13-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"genau\""
+ },
+ {
   "id": "a1-u13-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Haltestelle\""
@@ -160,6 +170,11 @@
   "detail": "\"üben\""
  },
  {
+  "id": "a1-u18-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "a1-u18-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"funktionieren\""
@@ -170,14 +185,29 @@
   "detail": "\"üben\""
  },
  {
+  "id": "a1-u18-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "a1-u19-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"regnen\""
  },
  {
+  "id": "a1-u20-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Zahl\""
+ },
+ {
   "id": "a1-u20-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"schade\""
+ },
+ {
+  "id": "a1-u20-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "a1-u20-w2",
@@ -220,6 +250,11 @@
   "detail": "\"zuhören\""
  },
  {
+  "id": "a2-u02-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "a2-u03-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"schaffen\""
@@ -245,9 +280,24 @@
   "detail": "\"auswendig\""
  },
  {
+  "id": "a2-u05-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"reagieren\""
+ },
+ {
   "id": "a2-u05-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"versuchen\""
+ },
+ {
+  "id": "a2-u06-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "a2-u06-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"offen\""
  },
  {
   "id": "a2-u06-w1",
@@ -275,6 +325,21 @@
   "detail": "\"die Krankenkasse\""
  },
  {
+  "id": "a2-u08-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "a2-u08-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich anmelden\""
+ },
+ {
+  "id": "a2-u08-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Beamte\""
+ },
+ {
   "id": "a2-u08-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"sich entspannen\""
@@ -283,6 +348,11 @@
   "id": "a2-u09-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"das Bücherregal\""
+ },
+ {
+  "id": "a2-u10-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zustellen\""
  },
  {
   "id": "a2-u10-w1",
@@ -300,6 +370,16 @@
   "detail": "\"vereinbaren\""
  },
  {
+  "id": "a2-u13-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "a2-u13-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"niedrig\""
+ },
+ {
   "id": "a2-u13-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Qualität\""
@@ -308,6 +388,21 @@
   "id": "a2-u13-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"ansteckend\""
+ },
+ {
+  "id": "a2-u14-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "a2-u14-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "a2-u14-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "a2-u15-w1",
@@ -335,6 +430,11 @@
   "detail": "\"der Ausflug\""
  },
  {
+  "id": "a2-u18-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "a2-u18-l1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"eintreffen\""
@@ -355,6 +455,11 @@
   "detail": "\"schenken\""
  },
  {
+  "id": "a2-u19-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "a2-u19-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"anstoßen\""
@@ -368,6 +473,16 @@
   "id": "a2-u19-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"der Gastgeber\""
+ },
+ {
+  "id": "a2-u20-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "a2-u20-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "a2-u20-l1",
@@ -395,6 +510,21 @@
   "detail": "\"die Umarmung\""
  },
  {
+  "id": "a2-u21-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "a2-u21-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"leicht\""
+ },
+ {
+  "id": "a2-u22-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "a2-u22-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"geduldig\""
@@ -410,9 +540,24 @@
   "detail": "\"aufbleiben\""
  },
  {
+  "id": "a2-u23-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "a2-u23-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Beamte\""
+ },
+ {
   "id": "a2-u24-l1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"das E-Book\""
+ },
+ {
+  "id": "a2-u24-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"normal\""
  },
  {
   "id": "a2-u24-w1",
@@ -420,9 +565,24 @@
   "detail": "\"das Ziel\""
  },
  {
+  "id": "a2-u25-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufhören\""
+ },
+ {
+  "id": "a2-u25-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"offen\""
+ },
+ {
   "id": "a2-u25-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"getrennt\""
+ },
+ {
+  "id": "b1-u1-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Anzeige\""
  },
  {
   "id": "b1-u1-l1",
@@ -435,9 +595,19 @@
   "detail": "\"die Schwäche\""
  },
  {
+  "id": "b1-u2-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bieten\""
+ },
+ {
   "id": "b1-u2-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"gelten\""
+ },
+ {
+  "id": "b1-u3-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "b1-u3-w1",
@@ -480,6 +650,11 @@
   "detail": "görev 3: \"Der Kollege, der mir geholfen hat, hat morgen frei.\""
  },
  {
+  "id": "b1-u9-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "b1-u10-w2",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 1: \"Es ist sehr leicht, dieses Gericht zuzubereiten.\""
@@ -500,9 +675,24 @@
   "detail": "\"der Zeuge\""
  },
  {
+  "id": "b1-u13-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "b1-u13-w1",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 2: \"Deshalb soll mich mein Bruder vertreten.\""
+ },
+ {
+  "id": "b1-u14-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u14-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Zahl\""
  },
  {
   "id": "b1-u14-w2",
@@ -515,9 +705,29 @@
   "detail": "\"zusehen\""
  },
  {
+  "id": "b1-u15-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u15-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u16-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "b1-u16-r2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"zustimmen\""
+ },
+ {
+  "id": "b1-u17-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b1-u18-w1",
@@ -540,6 +750,11 @@
   "detail": "\"warnen\""
  },
  {
+  "id": "b1-u20-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "b1-u20-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"sich verletzen\""
@@ -548,6 +763,16 @@
   "id": "b1-u20-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Verletzung\""
+ },
+ {
+  "id": "b1-u21-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abgeben\""
+ },
+ {
+  "id": "b1-u22-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aussehen nach\""
  },
  {
   "id": "b1-u22-r2",
@@ -570,6 +795,36 @@
   "detail": "\"die Forderung\""
  },
  {
+  "id": "b1-u24-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b1-u25-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b1-u25-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufhören\""
+ },
+ {
+  "id": "b1-u25-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b1-u25-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u26-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Hauptgericht\""
+ },
+ {
   "id": "b1-u26-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"das Mehl\""
@@ -580,9 +835,19 @@
   "detail": "\"die Anzahl\""
  },
  {
+  "id": "b1-u28-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Gratulation\""
+ },
+ {
   "id": "b1-u28-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"der Durchschnitt\""
+ },
+ {
+  "id": "b1-u29-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "b1-u29-w1",
@@ -590,9 +855,39 @@
   "detail": "görev 1: \"Ich suche eine Ledertasche.\""
  },
  {
+  "id": "b1-u30-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "b1-u30-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bedeuten\""
+ },
+ {
+  "id": "b1-u30-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bedeuten\""
+ },
+ {
+  "id": "b1-u32-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u32-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "b1-u32-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"der Sand\""
+ },
+ {
+  "id": "b1-u33-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b1-u33-r2",
@@ -600,9 +895,34 @@
   "detail": "\"brechen\""
  },
  {
+  "id": "b1-u33-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u33-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u34-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b1-u35-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "b1-u35-w1",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 1: \"Ich habe viermal aufgehört zu rauchen.\""
+ },
+ {
+  "id": "b1-u36-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b1-u37-r2",
@@ -615,9 +935,24 @@
   "detail": "görev 1: \"Ich bin seit drei Jahren Angestellte in dieser Firma.\""
  },
  {
+  "id": "b1-u40-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "b1-u40-w1",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 1: \"Nachmittags ist mir langweilig.\""
+ },
+ {
+  "id": "b1-u41-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u41-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b1-u41-w1",
@@ -630,9 +965,39 @@
   "detail": "\"die Zweitsprache\""
  },
  {
+  "id": "b1-u41-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gerne\""
+ },
+ {
+  "id": "b1-u42-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Anzeige\""
+ },
+ {
+  "id": "b1-u43-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufhören\""
+ },
+ {
+  "id": "b1-u43-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "b1-u43-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"eröffnen\""
+ },
+ {
+  "id": "b1-u43-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b1-u43-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufhören\""
  },
  {
   "id": "b1-u44-w1",
@@ -645,9 +1010,49 @@
   "detail": "\"fressen\""
  },
  {
+  "id": "b1-u45-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "b2-u01-r1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"darlegen\""
+ },
+ {
+  "id": "b2-u01-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u01-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b2-u02-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u02-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"riskant\""
+ },
+ {
+  "id": "b2-u02-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u02-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gefährden\""
+ },
+ {
+  "id": "b2-u02-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "b2-u02-w1",
@@ -660,6 +1065,21 @@
   "detail": "\"abarbeiten\""
  },
  {
+  "id": "b2-u03-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b2-u03-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"höchstens\""
+ },
+ {
+  "id": "b2-u03-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Absender\""
+ },
+ {
   "id": "b2-u03-l2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"zusichern\""
@@ -668,6 +1088,16 @@
   "id": "b2-u04-r1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"zustehen\""
+ },
+ {
+  "id": "b2-u04-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u04-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b2-u04-w1",
@@ -705,9 +1135,39 @@
   "detail": "\"bedenken\""
  },
  {
+  "id": "b2-u08-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"steigen\""
+ },
+ {
+  "id": "b2-u08-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Information\""
+ },
+ {
+  "id": "b2-u08-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verlobt\""
+ },
+ {
+  "id": "b2-u08-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "b2-u08-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Zuspitzung\""
+ },
+ {
+  "id": "b2-u09-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "b2-u09-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b2-u09-l1",
@@ -725,14 +1185,44 @@
   "detail": "\"ausweichen\""
  },
  {
+  "id": "b2-u10-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u10-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "b2-u10-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"werben\""
  },
  {
+  "id": "b2-u10-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"mehrere\""
+ },
+ {
   "id": "b2-u10-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Falschmeldung\""
+ },
+ {
+  "id": "b2-u11-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u11-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorkommen\""
+ },
+ {
+  "id": "b2-u11-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "b2-u11-w1",
@@ -743,6 +1233,21 @@
   "id": "b2-u11-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Erkenntnis\""
+ },
+ {
+  "id": "b2-u12-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u12-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u12-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "b2-u12-l2",
@@ -758,6 +1263,31 @@
   "id": "b2-u12-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"zulassen\""
+ },
+ {
+  "id": "b2-u13-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "b2-u13-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u13-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"dicht\""
+ },
+ {
+  "id": "b2-u14-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u14-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Teuerung\""
  },
  {
   "id": "b2-u14-w1",
@@ -778,6 +1308,26 @@
   "id": "b2-u14-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"wettbewerbsfähig\""
+ },
+ {
+  "id": "b2-u14-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b2-u15-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u15-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"meiste\""
+ },
+ {
+  "id": "b2-u15-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b2-u15-w1",
@@ -810,9 +1360,24 @@
   "detail": "\"das Vorurteil\""
  },
  {
+  "id": "b2-u16-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zuhören\""
+ },
+ {
   "id": "b2-u16-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"der Kritiker\""
+ },
+ {
+  "id": "b2-u17-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u17-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "b2-u17-w1",
@@ -825,6 +1390,16 @@
   "detail": "\"der Andrang\""
  },
  {
+  "id": "b2-u18-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Auslastung\""
+ },
+ {
+  "id": "b2-u18-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bieten\""
+ },
+ {
   "id": "b2-u18-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"malerisch\""
@@ -833,6 +1408,16 @@
   "id": "b2-u18-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"anlegen\""
+ },
+ {
+  "id": "b2-u19-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u19-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b2-u19-w1",
@@ -845,6 +1430,11 @@
   "detail": "\"mitwirken\""
  },
  {
+  "id": "b2-u20-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "b2-u20-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"bereuen\""
@@ -853,6 +1443,21 @@
   "id": "b2-u20-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"vorzeitig\""
+ },
+ {
+  "id": "b2-u21-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u21-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u21-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "b2-u21-w1",
@@ -868,6 +1473,16 @@
   "id": "b2-u21-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"das Missverständnis\""
+ },
+ {
+  "id": "b2-u22-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u22-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b2-u22-w1",
@@ -895,6 +1510,21 @@
   "detail": "\"die Einsamkeit\""
  },
  {
+  "id": "b2-u23-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "b2-u23-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u23-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"meiste\""
+ },
+ {
   "id": "b2-u23-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"terminieren\""
@@ -910,9 +1540,44 @@
   "detail": "\"amtlich\""
  },
  {
+  "id": "b2-u24-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b2-u24-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "b2-u24-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "b2-u24-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "b2-u24-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Verzögerung\""
+ },
+ {
+  "id": "b2-u24-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Formulierung\""
+ },
+ {
   "id": "b2-u24-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"der Werdegang\""
+ },
+ {
+  "id": "b2-u25-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "b2-u25-l2",
@@ -940,6 +1605,21 @@
   "detail": "\"die Begabung\""
  },
  {
+  "id": "c1-u01-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u01-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"genau\""
+ },
+ {
+  "id": "c1-u01-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Signal\""
+ },
+ {
   "id": "c1-u01-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"relativieren\""
@@ -955,6 +1635,21 @@
   "detail": "\"die Bewilligung\""
  },
  {
+  "id": "c1-u02-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u02-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"formulieren\""
+ },
+ {
+  "id": "c1-u02-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bedeuten\""
+ },
+ {
   "id": "c1-u02-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"das Versäumnis\""
@@ -963,6 +1658,11 @@
   "id": "c1-u02-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Transparenz\""
+ },
+ {
+  "id": "c1-u03-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "c1-u03-l2",
@@ -985,6 +1685,26 @@
   "detail": "\"skalieren\""
  },
  {
+  "id": "c1-u04-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "c1-u04-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufhören\""
+ },
+ {
+  "id": "c1-u04-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u04-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "c1-u04-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Mutmaßung\""
@@ -998,6 +1718,21 @@
   "id": "c1-u04-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"trösten\""
+ },
+ {
+  "id": "c1-u05-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "c1-u05-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u05-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"formulieren\""
  },
  {
   "id": "c1-u05-w1",
@@ -1028,6 +1763,26 @@
   "id": "c1-u05-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"eindringlich\""
+ },
+ {
+  "id": "c1-u06-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "c1-u06-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u06-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"reagieren\""
+ },
+ {
+  "id": "c1-u06-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Pass\""
  },
  {
   "id": "c1-u06-w1",
@@ -1065,6 +1820,21 @@
   "detail": "\"einfallen\""
  },
  {
+  "id": "c1-u07-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u07-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u07-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"besonders\""
+ },
+ {
   "id": "c1-u07-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Wendung\""
@@ -1095,6 +1865,31 @@
   "detail": "\"improvisieren\""
  },
  {
+  "id": "c1-u08-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u08-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"stärken\""
+ },
+ {
+  "id": "c1-u08-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u08-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unstrittig\""
+ },
+ {
+  "id": "c1-u08-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
   "id": "c1-u08-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"stichhaltig\""
@@ -1118,6 +1913,41 @@
   "id": "c1-u08-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"bewegend\""
+ },
+ {
+  "id": "c1-u09-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u09-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u10-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u10-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u10-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"leicht\""
+ },
+ {
+  "id": "c1-u10-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Formulierung\""
+ },
+ {
+  "id": "c1-u10-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
  },
  {
   "id": "c1-u10-w1",
@@ -1150,6 +1980,36 @@
   "detail": "\"einstreuen\""
  },
  {
+  "id": "c1-u11-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bedeuten\""
+ },
+ {
+  "id": "c1-u11-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"also\""
+ },
+ {
+  "id": "c1-u11-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Formulierung\""
+ },
+ {
+  "id": "c1-u11-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"markieren\""
+ },
+ {
+  "id": "c1-u11-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"einzige\""
+ },
+ {
+  "id": "c1-u11-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "c1-u11-l1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"zuschreiben\""
@@ -1170,6 +2030,16 @@
   "detail": "\"einordnen\""
  },
  {
+  "id": "c1-u12-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "c1-u12-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"reagieren\""
+ },
+ {
   "id": "c1-u12-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"aufzeigen\""
@@ -1185,6 +2055,16 @@
   "detail": "\"die Vorgehensweise\""
  },
  {
+  "id": "c1-u13-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u13-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sprachlich\""
+ },
+ {
   "id": "c1-u13-l1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"sich einbringen\""
@@ -1193,6 +2073,46 @@
   "id": "c1-u13-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"einbeziehen\""
+ },
+ {
+  "id": "c1-u14-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"raten\""
+ },
+ {
+  "id": "c1-u14-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u14-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u14-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rückwirkend\""
+ },
+ {
+  "id": "c1-u14-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Beamtin\""
+ },
+ {
+  "id": "c1-u15-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u15-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u15-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"reagieren\""
  },
  {
   "id": "c1-u15-w1",
@@ -1205,6 +2125,16 @@
   "detail": "\"die Aufhebung\""
  },
  {
+  "id": "c1-u16-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verwenden\""
+ },
+ {
+  "id": "c1-u16-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "c1-u16-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"umwandeln\""
@@ -1213,6 +2143,16 @@
   "id": "c1-u16-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"gewährleisten\""
+ },
+ {
+  "id": "c1-u16-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"kontrovers\""
+ },
+ {
+  "id": "c1-u16-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aller\""
  },
  {
   "id": "c1-u16-w2",
@@ -1238,6 +2178,11 @@
   "id": "c1-u16-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"behutsam\""
+ },
+ {
+  "id": "c1-u17-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "c1-u17-w1",
@@ -1280,6 +2225,21 @@
   "detail": "\"die Sichtweise\""
  },
  {
+  "id": "c1-u18-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "c1-u18-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bedeuten\""
+ },
+ {
+  "id": "c1-u18-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "c1-u18-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Textsorte\""
@@ -1305,6 +2265,26 @@
   "detail": "\"einschränken\""
  },
  {
+  "id": "c1-u19-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "c1-u19-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u19-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der CO2-Fußabdruck\""
+ },
+ {
+  "id": "c1-u19-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "c1-u19-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"hypothetisch\""
@@ -1320,6 +2300,11 @@
   "detail": "\"die Zugehörigkeit\""
  },
  {
+  "id": "c1-u19-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"also\""
+ },
+ {
   "id": "c1-u19-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"der Zielkonflikt\""
@@ -1328,6 +2313,26 @@
   "id": "c1-u19-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Teilhabe\""
+ },
+ {
+  "id": "c1-u20-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u20-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"mild\""
+ },
+ {
+  "id": "c1-u20-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "c1-u20-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"folgern\""
  },
  {
   "id": "c1-u20-w1",
@@ -1350,6 +2355,16 @@
   "detail": "\"abgrenzen\""
  },
  {
+  "id": "c1-u21-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Formulierung\""
+ },
+ {
+  "id": "c1-u21-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "c1-u21-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"der doppelte Boden\""
@@ -1368,6 +2383,26 @@
   "id": "c1-u21-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"verletzend\""
+ },
+ {
+  "id": "c1-u22-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u22-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"reagieren\""
+ },
+ {
+  "id": "c1-u22-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zuhören\""
+ },
+ {
+  "id": "c1-u22-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
  },
  {
   "id": "c1-u22-l2",
@@ -1390,6 +2425,11 @@
   "detail": "\"aufdringlich\""
  },
  {
+  "id": "c1-u22-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
   "id": "c1-u22-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"aufrichtig\""
@@ -1403,6 +2443,36 @@
   "id": "c1-u22-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Gepflogenheit\""
+ },
+ {
+  "id": "c1-u22-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sehen\""
+ },
+ {
+  "id": "c1-u23-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lesen\""
+ },
+ {
+  "id": "c1-u23-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u23-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
+  "id": "c1-u23-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"genügen\""
+ },
+ {
+  "id": "c1-u23-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abwesend\""
  },
  {
   "id": "c1-u23-w1",
@@ -1465,6 +2535,11 @@
   "detail": "\"endgültig\""
  },
  {
+  "id": "c1-u25-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Text\""
+ },
+ {
   "id": "c1-u25-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"weitergeben\""
@@ -1508,6 +2583,1031 @@
   "id": "en-a1-u1-w2",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 5: \"I'm fine, thanks.\""
+ },
+ {
+  "id": "en-a1-u2-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I'm thirty years old.\""
+ },
+ {
+  "id": "en-a1-u2-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"Yes, I do.\""
+ },
+ {
+  "id": "en-a1-u2-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"No, I don't.\""
+ },
+ {
+  "id": "en-a1-u3-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"first name\""
+ },
+ {
+  "id": "en-a1-u3-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"last name\""
+ },
+ {
+  "id": "en-a1-u3-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I'm twenty-five years old.\""
+ },
+ {
+  "id": "en-a1-u3-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"What is your name?\""
+ },
+ {
+  "id": "en-a1-u3-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"What is your address?\""
+ },
+ {
+  "id": "en-a1-u3-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I have got a brother.\""
+ },
+ {
+  "id": "en-a1-u3-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 5: \"She has got two children.\""
+ },
+ {
+  "id": "en-a1-u4-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"Don't …\""
+ },
+ {
+  "id": "en-a1-u5-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"She has long hair.\""
+ },
+ {
+  "id": "en-a1-u6-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'd like …\""
+ },
+ {
+  "id": "en-a1-u6-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I would like a tea, please.\""
+ },
+ {
+  "id": "en-a1-u6-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'll take it.\""
+ },
+ {
+  "id": "en-a1-u6-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I will take it.\""
+ },
+ {
+  "id": "en-a1-u7-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"It is too expensive.\""
+ },
+ {
+  "id": "en-a1-u7-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"Don't touch it.\""
+ },
+ {
+  "id": "en-a1-u8-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"until\""
+ },
+ {
+  "id": "en-a1-u8-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"It is half past seven.\""
+ },
+ {
+  "id": "en-a1-u8-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"It is a quarter to nine.\""
+ },
+ {
+  "id": "en-a1-u8-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I would like a kilo of apples.\""
+ },
+ {
+  "id": "en-a1-u9-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I do not work at the weekend.\""
+ },
+ {
+  "id": "en-a1-u10-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'm going to …\""
+ },
+ {
+  "id": "en-a1-u10-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'm not going to …\""
+ },
+ {
+  "id": "en-a1-u10-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I am going to visit my mother.\""
+ },
+ {
+  "id": "en-a1-u10-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I am not going to stay.\""
+ },
+ {
+  "id": "en-a1-u11-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'm looking for …\""
+ },
+ {
+  "id": "en-a1-u11-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I am looking for a shirt.\""
+ },
+ {
+  "id": "en-a1-u11-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"It is too big.\""
+ },
+ {
+  "id": "en-a1-u11-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"It is ten dollars.\""
+ },
+ {
+  "id": "en-a1-u12-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"It is a gift for my mother.\""
+ },
+ {
+  "id": "en-a1-u13-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I am sick.\""
+ },
+ {
+  "id": "en-a1-u14-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I would like a ticket to London, please.\""
+ },
+ {
+  "id": "en-a1-u14-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"It's near here.\""
+ },
+ {
+  "id": "en-a1-u14-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"It is near here.\""
+ },
+ {
+  "id": "en-a1-u14-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I am waiting for the bus.\""
+ },
+ {
+  "id": "en-a1-u15-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'm lost.\""
+ },
+ {
+  "id": "en-a1-u15-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I am lost.\""
+ },
+ {
+  "id": "en-a1-u16-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"It is next to the chair.\""
+ },
+ {
+  "id": "en-a1-u17-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"You must not make noise.\""
+ },
+ {
+  "id": "en-a1-u18-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"It's broken.\""
+ },
+ {
+  "id": "en-a1-u18-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"It is broken.\""
+ },
+ {
+  "id": "en-a1-u19-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"It's cold today.\""
+ },
+ {
+  "id": "en-a1-u19-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"It is cold today.\""
+ },
+ {
+  "id": "en-a1-u19-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"It's raining.\""
+ },
+ {
+  "id": "en-a1-u19-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"How's the weather?\""
+ },
+ {
+  "id": "en-a1-u19-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"Let's go together.\""
+ },
+ {
+  "id": "en-a1-u19-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"It is raining.\""
+ },
+ {
+  "id": "en-a1-u19-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"How is the weather?\""
+ },
+ {
+  "id": "en-a1-u20-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'm afraid I can't\""
+ },
+ {
+  "id": "en-a1-u20-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I cannot swim.\""
+ },
+ {
+  "id": "en-a1-u20-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'm afraid I can't.\""
+ },
+ {
+  "id": "en-a1-u20-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I am afraid I can't.\""
+ },
+ {
+  "id": "en-a1-u20-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Sorry, I am busy today.\""
+ },
+ {
+  "id": "en-a1-u20-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I am going to meet Ali tomorrow.\""
+ },
+ {
+  "id": "en-a1-u22-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"Don't move!\""
+ },
+ {
+  "id": "en-a1-u22-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'm not feeling well.\""
+ },
+ {
+  "id": "en-a1-u22-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I am not feeling well.\""
+ },
+ {
+  "id": "en-a1-u22-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"You should not drink coffee.\""
+ },
+ {
+  "id": "en-a1-u23-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"since\""
+ },
+ {
+  "id": "en-a1-u23-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I will send you a message.\""
+ },
+ {
+  "id": "en-a1-u24-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I would like to send this letter.\""
+ },
+ {
+  "id": "en-a1-u25-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I did not watch TV.\""
+ },
+ {
+  "id": "en-a1-u25-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"Let's meet again.\""
+ },
+ {
+  "id": "en-a2-u3-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"Luckily, it was not serious.\""
+ },
+ {
+  "id": "en-a2-u4-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"just\""
+ },
+ {
+  "id": "en-a2-u4-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I have not finished yet.\""
+ },
+ {
+  "id": "en-a2-u4-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I am going to visit my sister on Sunday.\""
+ },
+ {
+  "id": "en-a2-u5-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"almost\""
+ },
+ {
+  "id": "en-a2-u5-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I am still here.\""
+ },
+ {
+  "id": "en-a2-u6-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I have had a cough for three days.\""
+ },
+ {
+  "id": "en-a2-u6-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I would like to change my appointment.\""
+ },
+ {
+  "id": "en-a2-u6-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 5: \"I have had it for two weeks.\""
+ },
+ {
+  "id": "en-a2-u7-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"You're welcome\""
+ },
+ {
+  "id": "en-a2-u7-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I would like to see a doctor.\""
+ },
+ {
+  "id": "en-a2-u7-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I've already filled in the form.\""
+ },
+ {
+  "id": "en-a2-u8-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I am worried about the exam.\""
+ },
+ {
+  "id": "en-a2-u8-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I am afraid of the questions.\""
+ },
+ {
+  "id": "en-a2-u8-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I have already taken my medicine.\""
+ },
+ {
+  "id": "en-a2-u9-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"There is a leak in the bathroom.\""
+ },
+ {
+  "id": "en-a2-u9-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"The heating has not worked since Monday.\""
+ },
+ {
+  "id": "en-a2-u9-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"We have not turned on the electricity yet.\""
+ },
+ {
+  "id": "en-a2-u9-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I have not heard the music since August.\""
+ },
+ {
+  "id": "en-a2-u10-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"don't have to\""
+ },
+ {
+  "id": "en-a2-u10-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"You must not make noise at night.\""
+ },
+ {
+  "id": "en-a2-u10-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"You do not have to clean the stairs.\""
+ },
+ {
+  "id": "en-a2-u10-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"My washing machine is not working.\""
+ },
+ {
+  "id": "en-a2-u10-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"There's a park nearby.\""
+ },
+ {
+  "id": "en-a2-u10-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"It is quieter than the city centre.\""
+ },
+ {
+  "id": "en-a2-u11-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"canteen\""
+ },
+ {
+  "id": "en-a2-u11-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I've worked at a big company.\""
+ },
+ {
+  "id": "en-a2-u11-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I've worked in a team for three years.\""
+ },
+ {
+  "id": "en-a2-u12-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I am sorry, I made a mistake.\""
+ },
+ {
+  "id": "en-a2-u12-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I have not finished it yet.\""
+ },
+ {
+  "id": "en-a2-u12-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I will fix it today.\""
+ },
+ {
+  "id": "en-a2-u13-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I've attached the file.\""
+ },
+ {
+  "id": "en-a2-u13-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I would like to return this.\""
+ },
+ {
+  "id": "en-a2-u13-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"There is a problem with this.\""
+ },
+ {
+  "id": "en-a2-u14-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Express is faster, but it is more expensive.\""
+ },
+ {
+  "id": "en-a2-u14-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I would like to open an account.\""
+ },
+ {
+  "id": "en-a2-u15-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"It's more expensive than that one.\""
+ },
+ {
+  "id": "en-a2-u15-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"It is still under warranty.\""
+ },
+ {
+  "id": "en-a2-u15-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 5: \"I would like a haircut, please.\""
+ },
+ {
+  "id": "en-a2-u16-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I would like to book a room.\""
+ },
+ {
+  "id": "en-a2-u16-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"There are not any towels in my room.\""
+ },
+ {
+  "id": "en-a2-u16-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"It is opposite the bank.\""
+ },
+ {
+  "id": "en-a2-u16-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 5: \"There is not any water in the room.\""
+ },
+ {
+  "id": "en-a2-u17-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I would like to rent a car for three days.\""
+ },
+ {
+  "id": "en-a2-u17-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I have missed my connection.\""
+ },
+ {
+  "id": "en-a2-u18-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'd love to\""
+ },
+ {
+  "id": "en-a2-u18-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"I'd love to\""
+ },
+ {
+  "id": "en-a2-u18-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I would love to, but I can't.\""
+ },
+ {
+  "id": "en-a2-u18-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I have not bought a present yet.\""
+ },
+ {
+  "id": "en-a2-u19-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I am so proud of you.\""
+ },
+ {
+  "id": "en-a2-u19-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I am sorry I am late.\""
+ },
+ {
+  "id": "en-a2-u19-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I am sorry about the file.\""
+ },
+ {
+  "id": "en-a2-u19-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"That is OK, don't worry about it.\""
+ },
+ {
+  "id": "en-a2-u19-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I've been to three weddings.\""
+ },
+ {
+  "id": "en-a2-u20-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"You are welcome.\""
+ },
+ {
+  "id": "en-a2-u20-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"We've been friends for ten years.\""
+ },
+ {
+  "id": "en-a2-u20-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"They've been married for ten years.\""
+ },
+ {
+  "id": "en-a2-u21-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I do not think social media is good.\""
+ },
+ {
+  "id": "en-a2-u21-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I do not believe it is true.\""
+ },
+ {
+  "id": "en-a2-u21-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I've had this account for two years.\""
+ },
+ {
+  "id": "en-a2-u22-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"It is for finding a bus.\""
+ },
+ {
+  "id": "en-a2-u22-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"It does not work.\""
+ },
+ {
+  "id": "en-a2-u22-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"You should not share your password.\""
+ },
+ {
+  "id": "en-a2-u23-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"Do not press it twice.\""
+ },
+ {
+  "id": "en-a2-u23-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I would like to register, please.\""
+ },
+ {
+  "id": "en-a2-u24-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Somebody stole my phone.\""
+ },
+ {
+  "id": "en-a2-u24-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I would like to borrow this book.\""
+ },
+ {
+  "id": "en-a2-u24-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"You cannot eat here.\""
+ },
+ {
+  "id": "en-a2-u24-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I have not returned it yet.\""
+ },
+ {
+  "id": "en-a2-u25-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I'd like to make a complaint.\""
+ },
+ {
+  "id": "en-a2-u25-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 5: \"I've waited for three weeks.\""
+ },
+ {
+  "id": "en-b1-u1-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I've worked in this industry for six years.\""
+ },
+ {
+  "id": "en-b1-u1-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"You do not have to wear a suit.\""
+ },
+ {
+  "id": "en-b1-u3-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"She said I had improved.\""
+ },
+ {
+  "id": "en-b1-u3-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I've seen five flats this month.\""
+ },
+ {
+  "id": "en-b1-u4-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I'm going to unpack the kitchen first.\""
+ },
+ {
+  "id": "en-b1-u4-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"I'll carry that one.\""
+ },
+ {
+  "id": "en-b1-u4-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"You do not have to ask about guests.\""
+ },
+ {
+  "id": "en-b1-u4-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"He said he would come on Monday.\""
+ },
+ {
+  "id": "en-b1-u7-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"She said the budget had changed.\""
+ },
+ {
+  "id": "en-b1-u8-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lead\""
+ },
+ {
+  "id": "en-b1-u8-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"You must not bring food inside.\""
+ },
+ {
+  "id": "en-b1-u8-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I've worked abroad for two years.\""
+ },
+ {
+  "id": "en-b1-u9-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I've written twice about this.\""
+ },
+ {
+  "id": "en-b1-u10-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"reschedule\""
+ },
+ {
+  "id": "en-b1-u10-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 5: \"She said it would be cheaper.\""
+ },
+ {
+  "id": "en-b1-u11-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"She said the visa had expired.\""
+ },
+ {
+  "id": "en-b1-u11-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"You do not have to give a phone number.\""
+ },
+ {
+  "id": "en-b1-u12-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I've declared my income this year.\""
+ },
+ {
+  "id": "en-b1-u14-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"She said my comment had helped.\""
+ },
+ {
+  "id": "en-b1-u15-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lead\""
+ },
+ {
+  "id": "en-b1-u17-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't be\""
+ },
+ {
+  "id": "en-b1-u17-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I haven't posted anything this week.\""
+ },
+ {
+  "id": "en-b1-u18-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I've had a fever since Monday.\""
+ },
+ {
+  "id": "en-b1-u19-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"They asked if I had an allergy.\""
+ },
+ {
+  "id": "en-b1-u22-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"don't have to\""
+ },
+ {
+  "id": "en-b2-u02-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bury\""
+ },
+ {
+  "id": "en-b2-u02-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't have\""
+ },
+ {
+  "id": "en-b2-u04-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't have made\""
+ },
+ {
+  "id": "en-b2-u07-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bury\""
+ },
+ {
+  "id": "en-b2-u07-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't have been done\""
+ },
+ {
+  "id": "en-b2-u09-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't have started\""
+ },
+ {
+  "id": "en-b2-u11-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"conjunction\""
+ },
+ {
+  "id": "en-b2-u13-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rise\""
+ },
+ {
+  "id": "en-b2-u15-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"refusal\""
+ },
+ {
+  "id": "en-b2-u15-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't have read\""
+ },
+ {
+  "id": "en-b2-u17-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"possession\""
+ },
+ {
+  "id": "en-b2-u18-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"adjective\""
+ },
+ {
+  "id": "en-b2-u20-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"none\""
+ },
+ {
+  "id": "en-b2-u20-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't have signed\""
+ },
+ {
+  "id": "en-b2-u22-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't have been\""
+ },
+ {
+  "id": "en-b2-u24-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"noun\""
+ },
+ {
+  "id": "en-b2-u24-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"phrase\""
+ },
+ {
+  "id": "en-b2-u24-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"possession\""
+ },
+ {
+  "id": "en-b2-u25-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"can't have meant\""
+ },
+ {
+  "id": "en-c1-u01-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"attend\""
+ },
+ {
+  "id": "en-c1-u02-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unwilling\""
+ },
+ {
+  "id": "en-c1-u02-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"court\""
+ },
+ {
+  "id": "en-c1-u04-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"object\""
+ },
+ {
+  "id": "en-c1-u05-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"tend to\""
+ },
+ {
+  "id": "en-c1-u06-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"fourth\""
+ },
+ {
+  "id": "en-c1-u06-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"untouched\""
+ },
+ {
+  "id": "en-c1-u07-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"short-time work\""
+ },
+ {
+  "id": "en-c1-u08-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"seldom\""
+ },
+ {
+  "id": "en-c1-u09-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"everyday\""
+ },
+ {
+  "id": "en-c1-u09-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"literary\""
+ },
+ {
+  "id": "en-c1-u11-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"statelessness\""
+ },
+ {
+  "id": "en-c1-u12-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"none\""
+ },
+ {
+  "id": "en-c1-u13-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"subordination\""
+ },
+ {
+  "id": "en-c1-u14-r1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vary\""
+ },
+ {
+  "id": "en-c1-u14-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bracket\""
+ },
+ {
+  "id": "en-c1-u19-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"stranded\""
+ },
+ {
+  "id": "en-c1-u19-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"agent\""
+ },
+ {
+  "id": "en-c1-u21-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"adjective\""
+ },
+ {
+  "id": "en-c1-u22-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"uncountable\""
+ },
+ {
+  "id": "en-c1-u22-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"false labeling\""
+ },
+ {
+  "id": "en-c1-u23-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bare\""
+ },
+ {
+  "id": "en-c1-u24-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"repeatability\""
+ },
+ {
+  "id": "en-c1-u24-w2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"altruism\""
+ },
+ {
+  "id": "en-c1-u25-w1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"holes\""
  },
  {
   "id": "de-a1-lib-s1",
@@ -1995,6 +4095,11 @@
   "detail": "\"busy\""
  },
  {
+  "id": "en-a2-r11",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lorry\""
+ },
+ {
   "id": "en-a2-w1",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 2: \"On Saturday, we went to the beach with my friends.\""
@@ -2480,6 +4585,11 @@
   "detail": "\"syllable\""
  },
  {
+  "id": "en-b1-lib-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bake\""
+ },
+ {
   "id": "en-b2-lib-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"apologize\""
@@ -2493,6 +4603,36 @@
   "id": "en-b2-lib-w1",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 2: \"I wish that we had taken the complaint more seriously.\""
+ },
+ {
+  "id": "en-c1-lib-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rise\""
+ },
+ {
+  "id": "en-c1-lib-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unstable\""
+ },
+ {
+  "id": "en-c1-lib-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"uncomfortable\""
+ },
+ {
+  "id": "en-c1-lib-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vary\""
+ },
+ {
+  "id": "en-c1-lib-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"familiar\""
+ },
+ {
+  "id": "en-c1-lib-l1",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"imitate\""
  },
  {
   "id": "en-c1-lib-w1",
@@ -2553,5 +4693,1215 @@
   "id": "de-c1-lib-r5",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"abbrechen\""
+ },
+ {
+  "id": "en-a1-lib-r3",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"recipe\""
+ },
+ {
+  "id": "en-a2-lib-l4",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bake\""
+ },
+ {
+  "id": "en-b1-lib-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"host\""
+ },
+ {
+  "id": "en-b1-lib-l3",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"engineer\""
+ },
+ {
+  "id": "en-b1-lib-r4",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"advertisement\""
+ },
+ {
+  "id": "en-b1-lib-l4",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"hire\""
+ },
+ {
+  "id": "en-b1-lib-l5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"agent\""
+ },
+ {
+  "id": "en-b2-lib-l3",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sharp\""
+ },
+ {
+  "id": "en-b2-lib-r4",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"roof\""
+ },
+ {
+  "id": "en-b2-lib-r5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"total\""
+ },
+ {
+  "id": "en-b2-lib-l5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"panel\""
+ },
+ {
+  "id": "en-b2-lib-l5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"departure\""
+ },
+ {
+  "id": "en-c1-lib-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rise\""
+ },
+ {
+  "id": "en-c1-lib-l3",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"summarize\""
+ },
+ {
+  "id": "en-c1-lib-r4",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"pleasant\""
+ },
+ {
+  "id": "en-c1-lib-l4",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"ban\""
+ },
+ {
+  "id": "en-c1-lib-r5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rise\""
+ },
+ {
+  "id": "en-c1-lib-r5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"accurate\""
+ },
+ {
+  "id": "en-c1-lib-l5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unnecessary\""
+ },
+ {
+  "id": "en-c1-lib-w5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rely\""
+ },
+ {
+  "id": "de-a1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Anmeldung\""
+ },
+ {
+  "id": "de-a1-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Ich möchte zweimal in der Woche zum Training gehen.\""
+ },
+ {
+  "id": "de-a1-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Mein Sohn ist heute krank und kann nicht zur Schule kommen.\""
+ },
+ {
+  "id": "de-a1-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"leihen\""
+ },
+ {
+  "id": "de-a1-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"absagen\""
+ },
+ {
+  "id": "de-a1-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"möglich\""
+ },
+ {
+  "id": "de-a1-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Ich bin 22 Jahre alt und studiere in Leipzig.\""
+ },
+ {
+  "id": "de-a1-lib-s10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Frage\""
+ },
+ {
+  "id": "de-a2-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Hausverwaltung\""
+ },
+ {
+  "id": "de-a2-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich beschweren\""
+ },
+ {
+  "id": "de-a2-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Ich kann nicht schlafen, weil die Nachbarn nachts viel Lärm machen.\""
+ },
+ {
+  "id": "de-a2-lib-g6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"wissen\""
+ },
+ {
+  "id": "de-a2-lib-w7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Erfahrung\""
+ },
+ {
+  "id": "de-a2-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Die Bremsen sind neu, weil man sie letzten Monat gewechselt hat.\""
+ },
+ {
+  "id": "de-a2-lib-w9",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Nächstes Mal nehme ich ein Zimmer nach hinten.\""
+ },
+ {
+  "id": "de-a2-lib-w10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufbauen\""
+ },
+ {
+  "id": "de-a2-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Es sind ungefähr zweihundert Leute gekommen.\""
+ },
+ {
+  "id": "de-a2-lib-s10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"betonen\""
+ },
+ {
+  "id": "de-a2-lib-g10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"umziehen\""
+ },
+ {
+  "id": "de-b1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Vorteil\""
+ },
+ {
+  "id": "de-b1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"einschätzen\""
+ },
+ {
+  "id": "de-b1-lib-w7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"umsetzen\""
+ },
+ {
+  "id": "de-b1-lib-w7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Bitte\""
+ },
+ {
+  "id": "de-b1-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Ich glaube nicht, dass das einen großen Aufwand bedeutet.\""
+ },
+ {
+  "id": "de-b1-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Die Zeit am Morgen wird von der Mehrheit bevorzugt.\""
+ },
+ {
+  "id": "de-b1-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Spende\""
+ },
+ {
+  "id": "de-b1-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Ich würde gern wissen, ob Sie das wollen.\""
+ },
+ {
+  "id": "de-b1-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Keiner weiß, wer den Schlüssel hat.\""
+ },
+ {
+  "id": "de-b2-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Abwägung\""
+ },
+ {
+  "id": "de-b2-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Diese Lösung ist kurzfristig umzusetzen.\""
+ },
+ {
+  "id": "de-b2-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Die Kosten lassen sich erst ab dem zweiten Jahr vergleichen.\""
+ },
+ {
+  "id": "de-b2-lib-w7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zögern\""
+ },
+ {
+  "id": "de-b2-lib-w7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Gelegenheit\""
+ },
+ {
+  "id": "de-b2-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Wenn ich damals zugesagt hätte, wäre ich heute in einer anderen Stadt.\""
+ },
+ {
+  "id": "de-b2-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Hätte ich das früher gewusst, hätte ich früher gefragt.\""
+ },
+ {
+  "id": "de-b2-lib-g7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zusagen\""
+ },
+ {
+  "id": "de-b2-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"widerlegen\""
+ },
+ {
+  "id": "de-b2-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Zugang\""
+ },
+ {
+  "id": "de-b2-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Wenn man die Verantwortung übernommen hat, wird der Ausstieg schwieriger.\""
+ },
+ {
+  "id": "de-b2-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Anbieter\""
+ },
+ {
+  "id": "de-b2-lib-w9",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Man erhält eine Tüte, deren Inhalt vorher nicht bekannt ist.\""
+ },
+ {
+  "id": "de-b2-lib-w9",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Am meisten gestört hat mich die Abholzeit.\""
+ },
+ {
+  "id": "de-b2-lib-l10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"auslösen\""
+ },
+ {
+  "id": "de-b2-lib-w10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Ausnahme\""
+ },
+ {
+  "id": "de-b2-lib-w10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Hinweis\""
+ },
+ {
+  "id": "de-b2-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Der Verfasser kann den Text nicht gelesen haben.\""
+ },
+ {
+  "id": "de-c1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Protokoll\""
+ },
+ {
+  "id": "de-c1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Abwägung\""
+ },
+ {
+  "id": "de-c1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"wiedergeben\""
+ },
+ {
+  "id": "de-c1-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Die Tabelle wird der Öffentlichkeit zur Verfügung gestellt.\""
+ },
+ {
+  "id": "de-c1-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Diese Formulierung kommt nicht infrage.\""
+ },
+ {
+  "id": "de-c1-lib-g7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zutreffen\""
+ },
+ {
+  "id": "de-c1-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Eigenart\""
+ },
+ {
+  "id": "de-c1-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Zurückhaltung\""
+ },
+ {
+  "id": "de-c1-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Ein Entwurf, der am Freitagabend verschickt wird, gilt hier als Belästigung.\""
+ },
+ {
+  "id": "de-c1-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Die Frage, die seit Jahren diskutiert wird, ist noch immer ungeklärt.\""
+ },
+ {
+  "id": "de-c1-lib-r9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abnehmen\""
+ },
+ {
+  "id": "de-c1-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Beitrag\""
+ },
+ {
+  "id": "de-c1-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zuspitzen\""
+ },
+ {
+  "id": "de-c1-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"einräumen\""
+ },
+ {
+  "id": "de-c1-lib-g9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gelten\""
+ },
+ {
+  "id": "de-c1-lib-w10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abwägen\""
+ },
+ {
+  "id": "de-c1-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Alles, was nur mündlich existiert, existiert im Zweifel nicht.\""
+ },
+ {
+  "id": "de-c1-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Dokumentation ist keine Frage des Misstrauens, sondern der Beweislast.\""
+ },
+ {
+  "id": "en-b1-lib-r6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"basic\""
+ },
+ {
+  "id": "en-b1-lib-l6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unpaid\""
+ },
+ {
+  "id": "en-b1-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"We would go to the library every Saturday.\""
+ },
+ {
+  "id": "en-b1-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"A library cannot be replaced by the internet.\""
+ },
+ {
+  "id": "en-b1-lib-w7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"responsibility\""
+ },
+ {
+  "id": "en-b1-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I am meeting my supervisor next week about the report.\""
+ },
+ {
+  "id": "en-b1-lib-r8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lazy\""
+ },
+ {
+  "id": "en-b1-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"spare part\""
+ },
+ {
+  "id": "en-b1-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I have been going to this shop for three weeks.\""
+ },
+ {
+  "id": "en-b1-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"They did not try to sell me anything I didn't need.\""
+ },
+ {
+  "id": "en-b1-lib-r9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"ingredients\""
+ },
+ {
+  "id": "en-b1-lib-l9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"hire\""
+ },
+ {
+  "id": "en-b1-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"waste\""
+ },
+ {
+  "id": "en-b1-lib-w9",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"My daughter says that she cannot finish her lunch.\""
+ },
+ {
+  "id": "en-b1-lib-w9",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I would suggest making the lunch break five minutes longer.\""
+ },
+ {
+  "id": "en-b1-lib-r10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"responsible\""
+ },
+ {
+  "id": "en-b1-lib-l10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"math\""
+ },
+ {
+  "id": "en-b1-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"The first month always costs more than you think.\""
+ },
+ {
+  "id": "en-b2-lib-r6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"caution\""
+ },
+ {
+  "id": "en-b2-lib-l6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"concern\""
+ },
+ {
+  "id": "en-b2-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"strength\""
+ },
+ {
+  "id": "en-b2-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Your presentation was clear, but your examples were not related to the role.\""
+ },
+ {
+  "id": "en-b2-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"In spite of your lack of experience, you were shortlisted.\""
+ },
+ {
+  "id": "en-b2-lib-l7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"poor\""
+ },
+ {
+  "id": "en-b2-lib-w7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sample\""
+ },
+ {
+  "id": "en-b2-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"The researchers acknowledged that the effect was small.\""
+ },
+ {
+  "id": "en-b2-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"The newspapers claimed the result to be much stronger.\""
+ },
+ {
+  "id": "en-b2-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"improvement\""
+ },
+ {
+  "id": "en-b2-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Most residents have accepted the change.\""
+ },
+ {
+  "id": "en-b2-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Just a few collections were missed.\""
+ },
+ {
+  "id": "en-b2-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"practical\""
+ },
+ {
+  "id": "en-b2-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"assumption\""
+ },
+ {
+  "id": "en-b2-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"trade-off\""
+ },
+ {
+  "id": "en-b2-lib-w9",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"We made a rule so that new staff wouldn't have to plan to ask a question.\""
+ },
+ {
+  "id": "en-b2-lib-l10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lead\""
+ },
+ {
+  "id": "en-b2-lib-l10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lawyer\""
+ },
+ {
+  "id": "en-b2-lib-w10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"consequence\""
+ },
+ {
+  "id": "en-b2-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I had intended to write it into the first version, but there was no time.\""
+ },
+ {
+  "id": "en-c1-lib-l6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"hire\""
+ },
+ {
+  "id": "en-c1-lib-l6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"concern\""
+ },
+ {
+  "id": "en-c1-lib-l6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"entire\""
+ },
+ {
+  "id": "en-c1-lib-l6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"pointless\""
+ },
+ {
+  "id": "en-c1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"transparency\""
+ },
+ {
+  "id": "en-c1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"criterion\""
+ },
+ {
+  "id": "en-c1-lib-w6",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"proportionate\""
+ },
+ {
+  "id": "en-c1-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I don't like the rule, and nor do most of the team.\""
+ },
+ {
+  "id": "en-c1-lib-w6",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"The previous team did so, and this team should as well.\""
+ },
+ {
+  "id": "en-c1-lib-r7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sue\""
+ },
+ {
+  "id": "en-c1-lib-r7",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"explicitly\""
+ },
+ {
+  "id": "en-c1-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I would recommend it as long as the battery can be replaced.\""
+ },
+ {
+  "id": "en-c1-lib-w7",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"No matter what the manufacturer says, repair will not be possible after three years.\""
+ },
+ {
+  "id": "en-c1-lib-r8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unusual\""
+ },
+ {
+  "id": "en-c1-lib-r8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"risky\""
+ },
+ {
+  "id": "en-c1-lib-l8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"individual\""
+ },
+ {
+  "id": "en-c1-lib-l8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"valuable\""
+ },
+ {
+  "id": "en-c1-lib-l8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"invent\""
+ },
+ {
+  "id": "en-c1-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"wording\""
+ },
+ {
+  "id": "en-c1-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"credibility\""
+ },
+ {
+  "id": "en-c1-lib-w8",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"follow-up\""
+ },
+ {
+  "id": "en-c1-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"If the institution does not honour its commitment, the statement is worthless.\""
+ },
+ {
+  "id": "en-c1-lib-w8",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"If they had not said it, nobody would have asked.\""
+ },
+ {
+  "id": "en-c1-lib-r9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"involve\""
+ },
+ {
+  "id": "en-c1-lib-r9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"harmless\""
+ },
+ {
+  "id": "en-c1-lib-l9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"entire\""
+ },
+ {
+  "id": "en-c1-lib-w9",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"scope\""
+ },
+ {
+  "id": "en-c1-lib-w9",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"We need to make a decision on this.\""
+ },
+ {
+  "id": "en-c1-lib-w9",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"No exception has been made in this case.\""
+ },
+ {
+  "id": "en-c1-lib-r10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"shorten\""
+ },
+ {
+  "id": "en-c1-lib-r10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"inform\""
+ },
+ {
+  "id": "en-c1-lib-l10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"passive\""
+ },
+ {
+  "id": "en-c1-lib-w10",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"accountable\""
+ },
+ {
+  "id": "en-c1-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I did not need to be so confident.\""
+ },
+ {
+  "id": "en-c1-lib-w10",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I ought to have checked the figure before publishing it.\""
+ },
+ {
+  "id": "de-a1-lib-w11",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Zettel\""
+ },
+ {
+  "id": "de-a1-lib-s12",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gehen\""
+ },
+ {
+  "id": "de-a1-lib-w14",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Heimat\""
+ },
+ {
+  "id": "de-a1-lib-w15",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Vermieter\""
+ },
+ {
+  "id": "de-a1-lib-w15",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"erlauben\""
+ },
+ {
+  "id": "de-a1-lib-w16",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Eine Stunde kostet 15 Euro.\""
+ },
+ {
+  "id": "de-a1-lib-r18",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Gastfamilie\""
+ },
+ {
+  "id": "de-a1-lib-r18",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abholen\""
+ },
+ {
+  "id": "de-a1-lib-l18",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Trinkgeld\""
+ },
+ {
+  "id": "de-a1-lib-r19",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Tagebuch\""
+ },
+ {
+  "id": "de-a2-lib-w13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Rückmeldung\""
+ },
+ {
+  "id": "de-a2-lib-w13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"helfen\""
+ },
+ {
+  "id": "de-a2-lib-w14",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"ausziehen\""
+ },
+ {
+  "id": "de-a2-lib-g16",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"teuer\""
+ },
+ {
+  "id": "de-a2-lib-w17",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"mitsingen\""
+ },
+ {
+  "id": "de-a2-lib-w19",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Termin\""
+ },
+ {
+  "id": "de-a2-lib-s20",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"umziehen\""
+ },
+ {
+  "id": "de-b1-lib-w11",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Ich möchte gern erfahren, in welchem Jahr das Haus gebaut wurde.\""
+ },
+ {
+  "id": "de-b1-lib-r12",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zugeben\""
+ },
+ {
+  "id": "de-b1-lib-r14",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufbrechen\""
+ },
+ {
+  "id": "de-b1-lib-w14",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Hausverwaltung\""
+ },
+ {
+  "id": "de-b1-lib-w15",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Mitglied\""
+ },
+ {
+  "id": "de-b1-lib-w15",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"streichen\""
+ },
+ {
+  "id": "de-b1-lib-w18",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Ich hoffe, du sprichst immer noch jeden Tag Deutsch.\""
+ },
+ {
+  "id": "de-b1-lib-w19",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Die Jugendlichen brauchen einen Ort, wo sie sich treffen können.\""
+ },
+ {
+  "id": "de-b1-lib-w20",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufschieben\""
+ },
+ {
+  "id": "de-b2-lib-w11",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zusagen\""
+ },
+ {
+  "id": "de-b2-lib-w11",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Es war uns zugesagt worden, dass das Hotel in der Altstadt liegt.\""
+ },
+ {
+  "id": "de-b2-lib-l12",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Tischler\""
+ },
+ {
+  "id": "de-b2-lib-w12",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abholen\""
+ },
+ {
+  "id": "de-b2-lib-g12",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"streichen\""
+ },
+ {
+  "id": "de-b2-lib-l13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"erkennen\""
+ },
+ {
+  "id": "de-b2-lib-g13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich etwas vorstellen\""
+ },
+ {
+  "id": "de-b2-lib-g13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich etwas leisten\""
+ },
+ {
+  "id": "de-b2-lib-g13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich etwas merken\""
+ },
+ {
+  "id": "de-b2-lib-g13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich etwas ansehen\""
+ },
+ {
+  "id": "de-b2-lib-w15",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Die alte Lampe ging nur bei Bewegung an, wohingegen die neue die ganze Nacht leuchtet.\""
+ },
+ {
+  "id": "de-b2-lib-l16",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"leihen\""
+ },
+ {
+  "id": "de-b2-lib-w17",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abnehmen\""
+ },
+ {
+  "id": "de-b2-lib-w18",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Immer mehr Tauben kommen, sodass niemand mehr draußen sitzt.\""
+ },
+ {
+  "id": "de-b2-lib-w19",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Standesamt\""
+ },
+ {
+  "id": "de-b2-lib-w20",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Mehrere Kolleginnen sagen, bisher keine Liste gesehen zu haben.\""
+ },
+ {
+  "id": "de-b2-lib-w20",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Es würde uns freuen, zu einem gemeinsamen Gespräch eingeladen zu werden.\""
+ },
+ {
+  "id": "de-c1-lib-l12",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Dirigentin\""
+ },
+ {
+  "id": "de-c1-lib-w13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Beirat\""
+ },
+ {
+  "id": "de-c1-lib-w19",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"ansprechen\""
+ },
+ {
+  "id": "en-a2-lib-s11",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sit\""
+ },
+ {
+  "id": "en-a2-lib-s11",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"swim\""
+ },
+ {
+  "id": "en-a2-lib-s11",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"begin\""
+ },
+ {
+  "id": "en-a2-lib-s11",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"give\""
+ },
+ {
+  "id": "en-a2-lib-w12",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Do you want to come with us on Saturday night?\""
+ },
+ {
+  "id": "en-a2-lib-w13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"babysitter\""
+ },
+ {
+  "id": "en-a2-lib-w13",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"The kids can dress themselves.\""
+ },
+ {
+  "id": "en-a2-lib-w15",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Go past the café and go up the hill.\""
+ },
+ {
+  "id": "en-a2-lib-w17",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Who won first prize?\""
+ },
+ {
+  "id": "en-a2-lib-g19",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"save\""
+ },
+ {
+  "id": "en-b1-lib-l14",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"launderette\""
+ },
+ {
+  "id": "en-b1-lib-w15",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I want to give you one piece of advice.\""
+ },
+ {
+  "id": "en-b1-lib-w15",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I'd like to give you a piece of advice.\""
+ },
+ {
+  "id": "en-b1-lib-w15",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Your grandmother gave this watch to me, and now I'm giving it to you.\""
+ },
+ {
+  "id": "en-b1-lib-w20",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"internship\""
+ },
+ {
+  "id": "en-b2-lib-w11",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"We had been walking for hours and hadn't seen anyone.\""
+ },
+ {
+  "id": "en-b2-lib-w12",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"The lines are busy because the system is being updated.\""
+ },
+ {
+  "id": "en-b2-lib-l13",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"non-negotiable\""
+ },
+ {
+  "id": "en-b2-lib-w14",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"The pavement was so narrow that a pushchair couldn't get past.\""
+ },
+ {
+  "id": "en-b2-lib-w16",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"It is time somebody took responsibility for this space.\""
+ },
+ {
+  "id": "en-b2-lib-w16",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"We'd rather you didn't close the car park completely.\""
+ },
+ {
+  "id": "en-b2-lib-w17",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"The fewer meetings we hold, the more work we finish.\""
+ },
+ {
+  "id": "en-b2-lib-w17",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"The new schedule isn't nearly as expensive as the old one.\""
+ },
+ {
+  "id": "en-b2-lib-w19",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"I hope you won't find this request unreasonable.\""
+ },
+ {
+  "id": "en-b2-lib-w19",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I'd take full responsibility for any damage.\""
+ },
+ {
+  "id": "en-b2-lib-w20",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"The discount is quite small, but the information is extremely valuable.\""
+ },
+ {
+  "id": "en-c1-lib-w12",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rota\""
+ },
+ {
+  "id": "en-c1-lib-w13",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Only the Saturday night shift is affected by the change.\""
+ },
+ {
+  "id": "en-c1-lib-w13",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Even the experienced nurses find the extra hour long.\""
+ },
+ {
+  "id": "en-c1-lib-w14",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unfamiliar\""
+ },
+ {
+  "id": "en-c1-lib-w15",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"privacy\""
+ },
+ {
+  "id": "en-c1-lib-w15",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"compromise\""
+ },
+ {
+  "id": "en-c1-lib-w15",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lonely\""
+ },
+ {
+  "id": "en-c1-lib-w16",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rehearsal\""
+ },
+ {
+  "id": "en-c1-lib-w18",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"newsletter\""
+ },
+ {
+  "id": "en-c1-lib-w18",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"effort\""
+ },
+ {
+  "id": "en-c1-lib-l19",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"one-sided\""
+ },
+ {
+  "id": "en-c1-lib-w19",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"The eight-day process was more difficult than most of us expected.\""
+ },
+ {
+  "id": "en-c1-lib-w20",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"budget\""
  }
 ]
