@@ -2018,7 +2018,7 @@ export const contentReleases = pgTable(
   "content_releases",
   {
     version: serial("version").primaryKey(),
-    /** draft | live | retired */
+    /** draft | live | retired | pruned (budandı: madde listesi silindi, satır iz olarak kalıyor — `content/publish` `prune`) */
     status: text("status").notNull().default("draft"),
     /** Yayını üreten commit — sürümden içeriğin kaynağına dönülebilsin. */
     commit: text("commit"),

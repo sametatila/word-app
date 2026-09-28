@@ -5,6 +5,7 @@
  *   npm run content:publish -- --draft   # taslak bırak (panelden önizlenip alınır)
  *   npm run content:publish -- --dry     # hiçbir şey yazma, ne olacağını göster
  *   npm run content:publish -- --note "b2 dinleme düzeltmesi"
+ *   npm run content:publish -- --no-prune  # pencere dışı sürümleri budama (varsayılan: budar)
  *
  * NEDEN AYRI BİR BETİK VE NEDEN PANELDE DEĞİL. İçeriğin doğruluk kaynağı
  * `data/**` ve git: diff'i, review'ı ve 70+ `check:*` kapısı orada duruyor.
@@ -30,7 +31,7 @@ import { buildNativeDump } from "./dump-native-mobile";
 import { ORDER_ITEM } from "../src/lib/content/ids";
 import { conversationPack, mockIndexPack, paperPack, quizNativePack, skillPack, type PackCourse } from "../src/lib/content/packs";
 import { catalogEntry } from "../src/lib/mock-exams/deliver";
-import { publish, type PackInput } from "../src/lib/content/publish";
+import { KEEP_RELEASES, prune, publish, type PackInput } from "../src/lib/content/publish";
 
 const COURSES = ["de", "en"] as const;
 
@@ -197,11 +198,21 @@ async function main() {
 
   if (result.unchanged) {
     console.log(`\nİçerik canlı sürüm ${result.version} ile birebir aynı — yeni sürüm açılmadı (${seconds} sn).`);
-    return;
+  } else {
+    console.log(
+      `\nSürüm ${result.version} ${draft ? "TASLAK olarak yayınlandı" : "canlıya alındı"} (${seconds} sn).\n` +
+        `  yeni gövde: ${result.fresh}   yeniden kullanılan: ${result.reused}`,
+    );
   }
+
+  /* Budama yayından SONRA ve aynı süreçte: eşzamanlı bir yayınla yarışmasın (bkz. `prune`). İçerik değişmediyse de
+     koşuyor: pencere dışında kalmış eski sürümler bir sonraki içerik değişikliğini beklemesin. */
+  if (argv.includes("--no-prune")) return;
+  const cut = await prune();
   console.log(
-    `\nSürüm ${result.version} ${draft ? "TASLAK olarak yayınlandı" : "canlıya alındı"} (${seconds} sn).\n` +
-      `  yeni gövde: ${result.fresh}   yeniden kullanılan: ${result.reused}`,
+    cut.releases || cut.bodies
+      ? `Budama: ${cut.releases} eski sürüm, ${cut.bodies} gövde (${mb(cut.bytes)}) silindi; son ${KEEP_RELEASES} sürüm geri alınabilir.`
+      : `Budama: silinecek bir şey yok (son ${KEEP_RELEASES} sürüm tutuluyor).`,
   );
 }
 

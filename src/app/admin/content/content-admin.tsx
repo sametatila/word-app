@@ -20,8 +20,8 @@ import { isGatedPack } from "@/lib/content/ids";
  * hattı"): doğruluk kaynağı `data/**`, yayın `npm run content:publish`.
  */
 const REASON_TR: Record<string, string> = { broken: "Bozuk", reported: "Şikâyet", legal: "Hukuki", other: "Diğer" };
-const STATUS_TONE: Record<string, Tone | undefined> = { live: "ok", draft: "info", retired: undefined };
-const STATUS_TR: Record<string, string> = { live: "canlı", draft: "taslak", retired: "emekli" };
+const STATUS_TONE: Record<string, Tone | undefined> = { live: "ok", draft: "info", retired: undefined, pruned: undefined };
+const STATUS_TR: Record<string, string> = { live: "canlı", draft: "taslak", retired: "emekli", pruned: "budandı" };
 
 async function post(body: Record<string, unknown>): Promise<string | null> {
   try {
@@ -139,7 +139,7 @@ export function ContentAdmin({ data }: { data: ContentAdminData }) {
         />
       </Panel>
 
-      <Panel title="Sürümler" hint="Geri almak için eski bir sürümü canlıya al. Gövdeler tabloda duruyor; istemci yalnız değişen maddeleri indirir." flush>
+      <Panel title="Sürümler" hint="Geri almak için eski bir sürümü canlıya al: son 10 sürüm geri alınabilir, daha eskileri yayın sırasında budanır. İstemci yalnız değişen maddeleri indirir." flush>
         <DataTable
           empty="Henüz yayın yok: sunucuda npm run content:publish."
           head={["Sürüm", "Durum", { label: "Madde", align: "right" }, "Not", "Commit", "Yayınlayan", "Oluşturuldu", ""]}
@@ -155,6 +155,8 @@ export function ContentAdmin({ data }: { data: ContentAdminData }) {
               <span key="t" className="whitespace-nowrap">{when(r.createdAt)}</span>,
               r.version === live ? (
                 <span key="a" style={{ color: TONE.ok }}>canlı</span>
+              ) : r.status === "pruned" ? (
+                <span key="a" className="muted">—</span>
               ) : (
                 <TwoStep
                   key="a"

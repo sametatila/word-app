@@ -1,8 +1,8 @@
 import "dotenv/config";
 import { eq, inArray, like } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { contentFlags, contentReleaseItems, contentReleases } from "@/lib/db/schema";
-import { disableItem, enableItem, promote, promoteDueDrafts, publish, type PackInput } from "@/lib/content/publish";
+import { contentFlags, contentItems, contentReleaseItems, contentReleases } from "@/lib/db/schema";
+import { disableItem, enableItem, promote, promoteDueDrafts, prune, publish, type PackInput } from "@/lib/content/publish";
 import {
   body,
   disabledItemsOf,
@@ -248,6 +248,33 @@ async function main() {
     invalidatePointer();
     check("gösterge yeni sürümü işaret ediyor", (await pointer()).r === future.version);
     check("alınacak taslak kalmadı", (await promoteDueDrafts(by)).promoted === null);
+
+    /* BUDAMA. Yalnız bu testin sürümleri (`publishedBy`); yerel veritabanındaki gerçek sürümlere dokunmuyor.
+       Önce yalnız eski sürümde geçen bir gövde üret, sonra iki yeni sürümle pencere dışına it. */
+    const old = await publish(new Map([[FREE, pack({ a: { t: "budanacak" } })]]), { by, note: "budama 1" });
+    const [oldBody] = await db
+      .select({ hash: contentReleaseItems.hash })
+      .from(contentReleaseItems)
+      .where(eq(contentReleaseItems.release, old.version))
+      .limit(1);
+    await publish(new Map([[FREE, pack({ a: { t: "ara" } })]]), { by, note: "budama 2" });
+    const newest = await publish(new Map([[FREE, pack({ a: { t: "son" }, b: { t: "yeni" } })]]), { by, note: "budama 3" });
+    const cut = await prune({ keep: 2, graceMinutes: 0, publishedBy: by });
+    check("budama pencere dışındaki emekli sürümleri buluyor", cut.releases >= 1, JSON.stringify(cut));
+    const [oldRow] = await db.select({ status: contentReleases.status }).from(contentReleases).where(eq(contentReleases.version, old.version));
+    check("budanan sürüm iz olarak kalıyor (pruned)", oldRow?.status === "pruned", oldRow?.status);
+    const oldItems = await db.select({ n: contentReleaseItems.item }).from(contentReleaseItems).where(eq(contentReleaseItems.release, old.version));
+    check("budanan sürümün madde listesi silindi", oldItems.length === 0, `${oldItems.length}`);
+    const stillThere = await db.select({ h: contentItems.hash }).from(contentItems).where(eq(contentItems.hash, oldBody.hash));
+    check("yalnız budanan sürümde geçen gövde silindi", stillThere.length === 0);
+    check("canlı sürüm budanmadı", (await pointer()).r === newest.version);
+    const liveRead = await manifest(FREE, 0);
+    check("canlı sürümün gövdeleri duruyor", liveRead.i.length === 2 && (await body(liveRead.i[0].h)) != null, JSON.stringify(liveRead.i));
+    check("budanan sürüm canlıya alınamıyor", (await promote(old.version, by)) === false);
+    const fromPruned = await manifest(FREE, old.version);
+    check("budanan sürümden fark isteyen tam listeyi alıyor", fromPruned.i.length === 2 && fromPruned.x.length === 0, JSON.stringify(fromPruned));
+    const tekrar = await prune({ keep: 2, graceMinutes: 0, publishedBy: by });
+    check("ikinci budama boş (tekrar koşmak güvenli)", tekrar.releases === 0, JSON.stringify(tekrar));
   } finally {
     await restore(previousLive);
   }

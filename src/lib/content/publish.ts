@@ -1,7 +1,7 @@
 import "server-only";
 import { createHash } from "node:crypto";
 import { brotliCompressSync, constants, gzipSync } from "node:zlib";
-import { and, eq, inArray, lte, ne, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, lt, lte, ne, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { contentFlags, contentItems, contentReleaseItems, contentReleases } from "@/lib/db/schema";
 import { FULL_PACK, isGatedPack, isItemId, isPackId } from "./ids";
@@ -16,8 +16,9 @@ import { existingHashes, invalidatePointer } from "./read";
  * dosyadan kullandığı tek şey sürüm çevirmek (`promote`) ve madde kapatmak —
  * ikisi de içerik yazmıyor.
  *
- * YAYIN EKLEMELİ. Hiçbir gövde silinmiyor, hiçbir sürüm üzerine yazılmıyor:
- * geri alma bu yüzden bir indirme değil, göstergeyi çevirmek.
+ * YAYIN EKLEMELİ. Hiçbir sürüm üzerine yazılmıyor: geri alma bu yüzden bir
+ * indirme değil, göstergeyi çevirmek. Silme yalnız `prune`da ve yalnız geri
+ * alma penceresinin (son `KEEP_RELEASES` sürüm) dışında kalanda.
  */
 
 /** Paket içeriği: madde kimliği → gövde (JSON'a çevrilebilir herhangi bir şey). */
@@ -251,10 +252,12 @@ async function retireOthers(version: number): Promise<void> {
  * duruyor.
  */
 export async function promote(version: number, by: string | null): Promise<boolean> {
+  /* Budanmış sürümün madde listesi yok: canlıya alınsaydı gösterge boş bir
+     sürümü gösterirdi. Yok sayılıyor (uç 404 döner). */
   const [found] = await db
     .select({ version: contentReleases.version })
     .from(contentReleases)
-    .where(eq(contentReleases.version, version))
+    .where(and(eq(contentReleases.version, version), ne(contentReleases.status, "pruned")))
     .limit(1);
   if (!found) return false;
   await db
@@ -264,6 +267,87 @@ export async function promote(version: number, by: string | null): Promise<boole
   await retireOthers(version);
   invalidatePointer();
   return true;
+}
+
+/**
+ * Geri alma penceresi: canlı ve taslaklar dışında tutulan en yeni sürüm sayısı.
+ * Her içerik değişikliği bir sürüm (değişmeyen yayın sürüm açmıyor); pencere
+ * "son on değişiklikten birine dön" demek.
+ */
+export const KEEP_RELEASES = 10;
+
+export type PruneResult = { releases: number; bodies: number; bytes: number };
+
+/**
+ * BUDAMA (2026-09-28) — pencerenin dışındaki emekli sürümleri ve artık hiçbir
+ * sürümün göstermediği gövdeleri siler.
+ *
+ * Neden: yayın eklemeliydi ve hiçbir şey silinmiyordu. Her içerik değişikliği
+ * değişen paketlerin ARŞİVİNİ (`"*"`, paketin tamamı) yeniden yazıyor; dil
+ * düzeltmesi dalgalarında 80 sürüm birikti, `content_items` 855 MB'a çıktı
+ * (arşivler 576 MB), gece yedeği 101 MB'tan 994 MB'a. 713 MB'ı son beş sürümün
+ * hiçbirinde yoktu.
+ *
+ * Güvenli olduğu yerler:
+ *   - Canlı sürüm, taslaklar ve en yeni `keep` sürüm hiç dokunulmuyor; geri
+ *     alma bu pencerede çalışıyor. Budanan sürümün satırı "pruned" durumuyla
+ *     kalıyor (hangi commit ne zaman yayınlandı izi); `promote` onu reddediyor.
+ *   - İstemci budanmış bir sürümden fark isterse (`since`) `manifest` o sürümü
+ *     bulamayıp TAM listeye düşüyor: istemci eksik maddeyi indiriyor, fazlasını
+ *     atıyor. Yanlış içerik kalmıyor, yalnız o istemci için fark büyüyor.
+ *   - Gövde yalnız HİÇBİR sürüm göstermiyorsa ve `graceMinutes`ten eskiyse
+ *     siliniyor: yazılmış ama sürüme bağlanmamış taze gövdeye dokunulmaz.
+ *   - nginx gövde önbelleği (1 yıl, değişmez) silinen gövdeyi önbellekteki
+ *     kopyadan vermeye devam ediyor; yeni bir istek zaten yeni hash'i istiyor.
+ *
+ * YARIŞ: `publish` "bu gövde zaten var" deyip yeniden yazmadığı eski bir gövdeyi,
+ * sürüm satırını yazmadan önce budama silerse yeni sürüm olmayan bir gövdeyi
+ * gösterir. Bu yüzden budama YAYINLA AYNI ANDA koşmamalı: tek çağıran
+ * `content:publish`in kendisi, yayından sonra ve aynı süreçte (deploy `flock`la
+ * tek seferde bir yayın koşturuyor).
+ *
+ * `publishedBy` yalnız test içindir: yerel veritabanındaki gerçek sürümlere
+ * dokunmadan budamayı denemek için.
+ */
+export async function prune(
+  opts: { keep?: number; graceMinutes?: number; publishedBy?: string } = {},
+): Promise<PruneResult> {
+  const keep = opts.keep ?? KEEP_RELEASES;
+  const grace = opts.graceMinutes ?? 60;
+  const scope = opts.publishedBy ? eq(contentReleases.publishedBy, opts.publishedBy) : undefined;
+
+  const newest = await db
+    .select({ version: contentReleases.version })
+    .from(contentReleases)
+    .where(and(ne(contentReleases.status, "pruned"), scope))
+    .orderBy(desc(contentReleases.version))
+    .limit(keep);
+  const kept = new Set(newest.map((r) => r.version));
+  const retired = await db
+    .select({ version: contentReleases.version })
+    .from(contentReleases)
+    .where(and(eq(contentReleases.status, "retired"), scope));
+  const doomed = retired.map((r) => r.version).filter((v) => !kept.has(v));
+
+  for (let i = 0; i < doomed.length; i += 20) {
+    const part = doomed.slice(i, i + 20);
+    await db.transaction(async (tx) => {
+      await tx.delete(contentReleaseItems).where(inArray(contentReleaseItems.release, part));
+      await tx.update(contentReleases).set({ status: "pruned" }).where(inArray(contentReleases.version, part));
+    });
+  }
+
+  const gone = await db
+    .delete(contentItems)
+    .where(
+      and(
+        lt(contentItems.createdAt, sql`now() - make_interval(mins => ${grace})`),
+        sql`not exists (select 1 from ${contentReleaseItems} ri where ri.hash = ${contentItems.hash})`,
+      ),
+    )
+    .returning({ size: sql<number>`length(${contentItems.br}) + length(${contentItems.gz})` });
+
+  return { releases: doomed.length, bodies: gone.length, bytes: gone.reduce((n, r) => n + Number(r.size), 0) };
 }
 
 /** Tek maddeyi yayından kaldırır. Sürümden bağımsız, anında göstergeye düşer. */
