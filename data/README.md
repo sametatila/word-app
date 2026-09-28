@@ -45,6 +45,6 @@ değiştirip yeniden yayımlamak aynı lisansı gerektirir (ShareAlike): dosya d
 
 **Maskot (Nomi, mirket).** Lernomi'nin kendi karakteri: tasarımı, kareleri ve animasyonları
 Lernomi ekibi oluşturdu (Samet, 2026-09-26). Üçüncü taraf çizer, stok görsel ya da lisanslı
-karakter yok. Kaynak dosyalar `mascot/`, arşivlenmiş klipler `../assets-archive/mascot/`.
+karakter yok. Kaynak dosyalar `mascot/`; animasyonlar 3B Nomi'den çiziliyor (`public/anim/nomi-*.webp`).
 Hak sahibi yayıncı (künyedeki hizmet sağlayıcı).
 

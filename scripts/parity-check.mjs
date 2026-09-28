@@ -9058,9 +9058,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * ve iki platformun kip haritasindan cikti. Kutlama pop'unun rastgele kumesi
    * de hizalandi.
    *
-   * Webde fazladan duran kipler belgeli: `wow` klipsiz bir TAKMA AD
-   * (lookaround'u gosteriyor) ve `dance` webin kutlama kumesinde (klibi
-   * mobile hic kopyalanmadi). */
+   * 2026-09-29: klipler 3B Nomi'den (`nomi-*`); eski uretilmis klipler ve
+   * arsivleri silindi. Iki platform AYNI alti kipi tasiyor (idle, happy,
+   * celebrate, sad, wow, thumbsup); webde fazla kip kalmadi. */
   {
     const webMood = sil(read("src/components/mascot.tsx"));
     const mobMood = sil(read("mobile/src/ui/Mascot.tsx"));
@@ -9074,16 +9074,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Once SAYI: kip listesi okunamazsa kumeler bos kalir ve esit gorunur. */
     sameList(
       "maskot kip listesi okunuyor",
-      ["web=" + (webKipler.size >= 7 ? "okundu" : "OKUNAMADI:" + webKipler.size), "mobil=" + (mobClip.size >= 5 ? "okundu" : "OKUNAMADI:" + mobClip.size)],
+      ["web=" + (webKipler.size >= 6 ? "okundu" : "OKUNAMADI:" + webKipler.size), "mobil=" + (mobClip.size >= 6 ? "okundu" : "OKUNAMADI:" + mobClip.size)],
       ["web=okundu", "mobil=okundu"],
       "bulunan",
       "beklenen",
     );
 
     /* AYNI KIP AYNI DOSYAYI gosteriyor - ad esitligi yetmez, ilk yazim
-       yalniz adlara bakiyordu. `idle` bilerek ayrisiyor: web bes bosta
-       klibini rastgele zincirliyor (`lookaround` ilki), mobilde tek klip var
-       (`idle-sit`). */
+       yalniz adlara bakiyordu. `idle` iki platformda da ZINCIR (bekleme ile
+       hareketler sirayla); kip tablosundaki dosyasi zincirin ilki. */
     const ortak = [...mobClip.keys()].filter((k) => webClip.has(k));
     sameList(
       "ayni kip ayni klip dosyasi",
@@ -9103,10 +9102,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
 
     /* Webde fazla duran kipler SEBEBIYLE yazili; liste bayatlamiyor. */
-    const WEBDE_FAZLA = new Map([
-      ["wow", "klipsiz TAKMA AD: lookaround'u gosteriyor, cagrilani da yok"],
-      ["dance", "maskot patlamasinin rastgele kiplerinden (`mascot-pop`) - klibi mobile hic kopyalanmadi"],
-    ]);
+    const WEBDE_FAZLA = new Map([]);
     const fazla = [...webKipler].filter((k) => !mobClip.has(k) && !WEBDE_FAZLA.has(k)).sort();
     sameList(
       "webdeki fazla kip belgeli",
@@ -9120,30 +9116,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "kip listesi bayat degil",
       ["bayat=" + (bayat.join("+") || "yok")],
       ["bayat=yok"],
-      "bulunan",
-      "beklenen",
-    );
-
-    /* ARSIVLENEN KLIPLER: silinmedi, yayindan cikti.
-     *
-     * Kip haritasindan cikan klip metro tarafindan paketlenmiyor ve `public/`
-     * disinda kalinca deploy'a girmiyor - ama DOSYA duruyor, cunku uretim
-     * hatti tek seferlikti. Kapi iki yone de bakiyor: klip arsivde var ve iki
-     * platformun yayin dizinlerinde YOK. Biri geri konursa (ya da arsiv
-     * silinirse) denetim soyluyor. */
-    const boy = (yol) => {
-      const url = new URL("../" + yol, import.meta.url);
-      return existsSync(url) ? readFileSync(url).length : -1;
-    };
-    const ARSIV = ["sleep", "think", "wave"];
-    sameList(
-      "arsivlenen klipler yayinda degil",
-      ARSIV.flatMap((k) => [
-        k + " arsivde=" + (boy(`assets-archive/mascot/${k}.webp`) > 0 ? "var" : "YOK"),
-        k + " mobilde=" + (boy(`mobile/src/assets/mascot/${k}.webp`) > 0 ? "VAR" : "yok"),
-        k + " webde=" + (boy(`public/anim/${k}.webp`) > 0 ? "VAR" : "yok"),
-      ]),
-      ARSIV.flatMap((k) => [k + " arsivde=var", k + " mobilde=yok", k + " webde=yok"]),
       "bulunan",
       "beklenen",
     );
@@ -17744,9 +17716,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "web olu dosya=" + (oluDosya.join(", ") || "yok"),
         "mobil olu dosya=" + (mobOlu.join(", ") || "yok"),
         "bayat sablon=" + (bayatSablon.join(", ") || "yok"),
-        "web ad=" + (adlar.size >= 17 ? "17+" : adlar.size),
+        "web ad=" + adlar.size,
       ],
-      ["web eksik dosya=yok", "web olu dosya=yok", "mobil olu dosya=yok", "bayat sablon=yok", "web ad=17+"],
+      /* 8 klip + notr kare (`nomi-durgun`, hareket azaltma). */
+      ["web eksik dosya=yok", "web olu dosya=yok", "mobil olu dosya=yok", "bayat sablon=yok", "web ad=9"],
       "bulunan",
       "beklenen",
     );

@@ -1,58 +1,48 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Image, View } from "react-native";
 import { reduceMotion } from "../lib/reduceMotion";
 
 /**
- * Nomi (maskot) — animasyonlu WebP klipler. Android'de Fresco animated-webp
- * eklentisiyle oynar. Klipler 2:3 oranında; boy = en × 1.5.
+ * Nomi (maskot) — 3B Nomi'nin iskelet animasyonlarından çizilmiş klipler
+ * (2026-09-29; web ikizi `components/mascot`). Alfa kanallı animasyonlu WebP,
+ * 192x288, 24 fps; Android'de Fresco animated-webp eklentisiyle oynar. Boy =
+ * en × 1.5.
  *
- * ANİMASYON YALNIZ GÜNLÜK TURDA (2026-09-18, Samet'in kararı).
+ * ANİMASYON YALNIZ GÜNLÜK TURDA (2026-09-18, Samet'in kararı): tek yer Öğren
+ * sekmesinin günlük tur kutusu. Kapı: `check:parity` "maskot yalnız günlük
+ * turda".
  *
- * Nomi otuzdan fazla yüzeyde oynuyordu: her sonuç bandı, her durum ekranı
- * ("bulunamadı", "bağlantı yok"), sınav girişleri, seviye testi, yürüyüş
- * modu, gelişim kartı, hata sınırı. Karar şu: animasyon öğrenmenin
- * KENDİSİNDE kalır, ürünün geri kalanında durur. Kalan tek yer Öğren
- * sekmesinin günlük turu — tur kartları (`game/rounds`), turun sonuç bandı,
- * kutlama pop'u, ortam yürüyüşü ve koç balonu.
- *
- * KURAL KODDA, YORUMDA DEĞİL: bu bileşen günlük turun ağacı dışında hiçbir
- * şey çizmiyor (`game/dailyRound`). Gerekliydi çünkü tur KARTLARI paylaşımlı —
- * `RoundView` patron turundan, meydan okumadan ve seviye sınavından da
- * çağrılıyor; "yalnız GameScreen'den çağır" demek o üç ekranda maskotu
- * bırakıyordu. Akış şablonları (`ui/flow`) da maskotu artık tanımıyor: sonuç
- * bandı `aside`, durum gövdesi `icon` düğümü alıyor.
- *
- * Kapı: `check:parity` "maskot yalnız günlük turda" — hem Nomi'yi çizen dosya
- * listesine hem sağlayıcının tek kökten kurulduğuna bakıyor.
- *
- * Klip listesi ARŞİVLE BİRLİKTE DÜŞÜNÜLÜR: haritadan çıkan klip ikiliye
- * girmiyor (metro yalnız `require` edileni paketliyor) ve dosyası
- * `assets-archive/mascot/` altına taşınıyor — silinmiyor, geri getirmek bir
- * satır (bkz. o dizindeki README).
+ * DİKİŞSİZ ZİNCİR: bütün klipler BİREBİR aynı nötr karede başlayıp bitiyor
+ * (baş ve son altı kare bekleme karesiyle harmanlandı). Boşta bekleme ile
+ * hareketler sırayla oynar: bekleme → rastgele hareket → bekleme…; takas
+ * klip süresi dolunca nötr karede yapılır, yeni klip çözülene kadar eskisi
+ * altta kalır (çift tampon), geçiş görünmez.
  */
 const CLIP = {
-  idle: require("../assets/mascot/idle-sit.webp"),
-  happy: require("../assets/mascot/happy.webp"),
-  thumbsup: require("../assets/mascot/thumbsup.webp"),
-  sad: require("../assets/mascot/sad.webp"),
-  celebrate: require("../assets/mascot/celebrate.webp"),
+  idle: require("../assets/mascot/nomi-bekleme.webp"),
+  happy: require("../assets/mascot/nomi-gulumse.webp"),
+  thumbsup: require("../assets/mascot/nomi-el.webp"),
+  sad: require("../assets/mascot/nomi-uzgun.webp"),
+  celebrate: require("../assets/mascot/nomi-zipla.webp"),
+  wow: require("../assets/mascot/nomi-saskin.webp"),
 } as const;
 
 export type Mood = keyof typeof CLIP;
 
-/**
- * Azaltılmış harekette Nomi DURUR: her klibin ilk karesi (320 px, ~25 KB).
- * Web `components/mascot` aynı ayarda durgun görsel gösteriyor; mobilde
- * animasyonlu WebP bu ayarı dinlemiyordu. Kareler kliplerden `sharp` ile
- * (`page: 0`) çıkarıldı; klip değişirse kare de yeniden üretilir.
- */
-const STILL: Record<Mood, number> = {
-  idle: require("../assets/mascot/still/idle-sit.webp"),
-  happy: require("../assets/mascot/still/happy.webp"),
-  thumbsup: require("../assets/mascot/still/thumbsup.webp"),
-  sad: require("../assets/mascot/still/sad.webp"),
-  celebrate: require("../assets/mascot/still/celebrate.webp"),
-};
+/** Boşta zincir (web `IDLE_CLIPS` ile aynı sıra ve kural); ilk eleman bekleme. */
+const IDLE_CLIPS: { name: string; src: number; ms: number }[] = [
+  { name: "nomi-bekleme", src: CLIP.idle, ms: 6000 },
+  { name: "nomi-kafa", src: require("../assets/mascot/nomi-kafa.webp"), ms: 5000 },
+  { name: "nomi-gozcu", src: require("../assets/mascot/nomi-gozcu.webp"), ms: 5000 },
+  { name: "nomi-el", src: CLIP.thumbsup, ms: 2792 },
+  { name: "nomi-gulumse", src: CLIP.happy, ms: 2000 },
+  { name: "nomi-zipla", src: CLIP.celebrate, ms: 1583 },
+];
+/** Duygu kliplerinin süresi (kare / 24 fps). */
+const MOOD_MS: Record<Mood, number> = { idle: 6000, happy: 2000, thumbsup: 2792, sad: 2000, celebrate: 1583, wow: 2000 };
+
+/** Azaltılmış harekette Nomi DURUR: bütün kliplerin ortak nötr karesi. */
+const STILL = require("../assets/mascot/still/nomi-durgun.webp");
 
 /**
  * Nomi'nin boyu — TEK sayı, çünkü Nomi'nin tek yeri var: Öğren ekranının
@@ -70,14 +60,50 @@ export function Mascot({
   mood?: Mood;
   size?: number;
 }) {
+  const still = reduceMotion();
+  /* Gösterilen klip: boşta zincirin sırası (0 = bekleme), duyguda duygunun klibi.
+     `n` her takasta artar: aynı klip yeniden oynasın diye görsel yeniden kurulur. */
+  const [idle, setIdle] = useState(0);
+  const [n, setN] = useState(0);
+  const lastMove = useRef(0);
+  const [prev, setPrev] = useState<{ src: number; key: string } | null>(null);
+  const clip = mood === "idle" ? IDLE_CLIPS[idle] : { name: mood, src: CLIP[mood], ms: MOOD_MS[mood] };
+  const key = `${clip.name}-${n}`;
+
+  useEffect(() => {
+    if (still || mood !== "idle") return;
+    const t = setTimeout(() => {
+      setPrev({ src: clip.src, key });
+      setIdle((cur) => {
+        if (cur !== 0) return 0;
+        const moves = IDLE_CLIPS.map((_, i) => i).filter((i) => i !== 0 && i !== lastMove.current);
+        const next = moves[Math.floor(Math.random() * moves.length)];
+        lastMove.current = next;
+        return next;
+      });
+      setN((x) => x + 1);
+    }, clip.ms + 60);
+    return () => clearTimeout(t);
+  }, [key, mood, still, clip.ms, clip.src]);
+
+  // Çift tampon: eski klibin donmuş nötr karesi, yenisi çözülene kadar 500 ms altta.
+  useEffect(() => {
+    if (!prev) return;
+    const t = setTimeout(() => setPrev(null), 500);
+    return () => clearTimeout(t);
+  }, [prev]);
+
+  const box = { position: "absolute" as const, bottom: 0, width: size, height: size * 1.5 };
   return (
     <View style={{ width: size, height: size * 1.5, alignItems: "center", justifyContent: "flex-end" }}>
-      <Image
-        source={reduceMotion() ? (STILL[mood] ?? STILL.idle) : (CLIP[mood] ?? CLIP.idle)}
-        style={{ width: size, height: size * 1.5 }}
-        resizeMode="contain"
-        fadeDuration={0}
-      />
+      {still ? (
+        <Image source={STILL} style={box} resizeMode="contain" fadeDuration={0} />
+      ) : (
+        <>
+          {prev ? <Image key={prev.key} source={prev.src} style={box} resizeMode="contain" fadeDuration={0} /> : null}
+          <Image key={key} source={clip.src} style={box} resizeMode="contain" fadeDuration={0} />
+        </>
+      )}
     </View>
   );
 }

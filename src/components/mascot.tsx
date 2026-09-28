@@ -10,36 +10,22 @@ import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
  *
  * Mirketin Almancası **Erdmännchen**; ad oradan, karakter de öyle seçildi.
  *
- * ## Üçüncü nesil: üretilmiş kare animasyonları
+ * ## Dördüncü nesil: 3B Nomi (2026-09-29)
  *
- * 1. nesil elle çizilmiş SVG'ydi ve boyalı referansın yanında "clipart" kaldı.
- * 2. nesil referans illüstrasyonun renkli izlemesiydi (`public/nomi.svg`) —
- * görüntü kalitesi tutuyordu ama hareket, tek parça resmi eğip zıplatmaktan
- * öteye geçemiyordu: kafa çevrilemiyor, kol kalkmıyordu.
+ * 1. nesil elle çizilmiş SVG, 2. nesil referans illüstrasyonun izlemesi, 3.
+ * nesil üretilmiş (Wan 2.2) video klipleriydi. Şimdi hareketler Nomi'nin 3B
+ * iskelet animasyonlarından çiziliyor (erdi-3d `betikler/maskot_klip.py`):
+ * bekleme, kafa çevirme, gözcü duruşu, el sallama, gülümseme, zıplama,
+ * şaşkınlık, üzüntü. 192x288, 24 fps, alfa kanallı animasyonlu WebP; sekizi
+ * toplam 3,2 MB (eski set 17 MB).
  *
- * Bu sürümde hareketin kendisi de üretiliyor: referans görsel, ai-story
- * projesindeki hattın uyarlamasıyla (Wan 2.2 image-to-video, Replicate)
- * aksiyon kliplerine çevrildi; kareler ayıklanıp beyaz zemin kenardan taşma
- * doldurmasıyla şeffaflaştırıldı ve alfa kanallı animasyonlu WebP'lere
- * paketlendi (`public/anim/*.webp`, 16fps, sonsuz döngü). Üretim hattı (Python
- * betikleri ve SVG izleyici) tek seferlikti ve depodan kaldırıldı; kaynak
- * görseller `data/mascot/` altında duruyor, hattın kendisi git geçmişinde.
+ * DİKİŞSİZ ZİNCİR: her klibin ilk ve son altı karesi bekleme karesiyle
+ * yumuşak harmanlandı; bütün klipler BİREBİR aynı karede başlıyor ve bitiyor.
+ * Klipler bir kez oynayıp (loop=1) o nötr karede duruyor; takas donmuş nötr
+ * kareden yapılıyor, hangi sırayla oynarlarsa oynasınlar geçiş görünmez.
  *
- * İki klip türü var:
- *   - Döngü klipleri `last_image` = ilk kare ile üretildi; ilk ve son kare
- *     aynı olduğundan döngü dikişsiz.
- *   - Durum klipleri (sad, sleep) duygunun İÇİNDEN başlar: nötrden geçiş
- *     klibinin son halinden seçilen kare base yapılıp duygu kendi içinde
- *     dönen bir döngü olarak üretildi. Duygu anında görünür, döngü sıçramaz.
- *
- * ## Duygu → klip
- *
- * Eski yedi duygu API'si korunuyor; ayrıca doğrudan klip adıyla çağrılan yeni
- * duygular var (thumbsup, dance, wave, peek). Animasyonlu WebP kendi kendine
- * döngüde — bileşen zamanlama yönetmiyor, yalnızca klibi seçiyor.
- *
- * Hareket azaltma tercihinde klip hiç yüklenmiyor; izlenmiş statik
- * illüstrasyon (`public/nomi.svg`) gösteriliyor.
+ * Hareket azaltmada klip hiç yüklenmiyor; nötr karenin kendisi durağan
+ * gösteriliyor (`nomi-durgun`).
  */
 export type Mood =
   | "idle"
@@ -51,15 +37,9 @@ export type Mood =
   | "celebrate"
   | "sad"
   | "wow"
-  | "thumbsup"
-  | "dance";
+  | "thumbsup";
 
-/*
-  Duygu → klip. Çoğu klip dikey tuvalde (2:3); dans geniş tuvalde üretildi
-  (kollar açılınca dar kadraja sığmıyordu), o yüzden en-boy oranı klip başına.
-  "wow" için ayrı klip yok: tetikte etrafı tarayan lookaround, şaşkınlığın
-  "bu da ne?" hâlini zaten taşıyor.
-*/
+/* Duygu → klip. Hepsi aynı 2:3 tuvalde, karakter her klipte aynı boyda. */
 /**
  * Nomi'nin boyu — TEK sayı, çünkü Nomi'nin tek yeri var: Öğren ekranının
  * günlük tur kutusu (2026-09-22, Samet'in kararı). Önce `components/flow`
@@ -70,55 +50,58 @@ export type Mood =
 export const MASCOT_CARD = 96;
 
 const CLIP: Record<Mood, { file: string; aspect: number }> = {
-  idle: { file: "lookaround", aspect: 2 / 3 },
-  happy: { file: "happy", aspect: 2 / 3 },
-  celebrate: { file: "celebrate", aspect: 2 / 3 },
-  sad: { file: "sad", aspect: 2 / 3 },
-  wow: { file: "lookaround", aspect: 2 / 3 },
-  thumbsup: { file: "thumbsup", aspect: 2 / 3 },
-  dance: { file: "dance", aspect: 194 / 228 },
+  idle: { file: "nomi-bekleme", aspect: 2 / 3 },
+  happy: { file: "nomi-gulumse", aspect: 2 / 3 },
+  celebrate: { file: "nomi-zipla", aspect: 2 / 3 },
+  sad: { file: "nomi-uzgun", aspect: 2 / 3 },
+  wow: { file: "nomi-saskin", aspect: 2 / 3 },
+  thumbsup: { file: "nomi-el", aspect: 2 / 3 },
 };
+/** Hareket azaltmada gösterilen nötr kare (bütün kliplerin ilk ve son karesi). */
+const STILL = { file: "nomi-durgun" };
 
 /*
-  Boşta bekleme tek klip olunca hareket ezberleniyor: beş idle klibi rastgele
-  sırayla birbirine bağlanıyor (aynısı üst üste gelmez). Zincir dikişsiz,
-  çünkü hepsi last_image = base ile üretildi: her klip AYNI nötr duruşta
-  başlayıp bitiyor; hangi sırayla oynarlarsa oynasınlar geçiş görünmez.
+  BOŞTA: bekleme klibi (nefes, bakınma, göz kırpma) ile hareketler sırayla:
+  bekleme → rastgele bir hareket → bekleme → başka bir hareket… Aynı hareket
+  üst üste gelmez. Hepsi aynı nötr karede başlayıp bittiği için zincir
+  dikişsiz. Mobil `ui/Mascot` aynı listeyi aynı kuralla oynatıyor.
 */
-const IDLE_CLIPS = [
-  "lookaround",
-  "idle-dog",
-  "idle-stretch",
-  "idle-scratch",
-  "idle-tail",
-  "idle-peekaboo",
-  "idle-hop",
-  "idle-dig",
-  "idle-sniff",
-  "idle-sit",
-  "idle-wink",
-  "idle-heave",
-];
+const IDLE_CLIPS = ["nomi-bekleme", "nomi-kafa", "nomi-gozcu", "nomi-el", "nomi-gulumse", "nomi-zipla"];
+const IDLE_BASE = IDLE_CLIPS[0];
+/** Klip süreleri (kare / 24 fps), `maskot_klip.py` çıktısı `klipler.json`. */
+const CLIP_LEN: Record<string, number> = {
+  "nomi-bekleme": 6000,
+  "nomi-kafa": 5000,
+  "nomi-gozcu": 5000,
+  "nomi-el": 2792,
+  "nomi-gulumse": 2000,
+  "nomi-zipla": 1583,
+  "nomi-saskin": 2000,
+  "nomi-uzgun": 2000,
+};
 /*
-  Bir klibin tam süresi (61 kare @ 12fps) + küçük pay. Idle ve duygu klipleri
-  loop=1 kodlu: bir tur oynayıp NÖTR karede donuyorlar; takas donmuş nötr
-  kareden yapılır, görünmez. Süre klibin GERÇEK başlangıcından ölçülür
-  (<img onLoad>): sabit zamanlayıcı yüklenme gecikmesini bilmediği için ya
-  klibi ortasında kesiyor (gidip gelme) ya da donmuş karede bekletiyordu
-  (takılma).
+  Takas, klibin GERÇEK başlangıcından (<img> çözüldüğü an) klip süresi + küçük
+  pay sonra: sabit zamanlayıcı yüklenme gecikmesini bilmediği için ya klibi
+  ortasında keser ya da donmuş karede bekletirdi.
 */
-const CLIP_MS = (61 / 12) * 1000 + 60;
+const clipMs = (file: string) => (CLIP_LEN[file] ?? 6000) + 60;
 /*
   iOS Safari animasyonu, görsel "yüklendi" dedikten bir süre sonra başlatıyor
-  (çözümleme + ilk boyama); Android/Chrome hemen. Aynı zamanlayıcı iPhone'da
-  klibi son karelerinde kesip "hafif gidip gelme" yapıyordu. Başlangıç anı
-  artık img.decode() tamamlanınca alınıyor ve iOS'ta küçük bir pay ekleniyor.
+  (çözümleme + ilk boyama); Android/Chrome hemen. Başlangıç anı img.decode()
+  tamamlanınca alınıyor ve iOS'ta küçük bir pay ekleniyor.
 */
 const IOS =
   typeof navigator !== "undefined" &&
   /iP(hone|ad|od)/.test(navigator.userAgent) &&
   !/CriOS|FxiOS/.test(navigator.userAgent);
 const SWAP_MARGIN_MS = IOS ? 260 : 0;
+
+/** Sıradaki boşta klibi: beklemeden sonra rastgele bir hareket (sonuncusu hariç), hareketten sonra bekleme. */
+function nextIdle(cur: string, lastMove: string | null): string {
+  if (cur !== IDLE_BASE) return IDLE_BASE;
+  const moves = IDLE_CLIPS.filter((c) => c !== IDLE_BASE && c !== lastMove);
+  return moves[Math.floor(Math.random() * moves.length)];
+}
 
 /** Idle rotasyonuna GEÇMEYEN duygular — gerekçe bileşen içindeki yorumda. */
 const STICKY: Mood[] = ["sad"];
@@ -133,18 +116,15 @@ export function Mascot({
   className?: string;
 }) {
   const still = useStill();
-  const [idleClip, setIdleClip] = useState(IDLE_CLIPS[0]);
+  const [idleClip, setIdleClip] = useState(IDLE_BASE);
+  const lastMove = useRef<string | null>(null);
   /*
     Duygu bir SELAMLAMA, kalıcı bir durum değil: klip bir tur oynadıktan sonra
     maskot kendiliğinden idle rotasyonuna geçer. Bunsuz uzun yaşayan her yer
     (seri kutusu, ana sayfa, sonuç kartları) aynı klibi sonsuza dek döndürüyordu.
     Kısa ömürlü kullanımlar (cevap şeridi ~1.5 sn) bir turu zaten göremeden
-    kapanır, etkilenmez. İstisnalar STICKY'de: sad ve sleep birer duygu DURUMU —
-    üzgünün ya da uyuyanın neşeyle boşta gezinmesi tonu bozar. Dance de dahil
-    diğer her duygu rotasyona katılır; kutunun oranı o an GÖSTERİLEN klibe
-    bağlı, geniş tuvalli dance'ten dikey idle'a geçişte içerik oranı değişir
-    ama dance yalnız kısa ömürlü kutlama pop'unda kullanıldığından bu geçiş
-    pratikte görülmez.
+    kapanır, etkilenmez. İstisna STICKY'de: sad bir duygu DURUMU, üzgünün
+    neşeyle boşta gezinmesi tonu bozar. Diğer her duygu rotasyona katılır.
   */
   const drifts = mood !== "idle" && !STICKY.includes(mood);
   const [drifted, setDrifted] = useState(false);
@@ -164,15 +144,16 @@ export function Mascot({
       () => {
         if (inIdle) {
           setIdleClip((cur) => {
-            const rest = IDLE_CLIPS.filter((c) => c !== cur);
-            return rest[Math.floor(Math.random() * rest.length)];
+            const next = nextIdle(cur, lastMove.current);
+            if (next !== IDLE_BASE) lastMove.current = next;
+            return next;
           });
         } else setDrifted(true);
       },
-      Math.max(0, CLIP_MS + SWAP_MARGIN_MS - (Date.now() - startedAt)),
+      Math.max(0, clipMs(inIdle ? idleClip : CLIP[mood].file) + SWAP_MARGIN_MS - (Date.now() - startedAt)),
     );
     return () => clearTimeout(t);
-  }, [startedAt, inIdle, drifts, still]);
+  }, [startedAt, inIdle, drifts, still, idleClip, mood]);
 
   // Sıradaki idle klibi ilk geçişte takılmasın diye hepsi önden ısıtılıyor.
   useEffect(() => {
@@ -230,13 +211,13 @@ export function Mascot({
         transition={{ duration: 2.4, repeat: still ? 0 : Infinity, ease: "easeInOut" }}
       />
       {still ? (
-        // eslint-disable-next-line @next/next/no-img-element -- SVG; next/image için `dangerouslyAllowSVG` gerekir ve SVG'de optimizasyonun kazancı yok
-        <img src="/nomi.svg" alt="" className="block h-full w-full object-contain" draggable={false} />
+        // eslint-disable-next-line @next/next/no-img-element -- tek kare WebP; next/image burada kazanç getirmiyor
+        <img src={`/anim/${STILL.file}.webp`} alt="" className="block h-full w-full object-contain" draggable={false} />
       ) : (
         <>
           {/* Takas tamponu: yeni klip çözülene kadar eskinin donmuş nötr karesi. */}
           {prevUrl && (
-            /* eslint-disable-next-line @next/next/no-img-element -- animasyonlu WebP (public/anim/*.webp, 16fps); next/image yeniden kodlayıp animasyonu düşürür */
+            /* eslint-disable-next-line @next/next/no-img-element -- animasyonlu WebP (public/anim/*.webp, 24fps); next/image yeniden kodlayıp animasyonu düşürür */
             <img
               src={prevUrl}
               alt=""
@@ -267,10 +248,10 @@ export function Mascot({
               if (typeof img.decode === "function") img.decode().then(mark, mark);
               else mark();
             }}
-            /* Klip yoksa (henüz üretilmedi / yüklenemedi) statik illüstrasyona düş. */
+            /* Klip yüklenemezse nötr kareye düş. */
             onError={(e) => {
               e.currentTarget.onerror = null;
-              e.currentTarget.src = "/nomi.svg";
+              e.currentTarget.src = `/anim/${STILL.file}.webp`;
             }}
           />
           )}
