@@ -62,7 +62,9 @@ export const motion = {
   instant: 120, short: 200, medium: 320, stagger: 30,
   ease: [0.2, 0, 0.2, 1] as const,
   emphasized: [0.2, 0, 0, 1] as const,
-  celebrate: { stiffness: 320, damping: 20 },
+  /* Kutlama yayı sekmesiz oturuyor: sönüm oranı 0.81, taşma %2'nin altında.
+     (20 ile %12 sekiyordu ve oyuncak gibi duruyordu; 2026-09-29.) */
+  celebrate: { stiffness: 320, damping: 29 },
 };
 for (const k of Object.keys(spacing) as (keyof typeof spacing)[]) spacing[k] = Math.max(2, Math.round(spacing[k] * density));
 for (const k of Object.keys(radii) as (keyof typeof radii)[]) if (k !== "pill") radii[k] = ds(radii[k]);

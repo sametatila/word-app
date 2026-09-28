@@ -114,8 +114,8 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
     >
       <Confetti fire={1} count={30} />
       <motion.div
-        initial={{ scale: 0.7, y: 18, rotate: -4 }}
-        animate={{ scale: 1, y: 0, rotate: 0 }}
+        initial={{ scale: 0.94, y: 12, opacity: 0 }}
+        animate={{ scale: 1, y: 0, opacity: 1 }}
         transition={T.celebrate}
         className="card w-full max-w-xs px-4 py-5 text-center"
         style={{ boxShadow: `0 24px 60px -20px ${color}` }}
@@ -124,8 +124,8 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
         {/* Rozet kartın içinde ikinci kez yaylanıyor: kart oturduktan hemen sonra. */}
         <div className="my-4 flex justify-center">
           <motion.span
-            initial={{ scale: 0.3 }}
-            animate={{ scale: 1 }}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{ ...T.celebrate, delay: 0.12 }}
             className="flex h-[92px] w-[92px] items-center justify-center rounded-full text-white"
             style={{ background: color, boxShadow: `0 10px 26px -10px ${color}` }}

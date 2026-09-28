@@ -60,7 +60,7 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
   const { colors } = useTheme();
   const still = reduceMotion();
   const card = useRef(new Animated.Value(still ? 1 : 0)).current;
-  const badge = useRef(new Animated.Value(still ? 1 : 0.3)).current;
+  const badge = useRef(new Animated.Value(still ? 1 : 0)).current;
   const done = useRef(onDone);
   useEffect(() => { done.current = onDone; });
   const color = LEAGUE_COLOR[LEAGUE_TIERS[Math.max(0, Math.min(LEAGUE_TIERS.length - 1, tier))]];
@@ -72,13 +72,12 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
     vibrate("streak");
     if (!still) {
       /* Kart kutlama yayıyla (`motion.celebrate`; web `league-up` kartı aynı
-         değer). Rozet bilerek daha yaylı ve kartın ardından geliyor: web
-         `league-up` rozeti stiffness 260 damping 10, 120 ms gecikme -
-         koreografi değeri, jeton değil. */
+         değer). Rozet aynı sekmesiz yayla, kartın 120 ms ardından (web `league-up`
+         rozeti aynı). */
       Animated.spring(card, { toValue: 1, ...motion.celebrate, mass: 1, useNativeDriver: true }).start();
       Animated.sequence([
         Animated.delay(120),
-        Animated.spring(badge, { toValue: 1, stiffness: 260, damping: 10, mass: 1, useNativeDriver: true }),
+        Animated.spring(badge, { toValue: 1, ...motion.celebrate, mass: 1, useNativeDriver: true }),
       ]).start();
     }
     const end = setTimeout(() => done.current(), LEAGUE_UP_MS);
@@ -101,9 +100,8 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
               width: "100%", maxWidth: DIALOG_MAX_WIDTH, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg,
               opacity: card,
               transform: [
-                { scale: card.interpolate({ inputRange: [0, 1], outputRange: [0.7, 1] }) },
-                { translateY: card.interpolate({ inputRange: [0, 1], outputRange: [18, 0] }) },
-                { rotate: card.interpolate({ inputRange: [0, 1], outputRange: ["-4deg", "0deg"] }) },
+                { scale: card.interpolate({ inputRange: [0, 1], outputRange: [0.94, 1] }) },
+                { translateY: card.interpolate({ inputRange: [0, 1], outputRange: [12, 0] }) },
               ],
             },
             softShadow(color, 18),
@@ -111,7 +109,7 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
         >
           <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("league.up_eyebrow")}</Text>
           <View style={{ marginTop: spacing.lg, marginBottom: spacing.md }}>
-            <Animated.View style={[{ width: ds(92), height: ds(92), borderRadius: ds(46), alignItems: "center", justifyContent: "center", backgroundColor: color, transform: [{ scale: badge }] }, softShadow(color, 8)]}>
+            <Animated.View style={[{ width: ds(92), height: ds(92), borderRadius: ds(46), alignItems: "center", justifyContent: "center", backgroundColor: color, opacity: badge, transform: [{ scale: badge.interpolate({ inputRange: [0, 1], outputRange: [0.9, 1] }) }] }, softShadow(color, 8)]}>
               <TrophyIcon color="#fff" size={ds(46)} />
             </Animated.View>
           </View>

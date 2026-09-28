@@ -10,7 +10,8 @@ export const MOTION = {
   stagger: 30,
   ease: [0.2, 0, 0.2, 1],
   emphasized: [0.2, 0, 0, 1],
-  celebrate: { stiffness: 320, damping: 20 },
+  /** Sekmesiz oturan kutlama yayı: sönüm oranı 0.81, taşma %2'nin altında. */
+  celebrate: { stiffness: 320, damping: 29 },
 } as const;
 
 /** framer `transition` kalıpları. */

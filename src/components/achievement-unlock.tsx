@@ -285,9 +285,10 @@ export function AchievementUnlock() {
 function Card({ tier, children }: { tier: string; children: React.ReactNode }) {
   return (
     <motion.div
-      initial={{ scale: 0.7, y: 18, rotate: -4 }}
-      animate={{ scale: 1, y: 0, rotate: 0 }}
-      exit={{ scale: 0.9, y: -10, opacity: 0 }}
+      /* Küçük bir büyüme + yükselme, dönme yok: kutlama ölçülü (2026-09-29). */
+      initial={{ scale: 0.94, y: 12, opacity: 0 }}
+      animate={{ scale: 1, y: 0, opacity: 1 }}
+      exit={{ scale: 0.98, y: -6, opacity: 0 }}
       transition={T.celebrate}
       /* Android `AchievementUnlock` kartı: dikey 20, yatay 16. */
       className="card w-full max-w-xs px-4 py-5 text-center"

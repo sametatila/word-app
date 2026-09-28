@@ -32,7 +32,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
   const still = reduceMotion();
   /* Seri kırılıp yeniden başladıysa (1) önceki değer 0: "yeni başladı" da bir artış. */
   const from = Math.max(0, streak - 1);
-  const flame = useRef(new Animated.Value(still ? 1 : 0.4)).current;
+  const flame = useRef(new Animated.Value(still ? 1 : 0.9)).current;
   /* 0 → eski sayı yerinde; 1 → eski yukarı çıkıp söndü, yeni alttan geldi. */
   const swap = useRef(new Animated.Value(still ? 1 : 0)).current;
   const done = useRef(onDone);
@@ -73,7 +73,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
     >
       <Animated.View
         style={[
-          { width: ds(96), height: ds(96), borderRadius: ds(48), alignItems: "center", justifyContent: "center", backgroundColor: flameFill, transform: [{ scale: flame }], opacity: flame.interpolate({ inputRange: [0.4, 1], outputRange: [0, 1], extrapolate: "clamp" }) },
+          { width: ds(96), height: ds(96), borderRadius: ds(48), alignItems: "center", justifyContent: "center", backgroundColor: flameFill, transform: [{ scale: flame }], opacity: flame.interpolate({ inputRange: [0.9, 1], outputRange: [0, 1], extrapolate: "clamp" }) },
           softShadow(flameFill, 14),
         ]}
       >

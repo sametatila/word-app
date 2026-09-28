@@ -83,7 +83,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
       {/* ALEV: ölçek yayı. Küçükten biraz taşarak yerine oturuyor; "Hareketi
           azalt"ta `MotionConfig` dönüşümü zaten kapatıyor. */}
       <motion.span
-        initial={still ? false : { scale: 0.4, opacity: 0 }}
+        initial={still ? false : { scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={T.celebrate}
         className="glow-tint flex h-24 w-24 items-center justify-center rounded-full on-fill"

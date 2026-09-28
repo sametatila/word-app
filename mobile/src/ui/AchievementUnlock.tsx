@@ -182,8 +182,8 @@ export function AchievementUnlock() {
   /*
     KART YAYLANARAK GELİYOR. Modal yalnız soluyordu; webde kart küçükten,
     hafif eğik ve aşağıdan yayla oturuyor (`components/achievement-unlock.tsx`
-    `Card`: scale .7→1, y 18→0, rotate -4°→0, kutlama yayı `motion.celebrate`:
-    stiffness 320 damping 20).
+    `Card`: scale .94→1, y 12→0, dönme yok, sekmesiz kutlama yayı
+    `motion.celebrate`; 2026-09-29).
     Tek değer 0→1 yaylanıyor, üç dönüşüm ondan; yayın taşması da üçüne aynı
     oranda yansıyor (webde her özellik aynı yayla gidiyor). Kuyruktaki her
     rozet kendi girişini oynuyor (webde `key={shownId}`). "Hareketi azalt"ta
@@ -202,9 +202,8 @@ export function AchievementUnlock() {
   }, [shownId, pop]);
   const cardMotion = {
     transform: [
-      { translateY: pop.interpolate({ inputRange: [0, 1], outputRange: [18, 0] }) },
-      { scale: pop.interpolate({ inputRange: [0, 1], outputRange: [0.7, 1] }) },
-      { rotate: pop.interpolate({ inputRange: [0, 1], outputRange: ["-4deg", "0deg"] }) },
+      { translateY: pop.interpolate({ inputRange: [0, 1], outputRange: [12, 0] }) },
+      { scale: pop.interpolate({ inputRange: [0, 1], outputRange: [0.94, 1] }) },
     ],
   };
 

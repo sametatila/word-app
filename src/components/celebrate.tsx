@@ -151,9 +151,9 @@ export function AchievementFlash({
       {shown ? (
         <motion.div
           key={shown.key}
-          initial={{ opacity: 0, scale: 0.6, y: 10 }}
+          initial={{ opacity: 0, scale: 0.94, y: 8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 1.25, y: -18 }}
+          exit={{ opacity: 0, scale: 1.02, y: -8 }}
           transition={T.celebrate}
           className="pointer-events-none absolute inset-x-0 top-24 z-40 flex justify-center"
         >

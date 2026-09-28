@@ -926,9 +926,9 @@ function SessionRound() {
         {combo >= 3 ? (
           <motion.span
             key={combo}
-            initial={{ scale: 1.35 }}
+            initial={{ scale: 1.12 }}
             animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 420, damping: 16 }}
+            transition={T.celebrate}
             className="flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-micro"
             /* Mobil seri hapı `info` (gök) tonunda; web mordaydı ve aynı rozet
                iki uygulamada iki ayrı şey söylüyor gibi duruyordu. */
@@ -1060,10 +1060,12 @@ function LoadingCard() {
   return (
     <div role="status" aria-busy="true" className="mx-auto flex w-full max-w-2xl flex-1 items-center justify-center">
       <div className="flex flex-col items-center gap-3">
-        <motion.div
-          className="brand-gradient h-12 w-12 rounded-tile"
-          animate={{ rotate: [0, 90, 180, 270, 360], borderRadius: ["30%", "50%", "30%"] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+        {/* Sade halka (konuşma puanlaması ve sistem göstergeleriyle aynı dil);
+            eskisi dönerek şekil değiştiren turuncu bir kareydi. */}
+        <span
+          aria-hidden
+          className="block h-7 w-7 animate-spin rounded-full border-[3px]"
+          style={{ borderColor: "var(--color-brand)", borderTopColor: "transparent" }}
         />
         <p className="muted text-body">{t("session.preparing")}</p>
       </div>
