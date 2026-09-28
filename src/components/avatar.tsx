@@ -3,7 +3,7 @@
 import { AvatarOverlay, HAT_COLORS } from "@/components/avatar-parts";
 import { useAvatar } from "@/lib/avatar";
 import { avatarBg, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
-import { avatarLayers } from "@/lib/avatar-layers";
+import { avatarImageUrl, avatarLayers } from "@/lib/avatar-layers";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
 import type { ReactNode } from "react";
 
@@ -113,6 +113,23 @@ export function MascotAvatar({
      büyütülüp aşağıdan hizalanıyor (profil üst alanı kareyi olduğu gibi çiziyor). */
   if (catalog) {
     const L = avatarLayers(config, catalog.cat);
+    /* KÜÇÜK BOY TEK GÖRSEL: listelerde kişi başına bir istek (sunucuda
+       birleşiyor, bkz. `avatarImageUrl`). Çift yoğunluklu ekran için 2×. */
+    if (size <= 96) {
+      return (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={avatarImageUrl(catalog.base, L, size * 2)}
+          alt=""
+          width={size}
+          height={size}
+          loading="lazy"
+          decoding="async"
+          className={`block shrink-0 rounded-full ${className}`}
+          style={{ width: size, height: size, background: "#FA7C13", ...(ring ? { boxShadow: `0 0 0 2px ${ring}` } : {}) }}
+        />
+      );
+    }
     return (
       <span
         className={`relative block shrink-0 overflow-hidden rounded-full ${className}`}

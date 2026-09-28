@@ -302,6 +302,7 @@ for (const file of walk("src/app")) {
  * ölçülmediği için kapı ileride kaldırılsa kimse görmez.
  */
 const PUBLIC_ROUTES = new Map([
+  ["src/app/api/avatar/img/route.ts", "avatar görseli: yalnız katalogdaki dosyalardan birleştirir, kişisel veri yok; mobil Image ve herkese açık profil oturumsuz yüklüyor"],
   ["src/app/api/auth/[...path]/route.ts", "better-auth'un kendi yolu: giriş, kayıt, doğrulama hepsi burada"],
   ["src/app/api/config/route.ts", "istemcinin açılışta okuduğu genel yapılandırma; sır taşımıyor"],
   ["src/app/api/turnstile/route.ts", "captcha doğrulaması: çağıran henüz giriş yapmamış olabilir"],

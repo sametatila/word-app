@@ -49,3 +49,22 @@ export function avatarLayers(cfg: AvatarConfig, cat: AvatarCatalog): { bg: strin
   const bg = byId.get(cfg.bg ?? "bg_orange") ?? byId.get("bg_orange");
   return { bg: bg?.dosyalar.varsayilan ?? null, base: cat.taban, layers: chosen.map((c) => c.file) };
 }
+
+/**
+ * Küçük avatarın TEK GÖRSELİ (`/api/avatar/img`, 2026-09-28).
+ *
+ * Listede her kişi için arka plan + taban + yuvaları ayrı ayrı indirmek
+ * (8-9 × 512 px) ağır: otuz kişilik bir lig tablosu 250'den fazla istek
+ * demekti. Küçük boyda sunucu hepsini tek küçük WebP'ye birleştiriyor.
+ * Adres çizilecek dosyaların kendisi: aynı avatar her yerde AYNI adres, yani
+ * tarayıcı ve sunucu önbelleğinde tek kopya. `base` katalog kökü, `px` istenen
+ * piksel (48, 96 ya da 192'ye yuvarlanır).
+ */
+export const AVATAR_IMG_SIZES = [48, 96, 192] as const;
+export function avatarImageUrl(base: string, L: { bg: string | null; base: string; layers: string[] }, px: number): string {
+  /* Katalog kökünün sunucusu (RN'in `URL`i `origin` vermiyor: düzenli ifade). */
+  const origin = base.replace(/^(https?:\/\/[^/]+).*$/, "$1");
+  const s = AVATAR_IMG_SIZES.find((x) => x >= px) ?? AVATAR_IMG_SIZES[AVATAR_IMG_SIZES.length - 1];
+  const q = [L.bg ?? "", L.base, ...L.layers].map(encodeURIComponent).join(",");
+  return `${origin}/api/avatar/img?v=1&s=${s}&l=${q}`;
+}

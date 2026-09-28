@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Image, PixelRatio } from "react-native";
 import { AvatarOverlay, HAT_COLORS } from "./avatarParts";
 import { useAvatar, parseAvatar, avatarBg, type AvatarConfig } from "../lib/avatar";
-import { avatarLayers } from "../lib/avatarLayers";
+import { avatarImageUrl, avatarLayers } from "../lib/avatarLayers";
 import { useAvatarCatalog } from "../lib/avatarCatalog";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import { radii } from "../theme";
@@ -99,6 +99,15 @@ export function MascotAvatar({ config, size = 44, ring }: { config: AvatarConfig
   /* 3B KATALOG AÇIKSA katmanlar (web `MascotAvatar` ile aynı ölçek ve hiza). */
   if (catalog) {
     const L = avatarLayers(config, catalog.cat);
+    /* KÜÇÜK BOY TEK GÖRSEL (web ile aynı): listelerde kişi başına bir istek,
+       sunucuda birleşiyor (`avatarImageUrl`). Ekran yoğunluğuna göre boy. */
+    if (inner <= 96) {
+      return (
+        <View style={{ width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center", borderWidth: ring ? 2 : 0, borderColor: ring ?? "transparent" }}>
+          <Image source={{ uri: avatarImageUrl(catalog.base, L, inner * PixelRatio.get()) }} style={{ width: inner, height: inner, borderRadius: inner / 2, backgroundColor: "#FA7C13" }} />
+        </View>
+      );
+    }
     return (
       <View style={{ width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center", borderWidth: ring ? 2 : 0, borderColor: ring ?? "transparent" }}>
         <View style={{ width: inner, height: inner, borderRadius: inner / 2, overflow: "hidden", backgroundColor: "#FA7C13" }}>
