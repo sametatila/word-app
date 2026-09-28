@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import Link from "next/link";
 import { AlertIcon, ChevronRightIcon } from "@/components/icons";
+import { SocialSettings } from "@/components/social/social-settings";
+import type { SocialMeView } from "@/lib/social/client";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { AnalyticsSettings } from "@/components/analytics-settings";
@@ -69,10 +71,28 @@ const LEVELS = [
  * dokunuşla açılıyor — kimlik orada kalıyor, buraya yalnızca değiştirilen
  * şeyler geliyor.
  */
+export type SettingsSection = "learning" | "app" | "account" | "security" | "privacy" | "about";
+
+/**
+ * AYARLAR GRUP GRUP (2026-09-28, Samet'in kararı; `docs/plan/profil-ayarlar-topluluk.md`).
+ * `/profile/settings` kısa bir liste, her grup kendi adresinde
+ * (`/profile/settings/<bölüm>`); masaüstünde liste solda, grup sağda. Bu form
+ * yalnız istenen grubu çiziyor. Sosyal ayarlar (kullanıcı adı, görünürlük,
+ * izinler, engellenenler) Hesap ve Gizlilik'e taşındı; `/friends/settings`
+ * Gizlilik'e yönleniyor.
+ */
 export function ProfileForm({
   initial,
   googleEnabled,
+  section,
+  social,
+  version,
 }: {
+  section: SettingsSection;
+  /** Hesap ve Gizlilik gruplarının sosyal kısmı; okunamadıysa null. */
+  social?: SocialMeView | null;
+  /** Hakkında grubunun dibindeki sürüm satırı. */
+  version?: string;
   initial: Initial;
   /** Armanın türetildiği hesap kimliği — sıralamadakiyle aynı görünsün diye. */
   userId: string;
@@ -178,56 +198,50 @@ export function ProfileForm({
     </Row>
   );
 
-  return (
-    <div className="mx-auto w-full max-w-3xl space-y-4">
-      <PageBack fallback="/profile" title={t("settings.settings")} />
+  const TITLE: Record<SettingsSection, string> = {
+    learning: "settings.group_learning",
+    app: "settings.group_app",
+    account: "settings.group_account",
+    security: "settings.group_security",
+    privacy: "settings.group_privacy",
+    about: "settings.group_about",
+  };
 
-      {/*
-        AYARLAR İKİYE AYRILDI.
+  const accountRows = (
+    <>
+      {social ? (
+        <Row label={t("socialsettings.username")}>
+          <SocialSettings initial={social} part="username" />
+        </Row>
+      ) : null}
+      {/* GÜVENLİK Hesap'ın alt sayfası: parola, iki adım ve oturumlar yılda
+          bir açılan şeyler; listede kendi satırı yok. */}
+      <Row>
+        <Link href="/profile/settings/security" prefetch={false} className="pressable flex items-center gap-3 py-1">
+          <span className="min-w-0 flex-1">
+            <span className="block text-strong">{t("settings.group_security")}</span>
+            <span className="muted block text-caption">{t("settings.security_sub")}</span>
+          </span>
+          <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
+        </Link>
+      </Row>
+      {/* HESABI SİL Hesap'ın son satırı — mobil Ayarlar › Hesap ile aynı yer;
+          mağaza notlarının anlattığı yol ("Ayarlar › Hesap › Hesabı sil"). */}
+      <Row>
+        <Link href="/account/delete" prefetch={false} className="pressable flex items-center gap-3 py-1">
+          <span className="min-w-0 flex-1">
+            <span className="block text-strong" style={{ color: "var(--color-rose)" }}>{t("settings.delete_account")}</span>
+            <span className="muted block text-caption">{t("deleteaccount.your_account_and_all_your_data")}</span>
+          </span>
+          <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
+        </Link>
+      </Row>
+    </>
+  );
 
-        Önce beş ayrı kart vardı — "Ayarlar", "Uygulama olarak kur", davet, ses
-        ve bildirim — ve aralarına ilerleme kartları da karışıyordu. Hepsi aynı
-        ağırlıkta beyaz kutulardı, yani sayfa "önce bakılacak şeyler, sonra
-        değiştirilecek şeyler" diye okunmuyordu.
-
-        Şimdi iki başlık var: ÖĞRENME (turun nasıl kurulacağı) ve UYGULAMA
-        (cihazda nasıl çalışacağı). Aradaki fark kullanıcının aradığı şeyin
-        farkı: biri "günde kaç kelime", diğeri "sesi kapat".
-      */}
-      {/*
-        AYARLAR BÖLÜM BÖLÜM — mobil `SettingsScreen` ritmi.
-
-        Önce iki büyük kart vardı: ÖĞRENME (turun nasıl kurulacağı) ve
-        UYGULAMA (cihazda nasıl çalışacağı). Ayrım doğruydu ama kart fazla
-        büyüktü: kurs, ses, ad, seviye ve iki kaydırıcı aynı beyaz kutunun
-        içinde alt alta duruyor ve aralarındaki tek sınır bir boşluktu.
-        Aranan ayarı bulmak için kutunun tamamını okumak gerekiyordu.
-
-        Mobilde her kavramın kendi bölümü var: üstte küçük harfli bir
-        etiket, altında yalnız o kavramın kartı. Etiket zaten ne olduğunu
-        söylediği için kartın içindeki tekrar eden başlıklar da kalktı.
-      */}
-      {/* KAYDET DÜĞMESİ KALKTI — gerekçe `patch` üzerinde. Geriye yalnız hata
-          satırı kalıyor ve yeri SAYFANIN BAŞI: artık hangi kontrolün kaydı
-          düştüyse düşsün aynı satıra yazılıyor, o yüzden tek bir kontrolün
-          yanında duramaz. `role="alert"` sayfanın neresinde olunursa olunsun
-          duyuruyor. */}
-      <div className="mx-auto w-full max-w-3xl empty:hidden">
-        {saveError ? (
-          <p
-            role="alert"
-            className="flex items-center gap-2 rounded-panel px-3 py-2 text-body"
-            style={{
-              background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)",
-              color: "var(--color-rose)",
-            }}
-          >
-            <AlertIcon size={16} /> {saveError}
-          </p>
-        ) : null}
-      </div>
-
-      <Group title={t("settings.group_learning")}>
+  const body: Record<SettingsSection, React.ReactNode> = {
+    learning: (
+      <Group>
         <Row label={t("settings.language_to_learn")}>
           <div>
             {/* Kurslar telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
@@ -360,7 +374,9 @@ export function ProfileForm({
             ayarlar. */}
       </Group>
 
-      <Group title={t("settings.group_app")}>
+    ),
+    app: (
+      <Group>
         <Row label={t("settings.app_language")}>
           <LangSetting bare />
         </Row>
@@ -412,26 +428,6 @@ export function ProfileForm({
           </div>
         </Row>
 
-        {/* Gizlilik: analitik anahtarı ve hukuki metinler (Play: politika uygulama içinden erişilebilir olmalı). */}
-        {/*
-          BİLDİRİMLER PROFİLDEN BURAYA. İçeriği zaten ayardı (hatırlatmalar, seri
-          koruma, haftalık test) ama profil menüsünde duruyordu ve "Gelen kutusu"
-          satırının hemen altında neredeyse aynı adla görünüyordu.
-        */}
-        <Row label={t("settings.sec_notifications")}>
-          <Link
-            href="/notifications"
-            prefetch={false}
-            className="pressable flex items-center gap-3 py-1"
-          >
-            <span className="min-w-0 flex-1">
-              <span className="block text-strong">{t("notifications.reminders")}</span>
-              <span className="muted block text-caption">{t("settings.notifications_sub")}</span>
-            </span>
-            <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
-          </Link>
-        </Row>
-
         {/*
           HESAP VE GÜVENLİK EN ALTTA. İkisi de en üstteydi ve ayarlar sayfası
           "giriş yöntemlerin" ile başlıyordu — yılda bir dokunulan bir şey, her
@@ -441,12 +437,14 @@ export function ProfileForm({
         */}
       </Group>
 
-      {/* HESAP ve GÜVENLİK grupları: kartı `LinkedAccounts` kuruyor,
-          çünkü sağlayıcı listesini okuyan tek yer orası. */}
-      <LinkedAccounts googleEnabled={googleEnabled} nameRow={nameRow} />
-
-      <Group title={t("settings.group_privacy_about")}>
-        <Row label={t("settings.privacy")}>
+    ),
+    account: <LinkedAccounts googleEnabled={googleEnabled} nameRow={nameRow} part="account" accountRows={accountRows} />,
+    security: <LinkedAccounts googleEnabled={googleEnabled} part="security" />,
+    privacy: (
+      <>
+        {social ? <SocialSettings initial={social} part="privacy" /> : null}
+        <Group title={t("settings.data_consents")}>
+        <Row>
           <AnalyticsSettings bare />
           {/* Yapay zekâ rızası analitiğin yanında: ikisi de "verim nereye
               gidiyor" sorusunun anahtarı. "Hayır" diyene diyalog bir daha
@@ -458,13 +456,18 @@ export function ProfileForm({
           <MicConsentRow />
         </Row>
 
+        </Group>
+      </>
+    ),
+    about: (
+      <Group>
         {/*
           HAKKINDA AYRI BİR BÖLÜM. Politika, şartlar ve destek "Gizlilik"in
           içindeydi; grubun adı zaten "Gizlilik ve hakkında"ydı ama "hakkında"
           diye bir yer yoktu. Gizlilik artık yalnız kullanıcının AÇIP
           KAPATABİLDİĞİ şeyleri taşıyor; okunacak metinler burada.
         */}
-        <Row label={t("settings.about")}>
+        <Row>
           <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
             <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.privacy_policy")}</Link>
             <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.terms_of_use")}</Link>
@@ -478,16 +481,40 @@ export function ProfileForm({
           <SettingRow title={t("settings.support_contact")} sub={t("settings.support_contact_sub")}>
             <Link href={legalPath("support", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.support_contact")}</Link>
           </SettingRow>
+          {/* Künye ve açık kaynak lisansları web'de de burada (mobil Ayarlar ›
+              Hakkında ile aynı; DDG §5 tek dokunuşla ulaşılabilirlik). */}
+          <SettingRow title={t("settings.impressum")}>
+            <Link href="/impressum" prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.impressum")}</Link>
+          </SettingRow>
+          <SettingRow title={t("settings.oss_licenses")}>
+            <Link href="/licenses" prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.oss_licenses")}</Link>
+          </SettingRow>
         </Row>
       </Group>
+    ),
+  };
 
-      {/*
-        OTURUM BÖLÜMÜ KALKTI. Çıkış yap Profil ekranının dibinde zaten var ve
-        orada onay diyaloğuyla — mobilde de tek yer orası. Hesap silme de
-        HESAP bölümüne, adın hemen altına taşındı. Geriye "… olarak girdin,
-        ilerlemen senkron" cümlesi kalıyordu; onu söyleyen satır zaten
-        Profil'deki kimlik kartı.
-      */}
+  return (
+    <div className="w-full space-y-4">
+      <PageBack fallback="/profile/settings" title={t(TITLE[section])} />
+
+      <div className="mx-auto w-full max-w-3xl empty:hidden">
+        {saveError ? (
+          <p
+            role="alert"
+            className="flex items-center gap-2 rounded-panel px-3 py-2 text-body"
+            style={{
+              background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)",
+              color: "var(--color-rose)",
+            }}
+          >
+            <AlertIcon size={16} /> {saveError}
+          </p>
+        ) : null}
+      </div>
+
+      {body[section]}
+      {section === "about" && version ? <p className="muted pb-2 pt-1 text-center text-caption">Lernomi {version}</p> : null}
     </div>
   );
 }

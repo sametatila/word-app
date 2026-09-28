@@ -29,7 +29,7 @@ export const EXTERNAL = {
 /** Uygulama içi sayfalar — admin hesabının kendi ayarları. */
 export const APP_LINKS = {
   /** İki adımlı doğrulama `LinkedAccounts` › "Güvenlik" grubunda (`id="accounts"`). */
-  security: { path: "/profile/settings#accounts", label: "Ayarlar › Güvenlik" },
+  security: { path: "/profile/settings/security", label: "Ayarlar › Güvenlik" },
   privacy: { path: "/privacy", label: "Gizlilik politikası" },
 } as const;
 

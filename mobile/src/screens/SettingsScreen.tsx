@@ -3,7 +3,7 @@ import { t } from "../lib/i18n";
 import { View, TextInput, Switch } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
@@ -17,7 +17,12 @@ import { ActiveSessions } from "../ui/ActiveSessions";
 import { listAccounts, type LinkedAccount } from "../lib/accountLinks";
 import { PressableScale } from "../ui/PressableScale";
 import { RadioDot } from "../ui/RadioDot";
-import { ChevronRightIcon } from "../ui/icons";
+import { ChevronRightIcon, BookIcon, GlobeIcon, BellIcon, FaceIcon, LockIcon, CrownIcon, ChatIcon, LogoutIcon } from "../ui/icons";
+import { MenuRow } from "../ui/MenuRow";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { SocialPrivacy, SocialUsername } from "./SocialSettingsScreen";
+import { usePremiumStatus } from "../lib/premium";
+import { courseOrDefault } from "../lib/courses";
 import { ScreenHeader } from "../social/common";
 import { useAuth } from "../lib/AuthContext";
 import { PROFILE_DEFAULTS, PROFILE_LIMITS } from "../lib/profileDefaults";
@@ -92,7 +97,7 @@ function courseOptions(lang: NativeLang, current: string): { key: string; label:
  * ayırmayı bıraktı, yalnız gürültü ekledi. Şimdi kart grubu çiziyor,
  * bölümler kartın içinde ince bir çizgiyle ayrılıyor.
  */
-function Group({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
+function Group({ title, colors, children }: { title?: string; colors: Palette; children: React.ReactNode }) {
   /*
     ÇİZGİYİ GRUP ÇİZİYOR, satır değil. Satırların bir kısmı koşullu (parolasız
     hesapta PAROLA bölümü hiç yok); ayıracı satırın kendi üstüne koysaydık
@@ -102,9 +107,10 @@ function Group({ title, colors, children }: { title: string; colors: Palette; ch
   */
   const items = React.Children.toArray(children).filter(Boolean);
   return (
-    <View style={{ marginTop: spacing.xxl }}>
-      {/* Grup başlığı da bir başlık — web `<h2>` (bkz. parity 259). */}
-      <Text accessibilityRole="header" variant="h3" color={colors.text} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{title}</Text>
+    <View style={{ marginTop: title ? spacing.xxl : spacing.sm }}>
+      {/* Grup başlığı da bir başlık — web `<h2>` (bkz. parity 259). Bölüm
+          ekranında başlık ekranın kendisi; grup ayrıca başlık çizmiyor. */}
+      {title ? <Text accessibilityRole="header" variant="h3" color={colors.text} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{title}</Text> : null}
       <Card padded>
         {items.map((item, i) => (
           <View
@@ -131,11 +137,37 @@ function Row({ label, colors, children }: { label?: string; colors: Palette; chi
   );
 }
 
+/**
+ * AYARLAR BİR LİSTE, HER GRUP KENDİ EKRANI (2026-09-28, Samet'in kararı;
+ * `docs/plan/profil-ayarlar-topluluk.md`).
+ *
+ * Tek uzun sayfaydı ve üstüne sosyal ayarlar ayrı bir ekranda, arkadaş
+ * kartındaki ikinci bir dişliyle açılıyordu. Şimdi `Settings` kısa bir liste
+ * (Öğrenme · Uygulama · Hatırlatmalar · Hesap · Gizlilik · Abonelik · Destek ve
+ * hakkında · Çıkış yap); satır `Settings { section }` ile aynı ekranı o grubun
+ * içeriğiyle açıyor. Sıra en sık değişenden en seyreğe. Çıkış yap ve Hesabı sil
+ * yalnız burada (Profil'den kalktı).
+ */
+export type SettingsSection = "learning" | "app" | "account" | "security" | "privacy" | "about";
+const SECTION_TITLE: Record<SettingsSection, string> = {
+  learning: "settings.group_learning",
+  app: "settings.group_app",
+  account: "settings.group_account",
+  security: "settings.group_security",
+  privacy: "settings.group_privacy",
+  about: "settings.group_about",
+};
+
 export function SettingsScreen() {
   const { colors, mode, setMode } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { user, refresh } = useAuth();
+  const route = useRoute<RouteProp<RootStackParams, "Settings">>();
+  const section = route.params?.section;
+  const { user, refresh, signOut } = useAuth();
+  const { status: premiumStatus } = usePremiumStatus();
+  const [confirmOut, setConfirmOut] = useState(false);
+  async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
   /* MİSAFİR (mağaza ön inceleme B24): giriş yöntemi, parola, oturumlar ve
      yapay zekâ izni yok; hesap bölümünde bunların yerine hesap oluşturma
      çağrısı ve "Misafir verilerini sil" duruyor. Öğrenme ve uygulama ayarları
@@ -307,12 +339,10 @@ export function SettingsScreen() {
     await refresh();
   }
 
-  return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title={t("settings.settings")} />
-
-      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        <Group title={t("settings.group_learning")} colors={colors}>
+  const courseLabel = courseOrDefault(course).label[uiLang] ?? course;
+  const body: Record<SettingsSection, React.ReactNode> = {
+    learning: (
+        <Group colors={colors}>
           <Row label={t("settings.language_to_learn")} colors={colors}>
             {!learningVisible
               ? courseOptions(uiLang, course).map((c, i) => (
@@ -420,7 +450,9 @@ export function SettingsScreen() {
           </Row>
         </Group>
 
-        <Group title={t("settings.group_app")} colors={colors}>
+    ),
+    app: (
+        <Group colors={colors}>
           <Row label={t("settings.app_language")} colors={colors}>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
               {offeredNativeLangs().map((l) => (
@@ -475,27 +507,6 @@ export function SettingsScreen() {
           </Row>
 
           {/*
-            BİLDİRİMLER PROFİLDEN BURAYA. Ekranın içeriği bir ayar: hatırlatma
-            saati, seri koruma, haftalık quiz. Profil menüsünde durduğu sürece
-            kullanıcı onu Ayarlar'da arıyor ve bulamıyordu; ayrıca "Gelen kutusu"
-            satırının hemen altında, neredeyse aynı adla duruyordu.
-          */}
-          <Row label={t("settings.sec_notifications")} colors={colors}>
-            <PressableScale
-              onPress={() => nav.navigate("Notifications")}
-              accessibilityRole="button"
-              accessibilityLabel={t("notifications.notifications")}
-              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
-            >
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("notifications.reminders")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("settings.notifications_sub")}</Text>
-              </View>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
-            </PressableScale>
-          </Row>
-
-          {/*
             HESAP VE GÜVENLİK EN ALTTA. İkisi de en üstteydi ve ayarların ilk
             ekranı "giriş yöntemlerin" ile başlıyordu — yılda bir dokunulan bir
             şey, her gün açılan hedef/seviye/tema ayarlarının önünde duruyordu.
@@ -503,7 +514,9 @@ export function SettingsScreen() {
           */}
         </Group>
 
-        <Group title={t("settings.group_account")} colors={colors}>
+    ),
+    account: (
+        <Group colors={colors}>
           {guest ? (
             <>
               <Row colors={colors}>
@@ -553,8 +566,29 @@ export function SettingsScreen() {
           {/* Giriş yöntemleri: parola + sosyal hesaplar. Aynı e-postayla giriş
               yapan kişi tek hesapta buluşsun diye; doğrulanmamış e-postada
               otomatik bağlama bilerek yapılmıyor ve tek çıkış burası. */}
+          <Row label={t("socialsettings.username")} colors={colors}>
+            <SocialUsername />
+          </Row>
+
           <Row label={t("links.title")} colors={colors}>
             <LinkedAccounts colors={colors} accounts={accounts} onChanged={yenileHesaplar} />
+          </Row>
+
+          {/* GÜVENLİK Hesap'ın alt ekranı: parola, iki adım ve oturumlar yılda bir
+              açılan şeyler; listede kendi satırı yok. */}
+          <Row colors={colors}>
+            <PressableScale
+              onPress={() => nav.push("Settings", { section: "security" })}
+              accessibilityRole="button"
+              accessibilityLabel={t("settings.group_security")}
+              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
+            >
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t("settings.group_security")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("settings.security_sub")}</Text>
+              </View>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
+            </PressableScale>
           </Row>
 
           {/*
@@ -595,8 +629,9 @@ export function SettingsScreen() {
           */}
         </Group>
 
-        {!guest && (
-        <Group title={t("settings.group_security")} colors={colors}>
+    ),
+    security: guest ? null : (
+        <Group colors={colors}>
           {/* Parola ve ikinci adım YALNIZ parolalı hesapta: yalnız Google/Apple
               ile girmiş birine "şu anki parolan" sormak olmayan bir şeyi
               istemek olurdu. */}
@@ -616,10 +651,14 @@ export function SettingsScreen() {
             <ActiveSessions colors={colors} />
           </Row>
         </Group>
-        )}
-
-        <Group title={t("settings.group_privacy_about")} colors={colors}>
-          <Row label={t("settings.privacy")} colors={colors}>
+    ),
+    privacy: (
+      <>
+        {/* Profilimi kim görür, izinler, engellenenler (eskiden arkadaş
+            kartındaki dişlide) + veri ve yapay zekâ onayları: gizlilik tek yer. */}
+        <SocialPrivacy />
+        <Group title={t("settings.data_consents")} colors={colors}>
+          <Row colors={colors}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("settings.send_usage_data")}</Text>
@@ -655,13 +694,18 @@ export function SettingsScreen() {
             ) : null}
           </Row>
 
+        </Group>
+      </>
+    ),
+    about: (
+      <Group colors={colors}>
           {/*
             HAKKINDA AYRI BİR BÖLÜM. Politika, şartlar, destek ve sürüm
             "Gizlilik"in içindeydi; grubun adı zaten "Gizlilik ve hakkında"ydı
             ama "hakkında" diye bir yer yoktu. Gizlilik artık yalnız kullanıcının
             AÇIP KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
           */}
-          <Row label={t("settings.about")} colors={colors}>
+          <Row colors={colors}>
             <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.privacy_policy")}</Text>
               <ChevronRightIcon color={colors.textFaint} size={20} />
@@ -702,8 +746,16 @@ export function SettingsScreen() {
             </PressableScale>
             <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Lernomi {APP_VERSION}</Text>
           </Row>
-        </Group>
+      </Group>
+    ),
+  };
 
+  if (section) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        <ScreenHeader title={t(SECTION_TITLE[section])} />
+        <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+          {body[section]}
         {!user && (
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl }}>
             {t("settings.signin_to_save")}
@@ -714,6 +766,56 @@ export function SettingsScreen() {
             sessiz bir kayıp ekran okuyucu kullanan kişiye hiç ulaşmazdı. */}
         {msg && <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
       </KeyboardAwareScroll>
+      </View>
+    );
+  }
+
+  /* LİSTE. Değerler satırın sağında: ne seçili olduğunu görmek için açmak
+     gerekmiyor. Misafirde Hesap satırı hesap oluşturmaya, Çıkış yerine
+     "Misafir verilerini sil" duruyor (giriş yöntemi yok, geri dönemez). */
+  const premium = !!premiumStatus?.premium;
+  return (
+    <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <ScreenHeader title={t("settings.settings")} />
+      <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+        <Card padded style={{ paddingVertical: 0, marginTop: spacing.sm }}>
+          <MenuRow icon={BookIcon} tint={colors.primary} colors={colors} label={t("settings.group_learning")} value={learningVisible ? `${courseLabel} · ${level}` : null} onPress={() => nav.push("Settings", { section: "learning" })} />
+          <MenuRow icon={GlobeIcon} tint={colors.info} colors={colors} label={t("settings.group_app")} value={LANG_LABEL[uiLang]} onPress={() => nav.push("Settings", { section: "app" })} />
+          <MenuRow icon={BellIcon} tint={colors.streak} colors={colors} label={t("notifications.reminders")} onPress={() => nav.navigate("Notifications")} last />
+        </Card>
+        <Card padded style={{ paddingVertical: 0, marginTop: spacing.lg }}>
+          {guest ? (
+            <MenuRow icon={FaceIcon} tint={colors.success} colors={colors} label={t("guest.create_account")} onPress={() => nav.navigate("Auth")} />
+          ) : (
+            <MenuRow icon={FaceIcon} tint={colors.success} colors={colors} label={t("settings.group_account")} value={user?.email ?? null} onPress={() => nav.push("Settings", { section: "account" })} />
+          )}
+          <MenuRow icon={LockIcon} tint={colors.accent} colors={colors} label={t("settings.group_privacy")} onPress={() => nav.push("Settings", { section: "privacy" })} />
+          <MenuRow icon={CrownIcon} tint={colors.streak} colors={colors} label={t("settings.group_subscription")} value={premiumStatus ? t(premium ? "settings.plan_premium" : "settings.plan_free") : null} onPress={() => nav.navigate("Paywall")} last />
+        </Card>
+        <Card padded style={{ paddingVertical: 0, marginTop: spacing.lg }}>
+          <MenuRow icon={ChatIcon} tint={colors.info} colors={colors} label={t("settings.group_about")} value={APP_VERSION} onPress={() => nav.push("Settings", { section: "about" })} last />
+        </Card>
+        {guest ? (
+          <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityRole="button" accessibilityLabel={t("guest.delete_row")} style={{ alignItems: "center", marginTop: spacing.xl, paddingVertical: spacing.md }}>
+            <Text variant="bodyStrong" color={colors.dangerText}>{t("guest.delete_row")}</Text>
+          </PressableScale>
+        ) : user ? (
+          <PressableScale onPress={() => setConfirmOut(true)} accessibilityRole="button" style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, marginTop: spacing.xl, paddingVertical: spacing.md }}>
+            <LogoutIcon color={colors.dangerText} size={20} />
+            <Text variant="bodyStrong" color={colors.dangerText}>{t("profile.log_out")}</Text>
+          </PressableScale>
+        ) : null}
+      </KeyboardAwareScroll>
+      <ConfirmDialog
+        visible={confirmOut}
+        title={t("profile.log_out")}
+        message={t("profile.signout_confirm")}
+        confirmLabel={t("profile.signout")}
+        cancelLabel={t("common.discard")}
+        destructive
+        onConfirm={reallySignOut}
+        onCancel={() => setConfirmOut(false)}
+      />
     </View>
   );
 }

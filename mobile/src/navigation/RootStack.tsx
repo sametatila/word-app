@@ -21,14 +21,13 @@ import { ResetPasswordScreen } from "../screens/ResetPasswordScreen";
 import { WordsScreen } from "../screens/WordsScreen";
 import { AchievementsScreen } from "../screens/AchievementsScreen";
 import { ProgressScreen } from "../screens/ProgressScreen";
-import { SettingsScreen } from "../screens/SettingsScreen";
+import { SettingsScreen, type SettingsSection } from "../screens/SettingsScreen";
 import { DeleteAccountScreen } from "../screens/DeleteAccountScreen";
 import { PlacementScreen } from "../screens/PlacementScreen";
 import { LeaderboardScreen } from "../screens/LeaderboardScreen";
 import { NotificationsScreen } from "../screens/NotificationsScreen";
 import { UserScreen } from "../screens/UserScreen";
 import { InboxScreen } from "../screens/InboxScreen";
-import { SocialSettingsScreen } from "../screens/SocialSettingsScreen";
 import { ItemScreen } from "../screens/ItemScreen";
 import { WeeklyScreen } from "../screens/WeeklyScreen";
 import { BossScreen } from "../screens/BossScreen";
@@ -81,7 +80,8 @@ export type RootStackParams = {
   Words: undefined;
   Achievements: undefined;
   Progress: undefined;
-  Settings: undefined;
+  /** Ayarlar listesi; `section` verilirse o grubun ekranı (bkz. SettingsScreen). */
+  Settings: { section?: SettingsSection } | undefined;
   /** Hesap silme (Play zorunluluğu) — Ayarlar › Hesap. */
   DeleteAccount: undefined;
   Placement: { onboarding?: boolean } | undefined;
@@ -97,7 +97,8 @@ export type RootStackParams = {
       Arkadaş merkezinin kendisi artık bir SEKME (bkz. RootTabs). */
   User: { username: string };
   Inbox: undefined;
-  SocialSettings: undefined;
+  /** Eski adres: sosyal ayarlar Ayarlar › Gizlilik'e taşındı, bu rota orayı açıyor. */
+  SocialSettings: { section?: SettingsSection } | undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -168,7 +169,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Writings" component={WritingsScreen} />
       <Stack.Screen name="User" component={UserScreen} />
       <Stack.Screen name="Inbox" component={InboxScreen} />
-      <Stack.Screen name="SocialSettings" component={SocialSettingsScreen} />
+      <Stack.Screen name="SocialSettings" component={SettingsScreen} initialParams={{ section: "privacy" }} />
       </Stack.Group>
     </Stack.Navigator>
   );

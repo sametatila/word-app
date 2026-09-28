@@ -28,7 +28,13 @@ const VIS: { key: Visibility; label: string; sub: string }[] = [
  * zaten "Sosyal ve gizlilik" diyor, kartın içindeki ikinci başlık onu
  * tekrarlardı.
  */
-export function SocialSettings({ initial, bare = false }: { initial: SocialMeView; bare?: boolean }) {
+/**
+ * `part` (2026-09-28): sosyal ayarlar Ayarlar'a taşındı. `username` Ayarlar ›
+ * Hesap kartının içinde bir satır (kart dışarıda), `privacy` Ayarlar ›
+ * Gizlilik'in üst kartı (görünürlük, izinler, engellenenler). Verilmezse eski
+ * tam kart.
+ */
+export function SocialSettings({ initial, bare = false, part }: { initial: SocialMeView; bare?: boolean; part?: "username" | "privacy" }) {
   const t = useT();
   const lang = useLang();
   const [me, setMe] = useState(initial);
@@ -61,45 +67,56 @@ export function SocialSettings({ initial, bare = false }: { initial: SocialMeVie
 
   const dirtyName = username.trim().toLowerCase() !== me.username;
 
+  const usernameBlock = (
+    <div className={part === "username" ? "" : "px-4 py-3"}>
+      {part === "username" ? null : <label className="text-strong" htmlFor="username">{t("socialsettings.username")}</label>}
+      <div className={`${part === "username" ? "" : "mt-1.5 "}flex items-center gap-2`}>
+        <span className="muted text-body">@</span>
+        <input
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value.toLowerCase())}
+          maxLength={USERNAME_MAX}
+          enterKeyHint="done"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          placeholder={t("socialsettings.username_2")}
+          aria-label={t("socialsettings.username")}
+          className="input min-w-0 flex-1 px-3 py-2"
+        />
+        <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
+          {t("common.save")}
+        </button>
+      </div>
+      <p className="muted mt-1 text-micro">
+        {t("socialsettings.username_rule")}{" "}
+        {me.usernameChangeAvailableIn > 0
+          ? t("socialsettings.username_wait", { n: me.usernameChangeAvailableIn })
+          : t("socialsettings.username_cooldown", { n: USERNAME_CHANGE_COOLDOWN_DAYS })}{" "}
+        {t("socialsettings.profile_link", { path: `/u/${me.username}` })}
+      </p>
+      {part === "username" && msg ? (
+        <p role={msg.ok ? "status" : "alert"} className="mt-1 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          {msg.text}
+        </p>
+      ) : null}
+    </div>
+  );
+  if (part === "username") return usernameBlock;
+
   return (
     /* Bölümler ayarlar grubunun diliyle ayrılıyor (`settings-section`): kartın
        kendi `divide-y`ı, ince `--hairline` çizgi. */
-    <section id="social" className={`card divide-y divide-[color:var(--hairline)] overflow-hidden ${bare ? "" : "mt-4"}`}>
-      {bare ? null : (
+    <section id="social" className={`card divide-y divide-[color:var(--hairline)] overflow-hidden ${bare || part ? "" : "mt-4"}`}>
+      {bare || part ? null : (
         <div className="px-4 py-3">
           <h2 className="text-strong">{t("socialsettings.social_and_privacy")}</h2>
           <p className="muted text-caption">{t("socialw.settings_sub")}</p>
         </div>
       )}
 
-      <div className="px-4 py-3">
-        <label className="text-strong" htmlFor="username">{t("socialsettings.username")}</label>
-        <div className="mt-1.5 flex items-center gap-2">
-          <span className="muted text-body">@</span>
-          <input
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value.toLowerCase())}
-            maxLength={USERNAME_MAX}
-            enterKeyHint="done"
-            autoCapitalize="none"
-            autoCorrect="off"
-            spellCheck={false}
-            placeholder={t("socialsettings.username_2")}
-            className="input min-w-0 flex-1 px-3 py-2"
-          />
-          <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
-            {t("common.save")}
-          </button>
-        </div>
-        <p className="muted mt-1 text-micro">
-          {t("socialsettings.username_rule")}{" "}
-          {me.usernameChangeAvailableIn > 0
-            ? t("socialsettings.username_wait", { n: me.usernameChangeAvailableIn })
-            : t("socialsettings.username_cooldown", { n: USERNAME_CHANGE_COOLDOWN_DAYS })}{" "}
-          {t("socialsettings.profile_link", { path: `/u/${me.username}` })}
-        </p>
-      </div>
+      {part === "privacy" ? null : usernameBlock}
 
       <div className="px-4 py-3">
         <p className="text-strong">{t("socialsettings.visibility")}</p>

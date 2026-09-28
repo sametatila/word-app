@@ -15,7 +15,8 @@ export function Group({
   id,
   children,
 }: {
-  title: string;
+  /** Bölüm sayfasında başlık sayfanın kendisi; grup ayrıca başlık çizmiyor. */
+  title?: string;
   id?: string;
   children: React.ReactNode;
 }) {
@@ -25,7 +26,7 @@ export function Group({
        16 (web'de yatay 20, dikey 20 idi). Başlık zaten eşti: `h3`, altında 8,
        solda 4. */
     <section id={id} className="mx-auto mt-7 w-full max-w-3xl first:mt-0">
-      <h2 className="mb-2 ml-1 text-h3">{title}</h2>
+      {title ? <h2 className="mb-2 ml-1 text-h3">{title}</h2> : null}
       <div className="card divide-y divide-[color:var(--hairline)] px-4">{children}</div>
     </section>
   );

@@ -44,6 +44,8 @@ const ETIKET: Record<string, { ad: string; alt: string }> = {
 export function LinkedAccounts({
   googleEnabled,
   nameRow,
+  part,
+  accountRows,
 }: {
   googleEnabled: boolean;
   /**
@@ -52,6 +54,14 @@ export function LinkedAccounts({
    * bu bileşen kuruyor (sağlayıcı listesini okuyan tek yer o).
    */
   nameRow?: React.ReactNode;
+  /**
+   * Hangi grup çizilsin. Ayarlar artık grup başına bir sayfa
+   * (`/profile/settings/account`, `/security`); verilmezse ikisi birden.
+   */
+  part?: "account" | "security";
+  /** HESAP kartının giriş yöntemlerinden SONRAKİ satırları (kullanıcı adı,
+      Güvenlik bağlantısı, Hesabı sil) — sayfa kuruyor, kart burada. */
+  accountRows?: React.ReactNode;
 }) {
   const t = useT();
   const [accounts, setAccounts] = useState<Account[] | null>(null);
@@ -99,7 +109,7 @@ export function LinkedAccounts({
         headers: { "content-type": "application/json" },
         // Dönüş adresine BİR İZ bırakılıyor: sağlayıcıdan dönen kullanıcıya
         // bağlantının kurulduğu söylenebilsin diye (aşağıdaki effect).
-        body: JSON.stringify({ provider, callbackURL: `/profile/settings?linked=${provider}#social` }),
+        body: JSON.stringify({ provider, callbackURL: `/profile/settings/account?linked=${provider}` }),
       });
       const data = (await res.json().catch(() => null)) as { url?: string } | null;
       // Sağlayıcıya YÖNLENDİRME: better-auth izin ekranının adresini döndürüyor,
@@ -155,7 +165,8 @@ export function LinkedAccounts({
       {/* GİRİŞ YÖNTEMLERİ artık HESAP grubunun içinde bir satır; parola, iki
           adımlı doğrulama ve etkin oturumlar da kendi gruplarında birer satır.
           Üçü de eskiden bu bölümün İÇİNDEYDİ ve etiket onları anlatmıyordu. */}
-      <Group title={t("settings.group_account")}>
+      {part === "security" ? null : (
+      <Group title={part ? undefined : t("settings.group_account")}>
         {nameRow}
         <Row label={t("links.title")}>
           <div className="-my-2 divide-y divide-[color:var(--hairline)]">
@@ -184,9 +195,12 @@ export function LinkedAccounts({
           </div>
           {msg ? <p role="status" className="mt-2 text-caption">{msg}</p> : null}
         </Row>
+        {accountRows}
       </Group>
+      )}
 
-      <Group title={t("settings.group_security")} id="accounts">
+      {part === "account" ? null : (
+      <Group title={part ? undefined : t("settings.group_security")} id="accounts">
         {/* Parola değiştirme YALNIZ parolası olan hesapta. Bu bileşen zaten
             sağlayıcı listesini okuyor, ikinci bir istek atmaya gerek yok;
             `credential` yoksa (yalnız Google/Apple ile girmiş biri) form hiç
@@ -203,6 +217,7 @@ export function LinkedAccounts({
             yöntemine bağlı değil. */}
         <ActiveSessions />
       </Group>
+      )}
     </>
   );
 }

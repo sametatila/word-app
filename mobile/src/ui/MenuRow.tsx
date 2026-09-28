@@ -20,6 +20,8 @@ export function MenuRow({
   colors,
   last,
   onPress,
+  value,
+  danger,
 }: {
   icon: (p: { color: string; size: number }) => React.ReactElement;
   label: string;
@@ -28,12 +30,16 @@ export function MenuRow({
   /** Son satırda alt çizgi çizilmez. */
   last?: boolean;
   onPress?: () => void;
+  /** Sağda, şevronun önünde sönük değer (Ayarlar listesi: "Almanca · B1"). */
+  value?: string | null;
+  /** Yıkıcı satır: etiket tehlike renginde. */
+  danger?: boolean;
 }) {
   return (
     <PressableScale
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel={label}
+      accessibilityLabel={value ? `${label}, ${value}` : label}
       style={{
         flexDirection: "row",
         alignItems: "center",
@@ -46,7 +52,8 @@ export function MenuRow({
       <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint) }}>
         <Icon color={onTint(tint, colors)} size={20} />
       </View>
-      <Text variant="bodyStrong" style={{ flex: 1 }}>{label}</Text>
+      <Text variant="bodyStrong" color={danger ? colors.dangerText : undefined} style={{ flex: 1 }} numberOfLines={1}>{label}</Text>
+      {value ? <Text variant="caption" color={colors.textMuted} numberOfLines={1} style={{ maxWidth: "45%" }}>{value}</Text> : null}
       <ChevronRightIcon color={colors.textFaint} size={20} />
     </PressableScale>
   );

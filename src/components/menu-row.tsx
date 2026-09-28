@@ -33,6 +33,9 @@ export function MenuRow({
   last,
   href,
   onClick,
+  value,
+  active,
+  danger,
 }: {
   icon: ReactNode;
   tone: MenuTone;
@@ -41,6 +44,12 @@ export function MenuRow({
   last?: boolean;
   href?: string;
   onClick?: () => void;
+  /** Sağda, şevronun önünde sönük değer (Ayarlar listesi: "Almanca · B1"). */
+  value?: string | null;
+  /** Masaüstü ayar gezgininde açık olan grup. */
+  active?: boolean;
+  /** Yıkıcı satır: etiket tehlike renginde. */
+  danger?: boolean;
 }) {
   const inner = (
     <>
@@ -55,15 +64,19 @@ export function MenuRow({
       >
         {icon}
       </span>
-      <span className="flex-1 text-strong">{label}</span>
+      <span className="min-w-0 flex-1 truncate text-strong" style={danger ? { color: "var(--color-rose)" } : undefined}>{label}</span>
+      {value ? <span className="muted max-w-[45%] shrink truncate text-caption">{value}</span> : null}
       <ChevronRightIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
     </>
   );
-  const cls = "pressable flex w-full items-center gap-3 py-3 text-left";
-  const style = last ? undefined : { borderBottom: "1px solid var(--hairline)" };
+  const cls = `pressable flex w-full items-center gap-3 py-3 text-left ${active ? "-mx-2 rounded-tile px-2" : ""}`;
+  const style = {
+    ...(last ? {} : { borderBottom: "1px solid var(--hairline)" }),
+    ...(active ? { background: "color-mix(in srgb, var(--color-brand-500) 10%, transparent)" } : {}),
+  };
   if (href) {
     return (
-      <Link href={href} prefetch={false} className={cls} style={style}>
+      <Link href={href} prefetch={false} className={cls} style={style} aria-current={active ? "page" : undefined}>
         {inner}
       </Link>
     );
