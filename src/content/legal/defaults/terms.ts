@@ -98,7 +98,7 @@ Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcın
 - Sohbet yanıtları ve değerlendirmeler dil modelleriyle üretilir; bir yapay zekâ ile etkileştiğin uygulamada açıkça belirtilir. Yanıtlar yanlış, eksik ya da tutarsız olabilir; dil bilgisi düzeltmeleri kesin doğru sayılmamalıdır.
 - Yapay zekâ ve sunucu konuşma tanımasıyla çalışan özellikler, metninin ya da kısa ses kayıtlarının Gizlilik Politikası'nda adları sayılan sağlayıcılara gönderilmesini gerektirir. Bu gönderim ancak uygulama içinde izin verdiğinde yapılır; izin vermezsen ya da iznini Ayarlar › Gizlilik'ten geri alırsan bu özellikler yapay zekâ olmadan, kısıtlı biçimde çalışır ya da kapalı kalır.
 - Rahatsız edici ya da hatalı bir yanıtı, yanıtın altındaki "Bildir" ile uygulamadan çıkmadan bildirebilirsin.
-- Yapay zekâ karakterleri gerçek kişi değildir; tıbbi, hukuki ya da mali tavsiye vermezler.
+- Yapay zekâ karakterleri gerçek kişi değildir; tıbbi, hukuki ya da malî tavsiye vermezler.
 
 ## 7. Premium abonelik, ödeme ve cayma
 

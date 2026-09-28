@@ -617,7 +617,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               text: "Which text describes a saving that turned out to cost more?",
               answer: "b",
               explain:
-                "Mali müdür iki birleştirmeyi geri almış: «We have rebuilt them, at a cost well above the saving». Gereksiz görünen yerel kayıt, bilinen bir zayıflığın yazılı olduğu tek yermiş.",
+                "Malî müdür iki birleştirmeyi geri almış: «We have rebuilt them, at a cost well above the saving». Gereksiz görünen yerel kayıt, bilinen bir zayıflığın yazılı olduğu tek yermiş.",
             },
             {
               kind: "match",

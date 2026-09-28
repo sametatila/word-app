@@ -907,7 +907,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
               ],
               answer: 1,
               explain:
-                "Ocak kursu dolu ama: \"Sie stehen bei uns schon auf der Liste.\" Mart'ta yer açılıyor.",
+                "Ocak kursu dolu ama: \"Sie stehen bei uns schon auf der Liste.\" Martta yer açılıyor.",
             },
             {
               kind: "mcq",

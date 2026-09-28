@@ -1031,7 +1031,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               text: "Ob der Rufbus bleibt, entscheidet sich nach einem Jahr.",
               answer: true,
               explain:
-                "Mart'ta deneme olarak başlıyor: \"Nach einem Jahr entscheidet der Gemeinderat, ob er bleibt\". Frau Kohl geri bildirimlerin sayılardan çok sayılacağını da ekliyor.",
+                "Martta deneme olarak başlıyor: \"Nach einem Jahr entscheidet der Gemeinderat, ob er bleibt\". Frau Kohl geri bildirimlerin sayılardan çok sayılacağını da ekliyor.",
             },
           ],
         },

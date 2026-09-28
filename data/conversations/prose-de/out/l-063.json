@@ -32,7 +32,7 @@
  { "tr": "Kısaca toparlayalım. Kelimelerin: screen, battery, charge, settings, update.", "kind": "say.tr", "de": "Kurz zusammengefasst. Deine Wörter: screen, battery, charge, settings, update." },
  { "tr": "Küçük bir kontrol. Sana bir cümle söyleyeceğim, doğru mu değil mi karar ver.", "kind": "say.tr", "de": "Eine kleine Kontrolle. Ich sage einen Satz, entscheide, ob er richtig ist." },
  { "tr": "Maaş her ilanda yazmaz. O zaman sorman gerekir. Hadi sen sor: Maaş ne kadar?", "kind": "say.tr", "de": "Das Gehalt steht nicht in jeder Anzeige. Dann musst du fragen: Wie hoch ist das Gehalt?" },
- { "tr": "Mart'tan beri burada çalışıyorum. Mart bir zaman noktası, bu yüzden 'since'.", "kind": "say.tr", "de": "Ich arbeite hier seit März. März ist ein Zeitpunkt, darum „since“." },
+ { "tr": "Marttan beri burada çalışıyorum. Mart bir zaman noktası, bu yüzden 'since'.", "kind": "say.tr", "de": "Ich arbeite hier seit März. März ist ein Zeitpunkt, darum „since“." },
  { "tr": "Merhaba, hoş geldin. Bugün bir işin bitip bitmediğini anlatmayı öğreneceğiz.", "kind": "say.tr", "de": "Hallo, willkommen. Heute lernen wir zu sagen, ob etwas erledigt ist." },
  { "tr": "Merhaba! Bugün çok işine yarayacak bir konu var: bilgisayar sorunu anlatmak.", "kind": "say.tr", "de": "Hallo! Heute ein sehr nützliches Thema: ein Computerproblem schildern." },
  { "tr": "Merhaba! Bugün İngilizcenin en temel fiilini öğreniyoruz: to be, yani olmak.", "kind": "say.tr", "de": "Hallo! Heute lernen wir das wichtigste englische Verb: to be, also sein." },

@@ -102,7 +102,7 @@ Veri sorumlusu Türkiye'de yerleşiktir ve hizmet Türkiye'den sunulur. Sunucula
 | Mobil bildirim jetonu ve platform (Android/iOS) | Cihazın, bildirimlere izin verirsen | Hatırlatmaları ve arkadaşlık bildirimlerini (istek, dürtme, ortak görev) telefonuna iletmek; iletimi Firebase Cloud Messaging yapar | Rıza (işletim sisteminin bildirim izni) | Çıkış yapana ya da jeton geçersizleşene kadar; hesap silinince hemen silinir |
 | Yapay zekâ ve ses izni kararların (amaç, karar, tarih, metin sürümü, platform) | Sen (izin ekranı, Ayarlar › Gizlilik) | İznin verildiğini ya da geri alındığını gösterebilmek | Hukuki yükümlülük (m.5/2-ç / m.6(1)(c) ve GDPR m.7(1)) | Hesap süresince |
 | Kabul ettiğin kullanım şartlarının sürümü ve kabul tarihi | Kayıt ve giriş | Hangi sözleşme metnini ne zaman kabul ettiğini gösterebilmek ve sana iletebilmek | Sözleşmenin kurulması ve ifası; hukuki yükümlülük (sözleşmenin saklanması) | Hesap süresince |
-| Satın alma ve abonelik durumu | Uygulama mağazası / RevenueCat | Premium özellikleri açmak | Sözleşmenin ifası; yasal yükümlülük (muhasebe) | Hesap süresince; mali kayıtlar yasal süre boyunca |
+| Satın alma ve abonelik durumu | Uygulama mağazası / RevenueCat | Premium özellikleri açmak | Sözleşmenin ifası; yasal yükümlülük (muhasebe) | Hesap süresince; malî kayıtlar yasal süre boyunca |
 | İçerik bildirimlerin: seçtiğin neden, isteğe bağlı açıklaman, bildirilen içeriğin ekranda göründüğü hâli ve teknik bağlam (platform, uygulama sürümü, kurs, dil çifti, içerik sürümü) | Sen (uygulamadaki içeriklerde ve yapay zekâ yanıtlarında "Bildir") | Öğrenme içeriğindeki hataları (yanlış cevap, yazım, çeviri, ses, teknik sorun) ve uygunsuz yapay zekâ yanıtlarını incelemek ve düzeltmek | Meşru menfaat (güvenli ve doğru hizmet) | İnceleme kapandıktan sonra 1 yıl |
 | Yazdığın destek ve hak talepleri | Sen | Talebi cevaplamak, yasal kayıt | Yasal yükümlülük (KVKK m.13, GDPR m.12) | Talep kapandıktan sonra 2 yıl |
 
@@ -192,7 +192,7 @@ Sana yalnız hizmetle ilgili iletiler gönderilir: e-posta doğrulama, parola s�
 - Mobil bildirim jetonu: çıkış yapana ya da jeton geçersizleşene kadar.
 - Oturum kayıtları (IP, cihaz tanımı): oturum süresince, en çok {{sessionMaxDays}} gün.
 - Cihaz bütünlüğü sonucu (Android'de hesapsız açılış): {{attestationDays}} gün, sonra en geç bir gün içinde kendiliğinden silinir.
-- Mali kayıtlar (abonelik faturaları): Türk Ticaret Kanunu ve Vergi Usul Kanunu'nun öngördüğü süre (10 yıl), yalnız uygulama mağazasının (Google Play{{ifIos}} ya da App Store{{/ifIos}}) ilettiği kadarıyla.
+- Malî kayıtlar (abonelik faturaları): Türk Ticaret Kanunu ve Vergi Usul Kanunu'nun öngördüğü süre (10 yıl), yalnız uygulama mağazasının (Google Play{{ifIos}} ya da App Store{{/ifIos}}) ilettiği kadarıyla.
 - Hak talepleri yazışmaları: talep kapandıktan sonra 2 yıl.
 - Sunucu yedekleri (Cloudflare R2'deki şifreli harici kopya dahil): silinen veriler yedeklerden en geç {{backupRetentionDays}} gün içinde düşer; yedekler yalnız felaket kurtarma için kullanılır, silinen hesap yedekten geri yüklenmez.
 
@@ -214,7 +214,7 @@ KVKK m.11 ve GDPR m.15-22 uyarınca şunları isteyebilirsin:
 
 ## 11. Hesabını ve verilerini silme
 
-Hesabını iki yoldan silebilirsin: uygulamada **Profil › Ayarlar › Hesap › Hesabı sil**, ya da web'de [www.lernomi.app/account/delete]({{link:deleteAccount}}). Silme anında hesabın, ilerlemen, yazıların, konuşma kayıtların, kullanım olayların ve sosyal izlerin (arkadaşlıklar, tepkiler) kalıcı olarak silinir; geri alınamaz. Yasal saklama yükümlülüğü olan mali kayıtlar anonimleştirilerek tutulur. Satın alma altyapısındaki (RevenueCat) müşteri kaydının silinmesi de istenir; mağazadaki (Google Play{{ifIos}} ya da App Store{{/ifIos}}) satın alma kaydı ise mağazanın kendi yükümlülükleri gereği mağazada kalır. Mağaza aboneliğin varsa onu aldığın mağaza üzerinden ayrıca iptal etmen gerekir.
+Hesabını iki yoldan silebilirsin: uygulamada **Profil › Ayarlar › Hesap › Hesabı sil**, ya da web'de [www.lernomi.app/account/delete]({{link:deleteAccount}}). Silme anında hesabın, ilerlemen, yazıların, konuşma kayıtların, kullanım olayların ve sosyal izlerin (arkadaşlıklar, tepkiler) kalıcı olarak silinir; geri alınamaz. Yasal saklama yükümlülüğü olan malî kayıtlar anonimleştirilerek tutulur. Satın alma altyapısındaki (RevenueCat) müşteri kaydının silinmesi de istenir; mağazadaki (Google Play{{ifIos}} ya da App Store{{/ifIos}}) satın alma kaydı ise mağazanın kendi yükümlülükleri gereği mağazada kalır. Mağaza aboneliğin varsa onu aldığın mağaza üzerinden ayrıca iptal etmen gerekir.
 
 Hesapsız (misafir) kullanıyorsan verilerini uygulamada **Profil › Misafir verilerini sil** ile silebilirsin: misafir kimliği ve bütün ilerlemen sunucudan ve cihazından kalıcı olarak silinir.
 

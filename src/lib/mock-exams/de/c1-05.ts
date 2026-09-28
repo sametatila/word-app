@@ -211,7 +211,7 @@ Ein Jahr später hat die Schule etwas eingeführt, das in keinem Antrag stand. I
                 { de: "die Facharbeit", tr: "araştırma ödevi", en: "research paper" },
                 { de: "der Namensgeber", tr: "adı verilen kişi", en: "namesake" },
                 { de: "der Zeitzeuge", tr: "dönemin tanığı", en: "contemporary witness" },
-                { de: "der Kämmerer", tr: "belediye mali işler müdürü", en: "city treasurer" },
+                { de: "der Kämmerer", tr: "belediye malî işler müdürü", en: "city treasurer" },
               ],
             },
           ],

@@ -41041,7 +41041,7 @@
   "icon": "media",
   "title": "Reporting the books",
   "titleTr": "Bilançoyu aktarmak",
-  "summary": "Mali bir suçlamayı aktarırken hükmü fiile yüklemeyi öğretir; iddia etmekle kanıtlamak arasındaki fark fiilde durur.",
+  "summary": "Malî bir suçlamayı aktarırken hükmü fiile yüklemeyi öğretir; iddia etmekle kanıtlamak arasındaki fark fiilde durur.",
   "minutes": 12,
   "focusId": "Reporting verbs in financial allegations",
   "vocab": [
@@ -41097,7 +41097,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün mali bir suçlamayı aktarırken hükmü fiile yüklemeyi öğreneceğiz."
+      "text": "Merhaba! Bugün malî bir suçlamayı aktarırken hükmü fiile yüklemeyi öğreneceğiz."
      },
      {
       "lang": "tr",
@@ -41256,7 +41256,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bugünün kuralı. Mali suçlamada fiil bir HUKUK iddiasıdır:"
+      "text": "Şimdi bugünün kuralı. Malî suçlamada fiil bir HUKUK iddiasıdır:"
      },
      {
       "lang": "en",
@@ -41411,7 +41411,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir mali suçlamayı aktaran kişi, kanıtın kimde olduğunu da söyler."
+      "text": "Bir malî suçlamayı aktaran kişi, kanıtın kimde olduğunu da söyler."
      }
     ]
    },
@@ -41498,13 +41498,13 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi bir mali suçlamayı iki fiille aktaracaksın."
+      "text": "Şimdi bir malî suçlamayı iki fiille aktaracaksın."
      }
     ]
    }
   ],
   "chat": {
-   "scene": "Şirketteki bir mali usulsüzlüğü arkadaşına aktarıyorsun ve kimseyi kanıtsız suçlamak istemiyorsun. İki aktarmayı iki ayrı fiille söyle ve kanıtın kimde olduğunu söyle.",
+   "scene": "Şirketteki bir malî usulsüzlüğü arkadaşına aktarıyorsun ve kimseyi kanıtsız suçlamak istemiyorsun. İki aktarmayı iki ayrı fiille söyle ve kanıtın kimde olduğunu söyle.",
    "partner": "her söylentiyi kesin bilgi sayan, «demek yapmış» diyen bir iş arkadaşı",
    "opening": "So he did it, then?",
    "openingTr": "Demek yapmış, öyle mi?",
