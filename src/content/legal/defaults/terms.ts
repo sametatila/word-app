@@ -46,7 +46,7 @@ export const TERMS_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
     description: "Lernomi'yi kullanmanın kuralları: hesap, kabul edilebilir kullanım, kullanıcı içeriği, yapay zekâ, abonelik, tüketici hakları.",
     summary: [
       "Lernomi'yi kullanarak bu sözleşmeyi kabul edersin.",
-      "Hizmeti Türkiye'de yerleşik geliştirici sunar ve uygulamayı mağazalarda yayımlar; sunucular Almanya'dadır. Sözleşme Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
+      "Hizmeti Türkiye'de yerleşik geliştirici sunar ve uygulamayı mağazalarda yayımlar; sunucular Avrupa Birliği'ndedir (şu an Avusturya). Sözleşme Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
       "Hesabın sana aittir ve başkalarına saygılı kullanılır. Yazdıkların senin kalır.",
       "Yapay zekâ yanıtları hata yapabilir.",
       "Premium abonelik uygulamayı indirdiğin mağazadan alınır ve iptali de oradan yapılır.",
@@ -183,7 +183,7 @@ Uygulamayı App Store'dan indirdiysen aşağıdaki maddeler de geçerlidir. Bunl
     description: "The rules for using Lernomi: account, acceptable use, user content, AI, subscription, consumer rights.",
     summary: [
       "By using Lernomi you accept this agreement.",
-      "The service is provided, and the app is published in the stores, by a developer established in Türkiye; the servers are in Germany. The agreement is governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
+      "The service is provided, and the app is published in the stores, by a developer established in Türkiye; the servers are in the European Union (currently Austria). The agreement is governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
       "Your account is yours, and is used with respect for others. What you write stays yours.",
       "AI answers can be wrong.",
       "Premium is bought in the store you downloaded the app from, and canceled there.",
@@ -320,7 +320,7 @@ When we update these terms, the effective date and version change; we announce m
     description: "Die Regeln für die Nutzung von Lernomi: Konto, zulässige Nutzung, Nutzerinhalte, KI, Abonnement, Verbraucherrechte.",
     summary: [
       "Mit der Nutzung von Lernomi nimmst du diese Vereinbarung an.",
-      "Den Dienst bietet ein in der Türkei niedergelassener Entwickler an, der die App auch in den Stores veröffentlicht; die Server stehen in Deutschland. Die Vereinbarung unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
+      "Den Dienst bietet ein in der Türkei niedergelassener Entwickler an, der die App auch in den Stores veröffentlicht; die Server stehen in der Europäischen Union (derzeit Österreich). Die Vereinbarung unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
       "Dein Konto gehört dir und wird respektvoll gegenüber anderen genutzt. Was du schreibst, gehört weiterhin dir.",
       "KI-Antworten können falsch sein.",
       "Premium wird in dem Store gekauft, aus dem du die App geladen hast, und dort gekündigt.",

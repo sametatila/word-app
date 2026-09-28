@@ -153,7 +153,7 @@ Konuşma adımındaki sohbetin, yazma görevleri ve sınav cevapların, izin ver
 
 Aşağıdaki sağlayıcılara yalnız belirtilen amaçla ve yalnız o iş için gereken veri gönderilir.
 
-Veri sorumlusu Türkiye'de, sunucular Almanya'dadır. Türkiye'deki kullanıcıların verileri Almanya'daki sunuculara ve aşağıdaki sağlayıcılara ulaştığında KVKK m.9 anlamında yurt dışına aktarılmış olur. AB ve AEA'daki kullanıcıların verileri AB'deki sunucularda saklanır; veri sorumlusu bu verilere Türkiye'den erişir ve Avrupa Komisyonu'nun Türkiye hakkında bir yeterlilik kararı yoktur. Siteye ve uygulamaya giden bütün trafik ise sunucuya ulaşmadan önce Cloudflare'in küresel ağından (ters vekil ve bot koruması) geçer ve bağlantının şifrelemesi orada da çözülür.
+Veri sorumlusu Türkiye'de, sunucular Avrupa Birliği'ndedir (şu an Avusturya). Türkiye'deki kullanıcıların verileri AB'deki sunuculara ve aşağıdaki sağlayıcılara ulaştığında KVKK m.9 anlamında yurt dışına aktarılmış olur. AB ve AEA'daki kullanıcıların verileri AB'deki sunucularda saklanır; veri sorumlusu bu verilere Türkiye'den erişir ve Avrupa Komisyonu'nun Türkiye hakkında bir yeterlilik kararı yoktur. Siteye ve uygulamaya giden bütün trafik ise sunucuya ulaşmadan önce Cloudflare'in küresel ağından (ters vekil ve bot koruması) geçer ve bağlantının şifrelemesi orada da çözülür.
 
 Tabloda her sağlayıcının bulunduğu bölge ve sağlayıcıya aktarımda GDPR açısından dayanılan güvence yazılıdır; mağazalar ve giriş sağlayıcıları (Google, Apple) kendi hizmetleri için bağımsız veri sorumlusudur ve kendi gizlilik koşullarına tabidir.
 
@@ -337,7 +337,7 @@ When you press "Allow and continue" on the consent screen you give the following
 
 Data is sent to the providers below only for the stated purpose and only to the extent that task requires.
 
-The controller is in Türkiye and the servers are in Germany. For users in Türkiye, data reaching the servers in Germany and the providers below is transferred abroad within the meaning of Art. 9 KVKK. The data of users in the EU and EEA is stored on servers in the EU; the controller accesses it from Türkiye, and there is no adequacy decision of the European Commission for Türkiye. All traffic to the site and the app also passes through Cloudflare's global network (reverse proxy and bot protection) before it reaches the server, and the connection encryption is also terminated there.
+The controller is in Türkiye and the servers are in the European Union (currently Austria). For users in Türkiye, data reaching the servers in the EU and the providers below is transferred abroad within the meaning of Art. 9 KVKK. The data of users in the EU and EEA is stored on servers in the EU; the controller accesses it from Türkiye, and there is no adequacy decision of the European Commission for Türkiye. All traffic to the site and the app also passes through Cloudflare's global network (reverse proxy and bot protection) before it reaches the server, and the connection encryption is also terminated there.
 
 The table gives each provider's region and the safeguard relied on under the GDPR for the transfer to that provider; the app stores and the sign-in providers (Google, Apple) are independent controllers for their own services and subject to their own privacy terms.
 
@@ -521,7 +521,7 @@ Wenn du auf dem Einwilligungsbildschirm auf "Erlauben und fortfahren" tippst, gi
 
 An die folgenden Anbieter gehen Daten nur zum angegebenen Zweck und nur im für diese Aufgabe erforderlichen Umfang.
 
-Der Verantwortliche sitzt in der Türkei, die Server stehen in Deutschland. Für Nutzer in der Türkei werden Daten, die die Server in Deutschland und die unten genannten Anbieter erreichen, im Sinne von Art. 9 KVKK ins Ausland übermittelt. Die Daten von Nutzern in der EU und im EWR werden auf Servern in der EU gespeichert; der Verantwortliche greift aus der Türkei darauf zu, und für die Türkei besteht kein Angemessenheitsbeschluss der Europäischen Kommission. Der gesamte Datenverkehr zu Website und App läuft zudem durch das globale Netz von Cloudflare (Reverse Proxy und Botschutz), bevor er den Server erreicht, und die verschlüsselte Verbindung wird auch dort entschlüsselt.
+Der Verantwortliche sitzt in der Türkei, die Server stehen in der Europäischen Union (derzeit Österreich). Für Nutzer in der Türkei werden Daten, die die Server in der EU und die unten genannten Anbieter erreichen, im Sinne von Art. 9 KVKK ins Ausland übermittelt. Die Daten von Nutzern in der EU und im EWR werden auf Servern in der EU gespeichert; der Verantwortliche greift aus der Türkei darauf zu, und für die Türkei besteht kein Angemessenheitsbeschluss der Europäischen Kommission. Der gesamte Datenverkehr zu Website und App läuft zudem durch das globale Netz von Cloudflare (Reverse Proxy und Botschutz), bevor er den Server erreicht, und die verschlüsselte Verbindung wird auch dort entschlüsselt.
 
 Die Tabelle nennt für jeden Anbieter die Region und die Garantie, auf die sich die Übermittlung an diesen Anbieter nach der DSGVO stützt; die App-Stores und die Anmeldeanbieter (Google, Apple) sind für ihre eigenen Dienste selbst verantwortlich und unterliegen ihren eigenen Datenschutzbedingungen.
 

@@ -45,7 +45,8 @@
  *     kalan, ana faaliyeti özel nitelikli veri işlemek olmayan veri
  *     sorumluları Kurul kararlarıyla kayıttan istisna. Metin kayıtlı olduğunu
  *     İDDİA ETMİYOR ve VERBİS'ten hiç söz etmiyor.
- *   3. Sunucular Almanya'da (Netcup) kaldığı için Türkiye'deki kullanıcıların
+ *   3. Sunucular AB'de (Netcup; 2026-09-28 itibarıyla Viyana/Avusturya, Almanya'ya taşınma planlı —
+ *     taşınınca metinlerdeki "(şu an Avusturya)" parantezi değişir) olduğu için Türkiye'deki kullanıcıların
  *     verisi YURT DIŞINA AKTARILIYOR (KVKK m.9). Yeterlilik kararı yok;
  *     dayanak standart sözleşme + 5 iş günü içinde Kurul'a bildirim. İmzalı
  *     sözleşme olmadığı için metin güvence İDDİA ETMİYOR (1.5 ilkesi), yalnız
@@ -183,7 +184,7 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * işlemenin anlatımı kapsamıyla eşitlendi.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-28";
-export const LEGAL_VERSION = "1.8.7";
+export const LEGAL_VERSION = "1.8.8";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -412,6 +413,23 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: olgusal düzeltme. Sunucular Netcup'un Viyana veri merkezinde (2026-09-28'de Netcup kesintisiyle
+       ortaya çıktı); metin "Almanya" diyordu. Konum AB içinde değişiyor: yeni alıcı, aktarım dayanağı ya da veri yok. */
+    version: "1.8.8",
+    date: "2026-09-28",
+    changes: {
+      tr: [
+        "Sunucu konumu düzeltildi: gizlilik politikası ve kullanım şartları sunucuların Almanya'da olduğunu söylüyordu; sunucular Avrupa Birliği'nde, şu an Avusturya'dadır. Türkiye'deki kullanıcılar için verilerin yurt dışına aktarıldığı (KVKK m.9) ve AB'deki kullanıcıların verilerinin AB'de saklandığı değişmedi.",
+      ],
+      en: [
+        "Server location corrected: the privacy policy and the terms said the servers were in Germany; they are in the European Union, currently in Austria. That data of users in Türkiye is transferred abroad (Art. 9 KVKK) and that data of users in the EU is stored in the EU did not change.",
+      ],
+      de: [
+        "Serverstandort korrigiert: Datenschutzerklärung und Nutzungsbedingungen nannten Deutschland als Serverstandort; die Server stehen in der Europäischen Union, derzeit in Österreich. Dass Daten von Nutzern in der Türkei ins Ausland übermittelt werden (Art. 9 KVKK) und Daten von Nutzern in der EU in der EU gespeichert werden, hat sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: iki iletişim adresi her bölümde birlikte veriliyor; hak, alıcı, sebep ya da süre değişmedi. */
     version: "1.8.7",
