@@ -43,16 +43,23 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
   useEffect(() => {
     done.current = onDone;
   });
+  /* Sahne bir kez kapanır: dokunuş ve süre sonu yarışırsa ikincisi yok sayılır. */
+  const closed = useRef(false);
+  const finish = () => {
+    if (closed.current) return;
+    closed.current = true;
+    done.current();
+  };
 
   useEffect(() => {
     vibrate("streak");
     box.current?.focus();
     const swap = setTimeout(() => setSwapped(true), SWAP_MS);
-    const end = setTimeout(() => done.current(), STREAK_MOMENT_MS);
+    const end = setTimeout(finish, STREAK_MOMENT_MS);
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape" && e.key !== "Enter" && e.key !== " ") return;
       e.preventDefault();
-      done.current();
+      finish();
     };
     window.addEventListener("keydown", onKey);
     return () => {
@@ -70,7 +77,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
       tabIndex={-1}
       role="status"
       aria-label={t("streak_moment.title", { n: streak })}
-      onClick={() => done.current()}
+      onClick={finish}
       className="mx-auto flex min-h-[60vh] w-full max-w-md cursor-pointer flex-col items-center justify-center gap-3 px-4 text-center outline-none"
     >
       {/* ALEV: ölçek yayı. Küçükten biraz taşarak yerine oturuyor; "Hareketi

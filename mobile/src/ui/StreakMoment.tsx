@@ -37,6 +37,13 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
   const swap = useRef(new Animated.Value(still ? 1 : 0)).current;
   const done = useRef(onDone);
   useEffect(() => { done.current = onDone; });
+  /* Sahne bir kez kapanır: dokunuş ve süre sonu yarışırsa ikincisi yok sayılır. */
+  const closed = useRef(false);
+  const finish = () => {
+    if (closed.current) return;
+    closed.current = true;
+    done.current();
+  };
 
   useEffect(() => {
     haptic("streak");
@@ -48,7 +55,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
       /* Sayı değişimi kayma, kutlama değil: yavaşlayarak oturan giriş eğrisi. */
       if (!still) Animated.timing(swap, { toValue: 1, duration: motion.medium, easing: Easing.bezier(...motion.emphasized), useNativeDriver: true }).start();
     }, SWAP_MS);
-    const end = setTimeout(() => done.current(), STREAK_MOMENT_MS);
+    const end = setTimeout(finish, STREAK_MOMENT_MS);
     return () => { clearTimeout(s); clearTimeout(end); };
     // Yalnız açılışta bir kez: sahne kendi zamanlamasıyla oynuyor.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,7 +65,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
   const flameFill = fillOf("streak");
   return (
     <Pressable
-      onPress={() => done.current()}
+      onPress={finish}
       accessibilityRole="button"
       accessibilityLabel={`${t("streak_moment.title", { n: streak })}. ${t("streak_moment.sub", { n: streak + 1 })}`}
       accessibilityHint={t("achu.tap_to_continue")}
