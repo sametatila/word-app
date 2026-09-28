@@ -8,6 +8,7 @@ import { SCORED_TURNS } from "./chat-const";
 import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { dialogueDone, targetsUsed } from "@/lib/dialogue";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
+import { guardCorrections } from "./fix-guard";
 
 /**
  * Sohbet — konuşmanın son ve asıl parçası.
@@ -70,7 +71,7 @@ export { SCORED_TURNS, SCORED_SECONDS } from "./chat-const";
  * "{dil} diline dön"): ek uyumu dile göre değişiyor (Almanca+ya / İngilizce+ye)
  * ve yer tutucuyla doğru üretilemez.
  */
-function targetLang(course: string | undefined): { name: string; dialect: string; chars: string } {
+function targetLang(course: string | undefined): { name: string; dialect: string; chars: string; fixExample: string; fixRules: string } {
   if (course === "en") {
     return {
       name: "İngilizce",
@@ -79,6 +80,8 @@ function targetLang(course: string | undefined): { name: string; dialect: string
       dialect:
         "Amerikan İngilizcesi konuşuyorsun: yazım ve sözcük seçimi Amerikan (apartment, vacation, elevator, color, center). Öğrenci İngiliz biçimi kullanırsa (flat, holiday, colour) bunu hata sayma ve düzeltme; konuşmayı sürdür.",
       chars: "",
+      fixExample: "Yesterday I go to work → Yesterday I went to work (Past Simple)",
+      fixRules: EN_FIX_RULES,
     };
   }
   if (course === "gsw-zh") {
@@ -87,10 +90,63 @@ function targetLang(course: string | undefined): { name: string; dialect: string
       dialect:
         "Züritüütsch (Zürih Almancası) konuşuyorsun. Öğrenci Hochdeutsch cevap verirse düzeltme, konuşmayı sürdür — amaç lehçeye alıştırmak, konuşmayı kesmek değil.",
       chars: "Almanca (ä ö ü ß) ",
+      fixExample: DE_FIX_EXAMPLE,
+      fixRules: DE_FIX_RULES,
     };
   }
-  return { name: "Almanca", dialect: "Standart Almanca (Hochdeutsch) konuşuyorsun.", chars: "Almanca (ä ö ü ß) " };
+  return {
+    name: "Almanca",
+    dialect: "Standart Almanca (Hochdeutsch) konuşuyorsun.",
+    chars: "Almanca (ä ö ü ß) ",
+    fixExample: DE_FIX_EXAMPLE,
+    fixRules: DE_FIX_RULES,
+  };
 }
+
+const DE_FIX_EXAMPLE = "Am Wochenende ich gehe → Am Wochenende gehe ich (V2-Regel)";
+
+/*
+  DÜZELTMENİN DİLE ÖZGÜ KURALLARI. Genel kurallar (yalnız gerçek hata, en küçük
+  değişiklik, emin değilsen yazma) istemin gövdesinde; burada o dilde modelin
+  gerçekten yanıldığı yer.
+
+  Almanca: 2026-09-28, B1 "Das Vorstellungsgespräch". Model weil-yan cümlesini
+  doğru düzeltti, sonra aynı cümlenin "und ich arbeite gern mit Kunden" parçasını
+  da "fiil sonda" diye "und gern mit Kunden arbeite ich" yaptı: hem gereksiz hem
+  bozuk Almanca. Sıralama bağlacını yan cümle bağlacından ayırmak kuralın tam
+  kendisi. İstemdeki örnek aynı yapıda ama BAŞKA bir cümle: gözlenen cümle
+  `test:chat` senaryosunda (de-b1-bewerbung) ve istemde birebir dursaydı ölçüm
+  ezberi ölçerdi. Süzgeç (`fix-guard`) bu kalıbı ayrıca siliyor.
+
+  İngilizce: istem örnekleri Almanca olduğu için model İngilizce kursta V2 ya
+  da fiil-sonda "düzeltmesi" yapabiliyor; İngilizcede ikisi de yok.
+*/
+const DE_FIX_RULES = `ALMANCA SÖZCÜK SIRASI — en sık yanlış düzeltme burada
+- und, aber, oder, denn, sondern SIRALAMA BAĞLACIDIR: sözcük sırasını
+  değiştirmez, cümlede yer tutmaz. Arkalarından normal bir ana cümle gelir,
+  fiil yine ikinci sırada: "und ich arbeite gern mit Kunden" DOĞRUDUR.
+- Fiili sona gönderen yalnız YAN CÜMLE bağlaçlarıdır (weil, dass, wenn, ob,
+  obwohl, als, damit, nachdem, bevor…). "Fiil sonda" düzeltmesi yalnız
+  bunlardan sonra yazılır.
+- Yan cümleyi düzelttin diye arkasından und/aber ile gelen doğru parçayı da
+  "düzeltme". Her gerçek hata için tek satır.
+Gerçek kullanımda ölçülen kusur. Öğrenci: "Ich lerne Deutsch, weil ich arbeite in
+Berlin und ich spreche gern mit Kollegen." Doğru cevap TEK satır:
+   ${CORRECTION_MARK} weil ich arbeite in Berlin → weil ich in Berlin arbeite (Verb-Endstellung)
+Şu ikinci satır YANLIŞTIR, yazma:
+   ${CORRECTION_MARK} und ich spreche gern → und gern mit Kollegen spreche ich (Verb-Endstellung)
+"und" fiili sona göndermez; öğrencinin parçası doğru, önerilen hâl bozuk Almanca.`;
+
+const EN_FIX_RULES = `İNGİLİZCE DÜZELTME İNGİLİZCE DİLBİLGİSİYLE YAPILIR
+- Bu kurs İngilizce. Bu istemdeki Almanca örnekler yalnız BİÇİMİ gösteriyor;
+  Almanca kurallarını (V2, fiil sonda, hâl) İngilizceye UYGULAMA. İngilizcede
+  fiil yan cümlede de sona gitmez: "because I have a lot of experience" DOĞRUDUR.
+- and, but, or, so sözcük sırasını değiştirmez: "and I work with customers"
+  DOĞRUDUR.
+- Gerçek hatalar genelde şunlardır: fiil çekimi (he go → he goes), zaman
+  (yesterday I go → yesterday I went), artikel (I am teacher → I am a teacher),
+  edat, soru kuruluşu (you like coffee → do you like coffee).
+- "a lot of" yerine "much" gibi üslup farkları hata değildir.`;
 
 /**
  * ÖĞRENCİNİN ana dilinin adı ve harfleri.
@@ -188,6 +244,21 @@ HATA DÜZELTME — her cevap için sırayla uygula
    Düzeltme yazma. Onu kalıpları kullanmaya sorularınla yönlendir.
 3) Cümle tamamen doğru mu? Hiç düzeltme satırı yazma.
 
+DÜZELTMENİN KENDİSİ DE DOĞRU OLMALI
+Okun SAĞ tarafı öğrenciye "doğrusu bu" diye gösteriliyor. Yanlış bir "doğrusu",
+hiç düzeltme yazmamaktan çok daha kötüdür: öğrenci onu ezberler.
+- Sağ taraf tek başına okununca dilbilgisel ${tgt.name} olmalı. Satırı yazmadan
+  önce sağ tarafı bir kez daha oku; bozuksa ya da emin değilsen o satırı YAZMA.
+- En küçük değişikliği yap: yalnız hatalı sözcüğü, eki ya da sırayı düzelt.
+  Öğrencinin öteki sözcüklerini ve sırasını koru; cümlenin başka yerinden
+  sağ tarafa parça taşıma.
+- Sol taraf öğrencinin SON sözünden birebir alınmış olmalı.
+- Her GERÇEK hata için tek satır. Aynı cümlenin doğru olan parçası için satır
+  yazma; bir hatayı düzelttin diye yanındaki doğru parçayı da "düzeltme".
+- Emin değilsen düzeltme yazma, konuşmayı sürdür.
+
+${tgt.fixRules}
+
 ÖĞRENCİ KONUŞUYOR, YAZMIYOR
 Cevapları ses tanıma ile metne dökülüyor. Büyük/küçük harf ve noktalama
 öğrencinin tercihi DEĞİL — tanıyıcı hepsini düşürüyor. "ich arbeite auch"
@@ -242,7 +313,7 @@ Düzeltme yazarken:
   cümlesinin doğru hâli olmalı, başka bir cümle değil.
 - Tek satırda ver: ${CORRECTION_MARK} ile başla, yanlışı ve doğrusunu yaz, sonuna
   ${nat.name} KURALIN ADINI ekle — açıklama cümlesi değil, etiket.
-  Örnek: "Am Wochenende ich gehe → Am Wochenende gehe ich (V2-Regel)".
+  Örnek: "${tgt.fixExample}".
   Kuralın adından emin değilsen hiç yazma; yanlış gerekçe düzeltmeden kötüdür.
 - Düzeltme satırlarından sonra rolüne dönüp konuşmayı sürdür.
 
@@ -422,7 +493,13 @@ export async function* streamChat(
   const phase: ChatPhase =
     userTurns >= limit ? "closing" : userTurns >= limit - 1 ? "wrapup" : userTurns <= 1 ? "open" : "develop";
   const system = chatPrompt(conversation, { phase, mode, native, conversationIndex: await conversationIndexInLevel(conversation) });
-  yield* streamSystem(system, messages, onMeta, report);
+  // Düzeltme satırları öğrenciye gitmeden süzülüyor (bkz. fix-guard): istem
+  // yanlış düzeltmeyi azaltıyor, kesin yanlış olan biçimleri süzgeç siliyor.
+  // Günlüğe yalnız neden yazılıyor, öğrencinin sözü değil.
+  const said = messages.at(-1)?.content ?? "";
+  yield* guardCorrections(streamSystem(system, messages, onMeta, report), said, (reason) =>
+    console.warn(`[chat] düzeltme süzüldü: ${reason}`),
+  );
 }
 
 /**

@@ -22,6 +22,11 @@
  *
  * Senaryo sabit; prompt değişince ya da yeni sağlayıcı eklenince aynı komutla
  * tekrar çalışır ve karşılaştırılabilir sayı üretir.
+ *
+ * Birden çok senaryo var (kurs × ana dil); `EVAL_SCENARIO=de-b1-bewerbung/tr,…`
+ * ile seçilir, `EVAL_PROVIDER=mistral` ile tek sağlayıcı. Düzeltme sayıları iki
+ * kez basılıyor: modelin HAM çıktısı ve sunucudaki süzgeçten (`fix-guard`)
+ * SONRA öğrencinin gördüğü. İkisinin farkı süzgecin işi; ham sayı istemin işi.
  */
 import { readFileSync } from "node:fs";
 import { chatProviders, type ChatMessage, type Provider } from "../src/lib/chat-providers";
@@ -29,6 +34,9 @@ import { chatProviders, type ChatMessage, type Provider } from "../src/lib/chat-
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { sourceFindConversation as findConversation } from "../src/lib/conversations/source";
 import { chatPrompt } from "../src/lib/conversations/chat";
+import { filterCorrectionLines } from "../src/lib/conversations/fix-guard";
+import type { Conversation } from "../src/lib/conversations/types";
+import type { NativeLang } from "../src/lib/courses";
 
 /* ─────────────── Senaryo ─────────────── */
 
@@ -40,7 +48,17 @@ type Step = {
   expectClean?: boolean;
   /** Türkçe soru — cevapta Türkçe açıklama beklenir. */
   expectTurkish?: boolean;
+  /**
+   * Bu kalıba uyan düzeltme YANLIŞ düzeltmedir (doğru bir parçanın
+   * "düzeltilmesi"). Örn. sıralama bağlacıyla başlayan parçaya fiil-sonda.
+   */
+  forbidFix?: RegExp;
+  /** En fazla bu kadar düzeltme satırı — fazlası doğru bir parçaya yapışmıştır. */
+  maxFixes?: number;
 };
+
+/** Sol tarafı sıralama bağlacıyla başlayan düzeltme: "und ich arbeite… → …". */
+const COORD_FIX = /^\s*(und|aber|oder|denn|sondern|and|but|or|so)\b/i;
 
 /** A2 seviyesinde, Türk bir öğrencinin gerçekten kuracağı cümleler. */
 const SCRIPT: Step[] = [
@@ -58,13 +76,58 @@ const SCRIPT: Step[] = [
 ];
 
 /**
+ * Sözcük sırası ve sıralama bağlaçları (2026-09-28, iOS canlı, B1 "Das
+ * Vorstellungsgespräch"): model weil-yan cümlesini doğru düzeltti, sonra aynı
+ * cümlenin DOĞRU "und ich arbeite gern mit Kunden" parçasını da "und gern mit
+ * Kunden arbeite ich (Verb-Endstellung)" diye bozdu. Beklenen: yalnız weil
+ * düzeltmesi; und'lu parçalara hiç düzeltme yok.
+ */
+const BEWERBUNG: Step[] = [
+  { say: "Guten Tag! Ich heiße Samet und ich komme aus der Türkei.", expectClean: true },
+  {
+    say: "Ich bewerbe mich, weil ich habe viel Erfahrung im Verkauf und ich arbeite gern mit Kunden.",
+    // Sağ tarafın başı; model parçayı "…im Verkauf habe" diye uzatabiliyor.
+    expectFix: "weil ich viel",
+    forbidFix: COORD_FIX,
+    maxFixes: 1,
+  },
+  { say: "Ich habe fünf Jahre im Verkauf gearbeitet und ich arbeite gern mit Kunden.", expectClean: true, forbidFix: COORD_FIX },
+  { say: "Ich spreche Deutsch und Englisch, aber ich möchte mein Englisch verbessern.", expectClean: true, forbidFix: COORD_FIX },
+  // Nachdem-yan cümlesinden sonra ana cümle fiille başlar: habe ich.
+  { say: "Nachdem ich die Schule beendet hatte, ich habe eine Ausbildung gemacht.", expectFix: "habe ich", forbidFix: COORD_FIX },
+];
+
+/**
+ * İngilizce kurs: düzeltme İngilizce dilbilgisiyle. Almanca kurallar (V2, fiil
+ * sonda) İngilizceye uygulanmamalı; "and I like…" doğru.
+ */
+const INTERVIEW_EN: Step[] = [
+  { say: "Hello, my name is Samet and I come from Turkey.", expectClean: true, forbidFix: COORD_FIX },
+  {
+    say: "I want this job because I have a lot of experience in sales and I like working with customers.",
+    expectClean: true,
+    forbidFix: COORD_FIX,
+  },
+  { say: "Yesterday I go to a job fair and I talked to many companies.", expectFix: "went", forbidFix: COORD_FIX, maxFixes: 1 },
+  { say: "I like my job, but I want to learn new things.", expectClean: true, forbidFix: COORD_FIX },
+];
+
+type Scenario = { id: string; conversation: Conversation; native: NativeLang; script: Step[] };
+
+/**
  * Ölçüm çıkarımı.
  *
  * Senaryonun gömülü hataları (Akkusativ, V2) genel dilbilgisi hataları;
  * istem konuşmanın kalıplarına odaklansa da her gerçek hatayı düzeltmek zorunda —
- * test tam olarak bunu ölçüyor.
+ * test tam olarak bunu ölçüyor. Kurs çiftleri: tr→de, en→de, tr→en, de→en.
  */
-const CONVERSATION = findConversation("de-a1-hallo")!;
+const SCENARIOS: Scenario[] = [
+  { id: "de-a1-hallo/tr", conversation: findConversation("de-a1-hallo")!, native: "tr", script: SCRIPT },
+  { id: "de-b1-bewerbung/tr", conversation: findConversation("de-b1-bewerbung")!, native: "tr", script: BEWERBUNG },
+  { id: "de-b1-bewerbung/en", conversation: findConversation("de-b1-bewerbung")!, native: "en", script: BEWERBUNG },
+  { id: "en-a2-interview/tr", conversation: findConversation("en-a2-interview")!, native: "tr", script: INTERVIEW_EN },
+  { id: "en-a2-interview/de", conversation: findConversation("en-a2-interview")!, native: "de", script: INTERVIEW_EN },
+];
 
 /* ─────────────── Ölçütler ─────────────── */
 
@@ -112,15 +175,20 @@ function overLevel(text: string, pools: ReturnType<typeof levelPools>): string[]
   return [...out];
 }
 
+/** Düzeltme isabeti — ham çıktıda ve süzgeçten sonra ayrı ayrı. */
+type FixTally = { caught: number; falseFixes: number; wrong: string[] };
+
 type Score = {
   provider: string;
   model: string;
+  scenario: string;
   turns: number;
   suggestions: number[];
-  fixesCaught: number;
   fixesExpected: number;
-  falseFixes: number;
-  cleanTurns: number;
+  /** Yanlış düzeltme ölçülen tur sayısı (temiz cümle ya da yasak kalıp ya da fazla satır). */
+  checkedTurns: number;
+  raw: FixTally;
+  guarded: FixTally;
   glitches: string[];
   turkishOk: boolean | null;
   overLevel: string[];
@@ -131,18 +199,36 @@ type Score = {
   failed?: string;
 };
 
-async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>): Promise<Score> {
-  const system = chatPrompt(CONVERSATION);
+/** Bir turun düzeltmelerini adımın beklentisiyle karşılaştırır. */
+function tally(t: FixTally, step: Step, corrections: string[]): void {
+  if (step.expectFix) {
+    const hit = corrections.some((c) =>
+      c.toLocaleLowerCase("de-DE").includes(step.expectFix!.toLocaleLowerCase("de-DE")),
+    );
+    if (hit) t.caught++;
+  }
+  const forbidden = step.forbidFix ? corrections.filter((c) => step.forbidFix!.test(c)) : [];
+  const tooMany = step.maxFixes !== undefined && corrections.length > step.maxFixes;
+  if ((step.expectClean && corrections.length) || forbidden.length || tooMany) {
+    t.falseFixes++;
+    t.wrong.push(...(step.expectClean ? corrections : forbidden.length ? forbidden : corrections));
+  }
+}
+
+async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>, sc: Scenario): Promise<Score> {
+  const script = sc.script;
+  const system = chatPrompt(sc.conversation, { native: sc.native });
   const history: ChatMessage[] = [];
   const s: Score = {
     provider: provider.name,
     model: provider.model,
+    scenario: sc.id,
     turns: 0,
     suggestions: [],
-    fixesCaught: 0,
-    fixesExpected: SCRIPT.filter((x) => x.expectFix).length,
-    falseFixes: 0,
-    cleanTurns: SCRIPT.filter((x) => x.expectClean).length,
+    fixesExpected: script.filter((x) => x.expectFix).length,
+    checkedTurns: script.filter((x) => x.expectClean || x.forbidFix || x.maxFixes !== undefined).length,
+    raw: { caught: 0, falseFixes: 0, wrong: [] },
+    guarded: { caught: 0, falseFixes: 0, wrong: [] },
     glitches: [],
     turkishOk: null,
     overLevel: [],
@@ -151,7 +237,7 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
     throttled: 0,
   };
 
-  for (const step of SCRIPT) {
+  for (const step of script) {
     history.push({ role: "user", content: step.say });
     // Ücretsiz katmanların dakikalık istek limiti dar (Cerebras: 5/dk).
     // 429 alınca bekleyip tekrar deniyoruz — ölçülmek istenen şey kalite,
@@ -186,21 +272,19 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
     s.turns++;
     s.firstTokenMs.push(first);
     s.totalMs.push(Date.now() - started);
-    history.push({ role: "assistant", content: text });
+    // Öğrencinin gördüğü (ve istemcinin geçmişte geri gönderdiği) metin süzülmüş olan.
+    const shown = filterCorrectionLines(text, step.say).text;
+    history.push({ role: "assistant", content: shown });
 
-    const { body, corrections, suggestions } = parseReply(text);
+    const rawCorrections = parseReply(text).corrections;
+    const { body, corrections, suggestions } = parseReply(shown);
     s.suggestions.push(suggestions.length);
 
     const glitch = text.match(GLITCH);
     if (glitch) s.glitches.push(glitch[0]);
 
-    if (step.expectFix) {
-      const hit = corrections.some((c) =>
-        c.toLocaleLowerCase("de-DE").includes(step.expectFix!.toLocaleLowerCase("de-DE")),
-      );
-      if (hit) s.fixesCaught++;
-    }
-    if (step.expectClean && corrections.length) s.falseFixes++;
+    tally(s.raw, step, rawCorrections);
+    tally(s.guarded, step, corrections);
     if (step.expectTurkish) s.turkishOk = TURKISH_MARKERS.test(body);
 
     s.overLevel.push(...overLevel(body, pools));
@@ -214,7 +298,7 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
     if (process.env.EVAL_SHOW) {
       console.log(`\n  ${s.turns}. tur — öğrenci: ${step.say}`);
       console.log(`     ${body.replace(/\n/g, "\n     ")}`);
-      for (const c of corrections) console.log(`     ${CORRECTION_MARK} ${c}`);
+      for (const c of rawCorrections) console.log(`     ${CORRECTION_MARK}${corrections.includes(c) ? "" : " [SÜZÜLDÜ]"} ${c}`);
       for (const g of suggestions) console.log(`     ${SUGGESTION_MARK} ${g}`);
     }
     // Dakikalık istek limitinin altında kalacak aralık (varsayılan ~4.6/dk).
@@ -238,19 +322,29 @@ async function main() {
   }
 
   const pools = levelPools();
-  console.log(`Senaryo: ${SCRIPT.length} tur · A2 · ${providers.length} sağlayıcı\n`);
+  const wanted = process.env.EVAL_SCENARIO?.split(",").map((x) => x.trim()).filter(Boolean);
+  const scenarios = wanted?.length ? SCENARIOS.filter((x) => wanted.includes(x.id)) : SCENARIOS;
+  const only = process.env.EVAL_PROVIDER;
+  const chosen = only ? providers.filter((p) => p.name === only) : providers;
+  if (!scenarios.length || !chosen.length) {
+    console.error(`Senaryo ya da sağlayıcı yok. Senaryolar: ${SCENARIOS.map((x) => x.id).join(", ")}`);
+    process.exit(1);
+  }
+  console.log(`Senaryo: ${scenarios.map((x) => `${x.id} (${x.script.length} tur)`).join(" · ")} · ${chosen.length} sağlayıcı\n`);
 
   const scores: Score[] = [];
-  for (const p of providers) {
-    process.stdout.write(`${p.name} (${p.model}) çalışıyor…`);
-    const s = await evaluate(p, pools);
-    console.log(s.failed ? ` HATA` : ` bitti`);
-    scores.push(s);
+  for (const p of chosen) {
+    for (const sc of scenarios) {
+      process.stdout.write(`${p.name} (${p.model}) · ${sc.id} çalışıyor…`);
+      const s = await evaluate(p, pools, sc);
+      console.log(s.failed ? ` HATA` : ` bitti`);
+      scores.push(s);
+    }
   }
 
   console.log("\n" + "─".repeat(78));
   for (const s of scores) {
-    console.log(`\n▸ ${s.provider} — ${s.model}`);
+    console.log(`\n▸ ${s.provider} — ${s.model} · ${s.scenario}`);
     if (s.failed) {
       console.log(`  ✗ ${s.turns}. turda düştü: ${s.failed}`);
       continue;
@@ -260,10 +354,13 @@ async function main() {
     console.log(
       `  öneri           : ${sugAll}/${s.turns} turda tam 3 · ${sugNone} turda hiç yok`,
     );
-    console.log(
-      `  düzeltme        : ${s.fixesCaught}/${s.fixesExpected} hata yakalandı · ` +
-        `${s.falseFixes}/${s.cleanTurns} doğru cümleye yanlış düzeltme`,
-    );
+    for (const [name, t] of [["ham", s.raw], ["süzgeçten sonra", s.guarded]] as const) {
+      console.log(
+        `  düzeltme (${name.padEnd(15)}): ${t.caught}/${s.fixesExpected} hata yakalandı · ` +
+          `${t.falseFixes}/${s.checkedTurns} turda yanlış düzeltme`,
+      );
+      for (const w of t.wrong) console.log(`      ✗ ${w}`);
+    }
     console.log(
       `  karakter        : ${s.glitches.length ? `✗ ${s.glitches.length} bozulma (${s.glitches.slice(0, 3).join(", ")})` : "✓ temiz"}`,
     );
