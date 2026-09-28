@@ -35,26 +35,29 @@ import type { ReportSurface } from "../lib/report";
  */
 export const SkillReportContext = React.createContext<{ surface: ReportSurface; id: string } | null>(null);
 
-/**
- * Soru/görev başlığı: sıra + metin, sağda bildirim bayrağı. Bayrak 44pt
- * dokunma alanıyla geliyor; negatif pay satırın boyunu büyütmüyor.
- */
-export function QuestionHead({ n, text, snapshot, colors, style }: { n: number; text: string; snapshot: () => Record<string, unknown>; colors: Palette; style?: object }) {
-  const ctx = useContext(SkillReportContext);
-  const title = (
-    <Text variant="bodyStrong" style={ctx ? { flex: 1 } : style}>
+/** Soru/görev başlığı: sıra + metin. */
+export function QuestionHead({ n, text, colors, style }: { n: number; text: string; colors: Palette; style?: object }) {
+  return (
+    <Text variant="bodyStrong" style={style}>
       <Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{text}
     </Text>
   );
-  if (!ctx) return title;
+}
+
+/**
+ * Sorunun "Bildir"i — CEVAPTAN SONRA, sorunun geri bildirim alanının altında
+ * (açıklama, doğru cevap). Soru ekranında bayrak yok: cevaplamadan önce göze
+ * batmıyor, bildiren doğru cevabı görmüş oluyor. Sağlayan bağlam yoksa ya da
+ * soru henüz cevaplanmadıysa hiçbir şey çizmiyor.
+ */
+export function QuestionReport({ n, text, show, snapshot }: { n: number; text: string; show: boolean; snapshot: () => Record<string, unknown> }) {
+  const ctx = useContext(SkillReportContext);
+  if (!ctx || !show) return null;
   return (
-    <View style={[{ flexDirection: "row", alignItems: "flex-start", gap: spacing.xs }, style]}>
-      {title}
-      <ReportFlag
-        style={{ marginTop: -12, marginBottom: -12, marginRight: -12 }}
-        report={() => ({ surface: ctx.surface, target: { type: "exercise", id: ctx.id, sub: String(n) }, snapshot: { q: text, ...snapshot() } })}
-      />
-    </View>
+    <ReportFlag
+      style={{ alignSelf: "flex-end", marginTop: spacing.xs }}
+      report={() => ({ surface: ctx.surface, target: { type: "exercise", id: ctx.id, sub: String(n) }, snapshot: { q: text, ...snapshot() } })}
+    />
   );
 }
 
@@ -131,7 +134,7 @@ export function QuestionList({ questions, onAllAnswered, colors }: {
         const ok = results[qi] === true;
         return (
           <Card key={qi} padded>
-            <QuestionHead n={qi + 1} text={q.text} colors={colors} snapshot={() => ({ kind, options: q.options, correct: kind === "order" ? q.items : q.options?.[q.answer] ?? q.accept?.[0] ?? null, accept: q.accept, result: results[qi] })} />
+            <QuestionHead n={qi + 1} text={q.text} colors={colors} />
             {kind === "order" ? (
               <OrderInput q={q} done={done} onSettle={(o) => settle(qi, o)} colors={colors} />
             ) : kind === "gapfill" || kind === "short_answer" || kind === "dictation" ? (
@@ -144,6 +147,7 @@ export function QuestionList({ questions, onAllAnswered, colors }: {
                 <Text variant="caption" color={colors.text}>{q.explain}</Text>
               </View>
             ) : null}
+            <QuestionReport n={qi + 1} text={q.text} show={done} snapshot={() => ({ kind, options: q.options, correct: kind === "order" ? q.items : q.options?.[q.answer] ?? q.accept?.[0] ?? null, accept: q.accept, result: results[qi] })} />
           </Card>
         );
       })}
@@ -362,7 +366,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
   return (
     <Card padded>
       <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("writp.build_sentence")}</Text>
-      <QuestionHead n={n} text={t.tr} colors={colors} style={{ marginTop: spacing.xs }} snapshot={() => ({ kind: "build", correct: t.answer, alternatives: t.alternatives, done })} />
+      <QuestionHead n={n} text={t.tr} colors={colors} style={{ marginTop: spacing.xs }} />
       {fails > 0 && t.hint && phase === "editing" ? (
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("rounds.hint")}: {t.hint}</Text>
       ) : null}
@@ -419,6 +423,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
           </>
         )}
       </View>
+      <QuestionReport n={n} text={t.tr} show={locked} snapshot={() => ({ kind: "build", correct: t.answer, alternatives: t.alternatives, you: chosen.map((i) => tokens[i]).join(" "), result: phase })} />
     </Card>
   );
 }
@@ -440,7 +445,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
   }
   return (
     <Card padded>
-      <QuestionHead n={n} text={t.prompt} colors={colors} snapshot={() => ({ kind: "rewrite", source: t.source, correct: t.answer, alternatives: t.alternatives, done })} />
+      <QuestionHead n={n} text={t.prompt} colors={colors} />
       <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
         <Text variant="body" color={colors.text}>{t.source}</Text>
       </View>
@@ -465,6 +470,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
           {t.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t.why}</Text> : null}
         </View>
       ) : null}
+      <QuestionReport n={n} text={t.prompt} show={done} snapshot={() => ({ kind: "rewrite", source: t.source, correct: t.answer, alternatives: t.alternatives, you: typed.trim(), result: ok })} />
     </Card>
   );
 }
@@ -482,7 +488,7 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
   const filled = vals.every((v) => v.trim());
   return (
     <Card padded>
-      <QuestionHead n={n} text={t.prompt} colors={colors} snapshot={() => ({ kind: "form", facts: t.facts ?? null, fields: t.fields.map((f) => ({ label: f.label, correct: f.answer })), done })} />
+      <QuestionHead n={n} text={t.prompt} colors={colors} />
       {t.facts ? (
         <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="caption" color={colors.text}>{t.facts}</Text>
@@ -515,6 +521,7 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
           <Text variant="bodyStrong" color={filled ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
         </PressableScale>
       ) : null}
+      <QuestionReport n={n} text={t.prompt} show={done} snapshot={() => ({ kind: "form", facts: t.facts ?? null, fields: t.fields.map((f, i) => ({ label: f.label, correct: f.answer, you: vals[i] ?? "" })) })} />
     </Card>
   );
 }
@@ -625,7 +632,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
   const retry = () => { setScore(null); setNote(null); setQueued(false); setUnscored(false); setReveal(false); };
   return (
     <Card padded>
-      <QuestionHead n={n} text={t.prompt} colors={colors} snapshot={() => ({ kind: "free", stimulus: t.stimulus ?? null, checklist: t.checklist, sample: t.sample })} />
+      <QuestionHead n={n} text={t.prompt} colors={colors} />
       {t.stimulus ? (
         <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="caption" color={colors.text}>{t.stimulus}</Text>
@@ -722,6 +729,9 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           <Text variant="body" color={colors.text}>{t.sample}</Text>
         </View>
       ) : null}
+      {/* Serbest görevde içerik "Bildir"i YOK: kartta puanın altındaki yapay zekâ
+          "Bildir"i var ve ikisi aynı görünüyor. Görevin metni (yönerge, örnek
+          cevap) alıştırmanın sonuç ekranındaki "Bildir"le bildiriliyor. */}
     </Card>
   );
 }

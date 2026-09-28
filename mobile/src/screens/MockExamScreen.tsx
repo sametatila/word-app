@@ -872,14 +872,8 @@ function ItemView({
   // için gövdeye karışmamalı.
   return (
     <Card padded style={{ marginBottom: spacing.sm }}>
-      {/* Maddenin bildirim bayrağı başlık satırında (hedef görev + madde no). */}
-      <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.xs }}>
-        <Text variant="bodyStrong" style={{ flex: 1 }}>{item.no}. {item.text}</Text>
-        <ReportFlag
-          style={{ marginVertical: -12, marginRight: -12 }}
-          report={() => ({ surface: "mock", target: { type: "mock_task", id: task.id, sub: String(item.no) }, snapshot: { prompt: task.prompt, item: item.text, kind: item.kind, options: item.kind === "mcq" ? item.options : item.kind === "match" ? (task.options ?? []).map((o) => `${o.key}) ${o.label}`) : undefined, you: value ?? null } })}
-        />
-      </View>
+      {/* Sınav sırasında "Bildir" yok (sınav düzeni); madde sonuçtaki dökümde bildiriliyor. */}
+      <Text variant="bodyStrong">{item.no}. {item.text}</Text>
       {item.kind === "gap" && item.cue ? (
         <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{item.cue}</Text>
       ) : null}
@@ -1369,13 +1363,7 @@ function ResultView({
                         {ok ? <CheckIcon color={colors.successText} size={16} /> : <XIcon color={colors.dangerText} size={16} />}
                       </View>
                       <View style={{ flex: 1 }}>
-                        <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.xs }}>
-                          <Text variant="bodyStrong" style={{ flex: 1 }}>{it.no}. {it.text}</Text>
-                          <ReportFlag
-                            style={{ marginVertical: -12, marginRight: -12 }}
-                            report={() => ({ surface: "mock", target: { type: "mock_task", id: task.id, sub: String(it.no) }, snapshot: { prompt: task.prompt, item: it.text, kind: it.kind, correct: scored?.expected ?? null, explain: scored?.explain ?? null, you: givenLabel, wasCorrect: ok } })}
-                          />
-                        </View>
+                        <Text variant="bodyStrong">{it.no}. {it.text}</Text>
                         {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
                         {it.kind === "gap" && it.cue ? (
                           <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{it.cue}</Text>
@@ -1389,6 +1377,11 @@ function ResultView({
                           {t("mockexam.correct_answer")}: {scored?.expected ?? ""}
                         </Text>
                         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{scored?.explain ?? ""}</Text>
+                        {/* Maddenin "Bildir"i dökümde, doğru cevap ve açıklamanın altında. */}
+                        <ReportFlag
+                          style={{ alignSelf: "flex-end", marginTop: spacing.xs }}
+                          report={() => ({ surface: "mock", target: { type: "mock_task", id: task.id, sub: String(it.no) }, snapshot: { prompt: task.prompt, item: it.text, kind: it.kind, correct: scored?.expected ?? null, explain: scored?.explain ?? null, you: givenLabel, wasCorrect: ok } })}
+                        />
                       </View>
                     </View>
                   </Card>

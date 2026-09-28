@@ -511,12 +511,6 @@ export function ConversationScoredScreen() {
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
         <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{tx("scored.turn_of", { n: Math.min(userTurns + 1, SCORED_TURNS), total: SCORED_TURNS })}</Text>
         <Text variant="bodyStrong" color={left <= 30 ? colors.dangerText : colors.textMuted}>{mm}:{ss}</Text>
-        {/* İçerik bildirimi: senaryo ve yazılı açılış cümlesi (ilk balon).
-            Model yanıtlarının kendi "Bildir"i balonun altında. */}
-        <ReportFlag
-          style={{ marginVertical: -spacing.sm, marginRight: -spacing.sm }}
-          report={() => ({ surface: "scored", target: { type: "conversation", id: conversation.id, sub: String(userTurns) }, snapshot: { title: conversation.title, opener: turns[0]?.role === "assistant" ? turns[0].content : null } })}
-        />
       </View>
       <AiNotice variant="character" />
       <KeyboardAwareScroll
@@ -545,9 +539,15 @@ export function ConversationScoredScreen() {
             {/* Yapay zekâ yanıtının altında "Bildir" (denetim CNT-6; konuşma
                 sohbetindekiyle aynı bağlantı ve ref biçimi, sınav eki ile).
                 İlk balon (i = 0) konuşmanın yazılı açılış cümlesi, model çıktısı
-                değil: orada yok. */}
+                değil: onun "Bildir"i İÇERİK bildirimi (senaryo), aynı görünüm ve yer.
+                Süre satırında bayrak yok. */}
             {turn.role === "assistant" && i > 0 ? (
               <ReportLink kind="chat" refId={`${conversation.id}:scored:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
+            ) : turn.role === "assistant" ? (
+              <ReportFlag
+                style={{ alignSelf: "flex-end", marginTop: spacing.xs }}
+                report={() => ({ surface: "scored", target: { type: "conversation", id: conversation.id, sub: "0" }, snapshot: { title: conversation.title, opener: turn.content } })}
+              />
             ) : null}
           </View>
         ))}

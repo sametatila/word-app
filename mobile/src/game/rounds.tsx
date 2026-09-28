@@ -30,6 +30,9 @@ import { fallbackAssessment, type FallbackResult } from "../lib/assessFallback";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { assessmentRef } from "../ui/ReportLink";
+import { ReportFlag } from "../ui/ReportFlag";
+import { roundReport } from "./roundReport";
+import type { ContentReport, ReportSurface } from "../lib/report";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
 import { tileSpeech } from "../lib/ttsText";
@@ -280,12 +283,17 @@ const SHEET_H = 60 + spacing.sm + 50 + spacing.md * 2;
 const KeyboardOpen = React.createContext(false);
 
 /**
- * Turun cevabı dışarı — içerik bildirimi (`ui/ReportFlag`) anlık görüntüye
- * doğru cevabı ve öğrencinin cevabını koyabilsin diye. Sonuç katmanı
- * belirdiğinde bir kez çağrılıyor; turun akışını hiçbir şekilde etkilemiyor.
+ * Turun cevabı dışarı — sınav kendi kaçan/SRS kaydı için dinliyor. Sonuç
+ * katmanı belirdiğinde bir kez çağrılıyor; turun akışını hiçbir şekilde etkilemiyor.
  */
 export type RoundAnswerInfo = { correct: boolean; answer: string | null; you: string | null };
 const AnswerSink = React.createContext<((a: RoundAnswerInfo) => void) | null>(null);
+/**
+ * Sonuç katmanındaki "Bildir"in paketi (`game/roundReport`): verilmişse
+ * katman "Devam"ın soluna bağlantıyı koyuyor. Sınavda verilmiyor (sınav
+ * sırasında bildirim yok; kaçanlar sonuç listesinde bildiriliyor).
+ */
+const ReportFor = React.createContext<{ build: (a: RoundAnswerInfo) => ContentReport; onOpen?: () => void; onClose?: () => void } | null>(null);
 const tokensText = (k?: MarkedToken[] | null) => (k?.length ? k.map((x) => x.text).join(" ") : null);
 
 function RoundShell({ children, footer, sheet, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; sheet?: React.ReactNode; scroll?: boolean }) {
@@ -393,8 +401,10 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
   const btnInk = tone === "bad" ? colors.onPrimary : isDark ? colors.onFill : colors.onPrimary;
   const { height } = useWindowDimensions();
   const sink = React.useContext(AnswerSink);
+  const reportFor = React.useContext(ReportFor);
+  const info = (): RoundAnswerInfo => ({ correct: data.correct, answer: data.answer ?? tokensText(data.answerTokens), you: data.you ?? tokensText(data.youTokens) });
   useEffect(() => {
-    sink?.({ correct: data.correct, answer: data.answer ?? tokensText(data.answerTokens), you: data.you ?? tokensText(data.youTokens) });
+    sink?.(info());
     // Katman her tur bir kez beliriyor; cevap o anki hâliyle.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -453,9 +463,15 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
           </View>
         ) : null}
       </ScrollView>
-      <PressableScale onPress={onContinue} style={[{ borderRadius: radii.lg, backgroundColor: btnBg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(btnBg, 8)]}>
-        <Text variant="h3" color={btnInk}>{tx("common.continue")}</Text>
-      </PressableScale>
+      {/* "Bildir" Devam'ın SOLUNDA, aynı satırda (Duolingo/Babbel düzeni):
+          cevap görüldükten sonra, soru ekranını kalabalıklaştırmadan. Bağlantı
+          daralmıyor; dar ekranda Devam daralıyor. */}
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+        {reportFor ? <ReportFlag report={() => reportFor.build(info())} onOpen={reportFor.onOpen} onClose={reportFor.onClose} style={{ paddingHorizontal: spacing.xs }} /> : null}
+        <PressableScale onPress={onContinue} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: btnBg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(btnBg, 8)]}>
+          <Text variant="h3" color={btnInk}>{tx("common.continue")}</Text>
+        </PressableScale>
+      </View>
     </View>
   );
 }
@@ -1904,10 +1920,31 @@ function pickRound(round: Round, onDone: Done, colors: Palette) {
 
 /** Tur türüne göre doğru oynatıcıyı seçer. Klavye + alt-sabit aksiyon alanı her
  *  turun kendi RoundShell'inde yönetilir (edge-to-edge'de manuel klavye kaldırma). */
-export function RoundView({ round, onDone, onAnswer }: { round: Round; onDone: Done; onAnswer?: (a: RoundAnswerInfo, round: Round) => void }) {
+export function RoundView({ round, onDone, onAnswer, report }: {
+  round: Round;
+  onDone: Done;
+  onAnswer?: (a: RoundAnswerInfo, round: Round) => void;
+  /**
+   * İçerik bildirimi: sonuç katmanında "Bildir" (yüzey + isteğe bağlı `sub`). Verilmezse bağlantı yok (sınav).
+   * `onOpen`/`onClose`: sayfa açık kalırken süreli turun sayacı duruyor (`lib/useTimerPause`).
+   */
+  report?: { surface: ReportSurface; sub?: string; onOpen?: () => void; onClose?: () => void };
+}) {
   const { colors } = useTheme();
   const sink = React.useCallback((a: RoundAnswerInfo) => onAnswer?.(a, round), [onAnswer, round]);
-  return <AnswerSink.Provider value={sink}>{pickRound(round, onDone, colors)}</AnswerSink.Provider>;
+  const surface = report?.surface;
+  const sub = report?.sub;
+  const onOpen = report?.onOpen;
+  const onClose = report?.onClose;
+  const reportFor = React.useMemo(
+    () => (surface ? { build: (a: RoundAnswerInfo) => roundReport(round, surface, a, sub), onOpen, onClose } : null),
+    [round, surface, sub, onOpen, onClose],
+  );
+  return (
+    <AnswerSink.Provider value={sink}>
+      <ReportFor.Provider value={reportFor}>{pickRound(round, onDone, colors)}</ReportFor.Provider>
+    </AnswerSink.Provider>
+  );
 }
 
 export { INTERACTIVE };

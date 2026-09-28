@@ -11,7 +11,7 @@ import { APP_VERSION, APP_VERSION_CODE } from "../version";
  * bildirebilmeli. Kayıt yönetim panosunda insan tarafından okunur.
  *
  * `content` türü öğrenme içeriğinin kendisi (kelime, alıştırma, sınav maddesi…):
- * her öğe kartındaki bayrak (`ui/ReportFlag`). Tel sözleşmesi
+ * cevaptan sonraki "⚑ Bildir" bağlantısı (`ui/ReportFlag`). Tel sözleşmesi
  * `docs/plan/content-feedback.md`; eski gövde (`{kind, ref, reason, content}`)
  * aynen gidiyor, yeni alanlar (surface, target, detail, context) yanına ekleniyor.
  */

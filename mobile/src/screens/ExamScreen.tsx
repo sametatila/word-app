@@ -18,10 +18,8 @@ import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { CertificateSheet } from "../ui/CertificateSheet";
 import { SpeakerIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
-import { RoundView, type RoundAnswerInfo } from "../game/rounds";
-import { roundReport } from "../game/roundReport";
+import { RoundView } from "../game/rounds";
 import { ReportFlag } from "../ui/ReportFlag";
-import type { ContentReport } from "../lib/report";
 import { NoHints } from "../game/noHints";
 import { written } from "../game/skillQuiz";
 import { prefetchDialogue, speakDialogue, speakTarget, stopSpeaking } from "../lib/tts";
@@ -117,41 +115,6 @@ type Miss = { section: SectionId; prompt: string; answer: string; given?: string
 /** Sınav maddesinin `sub`u: hangi kâğıt (spec: `module:<level>:<n>` ya da `level:<level>`). */
 function examSub(paper: Paper): string {
   return paper.kind === "module" ? `module:${paper.level}:${paper.module ?? ""}` : `level:${paper.level}`;
-}
-
-/**
- * Bölümdeki maddenin içerik bildirimi — hedef `exam_item` (madde kimliği).
- * Kelime turunda anlık görüntü tur paketinden (kelime, şıklar, cevaplar).
- */
-function examItemReport(paper: Paper, section: SectionId, idx: number, answer: RoundAnswerInfo | null): ContentReport | null {
-  const sub = examSub(paper);
-  const at = <T,>(list: T[]) => list[idx] ?? null;
-  const pack = (id: string, snapshot: Record<string, unknown>): ContentReport => ({ surface: "exam", target: { type: "exam_item", id, sub }, snapshot: { section, ...snapshot } });
-  if (section === "vocab") {
-    const r = at(paper.sections.vocab);
-    return r ? pack(r.id, { ...(roundReport(r, "exam", answer).snapshot as Record<string, unknown>), wordId: r.word?.id }) : null;
-  }
-  if (section === "grammar") {
-    const it = at(paper.sections.grammar);
-    if (!it) return null;
-    return it.kind === "cell"
-      ? pack(it.id, { prompt: `${it.sheet} · ${it.label}`, options: it.options, correct: it.options[it.answer] })
-      : pack(it.id, { prompt: it.statement, correct: it.answer });
-  }
-  if (section === "produce") {
-    const it = at(paper.sections.produce);
-    return it ? pack(it.id, { prompt: it.prompt, correct: it.de, accept: it.accept }) : null;
-  }
-  if (section === "reading" || section === "listening") {
-    const it = at(paper.sections[section]);
-    return it ? pack(it.id, { title: it.title, questions: it.questions.map((q) => ({ q: q.text, options: q.options, correct: q.options[q.answer] })) }) : null;
-  }
-  if (section === "speaking") {
-    const it = at(paper.sections.speaking);
-    return it ? pack(it.id, { prompt: it.situation ?? null, target: it.de, meaning: it.tr }) : null;
-  }
-  const w = paper.sections.writing[0];
-  return w ? pack(w.id, { prompt: w.task.prompt }) : null;
 }
 
 /** Kapak — `GET /api/exam?level=..&module=..` ya da `&kind=level`. */
@@ -262,8 +225,6 @@ export function ExamScreen() {
   const [showMisses, setShowMisses] = useState(false);
   const misses = useRef<Miss[]>([]);
   /* İçerik bildirimi: bölümde açık olan madde ve kelime turunun son cevapları. */
-  const [itemIdx, setItemIdx] = useState(0);
-  const vocabSeen = useRef(new Map<string, RoundAnswerInfo>());
   const score = useRef<Record<SectionId, { correct: number; total: number }>>({
     vocab: { correct: 0, total: 0 }, grammar: { correct: 0, total: 0 }, produce: { correct: 0, total: 0 },
     reading: { correct: 0, total: 0 }, listening: { correct: 0, total: 0 }, speaking: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 },
@@ -697,15 +658,14 @@ export function ExamScreen() {
             </PressableScale>
             {showMisses ? misses.current.map((m, i) => (
               <View key={i} style={{ gap: spacing.xs, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: spacing.sm }}>
-                {/* Bayrak kaçan maddenin başlık satırında — soru ekranındakiyle aynı hedef. */}
-                <View style={{ flexDirection: "row", alignItems: "center", minHeight: 44 }}>
-                  <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
-                  {m.id && paper ? <ReportFlag style={{ marginRight: -spacing.sm }} report={{ surface: "exam", target: { type: "exam_item", id: m.id, sub: examSub(paper) }, snapshot: { section: m.section, prompt: m.prompt, correct: m.answer, you: m.given ?? null } }} /> : null}
-                </View>
+                <Text variant="micro" color={colors.textMuted}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
                 <Text variant="body">{m.prompt}</Text>
                 <Text variant="bodyStrong" color={colors.successText}>{m.answer}</Text>
                 {m.given ? <Text variant="caption" color={colors.textMuted}>{t("exam.your_answer")} {m.given}</Text> : null}
                 {m.why ? <Text variant="caption" color={colors.textMuted}>{m.why}</Text> : null}
+                {/* "Bildir" kaçan maddenin altında: sınav sırasında bildirim yok
+                    (dikkat ve sınav düzeni), madde burada, cevabıyla birlikte bildiriliyor. */}
+                {m.id && paper ? <ReportFlag style={{ alignSelf: "flex-end" }} report={{ surface: "exam", target: { type: "exam_item", id: m.id, sub: examSub(paper) }, snapshot: { section: m.section, prompt: m.prompt, correct: m.answer, you: m.given ?? null } }} /> : null}
               </View>
             )) : null}
             {/* ÖRNEK CEVAP kâğıtta zaten vardı (`task.sample`) ve mobilde hiç
@@ -789,13 +749,11 @@ export function ExamScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {header}
-      {/* Bölüm satırı + maddenin bildirim bayrağı (sağda, her maddede aynı yer). */}
-      <View style={{ paddingHorizontal: spacing.lg, flexDirection: "row", alignItems: "center", minHeight: 44 }}>
-        <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>
-          {secIdx + 1}/{list.length} · {sectionFace()[active]} · {t(SECTION_KEY[active])}
-        </Text>
-        <ReportFlag style={{ marginRight: -spacing.sm }} report={() => examItemReport(paper, active, itemIdx, active === "vocab" ? vocabSeen.current.get(paper.sections.vocab[itemIdx]?.id ?? "") ?? null : null) ?? { surface: "exam", target: { type: "exam_item", id: active, sub: examSub(paper) }, snapshot: { section: active } }} />
-      </View>
+      {/* Bölüm satırı. Sınav sırasında "Bildir" yok (sınav düzeni); kaçan
+          maddeler sonuç ekranının kırılımında bildiriliyor. */}
+      <Text variant="micro" color={colors.textMuted} style={{ paddingHorizontal: spacing.lg }}>
+        {secIdx + 1}/{list.length} · {sectionFace()[active]} · {t(SECTION_KEY[active])}
+      </Text>
       <SectionBody
         key={active}
         id={active}
@@ -808,8 +766,6 @@ export function ExamScreen() {
         onTick={(c) => { score.current[active].correct = c; }}
         onVocabAnswer={(a) => vocabAnswers.current.push(a)}
         onDone={(c) => sectionDone(active, c)}
-        onIndex={setItemIdx}
-        onRoundAnswer={(a, r) => vocabSeen.current.set(r.id, a)}
       />
       {quitDialog}
     </View>
@@ -819,7 +775,7 @@ export function ExamScreen() {
 /* ─────────────────────────── bölümler ─────────────────────────── */
 
 function SectionBody({
-  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer, onMiss, onIndex, onRoundAnswer,
+  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer, onMiss,
 }: {
   id: SectionId; paper: Paper; colors: Palette; insets: { bottom: number };
   onDone: (correct: number) => void;
@@ -831,12 +787,8 @@ function SectionBody({
   onTick: (correct: number) => void;
   onSpeakScore: (p: number) => void;
   onWriteScore: (p: number) => void;
-  /** Açık maddenin sırası — üst satırdaki bildirim bayrağı için. */
-  onIndex: (idx: number) => void;
-  onRoundAnswer: (a: RoundAnswerInfo, r: Round) => void;
 }) {
   const [idx, setIdx] = useState(0);
-  useEffect(() => { onIndex(idx); }, [idx, onIndex]);
   const correctRef = useRef(0);
   const pad = { paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md };
 
@@ -858,7 +810,6 @@ function SectionBody({
         <RoundView
           key={r.id}
           round={r}
-          onAnswer={onRoundAnswer}
           onDone={(ok, extra) => {
             /* Sunucunun süzgeci `wordId`, `game` ve `correct` istiyor; ötekiler
                isteğe bağlı. "Bunu zaten biliyorum" (skip) yolunda cevap

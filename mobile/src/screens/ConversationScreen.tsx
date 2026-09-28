@@ -11,6 +11,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { ReportSheet } from "../ui/ReportSheet";
+import { ReportButton } from "../ui/ReportLink";
 import { ReportFlag } from "../ui/ReportFlag";
 import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
@@ -75,8 +76,13 @@ type Via = "mic" | "typed";
 /** Anlatım/konuşma akışındaki baloncuk. */
 /** Yapay zekâ yanıtı için bildirme bilgisi: ref = "<conversationId>:<tur>", text = gösterilen metin. */
 type ReportRef = { ref: string; text: string };
+/**
+ * Konuşmanın YAZILI içeriği (anlatım adımı, senaryo repliği, açılış) için
+ * içerik bildirimi: `sub` spec'teki gibi (anlatımda `step:<n>`, sohbette tur).
+ */
+type ContentRef = { sub: string; snapshot: Record<string, unknown> };
 type BubbleData =
-  | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why"; fix?: string[]; report?: ReportRef }
+  | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why"; fix?: string[]; report?: ReportRef; content?: ContentRef }
   | { role: "student"; text: string; ok?: boolean };
 type Bubble = BubbleData & { id: number };
 
@@ -438,7 +444,7 @@ export function ConversationScreen() {
     const add: Bubble[] = [];
     while (k < conversation.lecture.length) {
       const step = conversation.lecture[k];
-      add.push({ id: bubbleId.current++, role: "teacher", segments: step.say });
+      add.push({ id: bubbleId.current++, role: "teacher", segments: step.say, content: { sub: `step:${k + 1}`, snapshot: { phase: "lecture", step } } });
       if (step.expect) break; // her beklenti (confirm/repeat/produce/truefalse) burada bekletir
       k++;
     }
@@ -653,7 +659,7 @@ export function ConversationScreen() {
       pushHint(st.hint);
     }
     if (opening) {
-      push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(conversation.chat.openingTr ? [{ lang: "tr" as const, text: conversation.chat.openingTr }] : [])] });
+      push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(conversation.chat.openingTr ? [{ lang: "tr" as const, text: conversation.chat.openingTr }] : [])], content: { sub: "0", snapshot: { phase: "chat", opening, scripted: !!offlineRef.current } } });
       setRoleMsgs([{ role: "assistant", content: opening }]);
       speakTarget(opening);
     }
@@ -710,7 +716,7 @@ export function ConversationScreen() {
       const parsed = parseReply(r.content);
       const bodyText = parsed.body || r.content;
       setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
-      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }] });
+      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], content: { sub: String(turn), snapshot: { phase: "chat", scripted: true, you: text, reply: bodyText } } });
       setSuggestions(parsed.suggestions);
       pushHint(r.hint);
       if (r.speak) speakTarget(r.speak);
@@ -742,7 +748,7 @@ export function ConversationScreen() {
         const parsed = parseReply(r.content);
         const bodyText = parsed.body || r.content;
         setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
-        push({ role: "teacher", segments: [{ lang: "de", text: bodyText }] });
+        push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], content: { sub: String(turn), snapshot: { phase: "chat", scripted: true, you: text, reply: bodyText } } });
         setSuggestions(parsed.suggestions);
         pushHint(r.hint);
         if (r.speak) speakTarget(r.speak);
@@ -886,19 +892,6 @@ export function ConversationScreen() {
             )}
           </PressableScale>
         ) : null}
-        {/* İÇERİK BİLDİRİMİ (senaryo, anlatım adımı). Yapay zekâ yanıtlarının
-            kendi "Bildir"i baloncuğun altında kalıyor; bu bayrak konuşmanın
-            yazılı içeriği için. `sub`: anlatımda adım sırası, sohbette tur. */}
-        {phase !== "summary" && !convLocked && resumeChecked && !resumeOffer ? (
-          <ReportFlag
-            style={{ marginLeft: -spacing.sm, marginRight: -spacing.sm }}
-            report={() => ({
-              surface: "conversation",
-              target: { type: "conversation", id: conversation.id, sub: phase === "lecture" ? `step:${cursor + 1}` : String(roleTurns) },
-              snapshot: phase === "lecture" && current ? { phase, step: current } : { phase, turns: roleTurns, scripted: !!offline, last: feed.slice(-2).map((b) => ("text" in b && b.text) || ("segments" in b && b.segments ? b.segments.map((g) => g.text).join(" ") : "")) },
-            })}
-          />
-        ) : null}
       </View>
       {/* Sohbet boyunca EKRANDA KALIR — akışta kaybolan tek seferlik bir
           baloncuk, konuşmanın ortasına dönen kullanıcıya hiçbir şey söylemez. */}
@@ -982,7 +975,7 @@ export function ConversationScreen() {
       ) : (
         <>
           <KeyboardAwareScroll ref={scrollRef} automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })} onLayout={(e) => onSohbetLayout(e.nativeEvent.layout.height)}>
-            {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} />)}
+            {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} conversationId={conversation.id} />)}
             {busy && (
               <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.xs }}>
                 <ActivityIndicator color={colors.primaryText} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("conversation.typing")}</Text>
@@ -1016,7 +1009,7 @@ export function ConversationScreen() {
 /** Övgü satırları — t() çağrı anında (dil modül yüklenirken hazır değil). */
 const PRAISE_KEYS = ["conversation.praise_1", "conversation.praise_2", "conversation.praise_3", "conversation.praise_4", "conversation.praise_5"];
 
-function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onReport?: (r: ReportRef) => void }) {
+function BubbleView({ b, colors, onReport, conversationId }: { b: Bubble; colors: Palette; onReport?: (r: ReportRef) => void; conversationId: string }) {
   if (b.role === "student") {
     return (
       <View style={{ alignSelf: "flex-end", maxWidth: "84%", marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: 6 }}>
@@ -1057,10 +1050,12 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
             <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>{tx("conversation.listen")}</Text>
           </PressableScale>
         ) : null}
+        {/* Yapay zekâ yanıtının "Bildir"i ve yazılı içeriğin (anlatım adımı,
+            senaryo repliği) "Bildir"i aynı görünüm, aynı yer: baloncuğun altı. */}
         {b.report && onReport ? (
-          <PressableScale onPress={() => onReport(b.report!)} hitSlop={8} accessibilityLabel={tx("conversation.report_this_answer")}>
-            <Text variant="micro" color={colors.textFaint}>{tx("conversation.report")}</Text>
-          </PressableScale>
+          <ReportButton onPress={() => onReport(b.report!)} label={tx("conversation.report_this_answer")} />
+        ) : b.content ? (
+          <ReportFlag report={() => ({ surface: "conversation", target: { type: "conversation", id: conversationId, sub: b.content!.sub }, snapshot: b.content!.snapshot })} />
         ) : null}
       </View>
     </View>

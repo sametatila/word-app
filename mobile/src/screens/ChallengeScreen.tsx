@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useTimerPause } from "../lib/useTimerPause";
 import { View, Animated, Easing } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -9,8 +10,6 @@ import { Text } from "../ui/Text";
 import { FlameIcon, SparkIcon, XIcon, CheckIcon, BoltIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
-import { useRoundReport } from "../game/roundReport";
-import { ReportFlag } from "../ui/ReportFlag";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
@@ -80,7 +79,6 @@ export function ChallengeScreen() {
   const [data, setData] = useState<Payload | null>(null);
   const [index, setIndex] = useState(0);
   /* İçerik bildirimi: meydan okuma kelime pratiği sayılıyor. */
-  const flagReport = useRoundReport("practice", "challenge");
   const [score, setScore] = useState(0);
   const [combo, setCombo] = useState(0);
   const [bestCombo, setBestCombo] = useState(0);
@@ -100,6 +98,11 @@ export function ChallengeScreen() {
   const scoreRef = useRef(0);
   /** Cevap süresi TUR BAŞINA: hızlı cevap bonusu buna bakıyor. */
   const roundStart = useRef(0);
+  /* "Bildir" sayfası açıkken sayaç duruyor: bildiren öğrenci süre kaybetmiyor.
+     Kapanışta açık kalınan süre bitiş ve tur başlangıcı damgalarına ekleniyor. */
+  const { pause: pauseClock, resume: resumeClock, paused: clockPaused } = useTimerPause((ms) => { deadline.current += ms; roundStart.current += ms; });
+  /* İçerik bildirimi sonuç katmanında ("Devam"ın solunda): pratik yüzeyi, `sub` meydan okuma. */
+  const challengeReport = useMemo(() => ({ surface: "practice" as const, sub: "challenge", onOpen: pauseClock, onClose: resumeClock }), [pauseClock, resumeClock]);
   const flashAnim = useRef(new Animated.Value(0)).current;
 
   const load = useCallback(() => {
@@ -153,6 +156,7 @@ export function ChallengeScreen() {
        oynanıyor: süre bittiğini gören değil, DUYAN kullanıcı hızlanıyor. */
     let lastTick = Infinity;
     const timer = setInterval(() => {
+      if (clockPaused()) return;
       const remaining = (deadline.current - Date.now()) / 1000;
       setLeft(Math.max(0, remaining));
       const whole = Math.ceil(remaining);
@@ -164,7 +168,7 @@ export function ChallengeScreen() {
       if (remaining <= 0) void finish();
     }, 100);
     return () => clearInterval(timer);
-  }, [phase, finish]);
+  }, [phase, finish, clockPaused]);
 
   const showFlash = useCallback((text: string, tone: "flame" | "mint") => {
     setFlash({ text, tone });
@@ -385,7 +389,6 @@ export function ChallengeScreen() {
         value={pct / 100}
         tint={urgent ? colors.danger : colors.streak}
         extra={<Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${index + 1}/${data!.rounds.length}`}</Text>}
-        flag={round ? <ReportFlag report={flagReport.reportFor(round)} /> : null}
         count={<Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.streakText} style={{ fontVariant: ["tabular-nums"] }}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>}
       />
 
@@ -405,7 +408,7 @@ export function ChallengeScreen() {
         )}
       </View>
 
-      <RoundView key={round?.id ?? index} round={round} onDone={onDone} onAnswer={flagReport.onAnswer} />
+      <RoundView key={round?.id ?? index} round={round} onDone={onDone} report={challengeReport} />
       {/* Süreli turdan çıkış ONAYLI (oyun turu ve sınav gibi): tek dokunuş ya
           da geri hareketi denemeyi sessizce siliyordu. Süre diyalog açıkken de
           akıyor; süre dolarsa diyalog sonuçla birlikte kalkıyor. */}

@@ -432,6 +432,10 @@ export function ItemScreen() {
       {/* Bu bir UYARI, hata değil — sonuç cihazda, bağlantıyı bekliyor. */}
       {queued ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("skillp.saved_offline")} /> : null}
       {repeatNoXp ? <FlowNote text={t("item.repeat_note")} /> : null}
+      {/* Alıştırmanın BÜTÜNÜ (metin, ses, açıklama) sonuçta bildiriliyor; tek
+          tek sorular cevaplandıktan sonra kendi geri bildirimlerinin altında
+          (`QuestionReport`). Başlıkta bayrak yok. */}
+      <ReportFlag style={{ alignSelf: "flex-end" }} report={() => ({ surface: reportAs.surface, target: { type: "exercise", id: exercise.id }, snapshot: { title: exercise.title, skill: exercise.skill, level: exercise.level, intro: exercise.intro, score: pct } })} />
     </View>
   );
   const resultActions = passed ? (
@@ -453,9 +457,6 @@ export function ItemScreen() {
             <Text accessibilityRole="header" variant="h3" numberOfLines={1}>{exercise.title}</Text>
           </View>
         </View>
-        {/* Alıştırmanın bütünü (metin, ses, açıklama) için bayrak; tek tek
-            sorular kendi başlıklarında (`QuestionHead`). */}
-        <ReportFlag style={{ marginRight: -spacing.sm }} report={() => ({ surface: reportAs.surface, target: { type: "exercise", id: exercise.id }, snapshot: { title: exercise.title, skill: exercise.skill, level: exercise.level, intro: exercise.intro } })} />
       </View>
       <SkillReportContext.Provider value={reportAs}>
 

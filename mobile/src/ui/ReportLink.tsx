@@ -4,8 +4,9 @@ import { t } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { ReportSheet } from "./ReportSheet";
+import { FlagIcon } from "./icons";
 import type { ReportKind } from "../lib/report";
-import { useTheme } from "../theme";
+import { useTheme, spacing } from "../theme";
 
 /**
  * "Bildir" bağlantısı + kendi bildirim kartı — bir yapay zekâ çıktısının altına
@@ -32,19 +33,46 @@ export function assessmentRef(id: unknown, fallback: string): string {
   return typeof id === "number" || (typeof id === "string" && id) ? String(id) : fallback;
 }
 
+/**
+ * Uygulamanın TEK bildirim görünümü — küçük bayrak + "Bildir", soluk renk.
+ *
+ * Yapay zekâ çıktısının altındaki bağlantı (`ReportLink`) ve öğrenme içeriğinin
+ * bildirimi (`ui/ReportFlag`) aynı düğmeyi çiziyor: öğrenci bildirmeyi her
+ * yerde aynı biçimde tanıyor. Görünen parça küçük; dokunma alanı dolgu +
+ * `hitSlop` ile 44pt'yi geçiyor. Etiket tek satır ve daralmıyor: dar sonuç
+ * katmanında "Devam" daralıyor, bağlantı bölünmüyor.
+ */
+export function ReportButton({ onPress, label, style }: {
+  onPress: () => void;
+  /** Ekran okuyucu adı. */
+  label: string;
+  style?: StyleProp<ViewStyle>;
+}) {
+  const { colors } = useTheme();
+  return (
+    <PressableScale
+      onPress={onPress}
+      hitSlop={{ top: 10, bottom: 10, left: 8, right: 8 }}
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      style={[{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingVertical: spacing.xs, flexShrink: 0 }, style]}
+    >
+      <FlagIcon color={colors.textFaint} size={13} />
+      <Text variant="micro" color={colors.textFaint} numberOfLines={1}>{t("conversation.report")}</Text>
+    </PressableScale>
+  );
+}
+
 export function ReportLink({ kind, refId, content, style }: {
   kind: Exclude<ReportKind, "user">;
   refId: string;
   content: string;
   style?: StyleProp<ViewStyle>;
 }) {
-  const { colors } = useTheme();
   const [open, setOpen] = useState(false);
   return (
     <>
-      <PressableScale onPress={() => setOpen(true)} hitSlop={8} accessibilityRole="button" accessibilityLabel={t("conversation.report_this_answer")} style={style}>
-        <Text variant="micro" color={colors.textFaint}>{t("conversation.report")}</Text>
-      </PressableScale>
+      <ReportButton onPress={() => setOpen(true)} label={t("conversation.report_this_answer")} style={style} />
       <ReportSheet visible={open} kind={kind} refId={refId} content={content} onClose={() => setOpen(false)} />
     </>
   );

@@ -267,13 +267,11 @@ export function WordsScreen() {
                   çevirisiyle gösteriyor; mobilde hiçbir yerde yoktu - kelime
                   listesi kelimeyi cümle içinde bir kez bile göstermiyordu. */}
               {isOpen ? (
-                /* Kelimenin bildirim bayrağı açılan ayrıntıda: satırın kendisi
-                    (hoparlör, seviye, durum) dar ekranda zaten dolu. */
-                <View style={{ flexDirection: "row", alignItems: "flex-start", borderTopWidth: 1, borderTopColor: colors.hairline, paddingLeft: spacing.lg, paddingRight: spacing.xs, paddingVertical: 10 }}>
-                  <View style={{ flex: 1, paddingTop: 2 }}>
-                    <ExampleLines de={w.beispiel ?? null} tr={w.beispielTr ?? null} en={w.beispielEn ?? null} deNative={w.beispielDe ?? null} colors={colors} />
-                  </View>
-                  <ReportFlag style={{ marginVertical: -spacing.xs }} report={{ surface: "words", target: { type: "word", id: String(w.id) }, snapshot: { word: say, meaning: gloss.text, meaningSub: gloss.sub ?? null, grammar: grammarLine(w, w.tr), level: w.niveau, example: w.beispiel ?? null, exampleTr: w.beispielTr ?? null, exampleEn: w.beispielEn ?? null } }} />
+                /* Kelimenin "Bildir"i açılan ayrıntının eylem satırında: satırın
+                    kendisi (hoparlör, seviye, durum) dar ekranda zaten dolu. */
+                <View style={{ borderTopWidth: 1, borderTopColor: colors.hairline, paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: spacing.xs }}>
+                  <ExampleLines de={w.beispiel ?? null} tr={w.beispielTr ?? null} en={w.beispielEn ?? null} deNative={w.beispielDe ?? null} colors={colors} />
+                  <ReportFlag style={{ alignSelf: "flex-end" }} report={{ surface: "words", target: { type: "word", id: String(w.id) }, snapshot: { word: say, meaning: gloss.text, meaningSub: gloss.sub ?? null, grammar: grammarLine(w, w.tr), level: w.niveau, example: w.beispiel ?? null, exampleTr: w.beispielTr ?? null, exampleEn: w.beispielEn ?? null } }} />
                 </View>
               ) : null}
             </View>

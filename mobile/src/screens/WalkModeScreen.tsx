@@ -927,6 +927,16 @@ export function WalkModeScreen() {
      Rol renkleri koyu temada pastele dönüyor ve 42 px'lik beyaz glif
      görünmüyordu (ölçümler `theme/colors` `fillOf` başlığında). Boş hâl
      `surface2` kalıyor — orada glif zaten `textFaint`, beyaz değil. */
+  /* İÇERİK BİLDİRİMİ — kelime kartında, hüküm göründükten sonra (ilerleme
+     satırında bayrak yok) ve duraklatılmışken. Sayfa açılırken tur duraklıyor
+     (ses ve mikrofon sayfanın arkasında sürmesin); "Devam et" ile kalınan
+     yerden. Anlık görüntü dokunulan anın hâli: `pauseWalk` hükmü silmeden önce. */
+  const wordReport = () => (
+    <ReportFlag
+      onOpen={canPause ? pauseWalk : undefined}
+      report={() => ({ surface: "walk", target: { type: "word", id: String(curWord.id), game: "walk" }, snapshot: { word: withArtikel(curWord), meaning: curGloss.text, meaningSub: curGloss.sub ?? null, heard: heard || null, verdict: verdict ?? null } })}
+    />
+  );
   const dotColor = verdict === "correct" ? fillOf("success") : verdict === "wrong" ? fillOf("danger") : listening ? fillOf("primary") : colors.surface2;
   const stepLabel = teaching ? tx("walkmode.step_new_word") : phase === "speaking" ? tx("walkmode.step_hint") : phase === "listening" ? tx("walkmode.step_say_now", { target: targetLangName() }) : verdict === "unheard" ? tx("walkmode.step_unheard") : verdict === "skip" ? tx("walkmode.step_skipped") : verdict === "correct" ? tx("walkmode.step_correct") : verdict === "wrong" ? tx("walkmode.step_answer") : "";
   // Sayaç SORU (speak) turlarını gösterir; intro (öğretme) turları soru değil — done (tally) ile tutarlı.
@@ -968,14 +978,6 @@ export function WalkModeScreen() {
           onClose={onBackPress}
           closeLabel={tx("walkmode.exit_walk_mode")}
           value={speakStep / Math.max(1, speakTotal)}
-          /* Bildirim bayrağı: sayfa açılırken tur duraklıyor (ses ve mikrofon
-             sayfanın arkasında sürmesin); "Devam et" ile kalınan yerden. */
-          flag={curWord.id > 0 && !greeting && phase !== "paused" && phase !== "stopped" ? (
-            <ReportFlag
-              onOpen={canPause ? pauseWalk : undefined}
-              report={() => ({ surface: "walk", target: { type: "word", id: String(curWord.id), game: "walk" }, snapshot: { word: withArtikel(curWord), meaning: curGloss.text, meaningSub: curGloss.sub ?? null, heard: heard || null, verdict: verdict ?? null } })}
-            />
-          ) : null}
           count={<>
             <Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${speakStep}/${speakTotal}`}</Text>
             {/* DURAKLAT — çıkışın (X) karşılığı, aynı ölçüde ve aynı çubukta.
@@ -1087,7 +1089,16 @@ export function WalkModeScreen() {
         /* DURAKLATILDI — kullanıcının kendi kararı; "durdurdum" (stopped)
            ekranıyla aynı şablon ama başka sebep ve başka metin. */
         inPlayer(
-          <StateBody title={tx("walkmode.paused_title")} body={tx("walkmode.paused_body")} />,
+          <>
+            <StateBody title={tx("walkmode.paused_title")} body={tx("walkmode.paused_body")} />
+            {/* Duraklamışken son kelime bildirilebiliyor: hangisi olduğu yanında yazıyor. */}
+            {curWord.id > 0 ? (
+              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.md, marginTop: spacing.lg }}>
+                <Text variant="caption" color={colors.textMuted} numberOfLines={1} style={{ flexShrink: 1 }}>{withArtikel(curWord)} · {curGloss.text}</Text>
+                {wordReport()}
+              </View>
+            ) : null}
+          </>,
           <FlowActions
             primary={{ label: tx("walkmode.continue"), onPress: resumeWalk }}
             tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
@@ -1193,7 +1204,11 @@ export function WalkModeScreen() {
                   <Text variant="bodyStrong" color={colors.textMuted}>{tx("walkmode.skip")}</Text><ChevronRightIcon color={colors.textMuted} size={18} />
                 </PressableScale>
               ) : (
-                <View style={{ height: 40 }} />
+                /* Atla'nın yeri: hüküm göründüyse kelimenin "Bildir"i (aynı
+                   yükseklik, kart kıpırdamıyor). */
+                <View style={{ height: 40, justifyContent: "center" }}>
+                  {verdict && curWord.id > 0 ? wordReport() : null}
+                </View>
               )}
             </View>
           </View>

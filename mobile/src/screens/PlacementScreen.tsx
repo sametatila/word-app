@@ -10,8 +10,6 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { SpeakerIcon, ExamIcon, StackIcon, ClockIcon, FlagIcon, TargetIcon, CheckIcon, QuizIcon, UserPlusIcon, AlertIcon } from "../ui/icons";
 import { Chip } from "../ui/Chip";
-import type { ContentReport } from "../lib/report";
-import { ReportFlag } from "../ui/ReportFlag";
 import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
 import { RoundSkeleton } from "../game/RoundSkeleton";
@@ -81,20 +79,6 @@ function demoQuestions(): PQ[] {
     itemId: q.id,
     stage: "vocab" as const,
   }));
-}
-
-/**
- * Yerleştirme maddesinin içerik bildirimi. Okuma/dinleme maddesinin kimliği
- * "<metin>#<soru>" biçiminde düzleşiyor (bkz. `startPlacement`): hedef metnin
- * kimliği, `sub` sorunun sırası (1'den).
- */
-function placementReport(q: PQ): ContentReport {
-  const [id, qi] = q.itemId.split("#");
-  return {
-    surface: "placement",
-    target: { type: "placement_item", id, ...(qi != null ? { sub: String(Number(qi) + 1) } : {}) },
-    snapshot: { stage: q.stage, level: q.level, question: q.round.question, options: q.round.options, correct: q.round.answer, ...(q.head ? { title: q.head.title } : {}) },
-  };
 }
 
 /** Okuma metni ya da dinleme düğmesi — sorunun üstündeki bağlam. */
@@ -498,8 +482,10 @@ export function PlacementScreen() {
         value={total ? Math.min(idx, total) / total : 0}
         count={`${Math.min(idx + (done ? 0 : 1), total)}/${total}`}
         style={{ marginBottom: spacing.xl }}
-        flag={!done && questions[idx] ? <ReportFlag report={() => placementReport(questions[idx])} /> : null}
       />
+      {/* "Bildir" YOK: yerleştirme cevap anında geri bildirim vermeyen bir
+          ölçüm (dikkat dağıtmamalı) ve sonuç ekranı tek tek maddeleri
+          göstermiyor, yani sonuçta bağlanacak anlamlı bir hedef de yok. */}
 
       {!done ? (
         <>

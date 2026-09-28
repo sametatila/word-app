@@ -183,8 +183,9 @@ export function WeeklyScreen() {
     const item = quiz.items[idx];
     const stim = item.ref ? quiz.stimuli.find((s) => s.id === item.ref) : null;
     return (
-      <FlowScreen top={<FlowProgress onClose={close} value={(idx + 1) / quiz.items.length} count={`${idx + 1}/${quiz.items.length}`}
-        flag={<ReportFlag report={() => ({ surface: "quiz", target: { type: "quiz_item", id: item.id }, snapshot: { quiz: quiz.id, block: item.block, stem: item.stem, options: item.options, stimulus: item.ref ?? null } })} />} />}>
+      <FlowScreen top={<FlowProgress onClose={close} value={(idx + 1) / quiz.items.length} count={`${idx + 1}/${quiz.items.length}`} />}>
+        {/* Oynarken "Bildir" yok: cevap anında geri bildirim vermeyen bir sınav.
+            Kaçan maddeler sonuçtaki gözden geçirmede bildiriliyor. */}
         {/* Blok adı oyun turundaki oyun adının yerinde: çubuğun altında, ortada. */}
         <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", textTransform: "uppercase", letterSpacing: 1 }}>{t(BLOCK_KEY[item.block])}</Text>
         {stim ? <Stim stim={stim} colors={colors} /> : null}
@@ -264,12 +265,10 @@ export function WeeklyScreen() {
             <View style={{ gap: spacing.md }}>
               {wrong.map((w) => (
                 <View key={w.itemId} style={{ gap: spacing.xs }}>
-                  {/* Bayrak maddenin başlık satırında — oynarken çubuktakiyle aynı hedef. */}
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>{t(BLOCK_KEY[w.block]).toLocaleUpperCase(dateLocale())}</Text>
-                    <ReportFlag style={{ marginVertical: -12, marginRight: -12 }} report={() => ({ surface: "quiz", target: { type: "quiz_item", id: w.itemId }, snapshot: (() => { const q = quiz?.items.find((x) => x.id === w.itemId); return { block: w.block, stem: q?.stem ?? null, options: q?.options, correct: q?.options[w.answer] ?? w.answer, you: w.chosen == null ? null : q?.options[w.chosen] ?? w.chosen, why: w.why }; })() })} />
-                  </View>
+                  <Text variant="micro" color={colors.textMuted}>{t(BLOCK_KEY[w.block]).toLocaleUpperCase(dateLocale())}</Text>
                   <Text variant="body">{w.why}</Text>
+                  {/* Maddenin "Bildir"i gerekçenin altında (cevap görüldükten sonra). */}
+                  <ReportFlag style={{ alignSelf: "flex-end" }} report={() => ({ surface: "quiz", target: { type: "quiz_item", id: w.itemId }, snapshot: (() => { const q = quiz?.items.find((x) => x.id === w.itemId); return { block: w.block, stem: q?.stem ?? null, options: q?.options, correct: q?.options[w.answer] ?? w.answer, you: w.chosen == null ? null : q?.options[w.chosen] ?? w.chosen, why: w.why }; })() })} />
                 </View>
               ))}
             </View>

@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useTimerPause } from "../lib/useTimerPause";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -9,8 +10,6 @@ import { Text } from "../ui/Text";
 import { TrophyIcon, RepeatIcon, ClockIcon, BoltIcon, CrownIcon, BookIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
-import { useRoundReport } from "../game/roundReport";
-import { ReportFlag } from "../ui/ReportFlag";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
@@ -70,8 +69,6 @@ export function BossScreen() {
   const [phase, setPhase] = useState<Phase>("loading");
   const [data, setData] = useState<BossPayload | null>(null);
   const [index, setIndex] = useState(0);
-  /* İçerik bildirimi: patron sınavı yüzeyi, hedef turun kelimesi; `sub` hangi modülün patronu. */
-  const flagReport = useRoundReport("exam", data ? `boss:${data.meta.level}:${data.meta.moduleIndex + 1}` : undefined);
   const [left, setLeft] = useState(0);
   const [tally, setTally] = useState({ correct: 0, total: 0 });
   const [best, setBest] = useState<number | null>(null);
@@ -86,6 +83,15 @@ export function BossScreen() {
      başlayalı kaç saniye oldu" diye gidiyordu. Gecikme SRS'te ve hata
      çözümlemesinde okunuyor; `GameScreen` baştan beri tur başına ölçüyor. */
   const roundStart = useRef(0);
+  /* "Bildir" sayfası açıkken sayaç duruyor: bildiren öğrenci süre kaybetmiyor.
+     Kapanışta açık kalınan süre bitiş, başlangıç ve tur damgalarına ekleniyor. */
+  const { pause: pauseClock, resume: resumeClock, paused: clockPaused } = useTimerPause((ms) => { deadline.current += ms; startedAt.current += ms; roundStart.current += ms; });
+  /* İçerik bildirimi sonuç katmanında ("Devam"ın solunda): patron sınavı yüzeyi, hedef turun
+     kelimesi; `sub` hangi modülün patronu. Patron her cevapta katmanı gösteriyor, ayrıca liste yok. */
+  const bossReport = useMemo(
+    () => ({ surface: "exam" as const, sub: data ? `boss:${data.meta.level}:${data.meta.moduleIndex + 1}` : undefined, onOpen: pauseClock, onClose: resumeClock }),
+    [data, pauseClock, resumeClock],
+  );
 
   /*
    * YÜKLEME AYRI BİR İŞLEV: hata dalından YENİDEN çağrılabilsin.
@@ -163,6 +169,7 @@ export function BossScreen() {
        saniye TAM değişince, yani on tık. */
     let sonTik = Infinity;
     const timer = setInterval(() => {
+      if (clockPaused()) return;
       const remaining = (deadline.current - Date.now()) / 1000;
       setLeft(Math.max(0, remaining));
       const tamSaniye = Math.ceil(remaining);
@@ -174,7 +181,7 @@ export function BossScreen() {
       if (remaining <= 0) void finish(false, 0);
     }, 100);
     return () => clearInterval(timer);
-  }, [phase, finish]);
+  }, [phase, finish, clockPaused]);
 
   function start() {
     if (!data) return;
@@ -337,10 +344,9 @@ export function BossScreen() {
         tint={urgent ? colors.danger : colors.primary}
         style={{ marginBottom: spacing.xl }}
         extra={<Text variant="bodyStrong" color={colors.textMuted} style={{ fontVariant: ["tabular-nums"] }}>{`${index + 1}/${data!.rounds.length}`}</Text>}
-        flag={round ? <ReportFlag report={flagReport.reportFor(round)} /> : null}
         count={<Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.text} style={{ fontVariant: ["tabular-nums"] }}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>}
       />
-      <RoundView key={round?.id ?? index} round={round} onDone={onDone} onAnswer={flagReport.onAnswer} />
+      <RoundView key={round?.id ?? index} round={round} onDone={onDone} report={bossReport} />
       {/* Süreli turdan çıkış ONAYLI (oyun turu ve sınav gibi): tek dokunuş ya
           da geri hareketi denemeyi sessizce siliyordu. Süre diyalog açıkken de
           akıyor; süre dolarsa diyalog sonuçla birlikte kalkıyor. */}

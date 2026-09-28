@@ -3,6 +3,7 @@ import { api } from "../src/api/client";
 import { buildReportBody, reasonsFor, reportContext, sendReport, snapshotText, targetRef } from "../src/lib/report";
 import { roundReport } from "../src/game/roundReport";
 import { setCurrentCourse } from "../src/lib/courses";
+import { setLang } from "../src/lib/i18n";
 import { APP_VERSION, APP_VERSION_CODE } from "../src/version";
 import type { Round } from "../src/game/session";
 
@@ -111,4 +112,23 @@ test("kelime turu: hedef kelime + oyun, anlık görüntüde cevaplar", () => {
   expect(snapshotText(r.snapshot)).toContain("\"you\":\"araba\"");
   /* Cevap verilmeden: kullanıcı cevabı yok. */
   expect(roundReport(round, "round", null).snapshot).not.toHaveProperty("you");
+});
+
+test("kelime turu: anlam ANADİLDE (ekrandaki satır), Türkçe karşılık sızmıyor", async () => {
+  const round = {
+    id: "r-8", game: "choice", direction: "de-tr",
+    word: { id: 42, de: "Haus", artikel: "das", tr: "ev", en: "house", deGloss: null, typ: "noun", niveau: "A1", beispiel: null, beispielTr: null, formen: null, isNew: false },
+    options: [{ text: "house", sub: null }, { text: "car", sub: null }],
+  } as Round;
+  try {
+    await setLang("en");
+    const en = roundReport(round, "round", null).snapshot as Record<string, unknown>;
+    expect(en.meaning).toBe("house");
+    expect(en).not.toHaveProperty("meaningSub");
+    expect(JSON.stringify(en)).not.toContain("\"ev\"");
+    await setLang("tr");
+    expect(roundReport(round, "round", null).snapshot).toMatchObject({ meaning: "ev", meaningSub: "house" });
+  } finally {
+    await setLang("tr");
+  }
 });
