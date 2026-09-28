@@ -12,7 +12,7 @@ import { appControl } from "@/lib/app-control";
 import { LandingLangButton } from "@/components/landing/landing-lang";
 import { LANG_LABEL, NATIVE_LANGS } from "@/lib/i18n/dict";
 import { offeredNativeLangs } from "@/lib/courses";
-import { LANDING, PAIRS, SCREEN_LOCALES, SWITCH_LABEL, type LandingCopy, type Pillar, type ScreenId } from "@/content/landing";
+import { LANDING, PAIRS, SCREEN_FALLBACK, SCREEN_SET, SWITCH_LABEL, type LandingCopy, type Pillar, type ScreenId } from "@/content/landing";
 
 /*
   TANITIM SAYFASI (2026-09-28, yeniden yazıldı).
@@ -24,7 +24,7 @@ import { LANDING, PAIRS, SCREEN_LOCALES, SWITCH_LABEL, type LandingCopy, type Pi
   (`docs/store/README.md` "Vitrin kararları"). Metin `src/content/landing.ts`te.
 
   Ekranlar GERÇEK: iPhone 6.9" simülatöründe, üretimdeki `screenshots@lernomi.app`
-  hesabıyla çekildi, açık ve koyu tema ayrı (`public/landing/<dil>/`). Sayfa hangi
+  hesabıyla çekildi, açık ve koyu tema ayrı, dil çifti başına (`public/landing/<çift>/`, yöntem `docs/store/screenshots.md`). Sayfa hangi
   temadaysa telefon da o temanın ekranını gösteriyor.
 
   Tasarım: tek yazı tipi (Bricolage Grotesque; genişlik ekseni başlıkları
@@ -137,7 +137,9 @@ export default async function Home() {
   const t = await getT();
   const lang = await getLang();
   const copy = LANDING[lang];
-  const locale = SCREEN_LOCALES.includes(lang) ? lang : "tr";
+  /* Ekranlar ziyaretçinin dil çiftinden (arayüz + kendi kursu); seti henüz
+     çekilmemiş dil yedeğe düşüyor (bkz. SCREEN_SET). */
+  const locale = SCREEN_SET[lang] ?? SCREEN_FALLBACK;
   const signedIn = Boolean(await getAccountUserId());
   const startHref = signedIn ? "/learn" : "/setup";
   const startLabel = signedIn ? copy.cta.webSignedIn : copy.cta.web;

@@ -16,10 +16,11 @@ import type { NativeLang } from "@/lib/i18n/dict";
  * aynı sebeple `src/content/legal/`da.
  *
  * KONUŞMA DÖKÜMÜ GERÇEK. Türkçe ve İngilizce sürümdeki iş görüşmesi, uygulamada
- * B1 "Das Vorstellungsgespräch" adımında yapay zekâyla yapılmış bir konuşmadan
- * birebir alındı (ekran görüntüsü `public/landing/tr/conversation-*`); düzeltme
- * ve üç öneri modelin kendi cevabı. Almanca sürüm İngilizce kursu anlatıyor ve
- * aynı sahneyi İngilizce kuruyor.
+ * B1 "Das Vorstellungsgespräch" adımında yapay zekâyla, o dilin arayüzüyle
+ * yapılmış konuşmalardan birebir alındı (ekranları `public/landing/tr-de/` ve
+ * `en-de/conversation-*`); düzeltme ve üç öneri modelin kendi cevabı. Almanca
+ * sürüm İngilizce kursu anlatıyor; oradaki döküm şimdilik örnek, de-en çekimi
+ * yapılınca o konuşmayla değişecek.
  *
  * YAZILMAYANLAR (vitrin kuralları): "eğlenceli", "oyun", "çocuk"; sınav markası;
  * fiyat; "ücretsiz ve sınırsız sohbet"; "tam unutmak üzereyken". Deneme sınavı
@@ -378,7 +379,7 @@ const en: LandingCopy = {
     unit: "Unit screen: the steps of the working-world unit; the speaking step is done, reading is next.",
     conversation:
       "Speaking step: in a job interview the AI character asks a question; the user's mistake seit drei Jahre is corrected to seit drei Jahren; three suggestions below.",
-    "mock-task": "Mock exam, writing section: task timer, the German task and its explanation, content points.",
+    "mock-task": "Mock exam, speaking section: task timer, the German task with its English explanation, content points and a Start speaking button.",
     "walk-intro": "Walk mode: you hear the cue and say the German word out loud; rounds left today.",
     home: "Learn screen: daily word round, daily goal and today's tasks.",
     skills: "Skills screen: level B1; reading, listening, writing, speaking and grammar tabs, list of reading texts.",
@@ -409,21 +410,23 @@ const en: LandingCopy = {
     aiName: "Interviewer",
     aiTag: "AI",
     me: "You",
-    ai1: "Guten Tag, schön, dass Sie da sind! Erzählen Sie mal: Warum bewerben Sie sich bei uns?",
-    ai1Gloss: "Hello, good to have you here! Tell us: why are you applying to us?",
+    /* İngilizce arayüzle yapılan konuşmadan (2026-09-28, ekran görüntüsü
+       `public/landing/en-de/conversation-*`). */
+    ai1: "Das klingt nach einer guten Motivation. Seit wann arbeiten Sie bereits im Verkauf?",
+    ai1Gloss: "That sounds like good motivation. How long have you been working in sales?",
     mine: {
-      before: "Ich bewerbe mich, weil ich seit drei ",
+      before: "Ich arbeite seit drei ",
       wrong: "Jahre",
       right: "Jahren",
-      after: " als Verkäufer arbeite und neue Aufgaben suche.",
+      after: " im Verkauf, zuerst in Leeds und jetzt in Berlin.",
     },
-    fix: "seit takes the dative: seit drei Jahren.",
-    ai2: "Das klingt nach wertvoller Erfahrung. Welche besonderen Stärken bringen Sie aus Ihrer bisherigen Tätigkeit mit?",
+    fix: "seit takes the dative: seit drei Jahren. And where English says \"I have been working\", German uses the present tense.",
+    ai2: "Sehr interessant, dass Sie bereits in zwei Städten Erfahrung gesammelt haben. Welche Stärke sehen Sie als Ihre wichtigste im Kundenkontakt?",
     hintsLabel: "Stuck? It suggests:",
     hints: [
-      "Ich bin sehr zuverlässig, weil ich seit fünf Jahren im Einzelhandel arbeite.",
-      "Meine Stärke ist die Kundenorientierung, seit ich im Verkauf tätig bin.",
-      "Ich kann gut im Team arbeiten, weil ich seit drei Jahren im Verkauf arbeite.",
+      "Ich bin sehr geduldig, weil ich gut zuhören kann.",
+      "Meine Stärke ist, dass ich schnell Lösungen finde, seit ich im Verkauf arbeite.",
+      "Ich arbeite gern im Team, weil ich gut organisieren kann.",
     ],
     caption: "Mistakes are corrected while you talk.",
   },
@@ -439,7 +442,7 @@ const en: LandingCopy = {
       { name: "Schreiben", nameLang: "de", local: "Writing", how: "Scored by AI, with your mistakes shown." },
       { name: "Sprechen", nameLang: "de", local: "Speaking", how: "Scored by AI, with your mistakes shown." },
     ],
-    caption: "B1 mock exam, writing task.",
+    caption: "B1 mock exam, speaking task.",
   },
   walk: {
     id: "pocket-walking",
@@ -703,8 +706,18 @@ const de: LandingCopy = {
 export const LANDING: Record<NativeLang, LandingCopy> = { tr, en, de };
 
 /**
- * Hangi dilin ekran görüntüleri var. Şimdilik yalnız Türkçe arayüzle çekildi
- * (iPhone 6.9", 2026-09-28, `screenshots@lernomi.app`); öteki diller Türkçeyi
- * gösteriyor. İngilizce/Almanca arayüzle çekilince buraya eklenir.
+ * EKRAN SETLERİ — dil ÇİFTİ başına, yalnız çeviri değil: her ziyaretçi kendi
+ * arayüzünü ve kendi kursunu görüyor (Türkçe → Almanca kursu, İngilizce →
+ * Almanca kursu, Almanca → İngilizce kursu). Klasör `public/landing/<çift>/`,
+ * dosya `<ekran>-<light|dark>-<480|720>.webp`. Çekim yöntemi
+ * `docs/store/screenshots.md`.
+ *
+ * `null`: o dilin seti henüz çekilmedi; sayfa `SCREEN_FALLBACK`i gösteriyor.
+ * de-en (Almanca arayüz + İngilizce kursu) çekimi yarıda kaldı (2026-09-28).
  */
-export const SCREEN_LOCALES: readonly NativeLang[] = ["tr"];
+export const SCREEN_SET: Record<NativeLang, string | null> = {
+  tr: "tr-de",
+  en: "en-de",
+  de: null,
+};
+export const SCREEN_FALLBACK = "en-de";
