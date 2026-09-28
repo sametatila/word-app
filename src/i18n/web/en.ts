@@ -636,8 +636,8 @@ export const enWeb: Record<string, string> = {
   "store.soon_notice": "The app isn't available in this device's store yet.",
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
   "meta.title": "Lernomi — Learn German",
-  "meta.tagline": "Learn words by playing",
-  "meta.description": "Practice A1–C1 vocabulary with word games; the app plans your reviews. German, explained in English.",
-  "meta.og_sub": "A1–C1 · word games · a system that plans your reviews",
+  "meta.tagline": "Speak, understand, ace exams",
+  "meta.description": "Learn German from A1 to C1, explained in English: speaking practice with AI feedback, mock exams and a daily word round.",
+  "meta.og_sub": "A1–C1 · learn by speaking · 50+ mock exams",
   "meta.og_badges": "Hochdeutsch|Explained in English",
 };

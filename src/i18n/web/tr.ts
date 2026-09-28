@@ -697,8 +697,8 @@ export const trWeb: Record<string, string> = {
   "store.soon_notice": "Uygulama bu cihazın mağazasında henüz yayında değil.",
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
   "meta.title": "Lernomi — Almanca ve İngilizce öğren",
-  "meta.tagline": "Kelimeleri oynayarak öğren",
-  "meta.description": "A1–C1 kelimelerini oyunlarla çalış; tekrarı uygulama planlar. Almanca ve İngilizce, Türkçe anlatımıyla.",
-  "meta.og_sub": "A1–C1 · kelime oyunları · tekrarı kendi planlayan sistem",
+  "meta.tagline": "Konuş, anla, sınava hazırlan",
+  "meta.description": "Almancayı A1'den C1'e Türkçe anlatımla ve konuşarak öğren: yapay zekâ geri bildirimli konuşma, deneme sınavları ve günlük kelime turu. İngilizce kursu da var.",
+  "meta.og_sub": "A1–C1 · konuşarak öğren · 50'den fazla deneme sınavı",
   "meta.og_badges": "Almanca|İngilizce|Türkçe anlatım",
 };

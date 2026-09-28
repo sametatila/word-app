@@ -636,8 +636,8 @@ export const deWeb: Record<string, string> = {
   "store.soon_notice": "Die App ist im Store dieses Geräts noch nicht verfügbar.",
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
   "meta.title": "Lernomi — Englisch lernen",
-  "meta.tagline": "Wörter spielerisch lernen",
-  "meta.description": "Übe A1–C1-Wortschatz mit Wortspielen; die App plant deine Wiederholungen. Englisch, auf Deutsch erklärt.",
-  "meta.og_sub": "A1–C1 · Wortspiele · ein System, das deine Wiederholungen plant",
+  "meta.tagline": "Sprechen, verstehen, bestehen",
+  "meta.description": "Lerne Englisch von A1 bis C1 mit Erklärungen auf Deutsch: Sprechen mit KI-Feedback, Probeprüfungen und eine tägliche Wortrunde.",
+  "meta.og_sub": "A1–C1 · Lernen durch Sprechen · über 50 Probeprüfungen",
   "meta.og_badges": "English|Auf Deutsch erklärt",
 };
