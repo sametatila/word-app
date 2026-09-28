@@ -976,6 +976,13 @@ function ConversationPlayerBody({
       setError(null);
       const next: Turn[] = [...turns, { role: "user", content: clean }];
       setTurns([...next, { role: "assistant", content: "" }]);
+      /* CEVAPSIZ TUR SAYILMIYOR: cevap gelmezse kullanıcının cümlesi turlardan
+         (alt sınır sayacı ve modele giden geçmiş) çıkıyor ve kutuya dönüyor,
+         yeniden gönderilebilsin. Mobil `ConversationScreen` aynı kural. */
+      const undoTurn = () => {
+        setTurns(turns);
+        setDraft(clean);
+      };
       setBusy(true);
       // Bekleme sessiz geçmiyor: yumuşak tık "çalışıyorum" diyor. İlk parça
       // ekrana düştüğünde susuyor — akan metin zaten kendi işareti.
@@ -1042,7 +1049,7 @@ function ConversationPlayerBody({
         if (res.status === 429) {
           /* Günlük sohbet mesajı tavanı (kötüye kullanım önlemi). Sebebi doğru
              söyle: "bağlantı yok" demek kullanıcıyı ağına baktırırdı. */
-          setTurns(next);
+          undoTurn();
           setError(t("conversationp.chat_quota", { n: DAILY_QUOTAS.chatTurns }));
           return;
         }
@@ -1065,7 +1072,7 @@ function ConversationPlayerBody({
           return;
         }
         if (!res.ok || !res.body) {
-          setTurns(next);
+          undoTurn();
           setError(t("conversationp.no_answer"));
           return;
         }
@@ -1099,7 +1106,7 @@ function ConversationPlayerBody({
           setTimeout(() => void finishRef.current(), 2500);
         }
       } catch {
-        setTurns(next);
+        undoTurn();
         setError(t("conversationp.no_connection"));
       } finally {
         stopThinking();

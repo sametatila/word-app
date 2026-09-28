@@ -794,12 +794,29 @@ export function ConversationScreen() {
         setRoleTurns(turn - 1);
         setServerLocked(true);
         void refreshPremium();
-      } else if (e instanceof ApiError && e.status === 429) {
-        /* Günlük sohbet mesajı tavanı (kötüye kullanım sınırı) — "bağlantı
-           sorunu" DEĞİL, yarın sürüyor. */
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
       } else {
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.connection_problem") }], tone: "hint" });
+        /*
+          CEVAPSIZ TUR SAYILMIYOR. Cümle modele ulaşmadı ya da cevap gelmedi;
+          tur sayacı (7/7) ve modele giden geçmiş geri alınıyor, cümle kutuya
+          dönüyor ki kullanıcı aynı cümleyi yeniden gönderebilsin. Önce tur
+          sayılıyordu: bağlantısı kopan kullanıcı cevap almadan "konuşmayı
+          bitir"e ulaşabiliyordu ve geçmişte arka arkaya iki kullanıcı mesajı
+          kalıyordu. Web `conversation-player` aynı kural (bkz. check:parity).
+        */
+        setRoleTurns(turn - 1);
+        setRoleMsgs(roleMsgs);
+        setFeed((f) => {
+          const i = f.map((b) => b.role).lastIndexOf("student");
+          return i < 0 ? f : [...f.slice(0, i), ...f.slice(i + 1)];
+        });
+        setInput(text);
+        if (e instanceof ApiError && e.status === 429) {
+          /* Günlük sohbet mesajı tavanı (kötüye kullanım sınırı) — "bağlantı
+             sorunu" DEĞİL, yarın sürüyor. */
+          push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
+        } else {
+          push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.connection_problem") }], tone: "hint" });
+        }
       }
     } finally {
       setBusy(false);
