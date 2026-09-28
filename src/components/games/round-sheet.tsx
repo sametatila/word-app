@@ -51,14 +51,14 @@ import { whyLabel, type Why } from "@/lib/why";
  * kalırdı. Sütun neyse katman da o.
  */
 
-/** Hüküm bandı + "Devam"ın kapladığı en az yükseklik. */
-const BODY_FULL = "7.375rem"; /* 3.75rem band + 0.5rem ara + 3.125rem düğme */
+/** Kartın en az yüksekliği: hüküm başlığı + cevap satırı + ara + "Devam" + iç pay. */
+const BODY_FULL = "9.375rem"; /* 2.5rem başlık + 0.75 + 1.75rem cevap + 0.5 + 3.125rem düğme + 0.75 */
 /** Yalnız "Devam" — söyleyecek sözü olmayan turlarda (eşleştirme). */
 const BODY_ACTION = "3.125rem";
 
 /** Katmanın dipte kaplayacağı toplam yükseklik: gövde + kendi iç payı. */
 export function roundSheetHeight(hasFeedback: boolean): string {
-  return `calc(${hasFeedback ? BODY_FULL : BODY_ACTION} + 0.75rem + max(0.75rem, var(--safe-b, 0px)))`;
+  return `calc(${hasFeedback ? BODY_FULL : BODY_ACTION} + 0.5rem + max(0.75rem, var(--safe-b, 0px)))`;
 }
 
 /**
@@ -130,16 +130,16 @@ export type SheetData = {
 };
 
 /**
- * Tonun renkleri. Mürekkep rol takma adı (açık temada 600, koyuda 300) —
- * mobil `*Text`; zemin ailenin 500'ü %14 — mobil `*Soft`/`soft()`. Nokta
- * mürekkeple aynı dolgu, üstündeki glif `--on-fill` (açıkta beyaz, koyuda
- * mürekkep): sabit beyaz koyu temada açık yeşil üstünde okunmuyordu.
+ * Tonun renkleri. Başlık dolgusu rol takma adı (açık temada 600, koyuda 300) —
+ * mobil `*Text`; üstündeki yazı `--on-fill` (açıkta beyaz, koyuda mürekkep):
+ * sabit beyaz koyu temada açık yeşil üstünde okunmuyordu. Nötr ton (eşleştirme
+ * özeti) dolu değil, `--surface-2` üstünde metin rengi.
  */
-const TONES: Record<SheetTone, { ink: string; fill: string | null; dot: string }> = {
-  ok: { ink: "var(--color-mint)", fill: "var(--color-mint-500)", dot: "var(--color-mint)" },
-  bad: { ink: "var(--color-rose)", fill: "var(--color-rose-500)", dot: "var(--color-rose)" },
-  near: { ink: "var(--color-flame)", fill: "var(--color-flame-500)", dot: "var(--color-flame)" },
-  neutral: { ink: "var(--text)", fill: null, dot: "var(--text-muted)" },
+const TONES: Record<SheetTone, { head: string; ink: string }> = {
+  ok: { head: "var(--color-mint)", ink: "var(--on-fill)" },
+  bad: { head: "var(--color-rose)", ink: "var(--on-fill)" },
+  near: { head: "var(--color-flame)", ink: "var(--on-fill)" },
+  neutral: { head: "var(--surface-2)", ink: "var(--text)" },
 };
 
 export function sheetTone(data: SheetData): SheetTone {
@@ -179,14 +179,16 @@ export function RoundSheet({
                    yok (damping yüksek): her turda tekrar eden bir hareket. */
                 { type: "spring", stiffness: 460, damping: 42, mass: 0.9 }
           }
-          className={`round-sheet pointer-events-auto safe-bottom z-40 overflow-hidden px-4 pt-3 md:px-8 ${
+          className={`pointer-events-auto safe-bottom z-40 px-4 pt-2 md:px-8 ${
             fixed ? "fixed inset-x-0 bottom-0" : ""
           }`}
-          style={{ borderTopColor: TONES[tone].dot }}
         >
-          {/* Genişlik kartla aynı (`max-w-md`): katman ekranın dibinde ayrı bir
-              yüzey ama içindeki metin ve düğme kartın kolonunda kalıyor. */}
-          <div className="mx-auto flex w-full max-w-md flex-col gap-2" style={{ minHeight: BODY_FULL }}>
+          {/* Yüzen kart, genişliği oyun kartıyla aynı (`max-w-md`): mobil
+              `FeedbackFooter` ile aynı düzen — dolu renkli hüküm başlığı,
+              nötr gövde, altta "Bildir" + "Devam". */}
+          <div className="round-sheet mx-auto flex w-full max-w-md flex-col" style={{ minHeight: BODY_FULL }}>
+            <SheetHead data={sheet} />
+            <div className="flex flex-1 flex-col gap-2 p-3">
             <SheetBody data={sheet} />
             {onContinue ? (
               /* "⚑ Bildir" Devam'ın SOLUNDA (Duolingo/Babbel düzeni): içerik
@@ -207,6 +209,7 @@ export function RoundSheet({
                 <ContinueButton tone={tone} onContinue={onContinue} />
               </div>
             ) : null}
+            </div>
           </div>
         </motion.div>
       ) : null}
@@ -270,81 +273,86 @@ function ContinueButton({ tone, onContinue }: { tone: SheetTone; onContinue: () 
 /** Şeridin sürüklenerek gelme süresi ve mirketin ardından oyalanıp kaybolma payı (ms). */
 
 /**
- * Katmanın gövdesi — hüküm bandı + etiketli satırlar.
+ * Kartın başlığı — hüküm, sonucun dolu renginde.
  *
- * Band hükmün tonunda (500 %14 zemin, rol takma adı yazı), satırlar nötr.
- * Uzun bir yanlışta katman ekranın yarısını aşmasın diye gövde kendi içinde
- * kayıyor; "Devam" hep görünür kalıyor. Mobil `FeedbackFooter` aynı alanları
- * aynı sırayla çiziyor.
+ * Maskot kalkınca (2026-09-22) eski düzende iç içe iki kutu (katman + açık
+ * tonlu bant) ve 18 px'lik bir nokta kalmıştı; hüküm küçük, katman boş
+ * görünüyordu. Samet'in seçimi (2026-09-28, taslak F): hükmü kartın üstündeki
+ * dolu şerit söylüyor, gövde nötr.
+ */
+function SheetHead({ data }: { data: SheetData }) {
+  const t = useT();
+  const tone = sheetTone(data);
+  const palette = TONES[tone];
+  const label = data.label ?? t(data.correct ? "sheet.correct" : "sheet.wrong");
+  return (
+    <div className="flex min-h-[2.5rem] items-center gap-2 px-3 py-2" style={{ background: palette.head, color: palette.ink }}>
+      <span
+        aria-hidden
+        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
+        style={{ background: tone === "neutral" ? "var(--surface)" : "color-mix(in srgb, currentColor 24%, transparent)" }}
+      >
+        {tone === "bad" ? <XIcon size={14} strokeWidth={3} /> : <CheckIcon size={14} strokeWidth={3} />}
+      </span>
+      <span className="min-w-0 flex-1 text-h3">{label}</span>
+    </div>
+  );
+}
+
+/**
+ * Kartın gövdesi — doğru cevap, anlamı, etiketli satırlar.
+ *
+ * Uzun bir yanlışta kart ekranın yarısını aşmasın diye gövde kendi içinde
+ * kayıyor; başlık ve "Devam" hep görünür kalıyor. Mobil `FeedbackFooter` aynı
+ * alanları aynı sırayla çiziyor.
  */
 function SheetBody({ data }: { data: SheetData }) {
   const t = useT();
   const lang = useLang();
   const course = useCourse();
-  const tone = sheetTone(data);
-  const palette = TONES[tone];
-  const label = data.label ?? t(data.correct ? "sheet.correct" : "sheet.wrong");
   const speakText = data.speak ?? data.answer ?? "";
   const wrong = !data.correct;
   const showYou = wrong && Boolean(data.youTokens?.length || data.you);
   const showDiffs =
     !!data.diffs && (data.diffs.target.some((k) => k.mark !== "same") || data.diffs.typed.some((k) => k.mark === "extra"));
   const showWhy = wrong && !!data.why;
-
-  /* ÇEKME KOREOGRAFİSİ KALDIRILDI (2026-09-22). Şeridi Nomi sürükleyerek
-     getiriyordu (`pull-left`/`pull-right` klipleri, sahne kilidi ve
-     `holdRound` ile tur kapanışını bekletme). Maskot artık yalnız Öğren
-     ekranının günlük tur kutusunda; sürükleyen olmayınca kayarak giren bir
-     şeridin de sebebi kalmadı, şerit olduğu yerde beliriyor. */
+  const hasTop = Boolean(data.answerTokens?.length || (data.why?.diff && wrong) || data.answer || data.meaning || data.detail || data.extra || speakText);
 
   return (
     <motion.div
-      /* Ekran okuyucu sonucu duyurur: renk ve simge yalnız görene bir şey söyler. */
+      /* Ekran okuyucu sonucu duyurur: renk ve simge yalnız görene bir şey söyler.
+         Hüküm metni başlıkta; duyuru onu da okusun diye gizli tekrar. */
       role="status"
       aria-live="polite"
       className="relative text-left"
     >
-      <div className="flex max-h-[50vh] flex-col gap-2 overflow-y-auto overflow-x-hidden overscroll-contain">
-        <div
-          className="verdict flex min-h-[3.75rem] items-start gap-2 p-2"
-          style={{
-            background: palette.fill ? `color-mix(in srgb, ${palette.fill} 14%, var(--surface))` : "var(--surface-2)",
-          }}
-        >
-          <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-            <div className="flex items-center gap-1.5">
-              <span
-                aria-hidden
-                className="flex h-[1.125rem] w-[1.125rem] shrink-0 items-center justify-center rounded-full"
-                style={{ background: palette.dot, color: "var(--on-fill)" }}
-              >
-                {tone === "bad" ? <XIcon size={12} strokeWidth={3} /> : <CheckIcon size={12} strokeWidth={3} />}
-              </span>
-              <span className="min-w-0 flex-1 text-strong" style={{ color: palette.ink }}>
-                {label}
-              </span>
-              {speakText ? <SpeakButton word text={speakText} size="sm" /> : null}
+      <span className="sr-only">{data.label ?? t(data.correct ? "sheet.correct" : "sheet.wrong")}</span>
+      <div className="flex max-h-[42vh] flex-col gap-2 overflow-y-auto overflow-x-hidden overscroll-contain">
+        {hasTop ? (
+          <div className="flex items-start gap-2">
+            <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+              {data.answerTokens?.length ? (
+                <span className="text-h3">
+                  <MarkedSentence tokens={data.answerTokens} tail={data.answerTail ?? ""} lang={course} />
+                </span>
+              ) : data.why?.diff && wrong ? (
+                <span className="text-h3">
+                  <CharMarked segs={data.why.diff.target} side="target" lang={course} />
+                </span>
+              ) : data.answer ? (
+                <span className="text-h3" lang={course} style={{ color: "var(--text)" }}>
+                  {data.answer}
+                </span>
+              ) : null}
+              {data.meaning ? <span className="muted text-body">{data.meaning}</span> : null}
+              {data.detail ? <span className="muted text-caption">{data.detail}</span> : null}
+              {data.extra}
             </div>
-            {data.answerTokens?.length ? (
-              <span className="text-h3">
-                <MarkedSentence tokens={data.answerTokens} tail={data.answerTail ?? ""} lang={course} />
-              </span>
-            ) : data.why?.diff && wrong ? (
-              <span className="text-h3">
-                <CharMarked segs={data.why.diff.target} side="target" lang={course} />
-              </span>
-            ) : data.answer ? (
-              <span className="text-h3" lang={course} style={{ color: "var(--text)" }}>
-                {data.answer}
-              </span>
-            ) : null}
-            {data.meaning ? <span className="muted text-body">{data.meaning}</span> : null}
-            {data.detail ? <span className="muted text-caption">{data.detail}</span> : null}
-            {data.extra}
+            {speakText ? <SpeakButton word text={speakText} size="sm" /> : null}
           </div>
-        </div>
+        ) : null}
         {showYou || showDiffs || showWhy ? (
-          <div className="flex flex-col gap-1.5 px-1 pb-0.5">
+          <div className="flex flex-col gap-1.5 pb-0.5">
             {showYou ? (
               <SheetRow label={t("sheet.you")}>
                 {data.youTokens?.length ? (

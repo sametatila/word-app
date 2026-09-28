@@ -1167,25 +1167,20 @@
     color: color-mix(in srgb, var(--color-rose) 55%, var(--text));
   }
   /*
-   * Sonuç katmanı — cevaptan sonra ekranın dibinden çıkan yüzey.
+   * Sonuç kartı — cevaptan sonra ekranın dibinden çıkan yüzen kart.
    *
-   * Kendi zemini var (`--surface`), yani altındaki kartla aynı aileden ama
-   * ondan AYRI bir düzlem; yüzen sekme çubuğu da aynı dili konuşuyor
-   * (bkz. components/app-shell). Ayrımı üç şey birlikte kuruyor: yukarı
-   * vuran gölge, üstte yuvarlanan köşeler ve sonucun rengini taşıyan üst
-   * kenarlık.
-   *
-   * Kenarlık rengi neden katmanın kendi zemininde değil: zemin de renklense
-   * içindeki şerit ikinci bir renk katmanı olurdu ve şeridin "cevabın kutusu"
-   * olduğu okunmazdı. Renk yalnız sınırda: göz katmanın geldiğini görüyor,
-   * cevabı ise şeritten okuyor.
+   * Kendi zemini var (`--surface`), dört köşesi yuvarlak ve gölgeli; mobil
+   * `FeedbackFooter` ile aynı. Hükmü üstteki dolu renkli başlık söylüyor
+   * (bkz. games/round-sheet `SheetHead`), gövde nötr. `overflow: hidden`
+   * başlığın dolgusunu köşelerden taşırmıyor; gölge kutunun dışında olduğu
+   * için kırpılmıyor.
    */
   .round-sheet {
     background: var(--surface);
-    border-top: 2px solid var(--hairline);
-    border-top-left-radius: var(--radius-float);
-    border-top-right-radius: var(--radius-float);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-float);
     box-shadow: var(--shadow-sheet);
+    overflow: hidden;
   }
   .option-correct {
     border-color: var(--color-mint);
