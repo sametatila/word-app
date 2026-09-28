@@ -167,7 +167,7 @@ The lesson is not that communication is hopeless. It is that a probability has t
               id: "en-c1-04-l2-9",
               no: 9,
               text: "Gap 9",
-              accept: ["why"],
+              accept: ["why", "that"],
               explain:
                 "`there is no reason why …` kalıbında yan cümleyi `why` bağlar. `that` da bu adla kurulabilir ve kabul edilir; `for` ise mastar gerektirir, çekimli yüklem alamaz.",
             },
@@ -1338,7 +1338,7 @@ I recommend adopting the system for daytime alerts immediately and running the n
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about risk, warnings and how people decide what to take seriously.",
+          prompt: "I will ask you some questions about risk, warnings and how people decide what to take seriously.",
           promptTr: "Sana risk, uyarılar ve insanların neyi ciddiye alacağına nasıl karar verdiği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

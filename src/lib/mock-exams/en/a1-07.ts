@@ -66,7 +66,7 @@ Cato`,
               title: "WINTER SALE",
               body: `Coats and shoes: 30 percent less.
 
-You can change the size in seven days. Bring the paper.
+You can change the size in seven days. Bring the receipt.
 
 Hats and gloves are not in the sale.
 
@@ -172,7 +172,7 @@ Money only, no cards.`,
 
 All sizes.
 
-You can change a thing in thirty days with the paper.
+You can change a thing in thirty days with the receipt.
 
 Coffee shop on the second floor.`,
             },
@@ -182,11 +182,11 @@ Coffee shop on the second floor.`,
               kind: "mcq",
               id: "en-a1-07-l2-6",
               no: 6,
-              text: "You want to buy a coat on a Thursday and you have money, not a card.",
+              text: "You want to buy a coat and some flowers in one place on a Thursday.",
               options: ["Secondhand Clothes", "Market on the Square", "Big Shop Central"],
               answer: 1,
               explain:
-                "Pazar duyurusu iki koşulu da karşılıyor: «Every Thursday» ve «Money only, no cards». İkinci el dükkânı perşembe açık ama duyurusunda ödeme biçimi yazmıyor.",
+                "Pazar duyurusu iki koşulu da karşılıyor: «Every Thursday» ve «Clothes, food and flowers». Öteki iki duyuruda çiçek geçmiyor.",
             },
             {
               kind: "mcq",
@@ -196,7 +196,7 @@ Coffee shop on the second floor.`,
               options: ["Secondhand Clothes", "Market on the Square", "Big Shop Central"],
               answer: 2,
               explain:
-                "Büyük mağaza süreyi veriyor: «You can change a thing in thirty days with the paper». Pazarda hiçbir şey değiştirilemiyor, ikinci el dükkânında ise bir süre yazmıyor.",
+                "Büyük mağaza süreyi veriyor: «You can change a thing in thirty days with the receipt». Pazarda hiçbir şey değiştirilemiyor, ikinci el dükkânında ise bir süre yazmıyor.",
             },
             {
               kind: "mcq",
@@ -439,7 +439,7 @@ Eren`,
               situation: "Mağaza müşteriye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the store about your coat. The red one in your size is here now. We keep it for you until Friday. Please bring the paper." },
+                { text: "Hello, this is the store about your coat. The red one in your size is here now. We keep it for you until Friday. Please bring the receipt." },
               ],
             },
             {
@@ -476,7 +476,7 @@ Eren`,
               plays: 2,
               segments: [
                 { speaker: "Customer", text: "Can I change this sweater? It is too small." },
-                { speaker: "Assistant", text: "Of course. Do you have the paper?" },
+                { speaker: "Assistant", text: "Of course. Do you have the receipt?" },
                 { speaker: "Customer", text: "Yes, here." },
                 { speaker: "Assistant", text: "Then take the bigger one from the shelf." },
               ],
@@ -511,10 +511,10 @@ Eren`,
               no: 2,
               ref: "a2",
               text: "What must the customer bring?",
-              options: ["Money for the coat", "The paper", "A photo"],
+              options: ["Money for the coat", "The receipt", "A photo"],
               answer: 1,
               explain:
-                "İleti tek bir şey istiyor: «Please bring the paper». Ödeme ya da fotoğraf kayıtta hiç geçmiyor.",
+                "İleti tek bir şey istiyor: «Please bring the receipt». Ödeme ya da fotoğraf kayıtta hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -641,7 +641,7 @@ Eren`,
               situation: "Bir arkadaş yolda ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Katri, it is snowing here! I take the train, not the car. I come at four, not at two. Do not wait outside, it is very cold." },
+                { text: "Hi Katri, it is snowing here! I am taking the train, not the car. I am coming at four, not at two. Do not wait outside, it is very cold." },
               ],
             },
             {
@@ -706,7 +706,7 @@ Eren`,
               options: ["At two", "At two in the morning", "At four"],
               answer: 2,
               explain:
-                "İleti düzeltmeyi kendisi yapıyor: «I come at four, not at two». İki, iptal edilen eski saat.",
+                "İleti düzeltmeyi kendisi yapıyor: «I am coming at four, not at two». İki, iptal edilen eski saat.",
             },
             {
               kind: "mcq",

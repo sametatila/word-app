@@ -92,7 +92,7 @@
  { "tr": "Muayenehane tahlil sonucunu bildiriyor.", "kind": "situation", "en": "The doctor's office reports a test result." },
  { "tr": "Şehir merkezinin geleceği tartışılıyor.", "kind": "situation", "en": "The future of the town center is debated." },
  { "tr": "Ziyaret saatiyle ilgili bir değişiklik.", "kind": "situation", "en": "A change to the visiting hours." },
- { "tr": "Bahsedilen demiryolu hattı tartışılıyor.", "kind": "situation", "en": "The rail line in question is debated." },
+ { "tr": "Bahsedilen demir yolu hattı tartışılıyor.", "kind": "situation", "en": "The rail line in question is debated." },
  { "tr": "Bir kiracı ek ödeme geldiğini anlatıyor.", "kind": "situation", "en": "A tenant says a further payment has arrived." },
  { "tr": "Bir komşu bisikletin yerini konu ediyor.", "kind": "situation", "en": "A neighbor brings up where the bicycle is parked." },
  { "tr": "Bir tamir kafesini kuran kişi anlatıyor.", "kind": "situation", "en": "The person who set up a repair café explains." },

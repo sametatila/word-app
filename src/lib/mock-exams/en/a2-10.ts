@@ -29,9 +29,9 @@ export const EN_A2_10: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, ads and an interview, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and an interview, and you complete two short texts. Answer every question.",
       instructionTr:
-        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve bir söyleşi okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve bir söyleşi okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-a2-10-l1",
@@ -662,7 +662,7 @@ Tell Bexi by:       {{10}}`,
               no: 9,
               ref: "b1",
               text: "Gap 9",
-              accept: ["electrical"],
+              accept: ["electrical", "electric"],
               explain:
                 "Kayıt yasağı adlandırıyor: «but no electrical things». Not kâğıdında `things` basılı, boşluğa niteleyen sözcük geliyor.",
             },
@@ -814,7 +814,7 @@ Tell Bexi by:       {{10}}`,
             { key: "b", label: "The buyer did not come." },
             { key: "c", label: "The thing was broken and nobody said so." },
             { key: "d", label: "It was too big to carry down." },
-            { key: "e", label: "Nobody answered the ad." },
+            { key: "e", label: "It rained on the day of the sale." },
             { key: "f", label: "They sold it and then wanted it back." },
             { key: "g", label: "The photograph was bad." },
             { key: "h", label: "They paid too much for it." },
@@ -1009,8 +1009,8 @@ Eren`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: an interview, a photograph, and a decision you make together.",
-      instructionTr: "Bu bölümde üç görev var: söyleşi, fotoğraf anlatma ve birlikte karar verme.",
+      instruction: "There are three tasks in this part: an interview, a situation to describe, and a decision you make together.",
+      instructionTr: "Bu bölümde üç görev var: söyleşi, bir durumu anlatma ve birlikte karar verme.",
       tasks: [
         {
           id: "en-a2-10-s1",

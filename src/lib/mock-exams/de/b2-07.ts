@@ -1377,7 +1377,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
     {
       skill: "writing",
       minutes: 75,
-      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir okur mektubu ve yarı resmî bir ileti.",
       tasks: [
         {

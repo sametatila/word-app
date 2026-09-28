@@ -271,7 +271,7 @@ Do not give food to the animals in the store.`,
               title: "FOR ALL APARTMENTS",
               body: `Trash: Tuesday and Friday.
 
-Please put the yellow bag out after 19.
+Please put the yellow bag out after 7 p.m..
 
 Do not put boxes next to the door.`,
             },
@@ -317,7 +317,7 @@ Children: only with an adult.`,
               text: "You put the yellow bag out in the morning.",
               answer: false,
               explain:
-                "Levha saati veriyor: «Please put the yellow bag out after 19». On dokuz akşamdır; sabah bu saatten önce.",
+                "Levha saati veriyor: «Please put the yellow bag out after 7 p.m.». `p.m.` akşamı gösterir: akşam yedi. Sabah bu saatten önce.",
             },
             {
               kind: "bool",
@@ -807,7 +807,7 @@ Phone:              {{5}}`,
               id: "en-a1-06-w1-2",
               no: 2,
               text: "Age",
-              accept: ["3", "3 years", "three", "three years", "three years old"],
+              accept: ["3", "3 years", "3 years old", "three", "three years", "three years old"],
               explain:
                 "Yönergede «she is three years old» geçiyor. Rakam da yazı da kabul edilir, çünkü ölçülen şey imla değil bilgiyi doğru alana taşımak.",
             },
@@ -816,7 +816,7 @@ Phone:              {{5}}`,
               id: "en-a1-06-w1-3",
               no: 3,
               text: "Color",
-              accept: ["gray"],
+              accept: ["gray", "grey"],
               explain:
                 "Yönerge rengi veriyor: «She is gray». Britanya yazımı `grey`, Amerika yazımı `gray`; ikisi de kabul edilir.",
             },

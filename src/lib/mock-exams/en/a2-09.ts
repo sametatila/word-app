@@ -30,9 +30,9 @@ export const EN_A2_09: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer every question.",
       instructionTr:
-        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-a2-09-l1",
@@ -399,7 +399,7 @@ I live on the fourth floor and I still {{24}} not know how my neighbor on the si
               id: "en-a2-09-l5-21",
               no: 21,
               text: "Gap 21",
-              accept: ["a"],
+              accept: ["a", "per", "every", "each"],
               explain:
                 "Sıklık bildiren kalıp `four times a year` biçimindedir; burada `a` «her» anlamı taşır. `in a year` bir süre içinde olmayı anlatır, sıklığı değil.",
             },
@@ -661,7 +661,7 @@ If they cannot repair it, you pay: {{10}}`,
               no: 10,
               ref: "b1",
               text: "Gap 10",
-              accept: ["nothing"],
+              accept: ["nothing", "0", "zero"],
               explain:
                 "Kaydın son cümlesi bunu söylüyor: «there is no charge if we cannot repair it». Yani ödenecek tutar sıfır.",
             },
@@ -760,7 +760,7 @@ If they cannot repair it, you pay: {{10}}`,
               no: 13,
               ref: "c3",
               text: "What is the speaker doing?",
-              options: ["Admitting something and not changing", "Recommending the cheap machine", "Explaining how she saved money"],
+              options: ["Admitting something and not changing", "Saying her sister was wrong", "Explaining how she saved money"],
               answer: 0,
               explain:
                 "Konuşmacı kız kardeşinin daha az ödediğini kabul ediyor ama «I still tell people the cheap one is fine» diyor. Yani tavsiye değişmiyor.",
@@ -998,8 +998,8 @@ Noor`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: an interview, a photograph, and a decision you make together.",
-      instructionTr: "Bu bölümde üç görev var: söyleşi, fotoğraf anlatma ve birlikte karar verme.",
+      instruction: "There are three tasks in this part: an interview, a situation to describe, and a decision you make together.",
+      instructionTr: "Bu bölümde üç görev var: söyleşi, bir durumu anlatma ve birlikte karar verme.",
       tasks: [
         {
           id: "en-a2-09-s1",

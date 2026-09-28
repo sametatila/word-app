@@ -94,20 +94,20 @@ None of which is an argument for abandoning lists, an alternative that {{6}} to 
               id: "en-c1-12-l1-4",
               no: 4,
               text: "Gap 4",
-              options: ["introduced", "entered", "accepted", "listed"],
+              options: ["introduced", "installed", "accepted", "listed"],
               answer: 2,
               explain:
-                "`accepted onto a list` yerleşik kuruluştur ve kişinin listeye alınmasını anlatır. `introduced` tanıştırmayı, `entered` girişi bildirir, `listed` ise `onto` edatını almaz.",
+                "`accepted onto a list` yerleşik kuruluştur ve kişinin listeye alınmasını anlatır. `introduced` tanıştırmayı, `installed` bir aygıtın kurulmasını bildirir, `listed` ise `onto` edatını almaz.",
             },
             {
               kind: "mcq",
               id: "en-c1-12-l1-5",
               no: 5,
               text: "Gap 5",
-              options: ["takes", "leads", "carries", "brings"],
+              options: ["puts", "makes", "carries", "brings"],
               answer: 3,
               explain:
-                "İnsanları kapıya getiren şey anlatılıyor: `brings people to the door`. `takes` uzaklaştırmayı, `leads` yol göstermeyi, `carries` ise taşımayı bildirir.",
+                "İnsanları kapıya getiren şey anlatılıyor: `brings people to the door`. `puts` ve `makes` bu yapıda `to` ile yön bildirmez, `carries` ise bedenen taşımayı anlatır.",
             },
             {
               kind: "mcq",
@@ -307,7 +307,7 @@ Reviews conclude that the strongest {{18}} for publishing full distributions is 
               no: 19,
               text: "Only when the list was published did anybody notice the pattern.\nNot until ______ did anybody notice the pattern.",
               cue: "PUBLISHED",
-              accept: ["the list was published"],
+              accept: ["the list was published", "the list had been published"],
               explain:
                 "`Only when` ile `Not until` aynı zaman sınırını kurar; devrik kuruluş ana tümcede sürdüğü için yan tümce olağan sırada kalır.",
             },
@@ -1343,7 +1343,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
           prompt:
             "You have read an article arguing that waiting lists disguise choices as procedures. Write an essay for your instructor discussing which of the following should determine a person's place in line, and explaining why the other two are weaker: the order of arrival, an assessment of need, or a lottery among comparable cases. Write 220 to 260 words.",
           promptTr:
-            "Bekleme listelerinin seçimleri usul gibi gösterdiğini savunan bir yazı okudun. Danışmanın için bir deneme yaz: bir kişinin kuyruktaki yerini aşağıdakilerden hangisi belirlemeli ve öteki ikisi neden daha zayıftır? Varış sırası, ihtiyaç değerlendirmesi ya da benzer durumlar arasında kura. 220–260 kelime.",
+            "Bekleme listelerinin seçimleri usul gibi gösterdiğini savunan bir yazı okudun. Eğitmenin için bir deneme yaz: bir kişinin kuyruktaki yerini aşağıdakilerden hangisi belirlemeli ve öteki ikisi neden daha zayıftır? Varış sırası, ihtiyaç değerlendirmesi ya da benzer durumlar arasında kura. 220–260 kelime.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1421,7 +1421,7 @@ I recommend, more narrowly than the report, that we publish the assessment rules
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about waiting and priority.",
+          prompt: "I will ask you some questions about waiting and priority.",
           promptTr: "Sana beklemek ve öncelik hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

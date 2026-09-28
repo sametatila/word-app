@@ -1025,7 +1025,7 @@ Der Antrag ist vor Beginn der Arbeiten zu stellen. Bereits begonnene Maßnahmen 
               id: "d1",
               genre: "Radiodiskussion",
               genreTr: "Radyo tartışması",
-              situation: "Bahsedilen demiryolu hattı tartışılıyor.",
+              situation: "Bahsedilen demir yolu hattı tartışılıyor.",
               plays: 2,
               segments: [
                 { speaker: "Moderatorin", text: "Frau Steinkamp, achtzehn Millionen für elf Kilometer — lohnt sich das?" },
@@ -1284,7 +1284,7 @@ Der Antrag ist vor Beginn der Arbeiten zu stellen. Bereits begonnene Maßnahmen 
               ],
               answer: 0,
               explain:
-                "Gün değişiyor ama yer ve saat aynı, ve randevusu olanlar için \"wir haben ihn umgetragen\".",
+                "Gün değişiyor ama yer ve saat aynı; randevusu olanlar için \"wir haben ihn umgetragen\".",
             },
             {
               kind: "mcq",
@@ -1400,7 +1400,7 @@ Der Antrag ist vor Beginn der Arbeiten zu stellen. Bereits begonnene Maßnahmen 
     {
       skill: "writing",
       minutes: 75,
-      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir okur mektubu ve yarı resmî bir ileti.",
       tasks: [
         {

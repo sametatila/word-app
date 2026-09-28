@@ -25,9 +25,9 @@ export const EN_A2_02: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer every question.",
       instructionTr:
-        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-a2-02-l1",
@@ -317,10 +317,10 @@ And finally: {{19}} you have a long wait, take a book. Your phone battery will n
               id: "en-a2-02-l4-16",
               no: 16,
               text: "Gap 16",
-              options: ["does", "should", "must"],
+              options: ["does", "is", "must"],
               answer: 2,
               explain:
-                "Cümle bir kural bildiriyor: toplam miktar bir litreyi geçemez. `must not` bu kesin yasağı verir. `does not be` kurulamaz, çünkü `be` fiili olumsuzda `do` yardımcısını almaz; `should not` ise tavsiyeyi bildirir ve havaalanı kuralı tavsiye değildir.",
+                "Cümle bir kural bildiriyor: toplam miktar bir litreyi geçemez. `must not` bu kesin yasağı verir. `does not be` kurulamaz, çünkü `be` fiili olumsuzda `do` yardımcısını almaz; `is not be` da kurulamaz: `is` ile `be` yan yana gelmez.",
             },
             {
               kind: "mcq",
@@ -991,8 +991,8 @@ Elif`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: an interview, a photograph, and a decision you make together.",
-      instructionTr: "Bu bölümde üç görev var: söyleşi, fotoğraf anlatma ve birlikte karar verme.",
+      instruction: "There are three tasks in this part: an interview, a situation to describe, and a decision you make together.",
+      instructionTr: "Bu bölümde üç görev var: söyleşi, bir durumu anlatma ve birlikte karar verme.",
       tasks: [
         {
           id: "en-a2-02-s1",

@@ -153,9 +153,9 @@ The change has been resisted, and not {{12}} good reason: a gallery that explain
               id: "en-b2-04-l2-7",
               no: 7,
               text: "Gap 7",
-              accept: ["although", "though"],
+              accept: ["although", "though", "while", "but"],
               explain:
-                "İki yarı arasında bir kabul-çekince ilişkisi var: oran küçük, ama tam değeri değişiyor. `although` ve `though` bu ödünü verir. `because` sebep kurar ve ikinci yarıyı birincinin gerekçesi yapar, oysa aralarında böyle bir ilişki yok.",
+                "İki yarı arasında bir kabul-çekince ilişkisi var: oran küçük, ama tam değeri galeriye göre değişiyor. `although`, `though`, `while` ve `but` bu ödünü verir. `because` sebep kurar ve ikinci yarıyı birincinin gerekçesi yapar, oysa aralarında böyle bir ilişki yok.",
             },
             {
               kind: "gap",
@@ -284,9 +284,9 @@ The most likely future is therefore an uneven one, with different countries acti
               id: "en-b2-04-l3-18",
               no: 18,
               text: "CALCULATE",
-              accept: ["calculations"],
+              accept: ["calculations", "calculation"],
               explain:
-                "`their own political ___` yapısında iki sıfattan sonra bir ad geliyor ve özne çoğul (`different countries`), dolayısıyla ad da çoğul: `calculations`. Fiil biçimi bu konumda duramaz.",
+                "`their own political ___` yapısında iki sıfattan sonra bir ad geliyor ve özne çoğul (`different countries`), bu yüzden en doğal biçim çoğul `calculations`; sayılamaz kullanımda tekil `calculation` da kabul edilir. Fiil biçimi bu konumda duramaz.",
             },
           ],
         },
@@ -864,7 +864,7 @@ The communities the project wants to hear from find the {{15}} almost unusable.
               no: 11,
               ref: "b1",
               text: "Gap 11",
-              accept: ["12000", "twelve thousand"],
+              accept: ["12000", "12,000", "twelve thousand"],
               explain:
                 "«we have examined about twelve thousand acquisition files» — incelenen dosya sayısı. Cümlede `About` zaten yazılı olduğu için yalnız sayı isteniyor.",
             },
@@ -1298,7 +1298,7 @@ For anybody interested in how an ordinary place remembers itself, however, it is
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about museums, history and how the past is presented.",
+          prompt: "I will ask you some questions about museums, history and how the past is presented.",
           promptTr: "Sana müzeler, tarih ve geçmişin nasıl sunulduğu hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

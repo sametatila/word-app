@@ -149,7 +149,7 @@ Der Chef Jan Hansen sagt, dass er zuerst Angst hatte. "Wir bauen Fenster. Wenn n
 
 Deshalb hat die Firma zwei Gruppen gemacht. Die eine Gruppe hat am Montag frei, die andere am Freitag. So ist die Werkstatt immer offen.
 
-Nach einem Jahr sind die Zahlen da. Die Firma hat fast genauso viel produziert wie vorher. Die Mitarbeiter waren seltener krank: 2,9 Tage statt 4,1 Tage im Monat.
+Nach einem Jahr sind die Zahlen da. Die Firma hat fast genauso viel produziert wie vorher. Die Mitarbeiter waren seltener krank: 11 Tage statt 15 Tage im Jahr.
 
 Nicht alles war gut. Die Pausen sind kürzer geworden, und drei Mitarbeiter haben gesagt, dass die Tage zu voll sind.
 
@@ -209,7 +209,7 @@ Die Firma macht aber weiter. Ab Januar gilt die Vier-Tage-Woche für alle Betrie
               options: ["Die Firma hat viel weniger produziert.", "Die Mitarbeiter waren öfter krank.", "Es gab weniger Krankheitstage."],
               answer: 2,
               explain:
-                "Hastalık günleri ayda 4,1'den 2,9'a iniyor, yani azalıyor. Üretim ise \"fast genauso viel\" kalıyor; büyük bir düşüş yok.",
+                "Hastalık günleri yılda 15'ten 11'e iniyor, yani azalıyor. Üretim ise \"fast genauso viel\" kalıyor; büyük bir düşüş yok.",
             },
             {
               kind: "mcq",

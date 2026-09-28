@@ -29,9 +29,9 @@ export const EN_A2_11: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, ads and a letter with a reply, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a letter with a reply, and you complete two short texts. Answer every question.",
       instructionTr:
-        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve yanıtlı bir mektup okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve yanıtlı bir mektup okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-a2-11-l1",
@@ -398,7 +398,7 @@ She is quieter {{22}} our old cat, and much smaller.
 
 She sits in the window every evening {{23}} six o'clock.
 
-I have two good chairs in the kitchen and I still {{24}} not sit on either of them.`,
+She sleeps on the two good chairs in the kitchen, and I still {{24}} not sit on either of them.`,
             },
           ],
           items: [
@@ -687,7 +687,7 @@ Please bring the:   {{10}}`,
           format: "mcq",
           goal: "gist",
           prompt: "You hear five short speakers, questions 11 to 15. What is each person doing? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -1012,8 +1012,8 @@ Vesna Roth`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: an interview, a photograph, and a decision you make together.",
-      instructionTr: "Bu bölümde üç görev var: söyleşi, fotoğraf anlatma ve birlikte karar verme.",
+      instruction: "There are three tasks in this part: an interview, a situation to describe, and a decision you make together.",
+      instructionTr: "Bu bölümde üç görev var: söyleşi, bir durumu anlatma ve birlikte karar verme.",
       tasks: [
         {
           id: "en-a2-11-s1",

@@ -925,8 +925,8 @@ Iris`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: you introduce yourself, you ask and answer questions about food, and you do a role play in a store.",
-      instructionTr: "Bu bölümde üç görev var: kendini tanıtma, yemek üzerine soru sorup cevaplama ve mağazada rol yapma.",
+      instruction: "There are three tasks in this part: you talk about your food and your day, you ask and answer questions about food, and you do a role play in a store.",
+      instructionTr: "Bu bölümde üç görev var: yemeğini ve gününü anlatma, yemek üzerine soru sorup cevaplama ve mağazada rol yapma.",
       tasks: [
         {
           id: "en-a1-03-s1",

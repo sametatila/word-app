@@ -794,7 +794,7 @@ First day:         {{5}}`,
               id: "en-a1-12-w1-2",
               no: 2,
               text: "Age",
-              accept: ["29", "29 years", "29 years old", "twenty-nine", "twenty-nine years old"],
+              accept: ["29", "29 years", "29 years old", "twenty-nine", "twenty-nine years", "twenty-nine years old"],
               explain:
                 "Yönergede «She is 29 years old» geçiyor. Rakam da yazı da kabul edilir; ölçülen şey imla değil, bilgiyi doğru alana taşımak.",
             },
@@ -965,7 +965,7 @@ Eyup`,
               { de: "ask about the break politely", tr: "Kibarca molayı sormak" },
             ],
             sample:
-              "Good morning. My name is Eyup Kral and today is my first day. — Where is room 5, please? — When is the break, please?",
+              "Good morning. My name is Eyup and today is my first day. — Where is room 5, please? — When is the break, please?",
             criteria: [
               "Ad ve durum açıkça söylendi mi?",
               "Yer sorusu doğru kuruldu mu? (Where is … please)",

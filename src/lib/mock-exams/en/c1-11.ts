@@ -63,10 +63,10 @@ Rarely is a target withdrawn once it has been published, and the reasons are pol
               id: "en-c1-11-l1-1",
               no: 1,
               text: "Gap 1",
-              options: ["respectable", "reputable", "creditable", "admirable"],
+              options: ["respectable", "reputable", "renowned", "admirable"],
               answer: 0,
               explain:
-                "Paragraf hedefin savunulabilir bir gerekçeyle kurulduğunu söylüyor: kimse süreyi bilmiyordu. `a respectable reason` bu yerleşik anlamı verir; öteki üçü ahlaki övgü bildirir ve `reason` ile eş dizim yapmaz.",
+                "Paragraf hedefin savunulabilir bir gerekçeyle kurulduğunu söylüyor: kimse süreyi bilmiyordu. `a respectable reason` bu yerleşik anlamı verir. `reputable` ve `renowned` bir kişinin ya da kurumun ününü, `admirable` hayranlığı bildirir; üçü de `reason` ile eş dizim yapmaz.",
             },
             {
               kind: "mcq",
@@ -153,7 +153,7 @@ This is by {{12}} means an argument against measuring things, although it is reg
               id: "en-c1-11-l2-7",
               no: 7,
               text: "Gap 7",
-              accept: ["although", "though"],
+              accept: ["although", "though", "while"],
               explain:
                 "İki yarı arasında ödün ilişkisi var: aynı birimle yazılmalarına karşın iki ayrı nesne. `although` bunu kurar; `because` gerekçe verirdi.",
             },
@@ -248,9 +248,9 @@ Reviews of long-running schemes conclude that most of the damage attributed to t
               id: "en-c1-11-l3-14",
               no: 14,
               text: "INTEND",
-              accept: ["unintended"],
+              accept: ["unintended", "unintentional"],
               explain:
-                "Kasıtlı çarpıtma ile karşıtlık kuruluyor, dolayısıyla sıfat olumsuz ön ek alır: `the unintended adjustment`.",
+                "Kasıtlı çarpıtma ile karşıtlık kuruluyor, dolayısıyla sıfat olumsuz ön ek alır: `the unintended adjustment` (`unintentional` da kabul edilir).",
             },
             {
               kind: "gap",
@@ -1338,7 +1338,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
           prompt:
             "You have listened to a lecture arguing that published targets distort the services they measure. Write an essay for your instructor discussing which of the following does most to limit that distortion, and explaining why the other two are weaker: publishing fuller data, changing the target regularly, or leaving judgment to professionals. Write 220 to 260 words.",
           promptTr:
-            "Yayımlanan hedeflerin ölçtükleri hizmeti bozduğunu savunan bir ders dinledin. Danışmanın için bir deneme yaz: aşağıdakilerden hangisi bu bozulmayı en çok sınırlar ve öteki ikisi neden daha zayıftır? Daha ayrıntılı veri yayımlamak, hedefi düzenli olarak değiştirmek ya da kararı meslek erbabına bırakmak. 220–260 kelime.",
+            "Yayımlanan hedeflerin ölçtükleri hizmeti bozduğunu savunan bir ders dinledin. Eğitmenin için bir deneme yaz: aşağıdakilerden hangisi bu bozulmayı en çok sınırlar ve öteki ikisi neden daha zayıftır? Daha ayrıntılı veri yayımlamak, hedefi düzenli olarak değiştirmek ya da kararı meslek erbabına bırakmak. 220–260 kelime.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1416,7 +1416,7 @@ The change should be judged after twelve months against a stated failure conditi
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about measurement in work and study.",
+          prompt: "I will ask you some questions about measurement in work and study.",
           promptTr: "Sana işte ve öğrenimde ölçme hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

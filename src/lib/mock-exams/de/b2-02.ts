@@ -1421,7 +1421,7 @@ Lea Brunner`,
           exchange: [
             { who: "partner", de: "Unsere Frage lautet: Sollen Krankenkassen Fitnessdaten belohnen? Ich fange an: Ich bin dafür, weil ein kleiner Anreiz gerade die Menschen erreicht, die von allein nicht anfangen. Wie sehen Sie das?", tr: "Sorumuz şu: Sağlık sigortaları hareket verilerini ödüllendirmeli mi? Ben başlıyorum: Yanayım, çünkü küçük bir teşvik tam da kendiliğinden başlamayanlara ulaşıyor. Sen ne düşünüyorsun?" },
             { who: "you", hint: "Tutumunu açıkça belirt ve bir savla gerekçelendir.", expect: "bir tutum almak ve onu bir savla gerekçelendirmek", seconds: 50 },
-            { who: "partner", de: "Den Einwand nehme ich ernst. Aber sehen Sie nicht die Gefahr, dass am Ende belohnt wird, wer ohnehin Zeit und Gesundheit hat?", tr: "İtirazını ciddiye alıyorum. Ama sonunda zaten vakti ve sağlığı olanın ödüllendirilmesi tehlikesini görmüyor musun?" },
+            { who: "partner", de: "Den Einwand nehme ich ernst. Aber ist ein kleiner Anreiz nicht immer noch besser als gar keiner?", tr: "İtirazını ciddiye alıyorum. Ama küçük bir teşvik, hiç olmamasından yine de iyi değil mi?" },
             { who: "you", hint: "İtirazı ele al ve konumunu netleştir.", expect: "karşı savı ele almak ve kendi konumunu ayrıntılandırmak", seconds: 50 },
             { who: "partner", de: "Verstanden. Wie ließe sich das Ihrer Meinung nach entschärfen, ohne den Anreiz ganz aufzugeben?", tr: "Anlaşıldı. Sence teşviki tümüyle bırakmadan bu nasıl yumuşatılabilir?" },
             { who: "you", hint: "Somut bir çözüm öner.", expect: "somut ve uygulanabilir bir çözüm önermek", seconds: 50 },

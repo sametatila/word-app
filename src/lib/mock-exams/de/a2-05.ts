@@ -141,7 +141,7 @@ Heute habe ich ein anderes Konto und zahle nichts. Mein Rat: Unterschreiben Sie 
               title: "Der Vertrag, den fast niemand liest",
               body: `Eine Verbraucherzentrale hat 500 Menschen gefragt, ob sie ihren Handyvertrag gelesen haben. Nur 62 Personen haben Ja gesagt.
 
-Das ist teuer. Viele Verträge laufen 24 Monate. Wer nicht rechtzeitig kündigt, verlängert den Vertrag automatisch. Seit 2022 gilt aber eine neue Regel: Nach dem ersten Jahr kann man jeden Monat kündigen.
+Das ist teuer. Viele Verträge laufen 24 Monate. Wer nicht rechtzeitig kündigt, verlängert den Vertrag automatisch. Seit 2022 gilt aber eine neue Regel: Nach dem Ende der Laufzeit kann man jeden Monat kündigen.
 
 Die Beraterin Nina Frisch sagt: "Die meisten Leute rufen erst an, wenn die Rechnung schon hoch ist." Ihr Tipp ist einfach. Man soll das Kündigungsdatum sofort in den Kalender schreiben, am besten drei Monate vorher.
 
@@ -173,10 +173,10 @@ Frisch sagt zum Schluss: "Lesen dauert zehn Minuten. Ein falscher Vertrag dauert
               id: "de-a2-05-l2-7",
               no: 7,
               text: "Was gilt seit 2022?",
-              options: ["Verträge laufen nur noch zwölf Monate.", "Nach einem Jahr kann man monatlich kündigen.", "Man kann gar nicht mehr kündigen."],
+              options: ["Verträge laufen nur noch zwölf Monate.", "Nach dem Ende der Laufzeit kann man monatlich kündigen.", "Man kann gar nicht mehr kündigen."],
               answer: 1,
               explain:
-                "Yeni kural şu: \"Nach dem ersten Jahr kann man jeden Monat kündigen\". Sözleşmelerin süresi hâlâ 24 ay olabiliyor.",
+                "Yeni kural şu: \"Nach dem Ende der Laufzeit kann man jeden Monat kündigen\". Sözleşmelerin süresi hâlâ 24 ay olabiliyor.",
             },
             {
               kind: "mcq",

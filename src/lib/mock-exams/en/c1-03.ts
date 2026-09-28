@@ -278,9 +278,9 @@ The most likely future is therefore an uneven one, with different bodies reporti
               id: "en-c1-03-l3-18",
               no: 18,
               text: "JUDGE",
-              accept: ["judgments", "judgements"],
+              accept: ["judgments", "judgements", "judgment", "judgement"],
               explain:
-                "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor ve özne çoğul (`different bodies`), dolayısıyla ad da çoğul. Britanya ve Amerika yazımı (`judgements` / `judgments`) ikisi de kabul edilir.",
+                "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor: `judgment`. Özne çoğul olduğu için (`different bodies`) çoğul `judgments` da, sayılamaz tekil `judgment` da doğrudur. Amerikan (`judgment`) ve İngiliz (`judgement`) yazımının ikisi de kabul edilir.",
             },
           ],
         },

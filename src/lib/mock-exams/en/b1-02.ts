@@ -25,9 +25,9 @@ export const EN_B1_02: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-02-l1",
@@ -430,10 +430,10 @@ None of this takes long. Fifteen minutes of questions can {{25}} you from a year
               id: "en-b1-02-l5-21",
               no: 21,
               text: "Gap 21",
-              options: ["give", "pay", "make", "put"],
+              options: ["take", "pay", "make", "put"],
               answer: 1,
               explain:
-                "`pay attention to` sabit bir eşdizim. `give attention to` daha resmî ve seyrek bir kullanım, bu cümlede doğal değil; `make attention` ve `put attention` İngilizcede yoktur.",
+                "`pay attention to` sabit bir eşdizim. `take attention`, `make attention` ve `put attention` İngilizcede yoktur.",
             },
             {
               kind: "mcq",
@@ -1177,7 +1177,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about your daily habits and about shopping.",
+          prompt: "I will ask you some questions about your daily habits and about shopping.",
           promptTr: "Sana günlük alışkanlıkların ve alışveriş hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

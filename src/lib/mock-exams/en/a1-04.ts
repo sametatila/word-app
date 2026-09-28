@@ -851,7 +851,7 @@ No sports in:         {{5}}`,
               id: "en-a1-04-w1-2",
               no: 2,
               text: "Age of the child",
-              accept: ["10", "10 years", "ten", "ten years", "ten years old"],
+              accept: ["10", "10 years", "10 years old", "ten", "ten years", "ten years old"],
               explain:
                 "Yönergede «Her son is ten years old» geçiyor. Rakam da yazı da kabul edilir, çünkü ölçülen şey imla değil bilgiyi doğru alana taşımak.",
             },

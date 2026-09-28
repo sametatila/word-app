@@ -27,9 +27,9 @@ export const EN_B1_12: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-12-l1",
@@ -1199,7 +1199,7 @@ It works for the reason a café never did. In a café I am a customer and someth
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about weekends, free time and rest.",
+          prompt: "I will ask you some questions about weekends, free time and rest.",
           promptTr: "Sana hafta sonları, boş zaman ve dinlenme hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

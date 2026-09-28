@@ -452,7 +452,7 @@ Am Ende dürfte weniger die Frage entscheidend sein, wie viele kommen, {{25}} ob
               options: ["als", "wie", "denn", "sondern"],
               answer: 0,
               explain:
-                "Kalıp `weniger … als`: belirleyici olan kaç kişinin geldiği değil, personelin olup olmadığı. `wie` eşitlik, `denn` gerekçe kurar.",
+                "Kalıp `weniger … als`: belirleyici olan kaç kişinin geldiği değil, personelin olup olmadığı. `wie` eşitlik bildirir; `denn` kıyasta yalnız eskimiş, yüksek üslupta geçer, bugünkü standart `als`tır.",
             },
           ],
         },
@@ -589,7 +589,6 @@ Auftragsrecherche: {{10}} — Beratung reicht meistens.`,
               text: "Notiz 5",
               accept: [
                 "Kugelschreiber, Taschen, Getränke",
-                "Kugelschreiber und Taschen",
                 "Kugelschreiber, Taschen und Getränke",
               ],
               explain:
@@ -1126,7 +1125,7 @@ Rasmus Kienle`,
               id: "de-c1-05-s2-9",
               no: 9,
               text: "Lücke 9 (höfliche Erwartung am Satzende)",
-              accept: ["würde ich mich freuen", "wäre ich Ihnen dankbar", "wäre ich dankbar", "freue ich mich"],
+              accept: ["würde ich mich freuen", "freue ich mich"],
               explain:
                 "Cümle `Über eine Rückmeldung …` ile başladığı için çekimli fiil ikinci sıraya geçiyor ve özne fiilin ardına düşüyor; süre isteği böylece rica olarak okunuyor.",
             },

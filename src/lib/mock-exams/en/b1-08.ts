@@ -28,9 +28,9 @@ export const EN_B1_08: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-08-l1",
@@ -772,9 +772,9 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               plays: 2,
               segments: [
                 { speaker: "Father", text: "The school takes the phones in now." },
-                { speaker: "Woman", text: "And?" },
+                { speaker: "Mother", text: "And?" },
                 { speaker: "Father", text: "My son says the first week was terrible and the fourth week was normal." },
-                { speaker: "Woman", text: "So it worked." },
+                { speaker: "Mother", text: "So it worked." },
                 { speaker: "Father", text: "He also says nobody talks about it anymore, which is the part I did not expect." },
               ],
             },
@@ -1200,7 +1200,7 @@ What I have kept is smaller and it still helps: the phone is in the room, but it
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about how you study or work and about your phone.",
+          prompt: "I will ask you some questions about how you study or work and about your phone.",
           promptTr: "Sana nasıl çalıştığın ve telefonun hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

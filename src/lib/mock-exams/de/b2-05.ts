@@ -1346,7 +1346,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
     {
       skill: "writing",
       minutes: 75,
-      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir okur mektubu ve yarı resmî bir ileti.",
       tasks: [
         {
@@ -1482,7 +1482,7 @@ Jens Brodersen`,
           prompt:
             "Ihre Schule bekommt 12 000 Euro zusätzlich. Einigen Sie sich mit Ihrer Gesprächspartnerin, wofür das Geld ausgegeben wird: zusätzliche Förderstunden, digitale Ausstattung, eine Schulsozialarbeiterin oder eine Ferienlernwoche.",
           promptTr:
-            "Okulunuza 12 000 euro ek bütçe geliyor. Bu paranın nereye harcanacağı konusunda karşındakiyle anlaş: ek destek dersleri, dijital donanım, bir okul sosyal hizmet uzmanı ya da tatilde bir öğrenme haftası.",
+            "Okulunuza 12.000 euro ek bütçe geliyor. Bu paranın nereye harcanacağı konusunda karşındakiyle anlaş: ek destek dersleri, dijital donanım, bir okul sosyal hizmet uzmanı ya da tatilde bir öğrenme haftası.",
           prepSeconds: 90,
           exchange: [
             {

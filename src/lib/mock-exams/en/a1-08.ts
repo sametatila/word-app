@@ -344,7 +344,7 @@ No bicycles on the grass.`,
               title: "To Lior",
               body: `Hello Lior,
 
-Thank you for the ball! I come to the club {{15}} Thursday, not on Tuesday.
+Thank you for the ball! I will come to the club {{15}} Thursday, not on Tuesday.
 
 There {{16}} a new coach this year. She is very good with children.
 
@@ -487,7 +487,7 @@ Juno`,
               situation: "Bir oyuncu antrenman için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Tuva, it is Juno. I cannot come to the training today; my leg hurts. I go to the doctor at four. I come again on Thursday." },
+                { text: "Hi Tuva, it is Juno. I cannot come to the training today; my leg hurts. I am going to the doctor at four. I will be back on Thursday." },
               ],
             },
           ],
@@ -552,7 +552,7 @@ Juno`,
               id: "en-a1-08-h1-6",
               no: 6,
               ref: "a6",
-              text: "Why does Juno not come?",
+              text: "Why can Juno not come?",
               options: ["She works today", "She is on vacation", "Her leg hurts"],
               answer: 2,
               explain:
@@ -803,7 +803,7 @@ Phone:             {{5}}`,
               id: "en-a1-08-w1-2",
               no: 2,
               text: "Age",
-              accept: ["34", "34 years", "thirty-four", "thirty-four years old"],
+              accept: ["34", "34 years", "34 years old", "thirty-four", "thirty-four years", "thirty-four years old"],
               explain:
                 "Yönergede «She is 34 years old» geçiyor. Rakam da yazı da kabul edilir, çünkü ölçülen şey imla değil bilgiyi doğru alana taşımak.",
             },

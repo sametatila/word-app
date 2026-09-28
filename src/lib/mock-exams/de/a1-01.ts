@@ -871,7 +871,7 @@ Ana Ferreira`,
       skill: "speaking",
       minutes: 15,
       instruction: "In diesem Teil gibt es drei Aufgaben: sich vorstellen, um Informationen bitten, um etwas bitten und reagieren.",
-      instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bilgi isteme, rica etme ve yanıt verme.",
+      instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bilgi isteme ve rica edip yanıt verme.",
       tasks: [
         {
           id: "de-a1-01-p1",

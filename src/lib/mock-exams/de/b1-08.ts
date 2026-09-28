@@ -1236,7 +1236,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
     {
       skill: "writing",
       minutes: 60,
-      instruction: "In diesem Teil gibt es drei Aufgaben: eine Antwort, einen Beitrag und eine kurze halb offizielle Mail.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine Antwort, einen Beitrag und eine kurze halboffizielle Mail.",
       instructionTr: "Bu bölümde üç görev var: bir yanıt, bir yazı ve kısa bir yarı resmî e-posta.",
       tasks: [
         {

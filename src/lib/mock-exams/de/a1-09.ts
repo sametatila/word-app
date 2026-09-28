@@ -838,7 +838,7 @@ Iwona Nowicka`,
       skill: "speaking",
       minutes: 15,
       instruction: "In diesem Teil gibt es drei Aufgaben: von einem Amt erzählen, Fragen stellen, um etwas bitten und reagieren.",
-      instructionTr: "Bu bölümde üç görev var: bir resmî daireyi anlatma, soru sorma, rica etme ve yanıt verme.",
+      instructionTr: "Bu bölümde üç görev var: bir resmî daireyi anlatma, soru sorma ve rica edip yanıt verme.",
       tasks: [
         {
           id: "de-a1-09-p1",

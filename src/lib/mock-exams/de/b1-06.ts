@@ -111,7 +111,7 @@ Heute kaufe ich wieder Neues, aber selten. Wenn mich jemand nach dem Jahr fragt,
               id: "de-b1-06-l1-5",
               no: 5,
               ref: "t1",
-              text: "Ein großer Teil ihrer Kleidung stammt aus einer kurzen Phase.",
+              text: "Ein großer Teil ihrer Kleidung stammt aus einer einzigen Phase.",
               answer: true,
               explain:
                 "Metin oranı veriyor: \"Zwei Drittel meiner Kartons stammten aus einer einzigen Phase vor sechs Jahren\".",
@@ -764,7 +764,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
               options: [
                 "Nur in bar.",
                 "Auch per Überweisung.",
-                "Nur vor Ort, nicht per Bank.",
+                "Beim Abholen, aber nicht per Überweisung.",
               ],
               answer: 2,
               explain:
@@ -1433,7 +1433,7 @@ Ferit Alkan`,
               { de: "zu einer Entscheidung kommen", tr: "Bir karara varmak" },
             ],
             sample:
-              "Dann machen wir es an einem Donnerstag direkt nach dem Kurs, so muss niemand extra kommen. Ich wäre für die Aula, weil im Kursraum keine zwanzig Leute mit Taschen stehen können; den Antrag kann ich schreiben. Damit nicht alles liegen bleibt, würde ich sagen: höchstens fünf Teile pro Person, und was übrig bleibt, bringen wir gemeinsam zur Kleiderkammer. Als Regel reicht eigentlich eine: Wer etwas mitnimmt, hat vorher etwas gebracht. Für die Werbung mache ich einen Zettel für die Türen, und du schreibst in die Kursgruppen.",
+              "Dann machen wir es an einem Donnerstag direkt nach dem Kurs, so muss niemand extra kommen. Ich wäre für die Aula, weil im Kursraum keine zwanzig Leute mit Taschen stehen können; den Antrag kann ich schreiben. Damit nicht alles liegen bleibt, würde ich sagen: höchstens fünf Teile pro Person, und was übrig bleibt, bringen wir gemeinsam zur Kleiderkammer. Als Regel reicht eigentlich eine: Wer etwas mitnimmt, hat vorher etwas gebracht. Für die Werbung mache ich einen Zettel für die Türen, und Sie schreiben in die Kursgruppen.",
             criteria: [
               "Beş noktanın hepsi konuşuldu mu?",
               "Öneriler gerekçelendirildi mi? (weil, damit, deshalb)",

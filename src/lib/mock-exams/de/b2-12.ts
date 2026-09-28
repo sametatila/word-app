@@ -20,7 +20,7 @@ import type { MockPaper } from "../types";
  * içindeki tesadüfü adlandırıyor — bu ayrım maddelerde bilerek sınanıyor.
  *
  * KONTROL: h1'in doğru/yanlış maddeleri 2 doğru / 3 yanlış olarak
- * planlandı; b2-11'de aynı görevin beş maddesi de yanlış çıkmıştı.
+ * planlandı; b2-11'de aynı görevin beş maddesi başta yanlış çıkmıştı (sonra 2 doğru / 3 yanlışa getirildi).
  */
 export const B2_12: MockPaper = {
   id: "de-b2-12",
@@ -1403,7 +1403,7 @@ Ablehnungen nach der Sichtung sind in Stichworten zu begründen. Der Vermerk ver
     {
       skill: "writing",
       minutes: 75,
-      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir okur mektubu ve yarı resmî bir ileti.",
       tasks: [
         {

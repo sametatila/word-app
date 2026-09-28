@@ -990,7 +990,7 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
     {
       skill: "writing",
       minutes: 30,
-      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir özel ileti ve bir yarı resmî ileti yazacaksın.",
       tasks: [
         {

@@ -105,10 +105,10 @@ The proposals that get discussed are all about speed. Very few of them {{6}} the
               id: "en-b2-10-l1-5",
               no: 5,
               text: "Gap 5",
-              options: ["giving", "falling", "dying", "going"],
+              options: ["giving", "putting", "dying", "going"],
               answer: 2,
               explain:
-                "Bir yetinin yavaşça yitmesi `die away` ile anlatılır. `give away` elden çıkarmayı ya da ele vermeyi, `fall away` düşmeyi, `go away` ise uzaklaşmayı bildirir ve beceri için kullanılmaz.",
+                "Bir yetinin yavaşça yitmesi `die away` ile anlatılır. `give away` elden çıkarmayı ya da ele vermeyi, `put away` bir şeyi yerine kaldırmayı, `go away` ise uzaklaşmayı bildirir ve beceri için kullanılmaz.",
             },
             {
               kind: "mcq",
@@ -867,7 +867,7 @@ The region with the shortest wait had stopped requiring the supervised year in {
               no: 9,
               ref: "b1",
               text: "Gap 9",
-              accept: ["4000", "four thousand"],
+              accept: ["4000", "4,000", "four thousand"],
               explain:
                 "Kayıt örneklem büyüklüğünü veriyor: «We followed four thousand applications».",
             },
@@ -1321,7 +1321,7 @@ Two things. If withdrawal rates among recipients do not fall below twenty percen
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about qualifications, starting again and what counts as proof of skill.",
+          prompt: "I will ask you some questions about qualifications, starting again and what counts as proof of skill.",
           promptTr: "Sana diplomalar, baştan başlamak ve becerinin nasıl kanıtlandığı hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

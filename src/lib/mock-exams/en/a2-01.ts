@@ -44,9 +44,9 @@ export const EN_A2_01: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer every question.",
       instructionTr:
-        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-a2-01-l1",
@@ -311,7 +311,7 @@ People often ask me for a secret. There is no secret. The only rule is this: do 
               title: "Sleep better",
               body: `Many people {{15}} tired in the morning, even after eight hours in bed.
 
-Doctors give three simple tips. First, go to bed at the same time every night. Your body {{16}} a clock and it learns fast.
+Doctors give three simple tips. First, go to bed at the same time every night. Your body {{16}} an inner clock and it learns fast.
 
 Second, do not look at your phone in bed. The light from the screen is {{17}} than you think, and it keeps your brain awake.
 
@@ -339,7 +339,7 @@ These tips are free and easy. {{19}} you follow them for two weeks, you will see
               options: ["has", "is", "does"],
               answer: 0,
               explain:
-                "Cümle bir sahiplik kuruyor: vücudun bir saati var. `has` bunu verir. `is` bir eşitlik kurar («vücut bir saattir») ve devamındaki «it learns fast» ile uyuşmaz; `does` bu yapıda anlamsız kalır.",
+                "Cümle bir sahiplik kuruyor: vücudun bir iç saati var. `has` bunu verir. `is` bir eşitlik kurar («vücut bir iç saattir») ve devamındaki «it learns fast» ile uyuşmaz; `does` bu yapıda anlamsız kalır.",
             },
             {
               kind: "mcq",
@@ -690,7 +690,7 @@ Price for guests:     {{10}} pounds`,
           format: "mcq",
           goal: "gist",
           prompt: "You hear five short speakers. Why is each person speaking? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin. Her kişi neden konuşuyor? Her kaydı iki kez dinleyebilirsin.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin. Her kişi neden konuşuyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -1013,8 +1013,8 @@ Deniz`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: an interview, a photograph, and a decision you make together.",
-      instructionTr: "Bu bölümde üç görev var: söyleşi, fotoğraf anlatma ve birlikte karar verme.",
+      instruction: "There are three tasks in this part: an interview, a situation to describe, and a decision you make together.",
+      instructionTr: "Bu bölümde üç görev var: söyleşi, bir durumu anlatma ve birlikte karar verme.",
       tasks: [
         {
           id: "en-a2-01-s1",

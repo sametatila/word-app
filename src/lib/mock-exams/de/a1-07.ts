@@ -663,7 +663,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               id: "de-a1-07-h3-12",
               no: 12,
               ref: "m2",
-              text: "Was soll der Nachbar tun?",
+              text: "Was sollen Sie tun?",
               options: ["Zur Post gehen.", "Morgen früh klingeln.", "Kurz anrufen."],
               answer: 2,
               explain:
@@ -831,7 +831,7 @@ Elif Yalçın`,
       skill: "speaking",
       minutes: 15,
       instruction: "In diesem Teil gibt es drei Aufgaben: vom Einkaufen erzählen, Fragen stellen, um etwas bitten und reagieren.",
-      instructionTr: "Bu bölümde üç görev var: alışverişi anlatma, soru sorma, rica etme ve yanıt verme.",
+      instructionTr: "Bu bölümde üç görev var: alışverişi anlatma, soru sorma ve rica edip yanıt verme.",
       tasks: [
         {
           id: "de-a1-07-p1",

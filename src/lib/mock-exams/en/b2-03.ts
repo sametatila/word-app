@@ -253,9 +253,9 @@ The most likely future is therefore a mixed one, with different markets making d
               id: "en-b2-03-l3-15",
               no: 15,
               text: "DECEIVE",
-              accept: ["deception"],
+              accept: ["deception", "deceit"],
               explain:
-                "`detects deliberate ___` yapısında sıfattan sonra bir ad geliyor. `deceive` fiilinin adı `deception`; `deceptive` sıfattır ve `deliberate` ile yan yana gelemez.",
+                "`detects deliberate ___` yapısında sıfattan sonra bir ad geliyor. `deceive` fiilinin adı `deception` (aynı kökten `deceit` de olur); `deceptive` sıfattır ve `deliberate` ile yan yana gelemez.",
             },
             {
               kind: "gap",
@@ -514,7 +514,7 @@ None of this argues against buying from a nearby farm, which supports things tha
           options: [
             {
               key: "a",
-              label: "a — Ilkay, dairy farmer",
+              label: "a — Berna, dairy farmer",
               body: "I am paid roughly what I was paid in 2011, and my costs have doubled since then. People tell me to sell direct, and I have tried it: it is a second full-time job, and I already have one. The advice is given kindly and it is useless.",
             },
             {
@@ -541,7 +541,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               text: "Which text says that well-meant advice does not help?",
               answer: "a",
               explain:
-                "Ilkay öğüdün niyetini kabul edip sonucunu reddediyor: «The advice is given kindly and it is useless». Nese de bir şeye itiraz ediyor ama itirazı öğüde değil, kendisinin reklamda kullanılmasına.",
+                "Berna öğüdün niyetini kabul edip sonucunu reddediyor: «The advice is given kindly and it is useless». Nese de bir şeye itiraz ediyor ama itirazı öğüde değil, kendisinin reklamda kullanılmasına.",
             },
             {
               kind: "match",
@@ -577,7 +577,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               text: "Which text mentions having already tried the solution that others suggest?",
               answer: "a",
               explain:
-                "Ilkay öneriyi denediğini söylüyor: «I have tried it: it is a second full-time job». Öteki metinlerde denenmiş bir çözüm anlatılmıyor.",
+                "Berna öneriyi denediğini söylüyor: «I have tried it: it is a second full-time job». Öteki metinlerde denenmiş bir çözüm anlatılmıyor.",
             },
           ],
         },
@@ -1294,7 +1294,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about food, shopping and how you decide what to buy.",
+          prompt: "I will ask you some questions about food, shopping and how you decide what to buy.",
           promptTr: "Sana yemek, alışveriş ve ne alacağına nasıl karar verdiğin hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

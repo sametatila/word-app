@@ -27,9 +27,9 @@ export const EN_B1_10: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-10-l1",
@@ -253,7 +253,7 @@ Although I would do it differently now, I am not sorry that I recorded her. The 
                 "She wrote down her aunt's stories by hand",
                 "She scanned all the family photographs",
                 "She interviewed several different relatives",
-                "She made one very long recording",
+                "She recorded many hours of one person talking",
               ],
               answer: 3,
               explain:
@@ -427,7 +427,7 @@ None of this is an argument for throwing them away. It is an argument for writin
 
 Write the questions down first. You will not think of them in the room, and asking somebody to talk about their childhood {{21}} nothing at all.
 
-Ask about objects rather than years. Nobody remembers 1961. Everybody remembers the chair that {{22}} in the corner.
+Ask about objects rather than years. Nobody remembers 1961. Everybody remembers the chair that {{22}} in the corner when they were small.
 
 Spell the names out loud and ask the person to {{23}} you if you are wrong. You cannot do this afterward.
 
@@ -455,7 +455,7 @@ And a family {{25}} keeps no notes will lose the same story twice.`,
               options: ["stood", "stand", "stands", "standing"],
               answer: 0,
               explain:
-                "Sandalye artık orada değil; anımsanan geçmiş bir durum anlatılıyor ve ilgi cümleciğinin yüklemi geçmiş zaman olur: `stood`. Metnin geri kalanı da geçmişe gönderiyor.",
+                "«when they were small» anımsanan geçmişi kuruyor, bu yüzden ilgi cümleciğinin yüklemi geçmiş zaman olur: `stood`. `stands` bugünü anlatır ve zaman ifadesiyle çelişir.",
             },
             {
               kind: "mcq",
@@ -962,7 +962,7 @@ Volunteers come on Saturday: {{19}}`,
               no: 15,
               ref: "c1",
               text: "Gap 15",
-              accept: ["4", "four"],
+              accept: ["4", "four", "4 pm", "4pm", "4 p.m.", "4:00", "16:00", "four o'clock"],
               explain:
                 "«from ten to four» — kapanış saati. On açılış saati; not kâğıdı kapanışı soruyor.",
             },
@@ -982,7 +982,7 @@ Volunteers come on Saturday: {{19}}`,
               no: 17,
               ref: "c1",
               text: "Gap 17",
-              accept: ["8000", "eight thousand"],
+              accept: ["8000", "8,000", "eight thousand"],
               explain:
                 "«We hold about eight thousand photographs of this district» — koleksiyonun büyüklüğü.",
             },
@@ -1204,7 +1204,7 @@ What I do now is different and slightly ridiculous. I write two questions on a c
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about photographs, objects and what families keep.",
+          prompt: "I will ask you some questions about photographs, objects and what families keep.",
           promptTr: "Sana fotoğraflar, eşyalar ve ailelerin neyi sakladığı hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

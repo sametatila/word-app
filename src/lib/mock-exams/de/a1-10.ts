@@ -835,7 +835,7 @@ Tomasz Zielinski`,
       skill: "speaking",
       minutes: 15,
       instruction: "In diesem Teil gibt es drei Aufgaben: von Kleidung erzählen, Fragen stellen, um etwas bitten und reagieren.",
-      instructionTr: "Bu bölümde üç görev var: giysileri anlatma, soru sorma, rica etme ve yanıt verme.",
+      instructionTr: "Bu bölümde üç görev var: giysileri anlatma, soru sorma ve rica edip yanıt verme.",
       tasks: [
         {
           id: "de-a1-10-p1",
@@ -892,7 +892,7 @@ Tomasz Zielinski`,
             {
               who: "partner",
               de: "Ich trage am liebsten Schwarz. Und jetzt eine Frage an Sie: Kaufen Sie Kleidung im Internet?",
-              tr: "En çok siyah giyerim. Şimdi sana bir soru: Giysiyi internetten alır mısın?",
+              tr: "En çok siyah giyerim. Şimdi sana bir soru: İnternetten giysi alır mısın?",
             },
             { who: "you", hint: "Soruyu cevapla — internetten alıyor musun?", expect: "evet/hayır sorusuna tam bir cümleyle cevap vermek", seconds: 25 },
             {

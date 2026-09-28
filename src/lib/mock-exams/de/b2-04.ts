@@ -596,7 +596,7 @@ Die Lehre ist unbequem für alle Beteiligten: Verkehrspolitik ist weniger eine F
 Die Mitgliedschaft entsteht mit der Zulassung durch den Vorstand und der Zeichnung von mindestens fünf Anteilen zu je 300 Euro. Eine Wohnung kann nur an Mitglieder vergeben werden; die Zeichnung weiterer Anteile begründet jedoch keinen Anspruch auf eine Wohnung.
 
 § 7 Kündigung der Mitgliedschaft
-Die Kündigung ist zum Ende eines Geschäftsjahres möglich und muss spätestens drei Monate vorher schriftlich eingehen. Die Auszahlung der Anteile erfolgt frühestens sechs Monate nach dem Ausscheiden, bei mehr als zehn gleichzeitigen Kündigungen kann der Vorstand die Auszahlung um bis zu zwölf Monate strecken.
+Die Kündigung ist zum Ende eines Geschäftsjahres möglich und muss spätestens drei Monate vorher schriftlich eingehen. Die Auszahlung der Anteile erfolgt sechs Monate nach dem Ausscheiden, bei mehr als zehn gleichzeitigen Kündigungen kann der Vorstand die Auszahlung um bis zu zwölf Monate strecken.
 
 § 11 Nutzung der Wohnung
 Die Wohnung ist selbst zu bewohnen. Eine vollständige Untervermietung ist ausgeschlossen; die Vermietung einzelner Räume ist mit vorheriger schriftlicher Zustimmung zulässig, längstens für zwölf Monate am Stück.
@@ -635,7 +635,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               id: "de-b2-04-l5-29",
               no: 29,
               ref: "o1",
-              text: "Sie kündigen und im selben Jahr kündigen fünfzehn weitere Mitglieder. Wann kann Ihre Auszahlung spätestens erfolgen?",
+              text: "Sie kündigen und im selben Jahr kündigen fünfzehn weitere Mitglieder. Wann erfolgt Ihre Auszahlung spätestens?",
               options: [
                 "Achtzehn Monate nach dem Ausscheiden.",
                 "Sechs Monate nach dem Ausscheiden.",
@@ -643,7 +643,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               ],
               answer: 0,
               explain:
-                "§ 7 iki süreyi üst üste koyuyor: en erken 6 ay, ve 10'dan fazla eşzamanlı ayrılışta yönetim ödemeyi 12 aya kadar daha erteleyebiliyor. Toplam en geç 18 ay.",
+                "§ 7 iki süreyi üst üste koyuyor: ödeme ayrılıştan 6 ay sonra yapılıyor, 10'dan fazla eşzamanlı ayrılışta yönetim bunu 12 aya kadar daha erteleyebiliyor. Toplam en geç 18 ay.",
             },
             {
               kind: "mcq",
@@ -1339,7 +1339,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               ],
               answer: 2,
               explain:
-                "Son cümleler verilerin nüfusu 100 000'i aşan şehirlerden geldiğini ve köyler için geçerli olmayabileceğini söylüyor: \"wir haben es nicht geprüft\".",
+                "Son cümleler verilerin nüfusu 100.000'i aşan şehirlerden geldiğini ve köyler için geçerli olmayabileceğini söylüyor: \"wir haben es nicht geprüft\".",
             },
           ],
         },
@@ -1350,7 +1350,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
     {
       skill: "writing",
       minutes: 75,
-      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir okur mektubu ve yarı resmî bir ileti.",
       tasks: [
         {

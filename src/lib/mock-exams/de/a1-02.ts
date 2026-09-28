@@ -853,7 +853,7 @@ Nadia Amiri`,
       skill: "speaking",
       minutes: 15,
       instruction: "In diesem Teil gibt es drei Aufgaben: sich vorstellen, um Informationen bitten, um etwas bitten und reagieren.",
-      instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bilgi isteme, rica etme ve yanıt verme.",
+      instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bilgi isteme ve rica edip yanıt verme.",
       tasks: [
         {
           id: "de-a1-02-p1",
@@ -873,7 +873,7 @@ Nadia Amiri`,
               { de: "Arbeit und Sprachen", tr: "İş ve diller" },
             ],
             sample:
-              "Ich heiße Omar Haddad. Ich bin fünfunddreißig Jahre alt und komme aus Syrien. Ich wohne jetzt in Erfurt, in der Gartenstraße. Ich bin verheiratet und habe eine Tochter. Ich arbeite als Koch in einem Restaurant. Ich spreche Arabisch, Englisch und Deutsch.",
+              "Ich heiße Omar Haddad. Ich bin sechsunddreißig Jahre alt und komme aus Syrien. Ich wohne jetzt in Erfurt, in der Gartenstraße. Ich bin verheiratet und habe eine Tochter. Ich arbeite als Koch in einem Restaurant. Ich spreche Arabisch, Englisch und Deutsch.",
             criteria: [
               "Yedi anahtar sözcüğün her birine değinildi mi?",
               "\"Ich bin … Jahre alt\" ve \"Ich komme aus …\" kalıpları doğru kuruldu mu?",

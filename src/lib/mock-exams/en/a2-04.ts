@@ -26,9 +26,9 @@ export const EN_A2_04: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer every question.",
       instructionTr:
-        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-a2-04-l1",
@@ -386,9 +386,9 @@ I will do the second part {{24}} the spring.`,
               id: "en-a2-04-l5-20",
               no: 20,
               text: "Gap 20",
-              accept: ["with"],
+              accept: ["with", "about"],
               explain:
-                "`happy with something` bir şeyden memnun olmayı anlatan sabit eşdizim. `happy for` başkası adına sevinmektir, `happy about` ise olaylar için kullanılır; burada değerlendirilen şey kursun kendisi.",
+                "`happy with something` bir şeyden memnun olmayı anlatan sabit eşdizim. `happy for` başkası adına sevinmektir, `happy about it` da doğru ve kabul edilir.",
             },
             {
               kind: "gap",
@@ -833,7 +833,7 @@ Do the level test:       {{10}}`,
               situation: "Üçüncü konuşmacı haftalık buluşmalardan söz ediyor.",
               plays: 2,
               segments: [
-                { text: "We were five people and we met every Tuesday. Nobody wanted to come without homework, so everybody did it. Alone I think I would have stopped in November." },
+                { text: "We were five people and we met every Tuesday. Nobody wanted to come without homework, so everybody did it. I think I was ready to stop in November, but the group helped me." },
               ],
             },
             {
@@ -992,8 +992,8 @@ Milos`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: an interview, a photograph, and a decision you make together.",
-      instructionTr: "Bu bölümde üç görev var: söyleşi, fotoğraf anlatma ve birlikte karar verme.",
+      instruction: "There are three tasks in this part: an interview, a situation to describe, and a decision you make together.",
+      instructionTr: "Bu bölümde üç görev var: söyleşi, bir durumu anlatma ve birlikte karar verme.",
       tasks: [
         {
           id: "en-a2-04-s1",

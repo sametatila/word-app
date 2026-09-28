@@ -25,9 +25,9 @@ export const EN_B1_05: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-05-l1",
@@ -445,10 +445,10 @@ None of this takes long. Ten minutes of questions can {{25}} you from a week of 
               id: "en-b1-05-l5-25",
               no: 25,
               text: "Gap 25",
-              options: ["save", "keep", "hold", "stop"],
+              options: ["save", "prevent", "hold", "stop"],
               answer: 0,
               explain:
-                "`save somebody from something` birini bir dertten kurtarmak demektir. `keep from` engellemeyi, `stop from` durdurmayı bildirir ve ikisi de ardından ulaç ister; `hold from` kalıp değildir.",
+                "`save somebody from something` birini bir dertten kurtarmak demektir. `prevent from` engellemeyi, `stop from` durdurmayı bildirir ve ikisi de ardından ulaç ister; `hold from` kalıp değildir.",
             },
           ],
         },
@@ -510,9 +510,9 @@ It is the second time this year {{30}} the date has moved.`,
               id: "en-b1-05-l6-29",
               no: 29,
               text: "Gap 29",
-              accept: ["but", "although", "though"],
+              accept: ["but", "although", "though", "yet"],
               explain:
-                "İki yarı karşıtlık kuruyor: söz verildi, ama daha önce de verilmişti. `but`, `although` ve `though` bu ödünü kurar; `so` sonuç bildirir ve alaycı tonu tersine çevirir.",
+                "İki yarı karşıtlık kuruyor: söz verildi, ama daha önce de verilmişti. `but`, `yet`, `although` ve `though` bu ödünü kurar; `so` sonuç bildirir ve alaycı tonu tersine çevirir.",
             },
             {
               kind: "gap",
@@ -930,7 +930,7 @@ New guides walk with an experienced guide for: {{19}} tours`,
               no: 16,
               ref: "c1",
               text: "Gap 16",
-              accept: ["11000", "eleven thousand"],
+              accept: ["11000", "11,000", "eleven thousand"],
               explain:
                 "«Last year we took eleven thousand people around the old town» — geçen yılki katılımcı sayısı. Rakam da yazı da kabul edilir.",
             },
@@ -950,7 +950,7 @@ New guides walk with an experienced guide for: {{19}} tours`,
               no: 18,
               ref: "c1",
               text: "Gap 18",
-              accept: ["5", "five", "five in the afternoon"],
+              accept: ["5", "five", "five in the afternoon", "5 pm", "5pm", "5 p.m.", "17:00"],
               explain:
                 "«from May, also at five in the afternoon» — ikinci turun saati. On, her sabahki turun saati; iki saati karıştıran öğrenci sabahkini yazar.",
             },

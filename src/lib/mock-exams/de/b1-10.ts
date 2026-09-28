@@ -1219,7 +1219,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               options: [
                 "Weil das Geld dafür schlicht fehlt.",
                 "Weil niemand sich bewerben würde.",
-                "Weil der Bedarf unsichtbar bleibt.",
+                "Weil die Arbeit schon ehrenamtlich gemacht wird.",
               ],
               answer: 2,
               explain:
@@ -1279,7 +1279,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
     {
       skill: "writing",
       minutes: 60,
-      instruction: "In diesem Teil gibt es drei Aufgaben: eine Antwort, einen Beitrag und eine kurze halb offizielle Mail.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine Antwort, einen Beitrag und eine kurze halboffizielle Mail.",
       instructionTr: "Bu bölümde üç görev var: bir yanıt, bir yazı ve kısa bir yarı resmî e-posta.",
       tasks: [
         {

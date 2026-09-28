@@ -168,9 +168,9 @@ Neither arrangement is natural. Both were chosen, and both can {{11}} chosen aga
               id: "en-b2-05-l2-9",
               no: 9,
               text: "Gap 9",
-              accept: ["on"],
+              accept: ["on", "given"],
               explain:
-                "`on the evidence of …` kanıta dayanarak demektir. `with the evidence` ya da `by the evidence` bu belirteç öbeğini kurmaz.",
+                "`on the evidence of …` kanıta dayanarak demektir; `given the evidence` (kanıt göz önüne alındığında) da kabul edilir. `with the evidence` ya da `by the evidence` bu belirteç öbeğini kurmaz.",
             },
             {
               kind: "gap",
@@ -195,9 +195,9 @@ Neither arrangement is natural. Both were chosen, and both can {{11}} chosen aga
               id: "en-b2-05-l2-12",
               no: 12,
               text: "Gap 12",
-              accept: ["with", "about"],
+              accept: ["with", "about", "against"],
               explain:
-                "`argue with something` bir savı karşısına almayı, `argue about` bir konu üzerinde tartışmayı bildirir; ilgi cümlesinde edat sona kaldığı için ikisi de doğaldır. `argue against` da anlamca yakındır ama `that` ile kurulan bu yapıda seyrek kullanılır.",
+                "`argue with something` bir savı karşısına almayı, `argue about` bir konu üzerinde tartışmayı bildirir; ilgi cümlesinde edat sona kaldığı için ikisi de doğaldır. `argue against` (bir savın karşısında durmak) da aynı yapıda doğaldır.",
             },
           ],
         },
@@ -225,7 +225,7 @@ Neither description is complete. The rule rarely stopped payment, and it was not
 
 What it did do is narrower and still worth naming: it gave governing bodies a way of removing an athlete without a {{16}}.
 
-Several sports abandoned the rule in the nineteen-eighties. The most visible result was a marked {{17}} in the number of countries winning medals.
+Several sports abandoned the rule in the nineteen-eighties. The most visible result was a marked {{17}} in the range of countries winning medals.
 
 The most likely future is therefore an open one, with different sports drawing the line according to their own {{18}}.`,
             },
@@ -274,7 +274,7 @@ The most likely future is therefore an open one, with different sports drawing t
               text: "WIDE",
               accept: ["widening"],
               explain:
-                "`a marked ___ in the number` yapısında `a` ile `in` arasında bir ad var ve süreç bildiren biçim gerekiyor: `widening`. Sıfat (`wide`) belirsiz tanımlıkla tek başına ad öbeği kurmaz.",
+                "`a marked ___ in the range` yapısında `a` ile `in` arasında bir ad var ve süreç bildiren biçim gerekiyor: `widening`. Sıfat (`wide`) belirsiz tanımlıkla tek başına ad öbeği kurmaz.",
             },
             {
               kind: "gap",
@@ -849,7 +849,7 @@ The families who leave never came to a {{15}}.
               no: 10,
               ref: "b1",
               text: "Gap 10",
-              accept: ["240", "two hundred and forty"],
+              accept: ["240", "two hundred and forty", "two hundred forty"],
               explain:
                 "«we now have two hundred and forty» — bugünkü üye sayısı. Altmış, üç yıllık dönemin başındaki sayı.",
             },
@@ -869,7 +869,7 @@ The families who leave never came to a {{15}}.
               no: 12,
               ref: "b1",
               text: "Gap 12",
-              accept: ["over-fifties"],
+              accept: ["over-fifties", "over-50s"],
               explain:
                 "Kayıt beklentiyi bozuyor: «not the under-twelves, it is the over-fifties», çünkü kasabada bu yaş için başka hiçbir şey yok. On iki yaş altını yazan öğrenci çürütülen şıkkı almış olur.",
             },
@@ -1291,7 +1291,7 @@ For somebody starting again after years away, however, it is the easiest door I 
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about sport, clubs and what people pay for.",
+          prompt: "I will ask you some questions about sport, clubs and what people pay for.",
           promptTr: "Sana spor, kulüpler ve insanların neye para ödediği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

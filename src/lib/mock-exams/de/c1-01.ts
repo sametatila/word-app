@@ -119,7 +119,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-3",
               no: 3,
               text: "Lücke 3",
-              accept: ["belastet", "gestresst", "unter Druck", "beansprucht", "überlastet", "unter Zeitdruck"],
+              accept: ["belastet", "gestresst", "beansprucht", "überlastet"],
               explain:
                 "Kaynak metin \"als deutlich weniger belastend\" diyor; özette özne kişi olduğu için ortaç `belastet` biçimine geçiyor.",
             },
@@ -155,7 +155,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-7",
               no: 7,
               text: "Lücke 7",
-              accept: ["individuelle", "persönliche", "biografische", "private", "biographische", "eigene"],
+              accept: ["individuelle", "persönliche", "biografische", "private", "biographische"],
               explain:
                 "Eleştiri, sorunun \"in die Biografie des Einzelnen\" kaydırıldığını söylüyor. `eine … Frage` yapısı için dişil, -e ekli bir sıfat gerekiyor.",
             },
@@ -173,7 +173,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-9",
               no: 9,
               text: "Lücke 9",
-              accept: ["Geld", "Budget", "Mittel", "Kosten"],
+              accept: ["Geld", "Budget", "Mittel"],
               explain:
                 "Son paragrafın karşıtlığı: \"kosten selten Geld, wohl aber Kontrolle\". Boşluk bu çiftin ilk ögesi.",
             },
@@ -182,7 +182,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-10",
               no: 10,
               text: "Lücke 10",
-              accept: ["Kontrolle", "Steuerung", "Macht", "Entscheidungsmacht", "Kontrollverzicht", "Verfügungsmacht"],
+              accept: ["Kontrolle", "Steuerung", "Macht", "Entscheidungsmacht", "Verfügungsmacht"],
               explain:
                 "Aynı karşıtlığın ikinci ögesi. Metin bunu somutlaştırıyor: üç hafta önceden sabitlenen bir plan yönetimi daha çok bağlar.",
             },
@@ -1100,7 +1100,7 @@ Halim Yücel`,
               text: "Lücke 6 (Verb zu \"die Frage\": sich erheben)",
               accept: ["stellt sich", "erhebt sich", "ergibt sich", "besteht"],
               explain:
-                "`die Frage stellt sich` kalıbı ikinci noktayı ilkine paralel bağlar. Özne `die Frage` olduğu için dönüşlü yapı gerekir.",
+                "`die Frage stellt sich` kalıbı ikinci noktayı ilkine paralel bağlar. `besteht` de olur; `stellt sich`, `erhebt sich`, `ergibt sich` seçilirse özne `die Frage` olduğu için `sich` gerekir.",
             },
             {
               kind: "gap",

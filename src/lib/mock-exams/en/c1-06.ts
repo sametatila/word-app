@@ -260,9 +260,9 @@ The most likely future is therefore a divided one, with different literatures se
               id: "en-c1-06-l3-16",
               no: 16,
               text: "MYSTERY",
-              accept: ["mysticism", "mystification"],
+              accept: ["mystification"],
               explain:
-                "`accused of ___` bir ad ister ve suçlama bir tutuma yöneliyor: işi anlaşılmaz kılmak. Bunu `mysticism` da `mystification` da adlandırır. `mystery` bir olguyu adlandırır, tutumu değil; `mysterious` ise sıfattır.",
+                "`accused of ___` bir ad ister ve suçlama bir tutuma yöneliyor: işi anlaşılmaz kılmak. Bunu `mystification` adlandırır; `mysticism` ise gizemcilik demektir. `mystery` bir olguyu adlandırır, tutumu değil; `mysterious` ise sıfattır.",
             },
             {
               kind: "gap",
@@ -300,7 +300,7 @@ The most likely future is therefore a divided one, with different literatures se
               no: 19,
               text: "The publisher did not name the translator on the cover.\nThe translator's name ______ on the cover.",
               cue: "APPEAR",
-              accept: ["did not appear"],
+              accept: ["did not appear", "didn't appear"],
               explain:
                 "Etken olumsuz cümle, öznesi değişen bir yapıya çevriliyor: adın kendisi özne oluyor ve geçişsiz `appear` fiiliyle kuruluyor. Anahtar sözcük yalın hâlde kaldığı için `did` yardımcı fiili gerekiyor.",
             },
@@ -833,7 +833,7 @@ The translators the program most wants to fund are the least likely to {{13}}.
               no: 7,
               ref: "b1",
               text: "Gap 7",
-              accept: ["240", "two hundred and forty"],
+              accept: ["240", "two hundred and forty", "two hundred forty"],
               explain:
                 "«The program funded two hundred and forty translations» — desteklenen toplam. Yüz seksen ise yayımlananların sayısı; iki sayı aynı cümlede geçiyor.",
             },
@@ -843,7 +843,7 @@ The translators the program most wants to fund are the least likely to {{13}}.
               no: 8,
               ref: "b1",
               text: "Gap 8",
-              accept: ["180", "one hundred and eighty"],
+              accept: ["180", "one hundred and eighty", "one hundred eighty"],
               explain:
                 "«of which one hundred and eighty have been published» — yayımlanan sayı. İki yüz kırk, desteklenenlerin tamamı.",
             },
@@ -853,7 +853,7 @@ The translators the program most wants to fund are the least likely to {{13}}.
               no: 9,
               ref: "b1",
               text: "Gap 9",
-              accept: ["9000", "nine thousand"],
+              accept: ["9000", "9,000", "nine thousand"],
               explain:
                 "«The average grant is nine thousand euros» — ortalama destek tutarı. Cümlede `euros` basılı olduğu için boşluğa yalnız sayı yazılır.",
             },
@@ -1329,7 +1329,7 @@ I recommend adopting the system for descriptive pages and retaining human transl
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about languages, reading and what gets lost between them.",
+          prompt: "I will ask you some questions about languages, reading and what gets lost between them.",
           promptTr: "Sana diller, okuma ve diller arasında kaybolanlar hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

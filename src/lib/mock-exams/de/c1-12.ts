@@ -291,7 +291,7 @@ Mein früherer Chef sagt bis heute, ich hätte damit den Bildern ihre Kraft geno
               ],
               answer: 1,
               explain:
-                "Gerekçesini tek sözcükle veriyor: \"weil er langweilig war\" — su şişesi uzatılan kare aynı seriden.",
+                "Gerekçesini kısaca veriyor: \"weil er langweilig war\" — su şişesi uzatılan kare aynı seriden.",
             },
             {
               kind: "mcq",
@@ -1055,9 +1055,9 @@ Vera {{10}}`,
               id: "de-c1-12-s2-1",
               no: 1,
               text: "Lücke 1 (Bezugnahme auf eine Veranstaltung)",
-              accept: ["Bezugnehmend", "Bezug"],
+              accept: ["Bezugnehmend"],
               explain:
-                "Yazı bir tanıtım toplantısına gönderme yaparak açılıyor ve cümle `auf` ile sürüyor; buraya `Bezugnehmend` ya da ayrık yazımıyla `Bezug nehmend` girer.",
+                "Yazı bir tanıtım toplantısına gönderme yaparak açılıyor ve cümle `auf` ile sürüyor; buraya `Bezugnehmend` girer (ayrık yazımı `Bezug nehmend` iki sözcüktür, tek boşluğa sığmaz).",
             },
             {
               kind: "gap",

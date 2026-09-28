@@ -226,7 +226,7 @@ Bring a friend!`,
               options: ["City Library", "Sports Center", "Language Café"],
               answer: 1,
               explain:
-                "Havuz «7 a.m.»de açılıyor, yani 7.30'da açık. Kütüphane 9'da, Dil Kafe ise akşam 6'da başlıyor; ikisi de sabah 7:30'a uymaz. Madde saat karşılaştırmasını ölçüyor.",
+                "Havuz «7 a.m.»de açılıyor, yani 7.30'da açık. Kütüphane 9'da, Dil Kafe ise akşam 6'da başlıyor; ikisi de sabah 7.30'a uymaz. Madde saat karşılaştırmasını ölçüyor.",
             },
             {
               kind: "mcq",
@@ -376,7 +376,7 @@ Wifi: NEST-3B. The code is on the fridge.`,
 
 I am in Porto now. The city is very old and the people {{15}} really friendly.
 
-Every morning I go to the beach. The water is cold, {{16}} I swim for ten minutes.
+Every morning I go to the beach. The water is cold, {{16}} I swim for an hour.
 
 Yesterday I {{17}} on a boat trip on the river. It was my best day here.
 
@@ -813,7 +813,7 @@ Nuray`,
               options: ["In room 12", "In the big room on the first floor", "In Tom's office"],
               answer: 1,
               explain:
-                "Aisha oda değişikliğini söylüyor: eskiden 12 numaraydı, şimdi birinci kattaki büyük oda. `It was … but now it is …` yapısı değişikliği taşıyor; ilk yarısını duyup duran öğrenci 12 numarayı seçer.",
+                "Aisha oda değişikliğini söylüyor: eskiden 12 numaraydı, şimdi zemin kattaki büyük oda. `It was … but now it is …` yapısı değişikliği taşıyor; ilk yarısını duyup duran öğrenci 12 numarayı seçer.",
             },
             {
               kind: "mcq",
@@ -869,7 +869,7 @@ Signature:                 A. Kaya`,
               id: "en-a1-01-w1-1",
               no: 1,
               text: "Age of the child",
-              accept: ["9", "9 years", "nine", "nine years", "nine years old"],
+              accept: ["9", "9 years", "9 years old", "nine", "nine years", "nine years old"],
               explain:
                 "Yönergede «The daughter is nine years old» geçiyor; formdaki satır yaşı soruyor. Rakam da (9) yazı da (nine) kabul edilir, çünkü ölçülen şey imla değil bilgiyi doğru yere taşımak.",
             },
@@ -953,7 +953,7 @@ Deniz Arslan`,
       skill: "speaking",
       minutes: 15,
       instruction: "There are three tasks in this part: you introduce yourself, you ask for information, and you make and answer requests.",
-      instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bilgi isteme, rica etme ve gelen ricaya karşılık verme.",
+      instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bilgi isteme ve rica edip gelen ricaya karşılık verme.",
       tasks: [
         {
           id: "en-a1-01-s1",

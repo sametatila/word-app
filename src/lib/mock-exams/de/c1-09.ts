@@ -181,7 +181,7 @@ Sein Schluss lautet, dass über Ersatzteilpflicht verhandelt, in Wahrheit aber �
               id: "de-c1-09-l1-10",
               no: 10,
               text: "Lücke 10",
-              accept: ["Ausbildungsplätze", "Ausbildung", "Ausbildungsplätzen"],
+              accept: ["Ausbildungsplätze", "Ausbildung"],
               explain:
                 "Son cümledeki karşıtlık: \"Verhandelt wird über Ersatzteilpflicht und Garantiefristen; entschieden wird über Ausbildungsplätze.\"",
             },
@@ -1044,7 +1044,7 @@ Meine Schlussfolgerung lautet deshalb: Der Preis ist notwendig und nicht hinreic
 
 Vorab: Das Ziel der Ausbildung halte ich für richtig. Meine Bewerbung stützt sich {{2}} nur auf den Bedarf an Fläche, sondern vor allem auf diesen Punkt.
 
-Mein Betrieb besteht seit 1968 und bildet {{3}} zwölf Jahren ununterbrochen aus. Derzeit beschäftige ich vier Gesellen und zwei Auszubildende; einen dritten Platz könnte ich sofort besetzen, wenn die Fläche zur {{4}} steht.
+Mein Betrieb besteht seit 1968 und bildet {{3}} zwölf Jahren ununterbrochen aus. Derzeit beschäftige ich zwei Gesellen und einen Auszubildenden; weitere Ausbildungsplätze könnte ich anbieten, wenn die Fläche zur {{4}} steht.
 
 Zwei Punkte möchte ich offen ansprechen. Erstens ist mir die Miete nach dem dritten Jahr {{5}} nicht kalkulierbar, solange kein Rahmen genannt wird. Zweitens halte ich den Samstagvormittag {{6}} für sinnvoll, wenn die Werkstätten dabei abgestimmt öffnen.
 
@@ -1167,7 +1167,7 @@ Jens {{10}}`,
           prompt:
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Haltbarkeit: Frage der Technik oder der Arbeit?\". Gliedern Sie: Einstieg — Begriffsklärung — Argumente für die eine Seite — Argumente für die andere — eigene Position mit Einwand — Abschluss.",
           promptTr:
-            "\"Dayanıklılık: teknik meselesi mi, emek meselesi mi?\" konusunda yaklaşık dört dakikalık bir sunum yap. Şu sırayı izle: giriş — kavram açıklaması — bir tarafın gerekçeleri — öteki tarafın gerekçeleri — kendi konumun ve ona itiraz — kapanış.",
+            "\"Dayanıklılık: teknoloji meselesi mi, emek meselesi mi?\" konusunda yaklaşık dört dakikalık bir sunum yap. Şu sırayı izle: giriş — kavram açıklaması — bir tarafın gerekçeleri — öteki tarafın gerekçeleri — kendi konumun ve ona itiraz — kapanış.",
           minutes: 8,
           prepSeconds: 180,
           speakSeconds: 240,

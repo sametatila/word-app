@@ -169,14 +169,14 @@ Rezepte gibt es bei uns wieder ab dem 8. August.`,
               kind: "mcq",
               id: "de-a1-03-l2-7",
               no: 7,
-              text: "Sie möchten mit Ihrem Kind zum Arzt gehen. Das Kind ist zwei Jahre alt.",
+              text: "Sie möchten mit Ihrem Kind zum Arzt gehen. Das Kind ist zwei Jahre alt und hat Fieber.",
               options: [
                 "Praxis Dr. Lang\nZahnmedizin für die ganze Familie\nTermine online buchen\nMo–Do 8–18 Uhr",
                 "Kinderarztpraxis Sonnenblume\nfür Kinder von 0 bis 14 Jahren\nSprechstunde Mo–Fr 8–12 Uhr\nTermin bitte telefonisch",
               ],
               answer: 1,
               explain:
-                "İki yaşındaki bir çocuk için çocuk hekimi gerekiyor. (b) `für Kinder von 0 bis 14 Jahren` diyor. (a) diş hekimliği yapıyor; aile hekimliği değil, branşı uymuyor.",
+                "İki yaşındaki çocuğun ateşi var; çocuk hekimi gerekiyor. (b) `für Kinder von 0 bis 14 Jahren` diyor. (a) bir diş hekimi; ateş için doğru yer değil.",
             },
             {
               kind: "mcq",
@@ -873,7 +873,7 @@ Amir Rahimi`,
       skill: "speaking",
       minutes: 15,
       instruction: "In diesem Teil gibt es drei Aufgaben: von einem Tag erzählen, Fragen stellen, um etwas bitten und reagieren.",
-      instructionTr: "Bu bölümde üç görev var: bir gününü anlatma, soru sorma, rica etme ve yanıt verme.",
+      instructionTr: "Bu bölümde üç görev var: bir gününü anlatma, soru sorma ve rica edip yanıt verme.",
       tasks: [
         {
           id: "de-a1-03-p1",

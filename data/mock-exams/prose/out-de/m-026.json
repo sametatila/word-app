@@ -141,5 +141,5 @@
  { "tr": "Hakem eksiğini açıkça söylüyor: «The other one I did not see, and I am not going to pretend that I did».", "kind": "explain", "en": "Der Schiedsrichter nennt seinen Fehler offen: «The other one I did not see, and I am not going to pretend that I did»." },
  { "tr": "İstatistikçi yanlış alarmı beceriksizlikten ayırıyor: «They are what you buy when you buy warning time».", "kind": "explain", "en": "Die Statistikerin trennt den Fehlalarm von Unfähigkeit: «They are what you buy when you buy warning time»." },
  { "tr": "Kayıt iki günü ayırıyor: «On Sunday it is only sixteen degrees and windy». Yirmi altı derece yarına ait.", "kind": "explain", "en": "Die Aufnahme trennt zwei Tage: «On Sunday it is only sixteen degrees and windy». Sechsundzwanzig Grad sind es morgen." },
- { "tr": "Levha saati veriyor: «Please put the yellow bag out after 19». On dokuz akşamdır; sabah bu saatten önce.", "kind": "explain", "en": "Das Schild nennt die Zeit: «Please put the yellow bag out after 19». Neunzehn Uhr ist abends; der Morgen liegt davor." }
+ { "tr": "Levha saati veriyor: «Please put the yellow bag out after 7 p.m.». `p.m.` akşamı gösterir: akşam yedi. Sabah bu saatten önce.", "kind": "explain", "en": "Das Schild nennt die Zeit: «Please put the yellow bag out after 7 p.m.». `p.m.` bezeichnet den Abend: sieben Uhr abends. Der Morgen liegt davor." }
 ]

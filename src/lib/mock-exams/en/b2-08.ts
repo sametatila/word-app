@@ -199,9 +199,9 @@ There is a further problem. The people least likely to answer a survey are the p
               id: "en-b2-08-l2-12",
               no: 12,
               text: "Gap 12",
-              accept: ["unless"],
+              accept: ["unless", "until"],
               explain:
-                "Cümle bir koşulu olumsuzlayarak kuruluyor: düzeltme yapılmadıkça rakamlar yalnız kapıyı açanları anlatır. `Unless` bu olumsuz koşulu tek sözcükle verir.",
+                "Cümle bir koşulu olumsuzlayarak kuruluyor: düzeltme yapılmadıkça rakamlar yalnız kapıyı açanları anlatır. `Unless` bu olumsuz koşulu tek sözcükle verir; `Until` zaman sınırıyla aynı sonucu verdiği için o da kabul edilir.",
             },
           ],
         },
@@ -341,7 +341,7 @@ Reviews conclude that outcomes depend less on the number of hours than on whethe
               cue: "VISITED",
               accept: ["has been visited"],
               explain:
-                "Mart'tan beri süren bir eylem edilgene çevriliyor ve `since` yakın geçmişin sürekliliğini gerektiriyor: «has been visited». Yalın geçmiş zamanın edilgeni (`was visited`) süreyi taşımaz.",
+                "marttan beri süren bir eylem edilgene çevriliyor ve `since` yakın geçmişin sürekliliğini gerektiriyor: «has been visited». Yalın geçmiş zamanın edilgeni (`was visited`) süreyi taşımaz.",
             },
           ],
         },
@@ -363,9 +363,9 @@ Reviews conclude that outcomes depend less on the number of hours than on whethe
 
 There are no scheduled visits. There is a telephone number answered by a person, a key held in a box, and a promise that somebody will come within two hours of being asked. That is the whole design.
 
-The scheme was not built on a theory. It was built on a survey that went wrong. Aro's team had asked six hundred households what they wanted more of, expecting the answer to be company. The most common answer was notice. People wanted to know when somebody was coming, and the second most common answer was to be asked first.
+The scheme was not built on a theory. It was built on a survey that went wrong. Aro's team had asked six hundred households what they wanted more of, expecting the answer to be company. The most common answer was notice. People wanted to know when somebody was coming; the second most common answer was to be asked first. If the survey had gone as expected, the scheme would have looked like every other one.
 
-Three years of figures now exist, and they are not simple. Emergency admissions in the town have fallen by about a tenth, which is more than the designers of the scheme had predicted. If the survey had gone as expected, the scheme would have looked like every other one. Reported loneliness has not moved at all.
+Three years of figures now exist, and they are not simple. Emergency admissions in the town have fallen by about a tenth, which is more than the designers of the scheme had predicted. Reported loneliness has not moved at all.
 
 Aro is unusually willing to say so. She points out that her service was never designed to reach loneliness, and that a scheme which cannot reach something should not be judged on it. Her critics reply that this is convenient, and one of them notes that the same argument would defend any service from any measurement whatsoever.
 
@@ -879,7 +879,7 @@ The program is funded until {{16}}.`,
               no: 10,
               ref: "b1",
               text: "Gap 10",
-              accept: ["2000", "two thousand"],
+              accept: ["2000", "2,000", "two thousand"],
               explain:
                 "«we now work with two thousand» — bugünkü hane sayısı. Dokuz yüz başlangıçtı; iki sayı karıştırılmamalı.",
             },
@@ -1321,7 +1321,7 @@ Anouk Persson`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about older people, independence and asking for help.",
+          prompt: "I will ask you some questions about older people, independence and asking for help.",
           promptTr: "Sana yaşlılar, bağımsızlık ve yardım istemek hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

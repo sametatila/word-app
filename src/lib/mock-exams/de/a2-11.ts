@@ -141,7 +141,7 @@ Maren`,
               ref: "t1",
               text: "Worum geht es in dem Text?",
               options: [
-                "Jemand bittet um eine Bestätigung vom Verein.",
+                "Jemand möchte eine andere Trainingszeit.",
                 "Jemand beendet die Mitgliedschaft.",
                 "Jemand fragt nach dem Training im Dezember.",
               ],

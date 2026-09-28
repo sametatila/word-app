@@ -426,7 +426,7 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
 
 [22] Frau Özdemir: Natürlich kostet die Umstellung erst einmal etwas. Aber wir haben seit der Einführung keine einzige Kündigung mehr gehabt, und Bewerbungen bekommen wir jetzt ohne Anzeige. Rechnet man das gegen, war es die günstigste Entscheidung meiner Firmengeschichte.
 
-[23] H. Wolter: Ich bin selbstständig und arbeite gern viel. Was mich stört, ist nicht die kürzere Woche, sondern dass daraus eine Vorschrift werden soll. Wer vier Tage will, soll sie mit seinem Betrieb aushandeln. Ein Gesetz für alle passt hier nicht.
+[23] H. Wolter: Ich bin selbstständig und arbeite gern viel. Was mich stört, ist nicht nur die kürzere Woche, sondern auch, dass daraus eine Vorschrift werden soll. Wer vier Tage will, soll sie mit seinem Betrieb aushandeln. Ein Gesetz für alle passt hier nicht.
 
 [24] Nesrin A.: Meine Kollegen und ich machen die gleiche Arbeit jetzt in vier Tagen. Das heißt: keine Pause mehr, mittags ein Brot am Schreibtisch, abends erschöpft. Auf dem Papier ein freier Tag, in Wirklichkeit vier harte. So nicht.
 
@@ -484,7 +484,7 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
-                "Kısa haftaya değil, ZORUNLU olmasına karşı: \"Ein Gesetz für alle passt hier nicht\". Sorulan şey işletmelerin geçmesi gerekip gerekmediği, o da buna hayır diyor.",
+                "Hem kısa haftadan hem zorunluluktan rahatsız: \"nicht nur die kürzere Woche, sondern auch …\". Kapanışı da ret: \"Ein Gesetz für alle passt hier nicht\".",
             },
             {
               kind: "mcq",
@@ -1387,7 +1387,7 @@ Tarik Öz`,
               { de: "auf eine Frage antworten", tr: "Sorulan soruyu cevaplamak" },
             ],
             sample:
-              "Vielen Dank, das war sehr anschaulich, besonders der Vergleich zwischen den beiden Ländern. Eine Frage hätte ich: Du hast gesagt, dass Firmen die Kurse bezahlen. Gilt das auch für kleine Betriebe, oder nur für große? — Zu deiner Frage: Nein, das gilt nicht überall. Kleine Betriebe können sich das oft nicht leisten, dafür gibt es Zuschüsse vom Staat. Genau das habe ich selbst genutzt, als ich meinen Kurs gemacht habe.",
+              "Am schwierigsten war für mich der Teil über mein Heimatland. Aktuelle Zahlen gibt es dort kaum, deshalb habe ich vor allem von meinen eigenen Erfahrungen erzählt. — Jetzt zu Ihrer Präsentation: Vielen Dank, das war sehr anschaulich, besonders Ihre Beispiele aus dem Alltag. Eine Frage hätte ich: Sie haben gesagt, dass in Deutschland viele Firmen die Kurse bezahlen. Wie ist das in Ihrem Heimatland? — Das ist interessant, bei uns ist es ganz ähnlich. Vielen Dank für das Gespräch.",
             criteria: [
               "Geri bildirim somut mu? (Sunumun neresi iyiydi, neden?)",
               "Soru içerikle ilgili mi, yoksa \"Wie geht es dir?\" gibi genel mi?",

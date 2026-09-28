@@ -1245,7 +1245,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
     {
       skill: "writing",
       minutes: 60,
-      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde üç görev var: özel bir ileti, bir forum yazısı ve yarı resmî bir ileti.",
       tasks: [
         {

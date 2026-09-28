@@ -1,6 +1,6 @@
 [
  { "tr": "Avlu şenliğini birlikte planlıyoruz. Tarihle başlayalım: Ne zaman yapalım?", "kind": "exchange.tr", "en": "We are planning the yard party together. Let's start with the date: when should we hold it?" },
- { "tr": "En çok siyah giyerim. Şimdi sana bir soru: Giysiyi internetten alır mısın?", "kind": "exchange.tr", "en": "I mostly wear black. Now a question for you: do you buy clothes online?" },
+ { "tr": "En çok siyah giyerim. Şimdi sana bir soru: İnternetten giysi alır mısın?", "kind": "exchange.tr", "en": "I mostly wear black. Now a question for you: do you buy clothes online?" },
  { "tr": "Peki. Orada ne yapacağız? Köpekleri gezdirmek mi, içeride yardım etmek mi?", "kind": "exchange.tr", "en": "Good. And what should we do there? Take the dogs out or help inside?" },
  { "tr": "Şimdi öğrenme konusunu konuşuyoruz. İlk sözcüğün: kurs. Bana bir soru sor.", "kind": "exchange.tr", "en": "We are talking about learning now. Your first keyword: course. Ask me a question." },
  { "tr": "Şimdi rica etmeyi çalışıyoruz. İlk durum: Bir sözcüğü anlamadın. Bana sor.", "kind": "exchange.tr", "en": "We are practicing requests now. First situation: you have not understood a word. Ask me." },
@@ -138,5 +138,5 @@
  { "tr": "Kısmen mantıklı. Ama şunu düşün: Birkaç küçük kursta her grup başka bir şey öğrenir ve ekipte ortak dil kalmaz.", "kind": "exchange.tr", "en": "That makes sense in part. But think about it: with several small courses each group learns something different and the team loses a common language." },
  { "tr": "Yemekte kararsızım. Kendimiz mi pişirelim, sipariş mi verelim? Kendimiz pişirmek daha ucuz ama insana ihtiyacımız var.", "kind": "exchange.tr", "en": "I am unsure about the food. Should we cook ourselves or order? Cooking ourselves is cheaper but we need people for it." },
  { "tr": "Bunu birine söylemem gerek. Eşim düştüğünden beri evden neredeyse hiç çıkamıyorum. Geceleri üç dört saat uyuyorum.", "kind": "exchange.tr", "en": "I have to tell somebody about this. Since my husband fell I have hardly been able to leave the house. I sleep three or four hours at night." },
- { "tr": "İtirazını ciddiye alıyorum. Ama sonunda zaten vakti ve sağlığı olanın ödüllendirilmesi tehlikesini görmüyor musun?", "kind": "exchange.tr", "en": "I take your objection seriously. But do you not see the danger that in the end it rewards whoever has the time and the health?" }
+ { "tr": "İtirazını ciddiye alıyorum. Ama küçük bir teşvik, hiç olmamasından yine de iyi değil mi?", "kind": "exchange.tr", "en": "I take your objection seriously. But isn't a small incentive still better than none at all?" }
 ]

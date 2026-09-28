@@ -962,7 +962,7 @@ Two competitions changed their recording {{14}} in the same season.`,
               id: "c1",
               genre: "Panel discussion",
               genreTr: "Panel tartışması",
-              situation: "Bir yönetici, eski oyuncu Vesna, kural uzmanı Kiro ve akademisyen Aras ile konuşuyor.",
+              situation: "Bir moderatör, eski oyuncu Vesna, kural uzmanı Kiro ve akademisyen Aras ile konuşuyor.",
               plays: 1,
               segments: [
                 { speaker: "Chair", text: "Vesna, you have argued that intention should not appear in the laws at all." },
@@ -1348,7 +1348,7 @@ My own view is that the choice is being posed too early. The real question is wh
             criteria: [
               "İki nokta da adil ve tam özetlendi mi?",
               "Seçim gerekçelendirildi mi ve gerekçe özetten çıkıyor mu?",
-              "Kendi görüş özetin tekrarı değil, ayrı bir sav mı?",
+              "Kendi görüşü özetin tekrarı değil, ayrı bir sav mı?",
               "Çekimserlik belirteçleri ve adlaştırma kullanıldı mı? (on balance, the distinction, in practice)",
               "220–260 kelime aralığında mı?",
             ],
@@ -1408,7 +1408,7 @@ Two findings would tell us. First, if withdrawals fall but total entries fall by
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about rules, games and what people agree to.",
+          prompt: "I will ask you some questions about rules, games and what people agree to.",
           promptTr: "Sana kurallar, oyunlar ve insanların neye rıza gösterdiği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

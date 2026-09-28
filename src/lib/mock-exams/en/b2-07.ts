@@ -1325,7 +1325,7 @@ I recommend that we continue for a further year, with one change: the second rou
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about interviews, first impressions and the way people speak.",
+          prompt: "I will ask you some questions about interviews, first impressions and the way people speak.",
           promptTr: "Sana mülakatlar, ilk izlenimler ve insanların konuşma biçimi hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

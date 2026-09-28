@@ -1286,7 +1286,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
     {
       skill: "writing",
       minutes: 60,
-      instruction: "In diesem Teil gibt es drei Aufgaben: eine Antwort, einen Beitrag und eine kurze halb offizielle Mail.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine Antwort, einen Beitrag und eine kurze halboffizielle Mail.",
       instructionTr: "Bu bölümde üç görev var: bir yanıt, bir yazı ve kısa bir yarı resmî e-posta.",
       tasks: [
         {
@@ -1453,7 +1453,7 @@ Deniz Kemper`,
               { de: "eine Aufgabe übernehmen", tr: "Bir işi üstlenmek" },
             ],
             sample:
-              "Ich schlage den Samstag danach vor, dann können auch die Leute von weiter weg kommen. Als Ort nehmen wir den Gemeinschaftsraum im Haus: Der ist groß genug und kostet fast nichts. Einladen würde ich alle, aber ich rufe die beiden vorher getrennt an und sage, wer sonst kommt — dann entscheidet jeder selbst. Bei den Aufgaben mache ich das Essen zusammen mit meinem Bruder, du kümmerst dich nur um die Einladungen und die Musik.",
+              "Ich schlage den Samstag danach vor, dann können auch die Leute von weiter weg kommen. Als Ort nehmen wir den Gemeinschaftsraum im Haus: Der ist groß genug und kostet fast nichts. Einladen würde ich alle, aber ich rufe die beiden vorher getrennt an und sage, wer sonst kommt — dann entscheidet jeder selbst. Bei den Aufgaben mache ich das Essen zusammen mit meinem Bruder, Sie kümmern sich nur um die Einladungen und die Musik.",
             criteria: [
               "Dört noktanın hepsi konuşuldu mu?",
               "Öneriler somut mu (gün, yer, düzen)?",

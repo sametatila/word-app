@@ -242,7 +242,7 @@ Reviews conclude that an apology unaccompanied by {{18}} is received very differ
               id: "en-c1-09-l3-13",
               no: 13,
               text: "ACKNOWLEDGE",
-              accept: ["acknowledgment"],
+              accept: ["acknowledgment", "acknowledgement"],
               explain:
                 "`by its ___ of responsibility` yapısında iyelikten sonra bir ad geliyor ve `of` tümleci o adın kendi edatıdır. Fiil biçimi bu konumda duramaz.",
             },
@@ -963,7 +963,7 @@ The most common word in the interviews was {{14}}.`,
               id: "c1",
               genre: "Panel discussion",
               genreTr: "Panel tartışması",
-              situation: "Bir yönetici, tarihçi Ilja, avukat Bexi ve topluluk temsilcisi Noor ile konuşuyor.",
+              situation: "Bir moderatör, tarihçi Ilja, avukat Bexi ve topluluk temsilcisi Noor ile konuşuyor.",
               plays: 1,
               segments: [
                 { speaker: "Chair", text: "Ilja, you have argued that an apology should not wait for the last witness. Why?" },
@@ -1349,7 +1349,7 @@ My own view is that the argument has been conducted about the wrong variable. Th
             criteria: [
               "İki nokta da adil ve tam özetlendi mi?",
               "Seçim gerekçelendirildi mi ve gerekçe özetten çıkıyor mu?",
-              "Kendi görüş özetin tekrarı değil, ayrı bir sav mı?",
+              "Kendi görüşü özetin tekrarı değil, ayrı bir sav mı?",
               "Adlaştırma ve çekimserlik belirteçleri kullanıldı mı? (on this reading, the incentive)",
               "220–260 kelime aralığında mı?",
             ],
@@ -1410,7 +1410,7 @@ I would not publish it alongside a compensation offer, and I would not describe 
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about apologies, records and who decides what happened.",
+          prompt: "I will ask you some questions about apologies, records and who decides what happened.",
           promptTr: "Sana özürler, kayıtlar ve neyin olduğuna kimin karar verdiği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

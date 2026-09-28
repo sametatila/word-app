@@ -147,7 +147,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-7",
               no: 7,
               text: "Lücke 7",
-              accept: ["adoptierten", "adoptierte"],
+              accept: ["adoptierten"],
               explain:
                 "Çalışma \"mit Erwachsenen, die als Kleinkinder adoptiert wurden\" yapılmış; özet bunu ortaç niteleyicisine çeviriyor: `mit früh adoptierten Erwachsenen`.",
             },
@@ -156,7 +156,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-8",
               no: 8,
               text: "Lücke 8",
-              accept: ["schneller", "rascher", "erfolgreicher", "besser", "zügiger", "im Vorteil"],
+              accept: ["schneller", "rascher", "erfolgreicher", "besser", "zügiger"],
               explain:
                 "\"waren sie deutlich schneller als eine Vergleichsgruppe\" — `als` ile devam ettiği için karşılaştırma biçimi zorunlu.",
             },
@@ -165,7 +165,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-9",
               no: 9,
               text: "Lücke 9",
-              accept: ["unzugänglich", "blockiert", "verdeckt", "unerreichbar", "nicht abrufbar", "verschüttet"],
+              accept: ["unzugänglich", "blockiert", "verdeckt", "unerreichbar", "verschüttet"],
               explain:
                 "Metnin kilit ayrımı: \"nicht gelöscht, sondern lediglich unzugänglich geworden\" — bilgi duruyor, ona ulaşılamıyor.",
             },
@@ -1083,7 +1083,7 @@ Dr. Elena Sturm, Vorstand`,
               id: "de-c1-02-s2-5",
               no: 5,
               text: "Lücke 5 (Hinweis auf eine Anlage)",
-              accept: ["Diesem Schreiben", "Dem Antrag", "Als Anlage", "Anbei", "Beigefügt"],
+              accept: ["Diesem Schreiben", "Dem Antrag", "Als Anlage"],
               explain:
                 "Ek belge duyurulur: `Diesem Schreiben liegt eine detaillierte Kalkulation bei` ya da `Als Anlage …`. Fiil `beiliegen` olduğu için Dativ tümleç uygun düşer.",
             },

@@ -326,9 +326,9 @@ Reviews of the field conclude that the number of {{18}} claims is a better guide
               no: 21,
               text: "The company refused the claim because the form arrived late.\nHad the form arrived on time, the company ______ the claim.",
               cue: "WOULD",
-              accept: ["would not have refused", "wouldn't have refused"],
+              accept: ["would not have refused", "wouldn't have refused", "would have accepted"],
               explain:
-                "Devrik `Had + özne + üçüncü hâl` gerçekleşmemiş bir geçmiş kuruyor ve ana cümle `would have + üçüncü hâl` ister; sonuç olumsuz olduğu için araya `not` girer.",
+                "Devrik `Had + özne + üçüncü hâl` gerçekleşmemiş bir geçmiş kuruyor ve ana cümle `would have + üçüncü hâl` ister; sonuç olumsuz olduğu için araya `not` girer; aynı anlamı veren `would have accepted` da kabul edilir.",
             },
             {
               kind: "gap",
@@ -865,7 +865,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               no: 9,
               ref: "b1",
               text: "Gap 9",
-              accept: ["11000", "eleven thousand"],
+              accept: ["11000", "11,000", "eleven thousand"],
               explain:
                 "Kayıt örneklem büyüklüğünü veriyor: «We looked at eleven thousand complaints across nine companies».",
             },
@@ -1322,7 +1322,7 @@ Selma Aro`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about contracts, promises and reading things before you sign them.",
+          prompt: "I will ask you some questions about contracts, promises and reading things before you sign them.",
           promptTr: "Sana sözleşmeler, verilen sözler ve imzalamadan önce okumak hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
@@ -1407,7 +1407,7 @@ Selma Aro`,
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "Publishing refusal rates by clause is the only one that changes what a company does rather than what it writes, because a bad number is visible to a competitor. You are right that the ban is hard to draft, and I want to concede that properly rather than defend it half-heartedly; what I would keep from it is a narrower version, banning the term only where the company has not published its own working definition. The free adviser helps individuals and changes no policy at all, and the two-page summary produces a third document. So I would recommend the published rates and the free adviser, and reject the summary.",
+              "Publishing refusal rates by clause is the only one that changes what a company does rather than what it writes, because a bad number is visible to a competitor. You are right that the ban is hard to draft, and I want to concede that properly rather than defend it half-heartedly; what I would keep from it is a narrower version, banning the term only where the company has not published its own working definition. The free adviser changes no policy, but it helps the individuals that published rates cannot reach, whereas the two-page summary only produces a third document. So I would recommend the published rates and the free adviser, and reject the summary.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

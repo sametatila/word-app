@@ -244,7 +244,7 @@ The most likely future is therefore a revised one, with different regions adjust
               id: "en-b2-06-l3-14",
               no: 14,
               text: "ACCURATE",
-              accept: ["inaccuracy"],
+              accept: ["inaccuracy", "inaccuracies"],
               explain:
                 "İki nokta üst üstenin ardındaki açıklama test koşullarının gerçek mutfağa benzemediğini söylüyor: eleştiri YANLIŞLIĞA yapılıyor. `accurate` sıfatından `accuracy` adı, ondan da olumsuzu `inaccuracy` türetiliyor.",
             },
@@ -322,7 +322,7 @@ The most likely future is therefore a revised one, with different regions adjust
               no: 21,
               text: "Nobody expected the bill to be so high.\nThe bill ______ than anybody expected.",
               cue: "HIGHER",
-              accept: ["was much higher", "was far higher", "was higher"],
+              accept: ["was much higher", "was far higher", "was higher", "was a lot higher", "was even higher"],
               explain:
                 "«so high» yapısı `than` ile kurulan bir karşılaştırmaya çevriliyor. Anahtar sözcük zaten karşılaştırma derecesi; eksik olan bağ fiil, `much` ve `far` ise beklentiyle arasındaki farkı pekiştirir.",
             },
@@ -858,7 +858,7 @@ The households hardest to reach are those in the {{15}} properties.
               no: 11,
               ref: "b1",
               text: "Gap 11",
-              accept: ["12000", "twelve thousand"],
+              accept: ["12000", "12,000", "twelve thousand"],
               explain:
                 "«we have carried out about twelve thousand individual measures» — tek tek uygulanan iş sayısı. Cümlede `About` zaten yazılı olduğu için yalnız sayı isteniyor.",
             },
@@ -1288,7 +1288,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about your home, bills and what you can and cannot change.",
+          prompt: "I will ask you some questions about your home, bills and what you can and cannot change.",
           promptTr: "Sana evin, faturaların ve neyi değiştirip değiştiremediğin hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

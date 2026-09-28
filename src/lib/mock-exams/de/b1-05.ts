@@ -1431,7 +1431,7 @@ Erol Kaya`,
               { de: "zu einer Entscheidung kommen", tr: "Bir karara varmak" },
             ],
             sample:
-              "Ich schlage den letzten Freitag im Monat vor, weil dann der Kurs früher endet. Statt eines Vortrags könnten wir Stationen machen: eine zum Blutdruckmessen, eine mit einfachen Rückenübungen, eine mit Essen. Dann muss niemand vierzig Minuten stillsitzen. Beim Essen wäre ich dafür, dass jeder etwas mitbringt, weil das billiger ist und weil dann auch Gerichte aus verschiedenen Ländern dabei sind. Die übrigen Kosten, zum Beispiel für das Material, bezahlen wir aus der Kurskasse. Für die Werbung machen wir beides: einen Zettel an jeder Tür und eine Nachricht in den Kursgruppen. Ich übernehme die Zettel, wenn du die Nachrichten schreibst.",
+              "Ich schlage den letzten Freitag im Monat vor, weil dann der Kurs früher endet. Statt eines Vortrags könnten wir Stationen machen: eine zum Blutdruckmessen, eine mit einfachen Rückenübungen, eine mit Essen. Dann muss niemand vierzig Minuten stillsitzen. Beim Essen wäre ich dafür, dass jeder etwas mitbringt, weil das billiger ist und weil dann auch Gerichte aus verschiedenen Ländern dabei sind. Die übrigen Kosten, zum Beispiel für das Material, bezahlen wir aus der Kurskasse. Für die Werbung machen wir beides: einen Zettel an jeder Tür und eine Nachricht in den Kursgruppen. Ich übernehme die Zettel, wenn Sie die Nachrichten schreiben.",
             criteria: [
               "Beş noktanın hepsi konuşuldu mu?",
               "Öneriler gerekçelendirildi mi? (weil, damit, deshalb)",

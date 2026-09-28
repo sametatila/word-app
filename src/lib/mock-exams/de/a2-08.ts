@@ -955,7 +955,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
     {
       skill: "writing",
       minutes: 30,
-      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir özel ileti ve bir yarı resmî ileti yazacaksın.",
       tasks: [
         {

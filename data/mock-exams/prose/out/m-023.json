@@ -42,7 +42,7 @@
  { "tr": "Karşılıklı konuşma doğal akıyor mu, yoksa iki ayrı monolog mu?", "kind": "rubric.criteria", "en": "Does the exchange flow naturally, or is it two separate monologues?" },
  { "tr": "Kendi durumu bir mazeret değil bir açıklama olarak sunuldu mu?", "kind": "rubric.criteria", "en": "Was the speaker's own situation offered as an explanation rather than an excuse?" },
  { "tr": "Kendi kararı gerekçelendirildi mi, yoksa yalnız reddedildi mi?", "kind": "rubric.criteria", "en": "Was the speaker's own decision argued, or was it only a refusal?" },
- { "tr": "Kendi ülke ile buradaki durum somut olarak karşılaştırıldı mı?", "kind": "rubric.criteria", "en": "Were the situation at home and the situation here compared concretely?" },
+ { "tr": "Kendi ülkesi ile buradaki durum somut olarak karşılaştırıldı mı?", "kind": "rubric.criteria", "en": "Were the situation at home and the situation here compared concretely?" },
  { "tr": "Komşuya yazıldığı için `Sie` kullanılıp ton sıcak tutulmuş mu?", "kind": "rubric.criteria", "en": "As this goes to a neighbor, was `Sie` used and was the tone kept warm?" },
  { "tr": "Önerilen çözüm uygulanabilir ve birden çok seçenek sunuyor mu?", "kind": "rubric.criteria", "en": "Is the solution suggested practicable and does it offer more than one option?" },
  { "tr": "Sınır somut çizildi mi (kim, hangi ölçüte göre karar veriyor)?", "kind": "rubric.criteria", "en": "Was the line drawn concretely (who decides, by which criterion)?" },

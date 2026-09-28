@@ -128,9 +128,9 @@ Der Autor hält dagegen, dass Funktionen {{10}} sind und historische Bilder nich
               id: "de-c1-08-l1-4",
               no: 4,
               text: "Lücke 4",
-              accept: ["Vorliebe", "Wahl", "Entscheidung"],
+              accept: ["Wahl", "Entscheidung"],
               explain:
-                "\"Wer ein Datum wählt, wählt mithin eine Vorliebe und keine Tatsache\" — tarih seçimi bir tercihtir.",
+                "\"Wer ein Datum wählt, wählt mithin eine Vorliebe und keine Tatsache\" — tarih seçimi bir tercihtir. Özet `eine … treffen` eşdizimini kullandığı için `Wahl` ya da `Entscheidung` gerekir.",
             },
             {
               kind: "gap",

@@ -342,7 +342,7 @@ Ayla Cakir`,
             },
             {
               key: "b",
-              label: "Vormittagskurs B1",
+              label: "Vormittagskurs",
               body: "Mo bis Do 9 bis 12 Uhr, zwölf Wochen. 320 Euro, Ratenzahlung möglich. Einstufungstest vorher nötig.",
             },
             {
@@ -554,7 +554,7 @@ Frau Sperling: Ich bin dafür. Bei uns bezahlt die Firma die Hälfte der Zeit un
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
-                "İtirazı zamanla değil gözlenmeyle ilgili: meslektaşları \"vor dem Chef keine Fehler machen\" istemedikleri için bırakmış.",
+                "İtirazı zamanla değil gözlenmeyle ilgili: meslektaşları patronun önünde hata yapmak istemedikleri için bırakmış (\"vor dem Chef keine Fehler machen wollten\").",
             },
             {
               kind: "mcq",

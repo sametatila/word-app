@@ -25,9 +25,9 @@ export const EN_B1_04: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-04-l1",
@@ -510,7 +510,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               id: "en-b1-04-l6-29",
               no: 29,
               text: "Gap 29",
-              accept: ["but"],
+              accept: ["but", "yet"],
               explain:
                 "İki yarı karşıtlık kuruyor: zenginleştirmedi, ama sakinleştirdi. `but` bunu verir. `so` sonuç, `because` sebep bildirir ve ikisi de bu karşıtlığı taşıyamaz.",
             },
@@ -920,7 +920,7 @@ Sit with an adviser for:  {{19}} appointments`,
               no: 15,
               ref: "c1",
               text: "Gap 15",
-              accept: ["2000", "two thousand"],
+              accept: ["2000", "2,000", "two thousand"],
               explain:
                 "«last year we saw two thousand people» — geçen yılki danışan sayısı. Not kâğıdı `last year` diyerek hangi sayıyı istediğini belirtiyor; rakam da yazı da kabul edilir.",
             },
@@ -1285,7 +1285,7 @@ I would do it again, although not for the reason people expect. The new job was 
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",
               "Kısmi katılım ifadeleri kullanıldı mı? (I partly agree, it depends on …)",
-              "Sınır nereye konduğu söylendi mi?",
+              "Sınırın nereye konduğu söylendi mi?",
             ],
           },
         },

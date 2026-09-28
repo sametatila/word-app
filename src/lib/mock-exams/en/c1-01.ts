@@ -84,10 +84,10 @@ The reform is easy to describe and hard to sell, {{5}} it appears to weaken the 
               id: "en-c1-01-l1-1",
               no: 1,
               text: "Gap 1",
-              options: ["assume", "presume", "suppose", "conceive"],
+              options: ["assume", "regard", "intend", "conceive"],
               answer: 0,
               explain:
-                "Cümle jürilerin sorgulamadan kabul ettiği bir varsayımı anlatıyor: `assume` bu anlamı en yalın biçimde verir. `presume` bir gerekçeye dayanan varsayımı, `suppose` bir tahmini, `conceive` ise bir şeyi zihinde kurmayı bildirir ve hiçbiri buradaki eleştirel tonu taşımaz.",
+                "Cümle jürilerin sorgulamadan kabul ettiği bir varsayımı anlatıyor: `assume` bu anlamı en yalın biçimde verir. `regard` nesne ve `as` ister, `intend` niyet etmeyi bildirir, `conceive` ise bir şeyi zihinde kurmayı bildirir ve hiçbiri buradaki eleştirel tonu taşımaz.",
             },
             {
               kind: "mcq",
@@ -114,10 +114,10 @@ The reform is easy to describe and hard to sell, {{5}} it appears to weaken the 
               id: "en-c1-01-l1-4",
               no: 4,
               text: "Gap 4",
-              options: ["markedly", "highly", "greatly", "widely"],
+              options: ["markedly", "highly", "deeply", "widely"],
               answer: 0,
               explain:
-                "Boşluk `has fallen` fiilini niteliyor ve anlam gözle görülür bir düşüş: `fallen markedly`. `highly` sıfatlarla gider, `greatly` bu fiille zayıf durur, `widely` ise yaygınlığı bildirir, miktarı değil.",
+                "Boşluk `has fallen` fiilini niteliyor ve anlam gözle görülür bir düşüş: `fallen markedly`. `highly` sıfatlarla gider, `deeply` duygu ve düşünce fiilleriyle gider (deeply regret), düşüş için kullanılmaz, `widely` ise yaygınlığı bildirir, miktarı değil.",
             },
             {
               kind: "mcq",
@@ -134,10 +134,10 @@ The reform is easy to describe and hard to sell, {{5}} it appears to weaken the 
               id: "en-c1-01-l1-6",
               no: 6,
               text: "Gap 6",
-              options: ["given", "carried", "explained", "argued"],
+              options: ["given", "carried", "put", "worn"],
               answer: 3,
               explain:
-                "`argue something away` bir şeyi tartışarak geçersiz kılmak anlamındaki öbek fiil. `explain away` yakın bir anlam taşır ama edilgen özne bir anlatım değil bir değer olduğunda `argued away` daha doğru; `given away` ve `carried away` bambaşka anlamlardadır.",
+                "`wear something away` bir şeyi zamanla aşındırıp yok etmek demektir ve eyleyen sonradan olan her şey: ilk anlatım sonraki olaylarla aşınıyor. `give away` elden çıkarmak ya da ele vermek, `carry away` kendinden geçirmek, `put away` kaldırmak demektir.",
             },
           ],
         },
@@ -1366,7 +1366,7 @@ My own view is that the choice is often false. What is missing is not a decision
             criteria: [
               "İki nokta da adil biçimde özetlendi mi, yoksa biri zayıflatılarak mı sunuldu?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
-              "Kendi görüş özetten ayrılıyor mu, yoksa özetin tekrarı mı?",
+              "Kendi görüşü özetten ayrılıyor mu, yoksa özetin tekrarı mı?",
               "Metin bir denemenin yapısını taşıyor mu — giriş, iki taraf, karar, kendi konumu?",
               "Bağlayıcılar ve çekimserlik ifadeleri C1 düzeyinde mi? (though not for the reason usually given, in the same sense)",
               "220–260 kelime aralığında mı?",
@@ -1434,7 +1434,7 @@ I would add that cataloging is divisible in a way that spending on equipment is 
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about evidence, memory and how you form judgments.",
+          prompt: "I will ask you some questions about evidence, memory and how you form judgments.",
           promptTr: "Sana kanıt, bellek ve yargıya nasıl vardığın hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

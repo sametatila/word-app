@@ -48,7 +48,7 @@ export const EN_C1_10: MockPaper = {
               genre: "Essay",
               genreTr: "Deneme",
               title: "The line and the ground",
-              body: `A border drawn on a map is a claim about the ground, and the ground is under no obligation to {{1}} in.
+              body: `A border drawn on a map is a claim about the ground, and the ground is under no obligation to {{1}} in with it.
 
 Rivers move. A watercourse that was the frontier in 1893 may now run four hundred meters to the east, and the treaty says the river without saying which river, in which year.
 
@@ -87,30 +87,30 @@ Rarely does anybody ask which of them the people living there would {{5}} to. Th
               id: "en-c1-10-l1-3",
               no: 3,
               text: "Gap 3",
-              options: ["by", "on", "from", "with"],
+              options: ["by", "at", "from", "with"],
               answer: 3,
               explain:
-                "`with imperfect information` bir koşulu bildirir ve cümlenin ikinci yarısı da aynı biçimde kuruluyor: `under a deadline`. `from` kaynağı, `on` dayanağı gösterir.",
+                "`with imperfect information` bir koşulu bildirir ve cümlenin ikinci yarısı da aynı biçimde kuruluyor: `under a deadline`. `from` kaynağı, `at` ise bir noktayı gösterir ve `information` ile kurulmaz.",
             },
             {
               kind: "mcq",
               id: "en-c1-10-l1-4",
               no: 4,
               text: "Gap 4",
-              options: ["award", "acquire", "assert", "attach"],
+              options: ["award", "acquire", "admit", "attach"],
               answer: 1,
               explain:
-                "`acquire authority` bir şeyin zamanla otorite kazanmasını anlatır ve cümle haritanın çizildikten sonra bunu kazandığını söylüyor. `award` ödül olarak vermek, `assert` ileri sürmek, `attach` iliştirmektir.",
+                "`acquire authority` bir şeyin zamanla otorite kazanmasını anlatır ve cümle haritanın çizildikten sonra bunu kazandığını söylüyor. `award` ödül olarak vermek, `admit` kabul etmek ya da içeri almak, `attach` iliştirmektir.",
             },
             {
               kind: "mcq",
               id: "en-c1-10-l1-5",
               no: 5,
               text: "Gap 5",
-              options: ["hold", "keep", "adhere", "point"],
+              options: ["abide", "comply", "adhere", "point"],
               answer: 2,
               explain:
-                "`adhere to something` bir belgeye ya da kurala bağlı kalmayı anlatır ve soru insanların hangisine bağlı kalacağıdır. `hold to` ve `keep to` da bağlılık bildirir ama bir belgeye bağlılıkta en yerleşik eş dizim `adhere to`dur; `point to` ise işaret etmektir.",
+                "`adhere to something` bir belgeye ya da kurala bağlı kalmayı anlatır ve soru insanların hangisine bağlı kalacağıdır. `abide` bu anlamda `by`, `comply` ise `with` ister, `to` almaz; `point to` ise işaret etmektir.",
             },
             {
               kind: "mcq",
@@ -310,7 +310,7 @@ Reviews conclude that a resurvey is politically {{18}} in almost every case wher
               no: 19,
               text: "Nobody has walked the whole line since 1954.\nThe whole line ______ since 1954.",
               cue: "WALKED",
-              accept: ["has not been walked"],
+              accept: ["has not been walked", "hasn't been walked"],
               explain:
                 "`Nobody has …` yapısı edilgene çevrilirken olumsuzluk yükleme taşınıyor: `has not been walked`. Anahtar sözcük üçüncü hâl olduğu için zincir `has been` ile tamamlanır.",
             },
@@ -965,7 +965,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               id: "c1",
               genre: "Panel discussion",
               genreTr: "Panel tartışması",
-              situation: "Bir yönetici, ölçüm uzmanı Mira, hukukçu Ondrej ve yerel temsilci Piet ile konuşuyor.",
+              situation: "Bir moderatör, ölçüm uzmanı Mira, hukukçu Ondrej ve yerel temsilci Piet ile konuşuyor.",
               plays: 1,
               segments: [
                 { speaker: "Chair", text: "Mira, the survey says the line is forty meters out. Should it be moved?" },
@@ -1328,7 +1328,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
           prompt:
             "You have attended a seminar on boundaries and records. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Where a record and long local practice disagree, the record should govern, because it can be checked by anybody.\n2. Where they disagree, practice should govern, because it reflects how people have actually lived.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Sınırlar ve kayıtlar üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kayıt ile yerleşik uygulama çeliştiğinde kayıt esas alınmalı; çünkü kaydı herkes denetleyebilir.\n2. Çeliştiklerinde uygulama esas alınmalı; çünkü insanların gerçekte nasıl yaşadığını gösterir.\n\n220–260 kelime yaz.",
+            "Sınırlar ve kayıtlar üzerine bir seminere katıldın. Eğitmenin için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kayıt ile yerleşik uygulama çeliştiğinde kayıt esas alınmalı; çünkü kaydı herkes denetleyebilir.\n2. Çeliştiklerinde uygulama esas alınmalı; çünkü insanların gerçekte nasıl yaşadığını gösterir.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1349,7 +1349,7 @@ My own view is that the argument conceals a category error. The text, the marker
             criteria: [
               "İki nokta da adil ve tam özetlendi mi?",
               "Seçim gerekçelendirildi mi ve gerekçe özetten çıkıyor mu?",
-              "Kendi görüş özetin tekrarı değil, ayrı bir sav mı?",
+              "Kendi görüşü özetin tekrarı değil, ayrı bir sav mı?",
               "Adlaştırma ve çekimserlik belirteçleri kullanıldı mı? (on balance, by contrast, in a restricted form)",
               "220–260 kelime aralığında mı?",
             ],
@@ -1410,7 +1410,7 @@ I would not move any fence on the basis of it, and I would not approach the neig
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about maps, records and the difference between them and the ground.",
+          prompt: "I will ask you some questions about maps, records and the difference between them and the ground.",
           promptTr: "Sana haritalar, kayıtlar ve bunlarla arazi arasındaki fark hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

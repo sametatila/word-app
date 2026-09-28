@@ -795,7 +795,7 @@ Day of appointment: {{5}}`,
               id: "en-a1-11-w1-2",
               no: 2,
               text: "Age",
-              accept: ["41", "41 years", "41 years old", "forty-one", "forty-one years old"],
+              accept: ["41", "41 years", "41 years old", "forty-one", "forty-one years", "forty-one years old"],
               explain:
                 "Yönergede «She is 41 years old» geçiyor. Rakam da yazı da kabul edilir; ölçülen şey imla değil, bilgiyi doğru alana taşımak.",
             },

@@ -44,9 +44,9 @@ export const EN_B1_01: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-01-l1",
@@ -284,7 +284,7 @@ My own view after two years of reporting on this town is simple. The four-day we
               ],
               answer: 2,
               explain:
-                "Yazar dönüm noktasını adlandırıyor: «What changed things was not a new rule but a new habit» — birimler hangi toplantının karar ürettiğini yazmaya başlamış ve altı ayda toplantıların üçte biri kaybolmuş. Kural ve para açıkça eleniyor.",
+                "Yazar dönüm noktasını adlandırıyor: «What changed things was not a new rule but a new habit» — birimler hangi toplantının karar ürettiğini yazmaya başlamış ve altı ayda toplantıların üçte biri kaybolmuş. Kural açıkça eleniyor; bölümlere para ya da öteki şehirlerden yardım metinde hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -462,10 +462,10 @@ And finally, go home on time. A person who stays until eight in the first week s
               id: "en-b1-01-l5-22",
               no: 22,
               text: "Gap 22",
-              options: ["have forgotten", "forget", "will be forgetting", "forgot"],
+              options: ["have forgotten", "forgetting", "be forgetting", "forgot"],
               answer: 0,
               explain:
-                "Zaman belirteci `after three days` bir noktaya kadar tamamlanmış bir sonucu anlatıyor ve cümlenin ilk yarısı da `will have met` biçiminde. Aynı yapı ikinci yarıda da sürüyor. `forgot` geçmiş zamandır ve gelecekteki bir noktaya bağlanamaz; `will be forgetting` ise o anda süren bir eylem anlatır, tamamlanmış bir sonucu değil.",
+                "Zaman belirteci `after three days` bir noktaya kadar tamamlanmış bir sonucu anlatıyor ve cümlenin ilk yarısı da `will have met` biçiminde. Aynı yapı ikinci yarıda da sürüyor. `forgot` geçmiş zamandır ve gelecekteki bir noktaya bağlanamaz; `be forgetting` o anda süren bir eylem anlatır, tamamlanmış bir sonucu değil; `forgetting` ise `will` ardından kurulamaz.",
             },
             {
               kind: "mcq",

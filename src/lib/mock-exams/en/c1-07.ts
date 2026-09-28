@@ -958,7 +958,7 @@ Cataloging is the first line {{14}} in a budget round.`,
               id: "c1",
               genre: "Panel discussion",
               genreTr: "Panel tartışması",
-              situation: "Bir yönetici, arşivci Halvard, tarihçi Ines ve belge sorumlusu Runa ile konuşuyor.",
+              situation: "Bir moderatör, arşivci Halvard, tarihçi Ines ve belge sorumlusu Runa ile konuşuyor.",
               plays: 1,
               segments: [
                 { speaker: "Chair", text: "Halvard, you have argued against publishing the criteria in full. Why?" },
@@ -1409,7 +1409,7 @@ I would not recommend scanning on request as the sole route of access, and I wou
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about records, memory and what organizations keep.",
+          prompt: "I will ask you some questions about records, memory and what organizations keep.",
           promptTr: "Sana kayıtlar, hafıza ve kurumların neyi sakladığı hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

@@ -29,9 +29,9 @@ export const EN_B1_09: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-09-l1",
@@ -525,9 +525,9 @@ If I could give the two people arriving next month one piece of advice, it would
               id: "en-b1-09-l6-27",
               no: 27,
               text: "Gap 27",
-              accept: ["though"],
+              accept: ["though", "if", "when"],
               explain:
-                "`even though` bir ödün cümlesi kurar ve önündeki `even` boşluktan hemen önce duruyor. `if` ile kurulan `even if` varsayım bildirir, oysa mobilyanın aynı kaldığı bir olgu.",
+                "`even though` bir ödün cümlesi kurar ve önündeki `even` boşluktan hemen önce duruyor. Cümle genel bir durum anlattığı için `even if` ve `even when` de doğal ve kabul edilir.",
             },
             {
               kind: "gap",
@@ -552,9 +552,9 @@ If I could give the two people arriving next month one piece of advice, it would
               id: "en-b1-09-l6-30",
               no: 30,
               text: "Gap 30",
-              accept: ["in"],
+              accept: ["in", "during"],
               explain:
-                "Ay adlarıyla `in` kullanılır: `in January`. Cümle martı ocakta konuşmayı öneriyor, yani iki ay iki ayrı işlevde.",
+                "Ay adlarıyla `in` kullanılır: `in January`; `during January` da aynı anlamı verir. Cümle martı ocakta konuşmayı öneriyor, yani iki ay iki ayrı işlevde.",
             },
           ],
         },
@@ -1199,7 +1199,7 @@ I did not ask it in my last apartment. In November one of us moved out and the b
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about where you live and about sharing space with other people.",
+          prompt: "I will ask you some questions about where you live and about sharing space with other people.",
           promptTr: "Sana yaşadığın yer ve başkalarıyla alan paylaşmak hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

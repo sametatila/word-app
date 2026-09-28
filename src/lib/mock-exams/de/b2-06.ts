@@ -899,34 +899,34 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
               situation: "Bir enerji danışmanı ev sahipleriyle deneyimlerini anlatıyor.",
               plays: 2,
               segments: [
-                { speaker: "Moderator", text: "Frau Grohmann, Sie beraten seit acht Jahren. Was fragen die Leute zuerst?" },
+                { speaker: "Moderator", text: "Frau Lindner, Sie beraten seit acht Jahren. Was fragen die Leute zuerst?" },
                 {
-                  speaker: "Frau Grohmann",
+                  speaker: "Frau Lindner",
                   text: "Fast immer nach der Heizung. Dabei ist sie selten der erste Schritt. In den meisten Häusern bringt die Dichtung an Fenstern und Türen mehr — für ein Zwanzigstel des Geldes.",
                 },
                 { speaker: "Moderator", text: "Warum steht die Heizung dann so im Vordergrund?" },
                 {
-                  speaker: "Frau Grohmann",
+                  speaker: "Frau Lindner",
                   text: "Weil sie ein Gerät ist. Man kann sie kaufen, sehen und vorzeigen. Eine dichte Tür sieht niemand, und sie taugt nicht als Gesprächsthema am Gartenzaun.",
                 },
                 { speaker: "Moderator", text: "Wie oft folgen die Leute Ihrem Rat?" },
                 {
-                  speaker: "Frau Grohmann",
+                  speaker: "Frau Lindner",
                   text: "Bei kleinen Maßnahmen fast immer. Bei großen selten, und das liegt nicht am Wollen. Wer sechzig ist und keine Rücklage hat, bekommt für zwanzig Jahre keinen Kredit mehr.",
                 },
                 { speaker: "Moderator", text: "Hilft die Förderung?" },
                 {
-                  speaker: "Frau Grohmann",
+                  speaker: "Frau Lindner",
                   text: "Sie hilft denen, die vorstrecken können. Ausgezahlt wird nach der Rechnung, nicht davor. Wer die vierzigtausend nicht hat, für den existiert die Förderung praktisch nicht.",
                 },
                 { speaker: "Moderator", text: "Was hat sich in acht Jahren verändert?" },
                 {
-                  speaker: "Frau Grohmann",
+                  speaker: "Frau Lindner",
                   text: "Die Beratung ist besser geworden, die Umsetzung nicht. Ich schreibe heute genauere Berichte als früher, und ein größerer Teil davon bleibt liegen.",
                 },
                 { speaker: "Moderator", text: "Was würden Sie ändern?" },
                 {
-                  speaker: "Frau Grohmann",
+                  speaker: "Frau Lindner",
                   text: "Ich würde die Förderung an das Haus binden, nicht an die Person. Dann könnte sie mit dem Gebäude weitergehen, und das Alter der Eigentümer wäre kein Hindernis mehr.",
                 },
               ],
@@ -1345,7 +1345,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
     {
       skill: "writing",
       minutes: 75,
-      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir okur mektubu ve yarı resmî bir ileti.",
       tasks: [
         {
@@ -1408,7 +1408,7 @@ Lea Sonnenberg`,
               { de: "Vermeiden Sie Schuldzuweisungen an einzelne Nachbarn.", tr: "Tek tek komşuları suçlamaktan kaçın." },
               { de: "Schlagen Sie eine Lösung vor.", tr: "Bir çözüm öner." },
             ],
-            sample: `Sehr geehrte Frau Meiners,
+            sample: `Sehr geehrte Frau Brandt,
 
 in unserem Haus wird die Biotonne seit dem Frühjahr regelmäßig falsch befüllt; zuletzt lagen Plastiktüten und Glas darin.
 

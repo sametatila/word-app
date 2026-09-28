@@ -24,9 +24,9 @@ export const EN_A2_07: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer each question with one choice.",
+        "There are five tasks in this part. You read short texts, ads and a longer article, and you complete two short texts. Answer every question.",
       instructionTr:
-        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-a2-07-l1",
@@ -402,18 +402,18 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               id: "en-a2-07-l5-22",
               no: 22,
               text: "Gap 22",
-              accept: ["so"],
+              accept: ["so", "and"],
               explain:
-                "İkinci yarı birincinin sonucu: araba kullanmayı öğrenmediği için her yere yürümüş. `so` sonucu verir; `but` karşıtlık ister ve burada karşıtlık yok.",
+                "İkinci yarı birincinin sonucu: araba kullanmayı öğrenmediği için her yere yürümüş. `so` sonucu verir, `and` de kabul edilir. `but` ise karşıtlık ister; burada karşıtlık yok.",
             },
             {
               kind: "gap",
               id: "en-a2-07-l5-23",
               no: 23,
               text: "Gap 23",
-              accept: ["on"],
+              accept: ["on", "at"],
               explain:
-                "Belirli bir gün için `on` kullanılır ve doğum günü bir gündür: `on her sixtieth birthday`. `in` ay ve yıl için, `at` ise saat için gelir.",
+                "Belirli bir gün için `on` kullanılır ve doğum günü bir gündür: `on her sixtieth birthday`. `at` da kabul edilir: doğum günü kutlamasında demek olur. `in` ay ve yıl için gelir.",
             },
             {
               kind: "gap",
@@ -667,7 +667,7 @@ Please bring a plate and a {{10}}`,
           format: "mcq",
           goal: "gist",
           prompt: "You hear five short speakers, questions 11 to 15. What is each person doing? Each recording plays twice.",
-          promptTr: "Beş kısa konuşmacı dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
+          promptTr: "Beş kişinin kısa konuşmasını dinleyeceksin, 11–15. maddeler. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",
@@ -992,8 +992,8 @@ Zsofia`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: an interview, a photograph, and a decision you make together.",
-      instructionTr: "Bu bölümde üç görev var: söyleşi, fotoğraf anlatma ve birlikte karar verme.",
+      instruction: "There are three tasks in this part: an interview, a situation to describe, and a decision you make together.",
+      instructionTr: "Bu bölümde üç görev var: söyleşi, bir durumu anlatma ve birlikte karar verme.",
       tasks: [
         {
           id: "en-a2-07-s1",

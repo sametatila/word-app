@@ -26,9 +26,9 @@ export const EN_B1_06: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-06-l1",
@@ -446,10 +446,10 @@ None of this takes long. An hour of questions can {{25}} you from a year of quie
               id: "en-b1-06-l5-25",
               no: 25,
               text: "Gap 25",
-              options: ["keep", "hold", "stop", "save"],
+              options: ["prevent", "hold", "stop", "save"],
               answer: 3,
               explain:
-                "`save somebody from something` birini bir dertten kurtarmak demektir. `keep from` ve `stop from` engellemeyi bildirir ve ardından ulaç ister; `hold from` kalıp değildir.",
+                "`save somebody from something` birini bir dertten kurtarmak demektir. `prevent from` ve `stop from` engellemeyi bildirir ve ardından ulaç ister; `hold from` kalıp değildir.",
             },
           ],
         },
@@ -493,9 +493,9 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               id: "en-b1-06-l6-27",
               no: 27,
               text: "Gap 27",
-              accept: ["for"],
+              accept: ["for", "in"],
               explain:
-                "Süre bildiren `for` bir zaman aralığının uzunluğunu verir: «for nearly a year». `since` bir başlangıç noktası ister (since March), `in` ise bir süre içinde tamamlanmayı bildirir.",
+                "Süre bildiren `for` bir zaman aralığının uzunluğunu verir: «for nearly a year». `since` bir başlangıç noktası ister (since March), Amerikan İngilizcesinde olumsuz cümlede `in` de aynı süreyi verir (no progress in nearly a year), o da kabul edilir.",
             },
             {
               kind: "gap",
@@ -942,7 +942,7 @@ New players sit in the:     {{19}} row`,
               no: 17,
               ref: "c1",
               text: "Gap 17",
-              accept: ["half past seven", "7:30", "19:30"],
+              accept: ["half past seven", "seven thirty", "7:30", "19:30"],
               explain:
                 "«Rehearsals are on Wednesday at half past seven in the school hall» — prova saati. Yazıyla da rakamla da yazılabilir; yirmi dört saatlik biçim de kabul edilir.",
             },
@@ -1167,7 +1167,7 @@ What I get from it is not pictures. It is that I look at things for longer than 
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about your free time and about learning new things.",
+          prompt: "I will ask you some questions about your free time and about learning new things.",
           promptTr: "Sana boş zamanın ve yeni şeyler öğrenmek hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

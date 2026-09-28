@@ -88,10 +88,10 @@ None of this means that quiet carriages solve anything large. They do, however, 
               id: "en-b2-01-l1-1",
               no: 1,
               text: "Gap 1",
-              options: ["stick", "hold", "obey", "follow"],
+              options: ["stick", "respect", "obey", "follow"],
               answer: 0,
               explain:
-                "Boşluktan sonra `to them` var ve anlam kurallara uymak. `stick to` bu öbek fiili kurar. `hold to` başka bir anlam taşır (bir söze bağlı kalmak), `obey` ve `follow` ise `to` almaz.",
+                "Boşluktan sonra `to them` var ve anlam kurallara uymak. `stick to` bu öbek fiili kurar. `respect`, `obey` ve `follow` anlamca yakın ama `to` almaz.",
             },
             {
               kind: "mcq",
@@ -118,10 +118,10 @@ None of this means that quiet carriages solve anything large. They do, however, 
               id: "en-b2-01-l1-4",
               no: 4,
               text: "Gap 4",
-              options: ["suffer", "face", "meet", "stand"],
+              options: ["suffer", "face", "meet", "cope"],
               answer: 1,
               explain:
-                "Nesne `the disapproval of thirty strangers` ve anlam bir tepkiyle karşı karşıya kalmak: `face disapproval` doğal bir eşdizim. `suffer` acı çekmeyi, `meet` karşılamayı (meet a demand), `stand` ise katlanmayı bildirir ve `would rather … than` yapısındaki kaçınma anlamını bozar.",
+                "Nesne `the disapproval of thirty strangers` ve anlam bir tepkiyle karşı karşıya kalmak: `face disapproval` doğal bir eşdizim. `suffer` daha çok bir kayıp ya da zararla gider (suffer a loss), `meet` karşılamayı bildirir (meet a demand), `cope` ise nesnesini `with` ile alır ve burada `with` yok.",
             },
             {
               kind: "mcq",
@@ -131,7 +131,7 @@ None of this means that quiet carriages solve anything large. They do, however, 
               options: ["deep", "wide", "vast", "broad"],
               answer: 2,
               explain:
-                "`the vast majority` yerleşik bir eşdizim. `large majority` de geçer ama `vast` bu kalıpta belirgin biçimde daha sık; `wide` ve `broad` `majority` ile kullanılmaz, onlar `range` ya da `agreement` ile gider.",
+                "`the vast majority` yerleşik bir eşdizim. `large majority` de geçer ama `vast` bu kalıpta belirgin biçimde daha sık; `wide` ve `broad` bu kalıpta doğal durmaz, daha çok `range` ya da `agreement` ile gider.",
             },
             {
               kind: "mcq",
@@ -212,9 +212,9 @@ Neither approach has been evaluated properly. If the funding {{12}} arrived with
               id: "en-b2-01-l2-11",
               no: 11,
               text: "Gap 11",
-              accept: ["in", "on"],
+              accept: ["in"],
               explain:
-                "`in the belief that …` bir gerekçeyi bildiren yerleşik kalıp: talebin düşeceğine inandıkları için hiçbir şey yapmamışlar. `on the belief` de bazı yazarlarda geçer; `with` ya da `for` bu adla bu anlamı vermez.",
+                "`in the belief that …` bir gerekçeyi bildiren yerleşik kalıp: talebin düşeceğine inandıkları için hiçbir şey yapmamışlar. `on`, `with` ya da `for` bu adla bu anlamı vermez.",
             },
             {
               kind: "gap",
@@ -1349,7 +1349,7 @@ I recommend converting the two unused storage rooms on the second floor into boo
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about your work or studies and about how you organize your time.",
+          prompt: "I will ask you some questions about your work or studies and about how you organize your time.",
           promptTr: "Sana işin ya da öğrenimin ve zamanını nasıl düzenlediğin hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

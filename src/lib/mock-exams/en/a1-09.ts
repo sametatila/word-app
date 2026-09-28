@@ -306,7 +306,7 @@ Ask at the desk for more time.`,
               text: "The story hour is on Wednesday.",
               answer: true,
               explain:
-                "Levha günü ve saati birlikte veriyor: «Story hour: Wednesday at 16». Levhanın üst satırı ise yeri söylüyor: çocuk kitapları birinci katta. Cümlede sorulan gün, bu iki bilgiden ilkidir.",
+                "Levha günü ve saati birlikte veriyor: «Story hour: Wednesday at 16». Levhanın üst satırı ise yeri söylüyor: çocuk kitapları zemin katta. Cümlede sorulan gün, bu iki bilgiden ilkidir.",
             },
             {
               kind: "bool",
@@ -798,7 +798,7 @@ Course:            {{5}}`,
               id: "en-a1-09-w1-2",
               no: 2,
               text: "Age",
-              accept: ["27", "27 years", "twenty-seven", "twenty-seven years old"],
+              accept: ["27", "27 years", "27 years old", "twenty-seven", "twenty-seven years", "twenty-seven years old"],
               explain:
                 "Yönergede «She is 27 years old» geçiyor. Rakam da yazı da kabul edilir; ölçülen şey imla değil, bilgiyi doğru alana taşımak.",
             },

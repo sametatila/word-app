@@ -243,18 +243,18 @@ Whether that is a price worth paying is a political question rather than a techn
               id: "en-c1-05-l3-14",
               no: 14,
               text: "ORGANIZE",
-              accept: ["organization"],
+              accept: ["organization", "organisation"],
               explain:
-                "`not a matter of principle but of ___` yapısı `of` edatının ardında bir ad ister ve karşıtlık ilkeyle kuruluyor: sorun düzenleme biçiminde. Britanya ve Amerika yazımı ikisi de kabul edilir.",
+                "`not a matter of principle but of ___` yapısı `of` edatının ardında bir ad ister ve karşıtlık ilkeyle kuruluyor: sorun düzenleme biçiminde. Amerikan (`organization`) ve İngiliz (`organisation`) yazımının ikisi de kabul edilir.",
             },
             {
               kind: "gap",
               id: "en-c1-05-l3-15",
               no: 15,
               text: "ROMANCE",
-              accept: ["romanticism"],
+              accept: ["romanticism", "romanticizing", "romanticising"],
               explain:
-                "`accused of ___` yapısı bir ad ister ve suçlama bir tutuma yöneliyor: geçmişi güzelleştirmek. `romantic` sıfattır, `romance` ise bu bağlamda başka bir anlam taşır.",
+                "`accused of ___` yapısı bir ad ister ve suçlama bir tutuma yöneliyor: geçmişi güzelleştirmek. `romantic` sıfattır; `romance` ise bu bağlamda başka bir anlam taşır. `romanticizing` (geçmişi güzelleştirmek) da kabul edilir.",
             },
             {
               kind: "gap",
@@ -904,7 +904,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               no: 14,
               ref: "b1",
               text: "Gap 14",
-              accept: ["11000", "eleven thousand"],
+              accept: ["11000", "11,000", "eleven thousand"],
               explain:
                 "«Each competition costs about eleven thousand pounds in staff time, and nobody had ever added that up before». Rakamın kendisi kadar hiç toplanmamış olması da bir bulgu.",
             },
@@ -1330,7 +1330,7 @@ I recommend adopting the work sample for these positions, on two conditions: tha
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about work, selection and how organizations decide.",
+          prompt: "I will ask you some questions about work, selection and how organizations decide.",
           promptTr: "Sana iş, seçme süreçleri ve kurumların nasıl karar verdiği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

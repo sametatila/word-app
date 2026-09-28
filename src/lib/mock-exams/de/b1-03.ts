@@ -647,7 +647,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               plays: 1,
               segments: [
                 {
-                  text: "Ab dem ersten Oktober fährt die Buslinie neun nicht mehr über den Marktplatz, sondern über die Ringstraße. Die Fahrt wird dadurch etwa vier Minuten kürzer. Zwei Haltestellen entfallen, dafür kommt eine neue am Krankenhaus dazu. Die Stadt bittet Fahrgäste, die alten Fahrpläne wegzuwerfen, weil an den Haltestellen zunächst beide Pläne hängen.",
+                  text: "Ab dem ersten Oktober fährt die Buslinie neun nicht mehr über den Marktplatz, sondern über die Ringstraße. Die Fahrt wird dadurch etwa vier Minuten kürzer. Zwei Haltestellen entfallen, dafür kommt eine neue am Krankenhaus dazu. Die Stadt bittet Fahrgäste, auf das Datum auf dem Fahrplan zu achten, weil an den Haltestellen zunächst beide Pläne hängen.",
                 },
               ],
             },
@@ -1201,7 +1201,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
     {
       skill: "writing",
       minutes: 60,
-      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halboffizielle Nachricht.",
       instructionTr: "Bu bölümde üç görev var: özel bir ileti, bir forum yazısı ve yarı resmî bir ileti.",
       tasks: [
         {

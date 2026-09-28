@@ -26,9 +26,9 @@ export const EN_B1_11: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-11-l1",
@@ -357,8 +357,8 @@ None of this is an argument for shopping in an expensive store out of principle.
           options: [
             { key: "a", label: "a", body: "That is not a punishment; it is the cost of handling, and it is genuinely there." },
             { key: "b", label: "b", body: "Every part of the way food is sold assumes a household of at least three." },
-            { key: "c", label: "c", body: "Nobody in the store is deciding to make life harder for one person; the system arrived before the person did." },
-            { key: "d", label: "d", body: "It is telling you how many people the store expects you to be." },
+            { key: "c", label: "c", body: "That extra work is nobody's decision; the system arrived before the person did." },
+            { key: "d", label: "d", body: "Carrots keep for about three weeks in a cool, dark place." },
             { key: "e", label: "e", body: "Size is doing the work here, not virtue, and it will stop as soon as the small store becomes a chain." },
             { key: "f", label: "f", body: "The first supermarket in this country opened in 1948 and had eleven members of staff." },
           ],
@@ -379,7 +379,7 @@ None of this is an argument for shopping in an expensive store out of principle.
               text: "Gap 17",
               answer: "c",
               explain:
-                "Paragraf tek havuç isteyenin dükkâna daha çok iş çıkardığını söylüyor. (c) bunun kimsenin kararı olmadığını ekliyor: «the system arrived before the person did».",
+                "Paragraf tek havuç isteyenin dükkâna daha çok iş çıkardığını söylüyor. (c) «That extra work» ile bu işe dönüyor ve bunun kimsenin kararı olmadığını ekliyor: «the system arrived before the person did».",
             },
             {
               kind: "match",
@@ -463,7 +463,7 @@ And a kitchen {{25}} runs on good intentions will produce a great deal of old br
               id: "en-b1-11-l5-23",
               no: 23,
               text: "Gap 23",
-              options: ["removing", "remove", "removed", "to remove"],
+              options: ["removing", "remove", "removed", "removes"],
               answer: 0,
               explain:
                 "Noktalı virgülden sonra cümlenin öznesi gerekiyor ve özne bir eylem adı: `removing the decision is`. Yalın ya da çekimli biçim bu konumda özne olamaz.",
@@ -956,7 +956,7 @@ The next class is on the {{19}}`,
               no: 15,
               ref: "c1",
               text: "Gap 15",
-              accept: ["12", "twelve"],
+              accept: ["12", "twelve", "12 pm", "12pm", "12 p.m.", "12:00", "noon", "midday", "twelve o'clock"],
               explain:
                 "«from ten to twelve» — bitiş saati. On başlangıç saati; not kâğıdı bitişi soruyor.",
             },
@@ -1200,7 +1200,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about cooking, shopping and eating.",
+          prompt: "I will ask you some questions about cooking, shopping and eating.",
           promptTr: "Sana yemek yapmak, alışveriş ve yemek yemek hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

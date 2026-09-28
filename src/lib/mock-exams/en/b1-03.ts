@@ -25,9 +25,9 @@ export const EN_B1_03: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-03-l1",
@@ -435,10 +435,10 @@ And finally, be honest with the person treating you. A physical therapist can on
               id: "en-b1-03-l5-24",
               no: 24,
               text: "Gap 24",
-              options: ["give", "make", "pay", "put"],
+              options: ["take", "make", "pay", "put"],
               answer: 2,
               explain:
-                "`pay attention to` sabit bir eşdizim. `give attention` seyrek ve daha zayıf bir kullanımdır, `make attention` ve `put attention` ise İngilizcede yoktur.",
+                "`pay attention to` sabit bir eşdizim. `take attention`, `make attention` ve `put attention` İngilizcede yoktur.",
             },
             {
               kind: "mcq",
@@ -1161,7 +1161,7 @@ I would recommend it, although not to everybody. If you already walk a lot, it w
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about sport and about your day.",
+          prompt: "I will ask you some questions about sport and about your day.",
           promptTr: "Sana spor ve günün hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

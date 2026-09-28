@@ -243,7 +243,7 @@ The most likely future is therefore a mixed one, with different fields making di
               id: "en-b2-02-l3-14",
               no: 14,
               text: "CONSIST",
-              accept: ["inconsistency"],
+              accept: ["inconsistency", "inconsistencies"],
               explain:
                 "Cümlenin devamı iki hakemin tamamen anlaşmazlığa düştüğünü söylüyor: eleştiri tutarSIZLIĞA yapılıyor. Kökten ilk olarak `consistent` sıfatı, sonra olumsuzu `inconsistent`, sonra adı `inconsistency` türetiliyor. Olumsuzluk eki olmadan cümle tersine döner.",
             },
@@ -1316,7 +1316,7 @@ For anybody who reads statistics in the news, however, it is the most useful six
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about news, information and how you decide what to believe.",
+          prompt: "I will ask you some questions about news, information and how you decide what to believe.",
           promptTr: "Sana haberler, bilgi ve neye inanacağına nasıl karar verdiğin hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

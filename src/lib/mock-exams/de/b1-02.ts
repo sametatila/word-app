@@ -337,7 +337,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
               text: "Herr Weiss hat einen alten Toaster, den er nicht wegwerfen will. Geld ausgeben möchte er dafür nicht.",
               answer: "a",
               explain:
-                "(a) küçük cihazları onarmaya yardım ediyor ve yardım ücretsiz; yalnız yedek parça ödeniyor. Toaster açıkça \"Kleingeräte\" kapsamında.",
+                "(a) küçük cihazları onarmaya yardım ediyor ve yardım ücretsiz; yalnız yedek parça ödeniyor. Tost makinesi açıkça \"Kleingeräte\" kapsamında.",
             },
             {
               kind: "match",
@@ -401,9 +401,9 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
           format: "mcq",
           goal: "opinion",
           prompt:
-            "In einem Online-Forum wird gefragt: \"Soll die Innenstadt autofrei werden?\" Lesen Sie die Kommentare 20 bis 26. Ist die Person dafür oder dagegen?",
+            "In einem Online-Forum wird gefragt: \"Soll die Innenstadt wie geplant autofrei werden?\" Lesen Sie die Kommentare 20 bis 26. Ist die Person dafür oder dagegen?",
           promptTr:
-            "Bir çevrimiçi forumda soruluyor: \"Şehir merkezi araç trafiğine kapatılmalı mı?\" 20–26. yorumları oku. Kişi bunun yanında mı karşısında mı?",
+            "Bir çevrimiçi forumda soruluyor: \"Şehir merkezi planlandığı gibi araç trafiğine kapatılmalı mı?\" 20–26. yorumları oku. Kişi bunun yanında mı karşısında mı?",
           texts: [
             {
               kind: "text",
@@ -1408,7 +1408,7 @@ Elena Vogt`,
               { de: "auf eine Frage antworten", tr: "Sorulan soruyu cevaplamak" },
             ],
             sample:
-              "Danke, mir hat besonders gefallen, dass du ein eigenes Beispiel gebracht hast — das mit dem Kassenbon kenne ich genau so. Meine Frage: Du hast gesagt, in deinem Heimatland wird inoffiziell getrennt. Funktioniert das am Ende besser oder schlechter? — Zu deiner Frage: Bei Metall und Glas funktioniert es erstaunlich gut, weil damit Geld verdient wird. Bei Papier dagegen fast gar nicht, weil sich das nicht lohnt.",
+              "Ja, am Anfang fand ich Mülltrennen ehrlich gesagt übertrieben. Seit ich weiß, wie viel Glas und Papier wiederverwertet wird, trenne ich viel genauer. — Jetzt zu Ihrer Präsentation: Mir hat besonders gefallen, dass Sie ein eigenes Beispiel gebracht haben — das mit dem Kassenbon kenne ich genau so. Meine Frage: Sie haben gesagt, dass man in Ihrem Heimatland auch Müll trennt. Wie gut funktioniert das dort im Alltag? — Das kenne ich: Wenn der Weg zu weit ist, macht man es eben nicht. Vielen Dank für das Gespräch.",
             criteria: [
               "Geri bildirim sunumun somut bir yerine mi gönderme yapıyor?",
               "Soru içeriğe ilişkin mi ve gerçekten cevaplanabilir mi?",

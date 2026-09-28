@@ -517,7 +517,7 @@ Aber ich habe kein Tier, das den ganzen Tag auf mich wartet. Damit kann ich gut 
               kind: "match",
               id: "de-a2-12-l4-20",
               no: 20,
-              text: "Frau Ines Hillenbrand braucht am Sonntagabend schnell einen Arzt für ihre Katze.",
+              text: "Frau Hillenbrand braucht am Sonntagabend schnell einen Arzt für ihre Katze.",
               answer: "c",
               explain:
                 "(c) hafta sonu ve akşam çalışıyor: \"Abends, nachts und am Wochenende erreichbar.\"",

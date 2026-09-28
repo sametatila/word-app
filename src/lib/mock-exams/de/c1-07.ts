@@ -1090,7 +1090,7 @@ Ruth {{10}}`,
               text: "Lücke 4 (Einräumung)",
               accept: ["allerdings", "hingegen", "indes"],
               explain:
-                "Yazar bir noktayı kabul edip sınırlıyor: \"Richtig ist allerdings, dass …\". Ödün bildiren bu belirteçler çekimli fiilin ardında, orta alanda durur.",
+                "Yazar bir noktayı kabul edip sınırlıyor: \"Richtig ist allerdings, dass …\". `allerdings` ve `indes` ödün bildirir; `hingegen` karşıtlık bildirir ama cümleyi yine kurar. Bu belirteçler çekimli fiilin ardında, orta alanda durur.",
             },
             {
               kind: "gap",

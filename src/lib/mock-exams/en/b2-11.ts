@@ -76,7 +76,7 @@ That comparison is difficult to make, which is not the same as impossible, and t
               options: ["rational", "reasoning", "logic", "sensitive"],
               answer: 0,
               explain:
-                "Paragraf tek tek doğru olan kararın toplamda felaket olduğunu söylüyor; iktisatta bu ayrımın adı `rational`dır. `reasoning` ve `logic` ad olduğu için `entirely`den sonra gelemez, `sensitive` ise «duyarlı» demektir.",
+                "Paragraf, her hanenin kararının tek başına akılcı (`rational`) olduğunu ama toplamda felakete yol açtığını söylüyor. `reasoning` ve `logic` ad olduğu için `entirely`den sonra gelemez, `sensitive` ise «duyarlı» demektir.",
             },
             {
               kind: "mcq",
@@ -93,10 +93,10 @@ That comparison is difficult to make, which is not the same as impossible, and t
               id: "en-b2-11-l1-4",
               no: 4,
               text: "Gap 4",
-              options: ["solves", "fixes", "handles", "settles"],
+              options: ["solves", "repairs", "handles", "settles"],
               answer: 3,
               explain:
-                "Cümle bir ülkede alınan kararın başka bir ülkedeki makinenin ömrünü belirlediğini söylüyor: `settles the lifespan`. `solves` bir sorunu çözmek, `fixes` onarmak, `handles` ise ele almaktır.",
+                "Cümle bir ülkede alınan kararın başka bir ülkedeki makinenin ömrünü belirlediğini söylüyor: `settles the lifespan`. `solves` bir sorunu çözmek, `repairs` onarmak, `handles` ise ele almaktır.",
             },
             {
               kind: "mcq",
@@ -1268,9 +1268,9 @@ I would therefore require the discontinuation date and a verified repair cost to
           format: "writing",
           goal: "interaction",
           prompt:
-            "You paid for a repair that failed twice, and the shop has now told you the part is no longer produced. Write a letter to the company that made the machine. Set out what happened, say what you want and what you do not want, and say what you will do if there is no reply. Write 140 to 190 words.",
+            "Your machine failed again after a repair you paid for, and the shop has now told you the part is no longer produced. Write a letter to the company that made the machine. Set out what happened, say what you want and what you do not want, and say what you will do if there is no reply. Write 140 to 190 words.",
           promptTr:
-            "Bir tamir için ödeme yaptın, tamir iki kez tutmadı ve dükkân şimdi parçanın artık üretilmediğini söyledi. Makineyi üreten şirkete bir mektup yaz. Olanları anlat, ne istediğini ve ne istemediğini söyle, yanıt gelmezse ne yapacağını belirt. 140–190 kelime.",
+            "Parasını ödediğin bir tamirden sonra makine yeniden bozuldu ve dükkân şimdi parçanın artık üretilmediğini söyledi. Makineyi üreten şirkete bir mektup yaz. Olanları anlat, ne istediğini ve ne istemediğini söyle, yanıt gelmezse ne yapacağını belirt. 140–190 kelime.",
           items: [],
           rubric: {
             minWords: 140,
@@ -1317,7 +1317,7 @@ Fikret Alay`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about things you own and how long they last.",
+          prompt: "I will ask you some questions about things you own and how long they last.",
           promptTr: "Sana sahip olduğun eşyalar ve ne kadar dayandıkları hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

@@ -26,9 +26,9 @@ export const EN_B1_07: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer every question.",
       instructionTr:
-        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
+        "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruyu cevapla.",
       tasks: [
         {
           id: "en-b1-07-l1",
@@ -145,7 +145,7 @@ export const EN_B1_07: MockPaper = {
           prompt:
             "Here are five people, 6 to 10. There are also eight ads, a to h. Which group is right for each person? No ad is used twice.",
           promptTr:
-            "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi grup uyar? Her ilan en fazla bir kez kullanılır.",
+            "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Homework Club", body: "Monday to Thursday, four to seven. We need adults who can sit with a child and not do the work for them. A police check is needed and we pay for it." },
             { key: "b", label: "Repair Evening", body: "First Thursday of the month, six to nine. Electrical items, wood and bicycles. Bring your own tools if you have them." },
@@ -182,7 +182,7 @@ export const EN_B1_07: MockPaper = {
               text: "Selma wants to help but she cannot promise the same day every week.",
               answer: "e",
               explain:
-                "İlan tam bu kısıtı kaldırıyor: «nobody keeps a list. Turn up, do what is there, go home». Öteki ilanların hepsi belli bir gün istiyor.",
+                "İlan tam bu kısıtı kaldırıyor: «nobody keeps a list. Turn up, do what is there, go home». Öteki ilanlar ya belli bir güne bağlı ya da her hafta düzenli bir görev istiyor; yalnız bu ilan hiçbir düzen beklemiyor.",
             },
             {
               kind: "match",
@@ -431,10 +431,10 @@ And write down what you promised. A group {{25}} runs on memory will lose somebo
               id: "en-b1-07-l5-21",
               no: 21,
               text: "Gap 21",
-              options: ["keep", "to keep", "kept", "keeping"],
+              options: ["keep", "keeps", "kept", "keeping"],
               answer: 3,
               explain:
-                "Cümle bir öncekiyle koşut kuruluyor: «the hardest thing is not finding people. It is … them». `finding` ile eşleşen biçim `keeping`. Yalın fiil ve geçmiş biçim bu boşluğa hiç uymuyor.",
+                "Cümle bir öncekiyle koşut kuruluyor: «the hardest thing is not finding people. It is … them». `finding` ile eşleşen biçim `keeping`. Yalın fiil, çekimli biçim ve geçmiş biçim bu boşluğa hiç uymuyor.",
             },
             {
               kind: "mcq",
@@ -545,9 +545,9 @@ And if you are sick, tell somebody early. Nothing here depends {{30}} one person
               id: "en-b1-07-l6-30",
               no: 30,
               text: "Gap 30",
-              accept: ["on"],
+              accept: ["on", "upon"],
               explain:
-                "`depend` fiili `on` edatını alır: `depends on one person`. Başka edatlarla bu fiil kurulmaz.",
+                "`depend` fiili `on` edatını alır: `depends on one person`. Daha resmî `upon` da kabul edilir; başka edatlarla bu fiil kurulmaz.",
             },
           ],
         },
@@ -1191,7 +1191,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about where you live and about helping other people.",
+          prompt: "I will ask you some questions about where you live and about helping other people.",
           promptTr: "Sana yaşadığın yer ve başkalarına yardım etmek hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [

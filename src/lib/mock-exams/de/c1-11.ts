@@ -99,7 +99,7 @@ Der Schluss lautet, dass das dritte Feld nicht verschwindet, wenn es niemand ben
               id: "de-c1-11-l1-1",
               no: 1,
               text: "Lücke 1",
-              accept: ["drittes", "dritte"],
+              accept: ["drittes"],
               explain:
                 "Metnin ilk cümlesi bu alanı sayıyla adlandırıyor: \"liegt ein drittes Feld\".",
             },
@@ -153,7 +153,7 @@ Der Schluss lautet, dass das dritte Feld nicht verschwindet, wenn es niemand ben
               id: "de-c1-11-l1-7",
               no: 7,
               text: "Lücke 7",
-              accept: ["sperrbar", "gesperrt", "verschließbar"],
+              accept: ["sperrbar", "verschließbar"],
               explain:
                 "İki uç karşılaştırılıyor: kamu elinde pahalı, saf özel mülkiyette \"jederzeit sperrbar\".",
             },
@@ -1043,9 +1043,9 @@ Marlene {{10}}`,
               id: "de-c1-11-s2-1",
               no: 1,
               text: "Lücke 1 (Bezugnahme auf eine Veranstaltung)",
-              accept: ["Bezugnehmend", "Bezug"],
+              accept: ["Bezugnehmend"],
               explain:
-                "Yazı bir bilgilendirme toplantısına gönderme yaparak açılıyor ve cümle `auf` ile sürüyor; buraya `Bezugnehmend` ya da ayrık yazımıyla `Bezug nehmend` girer.",
+                "Yazı bir bilgilendirme toplantısına gönderme yaparak açılıyor ve cümle `auf` ile sürüyor; buraya `Bezugnehmend` girer (ayrık yazımı `Bezug nehmend` iki sözcüktür, tek boşluğa sığmaz).",
             },
             {
               kind: "gap",

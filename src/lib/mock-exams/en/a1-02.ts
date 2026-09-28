@@ -928,8 +928,8 @@ Omar`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: you introduce yourself, you ask and answer questions about a topic, and you react in everyday situations.",
-      instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bir konu üzerine soru sorup cevaplama ve günlük durumlarda karşılık verme.",
+      instruction: "There are three tasks in this part: you talk about your home, you ask and answer questions about a topic, and you react in everyday situations.",
+      instructionTr: "Bu bölümde üç görev var: evini anlatma, bir konu üzerine soru sorup cevaplama ve günlük durumlarda karşılık verme.",
       tasks: [
         {
           id: "en-a1-02-s1",

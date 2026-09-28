@@ -71,10 +71,10 @@ Whether any of this could have been prevented is an open question. Several citie
               id: "en-c1-02-l1-2",
               no: 2,
               text: "Gap 2",
-              options: ["partial", "incomplete", "shortened", "restricted"],
+              options: ["minor", "incomplete", "shortened", "restricted"],
               answer: 1,
               explain:
-                "`not wrong so much as incomplete` yapısı bir düzeltme kuruyor: açıklama yanlış değil, eksik. `partial` taraflı anlamına da geldiği için burada bulanık; `shortened` ve `restricted` bir açıklamanın kapsamı için kullanılmaz.",
+                "`not wrong so much as incomplete` yapısı bir düzeltme kuruyor: açıklama yanlış değil, eksik. `minor` önemsizliği bildirir, eksikliği değil; `shortened` ve `restricted` bir açıklamanın kapsamı için kullanılmaz.",
             },
             {
               kind: "mcq",
@@ -167,9 +167,9 @@ That sense resists documentation, which is inconvenient for institutions and, ar
               id: "en-c1-02-l2-9",
               no: 9,
               text: "Gap 9",
-              accept: ["in"],
+              accept: ["in", "for"],
               explain:
-                "«the ones ___ which judgment is required» yapısında ilgi zamirinden önce bir edat gerekiyor ve `require judgment in a situation` eşdizimi `in` ister. `for which` ya da `on which` bu adla doğal durmaz.",
+                "«the ones ___ which judgment is required» yapısında ilgi zamirinden önce bir edat gerekiyor ve `require judgment in a situation` eşdizimi `in` ister. `for which` da kabul edilir; `on which` bu adla doğal durmaz.",
             },
             {
               kind: "gap",
