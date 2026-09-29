@@ -12,7 +12,7 @@ import { fmt } from "./ui";
  * sayfaya dönmek gerekiyordu. Şerit her sayfada o soruyu tek bakışta
  * cevaplıyor: haftalık sayı, önceki haftaya göre değişim (renk yöne göre: kayıt
  * artışı yeşil, hata artışı kırmızı) ve 14 günlük eğri. Tıklayınca konunun
- * sayfası açılıyor; sekiz göstergenin tamamı Genel durumda.
+ * sayfası açılıyor; bütün göstergeler Genel durumda (aralığa bağlı, önceki dönemle).
  */
 type Ticker = { key: string; label: string; href: string; value: string; delta: ReturnType<typeof trendDelta>; values: number[] };
 
@@ -95,9 +95,9 @@ export function PulseStrip({ metrics, days, failed }: { metrics: TrendMetric[]; 
         </Link>
       ))}
       <Link
-        href="/admin/durum#son-7-gun"
+        href="/admin/durum#gostergeler"
         className="muted flex shrink-0 items-center gap-1 px-4 text-caption whitespace-nowrap hover:text-[var(--text)]"
-        title={failed ? "Göstergelerin bir kısmı okunamadı; ayrıntı Genel durumda." : "Sekiz göstergenin tamamı, önceki haftayla"}
+        title={failed ? "Göstergelerin bir kısmı okunamadı; ayrıntı Genel durumda." : "Genel durum: bütün göstergeler, önceki dönemle"}
       >
         {failed ? <span style={{ color: "var(--color-rose)" }}>Eksik veri ·</span> : null} Tüm göstergeler →
       </Link>
