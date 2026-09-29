@@ -431,7 +431,7 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
   const queuePath = (q: QueueId) => RESPONSE_SLA[q].path;
 
   return (
-    <div className="lg:grid lg:grid-cols-[minmax(20rem,27rem)_minmax(0,1fr)]">
+    <div className="lg:grid lg:grid-cols-[minmax(20rem,26rem)_minmax(0,1fr)] 2xl:grid-cols-[minmax(24rem,32rem)_minmax(0,1fr)]">
       {/* KUYRUK */}
       <div className="min-w-0 px-4 pb-16 pt-5 sm:px-6 lg:border-r lg:px-5" style={{ borderColor: "var(--border)" }}>
         <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
@@ -518,7 +518,7 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
         style={{ background: "var(--surface)" }}
       >
         {current && head ? (
-          <div className="max-w-3xl px-4 pb-16 pt-4 sm:px-6 lg:px-8 lg:pt-6">
+          <div className="max-w-5xl px-4 pb-16 pt-4 sm:px-6 lg:px-8 lg:pt-6">
             <div className="flex flex-wrap items-center gap-2 text-caption">
               <button type="button" onClick={() => setSheet(false)} className={`${BTN.small} lg:hidden`}>← Kuyruk</button>
               <span className="inline-flex items-center gap-1.5 rounded-chip px-2 py-0.5 text-micro" style={{ background: "var(--surface-2)", color: toneOf(current, now) }}>
