@@ -57,6 +57,8 @@ const CLIP: Record<Mood, { file: string; aspect: number }> = {
   wow: { file: "nomi-saskin", aspect: 2 / 3 },
   thumbsup: { file: "nomi-el", aspect: 2 / 3 },
 };
+/** Ayakların alt çizgisi (klip yüksekliğine oran; `nomi-durgun` alfa sınırı 277/288). */
+const FEET_Y = 0.962;
 /** Hareket azaltmada gösterilen nötr kare (bütün kliplerin ilk ve son karesi). */
 const STILL = { file: "nomi-durgun" };
 
@@ -198,12 +200,15 @@ export function Mascot({
       initial={false}
       transition={{ duration: 0.25 }}
     >
-      {/* Yer gölgesi — karakteri havada asılı olmaktan kurtarıyor. */}
+      {/* Yer gölgesi — karakteri havada asılı olmaktan kurtarıyor. Ortası
+          ayak çizgisinde (`FEET_Y`, klipten ölçüldü); önce kutunun altına
+          düşüyordu ve ayaklarla gölge arasında boşluk kalıyordu. */}
       <motion.div
-        className="absolute bottom-0 left-1/2 h-[4%] w-[70%] rounded-[50%]"
+        className="absolute left-1/2 h-[4%] w-[58%] rounded-[50%]"
         style={{
+          bottom: `${(1 - FEET_Y) * 100}%`,
           x: "-50%",
-          y: "40%",
+          y: "50%",
           background: "radial-gradient(ellipse, rgba(42,23,8,0.26) 0%, rgba(42,23,8,0) 70%)",
         }}
         initial={false}

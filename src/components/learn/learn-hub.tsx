@@ -132,7 +132,8 @@ export function LearnHub({ data }: { data: LearnHubData }) {
             söylüyor. Kart metni dar telefonda daralmasın diye maskot
             `shrink-0` ve yalnız orta boy ekrandan itibaren görünüyor.
           */}
-          <Mascot mood="idle" size={MASCOT_CARD} className="hidden shrink-0 sm:block" />
+          {/* 12 px aşağıda: ayaklar kartın iç boşluğuna iniyor, Nomi kartın zeminine basıyor. */}
+          <Mascot mood="idle" size={MASCOT_CARD} className="-mb-3 hidden shrink-0 sm:block" />
         </div>
 
         {/*

@@ -136,7 +136,10 @@ export function LearnScreen() {
               parçası; tur başlayınca ekranda kalmıyor. Web ikizi
               `components/learn/learn-hub`.
             */}
-            <Mascot mood="idle" size={MASCOT_CARD} />
+            {/* 12 px aşağıda (web ile aynı): ayaklar kartın iç boşluğuna iniyor. */}
+            <View style={{ marginBottom: -12 }}>
+              <Mascot mood="idle" size={MASCOT_CARD} />
+            </View>
           </View>
           {/* Hedef şeridi kahramanın İÇİNDE: veri gelmeden de aynı yeri kaplar,
               yoksa kart yükleme sonrası uzayıp altındaki her şeyi aşağı itiyordu. */}
