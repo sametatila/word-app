@@ -223,7 +223,7 @@ export function BarList({ items, max, unit, empty = "Henüz veri yok.", share = 
       <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto] items-center gap-x-3 gap-y-1.5 text-caption">
         {shown.map((it, i) => (
           <div key={`${it.label}-${i}`} className="contents">
-            <span className="min-w-0 truncate" title={it.label}>{it.label}</span>
+            <span className="min-w-0 truncate" title={it.label} aria-label={it.label}>{it.label}</span>
             <span className="flex h-4 items-center border-l" style={{ borderColor: "var(--border)" }}>
               <span className="block h-2 rounded-r-[4px]" style={{ width: `${Math.max(it.value > 0 ? 1.5 : 0, Math.min(100, (it.value / top) * 100))}%`, background: it.tone ? TONE[it.tone] : "var(--color-brand)" }} />
             </span>
@@ -274,7 +274,7 @@ export function ShareBar({ items, ordinal = false, unit = "", empty = "Henüz ve
           return (
             <li key={it.label} className="contents">
               <span aria-hidden className="h-2.5 w-2.5 rounded-[3px]" style={{ background: inBar ? colorOf(it, i) : OTHER }} />
-              <span className="min-w-0 truncate" title={it.label}>{it.label}</span>
+              <span className="min-w-0 truncate" title={it.label} aria-label={it.label}>{it.label}</span>
               <span className="text-right tabular-nums whitespace-nowrap">{it.right ?? `${fmt(it.value)}${unit}`} <span className="muted">· %{pct(it.value)}</span></span>
             </li>
           );
@@ -311,7 +311,7 @@ export function ScoreList({ items, threshold = 60, empty = "Henüz veri yok.", s
           const low = it.score < threshold;
           return (
             <div key={`${it.label}-${i}`} className="contents">
-              <span className="min-w-0 truncate" title={it.label}>{it.label}</span>
+              <span className="min-w-0 truncate" title={it.label} aria-label={it.label}>{it.label}</span>
               <span className="relative h-4" aria-label={`${it.label}: ${it.score}`}>
                 <span aria-hidden className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2" style={{ background: "var(--border)" }} />
                 <span aria-hidden className="absolute top-0 h-4 w-px" style={{ left: `${threshold}%`, background: "var(--text-faint)" }} />

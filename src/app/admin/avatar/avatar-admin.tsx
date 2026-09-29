@@ -268,7 +268,7 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
                             {locked ? <Badge>her zaman açık</Badge> : null}
                             {edited ? <Badge tone="warn">koşul değişti</Badge> : null}
                           </span>
-                          <span className="muted block truncate text-micro" title={k ? label.get(k) ?? k : undefined}>{k ? label.get(k) ?? k : "Herkese açık"}</span>
+                          <span className="muted block truncate text-micro" title={k ? label.get(k) ?? k : undefined} aria-label={k ? label.get(k) ?? k : undefined}>{k ? label.get(k) ?? k : "Herkese açık"}</span>
                           <span className="faint block text-micro tabular-nums">{usage.equipped[p.id] ?? 0} takıyor · {openCount(p)} açık · {grantCount(p.id)} verildi</span>
                         </span>
                       </button>
