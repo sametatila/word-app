@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
 import { storeReviews, summarizeReviews, type StoreReview } from "@/lib/store-reviews";
-import { AdminDenied, AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, PanelGrid, Stat, Stats, TONE } from "../_ui/ui";
+import { AdminDenied, AdminPage, Badge, BarList, BTN, Empty, Notice, PageHeader, Panel, PanelGrid, Stat, Stats, ThresholdTrend, TONE } from "../_ui/ui";
 import { androidVitals, ANR_THRESHOLD, CRASH_THRESHOLD, type VitalsSeries } from "@/lib/android-vitals";
 import { ResponseGuide, SlaBadge } from "../_ui/sla";
 import { ReplyTemplates } from "../_ui/reply-templates";
@@ -68,12 +68,18 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
               ) : r.error ? (
                 <Notice tone="bad">{r.error}</Notice>
               ) : (
-                <Stats cols={4}>
-                  <Stat label="Ortalama" value={s.avg ?? "—"} sub={`${s.total} yorum`} />
-                  <Stat label="Son 30 gün" value={s.recent} />
-                  <Stat label="Cevapsız 1-2★" value={s.lowUnanswered} tone={s.lowUnanswered ? "bad" : "ok"} />
-                  <Stat label="Dağılım" value={<span className="text-caption">{s.stars.map((n, i) => `${i + 1}★ ${n}`).join(" · ")}</span>} />
-                </Stats>
+                <>
+                  <Stats cols={3}>
+                    <Stat label="Ortalama" value={s.avg ?? "—"} sub={`${s.total} yorum`} />
+                    <Stat label="Son 30 gün" value={s.recent} sub="yorum" />
+                    <Stat label="Cevapsız 1-2★" value={s.lowUnanswered} tone={s.lowUnanswered ? "bad" : "ok"} />
+                  </Stats>
+                  {s.total ? (
+                    <div className="mt-4">
+                      <BarList items={[5, 4, 3, 2, 1].map((n) => ({ label: `${n} ★`, value: s.stars[n - 1], right: String(s.stars[n - 1]), tone: n <= 2 ? "bad" : undefined }))} />
+                    </div>
+                  ) : null}
+                </>
               )}
             </Panel>
           );
@@ -119,13 +125,15 @@ function VitalsCell({ label, series, threshold }: { label: string; series: Vital
     return <Stat label={label} value="—" sub="Henüz veri yok (Google yeterli kullanıcı birikince hesaplıyor)." />;
   }
   const v = series.latest28d;
-  const last7 = series.points.slice(-7).map((p) => (p.rate == null ? "—" : pct2(p.rate))).join(" · ");
   return (
-    <Stat
-      label={label}
-      value={pct2(v)}
-      tone={v >= threshold ? "bad" : v >= threshold * 0.8 ? "warn" : "ok"}
-      sub={<>eşik {pct2(threshold)} · {series.latestDay}<br />son 7 gün: {last7}</>}
-    />
+    <div>
+      <Stat
+        label={label}
+        value={pct2(v)}
+        tone={v >= threshold ? "bad" : v >= threshold * 0.8 ? "warn" : "ok"}
+        sub={`eşik ${pct2(threshold)} · 28 günlük oran · ${series.latestDay}`}
+      />
+      <ThresholdTrend label={label} values={series.points.map((p) => p.rate28d)} threshold={threshold} format={pct2} />
+    </div>
   );
 }
