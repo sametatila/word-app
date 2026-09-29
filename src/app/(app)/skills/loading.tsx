@@ -1,5 +1,7 @@
 import { LoadingRegion } from "@/components/loading-region";
 import { AppHeaderSkeleton, SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
+import { TextSlot, TileSlot } from "@/components/flow-skeleton";
+import { SKILL_LABEL_KEYS, SKILL_ORDER } from "@/lib/skills/meta";
 
 /**
  * Beceriler gelene kadar iskelet — sayfanın KENDİ düzeni.
@@ -13,7 +15,8 @@ import { AppHeaderSkeleton, SkeletonBar, SkeletonLine, SkeletonTile } from "@/co
  *
  * Genişlik: sayfa her genişlikte tek sütun (`max-w-3xl`), duyarlı tek sınıf
  * karo aralığı (`sm:gap-2`) ve karo adının dar ekranda iki satıra kırılması;
- * ikisi de burada aynı.
+ * ikisi de burada aynı. Karo adları gerçek etiketin görünmez hâli: hangi adın
+ * hangi dilde ve genişlikte kırıldığını tarayıcı buluyor.
  */
 export default function Loading() {
   return (
@@ -22,8 +25,8 @@ export default function Loading() {
 
       {/* Seviye etiketi + sayaç, beş eşit sekme. */}
       <div className="mb-2 ml-1 flex items-center justify-between">
-        <SkeletonLine variant="caption" width={52} />
-        <SkeletonLine variant="caption" width={96} />
+        <TextSlot k="skills.level" className="text-caption tracking-wide" />
+        <TextSlot k="skills.done_of" v={{ done: 12, total: 60 }} className="text-caption" />
       </div>
       <div className="mb-4 flex gap-2">
         {/* Gerçek sekmenin kendi `chip` sınıfı: kenarlık, zemin, yarıçap ondan. */}
@@ -34,38 +37,31 @@ export default function Loading() {
         ))}
       </div>
 
-      {/* Öneri kartı: 40 px karo + üç satır. */}
+      {/* Öneri kartı: 40 px karo, üst satır, egzersiz adı (tek satır, `truncate`),
+          gerekçe (`line-clamp-2`, gerçek cümleyle), ok. */}
       <div className="card mb-4 flex items-center gap-3 p-4">
-        <SkeletonTile size={40} />
+        <TileSlot className="size-10" />
         <div className="min-w-0 flex-1">
           <SkeletonLine variant="micro" width="35%" />
           <SkeletonLine variant="strong" width="60%" />
-          <SkeletonLine variant="caption" width="80%" />
+          <TextSlot k="skills.next_behind" v={{ pct: 40 }} vk={{ skill: SKILL_LABEL_KEYS.writing }} className="line-clamp-2 text-caption" />
         </div>
+        <div className="w-5 shrink-0" />
       </div>
 
       {/* Beş beceri karosu — `SkillBrowser` karosuyla aynı kap. */}
       <div className="mb-4 grid grid-cols-5 gap-1.5 sm:gap-2">
-        {[0, 1, 2, 3, 4].map((i) => (
+        {SKILL_ORDER.map((skill) => (
           <div
-            key={i}
+            key={skill}
             className="flex min-w-0 flex-col items-center gap-1 rounded-tile px-0.5 pb-2 pt-2.5"
             style={{ border: "1px solid var(--border)", background: "var(--surface)" }}
           >
             <SkeletonTile size={20} />
-            {/* Karo adı `text-caption leading-tight`: satır 20 değil ~16 px.
-                `line-clamp-2`: ~400 px'in altında karo metni ~60 px'e iniyor ve
-                tek boşluklu ad ("Dil bilgisi", yalnız Türkçe) iki satıra
-                kırılıyor; satırdaki beş karo en uzununa uzuyor. Öteki adlar
-                tek sözcük, kırılmıyor. `:lang` `<html lang>`ı (arayüz dili) okur. */}
-            <span className="block w-[70%] text-caption leading-tight">
-              <span className="flex h-[1lh] items-center">
-                <SkeletonBar height={10} className="w-full" />
-              </span>
-              <span className="hidden h-[1lh] items-center max-[400px]:[&:lang(tr)]:flex">
-                <SkeletonBar height={10} className="w-full" />
-              </span>
-            </span>
+            {/* Karo adı gerçeğinin sınıfıyla (`line-clamp-2 … leading-tight`)
+                ve gerçek etiketle: dar karoda iki satıra kırılan ad (ör. "Dil
+                bilgisi") satırdaki beş karoyu uzatıyor, iskeletinki de. */}
+            <TextSlot as="span" k={SKILL_LABEL_KEYS[skill]} className="line-clamp-2 w-full text-center text-caption leading-tight" />
             <SkeletonLine variant="micro" width="40%" className="mt-auto" />
             <SkeletonBar height={4} className="w-4/5" />
           </div>
@@ -75,8 +71,8 @@ export default function Loading() {
       {/* Seçili becerinin başlığı ve listesi. */}
       <div className="mb-2 ml-1 flex items-center gap-2">
         <SkeletonTile size={18} />
-        <SkeletonLine variant="h3" width={96} />
-        <SkeletonLine variant="caption" width={36} />
+        <TextSlot as="span" k={SKILL_LABEL_KEYS[SKILL_ORDER[0]]} className="text-h3" />
+        <TextSlot as="span" text="0/12" className="text-caption" />
       </div>
       <ul className="card divide-y divide-[color:var(--hairline)] px-4">
         {[0, 1, 2, 3, 4, 5].map((i) => (

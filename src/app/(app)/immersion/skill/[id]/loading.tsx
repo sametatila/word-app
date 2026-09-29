@@ -1,5 +1,6 @@
 import { LoadingRegion } from "@/components/loading-region";
 import { SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
+import { TextSlot } from "@/components/flow-skeleton";
 
 /**
  * Beceri alıştırması gelene kadar iskelet — `PlayerShell` kabuğu ve en sık
@@ -28,13 +29,11 @@ export default function Loading() {
         </div>
       </div>
 
-      {/* Yönerge (`muted px-1 text-body`, ortanca ~105 karakter): telefonda
-          (< sm, ~47 karakter/satır) üç satır, `max-w-2xl` sütunda iki. */}
-      <div className="px-1">
-        <SkeletonLine variant="body" width="92%" />
-        <SkeletonLine variant="body" width="88%" className="sm:hidden" />
-        <SkeletonLine variant="body" width="58%" />
-      </div>
+      {/* Yönerge (`muted px-1 text-body`): egzersizin verisi, değeri bilinmiyor;
+          ortanca uzunlukta (~105 harf) görünmez metin. Satır sayısını genişliğe
+          göre tarayıcı buluyor — eskiden `sm:hidden` ile Türkçe telefona göre
+          sabitlenmişti. */}
+      <TextSlot chars={105} className="px-1 text-body" />
 
       {/* Okuma parçası: `card mt-3 p-5`. */}
       <article className="card mt-3 p-5">

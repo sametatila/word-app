@@ -476,9 +476,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       <div role="status" aria-busy="true" aria-label={t("exam.preparing")}>
         <FlowColumn>
           <section aria-hidden className="card overflow-hidden p-4">
-            <TextSlot chars={8} className="text-micro uppercase tracking-eyebrow" />
-            <TextSlot chars={6} className="text-h2" />
-            <TextSlot chars={30} className="mt-1 text-body" />
+            {/* İlk bölümün gerçek metni (`intro`): hedef dilde "Teil 1 / n", bölüm adı, madde · süre. */}
+            <TextSlot text={`${SECTION_WORD_TARGET[targetLangOf(course)]} 1 / ${SECTION_ORDER.length}`} className="text-micro uppercase tracking-eyebrow" />
+            <TextSlot text={SECTION_TITLE_TARGET[targetLangOf(course)][SECTION_ORDER[0]]} className="text-h2" />
+            <TextSlot k="exam.items_and_time" v={{ n: 20, time: "20:00" }} className="mt-1 text-body" />
             <div className="mt-3 flex gap-1">
               {[0, 1, 2, 3].map((i) => (
                 <SkeletonBar key={i} height={6} className="flex-1" />
@@ -486,9 +487,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             </div>
           </section>
           <section aria-hidden className="card flex flex-col gap-2 p-4">
-            <TextSlot chars={6} className="text-micro uppercase tracking-eyebrow" />
-            {/* Bölüm tanıtımı ~75 harf: telefonda iki, 480 px üstünde çoğu kez iki satır. */}
-            <TextSlot chars={74} className="text-body leading-relaxed" />
+            <TextSlot k={SECTION_TITLE_KEYS[SECTION_ORDER[0]]} className="text-micro uppercase tracking-eyebrow" />
+            <TextSlot k={SECTION_BRIEF_KEYS[SECTION_ORDER[0]]} className="text-body leading-relaxed" />
           </section>
           <div className="flex flex-col gap-2">
             <ButtonSlot className="px-5 py-4" />

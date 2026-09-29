@@ -1,5 +1,5 @@
 import { LoadingRegion } from "@/components/loading-region";
-import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
+import { CoverSkeleton } from "@/components/flow-skeleton";
 
 /**
  * Yerleştirme sınavı gelene kadar iskelet — `PlacementTest`in kapağı
@@ -10,7 +10,7 @@ import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
 export default function Loading() {
   return (
     <LoadingRegion className="mx-auto w-full max-w-3xl">
-      <CoverSkeleton {...COVERS.placement} />
+      <CoverSkeleton kind="placement" />
     </LoadingRegion>
   );
 }

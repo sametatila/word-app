@@ -1,5 +1,5 @@
 import { LoadingRegion } from "@/components/loading-region";
-import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
+import { CoverSkeleton } from "@/components/flow-skeleton";
 
 /**
  * Deneme sınavı bölümü gelene kadar iskelet — oynatıcının İLK karesi olan
@@ -14,7 +14,7 @@ import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
 export default function Loading() {
   return (
     <LoadingRegion className="flex w-full flex-1 flex-col">
-      <CoverSkeleton {...COVERS.mock} />
+      <CoverSkeleton kind="mock" />
     </LoadingRegion>
   );
 }

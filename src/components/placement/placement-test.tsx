@@ -284,12 +284,12 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           <div className="flex items-center gap-3">
             <SkeletonTile size={44} />
             <SkeletonBar height={8} className="min-w-0 flex-1" />
-            <TextSlot as="span" chars={15} className="shrink-0" />
+            <TextSlot as="span" k="plc.skip_stage" className="shrink-0" />
           </div>
-          <TextSlot as="span" chars={11} />
+          {/* Test kelime aşamasının ilk seviyesiyle açılıyor: başlık ve ipucu onun, gerçek metinle. */}
+          <TextSlot as="span" text={`${t(STAGE_TITLE_KEYS.vocab)} · A1`} />
         </div>
-        {/* İpucu ~100 harf: telefonda iki-üç satır; sabit tek çubuk kısa kalıyordu. */}
-        <TextSlot chars={99} className="mb-3 text-caption" />
+        <TextSlot k={STAGE_HINT.vocab} className="mb-3 text-caption" />
         <TextSlot chars={9} className="mb-4 text-h1" />
         <div aria-hidden className="grid gap-2">
           {[0, 1, 2, 3].map((i) => (

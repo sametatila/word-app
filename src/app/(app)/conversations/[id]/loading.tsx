@@ -18,10 +18,11 @@ export default function Loading() {
       <div aria-hidden className="flex shrink-0 items-center gap-3 kb:hidden">
         <SkeletonTile size={44} />
         <div className="flex min-w-0 flex-1 items-center gap-1.5">
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="flex flex-1 flex-col gap-1">
+          {/* Adım adları gerçeğinin anahtarlarıyla (`Steps`). */}
+          {["conversation.phase_lecture", "conversation.phase_chat", "conversation.phase_summary"].map((k) => (
+            <div key={k} className="flex flex-1 flex-col gap-1">
               <SkeletonBar height={4} />
-              <TextSlot as="span" chars={8} className="text-micro" />
+              <TextSlot as="span" k={k} className="text-micro" />
             </div>
           ))}
         </div>
@@ -66,7 +67,7 @@ export default function Loading() {
             <div className="btn w-full animate-pulse px-5 py-4" style={{ background: "var(--surface-2)" }}>
               <span className="invisible">.</span>
             </div>
-            <TextSlot chars={24} className="text-center text-caption" />
+            <TextSlot k="conversationp.or_answer_aloud" className="text-center text-caption" />
           </div>
         </div>
       </section>

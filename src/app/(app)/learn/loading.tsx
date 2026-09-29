@@ -1,6 +1,7 @@
 import { LoadingRegion } from "@/components/loading-region";
 import { CardGrid } from "@/components/layout";
-import { AppHeaderSkeleton, SkeletonLine, SkeletonTile, TextBox } from "@/components/skeleton";
+import { AppHeaderSkeleton, TextBox } from "@/components/skeleton";
+import { TextSlot, TileSlot } from "@/components/flow-skeleton";
 import { QuestCardSkeleton } from "@/components/quest-card";
 
 /**
@@ -12,10 +13,11 @@ import { QuestCardSkeleton } from "@/components/quest-card";
  * bileşenin sınıflarından ve tipografi ölçeğinden (göz kararı yükseklik yok).
  *
  * KIRILIMLAR GERÇEK KARTIN. Maskot `hidden sm:block`, iki kama her genişlikte
- * yan yana, satırlar aynı `CardGrid min={360}`. Metnin SATIR SAYISI da
- * genişliğe bağlı ve Türkçe metinle ölçüldü: kahraman cümlesi ve kama cümlesi
- * telefonda ve md'de (kenar çubuğu açılınca kap 464 px) iki satır, sm ve
- * lg'den sonra tek satır; ilk satırın alt yazısı yalnız telefonda iki satır.
+ * yan yana, satırlar aynı `CardGrid min={360}`. Metnin SATIR SAYISI hem
+ * genişliğe hem dile bağlı: her metin gerçek cümlenin görünmez hâli
+ * (`TextSlot`), tarayıcı onu gerçeğiyle aynı sarıyor. Eskiden Türkçeden
+ * ölçülmüş kırılım gizlemeleri vardı (`sm:hidden md:block lg:hidden`);
+ * İngilizce ve Almancada tutmuyordu.
  */
 export default function Loading() {
   return (
@@ -28,9 +30,8 @@ export default function Loading() {
         <div className="flex items-end gap-3 p-5">
           <div className="min-w-0 flex-1">
             <div className="mb-2 h-11" />
-            <TextBox variant="h1" />
-            <TextBox variant="body" className="mt-1" />
-            <TextBox variant="body" className="sm:hidden md:block lg:hidden" />
+            <TextSlot k="learn.practice_your_words" ghost className="text-h1" />
+            <TextSlot k="learn.daily_pitch" ghost className="mt-1 text-body" />
             {/* Başla hapı: py-2.5 + strong satırı. */}
             <TextBox variant="strong" className="mt-4 py-2.5" />
           </div>
@@ -50,30 +51,35 @@ export default function Loading() {
       </div>
 
       <section aria-hidden className="mb-5 mt-2">
-        <SkeletonLine variant="h3" width={110} className="mb-2 ml-1" />
+        <TextSlot k="learn.featured" className="mb-2 ml-1 text-h3" />
         <div className="grid grid-cols-2 gap-3">
-          {[0, 1].map((i) => (
-            <div key={i} className="card flex min-h-[8.25rem] flex-col justify-between gap-3 p-4">
-              <SkeletonTile size={44} />
+          {[
+            ["learn.walk_mode", "learn.walk_pitch"],
+            ["learn.mock_exams", "learn.mock_exams_pitch"],
+          ].map(([title, pitch]) => (
+            <div key={title} className="card flex min-h-[8.25rem] flex-col justify-between gap-3 p-4">
+              <TileSlot className="h-11 w-11" />
               <div>
-                <SkeletonLine variant="h3" width="60%" />
-                <SkeletonLine variant="caption" width="85%" />
-                <SkeletonLine variant="caption" width="50%" className="sm:hidden md:flex lg:hidden" />
+                <TextSlot k={title} className="text-h3" />
+                <TextSlot k={pitch} className="text-caption" />
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <SkeletonLine variant="h3" width={120} className="mb-2 ml-1" />
+      <TextSlot k="learn.more" className="mb-2 ml-1 text-h3" />
       <CardGrid min={360} className="mb-5">
-        {[0, 1, 2].map((i) => (
-          <div key={i} aria-hidden className="card flex items-center gap-3 p-4">
-            <SkeletonTile size={48} />
+        {[
+          ["learn.practice", "learn.practice_one_game_with_your_own"],
+          ["learn.weekly_quiz", "learn.test_what_you_ve_learned_weekly"],
+          ["learn.survival", "learn.survival_pitch"],
+        ].map(([title, sub]) => (
+          <div key={title} aria-hidden className="card flex items-center gap-3 p-4">
+            <TileSlot className="h-12 w-12" />
             <div className="min-w-0 flex-1">
-              <SkeletonLine variant="h3" width={`${56 - i * 8}%`} />
-              <SkeletonLine variant="caption" width="80%" />
-              {i === 0 ? <SkeletonLine variant="caption" width="40%" className="sm:hidden" /> : null}
+              <TextSlot k={title} className="text-h3" />
+              <TextSlot k={sub} className="text-caption" />
             </div>
             {/* Ok simgesinin yeri (20 px). */}
             <div className="w-5 shrink-0" />
