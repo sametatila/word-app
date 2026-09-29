@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { AvatarStage, derivedAvatar, MascotAvatar } from "@/components/avatar";
+import { AvatarStage, derivedAvatar } from "@/components/avatar";
 import { useShell } from "@/components/app-shell";
-import { GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
-import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
-import { AVATAR_BGS, AVATAR_RARITY, EXTRA_SLOTS, type ExtraSlot } from "@/lib/avatar-config";
+import { saveAvatar, useAvatar, type AvatarConfig } from "@/lib/avatar";
+import { AVATAR_RARITY, EXTRA_SLOTS, type ExtraSlot } from "@/lib/avatar-config";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
 import { partIcon } from "@/lib/avatar-layers";
 import { CheckIcon, CloseIcon, LockedIcon, UndoIcon } from "@/components/icons";
@@ -38,7 +37,7 @@ const SLOT_LABEL: Record<Slot, string> = {
 };
 const RARITY = AVATAR_RARITY;
 
-type Tile = { key: string; label: string; selected: boolean; locked: boolean; hint?: string; rarity?: string; icon?: string; preview?: AvatarConfig; swatch?: { from: string; to: string }; apply: () => void };
+type Tile = { key: string; label: string; selected: boolean; locked: boolean; hint?: string; rarity?: string; icon?: string; apply: () => void };
 
 export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
   const t = useT();
@@ -65,8 +64,7 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
     setBump((n) => n + 1);
     vibrate("tap");
   };
-  const slots: Slot[] = catalog ? ["bg", "hat", "glasses", "mustache", ...EXTRA_SLOTS] : ["bg", "hat", "glasses", "mustache"];
-  const only = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, bg: cfg.bg, ...over });
+  const slots: Slot[] = ["bg", "hat", "glasses", "mustache", ...EXTRA_SLOTS];
   const current = (s: Slot): string | null => (s === "bg" ? cfg.bg : s === "hat" ? cfg.hat : s === "glasses" ? cfg.glasses : s === "mustache" ? cfg.mustache : cfg.extra[s]?.id ?? null);
   const pick = (s: Slot, id: string | null, color?: string | null) => {
     if (s === "bg") return setCfg({ bg: id });
@@ -79,12 +77,13 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
     return setCfg({ extra });
   };
 
-  let tiles: Tile[];
+  /* TEK ÇİZİM 3B: karolar kataloğun ikonları. Katalog sayfayla geliyor; yoksa karo yok (eski 2B parça listesi silindi). */
+  const tiles: Tile[] = [];
   if (catalog) {
     /* Envanter: yalnız panelde açık parçalar (yuva başına en fazla 11); o an
        takılı olan kapalı olsa da görünür ki seçim kaybolmasın. */
     const parts = catalog.cat.parcalar.filter((p) => p.slot === slot && (!catalog.active || catalog.active.has(p.id) || current(slot) === p.id));
-    tiles = slot === "bg" ? [] : [{ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, apply: () => pick(slot, null) }];
+    if (slot !== "bg") tiles.push({ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, apply: () => pick(slot, null) });
     /* Karo, yuvanın şu anki rengini gösterir; başka parçaya geçince renk
        korunur (parça o rengi taşıyorsa). */
     const slotColor = slot === "hat" ? cfg.hatColor : slot === "bg" || slot === "glasses" || slot === "mustache" ? null : cfg.extra[slot]?.color ?? null;
@@ -101,20 +100,12 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
         apply: () => pick(slot, p.id, col),
       });
     }
-  } else if (slot === "bg") {
-    tiles = AVATAR_BGS.map((b) => ({ key: b.id, label: "", selected: (cfg.bg ?? "bg_orange") === b.id, locked: false, swatch: b, apply: () => pick("bg", b.id) }));
-  } else {
-    const ids = slot === "hat" ? HATS : slot === "glasses" ? GLASSES : MUSTACHES;
-    tiles = [
-      { key: "none", label: t(slot === "hat" ? "avatar.no_hat" : slot === "glasses" ? "avatar.no_glasses" : "avatar.no_mustache"), selected: !current(slot), locked: false, preview: only({ [slot]: null }), apply: () => pick(slot, null) },
-      ...ids.map((id, i) => ({ key: id, label: `${t(SLOT_LABEL[slot])} ${i + 1}`, selected: current(slot) === id, locked: id in locked, hint: locked[id], preview: only({ [slot]: id }), apply: () => pick(slot, id) })),
-    ];
   }
   /* RENK: seçili parça renkleniyorsa (şapka, boyun, sırt… kataloğun `renkler`i)
      parçanın altında renk şeridi. Şapka rengi eski alanında (`hatColor`),
      yeni yuvalarınki parçanın yanında (`extra[yuva].color`). */
   const selPart = catalog ? catalog.cat.parcalar.find((p) => p.id === current(slot)) : undefined;
-  const colors: string[] = catalog ? (selPart?.renkler ?? []) : slot === "hat" && cfg.hat ? HAT_COLORS : [];
+  const colors: string[] = selPart?.renkler ?? [];
   const colorNow = slot === "hat" ? cfg.hatColor : slot !== "bg" && slot !== "glasses" && slot !== "mustache" ? cfg.extra[slot]?.color ?? colors[0] : null;
   const setColor = (col: string) => (slot === "hat" ? setCfg({ hatColor: col }) : slot !== "bg" && slot !== "glasses" && slot !== "mustache" && cfg.extra[slot] ? setCfg({ extra: { ...cfg.extra, [slot]: { ...cfg.extra[slot]!, color: col } } }) : undefined);
   const colorable = colors.length > 0 && colorNow !== null;
@@ -196,13 +187,9 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
               style={{ background: "var(--surface)", border: `1px solid ${tile.selected ? "var(--color-brand-500)" : tile.rarity ? RARITY[tile.rarity] ?? "var(--border)" : "var(--border)"}` }}
             >
               <span className="flex h-16 w-16 items-center justify-center" style={{ opacity: tile.locked ? 0.35 : 1 }}>
-                {tile.preview ? (
-                  <MascotAvatar config={tile.preview} size={60} />
-                ) : tile.icon ? (
+                {tile.icon ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={tile.icon} alt="" className="h-[60px] w-[60px] object-contain" />
-                ) : tile.swatch ? (
-                  <span className="block h-14 w-14 rounded-full" style={{ background: tile.swatch.to, border: `6px solid ${tile.swatch.from}` }} />
                 ) : (
                   <span className="block h-11 w-11 rounded-full" style={{ border: "1.5px dashed var(--border)" }} />
                 )}

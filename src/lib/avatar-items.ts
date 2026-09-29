@@ -1,4 +1,5 @@
 import "server-only";
+import { readdirSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { and, eq, gte, isNotNull, lt, lte, max, sql } from "drizzle-orm";
@@ -15,15 +16,25 @@ import { DEFAULT_NATIVE, isNativeLang, translate, type NativeLang } from "@/lib/
 /**
  * Nomi avatar altyapısı — sunucu tarafı (2026-09-28).
  *
- * `AVATAR_3D_BASE`: 3B kataloğun kökü (`katalog.json` + katmanlar, 3B avatar
- * hattının `cikti/avatar_512` çıktısı). Boşken istemciler 2B maskotu çiziyor.
+ * `AVATAR_3D_BASE`: 3B kataloğun kökü (`katalog.json` + katmanlar). TEK ÇİZİM
+ * 3B (2026-09-29, Samet): eski 2B maskot hiçbir durumda çizilmiyor; değer
+ * boşsa sunucudaki en yeni katalog sürümü (`public/avatar/v<n>`) kullanılır.
  * Kilitler `lib/avatar-unlocks`ta (rozet, seri, lig, davet, Premium) ve hep
  * canlı hesaplanıyor; `avatar_items` yalnız ayrıca verilen parçalar için
  * (kampanya, etkinlik).
  */
-export function avatar3dBase(): string | null {
+let latest: string | null = null;
+/** Sunucunun diskindeki en yeni katalog sürümü (`v3` gibi). */
+function latestCatalogVersion(): string {
+  latest ??= readdirSync(path.join(process.cwd(), "public", "avatar"))
+    .filter((d) => /^v\d+$/.test(d))
+    .sort((a, b) => Number(a.slice(1)) - Number(b.slice(1)))
+    .at(-1) ?? "v1";
+  return latest;
+}
+export function avatar3dBase(): string {
   const v = (process.env.AVATAR_3D_BASE ?? "").trim().replace(/\/+$/, "");
-  return /^https?:\/\//.test(v) ? v : null;
+  return /^https?:\/\//.test(v) ? v : `${PRIMARY_ORIGIN}/avatar/${latestCatalogVersion()}`;
 }
 
 /* Uygulamayı sunan kendi adreslerimiz: asıl (www), www'suz kök ve yedek. */
@@ -134,7 +145,7 @@ const catalogLite = new Map<string, Promise<Map<string, CatalogLite["parcalar"][
    o dizinin yayındaki adresi (sürüm kökün sonundan). Sürüm başına bir kez
    okunur (süreç başına). */
 export function catalogParts(): Promise<Map<string, CatalogLite["parcalar"][number]>> {
-  const v = /\/avatar\/v(\d+)$/.exec(avatar3dBase() ?? "")?.[1] ?? "1";
+  const v = /\/avatar\/v(\d+)$/.exec(avatar3dBase())?.[1] ?? "1";
   let p = catalogLite.get(v);
   if (!p) {
     p = readFile(path.join(process.cwd(), "public", "avatar", `v${v}`, "katalog.json"), "utf8")
@@ -246,11 +257,10 @@ export function defaultActiveIds(parts: { id: string; slot: string; nadir: strin
   return out;
 }
 
-/** Kullanıcıya gösterilen parça kimlikleri; 3B katalog kapalıysa null (2B maskotta kısıt yok). */
+/** Kullanıcıya gösterilen parça kimlikleri; katalog okunamazsa null (kısıt yok). */
 export async function activeAvatarIds(): Promise<Set<string> | null> {
   const now = Date.now();
   if (activeCache && now - activeCache.at < ACTIVE_TTL_MS) return activeCache.value;
-  if (!avatar3dBase()) return null;
   const cat = await catalogParts().catch(() => null);
   if (!cat) return null;
   let value: Set<string>;
@@ -283,4 +293,34 @@ export async function saveActiveAvatarIds(raw: unknown, actor: string | null): P
     .onConflictDoUpdate({ target: appSettings.key, set: { value, updatedBy: actor, updatedAt: new Date() } });
   activeCache = { at: Date.now(), value: ids };
   return { ok: true, ids: value.ids };
+}
+
+/* ------------------------------------------------------------------ */
+/* KATALOĞU SAYFAYLA GÖNDERMEK (2026-09-29)                            */
+/* ------------------------------------------------------------------ */
+
+type FullCatalog = import("@/lib/avatar-layers").AvatarCatalog;
+const fullCatalog = new Map<string, Promise<FullCatalog | null>>();
+/**
+ * Düzenin (uygulama, davet sayfası) istemciye verdiği katalog: kök (isteğin
+ * adresine göre), `katalog.json`un kendisi ve envanter. İstemci kataloğu
+ * AYRICA İNDİRMİYOR: iki istek (`/api/config`, `katalog.json`) bitene kadar
+ * eski 2B maskot çiziliyordu, hızlı yenilemede görünüyordu. Şimdi ilk karede
+ * 3B hazır (`lib/avatar-catalog-client` `AvatarCatalogProvider`).
+ */
+export async function avatarCatalogSeed(host: string | null | undefined): Promise<{ base: string; cat: FullCatalog; active: string[] | null } | null> {
+  const base = avatar3dBaseFor(host) ?? avatar3dBase();
+  const v = /\/avatar\/(v\d+)$/.exec(avatar3dBase())?.[1] ?? latestCatalogVersion();
+  let p = fullCatalog.get(v);
+  if (!p) {
+    p = readFile(path.join(process.cwd(), "public", "avatar", v, "katalog.json"), "utf8")
+      .then((t) => JSON.parse(t) as FullCatalog)
+      .catch(() => {
+        fullCatalog.delete(v);
+        return null;
+      });
+    fullCatalog.set(v, p);
+  }
+  const [cat, active] = await Promise.all([p, activeAvatarIds().catch(() => null)]);
+  return cat ? { base, cat, active: active ? [...active] : null } : null;
 }

@@ -202,12 +202,10 @@ const BORDER_ALLOW = new Map([
   ["mobile/src/screens/AvatarScreen.tsx", [
     ["borderWidth: 1.5, borderStyle: \"dashed\"", "kesikli boş yer tutucu: 'yok' karosu dairesi"],
     ["borderWidth: 3, borderColor: sel ? colors.text : colors.bg", "renk örneği: seçim halkası dairenin kendisi"],
-    ["borderWidth: 6, borderColor: tile.swatch.from", "renk örneği: iki renkli daire (çizim)"],
   ]],
   ["mobile/src/ui/ListenButton.tsx", [["borderWidth: 3", "dönen yükleme halkası"]]],
   ["mobile/src/ui/Avatar.tsx", [
     ["borderWidth: ring ? 2 : 0", "avatar halkası (web `avatar.tsx` 0 0 0 2px)"],
-    ["borderWidth: 5", "avatar sahnesinin beyaz dairesi (web 0 0 0 5px)"],
   ]],
   ["mobile/src/screens/PathScreen.tsx", [["borderWidth: 3", "ünite durum halkası: tamam/şimdi/kilitli rengini taşıyan çizim (web `immersion-hub` 3px)"]]],
   ["mobile/src/screens/MockExamScreen.tsx", [["borderLeftWidth: 2", "sol vurgu şeridi (alıntı çizgisi), çerçeve değil"]]],
@@ -219,13 +217,11 @@ const BORDER_ALLOW = new Map([
   ["src/components/avatar-editor.tsx", [
     ["1.5px dashed var(--border)", "kesikli boş yer tutucu: 'yok' karosu dairesi"],
     ["border: `3px solid ${colorNow", "renk örneği: seçim halkası dairenin kendisi"],
-    ["border: `6px solid ${tile.swatch.from}", "renk örneği: iki renkli daire (çizim)"],
   ]],
   ["src/components/listen-button.tsx", [["border-[3px]", "dönen yükleme halkası"]]],
   ["src/components/conversations/conversation-scored.tsx", [["animate-spin rounded-full border-2", "dönen yükleme halkası"]]],
   ["src/components/avatar.tsx", [
     ["0 0 0 2px ${ring}", "avatar halkası (mobil `ui/Avatar` ring 2)"],
-    ["0 0 0 5px rgba(255,255,255,.85)", "avatar sahnesinin beyaz dairesi"],
   ]],
   ["src/components/immersion/immersion-hub.tsx", [["border: `3px solid ${ringColor}`", "ünite durum halkası (mobil `PathScreen` 3)"]]],
   ["src/components/achievement-badge.tsx", [["outline: selected ? `2px solid", "seçili rozetin DIŞ halkası (2 px boşluklu outline), kutunun kenarlığı değil"]]],

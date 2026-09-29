@@ -1,8 +1,7 @@
 "use client";
 
-import { AvatarOverlay, HAT_COLORS } from "@/components/avatar-parts";
 import { useAvatar } from "@/lib/avatar";
-import { avatarBg, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
+import { HAT_COLORS, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
 import { avatarImageUrl, avatarLayers, catalogBlink, catalogGlance, catalogSize, circleFrame, idleScript, stageFrame, type AvatarCatalog, type IdleStep } from "@/lib/avatar-layers";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
 import { useEffect, useState, type ReactNode } from "react";
@@ -151,14 +150,9 @@ export function MascotAvatar({
   return (
     <span
       className={`relative block shrink-0 overflow-hidden rounded-full ${className}`}
-      style={{ width: size, height: size, background: "#FA7C13", ...(ring ? { boxShadow: `0 0 0 2px ${ring}` } : {}) }}
-    >
-      {/* Büyük boyda aynı çizimin 512 px'liği: 128'lik taban profil üst
-          alanında bulanıklaşıyordu. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={size > 72 ? "/icon-512.png" : "/logo-mark.png"} alt="" width={size} height={size} className="block h-full w-full object-cover" />
-      <AvatarOverlay config={config} size={size} />
-    </span>
+      /* TEK ÇİZİM 3B: katalog yoksa (sayfayla gelmediyse) boş daire; eski 2B maskot yok. */
+      style={{ width: size, height: size, background: "var(--surface-2)", ...(ring ? { boxShadow: `0 0 0 2px ${ring}` } : {}) }}
+    />
   );
 }
 
@@ -281,57 +275,28 @@ function useWidth<T extends HTMLElement>() {
   return [setEl, w] as const;
 }
 
-export function AvatarStage({ config, height = 280, inset = 0, children, className = "", bump = 0 }: { config: AvatarConfig; height?: number; /** Altta sahnenin üstüne binen içeriğin payı (px): tuval o kadar yukarıda, kesik alt kenarı içeriğin arkasında kalır. */ inset?: number; children?: ReactNode; className?: string; /** Artınca figür sıçrar (bkz. `useBump`). */ bump?: number }) {
+export function AvatarStage({ config, height = 280, inset = 0, children, className = "", bump = 0 }: { config: AvatarConfig; height?: number; /** Altta sahnenin üstüne binen içeriğin payı (px): burun görünen alanın ortasına gelir, kesik gövde içeriğin arkasında kalır. */ inset?: number; children?: ReactNode; className?: string; /** Artınca figür sıçrar (bkz. `useBump`). */ bump?: number }) {
   const catalog = useAvatarCatalog();
   const controls = useBump(bump);
   const [ref, stageW] = useWidth<HTMLDivElement>();
-  const g = avatarBg(config.bg);
-  if (catalog) {
-    const L = avatarLayers(config, catalog.cat);
-    const { w, h } = catalogSize(catalog.cat);
-    /* v3: burun görünen alanın dikey ortasında, en uzun parça sığacak ölçekte
-       (`stageFrame`). Arka plan sahneyi ortadan kaplıyor: ışığı burunda. */
-    const fr = stageFrame(catalog.cat, stageW, height - inset, [L.base, ...L.layers]);
-    if (catalog.cat.burun) {
-      return (
-        <div ref={ref} className={`relative overflow-hidden ${className}`} style={{ height, background: L.bg ? `center / cover url(${catalog.base}/${L.bg})` : `linear-gradient(${g.from}, ${g.to})` }}>
-          {fr ? (
-            /* Parça değişince kadraj yumuşakça yaklaşır/uzaklaşır (balon takılınca geri çekilir). */
-            <div className="absolute" style={{ left: fr.left, top: fr.top, width: fr.w, height: fr.h, transition: "left .35s ease, top .35s ease, width .35s ease, height .35s ease" }}>
-              <motion.div animate={controls} className="absolute inset-0" style={{ transformOrigin: `${(catalog.cat.burun[0] / w) * 100}% ${(catalog.cat.burun[1] / h) * 100}%` }}>
-                <NomiFigure cat={catalog.cat} base={catalog.base} files={L} />
-              </motion.div>
-            </div>
-          ) : null}
-          {children}
-        </div>
-      );
-    }
-    /* TUVAL ALANIN GENİŞLİĞİNDE, alta hizalı; geniş ekranda yüksekliğe
-       sığdırılıyor (hiçbir parça kesilmesin: kanat, balon). Arka plan tüm
-       sahneyi kaplıyor, alttan hizalı ki ışığı başın arkasında kalsın. Alt
-       kenar binen içeriğin (`inset`) biraz altında: kesik göğüs orada
-       görünmez, sallanırken de çizgi açılmaz. */
-    return (
-      <div className={`relative overflow-hidden ${className}`} style={{ height, background: L.bg ? `center bottom / cover url(${catalog.base}/${L.bg})` : `linear-gradient(${g.from}, ${g.to})` }}>
-        <div className="absolute left-1/2 -translate-x-1/2" style={{ bottom: Math.max(0, inset - 6) - height * 0.015, width: `min(100%, ${Math.round(((height - Math.max(0, inset - 6)) * w) / h)}px)`, aspectRatio: `${w} / ${h}` }}>
-          <motion.div animate={controls} className="absolute inset-0 origin-bottom">
+  /* TEK ÇİZİM 3B. Katalog sayfayla geliyor (`AvatarCatalogProvider`); yine de
+     yoksa sahne boş zeminle kalır, eski 2B maskot çizilmez. Burun görünen
+     alanın dikey ortasında, takılı parçaların sığacağı ölçekte (`stageFrame`);
+     arka plan sahneyi ortadan kaplıyor, ışığı burunda. */
+  const L = catalog ? avatarLayers(config, catalog.cat) : null;
+  const size = catalog ? catalogSize(catalog.cat) : null;
+  const fr = catalog && L ? stageFrame(catalog.cat, stageW, height - inset, [L.base, ...L.layers]) : null;
+  const nose = catalog?.cat.burun ?? (size ? [size.w / 2, size.h / 2] : [0, 0]);
+  return (
+    <div ref={ref} className={`relative overflow-hidden ${className}`} style={{ height, background: catalog && L?.bg ? `center / cover url(${catalog.base}/${L.bg})` : "var(--surface-2)" }}>
+      {catalog && L && size && fr ? (
+        /* Parça değişince kadraj yumuşakça yaklaşır/uzaklaşır (balon takılınca geri çekilir). */
+        <div className="absolute" style={{ left: `calc(50% + ${fr.dx}px)`, top: fr.top, width: fr.w, height: fr.h, transition: "left .35s ease, top .35s ease, width .35s ease, height .35s ease" }}>
+          <motion.div animate={controls} className="absolute inset-0" style={{ transformOrigin: `${(nose[0] / size.w) * 100}% ${(nose[1] / size.h) * 100}%` }}>
             <NomiFigure cat={catalog.cat} base={catalog.base} files={L} />
           </motion.div>
         </div>
-        {children}
-      </div>
-    );
-  }
-  const d = Math.round(height * 0.56);
-  return (
-    <div className={`relative overflow-hidden ${className}`} style={{ height, background: `linear-gradient(${g.from}, ${g.to})` }}>
-      <span aria-hidden className="absolute left-1/2 -translate-x-1/2 rounded-[50%]" style={{ bottom: height * 0.14, width: d * 0.9, height: 22, background: "radial-gradient(closest-side, rgba(0,0,0,.28), transparent)" }} />
-      <div className="absolute left-1/2 -translate-x-1/2" style={{ bottom: height * 0.17 }}>
-        <motion.div animate={controls} className="rounded-full" style={{ boxShadow: "0 0 0 5px rgba(255,255,255,.85), 0 14px 30px rgba(0,0,0,.18)" }}>
-          <MascotAvatar config={config} size={d} />
-        </motion.div>
-      </div>
+      ) : null}
       {children}
     </div>
   );

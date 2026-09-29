@@ -1,19 +1,35 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { createContext, createElement, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { AvatarCatalog } from "@/lib/avatar-layers";
 import { apiFetch } from "@/lib/api-fetch";
 
 /**
- * Nomi 3B avatar kataloğu — mobil `lib/avatarCatalog` ile aynı akış.
+ * Nomi 3B avatar kataloğu (web) — TEK ÇİZİM 3B (2026-09-29).
  *
- * Sunucu `/api/config` › `avatar3d` ile kökü söylüyor; boşsa (bugün) katalog
- * yok ve avatarlar 2B maskotla çiziliyor. Doluysa `katalog.json` bir kez
- * iniyor ve katmanlar o kökten okunuyor. Sayfa başına bir istek.
+ * Katalog SAYFAYLA geliyor: uygulama düzeni ve davet sayfası sunucuda
+ * `katalog.json`u okuyup `AvatarCatalogProvider` ile veriyor
+ * (`lib/avatar-items` `avatarCatalogSeed`). Önceden istemci kataloğu iki
+ * istekle (`/api/config`, `katalog.json`) sonradan indiriyordu ve o arada
+ * eski 2B maskot çiziliyordu: hızlı yenilemede görünüyordu. 2B yol silindi.
+ *
+ * Sağlayıcının dışında (yok denecek kadar az) eski yol yedek olarak duruyor:
+ * katalog gelene kadar avatar yerinde boş bir daire çizilir, 2B değil.
+ * Mobil karşılığı `lib/avatarCatalog` (cihazda saklanan kopya).
  */
-/** `active`: envanterde gösterilen parçalar (`/api/config` › `avatarActive`; null = kısıt yok). */
-type State = { base: string; cat: AvatarCatalog; active: ReadonlySet<string> | null } | null;
-let state: State = null;
+/** `active`: envanterde gösterilen parçalar (`avatarActive`; null = kısıt yok). */
+export type AvatarCatalogState = { base: string; cat: AvatarCatalog; active: ReadonlySet<string> | null };
+type Seed = { base: string; cat: AvatarCatalog; active: string[] | null } | null;
+
+const Ctx = createContext<AvatarCatalogState | null>(null);
+
+/** Sunucunun verdiği katalogla alt ağacı besler (ilk karede hazır). */
+export function AvatarCatalogProvider({ seed, children }: { seed: Seed; children: ReactNode }) {
+  const value = useMemo(() => (seed ? { base: seed.base, cat: seed.cat, active: seed.active ? new Set(seed.active) : null } : null), [seed]);
+  return createElement(Ctx.Provider, { value }, children);
+}
+
+let state: AvatarCatalogState | null = null;
 let started = false;
 const subs = new Set<() => void>();
 
@@ -32,17 +48,19 @@ async function load() {
     state = { base, cat, active };
     subs.forEach((f) => f());
   } catch {
-    /* katalog yoksa 2B maskot */
+    /* katalog gelmezse avatar yerinde boş daire */
   }
 }
 
-export function useAvatarCatalog(): State {
+export function useAvatarCatalog(): AvatarCatalogState | null {
+  const seeded = useContext(Ctx);
   const [, bump] = useState(0);
   useEffect(() => {
+    if (seeded) return;
     const f = () => bump((x) => x + 1);
     subs.add(f);
     void load();
     return () => { subs.delete(f); };
-  }, []);
-  return state;
+  }, [seeded]);
+  return seeded ?? state;
 }

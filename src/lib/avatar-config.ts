@@ -70,21 +70,10 @@ export function parseAvatar(raw: unknown): AvatarConfig | null {
 }
 
 /**
- * Arka planlar — 3B katalog kapalıyken (`AVATAR_3D_BASE` boş) çizilen düz
- * geçişler. Kimlikler 3B kataloğun arka plan kimlikleriyle aynı: katalog
- * açılınca aynı seçim görselle çizilir. İlk renk üst, ikincisi alt.
+ * Renklenen parçaların paleti (3B kataloğun `palet`i ile aynı sıra): şapka
+ * rengi ve türetilmiş avatarın rengi buradan.
  */
-export const AVATAR_BGS: { id: string; from: string; to: string }[] = [
-  { id: "bg_orange", from: "#ffb45c", to: "#f2761a" },
-  { id: "bg_mint", from: "#dcf4e8", to: "#8fd0b4" },
-  { id: "bg_sky", from: "#cfe7ff", to: "#76aee9" },
-  { id: "bg_lilac", from: "#ece4ff", to: "#ab98ee" },
-  { id: "bg_peach", from: "#ffe9d8", to: "#f2ab8c" },
-  { id: "bg_slate", from: "#4a5367", to: "#1c2130" },
-];
-export function avatarBg(id: string | null | undefined): { from: string; to: string } {
-  return AVATAR_BGS.find((b) => b.id === id) ?? AVATAR_BGS[0];
-}
+export const HAT_COLORS = ["#c0392b", "#2d6cdf", "#27ae60", "#8e44ad", "#e67e22", "#2c3e50"];
 
 /** Nadirlik renkleri — parça kartının kenarı (sıradan, nadir, epik, efsanevi). Kimlik rengi, tema değil. */
 export const AVATAR_RARITY: Record<string, string> = { common: "#a8a29a", rare: "#2d6cdf", epic: "#8e44ad", legendary: "#d9a514" };

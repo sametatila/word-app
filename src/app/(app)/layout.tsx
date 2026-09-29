@@ -4,6 +4,9 @@ import { appControl } from "@/lib/app-control";
 import { adminGate } from "@/lib/admin";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
+import { headers } from "next/headers";
+import { avatarCatalogSeed } from "@/lib/avatar-items";
+import { AvatarCatalogProvider } from "@/lib/avatar-catalog-client";
 import { getSessionRead, authEnabled } from "@/lib/auth/server";
 import { backfillNativeLang, ensureProfile, termsUpdateFor } from "@/lib/session";
 import { AccountSync } from "@/components/account-sync";
@@ -76,6 +79,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     console.error("[layout] profil okunamadı", err);
   }
   if (needsOnboarding) redirect("/setup");
+  const catalogSeed = await avatarCatalogSeed((await headers()).get("host")).catch(() => null);
 
   return (
     <>
@@ -84,9 +88,12 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <LangSync profileLang={nativeLang} />
       {/* Analitik tercihi ve "şartlar güncellendi" şeridi (LEG-9 / LEG-11). */}
       <AccountSync analyticsOptOut={analyticsOptOut} termsUpdate={termsUpdate} />
-      <AppShell streak={streak} xp={xp} course={course} voice={voice} userId={user.id} name={name} avatar={avatar}>
-        {children}
-      </AppShell>
+      {/* 3B avatar kataloğu sayfayla geliyor: ilk karede hazır, eski 2B hiç çizilmiyor. */}
+      <AvatarCatalogProvider seed={catalogSeed}>
+        <AppShell streak={streak} xp={xp} course={course} voice={voice} userId={user.id} name={name} avatar={avatar}>
+          {children}
+        </AppShell>
+      </AvatarCatalogProvider>
     </>
   );
 }

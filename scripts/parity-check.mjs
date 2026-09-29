@@ -1086,10 +1086,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["DETAIL_MAX", "src/lib/errors.ts", "mobile/src/lib/errors.ts"],
     ["ERROR_TYPES", "src/lib/errors.ts", "mobile/src/lib/errors.ts"],
     ["SPELLING_TOLERANCE", "src/lib/errors.ts", "mobile/src/lib/errors.ts"],
-    ["GLASSES", "src/components/avatar-parts.tsx", "mobile/src/ui/avatarParts.tsx"],
-    ["HATS", "src/components/avatar-parts.tsx", "mobile/src/ui/avatarParts.tsx"],
-    ["HAT_COLORS", "src/components/avatar-parts.tsx", "mobile/src/ui/avatarParts.tsx"],
-    ["MUSTACHES", "src/components/avatar-parts.tsx", "mobile/src/ui/avatarParts.tsx"],
+    ["HAT_COLORS", "src/lib/avatar-config.ts", "mobile/src/lib/avatar.ts"],
     ["LEAGUE_TIERS", "src/lib/social/types.ts", "mobile/src/api/social.ts"],
     ["MOCK_LABELS", "src/lib/mock-exams/types.ts", "mobile/src/data/exams/index.ts"],
     ["MOCK_PASS_PCT", "src/lib/mock-exams/types.ts", "mobile/src/data/exams/index.ts"],
@@ -10707,20 +10704,33 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     /* 2) ROZET IKONLARI. Webin haritasi yirmi dokuz addi, mobil alani hic
        okumuyordu (elli yedi rozetin hepsi KUPA goruluyordu). Olcu SAYIM
-       DEGIL AD KUMESI: sayilar esit kalip bir ad degisse fark gorunmezdi. */
+       DEGIL KIMLIK KUMESI: sayilar esit kalip bir kimlik degisse fark
+       gorunmezdi. 2026-09-29'dan beri harita ANLAM kimligiyle (`glyph`,
+       bkz. data/icons/picks.json); eski `icon` adi yalniz yayimlanmis
+       surumler icin gidiyor ve iki istemci de onu okumuyor. Ucuncu olcu:
+       sunucunun kullandigi her glif iki haritada da var (yoksa rozet
+       sessizce yildiza duser). */
     const ikonlar = (y) => {
       const src = read(y);
       const i = src.indexOf("const ICONS");
       const j = src.indexOf("};", i);
       const blok = src.slice(i, j);
-      return [...new Set(blok.match(/\b[A-Z][A-Za-z]*Icon\b/g) ?? [])].sort();
+      return [...new Set([...blok.matchAll(/^\s*"?([a-z][a-z0-9-]*)"?: [A-Z]\w*Icon,$/gm)].map((m) => m[1]))].sort();
     };
-    sameSet(
-      "rozet ikon adlari",
-      ikonlar("mobile/src/ui/achievementIcon.tsx"),
-      ikonlar("src/components/achievement-badge.tsx"),
-      "mobil",
-      "web",
+    const mobRozet = ikonlar("mobile/src/ui/achievementIcon.tsx");
+    const webRozet = ikonlar("src/components/achievement-badge.tsx");
+    sameSet("rozet glif kimlikleri", mobRozet, webRozet, "mobil", "web");
+    const sunucuGlif = [...new Set([...read("src/lib/achievements.ts").matchAll(/ glyph: "([a-z0-9-]+)",/g)].map((m) => m[1]))].sort();
+    sameSet("sunucunun rozet glifleri haritada", sunucuGlif, webRozet, "sunucu", "web haritasi");
+    sameList(
+      "istemci rozeti glyph ile ciziyor",
+      [
+        "web=" + (/<BadgeIcon glyph=\{/.test(read("src/components/achievement-badge.tsx")) && !/BadgeIcon name=/.test(read("src/components/achievement-wall.tsx") + read("src/components/profile/profile-view.tsx")) ? "glyph" : "ESKI AD"),
+        "mobil=" + (["mobile/src/ui/AchievementUnlock.tsx", "mobile/src/screens/AchievementsScreen.tsx", "mobile/src/screens/ProfileScreen.tsx"].every((f) => !/AchievementIcon name=/.test(read(f))) ? "glyph" : "ESKI AD"),
+      ],
+      ["web=glyph", "mobil=glyph"],
+      "bulunan",
+      "beklenen",
     );
 
     /* ---- KAZANILAN AKSESUARLAR: KILIT TEK YERDE, SUNUCUDA ---------------
@@ -10731,23 +10741,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      * `/api/avatar/items` (mobil) ve sayfa sunucusundan (web) aliyor; tablonun
      * kendisini `check:avatar-unlocks` dogruluyor.
      *
-     * KATALOG IKI TARAFTA AYNI OLMALI: parca iki tarafta da cizilebilmeli.
+     * TEK CIZIM 3B (2026-09-29, Samet): eski 2B maskot ve 2B parca cizimi
+     * (`avatar-parts`, `AvatarOverlay`, maskot tabani gorseli) silindi; ne
+     * yedek ne yukleme arasi. Kapi dosyalarin ve cizimin GERI GELMEDIGINI
+     * olcuyor.
      *
      * KILIDIN KENDISI SUNUCUDA: `api/profile` kaydederken kazanilmamis
      * parcayi eliyor; istemcide duran bir kilit kilit degildir. */
     {
-      const katalog = (yol) => {
-        const src = read(yol);
-        return ["HATS", "GLASSES", "MUSTACHES"]
-          .map((ad) => ad + "=" + ((src.match(new RegExp("const " + ad + " = \\[([^\\]]*)\\]")) ?? [])[1] ?? "YOK").replace(/[\s"]/g, ""))
-          .join(" · ");
-      };
+      const var_ = (yol) => existsSync(new URL("../" + yol, import.meta.url));
+      const cizim = ["src/components/avatar.tsx", "mobile/src/ui/Avatar.tsx", "src/components/avatar-editor.tsx", "mobile/src/screens/AvatarScreen.tsx"]
+        .filter((f) => /AvatarOverlay|avatar-parts|avatarParts|logo-mark|icon-512|avatar-base/.test(sil(read(f))));
       sameList(
-        "aksesuar katalogu iki platformda",
-        [katalog("mobile/src/ui/avatarParts.tsx")],
-        [katalog("src/components/avatar-parts.tsx")],
-        "mobil",
-        "web",
+        "eski 2B avatar geri gelmedi",
+        [
+          "web parca dosyasi=" + (var_("src/components/avatar-parts.tsx") ? "VAR" : "yok"),
+          "mobil parca dosyasi=" + (var_("mobile/src/ui/avatarParts.tsx") ? "VAR" : "yok"),
+          "mobil maskot tabani=" + (var_("mobile/src/assets/avatar-base.png") || var_("mobile/src/assets/avatar-base-512.png") ? "VAR" : "yok"),
+          "2B cizen dosya=" + (cizim.join(", ") || "yok"),
+        ],
+        ["web parca dosyasi=yok", "mobil parca dosyasi=yok", "mobil maskot tabani=yok", "2B cizen dosya=yok"],
+        "bulunan",
+        "beklenen",
       );
       /* Istemcide kilit tablosu kopyasi YOK: geri gelirse tek kaynak bozulur. */
       sameList(
@@ -17901,181 +17916,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
   }
 
-  /* -------------------------------------- 311. AVATAR PARCALARININ GEOMETRISI
-   *
-   * `avatar-parts.tsx`in kendi yorumu su iddiayi tasiyor: "Yollar mobil
-   * `M/src/ui/avatarParts.tsx` ile BIREBIR: ayni secenek ayni gorunmeli,
-   * yoksa 'ayni avatar' iki platformda iki sey olur." Iddiayi tutan HICBIR
-   * sey yoktu: katalog listeleri (`HATS`/`GLASSES`/`MUSTACHES`/`HAT_COLORS`)
-   * karsilastiriliyor ve avatar cozumlemesi de olculuyor, ama CIZIMIN kendisi
-   * olculmuyordu.
-   *
-   * Sonucu sessiz ve veriye bagli: kullanicinin kaydettigi yapilandirma
-   * (`hat: "cap"`) iki platformda ayni, cizim farkli olur - ayni hesap iki
-   * uygulamada iki avatar. Derleyici gormez (iki dosya ayri agac, biri SVG
-   * biri react-native-svg), goz de gormez cunku fark bir yol dizgisinin
-   * icinde.
-   *
-   * OLCU PARCA PARCA: her `id === "<parca>"` dalindan cizim nitelikleri
-   * (`d`, `cx`, `rx`, `fill`, `strokeWidth`, …) SIRAYLA cikariliyor ve iki
-   * tarafta ayni olmasi bekleniyor. Parca duzeyinde olculmesi dosyadaki dal
-   * SIRASINI serbest birakiyor (siralama cizimi degistirmiyor) ama bir dalin
-   * ICINDEKI katman sirasini korumak zorunda - orada sira gercekten onemli.
-   *
-   * Sayi olcusu de var: parca bulunamazsa (yapinin degismesi) kumeler bosalir
-   * ve "fark yok" bos bir dogru olurdu. */
-  {
-    const parcalar = (yol) => {
-      const src = read(yol);
-      const out = new Map();
-      const idx = [...src.matchAll(/id === "([a-z]+)"/g)];
-      idx.forEach((m, i) => {
-        const son = i + 1 < idx.length ? idx[i + 1].index : src.length;
-        const blok = src.slice(m.index, son);
-        const nitelik = [
-          ...blok.matchAll(
-            /(?:d|cx|cy|r|x|y|x1|y1|x2|y2|width|height|rx|ry|fill|stroke|strokeWidth|points)=[{"]([^"}]*)["}]/g,
-          ),
-        ].map((x) => x[0].replace(/\s+/g, " "));
-        out.set(m[1], nitelik);
-      });
-      return out;
-    };
-    const webP = parcalar("src/components/avatar-parts.tsx");
-    const mobP = parcalar("mobile/src/ui/avatarParts.tsx");
-    const ortakP = [...webP.keys()].filter((k) => mobP.has(k)).sort();
-    sameList(
-      "avatar parcasi sayisi",
-      ["ortak=" + (ortakP.length >= 7 ? "7+" : ortakP.length), "web=" + webP.size, "mobil=" + mobP.size],
-      ["ortak=7+", "web=" + mobP.size, "mobil=" + mobP.size],
-      "bulunan",
-      "beklenen",
-    );
-    /* CIKTI KISA TUTULUYOR: ilk yazim iki tarafin BUTUN nitelik dizgisini
-       basiyordu ve tek bir piksel farkinda ekrana iki paragraf dokuluyordu -
-       okunmayan bir hata mesaji, hata mesaji degildir. Parca basina "ayni /
-       FARKLI", ayrica ILK farkin kendisi yaziliyor. */
-    const ilkFark = (() => {
-      for (const k of ortakP) {
-        const a = mobP.get(k) ?? [];
-        const b = webP.get(k) ?? [];
-        for (let i = 0; i < Math.max(a.length, b.length); i++) {
-          if (a[i] !== b[i]) return k + "[" + i + "] mobil=" + (a[i] ?? "-") + " web=" + (b[i] ?? "-");
-        }
-      }
-      return "yok";
-    })();
-    sameList(
-      "avatar parcalarinin cizimi",
-      [...ortakP.map((k) => k + "=" + ((mobP.get(k) ?? []).join("|") === (webP.get(k) ?? []).join("|") ? "ayni" : "FARKLI")), "ilk fark=" + ilkFark],
-      [...ortakP.map((k) => k + "=ayni"), "ilk fark=yok"],
-      "bulunan",
-      "beklenen",
-    );
-  }
-
   /* ------------------------------------- 312. ANDROID'DEN ALINAN IKONLARIN CIZIMI
    *
-   * `components/icons.tsx` uc yerde cizimin Androidden geldigini IDDIA ediyor:
-   *   - "MOBILDEN GELEN IKONLAR ... yollar birebir"      (Bolt/ArrowRight/Walk/Exam/Podium)
-   *   - "ALT GEZINMENIN UC IKONU ... BIREBIR"            (Learn/Path/Skills)
-   *   - "PATIKA VE BECERI SIMGELERI - cizimleri Androidden" (Quiz/Read/Listen/Write/Grammar)
-   * Iddiayi tutan hicbir sey yoktu. Ayni kavramin iki uygulamada iki ayri
-   * cizimle gosterilmesi bu dosyanin kendi yorumunda zaten bir kusur olarak
-   * yazili ("simge bir kavramin kimligiyse iki uygulamada ayni kimlik olmali")
-   * ve duzeltilmisti; tekrar ayrismasini engelleyen bir sey yoktu.
-   *
-   * Olcum sonucu: iddia bugun DOGRU (on uc ikon, sifir fark). Ama setin
-   * GERI KALANI bilerek ayri - webin kendi ailesi yari piksel hizali
-   * (113 yerde `.5`, mobilde 29) ve `CheckIcon` gibi ikonlar iddianin
-   * KAPSAMINDA DEGIL. Kapi bu yuzden butun sete degil, iddia edilen listeye
-   * bakiyor; kapsami genisletmek once o yorumlari degistirmeyi gerektirir.
-   *
-   * NOTASYON FARKI CIZIM FARKI DEGIL. Iki dosya ayni yolu farkli yazabiliyor:
-   * `M13 2 5 13` (ortuk lineto) ile `M13 2L5 13`, ya da yay bayraklari
-   * `1 0 0` ile bitisik `100`. Ham karsilastirma bu ikisini "fark" sayiyordu.
-   * `yolKanon` yolu komut komut ayristirip kanonik bicime ceviriyor: ortuk
-   * tekrarlar aciliyor, `M`den sonraki ortuk cift LINETO oluyor (SVG kurali),
-   * yay bayrak konumundaki bitisik haneler koparaliyor.
-   * SINIRI YAZILI: goreli (`l`) ile mutlak (`L`) yazim birbirine
-   * cevrilmiyor, yani ayni cizimi biri goreli biri mutlak yazan iki dosya
-   * yine "farkli" cikar - iddia listesindeki on uc ikonda boyle bir cift yok. */
-  {
-    const KOM = { M: 2, L: 2, H: 1, V: 1, C: 6, S: 4, Q: 4, T: 2, A: 7, Z: 0 };
-    const yolKanon = (d) => {
-      const ham = d.replace(/([a-zA-Z])/g, " $1 ").replace(/,/g, " ").replace(/([0-9.])-/g, "$1 -").replace(/\s+/g, " ").trim();
-      const par = ham.split(" ").filter(Boolean);
-      const out = [];
-      let i = 0;
-      let kom = null;
-      while (i < par.length) {
-        if (/^[a-zA-Z]$/.test(par[i])) { kom = par[i]; i++; }
-        if (kom === null) break;
-        const U = kom.toUpperCase();
-        const n = KOM[U] ?? 0;
-        if (U === "Z") { out.push("Z"); continue; }
-        const sayi = [];
-        for (let k = 0; k < n; k++) {
-          const t = par[i];
-          if (t === undefined) break;
-          if (U === "A" && (k === 3 || k === 4) && /^[01][0-9.]/.test(t)) { par[i] = t.slice(1); sayi.push(t[0]); continue; }
-          sayi.push(t);
-          i++;
-        }
-        out.push(kom === U ? U : U.toLowerCase(), ...sayi);
-        if (U === "M") kom = kom === "M" ? "L" : "l";
-      }
-      return out.join(" ");
-    };
-    const ikonlar = (yol) => {
-      const src = read(yol);
-      const out = new Map();
-      const idx = [...src.matchAll(/export (?:const|function) (\w+(?:Icon|Glyph)|LogoMark)\b/g)];
-      idx.forEach((m, i) => {
-        const son = i + 1 < idx.length ? idx[i + 1].index : src.length;
-        const blok = src.slice(m.index, son);
-        const nit = [
-          ...blok.matchAll(/(?:d|cx|cy|r|x|y|x1|y1|x2|y2|width|height|rx|ry|points)="([^"]*)"/g),
-        ].map((x) => x[0].split("=")[0] + "=" + (x[0].startsWith("d=") ? yolKanon(x[1]) : x[1].replace(/\s+/g, " ")));
-        out.set(m[1], nit);
-      });
-      return out;
-    };
-    /* IDDIA LISTESI - ucu de `components/icons.tsx`teki yorum bloklarindan. */
-    const IDDIA = [
-      "BoltIcon", "ArrowRightIcon", "WalkIcon", "ExamIcon", "PodiumIcon",
-      "LearnIcon", "PathIcon", "SkillsIcon",
-      "QuizIcon", "ReadIcon", "ListenIcon", "WriteIcon", "GrammarIcon",
-    ];
-    const webI = ikonlar("src/components/icons.tsx");
-    const mobI = ikonlar("mobile/src/ui/icons.tsx");
-    const webSrc2 = read("src/components/icons.tsx");
-    const eksik = IDDIA.filter((k) => !webI.has(k) || !mobI.has(k));
-    const farkli = IDDIA.filter((k) => webI.has(k) && mobI.has(k) && (webI.get(k) ?? []).join("|") !== (mobI.get(k) ?? []).join("|"));
-    const ilkFark = (() => {
-      for (const k of farkli) {
-        const a = mobI.get(k) ?? [];
-        const b = webI.get(k) ?? [];
-        for (let i = 0; i < Math.max(a.length, b.length); i++) if (a[i] !== b[i]) return k + "[" + i + "] mobil=" + (a[i] ?? "-") + " web=" + (b[i] ?? "-");
-      }
-      return "yok";
-    })();
-    /* Iddianin KENDISI duruyor mu: yorum kalkarsa liste gozden gecirilmeli. */
-    const iddiaYorumu = ["MOBİLDEN GELEN İKONLAR", "ALT GEZİNMENİN ÜÇ İKONU", "çizimleri Android'den"].filter((x) => webSrc2.includes(x)).length;
-    sameList(
-      "androidden alinan ikonlarin cizimi",
-      [
-        "iddia listesi=" + IDDIA.length,
-        "eksik ikon=" + (eksik.join(", ") || "yok"),
-        "cizimi farkli=" + (farkli.join(", ") || "yok"),
-        "ilk fark=" + ilkFark,
-        "iddia yorumu=" + iddiaYorumu,
-      ],
-      ["iddia listesi=13", "eksik ikon=yok", "cizimi farkli=yok", "ilk fark=yok", "iddia yorumu=3"],
-      "bulunan",
-      "beklenen",
-    );
-  }
+   * Eskiden `components/icons.tsx`in "cizimi Androidden" dedigi on uc ikonun
+   * yol verisini kanonik bicimde karsilastiriyordu. 2026-09-29'dan beri iki
+   * platformun ikonlari AYNI kaynaktan uretiliyor (`scripts/icons/build.mjs`,
+   * Remix Icon) ve ad -> yol eslemesinin tamami "uretilmis ikon yol verisi
+   * (web = mobil)" olcusunde birebir karsilastiriliyor; iddia listesi o
+   * olcunun alt kumesi oldugu icin blok kaldirildi. */
 
   /* ------------------------------- 313. CEVAP KATLAMA KURALLARI IKI PLATFORMDA
    *

@@ -1,12 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { Animated, Easing, View, Image, PixelRatio } from "react-native";
-import { AvatarOverlay, HAT_COLORS } from "./avatarParts";
-import { useAvatar, parseAvatar, avatarBg, type AvatarConfig } from "../lib/avatar";
+import { useAvatar, parseAvatar, HAT_COLORS, type AvatarConfig } from "../lib/avatar";
 import { avatarImageUrl, avatarLayers, catalogBlink, catalogGlance, catalogSize, circleFrame, idleScript, stageFrame, type AvatarCatalog } from "../lib/avatarLayers";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useAvatarCatalog } from "../lib/avatarCatalog";
-import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
-import { radii } from "../theme";
+import { useTheme } from "../theme";
 
 /**
  * Avatarın TEK çizim yeri — web `src/components/avatar.tsx` ile birebir eş.
@@ -23,11 +21,6 @@ import { radii } from "../theme";
  * Bul sekmesi ve sıralama baştan sona eski görünüyordu. Ayırt edicilik
  * korunuyor: seçmemiş kişinin aksesuarları kimliğinden türetiliyor.
  */
-
-// Nomi (maskot) forward-facing tabanı — web `public/logo-mark.png` ile AYNI dosya (aynı md5).
-const BASE = require("../assets/avatar-base.png");
-/** Aynı çizimin 512 px'liği (web `public/icon-512.png`): büyük boyda 128'lik taban bulanıklaşıyordu. */
-const BASE_LARGE = require("../assets/avatar-base-512.png");
 
 /** Kimlikten sayı: aynı kimlik her zaman aynı avatarı verir (web `hash` ile aynı). */
 function hash(seed: string): number {
@@ -97,6 +90,7 @@ export function Avatar({
 export function MascotAvatar({ config, size = 44, ring }: { config: AvatarConfig; size?: number; ring?: string | null }) {
   const inner = ring ? size - 4 : size;
   const catalog = useAvatarCatalog();
+  const { colors } = useTheme();
   /* 3B KATALOG AÇIKSA katmanlar (web `MascotAvatar` ile aynı kırpma: `circleFrame`). */
   if (catalog) {
     const L = avatarLayers(config, catalog.cat);
@@ -117,12 +111,11 @@ export function MascotAvatar({ config, size = 44, ring }: { config: AvatarConfig
       </View>
     );
   }
+  /* TEK ÇİZİM 3B: katalog henüz yoksa (ilk açılış, cihazda kopya yok) boş
+     daire; eski 2B maskot yok (web ile aynı). */
   return (
     <View style={{ width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center", borderWidth: ring ? 2 : 0, borderColor: ring ?? "transparent" }}>
-      <View style={{ width: inner, height: inner, borderRadius: inner / 2, overflow: "hidden", backgroundColor: "#FA7C13" }}>
-        <Image source={inner > 72 ? BASE_LARGE : BASE} style={{ width: inner, height: inner }} resizeMode="cover" />
-        <AvatarOverlay config={config} size={inner} />
-      </View>
+      <View style={{ width: inner, height: inner, borderRadius: inner / 2, backgroundColor: colors.surface2 }} />
     </View>
   );
 }
@@ -244,72 +237,25 @@ function NomiFigure({ cat, base, files, w, h }: { cat: AvatarCatalog; base: stri
 
 export function AvatarStage({ config, height = 280, inset = 0, children, figureScale }: { config: AvatarConfig; height?: number; /** Altta binen içeriğin payı (web ile aynı). */ inset?: number; children?: React.ReactNode; figureScale?: Animated.Value }) {
   const catalog = useAvatarCatalog();
-  const g = avatarBg(config.bg);
+  const { colors } = useTheme();
   const [stageW, setStageW] = React.useState(0);
-  if (catalog && catalog.cat.burun) {
-    /* v3: burun görünen alanın dikey ortasında, en uzun parça sığacak ölçekte
-       (`stageFrame`, web ile aynı). Arka plan sahneyi ortadan kaplıyor. */
-    const L = avatarLayers(config, catalog.cat);
-    const { w, h } = catalogSize(catalog.cat);
-    const fr = stageFrame(catalog.cat, stageW, height - inset, [L.base, ...L.layers]);
-    const [nx, ny] = catalog.cat.burun;
-    return (
-      <View style={{ height, overflow: "hidden" }} onLayout={(e) => setStageW(e.nativeEvent.layout.width)}>
-        {L.bg ? <Image source={{ uri: `${catalog.base}/${L.bg}` }} style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} resizeMode="cover" /> : <Fill from={g.from} to={g.to} />}
-        {fr ? (
-          <Animated.View style={{ position: "absolute", left: fr.left, top: fr.top, width: fr.w, height: fr.h, transformOrigin: `${(nx / w) * 100}% ${(ny / h) * 100}%`, transform: figureScale ? [{ scale: figureScale }] : [] }}>
-            <NomiFigure cat={catalog.cat} base={catalog.base} files={L} w={fr.w} h={fr.h} />
-          </Animated.View>
-        ) : null}
-        {children}
-      </View>
-    );
-  }
-  if (catalog) {
-    const L = avatarLayers(config, catalog.cat);
-    const { w, h } = catalogSize(catalog.cat);
-    /* TUVAL ALANIN GENİŞLİĞİNDE, alta hizalı; geniş ekranda (tablet) yüksekliğe
-       sığdırılıyor: hiçbir parça (kanat, balon) kesilmesin. Web `AvatarStage`
-       ile aynı; alt kenar binen içeriğin (`inset`) biraz altında. */
-    const lift = Math.max(0, inset - 6);
-    const fw = stageW ? Math.min(stageW, ((height - lift) * w) / h) : 0;
-    const fh = (fw * h) / w;
-    return (
-      <View style={{ height, overflow: "hidden" }} onLayout={(e) => setStageW(e.nativeEvent.layout.width)}>
-        {L.bg ? <Image source={{ uri: `${catalog.base}/${L.bg}` }} style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: Math.max(height, stageW ? (stageW * h) / w : height) }} resizeMode="cover" /> : <Fill from={g.from} to={g.to} />}
-        {fw ? (
-          <Animated.View style={{ position: "absolute", bottom: lift - height * 0.015, alignSelf: "center", width: fw, height: fh, transformOrigin: "bottom", transform: figureScale ? [{ scale: figureScale }] : [] }}>
-            <NomiFigure cat={catalog.cat} base={catalog.base} files={L} w={fw} h={fh} />
-          </Animated.View>
-        ) : null}
-        {children}
-      </View>
-    );
-  }
-  const d = Math.round(height * 0.56);
+  /* TEK ÇİZİM 3B (web `AvatarStage` ile aynı): burun görünen alanın dikey
+     ortasında, takılı parçaların sığacağı ölçekte (`stageFrame`); arka plan
+     sahneyi ortadan kaplıyor. Katalog yoksa boş zemin, eski 2B yok. */
+  const L = catalog ? avatarLayers(config, catalog.cat) : null;
+  const size = catalog ? catalogSize(catalog.cat) : null;
+  const fr = catalog && L ? stageFrame(catalog.cat, stageW, height - inset, [L.base, ...L.layers]) : null;
+  const nose = catalog?.cat.burun ?? (size ? [size.w / 2, size.h / 2] : [0, 0]);
   return (
-    <View style={{ height, overflow: "hidden" }}>
-      <Fill from={g.from} to={g.to} />
-      <View style={{ position: "absolute", bottom: height * 0.14, alignSelf: "center", width: d * 0.9, height: 20, borderRadius: radii.pill, backgroundColor: "rgba(0,0,0,0.16)" }} />
-      <Animated.View style={{ position: "absolute", bottom: height * 0.17, alignSelf: "center", borderRadius: d, borderWidth: 5, borderColor: "rgba(255,255,255,0.85)", transform: figureScale ? [{ scale: figureScale }] : [] }}>
-        <MascotAvatar config={config} size={d} />
-      </Animated.View>
+    <View style={{ height, overflow: "hidden", backgroundColor: colors.surface2 }} onLayout={(e) => setStageW(e.nativeEvent.layout.width)}>
+      {catalog && L?.bg ? <Image source={{ uri: `${catalog.base}/${L.bg}` }} style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} resizeMode="cover" /> : null}
+      {catalog && L && size && fr && stageW ? (
+        <Animated.View style={{ position: "absolute", left: stageW / 2 + fr.dx, top: fr.top, width: fr.w, height: fr.h, transformOrigin: `${(nose[0] / size.w) * 100}% ${(nose[1] / size.h) * 100}%`, transform: figureScale ? [{ scale: figureScale }] : [] }}>
+          <NomiFigure cat={catalog.cat} base={catalog.base} files={L} w={fr.w} h={fr.h} />
+        </Animated.View>
+      ) : null}
       {children}
     </View>
   );
 }
 
-/** Dikey geçiş zemini (üstten alta) — sahnenin 2B arka planı. */
-function Fill({ from, to }: { from: string; to: string }) {
-  return (
-    <Svg style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} width="100%" height="100%">
-      <Defs>
-        <LinearGradient id="stageBg" x1="0" y1="0" x2="0" y2="1">
-          <Stop offset="0" stopColor={from} />
-          <Stop offset="1" stopColor={to} />
-        </LinearGradient>
-      </Defs>
-      <Rect x="0" y="0" width="100%" height="100%" fill="url(#stageBg)" />
-    </Svg>
-  );
-}

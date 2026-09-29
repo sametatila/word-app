@@ -47,7 +47,6 @@ const WEB_ALLOW = new Map([
 const MOBILE_SKIP = [
   "mobile/src/theme/",
   "mobile/src/ui/icons.tsx",
-  "mobile/src/ui/avatarParts.tsx",
   "mobile/src/ui/PersonAvatar.tsx",
   /* Arma paleti: renk bir jeton degil KIMLIK - ayni kisi acik ve koyu temada
      ayni renkte gorunmeli, jetona baglanirsa temayla degisir ve listede
@@ -55,9 +54,9 @@ const MOBILE_SKIP = [
      `components/avatar.tsx` basinda). Iki dosyanin ayni on iki cifti
      tasidigini parity-check 209 olcuyor. */
   "mobile/src/ui/Avatar.tsx",
-  /* Avatar arka planlari ve nadirlik renkleri: kullanicinin sectigi/kazandigi
-     ICERIK, palet degil (web `lib/avatar-config` `AVATAR_BGS`, `AVATAR_RARITY`
-     ile birebir; 3B katalogdaki arka plan gorsellerinin 2B karsiligi). */
+  /* Parca paleti ve nadirlik renkleri: kullanicinin sectigi/kazandigi
+     ICERIK, tema paleti degil (web `lib/avatar-config` `HAT_COLORS`,
+     `AVATAR_RARITY` ile birebir; 3B katalogun `palet`i). */
   "mobile/src/lib/avatar.ts",
 ];
 

@@ -135,12 +135,15 @@ export function catalogGlance(cat: AvatarCatalog): { frames: Record<string, stri
  * `sinirlar`dan): burundan en yüksek parçanın tepesine (balon, ampul) ve
  * yanlara (kanat) kadar her şey sığar; sade avatarda Nomi büyür ama başın
  * üstünde hep pay kalır (`NOMI_HEADROOM`). Tuvalin alt kenarı görünen alanın
- * altında kalır (kesik gövde görünmez). Katalog burnu bilmiyorsa (v1, v2)
- * null: çağıran eski alta hizalı düzene düşer.
+ * altında kalır (kesik gövde görünmez). Katalog burnu bilmiyorsa null.
+ *
+ * `stageW` bilinmiyorsa (0: sunucu çizimi, ilk kare) yan sınır atlanır; yatay
+ * yer sahnenin ORTASINA göre verilir (`dx`: burnu ortaya koyan kayma), yani
+ * web `calc(50% + dx)` ile genişliği ölçmeden çizer: sahne ilk karede hazır.
  */
 const NOMI_HEADROOM = 260;
-export function stageFrame(cat: AvatarCatalog, stageW: number, visibleH: number, files?: string[]): { w: number; h: number; left: number; top: number } | null {
-  if (!cat.burun || !stageW || !visibleH) return null;
+export function stageFrame(cat: AvatarCatalog, stageW: number, visibleH: number, files?: string[]): { w: number; h: number; dx: number; top: number } | null {
+  if (!cat.burun || !visibleH) return null;
   const { w: cw, h: ch } = catalogSize(cat);
   const [nx, ny] = cat.burun;
   const boxes = files && cat.sinirlar ? files.map((f) => cat.sinirlar?.[f]).filter((b): b is [number, number, number, number] => !!b) : [];
@@ -149,9 +152,9 @@ export function stageFrame(cat: AvatarCatalog, stageW: number, visibleH: number,
     : cat.icerik ?? [0, 0, cw, ch];
   const half = visibleH / 2, pad = 6;
   let k = (half - pad) / Math.max(NOMI_HEADROOM, ny - y0);
-  k = Math.min(k, (stageW / 2 - pad) / Math.max(1, nx - x0, x1 - nx));
+  if (stageW) k = Math.min(k, (stageW / 2 - pad) / Math.max(1, nx - x0, x1 - nx));
   k = Math.max(k, (half + pad) / Math.max(1, ch - ny));
-  return { w: cw * k, h: ch * k, left: stageW / 2 - nx * k, top: half - ny * k };
+  return { w: cw * k, h: ch * k, dx: -nx * k, top: half - ny * k };
 }
 
 /**
@@ -164,7 +167,7 @@ export function stageFrame(cat: AvatarCatalog, stageW: number, visibleH: number,
  * ve sürekli (web CSS, mobil Animated). Web ve mobil aynı işlevi oynatır.
  */
 export type IdleStep = { t: number; eyes?: string | null; tilt?: number; bob?: number };
-export function idleScript(rand: () => number = Math.random, glances: string[] = ["sol", "sag"]): { steps: IdleStep[]; ms: number } {
+export function idleScript(rand: () => number = Math.random, glances: string[] = []): { steps: IdleStep[]; ms: number } {
   const blink = (t: number): IdleStep[] => [{ t, eyes: "kirp1" }, { t: t + 60, eyes: "kirp2" }, { t: t + 150, eyes: "kirp1" }, { t: t + 220, eyes: null }];
   const gap = 1200 + rand() * 2200;
   const r = rand();

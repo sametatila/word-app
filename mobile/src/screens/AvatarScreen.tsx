@@ -7,10 +7,9 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, CloseIcon, LockedIcon, UndoIcon } from "../ui/icons";
 import { PrimaryButton } from "../ui/PrimaryButton";
-import { AvatarStage, derivedAvatar, MascotAvatar } from "../ui/Avatar";
+import { AvatarStage, derivedAvatar } from "../ui/Avatar";
 import { useAuth } from "../lib/AuthContext";
-import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
-import { saveAvatar, useAvatar, DEFAULT_AVATAR, AVATAR_BGS, AVATAR_RARITY, EXTRA_SLOTS, type AvatarConfig, type ExtraSlot } from "../lib/avatar";
+import { saveAvatar, useAvatar, AVATAR_RARITY, EXTRA_SLOTS, type AvatarConfig, type ExtraSlot } from "../lib/avatar";
 import { useAvatarCatalog } from "../lib/avatarCatalog";
 import { partIcon, type CatalogPart } from "../lib/avatarLayers";
 import { api } from "../api/client";
@@ -44,7 +43,7 @@ const SLOT_LABEL: Record<Slot, string> = {
 };
 const RARITY = AVATAR_RARITY;
 
-type Tile = { key: string; label: string; selected: boolean; locked: boolean; hint?: string; rarity?: string; icon?: string; preview?: AvatarConfig; swatch?: { from: string; to: string }; none?: boolean; apply: () => void };
+type Tile = { key: string; label: string; selected: boolean; locked: boolean; hint?: string; rarity?: string; icon?: string; none?: boolean; apply: () => void };
 
 export function AvatarScreen() {
   const { colors } = useTheme();
@@ -82,8 +81,7 @@ export function AvatarScreen() {
     return () => { alive = false; };
   }, [user]);
 
-  const slots: Slot[] = catalog ? ["bg", "hat", "glasses", "mustache", ...EXTRA_SLOTS] : ["bg", "hat", "glasses", "mustache"];
-  const none = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, bg: cfg.bg, ...over });
+  const slots: Slot[] = ["bg", "hat", "glasses", "mustache", ...EXTRA_SLOTS];
   const lang = currentLang();
 
   /*
@@ -132,14 +130,8 @@ export function AvatarScreen() {
       }
       return list;
     }
-    if (slot === "bg") {
-      return AVATAR_BGS.map((b) => ({ key: b.id, label: "", selected: (cfg.bg ?? "bg_orange") === b.id, locked: false, swatch: b, apply: () => pick("bg", b.id) }));
-    }
-    const ids = slot === "hat" ? HATS : slot === "glasses" ? GLASSES : MUSTACHES;
-    return [
-      { key: "none", label: t(slot === "hat" ? "avatar.no_hat" : slot === "glasses" ? "avatar.no_glasses" : "avatar.no_mustache"), selected: !current(slot), locked: false, preview: none({ [slot]: null }), apply: () => pick(slot, null) },
-      ...ids.map((id, i) => ({ key: id, label: `${t(SLOT_LABEL[slot])} ${i + 1}`, selected: current(slot) === id, locked: id in locked, hint: locked[id], preview: none({ [slot]: id }), apply: () => pick(slot, id) })),
-    ];
+    /* TEK ÇİZİM 3B: katalog yoksa karo yok (eski 2B parça listesi silindi). */
+    return [];
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [catalog, slot, cfg, locked, lang]);
 
@@ -147,7 +139,7 @@ export function AvatarScreen() {
      kural). Şapka rengi `hatColor`da, yeni yuvalarınki `extra[yuva].color`da. */
   const cur = slot === "bg" ? cfg.bg : slot === "hat" ? cfg.hat : slot === "glasses" ? cfg.glasses : slot === "mustache" ? cfg.mustache : cfg.extra[slot]?.id ?? null;
   const selPart = catalog ? catalog.cat.parcalar.find((p) => p.id === cur) : undefined;
-  const palette: string[] = catalog ? (selPart?.renkler ?? []) : slot === "hat" && cfg.hat ? HAT_COLORS : [];
+  const palette: string[] = selPart?.renkler ?? [];
   const colorNow = slot === "hat" ? cfg.hatColor : slot !== "bg" && slot !== "glasses" && slot !== "mustache" ? cfg.extra[slot]?.color ?? palette[0] : null;
   const setColor = (col: string) => (slot === "hat" ? setCfg({ hatColor: col }) : slot !== "bg" && slot !== "glasses" && slot !== "mustache" && cfg.extra[slot] ? setCfg({ extra: { ...cfg.extra, [slot]: { ...cfg.extra[slot]!, color: col } } }) : undefined);
   const colorable = palette.length > 0 && colorNow !== null;
@@ -241,9 +233,7 @@ function OptCard({ tile, colors, onLocked }: { tile: Tile; colors: Palette; onLo
         style={[{ alignItems: "center", gap: 6, padding: spacing.sm, borderRadius: radii.lg, borderWidth: 1, borderColor: tile.selected ? colors.primary : edge, backgroundColor: colors.surface }, tile.selected ? cardShadow(colors, 6) : null]}
       >
         <View style={{ width: 64, height: 64, alignItems: "center", justifyContent: "center", opacity: tile.locked ? 0.35 : 1 }}>
-          {tile.preview ? <MascotAvatar config={tile.preview} size={60} />
-            : tile.icon ? <Image source={{ uri: tile.icon }} style={{ width: 60, height: 60 }} resizeMode="contain" />
-            : tile.swatch ? <View style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: tile.swatch.to, borderWidth: 6, borderColor: tile.swatch.from }} />
+          {tile.icon ? <Image source={{ uri: tile.icon }} style={{ width: 60, height: 60 }} resizeMode="contain" />
             : <View style={{ width: 44, height: 44, borderRadius: 22, borderWidth: 1.5, borderStyle: "dashed", borderColor: colors.border }} />}
         </View>
         {tile.label ? <Text variant="micro" color={colors.textMuted} numberOfLines={1}>{tile.label}</Text> : null}

@@ -6,6 +6,9 @@ import { applyReferralLink } from "@/lib/referral-link";
 import { track } from "@/lib/events";
 import { getT } from "@/lib/i18n/server";
 import { InviteLanding } from "./invite-landing";
+import { headers } from "next/headers";
+import { avatarCatalogSeed } from "@/lib/avatar-items";
+import { AvatarCatalogProvider } from "@/lib/avatar-catalog-client";
 
 export const dynamic = "force-dynamic";
 
@@ -86,7 +89,9 @@ export default async function InvitePage({ params }: { params: Promise<{ code: s
   /* Adı olmayan davetçi için sosyal katmanın kendi cümlesi kullanılıyor
      (`social.unnamed`) — sıralamalarda ve profillerde de aynı metin. */
   const ad = inviter ? inviter.name || t("social.unnamed") : "";
+  const catalogSeed = inviter ? await avatarCatalogSeed((await headers()).get("host")).catch(() => null) : null;
   return (
+    <AvatarCatalogProvider seed={catalogSeed}>
     <InviteLanding
       code={code}
       inviter={inviter}
@@ -99,5 +104,6 @@ export default async function InvitePage({ params }: { params: Promise<{ code: s
         pitch: t("invitew.pitch"),
       }}
     />
+    </AvatarCatalogProvider>
   );
 }
