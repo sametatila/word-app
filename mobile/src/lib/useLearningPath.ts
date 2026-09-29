@@ -47,6 +47,8 @@ export type LearningPathUnit = {
   moduleIndex: number;
   /** Konuşmaların başlıkları (hedef dilde) — kartı ayırt eden ad. */
   topics: string[];
+  /** `topics`in yumuşak tireli (U+00AD) hâli, yalnız görüntü için; sunucu heceliyor. Eski sunucuda ve yerel kurulumda yok. */
+  topicsHyph?: string[];
   locked: boolean;
   complete: boolean;
   done: number;

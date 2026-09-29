@@ -13206,10 +13206,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        tasiyordu. */
     const pw = sil(read("src/components/immersion/immersion-hub.tsx"));
     const pm = sil(read("mobile/src/screens/PathScreen.tsx"));
+    /* Heceleme (2026-09-29): uzun Almanca sozcuk dar kartta satira sigmiyor. Web
+       tarayiciya birakiyor (`hyphens-auto` + `lang`); mobil metne dil veremedigi
+       icin sunucunun yumusak tireli `topicsHyph`ini + Android'de tire iznini
+       kullaniyor. Biri duserse sozcuk harf ortasindan bolunur ya da kesilir. */
     sameList(
       "unite kartinin ad butcesi",
-      ["butce=" + (/numberOfLines=\{2\}>\{u\.topics\.length \? u\.topics\.join\(" · "\)/.test(pm) ? "2" : "?")],
-      ["butce=" + (/line-clamp-2[^"]*text-strong" lang=\{course\}>\{unit\.topics\.join\(" · "\)\}/.test(pw) ? "2" : "?")],
+      [
+        "butce=" + (/numberOfLines=\{2\}[^>]*>\{u\.topics\.length \? \(u\.topicsHyph \?\? u\.topics\)\.join\(" · "\)/.test(pm) ? "2" : "?"),
+        "heceleme=" + (/android_hyphenationFrequency="normal">\{u\.topics\.length \? \(u\.topicsHyph/.test(pm) ? "var" : "yok"),
+      ],
+      [
+        "butce=" + (/line-clamp-2[^"]*text-strong" lang=\{course\}>\{unit\.topics\.join\(" · "\)\}/.test(pw) ? "2" : "?"),
+        "heceleme=" + (/line-clamp-2[^"]*hyphens-auto[^"]*text-strong" lang=\{course\}>/.test(pw) ? "var" : "yok"),
+      ],
       "mobil",
       "web",
     );

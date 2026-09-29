@@ -377,7 +377,9 @@ export function PathScreen() {
                     <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                       {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockedIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
                     </View>
-                    <Text variant="bodyStrong" style={{ marginTop: spacing.sm }} numberOfLines={2}>{u.topics.length ? u.topics.join(" · ") : u.theme}</Text>
+                    {/* Dar kartta uzun Almanca sözcük satıra sığmıyor: sunucunun yumuşak tireli başlığı + Android'de
+                        tireye izin (yoksa yumuşak tireyi yok sayıp sözcüğü harf ortasından bölüyor). */}
+                    <Text variant="bodyStrong" style={{ marginTop: spacing.sm }} numberOfLines={2} android_hyphenationFrequency="normal">{u.topics.length ? (u.topicsHyph ?? u.topics).join(" · ") : u.theme}</Text>
                     <View style={{ flex: 1 }} />
                     {u.locked ? null : <View style={{ marginTop: spacing.sm }}><StepBar unit={u} colors={colors} thin /></View>}
                     <Text variant="micro" color={u.complete ? colors.successText : colors.textMuted} style={{ marginTop: spacing.xs }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.steps_done", { n: u.done, total: u.total })}</Text>

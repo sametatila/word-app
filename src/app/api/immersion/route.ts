@@ -5,6 +5,7 @@ import { contentLang, tFor } from "@/lib/i18n/server";
 import { loadTrack } from "@/lib/immersion/build";
 import { buildTrackState } from "@/lib/immersion/state";
 import { immersionCompletion } from "@/lib/immersion/progress";
+import { hyphenateTitle } from "@/lib/hyphenate";
 import type { CefrLevel } from "@/lib/skills/types";
 
 export const dynamic = "force-dynamic";
@@ -37,6 +38,9 @@ export async function GET() {
       theme: u.unit.theme,
       moduleIndex: u.unit.moduleIndex,
       topics: u.unit.topics,
+      // Kartta gösterilecek hâli: yumuşak tireli (bkz. lib/hyphenate). Eski
+      // istemciler alanı tanımıyor, `topics`i gösteriyor.
+      topicsHyph: u.unit.topics.map((t) => hyphenateTitle(t, profile.course)),
       locked: u.locked,
       complete: u.complete,
       done: u.done,
