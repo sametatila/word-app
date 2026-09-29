@@ -8,6 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
+import { SkeletonText } from "../ui/Skeleton";
 import { BackIcon, ReactionHeartIcon, ReactionStarIcon, ReactionCheerIcon, ReactionWowIcon, StreakIcon, ReactionStrongIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow, onTint, onSolid, soft as softOf, ds } from "../theme";
 import type { Palette } from "../theme/colors";
@@ -25,8 +26,12 @@ export type IconCmp = (p: { color: string; size: number }) => React.ReactElement
  * `eyebrow`: başlığın üstünde küçük künye (ör. "A1 · Ünite 3").
  * `back={false}` + `inset={false}`: ekran başka bir kabuğun içinde (tablette
  * yan panel) — geri düğmesi ve üst güvenli alan payı kabuğun işi.
+ * `subtitlePending`: alt satır veriyle gelecek; o gelene dek bu metnin
+ * (sayıları tipik değerle kurulmuş gerçek cümle) ölçülmüş iskeleti yerini
+ * tutuyor. Alt satır sonradan belirince başlık büyüyor, altındaki her şey
+ * aşağı kayıyordu.
  */
-export function ScreenHeader({ title, subtitle, right, eyebrow, back = true, inset = true }: { title: string; subtitle?: string; right?: React.ReactNode; eyebrow?: string; back?: boolean; inset?: boolean }) {
+export function ScreenHeader({ title, subtitle, subtitlePending, right, eyebrow, back = true, inset = true }: { title: string; subtitle?: string | null; subtitlePending?: string | null; right?: React.ReactNode; eyebrow?: string; back?: boolean; inset?: boolean }) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
@@ -41,7 +46,8 @@ export function ScreenHeader({ title, subtitle, right, eyebrow, back = true, ins
         {eyebrow ? <Text variant="micro" color={colors.textMuted}>{eyebrow}</Text> : null}
         {/* BAŞLIK BAŞLIK OLARAK OKUNUYOR (bkz. parity 259). */}
         <Text accessibilityRole="header" variant="h2">{title}</Text>
-        {subtitle ? <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{subtitle}</Text> : null}
+        {subtitle ? <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{subtitle}</Text>
+          : subtitlePending ? <SkeletonText variant="caption" text={subtitlePending} numberOfLines={2} /> : null}
       </View>
       {right}
     </View>

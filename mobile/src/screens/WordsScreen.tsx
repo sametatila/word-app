@@ -121,7 +121,7 @@ export function WordsScreen() {
   useEffect(() => { setPage(0); setOpen(null); }, [q, filter, level]);
 
   const list = useMemo(() => remote ?? [], [remote]);
-  const { me } = useMe();
+  const { me, loading: meLoading } = useMe();
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -130,6 +130,8 @@ export function WordsScreen() {
       <ScreenHeader
         title={t("words.my_words")}
         subtitle={me ? t("words.progress_summary", { mastered: formatNumber(me.mastered), seen: formatNumber(me.totalWords), due: me.dueCount ?? 0 }) : undefined}
+        /* `me` inerken satırın yeri tipik sayılarla kurulmuş cümlenin iskeleti: başlık büyüyüp liste kaymasın. */
+        subtitlePending={meLoading ? t("words.progress_summary", { mastered: formatNumber(120), seen: formatNumber(480), due: 12 }) : null}
       />
 
       <View style={{ paddingHorizontal: spacing.lg, gap: spacing.md, paddingBottom: spacing.md }}>

@@ -173,6 +173,8 @@ export function AchievementsScreen() {
       <ScreenHeader
         title={t("achievements.achievements")}
         subtitle={phase === "ready" ? t("achievements.earned_count", { n: formatNumber(earned), total: formatNumber(total) }) : undefined}
+        /* Sayım tahtayla geliyor; o arada satırın yeri tutuluyor (başlık büyümesin). */
+        subtitlePending={phase === "loading" ? t("achievements.earned_count", { n: formatNumber(12), total: formatNumber(48) }) : null}
       />
 
       {phase === "loading" ? (
