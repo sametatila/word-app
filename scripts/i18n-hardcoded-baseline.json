@@ -39,6 +39,7 @@
   "src/lib/server-metrics.ts": 1,
   "src/lib/speech-rules.ts": 7,
   "src/lib/stt.ts": 1,
+  "src/lib/test-lab.ts": 1,
   "src/lib/tts/azure.ts": 2,
   "src/lib/tts/edge.ts": 3,
   "src/lib/tts/synth.ts": 1
