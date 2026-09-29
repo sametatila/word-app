@@ -50,7 +50,7 @@ export const PRIVACY_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
     title: "Gizlilik Politikası ve Aydınlatma Metni",
     description: "Lernomi'nin hangi verileri, neden ve ne kadar süreyle işlediği; KVKK ve GDPR kapsamındaki hakların; hesap silme.",
     summary: [
-      "Lernomi bir dil öğrenme uygulaması: Almanca, Zürih Almancası ve İngilizce.",
+      "Lernomi bir dil öğrenme uygulaması: Almanca ve İngilizce.",
       "Hesabını yürütmek için e-postan ve adın, öğrenmeni izlemek için ilerleme verin işlenir.",
       "Yazdıkların ve söylediklerin yapay zekâ sağlayıcılarına ancak uygulama içinde izin verdiğinde gönderilir; sağlayıcılar izin ekranında adıyla sayılır.",
       "Mikrofon yalnız konuşarak cevap verdiğinde açılır. Sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz.",
@@ -234,7 +234,7 @@ Politika değiştiğinde bu sayfadaki yürürlük tarihi ve sürüm güncellenir
     title: "Privacy Policy",
     description: "What data Lernomi processes, why and for how long; your rights under GDPR and Turkish data protection law; deleting your account.",
     summary: [
-      "Lernomi is a language learning app: German, Zurich German and English.",
+      "Lernomi is a language learning app: German and English.",
       "Your email and name are processed to run your account, and your progress data to track your learning.",
       "What you write and say is sent to AI providers only after you allow it in the app; the consent screen names the providers.",
       "The microphone opens only when you answer by speaking. Audio reaches the server only with your permission, and the recording is not kept.",
@@ -418,7 +418,7 @@ When this policy changes, the effective date and version on this page are update
     title: "Datenschutzerklärung",
     description: "Welche Daten Lernomi verarbeitet, warum und wie lange; deine Rechte nach DSGVO und türkischem Datenschutzrecht; Konto löschen.",
     summary: [
-      "Lernomi ist eine Sprachlern-App: Deutsch, Zürichdeutsch und Englisch.",
+      "Lernomi ist eine Sprachlern-App: Deutsch und Englisch.",
       "Deine E-Mail-Adresse und dein Name werden für dein Konto verarbeitet, deine Fortschrittsdaten für dein Lernen.",
       "Was du schreibst und sagst, geht erst an KI-Anbieter, wenn du es in der App erlaubst; der Einwilligungsbildschirm nennt die Anbieter namentlich.",
       "Das Mikrofon öffnet sich nur, wenn du sprechend antwortest. Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert.",

@@ -59,7 +59,7 @@ Bu sözleşme, aşağıda kimliği verilen hizmet sağlayıcı ("Lernomi", "biz"
 
 ## 2. Hizmet
 
-Lernomi, kelime, dinleme, konuşma ve yazma çalışması sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, Patika'nın Konuşma adımları (anlatım ve yapay zekâ ile sohbet), yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve arkadaşlık özellikleri. Kurslar Almanca (Hochdeutsch), Zürih Almancası ve İngilizcedir; kurs listesi zamanla değişebilir ve her kursta her özellik aynı anda hazır olmayabilir. Özellikler zamanla eklenebilir, değişebilir ya da kaldırılabilir; ücretli özellikleri etkileyen değişiklikleri önceden duyururuz.
+Lernomi, kelime, dinleme, konuşma ve yazma çalışması sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, Patika'nın Konuşma adımları (anlatım ve yapay zekâ ile sohbet), yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve arkadaşlık özellikleri. Kurslar Almanca (Hochdeutsch) ve İngilizcedir; kurs listesi zamanla değişebilir ve her kursta her özellik aynı anda hazır olmayabilir. Özellikler zamanla eklenebilir, değişebilir ya da kaldırılabilir; ücretli özellikleri etkileyen değişiklikleri önceden duyururuz.
 
 ## 3. Hesap ve yaş
 
@@ -196,7 +196,7 @@ This agreement is between the service provider identified below ("Lernomi", "we"
 
 ## 2. The service
 
-Lernomi is a language learning app offering vocabulary, listening, speaking and writing study: spaced repetition rounds, the Path's Speaking steps (explanation and a chat with AI), walk mode, writing assessment, exam preparation, a weekly leaderboard and friend features. The courses are German (Hochdeutsch), Zurich German and English; the course list may change over time and not every feature is ready in every course at the same time. Features may be added, changed or removed; we announce changes affecting paid features in advance.
+Lernomi is a language learning app offering vocabulary, listening, speaking and writing study: spaced repetition rounds, the Path's Speaking steps (explanation and a chat with AI), walk mode, writing assessment, exam preparation, a weekly leaderboard and friend features. The courses are German (Hochdeutsch) and English; the course list may change over time and not every feature is ready in every course at the same time. Features may be added, changed or removed; we announce changes affecting paid features in advance.
 
 ## 3. Account and age
 
@@ -333,7 +333,7 @@ Diese Vereinbarung besteht zwischen dem unten bezeichneten Anbieter ("Lernomi", 
 
 ## 2. Der Dienst
 
-Lernomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und Schreiben: Wiederholungsrunden nach dem Spaced-Repetition-Prinzip, die Sprechen-Schritte des Pfads (Erklärung und Chat mit KI), Gehmodus, Schreibbewertung, Prüfungsvorbereitung, eine Wochen-Rangliste und Freundesfunktionen. Die Kurse sind Deutsch (Hochdeutsch), Zürichdeutsch und Englisch; die Kursliste kann sich im Laufe der Zeit ändern, und nicht jede Funktion ist in jedem Kurs gleichzeitig verfügbar. Funktionen können hinzugefügt, geändert oder entfernt werden; Änderungen, die bezahlte Funktionen betreffen, kündigen wir vorher an.
+Lernomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und Schreiben: Wiederholungsrunden nach dem Spaced-Repetition-Prinzip, die Sprechen-Schritte des Pfads (Erklärung und Chat mit KI), Gehmodus, Schreibbewertung, Prüfungsvorbereitung, eine Wochen-Rangliste und Freundesfunktionen. Die Kurse sind Deutsch (Hochdeutsch) und Englisch; die Kursliste kann sich im Laufe der Zeit ändern, und nicht jede Funktion ist in jedem Kurs gleichzeitig verfügbar. Funktionen können hinzugefügt, geändert oder entfernt werden; Änderungen, die bezahlte Funktionen betreffen, kündigen wir vorher an.
 
 ## 3. Konto und Alter
 
