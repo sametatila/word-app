@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { adminGate } from "@/lib/admin";
 import { AdminDenied } from "../_ui/ui";
-import { activeAvatarIds, avatar3dBaseFor, avatarCatalogSeed, avatarRules, AVATAR_ALWAYS_ACTIVE, catalogParts, defaultActiveIds } from "@/lib/avatar-items";
+import { activeAvatarIds, avatar3dBaseFor, avatarCatalogSeed, avatarRules, avatarUnlockMap, AVATAR_ALWAYS_ACTIVE, catalogParts, defaultActiveIds, premiumSetIds } from "@/lib/avatar-items";
 import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
 import { avatarUsage, unlockOptions } from "@/lib/avatar-admin";
 import { AvatarAdmin, type AdminPart } from "./avatar-admin";
@@ -28,12 +28,13 @@ export default async function AdminAvatarPage() {
      CSP (img-src 'self') hepsini engelliyordu. */
   const host = (await headers()).get("host");
   const base = avatar3dBaseFor(host);
-  const [cat, active, rules, usage, seed] = await Promise.all([
+  const [cat, active, rules, usage, seed, map] = await Promise.all([
     catalogParts().catch(() => null),
     activeAvatarIds(),
     avatarRules(),
     avatarUsage(),
     avatarCatalogSeed(host).catch(() => null),
+    avatarUnlockMap(),
   ]);
   const parts: AdminPart[] = cat
     ? [...cat.values()].map((p) => ({
@@ -45,7 +46,7 @@ export default async function AdminAvatarPage() {
         defaultUnlock: PART_UNLOCKS[p.id] ?? "",
       }))
     : [];
-  const defaults = cat ? [...defaultActiveIds([...cat.values()])] : [];
+  const defaults = cat ? [...defaultActiveIds([...cat.values()], { exclude: premiumSetIds(cat, map), perSlot: rules.perSlot })] : [];
   return (
     <AvatarAdmin
       parts={parts}

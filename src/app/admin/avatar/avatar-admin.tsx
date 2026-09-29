@@ -39,7 +39,7 @@ type Slot = (typeof SLOTS)[number][0];
 const RARITIES = ["common", "rare", "epic", "legendary"] as const;
 const RARITY_TR: Record<string, string> = { common: "Sıradan", rare: "Nadir", epic: "Epik", legendary: "Efsanevi" };
 type Rar = "all" | (typeof RARITIES)[number];
-type State = "all" | "on" | "off";
+type State = "all" | "on" | "off" | "premium";
 const ERR: Record<string, string> = {
   too_many: "Bu yuvada sınır aşıldı.",
   no_catalog: "Katalog okunamadı.",
@@ -95,7 +95,12 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
     return k ? (usage.keyUsers[k] ?? 0) : usage.profiles;
   };
   const grantCount = (id: string) => grants.filter((g) => g.itemId === id).length;
-  const count = (s: string) => parts.filter((p) => p.slot === s && on.has(p.id)).length;
+  /* PREMIUM SETİ: koşulu "premium" olan parça her zaman gösterilir ve yuva
+     sınırına sayılmaz (satın alma ekranı bu seti vaat ediyor; bkz.
+     `avatar-items` `premiumSetIds`). Koşulu değiştirmek seti değiştirir. */
+  const isPremium = (p: AdminPart) => unlockOf(p) === "premium";
+  const count = (s: string) => parts.filter((p) => p.slot === s && on.has(p.id) && !isPremium(p)).length;
+  const premiumCount = (s?: string) => parts.filter((p) => (!s || p.slot === s) && isPremium(p)).length;
 
   const activeDirty = on.size !== saved.size || [...on].some((id) => !saved.has(id));
   const rulesDirty = perSlot !== savedPerSlot || JSON.stringify(unlocks) !== JSON.stringify(savedUnlocks);
@@ -108,11 +113,12 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
     return parts
       .filter((p) => p.slot === slot)
       .filter((p) => rar === "all" || p.rarity === rar)
-      .filter((p) => state === "all" || (state === "on" ? saved.has(p.id) : !saved.has(p.id)))
+      .filter((p) => state === "all" || (state === "premium" ? isPremium(p) : state === "on" ? saved.has(p.id) || isPremium(p) : !saved.has(p.id) && !isPremium(p)))
       .filter((p) => !needle || p.name.toLocaleLowerCase("tr-TR").includes(needle) || p.id.includes(needle))
       .sort((a, b) => Number(saved.has(b.id)) - Number(saved.has(a.id)) || order.indexOf(a.rarity) - order.indexOf(b.rarity));
     /* Sıra kayıtla ve süzgeçle yenileniyor, kutu işaretlenince değil: satır yer değiştirmesin. */
-  }, [parts, slot, rar, state, needle, saved]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [parts, slot, rar, state, needle, saved, savedUnlocks]);
   const current = parts.find((p) => p.id === sel) ?? list[0] ?? null;
 
   const toggle = (id: string, v: boolean) => setOn((cur) => {
@@ -126,6 +132,7 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
       const n = new Set(cur);
       let left = perSlot - parts.filter((p) => p.slot === slot && n.has(p.id)).length;
       for (const p of list) {
+        if (isPremium(p)) continue;                                // Premium seti her zaman açık
         if (v && !n.has(p.id) && left > 0) { n.add(p.id); left--; }
         if (!v && !always.includes(p.id)) n.delete(p.id);
       }
@@ -209,7 +216,7 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
         <div className="grid items-start gap-5 @5xl:grid-cols-[minmax(0,1fr)_24rem]">
           <Panel
             title="Envanter"
-            hint="Kart: takan · koşulu sağlayan · ayrıca verilen kişi. Karta tıkla: önizleme, koşul ve verme sağda."
+            hint="Kart: takan · koşulu sağlayan · ayrıca verilen kişi. Koşulu Premium olan parça Premium setindedir: her zaman gösterilir, yuva sınırına sayılmaz. Karta tıkla: önizleme, koşul ve verme sağda."
             actions={
               <label className="flex items-center gap-2 text-caption">
                 <span className="muted">Yuva sınırı</span>
@@ -223,14 +230,15 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
               onChange={(s) => { setSlot(s); setSel(null); }}
               items={SLOTS.map(([k, name]) => {
                 const n = count(k);
-                const total = parts.filter((p) => p.slot === k).length;
-                return [k, <span key={k}>{name} <span className="tabular-nums" style={n > perSlot ? { color: TONE.bad } : { opacity: 0.7 }}>{n}/{Math.min(perSlot, total)}</span></span>] as const;
+                const pc = premiumCount(k);
+                const total = parts.filter((p) => p.slot === k).length - pc;
+                return [k, <span key={k}>{name} <span className="tabular-nums" style={n > perSlot ? { color: TONE.bad } : { opacity: 0.7 }}>{n}/{Math.min(perSlot, total)}</span>{pc ? <span className="tabular-nums" style={{ opacity: 0.7 }} title="Premium seti: her zaman açık, sınıra sayılmaz"> +{pc}</span> : null}</span>] as const;
               })}
             />
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <input id="avatar-search" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Parça ara" aria-label="Parça ara" className={`${FIELD} min-w-0 flex-1 basis-40`} style={FIELD_STYLE} />
               <Segmented label="Nadirlik" items={[["all", "Hepsi"], ...RARITIES.map((r) => [r, RARITY_TR[r]] as const)] as const} value={rar} onChange={setRar} />
-              <Segmented label="Durum" items={[["all", "Hepsi"], ["on", "Gösterilen"], ["off", "Kapalı"]] as const} value={state} onChange={setState} />
+              <Segmented label="Durum" items={[["all", "Hepsi"], ["on", "Gösterilen"], ["off", "Kapalı"], ["premium", `Premium seti ${premiumCount()}`]] as const} value={state} onChange={setState} />
             </div>
             <div className="mt-2 flex flex-wrap items-center gap-2 text-caption">
               <span className="muted">{list.length} parça görünüyor ·</span>
@@ -241,8 +249,9 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
             {list.length ? (
               <ul className="mt-3 grid gap-2 @xl:grid-cols-2 @4xl:grid-cols-3 @[80rem]:grid-cols-4">
                 {list.map((p) => {
-                  const checked = on.has(p.id);
-                  const locked = always.includes(p.id);
+                  const prem = isPremium(p);
+                  const checked = on.has(p.id) || prem;
+                  const locked = always.includes(p.id) || prem;
                   const full = !checked && count(p.slot) >= perSlot;
                   const k = unlockOf(p);
                   const edited = p.id in unlocks && unlocks[p.id] !== savedUnlocks[p.id] || (p.id in unlocks) !== (p.id in savedUnlocks);
@@ -265,7 +274,7 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
                           <span className="flex flex-wrap items-center gap-1.5 text-micro">
                             <span className="inline-block h-2 w-2 rounded-full" style={{ background: AVATAR_RARITY[p.rarity] ?? "var(--border)" }} />
                             <span className="muted">{RARITY_TR[p.rarity] ?? p.rarity}</span>
-                            {locked ? <Badge>her zaman açık</Badge> : null}
+                            {prem ? <Badge tone="ok">Premium seti</Badge> : locked ? <Badge>her zaman açık</Badge> : null}
                             {edited ? <Badge tone="warn">koşul değişti</Badge> : null}
                           </span>
                           <span className="muted block truncate text-micro" title={k ? label.get(k) ?? k : undefined} aria-label={k ? label.get(k) ?? k : undefined}>{k ? label.get(k) ?? k : "Herkese açık"}</span>
@@ -298,7 +307,7 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
                 })}
                 options={options}
                 label={label}
-                shown={on.has(current.id)}
+                shown={on.has(current.id) || isPremium(current)}
                 equipped={usage.equipped[current.id] ?? 0}
                 open={openCount(current)}
                 grants={grants.filter((g) => g.itemId === current.id)}
