@@ -8,7 +8,7 @@ import { packItems, packItemsAt } from "@/lib/content/serve";
 import { classifyItem } from "@/lib/content/analytics";
 import type { Conversation } from "@/lib/conversations/types";
 import { isItemCorrect, isOpenTask } from "@/lib/mock-exams/scoring";
-import type { MockPaper } from "@/lib/mock-exams/types";
+import { mockPartLabel, type MockPaper } from "@/lib/mock-exams/types";
 
 /**
  * PANELİN İÇERİK YÜZÜ — sürüm, kapatma ve madde analizi.
@@ -222,10 +222,12 @@ function paperScorer(papers: Map<string, MockPaper>) {
 
 function paperLabeler(papers: Map<string, MockPaper>) {
   return (paperId: string, itemId: string): string => {
-    for (const part of papers.get(paperId)?.parts ?? []) {
+    const paper = papers.get(paperId);
+    if (!paper) return "";
+    for (const part of paper.parts) {
       for (const task of part.tasks) {
         const it = task.items?.find((x) => x.id === itemId);
-        if (it) return `Teil ${task.no} · ${"text" in it && it.text ? it.text : ""}`.slice(0, 160);
+        if (it) return `${mockPartLabel(paper.course, task.no)} · ${"text" in it && it.text ? it.text : ""}`.slice(0, 160);
       }
     }
     return "";

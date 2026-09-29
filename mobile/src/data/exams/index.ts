@@ -224,14 +224,16 @@ export function hasMockExams(course: CourseId): boolean {
  * ve İngilizce kâğıt "Richtig / Falsch" düğmeleriyle açılırdı — kullanıcının
  * arayüz dili ne olursa olsun. Etiket kâğıttan gelir.
  */
-export const MOCK_LABELS: Record<MockCourse, { skill: Record<MockSkill, string>; bool: [string, string]; yesno: [string, string] }> = {
+export const MOCK_LABELS: Record<MockCourse, { skill: Record<MockSkill, string>; part: string; bool: [string, string]; yesno: [string, string] }> = {
   de: {
     skill: { reading: "Lesen", listening: "Hören", writing: "Schreiben", speaking: "Sprechen" },
+    part: "Teil",
     bool: ["Richtig", "Falsch"],
     yesno: ["Ja", "Nein"],
   },
   en: {
     skill: { reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking" },
+    part: "Part",
     bool: ["True", "False"],
     yesno: ["Yes", "No"],
   },
@@ -244,6 +246,14 @@ export function mockCourseOf(course: CourseId | string | null | undefined): Mock
 
 export function mockSkillLabel(course: MockCourse, skill: MockSkill): string {
   return MOCK_LABELS[course].skill[skill];
+}
+
+/**
+ * Görevin başlığı kâğıdın dilinde: "Teil 1" / "Part 1". Çözümler ekranında
+ * "Teil" sabit yazılıydı ve İngilizce kâğıt da "Teil 1" diye açılıyordu.
+ */
+export function mockPartLabel(course: MockCourse, no: number): string {
+  return `${MOCK_LABELS[course].part} ${no}`;
 }
 
 export function mockBoolLabels(course: MockCourse, format: MockFormat): [string, string] {

@@ -25,6 +25,7 @@ import { currentTargetLocale } from "../lib/courses";
 import {
   isOpenTask,
   mockBoolLabels,
+  mockPartLabel,
   mockSkillLabel,
   MOCK_PASS_PCT,
   taskSeconds,
@@ -1374,7 +1375,7 @@ function ResultView({
         <Text accessibilityRole="header" variant="h3">{t("mockexam.review")}</Text>
         {part.tasks.map((task) => (
           <View key={task.id} style={{ marginBottom: spacing.md }}>
-            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>Teil {task.no}</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{mockPartLabel(course, task.no)}</Text>
 
             {isOpenTask(task) && task.rubric ? (
               <Card padded>

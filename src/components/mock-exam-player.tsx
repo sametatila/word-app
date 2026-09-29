@@ -18,7 +18,7 @@ import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { captureSpeech, recognitionCtor, type SpeechCapture } from "@/components/microphone";
 import { localeOf } from "@/components/skills/player-context";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
-import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
+import { MOCK_PASS_PCT, mockBoolLabels, mockPartLabel, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
 import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
 import { castFor, type VoiceId } from "@/lib/tts/voices";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -1319,7 +1319,9 @@ function Result({
           <h2 className="text-h3">{t("mockexam.review")}</h2>
           {part.tasks.map((task) => (
             <div key={task.id} className="space-y-2">
-              <p className="muted text-micro uppercase tracking-eyebrow">Teil {task.no}</p>
+              {/* Kâğıdın dilinde ("Teil" / "Part"); `lang` büyük harfi o dile göre
+                  yaptırıyor, Türkçe arayüzde "TEİL" olmasın. */}
+              <p className="muted text-micro uppercase tracking-eyebrow" lang={paper.course}>{mockPartLabel(paper.course, task.no)}</p>
               {isOpenTask(task) && task.rubric ? (
                 <div className="card p-4">
                   {(open[task.id] ?? "").trim() ? (
