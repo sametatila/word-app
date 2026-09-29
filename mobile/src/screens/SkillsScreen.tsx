@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
-import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
+import { Skeleton, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { SkillsIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { FlowNote } from "../ui/flow";
 import { EmptyCard } from "../social/common";
@@ -195,9 +195,16 @@ export function SkillsScreen() {
         <>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
             <SkeletonLine variant="caption" width={54} />
+            <SkeletonLine variant="caption" width={96} />
           </View>
+          {/* Sekmenin KENDİ kabı (dolgu 10, kenarlık 1): yükseklik elle
+              toplanıyordu ve kenarlık 1,5'ten 1'e inince 1 px fazla kaldı. */}
           <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
-            {LEVELS.map((l) => <Skeleton key={l} height={20 + 3 + textHeight("bodyStrong")} radius={radii.md} style={{ flex: 1 }} />)}
+            {LEVELS.map((l) => (
+              <View key={l} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface }}>
+                <SkeletonLine variant="bodyStrong" width="40%" />
+              </View>
+            ))}
           </View>
         </>
       ) : (

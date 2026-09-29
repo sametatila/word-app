@@ -505,13 +505,24 @@ export function PaywallScreen() {
           düzen aynı (`premium-paywall`).
         */}
         <Section title={t("paywall.what_you_get")}>
-          {(status?.copy.premium ?? []).map((l) => (
+          {/* Durum gelene dek satırların yeri iskelet: kart boş açılıp sonra
+              on satır birden uzuyordu. Web `premium/loading` aynı kartı çiziyor. */}
+          {status ? (status.copy.premium ?? []).map((l) => (
             <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
+          )) : [80, 68, 74, 62].map((w, i) => (
+            <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: 5 }}>
+              <SkeletonTile size={22} radius={11} style={{ marginTop: 1 }} />
+              <SkeletonLine variant="caption" width={`${w}%`} />
+            </View>
           ))}
           <View style={{ marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
             <Text variant="caption" color={colors.textMuted} style={{ marginBottom: 6, letterSpacing: 0.5 }}>{t("paywall.whats_free")}</Text>
-            {(status?.copy.free ?? []).map((l) => (
+            {status ? (status.copy.free ?? []).map((l) => (
               <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="free" />
+            )) : [58, 50].map((w, i) => (
+              <View key={i} style={{ paddingVertical: 5, paddingLeft: 22 + spacing.sm }}>
+                <SkeletonLine variant="caption" width={`${w}%`} />
+              </View>
             ))}
           </View>
         </Section>

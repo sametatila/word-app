@@ -12,7 +12,8 @@ import { XIcon, SpeakerIcon, AlertIcon, LockIcon } from "../ui/icons";
 import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
 import { usePremiumStatus } from "../lib/premium";
-import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, StateBody } from "../ui/flow";
+import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
+import { SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
 import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
@@ -360,7 +361,48 @@ export function ItemScreen() {
   }
 
   if (!exercise && !packReady) {
-    return <FlowScreen top={<FlowTopBar back onClose={() => nav.goBack()} />}><ContentLoadingBody /></FlowScreen>;
+    /* İSKELET YÜKLENMİŞ EKRANIN KABUĞUNDA. Genel `ContentLoadingBody`
+       `FlowScreen` içinde geri oku + düğme çifti çiziyordu; gerçek ekranın
+       başlığı çarpı + tür karosu + başlık, gövdesi yönerge → metin kartı →
+       sorular. Paket inince her şey yer değiştiriyordu. Başlık ve tür
+       parametreden bilindiği için gerçeği çiziliyor. Web karşılığı
+       `immersion/skill/[id]/loading.tsx`. */
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <XIcon color={colors.textMuted} size={22} />
+          </PressableScale>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
+            {Icon && <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: tint, alignItems: "center", justifyContent: "center" }}>{Icon({ color: "#fff", size: 18 })}</View>}
+            <View style={{ flex: 1 }}>
+              <SkeletonLine variant="micro" width="45%" />
+              {params.title ? <Text accessibilityRole="header" variant="h3" numberOfLines={1}>{params.title}</Text> : <SkeletonLine variant="h3" width="70%" />}
+            </View>
+          </View>
+        </View>
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+          <SkeletonLine variant="body" width="92%" />
+          <SkeletonLine variant="body" width="60%" />
+          <SkeletonCard label={t("common.loading")} style={{ marginTop: spacing.md }}>
+            {[88, 94, 90, 62].map((w, i) => <SkeletonLine key={i} variant="body" width={`${w}%`} />)}
+          </SkeletonCard>
+          <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
+            <SkeletonLine variant="h3" width={96} />
+            <SkeletonCard>
+              <SkeletonLine variant="bodyStrong" width="75%" />
+              <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
+                {[0, 1, 2].map((i) => (
+                  <View key={i} style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.md, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border }}>
+                    <SkeletonLine variant="body" width={`${58 - i * 10}%`} />
+                  </View>
+                ))}
+              </View>
+            </SkeletonCard>
+          </View>
+        </View>
+      </View>
+    );
   }
   if (!exercise) {
     return (

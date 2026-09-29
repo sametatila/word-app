@@ -1,5 +1,5 @@
 import { LoadingRegion } from "@/components/loading-region";
-import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
+import { AppHeaderSkeleton, SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 
 /**
  * Beceriler gelene kadar iskelet — sayfanın KENDİ düzeni.
@@ -14,17 +14,7 @@ import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 export default function Loading() {
   return (
     <LoadingRegion className="mx-auto w-full max-w-3xl">
-      {/* AppHeader: alt satır + 32 punto başlık, sağda iki düğme. */}
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <div className="min-w-0 flex-1">
-          <SkeletonLine variant="caption" width="60%" />
-          <SkeletonLine variant="display" width={180} />
-        </div>
-        <div className="flex shrink-0 items-center gap-2">
-          <SkeletonTile size={40} />
-          <SkeletonTile size={40} />
-        </div>
-      </div>
+      <AppHeaderSkeleton titleWidth={160} />
 
       {/* Seviye etiketi + sayaç, beş eşit sekme. */}
       <div className="mb-2 ml-1 flex items-center justify-between">
@@ -32,9 +22,9 @@ export default function Loading() {
         <SkeletonLine variant="caption" width={96} />
       </div>
       <div className="mb-4 flex gap-2">
+        {/* Gerçek sekmenin kendi `chip` sınıfı: kenarlık, zemin, yarıçap ondan. */}
         {[0, 1, 2, 3, 4].map((i) => (
           <div key={i} className="chip flex-1 py-2.5">
-        {/* Gerçek sekmenin kendi `chip` sınıfı: kenarlık, zemin, yarıçap ondan. */}
             <SkeletonLine variant="strong" width="40%" className="mx-auto" />
           </div>
         ))}
@@ -59,8 +49,11 @@ export default function Loading() {
             style={{ border: "1px solid var(--border)", background: "var(--surface)" }}
           >
             <SkeletonTile size={20} />
-            <SkeletonLine variant="caption" width="70%" />
-            <SkeletonLine variant="micro" width="40%" />
+            {/* Karo adı `text-caption leading-tight`: satır 20 değil ~16 px. */}
+            <span className="flex h-[1lh] w-[70%] items-center text-caption leading-tight">
+              <SkeletonBar height={10} className="w-full" />
+            </span>
+            <SkeletonLine variant="micro" width="40%" className="mt-auto" />
             <SkeletonBar height={4} className="w-4/5" />
           </div>
         ))}
@@ -72,7 +65,7 @@ export default function Loading() {
         <SkeletonLine variant="h3" width={96} />
         <SkeletonLine variant="caption" width={36} />
       </div>
-      <ul className="card divide-y px-4" style={{ borderColor: "var(--hairline)" }}>
+      <ul className="card divide-y divide-[color:var(--hairline)] px-4">
         {[0, 1, 2, 3, 4, 5].map((i) => (
           <li key={i} className="flex items-center gap-3 py-3">
             <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: "var(--surface-2)" }} />

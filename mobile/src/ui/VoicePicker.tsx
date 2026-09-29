@@ -95,13 +95,17 @@ export function VoicePicker({
  * hoparlör, altında iki sönük satır.
  */
 export function VoicePickerSkeleton() {
+  const { colors } = useTheme();
+  /* Kart gerçeğinin ÖLÇÜSÜNDE: `SkeletonCard` `lg` dolgulu (gerçeği `md`) ve
+     hoparlör `xs` dolgusuz 20 px idi (gerçeği 28) — kart iki yandan 8, başlık
+     satırı 5 px farklıydı. */
   return (
     <View style={{ flexDirection: "row", gap: spacing.sm }}>
       {[0, 1].map((i) => (
-        <SkeletonCard key={i} style={{ flex: 1, gap: spacing.xs, borderRadius: radii.lg }}>
+        <SkeletonCard key={i} padded={false} style={{ flex: 1, gap: spacing.xs, padding: spacing.md, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface }}>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
             <SkeletonLine variant="bodyStrong" width="52%" />
-            <SkeletonTile size={20} radius={10} />
+            <SkeletonTile size={20} radius={10} style={{ margin: spacing.xs }} />
           </View>
           <SkeletonLine variant="caption" width="40%" />
           <SkeletonLine variant="caption" width="76%" />

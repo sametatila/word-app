@@ -170,18 +170,27 @@ export function WordsScreen() {
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
           phase === "loading" ? (
-            // Spinner yerine satır iskeleti: liste dolunca yükseklik değişmiyor.
+            /* Spinner yerine satır iskeleti: liste dolunca yükseklik değişmiyor.
+               Satır DÖRT metin satırı (kelime, anlam, tür, takvim) — iskelet
+               ikisini çiziyordu, her satır ~40 px kısa kalıyordu. Geniş
+               ekranda liste `listColumns` sütunlu; iskelet de öyle. */
             <View style={{ gap: spacing.sm }}>
-              {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-                <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: spacing.md }}>
-                  <View style={{ flex: 1 }}>
-                    <SkeletonLine variant="bodyStrong" width="55%" />
-                    <SkeletonLine variant="caption" width="35%" />
-                  </View>
-                  <SkeletonTile size={34} radius={17} />
-                  <Skeleton height={textHeight("micro") + 4} width={30} radius={radii.sm} />
-                  <Skeleton height={9} width={9} radius={5} />
-                  <SkeletonLine variant="micro" width={40} />
+              {[...Array(Math.ceil(8 / listColumns)).keys()].map((r) => (
+                <View key={r} style={{ flexDirection: "row", gap: spacing.sm }}>
+                  {[...Array(listColumns).keys()].map((c) => (
+                    <View key={c} style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: spacing.md }}>
+                      <View style={{ flex: 1 }}>
+                        <SkeletonLine variant="bodyStrong" width="55%" />
+                        <SkeletonLine variant="caption" width="45%" />
+                        <SkeletonLine variant="micro" width="30%" />
+                        <SkeletonLine variant="micro" width="38%" />
+                      </View>
+                      <SkeletonTile size={34} radius={17} />
+                      <Skeleton height={textHeight("micro") + 4} width={30} radius={radii.sm} />
+                      <Skeleton height={9} width={9} radius={5} />
+                      <SkeletonLine variant="micro" width={40} />
+                    </View>
+                  ))}
                 </View>
               ))}
             </View>

@@ -5,7 +5,7 @@ import { t, dateLocale } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { CheckIcon, MicIcon, SparkIcon } from "./icons";
-import { SkeletonLine } from "./Skeleton";
+import { Skeleton, textHeight } from "./Skeleton";
 import { openLegal } from "../lib/legal";
 import {
   decideAiConsent,
@@ -72,10 +72,17 @@ export function ProcessorList({ processors, failed, colors }: { processors: AiCo
       {failed ? (
         <Text variant="caption" color={colors.dangerText} accessibilityLiveRegion="polite">{t("aiconsent.load_failed")}</Text>
       ) : processors === null ? (
+        /* Çubuklar `surface` renginde: kap `surface2` zeminli ve iskeletin
+           kendi rengi de `surface2` — çubuklar görünmüyor, kutu boş
+           duruyordu. Web aynı sorunu zeminsiz kapla çözdü (`ai-consent-dialog`). */
         [0, 1, 2].map((i) => (
           <View key={i}>
-            <SkeletonLine variant="bodyStrong" width="40%" />
-            <SkeletonLine variant="caption" width="75%" />
+            <View style={{ height: textHeight("bodyStrong"), justifyContent: "center" }}>
+              <Skeleton height={textHeight("bodyStrong") - 4} width="40%" radius={radii.sm} style={{ backgroundColor: colors.surface }} />
+            </View>
+            <View style={{ height: textHeight("caption"), justifyContent: "center" }}>
+              <Skeleton height={textHeight("caption") - 4} width="75%" radius={radii.sm} style={{ backgroundColor: colors.surface }} />
+            </View>
           </View>
         ))
       ) : (
