@@ -123,6 +123,7 @@
     "icons": "node scripts/icons.mjs",
     "icons:build": "node scripts/icons/build.mjs",
     "icons:check": "node scripts/icons/build.mjs --check",
+    "store:frames": "node scripts/store/frames.mjs",
     "db:check": "tsx scripts/schema-check.ts",
     "db:verify": "tsx scripts/verify-live.ts",
     "test:chat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/chat-eval.ts",

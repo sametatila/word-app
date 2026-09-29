@@ -1,0 +1,80 @@
+{
+  "_doc": "Mağaza karelerinin tek tanımı: hangi mağaza hangi ölçüde, hangi ekran hangi sırayla, altyazılar (tr/en/de) ve büyüteç kırpımları. Üretici: scripts/store/frames.mjs (npm run store:frames). Kurallar docs/store/README.md 'Vitrin kararları' ve 'Kurallar'.",
+  "locales": { "tr-TR": { "set": "tr-de", "lang": "tr" }, "en-US": { "set": "en-de", "lang": "en" }, "de-DE": { "set": "de-en", "lang": "de" } },
+  "stores": {
+    "appstore-iphone": { "w": 1320, "h": 2868, "device": "iphone", "frame": "iphone", "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"] },
+    "appstore-ipad": { "w": 2752, "h": 2064, "device": "ipad", "frame": "ipad", "screens": ["path", "conversation", "mock-result", "skills"] },
+    "play-phone": {
+      "w": 1440,
+      "h": 2560,
+      "device": "android-phone",
+      "frame": "android",
+      "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"]
+    },
+    "play-tablet-7": { "w": 1920, "h": 1080, "device": "android-tablet", "frame": "android-tablet", "screens": ["path", "conversation", "mock-result", "skills"] },
+    "play-tablet-10": { "w": 2560, "h": 1440, "device": "android-tablet", "frame": "android-tablet", "screens": ["path", "conversation", "mock-result", "skills"] },
+    "play-feature": { "w": 1024, "h": 500, "device": "android-phone", "frame": "android", "kind": "feature", "screens": ["conversation"], "captionFrom": "path" }
+  },
+  "backgrounds": ["orange", "dark", "light"],
+  "levels": ["A1", "A2", "B1", "B2", "C1"],
+  "currentLevel": "B1",
+  "premium": { "tr": "Premium", "en": "Premium", "de": "Premium" },
+  "screens": {
+    "path": {
+      "ladder": true,
+      "caption": {
+        "tr": { "h": "Konuş, anla, sınava hazırlan", "s": "A1'den C1'e adım adım, Türkçe anlatımla" },
+        "en": { "h": "Speak, understand, ace exams", "s": "Step by step from A1 to C1, explained in English" },
+        "de": { "h": "Sprechen, verstehen, bestehen", "s": "Schritt für Schritt von A1 bis C1, auf Deutsch erklärt" }
+      },
+      "noCallout": true
+    },
+    "conversation": {
+      "caption": {
+        "tr": { "h": "Konuş, düzeltmeni anında gör", "s": "Gerçek hayattan sahneler, yapay zekâ karakteriyle" },
+        "en": { "h": "Speak and get corrected on the spot", "s": "Real-life scenes with an AI character" },
+        "de": { "h": "Sprich und sieh die Korrektur sofort", "s": "Alltagsszenen im Gespräch mit einer KI-Figur" }
+      }
+    },
+    "mock-result": {
+      "caption": {
+        "tr": { "h": "Konuşma ve yazma da puanlanır", "s": "Dört becerili deneme sınavları" },
+        "en": { "h": "Speaking and writing get scored too", "s": "Four-skill mock exams" },
+        "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "Probeprüfungen in vier Fertigkeiten" }
+      }
+    },
+    "walk": {
+      "premium": true,
+      "caption": {
+        "tr": { "h": "Ekran kapalı, yolda çalış", "s": "Cepte yürüyüş" },
+        "en": { "h": "Screen off, learn on the go", "s": "Pocket Walking" },
+        "de": { "h": "Bildschirm aus, unterwegs lernen", "s": "Taschen-Gehmodus" }
+      },
+      "posBy": { "portrait": { "rot": -5, "dx": 2 } },
+      "sources": ["walk", "walk-intro"]
+    },
+    "daily": {
+      "caption": {
+        "tr": { "h": "Her gün, unutmadan önce", "s": "Günlük kelime turu, aralıklı tekrarla" },
+        "en": { "h": "Every day, before you forget", "s": "A daily word round with spaced repetition" },
+        "de": { "h": "Jeden Tag, bevor du vergisst", "s": "Tägliche Wortrunde mit verteilter Wiederholung" }
+      },
+      "sources": ["daily", "home"]
+    },
+    "skills": {
+      "caption": {
+        "tr": { "h": "Beş beceri, istediğin seviyede", "s": "Okuma, dinleme, yazma, konuşma, dil bilgisi" },
+        "en": { "h": "Five skills, at the level you choose", "s": "Reading, listening, writing, speaking, grammar" },
+        "de": { "h": "Fünf Fertigkeiten, auf jedem Niveau", "s": "Lesen, Hören, Schreiben, Sprechen, Grammatik" }
+      }
+    }
+  },
+  "_callouts": "Büyüteç: ham ekrandan GERÇEK bir kırpım (oranlar 0–1, [x, y, w, h]), anahtar '<cihaz>/<set>/<ekran>'. Yoksa kare büyüteçsiz çıkar ve üretici uyarır. zoom = ekrandaki boyutuna göre büyütme.",
+  "callouts": {
+    "iphone/tr-de/conversation": { "rect": [0.036, 0.597, 0.815, 0.054], "zoom": 1.6 },
+    "iphone/tr-de/skills": { "rect": [0.034, 0.358, 0.935, 0.106], "zoom": 1.25 },
+    "iphone/tr-de/mock-result": { "rect": [0.036, 0.127, 0.928, 0.157], "zoom": 1.18 },
+    "iphone/tr-de/daily": { "rect": [0.036, 0.136, 0.928, 0.29], "zoom": 1.1 },
+    "iphone/tr-de/walk": { "rect": [0.036, 0.338, 0.928, 0.092], "zoom": 1.35 }
+  }
+}

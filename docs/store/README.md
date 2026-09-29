@@ -7,14 +7,14 @@ yolla mağaza. Açık konsol işleri `docs/store/audit.md`'de. Ekran görüntül
 
 | Klasör | Ne | Depoda mı |
 |---|---|---|
-| `raw/` | Cihazdan alınmış ham ekran görüntüleri (1080×2266, durum ve gezinme çubukları kırpılmış) | **Evet** — yeniden üretilemez, cihaz ve giriş yapılmış hesap ister |
-| `plan/` | Hangi ham görüntüye hangi altyazı, hangi sırayla | **Evet** |
-| `play/`, `appstore/` | Üretilen kareler | Hayır — `.gitignore`'da, tek komutla yeniden üretilir |
+| `raw/<cihaz>/<set>/light/<ekran>.png` | Ham ekran görüntüleri (cihaz: `iphone`, `ipad`, `android-phone`, `android-tablet`; set: `tr-de`, `en-de`, `de-en`) | **Evet** — yeniden üretilemez, cihaz ve giriş yapılmış hesap ister |
+| `plan/frames.json` | Mağaza ölçüleri, kare sırası, altyazılar (tr/en/de), büyüteç kırpımları | **Evet** |
+| `out/` | Üretilen kareler + `_sheets/` kontrol tabakaları | Hayır — `.gitignore`'da, tek komutla yeniden üretilir |
 
 ## Vitrin kararları (2026-09-25)
 
-Samet'le soru-cevapla verildi. `plan/*.json` (a-walk, b-exam, c-native) eski ve onaylanmamış
-bir sıra taşıyor; çelişirse bu bölüm geçerli. Kareler henüz ÇEKİLMEDİ: önce tasarım çalışması yapılacak (Samet), çekim bu
+Samet'le soru-cevapla verildi. `plan/frames.json` bu bölümün kare sırasını ve altyazılarını
+uyguluyor; çelişirse bu bölüm geçerli. Kareler henüz ÇEKİLMEDİ: önce tasarım çalışması yapılacak (Samet), çekim bu
 tanıma göre olacak. Karar değişirse bu bölüm güncellenir, yeni belge açılmaz.
 
 **Konumlandırma.** Lernomi bir *dil* uygulaması; Almanca ilk ve en güçlü kurs (vitrin adı
@@ -293,10 +293,35 @@ okundu (2026-09-27, Samet çalıştırdı; denetim S9).
 ## Yeniden üretmek
 
 ```bash
-python3 scripts/store-shots.py --plan docs/store/plan/b-exam.json --out docs/store/play/b-exam --store play
+npm run store:frames                                        # bütün mağazalar, üç dil
+npm run store:frames -- --store appstore-iphone --locale tr-TR
+npm run store:frames -- --screen conversation --raw <ham-klasör>
 ```
 
-`--store play` 1080×1920, `--store ios` 1290×2796 üretir.
+Üretici `scripts/store/frames.mjs` (Playwright + Chrome, yazı tipi `scripts/store/fonts/` Bricolage
+Grotesque, tanıtım sayfasıyla aynı). Girdi `docs/store/raw/` (ya da `--raw`), tanım `plan/frames.json`,
+çıktı `docs/store/out/<mağaza>/<yerel>/NN-<ekran>.png`; alfa kanalı atılır (Play 24 bit PNG, App Store
+saydamlık kabul etmez), ölçü ve kanal sayısı her dosyada denetlenir.
+
+| Mağaza (`--store`) | Ölçü | Cihaz (ham) | Kareler |
+|---|---|---|---|
+| `appstore-iphone` | 1320×2868 (6.9") | `iphone` | 1–6 |
+| `appstore-ipad` | 2752×2064 (13", yatay) | `ipad` | 1, 2, 3, 6 |
+| `play-phone` | 1440×2560 (9:16) | `android-phone` | 1–6 |
+| `play-tablet-7` | 1920×1080 (16:9) | `android-tablet` | 1, 2, 3, 6 |
+| `play-tablet-10` | 2560×1440 (16:9) | `android-tablet` | 1, 2, 3, 6 |
+| `play-feature` | 1024×500 öne çıkan grafik | `android-phone` (Konuşma) | 1 |
+
+Tasarım: zemin sırayla turuncu / koyu / açık; başlık dar kesim 800, küçük önizlemede (arama sonucu, ilk üç
+kare) okunacak boyda; cihaz CSS ile çizilir (App Store'da iPhone/iPad, Play'de nötr Android gövdesi);
+**büyüteç** ham ekrandan kesilen GERÇEK bir parçayı (düzeltme satırı, sınav yüzdesi, beceri sekmeleri)
+büyütüp cihazın önüne çıkarır. Kırpım `frames.json` `callouts["<cihaz>/<set>/<ekran>"]` (0–1 oranları);
+yeni çekimde ekran kayarsa oran da güncellenir, yoksa kare büyüteçsiz çıkar ve üretici listeler. A1–C1
+seviye çizgisi (hesap B1'de) yalnız açılış karesinde ve öne çıkan grafikte. Eksik ham görüntü atlanır ve
+sonda listelenir. `--fallback android-phone=iphone` yalnız yerleşim provası: o kareler mağazaya gitmez.
+
+Kontrol: `out/_sheets/<mağaza>.png` (bütün kareler) ve `<mağaza>-search.png` (ilk üç kare arama sonucu
+boyunda); başlık taşması, Türkçe/Almanca harf ve kırpım buradan gözle denetlenir.
 
 ## Play ikonu (512×512)
 
@@ -346,12 +371,10 @@ Kırpma değerleri 1080×2400 · 420 dpi içindir: üstteki 74 piksel durum çub
   `src/lib/premium/gates.ts`; "1'i ücretsiz" sayısı `free.mockExamsPerLevel` ve panelde
   değişirse altyazı da değişir.
 - **Her yerelleştirme kendi dilinde** kare ister. Üç arayüz dilinin üçü de açık
-  (`PAIR_READY`: tr, en, de — `mobile/src/lib/courses.ts`), ama bugün yalnız Türkçe kare seti
-  var: en-US ve de-DE için ham görüntüler o arayüz diliyle yeniden çekilmeli. Betik karenin
-  üstündeki "ADIM n / N" etiketini sabit Türkçe basıyor (`scripts/store-shots.py`); öteki
-  diller için o etiket de yerelleştirilmeli.
+  (`PAIR_READY`: tr, en, de — `mobile/src/lib/courses.ts`): her set (`tr-de`, `en-de`, `de-en`) o arayüz diliyle çekilir; altyazılar `plan/frames.json`da
+  üç dilde.
 - **iOS kareleri iOS'tan alınır.** Android karesini App Store'a yüklemek 2.3.3 ihlalidir;
-  `--store ios` yalnız yerleşim provası için.
+  `--fallback` yalnız yerleşim provası için.
 
 ### Metin kuralları (iki mağaza)
 
