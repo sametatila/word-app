@@ -5,25 +5,41 @@ import { useId, useMemo, useState } from "react";
 /**
  * PANEL GRAFİKLERİ — okunan değil, sorgulanan grafikler.
  *
- * Eski çubuklar yalnız biçimdi: değer ipucu balonundaydı (dokunmatikte hiç
- * görünmüyordu), dizi seçilemiyordu, huninin hangi basamakta kaybettiği
- * hesaplanmıyordu. Buradaki parçalar:
+ * BİÇİMİ VERİNİN İŞİ SEÇER (her panel için sorulacak soru "okuyan ne yapacak"):
  *
- *   SeriesChart  günlük dizi grafiği: dizi seçimi, üzerine gelince/odaklanınca
- *                günün değeri (ekranda satır olarak, balonda değil), ortalama
- *                çizgisi, en yüksek gün; klavyeyle ← → ile gün gün gezilir
- *   Funnel       huni: her basamağın ilk basamağa ve bir öncekine oranı,
- *                en çok kayıp veren geçiş vurgulu
- *   BarList      çubuk listesi: toplam içindeki pay, ad/değer sıralaması,
- *                ilk 8'den sonrası "tümünü göster"
- *   Sparkline    istatistik kutusunun altındaki küçük eğilim çizgisi
+ *   SeriesChart  zamanda değişim: günlük dizi, dizi seçimi, günün değeri metin
+ *   Funnel       sıralı adımlar: kaç kişi hangi adımda düştü, en büyük kayıp vurgulu
+ *   BarList      büyüklük sıralaması (olay adı, uç, tablo boyu): tek renk, iz yok
+ *   ShareBar     bir bütünün parçaları (seviye, platform, evet/hayır): tek yığılmış
+ *                çubuk + etiketli açıklama; 4 dilimden sonrası "Diğer"
+ *   ScoreList    0-100 puanlar (ortalama puan, doğruluk): eksende nokta, 60 eşiği;
+ *                puan bir "ilerleme" değil, ölçek üstünde bir yer
+ *   Meter        bir sınıra göre doluluk (CPU, disk): eşik çizgili çubuk
+ *   ThresholdTrend  bir oranın zamanda eşiğe göre seyri (Play vitals)
+ *   Sparkline    istatistik kutusunun altındaki küçük eğilim
  *
- * Renkler anlamsal jetonlardan; değerler ekranda METİN olarak da yazıyor
- * (`check:title`: yalnız ipucu balonunda duran bilgi yok).
+ * Eski panelde hepsi aynı gri izli "ilerleme çubuğu"ydu: ortalama puan, pay,
+ * sıralama ve doluluk aynı görünüyordu, "%72 puan" ile "%72 doluluk" ayırt
+ * edilemiyordu. Tek sayı grafik değil (Stat); iki-üç sayılık liste tablo.
+ *
+ * Renk: tek dizi marka rengi; kategoriler sabit sırayla turuncu → gök → mor
+ * (açık ve koyu temada renk körlüğü denetiminden geçti, dilimler etiketli ve
+ * 2 px aralıklı), "Diğer" gri. Anlam rengi (yeşil/sarı/kırmızı) yalnız durumu
+ * söylerken. Değerler her zaman ekranda METİN olarak da var.
  */
 
 export type ChartTone = "ok" | "warn" | "bad" | "info";
 const TONE: Record<ChartTone, string> = { ok: "var(--color-mint)", warn: "var(--color-flame)", bad: "var(--color-rose)", info: "var(--color-brand)" };
+
+/** Kategori sırası (sabit, döngü yok). Koyu tema `.dark { color-scheme: dark }` ile `light-dark`. */
+const CATEGORY = [
+  "var(--color-brand-600)",
+  "var(--color-sky-500)",
+  "light-dark(var(--color-violet-600), var(--color-violet-500))",
+];
+const OTHER = "var(--text-faint)";
+/** Sıralı kategoriler (A1 → C2): tek ton, açıktan koyuya. */
+const ORDINAL = ["var(--color-brand-200)", "var(--color-brand-300)", "var(--color-brand-400)", "var(--color-brand-500)", "var(--color-brand-600)", "var(--color-brand-700)", "var(--color-brand-800)"];
 
 function fmt(n: number): string {
   if (Math.abs(n) >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
@@ -123,13 +139,15 @@ export function SeriesChart({ days, series, height = 144, empty = "Bu aralıkta 
 export type FunnelStep = { label: string; value: number };
 
 /**
- * Huni: her basamak ilk basamağa (%) ve bir öncekine (→ %) göre. En büyük
- * kayıp veren geçiş vurgulanıyor — hunide bakılacak yer orası.
+ * Huni: her basamağın çubuğu İLK basamağa göre (iz yok: "ne kadarı kaldı"
+ * çubuğun kendisi); basamak arasında devam oranı ve kayıp. En büyük kayıp
+ * veren geçiş kırmızı — hunide bakılacak yer orası.
  */
 export function Funnel({ steps, unit = "kişi" }: { steps: FunnelStep[]; unit?: string }) {
   const first = steps[0]?.value ?? 0;
   if (!steps.length || first === 0) return <p className="muted text-caption">Henüz veri yok.</p>;
-  const rates = steps.map((st, i) => (i === 0 ? null : steps[i - 1].value ? st.value / steps[i - 1].value : 0));
+  /* Önceki adım 0 iken: sonraki de 0 ise oran yok (null), sonraki > 0 ise ölçüm boşluğu (∞). */
+  const rates = steps.map((st, i) => (i === 0 ? null : steps[i - 1].value ? st.value / steps[i - 1].value : st.value > 0 ? Infinity : null));
   /* Olaylar her zaman sırayla yayınlanmıyor (eski sürüm bir adımı hiç yazmıyor,
      kullanıcı bir adımı atlayabiliyor): bir basamak öncekinden BÜYÜK olabilir.
      O geçiş "kayıp" değil ölçüm boşluğu; yüzde gibi yazılmıyor ve en büyük kayıp
@@ -137,24 +155,24 @@ export function Funnel({ steps, unit = "kişi" }: { steps: FunnelStep[]; unit?: 
   let worst = -1;
   rates.forEach((r, i) => { if (r != null && r <= 1 && (worst < 0 || r < (rates[worst] ?? 1))) worst = i; });
   return (
-    <ol className="space-y-2.5">
+    <ol>
       {steps.map((st, i) => {
         const share = st.value / first;
         const r = rates[i];
         const isWorst = i === worst && r != null && r < 1;
         return (
           <li key={st.label}>
-            <div className="flex flex-wrap items-baseline justify-between gap-x-3 text-caption">
+            {i > 0 ? (
+              <div className="flex items-center gap-2 py-1 pl-2 text-micro tabular-nums" style={{ color: isWorst ? TONE.bad : "var(--text-faint)" }}>
+                <span aria-hidden>↓</span>
+                {r == null ? "—" : r > 1 ? "önceki adımdan fazla (ölçüm eksik)" : `%${Math.round(r * 100)} devam · ${fmt(steps[i - 1].value - st.value)} kayıp${isWorst ? " · en büyük kayıp" : ""}`}
+              </div>
+            ) : null}
+            <div className="flex items-baseline justify-between gap-3 text-caption">
               <span className="min-w-0">{st.label}</span>
-              <span className="tabular-nums">
-                <b>{fmt(st.value)}</b> <span className="muted">{unit} · %{Math.round(share * 100)}</span>
-                {r != null && r > 1 ? <span className="muted"> · önceki adımdan fazla (ölçüm eksik)</span> : null}
-                {r != null && r <= 1 ? <span style={{ color: isWorst ? TONE.bad : "var(--text-muted)" }}> · önceki adımdan %{Math.round(r * 100)}{isWorst ? " (en büyük kayıp)" : ""}</span> : null}
-              </span>
+              <span className="shrink-0 tabular-nums"><b>{fmt(st.value)}</b> <span className="muted">{unit} · %{Math.round(share * 100)}</span></span>
             </div>
-            <div className="mt-1 h-2.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-              <div className="h-full rounded-full" style={{ width: `${Math.max(st.value > 0 ? 1 : 0, share * 100)}%`, background: isWorst ? TONE.bad : "var(--color-brand)" }} />
-            </div>
+            <div className="mt-1 h-2 rounded-r-[4px]" style={{ width: `${Math.max(st.value > 0 ? 1 : 0, Math.min(100, share * 100))}%`, background: isWorst ? TONE.bad : "var(--color-brand)" }} />
           </li>
         );
       })}
@@ -165,10 +183,11 @@ export function Funnel({ steps, unit = "kişi" }: { steps: FunnelStep[]; unit?: 
 export type BarItem = { label: string; value: number; right?: string; tone?: ChartTone };
 
 /**
- * Çubuk listesi: değer, toplam içindeki pay; 8'den uzunsa "tümünü göster",
- * 5'ten uzunsa ad/değer sıralaması. `max` verilirse (ör. yüzde listesi, 100)
- * çubuk ona göre, verilmezse en büyük değere göre; pay yalnız TOPLANABİLİR
- * listelerde (`share`) yazılıyor — yüzdelerin toplamı anlamsız.
+ * Büyüklük sıralaması: her satır ad, çubuk, değer. Çubuk en büyük değere
+ * (ya da `max`a) göre; gri iz YOK — bu bir "ilerleme" değil, satırlar arası
+ * karşılaştırma. Tek dizi tek renk; `tone` yalnız anlamı olan satırda (hata).
+ * 8'den uzunsa "tümünü göster", 5'ten uzunsa ad/değer sıralaması. Pay
+ * (`share`) yalnız TOPLANABİLİR listelerde yazılıyor.
  */
 export function BarList({ items, max, unit, empty = "Henüz veri yok.", share = false }: { items: BarItem[]; max?: number; unit?: string; empty?: string; share?: boolean }) {
   const [all, setAll] = useState(false);
@@ -186,16 +205,16 @@ export function BarList({ items, max, unit, empty = "Henüz veri yok.", share = 
           <button type="button" aria-pressed={byName} onClick={() => setByName(true)} className="rounded-chip px-2 py-0.5" style={byName ? { background: "var(--surface-2)", color: "var(--text)" } : { color: "var(--text-muted)" }}>ad</button>
         </div>
       ) : null}
-      <div className="space-y-2">
+      <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto] items-center gap-x-3 gap-y-1.5 text-caption">
         {shown.map((it, i) => (
-          <div key={`${it.label}-${i}`} className="flex items-center gap-3 text-caption">
-            <span className="w-2/5 min-w-0 shrink-0 break-words @xl:w-44">{it.label}</span>
-            <span className="relative h-2.5 min-w-10 flex-1 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-              <span className="absolute inset-y-0 left-0 rounded-full" style={{ width: `${Math.max(it.value > 0 ? 2 : 0, Math.min(100, (it.value / top) * 100))}%`, background: it.tone ? TONE[it.tone] : "var(--color-brand)" }} />
+          <div key={`${it.label}-${i}`} className="contents">
+            <span className="min-w-0 truncate" title={it.label}>{it.label}</span>
+            <span className="flex h-4 items-center border-l" style={{ borderColor: "var(--border)" }}>
+              <span className="block h-2 rounded-r-[4px]" style={{ width: `${Math.max(it.value > 0 ? 1.5 : 0, Math.min(100, (it.value / top) * 100))}%`, background: it.tone ? TONE[it.tone] : "var(--color-brand)" }} />
             </span>
-            <span className="muted w-28 shrink-0 text-right tabular-nums @xl:w-40">
+            <span className="text-right tabular-nums whitespace-nowrap">
               {it.right ?? fmt(it.value) + (unit ?? "")}
-              {share && total ? ` · %${Math.round((it.value / total) * 100)}` : ""}
+              {share && total ? <span className="muted"> · %{Math.round((it.value / total) * 100)}</span> : null}
             </span>
           </div>
         ))}
@@ -206,6 +225,145 @@ export function BarList({ items, max, unit, empty = "Henüz veri yok.", share = 
         </button>
       ) : null}
     </div>
+  );
+}
+
+export type ShareItem = { label: string; value: number; tone?: ChartTone; right?: string };
+
+/**
+ * Bir bütünün parçaları: tek yığılmış çubuk + etiketli açıklama. Büyükten
+ * küçüğe; 4 dilimden fazlası "Diğer"de toplanıyor (açıklamada hepsi var).
+ * `ordinal`: sırası anlamlı kategoriler (A1 → C2) verilen sırada, tek tonun
+ * açıktan koyuya basamaklarıyla. `tone` verilen dilim anlam rengini alır
+ * (ör. evet/hayır). Toplam 0 ise boş durum.
+ */
+export function ShareBar({ items, ordinal = false, unit = "", empty = "Henüz veri yok.", slices = 4 }: { items: ShareItem[]; ordinal?: boolean; unit?: string; empty?: string; slices?: number }) {
+  const total = items.reduce((a, i) => a + i.value, 0);
+  if (!items.length || total === 0) return <p className="muted text-caption">{empty}</p>;
+  const list = ordinal ? items : [...items].sort((a, b) => b.value - a.value);
+  const fold = !ordinal && list.length > slices + 1;
+  const bar = fold ? [...list.slice(0, slices), { label: "Diğer", value: list.slice(slices).reduce((a, i) => a + i.value, 0) } as ShareItem] : list;
+  const colorOf = (it: ShareItem, i: number) =>
+    it.tone ? TONE[it.tone] : it.label === "Diğer" && fold && i === bar.length - 1 ? OTHER : ordinal ? ORDINAL[Math.min(ORDINAL.length - 1, Math.round((i / Math.max(1, list.length - 1)) * (ORDINAL.length - 1)))] : (CATEGORY[i] ?? OTHER);
+  const pct = (v: number) => Math.round((v / total) * 100);
+  return (
+    <div>
+      <div className="flex h-3 w-full gap-[2px] overflow-hidden rounded-[4px]" role="img" aria-label={bar.map((it) => `${it.label} %${pct(it.value)}`).join(", ")}>
+        {bar.filter((it) => it.value > 0).map((it) => (
+          <span key={it.label} style={{ flexGrow: it.value, flexBasis: 0, minWidth: 3, background: colorOf(it, bar.indexOf(it)) }} />
+        ))}
+      </div>
+      <ul className="mt-3 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2.5 gap-y-1 text-caption">
+        {list.map((it, i) => {
+          const inBar = !fold || i < slices;
+          return (
+            <li key={it.label} className="contents">
+              <span aria-hidden className="h-2.5 w-2.5 rounded-[3px]" style={{ background: inBar ? colorOf(it, i) : OTHER }} />
+              <span className="min-w-0 truncate" title={it.label}>{it.label}</span>
+              <span className="text-right tabular-nums whitespace-nowrap">{it.right ?? `${fmt(it.value)}${unit}`} <span className="muted">· %{pct(it.value)}</span></span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+export type ScoreItem = { label: string; score: number; right?: string };
+
+/**
+ * 0-100 puanlar: her satırda ince bir eksen, 60'ta eşik çizgisi ve puanın
+ * yerinde bir nokta. Eşiğin altı sarı. Varsayılan sıra en zayıftan (bakılacak
+ * yer üstte); 8'den uzunsa "tümünü göster".
+ */
+export function ScoreList({ items, threshold = 60, empty = "Henüz veri yok.", sort = true }: { items: ScoreItem[]; threshold?: number; empty?: string; sort?: boolean }) {
+  const [all, setAll] = useState(false);
+  if (!items.length) return <p className="muted text-caption">{empty}</p>;
+  const list = sort ? [...items].sort((a, b) => a.score - b.score) : items;
+  const shown = all ? list : list.slice(0, 8);
+  const clamp = (v: number) => Math.max(0, Math.min(100, v));
+  return (
+    <div>
+      <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto] items-center gap-x-3 gap-y-1.5 text-caption">
+        <span />
+        <span aria-hidden className="faint relative h-4 text-micro tabular-nums">
+          <span className="absolute left-0">0</span>
+          <span className="absolute -translate-x-1/2" style={{ left: `${threshold}%` }}>{threshold}</span>
+          <span className="absolute right-0">100</span>
+        </span>
+        <span />
+        {shown.map((it, i) => {
+          const low = it.score < threshold;
+          return (
+            <div key={`${it.label}-${i}`} className="contents">
+              <span className="min-w-0 truncate" title={it.label}>{it.label}</span>
+              <span className="relative h-4" aria-label={`${it.label}: ${it.score}`}>
+                <span aria-hidden className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2" style={{ background: "var(--border)" }} />
+                <span aria-hidden className="absolute top-0 h-4 w-px" style={{ left: `${threshold}%`, background: "var(--text-faint)" }} />
+                <span aria-hidden className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ left: `${clamp(it.score)}%`, background: low ? TONE.warn : "var(--color-brand)", boxShadow: "0 0 0 2px var(--surface)" }} />
+              </span>
+              <span className="text-right tabular-nums whitespace-nowrap">
+                <b style={low ? { color: TONE.warn } : undefined}>{Math.round(it.score)}</b>
+                {it.right ? <span className="muted"> · {it.right}</span> : null}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+      {list.length > 8 ? (
+        <button type="button" onClick={() => setAll((x) => !x)} className="btn btn-ghost mt-2 h-8 px-3 text-caption">
+          {all ? "İlk 8'i göster" : `Tümünü göster (${list.length})`}
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * Bir sınıra göre doluluk (CPU, RAM, disk, kota): çubuk + uyarı (%75) ve
+ * kritik (%90) eşik çizgileri. İlerleme çubuğu biçimi yalnız burada: gerçekten
+ * "ne kadarı dolu" sorusu.
+ */
+export function Meter({ label, value, detail, warnAt = 75, badAt = 90 }: { label: string; value: number; detail?: string; warnAt?: number; badAt?: number }) {
+  const tone = value >= badAt ? TONE.bad : value >= warnAt ? TONE.warn : "var(--color-brand)";
+  return (
+    <div>
+      <div className="flex items-baseline justify-between gap-3 text-caption">
+        <span className="text-strong">{label}</span>
+        <span className="tabular-nums"><b style={{ color: value >= warnAt ? tone : undefined }}>%{Math.round(value)}</b>{detail ? <span className="muted"> · {detail}</span> : null}</span>
+      </div>
+      <div className="relative mt-1.5 h-2 rounded-[4px]" style={{ background: "var(--surface-2)" }}>
+        <div className="h-full rounded-[4px]" style={{ width: `${Math.max(value > 0 ? 1 : 0, Math.min(100, value))}%`, background: tone }} />
+        <span aria-hidden className="absolute -top-0.5 h-3 w-px" style={{ left: `${warnAt}%`, background: "var(--text-faint)" }} />
+        <span aria-hidden className="absolute -top-0.5 h-3 w-px" style={{ left: `${badAt}%`, background: "var(--text-faint)" }} />
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Eşiğe göre eğilim (Play vitals gibi oranlar): tek çizgi, eşik yatay kesik
+ * çizgi (kesik YALNIZ eşik için), son nokta vurgulu. Boş günler çizgide boşluk.
+ * Değerler metin olarak yanındaki Stat'ta; bu biçim "eşiğe yaklaşıyor mu".
+ */
+export function ThresholdTrend({ values, threshold, label, format = (v: number) => String(v) }: { values: (number | null)[]; threshold: number; label: string; format?: (v: number) => string }) {
+  const nums = values.filter((v): v is number => v != null);
+  if (nums.length < 2) return null;
+  const W = 240, H = 56, top = 4, bottom = 4;
+  const max = Math.max(threshold * 1.3, ...nums);
+  const x = (i: number) => (i / (values.length - 1)) * W;
+  const y = (v: number) => top + (1 - v / max) * (H - top - bottom);
+  let d = "";
+  values.forEach((v, i) => { if (v == null) return; d += `${d && values[i - 1] != null ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`; });
+  const lastIx = values.map((v, i) => (v == null ? -1 : i)).filter((i) => i >= 0).pop() ?? 0;
+  const last = values[lastIx] ?? 0;
+  const over = last >= threshold;
+  return (
+    <svg role="img" aria-label={`${label}: ${values.length} gün, son ${format(last)}, eşik ${format(threshold)}`} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" className="mt-2 h-14 w-full overflow-visible">
+      <line x1={0} x2={W} y1={y(threshold)} y2={y(threshold)} strokeWidth={1} strokeDasharray="4 3" vectorEffect="non-scaling-stroke" style={{ stroke: TONE.bad }} />
+      <path d={d} fill="none" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" style={{ stroke: over ? TONE.bad : "var(--color-brand)" }} />
+      <circle cx={x(lastIx)} cy={y(last)} r={3} style={{ fill: over ? TONE.bad : "var(--color-brand)" }} />
+    </svg>
   );
 }
 

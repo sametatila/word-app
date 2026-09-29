@@ -67,7 +67,7 @@ export function when(iso: string | null | undefined, withTime = true): string {
  * genişliğine göre sütun seçiyor. Sol çubuk, Gelen işler'in ayrıntı bölmesi ya
  * da dar pencere yer kapladığında "geniş ekran" varsayımı bozulmuyor.
  *
- *   Kap genişliği   PanelGrid        Stats (kart içinde, kartın genişliği)
+ *   Kap genişliği   PanelGrid (sütun)  Stats (kart içinde, kartın genişliği)
  *   < 56rem         1 sütun          2 sütun
  *   56rem+          2 sütun          kartın genişliğine göre 3-8
  *   100rem+         3 sütun
@@ -123,7 +123,7 @@ export function Panel({ title, hint, actions, children, span, flush, tone, id }:
   return (
     <section
       id={id}
-      className={`@container min-w-0 scroll-mt-32 rounded-panel border ${span ? "col-span-full" : ""}`}
+      className={`@container min-w-0 scroll-mt-32 rounded-panel border ${span ? "col-span-full [column-span:all]" : ""}`}
       style={tone ? { ...panelStyle, borderColor: TONE[tone] } : panelStyle}
     >
       {title || actions ? (
@@ -141,12 +141,15 @@ export function Panel({ title, hint, actions, children, span, flush, tone, id }:
 }
 
 /**
- * Panel ızgarası: sayfanın genişliğine göre 1-4 sütun (bkz.
- * `AdminPage`). Kartlar satırda üstten hizalı; kısa kart uzun komşusuna
- * uzatılmıyor (boş alan yerine sayfa akıyor).
+ * Panel akışı: sayfanın genişliğine göre 1-4 SÜTUN (bkz. `AdminPage`), kartlar
+ * sütunlara yukarıdan aşağı akıyor (duvar düzeni). Satır ızgarasında kısa
+ * kartın yanında uzun komşusu kadar boşluk kalıyordu; burada her kart bir
+ * öncekinin hemen altına oturuyor. `span` kart (tablo, uzun liste) akışı
+ * bölüp bütün genişliği alıyor. Okuma sırası sütun sütun: sayfalar önemli
+ * kartı başa koyuyor.
  */
 export function PanelGrid({ children }: { children: ReactNode }) {
-  return <div className="grid items-start gap-5 @4xl:grid-cols-2 @[100rem]:grid-cols-3 @[140rem]:grid-cols-4">{children}</div>;
+  return <div className="gap-5 @4xl:columns-2 @[100rem]:columns-3 @[140rem]:columns-4 *:mb-5 *:break-inside-avoid">{children}</div>;
 }
 
 export function Stat({ label, value, sub, tone, spark }: { label: string; value: ReactNode; sub?: ReactNode; tone?: Tone; spark?: ReactNode }) {
@@ -238,7 +241,7 @@ export function Empty({ children }: { children: ReactNode }) {
    dizi seçimi): `_ui/table`, `_ui/charts`. Buradan yeniden dışa veriliyor ki
    sayfalar tek yerden içe aktarsın. */
 export { DataTable, type Column } from "./table";
-export { BarList, Funnel, SeriesChart, Sparkline, type BarItem, type FunnelStep, type Series } from "./charts";
+export { BarList, Funnel, Meter, ScoreList, SeriesChart, ShareBar, Sparkline, ThresholdTrend, type BarItem, type FunnelStep, type ScoreItem, type Series, type ShareItem } from "./charts";
 
 /** Alan: değer ızgarası (kullanıcı detayı). */
 export function KeyValue({ data }: { data: Record<string, string | number | boolean> | null }) {
