@@ -19103,10 +19103,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "ortak gorev nabzinin olculeri",
     [
       "avatar=" + ((m.match(/<Avatar [^>]*size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "iskelet karo=" + ((m.match(/<SkeletonTile size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "iskelet baslik=" + (/<SkeletonLine variant="h3" width="72%"/.test(m) ? "h3" : "FARKLI"),
-      "iskelet cubuk=" + ((m.match(/<SkeletonBar height=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "iskelet cerceve=" + (/borderWidth: 1, borderColor: colors\.hairline/.test(m) ? "1" : "YOK"),
+      /* 2026-09-29 Samet: yuklenirken iskelet YOK - satir cogu kullanicida
+         hic cizilmiyor, iskelet belirip kayboluyor ve alttakiler zipliyordu. */
+      "iskelet=" + (/<Skeleton[A-Za-z]* /.test(m) ? "VAR" : "yok"),
       /* 2026-09-29 Samet: secim B. Kart kenari NOTR (hairline); durum rengi
          yalniz avatar halkasinda. */
       "kart cercevesi=" + (/borderColor: colors\.hairline, borderWidth: 1 /.test(m) ? "1 notr" : /borderColor: invited \?/.test(m) ? "DURUMLU" : "YOK"),
@@ -19119,11 +19118,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ],
     [
       "avatar=" + ((w.match(/<Avatar [\s\S]{0,200}?size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "iskelet karo=" + ((w.match(/<SkeletonTile size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "iskelet baslik=" + (/<SkeletonLine variant="h3" width="72%"/.test(w) ? "h3" : "FARKLI"),
-      "iskelet cubuk=" + ((w.match(/<SkeletonBar height=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "iskelet cerceve=" + (/borderWidth: 1, borderColor: "var\(--hairline\)"/.test(w) ? "1" : "YOK"),
-      "kart cercevesi=" + (/style=\{\{ borderWidth: 1, borderColor: "var\(--hairline\)" \}\}[^<]*>\s*<Avatar/.test(w) || (w.match(/borderWidth: 1, borderColor: "var\(--hairline\)"/g) ?? []).length >= 2 ? "1 notr" : /borderColor: invited \?/.test(w) ? "DURUMLU" : "YOK"),
+      "iskelet=" + (/<Skeleton[A-Za-z]* /.test(w) ? "VAR" : "yok"),
+      "kart cercevesi=" + (/style=\{\{ borderWidth: 1, borderColor: "var\(--hairline\)" \}\}[^<]*>\s*<Avatar/.test(w) || /borderWidth: 1, borderColor: "var\(--hairline\)"/.test(w) ? "1 notr" : /borderColor: invited \?/.test(w) ? "DURUMLU" : "YOK"),
       "halka=" + (/ring=\{invited \? "var\(--color-sky\)" : "var\(--color-brand\)"\}/.test(w) ? "durumlu" : "SABIT"),
       "baslik=" + (/<p className="truncate text-h3">/.test(w) ? "h3" : "FARKLI"),
       "cubuk boy=" + ((w.match(/style=\{\{ height: (\d+), background: "var\(--surface-2\)" \}\}/) ?? [])[1] ?? "YOK"),

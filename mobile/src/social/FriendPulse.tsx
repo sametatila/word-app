@@ -12,47 +12,31 @@ import { Card } from "../ui/Card";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowRightIcon } from "../ui/icons";
-import { SkeletonBar, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useTheme, spacing } from "../theme";
 import { Bar } from "./common";
 
 /**
  * Öğren ekranı nabzı — ActionRow biçimi: arma, h3, caption/çubuk, ok. Yalnız
- * görev/davet varsa. Yüklenirken aynı yükseklikte iskelet: cevap gelince satır
- * araya girip altındaki bölümleri aşağı itmesin.
+ * görev/davet varsa; yüklenirken hiçbir şey çizmiyor (aşağıda).
  */
 export function FriendPulse() {
   const { colors } = useTheme();
   const { user } = useAuth();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [q, setQ] = useState<QuestView | null>(null);
-  const [loading, setLoading] = useState(() => !!user && !user.guest);
   useEffect(() => {
     // Ortak görev hesap istiyor: misafirde satır hiç çizilmiyor.
-    if (!user || user.guest) { setQ(null); setLoading(false); return; }
+    if (!user || user.guest) { setQ(null); return; }
     let alive = true;
-    setLoading(true);
     social.quests()
       .then((r) => { if (alive) setQ(r.quests.find((x) => x.status === "active" || x.status === "invited") ?? null); })
-      .catch(() => { if (alive) setQ(null); })
-      .finally(() => { if (alive) setLoading(false); });
+      .catch(() => { if (alive) setQ(null); });
     return () => { alive = false; };
   }, [user]);
-  if (loading) {
-    return (
-      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }}>
-        <SkeletonTile size={44} radius={22} />
-        <View style={{ flex: 1 }}>
-          <SkeletonLine variant="h3" width="72%" />
-          <View style={{ marginTop: 6 }}>
-            <SkeletonBar height={6} />
-            <SkeletonLine variant="micro" width="45%" style={{ marginTop: 3 }} />
-          </View>
-        </View>
-        <SkeletonLine variant="h3" width={34} />
-      </Card>
-    );
-  }
+  /* YÜKLENİRKEN İSKELET YOK (2026-09-29, Samet): satır yalnız ortak görev
+     ya da davet varsa çiziliyor, çoğu kullanıcıda yok. İskelet belirip
+     kayboluyor, altındaki bölümler her açılışta yukarı zıplıyordu. Web
+     `friend-pulse` aynı. */
   if (!q) return null;
   const invited = q.status === "invited";
   return (

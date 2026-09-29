@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { ArrowRightIcon } from "@/components/icons";
-import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { social } from "@/lib/social/client";
 import type { QuestView } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -25,26 +24,12 @@ export function FriendPulse() {
       .then((r) => setQ(r.quests.find((x) => x.status === "active" || x.status === "invited") ?? null))
       .catch(() => setQ(null));
   }, []);
-  /* YÜKLENİRKEN AYNI YÜKSEKLİKTE İSKELET. `!q` yüklemeyi (undefined) ve
-     "görev yok"u (null) aynı sayıyordu: cevap gelince satır araya girip
-     altındaki bölümleri aşağı itiyordu. Android bunu bilerek ayırıyor
-     (`FriendPulse`), akış ve gelen kutusu da öyle. */
-  if (q === undefined)
-    return (
-      <div
-        aria-hidden
-        className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3"
-        style={{ borderWidth: 1, borderColor: "var(--hairline)" }}
-      >
-        <SkeletonTile size={44} className="rounded-full" />
-        <div className="min-w-0 flex-1">
-          <SkeletonLine variant="h3" width="72%" />
-          <SkeletonBar height={6} className="mt-1.5" />
-          <SkeletonLine variant="micro" width="45%" className="mt-1" />
-        </div>
-        <SkeletonLine variant="h3" width={34} />
-      </div>
-    );
+  /* YÜKLENİRKEN İSKELET YOK (2026-09-29, Samet: "günün görevleri altındaki
+     iskelette sorun var"). Satır yalnız bu hafta ortak görev ya da davet
+     varsa çiziliyor ve çoğu kullanıcıda yok: iskelet belirip kayboluyor,
+     altındaki öne çıkanlar ve diğerleri her açılışta yukarı zıplıyordu.
+     Nadir durumda kartın gelince araya girmesi, sık durumda boşuna yer
+     ayırmaktan iyi. Android `FriendPulse` aynı. */
   if (!q) return null;
   const invited = q.status === "invited";
   return (
