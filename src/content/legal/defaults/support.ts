@@ -28,11 +28,11 @@ export const SUPPORT_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
 ## Ne için nereye yazmalı
 
 |---|---|
-| **Uygulamada bir sorun, hata ya da önerin var** | Destek adresine yaz. Hangi cihazı ve uygulama sürümünü kullandığını eklersen çok yardımcı olur (Profil › Ayarlar'ın en altında yazıyor). |
+| **Uygulamada bir sorun, hata ya da önerin var** | Destek adresine yaz. Hangi cihazı ve uygulama sürümünü kullandığını eklersen çok yardımcı olur (Profil › Ayarlar › Destek ve hakkında'da yazıyor). |
 | **Hesabını ve verilerini silmek istiyorsun** | Kendin yapabilirsin: uygulamada Profil › Ayarlar › Hesap › Hesabı sil, ya da web'de [hesap silme sayfası]({{link:deleteAccount}}). Silme geri alınamaz ve mağaza aboneliğini ayrıca iptal etmen gerekir. Hesapsız (misafir) kullanıyorsan: uygulamada Profil › Misafir verilerini sil. |
 | **Verilerine erişmek, düzeltmek ya da silinmesini istemek (KVKK / GDPR)** | Türkiye'den KVKK başvuruları: {{privacyEmailTr}}. AB, AEA ve Birleşik Krallık'tan GDPR başvuruları (AB temsilcisine de ulaşır): {{privacyEmailEu}}. Hesabındaki e-posta adresinden yazman kimlik doğrulaması için yeterli. Süreler ve hakların [gizlilik politikasının]({{link:privacy}}) 10. bölümünde. |
 | **Abonelik, ödeme ya da iade** | Abonelik satın alma, yenileme, iptal ve iade işlemleri mağaza üzerinden yürür; bunları biz işleyemiyoruz. Android'de [Play › Abonelikler](https://play.google.com/store/account/subscriptions){{ifIos}}, iOS'ta Ayarlar › Apple Hesabı › Abonelikler ve iade için [reportaproblem.apple.com](https://reportaproblem.apple.com){{/ifIos}}. Mağaza tarafında çözülmeyen bir durumda bize yaz, elimizden geleni yaparız. |
-| **Uygunsuz bir içeriği ya da bir kullanıcıyı bildirmek istiyorsun** | En hızlısı uygulamanın içinden: yapay zekâ yanıtlarının altındaki **Bildir**, kullanıcılar için profildeki **Bildir** ve **Engelle**. Bildirimlere insan bakıyor, genellikle 48 saat içinde. Acil ya da ciddi bir durumda doğrudan destek adresine de yazabilirsin. |
+| **Uygunsuz bir içeriği ya da bir kullanıcıyı bildirmek istiyorsun** | En hızlısı uygulamanın içinden: yapay zekâ yanıtlarının altındaki **Bildir**, kullanıcılar için profildeki **Bildir** ve **Engelle**. Bildirimlere insan bakıyor, en geç 24 saat içinde. Acil ya da ciddi bir durumda doğrudan destek adresine de yazabilirsin. |
 | **Basın, iş birliği ya da hukuki bildirim** | Destek adresine yaz, doğru kişiye ulaştırırız. Hukuki tebligat için aşağıdaki yazışma adresi geçerlidir. |
 
 ## Kime yazıyorsun
@@ -47,7 +47,7 @@ Hizmet sağlayıcının künyesi (Impressum): [künye sayfası]({{link:impressum
 
 ## Uygulamanın içinden
 
-- Bu sayfaya uygulamadan da ulaşabilirsin: Profil › Ayarlar › Destek ve iletişim.
+- Bu sayfaya uygulamadan da ulaşabilirsin: Profil › Ayarlar › Destek ve hakkında › Destek ve iletişim.
 - Yapay zekâ karakterleri gerçek kişi değildir; bu, konuşmanın başında ve ekranda kalıcı olarak yazılıdır.
 - Engellediğin bir kullanıcıyla birbirinizi görmezsiniz; engelleme ve bildirim karşı tarafa gösterilmez.`,
   },
@@ -60,11 +60,11 @@ Hizmet sağlayıcının künyesi (Impressum): [künye sayfası]({{link:impressum
 ## What to write where
 
 |---|---|
-| **You hit a problem or bug, or have a suggestion** | Write to the support address. Telling us your device and app version helps a lot (it is at the bottom of Profile › Settings). |
+| **You hit a problem or bug, or have a suggestion** | Write to the support address. Telling us your device and app version helps a lot (it is shown under Profile › Settings › Support and about). |
 | **You want to delete your account and data** | You can do it yourself: in the app, Profile › Settings › Account › Delete account, or on the web via the [account deletion page]({{link:deleteAccount}}). Deletion cannot be undone, and you must cancel a store subscription separately. If you use the app without an account (as a guest): in the app, Profile › Delete guest data. |
 | **You want to access, correct or erase your data (KVKK / GDPR)** | KVKK requests from Türkiye: {{privacyEmailTr}}. GDPR and UK GDPR requests from the EU, EEA and the United Kingdom (also reaches the EU representative): {{privacyEmailEu}}. Writing from the email address on your account is enough to verify your identity. Deadlines and your rights are in section 10 of the [privacy policy]({{link:privacy}}). |
 | **Subscription, payment or refund** | Buying, renewing, canceling and refunding a subscription is handled by the store; we cannot process these ourselves. On Android: [Play › Subscriptions](https://play.google.com/store/account/subscriptions){{ifIos}}; on iOS: Settings › Apple Account › Subscriptions, and [reportaproblem.apple.com](https://reportaproblem.apple.com) for refunds{{/ifIos}}. If the store does not resolve it, write to us and we will do what we can. |
-| **You want to report objectionable content or a user** | Fastest from inside the app: **Report** under AI replies, and **Report** and **Block** on a user's profile. Reports are reviewed by a person, usually within 48 hours. For anything urgent or serious you can also write to support directly. |
+| **You want to report objectionable content or a user** | Fastest from inside the app: **Report** under AI replies, and **Report** and **Block** on a user's profile. Reports are reviewed by a person within 24 hours. For anything urgent or serious you can also write to support directly. |
 | **Press, partnership or legal notice** | Write to the support address and we will route it. For formal legal service, the postal address below applies. |
 
 ## Who you are writing to
@@ -79,7 +79,7 @@ Provider identification (Impressum): [imprint page]({{link:impressum}}).
 
 ## From inside the app
 
-- You can reach this page from the app too: Profile › Settings › Support and contact.
+- You can reach this page from the app too: Profile › Settings › Support and about › Support and contact.
 - AI characters are not real people; this is stated at the start of a conversation and stays visible on screen.
 - If you block someone, neither of you sees the other; blocks and reports are never shown to the other party.`,
   },
@@ -92,11 +92,11 @@ Provider identification (Impressum): [imprint page]({{link:impressum}}).
 ## Was gehört wohin
 
 |---|---|
-| **Du hast ein Problem, einen Fehler oder einen Vorschlag** | Schreib an die Support-Adresse. Angaben zu Gerät und App-Version helfen sehr (sie stehen unten in Profil › Einstellungen). |
+| **Du hast ein Problem, einen Fehler oder einen Vorschlag** | Schreib an die Support-Adresse. Angaben zu Gerät und App-Version helfen sehr (sie stehen unter Profil › Einstellungen › Hilfe und Info). |
 | **Du möchtest dein Konto und deine Daten löschen** | Das kannst du selbst: in der App Profil › Einstellungen › Konto › Konto löschen, oder im Web über die [Seite zur Kontolöschung]({{link:deleteAccount}}). Die Löschung ist endgültig, und ein Store-Abonnement musst du zusätzlich kündigen. Nutzt du die App ohne Konto (als Gast): in der App Profil › Gastdaten löschen. |
 | **Du möchtest auf deine Daten zugreifen, sie berichtigen oder löschen lassen (DSGVO / KVKK)** | KVKK-Anträge aus der Türkei: {{privacyEmailTr}}. DSGVO- und UK-GDPR-Anträge aus der EU, dem EWR und dem Vereinigten Königreich (erreicht auch den EU-Vertreter): {{privacyEmailEu}}. Zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines Kontos zu schreiben. Fristen und Rechte stehen in Abschnitt 10 der [Datenschutzerklärung]({{link:privacy}}). |
 | **Abonnement, Zahlung oder Erstattung** | Kauf, Verlängerung, Kündigung und Erstattung eines Abonnements wickelt der Store ab; wir können das nicht selbst bearbeiten. Unter Android: [Play › Abonnements](https://play.google.com/store/account/subscriptions){{ifIos}}; unter iOS: Einstellungen › Apple-Account › Abonnements, für Erstattungen [reportaproblem.apple.com](https://reportaproblem.apple.com){{/ifIos}}. Löst der Store es nicht, schreib uns — wir tun, was wir können. |
-| **Du möchtest anstößige Inhalte oder eine Person melden** | Am schnellsten in der App: **Melden** unter KI-Antworten sowie **Melden** und **Blockieren** im Profil einer Person. Meldungen prüft ein Mensch, in der Regel innerhalb von 48 Stunden. In dringenden oder ernsten Fällen kannst du auch direkt an den Support schreiben. |
+| **Du möchtest anstößige Inhalte oder eine Person melden** | Am schnellsten in der App: **Melden** unter KI-Antworten sowie **Melden** und **Blockieren** im Profil einer Person. Meldungen prüft ein Mensch innerhalb von 24 Stunden. In dringenden oder ernsten Fällen kannst du auch direkt an den Support schreiben. |
 | **Presse, Kooperation oder rechtliche Mitteilung** | Schreib an die Support-Adresse, wir leiten es weiter. Für förmliche Zustellungen gilt die Postanschrift unten. |
 
 ## An wen du schreibst
@@ -111,7 +111,7 @@ Anbieterkennzeichnung: [Impressum]({{link:impressum}}).
 
 ## Aus der App heraus
 
-- Diese Seite erreichst du auch aus der App: Profil › Einstellungen › Support und Kontakt.
+- Diese Seite erreichst du auch aus der App: Profil › Einstellungen › Hilfe und Info › Support und Kontakt.
 - KI-Figuren sind keine echten Personen; das steht zu Beginn eines Gesprächs und bleibt auf dem Bildschirm sichtbar.
 - Wenn du jemanden blockierst, seht ihr euch gegenseitig nicht mehr; Blockierungen und Meldungen werden der anderen Seite nie angezeigt.`,
   },

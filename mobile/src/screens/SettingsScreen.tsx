@@ -624,7 +624,8 @@ export function SettingsScreen() {
             düğmeyi bulamıyordu. Play'in kendi örneği de "hesap ayarlarının
             içinde". Satır geri geldi ama gerekçe korunarak: ad kutusunun hemen
             altında değil, giriş yöntemlerinin ardında ve grubun sonunda. Profil'in
-            dibindeki bağlantı da duruyor; iki kapı, aynı ekran.
+            dibindeki bağlantı profil yeniden çizilince (3e90264e) kalktı; hesabın
+            tek kapısı burası. Misafirin silme satırı Profil'de duruyor.
           */}
           <Row colors={colors}>
             <PressableScale

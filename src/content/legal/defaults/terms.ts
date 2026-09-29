@@ -89,7 +89,7 @@ Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcın
 ## 5a. Sosyal özellikler
 
 - Kullanıcı adı 3-20 karakter, harf, rakam ve alt çizgi; başkasının adını, markasını ya da yanıltıcı bir kimliği kullanamazsın. Uygunsuz adlar değiştirilebilir.
-- Sosyal profilin varsayılan olarak herkese açıktır; görünürlüğü, arkadaşlık isteklerini ve etkinlik paylaşımını Ayarlar › Sosyal'den yönetirsin.
+- Sosyal profilin varsayılan olarak herkese açıktır; görünürlüğü, arkadaşlık isteklerini ve etkinlik paylaşımını Ayarlar › Gizlilik'ten yönetirsin.
 - Engelleme karşılıklıdır ve bildirilmez. Bildirimler insan tarafından incelenir; asılsız ya da kötü niyetli bildirimler de kural ihlalidir.
 - Özel mesajlaşma yoktur; tepkiler, dürtmeler ve ortak görevler arkadaşlarınla sınırlıdır.
 
@@ -226,7 +226,7 @@ If you see content that is unlawful or breaches these terms (another user's name
 ## 5a. Social features
 
 - A username is 3-20 characters of letters, digits and underscores; you may not use someone else's name, a trademark or a misleading identity. Inappropriate names may be changed.
-- Your social profile is public by default; you manage visibility, friend requests and activity sharing under Settings › Social.
+- Your social profile is public by default; you manage visibility, friend requests and activity sharing under Settings › Privacy.
 - Blocking is mutual, and the other person is not notified. Reports are reviewed by a human; false or malicious reports are themselves a breach of the rules.
 - There is no private messaging; reactions, nudges and shared quests are limited to your friends.
 
@@ -363,7 +363,7 @@ Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt sie
 ## 5a. Soziale Funktionen
 
 - Ein Benutzername besteht aus 3-20 Zeichen (Buchstaben, Ziffern, Unterstrich); den Namen einer anderen Person, eine Marke oder eine irreführende Identität darfst du nicht verwenden. Unangemessene Namen können geändert werden.
-- Dein soziales Profil ist standardmäßig öffentlich; Sichtbarkeit, Freundschaftsanfragen und das Teilen von Aktivität verwaltest du unter Einstellungen › Soziales.
+- Dein soziales Profil ist standardmäßig öffentlich; Sichtbarkeit, Freundschaftsanfragen und das Teilen von Aktivität verwaltest du unter Einstellungen › Datenschutz.
 - Blockieren wirkt beidseitig und wird nicht mitgeteilt. Meldungen werden von einem Menschen geprüft; unwahre oder missbräuchliche Meldungen sind selbst ein Regelverstoß.
 - Es gibt keine privaten Nachrichten; Reaktionen, Anstöße und gemeinsame Aufgaben sind auf deine Freunde beschränkt.
 

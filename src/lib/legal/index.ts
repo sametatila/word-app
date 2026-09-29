@@ -183,8 +183,8 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * (profildeki kurs ve dil, oturumdaki platform ve sürüm); var olan bir
  * işlemenin anlatımı kapsamıyla eşitlendi.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-28";
-export const LEGAL_VERSION = "1.8.8";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-29";
+export const LEGAL_VERSION = "1.8.9";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -413,6 +413,24 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: yalnız uygulama içi YOL. Ayarlar 2de783c98'de kısa liste + grup ekranlarına
+       geçti; sosyal profil ayarları (görünürlük, istekler, önerilerde görünme, etkinlik, engellenenler)
+       ayrı "Sosyal" bölümünden "Gizlilik"e taşındı. Kural, veri, alıcı ve süre aynı. */
+    version: "1.8.9",
+    date: "2026-09-29",
+    changes: {
+      tr: [
+        "Uygulama içi yol düzeltildi: sosyal profilinin görünürlüğü, arkadaşlık istekleri, önerilerde görünme ve etkinlik paylaşımı artık Ayarlar › Gizlilik'te (önceden Ayarlar › Sosyal yazıyordu). Başka bir şey değişmedi.",
+      ],
+      en: [
+        "In-app path corrected: your social profile's visibility, friend requests, appearing in suggestions and activity sharing are now under Settings › Privacy (it used to say Settings › Social). Nothing else changed.",
+      ],
+      de: [
+        "Pfad in der App korrigiert: Sichtbarkeit deines sozialen Profils, Freundschaftsanfragen, das Erscheinen in Vorschlägen und das Teilen von Aktivität findest du jetzt unter Einstellungen › Datenschutz (vorher stand dort Einstellungen › Soziales). Sonst hat sich nichts geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: olgusal düzeltme. Sunucular Netcup'un Viyana veri merkezinde (2026-09-28'de Netcup kesintisiyle
        ortaya çıktı); metin "Almanya" diyordu. Konum AB içinde değişiyor: yeni alıcı, aktarım dayanağı ya da veri yok. */

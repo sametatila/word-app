@@ -130,7 +130,7 @@ Yürüyüş modunda "Kabul ediyorum, başla"ya ya da ses izni ekranında "İzin 
 ## 4a. Sosyal özellikler ve görünürlük
 
 - Görünen adın haftalık sıralamada tüm kullanıcılara görünür; sıralamaya girmek istemiyorsan görünen adını boş bırakabilirsin ("Öğrenci" olarak görünürsün).
-- Sosyal profilin (kullanıcı adı, seviye, seri) varsayılan olarak **herkese açık**tır; Ayarlar › Sosyal'den "yalnız arkadaşlar" ya da "gizli" yapabilir, arkadaşlık isteklerini ve önerilerde görünmeyi kapatabilirsin.
+- Sosyal profilin (kullanıcı adı, seviye, seri) varsayılan olarak **herkese açık**tır; Ayarlar › Gizlilik'ten "yalnız arkadaşlar" ya da "gizli" yapabilir, arkadaşlık isteklerini ve önerilerde görünmeyi kapatabilirsin.
 - Etkinlik akışı (tur tamamlama, seri kilometre taşı) yalnız arkadaşlarına görünür; "etkinliğimi göster" ile kapatılır.
 - Bir kullanıcıyı engellediğinde iki taraf birbirini görmez; bildirdiğinde kayıt insan tarafından incelenir. Engelleme ve bildirim kayıtları karşı tarafa gösterilmez.
 - Lernomi'de özel mesajlaşma yoktur; etkileşim yalnız tepkiler, dürtmeler ve ortak görevlerle olur.
@@ -314,7 +314,7 @@ When you press "I agree, start" in walk mode, or "Allow and continue" on the voi
 ## 4a. Social features and visibility
 
 - Your display name is visible to all users on the weekly leaderboard; if you do not want to appear there, you can leave your display name empty (you then appear as "Learner").
-- Your social profile (username, level, streak) is **public** by default; under Settings › Social you can set it to "friends only" or "private", and turn off friend requests and appearing in suggestions.
+- Your social profile (username, level, streak) is **public** by default; under Settings › Privacy you can set it to "friends only" or "private", and turn off friend requests and appearing in suggestions.
 - The activity feed (round completion, streak milestone) is visible only to your friends; it is turned off with "show my activity".
 - When you block a user, neither side sees the other; when you report someone, the record is reviewed by a human. Block and report records are not shown to the other party.
 - Lernomi has no private messaging; interaction happens only through reactions, nudges and shared quests.
@@ -498,7 +498,7 @@ Wenn du im Gehmodus auf "Ich stimme zu, los geht's" oder auf dem Einwilligungsbi
 ## 4a. Soziale Funktionen und Sichtbarkeit
 
 - Dein Anzeigename ist für alle Nutzer in der Wochen-Rangliste sichtbar; willst du dort nicht erscheinen, kannst du den Anzeigenamen leer lassen (du erscheinst dann als "Lernende/r").
-- Dein soziales Profil (Benutzername, Niveau, Serie) ist standardmäßig **öffentlich**; unter Einstellungen › Soziales kannst du es auf "nur Freunde" oder "privat" stellen und Freundschaftsanfragen sowie das Erscheinen in Vorschlägen abschalten.
+- Dein soziales Profil (Benutzername, Niveau, Serie) ist standardmäßig **öffentlich**; unter Einstellungen › Datenschutz kannst du es auf "nur Freunde" oder "privat" stellen und Freundschaftsanfragen sowie das Erscheinen in Vorschlägen abschalten.
 - Der Aktivitäts-Feed (abgeschlossene Runde, Serien-Meilenstein) ist nur für deine Freunde sichtbar; er wird über "Aktivität zeigen" abgeschaltet.
 - Blockierst du eine Person, sehen sich beide Seiten nicht mehr; meldest du jemanden, wird der Vorgang von einem Menschen geprüft. Blockier- und Meldevorgänge werden der Gegenseite nicht angezeigt.
 - Lernomi hat keine privaten Nachrichten; Interaktion findet nur über Reaktionen, Anstöße und gemeinsame Aufgaben statt.

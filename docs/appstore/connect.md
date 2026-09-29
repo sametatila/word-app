@@ -22,8 +22,10 @@ yüzden ana hesap Premium. Premium hesapta paywall plan listesini göstermez ve 
 bulamaz (2.1); satın alma sandbox'ta ikinci hesapla yapılır. Parolalar yalnız Connect'te ve
 TestFlight beta notunda; bu belgeye yazılmaz. Hesaplar üretimde, e-postaları doğrulanmış, seviye A1.
 
-Aşağıdaki blok canlı notun aynısı (2026-09-26 ASC okumasıyla karşılaştırıldı), parola yerine yer
-tutucu. Düğme adları İngilizce arayüzden birebir (`mobile/src/i18n/en.ts`): yürüyüş modu
+Aşağıdaki blok 2026-09-29'da uygulamaya göre güncellendi (Community sekmesi, puanlı konuşma,
+misafirde yapay zekâ geri bildirimi, Profil'in dibindeki silme bağlantısı 3e90264ea'da kalktı);
+Connect'teki canlı not 2026-09-26 sürümü, **yeniden girilmeli**. Parola yerine yer tutucu;
+gerçek e-posta ve parolayla 4.000'i aşmamalı. Düğme adları İngilizce arayüzden birebir (`mobile/src/i18n/en.ts`): yürüyüş modu
 **Learn** sekmesinde, hesap silme **Profile › Settings › Account › Delete account**. Alan en çok
 4.000 karakter; ölçmek için:
 `awk '/^```text/{f=1;next} /^```/{if(f)exit} f' docs/appstore/connect.md | wc -m`.
@@ -34,20 +36,20 @@ Review accounts: the account above has active Premium, so Pocket Walking (walk m
 Why buying needs an account (5.1.1(v)): Premium is an account-based subscription that works with the same account on phone, tablet and the web and is restored on any device by signing in. Everything else works without an account (step 2).
 
 1. Onboarding: course German, level "From scratch", goal "Easy".
-2. No account needed: on the sign-in screen, "Continue without an account" opens the daily round, practice, the weekly quiz, Skills, the Path, exams and walk mode with the screen on. Without an account the Path's Speaking step runs as a prepared conversation. Friends, leagues, AI conversation and buying Premium need an account; those screens say so, and guest progress moves into the account. Guests delete their data under Profile › Delete guest data.
-3. To review account features: "Continue with email" and the account above. If a Cloudflare "Verify you are human" box appears on the email form, tick it (about 2 seconds); "Sign in with Apple" and "Continue without an account" do not show it.
+2. No account needed: on the sign-in screen, "Continue without an account" opens the daily round, practice, the weekly quiz, Skills, the Path, exams and walk mode with the screen on. Without an account the Path's Speaking step runs as a prepared conversation. Friends, leagues, AI conversation, AI feedback (after one trial) and buying Premium need an account; those screens say so, and guest progress moves into the account. Guests delete their data under Profile › Delete guest data.
+3. To review account features: "Continue with email" and the account above. If a Cloudflare "Verify you are human" box appears on the email form, tick it; "Sign in with Apple" and "Continue without an account" do not show it.
 4. The notification screen has one "Continue" button that opens the system alert.
-5. Tabs: Learn (daily round, practice, weekly quiz, mock exams, walk mode), Path (units with Reading, Listening, Speaking, Writing, Grammar and Quiz steps, plus module and level exams), Skills, Friends.
+5. Tabs: Learn (daily round, practice, weekly quiz, mock exams, walk mode), Path (units with Reading, Listening, Speaking, Writing, Grammar and Quiz steps, plus module and level exams), Skills, Community (friends and leagues). Settings is the gear icon in Profile.
 
 6. AI consent (5.1.2(i)): before a feature first sends text to an AI provider (e.g. a Skills writing task or a Path Speaking conversation), a consent screen says what is sent, names each provider and links to the privacy policy. Nothing is sent before "Allow and continue". "Continue without AI" keeps the app usable. The choice is enforced on our server and can be changed in Profile › Settings › Privacy.
 
 7. Microphone and background audio (UIBackgroundModes: audio). Always started by the user:
-a) Speaking answers with the screen on (Path Speaking step and "Score yourself", Skills speaking, exam speaking): the mic is open only while the learner answers; recognition runs on the device's speech recognizer.
+a) Speaking answers with the screen on (Path Speaking step and its scored round, Skills speaking, exam speaking): the mic is open only while the learner answers; recognition runs on the device's speech recognizer.
 b) Walk mode, the ONLY use of background audio: Learn › Walk mode › Start. A screen explains the mic use; "Continue" opens the system mic and speech recognition alerts. A consent screen then names the speech recognition providers: "Allow and continue" lets short recordings go to our server for recognition while the screen is off (audio is not stored, only the recognized text); "Continue without sending audio" keeps walk mode screen-on only. During the session the lock screen shows a Now Playing entry ("Walk mode is on") and the mic indicator stays on; the lock screen pause control or the headphone button ends it, as does the in-app stop.
 
-8. User content (1.2): other users' names appear in Friends and leagues. Open a user › "Block / Report", or long-press a leaderboard row to report. AI replies in Path Speaking conversations and AI feedback on speaking and writing answers (Path, Skills, module and level exams) have a "Report" link. Reports are reviewed within 24 hours; the reporter is notified of the outcome.
+8. User content (1.2): other users' names appear in Community (friends and leagues). Open a user › "Block / Report", or long-press a leaderboard row to report. AI replies in Path Speaking conversations and AI feedback on speaking and writing answers (Path, Skills, module and level exams) have a "Report" link. Reports are reviewed within 24 hours; the reporter is notified of the outcome.
 
-9. Account deletion (5.1.1(v)): Profile › Settings › Account › Delete account (last row), also linked at the bottom of Profile. Please test with a separate account, not the review account.
+9. Account deletion (5.1.1(v)): Profile › Settings › Account › Delete account (last row). Please test with a separate account, not the review account.
 ```
 
 ## 2. Giriş sağlayıcıları

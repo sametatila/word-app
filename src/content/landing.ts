@@ -23,9 +23,9 @@ import type { NativeLang } from "@/lib/i18n/dict";
  * İngilizce konuşmadan (`de-en/conversation-*`).
  *
  * YAZILMAYANLAR (vitrin kuralları): "eğlenceli", "oyun", "çocuk"; sınav markası;
- * fiyat; "ücretsiz ve sınırsız sohbet"; "tam unutmak üzereyken". Deneme sınavı
- * için "sonunda başarı yüzdesi" şimdilik yazılmıyor: yazma ve konuşma bölüm
- * sonucu görev puanlarını henüz toplamıyor (bkz. denetim kaydı).
+ * fiyat; "ücretsiz ve sınırsız sohbet"; "tam unutmak üzereyken". Deneme sınavının
+ * "sonunda başarı yüzdesi" 745930f5'ten beri yazılıyor: yazma ve konuşma bölüm
+ * sonucu görev puanlarını topluyor (denetim T15), vitrin metniyle aynı cümle.
  */
 
 export type ScreenId = "path" | "unit" | "conversation" | "mock-task" | "walk-intro" | "home" | "skills";
@@ -252,7 +252,7 @@ const tr: LandingCopy = {
     id: "deneme-sinavlari",
     screen: "mock-task",
     title: "Dört becerili deneme sınavları.",
-    lede: "Her seviyede birden çok, toplamda 50'den fazla deneme sınavı. Okuma, dinleme, yazma ve konuşma bölümlerinin her birinin kendi süresi var.",
+    lede: "Her seviyede birden çok, toplamda 50'den fazla deneme sınavı. Okuma, dinleme, yazma ve konuşma bölümlerinin her birinin kendi süresi var. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.",
     head: ["Bölüm", "Nasıl puanlanır"],
     rows: [
       { name: "Lesen", nameLang: "de", local: "Okuma", how: "Otomatik puanlanır." },
@@ -331,7 +331,7 @@ const tr: LandingCopy = {
   fine: {
     accountTitle: "Hesabın ve verin",
     account: [
-      "Hesap açmadan başlarsın. Arkadaşlar ve lig, yapay zekâyla sohbet ve Premium hesap ister; hesapsızken Konuşma adımı önceden hazırlanmış bir sohbetle sürer.",
+      "Hesap açmadan başlarsın. Arkadaşlar ve lig, yapay zekâyla sohbet, yapay zekâ değerlendirmesi ve Premium hesap ister; hesapsızken Konuşma adımı önceden hazırlanmış bir sohbetle sürer.",
       "Metnin yapay zekâya ancak iznini verirsen gider.",
     ],
     certTitle: "Başarı belgesi",
@@ -435,7 +435,7 @@ const en: LandingCopy = {
     id: "mock-exams",
     screen: "mock-task",
     title: "Four-skill mock exams.",
-    lede: "Several at every level, more than 50 in total. Reading, Listening, Writing and Speaking each have their own time limit.",
+    lede: "Several at every level, more than 50 in total. Reading, Listening, Writing and Speaking each have their own time limit. At the end you get your score as a percentage and a list of what to work on.",
     head: ["Section", "How it's scored"],
     rows: [
       { name: "Lesen", nameLang: "de", local: "Reading", how: "Scored automatically." },
@@ -514,7 +514,7 @@ const en: LandingCopy = {
   fine: {
     accountTitle: "Your account and your data",
     account: [
-      "You can start without an account. Friends and leagues, AI conversation and Premium need one; without an account, the Speaking step runs as a prepared conversation.",
+      "You can start without an account. Friends and leagues, AI conversation, AI feedback and Premium need one; without an account, the Speaking step runs as a prepared conversation.",
       "Your text is only sent to the AI if you allow it.",
     ],
     certTitle: "Certificate of achievement",
@@ -621,7 +621,7 @@ const de: LandingCopy = {
     id: "probepruefungen",
     screen: "mock-task",
     title: "Probeprüfungen in vier Fertigkeiten.",
-    lede: "Mehrere pro Niveau, insgesamt mehr als 50. Lesen, Hören, Schreiben und Sprechen haben jeweils eine eigene Zeit.",
+    lede: "Mehrere pro Niveau, insgesamt mehr als 50. Lesen, Hören, Schreiben und Sprechen haben jeweils eine eigene Zeit. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.",
     head: ["Teil", "Bewertung"],
     rows: [
       { name: "Reading", nameLang: "en", local: "Lesen", how: "Wird automatisch bewertet." },
@@ -634,7 +634,7 @@ const de: LandingCopy = {
   walk: {
     id: "gehmodus",
     screen: "walk-intro",
-    title: "Gehmodus in der Tasche.",
+    title: "Taschen-Gehmodus.",
     lede: "Im Gehmodus lernst du ohne Blick aufs Display: Du hörst den deutschen Hinweis und sagst das englische Wort laut.",
     cueLabel: "Beispiel: Du hörst die Erfahrung und sagst experience.",
     heardLabel: "Du hörst",
@@ -689,7 +689,7 @@ const de: LandingCopy = {
     premiumTitle: "Premium",
     premiumSub: "Monats- oder Jahresabo.",
     premium: [
-      "Gehmodus in der Tasche, auch bei ausgeschaltetem Bildschirm.",
+      "Taschen-Gehmodus, auch bei ausgeschaltetem Bildschirm.",
       "Alle Probeprüfungen.",
       "Alle Sprech- und Schreibaufgaben in Pfad und Fertigkeiten, ohne auf Serie oder Abschluss zu warten.",
     ],
@@ -699,7 +699,7 @@ const de: LandingCopy = {
   fine: {
     accountTitle: "Dein Konto, deine Daten",
     account: [
-      "Du kannst ohne Konto loslegen. Freunde und Liga, KI-Gespräche und Premium brauchen ein Konto; ohne Konto läuft der Sprechen-Schritt als vorbereitetes Gespräch.",
+      "Du kannst ohne Konto loslegen. Freunde und Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne Konto läuft der Sprechen-Schritt als vorbereitetes Gespräch.",
       "Dein Text geht nur mit deiner Erlaubnis an die KI.",
     ],
     certTitle: "Leistungsnachweis",
