@@ -36,7 +36,7 @@ export async function loadInbox(): Promise<Inbox> {
       return null;
     }),
     openContentGroups().catch((err) => {
-      errors.push(`İçerik bildirimleri okunamadı: ${(err as Error).message?.slice(0, 120)}`);
+      errors.push(`İçerik geri bildirimi okunamadı: ${(err as Error).message?.slice(0, 120)}`);
       return [];
     }),
     storeReviews().catch((err) => {

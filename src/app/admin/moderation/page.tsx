@@ -4,7 +4,7 @@ import { AdminDenied } from "../_ui/ui";
 import { moderationData } from "@/lib/moderation-admin";
 import { ModerationAdmin } from "./moderation-admin";
 
-export const metadata: Metadata = { title: "Moderasyon" };
+export const metadata: Metadata = { title: "Şikâyetler" };
 export const dynamic = "force-dynamic";
 
 /**
@@ -16,7 +16,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function AdminModerationPage() {
   const gate = await adminGate();
-  if (!gate.ok) return <AdminDenied title="Moderasyon" email={gate.email} />;
+  if (!gate.ok) return <AdminDenied title="Şikâyetler" email={gate.email} />;
 
   return <ModerationAdmin data={await moderationData()} />;
 }

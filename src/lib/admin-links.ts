@@ -66,7 +66,7 @@ export function alertLinks(key: string): AlertLinks {
       return { panel: { path: "/admin/moderation", label: "Bugün › Şikâyetler" } };
     case "sla-late":
     case "sla-soon": {
-      if (tail === "content_feedback") return { panel: { path: "/admin/moderation/content", label: "Bugün › İçerik bildirimleri" } };
+      if (tail === "content_feedback") return { panel: { path: "/admin/moderation/content", label: "Bugün › İçerik geri bildirimi" } };
       if (tail === "store_review") {
         return {
           panel: { path: "/admin/reviews#yorumlar", label: "Sistem › Mağaza › Yorumlar" },
@@ -76,9 +76,9 @@ export function alertLinks(key: string): AlertLinks {
       return { panel: { path: "/admin/moderation", label: "Bugün › Şikâyetler" } };
     }
     case "err-reportnew":
-      return { panel: { path: "/admin/moderation/content", label: "Bugün › İçerik bildirimleri" } };
+      return { panel: { path: "/admin/moderation/content", label: "Bugün › İçerik geri bildirimi" } };
     case "err-reporthot":
-      return { panel: { path: `/admin/moderation/content/group?g=${encodeURIComponent(tail)}`, label: "Bugün › İçerik bildirimleri (bu hedef)" } };
+      return { panel: { path: `/admin/moderation/content/group?g=${encodeURIComponent(tail)}`, label: "Bugün › İçerik geri bildirimi (bu hedef)" } };
     case "mail":
       return { panel: { path: "/admin/experience#e-posta", label: "Kullanıcılar › Deneyim › Giden e-posta" } };
     case "err":

@@ -51,7 +51,7 @@ export default async function ContentFeedbackPage({ searchParams }: { searchPara
   return (
     <AdminPage>
       <PageHeader
-        crumb={["/admin/moderation", "Moderasyon"]}
+        crumb={["/admin/moderation", "Şikâyetler"]}
         title="İçerik geri bildirimi"
         description="Kelime, alıştırma, sınav ve yapay zekâ çıktıları için kullanıcı bildirimleri, hedefe göre gruplu. Grup kapatılınca her bildirene tek sonuç bildirimi gider."
         meta={<>Açık: <b>{data.openReports}</b> bildirim · <b>{data.openGroups}</b> hedef · bu süzgeçte {data.total} grup</>}

@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
  * üste duruyor, dar ekranda yarısı görünmüyordu ve bir sayfanın hangi grupta
  * olduğu tarihsel birikimle belirlenmişti. Artık beş bölüm, her biri tek soru:
  *
- *   Bugün        dönülmesi gerekenler (tek kuyruk), genel durum, şikâyetler, içerik bildirimleri
+ *   Bugün        dönülmesi gerekenler (tek kuyruk), genel durum, şikâyetler, içerik geri bildirimi
  *   Kullanıcılar kim, nasıl büyüyor, deneyimi nasıl
  *   Gelir        ne kazanılıyor, premium nasıl ayarlı
  *   İçerik       öğrenme verisi, quiz, içerik sürümü, avatar
@@ -19,7 +19,7 @@ import { usePathname } from "next/navigation";
  * Hukuki metinler ve işlem kaydı ayda bir açılıyor: menüde değil, sol çubuğun
  * altında (telefonda sayfa satırının sonunda). Her sayfa tam olarak
  * bir bölümde; hangi bölümde olunduğunu en uzun eşleşen adres belirliyor
- * (`/admin/moderation/content` Moderasyon'a değil İçerik bildirimlerine düşer).
+ * (`/admin/moderation/content` Şikâyetler'e değil İçerik geri bildirimine düşer).
  */
 export type BadgeKey = "inbox" | "alerts" | "reports" | "feedback" | "reviews";
 export type BadgeTone = "bad" | "warn" | "muted";
@@ -38,7 +38,7 @@ export const NAV: NavSection[] = [
       { href: "/admin", label: "Gelen işler", badge: "inbox" },
       { href: "/admin/durum", label: "Genel durum", badge: "alerts" },
       { href: "/admin/moderation", label: "Şikâyetler", badge: "reports" },
-      { href: "/admin/moderation/content", label: "İçerik bildirimleri", badge: "feedback" },
+      { href: "/admin/moderation/content", label: "İçerik geri bildirimi", badge: "feedback" },
     ],
   },
   {

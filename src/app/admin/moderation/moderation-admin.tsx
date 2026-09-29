@@ -121,7 +121,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
   return (
     <AdminPage>
       <PageHeader
-        title="Moderasyon"
+        title="Şikâyetler"
         description="Kullanıcı şikâyetleri ve yapay zekâ içerik bildirimleri. Otomatik yaptırım yok; karar burada."
         meta={<>Açık: <b>{userReports.length}</b> kullanıcı şikâyeti · <b>{contentReports.length}</b> yapay zekâ bildirimi · <b>{data.openContentFeedback}</b> içerik geri bildirimi</>}
         actions={<a href="/admin/moderation/content" className={BTN.secondary}>İçerik geri bildirimi{data.openContentFeedback ? ` (${data.openContentFeedback})` : ""} →</a>}
