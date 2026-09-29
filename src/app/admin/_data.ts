@@ -6,6 +6,7 @@ import { openReportCount } from "@/lib/moderation-admin";
 import { cached } from "@/lib/admin-query";
 import { revenueMetrics } from "@/lib/premium/revenue";
 import { dailyPulse, weeklyTrends } from "@/lib/admin-trends";
+import { overview } from "@/lib/admin-overview";
 import { collectAlerts, type Alert } from "@/lib/alerts";
 import { responseQueues, type QueueSummary } from "@/lib/response-queue";
 import { PANEL_RANGES, parseRange, type PanelRange } from "./_data-shared";
@@ -62,4 +63,9 @@ export async function loadPulse(fresh = false) {
     const [trends, daily] = await Promise.all([weeklyTrends(), dailyPulse()]);
     return { metrics: trends.metrics, days: daily.days, issues: [...trends.issues, ...daily.issues] };
   });
+}
+
+/** Genel durum (`/admin/durum`): aralığa bağlı özet, günlük dizi, kohort (`lib/admin-overview`). 60 sn önbellek. */
+export async function loadOverview(fresh = false, days: PanelRange = 30) {
+  return cached(`admin:overview:${days}`, 60_000, fresh, () => overview(days));
 }
