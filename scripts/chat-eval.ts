@@ -19,6 +19,9 @@
  *   5. Türkçe'ye geçiş — öğrenci Türkçe sorunca Türkçe açıklıyor mu?
  *   6. Gecikme — ilk parçaya kadar geçen süre. Eller serbest döngüsünde
  *      cevabın gelmesi ne kadar uzarsa konuşma o kadar kopuyor.
+ *   7. Yankı — karakter öğrencinin cümlesini (çoğu kez düzeltilmiş hâliyle)
+ *      KENDİ AĞZINDAN, birinci kişiyle tekrar ediyor mu? Düzeltme zaten ayrı
+ *      satırda; rol metnindeki kopya karakteri adayın yerine konuşturuyor.
  *
  * Senaryo sabit; prompt değişince ya da yeni sağlayıcı eklenince aynı komutla
  * tekrar çalışır ve karşılaştırılabilir sayı üretir.
@@ -112,6 +115,20 @@ const INTERVIEW_EN: Step[] = [
   { say: "I like my job, but I want to learn new things.", expectClean: true, forbidFix: COORD_FIX },
 ];
 
+/**
+ * Yankı (2026-09-29, iOS/Android canlı, B1 "Der Lebenslauf"): öğrenci "Ich arbeite
+ * seit drei Jahre als Buchhalterin…" dedi; düzeltme doğruydu, ama görüşmeci rol
+ * metnine "Sehr gut. Ich arbeite seit drei Jahren als Buchhalterin bei einer Firma
+ * in Köln." diye başladı: dört cihazın dördünde. Beklenen: düzeltme satırı + adayın
+ * söylediğine cevap, adayın cümlesinin kopyası yok.
+ */
+const LEBENSLAUF: Step[] = [
+  { say: "Guten Tag! Ich heiße Ayşe Demir.", expectClean: true },
+  { say: "Ich arbeite seit drei Jahre als Buchhalterin bei einer Firma in Köln.", expectFix: "Jahren", maxFixes: 1 },
+  { say: "Vorher habe ich zwei Jahre in einem Steuerbüro in Ankara gearbeitet.", expectClean: true },
+  { say: "Ich habe BWL studiert, und danach ich bin nach Deutschland gekommen.", expectFix: "bin ich", forbidFix: COORD_FIX },
+];
+
 type Scenario = { id: string; conversation: Conversation; native: NativeLang; script: Step[] };
 
 /**
@@ -124,6 +141,7 @@ type Scenario = { id: string; conversation: Conversation; native: NativeLang; sc
 const SCENARIOS: Scenario[] = [
   { id: "de-a1-hallo/tr", conversation: findConversation("de-a1-hallo")!, native: "tr", script: SCRIPT },
   { id: "de-b1-bewerbung/tr", conversation: findConversation("de-b1-bewerbung")!, native: "tr", script: BEWERBUNG },
+  { id: "de-b1-lebenslauf/tr", conversation: findConversation("de-b1-lebenslauf")!, native: "tr", script: LEBENSLAUF },
   { id: "de-b1-bewerbung/en", conversation: findConversation("de-b1-bewerbung")!, native: "en", script: BEWERBUNG },
   { id: "en-a2-interview/tr", conversation: findConversation("en-a2-interview")!, native: "tr", script: INTERVIEW_EN },
   { id: "en-a2-interview/de", conversation: findConversation("en-a2-interview")!, native: "de", script: INTERVIEW_EN },
@@ -175,6 +193,64 @@ function overLevel(text: string, pools: ReturnType<typeof levelPools>): string[]
   return [...out];
 }
 
+/** Karşılaştırma sözcükleri: küçük harf, ß=ss, harf/rakam dışı ayırıcı. */
+function tokens(text: string): string[] {
+  return text
+    .toLocaleLowerCase("de-DE")
+    .replace(/ß/g, "ss")
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter(Boolean);
+}
+
+/** İki sözcük dizisinin en uzun ortak alt dizisi (sıralı, bitişik olmak zorunda değil). */
+function lcs(a: string[], b: string[]): number {
+  const row = new Array(b.length + 1).fill(0);
+  for (const x of a) {
+    let prev = 0;
+    for (let j = 1; j <= b.length; j++) {
+      const keep = row[j];
+      row[j] = x === b[j - 1] ? prev + 1 : Math.max(row[j], row[j - 1]);
+      prev = keep;
+    }
+  }
+  return row[b.length];
+}
+
+/**
+ * Rol metninde öğrencinin cümlesini yineleyen cümle. Düzeltilmiş kopya tek
+ * sözcükte ayrıldığı için eşitlik değil ortak alt dizi: öğrencinin sözcüklerinin
+ * %70'i aynı sırayla tek bir cümlede geçiyorsa yankıdır. Kısa cümleler (5
+ * sözcükten az) sayılmıyor; "Sie arbeiten also in Köln" gibi özetleme yakalanmıyor.
+ */
+function echoOf(body: string, said: string): string | null {
+  const heard = tokens(said);
+  if (heard.length < 5) return null;
+  for (const sentence of body.split(/(?<=[.!?])\s+/)) {
+    const words = tokens(sentence);
+    if (words.length >= 5 && lcs(words, heard) >= Math.ceil(heard.length * 0.7)) return sentence.trim();
+  }
+  return null;
+}
+
+/**
+ * Rol metninde adımın birinci kişi kalıbı ("Danach wechselte ich …", "Ich war
+ * zuständig für …"): kalıplar öğrencinin cümleleri; karakter onları kendi
+ * ağzından kurarsa öğrencinin yerine konuşuyor (2026-09-29, Groq, Lebenslauf:
+ * "Und in Ihrer jetzigen Position, ich war zuständig für welche Aufgaben?").
+ * Yalnız ich/I içeren ve en az üç sözcüklü kalıplar: "Können Sie …" gibi soru
+ * kalıbını, "Ich heiße …" gibi tanışma kalıbını karakter de kendisi için doğal
+ * olarak kurar.
+ */
+function patternInRole(body: string, patterns: Conversation["patterns"]): string | null {
+  const text = ` ${tokens(body).join(" ")} `;
+  for (const p of patterns) {
+    const words = tokens(p.de);
+    if (words.length < 3 || !words.some((w) => w === "ich" || w === "i")) continue;
+    if (text.includes(` ${words.join(" ")} `)) return p.de;
+  }
+  return null;
+}
+
 /** Düzeltme isabeti — ham çıktıda ve süzgeçten sonra ayrı ayrı. */
 type FixTally = { caught: number; falseFixes: number; wrong: string[] };
 
@@ -190,6 +266,8 @@ type Score = {
   raw: FixTally;
   guarded: FixTally;
   glitches: string[];
+  /** Öğrencinin cümlesini ya da birinci kişi kalıbını kendi ağzından kuran rol cümleleri. */
+  echoes: string[];
   turkishOk: boolean | null;
   overLevel: string[];
   firstTokenMs: number[];
@@ -230,6 +308,7 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
     raw: { caught: 0, falseFixes: 0, wrong: [] },
     guarded: { caught: 0, falseFixes: 0, wrong: [] },
     glitches: [],
+    echoes: [],
     turkishOk: null,
     overLevel: [],
     firstTokenMs: [],
@@ -285,6 +364,8 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
 
     tally(s.raw, step, rawCorrections);
     tally(s.guarded, step, corrections);
+    const echo = echoOf(body, step.say) ?? patternInRole(body, sc.conversation.patterns);
+    if (echo) s.echoes.push(echo);
     if (step.expectTurkish) s.turkishOk = TURKISH_MARKERS.test(body);
 
     s.overLevel.push(...overLevel(body, pools));
@@ -364,6 +445,10 @@ async function main() {
     console.log(
       `  karakter        : ${s.glitches.length ? `✗ ${s.glitches.length} bozulma (${s.glitches.slice(0, 3).join(", ")})` : "✓ temiz"}`,
     );
+    console.log(
+      `  yankı           : ${s.echoes.length ? `✗ ${s.echoes.length}/${s.turns} turda karakter öğrencinin ağzından konuştu` : "✓ yok"}`,
+    );
+    for (const e of s.echoes) console.log(`      ✗ ${e}`);
     console.log(
       `  Türkçe'ye geçiş : ${s.turkishOk === null ? "—" : s.turkishOk ? "✓" : "✗ Türkçe açıklama gelmedi"}`,
     );
