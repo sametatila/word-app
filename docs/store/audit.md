@@ -28,7 +28,7 @@ ASC salt okuma dökümünden güncellendi.
 | M8 | Play › Uygulama içeriği formları | ⏳ Samet | Uygulama erişimi (`docs/play/console.md` §1), ön plan servisi beyanı + video (§3), Veri güvenliği (`docs/play/data-safety.md`, G1), IARC, hedef kitle, reklam kimliği "Hayır" |
 | M9 | OAuth "In production" + Play imzalı sürümde Google girişi | ⏳ Samet | Play imzasının SHA-1 istemcileri açık (`docs/play/console.md` §2); cihazda denenmedi |
 | M10 | Gerçek iPhone koşusu | ⏳ Samet | `docs/plan/ios-device-runbook.md` kayıt tablosu: yürüyüş, kilit ekranı, sandbox satın alma, Apple girişi, silme |
-| M11 | İnceleme notu arayüzde olmayan adlar kullanıyor | ✅ | f1b75548; canlı not `docs/appstore/connect.md` §1 bloğuyla birebir (2026-09-26 karşılaştırıldı, 3.905 karakter) |
+| M11 | İnceleme notu arayüzde olmayan adlar kullanıyor | ✅ | f1b75548; canlı not 2026-09-26'da `docs/appstore/connect.md` §1 bloğuyla birebirdi (3.905 karakter); 2026-09-29'da blok güncellendi, canlıda yalnız 9. madde düzeltildi (3.867), kalanı yeniden girilecek. Play'de bu not yok: iki kısa talimat, 500 karakter (`docs/play/console.md` §1) |
 | M12 | TestFlight beta açıklamaları kursları ters anlatıyor | ✅ | f1b75548, üç dil geri okundu |
 | M13 | releaseType AFTER_APPROVAL | ✅ | 54ab2ef7: `releaseType: MANUAL` (2026-09-26, Samet); onaydan sonra "Release this version" ile açılır |
 | M14 | Altyazı "ace exams" / "bestehen" sınav geçme vaadi | ⏳ Samet (karar) | Altyazılar Samet'in onayıyla girildi; risk kararı açık, değişirse iki mağazaya yeniden girilir |

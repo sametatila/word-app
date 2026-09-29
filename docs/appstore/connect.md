@@ -24,7 +24,7 @@ TestFlight beta notunda; bu belgeye yazılmaz. Hesaplar üretimde, e-postaları 
 
 Aşağıdaki blok 2026-09-29'da uygulamaya göre güncellendi (Community sekmesi, puanlı konuşma,
 misafirde yapay zekâ geri bildirimi, Profil'in dibindeki silme bağlantısı 3e90264ea'da kalktı);
-Connect'teki canlı not 2026-09-26 sürümü, **yeniden girilmeli**. Parola yerine yer tutucu;
+Connect'teki canlı not 2026-09-26 sürümü; 2026-09-29'da API'yle yalnız 9. madde düzeltildi ("also linked at the bottom of Profile" kalktı, 3.867 karakter), geri kalanı için **yeniden girilmeli**. Parola yerine yer tutucu;
 gerçek e-posta ve parolayla 4.000'i aşmamalı. Düğme adları İngilizce arayüzden birebir (`mobile/src/i18n/en.ts`): yürüyüş modu
 **Learn** sekmesinde, hesap silme **Profile › Settings › Account › Delete account**. Alan en çok
 4.000 karakter; ölçmek için:

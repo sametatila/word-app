@@ -7,45 +7,48 @@ Açık konsol işleri `docs/store/audit.md` (M7, M8, M9).
 
 ## 1. App content › App access
 
-Seçim: "All or some functionality is restricted" → "Add new instructions".
+Seçim: "All or some functionality is restricted". Console **iki ayrı oturum açma grubu** tutuyor
+(2026-09-29'da Console'dan okundu); her grupta ad, kullanıcı adı, parola ve en çok **500
+karakterlik** "Any other information required to access your app" alanı var. Uzun, maddeli
+inceleme notu (yürüyüş modu, yapay zekâ rızası, bildirim, hesap silme) Play'de YOK ve sığmıyor:
+o yalnız App Store'un notu (`docs/appstore/connect.md`). Play'de ön plan servisi kendi beyanında
+(§3), veri güvenliği kendi formunda (`docs/play/data-safety.md`).
 
-| Alan | Değer |
-|---|---|
-| Ad | Lernomi inceleme hesabı |
-| Kullanıcı adı | `google-review@lernomi.app` (Premium, sunucuda yalnız inceleme için verildi) |
-| Parola | Yalnız Console'da |
-| İkinci hesap (metin içinde) | `google-review-free@lernomi.app`, Premium'suz: satın alma akışı için |
-| Any other information | Aşağıdaki İngilizce metin; yer tutucular Console'da doldurulur |
+| Grup adı | Kullanıcı adı | "Tam erişim" kutusu |
+|---|---|---|
+| Reviewer account - full access | `google-review@lernomi.app` (Premium, sunucuda yalnız inceleme için verildi) | işaretli |
+| Reviewer account - limited free access | `google-review-free@lernomi.app` (Premium'suz: satın alma akışı için) | işaretsiz |
+
+Parolalar yalnız Console'da; bu belgeye, sohbete ya da loga yazılmaz. Alttaki kutu ("Bu beyandaki
+oturum açma bilgileri ... tüm özelliklere tam erişim sağlar") yalnız Premium hesapta doğru;
+ücretsiz hesapta işaretlenirse beyan yanlış olur.
 
 **Neden iki hesap.** Ekran kapalı yürüyüş Premium (ücretsizde `/api/stt` `mode=walk` 403), bu
 yüzden ana hesap Premium; Premium hesapta paywall plan listesini göstermez, satın alma ikinci
-hesapla denenir. İki hesap üretimde açık ve e-postaları doğrulanmış; parolalar bu belgeye
-yazılmaz.
+hesapla denenir. İki hesap üretimde açık ve e-postaları doğrulanmış.
 
-Metin iOS notuyla aynı adları kullanır (`mobile/src/i18n/en.ts`): yürüyüş modu **Öğren**
-sekmesinde (Öğren › Yürüyüş modu), hesap silme Profil › Ayarlar › Hesap › Hesabı sil (Hesap
-grubunun son satırı; Ayarlar Profil'in üstündeki dişli, Profil'in dibindeki silme bağlantısı
-3e90264ea'da kalktı). Metin 2026-09-29'da güncellendi (Community sekmesi, misafirde yapay zekâ
-geri bildirimi); Console'daki canlı metin yeniden girilmeli. Android'e özgü olan
-7. adım: ön plan servisi bildirimi. 8. adımdaki Bildir kapsamı Play'deki build'e göre yazılır
-(deneme sınavı ve lig satırı düğmesi vc 9'dan beri var; vc 10 dahili testte, 2026-09-28).
+Düğme adları İngilizce arayüzden birebir (`mobile/src/i18n/en.ts`: `auth.already_have_account`,
+`profile.go_premium`). Metin değişirse 500 sınırı Console'un kendi sayacıyla ölçülür (satır sonları
+dahil).
+
+**Full access** (canlı, 485 karakter):
 
 ```text
-Review accounts: the account above has active Premium, so Pocket Walking (walk mode with the screen off) and AI feedback work without a paywall. It does not expire and needs no one-time code. Premium on the review accounts was granted on our server for review only. To review the subscriptions, sign in with the second account, which has NO Premium: [[IAP_DEMO_EMAIL]] / [[IAP_DEMO_PASSWORD]]. There, Profile › "Go Premium" opens the purchase screen with both subscriptions, prices, free trial terms, auto-renewal text and links to the Terms of Use and Privacy Policy.
+Sign-in: on any onboarding step tap "Already have an account? Sign in", or answer the 5 onboarding questions and the sign-in screen follows.
 
-1. Onboarding: course German, level "From scratch", goal "Easy".
-2. No account needed: on the sign-in screen, "Continue without an account" opens the daily round, practice, the weekly quiz, Skills, the Path, exams and walk mode with the screen on. Without an account the Path's Speaking step runs as a prepared conversation. Friends, leagues, AI conversation, AI feedback (after one trial) and buying Premium need an account; those screens say so, and guest progress moves into the account. Guests delete their data under Profile › Delete guest data.
-3. To review account features: "Continue with email" and the account above. If a Cloudflare "Verify you are human" box appears on the email form, tick it (about 2 seconds).
-4. On the notification permission screen you may tap "Maybe later".
-5. Tabs: Learn (daily round, practice, weekly quiz, mock exams, walk mode), Path (units with Reading, Listening, Speaking, Writing, Grammar and Quiz steps, plus module and level exams), Skills, Community (friends and leagues). Settings is the gear icon in Profile.
+Email and password only - no 2-Step Verification, one-time code, biometrics or location restriction. The e-mail address is already verified.
 
-6. AI consent (User Data policy, prominent disclosure): before a feature first sends text to an AI provider (e.g. a Skills writing task or a Path Speaking conversation), a consent screen says what is sent, names each provider and links to the privacy policy. Nothing is sent before "Allow and continue". "Continue without AI" keeps the app usable. The choice is enforced on our server and can be changed in Profile › Settings › Privacy.
+The account has full Premium access, so no purchase is needed. Microphone permission is requested for speaking exercises; allow or deny it, the rest stays available. An internet connection is required.
+```
 
-7. Walk mode (microphone foreground service): Learn › Walk mode › Start → the microphone disclosure names the speech recognition providers → "I agree, start" → system microphone permission → notification permission (Android 13+). Turn the screen off with the power button: the "Walk mode is on" notification with a "Stop" button appears on the lock screen and the app keeps listening. Tap "Stop" (or X in the app) to end. If notification permission is denied, the walk screen says the notification will not appear and that walk mode is stopped from the app.
+**Limited free access** (2026-09-29'da yazıldı, ~478 karakter; Console'a girilecek):
 
-8. User content: other users' names appear in Community (friends and leagues). Open a user › "Block / Report", or long-press a leaderboard row to report. AI replies in Path Speaking conversations and AI feedback on speaking and writing answers (Path, Skills, module and level exams) have a "Report" link. Reports are reviewed within 24 hours; the reporter is notified of the outcome.
+```text
+Sign-in: on any onboarding step tap "Already have an account? Sign in", or answer the 5 onboarding questions and the sign-in screen follows.
 
-9. Account deletion: Profile › Settings › Account › Delete account (last row). Please test with a separate account, not the review account.
+Email and password only - no 2-Step Verification, one-time code, biometrics or location restriction. The e-mail address is already verified.
+
+This account has NO Premium, so the purchase flow can be reviewed: Profile › "Go Premium" shows both subscriptions, prices, free trial terms and auto-renewal. An internet connection is required.
 ```
 
 ## 2. Google ile giriş — OAuth istemcileri
