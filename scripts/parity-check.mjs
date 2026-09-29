@@ -3384,8 +3384,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 /* ── 82. basarim duvarinin hata durumu ────────────────────────────────────
  * Yuklenemeyen bir liste "basligin altinda bombos sayfa" demek: kullanici
- * ekranin bozuk oldugunu saniyor. Iki taraf da AYNI kabugu cizmeli - kupa
- * simgesi, baslik, sebep ve tekrar deneme. Mobilde ciplak bir cumle vardi. */
+ * ekranin bozuk oldugunu saniyor. Iki taraf da AYNI kabugu cizmeli - basarim
+ * simgesi (`AchievementsIcon`), baslik, sebep ve tekrar deneme. Mobilde ciplak bir cumle vardi. */
 {
   const kabuk = (p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
@@ -3395,7 +3395,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          adlandirilmis bir bileseni hâlâ "var" sayardi. `icon={Ad}` bicimi
          ikisinde de ayni. */
       "kart=" + (/<EmptyCard[\s/>]/.test(src) ? "var" : "yok"),
-      "kupa=" + (/icon=\{TrophyIcon\}/.test(src) ? "var" : "yok"),
+      "basarim ikonu=" + (/icon=\{AchievementsIcon\}/.test(src) ? "var" : "yok"),
       "baslik=" + (src.includes('achievements.achievements') ? "var" : "yok"),
       "sebep=" + (src.includes("achievements.couldn_t_load_achievements") ? "var" : "yok"),
       "tekrar dene=" + (src.includes("common.try_again") ? "var" : "yok"),
@@ -9519,15 +9519,23 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "pratik",
     );
 
-    /* MUTLAK: baska bir isi olan glifler oyun glifi olarak KULLANILMIYOR.
-       Iki tarafta da - kusur tam boyle dogdu. */
-    const AYRILMIS = ["PenIcon", "HeadphonesIcon"];
+    /* MUTLAK: her oyun karosu OYUNUN KENDI anlam glifini ciziyor
+       (`game-<oyun>` satiri, bkz. data/icons/picks.json). Kusur tam boyle
+       dogmustu: baska bir isi olan glifler (rozet, adim turu) oyun glifi diye
+       kullaniliyordu. 2026-09-29'dan beri glif adi anlamin adi, yani olcu
+       ADIN KENDISI. Kimlik -> satir eslemesi iki oyunda ayrisiyor. */
+    const OYUN_SATIRI = { artikel: "Article", truefalse: "Truefalse" };
+    const beklenenGlif = (g) => "Game" + (OYUN_SATIRI[g] ?? g[0].toUpperCase() + g.slice(1)) + "Icon";
     const ihlal = [];
-    for (const [ad, kume] of [["web pratik", [...webKaro.values()].map((x) => x.ikon)], ["mobil pratik", [...mobKaro.values()].map((x) => x.ikon)], ["acilis", [...vitrin.values()]]]) {
-      for (const g of AYRILMIS) if (kume.includes(g)) ihlal.push(`${ad}:${g}`);
+    for (const [ad, harita] of [["web pratik", webKaro], ["mobil pratik", mobKaro]]) {
+      for (const [g, { ikon }] of harita) if (ikon !== beklenenGlif(g)) ihlal.push(`${ad}:${g}=${ikon}`);
+    }
+    for (const g of vitrinOyun) {
+      const ikon = vitrin.get(VITRIN_AD[g]);
+      if (ikon && ikon !== beklenenGlif(g)) ihlal.push(`acilis:${g}=${ikon}`);
     }
     sameList(
-      "rozet glifi oyun glifi olarak kullanilmiyor",
+      "oyun karosu kendi oyun glifini ciziyor",
       ["ihlal=" + (ihlal.join("+") || "yok")],
       ["ihlal=yok"],
       "bulunan",
@@ -9587,26 +9595,29 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
 
-    /* MUTLAK: sure karosu SAAT cizecek - kursu sure anlamina gelmiyor, ve
-       mobil ayni kursuyu siralama satirinda kullaniyor. */
+    /* MUTLAK: sure karosu SURE glifini (`DurationIcon`) cizecek - kursu
+       (bugun `LeagueIcon`) sure anlamina gelmiyor. */
     sameList(
       "sure karosu saat ciziyor",
       ["web=" + webIkon("progress.time_total"), "mobil=" + mobIkon("progress.time_total")],
-      ["web=ClockIcon", "mobil=ClockIcon"],
+      ["web=DurationIcon", "mobil=DurationIcon"],
       "bulunan",
       "beklenen",
     );
 
-    /* Kursu ANLAMINI koruyor: yalniz siralamanin kendisinde. Profil
+    /* Lig glifi ANLAMINI koruyor: yalniz siralamanin kendisinde. Profil
        2026-09-28'den beri ligi kendi basamak kalkaniyla gosteriyor (Topluluk ›
-       Lig'e gidiyor); kursu profilde ve ilerlemede cizilmiyor. */
+       Lig'e gidiyor); lig glifi (eskiden kursu, bugun `LeagueIcon`) profilde
+       ve ilerlemede cizilmiyor. */
     sameList(
-      "kursu yalniz siralamada",
+      "lig glifi yalniz siralamada",
       [
-        "mobil profil=" + (/\bPodiumIcon\b/.test(sil(read("mobile/src/screens/ProfileScreen.tsx"))) ? "VAR" : "yok"),
-        "mobil ilerleme=" + (/\bPodiumIcon\b/.test(mobProg) ? "VAR" : "yok"),
+        "mobil profil=" + (/\bLeagueIcon\b/.test(sil(read("mobile/src/screens/ProfileScreen.tsx"))) ? "VAR" : "yok"),
+        "mobil ilerleme=" + (/\bLeagueIcon\b/.test(mobProg) ? "VAR" : "yok"),
+        "web profil=" + (/\bLeagueIcon\b/.test(sil(read("src/components/profile/profile-view.tsx"))) ? "VAR" : "yok"),
+        "web ilerleme=" + (/\bLeagueIcon\b/.test(webProg) ? "VAR" : "yok"),
       ],
-      ["mobil profil=yok", "mobil ilerleme=yok"],
+      ["mobil profil=yok", "mobil ilerleme=yok", "web profil=yok", "web ilerleme=yok"],
       "bulunan",
       "beklenen",
     );
@@ -9625,53 +9636,33 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* IKON ENVANTERI: webde cizilen ama mobilde OLMAYAN bir ikon, ayni
-       yuzeyin iki platformda ayri gorunmesi demek. Liste yalniz KISALABILIR;
-       her satir bir SEBEP tasiyor. */
-    const ikonlar = (yol) => new Set([...sil(read(yol)).matchAll(/export (?:const|function) (\w*Icon)\b/g)].map((m) => m[1]));
-    const webSet = ikonlar("src/components/icons.tsx");
-    const mobSet = ikonlar("mobile/src/ui/icons.tsx");
-    const webKullanim = (() => {
-      const parcalar = [];
-      const walk = (d) => {
-        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
-          const p = d + "/" + e.name;
-          if (e.isDirectory()) { if (!/node_modules/.test(p)) walk(p); }
-          else if (/\.tsx?$/.test(e.name) && !/components\/icons\.tsx$/.test(p)) parcalar.push(sil(read(p)));
-        }
-      };
-      walk("src");
-      return parcalar.join("\n");
-    })();
-    /* Webde CIZILEN (cagrilan) ve mobilde olmayan ikonlar - sebepleriyle. */
-    const MOBILDE_YOK = new Map([
-      ["ArrowLeftIcon", "mobil ayni glifi `ArrowBackIcon` adiyla tasiyor (yerel adlandirma)"],
-      ["ChevronIcon", "web kelime listesinin SAYFALAMASI; mobil sonsuz kaydirma kullaniyor (`words.load_more`)"],
-      ["InfoIcon", "e-posta dogrulama seridi ve beceri sorusu ipucu - ikisi de web yuzeyi"],
-      ["LinkIcon", "acilis sayfasi ve pano metni kopyalama; mobil OS paylasim sayfasini aciyor"],
-      ["UserIcon", "web kabugunun ikincil gezinme grubu (Profil) ve Ayarlar listesinin Hesap satiri"],
-    ]);
-    const cizilenYok = [...webSet]
-      .filter((n) => !mobSet.has(n))
-      .filter((n) => new RegExp("\\b" + n + "\\b").test(webKullanim))
-      .filter((n) => !MOBILDE_YOK.has(n))
-      .sort();
+    /* IKON SETI TEK KAYNAKTAN (2026-09-29, Remix Icon). Eski set elle
+       cizilmisti ve ayni ad iki platformda iki ayri cizimdi (el sikisma,
+       zarf, kupa, hoparlor...); bu blok o yuzden "webde olup mobilde olmayan"
+       adlari sebepleriyle listeliyordu. Artik iki platformun ikonlari
+       `scripts/icons/build.mjs` ile `data/icons/picks.json`dan uretiliyor:
+       ayni ad, ayni anlam, AYNI YOL VERISI. Olcu:
+         1. iki uretilmis dosyanin ad -> yol eslemesi birebir;
+         2. iki `icons.tsx` uretilmis dosyayi disa aktariyor;
+         3. `icons.tsx`lerde elle cizilmis ikon yok - yalniz marka isaretleri
+            (web `LogoMark`; mobil Google ve Apple giris logolari). Yeni bir
+            anlam picks.json'a satir olarak girer, burada cizilmez. */
+    const yollar = (yol) =>
+      [...read(yol).matchAll(/^export const (\w+Icon) = \/\* @__PURE__ \*\/ icon\("\1", "([^"]+)"\);$/gm)].map((m) => m[1] + "=" + m[2]);
+    const webYol = yollar("src/components/icons.remix.generated.tsx");
+    const mobYol = yollar("mobile/src/ui/icons.remix.generated.tsx");
+    sameList("uretilmis ikon sayisi", ["mobil=" + mobYol.length], ["mobil=" + webYol.length], "mobil", "web");
+    sameList("uretilmis ikon yol verisi (web = mobil)", mobYol, webYol, "mobil", "web");
+    const elle = (yol) => [...sil(read(yol)).matchAll(/export (?:const|function) (\w+)\b/g)].map((m) => m[1]).sort();
     sameList(
-      "webde cizilip mobilde olmayan ikon",
-      ["belgesiz=" + (cizilenYok.join("+") || "yok")],
-      ["belgesiz=yok"],
-      "bulunan",
-      "beklenen",
-    );
-    /* Liste bayatlamasin: listede olup artik ya cizilmeyen ya da mobile
-       gelmis bir ad varsa listeden dusecek. */
-    const bayat = [...MOBILDE_YOK.keys()]
-      .filter((n) => mobSet.has(n) || !new RegExp("\\b" + n + "\\b").test(webKullanim))
-      .sort();
-    sameList(
-      "ikon listesi bayat degil",
-      ["bayat=" + (bayat.join("+") || "yok")],
-      ["bayat=yok"],
+      "icons.tsx: uretilmis set + yalniz marka isaretleri",
+      [
+        "web disa aktarim=" + (/^export \* from "\.\/icons\.remix\.generated";$/m.test(read("src/components/icons.tsx")) ? "var" : "YOK"),
+        "mobil disa aktarim=" + (/^export \* from "\.\/icons\.remix\.generated";$/m.test(read("mobile/src/ui/icons.tsx")) ? "var" : "YOK"),
+        "web elle=" + elle("src/components/icons.tsx").join("+"),
+        "mobil elle=" + elle("mobile/src/ui/icons.tsx").join("+"),
+      ],
+      ["web disa aktarim=var", "mobil disa aktarim=var", "web elle=LogoMark", "mobil elle=AppleIcon+GoogleIcon"],
       "bulunan",
       "beklenen",
     );
@@ -12054,8 +12045,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["baslik", /crash\.title/],
       ["govde", /crash\.body/],
       ["tekrar dene", /common\.try_again/],
-      ["uyari ikonu", /AlertIcon/],
-      ["yenile ikonu", /RefreshIcon/],
+      ["uyari ikonu", /\bWarningIcon\b/],
+      ["tekrar dene ikonu", /\bRetryIcon\b/],
       ["olcum", /track\("client_error", 1/],
     ];
     sameList(
@@ -13290,8 +13281,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobilSapma = [];
     for (const y of kaynaklar("mobile/src")) {
       const src = sil2(sil(read(y)));
-      for (const m of src.matchAll(/width: 44, height: 44[\s\S]{0,200}?<(XIcon|ArrowBackIcon) color=\{[^}]*\} size=\{(\d+)\}/g)) {
-        const beklenen = m[1] === "ArrowBackIcon" ? "24" : "22";
+      for (const m of src.matchAll(/width: 44, height: 44[\s\S]{0,200}?<(CloseIcon|BackIcon) color=\{[^}]*\} size=\{(\d+)\}/g)) {
+        const beklenen = m[1] === "BackIcon" ? "24" : "22";
         if (m[2] !== beklenen) mobilSapma.push(`${y.split("/").pop()}:${src.slice(0, m.index).split("\n").length} ${m[1]}=${m[2]}`);
       }
     }
@@ -13311,7 +13302,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     for (const y of kaynaklar("src")) {
       if (y.endsWith("round-exit.tsx")) continue;
       const src = sil2(sil(read(y)));
-      for (const m of src.matchAll(/rounded-tile"[\s\S]{0,240}?<XIcon size=\{(\d+)\}/g)) {
+      for (const m of src.matchAll(/rounded-tile"[\s\S]{0,240}?<CloseIcon size=\{(\d+)\}/g)) {
         elYapimi.push(`${y.split("/").pop()}:${src.slice(0, m.index).split("\n").length} capraz=${m[1]}`);
       }
     }
@@ -13333,14 +13324,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "kapatma karosunun olculeri",
       [
         "kare=" + (/width: 44, height: 44/.test(ex) ? "44" : "?"),
-        "capraz=" + ((ex.match(/<XIcon color=\{colors\.textMuted\} size=\{(\d+)\}/) ?? [])[1] ?? "?"),
-        "ok=" + ((mx.match(/<ArrowBackIcon color=\{colors\.text\} size=\{(\d+)\}/) ?? [])[1] ?? "?"),
+        "capraz=" + ((ex.match(/<CloseIcon color=\{colors\.textMuted\} size=\{(\d+)\}/) ?? [])[1] ?? "?"),
+        "ok=" + ((mx.match(/<BackIcon color=\{colors\.text\} size=\{(\d+)\}/) ?? [])[1] ?? "?"),
         "zemin=" + (/backgroundColor: colors\.surface2/.test(ex) ? "surface-2" : "?"),
       ],
       [
         "kare=" + (/h-11 w-11 shrink-0 items-center justify-center rounded-tile/.test(re) ? "44" : "?"),
-        "capraz=" + ((re.match(/<XIcon size=\{(\d+)\} \/>/) ?? [])[1] ?? "?"),
-        "ok=" + ((re.match(/<ArrowLeftIcon size=\{(\d+)\} \/>/) ?? [])[1] ?? "?"),
+        "capraz=" + ((re.match(/<CloseIcon size=\{(\d+)\} \/>/) ?? [])[1] ?? "?"),
+        "ok=" + ((re.match(/<BackIcon size=\{(\d+)\} \/>/) ?? [])[1] ?? "?"),
         "zemin=" + (/background: "var\(--surface-2\)"/.test(re) ? "surface-2" : "?"),
       ],
       "mobil",
@@ -13354,7 +13345,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ];
     const webAyar = (y) => {
       const src = sil2(sil(read(y)));
-      if (/<WrenchIcon\b/.test(src)) return "ANAHTAR";
       const m = src.match(/<SettingsIcon size=\{(\d+)\}/);
       return m ? "disli " + m[1] : /\bSettingsIcon\b/.test(src) ? "disli" : "?";
     };
@@ -13910,12 +13900,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "cikis karosunun olcusu",
       [
         "kare=" + (dortlu.every((y) => /width: 44, height: 44/.test(sil(read(y)))) ? "44" : "?"),
-        "simge=" + (dortlu.every((y) => /<XIcon color=\{colors\.textMuted\} size=\{22\} \/>/.test(sil(read(y)))) ? "22" : "?"),
+        "simge=" + (dortlu.every((y) => /<CloseIcon color=\{colors\.textMuted\} size=\{22\} \/>/.test(sil(read(y)))) ? "22" : "?"),
         "adi=" + (dortlu.every((y) => adliCikis(sil(read(y)), "accessibilityLabel")) ? "var" : "YOK"),
       ],
       [
         "kare=" + (/className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"/.test(re) ? "44" : "?"),
-        "simge=" + (/<XIcon size=\{22\} \/>/.test(re) ? "22" : "?"),
+        "simge=" + (/<CloseIcon size=\{22\} \/>/.test(re) ? "22" : "?"),
         "adi=" + (/aria-label=\{t\(labelKey\)\}/.test(re) ? "var" : "YOK"),
       ],
       "mobil",
@@ -14064,12 +14054,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "kullanici arama kutusunun isaretleri",
       [
         "kutu basi=" + (/<SearchIcon /.test(fm) ? "buyutec" : "?"),
-        "temizleme=" + (/<XIcon /.test(fm) ? "ikon" : "METIN"),
+        "temizleme=" + (/<CloseIcon /.test(fm) ? "ikon" : "METIN"),
         "temizlemenin adi=" + (/accessibilityLabel=\{t\("find\.clear"\)\}/.test(fm) ? "var" : "YOK"),
       ],
       [
         "kutu basi=" + (/<SearchIcon /.test(fw) ? "buyutec" : "?") + (/text-caption">@</.test(fw) ? " (@ KALDI)" : ""),
-        "temizleme=" + (/<XIcon /.test(fw) ? "ikon" : "METIN"),
+        "temizleme=" + (/<CloseIcon /.test(fw) ? "ikon" : "METIN"),
         "temizlemenin adi=" + (/aria-label=\{t\("find\.clear"\)\}/.test(fw) ? "var" : "YOK"),
       ],
       "mobil",
@@ -18689,10 +18679,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
-/* ------------- 325. XP GLIFI BOLT, KAZANILMAYAN SAYI HIC YAZILMIYOR
+/* ------------- 325. XP GLIFI TEK, KAZANILMAYAN SAYI HIC YAZILMIYOR
  *
- * Uygulamanin iki ayri glifi var ve ikisi ayri sey soyluyor: `SparkIcon`
- * kombo / yapay zeka / akis isareti, `BoltIcon` XP. Web'de UST BAR ve beceri
+ * XP'nin tek glifi var: `XpIcon` (2026-09-29'a dek `BoltIcon`; o zaman
+ * `SparkIcon` kombo / yapay zeka / akis isaretiydi). Web'de UST BAR ve beceri
  * sonuc karti XP'yi Spark ile yaziyordu - ayni sayi ayni uygulamada iki ayri
  * glifle. Profil rozeti ayni nedenle daha once duzeltilmisti; ustelik ust bar
  * her ekranda duruyor, yani en cok gorulen yanlis glifti.
@@ -18707,7 +18697,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * Kazanilmamis bir odulun bos cercevesi bir sayi degil; sifir XP'nin sebebi
  * de zaten kartin altindaki not (`item.repeat_note`).
  *
- * Olcu: (1) MUTLAK kapsam - hicbir XP yuzeyi Spark cizmiyor, taranan Spark
+ * Olcu: (1) MUTLAK kapsam - XP yazan her ikon `XpIcon`; taranan XP yuzeyi
  * sayisi da yaziliyor (tarama bosalirsa "hepsi dogru" kendiliginden cikardi),
  * (2) iki rozetin sifir kosulu iki platformda da var. */
 {
@@ -18721,29 +18711,40 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     return out;
   };
   const yanlisGlif = [];
-  let sparkSayi = 0;
+  let xpSayi = 0;
   for (const kok of ["src/app", "src/components", "mobile/src"]) {
     for (const f of gezX(kok)) {
       const src = silX(read(f));
-      for (const m of src.matchAll(/<SparkIcon\b/g)) {
-        sparkSayi++;
-        /* Pencere: glifin SAGINDAKI 140 karakter - rozetin metni glifin hemen
-           ardindan geliyor (`<SparkIcon … /> +{xp} XP`). Solu bakilmiyor,
-           cunku orada saran elemanin sinifi var, sayi degil. */
-        if (/\bXP\b|\{[^{}]*\bxp\b[^{}]*\}/.test(src.slice(m.index, m.index + 140))) {
-          yanlisGlif.push(f.split("/").slice(-1)[0]);
-        }
+      const XP = /(?:\b|_)xp(?:\b|_)/i;
+      /* (a) JSX ikon: pencere ikonun KENDI kapanisindan sonraki metin, bir
+         sonraki etikete ya da `/>`e kadar (`<XpIcon … /> +{xp} XP</span>`).
+         Solu bakilmiyor, cunku orada saran elemanin sinifi var, sayi degil;
+         ve kardes eleman (seri rozetinin yanindaki XP rozeti) pencereye
+         girmiyor. */
+      for (const m of src.matchAll(/<(\w+Icon)\b[^>]*?\/>/g)) {
+        const sag = src.slice(m.index + m[0].length, m.index + m[0].length + 140);
+        const kes = sag.search(/<|\/>/);
+        if (!XP.test(kes < 0 ? sag : sag.slice(0, kes))) continue;
+        xpSayi++;
+        if (m[1] !== "XpIcon") yanlisGlif.push(f.split("/").slice(-1)[0] + ":" + m[1]);
+      }
+      /* (b) bilesen olarak verilen ikon (`<Stat icon={XpIcon} … label=… total_xp`):
+         pencere ayni elemanin kendisi, onceki `<`den sonraki `/>`e. */
+      for (const m of src.matchAll(/\b[iI]con=\{(\w+Icon)\}/g)) {
+        const bas = src.lastIndexOf("<", m.index);
+        const son = src.indexOf("/>", m.index);
+        if (bas < 0 || son < 0 || !XP.test(src.slice(bas, son))) continue;
+        xpSayi++;
+        if (m[1] !== "XpIcon") yanlisGlif.push(f.split("/").slice(-1)[0] + ":" + m[1]);
       }
     }
   }
   sameList(
-    "xp glifi bolt",
-    /* Tarama DOLU mu: Spark mesru bir glif (kombo, akis, yapay zeka notu) ve
-       yeni bir yerde kullanilmasi kapinin isi degil - o yuzden TAM SAYI degil
-       esik olculuyor. Olculen sey taramanin bosalmamasi: dosya yurumesi
-       bozulursa "hicbir XP yuzeyi Spark cizmiyor" kendiliginden dogru cikar. */
-    ["tarama=" + (sparkSayi >= 5 ? "dolu" : "BOS"), "xp yuzeyinde spark=" + (yanlisGlif.length ? yanlisGlif.join("+") : "yok")],
-    ["tarama=dolu", "xp yuzeyinde spark=yok"],
+    "xp glifi tek",
+    /* Tarama DOLU mu: dosya yurumesi ya da pencere bozulursa "her XP yuzeyi
+       dogru glifi ciziyor" kendiliginden dogru cikar - o yuzden esik. */
+    ["tarama=" + (xpSayi >= 3 ? "dolu" : "BOS"), "xp yuzeyinde baska glif=" + (yanlisGlif.length ? yanlisGlif.join("+") : "yok")],
+    ["tarama=dolu", "xp yuzeyinde baska glif=yok"],
     "bulunan",
     "beklenen",
   );
@@ -18962,7 +18963,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "cubuk boy=" + barBoy,
       "cubuk taban=" + barTaban,
       "yuzde=" + (/<Text variant="h3" color=\{colors\.primaryText\}>\{formatPercent/.test(m) ? "h3" : "FARKLI"),
-      "davet oku=" + (/<ArrowRightIcon color=\{colors\.textFaint\} size=\{(20)\}/.test(m) ? "20" : "YOK"),
+      "davet oku=" + (/<ForwardIcon color=\{colors\.textFaint\} size=\{(20)\}/.test(m) ? "20" : "YOK"),
     ],
     [
       "avatar=" + ((w.match(/<Avatar [\s\S]{0,200}?size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
@@ -18973,7 +18974,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "cubuk boy=" + ((w.match(/style=\{\{ height: (\d+), background: "var\(--surface-2\)" \}\}/) ?? [])[1] ?? "YOK"),
       "cubuk taban=" + ((w.match(/width: `\$\{Math\.max\((\d+), Math\.min\(100, q\.pct\)\)\}%`/) ?? [])[1] ?? "YOK"),
       "yuzde=" + (/className="shrink-0 text-h3 tabular-nums"/.test(w) ? "h3" : "FARKLI"),
-      "davet oku=" + ((w.match(/<ArrowRightIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "davet oku=" + ((w.match(/<ForwardIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
     ],
     "mobil",
     "web",
@@ -19177,7 +19178,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "ikon=" + ((m.match(/<Icon color=\{onTint\(tint, colors\)\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "murekkep=" + (/onTint\(tint, colors\)/.test(m) ? "rol turevi" : "HAM TON"),
       "etiket=" + (/<Text variant="bodyStrong"/.test(m) ? "bodyStrong" : "FARKLI"),
-      "sevron=" + ((m.match(/<ChevronRightIcon color=\{colors\.textFaint\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "sevron=" + ((m.match(/<ChevronNextIcon color=\{colors\.textFaint\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "dikey pay=" + (/paddingVertical: spacing\.md/.test(m) ? "md" : "FARKLI"),
       "ayrac=" + (/borderBottomWidth: last \? 0 : 1/.test(m) ? "sonda yok" : "FARKLI"),
     ],
@@ -19188,7 +19189,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "ikon=" + ((silM(read("src/components/settings-nav.tsx")).match(/<MenuRow [^>]*icon=\{<\w+ size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "murekkep=" + (/color: `var\(--color-\$\{tone\}\)`/.test(w) ? "rol turevi" : "HAM TON"),
       "etiket=" + (/className="min-w-0 flex-1 truncate text-strong"/.test(w) ? "bodyStrong" : "FARKLI"),
-      "sevron=" + ((w.match(/<ChevronRightIcon size=\{(\d+)\} className="shrink-0" style=\{\{ color: "var\(--text-faint\)" \}\}/) ?? [])[1] ?? "YOK"),
+      "sevron=" + ((w.match(/<ChevronNextIcon size=\{(\d+)\} className="shrink-0" style=\{\{ color: "var\(--text-faint\)" \}\}/) ?? [])[1] ?? "YOK"),
       "dikey pay=" + (/gap-3 py-3/.test(w) ? "md" : "FARKLI"),
       "ayrac=" + (/last \? \{\} : \{ borderBottom: "1px solid var\(--hairline\)" \}/.test(w) ? "sonda yok" : "FARKLI"),
     ],
@@ -19644,14 +19645,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "sparkline yazma=" + mobJeton(mobSpark, /sec_writing"\)\} points=\{data\.series\.writing\} max=\{100\} color=\{colors\.(\w+)\}/),
       "sparkline konusma=" + mobJeton(mobSpark, /sec_speaking"\)\} points=\{data\.series\.speaking\} max=\{100\} color=\{colors\.(\w+)\}/),
       "sparkline kullanim=" + mobJeton(mobSpark, /exam\.title"\)\} points=\{data\.series\.usage\} max=\{100\} color=\{colors\.(\w+)\}/),
-      "kombo ikonu=" + mobJeton(mobOyun, /<BoltIcon color=\{colors\.(\w+)\} size=\{15\} \/><Text variant="bodyStrong"/),
+      "kombo ikonu=" + mobJeton(mobOyun, /<ComboIcon color=\{colors\.(\w+)\} size=\{14\} \/><Text variant="bodyStrong"/),
       "paywall onayi=" + mobJeton(mobPaywall, /<CheckIcon color=\{colors\.(\w+)\} size=\{14\} \/>/),
     ],
     [
       "sparkline yazma=" + webAlias(webSpark, /sec_writing"\)\} points=\{data\.series\.writing\} max=\{100\} color="var\(--color-([a-z]+)\)"/),
       "sparkline konusma=" + webAlias(webSpark, /sec_speaking"\)\} points=\{data\.series\.speaking\} max=\{100\} color="var\(--color-([a-z]+)\)"/),
       "sparkline kullanim=" + webAlias(webSpark, /exam\.title"\)\} points=\{data\.series\.usage\} max=\{100\} color="var\(--color-([a-z]+)\)"/),
-      "kombo ikonu=" + webAlias(webOyun, /color: "var\(--color-([a-z]+)\)", \}\} > <SparkIcon size=\{12\}/),
+      "kombo ikonu=" + webAlias(webOyun, /color: "var\(--color-([a-z]+)\)", \}\} > <ComboIcon size=\{14\}/),
       "paywall onayi=" + webAlias(webPaywall, /color: "var\(--color-([a-z]+)\)" \}\} > <CheckIcon size=\{14\}/),
     ],
     "mobil (jeton)",
@@ -21032,7 +21033,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   /* (1) Sik isareti. */
   const webIsaret = (silI(read("src/components/games/option-mark.tsx")).match(/size=\{(\d+)\}/) ?? [])[1] ?? "YOK";
-  const mobIsaret = (silI(read("mobile/src/game/rounds.tsx")).match(/CheckIcon color=\{colors\.successText\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK";
+  const mobIsaret = (silI(read("mobile/src/game/rounds.tsx")).match(/CorrectIcon color=\{colors\.successText\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK";
   sameList("sik isaretinin boyu", ["isaret=" + mobIsaret], ["isaret=" + webIsaret], "mobil", "web");
 
   /* (2) Hoparlorun rengi: iki tarafta da MARKA tinti. Web jeton adlariyla,
@@ -21507,9 +21508,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      "width/height/borderRadius/backgroundColor" dizisi basligin geri
      dugmesi (44/md/surface2) ve ilk eslesmeye bakan yazim onu okuyordu;
      karo, ZIL ikonunun hemen ustundeki kap. */
-  const zil = mobBildirim.indexOf("BellIcon color={colors.onFill}");
+  const zil = mobBildirim.indexOf("NotificationsIcon color={colors.onFill}");
   const mobKaro = mobBildirim.slice(Math.max(0, zil - 400), zil).match(/width: (?:ds\()?(\d+)\)?, height: (?:ds\()?\d+\)?, borderRadius: radii\.(\w+)[^}]*backgroundColor: colors\.(\w+)/);
-  const mobIkon = mobBildirim.match(/BellIcon color=\{colors\.(\w+)\} size=\{(\d+)\}/);
+  const mobIkon = mobBildirim.match(/NotificationsIcon color=\{colors\.(\w+)\} size=\{(\d+)\}/);
   sameList(
     "bildirim karosu",
     [
@@ -21523,7 +21524,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "kutu=" + (/h-\[72px\] w-\[72px\]/.test(webBildirim) ? "72" : "BASKA"),
       "yaricap=" + (/rounded-card/.test(webBildirim) ? "xl" : "BASKA"),
       "dolgu=" + (/background: "var\(--color-sky\)"/.test(webBildirim) ? "teal" : "BASKA"),
-      "ikon=" + ((webBildirim.match(/BellIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "ikon=" + ((webBildirim.match(/NotificationsIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "murekkep=" + (/color: "var\(--on-fill\)"/.test(webBildirim) ? "onFill" : "BASKA"),
     ],
     "mobil",
@@ -21539,14 +21540,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       /* `inset` seçeneği (tablet yan paneli, 2026-09-27) üst payı koşula bağladı. */
       "aralik=" + (/gap: spacing\.md, paddingTop: (?:\(inset \? )?insets\.top/.test(mobBaslik) ? "12" : "BASKA"),
       "geri kutusu=44/" + (mobGeri?.[1] ?? "YOK") + "/" + (mobGeri?.[2] ?? "YOK"),
-      "ok=" + ((mobBaslik.match(/ArrowBackIcon color=\{colors\.text\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "ok=" + ((mobBaslik.match(/BackIcon color=\{colors\.text\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "baslik=h2",
       "alt satir=caption",
     ],
     [
       "aralik=" + (/mb-4 flex items-center gap-3/.test(webBaslik) ? "12" : "BASKA"),
       "geri kutusu=44/" + (/h-11 w-11 shrink-0 items-center justify-center rounded-tile/.test(webBaslik) ? "md" : "YOK") + "/" + (/background: "var\(--surface-2\)"/.test(webBaslik) ? "surface2" : "YOK"),
-      "ok=" + ((webBaslik.match(/ArrowLeftIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "ok=" + ((webBaslik.match(/BackIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "baslik=" + (/<h1 className="(?:truncate|line-clamp-2[^"]*) text-h2">/.test(webBaslik) ? "h2" : "BASKA"),
       "alt satir=" + (/muted truncate text-caption/.test(webBaslik) ? "caption" : "BASKA"),
     ],
