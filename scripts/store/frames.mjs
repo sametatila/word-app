@@ -193,11 +193,13 @@ function layout({ st, screen, idx, lang, set, img, src, iw, ih }) {
     const wide = W / H > 1.5; // Play 16:9; iPad 4:3
     let sw, sh, x, y;
     if (aspect < 1) {
-      const dw = (pos.w ?? (wide ? 66 : 68)) * u;
+      // Cihaz karenin İÇİNDE (eskiden sağdan taşıyordu: konuşmada kullanıcının cümlesi ve
+      // "Eller serbest" kesiliyordu). Yazı sütununun sağında kalan genişlik, dikeyde ortada.
+      const dw = Math.min((pos.w ?? 62) * u, (0.86 * H * (1 + 2 * spec.bez)) / (aspect + 2 * spec.bez));
       sw = dw / (1 + 2 * spec.bez);
       sh = sw * aspect;
-      x = W - dw + (pos.bleed ?? 9) * u;
-      y = (wide ? 0.15 : 0.17) * H;
+      x = W - 2.5 * u - dw + (pos.bleed ?? 0) * u;
+      y = (H - sh - 2 * spec.bez * sw) / 2;
     } else {
       sh = 0.94 * H;
       sw = sh / aspect;
@@ -205,9 +207,9 @@ function layout({ st, screen, idx, lang, set, img, src, iw, ih }) {
       y = 0.1 * H;
     }
     dev = { spec, img, sw, sh, x, y: y + (pos.dy ?? 0) * u, rot: 0 };
-    f.copy = { x: 5.5 * u, y: (wide ? 0.13 : 0.15) * H, w: (wide ? 32 : 33) * u, h1: (wide ? 5.3 : 5.9) * u, sub: (wide ? 1.95 : 2.15) * u, maxLines: 4, maxH: (sc.ladder ? 0.5 : 0.62) * H };
+    f.copy = { x: 5.5 * u, y: (wide ? 0.13 : 0.15) * H, w: 28.5 * u, h1: (wide ? 5.3 : 5.9) * u, sub: (wide ? 1.95 : 2.15) * u, maxLines: 4, maxH: (sc.ladder ? 0.5 : 0.62) * H };
     if (sc.ladder) f.ladder = { levels: cfg.levels, current: cfg.currentLevel, x: 6 * u, y: 0, w: 28 * u, size: 1.6 * u, gap: 2.6 * u, line: PALETTE[bg].line };
-    box = { x0: 36 * u, x1: W - 2.5 * u, y0: 0.06 * H, y1: H - 0.05 * H };
+    box = { x0: 35 * u, x1: W - 1.5 * u, y0: 0.04 * H, y1: H - 0.04 * H };
   } else {
     // Öne çıkan grafik 1024×500: solda marka + cümle + A1–C1, sağda telefonda gerçek ekran.
     const dw = 27 * u;
@@ -234,8 +236,41 @@ function layout({ st, screen, idx, lang, set, img, src, iw, ih }) {
       sy = oy + dx * Math.sin(a) + dy * Math.cos(a);
     }
     const x = clamp(sx - w / 2 + c.dx * u, box.x0, box.x1 - w);
-    const y = clamp(sy - h / 2 + c.dy * u, box.y0, box.y1 - h);
-    dev.ring = c.rect;
+    // Dikey yer: büyüteç kaynağın üstüne tam oturunca komşu satırları YARIM örtüyordu (üstte ve altta
+    // kesik yazı). Kaynağın yakınında hiçbir satırı yarım kesmeyen ilk konum seçilir (önce aşağı);
+    // kaynak ayrıca halkayla işaretli. Bulunamazsa ortalanır. `dy` elle kaydırma.
+    const rows = ocr(src);
+    const toScreen = (X, Y) => ({ x: (X - dev.x - b) / dev.sw, y: (Y - dev.y - b) / dev.sh });
+    // Satır kutuları OCR'da sıkı: harf uçları taşmasın diye her satır yarım satır büyütülür.
+    // Önce hiçbir satıra değmeyen konum; yoksa satırları ya tam örten ya hiç değmeyen konum.
+    const src0 = c.rect;
+    const cut = (Y, strict) => {
+      const p0 = toScreen(x, Y), p1 = toScreen(x + w, Y + h);
+      return rows.some((r) => {
+        const m = 0.5 * r.h, ry0 = r.y - m, ry1 = r.y + r.h + m;
+        // Kaynağın kendi satırı: tam örtülüyorsa sorun yok (strict'te bile), yarım örtülüyorsa kusur.
+        const inSrc = r.y + r.h / 2 >= src0.y && r.y + r.h / 2 <= src0.y + src0.h;
+        const ox = Math.min(p1.x, r.x + r.w) - Math.max(p0.x, r.x), oy = Math.min(p1.y, ry1) - Math.max(p0.y, ry0);
+        if (ox <= 0 || oy <= 0) return false;
+        const covered = ry0 >= p0.y && ry1 <= p1.y && r.x >= p0.x && r.x + r.w <= p1.x;
+        return inSrc ? !covered : strict || !covered;
+      });
+    };
+    const y0 = sy - h / 2 + c.dy * u, step = 0.004 * dev.sh;
+    let y = clamp(y0, box.y0, box.y1 - h);
+    if (!c.dy) {
+      search: for (const strict of [true, false]) {
+        for (let i = 0; i <= 80; i++) {
+          const cand = clamp(y0 + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * step, box.y0, box.y1 - h);
+          if (!cut(cand, strict)) { y = cand; break search; }
+        }
+      }
+    }
+    // Halka yalnız büyüteç kaynaktan AYRI durduğunda: üstüne bindiğinde kenarı altından taşıp kusur gibi görünüyordu.
+    const r0 = { x: dev.x + b + c.rect.x * dev.sw, y: dev.y + b + c.rect.y * dev.sh, w: c.rect.w * dev.sw, h: c.rect.h * dev.sh };
+    const m = 0.02 * dev.sw;
+    const apart = y > r0.y + r0.h + m || y + h < r0.y - m || x > r0.x + r0.w + m || x + w < r0.x - m;
+    if (apart) dev.ring = c.rect;
     const k = kind === "portrait" ? 1 : kind === "landscape" ? 0.45 : 0.5;
     f.callout = { img, sw: dev.sw, sh: dev.sh, rect: c.rect, zoom: c.zoom, x, y, radius: 2.2 * u * k, border: 0.55 * u * k, rot: dev.rot };
   }

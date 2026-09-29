@@ -54,10 +54,10 @@
       },
       "callout": [
         { "source": "walk", "anchor": "(Yürürken çalış|Practice while walking|Üben beim Gehen)", "pad": [1.4, 1.2], "zoom": 1.5 },
-        { "source": "walk-intro", "anchor": "(ipucunu duyarsın|hint in|Hinweis auf)", "above": 1.2, "chain": 1.6, "pad": [1.2, 1], "zoom": 1.2 }
+        { "source": "walk-intro", "anchor": "(ipucunu duyarsın|hint in|Hinweis auf)", "above": 1.2, "chain": 1.6, "pad": [6, 1], "zoom": 1.15 }
       ],
       "posBy": { "portrait": { "rot": -5, "dx": 2 } },
-      "sources": ["walk", "walk-intro"]
+      "sources": ["walk-lock", "walk-intro", "walk"]
     },
     "daily": {
       "caption": {
