@@ -20,6 +20,8 @@ import { NativeModules, Platform } from "react-native";
 type IntegrityNative = {
   prepare(projectNumber: string): Promise<boolean>;
   requestGuestToken(projectNumber: string): Promise<{ token: string; nonce: string }>;
+  /** Senkron; eski native derlemede yok (bkz. `isTestLabDevice`). */
+  isTestLab?: () => boolean;
 };
 
 const ANDROID = Platform.OS === "android";
@@ -73,4 +75,28 @@ export async function guestAttestation(projectNumber: string | null | undefined,
   } finally {
     if (timer) clearTimeout(timer);
   }
+}
+
+let testLab: boolean | null = null;
+
+/**
+ * FIREBASE TEST LAB CİHAZI MI (Play'in yayın öncesi raporu robotları).
+ *
+ * Doğruysa `api/client` her isteğe `x-lernomi-test-lab: 1` ekliyor, sunucu
+ * hesabı kalıcı olarak işaretliyor (`user_clients.test_lab`) ve panel ölçümleri
+ * bu hesapları saymıyor (sunucu lib/test-lab). Uygulamanın davranışı DEĞİŞMİYOR:
+ * robot gerçek kullanıcının gördüğünü görmeli, rapor ancak öyle anlamlı.
+ *
+ * Değer süreç boyunca sabit, ilk okumada saklanıyor. iOS'ta, native modül
+ * yoksa (eski derleme) ya da okuma hata verirse false: şüphede gerçek kullanıcı.
+ * Native taraf: android/.../integrity/LernomiIntegrityModule.kt `isTestLab`.
+ */
+export function isTestLabDevice(): boolean {
+  if (testLab !== null) return testLab;
+  try {
+    testLab = typeof Native?.isTestLab === "function" && Native.isTestLab() === true;
+  } catch {
+    testLab = false;
+  }
+  return testLab;
 }

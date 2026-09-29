@@ -1,5 +1,6 @@
 package com.lernomi.integrity
 
+import android.provider.Settings
 import android.util.Base64
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.Promise
@@ -131,6 +132,26 @@ class LernomiIntegrityModule(reactCtx: ReactApplicationContext) : ReactContextBa
       }
     }
   }
+
+  /**
+   * FIREBASE TEST LAB CİHAZI MI — Play'in yayın öncesi raporu (pre-launch report)
+   * uygulamayı Test Lab cihazlarında robotlarla çalıştırıyor; robotlar Google test
+   * hesaplarıyla giriyor ve misafir açıyor, kullanıcı listesi ve ölçümler kirleniyordu.
+   *
+   * Sinyal Firebase'in belgelediği yol: Test Lab cihazında sistem ayarı
+   * `firebase.test.lab` "true". Gerçek cihazda ayar yok (null). İzin istemiyor,
+   * Google'a istek atmıyor. Senkron: değer süreç boyunca değişmiyor ve JS onu
+   * her isteğe eklenen başlığı kurarken (api/client) tek sefer okuyor.
+   * Hata ya da okunamayan ayar = false: yanlış "test cihazı" demek gerçek
+   * kullanıcıyı ölçümden düşürürdü, tersi yalnız bir robotu sayar.
+   */
+  @ReactMethod(isBlockingSynchronousMethod = true)
+  fun isTestLab(): Boolean =
+    try {
+      Settings.System.getString(reactApplicationContext.contentResolver, "firebase.test.lab") == "true"
+    } catch (_: Exception) {
+      false
+    }
 
   companion object {
     /** Sunucu lib/auth/play-integrity GUEST_REQUEST_HASH_PREFIX ile aynı. */

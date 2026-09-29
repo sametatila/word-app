@@ -2,6 +2,7 @@ import { Platform } from "react-native";
 import { APP_VERSION, APP_VERSION_CODE } from "../version";
 import { apiBase, baseReady, failover, ownBaseOf, rebaseUrl } from "./base";
 import { currentLang } from "../lib/i18n";
+import { isTestLabDevice } from "../lib/integrity";
 
 /**
  * Mobil API istemcisi — canlı web API'sini çağırır (www.lernomi.app; veritabanı
@@ -36,6 +37,19 @@ export { apiBase, onBaseChange, PRIMARY_BASE, FALLBACK_BASE } from "./base";
  * değil, teknik bilgi - analitik tercihinden bağımsız.
  */
 export const CLIENT_HEADER_VALUE = `${Platform.OS === "ios" ? "ios" : "android"}/${APP_VERSION}/${APP_VERSION_CODE}`;
+
+/**
+ * TEST LAB İŞARETİ: Play'in yayın öncesi raporu (Firebase Test Lab robotları)
+ * her yeni build'de Google test hesaplarıyla giriş yapıyor ve misafir açıyor.
+ * O cihazlarda her isteğe `x-lernomi-test-lab: 1` ekleniyor; sunucu `/api/me`de
+ * hesabı kalıcı olarak işaretliyor ve panel ölçümleri saymıyor (sunucu
+ * `lib/test-lab`). Ayrı başlık, çünkü `x-lernomi-client` biçimini bekleyen
+ * ayrıştırıcılar (sürüm kaydı, hata raporu, Play Integrity) olduğu gibi kalsın;
+ * gerçek cihazda başlık hiç gönderilmiyor. Ad sunucudaki `TEST_LAB_HEADER`
+ * ile aynı (kapı: `check:parity`).
+ */
+export const TEST_LAB_HEADER = "x-lernomi-test-lab";
+const testLabHeader: Record<string, string> = isTestLabDevice() ? { [TEST_LAB_HEADER]: "1" } : {};
 
 export class ApiError extends Error {
   status: number;
@@ -186,7 +200,7 @@ async function sendOnce(url: string, init?: ApiInit): Promise<Response> {
     */
     const own = ownBaseOf(url);
     const headers = own
-      ? { "x-lernomi-client": CLIENT_HEADER_VALUE, "accept-language": currentLang(), ...((init?.headers as Record<string, string>) ?? {}), origin: own }
+      ? { "x-lernomi-client": CLIENT_HEADER_VALUE, ...testLabHeader, "accept-language": currentLang(), ...((init?.headers as Record<string, string>) ?? {}), origin: own }
       : init?.headers;
     /* RN'in `AbortSignal` tipi DOM'unkiyle birebir değil; dönüşüm burada.
        Çağıranın kendi `signal`ını taşımıyoruz çünkü hiçbir çağrı yeri
