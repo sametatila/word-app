@@ -7,6 +7,7 @@ import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
 import { bumpStats, useStatsBump } from "./statsSignal";
 import { updateProfile } from "./updateProfile";
+import { loadVoicePref } from "./tts";
 import { todayStr } from "../game/session";
 
 /** /api/me özeti — ana ekran ve profilin gösterdiği gerçek sayılar. */
@@ -138,6 +139,10 @@ export function useMe(): { me: Me | null; loading: boolean } {
         // Ayarlar ekranı açılınca kuruluyordu, yani uygulama açılışında kurs
         // bilinmiyor ve her şey Almanca varsayılanına düşüyordu.
         setCurrentCourse(d.course);
+        /* Seçili sesi de kursa göre çöz (2026-09-29): kurs Ayarlar dışında (web, başka cihaz, karşılama) değişince
+           TTS'teki ses eski kursta kalıyordu — İngilizce kursta kelimeler `de-DE-Defne` ile istenip 404 alıyordu
+           (bir oturumda 55 kelime). Karakter korunuyor (Defne → en-US-Defne), yalnız dili kursa geçiyor. */
+        void loadVoicePref(d.course);
         void syncNativeLang(d.nativeLang, d.course);
         /* Avatar da hesabın: başka bir cihazda ya da web'de değiştirildiyse
            burada da o görünsün (bkz. lib/avatar `syncAvatarWithServer`). */
