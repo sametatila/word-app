@@ -73,9 +73,12 @@ const DEVICES = {
     bez: 0.028, radius: 0.075, edge: 0.005,
     camera: { d: 0.034, top: 0.022 },
     buttons: [{ side: "r", y: 0.2, h: 0.1 }, { side: "r", y: 0.34, h: 0.055 }],
+    // Emülatörün durum çubuğu kenara yapışık (saat x≈12 px): gövdenin köşesi "9:41"i ":41" diye kesiyordu.
+    // Gerçek telefonda köşe payı var; çubuğun iki yarısı içeri kaydırılır (içerik aynı). h: yüksekliğe, inset: genişliğe oran.
+    statusBar: { h: 0.0265, inset: 0.04 },
   },
   ipad: { bez: 0.024, radius: 0.024, edge: 0.0028, camera: { d: 0.005, bezel: true } },
-  "android-tablet": { bez: 0.02, radius: 0.02, edge: 0.0028, camera: { d: 0.005, bezel: true } },
+  "android-tablet": { bez: 0.02, radius: 0.02, edge: 0.0028, camera: { d: 0.005, bezel: true }, statusBar: { h: 0.03, inset: 0.016 } },
 };
 
 // ---------- yardımcılar ----------
@@ -146,14 +149,14 @@ function anchoredRect(spec, file) {
   return { x: rx0, y: ry0, w: rx1 - rx0, h: ry1 - ry0 };
 }
 
-function calloutFor(device, set, screen, src) {
+function calloutFor(device, set, screen, src, name) {
   const c = cfg.callouts?.[`${device}/${set}/${screen}`] || (fallback[device] && cfg.callouts?.[`${fallback[device]}/${set}/${screen}`]);
   if (c) {
     const [x, y, w, h] = c.rect;
     return { rect: { x, y, w, h }, zoom: c.zoom ?? 1.4, dx: c.dx ?? 0, dy: c.dy ?? 0 };
   }
   // Ham adına göre (ör. günlük tur yoksa ana ekran) ilk tutan tanım; cihaz ayarı (`by`) üstüne biner.
-  const base = path.basename(src, ".png");
+  const base = name;
   const specs = [].concat(cfg.screens[screen]?.callout || []).filter((s) => !s.source || s.source === base);
   for (const s0 of specs) {
     const s = { ...s0, ...(s0.by?.[device] || {}) };
@@ -164,7 +167,7 @@ function calloutFor(device, set, screen, src) {
 }
 
 /** Kare düzeni: portre telefon, yatay tablet ya da öne çıkan grafik. */
-function layout({ st, screen, idx, lang, set, img, src, iw, ih }) {
+function layout({ st, screen, idx, lang, set, img, src, name, iw, ih }) {
   const W = st.w, H = st.h, u = W / 100;
   const sc = cfg.screens[screen];
   // Öne çıkan grafik kendi ekranının altyazısını değil, açılış cümlesini taşır.
@@ -223,7 +226,7 @@ function layout({ st, screen, idx, lang, set, img, src, iw, ih }) {
   }
 
   const b = dev.spec.bez * dev.sw;
-  const c = kind === "feature" ? null : calloutFor(st.device, set, screen, src);
+  const c = kind === "feature" ? null : calloutFor(st.device, set, screen, src, name);
   if (c) {
     const w = c.rect.w * dev.sw * c.zoom, h = c.rect.h * dev.sh * c.zoom;
     let sx = dev.x + b + (c.rect.x + c.rect.w / 2) * dev.sw;
@@ -311,6 +314,23 @@ async function sheet(files, outFile, h, cols) {
     .toFile(outFile);
 }
 
+/** Durum çubuğunu köşeden içeri al (bkz. DEVICES.android.statusBar). Sonuç geçici dosya, ham görüntüye dokunulmaz. */
+async function insetStatusBar(file, sb) {
+  if (!sb) return file;
+  const { width: iw, height: ih } = await sharp(file).metadata();
+  const band = Math.round(sb.h * ih), dx = Math.round(sb.inset * iw), half = Math.floor(iw / 2);
+  const { data } = await sharp(file).extract({ left: 1, top: band - 2, width: 1, height: 1 }).raw().toBuffer({ resolveWithObject: true });
+  const [r, g, b] = data;
+  const left = await sharp(file).extract({ left: 0, top: 0, width: half - dx, height: band }).png().toBuffer();
+  const right = await sharp(file).extract({ left: half + dx, top: 0, width: iw - half - dx, height: band }).png().toBuffer();
+  const out = path.join(os.tmpdir(), "lernomi-sb", `${crypto.createHash("sha1").update(fs.readFileSync(file)).digest("hex")}-${sb.h}-${sb.inset}.png`);
+  if (fs.existsSync(out)) return out;
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  const fill = await sharp({ create: { width: iw, height: band, channels: 3, background: { r, g, b } } }).png().toBuffer();
+  await sharp(file).composite([{ input: fill, left: 0, top: 0 }, { input: left, left: dx, top: 0 }, { input: right, left: half, top: 0 }]).png().toFile(out);
+  return out;
+}
+
 async function main() {
   const browser = await chromium.launch({ executablePath: CHROME });
   const page = await browser.newPage({ deviceScaleFactor: 1 });
@@ -326,20 +346,21 @@ async function main() {
       fs.mkdirSync(dir, { recursive: true });
       for (const [i, screen] of st.screens.entries()) {
         if (onlyScreens && !onlyScreens.includes(screen)) continue;
-        const src = rawPath(st.device, loc.set, screen);
-        if (!src) {
+        const src0 = rawPath(st.device, loc.set, screen);
+        if (!src0) {
           gaps.push(`${store}/${locale}: ${st.device}/${loc.set}/${screen}.png yok`);
           continue;
         }
+        const src = await insetStatusBar(src0, DEVICES[st.frame].statusBar);
         const meta = await sharp(src).metadata();
-        const f = layout({ st, screen, idx: i, lang: loc.lang, set: loc.set, img: pathToFileURL(fs.realpathSync(src)).href, src, iw: meta.width, ih: meta.height });
+        const f = layout({ st, screen, idx: i, lang: loc.lang, set: loc.set, img: pathToFileURL(fs.realpathSync(src)).href, src, name: path.basename(src0, ".png"), iw: meta.width, ih: meta.height });
         if (!f.callout && st.kind !== "feature" && !cfg.screens[screen].noCallout) noCallout.add(`${st.device}/${loc.set}/${screen}`);
         const name = st.kind === "feature" ? "feature.png" : `${String(i + 1).padStart(2, "0")}-${screen}.png`;
         const outFile = path.join(dir, name);
         const fit = await render(page, f, outFile);
         if (fit.over) warn.push(`${store}/${locale}/${screen}: başlık sığmadı (${fit.fs}px)`);
         (produced[store] ||= []).push(outFile);
-        console.log(`${path.relative(ROOT, outFile)}  h1=${fit.fs}px ${fit.lines} satır${src.includes(`/${st.device}/`) ? "" : "  [YEDEK CİHAZ]"}`);
+        console.log(`${path.relative(ROOT, outFile)}  h1=${fit.fs}px ${fit.lines} satır${src0.includes(`/${st.device}/`) ? "" : "  [YEDEK CİHAZ]"}`);
       }
     }
   }
