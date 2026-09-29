@@ -159,7 +159,9 @@ export function SkillBrowser({
                   className="pressable flex min-w-0 flex-col items-center gap-1 rounded-tile px-0.5 pb-2 pt-2.5"
                   style={{
                     border: `1px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
-                    background: active ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)" : "var(--surface)",
+                    /* Büyük karo: seçiliyken dolgu yok, turuncu kenar + başlık
+                       (2026-09-29 Samet: seçim B; mobil `SkillsScreen` aynı). */
+                    background: "var(--surface)",
                   }}
                 >
                   <SIcon size={20} style={{ color: SKILL_TINT[s.skill] }} />

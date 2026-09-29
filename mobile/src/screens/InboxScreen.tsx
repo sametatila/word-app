@@ -126,7 +126,7 @@ export function InboxScreen() {
                         <ReactionGlyph kind={reaction} size={18} colors={colors} />
                       </View>
                     ) : n.actor ? (
-                      <View style={{ width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint) }}>{React.createElement(icon, { color: onTint(tint, colors), size: 18 })}</View>
+                      <View style={{ width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint, colors) }}>{React.createElement(icon, { color: onTint(tint, colors), size: 18 })}</View>
                     ) : <ChevronRightIcon color={colors.textFaint} size={20} />}
                     {!n.read ? <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: colors.primary }} /> : null}
                   </PressableScale>

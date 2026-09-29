@@ -38,7 +38,9 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
     null;
   const NextIcon = next ? KIND_ICON[next.kind] : null;
   return (
-    <Card style={{ marginBottom: spacing.lg, borderColor: colors.primary, borderWidth: 1 }}>
+    /* Kenar NÖTR (Card'ın hairline'ı); vurgu numara karosunda ve "ŞU AN"
+       etiketinde (2026-09-29 Samet: seçim B — renkli kenarlıklı kart yok). */
+    <Card style={{ marginBottom: spacing.lg }}>
       <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "center" }}>
         <View style={[{ width: ds(54), height: ds(54), borderRadius: radii.md, backgroundColor: unit.complete ? colors.success : colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}>
           {unit.complete ? <CheckIcon color={colors.onPrimary} size={26} /> : <Text variant="h1" color={colors.onPrimary}>{unit.index}</Text>}

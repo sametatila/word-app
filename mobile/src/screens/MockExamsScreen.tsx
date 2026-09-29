@@ -195,12 +195,14 @@ export function MockExamsScreen() {
                   paddingVertical: spacing.xs,
                   paddingHorizontal: spacing.md,
                   borderRadius: radii.pill,
-                  backgroundColor: on ? colors.primarySoft : colors.surface2,
+                  /* Seçili seviye dolu turuncu + beyaz (2026-09-29 Samet:
+                     seçim B, dolu turuncu çip). */
+                  backgroundColor: on ? colors.primary : colors.surface2,
                   borderWidth: 1,
                   borderColor: on ? colors.primary : "transparent",
                 }}
               >
-                <Text variant="bodyStrong" color={on ? colors.primaryText : colors.textMuted}>{lv}</Text>
+                <Text variant="bodyStrong" color={on ? colors.onPrimary : colors.textMuted}>{lv}</Text>
               </PressableScale>
             );
           })}

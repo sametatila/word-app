@@ -79,7 +79,8 @@ export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRoun
           let fg = colors.text;
           if (acildi && isAnswer) { bg = colors.successSoft; border = colors.success; fg = colors.success; }
           else if (acildi && isPicked && !isAnswer) { bg = colors.dangerSoft; border = colors.danger; fg = colors.danger; }
-          else if (isPicked) { bg = colors.primarySoft; border = colors.primary; fg = colors.onPrimarySoft; }
+          // Seçildi, henüz açılmadı: dolgu yok, turuncu kenar + yazı (2026-09-29 Samet: seçim B; web `.option-picked`).
+          else if (isPicked) { border = colors.primary; fg = colors.primaryText; }
           return (
             <PressableScale
               key={opt}

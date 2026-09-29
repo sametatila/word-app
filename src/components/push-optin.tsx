@@ -168,7 +168,8 @@ function Card({
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       className="mx-6 mt-4 flex items-start gap-3 rounded-panel px-4 py-3"
-      style={{ background: `color-mix(in srgb, ${color} 12%, transparent)` }}
+      /* Marka tinti koyu temada nötr (`--brand-tint`; 2026-09-29 Samet: seçim B). */
+      style={{ background: tone === "mint" ? `color-mix(in srgb, ${color} 12%, transparent)` : "var(--brand-tint)" }}
     >
       <span className="mt-0.5 shrink-0" style={{ color }}>
         {icon ?? <BellIcon size={18} />}

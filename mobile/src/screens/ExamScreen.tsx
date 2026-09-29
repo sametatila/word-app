@@ -937,8 +937,9 @@ function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string
         return (
           <PressableScale key={i} disabled={pick !== null} onPress={() => { setPick(i); setTimeout(() => onPick(i === answerIdx, i), 550); }}
             accessibilityRole="radio" accessibilityState={{ selected: secili }}
-            style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: secili ? colors.primary : colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
-            <Text variant="body" color={secili ? colors.onPrimarySoft : colors.text}>{o}</Text>
+            style={{ backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: secili ? colors.primary : colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
+            {/* Seçildi, henüz kontrol edilmedi: dolgu yok, turuncu kenar + yazı (2026-09-29 Samet: seçim B). */}
+            <Text variant="body" color={secili ? colors.primaryText : colors.text}>{o}</Text>
           </PressableScale>
         );
       })}
@@ -1094,8 +1095,8 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
             return (
               <PressableScale key={oi} onPress={() => setAnswers(answers.map((a, i) => (i === qi ? oi : a)))}
                 accessibilityRole="radio" accessibilityState={{ selected: secili }}
-                style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: secili ? colors.primary : colors.border, paddingVertical: spacing.md, paddingHorizontal: spacing.md }}>
-                <Text variant="body" color={secili ? colors.onPrimarySoft : colors.text}>{o}</Text>
+                style={{ backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: secili ? colors.primary : colors.border, paddingVertical: spacing.md, paddingHorizontal: spacing.md }}>
+                <Text variant="body" color={secili ? colors.primaryText : colors.text}>{o}</Text>
               </PressableScale>
             );
           })}

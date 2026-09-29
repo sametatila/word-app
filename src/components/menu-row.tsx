@@ -58,7 +58,8 @@ export function MenuRow({
         style={{
           width: 38,
           height: 38,
-          background: `color-mix(in srgb, var(--color-${tone}-500) 13%, transparent)`,
+          /* Marka tinti koyu temada nötr (`--brand-tint`; 2026-09-29 Samet: seçim B). */
+          background: tone === "brand" ? "var(--brand-tint)" : `color-mix(in srgb, var(--color-${tone}-500) 13%, transparent)`,
           color: `var(--color-${tone})`,
         }}
       >
@@ -72,7 +73,7 @@ export function MenuRow({
   const cls = `pressable flex w-full items-center gap-3 py-3 text-left ${active ? "-mx-2 rounded-tile px-2" : ""}`;
   const style = {
     ...(last ? {} : { borderBottom: "1px solid var(--hairline)" }),
-    ...(active ? { background: "color-mix(in srgb, var(--color-brand-500) 10%, transparent)" } : {}),
+    ...(active ? { background: "var(--brand-tint)" } : {}),
   };
   if (href) {
     return (

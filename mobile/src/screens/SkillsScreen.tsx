@@ -216,9 +216,11 @@ export function SkillsScreen() {
           <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }} accessibilityRole="tablist">
             {LEVELS.map((l) => {
               const active = activeLevel === l;
+              /* Küçük seçim: seçili seviye DOLU turuncu + beyaz yazı (2026-09-29
+                 Samet: seçim B, dolu turuncu çip; web `skill-browser` aynı). */
               return (
-                <PressableScale key={l} onPress={() => setLevel(l)} accessibilityRole="tab" accessibilityState={{ selected: active }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
-                  <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{l}</Text>
+                <PressableScale key={l} onPress={() => setLevel(l)} accessibilityRole="tab" accessibilityState={{ selected: active }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primary : colors.surface }}>
+                  <Text variant="bodyStrong" color={active ? colors.onPrimary : colors.textMuted}>{l}</Text>
                 </PressableScale>
               );
             })}
@@ -345,8 +347,10 @@ export function SkillsScreen() {
                       accessibilityRole="tab"
                       accessibilityState={{ selected: active }}
                       accessibilityLabel={`${t(s.label)}, ${s.finished}/${s.items.length}`}
-                      style={{ flex: 1, minWidth: 0, alignItems: "center", gap: spacing.xs, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}
+                      style={{ flex: 1, minWidth: 0, alignItems: "center", gap: spacing.xs, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: colors.surface }}
                     >
+                      {/* Büyük karo: seçiliyken dolgu yok, yalnız 1 px turuncu
+                          kenar + turuncu başlık (2026-09-29 seçim B). */}
                       <s.icon color={tint} size={20} />
                       {/* Tek satır ve SIĞMAZSA KÜÇÜL — sekme çubuğunun kalıbı
                           (`TabBar`). İki satıra izin veriliyordu; büyük yazı

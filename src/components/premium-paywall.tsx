@@ -287,7 +287,8 @@ function PlanCard({
       className="card card-flat p-4 text-center"
       style={
         highlight
-          ? { borderColor: "var(--color-brand)", background: "color-mix(in srgb, var(--color-brand-500) 8%, transparent)" }
+          ? /* Vurgulu plan büyük karo dilinde: dolgu yok, turuncu kenar (2026-09-29 Samet: seçim B). */
+            { borderColor: "var(--color-brand-500)" }
           : undefined
       }
     >
@@ -323,7 +324,7 @@ function Row({ text, tone }: { text: string; tone: "premium" | "free" }) {
       {premium ? (
         <span
           className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
-          style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
+          style={{ background: "var(--brand-tint)", color: "var(--color-brand)" }}
         >
           <CheckIcon size={14} />
         </span>

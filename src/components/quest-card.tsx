@@ -158,7 +158,7 @@ export function QuestCard() {
               <span
                 className={"flex h-8 w-8 shrink-0 items-center justify-center rounded-chip" + (done ? " glow-tint-sm" : "")}
                 style={{
-                  background: done ? "var(--color-mint)" : "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
+                  background: done ? "var(--color-mint)" : "var(--brand-tint)",
                   color: done ? "#fff" : "var(--color-brand)",
                   "--tint-fill": "var(--color-mint)",
                 } as React.CSSProperties}

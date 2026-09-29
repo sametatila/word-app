@@ -1803,7 +1803,8 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
 
 function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: string | null; state: "idle" | "sel" | "correct" | "wrong"; onPress: () => void; colors: Palette }) {
   const border = state === "correct" ? colors.success : state === "wrong" ? colors.danger : state === "sel" ? colors.primary : colors.border;
-  const bg = state === "correct" ? colors.successSoft : state === "wrong" ? colors.dangerSoft : state === "sel" ? colors.primarySoft : colors.surface;
+  /* Seçili kart dolgusuz: yüzey + turuncu kenar + turuncu yazı (2026-09-29 Samet: seçim B; web `.option-picked`). */
+  const bg = state === "correct" ? colors.successSoft : state === "wrong" ? colors.dangerSoft : colors.surface;
   const shake = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     /* "Hareketi azalt" BURADA OKUNMUYORDU: aynı dosyadaki öbür sarsıntı
@@ -1815,7 +1816,7 @@ function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: 
   return (
     <Animated.View style={{ transform: [{ translateX: shake }] }}>
       <PressableScale onPress={onPress} disabled={state === "correct"} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ selected: state === "sel", disabled: state === "correct" }} style={{ borderWidth: 1, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, minHeight: 60, justifyContent: "center" }}>
-        <Text variant="bodyStrong" color={colors.text}>{text}</Text>
+        <Text variant="bodyStrong" color={state === "sel" ? colors.primaryText : colors.text}>{text}</Text>
         {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
       </PressableScale>
     </Animated.View>

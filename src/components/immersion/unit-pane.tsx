@@ -219,7 +219,7 @@ export function UnitPane({
                 <span
                   className="shrink-0 rounded-full px-2.5 py-1 text-micro"
                   style={{
-                    background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
+                    background: "var(--brand-tint)",
                     color: "var(--color-brand)",
                   }}
                 >
@@ -237,7 +237,7 @@ export function UnitPane({
           const style = {
             opacity: it.open ? 1 : 0.55,
             borderWidth: 1,
-            borderColor: current ? "var(--color-brand-500)" : "var(--hairline)",
+            borderColor: "var(--hairline)",
           };
 
           return openable ? (

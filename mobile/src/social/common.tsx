@@ -78,7 +78,7 @@ export function SectionTitle({ title, right }: { title: string; right?: string }
 export function IconTile({ icon: Icon, tint, size = 42, solid = false, iconSize }: { icon: IconCmp; tint: string; size?: number; solid?: boolean; iconSize?: number }) {
   const { colors } = useTheme();
   return (
-    <View style={[{ width: size, height: size, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: solid ? tint : softOf(tint) }, solid ? softShadow(tint, 6) : {}]}>
+    <View style={[{ width: size, height: size, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: solid ? tint : softOf(tint, colors) }, solid ? softShadow(tint, 6) : {}]}>
       {/* Dolu karonun ikonu `onFill`: sabit beyaz koyu temada okunmuyordu
           (1.76-2.76, grafik eşiği 3.0). Bkz. `theme/colors.ts`. */}
       <Icon color={solid ? onSolid(tint, colors) : onTint(tint, colors)} size={iconSize ?? Math.round(size * 0.5)} />
@@ -93,7 +93,7 @@ export function StatPill({ icon: Icon, label, tint, soft }: { icon?: IconCmp; la
      rengi açık temada 2.42-3.58 veriyor (bkz. `theme/colors.ts` `onTint`). */
   const ink = onTint(tint, colors);
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft ?? softOf(tint), borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft ?? softOf(tint, colors), borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}>
       {Icon ? <Icon color={ink} size={14} /> : null}
       <Text variant="caption" color={ink}>{label}</Text>
     </View>

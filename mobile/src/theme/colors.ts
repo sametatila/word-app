@@ -22,8 +22,8 @@ export type Palette = {
    *
    * Seçili çip eskiden `primary` (#f87612) yazıyordu ve #ffe3c4 üstünde 2.24
    * veriyordu — AA eşiği 4.5. Marka ailesinden koyu bir ton 6.13 veriyor ve
-   * çipin dili (yumuşak zemin + turuncu yazı) bozulmuyor. Koyu temada zemin
-   * zaten alfa olduğu için `primary` 5.93 veriyor, orada değişen bir şey yok.
+   * yumuşak zeminin dili bozulmuyor. Koyu temada zemin nötr `surface2`
+   * (2026-09-29) ve orada 400 turuncu 6.4 veriyor.
    */
   onPrimarySoft: string;
   /**
@@ -129,8 +129,13 @@ export const dark: Palette = {
      istenmedi), sonra bir gün #c2530a + beyaz (4.60) denendi ve koyu tonu
      beğenilmedi. Marka turuncusu açık temadakiyle birebir kalıyor; 2.77
      kontrast açık temada da kabul edilmiş aynı değer (T-KARAR-1). Yazı ve
-     ikon olarak turuncu `primaryText` (400) koyu zeminde parlak kalıyor. */
-  primary: orange[500], primaryStrong: orange[600], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#ffffff", onPrimaryMuted: "#ffffffcc", onPrimarySoft: orange[400], primaryText: orange[400], primaryOnWhite: orange[700],
+     ikon olarak turuncu `primaryText` (400) koyu zeminde parlak kalıyor.
+     YUMUŞAK MARKA ZEMİNİ KOYUDA NÖTR (2026-09-29 Samet: seçim B, dolu turuncu
+     çip): `primarySoft` turuncunun %16 alfasıydı ve koyu yüzeyde kahverengi
+     bloklar çiziyordu (ikon karoları, görev ikonları, sekme hapı). Artık
+     `surface2` ile aynı gri; üstündeki ikon/yazı `onPrimarySoft` (400) turuncu
+     kalıyor. Web `.dark --brand-soft` aynı değer. Açık tema değişmedi. */
+  primary: orange[500], primaryStrong: orange[600], primarySoft: "#242428", onPrimary: "#ffffff", onPrimaryMuted: "#ffffffcc", onPrimarySoft: orange[400], primaryText: orange[400], primaryOnWhite: orange[700],
   bg: "#111113", surface: "#1a1a1d", surface2: "#242428", surfaceGlass: "rgba(36,36,40,0.6)", elevated: "#242428",
   border: "#2e2e33", hairline: "#232327",
   text: "#f2f2f3", textMuted: "#9c9ca3", textFaint: "#6b6b72",
@@ -266,6 +271,12 @@ export function fillOf(role: keyof Palette): string {
  */
 const SOFT_ALPHA = "24";
 
-export function soft(tint: string): string {
+export function soft(tint: string, colors?: Palette): string {
+  /* KOYU TEMADA TURUNCU WASH YOK (2026-09-29 Samet: seçim B, dolu turuncu
+     çip): paletin `primarySoft`u nötrse (koyu tema, `surface2`) markanın
+     tinti de o nötr zemine iner; üstündeki ikon/yazı `onTint` ile turuncu
+     kalıyor. Öteki renklerin (mint, sky, violet…) tinti değişmiyor. Web
+     karşılığı `--brand-tint` (`globals.css`). */
+  if (colors && colors.primarySoft === colors.surface2 && (tint === colors.primary || tint === colors.primaryText)) return colors.primarySoft;
   return tint + SOFT_ALPHA;
 }

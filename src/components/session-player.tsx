@@ -955,6 +955,8 @@ function SessionRound() {
               style={{
                 "--tint-fill": isNew ? "var(--color-brand-500)" : "var(--color-flame-500)",
                 "--tint-ink": isNew ? "var(--color-brand)" : "var(--color-flame)",
+                /* Marka tinti koyu temada nötr (2026-09-29 Samet: seçim B). */
+                ...(isNew ? { "--tint-bg": "var(--brand-tint)" } : null),
               } as React.CSSProperties}
             >
               {t(isNew ? "session.chip_new" : "session.chip_review")}

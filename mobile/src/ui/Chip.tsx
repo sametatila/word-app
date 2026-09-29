@@ -7,11 +7,11 @@ import { useTheme, radii, spacing } from "../theme";
 /**
  * Seçim çipi — seviye, günlük hedef, dil, saat, sekme.
  *
- * PILL DEĞİL: yarıçap `md`, 1 px kenarlık, seçiliyken yumuşak turuncu zemin
- * ve turuncu yazı. Bu ayrım bilinçli ve iki yerde daha yazılıydı
- * (`SettingsScreen`, `LeaderboardScreen` yorumları): dolu turuncu hap
- * KELİME LİSTESİNİN süzgeci; seçim çipi ondan farklı görünmeli, yoksa
- * "süzüyorum" ile "seçtim" aynı dili konuşur.
+ * PILL DEĞİL: yarıçap `md`, 1 px kenarlık, seçiliyken DOLU marka turuncusu
+ * + beyaz yazı (2026-09-29 Samet: seçim B, dolu turuncu çip). Önceki dil
+ * (yumuşak turuncu zemin + turuncu yazı) koyu temada kahverengi bloklar
+ * çiziyordu. Süzgeç hapıyla ayrım artık biçimde: seçim çipi `md` köşeli ve
+ * kenarlıklı, süzgeç kenarlıksız pill. Web `.chip-active` aynı.
  *
  * Dört kopya halinde yaşıyordu — Ayarlar, Bildirimler, sosyal ortak modül ve
  * Sıralama'da satır içi. Dolgular üçünde üç türlüydü (14/9, 16/10, 16/9) ve
@@ -84,10 +84,10 @@ export function Chip({
         borderRadius: radii.md,
         borderWidth: 1,
         borderColor: active ? colors.primary : colors.border,
-        backgroundColor: active ? colors.primarySoft : colors.surface,
+        backgroundColor: active ? colors.primary : colors.surface,
       }}
     >
-      <Text variant="bodyStrong" color={active ? colors.onPrimarySoft : colors.textMuted}>{label}</Text>
+      <Text variant="bodyStrong" color={active ? colors.onPrimary : colors.textMuted}>{label}</Text>
       {badge ? (
         <View style={{ minWidth: 18, height: 18, borderRadius: 9, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xs }}>
           <Text variant="micro" color={colors.badgeInk}>{badge}</Text>

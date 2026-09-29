@@ -49,7 +49,7 @@ export function MenuRow({
         borderBottomColor: colors.hairline,
       }}
     >
-      <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint) }}>
+      <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint, colors) }}>
         <Icon color={onTint(tint, colors)} size={20} />
       </View>
       <Text variant="bodyStrong" color={danger ? colors.dangerText : undefined} style={{ flex: 1 }} numberOfLines={1}>{label}</Text>

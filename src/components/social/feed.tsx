@@ -9,6 +9,7 @@ import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "@/compon
 import { errorText, feedText, social, timeAgo } from "@/lib/social/client";
 import type { FeedItem } from "@/lib/social/types";
 import { ReactionBar } from "./reaction-bar";
+import { softFill } from "./reaction-icons";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ErrorText } from "./error-text";
 
@@ -164,7 +165,7 @@ export function FeedCard({ item }: { item: FeedItem }) {
         </div>
         <span
           className="flex h-10 w-10 shrink-0 items-center justify-center"
-          style={{ borderRadius: "var(--radius-tile)", background: `color-mix(in srgb, ${fill} 14%, transparent)`, color: tint }}
+          style={{ borderRadius: "var(--radius-tile)", background: softFill(fill), color: tint }}
         >
           <Icon size={20} />
         </span>

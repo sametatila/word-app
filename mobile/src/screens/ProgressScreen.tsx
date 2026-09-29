@@ -121,7 +121,7 @@ function ActivityStrip({ rows, today, colors }: { rows: { day: string; reviews: 
 function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: string; size: number }) => React.ReactElement; value: string; label: string; tint: string; colors: Palette }) {
   return (
     <Card padded style={{ flex: 1, gap: 6 }}>
-      <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint) }}>
+      <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint, colors) }}>
         <Icon color={onTint(tint, colors)} size={20} />
       </View>
       <Text variant="h1" color={colors.text}>{value}</Text>

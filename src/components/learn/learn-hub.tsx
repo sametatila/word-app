@@ -265,8 +265,9 @@ function Wedge({
     <Link
       href={href}
       prefetch={false}
+      /* Kenar NÖTR (`.card` hairline'ı); renk yalnız ikon karosunda
+         (2026-09-29 Samet: seçim B — renkli kenarlıklı kart yok). */
       className="pressable card flex min-h-[8.25rem] flex-col justify-between gap-3 p-4"
-      style={{ borderColor: tone, borderWidth: 1 }}
     >
       <span
         className="flex h-11 w-11 items-center justify-center rounded-tile text-white glow-tint-sm"

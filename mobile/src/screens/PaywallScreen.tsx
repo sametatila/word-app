@@ -461,7 +461,8 @@ export function PaywallScreen() {
               const active = selected === p.identifier;
               const tr = freeTrialOf(p, trialOk);
               return (
-                <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${priceLine(p, tr)}`} style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${priceLine(p, tr)}`} style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                  {/* Plan kartı büyük karo: seçiliyken dolgu yok, turuncu kenar (2026-09-29 Samet: seçim B). */}
                   <RadioDot selected={active} />
                   <View style={{ flex: 1 }}>
                     <Text variant="h3">{planLabel(p)}</Text>

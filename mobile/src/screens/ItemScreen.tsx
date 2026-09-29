@@ -80,8 +80,9 @@ function ReadingText({ text, course, colors }: { text: string; course: string; c
 function ToggleChip({ label, on, onPress, colors }: { label: string; on: boolean; onPress: () => void; colors: Palette }) {
   return (
     <PressableScale onPress={onPress} accessibilityRole="button" accessibilityState={{ selected: on }}
-      style={{ borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, backgroundColor: on ? colors.primarySoft : colors.surface2 }}>
-      <Text variant="caption" color={on ? colors.onPrimarySoft : colors.textMuted}>{label}</Text>
+      style={{ borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, backgroundColor: on ? colors.primary : colors.surface2 }}>
+      {/* Açıkken dolu turuncu + beyaz (2026-09-29 Samet: seçim B, dolu turuncu çip). */}
+      <Text variant="caption" color={on ? colors.onPrimary : colors.textMuted}>{label}</Text>
     </PressableScale>
   );
 }

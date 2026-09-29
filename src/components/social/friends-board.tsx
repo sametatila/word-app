@@ -103,7 +103,8 @@ export function FriendsBoard() {
             key={r.userId}
             className="flex items-center gap-3 rounded-panel border p-3"
             style={{
-              background: r.isMe ? "var(--brand-soft)" : "var(--surface)",
+              /* Sen satırı: yüzey + turuncu kenar (2026-09-29 Samet: seçim B). */
+              background: "var(--surface)",
               borderColor: r.isMe ? "var(--color-brand-500)" : "var(--hairline)",
             }}
           >

@@ -162,7 +162,8 @@ export function ReportDialog({
                     className="pressable flex w-full items-center gap-3 rounded-card p-3 text-left"
                     style={{
                       border: `1px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
-                      background: active ? "var(--brand-soft)" : "var(--surface)",
+                      /* Seçiliyken dolgu yok, turuncu kenar (2026-09-29 Samet: seçim B). */
+                      background: "var(--surface)",
                     }}
                   >
                     <span className="min-w-0 flex-1">

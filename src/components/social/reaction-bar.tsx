@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { errorText, social } from "@/lib/social/client";
 import { REACTION_KINDS, REACTION_LABEL_KEYS, type ReactionKind, type ReactionSummary } from "@/lib/social/types";
-import { ReactionGlyph, REACTION_TONE, REACTION_FILL } from "./reaction-icons";
+import { ReactionGlyph, REACTION_TONE, REACTION_FILL, softFill } from "./reaction-icons";
 import { useT } from "@/lib/i18n/client";
 import { ErrorText } from "./error-text";
 import { vibrate } from "@/lib/fx";
@@ -89,7 +89,7 @@ export function ReactionBar({
                  bir ton koyuluktan ibaretti. Seçilmemiş hâl de ortak orana
                  çekildi (%13 → %14, zemin ailenin 500'ü). */
               ? { background: REACTION_TONE[k], color: "var(--on-fill)", borderColor: REACTION_TONE[k] }
-              : { background: `color-mix(in srgb, ${REACTION_FILL[k]} 14%, transparent)`, color: REACTION_TONE[k], borderColor: "transparent" }
+              : { background: softFill(REACTION_FILL[k]), color: REACTION_TONE[k], borderColor: "transparent" }
           }
           role="radio"
           aria-checked={s.mine === k}
@@ -153,7 +153,7 @@ export function ReactionBar({
               style={
                 s.mine === k
                   ? { background: REACTION_TONE[k], color: "var(--on-fill)" }
-                  : { background: `color-mix(in srgb, ${REACTION_FILL[k]} 14%, transparent)` }
+                  : { background: softFill(REACTION_FILL[k]) }
               }
             >
               <ReactionGlyph kind={k} size={22} color={s.mine === k ? "var(--on-fill)" : undefined} />

@@ -49,6 +49,15 @@ export const REACTION_TONE: Record<ReactionKind, string> = {
  * altına düşüyor (bkz. `globals.css` `.tint-soft`). Mürekkep yukarıdaki
  * tablodan, zemin buradan.
  */
+/**
+ * Bir 500 dolgusunun %14 yumuşak zemini — mobil `soft(tint, colors)`.
+ * Marka dolgusu `--brand-tint`e gider: koyu temada turuncu wash yerine nötr
+ * `--surface-2` (2026-09-29 Samet: seçim B, dolu turuncu çip).
+ */
+export function softFill(fill: string): string {
+  return fill === "var(--color-brand-500)" ? "var(--brand-tint)" : `color-mix(in srgb, ${fill} 14%, transparent)`;
+}
+
 export const REACTION_FILL: Record<ReactionKind, string> = {
   cheer: "var(--color-brand-500)",
   fire: "var(--color-flame-500)",

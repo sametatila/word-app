@@ -542,6 +542,12 @@
   /* `--brand-soft` zemin üstünde okunan yazı — mobil `onPrimarySoft`.
      Marka 500'ü orada 2.24 veriyor (eşik 4.5); 800'ü 6.13. */
   --on-brand-soft: var(--color-brand-800);
+  /* Markanın %14 YUMUŞAK TİNTİ (ikon karosu, rozet, "yeni" çipi) — mobil
+     `soft(colors.primary, colors)`. Açıkta `.tint-soft` ile aynı oran; koyu
+     temada nötr `--surface-2` (aşağıda). Elle `color-mix(brand-500 14%)`
+     yazılmaz: koyu temada kahverengi blok çiziyordu (2026-09-29 Samet: seçim
+     B, dolu turuncu çip). */
+  --brand-tint: color-mix(in srgb, var(--color-brand-500) 14%, transparent);
   /*
    * DOLU VURGU KAROSUNUN ÜSTÜ — ikon ya da yazı.
    *
@@ -637,9 +643,14 @@
   --hairline: #232327;
   --text: #f2f2f3;
   --text-muted: #9c9ca3;
-  /* Koyu temada mobil `primarySoft` bir ALFA: rgba(248,118,18,0.16). */
-  --brand-soft: color-mix(in srgb, var(--color-brand-500) 16%, transparent);
-  /* Koyu temada zemin alfa: marka 400 orada 5.93 veriyor, ton değişmiyor. */
+  /* KOYU TEMADA YUMUŞAK MARKA ZEMİNİ NÖTR (2026-09-29 Samet: seçim B, dolu
+     turuncu çip): turuncunun %16 alfası koyu yüzeyde kahverengi bloklar
+     çiziyordu (ikon karoları, görev ikonları, sekme hapı). Artık `--surface-2`
+     ile aynı gri; üstündeki ikon/yazı `--on-brand-soft` (400) turuncu kalıyor.
+     Mobil `primarySoft` (koyu) aynı değer. */
+  --brand-soft: var(--surface-2);
+  --brand-tint: var(--surface-2);
+  /* Marka 400 `--surface-2` üstünde 6.4 veriyor. */
   --on-brand-soft: var(--color-brand-400);
   --on-fill: var(--color-ink-900);
   --text-faint: #6b6b72;
@@ -969,12 +980,16 @@
     background: transparent;
     cursor: pointer;
   }
+  /* 2026-09-29 Samet: seçim B, dolu turuncu çip. Dolu kısım DOLGU turuncusu
+     (`--brand-fill`, iki temada 500; `--color-brand` bir YAZI tonu, koyuda
+     400), başparmak BEYAZ + hafif gölge, yüzey halkası yok. Mobil `ui/Slider`
+     aynı. */
   .range::-webkit-slider-runnable-track {
     height: 6px;
     border-radius: var(--radius-chip);
     background: linear-gradient(
       to right,
-      var(--color-brand) var(--pct, 0%),
+      var(--brand-fill) var(--pct, 0%),
       var(--surface-2) var(--pct, 0%)
     );
   }
@@ -984,8 +999,8 @@
     height: 22px;
     margin-top: -8px;
     border-radius: 999px;
-    background: var(--color-brand);
-    border: 3px solid var(--surface);
+    background: #fff;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
   }
   .range::-moz-range-track {
     height: 6px;
@@ -995,14 +1010,15 @@
   .range::-moz-range-progress {
     height: 6px;
     border-radius: var(--radius-chip);
-    background: var(--color-brand);
+    background: var(--brand-fill);
   }
   .range::-moz-range-thumb {
     width: 22px;
     height: 22px;
     border-radius: 999px;
-    background: var(--color-brand);
-    border: 3px solid var(--surface);
+    background: #fff;
+    border: none;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
   }
   .range:focus-visible {
     outline: 2px solid var(--color-brand);
@@ -1022,8 +1038,10 @@
    * değişken bu yüzden ayrı: `--tint-fill` zemini (500), `--tint-ink` yazıyı
    * (takma ad) taşıyor.
    */
+  /* `--tint-bg` verilirse zemin o: marka tinti koyu temada nötr
+     (`--brand-tint`), `--tint-fill` bir renk olduğundan onu CSS ayırt edemiyor. */
   .tint-soft {
-    background: color-mix(in srgb, var(--tint-fill) 14%, transparent);
+    background: var(--tint-bg, color-mix(in srgb, var(--tint-fill) 14%, transparent));
     color: var(--tint-ink);
   }
   .hit-8 {
@@ -1063,10 +1081,14 @@
    * Jetonlar seçili çipin kullandıklarıyla aynı (`.chip-active`), çünkü
    * "seçildi ama sonuç belli değil" iki yerde de aynı cümle.
    */
+  /* 2026-09-29 Samet: seçim B, dolu turuncu çip. Seçilen şık BÜYÜK KARO
+     dilinde: dolgu yok (yüzey), 1 px marka kenarı, marka yazı tonu
+     (`--color-brand`: açıkta 700, koyuda 400). Mobil `ChoiceGame` `isPicked`
+     ve `rounds` `state === "sel"` aynı. */
   .option-picked {
     border-color: var(--color-brand-500);
-    background-color: var(--brand-soft);
-    color: var(--on-brand-soft);
+    background-color: var(--surface);
+    color: var(--color-brand);
   }
   /* Seviye/filtre çipleri */
   /*
@@ -1098,12 +1120,14 @@
   .chip:active {
     transform: scale(var(--press-scale));
   }
-  /* Seçili çip birincil butonun dilini konuşuyor: düz turuncu zemin, beyaz
-     yazı — mobildeki filtre çipiyle aynı (`M/src/screens/WordsScreen.tsx`). */
+  /* Seçili çip birincil butonun dilini konuşuyor: DOLU marka turuncusu,
+     beyaz yazı, turuncu kenar (2026-09-29 Samet: seçim B, dolu turuncu çip).
+     Mobil `ui/Chip` `select` aynı. Süzgeç hapından ayrımı biçimde: seçim çipi
+     köşeli ve kenarlıklı, süzgeç kenarlıksız pill. */
   .chip-active {
-    border-color: var(--color-brand-500);
-    color: var(--on-brand-soft);
-    background-color: var(--brand-soft);
+    border-color: var(--brand-fill);
+    color: var(--on-brand);
+    background-color: var(--brand-fill);
   }
   /*
    * Kelime listesinin SÜZGEÇ hapı — mobil `WordsScreen`in çipi.

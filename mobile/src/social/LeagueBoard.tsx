@@ -173,7 +173,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
       delayLongPress={400}
       accessibilityHint={quiet ? undefined : t("leaderboard.report_hint", { name: row.name ?? t("social.student") })}
       style={[
-        { flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.md, backgroundColor: row.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: row.isMe ? colors.primary : colors.hairline },
+        { flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.md, backgroundColor: colors.surface, borderWidth: 1, borderColor: row.isMe ? colors.primary : colors.hairline },
         tint ? softShadow(tint, 4) : {},
       ]}
     >
@@ -182,9 +182,19 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
       </View>
       <Avatar userId={row.userId} name={row.hidden ? null : row.name} avatar={row.hidden ? null : row.avatar} size={40} ring={tint} />
       <View style={{ flex: 1 }}>
-        <Text variant="bodyStrong" color={row.isMe ? colors.primaryText : colors.text} numberOfLines={1}>
-          {row.hidden ? t("social.student") : row.name ?? t("social.student")}{row.isMe ? t("social.you_paren") : ""}
-        </Text>
+        {/* SEN SATIRI (2026-09-29 Samet: seçim B, dolu turuncu çip): zemin
+            yüzey, 1 px turuncu kenar; "SEN" etiketi dolu turuncu + beyaz
+            (web `league-board` aynı etiketi çiziyor). */}
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+          <Text variant="bodyStrong" color={row.isMe ? colors.primaryText : colors.text} numberOfLines={1} style={{ flexShrink: 1 }}>
+            {row.hidden ? t("social.student") : row.name ?? t("social.student")}
+          </Text>
+          {row.isMe ? (
+            <View style={{ backgroundColor: colors.primary, borderRadius: radii.pill, paddingHorizontal: 6, paddingVertical: 2 }}>
+              <Text variant="micro" color={colors.onPrimary} style={{ letterSpacing: 1 }}>{t("social.you").toLocaleUpperCase(dateLocale())}</Text>
+            </View>
+          ) : null}
+        </View>
         {row.streak > 0 ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
             <FlameIcon color={colors.streakText} size={12} />

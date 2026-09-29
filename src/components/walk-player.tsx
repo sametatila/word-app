@@ -1698,7 +1698,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
               transition={{ repeat: Infinity, duration: 1.4 }}
               className="flex h-16 w-16 items-center justify-center rounded-full"
               style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
+                background: "var(--brand-tint)",
                 color: "var(--color-brand)",
               }}
             >

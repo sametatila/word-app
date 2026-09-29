@@ -9,7 +9,12 @@ import { useTheme, ds } from "../theme";
  * 24/12). Rol ve seçili durum SATIRDA kalıyor (`accessibilityRole="radio"`);
  * bu yalnız görüntü, ekran okuyucudan gizli.
  */
-export function RadioDot({ selected }: { selected: boolean }) {
+export function RadioDot({ selected, onFill = false }: {
+  selected: boolean;
+  /** Dolu turuncu seçili karonun içinde (NotifPrime saat karosu): halka ve
+      nokta `onPrimary` (2026-09-29 Samet: seçim B, dolu turuncu çip). */
+  onFill?: boolean;
+}) {
   const { colors } = useTheme();
   const ring = ds(22);
   const dot = ds(10);
@@ -17,9 +22,9 @@ export function RadioDot({ selected }: { selected: boolean }) {
     <View
       accessibilityElementsHidden
       importantForAccessibility="no-hide-descendants"
-      style={{ width: ring, height: ring, borderRadius: ring / 2, borderWidth: 1.5, borderColor: selected ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}
+      style={{ width: ring, height: ring, borderRadius: ring / 2, borderWidth: 1.5, borderColor: selected ? (onFill ? colors.onPrimary : colors.primary) : colors.border, alignItems: "center", justifyContent: "center" }}
     >
-      {selected ? <View style={{ width: dot, height: dot, borderRadius: dot / 2, backgroundColor: colors.primary }} /> : null}
+      {selected ? <View style={{ width: dot, height: dot, borderRadius: dot / 2, backgroundColor: onFill ? colors.onPrimary : colors.primary }} /> : null}
     </View>
   );
 }

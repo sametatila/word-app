@@ -272,14 +272,15 @@ function LeagueRow({
   return (
     <>
       {/* SATIR BIR KART (Android `social/LeagueBoard`): `radii.lg`, 12 dolgu,
-          1 piksel kenarlik, aralarinda 8 bosluk. Kendi satirin marka tintli
-          zemin ve marka kenarligi aliyor; kusaktaki satirin kenarligi kusagin
+          1 piksel kenarlik, aralarinda 8 bosluk. Kendi satirin yuzey zemin ve
+          marka kenarligi aliyor, "SEN" etiketi dolu turuncu + beyaz
+          (2026-09-29 Samet: secim B, dolu turuncu cip); kusaktaki satirin kenarligi kusagin
           rengi (Android orada ayrica `softShadow(tint, 4)` kullaniyor -
           webin karsiligi renkli golge). */}
       <li
         className={`flex items-center gap-3 rounded-panel border p-3${tint ? " glow-tint-sm" : ""}`}
         style={{
-          background: row.isMe ? "var(--brand-soft)" : "var(--surface)",
+          background: "var(--surface)",
           borderColor: row.isMe ? "var(--color-brand-500)" : (tint ?? "var(--hairline)"),
           ...(tint ? ({ "--tint-fill": tint } as React.CSSProperties) : null),
         }}
@@ -302,7 +303,7 @@ function LeagueRow({
           {row.isMe ? (
             <span
               className="ml-2 rounded-full px-1.5 py-0.5 text-micro uppercase tracking-eyebrow"
-              style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
+              style={{ background: "var(--brand-fill)", color: "var(--on-brand)" }}
             >
               {t("social.you")}
             </span>

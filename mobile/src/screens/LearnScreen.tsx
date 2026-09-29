@@ -46,7 +46,9 @@ function WedgeTile({ title, pitch, tint, icon: Icon, onPress }: { title: string;
   const { colors } = useTheme();
   return (
     <PressableScale onPress={onPress} style={{ flex: 1 }}>
-      <Card padded style={{ minHeight: 132, borderColor: tint, borderWidth: 1, justifyContent: "space-between", gap: spacing.md }}>
+      {/* Kenar NÖTR (Card'ın hairline'ı); renk yalnız ikon karosunda
+          (2026-09-29 Samet: seçim B — renkli kenarlıklı kart yok). */}
+      <Card padded style={{ minHeight: 132, justifyContent: "space-between", gap: spacing.md }}>
         <View style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 8)]}>
           <Icon color="#fff" size={24} />
         </View>

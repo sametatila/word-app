@@ -278,7 +278,7 @@ export function ProfileForm({
               <p
                 className="mt-2 rounded-panel px-3 py-2 text-caption"
                 style={{
-                  background: "color-mix(in srgb, var(--color-brand) 10%, transparent)",
+                  background: "var(--brand-tint)",
                   color: "var(--color-brand)",
                 }}
               >
@@ -301,8 +301,9 @@ export function ProfileForm({
                   role="radio"
                   aria-checked={level === l.id}
                   onClick={() => { if (l.id === level) return; setLevel(l.id); void patch({ level: l.id }, () => track("setting_change", 0, "level")); }}
+                  /* Seviye küçük seçim: dolu turuncu çip (2026-09-29 Samet: seçim B; mobil `ui/Chip`). */
                   className={`option px-1 py-2.5 text-strong ${
-                    level === l.id ? "option-picked" : ""
+                    level === l.id ? "chip-active" : ""
                   }`}
                   /* SEVİYE AÇIKLAMASI erişilebilir adda. Beş çip iki
                      karakterlik etiketler ("A1".."C1") ve açıklama yalnız

@@ -108,12 +108,15 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             aria-selected={tab === tb.key}
             aria-controls={panelId}
             className="pressable flex flex-1 items-center justify-center gap-1.5 rounded-tile px-3 py-2 text-strong"
-            style={tab === tb.key ? { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft-sm)" } : { color: "var(--text-muted)" }}
+            /* Seçili sekme DOLU turuncu + beyaz, gölgesiz (2026-09-29 Samet:
+               seçim B, dolu turuncu çip; mobil `FriendsScreen` aynı). Rozet
+               turuncunun üstünde beyaza döner. */
+            style={tab === tb.key ? { background: "var(--brand-fill)", color: "var(--on-brand)" } : { color: "var(--text-muted)" }}
             onClick={() => go(tb.key)}
           >
             {t(tb.label)}
             {tb.key === "friends" && incoming > 0 ? (
-              <span className="rounded-full px-1.5 text-micro" style={{ background: "var(--brand-fill)", color: "var(--on-brand)" }}>
+              <span className="rounded-full px-1.5 text-micro" style={tab === tb.key ? { background: "var(--on-brand)", color: "var(--on-brand-inv)" } : { background: "var(--brand-fill)", color: "var(--on-brand)" }}>
                 {incoming}
               </span>
             ) : null}

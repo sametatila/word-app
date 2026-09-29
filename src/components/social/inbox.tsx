@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { errorText, notificationText, social, timeAgo, type NotificationView } from "@/lib/social/client";
-import { REACTION_TONE, REACTION_FILL, ReactionGlyph } from "./reaction-icons";
+import { REACTION_TONE, REACTION_FILL, ReactionGlyph, softFill } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ErrorText } from "./error-text";
@@ -88,7 +88,7 @@ function RowGlyph({ tint, fill, children }: { tint: string; fill: string; childr
     <span
       className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full"
       /* Zemin ailenin 500'ünden, mürekkep takma addan (bkz. `.tint-soft`). */
-      style={{ background: `color-mix(in srgb, ${fill} 14%, transparent)`, color: tint }}
+      style={{ background: softFill(fill), color: tint }}
     >
       {children}
     </span>
@@ -175,7 +175,7 @@ export function Inbox() {
                 ) : (
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center"
-                    style={{ borderRadius: "var(--radius-tile)", background: `color-mix(in srgb, ${fill} 14%, transparent)`, color: tint }}
+                    style={{ borderRadius: "var(--radius-tile)", background: softFill(fill), color: tint }}
                   >
                     <Icon size={20} />
                   </span>

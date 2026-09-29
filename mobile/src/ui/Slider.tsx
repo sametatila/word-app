@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { View, PanResponder, type LayoutChangeEvent } from "react-native";
 import { Text } from "./Text";
-import { useTheme, radii, spacing } from "../theme";
+import { useTheme, radii, spacing, softShadow } from "../theme";
 
 /**
  * Kaydırıcı — saf JS, native bağımlılık yok.
@@ -131,9 +131,11 @@ export function Slider({
               width: 22,
               height: 22,
               borderRadius: 11,
-              backgroundColor: colors.primary,
-              borderWidth: 3,
-              borderColor: colors.surface,
+              /* BEYAZ BAŞPARMAK + hafif gölge (2026-09-29 Samet: seçim B,
+                 dolu turuncu çip): turuncu başparmak turuncu dolu kısımla
+                 birleşiyordu; yüzey halkası da kalktı. Web `.range` aynı. */
+              backgroundColor: "#ffffff",
+              ...softShadow("#000000", 4, 0.35),
             }}
           />
         ) : null}

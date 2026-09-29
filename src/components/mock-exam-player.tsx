@@ -791,7 +791,8 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
       role="radio"
       aria-checked={active}
       className="rounded-panel px-3 py-2 text-left text-body"
-      style={{ background: active ? "var(--brand-soft)" : "var(--surface-2)", border: `1px solid ${active ? "var(--color-brand)" : "transparent"}` }}
+      /* Seçili satır yüzeye çıkar + turuncu kenar, dolgu yok (2026-09-29 Samet: seçim B). */
+      style={{ background: active ? "var(--surface)" : "var(--surface-2)", border: `1px solid ${active ? "var(--color-brand)" : "transparent"}` }}
     >
       {label}
     </button>

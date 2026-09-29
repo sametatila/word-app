@@ -56,8 +56,10 @@ export function VoicePicker({
               padding: spacing.md,
               borderRadius: radii.lg,
               borderWidth: 1,
+              /* Büyük karo: seçiliyken dolgu yok, turuncu kenar + turuncu
+                 başlık (2026-09-29 Samet: seçim B, dolu turuncu çip). */
               borderColor: on ? colors.primary : colors.border,
-              backgroundColor: on ? colors.primarySoft : colors.surface,
+              backgroundColor: colors.surface,
               gap: spacing.xs,
             }}
           >

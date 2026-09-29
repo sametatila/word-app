@@ -59,7 +59,7 @@ export function FriendPulse() {
       href="/friends?tab=quests"
       prefetch={false}
       className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3"
-      style={{ borderWidth: 1, borderColor: invited ? "var(--color-sky)" : "var(--color-brand)" }}
+      style={{ borderWidth: 1, borderColor: "var(--hairline)" }}
     >
       <div className="flex -space-x-2">
         {/* Avatar 44: Android ile aynı. Web'de 32'ydi ve satır aynı kartın

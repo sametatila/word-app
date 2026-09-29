@@ -868,7 +868,9 @@ function ItemView({
       accessibilityHint={dim ? t("mockexam.option_used") : undefined}
       style={{
         paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md,
-        backgroundColor: active ? colors.primarySoft : colors.surface2,
+        /* Seçili satır yüzeye çıkar + turuncu kenar, dolgu yok (2026-09-29
+           Samet: seçim B, dolu turuncu çip; web `mock-exam-player` aynı). */
+        backgroundColor: active ? colors.surface : colors.surface2,
         borderWidth: 1, borderColor: active ? colors.primary : "transparent", marginBottom: spacing.xs,
         opacity: dim ? 0.45 : 1,
       }}

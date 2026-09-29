@@ -27,7 +27,7 @@ import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 import { haptic } from "../lib/haptics";
 import { reduceMotion } from "../lib/reduceMotion";
-import { useTheme, spacing, radii, softShadow, fillOf, ds } from "../theme";
+import { useTheme, spacing, radii, softShadow, fillOf, soft, ds } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MicDisclosure, type MicDisclosureMode } from "../ui/MicDisclosure";
@@ -1165,7 +1165,7 @@ export function WalkModeScreen() {
           <View style={{ flex: 1, paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md }}>
             {/* durum rozeti */}
             <View style={{ alignItems: "center" }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: (teaching ? colors.primary : colors.info) + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: soft(teaching ? colors.primary : colors.info, colors), borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
                 <WalkIcon color={teaching ? colors.primaryText : colors.infoText} size={15} />
                 <Text variant="caption" color={teaching ? colors.primaryText : colors.infoText}>{tx(teaching ? "walkmode.badge_teaching" : "walkmode.badge_walking")}</Text>
               </View>

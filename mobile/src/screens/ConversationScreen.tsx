@@ -962,13 +962,14 @@ export function ConversationScreen() {
             accessibilityRole="switch"
             accessibilityState={{ checked: handsFree }}
             accessibilityLabel={tx(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
-            style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingHorizontal: compactWidth ? spacing.md : 10, paddingVertical: spacing.sm, minHeight: 36, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primarySoft : colors.surface2 }}
+            style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingHorizontal: compactWidth ? spacing.md : 10, paddingVertical: spacing.sm, minHeight: 36, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primary : colors.surface2 }}
           >
-            <MicIcon color={handsFree ? colors.primaryText : colors.textMuted} size={compactWidth ? 18 : 14} />
+            {/* Açıkken dolu turuncu + beyaz (2026-09-29 Samet: seçim B, dolu turuncu çip). */}
+            <MicIcon color={handsFree ? colors.onPrimary : colors.textMuted} size={compactWidth ? 18 : 14} />
             {/* Dar ekranda yalnız ikon: etiket başlığı "Irregular …"a kadar
                 kesiyordu. Durum rengi ve erişilebilirlik adı yine taşıyor. */}
             {!compactWidth && (
-              <Text variant="micro" color={handsFree ? colors.primaryText : colors.textMuted}>
+              <Text variant="micro" color={handsFree ? colors.onPrimary : colors.textMuted}>
                 {tx(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
               </Text>
             )}

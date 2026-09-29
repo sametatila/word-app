@@ -383,7 +383,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             <span
               className="rounded-full px-2 py-0.5 text-micro uppercase tracking-eyebrow"
               style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
+                background: "var(--brand-tint)",
                 color: "var(--color-brand)",
               }}
             >

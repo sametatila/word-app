@@ -261,7 +261,9 @@ function Featured({
   const steps = unit.items.filter((i) => i.playable);
 
   return (
-    <section className="card p-4" style={{ borderWidth: 1, borderColor: "var(--color-brand-500)" }}>
+    /* Kenar NÖTR (`.card` hairline'ı); vurgu numara karosunda ve "ŞU AN"
+       etiketinde (2026-09-29 Samet: seçim B — renkli kenarlıklı kart yok). */
+    <section className="card p-4">
       <div className="flex items-center gap-3">
         <span
           className="flex h-14 w-14 shrink-0 items-center justify-center rounded-tile text-white glow-tint-sm"

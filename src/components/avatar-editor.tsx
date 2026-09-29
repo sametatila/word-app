@@ -152,7 +152,8 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
               aria-selected={s === slot}
               onClick={() => { setSlot(s); setHint(null); }}
               className="pressable shrink-0 rounded-tile px-3.5 py-2 text-strong"
-              style={s === slot ? { background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" } : { background: "var(--surface-2)", color: "var(--text-muted)" }}
+              /* Yuva sekmesi küçük seçim: dolu turuncu + beyaz (2026-09-29 Samet: seçim B). */
+              style={s === slot ? { background: "var(--brand-fill)", color: "var(--on-brand)" } : { background: "var(--surface-2)", color: "var(--text-muted)" }}
             >
               {t(SLOT_LABEL[s])}
             </button>

@@ -396,7 +396,8 @@ export function CourseOnboarding({
                           role="radio"
                           aria-checked={pickedLevel === l.id}
                           onClick={() => setPickedLevel(l.id)}
-                          className={`option px-2 py-3 text-strong ${pickedLevel === l.id ? "option-picked" : ""}`}
+                          /* Seviye küçük seçim: dolu turuncu çip (2026-09-29 Samet: seçim B). */
+                          className={`option px-2 py-3 text-strong ${pickedLevel === l.id ? "chip-active" : ""}`}
                         >
                           {l.id}
                         </button>

@@ -188,7 +188,7 @@ function Head({ title, href, action }: { title: string; href: string; action: st
 function Tile({ href, icon, value, label }: { href: string; icon: React.ReactNode; value?: string; label: string }) {
   return (
     <Link href={href} prefetch={false} className="card pressable flex min-h-24 flex-col gap-1.5 p-3">
-      <span className="flex h-7 w-7 items-center justify-center rounded-tile" style={{ background: "color-mix(in srgb, var(--color-brand-500) 12%, transparent)", color: "var(--color-brand)" }}>{icon}</span>
+      <span className="flex h-7 w-7 items-center justify-center rounded-tile" style={{ background: "var(--brand-tint)", color: "var(--color-brand)" }}>{icon}</span>
       {value !== undefined ? <span className="text-h3">{value}</span> : null}
       <span className="muted line-clamp-2 text-caption">{label}</span>
     </Link>

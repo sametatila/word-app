@@ -115,7 +115,7 @@ export function ResultHero({
     ? undefined
     : quiet
       ? {
-          background: pill.tone === "ok" ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" : pill.tone === "bad" ? "color-mix(in srgb, var(--color-rose-500) 14%, transparent)" : "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
+          background: pill.tone === "ok" ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" : pill.tone === "bad" ? "color-mix(in srgb, var(--color-rose-500) 14%, transparent)" : "var(--brand-tint)",
           color: pill.tone === "ok" ? "var(--color-mint)" : pill.tone === "bad" ? "var(--color-rose)" : "var(--color-brand)",
         }
       : { background: "rgb(255 255 255 / 0.22)", color: "#fff" };

@@ -62,7 +62,7 @@ function ActionTile({ icon: Icon, label, tint, onPress, disabled }: { icon: Icon
   const { colors } = useTheme();
   return (
     <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={{ alignItems: "center", gap: spacing.xs }}>
-      <View style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint) }}>
+      <View style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint, colors) }}>
         <Icon color={onTint(tint, colors)} size={20} />
       </View>
       <Text variant="micro" color={colors.textMuted}>{label}</Text>

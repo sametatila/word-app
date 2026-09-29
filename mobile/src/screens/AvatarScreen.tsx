@@ -180,8 +180,9 @@ export function AvatarScreen() {
           {slots.map((s) => {
             const on = s === slot;
             return (
-              <PressableScale key={s} accessibilityRole="tab" accessibilityState={{ selected: on }} onPress={() => { setSlot(s); setHint(null); }} style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: on ? colors.primarySoft : colors.surface2 }}>
-                <Text variant="bodyStrong" color={on ? colors.onPrimarySoft : colors.textMuted}>{t(SLOT_LABEL[s])}</Text>
+              <PressableScale key={s} accessibilityRole="tab" accessibilityState={{ selected: on }} onPress={() => { setSlot(s); setHint(null); }} style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: on ? colors.primary : colors.surface2 }}>
+                {/* Yuva sekmesi küçük seçim: dolu turuncu + beyaz (2026-09-29 Samet: seçim B). */}
+                <Text variant="bodyStrong" color={on ? colors.onPrimary : colors.textMuted}>{t(SLOT_LABEL[s])}</Text>
               </PressableScale>
             );
           })}

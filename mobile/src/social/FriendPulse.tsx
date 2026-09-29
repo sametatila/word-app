@@ -57,7 +57,7 @@ export function FriendPulse() {
   const invited = q.status === "invited";
   return (
     <PressableScale onPress={() => goFriends(nav, "friends")} style={{ marginBottom: spacing.xl }}>
-      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: invited ? colors.info : colors.primary, borderWidth: 1 }}>
+      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: colors.hairline, borderWidth: 1 }}>
         <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={44} ring={invited ? colors.info : colors.primary} />
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{invited ? (q.invitedByMe ? t("friendpulse.waiting") : t("friendpulse.invited_you", { name: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })) : t("friendpulse.shared", { name: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })}</Text>

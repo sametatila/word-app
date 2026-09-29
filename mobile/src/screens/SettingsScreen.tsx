@@ -34,7 +34,7 @@ import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, resolveVoice, type VoiceId } from "../lib/voices";
 import { coursesForNative, offeredNativeLangs, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
-import { useTheme, spacing, radii, cardShadow, type Palette, type ThemeMode, ds } from "../theme";
+import { useTheme, spacing, radii, type Palette, type ThemeMode, ds } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
 import { soundEnabled, setSoundEnabled } from "../lib/sfx";
 import { hapticsEnabled, setHapticsEnabled, vibrate } from "../lib/haptics";
@@ -516,8 +516,11 @@ export function SettingsScreen() {
               {THEME_OPTIONS.map((o) => {
                 const active = mode === o.key;
                 return (
-                  <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: o.key === mode }} onPress={() => { if (o.key !== mode) track("setting_change", o.key === "dark" ? 1 : o.key === "light" ? 0 : 2, "theme"); setMode(o.key); }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? cardShadow(colors, 4) : {}) }}>
-                    <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{t(o.label)}</Text>
+                  <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: o.key === mode }} onPress={() => { if (o.key !== mode) track("setting_change", o.key === "dark" ? 1 : o.key === "light" ? 0 : 2, "theme"); setMode(o.key); }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.primary : "transparent" }}>
+                    {/* Üçlü seçicinin seçili parçası DOLU turuncu + beyaz, gölgesiz
+                        (2026-09-29 Samet: seçim B, dolu turuncu çip; web
+                        `theme-toggle` aynı). */}
+                    <Text variant="bodyStrong" color={active ? colors.onPrimary : colors.textMuted}>{t(o.label)}</Text>
                   </PressableScale>
                 );
               })}

@@ -205,7 +205,6 @@ const BORDER_ALLOW = new Map([
     ["borderWidth: 6, borderColor: tile.swatch.from", "renk örneği: iki renkli daire (çizim)"],
   ]],
   ["mobile/src/ui/ListenButton.tsx", [["borderWidth: 3", "dönen yükleme halkası"]]],
-  ["mobile/src/ui/Slider.tsx", [["borderWidth: 3", "kaydırıcı başparmağının yüzey halkası (web `.range` 3 px)"]]],
   ["mobile/src/ui/Avatar.tsx", [
     ["borderWidth: ring ? 2 : 0", "avatar halkası (web `avatar.tsx` 0 0 0 2px)"],
     ["borderWidth: 5", "avatar sahnesinin beyaz dairesi (web 0 0 0 5px)"],
@@ -233,7 +232,6 @@ const BORDER_ALLOW = new Map([
   ["src/components/mock-exam-player.tsx", [["border-l-2", "sol vurgu şeridi (alıntı çizgisi), çerçeve değil"]]],
   ["src/components/skills/writing-player.tsx", [["border-l-4", "sol vurgu şeridi (model metin), çerçeve değil"]]],
   ["src/app/globals.css", [
-    ["border: 3px solid var(--surface)", "kaydırıcı başparmağının yüzey halkası (mobil `Slider` 3)"],
     ["outline: 2px solid var(--color-brand)", "odak halkası (`.range:focus-visible`)"],
     ["box-shadow: 0 0 0 3px color-mix", "odak halkası (`.input:focus-visible`)"],
   ]],

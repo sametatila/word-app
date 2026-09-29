@@ -1374,7 +1374,8 @@ function ConversationPlayerBody({
                     onClick={() => void toggleHandsFree()}
                     aria-pressed={handsFree}
                     className="btn btn-ghost flex shrink-0 items-center gap-1.5 px-2 py-1 text-caption"
-                    style={{ color: handsFree ? "var(--color-brand)" : undefined }}
+                    /* Açıkken dolu turuncu + beyaz (2026-09-29 Samet: seçim B; mobil `ConversationScreen` aynı). */
+                    style={handsFree ? { background: "var(--brand-fill)", color: "var(--on-brand)" } : undefined}
                   >
                     <MicIcon size={13} />
                     {t(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
@@ -1666,7 +1667,8 @@ function ConversationPlayerBody({
                     onClick={() => void toggleHandsFree()}
                     aria-pressed={handsFree}
                     className="btn btn-ghost flex items-center gap-1.5 px-2 py-1 text-caption"
-                    style={{ color: handsFree ? "var(--color-brand)" : undefined }}
+                    /* Açıkken dolu turuncu + beyaz (2026-09-29 Samet: seçim B; mobil `ConversationScreen` aynı). */
+                    style={handsFree ? { background: "var(--brand-fill)", color: "var(--on-brand)" } : undefined}
                   >
                     <MicIcon size={13} />
                     {t(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}

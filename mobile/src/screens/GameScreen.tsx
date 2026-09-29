@@ -639,7 +639,7 @@ function GameRound() {
   const playWords = playRound?.words?.length ? playRound.words : playRound?.word ? [playRound.word] : [];
   const chipTone = playWords.every((w) => w.isNew) ? colors.primary : colors.streak;
   const newChip = playWords.length ? (
-    <View style={{ backgroundColor: soft(chipTone), borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 3 }}>
+    <View style={{ backgroundColor: soft(chipTone, colors), borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 3 }}>
       <Text variant="micro" color={onTint(chipTone, colors)}>{t(playWords.every((w) => w.isNew) ? "session.chip_new" : "session.chip_review").toLocaleUpperCase(dateLocale())}</Text>
     </View>
   ) : null;

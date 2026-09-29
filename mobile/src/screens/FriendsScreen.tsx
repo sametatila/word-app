@@ -14,7 +14,7 @@ import { Text } from "../ui/Text";
 import { AppHeader } from "../ui/AppHeader";
 import { PressableScale } from "../ui/PressableScale";
 import { ShareIcon, HandshakeIcon, UserPlusIcon } from "../ui/icons";
-import { useTheme, spacing, radii, cardShadow } from "../theme";
+import { useTheme, spacing, radii } from "../theme";
 import { Chip, EmptyCard, ErrorText, Pill } from "../social/common";
 import { FriendRows, FriendCardSkeleton } from "../social/FriendRows";
 import { FriendsBoard } from "../social/FriendsBoard";
@@ -118,9 +118,12 @@ export function FriendsScreen() {
             const on = tab === it.key;
             const n = it.key === "friends" ? incoming : 0;
             return (
-              <PressableScale key={it.key} onPress={() => setTab(it.key)} accessibilityRole="tab" accessibilityState={{ selected: on }} style={[{ flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingVertical: 9, borderRadius: radii.md, backgroundColor: on ? colors.surface : "transparent" }, on ? cardShadow(colors, 4) : null]}>
-                <Text variant="bodyStrong" color={on ? colors.text : colors.textMuted} numberOfLines={1}>{tx(it.label)}</Text>
-                {n > 0 ? <View style={{ minWidth: 18, height: 18, borderRadius: 9, paddingHorizontal: 5, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }}><Text variant="micro" color={colors.onPrimary} style={{ fontWeight: "800" }}>{n > 9 ? "9+" : n}</Text></View> : null}
+              <PressableScale key={it.key} onPress={() => setTab(it.key)} accessibilityRole="tab" accessibilityState={{ selected: on }} style={[{ flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingVertical: 9, borderRadius: radii.md, backgroundColor: on ? colors.primary : "transparent" }]}>
+                {/* Seçili sekme DOLU turuncu + beyaz, gölgesiz (2026-09-29 Samet:
+                    seçim B, dolu turuncu çip; web `friends-hub` aynı). Rozet
+                    turuncunun üstünde beyaz zemine döner. */}
+                <Text variant="bodyStrong" color={on ? colors.onPrimary : colors.textMuted} numberOfLines={1}>{tx(it.label)}</Text>
+                {n > 0 ? <View style={{ minWidth: 18, height: 18, borderRadius: 9, paddingHorizontal: 5, alignItems: "center", justifyContent: "center", backgroundColor: on ? colors.onPrimary : colors.primary }}><Text variant="micro" color={on ? colors.primaryOnWhite : colors.onPrimary} style={{ fontWeight: "800" }}>{n > 9 ? "9+" : n}</Text></View> : null}
               </PressableScale>
             );
           })}

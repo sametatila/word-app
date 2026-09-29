@@ -19107,7 +19107,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "iskelet baslik=" + (/<SkeletonLine variant="h3" width="72%"/.test(m) ? "h3" : "FARKLI"),
       "iskelet cubuk=" + ((m.match(/<SkeletonBar height=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "iskelet cerceve=" + (/borderWidth: 1, borderColor: colors\.hairline/.test(m) ? "1" : "YOK"),
-      "kart cercevesi=" + (/borderColor: invited \? colors\.info : colors\.primary, borderWidth: 1 /.test(m) ? "1 durumlu" : "YOK"),
+      /* 2026-09-29 Samet: secim B. Kart kenari NOTR (hairline); durum rengi
+         yalniz avatar halkasinda. */
+      "kart cercevesi=" + (/borderColor: colors\.hairline, borderWidth: 1 /.test(m) ? "1 notr" : /borderColor: invited \?/.test(m) ? "DURUMLU" : "YOK"),
       "halka=" + (/ring=\{invited \? colors\.info : colors\.primary\}/.test(m) ? "durumlu" : "SABIT"),
       "baslik=" + (/<Text variant="h3" numberOfLines=\{1\}>/.test(m) ? "h3" : "FARKLI"),
       "cubuk boy=" + barBoy,
@@ -19121,7 +19123,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "iskelet baslik=" + (/<SkeletonLine variant="h3" width="72%"/.test(w) ? "h3" : "FARKLI"),
       "iskelet cubuk=" + ((w.match(/<SkeletonBar height=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "iskelet cerceve=" + (/borderWidth: 1, borderColor: "var\(--hairline\)"/.test(w) ? "1" : "YOK"),
-      "kart cercevesi=" + (/borderWidth: 1, borderColor: invited \? "var\(--color-sky\)" : "var\(--color-brand\)"/.test(w) ? "1 durumlu" : "YOK"),
+      "kart cercevesi=" + (/style=\{\{ borderWidth: 1, borderColor: "var\(--hairline\)" \}\}[^<]*>\s*<Avatar/.test(w) || (w.match(/borderWidth: 1, borderColor: "var\(--hairline\)"/g) ?? []).length >= 2 ? "1 notr" : /borderColor: invited \?/.test(w) ? "DURUMLU" : "YOK"),
       "halka=" + (/ring=\{invited \? "var\(--color-sky\)" : "var\(--color-brand\)"\}/.test(w) ? "durumlu" : "SABIT"),
       "baslik=" + (/<p className="truncate text-h3">/.test(w) ? "h3" : "FARKLI"),
       "cubuk boy=" + ((w.match(/style=\{\{ height: (\d+), background: "var\(--surface-2\)" \}\}/) ?? [])[1] ?? "YOK"),
@@ -19929,7 +19931,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "ortak-gorev": /className="tint-soft rounded-full px-2 py-0\.5 text-micro"/,
     "lig-sonucu": /className="tint-soft flex h-11 w-11 shrink-0/,
     yapabildiklerim: /color-mix\(in srgb, var\(--color-mint-500\) 14%, transparent\)/,
-    tepki: /color-mix\(in srgb, \$\{REACTION_FILL\[k\]\} 14%, transparent\)/,
+    /* 2026-09-29 Samet: secim B, dolu turuncu cip. Tepki zemini artik
+       `softFill` yardimcisindan (`reaction-icons`): %14/500, markada koyu
+       temada notr `--brand-tint`. */
+    tepki: /softFill\(REACTION_FILL\[k\]\)/,
   };
   const kullanim = DONUSEN.map(([ad, yol]) => ad + "=" + (ISARET[ad].test(silT(read(yol))) ? "500/%14" : "TAKMA AD"));
   sameList(
@@ -19964,6 +19969,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   for (const f of gezT("src")) {
     const src = silT(read(f));
+    /* 2026-09-29 Samet: secim B. Marka washlerinin cogu ortak jetona
+       (`--brand-tint`) tasindi; yurume sayaci onlari da sayiyor. */
+    washSayi += (src.match(/var\(--brand-tint\)/g) ?? []).length;
     for (const m of src.matchAll(/color-mix\(in srgb, (var\(--color-[a-z]+\)|\$\{[\w.[\]]+\}) (\d+)%[^)]*\)/g)) {
       washSayi++;
       if (Number(m[2]) < 12) continue;
@@ -19986,9 +19994,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "tepkinin secili hali dolu",
     [
-      "cip=" + (/backgroundColor: mine \? tone : soft\(tone\)/.test(mobTepki) ? "dolu/yumusak" : "FARKLI"),
+      "cip=" + (/backgroundColor: mine \? tone : soft\(tone(?:, colors)?\)/.test(mobTepki) ? "dolu/yumusak" : "FARKLI"),
       "cip murekkebi=" + (/color=\{mine \? colors\.onFill : onTint\(tone, colors\)\}/.test(mobTepki) ? "onFill" : "FARKLI"),
-      "secici=" + ((mobTepki.match(/backgroundColor: mine \? tone : soft\(tone\) \}/g) ?? []).length >= 1 ? "dolu/yumusak" : "FARKLI"),
+      "secici=" + ((mobTepki.match(/backgroundColor: mine \? tone : soft\(tone(?:, colors)?\) \}/g) ?? []).length >= 1 ? "dolu/yumusak" : "FARKLI"),
     ],
     [
       /* Olcu CIPIN KENDI kalibina bakiyor: yalniz `color: "var(--on-fill)"`
@@ -19996,7 +20004,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          eski tinte cevirmek kapiyi yesil biraktı. */
       "cip=" + (/\? \{ background: REACTION_TONE\[k\], color: "var\(--on-fill\)", borderColor: REACTION_TONE\[k\] \}/.test(webTepki) ? "dolu/yumusak" : "FARKLI"),
       "cip murekkebi=" + (/background: REACTION_TONE\[k\], color: "var\(--on-fill\)"/.test(webTepki) ? "onFill" : "FARKLI"),
-      "secici=" + (/\{ background: REACTION_TONE\[k\], color: "var\(--on-fill\)" \} : \{ background: `color-mix\(in srgb, \$\{REACTION_FILL\[k\]\} 14%/.test(webTepki) ? "dolu/yumusak" : "FARKLI"),
+      "secici=" + (/\{ background: REACTION_TONE\[k\], color: "var\(--on-fill\)" \} : \{ background: softFill\(REACTION_FILL\[k\]\)/.test(webTepki) ? "dolu/yumusak" : "FARKLI"),
     ],
     "mobil",
     "web",
@@ -20995,19 +21003,80 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "web",
   );
 
-  /* (5) Secili sikkin dolgusu: Android marka tinti + marka murekkep; webde
-     zemin yoktu. Jeton adlari seciliyle ayni aileyi kullaniyor. */
+  /* (5) Secili sikkin dolgusu. 2026-09-29 Samet: secim B, dolu turuncu cip.
+     "Secildi ama kontrol edilmedi" BUYUK KARO dilinde: dolgu YOK (yuzey),
+     1 px marka kenari, marka YAZI tonu (Android `primaryText`, web
+     `--color-brand`). Eskiden iki tarafta marka tintiydi ve koyu temada
+     kahverengi blok ciziyordu. Olcu iki platformu ayni kaliba bagliyor. */
   const secBlok = (css.match(/\.option-picked \{([^}]*)\}/) ?? ["", ""])[1];
+  const mobSec = (mobChoice.match(/else if \(isPicked\) \{([^}]*)\}/) ?? ["", ""])[1];
   sameList(
     "secili sik dolgusu",
     [
-      "zemin=" + (/background-color:\s*var\(--brand-soft\)/.test(secBlok) ? "marka tinti" : "YOK"),
-      "murekkep=" + (/color:\s*var\(--on-brand-soft\)/.test(secBlok) ? "marka" : "YOK"),
+      "zemin=" + (/bg = /.test(mobSec) ? "DOLGU" : "yuzey"),
+      "kenar=" + (/border = colors\.primary\b/.test(mobSec) ? "marka" : "YOK"),
+      "murekkep=" + (/fg = colors\.primaryText\b/.test(mobSec) ? "marka yazi" : "YOK"),
+      "halka=yok",
+    ],
+    [
+      "zemin=" + (/background-color:\s*var\(--surface\)/.test(secBlok) ? "yuzey" : "DOLGU"),
+      "kenar=" + (/border-color:\s*var\(--color-brand-500\)/.test(secBlok) ? "marka" : "YOK"),
+      "murekkep=" + (/color:\s*var\(--color-brand\)/.test(secBlok) ? "marka yazi" : "YOK"),
       "halka=" + (/box-shadow/.test(secBlok) ? "VAR" : "yok"),
     ],
-    ["zemin=marka tinti", "murekkep=marka", "halka=yok"],
+    "mobil",
+    "web",
+  );
+}
+
+/* --------- 351a. SECIM B: DOLU TURUNCU CIP, KOYUDA NOTR YUMUSAK ZEMIN
+ *
+ * 2026-09-29 Samet: secim B, dolu turuncu cip. Secili hal her yerde
+ * "seftali dolgu + turuncu kenar + turuncu yazi"ydi ve koyu temada
+ * kahverengi bloklar ciziyordu. Karar:
+ *   - KUCUK SECIM (cip, segment, seviye/dil/saat): DOLU marka turuncusu +
+ *     beyaz yazi (mobil `ui/Chip` `select`, web `.chip-active`).
+ *   - BUYUK KARO: dolgu yok, 1 px turuncu kenar, turuncu yazi tonu
+ *     (bkz. "secili sik dolgusu").
+ *   - KOYU TEMADA yumusak marka zemini (`primarySoft` / `--brand-soft`,
+ *     `--brand-tint`) turuncu alfa DEGIL, notr `surface2`.
+ * Olcu mutlak: iki platformda da ayni cumle. */
+{
+  const silB = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const renk = silB(read("mobile/src/theme/colors.ts"));
+  const koyu = (renk.match(/export const dark: Palette = \{([\s\S]*?)\n\};/) ?? ["", ""])[1];
+  const koyuSoft = (koyu.match(/primarySoft: ("[^"]*"|[\w.[\]]+)/) ?? [])[1] ?? "YOK";
+  const koyuS2 = (koyu.match(/surface2: ("[^"]*")/) ?? [])[1] ?? "?";
+  const css = silB(read("src/app/globals.css"));
+  const koyuBlok = (() => {
+    const i = css.indexOf("--brand-soft: var(--surface-2)");
+    return i;
+  })();
+  const turuncuAlfa = /--brand-soft:\s*color-mix\(in srgb, var\(--color-brand/.test(css) || /--brand-tint:\s*var\(--color-brand/.test(css);
+  const cip = silB(read("mobile/src/ui/Chip.tsx"));
+  const cipSec = cip.slice(cip.lastIndexOf("return ("));
+  const aktif = (css.match(/\n {2}\.chip-active \{([^}]*)\}/) ?? ["", ""])[1];
+  sameList(
+    "secim B: koyu yumusak zemin ve secili cip",
+    [
+      "koyu primarySoft=" + (koyuSoft === koyuS2 ? "surface2" : /rgba\(248/.test(koyuSoft) ? "TURUNCU ALFA" : koyuSoft),
+      "cip zemini=" + (/backgroundColor: active \? colors\.primary : colors\.surface/.test(cipSec) ? "dolu marka" : "BASKA"),
+      "cip yazisi=" + (/color=\{active \? colors\.onPrimary : /.test(cipSec) ? "beyaz" : "BASKA"),
+    ],
+    [
+      "koyu primarySoft=" + (koyuBlok >= 0 && !turuncuAlfa ? "surface2" : "TURUNCU ALFA"),
+      "cip zemini=" + (/background-color: var\(--brand-fill\)/.test(aktif) ? "dolu marka" : "BASKA"),
+      "cip yazisi=" + (/color: var\(--on-brand\)/.test(aktif) ? "beyaz" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+  sameList(
+    "secim B: mutlak",
+    ["koyu primarySoft=" + (koyuSoft === koyuS2 ? "surface2" : "BASKA"), "cip=" + (/backgroundColor: active \? colors\.primary : colors\.surface/.test(cipSec) ? "dolu marka" : "BASKA")],
+    ["koyu primarySoft=surface2", "cip=dolu marka"],
     "bulunan",
-    "beklenen (android)",
+    "beklenen",
   );
 }
 
@@ -21228,12 +21297,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "mobil",
     "web",
   );
-  /* Secili zemin iki tarafta da ORTAK jetondan: Android `primarySoft`,
-     webde onun degerini tasiyan `--brand-soft`. */
+  /* Secili satir DOLGUSUZ: yuzey + marka kenari (2026-09-29 Samet: secim B,
+     dolu turuncu cip; radyo satiri buyuk karo dilinde). Eskiden iki tarafta
+     marka tintiydi. */
   sameList(
     "rapor satirinin secili zemini",
-    ["zemin=" + (/backgroundColor: active \? colors\.primarySoft/.test(mobRapor) ? "marka tinti" : "BASKA")],
-    ["zemin=" + (/background: active \? "var\(--brand-soft\)"/.test(webRapor) ? "marka tinti" : "BASKA")],
+    ["zemin=" + (/backgroundColor: colors\.surface \}/.test(mobRapor) && !/active \? colors\.primarySoft/.test(mobRapor) ? "yuzey" : "BASKA") + " kenar=" + (/borderColor: active \? colors\.primary : colors\.border/.test(mobRapor) ? "marka" : "BASKA")],
+    ["zemin=" + (/background: "var\(--surface\)"/.test(webRapor) && !/active \? "var\(--brand-soft\)"/.test(webRapor) ? "yuzey" : "BASKA") + " kenar=" + (/1px solid \$\{active \? "var\(--color-brand-500\)" : "var\(--border\)"\}/.test(webRapor) ? "marka" : "BASKA")],
     "mobil",
     "web",
   );
@@ -21279,16 +21349,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
   sameList(
     "gorunum ayarinin secili bolumu",
+    /* 2026-09-29 Samet: secim B, dolu turuncu cip. Secili bolum DOLU marka
+       turuncusu + beyaz yazi, golgesiz (eskiden yuzey + golge + marka yazi). */
     [
-      "zemin=" + (/backgroundColor: active \? colors\.surface/.test(mobSegment) ? "surface" : "BASKA"),
-      "golge=" + (/cardShadow\(colors, \d+\)/.test(mobSegment) ? "var" : "YOK"),
-      "murekkep=" + (/color=\{active \? colors\.primaryText/.test(mobSegment) ? "marka" : "BASKA"),
+      "zemin=" + (/backgroundColor: active \? colors\.primary\b/.test(mobSegment) ? "marka dolgusu" : "BASKA"),
+      "golge=" + (/cardShadow\(colors, \d+\)/.test(mobSegment) ? "VAR" : "yok"),
+      "murekkep=" + (/color=\{active \? colors\.onPrimary\b/.test(mobSegment) ? "onPrimary" : "BASKA"),
       "bolum yaricapi=" + (/borderRadius: radii\.sm/.test(mobSegment) ? "sm" : "BASKA"),
     ],
     [
-      "zemin=" + (/background: "var\(--surface\)"/.test(webAyar) ? "surface" : "BASKA"),
-      "golge=" + (/boxShadow: "var\(--shadow-soft-sm\)"/.test(webAyar) ? "var" : "YOK"),
-      "murekkep=" + (/color: "var\(--color-brand\)"/.test(webAyar) ? "marka" : "BASKA"),
+      "zemin=" + (/background: "var\(--brand-fill\)"/.test(webAyar) ? "marka dolgusu" : "BASKA"),
+      "golge=" + (/boxShadow: "var\(--shadow-soft-sm\)"/.test(webAyar) ? "VAR" : "yok"),
+      "murekkep=" + (/color: "var\(--on-brand\)"/.test(webAyar) ? "onPrimary" : "BASKA"),
       "bolum yaricapi=" + (/borderRadius: "var\(--radius-chip\)"/.test(webAyar) ? "sm" : "BASKA"),
     ],
     "mobil",
@@ -21670,12 +21742,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     mob.push(
       ad + ": arma=" + ((ms.match(/<Avatar[^>]*size=\{(\d+)\}/) ?? [])[1] ?? "YOK") +
         " sira=" + ((ms.match(/width: (\d+), alignItems: "center" \}\}><Text variant="(\w+)"/) ?? []).slice(1).join("/") || (/width: 30, alignItems: "center" \}\}>\s*<Text variant="h3"/.test(ms) ? "30/h3" : "YOK")) +
-        " ben=" + (/isMe \? colors\.primarySoft/.test(ms) ? "marka tinti" : "BASKA"),
+        /* 2026-09-29 Samet: secim B. "Ben" satiri yuzey + marka kenari;
+           seftali/kahve zemin yok. */
+        " ben=" + (/isMe \? colors\.primarySoft/.test(ms) ? "MARKA TINTI" : /isMe \? colors\.primary : colors\.hairline/.test(ms) ? "yuzey+marka kenar" : "BASKA"),
     );
     web.push(
       ad + ": arma=" + ((ws.match(/<Avatar[^>]*size=\{(\d+)\}/) ?? [])[1] ?? "YOK") +
         " sira=" + (/w-\[30px\] shrink-0 text-center text-h3/.test(ws) ? "30/h3" : "BASKA") +
-        " ben=" + (/isMe \? "var\(--brand-soft\)"/.test(ws) ? "marka tinti" : "BASKA"),
+        " ben=" + (/isMe \? "var\(--brand-soft\)"/.test(ws) ? "MARKA TINTI" : /isMe \? "var\(--color-brand-500\)" : /.test(ws) ? "yuzey+marka kenar" : "BASKA"),
     );
   }
   sameList("siralama satirinin olculeri", mob, web, "mobil", "web");
