@@ -57,7 +57,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         : null;
 
   return (
-    <div className="min-h-dvh" style={{ background: "var(--bg)" }}>
+    /* `data-selectable`: panelde metin seçimi ve kopyalama serbest (globals.css). */
+    <div data-selectable className="min-h-dvh" style={{ background: "var(--bg)" }}>
       <header className="z-30 border-b sm:sticky sm:top-0" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
         <div className="flex h-14 items-center gap-3 px-4 lg:gap-5 lg:px-5">
           <Link href="/admin" className="flex shrink-0 items-baseline gap-1.5">

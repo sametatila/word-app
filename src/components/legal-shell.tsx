@@ -61,6 +61,9 @@ export function DocHeader({ locale = "tr" }: { locale?: LegalLocale }) {
   const c = CHROME[locale];
   return (
     <>
+      {/* Belge sayfası işareti: metin seçilebilir ve kopyalanabilir (globals.css
+          `body:has([data-selectable])`). Her belge sayfası bu başlıkla açılıyor. */}
+      <span data-selectable hidden />
       <Link href="/" className="mb-8 flex items-center gap-2">
         <LogoMark size={32} />
         <span className="text-strong">Lernomi</span>

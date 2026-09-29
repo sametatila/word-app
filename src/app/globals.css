@@ -1404,12 +1404,24 @@
 }
 
 /* Uygulama hissiyatı: arayüzde metin seçimi ve uzun basma menüsü olmasın,
-   yalnızca girdi alanlarında seçim serbest kalsın. */
+   yalnızca girdi alanlarında seçim serbest kalsın.
+
+   İSTİSNA: yönetim paneli ve belge sayfaları (2026-09-29, Samet: "admin ve
+   adminden ulaşılan her sayfa için bu kural kesinlikle olmamalı"). Panelde
+   e-posta, kimlik, hata yığını, sipariş numarası kopyalanıyor; yasal metinler
+   (gizlilik, şartlar, künye, lisans) alıntılanabilmeli. Kökü `data-selectable`
+   taşıyan sayfada GÖVDE seçilebilir: kural gövdede, çünkü panelin gövdeye
+   taşınan pencereleri (`ConfirmDialog` portalı) kökün dışında kalıyor. */
 @layer base {
   body {
     -webkit-user-select: none;
     user-select: none;
     -webkit-touch-callout: none;
+  }
+  body:has([data-selectable]) {
+    -webkit-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: default;
   }
   input,
   textarea,
