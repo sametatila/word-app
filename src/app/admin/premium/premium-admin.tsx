@@ -140,7 +140,7 @@ export function PremiumAdmin({
           bitince yerine oturuyor, alttaki hesap ve kod bölümlerinin üstüne
           binmiyor (eskiden bütün sayfa boyunca kartların üstünü örtüyordu). */}
       <div className="space-y-5">
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 @4xl:grid-cols-2">
           <Panel title="Ücretsiz katman" hint={<>Kural (2026-09-25): her yüzeyde <b>taban hak</b>; üstüne her dilim, açık hakların hepsi <b>bitirilince VE</b> seri eşiğe varınca açılır — izin verilen = taban + ek hak × k, k = min(⌊en uzun seri ÷ seri adımı⌋, bitirilmiş dilim). Patika Konuşma, Patika Yazma ve Beceriler seviye başına ve <b>ayrı sayaç</b>. 0 yazmak “ücretsizde hiç yok” demek.</>} span>
             <Grid>
               <Num label="Patika Konuşma adımı (seviye başına)" v={cfg.free.conversationsPerLevel} on={(n) => num(["free", "conversationsPerLevel"], n)} />
@@ -177,7 +177,7 @@ export function PremiumAdmin({
             </Grid>
             <div className="mt-3 flex flex-col gap-2">
               {cfg.plans.prices.map((p, i) => (
-                <div key={i} className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                <div key={i} className="grid grid-cols-2 gap-2 @xl:grid-cols-4">
                   <Txt label="Bölge" v={p.region} on={(v) => editPrice(i, { region: v })} />
                   <Txt label="Aylık" v={p.monthly} on={(v) => editPrice(i, { monthly: v })} />
                   <Txt label="Yıllık" v={p.yearly} on={(v) => editPrice(i, { yearly: v })} />
@@ -210,7 +210,7 @@ export function PremiumAdmin({
 
       <CodesSection codes={codes} post={post} busy={busy} />
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid gap-5 @4xl:grid-cols-2">
         <Panel title="Referans (davet)">
           <p className="muted text-caption">
             Burada ayarlanacak bir şey yok. Davetin karşılığı <b>premium süresi değil</b>:

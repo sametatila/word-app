@@ -82,7 +82,7 @@ export function AccountActions({ userId, suspended }: { userId: string; suspende
   return (
     <div className="space-y-3">
       {msg ? <Notice tone={msg.tone}>{msg.text}</Notice> : null}
-      <div className="grid gap-3 lg:grid-cols-3">
+      <div className="grid gap-3 @4xl:grid-cols-3">
         <div className={box} style={boxStyle}>
           <b className="text-strong">Veri dışa aktarma (KVKK / GDPR)</b>
           <p className="muted">Kullanıcının bütün verisi makine okunur JSON olarak. Parola özeti, oturum jetonları ve 2FA sırrı dahil değildir.</p>

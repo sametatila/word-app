@@ -103,7 +103,7 @@ export function AvatarAdmin({ parts, active, defaults, always, perSlot, catalogO
           onChange={setSlot}
           items={SLOTS.map(([k, label]) => [k, `${label} ${count(k)}/${Math.min(perSlot, parts.filter((p) => p.slot === k).length)}`] as const)}
         />
-        <ul className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-3 grid gap-2 @xl:grid-cols-2 @4xl:grid-cols-3">
           {list.map((p) => {
             const checked = on.has(p.id);
             const locked = always.includes(p.id);

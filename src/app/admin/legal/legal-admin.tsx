@@ -298,7 +298,7 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
           <span className="text-caption">Önizleme</span>
         </Checkbox>
       </div>
-      <div className={`mt-2 grid gap-4 ${preview ? "md:grid-cols-2" : ""}`}>
+      <div className={`mt-2 grid gap-4 ${preview ? "@3xl:grid-cols-2" : ""}`}>
         <textarea
           value={cur.body}
           onChange={(e) => patch({ body: e.target.value })}

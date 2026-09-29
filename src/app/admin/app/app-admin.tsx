@@ -91,7 +91,7 @@ export function AppAdmin({
         hint="Build = versionCode. En düşüğün altındaki uygulama açılışta güncelleme ekranında kalır; en sonun altındaki kapatılabilir şerit görür. Yalnız bu özelliği taşıyan build'lerde çalışır; daha eskiler etkilenmez."
         actions={<button type="button" disabled={busy} onClick={() => save(cfg, "Kaydedildi — en geç 5 dakikada uygulamalarda.")} className={BTN.primary}>Kaydet</button>}
       >
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 @xl:grid-cols-2">
           {(["android", "ios"] as const).map((p) => (
             <div key={p} className="space-y-3 rounded-tile border p-4 text-caption" style={{ borderColor: "var(--border)" }}>
               <div className="flex items-center justify-between gap-2">
@@ -139,7 +139,7 @@ export function AppAdmin({
         <div className="mb-3 flex items-center gap-2 text-caption">
           Durum: {cfg.maintenance.enabled ? <Badge tone="bad">BAKIMDA</Badge> : <Badge tone="ok">kapalı</Badge>}
         </div>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 @xl:grid-cols-3">
           {LANGS.map((l) => (
             <Field key={l} label={`${LANG_TR[l]} mesaj`}>
               <input aria-label={`${LANG_TR[l]} bakım mesajı`} value={cfg.maintenance.message[l]} maxLength={400} onChange={(e) => setCfg((c) => ({ ...c, maintenance: { ...c.maintenance, message: { ...c.maintenance.message, [l]: e.target.value } } }))} className={FIELD} style={FIELD_STYLE} />
@@ -212,7 +212,7 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
       <Notice tone="warn" title="Yalnız hizmet duyurusu">
         Bakım, güvenlik, hesabı ya da kullanımı etkileyen önemli değişiklik. Tanıtım, kampanya, indirim ve &quot;geri dön&quot; mesajı gönderilmez (Elektronik Ticaret Kanunu ve App Store 4.5.4 önceden onay istiyor).
       </Notice>
-      <div className="mt-4 grid gap-3 lg:grid-cols-3">
+      <div className="mt-4 grid gap-3 @4xl:grid-cols-3">
         {LANGS.map((l) => (
           <div key={l} className="space-y-2 rounded-tile border p-3" style={{ borderColor: "var(--border)" }}>
             <div className="text-strong">{LANG_TR[l]}</div>
@@ -221,7 +221,7 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
           </div>
         ))}
       </div>
-      <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-3 grid gap-3 @xl:grid-cols-2 @4xl:grid-cols-4">
         <Field label="Açılacak yol">
           <input aria-label="Açılacak yol" value={url} onChange={(e) => setUrl(e.target.value)} className={`${FIELD} font-mono`} style={FIELD_STYLE} />
         </Field>

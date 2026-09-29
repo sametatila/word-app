@@ -185,7 +185,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
         )}
       </Panel>
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid gap-5 @4xl:grid-cols-2">
         <Panel title="En çok engellenen hesaplar" hint="Şikâyet gelmese de bakılacak yer: engellemek şikâyet etmekten kolay.">
           {data.mostBlocked.length ? (
             <div className="space-y-1.5 text-caption">

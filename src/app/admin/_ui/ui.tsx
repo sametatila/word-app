@@ -59,11 +59,22 @@ export function when(iso: string | null | undefined, withTime = true): string {
 }
 
 /**
- * Sayfa gövdesi: bütün yönetim sayfaları aynı genişlikte. Sol çubuğun yanında
- * sola yaslı (ortalanınca geniş ekranda çubukla içerik arasında boşluk açılıyor).
+ * Sayfa gövdesi — YERLEŞİM PLANI.
+ *
+ * Gövde ana sütunun tamamına yayılıyor (sabit 72rem sınırı kalktı). Uzun
+ * satırı kartlar sınırlıyor: geniş ekranda sayfa daha çok SÜTUN açıyor. Gövde bir
+ * KAP (`@container`): içindeki ızgaralar ekranın değil kendi alanının
+ * genişliğine göre sütun seçiyor. Sol çubuk, Gelen işler'in ayrıntı bölmesi ya
+ * da dar pencere yer kapladığında "geniş ekran" varsayımı bozulmuyor.
+ *
+ *   Kap genişliği   PanelGrid        Stats (kart içinde, kartın genişliği)
+ *   < 56rem         1 sütun          2 sütun
+ *   56rem+          2 sütun          kartın genişliğine göre 3-8
+ *   100rem+         3 sütun
+ *   140rem+         4 sütun (2560 px ekran)
  */
 export function AdminPage({ children }: { children: ReactNode }) {
-  return <div className="w-full max-w-6xl space-y-5 px-4 pb-20 pt-5 sm:px-6 lg:px-8">{children}</div>;
+  return <div className="@container w-full space-y-5 px-4 pb-20 pt-5 sm:px-6 lg:px-8">{children}</div>;
 }
 
 export function PageHeader({ title, description, actions, meta, crumb }: {
@@ -94,7 +105,11 @@ export function PageHeader({ title, description, actions, meta, crumb }: {
 
 const panelStyle: CSSProperties = { borderColor: "var(--border)", background: "var(--surface)" };
 
-/** Tek kart biçimi. `span` geniş ızgarada iki sütun kaplar; `flush` iç boşluğu tabloya bırakır. */
+/**
+ * Tek kart biçimi. `span` ızgarada bütün satırı kaplar (tablo, uzun liste);
+ * `flush` iç boşluğu tabloya bırakır. Kart da bir kap: içindeki sayı ızgarası
+ * ve alan: değer listesi kartın kendi genişliğine göre diziliyor.
+ */
 export function Panel({ title, hint, actions, children, span, flush, tone, id }: {
   title?: ReactNode;
   hint?: ReactNode;
@@ -108,7 +123,7 @@ export function Panel({ title, hint, actions, children, span, flush, tone, id }:
   return (
     <section
       id={id}
-      className={`min-w-0 scroll-mt-32 rounded-panel border ${span ? "lg:col-span-2" : ""}`}
+      className={`@container min-w-0 scroll-mt-32 rounded-panel border ${span ? "col-span-full" : ""}`}
       style={tone ? { ...panelStyle, borderColor: TONE[tone] } : panelStyle}
     >
       {title || actions ? (
@@ -125,9 +140,13 @@ export function Panel({ title, hint, actions, children, span, flush, tone, id }:
   );
 }
 
-/** Panel ızgarası: dar ekranda tek, genişte iki sütun. */
+/**
+ * Panel ızgarası: sayfanın genişliğine göre 1-4 sütun (bkz.
+ * `AdminPage`). Kartlar satırda üstten hizalı; kısa kart uzun komşusuna
+ * uzatılmıyor (boş alan yerine sayfa akıyor).
+ */
 export function PanelGrid({ children }: { children: ReactNode }) {
-  return <div className="grid gap-5 lg:grid-cols-2">{children}</div>;
+  return <div className="grid items-start gap-5 @4xl:grid-cols-2 @[100rem]:grid-cols-3 @[140rem]:grid-cols-4">{children}</div>;
 }
 
 export function Stat({ label, value, sub, tone, spark }: { label: string; value: ReactNode; sub?: ReactNode; tone?: Tone; spark?: ReactNode }) {
@@ -141,10 +160,22 @@ export function Stat({ label, value, sub, tone, spark }: { label: string; value:
   );
 }
 
-/** Sayı ızgarası. `cols` geniş ekrandaki sütun sayısı. */
+/**
+ * Sayı ızgarası. `cols` yer olunca tek satıra sığan sayı; ara adımlar son
+ * satırda tek kutu kalmayacak biçimde seçili (7 → 4+3, 6 → 3+3). Eşikler
+ * KARTIN genişliği (`@container`), ekranınki değil.
+ */
 export function Stats({ children, cols = 4 }: { children: ReactNode; cols?: 2 | 3 | 4 | 5 | 6 | 7 | 8 }) {
-  const lg = { 2: "sm:grid-cols-2", 3: "sm:grid-cols-3", 4: "sm:grid-cols-4", 5: "sm:grid-cols-3 lg:grid-cols-5", 6: "sm:grid-cols-3 lg:grid-cols-6", 7: "sm:grid-cols-4 lg:grid-cols-7", 8: "sm:grid-cols-4 lg:grid-cols-8" }[cols];
-  return <div className={`grid grid-cols-2 gap-x-4 gap-y-4 ${lg}`}>{children}</div>;
+  const steps = {
+    2: "",
+    3: "@md:grid-cols-3",
+    4: "@xl:grid-cols-4",
+    5: "@lg:grid-cols-3 @3xl:grid-cols-5",
+    6: "@lg:grid-cols-3 @3xl:grid-cols-6",
+    7: "@xl:grid-cols-4 @5xl:grid-cols-7",
+    8: "@xl:grid-cols-4 @5xl:grid-cols-8",
+  }[cols];
+  return <div className={`grid grid-cols-2 gap-x-6 gap-y-4 ${steps}`}>{children}</div>;
 }
 
 /**
@@ -213,7 +244,7 @@ export { BarList, Funnel, SeriesChart, Sparkline, type BarItem, type FunnelStep,
 export function KeyValue({ data }: { data: Record<string, string | number | boolean> | null }) {
   if (!data) return <Empty>Kayıt yok.</Empty>;
   return (
-    <dl className="grid grid-cols-1 gap-x-6 text-caption sm:grid-cols-2">
+    <dl className="grid grid-cols-1 gap-x-6 text-caption @xl:grid-cols-2 @5xl:grid-cols-3">
       {Object.entries(data).map(([k, v]) => (
         <div key={k} className="flex justify-between gap-3 border-b py-1.5" style={{ borderColor: "var(--hairline)" }}>
           <dt className="muted">{k}</dt>

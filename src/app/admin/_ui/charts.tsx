@@ -189,11 +189,11 @@ export function BarList({ items, max, unit, empty = "Henüz veri yok.", share = 
       <div className="space-y-2">
         {shown.map((it, i) => (
           <div key={`${it.label}-${i}`} className="flex items-center gap-3 text-caption">
-            <span className="w-2/5 min-w-0 shrink-0 break-words sm:w-44">{it.label}</span>
+            <span className="w-2/5 min-w-0 shrink-0 break-words @xl:w-44">{it.label}</span>
             <span className="relative h-2.5 min-w-10 flex-1 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
               <span className="absolute inset-y-0 left-0 rounded-full" style={{ width: `${Math.max(it.value > 0 ? 2 : 0, Math.min(100, (it.value / top) * 100))}%`, background: it.tone ? TONE[it.tone] : "var(--color-brand)" }} />
             </span>
-            <span className="muted w-28 shrink-0 text-right tabular-nums sm:w-40">
+            <span className="muted w-28 shrink-0 text-right tabular-nums @xl:w-40">
               {it.right ?? fmt(it.value) + (unit ?? "")}
               {share && total ? ` · %${Math.round((it.value / total) * 100)}` : ""}
             </span>

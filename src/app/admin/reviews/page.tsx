@@ -51,7 +51,7 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
         ) : vitals.error ? (
           <Notice tone="bad">{vitals.error}</Notice>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 @xl:grid-cols-2">
             <VitalsCell label="Fark edilen çökme" series={vitals.crash} threshold={CRASH_THRESHOLD} />
             <VitalsCell label="Fark edilen donma (ANR)" series={vitals.anr} threshold={ANR_THRESHOLD} />
           </div>

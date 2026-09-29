@@ -48,7 +48,7 @@ export function QuizAdmin({ data }: { data: QuizAdminData }) {
       {/* 1. Bu hafta canlı olan paketler */}
       <Panel title="Bu hafta canlı" hint="Takvim haftasından; herkes aynı hafta aynı paketi görüyor.">
         {data.live.length ? (
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="grid gap-2 @xl:grid-cols-2">
             {data.live.map((l) => (
               <div key={l.quizId} className="flex items-center justify-between gap-3 rounded-tile px-3 py-2" style={{ background: "var(--surface-2)" }}>
                 <div className="min-w-0">
@@ -82,7 +82,7 @@ export function QuizAdmin({ data }: { data: QuizAdminData }) {
         />
       </Panel>
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid gap-5 @4xl:grid-cols-2">
         {/* 3. Yetkinlik kırılımı */}
         <Panel title="Yetkinliklere göre" hint="Tüm bitmiş denemelerin toplamı. Sürekli düşük kalan bir blok ya içerikte zor ya da öğretimde eksik demektir.">
           <BarList

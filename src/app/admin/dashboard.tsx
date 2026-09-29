@@ -241,16 +241,27 @@ export function StatusSection({ days, data: d, coverage: c, openReports, trends,
       })}
     </ul>
   );
+  /*
+    YERLEŞİM: geniş sayfada iki bant. Üstte "şu an" (solda uyarılar, sağda geri
+    dönüş bekleyenler), ortada haftalık karşılaştırma tam satır, altta "genel
+    resim" (sayılar ve etkinlik grafiği yan yana). Dar sayfada hepsi alt alta,
+    aynı sırayla.
+  */
   return (
     <div className="space-y-5">
-      {/* UYARILAR — Telegram'a giden motorla AYNI liste (`_data` `loadAlerts`).
-          Pano eskiden kendi kurallarıyla ayrı bir liste kuruyordu ve yeni hata
-          grubu, çökme eşiği, düşük puanlı yorum, bekleyen şikâyet orada yoktu. */}
-      {critical.length ? <Notice tone="bad" title={`${critical.length} kritik sorun`}>{list(critical)}</Notice> : null}
-      {warning.length ? <Notice tone="warn" title={`${warning.length} uyarı`}>{list(warning)}</Notice> : null}
-      {!alerts.length ? <Notice tone="ok">Sorun yok: uyarı motorunun bütün kontrolleri temiz (sunucu, yedek, zamanlanmış işler, hatalar, mağaza, yapay zekâ, şikâyetler).</Notice> : null}
-      <ResponsesPanel items={responses} />
+      <div className="grid items-start gap-5 @5xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+        {/* UYARILAR — Telegram'a giden motorla AYNI liste (`_data` `loadAlerts`).
+            Pano eskiden kendi kurallarıyla ayrı bir liste kuruyordu ve yeni hata
+            grubu, çökme eşiği, düşük puanlı yorum, bekleyen şikâyet orada yoktu. */}
+        <div className="min-w-0 space-y-5">
+          {critical.length ? <Notice tone="bad" title={`${critical.length} kritik sorun`}>{list(critical)}</Notice> : null}
+          {warning.length ? <Notice tone="warn" title={`${warning.length} uyarı`}>{list(warning)}</Notice> : null}
+          {!alerts.length ? <Notice tone="ok">Sorun yok: uyarı motorunun bütün kontrolleri temiz (sunucu, yedek, zamanlanmış işler, hatalar, mağaza, yapay zekâ, şikâyetler).</Notice> : null}
+        </div>
+        <ResponsesPanel items={responses} />
+      </div>
       <TrendRow trends={trends} />
+      <div className="grid items-start gap-5 @6xl:grid-cols-2">
           <Panel title="Kullanıcı ve kullanım" hint={`Tüm zamanlar; aksi yazılıysa son ${days} gün.`}>
             <Stats cols={6}>
               <Stat label="Toplam kullanıcı" value={fmt(k.totalUsers)} sub={`+${k.new1d} bugün · +${k.new7d} 7g · +${k.new30d} 30g`} />
@@ -280,6 +291,7 @@ export function StatusSection({ days, data: d, coverage: c, openReports, trends,
               ]}
             />
           </Panel>
+      </div>
     </div>
   );
 }
@@ -642,7 +654,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
         </Panel>
 
         <Panel id="deploy" title="Uygulama ve deploy" hint={`Aktif renk: ${s.app.activeColor} · canlı commit ${s.app.liveCommit || "?"}`}>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-2 @xl:grid-cols-3">
             {s.app.instances.map((i) => (
               <div key={i.name} className="flex items-center gap-2 rounded-tile px-2.5 py-2 text-caption" style={{ background: "var(--surface-2)" }}>
                 <Dot tone={i.up ? "ok" : "off"} />
