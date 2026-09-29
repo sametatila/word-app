@@ -3,7 +3,7 @@ import { and, count, desc, eq, gt, gte, inArray, isNotNull, sql } from "drizzle-
 import { db } from "@/lib/db";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
-import { supportsGame, targetLangOf, type TargetLang } from "@/lib/courses";
+import { selectableCourses, supportsGame, targetLangOf, type TargetLang } from "@/lib/courses";
 import { GROUP_LABEL_KEYS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import { onAchievementsUnlocked } from "@/lib/social/hooks";
 import type { IconMeaning } from "@/components/icons.remix.generated";
@@ -638,7 +638,16 @@ export async function achievementBoard(
     Toplam (`total`) bu satırların sayısı: başka kursta kazanılmış rozet hem
     paya hem paydaya giriyor, yani kursunu bitiren yine %100'e ulaşıyor.
   */
-  const rows: AchievementRow[] = ACHIEVEMENTS.filter((def) => inCourse(def, course) || ownedMap.has(def.id)).map((def) => {
+  /*
+    ULAŞILAMAYAN KURS ROZETİ GİZLİ (2026-09-29, Samet): `courses` ölçüsü
+    (ör. "iki dil") için kullanıcının anadilinde seçilebilir en az o kadar
+    kurs olmalı. Zürih Almancası duraklatılınca İngilizce ve Almanca anadilli
+    kullanıcının tek kursu kaldı; rozet onlara kilitli bir hedef olarak
+    görünüyordu. Kazanılmışsa yine görünür (emek silinmez).
+  */
+  const courseCount = selectableCourses(lang, course).length;
+  const reachable = (def: AchievementDef) => def.metric !== "courses" || courseCount >= def.target;
+  const rows: AchievementRow[] = ACHIEVEMENTS.filter((def) => (inCourse(def, course) && reachable(def)) || ownedMap.has(def.id)).map((def) => {
     const target = targetFor(def, course);
     const done = Math.min(target, metrics[def.metric] ?? 0);
     const earned = inCourse(def, course) && (metrics[def.metric] ?? 0) >= target;
