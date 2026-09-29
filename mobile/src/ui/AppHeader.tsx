@@ -15,11 +15,11 @@ import { InboxBell } from "../social/InboxBell";
 import { useLayout } from "../lib/useLayout";
 
 /**
- * Sekmeler arası ortak üst başlık (Learn / Patika / Beceriler): solda başlık
- * (+ opsiyonel üst satır), sağda seri rozeti + profil avatarı. Böylece kimlik
+ * Sekmeler arası ortak üst başlık (Learn / Patika / Beceriler): solda başlık,
+ * sağda seri rozeti + profil avatarı. Böylece kimlik
  * (seri, profil) her sekmede sürer. Avatar profile götürür.
  */
-export function AppHeader({ title, subtitle }: { title: string; subtitle?: string }) {
+export function AppHeader({ title }: { title: string }) {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
@@ -29,9 +29,10 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
       <View style={{ flex: 1, minWidth: 0, marginRight: spacing.sm }}>
-        {/* Alt satır her zaman ayrılır (boşsa da) ki başlık yüksekliği ve sağdaki
-            seri/profil konumu Learn, Patika ve Beceriler'de birebir aynı hizada olsun. */}
-        <Text variant="caption" color={colors.textMuted}>{subtitle ?? " "}</Text>
+        {/* TEK SATIR, ÜST KÜNYE YOK (2026-09-29, Samet): başlığın üstündeki
+            küçük satır (selamlama, açıklama; boşken de yer ayrılıyordu) ekranı
+            iki katmanlı gösteriyor, tasarımı bozuyordu; kaldırıldı. Başlık da
+            ~%20 küçüldü: display 32 → h1 26, dar ekranda h1 26 → h2 20. */}
         {/* BAŞLIK BAŞLIK OLARAK OKUNUYOR — TalkBack'in "başlıklara göre gez"
             kipi mobilde hiçbir şey bulamıyordu; web'de aynı başlık `<h1>`
             (bkz. parity 259). */}
@@ -41,7 +42,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
             kademe küçülüyor, gerekirse sığdırmak için %80'e kadar iniyor. */}
         <Text
           accessibilityRole="header"
-          variant={compactWidth ? "h1" : "display"}
+          variant={compactWidth ? "h2" : "h1"}
           numberOfLines={compactWidth ? 1 : undefined}
           adjustsFontSizeToFit={compactWidth}
           minimumFontScale={0.8}

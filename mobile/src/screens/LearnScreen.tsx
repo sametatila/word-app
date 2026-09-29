@@ -65,7 +65,6 @@ export function LearnScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
   const { me, loading: meLoading } = useMe();
-  const greeting = user?.name ? t("learn.greeting_named", { name: user.name.split(" ")[0] }) : t("learn.greeting");
   // Deneme Sınavları yalnız sınav kataloğu OLAN kursta. İngilizce kursunun
   // karşılığı yok (bkz. data/exams.ts); orada kart açık kalsaydı o kursta hiç
   // olmayan bir şeyin kapısı olurdu. Katalog var ama liste henüz boşsa kart
@@ -82,7 +81,7 @@ export function LearnScreen() {
 
   return (
     <Screen>
-      <AppHeader title={t("learn.learn", { lang: targetLangName() })} subtitle={greeting} />
+      <AppHeader title={t("learn.learn", { lang: targetLangName() })} />
 
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
       <PressableScale onPress={() => nav.navigate("Game")}>

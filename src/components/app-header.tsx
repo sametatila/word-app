@@ -19,44 +19,37 @@ import { courseName } from "@/lib/courses";
  *
  * Sonuç kabuktan bir katman siliyor — çubuk + sayfa başlığı yerine tek satır.
  *
- * ALT SATIR BOŞKEN DE YER AYIRIYOR (`subtitle ?? " "`). Sebep hizalama: Öğren
- * selamlama yazıyor, Beceriler açıklama yazıyor, Patika hiçbir şey yazmıyor.
- * Ayrılmasaydı sekme değiştikçe başlık ve sağdaki seri/profil dikeyde
- * zıplardı.
+ * TEK SATIR, ÜST KÜNYE YOK (2026-09-29, Samet): başlığın üstündeki küçük
+ * satır (selamlama, açıklama; boşken de yer ayrılıyordu) ekranı iki katmanlı
+ * gösteriyor, tasarımı bozuyordu; kaldırıldı. Başlık da ~%20 küçüldü:
+ * display 32 → h1 26. Mobil `AppHeader` ile aynı.
  */
 /**
- * Öğren sekmesinin başlığı — "Almanca öğren" + selamlama.
+ * Öğren sekmesinin başlığı — "Almanca öğren".
  *
- * Üç şey de dile bağlı: kursun ADI (mobil `targetLangName()`), başlığın kalıbı
- * ("{lang} öğren") ve selamlama. Kurs adı sabit yazılıydı, yani arayüz
- * İngilizceye alındığında bile "Almanca öğren" diyordu.
+ * İki şey de dile bağlı: kursun ADI (mobil `targetLangName()`) ve başlığın
+ * kalıbı ("{lang} öğren"). Kurs adı sabit yazılıydı, yani arayüz İngilizceye
+ * alındığında bile "Almanca öğren" diyordu.
  */
 export function LearnHeader() {
-  const { name, course } = useShell();
+  const { course } = useShell();
   const t = useT();
   const lang = useLang();
-  const first = name?.trim().split(" ")[0];
-  return (
-    <AppHeader
-      title={t("learn.learn", { lang: courseName(course, lang) })}
-      subtitle={first ? t("learn.greeting_named", { name: first }) : t("learn.greeting")}
-    />
-  );
+  return <AppHeader title={t("learn.learn", { lang: courseName(course, lang) })} />;
 }
 
-export function AppHeader({ title, subtitle }: { title: string; subtitle?: string }) {
+export function AppHeader({ title }: { title: string }) {
   const { streak, userId, name, avatar } = useShell();
   const t = useT();
   return (
     <header className="mb-4 flex items-center justify-between gap-3">
       <div className="min-w-0 flex-1">
-        <p className="muted truncate text-caption">{subtitle ?? " "}</p>
         {/* SARILIYOR, KESİLMİYOR. `truncate` 320-375 piksellik telefonda
             başlığı "Almanca ö…" ya da seri rozeti görününce "Almanca…"ya
             indiriyordu — ekranın adı, yani en önemli sözcük, üç noktaya
             gidiyordu. Sağdaki düğmeler sabit genişlikte; başlık onlara yer
             bırakıp ikinci satıra iniyor. */}
-        <h1 className="text-display text-balance break-words">{title}</h1>
+        <h1 className="text-h1 text-balance break-words">{title}</h1>
       </div>
       <div className="flex shrink-0 items-center gap-2">
         {/*

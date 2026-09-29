@@ -155,10 +155,9 @@ export default async function SkillsPage({
        diziliyordu; artık bir seferde tek becerinin listesi görünüyor ve geniş
        ekranda yan yana konacak ikinci bir liste yok. */
     <div className="mx-auto w-full max-w-3xl">
-      {/* Ortak sekme başlığı: 32 punto başlık + açıklama alt satırı, sağda
-          seri/gelen kutusu/profil. Mobilde `AppHeader` aynı iki satırı
-          taşıyor (`SkillsScreen`). */}
-      <AppHeader title={t("skills.skills")} subtitle={t("skills.aciklama")} />
+      {/* Ortak sekme başlığı: tek satır başlık, sağda seri/gelen kutusu/profil
+          (mobil `SkillsScreen` aynı `AppHeader`). */}
+      <AppHeader title={t("skills.skills")} />
 
       <SkillBrowser
         level={level}

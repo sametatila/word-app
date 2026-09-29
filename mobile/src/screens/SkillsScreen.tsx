@@ -186,7 +186,7 @@ export function SkillsScreen() {
 
   return (
     <Screen>
-      <AppHeader title={t("skills.skills")} subtitle={t("skills.aciklama")} />
+      <AppHeader title={t("skills.skills")} />
 
       {/* SEVİYE SEKMELERİ İSKELETTEN AYRI. Liste paketle birlikte iniyor ama
           sekmeler seviye bilinir bilinmez gerçek: aksi hâlde B1'e basan biri
