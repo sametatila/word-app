@@ -91,7 +91,8 @@ function steps(course: string): Step[] {
       subtitle: t("onboarding.languages_available_now"),
       // Kurs kayıt defterinden türüyor (lib/courses.ts). Anadil elenir (kimse
       // kendi dilini "öğrenilecek dil" olarak seçmez) ve duraklatılmış lehçe
-      // kursu ilk açılışta sunulmaz — Ayarlar'dan hâlâ seçilebilir.
+      // kursu ilk açılışta sunulmaz — Ayarlar'da da yalnız mevcut öğrencisine
+      // görünür (`selectableCourses`).
       options: onboardingCoursesFor(lang).map((c) => ({ key: c.id, label: c.label[lang] })),
     },
     {
@@ -172,7 +173,9 @@ export function OnboardingScreen() {
   async function finish() {
     // Yedek artık sabit "de" değil: anadili Almanca olan kullanıcıda o kurs
     // hiç listelenmiyor, sabit yedek onu görünmeyen bir kursa düşürürdü.
-    const available = coursesForNative(currentLang());
+    // Yedek de ekranın listesinden: duraklatılmış kurs (Züritüütsch) yeni
+    // kullanıcıya hiçbir yoldan düşmesin — sunucu da artık reddediyor.
+    const available = onboardingCoursesFor(currentLang());
     const course = choices.course ?? available[0]?.id ?? DEFAULT_COURSE_ID;
     const goal = choices.goal ? parseInt(choices.goal, 10) : undefined;
     const levelChoice = choices.level;

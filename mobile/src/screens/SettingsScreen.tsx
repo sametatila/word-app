@@ -33,7 +33,7 @@ import { VoicePicker, VoicePickerSkeleton } from "../ui/VoicePicker";
 import { SkeletonBar, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, resolveVoice, type VoiceId } from "../lib/voices";
-import { coursesForNative, offeredNativeLangs, NATIVE_LANGS, type NativeLang } from "../lib/courses";
+import { coursesForNative, offeredNativeLangs, selectableCourses, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
 import { useTheme, spacing, radii, type Palette, type ThemeMode, ds } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
@@ -74,11 +74,11 @@ const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
  * Zürih lehçesi) yalnız zaten o kurstaki kullanıcıya görünür. Herkese açık
  * olsaydı buradan seçilebiliyor ve Yol ekranı "henüz konuşma yolu yok" boş
  * durumuna düşüyordu; o kurstaki kullanıcıdan ise seçili satırı saklamak
- * hiçbir seçeneği işaretsiz bırakırdı.
+ * hiçbir seçeneği işaretsiz bırakırdı. Kural `lib/courses` `selectableCourses`ta
+ * (web ayarları ve sunucu kapısı da oraya bakıyor).
  */
 function courseOptions(lang: NativeLang, current: string): { key: string; label: string; sub: string }[] {
-  return coursesForNative(lang)
-    .filter((c) => c.offeredToNewUsers || c.id === current)
+  return selectableCourses(lang, current)
     .map((c) => ({ key: c.id, label: c.label[lang], sub: c.sub[lang] }));
 }
 

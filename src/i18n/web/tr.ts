@@ -203,7 +203,7 @@ export const trWeb: Record<string, string> = {
   "ach.days100.title": "100 gün",
   "ach.days100.hint": "100 farklı gün çalış",
   "ach.bilingual.title": "İki kurs",
-  "ach.bilingual.hint": "Hem Almanca hem Zürihçe kursunda çalış",
+  "ach.bilingual.hint": "İki ayrı dil kursunda çalış",
   "ach.quests20.title": "Günlük görevler: 20 gün",
   "ach.quests20.hint": "20 gün, günün üç görevini de bitir",
   /*

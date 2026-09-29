@@ -12,7 +12,7 @@ import { Btn, PasswordRowsSkeleton, SessionRowSkeleton, SettingRowSlot, SignInMe
 import type { SettingsSection } from "@/components/profile-form";
 import { useLang, useT } from "@/lib/i18n/client";
 import { LANG_LABEL } from "@/lib/i18n/dict";
-import { courseName, courseSub, coursesForNative, offeredNativeLangs } from "@/lib/courses";
+import { courseName, courseSub, coursesForNative, offeredNativeLangs, selectableCourses } from "@/lib/courses";
 import { voicesFor } from "@/lib/tts/voices";
 import { canVibrate } from "@/lib/fx";
 import { USERNAME_CHANGE_COOLDOWN_DAYS } from "@/lib/social/username";
@@ -179,7 +179,7 @@ function SectionBody({ section }: { section: SettingsPanel }) {
         <Group>
           <Row label={label(t("settings.language_to_learn"))}>
             <div className="grid grid-cols-2 gap-2">
-              {coursesForNative(lang).map((c) => (
+              {selectableCourses(lang, course).map((c) => (
                 <div key={c.id} className="option px-3 py-3 text-left">
                   <Words className="block text-strong" text={courseName(c.id, lang)} />
                   <Words className="muted block text-caption" text={courseSub(c.id, lang)} />

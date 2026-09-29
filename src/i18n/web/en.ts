@@ -175,7 +175,7 @@ export const enWeb: Record<string, string> = {
   "ach.days100.title": "100 days",
   "ach.days100.hint": "Study on 100 different days",
   "ach.bilingual.title": "Two courses",
-  "ach.bilingual.hint": "Study both the German and the Zurich German course",
+  "ach.bilingual.hint": "Study in two different language courses",
   "ach.quests20.title": "Daily quests: 20 days",
   "ach.quests20.hint": "Finish all three daily quests on 20 days",
   /* Yetkinlik/gelişim — bkz. tr.ts notu. */

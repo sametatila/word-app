@@ -87,7 +87,9 @@ export type Course = {
    * "hangi dili öğrenmek istersin" sorusuna cevap olarak sunmak yanıltıcı.
    * Ama `enabled`'ı kapatmak mevcut Zürih kullanıcılarını kurssuz bırakır ve
    * sunucu onların profilini reddeder — o yüzden kurs açık kalıyor, yalnız
-   * onboarding listesinden düşüyor. Ayarlar'dan hâlâ seçilebilir.
+   * seçim listelerinden düşüyor. DURAKLATILMIŞ = YALNIZ MEVCUT ÖĞRENCİ:
+   * onboarding'de hiç, Ayarlar'da yalnız zaten o kurstaki kullanıcıya
+   * görünür (`selectableCourses`); sunucu da başkasının geçişini reddeder.
    */
   offeredToNewUsers: boolean;
 };
@@ -119,7 +121,7 @@ export const COURSES: Course[] = [
     },
     hasArticles: true,
     enabled: true,
-    // Duraklatılmış lehçe kursu — ilk açılışta sunulmuyor (bkz. offeredToNewUsers).
+    // Duraklatılmış lehçe kursu — yalnız mevcut öğrenciye açık (bkz. offeredToNewUsers, selectableCourses).
     offeredToNewUsers: false,
   },
   {
@@ -227,6 +229,24 @@ export function offeredNativeLangs(): NativeLang[] {
 /** İlk açılışta sunulan kurslar — duraklatılmış/lehçe kursları elenir. */
 export function onboardingCoursesFor(lang: NativeLang): Course[] {
   return coursesForNative(lang).filter((c) => c.offeredToNewUsers);
+}
+
+/**
+ * Ayarlarda SEÇİLEBİLEN kurslar — ve sunucunun kurs değişikliği kapısı.
+ *
+ * Duraklatılmış kurs (`offeredToNewUsers: false`, bugün Züritüütsch) YALNIZ
+ * zaten o kurstaki kullanıcıya görünür ve kabul edilir: öğrencisi kendi
+ * kursunu görmeye ve kullanmaya devam ediyor, başka kurstaki kimse ona
+ * geçemiyor. Kurstan ayrılan öğrenci geri dönemez; kurs yeniden açılırsa
+ * `offeredToNewUsers: true` hepsini birlikte açar.
+ *
+ * Web ayarlarındaki liste herkese `coursesForNative` gösteriyordu ve
+ * "Zürih Almancası" her Türkçe kullanıcıya seçenek olarak çıkıyordu
+ * (2026-09-29); mobil aynı kuralı `SettingsScreen` içinde satır içinde
+ * yazıyordu. Gövde iki platformda birebir aynı (`check:parity` 1); web kopyası `src/lib/courses.ts`.
+ */
+export function selectableCourses(lang: NativeLang, current: string | null | undefined): Course[] {
+  return coursesForNative(lang).filter((c) => c.offeredToNewUsers || c.id === current);
 }
 
 /** Kursun konuşma yerel kodu (TTS/STT). */

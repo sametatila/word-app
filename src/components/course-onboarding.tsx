@@ -145,7 +145,8 @@ export function CourseOnboarding({
       subtitle: t("onboarding.languages_available_now"),
       // Kurs kayıt defterinden türüyor (lib/courses). Anadil elenir (kimse
       // kendi dilini "öğrenilecek dil" olarak seçmez) ve duraklatılmış lehçe
-      // kursu ilk açılışta sunulmaz — Ayarlar'dan hâlâ seçilebilir.
+      // kursu ilk açılışta sunulmaz — Ayarlar'da da yalnız mevcut öğrencisine
+      // görünür (`selectableCourses`).
       options: onboardingCoursesFor(lang).map((c) => ({
         key: c.id,
         label: courseName(c.id, lang),

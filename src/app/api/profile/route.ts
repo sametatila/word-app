@@ -3,7 +3,7 @@ import { displayNameAllowed } from "@/lib/moderation";
 import { parseAvatar, serializeAvatar } from "@/lib/avatar-config";
 import { avatarPartIds, keepParts, stripLockedParts } from "@/lib/avatar-unlocks";
 import { activeAvatarIds, avatarUnlockKeys, avatarUnlockMap, ownedAvatarItemIds } from "@/lib/avatar-items";
-import { acceptsCourse, acceptsNativeLang, acceptsPair, coursesForNative, nativeOf } from "@/lib/courses";
+import { acceptsCourse, acceptsNativeLang, acceptsPair, coursesForNative, nativeOf, selectableCourses } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -182,6 +182,14 @@ export async function POST(req: Request) {
     prevNative = current?.nativeLang;
     const native = nativeOf(patch.nativeLang ?? current?.nativeLang);
     const course = String(patch.course ?? current?.course ?? "de");
+    /* DURAKLATILMIŞ KURS YALNIZ MEVCUT ÖĞRENCİYE (2026-09-29). Züritüütsch
+       bütün listelerden kalktı ama uç, `course: "gsw-zh"` gönderen HERKESİ
+       o kursa alıyordu. Kapı ekranlarla aynı işlev: kayıtlı kursu zaten
+       gsw-zh olan kabul, başka kurstan geçiş 400. Aynı kursu yeniden yazmak
+       (ses değişikliğiyle birlikte gelen `course`) geçerli kalıyor. */
+    if (patch.course && patch.course !== current?.course && !selectableCourses(native, current?.course).some((c) => c.id === patch.course)) {
+      return NextResponse.json({ error: "course_unavailable" }, { status: 400 });
+    }
     if (!acceptsPair(native, course)) {
       if (patch.course) return NextResponse.json({ error: "pair_invalid" }, { status: 400 });
       const next = coursesForNative(native)[0]?.id;

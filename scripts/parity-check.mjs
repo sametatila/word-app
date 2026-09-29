@@ -252,6 +252,79 @@ console.log("\n" + C.b + "1. KURS KAYIT DEFTERI" + C.off);
     if (diff.length) fail('kurs "' + id + '"', diff);
     else pass('kurs "' + id + '"');
   }
+
+  /* Ayarlarda seçilebilen kurslar: duraklatılmış kurs (offeredToNewUsers
+     false) yalnız mevcut öğrencisine. Web ayarları herkese `coursesForNative`
+     gösteriyordu ve her Türkçe kullanıcı Züritüütsch'e geçebiliyordu
+     (2026-09-29); mobil kuralı ekranda satır içinde yazıyordu. Gövde iki
+     tarafta birebir aynı olmalı: sunucu kapısı (`/api/profile`) web
+     kopyasına bakıyor, mobil fazladan kurs gösterirse kullanıcı 400 alır. */
+  const secilebilir = (src) => {
+    const g = src.match(/export function selectableCourses\([^)]*\)[^{]*\{(.*?)\n\}/s);
+    return [g ? g[1].replace(/\s+/g, " ").trim() : "selectableCourses YOK"];
+  };
+  sameList("secilebilir kurslar (selectableCourses)", secilebilir(read("mobile/src/lib/courses.ts")), secilebilir(read("src/lib/courses.ts")));
+}
+
+/* duraklatilmis kurs sunulan diye anilmaz */
+
+console.log("\n" + C.b + "1b. DURAKLATILMIS KURS SUNULMUYOR" + C.off);
+{
+  /* Züritüütsch (gsw-zh) duraklatıldı ve hiçbir arayüzden seçilemiyor, ama
+     metinler onu sunulan bir kurs gibi anmaya devam ediyordu (başarım ipucu
+     "Hem Almanca hem Zürihçe kursunda çalış", 2026-09-29). Ölçü kayıt
+     defterinden türüyor: `offeredToNewUsers: false` kursların ADLARI (üç
+     dildeki etiket + alt satırın ilk parçası) kullanıcıya dönük metinlerde
+     geçmemeli. Taranan: i18n sözlükleri (kursun kendi tanıtım anahtarı
+     `descKey` hariç: mevcut öğrencinin kurs kaydı), tanıtım sayfası
+     (yorumlar hariç) ve mağaza vitrin kaynakları. "duraklat" geçen satır
+     bilinçli bir not sayılıyor. Hukuk metinleri BİLEREK dışarıda: onları
+     değiştirmek LEGAL_VERSION artışı ve yeniden onay istiyor, karar ayrı.
+     Kurs yeniden açılırsa (`offeredToNewUsers: true`) ölçü kendiliğinden
+     susar. */
+  const web = read("src/lib/courses.ts");
+  const start = web.indexOf("export const COURSES");
+  const bloklar = [...web.slice(start).matchAll(/\{\s*\n\s*id: "([\w-]+)",(.*?)\n {2}\},/gs)];
+  const durgun = bloklar.filter((b) => /offeredToNewUsers:\s*false/.test(b[2]));
+  const adlar = new Set();
+  const izinli = new Set();
+  for (const b of durgun) {
+    const label = b[2].match(/label:\s*\{(.*?)\}/s);
+    if (label) for (const m of label[1].matchAll(/"([^"]+)"/g)) adlar.add(m[1]);
+    const sub = b[2].match(/sub:\s*\{(.*?)\}/s);
+    if (sub) for (const m of sub[1].matchAll(/"([^"·]+?)\s*·/g)) adlar.add(m[1].trim());
+    const dk = b[2].match(/descKey:\s*"([^"]+)"/);
+    if (dk) izinli.add(dk[1]);
+  }
+  const bulgu = [];
+  const ara = (dosya, satirlar) => {
+    satirlar.forEach((satir, i) => {
+      if (/duraklat/i.test(satir)) return;
+      const ad = [...adlar].find((a) => satir.includes(a));
+      if (ad) bulgu.push(dosya + ":" + (i + 1) + '  "' + ad + '"');
+    });
+  };
+  for (const dosya of [
+    "src/i18n/base/tr.ts", "src/i18n/base/en.ts", "src/i18n/base/de.ts",
+    "src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts",
+    "mobile/src/i18n/tr.ts", "mobile/src/i18n/en.ts", "mobile/src/i18n/de.ts",
+  ]) {
+    ara(dosya, read(dosya).split("\n").map((l) => {
+      const k = l.match(/^\s*"([^"]+)":/);
+      return k && !izinli.has(k[1]) ? l : "";
+    }));
+  }
+  // Tanıtım: yorumlar boşaltılıyor ama satır sayısı korunuyor (bulgu satırı doğru kalsın).
+  const tanitim = read("src/content/landing.ts")
+    .replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, ""))
+    .replace(/^\s*\/\/.*$/gm, "");
+  ara("src/content/landing.ts", tanitim.split("\n"));
+  for (const dosya of ["docs/store/README.md", "docs/appstore/listing.md", "docs/play/listing.md"]) {
+    ara(dosya, read(dosya).split("\n"));
+  }
+  const baslik = "duraklatilmis kurs (" + (durgun.map((b) => b[1]).join(", ") || "yok") + ") sunulan diye anilmiyor";
+  if (bulgu.length) fail(baslik, bulgu);
+  else pass(baslik + " (" + adlar.size + " ad)");
 }
 
 /* oynanabilir oyunlar */

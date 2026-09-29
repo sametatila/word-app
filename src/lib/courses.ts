@@ -74,6 +74,12 @@ export type Course = {
    * öğrencisi için açık kalmalı ama yeni gelene önerilmemeli. Mobil bu
    * ayrımı baştan beri taşıyordu; web'de alan yoktu ve onboarding elle
    * yazılmış bir listeyle Züritüütsch'ü yeni kullanıcıya sunuyordu.
+   *
+   * DURAKLATILMIŞ = YALNIZ MEVCUT ÖĞRENCİ: onboarding'de hiç, Ayarlar'da
+   * yalnız zaten o kurstaki kullanıcıya görünür ve `/api/profile` başka
+   * kurstan gelen geçişi reddeder (`selectableCourses`). Tanıtım, mağaza
+   * metinleri ve sözlükler de onu "sunulan" kurs olarak anmaz
+   * (`check:parity` "duraklatılmış kurs").
    */
   offeredToNewUsers: boolean;
   /**
@@ -118,7 +124,7 @@ export const COURSES: Course[] = [
     },
     descKey: "onb.course_gsw",
     enabled: true,
-    offeredToNewUsers: false, // duraklatılmış lehçe kursu — mevcut öğrenciye açık, yeniye sunulmuyor
+    offeredToNewUsers: false, // duraklatılmış lehçe kursu — yalnız mevcut öğrenciye açık (selectableCourses)
   },
   // Kelime, konuşma, beceri ve deneme sınavı katmanları hazır.
   {
@@ -270,6 +276,24 @@ export function offeredNativeLangs(): NativeLang[] {
 /** İlk açılışta sunulanlar — duraklatılmış kurslar elenir. */
 export function onboardingCoursesFor(lang: NativeLang): Course[] {
   return coursesForNative(lang).filter((c) => c.offeredToNewUsers);
+}
+
+/**
+ * Ayarlarda SEÇİLEBİLEN kurslar — ve sunucunun kurs değişikliği kapısı.
+ *
+ * Duraklatılmış kurs (`offeredToNewUsers: false`, bugün Züritüütsch) YALNIZ
+ * zaten o kurstaki kullanıcıya görünür ve kabul edilir: öğrencisi kendi
+ * kursunu görmeye ve kullanmaya devam ediyor, başka kurstaki kimse ona
+ * geçemiyor. Kurstan ayrılan öğrenci geri dönemez; kurs yeniden açılırsa
+ * `offeredToNewUsers: true` hepsini birlikte açar.
+ *
+ * Web ayarlarındaki liste herkese `coursesForNative` gösteriyordu ve
+ * "Zürih Almancası" her Türkçe kullanıcıya seçenek olarak çıkıyordu
+ * (2026-09-29); mobil aynı kuralı `SettingsScreen` içinde satır içinde
+ * yazıyordu. Gövde iki platformda birebir aynı (`check:parity` 1); mobil kopyası `mobile/src/lib/courses.ts`.
+ */
+export function selectableCourses(lang: NativeLang, current: string | null | undefined): Course[] {
+  return coursesForNative(lang).filter((c) => c.offeredToNewUsers || c.id === current);
 }
 
 /**

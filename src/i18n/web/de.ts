@@ -175,7 +175,7 @@ export const deWeb: Record<string, string> = {
   "ach.days100.title": "100 Tage",
   "ach.days100.hint": "Lerne an 100 verschiedenen Tagen",
   "ach.bilingual.title": "Zwei Kurse",
-  "ach.bilingual.hint": "Lerne sowohl im Deutsch- als auch im Züritüütsch-Kurs",
+  "ach.bilingual.hint": "Lerne in zwei verschiedenen Sprachkursen",
   "ach.quests20.title": "Tagesaufgaben: 20 Tage",
   "ach.quests20.hint": "Beende an 20 Tagen alle drei Tagesaufgaben",
   /* Yetkinlik/gelişim — bkz. tr.ts notu. */

@@ -18,7 +18,7 @@ import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
 import { Group, Row, SETTINGS_TITLE, SettingsPanelTitle } from "@/components/settings-section";
 import { LinkedAccounts } from "@/components/account/linked-accounts";
-import { courseName, courseSub, coursesForNative } from "@/lib/courses";
+import { courseName, courseSub, selectableCourses } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
 import { resolveVoice, type VoiceId } from "@/lib/tts/voices";
 import { track } from "@/lib/track";
@@ -49,7 +49,9 @@ type Initial = {
   diye elle yazılıydı ve iki sonucu vardı: İngilizce kursu `enabled: true`
   olmasına ve içeriği bulunmasına rağmen web'den HİÇ seçilemiyordu, ve liste
   anadile göre süzülmediği için anadili Almanca olan kullanıcıya Almanca
-  kursları öneriliyordu. Mobil bunu baştan beri `coursesForNative` ile yapıyor.
+  kursları öneriliyordu. Mobil bunu baştan beri `coursesForNative` ile yapıyor;
+  bugün iki taraf da `selectableCourses`a bakıyor (duraklatılmış kurs yalnız
+  mevcut öğrencisine).
 */
 
 /** Seviyeler — açıklama sözlükten, kod (A1…C1) dilden bağımsız. */
@@ -241,7 +243,11 @@ export function ProfileForm({
                 ÇİZİYOR ama onu da söylemiyordu. İkisi birlikte kapatıldı
                 (bkz. parity 257). */}
             <div role="radiogroup" aria-label={t("settings.language_to_learn")} className="grid grid-cols-2 gap-2">
-              {coursesForNative(lang).map((c) => (
+              {/* Duraklatılmış kurs (Züritüütsch) yalnız zaten o kurstaki
+                  kullanıcıya görünür; herkese `coursesForNative` gösteriliyordu
+                  ve her Türkçe kullanıcı "Zürih Almancası"nı seçebiliyordu.
+                  Mobil `SettingsScreen` `courseOptions` ile aynı kural. */}
+              {selectableCourses(lang, course).map((c) => (
                 <button
                   key={c.id}
                   role="radio"

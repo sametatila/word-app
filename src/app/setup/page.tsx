@@ -9,7 +9,7 @@ import { titleMeta } from "@/lib/page-meta";
 export const dynamic = "force-dynamic";
 
 /**
- * İlk giriş ekranı: kurs (Almanca / Zürih Almancası) ve başlangıç seviyesi.
+ * İlk giriş ekranı: kurs (`onboardingCoursesFor`: Almanca, İngilizce) ve başlangıç seviyesi.
  * Kurs zaten seçilmişse doğrudan uygulamaya geçilir; ayarlar sonradan
  * profilden değiştirilebilir.
  */
