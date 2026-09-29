@@ -53,6 +53,7 @@ import { xpForWager } from "../src/lib/xp";
 import { seededShuffle } from "../src/lib/shuffle";
 import { foldTurkish, parseConfirm } from "../src/lib/voice-intent";
 import { composeReminder, weeklyRivals } from "../src/lib/push";
+import { translate } from "../src/lib/i18n/dict";
 import {
   BOSS_ROUNDS,
   buildModuleBoss,
@@ -61,7 +62,8 @@ import {
   recordBossClear,
 } from "../src/lib/conversations/boss";
 import { buildShareText } from "../src/components/share-result";
-import { achievements, aiUsage, assessments, events, exams, moduleClears, placements } from "../src/lib/db/schema";
+import { achievements, aiUsage, assessments, events, exams, moduleClears, placements, userConsents } from "../src/lib/db/schema";
+import { recordAiConsent } from "../src/lib/ai-consent";
 import { recordAiUsage } from "../src/lib/ai-usage";
 import { track } from "../src/lib/events";
 import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
@@ -125,6 +127,7 @@ async function reset() {
   await db.delete(moduleClears).where(eq(moduleClears.userId, USER));
   await db.delete(events).where(eq(events.userId, USER));
   await db.delete(assessments).where(eq(assessments.userId, USER));
+  await db.delete(userConsents).where(eq(userConsents.userId, USER));
   await db.delete(placements).where(eq(placements.userId, USER));
   await db.delete(exams).where(eq(exams.userId, USER));
   await db.delete(reviews).where(eq(reviews.userId, USER));
@@ -1032,20 +1035,27 @@ async function main() {
   }
 
   console.log("\n11p) Seslendirme sesi kursa bağlı");
-  check("Almanca kursunun varsayılanı Katja",
-    defaultVoice("de") === "de-DE-KatjaNeural");
+  // 4c074bf4d (2026-09-23): Almanca ve İngilizce kursta seçim Katja/Conrad'dan kendi karakterlerimize
+  // (Defne/Aras) geçti; kursun ilk sesi Defne. Zürih'te karakterlerin lehçesi yok, Leni/Jan kalıyor.
+  check("Almanca kursunun varsayılanı Defne",
+    defaultVoice("de") === "de-DE-Defne", `(${defaultVoice("de")})`);
   check("Zürih kursunun varsayılanı Leni",
     defaultVoice("gsw-zh") === "de-CH-LeniNeural");
   check("her kursta iki ses", voicesFor("de").length === 2 && voicesFor("gsw-zh").length === 2);
   check("seçilen ses korunuyor",
-    resolveVoice("de", "de-DE-ConradNeural") === "de-DE-ConradNeural");
+    resolveVoice("de", "de-DE-Aras") === "de-DE-Aras");
+  // Eski Edge tercihi kaybolmuyor, cinsiyetiyle karaktere çevriliyor: Conrad'ı seçmiş olan Aras'ı duyar.
+  check("eski Edge sesi aynı cinsiyetin karakterine çevriliyor",
+    resolveVoice("de", "de-DE-ConradNeural") === "de-DE-Aras" &&
+      resolveVoice("de", "de-DE-KatjaNeural") === "de-DE-Defne",
+    `(${resolveVoice("de", "de-DE-ConradNeural")}, ${resolveVoice("de", "de-DE-KatjaNeural")})`);
   // Asıl korunan davranış: kurs değişince yanlış kursun sesi taşınmamalı.
   // Aksi hâlde Zürih'e geçen biri Dieth metnini Alman aksanıyla dinlerdi.
   check("başka kursun sesi kursun varsayılanına düşüyor",
     resolveVoice("gsw-zh", "de-DE-KatjaNeural") === "de-CH-LeniNeural",
     `(${resolveVoice("gsw-zh", "de-DE-KatjaNeural")})`);
   check("bilinmeyen ses varsayılana düşüyor",
-    resolveVoice("de", "uydurma-ses") === "de-DE-KatjaNeural");
+    resolveVoice("de", "uydurma-ses") === "de-DE-Defne");
   check("ses seçilmemişse varsayılan", resolveVoice("gsw-zh", null) === "de-CH-LeniNeural");
   // Lehçe daha yavaş okunuyor; hız sesin kendisinden türetiliyor, ayrı bir
   // yerde ikinci kez tanımlanmıyor.
@@ -1611,30 +1621,52 @@ async function main() {
   check("ada göre hitap ediliyor", withRival?.body.startsWith("Samet,") === true);
 
   // Yakalanamayacak fark mesaj üretmiyor: hüküm değil hedef olmalı.
+  // Beklenen başlık sözlükten okunuyor: metin 77cc46d65'te (yazım kılavuzu)
+  // "unutulmak üzere" / "Bugün 5 dakika?"dan yeniden yazıldı; burada ölçülen
+  // metin değil SIRA — rakip düşünce borç, borç da yoksa davet mesajı.
   const farBehind = composeReminder({ ...base, streak: 0, dueCount: 30, rival: { name: "Nomi", gap: 5000 } });
-  check("ulaşılamaz fark rakip mesajı üretmiyor", farBehind?.title.includes("unutulmak üzere") === true);
+  check("ulaşılamaz fark rakip mesajı üretmiyor",
+    farBehind?.title === translate("tr", "push.rem_due_title", { n: 30 }), `(${farBehind?.title})`);
   const noGap = composeReminder({ ...base, streak: 0, dueCount: 0, rival: { name: "Nomi", gap: 0 } });
-  check("fark yoksa rakip mesajı yok", noGap?.title === "Bugün 5 dakika?");
+  check("fark yoksa rakip mesajı yok",
+    noGap?.title === translate("tr", "push.rem_idle_title"), `(${noGap?.title})`);
   const noRival = composeReminder({ ...base, streak: 0, dueCount: 12, rival: null });
   check("rakipsizken borç mesajı", noRival?.title.includes("12 kelime") === true);
 
-  // Rakip sorgusu: haftalık tablodan hemen üstteki kişi.
+  // Rakip sorgusu: haftalık tablodan hemen üstteki kişi. Tablo 23471fb6d'den
+  // (haftalık ligler) beri LİG GRUBU: aynı hafta, aynı lig ve grupta olmayan
+  // kimse rakip değil. İkisi elle aynı gruba yazılıyor (başka testlerin
+  // gruplarına karışmasın diye kullanılmayan bir grup numarası).
   await reset();
   await ensureProfile(USER, "E2E");
   await db.delete(profiles).where(eq(profiles.userId, "e2e-onde"));
+  await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-onde"));
+  await db.delete(leagueMembers).where(eq(leagueMembers.userId, "e2e-onde"));
+  await db.delete(profiles).where(eq(profiles.userId, "e2e-baska"));
+  await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-baska"));
+  await db.delete(leagueMembers).where(eq(leagueMembers.userId, "e2e-baska"));
   await ensureProfile("e2e-onde", "Nomi Kaya");
+  await ensureProfile("e2e-baska", "Ece");
   const rDay = "2025-06-11"; // çarşamba
   const rStart = "2025-06-09"; // pazartesi
+  await db.insert(leagueMembers).values([
+    { userId: USER, weekStart: rStart, tier: 0, cohort: 9019 },
+    { userId: "e2e-onde", weekStart: rStart, tier: 0, cohort: 9019 },
+    // Başka grupta, puanı ikisinin ARASINDA: gruplar karışsaydı rakip o olurdu.
+    { userId: "e2e-baska", weekStart: rStart, tier: 0, cohort: 9020 },
+  ]);
   await db.insert(dailyStats).values([
     { userId: USER, day: rStart, reviews: 0, correct: 0, newWords: 0, xp: 300, seconds: 0 },
     { userId: "e2e-onde", day: rStart, reviews: 0, correct: 0, newWords: 0, xp: 460, seconds: 0 },
+    { userId: "e2e-baska", day: rStart, reviews: 0, correct: 0, newWords: 0, xp: 350, seconds: 0 },
     // Geçen haftanın puanı tabloya girmemeli.
     { userId: "e2e-onde", day: "2025-06-02", reviews: 0, correct: 0, newWords: 0, xp: 9000, seconds: 0 },
   ]);
-  const rivalMap = await weeklyRivals([USER, "e2e-onde"], rDay);
+  const rivalMap = await weeklyRivals([USER, "e2e-onde", "e2e-baska"], rDay);
   check("hemen üstteki kişi bulundu", rivalMap.get(USER)?.name === "Nomi", `(${rivalMap.get(USER)?.name})`);
   check("fark doğru", rivalMap.get(USER)?.gap === 160, `(${rivalMap.get(USER)?.gap})`);
   check("zirvedekine rakip verilmiyor", rivalMap.get("e2e-onde") === undefined);
+  check("tek kişilik grupta rakip yok", rivalMap.get("e2e-baska") === undefined);
 
   console.log("\n20) Paylaşılan metin");
   const marks = [true, true, false, true];
@@ -1645,7 +1677,11 @@ async function main() {
   check("adres metinde var", sessionText.includes("https://x.test"));
 
   await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-onde"));
+  await db.delete(leagueMembers).where(eq(leagueMembers.userId, "e2e-onde"));
   await db.delete(profiles).where(eq(profiles.userId, "e2e-onde"));
+  await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-baska"));
+  await db.delete(leagueMembers).where(eq(leagueMembers.userId, "e2e-baska"));
+  await db.delete(profiles).where(eq(profiles.userId, "e2e-baska"));
 
   console.log("\n21) Modül sınavı — patron turu");
   const heads = await moduleVocab("de", "A1", 0);
@@ -2032,8 +2068,12 @@ async function main() {
   const trRoundE = { id: "x", game: "translate" as const, word: { ...trWords[0], isNew: false } as never, sentence: { tr: "t", de: "Ich gehe heute ins Kino.", en: null }, alternatives: [] };
   const eased = easeRound(trRoundE);
   check("basamak inişi: çeviri → cümle diz, aynı cümle", eased.game === "order" && eased.answer.join(" ") === "Ich gehe heute ins Kino" && eased.tail === "." && eased.tokens.length === 5);
-  const clozeE = easeRound({ id: "c", game: "cloze", word: trRoundE.word, sentence: "a _____ b", sentenceTr: null, sentenceEn: null, answer: "x", options: ["x", "y"], mode: "type" });
+  const clozeE = easeRound({ id: "c", game: "cloze", word: trRoundE.word, sentence: "a _____ b", sentenceTr: null, sentenceEn: null, answer: "x", options: ["x", "y", "z", "w"], mode: "type" });
   check("basamak inişi: yazarak tamamla → şıklı", clozeE.game === "cloze" && clozeE.mode === undefined);
+  // 38d3717d2: şıklar dört kişilik tam takım değilse (çekimli cevaba yetecek
+  // çeldirici yok) şıklıya inilmiyor; iki şıklı tur basamak inişi değil, yazı-tura.
+  const clozeThin = easeRound({ id: "c2", game: "cloze", word: trRoundE.word, sentence: "a _____ b", sentenceTr: null, sentenceEn: null, answer: "x", options: ["x", "y"], mode: "type" });
+  check("eksik şık takımında yazarak tamamla kalıyor", clozeThin.game === "cloze" && clozeThin.mode === "type");
   const typE = easeRound({ id: "t", game: "typing", word: trRoundE.word, alternatives: [] });
   check("basamak inişi: yazma → ipuçlu", typE.game === "typing" && typE.assist === true);
   await reset();
@@ -2067,13 +2107,24 @@ async function main() {
   check("arşivde bekleyen kayıt (result null)", listed.length === 1 && listed[0].result === null && listed[0].answer.startsWith("Hallo Anna"));
   const cacheMiss = await assess(USER, qReq, monday);
   check("bekleyen kayıt önbellek sayılmıyor", !(cacheMiss.ok && cacheMiss.cached));
+  // 33fa03ee7: kuyruk yalnız `ai_text` izni geçerli kullanıcının metnini
+  // sağlayıcıya götürüyor; izni olmayanın satırı silinmeden bekliyor. Sayı
+  // FARKLA ölçülüyor: aynı veritabanında başka testlerin satırları olabilir.
+  await db.delete(userConsents).where(eq(userConsents.userId, USER));
   if (!chatConfigured()) {
-    const run = await runAssessQueue(5);
-    check("sağlayıcısız kuyruk dokunulmadan bekliyor", run.pending === 1 && run.done === 0);
+    const before = await runAssessQueue(50);
+    await recordAiConsent(USER, "ai_text", true, "web");
+    const run = await runAssessQueue(50);
+    const [still] = await db.select().from(assessments).where(eq(assessments.id, q1.id!));
+    check("sağlayıcısız kuyruk dokunulmadan bekliyor",
+      run.pending === before.pending + 1 && run.done === 0 && still?.result === null,
+      `(${before.pending} → ${run.pending}, done ${run.done})`);
   } else {
+    await recordAiConsent(USER, "ai_text", true, "web");
     const run = await runAssessQueue(5);
-    check("kuyruk işlendi (sağlayıcı var)", run.done + run.failed + run.pending === 1);
+    check("kuyruk işlendi (sağlayıcı var)", run.done + run.failed + run.pending >= 1);
   }
+  await db.delete(userConsents).where(eq(userConsents.userId, USER));
   check("silme yalnız sahibine", (await deleteAssessment("baskasi", q1.id!)) === false && (await deleteAssessment(USER, q1.id!)) === true);
   check("silindi", (await listAssessments(USER)).length === 0);
 
@@ -2205,7 +2256,10 @@ async function main() {
   check("yazma serisinde geçen hafta 65", lw?.value === 65 && lw.n === 1, JSON.stringify(lw));
   check("kullanım serisinde geçen hafta 80", gr.series.usage.find((p) => p.week === lastMon)?.value === 80);
   check("veri olmayan hafta null (sıfır değil)", gr.series.writing[0].value === null);
-  check("kilometre taşları: ilk sınav", gr.milestones.some((m) => m.text.includes("İlk kullanım sınavı: 80")));
+  // Metin sözlükten: 0f8c20329'da "İlk kullanım sınavı: 80" → "İlk sınav: 80 puan" oldu. Ölçülen,
+  // taşın sınavın PUANI ve GÜNÜYLE düşmesi.
+  const firstExamMs = gr.milestones.find((m) => m.text === translate("tr", "growth.first_exam", { score: 80 }));
+  check("kilometre taşları: ilk sınav", firstExamMs?.at === shiftDay(lastMon, 3), JSON.stringify(gr.milestones));
   const sm = gr.summary;
   check("özet: 50 cevap, yazma 65, kullanım 80, en çok hata artikel", sm.answers === 50 && sm.writing.to === 65 && sm.usage === 80 && sm.topError?.type === "article", sm.text);
   check("özet metni tek satır Türkçe", sm.text.startsWith("Geçen hafta:") && sm.text.includes("kullanım 80"));
