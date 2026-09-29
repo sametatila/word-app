@@ -99,7 +99,8 @@ const KIND_KEY: Record<ImmersionItemKind, string> = {
 };
 
 /**
- * İki panelin açıldığı en küçük EKRAN genişliği.
+ * İki panelin açıldığı en küçük EKRAN genişliği — Tailwind `xl` (1280) ile
+ * AYNI sayı olmalı: düzen CSS'te (`xl:grid`), bu sayı yalnız davranışta.
  *
  * Mobilde ölçüt kabın 900dp'yi geçmesi. Web'de kabuk `max-w-6xl` ve masaüstü
  * kenar çubuğu 240px alıyor; 1280px'lik bir ekranda içeriğe ~910px kalıyor,
@@ -108,7 +109,15 @@ const KIND_KEY: Record<ImmersionItemKind, string> = {
  */
 const TWO_PANE_MIN = 1280;
 
-/** Ekran iki paneli taşıyacak kadar geniş mi — SSR'da her zaman `false`. */
+/**
+ * Ekran iki paneli taşıyacak kadar geniş mi — SSR'da her zaman `false`.
+ *
+ * YALNIZ DAVRANIŞ İÇİN (karo yerinde mi açılsın, bağlantıyla mı). DÜZENİ
+ * BUNA BAĞLAMA: eskiden iki panel bu kancayla çiziliyordu ve sunucu her
+ * zaman tek sütun gönderiyordu; 1280 px üstünde sayfa önce tek sütun
+ * görünüp hidrasyondan sonra iki panele zıplıyordu (iskelet ise baştan iki
+ * panel çiziyordu). Düzen artık `xl:` sınıflarında, ilk karede doğru.
+ */
 function useTwoPane(): boolean {
   const [wide, setWide] = useState(false);
   useEffect(() => {
@@ -133,9 +142,8 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
     Vurgulanan fayans da odur — ana-ayrıntı düzeninde seçimin görünmesi şart,
     yoksa sağdaki panelin hangi karta ait olduğu anlaşılmıyor.
   */
-  const shown = twoPane
-    ? units.find((u) => u.index === selected && !u.locked) ?? (featured && !featured.locked ? featured : null)
-    : null;
+  const shown =
+    units.find((u) => u.index === selected && !u.locked) ?? (featured && !featured.locked ? featured : null);
   const highlight = twoPane ? shown?.index ?? -1 : currentIndex;
 
   const body = (
@@ -216,18 +224,16 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
   return (
     <div className="mx-auto w-full max-w-3xl xl:max-w-none">
       <AppHeader title={t("path.path")} />
-      {twoPane ? (
-        <div className="grid grid-cols-[45fr_55fr] items-start gap-4">
-          <div>{body}</div>
-          {/* Sağ panel kendi yüzeyini taşıyor: sol taraf kartlardan oluşuyor,
-              ayrım olmasa iki sütun tek bir liste gibi okunurdu. */}
-          <div className="card p-4">
-            {shown ? <UnitPane key={shown.index} unit={shown} level={level} embedded quota={quota} /> : null}
-          </div>
+      {/* İki panel CSS'te: sağ panel sunucuda da çiziliyor, `xl` altında
+          gizli (`UnitPane` veri çekmiyor, gizliyken maliyeti yalnız işaretleme). */}
+      <div className="xl:grid xl:grid-cols-[45fr_55fr] xl:items-start xl:gap-4">
+        <div>{body}</div>
+        {/* Sağ panel kendi yüzeyini taşıyor: sol taraf kartlardan oluşuyor,
+            ayrım olmasa iki sütun tek bir liste gibi okunurdu. */}
+        <div className="card hidden p-4 xl:block">
+          {shown ? <UnitPane key={shown.index} unit={shown} level={level} embedded quota={quota} /> : null}
         </div>
-      ) : (
-        body
-      )}
+      </div>
     </div>
   );
 }
