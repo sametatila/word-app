@@ -27,6 +27,14 @@ export type AvatarCatalog = {
   daire?: [number, number, number];
   /** v2: göz kırpma: tabanın üstüne konan iki kare (yarım, kapalı) ve tuvaldeki kutuları [x, y, en, boy] (px). */
   kirpma?: { kutu: [number, number, number, number]; kareler: string[] } | null;
+  /** v3: rastgele bakınma kareleri (ad → dosya) ve ortak kutuları [x, y, en, boy] (px). */
+  bakis?: { kutu: [number, number, number, number]; kareler: Record<string, string> } | null;
+  /** v3: burnun ucu [x, y] (px): sahne burnu görünen alanın dikey ortasına koyar. */
+  burun?: [number, number] | null;
+  /** v3: taban + bütün parçaların birleşik görünür sınırı [x0, y0, x1, y1] (px). */
+  icerik?: [number, number, number, number] | null;
+  /** v3: her dosyanın görünür sınırı (dosya → [x0, y0, x1, y1], px): sahne yalnız takılı parçalara göre ölçekler. */
+  sinirlar?: Record<string, [number, number, number, number]> | null;
   taban: string;
   palet: string[];
   sira: Record<string, number>;
@@ -109,6 +117,78 @@ export function catalogBlink(cat: AvatarCatalog): { frames: string[]; left: numb
   const { w, h } = catalogSize(cat);
   const [x, y, bw, bh] = k.kutu;
   return { frames: k.kareler, left: (x / w) * 100, top: (y / h) * 100, w: (bw / w) * 100, h: (bh / h) * 100 };
+}
+
+/** Göz bakış kareleri ve tuvaldeki yerleri (yüzde); katalogda yoksa null. */
+export function catalogGlance(cat: AvatarCatalog): { frames: Record<string, string>; left: number; top: number; w: number; h: number } | null {
+  const b = cat.bakis;
+  if (!b || !Object.keys(b.kareler).length) return null;
+  const { w, h } = catalogSize(cat);
+  const [x, y, bw, bh] = b.kutu;
+  return { frames: b.kareler, left: (x / w) * 100, top: (y / h) * 100, w: (bw / w) * 100, h: (bh / h) * 100 };
+}
+
+/**
+ * SAHNE YERLEŞİMİ (v3, 2026-09-29): tuvalin sahnedeki boyu ve yeri (px).
+ * Burun görünen alanın (`visibleH`: sahnenin üstüne binen kâğıt hariç)
+ * dikey ortasında. Ölçek TAKILI parçalara göre (`files`: taban + katmanlar,
+ * `sinirlar`dan): burundan en yüksek parçanın tepesine (balon, ampul) ve
+ * yanlara (kanat) kadar her şey sığar; sade avatarda Nomi büyür ama başın
+ * üstünde hep pay kalır (`NOMI_HEADROOM`). Tuvalin alt kenarı görünen alanın
+ * altında kalır (kesik gövde görünmez). Katalog burnu bilmiyorsa (v1, v2)
+ * null: çağıran eski alta hizalı düzene düşer.
+ */
+const NOMI_HEADROOM = 260;
+export function stageFrame(cat: AvatarCatalog, stageW: number, visibleH: number, files?: string[]): { w: number; h: number; left: number; top: number } | null {
+  if (!cat.burun || !stageW || !visibleH) return null;
+  const { w: cw, h: ch } = catalogSize(cat);
+  const [nx, ny] = cat.burun;
+  const boxes = files && cat.sinirlar ? files.map((f) => cat.sinirlar?.[f]).filter((b): b is [number, number, number, number] => !!b) : [];
+  const [x0, y0, x1] = boxes.length
+    ? [Math.min(...boxes.map((b) => b[0])), Math.min(...boxes.map((b) => b[1])), Math.max(...boxes.map((b) => b[2]))]
+    : cat.icerik ?? [0, 0, cw, ch];
+  const half = visibleH / 2, pad = 6;
+  let k = (half - pad) / Math.max(NOMI_HEADROOM, ny - y0);
+  k = Math.min(k, (stageW / 2 - pad) / Math.max(1, nx - x0, x1 - nx));
+  k = Math.max(k, (half + pad) / Math.max(1, ch - ny));
+  return { w: cw * k, h: ch * k, left: stageW / 2 - nx * k, top: half - ny * k };
+}
+
+/**
+ * BEKLEME SENARYOSU (v3): Nomi dümdüz bakıp durmasın; rastgele, hafif
+ * hareketler. Her çağrı bir sonraki küçük hareketi adım adım verir (`t`:
+ * başlangıçtan ms; `eyes`: gösterilecek göz karesi, null = açık/karşıya;
+ * `tilt`: gövdenin alttan eğimi, derece; `bob`: küçük sekme, px, yukarı
+ * eksi). Hareketler: göz kırpma, çift kırpma, sağa/sola bakma, başı eğip
+ * bakma (merak), yalnız eğilme, küçük sekme. Aralar 1,2-3,4 sn. Nefes ayrı
+ * ve sürekli (web CSS, mobil Animated). Web ve mobil aynı işlevi oynatır.
+ */
+export type IdleStep = { t: number; eyes?: string | null; tilt?: number; bob?: number };
+export function idleScript(rand: () => number = Math.random, glances: string[] = ["sol", "sag"]): { steps: IdleStep[]; ms: number } {
+  const blink = (t: number): IdleStep[] => [{ t, eyes: "kirp1" }, { t: t + 60, eyes: "kirp2" }, { t: t + 150, eyes: "kirp1" }, { t: t + 220, eyes: null }];
+  const gap = 1200 + rand() * 2200;
+  const r = rand();
+  const g = glances.length ? glances[Math.floor(rand() * glances.length)] : null;
+  const side = g === "sag" ? -1 : 1;
+  let steps: IdleStep[];
+  let len: number;
+  if (r < 0.3 || !g) {
+    steps = blink(0); len = 220;
+  } else if (r < 0.4) {
+    steps = [...blink(0), ...blink(380)]; len = 600;
+  } else if (r < 0.65) {
+    const hold = 900 + rand() * 1100;
+    steps = [{ t: 0, eyes: g }, ...(rand() < 0.5 ? blink(hold) : [{ t: hold, eyes: null }])]; len = hold + 220;
+  } else if (r < 0.82) {
+    const hold = 1300 + rand() * 1300, deg = side * (1.6 + rand() * 1.4);
+    steps = [{ t: 0, eyes: g, tilt: deg }, { t: hold, tilt: 0 }, ...blink(hold + 250)]; len = hold + 470;
+  } else if (r < 0.94) {
+    const hold = 1200 + rand() * 1400;
+    steps = [{ t: 0, tilt: (rand() < 0.5 ? -1 : 1) * (1.2 + rand() * 1.3) }, { t: hold, tilt: 0 }]; len = hold + 600;
+  } else {
+    steps = [{ t: 0, bob: -5 }, { t: 190, bob: 0 }]; len = 400;
+  }
+  return { steps, ms: len + gap };
 }
 
 /**

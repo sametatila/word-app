@@ -3,9 +3,9 @@
 import { AvatarOverlay, HAT_COLORS } from "@/components/avatar-parts";
 import { useAvatar } from "@/lib/avatar";
 import { avatarBg, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
-import { avatarImageUrl, avatarLayers, catalogBlink, catalogSize, circleFrame, type AvatarCatalog } from "@/lib/avatar-layers";
+import { avatarImageUrl, avatarLayers, catalogBlink, catalogGlance, catalogSize, circleFrame, idleScript, stageFrame, type AvatarCatalog, type IdleStep } from "@/lib/avatar-layers";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { T } from "@/lib/motion";
 import { useStill } from "@/lib/use-still";
@@ -187,26 +187,74 @@ function useBump(bump: number) {
 }
 
 /**
- * Nomi'nin tuvali (profil sahnesi, düzenleyici): taban, göz kırpma kareleri
- * ve yuvalar, BEKLEME HAREKETİYLE (2026-09-29): nefes (4,2 sn), çok küçük
- * sallanma (7,5 sn) ve ara ara göz kırpma. Hepsi CSS (`globals.css`
- * `.nomi-idle`), JS döngüsü yok; "hareketi azalt"ta durur. Göz kırpma
- * katalogdan (`kirpma`, v2): kapalı göz yalnız gözlerin kutusu kadar iki küçük
- * kare, tabanın hemen üstünde, aksesuarların altında.
+ * Rastgele bekleme senaryosunu oynatır (`idleScript`, mobil `useIdle` aynı
+ * işlevi oynatıyor). Sekme gizliyken ve "hareketi azalt"ta durur.
+ */
+function useIdleActions(enabled: boolean, glances: string[]) {
+  const [st, setSt] = useState<{ eyes: string | null; tilt: number; bob: number }>({ eyes: null, tilt: 0, bob: 0 });
+  const key = glances.join(",");
+  useEffect(() => {
+    if (!enabled) return;
+    let alive = true;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    const play = (steps: IdleStep[]) => {
+      for (const s of steps) {
+        timers.push(setTimeout(() => {
+          if (!alive) return;
+          setSt((p) => ({ eyes: s.eyes !== undefined ? s.eyes : p.eyes, tilt: s.tilt ?? p.tilt, bob: s.bob ?? p.bob }));
+        }, s.t));
+      }
+    };
+    const loop = () => {
+      if (!alive) return;
+      const { steps, ms } = idleScript(Math.random, key ? key.split(",") : []);
+      if (typeof document === "undefined" || !document.hidden) play(steps);
+      timers.push(setTimeout(loop, ms));
+    };
+    timers.push(setTimeout(loop, 1400));
+    return () => {
+      alive = false;
+      timers.forEach(clearTimeout);
+      setSt({ eyes: null, tilt: 0, bob: 0 });
+    };
+  }, [enabled, key]);
+  return st;
+}
+
+/**
+ * Nomi'nin tuvali (profil sahnesi, düzenleyici): taban, göz kareleri ve
+ * yuvalar, BEKLEME HAREKETİYLE (v3, 2026-09-29): sürekli nefes (CSS
+ * `.nomi-breathe`) ve rastgele hafif hareketler (`idleScript`): göz kırpma,
+ * sağa/sola bakma, başı eğip bakma, eğilme, küçük sekme. Eğilme ve sekme
+ * yumuşak geçişli; göz kareleri (kırpma: `kirpma`, bakış: `bakis`) yalnız
+ * gözlerin kutusu kadar, tabanın hemen üstünde, aksesuarların altında.
+ * "Hareketi azalt"ta hiçbiri yok.
  */
 function NomiFigure({ cat, base, files }: { cat: AvatarCatalog; base: string; files: { base: string; layers: string[] } }) {
+  const still = useStill();
   const blink = catalogBlink(cat);
+  const glance = catalogGlance(cat);
+  const idle = useIdleActions(!still, glance ? Object.keys(glance.frames) : []);
+  const eyeImgs: { name: string; file: string; box: { left: number; top: number; w: number; h: number } }[] = [
+    ...(blink ? blink.frames.slice(0, 2).map((f, i) => ({ name: `kirp${i + 1}`, file: f, box: blink })) : []),
+    ...(glance ? Object.entries(glance.frames).map(([name, f]) => ({ name, file: f, box: glance })) : []),
+  ];
   return (
-    <div className="nomi-idle absolute inset-0">
+    <div
+      className="absolute inset-0"
+      style={{
+        transformOrigin: "50% 100%",
+        transform: `translateY(${idle.bob}px) rotate(${idle.tilt}deg)`,
+        transition: `transform ${idle.bob ? 180 : 650}ms cubic-bezier(.45,.05,.35,1)`,
+      }}
+    >
       <div className="nomi-breathe absolute inset-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={`${base}/${files.base}`} alt="" className="absolute inset-0 h-full w-full" />
-        {blink
-          ? blink.frames.slice(0, 2).map((f, i) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={f} src={`${base}/${f}`} alt="" className={`nomi-blink-${i + 1} absolute`} style={{ left: `${blink.left}%`, top: `${blink.top}%`, width: `${blink.w}%`, height: `${blink.h}%` }} />
-            ))
-          : null}
+        {eyeImgs.map((e) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={e.name} src={`${base}/${e.file}`} alt="" className="absolute" style={{ left: `${e.box.left}%`, top: `${e.box.top}%`, width: `${e.box.w}%`, height: `${e.box.h}%`, opacity: idle.eyes === e.name ? 1 : 0 }} />
+        ))}
         {files.layers.map((f) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img key={f} src={`${base}/${f}`} alt="" className="absolute inset-0 h-full w-full" />
@@ -216,13 +264,49 @@ function NomiFigure({ cat, base, files }: { cat: AvatarCatalog; base: string; fi
   );
 }
 
+/**
+ * Öğenin genişliği (px); ölçülene kadar 0. Geri çağrılı ref: öğe sonradan
+ * doğuyor (katalog yüklenince), sabit ref ile gözlemci hiç bağlanmıyordu.
+ */
+function useWidth<T extends HTMLElement>() {
+  const [el, setEl] = useState<T | null>(null);
+  const [w, setW] = useState(0);
+  useEffect(() => {
+    if (!el) return;
+    setW(el.getBoundingClientRect().width);
+    const ro = new ResizeObserver(([e]) => setW(e.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [el]);
+  return [setEl, w] as const;
+}
+
 export function AvatarStage({ config, height = 280, inset = 0, children, className = "", bump = 0 }: { config: AvatarConfig; height?: number; /** Altta sahnenin üstüne binen içeriğin payı (px): tuval o kadar yukarıda, kesik alt kenarı içeriğin arkasında kalır. */ inset?: number; children?: ReactNode; className?: string; /** Artınca figür sıçrar (bkz. `useBump`). */ bump?: number }) {
   const catalog = useAvatarCatalog();
   const controls = useBump(bump);
+  const [ref, stageW] = useWidth<HTMLDivElement>();
   const g = avatarBg(config.bg);
   if (catalog) {
     const L = avatarLayers(config, catalog.cat);
     const { w, h } = catalogSize(catalog.cat);
+    /* v3: burun görünen alanın dikey ortasında, en uzun parça sığacak ölçekte
+       (`stageFrame`). Arka plan sahneyi ortadan kaplıyor: ışığı burunda. */
+    const fr = stageFrame(catalog.cat, stageW, height - inset, [L.base, ...L.layers]);
+    if (catalog.cat.burun) {
+      return (
+        <div ref={ref} className={`relative overflow-hidden ${className}`} style={{ height, background: L.bg ? `center / cover url(${catalog.base}/${L.bg})` : `linear-gradient(${g.from}, ${g.to})` }}>
+          {fr ? (
+            /* Parça değişince kadraj yumuşakça yaklaşır/uzaklaşır (balon takılınca geri çekilir). */
+            <div className="absolute" style={{ left: fr.left, top: fr.top, width: fr.w, height: fr.h, transition: "left .35s ease, top .35s ease, width .35s ease, height .35s ease" }}>
+              <motion.div animate={controls} className="absolute inset-0" style={{ transformOrigin: `${(catalog.cat.burun[0] / w) * 100}% ${(catalog.cat.burun[1] / h) * 100}%` }}>
+                <NomiFigure cat={catalog.cat} base={catalog.base} files={L} />
+              </motion.div>
+            </div>
+          ) : null}
+          {children}
+        </div>
+      );
+    }
     /* TUVAL ALANIN GENİŞLİĞİNDE, alta hizalı; geniş ekranda yüksekliğe
        sığdırılıyor (hiçbir parça kesilmesin: kanat, balon). Arka plan tüm
        sahneyi kaplıyor, alttan hizalı ki ışığı başın arkasında kalsın. Alt

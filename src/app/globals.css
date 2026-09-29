@@ -1444,35 +1444,17 @@
   }
 }
 
-/* NOMİ BEKLEME HAREKETİ (profil sahnesi ve avatar düzenleyici, `AvatarStage`).
-   Nefes: gövde alttan hafifçe uzayıp daralıyor. Sallanma: bütün figür alt
-   ortadan ±0,6°. Göz kırpma: 9 sn'de iki kez (yarım 60 ms, kapalı 90 ms,
-   yarım 70 ms), açılışta 1,6 sn beklenip başlıyor. Mobil karşılığı
-   `ui/Avatar` (`useIdle`). Hareketi azaltmada hepsi durur, gözler açık. */
+/* NOMİ NEFESİ (profil sahnesi ve avatar düzenleyici, `AvatarStage`): gövde
+   alttan hafifçe uzayıp daralıyor, sürekli. Rastgele hareketler (bakınma,
+   göz kırpma, eğilme, sekme) JS'te (`components/avatar` `useIdleActions`,
+   ortak senaryo `lib/avatar-layers` `idleScript`). Mobil karşılığı
+   `ui/Avatar`. Hareketi azaltmada durur. */
 @keyframes nomi-breathe {
   0%, 100% { transform: scale(1, 1); }
   50% { transform: scale(0.997, 1.012); }
 }
-@keyframes nomi-sway {
-  0%, 100% { transform: rotate(-0.6deg); }
-  50% { transform: rotate(0.6deg); }
-}
-@keyframes nomi-blink-1 {
-  0% { opacity: 1; } 0.67% { opacity: 0; } 1.67% { opacity: 1; } 2.44% { opacity: 0; }
-  46% { opacity: 1; } 46.67% { opacity: 0; } 47.67% { opacity: 1; } 48.44% { opacity: 0; }
-  100% { opacity: 0; }
-}
-@keyframes nomi-blink-2 {
-  0% { opacity: 0; } 0.67% { opacity: 1; } 1.67% { opacity: 0; }
-  46.67% { opacity: 1; } 47.67% { opacity: 0; }
-  100% { opacity: 0; }
-}
-.nomi-idle { transform-origin: 50% 100%; animation: nomi-sway 7.5s ease-in-out infinite; }
 .nomi-breathe { transform-origin: 50% 100%; animation: nomi-breathe 4.2s ease-in-out infinite; }
-/* Tam tanım sınıf başına: kısaltmayla ayrı `animation-name` derlemede
-   birleşip süreyi sıfırlıyordu. */
-.nomi-blink-1 { opacity: 0; animation: nomi-blink-1 9s step-end 1.6s infinite; }
-.nomi-blink-2 { opacity: 0; animation: nomi-blink-2 9s step-end 1.6s infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .nomi-idle, .nomi-breathe, .nomi-blink-1, .nomi-blink-2 { animation: none; }
+  .nomi-breathe { animation: none; }
 }
+
