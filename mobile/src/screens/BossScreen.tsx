@@ -10,7 +10,9 @@ import { Text } from "../ui/Text";
 import { BossIcon, RetryIcon, DurationIcon, TimeBonusIcon, ModuleCrownIcon, MyWordsIcon, WarningIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
-import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton } from "../game/RoundSkeleton";
+import { skeletonFiller } from "../ui/Skeleton";
+import { BOSS_SECONDS } from "../lib/learningRules";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { track } from "../lib/track";
@@ -239,7 +241,24 @@ export function BossScreen() {
      kural, tanıtım yok, Gir / Patikaya dön). Tur iskeleti çiziliyordu ve
      kapak gelince ekran baştan kuruluyordu. BEKLEME KENDINI DUYURUYOR (web
      `role="status" aria-busy`). */
-  if (phase === "loading") return <CoverSkeleton label={t("exam.preparing")} {...COVERS.boss} />;
+  /* Kapağın kendi cümleleri, seviye ve modül parametreden; süre kuralları
+     sunucudan geldiği için varsayılanlarıyla (web `boss` 15 soru,
+     `BOSS_SECONDS`, +3/−5), modül adı ve havuz veriyle geldiği için tahmini uzunlukta. */
+  if (phase === "loading") {
+    return (
+      <CoverSkeleton
+        label={t("exam.preparing")}
+        eyebrow={t("bossw.level_module", { level, n: moduleIndex + 1 })}
+        title={t("bossw.title_exam", { title: skeletonFiller(14) })}
+        rules={[
+          t("bossw.rule_start", { n: 15, sec: BOSS_SECONDS }),
+          t("bossw.rule_time", { bonus: 3, penalty: 5 }),
+          t("bossw.rule_crown"),
+          t("bossw.rule_pool", { n: 120 }),
+        ]}
+      />
+    );
+  }
 
   if (phase === "error") {
     return (

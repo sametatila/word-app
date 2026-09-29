@@ -14,8 +14,7 @@ import { ReportSheet } from "../ui/ReportSheet";
 import { ReportButton } from "../ui/ReportLink";
 import { ReportFlag } from "../ui/ReportFlag";
 import { AiNotice } from "../ui/AiNotice";
-import { Skeleton, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
-import { textBox, useColumnWidth } from "../game/RoundSkeleton";
+import { Skeleton, SkeletonLine, SkeletonPill, skeletonFiller, textHeight } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
 import { BackIcon, CheckIcon, CloseIcon, CorrectIcon, SendIcon, SkillSpeakingIcon, SpeakerIcon, WarningIcon, WrongIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
@@ -1094,21 +1093,24 @@ const BIG_BUTTON_H = () => textHeight("h3") + spacing.lg * 2;
  * gövde, dikey 10 dolgu, 1 kenarlık) ve altlarındaki "Dinle" satırı.
  */
 function LectureSkeleton() {
-  /* Baloncuk içeriğe göre daralıyor (en çok %88): ~100 harflik anlatım
-     cümlesi telefonda üç satır, tablette (kolon ~1000dp) tek satır. Sabit
-     yüzde + iki satır tablette hem uzun hem yüksek kalıyordu. */
-  const max = (useColumnWidth() - spacing.lg * 2) * 0.88;
+  /* Baloncuk içeriğe göre daralıyor (en çok %88) ve cümlelerin değeri paketle
+     geliyor: ~100 harflik dolgu gerçek baloncuğun kabında görünmez çiziliyor,
+     baloncuk onun ölçülen sarılmasıyla büyüyor (telefonda üç satır, tablette
+     tek satır). Sabit yüzde + iki satır tablette hem uzun hem yüksek kalıyordu. */
   return (
     <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
-      {[96, 70, 110].map((chars, i) => {
-        const box = textBox(chars, max - spacing.md * 2 - 2, "body");
-        return (
-        <View key={i} style={{ alignSelf: "flex-start", width: box.width + spacing.md * 2 + 2, marginBottom: spacing.md }}>
-          <Skeleton height={textHeight("body") * box.lines + 10 * 2 + 2} radius={radii.lg} />
+      {[96, 70, 110].map((chars, i) => (
+        <View key={i} style={{ alignSelf: "flex-start", maxWidth: "88%", marginBottom: spacing.md }}>
+          {/* Kenarlık (1) dolguya katıldı: blok kutuyu kenarından kenarına dolduruyor. */}
+          <View style={{ paddingHorizontal: spacing.md + 1, paddingVertical: 11 }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+            <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
+              <Skeleton height="100%" radius={radii.lg} />
+            </View>
+            <Text variant="body" accessible={false} style={{ opacity: 0 }}>{skeletonFiller(chars)}</Text>
+          </View>
           <SkeletonLine variant="micro" width={54} style={{ marginTop: spacing.xs, marginLeft: spacing.xs }} />
         </View>
-        );
-      })}
+      ))}
     </View>
   );
 }

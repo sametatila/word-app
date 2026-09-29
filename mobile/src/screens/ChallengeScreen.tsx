@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { SurvivalIcon, ComboIcon, WrongIcon, CorrectIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
-import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { sfx } from "../lib/sfx";
@@ -275,7 +275,18 @@ export function ChallengeScreen() {
      kural, Başla / Vazgeç). Tur iskeleti çiziliyordu ve kapak gelince ekran
      baştan kuruluyordu. BEKLEME KENDINI DUYURUYOR (web `role="status"
      aria-busy`): iskeletin kabuğu canlı bölge ve adı "hazırlanıyor". */
-  if (phase === "loading") return <CoverSkeleton label={t("challenge.preparing")} {...COVERS.challenge} />;
+  /* Kapağın kendi cümleleri; zayıf nokta kuralı veriyle geliyor, genel hâli çiziliyor. */
+  if (phase === "loading") {
+    return (
+      <CoverSkeleton
+        label={t("challenge.preparing")}
+        eyebrow={t("learn.survival")}
+        title={t("challenge.title")}
+        pitch={t("challenge.pitch", { n: START_SECONDS })}
+        rules={[t("challenge.rule_correct"), t("challenge.rule_wrong"), t("challenge.rule_waves")]}
+      />
+    );
+  }
 
   if (phase === "error") {
     return (

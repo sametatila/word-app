@@ -15,10 +15,10 @@ import {
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
+import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette, fillOf, ds } from "../theme";
 import { useLayout } from "../lib/useLayout";
 import { CardGrid } from "../ui/CardGrid";
-import { currentCourseId } from "../lib/courses";
 import { ScreenHeader, SectionTitle } from "../social/common";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
@@ -94,10 +94,10 @@ export function PracticeScreen() {
               <View style={{ marginTop: spacing.md }}>
                 <SkeletonLine variant="bodyStrong" width="60%" />
                 <SkeletonLine variant="micro" width="85%" style={{ marginTop: 2 }} />
+                {gridColumns === 2 ? <SkeletonLine variant="micro" width="45%" /> : null}
               </View>
             </Card>
           )) : practiceGamesFor(me?.course).map((g) => {
-                {gridColumns === 2 ? <SkeletonLine variant="micro" width="45%" /> : null}
             const m = META[g.game] ?? FALLBACK_META;
             /* Zemin TEMAYA DUYARSIZ (`theme` `fillOf`): koyu temada rol
                renkleri pastele dönüyor ve beyaz glif görünmüyordu; gerekçe ve

@@ -9,7 +9,8 @@ import { PressableScale } from "../ui/PressableScale";
 import { WeeklyTestIcon, LockedIcon, WarningIcon, CorrectIcon, DurationIcon, InfoIcon, SpeakerIcon } from "../ui/icons";
 import { ReportFlag } from "../ui/ReportFlag";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "../ui/flow";
-import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton } from "../game/RoundSkeleton";
+import { skeletonFiller } from "../ui/Skeleton";
 import { fetchQuiz, submitQuiz, type Quiz, type QuizBlock, type QuizClientItem, type QuizScore, type QuizStimulus } from "../game/weekly";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
@@ -107,7 +108,20 @@ export function WeeklyScreen() {
   /* Yükleme KAPAĞIN iskeleti (üst çubuk, üç kural, not, Başla + Kapat):
      yüklenince gelen ekran kapak. Kaydetme bir durum, durum şablonu kalıyor. */
   if (phase === "loading") {
-    return <CoverSkeleton label={t("wquiz.preparing")} top {...COVERS.weekly} />;
+    /* Başlık haftanın teması (veri): tahmini uzunlukta; soru sayısı sınavın sabiti (web `QUIZ_ITEMS` 10). */
+    return (
+      <CoverSkeleton
+        label={t("wquiz.preparing")}
+        top
+        eyebrow={t("learn.weekly_quiz")}
+        title={skeletonFiller(22)}
+        pitch={t("wquiz.pitch")}
+        rules={[t("wquiz.rule_count", { n: 10 }), t("wquiz.rule_once"), t("wquiz.rule_explain")]}
+        note={t("wquiz.no_pass_mark")}
+        secondary
+        tertiary={false}
+      />
+    );
   }
   if (phase === "submitting") {
     return (

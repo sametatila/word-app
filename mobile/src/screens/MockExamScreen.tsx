@@ -13,7 +13,9 @@ import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { NoGoingBackIcon, SpeakerIcon, CorrectIcon, WrongIcon, SkillSpeakingIcon, MockExamIcon, DurationIcon, ResumeIcon, WarningIcon, OfflineIcon, LockedIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "../ui/flow";
-import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton } from "../game/RoundSkeleton";
+import { skeletonFiller } from "../ui/Skeleton";
+import { mockCourseOfPaperId } from "../content/mockCatalog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MIN_ASSESS_WORDS } from "../lib/learningRules";
 import { prefetchDialogue, speakAndWaitVoiced, speakDialogue, stopSpeaking } from "../lib/tts";
@@ -468,7 +470,31 @@ export function MockExamScreen() {
      dalı çiziliyordu: bellekte olmayan her kâğıt, inene kadar bir an üzgün
      maskotla "bulunamadı" diyordu. Hata yalnız indirme gerçekten düşünce. */
   if (!paper && !fail) {
-    return <CoverSkeleton label={t("common.loading")} top {...COVERS.mock} />;
+    /* Kapağın metni: üst satır ve kurallar kimlikten (`de-a1-01` → A1, Deneme 1)
+       ve bölümden biliniyor; tema, yönerge ve karşılıkları kâğıtla geliyor,
+       tahmini uzunlukta. Süre/madde sayısı tipik değer. */
+    const [, lv = "", no = "1"] = route.params.paperId.split("-");
+    const skill = route.params.skill;
+    const openPart = skill === "writing" || skill === "speaking";
+    const heard = skill === "listening" || skill === "speaking";
+    return (
+      <CoverSkeleton
+        label={t("common.loading")}
+        top
+        eyebrow={`${lv.toUpperCase()} · ${t("mockexams.mock_n", { n: Number(no) || 1 })} · ${mockSkillLabel(mockCourseOfPaperId(route.params.paperId), skill)}`}
+        title={skeletonFiller(24)}
+        pitch={skeletonFiller(97)}
+        rules={[
+          openPart ? t("mockexams.part_open", { minutes: 30 }) : t("mockexams.part_summary", { minutes: 30, n: 20 }),
+          t("mockexam.rule_timed"),
+          t("mockexam.no_back"),
+          ...(heard ? [t("mockexam.rule_voiced")] : []),
+          t("mockexam.rule_saved"),
+        ]}
+        note={`${skeletonFiller(23)}\n${skeletonFiller(84)}`}
+        footnote={t("exam.independent_note")}
+      />
+    );
   }
   if (!paper || !part) {
     return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { kindIcon, kindFill } from "../ui/unitKind";
 import { t, formatPercent } from "../lib/i18n";
-import { View, useWindowDimensions } from "react-native";
+import { View } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -13,7 +13,7 @@ import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
 import { usePremiumStatus } from "../lib/premium";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
-import { SkeletonCard, SkeletonLine } from "../ui/Skeleton";
+import { SkeletonCard, SkeletonLine, SkeletonText } from "../ui/Skeleton";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
 import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
@@ -34,7 +34,6 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { pathWritingSpent, tieredCopy } from "../lib/unlock";
 import { UnlockProgress } from "../ui/UnlockProgress";
 import { useTheme, spacing, radii, type Palette } from "../theme";
-import { useLayout } from "../lib/useLayout";
 import { sfx } from "../lib/sfx";
 
 /** Sonuç bandının başlığındaki beceri adı — Beceriler sekmesiyle aynı anahtarlar. */
@@ -244,11 +243,6 @@ export function ItemScreen() {
   };
   const guestAiNote = <View style={{ marginBottom: spacing.md }}><FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t(guestTrial ? "guest.skill_ai_trial" : "guest.skill_ai")} /></View>;
   const insets = useSafeAreaInsets();
-  /* İskeletteki yönerge satırı genişlikten: yönerge ortanca ~105 karakter,
-     telefonda (358dp) üç, dikey tablette iki, yatay tablette (1088dp) bir satır. */
-  const { width } = useWindowDimensions();
-  const { contentWidth } = useLayout();
-  const introLines = Math.min(3, Math.max(1, Math.ceil((105 * 7.4) / (Math.min(width, contentWidth) - 2 * spacing.lg))));
   const nav = useNavigation<{ goBack: () => void }>();
   const { params } = useRoute<RouteProp<RootStackParams, "Item">>();
   /*
@@ -389,9 +383,9 @@ export function ItemScreen() {
           </View>
         </View>
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
-          {Array.from({ length: introLines }, (_, i) => (
-            <SkeletonLine key={i} variant="body" width={i === introLines - 1 && introLines > 1 ? "60%" : "92%"} />
-          ))}
+          {/* Yönerge egzersizle geliyor (veri): ortanca ~105 harflik dolgu gerçek
+              kolonda ölçülüyor — telefonda üç, dikey tablette iki, yatay tablette bir satır. */}
+          <SkeletonText variant="body" chars={105} />
           <SkeletonCard label={t("common.loading")} style={{ marginTop: spacing.md }}>
             {[88, 94, 90, 62].map((w, i) => <SkeletonLine key={i} variant="body" width={`${w}%`} />)}
           </SkeletonCard>

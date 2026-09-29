@@ -12,7 +12,7 @@ import { SpeakerIcon, PlacementIcon, GamePluralIcon, DurationIcon, DontGuessIcon
 import { Chip } from "../ui/Chip";
 import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
-import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton } from "../game/RoundSkeleton";
 import { demoPlacementFor, estimateLevel } from "../data/demoPlacement";
 import {
   startPlacement,
@@ -349,7 +349,19 @@ export function PlacementScreen() {
 
   /* Test inerken KAPAĞIN iskeleti (üst çubuk, beş kural, Başla / Sonra):
      yüklenince gelen ekran kapak, tur değil. */
-  if (loading) return <CoverSkeleton label={t("common.loading")} top {...COVERS.placement} />;
+  /* Yükleme yalnız hesaplı kullanıcıda (gerçek test): kapağın gerçek-test cümleleri. */
+  if (loading) {
+    return (
+      <CoverSkeleton
+        label={t("common.loading")}
+        top
+        eyebrow={t("placement.title")}
+        title={t("onboarding.kisa_yerlestirme_sinavi")}
+        pitch={t("plc.cover_pitch")}
+        rules={[t("plc.rule_stages"), t("plc.rule_time"), t("plc.rule_dont_know"), t("plc.rule_result"), t("plc.rule_choose")]}
+      />
+    );
+  }
 
   /*
    * BEKLEME SÜRESİ DOLMADIYSA TEST AÇILMIYOR.

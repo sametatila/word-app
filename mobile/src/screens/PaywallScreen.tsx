@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t, dateLocale } from "../lib/i18n";
-import { View, AppState, Linking, Platform, TextInput, useWindowDimensions } from "react-native";
+import { View, AppState, Linking, Platform, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useLayout } from "../lib/useLayout";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -13,7 +13,7 @@ import { PrimaryButton } from "../ui/PrimaryButton";
 import { Card } from "../ui/Card";
 import { SectionTitle } from "../social/common";
 import { ShareIcon, CloseIcon, CheckIcon, PremiumIcon } from "../ui/icons";
-import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
+import { SkeletonLine, SkeletonText, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
 import { awaitProcessedPurchase, billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, purchaseGroupTrial, restore, trialEligibleProducts, type PurchaseOutcome } from "../lib/billing";
@@ -156,10 +156,7 @@ export function PaywallScreen() {
   */
   const guest = Boolean(useAuth().user?.guest);
   const [guestRestore, setGuestRestore] = useState(false);
-  const { compactHeight, contentWidth } = useLayout();
-  /* Kapsam iskeletinde madde metninin genişliği: kolon − kaydırma (2×16) −
-     kart (2×16) − işaret (22) − aralık (8). Telefonda kolon ekranın kendisi. */
-  const bulletWidth = Math.min(useWindowDimensions().width, contentWidth) - 94;
+  const { compactHeight } = useLayout();
   const guestPitch = (
     <View style={{ gap: spacing.sm, marginTop: compactHeight ? spacing.lg : 0 }}>
       <Text variant="h3" style={{ textAlign: "center" }}>{t("guest.premium_title")}</Text>
@@ -517,7 +514,7 @@ export function PaywallScreen() {
             <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: 5 }}>
               <SkeletonTile size={22} radius={11} style={{ marginTop: 1 }} />
               <View style={{ flex: 1 }}>
-                <CoverLines text={t(key, vars)} width={bulletWidth} />
+                <SkeletonText variant="caption" text={t(key, vars)} />
               </View>
             </View>
           ))}
@@ -527,7 +524,7 @@ export function PaywallScreen() {
               <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="free" />
             )) : COVER_FREE.map(([key, vars], i) => (
               <View key={i} style={{ paddingVertical: 5, paddingLeft: 22 + spacing.sm }}>
-                <CoverLines text={t(key, vars)} width={bulletWidth} />
+                <SkeletonText variant="caption" text={t(key, vars)} />
               </View>
             ))}
           </View>
@@ -693,8 +690,8 @@ function LegalLinks({ colors }: { colors: Palette }) {
  * KAPSAM İSKELETİ SUNUCUNUN LİSTESİYLE (`lib/premium/gates` `describeLimits`
  * varsayılanları): premium üç, ücretsiz yedi madde. İskelet 4 + 2 tek satır
  * çiziyordu; oysa maddeler uzun ve satır sayısı genişliğe bağlı: yapay zekâ
- * maddesi telefonda (296dp) dört, yatay tablette (1026dp) iki satır. Satır
- * sayısı arayüz dilindeki gerçek cümleden ve metin genişliğinden.
+ * maddesi telefonda (296dp) dört, yatay tablette (1026dp) iki satır. Arayüz
+ * dilindeki gerçek cümle görünmez çizilip satırları ölçülüyor (`SkeletonText`).
  */
 const COVER_PREMIUM: [string, Record<string, number>?][] = [
   ["plan.pro_pocket_walk"],
@@ -710,18 +707,6 @@ const COVER_FREE: [string, Record<string, number>?][] = [
   ["plan.free_skills", { s: 2, w: 2 }],
   ["plan.free_streak_ai", { d: 7, n: 2, m: 1 }],
 ];
-
-/** Bir maddenin satırları: `caption` ~6.9dp/karakter; son satır kısa. */
-function CoverLines({ text, width }: { text: string; width: number }) {
-  const n = Math.max(1, Math.ceil((text.length * 6.9) / Math.max(1, width)));
-  return (
-    <>
-      {Array.from({ length: n }, (_, i) => (
-        <SkeletonLine key={i} variant="caption" width={i === n - 1 && n > 1 ? "55%" : "94%"} />
-      ))}
-    </>
-  );
-}
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (

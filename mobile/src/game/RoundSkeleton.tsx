@@ -1,10 +1,11 @@
 import React from "react";
-import { PixelRatio, View, useWindowDimensions, type ViewStyle } from "react-native";
+import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Skeleton, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
+import { Skeleton, SkeletonLine, SkeletonPill, SkeletonText, textHeight } from "../ui/Skeleton";
 import { Card } from "../ui/Card";
-import { useLayout } from "../lib/useLayout";
-import { useTheme, spacing, radii, cardShadow, ds, typography } from "../theme";
+import { useTheme, spacing, radii, cardShadow, ds } from "../theme";
+import { t } from "../lib/i18n";
+import { COACH_LINES, fillCoachLine, type CoachMoment } from "./coachLines";
 
 /**
  * Tur ekranı iskeleti — `GameScreen`in oynama kabuğu, aynı sırayla:
@@ -36,8 +37,8 @@ export function RoundSkeleton({ options = 4, label = false }: { options?: number
       {label ? <SkeletonLine variant="caption" width={140} style={{ alignSelf: "center", marginBottom: spacing.md }} /> : null}
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <SkeletonLine variant="micro" width={104} />
-        {/* Tek kelime (~8 harf) harf boyuyla: yüzde genişlik tablette (kart ~900dp) 600dp'lik çubuk oluyordu. */}
-        <TextLines variant="display" chars={8} inset={spacing.lg * 4 + 2} align="center" style={{ marginTop: spacing.sm }} />
+        {/* Tek kelime; değeri turla geliyor, ~8 harflik dolgu ölçülüyor: yüzde genişlik tablette (kart ~900dp) 600dp'lik çubuk oluyordu. */}
+        <SkeletonText variant="display" chars={8} align="center" style={{ marginTop: spacing.sm }} />
         {/* dinle düğmesi: 22'lik ikon + `xs` dolgu */}
         <View style={{ marginTop: spacing.sm, padding: spacing.xs }}>
           <Skeleton height={22} width={22} radius={11} />
@@ -52,111 +53,41 @@ export function RoundSkeleton({ options = 4, label = false }: { options?: number
   );
 }
 
-/*
- * METNİN SARILMASI — telefonla tablet arasındaki asıl fark.
- *
- * Kapak ekranı her genişlikte aynı dikey yığın (`FlowScreen` kolonun içinde,
- * kırılım yok); değişen tek şey metnin kaç satıra sarıldığı. Aynı kural cümlesi
- * (~45 harf) telefonda iki satır, tablette (kolon 700-1120dp) tek satır.
- * Sabit tek çubuk telefonda kısa, iki çubuk tablette uzun kalıyordu: kapak
- * gelince düğmelere kadar her şey kayıyordu. Satır sayısı burada gerçek metnin
- * uzunluğundan (`COVERS`) ve kolonun genişliğinden hesaplanıyor.
- *
- * Harf genişliği sistem yazısının (SF, Roboto) karışık metindeki ortalaması,
- * punto başına; web aynı sayıları tarayıcıya ölçtürüyor (`flow-skeleton`
- * `TextSlot`) ve 430px'te 15 pt gövdede satıra ~47 harf düşüyor: 0,47.
- */
-type Variant = keyof typeof typography;
-const GLYPH: Record<Variant, number> = { display: 0.56, h1: 0.56, h2: 0.54, h3: 0.52, body: 0.47, bodyStrong: 0.5, caption: 0.48, micro: 0.5 };
-/** Büyük harfli üst satır (`uppercase` + `letterSpacing: 1`) küçük harften ~%30 geniş. */
-const CAPS = 1.3;
-/** Kelime uzunlukları — greedy sarılma gerçeğindeki gibi satır sonunda boşluk bırakıyor. */
-const WORDS = [5, 7, 3, 9, 4, 6, 2, 8, 5, 4, 10, 3, 6, 7, 4];
-/** `Text`in kendi tavanı (`maxFontSizeMultiplier` 1,5). */
-const MAX_FONT_SCALE = 1.5;
-
-/** `chars` harflik metnin `width` genişlikte satır satır harf sayısı. */
-function wrap(chars: number, width: number, variant: Variant, caps: boolean): { perLine: number; lines: number[] } {
-  const punto = (typography[variant].fontSize as number) * Math.min(PixelRatio.getFontScale(), MAX_FONT_SCALE);
-  const tracking = ((typography[variant].letterSpacing as number | undefined) ?? 0) + (caps ? 1 : 0);
-  const perLine = Math.max(6, Math.floor(width / (punto * GLYPH[variant] * (caps ? CAPS : 1) + tracking)));
-  const lines: number[] = [];
-  let line = 0;
-  let left = chars;
-  for (let i = 0; left > 0; i++) {
-    const w = Math.min(WORDS[i % WORDS.length], left);
-    left -= w + 1;
-    const next = line ? line + 1 + w : w;
-    if (next > perLine && line) {
-      lines.push(line);
-      line = Math.min(w, perLine);
-    } else line = Math.min(next, perLine);
-  }
-  if (line) lines.push(line);
-  return { perLine, lines };
-}
-
-/** Sarılmış metnin kutusu: satır sayısı ve en uzun satırın genişliği (dp) — baloncuk gibi içeriğe göre daralan kaplar için. */
-export function textBox(chars: number, width: number, variant: Variant): { lines: number; width: number } {
-  const { perLine, lines } = wrap(chars, width, variant, false);
-  return { lines: lines.length, width: Math.round((width * Math.max(...lines)) / perLine) };
-}
-
-/** Ekranın içerik kolonunun genişliği: telefonda ekran, tablette `contentWidth` (bkz. `ContentColumn`). */
-export function useColumnWidth(): number {
-  const { width } = useWindowDimensions();
-  const { contentWidth } = useLayout();
-  return Math.min(width, contentWidth);
-}
-
 /**
- * Metin yeri: gerçek metnin satır sayısı kadar `SkeletonLine`, sonuncusu kısa.
- * `width` verilmezse kolon eksi `inset` (ekranın iki yan dolgusu, kart dolgusu).
+ * Kapağın metinleri — gerçek kapağın (`CoverBody`) GÖSTERECEĞİ çevrilmiş
+ * cümleler; satırlar onlardan ölçülüyor (`SkeletonText`). Değeri veriyle gelen
+ * alanlarda (konuşma adı, sahne, tema) çağıran `skeletonFiller` ile tahmini
+ * uzunlukta dolgu veriyor.
  */
-export function TextLines({ variant, chars, width, inset = 0, caps = false, align = "flex-start", style }: {
-  variant: Variant; chars: number; width?: number; inset?: number;
-  /** Büyük harf + `letterSpacing: 1` (üst satırlar). */
-  caps?: boolean;
-  align?: "flex-start" | "center"; style?: ViewStyle;
-}) {
-  const column = useColumnWidth();
-  const { perLine, lines } = wrap(chars, width ?? column - inset, variant, caps);
-  const w = width ?? column - inset;
-  return (
-    <View style={[{ alignItems: align }, style]}>
-      {lines.map((n, i) => <SkeletonLine key={i} variant={variant} width={Math.round((w * n) / perLine)} />)}
-    </View>
-  );
-}
-
-/** Kapağın şekli — alanların Türkçe metin uzunluğu (harf). Web `flow-skeleton` `COVERS` ile aynı sayılar. */
-export type CoverShape = {
-  /** Kapağın üstündeki koç cümlesi (`CoachLine`); 0 = yok. */
-  coach?: number;
-  eyebrow?: number;
-  title?: number;
-  /** Tanıtım cümlesi; 0 = yok. */
-  pitch?: number;
-  rules?: number[];
-  /** Kuralların altındaki not, paragraf paragraf (caption). */
-  note?: number[];
+export type CoverText = {
+  /** Kapağın üstündeki koç cümlesi (`CoachLine`); yoksa çizilmez. */
+  coach?: string | null;
+  eyebrow: string;
+  title: string;
+  /** Tanıtım cümlesi; yoksa çizilmez. */
+  pitch?: string | null;
+  rules?: string[];
+  /** Kuralların altındaki not (caption, `\n` paragraf). */
+  note?: string | null;
   /** Kapağın dibindeki küçük bağımsızlık satırı (`exam.independent_note`). */
-  footnote?: number;
-  /** `DetailCard` satır sayısı (0 = kart yok). */
-  detailRows?: number;
+  footnote?: string | null;
+  /** `DetailCard`: başlığı ve satır sayısı. */
+  detail?: { title: string; rows: number } | null;
   secondary?: boolean;
   tertiary?: boolean;
 };
 
-export const COVERS = {
-  placement: { eyebrow: 12, title: 27, pitch: 46, rules: [44, 50, 44, 48, 47] },
-  challenge: { eyebrow: 13, title: 18, pitch: 126, rules: [32, 32, 78] },
-  boss: { eyebrow: 13, title: 27, rules: [34, 34, 57, 43] },
-  weekly: { eyebrow: 13, title: 22, pitch: 57, rules: [20, 20, 37], note: [64], secondary: true, tertiary: false },
-  scored: { coach: 56, eyebrow: 40, title: 14, pitch: 162, rules: [46, 53, 88], detailRows: 3 },
-  mock: { eyebrow: 22, title: 24, pitch: 97, rules: [16, 80, 60, 24, 75], note: [23, 84], footnote: 109 },
-  exam: { coach: 56, eyebrow: 21, title: 24, pitch: 34, rules: [22, 55, 56, 54, 41], detailRows: 5, footnote: 109 },
-} satisfies Record<string, CoverShape>;
+/**
+ * Koç cümlesinin iskeletteki yeri. Kapak cümleyi RASTGELE seçiyor (ve seçimi
+ * hatırlıyor; `pickCoachLine` burada çağrılmaz, yoksa iskelet bir cümleyi
+ * "gösterilmiş" sayardı). Hangisinin geleceği bilinmediği için o anın
+ * cümlelerinden uzunluğu ortanca olan, arayüz dilinde: satır sayısı çoğu
+ * zaman tutuyor, tutmadığında fark bir satır.
+ */
+export function coverCoach(moment: CoachMoment): string {
+  const lines = COACH_LINES[moment].map((k) => fillCoachLine(t(k))).sort((a, b) => a.length - b.length);
+  return lines[Math.floor(lines.length / 2)] ?? "";
+}
 
 /**
  * Kapak iskeleti — `FlowScreen` + `CoverBody` + `FlowActions`, aynı sırayla:
@@ -165,26 +96,21 @@ export const COVERS = {
  *
  * Seviye testi, sınav, meydan okuma, patron, haftalık sınav, deneme sınavı
  * bölümü ve puanlı konuşma yüklenince KAPAKLA açılıyor. Kaplar gerçeğinin
- * dolguları; ekran `ContentColumn`un içinde (telefonda ekran, tablette
- * `contentWidth`), satır sayıları o genişlikten (`TextLines`).
+ * dolguları; satırlar gerçek metnin o kolondaki ölçülmüş sarılmasından
+ * (`SkeletonText`), telefonla tablet farkı kendiliğinden.
  * Web karşılığı `components/flow-skeleton` `CoverSkeleton`.
  *
  * Bekleme kendini duyuruyor: kök "meşgul" bir ilerleme bölgesi, adı `label`.
  */
 export function CoverSkeleton({
-  label, top = false, coach = 0, eyebrow = 14, title = 22, pitch = 0, rules = [], note = [], footnote = 0, detailRows = 0, secondary = false, tertiary = true,
-}: CoverShape & {
+  label, top = false, coach, eyebrow, title, pitch, rules = [], note, footnote, detail, secondary = false, tertiary = true,
+}: CoverText & {
   label: string;
   /** `FlowTopBar` (kapat/geri karosu). */
   top?: boolean;
 }) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  /* Kolon (`ContentColumn`) eksi `FlowScreen`in iki yan dolgusu; kural metni
-     bir de kartın dolgusu + kenarlığı, 28'lik ikon ve aradaki `md` kadar dar. */
-  const body = useColumnWidth() - spacing.lg * 2;
-  const ruleText = body - spacing.lg * 2 - 2 - 28 - spacing.md;
-  const cardText = body - spacing.lg * 2 - 2;
   return (
     <View
       accessible
@@ -202,33 +128,29 @@ export function CoverSkeleton({
         </View>
       ) : null}
       <View style={{ flex: 1, overflow: "hidden", paddingHorizontal: spacing.lg, paddingBottom: spacing.lg, gap: spacing.md }}>
-        {coach ? <TextLines variant="body" chars={coach} width={body} /> : null}
+        {coach ? <SkeletonText variant="body" text={coach} /> : null}
         <View style={{ gap: spacing.md, paddingTop: spacing.md }}>
           <Skeleton height={ds(56)} width={ds(56)} radius={radii.lg} />
           <View style={{ gap: spacing.xs }}>
-            <TextLines variant="micro" chars={eyebrow} width={body} caps />
-            <TextLines variant="h1" chars={title} width={body} />
-            {pitch ? <TextLines variant="body" chars={pitch} width={body} /> : null}
+            <SkeletonText variant="micro" text={eyebrow} caps />
+            <SkeletonText variant="h1" text={title} />
+            {pitch ? <SkeletonText variant="body" text={pitch} /> : null}
           </View>
           {rules.length ? (
             <Card padded style={{ gap: spacing.md }}>
-              {rules.map((chars, i) => (
+              {rules.map((text, i) => (
                 <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.md }}>
                   <Skeleton height={28} width={28} radius={radii.sm} />
-                  <TextLines variant="body" chars={chars} width={ruleText} style={{ paddingTop: 2 }} />
+                  <SkeletonText variant="body" text={text} style={{ flex: 1, paddingTop: 2 }} />
                 </View>
               ))}
             </Card>
           ) : null}
-          {note.length ? (
-            <View>
-              {note.map((chars, i) => <TextLines key={i} variant="caption" chars={chars} width={body} />)}
-            </View>
-          ) : null}
-          {detailRows ? (
+          {note ? <SkeletonText variant="caption" text={note} /> : null}
+          {detail ? (
             <Card padded style={{ gap: spacing.sm }}>
-              <TextLines variant="micro" chars={24} width={cardText} caps />
-              {Array.from({ length: detailRows }, (_, i) => (
+              <SkeletonText variant="micro" text={detail.title} caps />
+              {Array.from({ length: detail.rows }, (_, i) => (
                 <View key={i} style={{ flexDirection: "row", justifyContent: "space-between", gap: spacing.md }}>
                   <SkeletonLine variant="bodyStrong" width="42%" />
                   <SkeletonLine variant="caption" width="30%" />
@@ -236,7 +158,7 @@ export function CoverSkeleton({
               ))}
             </Card>
           ) : null}
-          {footnote ? <TextLines variant="micro" chars={footnote} width={body} /> : null}
+          {footnote ? <SkeletonText variant="micro" text={footnote} /> : null}
         </View>
       </View>
       <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md, gap: spacing.sm }}>

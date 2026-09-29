@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
-import { Animated, PixelRatio, View, type ViewStyle } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Animated, PixelRatio, View, type TextLayoutEvent, type ViewStyle } from "react-native";
 import { Card } from "./Card";
+import { Text } from "./Text";
 import { useTheme, radii, spacing, typography, lineHeightRatio } from "../theme";
 import { minLineRatioNow } from "./fontFit";
 import { reduceMotion } from "../lib/reduceMotion";
@@ -72,7 +73,8 @@ function usePulse(): Animated.AnimatedInterpolation<number> {
 
 /** Tek iskelet bloğu. */
 export function Skeleton({ height = 16, width = "100%", radius = radii.md, style }: {
-  height?: number; width?: ViewStyle["width"]; radius?: number; style?: ViewStyle;
+  /** Yüzde de olabilir: içeriğe göre büyüyen kabı dolduran blok (baloncuk). */
+  height?: ViewStyle["height"]; width?: ViewStyle["width"]; radius?: number; style?: ViewStyle;
 }) {
   const { colors } = useTheme();
   const opacity = usePulse();
@@ -92,6 +94,83 @@ export function SkeletonLine({ variant = "body", width = "100%", style }: {
   return (
     <View style={[{ width, height: h, justifyContent: "center" }, style]}>
       <Skeleton height={bar} radius={Math.min(radii.sm, bar / 2)} />
+    </View>
+  );
+}
+
+/*
+ * METİN YERİ ÖLÇÜLEREK — tahminle değil.
+ *
+ * Satır sayısı eskiden harf sayısı × ortalama harf genişliğinden tahmin
+ * ediliyordu (Türkçe harf sayıları, yazı tipi başına ortalama genişlik tablosu).
+ * Kırılım sınırında bir satır şaşıyor, İngilizce/Almanca arayüzde metin başka
+ * uzunlukta olduğu için hiç tutmuyordu: gerçek metin gelince ekran bir satır
+ * kayıyordu. Artık GERÇEK metin aynı `Text` varyantıyla görünmez çiziliyor,
+ * sistem onu gerçekte nasıl sarıyorsa öyle sarıyor (yazı ölçeği, `fontFit`
+ * tabanı, yazı tipi dahil) ve `onTextLayout`un bildirdiği her satıra o
+ * satırın genişliğinde bir çubuk konuyor. İlk ölçüm gelene kadar görünmez
+ * metin yeri zaten doğru yükseklikte tutuyor: çubuklar gelince bir şey kaymıyor.
+ */
+type LineBox = { x: number; y: number; width: number; height: number };
+
+/*
+ * Değeri henüz bilinmeyen VERİ metni (katalog başlığı, sahne, kullanıcı cümlesi)
+ * için dolgu: gerçek dilde yazılmış sıradan bir cümle. Harf sayısı tahmin
+ * (ortanca uzunluk) ama sarılma yine gerçek yazı tipiyle ölçülüyor —
+ * sözlükten gelen metinler için dolgu KULLANILMAZ, `text` verilir.
+ */
+/* Web `components/flow-skeleton` `FILLER` ile aynı cümle (parity: ortak dizge sabitleri). */
+const FILLER = "Hangi seviyeden başlaman gerektiğini gösterir ve her kural kendi satırında durur; bitince sonuç ve beceri profili gelir, istediğin aşamayı atlayabilirsin. ";
+
+/** `chars` harflik dolgu metni (veri metninin tahmini uzunluğu). */
+export function skeletonFiller(chars: number): string {
+  let s = "";
+  while (s.length < chars) s += FILLER;
+  return s.slice(0, Math.max(1, chars)).trimEnd();
+}
+
+/** Üst satır biçimi (`CoverBody` eyebrow, `DetailCard` başlığı): büyük harf + 1 aralık. */
+const CAPS = { textTransform: "uppercase", letterSpacing: 1 } as const;
+
+/**
+ * Metin iskeleti: `text` (gerçek, çevrilmiş metin) ya da `chars` harflik dolgu
+ * görünmez çiziliyor; her satırına ölçülen genişlikte bir çubuk.
+ * Dış kap `style`ı taşıyor (dolgu, flex); ölçüm iç kapta, çubukların
+ * konumu dolgudan etkilenmesin.
+ */
+export function SkeletonText({ text, chars = 40, variant = "body", caps = false, align = "left", numberOfLines, style }: {
+  text?: string | null;
+  /** `text` yokken dolgunun uzunluğu — yalnız veri metni için. */
+  chars?: number;
+  variant?: Variant;
+  caps?: boolean;
+  align?: "left" | "center";
+  /** Gerçek metin satır sınırlıysa (ör. başlık altı 2 satır) aynı sınır. */
+  numberOfLines?: number;
+  style?: ViewStyle;
+}) {
+  const [lines, setLines] = useState<LineBox[] | null>(null);
+  const onTextLayout = (e: TextLayoutEvent) => {
+    const next = e.nativeEvent.lines.map(({ x, y, width, height }) => ({ x, y, width, height }));
+    /* Her düzen geçişinde tetikleniyor; aynı ölçüde yeniden çizmiyoruz. */
+    setLines((prev) => (prev && prev.length === next.length && prev.every((p, i) => p.x === next[i].x && p.y === next[i].y && p.width === next[i].width && p.height === next[i].height) ? prev : next));
+  };
+  return (
+    <View style={style} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+      <View>
+        <Text variant={variant} accessible={false} numberOfLines={numberOfLines} onTextLayout={onTextLayout} style={[{ opacity: 0, textAlign: align }, caps ? CAPS : null]}>
+          {text ?? skeletonFiller(chars)}
+        </Text>
+        {lines?.map((l, i) => {
+          if (l.width <= 0) return null;
+          const bar = Math.max(6, Math.round(l.height) - 4);
+          return (
+            <View key={i} style={{ position: "absolute", left: l.x, top: l.y, width: l.width, height: l.height, justifyContent: "center" }}>
+              <Skeleton height={bar} radius={Math.min(radii.sm, bar / 2)} />
+            </View>
+          );
+        })}
+      </View>
     </View>
   );
 }

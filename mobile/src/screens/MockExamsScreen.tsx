@@ -14,8 +14,7 @@ import { PrimaryButton } from "../ui/PrimaryButton";
 import { FlowNote } from "../ui/flow";
 import { UnlockProgress } from "../ui/UnlockProgress";
 import { mockCopy, whenText } from "../lib/unlock";
-import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
-import { TextLines } from "../game/RoundSkeleton";
+import { Skeleton, SkeletonCard, SkeletonLine, SkeletonText, textHeight } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { useAuth } from "../lib/AuthContext";
 import { currentCourseId } from "../lib/courses";
@@ -215,15 +214,17 @@ export function MockExamsScreen() {
              Tek kartlık bir başlık + satır çiziliyordu; kâğıtlar gelince
              liste bir anda üç ekran boyu uzuyordu. */
           <View>
-            {/* Giriş metni 180 harf: telefonda dört, tablette iki satır. */}
-            <TextLines variant="caption" chars={180} inset={spacing.lg * 2} style={{ marginBottom: spacing.md }} />
+            {/* Giriş metni sözlükten: gerçeği görünmez çizilip satırları ölçülüyor. */}
+            <SkeletonText variant="caption" text={t("mockexams.intro")} style={{ marginBottom: spacing.md }} />
             {[0, 1].map((p) => (
               <SkeletonCard key={p} label={p === 0 ? t("common.loading") : undefined} style={{ marginBottom: spacing.md }}>
-                {/* Uzunluklar harf: yüzde genişlik tablette (kolon ~1000dp) 24 harflik temayı 480dp'lik çubuğa çeviriyordu. */}
-                <TextLines variant="micro" chars={9} inset={spacing.lg * 4 + 2} />
-                <TextLines variant="bodyStrong" chars={24} inset={spacing.lg * 4 + 2} style={{ marginTop: 2 }} />
-                <TextLines variant="caption" chars={23} inset={spacing.lg * 4 + 2} />
-                <TextLines variant="micro" chars={17} inset={spacing.lg * 4 + 2} style={{ marginTop: spacing.xs }} />
+                {/* Kâğıt no ve süre sözlükten (tipik değerle); tema ve karşılığı katalogla
+                    geliyor, tahmini uzunlukta dolgu. Yüzde genişlik tablette (kolon ~1000dp)
+                    24 harflik temayı 480dp'lik çubuğa çeviriyordu. */}
+                <SkeletonText variant="micro" text={t("mockexams.mock_n", { n: p + 1 })} />
+                <SkeletonText variant="bodyStrong" chars={24} style={{ marginTop: 2 }} />
+                <SkeletonText variant="caption" chars={23} />
+                <SkeletonText variant="micro" text={t("mockexams.minutes", { n: 90 })} style={{ marginTop: spacing.xs }} />
                 <View style={{ marginTop: spacing.sm }}>
                   {[0, 1, 2, 3].map((i) => (
                     <Skeleton key={i} height={textHeight("bodyStrong") + textHeight("micro") + spacing.sm * 2} radius={radii.md} style={{ marginTop: spacing.xs }} />

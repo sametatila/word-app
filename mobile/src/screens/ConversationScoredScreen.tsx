@@ -11,7 +11,8 @@ import { PressableScale } from "../ui/PressableScale";
 import { ConversationIcon, CorrectIcon, DurationIcon, LockedIcon, NoGoingBackIcon, ScoreTargetIcon, SendIcon, SkillSpeakingIcon, WarningIcon } from "../ui/icons";
 import { CoachLine } from "../ui/CoachLine";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
-import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton, coverCoach } from "../game/RoundSkeleton";
+import { skeletonFiller } from "../ui/Skeleton";
 import { ensureConversations, findConversation, conversationLevelOf, type Conversation } from "../data/conversations";
 import { nativeContentReady, useNativeContentVersion, waitNativeContent } from "../lib/nativeContent";
 import { sendChat, parseReply, type ChatMsg } from "../game/chat";
@@ -256,7 +257,24 @@ export function ConversationScoredScreen() {
   if (!conversation && !packReady) {
     /* Paket inerken KAPAĞIN iskeleti (üst çubuk, koç cümlesi, üç kural,
        kalıplar kartı, Başla / Vazgeç): paket gelince açılan ekran kapak. */
-    return <CoverSkeleton label={tx("common.loading")} top {...COVERS.scored} />;
+    /* Kuralların metni kapağın kendisinden; üst satır (konuşmanın adı) ve
+       sahne pakette, tahmini uzunlukta. */
+    return (
+      <CoverSkeleton
+        label={tx("common.loading")}
+        top
+        coach={coverCoach("scored_intro")}
+        eyebrow={skeletonFiller(40)}
+        title={tx("scored.title")}
+        pitch={skeletonFiller(162)}
+        rules={[
+          tx("scored.rule_time", { turns: SCORED_TURNS, minutes: SCORED_SECONDS / 60 }),
+          tx("scored.rule_partner"),
+          tx("scored.rule_scoring"),
+        ]}
+        detail={{ title: tx("scored.patterns_title"), rows: 3 }}
+      />
+    );
   }
   if (!conversation) {
     return (

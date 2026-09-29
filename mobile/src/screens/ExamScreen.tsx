@@ -4,7 +4,7 @@ import { BOSS_SECONDS, MIN_ASSESS_WORDS, MIN_FREE_WORDS, PASS_SECTION, PASS_TOTA
 import { View, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton, coverCoach } from "../game/RoundSkeleton";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
@@ -441,7 +441,28 @@ export function ExamScreen() {
       bağımsızlık notu, dipte Başla / Vazgeç. Önceki iskelet iki düz kart
       çiziyordu ve kapak gelince düğmeler dipte birden beliriyordu.
     */
-    return <CoverSkeleton label={t("exam.preparing")} top {...COVERS.exam} />;
+    /* Metinler kapağın kendisinden (aşağıdaki `rules` ile aynı anahtarlar);
+       kâğıdın kendi başlığı varsa kapak onu çiziyor, bilinmeden sözlükteki
+       başlık ölçülüyor. Bölümler kartı beş satır (dört bölüm + yazma). */
+    return (
+      <CoverSkeleton
+        label={t("exam.preparing")}
+        top
+        coach={coverCoach("exam_intro")}
+        eyebrow={moduleIx === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: moduleIx + 1 })}
+        title={t(moduleIx === null ? "exam.cover_title_level" : "exam.cover_title_module")}
+        pitch={t("exam.cover_pitch")}
+        rules={[
+          t(moduleIx === null ? "exam.rules_level" : "exam.rules_module"),
+          t("exam.rule_no_return"),
+          t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }),
+          t("exam.rule_weight"),
+          t("exam.rule_quit"),
+        ]}
+        detail={{ title: t("exam.sections"), rows: 5 }}
+        footnote={t("exam.independent_note")}
+      />
+    );
   }
 
   if (phase === "cover") {
