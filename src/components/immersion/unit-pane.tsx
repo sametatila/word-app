@@ -236,7 +236,7 @@ export function UnitPane({
           const cls = "card flex items-center gap-3 p-4";
           const style = {
             opacity: it.open ? 1 : 0.55,
-            borderWidth: current ? 2 : 1,
+            borderWidth: 1,
             borderColor: current ? "var(--color-brand-500)" : "var(--hairline)",
           };
 

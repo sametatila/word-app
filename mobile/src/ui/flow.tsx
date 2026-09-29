@@ -50,7 +50,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
         <PressableScale
           onPress={secondary.onPress}
           disabled={secondary.disabled}
-          style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }}
+          style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }}
         >
           {secondary.icon}
           {secondary.hint ? (

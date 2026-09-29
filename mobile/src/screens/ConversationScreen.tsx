@@ -1191,7 +1191,7 @@ function TypedRow({ value, onChange, onSubmit, placeholder, colors, disabled }: 
         /* Enter = Gönder. `multiline` tek başına Enter'ı alt satıra
            çeviriyor ve `onSubmitEditing` hiç çağrılmıyordu. */
         submitBehavior="submit" returnKeyType="send"
-        style={{ flex: 1, maxHeight: ds(120), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }} />
+        style={{ flex: 1, maxHeight: ds(120), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }} />
       <PressableScale accessibilityLabel={tx("common.send")} onPress={onSubmit} disabled={!dolu} style={[{ width: 48, height: 48, borderRadius: radii.pill, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}>
         <ArrowRightIcon color={dolu ? colors.onPrimary : colors.textFaint} size={22} />
       </PressableScale>

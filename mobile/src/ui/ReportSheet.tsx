@@ -80,7 +80,7 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
                 {reasonsFor(kind).map((r) => {
                   const active = reason === r.key;
                   return (
-                    <PressableScale key={r.key} onPress={() => setReason(r.key)} accessibilityRole="radio" accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 44, paddingVertical: isContent ? 8 : 10, paddingHorizontal: spacing.md, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
+                    <PressableScale key={r.key} onPress={() => setReason(r.key)} accessibilityRole="radio" accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 44, paddingVertical: isContent ? 8 : 10, paddingHorizontal: spacing.md, borderRadius: radii.md, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
                       <View style={{ flex: 1 }}>
                         <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{r.label}</Text>
                         {r.sub ? <Text variant="micro" color={colors.textMuted}>{r.sub}</Text> : null}

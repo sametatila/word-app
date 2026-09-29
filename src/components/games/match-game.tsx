@@ -164,7 +164,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
               : isWrong
                 ? "option-wrong"
                 : isSelected
-                  ? "ring-2 ring-[color:var(--color-brand)]"
+                  ? "option-picked"
                   : "";
             return (
               <motion.button
@@ -200,7 +200,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
               : isWrong
                 ? "option-wrong"
                 : isSelected
-                  ? "ring-2 ring-[color:var(--color-brand)]"
+                  ? "option-picked"
                   : "";
             return (
               <motion.button

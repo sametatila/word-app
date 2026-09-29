@@ -599,7 +599,7 @@ export function ConversationScoredScreen() {
           accessibilityLabel={listening ? tx("speak.listening") : asr ? tx("scored.speak_or_type") : tx("conversation.type_in", { lang: targetLangName() })}
           placeholderTextColor={colors.textFaint}
           /* Kutu ve gönder düğmesi konuşma ekranının `TypedRow`uyla aynı biçim. */
-          style={{ flex: 1, maxHeight: ds(120), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }}
+          style={{ flex: 1, maxHeight: ds(120), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }}
         />
         {(() => {
           const dolu = !busy && !!draft.trim();

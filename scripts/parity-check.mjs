@@ -19079,7 +19079,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *   - davet halinde Android ok koyuyor (gidilecek bir yer var), web hicbir sey
  *
  * Olcu iki tarafi ayni dosyadan okuyor ve DEGER karsilastiriyor; yaricap ve
- * punto adlari ise rol uzerinden (webin `text-h3`u Android `variant="h3"`). */
+ * punto adlari ise rol uzerinden (webin `text-h3`u Android `variant="h3"`).
+ *
+ * 2026-09-29, Samet: kutu/secenek/dugme 1 px, kucuk denetim 1.5. Kart ve
+ * iskelet cercevesi 1.5'ten 1'e indi; durum hala RENKTE (mavi/marka). */
 {
   const silN = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
   const m = silN(read("mobile/src/social/FriendPulse.tsx")).replace(/\s+/g, " ");
@@ -19099,8 +19102,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "iskelet karo=" + ((m.match(/<SkeletonTile size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "iskelet baslik=" + (/<SkeletonLine variant="h3" width="72%"/.test(m) ? "h3" : "FARKLI"),
       "iskelet cubuk=" + ((m.match(/<SkeletonBar height=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "iskelet cerceve=" + (/borderWidth: 1\.5, borderColor: colors\.hairline/.test(m) ? "1.5" : "YOK"),
-      "kart cercevesi=" + (/borderColor: invited \? colors\.info : colors\.primary, borderWidth: 1\.5/.test(m) ? "1.5 durumlu" : "YOK"),
+      "iskelet cerceve=" + (/borderWidth: 1, borderColor: colors\.hairline/.test(m) ? "1" : "YOK"),
+      "kart cercevesi=" + (/borderColor: invited \? colors\.info : colors\.primary, borderWidth: 1 /.test(m) ? "1 durumlu" : "YOK"),
       "halka=" + (/ring=\{invited \? colors\.info : colors\.primary\}/.test(m) ? "durumlu" : "SABIT"),
       "baslik=" + (/<Text variant="h3" numberOfLines=\{1\}>/.test(m) ? "h3" : "FARKLI"),
       "cubuk boy=" + barBoy,
@@ -19113,8 +19116,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "iskelet karo=" + ((w.match(/<SkeletonTile size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
       "iskelet baslik=" + (/<SkeletonLine variant="h3" width="72%"/.test(w) ? "h3" : "FARKLI"),
       "iskelet cubuk=" + ((w.match(/<SkeletonBar height=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "iskelet cerceve=" + (/borderWidth: 1\.5, borderColor: "var\(--hairline\)"/.test(w) ? "1.5" : "YOK"),
-      "kart cercevesi=" + (/borderWidth: 1\.5, borderColor: invited \? "var\(--color-sky\)" : "var\(--color-brand\)"/.test(w) ? "1.5 durumlu" : "YOK"),
+      "iskelet cerceve=" + (/borderWidth: 1, borderColor: "var\(--hairline\)"/.test(w) ? "1" : "YOK"),
+      "kart cercevesi=" + (/borderWidth: 1, borderColor: invited \? "var\(--color-sky\)" : "var\(--color-brand\)"/.test(w) ? "1 durumlu" : "YOK"),
       "halka=" + (/ring=\{invited \? "var\(--color-sky\)" : "var\(--color-brand\)"\}/.test(w) ? "durumlu" : "SABIT"),
       "baslik=" + (/<p className="truncate text-h3">/.test(w) ? "h3" : "FARKLI"),
       "cubuk boy=" + ((w.match(/style=\{\{ height: (\d+), background: "var\(--surface-2\)" \}\}/) ?? [])[1] ?? "YOK"),
@@ -21167,7 +21170,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * odeme akisi hic yok, sayfa bilgilendirme. Ayni sebeple `purchase_start`
  * ve `purchase_done` da yalniz mobilde (bkz. 11.499).
  *
- * Olcu: esli uc yuzeyin kenarlik kalinligi + rapor halkasinin uc sayisi. */
+ * Olcu: esli uc yuzeyin kenarlik kalinligi + rapor halkasinin uc sayisi.
+ *
+ * 2026-09-29, Samet: kutu/secenek/dugme 1 px, kucuk denetim 1.5. Kart, sik
+ * ve cip artik 1; radyo halkasi (kucuk denetim) 2'den 1.5'e indi. Kalinligin
+ * geri gelmesini tek tek yuzeyler degil `check:radius` kenarlik bolumu
+ * tutuyor; burasi yalniz iki platformun ESIT kaldigina bakiyor. */
 {
   const silK = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
   const css = silK(read("src/app/globals.css"));
@@ -21202,13 +21210,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Rapor listesinin halkasi: kutu, kenarlik, nokta - uc sayi da ayni. */
   const mobRapor = silK(read("mobile/src/ui/ReportSheet.tsx"));
   const webRapor = silK(read("src/components/report-dialog.tsx"));
-  /* 2026-09-27: mobil halka artik ortak `ui/RadioDot` (halka ds(22), kenarlik 2,
+  /* 2026-09-27: mobil halka artik ortak `ui/RadioDot` (halka ds(22), kenarlik 1.5,
      nokta ds(10)); rapor sayfasi onu cagiriyorsa olcu oradan okunuyor. */
   const mobDot = silK(read("mobile/src/ui/RadioDot.tsx"));
   const mobHalka = /<RadioDot\b/.test(mobRapor)
-    ? [null, (mobDot.match(/const ring = ds\((\d+)\)/) ?? [])[1], (mobDot.match(/borderRadius: ring \/ 2, borderWidth: (\d+)/) ?? [])[1], (mobDot.match(/const dot = ds\((\d+)\)/) ?? [])[1]]
-    : (() => { const m = mobRapor.match(/width: (\d+), height: \d+, borderRadius: \d+, borderWidth: (\d+)[\s\S]{0,200}?width: (\d+), height: \d+, borderRadius: \d+, backgroundColor/); return m && [null, m[1], m[2], m[3]]; })();
-  const webHalka = webRapor.match(/width: (\d+),\s*height: \d+,\s*border: `(\d+)px[\s\S]{0,300}?width: (\d+), height: \d+, background/);
+    ? [null, (mobDot.match(/const ring = ds\((\d+)\)/) ?? [])[1], (mobDot.match(/borderRadius: ring \/ 2, borderWidth: ([\d.]+)/) ?? [])[1], (mobDot.match(/const dot = ds\((\d+)\)/) ?? [])[1]]
+    : (() => { const m = mobRapor.match(/width: (\d+), height: \d+, borderRadius: \d+, borderWidth: ([\d.]+)[\s\S]{0,200}?width: (\d+), height: \d+, borderRadius: \d+, backgroundColor/); return m && [null, m[1], m[2], m[3]]; })();
+  const webHalka = webRapor.match(/width: (\d+),\s*height: \d+,\s*border: `([\d.]+)px[\s\S]{0,300}?width: (\d+), height: \d+, background/);
   sameList(
     "rapor listesinin radyo halkasi",
     ["kutu=" + (mobHalka?.[1] ?? "YOK") + " kenarlik=" + (mobHalka?.[2] ?? "YOK") + " nokta=" + (mobHalka?.[3] ?? "YOK")],
@@ -21353,6 +21361,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *   - secenekler yan yana ve esit genislikte (Android `flex: 1`, aralik 8)
  *   - dolgu 12, yaricap `radii.lg` (20)
  *   - kenarlik seciliyken 2, degilken 1 (web sabit 1.5 kullaniyordu)
+ *     2026-09-29, Samet: kutu/secenek/dugme 1 px, kucuk denetim 1.5. Secim
+ *     artik kalinlikla degil renk + dolguyla: iki tarafta da SABIT 1 (web
+ *     `.option` sinifinin 1 px'i, satir ici `borderWidth` yok).
  *   - UC SATIR: etiket + hoparlor, cinsiyet, ses notu. Web'de NOT SATIRI HIC
  *     YOKTU - iki sesin farkini anlatan cumle yalnizca kaldirilan genis
  *     kipte vardi, yani ayarlarda hic gorunmuyordu.
@@ -21368,12 +21379,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "ses secicinin sekli",
     [
-      "kenarlik=" + (/borderWidth: on \? 2 : 1/.test(mob) ? "2/1" : "BASKA"),
+      "kenarlik=" + (/borderWidth: 1,/.test(mob) && !/borderWidth: on \?/.test(mob) ? "1" : "BASKA"),
       "dolgu=" + (/padding: spacing\.md/.test(mob) ? "12" : "BASKA"),
       "ikon=" + ((mob.match(/SpeakerIcon color=\{colors\.primaryText\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
     ],
     [
-      "kenarlik=" + (/borderWidth: active \? 2 : 1/.test(web) ? "2/1" : "BASKA"),
+      "kenarlik=" + (!/borderWidth/.test(web) && /className=\{`option flex-1/.test(web) ? "1" : "BASKA"),
       "dolgu=" + (/option flex-1 p-3/.test(web) ? "12" : "BASKA"),
       "ikon=" + ((web.match(/SpeakerIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
     ],

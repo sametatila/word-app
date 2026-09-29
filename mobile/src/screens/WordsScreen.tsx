@@ -219,7 +219,7 @@ export function WordsScreen() {
         }
         ListFooterComponent={
           phase === "ready" && hasMore ? (
-            <PressableScale onPress={() => setPage((p) => p + 1)} style={{ marginTop: spacing.md, paddingVertical: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, alignItems: "center" }}>
+            <PressableScale onPress={() => setPage((p) => p + 1)} style={{ marginTop: spacing.md, paddingVertical: spacing.md, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.primaryText}>{t("words.load_more")}</Text>
             </PressableScale>
           ) : undefined

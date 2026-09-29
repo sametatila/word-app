@@ -715,14 +715,14 @@
    * dışında bir zemin. Koyu temada `color-scheme` sayesinde okunuyordu ama
    * uygulamanın değil tarayıcının kutusu gibi duruyordu.
    *
-   * Ölçüler mobilden: yarıçap `panel` (20 = `radii.lg`), 1,5 px kenarlık,
+   * Ölçüler mobilden: yarıçap `panel` (20 = `radii.lg`), 1 px kenarlık,
    * yüzey zemin, gövde punto. Dolguyu kullanan yer daraltabiliyor
    * (`py-2` gibi yardımcı sınıflar bu katmandan sonra geliyor).
    */
   .input {
     background: var(--surface);
     color: var(--text);
-    border: 1.5px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius-panel);
     padding: 0.75rem 1rem;
     font-size: var(--text-body);
@@ -1035,7 +1035,7 @@
     inset: -8px;
   }
   .option {
-    border: 1.5px solid var(--border);
+    border: 1px solid var(--border);
     background: var(--surface);
     border-radius: var(--radius-panel);
     transition: border-color 0.15s ease, background-color 0.15s ease, transform var(--press-motion),
@@ -1071,7 +1071,7 @@
   /* Seviye/filtre çipleri */
   /*
    * Seçim çipi — mobil `ui/Chip.tsx` ile aynı dil: PILL DEĞİL, yarıçap
-   * `tile` (14), 1,5 px kenarlık, seçiliyken yumuşak turuncu zemin ve
+   * `tile` (14), 1 px kenarlık, seçiliyken yumuşak turuncu zemin ve
    * turuncu yazı.
    *
    * Web bunu pill + dolu turuncu olarak çiziyordu, yani KELİME LİSTESİNİN
@@ -1080,7 +1080,7 @@
    * yorumda kayıtlı ve bilinçli.
    */
   .chip {
-    border: 1.5px solid var(--border);
+    border: 1px solid var(--border);
     background: var(--surface);
     color: var(--text-muted);
     border-radius: var(--radius-tile);
@@ -1405,7 +1405,7 @@
  * halkası) ve `animate-pop` / `pop-in`.
  *
  * İkisi de hiçbir yerden çağrılmıyordu ve Android'de karşılıkları YOK: iki
- * platform da sıradaki adımı aynı şekilde işaretliyor - 2 px marka kenarlığı
+ * platform da sıradaki adımı aynı şekilde işaretliyor - marka rengi kenarlık
  * ve "şimdi" hapı, nabız yok. Yani eksik bir efekt değil, ulaşılmayan bir
  * kalıntıydı; ölü sınıf taramasında her seferinde çıkıp aynı incelemeyi
  * gerektiriyordu.

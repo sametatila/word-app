@@ -80,7 +80,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
 function QuestsSkeleton() {
   const { colors } = useTheme();
   return (
-    <SkeletonCard style={{ marginBottom: spacing.md, borderWidth: 1.5, borderColor: colors.hairline }}>
+    <SkeletonCard style={{ marginBottom: spacing.md, borderWidth: 1, borderColor: colors.hairline }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <View style={{ flexDirection: "row" }}>
           <SkeletonTile size={44} radius={22} />
@@ -115,7 +115,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
   const invited = q.status === "invited";
   const myShare = q.totalXp ? q.myXp / q.totalXp : 0;
   return (
-    <Card padded style={[{ marginBottom: spacing.md, borderColor: colors.primary, borderWidth: 1.5 }, softShadow(colors.primary, 8)]}>
+    <Card padded style={[{ marginBottom: spacing.md, borderColor: colors.primary, borderWidth: 1 }, softShadow(colors.primary, 8)]}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <View style={{ flexDirection: "row" }}>
           <MyAvatar userId={me} name={myProfile?.name ?? null} serverAvatar={myProfile?.avatar} size={44} ring={colors.primary} />

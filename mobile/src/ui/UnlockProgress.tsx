@@ -53,7 +53,7 @@ export function UnlockProgress({ copy, lead, onPremium, compact = false }: { cop
                     alignItems: "center",
                     justifyContent: "center",
                     backgroundColor: c.ok ? colors.success : "transparent",
-                    borderWidth: c.ok ? 0 : 2,
+                    borderWidth: c.ok ? 0 : 1.5,
                     borderColor: colors.border,
                   }}
                 >

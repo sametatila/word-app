@@ -88,7 +88,7 @@ export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRoun
               accessibilityRole="radio"
               accessibilityState={{ selected: isPicked, disabled: picked !== null }}
               onPress={() => choose(opt)}
-              style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}
+              style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}
             >
               <Text variant="bodyStrong" color={fg}>{opt}</Text>
               {acildi && isAnswer && <CheckIcon color={colors.successText} size={22} />}

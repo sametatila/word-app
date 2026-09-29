@@ -635,7 +635,7 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint, answered = 
       {/* ROLÜ RADYO: sik listesi tek secimlik ve "dugme, secili" kac sik
           oldugunu soylemiyordu (bkz. parity 257). */}
       <PressableScale onPress={onPress} accessibilityRole="radio" accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ disabled: answered, selected: chosen }} accessibilityHint={state === "correct" ? tx("rounds.a11y_correct") : state === "wrong" ? tx("rounds.a11y_wrong") : undefined}
-        style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
+        style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
         <View style={{ flex: 1 }}>
           <Text variant="bodyStrong" color={fg}>{text}</Text>
           {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
@@ -852,7 +852,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
         onSubmitEditing={check}
         returnKeyType="done"
         submitBehavior="submit"
-        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
+        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
       />
       <HintRow answer={word.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
@@ -1003,7 +1003,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
         placeholder={tx("rounds.write_a_sentence_ph")}
         accessibilityLabel={tx("rounds.write_a_sentence_ph")}
         placeholderTextColor={colors.textFaint}
-        style={{ minHeight: 92, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 18 }}
+        style={{ minHeight: 92, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 18 }}
       />
       {/* Almanca özel harfler: telefon klavyesinde uzun basmak gerekiyor ve
           bir tur ortasında kimse onu aramıyor. Web de aynı dört harfi
@@ -1098,7 +1098,7 @@ function BlankSlot({ picked, correct, colors }: { picked: string | null; correct
         justifyContent: "center",
         alignItems: "center",
         borderRadius: radii.md,
-        borderWidth: 2,
+        borderWidth: 1.5,
         borderStyle: picked === null ? "dashed" : "solid",
         borderColor: tone,
         backgroundColor: picked === null ? colors.surface2 : correct ? colors.successSoft : colors.dangerSoft,
@@ -1175,7 +1175,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
         onSubmitEditing={submitTyped}
         returnKeyType="done"
         submitBehavior="submit"
-        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
+        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
       />
       <PressableScale onPress={submitTyped} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
         <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
@@ -1378,7 +1378,7 @@ function Tile({ label, undoKey, onPress, dim, colors, drag }: {
           paddingVertical: spacing.md,
           borderRadius: radii.md,
           backgroundColor: dim ? colors.surface2 : colors.surface,
-          borderWidth: 1.5,
+          borderWidth: 1,
           borderStyle: dim ? "dashed" : "solid",
           borderColor: dim ? colors.hairline : colors.border,
         }}
@@ -1543,7 +1543,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "spelling", placed.map((x) => x.char).join("")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.order_letters")} big={glossOf(word).text} sub={glossOf(word).sub} colors={colors} />
       <View>
-        <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+        <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => (
             <View key={i} onLayout={(e) => drop.yuvaOlc(i, e.nativeEvent.layout)}>
               <Tile label={t.char} undoKey="rounds.undo_letter" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (fb) return; if (drop.icinde(x, y)) setPlaced((p) => tasi(p, i, drop.hedefIndex(x, y, p.length))); else setPlaced((p) => p.filter((_, j) => j !== i)); } }} />
@@ -1618,7 +1618,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail, currentTargetLang()), placed.map((x) => x.text).join(" ")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.put_sentence_in_order")} big={exampleOf(round)?.text ?? glossOf(word).text} sub={exampleOf(round)?.sub ?? null} colors={colors} />
       <View>
-        <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+        <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => (
             <View key={i} onLayout={(e) => drop.yuvaOlc(i, e.nativeEvent.layout)}>
               <Tile label={t.text} undoKey="rounds.undo_word" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (fb) return; if (drop.icinde(x, y)) setPlaced((p) => tasi(p, i, drop.hedefIndex(x, y, p.length))); else setPlaced((p) => p.filter((_, j) => j !== i)); } }} />
@@ -1786,7 +1786,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         placeholder={tx("rounds.write_sentence", { lang: targetLangName() })}
         accessibilityLabel={tx("rounds.write_sentence", { lang: targetLangName() })}
         placeholderTextColor={colors.textFaint}
-        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
+        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
       <WordBankHint answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
@@ -1814,7 +1814,7 @@ function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: 
   }, [state]);
   return (
     <Animated.View style={{ transform: [{ translateX: shake }] }}>
-      <PressableScale onPress={onPress} disabled={state === "correct"} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ selected: state === "sel", disabled: state === "correct" }} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, minHeight: 60, justifyContent: "center" }}>
+      <PressableScale onPress={onPress} disabled={state === "correct"} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ selected: state === "sel", disabled: state === "correct" }} style={{ borderWidth: 1, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, minHeight: 60, justifyContent: "center" }}>
         <Text variant="bodyStrong" color={colors.text}>{text}</Text>
         {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
       </PressableScale>

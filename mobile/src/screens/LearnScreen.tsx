@@ -46,7 +46,7 @@ function WedgeTile({ title, pitch, tint, icon: Icon, onPress }: { title: string;
   const { colors } = useTheme();
   return (
     <PressableScale onPress={onPress} style={{ flex: 1 }}>
-      <Card padded style={{ minHeight: 132, borderColor: tint, borderWidth: 1.5, justifyContent: "space-between", gap: spacing.md }}>
+      <Card padded style={{ minHeight: 132, borderColor: tint, borderWidth: 1, justifyContent: "space-between", gap: spacing.md }}>
         <View style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 8)]}>
           <Icon color="#fff" size={24} />
         </View>
@@ -181,7 +181,7 @@ export function LearnScreen() {
       */}
       {user?.guest ? (
         <PressableScale onPress={() => nav.navigate("Auth")} accessibilityRole="button" accessibilityLabel={`${t("guest.create_account")}. ${t("guest.learn_nudge")}`}
-          style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.hairline, backgroundColor: colors.surface, padding: spacing.md, marginBottom: spacing.xl }}>
+          style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, backgroundColor: colors.surface, padding: spacing.md, marginBottom: spacing.xl }}>
           <SparkIcon color={colors.primaryText} size={22} />
           <View style={{ flex: 1 }}>
             <Text variant="bodyStrong">{t("guest.create_account")}</Text>

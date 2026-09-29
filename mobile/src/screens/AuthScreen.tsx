@@ -450,7 +450,7 @@ export function AuthScreen() {
             ) : null}
             {PROVIDERS.filter((p) => providersOn[p.id]).map((p) => (
               <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={t("auth.continue_with", { provider: p.label })}
-                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
+                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
                 <View style={{ width: 24, alignItems: "center" }}>
                   {socialBusy === p.id ? <ActivityIndicator color={colors.textMuted} /> : providerIcon(p.id, colors)}
                 </View>
@@ -460,7 +460,7 @@ export function AuthScreen() {
 
             {/* E-posta — form doğrudan açık değil; basınca açılır */}
             <PressableScale onPress={() => { setView("email"); setError(null); }}
-              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
+              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
               <View style={{ width: 24, alignItems: "center" }}><MailIcon color={colors.text} size={22} /></View>
               <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.continue_with_email")}</Text>
             </PressableScale>
@@ -478,7 +478,7 @@ export function AuthScreen() {
                 {/* Cihazdaki misafir sunucuda artık yok: neden yeniden başladığı söyleniyor. */}
                 {guestGone ? <FlowNote icon={<ClockIcon color={colors.textMuted} size={16} />} text={t("guest.session_gone")} /> : null}
                 <PressableScale onPress={() => { void doGuest(); }} disabled={guestBusy} accessibilityRole="button" accessibilityLabel={t("auth.continue_as_guest")}
-                  style={{ alignItems: "center", justifyContent: "center", borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg, marginTop: spacing.xs }}>
+                  style={{ alignItems: "center", justifyContent: "center", borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg, marginTop: spacing.xs }}>
                   {guestBusy ? <ActivityIndicator color={colors.textMuted} /> : <Text variant="h3" color={colors.primaryText}>{t("auth.continue_as_guest")}</Text>}
                 </PressableScale>
                 <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("auth.guest_hint")}</Text>
@@ -585,7 +585,7 @@ export function AuthScreen() {
               disabled={resendBusy || cooldown > 0}
               accessibilityLabel={t("verify.resend")}
               accessibilityState={{ disabled: resendBusy || cooldown > 0, busy: resendBusy }}
-              style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, alignItems: "center" }}
+              style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, alignItems: "center" }}
             >
               {/* Meşgulken yazı yerine dönen gösterge; düğme `disabled` kalıyor. */}
               {resendBusy ? (

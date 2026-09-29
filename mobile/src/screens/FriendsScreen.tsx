@@ -160,7 +160,7 @@ export function FriendsScreen() {
             )}
             {/* TEK DAVET — ödüllü kod bağlantısı (`/r/KOD`): katılan kişi davet edene
                 arkadaşlık isteği gönderir, kabul edince ortak seri başlar. */}
-            <PressableScale onPress={() => { track("share", 0, "invite"); void shareInvite(premiumStatus?.referral?.code); }} accessibilityRole="button" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.xl, borderWidth: 1.5, borderStyle: "dashed", borderColor: colors.primary, padding: spacing.lg, marginTop: spacing.lg }}>
+            <PressableScale onPress={() => { track("share", 0, "invite"); void shareInvite(premiumStatus?.referral?.code); }} accessibilityRole="button" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.xl, borderWidth: 1, borderStyle: "dashed", borderColor: colors.primary, padding: spacing.lg, marginTop: spacing.lg }}>
               <ShareIcon color={colors.primaryText} size={22} />
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong" color={colors.primaryText}>{tx("friends.invite_friend")}</Text>

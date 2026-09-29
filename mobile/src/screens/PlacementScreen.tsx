@@ -521,7 +521,7 @@ export function PlacementScreen() {
               yani kullanıcının seviyesini ölçen test aynı zamanda ona
               öğretiyordu ve sonraki cevaplar bundan etkileniyordu. */}
           <ChoiceGame key={idx} round={questions[idx].round} onDone={onDone} reveal={!usingReal} />
-          <PressableScale onPress={() => onDone(false)} style={{ marginTop: spacing.md, paddingVertical: spacing.md, alignItems: "center", borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border }}>
+          <PressableScale onPress={() => onDone(false)} style={{ marginTop: spacing.md, paddingVertical: spacing.md, alignItems: "center", borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("plc.dont_know")}</Text>
           </PressableScale>
         </>

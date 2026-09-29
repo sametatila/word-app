@@ -226,7 +226,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
           className={`flex min-h-[3.5rem] flex-wrap items-center justify-center gap-1.5 rounded-panel px-3 py-3 ${
             status === "wrong" ? "animate-shake" : ""
           }`}
-          style={{ border: `2px dashed ${slotTone}`, background: "var(--surface-2)" }}
+          style={{ border: `1px dashed ${slotTone}`, background: "var(--surface-2)" }}
         >
           {answer.map((_, i) => {
             const token = placed[i];

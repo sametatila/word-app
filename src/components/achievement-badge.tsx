@@ -176,7 +176,7 @@ export function AchievementBadge({
           background: row.unlocked
             ? `linear-gradient(140deg, color-mix(in srgb, ${color} 26%, transparent), color-mix(in srgb, ${color} 8%, transparent))`
             : "var(--surface-2)",
-          boxShadow: row.unlocked ? `inset 0 0 0 1.5px ${color}` : "inset 0 0 0 1.5px var(--border)",
+          boxShadow: row.unlocked ? `inset 0 0 0 1px ${color}` : "inset 0 0 0 1px var(--border)",
           color: row.unlocked ? color : "var(--text-muted)",
           opacity: row.unlocked ? 1 : 0.6,
           outline: selected ? `2px solid ${color}` : undefined,

@@ -372,7 +372,7 @@ export function CourseOnboarding({
                       {/* Radyo işareti: aynı anda tek cevap olduğunu seçeneğin
                           kendisi söylüyor — mobildeki satırla aynı. */}
                       <span
-                        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2"
+                        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-[1.5px]"
                         style={{ borderColor: active ? "var(--color-brand)" : "var(--border)" }}
                       >
                         {active ? <span className="h-3 w-3 rounded-full" style={{ background: "var(--color-brand)" }} /> : null}

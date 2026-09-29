@@ -132,7 +132,7 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
             const aiSpent = !it.done && it.kind === "write" && writeSpent(it.ref ?? it.id);
             return (
               <PressableScale key={it.id} onPress={() => openItem(it)}>
-                <Card padded style={{ opacity: it.open ? 1 : 0.55, flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: it.current ? 2 : 1, borderColor: it.current ? colors.primary : colors.hairline }}>
+                <Card padded style={{ opacity: it.open ? 1 : 0.55, flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: 1, borderColor: it.current ? colors.primary : colors.hairline }}>
                   <View style={[{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     <Icon color="#fff" size={22} />
                   </View>

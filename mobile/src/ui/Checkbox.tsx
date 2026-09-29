@@ -41,7 +41,7 @@ export function Checkbox({
       accessibilityLabel={accessibilityLabel}
       style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm }, style]}
     >
-      <View style={{ width: box, height: box, borderRadius: radii.sm, borderWidth: 2, borderColor: checked ? fill : colors.border, backgroundColor: checked ? fill : "transparent", alignItems: "center", justifyContent: "center" }}>
+      <View style={{ width: box, height: box, borderRadius: radii.sm, borderWidth: 1.5, borderColor: checked ? fill : colors.border, backgroundColor: checked ? fill : "transparent", alignItems: "center", justifyContent: "center" }}>
         {checked ? <CheckIcon color={ink} size={16} /> : null}
       </View>
       <View style={{ flex: 1 }}>{children}</View>

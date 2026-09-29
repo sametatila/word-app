@@ -189,7 +189,7 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
               aria-label={tile.locked ? `${tile.label} — ${tile.hint ?? ""}` : tile.label || t("avatar.slot_bg")}
               onClick={tile.locked ? () => setHint(tile.hint ?? null) : () => choose(tile)}
               className="pressable relative flex flex-col items-center gap-1.5 rounded-panel p-2"
-              style={{ background: "var(--surface)", border: `${tile.selected ? 2.5 : 1.5}px solid ${tile.selected ? "var(--color-brand-500)" : tile.rarity ? RARITY[tile.rarity] ?? "var(--border)" : "var(--border)"}` }}
+              style={{ background: "var(--surface)", border: `1px solid ${tile.selected ? "var(--color-brand-500)" : tile.rarity ? RARITY[tile.rarity] ?? "var(--border)" : "var(--border)"}` }}
             >
               <span className="flex h-16 w-16 items-center justify-center" style={{ opacity: tile.locked ? 0.35 : 1 }}>
                 {tile.preview ? (
@@ -200,7 +200,7 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
                 ) : tile.swatch ? (
                   <span className="block h-14 w-14 rounded-full" style={{ background: tile.swatch.to, border: `6px solid ${tile.swatch.from}` }} />
                 ) : (
-                  <span className="block h-11 w-11 rounded-full" style={{ border: "2px dashed var(--border)" }} />
+                  <span className="block h-11 w-11 rounded-full" style={{ border: "1.5px dashed var(--border)" }} />
                 )}
               </span>
               {tile.label ? <span className="muted w-full truncate text-micro">{tile.label}</span> : null}

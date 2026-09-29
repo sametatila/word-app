@@ -455,7 +455,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
                   satirindan geliyor (web `monologue-player` de ayni ipucunu
                   yaziyor). */}
               <TextInput spellCheck={false} value={transcript} onChangeText={setTranscript} multiline autoCapitalize="sentences" autoCorrect={false} accessibilityLabel={t("item.mono_transcript_hint")}
-                style={{ marginTop: spacing.sm, minHeight: ds(100), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
+                style={{ marginTop: spacing.sm, minHeight: ds(100), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.sm }}>
                 {used.map((x) => (
                   <View key={x.de} style={{ backgroundColor: x.used ? colors.successSoft : colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 5 }}>

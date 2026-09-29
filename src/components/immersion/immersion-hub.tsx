@@ -261,7 +261,7 @@ function Featured({
   const steps = unit.items.filter((i) => i.playable);
 
   return (
-    <section className="card p-4" style={{ borderWidth: 2, borderColor: "var(--color-brand-500)" }}>
+    <section className="card p-4" style={{ borderWidth: 1, borderColor: "var(--color-brand-500)" }}>
       <div className="flex items-center gap-3">
         <span
           className="flex h-14 w-14 shrink-0 items-center justify-center rounded-tile text-white glow-tint-sm"
@@ -416,7 +416,7 @@ function Tile({
   const cls = "card flex min-h-[7.25rem] flex-col items-start p-4 text-left";
   const style = {
     opacity: unit.locked ? 0.6 : 1,
-    borderWidth: highlighted ? 2 : 1,
+    borderWidth: 1,
     borderColor: highlighted ? "var(--color-brand-500)" : "var(--border)",
   };
 

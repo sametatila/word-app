@@ -958,7 +958,7 @@ function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string
         return (
           <PressableScale key={i} disabled={pick !== null} onPress={() => { setPick(i); setTimeout(() => onPick(i === answerIdx, i), 550); }}
             accessibilityRole="radio" accessibilityState={{ selected: secili }}
-            style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: secili ? colors.primary : colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
+            style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: secili ? colors.primary : colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
             <Text variant="body" color={secili ? colors.onPrimarySoft : colors.text}>{o}</Text>
           </PressableScale>
         );
@@ -1030,7 +1030,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
             submitBehavior="submit" returnKeyType="done" onSubmitEditing={() => { if (hazir) onDone(ok, answer); }}
             placeholder={t("exam.write_sentence")}
             accessibilityLabel={t("exam.write_sentence")} placeholderTextColor={colors.textFaint}
-            style={{ minHeight: ds(52), backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+            style={{ minHeight: ds(52), backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         )}
         {it.mode !== "order" && yazilanKelime < MIN_FREE_WORDS ? (
           <Text variant="caption" color={colors.textMuted}>{t("assess.gate_min_words", { n: MIN_FREE_WORDS })}</Text>
@@ -1115,7 +1115,7 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
             return (
               <PressableScale key={oi} onPress={() => setAnswers(answers.map((a, i) => (i === qi ? oi : a)))}
                 accessibilityRole="radio" accessibilityState={{ selected: secili }}
-                style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: secili ? colors.primary : colors.border, paddingVertical: spacing.md, paddingHorizontal: spacing.md }}>
+                style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: secili ? colors.primary : colors.border, paddingVertical: spacing.md, paddingHorizontal: spacing.md }}>
                 <Text variant="body" color={secili ? colors.onPrimarySoft : colors.text}>{o}</Text>
               </PressableScale>
             );
@@ -1207,7 +1207,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         ) : phase === "err" ? (
           <>
             {tries < 2 ? (
-              <PressableScale onPress={() => void listen()} style={{ borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center", borderWidth: 1.5, borderColor: colors.border }}>
+              <PressableScale onPress={() => void listen()} style={{ borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center", borderWidth: 1, borderColor: colors.border }}>
                 <Text variant="bodyStrong" color={colors.text}>{t("common.try_again")}</Text>
               </PressableScale>
             ) : null}
@@ -1304,7 +1304,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         <TextInput autoCorrect={false} spellCheck={false} value={typed} onChangeText={setTyped} editable={score === null} multiline autoCapitalize="sentences"
           placeholder={t("exam.write_text")}
           accessibilityLabel={t("exam.write_text")} placeholderTextColor={colors.textFaint}
-          style={{ minHeight: ds(140), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+          style={{ minHeight: ds(140), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {/* BİRİMİ YAZILI: sayaç "12 / 40" diyordu ve neyin sayıldığı
             (kelime mi, karakter mi) hiçbir yerde geçmiyordu. */}
         <Text variant="caption" color={colors.textMuted}>{t("exam.word_count", { n: wordCount, min: w.task.minWords })}</Text>

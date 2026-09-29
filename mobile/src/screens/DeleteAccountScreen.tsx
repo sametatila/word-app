@@ -230,7 +230,7 @@ export function DeleteAccountScreen() {
                 autoCorrect={false}
                 textContentType="password"
                 accessibilityLabel={tx("deleteaccount.password")}
-                style={{ marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
+                style={{ marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
               />
             ) : hasPassword === false ? (
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{tx("deleteaccount.you_signed_in_with_google_so_no")}</Text>

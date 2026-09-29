@@ -154,7 +154,7 @@ export function NotifPrimeScreen() {
           {times().map((t) => {
             const on = time === t.value;
             return (
-              <PressableScale key={t.value} onPress={() => setTime(t.value)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${t.label} ${t.value}`} style={{ flex: 1, paddingVertical: 14, borderRadius: radii.lg, alignItems: "center", borderWidth: 2, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
+              <PressableScale key={t.value} onPress={() => setTime(t.value)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${t.label} ${t.value}`} style={{ flex: 1, paddingVertical: 14, borderRadius: radii.lg, alignItems: "center", borderWidth: 1, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
                 {/* Tekli seçimin işareti uygulamanın her yerinde aynı nokta (`ui/RadioDot`). */}
                 <View style={{ marginBottom: spacing.xs }}><RadioDot selected={on} /></View>
                 <Text variant="bodyStrong" color={on ? colors.primaryText : colors.text}>{t.label}</Text>

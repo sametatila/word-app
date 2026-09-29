@@ -175,7 +175,7 @@ export function NotificationsScreen() {
 
         {/* Geliştirici aracı: üretim derlemesinde yok (Play "test" kalıntısı saymasın). */}
         {__DEV__ ? (
-          <PressableScale onPress={async () => { const ok = await showTestNotification(); if (!ok) fail(); else setMsg(tx("notifications.test_sent")); }} style={{ marginTop: spacing.xl, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 14, alignItems: "center" }}>
+          <PressableScale onPress={async () => { const ok = await showTestNotification(); if (!ok) fail(); else setMsg(tx("notifications.test_sent")); }} style={{ marginTop: spacing.xl, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingVertical: 14, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.text}>{tx("notifications.send_test_notification")}</Text>
           </PressableScale>
         ) : null}

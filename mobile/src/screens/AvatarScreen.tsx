@@ -237,13 +237,13 @@ function OptCard({ tile, colors, onLocked }: { tile: Tile; colors: Palette; onLo
         accessibilityState={{ selected: tile.selected, disabled: tile.locked }}
         accessibilityLabel={tile.locked ? `${tile.label} — ${tile.hint ?? ""}` : tile.label || t("avatar.slot_bg")}
         onPress={tile.locked ? onLocked : tile.apply}
-        style={[{ alignItems: "center", gap: 6, padding: spacing.sm, borderRadius: radii.lg, borderWidth: tile.selected ? 2.5 : 1.5, borderColor: tile.selected ? colors.primary : edge, backgroundColor: colors.surface }, tile.selected ? cardShadow(colors, 6) : null]}
+        style={[{ alignItems: "center", gap: 6, padding: spacing.sm, borderRadius: radii.lg, borderWidth: 1, borderColor: tile.selected ? colors.primary : edge, backgroundColor: colors.surface }, tile.selected ? cardShadow(colors, 6) : null]}
       >
         <View style={{ width: 64, height: 64, alignItems: "center", justifyContent: "center", opacity: tile.locked ? 0.35 : 1 }}>
           {tile.preview ? <MascotAvatar config={tile.preview} size={60} />
             : tile.icon ? <Image source={{ uri: tile.icon }} style={{ width: 60, height: 60 }} resizeMode="contain" />
             : tile.swatch ? <View style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: tile.swatch.to, borderWidth: 6, borderColor: tile.swatch.from }} />
-            : <View style={{ width: 44, height: 44, borderRadius: 22, borderWidth: 2, borderStyle: "dashed", borderColor: colors.border }} />}
+            : <View style={{ width: 44, height: 44, borderRadius: 22, borderWidth: 1.5, borderStyle: "dashed", borderColor: colors.border }} />}
         </View>
         {tile.label ? <Text variant="micro" color={colors.textMuted} numberOfLines={1}>{tile.label}</Text> : null}
       </PressableScale>

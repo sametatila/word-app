@@ -1231,7 +1231,7 @@ function StageCard({
         className="flex w-full flex-col gap-2 rounded-card p-3 text-left transition-colors"
         style={{
           background: bet ? "color-mix(in srgb, var(--color-flame-500) 14%, transparent)" : "var(--surface)",
-          boxShadow: `inset 0 0 0 1.5px ${bet ? "var(--color-flame)" : "var(--hairline)"}`,
+          boxShadow: `inset 0 0 0 1px ${bet ? "var(--color-flame)" : "var(--hairline)"}`,
         }}
       >
         <span className="flex w-full items-center gap-3">

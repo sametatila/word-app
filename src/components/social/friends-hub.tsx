@@ -178,7 +178,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
               type="button"
               onClick={() => void invite()}
               className="pressable flex w-full items-center gap-3 rounded-card p-4 text-left"
-              style={{ border: "1.5px dashed var(--color-brand)", color: "var(--color-brand)" }}
+              style={{ border: "1px dashed var(--color-brand)", color: "var(--color-brand)" }}
             >
               <ShareIcon size={22} />
               <span className="min-w-0 flex-1">

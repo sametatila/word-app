@@ -17,7 +17,7 @@ export function RadioDot({ selected }: { selected: boolean }) {
     <View
       accessibilityElementsHidden
       importantForAccessibility="no-hide-descendants"
-      style={{ width: ring, height: ring, borderRadius: ring / 2, borderWidth: 2, borderColor: selected ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}
+      style={{ width: ring, height: ring, borderRadius: ring / 2, borderWidth: 1.5, borderColor: selected ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}
     >
       {selected ? <View style={{ width: dot, height: dot, borderRadius: dot / 2, backgroundColor: colors.primary }} /> : null}
     </View>

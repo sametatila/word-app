@@ -169,7 +169,7 @@ function ChoiceInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: bo
              sonra tum sikler yutuluyor (`if (done) return`), o yuzden
              `disabled` da turun kapali olmasini soyler. */
           <PressableScale key={oi} accessibilityRole="radio" accessibilityState={{ selected: pick === oi, disabled: done }} onPress={() => { if (done) return; setPick(oi); onSettle(isAnswer); }}
-            style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: spacing.md, borderRadius: radii.md, borderWidth: 1.5, borderColor: bc, backgroundColor: bg, opacity: done && !isAnswer && pick !== oi ? 0.55 : 1 }}>
+            style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: spacing.md, borderRadius: radii.md, borderWidth: 1, borderColor: bc, backgroundColor: bg, opacity: done && !isAnswer && pick !== oi ? 0.55 : 1 }}>
             <Text variant="body" color={colors.text} style={{ flex: 1 }}>{opt}</Text>
             {done && isAnswer ? <CheckIcon color={colors.successText} size={18} /> : done && pick === oi ? <XIcon color={colors.dangerText} size={18} /> : null}
           </PressableScale>
@@ -199,7 +199,7 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
           returnKeyType="done" onSubmitEditing={() => { if (typed.trim()) onSettle(written(typed, accept)); }}
           placeholder={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
           accessibilityLabel={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")} placeholderTextColor={colors.textFaint}
-          style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+          style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
           <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
             style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
@@ -241,7 +241,7 @@ function OrderInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: boo
           return (
             /* Iki ogeyi degistirmek icin once birini seciyorsun; o secim de
                renkten baska bir seyle soylenmeli (webde `aria-pressed`). */
-            <PressableScale key={v} accessibilityState={{ selected: picked === pos, disabled: done }} onPress={() => tap(pos)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: 11, borderRadius: radii.md, borderWidth: 1.5, borderColor: bc, backgroundColor: colors.surface }}>
+            <PressableScale key={v} accessibilityState={{ selected: picked === pos, disabled: done }} onPress={() => tap(pos)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: 11, borderRadius: radii.md, borderWidth: 1, borderColor: bc, backgroundColor: colors.surface }}>
               <Text variant="caption" color={colors.textMuted} style={{ width: 18 }}>{pos + 1}.</Text>
               <Text variant="body" color={colors.text} style={{ flex: 1 }}>{items[v]}</Text>
             </PressableScale>
@@ -373,7 +373,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("rounds.hint")}: {t.hint}</Text>
       ) : null}
 
-      <View style={{ marginTop: spacing.md, minHeight: ds(52), borderRadius: radii.md, borderWidth: 1.5, borderColor: phase === "correct" ? colors.success : phase === "revealed" ? colors.danger : colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
+      <View style={{ marginTop: spacing.md, minHeight: ds(52), borderRadius: radii.md, borderWidth: 1, borderColor: phase === "correct" ? colors.success : phase === "revealed" ? colors.danger : colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
         {chosen.length === 0 ? (
           <Text variant="caption" color={colors.textFaint}>{tx("exam.tap_chunks")}</Text>
         ) : chosen.map((ti, pos) => (
@@ -388,7 +388,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
         <View style={{ marginTop: spacing.sm, flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
           {tokens.map((tok, i) => chosen.includes(i) ? null : (
             <PressableScale key={i} onPress={() => setChosen([...chosen, i])}
-              style={{ borderRadius: radii.sm, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
+              style={{ borderRadius: radii.sm, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
               <Text variant="bodyStrong" color={colors.text}>{tok}</Text>
             </PressableScale>
           ))}
@@ -457,7 +457,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
           submitBehavior="submit" returnKeyType="done" onSubmitEditing={check}
           placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })}
           accessibilityLabel={tx("skillquiz.write_sentence", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
-          style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+          style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
           <PressableScale onPress={check} disabled={!typed.trim()}
             style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
@@ -507,7 +507,7 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
               <TextInput spellCheck={false} value={vals[i]} onChangeText={(v) => setVals((p) => p.map((x, k) => (k === i ? v : x)))} editable={!done} autoCapitalize="none" autoCorrect={false}
                 placeholder={f.label}
                 accessibilityLabel={f.label} placeholderTextColor={colors.textFaint}
-                style={{ minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+                style={{ minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
               {done && !ok ? (
                 <Text variant="caption" color={colors.textMuted} style={{ marginTop: 3 }}>
                   {tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{f.answer}</Text>
@@ -670,7 +670,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       <TextInput autoCorrect={false} spellCheck={false} value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
         placeholder={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })}
         accessibilityLabel={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
-        style={{ marginTop: spacing.md, minHeight: ds(100), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
+        style={{ marginTop: spacing.md, minHeight: ds(100), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
         <Text variant="micro" color={enough ? colors.successText : colors.textMuted}>{tx("skillquiz.n_words", { n: words, min: t.minWords })}</Text>
         {!done && !reveal ? (
@@ -720,7 +720,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           <PressableScale onPress={settleNow} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.md, paddingVertical: spacing.md, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{tx("common.continue")}</Text>
           </PressableScale>
-          <PressableScale onPress={retry} style={{ borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md }}>
+          <PressableScale onPress={retry} style={{ borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md }}>
             <Text variant="bodyStrong" color={colors.text}>{tx("writp.try_once_more")}</Text>
           </PressableScale>
         </View>

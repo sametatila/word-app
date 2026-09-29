@@ -445,7 +445,7 @@ export function PaywallScreen() {
           // konumu ve alttaki düğme yerinden oynamıyor.
           <View style={{ gap: spacing.md }}>
             {[0, 1].map((i) => (
-              <View key={i} style={{ borderRadius: radii.lg, borderWidth: 2, borderColor: colors.border, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+              <View key={i} style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                 <SkeletonTile size={ds(22)} radius={radii.pill} />
                 <View style={{ flex: 1 }}>
                   <SkeletonLine variant="h3" width="45%" />
@@ -461,7 +461,7 @@ export function PaywallScreen() {
               const active = selected === p.identifier;
               const tr = freeTrialOf(p, trialOk);
               return (
-                <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${priceLine(p, tr)}`} style={{ borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${priceLine(p, tr)}`} style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <RadioDot selected={active} />
                   <View style={{ flex: 1 }}>
                     <Text variant="h3">{planLabel(p)}</Text>

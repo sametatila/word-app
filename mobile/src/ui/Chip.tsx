@@ -7,7 +7,7 @@ import { useTheme, radii, spacing } from "../theme";
 /**
  * Seçim çipi — seviye, günlük hedef, dil, saat, sekme.
  *
- * PILL DEĞİL: yarıçap `md`, 1,5 px kenarlık, seçiliyken yumuşak turuncu zemin
+ * PILL DEĞİL: yarıçap `md`, 1 px kenarlık, seçiliyken yumuşak turuncu zemin
  * ve turuncu yazı. Bu ayrım bilinçli ve iki yerde daha yazılıydı
  * (`SettingsScreen`, `LeaderboardScreen` yorumları): dolu turuncu hap
  * KELİME LİSTESİNİN süzgeci; seçim çipi ondan farklı görünmeli, yoksa
@@ -82,7 +82,7 @@ export function Chip({
         paddingHorizontal: spacing.lg,
         paddingVertical: 9,
         borderRadius: radii.md,
-        borderWidth: 1.5,
+        borderWidth: 1,
         borderColor: active ? colors.primary : colors.border,
         backgroundColor: active ? colors.primarySoft : colors.surface,
       }}

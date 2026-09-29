@@ -179,7 +179,7 @@ function ResultCard({ result, onDismiss }: { result: NonNullable<LeagueView["res
   const down = result.outcome === "demoted";
   const tint = up ? colors.success : down ? colors.danger : colors.info;
   return (
-    <Card padded style={{ marginTop: spacing.sm, borderColor: tint, borderWidth: 1.5, gap: spacing.md }}>
+    <Card padded style={{ marginTop: spacing.sm, borderColor: tint, borderWidth: 1, gap: spacing.md }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <IconTile icon={TrophyIcon} tint={tint} />
         <View style={{ flex: 1 }}>

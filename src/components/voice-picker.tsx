@@ -75,8 +75,8 @@ export function VoicePicker({
      * `accessibilityRole="radio"` ile veriyor (`ui/VoicePicker`).
      *
      * ŞEKİL ANDROID'İN: yan yana eşit genişlikte seçenekler (aralık 8),
-     * her biri 12 dolgulu ve `radii.lg` yarıçaplı; seçiliyken kenarlık 2 ve
-     * marka tinti, değilken 1. İçeride üç satır var — etiket + hoparlör,
+     * her biri 12 dolgulu ve `radii.lg` yarıçaplı; seçiliyken marka kenarlığı
+     * ve tinti, kalınlık hep 1 (2026-09-29). İçeride üç satır var — etiket + hoparlör,
      * cinsiyet, ses notu (`textFaint`). Web'de not satırı HİÇ yoktu ve
      * seçimi ayrıca bir onay rozeti anlatıyordu; Android'de rozet yok,
      * seçimi dolgu ve mürekkep söylüyor.
@@ -88,7 +88,6 @@ export function VoicePicker({
           <div
             key={v.id}
             className={`option flex-1 p-3 ${active ? "option-picked" : ""}`}
-            style={{ borderWidth: active ? 2 : 1 }}
           >
             <div className="flex items-center justify-between gap-2">
               <button

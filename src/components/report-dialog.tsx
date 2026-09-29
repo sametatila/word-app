@@ -161,7 +161,7 @@ export function ReportDialog({
                        ile aynı değer). */
                     className="pressable flex w-full items-center gap-3 rounded-card p-3 text-left"
                     style={{
-                      border: `1.5px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
+                      border: `1px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
                       background: active ? "var(--brand-soft)" : "var(--surface)",
                     }}
                   >
@@ -178,7 +178,7 @@ export function ReportDialog({
                         /* Ölçü mobil `ui/RadioDot` ile aynı: halka 22, nokta 10. */
                         width: 22,
                         height: 22,
-                        border: `2px solid ${active ? "var(--color-brand)" : "var(--border)"}`,
+                        border: `1.5px solid ${active ? "var(--color-brand)" : "var(--border)"}`,
                       }}
                     >
                       {active ? (

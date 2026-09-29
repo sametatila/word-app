@@ -158,7 +158,7 @@ export function SkillBrowser({
                   onClick={() => choose(s.skill)}
                   className="pressable flex min-w-0 flex-col items-center gap-1 rounded-tile px-0.5 pb-2 pt-2.5"
                   style={{
-                    border: `1.5px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
+                    border: `1px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
                     background: active ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)" : "var(--surface)",
                   }}
                 >

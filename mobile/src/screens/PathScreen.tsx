@@ -38,7 +38,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
     null;
   const NextIcon = next ? KIND_ICON[next.kind] : null;
   return (
-    <Card style={{ marginBottom: spacing.lg, borderColor: colors.primary, borderWidth: 2 }}>
+    <Card style={{ marginBottom: spacing.lg, borderColor: colors.primary, borderWidth: 1 }}>
       <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "center" }}>
         <View style={[{ width: ds(54), height: ds(54), borderRadius: radii.md, backgroundColor: unit.complete ? colors.success : colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}>
           {unit.complete ? <CheckIcon color={colors.onPrimary} size={26} /> : <Text variant="h1" color={colors.onPrimary}>{unit.index}</Text>}
@@ -209,7 +209,7 @@ export function PathScreen() {
             kartı, ünite ızgarası. Veri gelince hiçbiri yerinden oynamıyor. */}
         <SkeletonBar height={10} style={{ marginBottom: 6 }} />
         <SkeletonLine variant="caption" width="55%" style={{ marginBottom: spacing.lg }} />
-        <SkeletonCard style={{ marginBottom: spacing.lg, borderWidth: 2, borderColor: colors.hairline }}>
+        <SkeletonCard style={{ marginBottom: spacing.lg, borderWidth: 1, borderColor: colors.hairline }}>
           <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "center" }}>
             <SkeletonTile size={ds(54)} />
             <View style={{ flex: 1 }}>
@@ -305,7 +305,7 @@ export function PathScreen() {
             <CardGrid columns={uniteSutun} stretch>
               {g.units.map((u) => (
                 <PressableScale key={u.id} style={{ flex: 1 }} onPress={() => openUnit(u)}>
-                  <Card padded style={{ flex: 1, minHeight: ds(132), opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
+                  <Card padded style={{ flex: 1, minHeight: ds(132), opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: 1 }}>
                     <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                       {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
                     </View>

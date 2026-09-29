@@ -210,7 +210,7 @@ export function SkillsScreen() {
             {LEVELS.map((l) => {
               const active = activeLevel === l;
               return (
-                <PressableScale key={l} onPress={() => setLevel(l)} accessibilityRole="tab" accessibilityState={{ selected: active }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
+                <PressableScale key={l} onPress={() => setLevel(l)} accessibilityRole="tab" accessibilityState={{ selected: active }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
                   <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{l}</Text>
                 </PressableScale>
               );
@@ -238,7 +238,7 @@ export function SkillsScreen() {
           </View>
           <View style={{ flexDirection: "row", gap: 6, marginBottom: spacing.lg }}>
             {SKILLS.map((s) => (
-              <View key={s.key} style={{ flex: 1, minWidth: 0, alignItems: "center", gap: spacing.xs, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface }}>
+              <View key={s.key} style={{ flex: 1, minWidth: 0, alignItems: "center", gap: spacing.xs, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface }}>
                 <Skeleton height={20} width={20} radius={6} />
                 <SkeletonLine variant="caption" width="70%" />
                 <SkeletonLine variant="micro" width="40%" style={{ marginTop: "auto" }} />
@@ -338,7 +338,7 @@ export function SkillsScreen() {
                       accessibilityRole="tab"
                       accessibilityState={{ selected: active }}
                       accessibilityLabel={`${t(s.label)}, ${s.finished}/${s.items.length}`}
-                      style={{ flex: 1, minWidth: 0, alignItems: "center", gap: spacing.xs, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}
+                      style={{ flex: 1, minWidth: 0, alignItems: "center", gap: spacing.xs, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}
                     >
                       <s.icon color={tint} size={20} />
                       {/* Tek satır ve SIĞMAZSA KÜÇÜL — sekme çubuğunun kalıbı

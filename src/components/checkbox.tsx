@@ -3,7 +3,7 @@ import { CheckIcon } from "@/components/icons";
 
 /**
  * Onay kutusu — mobil `AuthScreen` (cihaza güven) ve `DeleteAccountScreen`
- * (anladım) kutularının web karşılığı: 2 px kenarlık, işaretlenince dolgu +
+ * (anladım) kutularının web karşılığı: 1,5 px kenarlık (küçük denetim), işaretlenince dolgu +
  * onay işareti. `tone="danger"` geri dönüşü olmayan bir onay için (hesap silme).
  *
  * Gerçek `<input type="checkbox">` kalıyor, yalnız görünüşü siliniyor
@@ -32,7 +32,7 @@ export function Checkbox({
           checked={checked}
           disabled={disabled}
           onChange={(e) => onChange(e.target.checked)}
-          className="peer h-full w-full cursor-[inherit] appearance-none rounded-chip border-2 border-[var(--border)] transition-[background-color,border-color,box-shadow] duration-150 checked:border-[var(--cb-fill)] checked:bg-[var(--cb-fill)] focus-visible:border-[var(--color-brand-500)] focus-visible:shadow-[0_0_0_3px_color-mix(in_srgb,var(--color-brand)_18%,transparent)] focus-visible:outline-none"
+          className="peer h-full w-full cursor-[inherit] appearance-none rounded-chip border-[1.5px] border-[var(--border)] transition-[background-color,border-color,box-shadow] duration-150 checked:border-[var(--cb-fill)] checked:bg-[var(--cb-fill)] focus-visible:border-[var(--color-brand-500)] focus-visible:shadow-[0_0_0_3px_color-mix(in_srgb,var(--color-brand)_18%,transparent)] focus-visible:outline-none"
           style={{ "--cb-fill": fill } as React.CSSProperties}
         />
         <CheckIcon

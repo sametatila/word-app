@@ -33,7 +33,8 @@ export default function Loading() {
       </div>
       <div className="mb-4 flex gap-2">
         {[0, 1, 2, 3, 4].map((i) => (
-          <div key={i} className="flex-1 rounded-tile py-2.5" style={{ border: "1.5px solid var(--border)", background: "var(--surface)" }}>
+          <div key={i} className="chip flex-1 py-2.5">
+        {/* Gerçek sekmenin kendi `chip` sınıfı: kenarlık, zemin, yarıçap ondan. */}
             <SkeletonLine variant="strong" width="40%" className="mx-auto" />
           </div>
         ))}
@@ -55,7 +56,7 @@ export default function Loading() {
           <div
             key={i}
             className="flex min-w-0 flex-col items-center gap-1 rounded-tile px-0.5 pb-2 pt-2.5"
-            style={{ border: "1.5px solid var(--border)", background: "var(--surface)" }}
+            style={{ border: "1px solid var(--border)", background: "var(--surface)" }}
           >
             <SkeletonTile size={20} />
             <SkeletonLine variant="caption" width="70%" />

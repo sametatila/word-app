@@ -34,7 +34,7 @@ export function FriendPulse() {
       <div
         aria-hidden
         className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3"
-        style={{ borderWidth: 1.5, borderColor: "var(--hairline)" }}
+        style={{ borderWidth: 1, borderColor: "var(--hairline)" }}
       >
         <SkeletonTile size={44} className="rounded-full" />
         <div className="min-w-0 flex-1">
@@ -49,7 +49,7 @@ export function FriendPulse() {
   const invited = q.status === "invited";
   return (
     /*
-      DURUM KARTIN KENDİSİNDE. Android kartı 1.5 px'lik renkli bir çerçeveyle
+      DURUM KARTIN KENDİSİNDE. Android kartı 1 px'lik renkli bir çerçeveyle
       çiziyor ve rengi duruma göre değişiyor: davet mavi (`info`), kabul
       edilmiş ortak görev marka rengi (`primary`). Halka da aynı rengi
       alıyor. Web'de çerçeve HİÇ yoktu ve halka duruma bakmadan her zaman
@@ -59,7 +59,7 @@ export function FriendPulse() {
       href="/friends?tab=quests"
       prefetch={false}
       className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3"
-      style={{ borderWidth: 1.5, borderColor: invited ? "var(--color-sky)" : "var(--color-brand)" }}
+      style={{ borderWidth: 1, borderColor: invited ? "var(--color-sky)" : "var(--color-brand)" }}
     >
       <div className="flex -space-x-2">
         {/* Avatar 44: Android ile aynı. Web'de 32'ydi ve satır aynı kartın

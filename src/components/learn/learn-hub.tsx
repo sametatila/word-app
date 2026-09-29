@@ -266,7 +266,7 @@ function Wedge({
       href={href}
       prefetch={false}
       className="pressable card flex min-h-[8.25rem] flex-col justify-between gap-3 p-4"
-      style={{ borderColor: tone, borderWidth: 1.5 }}
+      style={{ borderColor: tone, borderWidth: 1 }}
     >
       <span
         className="flex h-11 w-11 items-center justify-center rounded-tile text-white glow-tint-sm"

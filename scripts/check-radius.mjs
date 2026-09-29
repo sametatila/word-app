@@ -169,6 +169,121 @@ for (const abs of walk(path.join(ROOT, "mobile", "src"))) {
   }
 }
 
+/* ── KENARLIK KALINLIĞI (iki platform) ────────────────────────────────────
+ *
+ * 2026-09-29, Samet: "yürüyüş modu ve deneme sınavlarındaki kenarlık güzel,
+ * diğer ekranlardaki kutu, seçenek ve butonlarda çok kalın". O iki ekran 1 px
+ * çiziyordu (`Card` hairline, seçili hâl 1 + marka rengi); geri kalan yerlerde
+ * 1.5 / 2 / 2.5 / 3 karışık duruyordu ve seçim çoğu yerde KALINLIKLA
+ * (`on ? 2 : 1`) anlatılıyordu. Kural:
+ *
+ *   1 px    kart, kutu, şık, çip, düğme, giriş alanı, seçim karoları,
+ *           iskeletler. Seçili hâl RENKLE (marka kenarlık + yumuşak dolgu).
+ *   1.5 px  yalnız küçük denetimler: onay kutusu, radyo halkası, boş seçim
+ *           halkası, kesikli boş yer tutucu (1 px'te kesikler kayboluyor).
+ *   serbest halka/çizim olanlar: dönen yükleme halkası, avatar halkası,
+ *           kaydırıcı başparmağı, renk örneği, ünite durum halkası, sol vurgu
+ *           şeridi, odak halkası.
+ *
+ * Kapı 1'in üstündeki her kalınlığı sayıyor; yalnız aşağıdaki listede
+ * SEBEBİYLE kayıtlı olan geçiyor. Liste parça eşleşmesiyle (satır numarası
+ * kayar) ve karşılıksız kalan kayıt da hata (ölü istisna).
+ *
+ * Kapsam dışı: `src/app/admin` (iç panel, sekme alt çizgisi `border-b-2`) ve
+ * `landing.module.css` (tanıtım sayfasının kendi dili; uygulama yüzeyi değil).
+ */
+const BORDER_ALLOW = new Map([
+  /* ── mobil ── */
+  ["mobile/src/ui/Checkbox.tsx", [["borderWidth: 1.5", "küçük denetim: onay kutusu (web `checkbox.tsx`)"]]],
+  ["mobile/src/ui/RadioDot.tsx", [["borderWidth: 1.5", "küçük denetim: radyo halkası (web `report-dialog` halkası)"]]],
+  ["mobile/src/ui/UnlockProgress.tsx", [["borderWidth: c.ok ? 0 : 1.5", "küçük denetim: 20 px boş koşul halkası (web `unlock-progress`)"]]],
+  ["mobile/src/game/skillLibrary.tsx", [["width: 22, height: 22, borderRadius: 6, borderWidth: 1.5", "küçük denetim: 22 px öz denetim onay kutusu"]]],
+  ["mobile/src/game/rounds.tsx", [["borderWidth: 1.5,", "kesikli boş yer tutucu: boşluk doldurmanın boş yuvası (`BlankSlot`)"]]],
+  ["mobile/src/screens/AvatarScreen.tsx", [
+    ["borderWidth: 1.5, borderStyle: \"dashed\"", "kesikli boş yer tutucu: 'yok' karosu dairesi"],
+    ["borderWidth: 3, borderColor: sel ? colors.text : colors.bg", "renk örneği: seçim halkası dairenin kendisi"],
+    ["borderWidth: 6, borderColor: tile.swatch.from", "renk örneği: iki renkli daire (çizim)"],
+  ]],
+  ["mobile/src/ui/ListenButton.tsx", [["borderWidth: 3", "dönen yükleme halkası"]]],
+  ["mobile/src/ui/Slider.tsx", [["borderWidth: 3", "kaydırıcı başparmağının yüzey halkası (web `.range` 3 px)"]]],
+  ["mobile/src/ui/Avatar.tsx", [
+    ["borderWidth: ring ? 2 : 0", "avatar halkası (web `avatar.tsx` 0 0 0 2px)"],
+    ["borderWidth: 5", "avatar sahnesinin beyaz dairesi (web 0 0 0 5px)"],
+  ]],
+  ["mobile/src/screens/PathScreen.tsx", [["borderWidth: 3", "ünite durum halkası: tamam/şimdi/kilitli rengini taşıyan çizim (web `immersion-hub` 3px)"]]],
+  ["mobile/src/screens/MockExamScreen.tsx", [["borderLeftWidth: 2", "sol vurgu şeridi (alıntı çizgisi), çerçeve değil"]]],
+  /* ── web ── */
+  ["src/components/checkbox.tsx", [["border-[1.5px]", "küçük denetim: onay kutusu (mobil `ui/Checkbox`)"]]],
+  ["src/components/report-dialog.tsx", [["border: `1.5px solid", "küçük denetim: radyo halkası (mobil `ui/RadioDot`)"]]],
+  ["src/components/course-onboarding.tsx", [["rounded-full border-[1.5px]", "küçük denetim: 24 px radyo halkası"]]],
+  ["src/components/unlock-progress.tsx", [["rounded-full border-[1.5px]", "küçük denetim: boş koşul halkası"]]],
+  ["src/components/avatar-editor.tsx", [
+    ["1.5px dashed var(--border)", "kesikli boş yer tutucu: 'yok' karosu dairesi"],
+    ["border: `3px solid ${colorNow", "renk örneği: seçim halkası dairenin kendisi"],
+    ["border: `6px solid ${tile.swatch.from}", "renk örneği: iki renkli daire (çizim)"],
+  ]],
+  ["src/components/listen-button.tsx", [["border-[3px]", "dönen yükleme halkası"]]],
+  ["src/components/session-player.tsx", [["animate-spin rounded-full border-[3px]", "dönen yükleme halkası"]]],
+  ["src/components/conversations/conversation-scored.tsx", [["animate-spin rounded-full border-2", "dönen yükleme halkası"]]],
+  ["src/components/avatar.tsx", [
+    ["0 0 0 2px ${ring}", "avatar halkası (mobil `ui/Avatar` ring 2)"],
+    ["0 0 0 5px rgba(255,255,255,.85)", "avatar sahnesinin beyaz dairesi"],
+  ]],
+  ["src/components/immersion/immersion-hub.tsx", [["border: `3px solid ${ringColor}`", "ünite durum halkası (mobil `PathScreen` 3)"]]],
+  ["src/components/achievement-badge.tsx", [["outline: selected ? `2px solid", "seçili rozetin DIŞ halkası (2 px boşluklu outline), kutunun kenarlığı değil"]]],
+  ["src/components/mock-exam-player.tsx", [["border-l-2", "sol vurgu şeridi (alıntı çizgisi), çerçeve değil"]]],
+  ["src/components/skills/writing-player.tsx", [["border-l-4", "sol vurgu şeridi (model metin), çerçeve değil"]]],
+  ["src/app/globals.css", [
+    ["border: 3px solid var(--surface)", "kaydırıcı başparmağının yüzey halkası (mobil `Slider` 3)"],
+    ["outline: 2px solid var(--color-brand)", "odak halkası (`.range:focus-visible`)"],
+    ["box-shadow: 0 0 0 3px color-mix", "odak halkası (`.input:focus-visible`)"],
+  ]],
+]);
+const borderHits = [];
+const borderUsed = new Set();
+/* Karşılaştırmadaki sayılar kalınlık değil (`i === 4 ? 0 : 1`): önce onlar düşüyor. */
+const nums = (s) => [...s.replace(/(?:[=!]==?|[<>]=?)\s*\d+(?:\.\d+)?/g, " ").matchAll(/(?<![\w.])(\d+(?:\.\d+)?)/g)].map((m) => Number(m[1]));
+function borderScan(rel, text, finders) {
+  const lines = stripComments(text).split("\n");
+  const allow = BORDER_ALLOW.get(rel) ?? [];
+  for (let i = 0; i < lines.length; i++) {
+    for (const find of finders) {
+      for (const m of lines[i].matchAll(find.re)) {
+        const w = Math.max(0, ...find.widths(m));
+        if (w <= 1) continue;
+        const muaf = allow.find(([parca]) => lines[i].includes(parca));
+        if (muaf) { borderUsed.add(rel + "|" + muaf[0]); continue; }
+        borderHits.push({ file: rel, line: i + 1, w, text: lines[i].trim().slice(0, 110) });
+      }
+    }
+  }
+}
+/* Mobil: `borderWidth` / `borderLeftWidth` … değerindeki bütün sayılar
+   (`on ? 2 : 1` gibi koşullularda en büyüğü). Değişkenle yazılanlar okunmuyor. */
+const MOB_BORDER = [{ re: /border(?:Top|Bottom|Left|Right|Start|End)?Width:\s*([^,}\n]+)/g, widths: (m) => nums(m[1]) }];
+/* Web: Tailwind sınıfları (odak varyantları hariç), satır içi `borderWidth`,
+   `Npx solid|dashed|dotted` (border/outline, CSS ve şablon dizgeleri) ve
+   `0 0 0 Npx` gölge halkaları. */
+const WEB_BORDER = [
+  { re: /(?<![\w:-])(?:(?!focus)[a-z-]+:)*(?:border(?:-[xytblrse])?|outline|ring|divide-[xy])-(\d+|\[\d+(?:\.\d+)?px\])(?![\w-])/g, widths: (m) => nums(m[1]) },
+  { re: /borderWidth:\s*([^,}\n]+)/g, widths: (m) => nums(m[1]) },
+  { re: /\b(\d+(?:\.\d+)?)px (?:solid|dashed|dotted)\b/g, widths: (m) => [Number(m[1])] },
+  { re: /\b0 0 0 (\d+(?:\.\d+)?)px\b/g, widths: (m) => [Number(m[1])] },
+];
+for (const abs of walk(path.join(ROOT, "mobile", "src"))) {
+  borderScan(path.relative(ROOT, abs), fs.readFileSync(abs, "utf8"), MOB_BORDER);
+}
+for (const abs of walk(path.join(ROOT, "src"))) {
+  const rel = path.relative(ROOT, abs);
+  if (rel.startsWith("src/app/admin/")) continue;
+  borderScan(rel, fs.readFileSync(abs, "utf8"), WEB_BORDER);
+}
+borderScan("src/app/globals.css", fs.readFileSync(path.join(ROOT, "src/app/globals.css"), "utf8"), WEB_BORDER);
+const borderDead = [];
+for (const [file, list] of BORDER_ALLOW) for (const [parca] of list) {
+  if (!borderUsed.has(file + "|" + parca)) borderDead.push(`${file}: ${parca}`);
+}
+
 /* ÖLÜ İSTİSNA SESSİZCE DURMASIN - `check:colors` aynı denetimi yapıyor ve
    orada bir istisnanın karşılıksız kalması gerçek bir bulguydu. */
 const dead = [];
@@ -183,8 +298,9 @@ if (mode === "--hits") {
   }
   for (const h of mobHits) console.log(`${h.file}:${h.line}  ${h.r}  ${h.why}`);
   console.log(`\ntoplam web ${total} · mobil ${mobHits.length}`);
+  for (const h of borderHits) console.log(`kenarlık ${h.file}:${h.line}  ${h.w}  ${h.text}`);
 } else {
-  if (total || dead.length || mobHits.length) {
+  if (total || dead.length || mobHits.length || borderHits.length || borderDead.length) {
     if (total) {
       console.error("check:radius — ölçek dışı yarıçap:\n");
       for (const [f, list] of Object.entries(hits)) {
@@ -205,8 +321,17 @@ if (mode === "--hits") {
       console.error("\nDaire (boyutun yarısı) ve 2-9 px'lik çubuklar sayılmıyor; kalanı jeton olmalı.");
     }
     for (const d of dead) console.error(`  istisna artık karşılıksız (ALLOW): ${d}`);
+    if (borderHits.length) {
+      console.error("\ncheck:radius — 1 px'ten kalın kenarlık:\n");
+      for (const h of borderHits) console.error(`  ${h.file}:${h.line}  ${h.w}\n      ${h.text}`);
+      console.error("\nKutu, şık, çip, düğme, giriş alanı, seçim karosu 1 px; seçili hâl RENKLE (marka kenarlık + yumuşak dolgu).");
+      console.error("1.5 yalnız küçük denetim (onay kutusu, radyo halkası). Halka/çizimse BORDER_ALLOW'a SEBEBİYLE ekle.");
+    }
+    for (const d of borderDead) console.error(`  istisna artık karşılıksız (BORDER_ALLOW): ${d}`);
     process.exit(1);
   }
   const muaf = [...ALLOW.values()].reduce((n, l) => n + l.length, 0);
   console.log(`check:radius — iki platformun yarıçapları beş basamaklı ölçekte: tamam (${muaf} kayıtlı istisna, mobilde daire ve çubuklar dışında ham sayı yok)`);
+  const kMuaf = [...BORDER_ALLOW.values()].reduce((n, l) => n + l.length, 0);
+  console.log(`check:radius — kenarlıklar 1 px (küçük denetim 1.5): tamam (${kMuaf} kayıtlı halka/denetim istisnası)`);
 }

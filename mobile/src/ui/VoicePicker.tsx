@@ -55,7 +55,7 @@ export function VoicePicker({
               flex: 1,
               padding: spacing.md,
               borderRadius: radii.lg,
-              borderWidth: on ? 2 : 1,
+              borderWidth: 1,
               borderColor: on ? colors.primary : colors.border,
               backgroundColor: on ? colors.primarySoft : colors.surface,
               gap: spacing.xs,

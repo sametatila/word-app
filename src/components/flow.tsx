@@ -68,7 +68,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
       {secondary ? (
         <ActionEl
           a={secondary}
-          className="btn w-full border-[1.5px] px-5 py-4 text-strong disabled:opacity-60"
+          className="btn w-full border px-5 py-4 text-strong disabled:opacity-60"
         />
       ) : null}
       {tertiary ? <ActionEl a={tertiary} className="btn muted w-full px-5 py-2.5 text-strong" /> : null}

@@ -739,7 +739,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, xp, rema
         onPress={() => { setBet(!bet); haptic("tap"); }}
         accessibilityRole="switch"
         accessibilityState={{ checked: bet }}
-        style={{ borderRadius: radii.lg, padding: spacing.md, gap: spacing.sm, backgroundColor: bet ? soft(colors.streak) : colors.surface, borderWidth: 1.5, borderColor: bet ? colors.streak : colors.hairline }}
+        style={{ borderRadius: radii.lg, padding: spacing.md, gap: spacing.sm, backgroundColor: bet ? soft(colors.streak) : colors.surface, borderWidth: 1, borderColor: bet ? colors.streak : colors.hairline }}
       >
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
           <View style={{ flex: 1 }}>

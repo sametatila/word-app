@@ -71,7 +71,7 @@ export function UnlockProgress({
                   ) : c.bar ? (
                     <FlameIcon className="size-4 shrink-0" style={{ color: "var(--color-flame)" }} aria-hidden />
                   ) : (
-                    <span aria-hidden className="inline-block size-4 shrink-0 rounded-full border-2" style={{ borderColor: "var(--border)" }} />
+                    <span aria-hidden className="inline-block size-4 shrink-0 rounded-full border-[1.5px]" style={{ borderColor: "var(--border)" }} />
                   )}
                   <span className={c.ok ? "muted" : undefined}>{line(c.line)}</span>
                 </span>

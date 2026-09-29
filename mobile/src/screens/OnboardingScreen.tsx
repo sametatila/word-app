@@ -271,7 +271,7 @@ export function OnboardingScreen() {
             {step.options.map((o) => {
               const active = chosen === o.key;
               return (
-                <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: chosen === o.key }} onPress={() => pick(step.key, o.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: compactHeight ? spacing.md : spacing.lg }}>
+                <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: chosen === o.key }} onPress={() => pick(step.key, o.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: compactHeight ? spacing.md : spacing.lg }}>
                   <RadioDot selected={active} />
                   <View style={{ flex: 1 }}>
                     <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{o.label}</Text>
@@ -286,7 +286,7 @@ export function OnboardingScreen() {
                 {LEVELS.map((lv) => {
                   const on = pickedLevel === lv;
                   return (
-                    <PressableScale key={lv} accessibilityRole="radio" accessibilityState={{ selected: on }} onPress={() => setPickedLevel(lv)} style={{ flex: 1, paddingVertical: spacing.md, borderRadius: radii.md, alignItems: "center", borderWidth: 2, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
+                    <PressableScale key={lv} accessibilityRole="radio" accessibilityState={{ selected: on }} onPress={() => setPickedLevel(lv)} style={{ flex: 1, paddingVertical: spacing.md, borderRadius: radii.md, alignItems: "center", borderWidth: 1, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
                       <Text variant="bodyStrong" color={on ? colors.primaryText : colors.text}>{lv}</Text>
                     </PressableScale>
                   );
