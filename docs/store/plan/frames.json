@@ -34,14 +34,16 @@
         "tr": { "h": "Konuş, düzeltmeni anında gör", "s": "Gerçek hayattan sahneler, yapay zekâ karakteriyle" },
         "en": { "h": "Speak and get corrected on the spot", "s": "Real-life scenes with an AI character" },
         "de": { "h": "Sprich und sieh die Korrektur sofort", "s": "Alltagsszenen im Gespräch mit einer KI-Figur" }
-      }
+      },
+      "callout": { "anchor": "^(Düzeltme|Correction|Korrektur):", "pad": [0.9, 1], "zoom": 1.6 }
     },
     "mock-result": {
       "caption": {
         "tr": { "h": "Konuşma ve yazma da puanlanır", "s": "Dört becerili deneme sınavları" },
         "en": { "h": "Speaking and writing get scored too", "s": "Four-skill mock exams" },
         "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "Probeprüfungen in vier Fertigkeiten" }
-      }
+      },
+      "callout": { "anchor": "^(ÖLÇÜM HEDEFLERİNE GÖRE|BY WHAT IT MEASURES|NACH PRÜFUNGSZIEL)$", "chain": 2.5, "below": 1, "pad": [1.2, 1.4], "zoom": 1.2 }
     },
     "walk": {
       "premium": true,
@@ -50,6 +52,10 @@
         "en": { "h": "Screen off, learn on the go", "s": "Pocket Walking" },
         "de": { "h": "Bildschirm aus, unterwegs lernen", "s": "Taschen-Gehmodus" }
       },
+      "callout": [
+        { "source": "walk", "anchor": "(Yürürken çalış|Practice while walking|Üben beim Gehen)", "pad": [1.4, 1.2], "zoom": 1.5 },
+        { "source": "walk-intro", "anchor": "(ipucunu duyarsın|hint in|Hinweis auf)", "above": 1.2, "chain": 1.6, "pad": [1.2, 1], "zoom": 1.2 }
+      ],
       "posBy": { "portrait": { "rot": -5, "dx": 2 } },
       "sources": ["walk", "walk-intro"]
     },
@@ -59,6 +65,7 @@
         "en": { "h": "Every day, before you forget", "s": "A daily word round with spaced repetition" },
         "de": { "h": "Jeden Tag, bevor du vergisst", "s": "Tägliche Wortrunde mit verteilter Wiederholung" }
       },
+      "callout": { "source": "daily", "anchor": "^(Boşluğu doldur|Fill in the blank|Lücke füllen)$", "chain": 2, "pad": [1.2, 1.2], "zoom": 1.15 },
       "sources": ["daily", "home"]
     },
     "skills": {
@@ -66,15 +73,10 @@
         "tr": { "h": "Beş beceri, istediğin seviyede", "s": "Okuma, dinleme, yazma, konuşma, dil bilgisi" },
         "en": { "h": "Five skills, at the level you choose", "s": "Reading, listening, writing, speaking, grammar" },
         "de": { "h": "Fünf Fertigkeiten, auf jedem Niveau", "s": "Lesen, Hören, Schreiben, Sprechen, Grammatik" }
-      }
+      },
+      "callout": { "anchor": "^(Okuma|Reading|Lesen)$", "above": 3, "below": 3, "pad": [3, 1.2], "zoom": 1.2 }
     }
   },
-  "_callouts": "Büyüteç: ham ekrandan GERÇEK bir kırpım (oranlar 0–1, [x, y, w, h]), anahtar '<cihaz>/<set>/<ekran>'. Yoksa kare büyüteçsiz çıkar ve üretici uyarır. zoom = ekrandaki boyutuna göre büyütme.",
-  "callouts": {
-    "iphone/tr-de/conversation": { "rect": [0.036, 0.597, 0.815, 0.054], "zoom": 1.6 },
-    "iphone/tr-de/skills": { "rect": [0.034, 0.358, 0.935, 0.106], "zoom": 1.25 },
-    "iphone/tr-de/mock-result": { "rect": [0.036, 0.127, 0.928, 0.157], "zoom": 1.18 },
-    "iphone/tr-de/daily": { "rect": [0.036, 0.136, 0.928, 0.29], "zoom": 1.1 },
-    "iphone/tr-de/walk": { "rect": [0.036, 0.338, 0.928, 0.092], "zoom": 1.35 }
-  }
+  "_callouts": "Büyüteç ekranın 'callout' tanımından kurulur: 'anchor' (düzenli ifade, üç dil) ham görüntüde macOS Vision OCR ile aranır; alan çapa satırının yüksekliği cinsinden: 'above'/'below' yukarı ve aşağı, 'chain' alttaki satırlar arada bu kadardan kısa boşluk kaldıkça eklenir, 'pad' [yatay, dikey]; aynı yükseklikteki satırlar yatayda birleşir. 'source' tanımı ham ada bağlar, 'by' cihaza göre ayar. Çapa bulunamazsa kare büyüteçsiz çıkar ve üretici listeler; kaçış yolu olarak buraya '<cihaz>/<set>/<ekran>': { rect: [x, y, w, h] (0–1), zoom } elle verilebilir.",
+  "callouts": {}
 }

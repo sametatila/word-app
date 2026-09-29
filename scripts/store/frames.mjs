@@ -21,6 +21,8 @@
   yerleşim provası içindir; o kareler yüklenmez.
 */
 
+import crypto from "node:crypto";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -89,15 +91,80 @@ function rawPath(device, set, screen) {
 
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
-function calloutFor(device, set, screen) {
+// ---------- büyüteç: metne çapalı kırpım (macOS Vision OCR) ----------
+// Elle girilen oranlar her yeni çekimde kayıyordu (ekran yeniden çekilince düzeltme satırı başka
+// yükseklikte). Ekranın `callout` tanımı bir çapa metni (düzenli ifade, üç dilin karşılığı) ve
+// satır yüksekliği cinsinden bir alan veriyor; kırpım her ham görüntüde OCR'la bulunur. Önbellek
+// dosya içeriğine göre (`os.tmpdir()/lernomi-ocr`). `callouts["<cihaz>/<set>/<ekran>"]` elle
+// verilirse o geçerli (çapa bulunamayan ekran için kaçış yolu).
+const OCR_DIR = path.join(os.tmpdir(), "lernomi-ocr");
+let ocrBin = null;
+function ocr(file) {
+  const key = crypto.createHash("sha1").update(fs.readFileSync(file)).digest("hex");
+  const cache = path.join(OCR_DIR, `${key}.json`);
+  if (fs.existsSync(cache)) return JSON.parse(fs.readFileSync(cache, "utf8"));
+  fs.mkdirSync(OCR_DIR, { recursive: true });
+  if (!ocrBin) {
+    const src = path.join(ROOT, "scripts/store/ocr.swift");
+    ocrBin = path.join(OCR_DIR, `ocr-${crypto.createHash("sha1").update(fs.readFileSync(src)).digest("hex").slice(0, 10)}`);
+    if (!fs.existsSync(ocrBin)) execFileSync("swiftc", ["-O", "-o", ocrBin, src], { stdio: "inherit" });
+  }
+  const rows = Object.values(JSON.parse(execFileSync(ocrBin, [file], { maxBuffer: 16 << 20 }).toString()))[0] || [];
+  fs.writeFileSync(cache, JSON.stringify(rows));
+  return rows;
+}
+
+/**
+ * Çapa satırını bul, alanı kur: çapanın `above`/`below` satır yüksekliği yukarısı ve aşağısı;
+ * merkezi bu aralıktaki OCR satırları yatayda birleşir (sekme sırası, ölçüt kartı), sonra `pad`.
+ */
+function anchoredRect(spec, file) {
+  const re = new RegExp(spec.anchor, "iu");
+  const rows = ocr(file);
+  const a = rows.find((r) => re.test(r.t.trim()));
+  if (!a) return null;
+  const lh = a.h;
+  // `chain`: kartın kalanı. Alttaki satırlar arada `chain` satır yüksekliğinden kısa boşluk kaldıkça
+  // eklenir (ölçüt sayısı, cümle satırı ekrandan ekrana değişiyor; sabit yükseklik keserdi).
+  let bottom = a.y + a.h;
+  if (spec.chain) {
+    for (const r of [...rows].sort((p, q) => p.y - q.y)) {
+      if (r === a || r.y + r.h / 2 <= a.y + a.h / 2) continue;
+      if (r.y - bottom > spec.chain * lh) break;
+      bottom = Math.max(bottom, r.y + r.h);
+    }
+  }
+  const y0 = a.y - (spec.above ?? 0) * lh, y1 = bottom + (spec.below ?? 0) * lh;
+  let x0 = a.x, x1 = a.x + a.w;
+  for (const r of rows) {
+    const cy = r.y + r.h / 2;
+    if (cy >= y0 && cy <= y1) { x0 = Math.min(x0, r.x); x1 = Math.max(x1, r.x + r.w); }
+  }
+  const [px, py] = spec.pad ?? [0.6, 0.6];
+  const rx0 = clamp(x0 - px * lh, 0, 1), rx1 = clamp(x1 + px * lh, 0, 1);
+  const ry0 = clamp(y0 - py * lh, 0, 1), ry1 = clamp(y1 + py * lh, 0, 1);
+  return { x: rx0, y: ry0, w: rx1 - rx0, h: ry1 - ry0 };
+}
+
+function calloutFor(device, set, screen, src) {
   const c = cfg.callouts?.[`${device}/${set}/${screen}`] || (fallback[device] && cfg.callouts?.[`${fallback[device]}/${set}/${screen}`]);
-  if (!c) return null;
-  const [x, y, w, h] = c.rect;
-  return { rect: { x, y, w, h }, zoom: c.zoom ?? 1.4, dx: c.dx ?? 0, dy: c.dy ?? 0 };
+  if (c) {
+    const [x, y, w, h] = c.rect;
+    return { rect: { x, y, w, h }, zoom: c.zoom ?? 1.4, dx: c.dx ?? 0, dy: c.dy ?? 0 };
+  }
+  // Ham adına göre (ör. günlük tur yoksa ana ekran) ilk tutan tanım; cihaz ayarı (`by`) üstüne biner.
+  const base = path.basename(src, ".png");
+  const specs = [].concat(cfg.screens[screen]?.callout || []).filter((s) => !s.source || s.source === base);
+  for (const s0 of specs) {
+    const s = { ...s0, ...(s0.by?.[device] || {}) };
+    const rect = anchoredRect(s, src);
+    if (rect) return { rect, zoom: s.zoom ?? 1.4, dx: s.dx ?? 0, dy: s.dy ?? 0 };
+  }
+  return null;
 }
 
 /** Kare düzeni: portre telefon, yatay tablet ya da öne çıkan grafik. */
-function layout({ store, st, screen, idx, lang, set, img, iw, ih }) {
+function layout({ store, st, screen, idx, lang, set, img, src, iw, ih }) {
   const W = st.w, H = st.h, u = W / 100;
   const sc = cfg.screens[screen];
   // Öne çıkan grafik kendi ekranının altyazısını değil, açılış cümlesini taşır.
@@ -154,7 +221,7 @@ function layout({ store, st, screen, idx, lang, set, img, iw, ih }) {
   }
 
   const b = dev.spec.bez * dev.sw;
-  const c = calloutFor(st.device, set, screen);
+  const c = kind === "feature" ? null : calloutFor(st.device, set, screen, src);
   if (c) {
     const w = c.rect.w * dev.sw * c.zoom, h = c.rect.h * dev.sh * c.zoom;
     let sx = dev.x + b + (c.rect.x + c.rect.w / 2) * dev.sw;
@@ -230,7 +297,7 @@ async function main() {
           continue;
         }
         const meta = await sharp(src).metadata();
-        const f = layout({ store, st, screen, idx: i, lang: loc.lang, set: loc.set, img: pathToFileURL(fs.realpathSync(src)).href, iw: meta.width, ih: meta.height });
+        const f = layout({ store, st, screen, idx: i, lang: loc.lang, set: loc.set, img: pathToFileURL(fs.realpathSync(src)).href, src, iw: meta.width, ih: meta.height });
         if (!f.callout && st.kind !== "feature" && !cfg.screens[screen].noCallout) noCallout.add(`${st.device}/${loc.set}/${screen}`);
         const name = st.kind === "feature" ? "feature.png" : `${String(i + 1).padStart(2, "0")}-${screen}.png`;
         const outFile = path.join(dir, name);
@@ -257,7 +324,7 @@ async function main() {
       }
     }
   }
-  if (noCallout.size) console.log(`\nBÜYÜTEÇSİZ (frames.json "callouts" anahtarı yok): ${[...noCallout].join(", ")}`);
+  if (noCallout.size) console.log(`\nBÜYÜTEÇSİZ (çapa metni bulunamadı; frames.json "callout" / "callouts"): ${[...noCallout].join(", ")}`);
   if (warn.length) console.log("\nUYARI:\n  " + warn.join("\n  "));
   if (gaps.length) console.log("\nEKSİK HAM GÖRÜNTÜ:\n  " + gaps.join("\n  "));
 }
