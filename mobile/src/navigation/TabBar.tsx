@@ -42,8 +42,11 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
               {/* Dördüncü sekmeyle birlikte etiket başına düşen genişlik 320 dp'de
                   ~72 dp'ye indi: "Beceriler" iki satıra kırılıyordu. Tek satırda
                   kalıp gerekirse küçülüyor — çubuğun yüksekliği sekmeye göre
-                  değişmemeli. */}
-              <Text variant="micro" color={focused ? colors.primaryText : colors.textMuted} numberOfLines={1} adjustsFontSizeToFit style={{ marginTop: 3 }}>{label}</Text>
+                  değişmemeli.
+                  Etiket sekmenin TAMAMINA yayılıp ortalanıyor: içerik genişliğinde
+                  ölçülünce Android harf aralığını (micro 0.4) hesaba katmıyor ve
+                  son harfi kırpıyordu (tablette "Communit", 2026-09-29). */}
+              <Text variant="micro" color={focused ? colors.primaryText : colors.textMuted} numberOfLines={1} adjustsFontSizeToFit style={{ marginTop: 3, alignSelf: "stretch", textAlign: "center" }}>{label}</Text>
             </PressableScale>
           );
         })}
