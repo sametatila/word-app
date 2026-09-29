@@ -117,14 +117,28 @@ export function GrowthPanel() {
          geçen ekranları kapsıyordu, bu kart iskeletini KENDİ kuruyor. Web aynı
          kartta `role="status" aria-busy` + etiket taşıyor. */
       <Card padded accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("progp.loading")} style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
-        <SkeletonLine variant="bodyStrong" width={150} />
+        {/* Gerçek kartın sırası: başlık + pencere bilgisi, özet, altı yeterlik
+            satırı (etiket + değer, çubuk), altta "Nasıl gidiyorum" satırı.
+            Pencere bilgisi, değer sütunu ve alt satır eksikti; dört satır
+            çiziliyordu, beceri altı (web `progress-panel` de altı çiziyor). */}
+        <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
+          <SkeletonLine variant="bodyStrong" width={150} />
+          <SkeletonLine variant="micro" width={88} />
+        </View>
         <SkeletonLine variant="caption" width="90%" />
-        {[0, 1, 2, 3].map((i) => (
+        {[0, 1, 2, 3, 4, 5].map((i) => (
           <View key={i} style={{ gap: spacing.xs }}>
-            <SkeletonLine variant="micro" width="60%" />
+            <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
+              <SkeletonLine variant="micro" width="40%" />
+              <SkeletonLine variant="micro" width={34} />
+            </View>
             <SkeletonBar height={6} />
           </View>
         ))}
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.xs, paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+          <SkeletonLine variant="caption" width={130} />
+          <SkeletonLine variant="micro" width={56} />
+        </View>
       </Card>
     );
   }

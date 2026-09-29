@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, QuizIcon, WriteIcon, ListenIcon, CheckIcon, KeyboardIcon, PuzzleIcon, TagIcon, CardsIcon, SortIcon, TranslateIcon, StackIcon, ArrowRightIcon } from "../ui/icons";
-import { Skeleton } from "../ui/Skeleton";
+import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette, fillOf, ds } from "../theme";
@@ -76,10 +76,18 @@ export function PracticeScreen() {
 
         <SectionTitle title={t("practice.single_game")} />
         {/* Oyun listesi kursa bağlı: kurs bilinmeden çizilirse karo sayısı
-            sonradan değişip ızgara boyunu oynatıyor. Önce aynı boyda iskelet. */}
+            sonradan değişip ızgara boyunu oynatıyor. Önce aynı boyda iskelet:
+            gerçek karonun KENDİ kartı (minHeight ds(116), düz 116 değil) ve
+            içi — karo, ad, ipucu satırı. */}
         <CardGrid columns={gridColumns} stretch>
           {meLoading ? [0, 1, 2, 3, 4, 5].map((i) => (
-            <Skeleton key={i} height={116} radius={radii.xl} />
+            <Card key={i} padded style={{ flex: 1, minHeight: ds(116), justifyContent: "space-between" }}>
+              <SkeletonTile size={44} />
+              <View style={{ marginTop: spacing.md }}>
+                <SkeletonLine variant="bodyStrong" width="60%" />
+                <SkeletonLine variant="micro" width="85%" style={{ marginTop: 2 }} />
+              </View>
+            </Card>
           )) : practiceGamesFor(me?.course).map((g) => {
             const m = META[g.game] ?? FALLBACK_META;
             /* Zemin TEMAYA DUYARSIZ (`theme` `fillOf`): koyu temada rol

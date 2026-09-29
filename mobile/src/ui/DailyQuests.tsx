@@ -84,14 +84,22 @@ function QuestRow({ q, colors, onClaim, busy, onOpen, last }: { q: Quest; colors
   );
 }
 
-/** QuestRow ile birebir aynı ölçüler; yalnız içerik iskelet (aynı yükseklik). */
+/**
+ * QuestRow ile birebir aynı ölçüler; yalnız içerik iskelet (aynı yükseklik).
+ * İkinci satır çubuk + micro sayaç: yalnız 4 px çubuk çizildiğinde satır
+ * micro satır yüksekliği kadar kısa kalıyor, pano gelince Learn aşağı
+ * kayıyordu. Web `QuestCardSkeleton` aynı düzeltmeyi taşıyor.
+ */
 function QuestRowSkeleton({ colors, last }: { colors: Palette; last: boolean }) {
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
       <SkeletonTile size={32} radius={radii.sm} />
       <View style={{ flex: 1 }}>
         <SkeletonLine variant="bodyStrong" width="65%" />
-        <SkeletonBar height={4} style={{ marginTop: 2 }} />
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: 2 }}>
+          <SkeletonBar height={4} style={{ flex: 1 }} />
+          <SkeletonLine variant="micro" width={24} />
+        </View>
       </View>
       <SkeletonLine variant="caption" width={48} />
     </View>

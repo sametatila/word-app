@@ -244,3 +244,27 @@ export function SkeletonCard({
     </div>
   );
 }
+
+/**
+ * Sekme başlığının (`AppHeader`) yeri — Öğren, Patika, Beceriler, Arkadaşlar.
+ *
+ * Tek yerde, çünkü dört `loading.tsx` bunu ayrı ayrı çiziyordu ve biri
+ * değişince ötekiler geride kalıyordu (zil üçünde yuvarlak çizilmişti, gerçeği
+ * `--radius-tile` kare). Gerçeğiyle aynı: tek satır `h1` başlık (üst künye yok,
+ * 2026-09-29), sağda seri hapı (py-2 + strong satırı), 44'lük zil, 44'lük
+ * yuvarlak avatar.
+ */
+export function AppHeaderSkeleton({ titleWidth = 160 }: { titleWidth?: number | string }) {
+  return (
+    <div aria-hidden className="mb-4 flex items-center justify-between gap-3">
+      <div className="min-w-0 flex-1">
+        <SkeletonLine variant="h1" width={titleWidth} />
+      </div>
+      <div className="flex shrink-0 items-center gap-2">
+        <SkeletonPill width={56} height={16 + textHeight("strong")} />
+        <SkeletonTile size={44} />
+        <SkeletonTile size={44} className="rounded-full" />
+      </div>
+    </div>
+  );
+}

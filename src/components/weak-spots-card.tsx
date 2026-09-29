@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
-import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
+import { SkeletonBar, SkeletonLine, textHeight } from "@/components/skeleton";
 import { useEffect, useState } from "react";
 import type { ErrorReport } from "@/lib/error-analytics";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -43,8 +43,9 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
   }, []);
 
   /* İskelet kartın gerçek yapısında: başlık + pencere bilgisi, altında üç
-     satır (etiket, sayı ve altında ince ilerleme çizgisi). Yükseklik göz
-     kararı yazılıyordu ve tutmadığında kart veri gelince zıplıyordu. */
+     satır (etiket, sayı ve altında ince ilerleme çizgisi; sağda "Çalış"
+     düğmesi). Yükseklik göz kararı yazılıyordu ve tutmadığında kart veri
+     gelince zıplıyordu. Düğme eksikti: çizgi veri gelince kısalıyordu. */
   if (report === undefined)
     return (
       <section
@@ -59,12 +60,19 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
         </div>
         <ul className="mt-2 space-y-2">
           {[0, 1, 2].map((i) => (
-            <li key={i} style={{ opacity: 1 - i * 0.12 }}>
-              <div className="flex items-center justify-between gap-3">
-                <SkeletonLine variant="body" width={`${52 - i * 6}%`} />
-                <SkeletonLine variant="caption" width={56} />
-              </div>
-              <SkeletonBar height={6} className="mt-1" />
+            <li key={i} className="flex items-center gap-3">
+              <span className="min-w-0 flex-1">
+                <span className="flex items-center justify-between gap-3">
+                  <SkeletonLine variant="body" width={`${52 - i * 6}%`} />
+                  <SkeletonLine variant="caption" width={56} />
+                </span>
+                <SkeletonBar height={6} className="mt-1" />
+              </span>
+              {/* `btn px-3 py-1.5 text-caption`: 12 px dolgu + caption satırı. */}
+              <div
+                className="shrink-0 animate-pulse rounded-panel surface-2"
+                style={{ width: 64, height: 12 + textHeight("caption") }}
+              />
             </li>
           ))}
         </ul>

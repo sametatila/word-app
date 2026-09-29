@@ -8,7 +8,7 @@ import { api } from "../api/client";
 import { Text } from "./Text";
 import { Card } from "./Card";
 import { PressableScale } from "./PressableScale";
-import { SkeletonBar, SkeletonLine } from "./Skeleton";
+import { SkeletonBar, SkeletonLine, SkeletonPill, textHeight } from "./Skeleton";
 import { useTheme, spacing, radii } from "../theme";
 
 /**
@@ -61,11 +61,23 @@ export function WeakSpots() {
          geçen ekranları kapsıyordu, bu kart iskeletini KENDİ kuruyor. Web aynı
          kartta `role="status" aria-busy` + etiket taşıyor. */
       <Card padded accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("weak.loading")} style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
-        <SkeletonLine variant="micro" width={120} />
+        {/* Gerçek kartın sırası: başlık (bodyStrong, micro değil) + pencere
+            bilgisi, üç satır (etiket + sayı, çubuk; sağda "Çalış" hapı).
+            Pencere bilgisi, sayı ve hap eksikti. Web `weak-spots-card` aynı. */}
+        <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
+          <SkeletonLine variant="bodyStrong" width={120} />
+          <SkeletonLine variant="micro" width={96} />
+        </View>
         {[0, 1, 2].map((i) => (
-          <View key={i} style={{ gap: spacing.xs }}>
-            <SkeletonLine variant="caption" width="70%" />
-            <SkeletonBar height={6} />
+          <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+            <View style={{ flex: 1 }}>
+              <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                <SkeletonLine variant="caption" width="55%" />
+                <SkeletonLine variant="micro" width={48} />
+              </View>
+              <SkeletonBar height={6} style={{ marginTop: spacing.xs }} />
+            </View>
+            <SkeletonPill width={64} height={12 + textHeight("micro")} />
           </View>
         ))}
       </Card>

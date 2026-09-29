@@ -12,7 +12,7 @@ import { ReportSheet } from "../ui/ReportSheet";
 import { AiNotice } from "../ui/AiNotice";
 import { WriteIcon } from "../ui/icons";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
-import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
+import { Skeleton, SkeletonCard, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchWritings, deleteWriting, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, type Palette } from "../theme";
@@ -142,19 +142,26 @@ export function WritingsScreen() {
            okuyucu boş bir ekran duyuruyordu. Web aynı iskelete `aria-busy` ve
            etiket koyuyor. */
         <ScrollView accessibilityRole="progressbar" accessibilityLabel={t("writ.loading")} contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-          {[0, 1, 2, 3].map((i) => (
-            <SkeletonCard key={i} style={{ marginBottom: spacing.md }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-                <SkeletonTile size={48} />
-                <View style={{ flex: 1 }}>
-                  <SkeletonLine variant="bodyStrong" width="45%" />
-                  <SkeletonLine variant="caption" width="100%" />
-                  <SkeletonLine variant="caption" width="70%" />
+          {/* Gerçek dalın sırası: yapay zekâ notu, sonra `CardGrid` içinde
+              kayıt kartları. Not ve ızgara eksikti: geniş ekranda iki sütuna
+              açılan liste iskelette tek sütundu, kartlar notun yüksekliği
+              kadar yukarıdan başlıyordu. */}
+          <Skeleton height={spacing.sm * 2 + textHeight("micro")} radius={radii.md} style={{ marginBottom: spacing.md }} />
+          <CardGrid>
+            {[0, 1, 2, 3].map((i) => (
+              <SkeletonCard key={i} style={{ marginBottom: spacing.md }}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                  <SkeletonTile size={48} />
+                  <View style={{ flex: 1 }}>
+                    <SkeletonLine variant="bodyStrong" width="45%" />
+                    <SkeletonLine variant="caption" width="100%" />
+                    <SkeletonLine variant="caption" width="70%" />
+                  </View>
                 </View>
-              </View>
-              <SkeletonLine variant="micro" width={72} style={{ marginTop: spacing.sm }} />
-            </SkeletonCard>
-          ))}
+                <SkeletonLine variant="micro" width={72} style={{ marginTop: spacing.sm }} />
+              </SkeletonCard>
+            ))}
+          </CardGrid>
         </ScrollView>
       ) : phase === "error" || (items && items.length === 0) ? (
         /* YÜKLENEMEDİ ile BOŞ AYRI ŞEY. İkisine de "henüz değerlendirilmiş

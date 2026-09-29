@@ -95,12 +95,16 @@ export function CandoScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScreenHeader title={t("cando.what_i_can_do")} />
       {phase === "loading" ? (
-        // İçeriğin şekli: seviye özeti kartı + iki grup listesi (spinner değil).
+        // İçeriğin şekli, gerçek dalın SIRASIYLA: kural satırı, seviye özeti
+        // kartı, `CardGrid` içinde iki grup (`SectionTitle` + kıl çizgiyle
+        // ayrılmış satırlar). Kural satırı ve çizgiler eksikti, grup başlığı
+        // `SectionTitle`ın boşluklarını taşımıyordu; web `cando-card` aynı sıra.
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+          <SkeletonLine variant="micro" width="80%" style={{ marginTop: spacing.sm }} />
           {/* Etiket EN ÜSTTEKİ karta: `SkeletonCard` "meşgul" diyor (§152),
               neyin yüklendiğini söyleyen etiket burada. Web aynı kartta
               `aria-label={t("cando.loading")}` taşıyor. */}
-          <SkeletonCard label={t("cando.loading")} style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
+          <SkeletonCard label={t("cando.loading")} style={{ marginTop: spacing.sm }}>
             {[0, 1].map((i) => (
               <View key={i} style={{ marginBottom: spacing.sm }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.xs }}>
@@ -111,22 +115,28 @@ export function CandoScreen() {
               </View>
             ))}
           </SkeletonCard>
-          {[0, 1].map((g) => (
-            <View key={g} style={{ marginBottom: spacing.lg }}>
-              <SkeletonLine variant="caption" width={26} style={{ marginBottom: spacing.xs, marginLeft: spacing.xs }} />
-              <SkeletonCard padded>
-                {[0, 1, 2, 3].map((i) => (
-                  <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10 }}>
-                    <SkeletonTile size={26} radius={13} />
-                    <View style={{ flex: 1 }}>
-                      <SkeletonLine variant="body" width="80%" />
-                      <SkeletonLine variant="micro" width="30%" />
+          <CardGrid>
+            {[0, 1].map((g) => (
+              <View key={g}>
+                {/* `SectionTitle`ın boşlukları: üstte lg, altta sm, solda xs. */}
+                <SkeletonLine variant="caption" width={26} style={{ marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: spacing.xs }} />
+                <SkeletonCard padded>
+                  {[0, 1, 2, 3].map((i) => (
+                    <View key={i}>
+                      {i > 0 ? <View style={{ height: 1, backgroundColor: colors.hairline }} /> : null}
+                      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10 }}>
+                        <SkeletonTile size={26} radius={13} />
+                        <View style={{ flex: 1 }}>
+                          <SkeletonLine variant="body" width="80%" />
+                          <SkeletonLine variant="micro" width="30%" />
+                        </View>
+                      </View>
                     </View>
-                  </View>
-                ))}
-              </SkeletonCard>
-            </View>
-          ))}
+                  ))}
+                </SkeletonCard>
+              </View>
+            ))}
+          </CardGrid>
         </ScrollView>
       ) : phase === "ready" && !(data?.items ?? []).length ? (
         /*

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { WriteIcon } from "@/components/icons";
 import { scoreBand } from "@/lib/score-bands";
 import { EmptyCard } from "@/components/empty-card";
-import { SkeletonLine } from "@/components/skeleton";
+import { SkeletonLine, textHeight, type TextVariant } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { AiNotice } from "@/components/ai-notice";
 import type { Assessment } from "@/lib/assess-prompts";
@@ -92,21 +92,41 @@ export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEm
     void apiFetch(`/api/assessments?id=${id}`, { method: "DELETE" }).catch(() => {});
   }
 
-  /* İskelet kartın gerçek yapısında: başlık, alt satır ve iki kayıt yeri.
-     Göz kararı 160 piksel, kayıt sayısına göre tutmuyordu. */
+  /* İskelet kartın gerçek yapısında: başlık + alt satır (yalnız başlık
+     gösterilen yerde), yapay zekâ notu, sonra kayıt ızgarası (puan dairesi,
+     "tür · seviye · gün", iki satır önizleme, Sil). Eskisi notu hiç
+     çizmiyordu, `hideHeader`da da başlık çiziyordu ve kayıtlar tek sütundu.
+     Kayıt zemini zaten surface-2: içindeki parçalar bir ton koyu (`--border`)
+     ki görünsün. Göz kararı yükseklik yok; satırlar tipografi ölçeğinden. */
   if (items === undefined)
     return (
       <section role="status" aria-busy="true" aria-label={t("writ.loading")} className="card p-5">
-        <SkeletonLine variant="strong" width={130} />
-        <SkeletonLine variant="micro" width="60%" className="mt-1" />
-        <div className="mt-3 space-y-2">
+        {hideHeader ? null : (
+          <>
+            <SkeletonLine variant="strong" width={130} />
+            <SkeletonLine variant="caption" width="60%" className="mt-1" />
+          </>
+        )}
+        <div
+          aria-hidden
+          className={`animate-pulse surface-2 ${hideHeader ? "" : "mt-3"}`}
+          style={{ height: 16 + textHeight("micro"), borderRadius: "var(--radius-tile)" }}
+        />
+        <CardGrid as="ul" min={380} className="mt-3">
           {[0, 1].map((i) => (
-            <div key={i} className="rounded-panel p-3 surface-2" style={{ opacity: 1 - i * 0.12 }}>
-              <SkeletonLine variant="caption" width={104} />
-              <SkeletonLine variant="body" width="88%" className="mt-1.5" />
-            </div>
+            <li key={i} aria-hidden className="rounded-panel px-3 py-2.5 surface-2">
+              <div className="flex items-center gap-3">
+                <span className="h-9 w-9 shrink-0 animate-pulse rounded-full" style={{ background: "var(--border)" }} />
+                <span className="min-w-0 flex-1">
+                  <InsetLine variant="strong" width="55%" />
+                  <InsetLine variant="caption" width="92%" />
+                  <InsetLine variant="caption" width="70%" />
+                </span>
+                <InsetLine variant="caption" width={40} />
+              </div>
+            </li>
           ))}
-        </div>
+        </CardGrid>
       </section>
     );
   /*
@@ -263,5 +283,22 @@ function WritingsEmpty() {
         </Link>
       }
     />
+  );
+}
+
+/**
+ * surface-2 zeminli kaydın İÇİNDEKİ metin satırı. `SkeletonLine` çubuğunu
+ * surface-2 ile çiziyor ve aynı zeminde görünmüyordu; ölçü kuralı aynı
+ * (satır yüksekliği, çubuk 4 px kısa), renk bir ton koyu.
+ */
+function InsetLine({ variant, width }: { variant: TextVariant; width: number | string }) {
+  const h = textHeight(variant);
+  return (
+    <span className="flex items-center" style={{ height: h, width }}>
+      <span
+        className="block w-full animate-pulse"
+        style={{ height: h - 4, borderRadius: Math.min(10, (h - 4) / 2), background: "var(--border)" }}
+      />
+    </span>
   );
 }

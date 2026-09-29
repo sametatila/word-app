@@ -1,25 +1,48 @@
 import { LoadingRegion } from "@/components/loading-region";
-import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
+import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
 
 /**
- * Ünite sınavı gelene kadar iskelet — ilerleme şeridi, soru ve şıklar.
- * Sorular sunucuda ünite özetlerinden üretiliyor (`nativeUnitBriefs`).
+ * Ünite sınavı / tekrar gelene kadar iskelet — `ImmersionQuizPlayer`ın ilk
+ * karesi: dar sütun (`max-w-2xl py-6`), çarpı + tür karosu + başlık,
+ * tanıtım cümlesi, soru kartları. Sorular sunucuda ünite özetlerinden
+ * üretiliyor (`nativeUnitBriefs`).
+ *
+ * Eskisi oynatıcıda OLMAYAN bir ilerleme şeridi ve sayaç çiziyordu (soruların
+ * hepsi aynı sayfada, şerit yok) ve kabı geniş sütundu.
  */
 export default function Loading() {
   return (
-    <LoadingRegion className="mx-auto w-full max-w-3xl space-y-4">
-      <div className="flex items-center justify-between gap-3">
-        <SkeletonLine variant="strong" width={110} />
-        <SkeletonLine variant="caption" width={48} />
+    <LoadingRegion className="mx-auto w-full max-w-2xl py-6">
+      {/* Başlık: çarpı (44), tür karosu (36), başlık + alt başlık. */}
+      <div aria-hidden className="mb-5 flex items-center gap-3">
+        <SkeletonTile size={44} />
+        <SkeletonTile size={36} />
+        <div className="min-w-0 flex-1">
+          <SkeletonLine variant="h3" width="55%" />
+          <SkeletonLine variant="caption" width="35%" />
+        </div>
       </div>
-      <SkeletonBar height={7} />
-      <section className="card space-y-3 p-4">
-        <SkeletonLine variant="h3" width="80%" />
-        <SkeletonLine variant="caption" width="40%" />
-      </section>
-      <div className="space-y-3">
-        {[0, 1, 2, 3].map((i) => (
-          <div key={i} className="h-12 w-full rounded-tile" style={{ background: "var(--surface-2)" }} />
+
+      {/* Ne yapıldığını söyleyen tek cümle (`intro`). */}
+      <div aria-hidden className="mb-4">
+        <SkeletonLine variant="body" width="92%" />
+        <SkeletonLine variant="body" width="48%" />
+      </div>
+
+      {/* `QuestionList`: başlık, sonra soru kartları (soru + şıklar). */}
+      <div aria-hidden className="mt-5 space-y-4">
+        <SkeletonLine variant="h3" width={90} className="px-1" />
+        {[0, 1].map((i) => (
+          <section key={i} className="card p-4">
+            <SkeletonLine variant="strong" width={`${80 - i * 12}%`} />
+            <div className="mt-3 grid gap-2">
+              {[0, 1, 2, 3].map((j) => (
+                <div key={j} className="option px-3.5 py-2.5">
+                  <SkeletonLine variant="strong" width={`${40 + ((i + j) % 3) * 12}%`} />
+                </div>
+              ))}
+            </div>
+          </section>
         ))}
       </div>
     </LoadingRegion>

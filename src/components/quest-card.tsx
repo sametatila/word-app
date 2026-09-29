@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { useCachedJson } from "@/lib/use-cached";
-import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
+import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { T, fillX } from "@/lib/motion";
@@ -99,46 +99,7 @@ export function QuestCard() {
     }
   }
 
-  /* İskelet kartın GERÇEK yapısında: başlık şeridi ve altında üç görev satırı
-     (yuvarlak sayaç, etiket, ilerleme çizgisi). Göz kararı yazılmış 150
-     pikselin tutmadığı yerde, iskeletin önlemesi gereken sarsıntıyı iskeletin
-     kendisi üretiyordu. */
-  if (board === undefined)
-    return (
-      /*
-        `aria-hidden` KALKTI — canlı bölgeyi kendi elimizle iptal ediyordu.
-        Aynı etikette hem `aria-hidden` hem `role="status"`, `aria-busy` ve
-        `aria-label` vardı: `aria-hidden` ögeyi erişilebilirlik ağacından
-        TAMAMEN çıkarır, yani duyuru hiç ateşlenmiyor ve etiket hiç
-        okunmuyordu. §152'nin "yükleme duyurulsun" düzeltmesi bu kartta
-        yazıldığı gün ölüydü ve §156'nın kapısı bunu göremiyordu: o kapı
-        dosyada `aria-busy="true"` GEÇİYOR MU diye soruyor, ULAŞILABİLİR mi
-        diye değil.
-      */
-      <section
-        role="status"
-        aria-busy="true"
-        aria-label={t("dailyquests.daily_quests")}
-        className="mt-4"
-      >
-        <div className="mb-3 flex items-baseline justify-between gap-3">
-          <SkeletonLine variant="strong" width={130} />
-          <SkeletonLine variant="caption" width={92} />
-        </div>
-        <div className="card divide-y px-4 py-1" style={{ borderColor: "var(--hairline)" }}>
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="flex items-center gap-3 py-2" style={{ borderColor: "var(--hairline)" }}>
-              <SkeletonTile size={32} />
-              <div className="min-w-0 flex-1">
-                <SkeletonLine variant="strong" width={`${70 - i * 8}%`} />
-                <SkeletonBar height={4} className="mt-0.5" />
-              </div>
-              <SkeletonLine variant="caption" width={48} />
-            </div>
-          ))}
-        </div>
-      </section>
-    );
+  if (board === undefined) return <QuestCardSkeleton />;
   if (!board) return null;
 
   const claimable = board.quests.filter((q) => q.done >= q.target && !q.claimed).length;
@@ -289,6 +250,56 @@ export function QuestCard() {
           {t("dailyquests.xp_earned", { xp: flash })}
         </motion.p>
       ) : null}
+    </section>
+  );
+}
+
+/**
+ * Görev kartının iskeleti — kartın GERÇEK yapısında: başlık şeridi ve altında
+ * üç görev satırı (karo, etiket, çizgi + sayaç, XP).
+ *
+ * Dışa açık, çünkü Öğren'in rota iskeleti (`learn/loading.tsx`) de aynı yeri
+ * çiziyor; iki kopya ayrışırsa sayfa gelince görevler yine zıplar.
+ *
+ * Satır ölçüleri gerçek satırdan: başlık h3 (strong değil), karo `rounded-chip`
+ * 32 px, etiketin altındaki satır micro sayaç taşıdığı için 4 px çizgi değil
+ * micro satır yüksekliğinde. Eskisi her satırı 14 px kısa çiziyordu.
+ *
+ * Her zaman kendini duyuruyor (etiket: "Günün görevleri"), rota iskeletinin
+ * içinde de: orada neyin yüklendiğini söyleyen tek yer bu kart.
+ */
+export function QuestCardSkeleton() {
+  const t = useT();
+  return (
+    /*
+      `aria-hidden` YOK — canlı bölgeyi kendi elimizle iptal ediyordu: aynı
+      etikette `aria-hidden` ve `role="status"` varken duyuru hiç ateşlenmiyor.
+    */
+    <section
+      role="status"
+      aria-busy="true"
+      aria-label={t("dailyquests.daily_quests")}
+      className="mt-4"
+    >
+      <div className="mb-3 flex items-baseline justify-between gap-3">
+        <SkeletonLine variant="h3" width={150} />
+        <SkeletonLine variant="caption" width={92} />
+      </div>
+      <div className="card divide-y px-4 py-1" style={{ borderColor: "var(--hairline)" }}>
+        {[0, 1, 2].map((i) => (
+          <div key={i} className="flex items-center gap-3 py-2" style={{ borderColor: "var(--hairline)" }}>
+            <div className="h-8 w-8 shrink-0 animate-pulse rounded-chip surface-2" />
+            <div className="min-w-0 flex-1">
+              <SkeletonLine variant="strong" width={`${70 - i * 8}%`} />
+              <div className="mt-0.5 flex items-center gap-2">
+                <SkeletonBar height={4} className="min-w-0 flex-1" />
+                <SkeletonLine variant="micro" width={24} />
+              </div>
+            </div>
+            <SkeletonLine variant="caption" width={44} />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

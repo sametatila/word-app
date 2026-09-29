@@ -205,8 +205,11 @@ export function PathScreen() {
     return (
       <Screen>
         <AppHeader title={t("path.path")} />
-        {/* Gerçek düzenin ölçüleriyle: üst çubuk, alt yazı, öne çıkan ünite
-            kartı, ünite ızgarası. Veri gelince hiçbiri yerinden oynamıyor. */}
+        {/* Gerçek düzenin ölçüleriyle ve SIRASIYLA: üst çubuk, alt yazı, öne
+            çıkan ünite kartı (adım sayacı satırı dahil), modül başlığı
+            (micro + h3), ünite ızgarası. Sayaç satırı ve modül başlığı
+            eksikti, ünite kartları içsiz ve gerçekten (ds(132)) kısa bloklardı;
+            veri gelince ızgara aşağı kayıyordu. Web `immersion/loading` aynı sıra. */}
         <SkeletonBar height={10} style={{ marginBottom: 6 }} />
         <SkeletonLine variant="caption" width="55%" style={{ marginBottom: spacing.lg }} />
         <SkeletonCard style={{ marginBottom: spacing.lg, borderWidth: 1, borderColor: colors.hairline }}>
@@ -218,15 +221,28 @@ export function PathScreen() {
               <SkeletonLine variant="caption" width={92} />
             </View>
           </View>
-          <View style={{ flexDirection: "row", gap: spacing.xs, marginTop: spacing.md }}>
+          <SkeletonLine variant="caption" width={96} style={{ marginTop: spacing.md, marginBottom: 6 }} />
+          <View style={{ flexDirection: "row", gap: spacing.xs }}>
             {[0, 1, 2, 3, 4, 5].map((i) => <Skeleton key={i} height={10} radius={5} style={{ flex: 1 }} />)}
           </View>
-          <Skeleton height={68} radius={radii.lg} style={{ marginTop: spacing.md }} />
-          <Skeleton height={textHeight("h3") + 30} radius={radii.lg} style={{ marginTop: spacing.md }} />
+          <Skeleton height={44 + spacing.md * 2} radius={radii.lg} style={{ marginTop: spacing.md }} />
+          <Skeleton height={textHeight("h3") + spacing.lg * 2} radius={radii.lg} style={{ marginTop: spacing.md }} />
         </SkeletonCard>
-        <CardGrid columns={uniteSutun}>
-          {[0, 1, 2, 3].map((i) => <Skeleton key={i} height={116} radius={radii.lg} />)}
-        </CardGrid>
+        <View style={{ marginTop: spacing.lg }}>
+          <SkeletonLine variant="micro" width={72} style={{ marginLeft: spacing.xs }} />
+          <SkeletonLine variant="h3" width={160} style={{ marginLeft: spacing.xs, marginBottom: spacing.sm }} />
+          <CardGrid columns={uniteSutun} stretch>
+            {[0, 1, 2, 3].map((i) => (
+              <Card key={i} padded style={{ flex: 1, minHeight: ds(132), borderColor: colors.border, borderWidth: 1 }}>
+                <SkeletonTile size={44} radius={radii.lg} />
+                <SkeletonLine variant="bodyStrong" width="80%" style={{ marginTop: spacing.sm }} />
+                <View style={{ flex: 1 }} />
+                <SkeletonBar height={5} style={{ marginTop: spacing.sm }} />
+                <SkeletonLine variant="micro" width="45%" style={{ marginTop: spacing.xs }} />
+              </Card>
+            ))}
+          </CardGrid>
+        </View>
       </Screen>
     );
   }

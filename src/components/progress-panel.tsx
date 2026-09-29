@@ -51,7 +51,9 @@ export function ProgressPanel() {
   /* İskelet kartın gerçek yapısında: başlık + pencere bilgisi, özet cümlesi
      ve iki sütuna dizilen altı yeterlik satırı (etiket, sayı, çubuk). Göz
      kararı 280 piksel, iki sütunlu ızgaranın geniş ekranda üçe, telefonda
-     altıya inen yüksekliğini tutamıyordu. */
+     altıya inen yüksekliğini tutamıyordu. Satır etiketi caption (micro
+     değil) ve altta her zaman duran "Nasıl gidiyorum" açılır satırı da
+     çiziliyor; ikisi eksikken kart veri gelince ~40 px uzuyordu. */
   if (data === undefined)
     return (
       <section role="status" aria-busy="true" aria-label={t("progp.loading")} className="card p-4">
@@ -62,14 +64,23 @@ export function ProgressPanel() {
         <SkeletonLine variant="body" width="92%" className="mt-1.5" />
         <div className="mt-3 grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
           {[0, 1, 2, 3, 4, 5].map((i) => (
-            <div key={i} style={{ opacity: 1 - Math.min(4, i) * 0.1 }}>
+            <div key={i}>
               <div className="flex items-baseline justify-between gap-2">
-                <SkeletonLine variant="micro" width={72} />
-                <SkeletonLine variant="micro" width={34} />
+                <SkeletonLine variant="caption" width={72} />
+                <SkeletonLine variant="caption" width={34} />
               </div>
               <SkeletonBar height={6} className="mt-1" />
             </div>
           ))}
+        </div>
+        <div className="mt-3 border-t pt-2" style={{ borderColor: "var(--border)" }}>
+          <div className="flex items-center gap-3 py-1">
+            <span className="flex-1">
+              <SkeletonLine variant="strong" width={140} />
+            </span>
+            <SkeletonLine variant="caption" width={56} />
+            <span className="w-[18px] shrink-0" />
+          </div>
         </div>
       </section>
     );

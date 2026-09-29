@@ -58,14 +58,15 @@ export function CandoCard() {
   }, [attempt]);
 
   /* İskelet İÇERİĞİN ŞEKLİNDE: kural satırı, iki çubuklu özet kartı, iki
-     grup × dört satır. Android'in yükleme dalı birebir bu. */
+     grup × dört satır. Android'in yükleme dalı birebir bu. Son çubuk satırı
+     `last:mb-0` (gerçekte de öyle; yoksa kart 8 px uzun çiziliyordu). */
   if (data === undefined)
     return (
       <div>
         <SkeletonLine variant="micro" width="80%" />
         <SkeletonCard label={t("cando.loading")} className="mt-3">
           {[0, 1].map((i) => (
-            <div key={i} className="mb-2">
+            <div key={i} className="mb-2 last:mb-0">
               <div className="mb-1 flex items-baseline justify-between">
                 <SkeletonLine variant="strong" width={28} />
                 <SkeletonLine variant="caption" width={78} />
@@ -79,12 +80,16 @@ export function CandoCard() {
             <div key={g}>
               <SkeletonLine variant="caption" width={26} className="mb-1 ml-1" />
               <div className="card p-4">
+                {/* Gerçek satır gibi: aralarında kıl çizgi, durum dairesi yuvarlak. */}
                 {[0, 1, 2, 3].map((i) => (
-                  <div key={i} className="flex items-center gap-3 py-2.5">
-                    <SkeletonTile size={26} />
-                    <div className="flex-1">
-                      <SkeletonLine variant="body" width="80%" />
-                      <SkeletonLine variant="micro" width="30%" />
+                  <div key={i}>
+                    {i > 0 ? <div className="h-px" style={{ background: "var(--hairline)" }} /> : null}
+                    <div className="flex items-center gap-3 py-2.5">
+                      <SkeletonTile size={26} className="rounded-full" />
+                      <div className="flex-1">
+                        <SkeletonLine variant="body" width="80%" />
+                        <SkeletonLine variant="micro" width="30%" />
+                      </div>
                     </div>
                   </div>
                 ))}
