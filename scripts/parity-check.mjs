@@ -18346,28 +18346,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   /* ------------------------------- 318. PAYWALL KAPSAM SATIRLARI HER YANITTA
    *
-   * Paywall'in "neler var / ucretsizde ne var" listesi ELLE YAZILMIYOR:
-   * `lib/premium/gates` `describeLimits` yapilandirmadan uretiyor. Gerekcesi o
-   * dosyada yazili ve magaza kurallarina bagli - bir sinir degistiginde
-   * paywall'in SOYLEDIGI de degismek zorunda, yoksa beyan gercekle ayrisiyor
-   * (App Store 2.3.1 / Play Yaniltici Davranis).
+   * Paywall'in sinirlari ELLE YAZILMIYOR: sayilar yapilandirmadan geliyor
+   * (`premiumConfig`, panelden degisiyor). Bir sinir degistiginde paywall'in
+   * SOYLEDIGI de degismek zorunda, yoksa beyan gercekle ayrisiyor (App Store
+   * 2.3.1 / 3.1.2, Play Yaniltici Davranis).
    *
-   * IKI ISTEMCI AYNI SATIRLARI AYRI YOLDAN ALIYOR:
-   *   web    sunucuda `premiumCopy()` cagirip dogrudan ciziyor
-   *   mobil  `/api/premium/status` yanitindaki `copy` alanindan
+   * 2026-09-29 YENIDEN TASARIM ("C3"): iki istemci artik `copy` satirlarini
+   * degil, sinirlari maddelerin alt satirinda ciziyor ve sayilari yine
+   * yapilandirmadan aliyor:
+   *   web    sunucudaki `premiumConfig()` degerleri (`fairUse`, `free`, avatar seti)
+   *   mobil  `/api/premium/status` yanitindaki `limits` alani
+   * `copy` alani ESKI SURUMLER icin hala her dalda: kurulu eski uygulama
+   * karsilastirma kartini onunla ciziyor ve alan bosalirsa kart sessizce bosalir.
    *
-   * Ucun de yanit dali `copy` tasimak zorunda. Bir dal onu tasimazsa (yeni bir
-   * erken donus eklenince) mobilin karsilastirma karti SESSIZCE BOSALIYOR
-   * (`status?.copy.premium ?? []`) - web etkilenmiyor, yani kusur tek
-   * platformda ve gorunmez. Magaza beyani boyle bir ekranda "hicbir sey vaat
-   * etmiyor" haline geliyor.
-   *
-   * Olcu: yanit dali sayisi kadar `copy` alani, ve iki istemcinin de IKI
-   * bolumu (premium + ucretsiz) cizdigi. */
+   * Olcu: her yanit dali `copy` ve `limits` tasiyor, uretim duruyor, web
+   * maddeleri ve tablosu yapilandirmadan, mobil maddeleri yanittan. */
   {
     const uc = sil(read("src/app/api/premium/status/route.ts"));
     const dal = (uc.match(/NextResponse\.json\(/g) ?? []).length;
     const copySayi = (uc.match(/^\s+copy,$/gm) ?? []).length;
+    const limitSayi = (uc.match(/limits: limitsOf\(cfg, avatarSet\)/g) ?? []).length;
     const webPaywall = sil(read("src/components/premium-paywall.tsx"));
     const mobPaywall = sil(read("mobile/src/screens/PaywallScreen.tsx"));
     sameList(
@@ -18375,20 +18373,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "yanit dali=" + dal,
         "copy tasiyan dal=" + copySayi,
+        "limits tasiyan dal=" + limitSayi,
         "uretim=" + (/describeLimits\(/.test(sil(read("src/lib/premium/gates.ts"))) ? "var" : "YOK"),
-        "web premium bolumu=" + (/copy\.premium\.map/.test(webPaywall) ? "var" : "YOK"),
-        "web ucretsiz bolumu=" + (/copy\.free\.map/.test(webPaywall) ? "var" : "YOK"),
-        "mobil premium bolumu=" + (/copy\.premium \?\? \[\]/.test(mobPaywall) ? "var" : "YOK"),
-        "mobil ucretsiz bolumu=" + (/copy\.free \?\? \[\]/.test(mobPaywall) ? "var" : "YOK"),
+        "web maddeler=" + (/"paywall\.b_ai_cap", \{ a: fairUse\.aiPracticePerDay, c: fairUse\.chatTurnsPerDay \}/.test(webPaywall) ? "yapilandirmadan" : "ELLE"),
+        "web tablo=" + (/free\.conversationsPerLevel/.test(webPaywall) && /free\.mockExamsPerLevel/.test(webPaywall) ? "yapilandirmadan" : "ELLE"),
+        "mobil maddeler=" + (/status\?\.limits\.fairUse/.test(mobPaywall) && /status\?\.limits\.avatarSet/.test(mobPaywall) ? "yanittan" : "ELLE"),
       ],
       [
         "yanit dali=3",
         "copy tasiyan dal=3",
+        "limits tasiyan dal=3",
         "uretim=var",
-        "web premium bolumu=var",
-        "web ucretsiz bolumu=var",
-        "mobil premium bolumu=var",
-        "mobil ucretsiz bolumu=var",
+        "web maddeler=yapilandirmadan",
+        "web tablo=yapilandirmadan",
+        "mobil maddeler=yanittan",
       ],
       "bulunan",
       "beklenen",

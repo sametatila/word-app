@@ -58,6 +58,8 @@ export type PremiumStatus = {
     /* `pocketWalksPerDay` eski sunucunun adı (sunucu takma ad olarak da gönderiyor). */
     fairUse: { walkRoundsPerDay?: number; aiPracticePerDay: number; chatTurnsPerDay?: number; pocketWalksPerDay?: number };
     mock: { packSize: number };
+    /** Premium avatar setindeki parça sayısı; eski sunucuda yok (madde çizilmez). */
+    avatarSet?: number;
   };
   plans: { productMonthly: string; productYearly: string; trialDays: number; prices: { region: string; currency: string; monthly: string; yearly: string; yearlySavePct: number }[] };
   /** Paywall satırları: çeviri anahtarı + parametre (cümle sunucuda kurulmuyor). */

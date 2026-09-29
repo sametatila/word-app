@@ -7,8 +7,8 @@ import { priceFor, resolveRegion } from "@/lib/premium/region";
 import { TZ_COOKIE } from "@/lib/tz-cookie";
 import { titleMeta } from "@/lib/page-meta";
 import { getUserInfo } from "@/lib/auth/server";
-import { premiumConfig, premiumCopy, premiumStatus } from "@/lib/premium";
-import { referralStats } from "@/lib/premium/referral";
+import { premiumConfig, premiumStatus } from "@/lib/premium";
+import { avatarPremiumSet } from "@/lib/avatar-items";
 import { PremiumPaywall } from "@/components/premium-paywall";
 
 export const generateMetadata = titleMeta("premium.title");
@@ -24,7 +24,7 @@ const REF_RESULTS = new Set(["ok", "linked", "already", "self", "unknown", "erro
  * Premium sayfası.
  *
  * WEB'DE SATIN ALMA YOK — bilinçli. Mağaza aboneliği uygulama içinden alınıyor;
- * burası durumu, kapsamı, promo kodunu ve daveti yönetiyor. Web'e kendi ödeme
+ * burası durumu, kapsamı ve promo kodunu gösteriyor (davet Profil'de). Web'e kendi ödeme
  * yolunu (Stripe) eklemek mimaride tek adaptörlük iş (`lib/premium/providers`),
  * ama bugün açık değil ve sayfa bunu SÖYLÜYOR — kilit gösterip satın alma yolu
  * sunmamak kullanıcıyı çıkmaza sokar.
@@ -38,11 +38,12 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
   const who = await getUserInfo();
   const userId = who?.id ?? null;
 
-  const [cfg, copy, status, referral, jar, control, hdr] = await Promise.all([
+  const [cfg, status, avatarSet, jar, control, hdr] = await Promise.all([
     premiumConfig(),
-    premiumCopy(),
     premiumStatus(userId),
-    userId ? referralStats(userId).catch(() => null) : Promise.resolve(null),
+    /* Premium avatar setinin parça sayısı: madde ve tablo bu sayıyı söylüyor
+       (panelden değişebilir, `avatar.rules`). Katalog okunamazsa madde düşer. */
+    avatarPremiumSet().catch(() => new Set<string>()),
     cookies(),
     appControl(),
     headers(),
@@ -84,15 +85,11 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
           bonusUntil: status.bonusUntil ? status.bonusUntil.toISOString() : null,
         }
       }
-      copy={copy}
-      plans={{
-        productMonthly: cfg.plans.productMonthly,
-        productYearly: cfg.plans.productYearly,
-        trialDays: cfg.plans.trialDays,
-      }}
+      plans={{ trialDays: cfg.plans.trialDays }}
       price={price}
+      free={cfg.free}
       fairUse={{ ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.chatTurns }}
-      referral={referral}
+      avatarCount={avatarSet.size}
       /** Davet bağlantısındaki kod alanı doluysa form açık gelir. */
       prefillCode={typeof code === "string" ? code : ""}
       /** `/r/<kod>` bağı kurup buraya yönlendirdi — sonucu tek satırla söyle. */

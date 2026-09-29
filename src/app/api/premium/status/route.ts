@@ -7,6 +7,7 @@ import type { PremiumConfig } from "@/lib/premium/gates";
 import { referralStats } from "@/lib/premium/referral";
 import { GUEST_AI_TRIAL_KEY, GUEST_AI_TRIALS } from "@/lib/auth/guest";
 import { getUsage } from "@/lib/premium/quota";
+import { avatarPremiumSet } from "@/lib/avatar-items";
 
 export const dynamic = "force-dynamic";
 
@@ -33,6 +34,9 @@ export async function GET() {
   const userId = who?.id ?? null;
   const cfg = await premiumConfig();
   const copy = await premiumCopy();
+  /* Premium avatar setinin parça sayısı — paywall maddesi bu sayıyı söylüyor
+     (panelden değişebilir). Katalog okunamazsa 0 ve madde çizilmiyor. */
+  const avatarSet = (await avatarPremiumSet().catch(() => new Set<string>())).size;
 
   // Oturum yoksa da yapılandırma ve metinler dönüyor: paywall giriş yapmamış
   // kullanıcıya da doğru sınırları göstermeli, "önce giriş yap" dememeli.
@@ -44,7 +48,7 @@ export async function GET() {
         source: null,
         store: null,
         bonusDaysPending: 0,
-        limits: limitsOf(cfg),
+        limits: limitsOf(cfg, avatarSet),
         plans: cfg.plans,
         copy,
         referral: null,
@@ -78,7 +82,7 @@ export async function GET() {
         store: ent.store,
         /** Bekleyen hediye — "3 haftalık hakkın aboneliğin bitince başlayacak". */
         bonusDaysPending: ent.bonusDaysPending,
-        limits: limitsOf(cfg),
+        limits: limitsOf(cfg, avatarSet),
         plans: cfg.plans,
         copy,
         referral,
@@ -102,7 +106,7 @@ export async function GET() {
         source: null,
         store: null,
         bonusDaysPending: 0,
-        limits: limitsOf(cfg),
+        limits: limitsOf(cfg, avatarSet),
         plans: cfg.plans,
         copy,
         referral: null,
@@ -124,10 +128,12 @@ export async function GET() {
  * cümlesini bu alanla kuruyor ve alan yoksa ekrana "undefined" basıyordu. Değeri
  * artık gerçekten sayılan tur tavanı (`walkRoundsPerDay`).
  */
-function limitsOf(cfg: PremiumConfig) {
+function limitsOf(cfg: PremiumConfig, avatarSet: number) {
   return {
     free: cfg.free,
     fairUse: { ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.chatTurns, pocketWalksPerDay: cfg.fairUse.walkRoundsPerDay },
     mock: cfg.mock,
+    /** Premium avatar setindeki parça sayısı (`avatarPremiumSet`); eski sunucuda yok. */
+    avatarSet,
   };
 }

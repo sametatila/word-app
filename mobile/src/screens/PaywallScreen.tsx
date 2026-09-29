@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { t, dateLocale } from "../lib/i18n";
-import { View, AppState, Linking, Platform, TextInput } from "react-native";
-import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
+import { View, AppState, Linking, Platform, TextInput, ScrollView, Modal, Pressable, KeyboardAvoidingView, useWindowDimensions, type NativeSyntheticEvent, type NativeScrollEvent } from "react-native";
 import { useLayout } from "../lib/useLayout";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { RadioDot } from "../ui/RadioDot";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { Card } from "../ui/Card";
-import { SectionTitle } from "../social/common";
-import { ShareIcon, CloseIcon, CheckIcon, PremiumIcon } from "../ui/icons";
-import { SkeletonLine, SkeletonText, SkeletonTile } from "../ui/Skeleton";
+import { CloseIcon, CheckIcon, PremiumIcon } from "../ui/icons";
+import { SkeletonLine } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
 import { awaitProcessedPurchase, billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, purchaseGroupTrial, restore, trialEligibleProducts, type PurchaseOutcome } from "../lib/billing";
-import { usePremiumStatus, refreshPremium } from "../lib/premium";
-import { inviteLink, shareInvite } from "../lib/share";
+import { usePremiumStatus, refreshPremium, type PremiumStatus } from "../lib/premium";
 import { api } from "../api/client";
 import { openLegal } from "../lib/legal";
 import { hasMockExams } from "../data/exams";
@@ -27,17 +23,33 @@ import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme
 import { useAuth } from "../lib/AuthContext";
 
 /**
- * Paywall — YALNIZ mağaza entegrasyonu canlıyken (RevenueCat anahtarı) anlamlı; canlı
- * değilken hiçbir giriş noktası buraya gelmez (Profil bandı ve sınav kilidi gizli) ve
- * ekran açılsa bile satın alma vaadi vermez. Play ve App Store abonelik politikaları aynı
- * şeyi istiyor: fiyat, süre ve deneme yalnız mağazadan (PurchasesPackage); sabit fiyat,
- * uydurma avantaj ("reklamsız"), gizli geri yükleme yok. Yalnız gerçekten kilitli olan
- * şey listelenir.
+ * Paywall — yeniden tasarım 2026-09-29 ("C3", Samet onayı): turuncu bantta ürün
+ * vitrini, başlık, sınırları alt satırında dört madde, yan yana iki plan,
+ * cayma satırı; altta sabit düğme, şart satırı ve bağlantılar. Tek ekran;
+ * kısa ekranda gövde kayar, düğme yerinde kalır.
+ *
+ * MAĞAZA KURALLARI: fiyat, süre ve deneme yalnız mağazadan (PurchasesPackage);
+ * faturalanan tutar düğmenin altında dönemiyle yazılı (App Store 3.1.2, Play
+ * abonelik beyanı); "sınırsız" yok, sınırlar maddelerin altında ve panelden
+ * geliyor; geri yükleme, şartlar ve gizlilik her dalda görünür.
+ *
+ * Web karşılığı `src/components/premium-paywall.tsx`; ikisi aynı anahtarları
+ * ve aynı sayıları kullanıyor.
  */
 /** "Aboneliği yönet" — abonelik hangi mağazadan alındıysa oranın abonelik ekranı. */
 const SUBSCRIPTIONS_URL = Platform.OS === "ios"
   ? "https://apps.apple.com/account/subscriptions"
   : "https://play.google.com/store/account/subscriptions";
+
+const IOS = Platform.OS === "ios";
+
+/**
+ * KENDİ KODUMUZ iOS'TA YOK (Guideline 3.1.1): promo ve grup kodu özellik
+ * kilidini uygulama içi satın alma dışında açıyor. iOS'ta "Kodun var mı?"
+ * Apple'ın teklif kodu sayfasını açıyor (`presentOfferCodeRedemption`);
+ * Android'de kendi kutumuz (`CodeSheet`) hem promo hem grup kodunu alıyor.
+ */
+const OWN_CODES = Platform.OS === "android";
 
 function planLabel(pkg: PurchasesPackage): string {
   if (pkg.packageType === "ANNUAL") return t("paywall.yearly");
@@ -46,31 +58,7 @@ function planLabel(pkg: PurchasesPackage): string {
 }
 
 /**
- * KENDİ PROMO KODUMUZ iOS'TA YOK. Guideline 3.1.1 özellik kilidini uygulama içi
- * satın alma dışında bir mekanizmayla (lisans anahtarı, kod) açmayı yasaklıyor ve
- * paywall incelemede mutlaka açılan ekran. iOS'ta kodun meşru karşılığı Apple'ın
- * teklif kodları (`presentOfferCodeRedemption`). Android ve web'de kutu kalıyor.
- */
-const OWN_PROMO_CODES = Platform.OS !== "ios";
-
-/**
- * GRUP KODU ("2 ay ücretsiz" mağaza denemesi) — YALNIZ ANDROID.
- *
- * Aynı 3.1.1 gerekçesi, daha da kesin: grup kodu bir aboneliğin teklifini
- * AÇIYOR, yani tam olarak "kendi kodunla kilit açma". iOS'ta ne kutu ne metin
- * ne de webdeki `/g/` sayfasına bağlantı var (yönlendirme de 3.1.1 ve
- * 3.1.3 kapsamında): iPhone kullanıcısı gruptaki bağlantıyı Safari'de açıyor
- * ve oradan Apple'ın KENDİ teklif kodu sayfasına gidiyor. iOS'ta uygulamada
- * kalan tek kod yolu Apple'ın bozdurma sayfası (`presentOfferCodeRedemption`).
- */
-const GROUP_CODES = Platform.OS === "android";
-
-/**
  * Mağazanın bildirdiği ücretsiz deneme (giriş fiyatı 0) — yoksa deneme vaadi yok.
- *
- * Süre TEKİL/ÇOĞUL anahtarla kuruluyor: "1" + "months" birleştirmesi İngilizcede
- * "1 months", Almancada "1 Monate" basıyordu. Yıllık birim de eksikti ve aya
- * düşüyordu.
  *
  * `eligible`: iOS'ta denemeye uygun ürünler (`trialEligibleProducts`). Listede
  * olmayan ürün için deneme metni YOK — iOS `introPrice`ı uygun olmayana da
@@ -88,11 +76,7 @@ function freeTrialOf(pkg: PurchasesPackage | undefined, eligible: Set<string> | 
 
 type BillingPeriod = { unit: "year" | "month" | "week"; n: number };
 
-/**
- * Faturalama dönemi — önce mağazanın ISO 8601 süresinden (`P1Y`, `P1M`, `P3M`,
- * `P1W`), yoksa paket türünden. Bilinmiyorsa `null` ve satır dönemsiz kalıyor
- * (ör. ömür boyu ürün).
- */
+/** Faturalama dönemi — önce mağazanın ISO 8601 süresinden, yoksa paket türünden. */
 function billingPeriodOf(pkg: PurchasesPackage): BillingPeriod | null {
   const m = /^P(\d+)([YMWD])$/.exec(pkg.product.subscriptionPeriod ?? "");
   if (m) {
@@ -113,89 +97,92 @@ function billingPeriodOf(pkg: PurchasesPackage): BillingPeriod | null {
   }
 }
 
-/**
- * Satın almadan önce görünen ücret satırı: DÖNEMİYLE birlikte.
- *
- * "1 ay ücretsiz, sonra 1.199,99 ₺" yazıyordu; dönem yalnız plan satırındaydı.
- * Apple denemenin süresini ve bittikten sonra faturalanacak tutarı, Play fatura
- * döngüsünü açıkça istiyor — satırın kendisi eksiksiz okunmalı: "1 ay ücretsiz,
- * sonra yılda 1.199,99 ₺". Cümle dilden dile farklı dizildiği için dönem ayrı
- * bir sözcük değil, her dönem kendi cümlesi.
- */
-/* Anahtarlar DÜZ YAZILI: sözlük denetimi kodda geçen anahtarı arıyor ve
-   `paywall.price_${…}` gibi kurulmuş bir ad onu ölü sanardı. */
+/* Anahtarlar DÜZ YAZILI: sözlük denetimi kodda geçen anahtarı arıyor. */
 const TRIAL_THEN = { year: "paywall.trial_then_year", month: "paywall.trial_then_month", week: "paywall.trial_then_week", months: "paywall.trial_then_months", years: "paywall.trial_then_years", weeks: "paywall.trial_then_weeks" } as const;
 const PRICE_PER = { year: "paywall.price_year", month: "paywall.price_month", week: "paywall.price_week", months: "paywall.price_months", years: "paywall.price_years", weeks: "paywall.price_weeks" } as const;
 
+/**
+ * Satın almadan önce görünen ücret: DÖNEMİYLE birlikte ("1 ay ücretsiz, sonra
+ * yılda 1.199,99 ₺"). Apple denemenin süresini ve sonra faturalanacak tutarı,
+ * Play fatura döngüsünü açıkça istiyor; çok birimli dönem de adlandırılıyor.
+ */
 function priceLine(pkg: PurchasesPackage, trial: string | null): string {
   const price = pkg.product.priceString;
   const p = billingPeriodOf(pkg);
-  /* ÇOK BİRİMLİ DÖNEM DE ADLANDIRILIYOR. Eskiden yalnız `n === 1` ve çok aylık
-     durum karşılanıyordu; `P2Y` ya da `P2W` gibi bir ürün `null`a düşüp
-     DÖNEMSİZ fiyat satırına iniyordu ("7 gün ücretsiz, sonra 99,99 ₺") —
-     App Store ve Play dönem bildirimini şart koşuyor. Bugünkü katalogda böyle
-     bir ürün yok; yarın eklenirse satır sessizce eksik beyan olurdu. */
   const kind = !p ? null : p.n === 1 ? p.unit : p.unit === "month" ? "months" : p.unit === "year" ? "years" : "weeks";
   const n = p?.n ?? 1;
   if (trial) return kind ? t(TRIAL_THEN[kind], { duration: trial, price, n }) : t("paywall.free_then", { duration: trial, price });
   return kind ? t(PRICE_PER[kind], { price, n }) : t("paywall.fiyat_donem", { price });
 }
 
+/**
+ * Düğmenin altındaki şart satırı: ücret + yenileme + iptal (Samet, 2026-09-29:
+ * "1 ay ücretsiz, sonra yılda X; otomatik yenilenir. Deneme bitmeden iptal
+ * edersen ücret alınmaz."). iOS'ta Apple'ın kuralı gereği "en az 24 saat önce".
+ */
+function termsLine(pkg: PurchasesPackage, trial: string | null): string {
+  const renew = trial
+    ? t(IOS ? "paywall.renew_trial_appstore" : "paywall.renew_trial_play")
+    : t(IOS ? "paywall.renew_plain_appstore" : "paywall.renew_plain_play");
+  return `${priceLine(pkg, trial)}; ${renew}`;
+}
+
+/**
+ * Yıllığın aylığa göre tasarrufu — mağazanın iki fiyatından. Para birimleri
+ * farklıysa (olmamalı) ya da paketlerden biri yoksa rozet yok.
+ */
+function savingsPct(pkgs: PurchasesPackage[]): number {
+  const y = pkgs.find((p) => p.packageType === "ANNUAL")?.product;
+  const m = pkgs.find((p) => p.packageType === "MONTHLY")?.product;
+  if (!y || !m || y.currencyCode !== m.currencyCode || m.price <= 0) return 0;
+  const pct = Math.round((1 - y.price / (m.price * 12)) * 100);
+  return pct >= 5 ? pct : 0;
+}
+
+/**
+ * Vitrin — konuşma ve metin ÖĞRENİLEN dilde, düzeltmenin açıklaması ANADİLDE
+ * (Samet, 2026-09-29). Web `premium-showcase` ile aynı anahtarlar ve sayılar.
+ */
+const SHOW = {
+  de: { ask: "paywall.show1_ask.de", reply: "paywall.show1_reply.de", fix: "paywall.show1_fix.de", why: "paywall.show1_why.de", text: "paywall.show2_text.de", fix2: "paywall.show2_fix.de", why2: "paywall.show2_why.de" },
+  en: { ask: "paywall.show1_ask.en", reply: "paywall.show1_reply.en", fix: "paywall.show1_fix.en", why: "paywall.show1_why.en", text: "paywall.show2_text.en", fix2: "paywall.show2_fix.en", why2: "paywall.show2_why.en" },
+} as const;
+const EXAM: [string, number][] = [["skills.reading", 18], ["skills.listening", 15], ["skills.writing", 14], ["skills.speaking", 16]];
+
+/** Maddeler — sınırlar sunucunun yapılandırmasından (panelden değişince metin de değişir). */
+function bulletsOf(status: PremiumStatus | null, exams: boolean): { title: string; cap?: string }[] {
+  const fair = status?.limits.fairUse;
+  const avatars = status?.limits.avatarSet ?? 0;
+  return [
+    { title: t("paywall.b_ai"), cap: t("paywall.b_ai_cap", { a: fair?.aiPracticePerDay ?? 30, c: fair?.chatTurnsPerDay ?? 300 }) },
+    ...(exams ? [{ title: t("paywall.b_mock") }] : []),
+    { title: t("paywall.b_walk"), cap: t("paywall.b_walk_cap", { n: fair?.walkRoundsPerDay ?? fair?.pocketWalksPerDay ?? 20 }) },
+    ...(avatars > 0 ? [{ title: t("paywall.b_avatar"), cap: t("paywall.b_avatar_cap", { n: avatars }) }] : []),
+  ];
+}
+
 export function PaywallScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const { width } = useWindowDimensions();
   const nav = useNavigation<{ goBack: () => void; navigate: (name: "Auth") => void }>();
   /*
-    MİSAFİR SATIN ALAMIYOR (mağaza ön inceleme B24). Premium iPhone, iPad,
-    Android ve web'de aynı hesapla çalışan bir abonelik: misafir kimliğiyle
-    alınsaydı başka cihazda geri yüklenemez, kimlik hesaba birleşince de
-    yenilemeleri sahipsiz kalırdı (RevenueCat misafirde hesap kimliğine
-    eşlenmiyor, bkz. AuthContext). Kapsam, sınırlar ve fiyatlar misafire de
-    görünüyor; satın alma çubuğunun yerinde hesap oluşturma çağrısı var.
-    Promosyon kodu ve davet de hesap istiyor.
+    MİSAFİR SATIN ALAMIYOR (mağaza ön inceleme B24): abonelik hesaba bağlı;
+    misafirde başka cihazda geri yüklenemez. Kapsam ve fiyat görünür, düğmenin
+    yerinde hesap oluşturma çağrısı var.
   */
   const guest = Boolean(useAuth().user?.guest);
   const [guestRestore, setGuestRestore] = useState(false);
   const { compactHeight } = useLayout();
-  const guestPitch = (
-    <View style={{ gap: spacing.sm, marginTop: compactHeight ? spacing.lg : 0 }}>
-      <Text variant="h3" style={{ textAlign: "center" }}>{t("guest.premium_title")}</Text>
-      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("guest.premium_body")}</Text>
-    </View>
-  );
-  /*
-    DAVET BAĞLANTISININ SONUCU. Bağ `/r/<KOD>`a dokunulduğunda kuruluyor ve
-    kullanıcı hiçbir şey yazmıyor — sessiz bir başarı ile sessiz bir
-    başarısızlık ona aynı görünürdü. Web `/premium?ref=…` ile aynı durumlar ve
-    aynı cümleler.
-  */
   const routeParams = useRoute<{ key: string; name: string; params?: { ref?: string; from?: "web"; group?: string } }>().params;
   const refResult = routeParams?.ref ?? "";
   const fromWeb = routeParams?.from === "web";
-  /*
-    `configured` = anahtar var mı; `storeOpen` = gerçekten satılacak bir şey var mı.
-
-    İkisi eskiden aynıydı ve arada sessiz bir boşluk kalıyordu: anahtar dolu ama
-    offering o platform için ürün döndürmüyorsa ekran plansız ve düğmesi sönük
-    bir iskelet olarak kalıyordu — kullanıcı neden satın alamadığını hiçbir
-    yerden öğrenemiyordu. Android anahtarı Play ürünleri açılmadan girildiğinde
-    tam olarak bu oluyor, ama aynı şey bozuk bir offering ya da mağaza
-    kesintisinde de oluyor. Paket listesi BOŞ dönerse artık "mağaza henüz açık
-    değil" metnine düşülüyor: sebebi ne olursa olsun söylenen şey doğru.
-
-    `pkgs === null` yükleniyor demek, boş demek değil — o durumda iskelet kalıyor.
-  */
+  /* Grup bağlantısıyla (`/g/<KOD>`) gelindiyse kod kutusu açık ve dolu gelir. */
+  const [codeOpen, setCodeOpen] = useState(OWN_CODES && Boolean(routeParams?.group));
   const configured = billingAvailable();
-  // Durum SUNUCUDAN: kapsam metinleri, sınırlar, davet kodu ve "zaten premium
-  // miyim" sorusunun cevabı. Mağaza SDK'sı yalnız fiyat ve satın alma için.
   const { status, refresh } = usePremiumStatus();
+  const exams = hasMockExams(currentCourseId());
 
-  /*
-    Cümlelerin çoğu promo kutusunda baştan beri yazılı ve aynı şeyi söylüyor
-    ("kendi kodun", "böyle bir kod yok", "uygulanamadı"): ikinci kez yazmak iki
-    metnin zamanla ayrışması demekti. Web `premium-paywall` de aynı eşlemeyi
-    yapıyor.
-  */
   const refLine = ((): { ok: boolean; text: string } | null => {
     switch (refResult) {
       case "ok": return { ok: true, text: t("promo.referral_linked") };
@@ -213,27 +200,24 @@ export function PaywallScreen() {
       accessibilityLiveRegion="polite"
       variant="caption"
       color={refLine.ok ? colors.successText : colors.textMuted}
-      style={{ textAlign: "center", marginBottom: spacing.lg, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}
+      style={{ textAlign: "center", backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}
     >
       {refLine.text}
     </Text>
   ) : null;
+
+  /* `pkgs === null` yükleniyor; boş liste = mağaza satmıyor (anahtar var ama
+     offering bu platform için ürün döndürmüyor ya da mağaza kesintide). */
   const [pkgs, setPkgs] = useState<PurchasesPackage[] | null>(null);
-  /* iOS'ta denemeye uygun ürünler; paketlerle BİRLİKTE yazılıyor ki uygunluk
-     gelmeden deneme metni bir an bile görünmesin. Android'de null (süzgeç yok). */
   const [trialOk, setTrialOk] = useState<Set<string> | null>(null);
   const storeOpen = configured && (pkgs === null || pkgs.length > 0);
   const [selected, setSelected] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  /* Hata DEĞİL bilgi: "satın alma alındı, açılıyor" / "onay bekliyor". Kırmızı
-     hata satırıyla aynı yerde ama nötr renkte (IAP-7). */
+  /* Hata DEĞİL bilgi: "satın alma alındı, açılıyor" / "onay bekliyor" (IAP-7). */
   const [notice, setNotice] = useState<string | null>(null);
 
   useEffect(() => {
-    /* Webden yönlendirilen görüntüleme ayrı etiketle: web → uygulama hunisi
-       (`store_redirect` → `paywall_view:web_link` → `purchase_done`) ancak
-       böyle ölçülebiliyor. */
     track("paywall_view", 0, fromWeb ? "web_link" : "mobile");
     if (!configured) { setPkgs([]); return; }
     let alive = true;
@@ -246,15 +230,13 @@ export function PaywallScreen() {
       setSelected(sorted[0]?.identifier ?? null);
     });
     return () => { alive = false; };
-    /* `fromWeb` ekran açılışında sabit (rota parametresi); görüntüleme ekran başına bir kez. */
   }, [configured, fromWeb]);
 
   const pkg = pkgs?.find((p) => p.identifier === selected);
   const trial = freeTrialOf(pkg, trialOk);
 
-  /* Apple'ın teklif kodu sayfası uygulamanın ÜSTÜNDE açılıyor ve sözü sayfa
-     gösterilince çözülüyor. Bozdurulan kodun yetkisi webhook'la sunucuya
-     geliyor; sayfa kapanıp uygulama öne döndüğünde durum bir kez tazeleniyor. */
+  /* Apple'ın teklif kodu sayfası uygulamanın ÜSTÜNDE açılıyor; yetki webhook'la
+     geliyor, uygulama öne dönünce durum bir kez tazeleniyor. */
   async function redeemOfferCode() {
     const sub = AppState.addEventListener("change", (st) => {
       if (st !== "active") return;
@@ -264,14 +246,7 @@ export function PaywallScreen() {
     await presentOfferCodeRedemption();
   }
 
-  /**
-   * Satın almanın sonucu — normal satın alma ve grup denemesi ORTAK (IAP-7).
-   *
-   * İptal SESSİZ. `processing`: mağaza aldı, sunucu henüz görmedi — kullanıcıya
-   * "alındı, açılıyor" deniyor ve beklemeye arka planda devam ediliyor; yetki
-   * gelince ekran kendiliğinden kapanıyor. `pending`: ödeme onay bekliyor
-   * (Aile Paylaşımı, bankanın ek doğrulaması); hata değil.
-   */
+  /** Satın almanın sonucu — normal satın alma ve grup denemesi ORTAK (IAP-7). */
   function settle(outcome: PurchaseOutcome, kind: string): void {
     if (outcome === "done") {
       haptic("correct");
@@ -307,6 +282,7 @@ export function PaywallScreen() {
 
   async function doRestore() {
     if (busy) return;
+    if (guest) { setGuestRestore(true); return; }
     setBusy(true);
     setError(null);
     const ok = await restore();
@@ -315,28 +291,54 @@ export function PaywallScreen() {
     else setError(t("paywall.no_purchase_to_restore_on_this"));
   }
 
-  const close = (
-    <View style={{ alignItems: "flex-end", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
-      <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-        <CloseIcon color={colors.textMuted} size={22} />
-      </PressableScale>
+  const onCode = OWN_CODES
+    ? () => setCodeOpen(true)
+    : offerCodesAvailable()
+      ? () => { void redeemOfferCode(); }
+      : null;
+
+  const link = (label: string, onPress: () => void, strong = false) => (
+    <PressableScale key={label} onPress={onPress} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.xs + 2 }}>
+      <Text variant="caption" color={strong ? colors.primaryText : colors.textMuted} style={strong ? { fontWeight: "700" } : { textDecorationLine: "underline" }}>{label}</Text>
+    </PressableScale>
+  );
+  /*
+    BAĞLANTI SATIRI HER DALDA: şartlar + gizlilik (Apple Schedule 2 §3.8(b),
+    abonelik retlerinin en sık sebebi), abonelik yönetimi ve "Kodun var mı?".
+    Satır sarıyor: en dar telefonda (320pt) kırpılmak yerine ikinci satıra iniyor.
+  */
+  const links = (
+    <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>
+      {onCode && (!guest || codeOpen) ? link(t("promo.title"), onCode, true) : null}
+      {link(t("auth.terms_of_use"), () => openLegal("terms"))}
+      {link(t("auth.privacy_policy"), () => openLegal("privacy"))}
+      {link(t("paywall.manage_subscription"), () => { Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {}); })}
     </View>
   );
+  const codeSheet = OWN_CODES ? (
+    <CodeSheet
+      visible={codeOpen}
+      onClose={() => setCodeOpen(false)}
+      colors={colors}
+      pkg={pkg}
+      initialGroup={routeParams?.group ?? ""}
+      guest={guest}
+      onAuth={() => { setCodeOpen(false); nav.navigate("Auth"); }}
+      onRedeemed={() => { void refreshPremium().then(refresh); }}
+      onOutcome={(o) => { setCodeOpen(false); settle(o, `group:${pkg?.packageType ?? ""}`); }}
+    />
+  ) : null;
+
+  const maxW = 560;
+  const bodyStyle = { width: "100%" as const, maxWidth: maxW, alignSelf: "center" as const, paddingHorizontal: spacing.xl + 4 };
 
   /**
-   * Zaten premium: plan listesi gösterilmiyor.
-   *
-   * Ödemiş bir kullanıcıya satın alma ekranı çizmek hem anlamsız hem riskli —
-   * ikinci bir abonelik başlatabilir. Bunun yerine durumu, bitiş tarihini ve
-   * bekleyen hediye süresini gösteriyoruz. Durum SUNUCUDAN geldiği için promo
-   * kodu ya da davet ödülüyle premium olan kullanıcı da burada doğru görünüyor;
-   * mağazaya sorulsaydı "abonelik yok" derdi.
+   * Zaten premium: plan listesi yok (ikinci bir abonelik başlatabilir). Durum,
+   * bitiş tarihi, bekleyen hediye ve kapsam; durum SUNUCUDAN, yani promo ya da
+   * davetle premium olan da doğru görünür.
    */
   if (status?.premium) {
-    /* TARİH ARAYÜZ DİLİNDE: yerel hiç verilmiyordu, yani tarih CİHAZIN
-       dilinden biçimleniyordu. Arayüzü Türkçe seçmiş ama telefonu İngilizce
-       olan kullanıcı "September 11, 2026" görüyordu. Sözlüğün kendi yereli
-       var (`lib/i18n` `dateLocale`) ve webde de aynı hata duruyordu. */
+    /* Tarih ARAYÜZ dilinde (`dateLocale`), cihazın dilinde değil. */
     const until = status.until ? new Date(status.until).toLocaleDateString(dateLocale(), { day: "numeric", month: "long", year: "numeric" }) : "";
     const line =
       status.source === "bonus"
@@ -350,493 +352,260 @@ export function PaywallScreen() {
               : t("premiumstate.active_until", { date: until });
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        {close}
-        {/*
-        KLAVYE ACIKKEN ILK DOKUNUS DUGMEYE GITMELI.
-        `keyboardShouldPersistTaps` verilmemişti: promo kodu yazan kullanıcı
-        "Uygula"ya bastığında ilk dokunuş yalnız klavyeyi kapatıyor, kodu
-        uygulamak için ikinci kez basmak gerekiyordu. On iki kaydırılabilir
-        yüzeyin on ikisi bunu veriyor, bu ekran tek istisnaydı.
-      */}
-      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
-          <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-            <View style={[{ width: ds(84), height: ds(84), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-              <PremiumIcon color={colors.onPrimary} size={44} />
-            </View>
-            <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{line}</Text>
-            {status.bonusDaysPending > 0 ? (
-              <Text variant="caption" color={colors.successText} style={{ marginTop: spacing.xs, textAlign: "center" }}>
-                {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
-              </Text>
-            ) : null}
-          </View>
-
-          {refNotice}
-
-          <Section title={t("paywall.what_you_get")}>
-            {(status.copy.premium ?? []).map((l) => (
-              <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
-            ))}
-          </Section>
-
-          {OWN_PROMO_CODES ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
-          {status.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
-
-          <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.md, alignItems: "center" }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>
-              {t(Platform.OS === "ios" ? "premiumstate.manage_ios" : "premiumstate.manage_android")}
-            </Text>
+        <View style={{ alignItems: "flex-end", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
+          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <CloseIcon color={colors.textMuted} size={22} />
           </PressableScale>
-        </KeyboardAwareScroll>
+        </View>
+        <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xl }}>
+          <View style={[bodyStyle, { gap: spacing.lg }]}>
+            <View style={{ alignItems: "center", marginTop: spacing.sm }}>
+              <View style={[{ width: ds(84), height: ds(84), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
+                <PremiumIcon color={colors.onPrimary} size={44} />
+              </View>
+              <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
+              <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{line}</Text>
+              {status.bonusDaysPending > 0 ? (
+                <Text variant="caption" color={colors.successText} style={{ marginTop: spacing.xs, textAlign: "center" }}>
+                  {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
+                </Text>
+              ) : null}
+            </View>
+            {refNotice}
+            <Card padded>
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("paywall.what_you_get")}</Text>
+              <Bullets items={bulletsOf(status, exams)} colors={colors} />
+            </Card>
+            {links}
+          </View>
+        </ScrollView>
+        {codeSheet}
       </View>
     );
   }
 
-  /*
-   * MAĞAZA KAPALIYKEN DE TAM SAYFA.
-   *
-   * Burada eskiden erken bir dönüş vardı: "Premium satışta değil · tüm
-   * özellikler şimdilik ücretsiz". İki sorunu vardı. Birincisi YANLIŞTI —
-   * ekran kapalı yürüyüş ücretsiz katmanda yok (yalnız premium),
-   * yani uygulama her şeyin ücretsiz olduğunu söylerken sunucu o yolu
-   * reddediyordu. İkincisi çıkmaz sokaktı: promo kodu kutusu da davet kutusu da
-   * o dalın arkasında kalıyordu, oysa ikisi mağazadan BAĞIMSIZ çalışıyor ve
-   * bugün premium olmanın tek yolu onlar.
-   *
-   * Artık sayfa her zaman tam: kapsam, sınırlar, davet ve promo kodu görünüyor.
-   * Koşullu olan yalnız SATIN ALMA bloğu — mağaza bağlanınca planlar ve düğme
-   * kendiliğinden geliyor, başka hiçbir yere dokunmak gerekmiyor.
-   */
+  const bullets = bulletsOf(status ?? null, exams);
+  const save = pkgs ? savingsPct(pkgs) : 0;
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {close}
-      <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.md }} showsVerticalScrollIndicator={false}>
-        <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
-          <View style={[{ width: ds(84), height: ds(84), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-            <PremiumIcon color={colors.onPrimary} size={44} />
-          </View>
-          <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
-          {/* "SINIRSIZ" YOK. Premium'un adil kullanım tavanı var ve aşağıda
-              yazılı; tavanı olan bir aboneliği "sınırsız" diye sunmak App Store
-              3.1.2(a) ve Play'in aldatıcı teklif kuralına takılır, şartlar §7a
-              ile de çelişir. Cümle gerçek kapsamı sayıyor; deneme sınavı yalnız
-              sınavı OLAN kursta anılıyor. */}
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{t(hasMockExams(currentCourseId()) ? "paywall.pitch_exams" : "paywall.pitch")}</Text>
-          {/* DURUM SATIRI webde vardı, mobilde yoktu: iki yüzey aynı şeyi
-              anlatmalı. Premium'u olan kullanıcı bu dalı hiç görmüyor, o yüzden
-              satır sabit — "Ücretsiz hesap". */}
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{t(guest ? "guest.name" : "premiumstate.free")}</Text>
-        </View>
-
-        {refNotice}
-
-        {/* PLANLAR ÖNCE: fiyat iki özellik listesinin arkasında kalıyordu.
-            Alttaki satın alma çubuğu zaten sabit ama ne ödeneceği de
-            başlıktan hemen sonra görünmeli — webde de sıra aynı. */}
-        {!storeOpen ? (
-          <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, padding: spacing.lg, gap: 6 }}>
-            <Text variant="bodyStrong">{t("paywall.store_not_open")}</Text>
-            {/* iOS'ta metin davet ödülüne ya da promo koduna YÖNLENDİRMİYOR (3.1.1). */}
-            <Text variant="caption" color={colors.textMuted}>{t(OWN_PROMO_CODES ? "paywall.store_not_open_sub" : "paywall.store_not_open_sub_ios")}</Text>
-          </View>
-        ) : pkgs === null ? (
-          // Plan satırları gelene dek aynı boyda iskelet: liste dolunca kaydırma
-          // konumu ve alttaki düğme yerinden oynamıyor.
-          <View style={{ gap: spacing.md }}>
-            {[0, 1].map((i) => (
-              <View key={i} style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-                <SkeletonTile size={ds(22)} radius={radii.pill} />
-                <View style={{ flex: 1 }}>
-                  <SkeletonLine variant="h3" width="45%" />
-                  <SkeletonLine variant="caption" width="65%" />
-                </View>
-                <SkeletonLine variant="h3" width={72} />
-              </View>
-            ))}
-          </View>
-        ) : (
-          <View style={{ gap: spacing.md }}>
-            {pkgs.map((p) => {
-              const active = selected === p.identifier;
-              const tr = freeTrialOf(p, trialOk);
-              return (
-                <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${priceLine(p, tr)}`} style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-                  {/* Plan kartı büyük karo: seçiliyken dolgu yok, turuncu kenar (2026-09-29 Samet: seçim B). */}
-                  <RadioDot selected={active} />
-                  <View style={{ flex: 1 }}>
-                    <Text variant="h3">{planLabel(p)}</Text>
-                    <Text variant="caption" color={colors.textMuted}>{tr ? t("paywall.first_free", { duration: tr }) : t("paywall.cancel_anytime")}</Text>
-                  </View>
-                  <Text variant="h3" color={active ? colors.primaryText : colors.text}>{p.product.priceString}</Text>
-                </PressableScale>
-              );
-            })}
-          </View>
-        )}
-
-        {/* Grup kodu planların HEMEN ALTINDA: seçili planı kullanıyor ve şart
-            satırı o planın fiyatını söylüyor; araya kapsam listesi girerse
-            hangi fiyatın geçerli olduğu kopuyor. Yalnız Android (GROUP_CODES). */}
-        {GROUP_CODES && storeOpen && pkgs && pkgs.length > 0 ? (
-          <GroupCodeBox
-            colors={colors}
-            pkg={pkg}
-            initialCode={routeParams?.group ?? ""}
-            guest={guest}
-            onAuth={() => nav.navigate("Auth")}
-            onOutcome={(o) => settle(o, `group:${pkg?.packageType ?? ""}`)}
-            busy={busy}
-            setBusy={setBusy}
-          />
-        ) : null}
-
-        {/* KAPSAM SUNUCUDAN. Eskiden burada elle yazılmış bir karşılaştırma
-            tablosu vardı ve gerçeği anlatmıyordu: tek satırı "Schreiben
-            alıştırmaları" idi ve o ekran aylar önce kaldırılmıştı, yani paywall
-            olmayan bir şeyi vaat ediyordu. Artık satırlar yapılandırmadan
-            üretiliyor (`describeLimits`) ve çeviri anahtarı olarak geliyor —
-            panelden bir sınır değişince buradaki metin de değişiyor, beyan
-            gerçekle ayrışamıyor. */}
-        {/*
-          KAPSAM TEK KART. "Premium'da neler var" ve "Ücretsizde ne var" iki
-          ayrı kutuydu ve ikisi de aynı onay işaretini kullanıyordu: yan yana
-          durduklarında hangisinin neyi anlattığı ayırt edilmiyordu. Aynı
-          kartın iki bölümü oldular; ücretsiz taraf sönük yazılıyor. Webde de
-          düzen aynı (`premium-paywall`).
-        */}
-        <Section title={t("paywall.what_you_get")}>
-          {/* Durum gelene dek satırların yeri iskelet: kart boş açılıp sonra
-              on satır birden uzuyordu. Web `premium/loading` aynı kartı çiziyor. */}
-          {status ? (status.copy.premium ?? []).map((l) => (
-            <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
-          )) : COVER_PREMIUM.map(([key, vars], i) => (
-            <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: 5 }}>
-              <SkeletonTile size={22} radius={11} style={{ marginTop: 1 }} />
-              <View style={{ flex: 1 }}>
-                <SkeletonText variant="caption" text={t(key, vars)} />
-              </View>
-            </View>
-          ))}
-          <View style={{ marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: 6, letterSpacing: 0.5 }}>{t("paywall.whats_free")}</Text>
-            {status ? (status.copy.free ?? []).map((l) => (
-              <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="free" />
-            )) : COVER_FREE.map(([key, vars], i) => (
-              <View key={i} style={{ paddingVertical: 5, paddingLeft: 22 + spacing.sm }}>
-                <SkeletonText variant="caption" text={t(key, vars)} />
-              </View>
-            ))}
-          </View>
-        </Section>
-
-        {/*
-          İNCE YAZI TEK PARAGRAF. Adil kullanım kendi kutusundaydı, içerik
-          vaadi ikonlu ayrı bir satırdaydı; ikisi de okunması gereken ama karar
-          vermeyen metinler — kutu hak etmiyorlar. Adil kullanım AÇIKÇA
-          yazılıyor: tavanı olan bir şeyi "sınırsız" diye sunmak App Store
-          3.1.2 ve Play'in abonelik beyanı kurallarına aykırı. Sınav vaadi
-          yalnız gerçekten deneme sınavı OLAN kursta.
-        */}
-        <View style={{ marginBottom: spacing.xl, gap: spacing.xs }}>
-          {status?.limits ? (
-            <Text variant="micro" color={colors.textMuted}>
-              {/* Üç tavan tek cümlede ve "sınırsız" denmeden (App Store 3.1.2).
-                  Sohbet mesajı tavanı sabit (sunucu `lib/quotas`); eski sunucu
-                  göndermiyorsa aynı sayı. `pocketWalksPerDay` eski sunucunun adı. */}
-              {t("plan.pro_fair_use", {
-                w: status.limits.fairUse.walkRoundsPerDay ?? status.limits.fairUse.pocketWalksPerDay ?? 20,
-                a: status.limits.fairUse.aiPracticePerDay,
-                c: status.limits.fairUse.chatTurnsPerDay ?? 300,
-              })}
-            </Text>
-          ) : null}
-          {/* İçerik vaadi AYRI satır: adil kullanım tavanlarıyla aynı cümlede
-              birleşince iki ayrı konu tek bir cümle gibi okunuyordu. */}
-          <Text variant="micro" color={colors.textMuted}>
-            {t(hasMockExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
-          </Text>
-        </View>
-
-        {OWN_PROMO_CODES && !guest ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
-        {status?.referral && !guest ? <ReferralBox colors={colors} referral={status.referral} /> : null}
-        {/* Kısa ekranda misafir açıklaması kaydırılan alana iniyor (aşağıda). */}
-        {guest && compactHeight ? guestPitch : null}
-      </KeyboardAwareScroll>
-
-      {guest ? (
-        /* Misafir alt alanı: başlık + açıklama + düğme + bağlantılar 320dp'de
-           ekranın yarısını kaplıyor, faydalar listesine ~180dp kalıyordu. Kısa
-           ekranda yapışık kalan yalnız EYLEM; açıklama içeriğin sonunda. */
-        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, gap: spacing.sm }}>
-          {compactHeight ? null : guestPitch}
-          <PrimaryButton label={t("guest.create_account")} onPress={() => nav.navigate("Auth")} />
-          {/* GERİ YÜKLEME MİSAFİRDE DE (denetim S6, App Store 3.1.1): satın alma
-              hesaba bağlı, yani misafirin geri yükleme yolu giriş yapmak. Düğme
-              bunu söylüyor ve giriş ekranına götürüyor; sessizce saklanmıyor. */}
-          {guestRestore ? (
-            <View style={{ alignItems: "center", gap: spacing.xs }}>
-              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("guest.restore_body")}</Text>
-              <PressableScale onPress={() => nav.navigate("Auth")} hitSlop={6} accessibilityRole="button" accessibilityLabel={t("auth.sign_in")} style={{ paddingVertical: spacing.xs }}>
-                <Text variant="bodyStrong" color={colors.primary}>{t("auth.sign_in")}</Text>
-              </PressableScale>
-            </View>
-          ) : null}
-          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>
-            <PressableScale onPress={() => setGuestRestore(true)} hitSlop={6} accessibilityRole="button" accessibilityLabel={t("paywall.restore_purchase")} style={{ paddingVertical: spacing.sm }}>
-              <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.restore_purchase")}</Text>
+      <ScrollView contentContainerStyle={{ paddingBottom: spacing.lg }} showsVerticalScrollIndicator={false}>
+        {/* BANT: kapat, geri yükle, vitrin. Kapat solda: bant turuncu, sağ üstteki
+            "Geri yükle" metniyle çakışmasın. */}
+        <View style={{ backgroundColor: colors.primary, borderBottomLeftRadius: 32, borderBottomRightRadius: 32, paddingTop: insets.top + spacing.sm, paddingBottom: spacing.md }}>
+          <View style={{ width: "100%", maxWidth: maxW, alignSelf: "center", flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: spacing.md }}>
+            <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.22)" }}>
+              <CloseIcon color={colors.onPrimary} size={22} />
             </PressableScale>
-            <LegalLinks colors={colors} />
-          </View>
-        </View>
-      ) : !storeOpen ? (
-        /*
-          MAĞAZA KAPALI: satın alma çubuğu yok ama GERİ YÜKLEME ve hukuki
-          bağlantılar kalıyor.
-
-          Geri yükleme eskiden bu dalda hiç çizilmiyordu ve bu bir POLİTİKA
-          açığıydı: App Store 3.1.1 geri yükleme yolunu şart koşuyor, oysa
-          düğme yalnız paket listesi doluyken görünüyordu. Offering'in boş
-          dönmesi istisna değil — mağaza kesintisinde, bozuk bir offering'de
-          ve ürünler yayına alınmadan önce hep böyle. Yani tam da incelemeye
-          girilen hâlde düğme yoktu.
-
-          Geri yükleme mağaza bağlıyken anlamlı (SDK anahtarı var), paket
-          listesinin dolu olmasına bağlı değil: kullanıcının aboneliği başka
-          bir cihazda alınmış olabilir.
-        */
-        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, gap: spacing.xs }}>
-          {error ? <Text accessibilityLiveRegion="assertive" variant="caption" color={colors.dangerText} style={{ textAlign: "center" }}>{error}</Text> : null}
-          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>
-            {configured ? (
-              <PressableScale onPress={doRestore} hitSlop={6} accessibilityRole="button" accessibilityLabel={t("paywall.restore_purchase")} style={{ paddingVertical: spacing.sm }}>
-                <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.restore_purchase")}</Text>
+            {/* GERİ YÜKLEME HER DALDA (App Store 3.1.1): mağaza bağlıyken, paket
+                listesi boş olsa bile; misafirde giriş yoluna götürüyor. */}
+            {configured || guest ? (
+              <PressableScale onPress={doRestore} hitSlop={6} accessibilityRole="button" accessibilityLabel={t("paywall.restore_purchase")} style={{ height: 44, justifyContent: "center", paddingHorizontal: spacing.sm }}>
+                <Text variant="bodyStrong" color={colors.onPrimary}>{t("paywall.restore_short")}</Text>
               </PressableScale>
             ) : null}
-            <LegalLinks colors={colors} />
           </View>
+          {compactHeight ? null : <Showcase width={Math.min(width, maxW)} colors={colors} exams={exams} />}
         </View>
-      ) : (
-      <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
-        {/* Satın alma hatası duyuruluyor — web `premium-paywall` `role="status"`
-            taşıyor; sessiz kalırsa kullanıcı düğmeye basıp hiçbir şey olmadığını
-            sanıyor. */}
-        {error ? <Text accessibilityLiveRegion="assertive" variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
-        {notice ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.sm }}>{notice}</Text> : null}
-        <PrimaryButton label={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} onPress={start} disabled={!pkg} busy={busy} />
-        {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal yolu
-            satın almadan önce görünür. İptal yolu mağazaya göre ayrı metin. */}
-        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>
-          {pkg ? priceLine(pkg, trial) : ""}
-          {" · "}{t(Platform.OS === "ios" ? "paywall.renew_cancel_appstore" : "paywall.renew_cancel_play")}
-        </Text>
-        {/* Cayma ve iade satırı (şartlar §7, sürüm 1.2). Şartlar eskiden cayma
-            hakkının "satın alma ekranında istenen onayla" bittiğini söylüyordu ve
-            burada öyle bir onay yoktu. Satışı mağaza yapıyor; uygulama ayrı bir
-            onay istemiyor, yolu söylüyor. */}
-        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: 2 }}>
-          {t(Platform.OS === "ios" ? "paywall.withdrawal_appstore" : "paywall.withdrawal_play")}
-        </Text>
-        {/*
-          SATIN ALMA ALANINDA İKİ HUKUKİ BAĞLANTI BİRDEN. Burada yalnız
-          Kullanım Şartları vardı; Apple'ın lisans sözleşmesi (Schedule 2
-          §3.8(b)) otomatik yenilenen abonelik satan ekranda Gizlilik
-          Politikası'nı da istiyor ve eksik bağlantı abonelik retlerinin en
-          sık sebebi. Satır sarıyor: dört bağlantı en dar telefonda (320pt)
-          tek satıra sığmıyor, kırpılmak yerine ikinci satıra iniyor.
-        */}
-        <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg, marginTop: spacing.xs }}>
-          <PressableScale onPress={doRestore} hitSlop={6} accessibilityLabel={t("paywall.restore_purchase")} style={{ paddingVertical: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.restore_purchase")}</Text>
-          </PressableScale>
-          <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.manage_subscription")}</Text>
-          </PressableScale>
-          {offerCodesAvailable() ? (
-            <PressableScale onPress={() => { void redeemOfferCode(); }} hitSlop={6} accessibilityRole="button" style={{ paddingVertical: spacing.sm }}>
-              <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.redeem_offer_code")}</Text>
-            </PressableScale>
-          ) : null}
-          <LegalLinks colors={colors} />
+
+        <View style={[bodyStyle, { paddingTop: spacing.lg, gap: spacing.md + 2 }]}>
+          <Text accessibilityRole="header" variant="h1">{t("paywall.headline")}</Text>
+          <Bullets items={bullets} colors={colors} />
+          {refNotice}
+
+          {!storeOpen ? (
+            <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, padding: spacing.lg, gap: 6 }}>
+              <Text variant="bodyStrong">{t("paywall.store_not_open")}</Text>
+              {/* iOS'ta metin koda yönlendirmiyor (3.1.1). */}
+              <Text variant="caption" color={colors.textMuted}>{t(OWN_CODES ? "paywall.store_not_open_sub" : "paywall.store_not_open_sub_ios")}</Text>
+            </View>
+          ) : pkgs === null ? (
+            <View style={{ flexDirection: "row", gap: spacing.sm + 2, paddingTop: spacing.xs }}>
+              {[0, 1].map((i) => (
+                <View key={i} style={{ flex: 1, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, padding: spacing.md + 2, gap: spacing.xs }}>
+                  <SkeletonLine variant="bodyStrong" width="50%" />
+                  <SkeletonLine variant="h2" width="75%" />
+                  <SkeletonLine variant="caption" width="60%" />
+                </View>
+              ))}
+            </View>
+          ) : (
+            <View accessibilityRole="radiogroup" style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm + 2, paddingTop: spacing.xs + 2 }}>
+              {pkgs.map((p) => {
+                const active = selected === p.identifier;
+                const annual = p.packageType === "ANNUAL";
+                const sub = annual && p.product.pricePerMonthString
+                  ? t("paywall.per_month_approx", { price: p.product.pricePerMonthString })
+                  : p.packageType === "MONTHLY" ? t("paywall.billed_monthly") : priceLine(p, null);
+                return (
+                  <PressableScale
+                    key={p.identifier}
+                    onPress={() => setSelected(p.identifier)}
+                    accessibilityRole="radio"
+                    accessibilityState={{ selected: active }}
+                    accessibilityLabel={`${planLabel(p)}, ${priceLine(p, freeTrialOf(p, trialOk))}`}
+                    /* Seçili hâl RENKLE: turuncu kenar, dolgu yok (2026-09-29 Samet: seçim B). */
+                    style={[{ flexGrow: 1, flexBasis: "40%", borderRadius: radii.lg, borderWidth: 1, borderColor: active ? colors.primary : colors.border, backgroundColor: colors.surface, padding: spacing.md + 2, gap: 2 }]}
+                  >
+                    {annual && save > 0 ? (
+                      <View style={{ position: "absolute", top: -10, left: spacing.md, backgroundColor: colors.success, borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 1 }}>
+                        <Text variant="micro" color={colors.onFill}>{t("paywall.save_pct", { n: save })}</Text>
+                      </View>
+                    ) : null}
+                    <Text variant="bodyStrong">{planLabel(p)}</Text>
+                    <Text variant="h2">{p.product.priceString}</Text>
+                    <Text variant="caption" color={colors.textMuted}>{sub}</Text>
+                  </PressableScale>
+                );
+              })}
+            </View>
+          )}
+
+          {/* Cayma ve iade satırı (şartlar §7): satışı mağaza yapıyor, metin yolu söylüyor. */}
+          <Text variant="micro" color={colors.textMuted} style={{ fontWeight: "500", letterSpacing: 0 }}>
+            {t(IOS ? "paywall.withdrawal_appstore" : "paywall.withdrawal_play")}
+          </Text>
+          {/* Kısa ekranda misafir açıklaması kaydırılan alanda (aşağıdaki sabit alan dar). */}
+          {guest && compactHeight ? <GuestPitch colors={colors} /> : null}
         </View>
+      </ScrollView>
+
+      <View style={{ width: "100%", maxWidth: maxW, alignSelf: "center", paddingHorizontal: spacing.xl + 4, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.sm, gap: spacing.xs + 2 }}>
+        {error ? <Text accessibilityLiveRegion="assertive" variant="caption" color={colors.dangerText} style={{ textAlign: "center" }}>{error}</Text> : null}
+        {notice ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{notice}</Text> : null}
+        {guest ? (
+          <>
+            {compactHeight ? null : <GuestPitch colors={colors} />}
+            <PrimaryButton label={t("guest.create_account")} onPress={() => nav.navigate("Auth")} />
+            {/* Misafirin geri yükleme yolu giriş yapmak (denetim S6): sessizce saklanmıyor. */}
+            {guestRestore ? (
+              <View style={{ alignItems: "center", gap: spacing.xs }}>
+                <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("guest.restore_body")}</Text>
+                <PressableScale onPress={() => nav.navigate("Auth")} hitSlop={6} accessibilityRole="button" accessibilityLabel={t("auth.sign_in")} style={{ paddingVertical: spacing.xs }}>
+                  <Text variant="bodyStrong" color={colors.primary}>{t("auth.sign_in")}</Text>
+                </PressableScale>
+              </View>
+            ) : null}
+          </>
+        ) : storeOpen ? (
+          <>
+            <PrimaryButton label={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} onPress={start} disabled={!pkg} busy={busy} />
+            {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal satın almadan önce görünür. */}
+            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", fontWeight: "500", letterSpacing: 0 }}>
+              {pkg ? termsLine(pkg, trial) : " "}
+            </Text>
+          </>
+        ) : null}
+        {links}
       </View>
-      )}
+      {codeSheet}
     </View>
   );
 }
 
 /* ─────────────────────────── paywall parçaları ─────────────────────────── */
 
-/**
- * Kullanım Şartları + Gizlilik Politikası — satın alma ekranının iki dalında da
- * AYNI ikili. Mağaza kapalıyken tek şartlar bağlantısı kalıyordu ve gizlilik
- * hiç yoktu; ikisi tek bileşende durunca biri öbürü olmadan basılamıyor.
- */
-function LegalLinks({ colors }: { colors: Palette }) {
+function GuestPitch({ colors }: { colors: Palette }) {
   return (
-    <>
-      <PressableScale onPress={() => openLegal("terms")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
-        <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.terms_of_use")}</Text>
-      </PressableScale>
-      <PressableScale onPress={() => openLegal("privacy")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
-        <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.privacy_policy")}</Text>
-      </PressableScale>
-    </>
-  );
-}
-
-/* Bölüm = ortak bölüm başlığı (Ayarlar'daki gibi, başlık rolüyle) + kart. */
-/*
- * KAPSAM İSKELETİ SUNUCUNUN LİSTESİYLE (`lib/premium/gates` `describeLimits`
- * varsayılanları): premium üç, ücretsiz yedi madde. İskelet 4 + 2 tek satır
- * çiziyordu; oysa maddeler uzun ve satır sayısı genişliğe bağlı: yapay zekâ
- * maddesi telefonda (296dp) dört, yatay tablette (1026dp) iki satır. Arayüz
- * dilindeki gerçek cümle görünmez çizilip satırları ölçülüyor (`SkeletonText`).
- */
-const COVER_PREMIUM: [string, Record<string, number>?][] = [
-  ["plan.pro_pocket_walk"],
-  ["plan.pro_mock", { n: 5 }],
-  ["plan.pro_ai", { n: 20 }],
-];
-const COVER_FREE: [string, Record<string, number>?][] = [
-  ["plan.free_core"],
-  ["plan.free_weekly", { n: 1 }],
-  ["plan.free_walk", { n: 3 }],
-  ["plan.free_mock", { n: 2 }],
-  ["plan.free_path_ai", { c: 2, w: 2 }],
-  ["plan.free_skills", { s: 2, w: 2 }],
-  ["plan.free_streak_ai", { d: 7, n: 2, m: 1 }],
-];
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <View style={{ marginBottom: spacing.lg }}>
-      <SectionTitle title={title} />
-      <Card padded>{children}</Card>
+    <View style={{ gap: spacing.xs }}>
+      <Text variant="h3" style={{ textAlign: "center" }}>{t("guest.premium_title")}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("guest.premium_body")}</Text>
     </View>
   );
 }
 
-function Bullet({ text, colors, tone }: { text: string; colors: Palette; tone: "premium" | "free" }) {
-  const premium = tone === "premium";
+function Bullets({ items, colors }: { items: { title: string; cap?: string }[]; colors: Palette }) {
   return (
-    <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: 5 }}>
-      {premium ? (
-        <View style={{ width: 22, height: 22, borderRadius: 11, alignItems: "center", justifyContent: "center", backgroundColor: colors.primarySoft, marginTop: 1 }}>
-          {/* İkon METİN varyantında: dolgu tonu (500) yumuşak turuncu zemin
-              üstünde 2.24 veriyordu, grafik eşiği 3.0 bile değil. Web aynı
-              işareti rol takma adıyla çiziyor (`premium-paywall`:
-              `--color-brand`) ve açık temada o ad bu değer (4.37). */}
-          <CheckIcon color={colors.primaryText} size={14} />
+    <View style={{ gap: spacing.sm + 1 }}>
+      {items.map((b) => (
+        <View key={b.title} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm + 2 }}>
+          {/* İşaret METİN tonunda (`primaryText`): dolgu tonu zemin üstünde grafik eşiğinin altında kalıyordu. */}
+          <View style={{ marginTop: 2 }}><CheckIcon color={colors.primaryText} size={18} /></View>
+          <View style={{ flex: 1 }}>
+            <Text variant="bodyStrong">{b.title}</Text>
+            {b.cap ? <Text variant="caption" color={colors.textMuted} style={{ fontWeight: "500" }}>{b.cap}</Text> : null}
+          </View>
         </View>
-      ) : (
-        /* ÜCRETSİZ TARAFTA ONAY İŞARETİ YOK: aynı işaret iki listede de
-           kullanılınca "premium'da olan" ile "zaten sende olan" ayırt
-           edilmiyordu. Webde de aynı ayrım var (`premium-paywall` Row). */
-        <View style={{ width: 22, alignItems: "center", marginTop: spacing.sm }}>
-          <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: colors.textFaint }} />
-        </View>
-      )}
-      <Text variant="caption" color={premium ? colors.text : colors.textMuted} style={{ flex: 1 }}>{text}</Text>
+      ))}
     </View>
   );
 }
 
 /**
- * Promo kodu. Panelden üretilen kodların bozdurulduğu yer — mağazadan
- * BAĞIMSIZ, yani satın alma yolu kapalıyken de çalışıyor.
- *
- * Hata sebepleri ayrı ayrı gösteriliyor ("kod yok" / "zaten kullandın" /
- * "tükendi"): üçünde de kullanıcının yapacağı şey farklı ve tek bir "geçersiz
- * kod" mesajı doğrudan destek çağrısı üretir.
+ * Vitrin — kaydırılan üç örnek (Konuşma adımı, yazma geri bildirimi, deneme
+ * sınavı). Sayfa noktaları bandın İÇİNDE: bant yüksekliği içerikten geliyor,
+ * sabit yükseklikte iki satıra inen balon noktaları dışarı taşırıyordu.
  */
-/** Promo kodu kutusu — bulunamayan kod DAVET kodu olabilir, uç ikisini ayırıyor. */
-function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => void }) {
-  const [code, setCode] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
-
-  async function apply() {
-    if (!code.trim() || busy) return;
-    setBusy(true);
-    setMsg(null);
-    try {
-      const r = await api<{ ok?: boolean; kind?: string; result?: string; days?: number; error?: string }>("/api/premium/redeem", {
-        method: "POST",
-        body: JSON.stringify({ code }),
-      });
-      if (r.ok && r.kind === "referral") {
-        // Davet kodu premium AÇMIYOR, yalnız bağ kuruyor.
-        setMsg({ ok: true, text: t(r.result === "linked" ? "referral.linked_quiet" : "promo.referral_linked") });
-        setCode("");
-      } else if (r.ok) {
-        setMsg({ ok: true, text: t("promo.success", { n: r.days ?? 0 }) });
-        setCode("");
-        void refreshPremium().then(onRedeemed);
-      } else {
-        setMsg({ ok: false, text: t(promoErrorKey(r.error)) });
-      }
-    } catch (e) {
-      /* `api` HTTP hatasında `ApiError` fırlatıyor ve sunucunun sebebini
-         (`error`) MESAJ olarak taşıyor (api/client). Burada `.body.error`
-         okunuyordu, öyle bir alan yok: her sebep "Kod uygulanamadı"ya
-         düşüyordu — "bulunamadı", "tükendi" ve grup kodunun "yanlış kutu"
-         cümlesi hiç görünmüyordu. */
-      const reason = (e as { message?: string } | null)?.message;
-      setMsg({ ok: false, text: t(promoErrorKey(reason)) });
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  return (
-    <Section title={t("promo.title")}>
-      <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "center" }}>
-        {/* Enter = Uygula: webde kod alanı bir form içinde, yani klavyenin
-            return tuşu kodu uyguluyor. Mobilde tuş hiçbir şey yapmıyordu. */}
-        <TextInput
-          value={code}
-          onChangeText={(v) => setCode(v.toUpperCase())}
-          placeholder={t("promo.placeholder")}
-          accessibilityLabel={t("promo.placeholder")}
-          placeholderTextColor={colors.textFaint}
-          autoCapitalize="characters"
-          autoCorrect={false}
-          returnKeyType="done"
-          onSubmitEditing={() => { if (!busy && code.trim()) void apply(); }}
-          style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, letterSpacing: 2 }}
-        />
-        <PrimaryButton size="md" label={t("promo.apply")} onPress={apply} disabled={!code.trim()} busy={busy} />
+function Showcase({ width, colors, exams }: { width: number; colors: Palette; exams: boolean }) {
+  const [page, setPage] = useState(0);
+  const course = currentCourseId() === "en" ? "en" : "de";
+  const k = SHOW[course];
+  const pages = exams ? 3 : 2;
+  const onEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => setPage(Math.round(e.nativeEvent.contentOffset.x / width));
+  const card = (children: React.ReactNode, key: number) => (
+    <View key={key} style={{ width, paddingHorizontal: spacing.xl + 4 }}>
+      <View style={[{ backgroundColor: colors.surface, borderRadius: radii.lg + 2, padding: spacing.md + 2, gap: spacing.sm }, softShadow(colors.primaryStrong, 14)]}>
+        {children}
       </View>
-      {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. Promo kodunun tutup tutmadığı ödeme kararının ta kendisi. */}
-      {/* HATA `assertive`, BASARI `polite`. Tek oge iki durumu tasiyordu ve
-          hep `polite` diyordu: TalkBack kullanan biri basarisiz bir promo
-          kodunu, sirasi gelince - yani belki hic - duyuyordu. Ayni ekranin
-          odeme hatasi (yukarida) baştan beri `assertive`. Web karsiligi
-          `role="alert"`. */}
-      {msg ? <Text accessibilityLiveRegion={msg.ok ? "polite" : "assertive"} variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
-    </Section>
+    </View>
+  );
+  const label = (text: string) => (
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+      <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: colors.success }} />
+      <Text variant="caption" color={colors.textMuted} style={{ fontWeight: "700" }}>{text}</Text>
+    </View>
+  );
+  const fix = (a: string, b: string) => (
+    <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start", backgroundColor: `${colors.success}1f`, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+      <View style={{ width: 8, height: 8, borderRadius: 4, marginTop: 6, backgroundColor: colors.success }} />
+      <Text variant="caption" style={{ flex: 1, fontWeight: "500" }}>
+        <Text variant="caption" style={{ fontWeight: "800" }}>{a}</Text> <Text variant="caption" color={colors.textMuted} style={{ fontWeight: "500" }}>{b}</Text>
+      </Text>
+    </View>
+  );
+  const bubble = (text: string, right: boolean) => (
+    <View style={{ alignSelf: right ? "flex-end" : "flex-start", maxWidth: "85%", backgroundColor: right ? colors.primarySoft : colors.surface2, borderRadius: radii.lg, borderBottomLeftRadius: right ? radii.lg : 4, borderBottomRightRadius: right ? 4 : radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+      <Text variant="body" color={right ? colors.onPrimarySoft : colors.text}>{text}</Text>
+    </View>
+  );
+  return (
+    <View accessible accessibilityLabel={t("paywall.show_a11y")} style={{ marginTop: spacing.xs }}>
+      <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false} onMomentumScrollEnd={onEnd} contentContainerStyle={{ paddingVertical: spacing.sm }}>
+        {card(<>{label(t("paywall.show1_label"))}{bubble(t(k.ask), false)}{bubble(t(k.reply), true)}{fix(t(k.fix), t(k.why))}</>, 0)}
+        {card(<>{label(t("paywall.show2_label"))}<View style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}><Text variant="body">{t(k.text)}</Text></View>{fix(t(k.fix2), t(k.why2))}</>, 1)}
+        {exams ? card(
+          <>
+            {label(t("paywall.show3_label"))}
+            {EXAM.map(([key, score]) => (
+              <View key={key} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                <Text variant="caption" color={colors.textMuted} style={{ width: 84 }}>{t(key)}</Text>
+                <View style={{ flex: 1, height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
+                  <View style={{ width: `${(score / 20) * 100}%`, height: 8, borderRadius: 4, backgroundColor: colors.success }} />
+                </View>
+                <Text variant="caption" style={{ width: 40, textAlign: "right", fontWeight: "800" }}>{score}/20</Text>
+              </View>
+            ))}
+          </>, 2) : null}
+      </ScrollView>
+      <View style={{ flexDirection: "row", justifyContent: "center", gap: 6, marginTop: spacing.xs }}>
+        {Array.from({ length: pages }, (_, n) => (
+          <View key={n} accessibilityLabel={n === page ? t("paywall.show_page", { n: n + 1 }) : undefined} style={{ width: n === page ? 18 : 6, height: 6, borderRadius: 3, backgroundColor: colors.onPrimary, opacity: n === page ? 1 : 0.5 }} />
+        ))}
+      </View>
+    </View>
   );
 }
 
 /**
  * Sunucunun sebebi doğrudan anahtar adı; tanımadığımız sebep genel mesaja düşer.
- *
- * `self` EKSİKTİ: kendi davet kodunu giren kullanıcı "Kod uygulanamadı, daha
- * sonra tekrar dene" görüyordu — oysa yapması gereken belli ve tekrar denemek
- * hiçbir zaman işe yaramayacak. Sunucu bu sebebi `attachReferral` üzerinden
- * gönderiyor (`AttachResult`); iki istemci de tanımıyordu.
+ * `self` = kendi davet kodu (tekrar denemek hiçbir zaman işe yaramaz).
  */
 const PROMO_ERRORS = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited", "self", "store_trial"];
 function promoErrorKey(reason: string | undefined): string {
   return PROMO_ERRORS.includes(reason ?? "") ? `promo.${reason}` : "promo.failed";
 }
 
-/**
- * Grup kodu sebebi → sözlük anahtarı. Promo kutusunun cümleleri ortak olanlarda
- * (bulunamadı, tükendi, süresi doldu) aynen kullanılıyor: iki kutu aynı durumu
- * iki ayrı cümleyle anlatmasın. Tanınmayan sebep genel mesaja düşer.
- */
+/** Grup kodu sebebi → sözlük anahtarı (ortak durumlar promo cümleleriyle). */
 const GROUP_ERRORS: Record<string, string> = {
   not_found: "promo.not_found",
   disabled: "promo.disabled",
@@ -852,56 +621,89 @@ const GROUP_ERRORS: Record<string, string> = {
 const groupErrorKey = (reason: string | undefined): string => GROUP_ERRORS[reason ?? ""] ?? "promo.failed";
 
 /**
- * Grup kodu — "2 ay ücretsiz, sonra ücretli" (YALNIZ ANDROID, bkz. GROUP_CODES).
+ * "Kodun var mı?" — YALNIZ ANDROID (bkz. OWN_CODES). Tek kutu iki tür kodu alıyor:
  *
- * AKIŞ: kod sunucuda talep ediliyor (`/api/premium/trial-code`, hak sayacı ve
- * hesap başına tek deneme orada), sunucu Play teklifinin ETİKETİNİ veriyor ve
- * uygulama seçili planın o etiketli seçeneğini satın alıyor. Yetki her zamanki
- * yoldan, webhook'la geliyor; sonuç normal satın almayla aynı sözlükte.
+ *  - PROMO / DAVET kodu: `/api/premium/redeem` bozduruyor (gün ya da davet bağı).
+ *  - GRUP kodu ("2 ay ücretsiz" mağaza denemesi): redeem `store_trial` diyor;
+ *    kutu grup moduna geçiyor, grubu gösteriyor ve seçili planın şart satırını
+ *    ("2 ay ücretsiz, sonra yılda X") düğmenin yanında söylüyor. Play abonelik
+ *    beyanı denemenin bitince ne olacağının satın almadan ÖNCE okunmasını istiyor.
+ *    Talep sunucuda (`/api/premium/trial-code`), satın alma etiketli teklifle.
  *
- * ŞART SATIRI DÜĞMENİN YANINDA: "2 ay ücretsiz, sonra yılda X", ödeme yöntemi,
- * 24 saat kuralı ve iptal yolu. Play abonelik beyanı denemenin bitince ne
- * olacağının satın almadan ÖNCE okunmasını istiyor.
- *
- * Bağlantıyla gelindiyse (`/g/<KOD>`) kod dolu geliyor ve bir kez doğrulanıyor
- * (hiçbir şey harcamadan): grup adı görünüyor, geçersiz kod baştan söyleniyor.
+ * Eskiden paywall'da iki büyük kutu vardı (promo + grup) ve kodu olmayan
+ * çoğunluğa "bilmediğim bir indirim var" dedirtiyordu; artık küçük bir bağlantı.
  */
-function GroupCodeBox({
+function CodeSheet({
+  visible,
+  onClose,
   colors,
   pkg,
-  initialCode,
+  initialGroup,
   guest,
   onAuth,
+  onRedeemed,
   onOutcome,
-  busy,
-  setBusy,
 }: {
+  visible: boolean;
+  onClose: () => void;
   colors: Palette;
   pkg: PurchasesPackage | undefined;
-  initialCode: string;
+  initialGroup: string;
   guest: boolean;
   onAuth: () => void;
+  onRedeemed: () => void;
   onOutcome: (o: PurchaseOutcome) => void;
-  busy: boolean;
-  setBusy: (b: boolean) => void;
 }) {
-  const [code, setCode] = useState(initialCode.toUpperCase());
+  const insets = useSafeAreaInsets();
+  const [code, setCode] = useState(initialGroup.toUpperCase());
+  const [mode, setMode] = useState<"code" | "group">(initialGroup ? "group" : "code");
   const [group, setGroup] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const plan = pkg?.packageType === "ANNUAL" ? "yearly" : pkg?.packageType === "MONTHLY" ? "monthly" : null;
 
+  /* Grup koduna geçince bir kez, hiçbir şey harcamadan doğrula: grup adı
+     görünür, geçersiz kod baştan söylenir. */
+  async function peek(c: string) {
+    try {
+      const r = await api<{ status?: string; group?: string | null }>(`/api/premium/trial-code?code=${encodeURIComponent(c)}`);
+      if (r.status === "valid") setGroup(r.group ?? null);
+      else setMsg({ ok: false, text: t(groupErrorKey(r.status)) });
+    } catch { /* ön bakış yalnız bilgi */ }
+  }
   useEffect(() => {
-    if (!initialCode) return;
-    let alive = true;
-    void api<{ status?: string; group?: string | null }>(`/api/premium/trial-code?code=${encodeURIComponent(initialCode)}`)
-      .then((r) => {
-        if (!alive) return;
-        if (r.status === "valid") setGroup(r.group ?? null);
-        else setMsg({ ok: false, text: t(groupErrorKey(r.status)) });
-      })
-      .catch(() => { /* ön bakış yalnız bilgi; başarısızsa kutu yine çalışır */ });
-    return () => { alive = false; };
-  }, [initialCode]);
+    if (initialGroup) void peek(initialGroup);
+  }, [initialGroup]);
+
+  async function apply() {
+    if (!code.trim() || busy) return;
+    setBusy(true);
+    setMsg(null);
+    try {
+      const r = await api<{ ok?: boolean; kind?: string; result?: string; days?: number; error?: string }>("/api/premium/redeem", {
+        method: "POST",
+        body: JSON.stringify({ code }),
+      });
+      if (r.ok && r.kind === "referral") {
+        setMsg({ ok: true, text: t(r.result === "linked" ? "referral.linked_quiet" : "promo.referral_linked") });
+      } else if (r.ok) {
+        setMsg({ ok: true, text: t("promo.success", { n: r.days ?? 0 }) });
+        onRedeemed();
+      } else if (r.error === "store_trial") {
+        setMode("group");
+        void peek(code);
+      } else {
+        setMsg({ ok: false, text: t(promoErrorKey(r.error)) });
+      }
+    } catch (e) {
+      /* `api` HTTP hatasında sunucunun sebebini MESAJ olarak taşıyor (api/client). */
+      const reason = (e as { message?: string } | null)?.message;
+      if (reason === "store_trial") { setMode("group"); void peek(code); }
+      else setMsg({ ok: false, text: t(promoErrorKey(reason)) });
+    } finally {
+      setBusy(false);
+    }
+  }
 
   async function begin() {
     if (!code.trim() || busy) return;
@@ -919,7 +721,6 @@ function GroupCodeBox({
       if (outcome === "no_offer") { setMsg({ ok: false, text: t("grupkod.no_offer") }); return; }
       onOutcome(outcome);
     } catch (e) {
-      // Sunucunun sebebi `ApiError.message`ta (bkz. PromoBox).
       const reason = (e as { message?: string } | null)?.message;
       setMsg({ ok: false, text: t(groupErrorKey(reason)) });
     } finally {
@@ -927,83 +728,52 @@ function GroupCodeBox({
     }
   }
 
-  if (guest) {
-    return (
-      <Section title={t("grupkod.title")}>
-        <Text variant="caption" color={colors.textMuted}>{t("grupkod.guest")}</Text>
-        <PrimaryButton size="md" label={t("guest.create_account")} onPress={onAuth} style={{ marginTop: spacing.sm, alignSelf: "flex-start" }} />
-      </Section>
-    );
-  }
-
-  const ready = Boolean(code.trim()) && !busy;
   return (
-    <View>
-      <Section title={t("grupkod.title")}>
-        {group ? <Text variant="caption" color={colors.successText} style={{ marginBottom: spacing.xs }}>{t("grupkod.group", { group })}</Text> : null}
-        <TextInput
-          value={code}
-          onChangeText={(v) => setCode(v.toUpperCase())}
-          placeholder={t("grupkod.placeholder")}
-          accessibilityLabel={t("grupkod.placeholder")}
-          placeholderTextColor={colors.textFaint}
-          autoCapitalize="characters"
-          autoCorrect={false}
-          returnKeyType="done"
-          onSubmitEditing={() => { if (ready) void begin(); }}
-          style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, letterSpacing: 2 }}
-        />
-        {pkg ? (
-          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
-            {priceLine(pkg, t("paywall.trial_months", { n: 2 }))} · {t("grupkod.terms")}
-          </Text>
-        ) : null}
-        <PrimaryButton size="md" label={t("grupkod.start")} onPress={begin} disabled={!code.trim()} busy={busy} style={{ marginTop: spacing.sm }} />
-        {msg ? <Text accessibilityLiveRegion={msg.ok ? "polite" : "assertive"} variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
-      </Section>
-    </View>
-  );
-}
-
-/**
- * Davet. Kod ömür boyu sabit; bağlantı web'in promo açılışıyla aynı biçimde
- * (`/premium?code=…`), yani tek bağlantı hem kodu tanıtıyor hem paywall'ı açıyor.
- */
-function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number } }) {
-  return (
-    <Section title={t("referral.title")}>
-      <Text variant="caption">{t("referral.explain")}</Text>
-      <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("referral.reward_note")}</Text>
-
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
-        {/*
-          iOS'TA KOD DEĞİL BAĞLANTI GÖSTERİLİYOR.
-
-          iOS'ta kod girilecek bir yer YOK ve bilerek yok (Guideline 3.1.1,
-          bkz. `OWN_PROMO_CODES`). Çıplak kodu orada büyük büyük göstermek,
-          iOS'taki alıcının hiçbir yere giremeyeceği bir şeyi "paylaş" diye
-          sunmak olurdu — davet eden iyi niyetle kodu okur, karşı taraf
-          çıkmaza girer. Her yerde çalışan şey bağlantı.
-
-          Android'de kod DURUYOR: kutu orada çizili, yani kod uçtan uca
-          işleyen bir yol.
-        */}
-        <View style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingVertical: 11, alignItems: "center", paddingHorizontal: spacing.sm }}>
-          {OWN_PROMO_CODES ? (
-            <Text variant="h3" style={{ letterSpacing: 4 }}>{referral.code}</Text>
+    <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose} statusBarTranslucent>
+      <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
+        <Pressable accessibilityRole="button" accessibilityLabel={t("common.close")} onPress={onClose} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.4)" }} />
+        <View accessibilityViewIsModal style={{ backgroundColor: colors.bg, borderTopLeftRadius: radii.xl, borderTopRightRadius: radii.xl, padding: spacing.xl, paddingBottom: insets.bottom + spacing.xl, gap: spacing.md }}>
+          <Text accessibilityRole="header" variant="h3">{t("promo.title")}</Text>
+          {guest ? (
+            <>
+              <Text variant="caption" color={colors.textMuted}>{t("grupkod.guest")}</Text>
+              <PrimaryButton size="md" label={t("guest.create_account")} onPress={onAuth} />
+            </>
           ) : (
-            <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{inviteLink(referral.code)}</Text>
+            <>
+              {group ? <Text variant="caption" color={colors.successText}>{t("grupkod.group", { group })}</Text> : null}
+              <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "center" }}>
+                <TextInput
+                  value={code}
+                  onChangeText={(v) => { setCode(v.toUpperCase()); if (mode === "group") { setMode("code"); setGroup(null); } }}
+                  placeholder={t("promo.placeholder")}
+                  accessibilityLabel={t("promo.placeholder")}
+                  placeholderTextColor={colors.textFaint}
+                  autoCapitalize="characters"
+                  autoCorrect={false}
+                  autoFocus={!initialGroup}
+                  returnKeyType="done"
+                  onSubmitEditing={() => { if (!busy && code.trim()) void (mode === "group" ? begin() : apply()); }}
+                  style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.md, color: colors.text, letterSpacing: 2 }}
+                />
+                {mode === "code" ? <PrimaryButton size="md" label={t("promo.apply")} onPress={apply} disabled={!code.trim()} busy={busy} /> : null}
+              </View>
+              {mode === "group" ? (
+                <>
+                  {pkg ? (
+                    <Text variant="micro" color={colors.textMuted} style={{ fontWeight: "500", letterSpacing: 0 }}>
+                      {priceLine(pkg, t("paywall.trial_months", { n: 2 }))} · {t("grupkod.terms")}
+                    </Text>
+                  ) : null}
+                  <PrimaryButton label={t("grupkod.start")} onPress={begin} disabled={!code.trim()} busy={busy} />
+                </>
+              ) : null}
+            </>
           )}
+          {/* HATA `assertive`, BAŞARI `polite` (web: role alert/status). */}
+          {msg ? <Text accessibilityLiveRegion={msg.ok ? "polite" : "assertive"} variant="caption" color={msg.ok ? colors.successText : colors.dangerText}>{msg.text}</Text> : null}
         </View>
-        {/* Okunan ad görünen yazıyla aynı ("Paylaş"); eskiden "Bağlantıyı kopyala" okunuyordu. */}
-        <PrimaryButton size="md" label={t("common.share")} icon={<ShareIcon color={colors.onPrimary} size={16} />} onPress={() => void shareInvite(referral.code)} />
-      </View>
-
-      <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
-        {referral.invited === 0
-          ? t("referral.none_yet")
-          : t("referral.invited", { n: referral.invited })}
-      </Text>
-    </Section>
+      </KeyboardAvoidingView>
+    </Modal>
   );
 }

@@ -1,338 +1,441 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
-import type { ReferralStats } from "@/lib/premium/referral-types";
 import { supportsMockExams } from "@/lib/mock-exams";
-import { useShell } from "@/components/app-shell";
+import { useCourse } from "@/components/app-shell";
 import { track } from "@/lib/track";
 import { useLang, useT } from "@/lib/i18n/client";
 import { localeOf } from "@/lib/i18n/dict";
 import { CheckIcon, PremiumIcon } from "@/components/icons";
-import type { CopyLine, PlanPrice } from "@/lib/premium/gates";
+import type { FreeLimits, PlanPrice } from "@/lib/premium/gates";
 import { PremiumStoreCta } from "@/components/premium-store-cta";
+import { PremiumShowcase } from "@/components/premium-showcase";
 import { BackButton } from "@/components/page-back";
 import type { StoreLinks, WebPlatform } from "@/lib/store-link";
 import { premiumManageKey, premiumStateKey, type PremiumStatusView } from "@/lib/premium/state-copy";
 
-type Plans = { productMonthly: string; productYearly: string; trialDays: number };
 type FairUse = { walkRoundsPerDay: number; aiPracticePerDay: number; chatTurnsPerDay: number };
-/* Biçim ve durum cümlesi tek yerde: `lib/premium/state-copy` (Ayarlar ›
-   Abonelik paneli de aynı cümleyi söylüyor). */
-type Status = PremiumStatusView;
-/* Biçim tek yerde: `lib/premium/referral-types`. */
-type Referral = ReferralStats | null;
 
 /**
- * Premium sayfasının gövdesi — durum, kapsam, promo kodu ve davet.
+ * Premium sayfası — ürün vitrini, dört madde, plan ve mağaza (yeniden tasarım
+ * 2026-09-29, "C3"; mobil `PaywallScreen` ile aynı dil, web daha fazlasını
+ * gösteriyor: karşılaştırma tablosu, deneme çizelgesi, sık sorulanlar).
  *
- * METİNLERİN TAMAMI ÇEVİRİ KATMANINDAN. Kapsam satırları sunucuda YAPILANDIRMADAN
- * üretiliyor ama cümle olarak değil, anahtar + parametre olarak geliyor
- * (`lib/premium/gates.ts` `describeLimits`). Böylece panelden bir sınır
- * değiştirildiğinde paywall'ın söylediği şey de değişiyor — beyan ile gerçek
- * ayrışamıyor — ve üç dil korunuyor.
+ * METİNLERİN TAMAMI ÇEVİRİ KATMANINDAN, SAYILARIN TAMAMI YAPILANDIRMADAN.
+ * Maddelerin altındaki sınırlar, tablo hücreleri ve adil kullanım notu panelin
+ * değerleriyle kuruluyor (`premiumConfig`): panelden bir sınır değişince
+ * sayfanın söylediği de değişiyor, beyan gerçekle ayrışamıyor (App Store
+ * 3.1.2, Play abonelik beyanı). "Sınırsız" yazılmıyor.
+ *
+ * WEB SATMIYOR: planlar seçilebilir ama yalnız şart satırını ve çizelgeyi
+ * değiştiriyor; satın alma uygulamada (`PremiumStoreCta`).
  */
 export function PremiumPaywall({
   source = "other",
   signedIn,
   status,
-  copy,
   plans,
   price,
+  free,
   fairUse,
-  referral,
+  avatarCount,
   prefillCode = "",
   refResult = "",
   storeCta,
 }: {
   source?: string;
   signedIn: boolean;
-  status: Status | null | undefined;
-  copy: { free: CopyLine[]; premium: CopyLine[] };
-  plans: Plans;
+  status: PremiumStatusView | null | undefined;
+  plans: { trialDays: number };
   /**
-   * ZİYARETÇİNİN BÖLGESİNİN fiyatı — tek satır. Sayfa eskiden üç bölgeyi
-   * (TR/EU/GLOBAL) yan yana listeliyordu: kullanıcı kendi para biriminin
-   * hangisi olduğunu tahmin etmek zorunda kalıyor, ötekiler yalnız kıyas
-   * malzemesi oluyordu. Bölge sunucuda, konum izni İSTEMEDEN bulunuyor
-   * (bkz. lib/premium/region.ts). `null` = panelde hiç fiyat tanımlı değil.
+   * ZİYARETÇİNİN BÖLGESİNİN fiyatı — tek satır (bkz. lib/premium/region.ts).
+   * `null` = panelde hiç fiyat tanımlı değil.
    */
   price: PlanPrice | null;
+  free: FreeLimits;
   fairUse: FairUse;
-  referral: Referral;
+  /** Premium avatar setindeki parça sayısı (`avatarPremiumSet`, panelden değişebilir). */
+  avatarCount: number;
   prefillCode?: string;
-  /**
-   * `/r/<kod>` davet bağlantısının sonucu (`?ref=`).
-   *
-   * Bağ o yolda SESSİZCE kuruluyor — kullanıcı hiçbir şey yazmıyor. Sessiz bir
-   * başarı ile sessiz bir başarısızlık kullanıcı için aynı görünür, o yüzden
-   * sonuç burada tek satırla söyleniyor. Durumlar ayrışık: "zaten davetlisin"
-   * ile "böyle bir kod yok" bambaşka iki şey.
-   */
+  /** `/r/<kod>` davet bağlantısının sonucu (`?ref=`). */
   refResult?: string;
-  /** Mağaza yönlendirmesinin sunucuda verilen kararları (cihaz, yayındaki mağazalar, QR, hesap). */
   storeCta: { platform: WebPlatform; stores: StoreLinks; qrSvg: string | null; account: string | null; soonNotice: boolean };
 }) {
   const t = useT();
-  const { course } = useShell();
+  const lang = useLang();
+  const course = useCourse();
   const premium = !!status?.premium;
+  const exams = supportsMockExams(course);
+  /* Kod kutusu davet bağlantısıyla gelindiyse (`?code=`) açık geliyor. */
+  const [codeOpen, setCodeOpen] = useState(!!prefillCode);
+  const [yearly, setYearly] = useState(true);
 
   useEffect(() => {
     if (!premium) track("paywall_view", 0, source);
   }, [source, premium]);
 
-  const lang = useLang();
-  const line = (l: CopyLine) => t(l.key, l.params);
-  /*
-   * TARİH ARAYÜZ DİLİNDE, TARAYICININ DİLİNDE DEĞİL.
-   *
-   * Yerel `undefined` bırakılmıştı, yani tarih TARAYICININ dilinden
-   * biçimleniyordu: arayüzü Türkçe olan ama tarayıcısı İngilizce olan
-   * kullanıcı "September 11, 2026" görüyordu. Uygulamanın kuralı bunun tersi
-   * ve tek yeri var (`lib/i18n/dict` `localeOf`); aynı hata Androidde de
-   * vardı (`PaywallScreen`, orada yerel HİÇ verilmiyordu) ve ikisi birlikte
-   * düzeltildi. Premium bitiş tarihi ödeme kararının dayanağı, yani en
-   * okunması gereken tarih.
-   */
+  /* Tarih ARAYÜZ dilinde, tarayıcının dilinde değil (`localeOf`). */
   const date = (iso: string | null) =>
     iso ? new Date(iso).toLocaleDateString(localeOf(lang), { day: "numeric", month: "long", year: "numeric" }) : "";
+  const state = premiumStateKey(status);
+  const stateLine = t(state.key, state.dated ? { date: date(status?.until ?? null) } : undefined);
+  const manageKey = premiumManageKey(status);
 
-  /** Durum cümlesi — kaynağa ve mağaza durumuna göre değişiyor. */
-  const stateLine = (): string => {
-    const l = premiumStateKey(status);
-    return t(l.key, l.dated ? { date: date(status?.until ?? null) } : undefined);
-  };
+  const refNotice = refNoticeOf(refResult, t);
 
-  /*
-    DAVET SONUCU — anahtarların çoğu zaten yazılı.
+  /* Maddeler — mobil ile aynı dört madde, sınırlar alt satırda. */
+  const bullets: { title: string; cap?: string }[] = [
+    { title: t("paywall.b_ai"), cap: t("paywall.b_ai_cap", { a: fairUse.aiPracticePerDay, c: fairUse.chatTurnsPerDay }) },
+    ...(exams ? [{ title: t("paywall.b_mock") }] : []),
+    { title: t("paywall.b_walk"), cap: t("paywall.b_walk_cap", { n: fairUse.walkRoundsPerDay }) },
+    ...(avatarCount > 0 ? [{ title: t("paywall.b_avatar"), cap: t("paywall.b_avatar_cap", { n: avatarCount }) }] : []),
+  ];
 
-    "Kendi kodun", "böyle bir kod yok" ve "uygulanamadı" cümleleri promo
-    kutusunda baştan beri duruyor ve aynı şeyi söylüyor; ikinci kez yazmak
-    iki metnin zamanla ayrışması demekti. Yalnız "zaten davetlisin" durumunun
-    karşılığı yoktu (promo'daki `already` "bu KODU zaten kullandın" diyor,
-    burada kastedilen o değil).
-  */
-  const refNotice = ((): { ok: boolean; text: string } | null => {
-    switch (refResult) {
-      case "ok":
-        return { ok: true, text: t("promo.referral_linked") };
-      case "linked":
-        return { ok: true, text: t("referral.linked_quiet") };
-      case "already":
-        return { ok: false, text: t("referral.already_linked") };
-      case "self":
-        return { ok: false, text: t("promo.self") };
-      case "unknown":
-        return { ok: false, text: t("promo.not_found") };
-      case "error":
-        return { ok: false, text: t("promo.failed") };
-      default:
-        return null;
-    }
-  })();
+  const codeLink = signedIn ? (
+    <button
+      type="button"
+      onClick={() => setCodeOpen((v) => !v)}
+      aria-expanded={codeOpen}
+      data-panel="premium-code"
+      className="text-strong"
+      style={{ color: "var(--color-brand)" }}
+    >
+      {t("promo.title")}
+    </button>
+  ) : null;
 
-  const manageLine = (): string | null => {
-    const k = premiumManageKey(status);
-    return k ? t(k) : null;
-  };
+  if (premium) {
+    return (
+      <div className="mx-auto w-full max-w-3xl pb-12">
+        <BackButton fallback="/profile" />
+        <header className="mt-2 flex flex-col items-center text-center">
+          <div
+            className="flex h-20 w-20 items-center justify-center rounded-card"
+            style={{ background: "var(--brand-fill)", color: "var(--on-brand)", boxShadow: "0 12px 24px -10px var(--brand-fill)" }}
+          >
+            <PremiumIcon size={42} />
+          </div>
+          <h1 className="mt-4 text-display">{t("paywall.nomi_premium")}</h1>
+          <p className="muted mt-1">{stateLine}</p>
+          {/* Bekleyen hediye her durumda: kazandığı ama başlamamış süreyi görmeli. */}
+          {!!status?.bonusDaysPending && (
+            <p className="mt-1 text-strong" style={{ color: "var(--color-mint)" }}>
+              {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
+            </p>
+          )}
+          {manageKey && <p className="muted mt-1 text-caption">{t(manageKey)}</p>}
+        </header>
+        {refNotice && <Notice {...refNotice} />}
+        <section className="card mt-6 p-4">
+          <h2 className="muted mb-2 text-caption font-bold">{t("paywall.what_you_get")}</h2>
+          <Bullets items={bullets} />
+        </section>
+        <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-caption">
+          {codeLink}
+          <Link href="/profile/settings/subscription" className="muted underline">{t("paywall.manage_subscription")}</Link>
+        </div>
+        {signedIn && codeOpen && <PromoBox prefill={prefillCode} />}
+      </div>
+    );
+  }
+
+  const trialLabel =
+    plans.trialDays <= 0 ? null : plans.trialDays >= 28 && plans.trialDays <= 31 ? t("paywall.trial_months", { n: 1 }) : t("paywall.trial_days", { n: plans.trialDays });
+  const shown = price ? (yearly ? price.yearly : price.monthly) : null;
+  const terms = shown
+    ? trialLabel
+      ? `${t(yearly ? "paywall.trial_then_year" : "paywall.trial_then_month", { duration: trialLabel, price: shown })}; ${t("paywall.renew_trial_store")}`
+      : `${t(yearly ? "paywall.price_year" : "paywall.price_month", { price: shown })}. ${t("paywall.renew_note_web")}`
+    : null;
 
   return (
     /* Yan dolgu kabuktan (`AppShell` main `px-4`); burada ikinci kez yok. */
-    <div className="mx-auto w-full max-w-3xl pb-12">
-      {/* Alt sekmede olmayan ekran: geri yolu öteki yığın ekranlarıyla aynı
-          kare düğme, ortalı kapağın üstünde solda. */}
+    <div className="mx-auto w-full max-w-6xl pb-12">
       <BackButton fallback="/profile" />
-      <header className="mt-2 flex flex-col items-center text-center">
-        <div
-          className="flex h-20 w-20 items-center justify-center rounded-card"
-          style={{ background: "var(--brand-fill)", color: "var(--on-brand)", boxShadow: "0 12px 24px -10px var(--brand-fill)" }}
-        >
-          <PremiumIcon size={42} />
+      {refNotice && <Notice {...refNotice} />}
+
+      {/*
+        SIRA TELEFONDA: vitrin ve maddeler → plan ve satın alma → tablo ve SSS.
+        Geniş ekranda satın alma sağ sütunda yapışık duruyor, tablo solda
+        maddelerin altında. Satın alma bloğu uzun tablonun ARKASINDA kalmasın
+        diye sol sütun iki parça (üst, alt) ve sağ sütun ikisinin boyunca.
+      */}
+      <div className="mt-3 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:grid-rows-[auto_1fr]">
+        <div className="flex min-w-0 flex-col gap-8 lg:col-start-1">
+          <div className="rounded-card px-4 py-6 sm:px-8" style={{ background: "var(--brand-fill)" }}>
+            <PremiumShowcase course={course} withExam={exams} />
+          </div>
+
+          <section className="flex flex-col gap-4">
+            <h1 className="text-display" style={{ textWrap: "balance" }}>{t("paywall.headline")}</h1>
+            <Bullets items={bullets} columns />
+          </section>
         </div>
-        <h1 className="mt-4 text-display">{t("paywall.nomi_premium")}</h1>
-        {/* Sloganı mobil başlığın hemen altında gösteriyor; web'de hiç yoktu.
-            Premium'u olana pazarlama yapılmıyor. */}
-        {/* "Sınırsız" yok: premium'un adil kullanım tavanı var; cümle gerçek kapsamı
-            sayıyor, deneme sınavını yalnız sınavı olan kursta anıyor (mobil ile aynı). */}
-        {!premium && <p className="muted mt-1 text-body">{t(supportsMockExams(course) ? "paywall.pitch_exams" : "paywall.pitch")}</p>}
-        <p className="mt-1 muted">{stateLine()}</p>
-        {/* Bekleyen hediye her durumda gösteriliyor: kullanıcı kazandığı ama
-            henüz başlamamış süreyi göremezse kazandığını bilmez. */}
-        {!!status?.bonusDaysPending && (
-          <p className="mt-1 text-strong" style={{ color: "var(--color-mint)" }}>
-            {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
-          </p>
-        )}
-        {manageLine() && <p className="mt-1 text-caption muted">{manageLine()}</p>}
-      </header>
 
-      {/* Davet bağlantısının sonucu — `role="status"` çünkü kullanıcı bunu
-          istemedi, bağlantıya dokundu ve sayfa kendiliğinden bunu söylüyor. */}
-      {refNotice && (
-        <p
-          role="status"
-          className="mt-4 rounded-panel px-4 py-3 text-center text-body"
-          style={{
-            background: "var(--surface-2)",
-            color: refNotice.ok ? "var(--color-mint)" : "var(--text-muted)",
-          }}
-        >
-          {refNotice.text}
-        </p>
-      )}
-
-      {!premium && (
-        <>
-          {/*
-            KARAR ÖNCE. Fiyat sayfanın dibindeydi: kullanıcı iki özellik
-            listesini, adil kullanım notunu ve içerik vaadini geçtikten sonra
-            ne ödeyeceğini öğreniyordu. Artık başlıktan hemen sonra geliyor ve
-            ardından tek bir yönlendirme var.
-          */}
-          {price && (
-            <section className="mt-6">
-              <div className="grid grid-cols-2 gap-3">
-                <PlanCard label={t("paywall.monthly")} price={price.monthly} />
-                <PlanCard label={t("paywall.yearly")} price={price.yearly} savePct={price.yearlySavePct} highlight />
+        <aside className="flex flex-col gap-4 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <div className="card flex flex-col gap-4 p-5">
+            {price && (
+              <div role="radiogroup" aria-label={t("paywall.yearly") + " / " + t("paywall.monthly")} className="grid grid-cols-2 gap-2.5 pt-2">
+                <PlanCard
+                  selected={yearly}
+                  onSelect={() => setYearly(true)}
+                  label={t("paywall.yearly")}
+                  price={price.yearly}
+                  sub={perMonth(price.yearly) ? t("paywall.per_month_approx", { price: perMonth(price.yearly)! }) : ""}
+                  badge={price.yearlySavePct > 0 ? t("paywall.save_pct", { n: price.yearlySavePct }) : null}
+                />
+                <PlanCard selected={!yearly} onSelect={() => setYearly(false)} label={t("paywall.monthly")} price={price.monthly} sub={t("paywall.billed_monthly")} badge={null} />
               </div>
-              {/* MAĞAZALARIN DENEMESİ "1 AY" (App Store P1M, Play `free-trial-1m`),
-                  30 gün değil: şubatta 28, başka ayda 31 gün sürüyor. Metin
-                  mağazanın kendi birimini söylüyor. Deneme iki mağazada da var,
-                  Android ziyaretçisinden de gizlenmiyor. */}
-              {plans.trialDays > 0 && (
-                <p className="muted mt-3 text-center text-caption">
-                  {plans.trialDays >= 28 && plans.trialDays <= 31 ? t("paywallw.trial_one_month") : t("paywall.trial_note", { n: plans.trialDays })}
-                </p>
-              )}
-            </section>
-          )}
+            )}
 
-          {/* Web'de satın alma yok: kullanıcı uygulamaya/mağazaya yönlendiriliyor
-              (kurgu `lib/store-link`, bileşen `premium-store-cta`). */}
-          <PremiumStoreCta {...storeCta} source={source} />
+            {trialLabel && shown && (
+              <ol className="flex flex-col gap-2 text-caption">
+                <Step dot="var(--brand-fill)" title={t("paywallw.tl_today")} text={t("paywallw.tl_today_d")} />
+                <Step dot="var(--brand-fill)" faded title={t("paywallw.tl_remind")} text={t("paywallw.tl_remind_d")} />
+                <Step
+                  dot="var(--text-faint)"
+                  title={plans.trialDays >= 28 && plans.trialDays <= 31 ? t("paywallw.tl_end_month") : t("paywallw.tl_end_days", { n: plans.trialDays })}
+                  text={t(yearly ? "paywallw.tl_end_y" : "paywallw.tl_end_m", { price: shown })}
+                />
+              </ol>
+            )}
 
-          {/*
-            KAPSAM TEK KART. "Premium'da neler var" ve "Ücretsizde ne var"
-            iki ayrı kutuydu ve ikisi de aynı yeşil onay işaretini kullanıyordu:
-            yan yana durduklarında hangisinin neyi anlattığı ayırt edilmiyordu.
-            Aynı kartın iki bölümü oldular ve ücretsiz taraf sönük bir noktayla
-            yazılıyor — onay işareti "bu da sende var" diyordu.
-          */}
-          <Section title={t("paywall.what_you_get")}>
-            {copy.premium.map((l) => (
-              <Row key={l.key} text={line(l)} tone="premium" />
-            ))}
-            <div className="mt-3 border-t pt-3" style={{ borderColor: "var(--hairline)" }}>
-              <p className="muted mb-1.5 text-caption tracking-wide">{t("paywall.whats_free")}</p>
-              {copy.free.map((l) => (
-                <Row key={l.key} text={line(l)} tone="free" />
+            <PremiumStoreCta {...storeCta} source={source} />
+
+            {terms && <p className="muted text-center text-caption">{terms} {t("paywall.price_note_store")}</p>}
+            {/* Cayma ve iade satırı (şartlar §7). Satışı mağaza yapıyor; metin yolu söylüyor. */}
+            <p className="muted text-center text-micro font-normal">{t("paywallw.withdrawal")}</p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-caption">
+            {codeLink}
+            <Link href="/profile/settings/subscription" className="muted underline">{t("paywall.manage_subscription")}</Link>
+            <Link href="/terms" className="muted underline">{t("auth.terms_of_use")}</Link>
+            <Link href="/privacy" className="muted underline">{t("auth.privacy_policy")}</Link>
+          </div>
+          {signedIn && codeOpen && <PromoBox prefill={prefillCode} />}
+
+          <section className="flex flex-col gap-2">
+            <h2 className="text-h3">{t("paywallw.faq_title")}</h2>
+            <div className="card divide-y p-0" style={{ borderColor: "var(--hairline)" }}>
+              {(
+                [
+                  ["paywallw.faq1_q", "paywallw.faq1_a"],
+                  ["paywallw.faq2_q", "paywallw.faq2_a"],
+                  ["paywallw.faq3_q", "paywallw.faq3_a"],
+                ] as const
+              ).map(([q, a]) => (
+                <div key={q} className="flex flex-col gap-1 px-4 py-3" style={{ borderColor: "var(--hairline)" }}>
+                  <h3 className="text-strong">{t(q)}</h3>
+                  <p className="muted text-caption">{t(a)}</p>
+                </div>
               ))}
             </div>
-          </Section>
+          </section>
+        </aside>
 
-          {/*
-            İNCE YAZI TEK PARAGRAF. Adil kullanım kendi kutusunda, içerik vaadi
-            ayrı bir satırdaydı; ikisi de okunması gereken ama karar vermeyen
-            metinler, yani kutu hak etmiyorlar. Adil kullanım AÇIKÇA yazılıyor:
-            tavanı olan bir şeyi "sınırsız" diye sunmak iki mağazanın da beyan
-            kuralına aykırı.
-          */}
-          <div className="muted mt-4 space-y-1 text-caption leading-relaxed">
-            {/* Üç tavan tek cümlede ve "sınırsız" denmeden: yürüyüş turu ve
-                değerlendirme panelden, sohbet mesajı sabit tavandan (lib/quotas). */}
+        <div className="flex min-w-0 flex-col gap-4 lg:col-start-1">
+          <CompareTable free={free} exams={exams} avatarCount={avatarCount} />
+          <div className="muted flex flex-col gap-1 text-caption leading-relaxed">
+            {free.streakBonus > 0 && free.streakStep > 0 && <p>{t("plan.free_streak_ai", { d: free.streakStep, n: free.streakBonus, m: free.mockStreakBonus })}</p>}
             <p>{t("plan.pro_fair_use", { w: fairUse.walkRoundsPerDay, a: fairUse.aiPracticePerDay, c: fairUse.chatTurnsPerDay })}</p>
-            {/* İçerik vaadi AYRI satır: adil kullanım tavanlarıyla aynı cümlede
-                birleşince iki ayrı konu tek bir cümle gibi okunuyordu. */}
-            <p>{t(supportsMockExams(course) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}</p>
+            <p>{t(exams ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}</p>
           </div>
-        </>
-      )}
-
-      {signedIn && <PromoBox prefill={prefillCode} />}
-      {signedIn && referral && <ReferralBox referral={referral} />}
+        </div>
+      </div>
     </div>
   );
 }
 
 /**
- * Bir plan kutusu. Yıllık VURGULU: indirim oranı orada ve kullanıcıyı oraya
- * yönlendiriyoruz (yıllığa geçiş nakit akışını öne çekiyor, iptal oranını
- * düşürüyor). Seçilebilir DEĞİL — webde satın alma yok ve seçilemeyecek bir
- * şeye tıklatmak, tıklamanın bir şey yapacağı sözünü vermek olurdu.
+ * Yıllık fiyatın aylık karşılığı ("1.199,99 ₺" → "99,99 ₺").
+ *
+ * Panelin fiyat dizgisinden hesaplanıyor: sayı kısmı ayrıştırılıyor (nokta
+ * binlik, virgül ondalık — paneldeki bütün fiyatlar böyle yazılı), 12'ye
+ * bölünüp KURUŞA AŞAĞI yuvarlanıyor (yukarı yuvarlamak tasarrufu olduğundan
+ * büyük gösterirdi) ve aynı biçimle geri yazılıyor. Ayrıştırılamayan dizgide
+ * satır çizilmiyor.
  */
-function PlanCard({
-  label,
-  price,
-  savePct = 0,
-  highlight = false,
-}: {
-  label: string;
-  price: string;
-  savePct?: number;
-  highlight?: boolean;
-}) {
+function perMonth(yearly: string): string | null {
+  const m = /(\d{1,3}(?:\.\d{3})*|\d+)(?:,(\d{1,2}))?/.exec(yearly);
+  if (!m) return null;
+  const value = Number(m[1].replace(/\./g, "")) + (m[2] ? Number(m[2].padEnd(2, "0")) / 100 : 0);
+  if (!Number.isFinite(value) || value <= 0) return null;
+  const cents = Math.floor((value / 12) * 100 + 1e-6);
+  const whole = Math.floor(cents / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  const frac = String(cents % 100).padStart(2, "0");
+  return yearly.replace(m[0], `${whole},${frac}`);
+}
+
+function refNoticeOf(refResult: string, t: (k: string) => string): { ok: boolean; text: string } | null {
+  /* Davet bağlantısının sonucu. Cümlelerin çoğu promo kutusunda yazılı ve
+     aynı şeyi söylüyor; yalnız "zaten davetlisin" kendi anahtarında. */
+  switch (refResult) {
+    case "ok":
+      return { ok: true, text: t("promo.referral_linked") };
+    case "linked":
+      return { ok: true, text: t("referral.linked_quiet") };
+    case "already":
+      return { ok: false, text: t("referral.already_linked") };
+    case "self":
+      return { ok: false, text: t("promo.self") };
+    case "unknown":
+      return { ok: false, text: t("promo.not_found") };
+    case "error":
+      return { ok: false, text: t("promo.failed") };
+    default:
+      return null;
+  }
+}
+
+function Notice({ ok, text }: { ok: boolean; text: string }) {
+  /* `role="status"`: kullanıcı bunu istemedi, bağlantıya dokundu ve sayfa kendiliğinden söylüyor. */
   return (
-    <div
-      className="card card-flat p-4 text-center"
-      style={
-        highlight
-          ? /* Vurgulu plan büyük karo dilinde: dolgu yok, turuncu kenar (2026-09-29 Samet: seçim B). */
-            { borderColor: "var(--color-brand-500)" }
-          : undefined
-      }
+    <p
+      role="status"
+      className="mt-4 rounded-panel px-4 py-3 text-center text-body"
+      style={{ background: "var(--surface-2)", color: ok ? "var(--color-mint)" : "var(--text-muted)" }}
     >
-      <p className="muted text-caption tracking-wide">{label}</p>
-      <p className="mt-1 text-h2">{price}</p>
-      {savePct > 0 && (
-        /* 500 değil 600: beyaz yazı 500 üstünde 3.55, 11 piksellik yazı için
-           eşik 4.5. 600'de 5.30. */
-        <span
-          className="mt-2 inline-block rounded-full px-2 py-0.5 text-micro"
-          style={{ background: "var(--color-mint)", color: "var(--on-fill)" }}
-        >
-          −{savePct}%
-        </span>
-      )}
-    </div>
+      {text}
+    </p>
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Bullets({ items, columns = false }: { items: { title: string; cap?: string }[]; columns?: boolean }) {
   return (
-    <section className="mt-6">
-      <h2 className="mb-2 text-micro uppercase tracking-eyebrow muted">{title}</h2>
-      <div className="card p-4">{children}</div>
+    <ul className={columns ? "grid gap-x-7 gap-y-3.5 sm:grid-cols-2" : "flex flex-col gap-3"}>
+      {items.map((b) => (
+        <li key={b.title} className="flex items-start gap-2.5">
+          <span className="mt-0.5 shrink-0" style={{ color: "var(--brand-fill)" }}>
+            <CheckIcon size={20} />
+          </span>
+          <span className="flex min-w-0 flex-col">
+            <span className="text-strong">{b.title}</span>
+            {b.cap && <span className="muted text-caption">{b.cap}</span>}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/**
+ * Ücretsiz ve Premium tablosu — hücreler panelin değerlerinden.
+ *
+ * Ücretsiz taraftaki hak TABAN (seviye başına); seriyle açılan ek hak altındaki
+ * notta. Deneme sınavı satırı yalnız sınavı olan kursta.
+ */
+function CompareTable({ free, exams, avatarCount }: { free: FreeLimits; exams: boolean; avatarCount: number }) {
+  const t = useT();
+  const rows: { label: string; free: string | true | null; premium: string | true }[] = [
+    { label: t("paywallw.row_core"), free: true, premium: true },
+    { label: t("paywallw.row_path"), free: t("paywallw.per_level_pair", { a: free.conversationsPerLevel, b: free.pathWritingPerLevel }), premium: t("paywallw.all") },
+    { label: t("paywallw.row_skills"), free: t("paywallw.per_level_pair", { a: free.speakingSkills, b: free.writingSkills }), premium: t("paywallw.all") },
+    ...(exams ? [{ label: t("paywallw.row_mock"), free: t("paywallw.per_level", { n: free.mockExamsPerLevel }), premium: t("paywallw.all") }] : []),
+    {
+      label: t("paywallw.row_walk"),
+      free: free.walkRoundsPerDay > 0 ? t("paywallw.walk_free", { n: free.walkRoundsPerDay }) : null,
+      premium: t("paywallw.walk_premium"),
+    },
+    ...(avatarCount > 0 ? [{ label: t("paywall.b_avatar"), free: null, premium: t("paywallw.items", { n: avatarCount }) }] : []),
+  ];
+  const cell = (v: string | true | null, strong: boolean) =>
+    v === true ? (
+      <span aria-label="✓" style={{ color: "var(--color-mint)" }} className="inline-flex justify-center">
+        <CheckIcon size={18} />
+      </span>
+    ) : v === null ? (
+      <span className="faint">—</span>
+    ) : (
+      <span className={strong ? "text-strong" : "muted"}>{v}</span>
+    );
+  return (
+    <section className="flex flex-col gap-3">
+      <h2 className="text-h2">{t("paywallw.table_title")}</h2>
+      {/* Büyük harf dönüşümü YOK: Türkçe yerelde "PREMİUM" basıyordu (marka adı
+          noktalı İ ile). Telefonda da sığıyor: sütunlar dar, hücreler sarıyor. */}
+      <div className="overflow-x-auto">
+        <table className="card w-full border-separate border-spacing-0 overflow-hidden p-0 text-body">
+          <thead>
+            <tr className="muted text-caption">
+              <th className="px-3 py-2.5 text-left font-bold sm:px-4" />
+              <th className="w-24 px-2 py-2.5 text-center font-bold sm:w-36">{t("paywallw.col_free")}</th>
+              <th className="w-24 px-2 py-2.5 text-center font-bold sm:w-36" style={{ color: "var(--color-brand)" }}>{t("paywallw.col_premium")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.label}>
+                <th scope="row" className="border-t px-3 py-3 text-left font-normal sm:px-4" style={{ borderColor: "var(--hairline)" }}>{r.label}</th>
+                <td className="border-t px-2 py-3 text-center text-caption" style={{ borderColor: "var(--hairline)", textWrap: "balance" }}>{cell(r.free, false)}</td>
+                <td className="border-t px-2 py-3 text-center" style={{ borderColor: "var(--hairline)", textWrap: "balance" }}>{cell(r.premium, true)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 }
 
-function Row({ text, tone }: { text: string; tone: "premium" | "free" }) {
-  const premium = tone === "premium";
+function PlanCard({
+  selected,
+  onSelect,
+  label,
+  price,
+  sub,
+  badge,
+}: {
+  selected: boolean;
+  onSelect: () => void;
+  label: string;
+  price: string;
+  sub: string;
+  badge: string | null;
+}) {
   return (
-    <div className="flex items-start gap-3 py-1.5">
-      {premium ? (
-        <span
-          className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
-          style={{ background: "var(--brand-tint)", color: "var(--color-brand)" }}
-        >
-          <CheckIcon size={14} />
+    <button
+      type="button"
+      role="radio"
+      aria-checked={selected}
+      onClick={onSelect}
+      className="relative flex flex-col items-start gap-0.5 rounded-panel p-3.5 text-left"
+      /* Seçili hâl RENKLE: turuncu kenar, dolgu yok (mobil ile aynı; 2026-09-29 Samet: seçim B). */
+      style={{ background: "var(--surface)", border: `1px solid ${selected ? "var(--brand-fill)" : "var(--border)"}` }}
+    >
+      {badge && (
+        /* 600 basamağı: beyaz yazı 500 üstünde 3.55, 11 piksel için eşik 4.5. */
+        <span className="absolute -top-2.5 left-3 rounded-full px-2 py-px text-micro" style={{ background: "var(--color-mint)", color: "var(--on-fill)" }}>
+          {badge}
         </span>
-      ) : (
-        /* Ücretsiz tarafta ONAY İŞARETİ YOK: aynı işaret iki listede de
-           kullanılınca "premium" ile "zaten sende olan" ayırt edilmiyordu. */
-        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "var(--text-faint)" }} />
       )}
-      <span className={premium ? "text-body" : "muted text-body"}>{text}</span>
-    </div>
+      <span className="text-strong">{label}</span>
+      <span className="text-h2 tabular-nums">{price}</span>
+      <span className="muted text-caption">{sub}</span>
+    </button>
+  );
+}
+
+function Step({ dot, title, text, faded = false }: { dot: string; title: string; text: string; faded?: boolean }) {
+  return (
+    <li className="flex items-baseline gap-2.5">
+      <span className="h-2 w-2 shrink-0 translate-y-[-1px] rounded-full" style={{ background: dot, opacity: faded ? 0.5 : 1 }} />
+      <span>
+        <b>{title}</b> <span className="muted">{text}</span>
+      </span>
+    </li>
   );
 }
 
 /**
- * Promo kodu kutusu — panelden üretilen kodların bozdurulduğu yer.
+ * Kod kutusu — "Kodun var mı?" bağlantısıyla açılıyor.
  *
- * Bulunamayan bir kod DAVET kodu olabilir: uç ikisini ayırıyor
- * (`api/premium/redeem`). Kullanıcı iki kod türü olduğunu bilmiyor ve bilmek
- * zorunda da değil — eline bir kod geçiyor, giriyor.
+ * Premium'u satın alma kararının yanında büyük bir kod kutusu durmuyor:
+ * kutu, kodu olmayan çoğunluğa "benim bilmediğim bir indirim var" dedirtiyordu.
+ * Bağlantı küçük, kutu dokununca açılıyor. Bulunamayan kod DAVET kodu olabilir:
+ * uç ikisini ayırıyor (`api/premium/redeem`).
  */
 function PromoBox({ prefill }: { prefill: string }) {
   const t = useT();
@@ -352,22 +455,14 @@ function PromoBox({ prefill }: { prefill: string }) {
       });
       const data = (await res.json()) as { ok?: boolean; kind?: string; result?: string; days?: number; error?: string };
       if (data.ok && data.kind === "referral") {
-        /* Davet kodu premium AÇMIYOR — bağı kuruyor ve davetçiye arkadaşlık
-           isteği gönderiyor. İki cümle ayrı: istek gerçekten gittiyse onu
-           söylüyoruz, gidemediyse (davetçi istekleri kapatmış, engel, hız
-           sınırı) yalnız bağın kurulduğunu. "İstek gönderildi" demek
-           gönderilmediği hâlde, düzeltilemeyecek bir yanlış olurdu. */
+        /* Davet kodu premium AÇMIYOR — bağı kuruyor; istek gerçekten gittiyse onu söylüyoruz. */
         setMsg({ ok: true, text: t(data.result === "linked" ? "referral.linked_quiet" : "promo.referral_linked") });
       } else if (data.ok) {
         setMsg({ ok: true, text: t("promo.success", { n: data.days ?? 0 }) });
         // Yetki değişti: sayfayı tazele ki durum ve kilitler güncellensin.
         setTimeout(() => window.location.reload(), 1200);
       } else {
-        // Sunucunun sebebi doğrudan anahtar adı; bilinmeyen sebep genel mesaja düşer.
-        // `self` = kendi davet kodu; sunucu bunu `attachReferral`dan gönderiyor
-        // ve iki istemci de tanımıyordu, yani "daha sonra tekrar dene" diyordu.
-        // `store_trial` = grup kodu (2 ay mağaza denemesi): burada bozdurulmaz,
-        // cümle kullanıcıya kodun nereye girileceğini söylüyor (lib/premium/promo).
+        /* Sunucunun sebebi doğrudan anahtar adı; `store_trial` = grup kodu (mobilde bozdurulur). */
         const known = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited", "self", "store_trial"];
         const key = known.includes(data.error ?? "") ? `promo.${data.error}` : "promo.failed";
         setMsg({ ok: false, text: t(key) });
@@ -380,7 +475,7 @@ function PromoBox({ prefill }: { prefill: string }) {
   }
 
   return (
-    <Section title={t("promo.title")}>
+    <div className="card p-4">
       <div className="flex gap-2">
         <input
           value={code}
@@ -389,13 +484,8 @@ function PromoBox({ prefill }: { prefill: string }) {
           aria-label={t("promo.placeholder")}
           autoCapitalize="characters"
           spellCheck={false}
-          /*
-           * ENTER KODU UYGULUYOR. Kutu bir `<form>` içinde değil ve hiçbir
-           * tuş dinleyicisi yoktu: kodu yazıp Enter'a basan kullanıcıda
-           * HİÇBİR ŞEY olmuyordu — ne uygulanıyor ne de bir şey söyleniyor.
-           * Android aynı kutuda `onSubmitEditing` ile uyguluyor
-           * (`PaywallScreen`).
-           */
+          autoFocus={!prefill}
+          /* Enter kodu uyguluyor (Android `onSubmitEditing` ile aynı). */
           enterKeyHint="done"
           onKeyDown={(e) => {
             if (e.key !== "Enter") return;
@@ -415,106 +505,12 @@ function PromoBox({ prefill }: { prefill: string }) {
           {t("promo.apply")}
         </button>
       </div>
-      {/*
-        İKİ YAN DA ANLAMSAL JETON. Başarı yanı sabit `mint-600` basamağıydı,
-        yani temayla değişmiyordu: koyu temada #237a4c koyu kartın (#211a14)
-        üstünde 3.24 veriyordu - küçük yazı eşiği 4.5. Hata yanı zaten anlamsal
-        jetonla (`--color-danger`) yazılıydı ve doğru çalışıyordu, yani tek
-        satırın iki yanı iki ayrı kurala uyuyordu. `--color-success` koyu
-        temada mint-300'e geçiyor: 9.22.
-
-        Ölü yedek de atıldı: `--color-danger` tanımlı (globals.css), yani
-        `#dc2626` hiç çizilmiyordu ama jeton bir gün yeniden adlandırılsa
-        sessizce paletin dışında bir kırmızıya düşerdi. Android iki yanı da
-        tema jetonuyla yazıyor (`PaywallScreen`: successText / dangerText).
-      */}
-      {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. Promo kodunun tutup tutmadığı ödeme kararının ta
-          kendisi. */}
-      {/* HATA `alert`, BASARI `status`. Tek oge iki durumu tasiyordu ve hep
-          `status` diyordu: ekran okuyucu kullanan biri basarisiz bir promo
-          kodunu, sirasi gelince - yani belki hic - duyuyordu. Ev kurali bu
-          ayrimi baska her yerde tutuyor; mobil karsiligi
-          `accessibilityLiveRegion`in seviyesi. */}
+      {/* HATA `alert`, BAŞARI `status` (ekran okuyucu başarısız kodu hemen duysun). */}
       {msg && (
         <p role={msg.ok ? "status" : "alert"} className="mt-2 text-strong" style={{ color: msg.ok ? "var(--color-success)" : "var(--color-danger)" }}>
           {msg.text}
         </p>
       )}
-    </Section>
-  );
-}
-
-/** Davet — kod, bağlantı ve kazanım özeti. */
-function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
-  const t = useT();
-  const [copied, setCopied] = useState(false);
-  /*
-    PAYLAŞILAN ADRES ARTIK `/r/<KOD>`.
-
-    Eskiden `/premium?code=…` paylaşılıyordu: bağlantı paywall'ı açıyor ve kodu
-    kutuya DOLDURUYORDU — bağı kurmak için kullanıcının ayrıca "Uygula"ya
-    basması gerekiyordu, üstelik o kutu iOS'ta hiç çizilmiyor (3.1.1), yani
-    davet edilen iOS kullanıcısı bağı hiç kuramıyordu. `/r/<kod>` bağı
-    DOKUNUŞLA kuruyor ve uygulaması kurulu olanda uygulamada açılıyor.
-  */
-  const url = typeof window !== "undefined" ? `${window.location.origin}/r/${referral.code}` : "";
-
-  async function copy() {
-    try {
-      await navigator.clipboard.writeText(url);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      /* pano yoksa kullanıcı kodu elle kopyalar — kod ekranda duruyor */
-    }
-  }
-
-  return (
-    <Section title={t("referral.title")}>
-      <p className="text-body">{t("referral.explain")}</p>
-      <p className="mt-1 text-caption muted">{t("referral.reward_note")}</p>
-
-      <div className="mt-3 flex items-center gap-2">
-        <code
-          className="flex-1 rounded-tile border px-3 py-2 text-center font-mono text-h3 tracking-[0.3em]"
-          style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
-        >
-          {referral.code}
-        </code>
-        <button
-          type="button"
-          onClick={copy}
-          className="rounded-panel px-4 py-2 text-strong"
-          style={{ background: "var(--surface-2)" }}
-        >
-          {copied ? t("referral.copied") : t("referral.copy_link")}
-        </button>
-      </div>
-
-      <div className="mt-3 flex flex-wrap gap-2 text-caption">
-        {referral.invited === 0 ? (
-          <span className="muted">{t("referral.none_yet")}</span>
-        ) : (
-          <>
-            <Chip text={t("referral.invited", { n: referral.invited })} />
-          </>
-        )}
-      </div>
-    </Section>
-  );
-}
-
-function Chip({ text, tone }: { text: string; tone?: "good" }) {
-  return (
-    <span
-      className="rounded-full px-2.5 py-1 font-semibold"
-      style={
-        tone === "good"
-          ? { background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }
-          : { background: "var(--surface-2)" }
-      }
-    >
-      {text}
-    </span>
+    </div>
   );
 }
