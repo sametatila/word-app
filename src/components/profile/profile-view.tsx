@@ -13,6 +13,8 @@ import { courseName } from "@/lib/courses";
 import { useAvatar } from "@/lib/avatar";
 import { parseAvatar } from "@/lib/avatar-config";
 import { social, tierKey, type LeagueView } from "@/lib/social/client";
+import { ReferralCard } from "@/components/referral-card";
+import type { ReferralStats } from "@/lib/premium/referral-types";
 import { SettingsIcon, BackIcon, ChevronNextIcon, CorrectIcon, EditIcon, MyWordsIcon, MyWritingsIcon, PremiumIcon, StreakIcon } from "@/components/icons";
 
 /**
@@ -35,6 +37,8 @@ export type ProfileStats = {
   username: string | null;
   /** Ustalaşılan kelime — Gelişim kutusunun sayısı. */
   mastered: number;
+  /** Davet kodu ve katılan sayısı; misafirde ve okunamazsa null (kart çizilmiyor). */
+  referral: ReferralStats | null;
 };
 
 type Ach = { id: string; title: string; tier: string; glyph: string; unlocked: boolean; unlockedAt?: string | null };
@@ -169,6 +173,10 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
             <ChevronNextIcon size={22} />
           </Link>
         )}
+
+        {/* DAVET Premium ekranından buraya taşındı (paywall yeniden tasarımı,
+            2026-09-29): davetin karşılığı arkadaşlık bağı, satın almayla ilgisi yok. */}
+        {stats.referral ? <ReferralCard referral={stats.referral} /> : null}
       </div>
     </div>
   );

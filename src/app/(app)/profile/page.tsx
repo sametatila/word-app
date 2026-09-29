@@ -3,6 +3,7 @@ import { getT } from "@/lib/i18n/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { socialMe } from "@/lib/social/profile";
 import { isPremium } from "@/lib/premium";
+import { referralStats } from "@/lib/premium/referral";
 import { ProfileView } from "@/components/profile/profile-view";
 import { titleMeta } from "@/lib/page-meta";
 import { RetryButton } from "@/components/retry-button";
@@ -31,9 +32,11 @@ export default async function ProfilePage() {
     const today = new Date().toISOString().slice(0, 10);
     /* Gelişim kutusunun sayısı ve kullanıcı adı — ikisi de düşerse profil yine
        çiziliyor (sayı 0, alt satırda yalnız kurs). */
-    const [progress, social] = await Promise.all([
+    const [progress, social, referral] = await Promise.all([
       getProgress(user.id, today).catch(() => null),
       socialMe(user.id).catch(() => null),
+      /* Davet hesap istiyor (lib/auth/guest): misafire kod üretilmiyor. */
+      user.guest ? Promise.resolve(null) : referralStats(user.id).catch(() => null),
     ]);
 
     return (
@@ -56,6 +59,7 @@ export default async function ProfilePage() {
           premium: await isPremium(user.id),
           username: social?.username ?? null,
           mastered: progress ? progress.levels.reduce((n, l) => n + l.mastered, 0) : 0,
+          referral,
         }}
       />
     );

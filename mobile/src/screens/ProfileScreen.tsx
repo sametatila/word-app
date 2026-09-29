@@ -24,6 +24,7 @@ import { social, tierName, type LeagueView } from "../api/social";
 import type { Achievement } from "../data/achievements";
 import { useTheme, spacing, radii, softShadow, cardShadow, TIER_COLOR, type Palette } from "../theme";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
+import { ReferralCard } from "../ui/ReferralCard";
 
 /**
  * PROFİL — "sen" ekranı (2026-09-28, Samet'in kararı; taslak F2,
@@ -167,6 +168,11 @@ export function ProfileScreen() {
               <ChevronNextIcon color={colors.onPrimary} size={22} />
             </PressableScale>
           ) : null}
+
+          {/* DAVET Premium ekranından buraya taşındı (paywall yeniden tasarımı,
+              2026-09-29): karşılığı arkadaşlık bağı, satın almayla ilgisi yok.
+              Misafirde sunucu kod üretmiyor (`referral` null). */}
+          {premiumStatus?.referral && !guest ? <ReferralCard referral={premiumStatus.referral} /> : null}
 
           {/* MİSAFİR SİLME YOLU PROFİLDE (mağaza ön inceleme B24). Gizlilik §11,
               şartlar, destek sayfası ve inceleme notları üç dilde "Profil › Misafir

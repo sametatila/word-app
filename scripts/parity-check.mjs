@@ -18643,7 +18643,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "profil karolarinin alanlari olu degil",
     ["alan=" + alanlar.length, "olu=" + (oluAlan.length ? oluAlan.join("+") : "yok")],
-    ["alan=6", "olu=yok"],
+    /* 2026-09-29: `referral` (davet karti Premium ekranindan Profil'e tasindi). */
+    ["alan=7", "olu=yok"],
     "bulunan",
     "beklenen",
   );
