@@ -5,9 +5,9 @@ import path from "node:path";
 import { and, eq, gte, isNotNull, lt, lte, max, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { appSettings, avatarItems, leagueMembers, profiles } from "@/lib/db/schema";
-import { achievementForCourse, unlockedAchievementIds } from "@/lib/achievements";
+import { ACHIEVEMENTS, achievementForCourse, unlockedAchievementIds } from "@/lib/achievements";
 import { isPremium } from "@/lib/premium";
-import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
+import { PART_UNLOCKS, SPECIAL_UNLOCK_KEYS, type UnlockMap } from "@/lib/avatar-unlocks";
 import type { UnlockedPart } from "@/lib/avatar-layers";
 import { FALLBACK_HOST, PRIMARY_ORIGIN } from "@/lib/site";
 import { LEAGUE_TIERS } from "@/lib/social/types";
@@ -119,14 +119,15 @@ export function unlockHint(lang: NativeLang, key: string): string {
  * çizer (kilidin tanımı istemcide tutulmuyor, bkz. `lib/avatar-unlocks`).
  */
 export async function lockedAvatarParts(userId: string, lang: NativeLang): Promise<Record<string, string>> {
-  const [keys, owned, prof, active] = await Promise.all([
+  const [keys, owned, prof, active, map] = await Promise.all([
     avatarUnlockKeys(userId),
     ownedAvatarItemIds(userId),
     db.select({ course: profiles.course }).from(profiles).where(eq(profiles.userId, userId)).limit(1),
     activeAvatarIds(),
+    avatarUnlockMap(),
   ]);
   const out: Record<string, string> = {};
-  for (const [id, key] of Object.entries(PART_UNLOCKS)) {
+  for (const [id, key] of Object.entries(map)) {
     if (active && !active.has(id)) continue;                      // envanterde gösterilmeyen parçanın ipucu da yok
     // İpucu kullanıcının KURSUNDAKİ rozetten: İngilizce öğrenene artikel
     // şapkası için "300 boşluğu doldur" (`achievementForCourse`).
@@ -168,10 +169,10 @@ export async function partsForKeys(keys: Iterable<string>, lang: NativeLang, hos
   const base = avatar3dBaseFor(host);
   const want = new Set(keys);
   if (!base || !want.size) return [];
-  const [cat, active] = await Promise.all([catalogParts().catch(() => null), activeAvatarIds()]);
+  const [cat, active, map] = await Promise.all([catalogParts().catch(() => null), activeAvatarIds(), avatarUnlockMap()]);
   if (!cat) return [];
   const out: UnlockedPart[] = [];
-  for (const [id, key] of Object.entries(PART_UNLOCKS)) {
+  for (const [id, key] of Object.entries(map)) {
     // Envanterde gösterilmeyen parça "yeni aksesuar" diye duyurulmaz.
     const p = want.has(key) && (!active || active.has(id)) ? cat.get(id) : undefined;
     if (p) out.push({ id, name: p.adlar?.[lang] ?? p.ad, icon: `${base}/${p.ikon}` });
@@ -226,6 +227,7 @@ export async function profileLang(userId: string): Promise<NativeLang> {
  * çizilmeye devam eder, kayıtta elenmez (`api/profile`). Kapanan parçanın
  * açılış kutlaması ve kilit ipucu da gösterilmez.
  */
+/** Varsayılan yuva sınırı; panelden değişir (`avatarRules`). */
 export const AVATAR_ACTIVE_PER_SLOT = 11;
 export const AVATAR_SLOTS = ["hat", "glasses", "mustache", "neck", "face", "ear", "back", "bg"] as const;
 /** Her zaman açık: ücretsiz başlangıç parçaları ve varsayılan zemin (`components/avatar` türetilmiş avatar havuzu). */
@@ -282,9 +284,10 @@ export async function saveActiveAvatarIds(raw: unknown, actor: string | null): P
   if (!cat) return { ok: false, error: "no_catalog" };
   const ids = new Set((Array.isArray(raw) ? raw : []).filter((x): x is string => typeof x === "string" && cat.has(x)));
   for (const id of AVATAR_ALWAYS_ACTIVE) if (cat.has(id)) ids.add(id);
+  const { perSlot } = await avatarRules();
   for (const slot of AVATAR_SLOTS) {
     const n = [...ids].filter((id) => cat.get(id)?.slot === slot).length;
-    if (n > AVATAR_ACTIVE_PER_SLOT) return { ok: false, error: "too_many", slot };
+    if (n > perSlot) return { ok: false, error: "too_many", slot };
   }
   const value = { ids: [...ids] };
   await db
@@ -293,6 +296,103 @@ export async function saveActiveAvatarIds(raw: unknown, actor: string | null): P
     .onConflictDoUpdate({ target: appSettings.key, set: { value, updatedBy: actor, updatedAt: new Date() } });
   activeCache = { at: Date.now(), value: ids };
   return { ok: true, ids: value.ids };
+}
+
+/* ------------------------------------------------------------------ */
+/* KURALLAR: yuva sınırı ve açılış koşulları panelden (2026-09-29)      */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Panelden değişen avatar kuralları, `app_settings` › `avatar.rules`:
+ *
+ *   perSlot   kullanıcıya yuva başına gösterilen en fazla parça (1-60)
+ *   unlocks   parça → koşul anahtarı DEĞİŞİKLİKLERİ; "" = herkese açık.
+ *             Yalnız farklar tutuluyor: `PART_UNLOCKS` varsayılan tablo
+ *             olarak kodda kalıyor, yeni parça koşuluyla birlikte gelir.
+ *
+ * Kilidin tanımı yine TEK yerde ve sunucuda: kapı (`api/profile`),
+ * düzenleyicinin ipuçları (`lockedAvatarParts`) ve açılış kutlaması
+ * (`partsForKeys`) hepsi `avatarUnlockMap`ten okuyor. İstemcide kopya yok.
+ * 30 sn süreç önbelleği; kayıt eden süreçte hemen.
+ */
+export type AvatarRules = { perSlot: number; unlocks: Record<string, string> };
+const RULES_KEY = "avatar.rules";
+let rulesCache: { at: number; value: AvatarRules } | null = null;
+
+/** Geçerli koşul anahtarları: rozetler (kursa göre eşdeğeri olanlar tek anahtar) + özel anahtarlar. */
+export function validUnlockKeys(): Set<string> {
+  return new Set([...ACHIEVEMENTS.filter((a) => !a.only?.insteadOf).map((a) => a.id), ...SPECIAL_UNLOCK_KEYS]);
+}
+
+function cleanRules(raw: unknown): AvatarRules {
+  const o = (raw && typeof raw === "object" ? raw : {}) as { perSlot?: unknown; unlocks?: unknown };
+  const n = Number(o.perSlot);
+  const perSlot = Number.isInteger(n) && n >= 1 && n <= 60 ? n : AVATAR_ACTIVE_PER_SLOT;
+  const valid = validUnlockKeys();
+  const unlocks: Record<string, string> = {};
+  if (o.unlocks && typeof o.unlocks === "object") {
+    for (const [id, k] of Object.entries(o.unlocks as Record<string, unknown>)) {
+      if (typeof k === "string" && /^[a-z0-9_-]{1,40}$/i.test(id) && (k === "" || valid.has(k))) unlocks[id] = k;
+    }
+  }
+  return { perSlot, unlocks };
+}
+
+export async function avatarRules(): Promise<AvatarRules> {
+  const now = Date.now();
+  if (rulesCache && now - rulesCache.at < ACTIVE_TTL_MS) return rulesCache.value;
+  try {
+    const [row] = await db.select({ value: appSettings.value }).from(appSettings).where(eq(appSettings.key, RULES_KEY)).limit(1);
+    const value = cleanRules(row?.value);
+    rulesCache = { at: now, value };
+    return value;
+  } catch {
+    return { perSlot: AVATAR_ACTIVE_PER_SLOT, unlocks: {} };      // okunamadı: varsayılan, önbelleğe alınmıyor
+  }
+}
+
+/** Geçerli koşul tablosu: `PART_UNLOCKS` + panel değişiklikleri ("" = koşul yok). */
+export async function avatarUnlockMap(): Promise<UnlockMap> {
+  const { unlocks } = await avatarRules();
+  if (!Object.keys(unlocks).length) return PART_UNLOCKS;
+  const out: Record<string, string> = { ...PART_UNLOCKS };
+  for (const [id, k] of Object.entries(unlocks)) {
+    if (k) out[id] = k;
+    else delete out[id];
+  }
+  return out;
+}
+
+/**
+ * Panelin kural yazması. Sınır, açık parça sayısından küçük olamaz (önce
+ * parça kapatılır); varsayılanla aynı koşul değişiklik olarak tutulmaz.
+ */
+export async function saveAvatarRules(raw: unknown, actor: string | null): Promise<{ ok: true; rules: AvatarRules } | { ok: false; error: string; slot?: string }> {
+  const o = (raw && typeof raw === "object" ? raw : {}) as { perSlot?: unknown; unlocks?: unknown };
+  const n = Number(o.perSlot);
+  if (!Number.isInteger(n) || n < 1 || n > 60) return { ok: false, error: "bad_input" };
+  const valid = validUnlockKeys();
+  const cat = await catalogParts().catch(() => null);
+  if (!cat) return { ok: false, error: "no_catalog" };
+  const unlocks: Record<string, string> = {};
+  for (const [id, k] of Object.entries((o.unlocks && typeof o.unlocks === "object" ? o.unlocks : {}) as Record<string, unknown>)) {
+    if (!cat.has(id) || typeof k !== "string") continue;
+    if (k !== "" && !valid.has(k)) return { ok: false, error: "bad_unlock" };
+    if ((PART_UNLOCKS[id] ?? "") !== k) unlocks[id] = k;
+  }
+  const active = await activeAvatarIds();
+  if (active) {
+    for (const slot of AVATAR_SLOTS) {
+      if ([...active].filter((id) => cat.get(id)?.slot === slot).length > n) return { ok: false, error: "too_many", slot };
+    }
+  }
+  const value: AvatarRules = { perSlot: n, unlocks };
+  await db
+    .insert(appSettings)
+    .values({ key: RULES_KEY, value, updatedBy: actor })
+    .onConflictDoUpdate({ target: appSettings.key, set: { value, updatedBy: actor, updatedAt: new Date() } });
+  rulesCache = { at: Date.now(), value };
+  return { ok: true, rules: value };
 }
 
 /* ------------------------------------------------------------------ */

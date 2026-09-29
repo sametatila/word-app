@@ -10770,7 +10770,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const profil = sil(read("src/app/api/profile/route.ts"));
       sameList(
         "kazanilmamis aksesuar sunucuda eleniyor",
-        ["kapi=" + (/stripLockedParts\(cfg, keys, owned\)/.test(profil) && /avatarUnlockKeys\(userId\)/.test(profil) ? "var" : "YOK")],
+        /* Dördüncü argüman panelden değişen koşul tablosu (`avatarUnlockMap`, 2026-09-29). */
+        ["kapi=" + (/stripLockedParts\(cfg, keys, owned(, map)?\)/.test(profil) && /avatarUnlockKeys\(userId\)/.test(profil) ? "var" : "YOK")],
         ["kapi=var"],
         "bulunan",
         "beklenen",

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { displayNameAllowed } from "@/lib/moderation";
 import { parseAvatar, serializeAvatar } from "@/lib/avatar-config";
 import { avatarPartIds, keepParts, stripLockedParts } from "@/lib/avatar-unlocks";
-import { activeAvatarIds, avatarUnlockKeys, ownedAvatarItemIds } from "@/lib/avatar-items";
+import { activeAvatarIds, avatarUnlockKeys, avatarUnlockMap, ownedAvatarItemIds } from "@/lib/avatar-items";
 import { acceptsCourse, acceptsNativeLang, acceptsPair, coursesForNative, nativeOf } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
@@ -108,8 +108,8 @@ export async function POST(req: Request) {
       etmediği parça kaydedilmiyor.
     */
     if (cfg) {
-      const [keys, owned, active] = await Promise.all([avatarUnlockKeys(userId), ownedAvatarItemIds(userId), activeAvatarIds()]);
-      cfg = stripLockedParts(cfg, keys, owned);
+      const [keys, owned, active, map] = await Promise.all([avatarUnlockKeys(userId), ownedAvatarItemIds(userId), activeAvatarIds(), avatarUnlockMap()]);
+      cfg = stripLockedParts(cfg, keys, owned, map);
       /*
         ENVANTERDE OLMAYAN PARÇA YENİ SEÇİLEMEZ (panelden kapalı, `/admin/avatar`).
         Zaten takılı olan kalır: kapatmak kimsenin avatarını bozmamalı. Önceki

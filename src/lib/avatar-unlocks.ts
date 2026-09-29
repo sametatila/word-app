@@ -90,9 +90,12 @@ export const PART_UNLOCKS: Record<string, string> = {
 /** Özel (rozet olmayan) koşul anahtarları. */
 export const SPECIAL_UNLOCK_KEYS = ["league_1", "league_2", "league_3", "league_4", "league_win", "premium"] as const;
 
+/** Parça kimliği → koşul anahtarı. Varsayılan `PART_UNLOCKS`; panel değişikliği `avatar-items` `avatarUnlockMap`. */
+export type UnlockMap = Readonly<Record<string, string>>;
+
 /** Parça bu kullanıcı için açık mı: koşulu yok, koşulu sağlanmış ya da parça ona ayrıca verilmiş. */
-export function partOpen(id: string, keys: ReadonlySet<string>, owned: ReadonlySet<string>): boolean {
-  const k = PART_UNLOCKS[id];
+export function partOpen(id: string, keys: ReadonlySet<string>, owned: ReadonlySet<string>, map: UnlockMap = PART_UNLOCKS): boolean {
+  const k = map[id];
   return !k || keys.has(k) || owned.has(id);
 }
 
@@ -121,6 +124,6 @@ export function keepParts(cfg: AvatarConfig, keep: (id: string) => boolean): Ava
  * `keys` kullanıcının sağladığı koşul anahtarları (rozetler + lig + premium),
  * `owned` ona ayrıca verilmiş parçalar (`avatar_items`: kampanya, etkinlik).
  */
-export function stripLockedParts(cfg: AvatarConfig, keys: ReadonlySet<string>, owned: ReadonlySet<string> = new Set()): AvatarConfig {
-  return keepParts(cfg, (id) => partOpen(id, keys, owned));
+export function stripLockedParts(cfg: AvatarConfig, keys: ReadonlySet<string>, owned: ReadonlySet<string> = new Set(), map: UnlockMap = PART_UNLOCKS): AvatarConfig {
+  return keepParts(cfg, (id) => partOpen(id, keys, owned, map));
 }
