@@ -62,6 +62,7 @@ const emptyRow = (): Omit<Row, "userId"> => ({
   storeRef: null,
   storePaidAt: null,
   storeEnvironment: null,
+  trialReminderFor: null,
   bonusMinutes: 0,
   bonusUntil: null,
   updatedAt: new Date(),

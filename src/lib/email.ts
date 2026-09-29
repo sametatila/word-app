@@ -80,7 +80,7 @@ async function overMailCap(to: string): Promise<boolean> {
 }
 
 /** Gönderilen postanın türü — olayın `kind` etiketinde geçiyor. */
-export type MailKind = "verify" | "reset" | "pw_changed" | "exists" | "twofa";
+export type MailKind = "verify" | "reset" | "pw_changed" | "exists" | "twofa" | "trial_end";
 
 /**
  * SONUÇ ÖLÇÜLÜYOR, YALNIZ LOG'LANMIYOR.
@@ -275,5 +275,32 @@ export function twoFactorCodeEmail(code: string, lang: NativeLang = DEFAULT_NATI
     subject: tr("email.twofactor.subject"),
     html: codeTemplate(lang, tr("email.twofactor.heading"), tr("email.twofactor.body"), code, tr("email.twofactor.note")),
     text: tr("email.twofactor.text", { code }),
+  };
+}
+
+/**
+ * "Ücretsiz denemen bitiyor" — deneme bitmeden yaklaşık 2 gün önce
+ * (`lib/premium/trial-reminder`). Paywall bu sözü veriyor.
+ *
+ * İptal yolu ALINDIĞI MAĞAZAYA göre: iOS'ta Apple'ın 24 saat kuralı cümlenin
+ * içinde, Android'de Play'in abonelik sayfası; mağaza bilinmiyorsa genel
+ * cümle. Düğme de aynı mağazanın abonelik sayfasına gidiyor.
+ */
+export function trialEndingEmail(input: {
+  lang: NativeLang;
+  date: string;
+  plan: "yearly" | "monthly" | null;
+  platform: "ios" | "android" | null;
+  manageUrl: string;
+}): { subject: string; html: string; text: string } {
+  const { lang, date, platform, manageUrl } = input;
+  const tr = (k: string, vars?: Record<string, string | number>) => translate(lang, k, vars);
+  const plan = tr(input.plan === "monthly" ? "trial.plan_monthly" : input.plan === "yearly" ? "trial.plan_yearly" : "trial.plan_any");
+  const bodyKey = platform === "ios" ? "trial.email_body_ios" : platform === "android" ? "trial.email_body_android" : "trial.email_body_other";
+  const body = tr(bodyKey, { date, plan });
+  return {
+    subject: tr("trial.email_subject", { date }),
+    html: template(lang, tr("trial.email_heading"), escapeHtml(body), tr("trial.email_cta"), manageUrl),
+    text: `${tr("trial.email_heading")}\n\n${body}\n\n${tr("trial.email_cta")}: ${manageUrl}`,
   };
 }

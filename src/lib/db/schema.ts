@@ -1568,6 +1568,13 @@ export const entitlements = pgTable("entitlements", {
    * (lib/premium/revenue) bu sütunla sandbox'ı dışarıda bırakıyor.
    */
   storeEnvironment: text("store_environment"),
+  /**
+   * Deneme bitiş hatırlatmasının gönderildiği deneme bitişi (`store_until`in o
+   * anki değeri). Paywall "bitmeden 2 gün önce hatırlatırız" diyor; tur
+   * (`lib/premium/trial-reminder`) bir denemeye bir kez yazıyor ve bitiş
+   * değişirse (yeni deneme) bu sütun eşleşmediği için yeniden hatırlatıyor.
+   */
+  trialReminderFor: timestamp("trial_reminder_for", { withTimezone: true }),
   /** Harcanmamış bonus bakiyesi (dakika). Promo kodu + elle verilen hediye. */
   bonusMinutes: integer("bonus_minutes").notNull().default(0),
   /** Şu an çalışan bonus penceresinin bitişi. null/geçmiş = bonus çalışmıyor. */

@@ -63,6 +63,9 @@ export function routeFromPush(url: string): PushRoute | null {
   /* Lig artık Topluluk sekmesinin ilk görünümü (2026-09-28); eski adres oraya. */
   if (path.startsWith("/leaderboard")) return { name: "Tabs", params: { screen: "Friends", params: { tab: "league" } } };
   if (path.startsWith("/inbox")) return { name: "Inbox" };
+  /* Deneme bitiş hatırlatması (sunucu `lib/premium/trial-reminder`): durum ve
+     "Aboneliği yönet" Premium ekranında. */
+  if (path === "/premium") return { name: "Paywall" };
   if (path.startsWith("/learn")) {
     const sub = path.slice("/learn/".length).split("/")[0];
     return { name: sub in LEARN_SUB ? LEARN_SUB[sub as keyof typeof LEARN_SUB] : "Tabs" };

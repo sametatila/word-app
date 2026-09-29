@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { cronGate } from "@/lib/cron-auth";
 import { recordCronRun } from "@/lib/cron-runs";
 import { runReminders } from "@/lib/push";
+import { runTrialReminders } from "@/lib/premium/trial-reminder";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs"; // web-push Node API'lerine dayanıyor
@@ -30,12 +31,19 @@ export async function GET(req: Request) {
 
   try {
     const result = await runReminders();
+    /* Deneme bitiş hatırlatması aynı günlük turda (lib/premium/trial-reminder).
+       Kendi hatası öteki hatırlatmaları düşürmesin: ayrı yakalanıyor. */
+    const trial = await runTrialReminders().catch((err) => {
+      console.error("[cron/reminders] trial", err);
+      return null;
+    });
     /* Cümle TEK YERDE kuruluyor: hem log hem koşu kaydı aynı metni
        kullanıyor, iki kopya iki yerde bakım demekti. */
-    const ozet = `hedef ${result.targets} · gönderilen ${result.sent}`;
+    const deneme = trial ? `${trial.targets} (push ${trial.push}, mail ${trial.mail})` : "ERR";
+    const ozet = `hedef ${result.targets} · gönderilen ${result.sent} · deneme sonu ${deneme}`;
     console.log(`[cron/reminders] ${ozet}`);
     void recordCronRun("reminders", true, Date.now() - basladi, ozet);
-    return NextResponse.json(result);
+    return NextResponse.json({ ...result, trial });
   } catch (err) {
     console.error("[cron/reminders]", err);
     void recordCronRun("reminders", false, Date.now() - basladi, String((err as Error).message ?? err));
