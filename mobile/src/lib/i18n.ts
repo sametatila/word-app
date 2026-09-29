@@ -241,7 +241,7 @@ export function onLangChange(fn: () => void): () => void {
 /**
  * Çeviri. `vars` verilirse `{ad}` yer tutucuları doldurulur.
  *
- *   t("learn.greeting_named", { name: "Ada" })   // "Merhaba Ada"
+ *   t("dailyquests.claim_xp", { xp: 20 })   // "+20 XP al"
  */
 export function t(key: string, vars?: Record<string, string | number>): string {
   /* TEKİL BİÇİM — web `lib/i18n/dict` `translate` ile aynı kural, aynı yer.
