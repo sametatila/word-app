@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { adminGate } from "@/lib/admin";
 import { AdminDenied } from "../_ui/ui";
-import { activeAvatarIds, avatar3dBase, AVATAR_ACTIVE_PER_SLOT, AVATAR_ALWAYS_ACTIVE, catalogParts, defaultActiveIds, unlockHint } from "@/lib/avatar-items";
+import { activeAvatarIds, avatar3dBaseFor, AVATAR_ACTIVE_PER_SLOT, AVATAR_ALWAYS_ACTIVE, catalogParts, defaultActiveIds, unlockHint } from "@/lib/avatar-items";
 import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
 import { AvatarAdmin, type AdminPart } from "./avatar-admin";
 
@@ -20,7 +21,10 @@ export const dynamic = "force-dynamic";
 export default async function AdminAvatarPage() {
   const gate = await adminGate();
   if (!gate.ok) return <AdminDenied title="Avatar parçaları" email={gate.email} />;
-  const base = avatar3dBase();
+  /* İkon adresi isteğin geldiği adresten (`avatar3dBaseFor`): panel www'suz
+     lernomi.app'ten açılınca ikonlar www'dan isteniyordu ve CSP (img-src
+     'self') hepsini engelliyordu; küçük resimlerin hiçbiri görünmüyordu. */
+  const base = avatar3dBaseFor((await headers()).get("host"));
   const cat = await catalogParts().catch(() => null);
   const parts: AdminPart[] = cat
     ? [...cat.values()].map((p) => ({
