@@ -92,8 +92,8 @@ function locate(path: string): { section: NavSection; href: string } {
 }
 
 const TONE_STYLE: Record<BadgeTone, React.CSSProperties> = {
-  bad: { background: "color-mix(in srgb, var(--color-rose) 14%, transparent)", color: "var(--color-rose)" },
-  warn: { background: "color-mix(in srgb, var(--color-flame) 16%, transparent)", color: "var(--color-flame)" },
+  bad: { background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)", color: "var(--color-rose)" },
+  warn: { background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" },
   muted: { background: "var(--surface-2)", color: "var(--text-muted)" },
 };
 
