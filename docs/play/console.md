@@ -7,29 +7,31 @@ Açık konsol işleri `docs/store/audit.md` (M7, M8, M9).
 
 ## 1. App content › App access
 
-Seçim: "All or some functionality is restricted". Console **iki ayrı oturum açma grubu** tutuyor
-(2026-09-29'da Console'dan okundu); her grupta ad, kullanıcı adı, parola ve en çok **500
-karakterlik** "Any other information required to access your app" alanı var. Uzun, maddeli
-inceleme notu (yürüyüş modu, yapay zekâ rızası, bildirim, hesap silme) Play'de YOK ve sığmıyor:
-o yalnız App Store'un notu (`docs/appstore/connect.md`). Play'de ön plan servisi kendi beyanında
-(§3), veri güvenliği kendi formunda (`docs/play/data-safety.md`).
+Seçim: "All or some functionality is restricted". Console bir oturum açma grubu tutuyor: ad,
+kullanıcı adı, parola ve en çok **500 karakterlik** "Any other information required to access
+your app" alanı; en alttaki "Bu beyandaki oturum açma bilgileri ... tüm özelliklere tam erişim
+sağlar" kutusu **zorunlu**. Uzun, maddeli inceleme notu (yürüyüş modu, yapay zekâ rızası,
+bildirim, hesap silme) Play'de YOK ve sığmıyor: o yalnız App Store'un notu
+(`docs/appstore/connect.md`). Play'de ön plan servisi kendi beyanında (§3), veri güvenliği kendi
+formunda (`docs/play/data-safety.md`).
 
 | Grup adı | Kullanıcı adı | "Tam erişim" kutusu |
 |---|---|---|
-| Reviewer account - full access | `google-review@lernomi.app` (Premium, sunucuda yalnız inceleme için verildi) | işaretli |
-| Reviewer account - limited free access | `google-review-free@lernomi.app` (Premium'suz: satın alma akışı için) | işaretsiz |
+| Reviewer account - full access | `google-review@lernomi.app` (Premium, sunucuda yalnız inceleme için verildi) | işaretli (zorunlu) |
 
-Parolalar yalnız Console'da; bu belgeye, sohbete ya da loga yazılmaz. Alttaki kutu ("Bu beyandaki
-oturum açma bilgileri ... tüm özelliklere tam erişim sağlar") yalnız Premium hesapta doğru;
-ücretsiz hesapta işaretlenirse beyan yanlış olur.
+**Play'de TEK hesap (2026-09-29).** Premium'suz ikinci hesap (`google-review-free@lernomi.app`)
+Console'a girilmedi: tam erişim kutusu her grupta zorunlu ve Premium'suz hesap için bu beyan
+yanlış olurdu; form da "incelemeciler ücretsiz deneme kullanamaz, hesap açamaz" diyor, yani
+Play sınırlı erişimli hesap istemiyor. Satın alma ekranını görme ihtiyacı Apple'a özgü (2.1,
+`apple-review-free@`). `google-review-free@` üretimde duruyor, kullanılmıyor.
 
-**Neden iki hesap.** Ekran kapalı yürüyüş Premium (ücretsizde `/api/stt` `mode=walk` 403), bu
-yüzden ana hesap Premium; Premium hesapta paywall plan listesini göstermez, satın alma ikinci
-hesapla denenir. İki hesap üretimde açık ve e-postaları doğrulanmış.
+Parolalar yalnız Console'da; bu belgeye, sohbete ya da loga yazılmaz.
 
-Düğme adları İngilizce arayüzden birebir (`mobile/src/i18n/en.ts`: `auth.already_have_account`,
-`profile.go_premium`). Metin değişirse 500 sınırı Console'un kendi sayacıyla ölçülür (satır sonları
-dahil).
+**Neden hesap Premium.** Ekran kapalı yürüyüş Premium (ücretsizde `/api/stt` `mode=walk` 403);
+tam erişim beyanı ancak Premium hesapla doğru. Hesap üretimde açık, e-postası doğrulanmış.
+
+Düğme adları İngilizce arayüzden birebir (`mobile/src/i18n/en.ts`: `auth.already_have_account`).
+Metin değişirse 500 sınırı Console'un kendi sayacıyla ölçülür (satır sonları dahil).
 
 **Full access** (canlı, 485 karakter):
 
@@ -39,16 +41,6 @@ Sign-in: on any onboarding step tap "Already have an account? Sign in", or answe
 Email and password only - no 2-Step Verification, one-time code, biometrics or location restriction. The e-mail address is already verified.
 
 The account has full Premium access, so no purchase is needed. Microphone permission is requested for speaking exercises; allow or deny it, the rest stays available. An internet connection is required.
-```
-
-**Limited free access** (2026-09-29'da yazıldı, ~478 karakter; Console'a girilecek):
-
-```text
-Sign-in: on any onboarding step tap "Already have an account? Sign in", or answer the 5 onboarding questions and the sign-in screen follows.
-
-Email and password only - no 2-Step Verification, one-time code, biometrics or location restriction. The e-mail address is already verified.
-
-This account has NO Premium, so the purchase flow can be reviewed: Profile › "Go Premium" shows both subscriptions, prices, free trial terms and auto-renewal. An internet connection is required.
 ```
 
 ## 2. Google ile giriş — OAuth istemcileri

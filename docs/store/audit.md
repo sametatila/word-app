@@ -124,7 +124,7 @@ AND-4 → M9 · AND-6 → S10 · TEC-1 → T4 · LEG-13 → G4.
 | Madde | Konu | Durum | Kanıt |
 |---|---|---|---|
 | X-1 | Crashlytics hiçbir beyanda yok | ✅ | İki platformdan kaldırıldı (1ba3e5ce); politika birinci taraf hata raporunu anlatıyor; iOS manifestine Crash/Diagnostic |
-| X-3 | İnceleme hesabı Premium, satın alma ekranına ulaşılamıyor | ✅ | apple-review@ (Premium) + apple-review-free@ ASC'de; google-review@ + google-review-free@ üretimde, Play › Uygulama erişimine M8 ile girecek. Parolalar yalnız konsollarda |
+| X-3 | İnceleme hesabı Premium, satın alma ekranına ulaşılamıyor | ✅ | apple-review@ (Premium) + apple-review-free@ ASC'de; Play › Uygulama erişiminde yalnız google-review@ (tam erişim kutusu zorunlu; Premium'suz hesap Play'e girilmedi, 2026-09-29, `docs/play/console.md` §1); google-review-free@ üretimde, kullanılmıyor. Parolalar yalnız konsollarda |
 | X-6 | Mağaza adı üç yerde farklı | ✅ | 97222dce: uygulama adı Lernomi, mağaza adı "Lernomi: Almanca Öğren A1-C1" |
 | X-9 | Tanıtım sayfası ve web paywall'ı mağazayla çelişiyor | ✅ | 5a695c3e, fd915f8b, f5c05c0c |
 | X-10 | Belgelerde yanlış durum bilgileri | ✅ | bc4cf4f2 |
