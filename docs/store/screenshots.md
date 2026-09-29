@@ -43,8 +43,8 @@ bariz bir hatayla (ör. `seit drei Jahre` → `Jahren`) yeniden yazılır. Sayfa
   (Java gerekir). Komut `~/.maestro/bin/maestro`.
 - Hesap: **`screenshots@lernomi.app`**, parola `.secrets/screenshots/account` (yerel, git dışı).
   Üretimde, yalnız ekran görüntüsü için; e-postası veritabanında doğrulandı (Samet'in onayıyla,
-  2026-09-28). Ücretsiz hesap: seviye başına 2 Konuşma ve 2 Yazma, 1 deneme sınavı; hak biterse
-  kilitli görünür. Premium vermek üretim veritabanına yazmak demek, Samet'e sorulur.
+  2026-09-28). Premium (2026-12-28'e dek, bonus): kareler kilitsiz ve kota şeridi olmadan çekilir.
+  Süre dolunca yeniden vermek üretim veritabanına yazmak demek, Samet'e sorulur.
 - Hesapta B1 seçili (Ayarlar › Öğrenme › Seviye). Onboarding'deki seviye seçimi hesaba geçmiyor.
 
 ## Akış
@@ -74,14 +74,17 @@ node scripts/shots/to-webp.mjs <set>      # → public/landing/<set>/<ekran>-<te
 ve `landing.ts` `SCREEN_SET`e set yazılır. Sayfayı yerelde görmek: `npx next dev -p 3100`,
 Playwright ile `localhost:3100` (Accept-Language tr/en/de) açık ve koyu tema, 1440 ve 390 genişlik.
 
-## Durum (2026-09-28)
+## Durum
 
-| Set | Ekranlar | Not |
-|---|---|---|
-| `tr-de` | 7/7 | eski sıcak palet (B paletinden önce) |
-| `en-de` | 7/7 | eski sıcak palet |
-| `de-en` | 7/7 | B paleti |
-| `tr-en` | 6/7 | `conversation` yok: hesabın B1 konuşma hakkı bitti; Premium vermek üretime yazmak, Samet'e sorulur. Sayfa bu seti henüz kullanmıyor |
+Sayfadaki WebP'ler (2026-09-28): `tr-de` ve `en-de` 7/7 eski sıcak paletle, `de-en` 7/7 B paletiyle.
+`tr-en` sayfada KULLANILMIYOR (`SCREEN_SET` dil başına tek set; "Diller" bölümü yalnız metin).
+
+Mağaza çekimi (2026-09-29, `.shots/store-kit/raw/`, yeni build): yapay zekâ istemeyen ekranların hepsi
+dört cihazda ve üç sette çekildi (Patika heceleme düzeltmesinden sonra; iPhone tanıtım ekranları açık+koyu,
+`tr-en` 7/7 dahil). Yapay zekâ isteyen iki ekran bekliyor: `conversation` (tr-de dört cihazda yankı hatası
+yüzünden yeniden, en-de üç cihaz, de-en dört cihaz) ve `mock-result`/`mock-solutions` (en-de, de-en).
+Sebep sağlayıcı kotası (aşağıda "Yapay zekâ kotası"). Konuşma yeniden çekilince tanıtım WebP'leri de tek
+seferde yenilenir: yalnız bir kısmını yenilemek sayfada iki paleti yan yana koyar.
 
 ## Tuzaklar (2026-09-28'de yaşandı)
 
@@ -97,8 +100,61 @@ Playwright ile `localhost:3100` (Accept-Language tr/en/de) açık ve koyu tema, 
 - Sohbette her gönderimden sonra klavye kapanıyor: `say` kutuya her seferinde dokunuyor.
 - Yürüyüş modu simülatörde ses duyamadığı için birkaç saniyede "Turu duraklattım"a düşer:
   `walk-intro` (başla ekranı) çekilir, tur ekranı çekilmez.
-- Günlük turda kartlar İngilizce ikinci satır taşır (bilinçli, `docs/plan/native-language.md`);
-  vitrin karesi olarak günlük tur yerine ana ekrandaki günlük tur kutusu kullanılıyor.
+- Günlük turda kartlar anadilde ikinci satır taşır (bilinçli, `docs/plan/native-language.md`).
+  Tanıtım sayfası ana ekrandaki günlük tur kutusunu, mağaza karesi "boşluğu doldur" kartını kullanıyor.
 - Uygulamada hukuki güncelleme bildirimi ya da bildirim izni penceresi çıkarsa önce kapatılır;
   karede sistem penceresi kalmaz.
 - Simülatörü iş bitince kapat: `xcrun simctl shutdown all` (Samet toplantıdayken açık kalmasın).
+
+## Mağaza kareleri: dört cihaz (2026-09-29)
+
+Mağaza karelerinin ham ekranları iPhone 18 Pro Max ve iPad Pro 13" (M5) simülatörü, Android telefon
+(1080×2400) ve tablet (2560×1600) emülatöründe, imzalı release yapısıyla çekiliyor. Ekran listesi ve
+kurallar `docs/store/README.md`; üretici `npm run store:frames -- --raw <kök>`. Çekim kiti
+`.shots/store-kit/` (git dışı, yerel): cihaz kimlikleri betiklerin içinde.
+
+| Betik | Ne yapar |
+|---|---|
+| `d.sh <iphone\|ipad\|aphone\|atab> <komut>` | Maestro sarmalayıcı: `launch`, `restart`, `tap x y`, `tapText`, `type`, `swipe`, `back`, `flow`, `peek`, `shot` |
+| `cap.sh <cihaz> <set> <ekran> [both]` | `raw/<cihaz>/<set>/<tema>/<ekran>.png`; `both` açık + koyu |
+| `ocr.mjs <cihaz> [find\|tap <regex>]` | Ekranı macOS Vision ile okur; metne göre dokunur (koordinat tahmini yok) |
+| `daily-to-blank.sh` | Günlük turda kart türünü okuyup "boşluğu doldur" kartına kadar ilerler |
+| `walk-burst.sh` (Android), `walk-burst-ios.sh` | Yürüyüş turunda art arda çekip uygun kareyi seçer |
+| `conv-retry.sh` | Konuşma adımını baştan başlatır, anlatımı geçer (`lecture-*.yaml`), cümleyi yazar |
+| `mocktask.sh` + `texts-de.sh` | Yazma görevini yazıp değerlendirtir |
+| `sb.sh`, `demo.sh <seri>` | iOS durum çubuğu 9:41; Android demo modu (9:41, tam pil, bildirim yok) |
+
+Sıra ve ayarlar:
+- **Dil ve kurs HESABA bağlı.** Bir cihazda Ayarlar › Uygulama'dan dili değiştirmek, uygulama yeniden
+  açılınca öteki cihazları da değiştirir; Almanca arayüze geçince kurs kendiliğinden İngilizce olur. İş
+  KURSA göre sıralanır: Almanca kursla tr-de ve en-de, sonra İngilizce kursla de-en ve tr-en.
+- **iOS simülatörünün sistem dili setin diline** alınır, yoksa durum çubuğu başka dilde tarih gösterir
+  (iPad "29 Eyl Sal", iPhone'da saat biçimi): `xcrun simctl spawn <udid> defaults write -g AppleLanguages
+  -array en-US` + `AppleLocale en_US`, sonra `shutdown` + `boot` + `sb.sh`. Yeniden açılan iPad DİKEY
+  gelir: Maestro `- setOrientation: LANDSCAPE_LEFT`.
+- Build başına bir kez hukuki güncelleme bildirimi çıkar; kapatılır, karede kalmaz.
+
+Tuzaklar:
+- Android'de adb sunucusu Maestro koşusundan sonra yeniden başlıyor; betikler `adb wait-for-device`
+  ile bekliyor. Uygulamayı açmak için `am start -W -n com.lernomi.learn/com.lernomi.MainActivity`.
+- Android'de Maestro `hideKeyboard` geri tuşu gibi davranıp sohbetten ÇIKARIYOR; kullanılmaz.
+- Android durum çubuğunda mikrofon açılınca ~1 sn yeşil gösterge çıkar; `walk-burst.sh` piksel
+  denetimiyle göstergesiz kareyi seçer. iOS simülatörü Almanca yerelde mikrofon aşamasını hemen "Nicht
+  verstanden"a düşürüyor; yürüyüş karesinde büyüteç yalnız "… ohne Bildschirm" etiketini aldığı için
+  etiketin göründüğü kare yeterli.
+- Yarım bırakılmış deneme "kaldığı yerden açıldı" notuyla açılır: temiz görev ekranı için yeni deneme.
+- Konuşmada kaldığı yerden dönülen sohbet düzeltme satırını ve önerileri göstermez: kare her zaman
+  adımı baştan başlatıp tek cümle yazarak çekilir. Rol metnini oku: yankı, yer tutucu ad ya da
+  dilbilgisi hatası olan kare kullanılmaz.
+- Deneme sonucundaki "Yapılacaklar" özeti sınav bitince BİR KEZ üretilir. Sağlayıcı o an yoksa kurala
+  düşer ve "yapay zekâ değerlendirmesi şu an kullanılamıyor" notu çıkar; o sonuç kareye konmaz, sınav
+  yeniden yazılır.
+
+Yapay zekâ kotası:
+- Konuşma, yazma değerlendirmesi ve deneme özeti üretimdeki sohbet sağlayıcılarını (Mistral → Groq →
+  Cerebras) kullanır; `npm run test:chat` ve `assess-eval` AYNI anahtarları harcar. 2026-09-29'da
+  Mistral hesap düzeyinde 429, Cerebras 402 verdi ve Groq'un günlük token penceresi (200 bin) doldu;
+  yapay zekâlı kareler çekilemedi. Çekim gününden önce ölçüm betikleri koşulmaz; kota şöyle okunur:
+  `ssh lernomi "sudo -u postgres psql -d lernomi -At -c \"select provider, ok, status, count(*) from
+  ai_usage where day = current_date group by 1,2,3\""`.
+

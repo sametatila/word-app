@@ -14,8 +14,8 @@ yolla mağaza. Açık konsol işleri `docs/store/audit.md`'de. Ekran görüntül
 ## Vitrin kararları (2026-09-25)
 
 Samet'le soru-cevapla verildi. `plan/frames.json` bu bölümün kare sırasını ve altyazılarını
-uyguluyor; çelişirse bu bölüm geçerli. Kareler henüz ÇEKİLMEDİ: önce tasarım çalışması yapılacak (Samet), çekim bu
-tanıma göre olacak. Karar değişirse bu bölüm güncellenir, yeni belge açılmaz.
+uyguluyor; çelişirse bu bölüm geçerli. Kareler bu tanımla üretiliyor (durum aşağıda "Açık"). Karar değişirse
+bu bölüm güncellenir, yeni belge açılmaz.
 
 **Konumlandırma.** Lernomi bir *dil* uygulaması; Almanca ilk ve en güçlü kurs (vitrin adı
 "Almanca Öğren A1-C1" ASO için), İngilizce ikinci planda ama açıklamada anılır: "tek dil
@@ -288,7 +288,11 @@ seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yaz�
 Play iki üründe girildi ve geri okundu (2026-09-25). ASC iki üründe üç dilde girildi ve geri
 okundu (2026-09-27, Samet çalıştırdı; denetim S9).
 
-**Açık:** ekran görüntüleri, öne çıkan grafik ve video tasarımdan sonra (denetim M3).
+**Açık (2026-09-29):** tr-TR seti (25 kare, öne çıkan grafik dahil) üretildi; konuşma karesi yankı
+düzeltmesinden (249e14886) sonra yeniden çekilecek. en-US ve de-DE'de yapay zekâ istemeyen bütün ham
+ekranlar hazır; konuşma ve deneme sonucu kareleri sağlayıcı kotası yüzünden bekliyor
+(`docs/store/screenshots.md` "Durum"). Mağazaya yükleme Samet'in onayıyla. App Preview videosu ayrı iş
+(denetim M3).
 
 ## Yeniden üretmek
 
