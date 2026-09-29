@@ -4,7 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { PremiumConfig } from "@/lib/premium/gates";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, Linkify, BTN, DANGER, DataTable, Field, FIELD, FIELD_AREA, FIELD_STYLE, PageHeader, Panel, PanelGrid, TONE } from "../_ui/ui";
+import { AdminPage, Linkify, BTN, DANGER, DataTable, Field, FIELD, FIELD_AREA, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 type CodeRow = {
@@ -81,6 +81,8 @@ export function PremiumAdmin({
   iosReady: { monthly: boolean; yearly: boolean };
 }) {
   const [cfg, setCfg] = useState<PremiumConfig>(config);
+  const [saved, setSaved] = useState<PremiumConfig>(config);
+  const dirty = JSON.stringify(cfg) !== JSON.stringify(saved);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState("");
 
@@ -115,7 +117,8 @@ export function PremiumAdmin({
       // sınır dışına taşan bir değer kırpılmışsa formda kırpılmış hâli görünmeli,
       // yoksa kullanıcı kaydettiğini sanıp başka bir değerle çalışır.
       setCfg(r.config as PremiumConfig);
-      setMsg("Kaydedildi — en geç 30 saniyede üç platformda geçerli.");
+      setSaved(r.config as PremiumConfig);
+      setMsg("Kaydedildi.");
     }
   }
 
@@ -136,60 +139,19 @@ export function PremiumAdmin({
         description="Ücretsiz kotalar, adil kullanım tavanı, deneme sınavı paketleri, plan bilgisi ve promo kodları. Her değer canlıda geçerli, kod ya da mağaza sürümü gerekmez. Tek bir hesaba premium vermek o kullanıcının sayfasında (listeden seç: /admin/users). Gelir ve huniler: /admin/revenue"
       />
 
-      {/* SINIRLAR — kaydet çubuğu yalnız bu grubun içinde yapışkan: form
-          bitince yerine oturuyor, alttaki hesap ve kod bölümlerinin üstüne
-          binmiyor (eskiden bütün sayfa boyunca kartların üstünü örtüyordu). */}
-      <div className="space-y-5">
-        <PanelGrid>
-          <Panel title="Ücretsiz katman" hint={<>Kural (2026-09-25): her yüzeyde <b>taban hak</b>; üstüne her dilim, açık hakların hepsi <b>bitirilince VE</b> seri eşiğe varınca açılır — izin verilen = taban + ek hak × k, k = min(⌊en uzun seri ÷ seri adımı⌋, bitirilmiş dilim). Patika Konuşma, Patika Yazma ve Beceriler seviye başına ve <b>ayrı sayaç</b>. 0 yazmak “ücretsizde hiç yok” demek.</>} span>
-            <Grid>
-              <Num label="Patika Konuşma adımı (seviye başına)" v={cfg.free.conversationsPerLevel} on={(n) => num(["free", "conversationsPerLevel"], n)} />
-              <Num label="Patika Yazma (seviye başına)" v={cfg.free.pathWritingPerLevel} on={(n) => num(["free", "pathWritingPerLevel"], n)} />
-              <Num label="Beceriler konuşma (seviye başına)" v={cfg.free.speakingSkills} on={(n) => num(["free", "speakingSkills"], n)} />
-              <Num label="Beceriler yazma (seviye başına)" v={cfg.free.writingSkills} on={(n) => num(["free", "writingSkills"], n)} />
-              <Num label="Seri adımı (gün)" v={cfg.free.streakStep} on={(n) => num(["free", "streakStep"], n)} />
-              <Num label="Dilim başına ek hak (Patika, Beceriler)" v={cfg.free.streakBonus} on={(n) => num(["free", "streakBonus"], n)} />
-              <Num label="Kademe tavanı (0 = sınırsız)" v={cfg.free.maxTiers} on={(n) => num(["free", "maxTiers"], n)} />
-              <Num label="Deneme sınavı (seviye başına)" v={cfg.free.mockExamsPerLevel} on={(n) => num(["free", "mockExamsPerLevel"], n)} />
-              <Num label="Deneme sınavı, dilim başına ek sınav" v={cfg.free.mockStreakBonus} on={(n) => num(["free", "mockStreakBonus"], n)} />
-              <Num label="Günde yürüyüş turu (ekran açık)" v={cfg.free.walkRoundsPerDay} on={(n) => num(["free", "walkRoundsPerDay"], n)} />
-            </Grid>
-          </Panel>
-
-          <Panel title="Premium — kötüye kullanım tavanı" hint={<>Bu sayılar paywall’da kullanıcıya <b>yazılıyor</b>. Tavanı olan bir şeyi “sınırsız” diye sunmak App Store 3.1.2 ve Play’in beyan kurallarına aykırı. Amaç normal kullanıcıyı durdurmak değil, tek bir hesabın bütçeyi yakmasını engellemek. Sohbet mesajı tavanı sabit (kodda, günde 300).</>}>
-            <Grid>
-              <Num label="Günde yürüyüş turu" v={cfg.fairUse.walkRoundsPerDay} on={(n) => num(["fairUse", "walkRoundsPerDay"], n)} />
-              <Num label="Günde AI değerlendirmesi" v={cfg.fairUse.aiPracticePerDay} on={(n) => num(["fairUse", "aiPracticePerDay"], n)} />
-            </Grid>
-          </Panel>
-
-          <Panel title="Deneme sınavı paketleri" hint="Premium: paketteki deneme sınavlarının hepsi bitirilince sonraki paket açılır. Başarı yüzdesi koşulu 2026-09-25’te kalktı.">
-            <Grid>
-              <Num label="Paket boyu (deneme sınavı)" v={cfg.mock.packSize} on={(n) => num(["mock", "packSize"], n)} />
-            </Grid>
-          </Panel>
-
-          <Panel title="Planlar ve fiyat bilgisi" hint={<><b>Buradaki fiyatlar mağazadaki fiyatı değiştirmez.</b> Mobilde fiyat mağazadan gelir (politika gereği); bu tablo web vitrini ve mağaza kurulumunda referans. Değiştirirsen App Store Connect ve Play Console’daki tutarları da elle eşitle.</>} span>
-            <Grid>
-              <Txt label="Aylık ürün kimliği" v={cfg.plans.productMonthly} on={(v) => setCfg({ ...cfg, plans: { ...cfg.plans, productMonthly: v } })} />
-              <Txt label="Yıllık ürün kimliği" v={cfg.plans.productYearly} on={(v) => setCfg({ ...cfg, plans: { ...cfg.plans, productYearly: v } })} />
-              <Num label="Ücretsiz deneme (gün)" v={cfg.plans.trialDays} on={(n) => setCfg({ ...cfg, plans: { ...cfg.plans, trialDays: n } })} />
-            </Grid>
-            <div className="mt-3 flex flex-col gap-2">
-              {cfg.plans.prices.map((p, i) => (
-                <div key={i} className="grid grid-cols-2 gap-2 @xl:grid-cols-4">
-                  <Txt label="Bölge" v={p.region} on={(v) => editPrice(i, { region: v })} />
-                  <Txt label="Aylık" v={p.monthly} on={(v) => editPrice(i, { monthly: v })} />
-                  <Txt label="Yıllık" v={p.yearly} on={(v) => editPrice(i, { yearly: v })} />
-                  <Num label="Kazanç %" v={p.yearlySavePct} on={(n) => editPrice(i, { yearlySavePct: n })} />
-                </div>
-              ))}
-            </div>
-          </Panel>
-        </PanelGrid>
-
-        <div className="sticky bottom-3 z-10 flex flex-wrap items-center gap-3 rounded-panel border p-3" style={{ borderColor: "var(--border)", background: "var(--surface)", boxShadow: "var(--shadow-soft)" }}>
-          <button type="button" onClick={save} disabled={busy} className={BTN.primary}>Sınırları kaydet</button>
+      {/* SINIRLAR. Kaydet çubuğu ÜSTTE ve yapışkan: değişiklik varsa görünür
+          biçimde söylüyor. Alttaydı ve fiyat satırlarının üstüne biniyordu. */}
+      <div
+        className="sticky top-0 z-10 flex flex-wrap items-center gap-3 rounded-panel border px-4 py-2.5 sm:top-14"
+        style={{ borderColor: dirty ? "var(--color-brand)" : "var(--border)", background: "var(--surface)", boxShadow: dirty ? "var(--shadow-soft)" : undefined }}
+      >
+        <span className="text-caption" style={{ color: dirty ? "var(--text)" : "var(--text-muted)" }}>
+          {dirty ? <b>Kaydedilmemiş değişiklik var</b> : "Sınırlar kayıtlı"}
+          <span className="muted"> · kayıttan en geç 30 sn sonra üç platformda geçerli</span>
+        </span>
+        {msg ? <span className="text-caption text-strong" role="status" style={{ color: bad ? TONE.bad : TONE.ok }}><Linkify text={msg} /></span> : null}
+        <span className="ml-auto flex flex-wrap items-center gap-2">
+          {dirty ? <button type="button" onClick={() => { setCfg(saved); setMsg(""); }} disabled={busy} className={BTN.secondary}>Vazgeç</button> : null}
           <TwoStep
             label="Varsayılanlara dön"
             confirm="Evet, tüm premium ayarları sıfırlansın"
@@ -198,19 +160,79 @@ export function PremiumAdmin({
               const r = await post({ action: "reset_config" });
               if (r?.config) {
                 setCfg(r.config as PremiumConfig);
+                setSaved(r.config as PremiumConfig);
                 setMsg("Varsayılanlara dönüldü.");
               }
             }}
           />
-          {msg ? <span className="text-strong" role="status" style={{ color: bad ? TONE.bad : TONE.ok }}><Linkify text={msg} /></span> : null}
+          <button type="button" onClick={save} disabled={busy || !dirty} className={BTN.primary}>Sınırları kaydet</button>
+        </span>
+      </div>
+
+      <Panel title="Ücretsiz katman" hint={<>Her yüzeyde <b>taban hak</b>; üstüne her dilim, açık hakların hepsi <b>bitirilince VE</b> seri eşiğe varınca açılır: izin verilen = taban + ek hak × k, k = min(⌊en uzun seri ÷ seri adımı⌋, bitirilmiş dilim). Patika ve Beceriler seviye başına, <b>ayrı sayaç</b>. 0 = ücretsizde hiç yok.</>}>
+        <div className="grid gap-x-10 @4xl:grid-cols-2">
+          <Settings title="Seviye başına taban hak">
+            <Row label="Patika konuşma adımı" v={cfg.free.conversationsPerLevel} on={(n) => num(["free", "conversationsPerLevel"], n)} />
+            <Row label="Patika yazma" v={cfg.free.pathWritingPerLevel} on={(n) => num(["free", "pathWritingPerLevel"], n)} />
+            <Row label="Beceriler: konuşma" v={cfg.free.speakingSkills} on={(n) => num(["free", "speakingSkills"], n)} />
+            <Row label="Beceriler: yazma" v={cfg.free.writingSkills} on={(n) => num(["free", "writingSkills"], n)} />
+            <Row label="Deneme sınavı" v={cfg.free.mockExamsPerLevel} on={(n) => num(["free", "mockExamsPerLevel"], n)} />
+          </Settings>
+          <Settings title="Seriyle açılan ek hak">
+            <Row label="Seri adımı" help="kaç günlük seri bir dilim açar" unit="gün" v={cfg.free.streakStep} on={(n) => num(["free", "streakStep"], n)} />
+            <Row label="Dilim başına ek hak" help="Patika ve Beceriler" v={cfg.free.streakBonus} on={(n) => num(["free", "streakBonus"], n)} />
+            <Row label="Dilim başına ek deneme sınavı" v={cfg.free.mockStreakBonus} on={(n) => num(["free", "mockStreakBonus"], n)} />
+            <Row label="Kademe tavanı" help="0 = sınırsız" v={cfg.free.maxTiers} on={(n) => num(["free", "maxTiers"], n)} />
+            <Row label="Günde yürüyüş turu" help="ekran açıkken" v={cfg.free.walkRoundsPerDay} on={(n) => num(["free", "walkRoundsPerDay"], n)} />
+          </Settings>
         </div>
+      </Panel>
+
+      <div className="grid items-stretch gap-5 @5xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+        <Panel title="Premium sınırları" hint={<>Paywall’da kullanıcıya <b>yazılıyor</b>: tavanı olan şeyi “sınırsız” diye sunmak App Store 3.1.2 ve Play beyan kurallarına aykırı. Amaç tek hesabın bütçeyi yakmasını engellemek. Sohbet mesajı tavanı kodda (günde 300).</>}>
+          <Settings>
+            <Row label="Günde yürüyüş turu" v={cfg.fairUse.walkRoundsPerDay} on={(n) => num(["fairUse", "walkRoundsPerDay"], n)} />
+            <Row label="Günde yapay zekâ değerlendirmesi" v={cfg.fairUse.aiPracticePerDay} on={(n) => num(["fairUse", "aiPracticePerDay"], n)} />
+            <Row label="Deneme sınavı paket boyu" help="paketin hepsi bitince sonraki açılır" v={cfg.mock.packSize} on={(n) => num(["mock", "packSize"], n)} />
+          </Settings>
+        </Panel>
+
+        <Panel title="Planlar ve fiyat bilgisi" hint={<><b>Mağazadaki fiyatı değiştirmez.</b> Mobilde fiyat mağazadan gelir; bu tablo web vitrini ve mağaza kurulumu için referans. Değiştirirsen App Store Connect ve Play Console’daki tutarları da eşitle.</>}>
+          <div className="grid items-end gap-3 @xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_8rem]">
+            <Txt label="Aylık ürün kimliği" v={cfg.plans.productMonthly} on={(v) => setCfg({ ...cfg, plans: { ...cfg.plans, productMonthly: v } })} />
+            <Txt label="Yıllık ürün kimliği" v={cfg.plans.productYearly} on={(v) => setCfg({ ...cfg, plans: { ...cfg.plans, productYearly: v } })} />
+            <Num label="Deneme (gün)" v={cfg.plans.trialDays} on={(n) => setCfg({ ...cfg, plans: { ...cfg.plans, trialDays: n } })} />
+          </div>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[28rem] text-caption">
+              <thead>
+                <tr className="muted text-micro uppercase tracking-eyebrow">
+                  <th className="pb-1.5 pr-2 text-left font-semibold">Bölge</th>
+                  <th className="pb-1.5 pr-2 text-left font-semibold">Aylık</th>
+                  <th className="pb-1.5 pr-2 text-left font-semibold">Yıllık</th>
+                  <th className="pb-1.5 text-left font-semibold">Yıllıkta kazanç %</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cfg.plans.prices.map((p, i) => (
+                  <tr key={i}>
+                    <td className="py-1 pr-2"><input aria-label={`Bölge ${i + 1}`} value={p.region} onChange={(e) => editPrice(i, { region: e.target.value })} className={FIELD} style={FIELD_STYLE} /></td>
+                    <td className="py-1 pr-2"><input aria-label={`${p.region} aylık`} value={p.monthly} onChange={(e) => editPrice(i, { monthly: e.target.value })} className={FIELD} style={FIELD_STYLE} /></td>
+                    <td className="py-1 pr-2"><input aria-label={`${p.region} yıllık`} value={p.yearly} onChange={(e) => editPrice(i, { yearly: e.target.value })} className={FIELD} style={FIELD_STYLE} /></td>
+                    <td className="py-1"><input aria-label={`${p.region} yıllıkta kazanç yüzdesi`} type="number" value={p.yearlySavePct} onChange={(e) => editPrice(i, { yearlySavePct: Number(e.target.value) })} className={`${FIELD} tabular-nums`} style={FIELD_STYLE} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Panel>
       </div>
 
       <TrialCodesSection codes={trialCodes} iosReady={iosReady} post={post} busy={busy} />
 
       <CodesSection codes={codes} post={post} busy={busy} />
 
-      <PanelGrid>
+      <div className="grid items-stretch gap-5 @4xl:grid-cols-2">
         <Panel title="Referans (davet)">
           <p className="muted text-caption">
             Burada ayarlanacak bir şey yok. Davetin karşılığı <b>premium süresi değil</b>:
@@ -232,7 +254,7 @@ export function PremiumAdmin({
             ])}
           />
         </Panel>
-      </PanelGrid>
+      </div>
     </AdminPage>
   );
 
@@ -414,9 +436,9 @@ function TrialCodesSection({
     >
       <Grid>
         <Txt label="Kampanya adı" v={campaign} on={setCampaign} />
-        <Txt label="Kod öneki (isteğe bağlı, ör. WA)" v={prefix} on={setPrefix} />
+        <Txt label="Kod öneki (ör. WA)" v={prefix} on={setPrefix} />
         <Num label="Kod başına kullanım" v={maxUses} on={setMaxUses} />
-        <Field label="Son kullanma (isteğe bağlı)">
+        <Field label="Son kullanma (boş = süresiz)">
           <input aria-label="Son kullanma" type="date" value={expires} onChange={(e) => setExpires(e.target.value)} className={FIELD} style={FIELD_STYLE} />
         </Field>
       </Grid>
@@ -522,8 +544,41 @@ function TrialCodesSection({
   );
 }
 
+/**
+ * Form ızgarası: alanlar ALT kenardan hizalı (etiket iki satıra kırılsa da
+ * giriş kutuları aynı çizgide); kartın genişliğine göre 1 / 2 / 4 sütun.
+ */
 function Grid({ children }: { children: React.ReactNode }) {
-  return <div className="grid grid-cols-[repeat(auto-fill,minmax(11rem,1fr))] gap-3">{children}</div>;
+  return <div className="grid items-end gap-3 @xl:grid-cols-2 @4xl:grid-cols-4">{children}</div>;
+}
+
+/** Ayar grubu: başlık + satırlar (ayraçlı). */
+function Settings({ title, children }: { title?: string; children: React.ReactNode }) {
+  return (
+    <div>
+      {title ? <div className="muted mb-1 mt-2 text-micro uppercase tracking-eyebrow">{title}</div> : null}
+      <div className="divide-y" style={{ borderColor: "var(--hairline)" }}>{children}</div>
+    </div>
+  );
+}
+
+/**
+ * Tek sayı ayarı: solda etiket (ve kısa açıklama), sağda sabit genişlikte
+ * kutu. Etiketin uzunluğu kutunun yerini değiştirmiyor: bütün kutular aynı
+ * sütunda (eski ızgarada iki satıra kırılan etiket kutuyu aşağı itiyordu).
+ */
+function Row({ label, help, unit, v, on }: { label: string; help?: string; unit?: string; v: number; on: (n: number) => void }) {
+  return (
+    <label className="flex items-center gap-3 py-2" style={{ borderColor: "var(--hairline)" }}>
+      <span className="min-w-0 flex-1">
+        <span className="block text-caption text-strong">{label}</span>
+        {help ? <span className="muted block text-micro">{help}</span> : null}
+      </span>
+      {unit ? <span className="muted text-micro">{unit}</span> : null}
+      {/* Ortak FIELD sınıfı w-full taşıyor; burada sabit genişlik isteniyor. */}
+      <input aria-label={label} type="number" min={0} value={v} onChange={(e) => on(Number(e.target.value))} className="h-9 w-24 shrink-0 rounded-tile border px-3 text-right text-body tabular-nums" style={FIELD_STYLE} />
+    </label>
+  );
 }
 
 function Num({ label, v, on }: { label: string; v: number; on: (n: number) => void }) {
