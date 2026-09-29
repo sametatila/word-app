@@ -3,7 +3,7 @@ import { authEnabled, googleConfigured, appleConfigured, appleWebConfigured } fr
 import { turnstileSiteKey } from "@/lib/auth/captcha";
 import { appControl } from "@/lib/app-control";
 import { guestAttestationConfig } from "@/lib/auth/play-integrity";
-import { avatar3dBaseFor } from "@/lib/avatar-items";
+import { activeAvatarIds, avatar3dBaseFor } from "@/lib/avatar-items";
 
 export const dynamic = "force-dynamic";
 
@@ -61,6 +61,12 @@ export async function GET(req: Request) {
         `avatar3dBaseFor`.
       */
       avatar3d: avatar3dBaseFor(req.headers.get("host")),
+      /*
+        Envanterde GÖSTERİLEN parçalar (yuva başına en fazla 11, panelden
+        `/admin/avatar`). Katalogda daha çok parça var ama kapalılar silinmedi,
+        yalnız gösterilmiyor. Katalog kapalıysa `null`.
+      */
+      avatarActive: await activeAvatarIds().then((s) => (s ? [...s] : null)).catch(() => null),
       app,
     },
     { headers: { "cache-control": "public, max-age=300" } },

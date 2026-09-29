@@ -96,6 +96,24 @@ export function partOpen(id: string, keys: ReadonlySet<string>, owned: ReadonlyS
   return !k || keys.has(k) || owned.has(id);
 }
 
+/** Kayıttaki parça kimlikleri (şapka, gözlük, bıyık, arka plan, ek yuvalar). */
+export function avatarPartIds(cfg: AvatarConfig | null): string[] {
+  if (!cfg) return [];
+  const ids = [cfg.hat, cfg.glasses, cfg.mustache, cfg.bg, ...EXTRA_SLOTS.map((s) => cfg.extra[s]?.id ?? null)];
+  return ids.filter((x): x is string => !!x);
+}
+
+/** `keep` false dönen parçaları bütün yuvalardan düşürür (kilit ve envanter kapıları). */
+export function keepParts(cfg: AvatarConfig, keep: (id: string) => boolean): AvatarConfig {
+  const ele = (id: string | null): string | null => (id && !keep(id) ? null : id);
+  const extra: AvatarConfig["extra"] = {};
+  for (const s of EXTRA_SLOTS) {
+    const e = cfg.extra[s];
+    if (e && keep(e.id)) extra[s] = e;
+  }
+  return { ...cfg, hat: ele(cfg.hat), glasses: ele(cfg.glasses), mustache: ele(cfg.mustache), bg: ele(cfg.bg), extra };
+}
+
 /**
  * Kazanılmamış parçaları bütün yuvalardan düşürür (şapka, gözlük, bıyık,
  * arka plan, boyun, yüz, küpe, sırt).
@@ -104,11 +122,5 @@ export function partOpen(id: string, keys: ReadonlySet<string>, owned: ReadonlyS
  * `owned` ona ayrıca verilmiş parçalar (`avatar_items`: kampanya, etkinlik).
  */
 export function stripLockedParts(cfg: AvatarConfig, keys: ReadonlySet<string>, owned: ReadonlySet<string> = new Set()): AvatarConfig {
-  const ele = (id: string | null): string | null => (id && !partOpen(id, keys, owned) ? null : id);
-  const extra: AvatarConfig["extra"] = {};
-  for (const s of EXTRA_SLOTS) {
-    const e = cfg.extra[s];
-    if (e && partOpen(e.id, keys, owned)) extra[s] = e;
-  }
-  return { ...cfg, hat: ele(cfg.hat), glasses: ele(cfg.glasses), mustache: ele(cfg.mustache), bg: ele(cfg.bg), extra };
+  return keepParts(cfg, (id) => partOpen(id, keys, owned));
 }

@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { displayNameAllowed } from "@/lib/moderation";
 import { parseAvatar, serializeAvatar } from "@/lib/avatar-config";
-import { stripLockedParts } from "@/lib/avatar-unlocks";
-import { avatarUnlockKeys, ownedAvatarItemIds } from "@/lib/avatar-items";
+import { avatarPartIds, keepParts, stripLockedParts } from "@/lib/avatar-unlocks";
+import { activeAvatarIds, avatarUnlockKeys, ownedAvatarItemIds } from "@/lib/avatar-items";
 import { acceptsCourse, acceptsNativeLang, acceptsPair, coursesForNative, nativeOf } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
@@ -108,8 +108,18 @@ export async function POST(req: Request) {
       etmediği parça kaydedilmiyor.
     */
     if (cfg) {
-      const [keys, owned] = await Promise.all([avatarUnlockKeys(userId), ownedAvatarItemIds(userId)]);
+      const [keys, owned, active] = await Promise.all([avatarUnlockKeys(userId), ownedAvatarItemIds(userId), activeAvatarIds()]);
       cfg = stripLockedParts(cfg, keys, owned);
+      /*
+        ENVANTERDE OLMAYAN PARÇA YENİ SEÇİLEMEZ (panelden kapalı, `/admin/avatar`).
+        Zaten takılı olan kalır: kapatmak kimsenin avatarını bozmamalı. Önceki
+        kayıt yalnız kapalı bir parça gelince okunuyor.
+      */
+      if (active && avatarPartIds(cfg).some((id) => !active.has(id))) {
+        const [prev] = await db.select({ avatar: profiles.avatar }).from(profiles).where(eq(profiles.userId, userId)).limit(1);
+        const had = new Set(avatarPartIds(parseAvatar(prev?.avatar)));
+        cfg = keepParts(cfg, (id) => active.has(id) || had.has(id));
+      }
     }
     patch.avatar = cfg ? serializeAvatar(cfg) : null;
   }

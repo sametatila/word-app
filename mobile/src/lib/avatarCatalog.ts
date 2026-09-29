@@ -9,7 +9,8 @@ import type { AvatarCatalog } from "./avatarLayers";
  * yok ve avatarlar 2B maskotla çiziliyor. Doluysa `katalog.json` bir kez
  * iniyor ve katmanlar o kökten okunuyor. Süreç başına bir istek.
  */
-type State = { base: string; cat: AvatarCatalog } | null;
+/** `active`: envanterde gösterilen parçalar (web ile aynı; null = kısıt yok). */
+type State = { base: string; cat: AvatarCatalog; active: ReadonlySet<string> | null } | null;
 let state: State = null;
 let started = false;
 const subs = new Set<() => void>();
@@ -24,7 +25,7 @@ async function load() {
     if (!res.ok) return;
     const cat = (await res.json()) as AvatarCatalog;
     if (!Array.isArray(cat?.parcalar)) return;
-    state = { base: cfg.avatar3d, cat };
+    state = { base: cfg.avatar3d, cat, active: cfg.avatarActive ? new Set(cfg.avatarActive) : null };
     subs.forEach((f) => f());
   } catch {
     /* katalog yoksa 2B maskot */

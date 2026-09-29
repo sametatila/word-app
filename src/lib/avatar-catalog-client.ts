@@ -11,7 +11,8 @@ import { apiFetch } from "@/lib/api-fetch";
  * yok ve avatarlar 2B maskotla çiziliyor. Doluysa `katalog.json` bir kez
  * iniyor ve katmanlar o kökten okunuyor. Sayfa başına bir istek.
  */
-type State = { base: string; cat: AvatarCatalog } | null;
+/** `active`: envanterde gösterilen parçalar (`/api/config` › `avatarActive`; null = kısıt yok). */
+type State = { base: string; cat: AvatarCatalog; active: ReadonlySet<string> | null } | null;
 let state: State = null;
 let started = false;
 const subs = new Set<() => void>();
@@ -20,14 +21,15 @@ async function load() {
   if (started) return;
   started = true;
   try {
-    const cfg = (await (await apiFetch("/api/config")).json()) as { avatar3d?: unknown };
+    const cfg = (await (await apiFetch("/api/config")).json()) as { avatar3d?: unknown; avatarActive?: unknown };
     const base = typeof cfg.avatar3d === "string" && /^https?:\/\//.test(cfg.avatar3d) ? cfg.avatar3d : null;
     if (!base) return;
     const res = await fetch(`${base}/katalog.json`, { signal: AbortSignal.timeout(10_000) });
     if (!res.ok) return;
     const cat = (await res.json()) as AvatarCatalog;
     if (!Array.isArray(cat?.parcalar)) return;
-    state = { base, cat };
+    const active = Array.isArray(cfg.avatarActive) ? new Set(cfg.avatarActive.filter((x): x is string => typeof x === "string")) : null;
+    state = { base, cat, active };
     subs.forEach((f) => f());
   } catch {
     /* katalog yoksa 2B maskot */

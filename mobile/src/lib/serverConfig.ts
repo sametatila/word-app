@@ -37,6 +37,8 @@ export type ServerConfig = {
   app: AppControl | null;
   /** Nomi 3B avatar kataloğunun kökü; `null` = 2B maskot (bkz. lib/avatarCatalog). */
   avatar3d: string | null;
+  /** Envanterde gösterilen avatar parçaları (panelden, `/admin/avatar`); null = kısıt yok. */
+  avatarActive: string[] | null;
   /** Yalnız okuma düştüğünde: bu değerler sunucudan değil, kapalı yedekten. */
   offline?: true;
 };
@@ -90,6 +92,7 @@ export async function fetchServerConfig(fresh = false): Promise<ServerConfig> {
       guestAttestation: attestationOf((c as { guestAttestation?: unknown }).guestAttestation),
       app: appControlOf((c as { app?: unknown }).app),
       avatar3d: (() => { const v = (c as { avatar3d?: unknown }).avatar3d; return typeof v === "string" && /^https?:\/\//.test(v) ? v : null; })(),
+      avatarActive: (() => { const v = (c as { avatarActive?: unknown }).avatarActive; return Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : null; })(),
     };
   } catch (e) {
     /* Taze okuma düştüyse eldeki yapılandırma korunuyor: ağ hıçkırığı bakım
@@ -104,7 +107,7 @@ export async function fetchServerConfig(fresh = false): Promise<ServerConfig> {
       işaretli; bir sonraki çağrı yeniden deniyor ve sebep hata kaydına düşüyor.
     */
     reportError(e, "serverConfig");
-    return { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", guestAttestation: null, app: null, avatar3d: null, offline: true };
+    return { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", guestAttestation: null, app: null, avatar3d: null, avatarActive: null, offline: true };
   }
   return cached;
 }

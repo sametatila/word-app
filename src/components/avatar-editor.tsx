@@ -81,7 +81,9 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
 
   let tiles: Tile[];
   if (catalog) {
-    const parts = catalog.cat.parcalar.filter((p) => p.slot === slot);
+    /* Envanter: yalnız panelde açık parçalar (yuva başına en fazla 11); o an
+       takılı olan kapalı olsa da görünür ki seçim kaybolmasın. */
+    const parts = catalog.cat.parcalar.filter((p) => p.slot === slot && (!catalog.active || catalog.active.has(p.id) || current(slot) === p.id));
     tiles = slot === "bg" ? [] : [{ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, apply: () => pick(slot, null) }];
     /* Karo, yuvanın şu anki rengini gösterir; başka parçaya geçince renk
        korunur (parça o rengi taşıyorsa). */

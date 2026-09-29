@@ -31,6 +31,7 @@ export const NAV: NavGroup[] = [
       { href: "/admin/learning", label: "Öğrenme ve madde analizi" },
       { href: "/admin/quiz", label: "Haftalık quiz" },
       { href: "/admin/content", label: "İçerik sürümü" },
+      { href: "/admin/avatar", label: "Avatar parçaları" },
     ],
   },
   {

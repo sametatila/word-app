@@ -120,7 +120,8 @@ export function AvatarScreen() {
     };
     const current = (s: Slot): string | null => (s === "bg" ? cfg.bg : s === "hat" ? cfg.hat : s === "glasses" ? cfg.glasses : s === "mustache" ? cfg.mustache : cfg.extra[s]?.id ?? null);
     if (catalog) {
-      const parts: CatalogPart[] = catalog.cat.parcalar.filter((p) => p.slot === slot);
+      /* Envanter (web ile aynı): yalnız panelde açık parçalar; takılı olan her zaman görünür. */
+      const parts: CatalogPart[] = catalog.cat.parcalar.filter((p) => p.slot === slot && (!catalog.active || catalog.active.has(p.id) || current(slot) === p.id));
       const list: Tile[] = slot === "bg" ? [] : [{ key: "none", label: t("avatar.none"), selected: !current(slot), locked: false, none: true, apply: () => pick(slot, null) }];
       /* Karo, yuvanın şu anki rengini gösterir; başka parçaya geçince renk
          korunur (parça o rengi taşıyorsa). */
