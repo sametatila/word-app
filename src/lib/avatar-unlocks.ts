@@ -70,7 +70,10 @@ export const PART_UNLOCKS: Record<string, string> = {
   // keşif
   bg_night: "night50", bg_sunrise: "early50", unicorn: "marathon150",
   bg_forest: "days30", bg_ocean: "days30", tiara: "days100",
-  wizard: "bilingual", earcuff: "quests20",
+  /* Büyücü şapkası "iki dil"deydi; Zürih Almancası duraklatılınca tek kurslu
+     anadillerde (en, de) kazanılamaz oldu. 100 aktif güne taşındı: altın,
+     herkese açık (2026-09-29, Samet; "iki dil"i kazanan yoktu). */
+  wizard: "days100", earcuff: "quests20",
   // lig
   fez: "league_1", studs: "league_1", santa: "league_1", aviator: "league_1",
   ushanka: "league_2", bg_candy: "league_2", witch: "league_2", star: "league_2",
