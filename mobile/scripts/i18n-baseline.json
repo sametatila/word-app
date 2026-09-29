@@ -1,5 +1,5 @@
 {
-  "total": 33,
+  "total": 34,
   "files": {
     "src/data/exams/index.ts": 1,
     "src/game/immersionQuiz.ts": 17,
@@ -9,6 +9,7 @@
     "src/screens/ExamScreen.tsx": 1,
     "src/screens/OnboardingScreen.tsx": 1,
     "src/screens/SettingsScreen.tsx": 1,
+    "src/ui/Skeleton.tsx": 1,
     "src/ui/VoicePicker.tsx": 2
   },
   "notes": {
@@ -21,6 +22,7 @@
     "src/game/immersionQuiz.ts": "ünite quizinin çerçeve sözcük listesi (çeldirici benzerliğinde sayılmayan \"kullanılır, söylerken\" gibi sözcükler) - ekrana çıkmıyor; web `lib/immersion/quiz.ts` ile birebir",
     "src/lib/i18n.ts": "dil adı kendi dilinde (Türkçe) - çevrilmemesi gereken tek metin türü",
     "src/screens/OnboardingScreen.tsx": "aynı dil adı",
-    "src/screens/SettingsScreen.tsx": "aynı dil adı"
+    "src/screens/SettingsScreen.tsx": "aynı dil adı",
+    "src/ui/Skeleton.tsx": "iskelet dolgusu (FILLER): veri metni gelmeden satır sarılmasını gerçek yazı tipiyle ölçmek için görünmez çizilen cümle - ekranda okunmuyor; web `components/flow-skeleton` ile birebir (parity: ortak dizge sabitleri)"
   }
 }
