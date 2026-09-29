@@ -20,7 +20,7 @@ import { writeFileSync } from "node:fs";
 import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
 import { QUIZ_WEEKS } from "../src/lib/weekly-quiz";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { MODULE_EXAMS } from "../src/lib/conversations/module-exam";
+import { MODULE_EXAM_ENTRIES } from "../src/lib/conversations/module-exam";
 import { dialogueCast } from "../src/lib/tts/speakers";
 import { cleanForSpeech, splitForSpeech } from "../src/lib/tts/text";
 
@@ -94,9 +94,12 @@ for (const ex of BUNDLED_EXERCISES) {
   whole(`skill.${ex.id}`, course, ex.segments);
   each(`placement.${ex.id}`, course, ex.segments.slice(0, 2).map((s: Seg) => ({ speaker: s.speaker, text: s.text })));
 }
-MODULE_EXAMS.forEach((plan, n) => {
+/* Kurs VERİDEN (2026-09-29): burada sabit "de" yazıyordu ve İngilizce kursun modül sınavı dinlemeleri (293 iş)
+   Almanca ayarla üretiliyordu (Whisper İngilizce cümleyi Almanca çeviriyle "duydu"). Uygulama dili zaten kurstan
+   alıyor (`exam-player` `targetLangOf(course)`); iş listesi de onunla aynı. Sıra `MODULE_EXAMS`le aynı, kimlikler değişmedi. */
+MODULE_EXAM_ENTRIES.forEach(({ course, plan }, n) => {
   const turns = plan.listening?.turns;
-  if (turns) each(`module.${(plan as { id?: string }).id ?? n}`, "de", turns.map((t: { speaker?: string; de: string }) => ({ speaker: t.speaker, text: t.de })));
+  if (turns) each(`module.${(plan as { id?: string }).id ?? n}`, course, turns.map((t: { speaker?: string; de: string }) => ({ speaker: t.speaker, text: t.de })));
 });
 
 writeFileSync(out, lines.join("\n") + "\n");
