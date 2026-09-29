@@ -55,3 +55,35 @@ export async function weeklyTrends(): Promise<{ metrics: TrendMetric[]; issues: 
     ],
   };
 }
+
+export type PulseDay = { day: string; active: number; signup: number; grossUsd: number; errors: number };
+
+/**
+ * GÖSTERGE ŞERİDİNİN GÜNLÜK DİZİSİ — panelin her sayfasında, menünün altındaki
+ * dört küçük grafik (aktif, kayıt, gelir, hata).
+ *
+ * Pencere `weeklyTrends` ile aynı: bugün hariç son 14 tam gün, ilk yedisi
+ * "önceki hafta", son yedisi "bu hafta". Böylece şeritteki eğri ile yanındaki
+ * haftalık sayı aynı günleri anlatıyor. Aktif kullanıcı GÜNLÜK tekil sayı
+ * (haftalık tekil sayı `weeklyTrends`te); gelir brüt USD, deneme hariç,
+ * sandbox hariç (`lib/premium/revenue` ile aynı tanım).
+ */
+export async function dailyPulse(): Promise<{ days: PulseDay[]; issues: QueryIssue[] }> {
+  const { rows, issues } = queryRunner("gösterge şeridi");
+  const r = await rows(sql`
+    select g.day::date::text as day,
+      (select count(distinct user_id) from daily_stats d where d.day = g.day::date)::int active,
+      (select count(*) from profiles p where p.created_at >= g.day and p.created_at < g.day + interval '1 day')::int signup,
+      (select coalesce(sum(s.price_usd), 0) from store_events s
+        where s.type in ('purchase', 'renewal', 'product_change', 'one_time') and coalesce(s.period_type, '') <> 'trial'
+          and coalesce(s.environment, 'production') = 'production'
+          and coalesce(s.event_at, s.created_at) >= g.day and coalesce(s.event_at, s.created_at) < g.day + interval '1 day')::float gross,
+      (select count(*) from events e where e.name = 'client_error' and e.day = g.day::date)::int errors
+    from generate_series(current_date - 14, current_date - 1, interval '1 day') g(day)
+    order by g.day`);
+  const n = (v: unknown) => Number(v) || 0;
+  return {
+    issues,
+    days: r.map((x) => ({ day: String(x.day), active: n(x.active), signup: n(x.signup), grossUsd: Math.round(n(x.gross) * 100) / 100, errors: n(x.errors) })),
+  };
+}
