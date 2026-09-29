@@ -62,8 +62,8 @@ function pitchArg(pitch: Pitch | undefined): string {
   return JSON.stringify(pitch && pitch !== "mid" ? PITCH_PARAM[pitch] : "mid");
 }
 
-/** Kelime katmanı (`true`, k=w), karakter anlatımı (`"n"`, k=n) ya da ikisi de değil. */
-export type TtsKind = boolean | "n";
+/** Kelime katmanı (`true`, k=w), karakter anlatımı (`"n"`, k=n), dinleme (`"l"`, k=l) / okuma (`"r"`, k=r) katmanı ya da hiçbiri. */
+export type TtsKind = boolean | "n" | "l" | "r";
 
 export function bridgeSpeak(voice: VoiceId, text: string, slow: Pace | boolean, pitch?: Pitch, word: TtsKind = false): void {
   if (!bridgeReady() || !text) return;

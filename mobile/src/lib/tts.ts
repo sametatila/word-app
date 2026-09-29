@@ -6,7 +6,7 @@ import { type Pace, type Pitch, type VoiceId, VOICES, resolveVoice, defaultVoice
 import { splitForSpeech } from "./ttsText";
 import { dialogueCast } from "./speakers";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
-import { bridgePrefetch, bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
+import { bridgePrefetch, bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop, type TtsKind } from "./ttsBridge";
 import { nativeDelay, speakServerTts, stopServerTts } from "./stt";
 import { apiBase, fetchWithTimeout } from "../api/client";
 
@@ -333,9 +333,11 @@ export async function speakAndWaitVoiced(
     word?: boolean;
     /** Karakter anlatımı (yürüyüş yönergeleri): dosya varsa karakterin sesi, yoksa Edge karşılığı (`k=n`). */
     narration?: boolean;
+    /** Dinleme (`l`) / okuma (`r`) katmanı: sunucu açtıysa karakterin önceden üretilmiş dosyası, yoksa Edge (web `layer`). */
+    layer?: "l" | "r";
   },
 ): Promise<void> {
-  const kind: boolean | "n" = opts?.word ? true : opts?.narration ? "n" : false;
+  const kind: TtsKind = opts?.word ? true : opts?.narration ? "n" : opts?.layer ?? false;
   /*
     İKİ HATA BİRDEN BURADAYDI.
 
@@ -455,6 +457,7 @@ export async function speakDialogue(
       slow: pace,
       pitch: cast[i].pitch,
       onStart: i === 0 ? opts?.onStart : undefined,
+      layer: "l",
     });
   }
 }
@@ -485,13 +488,13 @@ export async function speakPassage(text: string, course: string, opts?: { slow?:
   const pace: Pace = opts?.slow ? "listenSlow" : "listen";
   // Bütün parçalar peşin: boru hattı yok, her paragraf sınırı yoksa bir
   // gidiş-dönüş olurdu.
-  bridgePrefetch(paragraphs.flatMap((para) => splitForSpeech(para).map((t) => ({ voice, text: t, slow: pace }))));
+  bridgePrefetch(paragraphs.flatMap((para) => splitForSpeech(para).map((t) => ({ voice, text: t, slow: pace, word: "r" as const }))));
   const run = ++dialogueSeq;
   for (let i = 0; i < paragraphs.length; i++) {
     if (run !== dialogueSeq) return;
     if (i > 0) await nativeDelay(PARAGRAPH_GAP_MS);
     if (run !== dialogueSeq) return;
-    await speakAndWaitVoiced(paragraphs[i], voice, { slow: pace });
+    await speakAndWaitVoiced(paragraphs[i], voice, { slow: pace, layer: "r" });
   }
 }
 
@@ -516,7 +519,7 @@ export function prefetchDialogue(course: string, segments: DialogueTurnAudio[], 
   */
   bridgePrefetch(
     segments.flatMap((seg, i) =>
-      splitForSpeech(seg.text).map((text) => ({ voice: cast[i].voice, text, slow: pace, pitch: cast[i].pitch })),
+      splitForSpeech(seg.text).map((text) => ({ voice: cast[i].voice, text, slow: pace, pitch: cast[i].pitch, word: "l" as const })),
     ),
   );
 }
