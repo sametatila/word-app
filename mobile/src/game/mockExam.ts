@@ -230,6 +230,11 @@ export function fetchMockAccess(level: string): Promise<MockAccess> {
   return api(`/api/mock-exam?access=1&level=${encodeURIComponent(level)}`);
 }
 
-export function fetchMockStats(): Promise<MockStats> {
-  return api("/api/mock-exam?stats=1");
+/**
+ * İstatistik yalnız `course` kursunun denemeleri: iki kurs çalışan hesapta
+ * İngilizce Writing, Almanca "Schreiben" ortalamasına karışıyordu. Sunucu
+ * parametre gelmezse profildeki kursu esas alıyor.
+ */
+export function fetchMockStats(course: "de" | "en"): Promise<MockStats> {
+  return api(`/api/mock-exam?stats=1&course=${course}`);
 }

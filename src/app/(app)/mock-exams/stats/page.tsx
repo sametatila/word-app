@@ -9,6 +9,8 @@ import { EmptyCard } from "@/components/empty-card";
 import { FlowActions, StateBody } from "@/components/flow";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatPercent } from "@/lib/i18n/dict";
+import { ensureProfile } from "@/lib/session";
+import { mockCourseOf } from "@/lib/courses";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("mockstats.title");
@@ -30,8 +32,12 @@ export default async function MockStatsPage() {
   if (!userId) return null;
 
   let data: Awaited<ReturnType<typeof mockStats>> | null = null;
+  /* Yalnız ETKİN KURSUN denemeleri (bkz. `mockStats`): Almanca çalışırken
+     İngilizce Writing denemesi "Schreiben" ortalamasına karışıyordu. */
+  let course: MockCourse = "de";
   try {
-    data = await mockStats(userId);
+    course = mockCourseOf((await ensureProfile(userId)).course);
+    data = await mockStats(userId, course);
   } catch (err) {
     console.error("[mock-stats] okunamadı", err);
   }
@@ -39,7 +45,7 @@ export default async function MockStatsPage() {
   /*
     Bölüm adı SINAVIN dilinde yazılır ("Lesen" / "Reading"), arayüz dilinde
     değil — mobilde de öyle. Tek satırlık bir denemede dil kâğıttan çözülüyor;
-    toplam kırılımda kâğıt yok, orada varsayılan kurs esas alınıyor.
+    toplam kırılımda kâğıt yok, orada etkin kurs esas alınıyor.
   */
   /* ETİKET KİMLİKTEN: "de-b1-07" → "B1 · 7. deneme". Kâğıdı okumak yalnız iki
      alan için tüm paketi çekmek olurdu; kimlik ikisini de söylüyor. */
@@ -49,8 +55,8 @@ export default async function MockStatsPage() {
     return lvl && Number.isFinite(n) ? `${lvl.toUpperCase()} · ${t("mockexams.mock_n", { n })}` : id;
   };
   const skillLabel = (skill: string, paperId?: string) => {
-    const course = paperId?.split("-")[0] === "en" ? "en" : "de";
-    return mockSkillLabel(course as MockCourse, skill as MockSkill);
+    const prefix = paperId?.split("-")[0];
+    return mockSkillLabel(prefix === "en" || prefix === "de" ? prefix : course, skill as MockSkill);
   };
 
   return (

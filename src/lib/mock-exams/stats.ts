@@ -1,6 +1,7 @@
-import { and, desc, eq, isNotNull } from "drizzle-orm";
+import { and, desc, eq, isNotNull, like } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { mockExamAttempts } from "@/lib/db/schema";
+import type { MockCourse } from "@/lib/mock-exams/types";
 
 /**
  * Deneme sınavı istatistiği — üç kırılım + yarım kalanlar.
@@ -14,14 +15,21 @@ import { mockExamAttempts } from "@/lib/db/schema";
  * gelince (`/mock-exams/stats`) iki çağıranı oldu: sunucu bileşeni aynı
  * sorguyu kendi çalıştırıyor, uç mobil için duruyor. Rota dosyası içe
  * aktarılamayacağı için ortak yer burası.
+ *
+ * KURS SÜZGECİ. İstatistik yalnız etkin kursun denemelerini sayıyor: iki kurs
+ * çalışan hesapta "Schreiben" satırı İngilizce Writing denemesini de
+ * ortalamaya katıyor, son denemelerde "Deneme 1 · Writing" Almanca kursta
+ * görünüyordu. Satırda kurs kolonu yok ama `paperId` öneki kursu taşıyor
+ * ("en-b1-01") — liste sayfasındaki süzgeçle (`mock-exams/page.tsx`) aynı.
  */
 export type MockStats = Awaited<ReturnType<typeof mockStats>>;
 
-export async function mockStats(userId: string) {
+export async function mockStats(userId: string, course: MockCourse) {
+  const ofCourse = like(mockExamAttempts.paperId, `${course}-%`);
   const rows = await db
     .select()
     .from(mockExamAttempts)
-    .where(and(eq(mockExamAttempts.userId, userId), isNotNull(mockExamAttempts.finishedAt)))
+    .where(and(eq(mockExamAttempts.userId, userId), isNotNull(mockExamAttempts.finishedAt), ofCourse))
     .orderBy(desc(mockExamAttempts.finishedAt))
     .limit(200);
 
@@ -80,7 +88,7 @@ export async function mockStats(userId: string) {
       await db
         .select({ id: mockExamAttempts.id, paperId: mockExamAttempts.paperId, skill: mockExamAttempts.skill, level: mockExamAttempts.level, taskIx: mockExamAttempts.taskIx })
         .from(mockExamAttempts)
-        .where(and(eq(mockExamAttempts.userId, userId), eq(mockExamAttempts.state, "running")))
+        .where(and(eq(mockExamAttempts.userId, userId), eq(mockExamAttempts.state, "running"), ofCourse))
         .orderBy(desc(mockExamAttempts.startedAt))
         .limit(10)
     ),

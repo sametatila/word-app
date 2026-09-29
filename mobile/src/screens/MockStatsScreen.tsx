@@ -16,7 +16,7 @@ import { EmptyCard, ScreenHeader } from "../social/common";
 import { FlowNote } from "../ui/flow";
 import { fetchMockStats, failReason, type MockStats } from "../game/mockExam";
 import { loadLocalResults } from "../game/mockExamLocal";
-import { mockCourseOf, mockSkillLabel, type MockSkill } from "../data/exams";
+import { mockCourseOf, mockSkillLabel, type MockCourse, type MockSkill } from "../data/exams";
 import { mockCourseOfPaperId } from "../content/mockCatalog";
 import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii } from "../theme";
@@ -46,7 +46,7 @@ export function MockStatsScreen() {
   const load = useCallback(async () => {
     setBusy(true);
     try {
-      setData(await fetchMockStats());
+      setData(await fetchMockStats(mockCourseOf(currentCourseId())));
       setLocal(false);
       setErr(null);
     } catch (e) {
@@ -56,7 +56,7 @@ export function MockStatsScreen() {
         söylüyor — ama "hiçbir şey göremiyorsun" demekten iyisi.
       */
       setErr(failReason(e));
-      setData(await localStats());
+      setData(await localStats(mockCourseOf(currentCourseId())));
       setLocal(true);
     }
     setBusy(false);
@@ -265,8 +265,9 @@ function Running({
  * denemeler burada listelenmiyor: onların kaydı kâğıt başına tutuluyor ve
  * liste ekranında rozet olarak zaten görünüyor.
  */
-async function localStats(): Promise<MockStats> {
-  const rows = await loadLocalResults();
+async function localStats(course: MockCourse): Promise<MockStats> {
+  /* Sunucudaki gibi yalnız etkin kursun denemeleri (`paperId` öneki). */
+  const rows = (await loadLocalResults()).filter((r) => mockCourseOfPaperId(r.paperId) === course);
   const bySkill = new Map<string, { attempts: number; correct: number; total: number; best: number }>();
   const byLevel = new Map<string, { attempts: number; passed: number }>();
   for (const r of rows) {

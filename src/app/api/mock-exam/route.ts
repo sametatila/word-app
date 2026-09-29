@@ -143,7 +143,12 @@ export async function GET(req: Request) {
 
   if (url.searchParams.get("stats")) {
     try {
-      return NextResponse.json(await mockStats(userId), { headers: { "cache-control": "no-store" } });
+      /* İstatistik ETKİN KURSUN (bkz. `mockStats`). Mobil kendi kursunu
+         `course` ile gönderiyor — kurs cihazda değişip profile henüz
+         yazılmamış olabilir; göndermeyen eski sürümlerde profil esas. */
+      const q = url.searchParams.get("course");
+      const course = q === "de" || q === "en" ? q : mockCourseOf((await ensureProfile(userId)).course);
+      return NextResponse.json(await mockStats(userId, course), { headers: { "cache-control": "no-store" } });
     } catch (err) {
       console.error("[mock-exam stats]", err);
       return NextResponse.json({ error: "database" }, { status: 500 });
