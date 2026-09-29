@@ -120,6 +120,8 @@ const ISTISNA: Record<string, string> = {
     "YANLIŞ DOST: 'Vierte Gewalt' = basın, yani dördüncü KUVVET (erkler ayrılığı). Almancada `Gewalt` hem şiddet hem erk demek; burada ikincisi. Basın özgürlüğü metni.",
   "b2-u10.ts::gewalt":
     "Aynı yanlış dost: B2 Ünite 10 'Vierte Gewalt' — basın özgürlüğü. Şiddet değil erk.",
+  "c1-u17.ts::gewalt":
+    "C1 Ünite 17 Leipzig tarih turu (dinleme): 1989 barışçıl devriminin sloganı 'Keine Gewalt!' — şiddetSİZLİK çağrısı; kelime listesinde 'die Gewalt' maddesi. Kimse ateş etmiyor, tasvir yok (2026-09-29 metin yeniden yazımı).",
 
   // --- Guns or Other Weapons ---
   "c1-u08.ts::waffe":
@@ -136,6 +138,8 @@ const ISTISNA: Record<string, string> = {
     "Mecaz: 'eine Prämie, die das Risiko nicht mitbezahlt, ist keine Prämie, sondern eine Wette' — sigorta primi tartışması.",
   "b2-u21.ts::wetten":
     "Deyim: 'Ich würde nicht darauf wetten' — 'buna bahse girmezdim'. Bahis eylemi yok.",
+  "c1-u03.ts::wetten":
+    "Deyim: 'Dennoch wette ich, dass du am Ende als Letzter gehen willst' — 'yine de bahse girerim ki…' (arkadaş sohbeti) ve kelime listesinde 'wetten' maddesi. Bahis eylemi yok.",
 };
 
 /**
