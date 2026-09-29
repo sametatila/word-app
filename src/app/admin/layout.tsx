@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { adminGate, adminPreview, adminSecurityState, ADMIN_FRESH_HOURS } from "@/lib/admin";
-import { openReportCount } from "@/lib/moderation-admin";
-import { loadAlerts } from "./_data";
-import { AdminNav } from "./_ui/nav";
+import type { QueueSummary } from "@/lib/response-queue";
+import { loadAlerts, loadPulse, loadResponses } from "./_data";
+import { AdminRail, AdminSections, type BadgeTone, type NavCounts } from "./_ui/nav";
+import { PulseStrip } from "./_ui/pulse";
 import { Linkify } from "./_ui/ui";
 import { APP_LINKS } from "@/lib/admin-links";
 
@@ -12,8 +14,12 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**
- * Bütün yönetim sayfalarının kabuğu: üst şerit (ad + gezinme) ve yazma
- * güvenliği durumu.
+ * Bütün yönetim sayfalarının kabuğu:
+ *
+ *   üst çubuk      ad, beş bölüm (rozetli), hesap
+ *   güvenlik       yazma kipinin durumu (varsa)
+ *   gösterge       her sayfada aynı dört küçük grafik (`_ui/pulse`)
+ *   sol çubuk      seçili bölümün sayfaları (`_ui/nav`), dar ekranda yatay
  *
  * 2FA'sız admin paneli OKUYABİLİR ama hiçbir şey değiştiremez; hassas
  * işlemler (silme, askıya alma, toplu bildirim, bakım, premium verme) ayrıca
@@ -32,12 +38,13 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   */
   if (!gate.ok) notFound();
   const preview = adminPreview();
-  const [state, openReports, alerts] = await Promise.all([
+  const [state, alerts, queues, pulse] = await Promise.all([
     preview ? null : adminSecurityState(),
-    openReportCount().catch(() => 0),
     loadAlerts().then((a) => a.value).catch(() => []),
+    loadResponses().then((q) => q.value).catch((): QueueSummary[] => []),
+    loadPulse().then((p) => p.value).catch(() => null),
   ]);
-  const alertCount = { critical: alerts.filter((a) => a.level === "kritik").length, warning: alerts.filter((a) => a.level === "uyari").length };
+  const counts = navCounts(alerts, queues);
   /* Şerit yapılacak şeyi ADRESİYLE söylüyor (`Linkify` bağlantıya çeviriyor):
      "Profil › Ayarlar › Güvenlik" tarifi yerine doğrudan o bölüm. */
   const strip = preview
@@ -51,21 +58,45 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   return (
     <div className="min-h-dvh" style={{ background: "var(--bg)" }}>
       <header className="z-30 border-b sm:sticky sm:top-0" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-        {strip ? (
-          <div role="status" className="border-b px-4 py-1.5 text-center text-caption" style={{ borderColor: strip.tone, color: strip.tone, background: `color-mix(in srgb, ${strip.tone} 8%, var(--surface))` }}>
-            <Linkify text={strip.text} />
-          </div>
-        ) : null}
-        <div className="mx-auto w-full max-w-6xl px-4 pt-2.5 pb-1 sm:px-6">
-          <div className="flex items-baseline gap-2 pb-1">
+        <div className="flex h-14 items-center gap-3 px-4 lg:gap-5 lg:px-5">
+          <Link href="/admin" className="flex shrink-0 items-baseline gap-1.5">
             <span className="text-strong">Lernomi</span>
-            <span className="muted text-caption">Yönetim</span>
-            {gate.email ? <span className="faint ml-auto hidden truncate text-caption sm:inline">{gate.email}</span> : null}
-          </div>
-          <AdminNav openReports={openReports} alerts={alertCount} />
+            <span className="muted hidden text-caption md:inline">Yönetim</span>
+          </Link>
+          <AdminSections counts={counts} />
+          {gate.email ? <span className="faint ml-auto hidden shrink-0 truncate text-caption xl:inline">{gate.email}</span> : null}
         </div>
       </header>
-      {children}
+      {strip ? (
+        <div role="status" className="border-b px-4 py-1.5 text-center text-caption" style={{ borderColor: strip.tone, color: strip.tone, background: `color-mix(in srgb, ${strip.tone} 8%, var(--surface))` }}>
+          <Linkify text={strip.text} />
+        </div>
+      ) : null}
+      {pulse ? <PulseStrip metrics={pulse.metrics} days={pulse.days} failed={pulse.issues.length > 0} /> : null}
+      <div className="lg:flex">
+        <AdminRail counts={counts} />
+        <main className="min-w-0 flex-1">{children}</main>
+      </div>
     </div>
   );
+}
+
+/**
+ * Menü rozetleri. Uyarılar Telegram'la aynı listeden; kuyruklar Genel
+ * durumdaki "Geri dönüş bekleyenler" ile aynı özetten (`lib/response-queue`).
+ * Ton: süresi geçen iş ya da kritik uyarı kırmızı, yaklaşan sarı, gerisi gri.
+ */
+function navCounts(alerts: { level: "kritik" | "uyari" }[], queues: QueueSummary[]): NavCounts {
+  const q = (...ids: QueueSummary["queue"][]) => {
+    const xs = queues.filter((x) => ids.includes(x.queue));
+    const tone: BadgeTone = xs.some((x) => x.late) ? "bad" : xs.some((x) => x.soon) ? "warn" : "muted";
+    return { n: xs.reduce((a, x) => a + x.open, 0), tone };
+  };
+  const critical = alerts.filter((a) => a.level === "kritik").length;
+  return {
+    alerts: { n: alerts.length, tone: critical ? "bad" : "warn" },
+    reports: q("user_report", "ai_report"),
+    feedback: q("content_feedback"),
+    reviews: q("store_review"),
+  };
 }

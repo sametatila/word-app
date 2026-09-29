@@ -16,7 +16,7 @@ import { BarList, Funnel, SeriesChart, Sparkline, BTN, DataTable, Dot, fmt, Noti
  * Bunlar eskiden tek panonun altı sekmesiydi. Sekmeler konuya göre değil
  * tarihsel olarak birikmişti: gelir Genel bakışta, satın alma hunileri
  * Deneyim'de, premium sayıları Büyüme'de duruyordu; sağlık dört ayrı yere
- * dağılmıştı. Bölümler artık menünün gruplarıyla birebir (bkz. `_ui/nav`).
+ * dağılmıştı. Bölümler artık menünün sayfalarıyla birebir (bkz. `_ui/nav`).
  * Veri sunucuda tek seferde ve önbellekli çekiliyor (`_data` `loadPanel`).
  */
 const pct = (v: number) => Math.round(v * 100) + "%";
@@ -147,7 +147,7 @@ function RevenueCard({ r, days }: { r: Revenue; days: number }) {
 function TrendRow({ trends }: { trends: TrendMetric[] }) {
   const tone = { good: "ok", bad: "bad", flat: undefined } as const;
   return (
-    <Panel title="Son 7 gün" hint="Önceki 7 güne göre değişim.">
+    <Panel id="son-7-gun" title="Son 7 gün" hint="Önceki 7 güne göre değişim.">
       <Stats cols={8}>
         {trends.map((m) => {
           const d = trendDelta(m);

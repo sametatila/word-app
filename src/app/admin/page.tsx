@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
  *
  * En üstte Telegram'a giden uyarı motorunun listesi, altında haftalık
  * karşılaştırma, temel sayılar ve etkinlik. Ayrıntı menünün gruplarında
- * (Kullanıcılar, Gelir, İçerik, İşletim). Erişim ADMIN_EMAILS ile sınırlı.
+ * (Kullanıcılar, Gelir, İçerik, Sistem). Erişim ADMIN_EMAILS ile sınırlı.
  */
 export default async function AdminHomePage({ searchParams }: { searchParams: Promise<{ taze?: string; aralik?: string }> }) {
   const gate = await adminGate();

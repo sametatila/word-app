@@ -58,9 +58,12 @@ export function when(iso: string | null | undefined, withTime = true): string {
   return withTime ? d.toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short", timeZone: ADMIN_TZ }) : d.toLocaleDateString("tr-TR", { timeZone: ADMIN_TZ });
 }
 
-/** Sayfa gövdesi: bütün yönetim sayfaları aynı genişlikte. */
+/**
+ * Sayfa gövdesi: bütün yönetim sayfaları aynı genişlikte. Sol çubuğun yanında
+ * sola yaslı (ortalanınca geniş ekranda çubukla içerik arasında boşluk açılıyor).
+ */
 export function AdminPage({ children }: { children: ReactNode }) {
-  return <div className="mx-auto w-full max-w-6xl space-y-5 px-4 pb-20 pt-6 sm:px-6">{children}</div>;
+  return <div className="w-full max-w-6xl space-y-5 px-4 pb-20 pt-5 sm:px-6 lg:px-8">{children}</div>;
 }
 
 export function PageHeader({ title, description, actions, meta, crumb }: {
@@ -80,7 +83,7 @@ export function PageHeader({ title, description, actions, meta, crumb }: {
             ← {crumb[1]}
           </a>
         ) : null}
-        <h1 className="text-h1 break-words">{title}</h1>
+        <h1 className="text-h2 break-words">{title}</h1>
         {description ? <p className="muted mt-1 max-w-[75ch] text-body">{typeof description === "string" ? <Linkify text={description} /> : description}</p> : null}
         {meta ? <div className="muted mt-1 text-caption">{meta}</div> : null}
       </div>
