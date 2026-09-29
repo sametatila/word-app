@@ -133,7 +133,7 @@ function VitalsCell({ label, series, threshold }: { label: string; series: Vital
         tone={v >= threshold ? "bad" : v >= threshold * 0.8 ? "warn" : "ok"}
         sub={`eşik ${pct2(threshold)} · 28 günlük oran · ${series.latestDay}`}
       />
-      <ThresholdTrend label={label} values={series.points.map((p) => p.rate28d)} threshold={threshold} format={pct2} />
+      <ThresholdTrend label={label} values={series.points.map((p) => p.rate28d)} threshold={threshold} format="pct2" />
     </div>
   );
 }

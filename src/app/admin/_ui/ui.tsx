@@ -241,7 +241,7 @@ export function Empty({ children }: { children: ReactNode }) {
    dizi seçimi): `_ui/table`, `_ui/charts`. Buradan yeniden dışa veriliyor ki
    sayfalar tek yerden içe aktarsın. */
 export { DataTable, type Column } from "./table";
-export { BarList, Funnel, Meter, ScoreList, SeriesChart, ShareBar, Sparkline, ThresholdTrend, type BarItem, type FunnelStep, type ScoreItem, type Series, type ShareItem } from "./charts";
+export { BarList, CohortTable, Funnel, Meter, ScoreList, SeriesChart, ShareBar, Sparkline, StackedDaily, ThresholdTrend, TrendChart, type BarItem, type FunnelStep, type ScoreItem, type Series, type ShareItem } from "./charts";
 
 /** Alan: değer ızgarası (kullanıcı detayı). */
 export function KeyValue({ data }: { data: Record<string, string | number | boolean> | null }) {

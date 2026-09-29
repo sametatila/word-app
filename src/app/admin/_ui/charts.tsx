@@ -16,6 +16,9 @@ import { useId, useMemo, useState } from "react";
  *                puan bir "ilerleme" değil, ölçek üstünde bir yer
  *   Meter        bir sınıra göre doluluk (CPU, disk): eşik çizgili çubuk
  *   ThresholdTrend  bir oranın zamanda eşiğe göre seyri (Play vitals)
+ *   TrendChart   bu dönem ile önceki dönem aynı eksende (Genel durum)
+ *   StackedDaily günlük yığılmış sütun (kayıt: hesap + misafir)
+ *   CohortTable  kayıt kohortu × hafta, tek tonlu ısı tablosu
  *   Sparkline    istatistik kutusunun altındaki küçük eğilim
  *
  * Eski panelde hepsi aynı gri izli "ilerleme çubuğu"ydu: ortalama puan, pay,
@@ -46,6 +49,18 @@ function fmt(n: number): string {
   if (Math.abs(n) >= 1_000) return (n / 1_000).toFixed(1) + "k";
   return String(Math.round(n * 100) / 100);
 }
+
+/**
+ * Değer biçimi ADIYLA: bu grafikler sunucu bileşenlerinden de çiziliyor ve
+ * sunucudan istemci bileşenine fonksiyon geçirilemiyor (React; geçirilince
+ * sayfa 500 veriyordu).
+ */
+export type ValueFormat = "num" | "usd" | "pct2";
+const FORMATS: Record<ValueFormat, (v: number) => string> = {
+  num: (v) => fmt(v),
+  usd: (v) => (v >= 1000 ? `$${(v / 1000).toFixed(1)}k` : `$${Math.round(v)}`),
+  pct2: (v) => `%${(v * 100).toFixed(2)}`,
+};
 
 const DAY_TR = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
 const dayLabel = (iso: string) => {
@@ -346,7 +361,8 @@ export function Meter({ label, value, detail, warnAt = 75, badAt = 90 }: { label
  * çizgi (kesik YALNIZ eşik için), son nokta vurgulu. Boş günler çizgide boşluk.
  * Değerler metin olarak yanındaki Stat'ta; bu biçim "eşiğe yaklaşıyor mu".
  */
-export function ThresholdTrend({ values, threshold, label, format = (v: number) => String(v) }: { values: (number | null)[]; threshold: number; label: string; format?: (v: number) => string }) {
+export function ThresholdTrend({ values, threshold, label, format: fk = "num" }: { values: (number | null)[]; threshold: number; label: string; format?: ValueFormat }) {
+  const format = FORMATS[fk];
   const nums = values.filter((v): v is number => v != null);
   if (nums.length < 2) return null;
   const W = 240, H = 56, top = 4, bottom = 4;
@@ -364,6 +380,178 @@ export function ThresholdTrend({ values, threshold, label, format = (v: number) 
       <path d={d} fill="none" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" style={{ stroke: over ? TONE.bad : "var(--color-brand)" }} />
       <circle cx={x(lastIx)} cy={y(last)} r={3} style={{ fill: over ? TONE.bad : "var(--color-brand)" }} />
     </svg>
+  );
+}
+
+/**
+ * Dönem karşılaştırmalı eğilim: bu dönem marka rengi (alan dolgulu), önceki
+ * dönem gri ince çizgi — aynı eksen, aynı gün sırası (1. gün 1. günle).
+ * Üzerine gelince / dokununca / ← → ile günün iki değeri okuma satırında.
+ * Eksen etiketleri HTML'de (SVG ölçeklenince yazı bozulmasın).
+ */
+export function TrendChart({ days, values, prev, label, format: fk = "num", height = 150 }: { days: string[]; values: number[]; prev?: number[]; label: string; format?: ValueFormat; height?: number }) {
+  const format = FORMATS[fk];
+  const [at, setAt] = useState<number | null>(null);
+  const uid = useId();
+  const all = [...values, ...(prev ?? [])];
+  const max = Math.max(1, ...all);
+  const nice = niceMax(max);
+  if (!days.length || all.every((v) => v === 0)) return <p className="muted rounded-tile border border-dashed px-4 py-5 text-center text-caption" style={{ borderColor: "var(--border)" }}>Bu aralıkta veri yok.</p>;
+  const W = 600, H = height;
+  const x = (i: number) => (days.length === 1 ? W / 2 : (i / (days.length - 1)) * W);
+  const y = (v: number) => H - (v / nice) * H;
+  const path = (vs: number[]) => vs.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join("");
+  const ix = at ?? days.length - 1;
+  const sum = (vs: number[]) => vs.reduce((a, b) => a + b, 0);
+  const pick = (e: React.PointerEvent<HTMLDivElement>) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    setAt(Math.max(0, Math.min(days.length - 1, Math.round(((e.clientX - r.left) / r.width) * (days.length - 1)))));
+  };
+  return (
+    <div>
+      <div id={`${uid}-read`} aria-live="polite" className="mb-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-caption">
+        <span><b className="text-h3 tabular-nums">{format(values[ix] ?? 0)}</b> <span className="muted">{dayLabel(days[ix])}</span></span>
+        {prev ? <span className="muted tabular-nums">önceki dönemin aynı günü {format(prev[ix] ?? 0)}</span> : null}
+        <span className="muted tabular-nums">toplam {format(sum(values))}{prev ? ` · önceki ${format(sum(prev))}` : ""}</span>
+      </div>
+      <div className="flex gap-2">
+        <div aria-hidden className="faint flex w-8 shrink-0 flex-col justify-between text-right text-micro tabular-nums" style={{ height }}>
+          <span>{format(nice)}</span><span>{format(nice / 2)}</span><span>0</span>
+        </div>
+        <div
+          role="slider"
+          tabIndex={0}
+          aria-label={`${label}: gün seç`}
+          aria-valuemin={0}
+          aria-valuemax={days.length - 1}
+          aria-valuenow={ix}
+          aria-valuetext={`${dayLabel(days[ix])}: ${format(values[ix] ?? 0)}`}
+          aria-describedby={`${uid}-read`}
+          onPointerMove={pick}
+          onPointerDown={pick}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft") setAt(Math.max(0, ix - 1));
+            else if (e.key === "ArrowRight") setAt(Math.min(days.length - 1, ix + 1));
+            else return;
+            e.preventDefault();
+          }}
+          className="relative min-w-0 flex-1 cursor-crosshair rounded-[4px] outline-offset-4 focus-visible:outline-2 focus-visible:outline-solid"
+          style={{ height, outlineColor: "var(--color-brand)" }}
+        >
+          <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" className="absolute inset-0 h-full w-full overflow-visible" aria-hidden>
+            {[0, 0.5, 1].map((f) => <line key={f} x1={0} x2={W} y1={H * f} y2={H * f} strokeWidth={1} vectorEffect="non-scaling-stroke" style={{ stroke: "var(--hairline)" }} />)}
+            {prev ? <path d={path(prev)} fill="none" strokeWidth={1.5} strokeLinejoin="round" vectorEffect="non-scaling-stroke" style={{ stroke: "var(--text-faint)" }} /> : null}
+            <path d={`${path(values)}L${x(values.length - 1)},${H}L${x(0)},${H}Z`} style={{ fill: "color-mix(in srgb, var(--color-brand-500) 12%, transparent)" }} />
+            <path d={path(values)} fill="none" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" style={{ stroke: "var(--color-brand)" }} />
+            <line x1={x(ix)} x2={x(ix)} y1={0} y2={H} strokeWidth={1} vectorEffect="non-scaling-stroke" style={{ stroke: "var(--border)" }} />
+          </svg>
+          <span aria-hidden className="pointer-events-none absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ left: `${(x(ix) / W) * 100}%`, top: `${(y(values[ix] ?? 0) / H) * 100}%`, background: "var(--color-brand)", boxShadow: "0 0 0 2px var(--surface)" }} />
+        </div>
+      </div>
+      <div className="muted ml-10 mt-1.5 flex flex-wrap justify-between gap-x-3 gap-y-1 text-micro tabular-nums whitespace-nowrap">
+        <span>{dayLabel(days[0])}</span>
+        {prev ? (
+          <span className="order-last flex w-full items-center justify-center gap-3 @md:order-none @md:w-auto">
+            <span className="flex items-center gap-1"><span aria-hidden className="inline-block h-0.5 w-3" style={{ background: "var(--color-brand)" }} />bu dönem</span>
+            <span className="flex items-center gap-1"><span aria-hidden className="inline-block h-0.5 w-3" style={{ background: "var(--text-faint)" }} />önceki dönem</span>
+          </span>
+        ) : null}
+        <span>{dayLabel(days[days.length - 1])}</span>
+      </div>
+    </div>
+  );
+}
+
+/** Eksenin üst değeri: 1-2-5 basamağına yuvarlanmış (etiketler düz sayı okunsun). */
+function niceMax(v: number): number {
+  const p = 10 ** Math.floor(Math.log10(v));
+  for (const m of [1, 2, 5, 10]) if (v <= m * p) return m * p;
+  return 10 * p;
+}
+
+/**
+ * Günlük yığılmış sütun (ör. kayıt: hesap + misafir). Kategori renkleri sabit
+ * sırayla, 1 px aralık; açıklama altta; okuma satırında günün kırılımı.
+ */
+export function StackedDaily({ days, series, format: fk = "num", height = 150 }: { days: string[]; series: { label: string; values: number[] }[]; format?: ValueFormat; height?: number }) {
+  const format = FORMATS[fk];
+  const [at, setAt] = useState<number | null>(null);
+  const totals = days.map((_, i) => series.reduce((a, s) => a + (s.values[i] ?? 0), 0));
+  const max = niceMax(Math.max(1, ...totals));
+  if (!days.length || totals.every((t) => t === 0)) return <p className="muted rounded-tile border border-dashed px-4 py-5 text-center text-caption" style={{ borderColor: "var(--border)" }}>Bu aralıkta veri yok.</p>;
+  const ix = at ?? days.length - 1;
+  return (
+    <div>
+      <div aria-live="polite" className="mb-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-caption">
+        <span><b className="text-h3 tabular-nums">{format(totals[ix])}</b> <span className="muted">{dayLabel(days[ix])}</span></span>
+        <span className="muted tabular-nums">{series.map((s) => `${s.label.toLocaleLowerCase("tr-TR")} ${format(s.values[ix] ?? 0)}`).join(" · ")}</span>
+        <span className="muted tabular-nums">toplam {format(totals.reduce((a, b) => a + b, 0))}</span>
+      </div>
+      <div className="flex gap-2">
+        <div aria-hidden className="faint flex w-8 shrink-0 flex-col justify-between text-right text-micro tabular-nums" style={{ height }}>
+          <span>{format(max)}</span><span>{format(max / 2)}</span><span>0</span>
+        </div>
+        <div className="relative flex min-w-0 flex-1 items-end gap-px border-b" style={{ height, borderColor: "var(--border)" }} onPointerLeave={() => setAt(null)}>
+          <span aria-hidden className="absolute inset-x-0 top-0 border-t" style={{ borderColor: "var(--hairline)" }} />
+          <span aria-hidden className="absolute inset-x-0 top-1/2 border-t" style={{ borderColor: "var(--hairline)" }} />
+          {days.map((d, i) => (
+            <div key={d} className="relative flex h-full min-w-0 flex-1 cursor-crosshair flex-col justify-end" onPointerEnter={() => setAt(i)} onPointerDown={() => setAt(i)} aria-hidden>
+              {series.map((s, k) => {
+                const v = s.values[i] ?? 0;
+                return v > 0 ? <div key={s.label} style={{ height: `${(v / max) * 100}%`, background: CATEGORY[k] ?? OTHER, opacity: at == null || at === i ? 1 : 0.45, marginTop: 1 }} className={k === series.length - 1 ? "rounded-t-[3px]" : undefined} /> : null;
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="muted ml-10 mt-1.5 flex flex-wrap justify-between gap-x-3 text-micro tabular-nums">
+        <span>{dayLabel(days[0])}</span>
+        <span className="flex items-center gap-3">
+          {series.map((s, k) => <span key={s.label} className="flex items-center gap-1"><span aria-hidden className="inline-block h-2.5 w-2.5 rounded-[3px]" style={{ background: CATEGORY[k] ?? OTHER }} />{s.label}</span>)}
+        </span>
+        <span>{dayLabel(days[days.length - 1])}</span>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Kayıt kohortu: satır = kayıt haftası, sütun = kaçıncı hafta; hücre o
+ * haftada en az bir gün çalışan payı. Tek ton (daha çok = daha koyu);
+ * henüz gelmemiş hafta boş. Değer hücrede metin olarak da yazıyor.
+ */
+export function CohortTable({ cohorts }: { cohorts: { week: string; size: number; cells: (number | null)[] }[] }) {
+  if (!cohorts.length) return <p className="muted text-caption">Son 8 haftada kayıt yok.</p>;
+  const cols = cohorts[0]?.cells.length ?? 8;
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full min-w-[34rem] border-separate text-caption tabular-nums" style={{ borderSpacing: 2 }}>
+        <thead>
+          <tr className="muted text-micro uppercase tracking-eyebrow">
+            <th className="px-2 py-1 text-left font-semibold">Kayıt haftası</th>
+            <th className="px-2 py-1 text-right font-semibold">Kişi</th>
+            {Array.from({ length: cols }, (_, k) => <th key={k} className="px-1 py-1 text-center font-semibold">{k === 0 ? "1. hf" : `${k + 1}.`}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {cohorts.map((c) => (
+            <tr key={c.week}>
+              <td className="whitespace-nowrap px-2 py-1">{dayLabel(c.week)}</td>
+              <td className="px-2 py-1 text-right">{c.size}</td>
+              {c.cells.map((v, k) => (
+                <td
+                  key={k}
+                  className="rounded-[3px] px-1 py-1.5 text-center text-micro"
+                  style={v == null ? undefined : { background: `color-mix(in srgb, var(--color-brand-500) ${Math.round(6 + (v / 100) * 49)}%, var(--surface))`, color: "var(--text)" }}
+                >
+                  {v == null ? "" : `%${v}`}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
