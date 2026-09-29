@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
  * Adres paylaşılabilir ("premium olanlar, XP'ye göre, 3. sayfa") ve geri tuşu
  * çalışıyor. Ayrıntı için satırdaki ada tıklanır (/admin/users/[id]).
  */
-const KINDS: [UsersQuery["kind"], string][] = [["all", "Hepsi"], ["account", "Hesap"], ["guest", "Misafir"], ["premium", "Premium"], ["suspended", "Askıda"]];
+const KINDS: [UsersQuery["kind"], string][] = [["all", "Hepsi"], ["account", "Hesap"], ["guest", "Misafir"], ["premium", "Premium"], ["suspended", "Askıda"], ["testlab", "Test Lab"]];
 const SORTS: [UsersQuery["sort"], string][] = [["active", "Son aktif"], ["joined", "Yeni katılan"], ["xp", "XP"], ["streak", "Seri"]];
 
 function href(q: UsersQuery, patch: Partial<UsersQuery>): string {
@@ -74,6 +74,8 @@ export default async function AdminUsersPage({ searchParams }: { searchParams: P
                 {u.noProfile ? <Badge tone="warn">profil yok</Badge> : null}
                 {u.premium ? <Badge tone="ok">premium</Badge> : null}
                 {u.suspended ? <Badge tone="bad">askıda</Badge> : null}
+                {/* Play yayın öncesi raporu robotu (lib/test-lab): ölçümde sayılmıyor, silme elle. */}
+                {u.testLab ? <Badge tone="warn">Test Lab</Badge> : null}
               </div>
               {u.email && u.name ? <div className="muted">{u.email}</div> : null}
             </div>,

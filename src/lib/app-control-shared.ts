@@ -93,3 +93,17 @@ export function parseClientHeader(v: string | null | undefined): { platform: Cli
   if (!m) return null;
   return { platform: m[1] as ClientPlatform, version: m[2], build: Number(m[3]) };
 }
+
+/**
+ * `x-lernomi-test-lab: 1` — Firebase Test Lab cihazı (Play'in yayın öncesi
+ * raporu robotları). Mobil yalnız o cihazlarda gönderiyor; `/api/me` hesabı
+ * kalıcı olarak işaretliyor (`recordClient`, gerekçe `lib/test-lab`). Ayrı
+ * başlık, çünkü `x-lernomi-client` biçimini okuyan ayrıştırıcılar değişmesin.
+ * Ad mobil `api/client` ile aynı (kapı: `check:parity`).
+ */
+export const TEST_LAB_HEADER = "x-lernomi-test-lab";
+
+/** Yalnız tam "1" işaret sayılıyor: bozuk ya da boş değer gerçek kullanıcıyı ölçümden düşürmesin. */
+export function parseTestLabHeader(v: string | null | undefined): boolean {
+  return v?.trim() === "1";
+}

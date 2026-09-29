@@ -43,17 +43,25 @@ export async function saveAppControl(raw: unknown, actor: string | null): Promis
  * İstemci sürümünü yazar. Her istekte yazmamak için koşullu upsert: satır
  * yalnız build değiştiyse ya da son görülme altı saatten eskiyse güncelleniyor.
  * Hata yutuluyor — sürüm kaydı çağıran ucu hiçbir zaman bozmamalı.
+ *
+ * `testLab`: istek Firebase Test Lab cihazından (`TEST_LAB_HEADER`, gerekçe
+ * `lib/test-lab`). İşaret YAPIŞKAN: bir kez true olunca bu kod onu hiçbir
+ * zaman geri false yapmıyor (`or`), yani aynı hesabın sonraki gerçek cihaz
+ * açılışı da işareti silmiyor. İşaret yeni geldiyse koşullu upsert altı saati
+ * beklemeden yazıyor: robot hesabı ilk `/api/me`de işaretlensin.
  */
-export async function recordClient(userId: string, header: string | null): Promise<void> {
+export async function recordClient(userId: string, header: string | null, testLab = false): Promise<void> {
   const c = parseClientHeader(header);
   if (!c) return;
   try {
     await db.execute(sql`
-      insert into user_clients (user_id, platform, app_version, build)
-      values (${userId}, ${c.platform}, ${c.version}, ${c.build})
+      insert into user_clients (user_id, platform, app_version, build, test_lab)
+      values (${userId}, ${c.platform}, ${c.version}, ${c.build}, ${testLab})
       on conflict (user_id, platform) do update
-        set app_version = excluded.app_version, build = excluded.build, last_seen = now()
-        where user_clients.build <> excluded.build or user_clients.last_seen < now() - interval '6 hours'`);
+        set app_version = excluded.app_version, build = excluded.build, last_seen = now(),
+            test_lab = user_clients.test_lab or excluded.test_lab
+        where user_clients.build <> excluded.build or user_clients.last_seen < now() - interval '6 hours'
+           or (excluded.test_lab and not user_clients.test_lab)`);
   } catch (err) {
     console.error("[app-control] sürüm yazılamadı", err);
   }

@@ -288,9 +288,12 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
     { table: "push_subscriptions", statements: [sql`update push_subscriptions set user_id = ${T} where user_id = ${G}`] },
     {
       /* Uygulama sürümü: hesabın o platformda kaydı yoksa misafirinki taşınıyor
-         (aynı telefon), varsa hesabınki daha yeni sayılıyor. */
+         (aynı telefon), varsa hesabınki daha yeni sayılıyor. Test Lab işareti
+         (lib/test-lab) yapışkan: misafirin satırı silinse de hesaba geçiyor. */
       table: "user_clients",
       statements: [
+        sql`update user_clients t set test_lab = true
+             where t.user_id = ${T} and not t.test_lab and exists (select 1 from user_clients g where g.user_id = ${G} and g.test_lab)`,
         sql`update user_clients g set user_id = ${T}
              where g.user_id = ${G} and not exists (select 1 from user_clients t where t.user_id = ${T} and t.platform = g.platform)`,
         sql`delete from user_clients where user_id = ${G}`,

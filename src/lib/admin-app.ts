@@ -1,5 +1,6 @@
 import "server-only";
 import { sql } from "drizzle-orm";
+import { notTestLab } from "@/lib/test-lab";
 import { queryRunner, type QueryIssue } from "@/lib/admin-query";
 
 /**
@@ -24,7 +25,8 @@ export async function appAdminData(): Promise<AppAdminData> {
     rows(sql`
       select platform, app_version, build, count(*)::int users,
         count(*) filter (where last_seen >= now() - interval '7 days')::int active7
-      from user_clients group by 1, 2, 3 order by 1, 3 desc`),
+      -- Test Lab robotları (lib/test-lab) sürüm dağılımını şişirmesin: her build'i ilk onlar açıyor.
+      from user_clients where ${notTestLab("user_clients.user_id")} group by 1, 2, 3 order by 1, 3 desc`),
     rows(sql`
       select source, count(*) filter (where created_at >= now() - interval '30 days')::int c30, count(*)::int total,
         coalesce(avg(age_days), 0)::int avg_age,

@@ -2,12 +2,14 @@ import "server-only";
 import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { events } from "@/lib/db/schema";
+import { notTestLab, real } from "@/lib/test-lab";
 
 /**
  * Dönüşüm hunisi ölçümü (WP-90, dönüşüm planı §4). Ham olaylar hem web hem
  * mobilden `events` tablosuna yazılıyor; burada okunur ve huni çıkarılır:
  * aktivasyon (ilk turu bitiren), D1/D7/D30 retention, paywall görüntüleme →
  * satın alma. Sorgular defansif — biri düşse bile sayfa açılır.
+ * Test Lab robotlarının olayları sayılmıyor (`lib/test-lab`).
  */
 export type Funnel = {
   totalUsers: number;
@@ -36,7 +38,8 @@ export async function computeFunnel(): Promise<Funnel> {
         purchaseStart: sql<number>`count(distinct ${events.userId}) filter (where ${events.name} = 'purchase_start')::int`,
         purchaseDone: sql<number>`count(distinct ${events.userId}) filter (where ${events.name} = 'purchase_done')::int`,
       })
-      .from(events);
+      .from(events)
+      .where(notTestLab(events.userId));
     if (t) {
       out.totalUsers = Number(t.totalUsers) || 0;
       out.activated = Number(t.activated) || 0;
@@ -52,6 +55,7 @@ export async function computeFunnel(): Promise<Funnel> {
     const top = await db
       .select({ name: events.name, count: sql<number>`count(*)::int` })
       .from(events)
+      .where(notTestLab(events.userId))
       .groupBy(events.name)
       .orderBy(sql`count(*) desc`)
       .limit(12);
@@ -63,8 +67,8 @@ export async function computeFunnel(): Promise<Funnel> {
   // Retention: kullanıcının ilk günü (d0); d0+1 / d0+7 / d0+30'da tekrar aktif mi.
   try {
     const res = await db.execute(sql`
-      with firsts as (select user_id, min(day) as d0 from ${events} group by user_id),
-           act as (select distinct user_id, day from ${events})
+      with firsts as (select user_id, min(day) as d0 from ${real("events")} group by user_id),
+           act as (select distinct user_id, day from ${real("events")})
       select
         count(*)::int as base,
         count(*) filter (where exists (select 1 from act a where a.user_id = f.user_id and a.day = f.d0 + 1))::int as d1,

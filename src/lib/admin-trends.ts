@@ -1,6 +1,7 @@
 import "server-only";
 import { sql } from "drizzle-orm";
 import { queryRunner, type QueryIssue } from "@/lib/admin-query";
+import { real } from "@/lib/test-lab";
 import type { TrendMetric } from "@/lib/admin-trends-shared";
 
 export type { TrendMetric } from "@/lib/admin-trends-shared";
@@ -24,22 +25,22 @@ export async function weeklyTrends(): Promise<{ metrics: TrendMetric[]; issues: 
   const [r] = await rows(sql`
     with w as (select current_date - 7 as a, current_date as b, current_date - 14 as pa, current_date - 7 as pb)
     select
-      (select count(distinct user_id) from daily_stats, w where day >= w.a and day < w.b)::int active_c,
-      (select count(distinct user_id) from daily_stats, w where day >= w.pa and day < w.pb)::int active_p,
-      (select count(*) from profiles, w where created_at >= w.a and created_at < w.b)::int signup_c,
-      (select count(*) from profiles, w where created_at >= w.pa and created_at < w.pb)::int signup_p,
+      (select count(distinct user_id) from ${real("daily_stats")}, w where day >= w.a and day < w.b)::int active_c,
+      (select count(distinct user_id) from ${real("daily_stats")}, w where day >= w.pa and day < w.pb)::int active_p,
+      (select count(*) from ${real("profiles")}, w where created_at >= w.a and created_at < w.b)::int signup_c,
+      (select count(*) from ${real("profiles")}, w where created_at >= w.pa and created_at < w.pb)::int signup_p,
       (select coalesce(sum(n), 0) from reviews_daily, w where day >= w.a and day < w.b)::int reviews_c,
       (select coalesce(sum(n), 0) from reviews_daily, w where day >= w.pa and day < w.pb)::int reviews_p,
-      (select coalesce(sum(seconds), 0) / 60 from daily_stats, w where day >= w.a and day < w.b)::int minutes_c,
-      (select coalesce(sum(seconds), 0) / 60 from daily_stats, w where day >= w.pa and day < w.pb)::int minutes_p,
-      (select count(*) filter (where name = 'session_done') * 100 / nullif(count(*) filter (where name = 'session_start'), 0) from events, w where name in ('session_start', 'session_done') and day >= w.a and day < w.b)::int completion_c,
-      (select count(*) filter (where name = 'session_done') * 100 / nullif(count(*) filter (where name = 'session_start'), 0) from events, w where name in ('session_start', 'session_done') and day >= w.pa and day < w.pb)::int completion_p,
-      (select count(*) from events, w where name = 'conversation_finish' and day >= w.a and day < w.b)::int conversations_c,
-      (select count(*) from events, w where name = 'conversation_finish' and day >= w.pa and day < w.pb)::int conversations_p,
+      (select coalesce(sum(seconds), 0) / 60 from ${real("daily_stats")}, w where day >= w.a and day < w.b)::int minutes_c,
+      (select coalesce(sum(seconds), 0) / 60 from ${real("daily_stats")}, w where day >= w.pa and day < w.pb)::int minutes_p,
+      (select count(*) filter (where name = 'session_done') * 100 / nullif(count(*) filter (where name = 'session_start'), 0) from ${real("events")}, w where name in ('session_start', 'session_done') and day >= w.a and day < w.b)::int completion_c,
+      (select count(*) filter (where name = 'session_done') * 100 / nullif(count(*) filter (where name = 'session_start'), 0) from ${real("events")}, w where name in ('session_start', 'session_done') and day >= w.pa and day < w.pb)::int completion_p,
+      (select count(*) from ${real("events")}, w where name = 'conversation_finish' and day >= w.a and day < w.b)::int conversations_c,
+      (select count(*) from ${real("events")}, w where name = 'conversation_finish' and day >= w.pa and day < w.pb)::int conversations_p,
       (select count(*) from store_events, w where type in ('purchase', 'renewal') and coalesce(period_type, '') <> 'trial' and coalesce(environment, 'production') = 'production' and coalesce(event_at, created_at) >= w.a and coalesce(event_at, created_at) < w.b)::int paid_c,
       (select count(*) from store_events, w where type in ('purchase', 'renewal') and coalesce(period_type, '') <> 'trial' and coalesce(environment, 'production') = 'production' and coalesce(event_at, created_at) >= w.pa and coalesce(event_at, created_at) < w.pb)::int paid_p,
-      (select count(*) from events, w where name = 'client_error' and day >= w.a and day < w.b)::int errors_c,
-      (select count(*) from events, w where name = 'client_error' and day >= w.pa and day < w.pb)::int errors_p`);
+      (select count(*) from ${real("events")}, w where name = 'client_error' and day >= w.a and day < w.b)::int errors_c,
+      (select count(*) from ${real("events")}, w where name = 'client_error' and day >= w.pa and day < w.pb)::int errors_p`);
   const n = (k: string) => Number(r?.[k]) || 0;
   return {
     issues,
@@ -72,13 +73,13 @@ export async function dailyPulse(): Promise<{ days: PulseDay[]; issues: QueryIss
   const { rows, issues } = queryRunner("gösterge şeridi");
   const r = await rows(sql`
     select g.day::date::text as day,
-      (select count(distinct user_id) from daily_stats d where d.day = g.day::date)::int active,
-      (select count(*) from profiles p where p.created_at >= g.day and p.created_at < g.day + interval '1 day')::int signup,
+      (select count(distinct user_id) from ${real("daily_stats", "d")} where d.day = g.day::date)::int active,
+      (select count(*) from ${real("profiles", "p")} where p.created_at >= g.day and p.created_at < g.day + interval '1 day')::int signup,
       (select coalesce(sum(s.price_usd), 0) from store_events s
         where s.type in ('purchase', 'renewal', 'product_change', 'one_time') and coalesce(s.period_type, '') <> 'trial'
           and coalesce(s.environment, 'production') = 'production'
           and coalesce(s.event_at, s.created_at) >= g.day and coalesce(s.event_at, s.created_at) < g.day + interval '1 day')::float gross,
-      (select count(*) from events e where e.name = 'client_error' and e.day = g.day::date)::int errors
+      (select count(*) from ${real("events", "e")} where e.name = 'client_error' and e.day = g.day::date)::int errors
     from generate_series(current_date - 14, current_date - 1, interval '1 day') g(day)
     order by g.day`);
   const n = (v: unknown) => Number(v) || 0;

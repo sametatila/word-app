@@ -21844,6 +21844,29 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
   );
 }
 
+/* ── ISTEMCI BASLIKLARI: mobilin gonderdigi ad = sunucunun okudugu ad ────────
+ * Mobil her istekte `x-lernomi-client` (surum kaydi, hata raporu, Play
+ * Integrity) ve Firebase Test Lab cihazinda `x-lernomi-test-lab: 1` gonderiyor
+ * (Play yayin oncesi raporu robotlari; sunucu lib/test-lab). Adlar iki yerde
+ * elle yazili: biri degisirse sunucu basligi hic gormez, surum kaydi ya da
+ * robot isareti SESSIZCE durur (derleme kirilmaz, panel yalniz eksik sayar). */
+{
+  const sunucu = read("src/lib/app-control-shared.ts");
+  const mob = read("mobile/src/api/client.ts");
+  const sabit = (src, ad) => (src.match(new RegExp("export const " + ad + ' = "([^"]+)"')) ?? [])[1] ?? "(yok)";
+  sameList("istemci surum basligi adi", [/"x-lernomi-client": CLIENT_HEADER_VALUE/.test(mob) ? "x-lernomi-client" : "(yok)"], [sabit(sunucu, "CLIENT_HEADER")], "mobil", "sunucu");
+  sameList("test lab basligi adi", [sabit(mob, "TEST_LAB_HEADER")], [sabit(sunucu, "TEST_LAB_HEADER")], "mobil", "sunucu");
+  /* Iki taraf birden silinirse "(yok)" = "(yok)" gecmesin. */
+  sameList("baslik sabitleri okunabiliyor", ["CLIENT_HEADER", "TEST_LAB_HEADER"].map((ad) => ad + "=" + (sabit(sunucu, ad) === "(yok)" ? "yok" : "var")), ["CLIENT_HEADER=var", "TEST_LAB_HEADER=var"], "sunucu", "beklenen");
+  /* Deger: mobil "1" gonderiyor, sunucu yalniz tam "1"i isaret sayiyor. */
+  sameList(
+    "test lab basligi degeri",
+    [/\[TEST_LAB_HEADER\]: "1"/.test(mob) ? "1" : "(baska)"],
+    [/v\?\.trim\(\) === "1"/.test(sunucu) ? "1" : "(baska)"],
+    "mobil", "sunucu",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

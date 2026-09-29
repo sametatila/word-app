@@ -1,6 +1,7 @@
 import "server-only";
 import { sql } from "drizzle-orm";
 import { queryRunner, type QueryIssue } from "@/lib/admin-query";
+import { isTestLabSql } from "@/lib/test-lab";
 
 /**
  * Kullanıcı listesi — SUNUCUDA arama, süzme, sıralama ve sayfalama
@@ -15,14 +16,14 @@ import { queryRunner, type QueryIssue } from "@/lib/admin-query";
  */
 
 export const USERS_PAGE_SIZE = 50;
-export type UsersKind = "all" | "account" | "guest" | "premium" | "suspended";
+export type UsersKind = "all" | "account" | "guest" | "premium" | "suspended" | "testlab";
 export type UsersSort = "active" | "joined" | "xp" | "streak";
 
 export type UsersQuery = { q: string; kind: UsersKind; sort: UsersSort; page: number };
 
 export function parseUsersQuery(sp: Record<string, string | string[] | undefined>): UsersQuery {
   const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
-  const kinds: UsersKind[] = ["all", "account", "guest", "premium", "suspended"];
+  const kinds: UsersKind[] = ["all", "account", "guest", "premium", "suspended", "testlab"];
   const sorts: UsersSort[] = ["active", "joined", "xp", "streak"];
   const kind = kinds.includes(one(sp.tur) as UsersKind) ? (one(sp.tur) as UsersKind) : "all";
   const sort = sorts.includes(one(sp.sira) as UsersSort) ? (one(sp.sira) as UsersSort) : "active";
@@ -36,6 +37,12 @@ export type UserRow = {
   guest: boolean; premium: boolean; suspended: boolean;
   /** Hesap var ama profil satırı yok: uygulamada kurulumu hiç bitirmemiş (ör. yalnız web'de kayıt). */
   noProfile: boolean;
+  /**
+   * Firebase Test Lab cihazından açılmış (Play'in yayın öncesi raporu robotu;
+   * `lib/test-lab`). Ölçümlerde sayılmıyor; silme bu listeden ELLE. Başlığı
+   * herkes gönderebilir: silmeden önce e-posta ve katılma tarihine bakılır.
+   */
+  testLab: boolean;
 };
 
 /*
@@ -59,6 +66,7 @@ export async function listUsers(query: UsersQuery): Promise<{ rows: UserRow[]; t
     : query.kind === "account" ? sql`and not coalesce(u."isAnonymous", false)`
     : query.kind === "premium" ? sql`and p.premium_until > now()`
     : query.kind === "suspended" ? sql`and exists (select 1 from account_suspensions s where s.user_id = ${ID} and s.lifted_at is null and (s.until is null or s.until > now()))`
+    : query.kind === "testlab" ? sql`and ${isTestLabSql(ID)}`
     : sql``;
   const order =
     query.sort === "joined" ? sql`coalesce(p.created_at, u."createdAt") desc`
@@ -76,7 +84,8 @@ export async function listUsers(query: UsersQuery): Promise<{ rows: UserRow[]; t
         coalesce(u."isAnonymous", false) guest, coalesce(p.premium_until > now(), false) premium,
         exists (select 1 from account_suspensions s where s.user_id = ${ID} and s.lifted_at is null and (s.until is null or s.until > now())) suspended,
         (select count(*) from user_words w where w.user_id = ${ID} and w.state > 0)::int words,
-        p.user_id is null no_profile
+        p.user_id is null no_profile,
+        ${isTestLabSql(ID)} test_lab
       from ${FROM}
       where true ${search} ${kind}
       order by ${order}
@@ -90,7 +99,7 @@ export async function listUsers(query: UsersQuery): Promise<{ rows: UserRow[]; t
       userId: String(r.user_id), email: String(r.email), name: String(r.name), username: String(r.username),
       pair: String(r.pair), level: String(r.level), streak: Number(r.streak) || 0, xp: Number(r.xp) || 0,
       words: Number(r.words) || 0, lastActive: String(r.last_active), joined: String(r.joined),
-      guest: r.guest === true, premium: r.premium === true, suspended: r.suspended === true, noProfile: r.no_profile === true,
+      guest: r.guest === true, premium: r.premium === true, suspended: r.suspended === true, noProfile: r.no_profile === true, testLab: r.test_lab === true,
     })),
   };
 }

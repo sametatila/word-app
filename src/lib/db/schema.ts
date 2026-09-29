@@ -671,6 +671,13 @@ export const userClients = pgTable(
     build: integer("build").notNull(),
     firstSeen: timestamp("first_seen", { withTimezone: true }).notNull().defaultNow(),
     lastSeen: timestamp("last_seen", { withTimezone: true }).notNull().defaultNow(),
+    /**
+     * Firebase Test Lab cihazı (Play'in yayın öncesi raporu robotları) bu
+     * satırı yazdı. Yapışkan: kod onu hiç geri false yapmıyor. Panel ölçümleri
+     * bu hesapları saymıyor, kullanıcı listesinde rozetle görünüyor
+     * (`lib/test-lab`). Gerekçe: `drizzle/0075_user_clients_test_lab.sql`.
+     */
+    testLab: boolean("test_lab").notNull().default(false),
   },
   (t) => [primaryKey({ columns: [t.userId, t.platform] }), index("user_clients_build_idx").on(t.platform, t.build)],
 );

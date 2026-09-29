@@ -118,7 +118,9 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
       from events where user_id = ${id} order by id desc limit 60`),
     rows(sql`select to_char(created_at, 'MM-DD HH24:MI') at, coalesce(kind, '') screen, value
       from events where user_id = ${id} and name = 'client_error' order by id desc limit 20`),
-    rows(sql`select platform, app_version, build, to_char(first_seen, 'YYYY-MM-DD') first_seen, to_char(last_seen, 'YYYY-MM-DD HH24:MI') last_seen
+    /* `test_lab`: Play yayın öncesi raporu robotu (lib/test-lab); silme kararı buradan. */
+    rows(sql`select platform, app_version, build, case when test_lab then 'evet' else '' end test_lab,
+        to_char(first_seen, 'YYYY-MM-DD') first_seen, to_char(last_seen, 'YYYY-MM-DD HH24:MI') last_seen
       from user_clients where user_id = ${id} order by last_seen desc`),
   ]);
 
@@ -167,7 +169,7 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
       webPush: num(webPush[0]?.c),
       consents: table(consents, ["purpose", "granted", "version", "platform", "decided"]),
       usage: table(usage, ["key", "period", "count"]),
-      clients: table(clients, ["platform", "app_version", "build", "first_seen", "last_seen"]),
+      clients: table(clients, ["platform", "app_version", "build", "test_lab", "first_seen", "last_seen"]),
     },
     ai: table(ai, ["kind", "provider", "calls", "errors"]),
     events: table(events, ["at", "name", "kind", "value"]),

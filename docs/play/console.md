@@ -112,3 +112,25 @@ Kilit ekranında görünme kodda karşılığı olan bir iddia: kanal ve bildiri
 `VISIBILITY_PUBLIC`, `FOREGROUND_SERVICE_IMMEDIATE`. Servis kalkamazsa (izin geri alınmış,
 arka planda başlatma) kendini kapatıyor, JS'e `LernomiWalkServiceFailed` gidiyor ve ekranda
 uyarı çiziliyor: servissiz arka plan kaydı yok.
+
+## 4. Yayın öncesi raporu (pre-launch report) robotları: Test Lab hesapları
+
+Play her yeni build'i Firebase Test Lab cihazlarında robotlarla çalıştırıyor. Robotlar Google test
+hesaplarıyla giriyor (ör. `…@gmail.com`, UA `okhttp/…`, IP 66.249.x / 74.125.x) ve misafir açıyor;
+kullanıcı listesi ve ölçümler kirleniyordu.
+
+- **Tanıma (Android):** Test Lab cihazında sistem ayarı `firebase.test.lab` = `"true"` (Firebase'in
+  belgelediği sinyal). `LernomiIntegrityModule.isTestLab` okuyor, `mobile/src/lib/integrity`
+  `isTestLabDevice`; iOS ve eski build'ler hep false. Uygulamanın davranışı değişmiyor.
+- **Taşıma:** o cihazda her istekte `x-lernomi-test-lab: 1` (`mobile/src/api/client`; giriş ve misafir
+  açılışı da aynı yoldan). Ad sunucudaki `TEST_LAB_HEADER` ile aynı, kapı `check:parity`.
+- **İşaret:** `/api/me` `user_clients.test_lab`i true yapıyor; YAPIŞKAN, kod hiç geri almıyor. Misafir
+  hesaba birleşince işaret hesaba geçiyor.
+- **Ölçüm:** panel sayıları (pano KPI'ları, trend, huni, haftalık karşılaştırma, gösterge şeridi,
+  kapsam sayfası, sürüm dağılımı) ve haftalık özet bildirimi bu hesapları saymıyor; tek tanım
+  `src/lib/test-lab.ts` (`real`, `notTestLab`). Gelir zaten sandbox'ı düşüyor; uyarılar (çökme,
+  5xx, yapay zekâ) kasten süzülmüyor: robotta görülen çökme gerçek çökme.
+- **Temizlik ELLE:** otomatik silme yok. Panel › Kullanıcılar › süzgeç **Test Lab** (satırda rozet,
+  ayrıntıda "Uygulama sürümü" tablosunda `test_lab`). Başlığı herkes gönderebilir: silmeden önce
+  e-posta ve katılma tarihine bakılır. Bu mekanizmadan önce açılmış robot hesapları işaretsiz; onlar
+  e-posta ve oturum IP'sine bakılarak elle bulunur.

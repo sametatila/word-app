@@ -7,13 +7,16 @@
  *     güncelleme ekranına kilitleyebilir ya da mağaza bağlantısını dışarıya
  *     yönlendirebilir;
  *   - istemci sürüm başlığı: tanınmazsa zorunlu güncelleme kimseye uygulanmaz;
+ *   - Test Lab işareti ve ölçüm süzgeci: bozuk başlık gerçek kullanıcıyı
+ *     ölçümden düşürmemeli, süzgeç sütunu alt sorgunun içine bağlanmamalı;
  *   - hata gruplama ve temizleme: kişisel veri sızarsa ya da her hata ayrı grup
  *     olursa panel ve Telegram gürültüye boğulur;
  *   - nginx zaman/rota ayrıştırıcıları: bozulursa 5xx uyarısı hiç tetiklenmez;
  *   - toplu bildirim hedefi ve yolu: dışarıya yönlendiren bildirim yazılamamalı;
  *   - mağaza defteri eşlemesi: yanlış tür/tutar gelir kartını yanıltır.
  */
-import { DEFAULT_APP_CONTROL, parseAppControl, parseClientHeader, updateVerdict } from "../src/lib/app-control-shared";
+import { DEFAULT_APP_CONTROL, parseAppControl, parseClientHeader, parseTestLabHeader, updateVerdict } from "../src/lib/app-control-shared";
+import { isTestLabSql, notTestLab, real } from "../src/lib/test-lab";
 import { errorFingerprint, scrub } from "../src/lib/client-errors";
 import { nginxTime } from "../src/lib/alerts";
 import { routeOf } from "../src/lib/server-metrics";
@@ -31,7 +34,7 @@ import { QUEUE_ALERT_FAMILIES, rankOf, slaProgress, sortInbox, type InboxItem } 
 import { parseRange } from "../src/app/admin/_data-shared";
 import * as authSchema from "../src/lib/db/auth-schema";
 import { getTableName, is } from "drizzle-orm";
-import { PgTable } from "drizzle-orm/pg-core";
+import { PgDialect, PgTable } from "drizzle-orm/pg-core";
 
 let failures = 0;
 let total = 0;
@@ -77,6 +80,23 @@ async function main() {
   check("bilinmeyen platform reddediliyor", parseClientHeader("web/1.0.0/1") === null);
   check("eksik parça reddediliyor", parseClientHeader("android/1.0/14") === null);
   check("boş", parseClientHeader(null) === null && parseClientHeader("") === null);
+
+  console.log("\nTest Lab işareti (lib/test-lab)");
+  check("tam 1 işaret", parseTestLabHeader("1") && parseTestLabHeader(" 1 "));
+  check("başka değer işaret değil", !parseTestLabHeader("true") && !parseTestLabHeader("0") && !parseTestLabHeader("") && !parseTestLabHeader(null));
+  const dialect = new PgDialect();
+  const render = (q: Parameters<PgDialect["sqlToQuery"]>[0]) => dialect.sqlToQuery(q).sql;
+  const ev = render(real("events"));
+  check("ölçüm tablosu aynı adla dönüyor", /\) events$/.test(ev), ev);
+  check("süzgeç dış tabloya bağlı", ev.includes("tl.user_id = events.user_id and tl.test_lab"), ev);
+  check("takma ad korunuyor", /\) p$/.test(render(real("profiles", "p"))));
+  const us = render(real("user", "u"));
+  check("user tablosu kimlik sütunuyla", us.includes('tl.user_id = "user".id') && /\) u$/.test(us), us);
+  check("nitelikli sütun kabul", render(notTestLab("e.user_id")).includes("tl.user_id = e.user_id"));
+  let threw = false;
+  try { notTestLab("user_id"); } catch { threw = true; }
+  check("çıplak sütun reddediliyor (alt sorguya bağlanırdı)", threw);
+  check("rozet ifadesi exists", render(isTestLabSql("p.user_id")).startsWith("exists ("));
 
   console.log("\nHata gruplama ve temizleme");
   const s = scrub("mail ali.veli@example.com ?token=abcDEF123&x=1 id 12345678 key " + "a".repeat(40));

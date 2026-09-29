@@ -1,6 +1,7 @@
 import "server-only";
 import { sql } from "drizzle-orm";
 import { queryRunner, type QueryIssue } from "@/lib/admin-query";
+import { real } from "@/lib/test-lab";
 
 /**
  * Panonun 31 Ağustos'tan sonra gelen özelliklere bakan kısmı.
@@ -117,7 +118,12 @@ export type Coverage = {
   };
 };
 
-/** `days`: panelin seçili aralığı (7 / 30 / 90); bkz. `getAdminData`. */
+/**
+ * `days`: panelin seçili aralığı (7 / 30 / 90); bkz. `getAdminData`.
+ * Hesap, profil ve olay tabloları `real(...)` ile: Test Lab robotları sayılmıyor
+ * (`lib/test-lab`). Özellik tabloları (konuşma, Patika, sınav…) süzülmüyor;
+ * robotların oralarda bıraktığı iz ölçekte önemsiz.
+ */
 export async function getCoverage(days = 30): Promise<Coverage> {
   const { rows, issues } = queryRunner("kapsam");
   const [
@@ -129,32 +135,32 @@ export async function getCoverage(days = 30): Promise<Coverage> {
         count(*)::int users,
         count(*) filter (where u."isAnonymous")::int guests,
         count(*) filter (where p.last_active_day >= current_date - 6)::int active7
-      from profiles p left join "user" u on u.id = p.user_id
+      from ${real("profiles", "p")} left join ${real("user", "u")} on u.id = p.user_id
       group by 1, 2 order by users desc`),
     rows(sql`
       select
-        (select count(*) from profiles where premium_until > now())::int active,
+        (select count(*) from ${real("profiles")} where premium_until > now())::int active,
         (select count(*) from entitlements where store_until > now())::int store,
         (select count(*) from entitlements where bonus_until > now())::int bonus`),
     rows(sql`select coalesce(store_platform, '?') k, count(*)::int c from entitlements where store_until > now() group by 1 order by 2 desc`),
     rows(sql`
       with w as (
-        select user_id, min(created_at) first_view from events
+        select user_id, min(created_at) first_view from ${real("events")}
         where name = 'paywall_view' and day >= current_date - ${days - 1}::int and coalesce(kind, '') not in ('mobile', 'web_link')
         group by user_id
       )
       select
         (select count(*) from w)::int web_views,
-        (select count(distinct user_id) from events where name = 'store_redirect' and day >= current_date - ${days - 1}::int and (kind like '%_tap' or kind like 'desktop:%_ios' or kind like 'desktop:%_android'))::int taps,
-        (select count(distinct user_id) from events where name = 'store_redirect' and day >= current_date - ${days - 1}::int and kind not like '%_tap' and kind not like 'desktop:%_ios' and kind not like 'desktop:%_android')::int redirects,
-        (select count(distinct user_id) from events where name = 'paywall_view' and kind = 'web_link' and day >= current_date - ${days - 1}::int)::int app_views,
-        (select count(distinct e.user_id) from events e join w on w.user_id = e.user_id
+        (select count(distinct user_id) from ${real("events")} where name = 'store_redirect' and day >= current_date - ${days - 1}::int and (kind like '%_tap' or kind like 'desktop:%_ios' or kind like 'desktop:%_android'))::int taps,
+        (select count(distinct user_id) from ${real("events")} where name = 'store_redirect' and day >= current_date - ${days - 1}::int and kind not like '%_tap' and kind not like 'desktop:%_ios' and kind not like 'desktop:%_android')::int redirects,
+        (select count(distinct user_id) from ${real("events")} where name = 'paywall_view' and kind = 'web_link' and day >= current_date - ${days - 1}::int)::int app_views,
+        (select count(distinct e.user_id) from ${real("events", "e")} join w on w.user_id = e.user_id
           where e.name = 'purchase_done' and e.created_at >= w.first_view)::int purchases`),
     rows(sql`
       select count(*) filter (where name = 'conversation_start')::int started,
         count(*) filter (where name = 'conversation_finish')::int finished,
         count(distinct user_id) filter (where name in ('conversation_start', 'conversation_finish'))::int users
-      from events where day >= current_date - ${days - 1}::int and name in ('conversation_start', 'conversation_finish')`),
+      from ${real("events")} where day >= current_date - ${days - 1}::int and name in ('conversation_start', 'conversation_finish')`),
     rows(sql`
       select count(*)::int rules, count(*) filter (where due_at <= now())::int due,
         count(*) filter (where chat_done)::int rp
@@ -176,7 +182,7 @@ export async function getCoverage(days = 30): Promise<Coverage> {
       from user_path_items group by 1 having count(*) >= 2 order by a asc limit 10`),
     rows(sql`
       select coalesce(kind, '?') k, count(*)::int c, count(distinct user_id)::int u, coalesce(avg(value), 0)::int a
-      from events where name = 'skill_finish' and day >= current_date - ${days - 1}::int group by 1 order by c desc limit 20`),
+      from ${real("events")} where name = 'skill_finish' and day >= current_date - ${days - 1}::int group by 1 order by c desc limit 20`),
     rows(sql`
       select coalesce(kind, '?') k, count(*)::int c, count(distinct user_id)::int u, coalesce(avg(score), 0)::int a
       from exams where created_at >= now() - make_interval(days => ${days}::int) group by 1 order by c desc limit 20`),
@@ -198,10 +204,10 @@ export async function getCoverage(days = 30): Promise<Coverage> {
       from assessments where created_at >= now() - make_interval(days => ${days}::int) group by 1, 2 order by 3 desc limit 16`),
     rows(sql`
       select count(*)::int c, count(distinct user_id)::int u, coalesce(avg(value), 0)::int a
-      from events where name = 'pronounce' and day >= current_date - ${days - 1}::int`),
-    rows(sql`select count(*)::int c from events where name = 'tts_play' and day >= current_date - ${days - 1}::int`),
-    rows(sql`select coalesce(kind, '?') k, count(*)::int c from events where name = 'tts_fallback' and day >= current_date - ${days - 1}::int group by 1 order by 2 desc`),
-    rows(sql`select coalesce(kind, '?') k, count(*)::int c from events where name = 'walk_listen' and day >= current_date - ${days - 1}::int group by 1 order by 2 desc limit 16`),
+      from ${real("events")} where name = 'pronounce' and day >= current_date - ${days - 1}::int`),
+    rows(sql`select count(*)::int c from ${real("events")} where name = 'tts_play' and day >= current_date - ${days - 1}::int`),
+    rows(sql`select coalesce(kind, '?') k, count(*)::int c from ${real("events")} where name = 'tts_fallback' and day >= current_date - ${days - 1}::int group by 1 order by 2 desc`),
+    rows(sql`select coalesce(kind, '?') k, count(*)::int c from ${real("events")} where name = 'walk_listen' and day >= current_date - ${days - 1}::int group by 1 order by 2 desc limit 16`),
   ]);
 
   const [
@@ -213,29 +219,29 @@ export async function getCoverage(days = 30): Promise<Coverage> {
       select count(*)::int total,
         count(*) filter (where p.last_active_day >= current_date - 6)::int active7,
         count(*) filter (where coalesce(p.last_active_day, p.created_at::date) < current_date - 20)::int stale20
-      from "user" u left join profiles p on p.user_id = u.id where u."isAnonymous"`),
-    rows(sql`select count(*)::int c from events where name = 'guest_start' and day >= current_date - ${days - 1}::int`),
-    rows(sql`select coalesce(kind, '?') k, count(*)::int c, count(distinct user_id)::int u from events where name = 'guest_nudge' and day >= current_date - ${days - 1}::int group by 1 order by 2 desc`),
-    rows(sql`select coalesce(kind, '?') k, count(*)::int c, count(distinct user_id)::int u from events where name = 'guest_upgrade' and day >= current_date - ${days - 1}::int group by 1 order by 2 desc`),
+      from ${real("user", "u")} left join ${real("profiles", "p")} on p.user_id = u.id where u."isAnonymous"`),
+    rows(sql`select count(*)::int c from ${real("events")} where name = 'guest_start' and day >= current_date - ${days - 1}::int`),
+    rows(sql`select coalesce(kind, '?') k, count(*)::int c, count(distinct user_id)::int u from ${real("events")} where name = 'guest_nudge' and day >= current_date - ${days - 1}::int group by 1 order by 2 desc`),
+    rows(sql`select coalesce(kind, '?') k, count(*)::int c, count(distinct user_id)::int u from ${real("events")} where name = 'guest_upgrade' and day >= current_date - ${days - 1}::int group by 1 order by 2 desc`),
     rows(sql`
       select count(distinct user_id) filter (where name = 'first_practice')::int seen,
         count(*) filter (where name = 'first_practice_done')::int done,
         count(*) filter (where name = 'onboarding_existing_account')::int existing
-      from events where day >= current_date - ${days - 1}::int and name in ('first_practice', 'first_practice_done', 'onboarding_existing_account')`),
-    rows(sql`select value::text k, count(*)::int c, count(distinct user_id)::int u from events where name = 'install_prompt' and day >= current_date - ${days - 1}::int group by 1 order by 1`),
+      from ${real("events")} where day >= current_date - ${days - 1}::int and name in ('first_practice', 'first_practice_done', 'onboarding_existing_account')`),
+    rows(sql`select value::text k, count(*)::int c, count(distinct user_id)::int u from ${real("events")} where name = 'install_prompt' and day >= current_date - ${days - 1}::int group by 1 order by 1`),
     rows(sql`
       select
-        (select count(*) from profiles where username is not null)::int usernames,
-        (select count(*) from profiles where visibility = 'public')::int public_profiles,
+        (select count(*) from ${real("profiles")} where username is not null)::int usernames,
+        (select count(*) from ${real("profiles")} where visibility = 'public')::int public_profiles,
         (select count(*) from friendships where status = 'accepted')::int friends_accepted,
         (select count(*) from friendships where status = 'pending')::int friends_pending,
         (select count(*) from league_members where week_start = date_trunc('week', current_date)::date)::int league_week,
         (select count(*) from nudges where created_at >= now() - make_interval(days => ${days}::int))::int nudges30,
         (select count(*) from event_reactions where created_at >= now() - make_interval(days => ${days}::int))::int reactions30,
         (select count(*) from user_blocks)::int blocks,
-        (select count(*) from events where name = 'feed_view' and day >= current_date - ${days - 1}::int)::int feed30,
+        (select count(*) from ${real("events")} where name = 'feed_view' and day >= current_date - ${days - 1}::int)::int feed30,
         (select count(*) from friend_quests where status = 'active')::int quests_active,
-        (select count(*) from events where name = 'league_up' and day >= current_date - ${days - 1}::int)::int league_ups30`),
+        (select count(*) from ${real("events")} where name = 'league_up' and day >= current_date - ${days - 1}::int)::int league_ups30`),
     rows(sql`
       select count(*)::int total,
         count(*) filter (where created_at >= now() - make_interval(days => ${days}::int))::int last30
@@ -251,7 +257,7 @@ export async function getCoverage(days = 30): Promise<Coverage> {
       select count(*) filter (where reminders_enabled)::int reminders,
         count(*) filter (where streak_alert)::int streak_alert,
         count(*) filter (where weekly_reminder)::int weekly_reminder
-      from profiles`),
+      from ${real("profiles")}`),
     /* Rıza: her kullanıcının her amaç için SON kararı. */
     rows(sql`
       select purpose, count(*) filter (where granted)::int granted, count(*) filter (where not granted)::int denied
@@ -281,7 +287,7 @@ export async function getCoverage(days = 30): Promise<Coverage> {
       from module_clears group by 1 order by 1`),
     rows(sql`
       select count(*) filter (where name = 'boss_play')::int plays, count(*) filter (where name = 'boss_clear')::int clears
-      from events where day >= current_date - ${days - 1}::int and name in ('boss_play', 'boss_clear')`),
+      from ${real("events")} where day >= current_date - ${days - 1}::int and name in ('boss_play', 'boss_clear')`),
     rows(sql`
       select achievement_id k, count(*)::int u, count(*) filter (where unlocked_at >= now() - make_interval(days => ${days}::int))::int n
       from achievements group by 1 order by 2 desc limit 20`),
@@ -290,11 +296,11 @@ export async function getCoverage(days = 30): Promise<Coverage> {
       from quest_claims where day >= current_date - ${days - 1}::int group by 1 order by 2 desc`),
     rows(sql`
       select
-        (select count(*) from events where name = 'challenge_play' and day >= current_date - ${days - 1}::int)::int plays,
-        (select count(distinct user_id) from events where name = 'challenge_play' and day >= current_date - ${days - 1}::int)::int users,
-        (select count(*) from profiles where challenge_best > 0)::int with_best,
-        (select coalesce(avg(challenge_best) filter (where challenge_best > 0), 0) from profiles)::int avg_best,
-        (select coalesce(max(challenge_best), 0) from profiles)::int max_best`),
+        (select count(*) from ${real("events")} where name = 'challenge_play' and day >= current_date - ${days - 1}::int)::int plays,
+        (select count(distinct user_id) from ${real("events")} where name = 'challenge_play' and day >= current_date - ${days - 1}::int)::int users,
+        (select count(*) from ${real("profiles")} where challenge_best > 0)::int with_best,
+        (select coalesce(avg(challenge_best) filter (where challenge_best > 0), 0) from ${real("profiles")})::int avg_best,
+        (select coalesce(max(challenge_best), 0) from ${real("profiles")})::int max_best`),
     /* Okunmamış sosyal bildirim birikimi: şişiyorsa ya gelen kutusu
        açılmıyor ya da gürültü üretiyoruz. */
     rows(sql`select type k, count(*) filter (where not read)::int unread, count(*)::int total from social_notifications group by 1 order by 2 desc`),
@@ -310,10 +316,10 @@ export async function getCoverage(days = 30): Promise<Coverage> {
     rows(sql`select "providerId" k, count(*)::int c from account group by 1 order by 2 desc`),
     rows(sql`
       select
-        (select count(*) from "user" where "twoFactorEnabled")::int two_factor,
+        (select count(*) from ${real("user")} where "twoFactorEnabled")::int two_factor,
         (select count(*) from session where "expiresAt" > now())::int sessions,
-        (select count(*) from "user" where not "emailVerified" and not coalesce("isAnonymous", false))::int unverified,
-        (select count(*) from "user" where not coalesce("isAnonymous", false))::int accounts`),
+        (select count(*) from ${real("user")} where not "emailVerified" and not coalesce("isAnonymous", false))::int unverified,
+        (select count(*) from ${real("user")} where not coalesce("isAnonymous", false))::int accounts`),
   ]);
   const ch = chal[0] ?? {};
   const au = authRow[0] ?? {};

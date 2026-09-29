@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { recordClient } from "@/lib/app-control";
-import { CLIENT_HEADER } from "@/lib/app-control-shared";
+import { CLIENT_HEADER, TEST_LAB_HEADER, parseTestLabHeader } from "@/lib/app-control-shared";
 import { getUserInfo } from "@/lib/auth/server";
 import { backfillNativeLang, ensureProfile, getProgress, newWordsLeft, termsUpdateFor } from "@/lib/session";
 import { parseAvatar } from "@/lib/avatar-config";
@@ -27,8 +27,11 @@ export async function GET() {
   try {
     /* UYGULAMA SÜRÜMÜ: mobil her istekte `x-lernomi-client` gönderiyor, açılışta
        kesin çağrılan uç bu. Yazma koşullu (build değişti ya da 6 saat geçti)
-       ve beklenmiyor: sürüm kaydı özeti geciktirmesin. */
-    void recordClient(userId, (await headers()).get(CLIENT_HEADER));
+       ve beklenmiyor: sürüm kaydı özeti geciktirmesin. Test Lab başlığı da
+       burada yazılıyor (yapışkan işaret, bkz. lib/test-lab): mobil girişten ve
+       misafir açılışından hemen sonra ana ekranda bu ucu çağırıyor. */
+    const h = await headers();
+    void recordClient(userId, h.get(CLIENT_HEADER), parseTestLabHeader(h.get(TEST_LAB_HEADER)));
     /*
       AD DA VERİLİYOR. Burası MOBİLİN açılışta kesin çağırdığı uç ve
       `ensureProfile` adsız çağrılıyordu: `profiles.display_name` boş kalıyor,

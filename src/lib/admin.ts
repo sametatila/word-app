@@ -6,6 +6,7 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { db } from "@/lib/db";
 import { computeFunnel, type Funnel } from "@/lib/funnel";
 import { queryRunner, type QueryIssue } from "@/lib/admin-query";
+import { real } from "@/lib/test-lab";
 
 /**
  * Admin panosu veri katmanı (lernomi.app/admin). Sahibin sistemi yönetmesi + tüm
@@ -165,6 +166,11 @@ export type AdminData = {
  * `days`: panelin seçili aralığı (7 / 30 / 90). Pencereye bağlı her metrik
  * ona uyuyor; tanımı gereği sabit olanlar (DAU/WAU/MAU, 1/7/30 günde yeni
  * kayıt) ve yapay zekâ sağlığının 7 günü sabit kalıyor.
+ *
+ * Kullanıcıya bağlı tablolar `real(...)` ile okunuyor: Play'in yayın öncesi
+ * raporu robotlarının (Firebase Test Lab) hesapları sayılmıyor (`lib/test-lab`).
+ * Özet tablo `reviews_daily` kullanıcı taşımıyor; toplam cevap ve oyun
+ * kırılımı robot cevaplarını içeriyor (ölçekte önemsiz, rollup kullanıcısız).
  */
 export async function getAdminData(days = 30): Promise<AdminData> {
   // Hataları yutan ama saklayan çalıştırıcı (lib/admin-query): kırılan bölüm
@@ -173,22 +179,22 @@ export async function getAdminData(days = 30): Promise<AdminData> {
   const [kpiRows, trend, levels, funnel, events30, recent, hard, errors, games, users] = await Promise.all([
     rows(sql`
       select
-        (select count(*) from profiles)::int as total_users,
-        (select count(*) from profiles p join "user" u on u.id = p.user_id where u."isAnonymous")::int as guest_users,
-        (select count(*) from profiles where created_at >= now() - interval '1 day')::int as new1d,
-        (select count(*) from profiles where created_at >= now() - interval '7 days')::int as new7d,
-        (select count(*) from profiles where created_at >= now() - interval '30 days')::int as new30d,
-        (select count(distinct user_id) from daily_stats where day >= current_date)::int as dau,
-        (select count(distinct user_id) from daily_stats where day >= current_date - 6)::int as wau,
-        (select count(distinct user_id) from daily_stats where day >= current_date - 29)::int as mau,
-        (select count(*) from profiles where current_streak > 0)::int as streak_users,
-        (select coalesce(sum(total_xp),0) from profiles)::bigint as total_xp,
+        (select count(*) from ${real("profiles")})::int as total_users,
+        (select count(*) from ${real("profiles", "p")} join "user" u on u.id = p.user_id where u."isAnonymous")::int as guest_users,
+        (select count(*) from ${real("profiles")} where created_at >= now() - interval '1 day')::int as new1d,
+        (select count(*) from ${real("profiles")} where created_at >= now() - interval '7 days')::int as new7d,
+        (select count(*) from ${real("profiles")} where created_at >= now() - interval '30 days')::int as new30d,
+        (select count(distinct user_id) from ${real("daily_stats")} where day >= current_date)::int as dau,
+        (select count(distinct user_id) from ${real("daily_stats")} where day >= current_date - 6)::int as wau,
+        (select count(distinct user_id) from ${real("daily_stats")} where day >= current_date - 29)::int as mau,
+        (select count(*) from ${real("profiles")} where current_streak > 0)::int as streak_users,
+        (select coalesce(sum(total_xp),0) from ${real("profiles")})::bigint as total_xp,
         -- Özet tablodan (lib/admin-query refreshRollups): tam tarama yok.
         (select coalesce(sum(n),0) from reviews_daily)::bigint as total_reviews,
-        (select coalesce(sum(correct),0)::float / nullif(sum(reviews),0) from daily_stats) as accuracy,
-        (select coalesce(avg(current_streak),0) from profiles where current_streak > 0) as avg_streak,
-        (select coalesce(sum(reviews),0) from daily_stats where day >= current_date)::int as reviews1d,
-        (select coalesce(sum(seconds),0) from daily_stats where day >= current_date - ${days - 1}::int)::bigint as seconds30d
+        (select coalesce(sum(correct),0)::float / nullif(sum(reviews),0) from ${real("daily_stats")}) as accuracy,
+        (select coalesce(avg(current_streak),0) from ${real("profiles")} where current_streak > 0) as avg_streak,
+        (select coalesce(sum(reviews),0) from ${real("daily_stats")} where day >= current_date)::int as reviews1d,
+        (select coalesce(sum(seconds),0) from ${real("daily_stats")} where day >= current_date - ${days - 1}::int)::bigint as seconds30d
     `),
     rows(sql`
       -- Boş günler de satır (0): grafik gün atlamasın, ortalama doğru bölünsün.
@@ -196,18 +202,18 @@ export async function getAdminData(days = 30): Promise<AdminData> {
              count(distinct d.user_id)::int as active,
              coalesce(sum(d.reviews),0)::int as reviews, coalesce(sum(d.xp),0)::int as xp, coalesce(sum(d.new_words),0)::int as new_words
       from generate_series(current_date - ${days - 1}::int, current_date, interval '1 day') g(day)
-      left join daily_stats d on d.day = g.day::date
+      left join ${real("daily_stats", "d")} on d.day = g.day::date
       group by g.day order by g.day
     `),
-    rows(sql`select level, count(*)::int as count from profiles group by level order by level`),
+    rows(sql`select level, count(*)::int as count from ${real("profiles")} group by level order by level`),
     computeFunnel(),
     rows(sql`
       select name, count(*)::int as count, count(distinct user_id)::int as users
-      from events where day >= current_date - ${days - 1}::int group by name order by count desc
+      from ${real("events")} where day >= current_date - ${days - 1}::int group by name order by count desc
     `),
     rows(sql`
       select to_char(day,'YYYY-MM-DD') as day, name, coalesce(kind,'') as kind, value, user_id
-      from events order by id desc limit 40
+      from ${real("events")} order by id desc limit 40
     `),
     rows(sql`
       -- Hedef dildeki biçim her kursta words.de sütununda (İngilizce kursta da).
@@ -215,12 +221,12 @@ export async function getAdminData(days = 30): Promise<AdminData> {
              coalesce(w.tr, '') as gloss, w.niveau,
              sum(uw.lapses)::int as lapses,
              count(*) filter (where uw.leech)::int as leeches
-      from user_words uw join words w on w.id = uw.word_id
+      from ${real("user_words", "uw")} join words w on w.id = uw.word_id
       group by w.course, w.de, w.tr, w.niveau having sum(uw.lapses) > 0
       order by sum(uw.lapses) desc limit 20
     `),
     // Son 30 gün: `reviews_created_idx` ile; tüm geçmiş taranmıyor.
-    rows(sql`select coalesce(error_type,'—') as type, count(*)::int as count from reviews where error_type is not null and created_at >= now() - make_interval(days => ${days}::int) group by error_type order by count desc limit 12`),
+    rows(sql`select coalesce(error_type,'—') as type, count(*)::int as count from ${real("reviews")} where error_type is not null and created_at >= now() - make_interval(days => ${days}::int) group by error_type order by count desc limit 12`),
     rows(sql`
       select game, sum(n)::int as count,
              coalesce(sum(correct)::float / nullif(sum(n), 0), 0) as accuracy
@@ -236,7 +242,7 @@ export async function getAdminData(days = 30): Promise<AdminData> {
              coalesce(u."isAnonymous", false) as guest,
              coalesce(p.premium_until > now(), false) as premium,
              coalesce(u.email, '') as email
-      from profiles p
+      from ${real("profiles", "p")}
       left join "user" u on u.id = p.user_id
       order by p.last_active_day desc nulls last, p.total_xp desc
       -- Panoda yalnız son aktif 50 kişi; arama ve sayfalama /admin/users'ta
@@ -246,26 +252,26 @@ export async function getAdminData(days = 30): Promise<AdminData> {
   ]);
 
   const [platform, screens, sess, onb, walk, production, clientErrors, prem, premGates, notif, mail, ai] = await Promise.all([
-    rows(sql`select coalesce(kind,'?') k, count(*)::int c, count(distinct user_id)::int u from events where name='app_open' and day >= current_date - ${days - 1}::int group by kind order by c desc`),
-    rows(sql`select coalesce(kind,'?') screen, count(*) filter (where name='page_view')::int views, coalesce(avg(value) filter (where name='time_spent'),0)::int avg_sec from events where name in ('page_view','time_spent') and day >= current_date - ${days - 1}::int group by kind order by views desc limit 20`),
+    rows(sql`select coalesce(kind,'?') k, count(*)::int c, count(distinct user_id)::int u from ${real("events")} where name='app_open' and day >= current_date - ${days - 1}::int group by kind order by c desc`),
+    rows(sql`select coalesce(kind,'?') screen, count(*) filter (where name='page_view')::int views, coalesce(avg(value) filter (where name='time_spent'),0)::int avg_sec from ${real("events")} where name in ('page_view','time_spent') and day >= current_date - ${days - 1}::int group by kind order by views desc limit 20`),
     /* BAŞLANGIÇ KARTI BASAMAĞI KALKTI. `/learn` hub olunca turun başlangıç
        kartı kaldırıldı ve olay 2026-09-08'den beri hiç akmıyor; huninin ilk
        basamağı kalıcı olarak sıfır görünüyordu — bu, ölçümün bozuk olduğunu
        değil ürünün çöktüğünü düşündürür. Huni artık turun BAŞLATILMASINDAN
        başlıyor. */
-    rows(sql`select count(*) filter (where name='session_start')::int started, count(*) filter (where name='session_done')::int done, count(*) filter (where name='session_stop')::int stopped from events where day >= current_date - ${days - 1}::int`),
-    rows(sql`select coalesce(kind,'?') step, count(distinct user_id)::int users from events where name='onboarding_step' and day >= current_date - ${days - 1}::int group by kind`),
-    rows(sql`select value reason, count(*)::int c from events where name='walk_end' and day >= current_date - ${days - 1}::int group by value order by value`),
-    rows(sql`select coalesce(kind,'?') task, count(*)::int c, coalesce(avg(value),0)::int avg_score from events where name='production_attempt' and day >= current_date - ${days - 1}::int group by kind order by c desc`),
-    rows(sql`select coalesce(kind,'?') screen, count(*)::int c from events where name='client_error' and day >= current_date - ${days - 1}::int group by kind order by c desc limit 12`),
-    rows(sql`select count(*) filter (where name='paywall_view')::int views, count(*) filter (where name='premium_gate')::int gates, count(*) filter (where name='purchase_start')::int starts, count(*) filter (where name='purchase_done')::int done from events where day >= current_date - ${days - 1}::int`),
-    rows(sql`select coalesce(kind,'?') feature, count(*)::int c from events where name='premium_gate' and day >= current_date - ${days - 1}::int group by kind order by c desc limit 8`),
-    rows(sql`select count(*) filter (where name='push_optin' and value=1)::int optin_yes, count(*) filter (where name='push_optin' and value=0)::int optin_no, count(*) filter (where name='push_sent')::int sent, coalesce(sum(value) filter (where name='push_deliver'),0)::int delivered, count(*) filter (where name='push_open')::int opened from events where day >= current_date - ${days - 1}::int`),
+    rows(sql`select count(*) filter (where name='session_start')::int started, count(*) filter (where name='session_done')::int done, count(*) filter (where name='session_stop')::int stopped from ${real("events")} where day >= current_date - ${days - 1}::int`),
+    rows(sql`select coalesce(kind,'?') step, count(distinct user_id)::int users from ${real("events")} where name='onboarding_step' and day >= current_date - ${days - 1}::int group by kind`),
+    rows(sql`select value reason, count(*)::int c from ${real("events")} where name='walk_end' and day >= current_date - ${days - 1}::int group by value order by value`),
+    rows(sql`select coalesce(kind,'?') task, count(*)::int c, coalesce(avg(value),0)::int avg_score from ${real("events")} where name='production_attempt' and day >= current_date - ${days - 1}::int group by kind order by c desc`),
+    rows(sql`select coalesce(kind,'?') screen, count(*)::int c from ${real("events")} where name='client_error' and day >= current_date - ${days - 1}::int group by kind order by c desc limit 12`),
+    rows(sql`select count(*) filter (where name='paywall_view')::int views, count(*) filter (where name='premium_gate')::int gates, count(*) filter (where name='purchase_start')::int starts, count(*) filter (where name='purchase_done')::int done from ${real("events")} where day >= current_date - ${days - 1}::int`),
+    rows(sql`select coalesce(kind,'?') feature, count(*)::int c from ${real("events")} where name='premium_gate' and day >= current_date - ${days - 1}::int group by kind order by c desc limit 8`),
+    rows(sql`select count(*) filter (where name='push_optin' and value=1)::int optin_yes, count(*) filter (where name='push_optin' and value=0)::int optin_no, count(*) filter (where name='push_sent')::int sent, coalesce(sum(value) filter (where name='push_deliver'),0)::int delivered, count(*) filter (where name='push_open')::int opened from ${real("events")} where day >= current_date - ${days - 1}::int`),
     rows(sql`select split_part(coalesce(kind,'?'),':',1) kind,
         count(*) filter (where kind like '%:ok')::int ok,
         count(*) filter (where kind like '%:fail')::int fail,
         count(*) filter (where kind like '%:cap')::int cap
-      from events where name='mail_sent' and day >= current_date - ${days - 1}::int
+      from ${real("events")} where name='mail_sent' and day >= current_date - ${days - 1}::int
       group by 1 order by 2 desc`),
     rows(sql`select provider, count(*)::int calls, round(avg(case when ok then 1.0 else 0.0 end)*100,1) ok_pct, coalesce(avg(ms),0)::int avg_ms, count(*) filter (where not ok)::int errors, coalesce(sum(prompt_tokens),0)::bigint tokens, coalesce(sum(chars),0)::bigint chars from ai_usage where day >= current_date - 6 group by provider order by calls desc`),
   ]);
