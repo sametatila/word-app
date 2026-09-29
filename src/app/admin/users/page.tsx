@@ -65,19 +65,21 @@ export default async function AdminUsersPage({ searchParams }: { searchParams: P
           /* Sıralama SUNUCUDA (üstteki "Sırala" + sayfalama): tablo başlığıyla
              sıralamak yalnız bu sayfanın 50 satırını dizerdi ve yanıltırdı. */
           name="kullanicilar"
-          head={[{ label: "Ad / e-posta", sortable: false }, { label: "Çift", sortable: false }, { label: "Seviye", sortable: false }, { label: "Seri", align: "right", sortable: false }, { label: "XP", align: "right", sortable: false }, { label: "Kelime", align: "right", sortable: false }, { label: "Son aktif", sortable: false }, { label: "Katıldı", sortable: false }]}
+          head={[{ label: "Ad / e-posta", sortable: false }, { label: "Kullanıcı adı", sortable: false }, { label: "Çift", sortable: false }, { label: "Seviye", sortable: false }, { label: "Seri", align: "right", sortable: false }, { label: "XP", align: "right", sortable: false }, { label: "Kelime", align: "right", sortable: false }, { label: "Son aktif", sortable: false }, { label: "Katıldı", sortable: false }]}
           rows={rows.map((u) => [
             <div key="n" className="min-w-48">
               <div className="flex flex-wrap items-center gap-1.5">
-                <a href={`/admin/users/${encodeURIComponent(u.userId)}`} className="text-strong underline-offset-2 hover:underline">{u.name || u.username || u.email || u.userId.slice(0, 8)}</a>
+                <a href={`/admin/users/${encodeURIComponent(u.userId)}`} className="text-strong underline-offset-2 hover:underline">{u.name || u.email || `${u.userId.slice(0, 8)}…`}</a>
                 {u.guest ? <Badge>misafir</Badge> : null}
+                {u.noProfile ? <Badge tone="warn">profil yok</Badge> : null}
                 {u.premium ? <Badge tone="ok">premium</Badge> : null}
                 {u.suspended ? <Badge tone="bad">askıda</Badge> : null}
               </div>
-              {u.email ? <div className="muted">{u.email}</div> : null}
+              {u.email && u.name ? <div className="muted">{u.email}</div> : null}
             </div>,
-            <span key="p" className="muted font-mono">{u.pair}</span>,
-            u.level,
+            u.username ? <span key="u" className="font-mono">@{u.username}</span> : <span key="u" className="faint">—</span>,
+            <span key="p" className="muted font-mono">{u.pair || "—"}</span>,
+            u.level || "—",
             u.streak,
             u.xp.toLocaleString("tr-TR"),
             u.words,
