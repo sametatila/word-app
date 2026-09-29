@@ -262,7 +262,7 @@ destek URL'si (`/support`, `/support/en`, `/support/de`), pazarlama URL'si `http
 Play tr-TR/en-US/de-DE: başlık, kısa ve tam açıklama (edit commit edildi, geri okundu). Metin değişirse
 önce bu belge, sonra aynı yolla mağaza. Play 512 ikonu da yüklendi (üç dil, aşağıdaki türetmeyle).
 
-**Mağazaya YENİDEN GİRİLECEK (2026-09-29 tutarlılık denetimi, Samet onayı bekliyor):** üç uzun açıklamada
+**Mağazaya YENİDEN GİRİLDİ (2026-09-29, Samet onayladı; API, üç dilde geri okundu, ASC ve Play birebir):** 2026-09-29 tutarlılık denetiminin düzeltmeleri: üç uzun açıklamada
 iki cümle uygulamaya çekildi. (1) Konuşma adımının isteğe bağlı sonu 205c206cc'de "Kendini puanla /
 Score yourself" yerine "Puanlı konuşmayı dene / Take the scored round / Lass dich bewerten" oldu: tr
 "İstersen sonunda puanlı konuşmayı denersin.", en "If you like, finish with a scored round.", de "Am Ende
