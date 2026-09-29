@@ -544,6 +544,27 @@ jobs:
         env:
           DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
           TEST_DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
+      # Uçtan uca mantık testi (`scripts/e2e.ts`, ~645 doğrulama): oturum kurgusu,
+      # SRS, seri, lig, hatırlatma sırası, sınav kâğıtları, gelişim raporu. Yazılıydı
+      # ama CI'da değildi ve çürüdü (2026-09-29): 10 kırmızının 9'u ürünün BİLEREK
+      # değiştiği yerde güncellenmemiş testti (Defne/Aras sesleri, yazım kılavuzu
+      # metinleri, lig grubuna bağlanan rakip, izin süzgeçli değerlendirme
+      # kuyruğu), 11.'si gerçek bir hataydı (üretim tavanı oyun penceresini
+      # gereksiz yere bozuyordu, 20 oturumda ~%40). Kelime havuzu ve yayımlanmış
+      # içerik istiyor, o yüzden tohumlar ÖNCE ve öteki testlerin ARDINDAN (onların
+      # boş-veritabanı varsayımını bozmasın). Sır ve ağ istemiyor; sağlayıcı
+      # anahtarı olmadığı için yapay zekâ dalları sağlayıcısız yoldan sınanıyor.
+      # Süre ölçüldü: tohumlar ~50 sn, test ~6 sn.
+      - name: Uçtan uca mantık (tohumlu veritabanı)
+        run: |
+          npm run db:seed
+          npm run db:seed:en
+          npm run db:seed:skills
+          npm run content:publish
+          npm run test:e2e
+        env:
+          DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
+          TEST_DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
       # Next'in derleme önbelleği. Önbellek yokken `next build` CI'da "No build
       # cache found" uyarısı basıyor ve her derlemeyi sıfırdan yapıyordu.
       # Anahtar kilit dosyası + kaynak; kaynak değişince aynı kilit dosyasının
