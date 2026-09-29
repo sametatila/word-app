@@ -75,6 +75,10 @@ açılmaz, `{ ok: true, duplicate: true }` döner. Günlük tavan `DAILY_QUOTAS.
 
 ## Panel (`/admin/moderation` › İçerik)
 
+Açık gruplar panelin açılışındaki **Gelen işler** kuyruğunda da duruyor (`/admin`, `lib/admin-inbox`):
+en eski açık bildirimden başlayarak, şikâyetler, 1-2★ yorumlar ve uyarılarla aynı listede, geri dönüş
+süresine göre sıralı; karar (Gereği yapıldı / Asılsız / İçeriği kapat) oradan da verilebiliyor, aynı uç.
+
 - Hedefe göre gruplu liste: hedef, yüzey, en sık neden, bildirim sayısı, ilk/son tarih, kurs/dil,
   platform. Filtre: durum, yüzey, neden, kurs, anadil, platform, tarih; arama (hedef id / metin).
 - Grup ayrıntısı: tek tek bildirimler (neden, ayrıntı, anlık görüntü, bağlam), hedefin kaynağı
