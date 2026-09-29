@@ -33,7 +33,7 @@ export const APP_LINKS = {
   privacy: { path: "/privacy", label: "Gizlilik politikası" },
 } as const;
 
-const ops = (hash: string, section: string): PanelLink => ({ path: `/admin/ops#${hash}`, label: `İşletim › Sunucu › ${section}` });
+const ops = (hash: string, section: string): PanelLink => ({ path: `/admin/ops#${hash}`, label: `Sistem › Sunucu › ${section}` });
 
 export function alertLinks(key: string): AlertLinks {
   const [family, ...rest] = key.split(":");
@@ -59,32 +59,32 @@ export function alertLinks(key: string): AlertLinks {
     case "ai-down":
       return { panel: ops("yapay-zeka", "Yapay zekâ sağlığı") };
     case "maintenance":
-      return { panel: { path: "/admin/app#bakim", label: "İşletim › Uygulama › Bakım modu" } };
+      return { panel: { path: "/admin/app#bakim", label: "Sistem › Uygulama › Bakım modu" } };
     case "webhook":
       return { panel: { path: "/admin/revenue", label: "Gelir › Gelir ve huniler" } };
     case "reports":
-      return { panel: { path: "/admin/moderation", label: "Kullanıcılar › Moderasyon" } };
+      return { panel: { path: "/admin/moderation", label: "Bugün › Şikâyetler" } };
     case "sla-late":
     case "sla-soon": {
-      if (tail === "content_feedback") return { panel: { path: "/admin/moderation/content", label: "Kullanıcılar › Moderasyon › İçerik geri bildirimi" } };
+      if (tail === "content_feedback") return { panel: { path: "/admin/moderation/content", label: "Bugün › İçerik bildirimleri" } };
       if (tail === "store_review") {
         return {
-          panel: { path: "/admin/reviews#yorumlar", label: "İşletim › Mağaza › Yorumlar" },
+          panel: { path: "/admin/reviews#yorumlar", label: "Sistem › Mağaza › Yorumlar" },
           external: { url: EXTERNAL.playReviews, label: "Play Console'da cevapla (App Store: App Store Connect)" },
         };
       }
-      return { panel: { path: "/admin/moderation", label: "Kullanıcılar › Moderasyon" } };
+      return { panel: { path: "/admin/moderation", label: "Bugün › Şikâyetler" } };
     }
     case "err-reportnew":
-      return { panel: { path: "/admin/moderation/content", label: "Kullanıcılar › Moderasyon › İçerik geri bildirimi" } };
+      return { panel: { path: "/admin/moderation/content", label: "Bugün › İçerik bildirimleri" } };
     case "err-reporthot":
-      return { panel: { path: `/admin/moderation/content/group?g=${encodeURIComponent(tail)}`, label: "Kullanıcılar › Moderasyon › İçerik geri bildirimi (bu hedef)" } };
+      return { panel: { path: `/admin/moderation/content/group?g=${encodeURIComponent(tail)}`, label: "Bugün › İçerik bildirimleri (bu hedef)" } };
     case "mail":
       return { panel: { path: "/admin/experience#e-posta", label: "Kullanıcılar › Deneyim › Giden e-posta" } };
     case "err":
     case "errspike":
       return {
-        panel: { path: `/admin/errors?grup=${encodeURIComponent(tail)}#grup-${encodeURIComponent(tail)}`, label: "İşletim › Hatalar (bu grup)" },
+        panel: { path: `/admin/errors?grup=${encodeURIComponent(tail)}#grup-${encodeURIComponent(tail)}`, label: "Sistem › Hatalar (bu grup)" },
         /* Crashlytics uygulamadan çıkarıldı (2026-09-23): Android'in native
            çökmeleri artık yalnız Play Console › Android vitals'ta. */
         external: { url: EXTERNAL.playVitals, label: "Android native çökmeler: Play vitals" },
@@ -93,18 +93,18 @@ export function alertLinks(key: string): AlertLinks {
     case "reviews-api": {
       const store = rest[0];
       return {
-        panel: { path: "/admin/reviews#yorumlar", label: "İşletim › Mağaza › Yorumlar" },
+        panel: { path: "/admin/reviews#yorumlar", label: "Sistem › Mağaza › Yorumlar" },
         external: store === "ios" ? { url: EXTERNAL.appStoreReviews, label: "App Store Connect'te cevapla" } : { url: EXTERNAL.playReviews, label: "Play Console'da cevapla" },
       };
     }
     case "vitals":
     case "vitals-api":
       return {
-        panel: { path: "/admin/reviews#vitals", label: "İşletim › Mağaza › Android kalite" },
+        panel: { path: "/admin/reviews#vitals", label: "Sistem › Mağaza › Android kalite" },
         external: { url: EXTERNAL.playVitals, label: "Play Console › Android vitals" },
       };
     default:
-      return { panel: { path: "/admin/ops", label: "İşletim › Sunucu" } };
+      return { panel: { path: "/admin/ops", label: "Sistem › Sunucu" } };
   }
 }
 
