@@ -15,6 +15,7 @@ import {
   ASSESS_MAX_TOKENS,
   assessSystemPrompt,
   assessUserMessage,
+  minWordsFrom,
   parseAssessment,
   type AssessRequest,
   type Assessment,
@@ -135,7 +136,7 @@ export async function assess(
     return { ok: false, reason: "upstream", detail: (err as Error).message };
   }
 
-  const result = parseAssessment(raw, text, clean.kind);
+  const result = parseAssessment(raw, text, clean.kind, minWordsFrom(clean.task.constraints));
   if (!result) {
     console.error("[assess] geçersiz çıktı", raw.slice(0, 300));
     return { ok: false, reason: "invalid" };

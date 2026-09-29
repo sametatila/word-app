@@ -22,6 +22,8 @@ import {
   ASSESS_MAX_TOKENS,
   assessSystemPrompt,
   assessUserMessage,
+  isLengthAdvice,
+  minWordsFrom,
   parseAssessment,
   type AssessRequest,
 } from "../src/lib/assess-prompts";
@@ -36,6 +38,11 @@ type Sample = {
   expectErrors: ErrorType[];
   /** Metinde işaretlenmesi beklenen parçalar. */
   expectSpans?: string[];
+  /**
+   * Hedef uzunluk tutmuş: modelin HAM ipucu uzunluk tavsiyesi vermemeli
+   * (ayrıştırıcının son kilidinden ÖNCE ölçülüyor; kilit onu zaten siler).
+   */
+  noLengthTip?: boolean;
 };
 
 const S = (
@@ -90,6 +97,29 @@ export const SAMPLES: Sample[] = [
   // ── B2 ───────────────────────────────────────────────────────────
   S("b2-s-passiv", "sentence", "B2", "Passiv'e çevir: Man renoviert das Haus.", "Das Haus wird renoviert.", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { target: "Das Haus wird renoviert." }),
   S("b2-w-formal", "writing", "B2", "Resmî şikâyet e-postası: aldığın ürün bozuk çıktı; iade ya da değişim iste. (en az 80 kelime)", "Sehr geehrte Damen und Herren, ich habe am 3. Mai bei Ihnen einen Staubsauger bestellt, der am 10. Mai geliefert wurde. Leider musste ich feststellen, dass das Gerät nicht funktioniert: Der Motor läuft zwar an, aber es wird keine Saugleistung erzeugt. Da es sich offensichtlich um einen Produktionsfehler handelt, bitte ich Sie, das Gerät umzutauschen oder mir den Kaufpreis zu erstatten. Die Rechnung habe ich beigefügt. Ich wäre Ihnen dankbar, wenn Sie sich innerhalb der nächsten Woche bei mir melden könnten. Mit freundlichen Grüßen, Mehmet Yilmaz", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { constraints: ["en az 80 kelime", "resmî kayıt"] }),
+  /* Cihazda görüldü (2026-09-29): İngilizce B1 Deneme 1, yazma 1. Metin 102
+     kelime, ekran "102 / 100" yeşil; model "100 kelimeye ulaşacak şekilde
+     uzat" diyordu. Kısıt sınav ucunun gönderdiği biçimde. */
+  {
+    id: "en-b1-w-room-102",
+    req: {
+      kind: "writing",
+      level: "B1",
+      lang: "en",
+      native: "tr",
+      task: {
+        prompt:
+          "You are going to start a course in another city and you have written to a student residence. Read the reply below and write an email back. Write about 100 words and answer all the points.\n\nReply from the residence: \"Thank you for your interest. We have single rooms and shared apartments. Please tell us which you prefer and why. Rooms are available from September 1 or from October 1 — which date do you need? Finally, do you have any questions about the building?\"",
+        constraints: ["Say which type of room you prefer and give a reason.", "Say which date you need and why.", "Ask at least one clear question about the building.", "mindestens 100 Wörter"],
+      },
+      answer: {
+        text: "Dear Sir or Madam,\n\nThank you for your quick answer. I would prefer a single room, because I need a quiet place for studying. In my last flat I shared the kitchen with four people and it was very noisy, so I could not concentrate.\n\nI need the room from September 1. My course starts on September 5 and I want to have some days to learn the way to the school.\n\nI have two questions about the building. Is there a place where I can keep my bicycle? And can I use the washing machines every day?\n\nBest regards,\nDeniz Kaya",
+      },
+    },
+    human: { task: 4, grammar: 4, vocab: 3, structure: 4 },
+    expectErrors: [],
+    noLengthTip: true,
+  },
 ];
 
 async function main() {
@@ -104,17 +134,17 @@ async function main() {
   const samples = only ? SAMPLES.filter((s) => s.id === only) : SAMPLES;
   console.log(`Sağlayıcı zinciri: ${providers.map((p) => `${p.name}/${p.model}`).join(" → ")}\n`);
 
-  let within = 0, subscores = 0, errorsHit = 0, errorsExpected = 0, spansOk = 0, spansExpected = 0, parsed = 0, extraErrorsOnClean = 0;
+  let within = 0, subscores = 0, errorsHit = 0, errorsExpected = 0, spansOk = 0, spansExpected = 0, parsed = 0, extraErrorsOnClean = 0, lengthClean = 0, lengthExpected = 0;
   for (const s of samples) {
     const started = Date.now();
     let raw = "";
     try {
-      raw = await completeChat(assessSystemPrompt(s.req.kind, s.req.level), [{ role: "user", content: assessUserMessage(s.req) }], ASSESS_MAX_TOKENS);
+      raw = await completeChat(assessSystemPrompt(s.req.kind, s.req.level, s.req.lang, s.req.native), [{ role: "user", content: assessUserMessage(s.req) }], ASSESS_MAX_TOKENS);
     } catch (err) {
       console.log(`✗ ${s.id}: sağlayıcı hatası — ${(err as Error).message}`);
       continue;
     }
-    const a = parseAssessment(raw, s.req.answer.text, s.req.kind);
+    const a = parseAssessment(raw, s.req.answer.text, s.req.kind, minWordsFrom(s.req.task.constraints));
     if (!a) {
       // Ham çıktı tam basılıyor: kırpılmış hâlinden ayrıştırma hatasının
       // sebebi anlaşılmıyordu (tırnak, kesik JSON, tek tırnak kapanış…).
@@ -142,11 +172,17 @@ async function main() {
     );
     if (a.errors.length) for (const e of a.errors) console.log(`     · ${e.type}: "${e.wrong}" → "${e.fix}" — ${e.why_tr}`);
     console.log(`     övgü: ${a.praise_tr}\n     ipucu: ${a.next_tip_tr}`);
+    if (s.noLengthTip) {
+      lengthExpected++;
+      const hamIpucu = parseAssessment(raw, s.req.answer.text, s.req.kind)?.next_tip_tr ?? "";
+      if (isLengthAdvice(hamIpucu)) console.log(`     ✗ hedef tuttuğu hâlde uzunluk tavsiyesi (ham): ${hamIpucu}`);
+      else lengthClean++;
+    }
     if (showJson) console.log(raw);
   }
   const n = samples.length;
-  console.log(`\nÖzet: ${parsed}/${n} ayrıştı · ${within}/${parsed} örnekte dört alt puan ±1 içinde · alt puan isabeti ${subscores}/${parsed * 4} · beklenen hata tipi ${errorsHit}/${errorsExpected} · span ${spansOk}/${spansExpected} · temiz cevaba hata yazma ${extraErrorsOnClean}`);
-  console.log("Kabul (WP-03): ±1 içinde ≥ 16/20, hata tipi ≥ %75, span ≥ %75, temiz cevaba hata ≤ 2.");
+  console.log(`\nÖzet: ${parsed}/${n} ayrıştı · ${within}/${parsed} örnekte dört alt puan ±1 içinde · alt puan isabeti ${subscores}/${parsed * 4} · beklenen hata tipi ${errorsHit}/${errorsExpected} · span ${spansOk}/${spansExpected} · temiz cevaba hata yazma ${extraErrorsOnClean} · hedef tutunca uzunluk tavsiyesi yok ${lengthClean}/${lengthExpected}`);
+  console.log("Kabul (WP-03): ±1 içinde ≥ 16/20, hata tipi ≥ %75, span ≥ %75, temiz cevaba hata ≤ 2; uzunluk tavsiyesi hepsinde yok.");
 }
 
 main().catch((err) => {
