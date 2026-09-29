@@ -263,7 +263,7 @@ export function StatusSection({ days, data: d, coverage: c, openReports, trends,
               <Stat label={`Konuşma (${days}g)`} value={`${fmt(c.learning.conversations.finished)}/${fmt(c.learning.conversations.started)}`} sub={`bitti/başladı · ${fmt(c.learning.conversations.users)} kişi`} />
               <Stat label="Premium" value={fmt(c.premium.active)} sub={`${fmt(c.premium.store)} mağaza · ${fmt(c.premium.bonus)} hediye`} />
               <Stat label="Misafir" value={fmt(c.growth.guests.total)} sub={`${fmt(c.growth.guests.active7)} aktif 7g · ${fmt(c.growth.guests.stale20)} silinmeye yakın`} tone={c.growth.guests.stale20 > 0 ? "warn" : undefined} />
-              <Stat label="Açık şikâyet" value={fmt(openReports)} sub={<a href="/admin/moderation" className="underline-offset-2 hover:underline">Moderasyon →</a>} tone={openReports > 0 ? "bad" : "ok"} />
+              <Stat label="Açık şikâyet" value={fmt(openReports)} sub={<a href="/admin/moderation" className="underline-offset-2 hover:underline">Şikâyetler →</a>} tone={openReports > 0 ? "bad" : "ok"} />
               <Stat label="Hesap" value={fmt(c.auth.accounts)} sub={`${fmt(c.auth.twoFactor)} 2FA · ${fmt(c.auth.unverified)} doğrulanmamış`} />
             </Stats>
           </Panel>
@@ -381,7 +381,7 @@ export function GrowthSection({ days, data: d, coverage: c, deletions }: Base & 
           <BarList max={Math.max(1, ...c.growth.installPrompt.map((i) => i.count))} items={c.growth.installPrompt.map((i) => ({ label: INSTALL_LABEL[i.key] ?? i.key, value: i.count }))} />
         </Panel>
 
-        <Panel title="Sosyal" hint="Arkadaşlık, lig, dürtme, tepki." actions={<a href="/admin/moderation" className={BTN.small}>Moderasyon</a>}>
+        <Panel title="Sosyal" hint="Arkadaşlık, lig, dürtme, tepki." actions={<a href="/admin/moderation" className={BTN.small}>Şikâyetler</a>}>
           <Stats cols={3}>
             <Stat label="Kullanıcı adı" value={fmt(c.growth.social.usernames)} sub={`${fmt(c.growth.social.publicProfiles)} herkese açık`} />
             <Stat label="Arkadaşlık" value={fmt(c.growth.social.friendsAccepted)} sub={`${fmt(c.growth.social.friendsPending)} bekleyen istek`} />

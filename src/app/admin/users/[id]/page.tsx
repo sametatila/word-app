@@ -51,7 +51,7 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
         meta={<span className="font-mono">{u.id}{u.account?.email ? ` · ${u.account.email}` : ""}</span>}
         actions={
           <>
-            <a href="/admin/moderation" className={BTN.secondary}>Moderasyon</a>
+            <a href="/admin/moderation" className={BTN.secondary}>Şikâyetler</a>
           </>
         }
       />
