@@ -5,7 +5,8 @@ import { activeSuspension, suspensionHistory } from "@/lib/account/suspension";
 import { AccountActions } from "./account-actions";
 import { PremiumActions } from "./premium-actions";
 import { findPremiumAccount } from "@/lib/premium";
-import { AdminDenied, AdminPage, Badge, BTN, DataTable, KeyValue, Notice, PageHeader, Panel, PanelGrid } from "../../_ui/ui";
+import { AdminDenied, AdminPage, Badge, BTN, DataTable, KeyValue, Notice, PageHeader, Panel, Stat, Stats } from "../../_ui/ui";
+import { LearningTabs } from "./learning-tabs";
 
 export const metadata: Metadata = { title: "Kullanıcı" };
 export const dynamic = "force-dynamic";
@@ -35,6 +36,7 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
   const title = u.profile?.display_name || u.profile?.username || u.account?.name || u.id.slice(0, 10);
   const premiumUntil = u.profile?.premium_until ? Date.parse(u.profile.premium_until.replace(" ", "T")) : 0;
   const stamp = (v: string) => v.slice(0, 16).replace("T", " ");
+  const prof = u.profile ?? {};
 
   return (
     <AdminPage>
@@ -63,84 +65,103 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
       {suspension ? <Notice tone="bad" title="Hesap askıda">{suspension.reason}</Notice> : null}
       {!u.account && !u.profile ? <Notice tone="warn">{"Bu kimlikle hesap yok (silinmiş olabilir). Silme kaydı: /admin/growth · işlem kaydı: /admin/audit"}</Notice> : null}
 
-      <PanelGrid>
-        <Panel title="Hesap" hint="Kimlik doğrulama tarafı (better-auth).">
-          <KeyValue data={u.account ? {
-            "e-posta": u.account.email, ad: u.account.name, "e-posta doğrulandı": u.account.verified, misafir: u.account.guest,
-            "iki adımlı doğrulama": u.account.twoFactor, "giriş yolları": u.account.providers.join(", "),
-            "açık oturum": u.account.activeSessions, "son oturum hareketi": u.account.lastSeen, oluşturuldu: u.account.createdAt,
-          } : null} />
-        </Panel>
+      {/* Özet: bu kişi kim ve ne kadar kullanıyor, tek satırda. */}
+      <Panel>
+        <Stats cols={6}>
+          <Stat label="Katıldı" value={<span className="text-h3">{prof.created_at?.slice(0, 10) || "—"}</span>} sub={u.account?.guest ? "misafir" : u.account?.providers.join(", ") || undefined} />
+          <Stat label="Son aktif gün" value={<span className="text-h3">{prof.last_active_day || "—"}</span>} sub={u.account?.lastSeen ? `oturum ${u.account.lastSeen.slice(0, 16)}` : undefined} />
+          <Stat label="Kurs" value={<span className="text-h3">{prof.course ? `${prof.course.toUpperCase()} · ${prof.level || "?"}` : "—"}</span>} sub={prof.native_lang ? `anadil ${prof.native_lang}` : undefined} />
+          <Stat label="Seri" value={prof.current_streak || "0"} sub={`en uzun ${prof.longest_streak || 0} gün`} />
+          <Stat label="XP" value={prof.total_xp || "0"} sub={`${u.activity.xp30} son 30g`} />
+          <Stat label="Aktif gün (30g)" value={u.activity.days30} sub={`${u.activity.reviews30} tekrar · ${Math.round(u.activity.seconds30 / 60)} dk`} />
+        </Stats>
+      </Panel>
 
-        <Panel title="Etkinlik (30 gün)">
-          <KeyValue data={{
-            "aktif gün": u.activity.days30, tekrar: u.activity.reviews30, XP: u.activity.xp30,
-            "çalışma (dk)": Math.round(u.activity.seconds30 / 60),
-            ...Object.fromEntries(u.activity.wordsByState.map((w) => [`kelime · ${WORD_STATE[w.state] ?? w.state}`, w.count])),
-            "rozet (toplam)": u.learning.achievements, "görev ödülü (30g)": u.learning.quests30,
-          }} />
-        </Panel>
-
-        {u.account ? (
-          <Panel title="Hesap işlemleri" hint="Dışa aktarma ve askıya alma geri alınabilir; silme kalıcıdır. Hepsi işlem kaydına düşer." span>
-            <AccountActions userId={u.id} suspended={suspension ? { reason: suspension.reason, until: suspension.until } : null} />
-            {history.length ? (
-              <div className="mt-4">
-                <div className="muted mb-1.5 text-micro uppercase tracking-eyebrow">Askı geçmişi</div>
-                <DataTable
-                  head={["Başlangıç", "Gerekçe", "Bitiş", "Veren", "Kaldırıldı", "Kaldıran"]}
-                  rows={history.map((h) => [stamp(h.createdAt), h.reason, h.until ? stamp(h.until) : "süresiz", h.adminEmail, h.liftedAt ? stamp(h.liftedAt) : "", h.liftedBy])}
-                />
-              </div>
-            ) : null}
+      {/* İki sütun: solda ne YAPIYOR (öğrenme, etkinlik, olaylar), sağda
+          hesabın KENDİSİ (kimlik, premium, işlemler, ayarlar). Dar ekranda
+          önce sağ sütunun işlemleri değil, özet ve öğrenme geliyor. */}
+      <div className="grid items-start gap-5 @5xl:grid-cols-[minmax(0,2fr)_minmax(20rem,1fr)]">
+        <div className="min-w-0 space-y-5">
+          <Panel title="Öğrenme" hint="Sekme adında satır sayısı; boş sekmeler sonda.">
+            <LearningTabs tabs={[
+              { key: "conv", label: "Konuşma", table: u.learning.conversations },
+              { key: "path", label: "Patika", table: u.learning.path },
+              { key: "skills", label: "Beceri", table: u.learning.skills },
+              { key: "exams", label: "Sınav", table: u.learning.exams },
+              { key: "quiz", label: "Haftalık quiz", table: u.learning.quiz },
+              { key: "mock", label: "Deneme", table: u.learning.mock },
+              { key: "boss", label: "Boss", table: u.learning.boss },
+              { key: "place", label: "Yerleştirme", table: u.learning.placements },
+            ]} />
           </Panel>
-        ) : null}
 
-        <Panel title="Profil ve ayarlar"><KeyValue data={u.profile} /></Panel>
+          <Panel title="Kelimeler ve ödüller">
+            <Stats cols={4}>
+              {u.activity.wordsByState.map((w) => <Stat key={w.state} label={WORD_STATE[w.state] ?? String(w.state)} value={w.count} sub="kelime" />)}
+              <Stat label="Rozet" value={u.learning.achievements} sub="toplam" />
+              <Stat label="Görev ödülü" value={u.learning.quests30} sub="son 30g" />
+            </Stats>
+          </Panel>
 
-        <Panel title="Premium" hint="Yetki, kaynağı ve defter. Verilen süre bonus olarak yazılır; mağaza aboneliğine dokunulmaz. Hepsi işlem kaydına düşer." span>
-          {premium ? <PremiumActions account={premium} /> : <p className="muted text-caption">Premium hesabı okunamadı (hesap yok ya da silinmiş).</p>}
-          <details className="mt-3">
-            <summary className="muted cursor-pointer text-caption">Ham hak satırı (entitlements)</summary>
-            <div className="mt-2"><KeyValue data={u.premium.entitlement} /></div>
-          </details>
-        </Panel>
+          <Panel title="Yapay zekâ kullanımı (30 gün)" flush><T t={u.ai} empty="Yapay zekâ kullanımı yok." /></Panel>
+          <Panel title="İstemci hataları" flush><T t={u.errors} empty="Hata yok." /></Panel>
+          <Panel title="Son olaylar" hint="En yeni 60 telemetri olayı." flush><T t={u.events} empty="Olay yok." /></Panel>
+        </div>
 
-        <Panel title="Uygulama sürümü" hint="Mobil uygulamanın bildirdiği son sürüm, platform başına." span>
-          <T t={u.reach.clients} empty="Sürüm bildirimi yok (web kullanıcısı ya da eski build)." />
-        </Panel>
+        <div className="min-w-0 space-y-5">
+          <Panel title="Hesap" hint="Kimlik doğrulama tarafı (better-auth).">
+            <KeyValue data={u.account ? {
+              "e-posta": u.account.email, ad: u.account.name, "e-posta doğrulandı": u.account.verified, misafir: u.account.guest,
+              "iki adımlı doğrulama": u.account.twoFactor, "giriş yolları": u.account.providers.join(", "),
+              "açık oturum": u.account.activeSessions, "son oturum hareketi": u.account.lastSeen, oluşturuldu: u.account.createdAt,
+            } : null} />
+          </Panel>
 
-        <Panel title="Konuşmalar" span><T t={u.learning.conversations} /></Panel>
-        <Panel title="Patika adımları"><T t={u.learning.path} /></Panel>
-        <Panel title="Beceri egzersizleri"><T t={u.learning.skills} /></Panel>
-        <Panel title="Sınavlar (seviye, modül, haftalık)"><T t={u.learning.exams} /></Panel>
-        <Panel title="Haftalık quiz"><T t={u.learning.quiz} /></Panel>
-        <Panel title="Deneme sınavları"><T t={u.learning.mock} /></Panel>
-        <Panel title="Modül sınavı (boss)"><T t={u.learning.boss} /></Panel>
-        <Panel title="Yerleştirme"><T t={u.learning.placements} /></Panel>
+          <Panel title="Premium" hint="Verilen süre bonus olarak yazılır; mağaza aboneliğine dokunulmaz. İşlem kaydına düşer.">
+            {premium ? <PremiumActions account={premium} /> : <p className="muted text-caption">Premium hesabı okunamadı (hesap yok ya da silinmiş).</p>}
+            <details className="mt-3">
+              <summary className="muted cursor-pointer text-caption">Ham hak satırı (entitlements)</summary>
+              <div className="mt-2"><KeyValue data={u.premium.entitlement} /></div>
+            </details>
+          </Panel>
 
-        <Panel title="Sosyal">
-          <KeyValue data={{
-            arkadaş: u.social.friends, "bekleyen istek": u.social.pending, "okunmamış gelen kutusu": u.social.unreadInbox,
-            "şikâyet ettiği": u.social.reportsBy, "engelleyen hesap": u.social.blockedBy, "engellediği": u.social.blocking,
-            ...(u.social.league ? Object.fromEntries(Object.entries(u.social.league).map(([k, v]) => [`lig · ${k}`, v])) : {}),
-          }} />
-          <div className="mt-3"><T t={u.social.reportsAgainst} empty="Bu hesap hakkında şikâyet yok." /></div>
-        </Panel>
+          {u.account ? (
+            <Panel title="Hesap işlemleri" hint="Dışa aktarma ve askıya alma geri alınabilir; silme kalıcıdır. İşlem kaydına düşer.">
+              <AccountActions userId={u.id} suspended={suspension ? { reason: suspension.reason, until: suspension.until } : null} />
+              {history.length ? (
+                <div className="mt-4">
+                  <div className="muted mb-1.5 text-micro uppercase tracking-eyebrow">Askı geçmişi</div>
+                  <DataTable
+                    head={["Başlangıç", "Gerekçe", "Bitiş", "Veren", "Kaldırıldı", "Kaldıran"]}
+                    rows={history.map((h) => [stamp(h.createdAt), h.reason, h.until ? stamp(h.until) : "süresiz", h.adminEmail, h.liftedAt ? stamp(h.liftedAt) : "", h.liftedBy])}
+                  />
+                </div>
+              ) : null}
+            </Panel>
+          ) : null}
 
-        <Panel title="Bildirim, rıza ve kota" span>
-          <KeyValue data={{ "web push aboneliği": u.reach.webPush }} />
-          <div className="mt-3 space-y-3">
-            <T t={u.reach.devices} empty="Mobil cihaz jetonu yok." />
-            <T t={u.reach.consents} empty="Rıza kararı yok." />
-            <T t={u.reach.usage} empty="Kota sayacı yok." />
-          </div>
-        </Panel>
+          <Panel title="Sosyal">
+            <KeyValue data={{
+              arkadaş: u.social.friends, "bekleyen istek": u.social.pending, "okunmamış gelen kutusu": u.social.unreadInbox,
+              "şikâyet ettiği": u.social.reportsBy, "engelleyen hesap": u.social.blockedBy, "engellediği": u.social.blocking,
+              ...(u.social.league ? Object.fromEntries(Object.entries(u.social.league).map(([k, v]) => [`lig · ${k}`, v])) : {}),
+            }} />
+            {u.social.reportsAgainst.rows.length ? <div className="mt-3"><T t={u.social.reportsAgainst} /></div> : <p className="muted mt-3 text-caption">Bu hesap hakkında şikâyet yok.</p>}
+          </Panel>
 
-        <Panel title="Yapay zekâ kullanımı (30 gün)"><T t={u.ai} /></Panel>
-        <Panel title="İstemci hataları"><T t={u.errors} empty="Hata yok." /></Panel>
-        <Panel title="Son olaylar" hint="En yeni 60 telemetri olayı." span><T t={u.events} /></Panel>
-      </PanelGrid>
+          <Panel title="Profil ve ayarlar"><KeyValue data={u.profile} /></Panel>
+
+          <Panel title="Cihaz, bildirim, rıza ve kota">
+            <KeyValue data={{ "web push aboneliği": u.reach.webPush }} />
+            <div className="mt-3 space-y-3">
+              <T t={u.reach.clients} empty="Uygulama sürümü bildirimi yok (web kullanıcısı ya da eski build)." />
+              <T t={u.reach.devices} empty="Mobil cihaz jetonu yok." />
+              <T t={u.reach.consents} empty="Rıza kararı yok." />
+              <T t={u.reach.usage} empty="Kota sayacı yok." />
+            </div>
+          </Panel>
+        </div>
+      </div>
     </AdminPage>
   );
 }
