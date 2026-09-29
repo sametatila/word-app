@@ -363,18 +363,27 @@ console.log("\nUygulama içi yollar");
   );
   check("uygulama: silme ekranı misafiri siliyor", readFileSync("mobile/src/screens/DeleteAccountScreen.tsx", "utf8").includes("await deleteGuest()"));
 
-  // İnceleme notları İngilizce (inceleyici onu okuyor), Console beyanı ve Veri Güvenliği notu Türkçe.
-  const docs: { file: string; locale: (typeof LEGAL_LOCALES)[number] }[] = [
-    { file: "docs/appstore/connect.md", locale: "en" },
-    { file: "docs/play/console.md", locale: "en" },
-    { file: "docs/play/console.md", locale: "tr" },
-    { file: "docs/play/data-safety.md", locale: "tr" },
+  /*
+    İnceleme notları İngilizce (inceleyici onu okuyor), Console beyanı ve Veri Güvenliği notu Türkçe.
+    Play Console'un uygulama erişimi notu 500 karakterlik iki oturum açma grubu (b24ec8faf): uzun,
+    maddeli not (yürüyüş, silme yolu) yalnız App Store'da. `console.md` artık yalnız ön plan servisi
+    beyanında (§3, Türkçe) yürüyüş yolunu taşıyor; silme yolu Play'de Veri güvenliği formunda.
+  */
+  const docs: { file: string; locale: (typeof LEGAL_LOCALES)[number]; walk: boolean; del: boolean }[] = [
+    { file: "docs/appstore/connect.md", locale: "en", walk: true, del: true },
+    { file: "docs/play/console.md", locale: "tr", walk: true, del: false },
+    { file: "docs/play/data-safety.md", locale: "tr", walk: true, del: true },
   ];
-  for (const { file, locale } of docs) {
+  for (const { file, locale, walk, del } of docs) {
     const md = readFileSync(file, "utf8");
-    check(`${file} · ${locale}: yürüyüş modu yolu "${walkPath(locale)}"`, md.includes(walkPath(locale)));
+    if (walk) check(`${file} · ${locale}: yürüyüş modu yolu "${walkPath(locale)}"`, md.includes(walkPath(locale)));
     check(`${file} · ${locale}: eski "${oldWalkPath(locale)}" yolu kalmadı`, !md.includes(oldWalkPath(locale)));
-    check(`${file} · ${locale}: hesap silme yolu "${deletePath(locale)}"`, md.includes(deletePath(locale)));
+    if (del) check(`${file} · ${locale}: hesap silme yolu "${deletePath(locale)}"`, md.includes(deletePath(locale)));
+  }
+  // Play notunda bir yol anılıyorsa bugünkü yol olmalı (eski yollar yukarıda da aranıyor).
+  {
+    const md = readFileSync("docs/play/console.md", "utf8");
+    check("docs/play/console.md · en: eski yürüyüş yolu kalmadı", !md.includes(oldWalkPath("en")));
   }
 }
 
