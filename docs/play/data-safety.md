@@ -12,6 +12,15 @@ Console'daki kimlik ve iletişim `LEGAL_ENTITY`deki hizmet sağlayıcınınkidir
 `gdpr@lernomi.app`. Form Console'dan CSV olarak dışa aktarılıp bu belgeye göre doldurulur
 (denetim G1, G7, M8).
 
+**Console'a girildi (2026-09-29, Samet; elle, ekran ekran).** Önizleme bu belgeyle birebir
+karşılaştırıldı. Tablodaki "Satın alma geçmişi" Console'da **"İşlem geçmişi"**, ses türü
+**"Konuşma veya ses kayıtları"**. Hesap oluşturma: kullanıcı adı ve şifre + OAuth. Hesap silme
+URL'si `/account/delete`; "hesabı silmeden veri silme" sorusu **Hayır** (isteğe bağlı; o bağlantı
+da adımlı talimat şartı taşıyor, sayfada kısmi silme bölümü yok). **Uygulama içi arama geçmişi
+beyan edilmedi** (G8): kelime ve arkadaş araması sorgusu saklanmıyor, nginx günlüğünde ikisi de
+maskeli (arkadaş araması 2026-09-29'da eklendi, `conf.d/lernomi-log.conf`). Ses "kısa süreli"
+işaretli olduğu için mağaza girişinin "Toplanan" listesinde görünmüyor, "Paylaşılan"da görünüyor.
+
 ## Genel sorular
 
 | Soru | Cevap |
