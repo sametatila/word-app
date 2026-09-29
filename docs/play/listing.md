@@ -39,7 +39,14 @@ anketinde eğitim seçeneği bu grupta).
 > vermiyor, `src/lib/premium/referral.ts`). Beyanlar buna göre doldurulur; sonradan "satın alma
 > da varmış" demek düzeltme değil yanlış beyan olur.
 
-Alkol ve yarışma cevapları PEGI 3'ü yukarı çekebilir; App Store'da aynı cevaplar 13+ verdi ve
+**Gönderildi (2026-09-29, Samet).** Kategori "Diğer Tüm Uygulama Türleri"; beyan: alkol, tütün,
+yasa dışı madde yalnız referans ve nadiren; kullanıcı etkileşimi (engelle, bildir, denetim, yalnız
+arkadaş); online ve yapay zekâ içeriği var, onda madde atfı var, odakta değil; dijital satın alma
+var, şansa dayalı yok; esas olarak eğitim ürünü. Çıkan dereceler: PEGI 3, ESRB Everyone 10+, USK 6,
+ClassInd L (tüm yaşlar), IARC Generic 3+; etkileşimli öğeler "Kullanıcı Etkileşimi" + "Uygulama İçi
+Satın Alma". Tahmin edilenden düşük; 18 yaş sınırı derece değil hedef kitle beyanında (§1).
+
+Eski tahmin: alkol ve yarışma cevapları PEGI 3'ü yukarı çekebilir; App Store'da aynı cevaplar 13+ verdi ve
 orada derece elle 18+'a yükseltildi. Play hedef kitlesi, App Store derecesi ve şartlar §3 aynı
 sayıyı söylüyor (gerekçe `docs/appstore/listing.md` §2.4).
 
