@@ -81,17 +81,24 @@ function emit(source: string, course: string, reqs: Req[]) {
 const whole = (source: string, course: string, segs: Seg[]) => emit(source, course, merge(dialogue(course, segs)));
 const each = (source: string, course: string, segs: Seg[]) =>
   dialogue(course, segs).forEach((r, i) => emit(`${source}.r${i}`, course, merge([{ ...r, gap: false }])));
+/* İKİ ÇALMA BİÇİMİ BİRDEN (2026-09-29): web bütün diyaloğu tek seferde çalıyor (aynı konuşmacının art arda replikleri
+   birleşir), mobil `speakDialogue` repliği repliğe. Birleşen replikler mobilde tabloda olmayan ayrı metinler isterdi;
+   ikisi de listede (`seen` aynı metni bir kez yazıyor, fark yalnız art arda aynı konuşmacı olan yerler). */
+const both = (source: string, course: string, segs: Seg[]) => {
+  whole(source, course, segs);
+  each(source, course, segs);
+};
 
 for (const paper of MOCK_PAPERS) for (const part of paper.parts) for (const task of part.tasks) for (const st of task.texts ?? [])
-  if (st.kind === "audio") whole(`mock.${paper.id}.${st.id}`, paper.course, st.segments);
+  if (st.kind === "audio") both(`mock.${paper.id}.${st.id}`, paper.course, st.segments);
 for (const week of QUIZ_WEEKS) week.items.forEach((it, n) => {
   const st = (it as { stimulus?: { kind: string; segments?: Seg[] } }).stimulus;
-  if (st?.kind === "audio" && st.segments) whole(`quiz.${week.course}.${(week as { id?: string }).id ?? ""}.${n}`, week.course, st.segments);
+  if (st?.kind === "audio" && st.segments) both(`quiz.${week.course}.${(week as { id?: string }).id ?? ""}.${n}`, week.course, st.segments);
 });
 for (const ex of BUNDLED_EXERCISES) {
   if (ex.skill !== "listening") continue;
   const course = ex.id.startsWith("en-") ? "en" : "de";
-  whole(`skill.${ex.id}`, course, ex.segments);
+  both(`skill.${ex.id}`, course, ex.segments);
   each(`placement.${ex.id}`, course, ex.segments.slice(0, 2).map((s: Seg) => ({ speaker: s.speaker, text: s.text })));
 }
 /* Kurs VERİDEN (2026-09-29): burada sabit "de" yazıyordu ve İngilizce kursun modül sınavı dinlemeleri (293 iş)
