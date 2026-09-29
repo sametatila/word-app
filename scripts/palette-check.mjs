@@ -247,13 +247,19 @@ acceptedRows([
   ["beyaz / turuncu 500", W, step("brand", 500), 4.5, "T-KARAR-1 (acik temada btn-primary, chip-active)"],
   ["beyaz / turuncu 600", W, step("brand", 600), 4.5, "T-KARAR-1 (derin panelin acik ucu)"],
 ]);
-/* Koyu temada buton artık Android'i izliyor: 400 dolgu + mürekkep yazı. Eskiden
-   burada da beyaz / 500 vardı (2.77) ve ölçülmüyordu bile - bu satır o boşluğu
-   kapatıyor, sapma değil normal bir ölçüm. Açık tema ayrıca ölçülmüyor:
-   oradaki çift (beyaz / 500) yukarıdaki kabul satırının ta kendisi. */
-contrastRows([
-  ["koyu: buton yazisi / dolgu", resolve(dark["--on-brand"], dark), resolve(dark["--brand-fill"], dark)],
-]);
+/* Koyu temada buton AÇIK TEMAYLA AYNI: 500 dolgu + beyaz yazı (8e9535c8,
+   Samet 2026-09-29: marka turuncusu iki temada aynı kalsın, turuncu üstünde
+   siyah yok; #c2530a denendi, beğenilmedi). Yani aynı T-KARAR-1 sapması koyu
+   temada da kabul. Satır jetonlardan ölçülüyor: dolgu ya da yazı değişirse
+   değer değişir ve kabulün gözden geçirilmesi gerekir. */
+{
+  const fg = resolve(dark["--on-brand"], dark), bg = resolve(dark["--brand-fill"], dark);
+  if (fg.toLowerCase() === W && bg.toLowerCase() === step("brand", 500).toLowerCase()) {
+    acceptedRows([["koyu: buton yazisi / dolgu", fg, bg, 4.5, "T-KARAR-1 (koyu temada da acikla ayni, 8e9535c8)"]]);
+  } else {
+    contrastRows([["koyu: buton yazisi / dolgu", fg, bg]]);
+  }
+}
 contrastRows([
   /* Koyu kahve yazı artık butonda kullanılmıyor ama maskotun kendi eşleşmesi:
      turuncu üstünde okunan bir ikinci seçenek olarak ölçülmeye devam ediyor. */
