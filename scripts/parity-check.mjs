@@ -7252,7 +7252,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "oturum durum satiri",
       () => {
         const src = strip(read("mobile/src/ui/ActiveSessions.tsx")).replace(/\s+/g, " ");
-        const dallar = [...src.matchAll(/\{result\.state === "(stale|failed)" \? \( <Text([^>]*)>/g)];
+        /* `result?.` da kabul: liste yüklenirken bileşen iskelet çiziyor ve
+           `result` o sırada null (2026-09-29). */
+        const dallar = [...src.matchAll(/\{result\??\.state === "(stale|failed)" \? \( <Text([^>]*)>/g)];
         return dallar.length === 2 && dallar.every((m) => /accessibilityLiveRegion="polite"/.test(m[2])) ? "duyuruyor" : "sessiz";
       },
       () => {
@@ -17250,13 +17252,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          Cikista silinseydi engelli agdaki kullanici her giriste once asil
          adresin dusmesini beklerdi (bkz. api/base). */
       "lernomi:api-base", //           yedek adres secimi
-      "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
-      "lernomi-lang", //               arayuz dili
       /* Son bilinen giris saglayicilari (`/api/config`): SUNUCUYA ait, hesaba
          degil. Cikista silinseydi cikistan sonra acilan giris ekrani Google/Apple
          dugmelerini yine cevaptan sonra cizip e-posta dugmesini asagi iterdi
          (bkz. lib/serverConfig). Sir yok, herkese acik uc. */
       "lernomi:auth-providers", //     giris ekraninin ilk cizimi
+      "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
+      "lernomi-lang", //               arayuz dili
       "lernomi-conversation-handsfree", //   eller serbest tercihi
       "lernomi:haptics", //            titresim acik/kapali (ses gibi cihaza ait; lib/haptics)
       "lernomi:analytics", //          analitik onayi

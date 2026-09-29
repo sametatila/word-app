@@ -8,6 +8,7 @@ import { unlinkAccount, type LinkedAccount } from "../lib/accountLinks";
 import { googleLink, googleSupported } from "../lib/googleAuth";
 import { appleLink, appleSupported } from "../lib/appleAuth";
 import { useAuth } from "../lib/AuthContext";
+import { SignInMethodsSkeleton } from "./SettingsSkeleton";
 
 const AD: Record<string, string> = { credential: "links.credential", google: "Google", apple: "Apple" };
 const etiket = (p: string) => (AD[p] && AD[p].includes(".") ? t(AD[p]) : (AD[p] ?? p));
@@ -77,7 +78,9 @@ export function LinkedAccounts({
     setMsg(r === "fresh" ? t("links.need_fresh") : r === "offline" ? t("links.unlink_offline") : t("links.failed"));
   }
 
-  if (!accounts) return null;
+  /* Liste gelene kadar yerinde iskelet: boş kalan bölüm liste gelince
+     altındaki satırları aşağı itiyordu. */
+  if (!accounts) return <SignInMethodsSkeleton colors={colors} />;
 
   const bagliMi = (p: string) => accounts.some((a) => a.providerId === p);
   const sonYontem = accounts.length <= 1;

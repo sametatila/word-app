@@ -17,7 +17,7 @@ import { SettingRow } from "@/components/setting-row";
 import { hasMicConsent, revokeMicConsent } from "@/lib/mic-consent";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
-import { Group, Row } from "@/components/settings-section";
+import { Group, Row, SETTINGS_TITLE } from "@/components/settings-section";
 import { LinkedAccounts } from "@/components/account/linked-accounts";
 import { courseName, courseSub, coursesForNative } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
@@ -197,15 +197,6 @@ export function ProfileForm({
         tamamı profile-view.tsx'te. */}
     </Row>
   );
-
-  const TITLE: Record<SettingsSection, string> = {
-    learning: "settings.group_learning",
-    app: "settings.group_app",
-    account: "settings.group_account",
-    security: "settings.group_security",
-    privacy: "settings.group_privacy",
-    about: "settings.group_about",
-  };
 
   const accountRows = (
     <>
@@ -497,7 +488,7 @@ export function ProfileForm({
 
   return (
     <div className="w-full space-y-4">
-      <PageBack fallback="/profile/settings" title={t(TITLE[section])} />
+      <PageBack fallback="/profile/settings" title={t(SETTINGS_TITLE[section])} />
 
       <div className="mx-auto w-full max-w-3xl empty:hidden">
         {saveError ? (

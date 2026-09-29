@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getT } from "@/lib/i18n/server";
 import { ProfileForm, type SettingsSection } from "@/components/profile-form";
 import { SettingsNav } from "@/components/settings-nav";
+import { SETTINGS_TITLE } from "@/components/settings-section";
 import { RetryButton } from "@/components/retry-button";
 import { FlowColumn, StateBody } from "@/components/flow";
 import { loadSettings } from "../_data";
@@ -10,19 +11,11 @@ import { SettingsFrame } from "../frame";
 export const dynamic = "force-dynamic";
 
 const SECTIONS: SettingsSection[] = ["learning", "app", "account", "security", "privacy", "about"];
-const TITLE: Record<SettingsSection, string> = {
-  learning: "settings.group_learning",
-  app: "settings.group_app",
-  account: "settings.group_account",
-  security: "settings.group_security",
-  privacy: "settings.group_privacy",
-  about: "settings.group_about",
-};
 
 export async function generateMetadata({ params }: { params: Promise<{ section: string }> }) {
   const { section } = await params;
   const t = await getT();
-  const key = TITLE[section as SettingsSection];
+  const key = SETTINGS_TITLE[section as SettingsSection];
   return { title: t(key ?? "settings.settings") };
 }
 

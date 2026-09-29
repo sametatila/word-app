@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useId } from "react";
+import { useEffect, useRef, useId, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -15,7 +16,15 @@ import { useT } from "@/lib/i18n/client";
  * `<dialog>` ÜSTÜNDE kuruluyor: odak tuzağı, Esc ile kapanma ve arka planın
  * etkisizleşmesi tarayıcının kendi işi. Elle yazılmış bir modalda bu üçü de
  * ayrı ayrı unutulan şeyler.
+ *
+ * `<body>`E TAŞINIYOR (portal). Kapalı `<dialog>` kendisi yer tutmuyor ama
+ * çağıranın kabında SON ÇOCUK olarak duruyordu: `space-y-*` kapta bir önceki
+ * kardeşe alt pay veriyor, yani kapalı diyalog görünmez bir boşluk
+ * bırakıyordu (Ayarlar listesinde Çıkış yap'ın altında 16 px). Açıkken zaten
+ * üst katmanda; DOM'daki yeri görünüşü değiştirmiyor, React olayları ve
+ * bağlam (dil) portaldan geçmeye devam ediyor.
  */
+const noSubscribe = () => () => {};
 /** Düğme etiketi bundan uzunsa iki düğme alt alta — mobil
  *  `lib/useLayout` `DIALOG_INLINE_LABEL_MAX` ile aynı sayı (`check:parity`). */
 const INLINE_LABEL_MAX = 16;
@@ -47,6 +56,9 @@ export function ConfirmDialog({
   const basligId = useId();
   const ref = useRef<HTMLDialogElement>(null);
   const t = useT();
+  /* Sunucuda `document` yok: portal hidrasyondan sonra kuruluyor. Diyalog o
+     an zaten kapalı; açık gelirse aşağıdaki etki `host` gelince açıyor. */
+  const host = useSyncExternalStore(noSubscribe, () => document.body, () => null);
   const vazgec = cancelLabel ?? t("common.discard");
   const onay = confirmLabel ?? t("common.confirm");
   /* UZUN ETİKETTE ALT ALTA — mobil `ConfirmDialog` ile aynı kural: yarım
@@ -58,9 +70,10 @@ export function ConfirmDialog({
     if (!el) return;
     if (open && !el.open) el.showModal();
     if (!open && el.open) el.close();
-  }, [open]);
+  }, [open, host]);
 
-  return (
+  if (!host) return null;
+  return createPortal(
     <dialog
       ref={ref}
       aria-labelledby={basligId}
@@ -101,6 +114,7 @@ export function ConfirmDialog({
           {onay}
         </button>
       </div>
-    </dialog>
+    </dialog>,
+    host,
   );
 }

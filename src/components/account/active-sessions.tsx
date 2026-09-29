@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AuthNotice } from "@/components/auth-shell";
 import { SettingRow } from "@/components/setting-row";
+import { SessionRowSkeleton } from "@/components/settings-skeleton";
 import { authApi } from "@/lib/auth/api";
 import { useT, useLang } from "@/lib/i18n/client";
 import { localeOf } from "@/lib/i18n/dict";
@@ -108,7 +109,6 @@ export function ActiveSessions() {
     await load();
   }
 
-  if (state === "loading") return null;
 
   const since = (iso: string) =>
     /* Yerel ad DİL KODU değil: her yerde `localeOf(lang)` ("tr-TR") var,
@@ -118,6 +118,11 @@ export function ActiveSessions() {
 
   return (
     <Row label={t("settings.sec_sessions")}>
+        {/* Liste gelene kadar yerinde bir satırlık iskelet (rota iskeletiyle
+            aynı parça): eskiden bileşen hiç çizilmiyordu ve Güvenlik
+            sayfasının dibi liste gelince aşağı uzuyordu. Alttaki düğme
+            listeye bağlı değil, yüklenirken de çalışıyor. */}
+        {state === "loading" ? <SessionRowSkeleton /> : null}
         {state === "ok" && rows?.length ? (
           <div className="divide-y divide-[color:var(--hairline)]">
             {rows.map((s) => (

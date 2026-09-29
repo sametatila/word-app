@@ -5,6 +5,7 @@ import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { listSessions, revokeOtherSessions, revokeSession, type ActiveSession, type SessionsResult } from "../lib/sessions";
 import { spacing, radii, type Palette } from "../theme";
+import { SessionRowSkeleton } from "./SettingsSkeleton";
 
 /**
  * Etkin oturumlar — web'deki bölümün eşi.
@@ -44,12 +45,14 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
     if (ok) yukle();
   }
 
-  if (!result) return null;
-
-  const satirlar: ActiveSession[] = result.state === "ok" ? result.rows : [];
+  /* Liste gelene kadar bir satırlık iskelet; alttaki düğme listeye bağlı
+     değil, yüklenirken de çalışıyor. Eskiden bileşen hiç çizilmiyordu ve
+     liste gelince Güvenlik'in dibi aşağı uzuyordu. */
+  const satirlar: ActiveSession[] = result?.state === "ok" ? result.rows : [];
 
   return (
     <View style={{ gap: spacing.sm }}>
+      {result ? null : <SessionRowSkeleton colors={colors} />}
       {satirlar.map((s, i) => (
         <View
           key={s.id}
@@ -79,10 +82,10 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
           mobilde düz metindi. §157 bu bileşenin `msg` satırını kapatmıştı ama
           bu iki dal `msg` değil, DURUM nesnesinin alanı — aynı kusur, başka
           kalıpta (bkz. §11.272). */}
-      {result.state === "stale" ? (
+      {result?.state === "stale" ? (
         <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted}>{t("sessions.need_fresh")}</Text>
       ) : null}
-      {result.state === "failed" ? (
+      {result?.state === "failed" ? (
         <Text accessibilityLiveRegion="polite" variant="caption" color={colors.dangerText}>{t("sessions.load_failed")}</Text>
       ) : null}
 

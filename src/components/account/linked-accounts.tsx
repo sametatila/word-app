@@ -8,6 +8,7 @@ import { ActiveSessions } from "@/components/account/active-sessions";
 import { TwoFactor } from "@/components/account/two-factor";
 import { useT } from "@/lib/i18n/client";
 import { Group, Row } from "@/components/settings-section";
+import { PasswordRowsSkeleton, SignInMethodsSkeleton } from "@/components/settings-skeleton";
 
 /**
  * better-auth `/list-accounts` yanıtı. Alan adı `providerId` — `provider` DEĞİL.
@@ -154,11 +155,13 @@ export function LinkedAccounts({
     }
   }
 
-  if (!accounts) return null;
-
-  const bagliMi = (p: string) => accounts.some((a) => a.providerId === p);
-  const sonYontem = accounts.length <= 1;
-  const satirlar = [...new Set([...accounts.map((a) => a.providerId), ...(googleEnabled ? ["google"] : [])])];
+  /* LİSTE GELENE KADAR YERİNDE İSKELET. Eskiden bileşen hiç çizilmiyordu:
+     rota iskeleti kalkınca Hesap/Güvenlik sayfası başlıktan ibaret kalıyor,
+     liste gelince her şey aşağı itiliyordu. İskelet parçaları rota
+     iskeletiyle aynı (`settings-skeleton`), geçişte yükseklik değişmiyor. */
+  const bagliMi = (p: string) => accounts?.some((a) => a.providerId === p) ?? false;
+  const sonYontem = (accounts?.length ?? 0) <= 1;
+  const satirlar = accounts ? [...new Set([...accounts.map((a) => a.providerId), ...(googleEnabled ? ["google"] : [])])] : [];
 
   return (
     <>
@@ -169,6 +172,7 @@ export function LinkedAccounts({
       <Group title={part ? undefined : t("settings.group_account")}>
         {nameRow}
         <Row label={t("links.title")}>
+          {accounts ? (
           <div className="-my-2 divide-y divide-[color:var(--hairline)]">
           {satirlar.map((p) => {
             const bagli = bagliMi(p);
@@ -193,6 +197,9 @@ export function LinkedAccounts({
             );
           })}
           </div>
+          ) : (
+            <SignInMethodsSkeleton google={googleEnabled} />
+          )}
           {msg ? <p role="status" className="mt-2 text-caption">{msg}</p> : null}
         </Row>
         {accountRows}
@@ -205,6 +212,7 @@ export function LinkedAccounts({
             sağlayıcı listesini okuyor, ikinci bir istek atmaya gerek yok;
             `credential` yoksa (yalnız Google/Apple ile girmiş biri) form hiç
             çizilmiyor — olmayan bir parolayı sormak anlamsız olurdu. */}
+        {accounts ? null : <PasswordRowsSkeleton />}
         {bagliMi("credential") ? <ChangePassword /> : null}
 
         {/* İki adımlı doğrulama da parolalı hesaba bağlı: açma ve kapatma

@@ -14,6 +14,7 @@ import { LinkedAccounts } from "../ui/LinkedAccounts";
 import { ChangePassword } from "../ui/ChangePassword";
 import { TwoFactor } from "../ui/TwoFactor";
 import { ActiveSessions } from "../ui/ActiveSessions";
+import { ActionRowSkeleton } from "../ui/SettingsSkeleton";
 import { listAccounts, type LinkedAccount } from "../lib/accountLinks";
 import { PressableScale } from "../ui/PressableScale";
 import { RadioDot } from "../ui/RadioDot";
@@ -656,6 +657,19 @@ export function SettingsScreen() {
           {/* Parola ve ikinci adım YALNIZ parolalı hesapta: yalnız Google/Apple
               ile girmiş birine "şu anki parolan" sormak olmayan bir şeyi
               istemek olurdu. */}
+          {/* Hesap listesi gelene kadar iki satırın yeri (parolalı hesap en
+              sık durum): eskiden liste gelince ikisi birden beliriyordu. */}
+          {/* Ayrı ayrı: `Group` ayıracı çocuk başına çiziyor, parça tek sayılırdı. */}
+          {accounts === null && (
+            <Row label={t("settings.sec_password")} colors={colors}>
+              <ActionRowSkeleton text={t("changepw.sub")} action={t("changepw.open")} colors={colors} />
+            </Row>
+          )}
+          {accounts === null && (
+            <Row label={t("settings.sec_two_factor")} colors={colors}>
+              <ActionRowSkeleton text={t("twofa.off_sub")} action={t("twofa.enable")} colors={colors} />
+            </Row>
+          )}
           {parolaliHesap && (
             <Row label={t("settings.sec_password")} colors={colors}>
               <ChangePassword colors={colors} />

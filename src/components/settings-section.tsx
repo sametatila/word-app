@@ -1,3 +1,19 @@
+import type { ReactNode } from "react";
+import type { SettingsSection } from "@/components/profile-form";
+
+/**
+ * Grupların sayfa başlığı (sözlük anahtarı). Tek yerde: sayfa başlığı
+ * (`metadata`), formun `PageBack`i ve yükleme iskeleti aynı adı yazıyor.
+ */
+export const SETTINGS_TITLE: Record<SettingsSection, string> = {
+  learning: "settings.group_learning",
+  app: "settings.group_app",
+  account: "settings.group_account",
+  security: "settings.group_security",
+  privacy: "settings.group_privacy",
+  about: "settings.group_about",
+};
+
 /**
  * Ayar sayfasının iki yapı taşı: GRUP (başlık + tek kart) ve SATIR.
  *
@@ -16,9 +32,10 @@ export function Group({
   children,
 }: {
   /** Bölüm sayfasında başlık sayfanın kendisi; grup ayrıca başlık çizmiyor. */
-  title?: string;
+  /* Düğüm de alıyor: iskelet başlığın yerine görünmez metin çiziyor. */
+  title?: ReactNode;
   id?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     /* ÖLÇÜLER ANDROID'İN (`SettingsScreen` `Group`): grubun üst payı
@@ -37,8 +54,8 @@ export function Row({
   label,
   children,
 }: {
-  label?: string;
-  children: React.ReactNode;
+  label?: ReactNode;
+  children: ReactNode;
 }) {
   return (
     /* Bölümün dikey payı Android'de `spacing.lg` (16): ayıracın iki yanında
