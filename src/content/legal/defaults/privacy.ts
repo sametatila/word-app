@@ -82,7 +82,7 @@ Veri sorumlusu Türkiye'de yerleşiktir ve hizmet Türkiye'den sunulur. Sunucula
 
 | Veri | Nereden | Amaç | Hukuki dayanak (KVKK / GDPR) | Saklama |
 |---|---|---|---|---|
-| E-posta adresi, ad, parola özeti | Kayıt formu ya da giriş için seçtiğin Google veya Apple hesabın | Hesap açma, giriş, parola sıfırlama, doğrulama e-postası | Sözleşmenin kurulması ve ifası (m.5/2-c / m.6(1)(b)) | Hesap süresince |
+| E-posta adresi, ad, parola özeti | Kayıt formu ya da giriş için seçtiğin Google veya Apple hesabın | Hesap açma, giriş, parola sıfırlama, doğrulama e-postası; abonelik bildirimleri (ör. ücretsiz deneme bitmeden hatırlatma) | Sözleşmenin kurulması ve ifası (m.5/2-c / m.6(1)(b)) | Hesap süresince |
 | Misafir kimliği: rastgele bir kullanıcı kimliği ve oturum jetonu (e-posta, ad ya da parola alınmaz) | Uygulama, "Hesapsız devam et"e dokunduğunda | Uygulamayı hesapsız kullanırken ilerlemeni sunucuda tutmak; hesap oluşturur ya da hesabına girersen ilerlemeni hesabına geçirmek | Sözleşmenin kurulması ve ifası (m.5/2-c / m.6(1)(b)) | {{sessionMaxDays}} gün kullanılmazsa en geç 7 gün içinde silinir; var olan bir hesapla birleşince ya da eklememeyi seçince hemen silinir; e-postayla hesap oluşturunca hesabın kendisi olur |
 | Görünen ad, avatar seçimi, seviye, kurs, günlük hedef, ses tercihi | Sen | Kişiselleştirme; görünen ad haftalık sıralamada diğer kullanıcılara görünür | Sözleşmenin ifası | Hesap süresince |
 | Öğrenme verisi: kelime durumu, tekrar sonuçları, seri, XP, başarımlar, konuşma ve sınav sonuçları | Uygulamayı kullanırken | Aralıklı tekrar planı, ilerleme, sıralama | Sözleşmenin ifası | Hesap süresince |
@@ -178,7 +178,7 @@ Ayarlar › Gizlilik bölümündeki "Kullanım verisi gönder" anahtarıyla bunu
 
 ## 8a. Ticari elektronik ileti
 
-Sana yalnız hizmetle ilgili iletiler gönderilir: e-posta doğrulama, parola sıfırlama, hesap ve güvenlik bildirimleri, izin verdiğin hatırlatmalar. 6563 sayılı Kanun kapsamında ticari elektronik ileti gönderilmez; ileride pazarlama iletisi gönderilmek istenirse İleti Yönetim Sistemi (İYS) üzerinden ayrıca onayın alınır ve her iletide ret yolu bulunur.
+Sana yalnız hizmetle ilgili iletiler gönderilir: e-posta doğrulama, parola sıfırlama, hesap ve güvenlik bildirimleri, abonelik bildirimleri (ör. ücretsiz deneme bitmeden yaklaşık 2 gün önce e-posta ve, izin verdiysen, bildirimle hatırlatma), izin verdiğin hatırlatmalar. 6563 sayılı Kanun kapsamında ticari elektronik ileti gönderilmez; ileride pazarlama iletisi gönderilmek istenirse İleti Yönetim Sistemi (İYS) üzerinden ayrıca onayın alınır ve her iletide ret yolu bulunur.
 
 ## 9. Saklama süreleri
 
@@ -266,7 +266,7 @@ The controller is established in Türkiye and the service is provided from Türk
 
 | Data | Source | Purpose | Legal ground (KVKK / GDPR) | Retention |
 |---|---|---|---|---|
-| E-mail address, name, password hash | Registration form, or the Google or Apple account you sign in with | Account creation, sign-in, password reset, verification email | Conclusion and performance of a contract (Art. 5/2-c / Art. 6(1)(b)) | For the life of the account |
+| E-mail address, name, password hash | Registration form, or the Google or Apple account you sign in with | Account creation, sign-in, password reset, verification email; subscription notices (e.g. a reminder before a free trial ends) | Conclusion and performance of a contract (Art. 5/2-c / Art. 6(1)(b)) | For the life of the account |
 | Guest identity: a random user ID and session token (no email, name or password is collected) | The app, when you tap "Continue without an account" | Keeping your progress on the server while you use the app without an account; moving it into your account if you create one or sign in | Conclusion and performance of a contract (Art. 5/2-c / Art. 6(1)(b)) | Deleted within 7 days after {{sessionMaxDays}} days without use; deleted immediately when combined with an existing account or when you choose not to add it; becomes your account itself when you create one with email |
 | Display name, avatar choice, level, course, daily goal, voice preference | You | Personalization; the display name is visible to other users on the weekly leaderboard | Performance of a contract | For the life of the account |
 | Learning data: word state, review results, streak, XP, achievements, Speaking step and exam results | While you use the app | Spaced repetition schedule, progress, leaderboard | Performance of a contract | For the life of the account |
@@ -362,7 +362,7 @@ You can switch this off with the "Send usage data" toggle under Settings › Pri
 
 ## 8a. Commercial electronic messages
 
-You receive only service-related messages: email verification, password reset, account and security notices, and the reminders you allowed. No commercial electronic messages within the meaning of Turkish Law no. 6563 are sent; if marketing messages are ever sent, your separate consent will first be obtained through the Turkish Message Management System (İYS) and every message will carry an opt-out.
+You receive only service-related messages: email verification, password reset, account and security notices, subscription notices (e.g. a reminder about 2 days before a free trial ends, by email and, if you allowed notifications, as a notification), and the reminders you allowed. No commercial electronic messages within the meaning of Turkish Law no. 6563 are sent; if marketing messages are ever sent, your separate consent will first be obtained through the Turkish Message Management System (İYS) and every message will carry an opt-out.
 
 ## 9. Retention periods
 
@@ -450,7 +450,7 @@ Der Verantwortliche ist in der Türkei niedergelassen, und der Dienst wird aus d
 
 | Daten | Herkunft | Zweck | Rechtsgrundlage (KVKK / DSGVO) | Speicherdauer |
 |---|---|---|---|---|
-| E-Mail-Adresse, Name, Passwort-Hash | Registrierungsformular oder das Google- oder Apple-Konto, mit dem du dich anmeldest | Kontoerstellung, Anmeldung, Passwort-Reset, Bestätigungs-E-Mail | Abschluss und Erfüllung eines Vertrags (Art. 5/2-c / Art. 6 Abs. 1 lit. b) | Für die Dauer des Kontos |
+| E-Mail-Adresse, Name, Passwort-Hash | Registrierungsformular oder das Google- oder Apple-Konto, mit dem du dich anmeldest | Kontoerstellung, Anmeldung, Passwort-Reset, Bestätigungs-E-Mail; Abo-Hinweise (z. B. Erinnerung vor Ende eines kostenlosen Tests) | Abschluss und Erfüllung eines Vertrags (Art. 5/2-c / Art. 6 Abs. 1 lit. b) | Für die Dauer des Kontos |
 | Gastidentität: eine zufällige Nutzerkennung und ein Sitzungstoken (keine E-Mail-Adresse, kein Name, kein Passwort) | Die App, wenn du auf "Ohne Konto fortfahren" tippst | Deinen Fortschritt bei Nutzung ohne Konto auf dem Server halten; ihn in dein Konto übernehmen, wenn du eines erstellst oder dich anmeldest | Abschluss und Erfüllung eines Vertrags (Art. 5/2-c / Art. 6 Abs. 1 lit. b) | Nach {{sessionMaxDays}} Tagen ohne Nutzung innerhalb von 7 Tagen gelöscht; bei Zusammenführung mit einem bestehenden Konto oder wenn du ihn nicht hinzufügen willst, sofort; wird bei Kontoerstellung per E-Mail zu deinem Konto selbst |
 | Anzeigename, Avatar-Auswahl, Niveau, Kurs, Tagesziel, Stimmpräferenz | Du | Personalisierung; der Anzeigename ist für andere Nutzer in der Wochen-Rangliste sichtbar | Erfüllung eines Vertrags | Für die Dauer des Kontos |
 | Lerndaten: Wortstatus, Wiederholungsergebnisse, Serie, XP, Erfolge, Ergebnisse von Sprechen-Schritten und Prüfungen | Während der Nutzung der App | Wiederholungsplan, Fortschritt, Rangliste | Erfüllung eines Vertrags | Für die Dauer des Kontos |
@@ -546,7 +546,7 @@ Um zu verstehen, welche Funktionen genutzt werden, schreibt Lernomi kurze Nutzun
 
 ## 8a. Kommerzielle elektronische Nachrichten
 
-Du erhältst nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Reset, Konto- und Sicherheitshinweise sowie die von dir erlaubten Erinnerungen. Kommerzielle elektronische Nachrichten im Sinne des türkischen Gesetzes Nr. 6563 werden nicht versendet; sollten künftig Marketingnachrichten versendet werden, wird zuvor deine gesonderte Zustimmung über das türkische Nachrichtenverwaltungssystem (İYS) eingeholt, und jede Nachricht enthält eine Abmeldemöglichkeit.
+Du erhältst nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Reset, Konto- und Sicherheitshinweise, Abo-Hinweise (z. B. eine Erinnerung etwa 2 Tage vor Ende eines kostenlosen Tests per E-Mail und, wenn du Mitteilungen erlaubt hast, als Mitteilung) sowie die von dir erlaubten Erinnerungen. Kommerzielle elektronische Nachrichten im Sinne des türkischen Gesetzes Nr. 6563 werden nicht versendet; sollten künftig Marketingnachrichten versendet werden, wird zuvor deine gesonderte Zustimmung über das türkische Nachrichtenverwaltungssystem (İYS) eingeholt, und jede Nachricht enthält eine Abmeldemöglichkeit.
 
 ## 9. Speicherfristen
 

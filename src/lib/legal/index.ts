@@ -184,7 +184,7 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * işlemenin anlatımı kapsamıyla eşitlendi.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-29";
-export const LEGAL_VERSION = "1.8.9";
+export const LEGAL_VERSION = "1.8.10";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -413,6 +413,24 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: hizmet iletileri listesine abonelik bildirimi eklendi (deneme bitmeden hatırlatma,
+       lib/premium/trial-reminder). Yeni veri, alıcı ya da süre yok: hesabın zaten işlenen e-posta adresine ve
+       izin verilmiş bildirim kanalına, sözleşmenin ifası kapsamında, kullanıcı lehine bir hizmet iletisi. */
+    version: "1.8.10",
+    date: "2026-09-29",
+    changes: {
+      tr: [
+        "Gönderilen hizmet iletilerine abonelik bildirimleri eklendi: ücretsiz deneme bitmeden yaklaşık 2 gün önce e-postayla ve, bildirimlere izin verdiysen, bildirimle hatırlatılırsın. Yeni bir veri işlenmiyor, başka bir şey değişmedi.",
+      ],
+      en: [
+        "Subscription notices were added to the service messages we send: about 2 days before a free trial ends you get a reminder by email and, if you allowed notifications, as a notification. No new data is processed and nothing else changed.",
+      ],
+      de: [
+        "Abo-Hinweise wurden zu den dienstbezogenen Nachrichten hinzugefügt: Etwa 2 Tage vor Ende eines kostenlosen Tests wirst du per E-Mail und, wenn du Mitteilungen erlaubt hast, per Mitteilung erinnert. Es werden keine neuen Daten verarbeitet, sonst hat sich nichts geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: yalnız uygulama içi YOL. Ayarlar 2de783c98'de kısa liste + grup ekranlarına
        geçti; sosyal profil ayarları (görünürlük, istekler, önerilerde görünme, etkinlik, engellenenler)
