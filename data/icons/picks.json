@@ -1,0 +1,1243 @@
+{
+  "_readme": "İkon seti: Remix Icon (Apache-2.0). Anlam başına tek ikon; Samet seçti (2026-09-29, ikon seçim sayfası), 7 satır Claude kararı (çakışma ve eski el çizimi): achievements, quest, logout, email, retry, undo, ach-marathon. Göç sırasında eklenen 2 satır (Claude, 2026-09-29): check (çerçevesiz onay işareti: onay kutusunun ve dolu rozetin İÇİNDE `correct`un halkası ikinci bir çerçeve çiziyordu), course (onboarding'in kurs adımı; hiçbir satır karşılamıyordu). Kaynak bu dosya; web ve mobil ikon modülleri scripts/icons/ ile buradan üretilir. Bağlam içi göz kontrolünden sonra (2026-09-29, Claude): combo roket→hız göstergesi (küçükte zil gibi okunuyordu), quest görev listesi→bayrak (Samet'in seçimi; liste 0/25'te bitmiş gibi görünüyordu) ve ach-boss bayrak→yıldızlı madalya, stop/pause dolu (medya düğmesi alışkanlığı), reaction-strong boks eldiveni→başparmak (16 pikselde okunmuyordu).",
+  "family": "remix",
+  "rows": [
+    {
+      "id": "tab-learn",
+      "meaning": "Öğren sekmesi (günlük öğrenme ana ekranı)",
+      "category": "Gezinme",
+      "current": "LearnIcon",
+      "where": [
+        "W+M alt sekme: Öğren"
+      ],
+      "remix": "home-5-line"
+    },
+    {
+      "id": "tab-path",
+      "meaning": "Patika sekmesi (ünite ünite ilerleyen yol)",
+      "category": "Gezinme",
+      "current": "PathIcon",
+      "where": [
+        "W+M alt sekme: Patika",
+        "W+M Patika boş durumu: 'Bu seviyede patika yok'"
+      ],
+      "remix": "route-line"
+    },
+    {
+      "id": "tab-skills",
+      "meaning": "Beceriler sekmesi (beceri başına alıştırma kütüphanesi)",
+      "category": "Gezinme",
+      "current": "SkillsIcon",
+      "where": [
+        "W+M alt sekme: Beceriler",
+        "M Beceriler boş/hata kartı"
+      ],
+      "remix": "shapes-line"
+    },
+    {
+      "id": "tab-friends",
+      "meaning": "Arkadaşlar sekmesi",
+      "category": "Gezinme",
+      "current": "HandshakeIcon",
+      "where": [
+        "W+M alt sekme: Arkadaşlar",
+        "W+M Arkadaşlar yüklenemedi boş kartı",
+        "M misafir kartı: 'Arkadaşlar ve lig hesapla açılır'",
+        "M kullanıcı profili: '{n} ortak arkadaş'"
+      ],
+      "remix": "group-line"
+    },
+    {
+      "id": "account",
+      "meaning": "Profil / hesap",
+      "category": "Gezinme",
+      "current": "UserIcon + FaceIcon",
+      "where": [
+        "W profil menüsü: Profil",
+        "W ayarlar gezinmesi: Hesap",
+        "M Ayarlar: 'Hesap' satırı",
+        "M Ayarlar: 'Hesap oluştur' (misafir)"
+      ],
+      "remix": "account-circle-line"
+    },
+    {
+      "id": "back",
+      "meaning": "Geri",
+      "category": "Gezinme",
+      "current": "ArrowLeftIcon + ArrowBackIcon",
+      "where": [
+        "W sayfa başlığı geri düğmesi",
+        "M akış ekranı başlığı geri düğmesi",
+        "W turdan çık düğmesi",
+        "W+M profil üst çubuğu: Geri"
+      ],
+      "remix": "arrow-left-line"
+    },
+    {
+      "id": "forward",
+      "meaning": "İleri / başla",
+      "category": "Gezinme",
+      "current": "ArrowRightIcon",
+      "where": [
+        "W+M Öğren: Günlük tur 'Başla' düğmesi",
+        "W+M Pratik: 'Karışık tur' satırı",
+        "W+M arkadaş nabzı kartı: ayrıntıya git"
+      ],
+      "remix": "arrow-right-line"
+    },
+    {
+      "id": "chevron-next",
+      "meaning": "Satırdan başka ekrana git (şevron)",
+      "category": "Gezinme",
+      "current": "ChevronRightIcon",
+      "where": [
+        "W+M menü satırı (MenuRow) sonu",
+        "W+M deneme sınavı listesi satırı",
+        "M Patika: seviye/modül sınavı satırı",
+        "M Gelen kutusu satırı"
+      ],
+      "remix": "arrow-right-s-line"
+    },
+    {
+      "id": "expand",
+      "meaning": "Açılır bölüm (aşağı şevron)",
+      "category": "Gezinme",
+      "current": "ChevronIcon",
+      "where": [
+        "W yapay zekâ izni penceresinde açılır ayrıntı"
+      ],
+      "remix": "arrow-down-s-line"
+    },
+    {
+      "id": "send",
+      "meaning": "Mesaj gönder (konuşma)",
+      "category": "Eylemler",
+      "current": "ArrowRightIcon",
+      "where": [
+        "M konuşma: gönder düğmesi"
+      ],
+      "remix": "send-plane-2-line"
+    },
+    {
+      "id": "report",
+      "meaning": "Bildir / şikâyet et",
+      "category": "Eylemler",
+      "current": "FlagIcon",
+      "where": [
+        "W+M içerik bildir bağlantısı ('Bildir')",
+        "W+M lig tablosu: kullanıcıyı şikâyet et"
+      ],
+      "remix": "flag-line"
+    },
+    {
+      "id": "share",
+      "meaning": "Paylaş",
+      "category": "Eylemler",
+      "current": "ShareIcon + LinkIcon",
+      "where": [
+        "W+M Arkadaşlar: davet et/paylaş",
+        "W+M Yürüyüş sonu: sonucu paylaş",
+        "W sonuç paylaş düğmesi (LinkIcon)",
+        "M tur sonu başlık düğmesi: Paylaş"
+      ],
+      "remix": "share-line"
+    },
+    {
+      "id": "logout",
+      "meaning": "Çıkış yap",
+      "category": "Eylemler",
+      "current": "LogoutIcon",
+      "where": [
+        "M Ayarlar: 'Çıkış yap' satırı"
+      ],
+      "remix": "logout-box-r-line"
+    },
+    {
+      "id": "email",
+      "meaning": "E-posta",
+      "category": "Eylemler",
+      "current": "MailIcon",
+      "where": [
+        "M giriş: 'E-posta ile devam et'",
+        "M e-posta doğrulama ipucu: 'Adres yanlış olabilir'"
+      ],
+      "remix": "mail-line"
+    },
+    {
+      "id": "retry",
+      "meaning": "Tekrar dene (hata sonrası)",
+      "category": "Eylemler",
+      "current": "RefreshIcon + RepeatIcon",
+      "where": [
+        "W+M hata ekranı: 'Tekrar dene'",
+        "M boss sınavı: yine dene notu"
+      ],
+      "remix": "refresh-line"
+    },
+    {
+      "id": "review",
+      "meaning": "Tekrar (aralıklı tekrar, SRS)",
+      "category": "Öğrenme",
+      "current": "RefreshIcon + RepeatIcon",
+      "where": [
+        "W+M Öğren: '{n} tekrar' rozeti",
+        "W+M tur sonu: 'Yarın {n} kelimenin tekrarı var'",
+        "W+M yürüyüş kuralı: 'Tur bitince devam edelim mi?'"
+      ],
+      "remix": "repeat-2-line"
+    },
+    {
+      "id": "resume",
+      "meaning": "Kaldığın yerden devam et",
+      "category": "Eylemler",
+      "current": "RepeatIcon",
+      "where": [
+        "M deneme sınavı: kaldığın yerden devam",
+        "M yürüyüş kuralı: 'devam edelim mi?'"
+      ],
+      "remix": "play-circle-line"
+    },
+    {
+      "id": "undo",
+      "meaning": "Değişiklikleri geri al",
+      "category": "Eylemler",
+      "current": "RefreshIcon",
+      "where": [
+        "W+M avatar: değişiklikleri geri al"
+      ],
+      "remix": "arrow-go-back-line"
+    },
+    {
+      "id": "search",
+      "meaning": "Ara",
+      "category": "Eylemler",
+      "current": "SearchIcon",
+      "where": [
+        "W+M kullanıcı arama kutusu",
+        "W kelime listesi arama kutusu"
+      ],
+      "remix": "search-line"
+    },
+    {
+      "id": "no-results",
+      "meaning": "Sonuç yok / bulunamadı",
+      "category": "Geri bildirim",
+      "current": "SearchIcon + XIcon",
+      "where": [
+        "W+M arama sonucu yok boş kartı",
+        "W+M 'Kullanıcı bulunamadı' boş durumu (XIcon)",
+        "W+M Kelimeler: 'Kelime bulunamadı' boş durumu (CardsIcon)"
+      ],
+      "remix": "search-eye-line"
+    },
+    {
+      "id": "settings",
+      "meaning": "Ayarlar",
+      "category": "Eylemler",
+      "current": "SettingsIcon",
+      "where": [
+        "W+M profil üst çubuğu: Ayarlar",
+        "W profil menüsü: Ayarlar"
+      ],
+      "remix": "settings-3-line"
+    },
+    {
+      "id": "close",
+      "meaning": "Kapat / temizle",
+      "category": "Eylemler",
+      "current": "XIcon",
+      "where": [
+        "W+M tur/akış başlığı: Kapat",
+        "W+M arama kutusu: Temizle"
+      ],
+      "remix": "close-line"
+    },
+    {
+      "id": "remove-friend",
+      "meaning": "Arkadaşı kaldır",
+      "category": "Eylemler",
+      "current": "XIcon",
+      "where": [
+        "M arkadaşı kaldır eylemi"
+      ],
+      "remix": "user-unfollow-line"
+    },
+    {
+      "id": "edit",
+      "meaning": "Düzenle",
+      "category": "Eylemler",
+      "current": "PenIcon",
+      "where": [
+        "W+M Profil: 'Avatarı düzenle'"
+      ],
+      "remix": "pencil-line"
+    },
+    {
+      "id": "add-friend",
+      "meaning": "Arkadaş ekle / davet et",
+      "category": "Sosyal",
+      "current": "UserPlusIcon",
+      "where": [
+        "W+M 'Ekle' düğmesi",
+        "W+M 'Henüz arkadaşın yok' boş durumu",
+        "W+M bildirim: arkadaşlık isteği",
+        "başarım: invite1/3/10"
+      ],
+      "remix": "user-add-line"
+    },
+    {
+      "id": "skill-speaking",
+      "meaning": "Konuşma becerisi / konuş düğmesi",
+      "category": "Beceriler",
+      "current": "MicIcon",
+      "where": [
+        "W+M Beceriler: Konuşma bölümü",
+        "W+M konuşma ekranı: konuş düğmesi",
+        "W+M Yürüyüş: 'söyle' ekranı",
+        "başarım: speak100/speak500/speaking25"
+      ],
+      "remix": "mic-line"
+    },
+    {
+      "id": "skill-listening",
+      "meaning": "Dinleme becerisi",
+      "category": "Beceriler",
+      "current": "ListenIcon + HeadphonesIcon",
+      "where": [
+        "W+M Beceriler: Dinleme bölümü",
+        "W+M Patika ünite adımı: Dinleme",
+        "başarım: listen200 (HeadphonesIcon)"
+      ],
+      "remix": "headphone-line"
+    },
+    {
+      "id": "skill-reading",
+      "meaning": "Okuma becerisi",
+      "category": "Beceriler",
+      "current": "ReadIcon",
+      "where": [
+        "W+M Beceriler: Okuma bölümü",
+        "W+M Patika ünite adımı: Okuma"
+      ],
+      "remix": "book-open-line"
+    },
+    {
+      "id": "skill-writing",
+      "meaning": "Yazma becerisi",
+      "category": "Beceriler",
+      "current": "WriteIcon",
+      "where": [
+        "W+M Beceriler: Yazma bölümü",
+        "W+M Patika ünite adımı: Yazma",
+        "M Patika kotası: yazma hakkı notu"
+      ],
+      "remix": "quill-pen-line"
+    },
+    {
+      "id": "skill-grammar",
+      "meaning": "Dil bilgisi",
+      "category": "Beceriler",
+      "current": "GrammarIcon",
+      "where": [
+        "W+M Beceriler: Dil bilgisi bölümü",
+        "W+M Patika ünite adımı: Dil bilgisi",
+        "başarım: grammar5/grammar12"
+      ],
+      "remix": "font-size"
+    },
+    {
+      "id": "conversation",
+      "meaning": "Konuşma (sohbet) adımı / puanlı konuşma",
+      "category": "Beceriler",
+      "current": "LearnIcon + ChatIcon",
+      "where": [
+        "W+M Patika ünite adımı: Konuşma türü (LearnIcon)",
+        "W+M puanlı konuşma kapağı (ChatIcon)",
+        "M Patika kotası: konuşma hakkı notu",
+        "başarım: conversation1"
+      ],
+      "remix": "chat-3-line"
+    },
+    {
+      "id": "my-writings",
+      "meaning": "Yazılarım (gönderilen yazılar)",
+      "category": "Öğrenme",
+      "current": "WriteIcon + PenIcon",
+      "where": [
+        "W+M Profil: 'Yazılarım' (web PenIcon, mobil WriteIcon)"
+      ],
+      "remix": "file-edit-line"
+    },
+    {
+      "id": "game-match",
+      "meaning": "Eşleştirme oyunu",
+      "category": "Oyunlar",
+      "current": "CardsIcon",
+      "where": [
+        "W+M Pratik: Eşleştirme (match) karosu"
+      ],
+      "remix": "links-line"
+    },
+    {
+      "id": "game-choice",
+      "meaning": "Çoktan seçmeli oyun",
+      "category": "Oyunlar",
+      "current": "QuizIcon",
+      "where": [
+        "W+M Pratik: Çoktan seçmeli (choice) karosu"
+      ],
+      "remix": "list-check-2"
+    },
+    {
+      "id": "game-article",
+      "meaning": "Artikel oyunu (der/die/das)",
+      "category": "Oyunlar",
+      "current": "TagIcon",
+      "where": [
+        "W+M Pratik: Artikel (der/die/das) karosu",
+        "başarım: artikel300"
+      ],
+      "remix": "price-tag-3-line"
+    },
+    {
+      "id": "game-scramble",
+      "meaning": "Karışık harfler oyunu",
+      "category": "Oyunlar",
+      "current": "PuzzleIcon",
+      "where": [
+        "W+M Pratik: Scramble karosu",
+        "başarım: scramble150"
+      ],
+      "remix": "shuffle-line"
+    },
+    {
+      "id": "game-cloze",
+      "meaning": "Boşluk doldurma (cloze) oyunu",
+      "category": "Oyunlar",
+      "current": "WriteIcon",
+      "where": [
+        "W+M Pratik: Boşluk doldurma (cloze) oyunu",
+        "başarım: cloze300"
+      ],
+      "remix": "input-cursor-move"
+    },
+    {
+      "id": "game-typing",
+      "meaning": "Yazarak hatırla (klavye) oyunu",
+      "category": "Oyunlar",
+      "current": "KeyboardIcon",
+      "where": [
+        "W+M Pratik: Yazma (typing) karosu",
+        "başarım: typing200"
+      ],
+      "remix": "keyboard-line"
+    },
+    {
+      "id": "game-listen",
+      "meaning": "Dinleme oyunu (duyduğunu seç)",
+      "category": "Oyunlar",
+      "current": "ListenIcon",
+      "where": [
+        "W+M Pratik: Dinleme oyunu karosu"
+      ],
+      "remix": "voiceprint-line"
+    },
+    {
+      "id": "game-order",
+      "meaning": "Cümle dizme oyunu",
+      "category": "Oyunlar",
+      "current": "SortIcon",
+      "where": [
+        "W+M Pratik: Dizme (order) karosu",
+        "başarım: order150"
+      ],
+      "remix": "list-ordered"
+    },
+    {
+      "id": "game-plural",
+      "meaning": "Çoğul oyunu",
+      "category": "Oyunlar",
+      "current": "StackIcon",
+      "where": [
+        "W+M Pratik: Çoğul (plural) karosu",
+        "başarım: plural150",
+        "W+M seviye testi kuralı: '4 aşama'"
+      ],
+      "remix": "file-copy-line"
+    },
+    {
+      "id": "game-truefalse",
+      "meaning": "Doğru-yanlış oyunu",
+      "category": "Oyunlar",
+      "current": "CheckIcon",
+      "where": [
+        "W+M Pratik: Doğru-yanlış (truefalse) karosu"
+      ],
+      "remix": "check-double-line"
+    },
+    {
+      "id": "game-translate",
+      "meaning": "Çeviri oyunu",
+      "category": "Oyunlar",
+      "current": "TranslateIcon",
+      "where": [
+        "W+M Pratik: Çeviri karosu",
+        "başarım: translate200"
+      ],
+      "remix": "translate-2"
+    },
+    {
+      "id": "mixed-round",
+      "meaning": "Karışık tur (bütün oyunlardan karışık)",
+      "category": "Oyunlar",
+      "current": "BoltIcon",
+      "where": [
+        "W+M Pratik: 'Karışık tur'"
+      ],
+      "remix": "dice-line"
+    },
+    {
+      "id": "all-games",
+      "meaning": "Bütün oyunlar başarımı",
+      "category": "Oyunlar",
+      "current": "PuzzleIcon",
+      "where": [
+        "başarım: allGames"
+      ],
+      "remix": "gamepad-line"
+    },
+    {
+      "id": "daily-round",
+      "meaning": "Günlük tur (bugünün dersi)",
+      "category": "Öğrenme",
+      "current": "BoltIcon",
+      "where": [
+        "W+M Öğren: 'Günlük tur' kahraman ikonu"
+      ],
+      "remix": "calendar-check-line"
+    },
+    {
+      "id": "new-words",
+      "meaning": "Yeni kelime ('{n} yeni' rozeti)",
+      "category": "Öğrenme",
+      "current": "BoltIcon",
+      "where": [
+        "W+M Öğren: '{n} yeni' rozeti"
+      ],
+      "remix": "seedling-line"
+    },
+    {
+      "id": "xp",
+      "meaning": "XP (deneyim puanı)",
+      "category": "Öğrenme",
+      "current": "BoltIcon + SparkIcon",
+      "where": [
+        "W+M Gelişim: 'Toplam XP'",
+        "W+M tur içi kombo XP'si (SparkIcon)"
+      ],
+      "remix": "flashlight-line"
+    },
+    {
+      "id": "time-bonus",
+      "meaning": "Süre bonusu (boss / hayatta kalma)",
+      "category": "Öğrenme",
+      "current": "BoltIcon",
+      "where": [
+        "W+M boss/hayatta kalma kuralı: süre bonusu"
+      ],
+      "remix": "timer-flash-line"
+    },
+    {
+      "id": "practice",
+      "meaning": "Alıştırma (Pratik girişi)",
+      "category": "Öğrenme",
+      "current": "QuizIcon",
+      "where": [
+        "W+M Öğren: 'Alıştırma' satırı"
+      ],
+      "remix": "brain-line"
+    },
+    {
+      "id": "path-review",
+      "meaning": "Patika tekrar turu (quiz adımı)",
+      "category": "Öğrenme",
+      "current": "QuizIcon",
+      "where": [
+        "W+M Patika ünite adımı: Tekrar turu (quiz)"
+      ],
+      "remix": "repeat-2-line"
+    },
+    {
+      "id": "unit-quiz",
+      "meaning": "Ünite sonu testi",
+      "category": "Öğrenme",
+      "current": "CheckIcon",
+      "where": [
+        "W+M Patika: ünite sonu testi (unitQuiz) adımı"
+      ],
+      "remix": "survey-line"
+    },
+    {
+      "id": "placement",
+      "meaning": "Seviye testi / seviye seçimi",
+      "category": "Öğrenme",
+      "current": "ExamIcon + StackIcon",
+      "where": [
+        "M seviye testi kapağı",
+        "M onboarding: seviye seçimi"
+      ],
+      "remix": "dashboard-3-line"
+    },
+    {
+      "id": "level",
+      "meaning": "Seviye (Gelişim kartı)",
+      "category": "Öğrenme",
+      "current": "TrophyIcon",
+      "where": [
+        "W+M Gelişim: 'Seviye' kartı"
+      ],
+      "remix": "bar-chart-line"
+    },
+    {
+      "id": "level-exam",
+      "meaning": "Seviye / modül sınavı (Patika)",
+      "category": "Öğrenme",
+      "current": "ExamIcon",
+      "where": [
+        "W+M Patika: seviye/modül sınavı satırı",
+        "W+M sınav kapağı"
+      ],
+      "remix": "graduation-cap-line"
+    },
+    {
+      "id": "mock-exam",
+      "meaning": "Deneme sınavları (Goethe/telc tarzı)",
+      "category": "Öğrenme",
+      "current": "ExamIcon",
+      "where": [
+        "W+M Öğren: 'Deneme sınavları'",
+        "W+M deneme sınavı listesi"
+      ],
+      "remix": "file-paper-2-line"
+    },
+    {
+      "id": "weekly-test",
+      "meaning": "Haftalık test",
+      "category": "Öğrenme",
+      "current": "CrownIcon + CalendarIcon",
+      "where": [
+        "W+M Öğren: 'Haftalık test' satırı (CrownIcon)",
+        "W+M haftalık test kapağı (ExamIcon)",
+        "W+M Haftalık test: 'Bu hafta test yok'",
+        "başarım: days30/days100 (CalendarIcon)"
+      ],
+      "remix": "calendar-line"
+    },
+    {
+      "id": "duration",
+      "meaning": "Süre",
+      "category": "Öğrenme",
+      "current": "ClockIcon + ArrowRightIcon",
+      "where": [
+        "W+M Gelişim: 'Toplam süre'",
+        "W+M sınav/boss/seviye testi kuralı: süre",
+        "W+M deneme sınavı kuralı: 'Her görevin kendi süresi var' (ArrowRightIcon)",
+        "W+M deneme sınavı: 'Süre doldu' notu"
+      ],
+      "remix": "timer-line"
+    },
+    {
+      "id": "premium",
+      "meaning": "Premium",
+      "category": "Öğrenme",
+      "current": "CrownIcon",
+      "where": [
+        "W+M Premium paywall kahramanı",
+        "W+M Ayarlar: Premium satırı",
+        "W+M Profil: 'Premium'a geç' / 'Premium açık'"
+      ],
+      "remix": "vip-crown-line"
+    },
+    {
+      "id": "module-crown",
+      "meaning": "Modül tacı (boss geçilince kazanılan)",
+      "category": "Öğrenme",
+      "current": "CrownIcon",
+      "where": [
+        "W+M boss kuralı: modül tacı"
+      ],
+      "remix": "medal-line"
+    },
+    {
+      "id": "league",
+      "meaning": "Lig / sıralama",
+      "category": "Öğrenme",
+      "current": "PodiumIcon",
+      "where": [
+        "W+M lig tablosu boş/hata kartı",
+        "W+M arkadaş sıralaması boş kartı",
+        "M misafir kartı: lig hesapla açılır"
+      ],
+      "remix": "trophy-line"
+    },
+    {
+      "id": "league-up",
+      "meaning": "Lig yükseldi",
+      "category": "Öğrenme",
+      "current": "CrownIcon + PodiumIcon + TrophyIcon",
+      "where": [
+        "W+M sosyal akış: lig yükseldi (CrownIcon)",
+        "W+M bildirim: lig yükseldi (PodiumIcon)",
+        "W+M lig yükselme kutlaması (TrophyIcon)"
+      ],
+      "remix": "arrow-up-double-line"
+    },
+    {
+      "id": "exam-stats",
+      "meaning": "Deneme sınavı istatistikleri",
+      "category": "Öğrenme",
+      "current": "PodiumIcon",
+      "where": [
+        "W+M deneme sınavı istatistikleri boş durumu"
+      ],
+      "remix": "line-chart-line"
+    },
+    {
+      "id": "streak",
+      "meaning": "Seri (üst üste gün)",
+      "category": "Öğrenme",
+      "current": "FlameIcon",
+      "where": [
+        "W+M üst çubuk: seri sayacı",
+        "W+M seri anı kutlaması",
+        "W+M Gelişim: günlük seri kartı",
+        "W+M tepki: 'fire'"
+      ],
+      "remix": "fire-line"
+    },
+    {
+      "id": "survival",
+      "meaning": "Hayatta kalma turu",
+      "category": "Öğrenme",
+      "current": "FlameIcon + SparkIcon",
+      "where": [
+        "W+M Öğren: 'Hayatta kalma' turu (FlameIcon)",
+        "W+M hayatta kalma kuralı: 'Yanlış cevap'",
+        "başarım: challenge500…3000 (SparkIcon)"
+      ],
+      "remix": "heart-pulse-line"
+    },
+    {
+      "id": "combo",
+      "meaning": "Kombo ('{n} üst üste' doğru)",
+      "category": "Öğrenme",
+      "current": "SparkIcon",
+      "where": [
+        "W+M tur içi kombo: '{n} üst üste'"
+      ],
+      "remix": "speed-up-line"
+    },
+    {
+      "id": "gift",
+      "meaning": "Hediye (günlük görev ödülü)",
+      "category": "Öğrenme",
+      "current": "GiftIcon",
+      "where": [
+        "W+M günlük görevler: 'Günün üçü de tamam'"
+      ],
+      "remix": "gift-line"
+    },
+    {
+      "id": "locked",
+      "meaning": "Kilitli içerik",
+      "category": "Öğrenme",
+      "current": "LockIcon",
+      "where": [
+        "W+M Patika/Beceriler: kilitli adım",
+        "W+M deneme paketleri: kilitli paket",
+        "W+M başarım rozeti: kilitli kaplama"
+      ],
+      "remix": "lock-line"
+    },
+    {
+      "id": "unlocked",
+      "meaning": "Kilit açıldı kutlaması",
+      "category": "Öğrenme",
+      "current": "SparkIcon",
+      "where": [
+        "M kilit açıldı kutlaması"
+      ],
+      "remix": "lock-unlock-line"
+    },
+    {
+      "id": "no-going-back",
+      "meaning": "Kural: geri dönüş yok",
+      "category": "Öğrenme",
+      "current": "LockIcon + ArrowLeftIcon",
+      "where": [
+        "W+M sınav kuralı: 'Geri dönüş yok' (LockIcon)",
+        "W+M deneme sınavı kuralı: 'Geri dönüş yok' (ArrowLeftIcon)"
+      ],
+      "remix": "forbid-line"
+    },
+    {
+      "id": "boss",
+      "meaning": "Boss sınavı",
+      "category": "Öğrenme",
+      "current": "TrophyIcon",
+      "where": [
+        "W boss sınavı kapağı"
+      ],
+      "remix": "sword-line"
+    },
+    {
+      "id": "walk",
+      "meaning": "Yürüyüş modu (eller serbest)",
+      "category": "Öğrenme",
+      "current": "WalkIcon",
+      "where": [
+        "W+M Öğren: 'Yürüyüş modu' karosu",
+        "W+M yürüyüş kapağı ve notları",
+        "M yürüyüş: öğretme/sınama göstergesi"
+      ],
+      "remix": "footprint-line"
+    },
+    {
+      "id": "quest",
+      "meaning": "Ortak görev (quest)",
+      "category": "Öğrenme",
+      "current": "TargetIcon",
+      "where": [
+        "W+M ortak görev (quest) satırı ve boş durumu",
+        "W+M bildirim: görev daveti",
+        "W+M akış: görev tamamlandı",
+        "başarım: quests20"
+      ],
+      "remix": "flag-2-line"
+    },
+    {
+      "id": "score-target",
+      "meaning": "Puanlama / geçme puanı",
+      "category": "Öğrenme",
+      "current": "TargetIcon",
+      "where": [
+        "W+M puanlı konuşma kuralı: puanlama",
+        "M sınav kuralı: geçme puanı",
+        "M seviye testi kuralı: sonuç"
+      ],
+      "remix": "focus-3-line"
+    },
+    {
+      "id": "my-words",
+      "meaning": "Kelimelerim / öğrenilen kelime",
+      "category": "Öğrenme",
+      "current": "BookIcon + LearnIcon",
+      "where": [
+        "W+M Profil: öğrenilen kelime karosu (BookIcon)",
+        "W+M Gelişim: 'Öğrenilen kelime' (LearnIcon)",
+        "W+M boss kuralı: kelime havuzu"
+      ],
+      "remix": "book-2-line"
+    },
+    {
+      "id": "ai",
+      "meaning": "Yapay zekâ",
+      "category": "Öğrenme",
+      "current": "SparkIcon",
+      "where": [
+        "W+M yapay zekâ bildirimi (AI notice)",
+        "W+M yapay zekâ izni: ses amacı"
+      ],
+      "remix": "sparkling-2-line"
+    },
+    {
+      "id": "correct",
+      "meaning": "Doğru cevap / tamamlandı",
+      "category": "Geri bildirim",
+      "current": "CheckIcon",
+      "where": [
+        "W+M oyun şıkkı: doğru cevap",
+        "W+M günlük görev tamam",
+        "W+M bildir penceresi: 'Bildirildi'",
+        "başarım: answers500…10000"
+      ],
+      "remix": "checkbox-circle-line"
+    },
+    {
+      "id": "check",
+      "meaning": "Onay işareti (onay kutusu, seçili, madde imi)",
+      "category": "Geri bildirim",
+      "current": "CheckIcon",
+      "where": [
+        "W+M onay kutusu (Checkbox)",
+        "W+M avatar: seçili parça rozeti",
+        "W+M premium: özellik maddeleri",
+        "W kurulum rehberi adım rozeti"
+      ],
+      "remix": "check-line"
+    },
+    {
+      "id": "wrong",
+      "meaning": "Yanlış cevap",
+      "category": "Geri bildirim",
+      "current": "XIcon",
+      "where": [
+        "W+M oyun şıkkı: yanlış cevap işareti",
+        "W+M hayatta kalma kuralı: 'Yanlış cevap'"
+      ],
+      "remix": "close-circle-line"
+    },
+    {
+      "id": "warning",
+      "meaning": "Uyarı / hata",
+      "category": "Geri bildirim",
+      "current": "AlertIcon",
+      "where": [
+        "W+M kayıt hatası notu",
+        "W+M sınav kuralı: 'çıkarsan sayılmaz'",
+        "W+M haftalık test yüklenemedi",
+        "W arkadaş listesi: 'Ortak serin bugün bitebilir'"
+      ],
+      "remix": "error-warning-line"
+    },
+    {
+      "id": "offline",
+      "meaning": "Çevrimdışı / bağlantı yok",
+      "category": "Geri bildirim",
+      "current": "AlertIcon",
+      "where": [
+        "W+M deneme sınavı: çevrimdışı uyarısı"
+      ],
+      "remix": "wifi-off-line"
+    },
+    {
+      "id": "info",
+      "meaning": "Bilgi / ipucu / hakkında",
+      "category": "Geri bildirim",
+      "current": "InfoIcon + ChatIcon",
+      "where": [
+        "W e-posta doğrulama ipuçları başlığı",
+        "W beceri testi: sözlükçe notu",
+        "W+M Ayarlar: 'Hakkında' satırı (ChatIcon)"
+      ],
+      "remix": "information-line"
+    },
+    {
+      "id": "dont-guess",
+      "meaning": "Kural: bilmiyorsan tahmin etme",
+      "category": "Geri bildirim",
+      "current": "FlagIcon",
+      "where": [
+        "W+M seviye testi kuralı: 'Bilmiyorsan tahmin etme'"
+      ],
+      "remix": "question-line"
+    },
+    {
+      "id": "notifications",
+      "meaning": "Bildirimler",
+      "category": "Sosyal",
+      "current": "BellIcon",
+      "where": [
+        "W bildirim zili (üst çubuk)",
+        "W+M bildirim ayarları kahramanı",
+        "M bildirim izni ekranı"
+      ],
+      "remix": "notification-3-line"
+    },
+    {
+      "id": "reminders",
+      "meaning": "Hatırlatmalar / dürt",
+      "category": "Ayar",
+      "current": "BellIcon",
+      "where": [
+        "W+M Ayarlar: Hatırlatmalar",
+        "M kullanıcı: 'Hatırlat' (dürt)",
+        "W+M bildirim türü: dürtme"
+      ],
+      "remix": "alarm-line"
+    },
+    {
+      "id": "inbox",
+      "meaning": "Gelen kutusu / bildirim yok",
+      "category": "Sosyal",
+      "current": "InboxIcon",
+      "where": [
+        "W+M 'Bildirim yok' boş durumu",
+        "W+M bildirim türü varsayılanı",
+        "W+M Yürüyüş: 'tekrar edilecek kelime yok'",
+        "M e-posta ipucu: 'Spam klasörü'"
+      ],
+      "remix": "inbox-line"
+    },
+    {
+      "id": "empty-feed",
+      "meaning": "Sosyal akış (boş durum)",
+      "category": "Sosyal",
+      "current": "SparkIcon",
+      "where": [
+        "W+M sosyal akış boş durumu"
+      ],
+      "remix": "pulse-line"
+    },
+    {
+      "id": "shared-streak",
+      "meaning": "Ortak seri (arkadaşla birlikte gün)",
+      "category": "Sosyal",
+      "current": "HandshakeIcon + HeartIcon",
+      "where": [
+        "W+M arkadaş satırı: '{n} gün birlikte' (ortak seri)",
+        "W+M bildirim: arkadaşlık isteği kabul edildi",
+        "W+M sosyal akış: arkadaş serisi olayı (HeartIcon)"
+      ],
+      "remix": "user-heart-line"
+    },
+    {
+      "id": "reaction-heart",
+      "meaning": "Tepki: kalp",
+      "category": "Sosyal",
+      "current": "HeartIcon",
+      "where": [
+        "W+M tepki: 'heart'"
+      ],
+      "remix": "heart-line"
+    },
+    {
+      "id": "reaction-cheer",
+      "meaning": "Tepki: kutlama / tebrik et",
+      "category": "Sosyal",
+      "current": "PartyIcon",
+      "where": [
+        "W+M tepki: 'cheer'",
+        "M arkadaş satırı: tebrik et eylemi"
+      ],
+      "remix": "cake-3-line"
+    },
+    {
+      "id": "reaction-star",
+      "meaning": "Tepki: yıldız / yüksek puan rozeti",
+      "category": "Sosyal",
+      "current": "StarIcon",
+      "where": [
+        "W+M tepki: 'star'",
+        "W+M bilinmeyen rozet ikonu yedeği",
+        "başarım: exam90, writing85"
+      ],
+      "remix": "star-line"
+    },
+    {
+      "id": "reaction-strong",
+      "meaning": "Tepki: güçlü",
+      "category": "Sosyal",
+      "current": "BoltIcon + StrongBoltIcon",
+      "where": [
+        "W tepki: 'strong' (yerel StrongBoltIcon)",
+        "M tepki 'strong' (ortak BoltIcon)"
+      ],
+      "remix": "thumb-up-line"
+    },
+    {
+      "id": "reaction-wow",
+      "meaning": "Tepki: vay (wow)",
+      "category": "Sosyal",
+      "current": "SparkIcon",
+      "where": [
+        "W+M tepki: 'wow'"
+      ],
+      "remix": "emotion-laugh-line"
+    },
+    {
+      "id": "welcome",
+      "meaning": "Hoş geldin / giriş kahramanı",
+      "category": "Sosyal",
+      "current": "BoltIcon",
+      "where": [
+        "M onboarding hoş geldin",
+        "M giriş/şifre sıfırlama kahramanı"
+      ],
+      "remix": "hand"
+    },
+    {
+      "id": "speaker",
+      "meaning": "Dinle / sesli oku / yeniden çal",
+      "category": "Medya",
+      "current": "SpeakerIcon + RefreshIcon",
+      "where": [
+        "W+M dinle düğmesi (ListenButton)",
+        "W+M kelime telaffuz düğmesi (SpeakButton)",
+        "W konuşma: 'Yeniden dinle'",
+        "W+M dinle düğmesi: yeniden çal (RefreshIcon)"
+      ],
+      "remix": "volume-up-line"
+    },
+    {
+      "id": "pause",
+      "meaning": "Duraklat",
+      "category": "Medya",
+      "current": "PauseIcon",
+      "where": [
+        "M Yürüyüş modu: duraklat"
+      ],
+      "remix": "pause-fill"
+    },
+    {
+      "id": "stop",
+      "meaning": "Durdur (ses çalarken)",
+      "category": "Medya",
+      "current": "StopIcon",
+      "where": [
+        "W+M dinle düğmesi çalarken",
+        "W okuma oynatıcısı: sesli okumayı durdur"
+      ],
+      "remix": "stop-fill"
+    },
+    {
+      "id": "achievements",
+      "meaning": "Başarımlar",
+      "category": "Başarımlar",
+      "current": "TrophyIcon",
+      "where": [
+        "W+M Başarımlar boş/hata kartı",
+        "W+M sosyal akış: başarım olayı",
+        "M misafir kilometre taşı: sınav geçildi"
+      ],
+      "remix": "award-line"
+    },
+    {
+      "id": "ach-words",
+      "meaning": "Kelime başarımları (50 → 3000)",
+      "category": "Başarımlar",
+      "current": "BookIcon + BookOpenIcon",
+      "where": [
+        "başarım: words50/words250 (BookIcon)",
+        "başarım: words1000/words3000 (BookOpenIcon)"
+      ],
+      "remix": "book-shelf-line"
+    },
+    {
+      "id": "ach-boss",
+      "meaning": "Boss / sınav geçme başarımı",
+      "category": "Başarımlar",
+      "current": "FlagIcon",
+      "where": [
+        "başarım: boss1/boss10",
+        "başarım: exam1/exam10"
+      ],
+      "remix": "medal-2-line"
+    },
+    {
+      "id": "ach-conversation",
+      "meaning": "Konuşma başarımları (10 / 50)",
+      "category": "Başarımlar",
+      "current": "SchoolIcon",
+      "where": [
+        "başarım: conversation10/conversation50"
+      ],
+      "remix": "chat-smile-3-line"
+    },
+    {
+      "id": "ach-explore",
+      "meaning": "Beceri keşfi (1 / 10 / 40 beceri)",
+      "category": "Başarımlar",
+      "current": "CompassIcon + GlobeIcon",
+      "where": [
+        "başarım: skill1/skill10 (CompassIcon)",
+        "başarım: skill40 (GlobeIcon)"
+      ],
+      "remix": "compass-3-line"
+    },
+    {
+      "id": "ach-bilingual",
+      "meaning": "İki kurs (iki dilli) başarımı",
+      "category": "Başarımlar",
+      "current": "MapIcon",
+      "where": [
+        "başarım: bilingual"
+      ],
+      "remix": "earth-line"
+    },
+    {
+      "id": "ach-summit",
+      "meaning": "Zirve (dil bilgisi 25, konuşma 100)",
+      "category": "Başarımlar",
+      "current": "MountainIcon",
+      "where": [
+        "başarım: grammar25",
+        "başarım: conversation100"
+      ],
+      "remix": "landscape-line"
+    },
+    {
+      "id": "ach-marathon",
+      "meaning": "Maraton (bir günde 150 tekrar)",
+      "category": "Başarımlar",
+      "current": "RunIcon",
+      "where": [
+        "başarım: marathon150"
+      ],
+      "remix": "run-line"
+    },
+    {
+      "id": "theme-dark",
+      "meaning": "Koyu tema / gece kuşu",
+      "category": "Tema",
+      "current": "MoonIcon",
+      "where": [
+        "W tema düğmesi (açık temada)",
+        "başarım: night50"
+      ],
+      "remix": "moon-line"
+    },
+    {
+      "id": "theme-light",
+      "meaning": "Açık tema / erken kuş",
+      "category": "Tema",
+      "current": "SunIcon",
+      "where": [
+        "W tema düğmesi (koyu temada)",
+        "başarım: early50"
+      ],
+      "remix": "sun-line"
+    },
+    {
+      "id": "privacy",
+      "meaning": "Gizlilik",
+      "category": "Ayar",
+      "current": "LockIcon",
+      "where": [
+        "W Ayarlar: Gizlilik"
+      ],
+      "remix": "shield-keyhole-line"
+    },
+    {
+      "id": "learning-settings",
+      "meaning": "Öğrenme ayarları",
+      "category": "Ayar",
+      "current": "BookIcon",
+      "where": [
+        "W+M Ayarlar: 'Öğrenme' satırı"
+      ],
+      "remix": "equalizer-line"
+    },
+    {
+      "id": "course",
+      "meaning": "Kurs (öğrenilen dil) seçimi",
+      "category": "Ayar",
+      "current": "SkillsIcon",
+      "where": [
+        "M onboarding: kurs seçimi adımı"
+      ],
+      "remix": "school-line"
+    },
+    {
+      "id": "language",
+      "meaning": "Uygulama / anlatım dili",
+      "category": "Ayar",
+      "current": "GlobeIcon + SkillsIcon",
+      "where": [
+        "W+M Ayarlar: 'Uygulama' satırı (GlobeIcon)",
+        "M Onboarding: 'Sana hangi dilde anlatalım?' (SkillsIcon)"
+      ],
+      "remix": "global-line"
+    }
+  ]
+}

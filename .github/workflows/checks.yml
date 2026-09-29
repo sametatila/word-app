@@ -153,8 +153,13 @@ jobs:
       # sabitliyor: eski seçimlerin cinsiyetine göre çevrilmesi, kelime
       # isteğinin tabloda yoksa Edge'e DÜŞMEYİP 404 dönmesi, ETag/aralık.
       # Geçici bir dizinde sahte tabloyla; veritabanı ve ağ yok.
+      # `icons:check` (2026-09-29): arayüz ikonları `data/icons/picks.json` +
+      # remixicon 4.8.0'dan üretiliyor (web ve mobil); üretilen iki dosya elle
+      # düzenlenirse ya da picks değişip yeniden üretilmezse kırılır. Betik
+      # paketin sürümünü ve Apache-2.0 lisans dosyasını da doğruluyor.
       - name: Tasarım ve kod kapıları
         run: |
+          npm run icons:check
           npm run check:tts
           npm run test:tts-own
           npm run check:client-boundary

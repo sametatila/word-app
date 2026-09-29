@@ -86,6 +86,23 @@ export default function Page() {
         ))}
       </Section>
 
+      {/* İKON ATFI. Arayüz ikonları Remix Icon'dan (web ve mobil): SVG yol verisi
+          `scripts/icons/build.mjs` ile koda gömülüyor, paket bağımlılık olarak
+          uygulamaya girmediği için yukarıdaki JS listesinde görünmüyor. Sürüm
+          4.8.0'a sabit: 4.9.0'dan sonrası Apache-2.0 değil (bkz. betik başı). */}
+      <Section title="Icons" count={1}>
+        <Entry
+          title="Remix Icon 4.8.0"
+          meta="Apache-2.0"
+          text={
+            "Interface icons in the Lernomi app are from Remix Icon 4.8.0 by Remix Design (https://remixicon.com), " +
+            "licensed under the Apache License, Version 2.0. The SVG path data is embedded unchanged; " +
+            "only size and color are applied at render time."
+          }
+          url="https://github.com/Remix-Design/RemixIcon"
+        />
+      </Section>
+
       {/* VERİ ATFI. Kelime sıklık sırası (`rank`) FrequencyWords 2018 Almanca
           listesinden: içerik lisansı CC BY-SA 4.0, atıf şartı var. Kaynak ve
           özet kanıtı `data/README.md` › Kaynaklar. */}
