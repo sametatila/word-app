@@ -164,7 +164,7 @@ function calloutFor(device, set, screen, src) {
 }
 
 /** Kare düzeni: portre telefon, yatay tablet ya da öne çıkan grafik. */
-function layout({ store, st, screen, idx, lang, set, img, src, iw, ih }) {
+function layout({ st, screen, idx, lang, set, img, src, iw, ih }) {
   const W = st.w, H = st.h, u = W / 100;
   const sc = cfg.screens[screen];
   // Öne çıkan grafik kendi ekranının altyazısını değil, açılış cümlesini taşır.
@@ -297,7 +297,7 @@ async function main() {
           continue;
         }
         const meta = await sharp(src).metadata();
-        const f = layout({ store, st, screen, idx: i, lang: loc.lang, set: loc.set, img: pathToFileURL(fs.realpathSync(src)).href, src, iw: meta.width, ih: meta.height });
+        const f = layout({ st, screen, idx: i, lang: loc.lang, set: loc.set, img: pathToFileURL(fs.realpathSync(src)).href, src, iw: meta.width, ih: meta.height });
         if (!f.callout && st.kind !== "feature" && !cfg.screens[screen].noCallout) noCallout.add(`${st.device}/${loc.set}/${screen}`);
         const name = st.kind === "feature" ? "feature.png" : `${String(i + 1).padStart(2, "0")}-${screen}.png`;
         const outFile = path.join(dir, name);
