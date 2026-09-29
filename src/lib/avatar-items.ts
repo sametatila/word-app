@@ -240,23 +240,47 @@ let activeCache: { at: number; value: Set<string> | null } | null = null;
  * Panel kaydı yokken açılan parçalar: yuva başına ücretsizler, sonra
  * nadirlik dengesiyle (4 sıradan, 4 nadir, 2 epik, 1 efsanevi; eksik kalan
  * yer katalog sırasıyla dolar). Kazanılacak her nadirlikten parça kalır.
+ *
+ * `exclude` (Premium seti) seçime girmez ve kontenjan işgal etmez: o parçalar
+ * zaten her zaman gösteriliyor (`activeAvatarIds`), efsanevi kontenjanını
+ * yiyip ücretsiz yoldan kazanılacak efsanevi parçayı gizlemesinler.
  */
-export function defaultActiveIds(parts: { id: string; slot: string; nadir: string }[]): Set<string> {
+export function defaultActiveIds(
+  parts: { id: string; slot: string; nadir: string }[],
+  opts: { exclude?: ReadonlySet<string>; perSlot?: number } = {},
+): Set<string> {
   const out = new Set<string>();
+  const limit = opts.perSlot ?? AVATAR_ACTIVE_PER_SLOT;
   const QUOTA: [string, number][] = [["common", 4], ["rare", 4], ["epic", 2], ["legendary", 1]];
   for (const slot of AVATAR_SLOTS) {
-    const inSlot = parts.filter((p) => p.slot === slot);
+    const inSlot = parts.filter((p) => p.slot === slot && !opts.exclude?.has(p.id));
     const chosen: string[] = inSlot.filter((p) => AVATAR_ALWAYS_ACTIVE.includes(p.id)).map((p) => p.id);
     for (const [rar, n] of QUOTA) {
       for (const p of inSlot) {
-        if (chosen.length >= AVATAR_ACTIVE_PER_SLOT || chosen.filter((c) => inSlot.find((q) => q.id === c)?.nadir === rar).length >= n) break;
+        if (chosen.length >= limit || chosen.filter((c) => inSlot.find((q) => q.id === c)?.nadir === rar).length >= n) break;
         if (p.nadir === rar && !chosen.includes(p.id)) chosen.push(p.id);
       }
     }
-    for (const p of inSlot) if (chosen.length < AVATAR_ACTIVE_PER_SLOT && !chosen.includes(p.id)) chosen.push(p.id);
+    for (const p of inSlot) if (chosen.length < limit && !chosen.includes(p.id)) chosen.push(p.id);
     chosen.forEach((id) => out.add(id));
   }
   return out;
+}
+
+/**
+ * PREMIUM SETİ: koşulu "premium" olan parçalar (koşul tablosu, panel
+ * değişiklikleri dahil). Satın alma ekranı bu seti VAAT ediyor; o yüzden
+ * her zaman gösteriliyor ve yuva sınırına sayılmıyor. Panelden bir parçanın
+ * koşulu "Premium" yapılınca sete girer, başka koşula alınınca çıkar.
+ */
+export function premiumSetIds(cat: ReadonlyMap<string, { id: string }>, map: UnlockMap): Set<string> {
+  return new Set([...cat.keys()].filter((id) => map[id] === "premium"));
+}
+
+/** Premium setinin güncel hâli (satın alma ekranındaki sayı buradan). */
+export async function avatarPremiumSet(): Promise<Set<string>> {
+  const [cat, map] = await Promise.all([catalogParts().catch(() => null), avatarUnlockMap()]);
+  return cat ? premiumSetIds(cat, map) : new Set();
 }
 
 /** Kullanıcıya gösterilen parça kimlikleri; katalog okunamazsa null (kısıt yok). */
@@ -265,15 +289,20 @@ export async function activeAvatarIds(): Promise<Set<string> | null> {
   if (activeCache && now - activeCache.at < ACTIVE_TTL_MS) return activeCache.value;
   const cat = await catalogParts().catch(() => null);
   if (!cat) return null;
+  const [rules, map] = await Promise.all([avatarRules(), avatarUnlockMap()]);
+  const premium = premiumSetIds(cat, map);
+  const defaults = () => defaultActiveIds([...cat.values()], { exclude: premium, perSlot: rules.perSlot });
   let value: Set<string>;
   try {
     const [row] = await db.select({ value: appSettings.value }).from(appSettings).where(eq(appSettings.key, ACTIVE_KEY)).limit(1);
     const ids = (row?.value as { ids?: unknown } | undefined)?.ids;
-    value = Array.isArray(ids) ? new Set(ids.filter((x): x is string => typeof x === "string" && cat.has(x))) : defaultActiveIds([...cat.values()]);
+    value = Array.isArray(ids) ? new Set(ids.filter((x): x is string => typeof x === "string" && cat.has(x))) : defaults();
   } catch {
-    return defaultActiveIds([...cat.values()]);                   // okunamadı: önbelleğe alınmıyor
+    const v = defaults();                                         // okunamadı: önbelleğe alınmıyor
+    for (const id of [...AVATAR_ALWAYS_ACTIVE, ...premium]) if (cat.has(id)) v.add(id);
+    return v;
   }
-  for (const id of AVATAR_ALWAYS_ACTIVE) if (cat.has(id)) value.add(id);
+  for (const id of [...AVATAR_ALWAYS_ACTIVE, ...premium]) if (cat.has(id)) value.add(id);
   activeCache = { at: now, value };
   return value;
 }
@@ -283,10 +312,12 @@ export async function saveActiveAvatarIds(raw: unknown, actor: string | null): P
   const cat = await catalogParts().catch(() => null);
   if (!cat) return { ok: false, error: "no_catalog" };
   const ids = new Set((Array.isArray(raw) ? raw : []).filter((x): x is string => typeof x === "string" && cat.has(x)));
-  for (const id of AVATAR_ALWAYS_ACTIVE) if (cat.has(id)) ids.add(id);
-  const { perSlot } = await avatarRules();
+  const [{ perSlot }, map] = await Promise.all([avatarRules(), avatarUnlockMap()]);
+  const premium = premiumSetIds(cat, map);
+  for (const id of [...AVATAR_ALWAYS_ACTIVE, ...premium]) if (cat.has(id)) ids.add(id);
+  /* Premium seti sınıra sayılmıyor: her zaman açık ve satın alma ekranında vaat edilen şey. */
   for (const slot of AVATAR_SLOTS) {
-    const n = [...ids].filter((id) => cat.get(id)?.slot === slot).length;
+    const n = [...ids].filter((id) => cat.get(id)?.slot === slot && !premium.has(id)).length;
     if (n > perSlot) return { ok: false, error: "too_many", slot };
   }
   const value = { ids: [...ids] };
@@ -382,8 +413,10 @@ export async function saveAvatarRules(raw: unknown, actor: string | null): Promi
   }
   const active = await activeAvatarIds();
   if (active) {
+    /* Yeni koşullarla Premium setinde olacaklar sayılmaz (her zaman açık, sınır dışı). */
+    const nextPremium = new Set([...cat.keys()].filter((id) => (id in unlocks ? unlocks[id] : PART_UNLOCKS[id] ?? "") === "premium"));
     for (const slot of AVATAR_SLOTS) {
-      if ([...active].filter((id) => cat.get(id)?.slot === slot).length > n) return { ok: false, error: "too_many", slot };
+      if ([...active].filter((id) => cat.get(id)?.slot === slot && !nextPremium.has(id)).length > n) return { ok: false, error: "too_many", slot };
     }
   }
   const value: AvatarRules = { perSlot: n, unlocks };
@@ -392,6 +425,7 @@ export async function saveAvatarRules(raw: unknown, actor: string | null): Promi
     .values({ key: RULES_KEY, value, updatedBy: actor })
     .onConflictDoUpdate({ target: appSettings.key, set: { value, updatedBy: actor, updatedAt: new Date() } });
   rulesCache = { at: Date.now(), value };
+  activeCache = null;                                             // Premium seti değişmiş olabilir
   return { ok: true, rules: value };
 }
 
