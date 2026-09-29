@@ -501,6 +501,20 @@ export async function contentFeedbackList(q: ContentQuery): Promise<ContentFeedb
   }
 }
 
+/**
+ * Açık içerik bildirimi grupları, EN ESKİ açık bildirimden başlayarak — panelin
+ * "Gelen işler" kuyruğu için. Geri dönüş süresi grubun en eski açık
+ * bildiriminden işliyor (`lib/response-queue`); liste sayfası ise son bildirime
+ * göre sıralı ve 50'de kesiliyor, en acil grup orada görünmeyebilir.
+ */
+export async function openContentGroups(limit = 100): Promise<ContentGroupRow[]> {
+  // Yalnız öğrenme içeriği (`kind = 'content'`): yapay zekâ bildirimleri tek tek, `moderationData`da.
+  const r = await rows(sql`${groupSelect(sql`r.status = 'open' and r.kind = 'content'`)}
+    order by min(f.created_at), f.gkey
+    limit ${limit}`);
+  return r.map(groupRow);
+}
+
 /** CSV: süzgecin TAMAMI (sayfa değil), en çok 5000 grup. */
 export async function contentFeedbackCsv(q: ContentQuery): Promise<string> {
   const list = (await rows(sql`${groupSelect(contentWhere(q))} order by max(f.created_at) desc, f.gkey limit 5000`)).map(groupRow);
