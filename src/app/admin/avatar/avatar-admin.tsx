@@ -232,7 +232,7 @@ export function AvatarAdmin({ parts, active, defaults, always, rules, usage, opt
                 const n = count(k);
                 const pc = premiumCount(k);
                 const total = parts.filter((p) => p.slot === k).length - pc;
-                return [k, <span key={k}>{name} <span className="tabular-nums" style={n > perSlot ? { color: TONE.bad } : { opacity: 0.7 }}>{n}/{Math.min(perSlot, total)}</span>{pc ? <span className="tabular-nums" style={{ opacity: 0.7 }} title="Premium seti: her zaman açık, sınıra sayılmaz"> +{pc}</span> : null}</span>] as const;
+                return [k, <span key={k}>{name} <span className="tabular-nums" style={n > perSlot ? { color: TONE.bad } : { opacity: 0.7 }}>{n}/{Math.min(perSlot, total)}</span>{pc ? <span className="tabular-nums" style={{ opacity: 0.7 }} title="Premium seti: her zaman açık, sınıra sayılmaz" aria-label={`+${pc} Premium seti: her zaman açık, sınıra sayılmaz`}> +{pc}</span> : null}</span>] as const;
               })}
             />
             <div className="mt-3 flex flex-wrap items-center gap-2">
