@@ -17252,6 +17252,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "lernomi:api-base", //           yedek adres secimi
       "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
       "lernomi-lang", //               arayuz dili
+      /* Son bilinen giris saglayicilari (`/api/config`): SUNUCUYA ait, hesaba
+         degil. Cikista silinseydi cikistan sonra acilan giris ekrani Google/Apple
+         dugmelerini yine cevaptan sonra cizip e-posta dugmesini asagi iterdi
+         (bkz. lib/serverConfig). Sir yok, herkese acik uc. */
+      "lernomi:auth-providers", //     giris ekraninin ilk cizimi
       "lernomi-conversation-handsfree", //   eller serbest tercihi
       "lernomi:haptics", //            titresim acik/kapali (ses gibi cihaza ait; lib/haptics)
       "lernomi:analytics", //          analitik onayi

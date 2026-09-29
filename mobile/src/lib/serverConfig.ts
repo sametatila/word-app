@@ -1,3 +1,5 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Platform } from "react-native";
 import { api } from "../api/client";
 import { reportError } from "./errorReport";
 
@@ -76,6 +78,48 @@ function attestationOf(raw: unknown): ServerConfig["guestAttestation"] {
 
 let cached: ServerConfig | null = null;
 
+/*
+ * SON BİLİNEN SAĞLAYICILAR — giriş ekranı cevabı beklemeden çizebilsin.
+ *
+ * Giriş ekranı Google/Apple düğmelerini `/api/config` gelene dek çizmiyordu;
+ * cevap gelince iki düğme birden belirip "E-posta ile devam et"i aşağı
+ * itiyordu (basmak üzere olan yanlış düğmeye basıyordu). Artık son başarılı
+ * okumanın sağlayıcı listesi cihazda tutuluyor ve ekran ondan açılıyor; cevap
+ * gelince liste güncelleniyor. Sunucu bir sağlayıcıyı kapatırsa düğme o an
+ * kalkıyor: kapalı bir sağlayıcı cevaptan SONRA hiç çizilmiyor.
+ *
+ * Ağa değil sunucuya ait, hesaba değil CİHAZA yazılıyor: çıkışta silinseydi
+ * çıkıştan sonra açılan giriş ekranı yine zıplardı. Sırrı yok (herkese açık uç).
+ * Hata yedeği (`offline`) buraya YAZILMIYOR: tek bir ağ hıçkırığı listeyi boşaltmasın.
+ */
+const PROVIDERS_KEY = "lernomi:auth-providers";
+let lastProviders: ServerConfig["providers"] | null = null;
+/* Modül yüklenince bir kez okunuyor; giriş ekranı çoğunlukla bundan çok sonra açılıyor. */
+const providersRead: Promise<void> = AsyncStorage.getItem(PROVIDERS_KEY)
+  .then((raw) => {
+    if (lastProviders || !raw) return;
+    const p = JSON.parse(raw) as Partial<ServerConfig["providers"]>;
+    lastProviders = { google: p.google === true, apple: p.apple === true, appleWeb: p.appleWeb === true };
+  })
+  .catch(() => { /* okunamazsa varsayılan */ });
+
+/**
+ * Hiç okuma yapılmamış cihazın (ilk açılış) beklentisi — canlıda açık olanlar:
+ * iOS'ta Apple + Google, Android'de Google (Apple'ın tarayıcı akışı ayrı kapı,
+ * varsayılan kapalı). Yanılırsa cevapla düzeliyor.
+ */
+const DEFAULT_PROVIDERS: ServerConfig["providers"] = { google: true, apple: Platform.OS === "ios", appleWeb: false };
+
+/** Senkron: bellekteki yapılandırma, yoksa cihazdaki son liste, yoksa varsayılan. */
+export function knownProviders(): ServerConfig["providers"] {
+  return cached?.providers ?? lastProviders ?? DEFAULT_PROVIDERS;
+}
+
+/** Cihazdaki liste okunduktan sonra `knownProviders()` (ilk çizimde okuma bitmemiş olabilir). */
+export function knownProvidersLater(): Promise<ServerConfig["providers"]> {
+  return providersRead.then(knownProviders);
+}
+
 /**
  * `fresh`: önbelleği atla. Uygulama denetimi (bakım, zorunlu güncelleme)
  * süreç ömrü boyunca önbellekte kalırsa panelden açılan bakım, uygulamayı
@@ -94,6 +138,8 @@ export async function fetchServerConfig(fresh = false): Promise<ServerConfig> {
       avatar3d: (() => { const v = (c as { avatar3d?: unknown }).avatar3d; return typeof v === "string" && /^https?:\/\//.test(v) ? v : null; })(),
       avatarActive: (() => { const v = (c as { avatarActive?: unknown }).avatarActive; return Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : null; })(),
     };
+    lastProviders = cached.providers;
+    void AsyncStorage.setItem(PROVIDERS_KEY, JSON.stringify(cached.providers)).catch(() => { /* bir dahaki açılış varsayılandan */ });
   } catch (e) {
     /* Taze okuma düştüyse eldeki yapılandırma korunuyor: ağ hıçkırığı bakım
        ekranını kaldırıp geri getirmesin. */

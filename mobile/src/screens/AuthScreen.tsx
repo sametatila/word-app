@@ -16,7 +16,7 @@ import { textHeight } from "../ui/Skeleton";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
-import { fetchServerConfig } from "../lib/serverConfig";
+import { fetchServerConfig, knownProviders, knownProvidersLater, type ServerConfig } from "../lib/serverConfig";
 import { diagnoseNetwork, type NetworkDiagnosis } from "../lib/reachability";
 import { warmUpIntegrity } from "../lib/integrity";
 import { Turnstile } from "../ui/Turnstile";
@@ -57,6 +57,25 @@ const PROVIDERS = [
   { id: "apple", label: "Apple" },
   { id: "google", label: "Google" },
 ] as const;
+
+/**
+ * Sunucunun sağlayıcı listesi → çizilecek düğmeler. Sunucu kapısının yanında
+ * ikisinin de CİHAZ kapısı var: sunucu açık dese bile Apple iOS 13 altında,
+ * Google da iOS istemcisi koda girmemişken çizilmez.
+ */
+function visibleProviders(p: ServerConfig["providers"]): { google: boolean; apple: boolean } {
+  /*
+    İKİ AYRI KAPI. iOS'ta native akış var ve sunucudaki `apple` bayrağına
+    bakıyor. Android'de native yol YOK; oradaki düğme tarayıcı akışına
+    gidiyor ve o da ayrı bir sunucu kapısı istiyor (`appleWeb` — Services
+    ID + client secret). Tek bayrağa bakılsaydı Android'de Apple'ın hata
+    sayfasına götüren bir düğme çizilirdi.
+  */
+  const apple = appleSupported() ? p.apple : p.appleWeb;
+  /* 4.8: iOS'ta Google düğmesi ancak Apple da açıkken görünür; Apple bayrağı
+     kapanırsa Google yalnız kalmasın (denetim S3). */
+  return { google: p.google && googleSupported() && (Platform.OS !== "ios" || apple), apple };
+}
 
 function providerIcon(id: string, colors: Palette) {
   if (id === "google") return <GoogleIcon size={22} />;
@@ -159,11 +178,22 @@ export function AuthScreen() {
     const id = setTimeout(() => setCooldown((c) => c - 1), 1000);
     return () => clearTimeout(id);
   }, [cooldown]);
-  // Sunucuda kapalı olan sağlayıcının düğmesi hiç çizilmez (çalışmayan düğme yok).
-  // Cevap gelene dek de çizilmez; yalnız e-posta görünür — ekran hiçbir an "bozuk"
-  // değildir. İkisinin de ayrıca bir CİHAZ kapısı var: sunucu açık dese bile Apple
-  // iOS 13 altında/Android'de, Google da iOS istemcisi koda girmemişken çizilmez.
-  const [providersOn, setProvidersOn] = useState({ google: false, apple: false });
+  /*
+    Sunucuda kapalı olan sağlayıcının düğmesi cevap geldikten sonra hiç çizilmez
+    (çalışmayan düğme yok). CEVAP GELENE DEK son bilinen liste çiziliyor
+    (`knownProviders`: bellekteki yapılandırma → cihazdaki son okuma → platform
+    varsayılanı). Eskiden bu arada hiç çizilmiyordu ve cevapla iki düğme birden
+    belirip e-posta düğmesini aşağı itiyordu. Liste nadiren değişiyor; değişirse
+    fark bir anlık, cevapla düzeliyor.
+  */
+  const [providersOn, setProvidersOn] = useState(() => visibleProviders(knownProviders()));
+  const configSeen = useRef(false);
+  useEffect(() => {
+    let alive = true;
+    /* İlk çizimde cihazdaki okuma bitmemiş olabilir: bittiğinde, sunucu cevabı hâlâ yoksa uygula. */
+    void knownProvidersLater().then((p) => { if (alive && !configSeen.current) setProvidersOn(visibleProviders(p)); });
+    return () => { alive = false; };
+  }, []);
   /*
     BOT KORUMASI. Sunucudaki anahtarla birlikte açılıp kapanıyor: açıkken kayıt,
     giriş ve sıfırlama isteği jetonsuz reddediliyor, kapalıyken widget hiç
@@ -188,23 +218,17 @@ export function AuthScreen() {
        kaybettirmesin (bkz. lib/serverConfig "HATA ÖNBELLEĞE GİRMİYOR"). */
     const load = (attempt: number) => void fetchServerConfig().then((c) => {
       if (!alive) return;
-      if (c.offline && attempt < 5) retry = setTimeout(() => load(attempt + 1), 2000 * (attempt + 1));
-      else if (c.offline) void diagnoseNetwork().then((d) => { if (alive) setConfigDiag(d); });
+      if (c.offline && attempt < 5) {
+        /* Yeniden denenirken düğmeler yerinde: ara hatada kaybolup geri gelmesinler. */
+        retry = setTimeout(() => load(attempt + 1), 2000 * (attempt + 1));
+        return;
+      }
+      if (c.offline) void diagnoseNetwork().then((d) => { if (alive) setConfigDiag(d); });
       else setConfigDiag(null);
-      /* 4.8: iOS'ta Google düğmesi ancak Apple da açıkken görünür; Apple bayrağı
-         kapanırsa Google yalnız kalmasın (denetim S3). */
-      const appleOn = appleSupported() ? c.providers.apple : c.providers.appleWeb;
-      setProvidersOn({
-        google: c.providers.google && googleSupported() && (Platform.OS !== "ios" || appleOn),
-        /*
-          İKİ AYRI KAPI. iOS'ta native akış var ve sunucudaki `apple` bayrağına
-          bakıyor. Android'de native yol YOK; oradaki düğme tarayıcı akışına
-          gidiyor ve o da ayrı bir sunucu kapısı istiyor (`appleWeb` — Services
-          ID + client secret). Tek bayrağa bakılsaydı Android'de Apple'ın hata
-          sayfasına götüren bir düğme çizilirdi.
-        */
-        apple: appleOn,
-      });
+      /* Son deneme de düştüyse yedek "kapalı" liste uygulanıyor (serverConfig:
+         düğme gösterip başarısız olmaktan iyidir); ağ teşhisi nedenini söylüyor. */
+      configSeen.current = true;
+      setProvidersOn(visibleProviders(c.providers));
       setCaptchaOn(Boolean(c.turnstileSiteKey));
       /* Misafir açılışının cihaz belgesi için sağlayıcı önceden hazırlanıyor
          (ilk hazırlık saniyeler sürebilir); kip kapalıysa ya da iOS'ta hiçbir şey olmaz. */
