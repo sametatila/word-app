@@ -27,6 +27,7 @@ import { parseVitalsRows } from "../src/lib/android-vitals";
 import { trendDelta } from "../src/lib/admin-trends-shared";
 import { aggregateMockItems, MIN_ANSWERS } from "../src/lib/admin-content";
 import { alertLinks } from "../src/lib/admin-links";
+import { QUEUE_ALERT_FAMILIES, rankOf, slaProgress, sortInbox, type InboxItem } from "../src/lib/admin-inbox-shared";
 import { parseRange } from "../src/app/admin/_data-shared";
 import * as authSchema from "../src/lib/db/auth-schema";
 import { getTableName, is } from "drizzle-orm";
@@ -257,6 +258,22 @@ async function main() {
     .map((v) => getTableName(v as never));
   const leaked = authUserTables.filter((n) => !AUTH_SECRET_TABLES.has(n));
   check(`auth şemasındaki kullanıcı tabloları dışa aktarmadan hariç (${authUserTables.join(", ")})`, authUserTables.length > 0 && leaked.length === 0, leaked.join(", "));
+
+  console.log("\nGelen işler sırası");
+  {
+    check("kademe: kritik uyarı < gecikmiş < yaklaşan < uyarı < süresi bol",
+      rankOf({ kind: "alert", level: "kritik" }) < rankOf({ kind: "queue", level: "late" }) &&
+      rankOf({ kind: "queue", level: "late" }) < rankOf({ kind: "queue", level: "soon" }) &&
+      rankOf({ kind: "queue", level: "soon" }) < rankOf({ kind: "alert", level: "uyari" }) &&
+      rankOf({ kind: "alert", level: "uyari" }) < rankOf({ kind: "queue", level: "ok" }));
+    const it = (id: string, rank: number, due: number | null) => ({ kind: "alert", id, cat: "sistem", level: "uyari", text: "", links: alertLinks("zzz"), rank, due, created: null }) as InboxItem;
+    const order = sortInbox([it("c", 4, 300), it("a", 1, 200), it("b", 1, 100), it("d", 0, null)]).map((i) => i.id).join("");
+    check("aynı kademede süresi önce dolan üstte", order === "dbac", order);
+    check("kuyrukta iş olan konunun uyarısı ikinci kez girmiyor", ["sla-late", "sla-soon", "reports", "err-review"].every((f) => QUEUE_ALERT_FAMILIES.has(f)) && !QUEUE_ALERT_FAMILIES.has("cron"));
+    const created = new Date(Date.now() - 36 * 3_600_000).toISOString();
+    const p = slaProgress("user_report", created, Date.now());
+    check("süre halkası: 48 saatin 36'sı geçti → %75, yaklaşan", !!p && Math.abs(p.ratio - 0.75) < 0.01 && p.level === "soon", JSON.stringify(p));
+  }
 
   console.log(`\n${total - failures}/${total} ${failures ? "BAŞARISIZ" : "tamam"}\n`);
   process.exit(failures ? 1 : 0);
