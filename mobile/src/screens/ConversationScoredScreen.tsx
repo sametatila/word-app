@@ -11,7 +11,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon, ArrowRightIcon } from "../ui/icons";
 import { CoachLine } from "../ui/CoachLine";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
-import { CoverSkeleton } from "../game/RoundSkeleton";
+import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
 import { ensureConversations, findConversation, conversationLevelOf, type Conversation } from "../data/conversations";
 import { nativeContentReady, useNativeContentVersion, waitNativeContent } from "../lib/nativeContent";
 import { sendChat, parseReply, type ChatMsg } from "../game/chat";
@@ -256,7 +256,7 @@ export function ConversationScoredScreen() {
   if (!conversation && !packReady) {
     /* Paket inerken KAPAĞIN iskeleti (üst çubuk, koç cümlesi, üç kural,
        kalıplar kartı, Başla / Vazgeç): paket gelince açılan ekran kapak. */
-    return <CoverSkeleton label={tx("common.loading")} top coach rules={3} detailRows={3} />;
+    return <CoverSkeleton label={tx("common.loading")} top {...COVERS.scored} />;
   }
   if (!conversation) {
     return (

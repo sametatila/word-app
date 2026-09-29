@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { WriteIcon } from "@/components/icons";
 import { scoreBand } from "@/lib/score-bands";
 import { EmptyCard } from "@/components/empty-card";
-import { SkeletonLine, textHeight, type TextVariant } from "@/components/skeleton";
+import { SkeletonLine, TextBox, type TextVariant } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { AiNotice } from "@/components/ai-notice";
 import type { Assessment } from "@/lib/assess-prompts";
@@ -107,10 +107,10 @@ export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEm
             <SkeletonLine variant="caption" width="60%" className="mt-1" />
           </>
         )}
-        <div
-          aria-hidden
-          className={`animate-pulse surface-2 ${hideHeader ? "" : "mt-3"}`}
-          style={{ height: 16 + textHeight("micro"), borderRadius: "var(--radius-tile)" }}
+        <TextBox
+          variant="micro"
+          className={`animate-pulse py-2 surface-2 ${hideHeader ? "" : "mt-3"}`}
+          style={{ borderRadius: "var(--radius-tile)" }}
         />
         <CardGrid as="ul" min={380} className="mt-3">
           {[0, 1].map((i) => (
@@ -292,13 +292,5 @@ function WritingsEmpty() {
  * (satır yüksekliği, çubuk 4 px kısa), renk bir ton koyu.
  */
 function InsetLine({ variant, width }: { variant: TextVariant; width: number | string }) {
-  const h = textHeight(variant);
-  return (
-    <span className="flex items-center" style={{ height: h, width }}>
-      <span
-        className="block w-full animate-pulse"
-        style={{ height: h - 4, borderRadius: Math.min(10, (h - 4) / 2), background: "var(--border)" }}
-      />
-    </span>
-  );
+  return <SkeletonLine variant={variant} width={width} tone="var(--border)" />;
 }

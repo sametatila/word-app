@@ -135,7 +135,8 @@ export function MockStatsScreen() {
               {[0, 1, 2].map((i) => (
                 <View key={i} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: spacing.md, marginTop: spacing.sm }}>
                   <View style={{ flex: 1 }}>
-                    <SkeletonLine variant="body" width="70%" />
+                    {/* Ad ~18 harf: yüzde genişlik tablette (kolon ~1000dp) metnin üç katı uzuyordu. */}
+                    <SkeletonLine variant="body" width={150} />
                     <SkeletonLine variant="micro" width={120} />
                   </View>
                   <SkeletonLine variant="bodyStrong" width={44} />

@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { TrophyIcon, RepeatIcon, ClockIcon, BoltIcon, CrownIcon, BookIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
-import { CoverSkeleton } from "../game/RoundSkeleton";
+import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { track } from "../lib/track";
@@ -239,7 +239,7 @@ export function BossScreen() {
      kural, tanıtım yok, Gir / Patikaya dön). Tur iskeleti çiziliyordu ve
      kapak gelince ekran baştan kuruluyordu. BEKLEME KENDINI DUYURUYOR (web
      `role="status" aria-busy`). */
-  if (phase === "loading") return <CoverSkeleton label={t("exam.preparing")} rules={4} pitch={false} />;
+  if (phase === "loading") return <CoverSkeleton label={t("exam.preparing")} {...COVERS.boss} />;
 
   if (phase === "error") {
     return (

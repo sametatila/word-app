@@ -15,6 +15,7 @@ import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette, fillOf, ds } from "../theme";
 import { useLayout } from "../lib/useLayout";
 import { CardGrid } from "../ui/CardGrid";
+import { currentCourseId } from "../lib/courses";
 import { ScreenHeader, SectionTitle } from "../social/common";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
@@ -80,8 +81,12 @@ export function PracticeScreen() {
             gerçek karonun KENDİ kartı (minHeight ds(116), düz 116 değil) ve
             içi — karo, ad, ipucu satırı. */}
         <CardGrid columns={gridColumns} stretch>
-          {meLoading ? [0, 1, 2, 3, 4, 5].map((i) => (
-            <Card key={i} padded style={{ flex: 1, minHeight: ds(116), justifyContent: "space-between" }}>
+          {/* Karo SAYISI kayıtlı kurstan (`currentCourseId`, eşzamanlı): altı
+              sabit karo tablette 3+3 / 4+2 çiziyor, gerçek liste (Almanca 11)
+              3+3+3+2 / 4+4+3 geliyordu; son satır ve ızgara boyu zıplıyordu.
+              İpucu satırı iki sütunlu dar karoda (telefon) iki satıra iniyor. */}
+          {meLoading ? practiceGamesFor(currentCourseId()).map((g) => (
+            <Card key={g.game} padded style={{ flex: 1, minHeight: ds(116), justifyContent: "space-between" }}>
               <SkeletonTile size={44} />
               <View style={{ marginTop: spacing.md }}>
                 <SkeletonLine variant="bodyStrong" width="60%" />
@@ -89,6 +94,7 @@ export function PracticeScreen() {
               </View>
             </Card>
           )) : practiceGamesFor(me?.course).map((g) => {
+                {gridColumns === 2 ? <SkeletonLine variant="micro" width="45%" /> : null}
             const m = META[g.game] ?? FALLBACK_META;
             /* Zemin TEMAYA DUYARSIZ (`theme` `fillOf`): koyu temada rol
                renkleri pastele dönüyor ve beyaz glif görünmüyordu; gerekçe ve

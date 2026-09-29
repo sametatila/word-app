@@ -35,9 +35,12 @@ export default function Loading() {
           ))}
         </div>
 
-        {/* Parça karoları: 64'lük önizleme + `text-micro` ad, `p-2`, 1 px kenarlık. */}
+        {/* Parça karoları: 64'lük önizleme + `text-micro` ad, `p-2`, 1 px kenarlık.
+            12 karo: ilk yuva (şapka) katalogla 50'yi aşıyor, yani satırlar dolu;
+            12 hem 3 sütunda (telefon) hem 4 sütunda (sm) tam satır. 6 iken
+            sm'de ikinci satır yarımdı. */}
         <div className="grid grid-cols-3 gap-2 py-2 sm:grid-cols-4">
-          {[0, 1, 2, 3, 4, 5].map((i) => (
+          {Array.from({ length: 12 }, (_, i) => (
             <div
               key={i}
               className="flex flex-col items-center gap-1.5 rounded-panel p-2"

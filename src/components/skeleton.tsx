@@ -151,31 +151,68 @@ export function textHeight(variant: TextVariant): number {
 }
 
 /**
+ * Ölçeğin sınıf adları — Tailwind sınıfları derlemede metinden toplandığı için
+ * `text-${variant}` diye kurulamıyor, her ad burada düz yazılı.
+ */
+const TEXT_CLASS: Record<TextVariant, string> = {
+  display: "text-display",
+  h1: "text-h1",
+  h2: "text-h2",
+  h3: "text-h3",
+  body: "text-body",
+  strong: "text-strong",
+  caption: "text-caption",
+  micro: "text-micro",
+};
+
+/**
  * Tek bir metin satırının yeri.
  *
- * Dış kap gerçek satırın TAM yüksekliğini kaplar, çubuk onun içinde 4 px daha
- * kısadır ve ortalanır — mobil `ui/Skeleton.tsx` ile aynı kural. Web çubuğu
- * satırın tamamına yayıyordu: boşluksuz dizilen satırlar tek bir blok gibi
- * görünüyordu, oysa gerçek metinde aralarında nefes var. Blok yüksekliği
- * bozulmadan aradaki boşluk geri geldi.
+ * YÜKSEKLİK GERÇEK YAZI SINIFINDAN, PİKSELDEN DEĞİL (2026-09-29). Kap, gerçek
+ * metnin `text-*` sınıfını taşıyor ve içinde görünmez tek bir karakter var:
+ * satır kutusu tarayıcının gerçek metne verdiğiyle aynı. Eskiden yükseklik
+ * `textHeight` ile sabit pikseldi; 390 px'ten dar ekranda ölçek akışkan
+ * küçülüyor (`globals.css` `--fluid-t`) ve her iskelet satırı gerçeğinden
+ * uzun kalıyordu. Çubuk yine satırdan 4 px kısa ve ortada — mobil
+ * `ui/Skeleton.tsx` ile aynı kural: boşluksuz dizilen satırlar tek blok gibi
+ * görünmesin.
  */
 export function SkeletonLine({
   variant = "body",
   width = "100%",
   className = "",
+  tone = "var(--surface-2)",
 }: {
   variant?: TextVariant;
   width?: number | string;
   className?: string;
+  /** Çubuğun rengi; surface-2 zemin üstünde bir ton koyu (`var(--border)`). */
+  tone?: string;
 }) {
-  const h = textHeight(variant);
-  const bar = Math.max(6, h - 4);
+  const radius = Math.min(10, Math.max(6, textHeight(variant) - 4) / 2);
   return (
-    <div aria-hidden className={`flex items-center ${className}`} style={{ height: h, width }}>
+    <div aria-hidden className={`relative ${TEXT_CLASS[variant] ?? TEXT_CLASS.body} ${className}`} style={{ width }}>
+      <span className="invisible">{"\u00a0"}</span>
       <div
-        className="w-full animate-pulse"
-        style={{ height: bar, borderRadius: Math.min(10, bar / 2), background: "var(--surface-2)" }}
+        className="absolute inset-x-0 top-0.5 bottom-0.5 animate-pulse"
+        style={{ borderRadius: radius, background: tone }}
       />
+    </div>
+  );
+}
+
+/**
+ * Gerçek yazı sınıfıyla ölçülen boş satır — içi olmayan yer tutucu.
+ *
+ * Kahraman kartı ya da hap gibi TEK blok çizen iskeletler yüksekliği
+ * "20 + satır" diye piksel topluyordu; hem dolgu (`--spacing`) hem punto 390
+ * px altında küçülüyor, toplam gerçeğini tutmuyordu. Bunun yerine gerçek
+ * öğenin sınıflarıyla (dolgu dahil) görünmez bir satır çizilir.
+ */
+export function TextBox({ variant = "body", className = "", style }: { variant?: TextVariant; className?: string; style?: React.CSSProperties }) {
+  return (
+    <div aria-hidden className={`${TEXT_CLASS[variant] ?? TEXT_CLASS.body} ${className}`} style={style}>
+      <span className="invisible">{"\u00a0"}</span>
     </div>
   );
 }
@@ -261,7 +298,8 @@ export function AppHeaderSkeleton({ titleWidth = 160 }: { titleWidth?: number | 
         <SkeletonLine variant="h1" width={titleWidth} />
       </div>
       <div className="flex shrink-0 items-center gap-2">
-        <SkeletonPill width={56} height={16 + textHeight("strong")} />
+        {/* Seri hapı gerçeğinin sınıflarıyla: `px-3 py-2 text-strong`. */}
+        <TextBox variant="strong" className="w-14 animate-pulse rounded-full py-2" style={{ background: "var(--surface-2)" }} />
         <SkeletonTile size={44} />
         <SkeletonTile size={44} className="rounded-full" />
       </div>

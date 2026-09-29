@@ -8,7 +8,7 @@ import { T, fillX } from "@/lib/motion";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { COURSE_KEY, SpeakButton, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "@/components/flow";
-import { CoverSkeleton } from "@/components/flow-skeleton";
+import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
 import { AlertIcon, CalendarIcon, CheckIcon, ExamIcon, LockIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -141,7 +141,7 @@ export function WeeklyPlayer() {
   if (phase === "loading") {
     return (
       <div role="status" aria-busy="true" aria-label={t("wquiz.preparing")}>
-        <CoverSkeleton rules={3} note={1} secondary tertiary={false} />
+        <CoverSkeleton {...COVERS.weekly} />
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t, dateLocale } from "../lib/i18n";
-import { View, AppState, Linking, Platform, TextInput } from "react-native";
+import { View, AppState, Linking, Platform, TextInput, useWindowDimensions } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useLayout } from "../lib/useLayout";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -156,7 +156,10 @@ export function PaywallScreen() {
   */
   const guest = Boolean(useAuth().user?.guest);
   const [guestRestore, setGuestRestore] = useState(false);
-  const { compactHeight } = useLayout();
+  const { compactHeight, contentWidth } = useLayout();
+  /* Kapsam iskeletinde madde metninin genişliği: kolon − kaydırma (2×16) −
+     kart (2×16) − işaret (22) − aralık (8). Telefonda kolon ekranın kendisi. */
+  const bulletWidth = Math.min(useWindowDimensions().width, contentWidth) - 94;
   const guestPitch = (
     <View style={{ gap: spacing.sm, marginTop: compactHeight ? spacing.lg : 0 }}>
       <Text variant="h3" style={{ textAlign: "center" }}>{t("guest.premium_title")}</Text>
@@ -510,19 +513,21 @@ export function PaywallScreen() {
               on satır birden uzuyordu. Web `premium/loading` aynı kartı çiziyor. */}
           {status ? (status.copy.premium ?? []).map((l) => (
             <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
-          )) : [80, 68, 74, 62].map((w, i) => (
+          )) : COVER_PREMIUM.map(([key, vars], i) => (
             <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: 5 }}>
               <SkeletonTile size={22} radius={11} style={{ marginTop: 1 }} />
-              <SkeletonLine variant="caption" width={`${w}%`} />
+              <View style={{ flex: 1 }}>
+                <CoverLines text={t(key, vars)} width={bulletWidth} />
+              </View>
             </View>
           ))}
           <View style={{ marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
             <Text variant="caption" color={colors.textMuted} style={{ marginBottom: 6, letterSpacing: 0.5 }}>{t("paywall.whats_free")}</Text>
             {status ? (status.copy.free ?? []).map((l) => (
               <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="free" />
-            )) : [58, 50].map((w, i) => (
+            )) : COVER_FREE.map(([key, vars], i) => (
               <View key={i} style={{ paddingVertical: 5, paddingLeft: 22 + spacing.sm }}>
-                <SkeletonLine variant="caption" width={`${w}%`} />
+                <CoverLines text={t(key, vars)} width={bulletWidth} />
               </View>
             ))}
           </View>
@@ -684,6 +689,40 @@ function LegalLinks({ colors }: { colors: Palette }) {
 }
 
 /* Bölüm = ortak bölüm başlığı (Ayarlar'daki gibi, başlık rolüyle) + kart. */
+/*
+ * KAPSAM İSKELETİ SUNUCUNUN LİSTESİYLE (`lib/premium/gates` `describeLimits`
+ * varsayılanları): premium üç, ücretsiz yedi madde. İskelet 4 + 2 tek satır
+ * çiziyordu; oysa maddeler uzun ve satır sayısı genişliğe bağlı: yapay zekâ
+ * maddesi telefonda (296dp) dört, yatay tablette (1026dp) iki satır. Satır
+ * sayısı arayüz dilindeki gerçek cümleden ve metin genişliğinden.
+ */
+const COVER_PREMIUM: [string, Record<string, number>?][] = [
+  ["plan.pro_pocket_walk"],
+  ["plan.pro_mock", { n: 5 }],
+  ["plan.pro_ai", { n: 20 }],
+];
+const COVER_FREE: [string, Record<string, number>?][] = [
+  ["plan.free_core"],
+  ["plan.free_weekly", { n: 1 }],
+  ["plan.free_walk", { n: 3 }],
+  ["plan.free_mock", { n: 2 }],
+  ["plan.free_path_ai", { c: 2, w: 2 }],
+  ["plan.free_skills", { s: 2, w: 2 }],
+  ["plan.free_streak_ai", { d: 7, n: 2, m: 1 }],
+];
+
+/** Bir maddenin satırları: `caption` ~6.9dp/karakter; son satır kısa. */
+function CoverLines({ text, width }: { text: string; width: number }) {
+  const n = Math.max(1, Math.ceil((text.length * 6.9) / Math.max(1, width)));
+  return (
+    <>
+      {Array.from({ length: n }, (_, i) => (
+        <SkeletonLine key={i} variant="caption" width={i === n - 1 && n > 1 ? "55%" : "94%"} />
+      ))}
+    </>
+  );
+}
+
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <View style={{ marginBottom: spacing.lg }}>

@@ -21,7 +21,12 @@ export default function Loading() {
         </div>
       </div>
 
-      <SkeletonLine variant="caption" width="70%" className="mb-3" />
+      {/* Konuşma başlıkları (dört başlık, kırpılmıyor): kap 720 px'i bulana
+          dek (lg) iki satır, sonra tek satır. */}
+      <div aria-hidden className="mb-3">
+        <SkeletonLine variant="caption" width="94%" />
+        <SkeletonLine variant="caption" width="45%" className="lg:hidden" />
+      </div>
       <SkeletonBar height={10} />
       <SkeletonLine variant="caption" width={90} className="mb-4 mt-1.5" />
 

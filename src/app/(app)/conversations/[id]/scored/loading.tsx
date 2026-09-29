@@ -1,5 +1,5 @@
 import { LoadingRegion } from "@/components/loading-region";
-import { CoverSkeleton } from "@/components/flow-skeleton";
+import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
 
 /**
  * Puanlı kısım gelene kadar iskelet — `ConversationScored`in kapağı, aynı
@@ -10,7 +10,7 @@ import { CoverSkeleton } from "@/components/flow-skeleton";
 export default function Loading() {
   return (
     <LoadingRegion>
-      <CoverSkeleton coach rules={3} detailRows={3} />
+      <CoverSkeleton {...COVERS.scored} />
     </LoadingRegion>
   );
 }

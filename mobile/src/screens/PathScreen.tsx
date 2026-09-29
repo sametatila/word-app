@@ -204,14 +204,15 @@ export function PathScreen() {
 
   if (!path) {
     // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
-    return (
-      <Screen>
-        <AppHeader title={t("path.path")} />
-        {/* Gerçek düzenin ölçüleriyle ve SIRASIYLA: üst çubuk, alt yazı, öne
-            çıkan ünite kartı (adım sayacı satırı dahil), modül başlığı
-            (micro + h3), ünite ızgarası. Sayaç satırı ve modül başlığı
-            eksikti, ünite kartları içsiz ve gerçekten (ds(132)) kısa bloklardı;
-            veri gelince ızgara aşağı kayıyordu. Web `immersion/loading` aynı sıra. */}
+    /* Gerçek düzenin ölçüleriyle ve SIRASIYLA: üst çubuk, alt yazı, öne
+       çıkan ünite kartı (adım sayacı satırı dahil), modül başlığı
+       (micro + h3), ünite ızgarası. Sayaç satırı ve modül başlığı
+       eksikti, ünite kartları içsiz ve gerçekten (ds(132)) kısa bloklardı;
+       veri gelince ızgara aşağı kayıyordu. Web `immersion/loading` aynı sıra.
+       İlk iki modül 3 + 2 ünite (modül 10, ünite 4 konuşma); kart adı iki
+       satırı dolduruyor (`numberOfLines={2}`, dört konuşma başlığı). */
+    const govdeIskelet = (
+      <>
         <SkeletonBar height={10} style={{ marginBottom: 6 }} />
         <SkeletonLine variant="caption" width="55%" style={{ marginBottom: spacing.lg }} />
         <SkeletonCard style={{ marginBottom: spacing.lg, borderWidth: 1, borderColor: colors.hairline }}>
@@ -230,20 +231,69 @@ export function PathScreen() {
           <Skeleton height={44 + spacing.md * 2} radius={radii.lg} style={{ marginTop: spacing.md }} />
           <Skeleton height={textHeight("h3") + spacing.lg * 2} radius={radii.lg} style={{ marginTop: spacing.md }} />
         </SkeletonCard>
-        <View style={{ marginTop: spacing.lg }}>
-          <SkeletonLine variant="micro" width={72} style={{ marginLeft: spacing.xs }} />
-          <SkeletonLine variant="h3" width={160} style={{ marginLeft: spacing.xs, marginBottom: spacing.sm }} />
-          <CardGrid columns={uniteSutun} stretch>
-            {[0, 1, 2, 3].map((i) => (
-              <Card key={i} padded style={{ flex: 1, minHeight: ds(132), borderColor: colors.border, borderWidth: 1 }}>
-                <SkeletonTile size={44} radius={radii.lg} />
-                <SkeletonLine variant="bodyStrong" width="80%" style={{ marginTop: spacing.sm }} />
-                <View style={{ flex: 1 }} />
-                <SkeletonBar height={5} style={{ marginTop: spacing.sm }} />
-                <SkeletonLine variant="micro" width="45%" style={{ marginTop: spacing.xs }} />
-              </Card>
-            ))}
-          </CardGrid>
+        {[3, 2].map((n, g) => (
+          <View key={g} style={{ marginTop: spacing.lg }}>
+            <SkeletonLine variant="micro" width={72} style={{ marginLeft: spacing.xs }} />
+            <SkeletonLine variant="h3" width={160 - g * 30} style={{ marginLeft: spacing.xs, marginBottom: spacing.sm }} />
+            <CardGrid columns={uniteSutun} stretch>
+              {Array.from({ length: n }, (_, i) => (
+                <Card key={i} padded style={{ flex: 1, minHeight: ds(132), borderColor: colors.border, borderWidth: 1 }}>
+                  <SkeletonTile size={44} radius={radii.lg} />
+                  <SkeletonLine variant="bodyStrong" width="90%" style={{ marginTop: spacing.sm }} />
+                  <SkeletonLine variant="bodyStrong" width="55%" />
+                  <View style={{ flex: 1 }} />
+                  <SkeletonBar height={5} style={{ marginTop: spacing.sm }} />
+                  <SkeletonLine variant="micro" width="45%" style={{ marginTop: spacing.xs }} />
+                </Card>
+              ))}
+            </CardGrid>
+          </View>
+        ))}
+      </>
+    );
+    if (!ikiPanel) {
+      return (
+        <Screen>
+          <AppHeader title={t("path.path")} />
+          {govdeIskelet}
+        </Screen>
+      );
+    }
+    /* YATAY TABLET: gerçek dal iki panel (aşağıda) — iskelet de. Tek sütun
+       çizilince gövde kolonun tamamına yayılıp veri gelince %45'e daralıyordu. */
+    return (
+      <Screen scroll={false}>
+        <AppHeader title={t("path.path")} />
+        <View style={{ flex: 1, flexDirection: "row", gap: spacing.lg }}>
+          <ScrollView style={{ width: solPanel }} showsVerticalScrollIndicator={false}>
+            {govdeIskelet}
+          </ScrollView>
+          {/* Sağ panel: `UnitPane embedded` — geri düğmesiz başlık (üst etiket,
+              tema, konuşma başlıkları: ~560dp'lik panelde tek satır), şerit +
+              sayaç, adım kartları. */}
+          <View style={{ width: sagPanel, borderRadius: radii.lg, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
+            <View style={{ paddingTop: spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+              <SkeletonLine variant="micro" width={110} />
+              <SkeletonLine variant="h2" width="55%" />
+              <SkeletonLine variant="caption" width="90%" />
+            </View>
+            <View style={{ paddingHorizontal: spacing.lg }}>
+              <SkeletonBar height={10} style={{ marginTop: spacing.sm, marginBottom: 6 }} />
+              <SkeletonLine variant="caption" width={96} style={{ marginBottom: spacing.lg }} />
+              <View style={{ gap: spacing.md }}>
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <Card key={i} padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: 1, borderColor: colors.hairline }}>
+                    <SkeletonTile size={46} />
+                    <View style={{ flex: 1 }}>
+                      <SkeletonLine variant="micro" width={64} />
+                      <SkeletonLine variant="bodyStrong" width={`${72 - (i % 3) * 10}%`} />
+                    </View>
+                    <SkeletonTile size={26} radius={13} />
+                  </Card>
+                ))}
+              </View>
+            </View>
+          </View>
         </View>
       </Screen>
     );

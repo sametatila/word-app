@@ -8,8 +8,8 @@ import { fillStyle, staggerDelay } from "@/lib/motion";
 import { dialogueSegments, speakSegments } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, ClockIcon, ExamIcon, FlagIcon, SpeakerIcon, StackIcon, TargetIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
-import { ButtonSlot } from "@/components/flow-skeleton";
-import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
+import { ButtonSlot, TextSlot } from "@/components/flow-skeleton";
+import { SkeletonBar, SkeletonTile } from "@/components/skeleton";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
@@ -284,12 +284,13 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           <div className="flex items-center gap-3">
             <SkeletonTile size={44} />
             <SkeletonBar height={8} className="min-w-0 flex-1" />
-            <SkeletonLine variant="caption" width={72} className="shrink-0" />
+            <TextSlot as="span" chars={15} className="shrink-0" />
           </div>
-          <SkeletonLine variant="caption" width={120} />
+          <TextSlot as="span" chars={11} />
         </div>
-        <SkeletonLine variant="caption" width="70%" className="mb-3" />
-        <SkeletonLine variant="h1" width="46%" className="mb-4" />
+        {/* İpucu ~100 harf: telefonda iki-üç satır; sabit tek çubuk kısa kalıyordu. */}
+        <TextSlot chars={99} className="mb-3 text-caption" />
+        <TextSlot chars={9} className="mb-4 text-h1" />
         <div aria-hidden className="grid gap-2">
           {[0, 1, 2, 3].map((i) => (
             <div key={i} className="option animate-pulse px-3.5 py-3 text-strong" style={pulse}>
@@ -298,9 +299,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           ))}
         </div>
         <ButtonSlot className="mt-2 px-4 py-2.5 text-body" />
-        <div className="mt-3 flex justify-center">
-          <SkeletonLine variant="caption" width={44} />
-        </div>
+        <TextSlot chars={6} className="mt-3 text-center text-caption" />
       </section>
     );
   }

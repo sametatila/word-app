@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
-import { SkeletonBar, SkeletonLine, textHeight } from "@/components/skeleton";
+import { SkeletonBar, SkeletonLine, TextBox } from "@/components/skeleton";
 import { useEffect, useState } from "react";
 import type { ErrorReport } from "@/lib/error-analytics";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -69,10 +69,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
                 <SkeletonBar height={6} className="mt-1" />
               </span>
               {/* `btn px-3 py-1.5 text-caption`: 12 px dolgu + caption satırı. */}
-              <div
-                className="shrink-0 animate-pulse rounded-panel surface-2"
-                style={{ width: 64, height: 12 + textHeight("caption") }}
-              />
+              <TextBox variant="caption" className="shrink-0 animate-pulse rounded-panel py-1.5 surface-2" style={{ width: 64 }} />
             </li>
           ))}
         </ul>

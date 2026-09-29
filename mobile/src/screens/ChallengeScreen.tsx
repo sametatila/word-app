@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { FlameIcon, SparkIcon, XIcon, CheckIcon, BoltIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
-import { CoverSkeleton } from "../game/RoundSkeleton";
+import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { sfx } from "../lib/sfx";
@@ -275,7 +275,7 @@ export function ChallengeScreen() {
      kural, Başla / Vazgeç). Tur iskeleti çiziliyordu ve kapak gelince ekran
      baştan kuruluyordu. BEKLEME KENDINI DUYURUYOR (web `role="status"
      aria-busy`): iskeletin kabuğu canlı bölge ve adı "hazırlanıyor". */
-  if (phase === "loading") return <CoverSkeleton label={t("challenge.preparing")} rules={3} />;
+  if (phase === "loading") return <CoverSkeleton label={t("challenge.preparing")} {...COVERS.challenge} />;
 
   if (phase === "error") {
     return (

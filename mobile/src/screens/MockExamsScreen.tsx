@@ -15,6 +15,7 @@ import { FlowNote } from "../ui/flow";
 import { UnlockProgress } from "../ui/UnlockProgress";
 import { mockCopy, whenText } from "../lib/unlock";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
+import { TextLines } from "../game/RoundSkeleton";
 import { useMe } from "../lib/useMe";
 import { useAuth } from "../lib/AuthContext";
 import { currentCourseId } from "../lib/courses";
@@ -214,16 +215,15 @@ export function MockExamsScreen() {
              Tek kartlık bir başlık + satır çiziliyordu; kâğıtlar gelince
              liste bir anda üç ekran boyu uzuyordu. */
           <View>
-            <View style={{ marginBottom: spacing.md }}>
-              <SkeletonLine variant="caption" width="94%" />
-              <SkeletonLine variant="caption" width="58%" />
-            </View>
+            {/* Giriş metni 180 harf: telefonda dört, tablette iki satır. */}
+            <TextLines variant="caption" chars={180} inset={spacing.lg * 2} style={{ marginBottom: spacing.md }} />
             {[0, 1].map((p) => (
               <SkeletonCard key={p} label={p === 0 ? t("common.loading") : undefined} style={{ marginBottom: spacing.md }}>
-                <SkeletonLine variant="micro" width={72} />
-                <SkeletonLine variant="bodyStrong" width="48%" style={{ marginTop: 2 }} />
-                <SkeletonLine variant="caption" width="36%" />
-                <SkeletonLine variant="micro" width={64} style={{ marginTop: spacing.xs }} />
+                {/* Uzunluklar harf: yüzde genişlik tablette (kolon ~1000dp) 24 harflik temayı 480dp'lik çubuğa çeviriyordu. */}
+                <TextLines variant="micro" chars={9} inset={spacing.lg * 4 + 2} />
+                <TextLines variant="bodyStrong" chars={24} inset={spacing.lg * 4 + 2} style={{ marginTop: 2 }} />
+                <TextLines variant="caption" chars={23} inset={spacing.lg * 4 + 2} />
+                <TextLines variant="micro" chars={17} inset={spacing.lg * 4 + 2} style={{ marginTop: spacing.xs }} />
                 <View style={{ marginTop: spacing.sm }}>
                   {[0, 1, 2, 3].map((i) => (
                     <Skeleton key={i} height={textHeight("bodyStrong") + textHeight("micro") + spacing.sm * 2} radius={radii.md} style={{ marginTop: spacing.xs }} />

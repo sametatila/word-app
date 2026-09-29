@@ -185,11 +185,14 @@ export function AchievementsScreen() {
           <View style={{ marginTop: spacing.sm }}>
             <SkeletonBar height={BAR_HEIGHT.inline} />
           </View>
-          {[0, 1].map((g) => (
+          {/* Karo sayısı gerçeğinki: "sıradaki" 4, ilk grup (seri) 5. Hep 4
+              çizilince tablette (3 sütun) 3+1, gerçekte 3+2; yatayda (4 sütun)
+              grubun ikinci satırı hiç yoktu. */}
+          {[NEXT_COUNT, 5].map((n, g) => (
             <View key={g} style={{ marginTop: spacing.lg }}>
               <SkeletonLine variant="caption" width={96} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }} />
               <CardGrid columns={gridColumns} stretch>
-                {[0, 1, 2, 3].map((i) => <BadgeSkeleton key={i} colors={colors} />)}
+                {Array.from({ length: n }, (_, i) => <BadgeSkeleton key={i} colors={colors} />)}
               </CardGrid>
             </View>
           ))}

@@ -10,6 +10,10 @@ import { AppHeaderSkeleton, SkeletonBar, SkeletonLine, SkeletonTile } from "@/co
  * şey aşağı kayıyordu. Artık her parça gerçeğin kabını (aynı sınıflar, aynı
  * dolgu ve kenarlık) kullanıyor ve yüksekliği içinden çıkıyor. Mobilde aynı
  * ekran (`SkillsScreen`) aynı sırayı çiziyor.
+ *
+ * Genişlik: sayfa her genişlikte tek sütun (`max-w-3xl`), duyarlı tek sınıf
+ * karo aralığı (`sm:gap-2`) ve karo adının dar ekranda iki satıra kırılması;
+ * ikisi de burada aynı.
  */
 export default function Loading() {
   return (
@@ -49,9 +53,18 @@ export default function Loading() {
             style={{ border: "1px solid var(--border)", background: "var(--surface)" }}
           >
             <SkeletonTile size={20} />
-            {/* Karo adı `text-caption leading-tight`: satır 20 değil ~16 px. */}
-            <span className="flex h-[1lh] w-[70%] items-center text-caption leading-tight">
-              <SkeletonBar height={10} className="w-full" />
+            {/* Karo adı `text-caption leading-tight`: satır 20 değil ~16 px.
+                `line-clamp-2`: ~400 px'in altında karo metni ~60 px'e iniyor ve
+                tek boşluklu ad ("Dil bilgisi", yalnız Türkçe) iki satıra
+                kırılıyor; satırdaki beş karo en uzununa uzuyor. Öteki adlar
+                tek sözcük, kırılmıyor. `:lang` `<html lang>`ı (arayüz dili) okur. */}
+            <span className="block w-[70%] text-caption leading-tight">
+              <span className="flex h-[1lh] items-center">
+                <SkeletonBar height={10} className="w-full" />
+              </span>
+              <span className="hidden h-[1lh] items-center max-[400px]:[&:lang(tr)]:flex">
+                <SkeletonBar height={10} className="w-full" />
+              </span>
             </span>
             <SkeletonLine variant="micro" width="40%" className="mt-auto" />
             <SkeletonBar height={4} className="w-4/5" />

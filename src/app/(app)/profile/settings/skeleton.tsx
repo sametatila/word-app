@@ -10,13 +10,24 @@ import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
  * tamamı yer değiştiriyordu.
  */
 
+/**
+ * `SettingsNav`in kartları: satır başına sağda değer var mı. Değerler yalnız
+ * telefon listesinde (masaüstü sol sütunu `compact`): Öğrenme, Uygulama |
+ * Hesap, Abonelik | sürüm; Hatırlatmalar ve Gizlilik değersiz.
+ */
+const VALUE_ROWS = [
+  [true, true, false],
+  [true, false, true],
+  [true],
+];
+
 /** `SettingsNav`: 3 + 3 + 1 satırlık üç kart ve altında Çıkış yap. */
 export function SettingsNavSkeleton({ values = false }: { values?: boolean }) {
   return (
     <div aria-hidden className="space-y-4">
-      {[3, 3, 1].map((n, c) => (
+      {VALUE_ROWS.map((rows, c) => (
         <div key={c} className="card px-4">
-          {Array.from({ length: n }).map((_, i) => (
+          {rows.map((hasValue, i, { length: n }) => (
             <div
               key={i}
               className="flex items-center gap-3 py-3"
@@ -27,7 +38,7 @@ export function SettingsNavSkeleton({ values = false }: { values?: boolean }) {
               <span className="min-w-0 flex-1">
                 <SkeletonLine variant="strong" width={`${60 - ((i + c) % 3) * 10}%`} />
               </span>
-              {values && i === 0 ? <SkeletonLine variant="caption" width={64} /> : null}
+              {values && hasValue ? <SkeletonLine variant="caption" width={64} /> : null}
             </div>
           ))}
         </div>

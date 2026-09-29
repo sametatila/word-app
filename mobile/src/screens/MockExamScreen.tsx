@@ -13,7 +13,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, ExamIcon, ClockIcon, ArrowRightIcon, RepeatIcon, AlertIcon, LockIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "../ui/flow";
-import { CoverSkeleton } from "../game/RoundSkeleton";
+import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MIN_ASSESS_WORDS } from "../lib/learningRules";
 import { prefetchDialogue, speakAndWaitVoiced, speakDialogue, stopSpeaking } from "../lib/tts";
@@ -468,7 +468,7 @@ export function MockExamScreen() {
      dalı çiziliyordu: bellekte olmayan her kâğıt, inene kadar bir an üzgün
      maskotla "bulunamadı" diyordu. Hata yalnız indirme gerçekten düşünce. */
   if (!paper && !fail) {
-    return <CoverSkeleton label={t("common.loading")} top rules={5} note={2} footnote />;
+    return <CoverSkeleton label={t("common.loading")} top {...COVERS.mock} />;
   }
   if (!paper || !part) {
     return (

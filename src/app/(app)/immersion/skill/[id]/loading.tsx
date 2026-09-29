@@ -28,9 +28,11 @@ export default function Loading() {
         </div>
       </div>
 
-      {/* Yönerge (`muted px-1 text-body`). */}
+      {/* Yönerge (`muted px-1 text-body`, ortanca ~105 karakter): telefonda
+          (< sm, ~47 karakter/satır) üç satır, `max-w-2xl` sütunda iki. */}
       <div className="px-1">
         <SkeletonLine variant="body" width="92%" />
+        <SkeletonLine variant="body" width="88%" className="sm:hidden" />
         <SkeletonLine variant="body" width="58%" />
       </div>
 

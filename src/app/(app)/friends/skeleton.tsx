@@ -1,4 +1,4 @@
-import { AppHeaderSkeleton, SkeletonLine, textHeight } from "@/components/skeleton";
+import { AppHeaderSkeleton, SkeletonLine, TextBox } from "@/components/skeleton";
 import { BoardSkeleton } from "@/components/social/league-board";
 
 /**
@@ -28,7 +28,7 @@ export function FriendsSkeleton() {
         {/* Grubum / Arkadaşlar çipleri: `chip px-3.5 py-2 text-caption`. */}
         <div aria-hidden className="mb-3 flex gap-1.5">
           {[84, 92].map((w) => (
-            <div key={w} className="animate-pulse rounded-tile" style={{ width: w, height: 18 + textHeight("caption"), background: "var(--surface-2)" }} />
+            <TextBox key={w} variant="caption" className="animate-pulse rounded-tile border border-transparent py-2" style={{ width: w, background: "var(--surface-2)" }} />
           ))}
         </div>
         <div className="flex flex-col gap-3">

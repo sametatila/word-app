@@ -15,6 +15,7 @@ import { ReportButton } from "../ui/ReportLink";
 import { ReportFlag } from "../ui/ReportFlag";
 import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
+import { textBox, useColumnWidth } from "../game/RoundSkeleton";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
@@ -1093,14 +1094,21 @@ const BIG_BUTTON_H = () => textHeight("h3") + spacing.lg * 2;
  * gövde, dikey 10 dolgu, 1 kenarlık) ve altlarındaki "Dinle" satırı.
  */
 function LectureSkeleton() {
+  /* Baloncuk içeriğe göre daralıyor (en çok %88): ~100 harflik anlatım
+     cümlesi telefonda üç satır, tablette (kolon ~1000dp) tek satır. Sabit
+     yüzde + iki satır tablette hem uzun hem yüksek kalıyordu. */
+  const max = (useColumnWidth() - spacing.lg * 2) * 0.88;
   return (
     <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
-      {["78%", "62%", "84%"].map((w, i) => (
-        <View key={i} style={{ alignSelf: "flex-start", width: w, marginBottom: spacing.md }}>
-          <Skeleton height={textHeight("body") * 2 + 10 * 2 + 2} radius={radii.lg} />
+      {[96, 70, 110].map((chars, i) => {
+        const box = textBox(chars, max - spacing.md * 2 - 2, "body");
+        return (
+        <View key={i} style={{ alignSelf: "flex-start", width: box.width + spacing.md * 2 + 2, marginBottom: spacing.md }}>
+          <Skeleton height={textHeight("body") * box.lines + 10 * 2 + 2} radius={radii.lg} />
           <SkeletonLine variant="micro" width={54} style={{ marginTop: spacing.xs, marginLeft: spacing.xs }} />
         </View>
-      ))}
+        );
+      })}
     </View>
   );
 }
@@ -1125,8 +1133,9 @@ function ConversationSkeleton() {
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         <Skeleton height={44} width={44} radius={radii.md} />
         <View style={{ flex: 1 }}>
-          <SkeletonLine variant="h3" width="62%" />
-          <SkeletonLine variant="caption" width="44%" />
+          {/* Tek satırlık ad + karşılık (~22 harf): yüzde değil, harf boyu — tablette başlık çubuğu kolonun yarısına uzuyordu. */}
+          <SkeletonLine variant="h3" width={176} />
+          <SkeletonLine variant="caption" width={132} />
         </View>
         <SkeletonPill width={compactWidth ? 44 : 108} height={36} />
       </View>

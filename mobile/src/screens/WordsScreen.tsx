@@ -173,9 +173,12 @@ export function WordsScreen() {
             /* Spinner yerine satır iskeleti: liste dolunca yükseklik değişmiyor.
                Satır DÖRT metin satırı (kelime, anlam, tür, takvim) — iskelet
                ikisini çiziyordu, her satır ~40 px kısa kalıyordu. Geniş
-               ekranda liste `listColumns` sütunlu; iskelet de öyle. */
+               ekranda liste `listColumns` sütunlu; iskelet de öyle. Satır
+               sayısı sütundan bağımsız sekiz: sekiz hücreyi iki sütuna bölmek
+               yatay tablette listenin alt yarısını boş bırakıyordu (gerçek
+               sayfa 30 kelime, 15 satır). */
             <View style={{ gap: spacing.sm }}>
-              {[...Array(Math.ceil(8 / listColumns)).keys()].map((r) => (
+              {[...Array(8).keys()].map((r) => (
                 <View key={r} style={{ flexDirection: "row", gap: spacing.sm }}>
                   {[...Array(listColumns).keys()].map((c) => (
                     <View key={c} style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: spacing.md }}>

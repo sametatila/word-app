@@ -169,11 +169,14 @@ export function AchievementWall() {
       <div role="status" aria-busy="true" aria-label={t("achievements.achievements")}>
         <SkeletonLine variant="caption" width={120} className="mb-1" />
         <SkeletonBar height={6} />
-        {[0, 1].map((g) => (
+        {/* Karo sayısı gerçeğinki: "sıradaki" 4 (`NEXT_COUNT`), ilk grup (seri)
+            5. Hep 4 çizilince 3 sütunda (sm) 3+1, gerçekte 3+2 duruyordu;
+            4 sütunda (md) grubun ikinci satırı hiç yoktu. */}
+        {[NEXT_COUNT, 5].map((n, g) => (
           <section key={g} className="mt-4">
             <SkeletonLine variant="caption" width={96} className="mb-2 ml-1" />
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-              {[0, 1, 2, 3].map((i) => (
+              {Array.from({ length: n }, (_, i) => (
                 <div key={i} aria-hidden className="card p-3">
                   <SkeletonTile size={46} className="rounded-full" />
                   <SkeletonLine variant="strong" width="70%" className="mt-2" />

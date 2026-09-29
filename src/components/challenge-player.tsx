@@ -16,7 +16,7 @@ import { AchievementFlash, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { BoltIcon, CheckIcon, FlameIcon, SparkIcon, XIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, ResultHero, StatRow, CoverBody, StateBody } from "@/components/flow";
-import { CoverSkeleton } from "@/components/flow-skeleton";
+import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
 import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
 import { formatDecimal, formatPercent } from "@/lib/i18n/dict";
@@ -276,7 +276,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   if (status === "loading")
     return (
       <div role="status" aria-busy="true" aria-label={t("challenge.preparing")}>
-        <CoverSkeleton rules={3} />
+        <CoverSkeleton {...COVERS.challenge} />
       </div>
     );
 

@@ -1,5 +1,6 @@
 import { LoadingRegion } from "@/components/loading-region";
-import { SkeletonBar, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "@/components/skeleton";
+import { SkeletonBar, SkeletonTile, TextBox } from "@/components/skeleton";
+import { TextSlot } from "@/components/flow-skeleton";
 
 /**
  * Konuşma gelene kadar iskelet — `ConversationPlayer`in anlatım adımının
@@ -20,40 +21,43 @@ export default function Loading() {
           {[0, 1, 2].map((i) => (
             <div key={i} className="flex flex-1 flex-col gap-1">
               <SkeletonBar height={4} />
-              <SkeletonLine variant="micro" width="60%" />
+              <TextSlot as="span" chars={8} className="text-micro" />
             </div>
           ))}
         </div>
       </div>
       <div aria-hidden className="shrink-0 short:hidden">
         <SkeletonBar height={6} />
-        <div className="mt-1 flex gap-3">
-          <SkeletonLine variant="micro" width={64} />
-          <SkeletonLine variant="micro" width={56} />
-        </div>
+        <p className="mt-1 flex flex-wrap gap-x-3 text-micro">
+          <TextSlot as="span" chars={10} />
+          <TextSlot as="span" chars={9} />
+        </p>
       </div>
       <section aria-hidden className="card flex min-h-0 flex-1 flex-col overflow-hidden">
         <div className="shrink-0 border-b px-4 py-3 short:py-2 kb:hidden" style={{ borderColor: "var(--border)" }}>
           <div className="flex items-center justify-between gap-2">
             <div className="min-w-0 flex-1">
-              <SkeletonLine variant="strong" width="55%" />
-              <SkeletonLine variant="caption" width="38%" />
+              <TextSlot chars={20} className="truncate text-strong" />
+              <TextSlot chars={18} className="truncate text-caption" />
             </div>
-            <SkeletonPill width={96} height={textHeight("caption") + 8} className="shrink-0" />
+            <TextBox variant="caption" className="w-24 shrink-0 animate-pulse rounded-full py-1" style={{ background: "var(--surface-2)" }} />
           </div>
         </div>
         <div className="flex-1 space-y-3 overflow-hidden p-4">
-          {["72%", "56%"].map((w, i) => (
+          {[96, 70].map((chars, i) => (
             <div key={i} className="flex flex-col items-start gap-1">
-              {/* Baloncuğun kendisi: dolgu ve satır yüksekliği gerçeğinden,
-                  iki görünmez satırla. */}
-              <div
-                className="max-w-[85%] animate-pulse rounded-panel rounded-bl-chip px-3 py-2.5 text-body leading-relaxed"
-                style={{ width: w, background: "var(--surface-2)" }}
-              >
-                <span className="invisible">.<br />.</span>
+              {/* Baloncuğun kendisi: sınıflar gerçeğinden, içi görünmez bir
+                  anlatım cümlesi (~100 harf). Genişlik ve satır sayısı sabit
+                  değil: telefonda üç, masaüstünde iki satır, kısa cümlede dar. */}
+              <div className="flex w-full items-end gap-1.5">
+                <div
+                  className="max-w-[85%] animate-pulse select-none rounded-panel rounded-bl-chip px-3 py-2.5 text-body leading-relaxed"
+                  style={{ background: "var(--surface-2)", color: "transparent" }}
+                >
+                  {"Baskıya dayanıklıyım ve çok sabırlıyım demek. Lütfen söyle: Ich bin belastbar und sehr geduldig heute.".slice(0, chars)}
+                </div>
               </div>
-              <SkeletonLine variant="micro" width={54} />
+              <TextSlot as="span" chars={8} className="text-micro" />
             </div>
           ))}
         </div>
@@ -62,7 +66,7 @@ export default function Loading() {
             <div className="btn w-full animate-pulse px-5 py-4" style={{ background: "var(--surface-2)" }}>
               <span className="invisible">.</span>
             </div>
-            <SkeletonLine variant="caption" width={150} />
+            <TextSlot chars={24} className="text-center text-caption" />
           </div>
         </div>
       </section>

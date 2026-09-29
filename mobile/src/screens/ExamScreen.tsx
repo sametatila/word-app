@@ -4,7 +4,7 @@ import { BOSS_SECONDS, MIN_ASSESS_WORDS, MIN_FREE_WORDS, PASS_SECTION, PASS_TOTA
 import { View, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { CoverSkeleton } from "../game/RoundSkeleton";
+import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
@@ -441,7 +441,7 @@ export function ExamScreen() {
       bağımsızlık notu, dipte Başla / Vazgeç. Önceki iskelet iki düz kart
       çiziyordu ve kapak gelince düğmeler dipte birden beliriyordu.
     */
-    return <CoverSkeleton label={t("exam.preparing")} top coach rules={5} detailRows={5} footnote />;
+    return <CoverSkeleton label={t("exam.preparing")} top {...COVERS.exam} />;
   }
 
   if (phase === "cover") {

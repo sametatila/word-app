@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import { Text } from "./Text";
 import { t } from "../lib/i18n";
 import { PressableScale } from "./PressableScale";
@@ -9,6 +9,7 @@ import { isOwnVoice, voicesFor, resolveVoice, type VoiceId } from "../lib/voices
 import { courseOrDefault } from "../lib/courses";
 import { speakWithVoice } from "../lib/tts";
 import { SkeletonCard, SkeletonLine, SkeletonTile } from "./Skeleton";
+import { useLayout } from "../lib/useLayout";
 
 /**
  * Ses seçimi — web VoicePicker'ın mobil karşılığı. Kurs başına iki ses
@@ -98,6 +99,15 @@ export function VoicePicker({
  */
 export function VoicePickerSkeleton() {
   const { colors } = useTheme();
+  /* NOT SATIRI GENİŞLİĞE GÖRE. Not ~37 karakter; telefonda kart metni ~133dp
+     ve not iki satıra kırılıyor, tablette (~300dp) tek satır. İskelet hep
+     tek satır çiziyordu, telefonda kart 20dp kısa kalıyordu. Genişlik
+     Ayarlar'ın kabından: kolon − kaydırma (2×16) − grup kartı (2×16), iki
+     kart arası 8, kart dolgusu 2×12 + kenarlık. */
+  const { contentWidth } = useLayout();
+  const row = Math.min(useWindowDimensions().width, contentWidth) - 64;
+  const noteWidth = (row - spacing.sm) / 2 - 2 * spacing.md - 2;
+  const noteLines = Math.max(1, Math.ceil((t("voices.defne_note").length * 6.9) / Math.max(1, noteWidth)));
   /* Kart gerçeğinin ÖLÇÜSÜNDE: `SkeletonCard` `lg` dolgulu (gerçeği `md`) ve
      hoparlör `xs` dolgusuz 20 px idi (gerçeği 28) — kart iki yandan 8, başlık
      satırı 5 px farklıydı. */
@@ -110,7 +120,11 @@ export function VoicePickerSkeleton() {
             <SkeletonTile size={20} radius={10} style={{ margin: spacing.xs }} />
           </View>
           <SkeletonLine variant="caption" width="40%" />
-          <SkeletonLine variant="caption" width="76%" />
+          <View>
+            {Array.from({ length: noteLines }, (_, j) => (
+              <SkeletonLine key={j} variant="caption" width={j === noteLines - 1 && noteLines > 1 ? "50%" : "88%"} />
+            ))}
+          </View>
         </SkeletonCard>
       ))}
     </View>

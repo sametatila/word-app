@@ -1,6 +1,6 @@
 import { LoadingRegion } from "@/components/loading-region";
 import { CardGrid } from "@/components/layout";
-import { SkeletonLine, SkeletonTile, textHeight } from "@/components/skeleton";
+import { SkeletonLine, SkeletonTile, TextBox } from "@/components/skeleton";
 
 /**
  * Pratik iskeleti — sayfanın sırasıyla: geri satırı (`PageBack`), karışık tur
@@ -9,7 +9,11 @@ import { SkeletonLine, SkeletonTile, textHeight } from "@/components/skeleton";
  * Eskisi geri düğmesini çizmiyordu, karoları sabit iki/üç sütunda ve gerçek
  * karodan (min 8.25rem) kısa çiziyordu; sayfa ise `CardGrid min={150}` ile
  * genişliğe göre sütun açıyor. İskelet aynı ızgarayı kullanıyor. Karo sayısı
- * kursa göre değişiyor (Almanca 11); ilk ekranı dolduran altısı çiziliyor.
+ * kursa göre değişiyor (Almanca 11); ilk ekranı dolduran altısı çiziliyor:
+ * iki sütunda (telefon, md) üç tam satır, üç sütunda (sm, lg+) iki tam satır.
+ *
+ * Karonun alt yazısı dar karoda iki satır (telefon 133 px, sm'de üç sütun
+ * 162 px), md'den sonra tek satır; alttaki not lg'ye kadar üç satır.
  */
 export default function Loading() {
   return (
@@ -23,11 +27,13 @@ export default function Loading() {
       </div>
 
       {/* Karışık tur: p-5, 48 px karo + h3/caption iki satır. */}
-      <div
-        aria-hidden
-        className="animate-pulse rounded-card p-5 surface-2"
-        style={{ height: 40 + Math.max(48, textHeight("h3") + textHeight("caption")) }}
-      />
+      <div aria-hidden className="flex animate-pulse items-center gap-3 rounded-card p-5 surface-2">
+        <div className="h-12 w-12 shrink-0" />
+        <div>
+          <TextBox variant="h3" />
+          <TextBox variant="caption" />
+        </div>
+      </div>
 
       <section aria-hidden className="space-y-3">
         <SkeletonLine variant="micro" width={80} />
@@ -38,6 +44,7 @@ export default function Loading() {
               <div>
                 <SkeletonLine variant="h3" width="65%" />
                 <SkeletonLine variant="caption" width="90%" />
+                <SkeletonLine variant="caption" width="45%" className="md:hidden" />
               </div>
             </div>
           ))}
@@ -46,6 +53,7 @@ export default function Loading() {
 
       <div aria-hidden className="px-1">
         <SkeletonLine variant="caption" width="92%" />
+        <SkeletonLine variant="caption" width="96%" className="lg:hidden" />
         <SkeletonLine variant="caption" width="60%" />
       </div>
     </LoadingRegion>
