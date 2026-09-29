@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LockIcon, XIcon, RefreshIcon, CheckIcon } from "../ui/icons";
+import { CheckIcon, CloseIcon, LockedIcon, UndoIcon } from "../ui/icons";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { AvatarStage, derivedAvatar, MascotAvatar } from "../ui/Avatar";
 import { useAuth } from "../lib/AuthContext";
@@ -163,14 +163,13 @@ export function AvatarScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <AvatarStage config={cfg} height={260 + insets.top} inset={22} figureScale={bounce}>
         <View style={{ position: "absolute", top: insets.top + spacing.sm, left: spacing.lg, right: spacing.lg, flexDirection: "row", alignItems: "center" }}>
-          <StageButton label={t("common.close")} onPress={() => nav.goBack()}><XIcon color={colors.text} size={20} /></StageButton>
-          {/* Başlık düğmeler gibi yüzey hapında: zemin açık da olabilir koyu da (web ile aynı). */}
-          <View style={{ flex: 1, alignItems: "center" }}>
-            <View style={{ backgroundColor: colors.surface, borderRadius: radii.pill, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm }}>
-              <Text accessibilityRole="header" variant="h3">{t("avatar.your_avatar")}</Text>
-            </View>
+          <StageButton label={t("common.close")} onPress={() => nav.goBack()}><CloseIcon color={colors.text} size={20} /></StageButton>
+          {/* Başlık GÖRÜNMÜYOR (web ile aynı): sahnenin üstünde hap uzun şapka
+              ve balonların üstüne biniyordu. Ekran okuyucu için yerinde. */}
+          <View style={{ flex: 1 }}>
+            <Text accessibilityRole="header" variant="h3" style={{ position: "absolute", width: 1, height: 1, opacity: 0 }}>{t("avatar.your_avatar")}</Text>
           </View>
-          <StageButton label={t("avatar.reset")} onPress={() => setDraft(null)}><RefreshIcon color={colors.text} size={20} /></StageButton>
+          <StageButton label={t("avatar.reset")} onPress={() => setDraft(null)}><UndoIcon color={colors.text} size={20} /></StageButton>
         </View>
       </AvatarStage>
 
@@ -250,7 +249,7 @@ function OptCard({ tile, colors, onLocked }: { tile: Tile; colors: Palette; onLo
       </PressableScale>
       {tile.locked ? (
         <View pointerEvents="none" style={{ position: "absolute", right: 6, top: 6, width: 20, height: 20, borderRadius: 10, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <LockIcon color={colors.textMuted} size={12} />
+          <LockedIcon color={colors.textMuted} size={12} />
         </View>
       ) : tile.selected ? (
         <View pointerEvents="none" style={{ position: "absolute", right: 6, top: 6, width: 20, height: 20, borderRadius: 10, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }}>

@@ -9,7 +9,7 @@ import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/
 import { AVATAR_BGS, AVATAR_RARITY, EXTRA_SLOTS, type ExtraSlot } from "@/lib/avatar-config";
 import { useAvatarCatalog } from "@/lib/avatar-catalog-client";
 import { partIcon } from "@/lib/avatar-layers";
-import { CheckIcon, LockIcon, RefreshIcon, XIcon } from "@/components/icons";
+import { CheckIcon, CloseIcon, LockedIcon, UndoIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
 import { vibrate } from "@/lib/fx";
 
@@ -128,14 +128,15 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
         <AvatarStage config={cfg} height={260} inset={24} bump={bump}>
           <div className="absolute inset-x-3 top-3 flex items-center">
             <button type="button" onClick={() => router.back()} aria-label={t("common.close")} className="pressable flex h-11 w-11 items-center justify-center rounded-full" style={{ background: "var(--surface)", color: "var(--text)" }}>
-              <XIcon size={20} />
+              <CloseIcon size={20} />
             </button>
-            {/* Başlık düğmeler gibi yüzey hapında: zemin açık da olabilir koyu da (nane, gece). */}
-            <div className="flex flex-1 justify-center">
-              <h1 className="rounded-full px-4 py-2 text-h3" style={{ background: "var(--surface)", color: "var(--text)" }}>{t("avatar.your_avatar")}</h1>
-            </div>
+            {/* Başlık GÖRÜNMÜYOR: sahnenin üstünde hap uzun şapka ve balonların
+                üstüne biniyor, giydirirken görünümü bozuyordu. Ekran okuyucu
+                için yerinde (sr-only). */}
+            <h1 className="sr-only">{t("avatar.your_avatar")}</h1>
+            <div className="flex-1" />
             <button type="button" onClick={() => setDraft(null)} aria-label={t("avatar.reset")} className="pressable flex h-11 w-11 items-center justify-center rounded-full" style={{ background: "var(--surface)", color: "var(--text)" }}>
-              <RefreshIcon size={20} />
+              <UndoIcon size={20} />
             </button>
           </div>
         </AvatarStage>
@@ -207,7 +208,7 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
               {tile.label ? <span className="muted w-full truncate text-micro">{tile.label}</span> : null}
               {tile.locked ? (
                 <span aria-hidden className="absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full" style={{ background: "var(--surface-2)" }}>
-                  <LockIcon size={12} />
+                  <LockedIcon size={12} />
                 </span>
               ) : tile.selected ? (
                 <span aria-hidden className="absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full" style={{ background: "var(--brand-fill)", color: "var(--on-brand)" }}>
