@@ -8,7 +8,7 @@ import { LEAGUE_TIERS, social, tierName, type LeagueRow, type LeagueView } from 
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { ReportSheet } from "../ui/ReportSheet";
-import { SkeletonLine, SkeletonRows } from "../ui/Skeleton";
+import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { NewAvatarParts } from "../ui/NewAvatarParts";
@@ -68,8 +68,15 @@ export function LeagueBoard() {
   if (!view) {
     return (
       <View>
-        <SkeletonLine variant="caption" width={160} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }} />
-        <SkeletonRows count={6} height={64} />
+        {/* `SectionTitle`: solda lig adı, sağda kalan gün. */}
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }}>
+          <SkeletonLine variant="caption" width={120} />
+          <SkeletonLine variant="caption" width={64} />
+        </View>
+        <BoardRowsSkeleton count={6} />
+        <View style={{ alignItems: "center", marginTop: spacing.md }}>
+          <SkeletonLine variant="micro" width={220} />
+        </View>
       </View>
     );
   }
@@ -111,6 +118,32 @@ export function LeagueBoard() {
         {view.demote > 0 ? ` · ${t("league.explain_down", { n: view.demote })}` : ""}
       </Text>
       <ReportSheet visible={!!report} kind="user" refId={report?.userId ?? ""} content={report?.name ?? ""} onClose={() => setReport(null)} />
+    </View>
+  );
+}
+
+/**
+ * Tablo satırlarının iskeleti — `LeagueRowCard` ölçüsünde (FriendsBoard da
+ * kullanıyor, satır biçimi ikisinde aynı). `SkeletonRows` 64'lük düz
+ * bloklardı; gerçek satır sıra, 40'lık arma, ad + seri ve XP + birim taşıyor
+ * ve bir satır boyu daha uzun.
+ */
+export function BoardRowsSkeleton({ count }: { count: number }) {
+  const { colors } = useTheme();
+  return (
+    <View style={{ gap: spacing.sm }} accessibilityRole="progressbar" accessibilityState={{ busy: true }}>
+      {Array.from({ length: count }, (_, i) => (
+        <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.md, backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.hairline }}>
+          <View style={{ width: 30, alignItems: "center" }}><SkeletonLine variant="h3" width={16} /></View>
+          <SkeletonTile size={40} radius={20} />
+          <View style={{ flex: 1 }}>
+            <SkeletonLine variant="bodyStrong" width={`${70 - (i % 3) * 12}%`} />
+            <SkeletonLine variant="micro" width={72} />
+          </View>
+          <SkeletonLine variant="h3" width={40} />
+          <SkeletonLine variant="micro" width={18} />
+        </View>
+      ))}
     </View>
   );
 }

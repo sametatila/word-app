@@ -229,8 +229,9 @@ export function ProgressScreen() {
             <View style={{ flex: 1 }}>
               <SkeletonLine variant="display" width={72} />
               <SkeletonLine variant="bodyStrong" width={112} />
+              {/* En uzun seri satırı; sağdaki maskot yuvarlağı kartta artık yok. */}
+              <SkeletonLine variant="caption" width={140} />
             </View>
-            <SkeletonTile size={ds(58)} radius={29} />
           </SkeletonCard>
         )}
 

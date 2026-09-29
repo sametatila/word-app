@@ -7,6 +7,7 @@ import { T, fillX } from "@/lib/motion";
 import { BadgeIcon, TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
+import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { GROUP_LABEL_KEYS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
@@ -161,13 +162,30 @@ export function AchievementWall() {
          duyuyordu. Kalip `components/skeleton` `SkeletonCard`ta zaten var
          (`role="status" aria-busy`), mobilde de kokte
          (`accessibilityRole="progressbar"`). */
-      <section className="card p-5" role="status" aria-busy="true" aria-label={t("achievements.achievements")}>
-        <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
-          {Array.from({ length: 8 }, (_, i) => (
-            <div key={i} className="h-[78px] animate-pulse rounded-card" style={{ background: "var(--surface-2)" }} />
-          ))}
-        </div>
-      </section>
+      /* Duvarın GERÇEK düzeni: sayaç satırı, ince şerit, "sıradaki" bölümü ve
+         bir grup bölümü; kartlar `AchievementCard` ölçüsünde. Eskisi tek kart
+         içinde sekiz düz kareydi ve duvar kart kullanmayı bırakınca içerik
+         gelince her şey yer değiştiriyordu. */
+      <div role="status" aria-busy="true" aria-label={t("achievements.achievements")}>
+        <SkeletonLine variant="caption" width={120} className="mb-1" />
+        <SkeletonBar height={6} />
+        {[0, 1].map((g) => (
+          <section key={g} className="mt-4">
+            <SkeletonLine variant="caption" width={96} className="mb-2 ml-1" />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+              {[0, 1, 2, 3].map((i) => (
+                <div key={i} aria-hidden className="card p-3">
+                  <SkeletonTile size={46} className="rounded-full" />
+                  <SkeletonLine variant="strong" width="70%" className="mt-2" />
+                  <SkeletonLine variant="micro" width="90%" className="mt-0.5" />
+                  <SkeletonBar height={5} className="mt-2" />
+                  <SkeletonLine variant="micro" width={40} className="mt-1" />
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
     );
   }
 

@@ -2,35 +2,56 @@ import { LoadingRegion } from "@/components/loading-region";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
 
 /**
- * Avatar düzenleyicisinin iskeleti — başlık, 140 px'lik maskot ve üç seçenek
- * şeridi (şapka, gözlük, bıyık).
+ * Avatar düzenleyicisinin iskeleti — `AvatarEditor`in GERÇEK düzeninde:
+ * sahne (kapat, başlık hapı, sıfırla), üstüne binen kâğıt, yuva sekmeleri,
+ * parça karoları ızgarası ve Kaydet.
  *
- * Sayfa kazanılmış rozetleri sunucuda okuyor. Bu dosya yokken üstteki profil
- * iskeleti çiziliyordu: kimlik + beş satırlık menü, yani gelecek ekranla
- * ilgisi olmayan bir şekil ve içerik gelince düzen baştan zıplıyordu.
+ * Eskisi başlık satırı + 140 px'lik yuvarlak maskot + üç yatay seçenek
+ * şeridiydi; düzenleyici sahne ve sekmeli ızgaraya geçince (mobil
+ * `AvatarScreen` ile aynı kurgu) iskelet eski ekranı çizmeye devam ediyordu.
  */
 export default function Loading() {
   return (
     <LoadingRegion className="mx-auto w-full max-w-2xl">
-      <div className="mb-4 flex items-center gap-3">
-        <SkeletonTile size={44} />
-        <SkeletonLine variant="h2" width={140} />
-      </div>
-      <div className="my-5 flex justify-center">
-        <div className="h-[140px] w-[140px] animate-pulse rounded-full surface-2" />
-      </div>
-      {[0, 1, 2].map((g) => (
-        <div key={g} className="mt-4">
-          <SkeletonLine variant="caption" width={72} className="mb-2 ml-1" />
-          {/* Seçenek: 54 px önizleme + 4 px dolgu + 2 px kenarlık, iki yanda. */}
-          <div className="flex gap-2 overflow-hidden pb-1">
-            {[0, 1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="h-[62px] w-[62px] shrink-0 animate-pulse rounded-panel surface-2" />
-            ))}
+      <div aria-hidden className="-mx-4 overflow-hidden sm:mx-0 sm:rounded-card">
+        {/* Sahne: `AvatarStage height={260}`. */}
+        <div className="relative animate-pulse" style={{ height: 260, background: "var(--surface-2)" }}>
+          <div className="absolute inset-x-3 top-3 flex items-center">
+            <span className="h-11 w-11 rounded-full" style={{ background: "var(--surface)" }} />
+            <div className="flex flex-1 justify-center">
+              {/* Başlık hapı: `text-h3` + `py-2`. */}
+              <span className="h-[37px] w-36 rounded-full" style={{ background: "var(--surface)" }} />
+            </div>
+            <span className="h-11 w-11 rounded-full" style={{ background: "var(--surface)" }} />
           </div>
         </div>
-      ))}
-      <div className="mt-7 h-14 w-full animate-pulse rounded-tile surface-2" />
+      </div>
+
+      <div className="relative -mx-4 -mt-6 rounded-t-[1.5rem] px-4 pt-4 sm:mx-0" style={{ background: "var(--bg)" }}>
+        {/* Yuva sekmeleri: `text-strong` + `py-2`, köşe `tile`. */}
+        <div className="flex gap-1.5 overflow-hidden pb-2">
+          {[88, 72, 80, 76].map((w) => (
+            <div key={w} className="h-[39px] shrink-0 animate-pulse rounded-tile" style={{ width: w, background: "var(--surface-2)" }} />
+          ))}
+        </div>
+
+        {/* Parça karoları: 64'lük önizleme + `text-micro` ad, `p-2`, 1 px kenarlık. */}
+        <div className="grid grid-cols-3 gap-2 py-2 sm:grid-cols-4">
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center gap-1.5 rounded-panel p-2"
+              style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+            >
+              <SkeletonTile size={64} className="rounded-full" />
+              <SkeletonLine variant="micro" width="70%" />
+            </div>
+          ))}
+        </div>
+
+        {/* Kaydet: `btn btn-primary py-4`. */}
+        <div className="mt-4 h-14 w-full animate-pulse rounded-tile" style={{ background: "var(--surface-2)" }} />
+      </div>
     </LoadingRegion>
   );
 }

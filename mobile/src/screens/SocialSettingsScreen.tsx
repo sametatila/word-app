@@ -5,7 +5,7 @@ import { social, errorText, type PublicUser, type SocialMe, type Visibility } fr
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
+import { Skeleton, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { RadioDot } from "../ui/RadioDot";
@@ -81,18 +81,33 @@ function SaveLine({ msg, ok }: { msg: string | null; ok: boolean }) {
 function LoadState({ loadErr, retry, rows }: { loadErr: string | null; retry: () => void; rows: number }) {
   const { colors } = useTheme();
   if (loadErr) return <EmptyCard live="assertive" icon={AlertIcon} tint={colors.danger} title={tx("socialsettings.social_and_privacy")} text={loadErr} action={tx("common.try_again")} onAction={retry} />;
-  // Bölüm bölüm iskelet: kart tek parça gelince ekran boyu zıplamasın.
+  /* Bölüm bölüm, GERÇEK satırlarla: Görünürlük (üç radyo satırı), İzinler
+     (üç anahtar satırı), Engellenenler (tek satır). Eskisi her bölüme 48'lik
+     tek blok + bir satır koyuyordu; üç satırlık kartlar gelince ekran iki
+     katı uzuyordu. */
+  const row = (i: number, trailing: React.ReactNode) => (
+    <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+      <View style={{ flex: 1 }}>
+        <SkeletonLine variant="bodyStrong" width={`${50 - i * 8}%`} />
+        <SkeletonLine variant="caption" width="80%" />
+      </View>
+      {trailing}
+    </View>
+  );
   return (
     <>
-      {Array.from({ length: rows }, (_, i) => (
-        <View key={i} style={{ marginTop: spacing.lg }}>
-          <SkeletonLine variant="caption" width={116} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }} />
+      {[0, 1, 2].map((s) => (
+        <View key={s}>
+          <View style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }}>
+            <SkeletonLine variant="caption" width={116} />
+          </View>
           <SkeletonCard padded>
-            <Skeleton height={48} radius={radii.md} />
-            <SkeletonLine variant="caption" width="70%" style={{ marginTop: spacing.sm }} />
+            {s === 0 ? [0, 1, 2].map((i) => row(i, <SkeletonTile size={22} radius={radii.pill} />))
+              : s === 1 ? [0, 1, 2].map((i) => row(i, <SkeletonPill width={51} height={31} />))
+              : <SkeletonLine variant="caption" width="60%" />}
           </SkeletonCard>
         </View>
-      ))}
+      )).slice(0, rows)}
     </>
   );
 }

@@ -3,11 +3,11 @@ import { t, dateLocale, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
-import { Bar } from "../ui/Bar";
+import { Bar, BAR_HEIGHT } from "../ui/Bar";
 import { CheckIcon, TrophyIcon } from "../ui/icons";
 import { AchievementIcon } from "../ui/achievementIcon";
 import { EmptyCard, ScreenHeader } from "../social/common";
-import { Skeleton, SkeletonLine } from "../ui/Skeleton";
+import { SkeletonBar, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
 import { GROUP_ORDER, GROUP_LABEL_KEY, type Achievement, type Tier, type AchGroup } from "../data/achievements";
@@ -62,6 +62,19 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
           <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{formatNumber(a.done)}/{formatNumber(a.target)}</Text>
         </View>
       )}
+    </View>
+  );
+}
+
+/** `Badge` ile aynı kap: madalya, başlık, ipucu, ilerleme şeridi ve sayı. */
+function BadgeSkeleton({ colors }: { colors: Palette }) {
+  return (
+    <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md }}>
+      <SkeletonTile size={46} radius={radii.pill} />
+      <SkeletonLine variant="bodyStrong" width="70%" style={{ marginTop: spacing.sm }} />
+      <SkeletonLine variant="micro" width="90%" style={{ marginTop: 2 }} />
+      <SkeletonBar height={5} style={{ marginTop: spacing.sm }} />
+      <SkeletonLine variant="micro" width={40} style={{ marginTop: 3 }} />
     </View>
   );
 }
@@ -166,11 +179,17 @@ export function AchievementsScreen() {
         // Ortalanmış spinner yerine tahtanın kendi iskeleti: içerik gelince
         // rozetler ortadan yukarı sıçramıyor, oldukları yerde beliriyor.
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-          {[0, 1, 2].map((g) => (
+          {/* Gerçek sırayla: şerit, "sıradaki" (dört rozet) ve bir grup; kart
+              `Badge` ölçüsünde. Düz 140'lık bloklar rozet kartının boyunu
+              tutmuyordu, şerit de hiç yoktu. */}
+          <View style={{ marginTop: spacing.sm }}>
+            <SkeletonBar height={BAR_HEIGHT.inline} />
+          </View>
+          {[0, 1].map((g) => (
             <View key={g} style={{ marginTop: spacing.lg }}>
               <SkeletonLine variant="caption" width={96} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }} />
-              <CardGrid columns={gridColumns}>
-                {[0, 1].map((i) => <Skeleton key={i} height={140} radius={radii.lg} />)}
+              <CardGrid columns={gridColumns} stretch>
+                {[0, 1, 2, 3].map((i) => <BadgeSkeleton key={i} colors={colors} />)}
               </CardGrid>
             </View>
           ))}

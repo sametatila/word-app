@@ -79,10 +79,16 @@ export function UserScreen() {
   /* HATA İSKELETTE KALMIYOR: iskelet "yükleniyor" diyor ve altındaki kırmızı
      satırla birlikte sonsuza dek duruyordu; tekrar deneme yolu da yoktu. */
   if (!data && err) return wrap(<EmptyCard live="assertive" icon={AlertIcon} tint={colors.danger} title={t("user.profile")} text={err} action={t("common.try_again")} onAction={() => { setErr(null); setAttempt((n) => n + 1); }} />);
-  if (!data) return wrap(
-    <>
+  /* İskelet `wrap`tan değil gerçek dalın kabından geçiyor: `wrap` kartları 12
+     aralıkla diziyor, gerçek ekranda kimlik kartının altı 16. Izgara da
+     gerçekteki gibi altı karo (dört çiziliyordu, içerik gelince bir satır
+     uzuyordu). */
+  if (!data) return (
+    <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <ScreenHeader title={t("user.profile")} />
+      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false} scrollEnabled={false}>
       {/* Kimlik kartı + istatistik ızgarası: gerçek düzenin ölçüleriyle. */}
-      <SkeletonCard style={{ alignItems: "center" }}>
+      <SkeletonCard style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
         <SkeletonTile size={ds(76)} radius={38} />
         <SkeletonLine variant="h2" width={172} style={{ marginTop: spacing.md }} />
         <SkeletonLine variant="caption" width={198} />
@@ -91,15 +97,16 @@ export function UserScreen() {
           <SkeletonPill width={84} height={41} />
         </View>
       </SkeletonCard>
-      <CardGrid columns={gridColumns} balance>
-        {[0, 1, 2, 3].map((i) => (
-          <SkeletonCard key={i} style={{ gap: 2 }}>
+      <CardGrid columns={gridColumns} balance stretch>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <SkeletonCard key={i} style={{ flex: 1, gap: 2 }}>
             <SkeletonLine variant="h1" width="55%" />
             <SkeletonLine variant="caption" width="80%" />
           </SkeletonCard>
         ))}
       </CardGrid>
-    </>,
+      </ScrollView>
+    </View>
   );
 
   const u = data.user;

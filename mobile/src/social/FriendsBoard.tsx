@@ -7,7 +7,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { social, type BoardView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { SkeletonLine, SkeletonRows } from "../ui/Skeleton";
+import { SkeletonLine } from "../ui/Skeleton";
+import { BoardRowsSkeleton } from "./LeagueBoard";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, PodiumIcon } from "../ui/icons";
@@ -37,12 +38,17 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
    * durumu ayrı bir kartla söylüyor (`LeagueBoard`), iki sekme artık aynı.
    */
   if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(false); setAttempt((n) => n + 1); }} />;
-  // Satır iskeleti gerçek satırla aynı yükseklikte (40 arma + 12+12 dolgu).
+  // Satır iskeleti lig tablosuyla ortak, gerçek satırın ölçüsünde.
   if (!board) {
     return (
       <View>
-        {!compact ? <SkeletonLine variant="caption" width={190} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }} /> : null}
-        <SkeletonRows count={4} height={64} />
+        {!compact ? (
+          <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }}>
+            <SkeletonLine variant="caption" width={190} />
+            <SkeletonLine variant="caption" width={64} />
+          </View>
+        ) : null}
+        <BoardRowsSkeleton count={4} />
       </View>
     );
   }

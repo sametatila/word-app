@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Avatar, MyAvatar } from "@/components/avatar";
 import { EmptyCard } from "@/components/empty-card";
 import { CheckIcon, TargetIcon } from "@/components/icons";
-import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
+import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow, QuestView } from "@/lib/social/types";
 import { useShell } from "@/components/app-shell";
@@ -188,8 +188,11 @@ export function QuestsSkeleton() {
           <SkeletonTile size={36} className="rounded-full" />
           <SkeletonTile size={36} className="rounded-full" />
         </div>
+        {/* Başlık `text-strong` (Android'de h3), çubuk `mt-3`, pay satırı
+            `micro` ve "görevi bırak" düz bir `micro` bağlantı: iskelet bunları
+            Android'in ölçüsüyle çiziyordu ve kart gelince ~14 px kısalıyordu. */}
         <div className="min-w-0 flex-1">
-          <SkeletonLine variant="h3" width="80%" />
+          <SkeletonLine variant="strong" width="80%" />
           <SkeletonLine variant="caption" width="60%" />
         </div>
         <div className="flex flex-col items-end">
@@ -197,15 +200,15 @@ export function QuestsSkeleton() {
           <SkeletonLine variant="micro" width={54} />
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-3">
         <SkeletonBar height={12} />
-        <div className="mt-2 flex justify-between">
-          <SkeletonLine variant="caption" width={62} />
-          <SkeletonLine variant="strong" width={78} />
-          <SkeletonLine variant="caption" width={62} />
+        <div className="mt-1.5 flex justify-between">
+          <SkeletonLine variant="micro" width={62} />
+          <SkeletonLine variant="micro" width={78} />
+          <SkeletonLine variant="micro" width={62} />
         </div>
         <div className="mt-2 flex justify-end">
-          <SkeletonPill width={84} height={21} />
+          <SkeletonLine variant="micro" width={84} />
         </div>
       </div>
     </SkeletonCard>

@@ -6,7 +6,7 @@ import { Avatar } from "@/components/avatar";
 import { FlagIcon, FlameIcon, PodiumIcon, TrophyIcon } from "@/components/icons";
 import { ReportDialog } from "@/components/report-dialog";
 import { EmptyCard } from "@/components/empty-card";
-import { RowSkeleton, SkeletonCard, SkeletonLine, SkeletonPill } from "@/components/skeleton";
+import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { social, tierKey, type LeagueRowView, type LeagueView } from "@/lib/social/client";
 import { LEAGUE_TIERS } from "@/lib/social/types";
 import { NewAvatarParts } from "@/components/new-avatar-parts";
@@ -93,17 +93,8 @@ export function LeagueBoard() {
      satırları gerçek yükseklikte çiziyor. */
   if (!view)
     return (
-      <div className="flex flex-col gap-3">
-        <SkeletonCard>
-          <div className="flex items-center justify-between gap-3">
-            <div className="min-w-0 flex-1">
-              <SkeletonLine variant="strong" width={140} />
-              <SkeletonLine variant="caption" width="70%" className="mt-1" />
-            </div>
-            <SkeletonPill width={68} height={20} />
-          </div>
-        </SkeletonCard>
-        <RowSkeleton rows={6} height={52} />
+      <div role="status" aria-busy="true" aria-label={t("social.loading")} className="flex flex-col gap-3">
+        <BoardSkeleton rows={6} league />
       </div>
     );
 
@@ -202,6 +193,56 @@ export function LeagueBoard() {
         onClose={() => setReport(null)}
       />
     </div>
+  );
+}
+
+/**
+ * Lig ve arkadaş tablosunun ortak iskeleti (`FriendsBoard` da kullanıyor).
+ *
+ * Tablo bir kart değil: bölüm başlığı ve altında ayrı satır kartları. Eski
+ * iskelet başlığı bir KART içinde, satırları 52 piksellik düz bloklar olarak
+ * çiziyordu; gerçek satır (40'lık arma, ad + seri, XP + birim, `p-3`) ~69
+ * piksel. `league` lig başlığının açıklama satırını ve alttaki kuşak notunu
+ * da ayırıyor.
+ */
+export function BoardSkeleton({ rows, league = false }: { rows: number; league?: boolean }) {
+  return (
+    <section aria-hidden>
+      <div className="mb-2 ml-1 flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <SkeletonLine variant="micro" width={96} />
+          {league ? <SkeletonLine variant="caption" width={200} /> : null}
+        </div>
+        <SkeletonLine variant="caption" width={64} />
+      </div>
+      <ol className="space-y-2">
+        {Array.from({ length: rows }).map((_, i) => (
+          <li
+            key={i}
+            className="flex items-center gap-3 rounded-panel border p-3"
+            style={{ background: "var(--surface)", borderColor: "var(--hairline)" }}
+          >
+            <span className="flex w-[30px] shrink-0 justify-center">
+              <SkeletonLine variant="h3" width={16} />
+            </span>
+            <SkeletonTile size={40} className="rounded-full" />
+            <span className="min-w-0 flex-1">
+              <SkeletonLine variant="strong" width={`${70 - (i % 3) * 12}%`} />
+              <SkeletonLine variant="micro" width={72} className="mt-0.5" />
+            </span>
+            <span className="flex shrink-0 flex-col items-end">
+              <SkeletonLine variant="h3" width={44} />
+              <SkeletonLine variant="micro" width={18} />
+            </span>
+          </li>
+        ))}
+      </ol>
+      {league ? (
+        <div className="mt-3 flex justify-center">
+          <SkeletonLine variant="micro" width={220} />
+        </div>
+      ) : null}
+    </section>
   );
 }
 

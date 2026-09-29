@@ -6,7 +6,7 @@ import { PodiumIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { FlameIcon } from "@/components/icons";
-import { RowSkeleton } from "@/components/skeleton";
+import { BoardSkeleton } from "@/components/social/league-board";
 import { social, type BoardView } from "@/lib/social/client";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
@@ -27,7 +27,14 @@ export function FriendsBoard() {
   useEffect(() => {
     social.board().then(setBoard).catch(() => setErr(true));
   }, [attempt]);
-  if (!board && !err) return <RowSkeleton rows={3} height={48} />;
+  /* Satırlar gerçek ölçüde (lig tablosuyla ortak iskelet); 48'lik düz
+     bloklar ne bölüm başlığını ne satırın boyunu tutuyordu. */
+  if (!board && !err)
+    return (
+      <div role="status" aria-busy="true" aria-label={t("social.loading")}>
+        <BoardSkeleton rows={4} />
+      </div>
+    );
   /*
    * AĞ HATASI "KİMSE YOK" DEĞİL.
    *

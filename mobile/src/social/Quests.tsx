@@ -4,7 +4,7 @@ import { Alert, View } from "react-native";
 import { social, errorText, type FriendRow, type QuestView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
+import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { Avatar, MyAvatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { TargetIcon, CheckIcon } from "../ui/icons";
@@ -102,7 +102,8 @@ function QuestsSkeleton() {
           <SkeletonLine variant="bodyStrong" width={78} />
           <SkeletonLine variant="caption" width={62} />
         </View>
-        <SkeletonPill width={84} height={21} style={{ alignSelf: "flex-end", marginTop: spacing.sm }} />
+        {/* "Görevi bırak" hapı: `micro` satır + 4'er dolgu (21 sabit yükseklik kısaydı). */}
+        <SkeletonPill width={84} height={textHeight("micro") + spacing.xs * 2} style={{ alignSelf: "flex-end", marginTop: spacing.sm }} />
       </View>
     </SkeletonCard>
   );

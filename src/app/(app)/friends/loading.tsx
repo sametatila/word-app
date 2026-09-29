@@ -1,11 +1,11 @@
 import { LoadingRegion } from "@/components/loading-region";
-import { PageSkeleton } from "@/components/skeleton";
+import { FriendsSkeleton } from "./skeleton";
 
-/** Arkadaşlar gelene kadar iskelet — mobil `FriendsScreen` ile aynı davranış. */
+/** Topluluk gelene kadar iskelet — parçalar ve gerekçesi `skeleton.tsx`te. */
 export default function Loading() {
   return (
     <LoadingRegion className="mx-auto w-full max-w-3xl">
-      <PageSkeleton rows={4} />
+      <FriendsSkeleton />
     </LoadingRegion>
   );
 }

@@ -1,11 +1,15 @@
 import { LoadingRegion } from "@/components/loading-region";
-import { PageSkeleton } from "@/components/skeleton";
+import { FriendsSkeleton } from "../friends/skeleton";
 
-/** Sıralama gelene kadar iskelet — mobil `LeaderboardScreen` ile aynı davranış. */
+/**
+ * Eski adres `/friends?tab=league`e yönleniyor (bkz. `page.tsx`): yönlenme
+ * sürerken gidilen yerin iskeleti çiziliyor, genel "altı blok" değil — yoksa
+ * ekran iki ayrı iskelet arasında zıplıyordu.
+ */
 export default function Loading() {
   return (
     <LoadingRegion className="mx-auto w-full max-w-3xl">
-      <PageSkeleton rows={6} />
+      <FriendsSkeleton />
     </LoadingRegion>
   );
 }

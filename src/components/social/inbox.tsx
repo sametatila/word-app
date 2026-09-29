@@ -136,11 +136,13 @@ export function Inbox() {
     return (
       <ol aria-hidden className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
         {Array.from({ length: 5 }).map((_, i) => (
-          <li key={i} className="flex items-center gap-3 px-4 py-3" style={{ opacity: 1 - i * 0.12 }}>
+          /* Zaman satırı gerçekte metnin HEMEN altında (`mt-1` 4 px fazlaydı);
+             opaklık rampası da yok (bkz. `components/skeleton` başı). */
+          <li key={i} className="flex items-center gap-3 px-4 py-3">
             <SkeletonTile size={40} className="rounded-full" />
             <span className="min-w-0 flex-1">
               <SkeletonLine variant="body" width={`${72 - i * 6}%`} />
-              <SkeletonLine variant="micro" width={64} className="mt-1" />
+              <SkeletonLine variant="micro" width={64} />
             </span>
             <SkeletonTile size={34} className="rounded-full" />
           </li>
