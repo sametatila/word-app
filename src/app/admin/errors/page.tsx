@@ -3,8 +3,8 @@ import { adminGate } from "@/lib/admin";
 import { AdminDenied } from "../_ui/ui";
 import { listErrorGroups } from "@/lib/client-errors";
 import { ErrorsAdmin } from "./errors-admin";
-import { loadPanel } from "../_data";
-import { ClientErrorsByScreen } from "../dashboard";
+import { loadPanel, loadPulse } from "../_data";
+import { ClientErrorsOverview } from "../dashboard";
 
 export const metadata: Metadata = { title: "Hatalar" };
 export const dynamic = "force-dynamic";
@@ -24,8 +24,8 @@ export default async function AdminErrorsPage({ searchParams }: { searchParams: 
   /* `?grup=<parmak izi>`: uyarıdaki bağlantı doğrudan o grubu açıyor. Grup
      çözüldü olarak işaretlenmişse listede görünsün diye çözülenler de okunuyor. */
   const focus = grup && /^[\w-]{6,64}$/.test(grup) ? grup : null;
-  const [groups, panel] = await Promise.all([listErrorGroups(all === "1" || !!focus), loadPanel()]);
+  const [groups, panel, pulse] = await Promise.all([listErrorGroups(all === "1" || !!focus), loadPanel(), loadPulse()]);
   /* Ekrana göre dağılım panonun "Olaylar" sekmesindeydi, grupların kendisi
      burada: aynı sorunun iki yüzü iki ayrı yerde okunuyordu. */
-  return <ErrorsAdmin groups={groups} showAll={all === "1"} focus={focus} top={<ClientErrorsByScreen data={panel.value.data} days={30} />} />;
+  return <ErrorsAdmin groups={groups} showAll={all === "1"} focus={focus} top={<ClientErrorsOverview data={panel.value.data} days={30} daily={pulse.value.days} />} />;
 }

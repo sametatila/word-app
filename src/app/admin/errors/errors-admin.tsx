@@ -50,9 +50,12 @@ export function ErrorsAdmin({ groups, showAll, top, focus = null }: { groups: Er
         <Notice tone="warn">Uyarıdaki hata grubu bulunamadı (kayıt silinmiş olabilir). Bütün gruplar: <a className="underline" href="/admin/errors?all=1">/admin/errors?all=1</a></Notice>
       ) : null}
       {top}
-      <Segmented label="Platform" items={["", "web", "android", "ios"].map((p) => [p, p ? PLATFORM[p] : "Hepsi"] as const)} value={platform} onChange={setPlatform} />
-
-      <Panel flush>
+      <Panel
+        title="Hata grupları"
+        hint="Mesaj, yığın, ekran ve sürümle gruplanmış; en son görülen üstte. Açınca yığın."
+        actions={<Segmented label="Platform" items={["", "web", "android", "ios"].map((p) => [p, p ? PLATFORM[p] : "Hepsi"] as const)} value={platform} onChange={setPlatform} />}
+        flush
+      >
         {list.length === 0 ? (
           <div className="px-3 pb-2"><Empty>Açık hata grubu yok.</Empty></div>
         ) : (
