@@ -57,8 +57,31 @@ export function getAvatar(): AvatarConfig {
   return cache ?? DEFAULT_AVATAR;
 }
 
+/*
+  KAYIT SÜRERKEN ESKİ SUNUCU DEĞERİ YERELİ EZMESİN (2026-09-29). Kayıt önce
+  yerele yazılıyor, sunucuya giden istek arkadan geliyor. Arada gelen sayfa
+  verisi (web: düzenin avatarı, mobil: `/api/me`) KAYITTAN ÖNCEKİ değeri
+  taşıyabiliyor ve "sunucu kazanır" eşitlemesi onu yerelin üstüne yazıyordu:
+  kaydedilen avatar yerine eskisi görünüyor, sayfa yenilenince düzeliyordu.
+  Kayıt bekliyorken sunucudan gelen FARKLI değer yok sayılır; sunucu aynı
+  değeri döndürünce ya da onaydan 5 sn sonra (sunucu kaydı düzelttiyse,
+  ör. kilitli parçayı eledi) kural biter ve sunucu yine kazanır.
+*/
+let pending: { json: string; until: number } | null = null;
+const norm = (c: unknown): string => JSON.stringify(parseAvatar(c));
+/** Sunucudan gelen değer bekleyen kaydın ÖNCESİNE mi ait (yok sayılmalı mı). */
+function staleVsPending(parsed: AvatarConfig): boolean {
+  if (!pending) return false;
+  if (norm(parsed) === pending.json || Date.now() > pending.until) {
+    pending = null;
+    return false;
+  }
+  return true;
+}
+
 /** Avatarı kaydeder + tüm dinleyicileri (başlık/profil) günceller. */
 export function saveAvatar(cfg: AvatarConfig): void {
+  pending = { json: norm(cfg), until: Date.now() + 20000 };
   cache = cfg;
   snapshot = cfg;
   loaded = true;
@@ -78,7 +101,11 @@ export function saveAvatar(cfg: AvatarConfig): void {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ avatar: cfg }),
-  }).catch(() => {});
+  })
+    .catch(() => {})
+    .finally(() => {
+      if (pending) pending.until = Math.min(pending.until, Date.now() + 5000);
+    });
 }
 
 /**
@@ -95,6 +122,7 @@ export function saveAvatar(cfg: AvatarConfig): void {
  */
 export function syncAvatarWithServer(remote: unknown): void {
   const parsed = parseAvatar(remote);
+  if (parsed && staleVsPending(parsed)) return;
   if (parsed) {
     cache = parsed;
     snapshot = parsed;

@@ -62,8 +62,31 @@ export async function getAvatar(): Promise<AvatarConfig> {
   return cache ?? DEFAULT_AVATAR;
 }
 
+/*
+  KAYIT SÜRERKEN ESKİ SUNUCU DEĞERİ YERELİ EZMESİN (2026-09-29). Kayıt önce
+  yerele yazılıyor, sunucuya giden istek arkadan geliyor. Arada gelen sayfa
+  verisi (`/api/me`; web'de düzenin avatarı) KAYITTAN ÖNCEKİ değeri
+  taşıyabiliyor ve "sunucu kazanır" eşitlemesi onu yerelin üstüne yazıyordu:
+  kaydedilen avatar yerine eskisi görünüyor, sayfa yenilenince düzeliyordu.
+  Kayıt bekliyorken sunucudan gelen FARKLI değer yok sayılır; sunucu aynı
+  değeri döndürünce ya da onaydan 5 sn sonra (sunucu kaydı düzelttiyse,
+  ör. kilitli parçayı eledi) kural biter ve sunucu yine kazanır.
+*/
+let pending: { json: string; until: number } | null = null;
+const norm = (c: unknown): string => JSON.stringify(parseAvatar(c));
+/** Sunucudan gelen değer bekleyen kaydın ÖNCESİNE mi ait (yok sayılmalı mı). */
+function staleVsPending(parsed: AvatarConfig): boolean {
+  if (!pending) return false;
+  if (norm(parsed) === pending.json || Date.now() > pending.until) {
+    pending = null;
+    return false;
+  }
+  return true;
+}
+
 /** Avatarı kaydeder + tüm dinleyicileri (header/profil) günceller. */
 export async function saveAvatar(cfg: AvatarConfig): Promise<void> {
+  pending = { json: norm(cfg), until: Date.now() + 20000 };
   cache = cfg;
   loaded = true;
   emit();
@@ -74,7 +97,9 @@ export async function saveAvatar(cfg: AvatarConfig): Promise<void> {
     Yerel kayıt önce yapılıyor ki arayüz beklemeden değişsin; ağ hatası sessiz,
     bir sonraki kayıt ya da açılış eşitlemesi yakalıyor.
   */
-  void updateProfile({ avatar: cfg });
+  void updateProfile({ avatar: cfg }).finally(() => {
+    if (pending) pending.until = Math.min(pending.until, Date.now() + 5000);
+  });
 }
 
 /**
@@ -86,6 +111,7 @@ export async function saveAvatar(cfg: AvatarConfig): Promise<void> {
  */
 export async function syncAvatarWithServer(remote: unknown): Promise<void> {
   const parsed = parseAvatar(remote);
+  if (parsed && staleVsPending(parsed)) return;
   if (parsed) {
     cache = parsed;
     loaded = true;
