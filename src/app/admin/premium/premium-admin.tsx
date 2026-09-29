@@ -4,7 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { PremiumConfig } from "@/lib/premium/gates";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, Linkify, BTN, DANGER, DataTable, Field, FIELD, FIELD_AREA, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
+import { AdminPage, Linkify, BTN, DANGER, DataTable, Field, FIELD, FIELD_AREA, FIELD_STYLE, PageHeader, Panel, PanelGrid, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 type CodeRow = {
@@ -140,7 +140,7 @@ export function PremiumAdmin({
           bitince yerine oturuyor, alttaki hesap ve kod bölümlerinin üstüne
           binmiyor (eskiden bütün sayfa boyunca kartların üstünü örtüyordu). */}
       <div className="space-y-5">
-        <div className="grid gap-5 @4xl:grid-cols-2">
+        <PanelGrid>
           <Panel title="Ücretsiz katman" hint={<>Kural (2026-09-25): her yüzeyde <b>taban hak</b>; üstüne her dilim, açık hakların hepsi <b>bitirilince VE</b> seri eşiğe varınca açılır — izin verilen = taban + ek hak × k, k = min(⌊en uzun seri ÷ seri adımı⌋, bitirilmiş dilim). Patika Konuşma, Patika Yazma ve Beceriler seviye başına ve <b>ayrı sayaç</b>. 0 yazmak “ücretsizde hiç yok” demek.</>} span>
             <Grid>
               <Num label="Patika Konuşma adımı (seviye başına)" v={cfg.free.conversationsPerLevel} on={(n) => num(["free", "conversationsPerLevel"], n)} />
@@ -186,7 +186,7 @@ export function PremiumAdmin({
               ))}
             </div>
           </Panel>
-        </div>
+        </PanelGrid>
 
         <div className="sticky bottom-3 z-10 flex flex-wrap items-center gap-3 rounded-panel border p-3" style={{ borderColor: "var(--border)", background: "var(--surface)", boxShadow: "var(--shadow-soft)" }}>
           <button type="button" onClick={save} disabled={busy} className={BTN.primary}>Sınırları kaydet</button>
@@ -210,7 +210,7 @@ export function PremiumAdmin({
 
       <CodesSection codes={codes} post={post} busy={busy} />
 
-      <div className="grid gap-5 @4xl:grid-cols-2">
+      <PanelGrid>
         <Panel title="Referans (davet)">
           <p className="muted text-caption">
             Burada ayarlanacak bir şey yok. Davetin karşılığı <b>premium süresi değil</b>:
@@ -232,7 +232,7 @@ export function PremiumAdmin({
             ])}
           />
         </Panel>
-      </div>
+      </PanelGrid>
     </AdminPage>
   );
 
