@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { adminGate, adminPreview, adminSecurityState, ADMIN_FRESH_HOURS } from "@/lib/admin";
 import type { QueueSummary } from "@/lib/response-queue";
+import { QUEUE_ALERT_FAMILIES } from "@/lib/admin-inbox-shared";
 import { loadAlerts, loadPulse, loadResponses } from "./_data";
 import { AdminRail, AdminSections, type BadgeTone, type NavCounts } from "./_ui/nav";
 import { PulseStrip } from "./_ui/pulse";
@@ -86,14 +87,19 @@ export default async function AdminLayout({ children }: { children: React.ReactN
  * durumdaki "Geri dönüş bekleyenler" ile aynı özetten (`lib/response-queue`).
  * Ton: süresi geçen iş ya da kritik uyarı kırmızı, yaklaşan sarı, gerisi gri.
  */
-function navCounts(alerts: { level: "kritik" | "uyari" }[], queues: QueueSummary[]): NavCounts {
+function navCounts(alerts: { key: string; level: "kritik" | "uyari" }[], queues: QueueSummary[]): NavCounts {
   const q = (...ids: QueueSummary["queue"][]) => {
     const xs = queues.filter((x) => ids.includes(x.queue));
     const tone: BadgeTone = xs.some((x) => x.late) ? "bad" : xs.some((x) => x.soon) ? "warn" : "muted";
     return { n: xs.reduce((a, x) => a + x.open, 0), tone };
   };
   const critical = alerts.filter((a) => a.level === "kritik").length;
+  /* Gelen işler: kuyruklar + kuyrukta iş olarak durmayan uyarılar (`lib/admin-inbox`). */
+  const system = alerts.filter((a) => !QUEUE_ALERT_FAMILIES.has(a.key.split(":")[0]));
+  const all = q("user_report", "ai_report", "content_feedback", "store_review");
+  const inboxTone: BadgeTone = system.some((a) => a.level === "kritik") || all.tone === "bad" ? "bad" : system.length || all.tone === "warn" ? "warn" : "muted";
   return {
+    inbox: { n: all.n + system.length, tone: inboxTone },
     alerts: { n: alerts.length, tone: critical ? "bad" : "warn" },
     reports: q("user_report", "ai_report"),
     feedback: q("content_feedback"),

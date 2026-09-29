@@ -373,7 +373,7 @@ export async function runAlerts(): Promise<{ active: number; sent: number; resol
   }
 
   if (lines.length && telegramConfigured()) {
-    await sendTelegram(`<b>Lernomi</b>\n${lines.join("\n\n")}\n\nGenel durum: ${esc(absolute(SITE_URL, "/admin"))}`);
+    await sendTelegram(`<b>Lernomi</b>\n${lines.join("\n\n")}\n\nGelen işler: ${esc(absolute(SITE_URL, "/admin"))}`);
   }
   await saveState(state);
   return { active: alerts.length, sent, resolved, configured: telegramConfigured() };

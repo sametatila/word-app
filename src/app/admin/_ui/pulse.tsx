@@ -95,7 +95,7 @@ export function PulseStrip({ metrics, days, failed }: { metrics: TrendMetric[]; 
         </Link>
       ))}
       <Link
-        href="/admin#son-7-gun"
+        href="/admin/durum#son-7-gun"
         className="muted flex shrink-0 items-center gap-1 px-4 text-caption whitespace-nowrap hover:text-[var(--text)]"
         title={failed ? "Göstergelerin bir kısmı okunamadı; ayrıntı Genel durumda." : "Sekiz göstergenin tamamı, önceki haftayla"}
       >

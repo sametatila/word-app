@@ -21,7 +21,7 @@ import { ResponseGuide, SlaBadge } from "../_ui/sla";
  * / kaç engel" yazıyor: tek bir şikâyet gürültü olabilir, beşinci değil.
  */
 
-const USER_REASON: Record<string, string> = {
+export const USER_REASON: Record<string, string> = {
   inappropriate: "Uygunsuz ad",
   spam: "Spam",
   abuse: "Taciz / hakaret",

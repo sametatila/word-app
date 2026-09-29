@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
  * üste duruyor, dar ekranda yarısı görünmüyordu ve bir sayfanın hangi grupta
  * olduğu tarihsel birikimle belirlenmişti. Artık beş bölüm, her biri tek soru:
  *
- *   Bugün        dönülmesi gerekenler (uyarılar, şikâyetler, içerik bildirimleri)
+ *   Bugün        dönülmesi gerekenler (tek kuyruk), genel durum, şikâyetler, içerik bildirimleri
  *   Kullanıcılar kim, nasıl büyüyor, deneyimi nasıl
  *   Gelir        ne kazanılıyor, premium nasıl ayarlı
  *   İçerik       öğrenme verisi, quiz, içerik sürümü, avatar
@@ -21,19 +21,22 @@ import { usePathname } from "next/navigation";
  * bir bölümde; hangi bölümde olunduğunu en uzun eşleşen adres belirliyor
  * (`/admin/moderation/content` Moderasyon'a değil İçerik bildirimlerine düşer).
  */
-export type BadgeKey = "alerts" | "reports" | "feedback" | "reviews";
+export type BadgeKey = "inbox" | "alerts" | "reports" | "feedback" | "reviews";
 export type BadgeTone = "bad" | "warn" | "muted";
 export type NavCounts = Partial<Record<BadgeKey, { n: number; tone: BadgeTone }>>;
 
 type NavItem = { href: string; label: string; badge?: BadgeKey };
-export type NavSection = { key: string; label: string; items: NavItem[] };
+/** `badge`: bölümün kendi rozeti; yoksa sayfalarınınki toplanır (Bugün'de toplam, Gelen işler'deki işleri iki kez sayardı). */
+export type NavSection = { key: string; label: string; items: NavItem[]; badge?: BadgeKey };
 
 export const NAV: NavSection[] = [
   {
     key: "today",
     label: "Bugün",
+    badge: "inbox",
     items: [
-      { href: "/admin", label: "Genel durum", badge: "alerts" },
+      { href: "/admin", label: "Gelen işler", badge: "inbox" },
+      { href: "/admin/durum", label: "Genel durum", badge: "alerts" },
       { href: "/admin/moderation", label: "Şikâyetler", badge: "reports" },
       { href: "/admin/moderation/content", label: "İçerik bildirimleri", badge: "feedback" },
     ],
@@ -108,6 +111,7 @@ function Count({ c }: { c?: { n: number; tone: BadgeTone } }) {
 
 /** Bölümün rozeti: sayfalarının toplamı, tonu en kötüsü. */
 function sectionCount(section: NavSection, counts: NavCounts) {
+  if (section.badge) return counts[section.badge];
   const cs = section.items.map((i) => (i.badge ? counts[i.badge] : undefined)).filter((c): c is { n: number; tone: BadgeTone } => !!c && c.n > 0);
   if (!cs.length) return undefined;
   const tone: BadgeTone = cs.some((c) => c.tone === "bad") ? "bad" : cs.some((c) => c.tone === "warn") ? "warn" : "muted";

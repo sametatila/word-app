@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
-import { loadAlerts, loadPanel, loadResponses, panelIssues, parseRange } from "./_data";
-import { StatusSection } from "./dashboard";
-import { AdminDenied } from "./_ui/ui";
-import { PanelPage } from "./_ui/panel-page";
+import { loadAlerts, loadPanel, loadResponses, panelIssues, parseRange } from "../_data";
+import { StatusSection } from "../dashboard";
+import { AdminDenied } from "../_ui/ui";
+import { PanelPage } from "../_ui/panel-page";
 
-export const metadata: Metadata = { title: "Yönetim" };
+export const metadata: Metadata = { title: "Genel durum" };
 export const dynamic = "force-dynamic";
 
 /**
- * lernomi.app/admin — GENEL DURUM: "her şey yolunda mı" sorusunun tek cevabı.
+ * lernomi.app/admin/durum — GENEL DURUM: "her şey yolunda mı" sorusunun tek cevabı.
+ * Panelin açılışı artık Gelen işler (`/admin`); sayılar ve eğilimler burada.
  *
  * En üstte Telegram'a giden uyarı motorunun listesi, altında haftalık
  * karşılaştırma, temel sayılar ve etkinlik. Ayrıntı menünün gruplarında
  * (Kullanıcılar, Gelir, İçerik, Sistem). Erişim ADMIN_EMAILS ile sınırlı.
  */
-export default async function AdminHomePage({ searchParams }: { searchParams: Promise<{ taze?: string; aralik?: string }> }) {
+export default async function AdminStatusPage({ searchParams }: { searchParams: Promise<{ taze?: string; aralik?: string }> }) {
   const gate = await adminGate();
   if (!gate.ok) return <AdminDenied title="Yönetim paneli" email={gate.email} />;
   const sp = await searchParams;
@@ -23,7 +24,7 @@ export default async function AdminHomePage({ searchParams }: { searchParams: Pr
   const days = parseRange(sp.aralik);
   const [{ value, at }, alerts, responses] = await Promise.all([loadPanel(fresh, days), loadAlerts(fresh), loadResponses(fresh)]);
   return (
-    <PanelPage title="Genel durum" description="Uyarılar (Telegram'la aynı kaynak), geri dönüş bekleyenler, son 7 gün, temel sayılar." href="/admin" at={at} issues={panelIssues(value)} days={days}>
+    <PanelPage title="Genel durum" description="Uyarılar (Telegram'la aynı kaynak), geri dönüş bekleyenler, son 7 gün, temel sayılar." href="/admin/durum" at={at} issues={panelIssues(value)} days={days}>
       <StatusSection days={days} data={value.data} coverage={value.coverage} openReports={value.openReports} trends={value.trends.metrics} alerts={alerts.value} responses={responses.value} />
     </PanelPage>
   );
