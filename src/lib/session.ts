@@ -1423,32 +1423,38 @@ function lowerProductionCeiling(
   if (over <= 0) return;
   const usage = new Map<string, number>();
   for (const r of rounds) usage.set(r.game, (usage.get(r.game) ?? 0) + 1);
-  // Baştan sona: turun başı hafiflesin; yeni kelimenin ipuçlu yazması (WP-14)
-  // pedagojik adım, dokunulmuyor.
-  for (let i = 0; i < rounds.length && over > 0; i++) {
-    const r = rounds[i];
-    if (!isProductionGame(r.game) || !("word" in r) || (r as { assist?: boolean }).assist) continue;
-    const strength = meta.get(r.id)?.strength ?? "solid";
-    // Tekdüzelik kuralı burada da geçerli: komşu pencerede (üç tur önce/sonra)
-    // çıkan oyun önce denenmiyor; hiçbiri kurulamazsa pencere gevşetiliyor.
-    const near = new Set(rounds.slice(Math.max(0, i - RECENT_GAME_WINDOW), i + RECENT_GAME_WINDOW + 1).filter((_, k) => k !== Math.min(i, RECENT_GAME_WINDOW)).map((x) => x.game));
-    const all = (["choice", "listen", "truefalse", ...(r.word.artikel ? ["artikel"] : [])] as Round["game"][])
-      .filter((g) => !skipGames.includes(g))
-      .sort((a, b) => (usage.get(a) ?? 0) - (usage.get(b) ?? 0));
-    // Hemen yanındaki turla aynı oyun HİÇ konmuyor: öyleyse üretim turu kalıyor.
-    const adjacent = new Set([rounds[i - 1]?.game, rounds[i + 1]?.game]);
-    const options = [...all.filter((g) => !near.has(g)), ...all.filter((g) => near.has(g) && !adjacent.has(g))];
-    let alt: Round | null = null;
-    for (const g of options) {
-      alt = makeRound(g, r.word, pool, nextId, strength, native);
-      if (alt) break;
+  // Tekdüzelik kuralı burada da geçerli ve İKİ GEÇİŞLE: önce yalnız komşu
+  // pencerede (üç tur önce/sonra) çıkmamış oyunla, bütün tura bakarak; pencere
+  // ancak o geçiş tavanı indiremediyse gevşiyor. Tek geçişte her tur kendi
+  // penceresi doluysa hemen gevşiyordu, oysa aynı düşüş sonraki bir üretim
+  // turunda pencereyi bozmadan yapılabiliyordu (e2e 11j, 20 oturumda ~%40
+  // olasılıkla bir "artikel · truefalse · listen · artikel" dizisi).
+  for (const relaxed of [false, true]) {
+    // Baştan sona: turun başı hafiflesin; yeni kelimenin ipuçlu yazması (WP-14)
+    // pedagojik adım, dokunulmuyor.
+    for (let i = 0; i < rounds.length && over > 0; i++) {
+      const r = rounds[i];
+      if (!isProductionGame(r.game) || !("word" in r) || (r as { assist?: boolean }).assist) continue;
+      const strength = meta.get(r.id)?.strength ?? "solid";
+      const near = new Set(rounds.slice(Math.max(0, i - RECENT_GAME_WINDOW), i + RECENT_GAME_WINDOW + 1).filter((_, k) => k !== Math.min(i, RECENT_GAME_WINDOW)).map((x) => x.game));
+      const all = (["choice", "listen", "truefalse", ...(r.word.artikel ? ["artikel"] : [])] as Round["game"][])
+        .filter((g) => !skipGames.includes(g))
+        .sort((a, b) => (usage.get(a) ?? 0) - (usage.get(b) ?? 0));
+      // Hemen yanındaki turla aynı oyun HİÇ konmuyor: öyleyse üretim turu kalıyor.
+      const adjacent = new Set([rounds[i - 1]?.game, rounds[i + 1]?.game]);
+      const options = relaxed ? all.filter((g) => near.has(g) && !adjacent.has(g)) : all.filter((g) => !near.has(g));
+      let alt: Round | null = null;
+      for (const g of options) {
+        alt = makeRound(g, r.word, pool, nextId, strength, native);
+        if (alt) break;
+      }
+      if (!alt) continue;
+      usage.set(r.game, (usage.get(r.game) ?? 1) - 1);
+      usage.set(alt.game, (usage.get(alt.game) ?? 0) + 1);
+      meta.set(alt.id, meta.get(r.id) ?? { word: r.word, strength });
+      rounds[i] = alt;
+      over--;
     }
-    if (!alt) continue;
-    usage.set(r.game, (usage.get(r.game) ?? 1) - 1);
-    usage.set(alt.game, (usage.get(alt.game) ?? 0) + 1);
-    meta.set(alt.id, meta.get(r.id) ?? { word: r.word, strength });
-    rounds[i] = alt;
-    over--;
   }
 }
 
