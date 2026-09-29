@@ -18,10 +18,19 @@ import { useEffect, useState } from "react";
  */
 const blobs = new Map<string, Promise<Blob>>();
 
+/**
+ * Klip dosyalarının SÜRÜMÜ. `/anim/*` 4 saat önbellekte; klipler aynı adla
+ * yeniden çizilince (2026-09-29: tam karşıdan) tarayıcı eskisini gösteriyordu.
+ * Klipler değiştikçe bir artırılır. `components/mascot` durağan kare için de
+ * bunu kullanır.
+ */
+export const CLIP_VERSION = 2;
+export const clipPath = (file: string) => `/anim/${file}.webp?v=${CLIP_VERSION}`;
+
 function loadBlob(file: string): Promise<Blob> {
   let p = blobs.get(file);
   if (!p) {
-    p = fetch(`/anim/${file}.webp`).then((r) => {
+    p = fetch(clipPath(file)).then((r) => {
       if (!r.ok) throw new Error(`clip ${file}: ${r.status}`);
       return r.blob();
     });
@@ -56,7 +65,7 @@ export function useClipUrl(file: string | null): string | null {
         setUrl(objectUrl);
       })
       .catch(() => {
-        if (alive) setUrl(`/anim/${file}.webp`);
+        if (alive) setUrl(clipPath(file));
       });
     return () => {
       alive = false;

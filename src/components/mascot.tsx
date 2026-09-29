@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
-import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
+import { clipPath, preloadClips, useClipUrl } from "@/lib/mascot-clips";
 
 /**
  * Nomi — uygulamanın mirketi.
@@ -212,7 +212,7 @@ export function Mascot({
       />
       {still ? (
         // eslint-disable-next-line @next/next/no-img-element -- tek kare WebP; next/image burada kazanç getirmiyor
-        <img src={`/anim/${STILL.file}.webp`} alt="" className="block h-full w-full object-contain" draggable={false} />
+        <img src={clipPath(STILL.file)} alt="" className="block h-full w-full object-contain" draggable={false} />
       ) : (
         <>
           {/* Takas tamponu: yeni klip çözülene kadar eskinin donmuş nötr karesi. */}
@@ -251,7 +251,7 @@ export function Mascot({
             /* Klip yüklenemezse nötr kareye düş. */
             onError={(e) => {
               e.currentTarget.onerror = null;
-              e.currentTarget.src = `/anim/${STILL.file}.webp`;
+              e.currentTarget.src = clipPath(STILL.file);
             }}
           />
           )}
