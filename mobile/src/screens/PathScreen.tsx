@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { t, dateLocale } from "../lib/i18n";
+import { t, dateLocale, currentLang } from "../lib/i18n";
+import { currentCourseId } from "../lib/courses";
 import { View, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -190,16 +191,42 @@ export function PathScreen() {
    * render" ile ekranı düşürüyordu. Kapının üstüne alındılar; `path?.level`
    * zaten null'a dayanıklı.
    */
-  const [moduller, setModuller] = useState<{ index: number; code: string; titleTr: string; titleDe: string }[]>([]);
+  /*
+   * LİSTE KURSA BAĞLI, ANAHTARI DA ÖYLE. Sunucu listeyi profilin kursundan ve
+   * anadilinden kuruyor ama istek yalnız seviyeyi taşıyordu; üç şey üst üste
+   * geldi (iOS, Almanca B1, 2026-09-29: "B1.1 · My career so far", İngilizce
+   * kursun modül sınavı):
+   *   1. Kanca yalnız `seviye` değişince çalışıyordu. Patika sekmesi ayakta
+   *      kaldığı için İngilizce B1 → Almanca B1 geçişinde liste hiç
+   *      yenilenmiyordu; üniteler (odakta tazelenen `useLearningPath`) Almanca,
+   *      sınav satırları İngilizce kalıyordu.
+   *   2. Yanıt `private, max-age=3600` idi ve iOS'ta `fetch` NSURLCache'ten
+   *      geçiyor: istek yenilense bile aynı adres bir saat boyunca eski kursun
+   *      yanıtını döndürüyordu (Android'in OkHttp'si önbelleksiz, orada yoktu).
+   *   3. Yeni liste gelene kadar eskisi çizilmeye devam ediyordu.
+   * Şimdi: istek patika her tazelendiğinde yeniden atılıyor (patika da sunucudan
+   * o anki kursla geliyor, ikisi aynı profil durumunu okuyor), adres kursu ve
+   * dili taşıyor (sunucu okumuyor; yalnız önbellek anahtarı, eski cihazlarda
+   * kalmış kayıtlara da denk gelmesin), sunucu yanıtı artık saklatmıyor ve
+   * liste yalnız kendi anahtarıyla eşleşirken çiziliyor.
+   */
+  type ModulSinavi = { index: number; code: string; titleTr: string; titleDe: string };
+  const [modulListesi, setModulListesi] = useState<{ anahtar: string; liste: ModulSinavi[] }>({ anahtar: "", liste: [] });
   const seviye = path?.level;
+  const kurs = currentCourseId();
+  const arayuzDili = currentLang();
+  const modulAnahtari = seviye ? `${seviye}|${kurs}|${arayuzDili}` : "";
+  const moduller = modulListesi.anahtar === modulAnahtari ? modulListesi.liste : [];
   useEffect(() => {
     if (!seviye) return;
     let iptal = false;
-    api<{ modules?: { index: number; code: string; titleTr: string; titleDe: string }[] }>(`/api/exam?level=${seviye}`)
-      .then((d) => { if (!iptal) setModuller(d.modules ?? []); })
+    const anahtar = `${seviye}|${kurs}|${arayuzDili}`;
+    api<{ modules?: ModulSinavi[] }>(`/api/exam?level=${seviye}&course=${kurs}&lang=${arayuzDili}`)
+      .then((d) => { if (!iptal) setModulListesi({ anahtar, liste: d.modules ?? [] }); })
       .catch(() => { /* çevrimdışı: bölüm gösterilmez */ });
     return () => { iptal = true; };
-  }, [seviye]);
+    // `path`: patikanın her tazelenişinde (odak, kurs/anadil değişimi) liste de tazelensin.
+  }, [seviye, kurs, arayuzDili, path]);
 
 
   if (!path) {

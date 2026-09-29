@@ -90,15 +90,25 @@ export async function GET(req: Request) {
           ? { code: plan.code, titleDe: plan.titleDe, titleTr: plan.titleTr, focus: plan.focus, trial, seconds: MODULE_SECONDS, counts }
           : null,
       },
-      { headers: { "cache-control": "private, max-age=60" } },
+      /* SAKLATILMIYOR: kapak profilin KURSUNA ve anadiline bağlı ama adres
+         yalnız seviye ve modülü taşıyor. `max-age` iken iOS'un NSURLCache'i ve
+         tarayıcı, kurs değiştiren kullanıcıya eski kursun kapağını
+         döndürüyordu (bkz. aşağıdaki liste notu). */
+      { headers: { "cache-control": "private, no-store" } },
     );
   }
   /*
    * Seviyenin modül sınavı LİSTESİ (`?level=A1`, module olmadan).
    *
    * Web bu listeyi sunucu bileşeninde doğrudan `moduleExamPlan`'dan kuruyor;
-   * mobilin böyle bir yolu yok ve tek tek kapak çekmek on istek ederdi. Plan
-   * kod içinde sabit olduğu için yanıt uzun süre önbelleklenebilir.
+   * mobilin böyle bir yolu yok ve tek tek kapak çekmek on istek ederdi.
+   *
+   * YANIT SAKLATILMIYOR. Plan kod içinde sabit ama liste profilin KURSUNDAN ve
+   * anadilinden kuruluyor, adres ise yalnız seviyeyi taşıyor. `private,
+   * max-age=3600` iken iOS'ta `fetch` NSURLCache'ten geçiyor ve İngilizce B1'den
+   * Almanca B1'e geçen hesaba bir saat boyunca İngilizce kursun modül
+   * sınavlarını döndürüyordu (2026-09-29: "B1.1 · My career so far"). Liste
+   * birkaç sabit satır; önbellek kazancı yok denecek kadar az.
    */
   if (level) {
     const listProfile = await ensureProfile(userId);
@@ -107,7 +117,7 @@ export async function GET(req: Request) {
       .map((i) => ({ index: i, plan: moduleExamPlan(listProfile.course ?? "de", level, i) }))
       .filter((m) => m.plan)
       .map(({ index, plan }) => ({ index, code: plan!.code, titleDe: plan!.titleDe, titleTr: t(plan!.titleTr) }));
-    return NextResponse.json({ modules }, { headers: { "cache-control": "private, max-age=3600" } });
+    return NextResponse.json({ modules }, { headers: { "cache-control": "private, no-store" } });
   }
   try {
     return NextResponse.json({ exams: await examHistory(userId) }, { headers: { "cache-control": "no-store" } });
