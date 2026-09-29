@@ -53,7 +53,7 @@ export function AppHeader({ title }: { title: string }) {
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
         {/* ALEV HEP GÖRÜNÜR (2026-09-28): seri 0 olunca kayboluyordu ve
             Gelişim'e giden tek yol oydu. Sıfırda sönük, dokununca yine Gelişim. */}
-        <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: streak > 0 ? soft(colors.streak) : colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+        <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 2, backgroundColor: streak > 0 ? soft(colors.streak) : colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
           <StreakIcon color={streak > 0 ? colors.streakText : colors.textFaint} size={16} />
           <Text variant="bodyStrong" color={streak > 0 ? colors.streakText : colors.textFaint}>{streak}</Text>
         </PressableScale>

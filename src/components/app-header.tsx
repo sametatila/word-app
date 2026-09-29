@@ -61,13 +61,15 @@ export function AppHeader({ title }: { title: string }) {
           href="/profile/progress"
           prefetch={false}
           aria-label={t("appheader.progress")}
-          className="pressable flex items-center gap-1.5 rounded-full px-3 py-2 text-strong"
+          className="pressable flex items-center gap-0.5 rounded-full px-3 py-2 text-strong"
           style={
             streak > 0
               ? { background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }
               : { background: "var(--surface-2)", color: "var(--text-faint)" }
           }
         >
+          {/* Alev çizimi 24'lük kutuda dar (x 4.5–19.5): sağında ~3 px boşluk
+              zaten var, aralık 2 px yetiyor (mobil `AppHeader` aynı). */}
           <StreakIcon size={16} />
           {streak}
         </Link>
