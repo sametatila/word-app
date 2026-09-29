@@ -600,10 +600,10 @@
    */
   --color-brand: var(--color-brand-400);
   /*
-   * BİRİNCİL BUTON KOYU TEMADA: #c2530a dolgu + BEYAZ yazı, 4.60 (AA).
-   * (Samet, 2026-09-28: koyu temada turuncunun üstünde siyah istenmiyor;
-   * mobil `colors.ts` `dark.primary` aynı değer.) Aşağısı önceki kararın
-   * tarihçesi: 400 dolgu + mürekkep yazı, 8.08.
+   * BİRİNCİL BUTON KOYU TEMADA AÇIKTAKİYLE AYNI: 500 dolgu + beyaz yazı
+   * (Samet, 2026-09-29; mobil `colors.ts` `dark.primary` aynı). Koyu temada
+   * turuncunun üstünde siyah istenmedi, bir gün denenen koyu ton (#c2530a)
+   * da beğenilmedi. Aşağısı önceki kararların tarihçesi.
    *
    * Buton iki temada da beyaz / brand-500 çiziyordu ve 2.77 veriyordu. O
    * sapma AÇIK temada bilerek kabul edilmişti (T-KARAR-1) ve gerekçesi "iki
@@ -616,9 +616,9 @@
    * Eşleme Android'in değerleriyle: 400 dolgu, `#1a1008` mürekkep, 8.08.
    * Açık tema değişmedi - orada iki platform zaten aynı (beyaz / 500, 2.77).
    */
-  --brand-fill: #c2530a;
+  --brand-fill: var(--color-brand-500);
   --on-brand: #ffffff;
-  --on-brand-inv: var(--brand-fill);
+  --on-brand-inv: var(--color-brand-700);
   --color-mint: var(--color-mint-300);
   --color-rose: var(--color-rose-300);
   --color-flame: var(--color-flame-300);

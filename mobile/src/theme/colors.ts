@@ -14,8 +14,6 @@ export const orange = {
   500: "#f87612", 600: "#db5f08", 700: "#b44909", 800: "#8f3a0f", 900: "#74310f",
 } as const;
 
-/** Koyu temanın dolu turuncusu: beyaz yazıyla 4.60 (AA). Web `.dark --brand-fill`. */
-const DARK_FILL = "#c2530a";
 
 export type Palette = {
   primary: string; primaryStrong: string; primarySoft: string; onPrimary: string;
@@ -54,7 +52,7 @@ export type Palette = {
   /**
    * BEYAZ bir hap/düğme ÜSTÜNDE marka yazısı (dolu turuncu kartın içindeki
    * "Başla" gibi). Açıkta 700 (5.39); koyuda `primaryText` (400) beyaz
-   * üstünde 2.3'e düşüyor, orada koyu dolgu tonu #c2530a (4.60).
+   * üstünde 2.3'e düşüyor; iki temada da 700.
    */
   primaryOnWhite: string;
   bg: string; surface: string; surface2: string; surfaceGlass: string; elevated: string;
@@ -126,11 +124,13 @@ export const light: Palette = {
 };
 
 export const dark: Palette = {
-  /* Dolu turuncu koyu temada BEYAZ yazı taşıyor (Samet, 2026-09-28): 400 +
-     mürekkep 8.08 veriyordu ama "turuncunun üstünde siyah" koyu temanın tek
-     yabancı parçasıydı. 500 + beyaz 2.77 ile okunmuyor; #c2530a + beyaz 4.60
-     (AA). Yazı ve ikon olarak turuncu `primaryText` (400) parlak kalıyor. */
-  primary: DARK_FILL, primaryStrong: orange[700], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#ffffff", onPrimaryMuted: "#ffffffcc", onPrimarySoft: orange[400], primaryText: orange[400], primaryOnWhite: DARK_FILL,
+  /* DOLU TURUNCU İKİ TEMADA AYNI: 500 + beyaz yazı (Samet, 2026-09-29).
+     Tarihçe: koyu tema önce 400 + mürekkepti ("turuncunun üstünde siyah"
+     istenmedi), sonra bir gün #c2530a + beyaz (4.60) denendi ve koyu tonu
+     beğenilmedi. Marka turuncusu açık temadakiyle birebir kalıyor; 2.77
+     kontrast açık temada da kabul edilmiş aynı değer (T-KARAR-1). Yazı ve
+     ikon olarak turuncu `primaryText` (400) koyu zeminde parlak kalıyor. */
+  primary: orange[500], primaryStrong: orange[600], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#ffffff", onPrimaryMuted: "#ffffffcc", onPrimarySoft: orange[400], primaryText: orange[400], primaryOnWhite: orange[700],
   bg: "#111113", surface: "#1a1a1d", surface2: "#242428", surfaceGlass: "rgba(36,36,40,0.6)", elevated: "#242428",
   border: "#2e2e33", hairline: "#232327",
   text: "#f2f2f3", textMuted: "#9c9ca3", textFaint: "#6b6b72",
