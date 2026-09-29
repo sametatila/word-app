@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { FlameIcon, SparkIcon, XIcon, CheckIcon, BoltIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
-import { RoundSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { sfx } from "../lib/sfx";
@@ -271,16 +271,11 @@ export function ChallengeScreen() {
   const back = useBackConfirm(phase === "playing");
   const page = { flex: 1, backgroundColor: colors.bg } as const;
 
-  /* Oyun turuyla aynı iskelet: bekleme de turun kendi düzeninde duruyor.
-     BEKLEME KENDINI DUYURUYOR (web `role="status" aria-busy`): iskeletin
-     kabuğu canlı bölge ve adı "hazırlanıyor". */
-  if (phase === "loading") {
-    return (
-      <View accessible accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("challenge.preparing")} style={{ flex: 1 }}>
-        <RoundSkeleton />
-      </View>
-    );
-  }
+  /* KAPAĞIN İSKELETİ: yüklenince gelen ekran tur değil kapak (`ready`: üç
+     kural, Başla / Vazgeç). Tur iskeleti çiziliyordu ve kapak gelince ekran
+     baştan kuruluyordu. BEKLEME KENDINI DUYURUYOR (web `role="status"
+     aria-busy`): iskeletin kabuğu canlı bölge ve adı "hazırlanıyor". */
+  if (phase === "loading") return <CoverSkeleton label={t("challenge.preparing")} rules={3} />;
 
   if (phase === "error") {
     return (

@@ -4,7 +4,7 @@ import { BOSS_SECONDS, MIN_ASSESS_WORDS, MIN_FREE_WORDS, PASS_SECTION, PASS_TOTA
 import { View, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { SkeletonCard, SkeletonLine } from "../ui/Skeleton";
+import { CoverSkeleton } from "../game/RoundSkeleton";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
@@ -435,34 +435,13 @@ export function ExamScreen() {
 
   /* Kapak kâğıt OLMADAN çiziliyor; kâğıt yalnız bölümler için gerekli. */
   if (phase === "loading" || (!paper && phase !== "cover")) {
-    return (
-      /*
-        SPINNER YERİNE İSKELET — kâğıdın KAPAK yapısında.
-        `ui/Skeleton`ın kuralı bu ("düz spinner yerine içeriğin ŞEKLİNİ ve
-        YÜKSEKLİĞİNİ gösterir"); ortada dönen bir çark vardı ve kapak gelince
-        iki kart birden beliriyordu. Webin karşılığı `exam-player` yükleme
-        yer tutucusunu (`animate-pulse`) zaten çiziyor.
-      */
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        {header}
-        <View style={{ padding: spacing.lg, gap: spacing.md }}>
-          <SkeletonCard style={{ gap: spacing.sm }}>
-            <SkeletonLine variant="h2" width="80%" />
-            <SkeletonLine variant="body" width="60%" />
-            {[0, 1, 2].map((i) => (
-              <SkeletonLine key={i} variant="caption" width={i === 2 ? "55%" : "85%"} />
-            ))}
-          </SkeletonCard>
-          <SkeletonCard style={{ gap: spacing.xs }}>
-            <SkeletonLine variant="bodyStrong" width={110} />
-            {[0, 1, 2, 3].map((i) => (
-              <SkeletonLine key={i} variant="caption" width="70%" />
-            ))}
-            <SkeletonLine variant="caption" width={90} style={{ marginTop: spacing.xs }} />
-          </SkeletonCard>
-        </View>
-      </View>
-    );
+    /*
+      SPINNER YERİNE İSKELET — KAPAĞIN kendisi (aşağıdaki `cover` dalı):
+      üst çubuk, koç cümlesi, ikon karosu, başlık, beş kural, bölümler kartı,
+      bağımsızlık notu, dipte Başla / Vazgeç. Önceki iskelet iki düz kart
+      çiziyordu ve kapak gelince düğmeler dipte birden beliriyordu.
+    */
+    return <CoverSkeleton label={t("exam.preparing")} top coach rules={5} detailRows={5} footnote />;
   }
 
   if (phase === "cover") {

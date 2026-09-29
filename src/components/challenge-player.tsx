@@ -16,6 +16,7 @@ import { AchievementFlash, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { BoltIcon, CheckIcon, FlameIcon, SparkIcon, XIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, ResultHero, StatRow, CoverBody, StateBody } from "@/components/flow";
+import { CoverSkeleton } from "@/components/flow-skeleton";
 import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
 import { formatDecimal, formatPercent } from "@/lib/i18n/dict";
@@ -270,11 +271,13 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
      bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
      der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
      Android karsiligi `accessibilityLiveRegion="polite"`. */
+  /* İSKELET KAPAĞIN ŞEKLİNDE: yüklenince gelen ekran kapak (`ready`); tek
+     satırlık "hazırlanıyor" kartı kapağın yerini tutmuyordu. */
   if (status === "loading")
     return (
-      <FlowColumn>
-        <p role="status" aria-busy="true" className="card muted p-4 text-center text-body">{t("challenge.preparing")}</p>
-      </FlowColumn>
+      <div role="status" aria-busy="true" aria-label={t("challenge.preparing")}>
+        <CoverSkeleton rules={3} />
+      </div>
     );
 
   if (status === "error")

@@ -14,7 +14,7 @@ import { PrimaryButton } from "../ui/PrimaryButton";
 import { FlowNote } from "../ui/flow";
 import { UnlockProgress } from "../ui/UnlockProgress";
 import { mockCopy, whenText } from "../lib/unlock";
-import { SkeletonLine } from "../ui/Skeleton";
+import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { useAuth } from "../lib/AuthContext";
 import { currentCourseId } from "../lib/courses";
@@ -207,10 +207,29 @@ export function MockExamsScreen() {
         </View>
 
         {!levelReady || catalog === "loading" ? (
-          <Card padded>
-            <SkeletonLine variant="h3" width={140} />
-            <SkeletonLine variant="caption" width="70%" />
-          </Card>
+          /* Katalog inerken LİSTENİN iskeleti: giriş metni + iki kâğıt kartı
+             (`PaperCard`: üst satır, tema, karşılık, süre, dört bölüm satırı).
+             Tek kartlık bir başlık + satır çiziliyordu; kâğıtlar gelince
+             liste bir anda üç ekran boyu uzuyordu. */
+          <View>
+            <View style={{ marginBottom: spacing.md }}>
+              <SkeletonLine variant="caption" width="94%" />
+              <SkeletonLine variant="caption" width="58%" />
+            </View>
+            {[0, 1].map((p) => (
+              <SkeletonCard key={p} label={p === 0 ? t("common.loading") : undefined} style={{ marginBottom: spacing.md }}>
+                <SkeletonLine variant="micro" width={72} />
+                <SkeletonLine variant="bodyStrong" width="48%" style={{ marginTop: 2 }} />
+                <SkeletonLine variant="caption" width="36%" />
+                <SkeletonLine variant="micro" width={64} style={{ marginTop: spacing.xs }} />
+                <View style={{ marginTop: spacing.sm }}>
+                  {[0, 1, 2, 3].map((i) => (
+                    <Skeleton key={i} height={textHeight("bodyStrong") + textHeight("micro") + spacing.sm * 2} radius={radii.md} style={{ marginTop: spacing.xs }} />
+                  ))}
+                </View>
+              </SkeletonCard>
+            ))}
+          </View>
         ) : catalog === "error" && !papers.length ? (
           <EmptyCard
             live="assertive"

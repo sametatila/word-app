@@ -12,7 +12,7 @@ import { SpeakerIcon, ExamIcon, StackIcon, ClockIcon, FlagIcon, TargetIcon, Chec
 import { Chip } from "../ui/Chip";
 import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
-import { RoundSkeleton } from "../game/RoundSkeleton";
+import { CoverSkeleton } from "../game/RoundSkeleton";
 import { demoPlacementFor, estimateLevel } from "../data/demoPlacement";
 import {
   startPlacement,
@@ -347,7 +347,9 @@ export function PlacementScreen() {
     );
   }
 
-  if (loading) return <RoundSkeleton label />;
+  /* Test inerken KAPAĞIN iskeleti (üst çubuk, beş kural, Başla / Sonra):
+     yüklenince gelen ekran kapak, tur değil. */
+  if (loading) return <CoverSkeleton label={t("common.loading")} top rules={5} />;
 
   /*
    * BEKLEME SÜRESİ DOLMADIYSA TEST AÇILMIYOR.

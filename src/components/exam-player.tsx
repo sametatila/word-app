@@ -8,6 +8,8 @@ import { PASS_SECTION, PASS_TOTAL } from "@/lib/exam-types";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "@/components/flow";
+import { ButtonSlot } from "@/components/flow-skeleton";
+import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import { AnimatePresence, motion } from "framer-motion";
 import { T, fillStyle } from "@/lib/motion";
 import { GameSwitch } from "@/components/game-switch";
@@ -466,10 +468,42 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
      bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
      der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
      Android karsiligi `accessibilityLiveRegion="polite"`. */
-  if (phase === "loading" || phase === "finishing") {
+  /* KÂĞIT HAZIRLANIRKEN İLK BÖLÜMÜN GİRİŞİ çiziliyor (`intro`: bant, bölüm
+     kartı, "Bölüme başla"): "Başla"dan sonra gelen ekran o. Tek kart + çubuk
+     onun yerini tutmuyordu. Puanlama beklemesi bir durum, kartı kalıyor. */
+  if (phase === "loading") {
+    return (
+      <div role="status" aria-busy="true" aria-label={t("exam.preparing")}>
+        <FlowColumn>
+          <section aria-hidden className="card overflow-hidden p-4">
+            <SkeletonLine variant="micro" width="34%" />
+            <SkeletonLine variant="h2" width="52%" />
+            <SkeletonLine variant="body" width="64%" className="mt-1" />
+            <div className="mt-3 flex gap-1">
+              {[0, 1, 2, 3].map((i) => (
+                <SkeletonBar key={i} height={6} className="flex-1" />
+              ))}
+            </div>
+          </section>
+          <section aria-hidden className="card flex flex-col gap-2 p-4">
+            <SkeletonLine variant="micro" width="30%" />
+            <div>
+              <SkeletonLine variant="body" width="96%" />
+              <SkeletonLine variant="body" width="88%" />
+              <SkeletonLine variant="body" width="54%" />
+            </div>
+          </section>
+          <div className="flex flex-col gap-2">
+            <ButtonSlot className="px-5 py-4" />
+          </div>
+        </FlowColumn>
+      </div>
+    );
+  }
+  if (phase === "finishing") {
     return (
       <section role="status" aria-busy="true" className="card mx-auto w-full max-w-md p-4">
-        <p className="muted text-body">{t(phase === "loading" ? "exam.preparing" : "item.mono_scoring")}</p>
+        <p className="muted text-body">{t("item.mono_scoring")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>
     );

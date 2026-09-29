@@ -8,6 +8,8 @@ import { fillStyle, staggerDelay } from "@/lib/motion";
 import { dialogueSegments, speakSegments } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, ClockIcon, ExamIcon, FlagIcon, SpeakerIcon, StackIcon, TargetIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
+import { ButtonSlot } from "@/components/flow-skeleton";
+import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
@@ -270,10 +272,42 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
      bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
      der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
      Android karsiligi `accessibilityLiveRegion="polite"`. */
-  if (phase === "loading" || phase === "finishing") {
+  /* TEST HAZIRLANIRKEN İLK SORU KARTI çiziliyor (kelime aşaması: çıkış +
+     çubuk + "aşamayı geç", aşama adı, ipucu, kelime, dört şık, "Bilmiyorum",
+     sayaç) — "Başla"dan sonra gelen ekran o. Hesaplama beklemesi bir durum,
+     kartı kalıyor. */
+  if (phase === "loading") {
+    const pulse = { background: "var(--surface-2)", borderColor: "transparent" };
+    return (
+      <section role="status" aria-busy="true" aria-label={t("plc.preparing")} className="card mx-auto w-full max-w-md p-4">
+        <div aria-hidden className="mb-3 flex flex-col gap-2 text-caption">
+          <div className="flex items-center gap-3">
+            <SkeletonTile size={44} />
+            <SkeletonBar height={8} className="min-w-0 flex-1" />
+            <SkeletonLine variant="caption" width={72} className="shrink-0" />
+          </div>
+          <SkeletonLine variant="caption" width={120} />
+        </div>
+        <SkeletonLine variant="caption" width="70%" className="mb-3" />
+        <SkeletonLine variant="h1" width="46%" className="mb-4" />
+        <div aria-hidden className="grid gap-2">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="option animate-pulse px-3.5 py-3 text-strong" style={pulse}>
+              <span className="invisible">.</span>
+            </div>
+          ))}
+        </div>
+        <ButtonSlot className="mt-2 px-4 py-2.5 text-body" />
+        <div className="mt-3 flex justify-center">
+          <SkeletonLine variant="caption" width={44} />
+        </div>
+      </section>
+    );
+  }
+  if (phase === "finishing") {
     return (
       <section role="status" aria-busy="true" className="card mx-auto w-full max-w-md p-5">
-        <p className="muted text-body">{t(phase === "loading" ? "plc.preparing" : "placement.calculating_your_level")}</p>
+        <p className="muted text-body">{t("placement.calculating_your_level")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>
     );

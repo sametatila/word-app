@@ -9,6 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ExamIcon, LockIcon, CalendarIcon, AlertIcon, CheckIcon, SpeakerIcon } from "../ui/icons";
 import { ReportFlag } from "../ui/ReportFlag";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "../ui/flow";
+import { CoverSkeleton } from "../game/RoundSkeleton";
 import { fetchQuiz, submitQuiz, type Quiz, type QuizBlock, type QuizClientItem, type QuizScore, type QuizStimulus } from "../game/weekly";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
@@ -103,10 +104,15 @@ export function WeeklyScreen() {
 
   /* ── Durumlar ───────────────────────────────────────────────────────── */
 
-  if (phase === "loading" || phase === "submitting") {
+  /* Yükleme KAPAĞIN iskeleti (üst çubuk, üç kural, not, Başla + Kapat):
+     yüklenince gelen ekran kapak. Kaydetme bir durum, durum şablonu kalıyor. */
+  if (phase === "loading") {
+    return <CoverSkeleton label={t("wquiz.preparing")} top rules={3} note={1} secondary tertiary={false} />;
+  }
+  if (phase === "submitting") {
     return (
       <FlowScreen top={<FlowTopBar onClose={close} />} center>
-        <StateBody title={t(phase === "loading" ? "wquiz.preparing" : "wquiz.saving")} />
+        <StateBody title={t("wquiz.saving")} />
       </FlowScreen>
     );
   }

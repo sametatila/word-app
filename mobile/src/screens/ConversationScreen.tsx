@@ -14,10 +14,10 @@ import { ReportSheet } from "../ui/ReportSheet";
 import { ReportButton } from "../ui/ReportLink";
 import { ReportFlag } from "../ui/ReportFlag";
 import { AiNotice } from "../ui/AiNotice";
-import { Skeleton, SkeletonLine } from "../ui/Skeleton";
+import { Skeleton, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, AlertIcon } from "../ui/icons";
-import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
+import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { ensureConversations, findConversation, conversationLevelOf, scoredSteps, type Conversation, type Segment, type Expectation, type LectureStep } from "../data/conversations";
 import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
@@ -922,7 +922,10 @@ export function ConversationScreen() {
   }, [conversation]);
 
   if (!conversation && !packReady) {
-    return <FlowScreen top={<FlowTopBar back onClose={() => nav.goBack()} />}><ContentLoadingBody /></FlowScreen>;
+    /* Paket inerken KONUŞMA EKRANININ iskeleti (başlık satırı, anlatım şeridi,
+       baloncuklar, dipte "Hazırım"): paket gelince açılan ekran bu; genel
+       içerik iskeleti (başlık + kart + iki düğme) onun yerini tutmuyordu. */
+    return <ConversationSkeleton />;
   }
   if (!conversation) {
     return (
@@ -1003,16 +1006,9 @@ export function ConversationScreen() {
       ) : !resumeChecked ? (
         // Sohbet kabuğunun iskeleti: öğretmen baloncukları + alt eylem alanı.
         <>
-          <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
-            {["78%", "62%", "88%"].map((w, i) => (
-              <View key={i} style={{ alignSelf: "flex-start", width: w, marginBottom: spacing.md }}>
-                <Skeleton height={22 + 2 + 18 * 2} radius={radii.lg} />
-                <SkeletonLine variant="micro" width={54} style={{ marginTop: spacing.xs, marginLeft: spacing.xs }} />
-              </View>
-            ))}
-          </View>
+          <LectureSkeleton />
           <View ref={dockRef} collapsable={false} style={{ paddingHorizontal: spacing.lg, paddingBottom: Math.max(dockLift, insets.bottom + spacing.md), paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
-            <Skeleton height={53} radius={radii.lg} />
+            <Skeleton height={BIG_BUTTON_H()} radius={radii.lg} />
           </View>
         </>
       ) : phase === "summary" ? (
@@ -1084,6 +1080,62 @@ export function ConversationScreen() {
         </>
       )}
       <ReportSheet visible={!!report} kind="chat" refId={report?.ref ?? ""} content={report?.text ?? ""} onClose={() => setReport(null)} />
+    </View>
+  );
+}
+
+/** `BigButton` yüksekliği: h3 + dikey `lg` dolgu (iskeletler için). */
+const BIG_BUTTON_H = () => textHeight("h3") + spacing.lg * 2;
+
+/**
+ * Anlatım akışının iskeleti — öğretmen baloncukları (`BubbleView`: iki satır
+ * gövde, dikey 10 dolgu, 1 kenarlık) ve altlarındaki "Dinle" satırı.
+ */
+function LectureSkeleton() {
+  return (
+    <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+      {["78%", "62%", "84%"].map((w, i) => (
+        <View key={i} style={{ alignSelf: "flex-start", width: w, marginBottom: spacing.md }}>
+          <Skeleton height={textHeight("body") * 2 + 10 * 2 + 2} radius={radii.lg} />
+          <SkeletonLine variant="micro" width={54} style={{ marginTop: spacing.xs, marginLeft: spacing.xs }} />
+        </View>
+      ))}
+    </View>
+  );
+}
+
+/**
+ * Konuşma ekranının tamamının iskeleti — içerik paketi inerken. Sıra
+ * gerçeğindeki gibi: geri karosu + başlık/alt satır + eller serbest hapı,
+ * anlatım şeridi, baloncuklar, alt eylem alanı.
+ */
+function ConversationSkeleton() {
+  const { colors } = useTheme();
+  const insets = useSafeAreaInsets();
+  const { compactWidth } = useLayout();
+  return (
+    <View
+      accessible
+      accessibilityRole="progressbar"
+      accessibilityState={{ busy: true }}
+      accessibilityLabel={tx("common.loading")}
+      style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}
+    >
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+        <Skeleton height={44} width={44} radius={radii.md} />
+        <View style={{ flex: 1 }}>
+          <SkeletonLine variant="h3" width="62%" />
+          <SkeletonLine variant="caption" width="44%" />
+        </View>
+        <SkeletonPill width={compactWidth ? 44 : 108} height={36} />
+      </View>
+      <View style={{ flexDirection: "row", gap: 3, paddingHorizontal: spacing.lg, marginBottom: spacing.xs }}>
+        {Array.from({ length: 8 }, (_, i) => <Skeleton key={i} height={5} radius={3} style={{ flex: 1 }} />)}
+      </View>
+      <LectureSkeleton />
+      <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+        <Skeleton height={BIG_BUTTON_H()} radius={radii.lg} />
+      </View>
     </View>
   );
 }

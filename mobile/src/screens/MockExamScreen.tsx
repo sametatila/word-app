@@ -13,6 +13,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, ExamIcon, ClockIcon, ArrowRightIcon, RepeatIcon, AlertIcon, LockIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "../ui/flow";
+import { CoverSkeleton } from "../game/RoundSkeleton";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MIN_ASSESS_WORDS } from "../lib/learningRules";
 import { prefetchDialogue, speakAndWaitVoiced, speakDialogue, stopSpeaking } from "../lib/tts";
@@ -463,6 +464,12 @@ export function MockExamScreen() {
     Artık DURUM şablonu (ui/flow): üzgün maskot, sebep ve tek çıkış. Web
     aynı yolda bölümün kendi `not-found.tsx`ini aynı şablonla çiziyor.
   */
+  /* KÂĞIT İNERKEN KAPAĞIN İSKELETİ. Bu aralıkta aşağıdaki "sınav bulunamadı"
+     dalı çiziliyordu: bellekte olmayan her kâğıt, inene kadar bir an üzgün
+     maskotla "bulunamadı" diyordu. Hata yalnız indirme gerçekten düşünce. */
+  if (!paper && !fail) {
+    return <CoverSkeleton label={t("common.loading")} top rules={5} note={2} footnote />;
+  }
   if (!paper || !part) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("mockexam.back_to_list"), onPress: () => nav.goBack() }} />}>

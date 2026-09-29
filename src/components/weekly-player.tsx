@@ -8,6 +8,7 @@ import { T, fillX } from "@/lib/motion";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { COURSE_KEY, SpeakButton, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "@/components/flow";
+import { CoverSkeleton } from "@/components/flow-skeleton";
 import { AlertIcon, CalendarIcon, CheckIcon, ExamIcon, LockIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -135,10 +136,19 @@ export function WeeklyPlayer() {
 
   /* ── Durumlar ───────────────────────────────────────────────────────── */
 
-  if (phase === "loading" || phase === "submitting") {
+  /* Yükleme İSKELETİ KAPAĞIN ŞEKLİNDE (üç kural, not, Başla + Öğren'e dön);
+     kaydetme ise bir durum, orada durum şablonu kalıyor. */
+  if (phase === "loading") {
+    return (
+      <div role="status" aria-busy="true" aria-label={t("wquiz.preparing")}>
+        <CoverSkeleton rules={3} note={1} secondary tertiary={false} />
+      </div>
+    );
+  }
+  if (phase === "submitting") {
     return (
       <FlowColumn>
-        <StateBody title={t(phase === "loading" ? "wquiz.preparing" : "wquiz.saving")} />
+        <StateBody title={t("wquiz.saving")} />
       </FlowColumn>
     );
   }

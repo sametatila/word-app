@@ -131,10 +131,14 @@ export function MockStatsScreen() {
             </SkeletonCard>
             <SkeletonCard>
               <SkeletonLine variant="micro" width={70} />
+              {/* Son denemeler satırı: solda ad + doğru sayısı, sağda yüzde. */}
               {[0, 1, 2].map((i) => (
-                <View key={i} style={{ marginTop: spacing.sm }}>
-                  <SkeletonLine variant="body" width="70%" />
-                  <SkeletonLine variant="micro" width={120} style={{ marginTop: 2 }} />
+                <View key={i} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: spacing.md, marginTop: spacing.sm }}>
+                  <View style={{ flex: 1 }}>
+                    <SkeletonLine variant="body" width="70%" />
+                    <SkeletonLine variant="micro" width={120} />
+                  </View>
+                  <SkeletonLine variant="bodyStrong" width={44} />
                 </View>
               ))}
             </SkeletonCard>

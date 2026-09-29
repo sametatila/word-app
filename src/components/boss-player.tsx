@@ -18,6 +18,7 @@ import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { AlertIcon, BoltIcon, BookIcon, ClockIcon, CrownIcon, RefreshIcon, TrophyIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "@/components/flow";
+import { CoverSkeleton } from "@/components/flow-skeleton";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatDecimal } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
@@ -267,11 +268,13 @@ export function BossPlayer({
      bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
      der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
      Android karsiligi `accessibilityLiveRegion="polite"`. */
+  /* İSKELET KAPAĞIN ŞEKLİNDE: yüklenince gelen ekran kapak (`ready`, dört
+     kural, tanıtımsız); tek satırlık kart onun yerini tutmuyordu. */
   if (status === "loading")
     return (
-      <FlowColumn>
-        <p role="status" aria-busy="true" className="card muted p-4 text-center">{t("exam.preparing")}</p>
-      </FlowColumn>
+      <div role="status" aria-busy="true" aria-label={t("exam.preparing")}>
+        <CoverSkeleton rules={4} pitch={false} />
+      </div>
     );
 
   if (status === "error")

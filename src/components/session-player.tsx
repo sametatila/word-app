@@ -30,6 +30,7 @@ import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
 import { CoachLine } from "@/components/coach-line";
 import { LearnHeader } from "@/components/app-header";
+import { RoundSkeleton } from "@/components/flow-skeleton";
 import { AlertIcon, BoltIcon, CheckIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
 import { DetailCard, DetailRow, FlowActions, FlowColumn, FlowNote, ResultHero, StateBody, StatRow } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
@@ -768,10 +769,13 @@ function SessionRound() {
     return () => window.removeEventListener("pagehide", onHide);
   }, []);
 
+  /* Bekleme SEKME BAŞLIĞI ÇİZMİYOR: ardından gelen tur ekranında başlık yok
+     (çıkış + çubuk var), başlık çizilirse tur gelince kayboluyor ve her şey
+     yukarı sıçrıyordu. Android `GameScreen` de `RoundSkeleton` çiziyor. */
   if (status === "loading")
     return (
-      <Screen fills header>
-        <LoadingCard />
+      <Screen fills>
+        <LoadingCard label={onlyGame != null} />
       </Screen>
     );
   /*
@@ -786,7 +790,7 @@ function SessionRound() {
   if (status === "ready")
     return (
       <Screen fills>
-        <LoadingCard />
+        <LoadingCard label={onlyGame != null} />
       </Screen>
     );
   if (status === "error")
@@ -1054,21 +1058,15 @@ function Screen({ fills, header, children }: { fills?: boolean; header?: boolean
 
 /* Oturum hazirlanirken ekranin tamamini kaplayan bekleme: canli bolge
    degildi, yani ekran okuyucu kullanan biri "hazirlaniyor"i hic duymuyordu.
-   Android karsiligi `accessibilityLiveRegion="polite"`. */
-function LoadingCard() {
+   Android karsiligi `accessibilityLiveRegion="polite"`.
+   ORTADA DÖNEN HALKA YERİNE TURUN İSKELETİ (`flow-skeleton` `RoundSkeleton`):
+   halka ekranın ortasındaydı, tur gelince çubuk, soru ve şıklar birden
+   yukarıdan beliriyordu. Android `GameScreen` baştan beri böyle. */
+function LoadingCard({ label }: { label: boolean }) {
   const t = useT();
   return (
-    <div role="status" aria-busy="true" className="mx-auto flex w-full max-w-2xl flex-1 items-center justify-center">
-      <div className="flex flex-col items-center gap-3">
-        {/* Sade halka (konuşma puanlaması ve sistem göstergeleriyle aynı dil);
-            eskisi dönerek şekil değiştiren turuncu bir kareydi. */}
-        <span
-          aria-hidden
-          className="block h-7 w-7 animate-spin rounded-full border-[3px]"
-          style={{ borderColor: "var(--color-brand)", borderTopColor: "transparent" }}
-        />
-        <p className="muted text-body">{t("session.preparing")}</p>
-      </div>
+    <div role="status" aria-busy="true" aria-label={t("session.preparing")} className="flex min-h-0 flex-1 flex-col">
+      <RoundSkeleton label={label} />
     </div>
   );
 }

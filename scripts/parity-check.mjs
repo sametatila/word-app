@@ -15273,6 +15273,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       if (yigin === null) return "ISARET YOK";
       const kendi = sablonEtiketi(src, isaret, "StateBody");
       if (kendi && SABLON[platform].durumCanli) return "duyuruyor";
+      /* Kapak iskeleti (`M/src/game/RoundSkeleton` `CoverSkeleton`) kökünde
+         kendisi "polite" ilerleme bölgesi; adı `label` prop'u. */
+      if (platform === "mobil" && sablonEtiketi(src, isaret, "CoverSkeleton")) return "duyuruyor";
       return yigin.some((e) => desen.test(e) || (SABLON[platform].durumCanli && /^<StateBody\b/.test(e))) ? "duyuruyor" : "SESSIZ";
     };
     const WEB_ISARET = /role="status"/;
@@ -15282,9 +15285,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["src/components/boss-player.tsx", 't("exam.preparing")'],
       ["src/components/walk-player.tsx", 't("walk.preparing")'],
       ["src/components/challenge-player.tsx", 't("challenge.preparing")'],
-      ["src/components/exam-player.tsx", '"exam.preparing" : "item.mono_scoring"'],
-      ["src/components/weekly-player.tsx", '"wquiz.preparing" : "wquiz.saving"'],
-      ["src/components/placement/placement-test.tsx", '"plc.preparing" : "placement.calculating_your_level"'],
+      /* Hazırlanma beklemesi iskelet çiziyor (2026-09-29), adı `aria-label`da. */
+      ["src/components/exam-player.tsx", 't("exam.preparing")'],
+      ["src/components/weekly-player.tsx", 't("wquiz.preparing")'],
+      ["src/components/placement/placement-test.tsx", 't("plc.preparing")'],
       ["src/components/session-player.tsx", 't("session.preparing")'],
     ];
     const MOBIL = [

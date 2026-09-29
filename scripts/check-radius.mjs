@@ -223,7 +223,6 @@ const BORDER_ALLOW = new Map([
     ["border: `6px solid ${tile.swatch.from}", "renk örneği: iki renkli daire (çizim)"],
   ]],
   ["src/components/listen-button.tsx", [["border-[3px]", "dönen yükleme halkası"]]],
-  ["src/components/session-player.tsx", [["animate-spin rounded-full border-[3px]", "dönen yükleme halkası"]]],
   ["src/components/conversations/conversation-scored.tsx", [["animate-spin rounded-full border-2", "dönen yükleme halkası"]]],
   ["src/components/avatar.tsx", [
     ["0 0 0 2px ${ring}", "avatar halkası (mobil `ui/Avatar` ring 2)"],
