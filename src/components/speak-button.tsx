@@ -44,7 +44,7 @@ function paceOf(slow: Pace | boolean): Pace {
   return slow === true ? "slow" : slow === false ? "normal" : slow;
 }
 
-function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pitch: Pitch = "mid", word = false, narration = false): string {
+function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pitch: Pitch = "mid", word = false, narration = false, layer?: "l" | "r"): string {
   const pace = paceOf(slow);
   // Varsayilanlar URL'ye YAZILMIYOR: `r`siz ve `p`siz adres eski adresle
   // birebir ayni kalmali, yoksa bugune kadar isinmis butun onbellek girdileri
@@ -55,7 +55,8 @@ function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pit
     (pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`) +
     // Kelime katmanı: sunucu yalnız Defne/Aras dosyasından çalıyor, Edge'e düşmüyor (bkz. app/api/tts).
     // Karakter anlatımı (`n`): dosya varsa karakterin kendi sesi, yoksa aynı karakterin Edge karşılığı.
-    (word ? "&k=w" : narration ? "&k=n" : "")
+    // Dinleme (`l`) / okuma (`r`) katmanı: sunucu açıksa karakterin dosyasını, değilse Edge'i veriyor.
+    (word ? "&k=w" : narration ? "&k=n" : layer ? `&k=${layer}` : "")
   );
 }
 
@@ -480,6 +481,13 @@ export type SpeechSegment = {
    * BİRLEŞMİYOR: birleşen iki cümle tabloda olmaz ve dosya yerine Edge çalardı.
    */
   ownNarration?: boolean;
+  /**
+   * Dinleme (`l`) ya da okuma (`r`) katmanı (2026-09-29): adres `k=l`/`k=r` taşıyor, ses yine Edge kimliğiyle
+   * (kadro, okuma sesi). Sunucu `TTS_OWN_LAYERS` o katmanda o karakteri açtıysa önceden üretilmiş dosyayı veriyor,
+   * yoksa Edge. İşaretsiz parça (sohbet, konuşma) hiç etkilenmiyor. Aynı katmanın parçaları birleşebiliyor:
+   * üretim listesi (`scripts/tts-listening-jobs.ts`, `tts-reading-jobs.ts`) aynı birleştirmeyi kuruyor.
+   */
+  layer?: "l" | "r";
 };
 
 /**
@@ -538,7 +546,8 @@ function mergeForSpeech(segments: SpeechSegment[]): SpeechSegment[] {
   const merged: SpeechSegment[] = [];
   const sameVoice = (a: SpeechSegment, b: SpeechSegment) =>
     !a.word && !b.word && !a.ownNarration && !b.ownNarration &&
-    a.lang === b.lang && a.narration === b.narration && a.voice === b.voice && a.pitch === b.pitch && a.pace === b.pace;
+    a.lang === b.lang && a.narration === b.narration && a.voice === b.voice && a.pitch === b.pitch && a.pace === b.pace &&
+    a.layer === b.layer;
   for (const seg of segments) {
     // Üç nokta artık `cleanForSpeech`in içinde (tek kopya, iki platform).
     const text = cleanForSpeech(seg.text);
@@ -856,7 +865,7 @@ function chainWithElements(
   /* Adres parçanın hızını ve perdesini de taşımak ZORUNDA: taşımasaydı
      WebAudio yolundan bu yola düşen bir diyalog aynı metni başka bir adresle
      ister, yani önbelleği ıskalar ve konuşmacılar tek sese dönerdi. */
-  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration);
+  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration, seg.layer);
   /** i. parçayı kendi öğesine yükler — çalma değil, hazırlık. */
   const preload = (i: number) => {
     const el = els[i % 2];
@@ -1045,7 +1054,7 @@ export function speakSegments(
     };
   }
 
-  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration));
+  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration, seg.layer));
   const cancel = playGapless(urls, {
     mine,
     onEnd,
@@ -1105,7 +1114,7 @@ export function dialogueSegments(
     // arasına sıra geçişi payı koymak konuşmayı kekeletirdi.
     const gapBefore = i > 0 && who !== previous ? SPEAKER_GAP : undefined;
     previous = who;
-    return { lang, text: seg.text, voice: cast[i].voice, pitch: cast[i].pitch, pace, gapBefore } as SpeechSegment;
+    return { lang, text: seg.text, voice: cast[i].voice, pitch: cast[i].pitch, pace, gapBefore, layer: "l" } as SpeechSegment;
   });
 }
 
@@ -1135,7 +1144,7 @@ export function stopSpeaking() {
 export function prefetchSegments(segments: SpeechSegment[]) {
   if (typeof fetch === "undefined") return;
   for (const seg of mergeForSpeech(segments)) {
-    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration), {
+    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration, seg.layer), {
       priority: "low",
     } as RequestInit).catch(() => {
       /* önden indirme başarısızsa normal akış zaten çalışıyor */

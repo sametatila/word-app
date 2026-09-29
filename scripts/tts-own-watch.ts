@@ -46,7 +46,9 @@ async function main() {
   const narration = (m: { field: string }) => m.field.startsWith("walk_");
   const silent = missing.filter((m) => !narration(m));
   const fresh = missing.filter((m) => !before.has(m.key));
-  const unused = Object.keys(map).filter((k) => !needed.has(k)).length;
+  // `#listen`/`#listenSlow`: dinleme ve okumanın önceden yavaşlatılmış sürümleri (lib/tts/own `ownLayerAudio`), kelime
+  // katmanının ihtiyacı değil; sayılmıyor.
+  const unused = Object.keys(map).filter((k) => !k.includes("#") && !needed.has(k)).length;
 
   const n = (x: number) => x.toLocaleString("tr-TR");
   if (first) {

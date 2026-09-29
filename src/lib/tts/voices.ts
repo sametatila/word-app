@@ -219,6 +219,16 @@ function characterEdge(selected: string | null | undefined, lang: "de" | "en" | 
   return hit ? OWN_VOICES[hit]!.edge : null;
 }
 
+/**
+ * Edge sesinin KARAKTER karşılığı (Katja → de-DE-Defne, Guy → en-US-Aras); karakteri olmayan ses için null.
+ * Dinleme ve okuma katmanı (`k=l`/`k=r`) istemcide Edge kimliğiyle istiyor: diyalog kadrosu ve okuma sesi Edge
+ * seslerini dağıtıyor. Sunucu dosyayı bu eşlemeyle buluyor (bkz. `lib/tts/own` `ownLayerAudio`).
+ */
+export function ownCastFor(voice: VoiceId): VoiceId | null {
+  const hit = (Object.keys(OWN_VOICES) as VoiceId[]).find((v) => OWN_VOICES[v]!.edge === voice);
+  return hit ?? null;
+}
+
 /** Sentez zincirine giden ses: karakter sesi Edge karşılığına çevrilir, ötekiler aynen. */
 export function edgeVoiceOf(voice: VoiceId): VoiceId {
   return OWN_VOICES[voice]?.edge ?? voice;

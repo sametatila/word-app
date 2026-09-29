@@ -22,6 +22,8 @@ export const dynamic = "force-dynamic";
  * kelime isteği önce `fetch` ile soruluyor: 404 → "skip" (okuma atlanır, köprü SAĞLIKLI kalır). "error"
  * gönderilseydi iki eksik kelime köprüyü sağlıksız sayıp oturumun geri kalanını native yola atardı.
  * `word === "n"` karakter anlatımı (yürüyüş yönergeleri): adres `k=n`, yoklama yok (sunucu dosya yoksa Edge'e düşer).
+ * `word === "l"` / `"r"` dinleme / okuma katmanı (2026-09-29): adres `k=l` / `k=r`, yoklama yok (sunucu `TTS_OWN_LAYERS`
+ * kapalıysa ya da dosya yoksa Edge).
  * Cevap WebView önbelleğine yazıldığı için ardından gelen `new Audio(u)` ağa ikinci kez çıkmıyor.
  */
 const HTML = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
@@ -36,7 +38,7 @@ const HTML = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewp
     var p = typeof pitch === "string" && pitch !== "mid" ? pitch : "";
     return "/api/tts?v=" + encodeURIComponent(voice) + "&t=" + encodeURIComponent(text) +
       (r ? "&r=" + encodeURIComponent(r) : "") + (p ? "&p=" + encodeURIComponent(p) : "") +
-      (word === true ? "&k=w" : word === "n" ? "&k=n" : "");
+      (word === true ? "&k=w" : word === "n" ? "&k=n" : word === "l" ? "&k=l" : word === "r" ? "&k=r" : "");
   }
   /* ÖN İNDİRME: cevabı WebView'in kendi HTTP önbelleğine yazar, sonra
      ttsSpeak aynı adresi ağa hiç çıkmadan alır (bkz. dosya başı). */

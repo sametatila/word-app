@@ -3,7 +3,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { takeUsage } from "@/lib/premium";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
-import { ownVoiceAudio, ownVoicesLive } from "@/lib/tts/own";
+import { ownLayerAudio, ownVoiceAudio, ownVoicesLive, type OwnLayer } from "@/lib/tts/own";
 import { parseRange } from "@/lib/http-range";
 import { CAST, edgeVoiceOf, isOwnVoice, OWN_VOICES, paceFromParam, pitchFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
 
@@ -115,6 +115,11 @@ export async function GET(req: Request) {
   /* KARAKTER ANLATIMI (`k=n`, 2026-09-23) — yürüyüş modunun yönergeleri. Dosya varsa karakterin kendi sesi, yoksa
      aynı karakterin Edge karşılığı: anlatım kelime katmanı değil, üretimi (tur özetleri) sürerken tur susmamalı. */
   const narration = url.searchParams.get("k") === "n";
+  /* DİNLEME (`k=l`) VE OKUMA (`k=r`) KATMANI (2026-09-29). İstek Edge sesiyle geliyor (diyalog kadrosu, okuma sesi);
+     `TTS_OWN_LAYERS` o katmanda o karakteri açtıysa ve metin (o hızda) tabloda varsa karakterin dosyası, yoksa Edge.
+     İşaretsiz istek (sohbet, konuşma) hiç etkilenmiyor: tabloda aynı metin olsa da Edge'de kalıyor. */
+  const kParam = url.searchParams.get("k");
+  const layer: OwnLayer | null = kParam === "l" || kParam === "r" ? kParam : null;
 
   if (!text || text.length > MAX_TEXT) {
     return NextResponse.json({ error: "bad_text" }, { status: 400 });
@@ -130,7 +135,11 @@ export async function GET(req: Request) {
   // YALNIZ KELİME İSTEĞİNE. İşaretsiz istek (sohbet, beceri, konuşma cümlesi) metni tabloda bulsa da
   // Edge karşılığında kalıyor: yoksa bir örnek cümleyle birebir aynı tek replik Defne'nin kendi sesiyle,
   // çevresi Katja'yla çalardı. Kelime dışı her şey üretilene kadar Katja/Conrad (Samet, 2026-09-23).
-  const own = word || narration ? await ownVoiceAudio(text, voice as VoiceId, slow, pitch) : null;
+  const own = word || narration
+    ? await ownVoiceAudio(text, voice as VoiceId, slow, pitch)
+    : layer
+      ? await ownLayerAudio(layer, text, voice as VoiceId, slow, pitch)
+      : null;
   if (own) return ownResponse(req, own.audio, own.name);
   if (word && isOwnVoice(voice) && ownVoicesLive()) {
     console.warn("[tts-own] kelime tabloda yok:", voice, slow, pitch, JSON.stringify(text.slice(0, 120)));

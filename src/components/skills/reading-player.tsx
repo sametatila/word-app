@@ -53,7 +53,7 @@ export function ReadingPlayer({ exercise, backHref }: { exercise: ReadingExercis
             // Paragraf sınırı korunuyor: her paragraf ayrı parça, aralarında
             // nefes payı. Tek dizgeye eklenseydi paragraf geçişi duyulmazdı.
             speakSegments(
-              exercise.text.split("\n\n").map((para, i) => ({ lang, text: para, pace: "listen" as const, gapBefore: i ? 0.5 : undefined })),
+              exercise.text.split("\n\n").map((para, i) => ({ lang, text: para, pace: "listen" as const, gapBefore: i ? 0.5 : undefined, layer: "r" as const })),
               () => setReading(false),
               undefined,
               /* Aynı ekrandaki sözlükçe düğmesine dokunulursa okuma kesiliyor
