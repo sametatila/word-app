@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode, useRef } from "react";
 import { TopProgress } from "./top-progress";
@@ -111,6 +111,19 @@ const SECONDARY = [
   { href: "/profile/settings", labelKey: "settings.settings", Icon: SettingsIcon, exact: false },
 ];
 
+/**
+ * Ayarlar'ın parçası sayılan, `/profile/settings` altında olmayan adresler
+ * (2026-09-29 Samet: web ayarlar masaüstü düzeni). Hatırlatmalar ve Abonelik
+ * ayarların içine taşındı; eski adresleri hâlâ açılıyor: `/notifications`
+ * (yönleniyor) ve Abonelik panelinin "ayrıntı" bağlantısı
+ * `/premium?from=settings`. Oradayken kenar çubuğunda "Ayarlar" seçili
+ * görünmüyordu — kullanıcı nerede olduğunu kaybediyordu. `/premium` başka
+ * yerden (profil, kilit) açılınca Ayarlar seçili DEĞİL.
+ */
+function inSettings(pathname: string, from: string | null): boolean {
+  return pathname.startsWith("/profile/settings") || pathname === "/notifications" || (pathname === "/premium" && from === "settings");
+}
+
 export function AppShell({
   children,
   streak,
@@ -139,6 +152,8 @@ export function AppShell({
   avatar?: string | null;
 }) {
   const pathname = usePathname();
+  /* Yalnız Ayarlar'ın seçili hâli için (`inSettings`: `/premium?from=settings`). */
+  const from = useSearchParams().get("from");
   const router = useRouter();
   const navRef = useRef<HTMLDivElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
@@ -402,16 +417,21 @@ export function AppShell({
         */}
         <nav className="mt-4 flex flex-col gap-1 border-t pt-4" style={{ borderColor: "var(--border)" }}>
           {SECONDARY.map((item) => {
-            const active = item.exact ? pathname === item.href : pathname.startsWith(item.href);
+            const active = item.exact ? pathname === item.href : inSettings(pathname, from);
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 prefetch={false}
                 aria-current={active ? "page" : undefined}
+                /* Seçiliyken yumuşak zemin + turuncu yazı: ayarlar menüsünün aktif
+                   satırıyla aynı dil, ana üçlünün dolu hapından bir kademe hafif
+                   (2026-09-29; önce yalnız yazı rengi değişiyordu, nerede
+                   olunduğu belli olmuyordu). */
                 className={`flex items-center gap-3 rounded-panel px-3 py-2 text-strong transition-colors ${
-                  active ? "text-[color:var(--text)]" : "muted hover:text-[color:var(--text)]"
+                  active ? "" : "muted hover:text-[color:var(--text)]"
                 }`}
+                style={active ? { background: "var(--brand-soft)", color: "var(--on-brand-soft)" } : undefined}
               >
                 <item.Icon size={17} />
                 {t(item.labelKey)}

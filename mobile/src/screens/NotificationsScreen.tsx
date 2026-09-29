@@ -20,6 +20,7 @@ import { PROFILE_DEFAULTS, REMINDER_HOURS } from "../lib/profileDefaults";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { useAuth } from "../lib/AuthContext";
 import { FlowNote } from "../ui/flow";
+import { SkeletonPill, SkeletonText } from "../ui/Skeleton";
 
 const hhmmOf = (h: number) => `${String(h).padStart(2, "0")}:00`;
 
@@ -46,18 +47,29 @@ function ToggleGroup({ colors, children }: { colors: Palette; children: React.Re
   );
 }
 
-/** Tek bir bildirim kategorisi — başlık + açıklama + aç/kapa; açıkken ek içerik. */
-function ToggleRow({ title, subtitle, value, onValueChange, colors, children }: { title: string; subtitle: string; value: boolean; onValueChange: (v: boolean) => void; colors: Palette; children?: React.ReactNode }) {
+/**
+ * Tek bir bildirim kategorisi — başlık + açıklama + aç/kapa; açıkken ek içerik.
+ *
+ * `pending`: tercihler henüz okunmadı (`loadPrefs` sunucuya da soruyor).
+ * Eskiden anahtarlar okunana kadar KAPALI çiziliyor, sonra açılıp günlük
+ * hatırlatmanın saat çiplerini aşağı itiyordu: kullanıcı bir an yanlış durumu
+ * görüyor, dokunursa yanlış yöne çeviriyordu. Artık anahtarın yeri ve
+ * (duruma bağlı) alt satır iskelet; başlık gerçek (2026-09-29, web
+ * `notification-settings` `RemindersSlot` ile aynı).
+ */
+function ToggleRow({ title, subtitle, value, onValueChange, colors, pending = false, children }: { title: string; subtitle: string; value: boolean; onValueChange: (v: boolean) => void; colors: Palette; pending?: boolean; children?: React.ReactNode }) {
   return (
     <View>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
         <View style={{ flex: 1, paddingRight: spacing.md }}>
           <Text variant="h3">{title}</Text>
-          <Text variant="caption" color={colors.textMuted}>{subtitle}</Text>
+          {pending ? <SkeletonText variant="caption" text={subtitle} /> : <Text variant="caption" color={colors.textMuted}>{subtitle}</Text>}
         </View>
         {/* Anahtarın ADI satırın başlığı (bkz. SocialSettings): yanındaki
             metin kendiliğinden ilişkilendirilmiyor. */}
-        <Switch value={value} onValueChange={onValueChange} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" />
+        {pending ? <SkeletonPill width={51} height={31} /> : (
+          <Switch value={value} onValueChange={onValueChange} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" />
+        )}
       </View>
       {children}
     </View>
@@ -75,6 +87,8 @@ export function NotificationsScreen() {
   const [dailyTime, setDailyTime] = useState(hhmmOf(PROFILE_DEFAULTS.reminderHour));
   const [streakOn, setStreakOn] = useState(false);
   const [weeklyOn, setWeeklyOn] = useState(false);
+  /* Tercihler okundu mu — okunana kadar anahtarlar iskelet (bkz. `ToggleRow`). */
+  const [ready, setReady] = useState(false);
   const [denied, setDenied] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   /* MİSAFİRE DE AÇIK. Hatırlatma telefona kuruluyor ve sunucu istemiyor;
@@ -90,7 +104,7 @@ export function NotificationsScreen() {
       if (p.daily) setDailyOn(true);
       setStreakOn(p.streak);
       setWeeklyOn(p.weekly);
-    });
+    }).catch(() => { /* okunamazsa kapalı çiziliyor; kullanıcı yine çevirebilir */ }).finally(() => setReady(true));
     /*
      * REDDEDİLMİŞ İZİN AÇILIŞTA SÖYLENİYOR.
      *
@@ -138,6 +152,9 @@ export function NotificationsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      {/* Başlık "Hatırlatmalar" (Ayarlar satırının adı). Karonun altında aynı
+          kelime ikinci kez `h2` olarak duruyordu: başlığın hemen altında aynı
+          başlık. Kalktı (2026-09-29; web `notification-settings` aynı). */}
       <ScreenHeader title={tx("notifications.notifications")} />
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -145,13 +162,12 @@ export function NotificationsScreen() {
           <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
             <NotificationsIcon color={colors.onFill} size={36} />
           </View>
-          <Text accessibilityRole="header" variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.md, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
         </View>
         {guest ? <View style={{ marginBottom: spacing.lg }}><FlowNote icon={<RemindersIcon color={colors.textMuted} size={16} />} text={tx("guest.reminders_local")} /></View> : null}
 
         <ToggleGroup colors={colors}>
-          <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
+          <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors} pending={!ready}>
             {dailyOn && (
               <View style={{ marginTop: spacing.md }}>
                 <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("notifications.hour")}</Text>
@@ -162,9 +178,9 @@ export function NotificationsScreen() {
             )}
           </ToggleRow>
 
-          <ToggleRow title={tx("notifications.streak_saver")} subtitle={tx("notifications.every_evening_at_8_30_pm_don_t")} value={streakOn} onValueChange={toggleStreak} colors={colors} />
+          <ToggleRow title={tx("notifications.streak_saver")} subtitle={tx("notifications.every_evening_at_8_30_pm_don_t")} value={streakOn} onValueChange={toggleStreak} colors={colors} pending={!ready} />
 
-          <ToggleRow title={tx("notifications.weekly_test")} subtitle={tx("notifications.every_sunday_measure_your")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} />
+          <ToggleRow title={tx("notifications.weekly_test")} subtitle={tx("notifications.every_sunday_measure_your")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} pending={!ready} />
         </ToggleGroup>
 
         {msg && <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={denied ? colors.dangerText : colors.primaryText} style={{ marginTop: spacing.md }}>{msg}</Text>}

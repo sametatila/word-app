@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SettingRowSlot, SwitchSlot } from "@/components/settings-skeleton";
 import { SettingRow, Switch } from "@/components/setting-row";
 import {
   currentSubscription,
@@ -81,7 +82,16 @@ export function PushSettings({
     }
   }
 
-  if (state === "loading") return null;
+  /* Yüklenirken satırın yeri (izin durumu tarayıcıdan, bir an sürüyor): kart
+     boş kalıp sonra satırla büyümesin. Açıklama en sık durumun metni. */
+  if (state === "loading") {
+    const slot = (
+      <SettingRowSlot title={t("notif.channel")} sub={t("pushw.one_a_day")}>
+        <SwitchSlot />
+      </SettingRowSlot>
+    );
+    return bare ? slot : <section className="card">{slot}</section>;
+  }
 
   /*
     Engelli durumlarda metin bir açıklama değil, bir TALİMAT: kullanıcı bu

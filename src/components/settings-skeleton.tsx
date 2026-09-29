@@ -67,8 +67,8 @@ export function SwitchSlot() {
 /** `SettingRow` — null başlık/alt satır: veriye bağlı, çubuk. */
 export function SettingRowSlot({ title, sub, children }: { title: string | null; sub?: string | null; children?: ReactNode }) {
   return (
-    <div className="flex items-center gap-3 px-4 py-3">
-      <div className="min-w-0 flex-1">
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3">
+      <div className="min-w-[9rem] flex-1">
         {title === null ? <SkeletonLine variant="strong" width="45%" /> : <Words as="p" className="text-strong" text={title} />}
         {sub === undefined ? null : sub === null ? (
           <SkeletonLine variant="caption" width="65%" className="mt-0.5" />

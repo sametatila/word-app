@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { SettingsSection } from "@/components/profile-form";
+import { PageBack } from "@/components/page-back";
 
 /**
  * Grupların sayfa başlığı (sözlük anahtarı). Tek yerde: sayfa başlığı
@@ -13,6 +14,29 @@ export const SETTINGS_TITLE: Record<SettingsSection, string> = {
   privacy: "settings.group_privacy",
   about: "settings.group_about",
 };
+
+/**
+ * Panelin başlığı — iki genişlikte iki biçim (2026-09-29 Samet: web ayarlar
+ * masaüstü düzeni).
+ *
+ * Telefonda yığın ekranı: geri oku + grup adı (`PageBack`, mobil
+ * `ScreenHeader`). Masaüstünde sayfanın başlığı "Ayarlar" (`frame.tsx`) ve
+ * sol menü zaten orada; geri oku bir web ayarlar sayfasında anlamsız, grup
+ * adı panelin düz `h2`si. İskelet aynı iki kutuyu çiziyor (`skeleton.tsx`
+ * `PanelTitleSlot`).
+ */
+export function SettingsPanelTitle({ title }: { title: string }) {
+  return (
+    <>
+      <div className="md:hidden">
+        <PageBack fallback="/profile/settings" title={title} />
+      </div>
+      {/* 44'lük satır, dikeyde ortalı: sol menünün ilk satırıyla (`min-h-11`)
+          aynı hizada; telefonun `PageBack` satırıyla da aynı yükseklik. */}
+      <h2 className="hidden min-h-11 items-center text-h2 md:flex">{title}</h2>
+    </>
+  );
+}
 
 /**
  * Ayar sayfasının iki yapı taşı: GRUP (başlık + tek kart) ve SATIR.

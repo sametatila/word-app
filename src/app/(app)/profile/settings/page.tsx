@@ -6,14 +6,14 @@ import { PageBack } from "@/components/page-back";
 import { RetryButton } from "@/components/retry-button";
 import { FlowColumn, StateBody } from "@/components/flow";
 import { loadSettings } from "./_data";
-import { SettingsFrame } from "./frame";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("settings.settings");
 
 /**
- * Ayarlar — telefonda grup listesi, masaüstünde liste + ilk grup (Öğrenme).
- * Gruplar kendi adreslerinde: `/profile/settings/<bölüm>`.
+ * Ayarlar — telefonda grup listesi, masaüstünde ilk grup (Öğrenme; başlık ve
+ * sol menü `layout.tsx`te). Gruplar kendi adreslerinde:
+ * `/profile/settings/<bölüm>`.
  */
 export default async function SettingsPage() {
   const t = await getT();
@@ -30,7 +30,7 @@ export default async function SettingsPage() {
   }
   const { values, initial, googleEnabled } = r.data;
   return (
-    <SettingsFrame nav={<SettingsNav values={values} current="learning" compact />}>
+    <>
       <div className="md:hidden">
         <PageBack fallback="/profile" title={t("settings.settings")} />
         <SettingsNav values={values} />
@@ -38,6 +38,6 @@ export default async function SettingsPage() {
       <div className="hidden md:block">
         <ProfileForm userId={r.user.id} section="learning" initial={initial} googleEnabled={googleEnabled} />
       </div>
-    </SettingsFrame>
+    </>
   );
 }

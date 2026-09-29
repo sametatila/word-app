@@ -11,13 +11,12 @@ import { InstallGuide } from "@/components/install-guide";
 import { AnalyticsSettings } from "@/components/analytics-settings";
 import { AiConsentSettings } from "@/components/ai-consent-settings";
 import { SoundSettings } from "@/components/sound-settings";
-import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
 import { hasMicConsent, revokeMicConsent } from "@/lib/mic-consent";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
-import { Group, Row, SETTINGS_TITLE } from "@/components/settings-section";
+import { Group, Row, SETTINGS_TITLE, SettingsPanelTitle } from "@/components/settings-section";
 import { LinkedAccounts } from "@/components/account/linked-accounts";
 import { courseName, courseSub, coursesForNative } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
@@ -488,7 +487,7 @@ export function ProfileForm({
 
   return (
     <div className="w-full space-y-4">
-      <PageBack fallback="/profile/settings" title={t(SETTINGS_TITLE[section])} />
+      <SettingsPanelTitle title={t(SETTINGS_TITLE[section])} />
 
       <div className="mx-auto w-full max-w-3xl empty:hidden">
         {saveError ? (

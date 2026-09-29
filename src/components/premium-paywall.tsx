@@ -13,18 +13,13 @@ import type { CopyLine, PlanPrice } from "@/lib/premium/gates";
 import { PremiumStoreCta } from "@/components/premium-store-cta";
 import { BackButton } from "@/components/page-back";
 import type { StoreLinks, WebPlatform } from "@/lib/store-link";
+import { premiumManageKey, premiumStateKey, type PremiumStatusView } from "@/lib/premium/state-copy";
 
 type Plans = { productMonthly: string; productYearly: string; trialDays: number };
 type FairUse = { walkRoundsPerDay: number; aiPracticePerDay: number; chatTurnsPerDay: number };
-type Status = {
-  premium: boolean;
-  until: string | null;
-  entSource: "store" | "bonus" | null;
-  storeState: string | null;
-  storePlatform: string | null;
-  bonusDaysPending: number;
-  bonusUntil: string | null;
-};
+/* Biçim ve durum cümlesi tek yerde: `lib/premium/state-copy` (Ayarlar ›
+   Abonelik paneli de aynı cümleyi söylüyor). */
+type Status = PremiumStatusView;
 /* Biçim tek yerde: `lib/premium/referral-types`. */
 type Referral = ReferralStats | null;
 
@@ -104,12 +99,8 @@ export function PremiumPaywall({
 
   /** Durum cümlesi — kaynağa ve mağaza durumuna göre değişiyor. */
   const stateLine = (): string => {
-    if (!status || !status.premium) return t("premiumstate.free");
-    if (status.entSource === "bonus") return t("premiumstate.bonus_until", { date: date(status.until) });
-    if (status.storeState === "trial") return t("premiumstate.trial_until", { date: date(status.until) });
-    if (status.storeState === "canceled") return t("premiumstate.canceled_until", { date: date(status.until) });
-    if (status.storeState === "grace") return t("premiumstate.grace");
-    return t("premiumstate.active_until", { date: date(status.until) });
+    const l = premiumStateKey(status);
+    return t(l.key, l.dated ? { date: date(status?.until ?? null) } : undefined);
   };
 
   /*
@@ -141,10 +132,8 @@ export function PremiumPaywall({
   })();
 
   const manageLine = (): string | null => {
-    if (!status?.premium || status.entSource !== "store") return null;
-    if (status.storePlatform === "ios") return t("premiumstate.manage_ios");
-    if (status.storePlatform === "android") return t("premiumstate.manage_android");
-    return t("premiumstate.manage_web");
+    const k = premiumManageKey(status);
+    return k ? t(k) : null;
   };
 
   return (

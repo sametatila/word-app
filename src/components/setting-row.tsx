@@ -28,8 +28,13 @@ export function SettingRow({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center gap-3 px-4 py-3">
-      <div className="min-w-0 flex-1">
+    /* SARILIYOR (2026-09-29): iki düğmeli satırda (Destek ve hakkında ›
+       Gizlilik ve şartlar) 390 pikselde yazıya ~40 piksel kalıyordu ve başlık
+       kelime kelime alt alta diziliyordu. Yazı 9rem'in altına inecekse
+       denetim alt satıra geçiyor; anahtarlı satırlar her genişlikte tek
+       satır. İskelet aynı sınıfları taşıyor (`settings-skeleton`). */
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3">
+      <div className="min-w-[9rem] flex-1">
         <p className="text-strong">{title}</p>
         {sub ? <p className="muted mt-0.5 text-caption leading-snug">{sub}</p> : null}
       </div>

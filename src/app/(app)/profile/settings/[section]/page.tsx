@@ -1,12 +1,10 @@
 import { notFound } from "next/navigation";
 import { getT } from "@/lib/i18n/server";
 import { ProfileForm, type SettingsSection } from "@/components/profile-form";
-import { SettingsNav } from "@/components/settings-nav";
 import { SETTINGS_TITLE } from "@/components/settings-section";
 import { RetryButton } from "@/components/retry-button";
 import { FlowColumn, StateBody } from "@/components/flow";
 import { loadSettings } from "../_data";
-import { SettingsFrame } from "../frame";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ section: 
   return { title: t(key ?? "settings.settings") };
 }
 
-/** Tek ayar grubu — telefonda yalnız grup, masaüstünde solda liste. */
+/** Tek ayar grubu — telefonda yalnız grup, masaüstünde solda menü (`../layout.tsx`). */
 export default async function SettingsSectionPage({ params }: { params: Promise<{ section: string }> }) {
   const { section } = await params;
   if (!SECTIONS.includes(section as SettingsSection)) notFound();
@@ -37,9 +35,5 @@ export default async function SettingsSectionPage({ params }: { params: Promise<
     );
   }
   const { values, initial, googleEnabled, social } = r.data;
-  return (
-    <SettingsFrame nav={<SettingsNav values={values} current={s} compact />}>
-      <ProfileForm userId={r.user.id} section={s} initial={initial} googleEnabled={googleEnabled} social={social} version={values.version} />
-    </SettingsFrame>
-  );
+  return <ProfileForm userId={r.user.id} section={s} initial={initial} googleEnabled={googleEnabled} social={social} version={values.version} />;
 }

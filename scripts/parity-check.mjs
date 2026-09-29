@@ -6242,6 +6242,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        Gizlilik'e yonleniyor. Ayar gruplari kendi sayfasinda. */
     ["ayarlar", "src/app/(app)/profile/settings/page.tsx", /settings/],
     ["ayar grubu", "src/app/(app)/profile/settings/[section]/page.tsx", /settingsw\.load_failed/],
+    /* 2026-09-29 Samet: web ayarlar masaüstü düzeni — Abonelik ayarların paneli. */
+    ["abonelik paneli", "src/app/(app)/profile/settings/subscription/page.tsx", /settingsw\.load_failed/],
     ["baskasinin profili", "src/app/(app)/u/[username]/page.tsx", /profw\.load_failed/],
     ["yuruyus", "src/components/walk-player.tsx", /walk\.error_title/],
   ];
@@ -18680,7 +18682,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "sunucu okuma hatasi kartlari duyuruyor",
     ["kart=" + kart, "sessiz=" + (sessiz.length ? sessiz.join("+") : "yok")],
-    ["kart=6", "sessiz=yok"],
+    /* 2026-09-29 Samet: web ayarlar masaüstü düzeni — Ayarlar › Abonelik
+       paneli (`profile/settings/subscription`) durum okunamazsa kendi kartını
+       çiziyor: 6 → 7. */
+    ["kart=7", "sessiz=yok"],
     "bulunan",
     "beklenen",
   );
@@ -19223,7 +19228,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "gelisim el yapimi=" + (eskiKalip.test(sayfa("src/components/progress-view.tsx")) ? "VAR" : "yok"),
       "cagri yeri=" + [...sayfa("src/components/settings-nav.tsx").matchAll(/<MenuRow /g)].length + "+" + [...sayfa("src/components/progress-view.tsx").matchAll(/<MenuRow /g)].length,
     ],
-    ["ton tipi=aile adi (6)", "prop tipi=MenuTone", "profil el yapimi=yok", "gelisim el yapimi=yok", "cagri yeri=7+2"],
+    /* 2026-09-29 Samet: web ayarlar masaüstü düzeni — masaüstü menüsünde
+       "Çıkış yap" de bir satır (`MenuRow variant="sidebar"`): 7 → 8. Telefon
+       listesinde çıkış hâlâ ortalı yazı (mobil ile aynı). */
+    ["ton tipi=aile adi (6)", "prop tipi=MenuTone", "profil el yapimi=yok", "gelisim el yapimi=yok", "cagri yeri=8+2"],
     "bulunan",
     "beklenen",
   );

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { NotificationsIcon } from "@/components/icons";
 import { SettingRow, Switch } from "@/components/setting-row";
+import { SettingRowSlot, SwitchSlot } from "@/components/settings-skeleton";
 import { PushSettings } from "@/components/push-settings";
 import { useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
@@ -27,6 +28,20 @@ const HOURS = REMINDER_HOURS;
  * web'de sunucudan gidiyor, o yüzden tercih `profiles`ta duruyor ve iki
  * tarayıcıda aynı görünüyor.
  *
+ * AYARLARIN PANELİ (2026-09-29 Samet: web ayarlar masaüstü düzeni): sayfa
+ * artık `/profile/settings/reminders`, başlığı panelin başlığı
+ * ("Hatırlatmalar"). Üst bloktaki ikinci "Hatırlatmalar" başlığı kalktı —
+ * telefonda geri okunun yanındaki başlığın hemen altında aynı kelimeyi
+ * tekrarlıyordu; mobil `NotificationsScreen` de aynı. Ortalı karo ve cümle
+ * yalnız telefonda: masaüstünde sol menü ve panel başlığının yanında izin
+ * ekranı gibi duruyordu.
+ *
+ * YÜKLENİRKEN YER TUTUYOR. İzin durumu ve tercihler istemcide okunuyor;
+ * eskiden okunana kadar kart boş kalıyor, sonra satırlar bir anda gelip
+ * altını itiyordu. Şimdi izin satırının ve (izin açıksa) üç anahtarın yeri
+ * gerçek metinle, görünmez çiziliyor (`settings-skeleton`); rota iskeleti
+ * de aynı parçayı çiziyor.
+ *
  * ÜÇÜ DE PUSH İZNİNE BAĞLI. İzin yoksa anahtarları göstermek, çevrildiğinde
  * hiçbir şey yapmayan bir düğme göstermek olurdu; o durumda ekran yalnız
  * izin satırını ve ne yapılması gerektiğini gösteriyor (bkz. `PushSettings`).
@@ -34,6 +49,8 @@ const HOURS = REMINDER_HOURS;
 export function NotificationSettings() {
   const t = useT();
   const [prefs, setPrefs] = useState<Prefs | null>(null);
+  /* Okunamadıysa yer tutucu sonsuza dek beklemesin: anahtarlar çizilmiyor. */
+  const [prefsFailed, setPrefsFailed] = useState(false);
   const [pushOn, setPushOn] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -42,8 +59,10 @@ export function NotificationSettings() {
       try {
         const res = await apiFetch("/api/notifications/prefs", { cache: "no-store" });
         if (res.ok && alive) setPrefs((await res.json()) as Prefs);
+        else if (alive) setPrefsFailed(true);
       } catch {
         /* okunamazsa anahtarlar çizilmiyor; ekran yine açılıyor */
+        if (alive) setPrefsFailed(true);
       }
     })();
     return () => {
@@ -70,16 +89,17 @@ export function NotificationSettings() {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-col items-center px-2 text-center">
+      <div className="flex flex-col items-center px-2 text-center md:hidden">
         <span
           className="flex h-[72px] w-[72px] items-center justify-center rounded-card glow-tint"
           style={{ background: "var(--color-sky)", color: "var(--on-fill)", "--tint-fill": "var(--color-sky)" } as React.CSSProperties}
         >
           <NotificationsIcon size={36} />
         </span>
-        <h2 className="mt-3 text-h2">{t("notifications.reminders")}</h2>
-        <p className="muted mt-1">{t("notifications.gentle_nudges_to_keep_your")}</p>
+        <p className="muted mt-3">{t("notifications.gentle_nudges_to_keep_your")}</p>
       </div>
+      {/* Masaüstünde karo yok; gerekçe cümlesi panel başlığının altında kalıyor. */}
+      <p className="muted hidden md:block">{t("notifications.gentle_nudges_to_keep_your")}</p>
 
       <section className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
         <PushSettings bare onState={setPushOn} />
@@ -158,9 +178,33 @@ export function NotificationSettings() {
               />
             </SettingRow>
           </>
+        ) : pushOn && !prefsFailed ? (
+          <RemindersSlot />
         ) : null}
-
       </section>
     </div>
+  );
+}
+
+/**
+ * Üç anahtarın yeri, tercihler gelene kadar — gerçek başlık ve alt satır
+ * görünmez. Günlük satırın alt satırı kayıtlı saate bağlı: "kapalı" metni
+ * (saat çipleri de ancak anahtar açıksa geliyor). Rota iskeleti de bunu
+ * çiziyor (`profile/settings/skeleton.tsx`).
+ */
+export function RemindersSlot() {
+  const t = useT();
+  return (
+    <>
+      <SettingRowSlot title={t("notifications.daily_reminder")} sub={t("notifications.daily_off")}>
+        <SwitchSlot />
+      </SettingRowSlot>
+      <SettingRowSlot title={t("notifications.streak_saver")} sub={t("notifications.every_evening_at_8_30_pm_don_t")}>
+        <SwitchSlot />
+      </SettingRowSlot>
+      <SettingRowSlot title={t("notifications.weekly_test")} sub={t("notifications.every_sunday_measure_your")}>
+        <SwitchSlot />
+      </SettingRowSlot>
+    </>
   );
 }

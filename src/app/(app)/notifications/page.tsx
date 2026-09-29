@@ -1,24 +1,15 @@
-import { PageBack } from "@/components/page-back";
-import { titleMeta } from "@/lib/page-meta";
-import { NotificationSettings } from "@/components/notification-settings";
-import { getT } from "@/lib/i18n/server";
+import { redirect } from "next/navigation";
 
-export const dynamic = "force-dynamic";
-export const generateMetadata = titleMeta("notifications.notifications");
 /**
- * Bildirimler — HATIRLATMA AYARLARI, gelen kutusu değil.
+ * Eski adres. Hatırlatma ayarları 2026-09-29'da Ayarlar'ın içine taşındı
+ * (`/profile/settings/reminders`; Samet: web ayarlar masaüstü düzeni). Burası
+ * ayarların dışında kendi başına bir sayfaydı — masaüstünde sol menüsüz,
+ * kabuğun menüsünde "Ayarlar" seçili değil. Yer imleri ve eski bağlantılar
+ * kırılmasın diye adres yönleniyor (`/friends/settings` ile aynı kalıp).
  *
- * Bu adres `<Inbox />`i çiziyordu, yani `/inbox` ile birebir aynı şeyi. Profil
- * menüsündeki iki satır ("Gelen kutusu", "Bildirimler") aynı ekrana çıkıyordu.
- * Mobilde ayrım net: `InboxScreen` gelen sosyal olaylar, `NotificationsScreen`
- * ise hatırlatmaların anahtarları. Web de öyle.
+ * Tarihçe: bu adres bir ara `<Inbox />`i çiziyordu (gelen kutusu `/inbox`);
+ * mobildeki ayrım gibi burası HATIRLATMALAR, gelen kutusu değil.
  */
-export default async function NotificationsPage() {
-  const t = await getT();
-  return (
-    <div className="mx-auto w-full max-w-3xl">
-      <PageBack fallback="/profile" title={t("notifications.notifications")} />
-      <NotificationSettings />
-    </div>
-  );
+export default function NotificationsRedirect() {
+  redirect("/profile/settings/reminders");
 }

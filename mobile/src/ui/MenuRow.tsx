@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { ChevronNextIcon } from "./icons";
+import { SkeletonLine } from "./Skeleton";
 import { spacing, radii, onTint, type Palette, soft } from "../theme";
 
 /**
@@ -21,6 +22,7 @@ export function MenuRow({
   last,
   onPress,
   value,
+  valuePending,
   danger,
 }: {
   icon: (p: { color: string; size: number }) => React.ReactElement;
@@ -32,6 +34,13 @@ export function MenuRow({
   onPress?: () => void;
   /** Sağda, şevronun önünde sönük değer (Ayarlar listesi: "Almanca · B1"). */
   value?: string | null;
+  /**
+   * Değer henüz okunmadı (kurs/seviye, plan): yerinde sönük bir çubuk. Eskiden
+   * değer yokken hiç çizilmiyor, gelince etiketin yanından beliriyordu —
+   * etiket o an kısalıyor, satır kıpırdıyordu. Web iskeleti aynı yeri aynı
+   * çubukla tutuyor (`profile/settings/skeleton` `SettingsNavSkeleton`).
+   */
+  valuePending?: boolean;
   /** Yıkıcı satır: etiket tehlike renginde. */
   danger?: boolean;
 }) {
@@ -53,7 +62,7 @@ export function MenuRow({
         <Icon color={onTint(tint, colors)} size={20} />
       </View>
       <Text variant="bodyStrong" color={danger ? colors.dangerText : undefined} style={{ flex: 1 }} numberOfLines={1}>{label}</Text>
-      {value ? <Text variant="caption" color={colors.textMuted} numberOfLines={1} style={{ maxWidth: "45%" }}>{value}</Text> : null}
+      {value ? <Text variant="caption" color={colors.textMuted} numberOfLines={1} style={{ maxWidth: "45%" }}>{value}</Text> : valuePending ? <SkeletonLine variant="caption" width={64} /> : null}
       <ChevronNextIcon color={colors.textFaint} size={20} />
     </PressableScale>
   );

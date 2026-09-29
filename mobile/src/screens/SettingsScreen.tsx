@@ -167,7 +167,7 @@ export function SettingsScreen() {
   const route = useRoute<RouteProp<RootStackParams, "Settings">>();
   const section = route.params?.section;
   const { user, refresh, signOut } = useAuth();
-  const { status: premiumStatus } = usePremiumStatus();
+  const { status: premiumStatus, loading: premiumLoading } = usePremiumStatus();
   const [confirmOut, setConfirmOut] = useState(false);
   async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
   /* MİSAFİR (mağaza ön inceleme B24): giriş yöntemi, parola, oturumlar ve
@@ -814,7 +814,7 @@ export function SettingsScreen() {
       <ScreenHeader title={t("settings.settings")} />
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <Card padded style={{ paddingVertical: 0, marginTop: spacing.sm }}>
-          <MenuRow icon={LearningSettingsIcon} tint={colors.primary} colors={colors} label={t("settings.group_learning")} value={learningVisible ? `${courseLabel} · ${level}` : null} onPress={() => nav.push("Settings", { section: "learning" })} />
+          <MenuRow icon={LearningSettingsIcon} tint={colors.primary} colors={colors} label={t("settings.group_learning")} value={learningVisible ? `${courseLabel} · ${level}` : null} valuePending={!learningVisible} onPress={() => nav.push("Settings", { section: "learning" })} />
           <MenuRow icon={LanguageIcon} tint={colors.info} colors={colors} label={t("settings.group_app")} value={LANG_LABEL[uiLang]} onPress={() => nav.push("Settings", { section: "app" })} />
           <MenuRow icon={RemindersIcon} tint={colors.streak} colors={colors} label={t("notifications.reminders")} onPress={() => nav.navigate("Notifications")} last />
         </Card>
@@ -825,7 +825,7 @@ export function SettingsScreen() {
             <MenuRow icon={AccountIcon} tint={colors.success} colors={colors} label={t("settings.group_account")} value={user?.email ?? null} onPress={() => nav.push("Settings", { section: "account" })} />
           )}
           <MenuRow icon={PrivacyIcon} tint={colors.accent} colors={colors} label={t("settings.group_privacy")} onPress={() => nav.push("Settings", { section: "privacy" })} />
-          <MenuRow icon={PremiumIcon} tint={colors.streak} colors={colors} label={t("settings.group_subscription")} value={premiumStatus ? t(premium ? "settings.plan_premium" : "settings.plan_free") : null} onPress={() => nav.navigate("Paywall")} last />
+          <MenuRow icon={PremiumIcon} tint={colors.streak} colors={colors} label={t("settings.group_subscription")} value={premiumStatus ? t(premium ? "settings.plan_premium" : "settings.plan_free") : null} valuePending={premiumLoading} onPress={() => nav.navigate("Paywall")} last />
         </Card>
         <Card padded style={{ paddingVertical: 0, marginTop: spacing.lg }}>
           <MenuRow icon={InfoIcon} tint={colors.info} colors={colors} label={t("settings.group_about")} value={APP_VERSION} onPress={() => nav.push("Settings", { section: "about" })} last />
