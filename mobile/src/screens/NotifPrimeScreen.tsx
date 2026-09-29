@@ -7,7 +7,7 @@ import { RadioDot } from "../ui/RadioDot";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { FlowScreen, FlowActions } from "../ui/flow";
-import { BellIcon, FlameIcon } from "../ui/icons";
+import { NotificationsIcon, StreakIcon } from "../ui/icons";
 import { enableDailyReminder, markNotifPrimed } from "../lib/notifications";
 import { track } from "../lib/track";
 import { PRIME_HOURS } from "../lib/profileDefaults";
@@ -139,7 +139,7 @@ export function NotifPrimeScreen() {
     >
       <View style={{ alignItems: "center", gap: spacing.lg, paddingVertical: spacing.lg }}>
         <View style={[{ width: ds(88), height: ds(88), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-          <BellIcon color={colors.onPrimary} size={44} />
+          <NotificationsIcon color={colors.onPrimary} size={44} />
         </View>
         <Text accessibilityRole="header" variant="display" style={{ textAlign: "center" }}>{tx("notifprime.keep_your_streak")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", paddingHorizontal: spacing.md }}>
@@ -147,7 +147,7 @@ export function NotifPrimeScreen() {
         </Text>
 
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: spacing.sm }}>
-          <FlameIcon color={colors.streakText} size={16} /><Text variant="caption" color={colors.streakText}>{tx("notifprime.reminder_longer_streak")}</Text>
+          <StreakIcon color={colors.streakText} size={16} /><Text variant="caption" color={colors.streakText}>{tx("notifprime.reminder_longer_streak")}</Text>
         </View>
 
         <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.md }}>

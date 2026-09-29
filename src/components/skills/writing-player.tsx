@@ -14,7 +14,7 @@ import { AiNotice } from "@/components/ai-notice";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
-import { CheckIcon } from "@/components/icons";
+import { CheckIcon, CorrectIcon } from "@/components/icons";
 import { seededShuffle } from "@/lib/shuffle";
 import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
@@ -272,7 +272,7 @@ function BuildTask({
 
       {phase === "correct" ? (
         <p className="mt-3 flex items-start gap-2 text-strong text-[color:var(--color-mint)]">
-          <CheckIcon size={17} className="mt-0.5 shrink-0" />
+          <CorrectIcon size={17} className="mt-0.5 shrink-0" />
           <span lang={lang}>{task.answer}</span>
         </p>
       ) : null}
@@ -809,7 +809,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
               />
               {checked ? (
                 results[i] ? (
-                  <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
+                  <CorrectIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
                 ) : (
                   <span className="shrink-0 text-caption" lang={lang}>
                     <span className="muted">{t("rounds.answer_is")}</span>

@@ -8,7 +8,7 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, SpeakerIcon, AlertIcon, LockIcon } from "../ui/icons";
+import { CloseIcon, LockedIcon, OfflineIcon, SpeakerIcon } from "../ui/icons";
 import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
 import { usePremiumStatus } from "../lib/premium";
@@ -242,7 +242,7 @@ export function ItemScreen() {
     const c = tieredCopy(kind === "writing" ? lv.skillWriting : lv.skillSpeaking, kind === "writing" ? "skill_write" : "skill_speak");
     return c && c.spent ? c : null;
   };
-  const guestAiNote = <View style={{ marginBottom: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t(guestTrial ? "guest.skill_ai_trial" : "guest.skill_ai")} /></View>;
+  const guestAiNote = <View style={{ marginBottom: spacing.md }}><FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t(guestTrial ? "guest.skill_ai_trial" : "guest.skill_ai")} /></View>;
   const insets = useSafeAreaInsets();
   /* İskeletteki yönerge satırı genişlikten: yönerge ortanca ~105 karakter,
      telefonda (358dp) üç, dikey tablette iki, yatay tablette (1088dp) bir satır. */
@@ -378,7 +378,7 @@ export function ItemScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
           <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <XIcon color={colors.textMuted} size={22} />
+            <CloseIcon color={colors.textMuted} size={22} />
           </PressableScale>
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
             {Icon && <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: tint, alignItems: "center", justifyContent: "center" }}>{Icon({ color: "#fff", size: 18 })}</View>}
@@ -475,7 +475,7 @@ export function ItemScreen() {
         return items.length ? <StatRow items={items} /> : null;
       })()}
       {/* Bu bir UYARI, hata değil — sonuç cihazda, bağlantıyı bekliyor. */}
-      {queued ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("skillp.saved_offline")} /> : null}
+      {queued ? <FlowNote tone="warn" icon={<OfflineIcon color={colors.streakText} size={16} />} text={t("skillp.saved_offline")} /> : null}
       {repeatNoXp ? <FlowNote text={t("item.repeat_note")} /> : null}
       {/* Alıştırmanın BÜTÜNÜ (metin, ses, açıklama) sonuçta bildiriliyor; tek
           tek sorular cevaplandıktan sonra kendi geri bildirimlerinin altında
@@ -493,7 +493,7 @@ export function ItemScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <XIcon color={colors.textMuted} size={22} />
+          <CloseIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
           {Icon && <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: tint, alignItems: "center", justifyContent: "center" }}>{Icon({ color: "#fff", size: 18 })}</View>}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RefreshIcon, SpeakerIcon, StopIcon } from "@/components/icons";
+import { SpeakerIcon, StopIcon } from "@/components/icons";
 import { useStill } from "@/lib/use-still";
 
 /**
@@ -68,9 +68,9 @@ export function ListenButton({
       >
         {state === "playing" ? (
           <StopIcon size={Math.round(icon * 0.8)} />
-        ) : state === "done" ? (
-          <RefreshIcon size={icon} />
         ) : (
+          /* Bitince de aynı hoparlör: "yeniden çal" ayrı bir anlam değil
+             (`data/icons/picks.json` › speaker). */
           <SpeakerIcon size={icon} style={{ opacity: state === "loading" ? 0.7 : 1 }} />
         )}
       </motion.button>

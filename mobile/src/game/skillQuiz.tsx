@@ -5,7 +5,7 @@ import { View, TextInput } from "react-native";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
+import { CorrectIcon, SpeakerIcon, WrongIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
 import { currentTargetLang } from "../lib/courses";
 import { foldCompare } from "../lib/textFold";
@@ -171,7 +171,7 @@ function ChoiceInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: bo
           <PressableScale key={oi} accessibilityRole="radio" accessibilityState={{ selected: pick === oi, disabled: done }} onPress={() => { if (done) return; setPick(oi); onSettle(isAnswer); }}
             style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: spacing.md, borderRadius: radii.md, borderWidth: 1, borderColor: bc, backgroundColor: bg, opacity: done && !isAnswer && pick !== oi ? 0.55 : 1 }}>
             <Text variant="body" color={colors.text} style={{ flex: 1 }}>{opt}</Text>
-            {done && isAnswer ? <CheckIcon color={colors.successText} size={18} /> : done && pick === oi ? <XIcon color={colors.dangerText} size={18} /> : null}
+            {done && isAnswer ? <CorrectIcon color={colors.successText} size={18} /> : done && pick === oi ? <WrongIcon color={colors.dangerText} size={18} /> : null}
           </PressableScale>
         );
       })}
@@ -397,7 +397,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
 
       {phase === "correct" ? (
         <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.sm, alignItems: "center" }}>
-          <CheckIcon color={colors.successText} size={16} />
+          <CorrectIcon color={colors.successText} size={16} />
           <Text variant="bodyStrong" color={colors.successText} style={{ flex: 1 }}>{t.answer}</Text>
         </View>
       ) : null}

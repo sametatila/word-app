@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import type { RootTabParams } from "../navigation/RootTabs";
 import { Text } from "./Text";
 import { Card } from "./Card";
-import { CheckIcon, BoltIcon, GiftIcon } from "./icons";
+import { CorrectIcon, QuestIcon, GiftIcon } from "./icons";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "./Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { PressableScale } from "./PressableScale";
@@ -51,7 +51,7 @@ function QuestRow({ q, colors, onClaim, busy, onOpen, last }: { q: Quest; colors
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
       <View style={[{ width: 32, height: 32, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: complete ? colors.success : colors.primarySoft }, complete ? softShadow(colors.success, 6) : {}]}>
-        {complete ? <CheckIcon color={colors.onFill} size={18} /> : <BoltIcon color={colors.primaryText} size={16} />}
+        {complete ? <CorrectIcon color={colors.onFill} size={18} /> : <QuestIcon color={colors.primaryText} size={16} />}
       </View>
       <View style={{ flex: 1 }}>
         {onOpen && !complete ? (

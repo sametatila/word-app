@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useState } from "react";
 import { EmptyCard } from "@/components/empty-card";
-import { ShareIcon, UserPlusIcon, HandshakeIcon } from "@/components/icons";
+import { AddFriendIcon, ShareIcon, TabFriendsIcon } from "@/components/icons";
 import { PersonRowSkeleton } from "@/components/skeleton";
 import { apiFetch } from "@/lib/api-fetch";
 import { inviteText, shareInvite } from "@/lib/share";
@@ -159,7 +159,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
         {tab === "friends" ? (
           <div className="flex flex-col gap-4">
             {err && data === null ? (
-              <EmptyCard role="alert" icon={HandshakeIcon} tint="var(--color-sky)" title={t("friends.couldn_t_load")} text={t("social.err_offline")} />
+              <EmptyCard role="alert" icon={TabFriendsIcon} tint="var(--color-sky)" title={t("friends.couldn_t_load")} text={t("social.err_offline")} />
             ) : data === null ? (
               <PersonRowSkeleton rows={2} />
             ) : (
@@ -171,7 +171,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
                 {data.friends.length ? (
                   <FriendList friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
                 ) : (
-                  <EmptyCard icon={UserPlusIcon} tint="var(--color-mint)" title={t("friends.no_friends_yet")} text={t("friends.search_by_username_or_send_your")} />
+                  <EmptyCard icon={AddFriendIcon} tint="var(--color-mint)" title={t("friends.no_friends_yet")} text={t("friends.search_by_username_or_send_your")} />
                 )}
                 <Find onChanged={() => void reload()} />
                 <Requests incoming={data.incoming} outgoing={data.outgoing} side="outgoing" onChanged={() => void reload()} />

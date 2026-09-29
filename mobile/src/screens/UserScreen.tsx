@@ -13,7 +13,7 @@ import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { AlertIcon, FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
+import { WarningIcon, SharedStreakIcon, TabFriendsIcon, RemindersIcon, QuestIcon, LockedIcon, NoResultsIcon, PrivacyIcon } from "../ui/icons";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { ReportSheet } from "../ui/ReportSheet";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
@@ -74,11 +74,11 @@ export function UserScreen() {
     </View>
   );
   if (user?.guest) return wrap(<GuestAccountCard title={t("guest.social_title")} text={t("guest.social_body")} />);
-  if (!user) return wrap(<EmptyCard icon={LockIcon} title={t("user.sign_in_required")} text={t("user.sign_in_to_see_profiles")} action={t("user.sign_in")} onAction={() => nav.navigate("Auth")} />);
-  if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title={t("user.user_not_found")} text={t("user.link_may_be_old_or_this_profile")} />);
+  if (!user) return wrap(<EmptyCard icon={LockedIcon} title={t("user.sign_in_required")} text={t("user.sign_in_to_see_profiles")} action={t("user.sign_in")} onAction={() => nav.navigate("Auth")} />);
+  if (notFound) return wrap(<EmptyCard icon={NoResultsIcon} tint={colors.danger} title={t("user.user_not_found")} text={t("user.link_may_be_old_or_this_profile")} />);
   /* HATA İSKELETTE KALMIYOR: iskelet "yükleniyor" diyor ve altındaki kırmızı
      satırla birlikte sonsuza dek duruyordu; tekrar deneme yolu da yoktu. */
-  if (!data && err) return wrap(<EmptyCard live="assertive" icon={AlertIcon} tint={colors.danger} title={t("user.profile")} text={err} action={t("common.try_again")} onAction={() => { setErr(null); setAttempt((n) => n + 1); }} />);
+  if (!data && err) return wrap(<EmptyCard live="assertive" icon={WarningIcon} tint={colors.danger} title={t("user.profile")} text={err} action={t("common.try_again")} onAction={() => { setErr(null); setAttempt((n) => n + 1); }} />);
   /* İskelet `wrap`tan değil gerçek dalın kabından geçiyor: `wrap` kartları 12
      aralıkla diziyor, gerçek ekranda kimlik kartının altı 16. Izgara da
      gerçekteki gibi altı karo (dört çiziliyordu, içerik gelince bir satır
@@ -122,8 +122,8 @@ export function UserScreen() {
           <Text variant="caption" color={colors.textMuted}>@{u.username} · {u.level} · {new Date(data.joined).toLocaleDateString(dateLocale(), { month: "short", year: "numeric" })}</Text>
           {(data.mutual > 0 || data.friendStreak > 0) ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md }}>
-              {data.mutual > 0 ? <StatPill icon={HandshakeIcon} label={t("social.mutual", { n: data.mutual })} tint={colors.info} /> : null}
-              {data.friendStreak > 0 ? <StatPill icon={FlameIcon} label={t("social.days_together", { n: data.friendStreak })} tint={colors.success} soft={colors.successSoft} /> : null}
+              {data.mutual > 0 ? <StatPill icon={TabFriendsIcon} label={t("social.mutual", { n: data.mutual })} tint={colors.info} /> : null}
+              {data.friendStreak > 0 ? <StatPill icon={SharedStreakIcon} label={t("social.days_together", { n: data.friendStreak })} tint={colors.success} soft={colors.successSoft} /> : null}
             </View>
           ) : null}
           {!isSelf ? (
@@ -131,8 +131,8 @@ export function UserScreen() {
               <UserActionButton userId={u.userId} relation={rel} friendshipId={data.friendshipId} canRequest={data.canRequest} onChange={setRel} small={false} />
               {friends ? (
                 <>
-                  <Pill label={t("user.nudge")} tone="ghost" icon={BellIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))} />
-                  <Pill label={t("user.task")} tone="ghost" icon={TargetIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))} />
+                  <Pill label={t("user.nudge")} tone="ghost" icon={RemindersIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))} />
+                  <Pill label={t("user.task")} tone="ghost" icon={QuestIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))} />
                 </>
               ) : null}
             </View>
@@ -159,7 +159,7 @@ export function UserScreen() {
           </CardGrid>
         ) : (
           <View style={{ marginBottom: spacing.lg }}>
-            <EmptyCard icon={LockIcon} tint={colors.textMuted} title={t(data.visibility === "friends" ? "user.visible_friends" : "user.private_profile")} text={t(data.visibility === "friends" ? "user.friends_see_stats" : "user.no_stats_shared")} />
+            <EmptyCard icon={PrivacyIcon} tint={colors.textMuted} title={t(data.visibility === "friends" ? "user.visible_friends" : "user.private_profile")} text={t(data.visibility === "friends" ? "user.friends_see_stats" : "user.no_stats_shared")} />
           </View>
         )}
 

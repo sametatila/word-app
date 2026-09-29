@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { FlowScreen, FlowActions, StateBody } from "./flow";
-import { RefreshIcon } from "./icons";
+import { RetryIcon } from "./icons";
 import { useTheme } from "../theme";
 import { TAB_BAR_SPACE } from "./Screen";
 import { t } from "../lib/i18n";
@@ -66,7 +66,7 @@ function CrashCard({ onRetry, sekmeli = false }: { onRetry: () => void; sekmeli?
      (tema ve FlowScreen'in güvenli alanı kancadan) ayrı bir fonksiyon bileşeni. */
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingBottom: sekmeli ? TAB_BAR_SPACE : 0 }}>
-    <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), icon: <RefreshIcon color={colors.onPrimary} size={18} />, onPress: onRetry }} />}>
+    <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), icon: <RetryIcon color={colors.onPrimary} size={18} />, onPress: onRetry }} />}>
       {/* Hata duyuruluyor (`alert` = assertive bölge, eskisi gibi); başlık başlık olarak okunuyor (bkz. parity 259). */}
       <StateBody alert title={t("crash.title")} body={t("crash.body")} />
     </FlowScreen>

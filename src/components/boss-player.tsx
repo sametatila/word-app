@@ -16,7 +16,7 @@ import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
-import { AlertIcon, BoltIcon, BookIcon, ClockIcon, CrownIcon, RefreshIcon, TrophyIcon } from "@/components/icons";
+import { BossIcon, DurationIcon, ModuleCrownIcon, MyWordsIcon, RetryIcon, TimeBonusIcon, WarningIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "@/components/flow";
 import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -305,20 +305,20 @@ export function BossPlayer({
     return (
       <FlowColumn>
         <CoverBody
-          icon={<TrophyIcon size={28} />}
+          icon={<BossIcon size={28} />}
           tint="var(--color-brand-500)"
           eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
           title={t("bossw.title_exam", { title: data.meta.title })}
           rules={[
-            { icon: <ClockIcon size={16} />, text: t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds }) },
-            { icon: <BoltIcon size={16} />, text: t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty }) },
-            { icon: <CrownIcon size={16} />, text: t("bossw.rule_crown") },
-            { icon: <BookIcon size={16} />, text: t("bossw.rule_pool", { n: data.pool }) },
+            { icon: <DurationIcon size={16} />, text: t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds }) },
+            { icon: <TimeBonusIcon size={16} />, text: t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty }) },
+            { icon: <ModuleCrownIcon size={16} />, text: t("bossw.rule_crown") },
+            { icon: <MyWordsIcon size={16} />, text: t("bossw.rule_pool", { n: data.pool }) },
           ]}
           note={best !== null ? t("bossw.best_left", { n: best }) : null}
         >
           {!ready ? (
-            <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.conversationsDone, total: data.meta.conversationsTotal })} />
+            <FlowNote tone="warn" icon={<WarningIcon size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.conversationsDone, total: data.meta.conversationsTotal })} />
           ) : null}
         </CoverBody>
         <FlowActions
@@ -367,7 +367,7 @@ export function BossPlayer({
             { value: best !== null ? t("challenge.seconds", { n: best }) : "—", label: t("bossw.stat_best") },
           ]}
         />
-        {!won ? <FlowNote icon={<RefreshIcon size={16} />} text={t("bossw.still_counted")} /> : null}
+        {!won ? <FlowNote icon={<RetryIcon size={16} />} text={t("bossw.still_counted")} /> : null}
         <FlowActions primary={{ label: t("bossw.play_again"), onClick: start }} tertiary={{ label: t("bossw.back_to_path"), onClick: onExit }} />
       </FlowColumn>
     );

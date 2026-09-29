@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { RuleLink } from "@/components/feedback/feedback-line";
 import { CharMarked, Chip, DiffLines, MarkedSentence, type MarkedToken } from "@/components/feedback/marked";
-import { CheckIcon, XIcon } from "@/components/icons";
+import { CheckIcon, CloseIcon } from "@/components/icons";
 import { ReportFlag, useRoundReport } from "@/components/report-flag";
 import { SpeakButton } from "@/components/speak-button";
 import { useCourse } from "@/components/app-shell";
@@ -292,7 +292,7 @@ function SheetHead({ data }: { data: SheetData }) {
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
         style={{ background: tone === "neutral" ? "var(--surface)" : "color-mix(in srgb, currentColor 24%, transparent)" }}
       >
-        {tone === "bad" ? <XIcon size={14} strokeWidth={3} /> : <CheckIcon size={14} strokeWidth={3} />}
+        {tone === "bad" ? <CloseIcon size={14} /> : <CheckIcon size={14} />}
       </span>
       <span className="min-w-0 flex-1 text-h3">{label}</span>
     </div>

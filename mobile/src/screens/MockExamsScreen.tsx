@@ -8,7 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, ExamIcon, LockIcon } from "../ui/icons";
+import { ChevronNextIcon, LockedIcon, MockExamIcon, WarningIcon } from "../ui/icons";
 import { EmptyCard, ScreenHeader } from "../social/common";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { FlowNote } from "../ui/flow";
@@ -235,7 +235,7 @@ export function MockExamsScreen() {
         ) : catalog === "error" && !papers.length ? (
           <EmptyCard
             live="assertive"
-            icon={ExamIcon}
+            icon={WarningIcon}
             tint={colors.info}
             title={t("mockexams.couldn_t_load")}
             text={t("social.err_offline")}
@@ -252,14 +252,14 @@ export function MockExamsScreen() {
                 kartı aynı kuralla çiziyor (`lib/unlock`). */}
             {access && !access.premium ? (
               <View style={{ marginBottom: spacing.md, gap: spacing.sm }}>
-                <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("mockpack.free_note", { n: access.freeLimit })} />
+                <FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t("mockpack.free_note", { n: access.freeLimit })} />
                 {freeCopy ? <UnlockProgress copy={freeCopy} onPremium={papers.some((p) => isLocked(p.id)) ? () => nav.navigate("Paywall") : null} /> : null}
               </View>
             ) : null}
             {access?.premium && papers.some((p) => isLocked(p.id)) ? (
               <View style={{ marginBottom: spacing.md, gap: spacing.sm }}>
                 <FlowNote
-                  icon={<LockIcon color={colors.textMuted} size={16} />}
+                  icon={<LockedIcon color={colors.textMuted} size={16} />}
                   text={proCopy ? t(proCopy.headline.key, proCopy.headline.params) : t("mockpack.unlock_hint", { n: access.unlock && access.unlock.premium ? access.unlock.packSize : 3 })}
                 />
               </View>
@@ -283,7 +283,7 @@ export function MockExamsScreen() {
              hemen üstünde duruyor — onu söylemeyen tek cümle, kullanıcıya
              kâğıt hiç yokmuş gibi geliyordu. */
           <EmptyCard
-            icon={ExamIcon}
+            icon={MockExamIcon}
             tint={colors.info}
             title={t("mockexams.empty_title")}
             text={t("mockexams.none_for_level", { level })}
@@ -305,7 +305,7 @@ function PaperCard({ paper, states, locked, hint, showPlans, onOpen, onPlans }: 
         <Text variant="micro" color={colors.textMuted}>{t("mockexams.mock_n", { n: paper.no })}</Text>
         {locked ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingVertical: 2, paddingHorizontal: spacing.sm, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
-            <LockIcon color={colors.textMuted} size={12} />
+            <LockedIcon color={colors.textMuted} size={12} />
             <Text variant="micro" color={colors.textMuted}>{t("mockpack.locked")}</Text>
           </View>
         ) : null}
@@ -346,7 +346,7 @@ function PaperCard({ paper, states, locked, hint, showPlans, onOpen, onPlans }: 
                 </Text>
               </View>
               <PartBadge state={states[part.skill] ?? null} />
-              {locked ? <LockIcon color={colors.textMuted} size={18} /> : <ChevronRightIcon color={colors.textMuted} size={20} />}
+              {locked ? <LockedIcon color={colors.textMuted} size={18} /> : <ChevronNextIcon color={colors.textMuted} size={20} />}
             </PressableScale>
           );
         })}

@@ -93,7 +93,7 @@ function Badge({ a, size }: { a: Achievement; size: number }) {
   const tc = TIER_COLOR[a.tier] ?? TIER_COLOR.legend;
   return (
     <View style={[{ width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center", backgroundColor: tc }, softShadow(tc, 8)]}>
-      <AchievementIcon name={a.icon} color="#fff" size={Math.round(size * 0.52)} />
+      <AchievementIcon glyph={a.glyph} color="#fff" size={Math.round(size * 0.52)} />
     </View>
   );
 }

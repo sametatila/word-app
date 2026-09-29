@@ -6,7 +6,7 @@ import { MenuRow } from "@/components/menu-row";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { signOutOnDevice } from "@/components/session-keeper";
 import { useT } from "@/lib/i18n/client";
-import { BellIcon, BookIcon, ChatIcon, CrownIcon, GlobeIcon, LockIcon, UserIcon } from "@/components/icons";
+import { AccountIcon, InfoIcon, LanguageIcon, LearningSettingsIcon, PremiumIcon, PrivacyIcon, RemindersIcon } from "@/components/icons";
 import type { SettingsSection } from "@/components/profile-form";
 
 export type SettingsValues = {
@@ -44,17 +44,17 @@ export function SettingsNav({ values: all, current, compact = false }: { values:
   return (
     <nav aria-label={t("settings.settings")} className="space-y-4">
       <div className="card px-4">
-        <MenuRow href={href("learning")} active={current === "learning"} icon={<BookIcon size={20} />} tone="brand" label={t("settings.group_learning")} value={values.learning} />
-        <MenuRow href={href("app")} active={current === "app"} icon={<GlobeIcon size={20} />} tone="sky" label={t("settings.group_app")} value={values.app} />
-        <MenuRow href="/notifications" icon={<BellIcon size={20} />} tone="flame" label={t("notifications.reminders")} last />
+        <MenuRow href={href("learning")} active={current === "learning"} icon={<LearningSettingsIcon size={20} />} tone="brand" label={t("settings.group_learning")} value={values.learning} />
+        <MenuRow href={href("app")} active={current === "app"} icon={<LanguageIcon size={20} />} tone="sky" label={t("settings.group_app")} value={values.app} />
+        <MenuRow href="/notifications" icon={<RemindersIcon size={20} />} tone="flame" label={t("notifications.reminders")} last />
       </div>
       <div className="card px-4">
-        <MenuRow href={href("account")} active={current === "account" || current === "security"} icon={<UserIcon size={20} />} tone="mint" label={t("settings.group_account")} value={values.account} />
-        <MenuRow href={href("privacy")} active={current === "privacy"} icon={<LockIcon size={20} />} tone="violet" label={t("settings.group_privacy")} />
-        <MenuRow href="/premium?from=settings" icon={<CrownIcon size={20} />} tone="flame" label={t("settings.group_subscription")} value={values.subscription} last />
+        <MenuRow href={href("account")} active={current === "account" || current === "security"} icon={<AccountIcon size={20} />} tone="mint" label={t("settings.group_account")} value={values.account} />
+        <MenuRow href={href("privacy")} active={current === "privacy"} icon={<PrivacyIcon size={20} />} tone="violet" label={t("settings.group_privacy")} />
+        <MenuRow href="/premium?from=settings" icon={<PremiumIcon size={20} />} tone="flame" label={t("settings.group_subscription")} value={values.subscription} last />
       </div>
       <div className="card px-4">
-        <MenuRow href={href("about")} active={current === "about"} icon={<ChatIcon size={20} />} tone="sky" label={t("settings.group_about")} value={values.version || null} last />
+        <MenuRow href={href("about")} active={current === "about"} icon={<InfoIcon size={20} />} tone="sky" label={t("settings.group_about")} value={values.version || null} last />
       </div>
       <button type="button" onClick={() => setConfirmOut(true)} className="pressable w-full py-3 text-center text-strong" style={{ color: "var(--color-rose)" }}>
         {t("profile.log_out")}

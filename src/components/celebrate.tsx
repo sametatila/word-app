@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { T } from "@/lib/motion";
 import { reducedMotion, vibrate } from "@/lib/fx";
-import { FlameIcon, TrophyIcon } from "@/components/icons";
+import { ComboIcon, SurvivalIcon } from "@/components/icons";
 
 /*
  * Konfeti — üstünde yazı yok, o yüzden rampanın en canlı basamakları: altı
@@ -162,7 +162,7 @@ export function AchievementFlash({
             className="flex items-center gap-2 rounded-full px-4 py-2 text-strong text-white"
             style={{ background: color, boxShadow: `0 14px 34px -12px ${color}` }}
           >
-            {tone === "mint" ? <TrophyIcon size={16} /> : <FlameIcon size={16} />}
+            {tone === "mint" ? <SurvivalIcon size={16} /> : <ComboIcon size={16} />}
             {shown.text}
           </span>
         </motion.div>

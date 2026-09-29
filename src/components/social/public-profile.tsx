@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Avatar } from "@/components/avatar";
-import { FlameIcon, HandshakeIcon, LockIcon, TargetIcon, TrophyIcon } from "@/components/icons";
+import { AchievementsIcon, PrivacyIcon, QuestIcon, SharedStreakIcon, StreakIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { errorText, social, type PublicProfileView } from "@/lib/social/client";
 import type { Relation } from "@/lib/social/types";
@@ -78,7 +78,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
               {data.mutual > 0 ? <span>{t("social.mutual", { n: data.mutual })}</span> : null}
               {data.friendStreak > 0 ? (
                 <span className="flex items-center gap-0.5" style={{ color: "var(--color-mint)" }}>
-                  <HandshakeIcon size={12} /> {t("social.days_together", { n: data.friendStreak })}
+                  <SharedStreakIcon size={12} /> {t("social.days_together", { n: data.friendStreak })}
                 </span>
               ) : null}
               <span>{t("socialw.joined", { date: new Date(data.joined).toLocaleDateString(localeOf(lang), { month: "short", year: "numeric" }) })}</span>
@@ -94,7 +94,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
                   {t("user.nudge")}
                 </button>
                 <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))}>
-                  <TargetIcon size={14} />
+                  <QuestIcon size={14} />
                   <span className="ml-1">{t("user.task")}</span>
                 </button>
               </>
@@ -142,11 +142,11 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
 
       {data.stats ? (
         <section className="grid grid-cols-3 gap-2">
-          <Stat label={t("user.day_streak")} value={data.stats.currentStreak} icon={<FlameIcon size={14} />} tone="var(--color-flame)" />
+          <Stat label={t("user.day_streak")} value={data.stats.currentStreak} icon={<StreakIcon size={14} />} tone="var(--color-flame)" />
           <Stat label={t("user.xp_this_week")} value={data.stats.weeklyXp} tone="var(--color-brand)" />
           <Stat label={t("user.total_xp")} value={data.stats.totalXp} tone="var(--color-brand)" />
           <Stat label={t("user.longest_streak")} value={data.stats.longestStreak} tone="var(--color-flame)" />
-          <Stat label={t("user.badge")} value={data.stats.achievements} icon={<TrophyIcon size={14} />} tone="var(--color-violet)" />
+          <Stat label={t("user.badge")} value={data.stats.achievements} icon={<AchievementsIcon size={14} />} tone="var(--color-violet)" />
           <Stat label={t("user.last_active")} text={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" }) : "—"} tone="var(--text-muted)" />
         </section>
       ) : (
@@ -155,7 +155,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
            `user.no_stats_shared`i hiç kullanmıyordu. Android burada kilit
            ikonlu boş kart gösteriyor ve iki metni de yerli yerinde kullanıyor. */
         <EmptyCard
-          icon={LockIcon}
+          icon={PrivacyIcon}
           tint="var(--text-muted)"
           title={t(data.visibility === "friends" ? "user.visible_friends" : "user.private_profile")}
           text={t(data.visibility === "friends" ? "user.friends_see_stats" : "user.no_stats_shared")}

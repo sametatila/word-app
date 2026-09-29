@@ -4,7 +4,7 @@ import { PageBack } from "@/components/page-back";
 import { getUserId } from "@/lib/auth/server";
 import { mockStats } from "@/lib/mock-exams/stats";
 import { MOCK_PASS_PCT, mockSkillLabel, type MockCourse, type MockSkill } from "@/lib/mock-exams/types";
-import { ChevronRightIcon, PodiumIcon } from "@/components/icons";
+import { ChevronNextIcon, ExamStatsIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { FlowActions, StateBody } from "@/components/flow";
 import { getT, getLang } from "@/lib/i18n/server";
@@ -83,7 +83,7 @@ export default async function MockStatsPage() {
               veriyor: "henüz sonucun yok" tek başına bir duvar, yanına
               deneme sınavı listesine götüren kapı gerekiyor. */}
           <EmptyCard
-            icon={PodiumIcon}
+            icon={ExamStatsIcon}
             tint="var(--color-sky)"
             title={t("mockstats.empty_title")}
             text={t("mockstats.empty")}
@@ -197,7 +197,7 @@ function Running({
             </span>
             <span className="muted block text-micro">{t("mockstats.at_task", { n: r.taskIx + 1 })}</span>
           </span>
-          <ChevronRightIcon size={20} className="muted shrink-0" />
+          <ChevronNextIcon size={20} className="muted shrink-0" />
         </Link>
       ))}
     </section>

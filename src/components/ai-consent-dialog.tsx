@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
-import { CheckIcon, ChevronIcon, MicIcon, SparkIcon } from "@/components/icons";
+import { AiIcon, CheckIcon, ExpandIcon, SkillSpeakingIcon } from "@/components/icons";
 import { SkeletonLine } from "@/components/skeleton";
 import { legalPath } from "@/lib/legal";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -212,7 +212,7 @@ function AiConsentDialog({
     if (!busy) onDone(false);
   };
 
-  const Icon = purpose === "ai_text" ? SparkIcon : MicIcon;
+  const Icon = purpose === "ai_text" ? AiIcon : SkillSpeakingIcon;
   return (
     <dialog
       ref={ref}
@@ -292,7 +292,7 @@ function AiConsentDialog({
               className="pointer-events-none absolute inset-x-0 bottom-0 flex h-12 items-end justify-center pb-1"
               style={{ background: "linear-gradient(to bottom, transparent, var(--surface))" }}
             >
-              <ChevronIcon size={18} className="muted" />
+              <ExpandIcon size={18} className="muted" />
             </div>
           ) : null}
         </div>

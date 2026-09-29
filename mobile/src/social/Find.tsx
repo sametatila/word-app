@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, SearchIcon, XIcon, HandshakeIcon, UserPlusIcon } from "../ui/icons";
+import { StreakIcon, SearchIcon, CloseIcon, NoResultsIcon, TabFriendsIcon, AddFriendIcon } from "../ui/icons";
 import { useTheme, spacing, radii } from "../theme";
 import { EmptyCard, ErrorText, SectionTitle, StatPill } from "./common";
 import { UserActionButton } from "./UserActionButton";
@@ -59,7 +59,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
   }, [q]);
 
   const open = (username: string | null) => { if (username) nav.navigate("User", { username }); };
-  const card = (u: { userId: string; name: string | null; username: string | null; avatar: string | null; level: string }, note: { label: string; tint: string; icon?: typeof FlameIcon } | null, streak: number, right: React.ReactNode) => (
+  const card = (u: { userId: string; name: string | null; username: string | null; avatar: string | null; level: string }, note: { label: string; tint: string; icon?: typeof StreakIcon } | null, streak: number, right: React.ReactNode) => (
     <Card key={u.userId} padded style={{ marginBottom: spacing.md }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         {/* Adın kendisi zaten aynı yere basılabilir; avatar onun süsü ve adsız
@@ -74,7 +74,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
       {note || streak > 0 ? (
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
           {note ? <StatPill icon={note.icon} label={note.label} tint={note.tint} /> : null}
-          {streak > 0 ? <StatPill icon={FlameIcon} label={t("social.days_streak", { n: streak })} tint={colors.streak} /> : null}
+          {streak > 0 ? <StatPill icon={StreakIcon} label={t("social.days_streak", { n: streak })} tint={colors.streak} /> : null}
         </View>
       ) : null}
     </Card>
@@ -93,7 +93,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             yarisi. O esigin kaynagi mobilin kendi olcusu ("ikincil denetimler
             hitSlop ile 36-50") ve tam burada tutulmuyordu; webde ayni dugme
             zaten 36. */}
-        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel={t("find.clear")} style={{ width: 36, height: 36, alignItems: "center", justifyContent: "center" }}><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
+        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel={t("find.clear")} style={{ width: 36, height: 36, alignItems: "center", justifyContent: "center" }}><CloseIcon color={colors.textMuted} size={18} /></PressableScale> : null}
       </View>
       <ErrorText text={err} />
       {q.trim().length >= 2 ? (
@@ -102,14 +102,14 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             /* Boş hâl EV KALIBINDA: bu dosya `EmptyCard`ı zaten dışa veren
                kabuğun içinde ama kendi boş hâllerinde çıplak bir cümle
                kullanıyordu. */
-            <EmptyCard icon={SearchIcon} tint={colors.info} title={t("find.empty_results_title")} text={t("find.no_results_private_profiles_only")} />
+            <EmptyCard icon={NoResultsIcon} tint={colors.info} title={t("find.empty_results_title")} text={t("find.no_results_private_profiles_only")} />
           )}
         </View>
       ) : (
         <View>
           <SectionTitle title={t("find.you_may_know")} />
-          {sugg === null ? <SearchResultSkeleton /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: t("social.mutual", { n: s.mutual }), tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: t("find.same_level", { level: s.level }), tint: colors.info } : { label: t("find.active_week"), tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
-            <EmptyCard icon={UserPlusIcon} tint={colors.success} title={t("find.empty_sugg_title")} text={t("find.no_suggestions_yet_search_by")} />
+          {sugg === null ? <SearchResultSkeleton /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: t("social.mutual", { n: s.mutual }), tint: colors.success, icon: TabFriendsIcon } : s.reason === "level" ? { label: t("find.same_level", { level: s.level }), tint: colors.info } : { label: t("find.active_week"), tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
+            <EmptyCard icon={AddFriendIcon} tint={colors.success} title={t("find.empty_sugg_title")} text={t("find.no_suggestions_yet_search_by")} />
           )}
         </View>
       )}

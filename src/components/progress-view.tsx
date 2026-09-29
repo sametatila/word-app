@@ -5,7 +5,7 @@ import { T, fillStyle, fillX } from "@/lib/motion";
 import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
 import { MenuRow } from "@/components/menu-row";
-import { BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "@/components/icons";
+import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "@/components/icons";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
@@ -175,7 +175,7 @@ export function ActivityProgress({
         style={{ background: "var(--color-flame-600)", "--tint-fill": "var(--color-flame-600)" } as React.CSSProperties}
       >
         <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-tile bg-white/20">
-          <FlameIcon size={34} />
+          <StreakIcon size={34} />
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-display">{streak}</span>
@@ -201,20 +201,21 @@ export function ActivityProgress({
           İKONLARI DA AYNI — cümle bunu söylüyordu ama üç karoda tutmuyordu:
           öğrenilen kelime `BookIcon` ↔ Android `LearnIcon`, XP `SparkIcon` ↔
           Android `BoltIcon`, süre ise Android'de `PodiumIcon` çiziyordu (kürsü
-          SIRALAMA demek, süre demek değil). Üçü tek glife indirildi; süre
-          ikisinde de saat (bkz. web-parity §11.411). */}
+          SIRALAMA demek, süre demek değil). Bugün dört karo iki platformda aynı
+          anlam adlı ikonu çiziyor: `MyWordsIcon`, `XpIcon`, `DurationIcon`,
+          `LevelIcon` (bkz. web-parity §11.411, `data/icons/picks.json`). */}
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         {/* Tek dokunuşla kelime ekranına: kapsamın ayrıntısı orada. */}
         <KpiCard
           label={t("progress.words_learned")}
           value={formatNumber(mastered, lang)}
           tone="var(--color-brand)"
-          Icon={LearnIcon}
+          Icon={MyWordsIcon}
           href="/words"
         />
-        <KpiCard label={t("progress.total_xp")} value={formatNumber(xp, lang)} tone="var(--color-mint)" Icon={BoltIcon} />
-        <KpiCard label={t("progress.time_total")} value={formatDuration(seconds, t)} tone="var(--color-sky)" Icon={ClockIcon} />
-        <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet)" Icon={TrophyIcon} />
+        <KpiCard label={t("progress.total_xp")} value={formatNumber(xp, lang)} tone="var(--color-mint)" Icon={XpIcon} />
+        <KpiCard label={t("progress.time_total")} value={formatDuration(seconds, t)} tone="var(--color-sky)" Icon={DurationIcon} />
+        <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet)" Icon={LevelIcon} />
       </div>
 
       {/*
@@ -224,8 +225,8 @@ export function ActivityProgress({
         yani kimliğin parçası. Mobil Gelişim ekranıyla aynı bölünme.
       */}
       <nav className="card px-4" aria-label={t("progress.progress")}>
-        <MenuRow href="/profile/cando" icon={<CheckIcon size={20} />} tone="mint" label={t("profile.what_can_i_do")} />
-        <MenuRow href="/profile/writings" icon={<WriteIcon size={20} />} tone="sky" label={t("profile.my_posts")} last />
+        <MenuRow href="/profile/cando" icon={<CorrectIcon size={20} />} tone="mint" label={t("profile.what_can_i_do")} />
+        <MenuRow href="/profile/writings" icon={<MyWritingsIcon size={20} />} tone="sky" label={t("profile.my_posts")} last />
       </nav>
 
       {/* Kelime hakimiyeti — mobilde karoların hemen altında tek şerit.
@@ -240,7 +241,7 @@ export function ActivityProgress({
             {formatNumber(mastered, lang)}/{totalWords ? formatNumber(totalWords, lang) : "—"}
             {/* Kartin dokunulabilir oldugunu soyleyen isaret - Android'de de
                 sayinin yaninda duruyor. */}
-            <ChevronRightIcon size={18} className="shrink-0" />
+            <ChevronNextIcon size={18} className="shrink-0" />
           </span>
         </div>
         <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
@@ -312,7 +313,7 @@ function KpiCard({
         <Icon size={20} />
         {href ? (
           <span className="muted">
-            <ChevronRightIcon size={14} />
+            <ChevronNextIcon size={14} />
           </span>
         ) : null}
       </div>

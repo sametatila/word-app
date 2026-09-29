@@ -1,6 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
 import type { SkillId } from "@/lib/skills/types";
-import { GrammarIcon, ListenIcon, MicIcon, ReadIcon, WriteIcon } from "@/components/icons";
+import { SkillGrammarIcon, SkillListeningIcon, SkillReadingIcon, SkillSpeakingIcon, SkillWritingIcon } from "@/components/icons";
 
 /**
  * CEFR seviye renkleri — level-badge ve ilerleme çubuklarıyla aynı ton dili.
@@ -24,11 +24,11 @@ export const SKILL_ICON: Record<
   SkillId,
   ComponentType<SVGProps<SVGSVGElement> & { size?: number }>
 > = {
-  reading: ReadIcon,
-  listening: ListenIcon,
-  writing: WriteIcon,
-  speaking: MicIcon,
-  grammar: GrammarIcon,
+  reading: SkillReadingIcon,
+  listening: SkillListeningIcon,
+  writing: SkillWritingIcon,
+  speaking: SkillSpeakingIcon,
+  grammar: SkillGrammarIcon,
 };
 
 /**

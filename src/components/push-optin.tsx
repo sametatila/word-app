@@ -4,7 +4,7 @@ import { track } from "@/lib/track";
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BellIcon, CheckIcon, XIcon } from "@/components/icons";
+import { CloseIcon, CorrectIcon, NotificationsIcon } from "@/components/icons";
 import {
   currentSubscription,
   iosNeedsInstall,
@@ -99,7 +99,7 @@ export function PushOptIn({ streak }: { streak: number }) {
           className="flex items-center gap-2 text-strong"
           style={{ color: "var(--color-mint)" }}
         >
-          <CheckIcon size={16} /> {t("pushw.reminders_on")}
+          <CorrectIcon size={16} /> {t("pushw.reminders_on")}
         </span>
         <p className="muted mt-1 text-caption">
           {t("pushw.optin_done")}
@@ -172,7 +172,7 @@ function Card({
       style={{ background: tone === "mint" ? `color-mix(in srgb, ${color} 12%, transparent)` : "var(--brand-tint)" }}
     >
       <span className="mt-0.5 shrink-0" style={{ color }}>
-        {icon ?? <BellIcon size={18} />}
+        {icon ?? <NotificationsIcon size={18} />}
       </span>
       <div className="min-w-0 flex-1">{children}</div>
       {onClose ? (
@@ -181,7 +181,7 @@ function Card({
           aria-label={t("common.close")}
           className="muted hit-8 shrink-0 rounded-chip p-1 hover:text-[color:var(--text)]"
         >
-          <XIcon size={15} />
+          <CloseIcon size={15} />
         </button>
       ) : null}
     </motion.div>

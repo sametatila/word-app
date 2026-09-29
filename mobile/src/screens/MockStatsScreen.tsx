@@ -11,7 +11,7 @@ import { Text } from "../ui/Text";
 import { Bar, BAR_HEIGHT } from "../ui/Bar";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, PodiumIcon, AlertIcon } from "../ui/icons";
+import { ChevronNextIcon, ExamStatsIcon, WarningIcon } from "../ui/icons";
 import { EmptyCard, ScreenHeader } from "../social/common";
 import { FlowNote } from "../ui/flow";
 import { fetchMockStats, failReason, type MockStats } from "../game/mockExam";
@@ -152,7 +152,7 @@ export function MockStatsScreen() {
                 listesine götüren kapı gerekiyor. Sayfa içi boş hâl olduğu için
                 (başlık ve yarım kalanlar üstünde) durum şablonuna taşınmadı. */}
             <EmptyCard
-              icon={PodiumIcon}
+              icon={ExamStatsIcon}
               tint={colors.info}
               title={t("mockstats.empty_title")}
               text={t("mockstats.empty")}
@@ -172,7 +172,7 @@ export function MockStatsScreen() {
               <View accessibilityLiveRegion="polite" style={{ gap: spacing.sm, marginBottom: spacing.md }}>
                 {/* İki tek satırlık not (`FlowNote`): sebep bir uyarı, sayıların
                     kaynağı nötr bilgi. */}
-                <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t(`mockexam.fail_${err ?? "unreachable"}`)} />
+                <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={t(`mockexam.fail_${err ?? "unreachable"}`)} />
                 <FlowNote text={t("mockstats.local_note")} />
               </View>
             ) : null}
@@ -250,7 +250,7 @@ function Running({
             <Text variant="bodyStrong">{label(r.paperId)} · {skillOf(r.skill, r.paperId)}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("mockstats.at_task", { n: r.taskIx + 1 })}</Text>
           </View>
-          <ChevronRightIcon color={colors.textMuted} size={20} />
+          <ChevronNextIcon color={colors.textMuted} size={20} />
         </PressableScale>
       ))}
     </Card>

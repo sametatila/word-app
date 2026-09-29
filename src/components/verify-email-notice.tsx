@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AuthNotice, AuthShell } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
-import { ChevronRightIcon, InfoIcon } from "@/components/icons";
+import { InfoIcon, ChevronNextIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
 
 const RESEND_COOLDOWN = 60;
@@ -80,7 +80,7 @@ export function VerifyEmailNotice({
             <ul className="mt-1 flex flex-col gap-1">
               {[t("verify.tip_spam"), t("verify.tip_contacts"), t("verify.tip_wrong_address")].map((tip) => (
                 <li key={tip} className="flex items-start gap-1.5">
-                  <ChevronRightIcon size={14} className="mt-1 shrink-0" />
+                  <ChevronNextIcon size={14} className="mt-1 shrink-0" />
                   <span className="min-w-0">{tip}</span>
                 </li>
               ))}

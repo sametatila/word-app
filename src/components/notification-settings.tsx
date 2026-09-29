@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
-import { BellIcon } from "@/components/icons";
+import { NotificationsIcon } from "@/components/icons";
 import { SettingRow, Switch } from "@/components/setting-row";
 import { PushSettings } from "@/components/push-settings";
 import { useT } from "@/lib/i18n/client";
@@ -75,7 +75,7 @@ export function NotificationSettings() {
           className="flex h-[72px] w-[72px] items-center justify-center rounded-card glow-tint"
           style={{ background: "var(--color-sky)", color: "var(--on-fill)", "--tint-fill": "var(--color-sky)" } as React.CSSProperties}
         >
-          <BellIcon size={36} />
+          <NotificationsIcon size={36} />
         </span>
         <h2 className="mt-3 text-h2">{t("notifications.reminders")}</h2>
         <p className="muted mt-1">{t("notifications.gentle_nudges_to_keep_your")}</p>

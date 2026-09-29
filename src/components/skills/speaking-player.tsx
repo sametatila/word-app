@@ -11,7 +11,7 @@ import { PASS_SCORE } from "@/lib/pronounce-const";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel } from "./quiz";
 import { localeOf, useTargetLang } from "./player-context";
-import { CheckIcon, XIcon, SpeakerIcon } from "@/components/icons";
+import { CorrectIcon, SpeakerIcon, WrongIcon } from "@/components/icons";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 import { SPEAK_CLIP_MS } from "@/lib/pronounce-const";
@@ -205,9 +205,9 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
           <div role="status" className="mt-4">
             <div className="flex items-center gap-2">
               {score.overall >= PASS_SCORE ? (
-                <CheckIcon size={18} className="text-[color:var(--color-mint)]" />
+                <CorrectIcon size={18} className="text-[color:var(--color-mint)]" />
               ) : (
-                <XIcon size={18} className="text-[color:var(--color-rose)]" />
+                <WrongIcon size={18} className="text-[color:var(--color-rose)]" />
               )}
               <span className="font-bold">{formatPercent(score.overall, lang)}</span>
               <span className="muted text-caption">{t("item.heard", { text: score.transcript || "—" })}</span>

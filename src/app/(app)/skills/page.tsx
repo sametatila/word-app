@@ -10,7 +10,7 @@ import { listSkillStatus, type SkillStatus } from "@/lib/skills/record";
 import { isSkillDone } from "@/lib/score-bands";
 import { SKILL_LABEL_KEYS, SKILL_ORDER } from "@/lib/skills/meta";
 import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
-import { ChevronRightIcon } from "@/components/icons";
+import { ChevronNextIcon } from "@/components/icons";
 import { SkillBrowser, type BrowserSection } from "@/components/skills/skill-browser";
 import { gatedMetaKind, isSkillLocked, skillLibraryAccess, type SkillLibraryAccess } from "@/lib/premium/skill-access";
 import { gateNote } from "@/lib/premium/gate-note";
@@ -189,7 +189,7 @@ export default async function SkillsPage({
                 </span>
                 <span className="muted mt-0.5 block text-caption">{t("skills.level_done_body", { level, next: nextLevel })}</span>
               </span>
-              <ChevronRightIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+              <ChevronNextIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
             </Link>
           ) : null
         }
@@ -224,7 +224,7 @@ async function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: S
         <span className="block truncate text-strong">{meta.title}</span>
         <span className="muted line-clamp-2 block text-caption">{reason}</span>
       </span>
-      <ChevronRightIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+      <ChevronNextIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
     </Link>
   );
 }

@@ -6,13 +6,13 @@ import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useTheme, radii, spacing, cardShadow } from "../theme";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LearnIcon, PathIcon, SkillsIcon, HandshakeIcon } from "../ui/icons";
+import { TabFriendsIcon, TabLearnIcon, TabPathIcon, TabSkillsIcon } from "../ui/icons";
 import { track } from "../lib/track";
 
 const NAV_KEY: Record<string, string> = { Learn: "learn", Path: "immersion", Skills: "skills", Friends: "friends" };
 
 const ICONS: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
-  Learn: (p) => <LearnIcon {...p} />, Path: (p) => <PathIcon {...p} />, Skills: (p) => <SkillsIcon {...p} />, Friends: (p) => <HandshakeIcon {...p} />,
+  Learn: (p) => <TabLearnIcon {...p} />, Path: (p) => <TabPathIcon {...p} />, Skills: (p) => <TabSkillsIcon {...p} />, Friends: (p) => <TabFriendsIcon {...p} />,
 };
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {

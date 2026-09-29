@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { T, fillX, staggerDelay } from "@/lib/motion";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StateBody } from "@/components/flow";
-import { CheckIcon } from "@/components/icons";
+import { CorrectIcon } from "@/components/icons";
 import { OptionMark } from "@/components/games/option-mark";
 import { demoPlacementFor, estimateLevel } from "@/lib/placement-demo";
 import { courseOrDefault } from "@/lib/courses";
@@ -108,7 +108,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
         />
         {saved ? (
           <div role="status">
-            <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("placement.saved")} />
+            <FlowNote tone="ok" icon={<CorrectIcon size={16} />} text={t("placement.saved")} />
           </div>
         ) : null}
         <FlowActions primary={{ label: t("placement.understood"), onClick: apply }} tertiary={{ label: t("common.close"), onClick: leave }} />

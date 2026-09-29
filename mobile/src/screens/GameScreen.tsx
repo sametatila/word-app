@@ -8,7 +8,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon, CheckIcon, RepeatIcon } from "../ui/icons";
+import { WrongIcon, ShareIcon, XpIcon, ComboIcon, StreakIcon, SurvivalIcon, WarningIcon, CorrectIcon, ReviewIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { shareRoundResult } from "../lib/share";
@@ -572,7 +572,7 @@ function GameRound() {
             primary={{ label: t(stoppedEarly.current ? "summary.back_to_round" : "game.continue"), onPress: () => void load() }}
             /* HAYATTA KALMA: kullanıcının en ısındığı an (tur az önce bitti).
                `challenge_play` webin kendi adı — hangi kapıdan girildiği ölçülüyor. */
-            secondary={{ label: t("challenge.title"), icon: <FlameIcon color={colors.dangerText} size={18} />, onPress: () => { track("challenge_play"); nav.navigate("Challenge"); } }}
+            secondary={{ label: t("challenge.title"), icon: <SurvivalIcon color={colors.dangerText} size={18} />, onPress: () => { track("challenge_play"); nav.navigate("Challenge"); } }}
             tertiary={{ label: t("common.finish"), onPress: () => nav.goBack() }}
           />
         }
@@ -595,15 +595,15 @@ function GameRound() {
         ) : null}
 
         {/* Tek satırlık notlar: kazanılan, uyarılan, kurtarılan — hepsi aynı biçimde. */}
-        {mastered > 0 ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={t("sessionw.n_mastered", { n: mastered })} /> : null}
+        {mastered > 0 ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={t("sessionw.n_mastered", { n: mastered })} /> : null}
         {wagerResult !== null ? (
-          <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<BoltIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
+          <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<XpIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
         ) : null}
-        {repaired !== null ? <FlowNote tone="warn" icon={<FlameIcon color={colors.streakText} size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: repaired })}`} /> : null}
+        {repaired !== null ? <FlowNote tone="warn" icon={<StreakIcon color={colors.streakText} size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: repaired })}`} /> : null}
         {/* Misafirin serisi üç güne çıktı: kaybedilecek alışkanlık artık var. */}
         <GuestMilestoneCard milestone="streak_3" when={(result?.currentStreak ?? 0) >= 3} />
         {/* Bu bir UYARI, hata değil — tur oynandı, yalnız kaydı bekliyor. */}
-        {saveWarning ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
+        {saveWarning ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
 
         {/* ZORLANDIKLARIN — en çok altı satır; gerisi "Kelimelerim"de. */}
         {missed.current.length ? (
@@ -616,7 +616,7 @@ function GameRound() {
             <Text variant="caption" color={colors.textMuted}>{result && result.dueTomorrow > 0 ? t("sessionw.due_tomorrow", { n: result.dueTomorrow }) : t("session.missed_note")}</Text>
           </DetailCard>
         ) : result && result.dueTomorrow > 0 ? (
-          <FlowNote icon={<RepeatIcon color={colors.textMuted} size={16} />} text={t("sessionw.due_tomorrow", { n: result.dueTomorrow })} />
+          <FlowNote icon={<ReviewIcon color={colors.textMuted} size={16} />} text={t("sessionw.due_tomorrow", { n: result.dueTomorrow })} />
         ) : null}
 
         {result && result.dailyGoal > 0 ? (
@@ -660,7 +660,7 @@ function GameRound() {
         count={`${idx + 1}/${rounds.length}`}
         style={{ marginBottom: spacing.xl }}
         extra={<>
-          {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: soft(colors.info), borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.infoText} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
+          {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: soft(colors.info), borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><ComboIcon color={colors.infoText} size={14} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
           {newChip}
         </>}
       />
@@ -733,7 +733,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, xp, rema
       ]} />
       {/* Kapanan bahsin sonucu: kazanılan, berabere ve yanan üç hâl de açık. */}
       {wagerResult !== null ? (
-        <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<BoltIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
+        <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<XpIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
       ) : null}
       <PressableScale
         onPress={() => { setBet(!bet); haptic("tap"); }}
@@ -759,9 +759,9 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, xp, rema
         </View>
         {bet ? (
           <View style={{ gap: 6, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: spacing.sm }}>
-            <WagerLine icon={<CheckIcon color={colors.successText} size={14} />} text={t("wager.outcome_all", { n: STAGE_SIZE })} colors={colors} />
-            <WagerLine icon={<BoltIcon color={colors.textMuted} size={14} />} text={t("wager.outcome_one")} colors={colors} />
-            <WagerLine icon={<XIcon color={colors.dangerText} size={14} />} text={t("wager.outcome_two")} colors={colors} />
+            <WagerLine icon={<CorrectIcon color={colors.successText} size={14} />} text={t("wager.outcome_all", { n: STAGE_SIZE })} colors={colors} />
+            <WagerLine icon={<XpIcon color={colors.textMuted} size={14} />} text={t("wager.outcome_one")} colors={colors} />
+            <WagerLine icon={<WrongIcon color={colors.dangerText} size={14} />} text={t("wager.outcome_two")} colors={colors} />
             <Text variant="caption" color={colors.textMuted}>{t("wager.safe")}</Text>
           </View>
         ) : null}

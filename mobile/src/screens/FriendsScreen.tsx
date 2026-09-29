@@ -13,7 +13,7 @@ import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { AppHeader } from "../ui/AppHeader";
 import { PressableScale } from "../ui/PressableScale";
-import { ShareIcon, HandshakeIcon, UserPlusIcon } from "../ui/icons";
+import { ShareIcon, TabFriendsIcon, AddFriendIcon } from "../ui/icons";
 import { useTheme, spacing, radii } from "../theme";
 import { Chip, EmptyCard, ErrorText, Pill } from "../social/common";
 import { FriendRows, FriendCardSkeleton } from "../social/FriendRows";
@@ -90,7 +90,7 @@ export function FriendsScreen() {
     return (
       <Screen>
         <AppHeader title={tx("nav.friends")} />
-        <GuestAccountCard icon={HandshakeIcon} tint={colors.success} title={tx("guest.social_title")} text={tx("guest.social_body")} />
+        <GuestAccountCard icon={TabFriendsIcon} tint={colors.success} title={tx("guest.social_title")} text={tx("guest.social_body")} />
       </Screen>
     );
   }
@@ -99,7 +99,7 @@ export function FriendsScreen() {
     return (
       <Screen>
         <AppHeader title={tx("nav.friends")} />
-        <EmptyCard icon={HandshakeIcon} tint={colors.success} title={tx("friends.sign_in_for_friends")} text={tx("friends.add_friends_react_in_feed_hit")} action={tx("friends.sign_in")} onAction={() => nav.navigate("Auth")} />
+        <EmptyCard icon={TabFriendsIcon} tint={colors.success} title={tx("friends.sign_in_for_friends")} text={tx("friends.add_friends_react_in_feed_hit")} action={tx("friends.sign_in")} onAction={() => nav.navigate("Auth")} />
       </Screen>
     );
   }
@@ -143,7 +143,7 @@ export function FriendsScreen() {
         {tab === "friends" ? (
           <View>
             {err && (data === null || !me) ? (
-              <EmptyCard live="assertive" icon={HandshakeIcon} tint={colors.info} title={tx("friends.couldn_t_load")} text={tx("social.err_offline")} action={tx("friends.try_again")} onAction={() => void reload()} />
+              <EmptyCard live="assertive" icon={TabFriendsIcon} tint={colors.info} title={tx("friends.couldn_t_load")} text={tx("social.err_offline")} action={tx("friends.try_again")} onAction={() => void reload()} />
             ) : data === null || !me ? (
               [0, 1].map((i) => <FriendCardSkeleton key={i} />)
             ) : (
@@ -155,7 +155,7 @@ export function FriendsScreen() {
                 {data.friends.length ? (
                   <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
                 ) : (
-                  <EmptyCard icon={UserPlusIcon} tint={colors.success} title={tx("friends.no_friends_yet")} text={tx("friends.search_by_username_or_send_your")} />
+                  <EmptyCard icon={AddFriendIcon} tint={colors.success} title={tx("friends.no_friends_yet")} text={tx("friends.search_by_username_or_send_your")} />
                 )}
                 <Find onChanged={() => void reload()} />
                 <Requests incoming={data.incoming} outgoing={data.outgoing} side="outgoing" onChanged={() => void reload()} />

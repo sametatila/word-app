@@ -1,5 +1,5 @@
 import React from "react";
-import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon } from "./icons";
+import { ConversationIcon, PathReviewIcon, SkillGrammarIcon, SkillListeningIcon, SkillReadingIcon, SkillWritingIcon, UnitQuizIcon } from "./icons";
 import type { ItemKind } from "../data/unit";
 import type { Palette } from "../theme";
 import { fillOf } from "../theme/colors";
@@ -34,13 +34,13 @@ export const KIND_TINT: Record<ItemKind, keyof Palette> = {
 };
 
 const ICONS: Record<ItemKind, (p: { color: string; size: number }) => React.ReactElement> = {
-  conversation: (p) => <LearnIcon {...p} />,
-  read: (p) => <ReadIcon {...p} />,
-  listen: (p) => <ListenIcon {...p} />,
-  write: (p) => <WriteIcon {...p} />,
-  grammar: (p) => <GrammarIcon {...p} />,
-  quiz: (p) => <QuizIcon {...p} />,
-  unitQuiz: (p) => <CheckIcon {...p} />,
+  conversation: (p) => <ConversationIcon {...p} />,
+  read: (p) => <SkillReadingIcon {...p} />,
+  listen: (p) => <SkillListeningIcon {...p} />,
+  write: (p) => <SkillWritingIcon {...p} />,
+  grammar: (p) => <SkillGrammarIcon {...p} />,
+  quiz: (p) => <PathReviewIcon {...p} />,
+  unitQuiz: (p) => <UnitQuizIcon {...p} />,
 };
 
 /** Türün ikonu; tanınmayan tür için `null` (çizen yer boş bırakır). */

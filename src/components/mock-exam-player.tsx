@@ -7,7 +7,7 @@ import { askAiConsentUpfront, type AiConsentPurpose } from "@/lib/ai-consent-cli
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { dialogueSegments, prefetchSegments, speakSegments, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, ArrowRightIcon, ArrowLeftIcon, RefreshIcon, AlertIcon, XIcon } from "@/components/icons";
+import { SpeakerIcon, SkillSpeakingIcon, CorrectIcon, WrongIcon, MockExamIcon, DurationIcon, NoGoingBackIcon, ResumeIcon, WarningIcon, OfflineIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { ReportDialog } from "@/components/report-dialog";
@@ -438,14 +438,14 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     return (
       <FlowColumn>
         <CoverBody
-          icon={<ExamIcon size={28} />}
+          icon={<MockExamIcon size={28} />}
           tint="var(--color-brand)"
           eyebrow={eyebrow}
           title={<span lang={paper.course}>{paper.theme}</span>}
           pitch={<span lang={paper.course}>{part.instruction}</span>}
           rules={[
             {
-              icon: <ClockIcon size={16} />,
+              icon: <DurationIcon size={16} />,
               /* "puanlanmaz" DEĞİL (denetim T15): görevleri yapay zekâ puanlıyor.
                  Misafir varyantı (`part_open_guest`) yalnız mobilde: web hesap
                  istiyor, misafir bu sayfaya gelmiyor (`getAccountUserId`). */
@@ -454,10 +454,10 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
                 : t("mockexams.part_open", { minutes: part.minutes }),
             },
             /* Oturum kuralları eskiden tek paragraftı; her kural artık kendi satırı. */
-            { icon: <ArrowRightIcon size={16} />, text: t("mockexam.rule_timed") },
-            { icon: <ArrowLeftIcon size={16} />, text: t("mockexam.no_back"), tone: "bad" },
+            { icon: <DurationIcon size={16} />, text: t("mockexam.rule_timed") },
+            { icon: <NoGoingBackIcon size={16} />, text: t("mockexam.no_back"), tone: "bad" },
             { icon: <SpeakerIcon size={16} />, text: t("mockexam.rule_voiced") },
-            { icon: <CheckIcon size={16} />, text: t("mockexam.rule_saved"), tone: "ok" },
+            { icon: <CorrectIcon size={16} />, text: t("mockexam.rule_saved"), tone: "ok" },
           ]}
           /* Temanın ve yönergenin öğrencinin dilindeki karşılığı kaybolmuyor. */
           note={
@@ -552,12 +552,12 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           UYARI (kayıp yok, kural işledi). Mobil aynı iki notu çiziyor. */}
       {autoNext ? (
         <div className="mt-2">
-          <FlowNote tone="warn" icon={<ClockIcon size={16} className="shrink-0" />} text={t("mockexam.auto_next")} />
+          <FlowNote tone="warn" icon={<DurationIcon size={16} className="shrink-0" />} text={t("mockexam.auto_next")} />
         </div>
       ) : null}
       {resumed && ix === (attempt?.taskIx ?? 0) ? (
         <div className="mt-2">
-          <FlowNote icon={<RefreshIcon size={16} className="muted shrink-0" />} text={t("mockexam.resumed")} />
+          <FlowNote icon={<ResumeIcon size={16} className="muted shrink-0" />} text={t("mockexam.resumed")} />
         </div>
       ) : null}
 
@@ -1125,7 +1125,7 @@ function SpeakingTask({
             <p className="muted mt-3 text-body leading-relaxed">{t("speechw.unsupported")}</p>
           ) : (
             <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" onClick={() => { setCount(prep); setStep("prep"); }}>
-              <MicIcon className="size-4" /> {t("mockexam.speak_start")}
+              <SkillSpeakingIcon className="size-4" /> {t("mockexam.speak_start")}
             </button>
           )}
           <button type="button" className={`btn btn-ghost mt-3 px-4 py-2 text-body ${asr === false ? "" : "ml-2"}`} onClick={() => setStep("done")}>
@@ -1148,7 +1148,7 @@ function SpeakingTask({
             </>
           ) : (
             <div className="text-center">
-              <MicIcon className="mx-auto size-6" style={{ color: "var(--color-danger)" }} />
+              <SkillSpeakingIcon className="mx-auto size-6" style={{ color: "var(--color-danger)" }} />
               <p className="mt-1 text-strong" style={{ color: "var(--color-danger)" }}>{t("mockexam.speak_now")} · {mmss(count)}</p>
               <p className="muted mt-1 text-body">{current?.who === "you" ? current.hint : t("mockexam.solo_hint")}</p>
               {/* Erken bitirmek: süre dolmadan söyleyeceğini bitiren öğrenci
@@ -1350,7 +1350,7 @@ function Result({
                         className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-caption"
                         style={{ background: ok ? "var(--color-success-soft)" : "var(--color-danger-soft)", color: ok ? "var(--color-success)" : "var(--color-danger)" }}
                       >
-                        {ok ? <CheckIcon className="size-3.5" /> : <XIcon className="size-3.5" />}
+                        {ok ? <CorrectIcon className="size-3.5" /> : <WrongIcon className="size-3.5" />}
                       </span>
                       <div className="min-w-0 flex-1">
                         <p className="whitespace-pre-line text-strong leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
@@ -1448,11 +1448,11 @@ function Result({
 
         {/* Metni olup puanı olmayan görev ortalamaya girmiyor; kaç tane olduğu söyleniyor. */}
         {graded && openPart && openPart.unscored > 0 ? (
-          <FlowNote icon={<AlertIcon size={16} className="muted shrink-0" />} text={t("mockexam.open_unscored", { n: openPart.unscored })} />
+          <FlowNote icon={<WarningIcon size={16} className="muted shrink-0" />} text={t("mockexam.open_unscored", { n: openPart.unscored })} />
         ) : null}
         {/* Sunucuya ulaşılamadı: sebep kırmızı, sonucun nerede saklandığı ayrı satır. */}
-        {offline ? <FlowNote tone="bad" icon={<AlertIcon size={16} className="shrink-0" />} text={t(FAIL_KEYS[offline])} /> : null}
-        {offline ? <FlowNote icon={<CheckIcon size={16} className="muted shrink-0" />} text={t("mockexam.saved_locally")} /> : null}
+        {offline ? <FlowNote tone="bad" icon={<OfflineIcon size={16} className="shrink-0" />} text={t(FAIL_KEYS[offline])} /> : null}
+        {offline ? <FlowNote icon={<CorrectIcon size={16} className="muted shrink-0" />} text={t("mockexam.saved_locally")} /> : null}
 
         {score.byGoal.length ? (
           <DetailCard title={t("mockexam.by_goal")}>

@@ -6,6 +6,7 @@ import { PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
 import { supportsGame, targetLangOf, type TargetLang } from "@/lib/courses";
 import { GROUP_LABEL_KEYS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import { onAchievementsUnlocked } from "@/lib/social/hooks";
+import type { IconMeaning } from "@/components/icons.remix.generated";
 import {
   achievements,
   assessments,
@@ -109,8 +110,21 @@ export type AchievementDef = {
   titleKey: string;
   /** Nasıl açılır — kilitliyken görünen tek metin (anahtar). */
   hintKey: string;
-  /** components/icons.tsx içindeki bileşen adı. */
+  /**
+   * ESKİ ikon adı (`FlameIcon`, `BookIcon`, …) — YALNIZ yayımlanmış mobil
+   * sürümler için (build ≤ 10). O sürümler bu adı kendi elle çizilmiş setinde
+   * arıyor, bilmediği adda yıldıza düşüyor. Set Remix Icon'a geçti (2026-09-29)
+   * ve adlar artık ANLAM adı; bu alanın değerleri o yüzden DONDURULDU: yeni
+   * rozet de eski setten bir ad alır (yoksa eski sürümde yıldız çizilir).
+   * Güncel istemciler `glyph`i okuyor. Eski sürümler mağazadan düşünce silinir.
+   */
   icon: string;
+  /**
+   * Rozetin ikonu, ANLAM kimliğiyle (`data/icons/picks.json` satırı:
+   * `streak`, `ach-words`, …). Web `BadgeIcon` ve mobil `AchievementIcon`
+   * bunu çiziyor; tanımadığı kimlikte yıldıza düşüyor.
+   */
+  glyph: IconMeaning;
   tier: Tier;
   group: Group;
   metric: Metric;
@@ -162,23 +176,23 @@ export type CourseScope = {
  */
 export const ACHIEVEMENTS: AchievementDef[] = [
   // ——— Seri ———————————————————————————————————————————————————————
-  { id: "streak3", titleKey: "ach.streak3.title", hintKey: "ach.streak3.hint", icon: "FlameIcon", tier: "bronze", group: "streak", metric: "longestStreak", target: 3 },
-  { id: "streak7", titleKey: "ach.streak7.title", hintKey: "ach.streak7.hint", icon: "FlameIcon", tier: "bronze", group: "streak", metric: "longestStreak", target: 7 },
-  { id: "streak30", titleKey: "ach.streak30.title", hintKey: "ach.streak30.hint", icon: "FlameIcon", tier: "silver", group: "streak", metric: "longestStreak", target: 30 },
-  { id: "streak100", titleKey: "ach.streak100.title", hintKey: "ach.streak100.hint", icon: "FlameIcon", tier: "gold", group: "streak", metric: "longestStreak", target: 100 },
-  { id: "streak365", titleKey: "ach.streak365.title", hintKey: "ach.streak365.hint", icon: "FlameIcon", tier: "legend", group: "streak", metric: "longestStreak", target: 365 },
+  { id: "streak3", titleKey: "ach.streak3.title", hintKey: "ach.streak3.hint", icon: "FlameIcon", glyph: "streak", tier: "bronze", group: "streak", metric: "longestStreak", target: 3 },
+  { id: "streak7", titleKey: "ach.streak7.title", hintKey: "ach.streak7.hint", icon: "FlameIcon", glyph: "streak", tier: "bronze", group: "streak", metric: "longestStreak", target: 7 },
+  { id: "streak30", titleKey: "ach.streak30.title", hintKey: "ach.streak30.hint", icon: "FlameIcon", glyph: "streak", tier: "silver", group: "streak", metric: "longestStreak", target: 30 },
+  { id: "streak100", titleKey: "ach.streak100.title", hintKey: "ach.streak100.hint", icon: "FlameIcon", glyph: "streak", tier: "gold", group: "streak", metric: "longestStreak", target: 100 },
+  { id: "streak365", titleKey: "ach.streak365.title", hintKey: "ach.streak365.hint", icon: "FlameIcon", glyph: "streak", tier: "legend", group: "streak", metric: "longestStreak", target: 365 },
 
   // ——— Kelime ————————————————————————————————————————————————————
-  { id: "words50", titleKey: "ach.words50.title", hintKey: "ach.words50.hint", icon: "BookIcon", tier: "bronze", group: "vocab", metric: "mastered", target: 50 },
-  { id: "words250", titleKey: "ach.words250.title", hintKey: "ach.words250.hint", icon: "BookIcon", tier: "silver", group: "vocab", metric: "mastered", target: 250 },
-  { id: "words1000", titleKey: "ach.words1000.title", hintKey: "ach.words1000.hint", icon: "BookOpenIcon", tier: "gold", group: "vocab", metric: "mastered", target: 1000 },
-  { id: "words3000", titleKey: "ach.words3000.title", hintKey: "ach.words3000.hint", icon: "BookOpenIcon", tier: "legend", group: "vocab", metric: "mastered", target: 3000 },
+  { id: "words50", titleKey: "ach.words50.title", hintKey: "ach.words50.hint", icon: "BookIcon", glyph: "ach-words", tier: "bronze", group: "vocab", metric: "mastered", target: 50 },
+  { id: "words250", titleKey: "ach.words250.title", hintKey: "ach.words250.hint", icon: "BookIcon", glyph: "ach-words", tier: "silver", group: "vocab", metric: "mastered", target: 250 },
+  { id: "words1000", titleKey: "ach.words1000.title", hintKey: "ach.words1000.hint", icon: "BookOpenIcon", glyph: "ach-words", tier: "gold", group: "vocab", metric: "mastered", target: 1000 },
+  { id: "words3000", titleKey: "ach.words3000.title", hintKey: "ach.words3000.hint", icon: "BookOpenIcon", glyph: "ach-words", tier: "legend", group: "vocab", metric: "mastered", target: 3000 },
 
   // ——— Oyun ustalıkları ——————————————————————————————————————————
-  { id: "answers500", titleKey: "ach.answers500.title", hintKey: "ach.answers500.hint", icon: "CheckIcon", tier: "bronze", group: "games", metric: "correctAnswers", target: 500 },
-  { id: "answers2500", titleKey: "ach.answers2500.title", hintKey: "ach.answers2500.hint", icon: "CheckIcon", tier: "silver", group: "games", metric: "correctAnswers", target: 2500 },
-  { id: "answers10000", titleKey: "ach.answers10000.title", hintKey: "ach.answers10000.hint", icon: "CheckIcon", tier: "gold", group: "games", metric: "correctAnswers", target: 10000 },
-  { id: "artikel300", titleKey: "ach.artikel300.title", hintKey: "ach.artikel300.hint", icon: "TagIcon", tier: "silver", group: "games", metric: "gameArtikel", target: 300, only: { game: "artikel" } },
+  { id: "answers500", titleKey: "ach.answers500.title", hintKey: "ach.answers500.hint", icon: "CheckIcon", glyph: "correct", tier: "bronze", group: "games", metric: "correctAnswers", target: 500 },
+  { id: "answers2500", titleKey: "ach.answers2500.title", hintKey: "ach.answers2500.hint", icon: "CheckIcon", glyph: "correct", tier: "silver", group: "games", metric: "correctAnswers", target: 2500 },
+  { id: "answers10000", titleKey: "ach.answers10000.title", hintKey: "ach.answers10000.hint", icon: "CheckIcon", glyph: "correct", tier: "gold", group: "games", metric: "correctAnswers", target: 10000 },
+  { id: "artikel300", titleKey: "ach.artikel300.title", hintKey: "ach.artikel300.hint", icon: "TagIcon", glyph: "game-article", tier: "silver", group: "games", metric: "gameArtikel", target: 300, only: { game: "artikel" } },
   /*
     İNGİLİZCE KURSUN KARŞILIKLARI. Artikel ve çoğul Almancanın zor yanı;
     İngilizcenin zor yanı başka: kelimenin anlamı BAĞLAMDA oturuyor (edat,
@@ -187,16 +201,16 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     ikisinin cevabı `reviews`ta oyun adıyla duruyor, yeni bir sayaç gerekmiyor.
     Hedef ve kademe karşılık oldukları rozetle aynı.
   */
-  { id: "cloze300", titleKey: "ach.cloze300.title", hintKey: "ach.cloze300.hint", icon: "WriteIcon", tier: "silver", group: "games", metric: "gameCloze", target: 300, only: { targetLang: "en", insteadOf: "artikel300" } },
-  { id: "listen200", titleKey: "ach.listen200.title", hintKey: "ach.listen200.hint", icon: "HeadphonesIcon", tier: "silver", group: "games", metric: "gameListen", target: 200 },
-  { id: "typing200", titleKey: "ach.typing200.title", hintKey: "ach.typing200.hint", icon: "KeyboardIcon", tier: "silver", group: "games", metric: "gameTyping", target: 200 },
-  { id: "order150", titleKey: "ach.order150.title", hintKey: "ach.order150.hint", icon: "SortIcon", tier: "silver", group: "games", metric: "gameOrder", target: 150 },
-  { id: "plural150", titleKey: "ach.plural150.title", hintKey: "ach.plural150.hint", icon: "StackIcon", tier: "silver", group: "games", metric: "gamePlural", target: 150, only: { game: "plural" } },
-  { id: "scramble150", titleKey: "ach.scramble150.title", hintKey: "ach.scramble150.hint", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gameScramble", target: 150, only: { targetLang: "en", insteadOf: "plural150" } },
-  { id: "speak100", titleKey: "ach.speak100.title", hintKey: "ach.speak100.hint", icon: "MicIcon", tier: "silver", group: "games", metric: "gameSpeak", target: 100 },
-  { id: "speak500", titleKey: "ach.speak500.title", hintKey: "ach.speak500.hint", icon: "MicIcon", tier: "gold", group: "games", metric: "gameSpeak", target: 500 },
+  { id: "cloze300", titleKey: "ach.cloze300.title", hintKey: "ach.cloze300.hint", icon: "WriteIcon", glyph: "game-cloze", tier: "silver", group: "games", metric: "gameCloze", target: 300, only: { targetLang: "en", insteadOf: "artikel300" } },
+  { id: "listen200", titleKey: "ach.listen200.title", hintKey: "ach.listen200.hint", icon: "HeadphonesIcon", glyph: "skill-listening", tier: "silver", group: "games", metric: "gameListen", target: 200 },
+  { id: "typing200", titleKey: "ach.typing200.title", hintKey: "ach.typing200.hint", icon: "KeyboardIcon", glyph: "game-typing", tier: "silver", group: "games", metric: "gameTyping", target: 200 },
+  { id: "order150", titleKey: "ach.order150.title", hintKey: "ach.order150.hint", icon: "SortIcon", glyph: "game-order", tier: "silver", group: "games", metric: "gameOrder", target: 150 },
+  { id: "plural150", titleKey: "ach.plural150.title", hintKey: "ach.plural150.hint", icon: "StackIcon", glyph: "game-plural", tier: "silver", group: "games", metric: "gamePlural", target: 150, only: { game: "plural" } },
+  { id: "scramble150", titleKey: "ach.scramble150.title", hintKey: "ach.scramble150.hint", icon: "PuzzleIcon", glyph: "game-scramble", tier: "silver", group: "games", metric: "gameScramble", target: 150, only: { targetLang: "en", insteadOf: "plural150" } },
+  { id: "speak100", titleKey: "ach.speak100.title", hintKey: "ach.speak100.hint", icon: "MicIcon", glyph: "skill-speaking", tier: "silver", group: "games", metric: "gameSpeak", target: 100 },
+  { id: "speak500", titleKey: "ach.speak500.title", hintKey: "ach.speak500.hint", icon: "MicIcon", glyph: "skill-speaking", tier: "gold", group: "games", metric: "gameSpeak", target: 500 },
 
-  { id: "translate200", titleKey: "ach.translate200.title", hintKey: "ach.translate200.hint", icon: "TranslateIcon", tier: "silver", group: "games", metric: "gameTranslate", target: 200 },
+  { id: "translate200", titleKey: "ach.translate200.title", hintKey: "ach.translate200.hint", icon: "TranslateIcon", glyph: "game-translate", tier: "silver", group: "games", metric: "gameTranslate", target: 200 },
   /*
     Keşif rozeti: sayı değil ÇEŞİT. Oyunların bazıları yalnızca karışık
     turda ve seyrek çıkıyor; kullanıcıların çoğu "Çoğul Bilmece"nin ya da
@@ -209,7 +223,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     avatar kilidinde değişkensiz çevriliyor (`avatar-items` `unlockHint`) ve
     orada "{n}" diye çıkardı.
   */
-  { id: "allGames", titleKey: "ach.allGames.title", hintKey: "ach.allGames.hint", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gamesPlayed", target: PLAYABLE_GAMES.length },
+  { id: "allGames", titleKey: "ach.allGames.title", hintKey: "ach.allGames.hint", icon: "PuzzleIcon", glyph: "all-games", tier: "silver", group: "games", metric: "gamesPlayed", target: PLAYABLE_GAMES.length },
 
   // ——— Dilbilgisi ————————————————————————————————————————————————
   // Dilbilgisi çalışması uygulamanın en yeni bölümü ve hiç rozeti yoktu.
@@ -221,30 +235,30 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     beş, beş seviye). 5/12/25: ilki ilk oturumda, sonuncusu kursun tamamını
     bitirenlerde. Kütüphane büyüdükçe hedefler yine anlamlı kalır.
   */
-  { id: "grammar5", titleKey: "ach.grammar5.title", hintKey: "ach.grammar5.hint", icon: "GrammarIcon", tier: "bronze", group: "grammar", metric: "grammarDone", target: 5 },
-  { id: "grammar12", titleKey: "ach.grammar12.title", hintKey: "ach.grammar12.hint", icon: "GrammarIcon", tier: "silver", group: "grammar", metric: "grammarDone", target: 12 },
-  { id: "grammar25", titleKey: "ach.grammar25.title", hintKey: "ach.grammar25.hint", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "grammarDone", target: 25 },
+  { id: "grammar5", titleKey: "ach.grammar5.title", hintKey: "ach.grammar5.hint", icon: "GrammarIcon", glyph: "skill-grammar", tier: "bronze", group: "grammar", metric: "grammarDone", target: 5 },
+  { id: "grammar12", titleKey: "ach.grammar12.title", hintKey: "ach.grammar12.hint", icon: "GrammarIcon", glyph: "skill-grammar", tier: "silver", group: "grammar", metric: "grammarDone", target: 12 },
+  { id: "grammar25", titleKey: "ach.grammar25.title", hintKey: "ach.grammar25.hint", icon: "MountainIcon", glyph: "ach-summit", tier: "gold", group: "grammar", metric: "grammarDone", target: 25 },
 
   // ——— Konuşma ——————————————————————————————————————————————————————
-  { id: "conversation1", titleKey: "ach.conversation1.title", hintKey: "ach.conversation1.hint", icon: "ChatIcon", tier: "bronze", group: "conversations", metric: "conversations", target: 1 },
-  { id: "conversation10", titleKey: "ach.conversation10.title", hintKey: "ach.conversation10.hint", icon: "SchoolIcon", tier: "bronze", group: "conversations", metric: "conversations", target: 10 },
-  { id: "conversation50", titleKey: "ach.conversation50.title", hintKey: "ach.conversation50.hint", icon: "SchoolIcon", tier: "gold", group: "conversations", metric: "conversations", target: 50 },
-  { id: "conversation100", titleKey: "ach.conversation100.title", hintKey: "ach.conversation100.hint", icon: "MountainIcon", tier: "legend", group: "conversations", metric: "conversations", target: 100 },
-  { id: "boss1", titleKey: "ach.boss1.title", hintKey: "ach.boss1.hint", icon: "FlagIcon", tier: "silver", group: "conversations", metric: "bossClears", target: 1 },
-  { id: "boss10", titleKey: "ach.boss10.title", hintKey: "ach.boss10.hint", icon: "FlagIcon", tier: "gold", group: "conversations", metric: "bossClears", target: 10 },
+  { id: "conversation1", titleKey: "ach.conversation1.title", hintKey: "ach.conversation1.hint", icon: "ChatIcon", glyph: "conversation", tier: "bronze", group: "conversations", metric: "conversations", target: 1 },
+  { id: "conversation10", titleKey: "ach.conversation10.title", hintKey: "ach.conversation10.hint", icon: "SchoolIcon", glyph: "ach-conversation", tier: "bronze", group: "conversations", metric: "conversations", target: 10 },
+  { id: "conversation50", titleKey: "ach.conversation50.title", hintKey: "ach.conversation50.hint", icon: "SchoolIcon", glyph: "ach-conversation", tier: "gold", group: "conversations", metric: "conversations", target: 50 },
+  { id: "conversation100", titleKey: "ach.conversation100.title", hintKey: "ach.conversation100.hint", icon: "MountainIcon", glyph: "ach-summit", tier: "legend", group: "conversations", metric: "conversations", target: 100 },
+  { id: "boss1", titleKey: "ach.boss1.title", hintKey: "ach.boss1.hint", icon: "FlagIcon", glyph: "ach-boss", tier: "silver", group: "conversations", metric: "bossClears", target: 1 },
+  { id: "boss10", titleKey: "ach.boss10.title", hintKey: "ach.boss10.hint", icon: "FlagIcon", glyph: "ach-boss", tier: "gold", group: "conversations", metric: "bossClears", target: 10 },
 
   // ——— Sınav ——————————————————————————————————————————————————————
   // Sınavlar (haftanın kısa sınavı ve seviye sınavları) ölçümün en ağır
   // kanıtı ama hiç rozeti yoktu. Puan rozeti sayıdan ayrı: on sınava girmek
   // alışkanlık, bir sınavdan 90 almak başarı.
-  { id: "exam1", titleKey: "ach.exam1.title", hintKey: "ach.exam1.hint", icon: "FlagIcon", tier: "bronze", group: "exams", metric: "exams", target: 1 },
-  { id: "exam10", titleKey: "ach.exam10.title", hintKey: "ach.exam10.hint", icon: "FlagIcon", tier: "silver", group: "exams", metric: "exams", target: 10 },
-  { id: "exam90", titleKey: "ach.exam90.title", hintKey: "ach.exam90.hint", icon: "StarIcon", tier: "gold", group: "exams", metric: "bestExam", target: 90 },
+  { id: "exam1", titleKey: "ach.exam1.title", hintKey: "ach.exam1.hint", icon: "FlagIcon", glyph: "ach-boss", tier: "bronze", group: "exams", metric: "exams", target: 1 },
+  { id: "exam10", titleKey: "ach.exam10.title", hintKey: "ach.exam10.hint", icon: "FlagIcon", glyph: "ach-boss", tier: "silver", group: "exams", metric: "exams", target: 10 },
+  { id: "exam90", titleKey: "ach.exam90.title", hintKey: "ach.exam90.hint", icon: "StarIcon", glyph: "reaction-star", tier: "gold", group: "exams", metric: "bestExam", target: 90 },
 
   // ——— Beceri ————————————————————————————————————————————————————
-  { id: "skill1", titleKey: "ach.skill1.title", hintKey: "ach.skill1.hint", icon: "CompassIcon", tier: "bronze", group: "skills", metric: "skills", target: 1 },
-  { id: "skill10", titleKey: "ach.skill10.title", hintKey: "ach.skill10.hint", icon: "CompassIcon", tier: "silver", group: "skills", metric: "skills", target: 10 },
-  { id: "skill40", titleKey: "ach.skill40.title", hintKey: "ach.skill40.hint", icon: "GlobeIcon", tier: "gold", group: "skills", metric: "skills", target: 40 },
+  { id: "skill1", titleKey: "ach.skill1.title", hintKey: "ach.skill1.hint", icon: "CompassIcon", glyph: "ach-explore", tier: "bronze", group: "skills", metric: "skills", target: 1 },
+  { id: "skill10", titleKey: "ach.skill10.title", hintKey: "ach.skill10.hint", icon: "CompassIcon", glyph: "ach-explore", tier: "silver", group: "skills", metric: "skills", target: 10 },
+  { id: "skill40", titleKey: "ach.skill40.title", hintKey: "ach.skill40.hint", icon: "GlobeIcon", glyph: "ach-explore", tier: "gold", group: "skills", metric: "skills", target: 40 },
 
   /*
     Yazma ve konuşma buradaydı ama rozetsizdi.
@@ -253,15 +267,15 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     şeyin oraya çağırmamasıydı. Üç rozet o ekrana bir yön veriyor: ilkini
     yaz, alışkanlık kur, bir kez de gerçekten iyi yaz.
   */
-  { id: "writing1", titleKey: "ach.writing1.title", hintKey: "ach.writing1.hint", icon: "PenIcon", tier: "bronze", group: "skills", metric: "writings", target: 1 },
-  { id: "writing15", titleKey: "ach.writing15.title", hintKey: "ach.writing15.hint", icon: "PenIcon", tier: "silver", group: "skills", metric: "writings", target: 15 },
-  { id: "writing85", titleKey: "ach.writing85.title", hintKey: "ach.writing85.hint", icon: "StarIcon", tier: "gold", group: "skills", metric: "bestWriting", target: 85 },
-  { id: "speaking25", titleKey: "ach.speaking25.title", hintKey: "ach.speaking25.hint", icon: "MicIcon", tier: "silver", group: "skills", metric: "speakings", target: 25 },
+  { id: "writing1", titleKey: "ach.writing1.title", hintKey: "ach.writing1.hint", icon: "PenIcon", glyph: "skill-writing", tier: "bronze", group: "skills", metric: "writings", target: 1 },
+  { id: "writing15", titleKey: "ach.writing15.title", hintKey: "ach.writing15.hint", icon: "PenIcon", glyph: "skill-writing", tier: "silver", group: "skills", metric: "writings", target: 15 },
+  { id: "writing85", titleKey: "ach.writing85.title", hintKey: "ach.writing85.hint", icon: "StarIcon", glyph: "reaction-star", tier: "gold", group: "skills", metric: "bestWriting", target: 85 },
+  { id: "speaking25", titleKey: "ach.speaking25.title", hintKey: "ach.speaking25.hint", icon: "MicIcon", glyph: "skill-speaking", tier: "silver", group: "skills", metric: "speakings", target: 25 },
 
   // ——— Hayatta kalma ————————————————————————————————————————————
-  { id: "challenge500", titleKey: "ach.challenge500.title", hintKey: "ach.challenge500.hint", icon: "SparkIcon", tier: "bronze", group: "rounds", metric: "challengeBest", target: 500 },
-  { id: "challenge1500", titleKey: "ach.challenge1500.title", hintKey: "ach.challenge1500.hint", icon: "SparkIcon", tier: "silver", group: "rounds", metric: "challengeBest", target: 1500 },
-  { id: "challenge3000", titleKey: "ach.challenge3000.title", hintKey: "ach.challenge3000.hint", icon: "SparkIcon", tier: "gold", group: "rounds", metric: "challengeBest", target: 3000 },
+  { id: "challenge500", titleKey: "ach.challenge500.title", hintKey: "ach.challenge500.hint", icon: "SparkIcon", glyph: "survival", tier: "bronze", group: "rounds", metric: "challengeBest", target: 500 },
+  { id: "challenge1500", titleKey: "ach.challenge1500.title", hintKey: "ach.challenge1500.hint", icon: "SparkIcon", glyph: "survival", tier: "silver", group: "rounds", metric: "challengeBest", target: 1500 },
+  { id: "challenge3000", titleKey: "ach.challenge3000.title", hintKey: "ach.challenge3000.hint", icon: "SparkIcon", glyph: "survival", tier: "gold", group: "rounds", metric: "challengeBest", target: 3000 },
 
   // ——— Davet ——————————————————————————————————————————————————————
   /*
@@ -269,24 +283,24 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     "kaç kişiye bağlantı yolladın"ı değil "kaç kişiyi gerçekten getirdin"i
     anlatıyor; sahte hesapla üretilemez olmasının sebebi de bu.
   */
-  { id: "invite1", titleKey: "ach.invite1.title", hintKey: "ach.invite1.hint", icon: "UserPlusIcon", tier: "bronze", group: "social", metric: "invitedActive", target: 1 },
-  { id: "invite3", titleKey: "ach.invite3.title", hintKey: "ach.invite3.hint", icon: "UserPlusIcon", tier: "silver", group: "social", metric: "invitedActive", target: 3 },
-  { id: "invite10", titleKey: "ach.invite10.title", hintKey: "ach.invite10.hint", icon: "UserPlusIcon", tier: "gold", group: "social", metric: "invitedActive", target: 10 },
+  { id: "invite1", titleKey: "ach.invite1.title", hintKey: "ach.invite1.hint", icon: "UserPlusIcon", glyph: "add-friend", tier: "bronze", group: "social", metric: "invitedActive", target: 1 },
+  { id: "invite3", titleKey: "ach.invite3.title", hintKey: "ach.invite3.hint", icon: "UserPlusIcon", glyph: "add-friend", tier: "silver", group: "social", metric: "invitedActive", target: 3 },
+  { id: "invite10", titleKey: "ach.invite10.title", hintKey: "ach.invite10.hint", icon: "UserPlusIcon", glyph: "add-friend", tier: "gold", group: "social", metric: "invitedActive", target: 10 },
 
   // ——— Keşif ——————————————————————————————————————————————————————
-  { id: "night50", titleKey: "ach.night50.title", hintKey: "ach.night50.hint", icon: "MoonIcon", tier: "silver", group: "discovery", metric: "nightAnswers", target: 50 },
-  { id: "early50", titleKey: "ach.early50.title", hintKey: "ach.early50.hint", icon: "SunIcon", tier: "silver", group: "discovery", metric: "earlyAnswers", target: 50 },
-  { id: "marathon150", titleKey: "ach.marathon150.title", hintKey: "ach.marathon150.hint", icon: "RunIcon", tier: "gold", group: "discovery", metric: "bestDayReviews", target: 150 },
-  { id: "days30", titleKey: "ach.days30.title", hintKey: "ach.days30.hint", icon: "CalendarIcon", tier: "silver", group: "discovery", metric: "activeDays", target: 30 },
-  { id: "days100", titleKey: "ach.days100.title", hintKey: "ach.days100.hint", icon: "CalendarIcon", tier: "gold", group: "discovery", metric: "activeDays", target: 100 },
-  { id: "bilingual", titleKey: "ach.bilingual.title", hintKey: "ach.bilingual.hint", icon: "MapIcon", tier: "gold", group: "discovery", metric: "courses", target: 2 },
+  { id: "night50", titleKey: "ach.night50.title", hintKey: "ach.night50.hint", icon: "MoonIcon", glyph: "theme-dark", tier: "silver", group: "discovery", metric: "nightAnswers", target: 50 },
+  { id: "early50", titleKey: "ach.early50.title", hintKey: "ach.early50.hint", icon: "SunIcon", glyph: "theme-light", tier: "silver", group: "discovery", metric: "earlyAnswers", target: 50 },
+  { id: "marathon150", titleKey: "ach.marathon150.title", hintKey: "ach.marathon150.hint", icon: "RunIcon", glyph: "ach-marathon", tier: "gold", group: "discovery", metric: "bestDayReviews", target: 150 },
+  { id: "days30", titleKey: "ach.days30.title", hintKey: "ach.days30.hint", icon: "CalendarIcon", glyph: "weekly-test", tier: "silver", group: "discovery", metric: "activeDays", target: 30 },
+  { id: "days100", titleKey: "ach.days100.title", hintKey: "ach.days100.hint", icon: "CalendarIcon", glyph: "weekly-test", tier: "gold", group: "discovery", metric: "activeDays", target: 100 },
+  { id: "bilingual", titleKey: "ach.bilingual.title", hintKey: "ach.bilingual.hint", icon: "MapIcon", glyph: "ach-bilingual", tier: "gold", group: "discovery", metric: "courses", target: 2 },
   /*
     Görevler her gün üç tane ve gece yarısı yenileniyor. Rozet TOPLAM ödül
     sayısını değil, üçünün de bitirildiği GÜN sayısını sayıyor: yirmi gün tek
     görev almak ile yirmi günü tam kapatmak aynı şey değil ve ikincisi
     görevlerin var oluş sebebi.
   */
-  { id: "quests20", titleKey: "ach.quests20.title", hintKey: "ach.quests20.hint", icon: "TargetIcon", tier: "gold", group: "discovery", metric: "fullQuestDays", target: 20 },
+  { id: "quests20", titleKey: "ach.quests20.title", hintKey: "ach.quests20.hint", icon: "TargetIcon", glyph: "quest", tier: "gold", group: "discovery", metric: "fullQuestDays", target: 20 },
 ];
 
 const BY_ID = new Map(ACHIEVEMENTS.map((a) => [a.id, a]));

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { XIcon, LogoMark } from "@/components/icons";
+import { LogoMark, CloseIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { useT } from "@/lib/i18n/client";
 
@@ -119,7 +119,7 @@ export function InstallPrompt() {
               aria-label={t("common.close")}
               className="muted hit-8 shrink-0 rounded-chip p-1 hover:text-[color:var(--text)]"
             >
-              <XIcon size={16} />
+              <CloseIcon size={16} />
             </button>
           </div>
         </motion.div>

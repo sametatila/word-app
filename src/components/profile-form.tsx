@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import Link from "next/link";
-import { AlertIcon, ChevronRightIcon } from "@/components/icons";
+import { ChevronNextIcon, WarningIcon } from "@/components/icons";
 import { SocialSettings } from "@/components/social/social-settings";
 import type { SocialMeView } from "@/lib/social/client";
 import { VoicePicker } from "@/components/voice-picker";
@@ -222,7 +222,7 @@ export function ProfileForm({
             <span className="block text-strong">{t("settings.group_security")}</span>
             <span className="muted block text-caption">{t("settings.security_sub")}</span>
           </span>
-          <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
+          <ChevronNextIcon size={18} style={{ color: "var(--text-faint)" }} />
         </Link>
       </Row>
       {/* HESABI SİL Hesap'ın son satırı — mobil Ayarlar › Hesap ile aynı yer;
@@ -233,7 +233,7 @@ export function ProfileForm({
             <span className="block text-strong" style={{ color: "var(--color-rose)" }}>{t("settings.delete_account")}</span>
             <span className="muted block text-caption">{t("deleteaccount.your_account_and_all_your_data")}</span>
           </span>
-          <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
+          <ChevronNextIcon size={18} style={{ color: "var(--text-faint)" }} />
         </Link>
       </Row>
     </>
@@ -509,7 +509,7 @@ export function ProfileForm({
               color: "var(--color-rose)",
             }}
           >
-            <AlertIcon size={16} /> {saveError}
+            <WarningIcon size={16} /> {saveError}
           </p>
         ) : null}
       </div>

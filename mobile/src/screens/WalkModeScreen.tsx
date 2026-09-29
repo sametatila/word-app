@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon, SpeakerIcon, SparkIcon, RepeatIcon, InboxIcon, PauseIcon } from "../ui/icons";
+import { ForwardIcon, WalkIcon, SkillSpeakingIcon, CorrectIcon, WrongIcon, ShareIcon, SpeakerIcon, NewWordsIcon, ResumeIcon, InboxIcon, PauseIcon } from "../ui/icons";
 import { ReportFlag } from "../ui/ReportFlag";
 import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { track } from "../lib/track";
@@ -1034,10 +1034,10 @@ export function WalkModeScreen() {
             pitch={tx("walkmode.cover_pitch")}
             rules={[
               { icon: SpeakerIcon, text: tx("walkmode.rule_hint", { nativeLang: nativeLangName() }) },
-              { icon: MicIcon, text: tx("walkmode.rule_say", { target: targetLangName() }) },
-              { icon: SparkIcon, text: tx("walkmode.rule_teach") },
-              { icon: CheckIcon, text: tx("walkmode.rule_verdict") },
-              { icon: RepeatIcon, text: tx("walkmode.rule_continue") },
+              { icon: SkillSpeakingIcon, text: tx("walkmode.rule_say", { target: targetLangName() }) },
+              { icon: NewWordsIcon, text: tx("walkmode.rule_teach") },
+              { icon: CorrectIcon, text: tx("walkmode.rule_verdict") },
+              { icon: ResumeIcon, text: tx("walkmode.rule_continue") },
             ]}
           />
           {/* Bugün kalan tur başlamadan görünsün — bu tur sayıldıktan SONRAKİ
@@ -1186,7 +1186,7 @@ export function WalkModeScreen() {
                 {listening ? <Animated.View style={{ position: "absolute", width: ds(96), height: ds(96), borderRadius: radii.pill, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} /> : null}
                 <Animated.View style={{ transform: [{ scale: listening ? scale : 1 }] }}>
                   <View style={[{ width: ds(96), height: ds(96), borderRadius: radii.pill, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, listening ? softShadow(colors.primary, 14) : {}]}>
-                    {verdict === "correct" ? <CheckIcon color="#fff" size={42} /> : verdict === "wrong" ? <XIcon color="#fff" size={42} /> : <MicIcon color={listening ? "#fff" : colors.textFaint} size={42} />}
+                    {verdict === "correct" ? <CorrectIcon color="#fff" size={42} /> : verdict === "wrong" ? <WrongIcon color="#fff" size={42} /> : <SkillSpeakingIcon color={listening ? "#fff" : colors.textFaint} size={42} />}
                   </View>
                 </Animated.View>
               </View>
@@ -1201,7 +1201,7 @@ export function WalkModeScreen() {
             <View style={{ alignItems: "center", gap: spacing.xs }}>
               {phase === "listening" ? (
                 <PressableScale onPress={skipNow} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingVertical: spacing.sm }}>
-                  <Text variant="bodyStrong" color={colors.textMuted}>{tx("walkmode.skip")}</Text><ChevronRightIcon color={colors.textMuted} size={18} />
+                  <Text variant="bodyStrong" color={colors.textMuted}>{tx("walkmode.skip")}</Text><ForwardIcon color={colors.textMuted} size={18} />
                 </PressableScale>
               ) : (
                 /* Atla'nın yeri: hüküm göründüyse kelimenin "Bildir"i (aynı

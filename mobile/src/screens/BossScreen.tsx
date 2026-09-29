@@ -7,7 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal } from "../lib/i18n";
 import { Text } from "../ui/Text";
-import { TrophyIcon, RepeatIcon, ClockIcon, BoltIcon, CrownIcon, BookIcon, AlertIcon } from "../ui/icons";
+import { BossIcon, RetryIcon, DurationIcon, TimeBonusIcon, ModuleCrownIcon, MyWordsIcon, WarningIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
@@ -270,19 +270,19 @@ export function BossScreen() {
     return (
       <FlowScreen actions={<FlowActions primary={{ label: t(best !== null ? "boss.beat_record" : "boss.enter"), onPress: start }} tertiary={{ label: t("bossw.back_to_path"), onPress: exit }} />}>
         <CoverBody
-          icon={TrophyIcon}
+          icon={BossIcon}
           tint={colors.primary}
           eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
           title={t("bossw.title_exam", { title: data.meta.title })}
           rules={[
-            { icon: ClockIcon, text: t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds }) },
-            { icon: BoltIcon, text: t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty }) },
-            { icon: CrownIcon, text: t("bossw.rule_crown") },
-            { icon: BookIcon, text: t("bossw.rule_pool", { n: data.pool }) },
+            { icon: DurationIcon, text: t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds }) },
+            { icon: TimeBonusIcon, text: t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty }) },
+            { icon: ModuleCrownIcon, text: t("bossw.rule_crown") },
+            { icon: MyWordsIcon, text: t("bossw.rule_pool", { n: data.pool }) },
           ]}
           note={best !== null ? t("bossw.best_left", { n: best }) : null}
         >
-          {!ready ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.conversationsDone, total: data.meta.conversationsTotal })} /> : null}
+          {!ready ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.conversationsDone, total: data.meta.conversationsTotal })} /> : null}
         </CoverBody>
       </FlowScreen>
     );
@@ -320,7 +320,7 @@ export function BossScreen() {
           { value: String(Math.max(0, tally.total - tally.correct)), label: t("common.wrong"), tone: tally.total > tally.correct ? "bad" : null },
           { value: best !== null ? t("challenge.seconds", { n: best }) : "—", label: t("bossw.stat_best") },
         ]} />
-        {!won ? <FlowNote icon={<RepeatIcon color={colors.textMuted} size={16} />} text={t("bossw.still_counted")} /> : null}
+        {!won ? <FlowNote icon={<RetryIcon color={colors.textMuted} size={16} />} text={t("bossw.still_counted")} /> : null}
       </FlowScreen>
     );
   }

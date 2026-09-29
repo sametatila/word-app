@@ -8,7 +8,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { AppleIcon, ArrowBackIcon, BoltIcon, ClockIcon, GoogleIcon, InboxIcon, MailIcon, UserPlusIcon, XIcon } from "../ui/icons";
+import { AppleIcon, GoogleIcon, InboxIcon, AddFriendIcon, BackIcon, CloseIcon, DurationIcon, EmailIcon, InfoIcon, WelcomeIcon } from "../ui/icons";
 import { FlowNote, RuleRow } from "../ui/flow";
 import { Card } from "../ui/Card";
 import { Checkbox } from "../ui/Checkbox";
@@ -63,7 +63,7 @@ function providerIcon(id: string, colors: Palette) {
   // Apple logosu tek renk: koyu temada beyaz, açıkta siyah. Apple'ın izin verdiği
   // "çerçeveli beyaz düğme" görünümü bu (renkli logo yasak).
   if (id === "apple") return <AppleIcon color={colors.text} size={22} />;
-  return <MailIcon color={colors.text} size={22} />;
+  return <EmailIcon color={colors.text} size={22} />;
 }
 
 export function AuthScreen() {
@@ -412,12 +412,12 @@ export function AuthScreen() {
             burada "Hesapsız devam et"i yok, yoksa ekranda kalakalıyordu. */}
         {view === "options" && guestUpgrade && (
           <PressableScale accessibilityLabel={t("common.close")} hitSlop={4} onPress={() => { if (nav.canGoBack()) nav.goBack(); else nav.reset({ index: 0, routes: [{ name: "Tabs" }] }); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <XIcon color={colors.textMuted} size={22} />
+            <CloseIcon color={colors.textMuted} size={22} />
           </PressableScale>
         )}
         {(view === "email" || view === "verify" || view === "twofactor") && (
           <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { if (view === "twofactor" && guestUpgrade) void refresh(); setView(view === "email" ? "options" : "email"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <ArrowBackIcon color={colors.text} size={24} />
+            <BackIcon color={colors.text} size={24} />
           </PressableScale>
         )}
       </View>
@@ -425,7 +425,7 @@ export function AuthScreen() {
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
           <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-            <BoltIcon color={colors.onPrimary} size={38} />
+            <WelcomeIcon color={colors.onPrimary} size={38} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{headTitle}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{headSub}</Text>
@@ -446,7 +446,7 @@ export function AuthScreen() {
             {/* API tabanı değişti ve oturum yeni tabanda yok (engelli ağ, bkz. api/base):
                 neden yeniden giriş istendiği söyleniyor, ilerlemenin durduğu da. */}
             {rebaseNotice && !user ? (
-              <FlowNote icon={<ClockIcon color={colors.textMuted} size={16} />} text={t(rebaseNotice === "fallback" ? "auth.rebase_fallback" : "auth.rebase_primary")} />
+              <FlowNote icon={<InfoIcon color={colors.textMuted} size={16} />} text={t(rebaseNotice === "fallback" ? "auth.rebase_fallback" : "auth.rebase_primary")} />
             ) : null}
             {PROVIDERS.filter((p) => providersOn[p.id]).map((p) => (
               <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={t("auth.continue_with", { provider: p.label })}
@@ -461,7 +461,7 @@ export function AuthScreen() {
             {/* E-posta — form doğrudan açık değil; basınca açılır */}
             <PressableScale onPress={() => { setView("email"); setError(null); }}
               style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
-              <View style={{ width: 24, alignItems: "center" }}><MailIcon color={colors.text} size={22} /></View>
+              <View style={{ width: 24, alignItems: "center" }}><EmailIcon color={colors.text} size={22} /></View>
               <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.continue_with_email")}</Text>
             </PressableScale>
 
@@ -476,7 +476,7 @@ export function AuthScreen() {
             {!user && (
               <>
                 {/* Cihazdaki misafir sunucuda artık yok: neden yeniden başladığı söyleniyor. */}
-                {guestGone ? <FlowNote icon={<ClockIcon color={colors.textMuted} size={16} />} text={t("guest.session_gone")} /> : null}
+                {guestGone ? <FlowNote icon={<DurationIcon color={colors.textMuted} size={16} />} text={t("guest.session_gone")} /> : null}
                 <PressableScale onPress={() => { void doGuest(); }} disabled={guestBusy} accessibilityRole="button" accessibilityLabel={t("auth.continue_as_guest")}
                   style={{ alignItems: "center", justifyContent: "center", borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg, marginTop: spacing.xs }}>
                   {guestBusy ? <ActivityIndicator color={colors.textMuted} /> : <Text variant="h3" color={colors.primaryText}>{t("auth.continue_as_guest")}</Text>}
@@ -567,8 +567,8 @@ export function AuthScreen() {
             <Card padded style={{ gap: spacing.md }}>
               <Text variant="bodyStrong">{t("verify.tips_title")}</Text>
               <RuleRow small rule={{ icon: InboxIcon, text: t("verify.tip_spam") }} />
-              <RuleRow small rule={{ icon: UserPlusIcon, text: t("verify.tip_contacts") }} />
-              <RuleRow small rule={{ icon: MailIcon, text: t("verify.tip_wrong_address") }} />
+              <RuleRow small rule={{ icon: AddFriendIcon, text: t("verify.tip_contacts") }} />
+              <RuleRow small rule={{ icon: EmailIcon, text: t("verify.tip_wrong_address") }} />
             </Card>
 
             {resendSent && (

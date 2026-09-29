@@ -3,7 +3,7 @@ import { View, Animated } from "react-native";
 import { Text } from "../ui/Text";
 import { promptFit } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
-import { CheckIcon, XIcon } from "../ui/icons";
+import { CorrectIcon, WrongIcon } from "../ui/icons";
 import { useEnterAnim } from "../ui/EnterView";
 import { SpeakButton } from "../ui/SpeakButton";
 import { useTheme, spacing, radii, cardShadow } from "../theme";
@@ -92,8 +92,8 @@ export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRoun
               style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}
             >
               <Text variant="bodyStrong" color={fg}>{opt}</Text>
-              {acildi && isAnswer && <CheckIcon color={colors.successText} size={22} />}
-              {acildi && isPicked && !isAnswer && <XIcon color={colors.dangerText} size={22} />}
+              {acildi && isAnswer && <CorrectIcon color={colors.successText} size={22} />}
+              {acildi && isPicked && !isAnswer && <WrongIcon color={colors.dangerText} size={22} />}
             </PressableScale>
           );
         })}

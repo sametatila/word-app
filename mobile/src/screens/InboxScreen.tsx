@@ -13,7 +13,7 @@ import { Card } from "../ui/Card";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { UserPlusIcon, HandshakeIcon, BellIcon, TargetIcon, CheckIcon, FlameIcon, InboxIcon, LockIcon, ChevronRightIcon, PodiumIcon } from "../ui/icons";
+import { AddFriendIcon, SharedStreakIcon, RemindersIcon, QuestIcon, CorrectIcon, StreakIcon, InboxIcon, LockedIcon, ChevronNextIcon, LeagueUpIcon } from "../ui/icons";
 import { useTheme, spacing, onTint, soft } from "../theme";
 import type { Palette } from "../theme/colors";
 import { EmptyCard, ErrorText, IconTile, Pill, ReactionGlyph, ScreenHeader, reactionTone, type IconCmp } from "../social/common";
@@ -23,17 +23,17 @@ import { GuestAccountCard } from "../ui/GuestAccountCard";
 /** Bildirim türü → ikon karosu rengi (Profil menüsündeki satır karoları gibi). */
 function tileFor(n: NotificationView, colors: Palette): { icon: IconCmp; tint: string } {
   switch (n.type) {
-    case "friend_request": return { icon: UserPlusIcon, tint: colors.info };
-    case "friend_accepted": return { icon: HandshakeIcon, tint: colors.success };
-    case "nudge": return { icon: BellIcon, tint: colors.streak };
-    case "quest_invite": case "quest_accepted": return { icon: TargetIcon, tint: colors.primary };
-    case "quest_completed": return { icon: CheckIcon, tint: colors.success };
-    case "friend_milestone": return { icon: FlameIcon, tint: colors.streak };
+    case "friend_request": return { icon: AddFriendIcon, tint: colors.info };
+    case "friend_accepted": return { icon: SharedStreakIcon, tint: colors.success };
+    case "nudge": return { icon: RemindersIcon, tint: colors.streak };
+    case "quest_invite": case "quest_accepted": return { icon: QuestIcon, tint: colors.primary };
+    case "quest_completed": return { icon: CorrectIcon, tint: colors.success };
+    case "friend_milestone": return { icon: StreakIcon, tint: colors.streak };
     /* Lig yükselişinin aktörü yok: simge, satırın neyle ilgili olduğunu
        söyleyen tek şey (web `inbox` ile aynı karo). */
-    case "league_up": return { icon: PodiumIcon, tint: colors.accent };
+    case "league_up": return { icon: LeagueUpIcon, tint: colors.accent };
     /* Bildirdiğin içerik ya da kullanıcı incelendi (CNT-7): aktör yok. */
-    case "report_closed": return { icon: CheckIcon, tint: colors.success };
+    case "report_closed": return { icon: CorrectIcon, tint: colors.success };
     default: return { icon: InboxIcon, tint: colors.primary };
   }
 }
@@ -87,7 +87,7 @@ export function InboxScreen() {
   const body = user?.guest
     ? <GuestAccountCard title={t("guest.social_title")} text={t("guest.social_body")} />
     : !user
-    ? <EmptyCard icon={LockIcon} title={t("inbox.sign_in_required")} text={t("inbox.notifications_are_tied_to_your")} action={t("inbox.sign_in")} onAction={() => nav.navigate("Auth")} />
+    ? <EmptyCard icon={LockedIcon} title={t("inbox.sign_in_required")} text={t("inbox.notifications_are_tied_to_your")} action={t("inbox.sign_in")} onAction={() => nav.navigate("Auth")} />
     : err && items === null
     ? <EmptyCard live="assertive" icon={InboxIcon} title={t("inbox.couldn_t_load")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(null); void load(null); }} />
     : items === null
@@ -127,7 +127,7 @@ export function InboxScreen() {
                       </View>
                     ) : n.actor ? (
                       <View style={{ width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint, colors) }}>{React.createElement(icon, { color: onTint(tint, colors), size: 18 })}</View>
-                    ) : <ChevronRightIcon color={colors.textFaint} size={20} />}
+                    ) : <ChevronNextIcon color={colors.textFaint} size={20} />}
                     {!n.read ? <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: colors.primary }} /> : null}
                   </PressableScale>
                 );

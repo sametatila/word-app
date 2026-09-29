@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
-import { SkillsIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
+import { ChevronNextIcon, CorrectIcon, LockedIcon, SkillGrammarIcon, SkillListeningIcon, SkillReadingIcon, SkillSpeakingIcon, SkillWritingIcon, TabSkillsIcon } from "../ui/icons";
 import { FlowNote } from "../ui/flow";
 import { EmptyCard } from "../social/common";
 import { fetchSkillAccess, gatedMetaKind, gateNote, isSkillLocked, levelGate, type SkillAccess } from "../lib/skillAccess";
@@ -32,11 +32,11 @@ type Kind = "read" | "listen" | "write" | "speak" | "grammar";
  * monolog metin üzerinden rubrikle), dil bilgisi anlatım + soru.
  */
 const SKILLS: { key: SkillKey; kind: Kind; label: string; icon: (p: { color: string; size: number }) => React.ReactElement; tint: keyof Palette }[] = [
-  { key: "reading", kind: "read", label: "skills.reading", icon: ReadIcon, tint: "info" },
-  { key: "listening", kind: "listen", label: "skills.listening", icon: ListenIcon, tint: "accent" },
-  { key: "writing", kind: "write", label: "skills.writing", icon: WriteIcon, tint: "success" },
-  { key: "speaking", kind: "speak", label: "skills.speaking", icon: MicIcon, tint: "primary" },
-  { key: "grammar", kind: "grammar", label: "skills.grammar", icon: GrammarIcon, tint: "streak" },
+  { key: "reading", kind: "read", label: "skills.reading", icon: SkillReadingIcon, tint: "info" },
+  { key: "listening", kind: "listen", label: "skills.listening", icon: SkillListeningIcon, tint: "accent" },
+  { key: "writing", kind: "write", label: "skills.writing", icon: SkillWritingIcon, tint: "success" },
+  { key: "speaking", kind: "speak", label: "skills.speaking", icon: SkillSpeakingIcon, tint: "primary" },
+  { key: "grammar", kind: "grammar", label: "skills.grammar", icon: SkillGrammarIcon, tint: "streak" },
 ];
 
 function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last, locked = false }: { ex: SkillMeta; tint: string; done: boolean; score?: number; isNext: boolean; onPress: () => void; colors: Palette; last: boolean; locked?: boolean }) {
@@ -67,7 +67,7 @@ function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last, loc
           <Text variant="micro" color={done ? colors.successText : colors.streakText}>{formatPercent(score)}</Text>
         </View>
       ) : null}
-      {locked ? <LockIcon color={colors.textMuted} size={18} /> : done ? <CheckIcon color={colors.successText} size={18} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
+      {locked ? <LockedIcon color={colors.textMuted} size={18} /> : done ? <CorrectIcon color={colors.successText} size={18} /> : <ChevronNextIcon color={colors.textFaint} size={20} />}
     </PressableScale>
   );
 }
@@ -281,7 +281,7 @@ export function SkillsScreen() {
             packFailed ? (
               <EmptyCard
                 live="assertive"
-                icon={SkillsIcon}
+                icon={TabSkillsIcon}
                 tint={colors.danger}
                 title={t("content.couldn_t_load")}
                 text={t("social.err_offline")}
@@ -289,7 +289,7 @@ export function SkillsScreen() {
                 onAction={() => { setPool(null); setPackAttempt((n) => n + 1); }}
               />
             ) : (
-              <EmptyCard icon={SkillsIcon} title={t("skills.skills")} text={t("skills.this_course_has_no_reading")} />
+              <EmptyCard icon={TabSkillsIcon} title={t("skills.skills")} text={t("skills.this_course_has_no_reading")} />
             )
           ) : null}
 
@@ -310,7 +310,7 @@ export function SkillsScreen() {
                       : t("skills.next_behind", { skill: t(suggestion.label), pct: Math.round(suggestion.ratio * 100) })}
                   </Text>
                 </View>
-                <ChevronRightIcon color={colors.textFaint} size={20} />
+                <ChevronNextIcon color={colors.textFaint} size={20} />
               </Card>
             </PressableScale>
           ) : hasExercises && nextLevel ? (
@@ -320,7 +320,7 @@ export function SkillsScreen() {
                   <Text variant="micro" color={colors.successText}>{t("skills.level_done").toLocaleUpperCase(dateLocale())}</Text>
                   <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{t("skills.level_done_body", { level: activeLevel, next: nextLevel })}</Text>
                 </View>
-                <ChevronRightIcon color={colors.textFaint} size={20} />
+                <ChevronNextIcon color={colors.textFaint} size={20} />
               </Card>
             </PressableScale>
           ) : null}
@@ -396,13 +396,13 @@ export function SkillsScreen() {
                         {copy.spent ? (
                           <UnlockProgress copy={copy} onPremium={() => nav.navigate("Paywall")} />
                         ) : (
-                          <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t(copy.headline.key, copy.headline.params)} />
+                          <FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t(copy.headline.key, copy.headline.params)} />
                         )}
                       </View>
                     ) : null}
                     {note ? (
                       <View style={{ marginBottom: spacing.sm }}>
-                        <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={`${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}`} />
+                        <FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={`${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}`} />
                       </View>
                     ) : null}
                     {rows.length ? (

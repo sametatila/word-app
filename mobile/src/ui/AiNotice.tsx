@@ -2,7 +2,7 @@ import React from "react";
 import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { Text } from "./Text";
-import { SparkIcon } from "./icons";
+import { AiIcon } from "./icons";
 import { useTheme, spacing, radii } from "../theme";
 
 /**
@@ -31,7 +31,7 @@ export function AiNotice({ variant, style }: { variant: "character" | "output"; 
         borderRadius: radii.md, backgroundColor: colors.surface2,
       }, style]}
     >
-      <SparkIcon color={colors.textMuted} size={14} />
+      <AiIcon color={colors.textMuted} size={14} />
       <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>{text}</Text>
     </View>
   );

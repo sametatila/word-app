@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, type ReactNode } from "react";
-import { FlagIcon } from "@/components/icons";
+import { ReportIcon } from "@/components/icons";
 import { ReportDialog } from "@/components/report-dialog";
 import { targetRef, type ReportSurface, type ReportTarget } from "@/lib/report";
 import type { Round } from "@/lib/types";
@@ -109,7 +109,7 @@ export function ReportLink({
       aria-haspopup="dialog"
       className={`muted hit-8 inline-flex min-h-6 shrink-0 items-center gap-1 whitespace-nowrap text-micro underline-offset-2 hover:underline ${className}`}
     >
-      <FlagIcon size={12} />
+      <ReportIcon size={12} />
       <span>{t("conversation.report")}</span>
     </button>
   );

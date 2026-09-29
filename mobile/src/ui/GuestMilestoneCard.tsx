@@ -4,7 +4,7 @@ import { t } from "../lib/i18n";
 import { useAuth } from "../lib/AuthContext";
 import { track } from "../lib/track";
 import { GuestAccountCard } from "./GuestAccountCard";
-import { FlameIcon, SparkIcon, TrophyIcon } from "./icons";
+import { AchievementsIcon, ConversationIcon, StreakIcon } from "./icons";
 
 /**
  * MİSAFİRE KİLOMETRE TAŞINDA HESAP ÇAĞRISI — her taşta BİR KEZ.
@@ -23,10 +23,10 @@ export type GuestMilestone = "first_conversation" | "streak_3" | "exam_passed";
 /** Misafire özgü cihaz anahtarı; misafir silinince tüm depo zaten temizleniyor. */
 const GUEST_MILESTONES_KEY = "lernomi:guest-milestones";
 
-const COPY: Record<GuestMilestone, { title: string; body: string; icon: typeof SparkIcon }> = {
-  first_conversation: { title: "guest.ms_first_conversation_title", body: "guest.ms_first_conversation_body", icon: SparkIcon },
-  streak_3: { title: "guest.ms_streak_title", body: "guest.ms_streak_body", icon: FlameIcon },
-  exam_passed: { title: "guest.ms_exam_title", body: "guest.ms_exam_body", icon: TrophyIcon },
+const COPY: Record<GuestMilestone, { title: string; body: string; icon: typeof ConversationIcon }> = {
+  first_conversation: { title: "guest.ms_first_conversation_title", body: "guest.ms_first_conversation_body", icon: ConversationIcon },
+  streak_3: { title: "guest.ms_streak_title", body: "guest.ms_streak_body", icon: StreakIcon },
+  exam_passed: { title: "guest.ms_exam_title", body: "guest.ms_exam_body", icon: AchievementsIcon },
 };
 
 export function GuestMilestoneCard({ milestone, when = true }: { milestone: GuestMilestone; when?: boolean }) {

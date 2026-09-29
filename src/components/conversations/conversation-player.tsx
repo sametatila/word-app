@@ -18,7 +18,7 @@ import {
   useSpeechAvailable,
 } from "@/components/speak-button";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
-import { AlertIcon, CheckIcon, LockIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
+import { CheckIcon, CloseIcon, CorrectIcon, LockedIcon, SkillSpeakingIcon, SpeakerIcon, WarningIcon, WrongIcon } from "@/components/icons";
 import { parseReply } from "@/lib/chat-format";
 import { DetailCard, FlowActions, FlowColumn, FlowNote, ResultHero, StatRow, StateBody } from "@/components/flow";
 import { reducedMotion, vibrate } from "@/lib/fx";
@@ -249,7 +249,7 @@ export function ConversationPlayer({
          kartı → nasıl açılır → düğmeler. Planlar düğmesi yalnız gösterge
          yokken; gösterge hak bitince kendi Premium düğmesini taşıyor. */
       <FlowColumn>
-        <StateBody icon={<LockIcon size={40} />} title={t("unlock.locked_conv")} />
+        <StateBody icon={<LockedIcon size={40} />} title={t("unlock.locked_conv")} />
         <UnlockProgress copy={quota?.view.copy ?? null} />
         <FlowActions
           primary={quota?.view.copy ? null : { label: t("gate.see_plans"), href: "/premium" }}
@@ -1346,7 +1346,7 @@ function ConversationPlayerBody({
                    38 - kardesi olan dinle dugmesi de ayni kaliba baglaniyor. */
                 className="muted hit-8 shrink-0 p-1"
               >
-                <XIcon size={14} />
+                <CloseIcon size={14} />
               </button>
             </span>
           }
@@ -1377,7 +1377,7 @@ function ConversationPlayerBody({
                     /* Açıkken dolu turuncu + beyaz (2026-09-29 Samet: seçim B; mobil `ConversationScreen` aynı). */
                     style={handsFree ? { background: "var(--brand-fill)", color: "var(--on-brand)" } : undefined}
                   >
-                    <MicIcon size={13} />
+                    <SkillSpeakingIcon size={13} />
                     {t(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
                   </button>
                 ) : null}
@@ -1459,7 +1459,7 @@ function ConversationPlayerBody({
                     className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-strong on-fill glow-tint-sm"
                     style={{ background: "var(--color-danger)", "--tint-fill": "var(--color-danger)" } as React.CSSProperties}
                   >
-                    <XIcon size={18} />
+                    <WrongIcon size={18} />
                     {t("conversation.wrong")}
                   </button>
                 </div>
@@ -1499,7 +1499,7 @@ function ConversationPlayerBody({
                       animate={listening ? { scale: [1, 1.15, 1] } : { scale: 1 }}
                       transition={{ repeat: listening ? Infinity : 0, duration: 1.1 }}
                     >
-                      <MicIcon size={24} />
+                      <SkillSpeakingIcon size={24} />
                     </motion.span>
                   </motion.button>
                   <p
@@ -1632,7 +1632,7 @@ function ConversationPlayerBody({
                     color: "var(--color-flame)",
                   }}
                 >
-                  <AlertIcon size={12} className="mt-1 shrink-0" />
+                  <WarningIcon size={12} className="mt-1 shrink-0" />
                   {t("conversationp.chat_off_consent")}
                 </p>
               ) : offline ? (
@@ -1644,7 +1644,7 @@ function ConversationPlayerBody({
                       color: "var(--color-flame)",
                     }}
                   >
-                    <AlertIcon size={12} />
+                    <WarningIcon size={12} />
                     {t(conversation.chat.script?.length ? "conversationp.chat_off_scripted" : "conversationp.chat_off_patterns")}
                   </p>
                   {/* "KONUŞMA YİNE SAYILIR" GÖRÜNÜR OLDU. Cümle `title=` ile
@@ -1670,7 +1670,7 @@ function ConversationPlayerBody({
                     /* Açıkken dolu turuncu + beyaz (2026-09-29 Samet: seçim B; mobil `ConversationScreen` aynı). */
                     style={handsFree ? { background: "var(--brand-fill)", color: "var(--on-brand)" } : undefined}
                   >
-                    <MicIcon size={13} />
+                    <SkillSpeakingIcon size={13} />
                     {t(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
                   </button>
                 ) : null}
@@ -1701,7 +1701,7 @@ function ConversationPlayerBody({
                     color: "var(--color-flame)",
                   }}
                 >
-                  <AlertIcon size={15} className="mt-0.5 shrink-0" />
+                  <WarningIcon size={15} className="mt-0.5 shrink-0" />
                   <span>{error}</span>
                 </div>
               ) : null}
@@ -1748,7 +1748,7 @@ function ConversationPlayerBody({
                       animate={listening ? { scale: [1, 1.15, 1] } : { scale: 1 }}
                       transition={{ repeat: listening ? Infinity : 0, duration: 1.1 }}
                     >
-                      <MicIcon size={24} />
+                      <SkillSpeakingIcon size={24} />
                     </motion.span>
                   </motion.button>
                   <p
@@ -1869,22 +1869,22 @@ function ConversationPlayerBody({
               />
 
               {unfinished ? (
-                <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("conversationp.min_turns_note", { n: conversation.chat.minTurns })} />
+                <FlowNote tone="warn" icon={<WarningIcon size={16} />} text={t("conversationp.min_turns_note", { n: conversation.chat.minTurns })} />
               ) : null}
               {/* İsabet eşiğin altında — tur notundan ayrı: konuşma sayıldıysa
                   bunu söylüyor, yalnız tekrar aralığının neden uzamadığını açıklıyor. */}
               {scoreLow ? (
                 <FlowNote
                   tone="warn"
-                  icon={<AlertIcon size={16} />}
+                  icon={<WarningIcon size={16} />}
                   text={t(unfinished ? "conversationp.score_low_note_unfinished" : "conversationp.score_low_note", { correct: correctCount, total: scoredTotal, need })}
                 />
               ) : null}
               {extras.cando.length ? (
-                <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={`${t("conversationp.i_can")} ${extras.cando.join(" · ")}`} />
+                <FlowNote tone="ok" icon={<CorrectIcon size={16} />} text={`${t("conversationp.i_can")} ${extras.cando.join(" · ")}`} />
               ) : null}
               {!corrections.length && turns.length > 1 ? (
-                <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("conversationp.no_corrections")} />
+                <FlowNote tone="ok" icon={<CorrectIcon size={16} />} text={t("conversationp.no_corrections")} />
               ) : null}
 
               {/* Kullanılan kalıplar (WP-62): konuşmada geçen kalıp yeşil tik,
@@ -2301,7 +2301,7 @@ function Bubble({
             color: "var(--color-flame)",
           }}
         >
-          <XIcon size={13} className="mt-0.5 shrink-0" />
+          <WrongIcon size={13} className="mt-0.5 shrink-0" />
           <span>{c}</span>
         </p>
       ))}
@@ -2329,7 +2329,7 @@ function AsrNote({ visible }: { visible: boolean }) {
         color: "var(--color-flame)",
       }}
     >
-      <AlertIcon size={14} className="mt-0.5 shrink-0" />
+      <WarningIcon size={14} className="mt-0.5 shrink-0" />
       <span>{t("conversationp.no_asr_long")}</span>
     </div>
   );

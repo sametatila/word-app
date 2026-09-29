@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ReportSheet } from "../ui/ReportSheet";
 import { AiNotice } from "../ui/AiNotice";
-import { WriteIcon } from "../ui/icons";
+import { MyWritingsIcon } from "../ui/icons";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { Skeleton, SkeletonCard, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
@@ -185,11 +185,11 @@ export function WritingsScreen() {
           {/* MİSAFİR: "henüz yazın yok, yazmaya git" sözü tutmuyordu — misafirin
               yazısı değerlendirilmiyor ve buraya hiç düşmüyor. */}
           {user?.guest ? (
-            <GuestAccountCard icon={WriteIcon} tint={colors.info} title={t("guest.writings_title")} text={t("guest.writings_body")} />
+            <GuestAccountCard icon={MyWritingsIcon} tint={colors.info} title={t("guest.writings_title")} text={t("guest.writings_body")} />
           ) : phase === "error" ? (
             <EmptyCard
               live="assertive"
-              icon={WriteIcon}
+              icon={MyWritingsIcon}
               tint={colors.info}
               title={t("writings.my_writing")}
               text={t("writings.couldn_t_load_writings")}
@@ -198,7 +198,7 @@ export function WritingsScreen() {
             />
           ) : (
             <EmptyCard
-              icon={WriteIcon}
+              icon={MyWritingsIcon}
               tint={colors.info}
               title={t("writ.empty_title")}
               text={t("writ.empty_sub")}

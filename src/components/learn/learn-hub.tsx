@@ -10,14 +10,15 @@ import { LearnHeader } from "@/components/app-header";
 import { Mascot, MASCOT_CARD } from "@/components/mascot";
 import { useT } from "@/lib/i18n/client";
 import {
-  ArrowRightIcon,
-  BoltIcon,
-  CrownIcon,
-  ExamIcon,
-  FlameIcon,
-  QuizIcon,
-  RefreshIcon,
+  DailyRoundIcon,
+  ForwardIcon,
+  MockExamIcon,
+  NewWordsIcon,
+  PracticeIcon,
+  ReviewIcon,
+  SurvivalIcon,
   WalkIcon,
+  WeeklyTestIcon,
 } from "@/components/icons";
 
 /**
@@ -95,12 +96,12 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           <div className="absolute right-3 top-3 z-10 flex gap-1.5">
             {dueCount > 0 ? (
               <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro">
-                <RefreshIcon size={13} /> {t("learn.due_count", { n: dueCount })}
+                <ReviewIcon size={13} /> {t("learn.due_count", { n: dueCount })}
               </span>
             ) : null}
             {newLeft > 0 ? (
               <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro">
-                <BoltIcon size={13} /> {t("learn.new_count", { n: newLeft })}
+                <NewWordsIcon size={13} /> {t("learn.new_count", { n: newLeft })}
               </span>
             ) : null}
           </div>
@@ -110,7 +111,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           <div className="min-w-0 flex-1">
             <div className="mb-2 flex items-center gap-2">
               <span className="flex h-11 w-11 items-center justify-center rounded-tile bg-white/20">
-                <BoltIcon size={22} />
+                <DailyRoundIcon size={22} />
               </span>
               <span className="text-micro uppercase tracking-eyebrow opacity-80">{t("learn.daily_round")}</span>
             </div>
@@ -120,7 +121,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
               className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-strong"
               style={{ background: "#ffffff", color: "var(--on-brand-inv)" }}
             >
-              {t("common.start")} <ArrowRightIcon size={18} />
+              {t("common.start")} <ForwardIcon size={18} />
             </span>
           </div>
           {/*
@@ -198,7 +199,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
               <Wedge
                 href="/mock-exams"
                 tone="var(--color-flame-500)"
-                icon={<ExamIcon size={24} />}
+                icon={<MockExamIcon size={24} />}
                 title={t("learn.mock_exams")}
                 pitch={t("learn.mock_exams_pitch")}
               />
@@ -219,24 +220,24 @@ export function LearnHub({ data }: { data: LearnHubData }) {
         <Action
           href="/learn/practice"
           tone="var(--color-brand-500)"
-          icon={<QuizIcon size={24} />}
+          icon={<PracticeIcon size={24} />}
           title={t("learn.practice")}
           sub={t("learn.practice_one_game_with_your_own")}
         />
         <Action
           href="/learn/weekly"
           tone="var(--color-mint-500)"
-          icon={<CrownIcon size={24} />}
+          icon={<WeeklyTestIcon size={24} />}
           title={t("learn.weekly_quiz")}
           sub={t("learn.test_what_you_ve_learned_weekly")}
         />
-        {/* Hayatta kalma §11.199'da Android'e de geldi; simge de oradan
-            (alev). Önce "web'e özel bir mod" diye yazılıydı ve o gerekçe
-            artık doğru değil. */}
+        {/* Hayatta kalma §11.199'da Android'e de geldi; simge iki tarafta
+            aynı (`SurvivalIcon`). Önce "web'e özel bir mod" diye yazılıydı
+            ve o gerekçe artık doğru değil. */}
         <Action
           href="/learn/challenge"
           tone="var(--color-rose-500)"
-          icon={<FlameIcon size={24} />}
+          icon={<SurvivalIcon size={24} />}
           title={t("learn.survival")}
           sub={t("learn.survival_pitch")}
         />
@@ -310,7 +311,7 @@ function Action({
         <span className="block text-h3">{title}</span>
         <span className="muted block text-caption">{sub}</span>
       </span>
-      <ArrowRightIcon size={20} style={{ color: "var(--text-muted)" }} className="shrink-0" />
+      <ForwardIcon size={20} style={{ color: "var(--text-muted)" }} className="shrink-0" />
     </Link>
   );
 }

@@ -6,7 +6,7 @@ import { useAuth } from "../lib/AuthContext";
 import { useTheme, spacing } from "../theme";
 import { PressableScale } from "./PressableScale";
 import { FlowNote } from "./flow";
-import { CheckIcon } from "./icons";
+import { CorrectIcon } from "./icons";
 
 /**
  * MİSAFİR HESABA GEÇTİ — tek seferlik not (mağaza ön inceleme B24).
@@ -35,7 +35,7 @@ export function GuestClaimNotice() {
   return (
     <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
       <PressableScale onPress={clearClaimNotice} accessibilityRole="button" accessibilityLabel={text} accessibilityHint={t("common.close")} accessibilityLiveRegion="polite" hitSlop={14} style={{ minHeight: 44, justifyContent: "center" }}>
-        <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={text} />
+        <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={text} />
       </PressableScale>
     </View>
   );

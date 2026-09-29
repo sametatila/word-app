@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { Bar } from "../ui/Bar";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
+import { CheckIcon, ChevronNextIcon, LockedIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { useLearningPath } from "../lib/useLearningPath";
@@ -144,7 +144,7 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
                     ) : null}
                   </View>
                   {aiLock ? (
-                    <LockIcon color={colors.textMuted} size={18} />
+                    <LockedIcon color={colors.textMuted} size={18} />
                   ) : it.done ? (
                     <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
                       <CheckIcon color={colors.successText} size={16} />
@@ -154,9 +154,9 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
                       <Text variant="micro" color={colors.primaryText}>{t("unit.now")}</Text>
                     </View>
                   ) : it.open && it.playable ? (
-                    <ChevronRightIcon color={colors.textFaint} size={20} />
+                    <ChevronNextIcon color={colors.textFaint} size={20} />
                   ) : (
-                    <LockIcon color={colors.textFaint} size={18} />
+                    <LockedIcon color={colors.textFaint} size={18} />
                   )}
                 </Card>
               </PressableScale>

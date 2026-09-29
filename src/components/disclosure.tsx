@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronRightIcon } from "@/components/icons";
+import { ChevronNextIcon } from "@/components/icons";
 import { T } from "@/lib/motion";
 import { useStill } from "@/lib/use-still";
 
@@ -65,7 +65,7 @@ export function Disclosure({
           transition={{ duration: 0.18 }}
           className="muted shrink-0"
         >
-          <ChevronRightIcon size={18} />
+          <ChevronNextIcon size={18} />
         </motion.span>
       </button>
 

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { ArrowRightIcon } from "@/components/icons";
+import { ForwardIcon } from "@/components/icons";
 import { social } from "@/lib/social/client";
 import type { QuestView } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -106,7 +106,7 @@ export function FriendPulse() {
           {formatPercent(q.pct, lang)}
         </span>
       ) : (
-        <ArrowRightIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+        <ForwardIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
       )}
     </Link>
   );

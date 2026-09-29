@@ -17,7 +17,7 @@ import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
 import { textBox, useColumnWidth } from "../game/RoundSkeleton";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, AlertIcon } from "../ui/icons";
+import { BackIcon, CheckIcon, CloseIcon, CorrectIcon, SendIcon, SkillSpeakingIcon, SpeakerIcon, WarningIcon, WrongIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { ensureConversations, findConversation, conversationLevelOf, scoredSteps, type Conversation, type Segment, type Expectation, type LectureStep } from "../data/conversations";
@@ -946,7 +946,7 @@ export function ConversationScreen() {
             ölçüsü), eylem "Patika'ya dön"le aynı (`onBack` = `goBack`). Web
             başlık satırı zaten çarpı çiziyor (`ConversationExit`). */}
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx(phase === "summary" ? "common.close" : "common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          {phase === "summary" ? <XIcon color={colors.textMuted} size={22} /> : <ArrowBackIcon color={colors.text} size={24} />}
+          {phase === "summary" ? <CloseIcon color={colors.textMuted} size={22} /> : <BackIcon color={colors.text} size={24} />}
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{conversation.title}</Text>
@@ -966,7 +966,7 @@ export function ConversationScreen() {
             style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingHorizontal: compactWidth ? spacing.md : 10, paddingVertical: spacing.sm, minHeight: 36, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primary : colors.surface2 }}
           >
             {/* Açıkken dolu turuncu + beyaz (2026-09-29 Samet: seçim B, dolu turuncu çip). */}
-            <MicIcon color={handsFree ? colors.onPrimary : colors.textMuted} size={compactWidth ? 18 : 14} />
+            <SkillSpeakingIcon color={handsFree ? colors.onPrimary : colors.textMuted} size={compactWidth ? 18 : 14} />
             {/* Dar ekranda yalnız ikon: etiket başlığı "Irregular …"a kadar
                 kesiyordu. Durum rengi ve erişilebilirlik adı yine taşıyor. */}
             {!compactWidth && (
@@ -1231,7 +1231,7 @@ function MicButton({ listening, onPress, label, colors }: { listening: boolean; 
   return (
     <PressableScale onPress={listening ? () => {} : onPress}>
       <View style={[{ borderRadius: radii.lg, backgroundColor: listening ? colors.surface2 : colors.primary, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, listening ? {} : softShadow(colors.primary, 10)]}>
-        <MicPulse active={listening}><MicIcon color={listening ? colors.primaryText : colors.onPrimary} size={22} /></MicPulse>
+        <MicPulse active={listening}><SkillSpeakingIcon color={listening ? colors.primaryText : colors.onPrimary} size={22} /></MicPulse>
         <Text variant="h3" color={listening ? colors.primaryText : colors.onPrimary}>
           {listening ? tx("speak.listening") : label}
         </Text>
@@ -1255,7 +1255,7 @@ function TypedRow({ value, onChange, onSubmit, placeholder, colors, disabled }: 
         submitBehavior="submit" returnKeyType="send"
         style={{ flex: 1, maxHeight: ds(120), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }} />
       <PressableScale accessibilityLabel={tx("common.send")} onPress={onSubmit} disabled={!dolu} style={[{ width: 48, height: 48, borderRadius: radii.pill, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}>
-        <ArrowRightIcon color={dolu ? colors.onPrimary : colors.textFaint} size={22} />
+        <SendIcon color={dolu ? colors.onPrimary : colors.textFaint} size={22} />
       </PressableScale>
     </View>
   );
@@ -1331,7 +1331,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(false)}>
             <View style={[{ borderRadius: radii.lg, backgroundColor: colors.danger, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.danger, 8)]}>
-              <XIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("conversation.wrong")}</Text>
+              <WrongIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("conversation.wrong")}</Text>
             </View>
           </PressableScale>
         </View>
@@ -1502,14 +1502,14 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
         ]} />
 
         {/* KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK — not + "Konuşmaya dön". */}
-        {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: conversation.chat.minTurns })} /> : null}
+        {unfinished ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: conversation.chat.minTurns })} /> : null}
         {/* İSABET EŞİĞİN ALTINDA — tur notundan AYRI: konuşma sayıldıysa bunu
             söylüyor, yalnız tekrar aralığının neden uzamadığını açıklıyor. */}
-        {scoreLow ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx(unfinished ? "conversationp.score_low_note_unfinished" : "conversationp.score_low_note", { correct, total, need })} /> : null}
-        {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
+        {scoreLow ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={tx(unfinished ? "conversationp.score_low_note_unfinished" : "conversationp.score_low_note", { correct, total, need })} /> : null}
+        {cando.length ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
         {/* Misafirin ilk tamamlanan konuşması: kaybedecek bir şeyi olduğu ilk an. */}
         <GuestMilestoneCard milestone="first_conversation" when={!unfinished} />
-        {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
+        {!corrections.length && talked ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
 
         {conversation.patterns?.length ? (
           <DetailCard title={tx("conversation.patterns_you_learned")}>

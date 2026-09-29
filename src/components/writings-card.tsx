@@ -5,7 +5,7 @@ import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { CardGrid } from "@/components/layout";
 import { useEffect, useState } from "react";
-import { WriteIcon } from "@/components/icons";
+import { MyWritingsIcon } from "@/components/icons";
 import { scoreBand } from "@/lib/score-bands";
 import { EmptyCard } from "@/components/empty-card";
 import { SkeletonLine, TextBox, type TextVariant } from "@/components/skeleton";
@@ -149,7 +149,7 @@ export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEm
     return showEmpty ? (
       <EmptyCard
         role="alert"
-        icon={WriteIcon}
+        icon={MyWritingsIcon}
         tint="var(--color-sky)"
         title={t("writings.my_writing")}
         text={t("writings.couldn_t_load_writings")}
@@ -273,7 +273,7 @@ function WritingsEmpty() {
        — iki boş hâl yan yana iki farklı ölçüde duruyordu. Android'in boş hâl
        kalıbı tek: `social/common.tsx` `EmptyCard` (52 px dolu karo). */
     <EmptyCard
-      icon={WriteIcon}
+      icon={MyWritingsIcon}
       tint="var(--color-sky)"
       title={t("writ.empty_title")}
       text={t("writ.empty_sub")}

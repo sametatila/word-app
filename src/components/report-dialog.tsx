@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useId } from "react";
-import { CheckIcon } from "@/components/icons";
+import { CorrectIcon } from "@/components/icons";
 import { useCourse } from "@/components/app-shell";
 import {
   reasonsFor,
@@ -121,7 +121,7 @@ export function ReportDialog({
             className="flex h-12 w-12 items-center justify-center rounded-full"
             style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }}
           >
-            <CheckIcon size={26} />
+            <CorrectIcon size={26} />
           </span>
           <p className="text-h3">{t("reportsheet.reported")}</p>
           <p className="muted text-caption">{t(duplicate ? "report.already" : "reportsheet.thanks_we_ll_look_into_it")}</p>

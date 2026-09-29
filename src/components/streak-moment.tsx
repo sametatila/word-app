@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { T } from "@/lib/motion";
-import { FlameIcon } from "@/components/icons";
+import { StreakIcon } from "@/components/icons";
 import { vibrate } from "@/lib/fx";
 import { useStill } from "@/lib/use-still";
 import { useT } from "@/lib/i18n/client";
@@ -89,7 +89,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
         className="glow-tint flex h-24 w-24 items-center justify-center rounded-full on-fill"
         style={{ background: "var(--color-flame-500)", "--tint-fill": "var(--color-flame-500)" } as React.CSSProperties}
       >
-        <FlameIcon size={52} />
+        <StreakIcon size={52} />
       </motion.span>
 
       {/* SAYI: eski değer yukarı kayıp sönüyor, yenisi alttan geliyor. */}

@@ -8,7 +8,10 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { BoltIcon, QuizIcon, WriteIcon, ListenIcon, CheckIcon, KeyboardIcon, PuzzleIcon, TagIcon, CardsIcon, SortIcon, TranslateIcon, StackIcon, ArrowRightIcon } from "../ui/icons";
+import {
+  MixedRoundIcon, GameChoiceIcon, GameClozeIcon, GameListenIcon, GameTruefalseIcon, GameTypingIcon, GameScrambleIcon, GameArticleIcon,
+  GameMatchIcon, GameOrderIcon, GameTranslateIcon, GamePluralIcon, ForwardIcon, PracticeIcon,
+} from "../ui/icons";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
@@ -20,28 +23,28 @@ import { ScreenHeader, SectionTitle } from "../social/common";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
 /*
-  Her oyunun ikonu ne yaptığını söylemeli. Eskiden söylemiyordu: yazma oyununda
-  "öğren" ikonu, eşleştirmede Beceriler sekmesinin yıldızı, çeviride "okuma"
-  vardı; üstelik üç çift oyun aynı ikonu paylaşıyordu (typing/scramble,
-  artikel/order, choice/plural), yani ızgarada iki karo aynı görünüyordu.
+  Her oyunun ikonu ne yaptığını söylemeli: her oyunun `data/icons/picks.json`da
+  kendi satırı (`game-*`) ve kendi glifi var, web `learn/practice` `TILES` ile
+  aynı adlar. Eskiden yazma oyununda "öğren" ikonu, eşleştirmede Beceriler
+  sekmesinin yıldızı vardı ve üç çift oyun aynı ikonu paylaşıyordu.
 */
 const META: Record<string, { icon: (p: { color: string; size: number }) => React.ReactElement; tint: keyof Palette }> = {
-  choice: { icon: (p) => <QuizIcon {...p} />, tint: "primary" },
-  artikel: { icon: (p) => <TagIcon {...p} />, tint: "streak" },
-  cloze: { icon: (p) => <WriteIcon {...p} />, tint: "info" },
-  typing: { icon: (p) => <KeyboardIcon {...p} />, tint: "success" },
-  listen: { icon: (p) => <ListenIcon {...p} />, tint: "accent" },
-  truefalse: { icon: (p) => <CheckIcon {...p} />, tint: "primary" },
-  match: { icon: (p) => <CardsIcon {...p} />, tint: "info" },
-  scramble: { icon: (p) => <PuzzleIcon {...p} />, tint: "streak" },
-  order: { icon: (p) => <SortIcon {...p} />, tint: "accent" },
-  plural: { icon: (p) => <StackIcon {...p} />, tint: "success" },
-  translate: { icon: (p) => <TranslateIcon {...p} />, tint: "primary" },
+  choice: { icon: (p) => <GameChoiceIcon {...p} />, tint: "primary" },
+  artikel: { icon: (p) => <GameArticleIcon {...p} />, tint: "streak" },
+  cloze: { icon: (p) => <GameClozeIcon {...p} />, tint: "info" },
+  typing: { icon: (p) => <GameTypingIcon {...p} />, tint: "success" },
+  listen: { icon: (p) => <GameListenIcon {...p} />, tint: "accent" },
+  truefalse: { icon: (p) => <GameTruefalseIcon {...p} />, tint: "primary" },
+  match: { icon: (p) => <GameMatchIcon {...p} />, tint: "info" },
+  scramble: { icon: (p) => <GameScrambleIcon {...p} />, tint: "streak" },
+  order: { icon: (p) => <GameOrderIcon {...p} />, tint: "accent" },
+  plural: { icon: (p) => <GamePluralIcon {...p} />, tint: "success" },
+  translate: { icon: (p) => <GameTranslateIcon {...p} />, tint: "primary" },
 };
 
-/** META'da olmayan bir oyun için yedek: modül düzeyinde, her çizimde yeniden doğmasın. */
+/** META'da olmayan bir oyun için yedek (genel "alıştırma" glifi): modül düzeyinde, her çizimde yeniden doğmasın. */
 const FALLBACK_META = {
-  icon: (p: { color: string; size: number }) => <QuizIcon {...p} />,
+  icon: (p: { color: string; size: number }) => <PracticeIcon {...p} />,
   tint: "primary" as keyof Palette,
 };
 
@@ -64,13 +67,13 @@ export function PracticeScreen() {
           <View style={[{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <View style={{ padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
               <View style={{ width: 46, height: 46, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
-                <BoltIcon color="#fff" size={24} />
+                <MixedRoundIcon color="#fff" size={24} />
               </View>
               <View style={{ flex: 1 }}>
                 <Text variant="h3" color="#fff">{t("practice.mixed_round")}</Text>
                 <Text variant="caption" color="#ffffffdd">{t("practice.all_game_types_in_one")}</Text>
               </View>
-              <ArrowRightIcon color="#fff" size={20} />
+              <ForwardIcon color="#fff" size={20} />
             </View>
           </View>
         </PressableScale>

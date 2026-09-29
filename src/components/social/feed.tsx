@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
-import { CrownIcon, FlameIcon, HandshakeIcon, HeartIcon, PodiumIcon, SparkIcon, TargetIcon, TrophyIcon } from "@/components/icons";
+import { AchievementsIcon, EmptyFeedIcon, LeagueIcon, LeagueUpIcon, QuestIcon, SharedStreakIcon, StreakIcon, TabFriendsIcon } from "@/components/icons";
 import { useCallback, useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
@@ -25,24 +25,24 @@ import { ErrorText } from "./error-text";
 function eventTile(type: string): { Icon: (p: { size?: number }) => React.JSX.Element; tint: string; fill: string } {
   switch (type) {
     case "streak_milestone":
-      return { Icon: FlameIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
+      return { Icon: StreakIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
     case "achievement":
-      return { Icon: TrophyIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
+      return { Icon: AchievementsIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
     case "friend_joined":
-      return { Icon: HandshakeIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
+      return { Icon: TabFriendsIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     case "quest_completed":
-      return { Icon: TargetIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
+      return { Icon: QuestIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
     case "weekly_top":
-      return { Icon: PodiumIcon, tint: "var(--color-sky)", fill: "var(--color-sky-500)" };
+      return { Icon: LeagueIcon, tint: "var(--color-sky)", fill: "var(--color-sky-500)" };
     /* Bu ikisi `ACTIVITY_TYPES`ta var ve iki tarafta da `default`a düşüyordu:
        ortak seri ve lig yükselişi akışta genel bir kıvılcımla çiziliyor,
        yani karo türü söyleme işini tam da bu iki olayda yapmıyordu. */
     case "friend_streak":
-      return { Icon: HeartIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
+      return { Icon: SharedStreakIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     case "league_up":
-      return { Icon: CrownIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
+      return { Icon: LeagueUpIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
     default:
-      return { Icon: SparkIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
+      return { Icon: EmptyFeedIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
   }
 }
 
@@ -108,7 +108,7 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
     return (
       <>
       <EmptyCard
-        icon={SparkIcon}
+        icon={EmptyFeedIcon}
         title={t("feedlist.your_feed_is_still_empty")}
         text={t("feedlist.empty_text")}
         action={

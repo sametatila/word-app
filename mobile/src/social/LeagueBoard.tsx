@@ -12,7 +12,7 @@ import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { NewAvatarParts } from "../ui/NewAvatarParts";
-import { FlagIcon, FlameIcon, PodiumIcon, TrophyIcon } from "../ui/icons";
+import { LeagueIcon, ReportIcon, StreakIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { EmptyCard, IconTile, Pill, SectionTitle } from "./common";
 import { LeagueUp, leagueUpFor } from "./LeagueBoardUp";
@@ -64,7 +64,7 @@ export function LeagueBoard() {
     void social.leagueSeen().catch(() => {});
   }
 
-  if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(false); setAttempt((n) => n + 1); }} />;
+  if (err) return <EmptyCard live="assertive" icon={LeagueIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(false); setAttempt((n) => n + 1); }} />;
   if (!view) {
     return (
       <View>
@@ -96,7 +96,7 @@ export function LeagueBoard() {
       {result ? <ResultCard result={result} onDismiss={dismiss} /> : null}
       <SectionTitle title={tierName(view.tier)} right={view.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: view.daysLeft })} />
       {view.rows.length < 2 ? (
-        <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("league.alone")} text={t("league.alone_sub")} />
+        <EmptyCard icon={LeagueIcon} tint={colors.info} title={t("league.alone")} text={t("league.alone_sub")} />
       ) : (
         <View style={{ gap: spacing.sm }}>
           {view.rows.map((r, i) => (
@@ -197,7 +197,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
         </View>
         {row.streak > 0 ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
-            <FlameIcon color={colors.streakText} size={12} />
+            <StreakIcon color={colors.streakText} size={12} />
             <Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: row.streak })}</Text>
           </View>
         ) : null}
@@ -208,7 +208,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
           "Engelle / Bildir"e ek olarak satırın kendisinde de bir düğme. */}
       {quiet ? null : (
         <PressableScale onPress={onReport} hitSlop={10} accessibilityRole="button" accessibilityLabel={`${t("user.report")}: ${row.name ?? t("social.student")}`} style={{ padding: spacing.xs }}>
-          <FlagIcon color={colors.textFaint} size={16} />
+          <ReportIcon color={colors.textFaint} size={16} />
         </PressableScale>
       )}
     </PressableScale>
@@ -224,7 +224,7 @@ function ResultCard({ result, onDismiss }: { result: NonNullable<LeagueView["res
   return (
     <Card padded style={{ marginTop: spacing.sm, borderColor: tint, borderWidth: 1, gap: spacing.md }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <IconTile icon={TrophyIcon} tint={tint} />
+        <IconTile icon={LeagueIcon} tint={tint} />
         <View style={{ flex: 1 }}>
           <Text variant="h3">{t(up ? "league.result_promoted" : down ? "league.result_demoted" : "league.result_stayed", { league: tierName(result.nextTier) })}</Text>
           <Text variant="caption" color={colors.textMuted}>{t("league.result_rank", { rank: result.rank, xp: formatNumber(result.xp) })}</Text>

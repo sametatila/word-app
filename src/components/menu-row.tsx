@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ChevronRightIcon } from "@/components/icons";
+import { ChevronNextIcon } from "@/components/icons";
 
 /**
  * Menü satırı — mobil `ui/MenuRow.tsx` karşılığı: renkli ikon karosu, etiket,
@@ -67,7 +67,7 @@ export function MenuRow({
       </span>
       <span className="min-w-0 flex-1 truncate text-strong" style={danger ? { color: "var(--color-rose)" } : undefined}>{label}</span>
       {value ? <span className="muted max-w-[45%] shrink truncate text-caption">{value}</span> : null}
-      <ChevronRightIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+      <ChevronNextIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
     </>
   );
   const cls = `pressable flex w-full items-center gap-3 py-3 text-left ${active ? "-mx-2 rounded-tile px-2" : ""}`;

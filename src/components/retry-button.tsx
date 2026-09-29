@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { RefreshIcon } from "@/components/icons";
+import { RetryIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -43,7 +43,7 @@ export function RetryButton({ className }: { className?: string }) {
          `WordsScreen` hata durumu), burası da öyle. */
       className={className ?? "btn btn-primary mx-auto mt-4 flex w-fit items-center justify-center gap-2 px-5 py-3"}
     >
-      <RefreshIcon size={18} /> {t(busy ? "common.loading" : "common.try_again")}
+      <RetryIcon size={18} /> {t(busy ? "common.loading" : "common.try_again")}
     </button>
   );
 }

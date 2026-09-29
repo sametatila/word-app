@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckIcon, UserPlusIcon } from "@/components/icons";
+import { AddFriendIcon, CorrectIcon } from "@/components/icons";
 import { errorText, social } from "@/lib/social/client";
 import type { Relation } from "@/lib/social/types";
 import { useT } from "@/lib/i18n/client";
@@ -71,7 +71,7 @@ export function UserAction({
         disabled={busy}
         onClick={() => setUnfriending(true)}
       >
-        <CheckIcon size={14} />
+        <CorrectIcon size={14} />
         <span className="ml-1">{t("useractionbutton.friends")}</span>
       </button>
     );
@@ -121,7 +121,7 @@ export function UserAction({
           })
         }
       >
-        <UserPlusIcon size={14} />
+        <AddFriendIcon size={14} />
         <span className="ml-1">{t("useractionbutton.add")}</span>
       </button>
     );

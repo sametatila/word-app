@@ -6,7 +6,7 @@ import { ActivityProgress } from "@/components/progress-view";
 import { ProgressPanel } from "@/components/progress-panel";
 import { getT } from "@/lib/i18n/server";
 import { EmptyCard } from "@/components/empty-card";
-import { FlameIcon } from "@/components/icons";
+import { StreakIcon } from "@/components/icons";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -64,7 +64,7 @@ export default async function ProgressPage() {
     content = (
       <EmptyCard
         role="alert"
-        icon={FlameIcon}
+        icon={StreakIcon}
         tint="var(--color-flame)"
         title={t("progress.load_failed")}
         text={t("social.err_offline")}

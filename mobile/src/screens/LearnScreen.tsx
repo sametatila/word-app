@@ -10,7 +10,7 @@ import { Mascot, MASCOT_CARD } from "../ui/Mascot";
 import { Skeleton, textHeight } from "../ui/Skeleton";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, CrownIcon, QuizIcon, RepeatIcon, FlameIcon, SparkIcon, ChevronRightIcon } from "../ui/icons";
+import { DailyRoundIcon, NewWordsIcon, WalkIcon, MockExamIcon, ForwardIcon, WeeklyTestIcon, PracticeIcon, ReviewIcon, SurvivalIcon, AccountIcon, ChevronNextIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
 import { useMicrophone } from "../lib/useMicrophone";
@@ -35,7 +35,7 @@ function ActionRow({ title, subtitle, tint, icon: Icon, onPress }: { title: stri
           <Text variant="h3">{title}</Text>
           <Text variant="caption" color={colors.textMuted}>{subtitle}</Text>
         </View>
-        <ArrowRightIcon color={colors.textFaint} size={20} />
+        <ForwardIcon color={colors.textFaint} size={20} />
       </Card>
     </PressableScale>
   );
@@ -99,7 +99,7 @@ export function LearnScreen() {
           <View style={{ paddingHorizontal: spacing.xl, paddingTop: spacing.xl, flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", rowGap: spacing.sm, columnGap: spacing.sm }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
               <View style={{ width: 44, height: 44, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
-                <BoltIcon color="#fff" size={22} />
+                <DailyRoundIcon color="#fff" size={22} />
               </View>
               <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("learn.daily_round")}</Text>
             </View>
@@ -107,12 +107,12 @@ export function LearnScreen() {
               <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginLeft: "auto" }}>
                 {dueCount > 0 && (
                   <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: spacing.xs }}>
-                    <RepeatIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.due_count", { n: dueCount })}</Text>
+                    <ReviewIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.due_count", { n: dueCount })}</Text>
                   </View>
                 )}
                 {newToday > 0 && (
                   <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: spacing.xs }}>
-                    <BoltIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.new_count", { n: newToday })}</Text>
+                    <NewWordsIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.new_count", { n: newToday })}</Text>
                   </View>
                 )}
               </View>
@@ -126,7 +126,7 @@ export function LearnScreen() {
             </Text>
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.lg, backgroundColor: "#ffffff", borderRadius: radii.pill, alignSelf: "flex-start", paddingHorizontal: spacing.xl, paddingVertical: 11 }}>
               <Text variant="bodyStrong" color={colors.primaryOnWhite}>{t("common.start")}</Text>
-              <ArrowRightIcon color={colors.primaryOnWhite} size={18} />
+              <ForwardIcon color={colors.primaryOnWhite} size={18} />
             </View>
             </View>
             {/*
@@ -186,12 +186,12 @@ export function LearnScreen() {
       {user?.guest ? (
         <PressableScale onPress={() => nav.navigate("Auth")} accessibilityRole="button" accessibilityLabel={`${t("guest.create_account")}. ${t("guest.learn_nudge")}`}
           style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, backgroundColor: colors.surface, padding: spacing.md, marginBottom: spacing.xl }}>
-          <SparkIcon color={colors.primaryText} size={22} />
+          <AccountIcon color={colors.primaryText} size={22} />
           <View style={{ flex: 1 }}>
             <Text variant="bodyStrong">{t("guest.create_account")}</Text>
             <Text variant="caption" color={colors.textMuted}>{t("guest.learn_nudge")}</Text>
           </View>
-          <ChevronRightIcon color={colors.textFaint} size={20} />
+          <ChevronNextIcon color={colors.textFaint} size={20} />
         </PressableScale>
       ) : null}
 
@@ -207,7 +207,7 @@ export function LearnScreen() {
           <Text accessibilityRole="header" variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.featured")}</Text>
           <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
             {mic ? <WedgeTile title={t("learn.walk_mode")} pitch={t("learn.walk_pitch")} tint={fillOf("accent")} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
-            {exams ? <WedgeTile title={t("learn.mock_exams")} pitch={t("learn.mock_exams_pitch")} tint={fillOf("streak")} icon={ExamIcon} onPress={() => nav.navigate("MockExams")} /> : null}
+            {exams ? <WedgeTile title={t("learn.mock_exams")} pitch={t("learn.mock_exams_pitch")} tint={fillOf("streak")} icon={MockExamIcon} onPress={() => nav.navigate("MockExams")} /> : null}
           </View>
         </>
       ) : null}
@@ -215,12 +215,12 @@ export function LearnScreen() {
       {/* diğer öğrenme yolları */}
       <Text accessibilityRole="header" variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.more")}</Text>
       <CardGrid>
-        <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={fillOf("primary")} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
-        <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={fillOf("success")} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+        <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={fillOf("primary")} icon={PracticeIcon} onPress={() => nav.navigate("Practice")} />
+        <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={fillOf("success")} icon={WeeklyTestIcon} onPress={() => nav.navigate("Weekly")} />
         {/* HAYATTA KALMA. Web'de `/learn/challenge` olarak baştan beri vardı,
             Android'de yoktu: aynı rekor tablosuna yalnız tarayıcıdan
             oynayanlar yazıyordu. */}
-        <ActionRow title={t("learn.survival")} subtitle={t("learn.survival_pitch")} tint={fillOf("danger")} icon={FlameIcon} onPress={() => nav.navigate("Challenge")} />
+        <ActionRow title={t("learn.survival")} subtitle={t("learn.survival_pitch")} tint={fillOf("danger")} icon={SurvivalIcon} onPress={() => nav.navigate("Challenge")} />
         {/* Seviye sınavı 2026-09-25'te Patika'ya taşındı (Patika'nın Sınav
             adımı, bkz. PathScreen). Öğren'de yalnız deneme sınavları kalıyor. */}
       </CardGrid>

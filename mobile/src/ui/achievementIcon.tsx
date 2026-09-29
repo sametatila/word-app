@@ -1,35 +1,59 @@
 import React from "react";
 import {
-  BookIcon, BookOpenIcon, CalendarIcon, ChatIcon, CheckIcon, CompassIcon, FlagIcon,
-  FlameIcon, GlobeIcon, GrammarIcon, HeadphonesIcon, KeyboardIcon, MapIcon, MicIcon,
-  MoonIcon, MountainIcon, PenIcon, PuzzleIcon, RunIcon, SchoolIcon, SortIcon,
-  SparkIcon, StackIcon, StarIcon, SunIcon, TagIcon, TargetIcon, TranslateIcon, TrophyIcon,
-  UserPlusIcon, WriteIcon,
+  AchBilingualIcon, AchBossIcon, AchConversationIcon, AchExploreIcon, AchMarathonIcon, AchSummitIcon, AchWordsIcon,
+  AddFriendIcon, AllGamesIcon, ConversationIcon, CorrectIcon, GameArticleIcon, GameClozeIcon, GameOrderIcon,
+  GamePluralIcon, GameScrambleIcon, GameTranslateIcon, GameTypingIcon, QuestIcon, ReactionStarIcon, SkillGrammarIcon,
+  SkillListeningIcon, SkillSpeakingIcon, SkillWritingIcon, StreakIcon, SurvivalIcon, ThemeDarkIcon, ThemeLightIcon,
+  WeeklyTestIcon,
+  type IconMeaning,
 } from "./icons";
 
 /**
- * Rozet ikonu adından bileşen — web `components/achievement-badge.tsx`
- * `ICONS` haritasının karşılığı, aynı adlar (`WriteIcon`: İngilizce
- * kursun boşluk rozeti, pratik ekranındaki boşluk doldurma ikonu).
+ * Rozet glifi, ANLAM kimliğinden — web `components/achievement-badge.tsx`
+ * `ICONS` haritasının karşılığı, aynı kimlikler.
  *
- * Sunucu her rozete kendi ikonunu veriyor (`lib/achievements` `icon`) ve web
- * baştan beri onu çiziyor. Mobil alanı hiç okumuyordu: rozet duvarında da,
- * kutlamada da elli yedi rozetin hepsi KUPA görünüyordu - iki rozeti
- * birbirinden ayıran tek şey kademe rengiydi.
+ * Sunucu her rozete kendi glifini veriyor (`lib/achievements` `glyph`:
+ * `streak`, `ach-words`, …). Eski `icon` alanı (`FlameIcon`, …) yalnız
+ * yayımlanmış sürümler için duruyor; o sürümler eski elle çizilmiş seti
+ * taşıyor ve bu dosyanın önceki hâliyle adı çiziyor.
  *
- * Tanınmayan ad YILDIZA düşüyor - webin `BadgeIcon` fallback'iyle aynı: sunucu
- * yeni bir ikon adı gönderdiğinde yayımlanmış sürümler boş kutu çizmesin ve
- * iki uygulama aynı yedeği göstersin.
+ * Tanınmayan kimlik YILDIZA düşüyor - webin `BadgeIcon` yedeğiyle aynı: sunucu
+ * yeni bir glif gönderdiğinde yayımlanmış sürümler boş kutu çizmesin ve iki
+ * uygulama aynı yedeği göstersin.
  */
-const ICONS: Record<string, (p: { color?: string; size?: number }) => React.ReactElement> = {
-  BookIcon, BookOpenIcon, CalendarIcon, ChatIcon, CheckIcon, CompassIcon, FlagIcon,
-  FlameIcon, GlobeIcon, GrammarIcon, HeadphonesIcon, KeyboardIcon, MapIcon, MicIcon,
-  MoonIcon, MountainIcon, PenIcon, PuzzleIcon, RunIcon, SchoolIcon, SortIcon,
-  SparkIcon, StackIcon, StarIcon, SunIcon, TagIcon, TargetIcon, TranslateIcon, TrophyIcon,
-  UserPlusIcon, WriteIcon,
+const ICONS: Partial<Record<IconMeaning, (p: { color?: string; size?: number }) => React.ReactElement>> = {
+  "ach-bilingual": AchBilingualIcon,
+  "ach-boss": AchBossIcon,
+  "ach-conversation": AchConversationIcon,
+  "ach-explore": AchExploreIcon,
+  "ach-marathon": AchMarathonIcon,
+  "ach-summit": AchSummitIcon,
+  "ach-words": AchWordsIcon,
+  "add-friend": AddFriendIcon,
+  "all-games": AllGamesIcon,
+  conversation: ConversationIcon,
+  correct: CorrectIcon,
+  "game-article": GameArticleIcon,
+  "game-cloze": GameClozeIcon,
+  "game-order": GameOrderIcon,
+  "game-plural": GamePluralIcon,
+  "game-scramble": GameScrambleIcon,
+  "game-translate": GameTranslateIcon,
+  "game-typing": GameTypingIcon,
+  quest: QuestIcon,
+  "reaction-star": ReactionStarIcon,
+  "skill-grammar": SkillGrammarIcon,
+  "skill-listening": SkillListeningIcon,
+  "skill-speaking": SkillSpeakingIcon,
+  "skill-writing": SkillWritingIcon,
+  streak: StreakIcon,
+  survival: SurvivalIcon,
+  "theme-dark": ThemeDarkIcon,
+  "theme-light": ThemeLightIcon,
+  "weekly-test": WeeklyTestIcon,
 };
 
-export function AchievementIcon({ name, color, size }: { name: string; color: string; size: number }) {
-  const Icon = ICONS[name] ?? StarIcon;
+export function AchievementIcon({ glyph, color, size }: { glyph: string | undefined; color: string; size: number }) {
+  const Icon = (glyph && ICONS[glyph as IconMeaning]) || ReactionStarIcon;
   return <Icon color={color} size={size} />;
 }

@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
+import { CloseIcon, PathReviewIcon, SkillGrammarIcon, UnitQuizIcon } from "../ui/icons";
 import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
 import { ensureConversations } from "../data/conversations";
 import { waitNativeContent } from "../lib/nativeContent";
@@ -101,11 +101,11 @@ export function QuizScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <XIcon color={colors.textMuted} size={22} />
+          <CloseIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
           <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: isUnitQuiz ? colors.danger : colors.primary, alignItems: "center", justifyContent: "center" }}>
-            {isUnitQuiz ? <CheckIcon color={colors.onPrimary} size={18} /> : <QuizIcon color={colors.onPrimary} size={18} />}
+            {isUnitQuiz ? <UnitQuizIcon color={colors.onPrimary} size={18} /> : isGrammar ? <SkillGrammarIcon color={colors.onPrimary} size={18} /> : <PathReviewIcon color={colors.onPrimary} size={18} />}
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { kind: t(isGrammar ? "quiz.grammar" : isUnitQuiz ? "quiz.unit_quiz" : "quiz.review"), unit: t("common.unit"), n: params.unitIndex })}</Text>

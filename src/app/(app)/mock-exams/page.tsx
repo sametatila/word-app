@@ -11,7 +11,7 @@ import { mockSkillLabel, partPoints, type MockLevel, type MockSkill } from "@/li
 import { mockPapersFor } from "@/lib/mock-exams/serve";
 import { mockCourseOf } from "@/lib/courses";
 import { mockAccess } from "@/lib/premium/access";
-import { ChevronRightIcon, ExamIcon, LockIcon } from "@/components/icons";
+import { ChevronNextIcon, LockedIcon, MockExamIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { FlowNote } from "@/components/flow";
 import { UnlockProgress } from "@/components/unlock-progress";
@@ -221,7 +221,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
       ) : null}
       {access && access.premium && papers.some((p) => isLocked(p.id)) ? (
         <FlowNote
-          icon={<LockIcon size={16} className="muted shrink-0" />}
+          icon={<LockedIcon size={16} className="muted shrink-0" />}
           text={pack ? t(pack.key, pack.params) : t("mockpack.unlock_hint", { n: access.packs[0]?.ids.length ?? 3 })}
         />
       ) : null}
@@ -235,7 +235,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                 {r.paperId.toUpperCase().replace(/^(DE|EN)-/, "")} · {mockSkillLabel(course, r.skill as MockSkill)}
                 <span className="muted ml-2 font-normal">{t("mockstats.at_task", { n: r.taskIx + 1 })}</span>
               </span>
-              <ChevronRightIcon className="size-4" />
+              <ChevronNextIcon className="size-4" />
             </Link>
           ))}
         </section>
@@ -271,7 +271,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
               <p className="muted text-micro uppercase tracking-eyebrow">{t("mockexams.mock_n", { n: p.no })}</p>
               {locked ? (
                 <span className="surface-2 muted flex items-center gap-1 rounded-chip px-1.5 py-0.5 text-micro">
-                  <LockIcon className="size-3.5" /> {t("mockpack.locked")}
+                  <LockedIcon className="size-3.5" /> {t("mockpack.locked")}
                 </span>
               ) : null}
             </div>
@@ -312,7 +312,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                         </span>
                       );
                     })()}
-                    {locked ? <LockIcon className="size-4" /> : <ChevronRightIcon className="size-4" />}
+                    {locked ? <LockedIcon className="size-4" /> : <ChevronNextIcon className="size-4" />}
                   </>
                 );
                 /* Kilitli bölüm oynatıcıya BAĞLANMIYOR: bağlantı bırakılsaydı
@@ -355,7 +355,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
            seviye çubuğu bu kartın hemen üstünde duruyor — onu söylemeyen tek
            cümle, kullanıcıya kâğıt hiç yokmuş gibi geliyordu. */
         <EmptyCard
-          icon={ExamIcon}
+          icon={MockExamIcon}
           tint="var(--color-sky)"
           title={t("mockexams.empty_title")}
           text={t("mockexams.none_for_level", { level })}

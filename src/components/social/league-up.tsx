@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { T } from "@/lib/motion";
-import { TrophyIcon } from "@/components/icons";
+import { LeagueUpIcon } from "@/components/icons";
 import { Confetti } from "@/components/celebrate";
 import { TIER_COLOR } from "@/components/achievement-badge";
 import { tierKey } from "@/lib/social/client";
@@ -130,7 +130,7 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
             className="flex h-[92px] w-[92px] items-center justify-center rounded-full text-white"
             style={{ background: color, boxShadow: `0 10px 26px -10px ${color}` }}
           >
-            <TrophyIcon size={46} />
+            <LeagueUpIcon size={46} />
           </motion.span>
         </div>
         <h2 className="text-h2">{t("league.result_promoted", { league: t(tierKey(tier)) })}</h2>

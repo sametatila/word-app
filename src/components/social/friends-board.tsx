@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
-import { PodiumIcon } from "@/components/icons";
+import { LeagueIcon, StreakIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { FlameIcon } from "@/components/icons";
 import { BoardSkeleton } from "@/components/social/league-board";
 import { social, type BoardView } from "@/lib/social/client";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -47,7 +46,7 @@ export function FriendsBoard() {
     return (
       <EmptyCard
         role="alert"
-        icon={PodiumIcon}
+        icon={LeagueIcon}
         tint="var(--color-sky)"
         title={t("leaderboard.couldn_t_load_leaderboard")}
         text={t("social.err_offline")}
@@ -68,7 +67,7 @@ export function FriendsBoard() {
   if (board.rows.length < 2) {
     return (
       <EmptyCard
-        icon={PodiumIcon}
+        icon={LeagueIcon}
         tint="var(--color-sky)"
         title={t("friendsboard.no_one_to_compete_with_yet")}
         text={t("friendsboard.add_friends_to_see_each_other_in")}
@@ -122,7 +121,7 @@ export function FriendsBoard() {
               </span>
               {r.streak > 0 ? (
                 <span className="mt-0.5 flex items-center gap-1">
-                  <FlameIcon size={12} style={{ color: "var(--color-flame)" }} />
+                  <StreakIcon size={12} style={{ color: "var(--color-flame)" }} />
                   <span className="muted text-micro">{t("social.days_streak", { n: r.streak })}</span>
                 </span>
               ) : null}

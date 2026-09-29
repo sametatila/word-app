@@ -11,7 +11,7 @@ import { FlowNote } from "@/components/flow";
 import { EmptyCard } from "@/components/empty-card";
 import { UnlockProgress } from "@/components/unlock-progress";
 import type { SurfaceView } from "@/lib/premium/unlock-copy";
-import { CheckIcon, ChevronRightIcon, LockIcon } from "@/components/icons";
+import { ChevronNextIcon, CorrectIcon, LockedIcon } from "@/components/icons";
 
 export type BrowserRow = {
   id: string;
@@ -218,7 +218,7 @@ export function SkillBrowser({
             ) : current.note ? (
               <div className="mb-2">
                 <FlowNote
-                  icon={<LockIcon size={16} className="muted shrink-0" />}
+                  icon={<LockedIcon size={16} className="muted shrink-0" />}
                   text={`${t("skills.ai_quota")} · ${t(current.note.key, { n: current.note.n })}`}
                 />
               </div>
@@ -233,7 +233,7 @@ export function SkillBrowser({
               </ul>
             ) : (
               <EmptyCard
-                icon={CheckIcon}
+                icon={CorrectIcon}
                 tint="var(--color-mint)"
                 title={t("common.completed")}
                 text={t("skills.all_done_hidden", { n: finished })}
@@ -286,11 +286,11 @@ function Row({ row, isNext, tint, lang }: { row: BrowserRow; isNext: boolean; ti
       ) : null}
       {/* "Bitti" ve "kilitli" ekran okuyucuya da söyleniyor. */}
       {row.locked ? (
-        <LockIcon size={18} role="img" aria-hidden={false} aria-label={t("gate.premium_only")} className="muted shrink-0" />
+        <LockedIcon size={18} role="img" aria-hidden={false} aria-label={t("gate.premium_only")} className="muted shrink-0" />
       ) : row.done ? (
-        <CheckIcon size={18} role="img" aria-hidden={false} aria-label={t("common.completed")} className="shrink-0" style={{ color: "var(--color-mint)" }} />
+        <CorrectIcon size={18} role="img" aria-hidden={false} aria-label={t("common.completed")} className="shrink-0" style={{ color: "var(--color-mint)" }} />
       ) : (
-        <ChevronRightIcon size={20} className="muted shrink-0" />
+        <ChevronNextIcon size={20} className="muted shrink-0" />
       )}
     </Link>
   );

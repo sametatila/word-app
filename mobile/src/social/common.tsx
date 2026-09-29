@@ -8,7 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, BoltIcon } from "../ui/icons";
+import { BackIcon, ReactionHeartIcon, ReactionStarIcon, ReactionCheerIcon, ReactionWowIcon, StreakIcon, ReactionStrongIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow, onTint, onSolid, soft as softOf, ds } from "../theme";
 import type { Palette } from "../theme/colors";
 import type { ReactionKind } from "../api/social";
@@ -34,7 +34,7 @@ export function ScreenHeader({ title, subtitle, right, eyebrow, back = true, ins
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: (inset ? insets.top : 0) + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
       {back ? (
       <PressableScale hitSlop={4} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-        <ArrowBackIcon color={colors.text} size={24} />
+        <BackIcon color={colors.text} size={24} />
       </PressableScale>
       ) : null}
       <View style={{ flex: 1 }}>
@@ -172,12 +172,12 @@ export function reactionTone(kind: ReactionKind, colors: Palette): string {
 export function ReactionGlyph({ kind, size = 16, colors, color }: { kind: ReactionKind; size?: number; colors: Palette; color?: string }) {
   const c = color ?? reactionTone(kind, colors);
   switch (kind) {
-    case "cheer": return <PartyIcon color={c} size={size} />;
-    case "fire": return <FlameIcon color={c} size={size} />;
-    case "heart": return <HeartIcon color={c} size={size} />;
-    case "strong": return <BoltIcon color={c} size={size} />;
-    case "star": return <StarIcon color={c} size={size} />;
-    default: return <SparkIcon color={c} size={size} />;
+    case "cheer": return <ReactionCheerIcon color={c} size={size} />;
+    case "fire": return <StreakIcon color={c} size={size} />;
+    case "heart": return <ReactionHeartIcon color={c} size={size} />;
+    case "strong": return <ReactionStrongIcon color={c} size={size} />;
+    case "star": return <ReactionStarIcon color={c} size={size} />;
+    default: return <ReactionWowIcon color={c} size={size} />;
   }
 }
 

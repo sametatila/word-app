@@ -10,7 +10,7 @@ import { useAiDeclined } from "../lib/useAiDeclined";
 import { tieredCopy } from "../lib/unlock";
 import { FlowNote } from "./flow";
 import { UnlockProgress } from "./UnlockProgress";
-import { ChatIcon, WriteIcon } from "./icons";
+import { ConversationIcon, SkillWritingIcon } from "./icons";
 import { useTheme, spacing } from "../theme";
 
 /**
@@ -37,9 +37,9 @@ export function PathQuota({ level }: { level: string }) {
   return (
     <View style={{ gap: spacing.sm, marginBottom: spacing.lg }}>
       {conv && !(conv.spent && !declined) ? (
-        <FlowNote icon={<ChatIcon color={colors.textMuted} size={16} />} text={t(conv.headline.key, conv.headline.params)} />
+        <FlowNote icon={<ConversationIcon color={colors.textMuted} size={16} />} text={t(conv.headline.key, conv.headline.params)} />
       ) : null}
-      {write ? <FlowNote icon={<WriteIcon color={colors.textMuted} size={16} />} text={t(write.headline.key, write.headline.params)} /> : null}
+      {write ? <FlowNote icon={<SkillWritingIcon color={colors.textMuted} size={16} />} text={t(write.headline.key, write.headline.params)} /> : null}
       {conv && conv.spent && !declined ? <UnlockProgress copy={conv} onPremium={() => nav.navigate("Paywall")} /> : null}
     </View>
   );

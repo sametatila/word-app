@@ -11,7 +11,7 @@ import { SkeletonLine } from "../ui/Skeleton";
 import { BoardRowsSkeleton } from "./LeagueBoard";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, PodiumIcon } from "../ui/icons";
+import { StreakIcon, LeagueIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import type { Palette } from "../theme/colors";
 import { EmptyCard, SectionTitle } from "./common";
@@ -37,7 +37,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
    * koptuğunda arkadaşlarının kaybolduğunu görüyordu. Lig sekmesi aynı
    * durumu ayrı bir kartla söylüyor (`LeagueBoard`), iki sekme artık aynı.
    */
-  if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(false); setAttempt((n) => n + 1); }} />;
+  if (err) return <EmptyCard live="assertive" icon={LeagueIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(false); setAttempt((n) => n + 1); }} />;
   // Satır iskeleti lig tablosuyla ortak, gerçek satırın ölçüsünde.
   if (!board) {
     return (
@@ -52,7 +52,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
       </View>
     );
   }
-  if (board.rows.length < 2) return <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("friendsboard.no_one_to_compete_with_yet")} text={t("friendsboard.add_friends_to_see_each_other_in")} />;
+  if (board.rows.length < 2) return <EmptyCard icon={LeagueIcon} tint={colors.info} title={t("friendsboard.no_one_to_compete_with_yet")} text={t("friendsboard.add_friends_to_see_each_other_in")} />;
   const me = board.rows.find((r) => r.isMe);
   const above = me && me.rank > 1 ? board.rows.find((r) => r.rank === me.rank - 1) : null;
   const gap = me && above ? Math.max(0, above.xp - me.xp) : 0;
@@ -69,7 +69,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text} numberOfLines={1}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
-                  <FlameIcon color={colors.streakText} size={12} /><Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: r.streak })}</Text>
+                  <StreakIcon color={colors.streakText} size={12} /><Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: r.streak })}</Text>
                 </View>
               </View>
               <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{formatNumber(r.xp)}</Text>

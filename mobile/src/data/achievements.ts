@@ -28,12 +28,16 @@ export type Achievement = {
   tier: Tier;
   group: AchGroup;
   /**
-   * Rozetin kendi ikonunun ADI (`BookIcon`, `FlameIcon`, ...) — sunucu her
-   * satırda gönderiyor. Mobil alanı hiç tanımıyordu, yani elli yedi rozetin
-   * hepsi KUPA görünüyordu; web her rozeti kendi ikonuyla çiziyor. Ad
-   * `ui/achievementIcon` ile bileşene çevriliyor.
+   * ESKİ ikon adı (`BookIcon`, `FlameIcon`, ...) — sunucu yayımlanmış sürümler
+   * (build ≤ 10) için göndermeye devam ediyor; bu sürüm onu OKUMUYOR.
    */
   icon: string;
+  /**
+   * Rozetin glifi, ANLAM kimliğiyle (`streak`, `ach-words`, ...; bkz.
+   * `data/icons/picks.json`). `ui/achievementIcon` bileşene çeviriyor,
+   * tanımadığını yıldıza düşürüyor.
+   */
+  glyph: string;
   target: number;
   /** Sunucunun alan adı bu; ilerleme çubuğu ve "n/target" bunu okur. */
   done: number;

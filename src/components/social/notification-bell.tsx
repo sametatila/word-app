@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { social } from "@/lib/social/client";
 import { useEffect, useState } from "react";
-import { BellIcon } from "@/components/icons";
+import { NotificationsIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -16,12 +16,11 @@ import { useT } from "@/lib/i18n/client";
  * adresi var. Önce `/notifications`e gidiyordu — orası bildirim AYARLARI değil
  * ama aynı listeyi ikinci kez çiziyordu; mobilde zil `InboxScreen`e götürüyor.
  *
- * İKON VE KAP ANDROID'İN (`social/InboxBell`): gelen kutusu ikonu 44'lük bir
- * `surface-2` karonun içinde. Web zil ikonu kullanıyordu ve düğme 32 piksel,
- * kapsız, soluk renkteydi — hem başlıktaki öteki iki hedefle (seri rozeti,
- * avatar) aynı ağırlıkta değildi hem de 44'lük dokunma hedefinin altındaydı.
- * Zil ikonu ayrıca yanlış şeyi söylüyor: burası hatırlatma ayarı değil, gelen
- * kutusu.
+ * İKON VE KAP ANDROID'İN (`social/InboxBell`): `NotificationsIcon` 44'lük bir
+ * `surface-2` karonun içinde. Düğme önce 32 piksel, kapsız, soluk renkteydi —
+ * hem başlıktaki öteki iki hedefle (seri rozeti, avatar) aynı ağırlıkta
+ * değildi hem de 44'lük dokunma hedefinin altındaydı. Hatırlatma ayarının
+ * ikonu ayrı (`RemindersIcon`): burası ayar değil, gelen kutusu.
  */
 /**
  * YOKLAMA ARALIĞI — mobil `useUnread` ile AYNI AD ve değer (parite kapısı
@@ -69,7 +68,7 @@ export function NotificationBell({ className = "" }: { className?: string }) {
       className={`pressable relative flex h-11 w-11 shrink-0 items-center justify-center ${className}`}
       style={{ borderRadius: "var(--radius-tile)", background: "var(--surface-2)", color: "var(--text)" }}
     >
-      <BellIcon size={20} />
+      <NotificationsIcon size={20} />
       {unread > 0 ? (
         <span
           className="absolute -right-[3px] -top-[3px] min-w-[18px] rounded-full px-1 text-center text-micro leading-[18px]"

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Animated, Easing, View } from "react-native";
 import { PressableScale } from "./PressableScale";
-import { RefreshIcon, SpeakerIcon, StopIcon } from "./icons";
+import { SpeakerIcon, StopIcon } from "./icons";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useTheme, softShadow } from "../theme";
 
@@ -82,9 +82,9 @@ export function ListenButton({ state, onPress, label, size = 64 }: { state: List
       >
         {state === "playing" ? (
           <StopIcon color={colors.onPrimary} size={Math.round(icon * 0.8)} />
-        ) : state === "done" ? (
-          <RefreshIcon color={colors.onPrimary} size={icon} />
         ) : (
+          /* Bitince de aynı hoparlör: "yeniden çal" ayrı bir anlam değil
+             (`data/icons/picks.json` › speaker; web `listen-button` aynı). */
           <View style={{ opacity: state === "loading" ? 0.7 : 1 }}><SpeakerIcon color={colors.onPrimary} size={icon} /></View>
         )}
       </PressableScale>

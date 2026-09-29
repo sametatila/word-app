@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useT } from "@/lib/i18n/client";
-import { CheckIcon, CrownIcon, FlameIcon, LockIcon } from "@/components/icons";
+import { CorrectIcon, LockedIcon, PremiumIcon, StreakIcon, UnlockedIcon } from "@/components/icons";
 import { Confetti } from "@/components/celebrate";
 import { play } from "@/lib/sfx";
 import type { Line, UnlockCopy } from "@/lib/premium/unlock-copy";
@@ -47,13 +47,13 @@ export function UnlockProgress({
       <Confetti fire={fired} />
       {fired ? (
         <p className="flex items-center gap-2 text-strong" style={{ color: "var(--color-mint)" }}>
-          <CheckIcon className="size-4 shrink-0" /> {t("unlock.celebrate")}
+          <UnlockedIcon className="size-4 shrink-0" /> {t("unlock.celebrate")}
           {celebrate?.gain ? <span className="font-normal">{line(celebrate.gain)}</span> : null}
         </p>
       ) : null}
       {title ? (
         <p className="flex items-center gap-2 text-h3">
-          <LockIcon className="size-4 shrink-0" /> {line(title)}
+          <LockedIcon className="size-4 shrink-0" /> {line(title)}
         </p>
       ) : null}
       {copy?.headline ? (
@@ -67,9 +67,9 @@ export function UnlockProgress({
               <li key={c.line.key} className="text-body">
                 <span className="flex items-center gap-2">
                   {c.ok ? (
-                    <CheckIcon className="size-4 shrink-0" style={{ color: "var(--color-mint)" }} aria-hidden />
+                    <CorrectIcon className="size-4 shrink-0" style={{ color: "var(--color-mint)" }} aria-hidden />
                   ) : c.bar ? (
-                    <FlameIcon className="size-4 shrink-0" style={{ color: "var(--color-flame)" }} aria-hidden />
+                    <StreakIcon className="size-4 shrink-0" style={{ color: "var(--color-flame)" }} aria-hidden />
                   ) : (
                     <span aria-hidden className="inline-block size-4 shrink-0 rounded-full border-[1.5px]" style={{ borderColor: "var(--border)" }} />
                   )}
@@ -99,7 +99,7 @@ export function UnlockProgress({
       {copy?.max ? <p className="muted text-caption">{t("unlock.max")}</p> : null}
       {copy?.spent ? (
         <Link href="/premium" prefetch={false} className="btn btn-primary mt-1 flex w-full items-center justify-center gap-2 px-4 py-2.5 text-body">
-          <CrownIcon className="size-4" /> {t("unlock.premium_now")}
+          <PremiumIcon className="size-4" /> {t("unlock.premium_now")}
         </Link>
       ) : null}
     </section>

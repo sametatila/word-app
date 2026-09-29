@@ -4,7 +4,7 @@ import { t } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { ReportSheet } from "./ReportSheet";
-import { FlagIcon } from "./icons";
+import { ReportIcon } from "./icons";
 import type { ReportKind } from "../lib/report";
 import { useTheme, spacing } from "../theme";
 
@@ -57,7 +57,7 @@ export function ReportButton({ onPress, label, style }: {
       accessibilityLabel={label}
       style={[{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingVertical: spacing.xs, flexShrink: 0 }, style]}
     >
-      <FlagIcon color={colors.textFaint} size={13} />
+      <ReportIcon color={colors.textFaint} size={13} />
       <Text variant="micro" color={colors.textFaint} numberOfLines={1}>{t("conversation.report")}</Text>
     </PressableScale>
   );

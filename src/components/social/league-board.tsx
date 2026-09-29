@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { FlagIcon, FlameIcon, PodiumIcon, TrophyIcon } from "@/components/icons";
+import { LeagueIcon, ReportIcon, StreakIcon } from "@/components/icons";
 import { ReportDialog } from "@/components/report-dialog";
 import { EmptyCard } from "@/components/empty-card";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
@@ -69,7 +69,7 @@ export function LeagueBoard() {
     return (
       <EmptyCard
         role="alert"
-        icon={PodiumIcon}
+        icon={LeagueIcon}
         tint="var(--color-sky)"
         title={t("leaderboard.couldn_t_load_leaderboard")}
         text={t("social.err_offline")}
@@ -139,7 +139,7 @@ export function LeagueBoard() {
               className="flex items-center justify-center rounded-tile on-fill"
               style={{ width: 52, height: 52, background: "var(--color-sky)" }}
             >
-              <PodiumIcon size={26} />
+              <LeagueIcon size={26} />
             </span>
             <p className="mt-1 text-h3">{t("league.alone")}</p>
             {/* Açıklama satırı KABUĞUN ölçüsünde: `EmptyCard` sönük `caption`
@@ -314,7 +314,7 @@ function LeagueRow({
               `aria-label`daydı); Android adın altına `{n} gün seri` yazıyor. */}
           {row.streak > 0 ? (
             <span className="mt-0.5 flex items-center gap-1">
-              <FlameIcon size={12} style={{ color: "var(--color-flame)" }} />
+              <StreakIcon size={12} style={{ color: "var(--color-flame)" }} />
               <span className="muted text-micro">{t("social.days_streak", { n: row.streak })}</span>
             </span>
           ) : null}
@@ -335,7 +335,7 @@ function LeagueRow({
             title={t("user.report")}
             className="faint hit-8 shrink-0 rounded-chip p-1 hover:text-[color:var(--text-muted)]"
           >
-            <FlagIcon size={13} />
+            <ReportIcon size={13} />
           </button>
         )}
       </li>
@@ -371,7 +371,7 @@ function ResultCard({ result, onDismiss }: { result: NonNullable<LeagueView["res
         className="tint-soft flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
         style={{ "--tint-fill": fill, "--tint-ink": tint } as React.CSSProperties}
       >
-        <TrophyIcon size={22} />
+        <LeagueIcon size={22} />
       </span>
       <div className="min-w-0 flex-1">
         <p className="text-h3">

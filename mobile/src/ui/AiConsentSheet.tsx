@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { t, dateLocale } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
-import { CheckIcon, MicIcon, SparkIcon } from "./icons";
+import { AiIcon, CheckIcon, SkillSpeakingIcon } from "./icons";
 import { Skeleton, textHeight } from "./Skeleton";
 import { openLegal } from "../lib/legal";
 import {
@@ -148,7 +148,7 @@ export function AiConsentSheet({ purpose, onDone }: { purpose: AiConsentPurpose 
     onDone(false);
   }
 
-  const Icon = purpose === "ai_text" ? SparkIcon : MicIcon;
+  const Icon = purpose === "ai_text" ? AiIcon : SkillSpeakingIcon;
   return (
     <Modal visible animationType="slide" statusBarTranslucent onRequestClose={() => onDone(false)}>
       <View accessibilityViewIsModal accessibilityRole="alert" accessibilityLabel={copy.title} style={{ flex: 1, backgroundColor: colors.bg }}>

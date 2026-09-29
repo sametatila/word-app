@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { defaultVoice } from "@/lib/tts/voices";
-import { AlertIcon, LogoMark } from "@/components/icons";
+import { LogoMark, WarningIcon } from "@/components/icons";
 import { FlowNote } from "@/components/flow";
 import { track } from "@/lib/track";
 import { saveOnboardingPrefs } from "@/lib/onboarding-prefs";
@@ -417,7 +417,7 @@ export function CourseOnboarding({
 
             {error ? (
               <div role="alert" className="mt-4">
-                <FlowNote tone="bad" icon={<AlertIcon size={16} />} text={error} />
+                <FlowNote tone="bad" icon={<WarningIcon size={16} />} text={error} />
               </div>
             ) : null}
           </motion.div>

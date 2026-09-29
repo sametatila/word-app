@@ -1,29 +1,25 @@
 "use client";
 
-import type { SVGProps } from "react";
-import { FlameIcon, HeartIcon, PartyIcon, SparkIcon, StarIcon } from "@/components/icons";
+import {
+  ReactionCheerIcon,
+  ReactionHeartIcon,
+  ReactionStarIcon,
+  ReactionStrongIcon,
+  ReactionWowIcon,
+  StreakIcon,
+  type IconProps,
+} from "@/components/icons";
 import { REACTION_LABEL_KEYS, type ReactionKind } from "@/lib/social/types";
 import { useT } from "@/lib/i18n/client";
 
-type IconProps = SVGProps<SVGSVGElement> & { size?: number };
-
-/** icons.tsx ile aynı ızgara ve çizgi kalınlığı — yalnız burada gereken tek ek ikon. */
-function BoltIcon({ size = 24, ...p }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...p}>
-      <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7z" />
-    </svg>
-  );
-}
-
 /** Tepki → ikon. Emoji değil; her tepkinin bir adı ve rengi var. */
 export const REACTION_ICON: Record<ReactionKind, (p: IconProps) => React.JSX.Element> = {
-  cheer: PartyIcon,
-  fire: FlameIcon,
-  heart: HeartIcon,
-  strong: BoltIcon,
-  star: StarIcon,
-  wow: SparkIcon,
+  cheer: ReactionCheerIcon,
+  fire: StreakIcon,
+  heart: ReactionHeartIcon,
+  strong: ReactionStrongIcon,
+  star: ReactionStarIcon,
+  wow: ReactionWowIcon,
 };
 
 /**

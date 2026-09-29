@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckIcon, LinkIcon } from "@/components/icons";
+import { CheckIcon, ShareIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { useLang, useT } from "@/lib/i18n/client";
 import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
@@ -154,7 +154,7 @@ export function ShareResult({
         </>
       ) : (
         <>
-          <LinkIcon size={17} /> {t("common.share")}
+          <ShareIcon size={17} /> {t("common.share")}
         </>
       )}
     </button>

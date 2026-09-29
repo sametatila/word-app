@@ -13,7 +13,7 @@ import { courseName } from "@/lib/courses";
 import { useAvatar } from "@/lib/avatar";
 import { parseAvatar } from "@/lib/avatar-config";
 import { social, tierKey, type LeagueView } from "@/lib/social/client";
-import { ArrowLeftIcon, BookIcon, CheckIcon, ChevronRightIcon, CrownIcon, FlameIcon, PenIcon, SettingsIcon } from "@/components/icons";
+import { SettingsIcon, BackIcon, ChevronNextIcon, CorrectIcon, EditIcon, MyWordsIcon, MyWritingsIcon, PremiumIcon, StreakIcon } from "@/components/icons";
 
 /**
  * PROFİL — "sen" ekranı, mobil `ProfileScreen` ile aynı kurgu (2026-09-28,
@@ -37,7 +37,7 @@ export type ProfileStats = {
   mastered: number;
 };
 
-type Ach = { id: string; title: string; tier: string; icon: string; unlocked: boolean; unlockedAt?: string | null };
+type Ach = { id: string; title: string; tier: string; glyph: string; unlocked: boolean; unlockedAt?: string | null };
 
 export function ProfileView({ stats }: { stats: ProfileStats }) {
   const { userId, avatar, course } = useShell();
@@ -70,10 +70,10 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <AvatarStage config={cfg} height={300} inset={28}>
           <div className="absolute inset-x-3 top-3 flex justify-between">
             <Link href="/learn" prefetch={false} aria-label={t("common.back")} className="pressable flex h-11 w-11 items-center justify-center rounded-tile" style={{ background: "var(--surface)", color: "var(--text)" }}>
-              <ArrowLeftIcon size={22} />
+              <BackIcon size={22} />
             </Link>
             <Link href="/profile/settings" prefetch={false} aria-label={t("settings.settings")} className="pressable flex h-11 w-11 items-center justify-center rounded-tile" style={{ background: "var(--surface)", color: "var(--text)" }}>
-              {/* Dişli, anahtar değil (bkz. `icons.tsx` `SettingsIcon`). */}
+              {/* Dişli, anahtar değil: ayarların anlam ikonu `SettingsIcon`. */}
               <SettingsIcon size={22} />
             </Link>
           </div>
@@ -93,7 +93,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
             className="pressable glow-tint-sm flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-strong"
             style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
           >
-            <PenIcon size={16} />
+            <EditIcon size={16} />
             {t("profile.edit_avatar")}
           </Link>
         </div>
@@ -101,7 +101,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         {/* SERİ · XP · LİG — tek kart, üç sütun. Lig sütunu Topluluk › Lig'i açıyor. */}
         <div className="card grid grid-cols-3 divide-x divide-[color:var(--hairline)]">
           <div className="flex flex-col items-center py-3">
-            <span className="flex items-center gap-1 text-h2"><FlameIcon size={18} style={{ color: "var(--color-flame)" }} />{stats.streak}</span>
+            <span className="flex items-center gap-1 text-h2"><StreakIcon size={18} style={{ color: "var(--color-flame)" }} />{stats.streak}</span>
             <span className="muted truncate text-caption">{t("profile.day_streak")}</span>
           </div>
           <div className="flex flex-col items-center py-3">
@@ -121,9 +121,9 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <section className="space-y-2">
           <Head title={t("appheader.progress")} href="/profile/progress" action={t("profile.see_all")} />
           <div className="grid grid-cols-3 gap-2">
-            <Tile href="/words" icon={<BookIcon size={18} />} value={formatNumber(stats.mastered, lang)} label={t("profile.my_words")} />
-            <Tile href="/profile/cando" icon={<CheckIcon size={18} />} label={t("profile.what_can_i_do")} />
-            <Tile href="/profile/writings" icon={<PenIcon size={18} />} label={t("profile.my_posts")} />
+            <Tile href="/words" icon={<MyWordsIcon size={18} />} value={formatNumber(stats.mastered, lang)} label={t("profile.my_words")} />
+            <Tile href="/profile/cando" icon={<CorrectIcon size={18} />} label={t("profile.what_can_i_do")} />
+            <Tile href="/profile/writings" icon={<MyWritingsIcon size={18} />} label={t("profile.my_posts")} />
           </div>
         </section>
 
@@ -135,7 +135,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
               {recent.map((a) => (
                 <Link key={a.id} href="/profile/achievements" prefetch={false} className="pressable flex flex-col items-center gap-1.5 text-center">
                   <span className="flex h-14 w-14 items-center justify-center rounded-full" style={{ background: TIER_COLOR[a.tier] ?? TIER_COLOR.bronze, color: "#fff" }}>
-                    <BadgeIcon name={a.icon} size={26} />
+                    <BadgeIcon glyph={a.glyph} size={26} />
                   </span>
                   <span className="muted line-clamp-2 text-micro">{a.title}</span>
                 </Link>
@@ -147,12 +147,12 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         {/* PREMIUM — üyeye abonelik satırı, olmayana tek kart. */}
         {stats.premium ? (
           <Link href="/premium?from=profile" prefetch={false} className="card pressable flex items-center gap-3 p-4">
-            <CrownIcon size={22} style={{ color: "var(--color-flame)" }} />
+            <PremiumIcon size={22} style={{ color: "var(--color-flame)" }} />
             <span className="min-w-0 flex-1">
               <span className="block text-strong">{t("profile.premium_member")}</span>
               <span className="muted block text-caption">{t("profile.all_features_unlocked_thank_you")}</span>
             </span>
-            <ChevronRightIcon size={20} style={{ color: "var(--text-faint)" }} />
+            <ChevronNextIcon size={20} style={{ color: "var(--text-faint)" }} />
           </Link>
         ) : (
           <Link
@@ -161,12 +161,12 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
             className="pressable glow-tint flex items-center gap-3 rounded-card p-4"
             style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
           >
-            <CrownIcon size={24} />
+            <PremiumIcon size={24} />
             <span className="min-w-0 flex-1">
               <span className="block text-h3">{t("profile.go_premium")}</span>
               <span className="block text-caption" style={{ opacity: 0.85 }}>{t(supportsMockExams(course) ? "profile.premium_band_exams" : "profile.premium_band")}</span>
             </span>
-            <ChevronRightIcon size={22} />
+            <ChevronNextIcon size={22} />
           </Link>
         )}
       </div>

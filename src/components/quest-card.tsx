@@ -7,7 +7,7 @@ import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { T, fillX } from "@/lib/motion";
-import { BoltIcon, CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
+import { CorrectIcon, GiftIcon, QuestIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
 import { useT } from "@/lib/i18n/client";
@@ -126,7 +126,7 @@ export function QuestCard() {
       */}
       <div className="mb-3 flex items-baseline justify-between gap-3">
         <h2 className="flex items-center gap-2 text-h3 text-[color:var(--text-muted)]">
-          <TargetIcon size={17} /> {t("dailyquests.daily_quests")}
+          <QuestIcon size={17} /> {t("dailyquests.daily_quests")}
         </h2>
         {claimable > 0 ? (
           <span
@@ -154,7 +154,7 @@ export function QuestCard() {
             <div key={q.id} className="flex items-center gap-3 py-2" style={{ borderColor: "var(--hairline)" }}>
               {/* Karo: tamamlanmışsa dolu yeşil + onay (kendi yeşiliyle parlıyor,
                   Android `softShadow(colors.success, 6)`), değilse yumuşak marka
-                  zemin + şimşek. */}
+                  zemin + görev simgesi. */}
               <span
                 className={"flex h-8 w-8 shrink-0 items-center justify-center rounded-chip" + (done ? " glow-tint-sm" : "")}
                 style={{
@@ -163,7 +163,7 @@ export function QuestCard() {
                   "--tint-fill": "var(--color-mint)",
                 } as React.CSSProperties}
               >
-                {done ? <CheckIcon size={18} /> : <BoltIcon size={16} />}
+                {done ? <CorrectIcon size={18} /> : <QuestIcon size={16} />}
               </span>
 
               <div className="min-w-0 flex-1">

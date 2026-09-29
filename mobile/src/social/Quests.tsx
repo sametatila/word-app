@@ -7,7 +7,7 @@ import { Card } from "../ui/Card";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { Avatar, MyAvatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { TargetIcon, CheckIcon } from "../ui/icons";
+import { QuestIcon, CorrectIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { EmptyCard, ErrorText, IconTile, Pill, SectionTitle } from "./common";
@@ -35,7 +35,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
       {current.map((q) => <QuestCard key={q.id} q={q} me={me} busy={busy} onAct={act} />)}
       {!current.length ? (
         <View>
-          <EmptyCard icon={TargetIcon} title={t("quests.no_shared_quest_this_week")} text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")} action={friends.length ? t(pick ? "common.discard" : "quests.choose_friend") : undefined} onAction={friends.length ? () => setPick((p) => !p) : undefined} />
+          <EmptyCard icon={QuestIcon} title={t("quests.no_shared_quest_this_week")} text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")} action={friends.length ? t(pick ? "common.discard" : "quests.choose_friend") : undefined} onAction={friends.length ? () => setPick((p) => !p) : undefined} />
           {pick ? (
             <View style={{ marginTop: spacing.md }}>
               <SectionTitle title={t("quests.with")} />
@@ -61,7 +61,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
             const done = q.status === "completed";
             return (
               <Card key={q.id} padded style={{ marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: done ? colors.success : colors.hairline }}>
-                <IconTile icon={done ? CheckIcon : TargetIcon} tint={done ? colors.success : colors.textMuted} solid={done} />
+                <IconTile icon={done ? CorrectIcon : QuestIcon} tint={done ? colors.success : colors.textMuted} solid={done} />
                 <View style={{ flex: 1 }}>
                   <Text variant="bodyStrong" numberOfLines={1}>{t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp) })}</Text>
                   <Text variant="micro" color={colors.textMuted}>{done ? t("quests.completed") : `${formatPercent(q.pct)} · ${formatNumber(q.totalXp)} XP`}</Text>

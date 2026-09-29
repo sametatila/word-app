@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
-import { ChevronRightIcon } from "./icons";
+import { ChevronNextIcon } from "./icons";
 import { spacing, radii, onTint, type Palette, soft } from "../theme";
 
 /**
@@ -54,7 +54,7 @@ export function MenuRow({
       </View>
       <Text variant="bodyStrong" color={danger ? colors.dangerText : undefined} style={{ flex: 1 }} numberOfLines={1}>{label}</Text>
       {value ? <Text variant="caption" color={colors.textMuted} numberOfLines={1} style={{ maxWidth: "45%" }}>{value}</Text> : null}
-      <ChevronRightIcon color={colors.textFaint} size={20} />
+      <ChevronNextIcon color={colors.textFaint} size={20} />
     </PressableScale>
   );
 }

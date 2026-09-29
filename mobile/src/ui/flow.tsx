@@ -8,7 +8,7 @@ import { PrimaryButton } from "./PrimaryButton";
 import { SkeletonCard, SkeletonLine, SkeletonPill } from "./Skeleton";
 import { Celebrate } from "./Celebrate";
 import { ProgressTrack } from "./Bar";
-import { ArrowBackIcon, XIcon } from "./icons";
+import { BackIcon, CloseIcon } from "./icons";
 import { t } from "../lib/i18n";
 import { useTheme, spacing, radii, softShadow, soft, onSolid, type Palette, ds } from "../theme";
 import { READABLE_TEXT_MAX } from "../lib/useLayout";
@@ -82,7 +82,7 @@ function TopBarButton({ onPress, back, label }: { onPress: () => void; back: boo
       accessibilityLabel={label ?? t(back ? "common.back" : "common.close")}
       style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
     >
-      {back ? <ArrowBackIcon color={colors.text} size={24} /> : <XIcon color={colors.textMuted} size={22} />}
+      {back ? <BackIcon color={colors.text} size={24} /> : <CloseIcon color={colors.textMuted} size={22} />}
     </PressableScale>
   );
 }

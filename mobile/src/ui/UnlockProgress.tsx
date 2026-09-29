@@ -4,7 +4,7 @@ import { t } from "../lib/i18n";
 import { whenText, type UnlockCopy } from "../lib/unlock";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
-import { CheckIcon, LockIcon } from "./icons";
+import { CheckIcon, LockedIcon } from "./icons";
 import { useTheme, spacing, radii } from "../theme";
 
 /**
@@ -29,12 +29,12 @@ export function UnlockProgress({ copy, lead, onPremium, compact = false }: { cop
     >
       {lead ? (
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-          <LockIcon color={colors.textMuted} size={18} />
+          <LockedIcon color={colors.textMuted} size={18} />
           <Text variant="bodyStrong" style={{ flex: 1 }}>{lead}</Text>
         </View>
       ) : null}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-        {!lead && copy.spent ? <LockIcon color={colors.textMuted} size={16} /> : null}
+        {!lead && copy.spent ? <LockedIcon color={colors.textMuted} size={16} /> : null}
         <Text variant={lead ? "caption" : "bodyStrong"} color={lead ? colors.textMuted : colors.text} style={{ flex: 1 }}>
           {t(copy.headline.key, copy.headline.params)}
         </Text>

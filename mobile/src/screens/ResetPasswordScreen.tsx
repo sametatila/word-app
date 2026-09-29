@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { FlowTopBar, FlowActions, FlowNote, StateBody } from "../ui/flow";
-import { BoltIcon } from "../ui/icons";
+import { WelcomeIcon } from "../ui/icons";
 import { resetPassword } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
 import { checkPassword, MIN_PASSWORD_LENGTH } from "../lib/passwordPolicy";
@@ -65,7 +65,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
 
   const tile = (
     <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-      <BoltIcon color={colors.onPrimary} size={38} />
+      <WelcomeIcon color={colors.onPrimary} size={38} />
     </View>
   );
 

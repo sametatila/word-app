@@ -8,7 +8,7 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { SpeakerIcon, ExamIcon, StackIcon, ClockIcon, FlagIcon, TargetIcon, CheckIcon, QuizIcon, UserPlusIcon, AlertIcon } from "../ui/icons";
+import { SpeakerIcon, PlacementIcon, GamePluralIcon, DurationIcon, DontGuessIcon, ScoreTargetIcon, CorrectIcon, GameChoiceIcon, AccountIcon, WarningIcon } from "../ui/icons";
 import { Chip } from "../ui/Chip";
 import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
@@ -378,20 +378,20 @@ export function PlacementScreen() {
   if (!started && !done && total > 0) {
     const rules: CoverRule[] = usingReal
       ? [
-          { icon: StackIcon, text: t("plc.rule_stages") },
-          { icon: ClockIcon, text: t("plc.rule_time") },
-          { icon: FlagIcon, text: t("plc.rule_dont_know") },
-          { icon: TargetIcon, text: t("plc.rule_result") },
-          { icon: CheckIcon, text: t("plc.rule_choose"), tone: "ok" },
+          { icon: GamePluralIcon, text: t("plc.rule_stages") },
+          { icon: DurationIcon, text: t("plc.rule_time") },
+          { icon: DontGuessIcon, text: t("plc.rule_dont_know") },
+          { icon: ScoreTargetIcon, text: t("plc.rule_result") },
+          { icon: CorrectIcon, text: t("plc.rule_choose"), tone: "ok" },
         ]
       : [
-          { icon: QuizIcon, text: t("plc.rule_demo_count", { n: total }) },
-          { icon: CheckIcon, text: t("plc.rule_demo_reveal") },
-          { icon: UserPlusIcon, text: t("plc.rule_demo_carry"), tone: "ok" },
+          { icon: GameChoiceIcon, text: t("plc.rule_demo_count", { n: total }) },
+          { icon: CorrectIcon, text: t("plc.rule_demo_reveal") },
+          { icon: AccountIcon, text: t("plc.rule_demo_carry"), tone: "ok" },
         ];
     const cover = (
       <CoverBody
-        icon={ExamIcon}
+        icon={PlacementIcon}
         tint={fillOf("primary")}
         eyebrow={t("placement.title")}
         title={t("onboarding.kisa_yerlestirme_sinavi")}
@@ -445,10 +445,10 @@ export function PlacementScreen() {
         ) : null}
         {/* SONUÇ YAZILAMADI uyarısı seçimden ÖNCE: kullanıcı seviyesini
             seçmeden önce bilmeli. Web aynı sırayı tutuyor. */}
-        {notSaved ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={t("placement.not_saved")} /> : null}
+        {notSaved ? <FlowNote tone="bad" icon={<WarningIcon color={colors.dangerText} size={16} />} text={t("placement.not_saved")} /> : null}
         {saved ? (
           <View accessibilityLiveRegion="polite">
-            <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={t("placement.saved")} />
+            <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={t("placement.saved")} />
           </View>
         ) : null}
         {skills.length > 3 ? (

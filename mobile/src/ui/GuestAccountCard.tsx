@@ -4,7 +4,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { t } from "../lib/i18n";
 import { EmptyCard, type IconCmp } from "../social/common";
-import { LockIcon } from "./icons";
+import { LockedIcon } from "./icons";
 
 /**
  * MİSAFİRE "HESAP OLUŞTUR" KARTI (mağaza ön inceleme B24).
@@ -17,7 +17,7 @@ import { LockIcon } from "./icons";
  * Tek bileşen: altı yüzeyde altı ayrı kart, altı ayrı düğme metni ve altı ayrı
  * gezinme demek olurdu (girişsiz kullanıcının kartı `EmptyCard` ile aynı kalıp).
  */
-export function GuestAccountCard({ title, text, icon = LockIcon, tint }: { title: string; text: string; icon?: IconCmp; tint?: string }) {
+export function GuestAccountCard({ title, text, icon = LockedIcon, tint }: { title: string; text: string; icon?: IconCmp; tint?: string }) {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   return <EmptyCard icon={icon} tint={tint} title={title} text={text} action={t("guest.create_account")} onAction={() => nav.navigate("Auth")} />;
 }

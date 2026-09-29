@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { applyTheme, readThemeMode, writeThemeMode, type ThemeMode } from "@/lib/theme";
 import { SettingRow } from "@/components/setting-row";
-import { MoonIcon, SunIcon } from "./icons";
+import { ThemeDarkIcon, ThemeLightIcon } from "./icons";
 import { track } from "@/lib/track";
 import { useT } from "@/lib/i18n/client";
 
@@ -37,7 +37,7 @@ export function ThemeToggle() {
       aria-label={t(dark ? "theme.to_light" : "theme.to_dark")}
       className="btn btn-ghost h-10 w-10"
     >
-      {dark ? <SunIcon size={18} /> : <MoonIcon size={18} />}
+      {dark ? <ThemeLightIcon size={18} /> : <ThemeDarkIcon size={18} />}
     </button>
   );
 }

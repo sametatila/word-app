@@ -1,6 +1,6 @@
 "use client";
 
-import { SparkIcon } from "@/components/icons";
+import { AiIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -27,7 +27,7 @@ export function AiNotice({ variant, className = "" }: { variant: "character" | "
       className={`muted surface-2 flex items-center gap-2 px-3 py-2 text-micro ${className}`}
       style={{ borderRadius: "var(--radius-tile)" }}
     >
-      <SparkIcon size={14} />
+      <AiIcon size={14} />
       <span className="flex-1">{text}</span>
     </p>
   );

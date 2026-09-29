@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import type { Gloss, SkillQuestion } from "@/lib/skills/types";
 import { GlossEntry } from "./gloss-entry";
 import { speakGerman } from "@/components/speak-button";
-import { CheckIcon, InfoIcon, SpeakerIcon, XIcon } from "@/components/icons";
+import { CorrectIcon, InfoIcon, SpeakerIcon, WrongIcon } from "@/components/icons";
 import { levenshtein } from "@/lib/errors";
 import { useT } from "@/lib/i18n/client";
 import { vibrate } from "@/lib/fx";
@@ -140,9 +140,9 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
           >
             <span>{opt}</span>
             {done && oi === q.answer ? (
-              <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
+              <CorrectIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
             ) : done && pick === oi ? (
-              <XIcon size={16} className="shrink-0 text-[color:var(--color-rose)]" />
+              <WrongIcon size={16} className="shrink-0 text-[color:var(--color-rose)]" />
             ) : null}
           </button>
         );

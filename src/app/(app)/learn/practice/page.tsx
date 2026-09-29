@@ -9,19 +9,19 @@ import { supportsGame } from "@/lib/courses";
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { getT } from "@/lib/i18n/server";
 import {
-  ArrowRightIcon,
-  BoltIcon,
-  CardsIcon,
-  CheckIcon,
-  KeyboardIcon,
-  ListenIcon,
-  PuzzleIcon,
-  QuizIcon,
-  SortIcon,
-  StackIcon,
-  TagIcon,
-  TranslateIcon,
-  WriteIcon,
+  ForwardIcon,
+  GameArticleIcon,
+  GameChoiceIcon,
+  GameClozeIcon,
+  GameListenIcon,
+  GameMatchIcon,
+  GameOrderIcon,
+  GamePluralIcon,
+  GameScrambleIcon,
+  GameTranslateIcon,
+  GameTruefalseIcon,
+  GameTypingIcon,
+  MixedRoundIcon,
 } from "@/components/icons";
 
 export const generateMetadata = titleMeta("practice.practice");
@@ -65,32 +65,27 @@ type Tile = {
   `primary/streak/info/success/accent` beşlisinin web karşılıkları.
 */
 /*
- * OYUN GLIFLERI UYGULAMANIN KENDI SOZLUGUNDEN.
+ * OYUN GLIFLERI OYUNUN KENDI ANLAMINDAN.
  *
- * Uc karo YAKIN KOPYA ikon cizyordu: secmeli soruda `QuestionIcon`
- * (`QuizIcon`in neredeyse ayni ikizi), bosluk doldurmada `PenIcon`
- * (`WriteIcon`in ikizi), dinlemede `HeadphonesIcon` (`ListenIcon`in ikizi).
- * Uclusu de setin BASKA bir isi icin ayrilmis glifleri: `PenIcon` ve
- * `HeadphonesIcon` iki platformda da BASARIM rozetlerinin glifi
- * (`achievement-badge` / `ui/achievementIcon`), `ListenIcon`/`WriteIcon`/
- * `QuizIcon` ise ADIM TURUNUN glifi (`immersion/unit-pane` / `ui/unitKind`).
- * Yani ayni oyun, ayni ekranda, Androidde bir glif webde baskasi; ustune web
- * kendi icinde de ayrisiyordu (patika ile pratik ayni oyuna iki ikon).
- * Tonlar zaten birebirdi (brand=primary, flame=streak, sky=info,
- * mint=success, violet=accent) - ayrisan yalniz gliflerdi.
+ * Her oyunun `data/icons/picks.json`da kendi satiri var (`game-*`) ve glif
+ * yalniz o oyun icin: eskiden uc karo setin BASKA bir isine ayrilmis
+ * glifleri ciziyordu (adim turu, basarim rozeti) ve ayni oyun Androidde bir
+ * glif, webde baskasiydi. Ad ve glif iki platformda ayni (`check:parity`).
+ * Tonlar birebir (brand=primary, flame=streak, sky=info, mint=success,
+ * violet=accent).
  */
 const TILES: Tile[] = [
-  { game: "choice", hint: "prac.choice", Icon: QuizIcon, tone: "var(--color-brand-500)" },
-  { game: "artikel", hint: "prac.artikel", Icon: TagIcon, tone: "var(--color-flame-500)" },
-  { game: "cloze", hint: "prac.cloze", Icon: WriteIcon, tone: "var(--color-sky-500)" },
-  { game: "typing", hint: "prac.typing", Icon: KeyboardIcon, tone: "var(--color-mint-500)" },
-  { game: "listen", hint: "prac.listen", Icon: ListenIcon, tone: "var(--color-violet-500)" },
-  { game: "truefalse", hint: "prac.truefalse", Icon: CheckIcon, tone: "var(--color-brand-500)" },
-  { game: "match", hint: "prac.match", Icon: CardsIcon, tone: "var(--color-sky-500)" },
-  { game: "scramble", hint: "prac.scramble", Icon: PuzzleIcon, tone: "var(--color-flame-500)" },
-  { game: "order", hint: "prac.order", Icon: SortIcon, tone: "var(--color-violet-500)" },
-  { game: "plural", hint: "prac.plural", Icon: StackIcon, tone: "var(--color-mint-500)" },
-  { game: "translate", hint: "prac.translate", Icon: TranslateIcon, tone: "var(--color-brand-500)" },
+  { game: "choice", hint: "prac.choice", Icon: GameChoiceIcon, tone: "var(--color-brand-500)" },
+  { game: "artikel", hint: "prac.artikel", Icon: GameArticleIcon, tone: "var(--color-flame-500)" },
+  { game: "cloze", hint: "prac.cloze", Icon: GameClozeIcon, tone: "var(--color-sky-500)" },
+  { game: "typing", hint: "prac.typing", Icon: GameTypingIcon, tone: "var(--color-mint-500)" },
+  { game: "listen", hint: "prac.listen", Icon: GameListenIcon, tone: "var(--color-violet-500)" },
+  { game: "truefalse", hint: "prac.truefalse", Icon: GameTruefalseIcon, tone: "var(--color-brand-500)" },
+  { game: "match", hint: "prac.match", Icon: GameMatchIcon, tone: "var(--color-sky-500)" },
+  { game: "scramble", hint: "prac.scramble", Icon: GameScrambleIcon, tone: "var(--color-flame-500)" },
+  { game: "order", hint: "prac.order", Icon: GameOrderIcon, tone: "var(--color-violet-500)" },
+  { game: "plural", hint: "prac.plural", Icon: GamePluralIcon, tone: "var(--color-mint-500)" },
+  { game: "translate", hint: "prac.translate", Icon: GameTranslateIcon, tone: "var(--color-brand-500)" },
 ];
 
 export default async function PracticePage() {
@@ -128,13 +123,13 @@ export default async function PracticePage() {
         style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
       >
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile bg-white/20">
-          <BoltIcon size={24} />
+          <MixedRoundIcon size={24} />
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-h3">{t("practice.mixed_round")}</span>
           <span className="block text-caption opacity-90">{t("practice.all_game_types_in_one")}</span>
         </span>
-        <ArrowRightIcon size={20} className="shrink-0" />
+        <ForwardIcon size={20} className="shrink-0" />
       </Link>
 
       <section className="space-y-3">

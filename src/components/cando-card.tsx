@@ -5,7 +5,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { useEffect, useState } from "react";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { EmptyCard } from "@/components/empty-card";
-import { AlertIcon, CheckIcon } from "@/components/icons";
+import { CheckIcon, CorrectIcon, WarningIcon } from "@/components/icons";
 import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando, type CandoSkill } from "@/lib/cando";
 import { CardGrid } from "@/components/layout";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -111,7 +111,7 @@ export function CandoCard() {
     return (
       <EmptyCard
         role="alert"
-        icon={AlertIcon}
+        icon={WarningIcon}
         tint="var(--color-rose)"
         title={t("cando.couldn_t_load")}
         text={t("cando.rule")}
@@ -129,7 +129,7 @@ export function CandoCard() {
          "konuşma ve alıştırmaları bitirdikçe" diyor ama gidilecek yeri
          göstermiyordu. Hedefin adı `nav.path`, yeni anahtar yok. */
       <EmptyCard
-        icon={CheckIcon}
+        icon={CorrectIcon}
         tint="var(--color-mint)"
         title={t("cando.what_i_can_do")}
         text={t("cando.sign_in_and_finish_conversations_and")}

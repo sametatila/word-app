@@ -6,7 +6,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
-import { FlameIcon } from "./icons";
+import { StreakIcon } from "./icons";
 import { MyAvatar } from "./Avatar";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
@@ -54,7 +54,7 @@ export function AppHeader({ title }: { title: string }) {
         {/* ALEV HEP GÖRÜNÜR (2026-09-28): seri 0 olunca kayboluyordu ve
             Gelişim'e giden tek yol oydu. Sıfırda sönük, dokununca yine Gelişim. */}
         <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: streak > 0 ? soft(colors.streak) : colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
-          <FlameIcon color={streak > 0 ? colors.streakText : colors.textFaint} size={16} />
+          <StreakIcon color={streak > 0 ? colors.streakText : colors.textFaint} size={16} />
           <Text variant="bodyStrong" color={streak > 0 ? colors.streakText : colors.textFaint}>{streak}</Text>
         </PressableScale>
         {/* Sosyal gelen kutusu: istek, tepki, dürtme. Uzak bildirim artık var (FCM)

@@ -1,38 +1,37 @@
 "use client";
 
 import {
-  BookIcon,
-  BookOpenIcon,
-  CalendarIcon,
-  ChatIcon,
-  CheckIcon,
-  CompassIcon,
-  FlagIcon,
-  FlameIcon,
-  GlobeIcon,
-  GrammarIcon,
-  HeadphonesIcon,
-  KeyboardIcon,
-  LockIcon,
-  MapIcon,
-  MicIcon,
-  MoonIcon,
-  MountainIcon,
-  PenIcon,
-  PuzzleIcon,
-  RunIcon,
-  SchoolIcon,
-  SortIcon,
-  SparkIcon,
-  StackIcon,
-  StarIcon,
-  SunIcon,
-  TagIcon,
-  TargetIcon,
-  TranslateIcon,
-  UserPlusIcon,
-  TrophyIcon,
-  WriteIcon,
+  AchBilingualIcon,
+  AchBossIcon,
+  AchConversationIcon,
+  AchExploreIcon,
+  AchMarathonIcon,
+  AchSummitIcon,
+  AchWordsIcon,
+  AddFriendIcon,
+  AllGamesIcon,
+  ConversationIcon,
+  CorrectIcon,
+  GameArticleIcon,
+  GameClozeIcon,
+  GameOrderIcon,
+  GamePluralIcon,
+  GameScrambleIcon,
+  GameTranslateIcon,
+  GameTypingIcon,
+  LockedIcon,
+  QuestIcon,
+  ReactionStarIcon,
+  SkillGrammarIcon,
+  SkillListeningIcon,
+  SkillSpeakingIcon,
+  SkillWritingIcon,
+  StreakIcon,
+  SurvivalIcon,
+  ThemeDarkIcon,
+  ThemeLightIcon,
+  WeeklyTestIcon,
+  type IconMeaning,
 } from "@/components/icons";
 
 /**
@@ -88,45 +87,50 @@ export const TIER_LABEL_KEYS: Record<string, string> = {
   legend: "tier.legend",
 };
 
-const ICONS: Record<string, (p: { size?: number; className?: string }) => React.ReactNode> = {
-  BookIcon,
-  BookOpenIcon,
-  CalendarIcon,
-  ChatIcon,
-  CheckIcon,
-  CompassIcon,
-  FlagIcon,
-  FlameIcon,
-  GlobeIcon,
-  GrammarIcon,
-  HeadphonesIcon,
-  KeyboardIcon,
-  MapIcon,
-  MicIcon,
-  MoonIcon,
-  MountainIcon,
-  PenIcon,
-  PuzzleIcon,
-  RunIcon,
-  SchoolIcon,
-  SortIcon,
-  SparkIcon,
-  StackIcon,
-  StarIcon,
-  SunIcon,
-  TagIcon,
-  TargetIcon,
-  TranslateIcon,
-  TrophyIcon,
-  UserPlusIcon,
-  WriteIcon,
+/**
+ * Rozet glifi, ANLAM kimliğinden (`lib/achievements` `glyph`). Yalnız
+ * rozetlerin kullandığı anlamlar: bütün seti buraya almak, rozet gösteren her
+ * sayfaya yüz dokuz glifi taşırdı. Kümeyi `check:parity` sunucunun
+ * kullandığı glif kümesiyle ve mobil `ui/achievementIcon` ile karşılaştırıyor.
+ */
+const ICONS: Partial<Record<IconMeaning, (p: { size?: number; className?: string }) => React.ReactNode>> = {
+  "ach-bilingual": AchBilingualIcon,
+  "ach-boss": AchBossIcon,
+  "ach-conversation": AchConversationIcon,
+  "ach-explore": AchExploreIcon,
+  "ach-marathon": AchMarathonIcon,
+  "ach-summit": AchSummitIcon,
+  "ach-words": AchWordsIcon,
+  "add-friend": AddFriendIcon,
+  "all-games": AllGamesIcon,
+  conversation: ConversationIcon,
+  correct: CorrectIcon,
+  "game-article": GameArticleIcon,
+  "game-cloze": GameClozeIcon,
+  "game-order": GameOrderIcon,
+  "game-plural": GamePluralIcon,
+  "game-scramble": GameScrambleIcon,
+  "game-translate": GameTranslateIcon,
+  "game-typing": GameTypingIcon,
+  quest: QuestIcon,
+  "reaction-star": ReactionStarIcon,
+  "skill-grammar": SkillGrammarIcon,
+  "skill-listening": SkillListeningIcon,
+  "skill-speaking": SkillSpeakingIcon,
+  "skill-writing": SkillWritingIcon,
+  streak: StreakIcon,
+  survival: SurvivalIcon,
+  "theme-dark": ThemeDarkIcon,
+  "theme-light": ThemeLightIcon,
+  "weekly-test": WeeklyTestIcon,
 };
 
 export type BadgeRow = {
   id: string;
   title: string;
   hint: string;
-  icon: string;
+  /** Anlam kimliği (`lib/achievements` `glyph`). Eski `icon` alanı yalnız yayımlanmış mobil sürümler için. */
+  glyph: string;
   tier: string;
   target: number;
   done: number;
@@ -134,16 +138,18 @@ export type BadgeRow = {
 };
 
 /**
- * Rozetin KENDİ ikonu, adından.
+ * Rozetin KENDİ ikonu, anlam kimliğinden.
  *
  * Harita modül içinde kalıyordu ve rozet duvarı (`achievement-wall`) ona
- * ulaşamadığı için her rozete `TrophyIcon` çiziyordu: sunucunun her satırda
- * gönderdiği `icon` alanı duvarda hiç kullanılmıyordu ve kırk yedi rozet
+ * ulaşamadığı için her rozete kupa çiziyordu: sunucunun her satırda
+ * gönderdiği ikon alanı duvarda hiç kullanılmıyordu ve kırk yedi rozet
  * birbirinin aynısı görünüyordu. Kutlama kartı baştan beri doğrusunu
  * çiziyordu; artık ikisi de buradan geçiyor.
+ *
+ * Tanınmayan kimlik YILDIZA düşüyor (mobil `AchievementIcon` ile aynı yedek).
  */
-export function BadgeIcon({ name, size }: { name: string; size?: number }) {
-  const Icon = ICONS[name] ?? StarIcon;
+export function BadgeIcon({ glyph, size }: { glyph: string; size?: number }) {
+  const Icon = ICONS[glyph as IconMeaning] ?? ReactionStarIcon;
   return <>{Icon({ size })}</>;
 }
 
@@ -184,15 +190,15 @@ export function AchievementBadge({
         }}
       >
         {row.unlocked ? (
-          <BadgeIcon name={row.icon} size={Math.round(size * 0.45)} />
+          <BadgeIcon glyph={row.glyph} size={Math.round(size * 0.45)} />
         ) : (
           <>
-            <BadgeIcon name={row.icon} size={Math.round(size * 0.4)} />
+            <BadgeIcon glyph={row.glyph} size={Math.round(size * 0.4)} />
             <span
               className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full"
               style={{ background: "var(--surface)", color: "var(--text-muted)" }}
             >
-              <LockIcon size={11} />
+              <LockedIcon size={11} />
             </span>
           </>
         )}

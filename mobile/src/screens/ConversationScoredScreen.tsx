@@ -8,7 +8,7 @@ import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { AiNotice } from "../ui/AiNotice";
 import { PressableScale } from "../ui/PressableScale";
-import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon, ArrowRightIcon } from "../ui/icons";
+import { ConversationIcon, CorrectIcon, DurationIcon, LockedIcon, NoGoingBackIcon, ScoreTargetIcon, SendIcon, SkillSpeakingIcon, WarningIcon } from "../ui/icons";
 import { CoachLine } from "../ui/CoachLine";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
 import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
@@ -357,7 +357,7 @@ export function ConversationScoredScreen() {
             sinav girisiyle de ayni (`ExamScreen` 48). */}
         <CoachLine moment="scored_intro" />
         <CoverBody
-          icon={ChatIcon}
+          icon={ConversationIcon}
           tint={colors.primary}
           /* Konuşmanın adı hedef dilde; üst satır büyük harf ve Türkçe yerelde
              "i" → "İ" oluyordu. JS `toUpperCase` yerelden bağımsız. */
@@ -365,12 +365,12 @@ export function ConversationScoredScreen() {
           title={tx("scored.title")}
           pitch={conversation.chat.scene}
           rules={[
-            { icon: ClockIcon, text: tx("scored.rule_time", { turns: SCORED_TURNS, minutes: SCORED_SECONDS / 60 }) },
-            { icon: LockIcon, text: tx("scored.rule_partner") },
-            { icon: TargetIcon, text: tx("scored.rule_scoring") },
+            { icon: DurationIcon, text: tx("scored.rule_time", { turns: SCORED_TURNS, minutes: SCORED_SECONDS / 60 }) },
+            { icon: NoGoingBackIcon, text: tx("scored.rule_partner") },
+            { icon: ScoreTargetIcon, text: tx("scored.rule_scoring") },
           ]}
         >
-          {guest ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={tx("guest.ai_scored")} /> : null}
+          {guest ? <FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={tx("guest.ai_scored")} /> : null}
           {conversation.patterns.length ? (
             <DetailCard title={tx("scored.patterns_title")}>
               {conversation.patterns.map((p) => <DetailRow key={p.de} left={p.de} right={p.tr} />)}
@@ -476,18 +476,18 @@ export function ConversationScoredScreen() {
         ) : null}
 
         {/* Tek satırlık notlar: puanlanamama sebebi, en sık hata, yapabilirlik. */}
-        {gateNote ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={gateNote} /> : null}
+        {gateNote ? <FlowNote tone="bad" icon={<WarningIcon color={colors.dangerText} size={16} />} text={gateNote} /> : null}
         {result ? (
           topErrors.length ? (
-            <FlowNote icon={<AlertIcon color={colors.textMuted} size={16} />} text={`${tx("scored.most_common")} ${topErrors.map(([type, n]) => `${tx(ERROR_LABEL_KEYS[type] ?? "err.meaning")} x${n}`).join(", ")}`} />
+            <FlowNote icon={<WarningIcon color={colors.textMuted} size={16} />} text={`${tx("scored.most_common")} ${topErrors.map(([type, n]) => `${tx(ERROR_LABEL_KEYS[type] ?? "err.meaning")} x${n}`).join(", ")}`} />
           ) : (
-            <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("scored.no_errors")} />
+            <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={tx("scored.no_errors")} />
           )
         ) : null}
         {cando.length ? (
           <FlowNote
             tone={passed ? "ok" : "neutral"}
-            icon={passed ? <CheckIcon color={colors.successText} size={16} /> : <TargetIcon color={colors.textMuted} size={16} />}
+            icon={passed ? <CorrectIcon color={colors.successText} size={16} /> : <ScoreTargetIcon color={colors.textMuted} size={16} />}
             text={`${passed ? tx("conversationp.i_can") : tx("scored.goal")} ${cando.join(" · ")}`}
           />
         ) : null}
@@ -582,7 +582,7 @@ export function ConversationScoredScreen() {
             accessibilityLabel={tx("conversation.mic_talk")}
             style={[{ width: 48, height: 48, borderRadius: radii.pill, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}
           >
-            <MicPulse active={listening}><MicIcon color={colors.onPrimary} size={20} /></MicPulse>
+            <MicPulse active={listening}><SkillSpeakingIcon color={colors.onPrimary} size={20} /></MicPulse>
           </PressableScale>
         ) : null}
         <TextInput
@@ -613,7 +613,7 @@ export function ConversationScoredScreen() {
               disabled={!dolu}
               style={[{ width: 48, height: 48, borderRadius: radii.pill, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}
             >
-              <ArrowRightIcon color={dolu ? colors.onPrimary : colors.textFaint} size={22} />
+              <SendIcon color={dolu ? colors.onPrimary : colors.textFaint} size={22} />
             </PressableScale>
           );
         })()}

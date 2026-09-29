@@ -8,7 +8,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { localeOf } from "@/lib/i18n/dict";
 import { UnitPane, KindIconFor } from "@/components/immersion/unit-pane";
 import type { PathQuota } from "@/lib/premium/unlock-copy";
-import { CheckIcon, ExamIcon, LockIcon } from "@/components/icons";
+import { CheckIcon, LevelExamIcon, LockedIcon } from "@/components/icons";
 import { useCourse } from "@/components/app-shell";
 import type { CefrLevel } from "@/lib/skills/types";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
@@ -390,7 +390,7 @@ function Tile({
         {unit.complete ? (
           <CheckIcon size={18} style={{ color: "var(--color-mint)" }} />
         ) : unit.locked ? (
-          <LockIcon size={18} className="muted" />
+          <LockedIcon size={18} className="muted" />
         ) : (
           <span className="text-strong" style={{ color: highlighted ? "var(--color-brand)" : "var(--text-muted)" }}>
             {unit.index}
@@ -493,7 +493,7 @@ function LevelExamRow({ level }: { level: CefrLevel }) {
   const t = useT();
   return (
     <Link href={`/exam/${level}`} prefetch={false} className="card pressable flex items-center gap-3 px-4 py-3">
-      <ExamIcon size={20} />
+      <LevelExamIcon size={20} />
       <span className="min-w-0 flex-1">
         <span className="block text-strong">{t("path.level_exam", { level })}</span>
         <span className="muted block text-caption">{t("path.level_exam_sub")}</span>

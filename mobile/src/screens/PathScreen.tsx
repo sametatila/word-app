@@ -9,7 +9,7 @@ import { Skeleton, SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile, textHe
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon, ExamIcon, ChevronRightIcon, PathIcon } from "../ui/icons";
+import { CheckIcon, ChevronNextIcon, ConversationIcon, LevelExamIcon, LockedIcon, PathReviewIcon, SkillGrammarIcon, SkillListeningIcon, SkillReadingIcon, SkillWritingIcon, TabPathIcon, UnitQuizIcon } from "../ui/icons";
 import { EmptyCard } from "../social/common";
 import { itemOpen, useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
 import { useLayout, gridColumnsFor } from "../lib/useLayout";
@@ -22,8 +22,8 @@ import { PathQuota } from "../ui/PathQuota";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
-  conversation: (p) => <LearnIcon {...p} />, read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />,
-  write: (p) => <WriteIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />, unitQuiz: (p) => <CheckIcon {...p} />,
+  conversation: (p) => <ConversationIcon {...p} />, read: (p) => <SkillReadingIcon {...p} />, listen: (p) => <SkillListeningIcon {...p} />,
+  write: (p) => <SkillWritingIcon {...p} />, grammar: (p) => <SkillGrammarIcon {...p} />, quiz: (p) => <PathReviewIcon {...p} />, unitQuiz: (p) => <UnitQuizIcon {...p} />,
 };
 
 function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathUnit; isCurrent: boolean; colors: Palette; onContinue: () => void }) {
@@ -108,12 +108,12 @@ function LevelExamRow({ level, colors, onPress }: { level: string; colors: Palet
   return (
     <PressableScale onPress={onPress}>
       <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
-        <ExamIcon color={colors.streakText} size={18} />
+        <LevelExamIcon color={colors.streakText} size={18} />
         <View style={{ flex: 1 }}>
           <Text variant="bodyStrong" numberOfLines={1}>{t("path.level_exam", { level })}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{t("path.level_exam_sub")}</Text>
         </View>
-        <ChevronRightIcon color={colors.textFaint} size={20} />
+        <ChevronNextIcon color={colors.textFaint} size={20} />
       </Card>
     </PressableScale>
   );
@@ -123,12 +123,12 @@ function ModuleExamRow({ m, colors, onPress }: { m: { index: number; code: strin
   return (
     <PressableScale onPress={onPress} style={{ marginTop: spacing.md }}>
       <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
-        <ExamIcon color={colors.streakText} size={18} />
+        <LevelExamIcon color={colors.streakText} size={18} />
         <View style={{ flex: 1 }}>
           <Text variant="bodyStrong" numberOfLines={1}>{t("path.module_exam_n", { n: m.index + 1 })} · {m.titleTr}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{m.code} · {m.titleDe} · {t("path.module_exam_minutes")}</Text>
         </View>
-        <ChevronRightIcon color={colors.textFaint} size={20} />
+        <ChevronNextIcon color={colors.textFaint} size={20} />
       </Card>
     </PressableScale>
   );
@@ -310,7 +310,7 @@ export function PathScreen() {
             yeri göstermiyordu. */}
         <View style={{ marginTop: spacing.lg }}>
           <EmptyCard
-            icon={PathIcon}
+            icon={TabPathIcon}
             tint={colors.info}
             title={t("path.empty_title")}
             text={t("path.no_units")}
@@ -375,7 +375,7 @@ export function PathScreen() {
                 <PressableScale key={u.id} style={{ flex: 1 }} onPress={() => openUnit(u)}>
                   <Card padded style={{ flex: 1, minHeight: ds(132), opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: 1 }}>
                     <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                      {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
+                      {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockedIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
                     </View>
                     <Text variant="bodyStrong" style={{ marginTop: spacing.sm }} numberOfLines={2}>{u.topics.length ? u.topics.join(" · ") : u.theme}</Text>
                     <View style={{ flex: 1 }} />

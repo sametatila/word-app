@@ -11,7 +11,7 @@ import { ReportFlag } from "../ui/ReportFlag";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
-import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, ExamIcon, ClockIcon, ArrowRightIcon, RepeatIcon, AlertIcon, LockIcon } from "../ui/icons";
+import { NoGoingBackIcon, SpeakerIcon, CorrectIcon, WrongIcon, SkillSpeakingIcon, MockExamIcon, DurationIcon, ResumeIcon, WarningIcon, OfflineIcon, LockedIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "../ui/flow";
 import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
 import { useBackConfirm } from "../lib/useBackConfirm";
@@ -569,12 +569,12 @@ export function MockExamScreen() {
             süre dolup geçilmesi bir UYARI (kayıp yok, kural işledi). */}
         {autoNext ? (
           <View style={{ marginBottom: spacing.sm }}>
-            <FlowNote tone="warn" icon={<ClockIcon color={colors.streakText} size={16} />} text={t("mockexam.auto_next")} />
+            <FlowNote tone="warn" icon={<DurationIcon color={colors.streakText} size={16} />} text={t("mockexam.auto_next")} />
           </View>
         ) : null}
         {resumed && ix === (attempt?.taskIx ?? 0) ? (
           <View style={{ marginBottom: spacing.sm }}>
-            <FlowNote icon={<RepeatIcon color={colors.textMuted} size={16} />} text={t("mockexam.resumed")} />
+            <FlowNote icon={<ResumeIcon color={colors.textMuted} size={16} />} text={t("mockexam.resumed")} />
           </View>
         ) : null}
         <TaskView
@@ -672,7 +672,7 @@ function Cover({
   const points = part.tasks.reduce((a, x) => a + (isOpenTask(x) ? 0 : x.items.length), 0);
   return (
     <CoverBody
-      icon={ExamIcon}
+      icon={MockExamIcon}
       tint={colors.primary}
       eyebrow={eyebrow}
       title={paper.theme}
@@ -681,18 +681,18 @@ function Cover({
         /* AÇIK BÖLÜMÜN ETİKETİ DOĞRUYU SÖYLÜYOR (denetim T15): eskiden
            "puanlanmaz" yazıyordu, oysa görevleri yapay zekâ puanlıyor. Misafire
            puan verilmiyor (değerlendirme hesap istiyor); ona kendi cümlesi. */
-        { icon: ClockIcon, text: points ? t("mockexams.part_summary", { minutes: part.minutes, n: points }) : t(guestAi ? "mockexams.part_open_guest" : "mockexams.part_open", { minutes: part.minutes }) },
+        { icon: DurationIcon, text: points ? t("mockexams.part_summary", { minutes: part.minutes, n: points }) : t(guestAi ? "mockexams.part_open_guest" : "mockexams.part_open", { minutes: part.minutes }) },
         /* Oturum kuralları eskiden tek paragraftı; her kural artık kendi satırı. */
-        { icon: ArrowRightIcon, text: t("mockexam.rule_timed") },
-        { icon: ArrowBackIcon, text: t("mockexam.no_back"), tone: "bad" },
+        { icon: DurationIcon, text: t("mockexam.rule_timed") },
+        { icon: NoGoingBackIcon, text: t("mockexam.no_back"), tone: "bad" },
         ...(voiced ? [{ icon: SpeakerIcon, text: t("mockexam.rule_voiced") }] : []),
-        { icon: CheckIcon, text: t("mockexam.rule_saved"), tone: "ok" as const },
+        { icon: CorrectIcon, text: t("mockexam.rule_saved"), tone: "ok" as const },
       ]}
       /* Temanın ve yönergenin öğrencinin dilindeki karşılığı: kapakta
          bulunuyordu, kaybolmuyor — kuralların altında not olarak. */
       note={`${paper.themeTr}\n${part.instructionTr}`}
     >
-      {guestAi ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_part")} /> : null}
+      {guestAi ? <FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_part")} /> : null}
       {/* Bağımsızlık notu (denetim İ3): sonuç resmî sertifika izlenimi vermesin. */}
       <Text variant="micro" color={colors.textMuted}>{t("exam.independent_note")}</Text>
     </CoverBody>
@@ -985,7 +985,7 @@ function WritingTask({
         <OpenResult score={score} colors={colors} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={value} />
       ) : guest ? (
         /* MİSAFİR: düğme kesin 403 alacaktı; yerine nedeni ve örnek cevabın yeri. */
-        <View style={{ marginTop: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_task")} /></View>
+        <View style={{ marginTop: spacing.md }}><FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_task")} /></View>
       ) : (
         <>
           {/* SEBEP YAZIYOR (bkz. `ExamScreen`): ustteki sayac gorevin alt
@@ -1167,7 +1167,7 @@ function SpeakingTask({
             onPress={() => void begin()}
             style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.sm, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft }}
           >
-            <MicIcon color={colors.primaryText} size={20} />
+            <SkillSpeakingIcon color={colors.primaryText} size={20} />
             <Text variant="bodyStrong" color={colors.primaryText}>{t("mockexam.speak_start")}</Text>
           </PressableScale>
           {/*
@@ -1202,7 +1202,7 @@ function SpeakingTask({
             </>
           ) : (
             <View style={{ alignItems: "center" }}>
-              <MicIcon color={colors.dangerText} size={28} />
+              <SkillSpeakingIcon color={colors.dangerText} size={28} />
               <Text variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.xs }}>{t("mockexam.speak_now")}</Text>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>
                 {current?.who === "you" ? current.hint : t("mockexam.solo_hint")}
@@ -1231,7 +1231,7 @@ function SpeakingTask({
           {score ? (
             <OpenResult score={score} colors={colors} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={value} />
           ) : guest ? (
-            <View style={{ marginTop: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_task")} /></View>
+            <View style={{ marginTop: spacing.md }}><FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_task")} /></View>
           ) : (
             <>
               {/* KONUSMA DOKUMUNUN DE TABANI VAR. Burada hic kapi yoktu: bos
@@ -1396,7 +1396,7 @@ function ResultView({
                   <Card key={it.id} padded style={{ marginBottom: spacing.sm }}>
                     <View style={{ flexDirection: "row", gap: spacing.sm }}>
                       <View style={{ width: 24, height: 24, borderRadius: 12, alignItems: "center", justifyContent: "center", backgroundColor: ok ? colors.successSoft : colors.dangerSoft }}>
-                        {ok ? <CheckIcon color={colors.successText} size={16} /> : <XIcon color={colors.dangerText} size={16} />}
+                        {ok ? <CorrectIcon color={colors.successText} size={16} /> : <WrongIcon color={colors.dangerText} size={16} />}
                       </View>
                       <View style={{ flex: 1 }}>
                         <Text variant="bodyStrong">{it.no}. {it.text}</Text>
@@ -1488,13 +1488,13 @@ function ResultView({
       ) : null}
       {/* Metni olup puanı olmayan görev ortalamaya girmiyor; kaç tane olduğu söyleniyor. */}
       {graded && openPart && openPart.unscored > 0 ? (
-        <FlowNote icon={<AlertIcon color={colors.textMuted} size={16} />} text={t("mockexam.open_unscored", { n: openPart.unscored })} />
+        <FlowNote icon={<WarningIcon color={colors.textMuted} size={16} />} text={t("mockexam.open_unscored", { n: openPart.unscored })} />
       ) : null}
 
-      {guestAi ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_part")} /> : null}
+      {guestAi ? <FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_part")} /> : null}
       {/* Sunucuya ulaşılamadı: sebep kırmızı, sonucun nerede saklandığı ayrı satır. */}
-      {offline ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={t(`mockexam.fail_${offline}`)} /> : null}
-      {offline ? <FlowNote icon={<CheckIcon color={colors.textMuted} size={16} />} text={t("mockexam.saved_locally")} /> : null}
+      {offline ? <FlowNote tone="bad" icon={<OfflineIcon color={colors.dangerText} size={16} />} text={t(`mockexam.fail_${offline}`)} /> : null}
+      {offline ? <FlowNote icon={<CorrectIcon color={colors.textMuted} size={16} />} text={t("mockexam.saved_locally")} /> : null}
 
       {score.byGoal.length ? (
         <DetailCard title={t("mockexam.by_goal")}>

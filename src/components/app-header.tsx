@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { MyAvatar } from "@/components/avatar";
-import { FlameIcon } from "@/components/icons";
+import { StreakIcon } from "@/components/icons";
 import { NotificationBell } from "@/components/social/notification-bell";
 import { useShell } from "@/components/app-shell";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -68,7 +68,7 @@ export function AppHeader({ title }: { title: string }) {
               : { background: "var(--surface-2)", color: "var(--text-faint)" }
           }
         >
-          <FlameIcon size={16} />
+          <StreakIcon size={16} />
           {streak}
         </Link>
         <NotificationBell />

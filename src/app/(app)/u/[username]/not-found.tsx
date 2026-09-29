@@ -1,7 +1,7 @@
 import { getT } from "@/lib/i18n/server";
 import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
-import { XIcon } from "@/components/icons";
+import { NoResultsIcon } from "@/components/icons";
 
 /**
  * Olmayan ya da kapalı profil.
@@ -18,7 +18,7 @@ export default async function UserNotFound() {
        Arkadaşlar'a dönen tek çıkış taşıyor. */
     <div className="mx-auto w-full max-w-md py-8">
       <EmptyCard
-        icon={XIcon}
+        icon={NoResultsIcon}
         tint="var(--color-rose)"
         title={t("user.user_not_found")}
         text={t("user.link_may_be_old_or_this_profile")}

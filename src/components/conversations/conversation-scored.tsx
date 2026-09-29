@@ -21,7 +21,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
-import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "@/components/icons";
+import { ConversationIcon, CorrectIcon, DurationIcon, NoGoingBackIcon, ScoreTargetIcon, SkillSpeakingIcon, WarningIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
 import { ResultTopBar } from "@/components/round-exit";
 import { CoachLine } from "@/components/coach-line";
@@ -293,7 +293,7 @@ export function ConversationScored({
       <FlowColumn>
         <CoachLine moment="scored_intro" />
         <CoverBody
-          icon={<ChatIcon size={28} />}
+          icon={<ConversationIcon size={28} />}
           tint="var(--color-brand-500)"
           /* `lang`: üst satır büyük harf; Türkçe yerelde "i" → "İ" olmasın. */
           eyebrow={
@@ -304,9 +304,9 @@ export function ConversationScored({
           title={t("scored.title")}
           pitch={conversation.chat.scene}
           rules={[
-            { icon: <ClockIcon size={16} />, text: t("scored.rule_time", { turns: SCORED_TURNS, minutes: SCORED_SECONDS / 60 }) },
-            { icon: <LockIcon size={16} />, text: t("scored.rule_partner") },
-            { icon: <TargetIcon size={16} />, text: t("scored.rule_scoring") },
+            { icon: <DurationIcon size={16} />, text: t("scored.rule_time", { turns: SCORED_TURNS, minutes: SCORED_SECONDS / 60 }) },
+            { icon: <NoGoingBackIcon size={16} />, text: t("scored.rule_partner") },
+            { icon: <ScoreTargetIcon size={16} />, text: t("scored.rule_scoring") },
           ]}
         >
           {conversation.patterns.length ? (
@@ -402,16 +402,16 @@ export function ConversationScored({
         />
         {topErrors.length ? (
           <FlowNote
-            icon={<AlertIcon size={16} />}
+            icon={<WarningIcon size={16} />}
             text={`${t("scored.most_common")} ${topErrors.map(([type, n]) => `${t(ERROR_LABEL_KEYS[type])} ×${n}`).join(", ")}`}
           />
         ) : (
-          <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("scored.no_errors")} />
+          <FlowNote tone="ok" icon={<CorrectIcon size={16} />} text={t("scored.no_errors")} />
         )}
         {cando.length ? (
           <FlowNote
             tone={passed ? "ok" : "neutral"}
-            icon={passed ? <CheckIcon size={16} /> : <TargetIcon size={16} />}
+            icon={passed ? <CorrectIcon size={16} /> : <ScoreTargetIcon size={16} />}
             text={`${passed ? t("conversationp.i_can") : t("scored.goal")} ${cando.join(" · ")}`}
           />
         ) : null}
@@ -492,7 +492,7 @@ export function ConversationScored({
             aria-label={t("conversation.mic_talk")}
             className="brand-gradient flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow disabled:opacity-60"
           >
-            <MicIcon size={20} />
+            <SkillSpeakingIcon size={20} />
           </button>
         ) : null}
         <textarea

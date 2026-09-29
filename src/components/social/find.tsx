@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { FlameIcon, SearchIcon, UserPlusIcon, XIcon } from "@/components/icons";
+import { AddFriendIcon, CloseIcon, NoResultsIcon, SearchIcon, StreakIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { PersonRowSkeleton } from "@/components/skeleton";
 import { errorText, social, type SearchHitView, type SuggestionView } from "@/lib/social/client";
@@ -85,7 +85,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             aria-label={t("find.clear")}
             className="muted absolute right-1.5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-pill"
           >
-            <XIcon size={18} />
+            <CloseIcon size={18} />
           </button>
         ) : null}
       </div>
@@ -107,7 +107,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
           /* Boş hâl EV KALIBINDA (Android `EmptyCard`): sönük tek bir cümle
              listenin altında kaybolup gidiyordu. */
           <EmptyCard
-            icon={SearchIcon}
+            icon={NoResultsIcon}
             tint="var(--color-sky)"
             title={t("find.empty_results_title")}
             text={t("find.no_results_private_profiles_only")}
@@ -133,7 +133,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             </ol>
           ) : (
             <EmptyCard
-              icon={UserPlusIcon}
+              icon={AddFriendIcon}
               tint="var(--color-mint)"
               title={t("find.empty_sugg_title")}
               text={t("find.no_suggestions_yet_search_by")}
@@ -181,7 +181,7 @@ function PersonRow({
           {note}
           {streak ? (
             <span className="flex items-center gap-0.5" style={{ color: "var(--color-flame)" }}>
-              <FlameIcon size={11} />
+              <StreakIcon size={11} />
               {streak}
             </span>
           ) : null}

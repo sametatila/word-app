@@ -31,7 +31,7 @@ import { pocketWalkCue } from "@/components/pocket-audio";
 import { afterMs, withDeadline } from "@/components/pocket-clock";
 import { play, resetCombo, type WalkCue } from "@/lib/sfx";
 import { track } from "@/lib/track";
-import { CheckIcon, InboxIcon, MicIcon, RefreshIcon, SparkIcon, SpeakerIcon, WalkIcon, XIcon } from "@/components/icons";
+import { CorrectIcon, InboxIcon, NewWordsIcon, ResumeIcon, SkillSpeakingIcon, SpeakerIcon, WalkIcon, WrongIcon } from "@/components/icons";
 import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "@/lib/types";
 import { localDay } from "@/lib/day";
 import { vibrate } from "@/lib/fx";
@@ -1546,10 +1546,10 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
             pitch={t("walkmode.cover_pitch")}
             rules={[
               { icon: <SpeakerIcon size={16} />, text: t("walkmode.rule_hint", { nativeLang: nativeLangName(lang) }) },
-              { icon: <MicIcon size={16} />, text: t("walkmode.rule_say", { target: courseName(course, lang) }) },
-              { icon: <SparkIcon size={16} />, text: t("walkmode.rule_teach") },
-              { icon: <CheckIcon size={16} />, text: t("walkmode.rule_verdict") },
-              { icon: <RefreshIcon size={16} />, text: t("walkmode.rule_continue") },
+              { icon: <SkillSpeakingIcon size={16} />, text: t("walkmode.rule_say", { target: courseName(course, lang) }) },
+              { icon: <NewWordsIcon size={16} />, text: t("walkmode.rule_teach") },
+              { icon: <CorrectIcon size={16} />, text: t("walkmode.rule_verdict") },
+              { icon: <ResumeIcon size={16} />, text: t("walkmode.rule_continue") },
             ]}
             note={t("walk.intro_2")}
           />
@@ -1684,7 +1684,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
               className="flex h-16 w-16 items-center justify-center rounded-full"
               style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }}
             >
-              <MicIcon size={28} />
+              <SkillSpeakingIcon size={28} />
             </motion.span>
             <p className="mt-3 text-h3">{t("walk.continue_q")}</p>
             <p className="muted mt-1 text-body">
@@ -1702,7 +1702,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
                 color: "var(--color-brand)",
               }}
             >
-              <MicIcon size={28} />
+              <SkillSpeakingIcon size={28} />
             </motion.span>
             <p className="mt-3 text-h3">{prompt?.tr}</p>
             <p className="muted mt-1 text-body">{t("walk.say_target", { target: courseName(course, lang) })}</p>
@@ -1721,7 +1721,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
                 color: verdict === "correct" ? "var(--color-mint)" : verdict === "wrong" ? "var(--color-flame)" : "var(--color-brand)",
               }}
             >
-              {verdict === "correct" ? <CheckIcon size={28} /> : verdict === "wrong" ? <XIcon size={28} /> : <MicIcon size={28} />}
+              {verdict === "correct" ? <CorrectIcon size={28} /> : verdict === "wrong" ? <WrongIcon size={28} /> : <SkillSpeakingIcon size={28} />}
             </span>
             <p className="mt-3 text-h3">{prompt?.de}</p>
             <p className="muted mt-1 text-body">

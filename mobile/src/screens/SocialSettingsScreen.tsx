@@ -11,7 +11,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { RadioDot } from "../ui/RadioDot";
 import { useTheme, spacing, radii } from "../theme";
 import { EmptyCard, Pill, SectionTitle } from "../social/common";
-import { AlertIcon } from "../ui/icons";
+import { WarningIcon } from "../ui/icons";
 import { SOCIAL_LIMITS } from "../lib/profileDefaults";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 
@@ -80,7 +80,7 @@ function SaveLine({ msg, ok }: { msg: string | null; ok: boolean }) {
 /** Yükleme ve hata hâli — iki parça için ortak. */
 function LoadState({ loadErr, retry, rows }: { loadErr: string | null; retry: () => void; rows: number }) {
   const { colors } = useTheme();
-  if (loadErr) return <EmptyCard live="assertive" icon={AlertIcon} tint={colors.danger} title={tx("socialsettings.social_and_privacy")} text={loadErr} action={tx("common.try_again")} onAction={retry} />;
+  if (loadErr) return <EmptyCard live="assertive" icon={WarningIcon} tint={colors.danger} title={tx("socialsettings.social_and_privacy")} text={loadErr} action={tx("common.try_again")} onAction={retry} />;
   /* Bölüm bölüm, GERÇEK satırlarla: Görünürlük (üç radyo satırı), İzinler
      (üç anahtar satırı), Engellenenler (tek satır). Eskisi her bölüme 48'lik
      tek blok + bir satır koyuyordu; üç satırlık kartlar gelince ekran iki

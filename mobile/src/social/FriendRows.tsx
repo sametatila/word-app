@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, HandshakeIcon, TargetIcon, BoltIcon, BellIcon, PartyIcon, XIcon, ChevronRightIcon } from "../ui/icons";
+import { StreakIcon, SharedStreakIcon, QuestIcon, XpIcon, RemindersIcon, ReactionCheerIcon, RemoveFriendIcon, ChevronNextIcon } from "../ui/icons";
 import { useTheme, spacing, radii, onTint, soft } from "../theme";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { StatPill, type IconCmp } from "./common";
@@ -94,26 +94,26 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           <Text variant="h3" numberOfLines={1}>{f.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{f.username ? `@${f.username} · ` : ""}{f.level}</Text>
         </View>
-        <ChevronRightIcon color={colors.textFaint} size={20} />
+        <ChevronNextIcon color={colors.textFaint} size={20} />
       </PressableScale>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
-        <StatPill icon={BoltIcon} label={t("social.xp_this_week", { xp: formatNumber(f.weeklyXp) })} tint={colors.primary} soft={colors.primarySoft} />
-        {f.currentStreak > 0 ? <StatPill icon={FlameIcon} label={t("social.days", { n: f.currentStreak })} tint={colors.streak} /> : null}
-        {f.friendStreak > 0 ? <StatPill icon={HandshakeIcon} label={t("social.days_together", { n: f.friendStreak })} tint={f.streakAtRisk ? colors.streak : colors.success} soft={f.streakAtRisk ? undefined : colors.successSoft} /> : null}
+        <StatPill icon={XpIcon} label={t("social.xp_this_week", { xp: formatNumber(f.weeklyXp) })} tint={colors.primary} soft={colors.primarySoft} />
+        {f.currentStreak > 0 ? <StatPill icon={StreakIcon} label={t("social.days", { n: f.currentStreak })} tint={colors.streak} /> : null}
+        {f.friendStreak > 0 ? <StatPill icon={SharedStreakIcon} label={t("social.days_together", { n: f.friendStreak })} tint={f.streakAtRisk ? colors.streak : colors.success} soft={f.streakAtRisk ? undefined : colors.successSoft} /> : null}
       </View>
       {f.streakAtRisk ? (
         <Text variant="caption" color={colors.streakText} style={{ marginTop: spacing.sm }}>{t("social.costreak_risk")}</Text>
       ) : null}
       <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
         <ActionTile
-          icon={cheer ? PartyIcon : BellIcon}
+          icon={cheer ? ReactionCheerIcon : RemindersIcon}
           label={t(sent ? (cheer ? "friendrows.cheered" : "friendrows.nudged") : cheer ? "friendrows.cheer" : "friendrows.nudge")}
           tint={cheer ? colors.success : colors.streak}
           disabled={busy || sent}
           onPress={() => void act(async () => { await social.nudge(f.userId, cheer ? "cheer" : "remind"); setSent(true); }, t(cheer ? "social.cheered_you" : "social.nudged_you"))}
         />
-        <ActionTile icon={TargetIcon} label={t("friendrows.quest")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), t("social.quest_sent"))} />
-        <ActionTile icon={XIcon} label={t("friendrows.remove")} tint={colors.danger} disabled={busy} onPress={() => setConfirmRemove(true)} />
+        <ActionTile icon={QuestIcon} label={t("friendrows.quest")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), t("social.quest_sent"))} />
+        <ActionTile icon={RemoveFriendIcon} label={t("friendrows.remove")} tint={colors.danger} disabled={busy} onPress={() => setConfirmRemove(true)} />
       </View>
       {/* HATA `assertive`, BASARI `polite` (bkz. `PaywallScreen`). */}
       {msg ? <Text accessibilityLiveRegion={ok ? "polite" : "assertive"} variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm, textAlign: "center" }}>{msg}</Text> : null}

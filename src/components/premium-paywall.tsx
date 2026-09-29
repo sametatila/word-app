@@ -8,7 +8,7 @@ import { useShell } from "@/components/app-shell";
 import { track } from "@/lib/track";
 import { useLang, useT } from "@/lib/i18n/client";
 import { localeOf } from "@/lib/i18n/dict";
-import { CrownIcon, CheckIcon } from "@/components/icons";
+import { CheckIcon, PremiumIcon } from "@/components/icons";
 import type { CopyLine, PlanPrice } from "@/lib/premium/gates";
 import { PremiumStoreCta } from "@/components/premium-store-cta";
 import { BackButton } from "@/components/page-back";
@@ -158,7 +158,7 @@ export function PremiumPaywall({
           className="flex h-20 w-20 items-center justify-center rounded-card"
           style={{ background: "var(--brand-fill)", color: "var(--on-brand)", boxShadow: "0 12px 24px -10px var(--brand-fill)" }}
         >
-          <CrownIcon size={42} />
+          <PremiumIcon size={42} />
         </div>
         <h1 className="mt-4 text-display">{t("paywall.nomi_premium")}</h1>
         {/* Sloganı mobil başlığın hemen altında gösteriyor; web'de hiç yoktu.

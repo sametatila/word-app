@@ -5,7 +5,7 @@ import { t } from "../lib/i18n";
 import { haptic } from "../lib/haptics";
 import { reduceMotion } from "../lib/reduceMotion";
 import { Text } from "./Text";
-import { FlameIcon } from "./icons";
+import { StreakIcon } from "./icons";
 import { useTheme, spacing, softShadow, fillOf, ds, motion } from "../theme";
 
 /** Sahnenin ekranda kaldığı süre — web `streak-moment` `STREAK_MOMENT_MS` ile aynı. */
@@ -77,7 +77,7 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
           softShadow(flameFill, 14),
         ]}
       >
-        <FlameIcon color="#fff" size={ds(52)} />
+        <StreakIcon color="#fff" size={ds(52)} />
       </Animated.View>
 
       {/* SAYI: eski değer yukarı kayıp sönüyor, yenisi alttan geliyor. */}

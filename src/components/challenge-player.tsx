@@ -14,7 +14,7 @@ import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { AchievementFlash, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
-import { BoltIcon, CheckIcon, FlameIcon, SparkIcon, XIcon } from "@/components/icons";
+import { ComboIcon, CorrectIcon, SurvivalIcon, WrongIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, ResultHero, StatRow, CoverBody, StateBody } from "@/components/flow";
 import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -311,15 +311,15 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
          ikonunun tonunda. Mobil `ChallengeScreen` aynı sırada. */
       <FlowColumn>
         <CoverBody
-          icon={<FlameIcon size={28} />}
+          icon={<SurvivalIcon size={28} />}
           tint="var(--color-brand-500)"
           eyebrow={t("learn.survival")}
           title={t("challenge.title")}
           pitch={t("challenge.pitch", { n: START_SECONDS })}
           rules={[
-            { icon: <CheckIcon size={16} />, text: t("challenge.rule_correct"), tone: "ok" },
-            { icon: <XIcon size={16} />, text: t("challenge.rule_wrong"), tone: "bad" },
-            { icon: <BoltIcon size={16} />, text: data?.weak ? t("challenge.rule_waves_weak", { weak: data.weak }) : t("challenge.rule_waves") },
+            { icon: <CorrectIcon size={16} />, text: t("challenge.rule_correct"), tone: "ok" },
+            { icon: <WrongIcon size={16} />, text: t("challenge.rule_wrong"), tone: "bad" },
+            { icon: <SurvivalIcon size={16} />, text: data?.weak ? t("challenge.rule_waves_weak", { weak: data.weak }) : t("challenge.rule_waves") },
           ]}
           note={record > 0 ? `${t("challenge.your_record")} ${record} ${t("common.points")}` : null}
         />
@@ -429,7 +429,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
                 className="flex items-center gap-1 text-caption"
                 style={{ color: "var(--color-violet)" }}
               >
-                <SparkIcon size={13} /> {t("challenge.combo", { n: combo, mult })}
+                <ComboIcon size={13} /> {t("challenge.combo", { n: combo, mult })}
               </motion.span>
             ) : (
               <span className="muted text-caption">{t("challenge.build_streak")}</span>

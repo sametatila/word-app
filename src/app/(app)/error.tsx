@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { RefreshIcon } from "@/components/icons";
+import { RetryIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, StateBody } from "@/components/flow";
 import { track } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
@@ -50,7 +50,7 @@ export default function AppError({
             {t("err.code")} <code>{error.digest}</code>
           </p>
         ) : null}
-        <FlowActions primary={{ label: t("common.try_again"), icon: <RefreshIcon size={18} />, onClick: reset }} />
+        <FlowActions primary={{ label: t("common.try_again"), icon: <RetryIcon size={18} />, onClick: reset }} />
       </StateBody>
     </FlowColumn>
   );

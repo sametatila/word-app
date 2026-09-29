@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { fillStyle, staggerDelay } from "@/lib/motion";
 import { dialogueSegments, speakSegments } from "@/components/speak-button";
-import { AlertIcon, CheckIcon, ClockIcon, ExamIcon, FlagIcon, SpeakerIcon, StackIcon, TargetIcon } from "@/components/icons";
+import { CorrectIcon, DontGuessIcon, DurationIcon, GamePluralIcon, PlacementIcon, ScoreTargetIcon, SpeakerIcon, WarningIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
 import { ButtonSlot, TextSlot } from "@/components/flow-skeleton";
 import { SkeletonBar, SkeletonTile } from "@/components/skeleton";
@@ -245,17 +245,17 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     return (
       <FlowColumn>
         <CoverBody
-          icon={<ExamIcon size={28} />}
+          icon={<PlacementIcon size={28} />}
           tint="var(--color-brand-500)"
           eyebrow={t("placement.title")}
           title={t("onboarding.kisa_yerlestirme_sinavi")}
           pitch={t("plc.cover_pitch")}
           rules={[
-            { icon: <StackIcon size={16} />, text: t("plc.rule_stages") },
-            { icon: <ClockIcon size={16} />, text: t("plc.rule_time") },
-            { icon: <FlagIcon size={16} />, text: t("plc.rule_dont_know") },
-            { icon: <TargetIcon size={16} />, text: t("plc.rule_result") },
-            { icon: <CheckIcon size={16} />, text: t("plc.rule_choose"), tone: "ok" },
+            { icon: <GamePluralIcon size={16} />, text: t("plc.rule_stages") },
+            { icon: <DurationIcon size={16} />, text: t("plc.rule_time") },
+            { icon: <DontGuessIcon size={16} />, text: t("plc.rule_dont_know") },
+            { icon: <ScoreTargetIcon size={16} />, text: t("plc.rule_result") },
+            { icon: <CorrectIcon size={16} />, text: t("plc.rule_choose"), tone: "ok" },
           ]}
           note={lastLine}
         />
@@ -347,7 +347,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         {skills.length > 0 && skills.length <= 3 ? (
           <StatRow items={skills.map((s) => ({ value: s.pct, label: s.level ? `${s.label} · ${s.level}` : s.label }))} />
         ) : null}
-        {notSaved ? <FlowNote tone="bad" icon={<AlertIcon size={16} />} text={t("placement.not_saved")} /> : null}
+        {notSaved ? <FlowNote tone="bad" icon={<WarningIcon size={16} />} text={t("placement.not_saved")} /> : null}
         {skills.length > 3 ? (
           <DetailCard title={t("placement.skill_profile")}>
             {skills.map((s) => <DetailRow key={s.stage} left={s.label} right={s.level ? `${s.level} · ${s.pct}` : s.pct} />)}

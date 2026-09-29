@@ -5,7 +5,7 @@ import { useSafeAreaFrame } from "react-native-safe-area-context";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { RadioDot } from "./RadioDot";
-import { CheckIcon } from "./icons";
+import { CorrectIcon } from "./icons";
 import { REPORT_DETAIL_MAX, reasonsFor, sendReport, type ReportKind, type ReportReason, type ReportSurface, type ReportTarget } from "../lib/report";
 import { useKeyboardInset } from "../lib/useKeyboardHeight";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
@@ -67,7 +67,7 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
                kutu açık kalıyor, içi yerinde değişiyor. */
             <View accessibilityLiveRegion="polite" style={{ alignItems: "center", gap: spacing.sm, paddingVertical: spacing.md }}>
               <View style={{ width: ds(56), height: ds(56), borderRadius: radii.pill, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
-                <CheckIcon color={colors.successText} size={28} />
+                <CorrectIcon color={colors.successText} size={28} />
               </View>
               <Text variant="h3">{t("reportsheet.reported")}</Text>
               <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{duplicate ? t("report.already") : t("reportsheet.thanks_we_ll_look_into_it")}</Text>

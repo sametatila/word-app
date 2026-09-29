@@ -9,7 +9,7 @@ import { useCourse } from "@/components/app-shell";
 import { scoreBand } from "@/lib/score-bands";
 import { useState } from "react";
 import { ReportDialog } from "@/components/report-dialog";
-import { CheckIcon, XIcon } from "@/components/icons";
+import { CorrectIcon, WrongIcon } from "@/components/icons";
 
 /**
  * Değerlendirme kartı (WP-12; WP-30 yazma ile ortak).
@@ -108,9 +108,9 @@ export function AssessmentCard({
           {(result as FallbackAssessment).checks.map((c, i) => (
             <li key={i} className="flex items-center gap-2">
               {c.ok ? (
-                <CheckIcon aria-hidden className="size-3.5 shrink-0" style={{ color: "var(--color-mint)" }} />
+                <CorrectIcon aria-hidden className="size-3.5 shrink-0" style={{ color: "var(--color-mint)" }} />
               ) : (
-                <XIcon aria-hidden className="size-3.5 shrink-0" style={{ color: "var(--color-rose)" }} />
+                <WrongIcon aria-hidden className="size-3.5 shrink-0" style={{ color: "var(--color-rose)" }} />
               )}
               <span className={c.ok ? "" : "opacity-80"}>{t(c.key, c.vars)}</span>
             </li>

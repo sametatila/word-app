@@ -7,7 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { AlertIcon, CheckIcon } from "../ui/icons";
+import { CheckIcon, CorrectIcon, WarningIcon } from "../ui/icons";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchCando, type CandoData, type CandoItem } from "../game/cando";
@@ -155,7 +155,7 @@ export function CandoScreen() {
               götürüyor). Webde de aynı kusur vardı ve ikisi birlikte
               düzeltildi. Yeni anahtar yok: hedefin adı `nav.path`. */}
           <EmptyCard
-            icon={CheckIcon}
+            icon={CorrectIcon}
             tint={colors.success}
             title={t("cando.what_i_can_do")}
             text={t("cando.sign_in_and_finish_conversations_and")}
@@ -183,7 +183,7 @@ export function CandoScreen() {
               `EmptyCard` çiziyor (`cando-card`). Duyuru karta taşındı. */}
           <EmptyCard
             live="assertive"
-            icon={AlertIcon}
+            icon={WarningIcon}
             tint={colors.danger}
             title={t("cando.couldn_t_load")}
             text={t("cando.rule")}

@@ -9,7 +9,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
-import { AlertIcon } from "@/components/icons";
+import { OfflineIcon } from "@/components/icons";
 import { RoundExit } from "@/components/round-exit";
 import { FlowActions, FlowColumn, FlowNote, ResultHero, StatRow } from "@/components/flow";
 import { isSkillDone, RUBRIC_PASS_PCT, scoreOf, SKILL_DONE_PCT } from "@/lib/score-bands";
@@ -233,7 +233,7 @@ export function ResultCard({
         />
         {stats.length ? <StatRow items={stats} /> : null}
         {/* Bu bir UYARI, hata değil — sonuç cihazda, bağlantıyı bekliyor. */}
-        {state.phase === "offline" ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("skillp.saved_offline")} /> : null}
+        {state.phase === "offline" ? <FlowNote tone="warn" icon={<OfflineIcon size={16} />} text={t("skillp.saved_offline")} /> : null}
         {state.phase === "saved" && state.repeat && state.xpGained === 0 ? <FlowNote text={t("item.repeat_note")} /> : null}
         {children}
         {/* Sıradaki: Beceriler kütüphanesinden gelindiyse aynı seviye ve

@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowLeftIcon, XIcon } from "@/components/icons";
+import { BackIcon, CloseIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -15,7 +15,7 @@ import { useT } from "@/lib/i18n/client";
  * (`session-player`, `mock-exam-player`); bu dördü açık kalmıştı.
  *
  * Ölçüler Android'den (`BossScreen`, `ChallengeScreen`, `DailyScreen`,
- * `WeeklyScreen`): 44x44, `surface-2` zemin, `tile` yarıçap, 22 px `XIcon`,
+ * `WeeklyScreen`): 44x44, `surface-2` zemin, `tile` yarıçap, 22 px `CloseIcon`,
  * sönük renk. Adı da orada ne ise o (`common.go_back` / `common.back`).
  */
 export function RoundExit({
@@ -48,7 +48,7 @@ export function RoundExit({
   glyph?: "close" | "back";
 }) {
   const t = useT();
-  const ic = glyph === "back" ? <ArrowLeftIcon size={24} /> : <XIcon size={22} />;
+  const ic = glyph === "back" ? <BackIcon size={24} /> : <CloseIcon size={22} />;
   /* Sınıf DEĞİŞKENDEN GELMİYOR, iki dalda da elle yazılı: `check:hit`
      kapısı dokunma hedefini sınıf adından okuyor ve bir değişkene konulan
      sınıf o kapı için ölçülemez oluyor - kapıya kör nokta açmamak için iki

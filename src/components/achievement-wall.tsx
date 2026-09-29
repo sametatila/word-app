@@ -5,7 +5,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
 import { T, fillX } from "@/lib/motion";
 import { BadgeIcon, TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
-import { CheckIcon, TrophyIcon } from "@/components/icons";
+import { AchievementsIcon, CorrectIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { GROUP_LABEL_KEYS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
@@ -143,7 +143,7 @@ export function AchievementWall() {
     return (
       <EmptyCard
         role="alert"
-        icon={TrophyIcon}
+        icon={AchievementsIcon}
         tint="var(--color-flame)"
         title={t("achievements.achievements")}
         text={t("achievements.couldn_t_load_achievements")}
@@ -276,17 +276,17 @@ function AchievementCard({
             : { background: "var(--surface-2)", color: "var(--text-faint)" }
         }
       >
-        {/* Rozetin KENDİ ikonu: sunucu her satırda `icon` gönderiyor ve
+        {/* Rozetin KENDİ ikonu: sunucu her satırda `glyph` gönderiyor ve
             kutlama kartı baştan beri onu çiziyordu; duvar haritaya
             ulaşamadığı için hepsine kupa koyuyordu — kırk yedi rozet
             birbirinin aynısı görünüyordu. */}
-        <BadgeIcon name={row.icon} size={24} />
+        <BadgeIcon glyph={row.glyph} size={24} />
       </span>
       <p className="mt-2 text-strong">{row.title}</p>
       <p className="muted mt-0.5 text-micro">{row.hint}</p>
       {row.unlocked ? (
         <p className="mt-2 flex items-center gap-1 text-micro" style={{ color: "var(--color-mint)" }}>
-          <CheckIcon size={14} /> {t("achievements.earned")}
+          <CorrectIcon size={14} /> {t("achievements.earned")}
         </p>
       ) : (
         <div className="mt-2">

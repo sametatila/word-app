@@ -31,7 +31,7 @@ import { ShareResult } from "@/components/share-result";
 import { CoachLine } from "@/components/coach-line";
 import { LearnHeader } from "@/components/app-header";
 import { RoundSkeleton } from "@/components/flow-skeleton";
-import { AlertIcon, BoltIcon, CheckIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
+import { ComboIcon, CorrectIcon, ReviewIcon, StreakIcon, SurvivalIcon, WarningIcon, WrongIcon, XpIcon } from "@/components/icons";
 import { DetailCard, DetailRow, FlowActions, FlowColumn, FlowNote, ResultHero, StateBody, StatRow } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
@@ -941,7 +941,7 @@ function SessionRound() {
               color: "var(--color-sky)",
             }}
           >
-            <SparkIcon size={12} /> {t("sessionw.combo", { n: combo })}
+            <ComboIcon size={14} /> {t("sessionw.combo", { n: combo })}
           </motion.span>
         ) : null}
         {(() => {
@@ -983,7 +983,7 @@ function SessionRound() {
             color: "var(--color-flame)",
           }}
         >
-          <AlertIcon size={16} />
+          <WarningIcon size={16} />
           {saveWarning === "dropped"
             ? t("session.save_failed")
             : t("session.save_queued")}
@@ -1253,9 +1253,9 @@ function StageCard({
         </span>
         {bet ? (
           <span className="flex w-full flex-col gap-1.5 border-t pt-2" style={{ borderColor: "var(--hairline)" }}>
-            <WagerLine icon={<CheckIcon size={14} style={{ color: "var(--color-mint)" }} />} text={t("wager.outcome_all", { n: STAGE_SIZE })} />
-            <WagerLine icon={<BoltIcon size={14} className="muted" />} text={t("wager.outcome_one")} />
-            <WagerLine icon={<XIcon size={14} style={{ color: "var(--color-rose)" }} />} text={t("wager.outcome_two")} />
+            <WagerLine icon={<CorrectIcon size={14} style={{ color: "var(--color-mint)" }} />} text={t("wager.outcome_all", { n: STAGE_SIZE })} />
+            <WagerLine icon={<XpIcon size={14} className="muted" />} text={t("wager.outcome_one")} />
+            <WagerLine icon={<WrongIcon size={14} style={{ color: "var(--color-rose)" }} />} text={t("wager.outcome_two")} />
             <span className="muted block text-caption">{t("wager.safe")}</span>
           </span>
         ) : null}
@@ -1287,7 +1287,7 @@ function WagerNote({ delta }: { delta: number }) {
   return (
     <FlowNote
       tone={delta > 0 ? "ok" : delta < 0 ? "warn" : "neutral"}
-      icon={<BoltIcon size={16} />}
+      icon={<XpIcon size={16} />}
       text={delta > 0 ? t("stage.wager_won", { xp: delta }) : delta < 0 ? t("stage.wager_lost", { xp: delta }) : t("wager.even")}
     />
   );
@@ -1385,17 +1385,17 @@ function SummaryCard({
       ) : null}
 
       {/* Tek satırlık notlar: kazanılan, uyarılan, kurtarılan — hepsi aynı biçimde. */}
-      {mastered > 0 ? <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("sessionw.n_mastered", { n: mastered })} /> : null}
+      {mastered > 0 ? <FlowNote tone="ok" icon={<CorrectIcon size={16} />} text={t("sessionw.n_mastered", { n: mastered })} /> : null}
       {/* Son etap bahisliyse sonucu burada kapanıyor: etap kartı gösterilmeden
           tur bittiği için başka söylenecek yer yok. */}
       {wagerResult !== null ? <WagerNote delta={wagerResult} /> : null}
       {/* Kaybedildiği sanılan seri geri alındıysa bunu söylemek şart: sessiz
           bir onarım ekrandaki sayıyı açıklanamaz hâle getirir. */}
       {result?.streakRepaired ? (
-        <FlowNote tone="warn" icon={<FlameIcon size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: result.currentStreak })}`} />
+        <FlowNote tone="warn" icon={<StreakIcon size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: result.currentStreak })}`} />
       ) : null}
       {/* Bu bir UYARI, hata değil — tur oynandı, yalnız kaydı bekliyor. */}
-      {saveWarning ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
+      {saveWarning ? <FlowNote tone="warn" icon={<WarningIcon size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
 
       {/* ZORLANDIKLARIN — en çok altı satır; gerisi "Kelimelerim"de. Kelime
           listesinin girişi burası: merakın doğduğu an tam bu ekran. */}
@@ -1418,7 +1418,7 @@ function SummaryCard({
         </DetailCard>
       ) : result && result.dueTomorrow > 0 ? (
         /* Ertesi güne dair somut bir sayı: yarın uygulamayı açmak için sebep. */
-        <FlowNote icon={<RefreshIcon size={16} className="muted" />} text={t("sessionw.due_tomorrow", { n: result.dueTomorrow })} />
+        <FlowNote icon={<ReviewIcon size={16} className="muted" />} text={t("sessionw.due_tomorrow", { n: result.dueTomorrow })} />
       ) : null}
 
       {result && result.dailyGoal > 0 ? (
@@ -1450,7 +1450,7 @@ function SummaryCard({
       <FlowActions
         primary={{ label: t(partial ? "summary.back_to_round" : "game.continue"), onClick: onContinue }}
         /* HAYATTA KALMA: kullanıcının en ısındığı an (tur az önce bitti). */
-        secondary={{ label: t("challenge.title"), icon: <FlameIcon size={18} style={{ color: "var(--color-rose)" }} />, onClick: onChallenge }}
+        secondary={{ label: t("challenge.title"), icon: <SurvivalIcon size={18} style={{ color: "var(--color-rose)" }} />, onClick: onChallenge }}
         /* KAPANIŞ — turda sekme çubuğu yok; özetten Öğren'e dönmenin yolu bu. */
         tertiary={{ label: t("common.finish"), onClick: onFinish }}
       />

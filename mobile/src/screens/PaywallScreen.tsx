@@ -12,7 +12,7 @@ import { RadioDot } from "../ui/RadioDot";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { Card } from "../ui/Card";
 import { SectionTitle } from "../social/common";
-import { XIcon, CheckIcon, CrownIcon, ShareIcon } from "../ui/icons";
+import { ShareIcon, CloseIcon, CheckIcon, PremiumIcon } from "../ui/icons";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
@@ -321,7 +321,7 @@ export function PaywallScreen() {
   const close = (
     <View style={{ alignItems: "flex-end", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
       <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-        <XIcon color={colors.textMuted} size={22} />
+        <CloseIcon color={colors.textMuted} size={22} />
       </PressableScale>
     </View>
   );
@@ -364,7 +364,7 @@ export function PaywallScreen() {
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
           <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
             <View style={[{ width: ds(84), height: ds(84), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-              <CrownIcon color={colors.onPrimary} size={44} />
+              <PremiumIcon color={colors.onPrimary} size={44} />
             </View>
             <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{line}</Text>
@@ -417,7 +417,7 @@ export function PaywallScreen() {
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.md }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
           <View style={[{ width: ds(84), height: ds(84), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-            <CrownIcon color={colors.onPrimary} size={44} />
+            <PremiumIcon color={colors.onPrimary} size={44} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
           {/* "SINIRSIZ" YOK. Premium'un adil kullanım tavanı var ve aşağıda

@@ -6,7 +6,7 @@ import { Text } from "../ui/Text";
 import { Chip } from "../ui/Chip";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { BellIcon } from "../ui/icons";
+import { NotificationsIcon, RemindersIcon } from "../ui/icons";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { ScreenHeader } from "../social/common";
 import {
@@ -143,12 +143,12 @@ export function NotificationsScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.md, marginBottom: spacing.lg }}>
           <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
-            <BellIcon color={colors.onFill} size={36} />
+            <NotificationsIcon color={colors.onFill} size={36} />
           </View>
           <Text accessibilityRole="header" variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
         </View>
-        {guest ? <View style={{ marginBottom: spacing.lg }}><FlowNote icon={<BellIcon color={colors.textMuted} size={16} />} text={tx("guest.reminders_local")} /></View> : null}
+        {guest ? <View style={{ marginBottom: spacing.lg }}><FlowNote icon={<RemindersIcon color={colors.textMuted} size={16} />} text={tx("guest.reminders_local")} /></View> : null}
 
         <ToggleGroup colors={colors}>
           <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>

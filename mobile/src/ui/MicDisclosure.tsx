@@ -4,7 +4,7 @@ import { View, Modal, Platform, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
-import { MicIcon, CheckIcon } from "./icons";
+import { CheckIcon, SkillSpeakingIcon } from "./icons";
 import { openLegal } from "../lib/legal";
 import { ProcessorList } from "./AiConsentSheet";
 import type { AiConsentProcessor } from "../lib/aiConsent";
@@ -110,7 +110,7 @@ export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, p
         <ContentColumn>
         <ScrollView contentContainerStyle={{ paddingTop: insets.top + spacing.xxl, paddingHorizontal: spacing.xl, paddingBottom: spacing.xl, gap: spacing.lg }} showsVerticalScrollIndicator={false}>
           <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
-            <MicIcon color={colors.onPrimary} size={36} />
+            <SkillSpeakingIcon color={colors.onPrimary} size={36} />
           </View>
           <Text variant="display" style={{ textAlign: "center" }}>{t("micdisclosure.microphone_and_voice_data")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>

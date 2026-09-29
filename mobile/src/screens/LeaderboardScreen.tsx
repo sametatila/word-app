@@ -12,7 +12,7 @@ import { Chip } from "../ui/Chip";
 import { useAuth } from "../lib/AuthContext";
 import { useTheme, spacing } from "../theme";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
-import { LockIcon, PodiumIcon } from "../ui/icons";
+import { LockedIcon, LeagueIcon } from "../ui/icons";
 
 /**
  * Sıralama — iki küme, tek ekran: LİG ve ARKADAŞLAR.
@@ -47,9 +47,9 @@ export function LeaderboardScreen() {
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {user?.guest ? (
-          <GuestAccountCard icon={PodiumIcon} title={t("guest.social_title")} text={t("guest.social_body")} />
+          <GuestAccountCard icon={LeagueIcon} title={t("guest.social_title")} text={t("guest.social_body")} />
         ) : !user ? (
-          <EmptyCard icon={LockIcon} title={t("leaderboard.leaderboard")} text={t("leaderboard.sign_in_for_friends_board")} action={t("auth.sign_in")} onAction={() => nav.navigate("Auth")} />
+          <EmptyCard icon={LockedIcon} title={t("leaderboard.leaderboard")} text={t("leaderboard.sign_in_for_friends_board")} action={t("auth.sign_in")} onAction={() => nav.navigate("Auth")} />
         ) : mode === "league" ? (
           <LeagueBoard />
         ) : (

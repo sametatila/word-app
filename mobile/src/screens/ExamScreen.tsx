@@ -17,7 +17,7 @@ import { CoachLine } from "../ui/CoachLine";
 import { assessmentRef } from "../ui/ReportLink";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { CertificateSheet } from "../ui/CertificateSheet";
-import { SpeakerIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "../ui/icons";
+import { SpeakerIcon, CheckIcon, LevelExamIcon, DurationIcon, NoGoingBackIcon, ScoreTargetIcon, SkillWritingIcon, WarningIcon, LockedIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { ReportFlag } from "../ui/ReportFlag";
@@ -457,11 +457,11 @@ export function ExamScreen() {
       aynı paragrafta birbirini örtüyordu.
     */
     const rules: CoverRule[] = [
-      { icon: ClockIcon, text: t(moduleIx === null ? "exam.rules_level" : "exam.rules_module") },
-      { icon: LockIcon, text: t("exam.rule_no_return") },
-      { icon: TargetIcon, text: t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) },
-      { icon: PenIcon, text: t("exam.rule_weight") },
-      { icon: AlertIcon, text: t("exam.rule_quit") },
+      { icon: DurationIcon, text: t(moduleIx === null ? "exam.rules_level" : "exam.rules_module") },
+      { icon: NoGoingBackIcon, text: t("exam.rule_no_return") },
+      { icon: ScoreTargetIcon, text: t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) },
+      { icon: SkillWritingIcon, text: t("exam.rule_weight") },
+      { icon: WarningIcon, text: t("exam.rule_quit") },
     ];
     return (
       <FlowScreen
@@ -478,7 +478,7 @@ export function ExamScreen() {
             aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
         <CoachLine moment="exam_intro" />
         <CoverBody
-          icon={ExamIcon}
+          icon={LevelExamIcon}
           tint={colors.primary}
           eyebrow={moduleIx === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: moduleIx + 1 })}
           /* Kâğıdın kendi başlığı (hedef dilde) varsa o; yoksa sözlükten —
@@ -489,10 +489,10 @@ export function ExamScreen() {
           pitch={cover?.titleDe ? cover.titleTr : cover?.trial ? null : t("exam.cover_pitch")}
           rules={rules}
         >
-          {cover?.trial ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("exam.trial_notice")} /> : null}
+          {cover?.trial ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={t("exam.trial_notice")} /> : null}
           {/* MİSAFİR: yazma bölümünü yapay zekâ puanlıyor ve bu hesap istiyor;
               misafirde bölüm kelime sayısından tahminle puanlanıyor. */}
-          {guest ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.exam_writing")} /> : null}
+          {guest ? <FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t("guest.exam_writing")} /> : null}
           {/* Odak listesinin BAŞLIĞI yoktu: madde madde Almanca-Türkçe
               çiftler, ne oldukları söylenmeden duruyordu. */}
           {cover?.focus.length ? (
@@ -594,10 +594,10 @@ export function ExamScreen() {
             { value: `${cleared}/${rows.length}`, label: t("exam.stat_sections_cleared") },
           ]} />
         ) : null}
-        {result?.trial ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("exam.trial_notice")} /> : null}
+        {result?.trial ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={t("exam.trial_notice")} /> : null}
         {/* Misafir sınavı geçti: sonuç ve sertifika misafir kimliğinde duruyor. */}
         <GuestMilestoneCard milestone="exam_passed" when={Boolean(result?.passed && !result.trial)} />
-        {result && !certificate ? <FlowNote icon={<TargetIcon color={colors.textMuted} size={16} />} text={t("exam.weak_section_hint")} /> : null}
+        {result && !certificate ? <FlowNote icon={<ScoreTargetIcon color={colors.textMuted} size={16} />} text={t("exam.weak_section_hint")} /> : null}
         {result ? <CertificateSheet examId={result.id} visible={certOpen} onClose={() => setCertOpen(false)} /> : null}
 
         {/* BÖLÜM DÖKÜMÜ. Çevrimdışı kırılımda ağırlık yok (onu sunucu veriyor), yüzde var. */}

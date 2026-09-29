@@ -17,7 +17,7 @@ import { track } from "@/lib/track";
 import { flushPendingAnswers } from "@/lib/answer-queue";
 import { flushPendingConversations } from "@/lib/conversation-queue";
 import { useT } from "@/lib/i18n/client";
-import { HandshakeIcon, LearnIcon, PathIcon, SettingsIcon, SkillsIcon, UserIcon } from "./icons";
+import { SettingsIcon, AccountIcon, TabFriendsIcon, TabLearnIcon, TabPathIcon, TabSkillsIcon } from "./icons";
 
 /**
  * Alt gezinme: ÜÇ sekme.
@@ -45,10 +45,10 @@ import { HandshakeIcon, LearnIcon, PathIcon, SettingsIcon, SkillsIcon, UserIcon 
  * olmayan— hiçbir izini görmüyordu. Dört sekme 320 px'de sığıyor.
  */
 const NAV = [
-  { href: "/learn", labelKey: "nav.learn", Icon: LearnIcon, key: "learn" },
-  { href: "/immersion", labelKey: "nav.path", Icon: PathIcon, key: "immersion" },
-  { href: "/skills", labelKey: "nav.skills", Icon: SkillsIcon, key: "skills" },
-  { href: "/friends", labelKey: "nav.friends", Icon: HandshakeIcon, key: "friends" },
+  { href: "/learn", labelKey: "nav.learn", Icon: TabLearnIcon, key: "learn" },
+  { href: "/immersion", labelKey: "nav.path", Icon: TabPathIcon, key: "immersion" },
+  { href: "/skills", labelKey: "nav.skills", Icon: TabSkillsIcon, key: "skills" },
+  { href: "/friends", labelKey: "nav.friends", Icon: TabFriendsIcon, key: "friends" },
 ];
 
 /**
@@ -107,7 +107,7 @@ export function useCourse(): string {
 /* 2026-09-28 (Samet'in kararı): ayraç altında yalnız Profil ve Ayarlar.
    Kelimelerim Profil › Gelişim'de; seri ve XP başlıktaki alevde ve Profil'de. */
 const SECONDARY = [
-  { href: "/profile", labelKey: "profile.profile", Icon: UserIcon, exact: true },
+  { href: "/profile", labelKey: "profile.profile", Icon: AccountIcon, exact: true },
   { href: "/profile/settings", labelKey: "settings.settings", Icon: SettingsIcon, exact: false },
 ];
 

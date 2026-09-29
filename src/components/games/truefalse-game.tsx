@@ -10,7 +10,7 @@ import { withArtikel, type GameProps, type GameResult , meaningOf } from "./type
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
-import { CheckIcon, XIcon } from "@/components/icons";
+import { CorrectIcon, WrongIcon } from "@/components/icons";
 import { OptionMark } from "./option-mark";
 import { speakWord, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -116,7 +116,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
             settled && isTrue ? "option-correct" : settled && answered === true ? "option-wrong" : ""
           }`}
         >
-          <CheckIcon size={20} /> {tx("common.correct")}
+          <CorrectIcon size={20} /> {tx("common.correct")}
           <OptionMark state={!settled ? null : isTrue ? "correct" : answered === true ? "wrong" : null} />
         </motion.button>
         <motion.button
@@ -128,7 +128,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
             settled && !isTrue ? "option-correct" : settled && answered === false ? "option-wrong" : ""
           }`}
         >
-          <XIcon size={20} /> {tx("common.wrong")}
+          <WrongIcon size={20} /> {tx("common.wrong")}
           <OptionMark state={!settled ? null : !isTrue ? "correct" : answered === false ? "wrong" : null} />
         </motion.button>
       </div>

@@ -8,7 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { Chip } from "../ui/Chip";
-import { AlertIcon, CardsIcon } from "../ui/icons";
+import { NoResultsIcon, WarningIcon } from "../ui/icons";
 import { EmptyCard, ScreenHeader } from "../social/common";
 import { SpeakButton } from "../ui/SpeakButton";
 import { ReportFlag } from "../ui/ReportFlag";
@@ -202,7 +202,7 @@ export function WordsScreen() {
             <View style={{ marginTop: spacing.xl }}>
               <EmptyCard
                 live="assertive"
-                icon={AlertIcon}
+                icon={WarningIcon}
                 tint={colors.danger}
                 title={t("words.my_words")}
                 text={t("words.couldn_t_load_your_words")}
@@ -219,7 +219,7 @@ export function WordsScreen() {
                boş olduğuna inandırıyordu. */
             <View style={{ marginTop: spacing.xl }}>
               <EmptyCard
-                icon={CardsIcon}
+                icon={NoResultsIcon}
                 tint={colors.info}
                 title={t("words.no_words_found")}
                 text={t("words.empty_sub")}

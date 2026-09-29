@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
-import { ArrowLeftIcon } from "@/components/icons";
+import { BackIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -31,7 +31,7 @@ export function BackButton({ fallback, label }: { fallback: string; label?: stri
       className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
       style={{ background: "var(--surface-2)", color: "var(--text)" }}
     >
-      <ArrowLeftIcon size={24} />
+      <BackIcon size={24} />
     </button>
   );
 }

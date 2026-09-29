@@ -17,7 +17,7 @@ import { ActiveSessions } from "../ui/ActiveSessions";
 import { listAccounts, type LinkedAccount } from "../lib/accountLinks";
 import { PressableScale } from "../ui/PressableScale";
 import { RadioDot } from "../ui/RadioDot";
-import { ChevronRightIcon, BookIcon, GlobeIcon, BellIcon, FaceIcon, LockIcon, CrownIcon, ChatIcon, LogoutIcon } from "../ui/icons";
+import { LogoutIcon, AccountIcon, ChevronNextIcon, InfoIcon, LanguageIcon, LearningSettingsIcon, PremiumIcon, PrivacyIcon, RemindersIcon } from "../ui/icons";
 import { MenuRow } from "../ui/MenuRow";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { SocialPrivacy, SocialUsername } from "./SocialSettingsScreen";
@@ -554,7 +554,7 @@ export function SettingsScreen() {
                     <Text variant="bodyStrong" color={colors.dangerText}>{t("guest.delete_row")}</Text>
                     <Text variant="caption" color={colors.textMuted}>{t("guest.delete_row_sub")}</Text>
                   </View>
-                  <ChevronRightIcon color={colors.textFaint} size={20} />
+                  <ChevronNextIcon color={colors.textFaint} size={20} />
                 </PressableScale>
               </Row>
             </>
@@ -608,7 +608,7 @@ export function SettingsScreen() {
                 <Text variant="bodyStrong">{t("settings.group_security")}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t("settings.security_sub")}</Text>
               </View>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
+              <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
           </Row>
 
@@ -636,7 +636,7 @@ export function SettingsScreen() {
                 <Text variant="bodyStrong" color={colors.dangerText}>{t("settings.delete_account")}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t("deleteaccount.your_account_and_all_your_data")}</Text>
               </View>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
+              <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
           </Row>
           </>
@@ -710,7 +710,7 @@ export function SettingsScreen() {
                   <Text variant="bodyStrong">{t("settings.revoke_microphone_consent")}</Text>
                   <Text variant="caption" color={colors.textMuted}>{t("settings.you_ll_be_asked_about_voice_data")}</Text>
                 </View>
-                <ChevronRightIcon color={colors.textFaint} size={20} />
+                <ChevronNextIcon color={colors.textFaint} size={20} />
               </PressableScale>
             ) : null}
           </Row>
@@ -729,23 +729,23 @@ export function SettingsScreen() {
           <Row colors={colors}>
             <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.privacy_policy")}</Text>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
+              <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
             <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.terms_of_use")}</Text>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
+              <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
             {/* Künye (Impressum): Almanya'daki kullanıcıya uygulamadan da tek
                 dokunuşla ulaşılabilir olmalı (DDG §5). Sayfa webde. */}
             <PressableScale onPress={() => openLegal("impressum")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.impressum")}</Text>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
+              <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
             {/* Açık kaynak lisansları (denetim İ7): MIT/BSD/Apache bildirimi. Liste webde
                 (`/licenses`, `npm run licenses:gen`). */}
             <PressableScale onPress={() => openLegal("licenses")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.oss_licenses")}</Text>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
+              <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
             {/*
               İLETİŞİM YÜZEYİ — Apple Guidelines 1.2. Kullanıcı içeriği taşıyan
@@ -763,7 +763,7 @@ export function SettingsScreen() {
                 <Text variant="bodyStrong">{t("settings.support_contact")}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t("settings.support_contact_sub")}</Text>
               </View>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
+              <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
             <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Lernomi {APP_VERSION}</Text>
           </Row>
@@ -800,21 +800,21 @@ export function SettingsScreen() {
       <ScreenHeader title={t("settings.settings")} />
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <Card padded style={{ paddingVertical: 0, marginTop: spacing.sm }}>
-          <MenuRow icon={BookIcon} tint={colors.primary} colors={colors} label={t("settings.group_learning")} value={learningVisible ? `${courseLabel} · ${level}` : null} onPress={() => nav.push("Settings", { section: "learning" })} />
-          <MenuRow icon={GlobeIcon} tint={colors.info} colors={colors} label={t("settings.group_app")} value={LANG_LABEL[uiLang]} onPress={() => nav.push("Settings", { section: "app" })} />
-          <MenuRow icon={BellIcon} tint={colors.streak} colors={colors} label={t("notifications.reminders")} onPress={() => nav.navigate("Notifications")} last />
+          <MenuRow icon={LearningSettingsIcon} tint={colors.primary} colors={colors} label={t("settings.group_learning")} value={learningVisible ? `${courseLabel} · ${level}` : null} onPress={() => nav.push("Settings", { section: "learning" })} />
+          <MenuRow icon={LanguageIcon} tint={colors.info} colors={colors} label={t("settings.group_app")} value={LANG_LABEL[uiLang]} onPress={() => nav.push("Settings", { section: "app" })} />
+          <MenuRow icon={RemindersIcon} tint={colors.streak} colors={colors} label={t("notifications.reminders")} onPress={() => nav.navigate("Notifications")} last />
         </Card>
         <Card padded style={{ paddingVertical: 0, marginTop: spacing.lg }}>
           {guest ? (
-            <MenuRow icon={FaceIcon} tint={colors.success} colors={colors} label={t("guest.create_account")} onPress={() => nav.navigate("Auth")} />
+            <MenuRow icon={AccountIcon} tint={colors.success} colors={colors} label={t("guest.create_account")} onPress={() => nav.navigate("Auth")} />
           ) : (
-            <MenuRow icon={FaceIcon} tint={colors.success} colors={colors} label={t("settings.group_account")} value={user?.email ?? null} onPress={() => nav.push("Settings", { section: "account" })} />
+            <MenuRow icon={AccountIcon} tint={colors.success} colors={colors} label={t("settings.group_account")} value={user?.email ?? null} onPress={() => nav.push("Settings", { section: "account" })} />
           )}
-          <MenuRow icon={LockIcon} tint={colors.accent} colors={colors} label={t("settings.group_privacy")} onPress={() => nav.push("Settings", { section: "privacy" })} />
-          <MenuRow icon={CrownIcon} tint={colors.streak} colors={colors} label={t("settings.group_subscription")} value={premiumStatus ? t(premium ? "settings.plan_premium" : "settings.plan_free") : null} onPress={() => nav.navigate("Paywall")} last />
+          <MenuRow icon={PrivacyIcon} tint={colors.accent} colors={colors} label={t("settings.group_privacy")} onPress={() => nav.push("Settings", { section: "privacy" })} />
+          <MenuRow icon={PremiumIcon} tint={colors.streak} colors={colors} label={t("settings.group_subscription")} value={premiumStatus ? t(premium ? "settings.plan_premium" : "settings.plan_free") : null} onPress={() => nav.navigate("Paywall")} last />
         </Card>
         <Card padded style={{ paddingVertical: 0, marginTop: spacing.lg }}>
-          <MenuRow icon={ChatIcon} tint={colors.info} colors={colors} label={t("settings.group_about")} value={APP_VERSION} onPress={() => nav.push("Settings", { section: "about" })} last />
+          <MenuRow icon={InfoIcon} tint={colors.info} colors={colors} label={t("settings.group_about")} value={APP_VERSION} onPress={() => nav.push("Settings", { section: "about" })} last />
         </Card>
         {guest ? (
           <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityRole="button" accessibilityLabel={t("guest.delete_row")} style={{ alignItems: "center", marginTop: spacing.xl, paddingVertical: spacing.md }}>

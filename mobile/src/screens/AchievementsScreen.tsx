@@ -4,7 +4,7 @@ import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
 import { Bar, BAR_HEIGHT } from "../ui/Bar";
-import { CheckIcon, TrophyIcon } from "../ui/icons";
+import { AchievementsIcon, CorrectIcon } from "../ui/icons";
 import { AchievementIcon } from "../ui/achievementIcon";
 import { EmptyCard, ScreenHeader } from "../social/common";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
@@ -44,13 +44,13 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
         {/* Rozetin KENDİ ikonu (sunucu `icon` alanında veriyor): eskiden hepsi
             kupaydı ve iki rozeti ayıran tek şey kademe rengiydi. Web baştan
             beri her rozeti kendi ikonuyla çiziyor. */}
-        <AchievementIcon name={a.icon} color={a.unlocked ? "#fff" : colors.textFaint} size={24} />
+        <AchievementIcon glyph={a.glyph} color={a.unlocked ? "#fff" : colors.textFaint} size={24} />
       </View>
       <Text variant="bodyStrong" style={{ marginTop: spacing.sm }}>{a.title}</Text>
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{a.hint}</Text>
       {a.unlocked ? (
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, marginTop: spacing.sm }}>
-          <CheckIcon color={colors.successText} size={14} /><Text variant="micro" color={colors.successText}>{t("achievements.earned")}</Text>
+          <CorrectIcon color={colors.successText} size={14} /><Text variant="micro" color={colors.successText}>{t("achievements.earned")}</Text>
         </View>
       ) : (
         <View style={{ marginTop: spacing.sm }}>
@@ -206,7 +206,7 @@ export function AchievementsScreen() {
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
           <EmptyCard
             live="assertive"
-            icon={TrophyIcon}
+            icon={AchievementsIcon}
             tint={colors.streak}
             title={t("achievements.achievements")}
             text={t("achievements.couldn_t_load_achievements")}

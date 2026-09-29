@@ -9,7 +9,7 @@ import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { COURSE_KEY, SpeakButton, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "@/components/flow";
 import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
-import { AlertIcon, CalendarIcon, CheckIcon, ExamIcon, LockIcon } from "@/components/icons";
+import { CorrectIcon, DurationIcon, InfoIcon, LockedIcon, WarningIcon, WeeklyTestIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { useLang, useT } from "@/lib/i18n/client";
 import { formatPercent } from "@/lib/i18n/dict";
@@ -156,7 +156,7 @@ export function WeeklyPlayer() {
   if (phase === "auth") {
     return (
       <FlowColumn>
-        <StateBody title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockIcon size={40} />} />
+        <StateBody title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockedIcon size={40} />} />
         <FlowActions primary={{ label: t("weekly.sign_in_sign_up"), href: "/login" }} secondary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
       </FlowColumn>
     );
@@ -165,7 +165,7 @@ export function WeeklyPlayer() {
   if (phase === "error") {
     return (
       <FlowColumn>
-        <StateBody alert title={t("weekly.couldn_t_load_weekly_quiz")} icon={<AlertIcon size={40} />} />
+        <StateBody alert title={t("weekly.couldn_t_load_weekly_quiz")} icon={<WarningIcon size={40} />} />
         <FlowActions primary={{ label: t("weekly.try_again"), onClick: () => setAttempt((a) => a + 1) }} secondary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
       </FlowColumn>
     );
@@ -174,7 +174,7 @@ export function WeeklyPlayer() {
   if (phase === "empty") {
     return (
       <FlowColumn>
-        <StateBody title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<CalendarIcon size={40} />} />
+        <StateBody title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<WeeklyTestIcon size={40} />} />
         <FlowActions primary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
       </FlowColumn>
     );
@@ -186,15 +186,15 @@ export function WeeklyPlayer() {
     return (
       <FlowColumn>
         <CoverBody
-          icon={<ExamIcon size={28} />}
+          icon={<WeeklyTestIcon size={28} />}
           tint="var(--color-brand-500)"
           eyebrow={t("learn.weekly_quiz")}
           title={quiz.themeTr || quiz.theme}
           pitch={t("wquiz.pitch")}
           rules={[
-            { icon: <CheckIcon size={16} />, text: t("wquiz.rule_count", { n: quiz.items.length }) },
-            { icon: <CalendarIcon size={16} />, text: t("wquiz.rule_once") },
-            { icon: <ExamIcon size={16} />, text: t("wquiz.rule_explain") },
+            { icon: <DurationIcon size={16} />, text: t("wquiz.rule_count", { n: quiz.items.length }) },
+            { icon: <WeeklyTestIcon size={16} />, text: t("wquiz.rule_once") },
+            { icon: <InfoIcon size={16} />, text: t("wquiz.rule_explain") },
           ]}
           note={t("wquiz.no_pass_mark")}
         />
@@ -328,11 +328,11 @@ export function WeeklyPlayer() {
             </div>
           </DetailCard>
         ) : (
-          <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("wquiz.all_correct")} />
+          <FlowNote tone="ok" icon={<CorrectIcon size={16} />} text={t("wquiz.all_correct")} />
         )}
 
-        {notSent ? <FlowNote tone="bad" icon={<AlertIcon size={16} />} text={t("wquiz.not_sent")} /> : null}
-        <FlowNote icon={<CalendarIcon size={16} />} text={t("wquiz.once_a_week")} />
+        {notSent ? <FlowNote tone="bad" icon={<WarningIcon size={16} />} text={t("wquiz.not_sent")} /> : null}
+        <FlowNote icon={<WeeklyTestIcon size={16} />} text={t("wquiz.once_a_week")} />
         <FlowActions primary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
       </FlowColumn>
     );

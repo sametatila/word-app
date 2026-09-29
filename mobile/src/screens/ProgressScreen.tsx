@@ -11,7 +11,7 @@ import { Bar, BAR_HEIGHT } from "../ui/Bar";
 import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "../ui/icons";
+import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "../ui/icons";
 import { WeakSpots } from "../ui/WeakSpots";
 import { GrowthPanel } from "../ui/GrowthPanel";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
@@ -182,7 +182,7 @@ export function ProgressScreen() {
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
           <EmptyCard
             live="assertive"
-            icon={FlameIcon}
+            icon={StreakIcon}
             tint={colors.streak}
             title={t("progress.load_failed")}
             text={t("social.err_offline")}
@@ -207,7 +207,7 @@ export function ProgressScreen() {
              kehribarda 5.20. Web'in aynı kartı da 500'den 600'e indi. */
           <View style={[{ borderRadius: radii.xl, backgroundColor: colors.streakDeep, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }, softShadow(colors.streakDeep, 12)]}>
             <View style={{ width: ds(64), height: ds(64), borderRadius: radii.lg, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
-              <FlameIcon color="#fff" size={34} />
+              <StreakIcon color="#fff" size={34} />
             </View>
             <View style={{ flex: 1 }}>
               <Text variant="display" color="#fff">{me.streak}</Text>
@@ -238,10 +238,10 @@ export function ProgressScreen() {
         {/* istatistik ızgarası */}
         {me ? (
           <CardGrid columns={gridColumns} balance stretch style={{ marginBottom: spacing.lg }}>
-            <Stat icon={LearnIcon} value={String(mastered)} label={t("progress.words_learned")} tint={colors.primary} colors={colors} />
-            <Stat icon={BoltIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} tint={colors.success} colors={colors} />
-            <Stat icon={ClockIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} tint={colors.info} colors={colors} />
-            <Stat icon={TrophyIcon} value={level} label={t("progress.level")} tint={colors.accent} colors={colors} />
+            <Stat icon={MyWordsIcon} value={String(mastered)} label={t("progress.words_learned")} tint={colors.primary} colors={colors} />
+            <Stat icon={XpIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} tint={colors.success} colors={colors} />
+            <Stat icon={DurationIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} tint={colors.info} colors={colors} />
+            <Stat icon={LevelIcon} value={level} label={t("progress.level")} tint={colors.accent} colors={colors} />
           </CardGrid>
         ) : (
           // Izgaranın kendi iskeleti (tek satırlık "yükleniyor" kartı yerine):
@@ -272,7 +272,7 @@ export function ProgressScreen() {
                       Ayni dosyada baska alti yerde `formatNumber` geciyor, yalniz
                       bu satir atlanmisti; web karti bastan beri bicimliyor. */}
                   <Text variant="caption" color={colors.textMuted}>{formatNumber(mastered)}/{totalWords ? formatNumber(totalWords) : "—"}</Text>
-                  <ChevronRightIcon color={colors.textFaint} size={18} />
+                  <ChevronNextIcon color={colors.textFaint} size={18} />
                 </View>
               </View>
               <Bar pct={pct} tint={colors.success} size="hero" />
@@ -359,8 +359,8 @@ export function ProgressScreen() {
         <WeakSpots />
 
         <Card padded style={{ paddingVertical: 0 }}>
-          <MenuRow icon={CheckIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
-          <MenuRow icon={WriteIcon} label={t("profile.my_posts")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} last />
+          <MenuRow icon={CorrectIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
+          <MenuRow icon={MyWritingsIcon} label={t("profile.my_posts")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} last />
         </Card>
       </ScrollView>
       )}

@@ -18,7 +18,7 @@ import { Animated, Easing, Keyboard, PanResponder, Platform, ScrollView, TextInp
 import { Text } from "../ui/Text";
 import { promptFit } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
-import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
+import { CheckIcon, CloseIcon, CorrectIcon, WrongIcon, SpeakerIcon } from "../ui/icons";
 import { haptic } from "../lib/haptics";
 import { MIN_FREE_WORDS } from "../lib/learningRules";
 import { sfx, sfxDurationMs } from "../lib/sfx";
@@ -439,7 +439,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
       <View style={{ borderRadius: radii.xl, overflow: "hidden", borderWidth: 1, borderColor: colors.hairline }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: headBg, paddingVertical: spacing.sm + 2, paddingHorizontal: spacing.md, minHeight: 44 }}>
           <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: tone === "neutral" ? colors.surface : `${headInk}3D`, alignItems: "center", justifyContent: "center" }}>
-            {tone === "bad" ? <XIcon color={headInk} size={14} /> : <CheckIcon color={headInk} size={14} />}
+            {tone === "bad" ? <CloseIcon color={headInk} size={14} /> : <CheckIcon color={headInk} size={14} />}
           </View>
           <Text variant="h3" color={headInk} style={{ flex: 1 }} numberOfLines={2}>{label}</Text>
         </View>
@@ -640,8 +640,8 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint, answered = 
           <Text variant="bodyStrong" color={fg}>{text}</Text>
           {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
         </View>
-        {state === "correct" && <CheckIcon color={colors.successText} size={22} />}
-        {state === "wrong" && <XIcon color={colors.dangerText} size={22} />}
+        {state === "correct" && <CorrectIcon color={colors.successText} size={22} />}
+        {state === "wrong" && <WrongIcon color={colors.dangerText} size={22} />}
       </PressableScale>
     </Animated.View>
   );

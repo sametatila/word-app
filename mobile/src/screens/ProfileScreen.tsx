@@ -8,7 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, CrownIcon, SettingsIcon, SparkIcon, PenIcon, BookIcon, CheckIcon, WriteIcon, FlameIcon } from "../ui/icons";
+import { SettingsIcon, AccountIcon, BackIcon, ChevronNextIcon, CorrectIcon, EditIcon, MyWordsIcon, MyWritingsIcon, PremiumIcon, StreakIcon } from "../ui/icons";
 import { AvatarStage, derivedAvatar } from "../ui/Avatar";
 import { SkeletonLine } from "../ui/Skeleton";
 import { AchievementIcon } from "../ui/achievementIcon";
@@ -85,7 +85,7 @@ export function ProfileScreen() {
       <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <AvatarStage config={cfg} height={300 + insets.top} inset={28}>
           <View style={{ position: "absolute", top: insets.top + spacing.sm, left: spacing.lg, right: spacing.lg, flexDirection: "row", justifyContent: "space-between" }}>
-            <StageButton label={t("common.back")} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))}><ArrowBackIcon color={colors.text} size={22} /></StageButton>
+            <StageButton label={t("common.back")} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))}><BackIcon color={colors.text} size={22} /></StageButton>
             <StageButton label={t("settings.settings")} onPress={() => nav.navigate("Settings")}><SettingsIcon color={colors.text} size={22} /></StageButton>
           </View>
         </AvatarStage>
@@ -98,14 +98,14 @@ export function ProfileScreen() {
               {sub ? <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{sub}</Text> : meLoading ? <SkeletonLine variant="caption" width={160} /> : null}
             </View>
             <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityRole="button" accessibilityLabel={t("profile.edit_avatar")} style={[{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primary, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }, softShadow(colors.primary, 8)]}>
-              <PenIcon color={colors.onPrimary} size={16} />
+              <EditIcon color={colors.onPrimary} size={16} />
               <Text variant="bodyStrong" color={colors.onPrimary}>{t("profile.edit_avatar")}</Text>
             </PressableScale>
           </View>
 
           {/* SERİ · XP · LİG — tek kart, üç sütun. Lig sütunu Topluluk › Lig'i açıyor. */}
           <View style={[{ flexDirection: "row", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline }, cardShadow(colors, 8)]}>
-            <Stat value={me ? String(me.streak) : meLoading ? null : "–"} label={t("profile.day_streak")} icon={<FlameIcon color={colors.streakText} size={18} />} colors={colors} />
+            <Stat value={me ? String(me.streak) : meLoading ? null : "–"} label={t("profile.day_streak")} icon={<StreakIcon color={colors.streakText} size={18} />} colors={colors} />
             <Stat value={me ? formatNumber(me.xp) : meLoading ? null : "–"} label={t("profile.total_xp")} colors={colors} divider />
             {guest ? null : (
               <PressableScale onPress={goLeague} accessibilityRole="button" accessibilityLabel={league ? `${tierName(league.tier)}, ${myRank ?? "–"}` : t("leaderboard.league")} style={{ flex: 1, alignItems: "center", paddingVertical: spacing.md, borderLeftWidth: 1, borderLeftColor: colors.hairline }}>
@@ -118,15 +118,15 @@ export function ProfileScreen() {
             )}
           </View>
 
-          {guest ? <GuestAccountCard icon={SparkIcon} title={t("guest.profile_title")} text={t("guest.profile_body")} /> : null}
+          {guest ? <GuestAccountCard icon={AccountIcon} title={t("guest.profile_title")} text={t("guest.profile_body")} /> : null}
 
           {/* GELİŞİM — seri 0 olunca alev kayboluyordu ve buraya giden tek yol oydu. */}
           <View style={{ gap: spacing.sm }}>
             <Head title={t("appheader.progress")} action={t("profile.see_all")} onAction={() => nav.navigate("Progress")} colors={colors} />
             <View style={{ flexDirection: "row", gap: spacing.sm }}>
-              <Tile icon={<BookIcon color={colors.primaryText} size={18} />} value={me ? formatNumber(me.mastered) : meLoading ? null : "–"} label={t("profile.my_words")} onPress={() => nav.navigate("Words")} colors={colors} />
-              <Tile icon={<CheckIcon color={colors.primaryText} size={18} />} label={t("profile.what_can_i_do")} onPress={() => nav.navigate("Cando")} colors={colors} />
-              <Tile icon={<WriteIcon color={colors.primaryText} size={18} />} label={t("profile.my_posts")} onPress={() => nav.navigate("Writings")} colors={colors} />
+              <Tile icon={<MyWordsIcon color={colors.primaryText} size={18} />} value={me ? formatNumber(me.mastered) : meLoading ? null : "–"} label={t("profile.my_words")} onPress={() => nav.navigate("Words")} colors={colors} />
+              <Tile icon={<CorrectIcon color={colors.primaryText} size={18} />} label={t("profile.what_can_i_do")} onPress={() => nav.navigate("Cando")} colors={colors} />
+              <Tile icon={<MyWritingsIcon color={colors.primaryText} size={18} />} label={t("profile.my_posts")} onPress={() => nav.navigate("Writings")} colors={colors} />
             </View>
           </View>
 
@@ -138,7 +138,7 @@ export function ProfileScreen() {
                 {recent.map((a) => (
                   <PressableScale key={a.id} onPress={() => nav.navigate("Achievements")} accessibilityLabel={a.title} style={{ flex: 1, alignItems: "center", gap: 6 }}>
                     <View style={{ width: 56, height: 56, borderRadius: 28, alignItems: "center", justifyContent: "center", backgroundColor: TIER_COLOR[a.tier] }}>
-                      <AchievementIcon name={a.icon} color="#fff" size={26} />
+                      <AchievementIcon glyph={a.glyph} color="#fff" size={26} />
                     </View>
                     <Text variant="micro" color={colors.textMuted} numberOfLines={2} style={{ textAlign: "center" }}>{a.title}</Text>
                   </PressableScale>
@@ -150,21 +150,21 @@ export function ProfileScreen() {
           {/* PREMIUM — üyeye abonelik satırı (yönetim Paywall'da), olmayana tek kart. */}
           {premium ? (
             <PressableScale onPress={() => nav.navigate("Paywall")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.lg, borderWidth: 1, borderColor: colors.hairline }}>
-              <CrownIcon color={colors.streakText} size={22} />
+              <PremiumIcon color={colors.streakText} size={22} />
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("profile.premium_member")}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t("profile.all_features_unlocked_thank_you")}</Text>
               </View>
-              <ChevronRightIcon color={colors.textFaint} size={20} />
+              <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
           ) : premiumStatus ? (
             <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.primary, borderRadius: radii.xl, padding: spacing.lg }, softShadow(colors.primary, 10)]}>
-              <CrownIcon color={colors.onPrimary} size={24} />
+              <PremiumIcon color={colors.onPrimary} size={24} />
               <View style={{ flex: 1 }}>
                 <Text variant="h3" color={colors.onPrimary}>{t("profile.go_premium")}</Text>
                 <Text variant="caption" color={colors.onPrimary} style={{ opacity: 0.85 }}>{t(hasMockExams(currentCourseId()) ? "profile.premium_band_exams" : "profile.premium_band")}</Text>
               </View>
-              <ChevronRightIcon color={colors.onPrimary} size={22} />
+              <ChevronNextIcon color={colors.onPrimary} size={22} />
             </PressableScale>
           ) : null}
 

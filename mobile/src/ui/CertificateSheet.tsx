@@ -3,7 +3,7 @@ import { Modal, View, ActivityIndicator } from "react-native";
 import { WebView } from "react-native-webview";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { t } from "../lib/i18n";
-import { LockIcon } from "./icons";
+import { LockedIcon } from "./icons";
 import { FlowActions, FlowNote, FlowTopBar, StateBody } from "./flow";
 import { useAuth } from "../lib/AuthContext";
 import { apiBase, fetchWithTimeout } from "../api/client";
@@ -69,7 +69,7 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
         </View>
         {guest && !failed ? (
           <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-            <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.certificate_name")} />
+            <FlowNote icon={<LockedIcon color={colors.textMuted} size={16} />} text={t("guest.certificate_name")} />
           </View>
         ) : null}
         {failed ? (

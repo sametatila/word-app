@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
-import { BellIcon, CheckIcon, ChevronRightIcon, FlameIcon, HandshakeIcon, InboxIcon, PodiumIcon, TargetIcon, UserPlusIcon } from "@/components/icons";
+import { AddFriendIcon, ChevronNextIcon, CorrectIcon, InboxIcon, LeagueUpIcon, QuestIcon, RemindersIcon, SharedStreakIcon, StreakIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
@@ -58,25 +58,25 @@ function hrefFor(n: NotificationView): string {
 function tileFor(n: NotificationView): { Icon: (p: { size?: number }) => React.JSX.Element; tint: string; fill: string } {
   switch (n.type) {
     case "friend_request":
-      return { Icon: UserPlusIcon, tint: "var(--color-sky)", fill: "var(--color-sky-500)" };
+      return { Icon: AddFriendIcon, tint: "var(--color-sky)", fill: "var(--color-sky-500)" };
     case "friend_accepted":
-      return { Icon: HandshakeIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
+      return { Icon: SharedStreakIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     case "nudge":
-      return { Icon: BellIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
+      return { Icon: RemindersIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
     case "quest_invite":
     case "quest_accepted":
-      return { Icon: TargetIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
+      return { Icon: QuestIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
     case "quest_completed":
-      return { Icon: CheckIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
+      return { Icon: CorrectIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     case "friend_milestone":
-      return { Icon: FlameIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
+      return { Icon: StreakIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
     /* Lig yükselişi de kendi simgesini hak ediyor: genel gelen kutusu
        simgesi satırın neyle ilgili olduğunu söylemiyordu ve bu satırın
        aktörü de yok, yani başka bir ipucu da yok. */
     case "league_up":
-      return { Icon: PodiumIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
+      return { Icon: LeagueUpIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
     case "report_closed":
-      return { Icon: CheckIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
+      return { Icon: CorrectIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     default:
       return { Icon: InboxIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
   }
@@ -196,7 +196,7 @@ export function Inbox() {
                   </RowGlyph>
                 ) : (
                   <span className="shrink-0" style={{ color: "var(--text-faint)" }}>
-                    <ChevronRightIcon size={20} />
+                    <ChevronNextIcon size={20} />
                   </span>
                 )}
                 {!n.read ? <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: "var(--color-brand)" }} /> : null}

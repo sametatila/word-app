@@ -6,7 +6,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ExamIcon, LockIcon, CalendarIcon, AlertIcon, CheckIcon, SpeakerIcon } from "../ui/icons";
+import { WeeklyTestIcon, LockedIcon, WarningIcon, CorrectIcon, DurationIcon, InfoIcon, SpeakerIcon } from "../ui/icons";
 import { ReportFlag } from "../ui/ReportFlag";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "../ui/flow";
 import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
@@ -124,7 +124,7 @@ export function WeeklyScreen() {
         center
         actions={<FlowActions primary={{ label: t("weekly.sign_in_sign_up"), onPress: () => nav.navigate("Auth") }} secondary={{ label: t("common.close"), onPress: close }} />}
       >
-        <StateBody title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockIcon color={colors.textMuted} size={40} />} />
+        <StateBody title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockedIcon color={colors.textMuted} size={40} />} />
       </FlowScreen>
     );
   }
@@ -136,7 +136,7 @@ export function WeeklyScreen() {
         center
         actions={<FlowActions primary={{ label: t("weekly.try_again"), onPress: () => setAttempt((a) => a + 1) }} secondary={{ label: t("common.close"), onPress: close }} />}
       >
-        <StateBody alert title={t("weekly.couldn_t_load_weekly_quiz")} icon={<AlertIcon color={colors.dangerText} size={40} />} />
+        <StateBody alert title={t("weekly.couldn_t_load_weekly_quiz")} icon={<WarningIcon color={colors.dangerText} size={40} />} />
       </FlowScreen>
     );
   }
@@ -148,7 +148,7 @@ export function WeeklyScreen() {
         center
         actions={<FlowActions primary={{ label: t("common.close"), onPress: close }} />}
       >
-        <StateBody title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<CalendarIcon color={colors.textMuted} size={40} />} />
+        <StateBody title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<WeeklyTestIcon color={colors.textMuted} size={40} />} />
       </FlowScreen>
     );
   }
@@ -167,15 +167,15 @@ export function WeeklyScreen() {
         }
       >
         <CoverBody
-          icon={ExamIcon}
+          icon={WeeklyTestIcon}
           tint={colors.primary}
           eyebrow={t("learn.weekly_quiz")}
           title={quiz.themeTr || quiz.theme}
           pitch={t("wquiz.pitch")}
           rules={[
-            { icon: CheckIcon, text: t("wquiz.rule_count", { n: quiz.items.length }) },
-            { icon: CalendarIcon, text: t("wquiz.rule_once") },
-            { icon: ExamIcon, text: t("wquiz.rule_explain") },
+            { icon: DurationIcon, text: t("wquiz.rule_count", { n: quiz.items.length }) },
+            { icon: WeeklyTestIcon, text: t("wquiz.rule_once") },
+            { icon: InfoIcon, text: t("wquiz.rule_explain") },
           ]}
           note={t("wquiz.no_pass_mark")}
         />
@@ -280,11 +280,11 @@ export function WeeklyScreen() {
             </View>
           </DetailCard>
         ) : (
-          <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={t("wquiz.all_correct")} />
+          <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={t("wquiz.all_correct")} />
         )}
 
-        {notSent ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={t("wquiz.not_sent")} /> : null}
-        <FlowNote icon={<CalendarIcon color={colors.textMuted} size={16} />} text={t("wquiz.once_a_week")} />
+        {notSent ? <FlowNote tone="bad" icon={<WarningIcon color={colors.dangerText} size={16} />} text={t("wquiz.not_sent")} /> : null}
+        <FlowNote icon={<WeeklyTestIcon color={colors.textMuted} size={16} />} text={t("wquiz.once_a_week")} />
       </FlowScreen>
     );
   }

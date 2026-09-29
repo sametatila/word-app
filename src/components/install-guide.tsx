@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CheckIcon, LogoMark } from "@/components/icons";
+import { LogoMark, CheckIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**

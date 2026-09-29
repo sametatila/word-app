@@ -11,7 +11,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowRightIcon } from "../ui/icons";
+import { ForwardIcon } from "../ui/icons";
 import { useTheme, spacing } from "../theme";
 import { Bar } from "./common";
 
@@ -54,7 +54,7 @@ export function FriendPulse() {
             </View>
           )}
         </View>
-        {!invited ? <Text variant="h3" color={colors.primaryText}>{formatPercent(q.pct)}</Text> : <ArrowRightIcon color={colors.textFaint} size={20} />}
+        {!invited ? <Text variant="h3" color={colors.primaryText}>{formatPercent(q.pct)}</Text> : <ForwardIcon color={colors.textFaint} size={20} />}
       </Card>
     </PressableScale>
   );

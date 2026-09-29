@@ -5,15 +5,16 @@ import { fillStyle } from "@/lib/motion";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 import type { HubItem, HubUnit } from "@/components/immersion/immersion-hub";
 import {
-  ReadIcon,
   CheckIcon,
-  ChevronRightIcon,
-  ListenIcon,
-  LearnIcon,
-  LockIcon,
-  WriteIcon,
-  GrammarIcon,
-  QuizIcon,
+  ChevronNextIcon,
+  ConversationIcon,
+  LockedIcon,
+  PathReviewIcon,
+  SkillGrammarIcon,
+  SkillListeningIcon,
+  SkillReadingIcon,
+  SkillWritingIcon,
+  UnitQuizIcon,
 } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
@@ -76,26 +77,26 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
   const p = { size } as const;
   switch (kind) {
     case "read":
-      return <ReadIcon {...p} />;
+      return <SkillReadingIcon {...p} />;
     case "listen":
-      return <ListenIcon {...p} />;
+      return <SkillListeningIcon {...p} />;
     case "write":
-      return <WriteIcon {...p} />;
-    /* Dil bilgisi ve tekrar turu simgeleri Android'inkilerle eşitlendi:
-       yapboz ve hedef, aynı iki kavramı başka çizimlerle anlatıyordu. */
+      return <SkillWritingIcon {...p} />;
+    /* Her tür kendi ANLAM ikonunu çiziyor (`data/icons/picks.json`); Android
+       `ui/unitKind` aynı adları kullanıyor. */
     case "grammar":
-      return <GrammarIcon {...p} />;
+      return <SkillGrammarIcon {...p} />;
     case "quiz":
-      return <QuizIcon {...p} />;
+      return <PathReviewIcon {...p} />;
     case "unitQuiz":
-      return <CheckIcon {...p} />;
+      return <UnitQuizIcon {...p} />;
     /* Konuşma türü AÇIKÇA yazılı (varsayılana bırakılmıyor): harita böyle
        okununca Android'in `unitKind` tablosuyla satır satır karşılaştırılıyor
        ve tanınmayan tür yine varsayılana düşüyor. */
     case "conversation":
-      return <LearnIcon {...p} />;
+      return <ConversationIcon {...p} />;
     default:
-      return <LearnIcon {...p} />;
+      return <ConversationIcon {...p} />;
   }
 }
 
@@ -199,7 +200,7 @@ export function UnitPane({
                   style={{ background: "var(--surface-2)" }}
                   aria-label={t("unlock.locked_conv")}
                 >
-                  <LockIcon size={14} /> {t("mockpack.locked")}
+                  <LockedIcon size={14} /> {t("mockpack.locked")}
                 </span>
               ) : it.done ? (
                 <span
@@ -226,9 +227,9 @@ export function UnitPane({
                   {t("unit.now")}
                 </span>
               ) : openable ? (
-                <ChevronRightIcon size={20} className="faint shrink-0" />
+                <ChevronNextIcon size={20} className="faint shrink-0" />
               ) : (
-                <LockIcon size={18} className="muted shrink-0" />
+                <LockedIcon size={18} className="muted shrink-0" />
               )}
             </>
           );

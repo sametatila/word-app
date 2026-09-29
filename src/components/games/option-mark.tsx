@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckIcon, XIcon } from "@/components/icons";
+import { CorrectIcon, WrongIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -21,11 +21,11 @@ export function OptionMark({ state }: { state: "correct" | "wrong" | null }) {
   const t = useT();
   if (!state) return null;
   const label = t(state === "correct" ? "rounds.a11y_correct" : "rounds.a11y_wrong");
-  const Icon = state === "correct" ? CheckIcon : XIcon;
+  const Icon = state === "correct" ? CorrectIcon : WrongIcon;
   return (
     <Icon
       /* BOY ANDROID'İNKİ. Aynı işaret Android'de 22 (`game/rounds`
-         `OptionButton`: `CheckIcon`/`XIcon` `size={22}`), webde 18 idi -
+         `OptionButton`: `CorrectIcon`/`WrongIcon` `size={22}`), webde 18 idi -
          cevabın doğru mu yanlış mı olduğunu söyleyen simge dört piksel
          küçüktü. */
       size={22}

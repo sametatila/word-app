@@ -3,7 +3,7 @@ import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { social, errorText, type Relation } from "../api/social";
 import { Text } from "../ui/Text";
-import { UserPlusIcon, CheckIcon } from "../ui/icons";
+import { AddFriendIcon, CorrectIcon } from "../ui/icons";
 import { useTheme, spacing } from "../theme";
 import { ErrorText, Pill } from "./common";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
@@ -29,13 +29,13 @@ export function UserActionButton({ userId, relation, friendshipId, canRequest = 
 
   let btn: React.ReactNode;
   if (state === "friends") {
-    btn = <Pill label={t("useractionbutton.friends")} tone="soft" icon={CheckIcon} small={small} disabled={busy} onPress={() => setConfirmRemove(true)} />;
+    btn = <Pill label={t("useractionbutton.friends")} tone="soft" icon={CorrectIcon} small={small} disabled={busy} onPress={() => setConfirmRemove(true)} />;
   } else if (state === "outgoing") {
     btn = <Pill label={t("useractionbutton.request_sent")} tone="ghost" small={small} disabled={busy} onPress={() => void run(async () => { await social.remove(userId); return "none"; })} />;
   } else if (state === "incoming") {
     btn = <Pill label={t("useractionbutton.accept")} small={small} disabled={busy} onPress={() => void run(async () => { if (fid) await social.respond(fid, "accept"); else await social.request(userId); return "friends"; })} />;
   } else {
-    btn = <Pill label={t("useractionbutton.add")} icon={UserPlusIcon} small={small} disabled={busy || !canRequest} onPress={() => void run(async () => { const r = await social.request(userId); setFid(r.friendshipId); return r.state; })} />;
+    btn = <Pill label={t("useractionbutton.add")} icon={AddFriendIcon} small={small} disabled={busy || !canRequest} onPress={() => void run(async () => { const r = await social.request(userId); setFid(r.friendshipId); return r.state; })} />;
   }
   /*
    * KAPALI DÜĞMENİN SEBEBİ YAZIYOR. Kişi istek kabul etmiyorsa pill sönük

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Avatar, MyAvatar } from "@/components/avatar";
 import { EmptyCard } from "@/components/empty-card";
-import { CheckIcon, TargetIcon } from "@/components/icons";
+import { CorrectIcon, QuestIcon } from "@/components/icons";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow, QuestView } from "@/lib/social/types";
@@ -74,7 +74,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
               ilk cümle olmayan bir arkadaşı varsayıyor. Android bu ikisinden
               yalnız durumu anlatanı gösteriyor. */}
           <EmptyCard
-            icon={TargetIcon}
+            icon={QuestIcon}
             title={t("quests.no_shared_quest_this_week")}
             text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")}
             action={
@@ -147,7 +147,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
                         : ({ "--tint-fill": tint, "--tint-ink": tint } as React.CSSProperties)
                     }
                   >
-                    {done ? <CheckIcon size={21} /> : <TargetIcon size={21} />}
+                    {done ? <CorrectIcon size={21} /> : <QuestIcon size={21} />}
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-strong">

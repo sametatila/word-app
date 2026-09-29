@@ -9,7 +9,7 @@ import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompt
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { AiNotice } from "@/components/ai-notice";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
-import { CheckIcon, MicIcon } from "@/components/icons";
+import { CheckIcon, SkillSpeakingIcon } from "@/components/icons";
 import { DetailCard, StateBody } from "@/components/flow";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
@@ -266,7 +266,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             onClick={() => void startRecording()}
             className="btn btn-primary mt-4 flex w-full items-center justify-center gap-2 px-5 py-4"
           >
-            <MicIcon size={18} /> {t("item.mono_start")}
+            <SkillSpeakingIcon size={18} /> {t("item.mono_start")}
           </button>
         </section>
       ) : null}

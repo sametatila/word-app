@@ -11,7 +11,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { Checkbox } from "../ui/Checkbox";
-import { CheckIcon, XIcon } from "../ui/icons";
+import { CheckIcon, WrongIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { listAccounts, deleteAccount } from "../lib/auth";
 import { googleSignIn } from "../lib/googleAuth";
@@ -38,7 +38,7 @@ function LossRow({ text, colors }: { text: string; colors: Palette }) {
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm }}>
       <View style={{ width: 28, height: 28, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: colors.dangerSoft }}>
-        <XIcon color={colors.dangerText} size={16} />
+        <WrongIcon color={colors.dangerText} size={16} />
       </View>
       <Text variant="body" style={{ flex: 1 }}>{text}</Text>
     </View>

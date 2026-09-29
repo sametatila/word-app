@@ -9,7 +9,7 @@ import { courseName } from "@/lib/courses";
 import { useRouter, useSearchParams } from "next/navigation";
 import { trackOnce } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
-import { CardsIcon, ChevronRightIcon, SearchIcon } from "@/components/icons";
+import { ChevronNextIcon, NoResultsIcon, SearchIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { PageBack } from "@/components/page-back";
 import { SpeakButton } from "@/components/speak-button";
@@ -216,7 +216,7 @@ export function WordList({
               transition={{ duration: 0.18 }}
               className="muted shrink-0"
             >
-              <ChevronRightIcon size={18} />
+              <ChevronNextIcon size={18} />
             </motion.span>
           </button>
           <AnimatePresence initial={false}>
@@ -298,7 +298,7 @@ export function WordList({
            bir cümle vardı: ne olduğunu da, nereye gidileceğini de
            söylemiyordu. */
         <EmptyCard
-          icon={CardsIcon}
+          icon={NoResultsIcon}
           tint="var(--color-sky)"
           title={tx("words.no_words_found")}
           text={tx("words.empty_sub")}

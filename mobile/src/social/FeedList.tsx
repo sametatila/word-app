@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, TrophyIcon, HandshakeIcon, HeartIcon, CrownIcon, TargetIcon, PodiumIcon, SparkIcon } from "../ui/icons";
+import { StreakIcon, AchievementsIcon, TabFriendsIcon, SharedStreakIcon, LeagueUpIcon, QuestIcon, LeagueIcon, EmptyFeedIcon } from "../ui/icons";
 import { useTheme, spacing } from "../theme";
 import type { Palette } from "../theme/colors";
 import { EmptyCard, ErrorText, IconTile, Pill, type IconCmp } from "./common";
@@ -19,17 +19,17 @@ import { ReactionBar } from "./ReactionBar";
 /** Olay türü → ikon karosu (Başarımlar/Görevler ile aynı görsel çapa). */
 function eventTile(type: string, colors: Palette): { icon: IconCmp; tint: string } {
   switch (type) {
-    case "streak_milestone": return { icon: FlameIcon, tint: colors.streak };
-    case "achievement": return { icon: TrophyIcon, tint: colors.accent };
-    case "friend_joined": return { icon: HandshakeIcon, tint: colors.success };
-    case "quest_completed": return { icon: TargetIcon, tint: colors.primary };
+    case "streak_milestone": return { icon: StreakIcon, tint: colors.streak };
+    case "achievement": return { icon: AchievementsIcon, tint: colors.accent };
+    case "friend_joined": return { icon: TabFriendsIcon, tint: colors.success };
+    case "quest_completed": return { icon: QuestIcon, tint: colors.primary };
     /* Bu ikisi `ACTIVITY_TYPES`ta var ve iki tarafta da `default`a düşüyordu:
        ortak seri ve lig yükselişi akışta genel bir kıvılcımla çiziliyor,
        yani karo türü söyleme işini tam da bu iki olayda yapmıyordu. */
-    case "weekly_top": return { icon: PodiumIcon, tint: colors.info };
-    case "friend_streak": return { icon: HeartIcon, tint: colors.success };
-    case "league_up": return { icon: CrownIcon, tint: colors.accent };
-    default: return { icon: SparkIcon, tint: colors.primary };
+    case "weekly_top": return { icon: LeagueIcon, tint: colors.info };
+    case "friend_streak": return { icon: SharedStreakIcon, tint: colors.success };
+    case "league_up": return { icon: LeagueUpIcon, tint: colors.accent };
+    default: return { icon: EmptyFeedIcon, tint: colors.primary };
   }
 }
 
@@ -108,7 +108,7 @@ export function FeedList({ onFindFriends }: { onFindFriends?: () => void }) {
   if (!items.length)
     return (
       <View>
-        <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.your_feed_is_still_empty")} text={t("feedlist.empty_text")} action={onFindFriends ? t("friends.find_friends") : undefined} onAction={onFindFriends} />
+        <EmptyCard icon={EmptyFeedIcon} tint={colors.primary} title={t("feedlist.your_feed_is_still_empty")} text={t("feedlist.empty_text")} action={onFindFriends ? t("friends.find_friends") : undefined} onAction={onFindFriends} />
         <ErrorText text={err} />
       </View>
     );

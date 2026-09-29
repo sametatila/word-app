@@ -7,7 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
-import { FlameIcon, SparkIcon, XIcon, CheckIcon, BoltIcon } from "../ui/icons";
+import { SurvivalIcon, ComboIcon, WrongIcon, CorrectIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { COVERS, CoverSkeleton } from "../game/RoundSkeleton";
@@ -302,15 +302,15 @@ export function ChallengeScreen() {
     return (
       <FlowScreen actions={<FlowActions primary={{ label: t("common.start"), onPress: start }} tertiary={{ label: t("common.discard"), onPress: exit }} />}>
         <CoverBody
-          icon={FlameIcon}
+          icon={SurvivalIcon}
           tint={colors.primary}
           eyebrow={t("learn.survival")}
           title={t("challenge.title")}
           pitch={t("challenge.pitch", { n: START_SECONDS })}
           rules={[
-            { icon: CheckIcon, text: t("challenge.rule_correct"), tone: "ok" },
-            { icon: XIcon, text: t("challenge.rule_wrong"), tone: "bad" },
-            { icon: BoltIcon, text: data.weak ? t("challenge.rule_waves_weak", { weak: data.weak }) : t("challenge.rule_waves") },
+            { icon: CorrectIcon, text: t("challenge.rule_correct"), tone: "ok" },
+            { icon: WrongIcon, text: t("challenge.rule_wrong"), tone: "bad" },
+            { icon: SurvivalIcon, text: data.weak ? t("challenge.rule_waves_weak", { weak: data.weak }) : t("challenge.rule_waves") },
           ]}
           note={record > 0 ? `${t("challenge.your_record")} ${record} ${t("common.points")}` : null}
         />
@@ -396,7 +396,7 @@ export function ChallengeScreen() {
         <View style={{ flex: 1 }} />
         {combo >= 2 ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
-            <SparkIcon color={colors.accentText} size={13} />
+            <ComboIcon color={colors.accentText} size={13} />
             <Text variant="micro" color={colors.accentText}>{t("challenge.combo", { n: combo, mult })}</Text>
           </View>
         ) : (

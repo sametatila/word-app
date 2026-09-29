@@ -8,7 +8,7 @@ import { reduceMotion } from "../lib/reduceMotion";
 import { LEAGUE_TIERS, tierName } from "../api/social";
 import { Text } from "../ui/Text";
 import { Celebrate } from "../ui/Celebrate";
-import { TrophyIcon } from "../ui/icons";
+import { LeagueUpIcon } from "../ui/icons";
 import { DIALOG_MAX_WIDTH } from "../lib/useLayout";
 import { useTheme, spacing, radii, softShadow, TIER_COLOR, fillOf, ds, motion } from "../theme";
 
@@ -110,7 +110,7 @@ export function LeagueUp({ tier, rank, onDone }: { tier: number; rank?: string |
           <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("league.up_eyebrow")}</Text>
           <View style={{ marginTop: spacing.lg, marginBottom: spacing.md }}>
             <Animated.View style={[{ width: ds(92), height: ds(92), borderRadius: ds(46), alignItems: "center", justifyContent: "center", backgroundColor: color, opacity: badge, transform: [{ scale: badge.interpolate({ inputRange: [0, 1], outputRange: [0.9, 1] }) }] }, softShadow(color, 8)]}>
-              <TrophyIcon color="#fff" size={ds(46)} />
+              <LeagueUpIcon color="#fff" size={ds(46)} />
             </Animated.View>
           </View>
           <Text variant="h2" style={{ textAlign: "center" }}>{title}</Text>

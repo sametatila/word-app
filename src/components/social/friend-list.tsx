@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { AlertIcon, FlameIcon, HandshakeIcon, TargetIcon } from "@/components/icons";
+import { QuestIcon, SharedStreakIcon, StreakIcon, WarningIcon } from "@/components/icons";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -121,7 +121,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           </span>
           {f.currentStreak > 0 ? (
             <span className="flex items-center gap-0.5" style={{ color: "var(--color-flame)" }}>
-              <FlameIcon size={12} />
+              <StreakIcon size={12} />
               {f.currentStreak}
             </span>
           ) : null}
@@ -135,7 +135,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
                  Android'de karşılığı yok. */
               style={{ color: f.streakAtRisk ? "var(--color-flame)" : "var(--color-mint)" }}
             >
-              <HandshakeIcon size={12} />
+              <SharedStreakIcon size={12} />
               {t("social.days_together", { n: f.friendStreak })}
             </span>
           ) : null}
@@ -145,7 +145,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
             hiçbir şey yazma. Her gün duran bir uyarı uyarı olmaktan çıkar. */}
         {f.streakAtRisk ? (
           <p className="mt-1 flex items-center gap-1 text-micro" style={{ color: "var(--color-flame)" }}>
-            <AlertIcon size={12} />
+            <WarningIcon size={12} />
             {t("social.costreak_risk")}
           </p>
         ) : null}
@@ -172,7 +172,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
             olarak veriyor (`FriendRows` `ActionTile`) ve satırdaki öteki iki
             düğme webde de zaten metinli — tek sessiz olan buydu. */}
         <button className="btn btn-ghost flex h-8 items-center gap-1 px-2 text-caption" disabled={busy} onClick={() => void quest()}>
-          <TargetIcon size={15} />
+          <QuestIcon size={15} />
           {t("friendrows.quest")}
         </button>
         <button className="muted h-8 px-1.5 text-micro" onClick={() => setRemoving(true)} aria-label={t("social.unfriend")}>

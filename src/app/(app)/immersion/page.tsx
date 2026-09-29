@@ -9,7 +9,7 @@ import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionHub } from "@/components/immersion/immersion-hub";
 import { AppHeader } from "@/components/app-header";
 import Link from "next/link";
-import { PathIcon } from "@/components/icons";
+import { TabPathIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { buildHubUnits } from "@/lib/immersion/hub";
 import { moduleExamPlan, hasModuleExams } from "@/lib/conversations/module-exam";
@@ -83,7 +83,7 @@ export default async function ImmersionPage() {
             veriyor: metin "kelime turları ve yürüyüş modu açık" diyordu ama
             gidilecek yeri göstermiyordu. */}
         <EmptyCard
-          icon={PathIcon}
+          icon={TabPathIcon}
           tint="var(--color-sky)"
           title={t("path.empty_title")}
           text={t("path.no_units")}

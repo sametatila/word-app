@@ -16,7 +16,7 @@ import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
 import { FitBox } from "@/components/fit-box";
 import { COURSE_KEY, dialogueSegments, prefetchEachSegment, readLocal, speakGerman, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "@/components/icons";
+import { SpeakerIcon, SkillSpeakingIcon, CheckIcon, LevelExamIcon, DurationIcon, NoGoingBackIcon, ScoreTargetIcon, SkillWritingIcon, WarningIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { RoundExit, ResultTopBar } from "@/components/round-exit";
@@ -838,7 +838,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
               className="flex h-20 w-20 items-center justify-center rounded-full on-fill"
               style={{ background: spk === "rec" ? "var(--color-rose)" : "var(--color-brand)" }}
             >
-              <MicIcon size={30} />
+              <SkillSpeakingIcon size={30} />
             </button>
             <span className="muted text-caption">{t(spk === "rec" ? "exam.recording_tap_done" : "exam.tap_mic_read")}</span>
           </div>
@@ -983,18 +983,18 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
     yığınında birbirini örtüyordu. Her kural kendi satırında.
   */
   const rules: CoverRule[] = [
-    { icon: <ClockIcon size={16} />, text: t(module === null ? "exam.rules_level" : "exam.rules_module") },
-    { icon: <LockIcon size={16} />, text: t("exam.rule_no_return") },
-    { icon: <TargetIcon size={16} />, text: t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) },
-    { icon: <PenIcon size={16} />, text: t("exam.rule_weight") },
-    { icon: <AlertIcon size={16} />, text: t("exam.rule_quit") },
+    { icon: <DurationIcon size={16} />, text: t(module === null ? "exam.rules_level" : "exam.rules_module") },
+    { icon: <NoGoingBackIcon size={16} />, text: t("exam.rule_no_return") },
+    { icon: <ScoreTargetIcon size={16} />, text: t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) },
+    { icon: <SkillWritingIcon size={16} />, text: t("exam.rule_weight") },
+    { icon: <WarningIcon size={16} />, text: t("exam.rule_quit") },
   ];
   return (
     <FlowColumn>
       {/* Nomi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
       <CoachLine moment="exam_intro" />
       <CoverBody
-        icon={<ExamIcon size={28} />}
+        icon={<LevelExamIcon size={28} />}
         tint="var(--color-brand-500)"
         eyebrow={module === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: module + 1 })}
         title={cover?.titleDe ? <span lang={course}>{cover.titleDe}</span> : t(module === null ? "exam.cover_title_level" : "exam.cover_title_module")}
@@ -1007,7 +1007,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
         {/* SONUCUN SAYILMAYACAĞI BAŞLAMADAN ÖNCE SÖYLENİYOR. Web bunu yalnız
             sonuç satırında söylüyordu, yani kullanıcı yirmi dakikayı harcadıktan
             SONRA öğreniyordu. */}
-        {cover?.trial ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("exam.trial_notice")} /> : null}
+        {cover?.trial ? <FlowNote tone="warn" icon={<WarningIcon size={16} />} text={t("exam.trial_notice")} /> : null}
         {cover?.focus.length ? (
           <DetailCard title={t("exam.measures_these")}>
             {cover.focus.map((f, i) => (
@@ -1322,8 +1322,8 @@ function Result({
         />
       ) : null}
       {/* DENEME CUMLESI ORTAK ANAHTARDAN; sebebi de soyluyor (%80 esigi). */}
-      {result.trial ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("exam.trial_notice")} /> : null}
-      {certificate ? null : <FlowNote icon={<TargetIcon size={16} />} text={t("exam.weak_section_hint")} />}
+      {result.trial ? <FlowNote tone="warn" icon={<WarningIcon size={16} />} text={t("exam.trial_notice")} /> : null}
+      {certificate ? null : <FlowNote icon={<ScoreTargetIcon size={16} />} text={t("exam.weak_section_hint")} />}
 
       <DetailCard title={t("exam.sections")}>
         <ul className="space-y-1.5">

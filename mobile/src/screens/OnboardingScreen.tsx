@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { RadioDot } from "../ui/RadioDot";
 import { PrimaryButton } from "../ui/PrimaryButton";
-import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon, SpeakerIcon } from "../ui/icons";
+import { DailyRoundIcon, CourseIcon, LanguageIcon, PlacementIcon, WelcomeIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs, clearOnboardingPrefs } from "../lib/onboardingPrefs";
 import { coursesForNative, onboardingCoursesFor, offeredNativeLangs, DEFAULT_COURSE_ID, type NativeLang } from "../lib/courses";
@@ -72,7 +72,7 @@ function steps(course: string): Step[] {
   const canTest = hasDemoPlacement(lang, course);
   return [
     {
-      key: "welcome", icon: BoltIcon,
+      key: "welcome", icon: WelcomeIcon,
       title: t("onboarding.welcome_to_lernomi"),
       subtitle: t("onboarding.kisa_turlarla_oyun_gibi_ogren_birk"),
     },
@@ -80,13 +80,13 @@ function steps(course: string): Step[] {
       // ANADİL, kurstan ÖNCE: kurs listesi ve sonraki adımların metni buna
       // bağlı. Karşılamadan sonra duruyor çünkü karşılama ekranında seçim yok,
       // cihaz dilinde çizilmesi bir şeyi bozmuyor.
-      key: "lang", icon: SpeakerIcon,
+      key: "lang", icon: LanguageIcon,
       title: t("onboarding.which_language_should_we_teach"),
       subtitle: t("onboarding.conversations_and_hints_will_be_in"),
       options: offeredNativeLangs().map((l) => ({ key: l, label: LANG_LABEL[l] })),
     },
     {
-      key: "course", icon: SkillsIcon,
+      key: "course", icon: CourseIcon,
       title: t("onboarding.which_course_shall_we_start_with"),
       subtitle: t("onboarding.languages_available_now"),
       // Kurs kayıt defterinden türüyor (lib/courses.ts). Anadil elenir (kimse
@@ -95,7 +95,7 @@ function steps(course: string): Step[] {
       options: onboardingCoursesFor(lang).map((c) => ({ key: c.id, label: c.label[lang] })),
     },
     {
-      key: "level", icon: ExamIcon,
+      key: "level", icon: PlacementIcon,
       title: t("onboarding.where_shall_we_start"),
       subtitle: t("onboarding.you_can_start_at_level_that"),
       // "Testle belirle" yalnız o paritenin hazır seti varsa; yoksa seçenek hiç
@@ -107,7 +107,7 @@ function steps(course: string): Step[] {
       ],
     },
     {
-      key: "goal", icon: CheckIcon,
+      key: "goal", icon: DailyRoundIcon,
       title: t("onboarding.what_s_your_daily_goal"),
       subtitle: t("onboarding.istedigin_zaman_degistirebilirsin"),
       /*

@@ -7,7 +7,7 @@ import { Card } from "../ui/Card";
 import { DetailCard, StateBody } from "../ui/flow";
 import { PressableScale } from "../ui/PressableScale";
 import { PrimaryButton } from "../ui/PrimaryButton";
-import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "../ui/icons";
+import { CheckIcon, CorrectIcon, SkillSpeakingIcon, SpeakerIcon, WrongIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { SPEAK_CLIP_MS, MONOLOGUE_CHUNK_MS } from "../lib/learningRules";
@@ -161,7 +161,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
       {verdict === "idle" || verdict === "listening" ? (
         /* Dinlerken düğme meşgul: mikrofonun yerinde dönen gösterge. */
         <PrimaryButton size="md" onPress={listen} disabled={sttOk === false} busy={verdict === "listening"}
-          icon={<MicIcon color={colors.onPrimary} size={18} />}
+          icon={<SkillSpeakingIcon color={colors.onPrimary} size={18} />}
           label={t(verdict === "listening" ? "item.speak_listening" : "item.speak_record")}
           style={{ marginTop: spacing.md }} />
       ) : null}
@@ -169,7 +169,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
       {verdict !== "idle" && verdict !== "listening" ? (
         <View style={{ marginTop: spacing.md }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-            {verdict === "ok" ? <CheckIcon color={colors.successText} size={18} /> : <XIcon color={colors.dangerText} size={18} />}
+            {verdict === "ok" ? <CorrectIcon color={colors.successText} size={18} /> : <WrongIcon color={colors.dangerText} size={18} />}
             <Text variant="bodyStrong" color={verdict === "ok" ? colors.successText : colors.dangerText}>
               {t(verdict === "ok" ? "item.speak_ok" : verdict === "unheard" ? "item.speak_unheard" : "item.speak_miss")}
             </Text>
@@ -422,7 +422,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>
             {t("item.mono_duration", { min: mono.minSeconds, max: mono.maxSeconds })} {sttOk === false ? t("item.mono_no_stt") : t(guestLocked ? "guest.mono_unscored" : "item.mono_will_score")}
           </Text>
-          <PrimaryButton size="md" onPress={() => void start()} icon={<MicIcon color={colors.onPrimary} size={18} />} label={t("item.mono_start")} style={{ marginTop: spacing.md }} />
+          <PrimaryButton size="md" onPress={() => void start()} icon={<SkillSpeakingIcon color={colors.onPrimary} size={18} />} label={t("item.mono_start")} style={{ marginTop: spacing.md }} />
         </>
       ) : null}
 
