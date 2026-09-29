@@ -29,6 +29,9 @@ import { CORRECTION_MARK } from "@/lib/chat-format";
  *   3. Sıralama bağlacıyla (und/aber/oder/denn/sondern, and/but/or…) başlayan
  *      parça "fiil sonda / yan cümle" gerekçesiyle düzeltiliyor — bu bağlaçlar
  *      yan cümle kurmaz, gerekçe kendi başına yanlış.
+ *   4. Sıralama bağlacından sonraki öznenin düşürülmesi ("und ich arbeite gern →
+ *      und arbeite gern (Redundantes Subjekt)"). Özneyi yinelemek dilbilgisel;
+ *      düşürmek yalnız üslup (2026-09-29, `test:chat` de-b1-bewerbung/en).
  *
  * İstemci ayrıştırıcısı (web `chat-format`, mobil `game/chat`) değişmiyor:
  * süzgeç sunucuda olduğu için mağazadaki eski sürümler de korunuyor.
@@ -36,7 +39,7 @@ import { CORRECTION_MARK } from "@/lib/chat-format";
 
 export type FixVerdict =
   | { keep: true }
-  | { keep: false; reason: "same" | "not_said" | "coord_verb_final" };
+  | { keep: false; reason: "same" | "not_said" | "coord_verb_final" | "coord_ellipsis" };
 
 /** Karşılaştırma için sözcüklere ayırma: küçük harf, ß=ss, harf/rakam dışı ayırıcı. */
 function words(text: string): string[] {
@@ -84,6 +87,9 @@ const SUBORDINATING = new Set([
   "den", "deren", "dessen", "zu",
 ]);
 
+/** Sıralama bağlacından sonra yinelenebilen özne zamirleri (Almanca, İngilizce). */
+const SUBJECT = new Set(["ich", "du", "er", "sie", "es", "wir", "ihr", "i", "you", "he", "she", "it", "we", "they"]);
+
 /**
  * Kural etiketi "fiil sonda / yan cümle" diyor mu — üç ana dilde ve Almanca
  * terimle. "Verbendung" (fiil EKİ, çekim) bilerek eşleşmiyor: "und du arbeitet
@@ -117,6 +123,11 @@ export function judgeCorrection(correction: string, said: string): FixVerdict {
 
   if (COORD.has(left[0]) && VERB_FINAL_LABEL.test(label) && !left.some((w) => SUBORDINATING.has(w))) {
     return { keep: false, reason: "coord_verb_final" };
+  }
+
+  // Sağ taraf, bağlaçtan sonraki özne zamiri çıkarılmış sol taraf: yalnız üslup.
+  if (COORD.has(left[0]) && SUBJECT.has(left[1]) && [left[0], ...left.slice(2)].join(" ") === right.join(" ")) {
+    return { keep: false, reason: "coord_ellipsis" };
   }
   return { keep: true };
 }

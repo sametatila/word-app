@@ -36,6 +36,22 @@ for (const label of ["Verb\u2011End\u2011stellung", "Verb am Ende", "Fiil sonda"
   check(`etiket tanınıyor: ${label}`, !v.keep);
 }
 
+console.log("\nbağlaçtan sonra özneyi düşürmek üslup");
+// 2026-09-29, `test:chat` de-b1-bewerbung/en (Groq).
+for (const label of ["Redundantes Subjekt", "Subjektellipse", "redundant subject"]) {
+  const v = judgeCorrection(`und ich arbeite gern → und arbeite gern (${label})`, SAID);
+  check(`özne düşürme siliniyor: ${label}`, !v.keep && v.reason === "coord_ellipsis", JSON.stringify(v));
+}
+{
+  const v = judgeCorrection("and I like working → and like working (Ellipsis)", "I sell cars and I like working with people.");
+  check("İngilizcede de siliniyor", !v.keep && v.reason === "coord_ellipsis", JSON.stringify(v));
+}
+{
+  // Özne değişiyorsa gerçek düzeltme olabilir: dokunulmuyor.
+  const v = judgeCorrection("und ich arbeitet → und ich arbeite (Verbendung)", "Ich wohne hier und ich arbeitet dort.");
+  check("bağlaç + özne + çekim düzeltmesi kalıyor", v.keep, JSON.stringify(v));
+}
+
 console.log("\ngerçek düzeltmeler süzgeçten geçiyor");
 const real: [string, string][] = [
   ["ich arbeite seit 10 Jahre → ich arbeite seit 10 Jahren (Dativ)", "Ich arbeite als Ingenieur seit 10 Jahre."],
