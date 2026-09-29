@@ -298,7 +298,7 @@ export const a2U18: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 18,
-    title: "Kime, ne zaman, umarım ki",
+    title: "Geschenke und Geburtstage",
     genre: "grammar",
     intro: "Yönelme hâli, sıra sayılı tarih ve dass yan cümlesi.",
     gloss: [

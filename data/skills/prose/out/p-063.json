@@ -1,10 +1,5 @@
 [
  {
-  "tr": "Cümle, neden, adıl, öteki dil.",
-  "kind": "explain",
-  "en": "The sentence, the reason, the pronoun, the other language."
- },
- {
   "tr": "İki katman: iddia ile varsayım.",
   "kind": "explain",
   "en": "Two layers: a claim and an assumption."
@@ -13,11 +8,6 @@
   "tr": "Ucuz okuma ilk toplantıyı kazanıyor.",
   "kind": "explain",
   "en": "The cheaper reading wins the first meeting."
- },
- {
-  "tr": "Aidiyetin sakladıkları ve emri veren.",
-  "kind": "intro",
-  "en": "What belonging keeps back, and who gives the orders."
  },
  {
   "tr": "Fiilsiz taviz ortada; ana iddia ayakta.",
@@ -35,49 +25,9 @@
   "en": "A place has taken the front slot; the subject comes last."
  },
  {
-  "tr": "Eksen, iki edilgen, çift; en sonda kural.",
-  "kind": "explain",
-  "en": "The axis, two passives, the pair; the rule last."
- },
- {
-  "tr": "İki edat nesnesiz kalmış; gönderme katmanı.",
-  "kind": "explain",
-  "en": "Two prepositions left without an object; the pointer layer."
- },
- {
   "tr": "Yukarıya ve aşağıya gönderen iki ortaç öbeği: gönderme katmanı.",
   "kind": "explain",
   "en": "Two participle phrases pointing up and down the page; the pointer layer."
- },
- {
-  "tr": "Ağır nesne sona kayıyor; adıl asla kaymıyor.",
-  "kind": "intro",
-  "en": "The heavy object moves to the end; the pronoun never does."
- },
- {
-  "tr": "Meblağsız kabul ve raporun gönderme katmanı.",
-  "kind": "intro",
-  "en": "The admission with no sum, and the pointer layer of a report."
- },
- {
-  "tr": "Nitelik sözcükleri ve toplantının iki fiili.",
-  "kind": "intro",
-  "en": "The words of qualification and the two verbs of a meeting."
- },
- {
-  "tr": "Hüküm, ad değişimi, iltifat; en sonda döngü.",
-  "kind": "explain",
-  "en": "The verdict, the change of name, the compliment; the circle last."
- },
- {
-  "tr": "Yer bildirmeyen „where“ ve tek ölçünün üç adı.",
-  "kind": "intro",
-  "en": "The placeless „where“, and three names for one measure."
- },
- {
-  "tr": "Toplantı tutanağında hangi fiil kimi ele veriyor?",
-  "kind": "intro",
-  "en": "In the minutes of a meeting, which verb gives whom away?"
  },
  {
   "tr": "„the evening hours are in nobody's figure at all.“",
@@ -85,34 +35,9 @@
   "en": "„the evening hours are in nobody's figure at all.“"
  },
  {
-  "tr": "Failin fiilin içinde kaybolması ve çekincenin işi.",
-  "kind": "intro",
-  "en": "How the agent disappears inside the verb, and what the hedge is for."
- },
- {
-  "tr": "İki sözcük karşıt görünüyor. Peki aynı eksende mi?",
-  "kind": "intro",
-  "en": "Two words look opposed. But are they on the same axis?"
- },
- {
-  "tr": "Bağlaç, aile, iki dil; en sonda seviyenin geri kalanı.",
-  "kind": "explain",
-  "en": "A connector, a family, two languages; the rest of the level last."
- },
- {
   "tr": "Birim ayrılıyor ama iş kalıyor. Sınır neyi kaldırmıyor?",
   "kind": "intro",
   "en": "The unit is spun off and the work stays. What does the border not remove?"
- },
- {
-  "tr": "İki topluluk, iki ayrı şey saklıyor. Hangisi hangisini?",
-  "kind": "intro",
-  "en": "Two communities keep two different things. Which keeps which?"
- },
- {
-  "tr": "Sıra yanlış görünüyor ama değil. Neye göre sıralanıyor?",
-  "kind": "intro",
-  "en": "The order looks wrong and is not. What is it sorted by?"
  },
  {
   "tr": "Yetki devrinin arkasında ne duruyor? Ne fark edilmiyor?",
@@ -120,43 +45,8 @@
   "en": "What stands behind the delegation? And what goes unnoticed?"
  },
  {
-  "tr": "Kimse zorlamadıysa gönüllü müdür? Çekince nerede duruyor?",
-  "kind": "intro",
-  "en": "Is it voluntary if nobody forced it? And where does the hedge stand?"
- },
- {
-  "tr": "Cümle, tek sözcük iki okuma, izsizlik; en sonda öteki dil.",
-  "kind": "explain",
-  "en": "The sentence, one word with two readings, no trace at all; the other language last."
- },
- {
   "tr": "„a flat chart can hide more than a tall one.“ — „Far more…“",
   "kind": "explain",
   "en": "„a flat chart can hide more than a tall one.“ — „Far more…“"
- },
- {
-  "tr": "Başarı ile başarısızlık aynı cümlede. Ek neyi ele veriyor?",
-  "kind": "intro",
-  "en": "Success and failure in one sentence. What does the addition give away?"
- },
- {
-  "tr": "Tek bir önlem, üç ad. Adı koyan tartışmayı nasıl kazanıyor?",
-  "kind": "intro",
-  "en": "One measure, three names. How does the one who names it win the argument?"
- },
- {
-  "tr": "Hiçbir şey silinmemiş ve yine de kimse yok. Fail nereye gitti?",
-  "kind": "intro",
-  "en": "Nothing was deleted and still nobody is there. Where did the agent go?"
- },
- {
-  "tr": "„Where“ hangi yeri gösteriyor? Sökülebilen sözcük ile sökülemeyen.",
-  "kind": "intro",
-  "en": "Which place does „Where“ point to? The word you can take apart and the one you cannot."
- },
- {
-  "tr": "Uzun raporu ne bir arada tutuyor? Belirsiz sorumluluk neyi bozuyor?",
-  "kind": "intro",
-  "en": "What holds a long report together? And what does unclear responsibility spoil?"
  }
 ]

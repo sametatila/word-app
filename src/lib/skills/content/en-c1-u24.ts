@@ -48,96 +48,89 @@ export const enC1U24: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 24,
-    title: "The slot before the verb",
-    genre: "info",
-    intro: "Özne ile fiil arasında bir yuva var. İçine ne konuyor?",
+    title: "An air quality inquiry",
+    genre: "article",
+    intro: "Bir üniversite soruşturması: hava kirliliği çalışması nasıl çarpıtıldı?",
     gloss: [
-      { de: "adverb", tr: "zarf" },
-      { de: "among", tr: "arasında" },
-      { de: "infinitive", tr: "mastar" },
-      { de: "noun", tr: "isim" },
-      { de: "a slot", tr: "yuva" },
-      { de: "a judgment", tr: "hüküm" },
-      { de: "a description", tr: "betimleme" },
+      { de: "knowingly", tr: "bilerek" },
+      { de: "misrepresent", tr: "yanlış aktarmak" },
+      { de: "an outlier", tr: "aykırı değer" },
+      { de: "a guideline value", tr: "kılavuz değer" },
+      { de: "repeatability", tr: "tekrarlanabilirlik" },
       { de: "clearly", tr: "açıkça" },
-      { de: "rarely", tr: "seyrek" },
-      { de: "the finite verb", tr: "çekimli fiil" },
-      { de: "the second element", tr: "ikinci öğe" },
-      { de: "pushing", tr: "iterek" },
-      { de: "reserves", tr: "ayırıyor" },
-      { de: "the middle field", tr: "orta alan" },
-      { de: "carrying", tr: "taşıdığı" },
-      { de: "the news", tr: "haber" },
-      { de: "lands", tr: "iniyor" },
-      { de: "a charge", tr: "suçlama" },
-      { de: "one position", tr: "tek konum" },
-      { de: "miss it", tr: "kaçırmak" },
-      { de: "a defense", tr: "savunma" },
-      { de: "anyway", tr: "zaten" },
-      { de: "a gerund", tr: "eylemlik" },
-      { de: "a word of warning", tr: "tek bir uyarı" },
-      { de: "measured", tr: "ölçülen" },
-      { de: "survive", tr: "dayanmak" },
-      { de: "agree", tr: "aynı fikirde olmak" },
+      { de: "rarely", tr: "nadiren" },
+      { de: "an inquiry", tr: "soruşturma" },
+      { de: "senior", tr: "kıdemli" },
+      { de: "a primary school", tr: "ilkokul" },
+      { de: "dust", tr: "toz" },
+      { de: "reversed", tr: "tersine çevrilmiş" },
+      { de: "legitimate", tr: "meşru" },
+      { de: "simply", tr: "düpedüz" },
+      { de: "misunderstood", tr: "yanlış anlaşılmış" },
+      { de: "independent", tr: "bağımsız" },
+      { de: "a laboratory", tr: "laboratuvar" },
+      { de: "an analysis", tr: "analiz" },
+      { de: "beyond", tr: "ötesinde" },
+      { de: "cited", tr: "atıf yapılan" },
+      { de: "openness", tr: "açıklık" },
     ],
     minutes: 12,
     text:
-      "One advocates the claim; another merely affirms it. Look at where „merely“ is standing: between the subject and the verb, with nothing else in that space.\n" +
-      "English keeps a slot there. It is small, it holds a word or two, and almost everything a writer puts in it is a judgment rather than a description: merely, probably, clearly, knowingly, rarely, always, hardly.\n" +
-      "A neighboring language has no such slot. Its finite verb has to be the second element of the clause, so nothing can stand between the subject and the verb without pushing the verb out of the position the grammar reserves for it. The adverb goes after the verb instead, into the middle field, where it sits among the other things the sentence is carrying.\n" +
-      "That sounds like a small difference and it is not. In English the judgment arrives before the verb, so the reader has it before they know what happened. „Another merely affirms it“ tells you how to take the news and then gives you the news. In the other order the news comes first, and the judgment lands on a reader who has already begun to believe it.\n" +
-      "The same slot is where the strongest word in a legal sentence lives. „She knowingly misrepresented the study“ is a different charge from „She misrepresented the study“, and the whole difference is one word in one position, sitting in front of the verb where nobody can miss it.\n" +
-      "To misrepresent a study is a distortion, not a truism. Here is the infinitive shape again, and the second half denies the wrong defense rather than the fact: a paper that answers „everybody knows that anyway“ has not answered the charge at all.\n" +
-      "Persuasiveness is not the same as being justifiable. And the closing line of the lesson: a noun on one side and a gerund on the other, which English allows without a word of warning.\n" +
-      "The two sides are measured by two different people. One is measured by the reader, and the other has to survive somebody who does not want to agree.",
+      "INQUIRY: RESEARCHER KNOWINGLY MISREPRESENTED AIR QUALITY STUDY\n" +
+      "A university inquiry has found that a senior researcher knowingly misrepresented the results of a study on air pollution near primary schools. The report, published on Thursday, clearly states that the error was not an accident.\n" +
+      "The study measured fine dust outside twelve schools in the city over two winters. In the original data, three schools were above the guideline value set by the health authority. In the published paper, only one was. The inquiry found that two measurements had been removed as outliers after the results were known, although the team had never removed outliers in earlier studies.\n" +
+      "„A significance level is chosen before a study starts; an outlier is found in the data. Here the order was reversed,“ the report says. Its authors also note that the other authors rarely checked the raw data and merely affirmed the final tables.\n" +
+      "The researcher, who has not been named, denies the findings. Her lawyer argues that the changes were a legitimate correction and that the committee has simply misunderstood the method. The committee does not accept this. It points out that repeatability exposes the source of error: when an independent laboratory ran the same analysis, all three schools were again above the limit.\n" +
+      "The case matters beyond one university. The paper was cited by the city council last year when it decided not to move a bus station away from two of the schools. Parents' groups say they will now ask the council to review that decision.\n" +
+      "The university says it will always publish the results of such inquiries. Critics say the process took far too long: the first complaint was made two years ago, and hardly anyone outside the committee knew about it until this week. One advocates openness; another merely affirms it, as one parent wrote online.",
     questions: [
       {
-        text: "What does English put in that slot?",
-        options: ["a judgment", "a description", "the verb"],
+        text: "What did the study measure?",
+        options: ["fine dust outside schools", "noise near bus stations", "traffic in the city center"],
         answer: 0,
-        explain: "„almost everything a writer puts in it is a judgment rather than a description…“",
+        explain: "„The study measured fine dust outside twelve schools in the city over two winters.“",
       },
       {
-        text: "Why is there no such slot in the other language?",
-        options: ["the finite verb must be second", "adverbs are longer", "the subject moves"],
+        text: "How many schools were above the guideline value in the original data?",
+        options: ["three", "one", "twelve"],
         answer: 0,
-        explain: "„Its finite verb has to be the second element of the clause…“",
+        explain: "„In the original data, three schools were above the guideline value set by the health authority.“",
       },
       {
         kind: "truefalse",
-        text: "That is not a small difference.",
+        text: "The other authors did not check the raw data carefully.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„That sounds like a small difference and it is not.“",
+        explain: "„the other authors rarely checked the raw data and merely affirmed the final tables.“",
       },
       {
         kind: "gapfill",
-        text: "One advocates the claim; another ___ affirms it.",
+        text: "Repeatability exposes the source of ___.",
         options: [],
         answer: 0,
-        accept: ["merely"],
-        explain: "„One advocates the claim; another merely affirms it.“",
+        accept: ["error"],
+        explain: "„repeatability exposes the source of error…“",
       },
       {
         kind: "order",
-        text: "Dersin sırası: doğru sıraya koy.",
+        text: "Metnin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
-          "One advocates the claim; another merely affirms it.",
-          "English keeps a slot between the subject and the verb.",
-          "The judgment arrives before the verb.",
-          "She knowingly misrepresented the study.",
+          "The inquiry publishes its report on Thursday.",
+          "Two measurements are removed as outliers.",
+          "An independent laboratory repeats the analysis.",
+          "Parents plan to ask the council for a review.",
         ],
-        explain: "Cümle, yuva, sıra; en sonda hukuk cümlesi.",
+        explain: "Bulgu, veriden çıkarılan ölçümler, bağımsız sınama; en sonda velilerin talebi.",
       },
       {
         kind: "short_answer",
-        text: "What must the second side survive?",
+        text: "When was the first complaint made?",
         options: [],
         answer: 0,
-        accept: ["somebody who disagrees", "a reader who disagrees", "an opponent"],
-        explain: "„the other has to survive somebody who does not want to agree.“",
+        accept: ["two years ago", "2 years ago"],
+        explain: "„the first complaint was made two years ago…“",
       },
     ],
   },
@@ -151,7 +144,7 @@ export const enC1U24: SkillExercise[] = [
     genre: "opinion",
     intro: "Hiçbir ilke kuşkuya uğramadan ayakta kalmıyor. Peki bu neyi bitiriyor?",
     gloss: [
-      { de: "halves", tr: "yarılar" },
+      { de: "gloomy", tr: "karamsar" },
       { de: "legislated", tr: "yasayla konan" },
       { de: "moral", tr: "ahlaki" },
       { de: "goodness", tr: "iyilik" },
@@ -181,14 +174,14 @@ export const enC1U24: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "Much as relativism unsettles us, no maxim survives without doubt. Two halves and the second is not the conclusion the first one looks like it is heading for.\n" +
+      "Much as relativism unsettles us, no maxim survives without doubt. I heard that sentence at a hospital ethics meeting last spring, and it is less gloomy than it sounds.\n" +
       "„No maxim survives without doubt“ does not say that all maxims are equal. It says that a maxim which has never been doubted has never been tested, and a survivor of doubt is worth more than a rule nobody ever questioned.\n" +
-      "That is the useful reading and it is the harder one, because the easy reading is available in the same words and a tired reader will take it.\n" +
-      "A commandment, albeit ancient, is not a virtue. Age is not an argument, which this level has now said three times in three fields, and here it is at its sharpest: a rule that is obeyed out of habit has produced a habit and not a virtue.\n" +
+      "That is the useful reading and it is the harder one, because the easy reading, that nothing is really right or wrong, is always available to a tired committee.\n" +
+      "A commandment, albeit ancient, is not a virtue. Age is not an argument, and in ethics that point is at its sharpest: a rule that is obeyed out of habit has produced a habit and not a virtue.\n" +
       "A virtue is a thing practiced by somebody who could have done otherwise. That is why it cannot be legislated and why a list of rules is not a moral education, though it is a great deal easier to write.\n" +
-      "Although a form of integrity, altruism can be a duty too. And the concession at the front is doing real work: nobody is denying that it is a form of integrity.\n" +
+      "Although a form of integrity, altruism can be a duty too. Nobody at the meeting denied that it is a form of integrity.\n" +
       "What is denied is that it is always chosen. A colleague who takes the night shift every December is being good and is also being used, and the second half of that sentence is the one nobody says in the room.\n" +
-      "So the honest version of the lesson is short. Unpaid goodness is still work and it should be counted, and counting it does not make it smaller. A person who is thanked in a speech and never in a schedule has been paid in the wrong currency.",
+      "So the honest conclusion is short. Unpaid goodness is still work and it should be counted, and counting it does not make it smaller. A person who is thanked in a speech and never in a schedule has been paid in the wrong currency.",
     questions: [
       {
         text: "What does the second half say?",
@@ -219,7 +212,7 @@ export const enC1U24: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Dersin sırası: doğru sıraya koy.",
+        text: "Metnin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -431,15 +424,16 @@ export const enC1U24: SkillExercise[] = [
     unit: 24,
     title: "Studies and statistics",
     genre: "info",
-    intro: "Orta konum belirteci ve kanıtın iki sayısı.",
+    intro: "Hava kalitesi soruşturması: cümleler ve bir soruşturma kartı.",
     gloss: [
-      { de: "judgment", tr: "yargı" },
       { de: "to advocate", tr: "savunmak" },
       { de: "to affirm", tr: "doğrulamak" },
       { de: "to misrepresent", tr: "yanlış aktarmak" },
       { de: "a truism", tr: "herkesin bildiği gerçek" },
       { de: "a significance level", tr: "anlamlılık düzeyi" },
       { de: "repeatability", tr: "tekrarlanabilirlik" },
+      { de: "a laboratory", tr: "laboratuvar" },
+      { de: "independent", tr: "bağımsız" },
     ],
     minutes: 10,
     tasks: [
@@ -475,13 +469,13 @@ export const enC1U24: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "Orta konum kartını doldur.",
-        facts: "Yuva özne ile fiilin arasında; içine hüküm konuyor; Almancada yuva yok çünkü fiil ikinci öğe; İngilizcede hüküm haberden önce geliyor.",
+        prompt: "Soruşturma kartını doldur.",
+        facts: "Araştırmacı çalışmayı bilerek yanlış aktardı; iki ölçüm sonradan aykırı değer diye çıkarıldı; bağımsız bir laboratuvar aynı analizi yeniden yaptı; ilk şikâyet iki yıl önce yapıldı.",
         fields: [
-          { label: "Where the slot is", answer: "between subject and verb", accept: ["before the verb"] },
-          { label: "What goes in it", answer: "a judgment", accept: ["judgment"] },
-          { label: "In German", answer: "no slot", accept: ["after the verb"] },
-          { label: "The reader gets", answer: "the judgment first", accept: ["judgment first"] },
+          { label: "What she did", answer: "misrepresented the study", accept: ["knowingly misrepresented it"] },
+          { label: "Data removed", answer: "two measurements", accept: ["2 measurements"] },
+          { label: "Independent check", answer: "a laboratory", accept: ["an independent laboratory"] },
+          { label: "First complaint", answer: "two years ago", accept: ["2 years ago"] },
         ],
       },
     ],

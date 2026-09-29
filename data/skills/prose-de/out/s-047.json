@@ -1,113 +1,8 @@
 [
  {
-  "tr": "İki sözcük silinince ne kalıyor?",
-  "kind": "intro",
-  "de": "Was bleibt, wenn zwei Wörter wegfallen?"
- },
- {
-  "tr": "Üç devrik cümle ve bir plan satırı.",
-  "kind": "intro",
-  "de": "Drei umgestellte Sätze und eine Zeile aus dem Plan."
- },
- {
-  "tr": "Devrik sırada parçacık nereye gidiyor?",
-  "kind": "intro",
-  "de": "Wohin geht die Partikel bei der Umstellung?"
- },
- {
-  "tr": "İki kapalı, bir karışık ve iki aktarma.",
-  "kind": "intro",
-  "de": "Zwei geschlossene, eine gemischte und zwei Wiedergaben."
- },
- {
-  "tr": "Üç derece üç satırda. Sıra neden böyle?",
-  "kind": "intro",
-  "de": "Drei Grade in drei Zeilen. Warum diese Reihenfolge?"
- },
- {
-  "tr": "Üç isim, üç ek. Hangisinin eki hiç yok?",
-  "kind": "intro",
-  "de": "Drei Substantive, drei Endungen. Welches hat gar keine?"
- },
- {
-  "tr": "„is“ sonrası yalın fiil. Nerede oluyor bu?",
-  "kind": "intro",
-  "de": "Ein bloßer Infinitiv nach „is“. Wo kommt das vor?"
- },
- {
-  "tr": "Üç ortaç. Birincisi neden kurala aykırı değil?",
-  "kind": "intro",
-  "de": "Drei Partizipien. Warum verstößt das erste gegen keine Regel?"
- },
- {
-  "tr": "İki isim yan yana. Hangisi hangisini niteliyor?",
-  "kind": "intro",
-  "de": "Zwei Substantive nebeneinander. Welches bestimmt welches?"
- },
- {
-  "tr": "Üç kip, bir eleştiri. Hangisi eleştirmene dair?",
-  "kind": "intro",
-  "de": "Drei Modalverben, eine Kritik. Welches handelt vom Kritiker?"
- },
- {
-  "tr": "Üç koşul, boş bir salon. Hangisi bu akşama ait?",
-  "kind": "intro",
-  "de": "Drei Bedingungen, ein leerer Saal. Welche gehört zu diesem Abend?"
- },
- {
-  "tr": "Durum fiili ortaçta „-ing“ alıyor. Nasıl oluyor?",
-  "kind": "intro",
-  "de": "Ein Zustandsverb nimmt im Partizip „-ing“. Wie geht das?"
- },
- {
-  "tr": "„especially since“ ne yapıyor? Ödün mü, tersi mi?",
-  "kind": "intro",
-  "de": "Was tut „especially since“? Räumt es ein oder das Gegenteil?"
- },
- {
-  "tr": "Dışta adlaştırma, içte bileşik. Soldaki tekil mi?",
-  "kind": "intro",
-  "de": "Außen Nominalisierung, innen Kompositum. Steht das linke im Singular?"
- },
- {
-  "tr": "Planda bizim olan ve olmayan. Hangisi hangi biçimde?",
-  "kind": "intro",
-  "de": "Was im Plan unser ist und was nicht. Welches in welcher Form?"
- },
- {
-  "tr": "Üç ilgi cümlesi. Hangisinden iki sözcük silinebiliyor?",
-  "kind": "intro",
-  "de": "Drei Relativsätze. In welchem lassen sich zwei Wörter streichen?"
- },
- {
-  "tr": "Üç aktarma fiili, bir duyuru. Hangisi oyunculara gitmiyor?",
-  "kind": "intro",
-  "de": "Drei Verben der Wiedergabe, eine Ankündigung. Welches geht nicht an die Darsteller?"
- },
- {
-  "tr": "Biçim, iş, sayı, en sonda sınır.",
-  "kind": "explain",
-  "de": "Form, Aufgabe, Zahl, am Ende die Grenze."
- },
- {
   "tr": "En zayıf aktarma: biri söyledi, o kadar.",
   "kind": "explain",
   "de": "Die schwächste Wiedergabe: Jemand hat es gesagt, mehr nicht."
- },
- {
-  "tr": "Üç adlaştırma, en sonda tek fiilli cümle.",
-  "kind": "explain",
-  "de": "Drei Nominalisierungen, am Ende der eine Satz mit einem Verb."
- },
- {
-  "tr": "İki çekince, güçlendiren neden, en sonda kural.",
-  "kind": "explain",
-  "de": "Zwei Absicherungen, der verstärkende Grund, am Ende die Regel."
- },
- {
-  "tr": "Durum, önceki iş, edilgen; en sonda dersin uyarısı.",
-  "kind": "explain",
-  "de": "Zustand, das Frühere, Passiv; am Ende die Warnung der Lektion."
  },
  {
   "tr": "En zayıf aktarma: kaynak yok, kimse arkasında durmuyor.",
@@ -120,19 +15,9 @@
   "de": "„has“ rückt vor das Subjekt; der Rest des Verbs bleibt stehen."
  },
  {
-  "tr": "Silinebilen, silinemeyen, iyelik taşıyan; en sonda kural.",
-  "kind": "explain",
-  "de": "Das Streichbare, das Unstreichbare, das mit Besitz; am Ende die Regel."
- },
- {
   "tr": "İşin içinde olmak: sürekli biçim, denetimimizde olmayan iş.",
   "kind": "explain",
   "de": "Mitten in der Arbeit: Verlaufsform, eine Sache außerhalb unserer Kontrolle."
- },
- {
-  "tr": "Kanıt, dışarıda bıraktığı, kendi payımız; en sonda yerleşim.",
-  "kind": "explain",
-  "de": "Der Beleg, das Ausgeschlossene, der eigene Anteil; am Ende die Platzierung."
  },
  {
   "tr": "sıfat",
@@ -140,19 +25,9 @@
   "de": "Adjektiv"
  },
  {
-  "tr": "tekil",
-  "kind": "gloss.tr",
-  "de": "Singular"
- },
- {
   "tr": "övülen",
   "kind": "gloss.tr",
   "de": "gelobt"
- },
- {
-  "tr": "tam tersi",
-  "kind": "gloss.tr",
-  "de": "umgekehrt"
  },
  {
   "tr": "durdurulmuş",
@@ -160,39 +35,9 @@
   "de": "ausgesetzt"
  },
  {
-  "tr": "ağır",
-  "kind": "gloss.tr",
-  "de": "schwer"
- },
- {
   "tr": "olan",
   "kind": "gloss.tr",
   "de": "welches ist"
- },
- {
-  "tr": "süre",
-  "kind": "gloss.tr",
-  "de": "Dauer"
- },
- {
-  "tr": "bizim",
-  "kind": "gloss.tr",
-  "de": "unser"
- },
- {
-  "tr": "çoğul",
-  "kind": "gloss.tr",
-  "de": "Plural"
- },
- {
-  "tr": "dekor",
-  "kind": "gloss.tr",
-  "de": "Bühnenbild"
- },
- {
-  "tr": "ekler",
-  "kind": "gloss.tr",
-  "de": "Endungen"
  },
  {
   "tr": "hasta",
@@ -203,16 +48,6 @@
   "tr": "hüküm",
   "kind": "gloss.tr",
   "de": "Urteil"
- },
- {
-  "tr": "künye",
-  "kind": "gloss.tr",
-  "de": "Eintrag"
- },
- {
-  "tr": "miras",
-  "kind": "gloss.tr",
-  "de": "Erbe"
  },
  {
   "tr": "onayı",
@@ -240,31 +75,6 @@
   "de": "Grenze"
  },
  {
-  "tr": "silme",
-  "kind": "gloss.tr",
-  "de": "Streichung"
- },
- {
-  "tr": "atıyor",
-  "kind": "gloss.tr",
-  "de": "wirft weg"
- },
- {
-  "tr": "bellek",
-  "kind": "gloss.tr",
-  "de": "Gedächtnis"
- },
- {
-  "tr": "düzine",
-  "kind": "gloss.tr",
-  "de": "Dutzend"
- },
- {
-  "tr": "edinim",
-  "kind": "gloss.tr",
-  "de": "Erwerb"
- },
- {
   "tr": "miktar",
   "kind": "gloss.tr",
   "de": "Menge"
@@ -273,16 +83,6 @@
   "tr": "on yıl",
   "kind": "gloss.tr",
   "de": "Jahrzehnt"
- },
- {
-  "tr": "tartım",
-  "kind": "gloss.tr",
-  "de": "Rhythmus"
- },
- {
-  "tr": "bileşik",
-  "kind": "gloss.tr",
-  "de": "Kompositum"
  },
  {
   "tr": "edinimi",
@@ -295,34 +95,9 @@
   "de": "erwerben"
  },
  {
-  "tr": "harcadı",
-  "kind": "gloss.tr",
-  "de": "ausgegeben"
- },
- {
   "tr": "iltifat",
   "kind": "gloss.tr",
   "de": "Kompliment"
- },
- {
-  "tr": "kişiler",
-  "kind": "gloss.tr",
-  "de": "Figuren"
- },
- {
-  "tr": "kuruyor",
-  "kind": "gloss.tr",
-  "de": "bildet"
- },
- {
-  "tr": "öğrenen",
-  "kind": "gloss.tr",
-  "de": "Lernender"
- },
- {
-  "tr": "önlemek",
-  "kind": "gloss.tr",
-  "de": "verhindern"
  },
  {
   "tr": "sürerdi",
@@ -335,44 +110,9 @@
   "de": "Ausstellung"
  },
  {
-  "tr": "ayrılmış",
-  "kind": "gloss.tr",
-  "de": "reserviert"
- },
- {
   "tr": "denetimi",
   "kind": "gloss.tr",
   "de": "Prüfung"
- },
- {
-  "tr": "durmadan",
-  "kind": "gloss.tr",
-  "de": "ständig"
- },
- {
-  "tr": "ek belge",
-  "kind": "gloss.tr",
-  "de": "Anhang"
- },
- {
-  "tr": "en nazik",
-  "kind": "gloss.tr",
-  "de": "am freundlichsten"
- },
- {
-  "tr": "gözlemek",
-  "kind": "gloss.tr",
-  "de": "im Auge behalten"
- },
- {
-  "tr": "parçacık",
-  "kind": "gloss.tr",
-  "de": "Partikel"
- },
- {
-  "tr": "silinmiş",
-  "kind": "gloss.tr",
-  "de": "gestrichen"
  },
  {
   "tr": "sürdüren",
@@ -385,16 +125,6 @@
   "de": "übereinander"
  },
  {
-  "tr": "açıklayan",
-  "kind": "gloss.tr",
-  "de": "erklärend"
- },
- {
-  "tr": "beklemede",
-  "kind": "gloss.tr",
-  "de": "anhängig"
- },
- {
   "tr": "kısaltmak",
   "kind": "gloss.tr",
   "de": "kürzen"
@@ -405,49 +135,9 @@
   "de": "Bühnenbildnerin"
  },
  {
-  "tr": "yineleyen",
-  "kind": "gloss.tr",
-  "de": "wiederholend"
- },
- {
-  "tr": "daraltıyor",
-  "kind": "gloss.tr",
-  "de": "engt ein"
- },
- {
-  "tr": "duyurulmuş",
-  "kind": "gloss.tr",
-  "de": "bekannt gegeben"
- },
- {
   "tr": "eleştirmen",
   "kind": "gloss.tr",
   "de": "Kritiker"
- },
- {
-  "tr": "etiketleme",
-  "kind": "gloss.tr",
-  "de": "Etikettieren"
- },
- {
-  "tr": "hazırlanan",
-  "kind": "gloss.tr",
-  "de": "worauf hingearbeitet wurde"
- },
- {
-  "tr": "içerlediği",
-  "kind": "gloss.tr",
-  "de": "was er übelnimmt"
- },
- {
-  "tr": "kısaltıyor",
-  "kind": "gloss.tr",
-  "de": "kürzt"
- },
- {
-  "tr": "ödün veren",
-  "kind": "gloss.tr",
-  "de": "einräumend"
  },
  {
   "tr": "son derece",
@@ -455,39 +145,9 @@
   "de": "äußerst"
  },
  {
-  "tr": "yumuşaklık",
-  "kind": "gloss.tr",
-  "de": "Weichheit"
- },
- {
   "tr": "yumuşatmak",
   "kind": "gloss.tr",
   "de": "abmildern"
- },
- {
-  "tr": "alıntılamak",
-  "kind": "gloss.tr",
-  "de": "zitieren"
- },
- {
-  "tr": "belgelenmiş",
-  "kind": "gloss.tr",
-  "de": "dokumentiert"
- },
- {
-  "tr": "bu bakımdan",
-  "kind": "gloss.tr",
-  "de": "in dieser Hinsicht"
- },
- {
-  "tr": "dilbilgisel",
-  "kind": "gloss.tr",
-  "de": "grammatisch"
- },
- {
-  "tr": "doldurulmuş",
-  "kind": "gloss.tr",
-  "de": "ausgefüllt"
  },
  {
   "tr": "dolu olurdu",
@@ -495,34 +155,14 @@
   "de": "wäre voll"
  },
  {
-  "tr": "düzeltilmiş",
-  "kind": "gloss.tr",
-  "de": "behoben"
- },
- {
   "tr": "kısaltılmış",
   "kind": "gloss.tr",
   "de": "gekürzt"
  },
  {
-  "tr": "restorasyon",
-  "kind": "gloss.tr",
-  "de": "Restaurierung"
- },
- {
-  "tr": "alçakgönüllü",
-  "kind": "gloss.tr",
-  "de": "bescheiden"
- },
- {
   "tr": "emekli olmak",
   "kind": "gloss.tr",
   "de": "in Rente gehen"
- },
- {
-  "tr": "gözden kaçan",
-  "kind": "gloss.tr",
-  "de": "übersehen"
  },
  {
   "tr": "hazırlanması",
@@ -540,74 +180,14 @@
   "de": "Restaurierung"
  },
  {
-  "tr": "restore etti",
-  "kind": "gloss.tr",
-  "de": "restaurierte"
- },
- {
-  "tr": "güçlendiriyor",
-  "kind": "gloss.tr",
-  "de": "verstärkt"
- },
- {
   "tr": "istediği için",
   "kind": "gloss.tr",
   "de": "weil sie wollte"
  },
  {
-  "tr": "karşı çıkılan",
-  "kind": "gloss.tr",
-  "de": "dem widersprochen wird"
- },
- {
-  "tr": "modası geçmiş",
-  "kind": "gloss.tr",
-  "de": "veraltet"
- },
- {
-  "tr": "restore etmek",
-  "kind": "gloss.tr",
-  "de": "restaurieren"
- },
- {
   "tr": "aceleye gelmiş",
   "kind": "gloss.tr",
   "de": "übereilt"
- },
- {
-  "tr": "kültürel miras",
-  "kind": "gloss.tr",
-  "de": "Kulturerbe"
- },
- {
-  "tr": "sert davranmak",
-  "kind": "gloss.tr",
-  "de": "hart sein"
- },
- {
-  "tr": "üst üste yığma",
-  "kind": "gloss.tr",
-  "de": "Aufeinanderstapeln"
- },
- {
-  "tr": "üstüne eklenen",
-  "kind": "gloss.tr",
-  "de": "ergänzt"
- },
- {
-  "tr": "alçakgönüllülük",
-  "kind": "gloss.tr",
-  "de": "Bescheidenheit"
- },
- {
-  "tr": "arkasında duran",
-  "kind": "gloss.tr",
-  "de": "dahinterstehend"
- },
- {
-  "tr": "çekince koyuyor",
-  "kind": "gloss.tr",
-  "de": "sichert sich ab"
  },
  {
   "tr": "çözüme bağlamak",
@@ -625,26 +205,6 @@
   "de": "wäre großartig gewesen"
  },
  {
-  "tr": "gösterim dönemi",
-  "kind": "gloss.tr",
-  "de": "Spielzeit"
- },
- {
-  "tr": "yerine oturuyor",
-  "kind": "gloss.tr",
-  "de": "sitzt"
- },
- {
-  "tr": "bilerek yapılmış",
-  "kind": "gloss.tr",
-  "de": "absichtlich"
- },
- {
-  "tr": "geri adım atıyor",
-  "kind": "gloss.tr",
-  "de": "gibt nach"
- },
- {
   "tr": "izledikten sonra",
   "kind": "gloss.tr",
   "de": "nachdem sie zugesehen hatten"
@@ -660,21 +220,6 @@
   "de": "wird archiviert haben"
  },
  {
-  "tr": "son onayı verilen",
-  "kind": "gloss.tr",
-  "de": "endgültig abgezeichnet"
- },
- {
-  "tr": "önceden kestiriyor",
-  "kind": "gloss.tr",
-  "de": "sagt voraus"
- },
- {
-  "tr": "üstüne plan yapmak",
-  "kind": "gloss.tr",
-  "de": "damit planen"
- },
- {
   "tr": "ancak finalden sonra",
   "kind": "gloss.tr",
   "de": "erst nach dem Endspiel"
@@ -683,20 +228,5 @@
   "tr": "değiştiği düşünülüyor",
   "kind": "gloss.tr",
   "de": "hat sich vermutlich geändert"
- },
- {
-  "tr": "işin aslı",
-  "kind": "gloss.tr",
-  "de": "der Stand der Dinge"
- },
- {
-  "tr": "varsaydı",
-  "kind": "gloss.tr",
-  "de": "nahm an"
- },
- {
-  "tr": "atlatıyor",
-  "kind": "gloss.tr",
-  "de": "übersteht"
  }
 ]

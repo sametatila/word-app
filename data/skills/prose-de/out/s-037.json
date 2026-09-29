@@ -15,11 +15,6 @@
   "de": "Zwei Stunden im Wartesaal. Wie funktioniert die Warteschlange?"
  },
  {
-  "tr": "Kayıt işleminin dili. Cümleler neden hep edilgen?",
-  "kind": "intro",
-  "de": "Die Sprache der Anmeldung. Warum steht alles im Passiv?"
- },
- {
   "tr": "Vergi beyanı. Hangi cümle tarihli, hangisi değil?",
   "kind": "intro",
   "de": "Die Steuererklärung. Welcher Satz nennt ein Datum, welcher nicht?"
@@ -33,11 +28,6 @@
   "tr": "Form doldurma kuralları. Hangisi zorunlu, hangisi değil?",
   "kind": "intro",
   "de": "Regeln zum Ausfüllen. Was ist Pflicht, was nicht?"
- },
- {
-  "tr": "Poliçenin üç cümlesi. Hangi koşul gerçek, hangisi değil?",
-  "kind": "intro",
-  "de": "Drei Sätze aus der Police. Welche Bedingung ist real, welche nicht?"
  },
  {
   "tr": "Randevu değişiyor. Hangi cümle ayarlanmış, hangisi plan?",
@@ -93,11 +83,6 @@
   "tr": "O anda verilen karar: „will“.",
   "kind": "explain",
   "de": "Ein Entschluss im Moment: „will“."
- },
- {
-  "tr": "İşleyiş, tek olay, soru, en sonda öğüt.",
-  "kind": "explain",
-  "de": "Der Ablauf, ein einzelnes Ereignis, die Frage, zuletzt der Rat."
  },
  {
   "tr": "Ayarlanmış gelecek: gün belli ve banka biliyor.",
@@ -170,11 +155,6 @@
   "de": "Aufnahme"
  },
  {
-  "tr": "kısıtlayıcı ifade",
-  "kind": "gloss.tr",
-  "de": "Einschränkung"
- },
- {
   "tr": "ses kaydı",
   "kind": "gloss.tr",
   "de": "Aufnahme"
@@ -203,11 +183,6 @@
   "tr": "uzatma",
   "kind": "gloss.tr",
   "de": "Verlängerung"
- },
- {
-  "tr": "edilgen",
-  "kind": "gloss.tr",
-  "de": "das Passiv"
  },
  {
   "tr": "kutucuk",
@@ -318,11 +293,6 @@
   "tr": "düzenleniyor",
   "kind": "gloss.tr",
   "de": "wird ausgestellt"
- },
- {
-  "tr": "gerçek koşul",
-  "kind": "gloss.tr",
-  "de": "reale Bedingung"
  },
  {
   "tr": "hasar talebi",

@@ -353,7 +353,7 @@ export const b2U19: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 19,
-    title: "Bedingung, Zweck, Verfahren",
+    title: "Ein Gewerbe gründen",
     genre: "build",
     intro: "sofern koşulu daraltır, um-zu amacı verir, adlaştırma usulü resmîleştirir.",
     gloss: [

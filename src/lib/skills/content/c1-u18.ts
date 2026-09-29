@@ -32,88 +32,91 @@ export const c1U18: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 18,
-    title: "Scheinbar oder anscheinend",
-    genre: "text",
-    intro: "İki sözcük, zıt iddialar. Türkçede ayrım zaten var — eşleşme ters.",
+    title: "Ein Jahr Rufbus im Landkreis",
+    genre: "article",
+    intro: "Kırsalda çağrıyla çalışan minibüs projesi bir yılı doldurdu. Pahalı mı, gerçekten işe yarıyor mu?",
     gloss: [
       { de: "scheinbar", tr: "sözde / görünürde", en: "seemingly (but not)", note: "ama değil" },
       { de: "anscheinend", tr: "görünüşe göre", en: "apparently", note: "muhtemelen öyle" },
       { de: "der Anschein", tr: "görünüş / izlenim", en: "appearance" },
       { de: "die Genauigkeit", tr: "kesinlik", en: "precision" },
-      { de: "unterscheiden", tr: "ayırt etmek", en: "to distinguish" },
       { de: "die Interpretation", tr: "yorum", en: "interpretation" },
       { de: "effizient", tr: "verimli", en: "efficient" },
-      { de: "klingen", tr: "kulağa gelmek", en: "to sound" },
-      { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "vorschieben", tr: "bahane etmek", en: "to use as a pretext" },
-      { de: "die Personalakte", tr: "özlük dosyası", en: "personnel file" },
-      { de: "ebenfalls", tr: "aynı şekilde", en: "likewise" },
-      { de: "verwenden", tr: "kullanmak", en: "to use" },
-      { de: "gleichsetzen", tr: "bir tutmak", en: "to equate" },
-      { de: "die Aussage", tr: "ifade", en: "statement" },
-      { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
-      { de: "der Text", tr: "metin", en: "text" },
-      { de: "rationell", tr: "tutumlu", en: "economical" },
-      { de: "vernünftig", tr: "makul", en: "reasonable" },
+      { de: "effektiv", tr: "etkili", en: "effective" },
+      { de: "vermuten", tr: "tahmin ettirmek", en: "to suggest" },
+      { de: "der Rufbus", tr: "çağrı üzerine gelen minibüs", en: "on-demand bus" },
+      { de: "der Landkreis", tr: "ilçe", en: "district" },
+      { de: "die Bilanz", tr: "bilanço", en: "assessment" },
+      { de: "täuschen", tr: "yanıltmak", en: "to deceive" },
+      { de: "der Linienbus", tr: "hat otobüsü", en: "scheduled bus" },
+      { de: "herausrechnen", tr: "hesaptan çıkarmak", en: "to factor out" },
+      { de: "der Vorgänger", tr: "önceki", en: "predecessor" },
+      { de: "die Stoßzeit", tr: "yoğun saat", en: "rush hour" },
+      { de: "der Kreistag", tr: "ilçe meclisi", en: "district council" },
+      { de: "abfragen", tr: "sormak", en: "to ask about" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "der Fahrgast", tr: "yolcu", en: "passenger" },
+      { de: "geboten", tr: "gerekli", en: "advisable" },
+      { de: "per", tr: "ile", en: "by" },
+      { de: "rund", tr: "yaklaşık", en: "about, roughly" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     minutes: 7,
     text:
-      "ZWEI WÖRTER, ZWEI BEHAUPTUNGEN\n\n" +
-      "„Er ist scheinbar krank“ und „Er ist anscheinend krank“ klingen fast gleich. Sie sagen das Gegenteil.\n\n" +
-      "„Anscheinend“ heißt: Dem Anschein nach ist es so, und vermutlich stimmt es. Die Sprecherin hat Hinweise und nimmt an, dass sie tragen.\n\n" +
-      "„Scheinbar“ heißt: Es sieht so aus, aber es ist nicht so. Wer „scheinbar krank“ sagt, unterstellt, dass jemand die Krankheit vorschiebt.\n\n" +
-      "Der Unterschied ist keine Feinheit. Er entscheidet, ob ein Satz eine Vermutung oder einen Vorwurf enthält. In einer Personalakte ist das ein juristisch relevanter Unterschied.\n\n" +
-      "Bemerkenswert ist, dass viele Muttersprachler die beiden ebenfalls vermischen — „scheinbar“ wird umgangssprachlich oft für „anscheinend“ verwendet. In geschriebener Sprache und in Prüfungen gilt die Unterscheidung gleichwohl.\n\n" +
-      "Ein ähnliches Paar: effektiv und effizient. Effektiv ist, was das Ziel erreicht. Effizient ist, was es mit geringem Aufwand erreicht. Eine Maßnahme kann effektiv und zugleich völlig ineffizient sein — sie wirkt, kostet aber das Zehnfache. Wer beides gleichsetzt, verliert genau die Aussage, auf die es in einem Bericht ankommt.\n\n" +
-      "Der Unterschied ist auch keine Frage der Interpretation. Er steht im Wörterbuch, und er steht in jedem Kommentar zum Arbeitsrecht.\n\n" +
-      "Ein drittes Paar gehört dazu, weil es dieselbe Falle stellt: „rational“ und „rationell“. Das erste heißt vernünftig begründet, das zweite wirtschaftlich, ohne Verschwendung. „Rationelle Argumente“ steht in mehr Berichten, als man denkt.\n\n" +
-      "Genauigkeit auf dieser Ebene wirkt kleinlich, solange nichts davon abhängt. Sie fällt erst auf, wenn ein Satz anders ausgelegt wird, als er gemeint war — und dann fällt sie zurück auf den, der ihn geschrieben hat.",
+      "RUFBUS AUF DEM LAND: DIE ERSTE BILANZ\n\n" +
+      "Seit einem Jahr fährt im Landkreis Uelzen ein Rufbus: Wer mitfahren will, bestellt ihn per App oder Telefon, und der Kleinbus holt die Fahrgäste an der Haustür ab. Nach zwölf Monaten legt der Landkreis nun eine erste Bilanz vor, und sie fällt anders aus, als der Anschein vermuten lässt.\n\n" +
+      "Auf den ersten Blick ist das Angebot scheinbar teuer. Pro Fahrgast kostet eine Fahrt den Landkreis rund 14 Euro, beim alten Linienbus waren es nur 6 Euro. Kritiker sprechen deshalb von Geldverschwendung.\n\n" +
+      "Die Zahl täuscht allerdings. Der alte Linienbus fuhr auf vielen Strecken fast leer; genutzt wurde er vor allem von Schülern, und die fahren inzwischen mit einem eigenen Schulbus. Rechnet man den Schulverkehr heraus, lag der Linienbus bei 17 Euro pro Fahrgast. Der Rufbus ist also nicht nur effektiv, weil er die Menschen tatsächlich dorthin bringt, wohin sie wollen, sondern auch effizienter als sein Vorgänger.\n\n" +
+      "Die Fahrgastzahlen sind deutlich gestiegen, von 900 auf 2.300 im Monat. Anscheinend sind es vor allem ältere Menschen, die das Angebot nutzen: für Arztbesuche, Einkäufe und Besuche bei Verwandten. Genaue Daten dazu fehlen jedoch, weil die App das Alter nicht abfragt. Bei der Interpretation der Zahlen ist deshalb Vorsicht geboten.\n\n" +
+      "Ein Problem bleibt die Wartezeit. Im Durchschnitt dauert es 25 Minuten, bis der Bus kommt, am Montagmorgen oft über eine Stunde. Scheinbar gibt es genug Fahrzeuge, doch zu Stoßzeiten sind alle sechs Busse gleichzeitig unterwegs.\n\n" +
+      "Der Kreistag will das Projekt verlängern und zwei weitere Busse anschaffen. Ob sich das rechnet, soll eine unabhängige Untersuchung klären, die mit größerer Genauigkeit erfasst, wer den Rufbus wofür nutzt.",
     questions: [
       {
-        text: "Was bedeutet „Er ist scheinbar krank“?",
+        text: "Warum ist der Rufbus nur scheinbar teuer?",
         options: [
-          "Vermutlich ist er krank",
-          "Es sieht so aus, aber er ist es nicht",
-          "Er ist sicher krank",
+          "Weil der alte Linienbus ohne Schulverkehr noch teurer war",
+          "Weil das Land die Kosten übernimmt",
+          "Weil die Fahrgäste mehr bezahlen",
         ],
-        answer: 1,
-        explain: "Suçlama içeriyor: hastalığı bahane ettiği ima ediliyor.",
+        answer: 0,
+        explain: "Okul taşımacılığı hesaptan çıkarılınca eski otobüs yolcu başına 17 avroya geliyordu.",
       },
       {
         kind: "gapfill",
-        text: "Dem Anschein nach stimmt es: Er ist ___ krank.",
+        text: "___ sind es vor allem ältere Menschen, die das Angebot nutzen.",
         options: [],
         answer: 0,
-        accept: ["anscheinend"],
+        accept: ["Anscheinend"],
         explain: "anscheinend: elde ipucu var ve taşıdığı varsayılıyor.",
       },
       {
-        text: "Worin unterscheiden sich effektiv und effizient?",
+        text: "Warum muss man am Montagmorgen oft lange warten?",
         options: [
-          "Effektiv erreicht das Ziel, effizient erreicht es mit geringem Aufwand",
-          "Sie bedeuten dasselbe",
-          "Effizient ist stärker als effektiv",
+          "Weil die App dann oft ausfällt",
+          "Weil zu Stoßzeiten alle Busse gleichzeitig unterwegs sind",
+          "Weil montags weniger Fahrer arbeiten",
         ],
-        answer: 0,
-        explain: "Bir önlem etkili ama son derece verimsiz olabiliyor.",
+        answer: 1,
+        explain: "„Scheinbar gibt es genug Fahrzeuge, doch zu Stoßzeiten sind alle sechs Busse gleichzeitig unterwegs.“",
       },
       {
         kind: "short_answer",
-        text: "Warum ist der Unterschied in einer Personalakte wichtig?",
+        text: "Wie haben sich die Fahrgastzahlen entwickelt?",
         options: [],
         answer: 0,
         accept: [
-          "Vermutung oder Vorwurf",
-          "er entscheidet, ob der Satz eine Vermutung oder einen Vorwurf enthält",
-          "es ist ein juristisch relevanter Unterschied",
+          "von 900 auf 2.300",
+          "deutlich gestiegen",
+          "sie sind gestiegen",
+          "von 900 auf 2300 im Monat",
         ],
-        explain: "Aynı cümle ya tahmin ya isnat oluyor.",
+        explain: "„Die Fahrgastzahlen sind deutlich gestiegen, von 900 auf 2.300 im Monat.“",
       },
       {
-        text: "Der Text sagt, Muttersprachler machen diesen Fehler nie.",
+        text: "Der Landkreis weiß genau, wie alt die Fahrgäste sind.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: konuşma dilinde sık karıştırılıyor, yazıda ayrım geçerli.",
+        explain: "„Genaue Daten dazu fehlen jedoch, weil die App das Alter nicht abfragt.“",
       },
     ],
   },
@@ -122,91 +125,91 @@ export const c1U18: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 18,
-    title: "Ein Inhalt, drei Töne",
-    genre: "guide",
-    intro: "Aynı bilgi üç metin türünde. Değişen ne, değişmeyen ne?",
+    title: "Drei Nachrichten zu einem Ausfall",
+    genre: "report",
+    intro: "Aynı sunucu kesintisi hakkında üç metin: ekibe, müşterilere ve basına. Kim neyi öğreniyor?",
     gloss: [
-      { de: "die Textsorte", tr: "metin türü", en: "text type" },
-      { de: "das Register", tr: "kayıt / dil düzeyi", en: "register" },
-      { de: "der Adressat", tr: "muhatap", en: "addressee" },
-      { de: "umschreiben", tr: "yeniden yazmak", en: "to rewrite" },
-      { de: "herablassend", tr: "tepeden bakan", en: "condescending" },
-      { de: "überheblich", tr: "kibirli", en: "arrogant" },
-      { de: "die Tonlage", tr: "ton", en: "tone" },
-      { de: "anpassen", tr: "ayarlamak", en: "to adjust" },
       { de: "rund", tr: "yaklaşık", en: "about, roughly" },
       { de: "erweitern", tr: "genişletmek", en: "to expand" },
-      { de: "also", tr: "yani", en: "so" },
+      { de: "der Ausfall", tr: "kesinti", en: "outage" },
+      { de: "das Speicherleck", tr: "bellek sızıntısı", en: "memory leak" },
+      { de: "einspielen", tr: "yüklemek", en: "to install" },
+      { de: "die Nachbesprechung", tr: "değerlendirme toplantısı", en: "debriefing" },
+      { de: "sichern", tr: "yedeklemek", en: "to back up" },
+      { de: "fehlerhaft", tr: "hatalı", en: "faulty" },
+      { de: "überlasten", tr: "aşırı yüklemek", en: "to overload" },
+      { de: "der Ausgleich", tr: "telafi", en: "compensation" },
+      { de: "die Grundgebühr", tr: "temel ücret", en: "base fee" },
+      { de: "gutschreiben", tr: "hesaba geçirmek", en: "to credit" },
+      { de: "uneingeschränkt", tr: "kısıtlamasız", en: "without restriction" },
+      { de: "gewährleistet", tr: "güvence altında", en: "guaranteed" },
       { de: "die Information", tr: "bilgi", en: "information" },
-      { de: "außen", tr: "dıştan", en: "on the outside" },
-      { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "innen", tr: "içte", en: "on the inside" },
-      { de: "einzig", tr: "tek", en: "single" },
+      { de: "innerhalb", tr: "içinde", en: "within" },
     ],
     minutes: 7,
     text:
-      "DREIMAL DIESELBE STÖRUNG\n\n" +
-      "Ein Serverausfall, vier Stunden, zweitausend Nutzer betroffen. Drei Texte.\n\n" +
-      "Die interne Meldung: „Ausfall Node 3, 09:12–13:04, Ursache Speicherleck im Cache-Dienst. Fix eingespielt, Monitoring angepasst.“ Kein vollständiger Satz, keine Entschuldigung. Der Adressat kennt das System und braucht Daten.\n\n" +
-      "Die Kundenmitteilung: „Am Dienstagvormittag war unser Dienst rund vier Stunden nicht erreichbar. Die Ursache lag bei uns; wir haben sie behoben und die Überwachung erweitert, damit sie sich nicht wiederholt. Für die Unterbrechung entschuldigen wir uns.“ Ganze Sätze, Verantwortung benannt, keine technischen Details.\n\n" +
-      "Die Pressemeldung: „Der Dienst ist seit Dienstagnachmittag wieder uneingeschränkt verfügbar, nachdem es am Vormittag zu einer technischen Störung gekommen war.“ Ein einziger Satz, und auffällig: Der Ausfall steht im Nebensatz, die Wiederherstellung im Hauptsatz.\n\n" +
-      "Wer denselben Vorgang für eine andere Textsorte umschreibt, ändert also nicht den Stil, sondern die Auswahl.\n\n" +
-      "Der Inhalt ist derselbe. Was sich ändert, ist der Adressat — und mit ihm, welche Information tragend ist.\n\n" +
-      "Zwei Fehler sind typisch. Der erste: die interne Tonlage nach außen tragen. Ein Kunde, der „Speicherleck im Cache-Dienst“ liest, fühlt sich nicht informiert, sondern abgefertigt. Der zweite ist subtiler: die Kundensprache nach innen tragen. Wer im Team schreibt „Wir bedauern die entstandenen Unannehmlichkeiten“, klingt nicht höflich, sondern überheblich — als spräche er nicht mit Kollegen, sondern über sie.\n\n" +
-      "Am schnellsten prüft man das, indem man sich den Leser vorstellt und fragt, was er nach dem ersten Satz wissen will.\n\n" +
-      "Register ist deshalb keine Frage der Höflichkeit, sondern der Adressierung. Zu hoch gegriffen wirkt herablassend, zu tief gegriffen respektlos. Beides sagt dasselbe: Ich habe nicht daran gedacht, wer das liest.",
+      "DREI NACHRICHTEN ZUM AUSFALL AM DIENSTAG\n\n" +
+      "1. Interne Meldung im Technikkanal, Dienstag, 13:20 Uhr\n" +
+      "Ausfall Node 3, 09:12 bis 13:04 Uhr. Ursache: Speicherleck im Cache-Dienst nach dem Update vom Montagabend. Korrektur eingespielt, Überwachung angepasst. Betroffen rund 2.000 Nutzer. Nachbesprechung Mittwoch 10 Uhr, Raum 2. Bitte Logs bis dahin sichern.\n\n" +
+      "2. E-Mail an die betroffenen Kundinnen und Kunden, Dienstag, 16:00 Uhr\n" +
+      "Liebe Kundin, lieber Kunde,\n" +
+      "am Dienstagvormittag war unser Dienst rund vier Stunden nicht erreichbar. Die Ursache lag bei uns: Ein fehlerhaftes Update hatte einen Teil unserer Server überlastet. Wir haben den Fehler behoben und die Überwachung erweitert, damit sich so etwas nicht wiederholt. Ihre Daten waren zu keinem Zeitpunkt in Gefahr. Für die Unterbrechung entschuldigen wir uns. Als Ausgleich schreiben wir Ihnen einen Monat Grundgebühr gut; Sie müssen dafür nichts tun.\n" +
+      "Ihr Kundenservice\n\n" +
+      "3. Pressemitteilung, Mittwoch, 9:00 Uhr\n" +
+      "Cloudia stellt Dienst nach kurzer Störung vollständig wieder her. Nach einer technischen Störung am Dienstagvormittag, von der rund zwei Prozent der Nutzer betroffen waren, steht der Dienst von Cloudia wieder uneingeschränkt zur Verfügung. Die Ursache wurde innerhalb weniger Stunden gefunden und behoben. „Die Sicherheit der Kundendaten war jederzeit gewährleistet“, sagt Geschäftsführerin Anja Lorenz. Das Unternehmen hat zusätzliche Kontrollen für künftige Updates eingeführt.",
     questions: [
       {
-        text: "Was ist an der Pressemeldung auffällig?",
+        text: "Wie lange war der Dienst nicht erreichbar?",
         options: [
-          "Sie enthält technische Details",
-          "Der Ausfall steht im Nebensatz, die Wiederherstellung im Hauptsatz",
-          "Sie entschuldigt sich am ausführlichsten",
+          "Einen ganzen Tag",
+          "Rund vier Stunden",
+          "Wenige Minuten",
         ],
         answer: 1,
-        explain: "Ağırlık cümle yapısıyla kaydırılıyor.",
+        explain: "İç bildirime göre kesinti 09:12 ile 13:04 arasında, yani yaklaşık dört saat sürdü.",
       },
       {
         kind: "gapfill",
-        text: "Das ___ richtet sich nach dem Adressaten.",
+        text: "Als Ausgleich schreiben wir Ihnen einen Monat ___ gut.",
         options: [],
         answer: 0,
-        accept: ["Register"],
-        explain: "Kayıt nezaket meselesi değil, muhatap meselesi.",
+        accept: ["Grundgebühr"],
+        explain: "Müşterilere telafi olarak bir aylık temel ücret hesaplarına geçiriliyor.",
       },
       {
-        text: "Warum wirkt Kundensprache im Team überheblich?",
+        text: "Welche Information steht nur in der internen Meldung?",
         options: [
-          "Sie ist zu lang",
-          "Es klingt, als spräche man über die Kollegen statt mit ihnen",
-          "Sie enthält Fremdwörter",
+          "Dass die Daten sicher waren",
+          "Der Termin der Nachbesprechung",
+          "Eine Entschuldigung",
         ],
         answer: 1,
-        explain: "Fazla yüksek kayıt tepeden bakma etkisi yaratıyor.",
+        explain: "„Nachbesprechung Mittwoch 10 Uhr, Raum 2.“",
       },
       {
         kind: "short_answer",
-        text: "Was sagen laut Text beide Register-Fehler gemeinsam aus?",
+        text: "Was war die Ursache des Ausfalls?",
         options: [],
         answer: 0,
         accept: [
-          "man hat den Leser vergessen", "ich habe nicht daran gedacht, wer das liest",
-          "dass man den Adressaten nicht bedacht hat",
-          "man hat nicht an den Leser gedacht",
+          "ein fehlerhaftes Update",
+          "ein Speicherleck",
+          "Speicherleck nach einem Update",
+          "das Update vom Montagabend",
         ],
-        explain: "Fazla yüksek de fazla alçak da aynı ihmali gösteriyor.",
+        explain: "Pazartesi akşamki güncelleme önbellek hizmetinde bellek sızıntısına yol açtı.",
       },
       {
         kind: "short_answer",
-        text: "Warum enthält die interne Meldung keine ganzen Sätze?",
+        text: "Was hat das Unternehmen laut Pressemitteilung eingeführt?",
         options: [],
         answer: 0,
         accept: [
-          "die Leser kennen das System",
-          "der Adressat kennt das System und braucht Daten",
-          "es werden nur Daten gebraucht",
+          "zusätzliche Kontrollen",
+          "zusätzliche Kontrollen für Updates",
+          "mehr Kontrollen",
         ],
-        explain: "Orada tam cümle kurmak zaman kaybı, nezaket değil.",
+        explain: "„Das Unternehmen hat zusätzliche Kontrollen für künftige Updates eingeführt.“",
       },
     ],
   },
@@ -377,7 +380,7 @@ export const c1U18: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 18,
-    title: "Doğru sözcük, doğru iddia",
+    title: "Aus dem Teamalltag",
     genre: "grammar",
     intro: "Görünüş bildiren iki zarf, imtiyaz edatı ve gerçek dışı kıyas.",
     gloss: [
@@ -424,7 +427,7 @@ export const c1U18: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 18,
-    title: "Aynı olay, iki muhatap",
+    title: "Eine Störung, zwei Meldungen",
     genre: "formal",
     intro: "Bir arıza, iki metin: ekip içi ve müşteriye.",
     gloss: [

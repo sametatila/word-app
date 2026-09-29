@@ -258,7 +258,7 @@ export const a1U18: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 18,
-    title: "können: yetenek mi, imkân mı?",
+    title: "Was ich kann",
     genre: "grammar",
     intro: "„können“ fiilinin iki kullanımını yaz.",
     gloss: [

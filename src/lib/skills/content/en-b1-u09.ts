@@ -37,51 +37,45 @@ export const enB1U09: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 9,
-    title: "Two machines on one table",
-    genre: "opinion",
-    intro: "İki seçenek, iki bağlaç. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
+    title: "Two coffee machines compared",
+    genre: "review",
+    intro: "İki kahve makinesi karşılaştırılıyor. Yazar sonunda neden birini seçiyor?",
     gloss: [
-      { de: "surprise", tr: "sürpriz" },
-      { de: "side by side", tr: "yan yana" },
       { de: "in the end", tr: "sonunda" },
-      { de: "sentence", tr: "cümle" },
-      { de: "sounds", tr: "kulağa geliyor" },
-      { de: "anywhere", tr: "herhangi bir yerde" },
-      { de: "equal weight", tr: "eşit ağırlık" },
-      { de: "concede", tr: "ödün vermek" },
-      { de: "the test", tr: "ölçüt" },
-      { de: "halves", tr: "yarılar" },
-      { de: "stand", tr: "durmak" },
       { de: "myself", tr: "kendim" },
-      { de: "did not expect", tr: "beklemediğin" },
+      { de: "matters", tr: "önemli" },
+      { de: "a water tank", tr: "su deposu" },
+      { de: "metal", tr: "metal" },
+      { de: "tested", tr: "denedim" },
+      { de: "beans", tr: "kahve çekirdekleri" },
     ],
     minutes: 7,
     text:
-      "Two machines on one table. But first, two example sentences that have nothing to do with them: they look the same and are not.\n" +
-      "Although it is cheaper, the quality is worse. That sentence has a surprise in it. Cheaper usually sounds good; the second half takes it away. „Although“ always works like that — it puts something you did not expect after something you did.\n" +
-      "This one is small, whereas that one is big. No surprise anywhere. Two facts side by side, equal weight, and the reader is not being warned about anything. „Whereas“ compares; it does not concede.\n" +
-      "The test is simple. Take the two halves and ask: does the second one take something back? If yes, you want „although“. If the two halves just stand next to each other, you want „whereas“.\n" +
-      "In the end I preferred the first one, and not for the reason I expected. Both have the same quality. Both cost about the same. The difference was one button, which is on the front of one machine and behind the screen on the other.\n" +
+      "I needed a new coffee machine, and after two weeks of reading I had two options on the kitchen table: the Brio and the Lumo.\n" +
+      "The Brio is small, whereas the Lumo is almost twice as big. The Brio makes one cup at a time, whereas the Lumo can make four. For a family that matters. For me, living alone, it did not.\n" +
+      "Although the Lumo is cheaper, its quality is worse. The plastic feels thin, and after a week the water tank was already leaking a little. The Brio costs forty euros more, although it looks simpler. It is made of metal and it feels like it will last ten years.\n" +
+      "Both make good coffee. I tested them with the same beans every morning for a week, and my neighbor, who drinks more coffee than anybody I know, tasted both without knowing which was which. She preferred the Brio four times out of five.\n" +
+      "In the end I decided on the Brio, and not for the reason I expected. The difference was one button: on the Brio it is on the front, whereas on the Lumo it is behind the screen, and I pressed the wrong one every single morning.\n" +
       "I compare things for a living and I still decided on a button. That is worth knowing about myself.",
     questions: [
       {
-        text: "What does „although“ always do?",
-        options: ["it puts a surprise in the second half", "it compares two facts", "it gives a reason"],
+        text: "Which machine can make four cups?",
+        options: ["the Lumo", "the Brio", "both"],
         answer: 0,
-        explain: "„it puts something you did not expect after something you did.“",
+        explain: "„The Brio makes one cup at a time, whereas the Lumo can make four.“",
       },
       {
-        text: "What is the test?",
-        options: ["does the second half take something back", "is the sentence long", "is the second half a fact"],
+        text: "What was the problem with the Lumo after a week?",
+        options: ["The water tank was leaking.", "The screen was broken.", "The coffee was cold."],
         answer: 0,
-        explain: "„Take the two halves and ask: does the second one take something back?“",
+        explain: "„after a week the water tank was already leaking a little.“",
       },
       {
         kind: "truefalse",
-        text: "The two machines have the same quality.",
+        text: "The neighbor preferred the Brio most of the time.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Both have the same quality. Both cost about the same.“",
+        explain: "„She preferred the Brio four times out of five.“",
       },
       {
         kind: "gapfill",
@@ -89,7 +83,7 @@ export const enB1U09: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["button"],
-        explain: "„The difference was one button, which is on the front of one machine…“",
+        explain: "„The difference was one button: on the Brio it is on the front…“",
       },
       {
         kind: "order",
@@ -97,16 +91,16 @@ export const enB1U09: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Although it is cheaper, the quality is worse.",
-          "This one is small, whereas that one is big.",
-          "The test is simple.",
-          "In the end I preferred the first one.",
+          "The Brio is small, whereas the Lumo is almost twice as big.",
+          "Although the Lumo is cheaper, its quality is worse.",
+          "The neighbor tasted both machines.",
+          "In the end I decided on the Brio.",
         ],
-        explain: "Önce iki örnek, sonra ölçüt, en son karar.",
+        explain: "Önce boyut, sonra fiyat ve kalite, sonra tadım, en son karar.",
       },
       {
         kind: "short_answer",
-        text: "Why did the writer choose the first machine?",
+        text: "Why did the writer choose the Brio?",
         options: [],
         answer: 0,
         accept: ["the button", "one button", "where the button is"],

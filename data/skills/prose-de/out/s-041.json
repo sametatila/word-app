@@ -5,129 +5,9 @@
   "de": "Ein Blick zurück. Welches Ereignis kam zuerst?"
  },
  {
-  "tr": "İki koşul ve iki kural. Hangisi gerçek?",
-  "kind": "intro",
-  "de": "Zwei Bedingungen und zwei Regeln. Welche ist real?"
- },
- {
-  "tr": "Edilgen ve aktarma. Fail nerede duruyor?",
-  "kind": "intro",
-  "de": "Passiv und Wiedergabe. Wo steht der Urheber?"
- },
- {
-  "tr": "İki yaşam yan yana. Hangi bağlaç isim alıyor?",
-  "kind": "intro",
-  "de": "Zwei Leben nebeneinander. Welches Bindewort nimmt ein Substantiv?"
- },
- {
-  "tr": "Karşıtlığın üç biçimi ve duygunun iki zamanı.",
-  "kind": "intro",
-  "de": "Drei Formen des Gegensatzes und zwei Zeiten des Gefühls."
- },
- {
-  "tr": "Kapıdaki üç kural. Hangisi dünü anlatabiliyor?",
-  "kind": "intro",
-  "de": "Drei Regeln an der Tür. Welche kann von gestern sprechen?"
- },
- {
-  "tr": "Amaç, sonuç, ödün. Hangi bağlaç nereye gidiyor?",
-  "kind": "intro",
-  "de": "Zweck, Folge, Einräumung. Welches Bindewort gehört wohin?"
- },
- {
-  "tr": "Üç gelecek biçimi, tek kişi. Hangisi ayarlanmış?",
-  "kind": "intro",
-  "de": "Drei Zukunftsformen, eine Person. Welche ist fest vereinbart?"
- },
- {
-  "tr": "Aktarılan üç cümle. Hangisinde „whether“ geliyor?",
-  "kind": "intro",
-  "de": "Drei wiedergegebene Sätze. In welchem steht „whether“?"
- },
- {
-  "tr": "Bir korkuyla yüzleşme. Hangi fiil mastar istiyor?",
-  "kind": "intro",
-  "de": "Sich einer Angst stellen. Welches Verb verlangt den Infinitiv?"
- },
- {
-  "tr": "Şey, kişi, yer. Hangi adıl hangi boşluğa giriyor?",
-  "kind": "intro",
-  "de": "Sache, Person, Ort. Welches Pronomen passt in welche Lücke?"
- },
- {
-  "tr": "Geçmişin iki katmanı. Hangi cümlede „had“ zorunlu?",
-  "kind": "intro",
-  "de": "Zwei Schichten der Vergangenheit. In welchem Satz ist „had“ Pflicht?"
- },
- {
-  "tr": "Üç kural, üç ayrı iş. Hangisi geçmişe gidebiliyor?",
-  "kind": "intro",
-  "de": "Drei Regeln, drei verschiedene Aufgaben. Welche kann in die Vergangenheit?"
- },
- {
-  "tr": "Biri üzgün. Hangi kural kaldırıyor, hangisi koyuyor?",
-  "kind": "intro",
-  "de": "Jemand ist traurig. Welche Regel nimmt weg, welche setzt eine?"
- },
- {
-  "tr": "Üç ilgi cümlesi. Hangi sözcük hangi boşluğa gidiyor?",
-  "kind": "intro",
-  "de": "Drei Relativsätze. Welches Wort gehört in welche Lücke?"
- },
- {
-  "tr": "Üç bağlaç, üç ayrı iş. Hangisi yalnız geriye bakıyor?",
-  "kind": "intro",
-  "de": "Drei Bindewörter, drei Aufgaben. Welches blickt nur zurück?"
- },
- {
-  "tr": "Üç edilgen, üç ayrı iş. Hangisinde fail geri geliyor?",
-  "kind": "intro",
-  "de": "Drei Passivsätze, drei Aufgaben. In welchem kehrt der Urheber zurück?"
- },
- {
-  "tr": "Duyguyu adlandırmak. Hangi cümle çizgi, hangisi nokta?",
-  "kind": "intro",
-  "de": "Ein Gefühl benennen. Welcher Satz ist eine Linie, welcher ein Punkt?"
- },
- {
-  "tr": "İki koşul yan yana. Hangisi gerçek olmayanı anlatıyor?",
-  "kind": "intro",
-  "de": "Zwei Bedingungen nebeneinander. Welche spricht vom Irrealen?"
- },
- {
-  "tr": "İki kişi bir nehri konuşuyor. Hangi fiil „-ing“ istiyor?",
-  "kind": "intro",
-  "de": "Zwei Leute reden über einen Fluss. Welches Verb verlangt „-ing“?"
- },
- {
-  "tr": "Aktarma ve fiil sonrası biçim. Hangi fiil mastar istiyor?",
-  "kind": "intro",
-  "de": "Wiedergabe und die Form nach dem Verb. Welches Verb verlangt den Infinitiv?"
- },
- {
-  "tr": "Aktarılan üç cümle, bir dostluk. Hangisinde sıra düzleşiyor?",
-  "kind": "intro",
-  "de": "Drei wiedergegebene Sätze, eine Freundschaft. In welchem wird die Wortstellung gerade?"
- },
- {
-  "tr": "Yol yapılmadan önce burası neydi? Hangi cümlede „had“ gerekiyor?",
-  "kind": "intro",
-  "de": "Was war hier, bevor die Straße gebaut wurde? In welchem Satz braucht man „had“?"
- },
- {
-  "tr": "Amaç, sonuç, ödün, en sonda üçünün adı.",
-  "kind": "explain",
-  "de": "Zweck, Folge, Einräumung; ganz am Ende ihre Namen."
- },
- {
   "tr": "Süre: pazartesi başladı ve hâlâ sürüyor.",
   "kind": "explain",
   "de": "Dauer: es begann am Montag und hält bis heute an."
- },
- {
-  "tr": "Şey, kişi, yer; en sonda sınamanın kendisi.",
-  "kind": "explain",
-  "de": "Sache, Person, Ort; ganz am Ende die Probe selbst."
  },
  {
   "tr": "„avoid“ „-ing“ istiyor; „avoid to walk“ olmaz.",
@@ -135,19 +15,9 @@
   "de": "„avoid“ verlangt „-ing“; „avoid to walk“ geht nicht."
  },
  {
-  "tr": "Önce kuralı taşıyan cümle, sonra takvim sırası.",
-  "kind": "explain",
-  "de": "Zuerst der Satz mit der Regel, dann die Reihenfolge im Kalender."
- },
- {
   "tr": "„give up“ „-ing“ istiyor; „give up to buy“ olmaz.",
   "kind": "explain",
   "de": "„give up“ verlangt „-ing“; „give up to buy“ geht nicht."
- },
- {
-  "tr": "Failsiz, failli, kipli; en sonda kuralın kendisi.",
-  "kind": "explain",
-  "de": "Ohne Urheber, mit Urheber, mit Modalverb; am Ende die Regel selbst."
  },
  {
   "tr": "Önce olan iş „had“ + üçüncü hâl; soru sonra geliyor.",
@@ -155,34 +25,9 @@
   "de": "Das Frühere ist „had“ + dritte Form; die Frage kommt danach."
  },
  {
-  "tr": "Önce kuralın iki örneği, sonra vadinin kendi hikâyesi.",
-  "kind": "explain",
-  "de": "Zuerst zwei Beispiele für die Regel, dann die Geschichte des Tals."
- },
- {
-  "tr": "Gerçek koşul, gerçek olmayan koşul, „unless“, en sonda yargı.",
-  "kind": "explain",
-  "de": "Reale Bedingung, irreale Bedingung, „unless“, am Ende das Urteil."
- },
- {
-  "tr": "Gereklilik, gerekliliğin yokluğu, yasak, en sonda geçmiş biçim.",
-  "kind": "explain",
-  "de": "Pflicht, das Fehlen der Pflicht, Verbot, am Ende die Vergangenheitsform."
- },
- {
-  "tr": "Metnin kendi sırası: cümlecik, isim, rapor dili, en sonda kural.",
-  "kind": "explain",
-  "de": "Die Reihenfolge des Textes: Teilsatz, Substantiv, Berichtssprache, am Ende die Regel."
- },
- {
   "tr": "Aktarılan soruda sıra düzleşiyor; „whether“ devrik sıranın işini üstleniyor.",
   "kind": "explain",
   "de": "In der wiedergegebenen Frage wird die Stellung gerade; „whether“ übernimmt die Arbeit der Umstellung."
- },
- {
-  "tr": "cümleler",
-  "kind": "gloss.tr",
-  "de": "Sätze"
  },
  {
   "tr": "gibi geliyor",
@@ -190,19 +35,9 @@
   "de": "klingt wie"
  },
  {
-  "tr": "mastar",
-  "kind": "gloss.tr",
-  "de": "Infinitiv"
- },
- {
   "tr": "ikisinden biri",
   "kind": "gloss.tr",
   "de": "eines von beiden"
- },
- {
-  "tr": "de/da",
-  "kind": "gloss.tr",
-  "de": "auch nicht"
  },
  {
   "tr": "süs",
@@ -210,49 +45,14 @@
   "de": "Schmuck"
  },
  {
-  "tr": "isim",
-  "kind": "gloss.tr",
-  "de": "Substantiv"
- },
- {
-  "tr": "biçim",
-  "kind": "gloss.tr",
-  "de": "Form"
- },
- {
   "tr": "soldu",
   "kind": "gloss.tr",
   "de": "verblasste"
  },
  {
-  "tr": "tuzak",
-  "kind": "gloss.tr",
-  "de": "Falle"
- },
- {
-  "tr": "ünite",
-  "kind": "gloss.tr",
-  "de": "Einheit"
- },
- {
-  "tr": "geriye",
-  "kind": "gloss.tr",
-  "de": "zurück"
- },
- {
-  "tr": "cümlecik",
-  "kind": "gloss.tr",
-  "de": "Teilsatz"
- },
- {
   "tr": "öğrenildi",
   "kind": "gloss.tr",
   "de": "gelernt"
- },
- {
-  "tr": "zaman kipi",
-  "kind": "gloss.tr",
-  "de": "Zeitform"
  },
  {
   "tr": "tereddüt etmek",
@@ -288,16 +88,6 @@
   "tr": "imza",
   "kind": "gloss.tr",
   "de": "Unterschrift"
- },
- {
-  "tr": "ödün",
-  "kind": "gloss.tr",
-  "de": "Einräumung"
- },
- {
-  "tr": "özne",
-  "kind": "gloss.tr",
-  "de": "Subjekt"
  },
  {
   "tr": "uyku",
@@ -350,16 +140,6 @@
   "de": "bequem"
  },
  {
-  "tr": "seçen",
-  "kind": "gloss.tr",
-  "de": "auswählend"
- },
- {
-  "tr": "seçim",
-  "kind": "gloss.tr",
-  "de": "Wahl"
- },
- {
   "tr": "sonuç",
   "kind": "gloss.tr",
   "de": "Folge"
@@ -375,49 +155,14 @@
   "de": "Bindewort"
  },
  {
-  "tr": "bitmiş",
-  "kind": "gloss.tr",
-  "de": "abgeschlossen"
- },
- {
   "tr": "dosyam",
   "kind": "gloss.tr",
   "de": "meine Akte"
  },
  {
-  "tr": "en zor",
-  "kind": "gloss.tr",
-  "de": "am schwersten"
- },
- {
   "tr": "endişe",
   "kind": "gloss.tr",
   "de": "Sorge"
- },
- {
-  "tr": "izinli",
-  "kind": "gloss.tr",
-  "de": "erlaubt"
- },
- {
-  "tr": "karşıt",
-  "kind": "gloss.tr",
-  "de": "Gegenteil"
- },
- {
-  "tr": "mantık",
-  "kind": "gloss.tr",
-  "de": "Logik"
- },
- {
-  "tr": "önceki",
-  "kind": "gloss.tr",
-  "de": "früher"
- },
- {
-  "tr": "sınama",
-  "kind": "gloss.tr",
-  "de": "Probe"
  },
  {
   "tr": "taşıdı",
@@ -430,19 +175,9 @@
   "de": "auf"
  },
  {
-  "tr": "yaygın",
-  "kind": "gloss.tr",
-  "de": "häufig"
- },
- {
   "tr": "böylesi",
   "kind": "gloss.tr",
   "de": "solch"
- },
- {
-  "tr": "çıkarım",
-  "kind": "gloss.tr",
-  "de": "Schluss"
  },
  {
   "tr": "çizelge",
@@ -450,29 +185,9 @@
   "de": "Tabelle"
  },
  {
-  "tr": "duyulan",
-  "kind": "gloss.tr",
-  "de": "gehört"
- },
- {
-  "tr": "eyleyen",
-  "kind": "gloss.tr",
-  "de": "Urheber"
- },
- {
   "tr": "kapanan",
   "kind": "gloss.tr",
   "de": "schließend"
- },
- {
-  "tr": "olaylar",
-  "kind": "gloss.tr",
-  "de": "Ereignisse"
- },
- {
-  "tr": "önemsiz",
-  "kind": "gloss.tr",
-  "de": "unwichtig"
  },
  {
   "tr": "seçildi",
@@ -495,21 +210,6 @@
   "de": "erlassen"
  },
  {
-  "tr": "belirteç",
-  "kind": "gloss.tr",
-  "de": "Merkmal"
- },
- {
-  "tr": "daha çok",
-  "kind": "gloss.tr",
-  "de": "eher"
- },
- {
-  "tr": "dinleyen",
-  "kind": "gloss.tr",
-  "de": "zuhörend"
- },
- {
   "tr": "fotoğraf",
   "kind": "gloss.tr",
   "de": "Foto"
@@ -520,44 +220,14 @@
   "de": "unterschrieb"
  },
  {
-  "tr": "kapsıyor",
-  "kind": "gloss.tr",
-  "de": "umfasst"
- },
- {
-  "tr": "okunuyor",
-  "kind": "gloss.tr",
-  "de": "liest sich"
- },
- {
-  "tr": "olanaklı",
-  "kind": "gloss.tr",
-  "de": "möglich"
- },
- {
-  "tr": "ölçülmüş",
-  "kind": "gloss.tr",
-  "de": "gemessen"
- },
- {
   "tr": "sandalye",
   "kind": "gloss.tr",
   "de": "Stuhl"
  },
  {
-  "tr": "seçimlik",
-  "kind": "gloss.tr",
-  "de": "wahlfrei"
- },
- {
   "tr": "solmuştu",
   "kind": "gloss.tr",
   "de": "war verblasst"
- },
- {
-  "tr": "sonradan",
-  "kind": "gloss.tr",
-  "de": "danach"
  },
  {
   "tr": "söylemek",
@@ -570,19 +240,9 @@
   "de": "Schuld"
  },
  {
-  "tr": "şaşırmış",
-  "kind": "gloss.tr",
-  "de": "verwirrt"
- },
- {
   "tr": "tartışma",
   "kind": "gloss.tr",
   "de": "Debatte"
- },
- {
-  "tr": "ulaşıyor",
-  "kind": "gloss.tr",
-  "de": "reicht"
  },
  {
   "tr": "-e rağmen",
@@ -610,16 +270,6 @@
   "de": "von Anfang an"
  },
  {
-  "tr": "iki biçim",
-  "kind": "gloss.tr",
-  "de": "beide Formen"
- },
- {
-  "tr": "karşıtlar",
-  "kind": "gloss.tr",
-  "de": "Gegensätze"
- },
- {
   "tr": "olmadıkça",
   "kind": "gloss.tr",
   "de": "wenn nicht"
@@ -640,34 +290,9 @@
   "de": "streiten"
  },
  {
-  "tr": "yaratıyor",
-  "kind": "gloss.tr",
-  "de": "schafft"
- },
- {
   "tr": "ayarlanmış",
   "kind": "gloss.tr",
   "de": "kalibriert worden"
- },
- {
-  "tr": "bilinmeyen",
-  "kind": "gloss.tr",
-  "de": "unbekannt"
- },
- {
-  "tr": "daha büyük",
-  "kind": "gloss.tr",
-  "de": "größer"
- },
- {
-  "tr": "daha soğuk",
-  "kind": "gloss.tr",
-  "de": "kühler"
- },
- {
-  "tr": "edilgenler",
-  "kind": "gloss.tr",
-  "de": "Passivsätze"
  },
  {
   "tr": "fısıldamak",
@@ -675,19 +300,9 @@
   "de": "flüstern"
  },
  {
-  "tr": "gereklilik",
-  "kind": "gloss.tr",
-  "de": "Pflicht"
- },
- {
   "tr": "gerekmiyor",
   "kind": "gloss.tr",
   "de": "nicht nötig"
- },
- {
-  "tr": "kaldırıyor",
-  "kind": "gloss.tr",
-  "de": "nimmt weg"
  },
  {
   "tr": "kapanmıştı",
@@ -698,11 +313,6 @@
   "tr": "kutlanmalı",
   "kind": "gloss.tr",
   "de": "muss gefeiert werden"
- },
- {
-  "tr": "olumsuzluk",
-  "kind": "gloss.tr",
-  "de": "Verneinung"
  },
  {
   "tr": "öte yandan",
@@ -725,39 +335,14 @@
   "de": "richtig, gründlich"
  },
  {
-  "tr": "yol alıyor",
-  "kind": "gloss.tr",
-  "de": "reist"
- },
- {
   "tr": "alışılmadık",
   "kind": "gloss.tr",
   "de": "ungewöhnlich"
  },
  {
-  "tr": "devrik sıra",
-  "kind": "gloss.tr",
-  "de": "Umstellung"
- },
- {
-  "tr": "işe yarıyor",
-  "kind": "gloss.tr",
-  "de": "taugt"
- },
- {
   "tr": "kesmişlerdi",
   "kind": "gloss.tr",
   "de": "hatten gefällt"
- },
- {
-  "tr": "yöneltilmiş",
-  "kind": "gloss.tr",
-  "de": "gerichtet"
- },
- {
-  "tr": "bağlayıcılar",
-  "kind": "gloss.tr",
-  "de": "Bindewörter"
  },
  {
   "tr": "bana sarılan",
@@ -768,16 +353,6 @@
   "tr": "beni ağlatan",
   "kind": "gloss.tr",
   "de": "der mich zum Weinen brachte"
- },
- {
-  "tr": "birebir aynı",
-  "kind": "gloss.tr",
-  "de": "völlig gleich"
- },
- {
-  "tr": "kabul ediyor",
-  "kind": "gloss.tr",
-  "de": "räumt ein"
  },
  {
   "tr": "sonuç olarak",
@@ -800,19 +375,9 @@
   "de": "hatten bewahrt"
  },
  {
-  "tr": "sözcük sırası",
-  "kind": "gloss.tr",
-  "de": "Wortstellung"
- },
- {
   "tr": "yalan söyledi",
   "kind": "gloss.tr",
   "de": "log"
- },
- {
-  "tr": "zaman kipleri",
-  "kind": "gloss.tr",
-  "de": "Zeitformen"
  },
  {
   "tr": "zorunda kaldı",
@@ -820,24 +385,9 @@
   "de": "musste"
  },
  {
-  "tr": "aradaki boşluk",
-  "kind": "gloss.tr",
-  "de": "der Abstand dazwischen"
- },
- {
-  "tr": "ayakta kalıyor",
-  "kind": "gloss.tr",
-  "de": "bleibt erhalten"
- },
- {
   "tr": "gerektiği gibi",
   "kind": "gloss.tr",
   "de": "wie es sich gehört"
- },
- {
-  "tr": "hemen ardından",
-  "kind": "gloss.tr",
-  "de": "direkt danach"
  },
  {
   "tr": "ikisi de değil",
@@ -875,19 +425,9 @@
   "de": "sie aufheitern"
  },
  {
-  "tr": "bir basamak geriye",
-  "kind": "gloss.tr",
-  "de": "eine Stufe zurück"
- },
- {
   "tr": "kullanmayı bıraktı",
   "kind": "gloss.tr",
   "de": "hat aufgehört zu benutzen"
- },
- {
-  "tr": "dışarıda bırakılmış",
-  "kind": "gloss.tr",
-  "de": "weggelassen"
  },
  {
   "tr": "yapmamamızı söyledi",
@@ -895,24 +435,9 @@
   "de": "sagte uns, wir sollten es nicht tun"
  },
  {
-  "tr": "birbirine karıştırmak",
-  "kind": "gloss.tr",
-  "de": "verwechseln"
- },
- {
   "tr": "olup olmadığını sordu",
   "kind": "gloss.tr",
   "de": "fragte, ob"
- },
- {
-  "tr": "öyleymiş gibi yapıyor",
-  "kind": "gloss.tr",
-  "de": "tut so als ob"
- },
- {
-  "tr": "önden",
-  "kind": "gloss.tr",
-  "de": "voraus"
  },
  {
   "tr": "vites",

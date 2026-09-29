@@ -5,26 +5,6 @@
   "de": "Wann reicht ein kohärenter Plan nicht aus?"
  },
  {
-  "tr": "Seviyenin kapanışı: konum ve yokluk.",
-  "kind": "intro",
-  "de": "Der Abschluss des Niveaus: Stellung und Abwesenheit."
- },
- {
-  "tr": "Sayılabilirlik ve defterlerin iki fiili.",
-  "kind": "intro",
-  "de": "Die Zählbarkeit und die zwei Verben der Bücher."
- },
- {
-  "tr": "Çıplak soyut isim ve savın gizlediği hata.",
-  "kind": "intro",
-  "de": "Das abstrakte Nomen ohne Artikel und der Fehler, den das Argument verbirgt."
- },
- {
-  "tr": "Orta konum belirteci ve kanıtın iki sayısı.",
-  "kind": "intro",
-  "de": "Das Adverb in der Mittelstellung und die zwei Zahlen des Belegs."
- },
- {
   "tr": "Özgürlükler zinciri ve göreceliğin sınaması.",
   "kind": "intro",
   "de": "Die Kette der Freiheiten und die Prüfung des Relativismus."
@@ -43,16 +23,6 @@
   "tr": "Tahminin çekinceleri ve yeşil aklamanın sözcükleri.",
   "kind": "intro",
   "de": "Die Einschränkungen der Prognose und die Wörter des Greenwashings."
- },
- {
-  "tr": "Cevap ölçülüydü; ton daha az. Sessizlik ne söylüyor?",
-  "kind": "intro",
-  "de": "Die Antwort war maßvoll, der Ton weniger. Was sagt das Schweigen?"
- },
- {
-  "tr": "Özne ile fiil arasında bir yuva var. İçine ne konuyor?",
-  "kind": "intro",
-  "de": "Zwischen Subjekt und Verb gibt es eine Stelle. Was kommt hinein?"
  },
  {
   "tr": "Bir özgürlük ötekini nasıl taşıyor? Sınama neden gerekli?",
@@ -80,29 +50,9 @@
   "de": "Keine Maxime übersteht es, ohne angezweifelt zu werden. Aber was beendet das?"
  },
  {
-  "tr": "İki soyut isim ve ortada tanımlık yok. Ne zaman geri geliyor?",
-  "kind": "intro",
-  "de": "Zwei abstrakte Nomen und weit und breit kein Artikel. Wann kommt er zurück?"
- },
- {
-  "tr": "Aynı sözcük bir satır sonra tanımlıksız ve çoğul. Kural nerede?",
-  "kind": "intro",
-  "de": "Dasselbe Wort eine Zeile später ohne Artikel und im Plural. Wo steckt die Regel?"
- },
- {
-  "tr": "Biri iddia ediyor, öteki kanıtlıyor. İki fiilin bedeli aynı mı?",
-  "kind": "intro",
-  "de": "Der eine behauptet, der andere beweist. Kosten die beiden Verben dasselbe?"
- },
- {
   "tr": "İhalenin sessiz kaldığı yer ve strateji belgesinin göndermeleri.",
   "kind": "intro",
   "de": "Wo die Ausschreibung schweigt, und die Verweise des Strategiepapiers."
- },
- {
-  "tr": "Sekiz sözcük ve seviyenin ölçtüğü her şey. Orada olmayanları say.",
-  "kind": "intro",
-  "de": "Acht Wörter und alles, was dieses Niveau gemessen hat. Zähl, was nicht da ist."
  },
  {
   "tr": "Pazara nüfuz aşağıda doygunluğa yol açıyor. Gönderme neyi kurtarıyor?",
@@ -135,19 +85,9 @@
   "de": "Der Konjunktiv der Aufforderung: „be“, nicht „is“."
  },
  {
-  "tr": "Cümle, çoğul, karar; en sonda sayaç.",
-  "kind": "explain",
-  "de": "Der Satz, der Plural, die Entscheidung; ganz am Ende das Zähleinheitswort."
- },
- {
   "tr": "Birlikte hareket etmesi beklenen iki sayı.",
   "kind": "explain",
   "de": "Zwei Zahlen, von denen man erwartet, dass sie sich zusammen bewegen."
- },
- {
-  "tr": "Cümle, yuva, sıra; en sonda hukuk cümlesi.",
-  "kind": "explain",
-  "de": "Der Satz, die Stelle, die Reihenfolge; ganz am Ende der juristische Satz."
  },
  {
   "tr": "Kuşku, eskilik, seçim; en sonda sayılması gereken.",
@@ -155,29 +95,9 @@
   "de": "Zweifel, Alter, Wahl; ganz am Ende das, was gezählt werden muss."
  },
  {
-  "tr": "Çıplak isim, daraltma, kural; en sonda tanımlıklı çift.",
-  "kind": "explain",
-  "de": "Das Nomen ohne Artikel, die Einengung, die Regel; ganz am Ende das Paar mit Artikel."
- },
- {
-  "tr": "İki fiil, kasıt, sınırın kayması; en sonda okuma kuralı.",
-  "kind": "explain",
-  "de": "Zwei Verben, der Vorsatz, die verschobene Grenze; ganz am Ende die Leseregel."
- },
- {
   "tr": "„We have no nepotism here; we have an old boys' network.“",
   "kind": "explain",
   "de": "„We have no nepotism here; we have an old boys' network.“"
- },
- {
-  "tr": "Cümle, sayım, ölçü; en sonda seviyenin bir cümlelik özeti.",
-  "kind": "explain",
-  "de": "Der Satz, die Zählung, das Maß; ganz am Ende das Niveau in einem Satz."
- },
- {
-  "tr": "Gönderme, söz, geri dönülmezlik; en sonda tek satırlık kural.",
-  "kind": "explain",
-  "de": "Verweis, Versprechen, Unumkehrbarkeit; ganz am Ende die Regel in einer Zeile."
  },
  {
   "tr": "İki usul, adlandırılmayan işletmeci, kesilen ifade; en sonda kural.",
@@ -203,11 +123,6 @@
   "tr": "sınanmış",
   "kind": "gloss.tr",
   "de": "geprüft"
- },
- {
-  "tr": "daha dostça",
-  "kind": "gloss.tr",
-  "de": "freundlicher"
  },
  {
   "tr": "konsorsiyum",
@@ -305,11 +220,6 @@
   "de": "uralt"
  },
  {
-  "tr": "kasıt",
-  "kind": "gloss.tr",
-  "de": "der Vorsatz"
- },
- {
   "tr": "nüfuz",
   "kind": "gloss.tr",
   "de": "die Durchdringung"
@@ -340,24 +250,9 @@
   "de": "moralisch"
  },
  {
-  "tr": "bütünü",
-  "kind": "gloss.tr",
-  "de": "die Gesamtheit"
- },
- {
-  "tr": "çıplak",
-  "kind": "gloss.tr",
-  "de": "nackt"
- },
- {
   "tr": "dönmek",
   "kind": "gloss.tr",
   "de": "drehen"
- },
- {
-  "tr": "iterek",
-  "kind": "gloss.tr",
-  "de": "indem es schiebt"
  },
  {
   "tr": "itibar",
@@ -400,11 +295,6 @@
   "de": "befolgt"
  },
  {
-  "tr": "vermiş",
-  "kind": "gloss.tr",
-  "de": "geliefert"
- },
- {
   "tr": "vicdan",
   "kind": "gloss.tr",
   "de": "das Gewissen"
@@ -418,16 +308,6 @@
   "tr": "yazılı",
   "kind": "gloss.tr",
   "de": "schriftlich"
- },
- {
-  "tr": "atanmış",
-  "kind": "gloss.tr",
-  "de": "zugewiesen"
- },
- {
-  "tr": "ayrıntı",
-  "kind": "gloss.tr",
-  "de": "das Detail"
  },
  {
   "tr": "bilanço",
@@ -450,16 +330,6 @@
   "de": "ungleich"
  },
  {
-  "tr": "hâl eki",
-  "kind": "gloss.tr",
-  "de": "die Kasusendung"
- },
- {
-  "tr": "incelik",
-  "kind": "gloss.tr",
-  "de": "die Freundlichkeit"
- },
- {
   "tr": "retorik",
   "kind": "gloss.tr",
   "de": "die Rhetorik"
@@ -480,24 +350,9 @@
   "de": "geläufig"
  },
  {
-  "tr": "daraltma",
-  "kind": "gloss.tr",
-  "de": "die Einengung"
- },
- {
   "tr": "dayanmak",
   "kind": "gloss.tr",
   "de": "standhalten"
- },
- {
-  "tr": "delikler",
-  "kind": "gloss.tr",
-  "de": "die Löcher"
- },
- {
-  "tr": "eylemlik",
-  "kind": "gloss.tr",
-  "de": "das Gerundium"
  },
  {
   "tr": "gazeteci",
@@ -530,24 +385,9 @@
   "de": "die Strategie"
  },
  {
-  "tr": "tanımlık",
-  "kind": "gloss.tr",
-  "de": "der Artikel"
- },
- {
-  "tr": "taşıdığı",
-  "kind": "gloss.tr",
-  "de": "was er trägt"
- },
- {
   "tr": "zararsız",
   "kind": "gloss.tr",
   "de": "harmlos"
- },
- {
-  "tr": "çevrilmiş",
-  "kind": "gloss.tr",
-  "de": "übersetzt"
  },
  {
   "tr": "dinginlik",
@@ -580,11 +420,6 @@
   "de": "der Relativismus"
  },
  {
-  "tr": "orta alan",
-  "kind": "gloss.tr",
-  "de": "das Mittelfeld"
- },
- {
   "tr": "karşılıksız",
   "kind": "gloss.tr",
   "de": "unbezahlt"
@@ -600,24 +435,9 @@
   "de": "der Überlebende"
  },
  {
-  "tr": "sayılamaz",
-  "kind": "gloss.tr",
-  "de": "unzählbar"
- },
- {
-  "tr": "şeyin adı",
-  "kind": "gloss.tr",
-  "de": "der Name der Sache"
- },
- {
   "tr": "tedarikçi",
   "kind": "gloss.tr",
   "de": "der Lieferant"
- },
- {
-  "tr": "tek konum",
-  "kind": "gloss.tr",
-  "de": "eine einzige Stelle"
  },
  {
   "tr": "tek satır",
@@ -628,21 +448,6 @@
   "tr": "uygulanan",
   "kind": "gloss.tr",
   "de": "geübt"
- },
- {
-  "tr": "yüz yazar",
-  "kind": "gloss.tr",
-  "de": "hundert Autoren"
- },
- {
-  "tr": "aynı nesne",
-  "kind": "gloss.tr",
-  "de": "derselbe Gegenstand"
- },
- {
-  "tr": "bütün öbek",
-  "kind": "gloss.tr",
-  "de": "die ganze Phrase"
  },
  {
   "tr": "deney turu",
@@ -665,11 +470,6 @@
   "de": "berechnet"
  },
  {
-  "tr": "ikinci öğe",
-  "kind": "gloss.tr",
-  "de": "das zweite Element"
- },
- {
   "tr": "kanıtlıyor",
   "kind": "gloss.tr",
   "de": "beweist"
@@ -683,21 +483,6 @@
   "tr": "ödeme gücü",
   "kind": "gloss.tr",
   "de": "die Zahlungsfähigkeit"
- },
- {
-  "tr": "aynı şeyler",
-  "kind": "gloss.tr",
-  "de": "dieselben Dinge"
- },
- {
-  "tr": "geri okunan",
-  "kind": "gloss.tr",
-  "de": "zurückgelesen"
- },
- {
-  "tr": "ikinci sıra",
-  "kind": "gloss.tr",
-  "de": "die zweite Stelle"
  },
  {
   "tr": "inşa ediyor",
@@ -730,11 +515,6 @@
   "de": "der Ausreißer"
  },
  {
-  "tr": "çekimli fiil",
-  "kind": "gloss.tr",
-  "de": "das finite Verb"
- },
- {
   "tr": "dikkatsizlik",
   "kind": "gloss.tr",
   "de": "die Nachlässigkeit"
@@ -755,11 +535,6 @@
   "de": "das Vergabeverfahren"
  },
  {
-  "tr": "kabul edilen",
-  "kind": "gloss.tr",
-  "de": "zugegeben"
- },
- {
   "tr": "kayırmacılık",
   "kind": "gloss.tr",
   "de": "die Vetternwirtschaft"
@@ -773,11 +548,6 @@
   "tr": "makine parkı",
   "kind": "gloss.tr",
   "de": "der Maschinenpark"
- },
- {
-  "tr": "ödünç alıyor",
-  "kind": "gloss.tr",
-  "de": "borgt sich"
  },
  {
   "tr": "pazara nüfuz",
@@ -800,11 +570,6 @@
   "de": "das Selbstbild"
  },
  {
-  "tr": "genel anlamda",
-  "kind": "gloss.tr",
-  "de": "im allgemeinen Sinn"
- },
- {
   "tr": "kendini bilme",
   "kind": "gloss.tr",
   "de": "die Selbsterkenntnis"
@@ -820,29 +585,9 @@
   "de": "die Kostenüberschreitung"
  },
  {
-  "tr": "orada olmayan",
-  "kind": "gloss.tr",
-  "de": "was nicht da ist"
- },
- {
   "tr": "sular altında",
   "kind": "gloss.tr",
   "de": "überflutet"
- },
- {
-  "tr": "tahmin edilen",
-  "kind": "gloss.tr",
-  "de": "erraten"
- },
- {
-  "tr": "tek bir uyarı",
-  "kind": "gloss.tr",
-  "de": "ein Wort der Warnung"
- },
- {
-  "tr": "yabancı aksan",
-  "kind": "gloss.tr",
-  "de": "ein fremder Akzent"
  },
  {
   "tr": "yasayla konan",
@@ -855,16 +600,6 @@
   "de": "ungenannt"
  },
  {
-  "tr": "arkaya itilmiş",
-  "kind": "gloss.tr",
-  "de": "nach hinten geschoben"
- },
- {
-  "tr": "kendisi olarak",
-  "kind": "gloss.tr",
-  "de": "als solches"
- },
- {
   "tr": "maliyet tabanı",
   "kind": "gloss.tr",
   "de": "die Kostenbasis"
@@ -875,29 +610,14 @@
   "de": "der Referenzwert"
  },
  {
-  "tr": "sayılabilirlik",
-  "kind": "gloss.tr",
-  "de": "die Zählbarkeit"
- },
- {
   "tr": "temerrüt riski",
   "kind": "gloss.tr",
   "de": "das Ausfallrisiko"
  },
  {
-  "tr": "yüzyıllar önce",
-  "kind": "gloss.tr",
-  "de": "vor Jahrhunderten"
- },
- {
   "tr": "açığa çıkarıyor",
   "kind": "gloss.tr",
   "de": "deckt auf"
- },
- {
-  "tr": "delik bırakıyor",
-  "kind": "gloss.tr",
-  "de": "lässt Löcher"
  },
  {
   "tr": "fırsat maliyeti",
@@ -960,11 +680,6 @@
   "de": "die Unumkehrbarkeit"
  },
  {
-  "tr": "iki yönde birden",
-  "kind": "gloss.tr",
-  "de": "in beide Richtungen zugleich"
- },
- {
   "tr": "sözleşme özgürlüğü",
   "kind": "gloss.tr",
   "de": "die Vertragsfreiheit"
@@ -980,19 +695,9 @@
   "de": "die Grenzkosten"
  },
  {
-  "tr": "parçalar hâlinde",
-  "kind": "gloss.tr",
-  "de": "in Stücken"
- },
- {
   "tr": "sonraki hayatlar",
   "kind": "gloss.tr",
   "de": "die Nachleben"
- },
- {
-  "tr": "türetilmiş biçim",
-  "kind": "gloss.tr",
-  "de": "eine abgeleitete Form"
  },
  {
   "tr": "vicdan özgürlüğü",
@@ -1010,11 +715,6 @@
   "de": "länger leben als"
  },
  {
-  "tr": "belirli bir tanesi",
-  "kind": "gloss.tr",
-  "de": "ein bestimmtes"
- },
- {
   "tr": "tekrarlanabilirlik",
   "kind": "gloss.tr",
   "de": "die Wiederholbarkeit"
@@ -1028,11 +728,6 @@
   "tr": "abartılı duygusallık",
   "kind": "gloss.tr",
   "de": "das Pathos"
- },
- {
-  "tr": "dil bilgisine aykırı",
-  "kind": "gloss.tr",
-  "de": "ungrammatisch"
  },
  {
   "tr": "fiyatın altına inmek",

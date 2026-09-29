@@ -135,11 +135,6 @@
   "de": "Die Woche ist nicht vorbei: present perfect. Mit „last week“ wäre es simple past."
  },
  {
-  "tr": "„It is the opposite of the first sentence — not ‚mustn't‘, which would be a rule.“",
-  "kind": "explain",
-  "de": "„It is the opposite of the first sentence — not ‚mustn't‘, which would be a rule.“"
- },
- {
   "tr": "inkâr etmek",
   "kind": "gloss.tr",
   "de": "abstreiten"
@@ -155,19 +150,9 @@
   "de": "flach"
  },
  {
-  "tr": "kip",
-  "kind": "gloss.tr",
-  "de": "Modalverb"
- },
- {
   "tr": "emin",
   "kind": "gloss.tr",
   "de": "sicher"
- },
- {
-  "tr": "fiil",
-  "kind": "gloss.tr",
-  "de": "Verb"
  },
  {
   "tr": "hane",
@@ -210,11 +195,6 @@
   "de": "Überschrift"
  },
  {
-  "tr": "beceri",
-  "kind": "gloss.tr",
-  "de": "Fähigkeit"
- },
- {
   "tr": "editör",
   "kind": "gloss.tr",
   "de": "der Redakteur"
@@ -228,11 +208,6 @@
   "tr": "olamaz",
   "kind": "gloss.tr",
   "de": "kann nicht sein"
- },
- {
-  "tr": "ortası",
-  "kind": "gloss.tr",
-  "de": "die Mitte"
  },
  {
   "tr": "öngörü",
@@ -448,16 +423,6 @@
   "tr": "hakkını vermek gerekirse",
   "kind": "gloss.tr",
   "de": "fairerweise"
- },
- {
-  "tr": "yaş",
-  "kind": "gloss.tr",
-  "de": "das Alter"
- },
- {
-  "tr": "aldı",
-  "kind": "gloss.tr",
-  "de": "nahm"
  },
  {
   "tr": "kabuk",

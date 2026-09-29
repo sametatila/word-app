@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Eksiltme kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Tilgungskarte aus."
- },
- {
-  "tr": "Soru eki kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte zum Frageanhang aus."
- },
- {
-  "tr": "Bağlaçsız koşul kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte zur konjunktionslosen Bedingung aus."
- },
- {
-  "tr": "Ek her seferinde hesaplanıyor; yardımcı fiil, kutup ve özne belirleniyor; „hardly“ cümleyi olumsuz sayıyor; ek konuşmaya ait, karara değil.",
-  "kind": "form.facts",
-  "de": "Der Frageanhang wird jedes Mal neu berechnet; Hilfsverb, Polarität und Subjekt werden bestimmt; „hardly“ macht den Satz negativ; der Anhang gehört der Rede, nicht dem Beschluss."
- },
- {
-  "tr": "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım dil düzeyinde, Almancada sıradan, İngilizcede işaretli.",
-  "kind": "form.facts",
-  "de": "Das Verb rückt nach vorn und die Konjunktion fällt weg; nur drei Verben sind zugelassen; der Mechanismus ist im Deutschen derselbe; der Unterschied liegt in der Sprachebene: im Deutschen alltäglich, im Englischen markiert."
- },
- {
-  "tr": "Fiil siliniyor ve virgül yerini tutuyor; nesne siliniyor ve fiil bir siyaseti adlandırıyor; yüklem siliniyor ve olumsuzluk kalıyor; yön dile değil biçime bağlı.",
-  "kind": "form.facts",
-  "de": "Das Verb wird getilgt und das Komma vertritt es; das Objekt wird getilgt und das Verb benennt eine Politik; das Prädikat wird getilgt und die Verneinung bleibt; die Richtung hängt nicht von der Sprache ab, sondern von der Form."
- },
- {
   "tr": "Ben buna tutumlu demezdim.",
   "kind": "build.tr",
   "de": "Ich würde das nicht sparsam nennen."
@@ -323,10 +293,5 @@
   "tr": "Silinen fiilin yerini virgül tutuyor; boşluk dize sonunun işini görüyor.",
   "kind": "build.hint",
   "de": "Das Komma vertritt das getilgte Verb; die Lücke tut, was ein Zeilenumbruch täte."
- },
- {
-  "tr": "Dersin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Lektion: Bring sie in die richtige Ordnung."
  }
 ]

@@ -329,7 +329,7 @@ export const a2U23: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 23,
-    title: "Sie emri ve du emri",
+    title: "Hinweise zum Formular",
     genre: "grammar",
     intro: "Resmî emirde Sie söylenir, samimi emirde özne hiç söylenmez.",
     gloss: [

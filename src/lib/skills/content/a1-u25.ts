@@ -294,7 +294,7 @@ export const a1U25: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 25,
-    title: "war, nicht gewesen",
+    title: "Mein Tag gestern",
     genre: "grammar",
     intro: "Son üç kalıp. İkisi ünite 24'ün kuralını kırıyor.",
     gloss: [

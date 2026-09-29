@@ -18,13 +18,15 @@ export const deC1P4: SkillExercise[] = [
     skill: "reading",
     title: "Der Satz steht da, der Ton nicht",
     genre: "interview",
-    intro: "Bir sesli kitap seslendiricisiyle söyleşi okuyacaksın: tonu ne belirliyor, hangi küçük kelimeler işi taşıyor.",
+    intro: "Bir sesli kitap seslendiricisiyle söyleşi okuyacaksın: bir metnin tonunu nasıl buluyor, stüdyoda neye dikkat ediyor?",
     gloss: [
       { de: "einlesen", tr: "seslendirmek", en: "to record" },
       { de: "der Vorwurf", tr: "sitem", en: "reproach" },
-      { de: "die Feststellung", tr: "saptama", en: "statement of fact" },
-      { de: "die Fassung", tr: "versiyon", en: "version" },
-      { de: "weglassen", tr: "atlamak", en: "to omit" },
+      { de: "die Kommissarin", tr: "kadın komiser", en: "detective inspector" },
+      { de: "die Täterin", tr: "fail", en: "culprit" },
+      { de: "harmlos", tr: "zararsız", en: "harmless" },
+      { de: "spöttisch", tr: "alaycı", en: "mocking" },
+      { de: "festlegen", tr: "belirlemek", en: "to fix" },
       { de: "verschlucken", tr: "yutmak", en: "to swallow" },
       { de: "die Pause", tr: "duraklama", en: "pause" },
       { de: "betonen", tr: "vurgulamak", en: "to stress" },
@@ -37,21 +39,21 @@ export const deC1P4: SkillExercise[] = [
       "Dass im Text nur die Wörter stehen. Ob eine Figur „Komm doch mit“ als Bitte, als Vorwurf oder als müde " +
       "Wiederholung sagt, entscheidet nicht der Autor, sondern ich. Und ich entscheide es hundertmal am Tag.\n\n" +
       "Woran halten Sie sich dabei?\n" +
-      "An den Partikeln, vor allem. Deutsch hat diese kleinen Wörter, die im Wörterbuch fast nichts bedeuten " +
-      "und im Satz alles: doch, ja, mal, eben, halt. Wenn da steht „Das ist ja interessant“, ist der Satz ohne " +
-      "das „ja“ eine Feststellung. Mit „ja“ ist es Überraschung — oder Ironie, je nachdem, wie ich ihn spreche.\n\n" +
+      "An der Szene, vor allem. Ich lese jedes Buch zweimal, bevor ich ins Studio gehe, und markiere mir, wer " +
+      "gerade mit wem streitet, wer lügt und wer müde ist. Ob jemand „Das ist ja interessant“ ehrlich meint " +
+      "oder spöttisch, steht selten in der Zeile selbst, sondern oft drei Seiten vorher.\n\n" +
       "Können Sie ein Beispiel geben?\n" +
-      "„Nimm es dir eben.“ Ohne „eben“ ist das eine Aufforderung. Mit „eben“ sage ich dir zusätzlich, dass es " +
-      "keine große Sache ist und dass du zu lange fragst. Übersetzen kann man das kaum. Ich habe einmal eine " +
-      "Fassung eingelesen, in der „halt“ konsequent weggelassen worden war, und die Figur wurde streng, obwohl " +
-      "kein anderes Wort verändert war.\n\n" +
+      "In einem Krimi hatte ich eine Kommissarin, die in jedem Kapitel nur kurz auftrat. Ich habe sie anfangs " +
+      "freundlich gesprochen. Erst im letzten Kapitel stellte sich heraus, dass sie die Täterin " +
+      "war, und ich musste vierzig Minuten neu aufnehmen, weil sie plötzlich zu harmlos klang. Seitdem lese ich " +
+      "jedes Buch bis zum Ende, bevor ich eine einzige Stimme festlege.\n\n" +
       "Was ist schwieriger, Sachbuch oder Roman?\n" +
-      "Sachbuch. Im Roman gibt der Text Hinweise, im Sachbuch nicht. Da steht ein Satz mit vier Nebensätzen, " +
-      "und meine Aufgabe ist es, dem Hörer zu zeigen, welcher davon die Hauptaussage trägt. Das mache ich mit " +
+      "Sachbuch. Im Roman gibt der Text Hinweise, im Sachbuch nicht. Da folgt eine lange Erklärung auf die " +
+      "nächste, und meine Aufgabe ist es, dem Hörer zu zeigen, was davon wirklich zählt. Das mache ich mit " +
       "Pausen, nicht mit Lautstärke.\n\n" +
       "Hören Sie sich selbst gern zu?\n" +
       "Nein. Aber ich höre mir seit Jahren die ersten fünf Minuten am nächsten Morgen an. Man hört sofort, ob " +
-      "man am Vortag müde war: Dann werden die Partikel verschluckt, und der Text klingt wie ein Formular.\n\n" +
+      "man am Vortag müde war: Dann werden die kleinen Wörter verschluckt, und der Text klingt wie ein Formular.\n\n" +
       "Was raten Sie Anfängern?\n" +
       "Lesen Sie den Satz zuerst laut, ohne ihn zu betonen. Wenn er dann noch verständlich ist, war er gut " +
       "geschrieben. Wenn nicht, wissen Sie, wo Sie helfen müssen — und zwar dort, nicht überall.",
@@ -67,10 +69,10 @@ export const deC1P4: SkillExercise[] = [
         explain: "„Dass im Text nur die Wörter stehen … entscheidet nicht der Autor, sondern ich.“",
       },
       {
-        text: "Was passierte in der Fassung ohne „halt“?",
-        options: ["Die Figur wirkte streng.", "Der Text wurde deutlich kürzer.", "Die Hörer merkten nichts."],
+        text: "Warum musste sie einmal vierzig Minuten neu aufnehmen?",
+        options: ["Die Kommissarin klang zu harmlos.", "Der Text wurde deutlich kürzer.", "Die Hörer beschwerten sich."],
         answer: 0,
-        explain: "„… und die Figur wurde streng, obwohl kein anderes Wort verändert war.“",
+        explain: "„…und ich musste vierzig Minuten neu aufnehmen, weil sie plötzlich zu harmlos klang.“",
       },
       {
         kind: "truefalse",
@@ -92,8 +94,8 @@ export const deC1P4: SkillExercise[] = [
         text: "Woran hört sie, dass sie am Vortag müde war?",
         options: [],
         answer: 0,
-        accept: ["die Partikel werden verschluckt", "Partikel verschluckt", "an den verschluckten Partikeln"],
-        explain: "„Dann werden die Partikel verschluckt, und der Text klingt wie ein Formular.“",
+        accept: ["die kleinen Wörter werden verschluckt", "kleine Wörter verschluckt", "an den verschluckten Wörtern"],
+        explain: "„Dann werden die kleinen Wörter verschluckt, und der Text klingt wie ein Formular.“",
       },
       {
         text: "Was rät sie Anfängern?",

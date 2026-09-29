@@ -370,7 +370,7 @@ export const c1U07: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 7,
-    title: "Anlatı iskeleti ve geçiş",
+    title: "Moderation eines Abends",
     genre: "grammar",
     intro: "Lage, Wendung, Folge — üç hamle; ve iki cümleyi bağlayan geçiş.",
     gloss: [

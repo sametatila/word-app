@@ -39,50 +39,55 @@ export const enB1U19: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 19,
-    title: "Six lines on a package",
+    title: "The leaflet in the box",
     genre: "info",
-    intro: "Prospektüsün altı satırı. Neden hep edilgen?",
+    intro: "Bir ilacın kullanma talimatı. Nasıl alınıyor, nasıl saklanıyor?",
     gloss: [
       { de: "prescribed", tr: "reçete edildi" },
       { de: "the fridge", tr: "buzdolabı" },
       { de: "swallow", tr: "yutmak" },
-      { de: "the passive", tr: "edilgen" },
-      { de: "the agent", tr: "fail" },
-      { de: "exists", tr: "var" },
-      { de: "modal", tr: "kip" },
-      { de: "sentence", tr: "cümle" },
-      { de: "reaching", tr: "ulaşması" },
-      { de: "least", tr: "en az" },
-      { de: "the bottom", tr: "en alt" },
+      { de: "a leaflet", tr: "kullanma talimatı" },
+      { de: "whole", tr: "bütün" },
+      { de: "seem", tr: "görünmek" },
+      { de: "stored", tr: "saklanır" },
+      { de: "degrees", tr: "derece" },
+      { de: "frozen", tr: "dondurulmuş" },
+      { de: "a headache", tr: "baş ağrısı" },
+      { de: "dry", tr: "kuru" },
+      { de: "rare", tr: "seyrek" },
+      { de: "a rash", tr: "kızarıklık" },
+      { de: "appears", tr: "çıkar" },
+      { de: "the skin", tr: "cilt" },
     ],
     minutes: 7,
     text:
-      "Six lines from a package, and what each one is really doing.\n" +
-      "The tablet is taken twice a day. Not „take the tablet“ — the passive, with no time in it, because this is how the medicine works and not what you are being told to do this morning.\n" +
-      "The medicine was prescribed by a doctor. Here the agent is named, and it is named for one reason: this line exists so that nobody else takes the package.\n" +
-      "The package must be kept in the fridge. A modal and a passive together, in that order: „must“, then „be“, then the third form. This is the sentence people read last and the one that decides whether the medicine works at all.\n" +
-      "Each tablet should be swallowed with water, not with tea. The reason is in a smaller line two paragraphs down, and it is about the dose reaching the stomach at the right speed.\n" +
-      "Side effects are listed by how often they happen, not by how serious they are. The first three on the list are the common ones and usually the least worrying.\n" +
-      "The warning at the bottom is the only line written as an order: do not drive in the first two days. Everything else is a rule about the medicine. That one is a rule about you.",
+      "PATIENT INFORMATION: AMOXAN 500 MG TABLETS\n" +
+      "Read this leaflet before you start taking the medicine. Keep it, because you may need to read it again.\n" +
+      "1. How is the medicine taken? The tablet is taken twice a day, in the morning and in the evening, for seven days. Each tablet should be swallowed whole with a glass of water, not with tea or milk.\n" +
+      "2. Who is it for? This medicine was prescribed by a doctor for you. It must not be given to other people, even if they seem to have the same illness.\n" +
+      "3. How is it stored? The package must be kept in the fridge, between 2 and 8 degrees. The tablets must not be frozen. An open package should be used within fourteen days.\n" +
+      "4. Side effects. Side effects are listed by how often they happen. Common: a headache and a dry mouth. Rare: a rash on the skin. If a rash appears, the medicine should be stopped and a doctor should be called.\n" +
+      "5. Warning. Do not drive in the first two days.\n" +
+      "Children must be kept away from the package.",
     questions: [
       {
-        text: "Why is „The tablet is taken twice a day“ passive?",
-        options: ["it describes how the medicine works", "it is an order", "the doctor wrote it"],
+        text: "How often is the tablet taken?",
+        options: ["twice a day", "once a day", "three times a day"],
         answer: 0,
-        explain: "„because this is how the medicine works and not what you are being told to do this morning.“",
+        explain: "„The tablet is taken twice a day, in the morning and in the evening, for seven days.“",
       },
       {
-        text: "Why is the doctor named in the second line?",
-        options: ["so that nobody else takes the package", "so you can call them", "to show the date"],
+        text: "Who can take this medicine?",
+        options: ["only the patient", "anybody with the same illness", "children"],
         answer: 0,
-        explain: "„this line exists so that nobody else takes the package.“",
+        explain: "„It must not be given to other people, even if they seem to have the same illness.“",
       },
       {
         kind: "truefalse",
         text: "Side effects are listed by how often they happen.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Side effects are listed by how often they happen, not by how serious they are.“",
+        explain: "„Side effects are listed by how often they happen.“",
       },
       {
         kind: "gapfill",
@@ -90,7 +95,7 @@ export const enB1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["fridge"],
-        explain: "„The package must be kept in the fridge.“",
+        explain: "„The package must be kept in the fridge, between 2 and 8 degrees.“",
       },
       {
         kind: "order",
@@ -99,19 +104,19 @@ export const enB1U19: SkillExercise[] = [
         answer: 0,
         items: [
           "The tablet is taken twice a day.",
-          "The medicine was prescribed by a doctor.",
+          "This medicine was prescribed by a doctor for you.",
           "The package must be kept in the fridge.",
           "Do not drive in the first two days.",
         ],
-        explain: "Doz, reçete, saklama, en sonda emir kipindeki uyarı.",
+        explain: "Doz, reçete, saklama, en sonda araç kullanma uyarısı.",
       },
       {
         kind: "short_answer",
-        text: "Which line is written as an order?",
+        text: "What should you do if a rash appears?",
         options: [],
         answer: 0,
-        accept: ["the warning", "do not drive", "the last line"],
-        explain: "„The warning at the bottom is the only line written as an order…“",
+        accept: ["stop the medicine", "call a doctor", "stop it and call a doctor"],
+        explain: "„If a rash appears, the medicine should be stopped and a doctor should be called.“",
       },
     ],
   },

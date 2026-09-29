@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Talimat kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Anleitungskarte aus."
- },
- {
-  "tr": "Adlaştırma kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Nominalisierungskarte aus."
- },
- {
-  "tr": "Devrik sıra kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Umstellungskarte aus."
- },
- {
-  "tr": "Emir kipinin gizli öznesi „sen“; ortaç öznesini ana cümleden alıyor; ikisi de aynı; toz süzmüyor.",
-  "kind": "form.facts",
-  "de": "Das verborgene Subjekt des Imperativs ist „du“; das Partizip holt seins aus dem Hauptsatz; beide sind gleich; das Pulver filtert nicht."
- },
- {
-  "tr": "„enforce“ „-ment“ alıyor; „reimburse“ de „-ment“ alıyor; „perform“ „-ance“ alıyor; kural yok, liste var.",
-  "kind": "form.facts",
-  "de": "„enforce“ nimmt „-ment“; „reimburse“ nimmt auch „-ment“; „perform“ nimmt „-ance“; es gibt keine Regel, nur eine Liste."
- },
- {
-  "tr": "Öne çıkan öbek devrilmiyor; devrilen arkasından gelen; „only“ da bir sınırlama; bir mektupta bir tane yeter.",
-  "kind": "form.facts",
-  "de": "Das vorangestellte Glied kippt nicht; es kippt der Teil danach; „only“ ist auch eine Einschränkung; eines pro Brief genügt."
- },
- {
   "tr": "O ödünü vermiş olamayız.",
   "kind": "build.tr",
   "de": "Wir können dieses Zugeständnis nicht gemacht haben."
@@ -258,21 +228,6 @@
   "tr": "Burada „-ance“ geliyor; „performment“ diye bir şey yok.",
   "kind": "build.hint",
   "de": "Hier kommt „-ance“; „performment“ gibt es nicht."
- },
- {
-  "tr": "Notun sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Notiz: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Eklerin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Endungen: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Sertliğin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Schärfe: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Talimatın sırası: doğru sıraya koy.",

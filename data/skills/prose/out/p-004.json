@@ -1,10 +1,5 @@
 [
  {
-  "tr": "İkisinde de bildirme kipi tarafsızlığı bozuyor.",
-  "kind": "explain",
-  "en": "In both, the indicative breaks the neutrality."
- },
- {
   "tr": "İşteki ilk gün. Kim kim, kim kiminle çalışıyor?",
   "kind": "intro",
   "en": "The first day at work. Who is who, and who works with whom?"
@@ -13,11 +8,6 @@
   "tr": "İşyerinde sorun çıkarsa kime gidilir, ne yapılır?",
   "kind": "intro",
   "en": "Something goes wrong at work — who do you go to, and what do you do?"
- },
- {
-  "tr": "Kayıt nezaket meselesi değil, muhatap meselesi.",
-  "kind": "explain",
-  "en": "Register is not a matter of politeness but of who is being addressed."
  },
  {
   "tr": "„warm“ -er alır ve ünlüsü de nokta alır: wärmer.",
@@ -215,11 +205,6 @@
   "en": "Sentences about the weather are always built with „es“ in German."
  },
  {
-  "tr": "İddia edilmeyen değerlendirme tartışılamıyor da.",
-  "kind": "explain",
-  "en": "An assessment that is not asserted cannot be argued with either."
- },
- {
   "tr": "İki ifade de aynı kipte; tutanak taraf tutmuyor.",
   "kind": "explain",
   "en": "Both statements are in the same mood; the minutes take no side."
@@ -413,11 +398,6 @@
   "tr": "Açıklama herkesin bitirmek istediği anı uzatıyor.",
   "kind": "explain",
   "en": "The explaining stretched out the moment everyone wanted to end."
- },
- {
-  "tr": "Adlaştırmada fiil ada döner, özne genitife geçer.",
-  "kind": "explain",
-  "en": "In a nominalization the verb becomes a noun and the subject goes into the genitive."
  },
  {
   "tr": "Amaç, veri toplanmadan önce ADLANDIRILMIŞ olmalı.",
@@ -698,11 +678,6 @@
   "tr": "Eril kelime nesne olunca ein → einen: einen Apfel.",
   "kind": "explain",
   "en": "A masculine word as an object goes ein → einen: einen Apfel."
- },
- {
-  "tr": "Fazla yüksek kayıt tepeden bakma etkisi yaratıyor.",
-  "kind": "explain",
-  "en": "Too high a register comes across as looking down on people."
  },
  {
   "tr": "Gaf yapıldı. Silinebilen ile silinemeyeni ayırmak.",

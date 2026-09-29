@@ -31,46 +31,51 @@ export const c1U17: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 17,
-    title: "Das Wort, das man nicht wiederholt",
-    genre: "text",
-    intro: "Gönderme sözcükleri: tekrar etmeden nasıl geri işaret edilir?",
+    title: "Neue Firma für die Gebäudereinigung",
+    genre: "email",
+    intro: "Bina yönetimi iki temizlik teklifini karşılaştırıp bir öneride bulunuyor. Hangisi, neden?",
     gloss: [
-      { de: "der Verweis", tr: "gönderme / atıf", en: "reference" },
       { de: "diesbezüglich", tr: "bu konuda", en: "in this regard" },
-      { de: "Letzteres", tr: "ikincisi / sonuncusu", en: "the latter" },
-      { de: "sich beziehen auf", tr: "-e ilişkin olmak", en: "to refer to" },
+      { de: "Letzteres", tr: "sonuncusu", en: "the latter" },
+      { de: "Ersteres", tr: "ilki", en: "the former" },
       { de: "folglich", tr: "dolayısıyla", en: "consequently" },
-      { de: "vorschnell", tr: "aceleci", en: "hasty" },
-      { de: "aufschlussreich", tr: "aydınlatıcı", en: "revealing" },
-      { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "das Signal", tr: "sinyal", en: "signal" },
-      { de: "der Text", tr: "metin", en: "text" },
-      { de: "die Schwierigkeit", tr: "zorluk", en: "difficulty" },
-      { de: "der Absatz", tr: "paragraf", en: "paragraph" },
-      { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "eindeutig", tr: "net", en: "unambiguous" },
+      { de: "obgleich", tr: "her ne kadar", en: "although" },
+      { de: "zugunsten", tr: "lehine", en: "in favor of" },
+      { de: "die Vergabe", tr: "ihale", en: "award of a contract" },
+      { de: "die Gebäudereinigung", tr: "bina temizliği", en: "building cleaning" },
+      { de: "verbleiben", tr: "geriye kalmak", en: "to remain" },
+      { de: "die Referenz", tr: "referans", en: "reference" },
+      { de: "abschneiden", tr: "sonuç almak", en: "to perform" },
+      { de: "angewiesen sein auf", tr: "muhtaç olmak", en: "to depend on" },
+      { de: "vertretbar", tr: "kabul edilebilir", en: "justifiable" },
+      { de: "der Engpass", tr: "darboğaz", en: "bottleneck" },
+      { de: "die Inhaberin", tr: "sahibi", en: "owner" },
+      { de: "die Zusage", tr: "taahhüt", en: "commitment" },
+      { de: "lediglich", tr: "yalnızca", en: "merely" },
+      { de: "solche", tr: "böyle", en: "such" },
     ],
     minutes: 7,
     text:
-      "ZWEI ANGEBOTE, EIN SATZ\n\n" +
-      "„Wir haben zwei Angebote geprüft. Das zweite Angebot erscheint uns günstiger, deshalb möchten wir das zweite Angebot annehmen.“\n\n" +
-      "Grammatisch fehlerfrei, inhaltlich klar — und trotzdem liest es sich wie eine Übersetzung. Ein deutscher Muttersprachler schreibt: „Letzteres erscheint uns günstiger; wir möchten es annehmen.“\n\n" +
-      "Der Unterschied ist nicht Stil, sondern Ökonomie. Deutsche Sachtexte gehen davon aus, dass der Leser sich das Vorherige merkt. Wer denselben Ausdruck wiederholt, signalisiert Misstrauen gegenüber dem Leser — oder Unsicherheit im eigenen Text.\n\n" +
-      "Der Werkzeugkasten ist überschaubar. „Letzteres“ und „Ersteres“ greifen zwei zuvor genannte Dinge auf. „Diesbezüglich“ ersetzt eine ganze Präpositionalphrase („in Bezug auf diese Frage“). Die Verbindungen aus „da(r)-“ plus Präposition — darauf, damit, dafür, davon — nehmen einen ganzen Sachverhalt auf: „Darauf komme ich später zurück.“\n\n" +
-      "Aufschlussreich ist, was passiert, wenn man sie weglässt. Der Text wird nicht falsch, er wird schwerfällig, und der Leser bekommt den Eindruck, jeder Satz beginne von vorn.\n\n" +
-      "Schriftlich kommt eine zweite Schwierigkeit dazu: Zwischen dem Verweis und seinem Bezug darf nicht zu viel liegen. Über einen Absatz hinweg trägt „Letzteres“ nicht mehr, und der Leser müsste zurückblättern — was er im Zweifel nicht tut.\n\n" +
-      "In langen Texten hilft eine einfache Gewohnheit: Nach jedem Verweis einmal prüfen, ob genau ein Bezug in Frage kommt.\n\n" +
-      "Eine Warnung gehört dazu. Verweise brauchen einen eindeutigen Bezug — der Leser muss ohne Nachdenken wissen, worauf sie sich beziehen. „Er sprach mit dem Kollegen über seinen Antrag“ — wessen Antrag? Wer vorschnell verweist, spart Wörter und kostet Klarheit. Folglich gilt: verweisen, ja — aber nur, wenn genau ein Bezug möglich ist.",
+      "Betreff: Vergabe der Gebäudereinigung ab Januar\n\n" +
+      "Sehr geehrte Frau Dr. Winter,\n\n" +
+      "wie in der Sitzung am 4. November vereinbart, haben wir die beiden verbliebenen Angebote für die Gebäudereinigung geprüft: das der Firma Blitzblank aus Hannover und das der Firma Glanzwerk aus Celle. Letzteres erscheint uns günstiger; wir möchten es annehmen.\n\n" +
+      "Zunächst zu den Kosten. Blitzblank verlangt 4.800 Euro im Monat, Glanzwerk 4.150 Euro. Der Unterschied ergibt sich vor allem aus den Fahrtkosten, die bei Ersterem deutlich höher ausfallen. Auf ein Jahr gerechnet sparen wir folglich knapp 7.800 Euro.\n\n" +
+      "Obgleich der Preis entscheidend war, haben wir auch die Qualität geprüft. Beide Firmen haben uns Referenzen genannt. Diesbezüglich hat Glanzwerk besser abgeschnitten: Die Stadtbibliothek Celle, die wir angerufen haben, lobte vor allem die Zuverlässigkeit. Bei Blitzblank verwies man uns lediglich auf die Internetseite.\n\n" +
+      "Ein Punkt spricht allerdings zugunsten von Blitzblank. Die Firma bietet eine Reinigung am Samstag an, was bei der anderen nicht möglich ist. Darauf sind wir aber nur im Lager angewiesen, und dort kann die Reinigung auch freitags nach 18 Uhr stattfinden. Wir halten dies deshalb für vertretbar.\n\n" +
+      "Ein Risiko möchte ich nicht verschweigen: Glanzwerk ist ein kleiner Betrieb mit zwölf Beschäftigten. Fallen mehrere krank aus, könnte es Engpässe geben. Wir haben das angesprochen, und die Inhaberin hat zugesagt, in einem solchen Fall eine Partnerfirma einzusetzen. Diese Zusage möchten wir in den Vertrag aufnehmen.\n\n" +
+      "Wenn Sie einverstanden sind, schicke ich den Vertragsentwurf bis Ende der Woche an die Rechtsabteilung. Der bisherige Vertrag endet am 31. Dezember; eine Verlängerung wäre folglich nicht nötig.\n\n" +
+      "Mit freundlichen Grüßen\n" +
+      "Tobias Feld, Gebäudemanagement",
     questions: [
       {
-        text: "Warum wirkt der Beispielsatz mit „das zweite Angebot“ wie eine Übersetzung?",
+        text: "Welche Firma soll den Auftrag bekommen?",
         options: [
-          "Er enthält einen Grammatikfehler",
-          "Er wiederholt den Ausdruck, statt zu verweisen",
-          "Er ist zu kurz",
+          "Blitzblank",
+          "Beide Firmen gemeinsam",
+          "Glanzwerk",
         ],
-        answer: 1,
-        explain: "Almanca metin okurun öncekini hatırladığını varsayıyor.",
+        answer: 2,
+        explain: "„Letzteres“ ikinci sayılan teklifi, yani Glanzwerk'i gösteriyor.",
       },
       {
         kind: "gapfill",
@@ -81,38 +86,35 @@ export const c1U17: SkillExercise[] = [
         explain: "İkisinden sonuncusu; Ersteres ilkini gösterir.",
       },
       {
-        text: "Was ersetzt „diesbezüglich“?",
+        text: "Was spricht für Blitzblank?",
         options: [
-          "Ein Verb",
-          "Eine ganze Präpositionalphrase wie „in Bezug auf diese Frage“",
-          "Einen Nebensatz",
+          "Der niedrigere Preis",
+          "Eine Reinigung am Samstag",
+          "Die besseren Referenzen",
         ],
         answer: 1,
-        explain: "Tek sözcük bütün bir öbeği taşıyor.",
+        explain: "„Die Firma bietet eine Reinigung am Samstag an, was bei der anderen nicht möglich ist.“",
       },
       {
         kind: "short_answer",
-        text: "Welche Bedingung nennt der Text für einen Verweis?",
+        text: "Wie viel spart das Unternehmen im Jahr?",
         options: [],
         answer: 0,
-        accept: [
-          "der Bezug muss eindeutig sein",
-          "es darf nur genau ein Bezug möglich sein",
-          "nur wenn genau ein Bezug möglich ist",
-        ],
-        explain: "„Er sprach mit dem Kollegen über seinen Antrag“ — kimin başvurusu?",
+        accept: ["knapp 7.800 Euro", "7.800 Euro", "7800 Euro", "7.800"],
+        explain: "„Auf ein Jahr gerechnet sparen wir folglich knapp 7.800 Euro.“",
       },
       {
         kind: "short_answer",
-        text: "Was passiert mit einem Text ohne Verweiswörter?",
+        text: "Welches Risiko nennt Herr Feld?",
         options: [],
         answer: 0,
         accept: [
-          "nicht falsch, aber schwerfällig",
-          "er wird schwerfällig, jeder Satz scheint von vorn zu beginnen",
-          "er wird schwerfällig",
+          "Engpässe bei Krankheit",
+          "die Firma ist klein",
+          "kleiner Betrieb",
+          "zu wenig Personal bei Krankheit",
         ],
-        explain: "Yanlış olmuyor — ağırlaşıyor.",
+        explain: "Firma küçük; birkaç çalışan aynı anda hastalanırsa temizlikte aksama olabilir.",
       },
     ],
   },
@@ -121,87 +123,85 @@ export const c1U17: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 17,
-    title: "Was man weglassen darf",
-    genre: "guide",
-    intro: "Eksilti: kısalık ne zaman ustalık, ne zaman kabalık?",
+    title: "Aufbau am Messestand",
+    genre: "message",
+    intro: "Fuar standını kuran bir ekibin gün boyu yazışmaları. Neler aksadı, nasıl çözüldü?",
     gloss: [
-      { de: "die Ellipse", tr: "eksilti", en: "ellipsis" },
-      { de: "weglassen", tr: "atlamak / çıkarmak", en: "to omit" },
-      { de: "die Kürze", tr: "kısalık", en: "brevity" },
-      { de: "der Telegrammstil", tr: "telgraf üslubu", en: "telegraphic style" },
-      { de: "kurzsichtig", tr: "kısa görüşlü", en: "short-sighted" },
-      { de: "der Einschub", tr: "ara ekleme", en: "insertion" },
-      { de: "verständlich", tr: "anlaşılır", en: "comprehensible" },
-      { de: "ergänzen", tr: "tamamlamak", en: "to complete" },
-      { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "schließen", tr: "kapatmak", en: "to close" },
-      { de: "die Länge", tr: "uzunluk", en: "length" },
-      { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "der Empfänger", tr: "alıcı", en: "recipient" },
-      { de: "der Absender", tr: "gönderen", en: "sender" },
-      { de: "meiste", tr: "çoğu", en: "most" },
-      { de: "raten", tr: "tahmin etmek", en: "to guess" },
-      { de: "der Text", tr: "metin", en: "text" },
-      { de: "besonders", tr: "özellikle", en: "especially" },
-      { de: "finit", tr: "çekimli", en: "finite" },
+      { de: "der Aufbau", tr: "kurulum", en: "setup" },
+      { de: "das Plakat", tr: "afiş", en: "poster" },
+      { de: "anbei", tr: "ekte", en: "attached" },
+      { de: "das Muster", tr: "numune", en: "sample" },
+      { de: "der Prospekt", tr: "broşür", en: "brochure" },
+      { de: "die Laufkundschaft", tr: "gelip geçen müşteriler", en: "walk-in customers" },
+      { de: "erledigt", tr: "halledildi", en: "done" },
+      { de: "betreuen", tr: "ilgilenmek", en: "to look after" },
+      { de: "aktuell", tr: "güncel", en: "current" },
+      { de: "egal", tr: "fark etmez", en: "doesn't matter" },
     ],
     minutes: 7,
     text:
-      "„WIE BESPROCHEN.“\n\n" +
-      "Zwei Wörter, kein finites Verb, ein vollständiger Beitrag. Die Ellipse lässt weg, was der Leser aus dem Zusammenhang ergänzen kann — und funktioniert genau so weit, wie dieser Zusammenhang trägt.\n\n" +
-      "In der internen Kommunikation ist sie überall. „Anbei die Zahlen.“ „Wenn nötig, sofort.“ „Erledigt.“ Wer hier ganze Sätze baut, wirkt umständlich, nicht höflich.\n\n" +
-      "Ein kurzer Einschub schließt die Lücke oft schon. „Wie besprochen — Punkt 3 von Montag“ ist drei Wörter länger und für jeden verständlich, auch für den, der die Mail weitergeleitet bekommt.\n\n" +
-      "Wer unsicher ist, liest die eigene Nachricht so, als hätte er den Vorgang seit drei Wochen nicht angefasst.\n\n" +
-      "Ein paar zusätzliche Wörter kosten nichts und ersparen dem Empfänger regelmäßig eine Rückfrage.\n\n" +
-      "Die Grenze verläuft nicht bei der Kürze, sondern bei der gemeinsamen Grundlage. Zwischen zwei Kollegen, die dasselbe Projekt bearbeiten, ist „Wie besprochen“ präzise. In einer Mail an eine Behörde, die dreihundert Vorgänge führt, ist es unbrauchbar: Was wurde besprochen, mit wem, wann?\n\n" +
-      "Hinzu kommt die Wirkung auf den Ton. Der Telegrammstil klingt effizient, wenn beide Seiten unter Druck stehen, und schroff, wenn nur eine Seite es tut. Eine Absage in vier Wörtern spart dem Absender Zeit und teilt dem Empfänger mit, wie viel Zeit er wert war. Das ist selten beabsichtigt und meist kurzsichtig.\n\n" +
-      "Eine praktische Faustregel: Weglassen darf man, was der Empfänger ohne Nachdenken ergänzt. Muss er raten, war es keine Ellipse, sondern eine Lücke. Und in heiklen Nachrichten — Absagen, Kritik, Geldfragen — wird der eingesparte Satz fast immer teurer, als er war.",
+      "TEAMCHAT ZUR MESSE, DIENSTAG\n\n" +
+      "07:42 Jana: Guten Morgen! Stand steht, Strom fehlt noch. Techniker kommt um neun.\n" +
+      "07:45 Murat: Danke. Plakate?\n" +
+      "07:46 Jana: Im Auto. Bringe ich gleich rein.\n" +
+      "08:10 Murat: Anbei die Preisliste, Version 3. Wie besprochen, ohne Rabatte.\n" +
+      "08:12 Jana: Gesehen. Drucke ich aus.\n" +
+      "09:20 Jana: Strom läuft. Bildschirm auch. Kaffeemaschine leider nicht.\n" +
+      "09:21 Murat: Egal. Hauptsache Bildschirm.\n" +
+      "10:05 Frau Hartmann: Kurze Frage an alle: Wer betreut morgen früh den Stand? Herr Sommer von der Firma Kranich hat sich für 10 Uhr angekündigt.\n" +
+      "10:07 Murat: Ich. Wenn nötig, auch schon ab acht.\n" +
+      "10:08 Frau Hartmann: Danke. Bitte die neuen Muster mitnehmen, nicht die vom letzten Jahr.\n" +
+      "10:09 Murat: Klar.\n" +
+      "11:30 Jana: Lieferung Prospekte: 200 statt 500. Rest angeblich morgen.\n" +
+      "11:31 Frau Hartmann: Das reicht nicht. Bitte in der Druckerei anrufen und eine feste Uhrzeit verlangen.\n" +
+      "11:52 Jana: Erledigt. Morgen 8 Uhr, direkt an den Stand.\n" +
+      "14:15 Murat: Herr Sommer hat abgesagt. Neuer Termin Donnerstag, 14 Uhr.\n" +
+      "14:16 Frau Hartmann: Schade. Dann morgen mehr Zeit für Laufkundschaft. Bitte trotzdem pünktlich.\n" +
+      "14:40 Jana: Frage: Abendessen mit dem Vertrieb heute, 19 Uhr, noch aktuell?\n" +
+      "14:41 Murat: Ja. Restaurant am Hauptbahnhof. Tisch auf Hartmann.\n" +
+      "17:55 Frau Hartmann: Danke euch beiden für heute. Ein guter Aufbau, trotz Strom, Druckerei und Absage. Bis gleich beim Essen.",
     questions: [
       {
-        text: "Wo verläuft laut Text die Grenze der Ellipse?",
+        text: "Wann trifft das Team Herrn Sommer jetzt?",
         options: [
-          "Bei der Anzahl der Wörter",
-          "Bei der gemeinsamen Grundlage zwischen Absender und Empfänger",
-          "Bei der Textsorte",
+          "Morgen um 10 Uhr",
+          "Heute um 19 Uhr",
+          "Am Donnerstag um 14 Uhr",
         ],
-        answer: 1,
-        explain: "İki meslektaş arasında kesin olan, kuruma yazınca kullanılamaz oluyor.",
+        answer: 2,
+        explain: "„Herr Sommer hat abgesagt. Neuer Termin Donnerstag, 14 Uhr.“",
       },
       {
         kind: "gapfill",
-        text: "___ besprochen.",
+        text: "Anbei die Preisliste, Version 3. ___ besprochen, ohne Rabatte.",
         options: [],
         answer: 0,
         accept: ["Wie"],
-        explain: "Çekimli fiil olmadan, iki sözcüklü tam bir katkı.",
+        explain: "„Wie besprochen“: fiil yok ama ekipte herkes neyin konuşulduğunu biliyor.",
       },
       {
-        text: "Wann klingt der Telegrammstil schroff?",
+        text: "Was fehlt am Morgen noch am Stand?",
         options: [
-          "Wenn beide Seiten unter Druck stehen",
-          "Wenn nur eine Seite unter Druck steht",
-          "In E-Mails an Kollegen",
+          "Der Strom",
+          "Die Preisliste",
+          "Der Bildschirm",
         ],
-        answer: 1,
-        explain: "Kısalık karşı tarafa ne kadar zaman değdiğini de söylüyor.",
+        answer: 0,
+        explain: "„Stand steht, Strom fehlt noch.“",
       },
       {
         kind: "short_answer",
-        text: "Wie lautet die Faustregel des Textes?",
+        text: "Wie viele Prospekte wurden zuerst geliefert?",
         options: [],
         answer: 0,
-        accept: [
-          "was der Empfänger sofort ergänzt", "weglassen darf man, was der Empfänger ohne Nachdenken ergänzt",
-          "was der Empfänger ohne Nachdenken ergänzt",
-          "wenn er raten muss, ist es eine Lücke",
-        ],
-        explain: "Tahmin gerekiyorsa eksilti değil, boşluk.",
+        accept: ["200", "zweihundert", "200 statt 500"],
+        explain: "„Lieferung Prospekte: 200 statt 500.“",
       },
       {
-        text: "Der Text empfiehlt Ellipsen besonders für Absagen.",
+        text: "Die Kaffeemaschine funktioniert am Vormittag.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Tersi: hassas mesajlarda tasarruf edilen cümle en pahalıya patlıyor.",
+        explain: "„Kaffeemaschine leider nicht.“",
       },
     ],
   },
@@ -295,80 +295,84 @@ export const c1U17: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     unit: 17,
-    title: "Der Einschub zwischen zwei Kommas",
+    title: "Stadtführung an der Nikolaikirche",
     genre: "dialogue",
-    intro: "Ara açıklama: virgüller arasına ne sıkıştırılabilir?",
+    intro: "Leipzig'de bir şehir turu. 1989 sonbaharında Nikolaikirche'nin çevresinde ne oldu?",
     gloss: [
-      { de: "die Apposition", tr: "ara açıklama", en: "apposition" },
-      { de: "einschieben", tr: "araya sıkıştırmak", en: "to insert" },
-      { de: "das Komma", tr: "virgül", en: "comma" },
-      { de: "ergänzend", tr: "tamamlayıcı", en: "supplementary" },
-      { de: "die Sichtweise", tr: "bakış açısı", en: "viewpoint" },
-      { de: "der Blickwinkel", tr: "bakış açısı / açı", en: "angle" },
       { de: "aufschlussreich", tr: "aydınlatıcı", en: "revealing" },
+      { de: "die friedliche Revolution", tr: "barışçıl devrim", en: "peaceful revolution" },
+      { de: "das Friedensgebet", tr: "barış duası", en: "prayer for peace" },
+      { de: "der Pfarrer", tr: "papaz", en: "pastor" },
+      { de: "unauffällig", tr: "göze batmayan", en: "unassuming" },
+      { de: "gläubig", tr: "inançlı", en: "religious" },
+      { de: "bewaffnet", tr: "silahlı", en: "armed" },
+      { de: "das Blutbad", tr: "kan gölü", en: "bloodbath" },
+      { de: "die Gewalt", tr: "şiddet", en: "violence" },
+      { de: "der Chefdirigent", tr: "baş şef", en: "principal conductor" },
+      { de: "der Aufruf", tr: "çağrı", en: "appeal" },
+      { de: "das Café", tr: "kafe", en: "café" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "leicht", tr: "hafif", en: "light" },
-      { de: "der Gedanke", tr: "düşünce", en: "thought" },
-      { de: "verwenden", tr: "kullanmak", en: "to use" },
+      { de: "vorbeikommen", tr: "uğramak", en: "to drop by" },
     ],
     minutes: 5,
     segments: [
-      { speaker: "Dozentin", text: "„Berlin, die Hauptstadt Deutschlands, wächst weiter.“ Was macht der Einschub hier?" },
-      { speaker: "Teilnehmer", text: "Er erklärt, was Berlin ist." },
-      { speaker: "Dozentin", text: "Ja — ergänzend, nicht einschränkend. Man könnte ihn streichen, und der Satz bliebe vollständig." },
-      { speaker: "Teilnehmerin", text: "Und wenn man ihn nicht streichen kann?" },
-      { speaker: "Dozentin", text: "Dann ist es keine Apposition. Der Test ist genau das: Streichen Sie ihn. Steht der Satz noch, war es eine." },
-      { speaker: "Teilnehmer", text: "Die Kommas machen mir Probleme. Ich setze eins und vergesse das zweite." },
-      { speaker: "Dozentin", text: "Das ist der häufigste Fehler überhaupt. Der Einschub steht zwischen zwei Kommas — nie zwischen einem." },
-      { speaker: "Teilnehmerin", text: "Kann man damit auch eine Sichtweise einbringen?" },
-      { speaker: "Dozentin", text: "Sehr gut möglich. Der Einschub verschiebt den Blickwinkel, ohne dass jemand widersprechen kann — dazu kommen wir gleich." },
-      { speaker: "Teilnehmerin", text: "Gibt es einen Unterschied zum Relativsatz?" },
-      { speaker: "Dozentin", text: "Im Ergebnis oft nicht, im Gewicht schon. „Berlin, das die Hauptstadt ist“ klingt schwerfällig. Die Apposition ist leichter und wirkt wie beiläufig erwähnt." },
-      { speaker: "Teilnehmer", text: "Beiläufig — kann man das ausnutzen?" },
-      { speaker: "Dozentin", text: "Ein aufschlussreicher Gedanke. Ja. „Der Antrag, ohnehin verspätet eingereicht, wurde abgelehnt.“ Die Wertung steckt im Einschub und wird nie behauptet." },
-      { speaker: "Teilnehmerin", text: "Das ist fast unfair." },
-      { speaker: "Dozentin", text: "Es ist Rhetorik. Und Sie sollten es erkennen, bevor Sie entscheiden, ob Sie es verwenden." },
+      { speaker: "Frau Winkler", text: "Wir stehen hier vor der Nikolaikirche, dem wichtigsten Ort der friedlichen Revolution von 1989." },
+      { speaker: "Teilnehmer", text: "Hier fanden die Friedensgebete statt, oder?" },
+      { speaker: "Frau Winkler", text: "Genau. Jeden Montag, seit 1982, trafen sich hier Menschen zum Gebet. Pfarrer Christian Führer, ein ruhiger, unauffälliger Mann, öffnete die Kirche für alle." },
+      { speaker: "Teilnehmerin", text: "Auch für Leute, die gar nicht gläubig waren?" },
+      { speaker: "Frau Winkler", text: "Gerade für die. Am 9. Oktober 1989, einem Montag, kamen siebzigtausend Menschen auf den Ring, die große Straße um die Innenstadt." },
+      { speaker: "Teilnehmer", text: "Siebzigtausend? Und die Polizei?" },
+      { speaker: "Frau Winkler", text: "Die stand bereit, bewaffnet. Viele hatten Angst vor einem Blutbad. Aber niemand schoss. Die Demonstranten riefen immer wieder: „Keine Gewalt!“" },
+      { speaker: "Teilnehmerin", text: "Warum hat die Polizei nichts getan?" },
+      { speaker: "Frau Winkler", text: "Das ist bis heute nicht ganz geklärt. Kurt Masur, der Chefdirigent des Gewandhausorchesters, hat am Nachmittag im Radio zur Ruhe aufgerufen. Das hat sicher geholfen." },
+      { speaker: "Teilnehmer", text: "Das Gewandhaus, das Konzerthaus am Augustusplatz?" },
+      { speaker: "Frau Winkler", text: "Richtig, dorthin gehen wir als Nächstes. Einen Monat später, am 9. November, fiel dann die Mauer." },
+      { speaker: "Teilnehmerin", text: "Und die Kirche? Wird sie heute noch so genutzt?" },
+      { speaker: "Frau Winkler", text: "Die Friedensgebete gibt es immer noch, jeden Montag um fünf. Kommen Sie gern vorbei, der Eintritt ist frei." },
+      { speaker: "Teilnehmer", text: "Das ist ja aufschlussreich. Wie lange dauert so ein Gebet?" },
+      { speaker: "Frau Winkler", text: "Etwa eine halbe Stunde. Danach lohnt sich ein Kaffee im Café gegenüber, einem der gemütlichsten der Stadt." },
     ],
     questions: [
       {
-        text: "Wie testet man laut Dozentin eine Apposition?",
+        text: "Was geschah am 9. Oktober 1989?",
         options: [
-          "Man zählt die Wörter",
-          "Man streicht sie: Steht der Satz noch, war es eine",
-          "Man ersetzt sie durch einen Relativsatz",
+          "Die Mauer fiel",
+          "Siebzigtausend Menschen demonstrierten auf dem Ring",
+          "Die Kirche wurde geschlossen",
         ],
         answer: 1,
-        explain: "„Streichen Sie ihn. Steht der Satz noch, war es eine.“ Ara açıklama tamamlayıcıdır, sınırlandırıcı değil.",
+        explain: "„Am 9. Oktober 1989, einem Montag, kamen siebzigtausend Menschen auf den Ring, die große Straße um die Innenstadt.“",
       },
       {
         kind: "gapfill",
-        text: "Der ___ steht zwischen zwei Kommas — nie zwischen einem.",
+        text: "Pfarrer Christian Führer, ein ruhiger, unauffälliger ___, öffnete die Kirche für alle.",
         options: [],
         answer: 0,
-        accept: ["Einschub"],
-        explain: "En yaygın hata ikinci virgülü unutmak.",
+        accept: ["Mann"],
+        explain: "Virgüller arasındaki ek bilgi papazı tanıtıyor; çıkarılsa da cümle eksiksiz kalır.",
       },
       {
-        text: "Was ist der Unterschied zum Relativsatz?",
+        text: "Was tat Kurt Masur am Nachmittag?",
         options: [
-          "Die Bedeutung ist eine andere",
-          "Das Gewicht: die Apposition ist leichter, wirkt beiläufig",
-          "Der Relativsatz braucht kein Komma",
+          "Er rief im Radio zur Ruhe auf",
+          "Er gab ein Konzert in der Kirche",
+          "Er verhandelte mit der Polizei",
         ],
-        answer: 1,
-        explain: "„Berlin, das die Hauptstadt ist“ ağır duruyor.",
+        answer: 0,
+        explain: "„Kurt Masur, der Chefdirigent des Gewandhausorchesters, hat am Nachmittag im Radio zur Ruhe aufgerufen.“",
       },
       {
         kind: "short_answer",
-        text: "Warum ist „Der Antrag, ohnehin verspätet eingereicht, wurde abgelehnt“ rhetorisch?",
+        text: "Wann finden die Friedensgebete heute statt?",
         options: [],
         answer: 0,
         accept: [
-          "die Wertung wird nie behauptet",
-          "die Wertung steckt im Einschub und wird nie behauptet",
-          "die Bewertung wird nicht behauptet, nur eingeschoben",
+          "montags um fünf",
+          "jeden Montag um fünf",
+          "montags um 17 Uhr",
+          "jeden Montag",
         ],
-        explain: "İddia edilmeyen değerlendirme tartışılamıyor da.",
+        explain: "„Die Friedensgebete gibt es immer noch, jeden Montag um fünf.“",
       },
     ],
   },
@@ -377,7 +381,7 @@ export const c1U17: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 17,
-    title: "Tekrar etme, işaret et",
+    title: "Zwei Angebote im Vergleich",
     genre: "grammar",
     intro: "Gönderme sözcükleri, ara açıklama ve eksilti.",
     gloss: [

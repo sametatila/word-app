@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Fiil kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Verbkarte aus."
- },
- {
-  "tr": "İstek kipi kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Konjunktivkarte aus."
- },
- {
-  "tr": "Eksiltili söyleyiş kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Untertreibungskarte aus."
- },
- {
-  "tr": "Üçüncü kişide ek yok; olumsuzu „do“ olmadan kuruluyor; „be“ „be“ kalıyor; „should“lu biçim daha resmî değil.",
-  "kind": "form.facts",
-  "de": "In der dritten Person fehlt die Endung; die Verneinung kommt ohne „do“; „be“ bleibt „be“; die Form mit „should“ ist nicht förmlicher."
- },
- {
-  "tr": "„claimed“ kuşku koyuyor; „conceded“ doğruluğu artırıyor; „alleged“ kanıtlanmamış diyor; yansız olan yalnız „said“.",
-  "kind": "form.facts",
-  "de": "„claimed“ sät Zweifel; „conceded“ erhöht die Glaubwürdigkeit; „alleged“ sagt: unbewiesen; neutral ist nur „said“."
- },
- {
-  "tr": "„not exactly cheap“ pahalı demek; „wouldn't say no“ evet demek; „hardly“ kendi olumsuzunu taşıyor; anlamı bağlam çözüyor.",
-  "kind": "form.facts",
-  "de": "„not exactly cheap“ heißt teuer; „wouldn't say no“ heißt ja; „hardly“ trägt seine Verneinung in sich; die Bedeutung klärt der Zusammenhang."
- },
- {
   "tr": "Tam da ucuz sayılmaz, o.",
   "kind": "build.tr",
   "de": "Nicht gerade billig, das."
@@ -298,20 +268,5 @@
   "tr": "Dört katman: „might“, „have been“, „expected“, mastar.",
   "kind": "build.hint",
   "de": "Vier Schichten: „might“, „have been“, „expected“, Infinitiv."
- },
- {
-  "tr": "Kipin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge des Modus: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Katmanların sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Schichten: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Eksiltili söyleyişin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Untertreibung: Bring sie in die richtige Ordnung."
  }
 ]

@@ -122,45 +122,41 @@ export const enB1U12: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 12,
-    title: "Three lines from a policy",
-    genre: "info",
-    intro: "Poliçenin üç cümlesi. Hangi koşul gerçek, hangisi değil?",
+    title: "A small accident in March",
+    genre: "blog",
+    intro: "Küçük bir kaza ve sigorta poliçesi. Sigorta neden tamirin hepsini ödemedi?",
     gloss: [
-      { de: "claim", tr: "hasar talebi" },
+      { de: "a claim", tr: "hasar talebi" },
       { de: "within", tr: "içinde" },
-      { de: "worth it", tr: "değer" },
-      { de: "sentence", tr: "cümle" },
-      { de: "real condition", tr: "gerçek koşul" },
-      { de: "exist", tr: "var olmak" },
+      { de: "clear", tr: "açık" },
     ],
     minutes: 7,
     text:
-      "Three sentences from a policy and what each one really says.\n" +
-      "If you have an accident, the policy covers it. Real condition, normal life: this can happen and here is what follows. Present in the first half, present in the second.\n" +
-      "If I paid more, I would get a better policy. Not real. I am not paying more, and the sentence is about a policy that does not exist for me. The past form here is not about the past at all.\n" +
-      "You are not covered unless you report it within seven days. This is the sentence that costs people money. „Unless“ means „if not“, and the seven days start on the day of the accident, not on the day you notice the damage.\n" +
-      "The premium is the yearly payment. The benefit is what you get. Between them sits a number nobody reads: the first two hundred euros of any claim are yours.\n" +
-      "So a small accident is not worth a claim. A big one is worth it twice, because the second thing insurance protects is your patience.\n" +
-      "Read the „unless“ lines first. There are usually three and they are never in the same place.",
+      "Last March I had a small accident in the supermarket parking lot. Nobody was hurt: I drove into a post at five kilometers an hour and the back light broke.\n" +
+      "I called my insurance the next morning, because I thought: if you have an accident, the policy covers it. That is what the man on the phone told me when I bought it.\n" +
+      "It was not that simple. You are not covered unless you report the accident within seven days. I had reported it in time, so that part was fine. But the first two hundred euros of any claim are yours, and the repair cost two hundred and sixty. So the insurance paid sixty euros, and my premium went up by ninety the next year.\n" +
+      "Next time I will pay for a small repair myself.\n" +
+      "My brother laughed when I told him the story. If you paid more, he said, you would get a better policy, one without the first two hundred euros. He is right, but I would pay about three hundred more a year, and I have one small accident every ten years.\n" +
+      "So my advice is boring: read the policy before you need it. If something is not clear, ask. Unless you ask, nobody will explain it to you.",
     questions: [
       {
-        text: "What does „unless“ mean here?",
-        options: ["if not", "because", "after"],
+        text: "What was damaged in the accident?",
+        options: ["the back light", "the supermarket door", "the phone"],
         answer: 0,
-        explain: "„‚Unless‘ means ‚if not‘…“",
+        explain: "„I drove into a post at five kilometers an hour and the back light broke.“",
       },
       {
-        text: "When do the seven days start?",
-        options: ["on the day of the accident", "on the day you notice", "after the claim"],
+        text: "When do you have to report an accident?",
+        options: ["within seven days", "on the same day", "within a month"],
         answer: 0,
-        explain: "„the seven days start on the day of the accident, not on the day you notice the damage.“",
+        explain: "„You are not covered unless you report the accident within seven days.“",
       },
       {
         kind: "truefalse",
-        text: "The writer pays more for a better policy.",
+        text: "The insurance paid for the whole repair.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Not real. I am not paying more…“",
+        explain: "„So the insurance paid sixty euros, and my premium went up by ninety the next year.“",
       },
       {
         kind: "gapfill",
@@ -168,15 +164,15 @@ export const enB1U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["two", "2"],
-        explain: "„the first two hundred euros of any claim are yours.“",
+        explain: "„But the first two hundred euros of any claim are yours…“",
       },
       {
         kind: "short_answer",
-        text: "Which lines should you read first?",
+        text: "What is the advice at the end?",
         options: [],
         answer: 0,
-        accept: ["the unless lines", "unless lines", "the unless ones"],
-        explain: "„Read the ‚unless‘ lines first. There are usually three…“",
+        accept: ["read the policy", "read it before you need it", "read the policy first"],
+        explain: "„read the policy before you need it.“",
       },
     ],
   },

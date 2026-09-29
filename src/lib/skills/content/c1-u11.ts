@@ -29,87 +29,88 @@ export const c1U11: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 11,
-    title: "Ein Satz, zwei Verantwortliche",
-    genre: "text",
-    intro: "Aktarım kipi kimi bağlar? İki cümle, iki farklı sorumluluk.",
+    title: "Rückruf bei einem Fahrradhersteller",
+    genre: "article",
+    intro: "Bir bisiklet üreticisi binlerce elektrikli bisikleti geri çağırıyor. Kim neyi ne zaman biliyordu?",
     gloss: [
-      { de: "die Wiedergabe", tr: "aktarım", en: "rendering" },
-      { de: "sich distanzieren", tr: "mesafe koymak", en: "to distance oneself" },
-      { de: "der Wortlaut", tr: "metnin lafzı", en: "wording" },
-      { de: "zuschreiben", tr: "atfetmek", en: "to attribute" },
       { de: "übereinstimmen", tr: "örtüşmek", en: "to match" },
       { de: "entnehmen", tr: "çıkarmak / anlamak", en: "to gather from" },
       { de: "vertuschen", tr: "örtbas etmek", en: "to cover up" },
-      { de: "die Aussage", tr: "ifade", en: "statement" },
-      { de: "heraus", tr: "dışarı", en: "out" },
-      { de: "markieren", tr: "işaretlemek", en: "to mark" },
-      { de: "der Urheber", tr: "sözün sahibi / kaynağı", en: "originator" },
-      { de: "meiden", tr: "uzak durmak", en: "to avoid" },
-      { de: "unhöflich", tr: "nezaketsiz", en: "impolite" },
-      { de: "zwingend", tr: "zorunlu", en: "mandatory" },
-      { de: "der Text", tr: "metin", en: "text" },
-      { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
-      { de: "widersprüchlich", tr: "çelişkili", en: "contradictory" },
+      { de: "dementieren", tr: "yalanlamak", en: "to deny" },
+      { de: "die Quellenlage", tr: "kaynak durumu", en: "state of the sources" },
+      { de: "vorliegen", tr: "elde bulunmak", en: "to be available" },
+      { de: "die Einordnung", tr: "değerlendirme", en: "assessment" },
+      { de: "der Sachverhalt", tr: "olay", en: "facts of the case" },
+      { de: "der Rückruf", tr: "geri çağırma", en: "recall" },
+      { de: "der Rahmen", tr: "kadro", en: "frame" },
+      { de: "die Sattelstütze", tr: "sele borusu", en: "seat post" },
+      { de: "der Riss", tr: "çatlak", en: "crack" },
+      { de: "die Lesebestätigung", tr: "okundu bilgisi", en: "read receipt" },
+      { de: "die Meldepflicht", tr: "bildirim yükümlülüğü", en: "duty to report" },
+      { de: "das Bußgeld", tr: "para cezası", en: "fine" },
+      { de: "das Ersatzrad", tr: "yedek bisiklet", en: "replacement bike" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "das Kraftfahrt-Bundesamt", tr: "Federal Motorlu Taşıtlar Dairesi", en: "Federal Motor Transport Authority" },
+      { de: "drohen", tr: "beklemek", en: "to loom" },
+      { de: "rund", tr: "yaklaşık", en: "about, roughly" },
     ],
     minutes: 7,
     text:
-      "WER HAFTET FÜR DEN SATZ?\n\n" +
-      "„Der Geschäftsführer sagt, er ist am Freitag im Ausland gewesen.“ Und: „Der Geschäftsführer sagt, er sei am Freitag im Ausland gewesen.“ Der Unterschied ist ein Wort und eine Haftungsfrage.\n\n" +
-      "Im ersten Satz übernimmt der Schreibende die Aussage. Er berichtet nicht nur, dass etwas gesagt wurde, sondern behandelt es als Tatsache. Stellt sich später heraus, dass der Geschäftsführer in der Stadt war, hat der Schreibende falsch berichtet.\n\n" +
-      "Im zweiten Satz ist die Wiedergabe markiert. Der Konjunktiv I schreibt die Aussage ihrem Urheber zu und lässt den Berichtenden daneben stehen. Er distanziert sich, ohne zu widersprechen — und das ist der entscheidende Punkt: Distanz ist kein Zweifel.\n\n" +
-      "Viele Lernende meiden die Form, weil sie unhöflich wirkt. Das Gegenteil ist der Fall. Wer den Konjunktiv weglässt, tut so, als kenne er die Wahrheit; wer ihn setzt, gibt zu, dass er nur den Wortlaut kennt.\n\n" +
-      "Zwei Fälle verlangen ihn zwingend. Erstens, wenn die Aussagen zweier Seiten nicht übereinstimmen — dann darf der Bericht keine Partei ergreifen. Zweitens, wenn ein Vorwurf im Raum steht: Wer schreibt „Die Firma hat die Zahlen vertuscht“, statt „habe vertuscht“, erhebt den Vorwurf selbst.\n\n" +
-      "Umgekehrt fällt auf, wenn die Zuschreibung fehlt. Ein Bericht, der ohne jede Quelle auskommt, wirkt entweder sehr sicher oder sehr nachlässig, und der Leser kann die beiden nicht unterscheiden — das ist der eigentliche Preis des weggelassenen Konjunktivs.\n\n" +
-      "In Nachrichtenagenturen gehört die Zuschreibung deshalb zu den wenigen Regeln, die auch unter Zeitdruck nicht fallen.\n\n" +
-      "Der Leser entnimmt das nicht bewusst. Er merkt nur, ob ein Text vorsichtig ist oder nicht.",
+      "RÜCKRUF BEI VELOTEC: WER WUSSTE WANN WAS?\n\n" +
+      "Der Fahrradhersteller Velotec aus Kassel ruft rund 12.000 E-Bikes zurück. Bei einem Modell aus dem Jahr 2024 könne der Rahmen an der Sattelstütze brechen, teilte das Unternehmen am Montag mit. Verletzt worden sei bisher niemand.\n\n" +
+      "Umstritten ist, seit wann das Problem bekannt war. Nach Informationen dieser Zeitung lagen der Qualitätsabteilung bereits im März Berichte über Risse vor. Ein Mitarbeiter, der anonym bleiben möchte, sagte, man habe die Meldungen intern gesammelt, aber nicht weitergegeben. Die Geschäftsleitung sei informiert gewesen.\n\n" +
+      "Geschäftsführer Martin Kessler dementiert das. Er habe erst Anfang September von den Rissen erfahren und dann sofort gehandelt. Auf die Frage, warum eine Meldung vom 14. März an ihn adressiert war, antwortete Kessler, er sei in dieser Woche im Ausland gewesen und habe die E-Mail nicht gelesen. Von einem Versuch, etwas zu vertuschen, könne keine Rede sein.\n\n" +
+      "Die Darstellungen stimmen also nicht überein. Die Quellenlage lässt derzeit keine abschließende Einordnung zu: Die interne E-Mail liegt der Redaktion vor, eine Lesebestätigung dagegen nicht. Ob Kessler die Nachricht geöffnet hat, lässt sich dem Dokument nicht entnehmen.\n\n" +
+      "Das Kraftfahrt-Bundesamt prüft den Sachverhalt. Ein Sprecher sagte, man werde klären, ob der Hersteller seine Meldepflicht verletzt habe. Sollte das der Fall sein, drohe ein Bußgeld.\n\n" +
+      "Für die Kundinnen und Kunden ändert der Streit zunächst wenig. Velotec bittet alle Besitzer des Modells „Kolibri S“, das Rad nicht mehr zu benutzen. Die Reparatur sei kostenlos und dauere etwa eine Woche; auf Wunsch werde ein Ersatzrad gestellt.",
     questions: [
       {
-        text: "Was ändert sich mit dem Konjunktiv I?",
+        text: "Warum ruft Velotec die E-Bikes zurück?",
         options: [
-          "Die Höflichkeit des Satzes",
-          "Wer für die Aussage einsteht",
-          "Der Zeitpunkt des Geschehens",
+          "Weil der Rahmen brechen kann",
+          "Weil der Akku überhitzen kann",
+          "Weil die Bremsen versagen",
         ],
-        answer: 1,
-        explain: "„eine Haftungsfrage“ — kip aktaranı iddianın dışında bırakıyor.",
+        answer: 0,
+        explain: "„Bei einem Modell aus dem Jahr 2024 könne der Rahmen an der Sattelstütze brechen.“",
       },
       {
         kind: "gapfill",
-        text: "Der Geschäftsführer sagt, er ___ am Freitag im Ausland gewesen.",
+        text: "Kessler antwortete, er ___ in dieser Woche im Ausland gewesen.",
         options: [],
         answer: 0,
         accept: ["sei"],
-        explain: "Konjunktiv I: aktarım, iddianın sahipliğini konuşana bırakıyor.",
+        explain: "Gazete Kessler'in sözünü Konjunktiv I ile aktarıyor; doğru olup olmadığı hakkında bir şey söylemiyor.",
       },
       {
-        text: "Was bedeutet Distanz laut Text NICHT?",
-        options: ["Vorsicht", "Zweifel", "Wiedergabe"],
+        text: "Warum kann die Zeitung den Fall noch nicht abschließend einordnen?",
+        options: [
+          "Der Mitarbeiter hat seine Aussage zurückgezogen",
+          "Es liegt keine Lesebestätigung vor",
+          "Das Amt verweigert jede Auskunft",
+        ],
         answer: 1,
-        explain: "„Er distanziert sich, ohne zu widersprechen … Distanz ist kein Zweifel.“",
+        explain: "E-posta gazetenin elinde ama okundu bilgisi yok; Kessler'in mesajı açıp açmadığı belli değil.",
       },
       {
         kind: "short_answer",
-        text: "Welche zwei Fälle verlangen den Konjunktiv laut Text zwingend?",
+        text: "Was sollen die Besitzer des Modells „Kolibri S“ tun?",
         options: [],
         answer: 0,
         accept: [
-          "bei Widerspruch und bei Vorwürfen",
-          "wenn Aussagen nicht übereinstimmen und wenn ein Vorwurf im Raum steht",
-          "widersprüchliche Aussagen und Vorwürfe",
+          "das Rad nicht mehr benutzen",
+          "nicht mehr fahren",
+          "das Rad stehen lassen",
         ],
-        explain: "İkisinde de bildirme kipi tarafsızlığı bozuyor.",
+        explain: "„Velotec bittet alle Besitzer des Modells ‚Kolibri S‘, das Rad nicht mehr zu benutzen.“",
       },
       {
         kind: "short_answer",
-        text: "Warum ist das Weglassen laut Text gerade nicht bescheiden?",
+        text: "Was droht Velotec, falls die Meldepflicht verletzt wurde?",
         options: [],
         answer: 0,
-        accept: [
-          "er würde die Wahrheit kennen", "wer ihn weglässt, tut so, als kenne er die Wahrheit",
-          "es behauptet Wissen über die Wahrheit",
-          "man tut so, als wüsste man es",
-        ],
-        explain: "Kipi koymak ise yalnız lafzı bildiğini kabul etmek.",
+        accept: ["ein Bußgeld", "Bußgeld"],
+        explain: "„Sollte das der Fall sein, drohe ein Bußgeld.“",
       },
     ],
   },
@@ -384,7 +385,7 @@ export const c1U11: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 11,
-    title: "Aktarım kipi ve sorumluluk",
+    title: "Meldungen für die Lokalzeitung",
     genre: "grammar",
     intro: "Konjunktiv I aktaranı iddianın dışında bırakır — bildirme kipi bırakmaz.",
     gloss: [

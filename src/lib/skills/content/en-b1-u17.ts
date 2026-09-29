@@ -122,45 +122,44 @@ export const enB1U17: SkillExercise[] = [
     gloss: [
       { de: "the lock", tr: "kilit" },
       { de: "whole", tr: "bütün" },
-      { de: "search", tr: "arama" },
-      { de: "sentence", tr: "cümle" },
-      { de: "explanation", tr: "açıklama" },
-      { de: "ability", tr: "beceri" },
-      { de: "impossible", tr: "imkânsız" },
-      { de: "the middle", tr: "ortası" },
-      { de: "certain", tr: "kesin" },
-      { de: "modal", tr: "kip" },
-      { de: "sounded", tr: "kulağa geliyordu" },
-      { de: "certainty", tr: "kesinlik" },
+      { de: "a hook", tr: "askı" },
+      { de: "a liar", tr: "yalancı" },
+      { de: "a neighbor", tr: "komşu" },
+      { de: "a cleaner", tr: "temizlikçi" },
+      { de: "an umbrella", tr: "şemsiye" },
+      { de: "a pocket", tr: "cep" },
+      { de: "blame", tr: "suçlamak" },
+      { de: "terrible", tr: "berbat" },
+      { de: "noon", tr: "öğle" },
+      { de: "own", tr: "kendi" },
     ],
     minutes: 7,
     text:
-      "The key was gone on Tuesday evening and the whole search was three sentences.\n" +
-      "He must know the truth. That was the first thought and it was wrong, but look at the word: „must“ here is not an order. Nobody is telling him to know anything. It says: from what I have, there is no other explanation.\n" +
-      "It can't be a lie, because I saw it. Here „can't“ is not about ability. It is the opposite of the first sentence — not „mustn't“, which would be a rule. English uses „can't“ for the impossible and „mustn't“ for the forbidden, and the two sit in different parts of the room.\n" +
-      "She might have a different impression. That is the middle of the three: possible, not certain, and the honest one.\n" +
-      "The key was in the lock, outside, where I had left it at four. Nobody had lied, nobody had taken it, and the person who „must have known“ had been at work since eight.\n" +
-      "What the evening taught me is not about keys. My first sentence had a modal in it that sounded like certainty and was doing the work of a guess.\n" +
-      "Now I say „might“ first and „must“ last, in that order, and I am wrong less often out loud.",
+      "The key was gone on Tuesday evening. I came home at seven, and the hook by the door was empty.\n" +
+      "My first thought was about Jonas, who shares the apartment with me. He must know where it is, I told myself. He is always the last one to leave in the morning.\n" +
+      "I called him. He was still at work and he sounded surprised. „It can't be me,“ he said. „I left at eight, and the key was on the hook when I closed the door.“ It can't be a lie, I thought, because Jonas is a terrible liar.\n" +
+      "Then I wrote to our neighbor, Mrs. Weber. She might have a different impression, I thought, because she sees everybody who comes into the building. She did: she had seen a woman from the cleaning company at noon. For ten minutes I was sure it must be the cleaner.\n" +
+      "The key was in the lock, outside, where I had left it at four when I came back for my umbrella. Nobody had taken it. The door had been open to the whole street for three hours.\n" +
+      "Now, when something is missing, I check my own pockets first and blame other people last.",
     questions: [
       {
-        text: "What does „must“ mean in the first sentence?",
-        options: ["there is no other explanation", "somebody is ordered to know", "it is allowed"],
+        text: "Why did the writer first think of Jonas?",
+        options: ["He is always the last one to leave.", "He had lost a key before.", "He was at home."],
         answer: 0,
-        explain: "„It says: from what I have, there is no other explanation.“",
+        explain: "„He is always the last one to leave in the morning.“",
       },
       {
-        text: "What is the opposite of „must“ here?",
-        options: ["can't", "mustn't", "might"],
+        text: "Why did the writer write to Mrs. Weber?",
+        options: ["She sees everybody who comes into the building.", "She has a second key.", "She works for the cleaning company."],
         answer: 0,
-        explain: "„It is the opposite of the first sentence — not ‚mustn't‘, which would be a rule.“",
+        explain: "„She might have a different impression, I thought, because she sees everybody who comes into the building.“",
       },
       {
         kind: "truefalse",
         text: "Somebody had taken the key.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„The key was in the lock, outside, where I had left it at four.“",
+        explain: "„Nobody had taken it.“",
       },
       {
         kind: "gapfill",
@@ -168,15 +167,15 @@ export const enB1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["four", "4"],
-        explain: "„where I had left it at four.“",
+        explain: "„where I had left it at four when I came back for my umbrella.“",
       },
       {
         kind: "short_answer",
-        text: "In what order does the writer use the modals now?",
+        text: "How long had the door been open?",
         options: [],
         answer: 0,
-        accept: ["might first, must last", "might then must", "might first"],
-        explain: "„Now I say ‚might‘ first and ‚must‘ last, in that order…“",
+        accept: ["three hours", "for three hours", "3 hours"],
+        explain: "„The door had been open to the whole street for three hours.“",
       },
     ],
   },

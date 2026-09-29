@@ -38,50 +38,58 @@ export const enB1U21: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 21,
-    title: "The evidence behind a forecast",
-    genre: "opinion",
-    intro: "Aynı konu, üç gelecek biçimi. Hangisi kanaat, hangisi veri?",
+    title: "A storm on Saturday",
+    genre: "article",
+    intro: "Vadiden haftalık hava ve iklim haberi. Hangi bilgi kesin, hangisi tahmin?",
     gloss: [
       { de: "the ice", tr: "buz" },
-      { de: "forecast", tr: "tahmin" },
       { de: "measurement", tr: "ölçüm" },
-      { de: "sentence", tr: "cümle" },
-      { de: "the tone", tr: "ton" },
-      { de: "visible", tr: "görünür" },
-      { de: "continuous", tr: "sürekli" },
-      { de: "whole", tr: "bütün" },
-      { de: "backwards", tr: "tersine" },
-      { de: "certain", tr: "kesin" },
-      { de: "my own writing", tr: "kendi yazdıklarım" },
+      { de: "the valley", tr: "vadi" },
+      { de: "heavy", tr: "şiddetli" },
+      { de: "wind", tr: "rüzgâr" },
+      { de: "clouds", tr: "bulutlar" },
+      { de: "rise", tr: "yükselmek" },
+      { de: "sandbags", tr: "kum torbaları" },
+      { de: "further ahead", tr: "daha ileride" },
+      { de: "on record", tr: "kayıtlara geçen" },
+      { de: "scientists", tr: "bilim insanları" },
+      { de: "data", tr: "veri" },
+      { de: "register", tr: "kaydolmak" },
+      { de: "noon", tr: "öğle" },
+      { de: "football", tr: "futbol" },
+      { de: "a match", tr: "maç" },
+      { de: "the sky", tr: "gökyüzü" },
+      { de: "reach", tr: "ulaşmak" },
+      { de: "a bridge", tr: "köprü" },
+      { de: "spring", tr: "ilkbahar" },
     ],
     minutes: 7,
     text:
-      "Three sentences about the same subject, and the difference between them is not the tone. It is the evidence.\n" +
-      "The climate will change slowly. „Will“ is the weakest of the three and the most honest here. It is a view about something nobody has a date for, and using anything stronger would be a claim I cannot support.\n" +
-      "The ice is going to melt faster. „Going to“ rests on something already visible: the measurements from the last ten seasons are on a page and they point one way. Not a feeling — a line.\n" +
-      "The storm is arriving on Saturday. Present continuous, and it is the strongest of the three because it is the smallest. Two days, one forecast, and the weather service has put it in a table with a time.\n" +
-      "That is the whole rule and it runs backwards from the size of the claim. The more certain the evidence, the nearer the form is to the present.\n" +
-      "It works outside the weather too. „I will call you“ and „I am calling you at four“ are different promises, and everybody in the room hears which one they got.\n" +
-      "What I notice in my own writing is that I use „will“ where I have data and „going to“ where I have a feeling. That is exactly backwards, and it took a page of forecasts to see it.",
+      "THIS WEEK IN THE VALLEY: WEATHER AND CLIMATE\n" +
+      "The storm is arriving on Saturday. The weather service has put it in its table for Saturday afternoon: heavy rain from two o'clock and strong wind until the evening. The market on the square is closing at noon, and the football match is moving to Sunday.\n" +
+      "Look at the sky on Friday evening and you will see it coming. The clouds are already building over the sea, so it is going to rain hard. The question is how much.\n" +
+      "The river is going to rise, too. The measurements from the last ten seasons are clear: after two days of heavy rain the water reaches the bridge. The town is putting sandbags along the path near the playground on Friday.\n" +
+      "Further ahead, the picture is slower. The ice on the mountains is going to melt faster this spring, because the winter was the warmest on record. Scientists at the university think the climate will change slowly here, but they will need twenty more years of data to be sure.\n" +
+      "One thing will not change: the town will send a text message to every phone if the river reaches the bridge. If you have not registered yet, you can do it on the town website.",
     questions: [
       {
-        text: "Which form is the weakest?",
-        options: ["will", "going to", "is arriving"],
+        text: "What is moving to Sunday?",
+        options: ["the football match", "the market", "the storm"],
         answer: 0,
-        explain: "„‚Will‘ is the weakest of the three and the most honest here.“",
+        explain: "„The market on the square is closing at noon, and the football match is moving to Sunday.“",
       },
       {
-        text: "What does „going to“ rest on?",
-        options: ["something already visible", "a schedule", "a feeling"],
+        text: "Why is the ice going to melt faster?",
+        options: ["the winter was the warmest on record", "the storm is coming", "the river is rising"],
         answer: 0,
-        explain: "„‚Going to‘ rests on something already visible: the measurements from the last ten seasons…“",
+        explain: "„The ice on the mountains is going to melt faster this spring, because the winter was the warmest on record.“",
       },
       {
         kind: "truefalse",
-        text: "The strongest form is the one about the shortest time.",
+        text: "After two days of heavy rain the water reaches the bridge.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„it is the strongest of the three because it is the smallest. Two days, one forecast…“",
+        explain: "„after two days of heavy rain the water reaches the bridge.“",
       },
       {
         kind: "gapfill",
@@ -93,24 +101,24 @@ export const enB1U21: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Kanıt sırası: en zayıftan en güçlüye koy.",
+        text: "Metnin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
-          "The climate will change slowly.",
-          "The ice is going to melt faster.",
           "The storm is arriving on Saturday.",
-          "The more certain the evidence, the nearer the present.",
+          "The river is going to rise, too.",
+          "The ice on the mountains is going to melt faster.",
+          "The town will send a text message.",
         ],
-        explain: "Kanaat, veri, takvim, en sonda kuralın kendisi.",
+        explain: "Cumartesi fırtınası, nehir, uzun vadeli iklim, en sonda uyarı mesajı.",
       },
       {
         kind: "short_answer",
-        text: "What does the writer do backwards?",
+        text: "How many more years of data do the scientists need?",
         options: [],
         answer: 0,
-        accept: ["uses will with data", "will for data", "the two forms"],
-        explain: "„I use ‚will‘ where I have data and ‚going to‘ where I have a feeling.“",
+        accept: ["twenty", "twenty years", "20"],
+        explain: "„they will need twenty more years of data to be sure.“",
       },
     ],
   },
@@ -128,8 +136,6 @@ export const enB1U21: SkillExercise[] = [
       { de: "truck", tr: "kamyon" },
       { de: "contaminated", tr: "kirlenmiş" },
       { de: "whole", tr: "bütün" },
-      { de: "modal", tr: "kip" },
-      { de: "passive", tr: "edilgen" },
       { de: "tape", tr: "bant" },
       { de: "spoil", tr: "bozmak" },
       { de: "unsorted", tr: "ayrılmamış" },
@@ -142,7 +148,7 @@ export const enB1U21: SkillExercise[] = [
     text:
       "What happens to the bins here, and why one mistake costs more than you would think.\n" +
       "The glass is collected on Tuesdays. Not weekly — every second Tuesday, and the calendar on the door of the building has the dates for the whole year on one page.\n" +
-      "Plastic must be separated from paper. A modal and a passive together, and this is the line that is broken most often, usually by a box with tape on it.\n" +
+      "Plastic must be separated from paper. This is the rule that is broken most often, usually by a box with tape on it.\n" +
       "Nothing is thrown into the wrong bin without a cost. One bag of the wrong thing does not spoil one bag; it makes the whole truck contaminated, and a contaminated truck goes where the unsorted trash goes.\n" +
       "That is the part that changes behavior. Not the fine, not the sign — the fact that your one bag decides what happens to the other four hundred.\n" +
       "Metal and glass go together in this city and separately in the next one. There is no rule you can carry from one place to another, which is why the calendar is on the door and not in a flyer.\n" +
@@ -355,7 +361,7 @@ export const enB1U21: SkillExercise[] = [
     unit: 21,
     title: "Climate forecasts",
     genre: "opinion",
-    intro: "Üç gelecek, üç kanıt derecesi. Hangisi kanaat, hangisi takvim?",
+    intro: "Vadide hava ve iklim. Cümleleri kur, hava notunu doldur.",
     gloss: [
       { de: "will change", tr: "değişecek" },
       { de: "going to melt", tr: "eriyecek" },
@@ -389,13 +395,13 @@ export const enB1U21: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "İklim kartını doldur.",
-        facts: "İklim yavaş değişecek; buz daha hızlı eriyecek; fırtına cumartesi; en güçlü biçim en dar olanı.",
+        prompt: "Hava durumu notunu doldur.",
+        facts: "Fırtına cumartesi öğleden sonra geliyor; maç pazara kaldı; nehir taşacak; dağlardaki buz bu bahar daha hızlı eriyecek.",
         fields: [
-          { label: "Climate", answer: "will change", accept: ["slowly"] },
-          { label: "Ice", answer: "going to melt", accept: ["faster"] },
-          { label: "Storm", answer: "Saturday", accept: ["on Saturday"] },
-          { label: "Strongest form", answer: "the narrowest", accept: ["narrowest", "the smallest claim"] },
+          { label: "Storm", answer: "Saturday afternoon", accept: ["on Saturday afternoon", "Saturday", "on Saturday"] },
+          { label: "Football match", answer: "on Sunday", accept: ["Sunday", "moved to Sunday"] },
+          { label: "River", answer: "going to flood", accept: ["is going to flood", "will flood", "flood"] },
+          { label: "Ice", answer: "going to melt faster", accept: ["is going to melt faster", "melt faster", "faster"] },
         ],
       },
     ],
@@ -408,7 +414,7 @@ export const enB1U21: SkillExercise[] = [
     unit: 21,
     title: "Small green habits",
     genre: "info",
-    intro: "Kipli edilgen ve koşullar. Hangi koşul gerçek, hangisi değil?",
+    intro: "Evde ve mahallede küçük çevre alışkanlıkları. Cümleleri kur.",
     gloss: [
       { de: "must be separated", tr: "ayrılmalı" },
       { de: "the faucet", tr: "musluk" },

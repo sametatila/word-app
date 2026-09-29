@@ -125,7 +125,7 @@ export const c1U13: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 13,
-    title: "Vorbehaltlich, ausgeschlossen, zumutbar",
+    title: "Was im Kleingedruckten zählt",
     genre: "info",
     intro: "Sözleşme dili: hangi kelime neyi askıya alır, neyi bağlar?",
     gloss: [
@@ -385,7 +385,7 @@ export const c1U13: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 13,
-    title: "Bağlayan ve askıya alan",
+    title: "Klauseln im Liefervertrag",
     genre: "grammar",
     intro: "Bir cümlede taahhüt nerede kuruluyor, nerede boşaltılıyor?",
     gloss: [

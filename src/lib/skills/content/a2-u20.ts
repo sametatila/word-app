@@ -303,7 +303,7 @@ export const a2U20: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 20,
-    title: "Bana yakışıyor, sana uyuyor",
+    title: "Kleidung anprobieren",
     genre: "grammar",
     intro: "Beğenmek, yakışmak, uymak: Almancada özne kişi değil, şeydir.",
     gloss: [

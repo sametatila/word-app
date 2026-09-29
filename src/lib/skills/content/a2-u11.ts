@@ -283,7 +283,7 @@ export const a2U11: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 11,
-    title: "weil, denn oder wegen?",
+    title: "Gründe und Ausreden",
     genre: "grammar",
     intro: "Aynı sebep, üç yapı, üç ayrı söz dizimi. Seçimi yaptığın an sıra da belli oluyor.",
     gloss: [

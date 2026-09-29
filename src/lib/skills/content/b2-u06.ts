@@ -105,11 +105,10 @@ export const b2U06: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 6,
-    title: "Geöffnet oder wird geöffnet?",
-    genre: "article",
-    intro: "Bir dil köşesi yazısı: Almancada süreç ile durum neden ayrı yazılır?",
+    title: "Vier Wochen vor dem Einzug",
+    genre: "letter",
+    intro: "Şantiye yönetimi yeni binanın kiracılarına yazıyor. Hangi işler bitti, hangileri hâlâ sürüyor?",
     gloss: [
-      { de: "der Vorgang", tr: "işlem", en: "process" },
       { de: "betriebsbereit", tr: "çalışmaya hazır", en: "operational" },
       { de: "bezugsfertig", tr: "oturmaya hazır", en: "ready for occupancy" },
       { de: "einwandfrei", tr: "kusursuz", en: "flawless" },
@@ -118,59 +117,64 @@ export const b2U06: SkillExercise[] = [
       { de: "stilllegen", tr: "tesisi kapatmak", en: "to shut down" },
       { de: "beseitigen", tr: "gidermek", en: "to remove" },
       { de: "offen", tr: "açık", en: "open" },
-      { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "besonders", tr: "özellikle", en: "especially" },
-      { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "passieren", tr: "olmak", en: "to happen" },
-      { de: "passen", tr: "uymak", en: "to fit" },
+      { de: "die Abnahme", tr: "kabul", en: "acceptance" },
+      { de: "der Einzug", tr: "taşınma", en: "move-in" },
+      { de: "die Bauleitung", tr: "şantiye yönetimi", en: "site management" },
+      { de: "verlegen", tr: "döşemek", en: "to lay" },
+      { de: "die Pflasterarbeiten", tr: "kaldırım taşı döşeme işi", en: "paving work" },
+      { de: "die Rampe", tr: "rampa", en: "ramp" },
+      { de: "die Heizungsanlage", tr: "ısıtma sistemi", en: "heating system" },
+      { de: "die Information", tr: "bilgilendirme", en: "information" },
+      { de: "zurzeit", tr: "şu anda", en: "currently" },
     ],
     minutes: 6,
     text:
-      "GEÖFFNET ODER WIRD GEÖFFNET?\n\n" +
-      "Zwei Sätze, ein Wort Unterschied, zwei völlig verschiedene Aussagen. „Die Tür wird geöffnet“ beschreibt einen Vorgang: gerade passiert etwas. „Die Tür ist geöffnet“ beschreibt einen Zustand: irgendwann hat jemand geöffnet, und jetzt ist sie offen.\n\n" +
-      "Im Deutschen sind das zwei verschiedene Formen, im Türkischen oft dieselbe. Wer aus dem Türkischen kommt, hört den Unterschied deshalb nicht sofort — er muss ihn lernen wie eine Vokabel.\n\n" +
-      "Warum lohnt sich das? Weil in Verträgen, Berichten und Bauplänen genau dieser Unterschied entscheidet. „Die Wohnung wird bezugsfertig gemacht“ heißt: Es wird noch gearbeitet. „Die Wohnung ist bezugsfertig“ heißt: Sie können einziehen. Der Bauleiter, der das erste sagt, und der Mieter, der das zweite hört, streiten drei Wochen später.\n\n" +
-      "Dasselbe gilt für Anlagen. „Die Anlage wird stillgelegt“ ist eine Ankündigung. „Die Anlage ist stillgelegt“ ist ein Befund. Und „die Anlage ist betriebsbereit“ sagt nicht, dass sie läuft — nur, dass sie laufen könnte.\n\n" +
-      "Eine kleine Faustregel hilft weiter: Wenn man „gerade jetzt“ einsetzen kann, ist es ein Vorgang und braucht werden. Wenn man „seit gestern“ einsetzen kann, ist es ein Zustand und braucht sein.\n\n" +
-      "Und wo steht der Unterschied besonders oft? In Sicherheitstexten. „Die Absperrung wird beseitigt“ heißt, es ist noch gefährlich. „Der Zugang ist barrierefrei“ und „die Prüfung ist einwandfrei verlaufen“ dagegen sind fertige Zustände — genau das, was man lesen will.",
+      "INFORMATION FÜR DIE KÜNFTIGEN MIETERINNEN UND MIETER\n\n" +
+      "Liebe künftige Nachbarinnen und Nachbarn, vier Wochen vor dem ersten Einzug möchten wir Sie über den Stand der Arbeiten informieren.\n\n" +
+      "Die Wohnungen im Erdgeschoss und im ersten Stock sind bezugsfertig. Die Böden sind verlegt, die Küchen sind eingebaut, und die Abnahme ist einwandfrei verlaufen. Im zweiten und dritten Stock wird dagegen noch gearbeitet: Dort werden in dieser Woche die Fenster eingebaut, danach werden die Türen eingesetzt.\n\n" +
+      "Der Aufzug ist eingebaut, aber noch nicht betriebsbereit. Er wird am 12. Mai technisch geprüft. Bis dahin ist er abgeschlossen.\n\n" +
+      "Im Hof steht noch eine Absperrung. Sie wird beseitigt, sobald die Pflasterarbeiten abgeschlossen sind, voraussichtlich Ende nächster Woche. Der Zugang von der Straße ist schon jetzt barrierefrei: Die Rampe ist fertig, und die Haustür öffnet sich automatisch.\n\n" +
+      "Eine Bitte: Die alte Heizungsanlage im Keller wird zurzeit stillgelegt. Betreten Sie den Keller deshalb bitte noch nicht, auch wenn die Tür offen ist.\n\n" +
+      "Ihre Schlüssel werden am Tag des Einzugs übergeben. Die Termine sind bereits vergeben; wer seinen Termin verschieben möchte, meldet sich bitte bis zum 30. April bei uns.\n\n" +
+      "Mit freundlichen Grüßen\nIhre Bauleitung, Sabine Kraus",
     questions: [
       {
-        text: "Was beschreibt „Die Tür wird geöffnet“?",
-        options: ["einen Zustand", "einen Vorgang", "eine Absicht"],
+        text: "Welche Wohnungen sind schon bezugsfertig?",
+        options: ["die im zweiten und dritten Stock", "die im Erdgeschoss und im ersten Stock", "alle Wohnungen im Haus"],
         answer: 1,
-        explain: "„…beschreibt einen Vorgang: gerade passiert etwas.“",
+        explain: "„Die Wohnungen im Erdgeschoss und im ersten Stock sind bezugsfertig.“",
       },
       {
         kind: "short_answer",
-        text: "Welches Wort passt zum Zustand: „gerade jetzt“ oder „seit gestern“?",
+        text: "Wann wird der Aufzug geprüft?",
         options: [],
         answer: 0,
-        accept: ["seit gestern", "seit gestern passt", "seit"],
-        explain: "„Wenn man 'seit gestern' einsetzen kann, ist es ein Zustand und braucht sein.“",
+        accept: ["am 12. Mai", "12. Mai", "am zwölften Mai"],
+        explain: "„Er wird am 12. Mai technisch geprüft.“",
       },
       {
         kind: "gapfill",
-        text: "Die Wohnung ___ bezugsfertig — Sie können einziehen.",
+        text: "Im zweiten und dritten Stock ___ dagegen noch gearbeitet.",
         options: [],
         answer: 0,
-        accept: ["ist"],
-        explain: "Durum edilgeni sein ile kurulur. wird olsaydı işin sürdüğü anlaşılırdı.",
+        accept: ["wird"],
+        explain: "İş hâlâ sürüyor: süreç edilgeni werden ile kurulur.",
       },
       {
-        text: "Was sagt „die Anlage ist betriebsbereit“?",
+        text: "Warum sollen die Mieter noch nicht in den Keller gehen?",
         options: [
-          "Sie läuft gerade.",
-          "Sie könnte laufen.",
-          "Sie wird abgeschaltet.",
+          "Dort werden noch Fenster eingebaut.",
+          "Die alte Heizungsanlage wird stillgelegt.",
+          "Der Keller ist abgeschlossen.",
         ],
         answer: 1,
-        explain: "„…sagt nicht, dass sie läuft — nur, dass sie laufen könnte.“",
+        explain: "„Die alte Heizungsanlage im Keller wird zurzeit stillgelegt.“",
       },
       {
-        text: "Im Deutschen sind das zwei verschiedene Formen.",
+        text: "Der Zugang von der Straße ist schon barrierefrei.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Im Deutschen sind das zwei verschiedene Formen, im Türkischen oft dieselbe.“",
+        explain: "„Der Zugang von der Straße ist schon jetzt barrierefrei…“",
       },
     ],
   },
@@ -335,7 +339,7 @@ export const b2U06: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 6,
-    title: "Vorgang oder Zustand",
+    title: "Lieferung, Freigabe, Übergabe",
     genre: "build",
     intro: "Edilgenin dört biçimi: geçmiş, kipli, durum ve edilgen yerine geçenler.",
     gloss: [

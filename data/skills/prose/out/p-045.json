@@ -10,11 +10,6 @@
   "en": "After „recommend“ comes „-ing“."
  },
  {
-  "tr": "Önce iki örnek, sonra ölçüt, en son karar.",
-  "kind": "explain",
-  "en": "First two examples, then the test, and the decision last."
- },
- {
   "tr": "Toplantı özeti. Kim ne söyledi, kim ne önerdi?",
   "kind": "intro",
   "en": "The summary of the meeting. Who said what, and who suggested what?"
@@ -28,11 +23,6 @@
   "tr": "Fotoğrafta kim kim? Betimlemeler nasıl kuruluyor?",
   "kind": "intro",
   "en": "Who is who in the photo? How are the descriptions built?"
- },
- {
-  "tr": "Kıyıda küçük bir köy. İki virgül ne değiştiriyor?",
-  "kind": "intro",
-  "en": "A small village on the coast. What do two commas change?"
  },
  {
   "tr": "Kötü bir sabah. Hangi olay hangisinden önce oldu?",
@@ -68,11 +58,6 @@
   "tr": "Kullanma kılavuzu dili edilgen: kimin değiştirdiği önemsiz.",
   "kind": "explain",
   "en": "The language of a manual is passive: who changes it does not matter."
- },
- {
-  "tr": "Üç haber, üç edilgen biçim. Hangisi bitti, hangisi sürüyor?",
-  "kind": "intro",
-  "en": "Three news items, three passive forms. Which is done and which is still running?"
  },
  {
   "tr": "Aktarılınca zaman geriye kayıyor: „changed“ → „had changed“.",
@@ -123,10 +108,5 @@
   "tr": "Olayların sırası ve aktarılan sözler. Hangi biçim „daha önce“ diyor?",
   "kind": "intro",
   "en": "The order of events and reported words. Which form says „before that“?"
- },
- {
-  "tr": "İki seçenek, iki bağlaç. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
-  "kind": "intro",
-  "en": "Two options, two linkers. Which one surprises and which one compares?"
  }
 ]

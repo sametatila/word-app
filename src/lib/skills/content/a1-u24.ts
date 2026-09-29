@@ -294,7 +294,7 @@ export const a1U24: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 24,
-    title: "haben oder sein?",
+    title: "Was ich gestern gemacht habe",
     genre: "grammar",
     intro: "A1'in en çok karıştırılan noktası. Üç cümle.",
     gloss: [

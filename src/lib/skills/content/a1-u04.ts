@@ -253,7 +253,7 @@ export const a1U04: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 4,
-    title: "kein oder keine?",
+    title: "Haben und nicht haben",
     genre: "grammar",
     intro: "Olumsuzluk ve çoğul üzerine kısa alıştırmalar.",
     gloss: [

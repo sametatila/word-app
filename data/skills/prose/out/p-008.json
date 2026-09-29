@@ -45,11 +45,6 @@
   "en": "The decision is already made and the contract signed: be going to."
  },
  {
-  "tr": "Kısalık karşı tarafa ne kadar zaman değdiğini de söylüyor.",
-  "kind": "explain",
-  "en": "Brevity also says how much of the other person's time you think it is worth."
- },
- {
   "tr": "KİŞİ için „kennen“. „wissen“ olgu ve yan cümle için gelir.",
   "kind": "explain",
   "en": "„kennen“ is for a PERSON. „wissen“ is for facts and clauses."
@@ -200,11 +195,6 @@
   "en": "„messen“ takes an object, so -bar can be formed: messbar."
  },
  {
-  "tr": "„nicht Tierliebe“ — birebir çeviri tam ters yöne götürüyor.",
-  "kind": "explain",
-  "en": "„nicht Tierliebe“ — a literal translation leads exactly the wrong way."
- },
- {
   "tr": "„Sie arbeiten seit drei Jahren im Verkauf.“ — seit + Dativ.",
   "kind": "explain",
   "en": "„Sie arbeiten seit drei Jahren im Verkauf.“ — seit + dative."
@@ -218,11 +208,6 @@
   "tr": "„Wir müssen den Termin verschieben“ — hekim o gün eğitimde.",
   "kind": "explain",
   "en": "„Wir müssen den Termin verschieben“ — the doctor is on a course that day."
- },
- {
-  "tr": "Aktarım kipi kimi bağlar? İki cümle, iki farklı sorumluluk.",
-  "kind": "intro",
-  "en": "Whom does reported speech bind? Two sentences, two kinds of responsibility."
  },
  {
   "tr": "Alıntı doğru ama yanlış olabilir mi? Bağlamın taşıdığı yük.",
@@ -373,11 +358,6 @@
   "tr": "Metin „seit Montag“ diyor — pazartesiden beri; pazar değil.",
   "kind": "explain",
   "en": "The text says „seit Montag“ — since Monday, not Sunday."
- },
- {
-  "tr": "Metinde kaç deyim fazla? Bir yazı üstünden dozaj konuşması.",
-  "kind": "intro",
-  "en": "How many idioms is too many? A conversation about dosage over one text."
  },
  {
   "tr": "Oda düzenleniyor. Ne nereye gidiyor, hangi karar değişiyor?",
@@ -550,11 +530,6 @@
   "en": "Agency language: once a source is named the verb goes into Konjunktiv I."
  },
  {
-  "tr": "Aksanla ve basit cümle yapısıyla da yerinde konuşulabiliyor.",
-  "kind": "explain",
-  "en": "Even with an accent and simple sentences you can pitch it right."
- },
- {
   "tr": "Anahtar kaybında 20 avro — kuralın ikinci bölümünde yazıyor.",
   "kind": "explain",
   "en": "20 euros if you lose your key — it is in the second part of the rule."
@@ -615,19 +590,9 @@
   "en": "One is a good wish, the other concrete help — Ela wants the second."
  },
  {
-  "tr": "Bu ünitenin özeti: parçacık süs değil, nezaketin taşıyıcısı.",
-  "kind": "explain",
-  "en": "The summary of this unit: a particle is not decoration but the carrier of politeness."
- },
- {
   "tr": "Cevapsız kalan bir talep için resmî bir şikâyet mektubu yaz.",
   "kind": "intro",
   "en": "Write a formal letter of complaint about a request that went unanswered."
- },
- {
-  "tr": "Deyim kullanmamak risksiz; yanlış anlaşılan deyim risklidir.",
-  "kind": "explain",
-  "en": "Using no idiom carries no risk; an idiom that is misunderstood does."
  },
  {
   "tr": "die Zeit dişil olduğu için „keine Zeit“ — „kein Zeit“ değil.",

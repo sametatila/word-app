@@ -39,38 +39,35 @@ export const enB1U11: SkillExercise[] = [
     unit: 11,
     title: "How registration works",
     genre: "guide",
-    intro: "Kayıt işleminin dili. Cümleler neden hep edilgen?",
+    intro: "Belediyede kayıt nasıl yapılıyor? Hangi adım nerede atılıyor?",
     gloss: [
       { de: "mail", tr: "posta" },
       { de: "in person", tr: "bizzat" },
       { de: "whoever", tr: "her kimse" },
       { de: "registration", tr: "kayıt" },
-      { de: "sentence", tr: "cümle" },
-      { de: "event", tr: "olay" },
-      { de: "the passive", tr: "edilgen" },
       { de: "instead", tr: "onun yerine" },
     ],
     minutes: 7,
     text:
-      "How registration works here, in the order it happens.\n" +
-      "The form is stamped at the desk. Not by a person you can name — by whoever is there. That sentence has no time in it and that is the point: this is how it always works, on a Monday in March and on a Friday in August.\n" +
-      "My application was processed last week. Here there is a time, so this is one event, mine, and it is over. Two sentences, same form, different jobs.\n" +
-      "When is the card issued? Ten working days after the stamp, and the question is asked in the passive because nobody in the room issues it. It comes from another office in another building.\n" +
+      "How registration works at the city office, in the order it happens.\n" +
+      "First, the form is filled out at home and brought to the desk. There it is checked and stamped by whoever is working that day. Forms are not accepted without a signature, so check the last page twice.\n" +
+      "Then the application is processed in the back office. Mine was processed last week, four days after my visit, and I received an email when it was ready.\n" +
+      "When is the card issued? Ten working days after the stamp. It is printed in another office in another building, so the people at the desk cannot make it faster, even if you ask nicely.\n" +
       "What you need: proof of address, the passport, and the old card if you have one. Residents who have lived here for less than three months bring the lease instead.\n" +
       "What nobody tells you: the desk is quiet between two and three, because the numbers are given out in the morning and most people come back after lunch.\n" +
       "And the part that is not in any guide: come in person on the first visit. Everything after that can be done by mail, but the first stamp is given to a face.",
     questions: [
       {
-        text: "What does „The form is stamped at the desk“ tell you?",
-        options: ["this is how it always works", "it happened last week", "a named person did it"],
+        text: "Who stamps the form?",
+        options: ["whoever is working that day", "the back office", "another office"],
         answer: 0,
-        explain: "„That sentence has no time in it and that is the point: this is how it always works…“",
+        explain: "„There it is checked and stamped by whoever is working that day.“",
       },
       {
-        text: "Why is the question about the card in the passive?",
-        options: ["nobody in the room issues it", "it is more polite", "the card is old"],
+        text: "Why can the people at the desk not make the card faster?",
+        options: ["It is printed in another building.", "The desk is closed after lunch.", "The form needs a lease."],
         answer: 0,
-        explain: "„the question is asked in the passive because nobody in the room issues it.“",
+        explain: "„It is printed in another office in another building, so the people at the desk cannot make it faster…“",
       },
       {
         kind: "truefalse",
@@ -85,7 +82,7 @@ export const enB1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ten", "10"],
-        explain: "„Ten working days after the stamp…“",
+        explain: "„Ten working days after the stamp.“",
       },
       {
         kind: "order",
@@ -95,10 +92,10 @@ export const enB1U11: SkillExercise[] = [
         items: [
           "The form is stamped at the desk.",
           "My application was processed last week.",
-          "When is the card issued?",
+          "The card is printed in another building.",
           "Come in person on the first visit.",
         ],
-        explain: "İşleyiş, tek olay, soru, en sonda öğüt.",
+        explain: "Önce form, sonra başvuru, sonra kart, en sonda öğüt.",
       },
       {
         kind: "short_answer",

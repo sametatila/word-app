@@ -1,40 +1,5 @@
 [
  {
-  "tr": "Tanımlık kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Artikelkarte aus."
- },
- {
-  "tr": "Orta konum kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte zur Mittelstellung aus."
- },
- {
-  "tr": "Sayılabilirlik kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Zählbarkeitskarte aus."
- },
- {
-  "tr": "Yuva özne ile fiilin arasında; içine hüküm konuyor; Almancada yuva yok çünkü fiil ikinci öğe; İngilizcede hüküm haberden önce geliyor.",
-  "kind": "form.facts",
-  "de": "Die Stelle liegt zwischen Subjekt und Verb; hinein kommt ein Urteil; im Deutschen gibt es sie nicht, weil das Verb das zweite Element ist; im Englischen kommt das Urteil vor der Nachricht."
- },
- {
-  "tr": "Advice ve information çoğul almıyor; Almanca karşılıkları sayılabilir; sayılabilirlik dilin kararı; İngilizce saymak için sayaç ödünç alıyor.",
-  "kind": "form.facts",
-  "de": "Advice und information bilden keinen Plural; ihre deutschen Entsprechungen sind zählbar; die Zählbarkeit ist eine Entscheidung der Sprache; zum Zählen borgt sich das Englische ein Zähleinheitswort."
- },
- {
-  "tr": "Genel anlamda soyut isim çıplak; daraltan bir şey gelince tanımlık dönüyor; daraltma çoğunlukla ismin ardında; kural ismin değil öbeğin kuralı.",
-  "kind": "form.facts",
-  "de": "Im allgemeinen Sinn steht das abstrakte Nomen ohne Artikel; sobald etwas es einengt, kehrt der Artikel zurück; die Einengung steht meist hinter dem Nomen; die Regel gilt nicht dem Nomen, sondern der ganzen Phrase."
- },
- {
-  "tr": "İngilizce kararı konum ve yoklukla veriyor; Almanca ekle veriyor; ek öğrenilmek zorunda ve tahmin edilemez; delik öğrenilemez, tanıdık gelene kadar karşılaşmak gerekir.",
-  "kind": "form.facts",
-  "de": "Das Englische entscheidet durch Stellung und Abwesenheit; das Deutsche durch Endungen; eine Endung muss gelernt werden und lässt sich nicht erraten; ein Loch lässt sich gar nicht lernen — man muss ihm oft genug begegnen, bis seine Form geläufig wird."
- },
- {
   "tr": "Cevap ölçülüydü; ton, daha az.",
   "kind": "build.tr",
   "de": "Die Antwort war maßvoll; der Ton weniger."

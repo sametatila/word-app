@@ -5,39 +5,9 @@
   "en": "Looking back. Which event came first?"
  },
  {
-  "tr": "Amaç, sonuç, ödün, en sonda üçünün adı.",
-  "kind": "explain",
-  "en": "Purpose, outcome, concession; their three names last."
- },
- {
-  "tr": "İki koşul ve iki kural. Hangisi gerçek?",
-  "kind": "intro",
-  "en": "Two conditions and two rules. Which one is real?"
- },
- {
-  "tr": "Edilgen ve aktarma. Fail nerede duruyor?",
-  "kind": "intro",
-  "en": "The passive and reported speech. Where does the doer stand?"
- },
- {
   "tr": "Süre: pazartesi başladı ve hâlâ sürüyor.",
   "kind": "explain",
   "en": "A stretch of time: it began on Monday and is still going on."
- },
- {
-  "tr": "Şey, kişi, yer; en sonda sınamanın kendisi.",
-  "kind": "explain",
-  "en": "A thing, a person, a place; the test itself last."
- },
- {
-  "tr": "İki yaşam yan yana. Hangi bağlaç isim alıyor?",
-  "kind": "intro",
-  "en": "Two lives side by side. Which linker takes a noun?"
- },
- {
-  "tr": "Karşıtlığın üç biçimi ve duygunun iki zamanı.",
-  "kind": "intro",
-  "en": "Three shapes of contrast and two tenses for a feeling."
  },
  {
   "tr": "„avoid“ „-ing“ istiyor; „avoid to walk“ olmaz.",
@@ -45,134 +15,14 @@
   "en": "„avoid“ takes „-ing“; „avoid to walk“ is wrong."
  },
  {
-  "tr": "Kapıdaki üç kural. Hangisi dünü anlatabiliyor?",
-  "kind": "intro",
-  "en": "Three rules by the door. Which one can speak of yesterday?"
- },
- {
-  "tr": "Amaç, sonuç, ödün. Hangi bağlaç nereye gidiyor?",
-  "kind": "intro",
-  "en": "Purpose, outcome, concession. Which linker goes where?"
- },
- {
-  "tr": "Önce kuralı taşıyan cümle, sonra takvim sırası.",
-  "kind": "explain",
-  "en": "First the sentence that carries the rule, then the calendar order."
- },
- {
-  "tr": "Üç gelecek biçimi, tek kişi. Hangisi ayarlanmış?",
-  "kind": "intro",
-  "en": "Three future forms, one person. Which one is arranged?"
- },
- {
   "tr": "„give up“ „-ing“ istiyor; „give up to buy“ olmaz.",
   "kind": "explain",
   "en": "„give up“ takes „-ing“; „give up to buy“ is wrong."
  },
  {
-  "tr": "Aktarılan üç cümle. Hangisinde „whether“ geliyor?",
-  "kind": "intro",
-  "en": "Three reported sentences. Which one takes „whether“?"
- },
- {
-  "tr": "Bir korkuyla yüzleşme. Hangi fiil mastar istiyor?",
-  "kind": "intro",
-  "en": "Facing a fear. Which verb takes the infinitive?"
- },
- {
-  "tr": "Failsiz, failli, kipli; en sonda kuralın kendisi.",
-  "kind": "explain",
-  "en": "No doer, a doer, a modal; the rule itself last."
- },
- {
-  "tr": "Şey, kişi, yer. Hangi adıl hangi boşluğa giriyor?",
-  "kind": "intro",
-  "en": "A thing, a person, a place. Which word goes in which gap?"
- },
- {
-  "tr": "Geçmişin iki katmanı. Hangi cümlede „had“ zorunlu?",
-  "kind": "intro",
-  "en": "Two layers of the past. In which sentence is „had“ required?"
- },
- {
-  "tr": "Üç kural, üç ayrı iş. Hangisi geçmişe gidebiliyor?",
-  "kind": "intro",
-  "en": "Three rules, three different jobs. Which one can go to the past?"
- },
- {
-  "tr": "Biri üzgün. Hangi kural kaldırıyor, hangisi koyuyor?",
-  "kind": "intro",
-  "en": "Somebody is sad. Which rule takes away and which one puts one there?"
- },
- {
   "tr": "Önce olan iş „had“ + üçüncü hâl; soru sonra geliyor.",
   "kind": "explain",
   "en": "The earlier thing is „had“ + third form; the question comes after."
- },
- {
-  "tr": "Üç ilgi cümlesi. Hangi sözcük hangi boşluğa gidiyor?",
-  "kind": "intro",
-  "en": "Three relative clauses. Which word goes in which gap?"
- },
- {
-  "tr": "Üç bağlaç, üç ayrı iş. Hangisi yalnız geriye bakıyor?",
-  "kind": "intro",
-  "en": "Three linkers, three jobs. Which one can only look backwards?"
- },
- {
-  "tr": "Üç edilgen, üç ayrı iş. Hangisinde fail geri geliyor?",
-  "kind": "intro",
-  "en": "Three passives, three jobs. In which one does the doer come back?"
- },
- {
-  "tr": "Duyguyu adlandırmak. Hangi cümle çizgi, hangisi nokta?",
-  "kind": "intro",
-  "en": "Naming a feeling. Which sentence is a line and which a point?"
- },
- {
-  "tr": "İki koşul yan yana. Hangisi gerçek olmayanı anlatıyor?",
-  "kind": "intro",
-  "en": "Two conditions side by side. Which one speaks of the unreal?"
- },
- {
-  "tr": "Önce kuralın iki örneği, sonra vadinin kendi hikâyesi.",
-  "kind": "explain",
-  "en": "First two examples of the rule, then the story of the valley."
- },
- {
-  "tr": "İki kişi bir nehri konuşuyor. Hangi fiil „-ing“ istiyor?",
-  "kind": "intro",
-  "en": "Two people talk about a river. Which verb takes „-ing“?"
- },
- {
-  "tr": "Aktarma ve fiil sonrası biçim. Hangi fiil mastar istiyor?",
-  "kind": "intro",
-  "en": "Reported speech and the form after the verb. Which verb takes the infinitive?"
- },
- {
-  "tr": "Aktarılan üç cümle, bir dostluk. Hangisinde sıra düzleşiyor?",
-  "kind": "intro",
-  "en": "Three reported sentences, one friendship. In which one does the order go flat?"
- },
- {
-  "tr": "Gerçek koşul, gerçek olmayan koşul, „unless“, en sonda yargı.",
-  "kind": "explain",
-  "en": "Real condition, unreal condition, „unless“, the verdict last."
- },
- {
-  "tr": "Gereklilik, gerekliliğin yokluğu, yasak, en sonda geçmiş biçim.",
-  "kind": "explain",
-  "en": "A requirement, the absence of one, a prohibition, the past form last."
- },
- {
-  "tr": "Metnin kendi sırası: cümlecik, isim, rapor dili, en sonda kural.",
-  "kind": "explain",
-  "en": "The order of the text: clause, noun, report language, the rule last."
- },
- {
-  "tr": "Yol yapılmadan önce burası neydi? Hangi cümlede „had“ gerekiyor?",
-  "kind": "intro",
-  "en": "What was here before they built the road? Which sentence needs „had“?"
  },
  {
   "tr": "Aktarılan soruda sıra düzleşiyor; „whether“ devrik sıranın işini üstleniyor.",

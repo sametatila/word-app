@@ -115,62 +115,59 @@ export const enB1U06: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 6,
-    title: "Four words for one idea",
-    genre: "guide",
-    intro: "Dört sözcük, tek fikir. Hangisi cümleye başlayabiliyor?",
+    title: "Late because of the storm",
+    genre: "email",
+    intro: "Toplantıyı kaçıran bir çalışanın e-postası. Tren neden durdu, sonucu ne oldu?",
     gloss: [
-      { de: "introduces", tr: "getiriyor" },
-      { de: "canceled", tr: "iptal edildi" },
-      { de: "either order", tr: "iki sırada da" },
-      { de: "sentence", tr: "cümle" },
-      { de: "correct", tr: "doğru" },
-      { de: "sounds", tr: "kulağa geliyor" },
-      { de: "the tense", tr: "zaman biçimi" },
+      { de: "a storm", tr: "fırtına" },
+      { de: "the short version", tr: "kısacası" },
     ],
     minutes: 7,
     text:
-      "Four words for one idea, and they do not go in the same place.\n" +
-      "I was late because the train stopped. „Because“ introduces the reason and it can also start the sentence: Because the train stopped, I was late. Both are correct; the second one puts the reason first.\n" +
-      "The train stopped, so I was late. „So“ introduces the result and it cannot move in front of the reason. That is the difference and it is the mistake I see most often.\n" +
-      "Since the train stopped, I was late. „Since“ works like „because“ but it usually comes first, and it carries a small extra meaning: we both already know this part.\n" +
-      "Therefore is the formal one. The train was canceled. Therefore, the meeting was moved. In an email it is right. At a table it sounds like a machine.\n" +
-      "One way to check. If you can put the two parts in either order, you are using because or since. If the order is fixed, it is so.\n" +
-      "And one more thing: since also means from that time. Since March I have worked here. The reader knows which one from the tense, not from the word.",
+      "Subject: Why I missed this morning's meeting\n" +
+      "Hi Laura,\n" +
+      "I am sorry I missed the team meeting this morning. I want to explain what happened, because the short version sounds worse than it was. The reason I am writing instead of calling is that you are in meetings all day.\n" +
+      "I left home at seven, so I had forty minutes to spare. Since the line to the city is often slow on Mondays, I always take the early train. This time it did not help. The train stopped for an hour outside Hilltown because a tree had fallen on the track, and nobody could get off.\n" +
+      "The cause was the storm last night, so it was not only my train. Half of the team was late too. Therefore, only two of the six points on the agenda were discussed, and the other four were moved to Wednesday.\n" +
+      "Unfortunately, my point was one of the two. Since I was not there, the new summer schedule was presented without me, and I hear it was not accepted. The result is that we need to start again.\n" +
+      "Could we talk before Wednesday? I will bring the numbers, so we can decide in ten minutes.\n" +
+      "Best,\n" +
+      "Nil",
     questions: [
       {
-        text: "With which word is the order of the two parts fixed?",
-        options: ["so", "because", "since"],
+        text: "Why did the train stop?",
+        options: ["A tree had fallen on the track.", "The driver was sick.", "The station was closed."],
         answer: 0,
-        explain: "„‚So‘ introduces the result and it cannot move in front of the reason.“",
+        explain: "„The train stopped for an hour outside Hilltown because a tree had fallen on the track…“",
       },
       {
-        text: "What extra meaning does „since“ carry?",
-        options: ["we both know this part", "the reason is new", "the result is formal"],
+        text: "Why does Nil always take the early train?",
+        options: ["The line is often slow on Mondays.", "It is cheaper.", "Her meeting starts at seven."],
         answer: 0,
-        explain: "„…it carries a small extra meaning: we both already know this part.“",
+        explain: "„Since the line to the city is often slow on Mondays, I always take the early train.“",
       },
       {
         kind: "truefalse",
-        text: "„Therefore“ is right at a table with friends.",
+        text: "All six points on the agenda were discussed.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„In an email it is right. At a table it sounds like a machine.“",
+        explain: "„Therefore, only two of the six points on the agenda were discussed…“",
       },
       {
         kind: "gapfill",
-        text: "„Because“ introduces the ___.",
+        text: "The cause was the ___ last night.",
         options: [],
         answer: 0,
-        accept: ["reason"],
-        explain: "„‚Because‘ introduces the reason and it can also start the sentence…“",
+        accept: ["storm"],
+        explain: "„The cause was the storm last night, so it was not only my train.“",
       },
       {
         kind: "short_answer",
-        text: "What is the second meaning of „since“?",
+        text: "What will Nil bring to the talk?",
         options: [],
         answer: 0,
-        accept: ["from that time", "time", "a starting point"],
-        explain: "„since also means from that time. Since March I have worked here.“",
+        accept: ["the numbers", "numbers"],
+        explain: "„I will bring the numbers, so we can decide in ten minutes.“",
       },
     ],
   },

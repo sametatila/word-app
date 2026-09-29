@@ -27,7 +27,6 @@
  { "tr": "ikisi de", "kind": "gloss.tr", "de": "beide" },
  { "tr": "iş ilanı", "kind": "gloss.tr", "de": "Stellenanzeige" },
  { "tr": "kaçınmak", "kind": "gloss.tr", "de": "vermeiden" },
- { "tr": "gizlice geçirmek", "kind": "gloss.tr", "de": "schmuggeln" },
  { "tr": "kaldırma", "kind": "gloss.tr", "de": "Entfernung" },
  { "tr": "kapatmak", "kind": "gloss.tr", "de": "ausmachen" },
  { "tr": "aynı fikirde olmak", "kind": "gloss.tr", "de": "zustimmen" },
@@ -148,6 +147,5 @@
  { "tr": "ayrılmak", "kind": "gloss.tr", "de": "weggehen" },
  { "tr": "katılmak", "kind": "gloss.tr", "de": "zustimmen" },
  { "tr": "merdiven", "kind": "gloss.tr", "de": "Treppe" },
- { "tr": "bağlayıcı", "kind": "gloss.tr", "de": "verbindlich" },
  { "tr": "tırmanmak", "kind": "gloss.tr", "de": "steigen" }
 ]

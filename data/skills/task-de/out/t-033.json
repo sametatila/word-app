@@ -1,10 +1,5 @@
 [
  {
-  "tr": "İklim kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Klimakarte aus."
- },
- {
   "tr": "Rapor kartını doldur.",
   "kind": "form.prompt",
   "de": "Fülle die Attestkarte aus."
@@ -18,11 +13,6 @@
   "tr": "Günde iki hap; hekim reçete etti; buzdolabında saklanacak; ilk iki gün araç kullanılmayacak.",
   "kind": "form.facts",
   "de": "Zwei Tabletten am Tag; der Arzt hat sie verschrieben; im Kühlschrank aufbewahren; die ersten zwei Tage nicht Auto fahren."
- },
- {
-  "tr": "İklim yavaş değişecek; buz daha hızlı eriyecek; fırtına cumartesi; en güçlü biçim en dar olanı.",
-  "kind": "form.facts",
-  "de": "Das Klima ändert sich langsam; das Eis schmilzt schneller; der Sturm kommt am Samstag; die stärkste Form ist die engste."
  },
  {
   "tr": "Rapor üç iş günü; geriye tarihlenmiyor; pazartesi devamsızlığa perşembeye kadar rapor; raporda tanı yazmıyor.",
@@ -278,10 +268,5 @@
   "tr": "Prospektüsün sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge des Beipackzettels: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Kanıt sırası: en zayıftan en güçlüye koy.",
-  "kind": "question.text",
-  "de": "Reihenfolge der Belege: vom schwächsten zum stärksten."
  }
 ]

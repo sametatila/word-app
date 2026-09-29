@@ -323,7 +323,7 @@ export const a2U25: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 25,
-    title: "Gerekçe, koşul, karşılaştırma",
+    title: "Berufswunsch und Prüfungsangst",
     genre: "grammar",
     intro: "A2'nin üç yapısı bir arada — hangisi fiili nereye atıyor?",
     gloss: [

@@ -263,7 +263,7 @@ export const a1U12: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 12,
-    title: "gefallen — dikkat!",
+    title: "Kleidung umtauschen",
     genre: "grammar",
     intro: "„gefallen“ kalıbını ve iade cümlelerini yaz.",
     gloss: [

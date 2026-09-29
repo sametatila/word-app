@@ -1,0 +1,19 @@
+[
+ { "tr": "Yeni bir iş arkadaşını ekibe tanıtan e-posta. Ana kim, işi ne olacak?", "kind": "intro", "de": "Eine E-Mail, die dem Team eine neue Kollegin vorstellt. Wer ist Ana, und was wird ihre Aufgabe sein?" },
+ { "tr": "Vardiya değişiminde iş devri. Selin'in bugün neyi halletmesi gerekiyor?", "kind": "intro", "de": "Eine Übergabe beim Schichtwechsel. Was muss Selin heute erledigen?" },
+ { "tr": "Proje yöneticisinin müşteriye bıraktığı sesli mesaj. Haziranda ne bitmiş olacak?", "kind": "intro", "de": "Eine Sprachnachricht, die der Projektleiter einer Kundin hinterlassen hat. Was wird bis Juni fertig sein?" },
+ { "tr": "Bölge ekibinin pazartesi bilgilendirme notu. Hangi bilgi kesin, hangisi yalnız duyulmuş?", "kind": "intro", "de": "Die Montagsnotiz des Regionalteams. Welche Information ist sicher, welche nur vom Hörensagen bekannt?" },
+ { "tr": "Takdim, geçmiş deneyim, iş devri, en sonda davet.", "kind": "explain", "de": "Vorstellung, bisherige Erfahrung, Übergabe, zum Schluss die Einladung." },
+ { "tr": "Not dört başlıkla ilerliyor: öngörü, paydaşlar, anket bulguları, ekip.", "kind": "explain", "de": "Die Notiz folgt vier Überschriften: Prognose, Beteiligte, Umfrageergebnisse, Team." },
+ { "tr": "finans", "kind": "gloss.tr", "de": "Finanzen" },
+ { "tr": "öğle", "kind": "gloss.tr", "de": "Mittag" },
+ { "tr": "kısacası", "kind": "gloss.tr", "de": "kurz gesagt" },
+ { "tr": "lojistik", "kind": "gloss.tr", "de": "Logistik" },
+ { "tr": "beşte bir", "kind": "gloss.tr", "de": "ein Fünftel" },
+ { "tr": "kuzeydeki", "kind": "gloss.tr", "de": "nördlich" },
+ { "tr": "operasyon", "kind": "gloss.tr", "de": "Betrieb" },
+ { "tr": "yazılımcı", "kind": "gloss.tr", "de": "Entwickler" },
+ { "tr": "çok memnun", "kind": "gloss.tr", "de": "hocherfreut" },
+ { "tr": "ortak klasör", "kind": "gloss.tr", "de": "gemeinsames Laufwerk" },
+ { "tr": "gizli tutulmak kaydıyla", "kind": "gloss.tr", "de": "vertraulich" }
+]

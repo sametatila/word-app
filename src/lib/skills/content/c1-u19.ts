@@ -34,97 +34,85 @@ export const c1U19: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 19,
-    title: "Angenommen, es stimmt",
-    genre: "essay",
-    intro: "Varsayım dili: bir görüşü benimsemeden sonuna kadar götürmek.",
+    title: "Die Vier-Tage-Woche im Rathaus",
+    genre: "opinion",
+    intro: "Bir belediyede dört günlük çalışma haftası tartışılıyor. Yazar taraf tutmadan önce olasılıkları tek tek sınıyor.",
     gloss: [
       { de: "die Hypothese", tr: "varsayım", en: "hypothesis" },
       { de: "unterstellen", tr: "varsaymak / isnat etmek", en: "to assume, to impute" },
-      { de: "der Gedankengang", tr: "düşünce zinciri", en: "line of thought" },
       { de: "zutreffen", tr: "geçerli olmak", en: "to hold true" },
-      { de: "hypothetisch", tr: "varsayımsal", en: "hypothetical" },
-      { de: "voreingenommen", tr: "önyargılı", en: "biased" },
-      { de: "die Maxime", tr: "ilke", en: "maxim" },
-      { de: "das Signal", tr: "sinyal", en: "signal" },
-      { de: "innen", tr: "içte", en: "on the inside" },
-      { de: "außen", tr: "dıştan", en: "on the outside" },
-      { de: "daraufhin", tr: "bunun üzerine", en: "thereupon" },
-      { de: "also", tr: "yani", en: "so" },
-      { de: "alltäglich", tr: "gündelik", en: "everyday" },
-      { de: "leicht", tr: "hafif", en: "light" },
-      { de: "formell", tr: "resmî", en: "formal" },
-      { de: "markieren", tr: "işaretlemek", en: "to mark" },
-      { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "bekämpfen", tr: "mücadele etmek", en: "to combat" },
-      { de: "normal", tr: "normal", en: "normal" },
-      { de: "das Gelenk", tr: "eklem", en: "joint" },
+      { de: "die Schätzung", tr: "tahmin", en: "estimate" },
+      { de: "hervorrufen", tr: "yol açmak", en: "to cause" },
+      { de: "das Gedankenspiel", tr: "düşünce deneyi", en: "thought experiment" },
+      { de: "Partei ergreifen", tr: "taraf tutmak", en: "to take sides" },
+      { de: "der Befürworter", tr: "savunucu", en: "supporter" },
+      { de: "der Unmut", tr: "hoşnutsuzluk", en: "displeasure" },
+      { de: "die Annahme", tr: "varsayım", en: "assumption" },
+      { de: "ausgleichen", tr: "dengelemek", en: "to offset" },
+      { de: "der Personalmangel", tr: "personel eksikliği", en: "staff shortage" },
+      { de: "der Personalrat", tr: "personel temsilciliği", en: "staff council" },
+      { de: "die Auswertung", tr: "değerlendirme", en: "evaluation" },
+      { de: "die Überzeugung", tr: "kanaat", en: "conviction" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "der Text", tr: "metin", en: "text" },
-      { de: "stärken", tr: "güçlendirmek", en: "to strengthen" },
-      { de: "ungelenk", tr: "beceriksiz", en: "clumsy" },
     ],
     minutes: 7,
     text:
-      "DER SATZ, DER NICHTS BEHAUPTET\n\n" +
-      "„Angenommen, Sie haben recht — was folgt daraus?“\n\n" +
-      "Dieser Satz gibt nichts zu und nimmt nichts zurück. Er stellt eine Behauptung für die Dauer eines Gedankengangs auf und schaut, wohin sie führt.\n\n" +
-      "In deutschen Diskussionen ist das ein anerkanntes Verfahren, kein rhetorischer Trick. Wer „angenommen“ sagt, signalisiert: Ich prüfe Ihre Position von innen, nicht von außen. Und wer daraufhin sagt „Sie geben mir also recht“, hat die Konstruktion nicht verstanden — was dem Gegenüber schnell auffällt.\n\n" +
-      "Die Formen unterscheiden sich im Gewicht. „Angenommen, …“ ist alltäglich und leicht. „Gesetzt den Fall, …“ ist formeller und klingt nach Prüfung. „Man stelle sich vor, …“ ruft ein Bild auf und wirkt rhetorisch. „Wenn man einmal unterstellt, dass …“ ist am vorsichtigsten und markiert am deutlichsten, dass hier nichts behauptet wird.\n\n" +
-      "Wichtig ist dabei, dass die Annahme nicht zutreffen muss. Sie muss nur klar genug sein, damit man sieht, was aus ihr folgt.\n\n" +
-      "Der eigentliche Nutzen zeigt sich, wenn man voreingenommen ist. Man kann eine Position, die man ablehnt, entweder bekämpfen oder durchrechnen. Bekämpfen ist schneller; durchrechnen bringt oft zutage, dass sie an einer bestimmten Stelle bricht — und diese Stelle zu benennen ist ein stärkeres Argument als jede Ablehnung.\n\n" +
-      "Eine kleine Warnung zur Form: „Angenommen“ verlangt danach einen normalen Hauptsatz, kein „dass“. „Angenommen, dass Sie recht haben“ ist verbreitet und gilt trotzdem als ungelenk.\n\n" +
-      "Es hat auch eine unangenehme Kehrseite. Wer hypothetisch redet, kann sich hinter der Konstruktion verstecken: alles gesagt, nichts vertreten. Deshalb gehört zur Maxime, dass man am Ende die eigene Position benennt — angenommen, man hat eine.",
+      "DIE VIER-TAGE-WOCHE IM RATHAUS: EIN GEDANKENSPIEL\n\n" +
+      "Die Stadt Kiel prüft, ob ihre Verwaltung künftig nur noch an vier Tagen pro Woche arbeiten soll, bei gleichem Lohn und gleicher Stundenzahl. Die Gewerkschaft ist dafür, der Bund der Steuerzahler dagegen. Statt sofort Partei zu ergreifen, lohnt sich ein Gedankenspiel.\n\n" +
+      "Angenommen, die Befürworter haben recht und die Beschäftigten schaffen an vier langen Tagen genauso viel wie bisher an fünf. Dann müsste das Rathaus einen Tag in der Woche geschlossen bleiben, oder die Teams müssten sich so aufteilen, dass immer jemand da ist. Das Erste würde bei den Bürgerinnen und Bürgern Unmut hervorrufen, das Zweite verlangt eine Planung, die es heute nicht gibt.\n\n" +
+      "Gesetzt den Fall, die Stadt entscheidet sich für das zweite Modell: Wie viele zusätzliche Stellen wären nötig? Die Verwaltung selbst nennt eine Schätzung von 40 Stellen, die Gewerkschaft hält 15 für ausreichend. Beide Zahlen beruhen auf Annahmen, die bisher niemand überprüft hat.\n\n" +
+      "Man stelle sich außerdem vor, die Krankheitstage gingen tatsächlich zurück, wie es Studien aus anderen Ländern nahelegen. Im letzten Jahr fehlten die Beschäftigten der Stadt im Schnitt 21 Tage. Schon ein Rückgang um fünf Tage würde einen großen Teil der zusätzlichen Stellen ausgleichen.\n\n" +
+      "Wenn man einmal unterstellt, dass alle drei Hypothesen zutreffen, ist die Vier-Tage-Woche kein Luxus, sondern ein Mittel gegen den Personalmangel. Trifft auch nur eine nicht zu, wird sie teuer.\n\n" +
+      "Genau deshalb schlägt der Personalrat einen Test vor: ein Jahr, zwei Ämter, eine unabhängige Auswertung. Das ist weniger aufregend als ein Grundsatzstreit, aber es beantwortet die Frage mit Zahlen statt mit Überzeugungen. Der Rat entscheidet im März.",
     questions: [
       {
-        text: "Was tut ein Satz mit „Angenommen, …“?",
+        text: "Was müsste passieren, wenn alle an vier langen Tagen arbeiten?",
         options: [
-          "Er gibt dem Gegenüber recht",
-          "Er stellt eine Behauptung nur für die Dauer eines Gedankengangs auf",
-          "Er lehnt eine Position ab",
+          "Die Stadt müsste die Gehälter kürzen",
+          "Das Rathaus müsste einen Tag schließen oder die Teams aufteilen",
+          "Die Beschäftigten müssten mehr Stunden arbeiten",
         ],
         answer: 1,
-        explain: "Hiçbir şey kabul edilmiyor, hiçbir şey geri alınmıyor.",
+        explain: "Ya belediye binası haftada bir gün kapalı kalır ya da ekipler her gün birileri olacak şekilde bölünür.",
       },
       {
         kind: "gapfill",
-        text: "___ den Fall, die Zahlen stimmen — was folgt daraus?",
+        text: "___ den Fall, die Stadt entscheidet sich für das zweite Modell: Wie viele zusätzliche Stellen wären nötig?",
         options: [],
         answer: 0,
         accept: ["Gesetzt"],
         explain: "Gesetzt den Fall: daha resmî, inceleme havasında.",
       },
       {
-        text: "Welche Kehrseite nennt der Text?",
-        options: [
-          "Es ist zu kompliziert",
-          "Man kann sich dahinter verstecken: alles gesagt, nichts vertreten",
-          "Es wirkt unhöflich",
-        ],
+        text: "Wie viele zusätzliche Stellen hält die Gewerkschaft für ausreichend?",
+        options: ["40", "15", "21"],
         answer: 1,
-        explain: "Bu yüzden sonunda kendi konumunu adlandırmak gerekiyor.",
+        explain: "„Die Verwaltung selbst nennt eine Schätzung von 40 Stellen, die Gewerkschaft hält 15 für ausreichend.“",
       },
       {
         kind: "short_answer",
-        text: "Warum ist Durchrechnen laut Text stärker als Bekämpfen?",
+        text: "Wann wird die Vier-Tage-Woche laut Text teuer?",
         options: [],
         answer: 0,
         accept: [
-          "man kann die Bruchstelle benennen",
-          "es zeigt, an welcher Stelle die Position bricht",
-          "weil man die Stelle benennen kann, an der sie bricht",
+          "wenn eine Annahme nicht zutrifft",
+          "wenn nur eine Hypothese nicht zutrifft",
+          "wenn eine Annahme falsch ist",
         ],
-        explain: "Kırılma noktasını adlandırmak reddetmekten güçlü bir sav.",
+        explain: "„Trifft auch nur eine nicht zu, wird sie teuer.“",
       },
       {
         kind: "short_answer",
-        text: "Wie unterscheidet sich „Man stelle sich vor, …“ von „Angenommen, …“?",
+        text: "Was schlägt der Personalrat vor?",
         options: [],
         answer: 0,
         accept: [
-          "es ruft ein Bild auf",
-          "es ruft ein Bild auf und wirkt rhetorisch",
-          "es ist rhetorischer",
+          "einen Test",
+          "ein Jahr, zwei Ämter, eine Auswertung",
+          "einen Test für ein Jahr",
         ],
-        explain: "Aynı işlev, farklı ağırlık.",
+        explain: "„Genau deshalb schlägt der Personalrat einen Test vor: ein Jahr, zwei Ämter, eine unabhängige Auswertung.“",
       },
     ],
   },
@@ -385,7 +373,7 @@ export const c1U19: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 19,
-    title: "Varsayım ve irreal koşul",
+    title: "Beiträge zur Podiumsdebatte",
     genre: "grammar",
     intro: "Varsayım kalıpları, bağlaçsız gerçek dışı koşul ve ikili kabul yapısı.",
     gloss: [
@@ -434,7 +422,7 @@ export const c1U19: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 19,
-    title: "İki yarıyı aynı cümlede tutmak",
+    title: "Leserbrief zur autofreien Innenstadt",
     genre: "opinion",
     intro: "Tartışmalı bir konuda kendi konumunu bırakmadan yazmak.",
     gloss: [

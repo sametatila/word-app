@@ -318,7 +318,7 @@ export const a2U21: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 21,
-    title: "Yan cümle başta olunca",
+    title: "Freizeit und Langeweile",
     genre: "grammar",
     intro: "wenn ile başlayan cümlede ana cümle özneyle değil fiille devam eder.",
     gloss: [

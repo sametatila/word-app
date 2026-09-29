@@ -352,7 +352,7 @@ export const b2U24: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 24,
-    title: "Vier Momente, vier Strukturen",
+    title: "Angebote und Abschlüsse",
     genre: "build",
     intro: "Karşılaştırma, dolaylı soru, kapanış kalıbı ve zaman kademesi.",
     gloss: [

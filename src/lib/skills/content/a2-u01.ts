@@ -263,7 +263,7 @@ export const a2U01: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 1,
-    title: "Perfekt: haben oder sein?",
+    title: "Ferien in den Bergen",
     genre: "grammar",
     intro: "Geçmiş zamanın üç yüzü: yardımcı fiil seçimi, kuralsız ortaç ve ayrılabilen fiil.",
     gloss: [

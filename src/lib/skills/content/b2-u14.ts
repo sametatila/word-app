@@ -364,7 +364,7 @@ export const b2U14: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 14,
-    title: "Je knapper, desto lauter",
+    title: "Wohnungsnot und Preise",
     genre: "build",
     intro: "je-desto iki eğilimi bağlar; adlaştırma rakamı başlığa sıkıştırır.",
     gloss: [

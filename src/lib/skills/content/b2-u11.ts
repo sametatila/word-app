@@ -366,7 +366,7 @@ export const b2U11: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 11,
-    title: "Laufend oder abgeschlossen",
+    title: "Notizen zur Studie",
     genre: "build",
     intro: "Ortaç I sürer ve etkendir, ortaç II biter ve edilgendir. Doğru olanı seç.",
     gloss: [

@@ -87,7 +87,7 @@ export const a1U09: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 9,
-    title: "Zuerst, dann, danach",
+    title: "Morgens bei Mia und Elif",
     genre: "forum",
     intro: "İki kişi sabah rutinini anlatıyor. Sıraya dikkat et.",
     gloss: [
@@ -256,7 +256,7 @@ export const a1U09: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 9,
-    title: "Trennbare Verben",
+    title: "Früh am Morgen",
     genre: "grammar",
     intro: "Ayrılabilir fiiller ve cümle dizilişi.",
     gloss: [

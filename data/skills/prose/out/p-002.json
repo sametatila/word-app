@@ -5,11 +5,6 @@
   "en": "In a passive sentence the agent is added with „by“."
  },
  {
-  "tr": "En yaygın hata ikinci virgülü unutmak.",
-  "kind": "explain",
-  "en": "The commonest mistake is forgetting the second comma."
- },
- {
   "tr": "Fiili niteleyen üstünlük: „am besten“.",
   "kind": "explain",
   "en": "The superlative that modifies the verb: „am besten“."
@@ -28,11 +23,6 @@
   "tr": "Öngörü iddia eder, senaryo yolu sorar.",
   "kind": "explain",
   "en": "A forecast asserts; a scenario asks about the route."
- },
- {
-  "tr": "Sıfat deyimin parçası, değiştirilemez.",
-  "kind": "explain",
-  "en": "The adjective belongs to the idiom and cannot be changed."
  },
  {
   "tr": "Taşınma günü. Kim ne taşıdı, ne kaldı?",
@@ -270,11 +260,6 @@
   "en": "A second-hand citation inherits the mistake too."
  },
  {
-  "tr": "İsimden fiile dönüş; eylem geri geliyor.",
-  "kind": "explain",
-  "en": "From noun back to verb; the action returns."
- },
- {
   "tr": "Kasıtlı çift anlam: söylemeden söylemek.",
   "kind": "intro",
   "en": "Deliberate double meaning: saying it without saying it."
@@ -360,11 +345,6 @@
   "en": "The child is doing the reading: lesend + e."
  },
  {
-  "tr": "Durum tarif eden imge kimseyi suçlamıyor.",
-  "kind": "explain",
-  "en": "An image that describes a state blames nobody."
- },
- {
   "tr": "Fark yiyecekte değil, ona dair konuşmada.",
   "kind": "explain",
   "en": "The difference is not the food but the talk about it."
@@ -373,11 +353,6 @@
   "tr": "Fırtına ve dolu. Ne yapılır, ne yapılmaz?",
   "kind": "intro",
   "en": "Storm and hail. What is done, and what is not?"
- },
- {
-  "tr": "Fiil seçimi savunmada doğrudan sınanıyor.",
-  "kind": "explain",
-  "en": "The choice of verb is tested directly in the viva."
  },
  {
   "tr": "İstek kibarca söyleniyor: ich hätte gern.",
@@ -408,11 +383,6 @@
   "tr": "Söz yazılmıştır: Partizip II + sıfat eki.",
   "kind": "explain",
   "en": "The word has been written: Partizip II + adjective ending."
- },
- {
-  "tr": "Tahmin gerekiyorsa eksilti değil, boşluk.",
-  "kind": "explain",
-  "en": "If it has to be guessed it is not an ellipsis but a gap."
  },
  {
   "tr": "Teknoloji tartışılıyor. İki farklı bakış.",
@@ -680,11 +650,6 @@
   "en": "Three ways of giving advice to a friend who is sick."
  },
  {
-  "tr": "Hazır bloklar; kurulmuyor, yerleştiriliyor.",
-  "kind": "explain",
-  "en": "Ready-made blocks; not built, but placed."
- },
- {
   "tr": "Hediyelik alma rehberi. Kime ne, ne kadara?",
   "kind": "intro",
   "en": "A guide to buying presents. What for whom, and for how much?"
@@ -693,11 +658,6 @@
   "tr": "Hitap biçimi konuşuluyor. Ne zaman hangisi?",
   "kind": "intro",
   "en": "Forms of address are discussed. Which one, and when?"
- },
- {
-  "tr": "İki aileyi ayıran ölçüt: neyi tarif ettiği.",
-  "kind": "explain",
-  "en": "What separates the two families: what it describes."
  },
  {
   "tr": "Karar tam konuşma anında veriliyor: „will“.",

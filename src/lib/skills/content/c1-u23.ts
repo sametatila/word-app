@@ -128,9 +128,9 @@ export const c1U23: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 23,
-    title: "Die Sprache der Krise",
-    genre: "guide",
-    intro: "Baskı altında Almanca hazır bloklara geçiyor. Bu bir avantaj.",
+    title: "Hochwasser an der Lahn",
+    genre: "article",
+    intro: "Bir şehirde sel alarmı. Kriz masası hangi kararları aldı, halk ne yapmalı?",
     gloss: [
       { de: "Maßnahmen ergreifen", tr: "önlem almak", en: "to take measures" },
       { de: "in Kraft setzen", tr: "yürürlüğe koymak", en: "to put into force" },
@@ -139,80 +139,81 @@ export const c1U23: SkillExercise[] = [
       { de: "anordnen", tr: "talimat vermek", en: "to order" },
       { de: "vollziehen", tr: "icra etmek", en: "to carry out" },
       { de: "Ruhe bewahren", tr: "sakin kalmak", en: "to keep calm" },
-      { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "die Formulierung", tr: "ifade biçimi", en: "wording" },
-      { de: "die Stufe", tr: "basamak", en: "step" },
-      { de: "die Abstufung", tr: "derecelendirme", en: "gradation" },
-      { de: "voraussetzen", tr: "gerektirmek", en: "to presuppose" },
-      { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
-      { de: "übergriffig", tr: "haddini aşan", en: "overstepping" },
-      { de: "die Zahl", tr: "sayı", en: "number" },
-      { de: "die Sitzung", tr: "oturum", en: "session" },
-      { de: "der Text", tr: "metin", en: "text" },
-      { de: "genügen", tr: "yetmek", en: "to be enough" },
+      { de: "die Verordnung", tr: "yönetmelik", en: "ordinance" },
+      { de: "das Hochwasser", tr: "taşkın", en: "flood" },
+      { de: "der Pegel", tr: "su seviyesi", en: "water level" },
+      { de: "die Einsatzkraft", tr: "kurtarma ekibi üyesi", en: "emergency worker" },
+      { de: "der Krisenstab", tr: "kriz masası", en: "crisis team" },
+      { de: "die Räumung", tr: "tahliye", en: "evacuation" },
+      { de: "der Sandsack", tr: "kum torbası", en: "sandbag" },
+      { de: "das Umspannwerk", tr: "trafo merkezi", en: "substation" },
+      { de: "vorsorglich", tr: "önlem olarak", en: "as a precaution" },
+      { de: "nachlassen", tr: "hafiflemek", en: "to ease off" },
+      { de: "das Bußgeld", tr: "para cezası", en: "fine" },
+      { de: "rund", tr: "yaklaşık", en: "about, roughly" },
     ],
     minutes: 7,
     text:
-      "FERTIGTEILE STATT SÄTZE\n\n" +
-      "In einer Krisensitzung sagt niemand „Wir sollten vielleicht etwas unternehmen“. Es heißt: „Wir müssen umgehend Maßnahmen ergreifen.“\n\n" +
-      "Das klingt schwerfällig und ist es auch. Aber diese Wendungen — Maßnahmen ergreifen, in Kraft setzen, zur Anwendung bringen, Ruhe bewahren — sind Fertigteile. Sie werden nicht gebaut, sondern eingesetzt. Genau deshalb funktionieren sie unter Druck: Niemand muss unter Stress eine Formulierung erfinden, und alle im Raum wissen sofort, welche Stufe gemeint ist.\n\n" +
-      "Für Nichtmuttersprachler ist das eine gute Nachricht, auch wenn es zunächst nach mehr Vokabeln aussieht. Der kreative Teil der Sprache fällt hier weg. Wer zwanzig Wendungen kennt, spricht in einer Krisensitzung angemessen — auch mit Akzent, auch mit einfacher Satzstruktur.\n\n" +
-      "Dieselben Fertigteile benennen auch die Lage: Wer von Schadensbegrenzung spricht, hat das eigentliche Ziel bereits aufgegeben, und wer eine Eskalationsstufe nennt, sagt damit, welche Regeln ab jetzt gelten.\n\n" +
-      "Wichtig ist die Abstufung, denn die Wendungen tragen Ränge. „Ich schlage vor“ ist ein Vorschlag. „Ich ordne an“ ist eine Anweisung und setzt Befugnis voraus. „Ich setze den Notfallplan in Kraft“ bedeutet, dass ab jetzt ein festgelegtes Verfahren läuft und andere Zuständigkeiten greifen. Wer diese Sätze verwechselt, klingt nicht entschlossen, sondern übergriffig — angeordnet wird nur, was man auch vollziehen lassen darf.\n\n" +
-      "Zur Abstufung gehört auch, wer spricht. In einer Krisensitzung sagt man den eigenen Namen und die eigene Rolle, bevor man eine Zahl nennt — nicht aus Förmlichkeit, sondern damit im Protokoll steht, wer wofür einstand.\n\n" +
-      "Und der Rest? „Wir behelfen uns kurzfristig mit einer Zwischenlösung“ ist der ehrlichste Satz jeder Krise. Er sagt: Das hier ist nicht die Lösung, es trägt bis Freitag. Wer eine Zwischenlösung als Lösung verkauft, gewinnt eine Sitzung und verliert die nächste.",
+      "HOCHWASSER AN DER LAHN: STADT RUFT HÖCHSTE WARNSTUFE AUS\n\n" +
+      "Nach tagelangem Regen hat die Stadt Marburg am Sonntagabend die höchste Eskalationsstufe ihres Hochwasserplans in Kraft gesetzt. Der Pegel der Lahn lag um 22 Uhr bei 5,80 Metern und steigt weiter. Oberbürgermeister Jens Bauer rief die Bevölkerung dazu auf, Ruhe zu bewahren und den Anweisungen der Einsatzkräfte zu folgen.\n\n" +
+      "Der Krisenstab ergreift umgehend Maßnahmen. Für die Straßen am Ufer zwischen der Weidenhäuser Brücke und dem Bahnhof wurde die Räumung angeordnet; betroffen sind rund 1.200 Menschen. Sie können in der Sporthalle am Georg-Gaßmann-Stadion übernachten, wo das Rote Kreuz Betten und Essen bereitstellt. Die Räumung soll bis Mitternacht vollzogen sein.\n\n" +
+      "Zur Schadensbegrenzung haben Feuerwehr und Freiwillige seit dem Nachmittag rund 30.000 Sandsäcke gefüllt. Sie schützen vor allem das Universitätsklinikum und das Umspannwerk, dessen Ausfall große Teile der Stadt ohne Strom lassen würde. Das Klinikum hat vorsorglich planbare Operationen verschoben.\n\n" +
+      "Eine Verordnung der Stadt verbietet ab sofort das Betreten der Uferwege und das Befahren der Lahn mit Booten. Wer sich nicht daran hält, muss mit einem Bußgeld rechnen und bringt vor allem sich selbst und die Rettungskräfte in Gefahr.\n\n" +
+      "Die Schulen im Stadtgebiet bleiben am Montag geschlossen. Die Buslinien 2 und 5 werden umgeleitet. Aktuelle Informationen gibt die Stadt über ihre Internetseite, die Warn-App und ein Bürgertelefon, das rund um die Uhr besetzt ist.\n\n" +
+      "Der Deutsche Wetterdienst rechnet damit, dass der Regen in der Nacht zum Dienstag nachlässt. Bis der Pegel wieder sinkt, könnten allerdings noch zwei Tage vergehen.",
     questions: [
       {
-        text: "Warum funktionieren feste Wendungen laut Text unter Druck?",
+        text: "Was hat die Stadt am Sonntagabend getan?",
         options: [
-          "Weil sie kürzer sind",
-          "Weil niemand eine Formulierung erfinden muss und alle die Stufe kennen",
-          "Weil sie höflicher sind",
+          "Die höchste Eskalationsstufe in Kraft gesetzt",
+          "Die ganze Stadt geräumt",
+          "Den Hochwasserplan aufgehoben",
         ],
-        answer: 1,
-        explain: "Hazır bloklar; kurulmuyor, yerleştiriliyor.",
+        answer: 0,
+        explain: "„Nach tagelangem Regen hat die Stadt Marburg am Sonntagabend die höchste Eskalationsstufe ihres Hochwasserplans in Kraft gesetzt.“",
       },
       {
         kind: "gapfill",
-        text: "Wir müssen umgehend Maßnahmen ___.",
+        text: "Der Krisenstab ___ umgehend Maßnahmen.",
         options: [],
         answer: 0,
-        accept: ["ergreifen"],
+        accept: ["ergreift"],
         explain: "Funktionsverbgefüge: isim taşıyor, fiil sabit.",
       },
       {
-        text: "Was bedeutet „Ich setze den Notfallplan in Kraft“?",
+        text: "Warum werden das Klinikum und das Umspannwerk besonders geschützt?",
         options: [
-          "Ein Vorschlag",
-          "Ab jetzt läuft ein festgelegtes Verfahren, andere Zuständigkeiten greifen",
-          "Eine Bitte um Zustimmung",
+          "Weil dort die Betroffenen übernachten",
+          "Weil ein Ausfall große Teile der Stadt ohne Strom ließe",
+          "Weil sie am höchsten Punkt der Stadt liegen",
         ],
         answer: 1,
-        explain: "Rütbe farkı: vorschlagen / anordnen / in Kraft setzen.",
+        explain: "Trafo merkezi su altında kalırsa şehrin büyük bölümü elektriksiz kalır; hastanenin de çalışmaya devam etmesi gerekiyor.",
       },
       {
         kind: "short_answer",
-        text: "Warum ist das für Nichtmuttersprachler eine gute Nachricht?",
+        text: "Wo können die betroffenen Menschen übernachten?",
         options: [],
         answer: 0,
         accept: [
-          "zwanzig Wendungen reichen aus",
-          "der kreative Teil der Sprache fällt weg; zwanzig Wendungen genügen",
-          "man muss nichts erfinden, nur die Wendungen kennen",
+          "in der Sporthalle",
+          "in einer Sporthalle am Stadion",
+          "in der Sporthalle am Georg-Gaßmann-Stadion",
         ],
-        explain: "Aksanla ve basit cümle yapısıyla da yerinde konuşulabiliyor.",
+        explain: "„Sie können in der Sporthalle am Georg-Gaßmann-Stadion übernachten, wo das Rote Kreuz Betten und Essen bereitstellt.“",
       },
       {
         kind: "short_answer",
-        text: "Was riskiert, wer eine Zwischenlösung als Lösung verkauft?",
+        text: "Was ist ab sofort verboten?",
         options: [],
         answer: 0,
         accept: [
-          "er verliert die nächste Sitzung",
-          "er gewinnt eine Sitzung und verliert die nächste",
-          "die nächste Sitzung",
+          "das Betreten der Uferwege",
+          "die Uferwege zu betreten",
+          "Bootfahren auf der Lahn",
+          "Uferwege betreten und Boot fahren",
         ],
-        explain: "Ara çözümün dürüst adı ara çözüm.",
+        explain: "„Eine Verordnung der Stadt verbietet ab sofort das Betreten der Uferwege und das Befahren der Lahn mit Booten.“",
       },
     ],
   },
@@ -385,7 +386,7 @@ export const c1U23: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 23,
-    title: "Hazır bloklar",
+    title: "Stichworte für den Notfall",
     genre: "grammar",
     intro: "Funktionsverbgefüge ve kademe farkı.",
     gloss: [
@@ -432,7 +433,7 @@ export const c1U23: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 23,
-    title: "Kriz durumu bildirimi",
+    title: "Lagemeldung an alle",
     genre: "formal",
     intro: "Ara çözümü ara çözüm diye yaz, tarih verme.",
     gloss: [

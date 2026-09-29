@@ -383,7 +383,7 @@ export const c1U15: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 15,
-    title: "Kabul et, sonucu koru",
+    title: "Post von der Versicherung",
     genre: "grammar",
     intro: "wenngleich ve gleichwohl: gerekçeyi tanı, kararı değiştirme.",
     gloss: [

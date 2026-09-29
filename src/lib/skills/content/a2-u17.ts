@@ -292,7 +292,7 @@ export const a2U17: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 17,
-    title: "Yarın, koşul, eskiden",
+    title: "Wetter und Ausflugspläne",
     genre: "grammar",
     intro: "Üç ayrı zaman: gelecek werden, koşul wenn, geçmiş war.",
     gloss: [

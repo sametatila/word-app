@@ -1,45 +1,5 @@
 [
  {
-  "tr": "Adıl kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Pronomenkarte aus."
- },
- {
-  "tr": "Sıra kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Reihenfolgekarte aus."
- },
- {
-  "tr": "Kural kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Regelkarte aus."
- },
- {
-  "tr": "Bağlaç kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Bindewortkarte aus."
- },
- {
-  "tr": "Şey için „that“; kişi için „who“; yer için „where“; üçü de hiç çekilmiyor.",
-  "kind": "form.facts",
-  "de": "Für eine Sache „that“; für eine Person „who“; für einen Ort „where“; alle drei werden nie gebeugt."
- },
- {
-  "tr": "Yer ayırtmak zorunlu; kart göstermek gerekmiyor; şeritte bisiklet yasak; geçmişte „had to“ giriyor.",
-  "kind": "form.facts",
-  "de": "Einen Platz buchen ist Pflicht; eine Karte zeigen ist nicht nötig; Radfahren auf der Spur ist verboten; in der Vergangenheit steht „had to“."
- },
- {
-  "tr": "Amaç için „in order to“; sonuç için „as a result“; ödün için „even though“; yanlışı koyunca cümle yine okunuyor.",
-  "kind": "form.facts",
-  "de": "Für den Zweck „in order to“; für die Folge „as a result“; für die Einräumung „even though“; mit dem falschen liest sich der Satz trotzdem."
- },
- {
-  "tr": "Yol yapılmadan önce tarla; çiftlik önce kapandı; orman fark edilmeden kesildi; „by the time“ seçenek bırakmıyor.",
-  "kind": "form.facts",
-  "de": "Vor der Straße ein Feld; der Hof schloss zuerst; der Wald wurde unbemerkt gefällt; „by the time“ lässt keine Wahl."
- },
- {
   "tr": "Şişe almayı bıraktık.",
   "kind": "build.tr",
   "de": "Wir haben aufgehört, Flaschen zu kaufen."
@@ -378,10 +338,5 @@
   "tr": "Kasabanın sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Kleinstadt: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Koşulların sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Bedingungen: Bring sie in die richtige Ordnung."
  }
 ]

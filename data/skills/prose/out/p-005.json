@@ -25,11 +25,6 @@
   "en": "What are small contributions good for? A society explains."
  },
  {
-  "tr": "Orada tam cümle kurmak zaman kaybı, nezaket değil.",
-  "kind": "explain",
-  "en": "There, full sentences waste time; they are not politeness."
- },
- {
   "tr": "Podcast önerileri. Hangisi kime, ne kadar sürüyor?",
   "kind": "intro",
   "en": "Podcast recommendations. Which for whom, and how long?"
@@ -100,19 +95,9 @@
   "en": "Is there German humor? The question may be wrongly put."
  },
  {
-  "tr": "Almanca vurguyu nereye koyuyor? Ses değil, dizilim.",
-  "kind": "intro",
-  "en": "Where does German put the stress? Not in the voice, in the word order."
- },
- {
   "tr": "Almancada gecikme „sahip olunur“: Verspätung haben.",
   "kind": "explain",
   "en": "In German a delay is something you „have“: Verspätung haben."
- },
- {
-  "tr": "Aynı cümle, tek parçacık farkı. Davet mi, baskı mı?",
-  "kind": "intro",
-  "en": "The same sentence, one particle apart. An invitation or pressure?"
  },
  {
   "tr": "Bir aile fotoğrafının altındaki yazıyı okuyacaksın.",
@@ -200,11 +185,6 @@
   "en": "The pun comes last — it is not a matter of cleverness."
  },
  {
-  "tr": "Kipi koymak ise yalnız lafzı bildiğini kabul etmek.",
-  "kind": "explain",
-  "en": "Using the mood is admitting you know only the wording."
- },
- {
   "tr": "Küçük tutmak doğru ölçek — büyütmek asıl utandıran.",
   "kind": "explain",
   "en": "Keeping it small is the right scale — blowing it up is what embarrasses."
@@ -233,16 +213,6 @@
   "tr": "Ortaç sıfat olarak çekilir: ein oft genannter Fall.",
   "kind": "explain",
   "en": "The participle is declined as an adjective: ein oft genannter Fall."
- },
- {
-  "tr": "Ölçüt sayı değil, okurun dikkatinin nereye kaydığı.",
-  "kind": "explain",
-  "en": "The measure is not the number but where the reader's attention drifts."
- },
- {
-  "tr": "Özet yazma dili: hangi fiil ne kadar iddia taşıyor?",
-  "kind": "intro",
-  "en": "The language of summarizing: how much does each verb claim?"
  },
  {
   "tr": "Parkın girişindeki tabela. Nerede ne var, ne yasak?",
@@ -330,11 +300,6 @@
   "en": "„Zum Mitnehmen, bitte.“ — to go, so they take it with them."
  },
  {
-  "tr": "Ara açıklama: virgüller arasına ne sıkıştırılabilir?",
-  "kind": "intro",
-  "en": "The parenthetical aside: what can be squeezed between commas?"
- },
- {
   "tr": "Başlık: „QUIET HOUR — EVERY TUESDAY, EIGHT TO NINE“.",
   "kind": "explain",
   "en": "The heading: „QUIET HOUR — EVERY TUESDAY, EIGHT TO NINE“."
@@ -375,11 +340,6 @@
   "en": "Write a formal inquiry to an office or a company."
  },
  {
-  "tr": "Bir önlem etkili ama son derece verimsiz olabiliyor.",
-  "kind": "explain",
-  "en": "A measure can be effective and yet thoroughly inefficient."
- },
- {
   "tr": "Bir sonraki maddeyi üstlenmen istenmişse övülmüşsün.",
   "kind": "explain",
   "en": "If you are asked to take on the next item, you have been praised."
@@ -413,16 +373,6 @@
   "tr": "Dağda hava konuşuluyor. Ne bekleniyor, ne yapılıyor?",
   "kind": "intro",
   "en": "The weather in the mountains is discussed. What is expected, what is done?"
- },
- {
-  "tr": "Dilbilgisi doğruluğu okunabilirliği garanti etmiyor.",
-  "kind": "explain",
-  "en": "Correct grammar is no guarantee of readability."
- },
- {
-  "tr": "Eksilti: kısalık ne zaman ustalık, ne zaman kabalık?",
-  "kind": "intro",
-  "en": "Ellipsis: when is brevity skill, and when is it rudeness?"
  },
  {
   "tr": "Formda eksikler var. Memur neyin tamamlanmasını istiyor?",
@@ -678,11 +628,6 @@
   "tr": "Bir yolculuk planla. Araç bildirirken artikel düşmez.",
   "kind": "intro",
   "en": "Plan a journey. Naming the means of transport keeps the article."
- },
- {
-  "tr": "Deyimlerdeki hayvanlar nereden geliyor ve ne taşıyor?",
-  "kind": "intro",
-  "en": "Where do the animals in idioms come from, and what do they carry?"
  },
  {
   "tr": "Dilek kipi itirazı kişiselleştirmeden ortaya koyuyor.",

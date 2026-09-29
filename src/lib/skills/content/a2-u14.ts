@@ -283,7 +283,7 @@ export const a2U14: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 14,
-    title: "Sıfat ne zaman ek alır?",
+    title: "Ein neues Hemd kaufen",
     genre: "grammar",
     intro: "Sıfat bir ismin önünde durunca son alır, yüklem olunca hiç almaz.",
     gloss: [

@@ -385,7 +385,7 @@ export const c1U24: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 24,
-    title: "Aracılık ve müzakere kalıpları",
+    title: "Zwischen zwei Verhandlungspartnern",
     genre: "grammar",
     intro: "Aracılık cümlesi, koşullu diplomasi ve son teklif kalıbı.",
     gloss: [
@@ -434,7 +434,7 @@ export const c1U24: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 24,
-    title: "Son teklif",
+    title: "Das letzte Angebot",
     genre: "formal",
     intro: "Kapıyı kapatmadan nihai teklifi yaz.",
     gloss: [

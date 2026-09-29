@@ -124,9 +124,9 @@ export const c1U04: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 4,
-    title: "Wie sicher ist „wohl“?",
+    title: "Einbruch im Werkzeuglager",
     genre: "article",
-    intro: "Tahmin dereceleri üstüne bir yazı. Hangi sözcük ne kadar kesinlik taşıyor?",
+    intro: "Yerel gazetede bir hırsızlık haberi. Hangi bilgi kesin, hangisi yalnız tahmin?",
     gloss: [
       { de: "die Mutmaßung", tr: "tahmin / varsayım", en: "conjecture" },
       { de: "annehmen", tr: "varsaymak", en: "to assume" },
@@ -136,77 +136,80 @@ export const c1U04: SkillExercise[] = [
       { de: "die Skepsis", tr: "kuşku", en: "skepticism" },
       { de: "vermeintlich", tr: "sözde / güya", en: "supposed" },
       { de: "kaum", tr: "neredeyse hiç", en: "hardly" },
-      { de: "mehrere", tr: "birden fazla", en: "several" },
-      { de: "obere", tr: "üst", en: "upper" },
-      { de: "dulden", tr: "göz yummak", en: "to tolerate" },
-      { de: "meiste", tr: "çoğu", en: "most" },
-      { de: "beruhen", tr: "dayanmak", en: "to be based on" },
-      { de: "fremd", tr: "yabancı", en: "someone else's" },
-      { de: "markieren", tr: "işaretlemek", en: "to mark" },
-      { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "die Information", tr: "bilgi", en: "information" },
-      { de: "also", tr: "yani", en: "so" },
-      { de: "die Stufe", tr: "basamak", en: "step" },
-      { de: "der Text", tr: "metin", en: "text" },
+      { de: "vermutlich", tr: "muhtemelen", en: "presumably" },
+      { de: "der Einbruch", tr: "hırsızlık", en: "burglary" },
+      { de: "das Gewerbegebiet", tr: "sanayi bölgesi", en: "industrial park" },
+      { de: "das Oberlicht", tr: "çatı penceresi", en: "skylight" },
+      { de: "die Spur", tr: "iz", en: "trace" },
+      { de: "der Lieferwagen", tr: "kamyonet", en: "van" },
+      { de: "das Akkugerät", tr: "şarjlı alet", en: "cordless tool" },
+      { de: "der Filialleiter", tr: "şube müdürü", en: "branch manager" },
+      { de: "auslösen", tr: "tetiklemek", en: "to trigger" },
+      { de: "der Gutachter", tr: "bilirkişi", en: "expert" },
+      { de: "auffällig", tr: "göze batan", en: "conspicuous" },
+      { de: "gezielt", tr: "hedefli olarak", en: "specifically" },
+      { de: "die Halle", tr: "depo binası", en: "warehouse" },
+      { de: "niedrig", tr: "düşük", en: "low" },
+      { de: "offen", tr: "belirsiz", en: "unresolved" },
+      { de: "rund", tr: "yaklaşık", en: "about, roughly" },
+      { de: "die sozialen Netzwerke", tr: "sosyal ağlar", en: "social networks" },
     ],
     minutes: 7,
     text:
-      "DIE LEITER DER SICHERHEIT\n\n" +
-      "Zwischen „Er ist weg“ und „Er ist vielleicht weg“ liegen im Deutschen mehrere Stufen, und die meisten davon sind keine Wörter, die man im Wörterbuch nachschlägt.\n\n" +
-      "„Er ist wohl schon weg“ heißt: Ich habe einen Anhaltspunkt — die Jacke fehlt — und ziehe daraus einen Schluss. Es ist eine Mutmaßung mit Grundlage.\n\n" +
-      "„Er ist vermutlich weg“ klingt ähnlich, ist aber sachlicher; man hört die Wahrscheinlichkeit, nicht den Sprecher.\n\n" +
-      "„Er ist vermeintlich weg“ heißt etwas ganz anderes: jemand behauptet es, und der Sprecher glaubt es nicht. Wer die beiden verwechselt, äußert Skepsis, wo er Zustimmung meinte — ein Fehler, der in Protokollen teuer wird.\n\n" +
-      "Am oberen Ende steht „zweifellos“. Es duldet keinen Widerspruch und wird deshalb selten geglaubt: Wer sicher ist, sagt es meist ohne dieses Wort.\n\n" +
-      "Am unteren Ende steht „kaum“. „Er kann kaum schon weg sein“ ist keine schwache Vermutung, sondern eine begründete Verneinung.\n\n" +
-      "Zwischen den Stufen liegt außerdem eine Unterscheidung, die im Türkischen anders verläuft: Ob eine Vermutung auf eigener Beobachtung beruht oder auf Hörensagen, wird im Deutschen nicht am Verb sichtbar, sondern muss gesagt werden. „Er soll weg sein“ übernimmt fremde Rede und markiert dabei Distanz; „er ist offenbar weg“ stützt sich auf etwas, das der Sprecher selbst gesehen hat.\n\n" +
-      "Praktisch heißt das: In einer Mail, die weitergeleitet werden könnte, gehört die Quelle in den Satz. „Nach Auskunft der Werkstatt ist das Teil nicht lieferbar“ hält, was „das Teil ist wohl nicht lieferbar“ nicht hält — und der Unterschied fällt erst auf, wenn jemand nachfragt, woher die Information stammt.\n\n" +
-      "Man kann also annehmen, ohne sich festzulegen — aber nur, wenn man die Stufe kennt, auf der man steht.",
+      "EINBRUCH IM WERKZEUGLAGER — ERMITTLER SUCHEN ZEUGEN\n\n" +
+      "Aus dem Lager eines Baumarkts im Gewerbegebiet Süd sind in der Nacht zum Sonntag Werkzeuge im Wert von rund 40.000 Euro verschwunden. Bemerkt wurde der Einbruch erst am Montagmorgen, als die ersten Mitarbeiter die Halle öffneten.\n\n" +
+      "Wie die Täter ins Gebäude gekommen sind, ist noch offen. Die Polizei nimmt an, dass sie wohl über das Dach eingestiegen sind: Ein Oberlicht stand offen, und auf dem Boden darunter fanden die Ermittler Schmutzspuren. Ein weiterer Anhaltspunkt ist ein Lieferwagen, den eine Anwohnerin gegen drei Uhr vor dem Tor gesehen haben will.\n\n" +
+      "Vermutlich handelte es sich um mindestens drei Personen. Eine einzelne Person hätte die schweren Kisten kaum in so kurzer Zeit wegtragen können, sagt ein Sprecher der Polizei. Dass die Täter das Lager kannten, gilt als wahrscheinlich: Sie nahmen gezielt nur die teuren Akkugeräte mit, billigere Ware blieb liegen.\n\n" +
+      "Mit Skepsis begegnen die Ermittler dagegen einem vermeintlichen Hinweis aus den sozialen Netzwerken. Dort hatte ein Nutzer ein Foto veröffentlicht, das die Täter angeblich beim Verladen zeigt. Das Bild stammt jedoch zweifellos aus einem anderen Jahr: Auf dem Parkplatz liegt Schnee.\n\n" +
+      "Der Filialleiter, Herr Wendt, ist verärgert. Die Alarmanlage sei kaum zwei Jahre alt, habe in der Nacht aber keinen Alarm ausgelöst. Ob sie ausgeschaltet oder beschädigt wurde, soll ein Gutachter klären. Bis dahin bleibt es bei Mutmaßungen.\n\n" +
+      "Die Polizei bittet Zeugen, die in der Nacht zum Sonntag im Gewerbegebiet etwas beobachtet haben, sich zu melden. Wer Werkzeug zu auffällig niedrigen Preisen angeboten bekommt, sollte ebenfalls Bescheid geben. Mit großer Wahrscheinlichkeit, so der Sprecher, tauchen die Geräte in den nächsten Wochen auf Online-Marktplätzen auf.",
     questions: [
       {
-        text: "Was unterscheidet „wohl“ von „vermutlich“?",
+        text: "Wie sind die Täter nach Einschätzung der Polizei ins Lager gelangt?",
         options: [
-          "„wohl“ ist unsicherer",
-          "„wohl“ zeigt den Sprecher, „vermutlich“ die Wahrscheinlichkeit",
-          "Es gibt keinen Unterschied",
+          "Wohl über das Dach",
+          "Durch das offene Tor",
+          "Mit einem Schlüssel",
         ],
-        answer: 1,
-        explain: "„man hört die Wahrscheinlichkeit, nicht den Sprecher“ — biri kişisel çıkarım, öteki nesnel tahmin.",
+        answer: 0,
+        explain: "Açık kalan çatı penceresi ve altındaki kir izleri bu tahmini destekliyor.",
       },
       {
         kind: "gapfill",
-        text: "„Er ist ___ weg“ heißt: jemand behauptet es, und der Sprecher glaubt es nicht.",
+        text: "Mit Skepsis begegnen die Ermittler einem ___ Hinweis aus den sozialen Netzwerken.",
         options: [],
         answer: 0,
-        accept: ["vermeintlich"],
-        explain: "vermeintlich tahmin değil, iddiaya mesafe koyar. En sık karıştırılan sözcük bu.",
+        accept: ["vermeintlichen"],
+        explain: "Fotoğraf ipucu gibi görünüyor ama polis ona inanmıyor: „vermeintlich“ tam bunu söylüyor.",
       },
       {
-        text: "Warum wird „zweifellos“ laut Text selten geglaubt?",
+        text: "Warum glaubt die Polizei, dass die Täter das Lager kannten?",
         options: [
-          "Weil es zu selten benutzt wird",
-          "Weil jemand, der sicher ist, es meist ohne dieses Wort sagt",
-          "Weil es veraltet klingt",
+          "Eine Mitarbeiterin hat es gestanden",
+          "Sie hatten einen Schlüssel",
+          "Sie nahmen gezielt nur die teuren Geräte mit",
         ],
-        answer: 1,
-        explain: "„Wer sicher ist, sagt es meist ohne dieses Wort.“ Vurgunun kendisi bir zayıflık işareti.",
+        answer: 2,
+        explain: "„Sie nahmen gezielt nur die teuren Akkugeräte mit, billigere Ware blieb liegen.“",
       },
       {
         kind: "short_answer",
-        text: "Was ist „Er kann kaum schon weg sein“ laut Text — eine schwache Vermutung oder etwas anderes?",
+        text: "Woran erkennt man, dass das Foto aus einem anderen Jahr stammt?",
         options: [],
         answer: 0,
         accept: [
-          "eine begründete Verneinung",
-          "eine Verneinung",
-          "keine Vermutung, sondern eine Verneinung",
+          "am Schnee",
+          "am Schnee auf dem Parkplatz",
+          "auf dem Parkplatz liegt Schnee",
+          "Schnee",
         ],
-        explain: "„keine schwache Vermutung, sondern eine begründete Verneinung“.",
+        explain: "„Auf dem Parkplatz liegt Schnee.“",
       },
       {
-        text: "Der Text nennt „wohl“ eine Mutmaßung mit Grundlage.",
+        text: "Die Polizei geht davon aus, dass mehrere Personen beteiligt waren.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „eine Mutmaßung mit Grundlage“ — ipucu var (ceket yok).",
+        explain: "„Vermutlich handelte es sich um mindestens drei Personen.“",
       },
     ],
   },
@@ -378,7 +381,7 @@ export const c1U04: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 4,
-    title: "Ton taşıyan tek hece",
+    title: "Ein langer Tag im Büro",
     genre: "grammar",
     intro: "eben, wohl, schon, endlich — dördü de cümlenin ortasında durur ve tonu taşır.",
     gloss: [

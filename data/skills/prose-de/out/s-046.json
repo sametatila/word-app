@@ -1,103 +1,8 @@
 [
  {
-  "tr": "Üç koşul. Hangisi hâlâ masada?",
-  "kind": "intro",
-  "de": "Drei Bedingungen. Welche liegt noch auf dem Tisch?"
- },
- {
-  "tr": "Üç çekince ve bir olumsuz öbek.",
-  "kind": "intro",
-  "de": "Drei Absicherungen und eine verneinende Wortgruppe."
- },
- {
-  "tr": "Üç kip, üç iş. Hangisi hatırlanıyor?",
-  "kind": "intro",
-  "de": "Drei Modalverben, drei Aufgaben. Welches bleibt in Erinnerung?"
- },
- {
-  "tr": "Üç ilgi adılı. Hangisi iyelik taşıyor?",
-  "kind": "intro",
-  "de": "Drei Relativpronomen. Welches trägt den Besitz?"
- },
- {
-  "tr": "Beş çekince ve bir tuzak. „not“ nerede?",
-  "kind": "intro",
-  "de": "Fünf Absicherungen und eine Falle. Wo steht „not“?"
- },
- {
-  "tr": "İsimler mesafe satın alıyor. Bedeli ne?",
-  "kind": "intro",
-  "de": "Die Substantive kaufen Abstand. Was kostet das?"
- },
- {
-  "tr": "Üç kip ve iki koşul. Hangisi bize dair?",
-  "kind": "intro",
-  "de": "Drei Modalverben und zwei Bedingungen. Welche handelt von uns?"
- },
- {
-  "tr": "İki kapalı, bir karışık ve iki adlaştırma.",
-  "kind": "intro",
-  "de": "Zwei geschlossene, eine gemischte und zwei Nominalisierungen."
- },
- {
-  "tr": "Üç aktarma fiili. Hangisi ileriye bakıyor?",
-  "kind": "intro",
-  "de": "Drei Verben der Wiedergabe. Welches blickt nach vorn?"
- },
- {
-  "tr": "İlgi adılının iyelik hâli. Kişi mi, şey mi?",
-  "kind": "intro",
-  "de": "Der Genitiv des Relativpronomens. Person oder Sache?"
- },
- {
-  "tr": "Üç devrik cümle. Yanlış hangisinde çıkıyor?",
-  "kind": "intro",
-  "de": "Drei umgestellte Sätze. In welchem steckt der Fehler?"
- },
- {
-  "tr": "Üç ortaç, bir yarık cümle, bir devrik sıra.",
-  "kind": "intro",
-  "de": "Drei Partizipien, ein Spaltsatz, eine Umstellung."
- },
- {
-  "tr": "Üç yarık cümle. Üçüncüsü neyi kabul ediyor?",
-  "kind": "intro",
-  "de": "Drei Spaltsätze. Was räumt der dritte ein?"
- },
- {
-  "tr": "Üç koşul, bir kasaba. Hangisi bu sabaha ait?",
-  "kind": "intro",
-  "de": "Drei Bedingungen, eine Kleinstadt. Welche gehört zu diesem Morgen?"
- },
- {
-  "tr": "Öngörüde iki biçim. Hangisi geri getiriliyor?",
-  "kind": "intro",
-  "de": "Zwei Formen in einer Prognose. Welche wird einem vorgehalten?"
- },
- {
-  "tr": "Üç ortaç, bir konut raporu. Hangisi karar anlatıyor?",
-  "kind": "intro",
-  "de": "Drei Partizipien, ein Wohnungsbericht. Welches beschreibt eine Entscheidung?"
- },
- {
-  "tr": "Üç edilgen aktarma. Hangisinin arkasında bir model var?",
-  "kind": "intro",
-  "de": "Drei passive Wiedergaben. Hinter welcher steht ein Modell?"
- },
- {
-  "tr": "Üç adlaştırma, en sonda bedeli.",
-  "kind": "explain",
-  "de": "Drei Nominalisierungen, am Ende der Preis."
- },
- {
   "tr": "Yalın ortaç burada NEDEN taşıyor.",
   "kind": "explain",
   "de": "Das schlichte Partizip trägt hier einen GRUND."
- },
- {
-  "tr": "Ret, ağırlık, ödün, küçük bir kabul.",
-  "kind": "explain",
-  "de": "Ablehnung, Gewicht, Einräumung, ein kleines Zugeständnis."
  },
  {
   "tr": "„They can't have read the regulation.“",
@@ -105,44 +10,14 @@
   "de": "„They can't have read the regulation.“"
  },
  {
-  "tr": "Şey, şey, iyelik; en sonda uzun sahibin çözümü.",
-  "kind": "explain",
-  "de": "Sache, Sache, Besitz; am Ende die Lösung für den langen Besitzer."
- },
- {
   "tr": "„only“ sınırlama; „does“ taşıyor, ana fiil yalın.",
   "kind": "explain",
   "de": "„only“ ist eine Einschränkung; „does“ trägt, das Hauptverb bleibt in der Grundform."
  },
  {
-  "tr": "Söylenen, düşünülen, beklenen; en sonda kuralın adı.",
-  "kind": "explain",
-  "de": "Gesagt, gedacht, erwartet; am Ende der Name der Regel."
- },
- {
-  "tr": "İki çekince: „on balance“ kalıyor, „arguably“ düşüyor.",
-  "kind": "explain",
-  "de": "Zwei Absicherungen: „on balance“ bleibt, „arguably“ fällt weg."
- },
- {
-  "tr": "Kanıt, dışarıda bıraktığı, kendi payımız, en sonda yazma sırası.",
-  "kind": "explain",
-  "de": "Der Beleg, das Ausgeschlossene, der eigene Anteil, am Ende die Schreibreihenfolge."
- },
- {
-  "tr": "Birinci biçim, ikinci biçim, karşı karşıya koyan, en sonda kural.",
-  "kind": "explain",
-  "de": "Erste Form, zweite Form, die gegenüberstellende, am Ende die Regel."
- },
- {
   "tr": "ret",
   "kind": "gloss.tr",
   "de": "Ablehnung"
- },
- {
-  "tr": "ağırlık",
-  "kind": "gloss.tr",
-  "de": "Gewicht"
  },
  {
   "tr": "güç",
@@ -165,11 +40,6 @@
   "de": "Kandidat"
  },
  {
-  "tr": "adıl",
-  "kind": "gloss.tr",
-  "de": "Pronomen"
- },
- {
   "tr": "borç",
   "kind": "gloss.tr",
   "de": "Schulden"
@@ -183,16 +53,6 @@
   "tr": "semt",
   "kind": "gloss.tr",
   "de": "Viertel"
- },
- {
-  "tr": "canlı",
-  "kind": "gloss.tr",
-  "de": "lebendig"
- },
- {
-  "tr": "çeken",
-  "kind": "gloss.tr",
-  "de": "ziehend"
  },
  {
   "tr": "çözüm",
@@ -215,29 +75,9 @@
   "de": "Generation"
  },
  {
-  "tr": "ölçek",
-  "kind": "gloss.tr",
-  "de": "Skala"
- },
- {
   "tr": "sayan",
   "kind": "gloss.tr",
   "de": "zählend"
- },
- {
-  "tr": "saydı",
-  "kind": "gloss.tr",
-  "de": "zählte"
- },
- {
-  "tr": "tersi",
-  "kind": "gloss.tr",
-  "de": "das Gegenteil"
- },
- {
-  "tr": "yasal",
-  "kind": "gloss.tr",
-  "de": "rechtmäßig"
  },
  {
   "tr": "yazar",
@@ -250,54 +90,9 @@
   "de": "Wachstum"
  },
  {
-  "tr": "eğilim",
-  "kind": "gloss.tr",
-  "de": "Trend"
- },
- {
-  "tr": "iyelik",
-  "kind": "gloss.tr",
-  "de": "Besitz"
- },
- {
-  "tr": "üreten",
-  "kind": "gloss.tr",
-  "de": "erzeugend"
- },
- {
-  "tr": "başvuru",
-  "kind": "gloss.tr",
-  "de": "Antrag"
- },
- {
-  "tr": "direten",
-  "kind": "gloss.tr",
-  "de": "beharrend"
- },
- {
-  "tr": "fonladı",
-  "kind": "gloss.tr",
-  "de": "finanzierte"
- },
- {
-  "tr": "yer aldı",
-  "kind": "gloss.tr",
-  "de": "ist erschienen"
- },
- {
   "tr": "görüşme",
   "kind": "gloss.tr",
   "de": "Gespräch"
- },
- {
-  "tr": "iki kat",
-  "kind": "gloss.tr",
-  "de": "doppelt"
- },
- {
-  "tr": "kaçındı",
-  "kind": "gloss.tr",
-  "de": "vermied"
  },
  {
   "tr": "katılım",
@@ -305,19 +100,9 @@
   "de": "Beteiligung"
  },
  {
-  "tr": "nezaket",
-  "kind": "gloss.tr",
-  "de": "Höflichkeit"
- },
- {
   "tr": "saldırı",
   "kind": "gloss.tr",
   "de": "Angriff"
- },
- {
-  "tr": "siyasal",
-  "kind": "gloss.tr",
-  "de": "politisch"
  },
  {
   "tr": "her şey tartıldığında",
@@ -325,89 +110,14 @@
   "de": "alles in allem"
  },
  {
-  "tr": "taşındı",
-  "kind": "gloss.tr",
-  "de": "zog weg"
- },
- {
-  "tr": "tutulan",
-  "kind": "gloss.tr",
-  "de": "vertreten"
- },
- {
-  "tr": "müteahhit",
-  "kind": "gloss.tr",
-  "de": "Bauträger"
- },
- {
-  "tr": "anakütle",
-  "kind": "gloss.tr",
-  "de": "Grundgesamtheit"
- },
- {
-  "tr": "beklenti",
-  "kind": "gloss.tr",
-  "de": "Erwartung"
- },
- {
   "tr": "belirsiz",
   "kind": "gloss.tr",
   "de": "unklar"
  },
  {
-  "tr": "kapanmış",
-  "kind": "gloss.tr",
-  "de": "abgeschlossen"
- },
- {
   "tr": "söz eden",
   "kind": "gloss.tr",
   "de": "erwähnend"
- },
- {
-  "tr": "uyguladı",
-  "kind": "gloss.tr",
-  "de": "wandte an"
- },
- {
-  "tr": "üniteler",
-  "kind": "gloss.tr",
-  "de": "Einheiten"
- },
- {
-  "tr": "yadsıyan",
-  "kind": "gloss.tr",
-  "de": "leugnend"
- },
- {
-  "tr": "yanlılık",
-  "kind": "gloss.tr",
-  "de": "Verzerrung"
- },
- {
-  "tr": "yükselen",
-  "kind": "gloss.tr",
-  "de": "steigend"
- },
- {
-  "tr": "avukatlar",
-  "kind": "gloss.tr",
-  "de": "Anwälte"
- },
- {
-  "tr": "düşürüyor",
-  "kind": "gloss.tr",
-  "de": "lässt fallen"
- },
- {
-  "tr": "gizlenmiş",
-  "kind": "gloss.tr",
-  "de": "verborgen"
- },
- {
-  "tr": "istemeden",
-  "kind": "gloss.tr",
-  "de": "versehentlich"
  },
  {
   "tr": "ölçülmesi",
@@ -425,11 +135,6 @@
   "de": "irreführend"
  },
  {
-  "tr": "yayımladı",
-  "kind": "gloss.tr",
-  "de": "veröffentlichte"
- },
- {
   "tr": "yol açmak",
   "kind": "gloss.tr",
   "de": "verursachen"
@@ -440,24 +145,9 @@
   "de": "bestimmt"
  },
  {
-  "tr": "betimlemek",
-  "kind": "gloss.tr",
-  "de": "beschreiben"
- },
- {
-  "tr": "ima ediyor",
-  "kind": "gloss.tr",
-  "de": "legt nahe"
- },
- {
   "tr": "istatistik",
   "kind": "gloss.tr",
   "de": "Statistik"
- },
- {
-  "tr": "kamu borcu",
-  "kind": "gloss.tr",
-  "de": "Staatsschuld"
  },
  {
   "tr": "karşılaşan",
@@ -465,54 +155,9 @@
   "de": "konfrontiert"
  },
  {
-  "tr": "kuşkulanan",
-  "kind": "gloss.tr",
-  "de": "argwöhnend"
- },
- {
-  "tr": "vergi yükü",
-  "kind": "gloss.tr",
-  "de": "Steuerlast"
- },
- {
-  "tr": "yanıtlamak",
-  "kind": "gloss.tr",
-  "de": "beantworten"
- },
- {
-  "tr": "yükseltmek",
-  "kind": "gloss.tr",
-  "de": "erheben"
- },
- {
-  "tr": "alıntılıyor",
-  "kind": "gloss.tr",
-  "de": "zitiert"
- },
- {
   "tr": "azaltılması",
   "kind": "gloss.tr",
   "de": "Verringerung"
- },
- {
-  "tr": "daha keskin",
-  "kind": "gloss.tr",
-  "de": "schärfer"
- },
- {
-  "tr": "hayıflanmak",
-  "kind": "gloss.tr",
-  "de": "bedauern"
- },
- {
-  "tr": "ölçülebilir",
-  "kind": "gloss.tr",
-  "de": "messbar"
- },
- {
-  "tr": "reddedilmiş",
-  "kind": "gloss.tr",
-  "de": "abgelehnt"
  },
  {
   "tr": "varsayımsal",
@@ -530,29 +175,9 @@
   "de": "keineswegs"
  },
  {
-  "tr": "öngören kişi",
-  "kind": "gloss.tr",
-  "de": "Prognostiker"
- },
- {
-  "tr": "resmî gazete",
-  "kind": "gloss.tr",
-  "de": "Amtsblatt"
- },
- {
-  "tr": "denk düşürmek",
-  "kind": "gloss.tr",
-  "de": "anpassen"
- },
- {
   "tr": "hızlı yapılan",
   "kind": "gloss.tr",
   "de": "schnell gebaut"
- },
- {
-  "tr": "kesme işareti",
-  "kind": "gloss.tr",
-  "de": "Apostroph"
  },
  {
   "tr": "okumuş olamaz",
@@ -560,49 +185,9 @@
   "de": "kann nicht gelesen haben"
  },
  {
-  "tr": "yakın zamanlı",
-  "kind": "gloss.tr",
-  "de": "jüngst"
- },
- {
-  "tr": "devrik sıralar",
-  "kind": "gloss.tr",
-  "de": "Umstellungen"
- },
- {
-  "tr": "yalan söyleyen",
-  "kind": "gloss.tr",
-  "de": "lügend"
- },
- {
-  "tr": "yarık cümleler",
-  "kind": "gloss.tr",
-  "de": "Spaltsätze"
- },
- {
-  "tr": "ekonomik büyüme",
-  "kind": "gloss.tr",
-  "de": "Wirtschaftswachstum"
- },
- {
   "tr": "geçerli kalırdı",
   "kind": "gloss.tr",
   "de": "bliebe gültig"
- },
- {
-  "tr": "birbirine benzer",
-  "kind": "gloss.tr",
-  "de": "einander ähnlich"
- },
- {
-  "tr": "geri alıntılanan",
-  "kind": "gloss.tr",
-  "de": "einem vorgehalten"
- },
- {
-  "tr": "kalıcı olsun diye",
-  "kind": "gloss.tr",
-  "de": "damit er Bestand hat"
  },
  {
   "tr": "olması bekleniyor",

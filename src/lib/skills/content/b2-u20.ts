@@ -351,7 +351,7 @@ export const b2U20: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 20,
-    title: "Obwohl oder trotz",
+    title: "Job, Rente, Hobby",
     genre: "build",
     intro: "İkisi de karşıtlık kurar: obwohl yan cümle ister, trotz genitif bir ad öbeği.",
     gloss: [

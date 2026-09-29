@@ -270,7 +270,7 @@ export const a2U02: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 2,
-    title: "war und hatte",
+    title: "Als ich klein war",
     genre: "grammar",
     intro: "İki fiilin kısa geçmişi: durum ve sahip olmak. Perfekt ile karışmaz.",
     gloss: [

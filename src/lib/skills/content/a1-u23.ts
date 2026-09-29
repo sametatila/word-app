@@ -278,7 +278,7 @@ export const a1U23: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 23,
-    title: "Wiederhören oder Wiedersehen?",
+    title: "Tschüss am Telefon",
     genre: "grammar",
     intro: "Üç kalıp, üçü de yanlış yerde kullanılınca göze batar.",
     gloss: [

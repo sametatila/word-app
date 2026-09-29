@@ -399,7 +399,7 @@ export const c1U20: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 20,
-    title: "Ayır, sonra itiraz et",
+    title: "Einwände in der Diskussion",
     genre: "grammar",
     intro: "Davon zu unterscheiden ist …, insofern, zulasten, Man stelle sich vor.",
     gloss: [
@@ -446,7 +446,7 @@ export const c1U20: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 20,
-    title: "Sorumluluk kime yazılacak",
+    title: "Stellungnahme zur KI-Entscheidung",
     genre: "opinion",
     intro: "Bir yapay zekâ kararının ardından sorumluluk zincirini yaz.",
     gloss: [

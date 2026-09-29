@@ -349,7 +349,7 @@ export const b2U13: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 13,
-    title: "Zwei Register, ein Grund",
+    title: "Unwetter und Trockenheit",
     genre: "build",
     intro: "wegen ve trotz sokakta, aufgrund ve infolge ilan panosunda. Dördü de genitif ister.",
     gloss: [

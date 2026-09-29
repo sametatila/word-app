@@ -1,10 +1,5 @@
 [
  {
-  "tr": "Yazıda ses tonu yok; parçacık tek başına kalınca ağırlığı artıyor.",
-  "kind": "explain",
-  "en": "There is no tone of voice in writing; a particle left on its own carries more weight."
- },
- {
   "tr": "Yeni gelenin patronu 'sen'lemesi yakınlık değil, atlanmış basamak.",
   "kind": "explain",
   "en": "A newcomer using du to the boss is not closeness but a step skipped."
@@ -28,11 +23,6 @@
   "tr": "„A helmet — that is our only rule.“ Su ve pompa öneri, kural değil.",
   "kind": "explain",
   "en": "„A helmet — that is our only rule.“ Water and a pump are advice, not a rule."
- },
- {
-  "tr": "„da wäre es unehrlich“ — öngörüde zorunluluk yaratmak dürüst değil.",
-  "kind": "explain",
-  "en": "„da wäre es unehrlich“ — creating an obligation in a forecast is not honest."
  },
  {
   "tr": "„Der Eintritt ist kostenlos.“ Yalnız kahve ve kek iki avro tutuyor.",
@@ -178,11 +168,6 @@
   "tr": "Hareket → Akkusativ (auf den Tisch). Durum → Dativ (auf dem Tisch).",
   "kind": "explain",
   "en": "Movement → accusative (auf den Tisch). State → dative (auf dem Tisch)."
- },
- {
-  "tr": "Hava ve renk deyimleri: hangisi ofiste durur, hangisi hukuki sorun?",
-  "kind": "intro",
-  "en": "Idioms of weather and color: which holds up at work, which is a legal problem?"
  },
  {
   "tr": "İki kişi bir arkadaşı tarif ediyor. Dikkat: biri yanlış hatırlıyor!",
@@ -355,11 +340,6 @@
   "en": "Timo asks „Bist du das in der ersten Reihe?“ and Nora confirms it."
  },
  {
-  "tr": "Türkçedeki „saf“ kadar yumuşak değil; ihmal suçlamasına yaklaşıyor.",
-  "kind": "explain",
-  "en": "It is not as mild as the Turkish word for naive; it comes close to a charge of negligence."
- },
- {
   "tr": "Uzaktaki dostluklar üzerine bir yazı. Ne işe yarıyor, ne yaramıyor?",
   "kind": "intro",
   "en": "An article about friendships at a distance. What works, and what does not?"
@@ -530,11 +510,6 @@
   "en": "A reply to an application for support. Approval or refusal — and how is it said?"
  },
  {
-  "tr": "Bir dil köşesi yazısı: Almancada süreç ile durum neden ayrı yazılır?",
-  "kind": "intro",
-  "en": "A language column: why are a process and a state written differently in German?"
- },
- {
   "tr": "Bir gecikmeyi açıkla. Sebebi ve sonucu ayrı ayrı, doğru sırayla yaz.",
   "kind": "intro",
   "en": "Explain a delay. Write the cause and the effect separately, in the right order."
@@ -665,11 +640,6 @@
   "en": "An expensive hobby is discussed. Watch how the cost is described."
  },
  {
-  "tr": "Parçacığın işlevi: söylenmiş ya da sezilmiş bir şeye karşı çalışmak.",
-  "kind": "explain",
-  "en": "What the particle does: it works against something already said or sensed."
- },
- {
   "tr": "Resmî dilde fiil boşalır, anlam isme geçer — ve öbek tanımlık almaz.",
   "kind": "intro",
   "en": "In formal language the verb empties out and the sense moves to the noun — and the phrase takes no article."
@@ -703,11 +673,6 @@
   "tr": "Tersi: bu açıklama kimseyi ilgilendirmiyor ve durumu kötüleştiriyor.",
   "kind": "explain",
   "en": "The opposite: that explanation interests nobody and makes the situation worse."
- },
- {
-  "tr": "Tersi: hassas mesajlarda tasarruf edilen cümle en pahalıya patlıyor.",
-  "kind": "explain",
-  "en": "The opposite: in a sensitive message the sentence you save costs the most."
  },
  {
   "tr": "Türkçedeki '-erek' burada tam bir yan cümledir: indem + özne + fiil.",

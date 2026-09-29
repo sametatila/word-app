@@ -379,7 +379,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 23,
-    title: "Phone phrases",
+    title: "Calling Mr. Demir",
     genre: "phone",
     intro: "Telefon cümlelerini yaz. Telefonda kendini „this is“ ile tanıtıyorsun.",
     gloss: [

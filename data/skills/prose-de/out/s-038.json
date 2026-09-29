@@ -80,11 +80,6 @@
   "de": "Sätze zu Fortschritt und Feedback. Wohin rückt die Zeit in der Wiedergabe?"
  },
  {
-  "tr": "Üç yöntem, bir defter. Hangi cümle alışkanlık, hangisi alışkın olmak?",
-  "kind": "intro",
-  "de": "Drei Methoden, ein Heft. Welcher Satz meint eine frühere Gewohnheit, welcher das Gewöhntsein?"
- },
- {
   "tr": "Üç sözcük aynı, anlam ayrı. Hangisi bitmiş alışkanlık, hangisi alışkın olmak?",
   "kind": "intro",
   "de": "Dieselben drei Wörter, andere Bedeutung. Welches meint die beendete Gewohnheit, welches das Gewöhntsein?"
@@ -310,11 +305,6 @@
   "de": "wenn ich wäre"
  },
  {
-  "tr": "oturuyor",
-  "kind": "gloss.tr",
-  "de": "passt"
- },
- {
   "tr": "alıştırma",
   "kind": "gloss.tr",
   "de": "Übung"
@@ -473,11 +463,6 @@
   "tr": "ciro",
   "kind": "gloss.tr",
   "de": "der Umsatz"
- },
- {
-  "tr": "eril",
-  "kind": "gloss.tr",
-  "de": "maskulin"
  },
  {
   "tr": "katı",

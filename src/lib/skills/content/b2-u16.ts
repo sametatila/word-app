@@ -192,7 +192,7 @@ export const b2U16: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     unit: 16,
-    title: "Der Dirigent, dessen Orchester",
+    title: "Der Spielplan im Mai",
     genre: "dialogue",
     intro: "İki kişi bir konser programını konuşuyor. Kimin neyi olduğuna dikkat et.",
     gloss: [
@@ -346,7 +346,7 @@ export const b2U16: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 16,
-    title: "Dessen, deren, über die",
+    title: "Bücher, Bühne, Orchester",
     genre: "build",
     intro: "Edatlı ilgi cümlesinde edat öne geçer; dessen ve deren sahibe göre seçilir.",
     gloss: [

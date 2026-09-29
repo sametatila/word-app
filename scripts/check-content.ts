@@ -180,6 +180,33 @@ const GENRES = new Set([
   "opinion", "personal", "phone", "profile", "pronounce", "report", "review", "story", "text",
 ]);
 
+/* METİN DİLİN KENDİSİNİ ANLATMAZ (2026-09-29, SPEC aynı adlı madde).
+   İngilizce kursun B2–C1 okuma ve dinlemelerinin neredeyse tamamı ve B1'in,
+   Almanca C1'in bir kısmı bir dil bilgisi konusunu anlatan denemeydi
+   ("Conditions without if", „Der Satz, der sich zusammenfaltet“): metin
+   kuralı ANLATIYOR, öğrenci anlam için okumuyordu. Çağdaş yaklaşımda (CEFR
+   eylem odaklı, anlam içinde biçime odak) okuma/dinleme gerçek hayattan bir
+   metindir ve hedef yapı onda doğal olarak sık geçer; kuralın açıklaması
+   ünitenin konuşmalarında ve onlardan türetilen Dil bilgisi adımında duruyor.
+   Ölçüt kaba ama iki yönde sınandı (2026-09-29): yeniden yazımdan önceki
+   içerikte eşik 79 metni yakalıyordu ve hepsi dersti; yeniden yazımdan
+   sonra hiçbirini yakalamıyor — gerçek konulu metinlerde en yüksek değer
+   3 terim. Terim listesi YALNIZ dil bilgisi terimleri — "sentence"
+   (hüküm), "subject" (ders), "Artikel" (gazete yazısı) gibi iki anlamlılar
+   eşikte gürültü yapıyordu, kaba bir gövdeyle bile ders metnini ayırmaya
+   yetenler kaldı. Gerçekten dil hakkında olup ders anlatmayan metin (bir dil
+   kursunun ilanı) muafiyete GEREKÇESİYLE girer. */
+const META_EN =
+  /(?<!\p{L})(?:verbs?|nouns?|clauses?|tenses?|participles?|infinitives?|prepositions?|conjunctions?|adjectives?|adverbs?|pronouns?|gerunds?|grammar|grammatical|auxiliar(?:y|ies)|commas?|apostrophes?|suffix(?:es)?|plurals?|singular|syllables?|word order|third form|past simple|present perfect|future perfect|past perfect|question tags?|reported speech|conditionals?|countable|uncountable|determiners?|quantifiers?|phrasal verbs?|collocations?|idioms?|modal verbs?|relative pronouns?|the passive|inversion)(?!\p{L})/giu;
+const META_DE =
+  /(?<!\p{L})(?:Verb(?:en)?|Nomen|Substantiv(?:e|en)?|Nebensatz|Nebensätzen?|Hauptsatz|Hauptsätzen?|Relativsatz|Relativsätzen?|Akkusativ|Dativ|Genitiv|Nominativ|Präposition(?:en)?|Konjunktiv|Passiv|Präteritum|Plusquamperfekt|Infinitiv|Partizip(?:ien)?|Subjekt|Adjektiv(?:e|en)?|Adverb(?:ien)?|Kommas?|Wortstellung|Grammatik|grammatisch\p{L}*|Hilfsverb(?:en)?|Modalverb(?:en)?|Konjunktion(?:en)?|Kasus|Singular|Plural|Pronomen|Imperativ|Endung(?:en)?|Silben?|Nominalstil|Vorfeld|Satzklammer)(?!\p{L})/gu;
+/** Eşik: en az bu kadar terim VE sözcük başına bu yoğunluk. */
+const META_AZ = 4;
+const META_YOGUNLUK = 0.012;
+/** Muafiyet: kimlik → gerekçe. Eşiği aşmayan kimlik burada kalırsa uyarı. */
+const META_MUAF = new Map<string, string>([]);
+const usedMetaExempt = new Set<string>();
+
 function checkSkills(list: SkillExercise[]) {
   /* Patika kartı başlığı gösteriyor. Aynı seviyede AYRI ÜNİTELERDE aynı
      başlık iki kart üretir ve öğrenci hangisini açtığını ayırt edemez.
@@ -366,6 +393,16 @@ function checkSkills(list: SkillExercise[]) {
         if (wc(s.text) > 40) W(w, `dinleme bölümü ${wc(s.text)} kelime (> 40): "${s.text.slice(0, 40)}…"`);
         if (trLetters(s.text)) E(w, `dinleme bölümünde Türkçe harf: "${s.text.slice(0, 40)}"`);
       }
+    }
+    if (e.skill === "reading" || e.skill === "listening") {
+      const govde = e.skill === "reading" ? e.text : e.segments.map((s) => s.text).join("\n");
+      const n = wc(govde);
+      const terim = [...govde.matchAll(e.course === "en" ? META_EN : META_DE)].length;
+      const asti = terim >= META_AZ && terim / Math.max(n, 1) >= META_YOGUNLUK;
+      if (META_MUAF.has(e.id)) {
+        if (asti) usedMetaExempt.add(e.id);
+      } else if (asti)
+        E(w, `metin dilin kendisini anlatıyor (${terim} dil bilgisi terimi / ${n} sözcük) — gerçek hayattan bir konu yaz, kural dil bilgisi adımında (SPEC "Metin dilin kendisini anlatmaz")`);
     }
     if (e.skill === "grammar") {
       // Kütüphane dil bilgisi egzersizi (2026-09): önce anlatım, sonra soru.
@@ -670,6 +707,9 @@ if (kinds.includes("words")) checkHeadwords();
 
 // Muafiyet listesi bayatladıysa söyle: artık eşiği aşmayan bir kimlik listede
 // durursa bir sonraki okuyan onu gerçek bir kusur sanır.
+if (kinds.includes("skills"))
+  for (const id of META_MUAF.keys())
+    if (!usedMetaExempt.has(id)) W("[skills]", `dil bilgisi metni muafiyeti artık gereksiz: ${id}`);
 if (kinds.includes("conversations"))
   for (const id of INFLECTED_VOCAB)
     if (!usedInflectedExempt.has(id)) W("[conversations]", `çekimli sözlükçe muafiyeti artık gereksiz: ${id}`);

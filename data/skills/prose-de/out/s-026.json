@@ -25,11 +25,6 @@
   "de": "Eine Kindheitserzählung. Was war früher, und was hat sich dann geändert?"
  },
  {
-  "tr": "İki sözcüğün farkı anlatılıyor. Kim hâlâ orada, kim döndü?",
-  "kind": "intro",
-  "de": "Der Unterschied zweier Wörter wird erklärt. Wer ist noch dort, wer ist zurück?"
- },
- {
   "tr": "Geçmiş hakkında sorular. Her soru başka bir şeyi öğreniyor.",
   "kind": "intro",
   "de": "Fragen über die Vergangenheit. Mit jeder Frage erfährt man etwas anderes."
@@ -443,11 +438,6 @@
   "tr": "hiç … ettin mi",
   "kind": "gloss.tr",
   "de": "hast du jemals …"
- },
- {
-  "tr": "anlamına gelmek",
-  "kind": "gloss.tr",
-  "de": "bedeuten"
  },
  {
   "tr": "ne kadar kaldın",

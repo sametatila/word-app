@@ -1,40 +1,5 @@
 [
  {
-  "tr": "Kip kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Modalverbkarte aus."
- },
- {
-  "tr": "Biçim kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Formkarte aus."
- },
- {
-  "tr": "Kapanış kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Schlusskarte aus."
- },
- {
-  "tr": "„the“ varsa „of“ zorunlu; „the“ yoksa nesne doğrudan geliyor; üçüncü seçenek yok; biri şey, öteki eylem.",
-  "kind": "form.facts",
-  "de": "Steht „the“ davor, ist „of“ Pflicht; ohne „the“ kommt das Objekt direkt; eine dritte Möglichkeit gibt es nicht; das eine ist eine Sache, das andere eine Tätigkeit."
- },
- {
-  "tr": "„must have“ olumsuzlanamıyor; sert olumsuz „can't have“; yumuşak olumsuz ana fiile taşınıyor; ikisi aynı şey değil.",
-  "kind": "form.facts",
-  "de": "„must have“ lässt sich nicht verneinen; die harte Verneinung ist „can't have“; die weiche wandert ins Hauptverb; die beiden sind nicht dasselbe."
- },
- {
-  "tr": "„in view of“ geriye bakıyor; „provided that“ şart koyuyor; „if“ durumu betimliyor; seviyenin sorusu kimin kaybolduğu.",
-  "kind": "form.facts",
-  "de": "„in view of“ blickt zurück; „provided that“ setzt eine Bedingung; „if“ beschreibt eine Lage; die Frage der Stufe ist, wer verschwindet."
- },
- {
-  "tr": "Seçim yapan cümlecikte nesne adılı düşüyor; virgüllü cümlecikte düşmüyor; „which is“ isim öbeğinden önce silinebiliyor; „whose“ hiç silinmiyor.",
-  "kind": "form.facts",
-  "de": "Im auswählenden Teilsatz fällt das Objektpronomen weg; im Teilsatz mit Kommas nicht; „which is“ kann vor einer Nominalphrase gestrichen werden; „whose“ nie."
- },
- {
   "tr": "Affetmez davranmış olamazlar.",
   "kind": "build.tr",
   "de": "Sie können nicht unversöhnlich gewesen sein."
@@ -315,28 +280,8 @@
   "de": "„provided that“ setzt eine Bedingung; „if“ beschreibt nur eine Lage."
  },
  {
-  "tr": "Kuralın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Regel: Bring sie in die richtige Ordnung."
- },
- {
   "tr": "Broşürün sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge des Faltblatts: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Dosyanın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Akte: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Kapanışın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge des Schlusses: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Şikâyetin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Beschwerde: Bring sie in die richtige Ordnung."
  }
 ]

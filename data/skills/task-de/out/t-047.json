@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Fail kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte zum Handelnden aus."
- },
- {
-  "tr": "Ağırlık kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Gewichtskarte aus."
- },
- {
-  "tr": "Yer sözcükleri kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte zu den Ortswörtern aus."
- },
- {
-  "tr": "İngilizce cümlenin sonunu ağırlığa göre sıralıyor; uzun nesne sona gidiyor; adıl asla ağır değil; Almancada sonu fiil parantezi tutuyor.",
-  "kind": "form.facts",
-  "de": "Das Englische ordnet das Satzende nach Gewicht; das lange Objekt rückt ans Ende; ein Pronomen ist nie schwer; im Deutschen hält die Verbklammer das Ende besetzt."
- },
- {
-  "tr": "Edilgen bir delik bırakıyor; soyut özne görünür bir isim koyuyor; geçişlilik değiştiren fiil hiç iz bırakmıyor; Almanca ayrı bir fiil türetiyor.",
-  "kind": "form.facts",
-  "de": "Das Passiv lässt eine Lücke; ein abstraktes Subjekt setzt ein sichtbares Nomen ein; das Verb mit wechselnder Transitivität lässt gar keine Spur; das Deutsche leitet ein eigenes Verb ab."
- },
- {
-  "tr": "„Where“ burada yer göstermiyor; „whereas“ iki şeyi ayrı tutuyor; Almanca aynı aileyi kurmuş ve parçaları görünür; sökülemeyen sözcük öğretilmek zorunda.",
-  "kind": "form.facts",
-  "de": "„Where“ zeigt hier keinen Ort; „whereas“ hält zwei Dinge auseinander; das Deutsche hat dieselbe Familie gebaut und die Teile bleiben sichtbar; ein Wort, das man nicht zerlegen kann, muss gelehrt werden."
- },
- {
   "tr": "Buna hizaya sokma demek klişe demek değildir.",
   "kind": "build.tr",
   "de": "Es Disziplinierung zu nennen heißt nicht, es eine Floskel zu nennen."

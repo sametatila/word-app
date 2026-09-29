@@ -274,7 +274,7 @@ export const a2U03: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 3,
-    title: "wollte, konnte, musste",
+    title: "Pläne als Kind",
     genre: "grammar",
     intro: "Kip fiillerinin kısa geçmişi. Asıl fiil hep cümlenin sonunda kalır.",
     gloss: [

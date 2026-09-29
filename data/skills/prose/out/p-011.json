@@ -215,11 +215,6 @@
   "en": "Two colleagues split up the work. Listen: who is each favor for, and why?"
  },
  {
-  "tr": "İki parçacık bir arada. Aynı sözcükler, vurguya göre başka anlam.",
-  "kind": "intro",
-  "en": "Two particles together. The same words, a different sense with the stress."
- },
- {
   "tr": "Jonas en yakın arkadaşını anlatıyor: nasıl görünüyor, ne yapıyor?",
   "kind": "intro",
   "en": "Jonas describes his best friend: what do they look like, what do they do?"
@@ -345,11 +340,6 @@
   "en": "False: „Beides ist Heimat, und ich muss mich nicht entscheiden.“"
  },
  {
-  "tr": "Yanlış: konuşma dilinde sık karıştırılıyor, yazıda ayrım geçerli.",
-  "kind": "explain",
-  "en": "False: it is often mixed up in speech, but the distinction holds in writing."
- },
- {
   "tr": "zwar … jedoch: önce taviz, sonra itiraz. İkinci bölüm ağır basar.",
   "kind": "explain",
   "en": "zwar … jedoch: the concession first, the objection after. The second part weighs more."
@@ -378,11 +368,6 @@
   "tr": "„bleiben“ sein ile gider ve ortacı geblieben: Ich bin … geblieben.",
   "kind": "explain",
   "en": "„bleiben“ goes with sein and its participle is geblieben: Ich bin … geblieben."
- },
- {
-  "tr": "„Er sprach mit dem Kollegen über seinen Antrag“ — kimin başvurusu?",
-  "kind": "explain",
-  "en": "„Er sprach mit dem Kollegen über seinen Antrag“ — whose application?"
  },
  {
   "tr": "„Gleiche Aussage, kein Vorwurf.“ Aynı bilgiyi veriyor ama kimseyi suçlamıyor.",
@@ -490,11 +475,6 @@
   "en": "A traffic fine and a reply to it. What has to be proved?"
  },
  {
-  "tr": "Biri izinsiz devamsızlık, öteki biletsiz seyahat — ikisi de ihlal.",
-  "kind": "explain",
-  "en": "One is unexcused absence, the other traveling without a ticket — both are offenses."
- },
- {
   "tr": "Bitpazarı günlüğü: ne satıldı, ne satılmadı, pazarlık nasıl gitti?",
   "kind": "intro",
   "en": "A diary of a flea market: what sold, what did not, how did the haggling go?"
@@ -570,11 +550,6 @@
   "en": "A two-part connector: zwar concedes first, aber then sets the limit."
  },
  {
-  "tr": "İki sözcük, zıt iddialar. Türkçede ayrım zaten var — eşleşme ters.",
-  "kind": "intro",
-  "en": "Two words, opposite claims. The distinction exists in Turkish already — but reversed."
- },
- {
   "tr": "indem yöntemi bildirir: alışkanlık kararla değil tekrarla kurulur. „wenn“ de dilbilgisel ve anlamca doğrudur.",
   "kind": "explain",
   "en": "indem gives the method: a habit is built by repetition, not by a decision. „wenn“ is also grammatical and correct."
@@ -588,16 +563,6 @@
   "tr": "je-desto iki eğilimi bağlar; adlaştırma rakamı başlığa sıkıştırır.",
   "kind": "intro",
   "en": "je-desto links two trends; nominalization squeezes the figure into a headline."
- },
- {
-  "tr": "Karar tarif eden deyim resmî ortamda durur; tutum bildiren durmaz.",
-  "kind": "explain",
-  "en": "An idiom that describes a decision holds up in a formal setting; one that states an attitude does not."
- },
- {
-  "tr": "Kaynak metin değişmiyor; vatandaşa yazılan metin değişmek zorunda.",
-  "kind": "explain",
-  "en": "The source text does not change; the text written for the citizen has to."
  },
  {
   "tr": "Kesin plan present continuous ile: We are flying to Rome tomorrow.",

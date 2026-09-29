@@ -275,7 +275,7 @@ export const a2U05: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 5,
-    title: "ändern oder wechseln?",
+    title: "Neuer Termin, neue Stelle",
     genre: "grammar",
     intro: "Aynı şeyi başka hâle getirmek mi, bırakıp yenisini almak mı? Bir de duygunun hâli.",
     gloss: [

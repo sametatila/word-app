@@ -70,11 +70,6 @@
   "en": "„Danach gibt es nur noch Kaffee und Kuchen.“ — no hot food."
  },
  {
-  "tr": "„eine Haftungsfrage“ — kip aktaranı iddianın dışında bırakıyor.",
-  "kind": "explain",
-  "en": "„eine Haftungsfrage“ — the mood leaves the reporter outside the claim."
- },
- {
   "tr": "„Es ist sehr dringend.“ — bu sözcük daha erken bir yer açtırır.",
   "kind": "explain",
   "en": "„Es ist sehr dringend.“ — that word opens up an earlier slot."
@@ -230,11 +225,6 @@
   "en": "Something done in the past: was + past participle. Not „build“ but „built“."
  },
  {
-  "tr": "Gerundivum bir toplantıda. Zorunluluk nasıl tek sıfata sığıyor?",
-  "kind": "intro",
-  "en": "The gerundive in a meeting. How does an obligation fit into one adjective?"
- },
- {
   "tr": "İki kişi öğrenme hedeflerini konuşuyor. Kim neyi nasıl ölçüyor?",
   "kind": "intro",
   "en": "Two people talk about their learning goals. Who measures what, and how?"
@@ -263,11 +253,6 @@
   "tr": "Kipli fiilden sonra ÇIPLAK mastar: „musst … überreden“, zu yok.",
   "kind": "explain",
   "en": "A BARE infinitive after a modal verb: „musst … überreden“, no zu."
- },
- {
-  "tr": "Konjunktiv I: aktarım, iddianın sahipliğini konuşana bırakıyor.",
-  "kind": "explain",
-  "en": "Konjunktiv I: reported speech leaves ownership of the claim with the speaker."
  },
  {
   "tr": "Koşul yan cümlesi başta; ana cümle emir biçimiyle devam ediyor.",
@@ -303,11 +288,6 @@
   "tr": "Olumsuz emir „Don't“ ile başlar ve arkasından yalın fiil gelir.",
   "kind": "explain",
   "en": "A negative imperative begins with „Don't“ and a bare verb follows."
- },
- {
-  "tr": "Ortaç öbeği ne yapıyor? Bir ilgi cümlesinin sıkıştırılmış hâli.",
-  "kind": "intro",
-  "en": "What does a participle phrase do? It is a relative clause compressed."
  },
  {
   "tr": "Ortak evde temizlik paylaşımı. Kim ne yapıyor, kim ne yapmıyor?",
@@ -383,11 +363,6 @@
   "tr": "Yanlış: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“",
   "kind": "explain",
   "en": "False: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“"
- },
- {
-  "tr": "Yönetmelik dilinin amacı eksiksizlik; anlaşılırlık ayrı bir iş.",
-  "kind": "explain",
-  "en": "The aim of regulatory language is completeness; being understood is another job."
  },
  {
   "tr": "„Am Montag stehe ich früh auf.“ Pazar günü asla erken kalkmıyor.",
@@ -698,11 +673,6 @@
   "tr": "Third conditional'ın yan cümlesi: If they had told us earlier, …",
   "kind": "explain",
   "en": "The subordinate clause of the third conditional: If they had told us earlier, …"
- },
- {
-  "tr": "Türkçeden Almancaya deyim taşımak: hangisi geçer, hangisi tuzak?",
-  "kind": "intro",
-  "en": "Carrying idioms from Turkish into German: which travel, and which are traps?"
  },
  {
   "tr": "Üçüncü tekilde ek yoktur; doğrusu „Er hatte gestern keine Zeit.“",

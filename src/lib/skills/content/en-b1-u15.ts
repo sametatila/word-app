@@ -49,8 +49,6 @@ export const enB1U15: SkillExercise[] = [
       { de: "survived", tr: "ayakta kaldı" },
       { de: "ordinary", tr: "sıradan" },
       { de: "boredom", tr: "can sıkıntısı" },
-      { de: "real condition", tr: "gerçek koşul" },
-      { de: "sentence", tr: "cümle" },
       { de: "myself", tr: "kendime" },
       { de: "enjoyment", tr: "keyif" },
       { de: "either", tr: "de" },
@@ -58,9 +56,9 @@ export const enB1U15: SkillExercise[] = [
     minutes: 7,
     text:
       "Eight months, four breaks, and one rule that survived all four.\n" +
-      "If I get bored, I take a short walk. Real condition, ordinary week: this happens, and this is what I do. Ten minutes, no phone, and the boredom is usually a room problem and not a language problem.\n" +
-      "If I were less tired, I would study more. Not real, and the form says so: „were“, not „was“, even after „I“. English uses that one form in this one place, and it is the sentence I say to myself at eleven at night to feel better about stopping.\n" +
-      "You will not quit unless you stop enjoying it. That line came from a tutor and it took me a month to read it properly. „Unless“ already carries the „not“, so the sentence is not a double negative — it says: the only thing that ends this is losing the enjoyment.\n" +
+      "If I get bored, I take a short walk. It happens in an ordinary week, and I know what to do. Ten minutes, no phone, and the boredom is usually a room problem and not a language problem. If the walk does not help, I change rooms.\n" +
+      "If I were less tired, I would study more. I say that to myself at eleven at night, and it is true, but it does not help. If I studied in the morning, I would not be tired at all. So in March I moved the lesson to seven in the morning, before work.\n" +
+      "You will not quit unless you stop enjoying it. That line came from my tutor, and it took me a month to believe it. So I protect the enjoyment: one podcast I like, one song and one short video with subtitles every week.\n" +
       "Discipline is a smaller word than people think. It is not eight months of willpower. It is the rule for the day after a missed day, and I have exactly one: start again with the shortest thing on the list.\n" +
       "The streak is not the point either. I broke it four times and the four restarts are the reason I am still here.\n" +
       "The reward, if there is one, is not at the end. It is the evening you notice you did not decide to study; you just did.",
@@ -72,10 +70,10 @@ export const enB1U15: SkillExercise[] = [
         explain: "„If I get bored, I take a short walk. … Ten minutes, no phone…“",
       },
       {
-        text: "What does „unless“ carry?",
-        options: ["the „not“", "a condition of time", "a reward"],
+        text: "When does the writer study now?",
+        options: ["at seven in the morning", "at eleven at night", "after work"],
         answer: 0,
-        explain: "„‚Unless‘ already carries the ‚not‘, so the sentence is not a double negative…“",
+        explain: "„So in March I moved the lesson to seven in the morning, before work.“",
       },
       {
         kind: "truefalse",
@@ -103,7 +101,7 @@ export const enB1U15: SkillExercise[] = [
           "You will not quit unless you stop enjoying it.",
           "The streak is not the point either.",
         ],
-        explain: "Gerçek koşul, gerçek olmayan koşul, öğretmenin cümlesi, en sonda seri.",
+        explain: "Can sıkıntısı, yorgunluk, öğretmenin sözü, en sonda seri.",
       },
       {
         kind: "short_answer",

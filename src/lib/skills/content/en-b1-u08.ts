@@ -41,21 +41,20 @@ export const enB1U08: SkillExercise[] = [
     unit: 8,
     title: "A village on the coast",
     genre: "story",
-    intro: "Kıyıda küçük bir köy. İki virgül ne değiştiriyor?",
+    intro: "Kıyıda küçük bir köy. Yazar oraya neden ağustosta gitmiyor?",
     gloss: [
       { de: "grew up", tr: "büyüdüm" },
       { de: "in between", tr: "arada" },
       { de: "winter", tr: "kış" },
       { de: "middle", tr: "orta" },
-      { de: "comma", tr: "virgül" },
-      { de: "matters", tr: "önemli" },
+      { de: "the checkout", tr: "kasa" },
       { de: "sentence", tr: "cümle" },
     ],
     minutes: 7,
     text:
       "This is the village where I grew up. Four hundred people in winter, two thousand in August, and one road in between.\n" +
       "It is a place that tourists love for eleven days a year. They arrive in the last week of July, they photograph the same three houses on the hill, and by the middle of August the scenery is the only thing left.\n" +
-      "The town, which is on the coast, is small. That comma matters. If I wrote „the town which is on the coast“, I would be choosing one town from several, and there is only one. The commas say: you already know which town, and here is something extra about it.\n" +
+      "The town, which is on the coast, is fifteen minutes away by bus. It has a hospital, a school and the only supermarket, which is where everybody meets on Saturday morning. My mother, who worked there for thirty years, still knows every name at the checkout.\n" +
       "The valley behind the village is the peaceful part. Nobody photographs it because there is nothing in it: grass, a river, and the road to the next village where my grandmother was born.\n" +
       "The crowded weeks pay for the quiet ones. I understood that late, at about twenty-five, and my father said one sentence: we are not tired of them, we are tired in August.\n" +
       "I live in a city now and I go back twice a year. Never in August.",
@@ -67,10 +66,10 @@ export const enB1U08: SkillExercise[] = [
         explain: "„Four hundred people in winter, two thousand in August…“",
       },
       {
-        text: "What do the two commas say?",
-        options: ["you already know which town", "there are several towns", "the town is new"],
+        text: "Where does everybody meet on Saturday morning?",
+        options: ["at the supermarket", "at the school", "on the hill"],
         answer: 0,
-        explain: "„The commas say: you already know which town, and here is something extra about it.“",
+        explain: "„It has a hospital, a school and the only supermarket, which is where everybody meets on Saturday morning.“",
       },
       {
         kind: "truefalse",

@@ -45,11 +45,6 @@
   "de": "Grund, Folge und Zweck. Welches Wort darf wohin?"
  },
  {
-  "tr": "Dört sözcük, tek fikir. Hangisi cümleye başlayabiliyor?",
-  "kind": "intro",
-  "de": "Vier Wörter, ein Gedanke. Welches darf den Satz beginnen?"
- },
- {
   "tr": "Kursa neden kaydolunmuş? Kısa cevap gerçek cevap değil.",
   "kind": "intro",
   "de": "Warum wurde der Kurs gebucht? Die kurze Antwort ist nicht die echte."
@@ -290,11 +285,6 @@
   "de": "das eigentliche Risiko"
  },
  {
-  "tr": "getiriyor",
-  "kind": "gloss.tr",
-  "de": "leitet ein"
- },
- {
   "tr": "yapacağım",
   "kind": "gloss.tr",
   "de": "ich werde"
@@ -370,24 +360,9 @@
   "de": "der echte Zählerstand"
  },
  {
-  "tr": "iptal edildi",
-  "kind": "gloss.tr",
-  "de": "wurde gestrichen"
- },
- {
   "tr": "kural kitabı",
   "kind": "gloss.tr",
   "de": "Regelbuch"
- },
- {
-  "tr": "zaman biçimi",
-  "kind": "gloss.tr",
-  "de": "die Zeitform"
- },
- {
-  "tr": "iki sırada da",
-  "kind": "gloss.tr",
-  "de": "in beiden Reihenfolgen"
  },
  {
   "tr": "kendiliğinden",

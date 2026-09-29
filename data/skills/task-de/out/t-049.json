@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Çerçeve kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Rahmenkarte aus."
- },
- {
-  "tr": "Dönüşüm kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Konversionskarte aus."
- },
- {
-  "tr": "Edat edilgeni kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte zum Präpositionalpassiv aus."
- },
- {
-  "tr": "Edatın nesnesi özne oluyor; edat arkada kalıyor; Almanca bunu hiç yapamıyor; biçim faili söylemeden yazmanın dördüncü yolu.",
-  "kind": "form.facts",
-  "de": "Das Objekt der Präposition wird zum Subjekt; die Präposition bleibt zurück; das Deutsche kann das überhaupt nicht; die Form ist der vierte Weg, ohne den Handelnden zu schreiben."
- },
- {
-  "tr": "Fiil hiçbir ek almadan isim oluyor; isim olduğunu önündeki sözcük söylüyor; Almanca her seferinde görünür iz bırakıyor; bedeli sözcüğün terim gibi durması.",
-  "kind": "form.facts",
-  "de": "Das Verb wird ohne jede Endung zum Nomen; dass es ein Nomen ist, sagt allein das Wort davor; das Deutsche hinterlässt jedes Mal eine sichtbare Spur; der Preis ist, dass das Wort wie ein Fachbegriff aussieht."
- },
- {
-  "tr": "Çerçeve iddianın ölçüldüğü boyutu adlandırıyor; başta uyarıyor, sonda düzeltiyor; Almanca boyutu sıfata ya da bileşiğe koyuyor; çerçeve taşınabilir, ek taşınamaz.",
-  "kind": "form.facts",
-  "de": "Der Rahmen benennt die Dimension, an der die Behauptung gemessen wird; am Anfang warnt er, am Ende korrigiert er; das Deutsche steckt die Dimension in ein Adjektiv oder ein Kompositum; ein Rahmen lässt sich verschieben, eine Endung nicht."
- },
- {
   "tr": "Atık önleme, kapalı madde döngüsüyle aynı şey değildir.",
   "kind": "build.tr",
   "de": "Abfallvermeidung ist nicht dasselbe wie ein geschlossener Stoffkreislauf."

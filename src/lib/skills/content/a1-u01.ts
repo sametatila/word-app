@@ -349,7 +349,7 @@ export const a1U01: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 1,
-    title: "du oder Sie?",
+    title: "Fragen zum Kennenlernen",
     genre: "profile",
     intro: "Soru sormayı ve resmî/samimi ayrımını (du/Sie) yaz. Kısa cümleler yeter.",
     gloss: [

@@ -41,7 +41,7 @@ export const enB1U14: SkillExercise[] = [
     unit: 14,
     title: "Podcasts, words and a notebook",
     genre: "blog",
-    intro: "Üç yöntem, bir defter. Hangi cümle alışkanlık, hangisi alışkın olmak?",
+    intro: "Bir öğrencinin işe yarayan üç yöntemi. Defter neden şaşırtıcı çıktı?",
     gloss: [
       { de: "podcasts", tr: "sesli yayınlar" },
       { de: "screen", tr: "ekran" },
@@ -49,25 +49,25 @@ export const enB1U14: SkillExercise[] = [
       { de: "anyway", tr: "zaten" },
       { de: "whole", tr: "bütün" },
       { de: "argument", tr: "gerekçe" },
-      { de: "sentence", tr: "cümle" },
       { de: "childish", tr: "çocukça" },
-      { de: "fits", tr: "oturuyor" },
+      { de: "study time", tr: "ders çalışma zamanı" },
+      { de: "type", tr: "klavyede yazmak" },
     ],
     minutes: 7,
     text:
       "Three things work for me and one of them surprised me.\n" +
       "I enjoy listening to podcasts. Twenty minutes on the bus, the same episode twice, and the second time I hear the words I missed. That is not study time; it is the time that was there anyway.\n" +
       "I try to memorize ten words a day. Ten, not fifty. I tried fifty in the first month and remembered eleven of them a week later, which is the whole argument.\n" +
-      "I am used to writing in a notebook. That sentence is not about the past — it says that writing by hand feels normal to me now. It did not in September. For three weeks it felt slow and childish.\n" +
-      "I used to write on a screen. That is the other sentence and it means the opposite kind of thing: I did it then and I do not do it now.\n" +
-      "The two sentences look almost the same and one small word decides. „I used to write“ is a habit that stopped. „I am used to writing“ is a habit that fits.\n" +
+      "I am used to writing in a notebook now. It did not feel normal in September. For three weeks it felt slow and childish, and my hand hurt after half a page.\n" +
+      "I used to write everything on a screen. I used to type fast, copy whole lists and never look at them again. It was quick, and that was the problem: nothing stayed in my head.\n" +
+      "Now I am used to the slow way. I am used to writing a word three times, with one example next to it, and I am used to reading the page again on Sunday.\n" +
       "The surprise was the notebook. The visual method everybody talks about did nothing for me. What worked was slow, boring and by hand, and it took a month before it was mine.",
     questions: [
       {
-        text: "What does „I am used to writing in a notebook“ mean?",
-        options: ["writing by hand feels normal now", "I wrote by hand in the past", "I will write by hand"],
+        text: "What was the problem with writing on a screen?",
+        options: ["nothing stayed in the writer's head", "it was too slow", "the writer's hand hurt"],
         answer: 0,
-        explain: "„it says that writing by hand feels normal to me now.“",
+        explain: "„It was quick, and that was the problem: nothing stayed in my head.“",
       },
       {
         text: "How many words does the writer memorize a day?",
@@ -99,7 +99,7 @@ export const enB1U14: SkillExercise[] = [
           "I enjoy listening to podcasts.",
           "I try to memorize ten words a day.",
           "I am used to writing in a notebook.",
-          "I used to write on a screen.",
+          "I used to write everything on a screen.",
         ],
         explain: "Üç yöntem sırayla, en sonda karşıt cümle.",
       },

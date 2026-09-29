@@ -97,18 +97,17 @@ export const enA1U21: SkillExercise[] = [
     unit: 21,
     title: "My body",
     genre: "guide",
-    intro: "Vücut bölümleri ve ağrının iki söyleniş biçimi.",
+    intro: "Vücudu anlatan kısa bir metin. Kalp nerede, çok kötü hissedince ne yapmalı?",
     gloss: [
       { de: "middle", tr: "orta" },
       { de: "side", tr: "taraf" },
-      { de: "something", tr: "bir şey" },
     ],
     minutes: 4,
     text:
       "This is my body. This is my head, and these are my ears. My hands have five fingers each.\n\n" +
       "Is this your arm? Yes, and this is my shoulder. The leg is long and the knee is in the middle of it.\n\n" +
       "Where is the heart? On the left side, in the body. The blood goes from the heart to every finger.\n\n" +
-      "When something hurts, we say: \"My head hurts\" or \"I have a headache.\" Both are good English. If you feel very bad, you must go to a doctor.",
+      "When my head hurts, I drink water and I sleep. If you feel very bad, you must go to a doctor.",
     questions: [
       {
         text: "How many fingers does each hand have?",

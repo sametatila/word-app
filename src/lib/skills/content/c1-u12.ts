@@ -28,9 +28,9 @@ export const c1U12: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 12,
-    title: "Was ein Abstract verspricht",
-    genre: "guide",
-    intro: "Özet yazma dili: hangi fiil ne kadar iddia taşıyor?",
+    title: "Lange Wege zur Arbeit",
+    genre: "article",
+    intro: "Bir üniversitenin basın bülteni: uzun iş yolu ile iş değiştirme arasında bir bağ var mı?",
     gloss: [
       { de: "nahelegen", tr: "düşündürmek / işaret etmek", en: "to suggest" },
       { de: "aufzeigen", tr: "göstermek / ortaya koymak", en: "to demonstrate" },
@@ -39,82 +39,75 @@ export const c1U12: SkillExercise[] = [
       { de: "die Fragestellung", tr: "araştırma sorusu", en: "research question" },
       { de: "die Vorgehensweise", tr: "yöntem", en: "methodology" },
       { de: "erwägen", tr: "değerlendirmek", en: "to consider" },
-      { de: "einlösen", tr: "yerine getirmek", en: "to deliver on" },
-      { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "die Abstufung", tr: "derecelendirme", en: "gradation" },
-      { de: "die Stufe", tr: "basamak", en: "step" },
-      { de: "obere", tr: "üst", en: "upper" },
-      { de: "vermuten", tr: "sanmak", en: "to suspect" },
-      { de: "genügen", tr: "yetmek", en: "to be enough" },
-      { de: "ebenso", tr: "aynı şekilde", en: "likewise" },
-      { de: "der Text", tr: "metin", en: "text" },
-      { de: "die Aussage", tr: "ifade", en: "statement" },
-      { de: "die Länge", tr: "uzunluk", en: "length" },
-      { de: "meiste", tr: "çoğu", en: "most" },
-      { de: "ausführlich", tr: "ayrıntılı", en: "detailed" },
-      { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "heraus", tr: "dışarı", en: "out" },
+      { de: "belegen", tr: "kanıtlamak", en: "to prove" },
+      { de: "pendeln", tr: "işe gidip gelmek", en: "to commute" },
+      { de: "der Befund", tr: "bulgu", en: "finding" },
+      { de: "herausrechnen", tr: "hesaptan çıkarmak", en: "to factor out" },
+      { de: "die Fahrzeit", tr: "yol süresi", en: "travel time" },
+      { de: "in Kauf nehmen", tr: "göze almak", en: "to accept" },
+      { de: "die Folgestudie", tr: "takip çalışması", en: "follow-up study" },
+      { de: "die Wechselquote", tr: "iş değiştirme oranı", en: "turnover rate" },
+      { de: "gezielt", tr: "hedefli olarak", en: "specifically" },
+      { de: "erscheinen", tr: "yayımlanmak", en: "to be published" },
+      { de: "senken", tr: "düşürmek", en: "to lower" },
     ],
     minutes: 7,
     text:
-      "DIE LEITER DER BEHAUPTUNG\n\n" +
-      "Ein Abstract ist kein Werbetext, sondern ein Versprechen. Wer darin mehr behauptet, als die Arbeit einlöst, verliert die Leser genau dort, wo er sie gewinnen wollte.\n\n" +
-      "Die deutsche Wissenschaftssprache hat für diesen Zweck eine feine Abstufung entwickelt, und sie steht in den Verben.\n\n" +
-      "„Die Ergebnisse legen nahe, dass …“ ist die vorsichtigste Stufe: Es gibt einen Zusammenhang, aber die Arbeit erklärt ihn nicht. „Die Ergebnisse deuten darauf hin“ liegt gleichauf. „Die Untersuchung zeigt auf, dass …“ geht weiter — hier wird ein Befund beansprucht. „Die Daten belegen“ steht am oberen Ende und verlangt, dass jemand die Daten prüfen kann.\n\n" +
-      "Wer die Stufen verwechselt, wird im Kolloquium zuverlässig gefragt: Ist das gezeigt oder vermutet?\n\n" +
-      "Ein zweiter Punkt betrifft die Vorgehensweise. Sie gehört ins Abstract, aber in einem Satz. „Die Arbeit stützt sich auf 34 leitfadengestützte Interviews“ genügt; wer die Methode ausführt, nimmt den Platz, den die Fragestellung braucht.\n\n" +
-      "Ebenso wichtig ist, was ein Abstract nicht leisten kann: Es untermauert nichts. Belege stehen im Text, nicht in der Zusammenfassung — wer dort Zahlen häuft, verliert die Aussage, die sie tragen sollen.\n\n" +
-      "Auch die Länge ist geregelt und wird trotzdem regelmäßig überschritten: 150 bis 250 Wörter sind üblich, und wer darüber liegt, wird meist nicht ausführlicher, sondern unentschlossener.\n\n" +
-      "Wer sein Abstract prüfen will, streicht probeweise alles bis auf zwei Sätze und sieht nach, welche übrig bleiben.\n\n" +
-      "Und der häufigste Fehler? Das Abstract nennt, was untersucht wurde, aber nicht, was herauskam. Ein Abstract ohne Ergebnis ist eine Ankündigung, kein Abstract — und der Leser erwägt in diesem Moment, ob er weiterliest.",
+      "LANGE ARBEITSWEGE, KÜRZERE BESCHÄFTIGUNG?\n\n" +
+      "Wer täglich mehr als eine Stunde zur Arbeit pendelt, wechselt häufiger den Arbeitgeber. Das legt eine neue Studie des Instituts für Arbeitsforschung der Universität Bremen nahe, die in der Zeitschrift „Arbeit und Mobilität“ erschienen ist.\n\n" +
+      "Das Team um die Soziologin Dr. Katrin Wolff stützt sich auf Daten von 4.200 Beschäftigten aus Norddeutschland, die zwischen 2019 und 2024 dreimal befragt wurden. Die Fragestellung war einfach: Hängt die Länge des Arbeitswegs damit zusammen, wie lange jemand bei einem Arbeitgeber bleibt?\n\n" +
+      "Die Vorgehensweise beschreibt Wolff als vorsichtig. „Wir haben Alter, Einkommen, Familienstand und Branche herausgerechnet. Trotzdem bleibt ein deutlicher Unterschied.“ Von den Pendlern mit mehr als sechzig Minuten Fahrzeit hatten nach drei Jahren 38 Prozent die Stelle gewechselt, bei kurzen Wegen waren es 21 Prozent.\n\n" +
+      "Die Ergebnisse legen nahe, dass lange Wege ein Grund für Kündigungen sein können. Belegen lässt sich das mit diesen Daten allerdings nicht, betont Wolff. „Wir sehen einen Zusammenhang, aber keine Ursache. Es ist denkbar, dass Menschen, die ohnehin unzufrieden sind, eher weite Wege in Kauf nehmen.“\n\n" +
+      "Aufzeigen kann die Studie dagegen einen zweiten Befund: Wer mindestens zwei Tage pro Woche von zu Hause arbeiten durfte, blieb fast so lange wie Beschäftigte mit kurzem Weg. Das untermauert frühere Untersuchungen aus den Niederlanden.\n\n" +
+      "Arbeitgeber sollten deshalb erwägen, Homeoffice gezielt für Beschäftigte mit langen Wegen anzubieten, schreiben die Autorinnen. Eine Folgestudie soll klären, ob sich die Wechselquote dadurch tatsächlich senken lässt. Sie beginnt im Herbst und läuft zwei Jahre.",
     questions: [
       {
-        text: "Welches Verb steht laut Text am oberen Ende der Leiter?",
-        options: ["nahelegen", "aufzeigen", "belegen"],
-        answer: 2,
-        explain: "„verlangt, dass jemand die Daten prüfen kann“ — en güçlü iddia, en yüksek kanıt yükü.",
+        text: "Worauf stützt sich die Studie?",
+        options: [
+          "Auf Interviews mit Arbeitgebern",
+          "Auf Daten von 4.200 Beschäftigten",
+          "Auf eine Untersuchung aus den Niederlanden",
+        ],
+        answer: 1,
+        explain: "„Das Team um die Soziologin Dr. Katrin Wolff stützt sich auf Daten von 4.200 Beschäftigten aus Norddeutschland.“",
       },
       {
         kind: "gapfill",
-        text: "Die Ergebnisse ___ nahe, dass ein Zusammenhang besteht.",
+        text: "Die Ergebnisse ___ nahe, dass lange Wege ein Grund für Kündigungen sein können.",
         options: [],
         answer: 0,
         accept: ["legen"],
-        explain: "nahelegen ayrılabilen: legen … nahe. En temkinli basamak.",
+        explain: "„nahelegen“ temkinli bir iddia: sonuçlar bir olasılığa işaret ediyor ama onu kanıtlamıyor.",
       },
       {
-        text: "Wie viel Raum soll die Vorgehensweise laut Text bekommen?",
+        text: "Warum gilt der lange Arbeitsweg laut Wolff nicht als belegte Ursache?",
         options: [
-          "Einen Absatz",
-          "Einen Satz",
-          "Gar keinen",
+          "Weil die Daten nur einen Zusammenhang zeigen",
+          "Weil zu wenige Personen befragt wurden",
+          "Weil die Befragung zu kurz lief",
         ],
-        answer: 1,
-        explain: "„wer die Methode ausführt, nimmt den Platz, den die Fragestellung braucht“.",
+        answer: 0,
+        explain: "„Wir sehen einen Zusammenhang, aber keine Ursache.“",
       },
       {
         kind: "short_answer",
-        text: "Was ist laut Text der häufigste Fehler in Abstracts?",
+        text: "Wie viele der Pendler mit mehr als einer Stunde Fahrzeit hatten nach drei Jahren gewechselt?",
         options: [],
         answer: 0,
-        accept: [
-          "das Ergebnis fehlt",
-          "es nennt, was untersucht wurde, aber nicht was herauskam",
-          "kein Ergebnis genannt",
-        ],
-        explain: "„Ein Abstract ohne Ergebnis ist eine Ankündigung, kein Abstract.“",
+        accept: ["38 Prozent", "achtunddreißig Prozent", "38 %", "38"],
+        explain: "Uzun yolu olanlarda oran yüzde 38, kısa yolu olanlarda yüzde 21.",
       },
       {
         kind: "short_answer",
-        text: "Welche Frage folgt im Kolloquium, wenn die Stufen verwechselt werden?",
+        text: "Was sollten Arbeitgeber laut den Autorinnen erwägen?",
         options: [],
         answer: 0,
         accept: [
-          "Ist das gezeigt oder vermutet?",
-          "ob es gezeigt oder vermutet ist",
-          "gezeigt oder vermutet",
+          "gezielt Homeoffice anbieten",
+          "Homeoffice anbieten",
+          "Homeoffice für lange Wege",
         ],
-        explain: "Fiil seçimi savunmada doğrudan sınanıyor.",
+        explain: "Yolu uzun olan çalışanlara hedefli olarak evden çalışma imkânı tanımak.",
       },
     ],
   },
@@ -377,7 +370,7 @@ export const c1U12: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 12,
-    title: "İddianın basamağı",
+    title: "Aus der Masterarbeit",
     genre: "grammar",
     intro: "nahelegen, aufzeigen, belegen — aynı bulgu, üç ayrı iddia gücü.",
     gloss: [

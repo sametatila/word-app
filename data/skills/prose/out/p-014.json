@@ -1,10 +1,5 @@
 [
  {
-  "tr": "Durum edilgeni sein ile kurulur. wird olsaydı işin sürdüğü anlaşılırdı.",
-  "kind": "explain",
-  "en": "The state passive is built with sein. With wird it would mean the work is going on."
- },
- {
   "tr": "Edilgenin dört biçimi: geçmiş, kipli, durum ve edilgen yerine geçenler.",
   "kind": "intro",
   "en": "The four forms of the passive: past, modal, state, and what stands in for it."
@@ -620,11 +615,6 @@
   "en": "„The price is twenty-two euros.“ Two euros is the difference from the price quoted."
  },
  {
-  "tr": "„Über ein Quartalsergebnis sagt man das nicht.“ Deyim doğru ama alanı dar.",
-  "kind": "explain",
-  "en": "„Über ein Quartalsergebnis sagt man das nicht.“ The idiom is right but its field is narrow."
- },
- {
   "tr": "„var“ için „have“ kullanılmaz; doğrusu „There are two chairs in the room.“",
   "kind": "explain",
   "en": "„have“ is not used for 'there is'; the correct form is „There are two chairs in the room.“"
@@ -683,11 +673,6 @@
   "tr": "Çocukluk hayalleri üzerine bir sohbet. Kim ne olmak istedi, neden olamadı?",
   "kind": "intro",
   "en": "A conversation about childhood dreams. Who wanted to be what, and why did it not happen?"
- },
- {
-  "tr": "Deyimler birebir çevrilince ne oluyor? İki dil arasında bir yanlış anlama.",
-  "kind": "intro",
-  "en": "What happens when idioms are translated word for word? A misunderstanding between two languages."
  },
  {
   "tr": "Doktorun son cümlesi \"And come back in two weeks.\" — yani iki hafta sonra.",

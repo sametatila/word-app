@@ -180,11 +180,6 @@
   "en": "True: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“"
  },
  {
-  "tr": "Doğru: „eine Mutmaßung mit Grundlage“ — ipucu var (ceket yok).",
-  "kind": "explain",
-  "en": "True: „eine Mutmaßung mit Grundlage“ — there is a clue (no coat)."
- },
- {
   "tr": "Doğru: „…eine Neuerung um der Neuerung willen zahle ich nicht.“",
   "kind": "explain",
   "en": "True: „…eine Neuerung um der Neuerung willen zahle ich nicht.“"
@@ -268,11 +263,6 @@
   "tr": "Doğru: „Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen.“",
   "kind": "explain",
   "en": "True: „Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen.“"
- },
- {
-  "tr": "Doğru: „Geldbilder in Protokollen heikel“ — çünkü çoğu yargı taşıyor.",
-  "kind": "explain",
-  "en": "True: „Geldbilder in Protokollen heikel“ — because most of them carry a judgment."
  },
  {
   "tr": "Doğru: „Reich waren sie nicht.“ Beş çocuğu tek başlarına büyütmüşler.",
@@ -385,11 +375,6 @@
   "en": "True: „…nicht, weil ich Ihre Zeitung schlecht finde, sondern weil ich sie brauche.“"
  },
  {
-  "tr": "Doğru: „Im Deutschen sind das zwei verschiedene Formen, im Türkischen oft dieselbe.“",
-  "kind": "explain",
-  "en": "True: „Im Deutschen sind das zwei verschiedene Formen, im Türkischen oft dieselbe.“"
- },
- {
   "tr": "Doğru: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“",
   "kind": "explain",
   "en": "True: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“"
@@ -418,11 +403,6 @@
   "tr": "Doğru: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — soslar da dâhil.",
   "kind": "explain",
   "en": "True: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — the sauces included."
- },
- {
-  "tr": "Doğru: „…schreibt grammatisch dasselbe wie eine Wochenzeitung; der Unterschied liegt in der Wortwahl.“",
-  "kind": "explain",
-  "en": "True: „…schreibt grammatisch dasselbe wie eine Wochenzeitung; der Unterschied liegt in der Wortwahl.“"
  },
  {
   "tr": "Doğru: Şubattaki şikâyete ve kasımdan beri süren yazışmaya atıf yapıyor, ayrıca iki kez ihtar göndermiş.",

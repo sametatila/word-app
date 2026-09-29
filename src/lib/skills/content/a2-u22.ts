@@ -324,7 +324,7 @@ export const a2U22: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 22,
-    title: "Fiilin edatı",
+    title: "Interessen und Hobbys",
     genre: "grammar",
     intro: "warten auf, sich interessieren für, Interesse an — edat fiile bağlıdır.",
     gloss: [

@@ -29,71 +29,52 @@ export const c1U06: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 6,
-    title: "Wo die Betonung im Satz sitzt",
+    title: "Fünfzig Jahre TSV Nordheim",
     genre: "text",
-    intro: "Almanca vurguyu nereye koyuyor? Ses değil, dizilim.",
+    intro: "Bir spor kulübünün ellinci yıl dönümünde yapılan konuşma. Kulüp nasıl büyüdü, bugün neye ihtiyacı var?",
     gloss: [
-      { de: "die Hervorhebung", tr: "öne çıkarma", en: "emphasis" },
-      { de: "die Wortstellung", tr: "kelime dizilimi", en: "word order" },
-      { de: "verstärken", tr: "pekiştirmek", en: "to intensify" },
       { de: "wirkungsvoll", tr: "etkili", en: "effective" },
-      { de: "hervorheben", tr: "öne çıkarmak", en: "to highlight" },
-      { de: "verdeutlichen", tr: "açıkça göstermek", en: "to make clear" },
-      { de: "die Verstärkung", tr: "pekiştirme", en: "reinforcement" },
-      { de: "die Wirkung", tr: "etki", en: "effect" },
-      { de: "zwingen", tr: "zorlamak", en: "to force" },
-      { de: "erzeugen", tr: "üretmek", en: "to produce" },
-      { de: "stark", tr: "güçlü", en: "strong" },
-      { de: "verstehen", tr: "anlamak", en: "to understand" },
-      { de: "also", tr: "yani", en: "so" },
-      { de: "vordere", tr: "ön", en: "front" },
-      { de: "besondere", tr: "özel", en: "special" },
-      { de: "die Schwierigkeit", tr: "zorluk", en: "difficulty" },
-      { de: "fremd", tr: "yabancı", en: "other people's" },
-      { de: "untereinander", tr: "alt alta", en: "one below the other" },
-      { de: "der Text", tr: "metin", en: "text" },
+      { de: "das Jubiläum", tr: "yıl dönümü", en: "anniversary" },
+      { de: "das Mitglied", tr: "üye", en: "member" },
+      { de: "der Hausmeister", tr: "kapıcı", en: "caretaker" },
+      { de: "die Laune", tr: "heves", en: "whim" },
+      { de: "die Turnhalle", tr: "spor salonu", en: "gym" },
+      { de: "der Durchbruch", tr: "atılım", en: "breakthrough" },
+      { de: "die Kreismeisterschaft", tr: "ilçe şampiyonluğu", en: "district championship" },
+      { de: "der Spielfeldrand", tr: "saha kenarı", en: "sideline" },
+      { de: "die Anzeigetafel", tr: "skor tabelası", en: "scoreboard" },
+      { de: "die Spende", tr: "bağış", en: "donation" },
+      { de: "die Fliese", tr: "fayans", en: "tile" },
+      { de: "der Schiedsrichter", tr: "hakem", en: "referee" },
+      { de: "beschimpfen", tr: "sövmek", en: "to insult" },
+      { de: "der Pokal", tr: "kupa", en: "trophy" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "die Halle", tr: "salon", en: "hall" },
+      { de: "leicht", tr: "kolay", en: "easy" },
+      { de: "vorbei", tr: "bitmiş", en: "over" },
+      { de: "zählen", tr: "saymak", en: "to count" },
     ],
     minutes: 7,
     text:
-      "DER SATZ HAT EINE VORDERTÜR\n\n" +
-      "„Ich habe selten so gelacht“ und „Selten habe ich so gelacht“ enthalten " +
-      "dieselben Wörter. Ihre Wirkung ist verschieden.\n\n" +
-      "Der Grund liegt in der ersten Position. Das deutsche Hauptsatzverb " +
-      "steht auf Platz zwei; alles, was davor steht, ist damit hervorgehoben. " +
-      "Wer „selten“ nach vorn zieht, zwingt den Zuhörer, mit der Seltenheit zu " +
-      "beginnen. Der Rest des Satzes lehnt sich daran an.\n\n" +
-      "Das ist keine Stilfrage, sondern Grammatik im Dienst der Betonung. " +
-      "Sprachen mit freierer Wortstellung verteilen diese Aufgabe auf die " +
-      "Stimme; das Deutsche verlangt eine Entscheidung, bevor der Satz " +
-      "beginnt.\n\n" +
-      "Zwei Beobachtungen dazu. Erstens: Die Hervorhebung nutzt sich ab. Wer " +
-      "jeden zweiten Satz invertiert, erzeugt keine Verstärkung mehr, sondern " +
-      "Manier. Zweitens: Die stärkste erste Position ist selten das Subjekt. " +
-      "„Erst dann verstand ich, worum es ging“ wirkt, weil der Zeitpunkt vorn " +
-      "steht und der Erkennende hinten.\n\n" +
-      "Wirkungsvoll ist die Umstellung also nur, solange sie selten bleibt und " +
-      "die vordere Stelle etwas trägt, das der Zuhörer noch nicht hat.\n\n" +
-      "Für Türkisch sprechende Lernende liegt hier eine besondere " +
-      "Schwierigkeit. Das Türkische ordnet die Betonung über die Stellung vor " +
-      "dem Verb und kann sie im Satz frei verschieben; das Deutsche hat dafür " +
-      "nur die erste Position und den Satzakzent. Was in der einen Sprache " +
-      "eine Feinabstimmung ist, wird in der anderen zu einer Entscheidung, die " +
-      "vor dem ersten Wort fällt.\n\n" +
-      "Wer eine Rede schreibt, kann das verdeutlichen, indem er die ersten " +
-      "drei Wörter jedes Satzes untereinander schreibt. Steht dort dreimal " +
-      "„Wir“, ist die Rede noch nicht fertig.\n\n" +
-      "Dieselbe Probe funktioniert übrigens auch bei fremden Texten und " +
-      "erklärt schnell, warum manche Absätze schleppen.",
+      "FESTREDE ZUM JUBILÄUM\n\n" +
+      "Liebe Mitglieder, liebe Gäste,\n\n" +
+      "selten habe ich so viele Menschen in dieser Halle gesehen. Vor fünfzig Jahren standen hier zwölf junge Leute, zwei Bälle und ein Hausmeister, der um neun das Licht ausschaltete. Aus diesen zwölf sind heute über tausend Mitglieder geworden.\n\n" +
+      "Leicht war der Anfang nicht. Kein Geld gab es, keine eigene Halle, und die Stadt hielt einen Sportverein für eine Laune, die nach einem Winter vorbei sein würde. Trainiert wurde deshalb in der Turnhalle der Grundschule, abends nach acht, wenn die Kinder weg waren.\n\n" +
+      "Erst im dritten Jahr kam der Durchbruch. Unsere Frauenmannschaft gewann die Kreismeisterschaft, und plötzlich stand der Bürgermeister am Spielfeldrand. Ich war damals vierzehn und habe die Tore gezählt, weil die Anzeigetafel kaputt war. Erst dann verstand ich, worum es ging: Ein Verein ist nicht die Halle und nicht der Pokal, sondern die Leute, die abends wiederkommen.\n\n" +
+      "Nie hätte damals jemand gedacht, dass wir einmal eine eigene Halle bauen würden. Genau das haben wir vor zwanzig Jahren getan, mit Spenden, mit Krediten und mit Wochenenden, an denen Mitglieder selbst Fliesen gelegt haben.\n\n" +
+      "Besonders danken möchte ich heute denen, die man selten sieht: den Trainerinnen, die jeden Dienstag um sechs in der Halle stehen, den Eltern, die Kuchen backen, und den Schiedsrichtern, die sich jedes Wochenende beschimpfen lassen.\n\n" +
+      "Viel liegt noch vor uns. Die Halle braucht ein neues Dach, und für die Jugend fehlen uns Trainer. Wirkungsvoll helfen kann jeder, der zwei Stunden in der Woche übrig hat.\n\n" +
+      "Heute aber feiern wir. Auf die nächsten fünfzig Jahre!",
     questions: [
       {
-        text: "Warum wirken die beiden Sätze verschieden?",
+        text: "Wo wurde in den ersten Jahren trainiert?",
         options: [
-          "Weil sie unterschiedliche Wörter enthalten",
-          "Weil im Deutschen das erste Satzglied hervorgehoben ist",
-          "Weil einer länger ist",
+          "In der Turnhalle der Grundschule",
+          "Auf einem Sportplatz im Freien",
+          "In einer Halle der Stadt",
         ],
-        answer: 1,
-        explain: "„alles, was davor steht, ist damit hervorgehoben“ — vurgu ilk konumla kuruluyor.",
+        answer: 0,
+        explain: "„Trainiert wurde deshalb in der Turnhalle der Grundschule, abends nach acht, wenn die Kinder weg waren.“",
       },
       {
         kind: "gapfill",
@@ -104,38 +85,40 @@ export const c1U06: SkillExercise[] = [
         explain: "Zaman öne çekilince fiil ikinci sıraya, özne arkaya geçiyor — vurgu o ana düşüyor.",
       },
       {
-        text: "Was passiert laut Text bei zu häufiger Inversion?",
+        text: "Was brachte im dritten Jahr den Durchbruch?",
         options: [
-          "Der Text wird klarer",
-          "Die Hervorhebung nutzt sich ab",
-          "Die Grammatik wird falsch",
+          "Eine große Spende",
+          "Die Kreismeisterschaft der Frauenmannschaft",
+          "Die neue Halle",
         ],
         answer: 1,
-        explain: "„erzeugt keine Verstärkung mehr, sondern Manier“.",
+        explain: "„Unsere Frauenmannschaft gewann die Kreismeisterschaft, und plötzlich stand der Bürgermeister am Spielfeldrand.“",
       },
       {
         kind: "short_answer",
-        text: "Welchen praktischen Test schlägt der Text für eine Rede vor?",
+        text: "Womit hat der Verein seine eigene Halle gebaut?",
         options: [],
         answer: 0,
         accept: [
-          "die ersten drei Wörter aufschreiben", "die ersten drei Wörter jedes Satzes untereinander schreiben",
-          "die ersten drei Wörter untereinander schreiben",
-          "prüfen, ob dort dreimal Wir steht",
+          "mit Spenden und Krediten",
+          "Spenden, Kredite und Eigenarbeit",
+          "mit Spenden, Krediten und eigener Arbeit",
+          "Spenden und Kredite",
         ],
-        explain: "„Steht dort dreimal ‚Wir‘, ist die Rede noch nicht fertig.“",
+        explain: "Bağışlar, krediler ve üyelerin kendi emeğiyle geçen hafta sonları.",
       },
       {
         kind: "short_answer",
-        text: "Warum ist die Betonung im Deutschen laut Text keine reine Stilfrage?",
+        text: "Was braucht der Verein heute?",
         options: [],
         answer: 0,
         accept: [
-          "über die Grammatik", "weil sie über die Grammatik läuft",
-          "es ist Grammatik im Dienst der Betonung",
-          "die Wortstellung entscheidet, nicht die Stimme",
+          "ein neues Dach und Trainer",
+          "Trainer für die Jugend",
+          "ein neues Dach",
+          "neues Dach, Trainer für die Jugend",
         ],
-        explain: "„Grammatik im Dienst der Betonung“ — seçim cümle başlamadan yapılmak zorunda.",
+        explain: "„Die Halle braucht ein neues Dach, und für die Jugend fehlen uns Trainer.“",
       },
     ],
   },
@@ -414,7 +397,7 @@ export const c1U06: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 6,
-    title: "Vurguyu dizilimle kurmak",
+    title: "Sätze für eine Festrede",
     genre: "grammar",
     intro: "İlk konum vurguyu taşır; fiil her hâlükârda ikinci sırada kalır.",
     gloss: [

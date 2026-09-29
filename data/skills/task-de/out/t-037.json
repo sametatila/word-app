@@ -1,30 +1,5 @@
 [
  {
-  "tr": "Aksama kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Störungskarte aus."
- },
- {
-  "tr": "Doğrulama kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Prüfkarte aus."
- },
- {
-  "tr": "Aksamanın nedeni güncelleme; bakım geçen hafta yapılmadı; basınç indirilmeliydi; sıra hiç değişmiyor.",
-  "kind": "form.facts",
-  "de": "Ursache der Störung ist das Update; die Wartung wurde letzte Woche nicht gemacht; der Druck hätte gesenkt werden sollen; die Reihenfolge ändert sich nie."
- },
- {
-  "tr": "„if“ düşünce „had“ öne geçiyor; üç fiil bunu yapabiliyor; olumsuzun kısa biçimi yok; dil düzeyi resmî.",
-  "kind": "form.facts",
-  "de": "Fällt „if“ weg, rückt „had“ nach vorn; drei Verben können das; für die Verneinung gibt es keine Kurzform; die Sprachebene ist förmlich."
- },
- {
-  "tr": "Zamanı „have“ taşıyor; „apparently“ kaynağı başka yere koyuyor; yanlılık baştan vardı; efsane burada başlamadı.",
-  "kind": "form.facts",
-  "de": "Die Zeitstufe trägt „have“; „apparently“ legt die Quelle woandershin; die Voreingenommenheit war von Anfang an da; der Mythos begann nicht hier."
- },
- {
   "tr": "Değişen şey kayıt satırı.",
   "kind": "build.tr",
   "de": "Was geändert wurde, ist der Eintrag."
@@ -243,25 +218,5 @@
   "tr": "Olumsuz çıkarım ve edilgen üst üste; sıra yine aynı.",
   "kind": "build.hint",
   "de": "Verneinter Schluss und Passiv übereinander; die Reihenfolge bleibt."
- },
- {
-  "tr": "Fiilin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge des Verbs: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Düzeltmenin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Richtigstellung: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Manşetlerin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Schlagzeilen: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Denetlemenin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Prüfung: Bring sie in die richtige Ordnung."
  }
 ]

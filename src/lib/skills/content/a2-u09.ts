@@ -278,7 +278,7 @@ export const a2U09: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 9,
-    title: "Wo oder wohin?",
+    title: "Aufräumen in der Wohnung",
     genre: "grammar",
     intro: "Aynı edat, iki hâl. Soru NEREDE ise yönelme, NEREYE ise belirtme.",
     gloss: [

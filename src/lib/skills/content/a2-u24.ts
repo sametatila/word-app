@@ -331,7 +331,7 @@ export const a2U24: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 24,
-    title: "Gelecek: werden mi, şimdiki zaman mı?",
+    title: "Pläne für den Herbst",
     genre: "grammar",
     intro: "Almanca gelecek çoğu zaman zaman zarfıyla söylenir; werden ağırlık taşır.",
     gloss: [

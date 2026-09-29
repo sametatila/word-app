@@ -1,88 +1,8 @@
 [
  {
-  "tr": "Üç örnek, en sonda okurun işi.",
-  "kind": "explain",
-  "en": "Three examples, the reader's work last."
- },
- {
-  "tr": "Üç ödün aracı ve iki kip katmanı.",
-  "kind": "intro",
-  "en": "Three devices of concession and two layers of modality."
- },
- {
-  "tr": "Üç aktarma fiili ve üç ödün aracı.",
-  "kind": "intro",
-  "en": "Three reporting verbs and three devices of concession."
- },
- {
-  "tr": "Gevşek, dar, en dar; en sonda kural.",
-  "kind": "explain",
-  "en": "Loose, narrow, narrowest; the rule last."
- },
- {
-  "tr": "İstek kipi ve onun ikizi. Ek nerede yok?",
-  "kind": "intro",
-  "en": "The subjunctive and its twin. Where is the ending missing?"
- },
- {
-  "tr": "Üç aktarma fiili. Yargı nereden geliyor?",
-  "kind": "intro",
-  "en": "Three reporting verbs. Where does the verdict come from?"
- },
- {
-  "tr": "Eski bilgi başta, yeni bilgi sonda. Neden?",
-  "kind": "intro",
-  "en": "Old at the front, new at the end. Why?"
- },
- {
-  "tr": "Ödün, ama içinde bir kişi var: eşit tartmak isteyen ben.",
-  "kind": "explain",
-  "en": "A concession with a person in it: the one who would like to weigh both sides equally."
- },
- {
-  "tr": "Aynı içerik, üç mektup. Fark nerede duruyor?",
-  "kind": "intro",
-  "en": "The same content, three letters. Where does the difference sit?"
- },
- {
   "tr": "Edilgen ortaç: aktarma bağlamı değiştiriyor.",
   "kind": "explain",
   "en": "A passive participle: quoting changes the setting."
- },
- {
-  "tr": "Karşı tarafı aktarmak. Fiil neyi ele veriyor?",
-  "kind": "intro",
-  "en": "Reporting the other side. What does the verb give away?"
- },
- {
-  "tr": "Üçüncü kişide ek yok. Hangi fiillerden sonra?",
-  "kind": "intro",
-  "en": "No ending in the third person. After which verbs?"
- },
- {
-  "tr": "Üst üste binen kipler. Her katman ne ekliyor?",
-  "kind": "intro",
-  "en": "Modals stacked on one another. What does each layer add?"
- },
- {
-  "tr": "Yerleşmiş eşleşmeler. Neden değiştirilemiyor?",
-  "kind": "intro",
-  "en": "Settled pairings. Why can they not be changed?"
- },
- {
-  "tr": "Eksiltme. Okur eksik olanı nasıl geri koyuyor?",
-  "kind": "intro",
-  "en": "Ellipsis. How does the reader put the missing part back?"
- },
- {
-  "tr": "Olumsuzla söylenen olumlu. Okur nasıl çözüyor?",
-  "kind": "intro",
-  "en": "The positive said through a negative. How does the reader resolve it?"
- },
- {
-  "tr": "Üç yargı, yansız olan, bedeli, en sonda sonuç.",
-  "kind": "explain",
-  "en": "Three verdicts, the neutral one, the cost, the conclusion last."
  },
  {
   "tr": "Yerleşmiş eşleşme: parçaları değiştirilemiyor.",
@@ -90,63 +10,13 @@
   "en": "A settled pairing: its parts cannot be swapped."
  },
  {
-  "tr": "Ayrışmak ama kopmamak. Hangi araç kimi koruyor?",
-  "kind": "intro",
-  "en": "Dissent without rupture. Which device protects whom?"
- },
- {
-  "tr": "İki talep, bir varsayım, en sonda ikisinin adı.",
-  "kind": "explain",
-  "en": "Two demands, one supposition, their names last."
- },
- {
-  "tr": "Öne çıkarma ve eksiltme. Ağırlık nereye düşüyor?",
-  "kind": "intro",
-  "en": "Fronting and ellipsis. Where does the weight fall?"
- },
- {
-  "tr": "Önce öne çıkarılmış cümle, sonra ilke; ardından yarık cümle ve edilgen.",
-  "kind": "explain",
-  "en": "First the fronted sentence, then the principle; after that the cleft and the passive."
- },
- {
   "tr": "Ödün yok: iki olgu yan yana, çizgiyi okur çekiyor.",
   "kind": "explain",
   "en": "No concession: two facts side by side, and the reader draws the line."
  },
  {
-  "tr": "Üç katman, dört katman, üç katman; en sonda sınır.",
-  "kind": "explain",
-  "en": "Three layers, four layers, three layers; the limit last."
- },
- {
-  "tr": "Eksik olan „careful“; iki yarı aynı biçimde kurulmuş.",
-  "kind": "explain",
-  "en": "What is missing is „careful“; the two halves are built the same way."
- },
- {
-  "tr": "Ödün vermenin üç aracı. Hangisi hiçbir şey bırakmıyor?",
-  "kind": "intro",
-  "en": "Three devices of concession. Which one gives nothing away?"
- },
- {
-  "tr": "Üç bağlayıcı. Hangisi geriye tek bir şeye işaret ediyor?",
-  "kind": "intro",
-  "en": "Three links. Which one points back at exactly one thing?"
- },
- {
   "tr": "İki belge hakkında bir cümle ve ikisi hakkında bir hüküm.",
   "kind": "explain",
   "en": "One sentence about two documents, and a verdict on both."
- },
- {
-  "tr": "„‚At one's disposal‘ is the one that goes with resources…“",
-  "kind": "explain",
-  "en": "„‚At one's disposal‘ is the one that goes with resources…“"
- },
- {
-  "tr": "Üç kez aynı iş bildiriliyor. Üç ayrı yargı nereden geliyor?",
-  "kind": "intro",
-  "en": "The same event is reported three times. Where do three verdicts come from?"
  }
 ]

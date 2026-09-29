@@ -288,7 +288,7 @@ export const b1U07: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 7,
-    title: "Der Grund und die Folge",
+    title: "Die Verspätung erklären",
     genre: "info",
     intro: "Bir gecikmeyi açıkla. Sebebi ve sonucu ayrı ayrı, doğru sırayla yaz.",
     minutes: 8,

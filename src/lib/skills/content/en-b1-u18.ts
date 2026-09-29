@@ -44,7 +44,6 @@ export const enB1U18: SkillExercise[] = [
     gloss: [
       { de: "dizzy", tr: "başı dönen" },
       { de: "worse", tr: "daha kötü" },
-      { de: "sentence", tr: "cümle" },
       { de: "winter", tr: "kış" },
       { de: "stand up", tr: "ayağa kalkmak" },
     ],
@@ -54,7 +53,7 @@ export const enB1U18: SkillExercise[] = [
       "Ela: I have had a fever since Monday. It has not been very high, but it has not gone.\n" +
       "Doctor: And the pain?\n" +
       "Ela: The pain started on Tuesday. In the stomach, in the morning, and it was gone by the afternoon.\n" +
-      "Doctor: Those are two different sentences and I need both. The fever is still here, so I ask how long. The pain has a beginning, so I ask when.\n" +
+      "Doctor: Those are two different things and I need both. The fever is still here, so I ask how long. The pain has a beginning, so I ask when.\n" +
       "Ela: There is also a cough. That one I have had for about two weeks, before everything else.\n" +
       "Doctor: Before the fever?\n" +
       "Ela: Ten days before. I had not thought about it until now, because it is a small cough and I have one every winter.\n" +
@@ -71,7 +70,7 @@ export const enB1U18: SkillExercise[] = [
         explain: "„I have had a fever since Monday. It has not been very high, but it has not gone.“",
       },
       {
-        text: "Why does the doctor need both sentences?",
+        text: "Why does the doctor need both answers?",
         options: ["the fever is still here, the pain had a beginning", "one is longer", "one is more serious"],
         answer: 0,
         explain: "„The fever is still here, so I ask how long. The pain has a beginning, so I ask when.“",
@@ -268,8 +267,6 @@ export const enB1U18: SkillExercise[] = [
       { de: "society", tr: "toplum" },
       { de: "confidence", tr: "özgüven" },
       { de: "prediction", tr: "öngörü" },
-      { de: "sentence", tr: "cümle" },
-      { de: "verb", tr: "fiil" },
       { de: "largest", tr: "en büyük" },
       { de: "whole", tr: "bütün" },
     ],
@@ -282,7 +279,7 @@ export const enB1U18: SkillExercise[] = [
       { speaker: "Sena", text: "And the system?" },
       { speaker: "Can", text: "The system is going to change. That one I am sure about, because the decision has been made and the papers are signed." },
       { speaker: "Sena", text: "So that is not a prediction." },
-      { speaker: "Can", text: "It is a plan I have seen. Different word, different sentence, different verb." },
+      { speaker: "Can", text: "It is a plan I have seen, on paper, with two signatures." },
       { speaker: "Sena", text: "Is anybody talking about it?" },
       { speaker: "Can", text: "We are discussing society on Friday, which is the largest subject anybody has put on a Friday." },
       { speaker: "Sena", text: "Ninety minutes for society." },

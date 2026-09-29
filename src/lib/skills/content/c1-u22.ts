@@ -385,7 +385,7 @@ export const c1U22: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 22,
-    title: "İnce ayarın kalıpları",
+    title: "Du oder Sie im Team",
     genre: "grammar",
     intro: "„du“ teklifi, kibar ret, Schwamm drüber, ölçülü övgü.",
     gloss: [
@@ -434,7 +434,7 @@ export const c1U22: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 22,
-    title: "Veda konuşması",
+    title: "Abschied in den Ruhestand",
     genre: "monologue",
     intro: "Ölçüsünü kaçırmadan övmek — ve kendi gafını kullanmak.",
     gloss: [

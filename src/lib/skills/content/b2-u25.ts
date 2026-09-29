@@ -372,7 +372,7 @@ export const b2U25: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 25,
-    title: "Alles zusammen",
+    title: "Rückblick auf ein Jahr",
     genre: "build",
     intro: "Ortaç sıfatı, als ob, öznel kip ve edilgen Perfekt — B2'nin dört sütunu.",
     gloss: [

@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Mastar kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Infinitivkarte aus."
- },
- {
-  "tr": "Orta çatı kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Medium-Karte aus."
- },
- {
-  "tr": "İki „what“ kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte der zwei „what“ aus."
- },
- {
-  "tr": "Fiil etken biçimde; fail hiç yok; neredeyse hep bir zarf gerekiyor; özne asla bir kişi değil.",
-  "kind": "form.facts",
-  "de": "Das Verb steht aktiv; einen Urheber gibt es gar nicht; fast immer braucht es ein Adverb; das Subjekt ist nie eine Person."
- },
- {
-  "tr": "„what“ öbeğinden sonra „is“ geliyorsa yarık cümle; özne geliyorsa öne çıkarma; yarık cümlede ağırlık sonda; öne çıkarmada başta.",
-  "kind": "form.facts",
-  "de": "Folgt auf den „what“-Teil „is“, ist es ein Spaltsatz; folgt ein Subjekt, ist es Voranstellung; im Spaltsatz liegt das Gewicht hinten, bei der Voranstellung vorn."
- },
- {
-  "tr": "Mastar desteksiz özne olabiliyor; olumlu biçim özdeşlik kuruyor; olumsuz biçim çıkarımı reddediyor; olgular ayakta kalıyor.",
-  "kind": "form.facts",
-  "de": "Der Infinitiv kann ohne Stütze Subjekt sein; die bejahte Form stiftet eine Identität; die verneinte weist einen Schluss zurück; die Tatsachen bleiben stehen."
- },
- {
   "tr": "Buna erdemli demezdim.",
   "kind": "build.tr",
   "de": "Das würde ich nicht tugendhaft nennen."
@@ -298,10 +268,5 @@
   "tr": "Mastar özne olabiliyor; olumsuz biçim bir çıkarımı reddediyor.",
   "kind": "build.hint",
   "de": "Der Infinitiv kann Subjekt sein; die verneinte Form weist einen Schluss zurück."
- },
- {
-  "tr": "Bağlayıcıların sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Verknüpfungen: Bring sie in die richtige Ordnung."
  }
 ]

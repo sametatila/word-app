@@ -350,7 +350,7 @@ export const b2U07: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 7,
-    title: "Die Zeit steckt in werden",
+    title: "Aus Werk und Altstadt",
     genre: "build",
     intro: "Aynı edilgen cümle üç zamanda ve bir kip altında. Değişen tek şey werden.",
     gloss: [

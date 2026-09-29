@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Ortaç kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Partizipkarte aus."
- },
- {
-  "tr": "Silme kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Streichungskarte aus."
- },
- {
-  "tr": "Bileşik kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Kompositumkarte aus."
- },
- {
-  "tr": "İki isim arasında hiçbir şey yok; soldaki niteliyor; soldaki tekil kalıyor; çoğul sağdakine takılıyor.",
-  "kind": "form.facts",
-  "de": "Zwischen den zwei Substantiven steht nichts; das linke bestimmt; das linke bleibt im Singular; der Plural hängt am rechten."
- },
- {
-  "tr": "„which is“ siliniyor; „which keeps“ silinmiyor; „whose“ silinmiyor; seçim yapan cümlecikte hiç olmuyor.",
-  "kind": "form.facts",
-  "de": "„which is“ fällt weg; „which keeps“ nicht; „whose“ nicht; im auswählenden Teilsatz geht es gar nicht."
- },
- {
-  "tr": "Durum fiili sürekli zamanda „-ing“ almıyor; ortaçta alıyor; ortacın kendi zamanı yok; zamanını ana cümleden alıyor.",
-  "kind": "form.facts",
-  "de": "Ein Zustandsverb nimmt in der Verlaufsform kein „-ing“; im Partizip schon; das Partizip hat keine eigene Zeitstufe; es holt sie aus dem Hauptsatz."
- },
- {
   "tr": "Eksikliği kaçırmış olamazlar.",
   "kind": "build.tr",
   "de": "Sie können den Mangel nicht übersehen haben."
@@ -263,25 +233,5 @@
   "tr": "Ortaç sürekli zaman değil; durum fiili burada „-ing“ alabiliyor.",
   "kind": "build.hint",
   "de": "Das Partizip ist keine Verlaufsform; ein Zustandsverb kann hier „-ing“ nehmen."
- },
- {
-  "tr": "Eleştirinin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Kritik: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Künyenin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge des Eintrags: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Şenliğin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge des Festes: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Bileşiğin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge des Kompositums: Bring sie in die richtige Ordnung."
  }
 ]

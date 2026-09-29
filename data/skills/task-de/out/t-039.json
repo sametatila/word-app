@@ -1,30 +1,5 @@
 [
  {
-  "tr": "Aktarma kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Wiedergabekarte aus."
- },
- {
-  "tr": "Çekince kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Absicherungskarte aus."
- },
- {
-  "tr": "Şey için „which“; kişi için „who“; iyelik için „whose“; „whose“ kişide de şeyde de aynı.",
-  "kind": "form.facts",
-  "de": "Für eine Sache „which“; für eine Person „who“; für den Besitz „whose“; „whose“ ist bei Person und Sache gleich."
- },
- {
-  "tr": "„said“ yalnızca biri söyledi demek; „thought“ tutulan bir görüş; „expected“ ileriye bakıyor; üçü aynı kalıpta duruyor.",
-  "kind": "form.facts",
-  "de": "„said“ heißt nur, dass es jemand gesagt hat; „thought“ ist eine vertretene Ansicht; „expected“ blickt nach vorn; alle drei stehen im selben Muster."
- },
- {
-  "tr": "„by no means“ düpedüz ret; „questionable“ ağırlığı iddiaya koyuyor; „nonetheless“ ödün verip dönüyor; „in a sense“ küçük bir şeyi kabul ediyor.",
-  "kind": "form.facts",
-  "de": "„by no means“ ist eine glatte Ablehnung; „questionable“ legt das Gewicht auf die Behauptung; „nonetheless“ räumt ein und wendet; „in a sense“ gesteht etwas Kleines zu."
- },
- {
   "tr": "İlk değişen faiz oranıydı.",
   "kind": "build.tr",
   "de": "Es war der Zinssatz, der sich zuerst änderte."
@@ -248,26 +223,6 @@
   "tr": "„on balance“ bir tartma yapıldığını söylüyor; „arguably“ hiçbir şey söylemiyor.",
   "kind": "build.hint",
   "de": "„on balance“ sagt, dass abgewogen wurde; „arguably“ sagt gar nichts."
- },
- {
-  "tr": "Fiyatın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge des Preises: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Raporun sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge des Berichts: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "İncelemenin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Prüfung: Bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Ölçeğin sırası: en sertten en yumuşağa koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der Skala: vom Schärfsten zum Weichsten."
  },
  {
   "tr": "Eski kip: „be“, „is“ değil.",

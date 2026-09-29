@@ -58,7 +58,7 @@ export const enB1U16: SkillExercise[] = [
     text:
       "The article was published this morning and by ten it was on four sites with three different headlines.\n" +
       "I find the headline shocking, and not for the reason the journalist wanted. The facts in the piece are careful; the six words at the top are not. The wording turns a number into a claim.\n" +
-      "The story is being shared everywhere. That form says it is happening now and nobody has stopped it — there is no editor between the second and the fourth site, only a button.\n" +
+      "The story is being shared everywhere. Right now it is being passed from site to site and nobody has stopped it — there is no editor between the second and the fourth site, only a button.\n" +
       "I believe the piece is good, because I have read it twice and the second reading is where bad writing falls apart. It did not.\n" +
       "It is a strong idea. However, it costs a lot to check, and checking is the part the headline skips.\n" +
       "Although it is obvious, nobody says it: the same article with a flat headline would have been read by two hundred people. With this one it reached forty thousand before lunch.\n" +

@@ -1,168 +1,8 @@
 [
  {
-  "tr": "Üç yarık cümle ve iki ortaç.",
-  "kind": "intro",
-  "de": "Drei Spaltsätze und zwei Partizipien."
- },
- {
-  "tr": "İki yarık cümle ve iki devrik sıra.",
-  "kind": "intro",
-  "de": "Zwei Spaltsätze und zwei Umstellungen."
- },
- {
-  "tr": "İki katlama ve bir katlamasız cümle.",
-  "kind": "intro",
-  "de": "Zwei Faltungen und ein Satz ohne Faltung."
- },
- {
-  "tr": "Devrik sıra bir ilanda. Kaç tane fazla?",
-  "kind": "intro",
-  "de": "Umstellung in einer Anzeige. Wie viele sind zu viel?"
- },
- {
-  "tr": "Üç ortaç. Yanlış giden hep hangi parça?",
-  "kind": "intro",
-  "de": "Drei Partizipien. Welcher Teil geht immer schief?"
- },
- {
-  "tr": "Çekince nereye konuyor, nereye konmuyor?",
-  "kind": "intro",
-  "de": "Wohin kommt die Absicherung und wohin nicht?"
- },
- {
-  "tr": "Üç ortaç, üç ses. Ortadaki neyin kısası?",
-  "kind": "intro",
-  "de": "Drei Partizipien, drei Stimmen. Wofür ist das mittlere die Kurzform?"
- },
- {
-  "tr": "Üç kip, bir dosya. Hangisi geri alıntılanıyor?",
-  "kind": "intro",
-  "de": "Drei Modalverben, eine Akte. Welches wird einem vorgehalten?"
- },
- {
-  "tr": "Bütün bir yan cümle mastara katlanıyor. Ne düşüyor?",
-  "kind": "intro",
-  "de": "Ein ganzer Nebensatz faltet sich zum Infinitiv. Was fällt weg?"
- },
- {
-  "tr": "Üç koşul, aynı başlangıç. Fark nerede başlıyor?",
-  "kind": "intro",
-  "de": "Drei Bedingungen, derselbe Anfang. Wo beginnt der Unterschied?"
- },
- {
-  "tr": "Bir kişi hakkında üç kaynaksız cümle. Sınama ne?",
-  "kind": "intro",
-  "de": "Drei Sätze ohne Quelle über eine Person. Was ist die Probe?"
- },
- {
-  "tr": "Üç ortaç, üç çatı. Hangisinde iki sözcük düşmüş?",
-  "kind": "intro",
-  "de": "Drei Partizipien, drei Genera. In welchem fehlen zwei Wörter?"
- },
- {
-  "tr": "İki kip ve iki koşul. Hangisi bu ayın ekstresinde?",
-  "kind": "intro",
-  "de": "Zwei Modalverben und zwei Bedingungen. Welche steht auf dem Auszug dieses Monats?"
- },
- {
-  "tr": "Üç adlaştırma. Hangisi listeden, hangisi kuraldan?",
-  "kind": "intro",
-  "de": "Drei Nominalisierungen. Welche kommt aus der Liste, welche aus der Regel?"
- },
- {
-  "tr": "İki yol var: listeden geçen ve her zaman açık olan.",
-  "kind": "intro",
-  "de": "Es gibt zwei Wege: den über die Liste und den, der immer offen ist."
- },
- {
-  "tr": "Üç yarık cümle. Hangisi bir adayı listeden çıkarıyor?",
-  "kind": "intro",
-  "de": "Drei Spaltsätze. Welcher streicht einen Kandidaten von der Liste?"
- },
- {
-  "tr": "Üç ilgi cümlesi bir karşılaştırmada. Kısaltmak iyi mi?",
-  "kind": "intro",
-  "de": "Drei Relativsätze in einem Vergleich. Ist Kürzen gut?"
- },
- {
-  "tr": "Üç yarık cümle. Hangisi adı konmamış olanı adlandırıyor?",
-  "kind": "intro",
-  "de": "Drei Spaltsätze. Welcher benennt das sonst Unbenannte?"
- },
- {
-  "tr": "Üç örnek, en sonda kural.",
-  "kind": "explain",
-  "de": "Drei Beispiele, am Ende die Regel."
- },
- {
   "tr": "Çıkarım: kanıt tek bir okuma bırakıyor.",
   "kind": "explain",
   "de": "Ein Schluss: Der Beleg lässt nur eine Lesart."
- },
- {
-  "tr": "Sayı üstüne çekince: bir tane bile fazla.",
-  "kind": "explain",
-  "de": "Eine Absicherung auf einer Zahl: Schon eine ist zu viel."
- },
- {
-  "tr": "Yarık cümle bir adayı listeden çıkarıyor.",
-  "kind": "explain",
-  "de": "Der Spaltsatz streicht einen Kandidaten von der Liste."
- },
- {
-  "tr": "Önceki iş, edilgen, etken; en sonda kural.",
-  "kind": "explain",
-  "de": "Das Frühere, Passiv, Aktiv; am Ende die Regel."
- },
- {
-  "tr": "„They can't have signed the mortgage alone.“",
-  "kind": "explain",
-  "de": "„They can't have signed the mortgage alone.“"
- },
- {
-  "tr": "Kapalı, karışık, yine kapalı; en sonda sınama.",
-  "kind": "explain",
-  "de": "Geschlossen, gemischt, wieder geschlossen; am Ende die Probe."
- },
- {
-  "tr": "Söylenen, beklenen, düşünülen; en sonda sınama.",
-  "kind": "explain",
-  "de": "Gesagt, erwartet, gedacht; am Ende die Probe."
- },
- {
-  "tr": "İki yarı birbirine karşı çekiyor: hedeflediğimiz şey ile anlattığımız şey aynı değil.",
-  "kind": "explain",
-  "de": "Zwei Hälften ziehen gegeneinander: Was wir anstreben und was wir beschreiben, ist nicht dasselbe."
- },
- {
-  "tr": "„has“ „is“ değil; silme yalnız „be“ye kadar uzanıyor.",
-  "kind": "explain",
-  "de": "„has“ ist nicht „is“; die Streichung reicht nur bis „be“."
- },
- {
-  "tr": "„That one earns its hedge: I am reporting somebody else's phrase…“",
-  "kind": "explain",
-  "de": "„That one earns its hedge: I am reporting somebody else's phrase…“"
- },
- {
-  "tr": "Listeden gelen, üretken olan, yine üretken; en sonda iki yolun adı.",
-  "kind": "explain",
-  "de": "Das aus der Liste, das produktive, wieder das produktive; am Ende die Namen der zwei Wege."
- },
- {
-  "tr": "Soru katlaması, „enough to“ katlaması, katlamasız cümle, en sonda sınır.",
-  "kind": "explain",
-  "de": "Die Fragefaltung, die „enough to“-Faltung, der Satz ohne Faltung, am Ende die Grenze."
- },
- {
-  "tr": "en kolay",
-  "kind": "gloss.tr",
-  "de": "am einfachsten"
- },
- {
-  "tr": "işe alma",
-  "kind": "gloss.tr",
-  "de": "Einstellung"
  },
  {
   "tr": "değerlendirme",
@@ -173,11 +13,6 @@
   "tr": "zam",
   "kind": "gloss.tr",
   "de": "Gehaltserhöhung"
- },
- {
-  "tr": "açma",
-  "kind": "gloss.tr",
-  "de": "Entfalten"
  },
  {
   "tr": "adım",
@@ -195,16 +30,6 @@
   "de": "ernst"
  },
  {
-  "tr": "gövde",
-  "kind": "gloss.tr",
-  "de": "Fließtext"
- },
- {
-  "tr": "içten",
-  "kind": "gloss.tr",
-  "de": "herzlich"
- },
- {
   "tr": "süreç",
   "kind": "gloss.tr",
   "de": "Vorgang"
@@ -215,54 +40,9 @@
   "de": "Tausch"
  },
  {
-  "tr": "tutar",
-  "kind": "gloss.tr",
-  "de": "Betrag"
- },
- {
-  "tr": "açılış",
-  "kind": "gloss.tr",
-  "de": "Eröffnung"
- },
- {
-  "tr": "açıyor",
-  "kind": "gloss.tr",
-  "de": "entfaltet"
- },
- {
-  "tr": "ekstre",
-  "kind": "gloss.tr",
-  "de": "Kontoauszug"
- },
- {
   "tr": "inşası",
   "kind": "gloss.tr",
   "de": "Aufbau"
- },
- {
-  "tr": "sönmek",
-  "kind": "gloss.tr",
-  "de": "verblassen"
- },
- {
-  "tr": "tam da",
-  "kind": "gloss.tr",
-  "de": "gerade deshalb"
- },
- {
-  "tr": "üretti",
-  "kind": "gloss.tr",
-  "de": "erbrachte"
- },
- {
-  "tr": "ortaya kondu",
-  "kind": "gloss.tr",
-  "de": "erbracht"
- },
- {
-  "tr": "büyümüş",
-  "kind": "gloss.tr",
-  "de": "gewachsen"
  },
  {
   "tr": "iş yükü",
@@ -270,19 +50,9 @@
   "de": "Arbeitslast"
  },
  {
-  "tr": "katlama",
-  "kind": "gloss.tr",
-  "de": "Faltung"
- },
- {
   "tr": "öderdik",
   "kind": "gloss.tr",
   "de": "hätten wir gezahlt"
- },
- {
-  "tr": "yakınma",
-  "kind": "gloss.tr",
-  "de": "Beschwerde"
  },
  {
   "tr": "yetenek",
@@ -300,74 +70,9 @@
   "de": "darüber hinaus"
  },
  {
-  "tr": "sağlanan",
-  "kind": "gloss.tr",
-  "de": "geliefert"
- },
- {
-  "tr": "uyarlama",
-  "kind": "gloss.tr",
-  "de": "Anpassung"
- },
- {
-  "tr": "zayıflık",
-  "kind": "gloss.tr",
-  "de": "Schwäche"
- },
- {
-  "tr": "etken eşi",
-  "kind": "gloss.tr",
-  "de": "das aktive Gegenstück"
- },
- {
-  "tr": "geçindiği",
-  "kind": "gloss.tr",
-  "de": "wovon jemand lebt"
- },
- {
   "tr": "kalan şey",
   "kind": "gloss.tr",
   "de": "was bleibt"
- },
- {
-  "tr": "katlanmış",
-  "kind": "gloss.tr",
-  "de": "gefaltet"
- },
- {
-  "tr": "öğrenilen",
-  "kind": "gloss.tr",
-  "de": "gelernt"
- },
- {
-  "tr": "tam biçim",
-  "kind": "gloss.tr",
-  "de": "Vollform"
- },
- {
-  "tr": "benimseyen",
-  "kind": "gloss.tr",
-  "de": "sich zu eigen machend"
- },
- {
-  "tr": "isteklilik",
-  "kind": "gloss.tr",
-  "de": "Bereitschaft"
- },
- {
-  "tr": "ücretli izin",
-  "kind": "gloss.tr",
-  "de": "bezahlter Urlaub"
- },
- {
-  "tr": "özensizlik",
-  "kind": "gloss.tr",
-  "de": "Nachlässigkeit"
- },
- {
-  "tr": "yanıtlanan",
-  "kind": "gloss.tr",
-  "de": "beantwortet"
  },
  {
   "tr": "asıl acıtan",
@@ -375,49 +80,9 @@
   "de": "was wirklich wehtat"
  },
  {
-  "tr": "kredi veren",
-  "kind": "gloss.tr",
-  "de": "Kreditgeber"
- },
- {
-  "tr": "soru tutmak",
-  "kind": "gloss.tr",
-  "de": "eine Frage tragen"
- },
- {
-  "tr": "adı konmamış",
-  "kind": "gloss.tr",
-  "de": "unbenannt"
- },
- {
   "tr": "kıskançlıktı",
   "kind": "gloss.tr",
   "de": "war die Eifersucht"
- },
- {
-  "tr": "soru sözcüğü",
-  "kind": "gloss.tr",
-  "de": "Fragewort"
- },
- {
-  "tr": "tahmin etmek",
-  "kind": "gloss.tr",
-  "de": "raten"
- },
- {
-  "tr": "yerine geçen",
-  "kind": "gloss.tr",
-  "de": "das ersetzt"
- },
- {
-  "tr": "karşılaştıran",
-  "kind": "gloss.tr",
-  "de": "vergleichend"
- },
- {
-  "tr": "yanlış okuyor",
-  "kind": "gloss.tr",
-  "de": "liest falsch"
  },
  {
   "tr": "adlandırılması",
@@ -428,11 +93,6 @@
   "tr": "belirleyen şey",
   "kind": "gloss.tr",
   "de": "was entscheidet"
- },
- {
-  "tr": "geride kalıyor",
-  "kind": "gloss.tr",
-  "de": "bleibt zurück"
  },
  {
   "tr": "hazırlanıyor olacak",
@@ -448,21 +108,6 @@
   "tr": "uyarmış olmalı",
   "kind": "gloss.tr",
   "de": "muss gewarnt haben"
- },
- {
-  "tr": "kuşku uyandıran",
-  "kind": "gloss.tr",
-  "de": "verdächtig"
- },
- {
-  "tr": "o zamandan beri",
-  "kind": "gloss.tr",
-  "de": "seitdem"
- },
- {
-  "tr": "geri alıntılamak",
-  "kind": "gloss.tr",
-  "de": "vorhalten"
  },
  {
   "tr": "imzalamış olamaz",
@@ -513,11 +158,6 @@
   "tr": "işe almak istedikleri için",
   "kind": "gloss.tr",
   "de": "weil sie einstellen wollten"
- },
- {
-  "tr": "daha dost",
-  "kind": "gloss.tr",
-  "de": "freundlicher"
  },
  {
   "tr": "hareketli",

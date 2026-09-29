@@ -39,41 +39,48 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 20,
-    title: "Four small words",
-    genre: "guide",
-    intro: "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor?",
+    title: "An email from HR",
+    genre: "email",
+    intro: "İnsan kaynaklarından bir e-posta. Emre'nin rapordan sonra ne yapması gerekiyor?",
     gloss: [
       { de: "the note", tr: "rapor" },
       { de: "absence", tr: "devamsızlık" },
       { de: "backdate", tr: "geriye tarihlemek" },
-      { de: "adds", tr: "ekliyor" },
-      { de: "heavier", tr: "daha ağır" },
-      { de: "belongs", tr: "ait" },
-      { de: "speech", tr: "konuşma" },
-      { de: "apart from", tr: "dışında" },
       { de: "itself", tr: "kendisi" },
+      { de: "informed", tr: "haberdar edildi" },
+      { de: "unpaid", tr: "ücretsiz" },
+      { de: "correct", tr: "düzeltmek" },
+      { de: "unfortunately", tr: "maalesef" },
+      { de: "mail", tr: "postalamak" },
+      { de: "required", tr: "zorunlu" },
+      { de: "Human Resources", tr: "insan kaynakları" },
+      { de: "ill", tr: "hasta" },
     ],
     minutes: 7,
     text:
-      "Four small words that do four different jobs, and a doctor's note is where you need all of them in one afternoon.\n" +
-      "I sent the note; moreover, I called the office. „Moreover“ adds a second thing of the same kind and it makes the first one heavier. It belongs in writing and almost never in speech.\n" +
-      "Besides the note, they want a date. „Besides“ also adds, but it starts from what you already have: apart from this, there is that. Different shape, same direction.\n" +
-      "Take the leave now; otherwise you lose it. „Otherwise“ is the only one of the four that carries a warning. It means: if you do not, this follows. Learners use it half as often as they should.\n" +
-      "I did not send an email; instead I went to reception. „Instead“ replaces. Nothing is added — one thing is exchanged for another.\n" +
-      "For the note itself: three working days. The practice will not backdate it, so an absence on Monday needs a note by Thursday and not a call on Friday.\n" +
-      "And the line nobody reads: the note says you were sick, not what you had. The office is not allowed to ask, and you are not required to say.",
+      "Subject: Your absence last week\n" +
+      "Hi Emre,\n" +
+      "Thank you for your message on Monday. I am sorry to hear you were ill, and I hope you are feeling better.\n" +
+      "You sent the note from your doctor; moreover, you called the office on the first morning. That was exactly right, and your manager was informed the same day.\n" +
+      "Besides the note, we need one more thing: the date you are coming back. Please send it by Friday. Otherwise, the system will count the whole week as unpaid leave, and that is hard to correct later.\n" +
+      "You asked about your vacation. You still have six days of leave from last year. Please take the leave before the end of March; otherwise you lose it. Many people forget this every year.\n" +
+      "You also asked if you can send the next note by email. Unfortunately not. Instead, please bring the paper note to reception, or mail it to us.\n" +
+      "For the note itself: three working days. The practice will not backdate it, so an absence on Monday needs a note by Thursday.\n" +
+      "And one last point: the note says you were sick, not what you had. We are not allowed to ask, and you are not required to say.\n" +
+      "Best wishes,\n" +
+      "Petra, Human Resources",
     questions: [
       {
-        text: "Which word carries a warning?",
-        options: ["otherwise", "moreover", "besides"],
+        text: "What does HR need besides the note?",
+        options: ["the date Emre is coming back", "a second note", "a phone call"],
         answer: 0,
-        explain: "„‚Otherwise‘ is the only one of the four that carries a warning.“",
+        explain: "„Besides the note, we need one more thing: the date you are coming back.“",
       },
       {
-        text: "What does „instead“ do?",
-        options: ["it replaces one thing with another", "it adds a second thing", "it gives a reason"],
+        text: "How should Emre send the next note?",
+        options: ["bring it to reception or mail it", "by email", "by phone"],
         answer: 0,
-        explain: "„‚Instead‘ replaces. Nothing is added — one thing is exchanged for another.“",
+        explain: "„Instead, please bring the paper note to reception, or mail it to us.“",
       },
       {
         kind: "truefalse",
@@ -92,16 +99,16 @@ export const enB1U20: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Dersin sırası: doğru sıraya koy.",
+        text: "Metnin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
-          "moreover — adds a second thing",
-          "besides — starts from what you have",
-          "otherwise — carries a warning",
-          "instead — replaces one thing",
+          "You sent the note and called the office.",
+          "We need the date you are coming back.",
+          "Take the leave before the end of March.",
+          "Bring the paper note to reception.",
         ],
-        explain: "Metnin kendi sırası: ekleme, ekleme, uyarı, değişim.",
+        explain: "Rapor, dönüş tarihi, izin, en sonda kâğıt rapor.",
       },
       {
         kind: "short_answer",

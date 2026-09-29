@@ -259,7 +259,7 @@ export const a1U16: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 16,
-    title: "stehen, liegen, hängen",
+    title: "Möbel in der Wohnung",
     genre: "grammar",
     intro: "Konum fiillerini ayırt et.",
     gloss: [

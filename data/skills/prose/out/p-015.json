@@ -1,10 +1,5 @@
 [
  {
-  "tr": "En görünür ses ile karar veren ses aynı değil — deyimin taşıdığı ayrım bu.",
-  "kind": "explain",
-  "en": "The most visible voice and the deciding voice are not the same — that is the distinction the idiom carries."
- },
- {
   "tr": "Hava yüzünden bir plan değişiyor. Neden ile rağmen arasındaki farkı dinle.",
   "kind": "intro",
   "en": "A plan changes because of the weather. Listen for the difference between because and in spite of."
@@ -13,11 +8,6 @@
   "tr": "hinnehmen: sınamadan sonra kabul. Ayrılabilen fiilin ortacı hin-ge-nommen.",
   "kind": "explain",
   "en": "hinnehmen: accepting after testing. The participle of the separable verb is hin-ge-nommen."
- },
- {
-  "tr": "İki dilde var ama farklı anlama gelen — çünkü bilmediğini fark etmiyorsun.",
-  "kind": "explain",
-  "en": "It exists in both languages but means something else — because you do not notice that you do not know."
  },
  {
   "tr": "İkinci cümle ana cümle ve fiil ikinci sırada; başa gelen öğe trotzdem'dir.",
@@ -78,11 +68,6 @@
   "tr": "sofern koşulu daraltır, um-zu amacı verir, adlaştırma usulü resmîleştirir.",
   "kind": "intro",
   "en": "sofern narrows the condition, um-zu gives the purpose, nominalization makes the procedure formal."
- },
- {
-  "tr": "Tahmin dereceleri üstüne bir yazı. Hangi sözcük ne kadar kesinlik taşıyor?",
-  "kind": "intro",
-  "en": "An article about degrees of likelihood. How much certainty does each word carry?"
  },
  {
   "tr": "Yan cümlede geçmiş zamanın yardımcı fiili ortacın ARKASINA, en sona gider.",
@@ -258,11 +243,6 @@
   "tr": "Kipli edilgen: muss + ortaç + werden; ikinci yarıda abkühlen etken kalıyor.",
   "kind": "explain",
   "en": "The modal passive: muss + participle + werden; in the second half abkühlen stays active."
- },
- {
-  "tr": "Manşet dilinin nasıl çalıştığını anlatan bir yazı: kısaltma neyi düşürüyor?",
-  "kind": "intro",
-  "en": "An article about how headline language works: what does the shortening drop?"
  },
  {
   "tr": "Olumlu cümlede belirsiz miktar „some“ ile gelir: There are some books here.",
@@ -593,11 +573,6 @@
   "tr": "„Ein Termin ohne Anruf kostet 20 Euro.“ — haber vermemek para cezası doğurur.",
   "kind": "explain",
   "en": "„Ein Termin ohne Anruf kostet 20 Euro.“ — not calling to cancel means a fee."
- },
- {
-  "tr": "„Grammatik im Dienst der Betonung“ — seçim cümle başlamadan yapılmak zorunda.",
-  "kind": "explain",
-  "en": "„Grammatik im Dienst der Betonung“ — the choice has to be made before the sentence starts."
  },
  {
   "tr": "„have to“ geçmişte „had to“ olur ve arkasından yalın fiil gelir; cümle doğru.",

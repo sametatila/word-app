@@ -296,7 +296,7 @@ export const a2U19: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 19,
-    title: "weil, denn, dass",
+    title: "Zu- und Absagen",
     genre: "grammar",
     intro: "Üçü de gerekçe ya da içerik veriyor, ama fiilin yeri farklı.",
     gloss: [

@@ -381,7 +381,7 @@ export const c1U21: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 21,
-    title: "İroninin ve şakanın dili",
+    title: "Nach dem missglückten Scherz",
     genre: "grammar",
     intro: "Şakanın varışı, geri alma ve göz kırpma kalıbı.",
     gloss: [
@@ -430,7 +430,7 @@ export const c1U21: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 21,
-    title: "Şaka tutmadığında",
+    title: "Eine Entschuldigung per Nachricht",
     genre: "formal",
     intro: "Toplantıda yaptığın espri kimseyi güldürmedi. Şimdi ne yazacaksın?",
     gloss: [

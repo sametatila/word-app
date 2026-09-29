@@ -45,39 +45,39 @@ export const b2U09: SkillExercise[] = [
       { de: "enthüllen", tr: "ifşa etmek", en: "to reveal" },
       { de: "der Bürgermeister", tr: "belediye başkanı", en: "mayor" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "schieben", tr: "itmek", en: "to push" },
       { de: "innerhalb", tr: "içinde", en: "within" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "die Widerlegung", tr: "çürütme", en: "refutation" },
       { de: "der Terminkalender", tr: "ajanda", en: "planner" },
+      { de: "die Quelle", tr: "kaynak", en: "source" },
       { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 6,
     text:
       "WER SAGT DAS EIGENTLICH?\n\n" +
       "„Der Bürgermeister soll seit Wochen im Ausland sein.“ Dieser Satz kursierte im Frühjahr drei Wochen lang in unserer Stadt, und man konnte an ihm sehr genau studieren, wie ein Gerücht funktioniert.\n\n" +
-      "Zuerst die Form. Wer „soll“ sagt, behauptet nichts. Er berichtet, dass andere etwas behaupten — und schiebt die Verantwortung damit weiter. Anders bei „will“: „Er will nichts davon gewusst haben“ heißt, dass er es selbst sagt und dass der Schreiber daran zweifelt. Zwei Modalverben, zwei ganz verschiedene Quellen.\n\n" +
+      "Zuerst die Quelle. Niemand wusste, wer den Satz zuerst gesagt hatte. Am zweiten Tag soll der Bürgermeister krank gewesen sein, am dritten soll er ein Haus in Spanien gekauft haben. Ein Nachbar will ihn sogar am Flughafen gesehen haben — auf Nachfrage wollte er dann nichts davon gewusst haben.\n\n" +
       "Dann der Weg. Das Gerücht begann in einem anonymen Kommentar unter einem Zeitungsartikel. Innerhalb von zwei Tagen stand es in vier Gruppenchats, und am vierten Tag fragte jemand in der Ratssitzung, wo der Bürgermeister sich aufhalten solle. Da war aus einer Behauptung schon eine Tatsache geworden, über die man sich streiten konnte.\n\n" +
       "Dann die Empörung. Sie kommt immer vor der Prüfung, nie danach. Wer empört ist, fragt nicht mehr nach der Quelle — und wenn die Redaktion später schreibt, es habe nie eine Auslandsreise gegeben, liest das die Hälfte gar nicht mehr.\n\n" +
       "Und zum Schluss die Verschwörungstheorie. Sie entsteht nicht aus dem Gerücht selbst, sondern aus seiner Widerlegung: Wenn die Reise nie stattgefunden hat, dann will man wohl etwas verschweigen. So dreht sich jedes Dementi zum Beweis um.\n\n" +
       "Es hat übrigens einen Menschen gebraucht, um die Sache zu enthüllen — einen Praktikanten, der den Terminkalender der Stadt las. Der Bürgermeister war in diesen Wochen jeden Tag im Rathaus.",
     questions: [
       {
-        text: "Was drückt „Er soll im Ausland sein“ aus?",
+        text: "Was behauptete ein Nachbar?",
         options: [
-          "Der Schreiber behauptet es selbst.",
-          "Andere behaupten es; der Schreiber gibt es weiter.",
-          "Es ist amtlich bestätigt.",
+          "Der Bürgermeister sei krank.",
+          "Er habe den Bürgermeister am Flughafen gesehen.",
+          "Der Bürgermeister habe ein Haus gekauft.",
         ],
         answer: 1,
-        explain: "„Wer 'soll' sagt, behauptet nichts. Er berichtet, dass andere etwas behaupten.“",
+        explain: "„Ein Nachbar will ihn sogar am Flughafen gesehen haben…“",
       },
       {
         kind: "gapfill",
-        text: "Er ___ nichts davon gewusst haben — er selbst sagt das, und der Schreiber zweifelt.",
+        text: "Auf Nachfrage ___ er dann nichts davon gewusst haben.",
         options: [],
         answer: 0,
-        accept: ["will"],
+        accept: ["wollte"],
         explain: "wollen öznel kip olarak kişinin KENDİ iddiasını işaretler; sollen başkasınınkini.",
       },
       {

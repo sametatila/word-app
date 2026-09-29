@@ -379,7 +379,7 @@ export const c1U14: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 14,
-    title: "Hak doğuran sıra",
+    title: "Ärger mit dem Vermieter",
     genre: "grammar",
     intro: "Bildirim, süre, temerrüt, talep — dördü de fiil kalıbıyla kuruluyor.",
     gloss: [

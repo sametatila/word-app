@@ -135,11 +135,6 @@
   "en": "The basic form of reported speech in writing is Konjunktiv I: er sei. „wäre“ only comes in when Konjunktiv I is not distinctive, or in speech; „ist“ loses the marker of reported speech."
  },
  {
-  "tr": "einstreuen'in ortacı: -ge- ön ek ile kökün arasına giriyor. Serpiştirilmiş deyim göze batıyor.",
-  "kind": "explain",
-  "en": "The participle of einstreuen: -ge- goes between the prefix and the stem. An idiom that is sprinkled in stands out."
- },
- {
   "tr": "dürfte öznel kip olarak tahmin bildirir, kesinlik değil.",
   "kind": "explain",
   "en": "dürfte as a subjective modal marks a guess, not certainty."
@@ -248,11 +243,6 @@
   "tr": "Tez savunması. İtiraz nasıl geliyor, nasıl karşılanıyor?",
   "kind": "intro",
   "en": "A thesis defense. How does the objection come, and how is it met?"
- },
- {
-  "tr": "Üçüncü durum rahatsız ama zararsız: hemen fark ediliyor.",
-  "kind": "explain",
-  "en": "The third case is uncomfortable but harmless: it is noticed at once."
  },
  {
   "tr": "Varılan NOKTA → auf. Artış miktarı olsaydı „um“ gelirdi.",
@@ -365,11 +355,6 @@
   "en": "The standard way of saying that something exists: es gibt."
  },
  {
-  "tr": "Bir yönetmelik cümlesi birlikte çözülüyor. Önce çekirdek.",
-  "kind": "intro",
-  "en": "A sentence from a regulation is unpacked together. The core first."
- },
- {
   "tr": "Buradaki „to“ mastar değil edattır, bu yüzden -ing gelir.",
   "kind": "explain",
   "en": "Here „to“ is a preposition, not an infinitive, so -ing follows."
@@ -378,11 +363,6 @@
   "tr": "Çoğul özne çoğul yardımcı fiil ister: werden … geschickt.",
   "kind": "explain",
   "en": "A plural subject needs a plural auxiliary: werden … geschickt."
- },
- {
-  "tr": "Deyim içindeki sıfat da çekimli ve sabit; değiştirilemez.",
-  "kind": "explain",
-  "en": "The adjective inside an idiom is declined and fixed; it cannot be changed."
  },
  {
   "tr": "Doğru: „Ich esse auch kein Ei — Eier vertrage ich nicht.“",
@@ -445,11 +425,6 @@
   "en": "In English a person can be the subject of a passive too; the sentence is right."
  },
  {
-  "tr": "İsim üslubu ne zaman işe yarıyor, ne zaman metni boğuyor?",
-  "kind": "intro",
-  "en": "When does noun style help, and when does it choke the text?"
- },
- {
   "tr": "İş yerinde bir sohbet: belirtiler neler, ne yapması öneriliyor?",
   "kind": "intro",
   "en": "A conversation at work: what are the symptoms, what is suggested?"
@@ -470,11 +445,6 @@
   "en": "A report that states its own limits gains in credibility."
  },
  {
-  "tr": "Kırılma noktasını adlandırmak reddetmekten güçlü bir sav.",
-  "kind": "explain",
-  "en": "Naming the breaking point is a stronger case than refusing outright."
- },
- {
   "tr": "Kişiye değil işe dair: kaç puan eksik kaldığını söylüyor.",
   "kind": "explain",
   "en": "It is about the work, not the person: it says how many points are short."
@@ -488,16 +458,6 @@
   "tr": "Malzeme „aus“ + Dativ ile söylenir: aus Wolle, aus Leder.",
   "kind": "explain",
   "en": "Material is given with „aus“ + dative: aus Wolle, aus Leder."
- },
- {
-  "tr": "nahelegen ayrılabilen: legen … nahe. En temkinli basamak.",
-  "kind": "explain",
-  "en": "nahelegen is separable: legen … nahe. The most cautious step of all."
- },
- {
-  "tr": "Ofis jargonu çözülüyor. Cümleler ne diyor, ne kastediyor?",
-  "kind": "intro",
-  "en": "Office jargon is unpacked. What do the sentences say, what do they mean?"
  },
  {
   "tr": "Okul yıllarının anlatımı: neye izin vardı, ne zorunluydu?",
@@ -565,11 +525,6 @@
   "en": "With long adjectives the superlative is formed with „the most“."
  },
  {
-  "tr": "Üstünü ilgi cümlesine ya da iki cümleye çözmek gerekiyor.",
-  "kind": "explain",
-  "en": "It has to be unpacked into a relative clause or into two sentences."
- },
- {
   "tr": "-o gibi ünlüyle biten yabancı kökenli kelimeler çoğulda -s alır: die Autos.",
   "kind": "explain",
   "en": "Words of foreign origin ending in a vowel such as -o take an -s plural: die Autos."
@@ -578,11 +533,6 @@
   "tr": "Yan cümlede kipli fiil EN SONA gider: einschlafen kannst.",
   "kind": "explain",
   "en": "In a subordinate clause the modal verb goes RIGHT to the end: einschlafen kannst."
- },
- {
-  "tr": "Yiyecek deyimleri iş ortamında. Hangisi toplantıda durur?",
-  "kind": "intro",
-  "en": "Food idioms at work. Which of them holds up in a meeting?"
  },
  {
   "tr": "„…nur ein Zeitfenster von sieben bis zehn“ — yani üç saat.",

@@ -1,83 +1,8 @@
 [
  {
-  "tr": "Üç adlaştırma ve iki aktarma.",
-  "kind": "intro",
-  "en": "Three nominalizations and two reported sentences."
- },
- {
-  "tr": "Üç biçim, en sonda yazma kuralı.",
-  "kind": "explain",
-  "en": "Three shapes, the rule for writing them last."
- },
- {
   "tr": "Kapalı kutu: iki yarı da geçmişte.",
   "kind": "explain",
   "en": "A closed box: both halves in the past."
- },
- {
-  "tr": "Planda kaç söz var, kaç boşluk var?",
-  "kind": "intro",
-  "en": "How many promises are in the plan, and how many gaps?"
- },
- {
-  "tr": "Taşınacak yardımcı fiil yoksa ne oluyor?",
-  "kind": "intro",
-  "en": "What happens when there is no auxiliary to move?"
- },
- {
-  "tr": "Üç örnek, en sonda yazarın kendi kuralı.",
-  "kind": "explain",
-  "en": "Three examples, the writer's own rule last."
- },
- {
-  "tr": "Takvimde iki biçim. Hangisi benim elimde?",
-  "kind": "intro",
-  "en": "Two forms in a schedule. Which one is in my hands?"
- },
- {
-  "tr": "Bir hata kaydı. Virgüller neyi belirliyor?",
-  "kind": "intro",
-  "en": "A bug report. What do the commas decide?"
- },
- {
-  "tr": "Özette isimler, teşekkürde fiiller. Neden?",
-  "kind": "intro",
-  "en": "Nouns in the abstract, verbs in the acknowledgements. Why?"
- },
- {
-  "tr": "Üç ortaç. İkincisi hangi ilişkiyi taşıyor?",
-  "kind": "intro",
-  "en": "Three participles. Which relation does the second one carry?"
- },
- {
-  "tr": "Üç aktarma. Üçüncüsü zamanı nereye koyuyor?",
-  "kind": "intro",
-  "en": "Three reported sentences. Where does the third one put the tense?"
- },
- {
-  "tr": "Üç devrik cümle. İkisinde „does“ neden var?",
-  "kind": "intro",
-  "en": "Three inverted sentences. Why is „does“ in two of them?"
- },
- {
-  "tr": "Üç isim, üç edat, en sonda kuralın kendisi.",
-  "kind": "explain",
-  "en": "Three nouns, three prepositions, the rule itself last."
- },
- {
-  "tr": "İki yarık cümle, bir karşıtlık, iki çıkarım.",
-  "kind": "intro",
-  "en": "Two cleft sentences, one contrast, two conclusions."
- },
- {
-  "tr": "Üç isim, üç edat. Hangisi „between“ almıyor?",
-  "kind": "intro",
-  "en": "Three nouns, three prepositions. Which one takes no „between“?"
- },
- {
-  "tr": "Üç kip, üç iş. Hangisi birinci şahısta?",
-  "kind": "intro",
-  "en": "Three modals, three jobs. Which one is in the first person?"
  },
  {
   "tr": "Kanıt kapıyı kapatıyor: olumsuzu „can't have“.",
@@ -85,58 +10,13 @@
   "en": "The evidence closes the door: the negative is „can't have“."
  },
  {
-  "tr": "Üç tetikleyici, bir takvim, bir karışık koşul.",
-  "kind": "intro",
-  "en": "Three triggers, one schedule, one mixed conditional."
- },
- {
   "tr": "Fiil isme dönüyor; ek de edat da ezberden geliyor.",
   "kind": "explain",
   "en": "The verb becomes a noun; the ending and the preposition both come from memory."
  },
  {
-  "tr": "İsim kendi edatını getiriyor. Fiilinkiyle aynı mı?",
-  "kind": "intro",
-  "en": "The noun brings its own preposition. Is it the same as the verb's?"
- },
- {
-  "tr": "Yalın ortaç ne söylüyor: „aynı anda“ mı, „çünkü“ mü?",
-  "kind": "intro",
-  "en": "What does the plain participle say: „at the same time“ or „because“?"
- },
- {
-  "tr": "İki kapalı, bir karışık. Hangisine kimse dokunamıyor?",
-  "kind": "intro",
-  "en": "Two closed, one mixed. Which one can nobody touch?"
- },
- {
-  "tr": "Yardımcı fiilli, „does“lu, sınırlamalı, en sonda kural.",
-  "kind": "explain",
-  "en": "With an auxiliary, with „does“, with a restriction, the rule last."
- },
- {
-  "tr": "Üç tetikleyici. Hangisinde ana fiil yalın hâline dönüyor?",
-  "kind": "intro",
-  "en": "Three triggers. In which one does the main verb go back to its bare form?"
- },
- {
-  "tr": "Uzun yol, kısa yol, geçmişe bakan mastar, en sonda sınama.",
-  "kind": "explain",
-  "en": "The long route, the short route, the backward-looking infinitive, the test last."
- },
- {
   "tr": "Virgüller cümleciği fazladan yapıyor; tek bir yazılım var.",
   "kind": "explain",
   "en": "The commas make the clause extra; there is only one piece of software."
- },
- {
-  "tr": "Birinci biçim, ikinci biçim, karşı karşıya koyan, en sonda yargı.",
-  "kind": "explain",
-  "en": "The first shape, the second shape, the one that sets them against each other, the verdict last."
- },
- {
-  "tr": "„has borrowed the paper's authority without borrowing its evidence.“",
-  "kind": "explain",
-  "en": "„has borrowed the paper's authority without borrowing its evidence.“"
  }
 ]

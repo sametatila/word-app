@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Önek kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Präfixkarte aus."
- },
- {
-  "tr": "Olumsuzlama kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Verneinungskarte aus."
- },
- {
-  "tr": "Fiil artı sıfat kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte zu Verb plus Adjektiv aus."
- },
- {
-  "tr": "Duruş fiilde, durum sıfatta; araya belirteç sokulabiliyor; kalıp üretken; Almanca aynı ikiliyi tek fiile kaynaştırıyor.",
-  "kind": "form.facts",
-  "de": "Die Haltung steckt im Verb, der Zustand im Adjektiv; dazwischen lässt sich ein Adverb schieben; das Muster ist produktiv; das Deutsche verschmilzt dasselbe Paar zu einem einzigen Verb."
- },
- {
-  "tr": "Tek gövdeye iki önek takılıyor; kalıp üretken; Almancada çift ayrı köklerden geldiği için görünmüyor; bedeli sözcüğün yerleşik bir süreç gibi durması.",
-  "kind": "form.facts",
-  "de": "An einen Stamm werden zwei Präfixe gehängt; das Muster ist produktiv; im Deutschen bleibt das Paar unsichtbar, weil es aus verschiedenen Wurzeln kommt; der Preis dafür ist, dass das Wort wie ein etablierter Vorgang aussieht."
- },
- {
-  "tr": "„No“ ismin önünde durup türü yadsıyor; „not“ cümleyi, yani bu tek durumu olumsuzluyor ve yardımcı fiile gerek duyuyor; Almanca tek belirleyiciyle geçiyor; hata eksik sözcük değil, bir beden fazla yüksek sözcük.",
-  "kind": "form.facts",
-  "de": "„No“ steht vor dem Nomen und verneint die ganze Art; „not“ verneint den Satz, also diesen einen Fall, und braucht das Hilfsverb; das Deutsche kommt mit einem einzigen Determinativ aus; der Fehler ist kein fehlendes Wort, sondern ein Wort, das eine Nummer zu laut ist."
- },
- {
   "tr": "Mera gürdü; ahır, daha az.",
   "kind": "build.tr",
   "de": "Die Weide war üppig; der Stall weniger."
@@ -203,11 +173,6 @@
   "tr": "Yalnız ikincisi sorumluluk taşıyor.",
   "kind": "build.hint",
   "de": "Nur das zweite trägt Verantwortung."
- },
- {
-  "tr": "Satırın en önemli sözcüğü sonuncusu.",
-  "kind": "build.hint",
-  "de": "Das wichtigste Wort der Zeile ist das letzte."
  },
  {
   "tr": "İki oda, iki sözcük, iki ayrı on yıl.",

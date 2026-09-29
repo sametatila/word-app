@@ -53,6 +53,26 @@ kapı geçerlidir, belge düzeltilir. Konuşmalar: `data/conversations-plan/SPEC
   farkla: Almanca kursta başlık KENDİ ünitesinin konuşma adını taşıyabilir (178
   başlık, hepsi konu adı: „Die Hausordnung“); başka ünitenin konuşma adı hata.
   Ünite, seviyenin konuşma sırasıyla dörderli dilimdir.
+- **Metin dilin kendisini anlatmaz** (2026-09-29). Okuma ve dinleme metni
+  gerçek hayattan bir konuda, anlamı öne alan, gerçekçi bir metindir: e-posta,
+  rapor, haber, yorum yazısı, röportaj, hikâye, toplantı, sesli mesaj. Ünitenin
+  hedef yapısı metinde doğal olarak ve SIK geçer (girdi yoğunluğu, en az 4–6
+  kez); öğrenci onu metnin içinde, sorularda ve Dil bilgisi adımında fark eder.
+  Dil bilgisini, söz dizimini, noktalamayı, üslup düzeylerini ya da iki sözcüğün
+  farkını ANLATAN metin yazılmaz ("Conditions without if", „Der Satz, der sich
+  zusammenfaltet“): kuralın açıklaması ünitenin konuşmalarının anlatım
+  adımlarında ve onlardan türetilen Dil bilgisi adımında
+  (`src/lib/immersion/grammar.ts`) duruyor, kütüphanede `grammar`
+  egzersizinde. Sorular içeriği sorar; biçime dair kısa geri bildirim
+  `explain`de ve dikte açıklamasında kalabilir. Yazma görevi de iletişimsel bir
+  durum kurar (not, e-posta, rapor): yapı görevin gereği, konusu değil. Başlık
+  dil bilgisini adlandırmaz, metnin konusunu verir. Dilin kendisi gerçek hayat
+  konusu olabilir (lehçeyle yaşamak, dil kursu ilanı, kelime öğrenme
+  alışkanlıkları) — yeter ki metin kural anlatmasın. Kapı (`test:content`,
+  hata): okuma/dinleme gövdesinde dil bilgisi terimleri sayılıyor (İngilizce
+  verb, clause, tense, participle…; Almanca Verb, Nebensatz, Konjunktiv,
+  Wortstellung…); en az 4 terim VE sözcük başına %1,2 yoğunluk hata. Gerçekten
+  dil hakkında olup ders anlatmayan metin `META_MUAF`a gerekçesiyle girer.
 - `gloss`: her `de` metinde geçer (`data/meanings/contains.mjs`; okuma/dinlemede
   soru ve şıklar da sayılır), aynı madde iki kez yok, `tr` dolu.
 - **Okuma/dinleme:** ≥ 3 soru, her soruda `explain`. `mcq`/`truefalse` 2–4 şık;

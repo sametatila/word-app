@@ -363,7 +363,7 @@ export const b2U10: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 10,
-    title: "Vermutung oder Behauptung?",
+    title: "Kritik an einem Bericht",
     genre: "build",
     intro: "dürfte tahmindir, sollen başkasının iddiasıdır — ve ortaç sıfatı cümleyi kısaltır.",
     gloss: [

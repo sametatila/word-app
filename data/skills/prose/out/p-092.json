@@ -1,0 +1,8 @@
+[
+ { "tr": "Takdim, geçmiş deneyim, iş devri, en sonda davet.", "kind": "explain", "en": "Introduction, past experience, handover, and finally the invitation." },
+ { "tr": "Yeni bir iş arkadaşını ekibe tanıtan e-posta. Ana kim, işi ne olacak?", "kind": "intro", "en": "An email introducing a new colleague to the team. Who is Ana, and what will her job be?" },
+ { "tr": "Not dört başlıkla ilerliyor: öngörü, paydaşlar, anket bulguları, ekip.", "kind": "explain", "en": "The brief follows four headings: forecast, stakeholders, survey findings, team." },
+ { "tr": "Vardiya değişiminde iş devri. Selin'in bugün neyi halletmesi gerekiyor?", "kind": "intro", "en": "A handover at the change of shift. What does Selin need to sort out today?" },
+ { "tr": "Proje yöneticisinin müşteriye bıraktığı sesli mesaj. Haziranda ne bitmiş olacak?", "kind": "intro", "en": "A voice message the project manager left for a client. What will be finished by June?" },
+ { "tr": "Bölge ekibinin pazartesi bilgilendirme notu. Hangi bilgi kesin, hangisi yalnız duyulmuş?", "kind": "intro", "en": "The regional team's Monday briefing note. Which information is certain, and which is only hearsay?" }
+]

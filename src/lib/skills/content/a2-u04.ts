@@ -272,7 +272,7 @@ export const a2U04: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 4,
-    title: "seit oder vor?",
+    title: "Seit wann hier?",
     genre: "grammar",
     intro: "Süren bir zaman mı, bitmiş bir nokta mı? İki edat ve iki ayrı zaman.",
     gloss: [

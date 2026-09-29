@@ -105,11 +105,6 @@
   "en": "In the language of meetings the order comes first, then the sharing out. Setting priorities before sharing out the tasks was Kai's condition."
  },
  {
-  "tr": "Ve Bernd ekliyor: „Ein schlecht gesetztes Bild wirkt länger nach als ein fehlendes.“",
-  "kind": "explain",
-  "en": "And Bernd adds: „Ein schlecht gesetztes Bild wirkt länger nach als ein fehlendes.“"
- },
- {
   "tr": "Yanlış: „Frau Yalçın verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen.“",
   "kind": "explain",
   "en": "False: „Frau Yalçın verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen.“"
@@ -155,16 +150,6 @@
   "en": "„der Tee soll nicht zu heiß sein, sondern lauwarm“ — too hot damages the throat."
  },
  {
-  "tr": "„klingt beiläufig und behauptet einen Vertragsbruch“ — hafiflik ile içerik uyuşmuyor.",
-  "kind": "explain",
-  "en": "„klingt beiläufig und behauptet einen Vertragsbruch“ — the lightness and the content do not match."
- },
- {
-  "tr": "„Meistens da, wo etwas liegen bleibt.“ Jargonun nötr sözcüğü bir sorunu adlandırıyor.",
-  "kind": "explain",
-  "en": "„Meistens da, wo etwas liegen bleibt.“ A neutral word of the jargon names a problem."
- },
- {
   "tr": "„Sie leben die ersten anderthalb Jahre in einer Familie“ — bölüm bu ailelerle ilgili.",
   "kind": "explain",
   "en": "„Sie leben die ersten anderthalb Jahre in einer Familie“ — the episode is about those families."
@@ -173,16 +158,6 @@
   "tr": "„Sie sitzen daneben, Sie halten das Werkzeug“ — ziyaretçi işin içinde, seyirci değil.",
   "kind": "explain",
   "en": "„Sie sitzen daneben, Sie halten das Werkzeug“ — the visitor is involved, not a spectator."
- },
- {
-  "tr": "„verlangt, dass jemand die Daten prüfen kann“ — en güçlü iddia, en yüksek kanıt yükü.",
-  "kind": "explain",
-  "en": "„verlangt, dass jemand die Daten prüfen kann“ — the strongest claim, the heaviest burden of proof."
- },
- {
-  "tr": "„Wer sicher ist, sagt es meist ohne dieses Wort.“ Vurgunun kendisi bir zayıflık işareti.",
-  "kind": "explain",
-  "en": "„Wer sicher ist, sagt es meist ohne dieses Wort.“ The emphasis is itself a sign of weakness."
  },
  {
   "tr": "„zusammenarbeiten“ ayrılabilen bir fiil; şimdiki zamanda ön ek cümlenin sonuna düşer.",
@@ -233,11 +208,6 @@
   "tr": "Bu cümle sigara içmek için durduğunu söyler; bırakmak için „stopped smoking“ gerekir.",
   "kind": "explain",
   "en": "This sentence says he stopped in order to smoke; for giving up you need „stopped smoking“."
- },
- {
-  "tr": "Bu ünitenin çekirdeği: C1'de nezaket reddi gizlemenin aracıdır, reddin yokluğu değil.",
-  "kind": "explain",
-  "en": "The core of this unit: at C1 politeness is a way of hiding a refusal, not the absence of one."
  },
  {
   "tr": "Çekimli fiil ikinci sırada, „dabei“ cümle sonunda: Wir hatten keinen Schlüssel dabei.",

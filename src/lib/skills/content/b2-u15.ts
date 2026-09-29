@@ -356,7 +356,7 @@ export const b2U15: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 15,
-    title: "Sowohl als auch",
+    title: "Steuern und Generationen",
     genre: "build",
     intro: "sowohl … als auch kapsar, weder … noch dışlar — ve fazladan olumsuzluk istemez.",
     gloss: [

@@ -384,7 +384,7 @@ export const enA1U01: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 1,
-    title: "Questions and answers",
+    title: "Meeting someone new",
     genre: "profile",
     intro: "Soru sormayı ve olumsuz cümleyi yaz. İngilizcede soru, „be“ fiilinin öne geçmesiyle kurulur.",
     gloss: [

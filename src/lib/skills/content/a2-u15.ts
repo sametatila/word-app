@@ -283,7 +283,7 @@ export const a2U15: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 15,
-    title: "Teurer als, am teuersten",
+    title: "Was ist billiger?",
     genre: "grammar",
     intro: "İki şeyi karşılaştır ya da en üstününü söyle — iki ayrı biçim.",
     gloss: [

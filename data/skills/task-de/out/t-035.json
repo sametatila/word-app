@@ -1,35 +1,5 @@
 [
  {
-  "tr": "Koşul kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Bedingungskarte aus."
- },
- {
-  "tr": "Açılış kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Eröffnungskarte aus."
- },
- {
-  "tr": "Bilgi notu kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Briefingkarte aus."
- },
- {
-  "tr": "Öngörü değişecek; paydaşlar hazır; bulgular açık; kaynak söylenmiyor.",
-  "kind": "form.facts",
-  "de": "Die Prognose wird sich ändern; die Beteiligten sind bereit; die Ergebnisse sind klar; die Quelle wird nicht genannt."
- },
- {
-  "tr": "Olumsuz zarf sırayı devirir; yardımcı fiil yoksa „do“ gelir; başka öğe sırayı devirmez; bir konuşmada bir tane yeter.",
-  "kind": "form.facts",
-  "de": "Ein verneinendes Adverb stellt um; fehlt ein Hilfsverb, kommt „do“; andere Glieder stellen nichts um; eines pro Rede genügt."
- },
- {
-  "tr": "Bilseydik senaryo değişirdi; daha iyi planlasaydık kayıp şimdi küçük olurdu; masraf açık olsaydı beklerdik; sınama sonucun nerede yaşadığı.",
-  "kind": "form.facts",
-  "de": "Hätten wir es gewusst, wäre das Szenario anders; hätten wir besser geplant, wäre der Verlust jetzt kleiner; wären die Kosten klar gewesen, hätten wir gewartet; die Probe ist, wo die Folge lebt."
- },
- {
   "tr": "Değişen eşikti.",
   "kind": "build.tr",
   "de": "Es war die Schwelle, die sich änderte."

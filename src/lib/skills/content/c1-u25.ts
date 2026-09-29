@@ -383,7 +383,7 @@ export const c1U25: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 25,
-    title: "Öğüt vermenin dili",
+    title: "Tipps für einen Neuanfang",
     genre: "grammar",
     intro: "Öğüt verme kalıpları ve gerçek dışı kıyas.",
     gloss: [
@@ -431,7 +431,7 @@ export const c1U25: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 25,
-    title: "Sonraki kişiye mektup",
+    title: "Brief an eine Anfängerin",
     genre: "personal",
     intro: "Bugün başlayan birine yaz — abartmadan, küçültmeden.",
     gloss: [

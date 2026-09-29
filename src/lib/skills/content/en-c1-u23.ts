@@ -48,97 +48,85 @@ export const enC1U23: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 23,
-    title: "Nouns without an article",
-    genre: "info",
-    intro: "İki soyut isim ve ortada tanımlık yok. Ne zaman geri geliyor?",
+    title: "Two voices on the tram line",
+    genre: "review",
+    intro: "Tramvay referandumu öncesi iki belge: bir deneme ve bir broşür. Hangisine güvenmeli?",
     gloss: [
-      { de: "nouns", tr: "isimler" },
-      { de: "noun", tr: "isim" },
-      { de: "pair", tr: "çift" },
-      { de: "abstract", tr: "soyut" },
-      { de: "in sight", tr: "ortada" },
-      { de: "bare", tr: "çıplak" },
-      { de: "generally", tr: "genel anlamda" },
+      { de: "rhetoric", tr: "retorik" },
+      { de: "pathos", tr: "abartılı duygusallık" },
       { de: "doubt", tr: "kuşku" },
-      { de: "freedom", tr: "özgürlük" },
-      { de: "as such", tr: "kendisi olarak" },
-      { de: "supplies", tr: "ekliyor" },
-      { de: "translated", tr: "çevrilmiş" },
-      { de: "narrows", tr: "daraltıyor" },
-      { de: "a particular one", tr: "belirli bir tanesi" },
-      { de: "the narrowing", tr: "daraltma" },
-      { de: "the whole phrase", tr: "bütün öbek" },
-      { de: "in both directions", tr: "iki yönde birden" },
-      { de: "countable", tr: "sayılabilir" },
-      { de: "side by side", tr: "yan yana" },
-      { de: "in general", tr: "genel olarak" },
-      { de: "the owners", tr: "sahipler" },
-      { de: "a critic", tr: "eleştirmen" },
-      { de: "competing", tr: "yarışan" },
-      { de: "the same object", tr: "aynı nesne" },
-      { de: "the thread", tr: "ip" },
-      { de: "a paper", tr: "makale" },
-      { de: "a hundred writers", tr: "yüz yazar" },
-      { de: "signal", tr: "sinyal" },
+      { de: "a pamphlet", tr: "broşür" },
+      { de: "a letterbox", tr: "posta kutusu" },
+      { de: "retired", tr: "emekli" },
+      { de: "transport", tr: "ulaşım" },
+      { de: "an engineer", tr: "mühendis" },
+      { de: "a booklet", tr: "kitapçık" },
+      { de: "a referendum", tr: "referandum" },
+      { de: "deserve", tr: "hak etmek" },
+      { de: "congestion", tr: "trafik sıkışıklığı" },
+      { de: "a fence", tr: "çit" },
+      { de: "an owner", tr: "sahip" },
+      { de: "dust", tr: "toz" },
+      { de: "honesty", tr: "dürüstlük" },
+      { de: "history", tr: "tarih" },
     ],
     minutes: 12,
     text:
-      "In the essay it is rhetoric; in the pamphlet, pathos. Two abstract nouns and not an article in sight, and that is the lesson.\n" +
-      "English uses an abstract noun bare when it is meant generally. Rhetoric, pathos, competitiveness, doubt, freedom, work: nothing in front of them at all, and the sentence is about the thing as such.\n" +
-      "A neighboring language puts an article in front of every one of them and keeps it there. So a speaker coming from that side supplies an article English does not want, and the result is a sentence nobody can point at as wrong which nevertheless reads as translated.\n" +
-      "And now the part that makes this a lesson for this level rather than a rule for a first year. The article comes back the moment something narrows the noun. The rhetoric of the pamphlet. The doubt that stopped the project. The competitiveness we lost in one bad decade. A bare noun is the general thing; an article is a signal that a particular one is meant, and the narrowing usually sits in the words after the noun rather than before it.\n" +
-      "So the rule is not that abstract nouns take no article. It is: no article until something narrows it. That is a rule about the whole phrase, and a writer who learns it as a rule about the noun alone will get it wrong in both directions.\n" +
-      "A stylistic device is a choice; a break in style is a mistake. Here both nouns have an article and they should: these are two countable things put side by side, and the sentence is not about devices in general.\n" +
-      "What the critic calls a literary movement, the reader calls a passing fashion. One more pair with the owners attached. A movement is a thing that happened to a hundred writers; a fashion is a thing a reader forgets in one season.\n" +
-      "The two are competing descriptions of the same object, and a paper that quotes only one of them has taken a side and lost the thread inside its own first paragraph.",
+      "REVIEW: TWO VOICES ON THE NEW TRAM LINE\n" +
+      "This month two documents landed in every letterbox in Graz. One is an essay by a retired transport engineer, printed as a booklet by the city library. The other is a pamphlet from the campaign against the tram. In the essay it is rhetoric; in the pamphlet, pathos. Both want your vote in the November referendum, and both deserve a careful reading.\n" +
+      "The essay argues from cost and time. Its author, Dr. Helga Brunner, has built tram lines in three countries, and experience shows on every page. She admits doubt where it belongs: nobody knows how many drivers will leave their cars at home. But she is clear that congestion costs the city money every day, and that competitiveness depends on people reaching work on time. The rhetoric of the essay is quiet. It persuades by listing facts and letting the reader add them up.\n" +
+      "The pamphlet is different. Its cover shows a small shop behind a wall of construction fences, and the headline asks: „Who will pay for your street?“ Fear sells, and the pamphlet knows it. The anger of the shop owners on the main shopping street is real, and so is the dust of two years of building work. What is missing is any number.\n" +
+      "A stylistic device is a choice; a break in style is a mistake. The pamphlet chooses emotion and uses it well until page four, where it suddenly quotes a table of costs that it cannot explain. The table does more damage to its own side than any opponent could.\n" +
+      "Every few years, voters are told that honesty is back in fashion. Honesty is not a fashion. It is a habit, and the essay has it. The pamphlet has energy, and energy is not nothing, but it is not an argument either.\n" +
+      "Read both before November. Trust the one that tells you what it does not know.",
     questions: [
       {
-        text: "When is an abstract noun bare?",
-        options: ["when it is meant generally", "when it is countable", "when it is narrowed"],
+        text: "Who wrote the essay?",
+        options: ["a retired transport engineer", "the campaign against the tram", "the city library"],
         answer: 0,
-        explain: "„English uses an abstract noun bare when it is meant generally.“",
+        explain: "„One is an essay by a retired transport engineer, printed as a booklet by the city library.“",
       },
       {
-        text: "Where does the narrowing usually sit?",
-        options: ["after the noun", "before the noun", "in the verb"],
+        text: "What does the essay argue from?",
+        options: ["cost and time", "fear and anger", "the history of the city"],
         answer: 0,
-        explain: "„the narrowing usually sits in the words after the noun rather than before it.“",
+        explain: "„The essay argues from cost and time.“",
       },
       {
         kind: "truefalse",
-        text: "The rule is: no article until something narrows the noun.",
+        text: "The pamphlet quotes a table that it cannot explain.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„So the rule is not that abstract nouns take no article. It is: no article until something narrows it.“",
+        explain: "„it suddenly quotes a table of costs that it cannot explain.“",
       },
       {
         kind: "gapfill",
-        text: "A stylistic device is a choice; a break in style is a ___.",
+        text: "Fear sells, and the pamphlet ___ it.",
         options: [],
         answer: 0,
-        accept: ["mistake"],
-        explain: "„A stylistic device is a choice; a break in style is a mistake.“",
+        accept: ["knows"],
+        explain: "„Fear sells, and the pamphlet knows it.“",
       },
       {
         kind: "order",
-        text: "Dersin sırası: doğru sıraya koy.",
+        text: "Metnin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
-          "In the essay it is rhetoric; in the pamphlet, pathos.",
-          "The article comes back when something narrows the noun.",
-          "No article until something narrows it.",
-          "A stylistic device is a choice; a break in style is a mistake.",
+          "Two documents arrive in every letterbox.",
+          "The essay admits doubt about the drivers.",
+          "The pamphlet shows a small shop behind fences.",
+          "The reviewer tells readers to read both.",
         ],
-        explain: "Çıplak isim, daraltma, kural; en sonda tanımlıklı çift.",
+        explain: "İki belge, deneme, broşür; en sonda eleştirmenin öğüdü.",
       },
       {
         kind: "short_answer",
-        text: "What is a fashion?",
+        text: "Which document does the reviewer trust more?",
         options: [],
         answer: 0,
-        accept: ["what a reader forgets", "a thing a reader forgets", "forgotten in one season"],
-        explain: "„a fashion is a thing a reader forgets in one season.“",
+        accept: ["the essay", "the booklet", "the engineer's essay"],
+        explain: "„Honesty is not a fashion. It is a habit, and the essay has it.“",
       },
     ],
   },
@@ -153,8 +141,6 @@ export const enC1U23: SkillExercise[] = [
     intro: "İhale bir form olarak, onay bir gecikme olarak sürüyor. Hangisi kimin?",
     gloss: [
       { de: "afterlives", tr: "sonraki hayatlar" },
-      { de: "object", tr: "nesne" },
-      { de: "pronoun", tr: "adıl" },
       { de: "unnamed", tr: "adı verilmemiş" },
       { de: "discovers", tr: "keşfediyor" },
       { de: "builder", tr: "yapan" },
@@ -186,10 +172,10 @@ export const enC1U23: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The bidding process survives as a form, the permitting process as a delay. Two processes, two afterlives, and the second half of the line has no verb because it does not need one.\n" +
+      "The bidding process survives as a form, the permitting process as a delay. Two processes, two afterlives, and anyone who has worked on a public project knows both of them.\n" +
       "A form is a thing somebody fills out. A delay is a thing that happens to somebody, and the difference between those two is the difference between a week of work and a year of waiting at a desk that is not yours.\n" +
-      "The consortium builds; the operating model, it does not name. Here the object has been fronted and the subject is a pronoun, and the shape puts the unnamed thing at the front of the sentence where a reader cannot walk past it.\n" +
-      "That is the whole finding of this lesson. A tender says who builds and is quiet about who runs it afterward, and running it is thirty years of the thirty-two.\n" +
+      "The consortium builds; the operating model, it does not name. The operating model is the part a city will live with for decades, and it is the part the tender leaves unnamed.\n" +
+      "That is the pattern in almost every tender we reviewed. A tender says who builds and is quiet about who runs it afterward, and running it is thirty years of the thirty-two.\n" +
       "The consequence is not a scandal. It is a repair that nobody budgeted: a decade in, somebody discovers that the contract names a builder and a payer and no operator, and the negotiation that follows happens with no competition in the room at all.\n" +
       "The conflicting goals stayed; the cumbersome wording did not. And this is the sentence I would put on the front of any tender file.\n" +
       "The wording was cut because a lawyer read it and found it heavy. The conflict it described was still there the next morning, and now it was not written down anywhere, which made the document shorter and the project longer.\n" +
@@ -224,7 +210,7 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Dersin sırası: doğru sıraya koy.",
+        text: "Metnin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -369,8 +355,8 @@ export const enC1U23: SkillExercise[] = [
       { speaker: "Cenk", text: "The market penetration described above leads to the market saturation discussed below. One number in chapter two and the same number in chapter six, under two names." },
       { speaker: "Cenk", text: "Penetration is a share that is still growing. Saturation is the same share when the growth has stopped, and nothing about the number itself tells you which you are looking at." },
       { speaker: "Cenk", text: "Only the second reading has a ceiling in it, and the whole strategy in that paper depends on which of the two chapters the reader believes." },
-      { speaker: "Cenk", text: "Our competitiveness, as noted earlier, rests on a monopoly position. „As noted earlier“ again, and again I check it." },
-      { speaker: "Cenk", text: "When it is true, the sentence is honest and useful: it tells the reader that a word has changed its color between two chapters." },
+      { speaker: "Cenk", text: "Our competitiveness, as noted earlier, rests on a monopoly position. Was it noted earlier? I always go back and check." },
+      { speaker: "Cenk", text: "When it was, the reminder is honest and useful: it tells the reader that the same fact is doing new work in a new chapter." },
       { speaker: "Cenk", text: "When it is not true, a claim that nobody has made yet is being slipped past the reader as a reminder of something they already agreed to." },
       { speaker: "Cenk", text: "Where a rival can undercut us, no price fixing helps. This is the line I would keep out of any paper that leaves the building." },
       { speaker: "Cenk", text: "It is true and it is also a sentence about a cartel, and a cartel is illegal, and the fine is calculated on revenue rather than on profit." },
@@ -433,16 +419,17 @@ export const enC1U23: SkillExercise[] = [
     unit: 23,
     title: "Style and argument",
     genre: "info",
-    intro: "Çıplak soyut isim ve savın gizlediği hata.",
+    intro: "Referandum broşürleri: cümleler ve bir değerlendirme kartı.",
     gloss: [
-      { de: "bare", tr: "yalın" },
-      { de: "noun", tr: "isim" },
       { de: "rhetoric", tr: "retorik" },
       { de: "pathos", tr: "abartılı duygusallık" },
       { de: "a stylistic device", tr: "üslup aracı" },
       { de: "a line of argument", tr: "akıl yürütme" },
       { de: "a prevailing doctrine", tr: "yerleşik görüş" },
       { de: "a contentious issue", tr: "tartışmalı konu" },
+      { de: "retired", tr: "emekli" },
+      { de: "transport", tr: "ulaşım" },
+      { de: "an engineer", tr: "mühendis" },
     ],
     minutes: 10,
     tasks: [
@@ -478,13 +465,13 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "Tanımlık kartını doldur.",
-        facts: "Genel anlamda soyut isim çıplak; daraltan bir şey gelince tanımlık dönüyor; daraltma çoğunlukla ismin ardında; kural ismin değil öbeğin kuralı.",
+        prompt: "Referandum broşürleri için değerlendirme kartını doldur.",
+        facts: "Denemenin yazarı emekli bir ulaşım mühendisi ve maliyet ile zamandan yola çıkıyor; broşür korkuyla ikna etmeye çalışıyor ve hiç sayı vermiyor; referandum kasımda.",
         fields: [
-          { label: "Meant generally", answer: "no article", accept: ["bare"] },
-          { label: "When narrowed", answer: "the article returns", accept: ["an article"] },
-          { label: "Where the narrowing sits", answer: "after the noun", accept: ["behind it"] },
-          { label: "The rule is about", answer: "the whole phrase", accept: ["the phrase"] },
+          { label: "Author of the essay", answer: "a retired engineer", accept: ["an engineer", "a transport engineer"] },
+          { label: "The essay argues from", answer: "cost and time", accept: ["costs and time"] },
+          { label: "The pamphlet relies on", answer: "fear", accept: ["emotion", "pathos"] },
+          { label: "Date of the vote", answer: "November", accept: ["in November"] },
         ],
       },
     ],

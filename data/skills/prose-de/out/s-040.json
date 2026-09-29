@@ -25,11 +25,6 @@
   "de": "Was die Rechnung senkt. Welche Bedingung ist real?"
  },
  {
-  "tr": "Prospektüsün altı satırı. Neden hep edilgen?",
-  "kind": "intro",
-  "de": "Sechs Zeilen des Beipackzettels. Warum steht alles im Passiv?"
- },
- {
   "tr": "Kip ve edilgen üst üste. Sıra hiç değişmiyor.",
   "kind": "intro",
   "de": "Modalverb und Passiv übereinander. Die Reihenfolge ändert sich nie."
@@ -60,29 +55,9 @@
   "de": "Eine Nacht im Krankenhaus. Welcher Satz ist Plan, welcher verabredet?"
  },
  {
-  "tr": "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor?",
-  "kind": "intro",
-  "de": "Vier Bindewörter, vier Aufgaben. Welches ergänzt, welches warnt?"
- },
- {
   "tr": "Öğüt, koşul ve üç gelecek. Hangisi gerçek, hangisi değil?",
   "kind": "intro",
   "de": "Rat, Bedingung und drei Zukunftsformen. Welche ist real, welche nicht?"
- },
- {
-  "tr": "Aynı konu, üç gelecek biçimi. Hangisi kanaat, hangisi veri?",
-  "kind": "intro",
-  "de": "Dasselbe Thema, drei Zukunftsformen. Welche ist Einschätzung, welche stützt sich auf Zahlen?"
- },
- {
-  "tr": "Kipli edilgen ve koşullar. Hangi koşul gerçek, hangisi değil?",
-  "kind": "intro",
-  "de": "Modalpassiv und Bedingungen. Welche Bedingung ist real, welche nicht?"
- },
- {
-  "tr": "Üç gelecek, üç kanıt derecesi. Hangisi kanaat, hangisi takvim?",
-  "kind": "intro",
-  "de": "Drei Zukunftsformen, drei Grade der Beweiskraft. Welche ist Einschätzung, welche Kalender?"
  },
  {
   "tr": "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor, hangisi değiştiriyor?",
@@ -100,24 +75,9 @@
   "de": "Ein vorher gefasster Entschluss: „going to“."
  },
  {
-  "tr": "Kanaat, veri, takvim, en sonda kuralın kendisi.",
-  "kind": "explain",
-  "de": "Einschätzung, Zahlen, Kalender, zuletzt die Regel selbst."
- },
- {
   "tr": "Öğüt kalıbı: gerçek olmayan koşulda „were“ geliyor.",
   "kind": "explain",
   "de": "Die Ratformel: in der irrealen Bedingung steht „were“ — wie der Konjunktiv „wäre“."
- },
- {
-  "tr": "Doz, reçete, saklama, en sonda emir kipindeki uyarı.",
-  "kind": "explain",
-  "de": "Dosis, Verschreibung, Aufbewahrung, zuletzt die Warnung im Imperativ."
- },
- {
-  "tr": "Metnin kendi sırası: ekleme, ekleme, uyarı, değişim.",
-  "kind": "explain",
-  "de": "Die Ordnung des Textes: ergänzen, ergänzen, warnen, ersetzen."
  },
  {
   "tr": "Aktarılan olumsuz buyrukta „not“ mastarın ÖNÜNE geliyor.",
@@ -190,11 +150,6 @@
   "de": "mir keine Sorgen zu machen"
  },
  {
-  "tr": "ait",
-  "kind": "gloss.tr",
-  "de": "gehört"
- },
- {
   "tr": "buz",
   "kind": "gloss.tr",
   "de": "das Eis"
@@ -208,11 +163,6 @@
   "tr": "bank",
   "kind": "gloss.tr",
   "de": "eine Bank"
- },
- {
-  "tr": "fail",
-  "kind": "gloss.tr",
-  "de": "der Urheber"
  },
  {
   "tr": "form",
@@ -275,11 +225,6 @@
   "de": "Differenz"
  },
  {
-  "tr": "ayrı olarak",
-  "kind": "gloss.tr",
-  "de": "getrennt"
- },
- {
   "tr": "bozmak",
   "kind": "gloss.tr",
   "de": "verderben"
@@ -288,11 +233,6 @@
   "tr": "broşür",
   "kind": "gloss.tr",
   "de": "Faltblatt"
- },
- {
-  "tr": "en alt",
-  "kind": "gloss.tr",
-  "de": "ganz unten"
  },
  {
   "tr": "kamyon",
@@ -330,19 +270,9 @@
   "de": "wo er stand"
  },
  {
-  "tr": "ekliyor",
-  "kind": "gloss.tr",
-  "de": "ergänzt"
- },
- {
   "tr": "konuşma",
   "kind": "gloss.tr",
   "de": "gesprochene Sprache"
- },
- {
-  "tr": "tersine",
-  "kind": "gloss.tr",
-  "de": "rückwärts"
  },
  {
   "tr": "üstelik",
@@ -353,11 +283,6 @@
   "tr": "alınıyor",
   "kind": "gloss.tr",
   "de": "wird eingenommen"
- },
- {
-  "tr": "bozulmuş",
-  "kind": "gloss.tr",
-  "de": "verunreinigt"
  },
  {
   "tr": "davranış",
@@ -375,11 +300,6 @@
   "de": "Blutdruck"
  },
  {
-  "tr": "ulaşması",
-  "kind": "gloss.tr",
-  "de": "dass es ankommt"
- },
- {
   "tr": "anlaşılan",
   "kind": "gloss.tr",
   "de": "offenbar"
@@ -393,11 +313,6 @@
   "tr": "çıkarılan",
   "kind": "gloss.tr",
   "de": "weggelassen"
- },
- {
-  "tr": "daha ağır",
-  "kind": "gloss.tr",
-  "de": "schwerer"
  },
  {
   "tr": "değişecek",
@@ -473,11 +388,6 @@
   "tr": "geriye tarihlemek",
   "kind": "gloss.tr",
   "de": "rückdatieren"
- },
- {
-  "tr": "kendi yazdıklarım",
-  "kind": "gloss.tr",
-  "de": "in meinen eigenen Texten"
  },
  {
   "tr": "aciliyet sıralaması",

@@ -37,55 +37,57 @@ export const enB1U07: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 7,
-    title: "Three items from this week",
+    title: "News about the river bridge",
     genre: "report",
-    intro: "Üç haber, üç edilgen biçim. Hangisi bitti, hangisi sürüyor?",
+    intro: "Yerel gazetede köprü haberi. Ne bitti, ne hâlâ sürüyor?",
     gloss: [
       { de: "city council", tr: "belediye meclisi" },
       { de: "figures", tr: "rakamlar" },
       { de: "so far", tr: "şimdiye kadar" },
-      { de: "verbs", tr: "fiiller" },
       { de: "bridge", tr: "köprü" },
-      { de: "event", tr: "olay" },
-      { de: "sentence", tr: "cümle" },
       { de: "lane", tr: "şerit" },
-      { de: "appears", tr: "geçiyor" },
+      { de: "an engineer", tr: "mühendis" },
+      { de: "a truck", tr: "kamyon" },
+      { de: "a route", tr: "güzergâh" },
+      { de: "a cyclist", tr: "bisikletli" },
+      { de: "a warning sign", tr: "uyarı levhası" },
+      { de: "an investigation", tr: "soruşturma" },
     ],
     minutes: 7,
     text:
-      "Three short items from this week, and three different things happening to three verbs.\n" +
-      "The report on the bridge was published last week. It is finished, it is on the website, and the figures in it are from March. That is a closed event and the language shows it.\n" +
-      "A decision was announced by the city council on Tuesday. Here the source is named, because a decision without a name behind it is not news. The council announced it; the sentence is turned over to put the decision first.\n" +
-      "The case is being investigated. Nothing is finished. Nobody has said who did what. This form says one thing only: the work is happening now and there is no result yet.\n" +
-      "A witness has claimed that the second lane was closed on Monday morning. Claimed, not said — the paper is telling you it has one voice for this and no official source.\n" +
-      "So far the city council has not answered our questions. That line appears in almost every report of this kind and it is the most honest one on the page.",
+      "RIVER BRIDGE: WHAT WE KNOW THIS WEEK\n" +
+      "The report on the old river bridge was published last week. It was written by two engineers from the university, and it states that the bridge is safe for cars but not for heavy trucks. The figures in it are from March.\n" +
+      "On Tuesday a decision was announced by the city council: from the first of June, trucks will not be allowed on the bridge. A new route is being planned, and a map will be sent to local businesses next month.\n" +
+      "There is also a second story. On Monday morning a cyclist was hurt on the bridge, and the case is being investigated by the police. A witness has claimed that the second lane was closed without any warning signs. This has not been confirmed by an official source.\n" +
+      "The bridge is being repaired at night, so it is open during the day. Drivers are asked to be patient and to follow the signs.\n" +
+      "So far the city council has not answered our questions about the accident. We will report again when the investigation is finished.",
     questions: [
       {
-        text: "Which item is finished?",
-        options: ["the report on the bridge", "the case", "the questions"],
+        text: "Who wrote the report on the bridge?",
+        options: ["two engineers from the university", "the city council", "a witness"],
         answer: 0,
-        explain: "„The report on the bridge was published last week. It is finished…“",
+        explain: "„It was written by two engineers from the university…“",
       },
       {
-        text: "What does „is being investigated“ tell the reader?",
-        options: ["the work is happening now", "the work is finished", "nobody is working on it"],
+        text: "What will change from the first of June?",
+        options: ["Trucks will not be allowed on the bridge.", "The bridge will close for cars.", "The bridge will be repaired during the day."],
         answer: 0,
-        explain: "„This form says one thing only: the work is happening now and there is no result yet.“",
+        explain: "„from the first of June, trucks will not be allowed on the bridge.“",
       },
       {
         kind: "truefalse",
-        text: "The city council has not answered the questions.",
+        text: "The city council has not answered the questions about the accident.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„So far the city council has not answered our questions.“",
+        explain: "„So far the city council has not answered our questions about the accident.“",
       },
       {
         kind: "gapfill",
-        text: "The decision was announced by the ___.",
+        text: "The case is being investigated by the ___.",
         options: [],
         answer: 0,
-        accept: ["council"],
-        explain: "„A decision was announced by the city council on Tuesday.“",
+        accept: ["police"],
+        explain: "„On Monday morning a cyclist was hurt on the bridge, and the case is being investigated by the police.“",
       },
       {
         kind: "order",
@@ -95,18 +97,18 @@ export const enB1U07: SkillExercise[] = [
         items: [
           "The report was published last week.",
           "A decision was announced by the city council.",
-          "The case is being investigated.",
+          "The case is being investigated by the police.",
           "The city council has not answered our questions.",
         ],
         explain: "Bitmiş olay, duyurulan karar, süren soruşturma, cevapsız soru.",
       },
       {
         kind: "short_answer",
-        text: "Why does the paper write „claimed“?",
+        text: "When is the bridge being repaired?",
         options: [],
         answer: 0,
-        accept: ["one voice only", "no official source", "it is not confirmed"],
-        explain: "„the paper is telling you it has one voice for this and no official source.“",
+        accept: ["at night", "during the night"],
+        explain: "„The bridge is being repaired at night, so it is open during the day.“",
       },
     ],
   },

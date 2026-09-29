@@ -90,11 +90,6 @@
   "en": "A new neighbor rings the doorbell."
  },
  {
-  "tr": "Aynı işlev, farklı ağırlık.",
-  "kind": "explain",
-  "en": "Same function, different weight."
- },
- {
   "tr": "Üç konunun kalıplarını yaz.",
   "kind": "intro",
   "en": "Write the phrases for three topics."
@@ -178,11 +173,6 @@
   "tr": "mit + Dativ, artikel korunur.",
   "kind": "explain",
   "en": "mit + dative, the article stays."
- },
- {
-  "tr": "Yanlış olmuyor — ağırlaşıyor.",
-  "kind": "explain",
-  "en": "It does not become wrong — it becomes heavy."
  },
  {
   "tr": "„der Tisch“ eril; ein → einen.",
@@ -300,11 +290,6 @@
   "en": "„Ich bin Ärztin.“ — a woman doctor."
  },
  {
-  "tr": "Ara çözümün dürüst adı ara çözüm.",
-  "kind": "explain",
-  "en": "The honest name for a stopgap is stopgap."
- },
- {
   "tr": "Doğru: „Zwei Wochen, jedes Jahr.“",
   "kind": "explain",
   "en": "True: „Zwei Wochen, jedes Jahr.“"
@@ -415,11 +400,6 @@
   "en": "A customer asks a question at the supermarket."
  },
  {
-  "tr": "„Streichen Sie ihn. Steht der Satz noch, war es eine.“ Ara açıklama tamamlayıcıdır, sınırlandırıcı değil.",
-  "kind": "explain",
-  "en": "„Streichen Sie ihn. Steht der Satz noch, war es eine.“ An apposition adds; it does not restrict."
- },
- {
   "tr": "Yeni komşulara bırakılmış bir not.",
   "kind": "intro",
   "en": "A note left for the new neighbors."
@@ -470,11 +450,6 @@
   "en": "Not decoration, but a description of the work left."
  },
  {
-  "tr": "Tek sözcük bütün bir öbeği taşıyor.",
-  "kind": "explain",
-  "en": "One word carries a whole phrase."
- },
- {
   "tr": "Üç kişi hafta sonu planını yazıyor.",
   "kind": "intro",
   "en": "Three people write their weekend plans."
@@ -523,11 +498,6 @@
   "tr": "Evini anlat: kaç oda, ne var, nasıl?",
   "kind": "intro",
   "en": "Describe your home: how many rooms, what is in it, what is it like?"
- },
- {
-  "tr": "Çekimli fiil olmadan, iki sözcüklü tam bir katkı.",
-  "kind": "explain",
-  "en": "A complete contribution in two words, with no finite verb."
  },
  {
   "tr": "Funktionsverbgefüge ve kademe farkı.",
@@ -598,16 +568,6 @@
   "tr": "„Mir geht es gut, danke!“ — Sara iyi.",
   "kind": "explain",
   "en": "„Mir geht es gut, danke!“ — Sara is well."
- },
- {
-  "tr": "Ağırlık cümle yapısıyla kaydırılıyor.",
-  "kind": "explain",
-  "en": "The weight is shifted by the sentence structure."
- },
- {
-  "tr": "Aynı cümle ya tahmin ya isnat oluyor.",
-  "kind": "explain",
-  "en": "The same sentence becomes either a guess or an allegation."
  },
  {
   "tr": "Drogeride bir müşteri bir şey arıyor.",

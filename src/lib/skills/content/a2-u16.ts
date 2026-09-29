@@ -288,7 +288,7 @@ export const a2U16: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 16,
-    title: "Ayrılabilen fiil, geçmiş zaman",
+    title: "Koffer packen",
     genre: "grammar",
     intro: "Ön ek başta kalır, ge- ortaya girer: einpacken → eingepackt.",
     gloss: [

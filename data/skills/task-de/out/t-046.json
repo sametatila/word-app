@@ -1,30 +1,5 @@
 [
  {
-  "tr": "Niteleme kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Attributkarte aus."
- },
- {
-  "tr": "Genel özne kartını doldur.",
-  "kind": "form.prompt",
-  "de": "Fülle die Karte zum unbestimmten Subjekt aus."
- },
- {
-  "tr": "„One“ duvar koyuyor; „we“ yazarı içeri alıyor; „you“ okura çeviriyor; edilgen hiç kimseyi adlandırmıyor; yansız seçenek yok.",
-  "kind": "form.facts",
-  "de": "„One“ stellt eine Wand auf; „we“ holt den Schreibenden in die Gruppe; „you“ dreht den Satz zum Leser; das Passiv nennt niemanden; eine neutrale Möglichkeit gibt es nicht."
- },
- {
-  "tr": "Yalın isimle biten karşılaştırmanın iki okuması var; Almanca durum ekiyle kapatıyor; tek onarım fiili geri koymak; yardımcı fiilin kendi anlamı yok.",
-  "kind": "form.facts",
-  "de": "Ein Vergleich, der auf ein bloßes Nomen endet, hat zwei Lesarten; das Deutsche schließt die Lücke mit der Kasusendung; die einzige Reparatur ist, das Verb zurückzusetzen; das Hilfsverb hat keine eigene Bedeutung."
- },
- {
-  "tr": "İngilizce niteleyeni ismin ardına parça parça asıyor; öbek her noktada tamamlanmış oluyor; Almanca önden bir parantez kuruyor; parantezin bir boyu var.",
-  "kind": "form.facts",
-  "de": "Das Englische hängt das Attribut Stück für Stück hinter das Nomen; die Phrase ist an jeder Stelle abgeschlossen; das Deutsche baut von vorn eine Klammer; und eine Klammer hat eine Länge."
- },
- {
   "tr": "Göçmen kökeni bir göç akışı değildir.",
   "kind": "build.tr",
   "de": "Ein Migrationshintergrund ist keine Migrationsbewegung."

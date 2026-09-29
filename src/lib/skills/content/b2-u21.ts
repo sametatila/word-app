@@ -360,7 +360,7 @@ export const b2U21: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 21,
-    title: "Als ob und dürfte",
+    title: "Nach dem Streit",
     genre: "build",
     intro: "als ob gerçek olmayanı, öznel kip ise kesinliğin derecesini işaretler.",
     gloss: [

@@ -284,7 +284,7 @@ export const a2U12: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 12,
-    title: "dass — und wohin geht das Verb?",
+    title: "Nachrichten im Büro",
     genre: "grammar",
     intro: "Yan cümlede fiil sona gider. Geçmiş zaman varsa yardımcı fiil EN sona.",
     gloss: [
