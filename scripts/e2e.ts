@@ -909,8 +909,9 @@ async function main() {
     // Konuşmanın yayı: her faz kendi yönergesini almalı. Tek "kapanış" bayrağı
     // yetmiyordu — kapanıştan bir tur önce toparlama olmayınca konuşma
     // bitmiyor, kesiliyordu.
-    check("amaç isteme giriyor", prompt.includes("KONUŞMANIN AMACI") && prompt.includes(conversation.chat.goal));
-    check("yay isteme giriyor", prompt.includes("KONUŞMANIN YAYI"));
+    // İstem kısaldı (e644a43be): amaç ve yay "BU KONUŞMA" bloğunda tek satır.
+    check("amaç isteme giriyor", prompt.includes("Amaç (buraya varınca konuşma biter") && prompt.includes(conversation.chat.goal));
+    check("yay isteme giriyor", prompt.includes(`Yay: ${conversation.chat.minTurns} turluk`));
     check("açılış yönergesi istenince var", chatPrompt(conversation, { phase: "open" }).includes("ŞU AN: AÇILIŞ"));
     check("toparlama yönergesi istenince var", chatPrompt(conversation, { phase: "wrapup" }).includes("TOPARLAMA TURU"));
     check("kapanış talimatı istenince var", chatPrompt(conversation, { phase: "closing" }).includes("KAPANIŞ TURU"));
