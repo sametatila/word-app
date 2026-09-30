@@ -182,9 +182,14 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * bildirim gönüllü ve bağlamdaki veriler hizmetin zaten işlediği veriler
  * (profildeki kurs ve dil, oturumdaki platform ve sürüm); var olan bir
  * işlemenin anlatımı kapsamıyla eşitlendi.
+ *
+ * 1.9.0 (2026-09-30) YENİ ALICI, bu yüzden küçük basamak: dil modeli artık
+ * birincil olarak Cloudflare Workers AI (Gemma 4 26B), yedek Groq. Mistral AI
+ * ve Cerebras alıcılardan çıktı. Metin rızası sürümü 2 (liste değişti; izin bir
+ * kez yeniden soruluyor). Toplanan veri ve süreler aynı.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-29";
-export const LEGAL_VERSION = "1.8.10";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-30";
+export const LEGAL_VERSION = "1.9.0";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -413,6 +418,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* KÜÇÜK BASAMAK: yeni alıcı (Cloudflare Workers AI, dil modeli); iki alıcı çıktı. Metin rızası sürüm 2. */
+    version: "1.9.0",
+    date: "2026-09-30",
+    changes: {
+      tr: [
+        "Dil modeli sağlayıcıları değişti: yazdıkların ve söylediklerin, izin verdiysen, artık öncelikle Cloudflare Workers AI'a, o yanıt veremezse Groq'a gönderilir. Mistral AI ve Cerebras artık veri almıyor. Cloudflare girdiyi model eğitiminde kullanmıyor ve saklamıyor; Groq'ta sıfır veri saklama açık. Alıcı listesi değiştiği için yapay zekâ izni bir kez yeniden sorulur. Toplanan veri ve saklama süreleri değişmedi.",
+      ],
+      en: [
+        "Language model providers changed: if you have given permission, what you write and say is now sent primarily to Cloudflare Workers AI and, if it cannot respond, to Groq. Mistral AI and Cerebras no longer receive data. Cloudflare does not use the input to train models and does not store it; zero data retention is on at Groq. Because the list of recipients changed, the AI permission is asked once more. The data collected and the retention periods did not change.",
+      ],
+      de: [
+        "Die Sprachmodell-Anbieter haben sich geändert: Wenn du es erlaubt hast, wird, was du schreibst und sagst, jetzt vorrangig an Cloudflare Workers AI und, falls es nicht antworten kann, an Groq gesendet. Mistral AI und Cerebras erhalten keine Daten mehr. Cloudflare nutzt die Eingaben nicht zum Trainieren von Modellen und speichert sie nicht; bei Groq ist die Nullspeicherung aktiv. Da sich die Liste der Empfänger geändert hat, wird die KI-Erlaubnis einmal erneut abgefragt. Die erhobenen Daten und die Speicherfristen haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: hizmet iletileri listesine abonelik bildirimi eklendi (deneme bitmeden hatırlatma,
        lib/premium/trial-reminder). Yeni veri, alıcı ya da süre yok: hesabın zaten işlenen e-posta adresine ve
@@ -1019,25 +1040,19 @@ const REGIONS = {
     - `scc`: sağlayıcının herkese sunduğu veri işleme koşulları AB Standart
       Sözleşme Hükümlerini içeriyor ve hesap açılınca geçerli oluyor
       (Groq, Deepgram, Resend, RevenueCat, Firebase, Cloudflare).
-    - `providerTerms`: sağlayıcının API şartları geçerli ama SCC'nin
-      kapsamda olduğu doğrulanmadı (Cerebras). İddia edilmiyor.
     - `independentController`: mağazalar ve giriş sağlayıcıları bizim
       işleyenimiz değil, kendi hizmetleri için kendileri sorumlu; aktarım
       kullanıcının seçtiği hizmetin kendisi için gerekli.
 
   TODO(Samet): her sağlayıcının DPA'sını hesapta kabul et/indir ve bir
-  klasörde sakla; Cerebras'ta SCC'li DPA varsa satırı `scc`e çek.
+  klasörde sakla. `providerTerms` (SCC doğrulanmamış) 1.9.0'da Cerebras'la
+  birlikte kalktı; böyle bir sağlayıcı gelirse geri eklenir.
 */
 const SAFEGUARDS = {
   scc: {
     tr: "AB Standart Sözleşme Hükümleri (sağlayıcının veri işleme koşullarında)",
     en: "EU Standard Contractual Clauses (in the provider's data processing terms)",
     de: "EU-Standardvertragsklauseln (in den Auftragsverarbeitungsbedingungen des Anbieters)",
-  },
-  providerTerms: {
-    tr: "Sağlayıcının API ve veri işleme şartları",
-    en: "The provider's API and data processing terms",
-    de: "API- und Datenverarbeitungsbedingungen des Anbieters",
   },
   independentController: {
     tr: "Sağlayıcı kendi hizmeti için bağımsız veri sorumlusu; aktarım seçtiğin hizmet için gerekli",
@@ -1163,9 +1178,14 @@ export const PROCESSORS: Processor[] = [
   { name: "Microsoft Azure Speech", purpose: "sttTts", data: "audioAndTtsText", region: "eu", safeguard: "euAdequacy", when: "walkAndTts" },
   { name: "Groq", purpose: "sttWhisperLlm", data: "audioAndTexts", region: "us", safeguard: "scc" },
   { name: "Deepgram", purpose: "stt", data: "audio", region: "us", safeguard: "scc" },
-  /* Ses almıyor (2026-09-25, G5): yalnız dil modeli. */
-  { name: "Mistral AI", purpose: "llm", data: "texts", region: "eu", safeguard: "euAdequacy" },
-  { name: "Cerebras", purpose: "llm", data: "texts", region: "us", safeguard: "providerTerms" },
+  /*
+    BİRİNCİL DİL MODELİ (1.9.0, 2026-09-30): Workers AI, Gemma 4 26B. Girdi
+    modeli eğitmek için kullanılmıyor ve saklanmıyor (Cloudflare Workers AI
+    şartları). Çıkarım Cloudflare'in ağında, bölge garantisi yok; aktarım
+    güvencesi ağ satırıyla aynı veri işleme koşulları. Mistral AI ve Cerebras
+    aynı sürümde çıktı (ücretsiz API'leri kapandı, Samet).
+  */
+  { name: "Cloudflare Workers AI", purpose: "llm", data: "texts", region: "globalNetwork", safeguard: "scc" },
   { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "independentController", when: "googleSignInChosen" },
   /*
     Apple ile giriş web'de, Android'de ve iOS'ta açık (canlı `/api/config`:

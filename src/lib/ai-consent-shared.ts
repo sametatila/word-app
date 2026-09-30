@@ -4,7 +4,7 @@
  * `M/src/lib/aiConsent.ts` ve adlar orada da aynı.
  *
  * NEDEN VAR. Kullanıcının yazdığı ve söylediği metin dil modeli sağlayıcılarına
- * (Groq, Mistral, Cerebras), ekran kapalı yürüyüşteki ve telaffuz puanındaki ses
+ * (Cloudflare Workers AI, Groq), ekran kapalı yürüyüşteki ve telaffuz puanındaki ses
  * konuşma tanıma sağlayıcılarına gidiyor. Uygulamada bunu anlatan bir bilgi
  * notu vardı ama İZİN İSTENMİYORDU:
  *
@@ -36,7 +36,8 @@ export type AiConsentPurpose = (typeof AI_CONSENT_PURPOSES)[number];
 
 /** Yürürlükteki metin sürümü — rıza bu sayı ve üstüyle verilmişse geçerli. */
 export const AI_CONSENT_VERSIONS: Record<AiConsentPurpose, number> = {
-  ai_text: 1,
+  /* 2 (2026-09-30): Cloudflare Workers AI girdi, Mistral AI ve Cerebras çıktı. */
+  ai_text: 2,
   /* 2 (2026-09-25): Mistral AI ses alıcılarından çıktı (denetim G5).
      3 (2026-09-27): Cloudflare Workers AI ve Speechmatics çıktı; ses yalnız
      ekran kapalı yürüyüşte sunucuya gidiyor. */
@@ -48,7 +49,7 @@ export const AI_CONSENT_VERSIONS: Record<AiConsentPurpose, number> = {
  * burası değişmezse `test-legal` kırılır; burası değişirken sürüm de artmalı.
  */
 export const AI_CONSENT_FINGERPRINT: Record<AiConsentPurpose, string> = {
-  ai_text: "Cerebras|Groq|Mistral AI",
+  ai_text: "Cloudflare Workers AI|Groq",
   ai_voice: "Deepgram|Groq|Microsoft Azure Speech",
 };
 
