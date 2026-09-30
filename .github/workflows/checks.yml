@@ -483,6 +483,10 @@ jobs:
       # Support URL alanına giriyor).
       - name: Hukuki metinler
         run: npm run test:legal
+      # Veri beyanları: iOS manifesti, App Store ve Play form kayıtları, gizlilik
+      # politikası ve alıcılar tablosu aynı şeyi söylüyor mu (scripts/check-declarations.ts).
+      - name: Veri beyanları tutarlılığı
+        run: npm run check:declarations
       # Web Push abonelik adresi izin listesi. Sunucu kayıtlı adrese POST atıyor;
       # liste gevşerse kayıtlı bir kullanıcı sunucuya iç ağa istek attırabilir
       # (kör SSRF, güvenlik denetimi 2026-09-14 #7). Veritabanı istemez.

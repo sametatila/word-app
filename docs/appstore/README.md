@@ -46,7 +46,8 @@ temsilcisi (`LEGAL_ENTITY`, gerekçe `docs/play/listing.md` §5). Künye `/impre
 
 Hiçbir tür izleme (tracking) için kullanılmıyor: reklam kimliği yok, üçüncü taraf reklam,
 analitik ya da çökme raporlama SDK'sı yok. Tablo `mobile/ios/Lernomi/PrivacyInfo.xcprivacy` ile
-**birebir** olmalı; satır eklenirse manifest aynı commit'te değişir.
+**birebir** olmalı; satır eklenirse manifest aynı commit'te değişir. Kapı: `npm run check:declarations`
+(CI; manifest, bu tablo, Play kaydı, gizlilik politikası ve alıcılar tablosu).
 
 | Apple kategorisi | Toplanıyor | Kimliğe bağlı | Amaç |
 |---|---|---|---|

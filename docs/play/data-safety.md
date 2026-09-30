@@ -34,6 +34,9 @@ işaretli olduğu için mağaza girişinin "Toplanan" listesinde görünmüyor, 
 
 ## Veri türleri
 
+Satır ya da "Paylaşılıyor" sütunundaki sağlayıcılar değişince iOS manifesti, App Store tablosu ve alıcılar
+tablosu aynı commit'te değişir; kapı `npm run check:declarations` (CI).
+
 | Kategori › Veri türü | Toplanıyor | Paylaşılıyor | Geçici | Zorunlu | Amaçlar |
 |---|---|---|---|---|---|
 | Kişisel bilgi › Ad | Evet | Hayır | Hayır | Zorunlu | Hesap yönetimi, kişiselleştirme |
