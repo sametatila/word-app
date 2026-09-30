@@ -141,14 +141,14 @@ export async function POST(req: Request) {
    *
    * Değiştirilmiş bir istemci hak sayacını hiç çağırmadan sınırsız değerlendirme
    * isteyebilirdi. Günlük çağrı tavanı buna karşı: alıştırma başına birkaç
-   * değerlendirmeye izin verecek kadar cömert (×4), tek bir hesabın Mistral
+   * değerlendirmeye izin verecek kadar cömert (×4), tek bir hesabın dil modeli
    * bütçesini yakmasına izin vermeyecek kadar dar.
    *
    * Güvenlik denetimi F2 (2026-09-14): tavan eskiden yalnız `if (gated)`
    * içindeydi ve `sentence` bilerek gated değildi — o yol yalnız assess.ts'teki
    * read-then-act sayaçla (`n >= dailyLimit()`) korunuyordu. Bu klasik bir
    * TOCTOU: eşzamanlı `sentence` burst'ünde hepsi `n < limit` okuyup gerçek
-   * Mistral çağrısı yapıyordu; üstüne client `day` (±1) sayacı üç kovaya bölüp
+   * dil modeli çağrısı yapıyordu; üstüne client `day` (±1) sayacı üç kovaya bölüp
    * ~3× aşmaya izin veriyordu. Atomik `takeUsage` sunucu-günü anahtarlı ve
    * yarış-güvenli (ON CONFLICT ... count < limit); tüm türleri kapsayacak
    * şekilde `if (gated)` dışına alındı. Premium kapısı yukarıda gated kalır.

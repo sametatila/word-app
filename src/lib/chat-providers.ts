@@ -9,22 +9,15 @@ import "server-only";
  * `baseUrl` + anahtar değişimiyle aralarında dönülebiliyor. Limiti dolan
  * sağlayıcı atlanır, 429/5xx'te sıradakine düşülür.
  *
- * Sıra **dakikadaki istek hakkına** göre kuruluyor, günlük token hakkına
- * göre değil. Ölçüm bunu tersine çevirdi: sohbette darboğaz token değil,
- * eşzamanlı istek. Cerebras günde 1M token veriyor ama dakikada yalnızca
- * 5 istek — iki kişi aynı anda yazışırsa hemen 429 geliyor. Bu yüzden en
- * cömert görünen sağlayıcı birincil değil.
+ * SIRA (2026-09-30, Samet): Cloudflare Workers AI (Gemma 4 26B) birincil, Groq
+ * (gpt-oss-120b) yedek. Mistral ücretsiz API'sini kaldırdı (canlıda 2026-09-04'ten
+ * beri her çağrı 429), Cerebras kartsız ücretsiz katmanı kaldırdı; ikisi de
+ * katalogdan, env'den ve alıcılar tablosundan kalıcı olarak çıktı. Kalite ve
+ * jeton ölçümü: `npm run test:chat` ve `npm run test:assess` (Gemma 4 ile
+ * gpt-oss-120b aynı ölçütleri geçiyor; maliyet docs/premium/README.md §2.4).
  *
- * Limitler ve gecikmeler `npm run test:chat` ile ölçüldü (yanıt başlıkları
- * + 8 turluk A2 senaryosu, bkz. scripts/chat-eval.ts).
- *
- * NVIDIA NIM denendi ve elendi: ilan edilen 40 istek/dk kâğıt üzerinde kalıyor,
- * çünkü ücretsiz katman paylaşımlı bir işçi havuzunda kuyruğa giriyor. Ölçümde
- * ilk bayt tutarlı biçimde 25-29 saniye sürdü ve çoğu istek
- * "Worker local total request limit reached" ile döndü — sohbet için kullanılamaz.
- *
- * Anahtarı olmayan sağlayıcı listeye hiç girmez. Zincir uzadıkça toplam
- * dakikalık kapasite toplanır — 20 kullanıcı hedefi tek sağlayıcıyla tutmuyor.
+ * Anahtarı olmayan sağlayıcı listeye hiç girmez. Birincil 429 ya da 5xx
+ * verince soğumaya girer ve istek yedeğe düşer.
  *
  * KATALOĞA SAĞLAYICI EKLEMEK ENV İŞİ DEĞİL, BEYAN İŞİ. Buraya giren her
  * sağlayıcı, kullanıcının yazdığı ve söylediği metni alan bir ALICIDIR ve
@@ -42,90 +35,84 @@ import "server-only";
  */
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
-export type ProviderName =
-  | "mistral"
-  | "groq"
-  | "cerebras";
+export type ProviderName = "cloudflare" | "groq";
 
 type ProviderConfig = {
-  baseUrl: string;
+  /** Sabit adres ya da env'den kurulan adres (hesap/kaynak kimliği adreste). Boş dönerse sağlayıcı kapalı. */
+  baseUrl: string | (() => string);
   envKey: string;
   envModel: string;
   defaultModel: string;
   /** Ücretsiz katman sınırı — kullanıcıya durum anlatırken işe yarıyor. */
   freeTier: string;
   /**
-   * Akıl yürütme modelleri için düşünme bütçesi.
-   *
-   * Ölçülerek eklendi. gpt-oss-120b varsayılan ayarda cevaptan önce uzun bir
-   * akıl yürütme üretiyor ve bu jeton bütçesinden düşüyor: max_tokens=120 ile
-   * yapılan istek `finish_reason: "length"` ve **boş içerik** dönüyordu, yani
-   * koç Cerebras'tan hiçbir zaman cevap alamıyordu.
-   *
-   *   120 jeton, varsayılan → içerik 0, akıl yürütme 418 karakter
-   *   120 jeton, "low"      → içerik 191 karakter ✓
-   *   400 jeton, varsayılan → çalışıyor ama 873 karakter boşa gidiyor
-   *
-   * "low" hem hatayı kapatıyor hem dakikalık jeton limitini koruyor. Yalnızca
-   * bu alanı tanıyan sağlayıcıya gönderiliyor: bilinmeyen alan diğerlerinde
-   * isteği reddettirebilir.
-   */
-  reasoningEffort?: string;
-  /**
    * Konuşmayı yazıya çeviren uç ve modeli.
    *
    * Yalnız Groq'ta dolu: ses zincirindeki tek OpenAI biçimli sağlayıcı
-   * (`{baseUrl}/audio/transcriptions`). Mistral'ın ses modeli 2026-09-27'de
-   * katalogdan da çıktı (ses zincirinden kalıcı çıkış, Samet).
+   * (`{baseUrl}/audio/transcriptions`).
    */
   sttModel?: string;
   sttEnvModel?: string;
 };
 
 const CATALOG: Record<ProviderName, ProviderConfig> = {
-  mistral: {
-    // Ölçüm: 50 istek/dk, 25K token/dk, ayda 1 milyar token. Dakikalık hak
-    // bakımından en genişi, o yüzden birincil. 3/3 hatayı yakaladı.
-    baseUrl: "https://api.mistral.ai/v1",
-    envKey: "MISTRAL_API_KEY",
-    envModel: "MISTRAL_MODEL",
-    defaultModel: "mistral-medium-latest",
-    freeTier: "50 istek/dk · 1B token/ay",
+  cloudflare: {
+    // Workers AI: günde 10.000 neuron ücretsiz, sonrası $0.011/1K neuron
+    // (Workers Paid). Girdiyle eğitim ve saklama yok. Model başına dakikada
+    // 300 istek. Adres hesap kimliğini taşıyor.
+    baseUrl: () => {
+      const acc = process.env.CLOUDFLARE_ACCOUNT_ID;
+      return acc ? `https://api.cloudflare.com/client/v4/accounts/${acc}/ai/v1` : "";
+    },
+    envKey: "CLOUDFLARE_AI_TOKEN",
+    envModel: "CLOUDFLARE_AI_MODEL",
+    defaultModel: "@cf/google/gemma-4-26b-a4b-it",
+    freeTier: "10K neuron/gün",
   },
   groq: {
-    // Ölçüm: en hızlısı (~191ms ilk parça) ama 12K token/dk — bir sohbet turu
-    // ~1.7K token olduğu için pratikte ~7 istek/dk'ya denk geliyor.
+    // En hızlısı. Ücretsiz katmanda 8K token/dk ve 200K token/gün: yedek
+    // olarak yeter, birincil olarak yetmez. Sıfır veri saklama açık.
     baseUrl: "https://api.groq.com/openai/v1",
     envKey: "GROQ_API_KEY",
     envModel: "GROQ_MODEL",
     // 2026-08: `llama-3.3-70b-versatile` Groq'tan kaldırıldı (404 "model does
-    // not exist") ve zincirdeki yedek sessizce ölmüştü — WP-30 kalite testinde
-    // Mistral 429 verince ortaya çıktı. Kataloğun bugünkü genel modeli
-    // gpt-oss-120b; akıl yürütme modeli olduğu için düşünme bütçesi kısılıyor
-    // (Cerebras'taki aynı modelle aynı ayar).
+    // not exist") ve zincirdeki yedek sessizce ölmüştü. gpt-oss-120b akıl
+    // yürütme modeli; düşünme bütçesi `modelOptions`ta kısılıyor.
     defaultModel: "openai/gpt-oss-120b",
-    freeTier: "12K token/dk · 1000 istek/gün",
-    reasoningEffort: "low",
+    freeTier: "8K token/dk · 200K token/gün",
     // Ücretsiz katmanı bu iş için fazlasıyla geniş: günde 2.000 istek ve
     // 28.800 saniye ses. Bir yürüyüş turu ~20 saniyelik ses demek.
     sttModel: "whisper-large-v3-turbo",
     sttEnvModel: "GROQ_STT_MODEL",
   },
-  cerebras: {
-    // Ölçüm: kalite ve hız iyi, ama dakikada 5 istek. Günlük 1M token bu
-    // tavanın arkasında erişilemez kalıyor; zincirde ancak taze dakika
-    // yakalayan bir yedek olarak anlamlı.
-    baseUrl: "https://api.cerebras.ai/v1",
-    envKey: "CEREBRAS_API_KEY",
-    envModel: "CEREBRAS_MODEL",
-    defaultModel: "gpt-oss-120b",
-    freeTier: "5 istek/dk · 1M token/gün",
-    reasoningEffort: "low",
-  },
 };
 
-/** Dakikalık hakkı geniş olanlar önce, günlük kotayla sınırlı olan en sonda. */
-const ORDER: ProviderName[] = ["mistral", "groq", "cerebras"];
+/**
+ * MODELE ÖZGÜ İSTEK AYARLARI — sağlayıcıya değil modele bağlı (2026-09-29).
+ *
+ * Aynı model farklı sağlayıcıda aynı ayarı istiyor, farklı model aynı
+ * sağlayıcıda farklısını. Ölçülen:
+ *   gpt-oss      düşünme bütçesi "low". Varsayılanda cevaptan önce uzun bir
+ *                akıl yürütme üretiyor: max_tokens=120 ile içerik 0,
+ *                "low" ile 191 karakter.
+ *   gemma-4, qwen3  varsayılan olarak önce düşünüyor ve bütçeyi bitiriyor;
+ *                `chat_template_kwargs.enable_thinking=false` kapatıyor
+ *                (`reasoning_effort` Cloudflare'de etkisiz).
+ * Tanınmayan model sade gövdeyle gider.
+ */
+function modelOptions(model: string, maxTokens: number): Record<string, unknown> {
+  if (/gpt-oss/.test(model)) return { max_tokens: maxTokens, reasoning_effort: "low" };
+  if (/gemma-4|qwen3/.test(model)) return { max_tokens: maxTokens, chat_template_kwargs: { enable_thinking: false } };
+  return { max_tokens: maxTokens };
+}
+
+function baseUrlOf(name: ProviderName): string {
+  const b = CATALOG[name].baseUrl;
+  return typeof b === "function" ? b() : b;
+}
+
+/** Birincil önce; yedek yalnız birincil soğumadayken ya da hata verince. */
+const ORDER: ProviderName[] = ["cloudflare", "groq"];
 
 /**
  * Bir çağrının sonucu — muhasebe için.
@@ -202,9 +189,9 @@ const cooldownUntil = new Map<ProviderName, number>();
  *
  * Sabit 60 saniyelik soğuma yalnız YOĞUN trafikte işe yarıyordu. Seyrek
  * çağrıda (günde birkaç değerlendirme) her istek soğuma bittikten sonra
- * geliyor ve kalıcı olarak kapalı bir sağlayıcıyı YENİDEN deniyordu: Mistral
- * hesabının dakikalık hakkı 0'a düştüğünde (başlık `x-ratelimit-limit-req-minute: 0`)
- * 13 gün boyunca 51 değerlendirmenin 51'i önce Mistral'den 429 yedi
+ * geliyor ve kalıcı olarak kapalı bir sağlayıcıyı YENİDEN deniyordu: eski
+ * birincilin dakikalık hakkı 0'a düştüğünde (başlık `x-ratelimit-limit-req-minute: 0`)
+ * 13 gün boyunca 51 değerlendirmenin 51'i önce ondan 429 yedi
  * (2026-09-04 → 17). Art arda her 429 soğumayı ikiye katlıyor (en çok 6 saat);
  * sağlayıcı "hakkın sıfır" diyorsa doğrudan 6 saat. İlk başarı sayacı sıfırlıyor.
  */
@@ -255,20 +242,20 @@ async function post(
 
   let res: Response;
   try {
-    res = await fetch(`${cfg.baseUrl}/chat/completions`, {
+    const key = process.env[cfg.envKey] ?? "";
+    res = await fetch(`${baseUrlOf(name)}/chat/completions`, {
       method: "POST",
       signal: controller.signal,
       headers: {
-        authorization: `Bearer ${process.env[cfg.envKey]}`,
+        authorization: `Bearer ${key}`,
         "content-type": "application/json",
         accept: stream ? "text/event-stream" : "application/json",
       },
       body: JSON.stringify({
         model: modelFor(name),
         stream,
-        max_tokens: maxTokens,
         temperature: TEMPERATURE,
-        ...(cfg.reasoningEffort ? { reasoning_effort: cfg.reasoningEffort } : {}),
+        ...modelOptions(modelFor(name), maxTokens),
         messages: [{ role: "system", content: system }, ...messages],
       }),
     });
@@ -491,7 +478,7 @@ async function completeOpenAiCompatible(
 }
 
 function hasKey(name: ProviderName): boolean {
-  return Boolean(process.env[CATALOG[name].envKey]);
+  return Boolean(process.env[CATALOG[name].envKey]) && Boolean(baseUrlOf(name));
 }
 
 function build(name: ProviderName): Provider {
@@ -540,7 +527,7 @@ export function chatConfigured(): boolean {
  *
  * `dialect` gerekiyor çünkü hepsi OpenAI biçimini konuşmuyor: Deepgram
  * parametreleri adreste, sesi ham gövdede istiyor ve cevabı başka bir yapıda
- * dönüyor. Sohbet tarafında böyle bir ayrım yok, orada beşi de aynı biçimi
+ * dönüyor. Sohbet tarafında böyle bir ayrım yok, orada ikisi de aynı biçimi
  * konuşuyor.
  */
 export type SttProvider = {
@@ -567,8 +554,8 @@ export type SttProvider = {
  *      (bkz. lib/stt `azureBudgetOk`).
  *   2. Deepgram: başı kesik seste uydurmuyor, boş dönüyor (ölçüldü) — güvenli yedek.
  *   3. Groq Whisper: son yedek; Zero Data Retention açık (2026-09-27).
- * Cloudflare Workers AI, Speechmatics ve Mistral ses zincirinden KALICI olarak
- * çıktı (2026-09-27, Samet; Mistral zaten 2026-09-25'te, denetim G5). Geri
+ * Cloudflare Workers AI ve Speechmatics ses zincirinden KALICI olarak çıktı
+ * (2026-09-27, Samet); Cloudflare yalnız dil modeli olarak alıcı. Geri
  * eklemek alıcılar tablosunu (lib/legal PROCESSORS), ses rızası sürümünü
  * (ai-consent-shared) ve iki mağaza beyanını birlikte değiştirmek demek.
  *
@@ -589,7 +576,7 @@ export function sttProviders(): SttProvider[] {
   }
   const groq = process.env[CATALOG.groq.envKey];
   if (groq && CATALOG.groq.sttModel) {
-    out.push({ name: "groq", dialect: "openai", baseUrl: CATALOG.groq.baseUrl, key: groq, model: (CATALOG.groq.sttEnvModel && process.env[CATALOG.groq.sttEnvModel]) || CATALOG.groq.sttModel });
+    out.push({ name: "groq", dialect: "openai", baseUrl: baseUrlOf("groq"), key: groq, model: (CATALOG.groq.sttEnvModel && process.env[CATALOG.groq.sttEnvModel]) || CATALOG.groq.sttModel });
   }
   const order = (process.env.STT_ORDER ?? "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
   if (order.length) {

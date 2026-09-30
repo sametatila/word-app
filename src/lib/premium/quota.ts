@@ -7,7 +7,7 @@ import { usageCounters } from "@/lib/db/schema";
  * Kota sayaçları — ücretsiz katmanın sınırları ve premium'un adil kullanım tavanı.
  *
  * SAYAÇ SUNUCUDA. İstemciye sorulmuyor, istemciden gelen bir sayı da kabul
- * edilmiyor: kota bir FATURA kapısı (Azure STT, Mistral) ve istemcinin
+ * edilmiyor: kota bir FATURA kapısı (Azure STT, dil modeli) ve istemcinin
  * söylediği sayıya dayanan bir kapı, kapı değildir.
  *
  * GÜN SINIRI UTC. Kullanıcının yerel günü değil — yoksa cihaz saat dilimini

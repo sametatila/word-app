@@ -154,8 +154,8 @@ export async function collectAlerts(): Promise<Alert[]> {
         }
       }
       /* SEYREK TRAFİKTE KALICI ARIZA. Saatlik kural 10 çağrı istiyor ve düşük
-         trafikte hiç tetiklenmiyordu: Mistral 13 gün boyunca her çağrıda 429
-         verdi ve kimse görmedi. 24 saatte en az 5 çağrının neredeyse hepsi
+         trafikte hiç tetiklenmiyordu: eski birincil sağlayıcı 13 gün boyunca
+         her çağrıda 429 verdi ve kimse görmedi. 24 saatte en az 5 çağrının neredeyse hepsi
          başarısızsa sağlayıcı fiilen kapalıdır (yedek devralıyor olsa bile). */
       const daily = await rows(sql`
         select provider, count(*)::int calls, count(*) filter (where not ok)::int errors, count(*) filter (where status = 429)::int limited

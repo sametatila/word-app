@@ -568,17 +568,19 @@ async function main() {
 
   console.log("\n11o) Sohbet sağlayıcı seçimi");
   // Anahtarları test boyunca kendimiz kuruyoruz; sonunda eski hâline dönüyor.
+  // Cloudflare'in adresi hesap kimliğini taşıyor: kimlik yoksa anahtar tek
+  // başına sağlayıcıyı açmıyor.
   const envBackup = {
-    cerebras: process.env.CEREBRAS_API_KEY,
+    cfAccount: process.env.CLOUDFLARE_ACCOUNT_ID,
+    cf: process.env.CLOUDFLARE_AI_TOKEN,
     groq: process.env.GROQ_API_KEY,
-    mistral: process.env.MISTRAL_API_KEY,
     preferred: process.env.CHAT_PROVIDER,
   };
-  const setKeys = (cerebras?: string, groq?: string, mistral?: string, preferred?: string) => {
+  const setKeys = (cf?: string, groq?: string, preferred?: string, cfAccount = cf ? "acc" : undefined) => {
     for (const [k, v] of Object.entries({
-      CEREBRAS_API_KEY: cerebras,
+      CLOUDFLARE_ACCOUNT_ID: cfAccount,
+      CLOUDFLARE_AI_TOKEN: cf,
       GROQ_API_KEY: groq,
-      MISTRAL_API_KEY: mistral,
       CHAT_PROVIDER: preferred,
     })) {
       if (v) process.env[k] = v;
@@ -591,34 +593,35 @@ async function main() {
   check("anahtar yoksa sohbet kapalı", chatConfigured() === false);
   check("anahtar yoksa denenecek sağlayıcı yok", chatProviders().length === 0);
 
-  setKeys(undefined, undefined, "ms");
-  check("tek anahtar varsa o seçilir", names() === "mistral", `(${names()})`);
+  setKeys(undefined, "gq");
+  check("tek anahtar varsa o seçilir", names() === "groq", `(${names()})`);
   check("tek anahtarla sohbet açık", chatConfigured() === true);
 
-  // Sıra dakikalık istek hakkına göre, günlük token cömertliğine göre değil:
-  // ölçüm sohbette darboğazın token değil eşzamanlı istek olduğunu gösterdi.
-  // Cerebras günde 1M token veriyor ama dakikada 5 istek — iki kişi aynı anda
-  // yazışınca günlük kotanın binde biri harcanmadan 429 geliyor. Mistral 50,
-  // Groq token tavanı yüzünden pratikte ~7 istek/dk.
-  setKeys("cb", "gq", "ms");
-  check("sıra dakikalık hakka göre", names() === "mistral,groq,cerebras", `(${names()})`);
-  check("birincil Mistral", chatProviders()[0]?.name === "mistral");
-  check("Mistral modeli mistral-medium-latest",
-    chatProviders()[0]?.model === "mistral-medium-latest",
-    `(${chatProviders()[0]?.model})`);
+  setKeys("cf", undefined, undefined, "");
+  check("hesap kimliği yoksa Cloudflare kapalı", chatConfigured() === false, `(${names()})`);
 
-  setKeys("cb", "gq", "ms", "groq");
+  // Sıra (2026-09-30, Samet): Cloudflare Workers AI birincil, Groq yedek.
+  setKeys("cf", "gq");
+  check("sıra Cloudflare, Groq", names() === "cloudflare,groq", `(${names()})`);
+  check("Cloudflare modeli Gemma 4 26B",
+    chatProviders()[0]?.model === "@cf/google/gemma-4-26b-a4b-it",
+    `(${chatProviders()[0]?.model})`);
+  check("Groq modeli gpt-oss-120b",
+    chatProviders()[1]?.model === "openai/gpt-oss-120b",
+    `(${chatProviders()[1]?.model})`);
+
+  setKeys("cf", "gq", "groq");
   check("CHAT_PROVIDER seçimi öne alıyor", chatProviders()[0]?.name === "groq");
   check("öne alınan sağlayıcı listede tekrarlanmıyor",
     new Set(chatProviders().map((p) => p.name)).size === chatProviders().length);
 
   // Yanlış yazılmış bir değişken sohbeti tamamen kapatmamalı.
-  setKeys("cb", undefined, undefined, "groq");
-  check("anahtarsız CHAT_PROVIDER yok sayılıyor", chatProviders()[0]?.name === "cerebras");
-  setKeys("cb", undefined, undefined, "bilinmeyen");
-  check("tanınmayan CHAT_PROVIDER sohbeti kapatmıyor", chatProviders()[0]?.name === "cerebras");
+  setKeys("cf", undefined, "groq");
+  check("anahtarsız CHAT_PROVIDER yok sayılıyor", chatProviders()[0]?.name === "cloudflare");
+  setKeys("cf", undefined, "bilinmeyen");
+  check("tanınmayan CHAT_PROVIDER sohbeti kapatmıyor", chatProviders()[0]?.name === "cloudflare");
 
-  setKeys(envBackup.cerebras, envBackup.groq, envBackup.mistral, envBackup.preferred);
+  setKeys(envBackup.cf, envBackup.groq, envBackup.preferred, envBackup.cfAccount);
 
   console.log("\n11s) Sapmalar kuraldan da türetiliyor");
   {
@@ -1739,8 +1742,8 @@ async function main() {
   check("reset başlığı yakalanıyor", openai["x-ratelimit-reset-tokens"] === "6s");
   check("alakasız başlık alınmıyor", openai["content-type"] === undefined);
 
-  const mistralStyle = readLimits(headers({ "ratelimitbysize-remaining": "19000" }));
-  check("ratelimitbysize-* yakalanıyor", mistralStyle["ratelimitbysize-remaining"] === "19000");
+  const bySize = readLimits(headers({ "ratelimitbysize-remaining": "19000" }));
+  check("ratelimitbysize-* yakalanıyor", bySize["ratelimitbysize-remaining"] === "19000");
 
   const dashed = readLimits(headers({ "x-rate-limit-remaining": "3" }));
   check("tireli yazım yakalanıyor", dashed["x-rate-limit-remaining"] === "3");
@@ -1788,7 +1791,7 @@ async function main() {
   await db.delete(aiUsage).where(eq(aiUsage.userId, USER));
 
   recordAiUsage(USER, {
-    kind: "chat", provider: "mistral", model: "mistral-medium-latest",
+    kind: "chat", provider: "cloudflare", model: "@cf/google/gemma-4-26b-a4b-it",
     ok: true, status: 200, ms: 840, promptTokens: 420, completionTokens: 180,
     limits: { "x-ratelimit-remaining-requests": "48" },
   });

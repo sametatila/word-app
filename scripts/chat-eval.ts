@@ -1,7 +1,7 @@
 /**
  * Sohbet sağlayıcı kalite ölçümü.
  *
- *   CEREBRAS_API_KEY=... GROQ_API_KEY=... npm run test:chat
+ *   CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_AI_TOKEN=... GROQ_API_KEY=... npm run test:chat
  *
  * Anahtarı olan her sağlayıcı aynı senaryodan geçirilir ve karşılaştırmalı
  * tablo basılır. Amaç genel bir "model iyi mi" testi değil — **bu uygulamanın
@@ -27,7 +27,7 @@
  * tekrar çalışır ve karşılaştırılabilir sayı üretir.
  *
  * Birden çok senaryo var (kurs × ana dil); `EVAL_SCENARIO=de-b1-bewerbung/tr,…`
- * ile seçilir, `EVAL_PROVIDER=mistral` ile tek sağlayıcı. Düzeltme sayıları iki
+ * ile seçilir, `EVAL_PROVIDER=groq` ile tek sağlayıcı. Düzeltme sayıları iki
  * kez basılıyor: modelin HAM çıktısı ve sunucudaki süzgeçten (`fix-guard`)
  * SONRA öğrencinin gördüğü. İkisinin farkı süzgecin işi; ham sayı istemin işi.
  */
@@ -318,7 +318,7 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
 
   for (const step of script) {
     history.push({ role: "user", content: step.say });
-    // Ücretsiz katmanların dakikalık istek limiti dar (Cerebras: 5/dk).
+    // Ücretsiz katmanların dakikalık limiti dar (Groq: 8K token/dk).
     // 429 alınca bekleyip tekrar deniyoruz — ölçülmek istenen şey kalite,
     // limite takılmak testi bozmamalı.
     let started = Date.now();
@@ -397,7 +397,7 @@ async function main() {
   if (!providers.length) {
     console.error(
       "Hiçbir sağlayıcı anahtarı tanımlı değil.\n" +
-        "Örnek: CEREBRAS_API_KEY=... GROQ_API_KEY=... npm run test:chat",
+        "Örnek: CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_AI_TOKEN=... GROQ_API_KEY=... npm run test:chat",
     );
     process.exit(1);
   }

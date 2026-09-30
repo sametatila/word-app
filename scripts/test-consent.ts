@@ -31,7 +31,7 @@ import { purgeUserData } from "../src/lib/account/purge";
   `pending` olarak döndürüyor ve test tam onu ölçüyor.
 */
 for (const k of Object.keys(process.env)) {
-  if (/(_API_KEY|_API_TOKEN|_SECRET|_KEY)$/.test(k) || /^(AZURE|CLOUDFLARE|DEEPGRAM|SPEECHMATICS|GROQ|MISTRAL|CEREBRAS)_/.test(k)) delete process.env[k];
+  if (/(_API_KEY|_API_TOKEN|_SECRET|_KEY)$/.test(k) || /^(AZURE|CLOUDFLARE|DEEPGRAM|SPEECHMATICS|GROQ)_/.test(k)) delete process.env[k];
 }
 
 const url = process.env.TEST_DATABASE_URL ?? "";

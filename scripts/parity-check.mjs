@@ -16574,9 +16574,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *
    * Hesapli okuma, "kodda gecen env anahtarlari" taramasindan KACIYOR: duz
    * `process.env.AD` arayan bir tarama bu sekizini hic gormuyor. Nitekim
-   * `MISTRAL_STT_MODEL` katalogda adi geciyor ve okunuyordu ama ucunun de
-   * disindaydi - operator Groq'un STT modelini ezebiliyor, Mistral'inkini
-   * ezebilecegini HIC ogrenemiyordu.
+   * eski bir saglayicinin STT modeli anahtari katalogda adi geciyor ve
+   * okunuyordu ama ucunun de disindaydi - operator Groq'un STT modelini
+   * ezebiliyor, otekini ezebilecegini HIC ogrenemiyordu.
    *
    * Kapi listeyi kataloktan cikarip ornekte ariyor: yeni bir saglayici
    * eklendiginde anahtarlari da belgelensin. */

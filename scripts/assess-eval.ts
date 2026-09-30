@@ -1,7 +1,7 @@
 /**
  * AI değerlendirme kalite testi — `npm run test:assess` (WP-03, adım 5)
  *
- *   MISTRAL_API_KEY=... npm run test:assess
+ *   CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_AI_TOKEN=... npm run test:assess
  *   CHAT_PROVIDER=groq GROQ_API_KEY=... npm run test:assess     (tek sağlayıcı)
  *   npm run test:assess -- --json                                 (ham çıktıyı da bas)
  *   npm run test:assess -- --only a2-w-mixed                     (tek örnek)
@@ -125,7 +125,7 @@ export const SAMPLES: Sample[] = [
 async function main() {
   const providers = chatProviders();
   if (!providers.length) {
-    console.error("Sohbet sağlayıcısı yok: MISTRAL_API_KEY / GROQ_API_KEY / CEREBRAS_API_KEY ver.");
+    console.error("Sohbet sağlayıcısı yok: CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_AI_TOKEN ya da GROQ_API_KEY ver.");
     process.exit(2);
   }
   const showJson = process.argv.includes("--json");

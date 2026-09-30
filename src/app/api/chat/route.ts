@@ -28,9 +28,9 @@ const MAX_CHARS = 2000;
 
 /**
  * Kullanıcı başına günlük sohbet/diyalog turu (ai_usage'daki sağlayıcı
- * denemeleri, düşenler dâhil). Sohbet koçu paylaşılan ücretsiz sağlayıcı
- * kotasına (Groq/Mistral/Cerebras) dayanıyor; tek hesabın döngüyle bu kotayı
- * tüketip herkese "sohbet kapalı" gösterebilmesi bir istismar yoluydu. Sınır
+ * denemeleri, düşenler dâhil). Sohbet koçu paylaşılan sağlayıcı kotasına ve
+ * faturasına (Cloudflare Workers AI, Groq) dayanıyor; tek hesabın döngüyle bu
+ * kotayı tüketip herkese "sohbet kapalı" gösterebilmesi bir istismar yoluydu. Sınır
  * cömert: dürüst ağır kullanım ~100-150 turdur.
  */
 const CHAT_DAILY_LIMIT = DAILY_QUOTAS.chatTurns;
