@@ -35,7 +35,7 @@
         "en": { "h": "Speak and get corrected on the spot", "s": "Real-life scenes with an AI character" },
         "de": { "h": "Sprich und sieh die Korrektur sofort", "s": "Alltagsszenen im Gespräch mit einer KI-Figur" }
       },
-      "callout": { "anchor": "^(Düzeltme|Correction|Korrektur):", "pad": [0.9, 1], "zoom": 1.6 }
+      "callout": { "anchor": "^(Düzeltme|Correction|Korrektur):", "chain": 1.2, "pad": [0.9, 1], "zoom": 1.6 }
     },
     "mock-result": {
       "caption": {
@@ -74,7 +74,7 @@
         "en": { "h": "Five skills, at the level you choose", "s": "Reading, listening, writing, speaking, grammar" },
         "de": { "h": "Fünf Fertigkeiten, auf jedem Niveau", "s": "Lesen, Hören, Schreiben, Sprechen, Grammatik" }
       },
-      "callout": { "anchor": "^(Okuma|Reading|Lesen)$", "above": 3, "below": 3, "pad": [3, 1.2], "zoom": 1.2 }
+      "callout": { "anchor": "^(Okuma|Reading|Lesen)$", "above": 2, "below": 2, "pad": [3, 1.2], "zoom": 1.2 }
     }
   },
   "_callouts": "Büyüteç ekranın 'callout' tanımından kurulur: 'anchor' (düzenli ifade, üç dil) ham görüntüde macOS Vision OCR ile aranır; alan çapa satırının yüksekliği cinsinden: 'above'/'below' yukarı ve aşağı, 'chain' alttaki satırlar arada bu kadardan kısa boşluk kaldıkça eklenir, 'pad' [yatay, dikey]; aynı yükseklikteki satırlar yatayda birleşir. 'source' tanımı ham ada bağlar, 'by' cihaza göre ayar. Çapa bulunamazsa kare büyüteçsiz çıkar ve üretici listeler; kaçış yolu olarak buraya '<cihaz>/<set>/<ekran>': { rect: [x, y, w, h] (0–1), zoom } elle verilebilir.",
