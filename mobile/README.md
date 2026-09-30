@@ -132,6 +132,12 @@ npm run release:android                # AAB + deneme APK'sı üretir ve üretti
 bash scripts/ios-archive.sh            # iOS arşiv + App Store yüklemesi (yalnız macOS)
 ```
 
+**Yükledikten sonra (her build):** iOS build App Store Connect'te `VALID` olunca TestFlight'ın
+"Neler test edilecek" notu yazılır ve build **App Store sürümüne bağlanır**
+(`PATCH /v1/appStoreVersions/<id>/relationships/build`); bağlanmazsa sürüm eski build'le incelemeye
+gider. Android AAB Play iç test kanalına sürüm notuyla yüklenir. İnceleme notunun
+(`docs/appstore/connect.md`, `docs/play/console.md` §1) yolları yeni build'le hâlâ tutuyor mu, bakılır.
+
 - **Anahtarsız release yok.** `keystore.properties` (gitignore) yoksa release görevleri düşer
   (kapı `app/build.gradle`'da; debug yapıları ve `./gradlew tasks` etkilenmez). Deneme için
   `./gradlew assembleRelease -PallowDebugSigning` (ya da `LERNOMI_ALLOW_DEBUG_SIGNING=1`): çıkan
