@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { AvatarStage, derivedAvatar } from "@/components/avatar";
 import { BadgeIcon, TIER_COLOR } from "@/components/achievement-badge";
+import { achievementHref } from "@/lib/achievement-groups";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 import { useShell } from "@/components/app-shell";
@@ -131,13 +132,14 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
           </div>
         </section>
 
-        {/* SON BAŞARIMLAR — en yeni üç. */}
+        {/* SON BAŞARIMLAR — en yeni üç. Her rozet duvarı KENDİSİNE kaydırarak açıyor
+            (`achievementHref`); duvarın başına düşmek "neden buraya geldim" dedirtiyordu. */}
         <section className="space-y-2">
           <Head title={t("profile.achievements")} href="/profile/achievements" action={ach ? `${ach.unlockedCount}/${ach.total}` : t("profile.see_all")} />
           {recent.length ? (
             <div className="grid grid-cols-3 gap-2">
               {recent.map((a) => (
-                <Link key={a.id} href="/profile/achievements" prefetch={false} className="pressable flex flex-col items-center gap-1.5 text-center">
+                <Link key={a.id} href={achievementHref(a.id)} prefetch={false} className="pressable flex flex-col items-center gap-1.5 text-center">
                   <span className="flex h-14 w-14 items-center justify-center rounded-full" style={{ background: TIER_COLOR[a.tier] ?? TIER_COLOR.bronze, color: "#fff" }}>
                     <BadgeIcon glyph={a.glyph} size={26} />
                   </span>

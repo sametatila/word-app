@@ -35,7 +35,7 @@ import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, resolveVoice, type VoiceId } from "../lib/voices";
 import { coursesForNative, offeredNativeLangs, selectableCourses, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
-import { useTheme, spacing, radii, type Palette, type ThemeMode, ds } from "../theme";
+import { useTheme, spacing, radii, type ThemeMode, ds } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
 import { soundEnabled, setSoundEnabled } from "../lib/sfx";
 import { hapticsEnabled, setHapticsEnabled, vibrate } from "../lib/haptics";
@@ -45,6 +45,7 @@ import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 import { FIELD, insetEdge } from "../ui/Field";
+import { Group, Row } from "../ui/SettingsGroup";
 
 // Diller KENDİ adlarıyla yazılır: arayüz yanlış dildeyken bile kullanıcı kendi
 // dilini tanıyıp seçebilsin diye (çevrilirse tam da aradığı satırı okuyamaz).
@@ -83,62 +84,6 @@ function courseOptions(lang: NativeLang, current: string): { key: string; label:
     .map((c) => ({ key: c.id, label: c.label[lang], sub: c.sub[lang] }));
 }
 
-
-/** Ayar bölümü — başlık + kart. Görsel gruplama için tutarlı çerçeve. */
-/**
- * Grup başlığı — dokuz düz bölüm dört mantıksal gruba alındı.
- *
- * Eskiden hepsi aynı düzlemdeydi: kurs/seviye/hedef (öğrenme) ile arayüz
- * dili/görünüm (uygulama) ve hesap/gizlilik iç içeydi. Kullanıcı aradığı ayarı
- * grubun adından değil, satır satır okuyarak buluyordu.
- */
-/**
- * Grup — başlık ve TEK kart.
- *
- * Eskiden her bölümün kendi kartı vardı ve ekran alt alta on beş kutuya
- * dönüşmüştü: kutu, bölümleri ayırsın diye vardı ama bölüm sayısı artınca
- * ayırmayı bıraktı, yalnız gürültü ekledi. Şimdi kart grubu çiziyor,
- * bölümler kartın içinde ince bir çizgiyle ayrılıyor.
- */
-function Group({ title, colors, children }: { title?: string; colors: Palette; children: React.ReactNode }) {
-  /*
-    ÇİZGİYİ GRUP ÇİZİYOR, satır değil. Satırların bir kısmı koşullu (parolasız
-    hesapta PAROLA bölümü hiç yok); ayıracı satırın kendi üstüne koysaydık
-    gizlenen ilk satırın çizgisi kartın tepesinde asılı kalırdı.
-    `Children.toArray` false/null olanları zaten atıyor, yani "ilk ÇİZİLEN
-    satır" burada doğru biliniyor.
-  */
-  const items = React.Children.toArray(children).filter(Boolean);
-  return (
-    <View style={{ marginTop: title ? spacing.xxl : spacing.sm }}>
-      {/* Grup başlığı da bir başlık — web `<h2>` (bkz. parity 259). Bölüm
-          ekranında başlık ekranın kendisi; grup ayrıca başlık çizmiyor. */}
-      {title ? <Text accessibilityRole="header" variant="h3" color={colors.text} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{title}</Text> : null}
-      <Card padded>
-        {items.map((item, i) => (
-          <View
-            key={i}
-            style={i ? { marginTop: spacing.lg, paddingTop: spacing.lg, borderTopWidth: 1, borderTopColor: colors.hairline } : undefined}
-          >
-            {item}
-          </View>
-        ))}
-      </Card>
-    </View>
-  );
-}
-
-/** Grup kartının içindeki bir bölüm: küçük etiket ve altında içeriği. */
-function Row({ label, colors, children }: { label?: string; colors: Palette; children: React.ReactNode }) {
-  return (
-    <View>
-      {label ? (
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, letterSpacing: 0.5 }}>{label}</Text>
-      ) : null}
-      {children}
-    </View>
-  );
-}
 
 /**
  * AYARLAR BİR LİSTE, HER GRUP KENDİ EKRANI (2026-09-28, Samet'in kararı;
@@ -423,7 +368,7 @@ export function SettingsScreen() {
                 min={PROFILE_LIMITS.dailyGoal.min}
                 max={PROFILE_LIMITS.dailyGoal.max}
                 step={5}
-                suffix={t("settings.reviews_unit")}
+                format={(n) => t("settings.reviews_n", { n })}
                 onChange={setGoal}
                 onCommit={(v) => { if (v !== (me?.dailyGoal ?? -1)) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
               />
@@ -435,7 +380,7 @@ export function SettingsScreen() {
                 min={PROFILE_LIMITS.newPerDay.min}
                 max={PROFILE_LIMITS.newPerDay.max}
                 step={1}
-                suffix={t("settings.words_unit")}
+                format={(n) => t("settings.words_n", { n })}
                 onChange={setNewPerDay}
                 onCommit={(v) => { if (v !== (me?.newPerDay ?? -1)) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
               />
@@ -551,11 +496,13 @@ export function SettingsScreen() {
                 <GuestAccountCard title={t("guest.profile_title")} text={t("guest.profile_body")} />
               </Row>
               <Row colors={colors}>
+                {/* Basılabilir satır: dikey pay satırın içinde, `insetEdge` kutunun
+                    16'sına kapatıyor (bölümün kenarı 22 idi). */}
                 <PressableScale
                   onPress={() => nav.navigate("DeleteAccount")}
                   accessibilityRole="button"
                   accessibilityLabel={t("guest.delete_row")}
-                  style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
+                  style={[insetEdge, { flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: FIELD.row }]}
                 >
                   <View style={{ flex: 1 }}>
                     <Text variant="bodyStrong" color={colors.dangerText}>{t("guest.delete_row")}</Text>
@@ -591,61 +538,61 @@ export function SettingsScreen() {
             />
           </Row>
 
-          {/* Giriş yöntemleri: parola + sosyal hesaplar. Aynı e-postayla giriş
-              yapan kişi tek hesapta buluşsun diye; doğrulanmamış e-postada
-              otomatik bağlama bilerek yapılmıyor ve tek çıkış burası. */}
           <Row label={t("socialsettings.username")} colors={colors}>
             <SocialUsername />
           </Row>
 
+          {/* Giriş yöntemleri: parola + sosyal hesaplar. Aynı e-postayla giriş
+              yapan kişi tek hesapta buluşsun diye; doğrulanmamış e-postada
+              otomatik bağlama bilerek yapılmıyor ve tek çıkış burası. */}
           <Row label={t("links.title")} colors={colors}>
             <LinkedAccounts colors={colors} accounts={accounts} onChanged={yenileHesaplar} />
           </Row>
 
-          {/* GÜVENLİK Hesap'ın alt ekranı: parola, iki adım ve oturumlar yılda bir
-              açılan şeyler; listede kendi satırı yok. */}
-          <Row colors={colors}>
-            <PressableScale
-              onPress={() => nav.push("Settings", { section: "security" })}
-              accessibilityRole="button"
-              accessibilityLabel={t("settings.group_security")}
-              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
-            >
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("settings.group_security")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("settings.security_sub")}</Text>
-              </View>
-              <ChevronNextIcon color={colors.textFaint} size={20} />
-            </PressableScale>
-          </Row>
-
           {/*
-            HESABI SİL — Ayarlar › Hesap'ın SON satırı.
+            HESAP YÖNETİMİ — tek etiketli bölüm, iki basılabilir satır (kutu içi
+            liste, `ui/Field`). Güvenlik ve Hesabı sil etiketsiz iki ayrı
+            bölümdü ve kendi 6'lık payını taşıyordu (bölüm kenarı 22); web aynı.
 
-            2026-09-09'da buradan kaldırılıp yalnız Profil'in dibine taşınmıştı
-            (gerekçe: yıkıcı eylem ad kutusunun bir dokunuş yanında duruyordu).
-            Ama iki mağaza, gizlilik politikası §11, şartlar §3, destek sayfası,
-            web silme sayfası ve inceleme notları üç dilde birden "Profil ›
-            Ayarlar › Hesap › Hesabı sil" diyordu; incelemeci notu izleyip
-            düğmeyi bulamıyordu. Play'in kendi örneği de "hesap ayarlarının
-            içinde". Satır geri geldi ama gerekçe korunarak: ad kutusunun hemen
-            altında değil, giriş yöntemlerinin ardında ve grubun sonunda. Profil'in
-            dibindeki bağlantı profil yeniden çizilince (3e90264e) kalktı; hesabın
-            tek kapısı burası. Misafirin silme satırı Profil'de duruyor.
+            GÜVENLİK Hesap'ın alt ekranı: parola, iki adım ve oturumlar yılda bir
+            açılan şeyler; listede kendi satırı yok.
+
+            HESABI SİL — Ayarlar › Hesap'ın SON satırı. 2026-09-09'da buradan
+            kaldırılıp yalnız Profil'in dibine taşınmıştı (gerekçe: yıkıcı eylem
+            ad kutusunun bir dokunuş yanında duruyordu). Ama iki mağaza,
+            gizlilik politikası §11, şartlar §3, destek sayfası, web silme
+            sayfası ve inceleme notları üç dilde birden "Profil › Ayarlar ›
+            Hesap › Hesabı sil" diyordu; incelemeci notu izleyip düğmeyi
+            bulamıyordu. Satır geri geldi ama gerekçe korunarak: ad kutusunun
+            hemen altında değil, grubun sonunda. Misafirin silme satırı yukarıda.
           */}
-          <Row colors={colors}>
-            <PressableScale
-              onPress={() => nav.navigate("DeleteAccount")}
-              accessibilityRole="button"
-              accessibilityLabel={t("settings.delete_account")}
-              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
-            >
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong" color={colors.dangerText}>{t("settings.delete_account")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("deleteaccount.your_account_and_all_your_data")}</Text>
-              </View>
-              <ChevronNextIcon color={colors.textFaint} size={20} />
-            </PressableScale>
+          <Row label={t("settings.sec_manage")} colors={colors}>
+            <View style={insetEdge}>
+              <PressableScale
+                onPress={() => nav.push("Settings", { section: "security" })}
+                accessibilityRole="button"
+                accessibilityLabel={t("settings.group_security")}
+                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: FIELD.row }}
+              >
+                <View style={{ flex: 1 }}>
+                  <Text variant="bodyStrong">{t("settings.group_security")}</Text>
+                  <Text variant="caption" color={colors.textMuted}>{t("settings.security_sub")}</Text>
+                </View>
+                <ChevronNextIcon color={colors.textFaint} size={20} />
+              </PressableScale>
+              <PressableScale
+                onPress={() => nav.navigate("DeleteAccount")}
+                accessibilityRole="button"
+                accessibilityLabel={t("settings.delete_account")}
+                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: FIELD.row, borderTopWidth: 1, borderTopColor: colors.hairline }}
+              >
+                <View style={{ flex: 1 }}>
+                  <Text variant="bodyStrong" color={colors.dangerText}>{t("settings.delete_account")}</Text>
+                  <Text variant="caption" color={colors.textMuted}>{t("deleteaccount.your_account_and_all_your_data")}</Text>
+                </View>
+                <ChevronNextIcon color={colors.textFaint} size={20} />
+              </PressableScale>
+            </View>
           </Row>
           </>
           )}
@@ -695,12 +642,12 @@ export function SettingsScreen() {
         </Group>
     ),
     privacy: (
-      <>
-        {/* Profilimi kim görür, izinler, engellenenler (eskiden arkadaş
-            kartındaki dişlide) + veri ve yapay zekâ onayları: gizlilik tek yer. */}
-        <SocialPrivacy />
-        <Group title={t("settings.data_consents")} colors={colors}>
-          <Row colors={colors}>
+        /* Profilimi kim görür, izinler, engellenenler (eskiden arkadaş
+           kartındaki dişlide) + veri ve yapay zekâ onayları: gizlilik tek
+           yer, TEK grup (veri ve onaylar ayrı başlıklı ikinci kutuydu; web
+           `SocialSettings part="privacy"` aynı). */
+        <SocialPrivacy>
+          <Row label={t("settings.sec_data_consents")} colors={colors}>
             {/* Kutu içi liste (`ui/Field`): ilk satır 6, ötekiler 12 taşıyordu;
                 çizginin iki yanı 12, kenarlar kutunun 16'sı. */}
             <View style={insetEdge}>
@@ -739,9 +686,7 @@ export function SettingsScreen() {
             ) : null}
             </View>
           </Row>
-
-        </Group>
-      </>
+        </SocialPrivacy>
     ),
     about: (
       <Group colors={colors}>

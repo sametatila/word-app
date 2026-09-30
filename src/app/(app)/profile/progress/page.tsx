@@ -3,7 +3,6 @@ import { titleMeta } from "@/lib/page-meta";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { ActivityProgress } from "@/components/progress-view";
-import { ProgressPanel } from "@/components/progress-panel";
 import { getT } from "@/lib/i18n/server";
 import { EmptyCard } from "@/components/empty-card";
 import { StreakIcon } from "@/components/icons";
@@ -12,7 +11,8 @@ import Link from "next/link";
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("progress.progress");
 /**
- * İlerleme — iki haftalık ritim + yetkinlik paneli.
+ * Gelişim — seri, "Nasıl gidiyorum", karolar, kelime ustalığı, tekrar kuyruğu,
+ * iki haftalık ritim, zayıf noktalar, zaman içinde (bkz. `ActivityProgress`).
  *
  * Mobilde kendi ekranı (`ProgressScreen`) ve seri rozetinden de açılıyor;
  * web'de profilin ortasına gömülüydü. İkisi aynı soruyu cevaplıyor —
@@ -47,6 +47,10 @@ export default async function ProgressPage() {
         xp={profile.totalXp}
         level={profile.level}
         today={today}
+        levels={data.levels}
+        dueNow={data.dueNow}
+        upcoming={data.upcoming}
+        leeches={data.leeches}
       />
     );
   } catch (err) {
@@ -81,8 +85,6 @@ export default async function ProgressPage() {
     <div className="mx-auto w-full max-w-3xl space-y-4">
       <PageBack fallback="/profile" title={t("progress.progress")} />
       {content}
-      {/* Ölçüm bloğu: yetkinlik, dört haftalık değişim ve önerilen adım. */}
-      <ProgressPanel />
     </div>
   );
 }

@@ -4,17 +4,17 @@ import { Switch, TextInput, View } from "react-native";
 import { social, errorText, type PublicUser, type SocialMe, type Visibility } from "../api/social";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
-import { Card } from "../ui/Card";
-import { Skeleton, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
+import { Skeleton, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { RadioDot } from "../ui/RadioDot";
 import { useTheme, spacing, radii } from "../theme";
-import { EmptyCard, Pill, SectionTitle } from "../social/common";
+import { EmptyCard, Pill } from "../social/common";
 import { WarningIcon } from "../ui/icons";
 import { SOCIAL_LIMITS } from "../lib/profileDefaults";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
-import { FIELD, insetEdge } from "../ui/Field";
+import { FIELD, Field, insetEdge } from "../ui/Field";
+import { Group, Row } from "../ui/SettingsGroup";
 
 /** Görünürlük seçenekleri — anahtar tutar, çeviri render sırasında çözülür. */
 const VIS: { key: Visibility; label: string; sub: string }[] = [
@@ -22,16 +22,6 @@ const VIS: { key: Visibility; label: string; sub: string }[] = [
   { key: "friends", label: "social.tab_friends", sub: "socialsettings.vis_friends_sub" },
   { key: "private", label: "socialsettings.vis_private", sub: "socialsettings.vis_private_sub" },
 ];
-
-/** Bölüm: ortak `SectionTitle` (büyük harf, başlık rolü) + kart. */
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <View>
-      <SectionTitle title={title} />
-      <Card padded>{children}</Card>
-    </View>
-  );
-}
 
 /**
  * SOSYAL AYARLAR ARTIK AYARLAR'IN İÇİNDE (2026-09-28, Samet'in kararı;
@@ -78,16 +68,26 @@ function SaveLine({ msg, ok }: { msg: string | null; ok: boolean }) {
   return <>{msg ? <Text accessibilityLiveRegion={ok ? "polite" : "assertive"} variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg}</Text> : null}</>;
 }
 
-/** Yükleme ve hata hâli — iki parça için ortak. */
-function LoadState({ loadErr, retry, rows }: { loadErr: string | null; retry: () => void; rows: number }) {
+/**
+ * Yükleme ve hata hâli. İskelet gerçeğin şekli: tek grup, üç bölüm
+ * (Görünürlük üç radyo satırı, İzinler üç anahtar satırı, Engellenenler tek
+ * satır) ve `children` (veri ve onaylar) gerçek hâliyle — o bölüm sosyal
+ * profile bağlı değil, beklemesi gerekmiyor.
+ */
+function LoadState({ loadErr, retry, children }: { loadErr: string | null; retry: () => void; children?: React.ReactNode }) {
   const { colors } = useTheme();
-  if (loadErr) return <EmptyCard live="assertive" icon={WarningIcon} tint={colors.danger} title={tx("socialsettings.social_and_privacy")} text={loadErr} action={tx("common.try_again")} onAction={retry} />;
-  /* Bölüm bölüm, GERÇEK satırlarla: Görünürlük (üç radyo satırı), İzinler
-     (üç anahtar satırı), Engellenenler (tek satır). Eskisi her bölüme 48'lik
-     tek blok + bir satır koyuyordu; üç satırlık kartlar gelince ekran iki
-     katı uzuyordu. */
+  if (loadErr) {
+    return (
+      <>
+        <View style={{ marginTop: spacing.sm }}>
+          <EmptyCard live="assertive" icon={WarningIcon} tint={colors.danger} title={tx("socialsettings.social_and_privacy")} text={loadErr} action={tx("common.try_again")} onAction={retry} />
+        </View>
+        {children ? <Group>{children}</Group> : null}
+      </>
+    );
+  }
   const row = (i: number, trailing: React.ReactNode) => (
-    <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+    <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: FIELD.row, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
       <View style={{ flex: 1 }}>
         <SkeletonLine variant="bodyStrong" width={`${50 - i * 8}%`} />
         <SkeletonLine variant="caption" width="80%" />
@@ -96,20 +96,18 @@ function LoadState({ loadErr, retry, rows }: { loadErr: string | null; retry: ()
     </View>
   );
   return (
-    <>
-      {[0, 1, 2].map((s) => (
-        <View key={s}>
-          <View style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }}>
-            <SkeletonLine variant="caption" width={116} />
-          </View>
-          <SkeletonCard padded>
-            {s === 0 ? [0, 1, 2].map((i) => row(i, <SkeletonTile size={22} radius={radii.pill} />))
-              : s === 1 ? [0, 1, 2].map((i) => row(i, <SkeletonPill width={51} height={31} />))
-              : <SkeletonLine variant="caption" width="60%" />}
-          </SkeletonCard>
-        </View>
-      )).slice(0, rows)}
-    </>
+    <Group>
+      <Row label={tx("socialsettings.visibility")}>
+        <View style={insetEdge}>{[0, 1, 2].map((i) => row(i, <SkeletonTile size={22} radius={radii.pill} />))}</View>
+      </Row>
+      <Row label={tx("socialsettings.permissions")}>
+        <View style={insetEdge}>{[0, 1, 2].map((i) => row(i, <SkeletonPill width={51} height={31} />))}</View>
+      </Row>
+      <Row label={tx("socialsettings.blocked_title")}>
+        <SkeletonLine variant="caption" width="60%" />
+      </Row>
+      {children}
+    </Group>
   );
 }
 
@@ -122,22 +120,30 @@ export function SocialUsername() {
   const input = { backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 } as const;
   if (!me) return loadErr ? <Text variant="caption" color={colors.dangerText}>{loadErr}</Text> : <Skeleton height={48} radius={radii.md} />;
   return (
-    <View>
+    /* Alan bloğu (`ui/Field`): kutu → yardım 8; kural ve profil bağlantısı
+       tek yardım satırı (web aynı), ikinci satır payısız yapışıyordu. */
+    <Field help={`${tx("socialsettings.username_rule")} ${me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown", { n: SOCIAL_LIMITS.changeCooldownDays })} ${tx("socialsettings.profile_link", { path: `/u/${me.username}` })}`}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
         <TextInput returnKeyType="done" value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={SOCIAL_LIMITS.usernameMax} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.username_2")}
         accessibilityLabel={tx("socialsettings.username_2")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
         <Pill label={tx("common.save")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, tx("socialsettings.username_updated")).then((n) => { if (n) setUsername(n.username); })} />
       </View>
-      <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("socialsettings.username_rule")} {me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown", { n: SOCIAL_LIMITS.changeCooldownDays })}</Text>
-      <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.profile_link", { path: `/u/${me.username}` })}</Text>
       <SaveLine msg={msg} ok={ok} />
       {loadErr ? <Pill label={tx("common.try_again")} small tone="ghost" onPress={retry} /> : null}
-    </View>
+    </Field>
   );
 }
 
 /** Görünürlük, izinler ve engellenenler — Ayarlar › Gizlilik'in üst kısmı. */
-export function SocialPrivacy() {
+/**
+ * GİZLİLİK TEK GRUP (2026-09-30, Samet: ayar kutuları aynı dili konuşmuyordu).
+ * Üç bölüm üç ayrı kartta, kartın DIŞINDA büyük harfli başlıkla duruyordu;
+ * "Veri ve onaylar" da başlıklı dördüncü bir kutuydu. Artık standart grup:
+ * tek kart, bölümler çizgiyle ayrılmış, her bölüm küçük sönük etiket +
+ * içerik. `children` grubun sonuna eklenen bölümler (veri ve onaylar). Web
+ * `SocialSettings part="privacy"` aynı.
+ */
+export function SocialPrivacy({ children }: { children?: React.ReactNode }) {
   const { colors } = useTheme();
   const { user } = useAuth();
   const { me, msg, ok, busy, setBusy, setMsg, setOk, loadErr, retry, save } = useSocialMe();
@@ -162,20 +168,23 @@ export function SocialPrivacy() {
 
   if (user?.guest) {
     return (
-      <View style={{ marginTop: spacing.sm }}>
-        <GuestAccountCard title={tx("guest.social_title")} text={tx("guest.social_body")} />
-      </View>
+      <>
+        <View style={{ marginTop: spacing.sm }}>
+          <GuestAccountCard title={tx("guest.social_title")} text={tx("guest.social_body")} />
+        </View>
+        {children ? <Group>{children}</Group> : null}
+      </>
     );
   }
-  if (!me) return <LoadState loadErr={loadErr} retry={retry} rows={3} />;
+  if (!me) return <LoadState loadErr={loadErr} retry={retry}>{children}</LoadState>;
   return (
-    <>
+    <Group>
       {/* Gorunurluk gercek bir radyo grubu - yanindaki nokta da onu
           ciziyor - ama rol bilgisi yoktu: secili satir yalnizca yazi
           renginden ve noktadan okunuyordu. Webde `aria-pressed` var. */}
       {/* Üç bölüm de basılabilir kutu içi liste (`ui/Field`): ilk satırın
           üstünde fazladan 12 vardı, kartın kenarında 28 oluyordu. */}
-      <Section title={tx("socialsettings.visibility")}>
+      <Row label={tx("socialsettings.visibility")}>
         <View style={insetEdge}>
         {VIS.map((v, i) => {
           const active = me.visibility === v.key;
@@ -190,18 +199,18 @@ export function SocialPrivacy() {
           );
         })}
         </View>
-      </Section>
+      </Row>
 
-      <Section title={tx("socialsettings.permissions")}>
+      <Row label={tx("socialsettings.permissions")}>
         <View style={insetEdge}>
         {toggle(tx("socialsettings.perm_requests"), tx("socialsettings.perm_requests_sub"), me.allowRequests, (v) => void save({ allowRequests: v }), true)}
         {toggle(tx("socialsettings.perm_suggest"), tx("socialsettings.perm_suggest_sub"), me.showInSuggestions, (v) => void save({ showInSuggestions: v }))}
         {toggle(tx("socialsettings.perm_activity"), tx("socialsettings.perm_activity_sub"), me.showActivity, (v) => void save({ showActivity: v }))}
         </View>
         <SaveLine msg={msg} ok={ok} />
-      </Section>
+      </Row>
 
-      <Section title={tx("socialsettings.blocked_title")}>
+      <Row label={tx("socialsettings.blocked_title")}>
         {blocked === null ? <SkeletonLine variant="caption" width="60%" /> : blocked.length ? <View style={insetEdge}>{blocked.map((b, i) => (
           <View key={b.userId} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: FIELD.row, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
             <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={36} />
@@ -212,7 +221,8 @@ export function SocialPrivacy() {
             <Pill label={tx("socialsettings.remove")} small tone="ghost" disabled={busy} onPress={() => { setBusy(true); social.unblock(b.userId).then(() => setBlocked((p) => (p ?? []).filter((x) => x.userId !== b.userId))).catch((e) => { setMsg(errorText(e)); setOk(false); }).finally(() => setBusy(false)); }} />
           </View>
         ))}</View> : <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.you_haven_t_blocked_anyone")}</Text>}
-      </Section>
-    </>
+      </Row>
+      {children}
+    </Group>
   );
 }

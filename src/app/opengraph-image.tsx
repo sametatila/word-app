@@ -1,6 +1,5 @@
-import { ImageResponse } from "next/og";
 import { getLang } from "@/lib/i18n/server";
-import { translate } from "@/lib/i18n/dict";
+import { genericCard, OG_SIZE } from "@/lib/og/card";
 
 /**
  * Paylaşılan bağlantının önizleme görseli.
@@ -9,107 +8,18 @@ import { translate } from "@/lib/i18n/dict";
  * WhatsApp ya da X'te yalnızca çıplak bir adres görünüyordu — tıklanma
  * oranını en çok düşüren şey bu. Görsel kodla üretiliyor: tek bir PNG
  * dosyasını elle güncel tutmak, sayılar değiştikçe unutulan bir iş olurdu.
+ *
+ * Vaat dilden bağımsız, kurs rozetleri KATALOGDAN (`lib/og/card`
+ * `courseBadges`): yeni bir kurs açılınca kart metin değişmeden güncellenir.
  */
 
 // Dışa aktarılan `alt` DURAĞAN (istekten önce okunuyor), yani dile göre
 // değişemiyor: dilden bağımsız marka adı yazılı.
 export const alt = "Lernomi";
-export const size = { width: 1200, height: 630 };
+export const size = OG_SIZE;
 export const contentType = "image/png";
 
 /** Kartın yazıları ziyaretçinin arayüz dilinde (bkz. `layout.tsx` `generateMetadata`). */
 export default async function Image() {
-  const lang = await getLang();
-  const t = (key: string) => translate(lang, key);
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "0 90px",
-          background: "linear-gradient(135deg, #26262a 0%, #1b1b1d 55%, #111113 100%)",
-          color: "#efefec",
-          fontFamily: "sans-serif",
-        }}
-      >
-        {/*
-          Marka satırı.
-
-          Maskot burada raster olarak YOK: `next/og` sunucuda çalışıyor ve
-          `public/` altındaki bir dosyayı okumak dağıtım ortamına göre sessizce
-          boş dönebiliyor — bozuk bir önizleme, önizlemesiz bağlantıdan daha
-          kötü. Kart bu yüzden tipografik, ama rengi MARKANIN: kestane zemin
-          üstünde turuncu.
-
-          Karo SÜRESİ GEÇMİŞ kehribarı (#eda45d/#c87318) taşıyordu. Marka
-          mobilden gelen turuncuya geçtiğinde (bkz. globals.css
-          `--color-brand-*`) paylaşılan her bağlantının önizlemesi eski
-          kimlikte kalmıştı. Rampa artık marka rampası (400 → 600) ve harfin
-          mürekkebi Android'in koyu tema `onPrimary`si (#1a1008), yani karo
-          birincil düğmenin kendisiyle aynı çifti kuruyor.
-        */}
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: 18,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "linear-gradient(135deg, #fb8f2a, #db5f08)",
-              color: "#1b1b1d",
-              fontSize: 38,
-              fontWeight: 800,
-            }}
-          >
-            L
-          </div>
-          <div style={{ fontSize: 38, fontWeight: 700, letterSpacing: -0.5 }}>Lernomi</div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            fontSize: 76,
-            fontWeight: 800,
-            lineHeight: 1.15,
-            marginTop: 44,
-            letterSpacing: -2,
-          }}
-        >
-          {t("meta.tagline")}
-        </div>
-
-        <div style={{ display: "flex", fontSize: 34, color: "#a3a3a8", marginTop: 30 }}>
-          {t("meta.og_sub")}
-        </div>
-
-        {/* Kurslar ve anlatım dili — ürünün eşi olmayan yanı burada duruyor. */}
-        <div style={{ display: "flex", gap: 16, marginTop: 44 }}>
-          {t("meta.og_badges").split("|").map((badge) => (
-            <div
-              key={badge}
-              style={{
-                display: "flex",
-                fontSize: 27,
-                fontWeight: 600,
-                padding: "14px 28px",
-                borderRadius: 999,
-                background: "rgba(255,255,255,0.10)",
-                border: "1px solid rgba(255,255,255,0.18)",
-              }}
-            >
-              {badge}
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
-    size,
-  );
+  return genericCard(await getLang());
 }

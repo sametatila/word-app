@@ -45,18 +45,16 @@ const SECTIONS: SettingsSection[] = ["learning", "app", "account", "security", "
 const PANELS: SettingsPanel[] = [...SECTIONS, "reminders", "subscription"];
 const PANEL_TITLE: Record<SettingsPanel, string> = { ...SETTINGS_TITLE, reminders: "notifications.reminders", subscription: "settings.group_subscription" };
 
-/** İçinde bağlantı olan iki satırlık satır (Güvenlik, Hesabı sil): sağda 18'lik şevron. */
+/** İçinde bağlantı olan iki satırlık satır (Güvenlik, Hesabı sil): sağda 18'lik şevron. Kutu içi listenin çocuğu. */
 function LinkRowSlot({ title, sub }: { title: string; sub: string }) {
   return (
-    <Row>
-      <div className="flex items-center gap-3 py-1.5">
-        <span className="min-w-0 flex-1">
-          <Words className="block text-strong" text={title} />
-          <Words className="muted block text-caption" text={sub} />
-        </span>
-        <span className="w-[18px] shrink-0" />
-      </div>
-    </Row>
+    <div className="flex items-center gap-3">
+      <span className="min-w-0 flex-1">
+        <Words className="block text-strong" text={title} />
+        <Words className="muted block text-caption" text={sub} />
+      </span>
+      <span className="w-[18px] shrink-0" />
+    </div>
   );
 }
 
@@ -202,9 +200,10 @@ function SectionBody({ section }: { section: SettingsPanel }) {
             <div className="space-y-3">
             {[t("settings.daily_goal_short"), t("settings.new_per_day")].map((name) => (
               <div key={name} className="block">
-                <span className="mb-1.5 flex items-baseline justify-between text-strong">
-                  <Words text={name} />
-                  <SkeletonLine variant="strong" width={72} />
+                {/* Formun satırı: etiket sarılıyor, değer küçülmüyor. */}
+                <span className="mb-1.5 flex items-baseline justify-between gap-2 text-strong">
+                  <Words className="min-w-0 flex-1" text={name} />
+                  <SkeletonLine variant="strong" width={72} className="shrink-0" />
                 </span>
                 {/* Gerçek `.range`, görünmez: satır içi öğenin satır payıyla
                     birlikte yüksekliği tarayıcıdan. Üstünde 6 px çubuk (22 px'in ortası). */}
@@ -301,8 +300,8 @@ function SectionBody({ section }: { section: SettingsPanel }) {
     }
 
     case "account":
-      /* `LinkedAccounts part="account"`: ad, giriş yöntemleri (çoğu hesapta
-         parola + Google), kullanıcı adı, Güvenlik, Hesabı sil. */
+      /* `LinkedAccounts part="account"`: ad, kullanıcı adı, giriş yöntemleri
+         (çoğu hesapta parola + Google), hesap yönetimi (Güvenlik, Hesabı sil). */
       return (
         <Group>
           <Row label={label(t("settings.sec_name"))}>
@@ -310,12 +309,8 @@ function SectionBody({ section }: { section: SettingsPanel }) {
               <SkeletonLine variant="body" width="40%" />
             </div>
           </Row>
-          <Row label={label(t("links.title"))}>
-            <SignInMethodsSkeleton />
-          </Row>
           <Row label={label(t("socialsettings.username"))}>
             <div className="flex items-center gap-2">
-              <Words className="text-body" text="@" />
               <div className="input min-w-0 flex-1">
                 <SkeletonLine variant="body" width="50%" />
               </div>
@@ -327,8 +322,15 @@ function SectionBody({ section }: { section: SettingsPanel }) {
               text={`${t("socialsettings.username_rule")} ${t("socialsettings.username_cooldown", { n: USERNAME_CHANGE_COOLDOWN_DAYS })} ${t("socialsettings.profile_link", { path: "/u/username" })}`}
             />
           </Row>
-          <LinkRowSlot title={t("settings.group_security")} sub={t("settings.security_sub")} />
-          <LinkRowSlot title={t("settings.delete_account")} sub={t("deleteaccount.your_account_and_all_your_data")} />
+          <Row label={label(t("links.title"))}>
+            <SignInMethodsSkeleton />
+          </Row>
+          <Row label={label(t("settings.sec_manage"))}>
+            <div className="inset-list">
+              <LinkRowSlot title={t("settings.group_security")} sub={t("settings.security_sub")} />
+              <LinkRowSlot title={t("settings.delete_account")} sub={t("deleteaccount.your_account_and_all_your_data")} />
+            </div>
+          </Row>
         </Group>
       );
 
@@ -350,59 +352,52 @@ function SectionBody({ section }: { section: SettingsPanel }) {
       );
 
     case "privacy":
+      /* `SocialSettings part="privacy"` + veri ve onaylar: tek grup, dört bölüm. */
       return (
-        <>
-          {/* `SocialSettings part="privacy"`: görünürlük, izinler, engellenenler. */}
-          <section className="card divide-y divide-[color:var(--hairline)] overflow-hidden px-4">
-            <div className="py-4">
-              <Words as="p" className="text-strong" text={t("socialsettings.visibility")} />
-              <div className="mt-2 flex flex-col gap-1.5">
-                {[
-                  ["socialsettings.vis_public", "socialsettings.vis_public_sub"],
-                  ["social.tab_friends", "socialsettings.vis_friends_sub"],
-                  ["socialsettings.vis_private", "socialsettings.vis_private_sub"],
-                ].map(([l, s]) => (
-                  <div key={l} className="chip justify-start px-3.5 py-2.5 text-left text-caption">
-                    <Words className="block text-caption" text={t(l)} />
-                    <Words className="muted block text-micro" text={t(s)} />
-                  </div>
-                ))}
-              </div>
+        <Group>
+          <Row label={label(t("socialsettings.visibility"))}>
+            <div className="flex flex-col gap-1.5">
+              {[
+                ["socialsettings.vis_public", "socialsettings.vis_public_sub"],
+                ["social.tab_friends", "socialsettings.vis_friends_sub"],
+                ["socialsettings.vis_private", "socialsettings.vis_private_sub"],
+              ].map(([l, s]) => (
+                <div key={l} className="chip justify-start px-3.5 py-2.5 text-left text-caption">
+                  <Words className="block text-caption" text={t(l)} />
+                  <Words className="muted block text-micro" text={t(s)} />
+                </div>
+              ))}
             </div>
-            <div className="py-4">
-              <Words as="p" className="mb-2 text-strong" text={t("socialsettings.permissions")} />
-              <div className="inset-list">
-                {["perm_requests", "perm_suggest", "perm_activity"].map((k) => (
-                  <SettingRowSlot key={k} title={t(`socialsettings.${k}`)} sub={t(`socialsettings.${k}_sub`)}>
-                    <SwitchSlot />
-                  </SettingRowSlot>
-                ))}
-              </div>
+          </Row>
+          <Row label={label(t("socialsettings.permissions"))}>
+            <div className="inset-list">
+              {["perm_requests", "perm_suggest", "perm_activity"].map((k) => (
+                <SettingRowSlot key={k} title={t(`socialsettings.${k}`)} sub={t(`socialsettings.${k}_sub`)}>
+                  <SwitchSlot />
+                </SettingRowSlot>
+              ))}
             </div>
-            <div className="py-4">
-              <Words as="p" className="text-strong" text={t("socialsettings.blocked_title")} />
-              <SkeletonLine variant="caption" width="60%" className="mt-2" />
+          </Row>
+          <Row label={label(t("socialsettings.blocked_title"))}>
+            <SkeletonLine variant="caption" width="60%" />
+          </Row>
+          <Row label={label(t("settings.sec_data_consents"))}>
+            <div className="inset-list">
+            <SettingRowSlot title={t("settings.send_usage_data")} sub={t("settings.analytics_sub")}>
+              <span className="chip block h-8 px-2.5 text-caption">
+                <Words text={t("settings.privacy_policy_short")} />
+              </span>
+              <SwitchSlot />
+            </SettingRowSlot>
+            <SettingRowSlot title={t("aiconsent.text_title")} sub={t("aiconsent.settings_text_sub")}>
+              <SwitchSlot />
+            </SettingRowSlot>
+            <SettingRowSlot title={t("aiconsent.settings_voice")} sub={t("aiconsent.settings_voice_sub")}>
+              <SwitchSlot />
+            </SettingRowSlot>
             </div>
-          </section>
-          <Group title={<Words text={t("settings.data_consents")} />}>
-            <Row>
-              <div className="inset-list">
-              <SettingRowSlot title={t("settings.send_usage_data")} sub={t("settings.analytics_sub")}>
-                <span className="chip block h-8 px-2.5 text-caption">
-                  <Words text={t("settings.privacy_policy_short")} />
-                </span>
-                <SwitchSlot />
-              </SettingRowSlot>
-              <SettingRowSlot title={t("aiconsent.text_title")} sub={t("aiconsent.settings_text_sub")}>
-                <SwitchSlot />
-              </SettingRowSlot>
-              <SettingRowSlot title={t("aiconsent.settings_voice")} sub={t("aiconsent.settings_voice_sub")}>
-                <SwitchSlot />
-              </SettingRowSlot>
-              </div>
-            </Row>
-          </Group>
-        </>
+          </Row>
+        </Group>
       );
 
     case "about":

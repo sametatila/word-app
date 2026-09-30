@@ -13,12 +13,12 @@ import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "../ui/icons";
 import { WeakSpots } from "../ui/WeakSpots";
-import { GrowthPanel } from "../ui/GrowthPanel";
-import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
+import { GrowthTrends, HowAmIDoing, HowAmIDoingHead, useGrowth } from "../ui/GrowthPanel";
+import { Skeleton, SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { bumpStats } from "../lib/statsSignal";
 import { EmptyCard, ScreenHeader } from "../social/common";
-import { useTheme, spacing, radii, softShadow, onTint, type Palette, soft, ds } from "../theme";
+import { useTheme, spacing, radii, softShadow, fillOf, type Palette, ds } from "../theme";
 import { todayStr } from "../game/session";
 import { useLayout } from "../lib/useLayout";
 import { CardGrid } from "../ui/CardGrid";
@@ -73,13 +73,15 @@ function ActivityStrip({ rows, today, colors }: { rows: { day: string; reviews: 
   const peak = Math.max(1, ...days.map((d) => d.reviews));
   const active = days.filter((d) => d.reviews > 0).length;
   const total = days.reduce((s, d) => s + d.reviews, 0);
-  const names = weekdayNames();
+  /* İKİ HARF: 14 sütunda üç harfli kısa ad sığmıyor ("Cmt" komşusuna
+     biniyordu); tek harf Pzt/Per/Paz'ı karıştırıyor. Web `ActivityStrip` ile aynı. */
+  const names = weekdayNames().map((n) => n.replace(/\./g, "").slice(0, 2));
 
   return (
-    <Card padded style={{ marginBottom: spacing.lg }}>
+    <Card padded>
       <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.md, marginBottom: spacing.sm }}>
-        <Text variant="bodyStrong">{t("progress.last_two_weeks")}</Text>
-        <Text variant="micro" color={colors.textMuted}>
+        <Text accessibilityRole="header" variant="h3">{t("progress.last_two_weeks")}</Text>
+        <Text variant="caption" color={colors.textMuted}>
           {t("social.days", { n: active })} · {t("progress.n_reviews", { n: formatNumber(total) })}
         </Text>
       </View>
@@ -93,7 +95,8 @@ function ActivityStrip({ rows, today, colors }: { rows: { day: string; reviews: 
             /* Karışımı webdeki `color-mix` gibi kuruyoruz: alttaki `surface2`
                dolgusunun üstüne aynı yüzdede saydam marka rengi. */
             <View key={d.day} accessibilityLabel={`${d.day}: ${label}`} style={{ flex: 1, height: `${pct}%`, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
-              <View style={{ flex: 1, backgroundColor: colors.primary, opacity: mix / 100 }} />
+              {/* BUGÜN TAM MARKA RENGİ (web bugünün sütununu marka gradyanıyla çiziyor). */}
+              <View style={{ flex: 1, backgroundColor: colors.primary, opacity: d.day === today ? 1 : mix / 100 }} />
             </View>
           ) : (
             <View key={d.day} accessibilityLabel={`${d.day}: ${label}`} style={{ flex: 1, height: 3, borderRadius: 3, backgroundColor: colors.surface2 }} />
@@ -118,22 +121,19 @@ function ActivityStrip({ rows, today, colors }: { rows: { day: string; reviews: 
   );
 }
 
-function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: string; size: number }) => React.ReactElement; value: string; label: string; tint: string; colors: Palette }) {
+/** Dört karodan biri — dolu renkli ikon karosu + `h2` değer (web `KpiCard`). */
+function Stat({ icon: Icon, value, label, fill, colors }: { icon: (p: { color: string; size: number }) => React.ReactElement; value: string; label: string; fill: string; colors: Palette }) {
   return (
-    <Card padded style={{ flex: 1, gap: 6 }}>
-      <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint, colors) }}>
-        <Icon color={onTint(tint, colors)} size={20} />
+    <Card padded style={{ flex: 1, gap: 2 }}>
+      <View style={[{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: fill, marginBottom: spacing.sm }, softShadow(fill, 6)]}>
+        <Icon color="#fff" size={20} />
       </View>
-      <Text variant="h1" color={colors.text}>{value}</Text>
+      <Text variant="h2" color={colors.text}>{value}</Text>
       <Text variant="caption" color={colors.textMuted}>{label}</Text>
     </Card>
   );
 }
 
-/**
- * Gelişim — header'daki seri rozetine dokununca açılır (profil yerine, daha
- * mantıklı). Seri, XP, öğrenilen kelime, süre, seviye ilerlemesi; başarımlara giriş.
- */
 /**
  * Seviye → renk. Web `progress-view` `LEVEL_COLOR` ile birebir; eşlemenin
  * kendisi paletin yorumunda yazılı (mint=A1, sky=A2, violet=B1, brand=B2,
@@ -149,33 +149,129 @@ function levelTint(niveau: string, colors: Palette): string {
   }
 }
 
+/** Turuncu kahramanın üstünde iskelet satırı — beyaz %25 (Öğren'in hedef şeridi gibi). */
+function HeroLine({ variant, width }: { variant: "display" | "bodyStrong" | "caption" | "micro"; width: number }) {
+  const h = textHeight(variant);
+  const bar = Math.max(6, h - 4);
+  return (
+    <View style={{ width, height: h, justifyContent: "center" }}>
+      <Skeleton height={bar} radius={Math.min(radii.sm, bar / 2)} style={{ backgroundColor: "#ffffff40" }} />
+    </View>
+  );
+}
+
+/** Bu haftanın yedi günü (pazartesi başı); `today` gün dizgisi. Web `weekDays` ile aynı. */
+function weekDays(today: string, studied: (day: string) => boolean) {
+  const end = new Date(`${today}T00:00:00Z`);
+  const offset = (end.getUTCDay() + 6) % 7;
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(end);
+    d.setUTCDate(d.getUTCDate() - offset + i);
+    const key = d.toISOString().slice(0, 10);
+    return { day: key, weekday: i, studied: i <= offset && studied(key), future: i > offset };
+  });
+}
+
+/**
+ * SERİ KAHRAMANI — Öğren'in "Günlük tur" kartıyla aynı dolgu (`colors.primary`
+ * + `onPrimary`, temadan bağımsız; web `--brand-fill` + `--on-brand`). Beyaz
+ * yazı / turuncu 2.77: Öğren kahramanıyla aynı kayıtlı karar (T-KARAR-1).
+ *
+ * Alev ikonu `streakInk` (web `flame-700`): yarı saydam beyaz karo turuncuyu
+ * #f98f3d'ye açıyor ve seri tonlarından yalnız 700 orada grafik eşiğini
+ * geçiyor, 3.16. Altta "bu hafta": yedi nokta, çalışılan gün dolu.
+ *
+ * Veri gelmeden de AYNI kabuk çiziliyor (iskelet çubukları beyaz %25): sıfır
+ * seri, yükleniyor demek değil — 40 günlük seriyi bir an "0" göstermek yok.
+ */
+function StreakHero({ streak, longest, days, today, colors }: { streak: number | null; longest: number; days: { day: string; reviews: number }[]; today: string; colors: Palette }) {
+  const byDay = new Map(days.map((d) => [d.day, d.reviews]));
+  const week = weekDays(today, (d) => (byDay.get(d) ?? 0) > 0);
+  const studied = week.filter((d) => d.studied).length;
+  const names = weekdayNames();
+  const ready = streak !== null;
+  return (
+    <View style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, overflow: "hidden" }, softShadow(colors.primary, 14)]}>
+      <View style={{ padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg }}>
+        <View style={{ width: ds(64), height: ds(64), borderRadius: radii.lg, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
+          <StreakIcon color={colors.streakInk} size={34} />
+        </View>
+        <View style={{ flex: 1 }}>
+          {ready ? (
+            <>
+              <Text variant="display" color={colors.onPrimary}>{formatNumber(streak)}</Text>
+              <Text variant="bodyStrong" color={colors.onPrimary}>{t("progress.day_streak")}</Text>
+              {/* EN UZUN SERİ: bugünkü sayı ancak kendi rekoruyla kıyaslanınca bir şey söylüyor. */}
+              {longest ? <Text variant="caption" color={colors.onPrimaryMuted}>{t("progress.longest_streak", { n: formatNumber(longest) })}</Text> : null}
+            </>
+          ) : (
+            <>
+              <HeroLine variant="display" width={64} />
+              <HeroLine variant="bodyStrong" width={112} />
+              <HeroLine variant="caption" width={140} />
+            </>
+          )}
+        </View>
+      </View>
+      <View style={{ paddingHorizontal: spacing.xl, paddingBottom: spacing.lg }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.sm }}>
+          {ready ? (
+            <>
+              <Text variant="micro" color={colors.onPrimaryMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("progress.this_week").toLocaleUpperCase(dateLocale())}</Text>
+              <Text variant="micro" color={colors.onPrimaryMuted}>{t("progress.week_days", { n: studied })}</Text>
+            </>
+          ) : (
+            <>
+              <HeroLine variant="micro" width={70} />
+              <HeroLine variant="micro" width={50} />
+            </>
+          )}
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", gap: spacing.xs }}>
+          {week.map((d) => (
+            <View key={d.day} style={{ flex: 1, alignItems: "center", gap: spacing.xs }}>
+              <View
+                accessible
+                accessibilityLabel={`${d.day}: ${d.studied ? t("progress.studied") : t("progress.no_study")}`}
+                style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: ready && d.studied ? "#ffffff" : d.future ? "transparent" : "#ffffff40", borderWidth: d.future ? 1 : 0, borderColor: "#ffffff66" }}
+              />
+              <Text variant="micro" color={d.day === today ? colors.onPrimary : colors.onPrimaryMuted}>{names[d.weekday]}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </View>
+  );
+}
+
+/**
+ * Gelişim — header'daki seri rozetine ve Profil'in "Gelişim" bölümüne
+ * dokununca açılır. Bölüm sırası web `ActivityProgress` ile birebir: seri
+ * kahramanı (bu hafta) → Nasıl gidiyorum → dört karo → kelime ustalığı +
+ * seviye → tekrar kuyruğu → son iki hafta → zayıf noktalar → zaman içinde →
+ * Neler yapabilirim / Yazılarım.
+ */
 export function ProgressScreen() {
   const { colors } = useTheme();
   const { gridColumns } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { me, loading } = useMe();
+  const growth = useGrowth();
   const level = me?.level ?? "A1";
   const mastered = me?.mastered ?? 0;
   const totalWords = me?.totalWords ?? 0;
   const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
+  const today = todayStr();
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScreenHeader title={t("progress.progress")} />
 
       {/*
-        OKUMA PATLADIYSA İSKELET DEĞİL HATA.
-
-        Ekran yalnız `me`ye bakıyordu: hem `/api/me` hem oturum yedeği
-        başarısız olduğunda `me` null kalıyor ve dört karo, ustalık kartı,
-        şerit — hepsi SONSUZA KADAR iskelet çiziyordu. "Yükleniyor" görünen
-        bir ekran hiç yüklenmiyordu; kullanıcının yapacağı bir şey de yoktu.
-        `loading` zaten `useMe`den geliyordu, okunmuyordu.
-
-        Web'in aynı sayfası (`profile/progress`) okuma patladığında bloğu
-        HİÇ çizmiyordu — sessiz bir boşluk; o da aynı kartla düzeltildi
-        (§321). Yeniden deneme `bumpStats()` ile: `useMe` o işareti
+        OKUMA PATLADIYSA İSKELET DEĞİL HATA. `me` null kalınca bütün kartlar
+        SONSUZA KADAR iskelet çiziyordu. Web'in aynı sayfası aynı kartı
+        çiziyor (§321). Yeniden deneme `bumpStats()` ile: `useMe` o işareti
         dinliyor.
       */}
       {!loading && !me ? (
@@ -191,66 +287,28 @@ export function ProgressScreen() {
           />
         </View>
       ) : (
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-        {/* seri kahramanı */}
-        {/*
-          SIFIR SERİ, YÜKLENİYOR DEMEK DEĞİL. Kart `me?.streak ?? 0` ile
-          çiziliyordu: okuma bitene kadar ekranın en tepesinde kocaman bir
-          "0 · gün serisi" ve suratsız maskot duruyor, sonra gerçek sayı
-          giriyordu. Serisi 40 günlük biri her açılışta bir an serisini
-          kaybetmiş gibi görüyordu — ızgara ve ustalık kartı zaten iskelet
-          çizerken yalnız bu kart uydurma veri gösteriyordu.
-        */}
-        {me ? (
-          /* ZEMİN `streakDeep`. Ölçüm: beyaz yazı `streak` üstünde açık temada 2.88,
-             koyu temada 1.94 - AA'nın büyük yazı eşiği 3.0'ı bile tutmuyor. Koyu
-             kehribarda 5.20. Web'in aynı kartı da 500'den 600'e indi. */
-          <View style={[{ borderRadius: radii.xl, backgroundColor: colors.streakDeep, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }, softShadow(colors.streakDeep, 12)]}>
-            <View style={{ width: ds(64), height: ds(64), borderRadius: radii.lg, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
-              <StreakIcon color="#fff" size={34} />
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text variant="display" color="#fff">{me.streak}</Text>
-              <Text variant="bodyStrong" color="#fff">{t("progress.day_streak")}</Text>
-              {/*
-                EN UZUN SERİ. Sunucu bunu zaten gönderiyor (`/api/me`) ve BAŞKASININ
-                profilinde görünüyordu (herkese açık profil satırı), ama kendi
-                ekranında hiç yoktu. Bugünkü sayı ancak kendi rekoruyla kıyaslanınca
-                bir şey söylüyor.
-              */}
-              {me.longestStreak ? (
-                <Text variant="caption" color="#ffffffe6">{t("progress.longest_streak", { n: me.longestStreak })}</Text>
-              ) : null}
-            </View>
-          </View>
-        ) : (
-          <SkeletonCard style={{ borderRadius: radii.xl, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }}>
-            <SkeletonTile size={ds(64)} radius={radii.lg} />
-            <View style={{ flex: 1 }}>
-              <SkeletonLine variant="display" width={72} />
-              <SkeletonLine variant="bodyStrong" width={112} />
-              {/* En uzun seri satırı; sağdaki maskot yuvarlağı kartta artık yok. */}
-              <SkeletonLine variant="caption" width={140} />
-            </View>
-          </SkeletonCard>
-        )}
+      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.xl }} showsVerticalScrollIndicator={false}>
+        <StreakHero streak={me ? me.streak : null} longest={me?.longestStreak ?? 0} days={me?.days ?? []} today={today} colors={colors} />
 
-        {/* istatistik ızgarası */}
+        <View>
+          <HowAmIDoingHead data={growth} />
+          <HowAmIDoing data={growth} />
+        </View>
+
+        {/* Dört karo — web `KpiCard` ile aynı ikonlar ve dolgular (500). */}
         {me ? (
-          <CardGrid columns={gridColumns} balance stretch style={{ marginBottom: spacing.lg }}>
-            <Stat icon={MyWordsIcon} value={String(mastered)} label={t("progress.words_learned")} tint={colors.primary} colors={colors} />
-            <Stat icon={XpIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} tint={colors.success} colors={colors} />
-            <Stat icon={DurationIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} tint={colors.info} colors={colors} />
-            <Stat icon={LevelIcon} value={level} label={t("progress.level")} tint={colors.accent} colors={colors} />
+          <CardGrid columns={gridColumns} balance stretch>
+            <Stat icon={MyWordsIcon} value={formatNumber(mastered)} label={t("progress.words_learned")} fill={fillOf("primary")} colors={colors} />
+            <Stat icon={XpIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} fill={fillOf("success")} colors={colors} />
+            <Stat icon={DurationIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} fill={fillOf("info")} colors={colors} />
+            <Stat icon={LevelIcon} value={level} label={t("progress.level")} fill={fillOf("accent")} colors={colors} />
           </CardGrid>
         ) : (
-          // Izgaranın kendi iskeleti (tek satırlık "yükleniyor" kartı yerine):
-          // dört karo gelince ekran iki satır boyu uzamasın.
-          <CardGrid columns={gridColumns} balance style={{ marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} balance>
             {[0, 1, 2, 3].map((i) => (
-              <SkeletonCard key={i} style={{ gap: 6 }}>
-                <SkeletonTile size={38} />
-                <SkeletonLine variant="h1" width="55%" />
+              <SkeletonCard key={i} style={{ gap: 2 }}>
+                <SkeletonTile size={40} style={{ marginBottom: spacing.sm }} />
+                <SkeletonLine variant="h2" width="55%" />
                 <SkeletonLine variant="caption" width="85%" />
               </SkeletonCard>
             ))}
@@ -258,106 +316,97 @@ export function ProgressScreen() {
         )}
 
         {/*
-          Seviye ilerlemesi. Kart artık DOKUNULABİLİR: "Kelimelerim" profilin
-          menüsünde ayrı bir satırdı, oysa bu kartın detayından başka bir şey
-          değil. Kart hedefsiz duruyordu, satır da bağlamsızdı; ikisi birleşti.
+          KELİME USTALIĞI + SEVİYE KIRILIMI tek kart ve kart DOKUNULABİLİR:
+          Kelimeler'e götürüyor. Seviye satırları (`/api/me` `levels`) web'de
+          de artık aynı kartta.
         */}
         {me ? (
           <PressableScale onPress={() => nav.navigate("Words")} accessibilityLabel={t("profile.my_words")}>
-            <Card style={{ marginBottom: spacing.lg }}>
+            <Card padded>
               <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
-                <Text variant="bodyStrong">{t("progress.word_mastery")}</Text>
+                <Text variant="h3">{t("progress.word_mastery")}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
-                  {/* Sayilar yerelden: bin ayraci Turkcede nokta, Ingilizcede virgul.
-                      Ayni dosyada baska alti yerde `formatNumber` geciyor, yalniz
-                      bu satir atlanmisti; web karti bastan beri bicimliyor. */}
                   <Text variant="caption" color={colors.textMuted}>{formatNumber(mastered)}/{totalWords ? formatNumber(totalWords) : "—"}</Text>
                   <ChevronNextIcon color={colors.textFaint} size={18} />
                 </View>
               </View>
               <Bar pct={pct} tint={colors.success} size="hero" />
+              {me.levels?.length ? (
+                <View style={{ marginTop: spacing.lg, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+                  <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm, letterSpacing: 1 }}>{t("progress.by_level").toLocaleUpperCase(dateLocale())}</Text>
+                  <View style={{ gap: spacing.md }}>
+                    {me.levels.map((lv) => {
+                      const seenPct = lv.total ? Math.round((100 * lv.seen) / lv.total) : 0;
+                      const mastPct = lv.total ? Math.round((100 * lv.mastered) / lv.total) : 0;
+                      return (
+                        <View key={lv.niveau}>
+                          <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", marginBottom: 6 }}>
+                            <Text variant="bodyStrong">{lv.niveau}</Text>
+                            <Text variant="caption" color={colors.textMuted}>{t("progress.seen_of_total", { seen: formatNumber(lv.seen), total: formatNumber(lv.total), mastered: formatNumber(lv.mastered) })}</Text>
+                          </View>
+                          {/* Koyu bölüm pekişmiş, açık bölüm görülmüş — web ile aynı okuma; renk seviyenin kendisi. */}
+                          <Bar pct={mastPct} tint={levelTint(lv.niveau, colors)} extra={{ pct: Math.max(0, seenPct - mastPct), tint: levelTint(lv.niveau, colors) + "66" }} />
+                        </View>
+                      );
+                    })}
+                  </View>
+                  <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>
+                    {t("progress.bar_note", {
+                      seen: formatNumber(me.levels.reduce((a, l) => a + l.seen, 0)),
+                      total: formatNumber(me.levels.reduce((a, l) => a + l.total, 0)),
+                      days: MASTERED_DAYS,
+                    })}
+                  </Text>
+                </View>
+              ) : null}
             </Card>
           </PressableScale>
         ) : (
-          <SkeletonCard style={{ marginBottom: spacing.lg }}>
+          <SkeletonCard>
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
-              <SkeletonLine variant="bodyStrong" width={130} />
+              <SkeletonLine variant="h3" width={130} />
               <SkeletonLine variant="caption" width={62} />
             </View>
             <SkeletonBar height={BAR_HEIGHT.hero} />
+            <View style={{ marginTop: spacing.lg, paddingTop: spacing.md, gap: spacing.md }}>
+              <SkeletonLine variant="micro" width={90} />
+              {[0, 1, 2, 3, 4].map((i) => (
+                <View key={i} style={{ gap: 6 }}>
+                  <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                    <SkeletonLine variant="bodyStrong" width={28} />
+                    <SkeletonLine variant="caption" width={140} />
+                  </View>
+                  <SkeletonBar height={BAR_HEIGHT.inline} />
+                </View>
+              ))}
+            </View>
           </SkeletonCard>
         )}
 
-        {/*
-          KENDİ ÖLÇÜN BURADA. Profilden taşınan iki satır: yeterlik
-          (Yapabildiklerim) ve değerlendirilmiş üretimin arşivi (Yazılarım).
-          İkisi de yalnız sana ait ölçüler, yani kimlik değil ilerleme.
-
-          Başarımlar buradan KALDIRILDI: rozet sayısı herkese açık profilde
-          görünüyor, yani statü işareti — yeri profil. Aynı ekrana iki giriş
-          olmasın diye kart değil satır kaldı.
-        */}
-        {/*
-          SEVİYE KIRILIMI VE TEKRAR KUYRUĞU. Üçü de `/api/me` yanıtında
-          geliyor (sunucu `getProgress` içinde zaten hesaplıyor, ek sorgu
-          yok) ve mobil hiçbirini göstermiyordu: "hangi seviyede kaç kelime",
-          "kaçı ileri tarihe planlandı", "kaçında zorlanıyorum" sorularının
-          hiçbiri cevaplanmıyordu. Web ilerleme sayfası üçünü de gösteriyor.
-        */}
-        {me?.levels?.length ? (
-          <Card padded style={{ marginBottom: spacing.lg }}>
-            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm, letterSpacing: 1 }}>{t("progress.by_level").toLocaleUpperCase(dateLocale())}</Text>
-            {me.levels.map((lv) => {
-              const seenPct = lv.total ? Math.round((100 * lv.seen) / lv.total) : 0;
-              const mastPct = lv.total ? Math.round((100 * lv.mastered) / lv.total) : 0;
-              return (
-                <View key={lv.niveau} style={{ marginBottom: spacing.sm }}>
-                  <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                    <Text variant="caption" color={colors.text}>{lv.niveau}</Text>
-                    <Text variant="micro" color={colors.textMuted}>{t("progress.seen_of_total", { seen: formatNumber(lv.seen), total: formatNumber(lv.total), mastered: formatNumber(lv.mastered) })}</Text>
-                  </View>
-                  {/* Koyu bölüm pekişmiş, açık bölüm görülmüş — web ile aynı okuma.
-                      RENK SEVİYENİN KENDİSİ: paletin kendi yorumunda yazılı olan
-                      eşleme (mint=A1, sky=A2, violet=B1, brand=B2, rose=C1) burada
-                      kullanılmıyordu, beş seviye de yeşil çiziliyordu; web her
-                      seviyeyi kendi rengiyle çiziyor (`progress-view`). */}
-                  <View style={{ marginTop: spacing.xs }}>
-                    <Bar pct={mastPct} tint={levelTint(lv.niveau, colors)} extra={{ pct: Math.max(0, seenPct - mastPct), tint: levelTint(lv.niveau, colors) + "66" }} />
-                  </View>
-                </View>
-              );
-            })}
-            {/* Şeridin iki tonu ne demek — web aynı notu taşıyor. */}
-            <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
-              {t("progress.bar_note", {
-                seen: formatNumber(me.levels.reduce((a, l) => a + l.seen, 0)),
-                total: formatNumber(me.levels.reduce((a, l) => a + l.total, 0)),
-                days: MASTERED_DAYS,
-              })}
-            </Text>
-          </Card>
-        ) : null}
-
+        {/* TEKRAR KUYRUĞU — web aynı kartı çiziyor (üç satır). */}
         {me ? (
-          <Card padded style={{ marginBottom: spacing.lg, gap: spacing.xs }}>
-            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 2, letterSpacing: 1 }}>{t("progress.review_queue").toLocaleUpperCase(dateLocale())}</Text>
-            <Text variant="caption" color={colors.text}>{t("progress.due_now", { n: me.dueCount ?? 0 })}</Text>
-            <Text variant="caption" color={colors.textMuted}>{t("progress.upcoming", { n: me.upcoming ?? 0 })}</Text>
-            {me.leeches ? <Text variant="caption" color={colors.dangerText}>{t("progress.leeches", { n: me.leeches })}</Text> : null}
+          <Card padded style={{ gap: 2 }}>
+            <Text accessibilityRole="header" variant="h3" style={{ marginBottom: spacing.xs }}>{t("progress.review_queue")}</Text>
+            <Text variant="body" color={colors.text}>{t("progress.due_now", { n: me.dueCount ?? 0 })}</Text>
+            <Text variant="body" color={colors.textMuted}>{t("progress.upcoming", { n: me.upcoming ?? 0 })}</Text>
+            {me.leeches ? <Text variant="body" color={colors.dangerText}>{t("progress.leeches", { n: me.leeches })}</Text> : null}
           </Card>
-        ) : null}
+        ) : (
+          <SkeletonCard style={{ gap: 2 }}>
+            <SkeletonLine variant="h3" width={120} style={{ marginBottom: spacing.xs }} />
+            <SkeletonLine variant="body" width="45%" />
+            <SkeletonLine variant="body" width="55%" />
+          </SkeletonCard>
+        )}
 
-        {me?.days ? <ActivityStrip rows={me.days} today={todayStr()} colors={colors} /> : null}
+        {me?.days ? <ActivityStrip rows={me.days} today={today} colors={colors} /> : null}
 
-        {/* ZAYIF NOKTALAR. Uç ve rapor katmanı aylardır duruyordu, web
-            profilinde bir kart onu okuyordu, mobilde çağıran hiçbir şey yoktu.
-            Yeri web ile aynı: gelişim kutusunun içinde (`progress-panel`). */}
-        {/* Ölçüm bloğu web ile aynı sırada: önce "neredeyim + ne yapmalıyım",
-            sonra "neyi yanlış yapıyorum" (`progress-panel` içinde de
-            `WeakSpotsCard` panelin altında duruyor). */}
-        <GrowthPanel />
+        {/* ZAYIF NOKTALAR kendi kartında (web aynı). */}
         <WeakSpots />
 
+        <GrowthTrends data={growth} />
+
+        {/* KENDİ ÖLÇÜN: yeterlik ve değerlendirilmiş üretimin arşivi. */}
         <Card padded style={{ paddingVertical: 0 }}>
           <MenuRow icon={CorrectIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
           <MenuRow icon={MyWritingsIcon} label={t("profile.my_posts")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} last />

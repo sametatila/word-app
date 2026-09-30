@@ -18,7 +18,7 @@ export const deWeb: Record<string, string> = {
    * kurmamış kişi için var.
    */
   "invitew.title": "{name} hat dich zu Lernomi eingeladen",
-  "invitew.lead": "Lernt Deutsch und Englisch gemeinsam.",
+  "invitew.lead": "Such dir eine Sprache aus und lass uns zusammen lernen.",
   "invitew.how": "Sobald du ein Konto erstellst, geht eine Freundschaftsanfrage an {name}. Wird sie angenommen, beginnt eure gemeinsame Serie: Sie wächst an jedem Tag, an dem ihr beide übt.",
   "invitew.cta": "Konto erstellen",
   "invitew.browse": "Lernomi ansehen",
@@ -28,6 +28,8 @@ export const deWeb: Record<string, string> = {
   "groupw.title": "Lernomi Premium 2 Monate kostenlos",
   "groupw.lead": "Ein Angebot für deine Gruppe: Teste Premium 2 Monate kostenlos.",
   "groupw.lead_group": "Ein Angebot für {group}: Teste Premium 2 Monate kostenlos.",
+  "groupw.og_for": "Ein Angebot für {group}",
+  "groupw.og_for_any": "Ein Angebot für deine Gruppe",
   "groupw.terms_title": "Das solltest du wissen",
   "groupw.term_free": "Die ersten 2 Monate sind kostenlos. Die Testphase startet im Store, und der Store verlangt eine Zahlungsmethode.",
   "groupw.term_renew": "Wenn du nicht kündigst, verlängert sich das Abo nach 2 Monaten automatisch zum Preis des gewählten Plans (monatlich oder jährlich). Der Store zeigt den Preis, bevor du bestätigst.",
@@ -390,7 +392,6 @@ export const deWeb: Record<string, string> = {
   "land.cta_continue": "Weiterlernen",
   "land.delete_account": "Konto löschen",
   "land.support": "Support",
-  "socialw.settings_sub": "Wie deine Freunde dich finden und was sie sehen.",
   "socialw.tabs": "Soziale Reiter",
   "socialw.joined": "Dabei seit {date}",
   "onb.course_de": "Wortschatz für GER A1–C1, dazu Lesen, Hören und Schreiben im Prüfungsformat.",
@@ -685,9 +686,9 @@ export const deWeb: Record<string, string> = {
   "store.same_account_generic": "Melde dich in der App mit dem Konto an, das du im Web nutzt; ein mit einem anderen Konto gekauftes Abo erscheint hier nicht.",
   "store.soon_notice": "Die App ist im Store dieses Geräts noch nicht verfügbar.",
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
-  "meta.title": "Lernomi — Englisch lernen",
-  "meta.tagline": "Sprechen, verstehen, bestehen",
-  "meta.description": "Lerne Englisch von A1 bis C1 mit Erklärungen auf Deutsch: Sprechen mit KI-Feedback, Probeprüfungen und eine tägliche Wortrunde.",
-  "meta.og_sub": "A1–C1 · Lernen durch Sprechen · über 50 Probeprüfungen",
-  "meta.og_badges": "English|Auf Deutsch erklärt",
+  "meta.title": "Lernomi — {langs} lernen",
+  "meta.tagline": "Sprachen sprechend lernen, fit für die Prüfung",
+  "meta.description": "Lerne eine Sprache Schritt für Schritt von A1 bis C1, auf Deutsch erklärt und durch Sprechen: Gespräche mit KI-Feedback, Probeprüfungen und eine tägliche Wortrunde. Kurse: {langs}.",
+  "meta.og_sub": "A1 bis C1 · Sprechen mit KI · über 50 Probeprüfungen",
+  "meta.og_native": "Auf Deutsch erklärt",
 };

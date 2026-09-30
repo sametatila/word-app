@@ -58,3 +58,13 @@ export const GROUP_LABEL_KEYS: Record<Group, string> = {
   social: "achgroup.social",
   discovery: "achgroup.discovery",
 };
+
+/**
+ * Tek bir rozete giden adres: duvar açılınca o karta kayar ve kısaca vurgular
+ * (`achievement-wall` `focus`). Sorgu, `#` değil: tarayıcının kendi çapa
+ * kaydırması veri gelmeden, iskeletin üstünde oluyor ve hedef henüz yok.
+ * Mobil karşılığı `Achievements` ekranının `focus` parametresi.
+ */
+export function achievementHref(id?: string | null): string {
+  return id ? `/profile/achievements?a=${encodeURIComponent(id)}` : "/profile/achievements";
+}

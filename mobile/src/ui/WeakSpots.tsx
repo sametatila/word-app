@@ -60,12 +60,12 @@ export function WeakSpots() {
       /* YÜKLEME DUYURULUYOR — §152'nin artığı: kök düzeltme `SkeletonCard`tan
          geçen ekranları kapsıyordu, bu kart iskeletini KENDİ kuruyor. Web aynı
          kartta `role="status" aria-busy` + etiket taşıyor. */
-      <Card padded accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("weak.loading")} style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
+      <Card padded accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("weak.loading")} style={{ gap: spacing.sm }}>
         {/* Gerçek kartın sırası: başlık (bodyStrong, micro değil) + pencere
             bilgisi, üç satır (etiket + sayı, çubuk; sağda "Çalış" hapı).
             Pencere bilgisi, sayı ve hap eksikti. Web `weak-spots-card` aynı. */}
         <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
-          <SkeletonLine variant="bodyStrong" width={120} />
+          <SkeletonLine variant="h3" width={120} />
           <SkeletonLine variant="micro" width={96} />
         </View>
         {[0, 1, 2].map((i) => (
@@ -86,9 +86,9 @@ export function WeakSpots() {
   if (!report || (!report.types.length && !report.weakRules.length)) return null;
 
   return (
-    <Card padded style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
+    <Card padded style={{ gap: spacing.sm }}>
       <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
-        <Text variant="bodyStrong">{t("weak.title")}</Text>
+        <Text accessibilityRole="header" variant="h3">{t("weak.title")}</Text>
         <Text variant="micro" color={colors.textMuted}>{t("weak.window", { days: report.days, wrong: report.totalWrong })}</Text>
       </View>
 

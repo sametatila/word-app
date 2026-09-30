@@ -121,7 +121,7 @@ export async function shareResult(correct: number, total: number): Promise<void>
   try {
     track("share", correct, "result");
     await Share.share({
-      message: t("share.result", { total: total, correct: correct, link: `${APP_URL}?ref=sonuc` }),
+      message: t("share.result", { lang: targetLangName(), total: total, correct: correct, link: `${APP_URL}?ref=sonuc` }),
     });
   } catch { /* kullanıcı vazgeçti */ }
 }

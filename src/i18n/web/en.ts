@@ -18,7 +18,7 @@ export const enWeb: Record<string, string> = {
    * kurmamış kişi için var.
    */
   "invitew.title": "{name} invited you to Lernomi",
-  "invitew.lead": "Learn German and English together.",
+  "invitew.lead": "Pick a language and let's study together.",
   "invitew.how": "When you create an account, a friend request goes to {name}. Once they accept, your shared streak begins: it grows on every day you both practice.",
   "invitew.cta": "Create account",
   "invitew.browse": "Take a look at Lernomi",
@@ -28,6 +28,8 @@ export const enWeb: Record<string, string> = {
   "groupw.title": "Lernomi Premium free for 2 months",
   "groupw.lead": "A special offer for your group: try Premium free for 2 months.",
   "groupw.lead_group": "A special offer for {group}: try Premium free for 2 months.",
+  "groupw.og_for": "A special offer for {group}",
+  "groupw.og_for_any": "A special offer for your group",
   "groupw.terms_title": "What you should know",
   "groupw.term_free": "The first 2 months are free. The trial starts in the store, and the store asks for a payment method.",
   "groupw.term_renew": "Unless you cancel, it renews automatically at the price of the plan you chose (monthly or yearly) when the 2 months end. The store shows the price before you confirm.",
@@ -390,7 +392,6 @@ export const enWeb: Record<string, string> = {
   "land.cta_continue": "Continue learning",
   "land.delete_account": "Delete your account",
   "land.support": "Support",
-  "socialw.settings_sub": "How your friends find you and what they see.",
   "socialw.tabs": "Social tabs",
   "socialw.joined": "Joined {date}",
   "onb.course_de": "CEFR A1–C1 vocabulary, plus reading, listening and writing in exam format.",
@@ -685,9 +686,9 @@ export const enWeb: Record<string, string> = {
   "store.same_account_generic": "Sign in to the app with the account you use on the web; a subscription bought with another account won't show here.",
   "store.soon_notice": "The app isn't available in this device's store yet.",
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
-  "meta.title": "Lernomi — Learn German",
-  "meta.tagline": "Speak, understand, prepare for exams",
-  "meta.description": "Learn German from A1 to C1, explained in English: speaking practice with AI feedback, mock exams and a daily word round.",
-  "meta.og_sub": "A1–C1 · learn by speaking · 50+ mock exams",
-  "meta.og_badges": "Hochdeutsch|Explained in English",
+  "meta.title": "Lernomi — Learn {langs}",
+  "meta.tagline": "Learn a language by speaking, get exam-ready",
+  "meta.description": "Learn a language step by step from A1 to C1, explained in English and by speaking: conversation practice with AI feedback, mock exams and a daily word round. Courses: {langs}.",
+  "meta.og_sub": "A1 to C1 · AI conversation practice · 50+ mock exams",
+  "meta.og_native": "Explained in English",
 };

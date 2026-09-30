@@ -155,7 +155,12 @@ export function FriendsScreen() {
                 {data.friends.length ? (
                   <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
                 ) : (
-                  <EmptyCard icon={AddFriendIcon} tint={colors.success} title={tx("friends.no_friends_yet")} text={tx("friends.search_by_username_or_send_your")} />
+                  /* Boş kart da listenin kartları gibi altında 12 taşıyor
+                     (`FriendRows`, `Requests`: `marginBottom: spacing.md`);
+                     payı yoktu ve arama kutusu kartın dibine yapışıktı. */
+                  <View style={{ marginBottom: spacing.md }}>
+                    <EmptyCard icon={AddFriendIcon} tint={colors.success} title={tx("friends.no_friends_yet")} text={tx("friends.search_by_username_or_send_your")} />
+                  </View>
                 )}
                 <Find onChanged={() => void reload()} />
                 <Requests incoming={data.incoming} outgoing={data.outgoing} side="outgoing" onChanged={() => void reload()} />

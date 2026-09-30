@@ -5,6 +5,8 @@ import { T, barPct, fillStyle, fillX } from "@/lib/motion";
 import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
 import { MenuRow } from "@/components/menu-row";
+import { WeakSpotsCard } from "@/components/weak-spots-card";
+import { GrowthTrends, HowAmIDoing, HowAmIDoingHead, useGrowth } from "@/components/progress-panel";
 import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "@/components/icons";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -52,49 +54,13 @@ export function WordProgress({
   leeches: number;
 }) {
   const t = useT();
-  const totalSeen = levels.reduce((s, l) => s + l.seen, 0);
-  const totalWords = levels.reduce((s, l) => s + l.total, 0);
 
   return (
     <div className="space-y-4">
-      {/* CEFR seviyeleri */}
+      {/* CEFR seviyeleri — satırlar Gelişim ekranıyla ORTAK (`LevelRows`). */}
       <section className="card p-4">
         <h2 className="mb-4 text-strong">{t("progress.by_level")}</h2>
-        <div className="space-y-4">
-          {levels.map((l, i) => {
-            const pct = l.total ? (l.seen / l.total) * 100 : 0;
-            const masteredPct = l.total ? (l.mastered / l.total) * 100 : 0;
-            return (
-              <div key={l.niveau}>
-                <div className="mb-1.5 flex items-baseline justify-between text-body">
-                  <span className="font-semibold">{l.niveau}</span>
-                  <span className="muted text-caption">
-                    {t("progress.seen_of_total", { seen: l.seen, total: l.total, mastered: l.mastered })}
-                  </span>
-                </div>
-                <div className="relative h-3 w-full overflow-hidden rounded-full surface-2">
-                  <motion.div
-                    className="absolute inset-0 rounded-full opacity-40"
-                    style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}
-                    initial={{ x: "-100%" }}
-                    animate={{ x: fillX(pct) }}
-                    transition={{ ...T.medium, delay: i * 0.08 }}
-                  />
-                  <motion.div
-                    className="absolute inset-0 rounded-full"
-                    style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}
-                    initial={{ x: "-100%" }}
-                    animate={{ x: fillX(masteredPct) }}
-                    transition={{ ...T.medium, delay: i * 0.08 + 0.1 }}
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <p className="muted mt-4 text-caption">
-          {t("progress.bar_note", { seen: totalSeen, total: totalWords, days: MASTERED_DAYS })}
-        </p>
+        <LevelRows levels={levels} />
       </section>
 
       <section className="card p-4">
@@ -115,14 +81,71 @@ export function WordProgress({
 }
 
 /**
- * Profilin emek bloğu: ne kadar biriktirdi, hangi günler çalıştı.
+ * Seviye başına iki tonlu şerit (koyu = pekişmiş, açık = görülmüş) ve altında
+ * şeridin ne demek olduğunu söyleyen not. Kelimeler ekranı ve Gelişim ekranı
+ * aynı satırları çiziyor; mobil karşılığı `ProgressScreen` "Kelime ustalığı".
+ */
+export function LevelRows({ levels }: { levels: LevelRow[] }) {
+  const t = useT();
+  const lang = useLang();
+  const totalSeen = levels.reduce((s, l) => s + l.seen, 0);
+  const totalWords = levels.reduce((s, l) => s + l.total, 0);
+  return (
+    <>
+      <div className="space-y-3">
+        {levels.map((l, i) => {
+          const pct = l.total ? (l.seen / l.total) * 100 : 0;
+          const masteredPct = l.total ? (l.mastered / l.total) * 100 : 0;
+          return (
+            <div key={l.niveau}>
+              <div className="mb-1.5 flex items-baseline justify-between text-body">
+                <span className="font-semibold">{l.niveau}</span>
+                <span className="muted text-caption">
+                  {t("progress.seen_of_total", {
+                    seen: formatNumber(l.seen, lang),
+                    total: formatNumber(l.total, lang),
+                    mastered: formatNumber(l.mastered, lang),
+                  })}
+                </span>
+              </div>
+              <div className="relative h-1.5 w-full overflow-hidden rounded-full surface-2">
+                <motion.div
+                  className="absolute inset-0 rounded-full opacity-40"
+                  style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}
+                  initial={{ x: "-100%" }}
+                  animate={{ x: fillX(pct) }}
+                  transition={{ ...T.medium, delay: i * 0.08 }}
+                />
+                <motion.div
+                  className="absolute inset-0 rounded-full"
+                  style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}
+                  initial={{ x: "-100%" }}
+                  animate={{ x: fillX(masteredPct) }}
+                  transition={{ ...T.medium, delay: i * 0.08 + 0.1 }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <p className="muted mt-3 text-caption">
+        {t("progress.bar_note", { seen: formatNumber(totalSeen, lang), total: formatNumber(totalWords, lang), days: MASTERED_DAYS })}
+      </p>
+    </>
+  );
+}
+
+/**
+ * Gelişim ekranı — "neredeyim" sorusunun cevabı.
  *
- * "Oyun performansın" kartı buradaydı ve kalktı: oyun başına doğruluk yüzdesi
- * artık yetkinlik modelinde, üstelik daha doğru biçimde — oyunlar kanıt olarak
- * sayılıyor ve kelimenin SEVİYESİNE göre ayrışıyor. "Eşleştirmede %88" ile
- * "B1 kelimede %88" arasındaki fark, ikincisinin bir şey ifade etmesi.
+ * Bölüm sırası mobil `ProgressScreen` ile birebir ve bir cümle kuruyor:
+ * kaç gündür (seri kahramanı + bu hafta) → nasıl gidiyorum (hüküm, beceriler,
+ * sıradaki adım) → ne biriktirdim (dört karo) → kelimelerim (ustalık + seviye)
+ * → tekrar kuyruğu → son iki hafta → zayıf noktalar → zaman içinde →
+ * kendi ölçülerim (Neler yapabilirim, Yazılarım).
  *
- * Kalanların hepsi kişi hakkında; kelime hakkında olanlar Kelimeler ekranında.
+ * "Oyun performansın" kartı buradan çoktan kalktı: oyun başına doğruluk
+ * yetkinlik modelinde, kelimenin SEVİYESİNE göre ayrışmış hâliyle duruyor.
  */
 export function ActivityProgress({
   days,
@@ -134,6 +157,10 @@ export function ActivityProgress({
   xp,
   level,
   today,
+  levels,
+  dueNow,
+  upcoming,
+  leeches,
 }: {
   days: DayRow[];
   streak: number;
@@ -147,122 +174,177 @@ export function ActivityProgress({
   xp: number;
   level: string;
   today: string;
+  levels: LevelRow[];
+  dueNow: number;
+  upcoming: number;
+  leeches: number;
 }) {
   const t = useT();
   const lang = useLang();
+  const growth = useGrowth();
   const byDay = new Map(days.map((d) => [d.day, d]));
   const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
 
   return (
-    <div className="space-y-4">
-      {/*
-        SERİ KAHRAMANI — mobil `ProgressScreen`in ilk kartı. Web'de seri dört
-        eşit karodan biriydi; oysa bu ekrana çoğunlukla başlıktaki seri
-        rozetinden geliniyor, yani gelen kişinin sorusu "kaç gün" ve cevabı
-        diğer üç sayıyla aynı boyda duruyordu.
-      */}
-      {/* ZEMİN 600, 500 DEĞİL. Ölçüm: beyaz yazı `flame-500` (#b8940f) üstünde
-          2.88 veriyor - AA'nın küçük yazı için istediği 4.5'in çok altında ve
-          büyük yazı eşiği 3.0'ı bile tutmuyor. 600'de (#86690e) 5.20. Aynı
-          kart mobilde de aynı hatayı taşıyordu; ikisi birlikte koyulaştı. */}
-      <div
-        /* SERİ KARTI TEMADAN BAĞIMSIZ ve öyle kalmalı: Android aynı kartı iki
-           temada da `colors.streakDeep` (#86690e) + BEYAZ yazıyla çiziyor
-           (`ProgressScreen`; ölçüm beyazla 5.20 ve 500'den 600'e o yüzden
-           inildi). Tema duyarlı jetona çevirmek koyu temada Android'i
-           bırakmak olurdu - bu tur bir kez çevrildi ve geri alındı. */
-        className="flex items-center gap-4 rounded-card p-5 text-white glow-tint"
-        style={{ background: "var(--color-flame-600)", "--tint-fill": "var(--color-flame-600)" } as React.CSSProperties}
-      >
-        <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-tile bg-white/20">
-          <StreakIcon size={34} />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block text-display">{streak}</span>
-          <span className="block text-strong">{t("progress.day_streak")}</span>
-          {/*
-            EN UZUN SERİ. Sunucu bunu zaten gönderiyor ve BAŞKASININ profilinde
-            görünüyordu; kendi ekranında yoktu. Bugünkü sayı ancak kendi
-            rekoruyla kıyaslanınca bir şey söylüyor.
-          */}
-          {/* Saydamlık 75'ten 90'a: 600 zeminde %75 beyaz 3.70, %90 ise 4.56. */}
-          {longestStreak > 0 ? (
-            <span className="block text-caption text-white/90">
-              {t("progress.longest_streak", { n: formatNumber(longestStreak, lang) })}
-            </span>
-          ) : null}
-        </span>
-      </div>
+    <div className="space-y-5">
+      <StreakHero streak={streak} longestStreak={longestStreak} byDay={byDay} today={today} />
 
-      {/* Dört karo mobildekiyle aynı: öğrenilen kelime, toplam XP, bu hafta
-          süre, seviye. Web'de bunların ikisi (güncel/en uzun seri) seriyi iki
-          kez söylüyordu; en uzun seri zaten herkese açık profilde yazıyor.
+      <section>
+        <HowAmIDoingHead data={growth} />
+        <HowAmIDoing data={growth} />
+      </section>
 
-          İKONLARI DA AYNI — cümle bunu söylüyordu ama üç karoda tutmuyordu:
-          öğrenilen kelime `BookIcon` ↔ Android `LearnIcon`, XP `SparkIcon` ↔
-          Android `BoltIcon`, süre ise Android'de `PodiumIcon` çiziyordu (kürsü
-          SIRALAMA demek, süre demek değil). Bugün dört karo iki platformda aynı
-          anlam adlı ikonu çiziyor: `MyWordsIcon`, `XpIcon`, `DurationIcon`,
-          `LevelIcon` (bkz. web-parity §11.411, `data/icons/picks.json`). */}
-      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-        {/* Tek dokunuşla kelime ekranına: kapsamın ayrıntısı orada. */}
+      {/* Dört karo mobildekiyle aynı: öğrenilen kelime, toplam XP, süre,
+          seviye — ikon adları da aynı (`MyWordsIcon`, `XpIcon`,
+          `DurationIcon`, `LevelIcon`; web-parity §11.411). Karo bugünün
+          standardında: dolu renkli ikon karosu + `h2` değer. */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard
           label={t("progress.words_learned")}
           value={formatNumber(mastered, lang)}
-          tone="var(--color-brand)"
+          tone="var(--color-brand-500)"
           Icon={MyWordsIcon}
           href="/words"
         />
-        <KpiCard label={t("progress.total_xp")} value={formatNumber(xp, lang)} tone="var(--color-mint)" Icon={XpIcon} />
-        <KpiCard label={t("progress.time_total")} value={formatDuration(seconds, t)} tone="var(--color-sky)" Icon={DurationIcon} />
-        <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet)" Icon={LevelIcon} />
+        <KpiCard label={t("progress.total_xp")} value={formatNumber(xp, lang)} tone="var(--color-mint-500)" Icon={XpIcon} />
+        <KpiCard label={t("progress.time_total")} value={formatDuration(seconds, t)} tone="var(--color-sky-500)" Icon={DurationIcon} />
+        <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet-500)" Icon={LevelIcon} />
       </div>
 
-      {/*
-        KENDİ ÖLÇÜN BURADA. Profilden taşınan iki satır: yeterlik
-        (Yapabildiklerim) ve değerlendirilmiş üretimin arşivi (Yazılarım).
-        Başarımlar taşınmadı — rozet sayısı herkese açık profilde görünüyor,
-        yani kimliğin parçası. Mobil Gelişim ekranıyla aynı bölünme.
-      */}
-      <nav className="card px-4" aria-label={t("progress.progress")}>
-        <MenuRow href="/profile/cando" icon={<CorrectIcon size={20} />} tone="mint" label={t("profile.what_can_i_do")} />
-        <MenuRow href="/profile/writings" icon={<MyWritingsIcon size={20} />} tone="sky" label={t("profile.my_posts")} last />
-      </nav>
-
-      {/* Kelime hakimiyeti — mobilde karoların hemen altında tek şerit.
-          KART BİR HEDEF: Android'de şeridin kendisi Kelimeler'e götürüyor
-          (`ProgressScreen`, gerekçesi orada: "Kart hedefsiz duruyordu, satır
-          da bağlamsızdı; ikisi birleşti"). Web'de şerit tıklanamıyordu —
-          hedef sekme çubuğunda var ama karttan yol yoktu. */}
+      {/* KELİME USTALIĞI + SEVİYE KIRILIMI tek kart ve KART BİR HEDEF:
+          Kelimeler ekranı. Seviye satırları Android'de bu ekranda duruyordu,
+          web'de yalnız Kelimeler'deydi; iki taraf artık aynı kartı çiziyor. */}
       <Link href="/words" aria-label={t("profile.my_words")} className="pressable card block p-4">
         <div className="mb-2 flex items-center justify-between gap-3">
-          <span className="text-strong">{t("progress.word_mastery")}</span>
+          <span className="text-h3">{t("progress.word_mastery")}</span>
           <span className="muted flex items-center gap-1.5 text-caption tabular-nums">
             {formatNumber(mastered, lang)}/{totalWords ? formatNumber(totalWords, lang) : "—"}
-            {/* Kartin dokunulabilir oldugunu soyleyen isaret - Android'de de
-                sayinin yaninda duruyor. */}
             <ChevronNextIcon size={18} className="shrink-0" />
           </span>
         </div>
-        <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+        <div className="h-2.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
           <div
             className="bar-fill h-full rounded-full"
             style={{ ...fillStyle(barPct(pct, 3)), background: "var(--color-mint-500)" }}
           />
         </div>
+        {levels.length ? (
+          <div className="mt-4 border-t pt-3" style={{ borderColor: "var(--hairline)" }}>
+            <p className="muted mb-2 text-micro uppercase tracking-eyebrow">{t("progress.by_level")}</p>
+            <LevelRows levels={levels} />
+          </div>
+        ) : null}
       </Link>
 
-      {/*
-        BAŞARIMLAR SATIRI BURADAN KALDIRILDI. Yorumu "mobilde de ilerlemenin
-        altında" diyordu ve bu artık doğru değil: Android onu bilerek
-        kaldırmış ve gerekçesini yazmış (`ProgressScreen`) — rozet sayısı
-        herkese açık profilde görünüyor, yani statü işareti ve yeri profil;
-        aynı ekrana iki giriş olmasın diye. Web'de de profil satırı duruyor
-        (`profile/profile-view`), yani ekran erişilebilir kalıyor.
-      */}
+      {/* TEKRAR KUYRUĞU — Android'deki kartın aynısı (üç satır). */}
+      <section className="card p-4">
+        <h2 className="mb-2 text-h3">{t("progress.review_queue")}</h2>
+        <p className="text-body">{t("progress.due_now", { n: dueNow })}</p>
+        <p className="muted text-body">{t("progress.upcoming", { n: upcoming })}</p>
+        {leeches > 0 ? <p className="text-body text-[color:var(--color-rose)]">{t("progress.leeches", { n: leeches })}</p> : null}
+      </section>
+
       <ActivityStrip byDay={byDay} today={today} />
+
+      {/* Zayıf noktalar KENDİ kartında (eskiden "Nasıl gidiyorum" açılırının
+          içindeydi, Android'de ayrı karttı). */}
+      <WeakSpotsCard />
+
+      <GrowthTrends data={growth} />
+
+      {/*
+        KENDİ ÖLÇÜN: yeterlik (Neler yapabilirim) ve değerlendirilmiş üretimin
+        arşivi (Yazılarım). Standart menü satırı grubu; mobil aynı iki satır.
+      */}
+      <nav className="card px-4" aria-label={t("progress.progress")}>
+        <MenuRow href="/profile/cando" icon={<CorrectIcon size={20} />} tone="mint" label={t("profile.what_can_i_do")} />
+        <MenuRow href="/profile/writings" icon={<MyWritingsIcon size={20} />} tone="sky" label={t("profile.my_posts")} last />
+      </nav>
     </div>
   );
+}
+
+/**
+ * SERİ KAHRAMANI — Öğren'in "Günlük tur" kartıyla aynı dolgu (`--brand-fill`
+ * + `--on-brand`, temadan bağımsız; mobil `colors.primary` + `onPrimary`).
+ * Beyaz yazı / turuncu 2.77: Öğren kahramanıyla aynı kayıtlı karar
+ * (T-KARAR-1).
+ *
+ * Alev ikonu seri ailesinin EN KOYU basamağında (`flame-700`, mobil
+ * `streakInk`): yarı saydam beyaz karo turuncuyu #f99141'e açıyor ve seri
+ * tonlarından yalnız 700 orada grafik eşiğini (3.0) geçiyor — 3.21 (mobilde
+ * karo alfası 0.18, #f98f3d: 3.16). 600 2.27, 500 1.26, açık tonlar 1.5-1.9.
+ *
+ * Altta "bu hafta": pazartesiden pazara yedi nokta, çalışılan gün dolu.
+ */
+function StreakHero({
+  streak,
+  longestStreak,
+  byDay,
+  today,
+}: {
+  streak: number;
+  longestStreak: number;
+  byDay: Map<string, DayRow>;
+  today: string;
+}) {
+  const t = useT();
+  const lang = useLang();
+  const week = weekDays(today, (d) => (byDay.get(d)?.reviews ?? 0) > 0);
+  const studied = week.filter((d) => d.studied).length;
+  const names = weekdayNames(lang);
+  return (
+    <div
+      className="overflow-hidden rounded-card glow-tint-lg"
+      style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
+    >
+      <div className="flex items-center gap-4 p-5">
+        <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-tile bg-white/20" style={{ color: "var(--color-flame-700)" }}>
+          <StreakIcon size={34} />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-display tabular-nums">{formatNumber(streak, lang)}</span>
+          <span className="block text-strong">{t("progress.day_streak")}</span>
+          {/* EN UZUN SERİ: bugünkü sayı ancak kendi rekoruyla kıyaslanınca bir şey söylüyor. */}
+          {longestStreak > 0 ? (
+            <span className="block text-caption opacity-90">
+              {t("progress.longest_streak", { n: formatNumber(longestStreak, lang) })}
+            </span>
+          ) : null}
+        </span>
+      </div>
+      <div className="px-5 pb-4">
+        <div className="mb-2 flex justify-between text-micro uppercase tracking-eyebrow opacity-85">
+          <span>{t("progress.this_week")}</span>
+          <span className="tabular-nums">{t("progress.week_days", { n: studied })}</span>
+        </div>
+        <ol className="flex justify-between gap-1">
+          {week.map((d) => (
+            <li key={d.day} className="flex flex-1 flex-col items-center gap-1">
+              <span
+                role="img"
+                aria-label={`${d.day}: ${d.studied ? t("progress.studied") : t("progress.no_study")}`}
+                className={`h-6 w-6 rounded-full ${d.studied ? "bg-white" : d.future ? "border border-white/40" : "bg-white/25"}`}
+              />
+              <span className={`text-micro leading-none ${d.day === today ? "font-bold" : "opacity-80"}`}>{names[d.weekday]}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  );
+}
+
+/** Bu haftanın yedi günü (pazartesi başı); `today` UTC gün dizgisi. */
+function weekDays(today: string, studied: (day: string) => boolean) {
+  const end = new Date(`${today}T00:00:00Z`);
+  const offset = (end.getUTCDay() + 6) % 7;
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(end);
+    d.setUTCDate(d.getUTCDate() - offset + i);
+    const key = d.toISOString().slice(0, 10);
+    return { day: key, weekday: i, studied: i <= offset && studied(key), future: i > offset };
+  });
 }
 
 function formatDuration(
@@ -270,15 +352,9 @@ function formatDuration(
   t: (key: string, vars?: Record<string, string | number>) => string,
 ): string {
   /*
-   * BİÇİM ANDROİD'İN SÖZLÜĞÜNDEN.
-   *
-   * Aynı karo iki platformda iki ayrı biçimde yazılıyordu: web `prog.hours` +
-   * `skills.dk` ile "11 sa 20 dk", Android tek anahtarla "11s 20dk". Almanca
-   * arayüzde fark daha görünürdü ("11 Std 20 Min." / "11 Std. 20 Min."), yani
-   * aynı sayı iki üründe farklı okunuyordu. Etiket de ayrıydı: web "Çalışma
-   * süresi", Android "Toplam süre". İkisi de Android'e çekildi
-   * (`time.minutes_short` / `time.hours_minutes_short`, `progress.time_total`)
-   * ve webe özel üç anahtar düştü.
+   * BİÇİM ANDROİD'İN SÖZLÜĞÜNDEN (`time.minutes_short` /
+   * `time.hours_minutes_short`, etiket `progress.time_total`): aynı karo iki
+   * platformda iki ayrı biçimde yazılıyordu.
    */
   const m = Math.round(totalSeconds / 60);
   if (m < 60) return t("time.minutes_short", { m });
@@ -295,45 +371,43 @@ function KpiCard({
 }: {
   label: string;
   value: string;
+  /** Karonun dolgusu — ailenin 500 basamağı (Öğren'in "daha fazlası" karoları gibi). */
   tone: string;
   Icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
   /**
-   * Verilirse kart bir bağlantı olur.
-   *
-   * "Pekişen kelime" sayısı için: sayının ayrıntısı Kelimeler ekranında ve
-   * meraklanan kişi zaten bu karta bakıyor. Ayrı bir menü satırı eklemek
-   * yerine sayının kendisini kapı yapmak hem daha az yer tutuyor hem de
-   * bağlantıyı merakın doğduğu yere koyuyor.
+   * Verilirse kart bir bağlantı olur: "pekişen kelime" sayısının ayrıntısı
+   * Kelimeler ekranında ve meraklanan kişi zaten bu karta bakıyor.
    */
   href?: string;
 }) {
   const body = (
     <>
-      <div className="flex items-center justify-between" style={{ color: tone }}>
-        <Icon size={20} />
+      <div className="flex items-start justify-between">
+        <span
+          className="flex h-10 w-10 items-center justify-center rounded-tile text-white glow-tint-sm"
+          style={{ background: tone, "--tint-fill": tone } as React.CSSProperties}
+        >
+          <Icon size={20} />
+        </span>
         {href ? (
           <span className="muted">
-            <ChevronNextIcon size={14} />
+            <ChevronNextIcon size={16} />
           </span>
         ) : null}
       </div>
-      <div className="mt-1 text-h2 tabular-nums">{value}</div>
+      <div className="mt-2 text-h2 tabular-nums">{value}</div>
       <div className="muted text-caption">{label}</div>
     </>
   );
 
   if (href) {
     return (
-      <Link href={href} prefetch={false} className="card block p-4">
+      <Link href={href} prefetch={false} className="pressable card block p-4">
         {body}
       </Link>
     );
   }
-  return (
-    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="card p-4">
-      {body}
-    </motion.div>
-  );
+  return <div className="card p-4">{body}</div>;
 }
 
 /** Şeritteki gün sayısı — iki tam hafta, hafta sonu ritmi görünsün diye. */
@@ -366,6 +440,11 @@ const HEAT_RAMP: [number, number][] = [[8, 28], [16, 50], [32, 72], [Infinity, 1
  * Türkçe çıkıyordu. Artık yerelden üretiliyor; hafta pazartesiyle başlıyor
  * (2024-01-01 bir pazartesi).
  */
+/** Şerit etiketi: kısa adın ilk iki harfi, nokta atılarak ("Cmt" → "Cm", "Mo." → "Mo"). */
+function stripDay(short: string): string {
+  return short.replace(/\./g, "").slice(0, 2);
+}
+
 function weekdayNames(lang: NativeLang): string[] {
   const fmt = new Intl.DateTimeFormat(localeOf(lang), { weekday: "short" });
   return Array.from({ length: 7 }, (_, i) => fmt.format(new Date(Date.UTC(2024, 0, 1 + i))));
@@ -407,9 +486,9 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
   const total = days.reduce((s, d) => s + d.reviews, 0);
 
   return (
-    <section className="card px-4 py-3.5">
+    <section className="card p-4">
       <div className="mb-2.5 flex items-baseline justify-between gap-3">
-        <h2 className="text-strong">{t("progress.last_two_weeks")}</h2>
+        <h2 className="text-h3">{t("progress.last_two_weeks")}</h2>
         <p className="muted text-caption tabular-nums">
           {t("social.days", { n: active })} · {t("progress.n_reviews", { n: formatNumber(total, lang) })}
         </p>
@@ -467,7 +546,11 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
               d.day === today ? "font-bold" : d.weekday >= 5 ? "muted opacity-60" : "muted"
             }`}
           >
-            {weekdayNames(lang)[d.weekday]}
+            {/* İKİ HARF: 14 sütunluk şeritte sütun 375 px'te ~22 px; üç harfli
+                kısa ad ("Cmt") sığmıyor, komşusuyla birleşiyordu. Tek harf
+                Pazartesi/Perşembe/Pazar'ı aynı harfe düşürür; iki harf yedi
+                günü üç dilde de ayırıyor. Mobil `ProgressScreen` ile aynı. */}
+            {stripDay(weekdayNames(lang)[d.weekday])}
           </span>
         ))}
       </div>

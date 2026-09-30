@@ -36,7 +36,7 @@ function touchHistory(startX: number, x: number) {
 function mount(props: Partial<React.ComponentProps<typeof Slider>> = {}) {
   const onChange = jest.fn();
   const onCommit = jest.fn();
-  const all = { label: "Hedef", value: 35, min: 5, max: 120, step: 5, suffix: "tekrar", onChange, onCommit, ...props };
+  const all = { label: "Hedef", value: 35, min: 5, max: 120, step: 5, format: (v: number) => `${v} tekrar`, onChange, onCommit, ...props };
   let r!: ReactTestRenderer.ReactTestRenderer;
   act(() => {
     r = ReactTestRenderer.create(

@@ -11,6 +11,7 @@ import { friendIds, publicUsers } from "./stats";
 import { REACTION_KINDS, REACTION_LABEL_KEYS, type ReactionKind, type ReactionSummary } from "./types";
 import { langOf } from "./notify";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
+import { achievementHref } from "@/lib/achievement-groups";
 
 /**
  * Akış olayını tek satırla anlatır — tepki bildirimi ve push metni buradan.
@@ -113,13 +114,19 @@ export async function react(me: string, eventId: number, kind: ReactionKind): Pr
           event: describeEvent(ev.type, ev.payload as Record<string, unknown>, await langOf(ev.userId)),
           reaction: translate(await langOf(ev.userId), REACTION_LABEL_KEYS[kind]),
         },
-        url: "/friends?tab=feed",
+        /* Rozetine gelen tepki o rozeti açar (duvar karta kayıp vurgular);
+           gelen kutusu satırı da aynı yere gidiyor. Mobil `routeFromPush`. */
+        url: reactionUrl(ev.type, ev.payload as Record<string, unknown>),
         tag: `reaction-${eventId}`,
       },
     );
   }
   await track(me, "reaction_send", serverToday(), 0, kind);
   return (await reactionSummaries([eventId], me)).get(eventId) ?? { counts: {}, total: 0, mine: null, names: [] };
+}
+
+function reactionUrl(type: string, p: Record<string, unknown>): string {
+  return type === "achievement" && typeof p?.id === "string" && p.id ? achievementHref(p.id) : "/friends?tab=feed";
 }
 
 export async function unreact(me: string, eventId: number): Promise<ReactionSummary> {

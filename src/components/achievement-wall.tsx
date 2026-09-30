@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { reducedMotion } from "@/lib/fx";
 import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
 import { T, fillX } from "@/lib/motion";
@@ -42,12 +43,19 @@ type Board = { rows: Row[]; unlockedCount: number; total: number };
 /** "Sıradaki" bölümünde kaç rozet gösterilir. */
 const NEXT_COUNT = 4;
 
-export function AchievementWall() {
+/** Hedef kartın DOM kimliği — yalnız grup bölümündeki kopya taşır (rozet "sıradaki"de de görünebilir). */
+const cardId = (id: string) => `a-${id}`;
+
+/** Vurgunun ekranda kalma süresi (ms): göz karta varacak kadar, kalıcı "seçili" sanılmayacak kadar. */
+const HIGHLIGHT_MS = 2400;
+
+export function AchievementWall({ focus }: { focus?: string }) {
   const t = useT();
   const lang = useLang();
   const [board, setBoard] = useState<Board | null>(null);
   const [failed, setFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
+  const [lit, setLit] = useState<string | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -83,6 +91,28 @@ export function AchievementWall() {
       alive = false;
     };
   }, [attempt]);
+
+  /*
+   * DERİN BAĞLANTI (`?a=<rozet>`, bkz. `achievementHref`). Profilde bir rozete
+   * dokunan duvarın başına düşüyor ve elli rozetin arasında onu arıyordu.
+   * Tahta GELDİKTEN sonra koşuyor: iskeletin üstünde kaydırmak, içerik
+   * gelince yer değiştiren bir hedefe gitmek olurdu. Kaydırma ortalıyor
+   * (üstteki yapışkan başlığın altında kalmasın), odak kaydırmadan SONRA ve
+   * `preventScroll` ile (ikinci bir sıçrama olmasın), vurgu kısa. Bilinmeyen
+   * kimlikte hiçbir şey olmuyor: sayfa normal açılıyor.
+   * Kartta ayrı bir ayrıntı paneli yok (dosya başı): her şey kartın üstünde,
+   * yani açılacak bir katman da yok.
+   */
+  useEffect(() => {
+    if (!board || !focus || !board.rows.some((r) => r.id === focus)) return;
+    const el = document.getElementById(cardId(focus));
+    if (!el) return;
+    el.scrollIntoView({ block: "center", behavior: reducedMotion() ? "auto" : "smooth" });
+    el.focus({ preventScroll: true });
+    setLit(focus);
+    const tm = setTimeout(() => setLit(null), HIGHLIGHT_MS);
+    return () => clearTimeout(tm);
+  }, [board, focus]);
 
   /**
    * Bitmeye en yakın kilitli rozetler.
@@ -214,7 +244,7 @@ export function AchievementWall() {
       </div>
 
       {/* Önce "sıradaki", sonra mobildeki grup sırası. */}
-      <Section label={leadLabel} rows={lead} lang={lang} t={t} />
+      <Section label={leadLabel} rows={lead} lang={lang} t={t} focus={null} lit={null} />
       {groups.map(([g, rows]) => (
         <Section
           key={g}
@@ -222,6 +252,8 @@ export function AchievementWall() {
           rows={rows}
           lang={lang}
           t={t}
+          focus={focus ?? null}
+          lit={lit}
         />
       ))}
     </div>
@@ -231,7 +263,8 @@ export function AchievementWall() {
 type Tr = (key: string, vars?: Record<string, string | number>) => string;
 
 /** Mobildeki bölüm: küçük büyük-harf etiket + iki sütunlu kart ızgarası. */
-function Section({ label, rows, lang, t }: { label: string; rows: Row[]; lang: NativeLang; t: Tr }) {
+/** `focus`/`lit` yalnız grup bölümlerinde: "sıradaki"deki kopya çapa değil. */
+function Section({ label, rows, lang, t, focus, lit }: { label: string; rows: Row[]; lang: NativeLang; t: Tr; focus: string | null; lit: string | null }) {
   if (!rows.length) return null;
   return (
     /* Bolum araligi mobildeki `spacing.lg` (16): webde 20 yazilyydi. */
@@ -240,7 +273,7 @@ function Section({ label, rows, lang, t }: { label: string; rows: Row[]; lang: N
       <p lang={localeOf(lang)} className="muted mb-2 ml-1 text-caption uppercase tracking-eyebrow">{label}</p>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
         {rows.map((r) => (
-          <AchievementCard key={r.id} row={r} lang={lang} t={t} />
+          <AchievementCard key={r.id} row={r} lang={lang} t={t} anchor={focus !== null} target={r.id === focus} lit={r.id === lit} />
         ))}
       </div>
     </section>
@@ -259,15 +292,32 @@ function AchievementCard({
   row,
   lang,
   t,
+  anchor,
+  target,
+  lit,
 }: {
   row: Row;
   lang: NativeLang;
   t: Tr;
+  /** Grup bölümündeki kopya: DOM kimliği taşır. */
+  anchor: boolean;
+  /** Derin bağlantının hedefi: programla odaklanabilir (`tabIndex={-1}`), sekme sırasına girmez. */
+  target: boolean;
+  /** Vurgu şu an açık. Halka `transition` ile sönüyor; "hareketi azalt"ta globals.css geçişi sıfırlıyor. */
+  lit: boolean;
 }) {
   const tone = TIER_COLOR[row.tier];
   const pct = row.target ? Math.min(100, Math.round((row.done / row.target) * 100)) : 0;
   return (
-    <div className="card p-3" style={{ opacity: row.unlocked ? 1 : 0.92 }}>
+    <div
+      id={anchor ? cardId(row.id) : undefined}
+      tabIndex={target ? -1 : undefined}
+      /* Tarayıcının odak çerçevesi kapalı: kart sekme sırasında değil (yalnız
+         programla odaklanıyor) ve görünür işaret zaten marka halkası; ikisi
+         birlikte çift çerçeve çiziyordu. */
+      className={`card p-3 transition-shadow duration-700${target ? " outline-none" : ""}`}
+      style={{ opacity: row.unlocked ? 1 : 0.92, boxShadow: lit ? "0 0 0 2px var(--color-brand), var(--shadow-soft)" : undefined }}
+    >
       <span
         className="flex h-[46px] w-[46px] items-center justify-center rounded-full"
         style={

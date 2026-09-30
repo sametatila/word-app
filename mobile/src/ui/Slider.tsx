@@ -44,7 +44,7 @@ export function Slider({
   min,
   max,
   step,
-  suffix,
+  format,
   onChange,
   onCommit,
 }: {
@@ -53,8 +53,13 @@ export function Slider({
   min: number;
   max: number;
   step: number;
-  /** Sayının yanında duran birim ("tekrar", "kelime"). */
-  suffix: string;
+  /**
+   * Değer + birim, sayıyla birlikte ÇEVRİLMİŞ ("40 tekrar", "1 word").
+   * Eskiden birim sayıdan ayrı bir sözcüktü (`suffix`): tekil biçim
+   * seçilemiyordu ("1 words", "1 Wörter"); çağıran artık `t(anahtar, { n })`
+   * veriyor, `.one` biçimi sözlükten geliyor.
+   */
+  format: (v: number) => string;
   onChange: (v: number) => void;
   onCommit: (v: number) => void;
 }) {
@@ -63,6 +68,8 @@ export function Slider({
      tutamacı ve sayıyı AYNI yere koysun: gösterilen değer ızgaradaki. */
   const shown = snapValue(value, min, max, step);
   const oran = sliderFraction(shown, min, max);
+  /* Sayı ile birim arası bölünmez boşluk: satır ikisini ayıramasın. */
+  const metin = format(shown).replace(/ /g, "\u00a0");
 
   /*
     Genişlik, son değer ve çağrılar REFERANSTA: `PanResponder` bir kez
@@ -119,9 +126,15 @@ export function Slider({
 
   return (
     <View>
-      <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", marginBottom: spacing.sm }}>
-        <Text variant="bodyStrong">{label}</Text>
-        <Text variant="bodyStrong" color={colors.primaryText}>{shown} {suffix}</Text>
+      {/* DEĞER KÜÇÜLMÜYOR, ETİKET SARILIYOR (2026-09-30, Samet: "40 tekrar"
+          bazen yalnız "40"). İki metin de esnekti; uzun etiket (Almanca
+          "Tägliches Wiederholungsziel", büyük yazı boyu, dar telefon) satırı
+          doldurunca değer sıkışıp "40 / tekrar" diye ikiye bölünüyordu ve
+          birim alt satıra düşüyordu. Değer tek parça (bölünmez boşluk) ve
+          küçülmüyor; sığmayan etiket kendi içinde sarılıyor. Web aynı kural. */}
+      <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm, marginBottom: spacing.sm }}>
+        <Text variant="bodyStrong" style={{ flex: 1, flexShrink: 1 }}>{label}</Text>
+        <Text variant="bodyStrong" color={colors.primaryText} numberOfLines={1} style={{ flexShrink: 0 }}>{metin}</Text>
       </View>
       {/*
         DOKUNMA ALANI çubuktan yüksek: 6 piksellik bir çizgiyi parmakla
@@ -132,7 +145,7 @@ export function Slider({
         onLayout={onLayout}
         accessibilityRole="adjustable"
         accessibilityLabel={label}
-        accessibilityValue={{ min, max, now: shown, text: `${shown} ${suffix}` }}
+        accessibilityValue={{ min, max, now: shown, text: metin }}
         accessibilityActions={[{ name: "increment" }, { name: "decrement" }]}
         onAccessibilityAction={(e) => adimla(e.nativeEvent.actionName === "decrement" ? -1 : 1)}
         style={{ height: 22, justifyContent: "center" }}

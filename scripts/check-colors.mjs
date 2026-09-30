@@ -39,6 +39,7 @@ const STEP = /var\(--color-[a-z]+-(?:100|200|300|400|500|600|700|800|900)\)/;
 /** Sabit dolgunun üstünde sabit yazı: zemin temayla değişmediği için geçerli. */
 const WEB_ALLOW = new Map([
   ["src/components/social/notification-bell.tsx", "sayaç rozeti: `flame-500` dolgu + `ink-900` yazı (6.04); anlamsal jeton koyu temada 300'e düşüp 1.49 veriyordu"],
+  ["src/components/progress-view.tsx", "seri kahramanının alevi: temadan bağımsız turuncu (`--brand-fill`) üstünde yarı saydam beyaz karo, `flame-700` 3.21 (seri tonlarından eşiği geçen tek basamak); anlamsal `--color-flame` koyu temada 300'e dönüp 1.54 veriyordu. Mobil `streakInk` (iki temada #6a530b)"],
 ]);
 
 /* ── mobil: ham onaltılık ──────────────────────────────────────────────── */

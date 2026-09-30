@@ -4,7 +4,10 @@ import { getAccountUserId } from "@/lib/auth/server";
 import { inviterCard, normalizeReferral } from "@/lib/premium/referral";
 import { applyReferralLink } from "@/lib/referral-link";
 import { track } from "@/lib/events";
-import { getT } from "@/lib/i18n/server";
+import { getLang, getT } from "@/lib/i18n/server";
+import { translate } from "@/lib/i18n/dict";
+import { firstName, shareMeta } from "@/lib/og/langs";
+import { SITE_URL } from "@/lib/site";
 import { InviteLanding } from "./invite-landing";
 import { headers } from "next/headers";
 import { avatarCatalogSeed } from "@/lib/avatar-items";
@@ -51,7 +54,27 @@ export const dynamic = "force-dynamic";
  * (`referrals_invitee_idx` benzersiz) ve bu adrese hiçbir iç bağlantı
  * gitmediği için Next'in ön yüklemesi de tetiklemiyor.
  */
-export const metadata: Metadata = { robots: { index: false, follow: false } };
+/*
+ * Önizleme künyesi: davet edenin İLK adı + "birlikte çalışalım". Sayfanın
+ * zaten gösterdiğinden fazlası yok (ad sayfada tam, önizlemede yalnız ilk
+ * ad); bilinmeyen kodda genel künye.
+ */
+export async function generateMetadata({ params }: { params: Promise<{ code: string }> }): Promise<Metadata> {
+  const robots = { index: false, follow: false };
+  const { code: raw } = await params;
+  let ham = raw ?? "";
+  try {
+    ham = decodeURIComponent(ham);
+  } catch {
+    /* ham hâliyle devam */
+  }
+  const code = normalizeReferral(ham);
+  const [inviter, lang] = await Promise.all([code ? inviterCard(code) : null, getLang()]);
+  if (!inviter) return { robots };
+  const name = firstName(inviter.name) || translate(lang, "social.unnamed");
+  const title = translate(lang, "invitew.title", { name });
+  return { title, robots, ...shareMeta(lang, title, translate(lang, "invitew.lead"), `${SITE_URL}/r/${code}`) };
+}
 
 export default async function InvitePage({ params }: { params: Promise<{ code: string }> }) {
   const { code: raw } = await params;

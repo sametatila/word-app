@@ -2,9 +2,10 @@ import { SITE_URL } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { getLang } from "@/lib/i18n/server";
-import { translate, type NativeLang } from "@/lib/i18n/dict";
+import { translate } from "@/lib/i18n/dict";
 import { LangProvider } from "@/lib/i18n/client";
 import { MotionProvider } from "@/components/motion-provider";
+import { courseList, OG_LOCALE } from "@/lib/og/langs";
 
 /**
  * Paylaşılan bağlantının nasıl göründüğü.
@@ -16,8 +17,6 @@ import { MotionProvider } from "@/components/motion-provider";
  */
 const siteUrl = SITE_URL;
 
-/** Paylaşım önizlemesinin `og:locale` değeri — arayüz diliyle aynı. */
-const OG_LOCALE: Record<NativeLang, string> = { tr: "tr_TR", en: "en_US", de: "de_DE" };
 
 /*
  * KÜNYE ARAYÜZ DİLİNDE. Başlık, açıklama ve paylaşım metni sabit Türkçeydi:
@@ -29,11 +28,14 @@ const OG_LOCALE: Record<NativeLang, string> = { tr: "tr_TR", en: "en_US", de: "d
 export async function generateMetadata(): Promise<Metadata> {
   const lang = await getLang();
   const t = (key: string) => translate(lang, key);
-  const description = t("meta.description");
+  /* Kurs adları KATALOGDAN (`lib/courses`): "Almanca ve İngilizce" metne
+     gömülüydü, yeni kurs açılınca künye eskide kalırdı. */
+  const langs = courseList(lang);
+  const description = translate(lang, "meta.description", { langs });
   const shareTitle = `Lernomi — ${t("meta.tagline")}`;
   return {
     metadataBase: new URL(siteUrl),
-    title: t("meta.title"),
+    title: translate(lang, "meta.title", { langs }),
     description,
     applicationName: "Lernomi",
     manifest: "/manifest.webmanifest",

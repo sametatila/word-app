@@ -1590,7 +1590,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
         {noMore ? <FlowNote icon={<InboxIcon size={16} />} text={t("walkmode.done_no_more_sub")} /> : null}
         <FlowActions
           primary={noMore ? { label: t("common.close"), onClick: leave } : { label: t("common.continue"), onClick: () => { setStatus("loading"); void load(); } }}
-          secondary={tally.total > 0 ? { label: t("common.share"), icon: <ShareIcon size={19} />, onClick: () => void shareText(resultText(lang, tally.correct, tally.total), "result") } : null}
+          secondary={tally.total > 0 ? { label: t("common.share"), icon: <ShareIcon size={19} />, onClick: () => void shareText(resultText(lang, course, tally.correct, tally.total), "result") } : null}
           close={noMore ? null : leave}
         />
       </FlowColumn>

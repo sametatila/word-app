@@ -52,10 +52,10 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
         role="status"
         aria-busy="true"
         aria-label={tx("weak.loading")}
-        className={bare ? "" : "card p-5"}
+        className={bare ? "" : "card p-4"}
       >
         <div className="flex items-baseline justify-between gap-3">
-          <SkeletonLine variant={bare ? "micro" : "strong"} width={120} />
+          <SkeletonLine variant={bare ? "micro" : "h3"} width={120} />
           <SkeletonLine variant="caption" width={96} />
         </div>
         <ul className="mt-2 space-y-2">
@@ -80,9 +80,9 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
 
   /* `bare`: kendi kartını bırakıp gelişim kutusunun bir bölümü oluyor. */
   return (
-    <section id="weak-spots" className={bare ? "" : "card p-5"}>
+    <section id="weak-spots" className={bare ? "" : "card p-4"}>
       <div className="flex items-baseline justify-between">
-        <h2 className={bare ? "text-micro uppercase tracking-eyebrow muted" : "font-bold"}>
+        <h2 className={bare ? "text-micro uppercase tracking-eyebrow muted" : "text-h3"}>
           {tx("weak.title")}
         </h2>
         <span className="muted text-caption">{tx("weak.window", { days: report.days, wrong: report.totalWrong })}</span>

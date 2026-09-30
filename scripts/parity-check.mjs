@@ -12196,7 +12196,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const ORTAK = [
       ["uygulama basligi", "mobile/src/ui/AppHeader.tsx"],
       ["ekran basligi", "mobile/src/social/common.tsx"],
-      ["ayar grubu", "mobile/src/screens/SettingsScreen.tsx"],
+      ["ayar grubu", "mobile/src/ui/SettingsGroup.tsx"],
     ];
     sameList(
       "ortak baslik bilesenleri rol veriyor",
@@ -12237,6 +12237,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       /* `SectionTitle` da rolu kendi tasiyor (social/common); 2026-09-28'den
          beri ekran olmayan, Ayarlar'a gomulu bolum dosyalari (SocialSettings)
          yalniz onu kullaniyor. */
+      /* 2026-09-30: gomulu bolum dosyasi (SocialSettings) artik ayar grubunun
+         `Row`unu kullaniyor (`ui/SettingsGroup`); basligi ev sahibi ekranin
+         `ScreenHeader`i, bolum etiketi webde de `<p>`. */
+      if (/from "\.\.\/ui\/SettingsGroup"/.test(src) && !/export default|export function \w+Screen\b/.test(src)) continue;
       if (/accessibilityRole="header"/.test(src) || /<(?:AppHeader|ScreenHeader|TabHeader|SectionTitle)\b/.test(src) || sablonBasligi.test(src)) continue;
       if (MUAF.has(f)) continue;
       basliksiz.push(f.split("/").pop());
@@ -15111,7 +15115,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            oysa iki dugmenin ikisi de "bitir" yazan bir ekran tam olarak
            duzeltilen kusur. */
         "devam=" + (/onClick=\{\(\) => \{ setStatus\("loading"\); void load\(\); \}\}[\s\S]{0,160}t\("common\.continue"\)/.test(ww) ? "var" : "YOK"),
-        "paylasim=" + (/shareText\(resultText\(lang, tally\.correct, tally\.total\), "result"\)/.test(ww) ? "var" : "YOK"),
+        "paylasim=" + (/shareText\(resultText\(lang, course, tally\.correct, tally\.total\), "result"\)/.test(ww) ? "var" : "YOK"),
       ],
       "mobil",
       "web",
@@ -19700,8 +19704,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
   sameList(
     "beyaz glif temaya duyarli dolgu ustunde degil",
-    ["taranan beyaz=" + (beyazSayi >= 25 ? "25+" : beyazSayi), "suclu=" + (suclu.length ? suclu.join("+") : "yok")],
-    ["taranan beyaz=25+", "suclu=yok"],
+    /* Taban 25'ti; Gelisim'in seri kahramani 2026-09-30'da gomulu beyazdan
+       `colors.onPrimary`ye gecti ve sayi 24'e indi. Taban yalniz taramanin
+       calistigini gosteriyor (0 = desen bozuldu). */
+    ["taranan beyaz=" + (beyazSayi >= 20 ? "20+" : beyazSayi), "suclu=" + (suclu.length ? suclu.join("+") : "yok")],
+    ["taranan beyaz=20+", "suclu=yok"],
     "bulunan",
     "beklenen",
   );
@@ -21374,7 +21381,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 
   const webGrup = silA(read("src/components/settings-section.tsx"));
-  const mobGrup = silA(read("mobile/src/screens/SettingsScreen.tsx"));
+  const mobGrup = silA(read("mobile/src/ui/SettingsGroup.tsx"));
   const mobGrupBlok = mobGrup.slice(mobGrup.indexOf("function Group"), mobGrup.indexOf("function Group") + 1200);
   sameList(
     "ayar grubunun olculeri",
@@ -21548,14 +21555,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * Kontrast iki temada da yukseldi: gok 3.61 -> 5.39, gul 4.30 -> 6.07, koyu
  * tarafta hepsi 8.4 uzeri.
  *
- * ON IKINCISI ISTISNA VE OLCULDU: seri karti. Android onu iki temada da
- * `colors.streakDeep` (#86690e) + BEYAZ ile ciziyor - `streakDeep` palette
- * ikinci temada da ayni hex. Tema duyarli jetona cevirmek koyu temada
- * Android'i birakmak olurdu; bir kez cevrildi, olculdu, geri alindi.
+ * On ikincisi seri kartiydi (sabit `flame-600` + beyaz). 2026-09-30 Samet:
+ * Gelisim yeniden tasarimi - seri kahramani artik Ogren'in "Gunluk tur"
+ * kahramaniyla AYNI dolgu: web `--brand-fill` + `--on-brand`, Android
+ * `colors.primary` + `onPrimary`. Alev ikonu seri ailesinin 700'u (web
+ * `--color-flame-700`, Android `streakInk` #6a530b, iki temada ayni):
+ * yari saydam beyaz karoda 3.21 / 3.16, seri tonlarindan grafik esigini
+ * gecen tek basamak.
  *
- * Olcu: (1) beyaz murekkep + numarali dolgu tasiyan etiket sayisi (yalniz
- * kayitli istisna kalmali), (2) seri kartinin iki tarafta da SABIT cift
- * tasidigi. */
+ * Olcu: (1) beyaz murekkep + numarali dolgu tasiyan etiket sayisi (hic
+ * kalmamali), (2) seri kahramaninin iki tarafta ayni cifti tasidigi. */
 {
   const silD = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
   const walkD = (d, out = []) => {
@@ -21575,32 +21584,67 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       sabitler.push(f.replace("src/", ""));
     }
   }
-  /* Tek kayitli istisna: seri karti (Android da sabit). */
   sameList(
     "dolu zeminde sabit beyaz",
     ["kalan: " + (sabitler.join(", ") || "yok")],
-    ["kalan: components/progress-view.tsx"],
+    ["kalan: yok"],
     "bulunan",
-    "beklenen (yalniz seri karti)",
+    "beklenen",
   );
   const mobSeri = silD(read("mobile/src/screens/ProgressScreen.tsx"));
   const webSeri = silD(read("src/components/progress-view.tsx"));
-  const paletSeri = (silD(read("mobile/src/theme/colors.ts")).match(/streakDeep: "(#[0-9a-f]{6})"/g) ?? []).map((x) => x.slice(-8, -1));
+  const paletMurekkep = (silD(read("mobile/src/theme/colors.ts")).match(/streakInk: "(#[0-9a-f]{6})"/g) ?? []).map((x) => x.slice(-8, -1));
+  const mobKahraman = mobSeri.slice(mobSeri.indexOf("function StreakHero"));
+  const webKahraman = webSeri.slice(webSeri.indexOf("function StreakHero"));
   sameList(
-    "seri kartinin sabit cifti",
+    "seri kahramaninin cifti",
     [
-      "dolgu=" + (/backgroundColor: colors\.streakDeep/.test(mobSeri) ? "streakDeep" : "BASKA"),
-      "iki temada ayni=" + (paletSeri.length === 2 && paletSeri[0] === paletSeri[1] ? "evet" : "HAYIR"),
-      "murekkep=beyaz",
+      "dolgu=" + (/backgroundColor: colors\.primary, overflow/.test(mobKahraman) ? "marka dolgusu" : "BASKA"),
+      "murekkep=" + (/color=\{colors\.onPrimary\}/.test(mobKahraman) ? "marka murekkebi" : "BASKA"),
+      "alev=" + (/StreakIcon color=\{colors\.streakInk\}/.test(mobKahraman) ? "flame-700" : "BASKA"),
+      "alev iki temada ayni=" + (paletMurekkep.length === 2 && paletMurekkep[0] === paletMurekkep[1] && paletMurekkep[0] === "#6a530b" ? "evet" : "HAYIR"),
     ],
     [
-      "dolgu=" + (/background: "var\(--color-flame-600\)"/.test(webSeri) ? "streakDeep" : "BASKA"),
-      "iki temada ayni=evet",
-      "murekkep=" + (/p-5 text-white glow-tint/.test(webSeri) ? "beyaz" : "BASKA"),
+      "dolgu=" + (/background: "var\(--brand-fill\)", color: "var\(--on-brand\)"/.test(webKahraman) ? "marka dolgusu" : "BASKA"),
+      "murekkep=" + (/color: "var\(--on-brand\)"/.test(webKahraman) ? "marka murekkebi" : "BASKA"),
+      "alev=" + (/color: "var\(--color-flame-700\)"/.test(webKahraman) ? "flame-700" : "BASKA"),
+      "alev iki temada ayni=" + (/--color-flame-700: #6a530b;/.test(read("src/app/globals.css")) ? "evet" : "HAYIR"),
     ],
     "mobil",
     "web",
   );
+}
+
+/* --------- 359. "NASIL GIDIYORUM" HUKMU IKI PLATFORMDA AYNI (2026-09-30)
+ *
+ * Gelisim ekraninin hukmu (`yukseliyor / dusuyor / sabit / yeni olculdu /
+ * az olcum`) istemcide, rapordan turuyor ve iki ayri dosyada yazili: web
+ * `src/lib/growth-verdict.ts`, mobil `mobile/src/lib/growthVerdict.ts`.
+ * Esik ayrisirsa ayni puan iki uygulamada iki ayri hukum okur. Bant renkleri
+ * de eskiden ayrisiyordu (web 85/70/40 bandina gore dort renk, mobil kendi
+ * 75/45 esikleriyle uc renk); ikisi de artik sunucunun BANDINDAN okuyor.
+ *
+ * Olcu: (1) uc sabit ve hukum govdesi birebir, (2) bant -> renk ailesi
+ * eslemesi ayni, (3) iki taraf ayni gidisat anahtarlarini kullaniyor. */
+{
+  const silV = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const govde = (p) => {
+    const src = silV(read(p));
+    const i = src.indexOf("export const TREND_STEP");
+    return i < 0 ? ["bulunamadi: " + p] : [src.slice(i).replace(/\s+/g, " ").trim()];
+  };
+  sameList("gelisim hukmu esik ve dallari", govde("mobile/src/lib/growthVerdict.ts"), govde("src/lib/growth-verdict.ts"), "mobil", "web");
+
+  const mobPanel = silV(read("mobile/src/ui/GrowthPanel.tsx"));
+  const webPanel = silV(read("src/components/progress-panel.tsx"));
+  const jetonAile = { danger: "rose", streak: "flame", success: "mint", primary: "brand" };
+  const mobBant = [...mobPanel.matchAll(/case "(beginner|developing|solid|mastered)": return colors\.(\w+);/g)].map((m) => m[1] + "=" + (jetonAile[m[2]] ?? m[2]));
+  if (!mobBant.some((x) => x.startsWith("solid="))) mobBant.push("solid=brand"); // `default` dali
+  const webBant = [...webPanel.matchAll(/(beginner|developing|solid|mastered): "([a-z]+)"/g)].map((m) => m[1] + "=" + m[2]);
+  sameSet("bant renkleri", mobBant.sort(), webBant.sort(), "mobil", "web");
+
+  const anahtar = (src) => [...new Set([...src.matchAll(/"(progp\.(?:trend|verdict|unmeasured|empty|over_time)[\w]*)"/g)].map((m) => m[1]))].sort();
+  sameSet("gidisat anahtarlari", anahtar(mobPanel), anahtar(webPanel), "mobil", "web");
 }
 
 /* --------- 359. BILDIRIM KAROSU VE EKRAN BASLIGI: OLCULDU, ESITTI

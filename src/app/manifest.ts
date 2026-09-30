@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getLang } from "@/lib/i18n/server";
 import { translate } from "@/lib/i18n/dict";
+import { courseList } from "@/lib/og/langs";
 
 /**
  * Ana ekrana eklendiğinde uygulama gibi açılması için PWA tanımı.
@@ -13,9 +14,10 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
   const lang = await getLang();
   const t = (key: string) => translate(lang, key);
   return {
-    name: t("meta.title"),
+    // Kurs adları katalogdan (bkz. `layout.tsx` `generateMetadata`).
+    name: translate(lang, "meta.title", { langs: courseList(lang) }),
     short_name: "Lernomi",
-    description: t("meta.description"),
+    description: translate(lang, "meta.description", { langs: courseList(lang) }),
     start_url: "/learn",
     scope: "/",
     display: "standalone",

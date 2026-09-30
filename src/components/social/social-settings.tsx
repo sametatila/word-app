@@ -7,6 +7,8 @@ import { SkeletonLine } from "@/components/skeleton";
 import { errorText, social, type SocialMeView } from "@/lib/social/client";
 import type { PublicUser, Visibility } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
+import { Group, Row } from "@/components/settings-section";
+import { Field, InsetList } from "@/components/field";
 /* Sınırlar sunucunun kendi kuralından: üç yerde yazılı bir sayı er geç
    ayrışır (bkz. `lib/social/username`). */
 import { USERNAME_CHANGE_COOLDOWN_DAYS, USERNAME_MAX } from "@/lib/social/username";
@@ -24,17 +26,18 @@ const VIS: { key: Visibility; label: string; sub: string }[] = [
  * profilde artık görünmüyor.
  */
 /**
- * `bare`: kendi adresinde çizilirken başlık şeridi çizilmiyor — sayfanın h1'i
- * zaten "Sosyal ve gizlilik" diyor, kartın içindeki ikinci başlık onu
- * tekrarlardı.
- */
-/**
  * `part` (2026-09-28): sosyal ayarlar Ayarlar'a taşındı. `username` Ayarlar ›
- * Hesap kartının içinde bir satır (kart dışarıda), `privacy` Ayarlar ›
- * Gizlilik'in üst kartı (görünürlük, izinler, engellenenler). Verilmezse eski
- * tam kart.
+ * Hesap kartının içinde bir bölüm (kart dışarıda), `privacy` Ayarlar ›
+ * Gizlilik grubu (görünürlük, izinler, engellenenler; `children` grubun
+ * sonuna eklenen bölümler, ör. veri ve onaylar).
+ *
+ * GİZLİLİK STANDART GRUP (2026-09-30, Samet: ayar kutuları aynı dili
+ * konuşmuyordu). Kendi kartını çiziyordu ve bölüm başlıkları koyu
+ * `text-strong` idi; öteki grupların küçük sönük etiketi ile çizgisi yoktu,
+ * "Veri ve onaylar" da ayrı başlıklı ikinci bir kutuydu. Artık `Group`/`Row`
+ * (mobil `SocialPrivacy` aynı).
  */
-export function SocialSettings({ initial, bare = false, part }: { initial: SocialMeView; bare?: boolean; part?: "username" | "privacy" }) {
+export function SocialSettings({ initial, part, children }: { initial: SocialMeView; part: "username" | "privacy"; children?: React.ReactNode }) {
   const t = useT();
   const lang = useLang();
   const [me, setMe] = useState(initial);
@@ -45,9 +48,12 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
   const [busy, setBusy] = useState(false);
   const [blocked, setBlocked] = useState<(PublicUser & { since: string })[] | null>(null);
 
+  /* Engel listesi yalnız Gizlilik'te çiziliyor; Hesap'taki kullanıcı adı
+     bölümü onu boşuna okuyordu. */
   useEffect(() => {
+    if (part !== "privacy") return;
     social.blocks().then((r) => setBlocked(r.blocked)).catch(() => setBlocked([]));
-  }, []);
+  }, [part]);
 
   async function save(patch: Record<string, unknown>, done?: string) {
     if (busy) return;
@@ -67,67 +73,52 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
 
   const dirtyName = username.trim().toLowerCase() !== me.username;
 
-  const usernameBlock = (
-    <div className={part === "username" ? "" : "py-4"}>
-      {part === "username" ? null : <label className="text-strong" htmlFor="username">{t("socialsettings.username")}</label>}
-      <div className={`${part === "username" ? "" : "mt-2 "}flex items-center gap-2`}>
-        <span className="muted text-body">@</span>
-        <input
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value.toLowerCase())}
-          maxLength={USERNAME_MAX}
-          enterKeyHint="done"
-          autoCapitalize="none"
-          autoCorrect="off"
-          spellCheck={false}
-          placeholder={t("socialsettings.username_2")}
-          aria-label={t("socialsettings.username")}
-          /* Ad kutusuyla aynı boy (48; mobil de öyle): `py-2` ile 40'tı. */
-          className="input min-w-0 flex-1"
-        />
-        <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
-          {t("common.save")}
-        </button>
-      </div>
-      {/* Alan → yardım satırı 8, yazı caption (mobil aynası); `mt-1` ile
-          kutuya yapışıktı (`components/field.tsx`). */}
-      <p className="muted mt-2 text-caption leading-snug">
-        {t("socialsettings.username_rule")}{" "}
-        {me.usernameChangeAvailableIn > 0
-          ? t("socialsettings.username_wait", { n: me.usernameChangeAvailableIn })
-          : t("socialsettings.username_cooldown", { n: USERNAME_CHANGE_COOLDOWN_DAYS })}{" "}
-        {t("socialsettings.profile_link", { path: `/u/${me.username}` })}
-      </p>
-      {part === "username" && msg ? (
-        <p role={msg.ok ? "status" : "alert"} className="mt-2 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
-          {msg.text}
-        </p>
-      ) : null}
-    </div>
-  );
-  if (part === "username") return usernameBlock;
+  if (part === "username") {
+    /* Ad kutusuyla aynı hizada: kutunun önündeki "@" kalktı (mobilde de yok),
+       kutu kenardan başlıyor. Yardım ve ileti alan bloğunun satırları
+       (`components/field.tsx`: kutu → yardım 8). */
+    return (
+      <Field
+        help={`${t("socialsettings.username_rule")} ${
+          me.usernameChangeAvailableIn > 0
+            ? t("socialsettings.username_wait", { n: me.usernameChangeAvailableIn })
+            : t("socialsettings.username_cooldown", { n: USERNAME_CHANGE_COOLDOWN_DAYS })
+        } ${t("socialsettings.profile_link", { path: `/u/${me.username}` })}`}
+      >
+        <div className="flex items-center gap-2">
+          <input
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value.toLowerCase())}
+            maxLength={USERNAME_MAX}
+            enterKeyHint="done"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            placeholder={t("socialsettings.username_2")}
+            aria-label={t("socialsettings.username")}
+            /* Ad kutusuyla aynı boy (48; mobil de öyle). */
+            className="input min-w-0 flex-1"
+          />
+          <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
+            {t("common.save")}
+          </button>
+        </div>
+        {msg ? (
+          <p role={msg.ok ? "status" : "alert"} className="mt-2 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+            {msg.text}
+          </p>
+        ) : null}
+      </Field>
+    );
+  }
 
   return (
-    /* Bölümler ayarlar grubunun diliyle ayrılıyor (`settings-section`): kartın
-       kendi `divide-y`ı, ince `--hairline` çizgi. */
-    /* Paylar ayar grubunun kutusuyla aynı: kart `px-4`, bölüm `py-4`
-       (`components/field.tsx`); bölümler kendi `px-4 py-3`ünü taşıyordu. */
-    <section id="social" className={`card divide-y divide-[color:var(--hairline)] overflow-hidden px-4 ${bare || part ? "" : "mt-4"}`}>
-      {bare || part ? null : (
-        <div className="py-4">
-          <h2 className="text-strong">{t("socialsettings.social_and_privacy")}</h2>
-          <p className="muted text-caption">{t("socialw.settings_sub")}</p>
-        </div>
-      )}
-
-      {part === "privacy" ? null : usernameBlock}
-
-      <div className="py-4">
-        <p className="text-strong">{t("socialsettings.visibility")}</p>
+    <Group>
+      <Row label={t("socialsettings.visibility")}>
         {/* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR — Android aynı üçlüyü
             `accessibilityRole="radio"` ile veriyor (`SocialSettingsScreen`). */}
-        <div role="radiogroup" aria-label={t("socialsettings.visibility")} className="mt-2 flex flex-col gap-1.5">
+        <div role="radiogroup" aria-label={t("socialsettings.visibility")} className="flex flex-col gap-1.5">
           {VIS.map((v) => (
             <button
               key={v.key}
@@ -142,14 +133,10 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
             </button>
           ))}
         </div>
-      </div>
+      </Row>
 
-      {/* İZİNLER başlığı Android'de var: "Görünürlük"ün başlığı olduğu hâlde
-          altındaki üç anahtarın başlığı yoktu ve üçü serbestçe asılı
-          duruyordu. Başlık, neyin neye ait olduğunu bir bakışta söylüyor. */}
-      <div className="py-4">
-        <p className="mb-2 text-strong">{t("socialsettings.permissions")}</p>
-        <div className="inset-list">
+      <Row label={t("socialsettings.permissions")}>
+        <InsetList>
           <SettingRow title={t("socialsettings.perm_requests")} sub={t("socialsettings.perm_requests_sub")}>
             <Switch on={me.allowRequests} disabled={busy} label={t("socialsettings.perm_requests")} onChange={(v) => void save({ allowRequests: v })} />
           </SettingRow>
@@ -159,24 +146,22 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
           <SettingRow title={t("socialsettings.perm_activity")} sub={t("socialsettings.perm_activity_sub")}>
             <Switch on={me.showActivity} disabled={busy} label={t("socialsettings.perm_activity")} onChange={(v) => void save({ showActivity: v })} />
           </SettingRow>
-        </div>
+        </InsetList>
         {/* HATA `alert`, BASARI `status` (bkz. `premium-paywall`). */}
         {msg ? (
           <p role={msg.ok ? "status" : "alert"} className="mt-2 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {msg.text}
           </p>
         ) : null}
-      </div>
+      </Row>
 
-      <div className="py-4">
-        <p className="text-strong">{t("socialsettings.blocked_title")}</p>
-        {/* "Yükleniyor" yazısı yerine satırın yeri: liste gelince başlığın
-            altı yerinden oynamıyor. Android aynı yerde iskelet satırı
-            çiziyor (`SocialSettingsScreen`). */}
+      <Row label={t("socialsettings.blocked_title")}>
+        {/* "Yükleniyor" yazısı yerine satırın yeri: liste gelince bölüm
+            yerinden oynamıyor (Android `SocialSettingsScreen` aynı). */}
         {blocked === null ? (
-          <SkeletonLine variant="caption" width="60%" className="mt-2" />
+          <SkeletonLine variant="caption" width="60%" />
         ) : blocked.length ? (
-          <ol className="inset-list mt-2">
+          <ol className="inset-list">
             {blocked.map((b) => (
               <li key={b.userId} className="flex items-center gap-3">
                 <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={28} />
@@ -201,9 +186,10 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
             ))}
           </ol>
         ) : (
-          <p className="muted mt-2 text-caption">{t("socialsettings.you_haven_t_blocked_anyone")}</p>
+          <p className="muted text-caption">{t("socialsettings.you_haven_t_blocked_anyone")}</p>
         )}
-      </div>
-    </section>
+      </Row>
+      {children}
+    </Group>
   );
 }

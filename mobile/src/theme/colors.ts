@@ -68,6 +68,14 @@ export type Palette = {
    * de bu kartta sabit bir basamak kullanıyor ve ikisi eş görünmeli.
    */
   streakDeep: string;
+  /**
+   * TURUNCU MARKA ZEMİNİNDEKİ seri ikonu - iki temada da aynı değer (web
+   * `--color-flame-700`). Gelişim ekranının seri kahramanı `primary` dolgulu
+   * ve ikon yarı saydam beyaz karoda (#ffffff2e → #f98f3d) duruyor: seri
+   * tonlarından yalnız 700 orada grafik eşiğini geçiyor, 3.16 (web karosu
+   * 3.21). 600 2.23, 500 1.24, açık tonlar 1.5-1.9.
+   */
+  streakInk: string;
   /** Sayaç rozetinin (parlak kehribar zemin) yazı rengi - 6.04. */
   badgeInk: string;
   /**
@@ -116,7 +124,7 @@ export const light: Palette = {
   border: "#e3e3df", hairline: "#ececea",
   text: "#1b1b1d", textMuted: "#66666c", textFaint: "#a3a3a8",
   success: "#2f9a61", danger: "#dc3f55", streak: "#b8940f", info: "#1b93ac", accent: "#9256bc",
-  streakDeep: "#86690e", badgeInk: "#1b1b1d", onFill: "#ffffff",
+  streakDeep: "#86690e", streakInk: "#6a530b", badgeInk: "#1b1b1d", onFill: "#ffffff",
   successText: "#237a4c", dangerText: "#b62e43", streakText: "#86690e", infoText: "#16748a", accentText: "#77439d",
   successSoft: "#e2f2e9", dangerSoft: "#fde6ea",
   gradientA: ["#fb8f2a", "#f87612"], gradientB: ["#ffab54", "#db5f08"],
@@ -140,7 +148,7 @@ export const dark: Palette = {
   border: "#2e2e33", hairline: "#232327",
   text: "#f2f2f3", textMuted: "#9c9ca3", textFaint: "#6b6b72",
   success: "#6fd19b", danger: "#f79ba6", streak: "#ddb62c", info: "#6fd1e3", accent: "#cda6e8",
-  streakDeep: "#86690e", badgeInk: "#1b1b1d", onFill: "#1b1b1d",
+  streakDeep: "#86690e", streakInk: "#6a530b", badgeInk: "#1b1b1d", onFill: "#1b1b1d",
   // Koyu temada dolgu ve yazı ayrımı gerekmiyor: bu tonlar yüzey üstünde
   // 8.3-9.7 veriyor. Aynı değerler, ikinci bir ton uydurulmadı.
   successText: "#6fd19b", dangerText: "#f79ba6", streakText: "#ddb62c", infoText: "#6fd1e3", accentText: "#cda6e8",

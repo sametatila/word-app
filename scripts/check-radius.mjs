@@ -193,6 +193,14 @@ for (const abs of walk(path.join(ROOT, "mobile", "src"))) {
  * `landing.module.css` (tanıtım sayfasının kendi dili; uygulama yüzeyi değil).
  */
 const BORDER_ALLOW = new Map([
+  /* ── başarıma doğrudan gidiş vurgusu (2026-09-30) ── */
+  ["mobile/src/screens/AchievementsScreen.tsx", [["borderWidth: 2, borderColor: colors.primary, opacity: ring", "odak/vurgu halkası: bağlantıyla açılan başarımı 2,4 sn işaretleyen, sönen katman (kutunun kenarlığı değil)"]]],
+  ["src/components/achievement-wall.tsx", [["0 0 0 2px var(--color-brand), var(--shadow-soft)", "odak/vurgu halkası: bağlantıyla açılan başarım (mobil `AchievementsScreen` ile aynı)"]]],
+  /* ── paylaşım önizleme görseli: uygulama yüzeyi değil, 1200×630 PNG çizimi ── */
+  ["src/lib/og/card.tsx", [
+    ["border: `2px solid ${b.tone === \"brand\" ? C.brandSoft : C.border}`", "önizleme görseli: rozet kenarı 1200 px'lik tuvalde küçültülünce 1 px'e iner"],
+    ["border: `6px solid ${C.surface}`, boxShadow: `0 0 0 4px ${C.brand}`", "önizleme görseli: avatar halkası (çizim)"],
+  ]],
   /* ── mobil ── */
   ["mobile/src/ui/Checkbox.tsx", [["borderWidth: 1.5", "küçük denetim: onay kutusu (web `checkbox.tsx`)"]]],
   ["mobile/src/ui/RadioDot.tsx", [["borderWidth: 1.5", "küçük denetim: radyo halkası (web `report-dialog` halkası)"]]],

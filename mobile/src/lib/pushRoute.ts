@@ -66,6 +66,12 @@ export function routeFromPush(url: string): PushRoute | null {
   /* Deneme bitiş hatırlatması (sunucu `lib/premium/trial-reminder`): durum ve
      "Aboneliği yönet" Premium ekranında. */
   if (path === "/premium") return { name: "Paywall" };
+  /* Rozetine gelen tepki (sunucu `social/reactions` `reactionUrl`): o rozete
+     kayan duvar. `?a=` yoksa duvar normal açılıyor. */
+  if (path === "/profile/achievements") {
+    const focus = new URLSearchParams(query).get("a");
+    return { name: "Achievements", params: focus ? { focus } : undefined };
+  }
   if (path.startsWith("/learn")) {
     const sub = path.slice("/learn/".length).split("/")[0];
     return { name: sub in LEARN_SUB ? LEARN_SUB[sub as keyof typeof LEARN_SUB] : "Tabs" };

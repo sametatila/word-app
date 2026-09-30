@@ -36,7 +36,12 @@ export type GrowthReport = {
   /** Raporun hangi seviye için hazırlandığı. */
   level: CefrLevel;
   /** Kullanıcının seviyesinde beceri başına şimdi / 4 hafta önce / bant. */
-  proficiency: { skill: ProficiencySkill; label: string; now: number | null; before: number | null; band: Band | null }[];
+  /**
+   * `n`: şimdiki penceredeki kanıt sayısı (beceri başına). Üçten azsa arayüz
+   * kesin bir gidişat yerine "az ölçüm" diyor — iki ölçümden "yükseliyor"
+   * demek, bir gürültüyü eğilim diye sunmak olur.
+   */
+  proficiency: { skill: ProficiencySkill; label: string; now: number | null; before: number | null; band: Band | null; n: number }[];
   /**
    * Son 30 günün kanıt sayısı — güven göstergesi. "72 puan" ile "3 ölçümden
    * 72 puan" aynı şey değil ve kullanıcı ikincisini bilmeden birincisine
@@ -138,6 +143,7 @@ export async function growthReport(
     now: profNow[skill]?.[level]?.score ?? null,
     before: profBefore[skill]?.[level]?.score ?? null,
     band: profNow[skill]?.[level]?.band ?? null,
+    n: profNow[skill]?.[level]?.n ?? 0,
   }));
   const next = await nextStep(userId, course, level, profNow, lang);
 

@@ -131,13 +131,14 @@ export function ProfileScreen() {
             </View>
           </View>
 
-          {/* SON BAŞARIMLAR — en yeni üç; hiç yoksa kart yok, "Tümü" duruyor. */}
+          {/* SON BAŞARIMLAR — en yeni üç; hiç yoksa kart yok, "Tümü" duruyor. Her
+              rozet duvarı KENDİSİNE kaydırarak açıyor (`focus`), başına değil. */}
           <View style={{ gap: spacing.sm }}>
             <Head title={t("profile.achievements")} action={board ? `${board.unlockedCount}/${board.total}` : t("profile.see_all")} onAction={() => nav.navigate("Achievements")} colors={colors} />
             {recent.length ? (
               <View style={{ flexDirection: "row", gap: spacing.sm }}>
                 {recent.map((a) => (
-                  <PressableScale key={a.id} onPress={() => nav.navigate("Achievements")} accessibilityLabel={a.title} style={{ flex: 1, alignItems: "center", gap: 6 }}>
+                  <PressableScale key={a.id} onPress={() => nav.navigate("Achievements", { focus: a.id })} accessibilityLabel={a.title} style={{ flex: 1, alignItems: "center", gap: 6 }}>
                     <View style={{ width: 56, height: 56, borderRadius: 28, alignItems: "center", justifyContent: "center", backgroundColor: TIER_COLOR[a.tier] }}>
                       <AchievementIcon glyph={a.glyph} color="#fff" size={26} />
                     </View>

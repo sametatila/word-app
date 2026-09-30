@@ -3,7 +3,10 @@ import { headers } from "next/headers";
 import { appControl } from "@/lib/app-control";
 import { platformOf } from "@/lib/store-link";
 import { iosRedeemUrl, peekStoreTrialCode } from "@/lib/premium/store-trial";
-import { getT } from "@/lib/i18n/server";
+import { getLang, getT } from "@/lib/i18n/server";
+import { translate } from "@/lib/i18n/dict";
+import { shareMeta } from "@/lib/og/langs";
+import { SITE_URL } from "@/lib/site";
 import { TrialLanding } from "./trial-landing";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +36,32 @@ export const dynamic = "force-dynamic";
  * Geçersiz / süresi dolmuş / tükenmiş kod açık bir cümleyle söyleniyor;
  * düğmeler çizilmiyor ki kullanıcı işe yaramayacak bir mağaza akışına girmesin.
  */
-export const metadata: Metadata = { robots: { index: false, follow: false } };
+/*
+ * Önizleme künyesi: bağlantı WhatsApp/Telegram grubunda paylaşılıyor ve
+ * önizlemenin söylediği teklifin kendisi (grup adı + "2 ay ücretsiz").
+ * Açıklama ödeme yöntemi şartını da taşıyor: "ücretsiz"i koşulsuz söyleyen
+ * bir önizleme sayfanın açık diliyle çelişirdi. Geçersiz kodda genel künye.
+ */
+export async function generateMetadata({ params }: { params: Promise<{ code: string }> }): Promise<Metadata> {
+  const robots = { index: false, follow: false };
+  const { code: raw } = await params;
+  let ham = raw ?? "";
+  try {
+    ham = decodeURIComponent(ham);
+  } catch {
+    /* ham hâliyle devam */
+  }
+  try {
+    const [peek, lang] = await Promise.all([peekStoreTrialCode(ham), getLang()]);
+    if (peek.status !== "valid") return { robots };
+    const t = (key: string, vars?: Record<string, string>) => translate(lang, key, vars);
+    const title = t("groupw.title");
+    const lead = peek.group ? t("groupw.lead_group", { group: peek.group }) : t("groupw.lead");
+    return { title, robots, ...shareMeta(lang, title, `${lead} ${t("groupw.term_free")}`, `${SITE_URL}/g/${peek.code}`) };
+  } catch {
+    return { robots };
+  }
+}
 
 export default async function GroupTrialPage({ params }: { params: Promise<{ code: string }> }) {
   const { code: raw } = await params;

@@ -50,9 +50,10 @@ export function LinkedAccounts({
 }: {
   googleEnabled: boolean;
   /**
-   * HESAP grubunun ilk satırı — görünen ad kutusu. Formun durumuna ait
-   * olduğu için `profile-form`da çiziliyor ama YERİ burası: grup kartını
-   * bu bileşen kuruyor (sağlayıcı listesini okuyan tek yer o).
+   * HESAP grubunun giriş yöntemlerinden ÖNCEKİ bölümleri — görünen ad ve
+   * kullanıcı adı (mobil sırası). Formun durumuna ait olduğu için
+   * `profile-form`da çiziliyor ama YERİ burası: grup kartını bu bileşen
+   * kuruyor (sağlayıcı listesini okuyan tek yer o).
    */
   nameRow?: React.ReactNode;
   /**
@@ -60,8 +61,8 @@ export function LinkedAccounts({
    * (`/profile/settings/account`, `/security`); verilmezse ikisi birden.
    */
   part?: "account" | "security";
-  /** HESAP kartının giriş yöntemlerinden SONRAKİ satırları (kullanıcı adı,
-      Güvenlik bağlantısı, Hesabı sil) — sayfa kuruyor, kart burada. */
+  /** HESAP kartının giriş yöntemlerinden SONRAKİ bölümü (Güvenlik
+      bağlantısı, Hesabı sil) — sayfa kuruyor, kart burada. */
   accountRows?: React.ReactNode;
 }) {
   const t = useT();

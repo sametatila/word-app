@@ -37,9 +37,10 @@ export async function shareInvite(text: string): Promise<"shared" | "copied" | "
  * ekliyor; web'de aynı işaret kalıyor ki iki platformdan gelen paylaşımlar
  * tek yerde sayılabilsin.
  */
-export function resultText(lang: NativeLang, correct: number, total: number): string {
+export function resultText(lang: NativeLang, course: string | null | undefined, correct: number, total: number): string {
   const origin = typeof window === "undefined" ? "https://www.lernomi.app" : window.location.origin;
-  return translate(lang, "share.result", { total, correct, link: `${origin}?ref=sonuc` });
+  /* Kursun adı cümlede: davet metni gibi sonuç da "ne öğrendiğimi" söylüyor. */
+  return translate(lang, "share.result", { lang: courseName(course, lang), total, correct, link: `${origin}?ref=sonuc` });
 }
 
 /**

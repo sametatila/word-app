@@ -195,42 +195,71 @@ export function ProfileForm({
         className="input w-full"
         />
       </Field>
-      {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
-        eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
-        tamamı profile-view.tsx'te. */}
     </Row>
   );
 
-  const accountRows = (
+  /*
+   * HESAP GRUBU = STANDART GRUP (2026-09-30, Samet: "Hesap kutusu öteki
+   * gruplara benzemiyor"). Sıra mobil `SettingsScreen` ile aynı: ad,
+   * kullanıcı adı, giriş yöntemleri, hesap yönetimi. Kullanıcı adı giriş
+   * yöntemlerinin ALTINDAYDI (mobilde üstünde). Güvenlik ve Hesabı sil
+   * etiketsiz iki ayrı bölümdü ve kendi `py-1.5`ini taşıyordu (bölümün 16'sı
+   * 22'ye çıkıyordu); şimdi etiketli TEK bölüm, iki satır kutu içi liste
+   * (`components/field.tsx`: çizginin iki yanı 12, bağlantı satırın kendisi,
+   * dokunma alanı payla birlikte).
+   */
+  const identityRows = (
     <>
+      {nameRow}
       {social ? (
         <Row label={t("socialsettings.username")}>
           <SocialSettings initial={social} part="username" />
         </Row>
       ) : null}
-      {/* GÜVENLİK Hesap'ın alt sayfası: parola, iki adım ve oturumlar yılda
-          bir açılan şeyler; listede kendi satırı yok. */}
-      <Row>
-        <Link href="/profile/settings/security" prefetch={false} className="pressable flex items-center gap-3 py-1.5">
+    </>
+  );
+
+  const accountRows = (
+    <Row label={t("settings.sec_manage")}>
+      <InsetList>
+        {/* GÜVENLİK Hesap'ın alt sayfası: parola, iki adım ve oturumlar yılda
+            bir açılan şeyler; listede kendi satırı yok. */}
+        <Link href="/profile/settings/security" prefetch={false} className="pressable flex items-center gap-3">
           <span className="min-w-0 flex-1">
             <span className="block text-strong">{t("settings.group_security")}</span>
             <span className="muted block text-caption">{t("settings.security_sub")}</span>
           </span>
           <ChevronNextIcon size={18} style={{ color: "var(--text-faint)" }} />
         </Link>
-      </Row>
-      {/* HESABI SİL Hesap'ın son satırı — mobil Ayarlar › Hesap ile aynı yer;
-          mağaza notlarının anlattığı yol ("Ayarlar › Hesap › Hesabı sil"). */}
-      <Row>
-        <Link href="/account/delete" prefetch={false} className="pressable flex items-center gap-3 py-1.5">
+        {/* HESABI SİL Hesap'ın son satırı — mobil Ayarlar › Hesap ile aynı yer;
+            mağaza notlarının anlattığı yol ("Ayarlar › Hesap › Hesabı sil"). */}
+        <Link href="/account/delete" prefetch={false} className="pressable flex items-center gap-3">
           <span className="min-w-0 flex-1">
             <span className="block text-strong" style={{ color: "var(--color-rose)" }}>{t("settings.delete_account")}</span>
             <span className="muted block text-caption">{t("deleteaccount.your_account_and_all_your_data")}</span>
           </span>
           <ChevronNextIcon size={18} style={{ color: "var(--text-faint)" }} />
         </Link>
-      </Row>
-    </>
+      </InsetList>
+    </Row>
+  );
+
+  const consentsRow = (
+    <Row label={t("settings.sec_data_consents")}>
+      {/* Anahtar satırları kutu içi liste: aralarında çizgi (mobil de öyle),
+          kenarda kutunun 16'sı (`components/field.tsx`). */}
+      <InsetList>
+      <AnalyticsSettings bare />
+      {/* Yapay zekâ rızası analitiğin yanında: ikisi de "verim nereye
+          gidiyor" sorusunun anahtarı. "Hayır" diyene diyalog bir daha
+          kendiliğinden gelmediği için fikrini değiştirmenin yeri burası. */}
+      <AiConsentSettings />
+      {/* Mikrofon onayı yalnız VERİLMİŞSE görünüyor: verilmemiş bir onayı
+          geri alma düğmesi göstermek, hiçbir şey yapmayan bir düğme demek.
+          Mobil ayarlarda da aynı satır ve aynı koşul var. */}
+      <MicConsentRow />
+      </InsetList>
+    </Row>
   );
 
   const body: Record<SettingsSection, React.ReactNode> = {
@@ -344,7 +373,7 @@ export function ProfileForm({
             min={PROFILE_LIMITS.dailyGoal.min}
             max={PROFILE_LIMITS.dailyGoal.max}
             step={5}
-            suffix={t("settings.reviews_unit")}
+            format={(n) => t("settings.reviews_n", { n })}
             onChange={setDailyGoal}
             onCommit={(v) => { if (v !== initial.dailyGoal) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
           />
@@ -354,7 +383,7 @@ export function ProfileForm({
             min={PROFILE_LIMITS.newPerDay.min}
             max={PROFILE_LIMITS.newPerDay.max}
             step={1}
-            suffix={t("settings.words_unit")}
+            format={(n) => t("settings.words_n", { n })}
             onChange={setNewPerDay}
             onCommit={(v) => { if (v !== initial.newPerDay) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
           />
@@ -446,30 +475,15 @@ export function ProfileForm({
       </Group>
 
     ),
-    account: <LinkedAccounts googleEnabled={googleEnabled} nameRow={nameRow} part="account" accountRows={accountRows} />,
+    account: <LinkedAccounts googleEnabled={googleEnabled} nameRow={identityRows} part="account" accountRows={accountRows} />,
     security: <LinkedAccounts googleEnabled={googleEnabled} part="security" />,
-    privacy: (
-      <>
-        {social ? <SocialSettings initial={social} part="privacy" /> : null}
-        <Group title={t("settings.data_consents")}>
-        <Row>
-          {/* Anahtar satırları kutu içi liste: aralarında çizgi (mobil de öyle),
-              kenarda kutunun 16'sı (`components/field.tsx`). */}
-          <InsetList>
-          <AnalyticsSettings bare />
-          {/* Yapay zekâ rızası analitiğin yanında: ikisi de "verim nereye
-              gidiyor" sorusunun anahtarı. "Hayır" diyene diyalog bir daha
-              kendiliğinden gelmediği için fikrini değiştirmenin yeri burası. */}
-          <AiConsentSettings />
-          {/* Mikrofon onayı yalnız VERİLMİŞSE görünüyor: verilmemiş bir onayı
-              geri alma düğmesi göstermek, hiçbir şey yapmayan bir düğme demek.
-              Mobil ayarlarda da aynı satır ve aynı koşul var. */}
-          <MicConsentRow />
-          </InsetList>
-        </Row>
-
-        </Group>
-      </>
+    /* GİZLİLİK TEK GRUP: görünürlük, izinler, engellenenler ve veri ve
+       onaylar aynı kartta, çizgiyle ayrılmış dört bölüm. "Veri ve onaylar"
+       ayrı başlıklı ikinci bir kartta duruyordu (mobil `SocialPrivacy` aynı). */
+    privacy: social ? (
+      <SocialSettings initial={social} part="privacy">{consentsRow}</SocialSettings>
+    ) : (
+      <Group>{consentsRow}</Group>
     ),
     about: (
       <Group>
@@ -539,7 +553,7 @@ function Slider({
   min,
   max,
   step,
-  suffix,
+  format,
   onChange,
   onCommit,
 }: {
@@ -548,7 +562,8 @@ function Slider({
   min: number;
   max: number;
   step: number;
-  suffix: string;
+  /** Değer + birim, sayıyla birlikte çevrilmiş ("40 tekrar", "1 word"); mobil `ui/Slider` aynı. */
+  format: (v: number) => string;
   onChange: (v: number) => void;
   /**
    * BIRAKILDIĞINDA çağrılır. `onChange` sürükleme boyunca her adımda
@@ -568,11 +583,15 @@ function Slider({
     <label className="block">
       {/* Etiket SÖNÜK DEĞİL: Android aynı satırda iki yanı da `bodyStrong`
           yazıyor (`ui/Slider.tsx`), sağdaki sayı marka renginde. */}
-      <span className="mb-1.5 flex items-baseline justify-between text-strong">
-        <span>{label}</span>
-        <span className="text-[color:var(--color-brand)]">
-          {shown} {suffix}
-        </span>
+      {/* DEĞER KÜÇÜLMÜYOR, ETİKET SARILIYOR (2026-09-30, Samet: "40 tekrar"
+          bazen yalnız "40"). İki yan da esnekti; uzun etiket (Almanca
+          "Tägliches Wiederholungsziel", dar ekran) satırı doldurunca değer
+          sıkışıp "120 / Wiederholungen" diye bölünüyor, birim alt satıra
+          düşüyordu. Birim de sayıdan ayrı bir sözcüktü ve tekil biçim yoktu
+          ("1 words"); artık `t(anahtar, { n })`. Mobil `ui/Slider` aynı. */}
+      <span className="mb-1.5 flex items-baseline justify-between gap-2 text-strong">
+        <span className="min-w-0 flex-1">{label}</span>
+        <span className="shrink-0 whitespace-nowrap text-[color:var(--color-brand)]">{format(shown)}</span>
       </span>
       {/* DOLU KISIM AYRI KATMAN, çubuğun sözde öğesinde değil (2026-09-30).
           `--pct` girdinin kendisinde değişip `::-webkit-slider-runnable-track`

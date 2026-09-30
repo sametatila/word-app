@@ -78,7 +78,8 @@ export type RootStackParams = {
   /** E-postadaki sıfırlama bağlantısı uygulamada açıldığında (bkz. lib/deepLink). */
   ResetPassword: { token?: string };
   Words: undefined;
-  Achievements: undefined;
+  /** `focus`: açılınca o rozete kaydır ve vurgula (profil, gelen kutusu, bildirim). */
+  Achievements: { focus?: string } | undefined;
   Progress: undefined;
   /** Ayarlar listesi; `section` verilirse o grubun ekranı (bkz. SettingsScreen). */
   Settings: { section?: SettingsSection } | undefined;

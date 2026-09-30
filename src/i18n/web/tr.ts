@@ -18,7 +18,7 @@ export const trWeb: Record<string, string> = {
    * kurmamış kişi için var.
    */
   "invitew.title": "{name} seni Lernomi'ye davet etti",
-  "invitew.lead": "Almanca ve İngilizceyi birlikte çalışın.",
+  "invitew.lead": "İstediğin dili seç, birlikte çalışalım.",
   "invitew.how": "Hesap oluşturduğunda {name} kişisine arkadaşlık isteği gidecek. Kabul ederse ortak seriniz başlar: aynı gün ikiniz de çalıştıkça seri büyür.",
   "invitew.cta": "Hesap oluştur",
   "invitew.browse": "Lernomi'ye göz at",
@@ -36,6 +36,8 @@ export const trWeb: Record<string, string> = {
   "groupw.title": "2 ay ücretsiz Lernomi Premium",
   "groupw.lead": "Grubuna özel teklif: Premium'u 2 ay ücretsiz dene.",
   "groupw.lead_group": "{group} grubuna özel teklif: Premium'u 2 ay ücretsiz dene.",
+  "groupw.og_for": "{group} grubuna özel teklif",
+  "groupw.og_for_any": "Grubuna özel teklif",
   "groupw.terms_title": "Bilmen gerekenler",
   "groupw.term_free": "İlk 2 ay ücretsiz. Deneme mağaza üzerinden başlar ve mağaza bir ödeme yöntemi ister.",
   "groupw.term_renew": "İptal etmezsen 2 ayın sonunda seçtiğin planın (aylık ya da yıllık) fiyatıyla otomatik yenilenir. Fiyat, onaylamadan önce mağazada gösterilir.",
@@ -426,7 +428,6 @@ export const trWeb: Record<string, string> = {
   "land.cta_continue": "Öğrenmeye devam et",
   "land.delete_account": "Hesabını sil",
   "land.support": "Destek",
-  "socialw.settings_sub": "Arkadaşların seni nasıl bulur, ne görür.",
   "socialw.tabs": "Sosyal sekmeler",
   "socialw.joined": "Katılım {date}",
   "onb.course_de": "CEFR A1–C1 kelime hazinesi, sınav formatında okuma, dinleme ve yazma.",
@@ -746,9 +747,9 @@ export const trWeb: Record<string, string> = {
   "store.same_account_generic": "Uygulamada, web'de kullandığın hesapla giriş yap; başka bir hesapla alınan abonelik burada görünmez.",
   "store.soon_notice": "Uygulama bu cihazın mağazasında henüz yayında değil.",
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
-  "meta.title": "Lernomi — Almanca ve İngilizce öğren",
-  "meta.tagline": "Konuş, anla, sınava hazırlan",
-  "meta.description": "Almancayı A1'den C1'e Türkçe anlatımla ve konuşarak öğren: yapay zekâ geri bildirimli konuşma, deneme sınavları ve günlük kelime turu. İngilizce kursu da var.",
-  "meta.og_sub": "A1–C1 · konuşarak öğren · 50'den fazla deneme sınavı",
-  "meta.og_badges": "Almanca|İngilizce|Türkçe anlatım",
+  "meta.title": "Lernomi — {langs} öğren",
+  "meta.tagline": "Konuşarak dil öğren, sınava hazırlan",
+  "meta.description": "A1'den C1'e adım adım, Türkçe anlatımla ve konuşarak dil öğren: yapay zekâ geri bildirimli konuşma, deneme sınavları ve günlük kelime turu. Kurslar: {langs}.",
+  "meta.og_sub": "A1'den C1'e · yapay zekâyla konuşma · 50+ deneme sınavı",
+  "meta.og_native": "Türkçe anlatım",
 };

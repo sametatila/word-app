@@ -9,8 +9,16 @@ import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { errorText, notificationText, social, timeAgo, type NotificationView } from "@/lib/social/client";
 import { REACTION_TONE, REACTION_FILL, ReactionGlyph, softFill } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
+import { achievementHref } from "@/lib/achievement-groups";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ErrorText } from "./error-text";
+
+/** Tepki bir rozete verildiyse o rozetin kimliği (olay yükünde `id`, bkz. `social/hooks`). */
+function reactedAchievementId(n: NotificationView): string | null {
+  if (n.detail.eventType !== "achievement") return null;
+  const id = (n.detail.payload as Record<string, unknown> | undefined)?.id;
+  return typeof id === "string" && id ? id : null;
+}
 
 /** Bildirimin götürdüğü yer — her satırın bir işi var. */
 function hrefFor(n: NotificationView): string {
@@ -38,6 +46,12 @@ function hrefFor(n: NotificationView): string {
        (`InboxScreen` `open`). */
     case "league_up":
       return "/friends?tab=league";
+    /* ROZETİNE TEPKİ o rozete gidiyor (duvar karta kayıp vurguluyor); akış
+       tepkiyi değil başkalarının olaylarını gösteriyor. Mobil `InboxScreen` `open`. */
+    case "reaction": {
+      const id = reactedAchievementId(n);
+      return id ? achievementHref(id) : "/friends?tab=feed";
+    }
     /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir); destek
        sayfası itiraz yolunu anlatıyor. */
     case "report_closed":

@@ -1,6 +1,10 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { t, dateLocale, formatNumber } from "../lib/i18n";
-import { View, ScrollView } from "react-native";
+import { AccessibilityInfo, Animated, View, ScrollView, type ScrollViewInstance } from "react-native";
+import { useRoute, type RouteProp } from "@react-navigation/native";
+import type { RootStackParams } from "../navigation/RootStack";
+import { reduceMotion } from "../lib/reduceMotion";
+import { scrollOffsetFor } from "../lib/scrollTarget";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
 import { Bar, BAR_HEIGHT } from "../ui/Bar";
@@ -35,11 +39,37 @@ function tierColor(tier: Tier): string {
   return TIER_COLOR[tier] ?? TIER_COLOR.legend;
 }
 
-function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
+type ViewRef = React.ComponentRef<typeof View>;
+
+/** Vurgunun ekranda kalma süresi (ms) — web `achievement-wall` `HIGHLIGHT_MS` ile aynı. */
+const HIGHLIGHT_MS = 2400;
+
+function Badge({ a, colors, lit, targetRef }: { a: Achievement; colors: Palette; lit?: boolean; targetRef?: React.RefObject<ViewRef | null> }) {
   const tc = tierColor(a.tier);
   const pct = a.target ? Math.min(100, Math.round((a.done / a.target) * 100)) : 0;
+  /* VURGU HALKASI — derin bağlantının hedefi (web: kartın etrafında marka
+     rengi halka). Kenarlığı kalınlaştırmak kartı bir piksel oynatırdı; halka
+     üstte ayrı bir katman ve dokunuşu yutmuyor. "Hareketi azalt"ta sönme yok,
+     süre dolunca kayboluyor. */
+  const ring = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    if (!lit) return;
+    ring.setValue(1);
+    if (reduceMotion()) {
+      const tm = setTimeout(() => ring.setValue(0), HIGHLIGHT_MS);
+      return () => clearTimeout(tm);
+    }
+    const anim = Animated.timing(ring, { toValue: 0, duration: 700, delay: HIGHLIGHT_MS - 700, useNativeDriver: true });
+    anim.start();
+    return () => anim.stop();
+  }, [lit, ring]);
+  const status = a.unlocked ? t("achievements.earned") : `${formatNumber(a.done)}/${formatNumber(a.target)}`;
   return (
-    <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
+    /* KART TEK ÖĞE olarak okunuyor (başlık, ipucu, durum): ekran okuyucu elli
+       kartın her birinde dört ayrı durak yapıyordu, derin bağlantı da odağı
+       ancak bütün karta koyabiliyor. */
+    <View ref={targetRef} collapsable={false} accessible accessibilityLabel={`${a.title}, ${a.hint}, ${status}`} style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
+      <Animated.View pointerEvents="none" style={{ position: "absolute", top: -1, left: -1, right: -1, bottom: -1, borderRadius: radii.lg, borderWidth: 2, borderColor: colors.primary, opacity: ring }} />
       <View style={[{ width: 46, height: 46, borderRadius: radii.pill, alignItems: "center", justifyContent: "center", backgroundColor: a.unlocked ? tc : colors.surface2 }, a.unlocked ? softShadow(tc, 6) : {}]}>
         {/* Rozetin KENDİ ikonu (sunucu `icon` alanında veriyor): eskiden hepsi
             kupaydı ve iki rozeti ayıran tek şey kademe rengiydi. Web baştan
@@ -85,14 +115,15 @@ type Board = { rows: Achievement[]; unlockedCount: number; total: number };
 const NEXT_COUNT = 4;
 
 /** Küçük büyük-harf etiket + rozet ızgarası; grup bölümleri ve "sıradaki" aynı kabı kullanıyor. */
-function Section({ label, rows, colors }: { label: string; rows: Achievement[]; colors: Palette }) {
+/** `focus`/`lit`/`targetRef` yalnız grup bölümlerinde: rozet "sıradaki"de de görünebilir, çapa gruptaki kopya (web ile aynı). */
+function Section({ label, rows, colors, focus, lit, targetRef }: { label: string; rows: Achievement[]; colors: Palette; focus?: string; lit?: string | null; targetRef?: React.RefObject<ViewRef | null> }) {
   const { gridColumns } = useLayout();
   if (!rows.length) return null;
   return (
     <View style={{ marginTop: spacing.lg }}>
       <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{label.toLocaleUpperCase(dateLocale())}</Text>
       <CardGrid columns={gridColumns} stretch>
-        {rows.map((a) => <Badge key={a.id} a={a} colors={colors} />)}
+        {rows.map((a) => <Badge key={a.id} a={a} colors={colors} lit={a.id === lit} targetRef={a.id === focus ? targetRef : undefined} />)}
       </CardGrid>
     </View>
   );
@@ -106,6 +137,17 @@ export function AchievementsScreen() {
   const [board, setBoard] = useState<Board | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
   const [attempt, setAttempt] = useState(0);
+  const focus = useRoute<RouteProp<RootStackParams, "Achievements">>().params?.focus;
+  const scrollRef = useRef<ScrollViewInstance>(null);
+  const contentRef = useRef<ViewRef>(null);
+  const targetRef = useRef<ViewRef>(null);
+  const [viewport, setViewport] = useState(0);
+  const [content, setContent] = useState(0);
+  const [lit, setLit] = useState<string | null>(null);
+  /** Hangi hedefe zaten gidildi — içerik boyu sonradan değişince yeniden kaydırmasın. */
+  const done = useRef<string | null>(null);
+  const a11yTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (a11yTimer.current) clearTimeout(a11yTimer.current); }, []);
 
   // Uydurma tahta yok: yüklenene dek boş, hata olursa "tekrar dene".
   useEffect(() => {
@@ -155,6 +197,35 @@ export function AchievementsScreen() {
     [list],
   );
   const lead = upcoming.length ? upcoming : recent;
+
+  /*
+   * DERİN BAĞLANTI (`focus`: profil, gelen kutusu, bildirim). Profilde bir
+   * rozete dokunan duvarın başına düşüyor ve elli rozetin arasında onu
+   * arıyordu. Yalnız GERÇEK tahta çizilip ölçülünce koşuyor (iskelet ayrı bir
+   * ScrollView; onun üstünde kaydırmak içerik gelince kayan bir hedefe gitmek
+   * olurdu). Kart ortalanıyor (`scrollOffsetFor`), kısa bir halka yanıyor,
+   * ekran okuyucu odağı kaydırma bitince karta geçiyor. Başlık kaydırma
+   * kabının DIŞINDA, yani yapışkan başlık payı gerekmiyor. Bilinmeyen kimlikte
+   * ekran normal açılıyor. Kartta ayrıntı paneli yok; açılacak katman da yok.
+   */
+  const known = !!focus && list.some((a) => a.id === focus);
+  useEffect(() => {
+    if (phase !== "ready" || !known || !focus || !viewport || !content || done.current === focus) return;
+    const target = targetRef.current;
+    const root = contentRef.current;
+    if (!target || !root) return;
+    target.measureLayout(root, (_x, y, _w, height) => {
+      if (done.current === focus) return;
+      done.current = focus;
+      const still = reduceMotion();
+      scrollRef.current?.scrollTo({ y: scrollOffsetFor({ y, height, viewport, content }), animated: !still });
+      setLit(focus);
+      if (a11yTimer.current) clearTimeout(a11yTimer.current);
+      a11yTimer.current = setTimeout(() => {
+        if (targetRef.current) AccessibilityInfo.sendAccessibilityEvent(targetRef.current, "focus");
+      }, still ? 0 : 400);
+    });
+  }, [phase, known, focus, viewport, content]);
   // Grup kovaları sunucudaki sırayla açılıyor; listede OLMAYAN bir grup gelirse
   // atılmıyor, sona ekleniyor. Eski hâli üç grup biliyordu ve dördüncüsü geldiğinde
   // etiketi `undefined` olup ekranı çökertiyordu.
@@ -217,7 +288,15 @@ export function AchievementsScreen() {
           />
         </View>
       ) : (
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        ref={scrollRef}
+        onLayout={(e) => setViewport(e.nativeEvent.layout.height)}
+        onContentSizeChange={(_w, h) => setContent(h)}
+        contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}
+        showsVerticalScrollIndicator={false}
+      >
+        {/* Ölçü kökü: hedef kartın içerikteki yeri buna göre (`measureLayout`). */}
+        <View ref={contentRef} collapsable={false}>
         {/* Kaçının açıldığı TEK BAKIŞTA: web duvarı bu şeridi baştan beri
             çiziyor, mobilde yalnız başlıktaki sayı vardı. */}
         <View style={{ marginTop: spacing.sm }}>
@@ -226,8 +305,9 @@ export function AchievementsScreen() {
         {/* Önce "sıradaki" (hepsi açıldıysa "son kazanılan"), sonra gruplar. */}
         <Section label={t(upcoming.length ? "skills.next" : "achievements.recent")} rows={lead} colors={colors} />
         {groups.map(([gk, rows]) => (
-          <Section key={gk} label={groupLabel(gk)} rows={rows} colors={colors} />
+          <Section key={gk} label={groupLabel(gk)} rows={rows} colors={colors} focus={focus} lit={lit} targetRef={targetRef} />
         ))}
+        </View>
       </ScrollView>
       )}
     </View>

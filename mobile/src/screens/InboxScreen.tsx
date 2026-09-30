@@ -39,6 +39,13 @@ function tileFor(n: NotificationView, colors: Palette): { icon: IconCmp; tint: s
 }
 
 /** Gelen kutusu — tek kart, hairline satırlar (Profil menüsü kurgusu): arma, ikon karosu, metin, okunmamış nokta. */
+/** Tepki bir rozete verildiyse o rozetin kimliği (olay yükünde `id`); web `inbox` ile aynı. */
+function reactedAchievementId(n: NotificationView): string | null {
+  if (n.detail.eventType !== "achievement") return null;
+  const id = (n.detail.payload as Record<string, unknown> | undefined)?.id;
+  return typeof id === "string" && id ? id : null;
+}
+
 export function InboxScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -77,6 +84,13 @@ export function InboxScreen() {
       case "quest_invite": case "quest_accepted": case "quest_completed": goFriends(nav, "friends"); break;
       case "nudge": nav.navigate("Tabs"); break;
       case "league_up": goFriends(nav, "league"); break;
+      /* Rozetine tepki o rozete gidiyor (duvar karta kayıp vurguluyor); web `inbox` `hrefFor`. */
+      case "reaction": {
+        const id = reactedAchievementId(n);
+        if (id) nav.navigate("Achievements", { focus: id });
+        else goFriends(nav, "feed");
+        break;
+      }
       /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir), satır
          kendini anlatıyor; akışa atmak alakasız bir yere götürürdü. */
       case "report_closed": break;

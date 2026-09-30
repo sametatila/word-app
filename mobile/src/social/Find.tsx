@@ -81,7 +81,10 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
   );
 
   return (
-    <View>
+    /* Üstteki bloktan 16 (web `friends-hub` `gap-4`; kutu → sonuç da 16):
+       önceki kartların 12'lik alt payına 4 ekleniyor. Pay yokken boş
+       "Henüz arkadaşın yok" kartı kutuya değiyordu. */
+    <View style={{ marginTop: spacing.xs }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg }}>
         <SearchIcon color={colors.textMuted} size={20} />
         {/* Arama CANLI (iki harften sonra kendiliginden); return tusunun isi
