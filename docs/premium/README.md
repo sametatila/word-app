@@ -252,6 +252,31 @@ adla gelen istekler reddedilir; geçici uyumluluk katmanı yok.
 - **"Sınırsız" denmiyor:** Premium'un kötüye kullanım tavanı var ve paywall'da yazılı (App Store
   3.1.2, Play abonelik beyanı).
 
+### 2.4 Yapay zekâ maliyeti (2026-09-30)
+
+**Dil modeli** zinciri Cloudflare Workers AI (Gemma 4 26B) → Groq (gpt-oss-120b), `src/lib/chat-providers.ts`.
+Cloudflare: günde 10.000 neuron ücretsiz, Workers Paid (ayda 5 $) ile aşan kısım 1.000 neuron başına
+0,011 $ (1M giriş 0,10 $, çıkış 0,30 $); model başına dakikada 300 istek. Ölçülen jeton (istem 9,5K
+karakter): sohbet turu ~3.500 giriş + ~85 çıkış, değerlendirme ~1.450 + ~440.
+
+| Birim | Cloudflare | Groq ücretli |
+|---|---|---|
+| Tam Patika Konuşma (8 sohbet turu + 5 puanlama) | 0,0044 $ | 0,0071 $ |
+| Yazma/konuşma alıştırması | 0,00055 $ | 0,001 $ |
+
+Günlük aktif kullanıcı başına ayda (az 0,3 konuşma + 1 alıştırma; dengeli 1 + 2; ağır 3 + 5; karışık
+%60/%30/%10): 0,056 / 0,16 / 0,48 / 0,13 $. Karışıkta 1.000 günlük aktif ≈ 132 $/ay, 10.000 ≈ 1.300 $/ay;
+10.000'de yoğun dakika ~500 istek, Cloudflare sınırını aşar (ikinci sağlayıcı ya da sınır artırımı).
+
+**Tavan riski:** `aiPracticePerDay: 30` her gün doldurulursa ayda ~3,9 $; yıllık abonenin aylık net
+geliri ~1,8 €. Normal kullanımda görülmez, ama tavan zararı engellemiyor (karar Samet'te).
+
+**Konuşma tanıma** yalnız ekran kapalı yürüyüşte (Premium): Azure F0 (ayda 5 saat, kod 4,5 saatte
+keser, `AZURE_STT_MONTHLY_SECONDS`) → Deepgram → Groq Whisper. F0 aşımda faturalamaz, reddeder; yani
+Azure bugün 0 $. Ölçülen (ai_usage, 2026-08-23 → 09-29): yürüyüş yapılan günde kişi başı ~16 klip,
+~75 sn ses (medyan 57, en çok 229). S1'e geçilirse 1 $/saat; Groq Whisper 0,04 $/saat ama istek başı en
+az 10 sn faturalanıyor (klip ortalaması ~4,6 sn).
+
 ---
 
 ## 3. Kurulu durum — mağazalar ve RevenueCat

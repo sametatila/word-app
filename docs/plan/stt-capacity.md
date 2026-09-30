@@ -8,7 +8,7 @@
 
 - Aktif kullanıcı: 3 (30 gün); DAU ortalama 2.3, en yüksek 3.
 - STT istekleri (pocket-mic → /api/stt): 160 istek, 828 sn ses; klip ortalama 5.2 sn, p95 20.0 sn; başarı 81 %, ilk cevap ortalama 663 ms.
-- Sağlayıcı dağılımı: groq/whisper-large-v3-turbo 82 istek (376 sn, ok 61); deepgram/nova-3 49 istek (224 sn, ok 45); mistral/voxtral-mini-latest 13 istek (196 sn, ok 8); cloudflare/@cf/openai/whisper-large-v3-turbo 12 istek (24 sn, ok 12); speechmatics/enhanced 4 istek (8 sn, ok 4).
+- Sağlayıcı dağılımı: groq/whisper-large-v3-turbo 82 istek (376 sn, ok 61); deepgram/nova-3 49 istek (224 sn, ok 45); ses zincirinden çıkarılan bir sağlayıcı 13 istek (196 sn, ok 8); cloudflare/@cf/openai/whisper-large-v3-turbo 12 istek (24 sn, ok 12); speechmatics/enhanced 4 istek (8 sn, ok 4).
 - En yoğun gün: Sun Aug 23 — 92 istek, 573 sn; en yoğun saat: 68 istek, 502 sn; en yoğun dakika: 16 istek.
 - Sohbet turu: 88 (30 gün); konuşma egzersizi denemesi: 5.
 - Günlük ortalama: 28 sn ses, 5.3 istek → kullanıcı başına gün başına 12 sn / 2.4 istek.

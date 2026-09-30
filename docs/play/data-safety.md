@@ -41,7 +41,7 @@ işaretli olduğu için mağaza girişinin "Toplanan" listesinde görünmüyor, 
 | Kişisel bilgi › Kullanıcı kimlikleri | Evet | Evet (RevenueCat) | Hayır | Zorunlu | Hesap yönetimi, satın alma eşleme |
 | Kişisel bilgi › Diğer bilgi (IP, tarayıcı/cihaz tanımı — oturum kaydı) | Evet | Hayır | Hayır | Zorunlu | Dolandırıcılık önleme, güvenlik, hız sınırı |
 | Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Deepgram, Groq) | Evet (aşağıya bak) | İsteğe bağlı (ekran kapalı yürüyüş; uygulama içi açık rıza) | Uygulama işlevi (konuşma tanıma) |
-| Mesajlar › Diğer uygulama içi mesajlar (yazma görevleri, sohbet, sınav cevapları) | Evet | Evet (Groq, Mistral, Cerebras) | Hayır | İsteğe bağlı (uygulama içi açık rıza) | Uygulama işlevi (değerlendirme ve geri bildirim) |
+| Mesajlar › Diğer uygulama içi mesajlar (yazma görevleri, sohbet, sınav cevapları) | Evet | Evet (Cloudflare Workers AI, Groq) | Hayır | İsteğe bağlı (uygulama içi açık rıza) | Uygulama işlevi (değerlendirme ve geri bildirim) |
 | Uygulama etkinliği › Uygulama içi etkileşimler (ilerleme, seri, XP, ekran olayları) | Evet | Hayır | Hayır | Zorunlu (ilerleme) / isteğe bağlı (olaylar) | Uygulama işlevi, analitik, kişiselleştirme |
 | Uygulama etkinliği › Diğer kullanıcı içeriği (görünen ad, kullanıcı adı, bildirimler) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi, kişiselleştirme, güvenlik (moderasyon) |
 | Uygulama etkinliği › Diğer eylemler (arkadaşlık, tepki, dürtme, ortak görev, engelleme) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi (sosyal) |
@@ -60,7 +60,7 @@ işaretli olduğu için mağaza girişinin "Toplanan" listesinde görünmüyor, 
   saklamıyor. Zincir: önce Azure (kısa ses, belgelerine göre saklamıyor), o düşer ya da aylık
   tavanı dolarsa Deepgram (`mip_opt_out=true`, denetim LEG-3), sonra Groq (Zero Data Retention,
   Global + Inference APIs, 2026-09-27; denetim G5) — `src/lib/chat-providers.ts` `sttProviders`.
-  Mistral, Cloudflare Workers AI ve Speechmatics ses almıyor. Koşullardan biri geri alınırsa
+  Cloudflare Workers AI (yalnız dil modeli, metin) ve Speechmatics ses almıyor. Koşullardan biri geri alınırsa
   "geçici" kalkar.
 - **Paylaşım izinle.** Metin dil modellerine, ses konuşma tanıma sağlayıcılarına ancak
   sağlayıcıları adıyla sayan ekranda izin verildikten sonra gidiyor; karar sunucuda

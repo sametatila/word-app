@@ -151,10 +151,11 @@ Tuzaklar:
   yeniden yazılır.
 
 Yapay zekâ kotası:
-- Konuşma, yazma değerlendirmesi ve deneme özeti üretimdeki sohbet sağlayıcılarını (Mistral → Groq →
-  Cerebras) kullanır; `npm run test:chat` ve `assess-eval` AYNI anahtarları harcar. 2026-09-29'da
-  Mistral hesap düzeyinde 429, Cerebras 402 verdi ve Groq'un günlük token penceresi (200 bin) doldu;
-  yapay zekâlı kareler çekilemedi. Çekim gününden önce ölçüm betikleri koşulmaz; kota şöyle okunur:
+- Konuşma, yazma değerlendirmesi ve deneme özeti üretimdeki sohbet sağlayıcılarını (Cloudflare
+  Workers AI → Groq) kullanır; `npm run test:chat` ve `assess-eval` AYNI anahtarları harcar.
+  Cloudflare günde 10.000 neuron ücretsiz (Workers Paid'de aşan kısım faturalanır), Groq'un ücretsiz
+  günlük token penceresi 200 bin. 2026-09-29'da o günkü zincirin iki sağlayıcısı kapalıydı ve Groq'un
+  penceresi doldu; yapay zekâlı kareler çekilemedi. Çekim gününden önce ölçüm betikleri koşulmaz; kota şöyle okunur:
   `ssh lernomi "sudo -u postgres psql -d lernomi -At -c \"select provider, ok, status, count(*) from
   ai_usage where day = current_date group by 1,2,3\""`.
 

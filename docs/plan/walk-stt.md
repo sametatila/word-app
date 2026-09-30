@@ -23,7 +23,7 @@ Tek zincir: **Azure → Deepgram → Groq**, yalnız mobil cep / ekran kapalı y
 hiçbir yüzeyde sunucuya gitmiyor (Samet, 2026-09-27); `/api/stt` `mode=walk` taşımayan isteği 400
 ile reddediyor.
 
-- Cloudflare Workers AI, Speechmatics ve Mistral ses zincirinden kalıcı olarak çıktı.
+- Cloudflare Workers AI ve Speechmatics ses zincirinden kalıcı olarak çıktı (Workers AI yalnız dil modeli, metin).
 - Azure aylık tavanı `AZURE_STT_MONTHLY_SECONDS` (boş = 16.200 sn = 4,5 sa; F0 kotası 5 sa).
 - `/api/stt`: her istek premium kapısından geçer (deneme sınavı yolu kalktı; web sınav konuşması tarayıcı tanıyıcısıyla).
 

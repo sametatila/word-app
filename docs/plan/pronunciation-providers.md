@@ -25,8 +25,8 @@ gitmiyor (Samet, 2026-09-27): mobil native tanıyıcı, web Web Speech API; tan�
 sesli özellik açılmıyor.
 
 Her sağlayıcı çağrısı 8 sn tavanlı; 429'da hemen sıradakine geçilir. Her deneme `ai_usage`a yazılır;
-ses saklanmaz. Mistral (2026-09-25), Cloudflare Workers AI ve Speechmatics (2026-09-27) ses
-zincirinden kalıcı olarak çıktı. Kota modeli: `stt-capacity.md` (tarihsel).
+ses saklanmaz. Cloudflare Workers AI ve Speechmatics (2026-09-27) ses zincirinden kalıcı olarak
+çıktı; Workers AI yalnız dil modeli olarak metin alıyor. Kota modeli: `stt-capacity.md` (tarihsel).
 
 ## Env
 

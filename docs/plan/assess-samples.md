@@ -17,9 +17,10 @@ npm run test:assess -- --only a2-w-mixed         # tek örnek
 Dört alt puan da insan puanına ±1 içinde olan örnek ≥ %80; beklenen hata tiplerinin ≥ %75'i
 yakalanmış; span'lerin ≥ %75'i doğru yerde; temiz cevaba hata yazılan örnek ≤ 2.
 
-## Son sonuç (2026-08-25, 26 örnek, Mistral + Groq gpt-oss-120b karışık)
-26/26 ayrıştı · 26/26 örnek ±1 içinde · hata tipi 19/21 · span 14/14 · temiz cevaba hata 0.
-**Kabul ölçütleri sağlandı.** İlk 20 örnekte (Mistral) hata tipi 14/14, span 11/11.
+## Son sonuç (2026-09-29, 27 örnek, sağlayıcı zinciri Cloudflare Workers AI → Groq)
+Gemma 4 26B (Cloudflare): 24/27 örnek ±1 içinde · hata tipi 16/19 · temiz cevaba hata 0 · ortalama 4,9 sn.
+**Kabul ölçütleri sağlandı** (±1 %89, hata tipi %84). Yedek gpt-oss-120b (Groq) 2026-08-25'te
+26/26 ±1, hata tipi 19/21, span 14/14, temiz cevaba hata 0 ile geçmişti.
 
 ## Gözlemler
 - Model insan puanından sistematik olarak **+1 cömert** (özellikle `task` ve `grammar`), hiç ±1
