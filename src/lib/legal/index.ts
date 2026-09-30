@@ -187,9 +187,14 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * birincil olarak Cloudflare Workers AI (Gemma 4 26B), yedek Groq. Mistral AI
  * ve Cerebras alıcılardan çıktı. Metin rızası sürümü 2 (liste değişti; izin bir
  * kez yeniden soruluyor). Toplanan veri ve süreler aynı.
+ *
+ * 1.9.1 (2026-09-30) yalnız ANLATIM: "Toplanmayanlar" düz "konum" diyordu, iOS
+ * gizlilik etiketi ise Google ile Giriş kütüphanesi yüzünden "Kaba konum"
+ * beyan ediyor (PrivacyInfo.xcprivacy). Metin "hassas konum (GPS)" diyor ve
+ * kaba konumun kaynağını söylüyor. Yeni veri ya da alıcı yok — yama basamağı.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-30";
-export const LEGAL_VERSION = "1.9.0";
+export const LEGAL_VERSION = "1.9.1";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -418,6 +423,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: anlatım App Store gizlilik etiketiyle eşitlendi (kaba konum). Veri ve alıcı aynı. */
+    version: "1.9.1",
+    date: "2026-09-30",
+    changes: {
+      tr: [
+        "\"Toplanmayanlar\" satırı netleşti: Lernomi konum istemez ve hassas konum (GPS) toplanmaz; iOS uygulamasında Google ile giriş seçilirse Google'ın giriş kütüphanesi IP adresinden kaba konum çıkarabilir. Toplanan veri ve alıcılar değişmedi.",
+      ],
+      en: [
+        "The \"What is not collected\" line was clarified: Lernomi does not ask for your location and no precise location (GPS) is collected; in the iOS app, if you choose sign-in with Google, Google's sign-in library may derive a coarse location from your IP address. The data collected and the recipients did not change.",
+      ],
+      de: [
+        "Die Zeile „Was nicht erhoben wird“ wurde präzisiert: Lernomi fragt deinen Standort nicht ab und erhebt keinen genauen Standort (GPS); wenn du in der iOS-App die Anmeldung mit Google wählst, kann Googles Anmeldebibliothek aus deiner IP-Adresse einen ungefähren Standort ableiten. Erhobene Daten und Empfänger haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* KÜÇÜK BASAMAK: yeni alıcı (Cloudflare Workers AI, dil modeli); iki alıcı çıktı. Metin rızası sürüm 2. */
     version: "1.9.0",
