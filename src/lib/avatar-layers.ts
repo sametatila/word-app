@@ -131,7 +131,7 @@ export function catalogGlance(cat: AvatarCatalog): { frames: Record<string, stri
 /**
  * SAHNE YERLEŞİMİ (v3, 2026-09-29): tuvalin sahnedeki boyu ve yeri (px).
  * Burun görünen alanın (`visibleH`: sahnenin üstüne binen kâğıt hariç)
- * dikey ortasında. Ölçek TAKILI parçalara göre (`files`: taban + katmanlar,
+ * dikey ortasının `NOMI_DROP` kadar altında. Ölçek TAKILI parçalara göre (`files`: taban + katmanlar,
  * `sinirlar`dan): burundan en yüksek parçanın tepesine (balon, ampul) ve
  * yanlara (kanat) kadar her şey sığar; sade avatarda Nomi büyür ama başın
  * üstünde hep pay kalır (`NOMI_HEADROOM`). Tuvalin alt kenarı görünen alanın
@@ -142,6 +142,13 @@ export function catalogGlance(cat: AvatarCatalog): { frames: Record<string, stri
  * web `calc(50% + dx)` ile genişliği ölçmeden çizer: sahne ilk karede hazır.
  */
 const NOMI_HEADROOM = 260;
+/**
+ * Nomi'nin sahnedeki dikey payı: görünen alanın %10'u AŞAĞI (2026-09-30,
+ * Samet: "maskot biraz fazla yukarıda"). Ölçek değişmiyor, yalnız yer:
+ * tuvalin altı zaten görünen alanın altında, kayma kesik gövdeyi göstermez;
+ * başın üstündeki pay büyür.
+ */
+const NOMI_DROP = 0.1;
 export function stageFrame(cat: AvatarCatalog, stageW: number, visibleH: number, files?: string[]): { w: number; h: number; dx: number; top: number } | null {
   if (!cat.burun || !visibleH) return null;
   const { w: cw, h: ch } = catalogSize(cat);
@@ -154,7 +161,7 @@ export function stageFrame(cat: AvatarCatalog, stageW: number, visibleH: number,
   let k = (half - pad) / Math.max(NOMI_HEADROOM, ny - y0);
   if (stageW) k = Math.min(k, (stageW / 2 - pad) / Math.max(1, nx - x0, x1 - nx));
   k = Math.max(k, (half + pad) / Math.max(1, ch - ny));
-  return { w: cw * k, h: ch * k, dx: -nx * k, top: half - ny * k };
+  return { w: cw * k, h: ch * k, dx: -nx * k, top: half - ny * k + visibleH * NOMI_DROP };
 }
 
 /**
