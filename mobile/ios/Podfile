@@ -5,6 +5,13 @@ require Pod::Executable.execute_command('node', ['-p',
     {paths: [process.argv[1]]},
   )', __dir__]).strip
 
+# Hazır React.framework'ün hata ayıklama sembolleri (dSYM) arşive girsin: yoksa
+# App Store yüklemesi "Upload Symbols Failed … React.framework" uyarısı veriyor ve
+# o kütüphanedeki çökmeler Xcode Organizer'da okunmuyor (build 11, 2026-09-30).
+# React Native'in resmî bayrağı (scripts/cocoapods/rncore.rb); ortamdan ezilebilir.
+# ReactNativeDependencies ve hermesvm için 0.87'de eşdeğer bir yol yok.
+ENV['RCT_SYMBOLICATE_PREBUILT_FRAMEWORKS'] ||= '1'
+
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
@@ -41,13 +48,18 @@ target 'Lernomi' do
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
-    :app_path => "#{Pod::Config.instance.installation_root}/.."
+    :app_path => "#{Pod::Config.instance.installation_root}/..",
+    # PrivacyInfo.xcprivacy ELLE tutuluyor (gerekçeler dosyanın içinde). Açık
+    # kalırsa her `pod install` dosyayı yeniden yazıyor: yorumları siliyor ve
+    # denetimde bilerek çıkarılan gerekçe kodlarını (UserDefaults 1C8F.1,
+    # C56D.1) pod'ların kendi manifestlerinden geri ekliyordu (2026-09-30).
+    # Pod'ların manifestleri kendi paketlerinde ayrıca App Store'a gidiyor.
+    :privacy_file_aggregation_enabled => false
   )
 
   post_install do |installer|
-    # Bu adım pod'ların gizlilik beyanlarını Lernomi/PrivacyInfo.xcprivacy'ye
-    # birleştirir ve dosyayı YENİDEN YAZAR: içindeki XML yorumları her pod
-    # install'da silinir, o yüzden gerekçeler burada duruyor.
+    # Gizlilik beyanı birleştirmesi KAPALI (yukarıda `use_react_native!`);
+    # manifestin gerekçeleri dosyada, burada yalnız özeti:
     # - NSPrivacyCollectedDataTypeDeviceID: uzak bildirim (FCM) 2026-09-10'da
     #   açıldı; cihaz başına kayıt jetonu (`device_tokens`) saklanıyor ve
     #   Google'a gidiyor. Play'in tanımı Firebase installation ID'yi bu kutuya
