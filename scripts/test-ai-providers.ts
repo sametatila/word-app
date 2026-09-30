@@ -55,3 +55,5 @@ async function main() {
 }
 
 void main();
+
+export {};
