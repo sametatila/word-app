@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { PremiumConfig } from "@/lib/premium/gates";
+import { PROMO_CODE_DAYS } from "@/lib/premium/promo-policy";
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, Linkify, BTN, DANGER, DataTable, Field, FIELD, FIELD_AREA, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
@@ -279,7 +280,6 @@ function CodesSection({
   post: (b: Record<string, unknown>) => Promise<Record<string, unknown> | null>;
   busy: boolean;
 }) {
-  const [days, setDays] = useState(90);
   const [count, setCount] = useState(10);
   const [maxUses, setMaxUses] = useState(1);
   const [campaign, setCampaign] = useState("");
@@ -292,9 +292,8 @@ function CodesSection({
   const origin = useSyncExternalStore(noSubscribe, () => window.location.origin, () => "");
 
   return (
-    <Panel title="Promo kodları" hint={<>Kod üç platformda da geçerli ve mağazadan bağımsız. Dağıtım bağlantısı: <code>{origin}/premium?code=KOD</code> — bağlantıya tıklayan kullanıcıda kod alanı dolu gelir.</>}>
+    <Panel title="Promo kodları" hint={<>Her kod {PROMO_CODE_DAYS} gün (2 ay) Premium verir; kodlar yalnız ücretsiz dağıtılır, satılmaz (Play Ödemeler politikası). Kod üç platformda da geçerli ve mağazadan bağımsız. Dağıtım bağlantısı: <code>{origin}/premium?code=KOD</code> — bağlantıya tıklayan kullanıcıda kod alanı dolu gelir.</>}>
       <Grid>
-        <Num label="Kaç gün premium" v={days} on={setDays} />
         <Num label="Kaç kod üretilsin" v={count} on={setCount} />
         <Num label="Kod başına kullanım" v={maxUses} on={setMaxUses} />
         <Txt label="Kampanya adı" v={campaign} on={setCampaign} />
@@ -303,7 +302,7 @@ function CodesSection({
         type="button"
         disabled={busy}
         onClick={async () => {
-          const r = await post({ action: "create_codes", days, count, maxUses, campaign });
+          const r = await post({ action: "create_codes", count, maxUses, campaign });
           if (r?.codes) {
             const list = r.codes as string[];
             setMade(list);
@@ -311,7 +310,7 @@ function CodesSection({
               ...list.map((code, i) => ({
                 id: -1 - i,
                 code,
-                days,
+                days: PROMO_CODE_DAYS,
                 maxUses,
                 uses: 0,
                 campaign: campaign || null,

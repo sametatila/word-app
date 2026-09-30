@@ -361,10 +361,17 @@ gerekmez.
 
 Haftada 2 yenilenen ortak hak (`ai_practice_weekly`) kalktı (`src/lib/premium/access.ts`).
 
-### Promo kodu ile 2–3 ay Premium verme
+### Promo kodu ile 2 ay Premium verme
+
+**Kural (2026-09-30, Samet; Play Ödemeler politikası):** promo kodları YALNIZ ücretsiz, pazarlama
+amacıyla dağıtılır ve yalnız **2 ay (60 gün) Premium** verir. Hiçbir kanalda satılmaz, bir ödemeye,
+bağışa ya da ücretli bir ürüne bağlanmaz: Android'deki kod kutusu Play Faturalandırma dışında
+Premium açıyor ve bu ancak kod bedelsizken savunulabilir. Satılan ya da ücrete bağlanan bir kod
+Play'de doğrudan ihlal olur.
 
 1. `/admin/premium` → *Promo kodları*.
-2. `Kaç gün premium` = 60 ya da 90 · `Kaç kod` · `Kod başına kullanım` = 1 (kişisel) ya da büyük
+2. Süre seçilmiyor: her kod 60 gün verir (`src/lib/premium/promo-policy.ts`, API istemcinin
+   gönderdiği süreyi yok sayar) · `Kaç kod` · `Kod başına kullanım` = 1 (kişisel) ya da büyük
    sayı (kampanya) · `Kampanya adı`.
 3. **Kod üret**; her satırda dağıtım bağlantısı `https://www.lernomi.app/premium?code=KOD`.
 4. Süre bakiyeye eklenir: abonelik varken bekler, bitince başlar. Kod kutusu web'de ve Android'de

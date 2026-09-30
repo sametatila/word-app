@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { adminGate, adminWriteGate, logAdminAction, type AdminWriter } from "@/lib/admin";
 import { sameOrigin } from "@/lib/auth/origin";
+import { PROMO_CODE_DAYS } from "@/lib/premium/promo-policy";
 import { savePremiumConfig, premiumConfig, grantPremiumDays, revokeEntitlement, findPremiumAccount } from "@/lib/premium";
 import { createCodes, listCodes, setCodeDisabled } from "@/lib/premium/promo";
 import { createStoreTrialCodes, listStoreTrialCodes } from "@/lib/premium/store-trial";
@@ -89,7 +90,8 @@ async function handle(req: Request, gate: { ok: true; email: string }): Promise<
       }
       case "create_codes": {
         const codes = await createCodes({
-          days: Number(body.days ?? 90),
+          // Süre panelden seçilmiyor: kodlar yalnız 2 ay verir (lib/premium/promo-policy).
+          days: PROMO_CODE_DAYS,
           count: Number(body.count ?? 1),
           maxUses: Number(body.maxUses ?? 1),
           campaign: (body.campaign as string) || null,
