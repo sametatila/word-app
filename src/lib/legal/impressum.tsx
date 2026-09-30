@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LegalLanguageRow } from "@/components/legal-language-row";
 import { LEGAL_LOCALES, isLegalOmitted, isLegalPlaceholder, legalPath, type LegalLocale } from "./index";
 import type { LegalConfig } from "./shape";
+import { EmailOff } from "./email-off";
 
 /**
  * Künye (Impressum) — hizmet sağlayıcının kimliği ve GDPR m.27 AB temsilcisi.
@@ -203,15 +204,15 @@ export function ImpressumBody({ cfg, locale }: { cfg: LegalConfig; locale: Legal
           {has(e.supportEmail) ? (
             <>
               <dt>{t.email}</dt>
-              <dd><a href={`mailto:${e.supportEmail}`}>{e.supportEmail}</a></dd>
+              <dd><EmailOff href={`mailto:${e.supportEmail}`} text={e.supportEmail} /></dd>
             </>
           ) : null}
           {has(e.privacyEmailEu) ? (
             <>
               <dt>{t.privacyEmail}</dt>
               <dd>
-                <a href={`mailto:${e.privacyEmailEu}`}>{e.privacyEmailEu}</a>
-                {has(e.privacyEmailTr) ? <> · <a href={`mailto:${e.privacyEmailTr}`}>{e.privacyEmailTr}</a> (KVKK)</> : null}
+                <EmailOff href={`mailto:${e.privacyEmailEu}`} text={e.privacyEmailEu} />
+                {has(e.privacyEmailTr) ? <> · <EmailOff href={`mailto:${e.privacyEmailTr}`} text={e.privacyEmailTr} /> (KVKK)</> : null}
               </dd>
             </>
           ) : null}
@@ -229,7 +230,7 @@ export function ImpressumBody({ cfg, locale }: { cfg: LegalConfig; locale: Legal
             {has(e.privacyEmailEu) ? (
               <dl className="entity">
                 <dt>{t.euRepContact}</dt>
-                <dd><a href={`mailto:${e.privacyEmailEu}`}>{e.privacyEmailEu}</a></dd>
+                <dd><EmailOff href={`mailto:${e.privacyEmailEu}`} text={e.privacyEmailEu} /></dd>
               </dl>
             ) : null}
             <p className="muted">{t.euRepNote}</p>

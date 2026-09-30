@@ -11,6 +11,7 @@ import {
   type LegalLocale,
 } from "@/lib/legal";
 import { legalConfig } from "@/lib/legal/config";
+import { EmailOff } from "@/lib/legal/email-off";
 import { DeleteLanguageRow } from "./language-row";
 import { IconLine } from "@/components/icon-line";
 
@@ -267,9 +268,7 @@ export async function DeleteAccountInfo() {
                     {addresses.map((a) => (
                       <li key={a.email} className="surface-2 rounded-panel px-4 py-3">
                         <p className="muted text-caption">{a.label}</p>
-                        <a href={`mailto:${a.email}?subject=${subject}`} className="text-strong break-all underline underline-offset-4">
-                          {a.email}
-                        </a>
+                        <EmailOff href={`mailto:${a.email}?subject=${subject}`} text={a.email} className="text-strong break-all underline underline-offset-4" />
                       </li>
                     ))}
                   </ul>

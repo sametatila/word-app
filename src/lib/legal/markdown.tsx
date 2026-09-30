@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { FAIR_USE, LEGAL_ENTITY, LEGAL_PATHS, isLegalPlaceholder, isLegalOmitted, legalPath, type LegalLocale } from "./index";
 import { platformText, visibleProcessors, type LegalConfig } from "./shape";
 import { localizeAddress } from "./impressum";
+import { EmailOff, withEmailsOff } from "@/lib/legal/email-off";
 
 /**
  * Hukuki belge gövdesinin markdown + belirteç motoru.
@@ -127,7 +128,8 @@ function applyConditionals(md: string, ios: boolean): string {
 function entityValue(cfg: LegalConfig, key: string): ReactNode {
   const v = (cfg.entity as Record<string, string>)[key] ?? "";
   if (isLegalOmitted(v)) return null;
-  return isLegalPlaceholder(v) ? <span className="ph">{v}</span> : <>{v}</>;
+  if (isLegalPlaceholder(v)) return <span className="ph">{v}</span>;
+  return v.includes("@") ? <>{withEmailsOff(v, key)}</> : <>{v}</>;
 }
 
 const ENTITY_LABELS: Record<LegalLocale, Record<string, string>> = {
@@ -271,7 +273,8 @@ function inline(ctx: Ctx, text: string, keyPrefix: string): ReactNode[] {
   let m: RegExpExecArray | null;
   let i = 0;
 
-  const pushText = (s: string) => { if (s) out.push(s); };
+  // Metindeki adresler Cloudflare e-posta gizlemesinin dışında (lib/legal/email-off).
+  const pushText = (s: string) => { if (s) out.push(...(s.includes("@") ? withEmailsOff(s, `${keyPrefix}-t${i}`) : [s])); };
 
   while ((m = re.exec(text))) {
     pushText(text.slice(last, m.index));
@@ -300,7 +303,9 @@ function inline(ctx: Ctx, text: string, keyPrefix: string): ReactNode[] {
       out.push(
         safe === null
           ? <span key={key}>{inner}</span>
-          : safe.startsWith("/")
+          : safe.startsWith("mailto:")
+            ? <EmailOff key={key} href={safe} text={label} />
+            : safe.startsWith("/")
             ? <Link key={key} href={safe} prefetch={false}>{inner}</Link>
             : <a key={key} href={safe} rel="noopener noreferrer">{inner}</a>,
       );
