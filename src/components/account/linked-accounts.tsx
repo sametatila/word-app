@@ -184,12 +184,12 @@ export function LinkedAccounts({
                     sonYontem ? (
                       <span className="muted text-caption">{t("links.only_method")}</span>
                     ) : (
-                      <button className="btn-ghost text-caption" disabled={busy === p} onClick={() => void kaldir(p)}>
+                      <button className="btn btn-danger-soft h-9 shrink-0 px-3 text-caption" disabled={busy === p} onClick={() => void kaldir(p)}>
                         {busy === p ? "…" : t("links.unlink")}
                       </button>
                     )
                 ) : (
-                    <button className="btn text-caption" disabled={busy === p} onClick={() => void bagla(p)}>
+                    <button className="btn btn-tint h-9 shrink-0 px-3 text-caption" disabled={busy === p} onClick={() => void bagla(p)}>
                       {busy === p ? "…" : t("links.link")}
                     </button>
                 )}

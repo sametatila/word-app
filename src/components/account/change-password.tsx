@@ -146,7 +146,7 @@ export function ChangePassword() {
             <button
               type="button"
               onClick={() => { setOpen(true); setDone(false); }}
-              className="btn shrink-0 text-caption"
+              className="btn btn-tint h-9 shrink-0 px-3 text-caption"
             >
               {t("changepw.open")}
             </button>

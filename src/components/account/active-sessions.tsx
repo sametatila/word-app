@@ -136,7 +136,7 @@ export function ActiveSessions() {
                 sub={`${since(s.createdAt)}${s.ipAddress ? ` · ${s.ipAddress}` : ""}`}
               >
                 <button
-                  className="btn-ghost text-caption"
+                  className="btn btn-danger-soft h-9 shrink-0 px-3 text-caption"
                   disabled={busy === s.token}
                   onClick={() => void revoke(s.token)}
                 >
@@ -156,7 +156,7 @@ export function ActiveSessions() {
             {/* Liste yüklenmese de çalışıyor: bu uç oturumun YAŞINA bakmıyor. */}
             <button
               type="button"
-              className="btn shrink-0 text-caption"
+              className="btn btn-tint h-9 shrink-0 px-3 text-caption"
               disabled={busy === "others"}
               onClick={() => void revokeOthers()}
             >

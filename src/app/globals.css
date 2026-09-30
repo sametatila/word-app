@@ -962,6 +962,19 @@
     color: var(--text);
     border: 1px solid var(--border);
   }
+  /* Satır içi küçük eylemler (Hesap, Güvenlik) — mobilin iki yumuşak düğmesi:
+     `primarySoft` + `primaryText` (Bağla, Parolayı değiştir, İki adımlı) ve
+     `surface2` + `dangerText` (Kaldır, Çıkış yap). Boyut çağrı yerinde
+     `h-9 px-3 text-caption`: `btn-ghost`/`btn` dolgusuz tek başına
+     kullanılınca düğmeler sıkışık görünüyordu (2026-09-30). */
+  .btn-tint {
+    background: var(--brand-tint);
+    color: var(--color-brand);
+  }
+  .btn-danger-soft {
+    background: var(--surface-2);
+    color: var(--color-rose);
+  }
   /*
    * DOKUNMA HEDEFİ BÜYÜTME — mobil `hitSlop`un karşılığı.
    *

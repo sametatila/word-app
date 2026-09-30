@@ -94,7 +94,7 @@ export function SignInMethodsSkeleton({ google = true }: { google?: boolean }) {
       </SettingRowSlot>
       {google ? (
         <SettingRowSlot title={t("linked.google")} sub={t("links.not_linked")}>
-          <Btn className="btn text-caption" text={t("links.link")} />
+          <Btn className="btn btn-tint h-9 shrink-0 px-3 text-caption" text={t("links.link")} />
         </SettingRowSlot>
       ) : null}
     </div>
@@ -109,13 +109,13 @@ export function PasswordRowsSkeleton() {
       <Row label={<Words text={t("settings.sec_password")} />}>
         <div className="flex items-center justify-between gap-3">
           <Words as="p" className="muted text-body leading-snug" text={t("changepw.sub")} />
-          <Btn className="btn shrink-0 text-caption" text={t("changepw.open")} />
+          <Btn className="btn btn-tint h-9 shrink-0 px-3 text-caption" text={t("changepw.open")} />
         </div>
       </Row>
       <Row label={<Words text={t("settings.sec_two_factor")} />}>
         <div className="flex items-center justify-between gap-3">
           <Words as="p" className="muted text-body leading-snug" text={t("twofa.off_sub")} />
-          <Btn className="btn shrink-0 text-caption" text={t("twofa.enable")} />
+          <Btn className="btn btn-tint h-9 shrink-0 px-3 text-caption" text={t("twofa.enable")} />
         </div>
       </Row>
     </>
@@ -128,7 +128,7 @@ export function SessionRowSkeleton() {
   return (
     <div aria-hidden className="inset-list">
       <SettingRowSlot title="Chrome · macOS" sub={`${t("sessions.since", { date: "01.09.2026" })} · 000.000.000.00`}>
-        <Btn className="btn-ghost text-caption" text={t("sessions.revoke")} />
+        <Btn className="btn btn-danger-soft h-9 shrink-0 px-3 text-caption" text={t("sessions.revoke")} />
       </SettingRowSlot>
     </div>
   );

@@ -342,7 +342,7 @@ function SectionBody({ section }: { section: SettingsPanel }) {
               <SessionRowSkeleton />
               <div className="flex items-center justify-between gap-3">
                 <Words as="p" className="muted text-body leading-snug" text={t("sessions.sub")} />
-                <Btn className="btn shrink-0 text-caption" text={t("sessions.revoke_others")} />
+                <Btn className="btn btn-tint h-9 shrink-0 px-3 text-caption" text={t("sessions.revoke_others")} />
               </div>
             </div>
           </Row>

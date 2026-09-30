@@ -117,7 +117,7 @@ export function TwoFactor() {
               type="button"
               disabled={enabled === null}
               onClick={() => { setOpen(true); setNote(null); }}
-              className="btn shrink-0 text-caption disabled:opacity-60"
+              className="btn btn-tint h-9 shrink-0 px-3 text-caption disabled:opacity-60"
             >
               {t(enabled ? "twofa.disable" : "twofa.enable")}
             </button>
