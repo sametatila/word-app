@@ -242,6 +242,14 @@ export function AuthScreen() {
 
   /** Doğrulama bekleniyorsa gönderim düğmeleri kapalı. */
   const captchaBlocked = captchaOn && !captchaToken;
+  /*
+    GİRİŞ jetonu BEKLEMİYOR (2026-09-30): sunucu mağaza inceleme hesaplarını
+    Turnstile'dan muaf tutuyor (lib/auth/captcha `CAPTCHA_EXEMPT_EMAILS`) ve
+    inceleme cihazında kutu geçmese bile görevli girebilmeli. Jetonsuz istek
+    muaf olmayan adreste 400 MISSING_RESPONSE alıyor; o zaman "kutuyu işaretle"
+    deniyor. Kayıt ve parola sıfırlama eskisi gibi jeton bekliyor.
+  */
+  const submitBlocked = mode === "signin" ? false : captchaBlocked;
 
   /** Doğrulama ekranına geç. Adres dondurulur, geri sayım ve bildirimler sıfırlanır. */
   function toVerify(address: string, reason: VerifyReason) {
@@ -314,7 +322,7 @@ export function AuthScreen() {
   }
 
   async function submit() {
-    if (busy || captchaBlocked) return;
+    if (busy || submitBlocked) return;
     const address = email.trim();
     setBusy(true);
     setError(null);
@@ -339,6 +347,7 @@ export function AuthScreen() {
 
     // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
     if (isEmailNotVerified(r.code, r.message)) { toVerify(address, "blocked"); return; }
+    if (captchaOn && !captchaToken && r.code.toUpperCase() === "MISSING_RESPONSE") { setError(t("auth.captcha_tap")); return; }
     setError(translateAuthError(r.code, r.message, r.status));
   }
 
@@ -682,7 +691,7 @@ export function AuthScreen() {
             )}
 
             {captchaOn && <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />}
-            <PrimaryButton label={mode === "signin" ? t("auth.sign_in") : t("auth.create_account")} onPress={() => void submit()} disabled={captchaBlocked} busy={busy} style={{ marginTop: spacing.sm }} />
+            <PrimaryButton label={mode === "signin" ? t("auth.sign_in") : t("auth.create_account")} onPress={() => void submit()} disabled={submitBlocked} busy={busy} style={{ marginTop: spacing.sm }} />
 
             {mode === "signin" && (
               <PressableScale onPress={() => { setView("forgot"); setError(null); setResetSent(false); }} style={{ alignItems: "center", paddingVertical: spacing.xs }}>

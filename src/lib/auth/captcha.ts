@@ -56,11 +56,54 @@ export { CAPTCHA_ACTION } from "@/lib/auth/captcha-action";
  */
 export function captchaPlugins() {
   if (!turnstileConfigured) return [];
+  const inner = captcha({
+    provider: "cloudflare-turnstile",
+    secretKey,
+    endpoints: ["/sign-up/email", "/guest/upgrade", "/sign-in/email", "/request-password-reset"],
+  });
+  if (!exemptEmails.size) return [inner];
   return [
-    captcha({
-      provider: "cloudflare-turnstile",
-      secretKey,
-      endpoints: ["/sign-up/email", "/guest/upgrade", "/sign-in/email", "/request-password-reset"],
-    }),
+    {
+      ...inner,
+      onRequest: async (request: Request, ctx: Parameters<NonNullable<typeof inner.onRequest>>[1]) => {
+        if (await isExemptSignIn(request)) return;
+        return inner.onRequest?.(request, ctx);
+      },
+    },
   ];
+}
+
+/**
+ * MAĞAZA İNCELEME HESAPLARI TURNSTILE'DAN MUAF — yalnız e-postayla GİRİŞTE
+ * (2026-09-30, Samet: "review zamanında sorun yaşanmamalı").
+ *
+ * İnceleme cihazları çoğu zaman veri merkezi ağlarından bağlanıyor; Turnstile
+ * orada etkileşim isteyebiliyor ya da hiç geçmeyebiliyor, ve "demo hesabıyla
+ * giriş yapılamadı" en sık 2.1 reddi. Liste env'de (`CAPTCHA_EXEMPT_EMAILS`,
+ * virgülle), kodda değil: hesaplar değişince deploy gerekmiyor.
+ *
+ * DAR TUTULDU: yalnız `/sign-in/email`. Kayıt, misafir yükseltme ve parola
+ * sıfırlama muaf DEĞİL — yeni satır açan ve posta gönderen uçlar korunuyor.
+ * Muafiyet adresin kendisine: bot bu adreslerle ancak parola deneyebilir,
+ * parolalar rastgele ve uzun, hız sınırı (better-auth + nginx) aynen geçerli.
+ *
+ * İstemci tarafı: mobil giriş düğmesi jetonu beklemiyor, jeton yoksa istek
+ * başlıksız gidiyor (`AuthScreen` submit); muaf olmayan adres 400
+ * MISSING_RESPONSE alıyor ve "kutuyu işaretle" görüyor.
+ */
+const exemptEmails = new Set(
+  (process.env.CAPTCHA_EXEMPT_EMAILS ?? "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean),
+);
+
+async function isExemptSignIn(request: Request): Promise<boolean> {
+  if (request.method !== "POST" || !new URL(request.url).pathname.endsWith("/sign-in/email")) return false;
+  try {
+    const body = (await request.clone().json()) as { email?: unknown };
+    return typeof body.email === "string" && exemptEmails.has(body.email.trim().toLowerCase());
+  } catch {
+    return false;
+  }
 }

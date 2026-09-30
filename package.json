@@ -27,6 +27,7 @@
     "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",
     "test:achievements": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-achievements.ts",
     "test:apple": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-apple.ts",
+    "test:captcha": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-captcha.ts",
     "test:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-password.ts",
     "make:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/make-password.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
