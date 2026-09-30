@@ -533,6 +533,13 @@
       "when": 1791100000000,
       "tag": "0075_user_clients_test_lab",
       "breakpoints": true
+    },
+    {
+      "idx": 76,
+      "version": "7",
+      "when": 1791200000000,
+      "tag": "0076_trial_reminder",
+      "breakpoints": true
     }
   ]
 }
