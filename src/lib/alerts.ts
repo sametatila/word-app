@@ -33,6 +33,10 @@ import { RESPONSE_SLA } from "@/lib/response-sla";
 
 import { suspectItems } from "@/lib/content/analytics";
 import { REASON_LABEL } from "@/lib/content-feedback-labels";
+import { activeAiProviderNames } from "@/lib/ai-providers";
+import { AZURE_STT_MONTHLY_SECONDS, AZURE_TTS_MONTHLY_CHARS, azureKeyHealth, azureMonthUsage } from "@/lib/azure-speech-usage";
+import { azureConfigured } from "@/lib/tts/azure";
+import { chatConfigured } from "@/lib/chat-providers";
 
 export type Alert = { key: string; level: "kritik" | "uyari"; text: string };
 type State = Record<string, { since: string; lastSent: string; text: string; level: Alert["level"] }>;
@@ -47,6 +51,8 @@ async function rows(q: ReturnType<typeof sql>): Promise<Row[]> {
   return ((r as { rows?: Row[] }).rows ?? []) as Row[];
 }
 const num = (v: unknown) => Number(v) || 0;
+/** 500000 → "500.000" (Telegram metni; yerel ayar kullanmadan). */
+const thousands = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const MONTHS: Record<string, number> = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
 /** `17/Sep/2026:10:49:26 +0200` → ms. */
@@ -144,10 +150,19 @@ export async function collectAlerts(): Promise<Alert[]> {
       }
     }),
     guard("ai", async () => {
+      /* YALNIZ ETKİN SAĞLAYICILAR (lib/ai-providers). `ai_usage` geçmişi
+         zincirden çıkmış sağlayıcıları da içeriyor; onların eski hataları
+         uyarı üretmemeli (2026-09-30: Mistral ve Cerebras çıktıktan sonra
+         24 saat boyunca "fiilen kapalı" uyarısı geldi). */
+      const active = activeAiProviderNames();
+      if (!chatConfigured()) {
+        alerts.push({ key: "ai:none", level: "kritik", text: "Hiçbir dil modeli sağlayıcısı yapılandırılmamış: sohbet, değerlendirme ve yapay zekâ geri bildirimi kapalı." });
+      }
       const rs = await rows(sql`
         select provider, count(*)::int calls, count(*) filter (where not ok)::int errors, count(*) filter (where status = 429)::int limited
         from ai_usage where created_at >= now() - interval '1 hour' group by 1`);
       for (const r of rs) {
+        if (!active.has(String(r.provider ?? ""))) continue;
         const calls = num(r.calls), errors = num(r.errors), limited = num(r.limited);
         if (calls >= 10 && errors / calls >= 0.5) {
           alerts.push({ key: `ai:${r.provider}`, level: "uyari", text: `Yapay zekâ sağlayıcısı ${r.provider}: son 1 saatte ${errors}/${calls} çağrı başarısız${limited ? ` (${limited} hız sınırı)` : ""}.` });
@@ -161,10 +176,35 @@ export async function collectAlerts(): Promise<Alert[]> {
         select provider, count(*)::int calls, count(*) filter (where not ok)::int errors, count(*) filter (where status = 429)::int limited
         from ai_usage where created_at >= now() - interval '24 hours' group by 1`);
       for (const r of daily) {
+        if (!active.has(String(r.provider ?? ""))) continue;
         const calls = num(r.calls), errors = num(r.errors), limited = num(r.limited);
         if (calls >= 5 && errors / calls >= 0.9) {
           alerts.push({ key: `ai-down:${r.provider}`, level: "uyari", text: `Yapay zekâ sağlayıcısı ${r.provider} fiilen kapalı: son 24 saatte ${errors}/${calls} çağrı başarısız${limited === errors ? " (hepsi hız sınırı - hesap kotası kapalı olabilir)" : ""}. Yedek sağlayıcı devralıyor.` });
         }
+      }
+    }),
+    guard("azure", async () => {
+      /*
+        AZURE SPEECH (F0): kota aşımı ücret değil RET getiriyor ve iki yolda da
+        sessiz bozuluyor (lib/azure-speech-usage). STT tavanında Azure o ay
+        zincirden çıkıyor, Deepgram/Groq devralıyor; TTS kotasında seslendirme
+        cihaz sesine düşüyor. Anahtar yoklaması trafik olmasa da geçersiz
+        anahtarı yakalıyor (eski kaynağın anahtarı fark edilmeden gitmişti).
+      */
+      if (!azureConfigured()) return;
+      const m = await azureMonthUsage();
+      const sttPct = Math.round((m.sttSeconds / AZURE_STT_MONTHLY_SECONDS) * 100);
+      if (sttPct >= 100) {
+        alerts.push({ key: "azure:stt-cap", level: "uyari", text: `Azure konuşma tanıma bu ayın tavanını doldurdu (${Math.round(m.sttSeconds / 60)} dk / ${Math.round(AZURE_STT_MONTHLY_SECONDS / 60)} dk): ay sonuna kadar zincirde değil, Deepgram ve Groq devralıyor.` });
+      } else if (sttPct >= 80) {
+        alerts.push({ key: "azure:stt-cap", level: "uyari", text: `Azure konuşma tanıma bu ayın tavanının %${sttPct}'inde (${Math.round(m.sttSeconds / 60)} dk / ${Math.round(AZURE_STT_MONTHLY_SECONDS / 60)} dk).` });
+      }
+      const ttsPct = Math.round((m.ttsChars / AZURE_TTS_MONTHLY_CHARS) * 100);
+      if (ttsPct >= 80) {
+        alerts.push({ key: "azure:tts-cap", level: ttsPct >= 100 ? "kritik" : "uyari", text: `Azure seslendirme bu ay ${thousands(m.ttsChars)} karakter kullandı (ücretsiz kota ${thousands(AZURE_TTS_MONTHLY_CHARS)}, %${ttsPct}). Azure yalnız Edge düşünce devreye girer: Edge'e bak.` });
+      }
+      if ((await azureKeyHealth()) === "invalid") {
+        alerts.push({ key: "azure:key", level: "kritik", text: "Azure Speech anahtarı reddedildi (401/403): konuşma tanıma Deepgram/Groq'a, seslendirmenin yedeği cihaz sesine kaldı. Anahtarı Azure portalında yenile, .env'e yaz, rolling restart." });
       }
     }),
     guard("app", async () => {
@@ -367,7 +407,14 @@ export async function runAlerts(): Promise<{ active: number; sent: number; resol
       if (now.getTime() - new Date(prev.since).getTime() > 86_400_000) delete state[key];
       continue;
     }
-    lines.push(`<b>[DÜZELDİ]</b> ${esc(prev.text)}`);
+    /* Zincirden çıkarılan sağlayıcının uyarısı "düzeldi" değil: sağlayıcı
+       düzelmedi, artık kullanılmıyor. */
+    const aiName = /^ai(?:-down)?:(.+)$/.exec(key)?.[1];
+    if (aiName && aiName !== "none" && !activeAiProviderNames().has(aiName)) {
+      lines.push(`<b>[KAPANDI]</b> Yapay zekâ sağlayıcısı ${esc(aiName)} artık zincirde değil; uyarısı kapatıldı.`);
+    } else {
+      lines.push(`<b>[DÜZELDİ]</b> ${esc(prev.text)}`);
+    }
     delete state[key];
     resolved++;
   }

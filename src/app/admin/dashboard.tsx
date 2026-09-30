@@ -623,11 +623,28 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
         </Panel>
 
         <Panel id="yapay-zeka" title="Yapay zekâ sağlığı (7g)" hint="Sağlayıcı başına çağrı, başarı, gecikme ve hacim: sohbet, STT ve telaffuz." flush>
+          {/* Etkin zincir koddan ve env'den (lib/ai-providers): tablodaki geçmişte zincirden çıkmış sağlayıcılar da var. */}
+          <div className="px-4 py-3 text-sm flex flex-col gap-1">
+            {(["chat", "stt", "tts"] as const).map((role) => {
+              const list = d.aiActive.filter((p) => p.role === role);
+              return (
+                <div key={role}>
+                  <b>{role === "chat" ? "Dil modeli" : role === "stt" ? "Konuşma tanıma" : "Seslendirme"}:</b>{" "}
+                  {list.length ? list.map((p) => `${p.name} (${p.model})`).join(" → ") : <span style={{ color: TONE.bad }}>yapılandırılmamış</span>}
+                </div>
+              );
+            })}
+            {d.azureMonth && (
+              <div>
+                <b>Azure Speech bu ay (ücretsiz katman):</b> konuşma tanıma {Math.round(d.azureMonth.sttSeconds / 60)} / {Math.round(d.azureMonth.sttCap / 60)} dk · seslendirme {fmt(d.azureMonth.ttsChars)} / {fmt(d.azureMonth.ttsCap)} karakter
+              </div>
+            )}
+          </div>
           <DataTable
             empty="Son 7 günde yapay zekâ çağrısı yok."
             head={["Sağlayıcı", { label: "Çağrı", align: "right" }, { label: "Başarı", align: "right" }, { label: "Hata", align: "right" }, { label: "Ort. ms", align: "right" }, { label: "Token / karakter", align: "right" }]}
             rows={d.ai.map((a) => [
-              <b key="p">{a.provider}</b>,
+              a.active ? <b key="p">{a.provider}</b> : <span key="p" style={{ opacity: 0.55 }}>{a.provider} (zincirde değil)</span>,
               a.calls,
               <span key="o" style={{ color: TONE[a.okPct >= 95 ? "ok" : a.okPct >= 80 ? "warn" : "bad"] }}>%{a.okPct}</span>,
               <span key="e" style={a.errors ? { color: TONE.bad } : undefined}>{a.errors}</span>,

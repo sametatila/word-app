@@ -423,6 +423,7 @@ jobs:
         run: |
           npm run test:apple
           npm run test:captcha
+          npm run test:ai-providers
           npm run test:password
           npm run test:award
           npm run test:coach-lines

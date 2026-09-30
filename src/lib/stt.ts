@@ -1,4 +1,5 @@
 import "server-only";
+import { AZURE_STT_MONTHLY_SECONDS } from "@/lib/azure-speech-limits";
 import { sttProviders, type SttProvider } from "@/lib/chat-providers";
 import { recordAiUsage } from "@/lib/ai-usage";
 
@@ -205,7 +206,6 @@ async function azure(p: SttProvider, file: File, language: string): Promise<Raw>
  * Tavan bilerek 5 saatin altında (varsayılan 4,5 sa): Azure'un kendi sayacı
  * bizim saniyeye yuvarlanmış toplamımızla birebir aynı değil.
  */
-const AZURE_MONTHLY_SECONDS = Number(process.env.AZURE_STT_MONTHLY_SECONDS) || 16_200;
 const BUDGET_CACHE_MS = 60_000;
 let azureBudget: { at: number; ok: boolean } | null = null;
 
@@ -220,8 +220,8 @@ async function azureBudgetOk(): Promise<boolean> {
       .select({ s: sql<number>`coalesce(sum(audio_seconds), 0)::int` })
       .from(aiUsage)
       .where(and(eq(aiUsage.provider, "azure"), eq(aiUsage.kind, "stt"), eq(aiUsage.ok, true), gte(aiUsage.createdAt, sql`date_trunc('month', now())`)));
-    ok = (row?.s ?? 0) < AZURE_MONTHLY_SECONDS;
-    if (!ok) console.warn(`[stt] azure aylık tavan aşıldı (${row?.s} sn ≥ ${AZURE_MONTHLY_SECONDS}), bu ay zincirden düştü`);
+    ok = (row?.s ?? 0) < AZURE_STT_MONTHLY_SECONDS;
+    if (!ok) console.warn(`[stt] azure aylık tavan aşıldı (${row?.s} sn ≥ ${AZURE_STT_MONTHLY_SECONDS}), bu ay zincirden düştü`);
   } catch {
     /* sayaç okunamazsa Azure denenir: bu bir emniyet payı, kapı değil */
   }

@@ -57,6 +57,7 @@ export function alertLinks(key: string): AlertLinks {
       return { panel: ops("istek-sagligi", "İstek sağlığı") };
     case "ai":
     case "ai-down":
+    case "azure":
       return { panel: ops("yapay-zeka", "Yapay zekâ sağlığı") };
     case "maintenance":
       return { panel: { path: "/admin/app#bakim", label: "Sistem › Uygulama › Bakım modu" } };

@@ -505,17 +505,30 @@ function build(name: ProviderName): Provider {
  * yok sayılır — yanlış yazılmış bir değişken sohbeti tamamen kapatmasın.
  */
 export function chatProviders(): Provider[] {
-  const available = ORDER.filter(hasKey);
-  const preferred = process.env.CHAT_PROVIDER as ProviderName | undefined;
-  const ordered =
-    preferred && available.includes(preferred)
-      ? [preferred, ...available.filter((n) => n !== preferred)]
-      : available;
-
+  const ordered = chatChainNames();
   const now = Date.now();
   const ready = ordered.filter((n) => (cooldownUntil.get(n) ?? 0) <= now);
   const cooling = ordered.filter((n) => (cooldownUntil.get(n) ?? 0) > now);
   return [...ready, ...cooling].map(build);
+}
+
+/** Yapılandırılmış zincir, soğumadan bağımsız sırayla (`CHAT_PROVIDER` başa alınmış). */
+function chatChainNames(): ProviderName[] {
+  const available = ORDER.filter(hasKey);
+  const preferred = process.env.CHAT_PROVIDER as ProviderName | undefined;
+  return preferred && available.includes(preferred)
+    ? [preferred, ...available.filter((n) => n !== preferred)]
+    : available;
+}
+
+/**
+ * Bugünkü sohbet zinciri: ad ve model, kararlı sırayla. İzleme (uyarı motoru,
+ * panel) bunu okuyor, `ai_usage`deki geçmişi değil: zincirden çıkan bir
+ * sağlayıcının eski hataları "fiilen kapalı" uyarısı üretmesin (2026-09-30,
+ * Mistral/Cerebras çıktıktan sonra 24 saat boyunca uyarı gelmişti).
+ */
+export function chatChain(): { name: ProviderName; model: string }[] {
+  return chatChainNames().map((name) => ({ name, model: modelFor(name) }));
 }
 
 export function chatConfigured(): boolean {

@@ -7,6 +7,9 @@ import { db } from "@/lib/db";
 import { computeFunnel, type Funnel } from "@/lib/funnel";
 import { queryRunner, type QueryIssue } from "@/lib/admin-query";
 import { real } from "@/lib/test-lab";
+import { activeAiProviders, type ActiveAiProvider } from "@/lib/ai-providers";
+import { AZURE_STT_MONTHLY_SECONDS, AZURE_TTS_MONTHLY_CHARS, azureMonthUsage, type AzureMonth } from "@/lib/azure-speech-usage";
+import { azureConfigured } from "@/lib/tts/azure";
 
 /**
  * Admin panosu veri katmanı (lernomi.app/admin). Sahibin sistemi yönetmesi + tüm
@@ -156,7 +159,11 @@ export type AdminData = {
    * bölümü konuldu (bkz. lib/email `mail_sent`).
    */
   mail: { kind: string; ok: number; fail: number; cap: number }[];
-  ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number; chars: number }[];
+  ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number; chars: number; active: boolean }[];
+  /** Şu an etkin zincir (lib/ai-providers) — geçmiş değil, bugün. */
+  aiActive: ActiveAiProvider[];
+  /** Azure Speech F0'ın bu ayki kullanımı; Azure yapılandırılmamışsa null. */
+  azureMonth: (AzureMonth & { sttCap: number; ttsCap: number }) | null;
   generatedAt: string;
   /** Başarısız sorgular — boş değilse panel üstte kırmızı satırla söylüyor. */
   issues: QueryIssue[];
@@ -277,6 +284,11 @@ export async function getAdminData(days = 30): Promise<AdminData> {
   ]);
 
   const k = kpiRows[0] ?? {};
+  const aiActive = activeAiProviders();
+  const activeNames = new Set(aiActive.map((p) => p.name));
+  const azureMonth = azureConfigured()
+    ? await azureMonthUsage().then((m) => ({ ...m, sttCap: AZURE_STT_MONTHLY_SECONDS, ttsCap: AZURE_TTS_MONTHLY_CHARS })).catch(() => null)
+    : null;
   return {
     kpi: {
       totalUsers: num(k.total_users), guestUsers: num(k.guest_users), new1d: num(k.new1d), new7d: num(k.new7d), new30d: num(k.new30d),
@@ -309,7 +321,9 @@ export async function getAdminData(days = 30): Promise<AdminData> {
     premiumGates: premGates.map((r) => ({ feature: str(r.feature), count: num(r.c) })),
     notifications: { optinYes: num(notif[0]?.optin_yes), optinNo: num(notif[0]?.optin_no), sent: num(notif[0]?.sent), delivered: num(notif[0]?.delivered), opened: num(notif[0]?.opened) },
     mail: mail.map((r) => ({ kind: str(r.kind), ok: num(r.ok), fail: num(r.fail), cap: num(r.cap) })),
-    ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens), chars: num(r.chars) })),
+    ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens), chars: num(r.chars), active: activeNames.has(str(r.provider)) })),
+    aiActive,
+    azureMonth,
     generatedAt: new Date().toISOString(),
     issues,
   };
