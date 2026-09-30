@@ -1094,7 +1094,7 @@ export const en: Record<string, string> = {
   "paywall.price_note_store": "The price and the trial length are set by the store and can differ by region.",
   "paywall.renew_note_web": "The subscription renews automatically. You cancel it in the store you bought it from.",
   "paywall.what_you_get": "What Premium gives you",
-  "paywall.headline": "Practise by talking with AI",
+  "paywall.headline": "Practice by talking with AI",
   "paywall.b_ai": "Speaking and writing in Path and Skills, no streak needed",
   "paywall.b_ai_cap": "{a} assessments and {c} chat messages a day",
   "paywall.b_mock": "Every mock exam",
