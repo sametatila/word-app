@@ -1169,7 +1169,7 @@ Selin Aydin`,
           prompt:
             "Write an article for your college magazine with this title: \"The best thing about the place where I live\". Say what it is, why it matters to you, and what a visitor should do first. Write about 100 words.",
           promptTr:
-            "Okul dergin için şu başlıkla bir yazı yaz: \"Yaşadığım yerin en iyi yanı\". Ne olduğunu, senin için neden önemli olduğunu ve bir ziyaretçinin ilk ne yapması gerektiğini yaz. Yaklaşık 100 kelime.",
+            "Üniversitenin dergisi için şu başlıkla bir yazı yaz: \"Yaşadığım yerin en iyi yanı\". Ne olduğunu, senin için neden önemli olduğunu ve bir ziyaretçinin ilk ne yapması gerektiğini yaz. Yaklaşık 100 kelime.",
           items: [],
           rubric: {
             minWords: 100,
