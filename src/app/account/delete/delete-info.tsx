@@ -12,6 +12,7 @@ import {
 } from "@/lib/legal";
 import { legalConfig } from "@/lib/legal/config";
 import { DeleteLanguageRow } from "./language-row";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * /account/delete — GİRİŞ YAPMAMIŞ ziyaretçinin gördüğü sayfa.
@@ -114,10 +115,12 @@ function Steps({ steps }: { steps: ReactNode[] }) {
   return (
     <ol className="mt-3 space-y-2.5">
       {steps.map((step, i) => (
-        <li key={i} className="flex gap-2.5 text-body">
-          <span className="surface-2 mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-micro tabular-nums">
-            {i + 1}
-          </span>
+        <li key={i} className="flex items-start gap-2.5 text-body">
+          <IconLine>
+            <span className="surface-2 flex h-5 w-5 items-center justify-center rounded-full text-micro tabular-nums">
+              {i + 1}
+            </span>
+          </IconLine>
           <span className="min-w-0">{step}</span>
         </li>
       ))}

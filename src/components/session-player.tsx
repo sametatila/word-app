@@ -44,6 +44,7 @@ import { flushPendingAnswers, isPermanentStatus, queueAnswers } from "@/lib/answ
 import { formatPercent } from "@/lib/i18n/dict";
 import { CountUp } from "@/components/celebrate";
 import { StreakMoment } from "@/components/streak-moment";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * `/api/answers` yanıtı + seri anı bayrağı. `streakUp`: seri BU istekte
@@ -888,7 +889,7 @@ function SessionRound() {
         title={t("game.quit_round_2")}
         message={t(onlyGame ? "game.exit_message_practice" : "game.exit_message")}
         confirmLabel={t("common.exit")}
-        cancelLabel={t("common.continue_2")}
+        cancelLabel={t("common.continue")}
         destructive
         onConfirm={() => {
           setConfirmExit(false);
@@ -1094,7 +1095,7 @@ function ErrorCard({ kind, onRetry, onClose }: { kind: ErrorKind; onRetry: () =>
       <StateBody alert title={content.title} body={content.body}>
         <FlowActions
           primary={kind === "auth" ? { label: t("auth.sign_in"), href: "/login" } : { label: t("common.try_again"), onClick: onRetry }}
-          tertiary={{ label: t("common.close"), onClick: onClose }}
+          close={onClose}
         />
       </StateBody>
     </FlowColumn>
@@ -1125,7 +1126,7 @@ function EmptyCard({
     return (
       <FlowColumn>
         <StateBody title={t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })} body={t("session.review_only_mode")}>
-          <FlowActions primary={{ label: t("session.back_to_mixed"), onClick: onMixed }} tertiary={{ label: t("common.close"), onClick: onClose }} />
+          <FlowActions primary={{ label: t("session.back_to_mixed"), onClick: onMixed }} close={onClose} />
         </StateBody>
       </FlowColumn>
     );
@@ -1143,7 +1144,7 @@ function EmptyCard({
             : t("session.goal_done_sub")
         }
       >
-        <FlowActions primary={{ label: t("session.continue_with_new"), onClick: onExtra }} tertiary={{ label: t("common.close"), onClick: onClose }} />
+        <FlowActions primary={{ label: t("session.continue_with_new"), onClick: onExtra }} close={onClose} />
       </StateBody>
     </FlowColumn>
   );
@@ -1274,8 +1275,8 @@ function StageCard({
 
 function WagerLine({ icon, text }: { icon: ReactNode; text: string }) {
   return (
-    <span className="flex items-center gap-2 text-caption">
-      {icon}
+    <span className="flex items-start gap-2 text-caption">
+      <IconLine>{icon}</IconLine>
       <span>{text}</span>
     </span>
   );
@@ -1354,12 +1355,11 @@ function SummaryCard({
   */
   return (
     <FlowColumn celebrate={deserved}>
-      {/* ÜST ÇUBUK (mobil `FlowTopBar`): solda kapat, "bitir"le aynı çıkış.
-          PAYLAŞ İKİNCİL: sağ yuvada. Düğme grubunun içinde dururken "bitir"i
-          aşağı itiyor ve ekranın asıl kararı (devam mı, bitir mi) dört
-          düğmeye bölünüyordu. */}
+      {/* ÜST ÇUBUK (mobil `FlowTopBar`): yalnız sağda PAYLAŞ; üstte X yok
+          (2026-09-30), çıkış dipteki "Kapat". Paylaş düğme grubunun içinde
+          dururken çıkışı aşağı itiyor ve ekranın asıl kararı (devam mı,
+          çık mı) dört düğmeye bölünüyordu. */}
       <ResultTopBar
-        onExit={onFinish}
         right={total > 0 ? (
           <div className="w-fit">
             <ShareResult marks={marks} total={total} accuracy={accuracy} streak={result?.currentStreak ?? 0} level={level} />
@@ -1448,11 +1448,11 @@ function SummaryCard({
       <PushOptIn streak={result?.currentStreak ?? 0} />
 
       <FlowActions
-        primary={{ label: t(partial ? "summary.back_to_round" : "game.continue"), onClick: onContinue }}
+        primary={{ label: t(partial ? "summary.back_to_round" : "common.continue"), onClick: onContinue }}
         /* HAYATTA KALMA: kullanıcının en ısındığı an (tur az önce bitti). */
         secondary={{ label: t("challenge.title"), icon: <SurvivalIcon size={18} style={{ color: "var(--color-rose)" }} />, onClick: onChallenge }}
         /* KAPANIŞ — turda sekme çubuğu yok; özetten Öğren'e dönmenin yolu bu. */
-        tertiary={{ label: t("common.finish"), onClick: onFinish }}
+        close={onFinish}
       />
     </FlowColumn>
   );

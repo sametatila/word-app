@@ -6,6 +6,7 @@ import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { CheckIcon, LockedIcon } from "./icons";
 import { useTheme, spacing, radii } from "../theme";
+import { IconLine } from "./IconLine";
 
 /**
  * KİLİT AÇMA İLERLEMESİ — hakkı biten ya da kilitli her yüzeyde aynı kart.
@@ -28,13 +29,13 @@ export function UnlockProgress({ copy, lead, onPremium, compact = false }: { cop
       style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, padding: compact ? spacing.md : spacing.lg, gap: spacing.sm }}
     >
       {lead ? (
-        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-          <LockedIcon color={colors.textMuted} size={18} />
+        <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+          <IconLine variant="bodyStrong"><LockedIcon color={colors.textMuted} size={18} /></IconLine>
           <Text variant="bodyStrong" style={{ flex: 1 }}>{lead}</Text>
         </View>
       ) : null}
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-        {!lead && copy.spent ? <LockedIcon color={colors.textMuted} size={16} /> : null}
+      <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+        {!lead && copy.spent ? <IconLine variant="bodyStrong"><LockedIcon color={colors.textMuted} size={16} /></IconLine> : null}
         <Text variant={lead ? "caption" : "bodyStrong"} color={lead ? colors.textMuted : colors.text} style={{ flex: 1 }}>
           {t(copy.headline.key, copy.headline.params)}
         </Text>
@@ -44,21 +45,23 @@ export function UnlockProgress({ copy, lead, onPremium, compact = false }: { cop
           <Text variant="micro" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{t("unlock.title")}</Text>
           {copy.conditions.map((c) => (
             <View key={c.line.key} style={{ gap: spacing.xs }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-                <View
-                  style={{
-                    width: 20,
-                    height: 20,
-                    borderRadius: 10,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backgroundColor: c.ok ? colors.success : "transparent",
-                    borderWidth: c.ok ? 0 : 1.5,
-                    borderColor: colors.border,
-                  }}
-                >
-                  {c.ok ? <CheckIcon color={colors.onFill} size={12} /> : null}
-                </View>
+              <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+                <IconLine variant="caption" box={20}>
+                  <View
+                    style={{
+                      width: 20,
+                      height: 20,
+                      borderRadius: 10,
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: c.ok ? colors.success : "transparent",
+                      borderWidth: c.ok ? 0 : 1.5,
+                      borderColor: colors.border,
+                    }}
+                  >
+                    {c.ok ? <CheckIcon color={colors.onFill} size={12} /> : null}
+                  </View>
+                </IconLine>
                 <Text variant="caption" color={c.ok ? colors.successText : colors.text} style={{ flex: 1 }}>
                   {t(c.line.key, c.line.params)}
                 </Text>

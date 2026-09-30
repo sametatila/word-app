@@ -15,6 +15,7 @@ import {
 } from "@/lib/push-client";
 import { PUSH_PRIME_SNOOZE_DAYS } from "@/lib/profile-limits";
 import { useT } from "@/lib/i18n/client";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * Hatırlatma izni isteme kartı.
@@ -171,9 +172,10 @@ function Card({
       /* Marka tinti koyu temada nötr (`--brand-tint`; 2026-09-29 Samet: seçim B). */
       style={{ background: tone === "mint" ? `color-mix(in srgb, ${color} 12%, transparent)` : "var(--brand-tint)" }}
     >
-      <span className="mt-0.5 shrink-0" style={{ color }}>
+      {/* İçerik hep `text-strong` bir başlıkla açılıyor: ikon onun satırında. */}
+      <IconLine className="text-strong" style={{ color }}>
         {icon ?? <NotificationsIcon size={18} />}
-      </span>
+      </IconLine>
       <div className="min-w-0 flex-1">{children}</div>
       {onClose ? (
         <button

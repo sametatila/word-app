@@ -10,6 +10,8 @@ import { ProcessorList } from "./AiConsentSheet";
 import type { AiConsentProcessor } from "../lib/aiConsent";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { ContentColumn } from "./ContentColumn";
+import { FlowActions } from "./flow";
+import { IconLine, lineInset } from "./IconLine";
 
 /**
  * Ekranın üç kullanımı — iki mağazanın kuralı birbirinin TERSİ olduğu için.
@@ -58,10 +60,13 @@ function points(guest: boolean): string[] {
 function Point({ text, colors }: { text: string; colors: Palette }) {
   return (
     <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "flex-start" }}>
-      <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center", marginTop: 2 }}>
-        <CheckIcon color={colors.primaryText} size={14} />
-      </View>
-      <Text variant="body" style={{ flex: 1 }}>{text}</Text>
+      {/* Daire (24) satırdan yüksek: ilk satır dairenin ortasına iniyor. */}
+      <IconLine variant="body" box={24}>
+        <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}>
+          <CheckIcon color={colors.primaryText} size={14} />
+        </View>
+      </IconLine>
+      <Text variant="body" style={{ flex: 1, paddingTop: lineInset("body", 24) }}>{text}</Text>
     </View>
   );
 }
@@ -124,21 +129,20 @@ export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, p
             <Text variant="bodyStrong" color={colors.primaryText}>{t("micdisclosure.read_privacy_policy")}</Text>
           </PressableScale>
         </ScrollView>
-        <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.lg, gap: spacing.sm }}>
+        {/* ORTAK DÜĞME DİZİSİ (`FlowActions`): elle çizilmiş üç ayrı düğme
+            vardı — bilgide çerçeveli "Kapat", onayda birincil + "Vazgeç".
+            Bilgi: tek eylem çıkış, birincil "Kapat". Onay: birincil + metin
+            "Kapat". İzin öncesi (`prime`) TEK düğme (Apple HIG: sistem
+            penceresinden önce çıkış yok). Dip dolgusu `FlowScreen`inkiyle aynı. */}
+        <View style={{ paddingHorizontal: spacing.xl, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>
           {mode === "info" ? (
-            <PressableScale onPress={onCancel} accessibilityRole="button" style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingVertical: spacing.lg, alignItems: "center" }}>
-              <Text variant="h3" color={colors.text}>{t("common.close")}</Text>
-            </PressableScale>
+            <FlowActions primary={{ label: t("common.close"), onPress: onCancel }} />
           ) : (
-            <PressableScale onPress={onAccept} accessibilityRole="button" style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color={colors.onPrimary}>{t(mode === "prime" ? "common.continue_2" : "micdisclosure.i_agree_start")}</Text>
-            </PressableScale>
+            <FlowActions
+              primary={{ label: t(mode === "prime" ? "common.continue" : "micdisclosure.i_agree_start"), onPress: onAccept }}
+              close={mode === "consent" ? onCancel : null}
+            />
           )}
-          {mode === "consent" ? (
-            <PressableScale onPress={onCancel} accessibilityRole="button" style={{ paddingVertical: spacing.md, alignItems: "center" }}>
-              <Text variant="bodyStrong" color={colors.textMuted}>{t("common.discard")}</Text>
-            </PressableScale>
-          ) : null}
         </View>
         </ContentColumn>
       </View>

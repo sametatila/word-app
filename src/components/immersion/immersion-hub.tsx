@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fillStyle } from "@/lib/motion";
+import { barPct, fillStyle } from "@/lib/motion";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -151,7 +151,7 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
       <div className="h-2.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <div
           className="bar-fill h-full rounded-full"
-          style={{ ...fillStyle(Math.max(2, pctAll)), background: "var(--color-mint-500)" }}
+          style={{ ...fillStyle(barPct(pctAll, 2)), background: "var(--color-mint-500)" }}
         />
       </div>
       <p className="muted mb-4 mt-1.5 text-caption">

@@ -1,6 +1,7 @@
 "use client";
 
 import { AiIcon } from "@/components/icons";
+import { IconLine } from "@/components/icon-line";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -24,10 +25,12 @@ export function AiNotice({ variant, className = "" }: { variant: "character" | "
   const text = t(variant === "character" ? "ai.notice_character" : "ai.notice_output");
   return (
     <p
-      className={`muted surface-2 flex items-center gap-2 px-3 py-2 text-micro ${className}`}
+      className={`muted surface-2 flex items-start gap-2 px-3 py-2 text-micro ${className}`}
       style={{ borderRadius: "var(--radius-tile)" }}
     >
-      <AiIcon size={14} />
+      <IconLine>
+        <AiIcon size={14} />
+      </IconLine>
       <span className="flex-1">{text}</span>
     </p>
   );

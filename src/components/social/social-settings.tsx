@@ -68,9 +68,9 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
   const dirtyName = username.trim().toLowerCase() !== me.username;
 
   const usernameBlock = (
-    <div className={part === "username" ? "" : "px-4 py-3"}>
+    <div className={part === "username" ? "" : "py-4"}>
       {part === "username" ? null : <label className="text-strong" htmlFor="username">{t("socialsettings.username")}</label>}
-      <div className={`${part === "username" ? "" : "mt-1.5 "}flex items-center gap-2`}>
+      <div className={`${part === "username" ? "" : "mt-2 "}flex items-center gap-2`}>
         <span className="muted text-body">@</span>
         <input
           id="username"
@@ -83,13 +83,16 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
           spellCheck={false}
           placeholder={t("socialsettings.username_2")}
           aria-label={t("socialsettings.username")}
-          className="input min-w-0 flex-1 px-3 py-2"
+          /* Ad kutusuyla aynı boy (48; mobil de öyle): `py-2` ile 40'tı. */
+          className="input min-w-0 flex-1"
         />
         <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
           {t("common.save")}
         </button>
       </div>
-      <p className="muted mt-1 text-micro">
+      {/* Alan → yardım satırı 8, yazı caption (mobil aynası); `mt-1` ile
+          kutuya yapışıktı (`components/field.tsx`). */}
+      <p className="muted mt-2 text-caption leading-snug">
         {t("socialsettings.username_rule")}{" "}
         {me.usernameChangeAvailableIn > 0
           ? t("socialsettings.username_wait", { n: me.usernameChangeAvailableIn })
@@ -97,7 +100,7 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
         {t("socialsettings.profile_link", { path: `/u/${me.username}` })}
       </p>
       {part === "username" && msg ? (
-        <p role={msg.ok ? "status" : "alert"} className="mt-1 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+        <p role={msg.ok ? "status" : "alert"} className="mt-2 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
           {msg.text}
         </p>
       ) : null}
@@ -108,9 +111,11 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
   return (
     /* Bölümler ayarlar grubunun diliyle ayrılıyor (`settings-section`): kartın
        kendi `divide-y`ı, ince `--hairline` çizgi. */
-    <section id="social" className={`card divide-y divide-[color:var(--hairline)] overflow-hidden ${bare || part ? "" : "mt-4"}`}>
+    /* Paylar ayar grubunun kutusuyla aynı: kart `px-4`, bölüm `py-4`
+       (`components/field.tsx`); bölümler kendi `px-4 py-3`ünü taşıyordu. */
+    <section id="social" className={`card divide-y divide-[color:var(--hairline)] overflow-hidden px-4 ${bare || part ? "" : "mt-4"}`}>
       {bare || part ? null : (
-        <div className="px-4 py-3">
+        <div className="py-4">
           <h2 className="text-strong">{t("socialsettings.social_and_privacy")}</h2>
           <p className="muted text-caption">{t("socialw.settings_sub")}</p>
         </div>
@@ -118,7 +123,7 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
 
       {part === "privacy" ? null : usernameBlock}
 
-      <div className="px-4 py-3">
+      <div className="py-4">
         <p className="text-strong">{t("socialsettings.visibility")}</p>
         {/* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR — Android aynı üçlüyü
             `accessibilityRole="radio"` ile veriyor (`SocialSettingsScreen`). */}
@@ -142,9 +147,9 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
       {/* İZİNLER başlığı Android'de var: "Görünürlük"ün başlığı olduğu hâlde
           altındaki üç anahtarın başlığı yoktu ve üçü serbestçe asılı
           duruyordu. Başlık, neyin neye ait olduğunu bir bakışta söylüyor. */}
-      <div>
-        <p className="px-4 pb-1.5 pt-3 text-strong">{t("socialsettings.permissions")}</p>
-        <div className="divide-y divide-[color:var(--hairline)]">
+      <div className="py-4">
+        <p className="mb-2 text-strong">{t("socialsettings.permissions")}</p>
+        <div className="inset-list">
           <SettingRow title={t("socialsettings.perm_requests")} sub={t("socialsettings.perm_requests_sub")}>
             <Switch on={me.allowRequests} disabled={busy} label={t("socialsettings.perm_requests")} onChange={(v) => void save({ allowRequests: v })} />
           </SettingRow>
@@ -157,23 +162,23 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
         </div>
         {/* HATA `alert`, BASARI `status` (bkz. `premium-paywall`). */}
         {msg ? (
-          <p role={msg.ok ? "status" : "alert"} className="px-4 pb-3 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p role={msg.ok ? "status" : "alert"} className="mt-2 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {msg.text}
           </p>
         ) : null}
       </div>
 
-      <div className="px-4 py-3">
+      <div className="py-4">
         <p className="text-strong">{t("socialsettings.blocked_title")}</p>
         {/* "Yükleniyor" yazısı yerine satırın yeri: liste gelince başlığın
             altı yerinden oynamıyor. Android aynı yerde iskelet satırı
             çiziyor (`SocialSettingsScreen`). */}
         {blocked === null ? (
-          <SkeletonLine variant="caption" width="60%" className="mt-1" />
+          <SkeletonLine variant="caption" width="60%" className="mt-2" />
         ) : blocked.length ? (
-          <ol className="mt-2 divide-y divide-[color:var(--hairline)]">
+          <ol className="inset-list mt-2">
             {blocked.map((b) => (
-              <li key={b.userId} className="flex items-center gap-3 py-2">
+              <li key={b.userId} className="flex items-center gap-3">
                 <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={28} />
                 <span className="min-w-0 flex-1 truncate text-body">
                   {b.name ?? t("social.unnamed_short")} {b.username ? <span className="muted text-caption">@{b.username}</span> : null}
@@ -196,7 +201,7 @@ export function SocialSettings({ initial, bare = false, part }: { initial: Socia
             ))}
           </ol>
         ) : (
-          <p className="muted mt-1 text-caption">{t("socialsettings.you_haven_t_blocked_anyone")}</p>
+          <p className="muted mt-2 text-caption">{t("socialsettings.you_haven_t_blocked_anyone")}</p>
         )}
       </div>
     </section>

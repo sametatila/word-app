@@ -258,6 +258,12 @@ export type Answer = {
    * cümle yanlış sayılır ve hata tipi kaydedilir, kelime lapse etmez.
    */
   quality?: number;
+  /**
+   * Öz değerlendirmede "Hatırlamadım" (`correct` false ile gelir). Hata değil:
+   * SRS "yeniden" planlar, XP "Hatırladım" kadar, doğruluğa ve cevap geçmişine
+   * (`reviews`) yazılmaz. Bkz. `lib/srs` `gradeAnswer`.
+   */
+  selfMiss?: boolean;
   /** Yanlışsa hata tipi — oyun sınıflandırır (bkz. lib/errors.ts). */
   errorType?: ErrorType;
   /** Yanlışın kendisi: seçilen şık / yazılan kelime. */

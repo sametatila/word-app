@@ -8,7 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { SurvivalIcon, ComboIcon, WrongIcon, CorrectIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowProgress, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { CoverSkeleton } from "../game/RoundSkeleton";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
@@ -210,6 +210,16 @@ export function ChallengeScreen() {
   function onDone(ok: boolean, extra?: DoneExtra) {
     if (finished.current || !data) return;
     const round = data.rounds[index];
+    /* Sayılmayan tur: kelimesiz yedek (`skip`) ya da NÖTR "Hatırlamadım"
+       (`selfMiss`). Süre, kombo, puan değişmiyor; "Hatırlamadım" yine de
+       SRS'e gidiyor ki kelime yakında gelsin (`game/rounds` `SelfAssess`). */
+    if (extra?.skip || extra?.selfMiss) {
+      const wordId = round?.word?.id ?? round?.words?.[0]?.id ?? 0;
+      if (extra.selfMiss && wordId && round) pending.current.push({ wordId, game: round.game, correct: false, latencyMs: Math.max(0, Date.now() - roundStart.current), selfMiss: true });
+      if (index >= data.rounds.length - 1) void finish();
+      else { roundStart.current = Date.now(); setIndex((i) => i + 1); }
+      return;
+    }
     const results = extra?.batch?.length
       ? extra.batch.map((b) => ({ wordId: b.wordId, correct: b.correct }))
       : [{ wordId: round?.word?.id ?? round?.words?.[0]?.id ?? 0, correct: ok }];
@@ -272,7 +282,7 @@ export function ChallengeScreen() {
   const page = { flex: 1, backgroundColor: colors.bg } as const;
 
   /* KAPAĞIN İSKELETİ: yüklenince gelen ekran tur değil kapak (`ready`: üç
-     kural, Başla / Vazgeç). Tur iskeleti çiziliyordu ve kapak gelince ekran
+     kural, Başla / Kapat). Tur iskeleti çiziliyordu ve kapak gelince ekran
      baştan kuruluyordu. BEKLEME KENDINI DUYURUYOR (web `role="status"
      aria-busy`): iskeletin kabuğu canlı bölge ve adı "hazırlanıyor". */
   /* Kapağın kendi cümleleri; zayıf nokta kuralı veriyle geliyor, genel hâli çiziliyor. */
@@ -290,7 +300,7 @@ export function ChallengeScreen() {
 
   if (phase === "error") {
     return (
-      <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: load }} tertiary={{ label: t("common.go_back"), onPress: exit }} />}>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: load }} close={exit} />}>
         <StateBody alert title={t("challenge.load_failed")} body={t("game.check_your_connection_and_try")} />
       </FlowScreen>
     );
@@ -300,7 +310,7 @@ export function ChallengeScreen() {
     return (
       /* Boş durum düşünen maskotla: "henüz kelime yok, birkaç tur sonra" bir
          bekleyiş, hata değil (şablon kuralı: boş/bekleniyor = think). */
-      <FlowScreen center actions={<FlowActions primary={{ label: t("common.back_to_learn"), onPress: exit }} />}>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: exit }} />}>
         <StateBody title={t("challenge.none_title")} body={t("challenge.none_sub")} />
       </FlowScreen>
     );
@@ -311,7 +321,7 @@ export function ChallengeScreen() {
        rengin söylediği (doğru kazandırır, yanlış yakar) artık kural
        ikonunun tonunda. Web `challenge-player` aynı sırada. */
     return (
-      <FlowScreen actions={<FlowActions primary={{ label: t("common.start"), onPress: start }} tertiary={{ label: t("common.discard"), onPress: exit }} />}>
+      <FlowScreen actions={<FlowActions primary={{ label: t("common.start"), onPress: start }} close={exit} />}>
         <CoverBody
           icon={SurvivalIcon}
           tint={colors.primary}
@@ -343,9 +353,8 @@ export function ChallengeScreen() {
     return (
       <FlowScreen
         celebrate={isRecord}
-        /* ÜST ÇUBUK (2026-09-27): her sonuçta solda kapat, alttaki "Öğren'e dön"le aynı çıkış. */
-        top={<FlowTopBar onClose={exit} />}
-        actions={<FlowActions primary={{ label: t("common.try_again"), onPress: start }} tertiary={{ label: t("common.back_to_learn"), onPress: exit }} />}
+        /* Üstte X yok (2026-09-30): çıkış dipteki "Kapat". */
+        actions={<FlowActions primary={{ label: t("common.try_again"), onPress: start }} close={exit} />}
       >
         <RecordChime fire={isRecord} />
         <ResultHero
@@ -424,7 +433,7 @@ export function ChallengeScreen() {
         title={t("game.quit_round_2")}
         message={t("game.exit_message_timed")}
         confirmLabel={t("common.exit")}
-        cancelLabel={t("common.continue_2")}
+        cancelLabel={t("common.continue")}
         destructive
         onConfirm={() => { back.cancel(); exit(); }}
         onCancel={back.cancel}

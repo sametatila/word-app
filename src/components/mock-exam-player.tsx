@@ -13,7 +13,7 @@ import { ConfirmDialog } from "@/components/confirm-dialog";
 import { ReportDialog } from "@/components/report-dialog";
 import { AiNotice } from "@/components/ai-notice";
 import { MIN_ASSESS_WORDS } from "@/lib/assess-const";
-import { RoundExit, ResultTopBar } from "@/components/round-exit";
+import { RoundExit } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { captureSpeech, recognitionCtor, type SpeechCapture } from "@/components/microphone";
 import { localeOf } from "@/components/skills/player-context";
@@ -25,6 +25,7 @@ import { useLang, useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
 import { play } from "@/lib/sfx";
+import { IconLine, lineInset } from "@/components/icon-line";
 
 /**
  * Deneme sınavı oynatıcısı — web.
@@ -475,7 +476,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
             disabled: busy,
             onClick: () => { announce(`part:${part.skill}`, part.instruction); void begin(); },
           }}
-          tertiary={{ label: t("mockexam.back_to_list"), href: "/mock-exams" }}
+          close="/mock-exams"
         />
       </FlowColumn>
     );
@@ -1347,15 +1348,17 @@ function Result({
                   const s = score.items.find((x) => x.id === it.id);
                   const ok = s ? s.correct : isCorrect(it, answers[it.id]);
                   return (
-                    <div key={it.id} className="card flex gap-3 p-4">
-                      <span
-                        className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-caption"
-                        style={{ background: ok ? "var(--color-success-soft)" : "var(--color-danger-soft)", color: ok ? "var(--color-success)" : "var(--color-danger)" }}
-                      >
-                        {ok ? <CorrectIcon className="size-3.5" /> : <WrongIcon className="size-3.5" />}
-                      </span>
+                    <div key={it.id} className="card flex items-start gap-3 p-4">
+                      <IconLine className="text-strong leading-relaxed" box="1.5rem">
+                        <span
+                          className="flex size-6 items-center justify-center rounded-full text-caption"
+                          style={{ background: ok ? "var(--color-success-soft)" : "var(--color-danger-soft)", color: ok ? "var(--color-success)" : "var(--color-danger)" }}
+                        >
+                          {ok ? <CorrectIcon className="size-3.5" /> : <WrongIcon className="size-3.5" />}
+                        </span>
+                      </IconLine>
                       <div className="min-w-0 flex-1">
-                        <p className="whitespace-pre-line text-strong leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
+                        <p className="whitespace-pre-line text-strong leading-relaxed" lang={paper.course} style={lineInset("1.5rem")}>{it.no}. {it.text}</p>
                         {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
                         {it.kind === "gap" && it.cue ? (
                           <p className="mt-1 text-strong tracking-wide" lang={paper.course} style={{ color: "var(--color-brand)" }}>{it.cue}</p>
@@ -1407,8 +1410,8 @@ function Result({
           ))}
 
           <FlowActions
-            primary={{ label: t("mockexam.back_to_list"), href: "/mock-exams" }}
-            tertiary={{ label: t("mockexam.back_to_result"), onClick: () => show(false) }}
+            primary={{ label: t("mockexam.back_to_result"), onClick: () => show(false) }}
+            close="/mock-exams"
           />
         </FlowColumn>
       </div>
@@ -1419,9 +1422,6 @@ function Result({
     <div ref={top} className="scroll-mt-4">
       {/* Konfeti YALNIZ geçilen bölümde. */}
       <FlowColumn celebrate={graded && score.passed && !celebrated}>
-        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): sonuçta geri oku
-            değil kapat (X); "Listeye dön"le aynı çıkış. */}
-        <ResultTopBar href="/mock-exams" />
         <ResultHero
           eyebrow={eyebrow}
           title={graded ? t(score.passed ? "mockexam.passed" : "mockexam.failed") : t("mockexam.part_done")}
@@ -1497,7 +1497,7 @@ function Result({
 
         <FlowActions
           primary={{ label: t("mockexam.show_review"), onClick: () => show(true) }}
-          tertiary={{ label: t("mockexam.back_to_list"), href: "/mock-exams" }}
+          close="/mock-exams"
         />
       </FlowColumn>
     </div>

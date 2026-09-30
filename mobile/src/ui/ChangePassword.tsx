@@ -8,6 +8,7 @@ import { changePassword } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
 import { checkPassword, MIN_PASSWORD_LENGTH } from "../lib/passwordPolicy";
 import { spacing, radii, type Palette } from "../theme";
+import { FIELD } from "./Field";
 
 /**
  * Ayarlarda parola değiştirme — web'deki formun eşi.
@@ -64,7 +65,8 @@ export function ChangePassword({ colors }: { colors: Palette }) {
 
   if (!open) {
     return (
-      <View style={{ gap: spacing.xs }}>
+      /* Bildirim → satır, alan → alan: 12 (`ui/Field`; web `space-y-3`). */
+      <View style={{ gap: FIELD.stack }}>
         {done ? (
           <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
             <Text variant="caption" color={colors.successText}>{t("changepw.done")}</Text>
@@ -88,7 +90,7 @@ export function ChangePassword({ colors }: { colors: Palette }) {
   }
 
   return (
-    <View style={{ gap: spacing.sm }}>
+    <View style={{ gap: FIELD.stack }}>
       {/* Şifre yöneticisi ipuçları — bkz. `screens/AuthScreen` içindeki not.
           Mevcut parola `current-password`, yeni parola `new-password`: iki
           farklı ipucu, yoksa yönetici yeni parolayı eskisinin üstüne yazmayı

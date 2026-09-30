@@ -6,7 +6,7 @@ import { useCachedJson } from "@/lib/use-cached";
 import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { T, fillX } from "@/lib/motion";
+import { T, barPct, fillX } from "@/lib/motion";
 import { CorrectIcon, GiftIcon, QuestIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
@@ -182,7 +182,7 @@ export function QuestCard() {
                       className="h-full w-full rounded-full"
                       style={{ background: done ? "var(--color-mint)" : "var(--color-brand)" }}
                       initial={{ x: "-100%" }}
-                      animate={{ x: fillX(Math.max(3, pct)) }}
+                      animate={{ x: fillX(barPct(pct, 3)) }}
                       transition={T.medium}
                     />
                   </div>

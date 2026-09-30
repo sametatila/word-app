@@ -13,6 +13,7 @@ import { TwoStep } from "./_ui/two-step";
 import { ResponseGuide } from "./_ui/sla";
 import { USER_REASON } from "./moderation/moderation-admin";
 import { reasonText, sourceHint, surfaceText, targetText } from "./moderation/content/labels";
+import { barPct } from "@/lib/motion";
 
 /**
  * GELEN İŞLER — panelin açılışı: dönülmesi gereken her şey tek kuyrukta,
@@ -82,7 +83,7 @@ function Ring({ item, now }: { item: InboxItem; now: number }) {
     <span className="relative inline-flex h-9 w-9 shrink-0 items-center justify-center" style={{ color: tone }}>
       <svg width={36} height={36} viewBox="0 0 36 36" aria-hidden className="absolute inset-0 -rotate-90">
         <circle cx={18} cy={18} r={R} strokeWidth={3} style={{ fill: "none", stroke: "var(--hairline)" }} />
-        <circle cx={18} cy={18} r={R} strokeWidth={3} strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C * (1 - Math.max(0.04, ratio))} style={{ fill: "none", stroke: tone }} />
+        <circle cx={18} cy={18} r={R} strokeWidth={3} strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C * (1 - barPct(ratio * 100, 4) / 100)} style={{ fill: "none", stroke: tone }} />
       </svg>
       <Icon cat={item.cat} />
     </span>

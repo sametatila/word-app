@@ -15,6 +15,7 @@ import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
 import { Checkbox } from "@/components/checkbox";
+import { IconLine } from "@/components/icon-line";
 
 type Phase = "prep" | "record" | "review" | "scoring" | "result";
 
@@ -231,8 +232,10 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           <ul className="mt-3 space-y-1.5">
             {mono.bulletsTr.map((b) => (
               <li key={b} className="flex items-start gap-2 text-body">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "var(--color-brand)" }} />
-                {b}
+                <IconLine>
+                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-brand)" }} />
+                </IconLine>
+                <span>{b}</span>
               </li>
             ))}
           </ul>

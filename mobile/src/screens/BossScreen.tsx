@@ -8,7 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { BossIcon, RetryIcon, DurationIcon, TimeBonusIcon, ModuleCrownIcon, MyWordsIcon, WarningIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowTopBar, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowProgress, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { CoverSkeleton } from "../game/RoundSkeleton";
 import { skeletonFiller } from "../ui/Skeleton";
@@ -204,6 +204,16 @@ export function BossScreen() {
   function onDone(ok: boolean, extra?: DoneExtra) {
     if (finished.current || !data) return;
     const r = data.rounds[index];
+    /* Sayılmayan tur: kelimesiz yedek (`skip`) ya da NÖTR "Hatırlamadım"
+       (`selfMiss`). Süre, kombo, puan değişmiyor; "Hatırlamadım" yine de
+       SRS'e gidiyor ki kelime yakında gelsin (`game/rounds` `SelfAssess`). */
+    if (extra?.skip || extra?.selfMiss) {
+      const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
+      if (extra.selfMiss && wordId && r) pending.current.push({ wordId, game: r.game, correct: false, latencyMs: Math.max(0, Date.now() - roundStart.current), selfMiss: true });
+      if (index >= data.rounds.length - 1) void finish(true, Math.max(0, (deadline.current - Date.now()) / 1000));
+      else { roundStart.current = Date.now(); setIndex((i) => i + 1); }
+      return;
+    }
     const results = extra?.batch?.length
       ? extra.batch.map((b) => ({ wordId: b.wordId, correct: b.correct }))
       : [{ wordId: r?.word?.id ?? r?.words?.[0]?.id ?? 0, correct: ok }];
@@ -268,10 +278,9 @@ export function BossScreen() {
           <FlowActions
             /* "Tekrar dene" YALNIZ gerçek yükleme hatasında: "henüz hazır değil"
                dalında yeniden denemek aynı cevabı getirir (konuşmalar bitmemiş);
-               orada tek çıkış çerçeveli "Geri dön". */
-            primary={data ? null : ({ label: t("common.try_again"), onPress: () => void load() })}
-            secondary={data ? { label: t("common.go_back"), onPress: exit } : null}
-            tertiary={data ? null : { label: t("common.go_back"), onPress: exit }}
+               orada tek çıkış birincil "Kapat" (tek eylem çıkışsa birincil). */
+            primary={data ? { label: t("common.close"), onPress: exit } : ({ label: t("common.try_again"), onPress: () => void load() })}
+            close={data ? null : exit}
           />
         }
       >
@@ -287,7 +296,7 @@ export function BossScreen() {
        satırıydı; artık her biri ikonlu tek satır. "Henüz hazır değilsin"
        uyarısı kapağın içinde uyarı notu. Web `boss-player` aynı sırada. */
     return (
-      <FlowScreen actions={<FlowActions primary={{ label: t(best !== null ? "boss.beat_record" : "boss.enter"), onPress: start }} tertiary={{ label: t("bossw.back_to_path"), onPress: exit }} />}>
+      <FlowScreen actions={<FlowActions primary={{ label: t(best !== null ? "boss.beat_record" : "boss.enter"), onPress: start }} close={exit} />}>
         <CoverBody
           icon={BossIcon}
           tint={colors.primary}
@@ -318,9 +327,8 @@ export function BossScreen() {
     return (
       <FlowScreen
         celebrate={won}
-        /* ÜST ÇUBUK (2026-09-27): her sonuçta solda kapat, alttaki "Patikaya dön"le aynı çıkış. */
-        top={<FlowTopBar onClose={exit} />}
-        actions={<FlowActions primary={{ label: t("bossw.play_again"), onPress: start }} tertiary={{ label: t("bossw.back_to_path"), onPress: exit }} />}
+        /* Üstte X yok (2026-09-30): çıkış dipteki "Kapat". */
+        actions={<FlowActions primary={{ label: t("bossw.play_again"), onPress: start }} close={exit} />}
       >
         <ResultHero
           eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
@@ -369,7 +377,7 @@ export function BossScreen() {
         title={t("game.quit_round_2")}
         message={t("game.exit_message_timed")}
         confirmLabel={t("common.exit")}
-        cancelLabel={t("common.continue_2")}
+        cancelLabel={t("common.continue")}
         destructive
         onConfirm={() => { back.cancel(); exit(); }}
         onCancel={back.cancel}

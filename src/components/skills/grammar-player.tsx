@@ -8,6 +8,7 @@ import { useTargetLang } from "./player-context";
 import { speakGerman } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * Dil bilgisi egzersizi: önce kural anlatımı (Türkçe, hedef dilde örnekler),
@@ -57,7 +58,9 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
                       aria-label={t("item.listen_example")}
                       title={t("item.listen_example")}
                     >
-                      <SpeakerIcon size={16} className="mt-0.5 shrink-0" style={{ color: "var(--color-brand)" }} />
+                      <IconLine className="text-strong" style={{ color: "var(--color-brand)" }}>
+                        <SpeakerIcon size={16} />
+                      </IconLine>
                       <span className="min-w-0">
                         <span className="block text-strong" lang={lang}>
                           {x.de}

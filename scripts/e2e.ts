@@ -24,7 +24,7 @@ import {
   shiftDay,
   makeRound,
 } from "../src/lib/session";
-import { schedule, grade, type SrsState } from "../src/lib/srs";
+import { schedule, grade, gradeAnswer, SELF_MISS_QUALITY, type SrsState } from "../src/lib/srs";
 import {
   acceptedForms,
   foldSpelling,
@@ -1339,6 +1339,12 @@ async function main() {
   check("yanlış cevap 3'ten küçük", grade("choice", false, 3000) < 3);
   const relapsed = schedule({ ...st, state: 2 }, 0, new Date());
   check("hata sonrası öğrenme adımına döner", relapsed.state === 1 && relapsed.intervalDays === 0);
+  // "Hatırlamadım" nötr: SRS'te "yeniden", XP "Hatırladım" kadar, doğruluğa sayılmıyor.
+  const selfMiss = gradeAnswer({ game: "intro", correct: false, latencyMs: 2000, selfMiss: true, quality: 5 });
+  const recalled = gradeAnswer({ game: "intro", correct: true, latencyMs: 2000, hintUsed: true });
+  check("Hatırlamadım: kalite yeniden, doğruluk dışı", selfMiss.quality === SELF_MISS_QUALITY && !selfMiss.graded && recalled.graded);
+  check("Hatırlamadım: XP Hatırladım kadar", selfMiss.xp === recalled.xp, `(${selfMiss.xp} / ${recalled.xp})`);
+  check("Hatırlamadım: kelime öğrenme adımına döner", schedule({ ...st, state: 2 }, selfMiss.quality, new Date()).state === 1);
 
   console.log("\n13) Oturum sunucuda tutuluyor — iki cihaz aynı turu görür");
   await reset();

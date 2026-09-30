@@ -49,7 +49,7 @@ const PANEL_TITLE: Record<SettingsPanel, string> = { ...SETTINGS_TITLE, reminder
 function LinkRowSlot({ title, sub }: { title: string; sub: string }) {
   return (
     <Row>
-      <div className="flex items-center gap-3 py-1">
+      <div className="flex items-center gap-3 py-1.5">
         <span className="min-w-0 flex-1">
           <Words className="block text-strong" text={title} />
           <Words className="muted block text-caption" text={sub} />
@@ -194,10 +194,12 @@ function SectionBody({ section }: { section: SettingsPanel }) {
               ))}
             </div>
             {/* Seviyenin açıklaması seçili seviyeye bağlı: çubuk. */}
-            <SkeletonLine variant="caption" width="70%" className="mt-1.5" />
-            <Words className="mt-2.5 inline-block text-caption font-bold" text={t("settings.not_sure_take_placement_test")} />
+            <SkeletonLine variant="caption" width="70%" className="mt-2" />
+            <Words className="mt-3 inline-block text-caption font-bold" text={t("settings.not_sure_take_placement_test")} />
           </Row>
           <Row label={label(t("settings.daily_goal_reviews_day"))}>
+            {/* Formdaki gibi: iki kaydırıcı arası 12, not 8 (`components/field.tsx`). */}
+            <div className="space-y-3">
             {[t("settings.daily_goal_short"), t("settings.new_per_day")].map((name) => (
               <div key={name} className="block">
                 <span className="mb-1.5 flex items-baseline justify-between text-strong">
@@ -212,7 +214,8 @@ function SectionBody({ section }: { section: SettingsPanel }) {
                 </span>
               </div>
             ))}
-            <Words as="p" className="muted -mt-1 text-caption" text={t("settings.srs_note")} />
+            </div>
+            <Words as="p" className="muted mt-2 text-caption" text={t("settings.srs_note")} />
           </Row>
         </Group>
       );
@@ -224,7 +227,7 @@ function SectionBody({ section }: { section: SettingsPanel }) {
           <Row label={label(t("settings.app_language"))}>
             {/* `LangSetting bare` — tek dil açıksa hiç çizilmiyor. */}
             {offered.length < 2 ? null : (
-              <div className="px-4 py-3">
+              <div>
                 <div className="flex gap-1.5">
                   {offered.map((l) => (
                     <span key={l} className="chip px-3 py-1.5 text-caption">
@@ -258,7 +261,8 @@ function SectionBody({ section }: { section: SettingsPanel }) {
               </div>
               {/* `SoundSettings bare`: oyun sesleri (açık: dinle düğmesi + anahtar).
                   Titreşim satırı yalnız titreşen cihazda, sunucu bilemez. */}
-              <div className="mt-3 border-t pt-1" style={{ borderColor: "var(--hairline)" }}>
+              <div className="mt-3 border-t pt-3" style={{ borderColor: "var(--hairline)" }}>
+                <div className="inset-list">
                 <SettingRowSlot title={t("snd.game_sounds")} sub={t("snd.game_sounds_sub")}>
                   <span className="chip block h-8 w-8" />
                   <SwitchSlot />
@@ -268,12 +272,13 @@ function SectionBody({ section }: { section: SettingsPanel }) {
                     <SwitchSlot />
                   </SettingRowSlot>
                 ) : null}
+                </div>
               </div>
             </div>
           </Row>
           <Row label={label(t("settings.appearance"))}>
             {/* `ThemeSetting bare`: surface-2 şerit, içinde üç eşit bölüm. */}
-            <div className="px-4 py-3">
+            <div>
               <div className="flex" style={{ background: "var(--surface-2)", borderRadius: "var(--radius-tile)", padding: 4 }}>
                 {["settings.theme_system", "settings.theme_light", "settings.theme_dark"].map((k) => (
                   <Words key={k} className="flex-1 py-2.5 text-center text-strong" tone="var(--border)" text={t(k)} />
@@ -283,7 +288,7 @@ function SectionBody({ section }: { section: SettingsPanel }) {
           </Row>
           <Row>
             {/* Kurulum rehberi, kapalı `Disclosure`. */}
-            <div className="p-5">
+            <div>
               <div className="flex w-full items-center gap-3 py-1">
                 <Words className="flex-1 text-strong" text={t("settings.add_to_home")} />
                 <Words className="muted shrink-0 text-caption" text={t("settings.add_to_home_hint")} />
@@ -301,7 +306,7 @@ function SectionBody({ section }: { section: SettingsPanel }) {
       return (
         <Group>
           <Row label={label(t("settings.sec_name"))}>
-            <div className="option w-full px-4 py-3 text-body">
+            <div className="input w-full">
               <SkeletonLine variant="body" width="40%" />
             </div>
           </Row>
@@ -311,14 +316,14 @@ function SectionBody({ section }: { section: SettingsPanel }) {
           <Row label={label(t("socialsettings.username"))}>
             <div className="flex items-center gap-2">
               <Words className="text-body" text="@" />
-              <div className="input min-w-0 flex-1 px-3 py-2">
+              <div className="input min-w-0 flex-1">
                 <SkeletonLine variant="body" width="50%" />
               </div>
               <Btn className="btn btn-primary h-9 px-3 text-caption" text={t("common.save")} />
             </div>
             <Words
               as="p"
-              className="muted mt-1 text-micro"
+              className="muted mt-2 text-caption leading-snug"
               text={`${t("socialsettings.username_rule")} ${t("socialsettings.username_cooldown", { n: USERNAME_CHANGE_COOLDOWN_DAYS })} ${t("socialsettings.profile_link", { path: "/u/username" })}`}
             />
           </Row>
@@ -333,8 +338,8 @@ function SectionBody({ section }: { section: SettingsPanel }) {
         <Group>
           <PasswordRowsSkeleton />
           <Row label={label(t("settings.sec_sessions"))}>
-            <SessionRowSkeleton />
-            <div className="space-y-3 p-4">
+            <div className="space-y-3">
+              <SessionRowSkeleton />
               <div className="flex items-center justify-between gap-3">
                 <Words as="p" className="muted text-body leading-snug" text={t("sessions.sub")} />
                 <Btn className="btn shrink-0 text-caption" text={t("sessions.revoke_others")} />
@@ -348,8 +353,8 @@ function SectionBody({ section }: { section: SettingsPanel }) {
       return (
         <>
           {/* `SocialSettings part="privacy"`: görünürlük, izinler, engellenenler. */}
-          <section className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
-            <div className="px-4 py-3">
+          <section className="card divide-y divide-[color:var(--hairline)] overflow-hidden px-4">
+            <div className="py-4">
               <Words as="p" className="text-strong" text={t("socialsettings.visibility")} />
               <div className="mt-2 flex flex-col gap-1.5">
                 {[
@@ -364,9 +369,9 @@ function SectionBody({ section }: { section: SettingsPanel }) {
                 ))}
               </div>
             </div>
-            <div>
-              <Words as="p" className="px-4 pb-1.5 pt-3 text-strong" text={t("socialsettings.permissions")} />
-              <div className="divide-y divide-[color:var(--hairline)]">
+            <div className="py-4">
+              <Words as="p" className="mb-2 text-strong" text={t("socialsettings.permissions")} />
+              <div className="inset-list">
                 {["perm_requests", "perm_suggest", "perm_activity"].map((k) => (
                   <SettingRowSlot key={k} title={t(`socialsettings.${k}`)} sub={t(`socialsettings.${k}_sub`)}>
                     <SwitchSlot />
@@ -374,13 +379,14 @@ function SectionBody({ section }: { section: SettingsPanel }) {
                 ))}
               </div>
             </div>
-            <div className="px-4 py-3">
+            <div className="py-4">
               <Words as="p" className="text-strong" text={t("socialsettings.blocked_title")} />
-              <SkeletonLine variant="caption" width="60%" className="mt-1" />
+              <SkeletonLine variant="caption" width="60%" className="mt-2" />
             </div>
           </section>
           <Group title={<Words text={t("settings.data_consents")} />}>
             <Row>
+              <div className="inset-list">
               <SettingRowSlot title={t("settings.send_usage_data")} sub={t("settings.analytics_sub")}>
                 <span className="chip block h-8 px-2.5 text-caption">
                   <Words text={t("settings.privacy_policy_short")} />
@@ -393,6 +399,7 @@ function SectionBody({ section }: { section: SettingsPanel }) {
               <SettingRowSlot title={t("aiconsent.settings_voice")} sub={t("aiconsent.settings_voice_sub")}>
                 <SwitchSlot />
               </SettingRowSlot>
+              </div>
             </Row>
           </Group>
         </>
@@ -403,6 +410,7 @@ function SectionBody({ section }: { section: SettingsPanel }) {
         <>
           <Group>
             <Row>
+              <div className="inset-list">
               <SettingRowSlot title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
                 <Btn className="btn btn-ghost h-9 px-3 text-caption" text={t("settings.privacy_policy")} />
                 <Btn className="btn btn-ghost h-9 px-3 text-caption" text={t("settings.terms_of_use")} />
@@ -416,6 +424,7 @@ function SectionBody({ section }: { section: SettingsPanel }) {
               <SettingRowSlot title={t("settings.oss_licenses")}>
                 <Btn className="btn btn-ghost h-9 px-3 text-caption" text={t("settings.oss_licenses")} />
               </SettingRowSlot>
+              </div>
             </Row>
           </Group>
           <Words as="p" className="muted pb-2 pt-1 text-center text-caption" text="Lernomi 1.0.0" />

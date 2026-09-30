@@ -16,8 +16,8 @@ import { ReportFlag } from "../ui/ReportFlag";
 import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine, SkeletonPill, skeletonFiller, textHeight } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
-import { BackIcon, CheckIcon, CloseIcon, CorrectIcon, SendIcon, SkillSpeakingIcon, SpeakerIcon, WarningIcon, WrongIcon } from "../ui/icons";
-import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
+import { BackIcon, CheckIcon, CorrectIcon, SendIcon, SkillSpeakingIcon, SpeakerIcon, WarningIcon, WrongIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { ensureConversations, findConversation, conversationLevelOf, scoredSteps, type Conversation, type Segment, type Expectation, type LectureStep } from "../data/conversations";
 import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
@@ -51,6 +51,7 @@ import { notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premiu
 import { useAiDeclined } from "../lib/useAiDeclined";
 import { conversationLocked, tieredCopy } from "../lib/unlock";
 import { UnlockProgress } from "../ui/UnlockProgress";
+import { IconLine } from "../ui/IconLine";
 
 /**
  * Konuşma oynatıcısı — anlatım → karşılıklı konuşma → özet. Web'in
@@ -929,8 +930,10 @@ export function ConversationScreen() {
   }
   if (!conversation) {
     return (
-      <FlowScreen center top={<FlowTopBar back onClose={() => nav.goBack()} />} actions={<FlowActions primary={{ label: tx("conversation.go_back"), onPress: () => nav.goBack() }} />}>
-        {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış (web `conversations/[id]/not-found`). */}
+      <FlowScreen center actions={<FlowActions primary={{ label: tx("common.close"), onPress: () => nav.goBack() }} />}>
+        {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış birincil
+            "Kapat", üstte geri oku yok (web `conversations/[id]/not-found` bir
+            sayfa, orada bağlantı "Geri dön"). */}
         <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("conversation.this_conversation_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
@@ -940,13 +943,15 @@ export function ConversationScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}>
       {/* Başlık + ilerleme */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        {/* SONUÇTA KAPAT (2026-09-27): özet bir sonuç ekranı, ona "geri"
-            dönülmez. Aynı yer, aynı karo; çarpı ve `common.close` (`FlowTopBar`
-            ölçüsü), eylem "Patika'ya dön"le aynı (`onBack` = `goBack`). Web
-            başlık satırı zaten çarpı çiziyor (`ConversationExit`). */}
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx(phase === "summary" ? "common.close" : "common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          {phase === "summary" ? <CloseIcon color={colors.textMuted} size={22} /> : <BackIcon color={colors.text} size={24} />}
-        </PressableScale>
+        {/* GERİ OKU YALNIZ OTURUMDA (anlatım, sohbet). Özet (sonuç), kaldığın
+            yerden sorusu (başlamadan önce) ve kilit (bilgi) ekranlarında üstte
+            düğme yok: çıkış dipteki "Kapat" (2026-09-30, bilgi ve sonuç
+            ekranlarının ortak kuralı; web `ConversationExit` aynı). */}
+        {phase === "summary" || resumeOffer || convLocked ? null : (
+          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <BackIcon color={colors.text} size={24} />
+          </PressableScale>
+        )}
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{conversation.title}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>
@@ -1001,7 +1006,7 @@ export function ConversationScreen() {
           </View>
           <FlowActions
             primary={{ label: tx("unlock.premium_now"), onPress: () => nav.navigate("Paywall") }}
-            tertiary={{ label: tx("conversation.go_back"), onPress: () => nav.goBack() }}
+            close={() => nav.goBack()}
           />
         </View>
       ) : !resumeChecked ? (
@@ -1046,6 +1051,7 @@ export function ConversationScreen() {
           <FlowActions
             primary={{ label: tx("conversation.continue_where_you_left_off"), onPress: () => { const r = resumeOffer; setResumeOffer(null); if (r.phase === "chat") resumeChat(r); else { setCorrect(r.correct); beginLecture(r.cursor, true); } } }}
             tertiary={{ label: tx("conversation.start_over"), onPress: () => { setResumeOffer(null); void clearConversationResume(conversation.id); beginLecture(0, false); } }}
+            close={() => nav.goBack()}
           />
         </View>
       ) : (
@@ -1525,9 +1531,9 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
               return (
                 <View key={i} style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start", opacity: talked && !used ? 0.6 : 1 }}>
                   {talked ? (
-                    <View style={{ width: 16, alignItems: "center", paddingTop: 2 }}>
+                    <IconLine variant="bodyStrong" style={{ width: 16 }}>
                       {used ? <CheckIcon color={colors.successText} size={14} /> : null}
-                    </View>
+                    </IconLine>
                   ) : null}
                   {/*
                     KALIP ÜSTTE, AÇIKLAMA ALTINDA. İkisi yan yanaydı: kalıp
@@ -1575,16 +1581,16 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
       <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>
         {unfinished ? (
           <FlowActions
-            primary={onResume ? { label: tx("conversationp.back_to_conversation"), onPress: onResume } : { label: tx("conversation.back_to_path"), onPress: onBack }}
-            tertiary={onResume ? { label: tx("conversation.back_to_path"), onPress: onBack } : null}
+            primary={onResume ? { label: tx("conversationp.back_to_conversation"), onPress: onResume } : { label: tx("common.close"), onPress: onBack }}
+            close={onResume ? onBack : null}
           />
         ) : (
           <FlowActions
-            primary={onNext && next ? { label: tx("conversation.next_speaking", { title: next.title }), onPress: onNext } : { label: tx("conversation.back_to_path"), onPress: onBack }}
+            primary={onNext && next ? { label: tx("conversation.next_speaking", { title: next.title }), onPress: onNext } : { label: tx("common.close"), onPress: onBack }}
             /* SINAV OLARAK DENE — konuşma yapıldıysa aynı sahne bir de ölçüm
                olarak oynanabiliyor (WP-22): yardım yok, 5 tur, rubrik puanı. */
             secondary={onExam && talked ? { label: tx("conversationp.try_scored"), hint: tx("conversationp.scored_hint"), onPress: onExam } : null}
-            tertiary={onNext && next ? { label: tx("conversation.back_to_path"), onPress: onBack } : null}
+            close={onNext && next ? onBack : null}
           />
         )}
       </View>

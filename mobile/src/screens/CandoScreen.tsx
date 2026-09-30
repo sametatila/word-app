@@ -14,6 +14,7 @@ import { fetchCando, type CandoData, type CandoItem } from "../game/cando";
 import { useTheme, spacing, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
 import { EmptyCard, ScreenHeader, SectionTitle } from "../social/common";
+import { barPct } from "../ui/Bar";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 /**
@@ -214,7 +215,7 @@ export function CandoScreen() {
                     <Text variant="caption" color={colors.textMuted}>{t("cando.proven_of_total", { proven: b.proven, total: b.total })}</Text>
                   </View>
                   <View style={{ height: 7, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
-                    <View style={{ height: "100%", width: `${Math.max(2, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
+                    <View style={{ height: "100%", width: `${barPct(pct, 2)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
                   </View>
                 </View>
               );

@@ -1,7 +1,6 @@
 "use client";
 
 import { ReportFlag, ReportLink, snapshot } from "@/components/report-flag";
-import Link from "next/link";
 import { UnlockProgress } from "@/components/unlock-progress";
 import type { SurfaceView } from "@/lib/premium/unlock-copy";
 import { apiFetch, CHAT_TIMEOUT_MS } from "@/lib/api-fetch";
@@ -23,7 +22,6 @@ import { recognitionCtor, requestMicrophone, type Recognition } from "@/componen
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
 import { ConversationIcon, CorrectIcon, DurationIcon, NoGoingBackIcon, ScoreTargetIcon, SkillSpeakingIcon, WarningIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
-import { ResultTopBar } from "@/components/round-exit";
 import { CoachLine } from "@/components/coach-line";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
@@ -278,9 +276,8 @@ export function ConversationScored({
     return (
       <FlowColumn>
         <UnlockProgress copy={quota?.view.copy ?? null} title={{ key: "unlock.locked_conv" }} />
-        <Link href="/immersion" prefetch={false} className="btn btn-ghost w-full px-4 py-2.5 text-body">
-          {t("nav.path")}
-        </Link>
+        {/* Tek çıkış metin bağlantısı "Kapat" (`FlowActions` `close`), öteki bilgi ekranlarıyla aynı. */}
+        <FlowActions close="/immersion" />
       </FlowColumn>
     );
   }
@@ -288,7 +285,7 @@ export function ConversationScored({
   if (phase === "intro") {
     return (
       /* KAPAK ŞABLONU: ikon karosu · konuşmanın adı · sınavın adı · sahne · ikonlu
-         kurallar · kalıplar kartı · Başla / Vazgeç. Kurallar "·" ile başlayan
+         kurallar · kalıplar kartı · Başla / Kapat. Kurallar "·" ile başlayan
          soluk satırlardı ve kalıplar o listenin dördüncü "kuralı" gibi okunuyordu. */
       <FlowColumn>
         <CoachLine moment="scored_intro" />
@@ -317,7 +314,7 @@ export function ConversationScored({
             </DetailCard>
           ) : null}
         </CoverBody>
-        <FlowActions primary={{ label: t("scored.start"), onClick: start }} tertiary={{ label: t("common.discard"), href: `/conversations/${conversation.id}` }} />
+        <FlowActions primary={{ label: t("scored.start"), onClick: start }} close={`/conversations/${conversation.id}`} />
       </FlowColumn>
     );
   }
@@ -350,7 +347,7 @@ export function ConversationScored({
          cümlesiyle söyleniyor (bkz. `consentOff`). Hata `alert` ile duyuruluyor. */
       <FlowColumn>
         <StateBody alert title={t("scored.cant_run")} body={!consentOff ? t("scored.service_down") : t("assess.fail_consent")} />
-        <FlowActions primary={{ label: t("common.try_again"), onClick: restart }} tertiary={{ label: t("conversationp.back_to_conversation"), href: `/conversations/${conversation.id}` }} />
+        <FlowActions primary={{ label: t("common.try_again"), onClick: restart }} close={`/conversations/${conversation.id}`} />
       </FlowColumn>
     );
   }
@@ -368,7 +365,7 @@ export function ConversationScored({
     const passed = result.score.overall >= SCORED_PASS_SCORE;
     /* Eşiğin altındaysa birincil düğme "Tekrar dene". */
     const retry = { label: t("common.try_again"), onClick: restart };
-    const leave = { label: t("conversationp.back_to_conversation"), href: `/conversations/${conversation.id}` };
+    const leave = { label: t("common.close"), href: `/conversations/${conversation.id}` };
     return (
       /*
         SONUÇ ŞABLONU: band → üç sayı → notlar → ayrıntı kartları → tek
@@ -377,8 +374,6 @@ export function ConversationScored({
         taşıyor, sonuç duyuruluyor. Konfeti yalnız geçince.
       */
       <FlowColumn celebrate={passed}>
-        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Konuşmaya dön"le aynı çıkış. */}
-        <ResultTopBar href={leave.href} />
         <ResultHero
           eyebrow={t("scored.title")}
           title={t(passed ? "exam.passed" : "exam.not_passed")}
@@ -429,7 +424,9 @@ export function ConversationScored({
             </ul>
           </DetailCard>
         ) : null}
-        <FlowActions primary={passed ? leave : retry} tertiary={passed ? retry : leave} />
+        {/* Geçtiyse asıl eylem çıkmak: tek birincil "Kapat", tekrar metin
+            bağlantısı. Kaldıysa birincil "Tekrar dene", çıkış "Kapat". */}
+        <FlowActions primary={passed ? leave : retry} tertiary={passed ? retry : null} close={passed ? null : leave.href} />
       </FlowColumn>
     );
   }

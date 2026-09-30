@@ -14,7 +14,7 @@ import { ConfirmDialog } from "@/components/confirm-dialog";
 import { ReportLink, snapshot } from "@/components/report-flag";
 import { ReportDialog } from "@/components/report-dialog";
 import { targetRef, type ReportTarget } from "@/lib/report";
-import { RoundExit, ResultTopBar } from "@/components/round-exit";
+import { RoundExit } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { formatPercent, nativeLangName, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf } from "@/lib/courses";
@@ -1419,7 +1419,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
             Android'deki sıra: birincil "tekrar dene", ikincil çıkış. */}
         <FlowActions
           primary={{ label: t("common.try_again"), onClick: () => { setStatus("loading"); void load(); } }}
-          tertiary={{ label: t("common.go_back"), onClick: leave }}
+          close={leave}
         />
       </FlowColumn>
     );
@@ -1435,8 +1435,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           body={status === "locked" ? t("plan.pro_pocket_walk") : undefined}
         />
         <FlowActions
-          primary={status === "locked" ? { label: t("unlock.premium_now"), onClick: () => router.push("/premium") } : { label: t("common.go_back"), onClick: leave }}
-          tertiary={status === "locked" ? { label: t("common.go_back"), onClick: leave } : null}
+          primary={status === "locked" ? { label: t("unlock.premium_now"), onClick: () => router.push("/premium") } : { label: t("common.close"), onClick: leave }}
+          close={status === "locked" ? leave : null}
         />
       </FlowColumn>
     );
@@ -1447,7 +1447,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     return (
       <FlowColumn>
         <StateBody title={t("walkmode.done_no_more")} body={t("walkmode.done_no_more_sub")} />
-        <FlowActions primary={{ label: t("common.go_back"), onClick: leave }} />
+        <FlowActions primary={{ label: t("common.close"), onClick: leave }} />
       </FlowColumn>
     );
 
@@ -1455,7 +1455,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     return (
       <FlowColumn>
         <StateBody title={t("walk.unsupported_title")} body={t("walk.unsupported_sub")} />
-        <FlowActions primary={{ label: t("common.go_back"), onClick: leave }} />
+        <FlowActions primary={{ label: t("common.close"), onClick: leave }} />
       </FlowColumn>
     );
 
@@ -1468,7 +1468,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
         <StateBody title={t("walk.denied_title")} body={t("walk.denied_sub")} />
         <FlowActions
           primary={{ label: t("common.try_again"), onClick: () => void start(index) }}
-          tertiary={{ label: t("common.go_back"), onClick: leave }}
+          close={leave}
         />
       </FlowColumn>
     );
@@ -1511,7 +1511,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       <FlowActions
         primary={{ label: t(status === "paused" ? "walk.pocket_continue" : "walk.pocket_start"), onClick: () => begin("pocket") }}
         secondary={{ label: t(status === "paused" ? "walk.screen_continue" : "walk.screen_start"), onClick: () => begin("screen") }}
-        tertiary={{ label: t("common.go_back"), onClick: leave }}
+        close={leave}
       />
     );
     return (
@@ -1569,8 +1569,6 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
          sayısı aynı bilgi); kutlama eşiği eskisi gibi %60. Sonucu duyuran
          bandın kendi `role="status"`u (bkz. 11.337). */
       <FlowColumn celebrate={tally.total > 0 && donePct >= 60}>
-        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Bitir"le aynı çıkış. */}
-        <ResultTopBar onExit={leave} />
         <ResultHero
           eyebrow={t("learn.walk_mode")}
           title={t("walkmode.done_title")}
@@ -1591,9 +1589,9 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
         {walkRef.current.sessions > 1 ? <FlowNote text={t("walk.n_rounds", { n: walkRef.current.sessions })} /> : null}
         {noMore ? <FlowNote icon={<InboxIcon size={16} />} text={t("walkmode.done_no_more_sub")} /> : null}
         <FlowActions
-          primary={noMore ? { label: t("common.finish"), onClick: leave } : { label: t("walkmode.continue"), onClick: () => { setStatus("loading"); void load(); } }}
+          primary={noMore ? { label: t("common.close"), onClick: leave } : { label: t("common.continue"), onClick: () => { setStatus("loading"); void load(); } }}
           secondary={tally.total > 0 ? { label: t("common.share"), icon: <ShareIcon size={19} />, onClick: () => void shareText(resultText(lang, tally.correct, tally.total), "result") } : null}
-          tertiary={noMore ? null : { label: t("common.finish"), onClick: leave }}
+          close={noMore ? null : leave}
         />
       </FlowColumn>
     );

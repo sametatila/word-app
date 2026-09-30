@@ -102,6 +102,8 @@ function parseBody(body: unknown) {
     if (typeof a.wordId !== "number" || !Number.isInteger(a.wordId)) return null;
     if (typeof a.game !== "string" || !GAMES.has(a.game)) return null;
     if (typeof a.correct !== "boolean") return null;
+    // "Hatırlamadım" yalnız doğru-değil cevapta anlamlı; hata tipi taşımaz.
+    const selfMiss = a.selfMiss === true && a.correct === false;
     answers.push({
       wordId: a.wordId,
       game: a.game as GameId,
@@ -109,9 +111,10 @@ function parseBody(body: unknown) {
       latencyMs: typeof a.latencyMs === "number" ? Math.max(0, Math.round(a.latencyMs)) : 0,
       hintUsed: a.hintUsed === true,
       quality: typeof a.quality === "number" && Number.isFinite(a.quality) ? a.quality : undefined,
+      ...(selfMiss ? { selfMiss: true } : {}),
       // Hata tipi yalnız yanlış cevapta ve yalnız listeden; gerisi düşer.
-      errorType: a.correct === false && isErrorType(a.errorType) ? a.errorType : undefined,
-      detail: a.correct === false ? (cleanDetail(a.detail) ?? undefined) : undefined,
+      errorType: a.correct === false && !selfMiss && isErrorType(a.errorType) ? a.errorType : undefined,
+      detail: a.correct === false && !selfMiss ? (cleanDetail(a.detail) ?? undefined) : undefined,
     });
   }
 

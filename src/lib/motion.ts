@@ -32,5 +32,20 @@ export const staggerDelay = (i: number) => (i * MOTION.stagger) / 1000;
  */
 export const fillX = (pct: number) => `${Math.min(100, Math.max(0, pct)) - 100}%`;
 
+/**
+ * ÇUBUĞUN GÖRÜNEN YÜZDESİ — sıfır boş, sıfırın üstü en az `floor`.
+ *
+ * Çubuklar `Math.max(3, pct)` ile sıfırda bile bir dilim bırakıyordu; hiç
+ * başlanmamış bir hedef "biraz yapılmış" gibi görünüyordu (2026-09-30 Samet:
+ * 0 → tamamen boş iz). Taban yalnız sıfırın üstünde kalıyor: 1/120 gibi bir
+ * değer yuvarlak ucun altında kaybolmasın. `NaN` (0/0) da boş sayılıyor.
+ * Mobil karşılığı `ui/Bar.tsx` `barPct`; `check:parity` ikisini ölçüyor.
+ */
+export const BAR_FLOOR = 3;
+export const barPct = (pct: number, floor: number = BAR_FLOOR) => {
+  const p = Math.min(100, pct);
+  return p > 0 ? Math.max(floor, p) : 0;
+};
+
 /** CSS geçişli dolgu için satır içi stil (`.bar-fill` ile). */
 export const fillStyle = (pct: number) => ({ transform: `translateX(${fillX(pct)})` });

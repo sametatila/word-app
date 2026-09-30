@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { CheckIcon } from "@/components/icons";
+import { lineInset } from "@/components/icon-line";
 
 /**
  * Onay kutusu — mobil `AuthScreen` (cihaza güven) ve `DeleteAccountScreen`
@@ -41,7 +42,8 @@ export function Checkbox({
           style={{ color: ink }}
         />
       </span>
-      <span className="min-w-0 flex-1">{children}</span>
+      {/* Kutu (24) satırdan (22,5) yüksek: ilk satır kutunun ortasına iniyor. */}
+      <span className="min-w-0 flex-1" style={lineInset("1.5rem")}>{children}</span>
     </label>
   );
 }

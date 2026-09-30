@@ -7,6 +7,7 @@ import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
 import { InfoIcon, ChevronNextIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
+import { IconLine } from "@/components/icon-line";
 
 const RESEND_COOLDOWN = 60;
 
@@ -69,18 +70,20 @@ export function VerifyEmailNotice({
     >
       <div className="space-y-3">
         <div
-          className="flex gap-2 rounded-panel px-3 py-2.5 text-body"
+          className="flex items-start gap-2 rounded-panel px-3 py-2.5 text-body"
           style={{ background: "var(--surface-2)" }}
         >
-          <span className="mt-0.5 shrink-0 text-[color:var(--color-brand)]">
+          <IconLine className="text-[color:var(--color-brand)]">
             <InfoIcon size={16} />
-          </span>
+          </IconLine>
           <div className="muted min-w-0 flex-1">
             <p>{t("verify.tips_title")}</p>
             <ul className="mt-1 flex flex-col gap-1">
               {[t("verify.tip_spam"), t("verify.tip_contacts"), t("verify.tip_wrong_address")].map((tip) => (
                 <li key={tip} className="flex items-start gap-1.5">
-                  <ChevronNextIcon size={14} className="mt-1 shrink-0" />
+                  <IconLine>
+                    <ChevronNextIcon size={14} />
+                  </IconLine>
                   <span className="min-w-0">{tip}</span>
                 </li>
               ))}

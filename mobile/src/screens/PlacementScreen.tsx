@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { SpeakerIcon, PlacementIcon, GamePluralIcon, DurationIcon, DontGuessIcon, ScoreTargetIcon, CorrectIcon, GameChoiceIcon, AccountIcon, WarningIcon } from "../ui/icons";
 import { Chip } from "../ui/Chip";
-import { FlowScreen, FlowTopBar, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
+import { FlowScreen, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
 import { CoverSkeleton } from "../game/RoundSkeleton";
 import { demoPlacementFor, estimateLevel } from "../data/demoPlacement";
@@ -341,20 +341,19 @@ export function PlacementScreen() {
 
   if (user && !loading && loadError) {
     return (
-      <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("common.close"), onPress: leave }} />}>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} close={leave} />}>
         <StateBody alert title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
       </FlowScreen>
     );
   }
 
-  /* Test inerken KAPAĞIN iskeleti (üst çubuk, beş kural, Başla / Sonra):
+  /* Test inerken KAPAĞIN iskeleti (beş kural, Başla / Kapat):
      yüklenince gelen ekran kapak, tur değil. */
   /* Yükleme yalnız hesaplı kullanıcıda (gerçek test): kapağın gerçek-test cümleleri. */
   if (loading) {
     return (
       <CoverSkeleton
         label={t("common.loading")}
-        top
         eyebrow={t("placement.title")}
         title={t("onboarding.kisa_yerlestirme_sinavi")}
         pitch={t("plc.cover_pitch")}
@@ -413,10 +412,7 @@ export function PlacementScreen() {
       />
     );
     return (
-      <FlowScreen
-        top={<FlowTopBar onClose={leave} />}
-        actions={<FlowActions primary={{ label: t("common.start"), onPress: start }} tertiary={{ label: t("common.later"), onPress: leave }} />}
-      >
+      <FlowScreen actions={<FlowActions primary={{ label: t("common.start"), onPress: start }} close={leave} />}>
         {cover}
       </FlowScreen>
     );
@@ -432,16 +428,15 @@ export function PlacementScreen() {
     const skills = usingReal ? skillRows(answers.current, result?.perSkill) : [];
     return (
       <FlowScreen
-        top={<FlowTopBar onClose={leave} />}
         actions={
           <FlowActions
             primary={{
               label: user && result
                 ? t(level === result.suggested ? "placement.continue_with" : "placement.pick_and_continue", { level: String(level) })
-                : t(user ? "placement.set_level" : "placement.understood"),
+                : t(user ? "placement.set_level" : "common.got_it"),
               onPress: () => void applyLevel(),
             }}
-            tertiary={{ label: t("common.close"), onPress: leave }}
+            close={leave}
           />
         }
       >
@@ -552,7 +547,7 @@ export function PlacementScreen() {
         title={t("plc.quit_title")}
         message={t("plc.quit_body")}
         confirmLabel={t("common.exit")}
-        cancelLabel={t("common.continue_2")}
+        cancelLabel={t("common.continue")}
         destructive
         onConfirm={() => { back.cancel(); leave(); }}
         onCancel={back.cancel}

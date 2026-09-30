@@ -40,6 +40,7 @@ import { parseJudgment } from "@/lib/voice-intent";
 import { localDay } from "@/lib/day";
 import { flushPendingConversations, newFinishId, queueConversationResult } from "@/lib/conversation-queue";
 import { CONVERSATION_RESUME_DAYS, CONVERSATION_RESUME_KEY } from "@/lib/storage-hygiene";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * Konuşma oynatıcısı — anlatım, sohbet, özet.
@@ -1296,7 +1297,8 @@ function ConversationPlayerBody({
           yok. Yarıda çıkmak emek kaybı değil: konuşma kaldığı yeri yerel
           depoya yazıyor ve dönüşte "kaldığın yerden" notuyla açılıyor. */}
       <div className="flex shrink-0 items-center gap-3 kb:hidden">
-        <ConversationExit />
+        {/* Özette (sonuç) üstte X yok: çıkış dipteki "Kapat" (2026-09-30). */}
+        {phase === "summary" ? null : <ConversationExit />}
         <div className="min-w-0 flex-1">
           <Steps phase={phase} />
         </div>
@@ -1632,8 +1634,10 @@ function ConversationPlayerBody({
                     color: "var(--color-flame)",
                   }}
                 >
-                  <WarningIcon size={12} className="mt-1 shrink-0" />
-                  {t("conversationp.chat_off_consent")}
+                  <IconLine>
+                    <WarningIcon size={12} />
+                  </IconLine>
+                  <span>{t("conversationp.chat_off_consent")}</span>
                 </p>
               ) : offline ? (
                 <>
@@ -1701,7 +1705,9 @@ function ConversationPlayerBody({
                     color: "var(--color-flame)",
                   }}
                 >
-                  <WarningIcon size={15} className="mt-0.5 shrink-0" />
+                  <IconLine>
+                    <WarningIcon size={15} />
+                  </IconLine>
                   <span>{error}</span>
                 </div>
               ) : null}
@@ -1896,11 +1902,11 @@ function ConversationPlayerBody({
                     const talked = turns.length > 1;
                     const used = talked && patternUsed(pt.de, turns);
                     return (
-                      <div key={pt.de} className="flex items-baseline gap-2" style={{ opacity: talked && !used ? 0.6 : 1 }}>
+                      <div key={pt.de} className="flex items-start gap-2" style={{ opacity: talked && !used ? 0.6 : 1 }}>
                         {talked ? (
-                          <span className="w-4 shrink-0" style={{ color: "var(--color-mint)" }}>
+                          <IconLine className="w-4 text-strong" style={{ color: "var(--color-mint)" }}>
                             {used ? <CheckIcon size={14} /> : null}
-                          </span>
+                          </IconLine>
                         ) : null}
                         {/* Kalıp üstte, açıklama altında: yan yana dururken uzun
                             bir kalıp (İngilizce B1 cümleleri) açıklamanın payını
@@ -1946,18 +1952,18 @@ function ConversationPlayerBody({
               {unfinished ? (
                 <FlowActions
                   primary={{ label: t("conversationp.back_to_conversation"), onClick: () => setPhase("chat") }}
-                  tertiary={{ label: t("conversation.back_to_path"), href: "/immersion" }}
+                  close="/immersion"
                 />
               ) : (
                 <FlowActions
                   primary={
                     extras.next
                       ? { label: t("conversation.next_speaking", { title: extras.next.title }), href: `/conversations/${extras.next.id}` }
-                      : { label: t("conversation.back_to_path"), href: "/immersion" }
+                      : { label: t("common.close"), href: "/immersion" }
                   }
                   /* İPUCU GÖRÜNÜR: düğmenin ikinci satırı (Android aynı). */
                   secondary={turns.length > 1 ? { label: t("conversationp.try_scored"), hint: t("conversationp.scored_hint"), href: `/conversations/${conversation.id}/scored` } : null}
-                  tertiary={extras.next ? { label: t("conversation.back_to_path"), href: "/immersion" } : null}
+                  close={extras.next ? "/immersion" : null}
                 />
               )}
             </FlowColumn>
@@ -2301,7 +2307,9 @@ function Bubble({
             color: "var(--color-flame)",
           }}
         >
-          <WrongIcon size={13} className="mt-0.5 shrink-0" />
+          <IconLine>
+            <WrongIcon size={13} />
+          </IconLine>
           <span>{c}</span>
         </p>
       ))}
@@ -2329,7 +2337,9 @@ function AsrNote({ visible }: { visible: boolean }) {
         color: "var(--color-flame)",
       }}
     >
-      <WarningIcon size={14} className="mt-0.5 shrink-0" />
+      <IconLine>
+        <WarningIcon size={14} />
+      </IconLine>
       <span>{t("conversationp.no_asr_long")}</span>
     </div>
   );

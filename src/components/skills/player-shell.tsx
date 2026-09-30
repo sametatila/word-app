@@ -208,7 +208,8 @@ export function ResultCard({
     !isMono || score !== undefined ? { value: formatPercent(pct, lang), label: t("skillp.stat_score") } : null,
     streak > 0 ? { value: t("profile.days", { n: streak }), label: t("summary.streak"), tone: "streak" as const } : null,
   ].filter((x): x is NonNullable<typeof x> => x !== null);
-  const back = { label: t(frame.backLabel), href: frame.backHref };
+  /* Sonuçtan çıkış "Kapat" (2026-09-30), geldiği yere (`backHref`). */
+  const back = { label: t("common.close"), href: frame.backHref };
   const retry = onRetry ? { label: t("item.try_again"), onClick: onRetry } : null;
   return (
     <motion.div
@@ -254,9 +255,9 @@ export function ResultCard({
           </Link>
         ) : null}
         {passed || !retry ? (
-          <FlowActions primary={back} secondary={retry} />
+          <FlowActions primary={back} tertiary={retry} />
         ) : (
-          <FlowActions primary={retry} secondary={back} />
+          <FlowActions primary={retry ?? back} close={retry ? back.href : null} />
         )}
         {/* İçerik bildirimi, egzersizin BÜTÜNÜ için (metin, ses, yönerge):
             egzersiz bittikten sonra, sonucun dibinde. Tek tek sorular kendi

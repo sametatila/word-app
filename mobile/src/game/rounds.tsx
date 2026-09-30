@@ -1240,57 +1240,74 @@ function PluralRound({ round, word, onDone, colors }: { round: Round; word: Roun
   );
 }
 
-/** İlk örnek gösterimli öz-değerlendirme (intro + bilinmeyen türler). */
+/**
+ * Yeni kelime kartı (intro) ve öz değerlendirme ("Hatırla": oynatılamayan
+ * turun yedeği).
+ *
+ * Yeni kelimede sınanan bir şey yok: web `intro-game` gibi anlam baştan
+ * açık, "Anladım" doğru + ipucu (SRS 3) kaydediliyor. Eskiden yeni kelime
+ * de "Göster → Zorlandım / Bildim" soruyordu ve "Zorlandım" YANLIŞ sayılıyordu
+ * (kombo, puan, doğruluk): ilk kez gördüğü kelime için kullanıcı cezalanıyordu.
+ *
+ * "Hatırla"da "Hatırlamadım" NÖTR (`selfMiss`): yanlış değil, yalnız kelime
+ * yakında yeniden gelsin diye "yeniden" kaydediliyor (web `lib/srs`
+ * `gradeAnswer`). "Hatırladım" doğru + ipucu: öz beyan, hızlı doğru cevap
+ * kadar güçlü kanıt değil.
+ */
 function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word ?? round.words?.[0];
-  const [reveal, setReveal] = useState(false);
+  const intro = round.game === "intro";
+  const [revealed, setReveal] = useState(false);
+  const reveal = intro || revealed;
   const [skipping, setSkipping] = useState(false);
   const spoke = useRef(false);
   useEffect(() => {
-    if (round.game === "intro" && word && !spoke.current) { spoke.current = true; speakTarget(withArtikel(word), { word: true }); }
+    if (intro && word && !spoke.current) { spoke.current = true; speakTarget(withArtikel(word), { word: true }); }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round.id]);
-  // Kelime yoksa turu güvenle atla (render sırasında değil, efektte).
+  // Kelime yoksa turu güvenle atla (render sırasında değil, efektte); web
+  // `game-switch` `SkipRound` gibi cevap da sayım da yok.
   useEffect(() => {
-    if (!word) onDone(true);
+    if (!word) onDone(true, { skip: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round.id]);
   if (!word) return <View style={{ flex: 1 }} />;
-  const footer = !reveal ? (
-    <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-      <Text variant="h3" color={colors.onPrimary}>{tx("rounds.show_answer")}</Text>
+  const primary = (label: string, onPress: () => void) => (
+    <PressableScale onPress={onPress} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+      <Text variant="h3" color={colors.onPrimary} style={{ textAlign: "center" }}>{label}</Text>
     </PressableScale>
-  ) : (
+  );
+  const footer = intro ? (
     <View style={{ gap: spacing.md }}>
-      <View style={{ flexDirection: "row", gap: spacing.md }}>
-        <View style={{ flex: 1 }}><OptionButton text={tx("rounds.struggled")} state="idle" onPress={() => onDone(false, { hintUsed: true })} colors={colors} /></View>
-        <View style={{ flex: 1 }}><OptionButton text={tx("rounds.got_it")} state="idle" onPress={() => onDone(true, { hintUsed: true })} colors={colors} /></View>
-      </View>
+      {primary(tx("rounds.understood", { word: withArtikel(word) }), () => onDone(true, { hintUsed: true }))}
       {/*
         "BUNU ZATEN BİLİYORUM" — yalnız YENİ kelime turunda.
-        Web `intro-game`de baştan beri var, mobilde hiç yoktu: bildiği bir
-        kelimeyi gören kullanıcı onu kuyruktan çıkaramıyor, her tekrarında
-        yeniden görüyordu. Kelime pekişmiş sayılıyor ve bu tur için CEVAP
-        KAYDEDİLMİYOR (web `onDone([])` ile aynı).
+        Kelime pekişmiş sayılıyor ve bu tur için CEVAP KAYDEDİLMİYOR (web
+        `onDone([])` ile aynı): sayılmıyor, kombo da değişmiyor.
       */}
-      {round.game === "intro" ? (
-        <PressableScale
-          disabled={skipping}
-          onPress={async () => {
-            setSkipping(true);
-            await markKnown(word.id);
-            onDone(true, { skip: true });
-          }}
-          style={{ alignSelf: "center", paddingHorizontal: 18, paddingVertical: 10 }}
-        >
-          <Text variant="caption" color={colors.textMuted}>{tx(skipping ? "rounds.saving" : "rounds.already_known")}</Text>
-        </PressableScale>
-      ) : null}
+      <PressableScale
+        disabled={skipping}
+        onPress={async () => {
+          setSkipping(true);
+          await markKnown(word.id);
+          onDone(true, { skip: true });
+        }}
+        style={{ alignSelf: "center", paddingHorizontal: 18, paddingVertical: 10 }}
+      >
+        <Text variant="caption" color={colors.textMuted}>{tx(skipping ? "rounds.saving" : "rounds.already_known")}</Text>
+      </PressableScale>
+    </View>
+  ) : !reveal ? (
+    primary(tx("rounds.show_answer"), () => setReveal(true))
+  ) : (
+    <View style={{ flexDirection: "row", gap: spacing.md }}>
+      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.recall_no")} state="idle" onPress={() => onDone(false, { selfMiss: true })} colors={colors} /></View>
+      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.recall_yes")} state="idle" onPress={() => onDone(true, { hintUsed: true })} colors={colors} /></View>
     </View>
   );
   return (
     <RoundShell footer={footer}>
-      <Prompt label={tx(round.game === "intro" ? "rounds.new_word" : "rounds.recall")} big={withArtikel(word)} speakText={withArtikel(word)} sub={typeof round.sentence === "string" ? round.sentence : null} colors={colors} />
+      <Prompt label={tx(intro ? "rounds.new_word" : "rounds.recall")} big={withArtikel(word)} speakText={withArtikel(word)} sub={typeof round.sentence === "string" ? round.sentence : null} colors={colors} />
       {/*
         TÜR VE ÇOĞUL. Sunucu her kelimede `typ` ve `formen` gönderiyor ve web
         bunu yeni kelime turunda baştan beri yazıyor; mobil iki alanı da hiç

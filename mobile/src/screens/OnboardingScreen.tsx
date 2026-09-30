@@ -322,7 +322,7 @@ export function OnboardingScreen() {
             <Text variant="bodyStrong" color={colors.text}>{t("common.back")}</Text>
           </PressableScale>
         ) : null}
-        <PrimaryButton label={t("common.continue_2")} onPress={next} disabled={!canNext} busy={saving} style={{ flex: 1 }} />
+        <PrimaryButton label={t("common.continue")} onPress={next} disabled={!canNext} busy={saving} style={{ flex: 1 }} />
       </View>
 
       {/* Kayıtlı kullanıcının çıkışı — her adımda duruyor: soruların hangisinde

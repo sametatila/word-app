@@ -3,6 +3,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Confetti } from "@/components/celebrate";
+import { useT } from "@/lib/i18n/client";
+import { IconLine, lineInset } from "@/components/icon-line";
 
 /**
  * AKIŞ ŞABLONLARI — kapak, sonuç, etap kartı ve durum ekranı tek dilde.
@@ -13,7 +15,7 @@ import { Confetti } from "@/components/celebrate";
  * maskot on bir ayrı boyda, kimi sonuçta hiç yok; konfeti dört ayrı eşikle;
  * düğme sırası ekrana göre değişiyor.
  *
- *   Kapak  — ikon karosu · başlık · tek cümle · kural satırları · Başla / Sonra
+ *   Kapak  — ikon karosu · başlık · tek cümle · kural satırları · Başla / Kapat (üstte X yok)
  *   Sonuç  — band (tür · başlık · ana sayı · maskot) → en çok üç sayı →
  *            notlar → ayrıntı kartları → tek birincil düğme
  *   Etap   — sonucun küçük hâli (bandın dibinde etap şeridi)
@@ -60,8 +62,17 @@ function ActionEl({ a, className }: { a: FlowAction; className: string }) {
   );
 }
 
-/** Düğme sırası her ekranda aynı: birincil (tek) → çerçeveli (en çok bir) → metin bağlantısı. */
-export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAction | null; secondary?: FlowAction | null; tertiary?: FlowAction | null }) {
+/**
+ * Düğme sırası her ekranda aynı: birincil (tek) → çerçeveli (en çok bir) → metin bağlantısı.
+ *
+ * `close`: bilgi, kapak, izin ve durum ekranlarının çıkışı — metin bağlantısı
+ * yuvasında, adı hep "Kapat" (2026-09-30 Samet). Ekranlar "Vazgeç", "Sonra",
+ * "Geri dön", "Patikaya dön" diye ayrı adlar veriyordu; kimi üstte X de
+ * taşıyordu. Bu ekranlarda üstte X YOK, çıkış burada. Fonksiyon ya da adres.
+ */
+export function FlowActions({ primary, secondary, tertiary, close }: { primary?: FlowAction | null; secondary?: FlowAction | null; tertiary?: FlowAction | null; close?: (() => void) | string | null }) {
+  const t = useT();
+  const closeAction: FlowAction | null = close == null ? null : typeof close === "string" ? { label: t("common.close"), href: close } : { label: t("common.close"), onClick: close };
   return (
     <div className="flex flex-col gap-2">
       {primary ? <ActionEl a={primary} className="btn btn-primary w-full px-5 py-4 disabled:opacity-60" /> : null}
@@ -72,6 +83,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
         />
       ) : null}
       {tertiary ? <ActionEl a={tertiary} className="btn muted w-full px-5 py-2.5 text-strong" /> : null}
+      {closeAction ? <ActionEl a={closeAction} className="btn muted w-full px-5 py-2.5 text-strong" /> : null}
     </div>
   );
 }
@@ -206,10 +218,10 @@ export function FlowNote({ icon, text, tone = "neutral" }: { icon?: ReactNode; t
   const ink = tone === "ok" ? "var(--color-mint)" : tone === "warn" ? "var(--color-flame)" : tone === "bad" ? "var(--color-rose)" : undefined;
   return (
     <p
-      className={`flex items-center gap-2 rounded-panel px-3 py-2 text-caption ${fill ? "" : "surface-2"}`}
+      className={`flex items-start gap-2 rounded-panel px-3 py-2 text-caption ${fill ? "" : "surface-2"}`}
       style={fill ? { background: `color-mix(in srgb, ${fill} 14%, transparent)`, color: ink } : undefined}
     >
-      {icon}
+      {icon ? <IconLine>{icon}</IconLine> : null}
       <span className="min-w-0 flex-1">{text}</span>
     </p>
   );
@@ -253,21 +265,25 @@ export function CoverBody({
       {rules.length ? (
         <ul className="card flex flex-col gap-3 p-4">
           {rules.map((r, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span
-                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-chip ${r.tone ? "" : "surface-2 muted"}`}
-                style={
-                  r.tone
-                    ? {
-                        background: `color-mix(in srgb, var(--color-${r.tone === "ok" ? "mint" : "rose"}-500) 14%, transparent)`,
-                        color: `var(--color-${r.tone === "ok" ? "mint" : "rose"})`,
-                      }
-                    : undefined
-                }
-              >
-                {r.icon}
-              </span>
-              <span className="pt-0.5 text-body">{r.text}</span>
+            <li key={i} className="flex items-start gap-3 text-body">
+              {/* Karo bir satırdan yüksek: yazının ilk satırı karonun ortasına
+                  iniyor (`lineInset`), eski `pt-0.5` yaması yerine. */}
+              <IconLine box="1.75rem">
+                <span
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-chip ${r.tone ? "" : "surface-2 muted"}`}
+                  style={
+                    r.tone
+                      ? {
+                          background: `color-mix(in srgb, var(--color-${r.tone === "ok" ? "mint" : "rose"}-500) 14%, transparent)`,
+                          color: `var(--color-${r.tone === "ok" ? "mint" : "rose"})`,
+                        }
+                      : undefined
+                  }
+                >
+                  {r.icon}
+                </span>
+              </IconLine>
+              <span style={lineInset("1.75rem")}>{r.text}</span>
             </li>
           ))}
         </ul>

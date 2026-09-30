@@ -17,6 +17,7 @@ import { todayStr } from "../game/session";
 import { bumpStats, useStatsBump } from "../lib/statsSignal";
 import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { barPct } from "./Bar";
 
 /**
  * Görevin GÖTÜRDÜĞÜ yer.
@@ -63,7 +64,7 @@ function QuestRow({ q, colors, onClaim, busy, onOpen, last }: { q: Quest; colors
         )}
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: 2 }}>
           <View style={{ flex: 1, height: 4, borderRadius: 2, backgroundColor: colors.surface2, overflow: "hidden" }}>
-            <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: complete ? colors.success : colors.primary, borderRadius: 2 }} />
+            <View style={{ height: "100%", width: `${barPct(pct, 3)}%`, backgroundColor: complete ? colors.success : colors.primary, borderRadius: 2 }} />
           </View>
           <Text variant="micro" color={colors.textMuted}>{Math.min(q.done, q.target)}/{q.target}</Text>
         </View>

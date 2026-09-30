@@ -21,6 +21,7 @@ import { StateBody, FlowActions } from "../ui/flow";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { ScreenHeader } from "../social/common";
 import { useTheme, spacing, radii, type Palette, ds } from "../theme";
+import { IconLine, lineInset } from "../ui/IconLine";
 
 /** Silinecekler — t() çağrı anında okunsun diye fonksiyon (dil modül yüklenirken hazır değil). */
 function losses(guest = false): string[] {
@@ -36,11 +37,13 @@ function losses(guest = false): string[] {
 
 function LossRow({ text, colors }: { text: string; colors: Palette }) {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm }}>
-      <View style={{ width: 28, height: 28, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: colors.dangerSoft }}>
-        <WrongIcon color={colors.dangerText} size={16} />
-      </View>
-      <Text variant="body" style={{ flex: 1 }}>{text}</Text>
+    <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.md, paddingVertical: spacing.sm }}>
+      <IconLine variant="body" box={28}>
+        <View style={{ width: 28, height: 28, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: colors.dangerSoft }}>
+          <WrongIcon color={colors.dangerText} size={16} />
+        </View>
+      </IconLine>
+      <Text variant="body" style={{ flex: 1, paddingTop: lineInset("body", 28) }}>{text}</Text>
     </View>
   );
 }

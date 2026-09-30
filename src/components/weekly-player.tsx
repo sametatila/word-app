@@ -5,7 +5,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { T, fillX } from "@/lib/motion";
-import { RoundExit, ResultTopBar } from "@/components/round-exit";
+import { RoundExit } from "@/components/round-exit";
 import { COURSE_KEY, SpeakButton, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "@/components/flow";
 import { COVERS, CoverSkeleton } from "@/components/flow-skeleton";
@@ -157,7 +157,7 @@ export function WeeklyPlayer() {
     return (
       <FlowColumn>
         <StateBody title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockedIcon size={40} />} />
-        <FlowActions primary={{ label: t("weekly.sign_in_sign_up"), href: "/login" }} secondary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
+        <FlowActions primary={{ label: t("weekly.sign_in_sign_up"), href: "/login" }} close="/learn" />
       </FlowColumn>
     );
   }
@@ -166,7 +166,7 @@ export function WeeklyPlayer() {
     return (
       <FlowColumn>
         <StateBody alert title={t("weekly.couldn_t_load_weekly_quiz")} icon={<WarningIcon size={40} />} />
-        <FlowActions primary={{ label: t("weekly.try_again"), onClick: () => setAttempt((a) => a + 1) }} secondary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
+        <FlowActions primary={{ label: t("weekly.try_again"), onClick: () => setAttempt((a) => a + 1) }} close="/learn" />
       </FlowColumn>
     );
   }
@@ -175,7 +175,7 @@ export function WeeklyPlayer() {
     return (
       <FlowColumn>
         <StateBody title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<WeeklyTestIcon size={40} />} />
-        <FlowActions primary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
+        <FlowActions primary={{ label: t("common.close"), href: "/learn" }} />
       </FlowColumn>
     );
   }
@@ -200,7 +200,7 @@ export function WeeklyPlayer() {
         />
         <FlowActions
           primary={{ label: t("wquiz.start"), onClick: () => { setPhase("playing"); track("session_start", 0, "weekly"); } }}
-          secondary={{ label: t("weekly.back_to_learn"), href: "/learn" }}
+          close="/learn"
         />
       </FlowColumn>
     );
@@ -269,8 +269,6 @@ export function WeeklyPlayer() {
     const wrong = score.items.filter((i) => !i.correct);
     return (
       <FlowColumn celebrate={score.pct >= 90}>
-        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Öğren'e dön"le aynı çıkış. */}
-        <ResultTopBar href="/learn" />
         <ResultHero
           eyebrow={t("learn.weekly_quiz")}
           title={t(score.band)}
@@ -333,7 +331,7 @@ export function WeeklyPlayer() {
 
         {notSent ? <FlowNote tone="bad" icon={<WarningIcon size={16} />} text={t("wquiz.not_sent")} /> : null}
         <FlowNote icon={<WeeklyTestIcon size={16} />} text={t("wquiz.once_a_week")} />
-        <FlowActions primary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
+        <FlowActions primary={{ label: t("common.close"), href: "/learn" }} />
       </FlowColumn>
     );
   }

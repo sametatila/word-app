@@ -14,6 +14,7 @@ import { EmptyCard, Pill, SectionTitle } from "../social/common";
 import { WarningIcon } from "../ui/icons";
 import { SOCIAL_LIMITS } from "../lib/profileDefaults";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
+import { FIELD, insetEdge } from "../ui/Field";
 
 /** Görünürlük seçenekleri — anahtar tutar, çeviri render sırasında çözülür. */
 const VIS: { key: Visibility; label: string; sub: string }[] = [
@@ -172,7 +173,10 @@ export function SocialPrivacy() {
       {/* Gorunurluk gercek bir radyo grubu - yanindaki nokta da onu
           ciziyor - ama rol bilgisi yoktu: secili satir yalnizca yazi
           renginden ve noktadan okunuyordu. Webde `aria-pressed` var. */}
+      {/* Üç bölüm de basılabilir kutu içi liste (`ui/Field`): ilk satırın
+          üstünde fazladan 12 vardı, kartın kenarında 28 oluyordu. */}
       <Section title={tx("socialsettings.visibility")}>
+        <View style={insetEdge}>
         {VIS.map((v, i) => {
           const active = me.visibility === v.key;
           return (
@@ -185,18 +189,21 @@ export function SocialPrivacy() {
             </PressableScale>
           );
         })}
+        </View>
       </Section>
 
       <Section title={tx("socialsettings.permissions")}>
+        <View style={insetEdge}>
         {toggle(tx("socialsettings.perm_requests"), tx("socialsettings.perm_requests_sub"), me.allowRequests, (v) => void save({ allowRequests: v }), true)}
         {toggle(tx("socialsettings.perm_suggest"), tx("socialsettings.perm_suggest_sub"), me.showInSuggestions, (v) => void save({ showInSuggestions: v }))}
         {toggle(tx("socialsettings.perm_activity"), tx("socialsettings.perm_activity_sub"), me.showActivity, (v) => void save({ showActivity: v }))}
+        </View>
         <SaveLine msg={msg} ok={ok} />
       </Section>
 
       <Section title={tx("socialsettings.blocked_title")}>
-        {blocked === null ? <SkeletonLine variant="caption" width="60%" /> : blocked.length ? blocked.map((b, i) => (
-          <View key={b.userId} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+        {blocked === null ? <SkeletonLine variant="caption" width="60%" /> : blocked.length ? <View style={insetEdge}>{blocked.map((b, i) => (
+          <View key={b.userId} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: FIELD.row, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
             <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={36} />
             <View style={{ flex: 1 }}>
               <Text variant="bodyStrong" numberOfLines={1}>{b.name ?? tx("social.unnamed_short")}</Text>
@@ -204,7 +211,7 @@ export function SocialPrivacy() {
             </View>
             <Pill label={tx("socialsettings.remove")} small tone="ghost" disabled={busy} onPress={() => { setBusy(true); social.unblock(b.userId).then(() => setBlocked((p) => (p ?? []).filter((x) => x.userId !== b.userId))).catch((e) => { setMsg(errorText(e)); setOk(false); }).finally(() => setBusy(false)); }} />
           </View>
-        )) : <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.you_haven_t_blocked_anyone")}</Text>}
+        ))}</View> : <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.you_haven_t_blocked_anyone")}</Text>}
       </Section>
     </>
   );

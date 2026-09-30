@@ -5,7 +5,7 @@ import { PressableScale } from "./PressableScale";
 import { Text } from "./Text";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { spacing, radii, useTheme, cardShadow } from "../theme";
-import { useLayout } from "../lib/useLayout";
+import { TAB_BAR_MAX_WIDTH } from "../lib/useLayout";
 import { TAB_BAR_SPACE } from "./Screen";
 import { currentLang, t } from "../lib/i18n";
 import { fetchServerConfig, type AppControl } from "../lib/serverConfig";
@@ -159,15 +159,15 @@ export function AppGate() {
  * İki kopyaydı ve ikisi de `bottom: 60` ile sabit duruyordu: güvenli alanı
  * bilmiyor, iPhone'da yüzen sekme çubuğunun üstüne biniyor, tablette kolonu
  * değil bütün ekranı kaplıyordu. Şimdi sekme çubuğunun üstünde, onunla aynı
- * kolonda ve kart yüzeyinde (saç çizgisi + kart gölgesi).
+ * genişlikte (`TAB_BAR_MAX_WIDTH`, tablette de telefon kolonu) ve kart
+ * yüzeyinde (saç çizgisi + kart gölgesi).
  */
 function GateBanner({ text, onLater, action, onAction, busy = false }: { text: string; onLater: () => void; action: string; onAction: () => void; busy?: boolean }) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const { contentWidth } = useLayout();
   return (
     <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, bottom: insets.bottom + TAB_BAR_SPACE, alignItems: "center" }}>
-      <View style={{ width: "100%", maxWidth: contentWidth, paddingHorizontal: spacing.lg }}>
+      <View style={{ width: "100%", maxWidth: TAB_BAR_MAX_WIDTH, paddingHorizontal: spacing.lg }}>
       <View
         accessibilityLiveRegion="polite"
         style={[{ borderRadius: radii.lg, backgroundColor: colors.surface, borderColor: colors.hairline, borderWidth: 1, padding: spacing.md, gap: spacing.sm }, cardShadow(colors, 16)]}

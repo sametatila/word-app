@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useLayout } from "../lib/useLayout";
+import { TAB_BAR_MAX_WIDTH } from "../lib/useLayout";
 import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useTheme, radii, spacing, cardShadow } from "../theme";
 import { Text } from "../ui/Text";
@@ -18,17 +18,17 @@ const ICONS: Record<string, (p: { color: string; size: number }) => React.ReactE
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const { contentWidth } = useLayout();
   return (
     // Çubuk ekran kadar geniş bir alanın içinde duruyor (kolon kökte değil,
     // bkz. ui/ContentColumn). Yüzen hap serbest bırakılsaydı yatay tablette
     // 1300dp'ye yayılır, sekmeler birbirinden avuç içi kadar uzağa düşerdi.
-    // İçerikle AYNI kolona göre ölçülüyor: hap, üstündeki kartlarla aynı
-    // kenarlarda duruyor ve hiçbir ekranda ondan geniş ya da dar değil.
-    // Telefonda ölçü birebir eskisi: kolon bağlamıyor, yatay dolgu eski
+    // Tavan TELEFON KOLONU (`TAB_BAR_MAX_WIDTH`, 2026-09-30 Samet): içerik
+    // kolonuna göre ölçülünce tablette 1120dp'ye kadar uzuyor, dört sekme
+    // birbirinden kopuyordu. Tablette ortada, telefon genişliğinde duruyor.
+    // Telefonda ölçü birebir eskisi: tavan bağlamıyor, yatay dolgu eski
     // left/right kenar boşluğunun yerini alıyor.
     <View style={{ position: "absolute", left: 0, right: 0, bottom: insets.bottom + spacing.sm, alignItems: "center" }}>
-      <View style={{ width: "100%", maxWidth: contentWidth, paddingHorizontal: spacing.lg }}>
+      <View style={{ width: "100%", maxWidth: TAB_BAR_MAX_WIDTH, paddingHorizontal: spacing.lg }}>
       <View style={[{ flexDirection: "row", backgroundColor: colors.surface, borderRadius: radii.xxl, padding: 7, borderWidth: 1, borderColor: colors.hairline }, cardShadow(colors, 16)]}>
         {state.routes.map((route, i) => {
           const focused = state.index === i;

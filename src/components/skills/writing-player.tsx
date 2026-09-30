@@ -23,6 +23,7 @@ import { courseName } from "@/lib/courses";
 import { RUBRIC_PASS_PCT, SCORE_MID_PCT, SKILL_DONE_PCT } from "@/lib/score-bands";
 import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
 import { vibrate } from "@/lib/fx";
+import { IconLine } from "@/components/icon-line";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -272,7 +273,9 @@ function BuildTask({
 
       {phase === "correct" ? (
         <p className="mt-3 flex items-start gap-2 text-strong text-[color:var(--color-mint)]">
-          <CorrectIcon size={17} className="mt-0.5 shrink-0" />
+          <IconLine>
+            <CorrectIcon size={17} />
+          </IconLine>
           <span lang={lang}>{task.answer}</span>
         </p>
       ) : null}
@@ -546,15 +549,17 @@ function FreeTask({
             onClick={() => setChecks(checks.map((c, ci) => (ci === i ? !c : c)))}
             className="flex w-full items-start gap-2.5 text-left text-body"
           >
-            <span
-              className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border on-fill"
-              style={{
-                borderColor: checks[i] ? "var(--color-mint)" : "var(--border)",
-                background: checks[i] ? "var(--color-mint)" : "transparent",
-              }}
-            >
-              {checks[i] ? <CheckIcon size={13} /> : null}
-            </span>
+            <IconLine>
+              <span
+                className="flex h-5 w-5 items-center justify-center rounded-md border on-fill"
+                style={{
+                  borderColor: checks[i] ? "var(--color-mint)" : "var(--border)",
+                  background: checks[i] ? "var(--color-mint)" : "transparent",
+                }}
+              >
+                {checks[i] ? <CheckIcon size={13} /> : null}
+              </span>
+            </IconLine>
             <span className={checks[i] ? "" : "muted"}>{item}</span>
           </button>
         ))}

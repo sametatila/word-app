@@ -10,6 +10,7 @@ import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando, type CandoSkill } fro
 import { CardGrid } from "@/components/layout";
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT } from "@/lib/i18n/client";
+import { barPct } from "@/lib/motion";
 
 type Item = { cando: Cando; state: "proven" | "progressing" | "none"; done: number; total: number };
 type Data = { level: string; items: Item[]; byLevel: Record<CefrLevel, { proven: number; total: number }> };
@@ -172,7 +173,7 @@ export function CandoCard() {
               <div className="h-[7px] overflow-hidden rounded-[4px]" style={{ background: "var(--surface-2)" }}>
                 <div
                   className="h-full rounded-[4px]"
-                  style={{ width: `${Math.max(2, pct)}%`, background: "var(--color-mint)" }}
+                  style={{ width: `${barPct(pct, 2)}%`, background: "var(--color-mint)" }}
                 />
               </div>
             </div>

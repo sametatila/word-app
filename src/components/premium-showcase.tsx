@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useT } from "@/lib/i18n/client";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * Premium ekranının ürün vitrini — "yapay zekâyla konuşarak çalış" sözünün
@@ -149,10 +150,12 @@ function Fix({ fix, why }: { fix: string; why: string }) {
       className="flex items-start gap-2 rounded-tile px-3 py-2.5 text-caption"
       style={{ background: "color-mix(in srgb, var(--color-mint-500) 12%, transparent)" }}
     >
-      <svg aria-hidden width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0" style={{ color: "var(--color-mint)" }}>
-        <path d="M12 3v2M12 19v2M5 12H3M21 12h-2" />
-        <circle cx="12" cy="12" r="4" />
-      </svg>
+      <IconLine>
+        <svg aria-hidden width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--color-mint)" }}>
+          <path d="M12 3v2M12 19v2M5 12H3M21 12h-2" />
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+      </IconLine>
       <span>
         <b>{fix}</b> <span className="muted">{why}</span>
       </span>

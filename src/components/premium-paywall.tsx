@@ -15,6 +15,7 @@ import { PremiumShowcase } from "@/components/premium-showcase";
 import { BackButton } from "@/components/page-back";
 import type { StoreLinks, WebPlatform } from "@/lib/store-link";
 import { premiumManageKey, premiumStateKey, type PremiumStatusView } from "@/lib/premium/state-copy";
+import { IconLine } from "@/components/icon-line";
 
 type FairUse = { walkRoundsPerDay: number; aiPracticePerDay: number; chatTurnsPerDay: number };
 
@@ -308,9 +309,9 @@ function Bullets({ items, columns = false }: { items: { title: string; cap?: str
     <ul className={columns ? "grid gap-x-7 gap-y-3.5 sm:grid-cols-2" : "flex flex-col gap-3"}>
       {items.map((b) => (
         <li key={b.title} className="flex items-start gap-2.5">
-          <span className="mt-0.5 shrink-0" style={{ color: "var(--brand-fill)" }}>
+          <IconLine className="text-strong" style={{ color: "var(--brand-fill)" }}>
             <CheckIcon size={20} />
-          </span>
+          </IconLine>
           <span className="flex min-w-0 flex-col">
             <span className="text-strong">{b.title}</span>
             {b.cap && <span className="muted text-caption">{b.cap}</span>}
@@ -420,8 +421,10 @@ function PlanCard({
 
 function Step({ dot, title, text, faded = false }: { dot: string; title: string; text: string; faded?: boolean }) {
   return (
-    <li className="flex items-baseline gap-2.5">
-      <span className="h-2 w-2 shrink-0 translate-y-[-1px] rounded-full" style={{ background: dot, opacity: faded ? 0.5 : 1 }} />
+    <li className="flex items-start gap-2.5">
+      <IconLine>
+        <span className="h-2 w-2 rounded-full" style={{ background: dot, opacity: faded ? 0.5 : 1 }} />
+      </IconLine>
       <span>
         <b>{title}</b> <span className="muted">{text}</span>
       </span>

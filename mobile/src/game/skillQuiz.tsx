@@ -27,6 +27,7 @@ import { useAuth } from "../lib/AuthContext";
 import { ReportLink, assessmentRef } from "../ui/ReportLink";
 import { ReportFlag } from "../ui/ReportFlag";
 import type { ReportSurface } from "../lib/report";
+import { IconLine } from "../ui/IconLine";
 
 /**
  * Soruların içerik bildirimi — hangi alıştırma, hangi yüzey. Sağlayan ekran
@@ -396,8 +397,8 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
       ) : null}
 
       {phase === "correct" ? (
-        <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.sm, alignItems: "center" }}>
-          <CorrectIcon color={colors.successText} size={16} />
+        <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.sm, alignItems: "flex-start" }}>
+          <IconLine variant="bodyStrong"><CorrectIcon color={colors.successText} size={16} /></IconLine>
           <Text variant="bodyStrong" color={colors.successText} style={{ flex: 1 }}>{t.answer}</Text>
         </View>
       ) : null}

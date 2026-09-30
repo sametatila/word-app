@@ -105,21 +105,18 @@ export function WeeklyScreen() {
 
   /* ── Durumlar ───────────────────────────────────────────────────────── */
 
-  /* Yükleme KAPAĞIN iskeleti (üst çubuk, üç kural, not, Başla + Kapat):
+  /* Yükleme KAPAĞIN iskeleti (üç kural, not, Başla + Kapat):
      yüklenince gelen ekran kapak. Kaydetme bir durum, durum şablonu kalıyor. */
   if (phase === "loading") {
     /* Başlık haftanın teması (veri): tahmini uzunlukta; soru sayısı sınavın sabiti (web `QUIZ_ITEMS` 10). */
     return (
       <CoverSkeleton
         label={t("wquiz.preparing")}
-        top
         eyebrow={t("learn.weekly_quiz")}
         title={skeletonFiller(22)}
         pitch={t("wquiz.pitch")}
         rules={[t("wquiz.rule_count", { n: 10 }), t("wquiz.rule_once"), t("wquiz.rule_explain")]}
         note={t("wquiz.no_pass_mark")}
-        secondary
-        tertiary={false}
       />
     );
   }
@@ -133,11 +130,7 @@ export function WeeklyScreen() {
 
   if (phase === "auth") {
     return (
-      <FlowScreen
-        top={<FlowTopBar onClose={close} />}
-        center
-        actions={<FlowActions primary={{ label: t("weekly.sign_in_sign_up"), onPress: () => nav.navigate("Auth") }} secondary={{ label: t("common.close"), onPress: close }} />}
-      >
+      <FlowScreen center actions={<FlowActions primary={{ label: t("weekly.sign_in_sign_up"), onPress: () => nav.navigate("Auth") }} close={close} />}>
         <StateBody title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockedIcon color={colors.textMuted} size={40} />} />
       </FlowScreen>
     );
@@ -145,11 +138,7 @@ export function WeeklyScreen() {
 
   if (phase === "error") {
     return (
-      <FlowScreen
-        top={<FlowTopBar onClose={close} />}
-        center
-        actions={<FlowActions primary={{ label: t("weekly.try_again"), onPress: () => setAttempt((a) => a + 1) }} secondary={{ label: t("common.close"), onPress: close }} />}
-      >
+      <FlowScreen center actions={<FlowActions primary={{ label: t("weekly.try_again"), onPress: () => setAttempt((a) => a + 1) }} close={close} />}>
         <StateBody alert title={t("weekly.couldn_t_load_weekly_quiz")} icon={<WarningIcon color={colors.dangerText} size={40} />} />
       </FlowScreen>
     );
@@ -157,11 +146,7 @@ export function WeeklyScreen() {
 
   if (phase === "empty") {
     return (
-      <FlowScreen
-        top={<FlowTopBar onClose={close} />}
-        center
-        actions={<FlowActions primary={{ label: t("common.close"), onPress: close }} />}
-      >
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: close }} />}>
         <StateBody title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<WeeklyTestIcon color={colors.textMuted} size={40} />} />
       </FlowScreen>
     );
@@ -172,11 +157,10 @@ export function WeeklyScreen() {
   if (phase === "ready" && quiz) {
     return (
       <FlowScreen
-        top={<FlowTopBar onClose={close} />}
         actions={
           <FlowActions
             primary={{ label: t("wquiz.start"), onPress: () => { setPhase("playing"); track("session_start", 0, "weekly"); } }}
-            secondary={{ label: t("common.close"), onPress: close }}
+            close={close}
           />
         }
       >
@@ -242,9 +226,8 @@ export function WeeklyScreen() {
     const wrong = score.items.filter((i) => !i.correct);
     return (
       <FlowScreen
-        top={<FlowTopBar onClose={close} />}
         celebrate={score.pct >= 90}
-        actions={<FlowActions primary={{ label: t("common.finish"), onPress: close }} />}
+        actions={<FlowActions primary={{ label: t("common.close"), onPress: close }} />}
       >
         <ResultHero
           eyebrow={t("learn.weekly_quiz")}

@@ -70,8 +70,9 @@ export default async function ImmersionSkillPage({
         <StateBody icon={<LockedIcon size={40} />} title={t("gate.premium_only")} body={lockedNote} />
         {quota ? <UnlockProgress copy={quota.copy} /> : null}
         <FlowActions
-          primary={quota ? null : { label: t("gate.see_plans"), href: "/premium" }}
-          tertiary={{ label: t("item.back_to_skills"), href: `/skills?level=${source.level}` }}
+          /* Çıkış "Kapat" (2026-09-30); tek eylemse birincil. */
+          primary={quota ? { label: t("common.close"), href: `/skills?level=${source.level}` } : { label: t("gate.see_plans"), href: "/premium" }}
+          close={quota ? null : `/skills?level=${source.level}`}
         />
       </FlowColumn>
     );
@@ -103,7 +104,6 @@ export default async function ImmersionSkillPage({
   const frame: PlayerFrameValue = {
     lang: targetLangOf(exercise),
     backHref,
-    backLabel: fromSkills ? "item.back_to_skills" : "conversation.back_to_path",
     next: fromSkills && isLibraryExercise(exercise) ? await nextInLibrary(exercise.id, exercise.course ?? "de", exercise.level, exercise.skill) : null,
   };
 

@@ -16,6 +16,7 @@ import {
 } from "../lib/aiConsent";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { ContentColumn } from "./ContentColumn";
+import { IconLine, lineInset } from "./IconLine";
 
 /**
  * Yapay zekâ işleme rızası ekranı — web `components/ai-consent-dialog`in karşılığı.
@@ -53,10 +54,13 @@ function copyOf(purpose: AiConsentPurpose) {
 function Point({ text, colors }: { text: string; colors: Palette }) {
   return (
     <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "flex-start" }}>
-      <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center", marginTop: 2 }}>
-        <CheckIcon color={colors.primaryText} size={14} />
-      </View>
-      <Text variant="body" style={{ flex: 1 }}>{text}</Text>
+      {/* Daire (24) satırdan yüksek: ilk satır dairenin ortasına iniyor. */}
+      <IconLine variant="body" box={24}>
+        <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}>
+          <CheckIcon color={colors.primaryText} size={14} />
+        </View>
+      </IconLine>
+      <Text variant="body" style={{ flex: 1, paddingTop: lineInset("body", 24) }}>{text}</Text>
     </View>
   );
 }
@@ -173,7 +177,11 @@ export function AiConsentSheet({ purpose, onDone }: { purpose: AiConsentPurpose 
             <Text variant="bodyStrong" color={colors.primaryText}>{t("micdisclosure.read_privacy_policy")}</Text>
           </PressableScale>
         </ScrollView>
-        <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.lg, paddingTop: spacing.sm, gap: spacing.sm }}>
+        {/* Dip dolgusu öteki bilgi ekranlarıyla aynı (`FlowScreen`: üst sm, alt
+            güvenli alan + md). Düğmeler elle: ret ÇERÇEVELİ düğme, metin
+            bağlantısı değil — rıza reddi kabul kadar kolay görünmeli, adı da
+            "Kapat" değil kendi anlamı ("Yapay zekâsız devam et"). */}
+        <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, gap: spacing.sm }}>
           {saveFailed ? <Text variant="caption" color={colors.dangerText} accessibilityLiveRegion="assertive" style={{ textAlign: "center" }}>{t("aiconsent.save_failed")}</Text> : null}
           <PressableScale onPress={allow} disabled={!canAllow} accessibilityRole="button" accessibilityState={{ disabled: !canAllow }} style={[{ borderRadius: radii.lg, backgroundColor: canAllow ? colors.primary : colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }, canAllow ? softShadow(colors.primary, 10) : {}]}>
             {busy === "allow" ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="h3" color={canAllow ? colors.onPrimary : colors.textFaint}>{t("aiconsent.allow")}</Text>}

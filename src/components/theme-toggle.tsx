@@ -135,6 +135,7 @@ export function ThemeSetting({ bare = false }: { bare?: boolean } = {}) {
   // `bare`: bölümün etiketi ("GÖRÜNÜM") zaten adı söylüyor; satır başlığı
   // aynı kelimeyi ikinci kez yazardı. Mobilde de etiketin altında doğrudan
   // üçlü segment var.
-  if (bare) return <div className="px-4 py-3">{segment}</div>;
+  // Pay yok: kutunun `Row`u veriyor (`components/field.tsx`).
+  if (bare) return <div>{segment}</div>;
   return <SettingRow title={t("theme.appearance")}>{segment}</SettingRow>;
 }

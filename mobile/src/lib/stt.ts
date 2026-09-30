@@ -70,7 +70,8 @@ export async function ensureMicPermission(): Promise<boolean> {
       title: t("micperm.microphone_permission"),
       message: t("micperm.walk_mode_needs_microphone_to"),
       buttonPositive: t("micperm.allow"),
-      buttonNegative: t("common.discard"),
+      /* İzin gerekçesinin ikinci düğmesi öteki izin ekranlarındaki gibi "Kapat". */
+      buttonNegative: t("common.close"),
     });
     return g === PermissionsAndroid.RESULTS.GRANTED;
   } catch {
@@ -103,7 +104,7 @@ export async function ensureWalkNotificationPermission(): Promise<boolean> {
       title: t("walkmode.notif_perm_title"),
       message: t("walkmode.notif_perm_message"),
       buttonPositive: t("micperm.allow"),
-      buttonNegative: t("common.discard"),
+      buttonNegative: t("common.close"),
     });
     return res === PermissionsAndroid.RESULTS.GRANTED;
   } catch {

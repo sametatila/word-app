@@ -72,7 +72,8 @@ export function ChangePassword() {
 
   return (
     <Row label={t("settings.sec_password")}>
-        {done ? <AuthNotice tone="success">{t("changepw.done")}</AuthNotice> : null}
+        {/* Bildirim → alttaki blok 12 (`components/field.tsx`); yapışıktı. */}
+        {done ? <div className="mb-3"><AuthNotice tone="success">{t("changepw.done")}</AuthNotice></div> : null}
 
         {open ? (
           <form onSubmit={submit} className="space-y-3">

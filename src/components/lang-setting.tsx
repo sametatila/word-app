@@ -91,7 +91,9 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
 
   if (bare) {
     return (
-      <div className="px-4 py-3">
+      /* Pay yok: `bare` yalnız ayar kutusunun `Row`unda, kutu 16'yı veriyor
+         (`components/field.tsx`); `px-4 py-3` üstüne biniyordu. */
+      <div>
         {chips}
         <p className="muted mt-2 text-caption leading-snug">{t("lang.app_language_sub")}</p>
       </div>

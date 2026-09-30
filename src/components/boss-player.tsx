@@ -10,7 +10,7 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
-import { RoundExit, ResultTopBar } from "@/components/round-exit";
+import { RoundExit } from "@/components/round-exit";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { CountUp } from "@/components/celebrate";
@@ -281,7 +281,7 @@ export function BossPlayer({
     return (
       <FlowColumn>
         <StateBody alert title={t("exam.could_not_load")}>
-          <FlowActions primary={{ label: t("common.try_again"), onClick: () => void load() }} tertiary={{ label: t("common.go_back"), onClick: onExit }} />
+          <FlowActions primary={{ label: t("common.try_again"), onClick: () => void load() }} close={onExit} />
         </StateBody>
       </FlowColumn>
     );
@@ -289,10 +289,11 @@ export function BossPlayer({
   if (status === "empty")
     return (
       /* "Henüz hazır değil" bir bekleyiş (think). Tekrar denemek burada
-         anlamsız - aynı cevap gelir; tek çıkış çerçeveli "Geri dön". */
+         anlamsız - aynı cevap gelir; tek çıkış birincil "Kapat" (tek eylem
+         çıkışsa birincil, bilgi ekranlarının ortak kuralı). */
       <FlowColumn>
         <StateBody alert title={t("boss.not_ready")} body={t("boss.not_ready_sub")}>
-          <FlowActions secondary={{ label: t("common.go_back"), onClick: onExit }} />
+          <FlowActions primary={{ label: t("common.close"), onClick: onExit }} />
         </StateBody>
       </FlowColumn>
     );
@@ -323,7 +324,7 @@ export function BossPlayer({
         </CoverBody>
         <FlowActions
           primary={{ label: t(best !== null ? "boss.beat_record" : "boss.enter"), onClick: start }}
-          tertiary={{ label: t("bossw.back_to_path"), onClick: onExit }}
+          close={onExit}
         />
       </FlowColumn>
     );
@@ -340,8 +341,6 @@ export function BossPlayer({
         duyuruyor (bkz. 11.337).
       */
       <FlowColumn celebrate={won}>
-        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Patikaya dön"le aynı çıkış. */}
-        <ResultTopBar onExit={onExit} />
         <ResultHero
           eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
           title={t(won ? "boss.passed" : "boss.time_up")}
@@ -368,7 +367,7 @@ export function BossPlayer({
           ]}
         />
         {!won ? <FlowNote icon={<RetryIcon size={16} />} text={t("bossw.still_counted")} /> : null}
-        <FlowActions primary={{ label: t("bossw.play_again"), onClick: start }} tertiary={{ label: t("bossw.back_to_path"), onClick: onExit }} />
+        <FlowActions primary={{ label: t("bossw.play_again"), onClick: start }} close={onExit} />
       </FlowColumn>
     );
   }
@@ -421,7 +420,7 @@ export function BossPlayer({
         title={t("game.quit_round_2")}
         message={t("game.exit_message_timed")}
         confirmLabel={t("common.exit")}
-        cancelLabel={t("common.continue_2")}
+        cancelLabel={t("common.continue")}
         destructive
         onConfirm={() => {
           setConfirmExit(false);

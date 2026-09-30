@@ -6,6 +6,7 @@ import { PressableScale } from "./PressableScale";
 import { listSessions, revokeOtherSessions, revokeSession, type ActiveSession, type SessionsResult } from "../lib/sessions";
 import { spacing, radii, type Palette } from "../theme";
 import { SessionRowSkeleton } from "./SettingsSkeleton";
+import { FIELD, InsetList } from "./Field";
 
 /**
  * Etkin oturumlar — web'deki bölümün eşi.
@@ -51,12 +52,16 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
   const satirlar: ActiveSession[] = result?.state === "ok" ? result.rows : [];
 
   return (
-    <View style={{ gap: spacing.sm }}>
+    /* Liste, durum satırları ve alt satır art arda bloklar: arası 12; liste
+       kutu içi liste (`ui/Field`, web `ActiveSessions` aynı sayılar). */
+    <View style={{ gap: FIELD.stack }}>
       {result ? null : <SessionRowSkeleton colors={colors} />}
-      {satirlar.map((s, i) => (
+      {satirlar.length ? (
+      <InsetList>
+      {satirlar.map((s) => (
         <View
           key={s.id}
-          style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}
+          style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}
         >
           <View style={{ flex: 1 }}>
             <Text variant="bodyStrong">{cihazAdi(s.userAgent)}</Text>
@@ -74,6 +79,8 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
           </PressableScale>
         </View>
       ))}
+      </InsetList>
+      ) : null}
 
       {/* İKİ DURUM SATIRI DA DUYURULUYOR. "Oturumu tazele" ve "liste
           yüklenemedi" bir eylemin cevabı: kullanıcı düğmeye basıyor, odak

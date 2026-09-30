@@ -173,7 +173,7 @@ export function LinkedAccounts({
         {nameRow}
         <Row label={t("links.title")}>
           {accounts ? (
-          <div className="-my-2 divide-y divide-[color:var(--hairline)]">
+          <div className="inset-list">
           {satirlar.map((p) => {
             const bagli = bagliMi(p);
             const etiket = ETIKET[p] ?? { ad: p, alt: "" };

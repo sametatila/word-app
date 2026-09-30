@@ -27,6 +27,11 @@ import { useWindowDimensions } from "react-native";
  * değiştirir — istenen de bu, ekran başına genişlik yok.
  */
 export const PHONE_MAX_WIDTH = 520;
+/** Yüzen sekme çubuğunun (ve ona hizalı alt şeridin) tavanı: tablette de
+ *  telefon kolonu. İçerik kolonuna (1120'ye kadar) yayılınca dört sekme
+ *  birbirinden avuç içi kadar uzağa düşüyordu (2026-09-30 Samet). Telefonda
+ *  bağlamıyor, çubuk birebir eskisi. */
+export const TAB_BAR_MAX_WIDTH = PHONE_MAX_WIDTH;
 /** Tabletin başladığı genişlik — Android'in sw600dp kırılımı. Yönelim kilidi
  *  (`MainActivity`) de aynı sayıya bakıyor; `check:parity` ikisini karşılaştırıyor. */
 export const TABLET_MIN_WIDTH = 600;

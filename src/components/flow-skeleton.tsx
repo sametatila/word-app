@@ -152,7 +152,7 @@ export const COVERS = {
     title: tk("onboarding.kisa_yerlestirme_sinavi"),
     pitch: tk("plc.cover_pitch"),
     rules: ["plc.rule_stages", "plc.rule_time", "plc.rule_dont_know", "plc.rule_result", "plc.rule_choose"].map((k) => tk(k)),
-    tertiary: tk("common.later"),
+    tertiary: tk("common.close"),
   },
   challenge: {
     eyebrow: tk("learn.survival"),
@@ -160,7 +160,7 @@ export const COVERS = {
     /* `START_SECONDS` (challenge-player). */
     pitch: tk("challenge.pitch", { n: 40 }),
     rules: [tk("challenge.rule_correct"), tk("challenge.rule_wrong"), tk("challenge.rule_waves")],
-    tertiary: tk("common.discard"),
+    tertiary: tk("common.close"),
   },
   boss: {
     /* Örnek değerler `lib/conversations/boss` sabitlerinden; modül adı veri. */
@@ -172,7 +172,7 @@ export const COVERS = {
       tk("bossw.rule_crown"),
       tk("bossw.rule_pool", { n: 120 }),
     ],
-    tertiary: tk("bossw.back_to_path"),
+    tertiary: tk("common.close"),
   },
   weekly: {
     eyebrow: tk("learn.weekly_quiz"),
@@ -180,7 +180,7 @@ export const COVERS = {
     pitch: tk("wquiz.pitch"),
     rules: [tk("wquiz.rule_count", { n: 20 }), tk("wquiz.rule_once"), tk("wquiz.rule_explain")],
     note: [tk("wquiz.no_pass_mark")],
-    secondary: true,
+    tertiary: tk("common.close"),
   },
   scored: {
     coach: 56,
@@ -192,7 +192,7 @@ export const COVERS = {
     rules: [tk("scored.rule_time", { turns: 5, minutes: 3 }), tk("scored.rule_partner"), tk("scored.rule_scoring")],
     detailTitle: tk("scored.patterns_title"),
     detailRows: 3,
-    tertiary: tk("common.discard"),
+    tertiary: tk("common.close"),
   },
   mock: {
     /* Seviye · deneme no · bölümün hedef dildeki adı. */
@@ -209,7 +209,7 @@ export const COVERS = {
     /* Temanın ve yönergenin anadildeki karşılığı: veri. */
     note: [23, 84],
     footnote: tk("exam.independent_note"),
-    tertiary: tk("mockexam.back_to_list"),
+    tertiary: tk("common.close"),
   },
 } satisfies Record<string, CoverShape>;
 export type CoverKind = keyof typeof COVERS;

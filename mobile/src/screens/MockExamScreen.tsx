@@ -59,6 +59,7 @@ import { isAccountRequired } from "../lib/guest";
 import { AiNotice } from "../ui/AiNotice";
 import { ReportLink } from "../ui/ReportLink";
 import { useAuth } from "../lib/AuthContext";
+import { IconLine, lineInset } from "../ui/IconLine";
 
 /**
  * Deneme sınavı oynatıcısı — TEK BÖLÜM, dijital oturum kurallarıyla.
@@ -481,7 +482,6 @@ export function MockExamScreen() {
     return (
       <CoverSkeleton
         label={t("common.loading")}
-        top
         eyebrow={`${lv.toUpperCase()} · ${t("mockexams.mock_n", { n: Number(no) || 1 })} · ${mockSkillLabel(mockCourseOfPaperId(route.params.paperId), skill)}`}
         title={skeletonFiller(24)}
         pitch={skeletonFiller(97)}
@@ -511,16 +511,15 @@ export function MockExamScreen() {
   const eyebrow = `${paper.level} · ${t("mockexams.mock_n", { n: paper.no })} · ${mockSkillLabel(paper.course, part.skill)}`;
 
   /* KAPAK ŞABLONU (ui/flow): düğmeler kaydırılan içeriğin dışında, kurallar
-     ikonlu satırlar. Başlatılırken düğme meşgul — ikinci basış ikinci bir
+     ikonlu satırlar; üstte geri oku yok, çıkış dipteki "Kapat". Başlatılırken düğme meşgul — ikinci basış ikinci bir
      deneme açmasın diye `begin` zaten kendini kilitliyor. */
   if (phase === "kapak") {
     return (
       <FlowScreen
-        top={<FlowTopBar back onClose={() => nav.goBack()} />}
         actions={
           <FlowActions
             primary={{ label: busy ? t("mockexam.starting") : t("mockexam.start"), onPress: () => void begin(), busy }}
-            tertiary={{ label: t("mockexam.back_to_list"), onPress: () => nav.goBack() }}
+            close={() => nav.goBack()}
           />
         }
       >
@@ -1364,11 +1363,10 @@ function ResultView({
     return (
       <FlowScreen
         key="review"
-        top={<FlowTopBar back onClose={() => setReview(false)} />}
         actions={
           <FlowActions
-            primary={{ label: t("mockexam.back_to_list"), onPress: onBack }}
-            tertiary={{ label: t("mockexam.back_to_result"), onPress: () => setReview(false) }}
+            primary={{ label: t("mockexam.back_to_result"), onPress: () => setReview(false) }}
+            close={onBack}
           />
         }
       >
@@ -1421,12 +1419,14 @@ function ResultView({
                       : given;
                 return (
                   <Card key={it.id} padded style={{ marginBottom: spacing.sm }}>
-                    <View style={{ flexDirection: "row", gap: spacing.sm }}>
-                      <View style={{ width: 24, height: 24, borderRadius: 12, alignItems: "center", justifyContent: "center", backgroundColor: ok ? colors.successSoft : colors.dangerSoft }}>
-                        {ok ? <CorrectIcon color={colors.successText} size={16} /> : <WrongIcon color={colors.dangerText} size={16} />}
-                      </View>
+                    <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+                      <IconLine variant="bodyStrong" box={24}>
+                        <View style={{ width: 24, height: 24, borderRadius: 12, alignItems: "center", justifyContent: "center", backgroundColor: ok ? colors.successSoft : colors.dangerSoft }}>
+                          {ok ? <CorrectIcon color={colors.successText} size={16} /> : <WrongIcon color={colors.dangerText} size={16} />}
+                        </View>
+                      </IconLine>
                       <View style={{ flex: 1 }}>
-                        <Text variant="bodyStrong">{it.no}. {it.text}</Text>
+                        <Text variant="bodyStrong" style={{ paddingTop: lineInset("bodyStrong", 24) }}>{it.no}. {it.text}</Text>
                         {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
                         {it.kind === "gap" && it.cue ? (
                           <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{it.cue}</Text>
@@ -1480,13 +1480,12 @@ function ResultView({
       key="result"
       /* Konfeti YALNIZ geçilen bölümde. */
       celebrate={graded && score.passed && !celebrated}
-      /* ÜST ÇUBUK (2026-09-27): sonuçta geri oku değil kapat (X); "Listeye dön"le aynı çıkış. */
-      top={<FlowTopBar onClose={onBack} />}
+      /* Üstte X yok (2026-09-30): çıkış dipteki "Kapat". */
       actions={
         <FlowActions
           primary={{ label: t("mockexam.show_review"), onPress: () => { setCelebrated(true); setReview(true); } }}
           secondary={guestAi ? { label: t("guest.create_account"), onPress: () => nav.navigate("Auth") } : null}
-          tertiary={{ label: t("mockexam.back_to_list"), onPress: onBack }}
+          close={onBack}
         />
       }
     >

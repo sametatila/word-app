@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { adminGate } from "@/lib/admin";
 import { computeFunnel } from "@/lib/funnel";
+import { barPct } from "@/lib/motion";
 
 export const metadata: Metadata = { title: "Huni" };
 export const dynamic = "force-dynamic";
@@ -96,7 +97,7 @@ export default async function AnalyticsPage() {
               <div key={e.name} className="flex items-center gap-3">
                 <code className="w-40 shrink-0 text-caption">{e.name}</code>
                 <div className="h-4 flex-1 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-                  <div className="h-full rounded-full" style={{ width: `${Math.max(3, Math.round((e.count / maxEvent) * 100))}%`, background: "var(--color-brand)" }} />
+                  <div className="h-full rounded-full" style={{ width: `${barPct(Math.round((e.count / maxEvent) * 100))}%`, background: "var(--color-brand)" }} />
                 </div>
                 <span className="w-12 text-right text-caption">{e.count}</span>
               </div>

@@ -28,6 +28,7 @@ import { HeaderButton } from "../social/common";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { CountUp } from "../ui/CountUp";
 import { StreakMoment } from "../ui/StreakMoment";
+import { IconLine } from "../ui/IconLine";
 
 /**
  * `/api/answers` yanıtı + seri anı bayrağı. `streakUp`: seri BU kayıtta arttı
@@ -340,18 +341,24 @@ function GameRound() {
           ...(extra?.detail ? { detail: extra.detail } : {}),
           ...(extra?.quality != null ? { quality: extra.quality } : {}),
           ...(extra?.hintUsed ? { hintUsed: true } : {}),
+          ...(extra?.selfMiss ? { selfMiss: true } : {}),
         });
       }
     }
-    roundsSeen.current += 1;
-    if (ok) roundsRight.current += 1;
-    const nextCombo = ok ? combo + 1 : 0;
-    bestCombo.current = Math.max(bestCombo.current, nextCombo);
-    setCombo(nextCombo);
-    /* Pay, o etapta kazanılan puanın İSTEMCİ tahmini (doğru 10, yanlış 3) —
-       web `session-player` aynı iki sayıyı kullanıyor. Sunucu ayrıca
-       tavanlıyor; buradaki sayının işi bahsi ETABIN büyüklüğüne bağlamak. */
-    xpEstimate.current += ok ? 10 : 3;
+    /* Sayılmayan turlar: "zaten biliyorum" (web `onDone([])` tallyʼye
+       dokunmuyor) ve NÖTR "Hatırlamadım" (`selfMiss`) — doğruluk, kombo ve
+       bahis payı değişmiyor. */
+    if (!skip && !extra?.selfMiss) {
+      roundsSeen.current += 1;
+      if (ok) roundsRight.current += 1;
+      const nextCombo = ok ? combo + 1 : 0;
+      bestCombo.current = Math.max(bestCombo.current, nextCombo);
+      setCombo(nextCombo);
+      /* Pay, o etapta kazanılan puanın İSTEMCİ tahmini (doğru 10, yanlış 3) —
+         web `session-player` aynı iki sayıyı kullanıyor. Sunucu ayrıca
+         tavanlıyor; buradaki sayının işi bahsi ETABIN büyüklüğüne bağlamak. */
+      xpEstimate.current += ok ? 10 : 3;
+    }
     roundStart.current = Date.now();
     const next = idx + 1;
     idxRef.current = next;
@@ -560,8 +567,8 @@ function GameRound() {
       <FlowScreen
         celebrate={deserved}
         top={
+          /* Üstte X yok (2026-09-30): yalnız sağda paylaş; çıkış dipteki "Kapat". */
           <FlowTopBar
-            onClose={() => nav.goBack()}
             right={total > 0 ? (
               <HeaderButton icon={ShareIcon} label={t("common.share")} onPress={() => void shareRoundResult({ marks: answers.current.map((a) => a.correct), total, accuracy: pct, streak: result?.currentStreak ?? 0, level: meta?.level ?? "A1" })} />
             ) : null}
@@ -569,11 +576,11 @@ function GameRound() {
         }
         actions={
           <FlowActions
-            primary={{ label: t(stoppedEarly.current ? "summary.back_to_round" : "game.continue"), onPress: () => void load() }}
+            primary={{ label: t(stoppedEarly.current ? "summary.back_to_round" : "common.continue"), onPress: () => void load() }}
             /* HAYATTA KALMA: kullanıcının en ısındığı an (tur az önce bitti).
                `challenge_play` webin kendi adı — hangi kapıdan girildiği ölçülüyor. */
             secondary={{ label: t("challenge.title"), icon: <SurvivalIcon color={colors.dangerText} size={18} />, onPress: () => { track("challenge_play"); nav.navigate("Challenge"); } }}
-            tertiary={{ label: t("common.finish"), onPress: () => nav.goBack() }}
+            close={() => nav.goBack()}
           />
         }
       >
@@ -671,7 +678,7 @@ function GameRound() {
         title={t("game.quit_round_2")}
         message={t("game.exit_message")}
         confirmLabel={t("common.exit")}
-        cancelLabel={t("common.continue_2")}
+        cancelLabel={t("common.continue")}
         destructive
         onConfirm={() => {
           /* Yarida birakma OLCULUYOR: `session_done` yalnizca bitirenleri
@@ -772,9 +779,9 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, xp, rema
 
 function WagerLine({ icon, text, colors }: { icon: React.ReactNode; text: string; colors: Palette }) {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-      {icon}
-      <Text variant="caption" color={colors.text}>{text}</Text>
+    <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+      <IconLine variant="caption">{icon}</IconLine>
+      <Text variant="caption" color={colors.text} style={{ flexShrink: 1 }}>{text}</Text>
     </View>
   );
 }

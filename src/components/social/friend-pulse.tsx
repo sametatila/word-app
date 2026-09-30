@@ -8,6 +8,7 @@ import { social } from "@/lib/social/client";
 import type { QuestView } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, formatPercent } from "@/lib/i18n/dict";
+import { barPct } from "@/lib/motion";
 
 /**
  * Öğren ekranındaki tek satırlık nabız: bu haftanın ortak görevi varsa
@@ -77,11 +78,11 @@ export function FriendPulse() {
           </p>
         ) : (
           <>
-            {/* Çubuk Android `Bar` ile aynı: 6 px yükseklik ve yüzde SIFIRDA
-                bile üç birimlik bir dilim — sıfır ile "hiç çubuk yok" aynı
-                görünmesin (mobil `Math.max(3, …)`). Web 8 px ve tabansızdı. */}
+            {/* Çubuk Android `Bar` ile aynı: 6 px yükseklik, sıfırda BOŞ iz,
+                sıfırın üstünde en az üç birimlik dilim (`barPct`; mobil
+                `minPct={3}`). Web 8 px ve tabansızdı. */}
             <div className="mt-1.5 w-full overflow-hidden rounded-full" style={{ height: 6, background: "var(--surface-2)" }}>
-              <div className="h-full rounded-full" style={{ width: `${Math.max(3, Math.min(100, q.pct))}%`, background: "var(--color-brand)" }} />
+              <div className="h-full rounded-full" style={{ width: `${barPct(q.pct, 3)}%`, background: "var(--color-brand)" }} />
             </div>
             {/* ÇUBUĞUN ALTINDAKİ SAYILAR. Web yalnız çubuğu çiziyordu: kaç XP
                 toplandığı, hedefin ne olduğu ve kaç gün kaldığı hiçbir yerde

@@ -9,7 +9,8 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { Card } from "../ui/Card";
-import { CloseIcon, CheckIcon, PremiumIcon } from "../ui/icons";
+import { FlowActions } from "../ui/flow";
+import { CheckIcon, PremiumIcon } from "../ui/icons";
 import { SkeletonLine } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
@@ -21,6 +22,7 @@ import { hasMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { useAuth } from "../lib/AuthContext";
+import { IconLine } from "../ui/IconLine";
 
 /**
  * Paywall — yeniden tasarım 2026-09-29 ("C3", Samet onayı): turuncu bantta ürün
@@ -351,13 +353,10 @@ export function PaywallScreen() {
               ? t("premiumstate.grace")
               : t("premiumstate.active_until", { date: until });
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        <View style={{ alignItems: "flex-end", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
-          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <CloseIcon color={colors.textMuted} size={22} />
-          </PressableScale>
-        </View>
-        <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xl }}>
+      /* Bilgi ekranı: üstte X yok, dipte tek eylem birincil "Kapat" (öteki
+         bilgi ekranlarıyla aynı, 2026-09-30). Geri tuşu ve kaydırma yığının. */
+      <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}>
+        <ScrollView contentContainerStyle={{ paddingBottom: spacing.lg }}>
           <View style={[bodyStyle, { gap: spacing.lg }]}>
             <View style={{ alignItems: "center", marginTop: spacing.sm }}>
               <View style={[{ width: ds(84), height: ds(84), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
@@ -379,6 +378,9 @@ export function PaywallScreen() {
             {links}
           </View>
         </ScrollView>
+        <View style={{ width: "100%", maxWidth: maxW, alignSelf: "center", paddingHorizontal: spacing.xl + 4, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>
+          <FlowActions primary={{ label: t("common.close"), onPress: () => nav.goBack() }} />
+        </View>
         {codeSheet}
       </View>
     );
@@ -390,13 +392,11 @@ export function PaywallScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScrollView contentContainerStyle={{ paddingBottom: spacing.lg }} showsVerticalScrollIndicator={false}>
-        {/* BANT: kapat, geri yükle, vitrin. Kapat solda: bant turuncu, sağ üstteki
-            "Geri yükle" metniyle çakışmasın. */}
+        {/* BANT: geri yükle, vitrin. Üstte X YOK (2026-09-30, bilgi ekranlarının
+            ortak kuralı): çıkış dipteki "Kapat", satın alma düğmesinin altında.
+            Geri yükle sağda kalıyor; satır yüksekliği aynı, vitrin kaymıyor. */}
         <View style={{ backgroundColor: colors.primary, borderBottomLeftRadius: 32, borderBottomRightRadius: 32, paddingTop: insets.top + spacing.sm, paddingBottom: spacing.md }}>
-          <View style={{ width: "100%", maxWidth: maxW, alignSelf: "center", flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: spacing.md }}>
-            <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.22)" }}>
-              <CloseIcon color={colors.onPrimary} size={22} />
-            </PressableScale>
+          <View style={{ width: "100%", maxWidth: maxW, alignSelf: "center", flexDirection: "row", justifyContent: "flex-end", alignItems: "center", paddingHorizontal: spacing.md, minHeight: 44 }}>
             {/* GERİ YÜKLEME HER DALDA (App Store 3.1.1): mağaza bağlıyken, paket
                 listesi boş olsa bile; misafirde giriş yoluna götürüyor. */}
             {configured || guest ? (
@@ -496,6 +496,7 @@ export function PaywallScreen() {
             </Text>
           </>
         ) : null}
+        <FlowActions close={() => nav.goBack()} />
         {links}
       </View>
       {codeSheet}
@@ -520,7 +521,7 @@ function Bullets({ items, colors }: { items: { title: string; cap?: string }[]; 
       {items.map((b) => (
         <View key={b.title} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm + 2 }}>
           {/* İşaret METİN tonunda (`primaryText`): dolgu tonu zemin üstünde grafik eşiğinin altında kalıyordu. */}
-          <View style={{ marginTop: 2 }}><CheckIcon color={colors.primaryText} size={18} /></View>
+          <IconLine variant="bodyStrong"><CheckIcon color={colors.primaryText} size={18} /></IconLine>
           <View style={{ flex: 1 }}>
             <Text variant="bodyStrong">{b.title}</Text>
             {b.cap ? <Text variant="caption" color={colors.textMuted} style={{ fontWeight: "500" }}>{b.cap}</Text> : null}
@@ -557,7 +558,7 @@ function Showcase({ width, colors, exams }: { width: number; colors: Palette; ex
   );
   const fix = (a: string, b: string) => (
     <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start", backgroundColor: `${colors.success}1f`, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
-      <View style={{ width: 8, height: 8, borderRadius: 4, marginTop: 6, backgroundColor: colors.success }} />
+      <IconLine variant="caption"><View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: colors.success }} /></IconLine>
       <Text variant="caption" style={{ flex: 1, fontWeight: "500" }}>
         <Text variant="caption" style={{ fontWeight: "800" }}>{a}</Text> <Text variant="caption" color={colors.textMuted} style={{ fontWeight: "500" }}>{b}</Text>
       </Text>

@@ -126,7 +126,7 @@ export function QuizScreen() {
              Web aynı dalı `ImmersionQuizPlayer`da çiziyor. */
           <View style={{ marginTop: spacing.md, gap: spacing.md }}>
             <StateBody alert={packFailed} title={packFailed ? t("content.couldn_t_load") : t("quiz.this_unit_has_no_questions_yet")} body={packFailed ? t("social.err_offline") : null} />
-            <FlowActions primary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} />
+            <FlowActions primary={{ label: t("common.close"), onPress: () => nav.goBack() }} />
           </View>
         ) : (
           <SkillReportContext.Provider value={{ surface: "path", id: params.itemId }}>
@@ -159,9 +159,9 @@ export function QuizScreen() {
               { value: formatPercent(PASS_PCT), label: t("quiz.stat_pass") },
             ]} />
             {passed ? (
-              <FlowActions primary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} secondary={{ label: t("quiz.try_again"), onPress: retry }} />
+              <FlowActions primary={{ label: t("common.close"), onPress: () => nav.goBack() }} tertiary={{ label: t("quiz.try_again"), onPress: retry }} />
             ) : (
-              <FlowActions primary={{ label: t("quiz.try_again"), onPress: retry }} secondary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} />
+              <FlowActions primary={{ label: t("quiz.try_again"), onPress: retry }} close={() => nav.goBack()} />
             )}
           </View>
         ) : null}

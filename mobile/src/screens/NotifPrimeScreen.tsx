@@ -126,13 +126,15 @@ export function NotifPrimeScreen() {
           ) : null}
           <FlowActions
             primary={{
-              label: tx(SINGLE_BUTTON ? "common.continue_2" : "notifprime.remind_me_once_day"),
+              label: tx(SINGLE_BUTTON ? "common.continue" : "notifprime.remind_me_once_day"),
               onPress: () => void enable(),
               busy,
-              a11yLabel: tx(SINGLE_BUTTON ? "common.continue_2" : "notifprime.turn_on_daily_reminder"),
+              a11yLabel: tx(SINGLE_BUTTON ? "common.continue" : "notifprime.turn_on_daily_reminder"),
               a11yHint: SINGLE_BUTTON ? tx("notifprime.turn_on_daily_reminder") : undefined,
             }}
-            tertiary={SINGLE_BUTTON ? null : { label: tx("notifprime.maybe_later"), onPress: () => void skip(), a11yLabel: tx("notifprime.not_now") }}
+            /* İzin ekranının ikinci eylemi öteki bilgi ekranlarındaki gibi
+               "Kapat" (2026-09-30); "Belki sonra" / "Şimdilik geç" ayrı adlardı. */
+            close={SINGLE_BUTTON ? null : () => void skip()}
           />
         </View>
       }

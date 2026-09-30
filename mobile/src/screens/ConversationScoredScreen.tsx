@@ -10,7 +10,7 @@ import { AiNotice } from "../ui/AiNotice";
 import { PressableScale } from "../ui/PressableScale";
 import { ConversationIcon, CorrectIcon, DurationIcon, LockedIcon, NoGoingBackIcon, ScoreTargetIcon, SendIcon, SkillSpeakingIcon, WarningIcon } from "../ui/icons";
 import { CoachLine } from "../ui/CoachLine";
-import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
 import { CoverSkeleton, coverCoach } from "../game/RoundSkeleton";
 import { skeletonFiller } from "../ui/Skeleton";
 import { ensureConversations, findConversation, conversationLevelOf, type Conversation } from "../data/conversations";
@@ -255,14 +255,13 @@ export function ConversationScoredScreen() {
   }, [left, phase, score, turns]);
 
   if (!conversation && !packReady) {
-    /* Paket inerken KAPAĞIN iskeleti (üst çubuk, koç cümlesi, üç kural,
-       kalıplar kartı, Başla / Vazgeç): paket gelince açılan ekran kapak. */
+    /* Paket inerken KAPAĞIN iskeleti (koç cümlesi, üç kural,
+       kalıplar kartı, Başla / Kapat): paket gelince açılan ekran kapak. */
     /* Kuralların metni kapağın kendisinden; üst satır (konuşmanın adı) ve
        sahne pakette, tahmini uzunlukta. */
     return (
       <CoverSkeleton
         label={tx("common.loading")}
-        top
         coach={coverCoach("scored_intro")}
         eyebrow={skeletonFiller(40)}
         title={tx("scored.title")}
@@ -279,12 +278,9 @@ export function ConversationScoredScreen() {
   if (!conversation) {
     return (
       /* DURUM ŞABLONU. Burada yalnız ortada tek satır metin vardı: ne maskot
-         ne bir çıkış yolu; geri dönmenin tek yolu donanım tuşuydu. */
-      <FlowScreen
-        center
-        top={<FlowTopBar back onClose={() => nav.goBack()} />}
-        actions={<FlowActions primary={{ label: tx("item.go_back"), onPress: () => nav.goBack() }} />}
-      >
+         ne bir çıkış yolu; geri dönmenin tek yolu donanım tuşuydu. Tek
+         eylem çıkış: birincil "Kapat", üstte ikinci bir geri oku yok. */
+      <FlowScreen center actions={<FlowActions primary={{ label: tx("common.close"), onPress: () => nav.goBack() }} />}>
         <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("conversation.this_conversation_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
@@ -360,16 +356,15 @@ export function ConversationScoredScreen() {
   if (phase === "intro") {
     return (
       /* KAPAK ŞABLONU (ui/flow): ikon karosu · konuşmanın adı · sınavın adı ·
-         sahne · ikonlu kurallar · kalıplar kartı · altta Başla / Vazgeç.
+         sahne · ikonlu kurallar · kalıplar kartı · altta Başla / Kapat (üstte X yok).
          Kurallar "·" ile başlayan soluk satırlardı ve kalıplar da o listenin
          dördüncü "kuralı" gibi okunuyordu. */
       <FlowScreen
-        top={<FlowTopBar back onClose={() => nav.goBack()} />}
         actions={guest
           /* MİSAFİR: sınavın muhatabı ve puanı yapay zekâ; ikisi de hesap istiyor
              (mağaza ön inceleme B24). Başla yerine hesap oluşturma. */
-          ? <FlowActions primary={{ label: tx("guest.create_account"), onPress: () => nav.navigate("Auth") }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />
-          : <FlowActions primary={{ label: tx("scored.start"), onPress: start }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />}
+          ? <FlowActions primary={{ label: tx("guest.create_account"), onPress: () => nav.navigate("Auth") }} close={() => nav.goBack()} />
+          : <FlowActions primary={{ label: tx("scored.start"), onPress: start }} close={() => nav.goBack()} />}
       >
         {/* 48 — web ile ayni boy (`conversations/conversation-scored`) ve mobilin KENDI
             sinav girisiyle de ayni (`ExamScreen` 48). */}
@@ -419,7 +414,7 @@ export function ConversationScoredScreen() {
     return (
       <FlowScreen
         center
-        actions={<FlowActions primary={{ label: tx("unlock.premium_now"), onPress: () => nav.navigate("Paywall") }} tertiary={{ label: tx("conversationp.back_to_conversation"), onPress: () => nav.goBack() }} />}
+        actions={<FlowActions primary={{ label: tx("unlock.premium_now"), onPress: () => nav.navigate("Paywall") }} close={() => nav.goBack()} />}
       >
         <StateBody title={tx("unlock.locked_conv")}>
           {copy ? <View style={{ alignSelf: "stretch", marginTop: spacing.md }}><UnlockProgress copy={copy} /></View> : null}
@@ -438,7 +433,7 @@ export function ConversationScoredScreen() {
          cümlesiyle söyleniyor (bkz. `consentOff`). */
       <FlowScreen
         center
-        actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: restart }} tertiary={{ label: tx("conversationp.back_to_conversation"), onPress: () => nav.goBack() }} />}
+        actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: restart }} close={() => nav.goBack()} />}
       >
         <StateBody alert title={tx("scored.cant_run")} body={!consentOff ? tx("scored.service_down") : tx("assess.fail_consent")} />
       </FlowScreen>
@@ -462,7 +457,7 @@ export function ConversationScoredScreen() {
        konuşmaya dönmek. */
     const retryFirst = !!result && !passed;
     const retry = { label: tx("common.try_again"), onPress: restart };
-    const leave = { label: tx("conversationp.back_to_conversation"), onPress: () => nav.goBack() };
+    const leave = { label: tx("common.close"), onPress: () => nav.goBack() };
     return (
       /*
         SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
@@ -471,9 +466,9 @@ export function ConversationScoredScreen() {
       */
       <FlowScreen
         celebrate={passed}
-        /* ÜST ÇUBUK (2026-09-27): sonuçta geri oku değil kapat (X); "Konuşmaya dön"le aynı çıkış. */
-        top={<FlowTopBar onClose={() => nav.goBack()} />}
-        actions={<FlowActions primary={retryFirst ? retry : leave} tertiary={retryFirst ? leave : retry} />}
+        /* Üstte X yok (2026-09-30): çıkış dipteki "Kapat". Çıkış birincilse
+           tekrar metin bağlantısı; tekrar birincilse çıkış "Kapat". */
+        actions={<FlowActions primary={retryFirst ? retry : leave} tertiary={retryFirst ? null : retry} close={retryFirst ? leave.onPress : null} />}
       >
         <ResultHero
           eyebrow={tx("scored.title")}

@@ -43,7 +43,7 @@ const mode = process.argv[2] ?? "--check";
  */
 const ALLOW = new Map([
   ["src/components/skills/writing-player.tsx", [
-    ["h-5 w-5 shrink-0 items-center justify-center rounded-md",
+    ["h-5 w-5 items-center justify-center rounded-md",
      "20 px onay kutusu: ölçeğin en küçüğü (chip 10) kareyi daireye çevirir ve daire radyo düğmesi demek. Mobil karşılığı da 6 (`AuthScreen` güven kutusu)"],
   ]],
   ["src/components/conversations/conversation-player.tsx", [

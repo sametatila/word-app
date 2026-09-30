@@ -24,6 +24,7 @@ import type { Gloss } from "../data/skills";
 import { RUBRIC_PASS_PCT } from "../lib/learningRules";
 import { ReportLink, assessmentRef } from "../ui/ReportLink";
 import { QuestionReport } from "./skillQuiz";
+import { IconLine, lineInset } from "../ui/IconLine";
 
 /**
  * Beceriler kütüphanesinin (2026-09) mobil oynatıcı parçaları: dil bilgisi
@@ -52,8 +53,8 @@ export function GrammarBody({ focus, blocks, colors }: { focus: string; blocks: 
           <Text variant="body" style={{ marginTop: b.heading ? 4 : 0 }}>{b.tr}</Text>
           {b.examples?.map((x, j) => (
             <PressableScale key={j} onPress={() => speakTarget(x.de)} accessibilityLabel={t("item.listen_example")}
-              style={{ marginTop: spacing.sm, flexDirection: "row", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-              <SpeakerIcon color={colors.primaryText} size={16} />
+              style={{ marginTop: spacing.sm, flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
+              <IconLine variant="bodyStrong"><SpeakerIcon color={colors.primaryText} size={16} /></IconLine>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{x.de}</Text>
                 <Text variant="caption" color={colors.textMuted}>{x.tr}</Text>
@@ -141,7 +142,8 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
     <Card padded style={{ marginTop: spacing.md }}>
       <Text variant="micro" color={colors.textMuted}>{idx + 1}/{tasks.length}</Text>
       <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: 6 }}>
-        <Text variant="h3" style={{ flex: 1 }}>{task.de}</Text>
+        {/* Dinle düğmesi (36) satırdan yüksek: ilk satır düğmenin ortasında. */}
+        <Text variant="h3" style={{ flex: 1, paddingTop: lineInset("h3", 36) }}>{task.de}</Text>
         <PressableScale onPress={() => speakTarget(task.de)} hitSlop={8} accessibilityLabel={t("item.read_aloud")}
           style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}>
           <SpeakerIcon color={colors.primaryText} size={18} />
@@ -469,10 +471,12 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
             <>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{t("item.mono_self")}</Text>
               {mono.bulletsTr.map((b, i) => (
-                <PressableScale key={i} onPress={() => setChecks(checks.map((c, j) => (j === i ? !c : c)))} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm }}>
-                  <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: checks[i] ? colors.success : colors.border, backgroundColor: checks[i] ? colors.successSoft : colors.surface, alignItems: "center", justifyContent: "center" }}>
-                    {checks[i] ? <CheckIcon color={colors.successText} size={14} /> : null}
-                  </View>
+                <PressableScale key={i} onPress={() => setChecks(checks.map((c, j) => (j === i ? !c : c)))} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: spacing.sm }}>
+                  <IconLine variant="body" box={22}>
+                    <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: checks[i] ? colors.success : colors.border, backgroundColor: checks[i] ? colors.successSoft : colors.surface, alignItems: "center", justifyContent: "center" }}>
+                      {checks[i] ? <CheckIcon color={colors.successText} size={14} /> : null}
+                    </View>
+                  </IconLine>
                   <Text variant="body" style={{ flex: 1 }}>{b}</Text>
                 </PressableScale>
               ))}

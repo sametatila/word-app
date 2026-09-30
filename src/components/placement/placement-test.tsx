@@ -12,7 +12,7 @@ import { ButtonSlot, TextSlot } from "@/components/flow-skeleton";
 import { SkeletonBar, SkeletonTile } from "@/components/skeleton";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
-import { RoundExit, ResultTopBar } from "@/components/round-exit";
+import { RoundExit } from "@/components/round-exit";
 import { track } from "@/lib/track";
 import { describePerSkill, nextLevel, PLACEMENT_LEVELS, scorePlacement, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
@@ -261,7 +261,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         />
         <FlowActions
           primary={{ label: t("common.start"), onClick: () => void start() }}
-          tertiary={{ label: t("common.later"), href: "/profile" }}
+          close="/profile"
         />
       </FlowColumn>
     );
@@ -320,7 +320,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
             bir ağ hatasında kullanıcıyı ekrandan atıyordu. */}
         <FlowActions
           primary={{ label: t("common.try_again"), onClick: () => void start() }}
-          tertiary={{ label: t("common.back"), onClick: () => setPhase("intro") }}
+          close="/profile"
         />
       </FlowColumn>
     );
@@ -335,8 +335,6 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     const skills = skillRows(answers.current, result.perSkill, t, lang);
     return (
       <FlowColumn>
-        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, alttaki "Kapat"la aynı çıkış. */}
-        <ResultTopBar href="/profile" />
         <ResultHero
           eyebrow={t("placement.title")}
           title={t("placement.your_level", { level: shown })}
@@ -374,7 +372,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
             onClick: () => void accept(),
           }}
           /* Mobil sonuçta "Kapat" baştan beri var: seviyeyi uygulamadan çıkış. */
-          tertiary={{ label: t("common.close"), href: "/profile" }}
+          close="/profile"
         />
       </FlowColumn>
     );

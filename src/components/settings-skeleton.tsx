@@ -67,7 +67,7 @@ export function SwitchSlot() {
 /** `SettingRow` — null başlık/alt satır: veriye bağlı, çubuk. */
 export function SettingRowSlot({ title, sub, children }: { title: string | null; sub?: string | null; children?: ReactNode }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3">
+    <div className="setting-row flex flex-wrap items-center gap-x-3 gap-y-2">
       <div className="min-w-[9rem] flex-1">
         {title === null ? <SkeletonLine variant="strong" width="45%" /> : <Words as="p" className="text-strong" text={title} />}
         {sub === undefined ? null : sub === null ? (
@@ -88,7 +88,7 @@ export function SettingRowSlot({ title, sub, children }: { title: string | null;
 export function SignInMethodsSkeleton({ google = true }: { google?: boolean }) {
   const t = useT();
   return (
-    <div aria-hidden className="-my-2 divide-y divide-[color:var(--hairline)]">
+    <div aria-hidden className="inset-list">
       <SettingRowSlot title={t("links.credential")} sub={t("linked.credential_sub")}>
         <Words className="muted text-caption" text={t("links.only_method")} />
       </SettingRowSlot>
@@ -126,7 +126,7 @@ export function PasswordRowsSkeleton() {
 export function SessionRowSkeleton() {
   const t = useT();
   return (
-    <div aria-hidden className="divide-y divide-[color:var(--hairline)]">
+    <div aria-hidden className="inset-list">
       <SettingRowSlot title="Chrome · macOS" sub={`${t("sessions.since", { date: "01.09.2026" })} · 000.000.000.00`}>
         <Btn className="btn-ghost text-caption" text={t("sessions.revoke")} />
       </SettingRowSlot>

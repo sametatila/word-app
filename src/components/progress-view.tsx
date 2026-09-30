@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { T, fillStyle, fillX } from "@/lib/motion";
+import { T, barPct, fillStyle, fillX } from "@/lib/motion";
 import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
 import { MenuRow } from "@/components/menu-row";
@@ -247,7 +247,7 @@ export function ActivityProgress({
         <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
           <div
             className="bar-fill h-full rounded-full"
-            style={{ ...fillStyle(Math.max(3, pct)), background: "var(--color-mint-500)" }}
+            style={{ ...fillStyle(barPct(pct, 3)), background: "var(--color-mint-500)" }}
           />
         </div>
       </Link>

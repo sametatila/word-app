@@ -251,7 +251,6 @@ export const enWeb: Record<string, string> = {
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
   "rounds.write_sentence_ph": "Write the sentence…",
-  "rounds.understood": "{word} — got it",
   "rounds.no_tts": "Your device can't read aloud, so the word is shown as text.",
   "rounds.empty_word_slot": "empty slot",
   "rounds.empty_letter_slot": "empty slot",
@@ -270,7 +269,6 @@ export const enWeb: Record<string, string> = {
   "pron.pauses": "{n} pauses",
   "pron.pauses.one": "{n} pause",
   "pron.word_level_note": "word-level measurement, not a phoneme score",
-  "weekly.back_to_learn": "Back to Learn",
   "walk.paused": "Paused",
   "walk.preparing": "Getting the round ready…",
   "walk.unsupported_title": "This browser doesn't support spoken answers",
@@ -306,7 +304,6 @@ export const enWeb: Record<string, string> = {
   "notfound.sub": "The page you're looking for may have moved, or never existed.",
   "common.home": "Home",
   "exam.load_or_save_failed": "The exam couldn't be loaded or saved right now.",
-  "exam.back_to_path": "Back to the conversations",
   "exam.is_sentence_right": "Is this sentence right?",
   "exam.read_aloud": "Read the sentence aloud.",
   "exam.stop_recording": "Stop recording",

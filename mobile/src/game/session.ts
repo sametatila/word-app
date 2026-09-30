@@ -199,6 +199,12 @@ export type AnswerOut = {
    * 5 alıyordu - ipucu Androidde BEDAVAYDI.
    */
   hintUsed?: boolean;
+  /**
+   * Öz değerlendirmede "Hatırlamadım" (`correct` false ile). Sunucu hata
+   * saymıyor: SRS "yeniden", XP "Hatırladım" kadar, doğruluğa yazılmıyor
+   * (web `lib/srs` `gradeAnswer`).
+   */
+  selfMiss?: boolean;
 };
 
 /** Tur bileşeninin sonuca ekleyebildiği alanlar (bkz. `game/rounds` `Done`). */
@@ -218,6 +224,12 @@ export type DoneExtra = {
    * dizisiyle söylüyor.
    */
   skip?: boolean;
+  /**
+   * "Hatırlamadım": NÖTR sonuç (`correct` false ile gelir). Yanlış geri
+   * bildirimi, kombo kırılması, puan kaybı yok ve doğruluğa sayılmıyor; kelime
+   * yine de yakında tekrar gelsin diye cevap `selfMiss` ile kaydediliyor.
+   */
+  selfMiss?: boolean;
 };
 
 export function todayStr(): string {

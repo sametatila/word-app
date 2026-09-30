@@ -8,7 +8,7 @@ import { cleanDetail, isErrorType, srsWeightFor, type ErrorType } from "@/lib/er
 import { clozeTypeChance, gamesFor, isProductionGame, PRODUCTION_GAMES, type Strength as LadderStrength } from "@/lib/ladder";
 import { chatConfigured } from "@/lib/chat-providers";
 import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics";
-import { grade, schedule, xpForQuality, type SrsState, MASTERED_DAYS } from "@/lib/srs";
+import { gradeAnswer, schedule, type SrsState, MASTERED_DAYS } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
 import { analyticsOptedOut } from "@/lib/events";
 import { displayNameAllowed } from "@/lib/moderation";
@@ -2175,19 +2175,9 @@ export async function submitAnswers(
         };
 
     if (!prevRow) newCount += 1;
-    // Kısmi puanlı oyunlar (Çevir) kaliteyi kendisi verir; gerisi hız ve
-    // doğruluktan hesaplanır. Sınır 0–5; yanlış cevap 3'ü aşamaz, doğru cevap
-    // 3'ün altına inemez — oyun ne gönderirse göndersin SRS mantığı korunur.
-    const own =
-      typeof ans.quality === "number" && Number.isFinite(ans.quality)
-        ? Math.max(0, Math.min(5, Math.round(ans.quality)))
-        : null;
-    const q =
-      own === null
-        ? grade(ans.game, ans.correct, ans.latencyMs, ans.hintUsed)
-        : ans.correct
-          ? Math.max(3, own)
-          : Math.min(3, own);
+    // Kalite, XP ve doğruluğa sayılma tek yerde (`lib/srs` `gradeAnswer`):
+    // oyun ne gönderirse göndersin SRS mantığı korunur.
+    const { quality: q, xp, graded } = gradeAnswer(ans);
     // Ağırlık: kelimenin son yanlışının tipi son 14 günde ≥ 5 kez görüldüyse
     // ×0,75 (WP-51), yoksa tipin varsayılanı (lib/errors). Uygulanan her
     // ağırlık olay olarak yazılır ki etkisi raporda izlenebilsin.
@@ -2198,11 +2188,15 @@ export async function submitAnswers(
       errorEvents.push({ userId, name: "srs_weight", day: today, value: Math.round(weight * 100), kind: lastType });
     }
 
-    xpGained += xpForQuality(q);
+    xpGained += xp;
     if (ans.correct) correctCount += 1;
     updates.push({ before: prev.intervalDays, after: next.intervalDays });
 
-    reviewRows.push({
+    /* "Hatırlamadım" cevap geçmişine yazılmıyor: `reviews` doğruluk, hata
+       dökümü ve başarımların kaynağı ve orada `correct=false` yanlış demek.
+       Kelimenin zamanı yine de aşağıda `userWords`e yazılıyor; günlük hedefe
+       (`dailyStats.reviews`) emek olarak sayılıyor, doğruya sayılmıyor. */
+    if (graded) reviewRows.push({
       userId,
       wordId: ans.wordId,
       game: ans.game,

@@ -12,6 +12,7 @@ import { BackIcon, CloseIcon } from "./icons";
 import { t } from "../lib/i18n";
 import { useTheme, spacing, radii, softShadow, soft, onSolid, type Palette, ds } from "../theme";
 import { READABLE_TEXT_MAX } from "../lib/useLayout";
+import { IconLine, lineInset } from "./IconLine";
 
 /**
  * AKIŞ ŞABLONLARI — kapak, sonuç, etap kartı ve durum ekranı tek dilde.
@@ -25,7 +26,7 @@ import { READABLE_TEXT_MAX } from "../lib/useLayout";
  *
  * Beş kalıp, her parçası her yerde aynı yerde ve aynı ölçüde:
  *
- *   Kapak     — ikon karosu · başlık · tek cümle · kural satırları · Başla / Sonra
+ *   Kapak     — ikon karosu · başlık · tek cümle · kural satırları · Başla / Kapat (üstte X yok)
  *   Sonuç     — başlık bandı (tür · başlık · ana sayı · maskot) → en çok üç sayı →
  *               ayrıntı kartları → tek birincil düğme
  *   Etap      — sonucun küçük hâli: aynı band (etap şeridiyle), aynı sayı satırı
@@ -38,9 +39,22 @@ import { READABLE_TEXT_MAX } from "../lib/useLayout";
 /** `tone: "destructive"` yalnız birincilde: geri alınamayan eylem (hesap silme). */
 export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode; hint?: string; tone?: "primary" | "destructive"; a11yLabel?: string; a11yHint?: string };
 
-/** Düğme sırası her ekranda aynı: birincil (tek) → çerçeveli (en çok bir) → metin bağlantısı. */
-export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAction | null; secondary?: FlowAction | null; tertiary?: FlowAction | null }) {
+/**
+ * Düğme sırası her ekranda aynı: birincil (tek) → çerçeveli (en çok bir) → metin bağlantısı.
+ *
+ * `close`: bilgi, kapak, izin ve durum ekranlarının çıkışı — metin bağlantısı
+ * yuvasında, adı hep "Kapat" (2026-09-30 Samet). Ekranlar "Vazgeç", "Sonra",
+ * "Geri dön", "Patikaya dön" diye ayrı adlar veriyordu; kimi üstte X de
+ * taşıyordu. Bu ekranlarda üstte X YOK (`FlowTopBar` verilmez), çıkış burada;
+ * donanım geri tuşu ve kaydırarak geri dönme yığının kendi işi.
+ */
+export function FlowActions({ primary, secondary, tertiary, close }: { primary?: FlowAction | null; secondary?: FlowAction | null; tertiary?: FlowAction | null; close?: (() => void) | null }) {
   const { colors } = useTheme();
+  const text = (a: FlowAction) => (
+    <PressableScale onPress={a.onPress} disabled={a.disabled} accessibilityLabel={a.a11yLabel ?? a.label} accessibilityHint={a.a11yHint} hitSlop={6} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
+      <Text variant="bodyStrong" color={colors.textMuted}>{a.label}</Text>
+    </PressableScale>
+  );
   return (
     <View style={{ gap: spacing.sm }}>
       {primary ? (
@@ -63,11 +77,8 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
           )}
         </PressableScale>
       ) : null}
-      {tertiary ? (
-        <PressableScale onPress={tertiary.onPress} disabled={tertiary.disabled} accessibilityLabel={tertiary.a11yLabel ?? tertiary.label} accessibilityHint={tertiary.a11yHint} hitSlop={6} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
-          <Text variant="bodyStrong" color={colors.textMuted}>{tertiary.label}</Text>
-        </PressableScale>
-      ) : null}
+      {tertiary ? text(tertiary) : null}
+      {close ? text({ label: t("common.close"), onPress: close }) : null}
     </View>
   );
 }
@@ -292,8 +303,8 @@ export function FlowNote({ icon, text, tone = "neutral" }: { icon?: React.ReactN
   const bg = tone === "ok" ? colors.successSoft : tone === "warn" ? soft(colors.streak) : tone === "bad" ? colors.dangerSoft : colors.surface2;
   const ink = tone === "ok" ? colors.successText : tone === "warn" ? colors.streakText : tone === "bad" ? colors.dangerText : colors.text;
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: bg, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
-      {icon}
+    <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, backgroundColor: bg, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+      {icon ? <IconLine variant="caption">{icon}</IconLine> : null}
       <Text variant="caption" color={ink} style={{ flex: 1 }}>{text}</Text>
     </View>
   );
@@ -310,10 +321,14 @@ export function RuleRow({ rule: r, small = false }: { rule: CoverRule; small?: b
   const { colors } = useTheme();
   return (
     <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.md }}>
-      <View style={{ width: 28, height: 28, borderRadius: radii.sm, backgroundColor: r.tone === "ok" ? colors.successSoft : r.tone === "bad" ? colors.dangerSoft : colors.surface2, alignItems: "center", justifyContent: "center" }}>
-        <r.icon color={r.tone === "ok" ? colors.successText : r.tone === "bad" ? colors.dangerText : colors.textMuted} size={16} />
-      </View>
-      <Text variant={small ? "caption" : "body"} color={small ? colors.textMuted : undefined} style={{ flex: 1, paddingTop: 2 }}>{r.text}</Text>
+      {/* Karo (28) satırdan yüksek: yazının ilk satırı karonun ortasına iniyor
+          (`lineInset`), eski `paddingTop: 2` yaması yerine. */}
+      <IconLine variant={small ? "caption" : "body"} box={28}>
+        <View style={{ width: 28, height: 28, borderRadius: radii.sm, backgroundColor: r.tone === "ok" ? colors.successSoft : r.tone === "bad" ? colors.dangerSoft : colors.surface2, alignItems: "center", justifyContent: "center" }}>
+          <r.icon color={r.tone === "ok" ? colors.successText : r.tone === "bad" ? colors.dangerText : colors.textMuted} size={16} />
+        </View>
+      </IconLine>
+      <Text variant={small ? "caption" : "body"} color={small ? colors.textMuted : undefined} style={{ flex: 1, paddingTop: lineInset(small ? "caption" : "body", 28) }}>{r.text}</Text>
     </View>
   );
 }

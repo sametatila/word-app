@@ -38,6 +38,7 @@ import type { Round } from "../game/session";
 import { glossOf } from "../game/gloss";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette, ds } from "../theme";
+import { IconLine } from "../ui/IconLine";
 
 /* ── sunucu sözleşmesi (src/lib/exam-types.ts ile aynı) ────────────────── */
 
@@ -407,7 +408,7 @@ export function ExamScreen() {
       title={t("exam.quit_title")}
       message={t("exam.quit_body")}
       confirmLabel={t("common.exit")}
-      cancelLabel={t("common.continue_2")}
+      cancelLabel={t("common.continue")}
       destructive
       onConfirm={() => { back.cancel(); nav.goBack(); }}
       onCancel={back.cancel}
@@ -426,7 +427,7 @@ export function ExamScreen() {
       */
       <FlowScreen
         center
-        actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}
+        actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} close={() => nav.goBack()} />}
       >
         <StateBody alert title={err} />
       </FlowScreen>
@@ -437,8 +438,8 @@ export function ExamScreen() {
   if (phase === "loading" || (!paper && phase !== "cover")) {
     /*
       SPINNER YERİNE İSKELET — KAPAĞIN kendisi (aşağıdaki `cover` dalı):
-      üst çubuk, koç cümlesi, ikon karosu, başlık, beş kural, bölümler kartı,
-      bağımsızlık notu, dipte Başla / Vazgeç. Önceki iskelet iki düz kart
+      koç cümlesi, ikon karosu, başlık, beş kural, bölümler kartı,
+      bağımsızlık notu, dipte Başla / Kapat. Önceki iskelet iki düz kart
       çiziyordu ve kapak gelince düğmeler dipte birden beliriyordu.
     */
     /* Metinler kapağın kendisinden (aşağıdaki `rules` ile aynı anahtarlar);
@@ -447,7 +448,6 @@ export function ExamScreen() {
     return (
       <CoverSkeleton
         label={t("exam.preparing")}
-        top
         coach={coverCoach("exam_intro")}
         eyebrow={moduleIx === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: moduleIx + 1 })}
         title={t(moduleIx === null ? "exam.cover_title_level" : "exam.cover_title_module")}
@@ -468,7 +468,7 @@ export function ExamScreen() {
   if (phase === "cover") {
     /*
       KAPAK ŞABLONU (ui/flow): ikon karosu · sınavın adı · başlık · tek cümle ·
-      ikonlu kural satırları · altta Başla / Vazgeç.
+      ikonlu kural satırları · altta Başla / Kapat (üstte X yok).
 
       KURALLAR. Geri dönüş olmadığı, ipucu bulunmadığı, cevapların sınav
       bitmeden gösterilmediği ve GEÇME EŞİĞİ (toplam %70, her bölüm %50)
@@ -486,12 +486,11 @@ export function ExamScreen() {
     ];
     return (
       <FlowScreen
-        top={<FlowTopBar onClose={() => nav.goBack()} />}
         actions={
           /* Kâğıt BURADA üretiliyor: kapağı açmak sınavı başlatmıyor. */
           <FlowActions
             primary={{ label: t("exam.start"), onPress: startExam, busy: starting }}
-            tertiary={{ label: t("common.discard"), onPress: () => nav.goBack() }}
+            close={() => nav.goBack()}
           />
         }
       >
@@ -571,17 +570,17 @@ export function ExamScreen() {
             ? { text: t("exam.pill_section_low", { section: t(SECTION_KEY[weakest.id]), pct: formatPercent(PASS_SECTION) }), tone: "bad" as const }
             : null;
     const certificate = !!result?.passed && !result.trial;
-    const goBack = { label: t("item.go_back"), onPress: () => nav.goBack() };
+    const goBack = { label: t("common.close"), onPress: () => nav.goBack() };
     return (
       <FlowScreen
         celebrate={passed}
-        top={<FlowTopBar onClose={() => nav.goBack()} />}
         actions={
           <FlowActions
             /* SERTİFİKA. Uç aylardır hazırdı ve mobilde onu çağıran hiçbir şey
                yoktu: sınavı geçen Android kullanıcısı ödülünü hiç görmüyordu. */
             primary={certificate ? { label: t("exam.open_certificate"), onPress: () => setCertOpen(true) } : goBack}
-            secondary={certificate ? goBack : null}
+            /* Üstte X yok (2026-09-30): çıkış "Kapat"; sertifika varsa metin bağlantısı. */
+            close={certificate ? goBack.onPress : null}
             /*
               HIZ TURUNUN TEK GİRİŞİ BURASI — web ile aynı yer ve aynı sebep
               (`components/exam-player`): patron turu yol haritasında modül
@@ -691,8 +690,8 @@ export function ExamScreen() {
         {paper?.cover?.canDo?.length ? (
           <DetailCard title={t(result?.passed ? "exam.now_you_can" : "exam.this_measured")}>
             {paper.cover.canDo.map((c, i) => (
-              <View key={i} style={{ flexDirection: "row", gap: spacing.sm }}>
-                <CheckIcon color={result?.passed ? colors.successText : colors.textMuted} size={14} />
+              <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+                <IconLine variant="caption"><CheckIcon color={result?.passed ? colors.successText : colors.textMuted} size={14} /></IconLine>
                 {/* Hedef dildeki cümle ve ANADİLDEKİ karşılığı — yalnız ikisi.
                     Kâğıt çevrilince `tr` anadilin dizesi oluyor; `en` satırı da
                     basıldığında anadili İngilizce olan aynı cümleyi iki kez,
@@ -1091,7 +1090,7 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
         ) : null}
         {it.segments?.map((s, i) => (
           <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: spacing.xs }}>
-            <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text, { slow: "listen", voice: cast[i]?.voice, pitch: cast[i]?.pitch })} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
+            <IconLine variant="body"><PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text, { slow: "listen", voice: cast[i]?.voice, pitch: cast[i]?.pitch })} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale></IconLine>
             <Text variant="body" style={{ flex: 1 }}>{spoken ? (s.speaker ? `${s.speaker}: ` : "") + s.text : s.text}</Text>
           </View>
         ))}
@@ -1176,7 +1175,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         {it.situation ? <Text variant="caption" color={colors.textMuted}>{it.situation}</Text> : null}
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
           <Text variant="h3" style={{ flex: 1 }}>{it.de}</Text>
-          <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(it.de)} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
+          <IconLine variant="h3"><PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(it.de)} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale></IconLine>
         </View>
         <Text variant="body" color={colors.textMuted}>{it.tr}</Text>
         {heard ? <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {heard}</Text> : null}

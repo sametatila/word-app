@@ -10,6 +10,7 @@ import { REPORT_DETAIL_MAX, reasonsFor, sendReport, type ReportKind, type Report
 import { useKeyboardInset } from "../lib/useKeyboardHeight";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import { DIALOG_MAX_WIDTH, dialogActionsStacked } from "../lib/useLayout";
+import { FIELD, Field } from "./Field";
 
 
 /**
@@ -92,8 +93,9 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
                 })}
               </View>
               {isContent ? (
-                <View style={{ gap: spacing.xs, marginTop: spacing.sm }}>
-                  <Text variant="caption" color={colors.textMuted}>{t("reportsheet.detail_label")}</Text>
+                /* Alan bloğu (`ui/Field`): listeden 12, etiket → kutu 8 (4'tü;
+                   web `report-dialog` aynı sayılar). */
+                <Field label={t("reportsheet.detail_label")} style={{ marginTop: FIELD.stack }}>
                   <TextInput
                     value={detail}
                     onChangeText={(v) => setDetail(v.slice(0, REPORT_DETAIL_MAX))}
@@ -106,7 +108,7 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
                     accessibilityLabel={t("reportsheet.detail_label")}
                     style={{ minHeight: 72, maxHeight: 140, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, color: colors.text, fontSize: 15 }}
                   />
-                </View>
+                </Field>
               ) : null}
               {state === "error" ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.dangerText}>{t("reportsheet.couldn_t_send_try_again")}</Text> : null}
               {/* Onay kutusuyla aynı kural (bkz. `ConfirmDialog`): uzun etikette alt alta. */}

@@ -17,6 +17,7 @@ import { useT } from "@/lib/i18n/client";
 import { SPEAK_CLIP_MS } from "@/lib/pronounce-const";
 import { formatPercent } from "@/lib/i18n/dict";
 import { vibrate } from "@/lib/fx";
+import { lineInset } from "@/components/icon-line";
 
 /* Tek kaydın üst sınırı artık ortak sabitten (`SPEAK_CLIP_MS`): sayı burada
    `MAX_MS = 8000` diye duruyordu ve Android satır içinde adsız bir 9000
@@ -155,7 +156,8 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
         </p>
 
         <div className="mt-2 flex items-start gap-2">
-          <p className="flex-1 text-h3 leading-snug" lang={lang}>
+          {/* Dinle düğmesi (36) satırdan yüksek: ilk satır düğmenin ortasında. */}
+          <p className="flex-1 text-h3 leading-snug" lang={lang} style={lineInset("2.25rem")}>
             {task.de}
           </p>
           <button

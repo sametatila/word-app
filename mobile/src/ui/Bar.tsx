@@ -69,12 +69,27 @@ function useTrackWidth(): [number, (e: LayoutChangeEvent) => void] {
 }
 
 /**
+ * ÇUBUĞUN GÖRÜNEN YÜZDESİ — sıfır boş, sıfırın üstü en az `floor`.
+ *
+ * Çubuklar `Math.max(3, pct)` ile sıfırda bile bir dilim bırakıyordu; hiç
+ * başlanmamış bir hedef "biraz yapılmış" gibi görünüyordu (2026-09-30 Samet:
+ * 0 → tamamen boş iz). Taban yalnız sıfırın üstünde: 1/120 gibi bir değer
+ * yuvarlak ucun altında kaybolmasın. `NaN` (0/0) da boş sayılıyor. Web
+ * karşılığı `lib/motion.ts` `barPct`; `check:parity` ikisini ölçüyor.
+ */
+export const BAR_FLOOR = 3;
+export function barPct(pct: number, floor: number = BAR_FLOOR): number {
+  const p = Math.min(100, pct);
+  return p > 0 ? Math.max(floor, p) : 0;
+}
+
+/**
  * Yuvarlak uçlu ilerleme izi + yumuşak dolgu — `Bar` ve `FlowProgress`
  * (`ui/flow`) aynı parçayı kullanıyor. `pct` 0..100.
  */
 export function ProgressTrack({ pct, tint, height, track, minPct = 0 }: { pct: number; tint: string; height: number; track: string; minPct?: number }) {
   const [w, onLayout] = useTrackWidth();
-  const p = Math.max(minPct, Math.max(0, Math.min(100, pct)));
+  const p = barPct(pct, minPct);
   return (
     <View onLayout={onLayout} style={{ height, borderRadius: height / 2, backgroundColor: track, overflow: "hidden" }}>
       <Fill frac={p / 100} width={w} tint={tint} radius={height / 2} />
@@ -88,7 +103,7 @@ export function Bar({ pct, tint, size = "inline", extra }: { pct: number; tint: 
   const clamp = (n: number) => Math.max(0, Math.min(100, n));
   const [w, onLayout] = useTrackWidth();
   if (!extra) {
-    // Sıfırda da ince bir uç: çubuğun boş değil "başlamamış" olduğu görünsün.
+    // Sıfırın üstünde ince bir uç (sıfır boş iz, bkz. `barPct`).
     return <ProgressTrack pct={pct} tint={tint} height={height} track={colors.surface2} minPct={3} />;
   }
   /* İki bölüm üst üste: açık bölüm ana + ek kadar, koyu ana bölüm önünde.

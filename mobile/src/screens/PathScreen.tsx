@@ -21,6 +21,7 @@ import { AppHeader } from "../ui/AppHeader";
 import { api } from "../api/client";
 import { PathQuota } from "../ui/PathQuota";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
+import { barPct } from "../ui/Bar";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
   conversation: (p) => <ConversationIcon {...p} />, read: (p) => <SkillReadingIcon {...p} />, listen: (p) => <SkillListeningIcon {...p} />,
@@ -374,7 +375,7 @@ export function PathScreen() {
   const govde = (
     <>
       <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: 6 }}>
-        <View style={{ height: "100%", width: `${Math.max(2, pctAll)}%`, borderRadius: 5, backgroundColor: colors.success }} />
+        <View style={{ height: "100%", width: `${barPct(pctAll, 2)}%`, borderRadius: 5, backgroundColor: colors.success }} />
       </View>
       <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>
         {t("path.units_done", { level: path.level, n: path.doneUnits, total: path.totalUnits })}{source === "local" ? t("path.progress_local") : ""}

@@ -33,7 +33,7 @@ export function SettingRow({
        kelime kelime alt alta diziliyordu. Yazı 9rem'in altına inecekse
        denetim alt satıra geçiyor; anahtarlı satırlar her genişlikte tek
        satır. İskelet aynı sınıfları taşıyor (`settings-skeleton`). */
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3">
+    <div className="setting-row flex flex-wrap items-center gap-x-3 gap-y-2">
       <div className="min-w-[9rem] flex-1">
         <p className="text-strong">{title}</p>
         {sub ? <p className="muted mt-0.5 text-caption leading-snug">{sub}</p> : null}

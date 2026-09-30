@@ -44,6 +44,7 @@ import { decideAiConsent, fetchAiConsent, requestAiConsent, type AiConsentState 
 import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
+import { FIELD, insetEdge } from "../ui/Field";
 
 // Diller KENDİ adlarıyla yazılır: arayüz yanlış dildeyken bile kullanıcı kendi
 // dilini tanıyıp seçebilsin diye (çevrilirse tam da aradığı satırı okuyamaz).
@@ -347,6 +348,9 @@ export function SettingsScreen() {
     learning: (
         <Group colors={colors}>
           <Row label={t("settings.language_to_learn")} colors={colors}>
+            {/* Basılabilir kutu içi liste (`ui/Field`): ilk satırın üstünde 12
+                fazladan pay vardı, etiket → ilk kurs 20 idi (kural 8). */}
+            <View style={insetEdge}>
             {!learningVisible
               ? courseOptions(uiLang, course).map((c, i) => (
                   <View key={c.key} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
@@ -374,6 +378,7 @@ export function SettingsScreen() {
                 </PressableScale>
               );
             })}
+            </View>
             {/* Kurs değiştirmenin ne yaptığı: kelimeler ve kuyruk taşınıyor, öteki
                 kurs SİLİNMİYOR. Web bunu yazıyordu, mobil yazmıyordu - ve bu,
                 düğmeye basmadan önce bilinmesi gereken bir şey. */}
@@ -422,7 +427,8 @@ export function SettingsScreen() {
                 onChange={setGoal}
                 onCommit={(v) => { if (v !== (me?.dailyGoal ?? -1)) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
               />
-              <View style={{ height: spacing.lg }} />
+              {/* Art arda iki alan bloğu: 12 (`ui/Field`, web `space-y-3`). */}
+              <View style={{ height: FIELD.stack }} />
               <Slider
                 label={t("settings.new_per_day")}
                 value={newPerDay}
@@ -438,7 +444,7 @@ export function SettingsScreen() {
               /* Kaydırıcı iskeleti: etiket satırı + 22 piksellik dokunma alanı
                  (bkz. ui/Slider), yani gerçek kaydırıcıyla aynı yükseklik. */
               [0, 1].map((i) => (
-                <View key={i} style={{ marginTop: i === 0 ? 0 : spacing.lg }}>
+                <View key={i} style={{ marginTop: i === 0 ? 0 : FIELD.stack }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.sm }}>
                     <SkeletonLine variant="bodyStrong" width="38%" />
                     <SkeletonLine variant="bodyStrong" width={72} />
@@ -449,7 +455,7 @@ export function SettingsScreen() {
             )}
             {/* Hedefi ayarlayan kişinin merak ettiği tek şey o sayının neyi
                 belirlediği; web de notu kaydırıcıların altına koyuyor. */}
-            <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>{t("settings.srs_note")}</Text>
+            <Text variant="micro" color={colors.textFaint} style={{ marginTop: FIELD.help }}>{t("settings.srs_note")}</Text>
           </Row>
         </Group>
 
@@ -695,7 +701,10 @@ export function SettingsScreen() {
         <SocialPrivacy />
         <Group title={t("settings.data_consents")} colors={colors}>
           <Row colors={colors}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}>
+            {/* Kutu içi liste (`ui/Field`): ilk satır 6, ötekiler 12 taşıyordu;
+                çizginin iki yanı 12, kenarlar kutunun 16'sı. */}
+            <View style={insetEdge}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: FIELD.row }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("settings.send_usage_data")}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t("settings.analytics_sub")}</Text>
@@ -728,6 +737,7 @@ export function SettingsScreen() {
                 <ChevronNextIcon color={colors.textFaint} size={20} />
               </PressableScale>
             ) : null}
+            </View>
           </Row>
 
         </Group>
@@ -742,6 +752,9 @@ export function SettingsScreen() {
             AÇIP KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
           */}
           <Row colors={colors}>
+            {/* Basılabilir kutu içi liste (`ui/Field`): ilk satırın üstü kutunun
+                16'sı (28 idi). */}
+            <View style={insetEdge}>
             <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.privacy_policy")}</Text>
               <ChevronNextIcon color={colors.textFaint} size={20} />
@@ -780,6 +793,7 @@ export function SettingsScreen() {
               </View>
               <ChevronNextIcon color={colors.textFaint} size={20} />
             </PressableScale>
+            </View>
             <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Lernomi {APP_VERSION}</Text>
           </Row>
       </Group>

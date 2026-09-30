@@ -63,9 +63,11 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
       <View accessibilityViewIsModal accessibilityLabel={t("exam.open_certificate")} style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
         {/* Modal gezginin DIŞINDA: ekranlarla aynı kolon burada elle veriliyor. */}
         <ContentColumn>
-        {/* Kapatma öteki ekranlardaki gibi solda (üst çubuk şablonu). */}
+        {/* Bilgi ekranı: üstte X yok, yalnız başlık; çıkış dipteki "Kapat"
+            (öteki bilgi ekranlarıyla aynı, `FlowActions` `close`). Donanım
+            geri tuşu `onRequestClose` ile kapatıyor. */}
         <View style={{ paddingHorizontal: spacing.lg, paddingVertical: spacing.sm }}>
-          <FlowTopBar onClose={onClose} title={t("exam.open_certificate")} />
+          <FlowTopBar title={t("exam.open_certificate")} />
         </View>
         {guest && !failed ? (
           <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
@@ -73,11 +75,10 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
           </View>
         ) : null}
         {failed ? (
-          <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md }}>
+          <View style={{ flex: 1, paddingHorizontal: spacing.lg }}>
             <View style={{ flex: 1, justifyContent: "center" }}>
               <StateBody alert title={t("exam.certificate_failed")} />
             </View>
-            <FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} />
           </View>
         ) : svg === null ? (
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}><ActivityIndicator color={colors.primary} /></View>
@@ -95,6 +96,11 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
             onShouldStartLoadWithRequest={() => false}
           />
         )}
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>
+          {failed
+            ? <FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} close={onClose} />
+            : <FlowActions primary={{ label: t("common.close"), onPress: onClose }} />}
+        </View>
         </ContentColumn>
       </View>
     </Modal>

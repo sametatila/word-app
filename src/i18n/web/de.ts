@@ -251,7 +251,6 @@ export const deWeb: Record<string, string> = {
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
   "rounds.write_sentence_ph": "Schreib den Satz…",
-  "rounds.understood": "{word} — verstanden",
   "rounds.no_tts": "Dein Gerät kann nicht vorlesen; das Wort wird als Text angezeigt.",
   "rounds.empty_word_slot": "leeres Feld",
   "rounds.empty_letter_slot": "leeres Feld",
@@ -270,7 +269,6 @@ export const deWeb: Record<string, string> = {
   "pron.pauses": "{n} Pausen",
   "pron.pauses.one": "{n} Pause",
   "pron.word_level_note": "Messung auf Wortebene, keine Phonembewertung",
-  "weekly.back_to_learn": "Zurück zu Lernen",
   "walk.paused": "Pausiert",
   "walk.preparing": "Die Runde wird vorbereitet…",
   "walk.unsupported_title": "Dieser Browser unterstützt gesprochene Antworten nicht",
@@ -306,7 +304,6 @@ export const deWeb: Record<string, string> = {
   "notfound.sub": "Die gesuchte Seite wurde verschoben oder existiert nicht.",
   "common.home": "Startseite",
   "exam.load_or_save_failed": "Die Prüfung ließ sich gerade nicht laden oder speichern.",
-  "exam.back_to_path": "Zurück zu den Gesprächen",
   "exam.is_sentence_right": "Stimmt dieser Satz?",
   "exam.read_aloud": "Lies den Satz laut vor.",
   "exam.stop_recording": "Aufnahme beenden",

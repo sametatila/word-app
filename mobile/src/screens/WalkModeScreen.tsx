@@ -1016,13 +1016,14 @@ export function WalkModeScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {phase === "intro" ? (
         /* KAPAK ŞABLONU. Eski tek paragraflık tanıtım ikonlu kural
-           satırlarına bölündü; açıklama bağlantısı altta metin düğmesi. */
+           satırlarına bölündü. Üstte X yok, dipte Başla / Kapat (öteki
+           kapaklarla aynı); mikrofon açıklaması dipteki metin yuvasındaydı,
+           "Kapat"a yer açmak için gövdede bağlantı oldu. */
         <FlowScreen
-          top={<FlowTopBar onClose={onBackPress} />}
           actions={
             <FlowActions
               primary={{ label: tx("common.start"), onPress: () => { void beginWalk(); } }}
-              tertiary={{ label: tx("walkmode.about_microphone_and_voice_data"), onPress: showDisclosureInfo }}
+              close={onBackPress}
             />
           }
         >
@@ -1039,7 +1040,11 @@ export function WalkModeScreen() {
               { icon: CorrectIcon, text: tx("walkmode.rule_verdict") },
               { icon: ResumeIcon, text: tx("walkmode.rule_continue") },
             ]}
-          />
+          >
+            <PressableScale onPress={showDisclosureInfo} hitSlop={6} accessibilityRole="link" style={{ alignSelf: "flex-start", paddingVertical: spacing.xs }}>
+              <Text variant="bodyStrong" color={colors.primaryText}>{tx("walkmode.about_microphone_and_voice_data")}</Text>
+            </PressableScale>
+          </CoverBody>
           {/* Bugün kalan tur başlamadan görünsün — bu tur sayıldıktan SONRAKİ
               sayı; son turdaysa satır yok (ücretsiz; premium'da yalnız kötüye
               kullanım tavanı var, sayı söylenmiyor). */}
@@ -1051,7 +1056,7 @@ export function WalkModeScreen() {
         </FlowScreen>
       ) : phase === "done" && noMore && tally.total === 0 ? (
         /* BUGÜNLÜK KELİME YOK — bitmiş bir tur değil, boş kuyruk: durum şablonu. */
-        <FlowScreen center actions={<FlowActions primary={{ label: tx("common.go_back"), onPress: () => nav.goBack() }} />}>
+        <FlowScreen center actions={<FlowActions primary={{ label: tx("common.close"), onPress: () => nav.goBack() }} />}>
           <StateBody title={tx("walkmode.done_no_more")} body={tx("walkmode.done_no_more_sub")} />
         </FlowScreen>
       ) : phase === "done" ? (
@@ -1060,12 +1065,11 @@ export function WalkModeScreen() {
            Kutlama eşiği eskisi gibi %60. */
         <FlowScreen
           celebrate={tally.total > 0 && donePct >= 60}
-          top={<FlowTopBar onClose={() => nav.goBack()} />}
           actions={
             <FlowActions
-              primary={noMore ? { label: tx("common.finish"), onPress: () => nav.goBack() } : { label: tx("walkmode.continue"), onPress: newTour }}
+              primary={noMore ? { label: tx("common.close"), onPress: () => nav.goBack() } : { label: tx("common.continue"), onPress: newTour }}
               secondary={tally.total > 0 ? { label: tx("common.share"), icon: <ShareIcon color={colors.text} size={19} />, onPress: () => shareResult(tally.correct, tally.total) } : null}
-              tertiary={noMore ? null : { label: tx("common.finish"), onPress: () => nav.goBack() }}
+              close={noMore ? null : () => nav.goBack()}
             />
           }
         >
@@ -1100,7 +1104,7 @@ export function WalkModeScreen() {
             ) : null}
           </>,
           <FlowActions
-            primary={{ label: tx("walkmode.continue"), onPress: resumeWalk }}
+            primary={{ label: tx("common.continue"), onPress: resumeWalk }}
             tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
           />,
         )
@@ -1108,7 +1112,7 @@ export function WalkModeScreen() {
         inPlayer(
           <StateBody title={tx("walkmode.i_paused_round")} body={tx("walkmode.i_haven_t_heard_you_for_while")} />,
           <FlowActions
-            primary={{ label: tx("walkmode.continue"), onPress: () => { unheardWin.current = []; void runLoop(rounds, idx); } }}
+            primary={{ label: tx("common.continue"), onPress: () => { unheardWin.current = []; void runLoop(rounds, idx); } }}
             tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
           />,
         )
@@ -1118,8 +1122,8 @@ export function WalkModeScreen() {
           center
           actions={
             <FlowActions
-              primary={walkFairUse ? { label: tx("common.go_back"), onPress: () => nav.goBack() } : { label: tx("unlock.premium_now"), onPress: () => navPaywall() }}
-              tertiary={walkFairUse ? null : { label: tx("common.go_back"), onPress: () => nav.goBack() }}
+              primary={walkFairUse ? { label: tx("common.close"), onPress: () => nav.goBack() } : { label: tx("unlock.premium_now"), onPress: () => navPaywall() }}
+              close={walkFairUse ? null : () => nav.goBack()}
             />
           }
         >
@@ -1129,7 +1133,7 @@ export function WalkModeScreen() {
           />
         </FlowScreen>
       ) : phase === "error" ? (
-        <FlowScreen center actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: loadQueue }} tertiary={{ label: tx("common.go_back"), onPress: () => nav.goBack() }} />}>
+        <FlowScreen center actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: loadQueue }} close={() => nav.goBack()} />}>
           <StateBody alert title={tx("walk.error_title")} body={tx("walk.error_sub")} />
         </FlowScreen>
       ) : phase === "denied" ? (
@@ -1141,7 +1145,7 @@ export function WalkModeScreen() {
           actions={
             <FlowActions
               primary={{ label: tx(Platform.OS === "ios" ? "walkmode.open_settings" : "walkmode.allow_and_start"), onPress: () => { if (Platform.OS === "ios") void Linking.openSettings().catch(() => {}); else void start(rounds); } }}
-              tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }}
+              close={() => nav.goBack()}
             />
           }
         >
@@ -1220,7 +1224,7 @@ export function WalkModeScreen() {
         title={tx("walkmode.end_walk")}
         message={tx("walkmode.back_message")}
         confirmLabel={tx("common.finish")}
-        cancelLabel={tx("common.continue_2")}
+        cancelLabel={tx("common.continue")}
         destructive
         onConfirm={() => { back.cancel(); stopAndLeave(); }}
         onCancel={back.cancel}

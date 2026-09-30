@@ -7,6 +7,7 @@ import { PrimaryButton } from "./PrimaryButton";
 import { disableTwoFactor, enableTwoFactor, getTwoFactorEnabled } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
 import { spacing, radii, type Palette } from "../theme";
+import { FIELD } from "./Field";
 
 /**
  * İki adımlı doğrulama — aç / kapat. Web'deki kartın eşi.
@@ -62,7 +63,8 @@ export function TwoFactor({ colors }: { colors: Palette }) {
 
   if (!open) {
     return (
-      <View style={{ gap: spacing.xs }}>
+      /* Bildirim → satır, alan → alan: 12 (`ui/Field`; web `space-y-3`). */
+      <View style={{ gap: FIELD.stack }}>
         {note ? (
           <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
             <Text variant="caption" color={colors.successText}>{note}</Text>
@@ -89,7 +91,7 @@ export function TwoFactor({ colors }: { colors: Palette }) {
   }
 
   return (
-    <View style={{ gap: spacing.sm }}>
+    <View style={{ gap: FIELD.stack }}>
       {enabled ? null : (
         <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="caption" color={colors.dangerText}>{t("twofa.mail_warning")}</Text>

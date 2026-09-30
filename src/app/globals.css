@@ -713,6 +713,27 @@
     box-shadow: none;
     border-color: var(--border);
   }
+  /*
+   * Ayar satırı ve kutu içi liste — kural `components/field.tsx` başında.
+   * Satırın kendi payı (12/16) kartsız listeler için; `.inset-list` içinde
+   * yatay pay kalkıyor (kutunun 16'sı var), ilk üst ve son alt 0, aradaki
+   * çizginin iki yanı 12. Aynı katmanda ve SONRA: `.inset-list > *` kazanıyor.
+   */
+  .setting-row {
+    padding: 0.75rem 1rem;
+  }
+  .inset-list > * {
+    padding: 0.75rem 0;
+  }
+  .inset-list > :first-child {
+    padding-top: 0;
+  }
+  .inset-list > :last-child {
+    padding-bottom: 0;
+  }
+  .inset-list > * + * {
+    border-top: 1px solid var(--hairline);
+  }
   .surface-2 {
     background: var(--surface-2);
   }
@@ -969,11 +990,43 @@
    *
    * Ölçüler Android'den: çubuk 6 px ve `chip` yarıçapında, tutamaç 22 px
    * daire + 3 px yüzey rengi halka, dokunma alanı 22 px (Android'in yorumu:
-   * "6 piksellik bir çizgiyi parmakla yakalamak zor"). Dolu kısım `--pct`
-   * değişkeninden: WebKit'in `::-webkit-slider-progress`i yok, o yüzden
-   * çubuğun kendi zemini iki duraklı bir gradyan.
+   * "6 piksellik bir çizgiyi parmakla yakalamak zor").
+   *
+   * ÇUBUK VE DOLU KISIM GİRDİNİN ALTINDAKİ KATMANDA (`.range-rail`,
+   * `.range-fill`), girdinin izi saydam (2026-09-30). Önce çubuğun sözde
+   * öğesinde `--pct`li iki duraklı gradyan vardı: Safari sözde öğeyi değişken
+   * değişince her zaman yeniden boyamıyordu ve dolu kısım `yüzde × genişlik`te
+   * bitiyordu, tutamaç merkezi ise `11 px + yüzde × (genişlik - 22 px)`te;
+   * ikisi uçlara doğru 11 px ayrışıyordu. Dolu kısım artık tutamaç merkezinde
+   * bitiyor (`--frac` 0..1, `components/profile-form.tsx` `Slider`; mobil
+   * `ui/Slider` aynı hesap).
    */
+  /* Yükseklik girdiden (satır içi, satır payıyla): ayarların iskeleti
+     (`profile/settings/skeleton.tsx`) aynı yapıyı görünmez bir `.range`le
+     kuruyor, iki boy böyle eşit kalıyor. */
+  .range-box {
+    position: relative;
+    display: block;
+  }
+  .range-rail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8px;
+    height: 6px;
+    overflow: hidden;
+    border-radius: var(--radius-chip);
+    background: var(--surface-2);
+    pointer-events: none;
+  }
+  .range-fill {
+    display: block;
+    height: 100%;
+    width: calc(11px + (100% - 22px) * var(--frac, 0));
+    background: var(--brand-fill);
+  }
   .range {
+    position: relative;
     appearance: none;
     width: 100%;
     height: 22px;
@@ -987,11 +1040,7 @@
   .range::-webkit-slider-runnable-track {
     height: 6px;
     border-radius: var(--radius-chip);
-    background: linear-gradient(
-      to right,
-      var(--brand-fill) var(--pct, 0%),
-      var(--surface-2) var(--pct, 0%)
-    );
+    background: transparent;
   }
   .range::-webkit-slider-thumb {
     appearance: none;
@@ -1002,15 +1051,15 @@
     background: #fff;
     box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
   }
+  /* Firefox'un yerel dolu kısmı da saydam: dolu kısım `.range-fill`. */
   .range::-moz-range-track {
     height: 6px;
     border-radius: var(--radius-chip);
-    background: var(--surface-2);
+    background: transparent;
   }
   .range::-moz-range-progress {
     height: 6px;
-    border-radius: var(--radius-chip);
-    background: var(--brand-fill);
+    background: transparent;
   }
   .range::-moz-range-thumb {
     width: 22px;

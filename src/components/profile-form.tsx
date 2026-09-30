@@ -17,6 +17,7 @@ import { hasMicConsent, revokeMicConsent } from "@/lib/mic-consent";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
 import { Group, Row, SETTINGS_TITLE, SettingsPanelTitle } from "@/components/settings-section";
+import { Field, InsetList } from "@/components/field";
 import { LinkedAccounts } from "@/components/account/linked-accounts";
 import { courseName, courseSub, selectableCourses } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
@@ -156,7 +157,9 @@ export function ProfileForm({
 
   const nameRow = (
     <Row label={t("settings.sec_name")}>
-      <label className="block">
+      {/* Alan bloğu (`components/field.tsx`): hata satırı kutunun 8 altında;
+          payı yoktu, kutuya yapışıktı. */}
+      <Field error={nameError} errorId="profile-name-error">
         <input
         value={displayName}
         enterKeyHint="done"
@@ -187,12 +190,11 @@ export function ProfileForm({
         aria-label={t("settings.sec_name")}
         aria-invalid={nameError ? true : undefined}
         aria-describedby={nameError ? "profile-name-error" : undefined}
-        className="option w-full px-4 py-3 text-body outline-none focus:border-[color:var(--color-brand)]"
+        /* `.input` (auth-shell'deki gibi): `.option` bir seçim kutusu,
+           üzerine gelince kalkıyor ve odak halkası yoktu. Ölçü aynı (12/16). */
+        className="input w-full"
         />
-      </label>
-      {nameError ? (
-        <p id="profile-name-error" role="alert" className="text-caption" style={{ color: "var(--color-rose)" }}>{nameError}</p>
-      ) : null}
+      </Field>
       {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
         eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
         tamamı profile-view.tsx'te. */}
@@ -209,7 +211,7 @@ export function ProfileForm({
       {/* GÜVENLİK Hesap'ın alt sayfası: parola, iki adım ve oturumlar yılda
           bir açılan şeyler; listede kendi satırı yok. */}
       <Row>
-        <Link href="/profile/settings/security" prefetch={false} className="pressable flex items-center gap-3 py-1">
+        <Link href="/profile/settings/security" prefetch={false} className="pressable flex items-center gap-3 py-1.5">
           <span className="min-w-0 flex-1">
             <span className="block text-strong">{t("settings.group_security")}</span>
             <span className="muted block text-caption">{t("settings.security_sub")}</span>
@@ -220,7 +222,7 @@ export function ProfileForm({
       {/* HESABI SİL Hesap'ın son satırı — mobil Ayarlar › Hesap ile aynı yer;
           mağaza notlarının anlattığı yol ("Ayarlar › Hesap › Hesabı sil"). */}
       <Row>
-        <Link href="/account/delete" prefetch={false} className="pressable flex items-center gap-3 py-1">
+        <Link href="/account/delete" prefetch={false} className="pressable flex items-center gap-3 py-1.5">
           <span className="min-w-0 flex-1">
             <span className="block text-strong" style={{ color: "var(--color-rose)" }}>{t("settings.delete_account")}</span>
             <span className="muted block text-caption">{t("deleteaccount.your_account_and_all_your_data")}</span>
@@ -319,20 +321,23 @@ export function ProfileForm({
                 bitince üst seviye) bir kez öğrenilen şeydi ve her ayar açılışında
                 dört satır yer kaplıyordu. Kalan tek ek bilgi kullanıcıyı
                 ilgilendiren tek şey: bu düğmeyi ondan başkası çevirmiyor. */}
-            <p className="muted mt-1.5 text-caption">
+            <p className="muted mt-2 text-caption">
               {t(LEVELS.find((l) => l.id === level)?.descKey ?? "")}
             </p>
             {/* Yerleştirme testine tek giriş onboarding'di, yani bir kez geçilip
                 bir daha ulaşılamıyordu: seviyesinden emin olmayan mevcut kullanıcı
                 ancak elle tahmin edebiliyordu. Android aynı yerde, seviye
                 çiplerinin hemen altında bu bağlantıyı veriyor. */}
-            <Link href="/placement" className="mt-2.5 inline-block text-caption font-bold" style={{ color: "var(--color-brand)" }}>
+            <Link href="/placement" className="mt-3 inline-block text-caption font-bold" style={{ color: "var(--color-brand)" }}>
               {t("settings.not_sure_take_placement_test")}
             </Link>
           </div>
         </Row>
 
         <Row label={t("settings.daily_goal_reviews_day")}>
+          {/* İki kaydırıcı art arda iki alan bloğu: arası 12 (`components/field.tsx`);
+              aralarında pay yoktu, ikinci etiket ilk çubuğa yapışıktı. */}
+          <div className="space-y-3">
           <Slider
             label={t("settings.daily_goal_short")}
             value={dailyGoal}
@@ -353,12 +358,13 @@ export function ProfileForm({
             onChange={setNewPerDay}
             onCommit={(v) => { if (v !== initial.newPerDay) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
           />
+          </div>
           {/* Tekrar mantığı eskiden ayrı bir "Tekrar sistemi" kartındaydı: dört
               satır, hiçbir eylem yok. Bilginin ait olduğu yer burası — hedefi
               ayarlayan kişinin merak ettiği tek şey o sayının neyi belirlediği.
               Kaydırıcıların ÜSTÜNDEYDİ ve negatif boşluk yüzünden ilk etiketin
               üstüne biniyordu; notun yeri zaten anlattığı şeyin altı. */}
-          <p className="muted -mt-1 text-caption">{t("settings.srs_note")}</p>
+          <p className="muted mt-2 text-caption">{t("settings.srs_note")}</p>
         </Row>
 
 
@@ -395,8 +401,12 @@ export function ProfileForm({
               value={voice}
               onChange={(v: VoiceId) => { setVoice(v); void patch({ voice: v }, () => track("setting_change", 0, "voice")); }}
             />
-            <div className="mt-3 border-t pt-1" style={{ borderColor: "var(--hairline)" }}>
-              <SoundSettings bare />
+            {/* Ses seçicisinin altında çizgi, iki yanı 12; anahtarlar kutu içi
+                liste (satırlar kendi `px-4`ünü taşıyordu, kenarda 32 idi). */}
+            <div className="mt-3 border-t pt-3" style={{ borderColor: "var(--hairline)" }}>
+              <InsetList>
+                <SoundSettings bare />
+              </InsetList>
             </div>
           </div>
         </Row>
@@ -418,7 +428,8 @@ export function ProfileForm({
               açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
               bir işin yönergesi — zaten kurmuş olan kullanıcı her ayar açılışında
               onu geçmek zorunda kalıyordu. */}
-          <div className="p-5">
+          {/* Kutunun payı yeterli: `p-5` onun üstüne biniyordu (kenarda 36). */}
+          <div>
             <Disclosure panel="install_guide" title={t("settings.add_to_home")} hint={t("settings.add_to_home_hint")}>
               <InstallGuide tone="plain" />
             </Disclosure>
@@ -442,6 +453,9 @@ export function ProfileForm({
         {social ? <SocialSettings initial={social} part="privacy" /> : null}
         <Group title={t("settings.data_consents")}>
         <Row>
+          {/* Anahtar satırları kutu içi liste: aralarında çizgi (mobil de öyle),
+              kenarda kutunun 16'sı (`components/field.tsx`). */}
+          <InsetList>
           <AnalyticsSettings bare />
           {/* Yapay zekâ rızası analitiğin yanında: ikisi de "verim nereye
               gidiyor" sorusunun anahtarı. "Hayır" diyene diyalog bir daha
@@ -451,6 +465,7 @@ export function ProfileForm({
               geri alma düğmesi göstermek, hiçbir şey yapmayan bir düğme demek.
               Mobil ayarlarda da aynı satır ve aynı koşul var. */}
           <MicConsentRow />
+          </InsetList>
         </Row>
 
         </Group>
@@ -465,6 +480,7 @@ export function ProfileForm({
           KAPATABİLDİĞİ şeyleri taşıyor; okunacak metinler burada.
         */}
         <Row>
+          <InsetList>
           <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
             <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.privacy_policy")}</Link>
             <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.terms_of_use")}</Link>
@@ -486,6 +502,7 @@ export function ProfileForm({
           <SettingRow title={t("settings.oss_licenses")}>
             <Link href="/licenses" prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.oss_licenses")}</Link>
           </SettingRow>
+          </InsetList>
         </Row>
       </Group>
     ),
@@ -540,6 +557,13 @@ function Slider({
    */
   onCommit: (v: number) => void;
 }) {
+  /* Izgara ya da sınır dışı değer (API ızgaraya bakmıyor) tarayıcıda
+     tutamacı en yakın adıma oturtuyor; sayı ve dolu kısım da aynı değeri
+     göstersin, yoksa ilk sürüklemede tutamaç "yerine atlıyor". */
+  const s = step > 0 ? step : 1;
+  const shown = Math.min(max, Math.max(min, min + Math.round((value - min) / s) * s));
+  const frac = max > min ? (shown - min) / (max - min) : 0;
+  const commit = (el: HTMLInputElement) => onCommit(Number(el.value));
   return (
     <label className="block">
       {/* Etiket SÖNÜK DEĞİL: Android aynı satırda iki yanı da `bodyStrong`
@@ -547,24 +571,48 @@ function Slider({
       <span className="mb-1.5 flex items-baseline justify-between text-strong">
         <span>{label}</span>
         <span className="text-[color:var(--color-brand)]">
-          {value} {suffix}
+          {shown} {suffix}
         </span>
       </span>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        onPointerUp={(e) => onCommit(Number((e.target as HTMLInputElement).value))}
-        onKeyUp={(e) => onCommit(Number((e.target as HTMLInputElement).value))}
-        onBlur={(e) => onCommit(Number(e.target.value))}
-        /* Görünüm `globals.css` `.range`te: çubuk, tutamaç ve dolu kısım
-           Android'in ölçüsünde. `--pct` dolu kısmı sürüyor. */
-        className="range"
-        style={{ "--pct": `${((value - min) / (max - min)) * 100}%` } as React.CSSProperties}
-      />
+      {/* DOLU KISIM AYRI KATMAN, çubuğun sözde öğesinde değil (2026-09-30).
+          `--pct` girdinin kendisinde değişip `::-webkit-slider-runnable-track`
+          zeminini sürüyordu: Safari sözde öğeyi değişkenle birlikte her zaman
+          yeniden boyamıyor, dolu kısım tutamacın gerisinde kalıyordu. Ayrıca
+          dolu kısım `yüzde × genişlik`te bitiyordu, tutamaç merkezi ise
+          `11 px + yüzde × (genişlik - 22 px)`: ikisi uçlara doğru 11 px
+          ayrışıyordu. Katman artık tutamaç merkezinde bitiyor (mobil
+          `ui/Slider` aynı hesap). */}
+      <span className="range-box" style={{ "--frac": frac } as React.CSSProperties}>
+        <span aria-hidden className="range-rail">
+          <span className="range-fill" />
+        </span>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={shown}
+          onChange={(e) => onChange(Number(e.target.value))}
+          /* Bırakma girdinin DIŞINDA da olabiliyor (fare çubuktan kayıp
+             bırakılınca `pointerup` başka öğeye düşüyor ve kayıt blur'a
+             kalıyordu): bırakma pencereden dinleniyor. */
+          onPointerDown={(e) => {
+            const el = e.currentTarget;
+            const bitir = () => {
+              window.removeEventListener("pointerup", bitir);
+              window.removeEventListener("pointercancel", bitir);
+              commit(el);
+            };
+            window.addEventListener("pointerup", bitir);
+            window.addEventListener("pointercancel", bitir);
+          }}
+          onKeyUp={(e) => commit(e.currentTarget)}
+          onBlur={(e) => commit(e.currentTarget)}
+          /* Görünüm `globals.css` `.range`te: çubuk, tutamaç ve dolu kısım
+             Android'in ölçüsünde. */
+          className="range"
+        />
+      </span>
     </label>
   );
 }

@@ -153,6 +153,46 @@ export function schedule(
 
 export const xpForQuality = (q: number) => (q >= 5 ? 12 : q >= 4 ? 10 : q >= 3 ? 7 : 3);
 
+/**
+ * "HATIRLAMADIM" — öz değerlendirmede dürüst bir hayır.
+ *
+ * Yanlış cevap değil: kullanıcı bir şık seçip yanılmadı, kendisi "gelmedi"
+ * dedi. SRS için "yeniden" (1: öğrenme adımına döner, birkaç dakikada yine
+ * gelir); puan için "Hatırladım" ile AYNI (3 → 7 XP). Dürüstlüğün bedeli
+ * olursa kullanıcı "Hatırladım"a basmayı öğrenir ve SRS kör kalır.
+ */
+export const SELF_MISS_QUALITY = 1;
+const SELF_MISS_XP = xpForQuality(3);
+
+/**
+ * Bir cevabın SRS kalitesi, XP'si ve doğruluğa sayılıp sayılmadığı.
+ *
+ * Kısmi puanlı oyunlar (Çevir) kaliteyi kendisi verir; gerisi hız ve
+ * doğruluktan. Sınır 0–5; yanlış cevap 3'ü aşamaz, doğru cevap 3'ün altına
+ * inemez. `selfMiss` doğruluk ölçüsünün DIŞINDA (`graded: false`).
+ */
+export function gradeAnswer(ans: {
+  game: string;
+  correct: boolean;
+  latencyMs: number;
+  hintUsed?: boolean;
+  quality?: number;
+  selfMiss?: boolean;
+}): { quality: number; xp: number; graded: boolean } {
+  if (ans.selfMiss) return { quality: SELF_MISS_QUALITY, xp: SELF_MISS_XP, graded: false };
+  const own =
+    typeof ans.quality === "number" && Number.isFinite(ans.quality)
+      ? Math.max(0, Math.min(5, Math.round(ans.quality)))
+      : null;
+  const q =
+    own === null
+      ? grade(ans.game, ans.correct, ans.latencyMs, ans.hintUsed)
+      : ans.correct
+        ? Math.max(3, own)
+        : Math.min(3, own);
+  return { quality: q, xp: xpForQuality(q), graded: true };
+}
+
 function addDays(d: Date, days: number) {
   return new Date(d.getTime() + days * 86400000);
 }

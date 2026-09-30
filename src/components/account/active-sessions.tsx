@@ -122,9 +122,13 @@ export function ActiveSessions() {
             aynı parça): eskiden bileşen hiç çizilmiyordu ve Güvenlik
             sayfasının dibi liste gelince aşağı uzuyordu. Alttaki düğme
             listeye bağlı değil, yüklenirken de çalışıyor. */}
+        {/* Liste, uyarılar ve alt satır art arda bloklar: aralarında 12
+            (`components/field.tsx` kuralı). Alt satır `p-4` taşıyordu ve
+            kutunun payının üstüne biniyordu (kenarda 32). */}
+        <div className="space-y-3">
         {state === "loading" ? <SessionRowSkeleton /> : null}
         {state === "ok" && rows?.length ? (
-          <div className="divide-y divide-[color:var(--hairline)]">
+          <div className="inset-list">
             {rows.map((s) => (
               <SettingRow
                 key={s.id}
@@ -143,7 +147,6 @@ export function ActiveSessions() {
           </div>
         ) : null}
 
-        <div className="space-y-3 p-4">
           {state === "stale" ? <AuthNotice tone="error">{t("sessions.need_fresh")}</AuthNotice> : null}
           {state === "failed" ? <AuthNotice tone="error">{t("sessions.load_failed")}</AuthNotice> : null}
           {msg ? <AuthNotice tone="success">{msg}</AuthNotice> : null}

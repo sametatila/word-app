@@ -81,19 +81,14 @@ export function RoundExit({
 }
 
 /**
- * SONUÇ EKRANININ ÜST ÇUBUĞU (2026-09-27, ürün kararı; HIG/Material tam
- * ekran akış kalıbı). Her sonuç ekranında çıkış turdakiyle AYNI yerde, aynı
- * karoda: solda çarpı, adı `common.close`. Geri oku yok: bitmiş bir tura
- * "geri" dönülmez. Basınca sonucun kendi çıkışı ne yapıyorsa o (alttaki
- * "bitir/kapat" ya da çıkış bağlantısı); onay yok, tur bitti. Sağ yuva
- * isteğe bağlı (ör. paylaş). Android karşılığı `FlowTopBar` (`ui/flow`).
+ * SONUÇ EKRANININ ÜST ÇUBUĞU — yalnız sağ yuva (ör. paylaş).
+ *
+ * 2026-09-27'de solda bir çarpı vardı; 2026-09-30 (Samet) sonuç ekranları da
+ * bilgi ekranlarının kuralına girdi: üstte X YOK, çıkış dipteki "Kapat"
+ * (`flow` `FlowActions` `close`). Sağ yuva boşsa çubuk hiç çizilmiyor.
+ * Android karşılığı `FlowTopBar` (`ui/flow`) `onClose` olmadan.
  */
-export function ResultTopBar({ onExit, href, right }: { onExit?: () => void; href?: string; right?: ReactNode }) {
-  return (
-    <div className="flex min-h-11 items-center gap-3">
-      <RoundExit onExit={onExit} href={href} labelKey="common.close" />
-      <div className="min-w-0 flex-1" />
-      {right}
-    </div>
-  );
+export function ResultTopBar({ right }: { right?: ReactNode }) {
+  if (!right) return null;
+  return <div className="flex min-h-11 items-center justify-end gap-3">{right}</div>;
 }

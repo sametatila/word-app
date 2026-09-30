@@ -60,7 +60,7 @@ export function TermsUpdateNotice() {
           </PressableScale>
         </View>
         <PressableScale onPress={() => void ok()} disabled={busy} accessibilityRole="button" style={{ alignSelf: "flex-end", backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("terms.ok")}</Text>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.got_it")}</Text>
         </PressableScale>
       </View>
     </View>

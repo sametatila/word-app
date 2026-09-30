@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { LogoMark, CheckIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * Kurulum rehberi — kalıcı, her zaman ulaşılabilir.
@@ -147,13 +148,15 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
             </p>
             <ol className="mt-1.5 space-y-1.5">
               {STEPS[p].steps.map((step, i) => (
-                <li key={step} className="flex gap-2.5 text-body">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-micro tabular-nums"
-                    style={{ background: "var(--surface-2)" }}
-                  >
-                    {i + 1}
-                  </span>
+                <li key={step} className="flex items-start gap-2.5 text-body">
+                  <IconLine>
+                    <span
+                      className="flex h-5 w-5 items-center justify-center rounded-full text-micro tabular-nums"
+                      style={{ background: "var(--surface-2)" }}
+                    >
+                      {i + 1}
+                    </span>
+                  </IconLine>
                   <span className="min-w-0">{t(step)}</span>
                 </li>
               ))}

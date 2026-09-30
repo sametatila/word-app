@@ -446,7 +446,7 @@ export function CourseOnboarding({
           onClick={next}
           className="btn btn-primary flex-1 px-6 py-4 text-h3 disabled:opacity-60"
         >
-          {saving ? t("rounds.saving") : t("common.continue_2")}
+          {saving ? t("rounds.saving") : t("common.continue")}
         </button>
       </div>
 

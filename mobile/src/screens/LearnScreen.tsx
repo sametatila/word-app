@@ -21,6 +21,7 @@ import { DailyQuests } from "../ui/DailyQuests";
 import { FriendPulse } from "../social/FriendPulse";
 import { useTheme, spacing, radii, softShadow, fillOf } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
+import { barPct } from "../ui/Bar";
 
 /** Alt aksiyon satırı — dil odaklı, sade. */
 function ActionRow({ title, subtitle, tint, icon: Icon, onPress }: { title: string; subtitle: string; tint: string; icon: (p: { color: string; size: number }) => React.ReactElement; onPress?: () => void }) {
@@ -158,7 +159,7 @@ export function LearnScreen() {
                 <Text variant="micro" color="#ffffffdd">{reviewsToday}/{dailyGoal}</Text>
               </View>
               <View style={{ height: 6, borderRadius: 3, backgroundColor: "#ffffff40", overflow: "hidden" }}>
-                <View style={{ height: "100%", width: `${Math.max(3, goalPct)}%`, backgroundColor: "#fff", borderRadius: 3 }} />
+                <View style={{ height: "100%", width: `${barPct(goalPct, 3)}%`, backgroundColor: "#fff", borderRadius: 3 }} />
               </View>
             </View>
           ) : null}

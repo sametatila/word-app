@@ -287,7 +287,6 @@ export const trWeb: Record<string, string> = {
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
   "rounds.write_sentence_ph": "Cümleyi yaz…",
-  "rounds.understood": "{word} — anladım",
   "rounds.no_tts": "Cihazın sesli okumayı desteklemiyor; kelime yazıyla gösterildi.",
   "rounds.empty_word_slot": "boş yer",
   "rounds.empty_letter_slot": "boş yuva",
@@ -306,7 +305,6 @@ export const trWeb: Record<string, string> = {
   "pron.pauses": "{n} duraklama",
   "pron.pauses.one": "{n} duraklama",
   "pron.word_level_note": "kelime düzeyi ölçüm, fonem notu değil",
-  "weekly.back_to_learn": "Öğren'e dön",
   "walk.paused": "Duraklatıldı",
   "walk.preparing": "Tur hazırlanıyor…",
   "walk.unsupported_title": "Bu tarayıcı sesli cevabı desteklemiyor",
@@ -342,7 +340,6 @@ export const trWeb: Record<string, string> = {
   "notfound.sub": "Aradığın sayfa taşınmış ya da hiç var olmamış olabilir.",
   "common.home": "Ana sayfa",
   "exam.load_or_save_failed": "Sınav şu an yüklenemedi ya da kaydedilemedi.",
-  "exam.back_to_path": "Konuşmalara dön",
   "exam.is_sentence_right": "Bu cümle doğru mu?",
   "exam.read_aloud": "Cümleyi yüksek sesle oku.",
   "exam.stop_recording": "Kaydı bitir",

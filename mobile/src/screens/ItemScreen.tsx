@@ -12,7 +12,7 @@ import { CloseIcon, LockedIcon, OfflineIcon, SpeakerIcon } from "../ui/icons";
 import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
 import { usePremiumStatus } from "../lib/premium";
-import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { SkeletonCard, SkeletonLine, SkeletonText } from "../ui/Skeleton";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
@@ -35,6 +35,7 @@ import { pathWritingSpent, tieredCopy } from "../lib/unlock";
 import { UnlockProgress } from "../ui/UnlockProgress";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
+import { IconLine } from "../ui/IconLine";
 
 /** Sonuç bandının başlığındaki beceri adı — Beceriler sekmesiyle aynı anahtarlar. */
 const SKILL_KEY: Record<string, string> = { reading: "skills.reading", listening: "skills.listening", writing: "skills.writing", speaking: "skills.speaking", grammar: "skills.grammar" };
@@ -198,7 +199,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
           {segments.map((s, i) => (
             <PressableScale key={i} onPress={() => playSegment(i)} accessibilityLabel={t("item.listen")}
               style={{ marginTop: i > 0 ? spacing.md : 0, flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, borderRadius: radii.md, backgroundColor: segIdx === i ? colors.primarySoft : "transparent", padding: segIdx === i ? spacing.sm : 0 }}>
-              <SpeakerIcon color={colors.textMuted} size={16} />
+              <IconLine variant={s.speaker ? "micro" : "body"}><SpeakerIcon color={colors.textMuted} size={16} /></IconLine>
               <View style={{ flex: 1 }}>
                 {s.speaker ? <Text variant="micro" color={colors.textMuted}>{s.speaker}</Text> : null}
                 <Text variant="body">{s.text}</Text>
@@ -408,8 +409,9 @@ export function ItemScreen() {
   }
   if (!exercise) {
     return (
-      <FlowScreen center top={<FlowTopBar back onClose={() => nav.goBack()} />} actions={<FlowActions primary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}>
-        {/* DURUM ŞABLONU: açılamayan egzersiz = üzgün maskot, tek çıkış. */}
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        {/* DURUM ŞABLONU: açılamayan egzersiz = üzgün maskot, tek çıkış
+            birincil "Kapat"; üstte ikinci bir geri oku yok (bilgi ekranı). */}
         <StateBody alert title={packFailed ? t("content.couldn_t_load") : t("item.this_exercise_can_t_be_opened")} body={packFailed ? t("social.err_offline") : null} />
       </FlowScreen>
     );
@@ -431,12 +433,10 @@ export function ItemScreen() {
   /* Rubrikle puanlananlarda (yazma, monolog) yüzde rubrik puanından: monolog
      tek görev ve doğru/toplam ya %0 ya %100 olurdu. */
   const pct = scoreOf(correct, total, lastScore);
-  const fromSkills = params.from === "skills";
   const perfect = total > 0 && correct === total;
   /* Olumsuz sonuç = adım "bitti" sayılmadı. Monologda hüküm rubrik eşiği
      (`RUBRIC_PASS_PCT`, tek görevin geçip geçmediği); ötekilerde beceri eşiği. */
   const passed = isMono ? perfect : isSkillDone(pct);
-  const backLabel = t(fromSkills ? "item.back_to_skills" : "item.back_to_path");
   const skillKey = SKILL_KEY[exercise.skill];
   /* İçerik bildirimi: Patika adımı mı, Beceriler kütüphanesi mi (aynı egzersiz biçimi). */
   const reportAs = { surface: exercise.unit != null ? ("path" as const) : ("skill" as const), id: exercise.id };
@@ -477,10 +477,13 @@ export function ItemScreen() {
       <ReportFlag style={{ alignSelf: "flex-end" }} report={() => ({ surface: reportAs.surface, target: { type: "exercise", id: exercise.id }, snapshot: { title: exercise.title, skill: exercise.skill, level: exercise.level, intro: exercise.intro, score: pct } })} />
     </View>
   );
+  /* Sonuçtan çıkış "Kapat" (2026-09-30; "Patikaya dön" / "Becerilere dön"
+     yerine, geldiği yere dönüyor). Geçtiyse birincil çıkış + metin "Tekrar
+     dene"; kaldıysa birincil "Tekrar dene" + metin "Kapat". */
   const resultActions = passed ? (
-    <FlowActions primary={{ label: backLabel, onPress: () => nav.goBack() }} secondary={{ label: t("item.try_again"), onPress: retry }} />
+    <FlowActions primary={{ label: t("common.close"), onPress: () => nav.goBack() }} tertiary={{ label: t("item.try_again"), onPress: retry }} />
   ) : (
-    <FlowActions primary={{ label: t("item.try_again"), onPress: retry }} secondary={{ label: backLabel, onPress: () => nav.goBack() }} />
+    <FlowActions primary={{ label: t("item.try_again"), onPress: retry }} close={() => nav.goBack()} />
   );
 
   return (

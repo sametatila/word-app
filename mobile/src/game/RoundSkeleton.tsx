@@ -91,7 +91,7 @@ export function coverCoach(moment: CoachMoment): string {
 
 /**
  * Kapak iskeleti — `FlowScreen` + `CoverBody` + `FlowActions`, aynı sırayla:
- * (üst çubuk), (koç cümlesi), ikon karosu, üst satır, başlık, tanıtım, kural
+ * (koç cümlesi), ikon karosu, üst satır, başlık, tanıtım, kural
  * kartı, not, (ayrıntı kartı), dipte düğmeler.
  *
  * Seviye testi, sınav, meydan okuma, patron, haftalık sınav, deneme sınavı
@@ -99,15 +99,14 @@ export function coverCoach(moment: CoachMoment): string {
  * dolguları; satırlar gerçek metnin o kolondaki ölçülmüş sarılmasından
  * (`SkeletonText`), telefonla tablet farkı kendiliğinden.
  * Web karşılığı `components/flow-skeleton` `CoverSkeleton`.
+ * Üst çubuk YOK: kapakta X yok, çıkış dipteki "Kapat" (`FlowActions` `close`).
  *
  * Bekleme kendini duyuruyor: kök "meşgul" bir ilerleme bölgesi, adı `label`.
  */
 export function CoverSkeleton({
-  label, top = false, coach, eyebrow, title, pitch, rules = [], note, footnote, detail, secondary = false, tertiary = true,
+  label, coach, eyebrow, title, pitch, rules = [], note, footnote, detail, secondary = false, tertiary = true,
 }: CoverText & {
   label: string;
-  /** `FlowTopBar` (kapat/geri karosu). */
-  top?: boolean;
 }) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -120,13 +119,6 @@ export function CoverSkeleton({
       accessibilityLabel={label}
       style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}
     >
-      {top ? (
-        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-          <View style={{ flexDirection: "row", alignItems: "center", minHeight: 44 }}>
-            <Skeleton height={44} width={44} radius={radii.md} />
-          </View>
-        </View>
-      ) : null}
       <View style={{ flex: 1, overflow: "hidden", paddingHorizontal: spacing.lg, paddingBottom: spacing.lg, gap: spacing.md }}>
         {coach ? <SkeletonText variant="body" text={coach} /> : null}
         <View style={{ gap: spacing.md, paddingTop: spacing.md }}>

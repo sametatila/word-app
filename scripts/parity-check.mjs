@@ -3778,7 +3778,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        yazildi, hukum iki tarafta da ortak `sheet.*` anahtarlarindan kuruluyor
        ve web sozlugundeki anahtar silindi. */
     "rounds.no_tts": "tarayicida konusma sentezi olmayabilir; Android'de sistem TTS her zaman var",
-    "rounds.understood": "tanitim turunun ekran okuyucu etiketi",
+    /* "rounds.understood" BURADAN CIKTI (2026-09-30): mobil yeni kelime
+       karti da "Anladim: {word}" diyor, anahtar ortak sozlukte. */
     "rounds.write_sentence_ph": "ceviri turu yer tutucusu; mobilde `rounds.write_sentence` hedef dili de yaziyor",
   };
   const web = [...read("src/i18n/web/tr.ts").matchAll(/"(rounds\.[a-z_0-9]+)":/g)].map((m) => m[1]).sort();
@@ -4734,11 +4735,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["yarinki tekrar", /sessionw\.due_tomorrow/, /sessionw\.due_tomorrow/],
     ["zorlandiklarin", /session\.missed_title/, /session\.missed_title/],
     /* Mobilde dugmenin adi KOSULLU oldu (erken durdurmada "tura geri don"),
-       o yuzden desen `t("game.continue")` bicimini degil ANAHTARI ariyor. */
-    ["devam", /"game\.continue"/, /"game\.continue"/],
+       o yuzden desen `t("common.continue")` bicimini degil ANAHTARI ariyor.
+       2026-09-30: `game.continue` tek "Devam" anahtarina (`common.continue`) katildi. */
+    ["devam", /"common\.continue"/, /"common\.continue"/],
     ["hayatta kalma", /t\("challenge\.title"\)/, /t\("challenge\.title"\)/],
     ["paylas", /<ShareResult/, /t\("common\.share"\)/],
-    ["bitir", /t\("common\.finish"\)/, /t\("common\.finish"\)/],
+    /* 2026-09-30: "Bitir" metin baglantisi "Kapat" oldu (`FlowActions` `close`). */
+    ["kapat", /\bclose=\{/, /\bclose=\{/],
   ];
   /* MUAF (bolum tablosunda YOK, gerekcesi burada):
      - `PushOptIn`: web bildirim iznini tam burada istiyor cunku tarayicida
@@ -4931,7 +4934,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     ["konusmaya don", /conversationp\.back_to_conversation/, /conversationp\.back_to_conversation/],
     ["sinav olarak dene", /conversationp\.try_scored/, /conversationp\.try_scored/],
-    ["patikaya don", /conversation\.back_to_path/, /conversation\.back_to_path/],
+    /* 2026-09-30: "Patikaya don" -> "Kapat" (etiket `common.close` ya da `close=`). */
+    ["kapat", /common\.close|\bclose=/, /common\.close|\bclose=/],
   ];
   /* KALIPLAR bolumu tablonun DISINDA: iki taraf ayni listeyi ayri adla
      yaziyor (`conversationp.patterns` / `conversation.patterns_you_learned`) ve sirasi da
@@ -9960,7 +9964,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         /* "Henuz hazir degil": yeniden denemek ayni cevabi getirir. */
         "web boss bos dali=" + (/status === "empty"/.test(bossWeb) && !/try_again/.test(dalGovdesi(bossWeb, bossWeb.indexOf('status === "empty"'))) ? "yok" : "VAR"),
-        "mobil boss veri varsa=" + (/\{data \? null : \(/.test(bossMob) ? "yok" : "VAR"),
+        /* 2026-09-30: veri varken birincil "Kapat" (tek eylem çıkışsa birincil);
+           tekrar dene yalnız veri YOKKEN, `: (` kolunda. */
+        "mobil boss veri varsa=" + (/\{data \? (?:null|\{ label: t\("common\.close"\), onPress: exit \}) : \(/.test(bossMob) ? "yok" : "VAR"),
         /* Cevrimdisi KAYIT dali: tekrar denemek kagidi bastan acar ve kaydi
            cope atardi (gerekce `exam-player` icinde yazili). */
         /* 2026-09-15: dal ikiye ayrildi - `if (!offline)` durum sablonu
@@ -19022,6 +19028,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *   - baslik `strong` (15), Android `h3` (16)
  *   - cubuk 8 px ve TABANSIZ: yuzde sifirda hic cubuk gorunmuyor, Android
  *     `Bar` 6 px ve `Math.max(3, …)` ile sifirda bile bir dilim birakiyor
+ *     (2026-09-30'dan beri sifir BOS iz, taban yalniz sifirin ustunde:
+ *     iki tarafta `barPct`)
  *   - sagdaki yuzde `caption` (12.5) - satirin en onemli sayisi en kucuk
  *     puntoydu; Android `h3`
  *   - davet halinde Android ok koyuyor (gidilecek bir yer var), web hicbir sey
@@ -19043,6 +19051,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const barBoy = /size = "inline"/.test(bar) ? ((bar.match(/BAR_HEIGHT = \{ inline: (\d+),/) ?? [])[1] ?? "YOK") : "YOK";
   // Taban artık `ProgressTrack`in `minPct` propu (çubuk yerel sürücüyle kayarak dolar).
   const barTaban = (bar.match(/minPct=\{(\d+)\}/) ?? [])[1] ?? "YOK";
+  /* 2026-09-30 Samet: SIFIR BOS IZ. Taban yalniz sifirin ustunde; kural iki
+     tarafta tek yardimcida (`barPct`: mobil ui/Bar, web lib/motion) ve
+     `ProgressTrack` tabani ondan geciriyor. Elle `Math.max(3, pct)` yazan
+     cubuk sifirda yine dilim birakir - yardimcinin govdesi olculuyor. */
+  const sifirBos = (src) => (/p > 0 \? Math\.max\(floor, p\) : 0/.test(src) ? "bos" : "DILIM");
+  const webMotion = silN(read("src/lib/motion.ts"));
   sameList(
     "ortak gorev nabzinin olculeri",
     [
@@ -19057,6 +19071,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "baslik=" + (/<Text variant="h3" numberOfLines=\{1\}>/.test(m) ? "h3" : "FARKLI"),
       "cubuk boy=" + barBoy,
       "cubuk taban=" + barTaban,
+      "sifirda=" + (/const p = barPct\(pct, minPct\);/.test(bar) ? sifirBos(bar) : "ELLE"),
       "yuzde=" + (/<Text variant="h3" color=\{colors\.primaryText\}>\{formatPercent/.test(m) ? "h3" : "FARKLI"),
       "davet oku=" + (/<ForwardIcon color=\{colors\.textFaint\} size=\{(20)\}/.test(m) ? "20" : "YOK"),
     ],
@@ -19067,7 +19082,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "halka=" + (/ring=\{invited \? "var\(--color-sky\)" : "var\(--color-brand\)"\}/.test(w) ? "durumlu" : "SABIT"),
       "baslik=" + (/<p className="truncate text-h3">/.test(w) ? "h3" : "FARKLI"),
       "cubuk boy=" + ((w.match(/style=\{\{ height: (\d+), background: "var\(--surface-2\)" \}\}/) ?? [])[1] ?? "YOK"),
-      "cubuk taban=" + ((w.match(/width: `\$\{Math\.max\((\d+), Math\.min\(100, q\.pct\)\)\}%`/) ?? [])[1] ?? "YOK"),
+      "cubuk taban=" + ((w.match(/width: `\$\{barPct\(q\.pct, (\d+)\)\}%`/) ?? [])[1] ?? "YOK"),
+      "sifirda=" + sifirBos(webMotion),
       "yuzde=" + (/className="shrink-0 text-h3 tabular-nums"/.test(w) ? "h3" : "FARKLI"),
       "davet oku=" + ((w.match(/<ForwardIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
     ],
@@ -19417,7 +19433,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "tutamac=" + ((mob.match(/width: 22, height: 22, borderRadius: 11/) ) ? "22" : "YOK"),
       "halka=" + ((mob.match(/borderWidth: 3, borderColor: colors\.surface/) ) ? "3" : "YOK"),
       "dokunma alani=" + ((mob.match(/style=\{\{ height: (22), justifyContent: "center" \}\}/) ?? [])[1] ?? "YOK"),
-      "dolu kisim=" + (/width: `\$\{oran \* 100\}%`/.test(mob) ? "degerden" : "YOK"),
+      /* 2026-09-30: dolu kisim TUTAMAC MERKEZINDE bitiyor (yarim tutamac
+         sabit bas + kalan yolun orani) ve tutamac yuzdeyle konumlaniyor,
+         olcum beklemeden. Web ayni hesabi `.range-fill`te yapiyor. */
+      "dolu kisim=" + (/width: THUMB \/ 2, backgroundColor: colors\.primary/.test(mob) && /marginRight: THUMB \/ 2 \}\}> <View style=\{\{ width: `\$\{oran \* 100\}%`/.test(mob) ? "tutamac merkezinde" : "YOK"),
+      "tutamac konumu=" + (/left: `\$\{oran \* 100\}%`/.test(mob) && /right: THUMB \}\}/.test(mob) ? "yuzde" : "PIKSEL"),
       "etiket sonuk=" + (/<Text variant="bodyStrong">\{label\}<\/Text>/.test(mob) ? "hayir" : "EVET"),
     ],
     [
@@ -19425,7 +19445,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "tutamac=" + ((izThumb.match(/width: (\d+)px/) ?? [])[1] ?? "YOK"),
       "halka=" + ((izThumb.match(/border: (\d+)px solid var\(--surface\)/) ?? [])[1] ?? "YOK"),
       "dokunma alani=" + ((izAlan.match(/height: (\d+)px/) ?? [])[1] ?? "YOK"),
-      "dolu kisim=" + (/--pct/.test(izTrack) && /"--pct": `\$\{\(\(value - min\) \/ \(max - min\)\) \* 100\}%`/.test(form) ? "degerden" : "YOK"),
+      "dolu kisim=" + (/width: calc\(11px \+ \(100% - 22px\) \* var\(--frac, 0\)\)/.test(kural(".range-fill {")) && /"--frac": frac/.test(form) ? "tutamac merkezinde" : "YOK"),
+      /* Web tutamaci tarayicinin kendisi: yeri her zaman degerden. */
+      "tutamac konumu=" + (/value=\{shown\}/.test(form) ? "yuzde" : "PIKSEL"),
       "etiket sonuk=" + (/<span>\{label\}<\/span>/.test(form) ? "hayir" : "EVET"),
     ],
     "mobil",
@@ -19440,7 +19462,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web appearance=" + (/appearance: none;/.test(izAlan) ? "none" : "YOK"),
       "web webkit tutamac=" + (izThumb ? "tanimli" : "TANIMSIZ"),
       "web moz tutamac=" + (kural(".range::-moz-range-thumb") ? "tanimli" : "TANIMSIZ"),
-      "web moz ilerleme=" + (kural(".range::-moz-range-progress") ? "tanimli" : "TANIMSIZ"),
+      /* Firefox'un yerel ilerlemesi saydam; dolu kisim `.range-fill`. */
+      "web moz ilerleme=" + (/background: transparent/.test(kural(".range::-moz-range-progress")) && kural(".range-fill {") ? "tanimli" : "TANIMSIZ"),
       "web odak halkasi=" + (kural(".range:focus-visible") ? "var" : "YOK"),
     ],
     ["web appearance=none", "web webkit tutamac=tanimli", "web moz tutamac=tanimli", "web moz ilerleme=tanimli", "web odak halkasi=var"],
@@ -21841,6 +21864,155 @@ console.log("\n" + C.b + "250. kullanim bilgisi" + C.off);
   sameList("grammarNote bicim notu + kullanim", [birlestir("mobile/src/game/wordGrammar.ts")], [birlestir("src/components/games/types.ts")]);
   const kodSay = kodlar("src/lib/usage.ts").split(",").filter(Boolean).length;
   for (const l of ["tr", "en", "de"]) sameList("her koda etiket " + l, [String(etiket(`src/i18n/base/${l}.ts`).length)], [String(kodSay)]);
+}
+
+/* ── 251. BILGI EKRANLARINDA KAPAT ──────────────────────────────────────────
+ * 2026-09-30 (Samet): baslamadan onceki kapaklar ve bilgi / izin / durum
+ * ekranlari birbirinden farkli cikiyordu: kiminde ustte X, kiminde yok; kimi
+ * X + alttaki "Kapat", kimi yalniz "Vazgec", "Sonra", "Patikaya don",
+ * "Listeye don"; haftalik sinavda cikis cerceveli ikinci dugmeydi.
+ *
+ * Kural: bu ekranlarda ustte X YOK; altta birincil eylem + metin baglantisi
+ * "Kapat" (`FlowActions` `close`, adi ortak bilesende `common.close`). Tek
+ * eylem cikissa birincil "Kapat". Oturumun ICINDEKI X (tur, sinav, yuruyus)
+ * bu kuralin disinda. Olcu mutlak: iki platformda da her kapak. */
+console.log("\n" + C.b + "251. BILGI EKRANLARINDA KAPAT" + C.off);
+{
+  const sil251 = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const KAPAKLAR = [
+    ["yerlestirme", "mobile/src/screens/PlacementScreen.tsx", "src/components/placement/placement-test.tsx"],
+    ["meydan-okuma", "mobile/src/screens/ChallengeScreen.tsx", "src/components/challenge-player.tsx"],
+    ["boss", "mobile/src/screens/BossScreen.tsx", "src/components/boss-player.tsx"],
+    ["haftalik", "mobile/src/screens/WeeklyScreen.tsx", "src/components/weekly-player.tsx"],
+    ["modul-sinavi", "mobile/src/screens/ExamScreen.tsx", "src/components/exam-player.tsx"],
+    ["deneme-bolumu", "mobile/src/screens/MockExamScreen.tsx", "src/components/mock-exam-player.tsx"],
+    ["puanli-konusma", "mobile/src/screens/ConversationScoredScreen.tsx", "src/components/conversations/conversation-scored.tsx"],
+    ["yuruyus", "mobile/src/screens/WalkModeScreen.tsx", "src/components/walk-player.tsx"],
+  ];
+  /* Mobil: kapagi saran `FlowScreen`in acilis etiketi + dugmeleri. Deneme
+     kapagi kendi bileseninde (`<Cover paper=`), yerlestirme kapagi bir
+     degiskende (`{cover}`); ekran onu `FlowScreen`e koyuyor. */
+  const mobilKapak = (yol) => {
+    const src = sil251(read(yol));
+    const i = src.search(yol.endsWith("/PlacementScreen.tsx") ? /\{cover\}/ : /<CoverBody\b|<Cover\s+[a-z]+=/);
+    const bas = src.lastIndexOf("<FlowScreen", i);
+    if (i < 0 || bas < 0) return "KAPAK YOK";
+    const seg = src.slice(bas, i);
+    if (/\btop=/.test(seg)) return "USTTE X";
+    if (!/<FlowActions[\s\S]*\bclose=/.test(seg)) return "KAPAT YOK";
+    if (/\btertiary=/.test(seg)) return "AYRI CIKIS ADI";
+    return "kapat";
+  };
+  /* Web: kapak `FlowColumn` icinde, dugmeler kapaktan sonra. Yuruyusun
+     dugmeleri kapaktan once bir degiskende (`const actions`), kolona
+     `{actions}` olarak giriyor: olculen metne o degisken de katiliyor. */
+  const webKapak = (yol) => {
+    const ham = sil251(read(yol));
+    const dis = ham.match(/const actions = \(([\s\S]*?)\n    \);/);
+    const src = dis ? ham.replace("{actions}", dis[1]) : ham;
+    const i = src.indexOf("<CoverBody");
+    const bas = src.lastIndexOf("<FlowColumn", i);
+    const son = src.indexOf("</FlowColumn>", i);
+    if (i < 0 || bas < 0 || son < 0) return "KAPAK YOK";
+    const seg = src.slice(bas, son);
+    if (/<(?:RoundExit|ResultTopBar)\b/.test(seg)) return "USTTE X";
+    if (!/<FlowActions[\s\S]*\bclose=/.test(seg)) return "KAPAT YOK";
+    if (/\btertiary=/.test(seg.slice(seg.lastIndexOf("<FlowActions")))) return "AYRI CIKIS ADI";
+    return "kapat";
+  };
+  sameList(
+    "kapakta X yok, cikis Kapat",
+    KAPAKLAR.map(([ad, m]) => ad + "=" + mobilKapak(m)),
+    KAPAKLAR.map(([ad]) => ad + "=kapat"),
+    "mobil",
+    "beklenen",
+  );
+  sameList(
+    "kapakta X yok, cikis Kapat (web)",
+    KAPAKLAR.map(([ad, , w]) => ad + "=" + webKapak(w)),
+    KAPAKLAR.map(([ad]) => ad + "=kapat"),
+    "web",
+    "beklenen",
+  );
+
+  /* Adi ortak bilesende; iskeletler de ayni cikisi ciziyor. */
+  const mf = sil251(read("mobile/src/ui/flow.tsx"));
+  const wf = sil251(read("src/components/flow.tsx"));
+  const rs = sil251(read("mobile/src/game/RoundSkeleton.tsx"));
+  const fs = sil251(read("src/components/flow-skeleton.tsx"));
+  const covers = fs.slice(fs.indexOf("export const COVERS"), fs.indexOf("satisfies Record<string, CoverShape>"));
+  sameList(
+    "Kapat ortak bilesende",
+    [
+      "mobil ad=" + (/close \? text\(\{ label: t\("common\.close"\), onPress: close \}\)/.test(mf) ? "common.close" : "?"),
+      "web ad=" + (/label: t\("common\.close"\), href: close \}[\s\S]{0,80}label: t\("common\.close"\), onClick: close \}/.test(wf) ? "common.close" : "?"),
+      "mobil kapak iskeleti ust cubuk=" + (/export function CoverSkeleton\(\{[^}]*\btop\b/.test(rs) ? "VAR" : "yok"),
+      "web kapak iskeleti cikis=" + ([...covers.matchAll(/tertiary: tk\("([\w.]+)"\)/g)].every((m) => m[1] === "common.close") && !/secondary: true/.test(covers) ? "common.close" : "AYRI AD"),
+    ],
+    ["mobil ad=common.close", "web ad=common.close", "mobil kapak iskeleti ust cubuk=yok", "web kapak iskeleti cikis=common.close"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Kapak disindaki bilgi / izin / premium tanitim ekranlari (mobil). */
+  const pay = sil251(read("mobile/src/screens/PaywallScreen.tsx"));
+  const mic = sil251(read("mobile/src/ui/MicDisclosure.tsx"));
+  const cert = sil251(read("mobile/src/ui/CertificateSheet.tsx"));
+  const prime = sil251(read("mobile/src/screens/NotifPrimeScreen.tsx"));
+  sameList(
+    "bilgi ekranlarinda X yok",
+    [
+      "premium=" + (/\bCloseIcon\b/.test(pay) ? "USTTE X" : /<FlowActions close=\{\(\) => nav\.goBack\(\)\} \/>/.test(pay) ? "kapat" : "KAPAT YOK"),
+      "mikrofon=" + (/close=\{mode === "consent" \? onCancel : null\}/.test(mic) && !/common\.discard/.test(mic) ? "kapat" : "AYRI AD"),
+      "sertifika=" + (/<FlowTopBar onClose/.test(cert) ? "USTTE X" : /close=\{onClose\}/.test(cert) ? "kapat" : "KAPAT YOK"),
+      "bildirim izni=" + (/close=\{SINGLE_BUTTON \? null : /.test(prime) ? "kapat" : "AYRI AD"),
+    ],
+    ["premium=kapat", "mikrofon=kapat", "sertifika=kapat", "bildirim izni=kapat"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
+/* ── 252. SONUC EKRANLARINDA KAPAT ─────────────────────────────────────────
+ * 2026-09-30 (Samet): sonuc ekranlari da 251'in kuralina girdi. 2026-09-27'de
+ * her sonuca solda bir X eklenmisti (`ResultTopBar`, mobil `FlowTopBar`);
+ * alttaki cikis ise "Patikaya don", "Listeye don", "Ogren'e don", "Bitir"
+ * diye ekran ekran farkli adlar tasiyordu. Simdi ustte X yok, cikis dipteki
+ * "Kapat" (geldigi yere donuyor). Olcu mutlak. */
+console.log("\n" + C.b + "252. SONUC EKRANLARINDA KAPAT" + C.off);
+{
+  const sil252 = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  /* Mobil: her `<ResultHero`yu saran `FlowScreen`in acilis etiketi (ust cubuk
+     ve dugmeler orada) X tasimiyor. */
+  const MOBIL = ["Game", "Challenge", "Boss", "Weekly", "Exam", "MockExam", "Placement", "ConversationScored", "WalkMode"].map((a) => `mobile/src/screens/${a}Screen.tsx`);
+  const mobilX = [];
+  for (const yol of MOBIL) {
+    const src = sil252(read(yol));
+    let i = src.indexOf("<ResultHero");
+    if (i < 0) mobilX.push(yol.split("/").pop() + "=SONUC YOK");
+    while (i >= 0) {
+      const seg = src.slice(src.lastIndexOf("<FlowScreen", i), i);
+      if (/<Flow(?:TopBar|Progress)\b[^>]*\bonClose=/.test(seg)) mobilX.push(yol.split("/").pop() + "=USTTE X");
+      i = src.indexOf("<ResultHero", i + 1);
+    }
+  }
+  sameList("sonucta X yok (mobil)", mobilX.length ? mobilX : ["yok"], ["yok"], "bulunan", "beklenen");
+
+  const re = sil252(read("src/components/round-exit.tsx"));
+  const rtb = re.slice(re.indexOf("export function ResultTopBar"));
+  const konusmaW = sil252(read("src/components/conversations/conversation-player.tsx"));
+  const konusmaM = sil252(read("mobile/src/screens/ConversationScreen.tsx"));
+  sameList(
+    "sonucta X yok",
+    [
+      "web sonuc cubugu=" + (/<RoundExit\b/.test(rtb) ? "X VAR" : "yalniz sag yuva"),
+      "web konusma ozeti=" + (/phase === "summary" \? null : <ConversationExit \/>/.test(konusmaW) ? "X yok" : "X VAR"),
+      "mobil konusma ozeti=" + (/phase === "summary" \|\| resumeOffer \|\| convLocked \? null : \(/.test(konusmaM) ? "X yok" : "X VAR"),
+    ],
+    ["web sonuc cubugu=yalniz sag yuva", "web konusma ozeti=X yok", "mobil konusma ozeti=X yok"],
+    "bulunan",
+    "beklenen",
+  );
 }
 
 /* ── 400. YONLENDIRME GENEL ADRESE ─────────────────────────────────────────

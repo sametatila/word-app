@@ -114,7 +114,7 @@ export function ImmersionQuizPlayer({
            aynı dalda aynı cümleyi ve aynı çıkışı gösteriyor. */
         <FlowColumn>
           <StateBody title={t("quiz.this_unit_has_no_questions_yet")}>
-            <FlowActions primary={{ label: t("quiz.back_to_path"), href: "/immersion" }} />
+            <FlowActions primary={{ label: t("common.close"), href: "/immersion" }} />
           </StateBody>
         </FlowColumn>
       ) : score === null ? (
@@ -145,9 +145,9 @@ export function ImmersionQuizPlayer({
             ]}
           />
           {passed ? (
-            <FlowActions primary={{ label: t("quiz.back_to_path"), href: "/immersion" }} secondary={{ label: t("quiz.try_again"), onClick: retry }} />
+            <FlowActions primary={{ label: t("common.close"), href: "/immersion" }} tertiary={{ label: t("quiz.try_again"), onClick: retry }} />
           ) : (
-            <FlowActions primary={{ label: t("quiz.try_again"), onClick: retry }} secondary={{ label: t("quiz.back_to_path"), href: "/immersion" }} />
+            <FlowActions primary={{ label: t("quiz.try_again"), onClick: retry }} close="/immersion" />
           )}
           {/* İçerik bildirimi, adımın BÜTÜNÜ için: sonucun dibinde. Sorular
               cevaptan sonra kendi açıklamalarının altında ayrıca bildiriliyor

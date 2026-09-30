@@ -9,6 +9,7 @@ import { googleLink, googleSupported } from "../lib/googleAuth";
 import { appleLink, appleSupported } from "../lib/appleAuth";
 import { useAuth } from "../lib/AuthContext";
 import { SignInMethodsSkeleton } from "./SettingsSkeleton";
+import { InsetList } from "./Field";
 
 const AD: Record<string, string> = { credential: "links.credential", google: "Google", apple: "Apple" };
 const etiket = (p: string) => (AD[p] && AD[p].includes(".") ? t(AD[p]) : (AD[p] ?? p));
@@ -90,11 +91,14 @@ export function LinkedAccounts({
 
   return (
     <View style={{ gap: spacing.sm }}>
-      {satirlar.map((p, i) => {
+      {/* Kutu içi liste (`ui/Field`): çizginin iki yanı 12. Satır yalnız üst
+          payı taşıyordu, çizginin üstünde 8 (kabın `gap`i) altında 12 vardı. */}
+      <InsetList>
+      {satirlar.map((p) => {
         const bagli = bagliMi(p);
         const calisiyor = busy === p;
         return (
-          <View key={p} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: i ? spacing.md : 0, borderTopWidth: i ? 1 : 0, borderTopColor: colors.hairline }}>
+          <View key={p} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
             <View style={{ flex: 1 }}>
               <Text variant="bodyStrong">{etiket(p)}</Text>
               {!bagli && <Text variant="caption" color={colors.textMuted}>{t("links.not_linked")}</Text>}
@@ -117,6 +121,7 @@ export function LinkedAccounts({
           </View>
         );
       })}
+      </InsetList>
       {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.text}>{msg}</Text> : null}
 
     </View>

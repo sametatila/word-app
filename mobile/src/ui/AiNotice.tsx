@@ -4,6 +4,7 @@ import { View } from "react-native";
 import { Text } from "./Text";
 import { AiIcon } from "./icons";
 import { useTheme, spacing, radii } from "../theme";
+import { IconLine } from "./IconLine";
 
 /**
  * "Karşındaki yapay zekâ" bildirimi.
@@ -26,12 +27,12 @@ export function AiNotice({ variant, style }: { variant: "character" | "output"; 
       accessibilityRole="text"
       accessibilityLabel={text}
       style={[{
-        flexDirection: "row", alignItems: "center", gap: spacing.sm,
+        flexDirection: "row", alignItems: "flex-start", gap: spacing.sm,
         paddingHorizontal: spacing.md, paddingVertical: spacing.sm,
         borderRadius: radii.md, backgroundColor: colors.surface2,
       }, style]}
     >
-      <AiIcon color={colors.textMuted} size={14} />
+      <IconLine variant="micro"><AiIcon color={colors.textMuted} size={14} /></IconLine>
       <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>{text}</Text>
     </View>
   );

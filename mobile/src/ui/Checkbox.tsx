@@ -3,6 +3,7 @@ import { View, type StyleProp, type ViewStyle } from "react-native";
 import { PressableScale } from "./PressableScale";
 import { CheckIcon } from "./icons";
 import { useTheme, spacing, radii, ds } from "../theme";
+import { lineInset } from "./IconLine";
 
 /**
  * Onay kutusu satırı — kutu + etiket, satırın tamamı basılabilir.
@@ -39,12 +40,15 @@ export function Checkbox({
       accessibilityRole="checkbox"
       accessibilityState={{ checked }}
       accessibilityLabel={accessibilityLabel}
-      style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm }, style]}
+      style={[{ flexDirection: "row", alignItems: "flex-start", gap: spacing.md, paddingVertical: spacing.sm }, style]}
     >
       <View style={{ width: box, height: box, borderRadius: radii.sm, borderWidth: 1.5, borderColor: checked ? fill : colors.border, backgroundColor: checked ? fill : "transparent", alignItems: "center", justifyContent: "center" }}>
         {checked ? <CheckIcon color={ink} size={16} /> : null}
       </View>
-      <View style={{ flex: 1 }}>{children}</View>
+      {/* İlk satır kutunun ortasında (web `components/checkbox` aynı): etiket
+          iki satıra inince kutu ortada yüzmüyor. Etiket hep `body` ölçüsüyle
+          açılıyor (`bodyStrong` aynı satır yüksekliği). */}
+      <View style={{ flex: 1, paddingTop: lineInset("body", box) }}>{children}</View>
     </PressableScale>
   );
 }

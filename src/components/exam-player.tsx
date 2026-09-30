@@ -19,7 +19,7 @@ import { COURSE_KEY, dialogueSegments, prefetchEachSegment, readLocal, speakGerm
 import { SpeakerIcon, SkillSpeakingIcon, CheckIcon, LevelExamIcon, DurationIcon, NoGoingBackIcon, ScoreTargetIcon, SkillWritingIcon, WarningIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
-import { RoundExit, ResultTopBar } from "@/components/round-exit";
+import { RoundExit } from "@/components/round-exit";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { TokenDiff } from "@/components/feedback/diff-text";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
@@ -45,6 +45,7 @@ import { localDay } from "@/lib/day";
 import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
 import { formatPercent } from "@/lib/i18n/dict";
 import { play } from "@/lib/sfx";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * Sınav oynatıcısı (WP-41 v3).
@@ -517,7 +518,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
            gecici bir ag kesintisiyle harcanabiliyordu (Android `setAttempt`). */
         <FlowColumn>
           <StateBody alert title={t("exam.load_or_save_failed")} />
-          <FlowActions primary={{ label: t("common.try_again"), onClick: () => void start() }} tertiary={{ label: t("exam.back_to_path"), href: "/immersion" }} />
+          <FlowActions primary={{ label: t("common.try_again"), onClick: () => void start() }} close="/immersion" />
         </FlowColumn>
       );
     }
@@ -527,7 +528,6 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
        durumu aynı bandla çiziyor (`ExamScreen` `offline`). */
     return (
       <FlowColumn>
-        <ResultTopBar href="/immersion" />
         <ResultHero eyebrow={title} title={t("exam.saved_offline")} figure={formatPercent(offline.pct, lang)} quiet />
         {/* Kırılım SONUÇ KARTIYLA AYNI çiziliyor (yüzde + şerit): aynı veri
             iki durumda iki ayrı biçimde okunuyordu, oysa tek fark kaydın
@@ -554,7 +554,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         </DetailCard>
         {/* Cevaplar çevrimdışı kaydedildiyse tekrar denemek kâğıdı baştan
             açıyor ve o kaydı çöpe atardı; burada tek doğru çıkış Patika. */}
-        <FlowActions primary={{ label: t("exam.back_to_path"), href: "/immersion" }} />
+        <FlowActions primary={{ label: t("common.close"), href: "/immersion" }} />
       </FlowColumn>
     );
   }
@@ -971,7 +971,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
 
   /*
     KAPAK ŞABLONU: ikon karosu · sınavın adı · başlık · tek cümle · ikonlu
-    kural satırları · Başla / Vazgeç.
+    kural satırları · Başla / Kapat.
 
     KÂĞIDIN KENDİ BAŞLIĞI ile UYDURULMUŞ Almanca ayrı şeyler. Kâğıt varsa
     başlığı gerçekten hedef dilde (`cover.titleDe`) ve `lang` niteliği de onu
@@ -1038,7 +1038,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
         {/* Bağımsızlık notu (denetim İ3). */}
         <p className="muted text-micro">{t("exam.independent_note")}</p>
       </CoverBody>
-      <FlowActions primary={{ label: t("exam.start"), onClick: onStart }} tertiary={{ label: t("common.discard"), href: "/immersion" }} />
+      <FlowActions primary={{ label: t("exam.start"), onClick: onStart }} close="/immersion" />
     </FlowColumn>
   );
 }
@@ -1291,12 +1291,10 @@ function Result({
         ? { text: t("exam.pill_section_low", { section: t(SECTION_TITLE_KEYS[weakest.id]), pct: formatPercent(PASS_SECTION, lang) }), tone: "bad" as const }
         : null;
   const certificate = result.passed && !result.trial;
-  const back = { label: t("exam.back_to_path"), href: "/immersion" };
+  const back = { label: t("common.close"), href: "/immersion" };
   return (
     /* KUTLAMA yalnız geçince (Android `FlowScreen celebrate`). */
     <FlowColumn celebrate={result.passed}>
-      {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Patikaya dön"le aynı çıkış. */}
-      <ResultTopBar href="/immersion" />
       <ResultHero
         eyebrow={title}
         title={result.passed ? t("exam.passed") : t("exam.not_passed")}
@@ -1407,10 +1405,10 @@ function Result({
         <DetailCard title={t(result.passed ? "exam.now_you_can" : "exam.this_measured")}>
           <ul className="space-y-2">
             {cando.map((c, i) => (
-              <li key={i} className="flex gap-2 text-body">
-                <span className="mt-0.5 shrink-0" style={{ color: result.passed ? "var(--color-mint)" : "var(--text-muted)" }}>
+              <li key={i} className="flex items-start gap-2 text-body">
+                <IconLine style={{ color: result.passed ? "var(--color-mint)" : "var(--text-muted)" }}>
                   <CheckIcon size={14} />
-                </span>
+                </IconLine>
                 <span>
                   <span className="block font-semibold" lang={course}>
                     {c.de}
@@ -1431,7 +1429,8 @@ function Result({
         /* Sertifika yeni sekmede açılıyor (uç bir belge döndürüyor, uygulama
            sayfası değil); `Link` istemci içi gezinmeye çalışırdı. */
         primary={certificate ? { label: t("exam.open_certificate"), onClick: () => void window.open(`/api/certificate/${result.id}`, "_blank", "noopener,noreferrer") } : back}
-        secondary={certificate ? back : null}
+        /* Çıkış "Kapat": sertifika varsa metin bağlantısı, yoksa tek birincil. */
+        close={certificate ? back.href : null}
         /*
           Hız turunun tek girişi burası. Eskiden yol haritasında, modül
           sınavının hemen altındaydı ve orada ikinci bir sınav gibi okunuyordu —

@@ -7,6 +7,7 @@ import { CorrectIcon, LockedIcon, PremiumIcon, StreakIcon, UnlockedIcon } from "
 import { Confetti } from "@/components/celebrate";
 import { play } from "@/lib/sfx";
 import type { Line, UnlockCopy } from "@/lib/premium/unlock-copy";
+import { IconLine } from "@/components/icon-line";
 
 /**
  * KİLİT AÇMA GÖSTERGESİ — "ne yapacağım" sorusunun cevabı, kilidin yanında.
@@ -46,14 +47,20 @@ export function UnlockProgress({
     <section className="card relative space-y-2 p-4" aria-live={fired ? "polite" : undefined}>
       <Confetti fire={fired} />
       {fired ? (
-        <p className="flex items-center gap-2 text-strong" style={{ color: "var(--color-mint)" }}>
-          <UnlockedIcon className="size-4 shrink-0" /> {t("unlock.celebrate")}
+        <p className="flex items-start gap-2 text-strong" style={{ color: "var(--color-mint)" }}>
+          <IconLine>
+            <UnlockedIcon className="size-4" />
+          </IconLine>
+          {t("unlock.celebrate")}
           {celebrate?.gain ? <span className="font-normal">{line(celebrate.gain)}</span> : null}
         </p>
       ) : null}
       {title ? (
-        <p className="flex items-center gap-2 text-h3">
-          <LockedIcon className="size-4 shrink-0" /> {line(title)}
+        <p className="flex items-start gap-2 text-h3">
+          <IconLine>
+            <LockedIcon className="size-4" />
+          </IconLine>
+          {line(title)}
         </p>
       ) : null}
       {copy?.headline ? (
@@ -65,14 +72,16 @@ export function UnlockProgress({
           <ul className="space-y-2">
             {copy.conditions.map((c) => (
               <li key={c.line.key} className="text-body">
-                <span className="flex items-center gap-2">
-                  {c.ok ? (
-                    <CorrectIcon className="size-4 shrink-0" style={{ color: "var(--color-mint)" }} aria-hidden />
-                  ) : c.bar ? (
-                    <StreakIcon className="size-4 shrink-0" style={{ color: "var(--color-flame)" }} aria-hidden />
-                  ) : (
-                    <span aria-hidden className="inline-block size-4 shrink-0 rounded-full border-[1.5px]" style={{ borderColor: "var(--border)" }} />
-                  )}
+                <span className="flex items-start gap-2">
+                  <IconLine>
+                    {c.ok ? (
+                      <CorrectIcon className="size-4" style={{ color: "var(--color-mint)" }} aria-hidden />
+                    ) : c.bar ? (
+                      <StreakIcon className="size-4" style={{ color: "var(--color-flame)" }} aria-hidden />
+                    ) : (
+                      <span aria-hidden className="inline-block size-4 rounded-full border-[1.5px]" style={{ borderColor: "var(--border)" }} />
+                    )}
+                  </IconLine>
                   <span className={c.ok ? "muted" : undefined}>{line(c.line)}</span>
                 </span>
                 {c.bar ? (

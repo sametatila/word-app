@@ -81,7 +81,8 @@ export function TwoFactor() {
 
   return (
     <Row label={t("settings.sec_two_factor")}>
-        {note ? <AuthNotice tone="success">{note}</AuthNotice> : null}
+        {/* Bildirim → alttaki blok 12 (`components/field.tsx`); yapışıktı. */}
+        {note ? <div className="mb-3"><AuthNotice tone="success">{note}</AuthNotice></div> : null}
 
         {open ? (
           <form onSubmit={submit} className="space-y-3">

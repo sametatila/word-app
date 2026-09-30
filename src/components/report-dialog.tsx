@@ -196,8 +196,9 @@ export function ReportDialog({
               tek başına çoğu zaman yetiyor, ama "hangi şık doğruydu" gibi bir
               not panelde işi yarıya indiriyor. Düz metin; sınır sunucuyla aynı. */}
           {isContent ? (
+            /* Alan bloğu: etiket → kutu 8 (`components/field.tsx`; 4'tü). */
             <label className="mt-3 block">
-              <span className="muted block text-caption">{t("reportsheet.detail_label")}</span>
+              <span className="muted mb-2 block text-caption">{t("reportsheet.detail_label")}</span>
               <textarea
                 value={detail}
                 onChange={(e) => setDetail(e.target.value.slice(0, REPORT_DETAIL_MAX))}
@@ -206,7 +207,7 @@ export function ReportDialog({
                 /* Ayrıntı öğrencinin kendi dilinde, cümle: baş harf büyüsün. */
                 autoCapitalize="sentences"
                 placeholder={t("reportsheet.detail_placeholder")}
-                className="option mt-1 w-full px-3.5 py-3 text-body leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
+                className="option w-full px-3.5 py-3 text-body leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
               />
             </label>
           ) : null}

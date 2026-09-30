@@ -6,6 +6,7 @@ import { SkeletonLine, SkeletonText } from "./Skeleton";
 import { spacing, radii, type Palette } from "../theme";
 import { googleSupported } from "../lib/googleAuth";
 import { appleSupported } from "../lib/appleAuth";
+import { InsetList } from "./Field";
 
 /**
  * Ayarlar › Hesap ve Güvenlik'in yükleme hâlleri — gerçek bileşenin şekli.
@@ -51,7 +52,9 @@ export function ActionRowSkeleton({ text, action, colors }: { text: string; acti
 export function SignInMethodsSkeleton({ colors }: { colors: Palette }) {
   const teklif = [...(googleSupported() ? ["Google"] : []), ...(Platform.OS === "ios" && appleSupported() ? ["Apple"] : [])];
   return (
-    <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={{ gap: spacing.sm }}>
+    /* Gerçek liste gibi kutu içi liste (`ui/Field` `InsetList`): yükseklik aynı. */
+    <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+      <InsetList>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <View style={{ flex: 1 }}>
           <SkeletonText variant="bodyStrong" text={t("links.credential")} />
@@ -59,7 +62,7 @@ export function SignInMethodsSkeleton({ colors }: { colors: Palette }) {
         <SkeletonText variant="caption" text={t("links.only_method")} />
       </View>
       {teklif.map((ad) => (
-        <View key={ad} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+        <View key={ad} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
           <View style={{ flex: 1 }}>
             <SkeletonText variant="bodyStrong" text={ad} />
             <SkeletonText variant="caption" text={t("links.not_linked")} />
@@ -67,6 +70,7 @@ export function SignInMethodsSkeleton({ colors }: { colors: Palette }) {
           <ActionSlot label={t("links.link")} colors={colors} />
         </View>
       ))}
+      </InsetList>
     </View>
   );
 }
@@ -77,7 +81,8 @@ export function SessionRowSkeleton({ colors }: { colors: Palette }) {
     <View
       accessibilityElementsHidden
       importantForAccessibility="no-hide-descendants"
-      style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10 }}
+      /* Tek satırlık kutu içi liste: ilk ve son satır, dikey pay 0 (`ui/Field`). */
+      style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}
     >
       <View style={{ flex: 1 }}>
         <SkeletonLine variant="bodyStrong" width="45%" />

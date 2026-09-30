@@ -9,7 +9,7 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
-import { RoundExit, ResultTopBar } from "@/components/round-exit";
+import { RoundExit } from "@/components/round-exit";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { AchievementFlash, CountUp } from "@/components/celebrate";
@@ -288,7 +288,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             sira: birincil "tekrar dene", ikincil cikis (`ChallengeScreen`).
             Hata `alert` ile DUYURULUYOR. */}
         <StateBody alert title={t("challenge.load_failed")} body={t("game.check_your_connection_and_try")}>
-          <FlowActions primary={{ label: t("common.try_again"), onClick: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("common.go_back"), onClick: onExit }} />
+          <FlowActions primary={{ label: t("common.try_again"), onClick: () => setAttempt((n) => n + 1) }} close={onExit} />
         </StateBody>
       </FlowColumn>
     );
@@ -299,7 +299,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         {/* Boş durum düşünen maskotla: "henüz kelime yok, birkaç tur sonra" bir
             bekleyiş, hata değil (şablon kuralı: boş/bekleniyor = think). */}
         <StateBody title={t("challenge.none_title")} body={t("challenge.none_sub")}>
-          <FlowActions primary={{ label: t("common.back_to_learn"), onClick: onExit }} />
+          <FlowActions primary={{ label: t("common.close"), onClick: onExit }} />
         </StateBody>
       </FlowColumn>
     );
@@ -323,7 +323,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           ]}
           note={record > 0 ? `${t("challenge.your_record")} ${record} ${t("common.points")}` : null}
         />
-        <FlowActions primary={{ label: t("common.start"), onClick: start }} tertiary={{ label: t("common.discard"), onClick: onExit }} />
+        <FlowActions primary={{ label: t("common.start"), onClick: start }} close={onExit} />
       </FlowColumn>
     );
 
@@ -341,8 +341,6 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         bu yüzden `quiet` değil. Bandın `role="status"`u sonucu duyuruyor.
       */
       <FlowColumn celebrate={isRecord}>
-        {/* ÜST ÇUBUK (2026-09-27, Android `FlowTopBar`): solda kapat, "Öğren'e dön"le aynı çıkış. */}
-        <ResultTopBar onExit={onExit} />
         <RecordChime fire={isRecord} />
         <ResultHero
           eyebrow={t("learn.survival")}
@@ -358,7 +356,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             { value: String(bestCombo), label: t("challenge.longest_streak"), tone: "streak" },
           ]}
         />
-        <FlowActions primary={{ label: t("common.try_again"), onClick: start }} tertiary={{ label: t("common.back_to_learn"), onClick: onExit }} />
+        <FlowActions primary={{ label: t("common.try_again"), onClick: start }} close={onExit} />
       </FlowColumn>
     );
   }
@@ -464,7 +462,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         title={t("game.quit_round_2")}
         message={t("game.exit_message_timed")}
         confirmLabel={t("common.exit")}
-        cancelLabel={t("common.continue_2")}
+        cancelLabel={t("common.continue")}
         destructive
         onConfirm={() => {
           setConfirmExit(false);

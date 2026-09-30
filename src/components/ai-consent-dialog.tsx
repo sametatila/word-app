@@ -13,6 +13,7 @@ import {
   type AiConsentProcessor,
   type AiConsentPurpose,
 } from "@/lib/ai-consent-client";
+import { IconLine, lineInset } from "@/components/icon-line";
 
 /**
  * Yapay zekâ işleme rızası diyaloğu — mobil `M/src/ui/AiConsentSheet.tsx`in
@@ -259,14 +260,16 @@ function AiConsentDialog({
 
           <ul className="mt-4 flex flex-col gap-3">
             {copy.points.map((p) => (
-              <li key={p} className="flex items-start gap-3">
-                <span
-                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
-                  style={{ background: "var(--brand-soft)", color: "var(--on-brand-soft)" }}
-                >
-                  <CheckIcon size={14} />
-                </span>
-                <span className="text-body">{p}</span>
+              <li key={p} className="flex items-start gap-3 text-body">
+                <IconLine box="1.5rem">
+                  <span
+                    className="flex h-6 w-6 items-center justify-center rounded-full"
+                    style={{ background: "var(--brand-soft)", color: "var(--on-brand-soft)" }}
+                  >
+                    <CheckIcon size={14} />
+                  </span>
+                </IconLine>
+                <span style={lineInset("1.5rem")}>{p}</span>
               </li>
             ))}
           </ul>
