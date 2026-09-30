@@ -624,7 +624,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
 
         <Panel id="yapay-zeka" title="Yapay zekâ sağlığı (7g)" hint="Sağlayıcı başına çağrı, başarı, gecikme ve hacim: sohbet, STT ve telaffuz." flush>
           {/* Etkin zincir koddan ve env'den (lib/ai-providers): tablodaki geçmişte zincirden çıkmış sağlayıcılar da var. */}
-          <div className="px-4 py-3 text-sm flex flex-col gap-1">
+          <div className="px-4 py-3 text-body flex flex-col gap-1">
             {(["chat", "stt", "tts"] as const).map((role) => {
               const list = d.aiActive.filter((p) => p.role === role);
               return (
