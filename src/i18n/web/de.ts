@@ -691,4 +691,6 @@ export const deWeb: Record<string, string> = {
   "meta.description": "Lerne eine Sprache Schritt für Schritt von A1 bis C1, auf Deutsch erklärt und durch Sprechen: Gespräche mit KI-Feedback, Probeprüfungen und eine tägliche Wortrunde. Kurse: {langs}.",
   "meta.og_sub": "A1 bis C1 · Sprechen mit KI · über 50 Probeprüfungen",
   "meta.og_native": "Auf Deutsch erklärt",
+  "meta.profile_desc": "{name} lernt eine Sprache mit Lernomi. Such dir eine Sprache aus und lass uns zusammen lernen.",
+  "meta.profile_open": "Profil bei Lernomi öffnen",
 };

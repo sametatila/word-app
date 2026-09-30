@@ -691,4 +691,6 @@ export const enWeb: Record<string, string> = {
   "meta.description": "Learn a language step by step from A1 to C1, explained in English and by speaking: conversation practice with AI feedback, mock exams and a daily word round. Courses: {langs}.",
   "meta.og_sub": "A1 to C1 · AI conversation practice · 50+ mock exams",
   "meta.og_native": "Explained in English",
+  "meta.profile_desc": "{name} is learning a language on Lernomi. Pick any language you like and let's study together.",
+  "meta.profile_open": "Open profile on Lernomi",
 };

@@ -752,4 +752,6 @@ export const trWeb: Record<string, string> = {
   "meta.description": "A1'den C1'e adım adım, Türkçe anlatımla ve konuşarak dil öğren: yapay zekâ geri bildirimli konuşma, deneme sınavları ve günlük kelime turu. Kurslar: {langs}.",
   "meta.og_sub": "A1'den C1'e · yapay zekâyla konuşma · 50+ deneme sınavı",
   "meta.og_native": "Türkçe anlatım",
+  "meta.profile_desc": "{name} Lernomi'de dil öğreniyor. Sen de istediğin dili seç, birlikte çalışalım.",
+  "meta.profile_open": "Profili Lernomi'de aç",
 };
