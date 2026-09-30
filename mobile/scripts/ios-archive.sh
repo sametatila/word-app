@@ -62,6 +62,11 @@ xcodebuild archive \
   CODE_SIGN_STYLE=Automatic \
   -allowProvisioningUpdates
 
+# Hazır RN framework'lerinin (React, ReactNativeDependencies, hermesvm) dSYM'leri
+# arşivin dSYMs/ klasörüne; uygulama paketine girmez (gerekçe betiğin başında).
+# Hata yüklemeyi durdurmaz: sembol eksikliği ret sebebi değil.
+bash scripts/rn-dsyms.sh "$ARCHIVE" || echo "UYARI: rn-dsyms başarısız, semboller eksik yüklenecek" >&2
+
 # ExportOptions repoya yazılmaz: içinde takım kimliği geçiyor. Gitignore'daki
 # build dizinine üretilip çıkışta siliniyor.
 #

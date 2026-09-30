@@ -132,6 +132,10 @@ npm run release:android                # AAB + deneme APK'sı üretir ve üretti
 bash scripts/ios-archive.sh            # iOS arşiv + App Store yüklemesi (yalnız macOS)
 ```
 
+`ios-archive.sh` arşivden sonra `scripts/rn-dsyms.sh`'i çağırır: React, ReactNativeDependencies ve
+hermesvm'in release dSYM'lerini Maven'dan (SHA-1 ve UUID eşleşmesiyle) arşivin `dSYMs/` klasörüne
+koyar; uygulama paketine girmez. Önbellek `~/Library/Caches/Lernomi/rn-dsyms`.
+
 **Yükledikten sonra (her build):** iOS build App Store Connect'te `VALID` olunca TestFlight'ın
 "Neler test edilecek" notu yazılır ve build **App Store sürümüne bağlanır**
 (`PATCH /v1/appStoreVersions/<id>/relationships/build`); bağlanmazsa sürüm eski build'le incelemeye

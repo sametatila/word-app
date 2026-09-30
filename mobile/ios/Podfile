@@ -8,11 +8,9 @@ require Pod::Executable.execute_command('node', ['-p',
 # RCT_SYMBOLICATE_PREBUILT_FRAMEWORKS=1 KULLANILMIYOR (denendi, 2026-09-30):
 # 0.87.1 dSYM'i React.framework'ün İÇİNE koyuyor, framework uygulamaya gömülünce
 # App Store yüklemesi "Invalid bundle structure … React.framework.dSYM … binary
-# file is not permitted" ile reddediyor. Bedeli: yüklemede React.framework,
-# ReactNativeDependencies ve hermesvm için "Upload Symbols Failed" UYARISI (ret
-# değil) ve o kütüphanelerdeki çökmelerin Organizer'da sembolsüz görünmesi.
-# Düzgün yol: dSYM'i pod kurulumunda framework dışına taşıyıp arşiv adımında
-# DWARF_DSYM_FOLDER_PATH'e kopyalamak (ayrı iş).
+# file is not permitted" ile reddediyor. React.framework, ReactNativeDependencies
+# ve hermesvm sembolleri bunun yerine mobile/scripts/rn-dsyms.sh ile doğrudan arşivin dSYMs/
+# klasörüne giriyor (ios-archive.sh çağırıyor; Maven'dan, UUID eşleşmesiyle).
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
