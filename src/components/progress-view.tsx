@@ -60,7 +60,8 @@ export function WordProgress({
       {/* CEFR seviyeleri — satırlar Gelişim ekranıyla ORTAK (`LevelRows`). */}
       <section className="card p-4">
         <h2 className="mb-4 text-strong">{t("progress.by_level")}</h2>
-        <LevelRows levels={levels} />
+        {/* Kelimeler sayfasında şerit kalın (12 px): sayfanın ana göstergesi bu. */}
+        <LevelRows levels={levels} thick />
       </section>
 
       <section className="card p-4">
@@ -85,7 +86,7 @@ export function WordProgress({
  * şeridin ne demek olduğunu söyleyen not. Kelimeler ekranı ve Gelişim ekranı
  * aynı satırları çiziyor; mobil karşılığı `ProgressScreen` "Kelime ustalığı".
  */
-export function LevelRows({ levels }: { levels: LevelRow[] }) {
+export function LevelRows({ levels, thick = false }: { levels: LevelRow[]; /** Kelimeler sayfası 12 px, Gelişim kartı 6 px. */ thick?: boolean }) {
   const t = useT();
   const lang = useLang();
   const totalSeen = levels.reduce((s, l) => s + l.seen, 0);
@@ -108,7 +109,7 @@ export function LevelRows({ levels }: { levels: LevelRow[] }) {
                   })}
                 </span>
               </div>
-              <div className="relative h-1.5 w-full overflow-hidden rounded-full surface-2">
+              <div className={`relative ${thick ? "h-3" : "h-1.5"} w-full overflow-hidden rounded-full surface-2`}>
                 <motion.div
                   className="absolute inset-0 rounded-full opacity-40"
                   style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}

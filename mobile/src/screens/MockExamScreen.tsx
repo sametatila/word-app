@@ -1004,7 +1004,7 @@ function WritingTask({
         style={{ marginTop: spacing.md, minHeight: ds(180), borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
       />
       <Text variant="micro" color={need && n < need ? colors.textMuted : colors.successText} style={{ marginTop: spacing.xs }}>
-        {need ? `${n} / ${need} ${t("mockexam.words_unit")}` : `${n} ${t("mockexam.words_unit")}`}
+        {need ? t("mockexam.words_of", { done: n, n: need }) : t("mockexam.words_n", { n })}
       </Text>
 
       {score ? (

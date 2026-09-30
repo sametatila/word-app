@@ -916,8 +916,8 @@ function OpenTask({
       />
       <p className="muted mt-1 text-caption">
         {need
-          ? `${n} / ${need} ${t("mockexam.words_unit")}`
-          : `${n} ${t("mockexam.words_unit")}`}
+          ? t("mockexam.words_of", { done: n, n: need })
+          : t("mockexam.words_n", { n })}
       </p>
 
       {score ? (
