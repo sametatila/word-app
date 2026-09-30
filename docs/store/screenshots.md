@@ -76,15 +76,13 @@ Playwright ile `localhost:3100` (Accept-Language tr/en/de) açık ve koyu tema, 
 
 ## Durum
 
-Sayfadaki WebP'ler (2026-09-28): `tr-de` ve `en-de` 7/7 eski sıcak paletle, `de-en` 7/7 B paletiyle.
-`tr-en` sayfada KULLANILMIYOR (`SCREEN_SET` dil başına tek set; "Diller" bölümü yalnız metin).
+Sayfadaki WebP'ler: dört set 7/7, açık ve koyu (2026-09-30, B paleti). `tr-en` sayfada KULLANILMIYOR
+(`SCREEN_SET` dil başına tek set; "Diller" bölümü yalnız metin); set hazır tutuluyor.
 
-Mağaza çekimi (2026-09-29, `.shots/store-kit/raw/`, yeni build): yapay zekâ istemeyen ekranların hepsi
-dört cihazda ve üç sette çekildi (Patika heceleme düzeltmesinden sonra; iPhone tanıtım ekranları açık+koyu,
-`tr-en` 7/7 dahil). Yapay zekâ isteyen iki ekran bekliyor: `conversation` (tr-de dört cihazda yankı hatası
-yüzünden yeniden, en-de üç cihaz, de-en dört cihaz) ve `mock-result`/`mock-solutions` (en-de, de-en).
-Sebep sağlayıcı kotası (aşağıda "Yapay zekâ kotası"). Konuşma yeniden çekilince tanıtım WebP'leri de tek
-seferde yenilenir: yalnız bir kısmını yenilemek sayfada iki paleti yan yana koyar.
+Mağaza çekimi (2026-09-29/30, main 29cd62e96 build'i): üç set dört cihazda tam, 75 kare; karelerin kullandığı
+ham görüntüler `docs/store/raw/`. Tanıtım sayfasının dört seti aynı çekimden yenilendi (2026-09-30), konuşma
+dökümleri (`landing.ts` `talk`) çekimdeki konuşmalardan birebir. Yapay zekâ zinciri Cloudflare Workers AI →
+Groq'a geçtikten sonra (b182d5d74) kota sorunu kalmadı.
 
 ## Tuzaklar (2026-09-28'de yaşandı)
 

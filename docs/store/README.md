@@ -289,10 +289,10 @@ seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yaz�
 Play iki üründe girildi ve geri okundu (2026-09-25). ASC iki üründe üç dilde girildi ve geri
 okundu (2026-09-27, Samet çalıştırdı; denetim S9).
 
-**Açık (2026-09-29):** tr-TR seti (25 kare, öne çıkan grafik dahil) üretildi; konuşma karesi yankı
-düzeltmesinden (249e14886) sonra yeniden çekilecek. en-US ve de-DE'de yapay zekâ istemeyen bütün ham
-ekranlar hazır; konuşma ve deneme sonucu kareleri sağlayıcı kotası yüzünden bekliyor
-(`docs/store/screenshots.md` "Durum"). Mağazaya yükleme Samet'in onayıyla. App Preview videosu ayrı iş
+**Durum (2026-09-30):** üç dilde 75 kare üretildi (`npm run store:frames`, ham görüntüler `raw/`),
+tabakalar gözle denetlendi; App Store abonelik inceleme görseli `raw/iphone/review/`. Mağazaya yükleme Samet'in
+onayıyla. Karelerdeki build main 29cd62e96: sonraki build'de değişen görünür bir şey olursa (tablet sekme
+çubuğunun daralması, Premium ekranı) o ekranlar aynı yolla yeniden çekilir. App Preview videosu ayrı iş
 (denetim M3).
 
 ## Yeniden üretmek
