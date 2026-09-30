@@ -61,6 +61,9 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /* Kayan rakamlar sabit `numH` kutusunda: yazı ölçeğiyle büyüseler kutudan
+     taşıp kesilirlerdi (Android satırı tavansız ölçekliyor). Süs olan sayaç
+     ekran okuyucudan gizli; sayı aşağıdaki metinde de yazıyor. */
   const numH = ds(40);
   const flameFill = fillOf("streak");
   return (
@@ -83,14 +86,14 @@ export function StreakMoment({ streak, onDone }: { streak: number; onDone: () =>
       {/* SAYI: eski değer yukarı kayıp sönüyor, yenisi alttan geliyor. */}
       <View style={{ height: numH, overflow: "hidden", alignItems: "center" }} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
         {still ? (
-          <Text variant="display" style={{ lineHeight: numH, fontVariant: ["tabular-nums"] }}>{String(streak)}</Text>
+          <Text variant="display" allowFontScaling={false} style={{ lineHeight: numH, fontVariant: ["tabular-nums"] }}>{String(streak)}</Text>
         ) : (
           <>
             <Animated.View style={{ transform: [{ translateY: swap.interpolate({ inputRange: [0, 1], outputRange: [0, -numH] }) }], opacity: swap.interpolate({ inputRange: [0, 1], outputRange: [1, 0] }) }}>
-              <Text variant="display" style={{ lineHeight: numH, fontVariant: ["tabular-nums"] }}>{String(from)}</Text>
+              <Text variant="display" allowFontScaling={false} style={{ lineHeight: numH, fontVariant: ["tabular-nums"] }}>{String(from)}</Text>
             </Animated.View>
             <Animated.View style={{ position: "absolute", transform: [{ translateY: swap.interpolate({ inputRange: [0, 1], outputRange: [numH, 0] }) }], opacity: swap }}>
-              <Text variant="display" style={{ lineHeight: numH, fontVariant: ["tabular-nums"] }}>{String(streak)}</Text>
+              <Text variant="display" allowFontScaling={false} style={{ lineHeight: numH, fontVariant: ["tabular-nums"] }}>{String(streak)}</Text>
             </Animated.View>
           </>
         )}

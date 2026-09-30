@@ -1,5 +1,5 @@
 import React from "react";
-import { PixelRatio, Text as RNText, type TextProps } from "react-native";
+import { PixelRatio, Platform, Text as RNText, type TextProps } from "react-native";
 import { useTheme, typography, lineHeightRatio } from "../theme";
 import { useMinLineRatio } from "./fontFit";
 
@@ -21,13 +21,31 @@ export function Text({ variant = "body", color, style, maxFontSizeMultiplier = 1
    * yazıyordu — tek bir varyantta altı ayrı değer vardı. Oran artık
    * `lineHeightRatio`da ve web `--text-*--line-height` ile aynı sayı.
    *
-   * PUNTO ÖLÇEĞİYLE ÇARPILIYOR: React Native `fontSize`ı erişilebilirlik
-   * ölçeğiyle büyütüyor ama sabit bir `lineHeight`ı büyütmüyor, yani elle
-   * yazılan değerlerin hepsinde büyük yazıda satırlar üst üste biniyordu.
-   * Tavan bileşenin kendi `maxFontSizeMultiplier`ı ile aynı.
+   * Erişilebilirlik ölçeği satıra RN tarafından uygulanıyor (aşağıda).
    */
-  const olcek = Math.min(PixelRatio.getFontScale(), maxFontSizeMultiplier);
-  const punto = (typography[variant].fontSize ?? 15) * olcek;
+  /*
+   * SATIR YÜKSEKLİĞİNİ ÖLÇEKLEMEK REACT NATIVE'İN İŞİ — bizim değil
+   * (2026-09-30, Samet'in Samsung'unda "Almanca öğren"in "ğ"si alttan,
+   * başka ekranlarda "Ö/İ" noktaları üstten kesikti; emülatörde ölçek 1
+   * olduğu için görünmüyordu).
+   *
+   * Satırı burada `getFontScale()` ile çarpıyorduk ve RN onu BİR KEZ DAHA
+   * çarpıyor: iOS `lineHeight × min(ölçek, tavan)` (RCTAttributedTextUtils),
+   * Android Fabric `toPixelFromSP(lineHeight)` yani TAVANSIZ ölçek
+   * (TextAttributeProps). Punto ise tek kez ve tavanlı ölçekleniyor. Çizilen
+   * oran `oran × ölçek` oluyordu: yazı boyu küçük seçili telefonda (ölçek
+   * < 1) satır yazı tipinin kendi yüksekliğinin altına iniyor ve harf
+   * kesiliyordu; büyük seçilide satır aralıkları gereksiz açılıyordu.
+   *
+   * Artık satır ÖLÇEKSİZ punto × oran veriliyor; Android'de tavansız
+   * çarpımı tavanlı punto ölçeğine indiren düzeltme katsayısıyla. Çizilen
+   * satır her cihazda `punto × ölçek(tavanlı) × oran`; 1× ölçekte eskisiyle
+   * birebir aynı, `Skeleton.textHeight` de tam bunu hesaplıyor.
+   */
+  const olcek = Math.min(PixelRatio.getFontScale(), maxFontSizeMultiplier > 0 ? maxFontSizeMultiplier : Infinity);
+  const olcekliyor = rest.allowFontScaling !== false;
+  const satirCarpani = olcekliyor && Platform.OS === "android" ? olcek / Math.max(PixelRatio.getFontScale(), 0.01) : 1;
+  const punto = (typography[variant].fontSize ?? 15) * satirCarpani;
   /*
    * SATIR KUTUSUNUN TABANI (Android kırpması).
    *
