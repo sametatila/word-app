@@ -7,7 +7,8 @@ yolla mağaza. Açık konsol işleri `docs/store/audit.md`'de. Ekran görüntül
 
 | Klasör | Ne | Depoda mı |
 |---|---|---|
-| `raw/<cihaz>/<set>/light/<ekran>.png` | Ham ekran görüntüleri (cihaz: `iphone`, `ipad`, `android-phone`, `android-tablet`; set: `tr-de`, `en-de`, `de-en`) | **Evet** — yeniden üretilemez, cihaz ve giriş yapılmış hesap ister |
+| `raw/<cihaz>/<set>/light/<ekran>.png` | Ham ekran görüntüleri (cihaz: `iphone`, `ipad`, `android-phone`, `android-tablet`; set: `tr-de`, `en-de`, `de-en`), yalnız karelerin kullandığı ekranlar, kayıpsız sıkıştırılmış | **Evet** — yeniden üretilemez, cihaz ve giriş yapılmış hesap ister |
+| `raw/iphone/review/` | App Store abonelik inceleme görseli (Premium ekranı, plan listesi görünür; misafir oturumunda, İngilizce) | **Evet** |
 | `plan/frames.json` | Mağaza ölçüleri, kare sırası, altyazılar (tr/en/de), büyüteç kırpımları | **Evet** |
 | `out/` | Üretilen kareler + `_sheets/` kontrol tabakaları | Hayır — `.gitignore`'da, tek komutla yeniden üretilir |
 
@@ -343,23 +344,14 @@ Image.open('mobile/ios/Lernomi/Images.xcassets/AppIcon.appiconset/AppIcon-1024.p
 
 ## Yeni ham görüntü çekmek
 
-**iOS simülatöründe (tanıtım sayfası ve iOS kareleri):** `docs/store/screenshots.md`
-(`scripts/shots/sim.sh`, Maestro, `screenshots@lernomi.app`, dil çifti başına set). Aşağısı Android.
-
-Gerçek cihaz (ya da emülatör) + **imzalı release yapısı** + giriş yapılmış hesap gerekir.
-Debug yapısı olmaz: R8 küçültmesi ve paketlenmiş varlıklar yalnız release'te devrede ve
-karelerdeki ekran mağazadaki uygulamanın ekranı olmalı.
-
-```bash
-adb exec-out screencap -p > /tmp/x.png
-python3 - <<'PY'
-from PIL import Image
-Image.open("/tmp/x.png").convert("RGB").crop((0, 74, 1080, 2340)).save("docs/store/raw/yeni.png")
-PY
-```
-
-Kırpma değerleri 1080×2400 · 420 dpi içindir: üstteki 74 piksel durum çubuğu, alttaki
-60 piksel gezinme çubuğu. Başka bir çözünürlükte bu iki sayı yeniden ölçülür.
+Yöntem, cihazlar, sıra ve tuzaklar `docs/store/screenshots.md` "Mağaza kareleri: dört cihaz". Özet:
+iOS simülatörü (Release) ve Android emülatörü (imzalı release; debug yapısı olmaz, R8 ve paketlenmiş
+varlıklar yalnız release'te), `screenshots@lernomi.app` hesabı, simülatörün sistem dili setin dilinde.
+Ham görüntüler önce `.shots/store-kit/raw/` altına çekilir, kareler `--raw` ile oradan denenir; kareler
+onaylanınca karelerin kullandığı açık tema dosyaları buraya kayıpsız sıkıştırılarak kopyalanır
+(`sharp().png({ compressionLevel: 9 })`) ve `npm run store:frames` varsayılan kökle aynı kareyi verir.
+Üretici bit düzeyinde belirleyici değil (tarayıcı çizimi): iki koşu arasında piksel farkı olur, karşılaştırma
+gözle ya da ortalama farkla yapılır.
 
 ## Kurallar
 
