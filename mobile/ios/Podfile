@@ -5,12 +5,14 @@ require Pod::Executable.execute_command('node', ['-p',
     {paths: [process.argv[1]]},
   )', __dir__]).strip
 
-# Hazır React.framework'ün hata ayıklama sembolleri (dSYM) arşive girsin: yoksa
-# App Store yüklemesi "Upload Symbols Failed … React.framework" uyarısı veriyor ve
-# o kütüphanedeki çökmeler Xcode Organizer'da okunmuyor (build 11, 2026-09-30).
-# React Native'in resmî bayrağı (scripts/cocoapods/rncore.rb); ortamdan ezilebilir.
-# ReactNativeDependencies ve hermesvm için 0.87'de eşdeğer bir yol yok.
-ENV['RCT_SYMBOLICATE_PREBUILT_FRAMEWORKS'] ||= '1'
+# RCT_SYMBOLICATE_PREBUILT_FRAMEWORKS=1 KULLANILMIYOR (denendi, 2026-09-30):
+# 0.87.1 dSYM'i React.framework'ün İÇİNE koyuyor, framework uygulamaya gömülünce
+# App Store yüklemesi "Invalid bundle structure … React.framework.dSYM … binary
+# file is not permitted" ile reddediyor. Bedeli: yüklemede React.framework,
+# ReactNativeDependencies ve hermesvm için "Upload Symbols Failed" UYARISI (ret
+# değil) ve o kütüphanelerdeki çökmelerin Organizer'da sembolsüz görünmesi.
+# Düzgün yol: dSYM'i pod kurulumunda framework dışına taşıyıp arşiv adımında
+# DWARF_DSYM_FOLDER_PATH'e kopyalamak (ayrı iş).
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
