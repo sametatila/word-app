@@ -259,9 +259,11 @@ export function StatRow({ items }: { items: { value: React.ReactNode; label: str
           <Text
             variant="h2"
             color={it.tone === "ok" ? colors.successText : it.tone === "bad" ? colors.dangerText : it.tone === "streak" ? colors.streakText : colors.text}
-            style={{ fontVariant: ["tabular-nums"] }}
+            /* Küçültme YOK: iPhone'da (iOS, 2026-10-01 build'i) `adjustsFontSizeToFit`
+               değeri okunmayacak kadar küçültüyordu ("3/3 · %85 · %60" ~5 pt; iPad ve
+               Android'de doğru). Değerler kısa ("12/20", "%85"); tek satır yetiyor. */
+            style={{ fontVariant: ["tabular-nums"], alignSelf: "stretch", textAlign: "center" }}
             numberOfLines={1}
-            adjustsFontSizeToFit
           >
             {it.value}
           </Text>
