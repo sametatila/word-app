@@ -224,7 +224,7 @@ const tr: LandingCopy = {
     more: [
       "Her Konuşma adımı Türkçe bir anlatımla başlar: kullanacağın kalıpları önce kendi dilinde okursun. Karşındakinin yapay zekâ olduğunu uygulama ekranda söyler.",
     ],
-    /* Türkçe arayüzle, Almanca kursunda yapılan konuşmadan (2026-09-30, ekran
+    /* Türkçe arayüzle, Almanca kursunda yapılan konuşmadan (2026-10-01, ekran
        görüntüsü `public/landing/tr-de/conversation-*`), B1 "Der Lebenslauf". */
     label: "Almanca kursunda geçen bir konuşma",
     scene: "B1 · İş görüşmesi",
@@ -241,12 +241,12 @@ const tr: LandingCopy = {
       after: " als Buchhalterin bei einer Firma in Köln.",
     },
     fix: "seit'ten sonra Dativ gelir: seit drei Jahren.",
-    ai2: "Das ist ein guter Anfang. Was genau sind Ihre Aufgaben in dieser Position?",
+    ai2: "Das ist ein interessanter Startpunkt. Was genau sind Ihre Aufgaben in dieser Position?",
     hintsLabel: "Takılırsan önerir:",
     hints: [
       "Ich bin für die Buchhaltung zuständig.",
+      "Ich arbeite in der Finanzabteilung.",
       "Ich kümmere mich um die Rechnungen.",
-      "Meine Arbeit umfasst die Bilanzierung.",
     ],
     caption: "Hata sohbet sürerken düzeltilir.",
   },
@@ -407,7 +407,7 @@ const en: LandingCopy = {
     more: [
       "Each Speaking step opens with a short intro in English to the phrases you'll use. The app tells you on screen that you're talking to an AI.",
     ],
-    /* İngilizce arayüzle, Almanca kursunda yapılan konuşmadan (2026-09-30, ekran
+    /* İngilizce arayüzle, Almanca kursunda yapılan konuşmadan (2026-10-01, ekran
        görüntüsü `public/landing/en-de/conversation-*`), B1 "Der Lebenslauf". */
     label: "A conversation from the German course",
     scene: "B1 · Job interview",
@@ -424,7 +424,7 @@ const en: LandingCopy = {
       after: " als Buchhalterin bei einer Firma in Köln.",
     },
     fix: "seit takes the dative: seit drei Jahren. And where English says \"I have been working\", German uses the present tense.",
-    ai2: "Das ist ein interessanter Startpunkt. Was genau waren Ihre Aufgaben in dieser Position in Köln?",
+    ai2: "Das ist ein guter Anfang. Was genau waren Ihre Aufgaben in dieser Position in Köln?",
     hintsLabel: "Stuck? It suggests:",
     hints: [
       "Ich war für die Buchhaltung zuständig.",
@@ -590,7 +590,7 @@ const de: LandingCopy = {
     more: [
       "Jeder Sprechen-Schritt beginnt mit einer kurzen Einführung der Wendungen auf Deutsch. Die App zeigt an, dass du mit einer KI sprichst.",
     ],
-    /* Almanca arayüzle, İngilizce kursunda yapılan konuşmadan (2026-09-30,
+    /* Almanca arayüzle, İngilizce kursunda yapılan konuşmadan (2026-10-01,
        ekran görüntüsü `public/landing/de-en/conversation-*`), B1 "Writing a
        résumé": Almanca konuşanın tipik hatası "since three years" + şimdiki zaman. */
     label: "Ein Gespräch aus dem Englischkurs",
@@ -611,11 +611,11 @@ const de: LandingCopy = {
       after2: " three years.",
     },
     fix: "Läuft es seit drei Jahren und noch heute, steht im Englischen das Present Perfect mit for, nicht die Gegenwart mit since.",
-    ai2: "Ankara is a beautiful city with a great history. It sounds like you have a solid background in economics. What was your first professional role after you finished your degree?",
+    ai2: "Ankara is a great city for studying economics. It sounds like you have a solid foundation for your career. What was your first professional role after you finished your degree?",
     hintsLabel: "Wenn du nicht weiterweißt, schlägt sie vor:",
     hints: [
       "I worked as an intern.",
-      "I started as a junior analyst.",
+      "I started as a clerk.",
       "My first job was in sales.",
     ],
     caption: "Fehler werden mitten im Gespräch korrigiert.",
