@@ -117,6 +117,99 @@ function ocr(file) {
   return rows;
 }
 
+// ---------- büyüteç: bileşen kutusu (piksel) ----------
+// Kırpım OCR satırlarından tahmin edilince kartın kenarını ortadan kesiyor, yarım satır alıyordu
+// (2026-10-01, Samet: "kaymış, kırpılmış"). Artık çapa metninin İÇİNDE DURDUĞU arayüz bileşeni
+// (kart, balon, sekme kutusu) pikselden bulunuyor: sayfa zemininden ayrılan bağlı bölge. `row`:
+// aynı satırda yan yana duran eş boy kutular (beceri sekmeleri) tek parça alınır.
+const PIX = new Map();
+async function loadPixels(file) {
+  if (PIX.has(file)) return;
+  const meta = await sharp(file).metadata();
+  const w = Math.round(meta.width / 2), h = Math.round(meta.height / 2);
+  const data = await sharp(file).resize(w, h).removeAlpha().raw().toBuffer();
+  PIX.set(file, { data, w, h });
+}
+
+function componentRect(file, a, spec) {
+  const P = PIX.get(file);
+  if (!P) return null;
+  const { data, w, h } = P;
+  const at = (x, y) => (y * w + x) * 3;
+  // Sayfa zemini: sol kenar şeridinin ortancası (kartlar kenardan içeride).
+  const xs = Math.max(1, Math.round(0.012 * w)), samples = [[], [], []];
+  // Yerel zemin: çapanın çevresindeki kenar şeridi (zemin ekranın altına doğru açılabiliyor).
+  const ay = (a.y + a.h / 2) * h;
+  for (let y = Math.max(0, Math.round(ay - 0.08 * h)); y < Math.min(h, Math.round(ay + 0.08 * h)); y += 2) for (let c = 0; c < 3; c++) samples[c].push(data[at(xs, y) + c]);
+  const bg = samples.map((v) => v.sort((p, q) => p - q)[v.length >> 1]);
+  // Bileşen = zeminden AÇIK yüzey (kartlar beyaz). Gölge zeminden koyu olduğu için iki kartı
+  // birleştirmiyor (günlük turda soru kartının gölgesi ilk şıkka değiyordu); karttaki koyu yazı
+  // delik olarak kalıyor, kartın dış sınırını bozmuyor.
+  const bgSum = bg[0] + bg[1] + bg[2];
+  const inMask = (x, y) => { const i = at(x, y); return data[i] + data[i + 1] + data[i + 2] - bgSum > 21; };
+  const seen = new Uint8Array(w * h);
+  const fill = (sx, sy) => {
+    if (!inMask(sx, sy) || seen[sy * w + sx]) return null;
+    let x0 = sx, x1 = sx, y0 = sy, y1 = sy, n = 0;
+    const st = [sy * w + sx]; seen[sy * w + sx] = 1;
+    while (st.length) {
+      const p = st.pop(), x = p % w, y = (p / w) | 0; n++;
+      if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+      for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+        const nx = x + dx, ny = y + dy;
+        if (nx < 0 || ny < 0 || nx >= w || ny >= h) continue;
+        const q = ny * w + nx;
+        if (!seen[q] && inMask(nx, ny)) { seen[q] = 1; st.push(q); }
+      }
+    }
+    return { x0, x1, y0, y1, n };
+  };
+  // Başlangıç: çapa satırının içinde maskeye düşen ilk nokta.
+  // Başlangıç: çapa satırı, sonra yukarı doğru (düzeltme satırı balonun içinde gri bir şeritte:
+  // beyaz yüzey satırın üstünde). Bulunan bileşen çapayı İÇERMELİ; yoksa aramaya devam.
+  let box = null;
+  const ax0 = a.x * w, ax1 = (a.x + a.w) * w, ay0 = a.y * h, ay1 = (a.y + a.h) * h, lh = a.h * h;
+  const holds = (b) => b && b.x0 <= ax0 + 1 && b.x1 >= ax1 - 1 && b.y0 <= ay0 + 1 && b.y1 >= ay1 - 1;
+  const starts = [ (ay0 + ay1) / 2, ay1 + 1, ay0 - 1 ];
+  for (let k = 1; k <= 8; k++) starts.push(ay0 - k * 0.5 * lh, ay1 + k * 0.5 * lh);
+  search: for (const yy0 of starts) {
+    const yy = Math.round(yy0);
+    if (yy < 0 || yy >= h) continue;
+    for (let x = Math.round(ax0); x <= Math.round(ax1); x += 2) {
+      const c = fill(x, yy);
+      if (holds(c)) { box = c; break search; }
+    }
+  }
+  if (!box) return null;
+  if (spec.row) {
+    // Aynı yükseklikteki komşu kutular: merkez satırı boyunca, en çok %5 genişlik boşlukla.
+    const mid = Math.round((box.y0 + box.y1) / 2), bh = box.y1 - box.y0;
+    for (const dir of [1, -1]) {
+      let x = dir > 0 ? box.x1 + 1 : box.x0 - 1, gap = 0;
+      while (x >= 0 && x < w && gap < 0.05 * w) {
+        const c = !seen[mid * w + x] && fill(x, mid);
+        if (c) {
+          const ch = c.y1 - c.y0, ov = Math.min(c.y1, box.y1) - Math.max(c.y0, box.y0);
+          if (Math.abs(ch - bh) <= 0.25 * bh && ov >= 0.7 * bh) {
+            box = { x0: Math.min(box.x0, c.x0), x1: Math.max(box.x1, c.x1), y0: Math.min(box.y0, c.y0), y1: Math.max(box.y1, c.y1) };
+            x = dir > 0 ? c.x1 + 1 : c.x0 - 1; gap = 0; continue;
+          }
+          break;
+        }
+        if (seen[mid * w + x] && !(x >= box.x0 && x <= box.x1)) { x += dir; continue; }
+        x += dir; gap++;
+      }
+    }
+  }
+  const bw = (box.x1 - box.x0) / w, bhN = (box.y1 - box.y0) / h;
+  // Akıl denetimi: ekranın tamamı ya da bir kırıntı bileşen değildir.
+  if (bw > 0.97 || bw * bhN > 0.5 || bw < 0.15) return null;
+  const pad = 0.014; // kartın gölgesi ve köşesi tam görünsün
+  const rx0 = clamp(box.x0 / w - pad, 0, 1), ry0 = clamp(box.y0 / h - pad * (w / h), 0, 1);
+  const rx1 = clamp(box.x1 / w + pad, 0, 1), ry1 = clamp(box.y1 / h + pad * (w / h), 0, 1);
+  return { x: rx0, y: ry0, w: rx1 - rx0, h: ry1 - ry0 };
+}
+
 /**
  * Çapa satırını bul, alanı kur: çapanın `above`/`below` satır yüksekliği yukarısı ve aşağısı;
  * merkezi bu aralıktaki OCR satırları yatayda birleşir (sekme sırası, ölçüt kartı), sonra `pad`.
@@ -126,6 +219,10 @@ function anchoredRect(spec, file) {
   const rows = ocr(file);
   const a = rows.find((r) => re.test(r.t.trim()));
   if (!a) return null;
+  if (spec.card) {
+    const r = componentRect(file, a, spec);
+    if (r) return { ...r, card: true };
+  }
   const lh = a.h;
   // `chain`: kartın kalanı. Alttaki satırlar arada `chain` satır yüksekliğinden kısa boşluk kaldıkça
   // eklenir (ölçüt sayısı, cümle satırı ekrandan ekrana değişiyor; sabit yükseklik keserdi).
@@ -161,7 +258,7 @@ function calloutFor(device, set, screen, src, name) {
   for (const s0 of specs) {
     const s = { ...s0, ...(s0.by?.[device] || {}) };
     const rect = anchoredRect(s, src);
-    if (rect) return { rect, zoom: s.zoom ?? 1.4, dx: s.dx ?? 0, dy: s.dy ?? 0 };
+    if (rect) return { rect, zoom: s.zoom ?? 1.4, dx: s.dx ?? 0, dy: s.dy ?? 0, card: !!rect.card };
   }
   return null;
 }
@@ -227,6 +324,11 @@ function layout({ st, screen, idx, lang, set, img, src, name, iw, ih }) {
 
   const b = dev.spec.bez * dev.sw;
   const c = kind === "feature" ? null : calloutFor(st.device, set, screen, src, name);
+  if (c && c.card) {
+    // Büyütme sığacak kadar: mercek cihaz gövdesinden en çok biraz taşar, karenin alanından hiç.
+    const maxW = Math.min(box.x1 - box.x0, (dev.sw + 2 * b) * 1.1), maxH = 0.5 * dev.sh;
+    c.zoom = Math.max(1.1, Math.min(c.zoom, maxW / (c.rect.w * dev.sw), maxH / (c.rect.h * dev.sh)));
+  }
   if (c) {
     const w = c.rect.w * dev.sw * c.zoom, h = c.rect.h * dev.sh * c.zoom;
     let sx = dev.x + b + (c.rect.x + c.rect.w / 2) * dev.sw;
@@ -238,7 +340,8 @@ function layout({ st, screen, idx, lang, set, img, src, name, iw, ih }) {
       sx = ox + dx * Math.cos(a) - dy * Math.sin(a);
       sy = oy + dx * Math.sin(a) + dy * Math.cos(a);
     }
-    const x = clamp(sx - w / 2 + c.dx * u, box.x0, box.x1 - w);
+    let xC = clamp(sx - w / 2 + c.dx * u, box.x0, box.x1 - w);
+    const r0Of = (rc) => ({ x: dev.x + b + rc.x * dev.sw, y: dev.y + b + rc.y * dev.sh });
     // Dikey yer: büyüteç kaynağın üstüne tam oturunca komşu satırları YARIM örtüyordu (üstte ve altta
     // kesik yazı). Kaynağın yakınında hiçbir satırı yarım kesmeyen ilk konum seçilir (önce aşağı);
     // kaynak ayrıca halkayla işaretli. Bulunamazsa ortalanır. `dy` elle kaydırma.
@@ -248,7 +351,7 @@ function layout({ st, screen, idx, lang, set, img, src, name, iw, ih }) {
     // Önce hiçbir satıra değmeyen konum; yoksa satırları ya tam örten ya hiç değmeyen konum.
     const src0 = c.rect;
     const cut = (Y, strict) => {
-      const p0 = toScreen(x, Y), p1 = toScreen(x + w, Y + h);
+      const p0 = toScreen(xC, Y), p1 = toScreen(xC + w, Y + h);
       return rows.some((r) => {
         const m = 0.5 * r.h, ry0 = r.y - m, ry1 = r.y + r.h + m;
         // Kaynağın kendi satırı: tam örtülüyorsa sorun yok (strict'te bile), yarım örtülüyorsa kusur.
@@ -261,7 +364,31 @@ function layout({ st, screen, idx, lang, set, img, src, name, iw, ih }) {
     };
     const y0 = sy - h / 2 + c.dy * u, step = 0.004 * dev.sh;
     let y = clamp(y0, box.y0, box.y1 - h);
-    if (!c.dy) {
+    // Kart modunda mercek kaynağın ÜSTÜNDE: kenarlardan biri kaynağın kenarıyla çakışır (üst/orta/alt ×
+    // sol/orta/sağ hiza). Komşu yazıyı en az yarım kesen hiza seçilir, eşitlikte ortalı: ortadan
+    // büyüyen mercek iPad'de üstteki kullanıcı mesajını yarım kesiyordu.
+    if (c.card) {
+      const sx0 = r0Of(c.rect).x, sy0 = r0Of(c.rect).y, sW = c.rect.w * dev.sw, sH = c.rect.h * dev.sh;
+      const xsC = [sx - w / 2, sx0, sx0 + sW - w].map((v) => clamp(v, box.x0, box.x1 - w));
+      const ysC = [sy - h / 2, sy0, sy0 + sH - h].map((v) => clamp(v, box.y0, box.y1 - h));
+      const halfCut = (X, Y) => {
+        const p0 = toScreen(X, Y), p1 = toScreen(X + w, Y + h);
+        return rows.filter((r) => {
+          const cyR = r.y + r.h / 2, cxR = r.x + r.w / 2;
+          if (cxR >= src0.x && cxR <= src0.x + src0.w && cyR >= src0.y && cyR <= src0.y + src0.h) return false;
+          const ox = Math.min(p1.x, r.x + r.w) - Math.max(p0.x, r.x), oy = Math.min(p1.y, r.y + r.h) - Math.max(p0.y, r.y);
+          if (ox <= 0 || oy <= 0) return false;
+          return !(r.y >= p0.y && r.y + r.h <= p1.y && r.x >= p0.x && r.x + r.w <= p1.x);
+        }).length;
+      };
+      let best = null;
+      ysC.forEach((Y, yi) => xsC.forEach((X, xi) => {
+        const score = halfCut(X, Y) * 10 + (yi ? 1 : 0) + (xi ? 1 : 0);
+        if (!best || score < best.score) best = { score, X, Y };
+      }));
+      y = best.Y; xC = best.X;
+    }
+    else if (!c.dy) {
       search: for (const strict of [true, false]) {
         for (let i = 0; i <= 80; i++) {
           const cand = clamp(y0 + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * step, box.y0, box.y1 - h);
@@ -272,6 +399,7 @@ function layout({ st, screen, idx, lang, set, img, src, name, iw, ih }) {
     // Halka yalnız büyüteç kaynaktan AYRI durduğunda: üstüne bindiğinde kenarı altından taşıp kusur gibi görünüyordu.
     const r0 = { x: dev.x + b + c.rect.x * dev.sw, y: dev.y + b + c.rect.y * dev.sh, w: c.rect.w * dev.sw, h: c.rect.h * dev.sh };
     const m = 0.02 * dev.sw;
+    const x = xC;
     const apart = y > r0.y + r0.h + m || y + h < r0.y - m || x > r0.x + r0.w + m || x + w < r0.x - m;
     if (apart) dev.ring = c.rect;
     const k = kind === "portrait" ? 1 : kind === "landscape" ? 0.45 : 0.5;
@@ -353,6 +481,11 @@ async function main() {
         }
         const src = await insetStatusBar(src0, DEVICES[st.frame].statusBar);
         const meta = await sharp(src).metadata();
+        for (const n of cfg.screens[screen]?.sources || [screen]) {
+          const p = rawPath(st.device, loc.set, n);
+          if (p) await loadPixels(p === src0 ? src : p);
+        }
+        await loadPixels(src);
         const f = layout({ st, screen, idx: i, lang: loc.lang, set: loc.set, img: pathToFileURL(fs.realpathSync(src)).href, src, name: path.basename(src0, ".png"), iw: meta.width, ih: meta.height });
         if (!f.callout && st.kind !== "feature" && !cfg.screens[screen].noCallout) noCallout.add(`${st.device}/${loc.set}/${screen}`);
         const name = st.kind === "feature" ? "feature.png" : `${String(i + 1).padStart(2, "0")}-${screen}.png`;

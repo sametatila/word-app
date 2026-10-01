@@ -10,9 +10,10 @@
     satırda tutuyor, küçük önizlemede (arama sonucu) hâlâ okunuyor.
   · Zemin dönüşümlü: turuncu / koyu nötr / açık nötr. Yan yana iki kare
     birbirine karışmasın; mağaza şeridinde ritim.
-  · Büyüteç: ham ekrandan kesilmiş GERÇEK bir parça (düzeltme satırı, sınav
-    yüzdesi, beceri sekmeleri) büyütülüp cihazın önüne çıkar; cihazdaki kaynağı
-    ince bir halka gösterir. Uydurma arayüz çizilmez.
+  · Büyüteç: ham ekrandan kesilmiş GERÇEK bir arayüz bileşeni (yapay zekâ
+    balonu ve düzeltmesi, ölçüm kartı, beceri sekmeleri) bütün olarak büyütülüp
+    kaynağının üstüne oturur. Uydurma arayüz çizilmez.
+  · Turuncu zeminde metin beyaz (koyu zeminde açık, açık zeminde koyu).
   · Seviye çizgisi A1–C1 yalnız açılış karesinde ve öne çıkan grafikte: hesap
     B1'de, geçilen yol dolu, kalan kesikli (tanıtım sayfasındaki iz ile aynı fikir).
   · Süs yok: konfeti, yıldız, balon, gradyan yıkama, maskot eklenmez.
@@ -25,7 +26,8 @@ const FONT_DIR = path.join(path.dirname(new URL(import.meta.url).pathname), "fon
 const fontUrl = (f) => pathToFileURL(path.join(FONT_DIR, f)).href;
 
 export const PALETTE = {
-  orange: { bg: "#f87612", ink: "#1b1b1d", sub: "rgba(27,27,29,.78)", accent: "#1b1b1d", line: "#1b1b1d", shadow: "rgba(116,49,15,.55)", pill: "#1b1b1d", pillInk: "#fb8f2a" },
+  // Turuncu zeminde metin BEYAZ (2026-10-01, Samet: siyah görseli boğuyordu).
+  orange: { bg: "#f87612", ink: "#ffffff", sub: "rgba(255,255,255,.92)", accent: "#ffffff", line: "#ffffff", shadow: "rgba(116,49,15,.55)", pill: "#ffffff", pillInk: "#e0620a" },
   dark: { bg: "#141416", ink: "#f6f6f4", sub: "#fb8f2a", accent: "#fb8f2a", line: "#fb8f2a", shadow: "rgba(0,0,0,.7)", pill: "#f87612", pillInk: "#141416" },
   light: { bg: "#f1f0ec", ink: "#1b1b1d", sub: "#b44909", accent: "#f87612", line: "#db5f08", shadow: "rgba(40,30,20,.32)", pill: "#1b1b1d", pillInk: "#fb8f2a" },
 };
@@ -128,8 +130,8 @@ h1{font-weight:800;font-stretch:84%;letter-spacing:-0.012em;line-height:.94;text
 .dev .island{position:absolute;background:#000;border-radius:999px}
 .dev .cam{position:absolute;background:#050507;border-radius:50%;box-shadow:inset 0 0 0 1px #202026}
 .dev .btn{position:absolute;background:#2a2a2e;border-radius:3px}
-.dev .ring{position:absolute;border-style:solid;border-color:${P.accent === "#1b1b1d" ? "#f87612" : P.accent};box-shadow:0 0 0 ${px(f.u * 0.35)} rgba(248,118,18,.18)}
-.callout{position:absolute;overflow:hidden;background:#fff;border-style:solid;border-color:${P.accent === "#1b1b1d" ? "#1b1b1d" : P.accent};box-shadow:0 ${px(f.u * 2.6)} ${px(f.u * 5)} ${px(-f.u * 0.6)} ${P.shadow}, 0 ${px(f.u * 0.6)} ${px(f.u * 1.2)} rgba(0,0,0,.22)}
+.dev .ring{position:absolute;border-style:solid;border-color:${P.accent === "#ffffff" ? "#f87612" : P.accent};box-shadow:0 0 0 ${px(f.u * 0.35)} rgba(248,118,18,.18)}
+.callout{position:absolute;overflow:hidden;background:#fff;border-style:solid;border-color:${P.accent};box-shadow:0 ${px(f.u * 2.6)} ${px(f.u * 5)} ${px(-f.u * 0.6)} ${P.shadow}, 0 ${px(f.u * 0.6)} ${px(f.u * 1.2)} rgba(0,0,0,.22)}
 .callout img{position:absolute;display:block;max-width:none}
 .ladder{position:absolute}
 .ladder>div{position:absolute}

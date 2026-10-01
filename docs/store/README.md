@@ -317,10 +317,13 @@ saydamlık kabul etmez), ölçü ve kanal sayısı her dosyada denetlenir.
 
 Tasarım: zemin sırayla turuncu / koyu / açık; başlık dar kesim 800, küçük önizlemede (arama sonucu, ilk üç
 kare) okunacak boyda; cihaz CSS ile çizilir (App Store'da iPhone/iPad, Play'de nötr Android gövdesi);
-**büyüteç** ham ekrandan kesilen GERÇEK bir parçayı (düzeltme satırı, ölçüt kartı, beceri sekmeleri)
-büyütüp cihazın önüne çıkarır. Kırpım elle girilmez: ekranın `callout` tanımındaki çapa metni (üç dilde)
-ham görüntüde macOS Vision OCR'la bulunur (`scripts/store/ocr.swift`, ilk koşuda `swiftc` ile derlenir,
-sonuç önbellekte), alan satır yüksekliği cinsinden; yeniden çekimde kırpım kendiliğinden yerini bulur.
+**büyüteç** ham ekrandan kesilen GERÇEK bir arayüz bileşenini (yapay zekâ balonu ve düzeltmesi, ölçüm
+kartı, beceri sekmeleri, günlük tur kartı) bütün olarak büyütüp kaynağının üstüne oturtur. Kırpım elle
+girilmez: ekranın `callout` tanımındaki çapa metni (üç dilde) ham görüntüde macOS Vision OCR'la bulunur
+(`scripts/store/ocr.swift`, ilk koşuda `swiftc` ile derlenir, sonuç önbellekte), sonra çapanın içinde durduğu
+bileşen pikselden çıkarılır (sayfa zemininden açık, bağlı yüzey; `row` yan yana eş kutuları birleştirir).
+Mercek kaynağın üstünde, bir kenarı kaynağın kenarıyla çakışacak hizada durur (komşu yazıyı en az kesen
+hiza); büyütme sığacak kadardır. Kart bulunamazsa satır yöntemine düşer. Turuncu zeminde metin beyaz.
 Çapa tutmazsa kare büyüteçsiz çıkar ve üretici listeler (kaçış: `callouts` elle oran). A1–C1
 seviye çizgisi (hesap B1'de) yalnız açılış karesinde ve öne çıkan grafikte. Eksik ham görüntü atlanır ve
 sonda listelenir. `--fallback android-phone=iphone` yalnız yerleşim provası: o kareler mağazaya gitmez.

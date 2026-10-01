@@ -35,7 +35,7 @@
         "en": { "h": "Speak and get corrected on the spot", "s": "Real-life scenes with an AI character" },
         "de": { "h": "Sprich und sieh die Korrektur sofort", "s": "Alltagsszenen im Gespräch mit einer KI-Figur" }
       },
-      "callout": { "anchor": "^(Düzeltme|Correction|Korrektur):", "chain": 1.2, "pad": [0.9, 1], "zoom": 1.6 }
+      "callout": { "anchor": "^(Düzeltme|Correction|Korrektur):", "card": true, "zoom": 1.35 }
     },
     "mock-result": {
       "caption": {
@@ -43,7 +43,7 @@
         "en": { "h": "Speaking and writing get scored too", "s": "Four-skill mock exams" },
         "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "Probeprüfungen in vier Fertigkeiten" }
       },
-      "callout": { "anchor": "^(ÖLÇÜM HEDEFLERİNE GÖRE|BY WHAT IT MEASURES|NACH PRÜFUNGSZIEL)$", "chain": 2.5, "below": 1, "pad": [1.2, 1.4], "zoom": 1.2 }
+      "callout": { "anchor": "^(ÖLÇÜM HEDEFLERİNE GÖRE|BY WHAT IT MEASURES|NACH PRÜFUNGSZIEL)$", "card": true, "zoom": 1.25 }
     },
     "walk": {
       "premium": true,
@@ -53,8 +53,8 @@
         "de": { "h": "Bildschirm aus, unterwegs lernen", "s": "Taschen-Gehmodus" }
       },
       "callout": [
-        { "source": "walk", "anchor": "(Yürürken çalış|Practice while walking|Üben beim Gehen)", "pad": [1.4, 1.2], "zoom": 1.5 },
-        { "source": "walk-intro", "anchor": "(ipucunu duyarsın|hint in|Hinweis auf)", "above": 1.2, "chain": 1.6, "pad": [6, 1], "zoom": 1.15 }
+        { "source": "walk", "anchor": "(Yürürken çalış|Practice while walking|Üben beim Gehen)", "card": true, "zoom": 1.6 },
+        { "source": "walk-intro", "anchor": "(ipucunu duyarsın|hint in|Hinweis auf)", "card": true, "zoom": 1.2 }
       ],
       "posBy": { "portrait": { "rot": -5, "dx": 2 } },
       "sources": ["walk-lock", "walk-intro", "walk"]
@@ -65,7 +65,7 @@
         "en": { "h": "Every day, before you forget", "s": "A daily word round with spaced repetition" },
         "de": { "h": "Jeden Tag, bevor du vergisst", "s": "Tägliche Wortrunde mit verteilter Wiederholung" }
       },
-      "callout": { "source": "daily", "anchor": "^(Boşluğu doldur|Fill in the blank|Lücke füllen)$", "chain": 2, "pad": [1.2, 1.2], "zoom": 1.15 },
+      "callout": { "source": "daily", "anchor": "^(Boşluğu doldur|Fill in the blank|Lücke füllen)$", "card": true, "zoom": 1.2 },
       "sources": ["daily", "home"]
     },
     "skills": {
@@ -74,9 +74,9 @@
         "en": { "h": "Five skills, at the level you choose", "s": "Reading, listening, writing, speaking, grammar" },
         "de": { "h": "Fünf Fertigkeiten, auf jedem Niveau", "s": "Lesen, Hören, Schreiben, Sprechen, Grammatik" }
       },
-      "callout": { "anchor": "^(Okuma|Reading|Lesen)$", "above": 2, "below": 2, "pad": [3, 1.2], "zoom": 1.2 }
+      "callout": { "anchor": "^(Okuma|Reading|Lesen)$", "card": true, "row": true, "zoom": 1.2 }
     }
   },
-  "_callouts": "Büyüteç ekranın 'callout' tanımından kurulur: 'anchor' (düzenli ifade, üç dil) ham görüntüde macOS Vision OCR ile aranır; alan çapa satırının yüksekliği cinsinden: 'above'/'below' yukarı ve aşağı, 'chain' alttaki satırlar arada bu kadardan kısa boşluk kaldıkça eklenir, 'pad' [yatay, dikey]; aynı yükseklikteki satırlar yatayda birleşir. 'source' tanımı ham ada bağlar, 'by' cihaza göre ayar. Çapa bulunamazsa kare büyüteçsiz çıkar ve üretici listeler; kaçış yolu olarak buraya '<cihaz>/<set>/<ekran>': { rect: [x, y, w, h] (0–1), zoom } elle verilebilir.",
+  "_callouts": "Büyüteç ekranın 'callout' tanımından kurulur: 'anchor' (düzenli ifade, üç dil) ham görüntüde macOS Vision OCR ile aranır; 'card': true ise merceğe çapanın içinde durduğu arayüz bileşeni (kart, balon) bütün olarak girer, pikselden bulunur, 'row' yan yana eş kutuları birleştirir; mercek kaynağın tam üstünde ortalanır ve 'zoom' sığacak kadar küçültülür. Kart bulunamazsa satır yöntemine düşer: alan çapa satırının yüksekliği cinsinden: 'above'/'below' yukarı ve aşağı, 'chain' alttaki satırlar arada bu kadardan kısa boşluk kaldıkça eklenir, 'pad' [yatay, dikey]; aynı yükseklikteki satırlar yatayda birleşir. 'source' tanımı ham ada bağlar, 'by' cihaza göre ayar. Çapa bulunamazsa kare büyüteçsiz çıkar ve üretici listeler; kaçış yolu olarak buraya '<cihaz>/<set>/<ekran>': { rect: [x, y, w, h] (0–1), zoom } elle verilebilir.",
   "callouts": {}
 }
