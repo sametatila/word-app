@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { t as tx } from "../lib/i18n";
-import { View, Animated, Easing, Linking, Platform } from "react-native";
+import { View, Animated, Easing, Linking, Platform, AppState } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -318,8 +318,7 @@ export function WalkModeScreen() {
    * Ekran durumu → kaynak seçimi. İKİ PLATFORM AYNI OLAYI DİNLEMİYOR:
    *
    *   Android  ACTION_SCREEN_OFF / ACTION_SCREEN_ON (LernomiSpeechModule.kt) — YALNIZ güç
-   *            tuşu. Başka uygulamaya geçmek tetiklemez; mikrofon tipli ön plan servisi
-   *            sayesinde ücretsiz native tanıyıcı orada da çalışmayı sürdürür.
+   *            tuşu; uygulamanın önde olup olmadığını AppState ayrıca söylüyor (aşağıda).
    *   iOS      didEnterBackground / willEnterForeground (LernomiSpeech.swift) — kilit AMA
    *            uygulama değiştirme, bildirime dokunma ve gelen çağrı da.
    *
@@ -341,53 +340,77 @@ export function WalkModeScreen() {
    * Bu bayrak TTS ve SFX için tek karar verici DEĞİL; ikisi de ayrıca bridgeReady() bakıyor,
    * o yüzden köprü öldüğünde ses zaten native yola düşer.
    */
+  /*
+   * ÖLÇÜT "EKRAN AÇIK MI" DEĞİL, "UYGULAMA ÖNDE Mİ" (build 15 Android testi, 2026-10-02).
+   * Ekran kapalıyken gelen bir bildirim ekranı KİLİTLİYKEN uyandırıyor ya da kullanıcı başka
+   * bir uygulamaya bakıyor: ACTION_SCREEN_ON düşüyordu, tur ücretsiz yola (WebView sesi, cihaz
+   * tanıyıcısı) geçiyor ve ikisi de uygulama arka plandayken çalışmadığı için tur kilit
+   * açılana ya da ekran yeniden kapanana kadar donuyordu. Ücretsiz yol yalnız ekran açık VE
+   * uygulama arka planda DEĞİLKEN; kilitli ekran, başka uygulama → arka plan yolu (Azure).
+   * iOS'un `inactive`i (kontrol merkezi, bildirim perdesi) arka plan SAYILMIYOR: orada WebView
+   * ve SFSpeechRecognizer çalışmayı sürdürüyor, kısa bir bakış ücretsiz kullanıcıya Premium
+   * uyarısı okutmamalı. Android'de `inactive` yok.
+   */
+  const applyModeRef = useRef<(off: boolean) => void>(() => {});
   useEffect(() => {
-    const unsub = onScreenState((off) => {
-      screenOffRef.current = off;
-      /* CEBE GEÇİŞ ÖLÇÜLÜYOR — webin `walk_switch`iyle aynı sözlük: 1 = cebe
-         alındı ("armed"), 0 = ekrana dönüldü ("visible"). Web bu geçişi baştan
-         sayıyordu, Android saymıyordu: turun kaçının cepte geçtiği, yani Azure
-         faturasını hangi kipin yazdığı yalnız webden görülüyordu. */
-      track("walk_switch", off ? 1 : 0, off ? "armed" : "visible");
-      setSfxScreenOff(off); // köprü susar → SFX native ton sentezi
-      // Kesinti native dinleme SIRASINDA geldiyse tanıyıcı ölür: 8 sn zaman aşımını bekleme,
-      // hemen kes ve kelimeyi bir kez daha sor (bkz. judgeSpeak).
-      if (off && nativeListeningRef.current) { listenCut.current = true; try { stopListening(); } catch { /* yut */ } }
-      // KONUŞMANIN karşılığı — yukarıdaki satır dinlemeyi kesiyordu, konuşmayı kimse kesmiyordu.
-      // Ekran kapalıyken köprü çalamaz (WebView ses odağını bırakır) ve bitiş mesajı hiç gelmez;
-      // bekleyeni burada serbest bırakmazsak tur o utterance'ta donuyor. Serbest kalınca bir
-      // sonraki cümle zaten native yola düşüyor (`say`/`sayTarget` screenOffRef'e bakıyor).
-      if (off) { try { bridgeStop(); } catch { /* yut */ } }
-      // Kapı beklemesindeki kelime ekran açılınca ücretsiz yoldan yeniden soruluyor.
-      if (!off && gateWaitRef.current) resolveManual("resume");
-      // Ekran kapalı yol premium'a kapalıysa SÖYLE. Tek sefer: her kelimede
-      // tekrarlamak turu anlatıma çevirirdi. Ekran açıkken tur normal sürüyor,
-      // mesaj da bunu söylüyor — kullanıcı çıkmaz sokakta bırakılmıyor.
-      if (off && pocketGateClosed() && !premiumToldRef.current) {
-        premiumToldRef.current = true;
-        setBgUnavailable(true);
-        // ÇALAN SESİ ÖNCE KES. Yukarıdaki `bridgeStop()` yalnız WebView yolunu
-        // susturuyor; o sırada native yoldan (`speakServerTts`) bir cümle
-        // çalıyorsa dokunmuyordu — köprü hazır değilken sayNative zaten native
-        // yola düşüyor. Sonuç: bilgilendirme, süren cümlenin ÜSTÜNE biniyordu.
-        stopServerTts();
-        // Jingle ÖNCE, söz sonra. Kullanıcı telefonu cebine koymuş ve ekranı
-        // kapatmış; araya giren bir cümlenin önce kendini duyurması gerekiyor.
-        // Bekleme süresi nota tablosundan türüyor (`sfxDurationMs`), sabit
-        // yazılmıyor: jingle değişirse söz kendiliğinden ona göre kayar.
-        sfx("premium");
-        if (guestRef.current) {
-          track("walk_listen", 0, "stt:account");
-          void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_account")));
-        } else {
-          track("walk_listen", 0, "stt:premium"); // web `walk-player` ile aynı ad
-          notePremiumGate("pocket_walk"); // kilide takılan an ölçülüyor (bkz. lib/premium)
-          void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_premium")));
-        }
-      }
-    });
-    return () => { unsub(); stopWalkService(); };
+    let screenOff = false;
+    let appActive = AppState.currentState !== "background";
+    const update = () => applyModeRef.current(screenOff || !appActive);
+    const unsubScreen = onScreenState((off) => { screenOff = off; update(); });
+    const appSub = AppState.addEventListener("change", (st) => { appActive = st !== "background"; update(); });
+    update();
+    return () => { unsubScreen(); appSub.remove(); stopWalkService(); };
   }, []);
+
+  applyModeRef.current = applyMode;
+  function applyMode(off: boolean) {
+    if (off === screenOffRef.current) return; // değişmediyse yan etki yok (çift olay, aynı durum)
+    screenOffRef.current = off;
+    /* Tur sürmüyorken (giriş ekranı, izin penceresi — Android'de o da uygulamayı arka plana
+       alıyor) yalnız bayrak ve efekt yolu güncellenir: ölçüm ve sesli uyarı turun işi. */
+    const touring = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging" || phase === "continue";
+    /* CEBE GEÇİŞ ÖLÇÜLÜYOR — webin `walk_switch`iyle aynı sözlük: 1 = cebe
+       alındı ("armed"), 0 = ekrana dönüldü ("visible"). Web bu geçişi baştan
+       sayıyordu, Android saymıyordu: turun kaçının cepte geçtiği, yani Azure
+       faturasını hangi kipin yazdığı yalnız webden görülüyordu. */
+    if (touring) track("walk_switch", off ? 1 : 0, off ? "armed" : "visible");
+    setSfxScreenOff(off); // köprü susar → SFX native ton sentezi
+    // Kesinti native dinleme SIRASINDA geldiyse tanıyıcı ölür: 8 sn zaman aşımını bekleme,
+    // hemen kes ve kelimeyi bir kez daha sor (bkz. judgeSpeak).
+    if (off && nativeListeningRef.current) { listenCut.current = true; try { stopListening(); } catch { /* yut */ } }
+    // KONUŞMANIN karşılığı — yukarıdaki satır dinlemeyi kesiyordu, konuşmayı kimse kesmiyordu.
+    // Ekran kapalıyken köprü çalamaz (WebView ses odağını bırakır) ve bitiş mesajı hiç gelmez;
+    // bekleyeni burada serbest bırakmazsak tur o utterance'ta donuyor. Serbest kalınca bir
+    // sonraki cümle zaten native yola düşüyor (`say`/`sayTarget` screenOffRef'e bakıyor).
+    if (off) { try { bridgeStop(); } catch { /* yut */ } }
+    // Kapı beklemesindeki kelime ekran açılınca ücretsiz yoldan yeniden soruluyor.
+    if (!off && gateWaitRef.current) resolveManual("resume");
+    // Ekran kapalı yol premium'a kapalıysa SÖYLE. Tek sefer: her kelimede
+    // tekrarlamak turu anlatıma çevirirdi. Ekran açıkken tur normal sürüyor,
+    // mesaj da bunu söylüyor — kullanıcı çıkmaz sokakta bırakılmıyor.
+    if (off && touring && pocketGateClosed() && !premiumToldRef.current) {
+      premiumToldRef.current = true;
+      setBgUnavailable(true);
+      // ÇALAN SESİ ÖNCE KES. Yukarıdaki `bridgeStop()` yalnız WebView yolunu
+      // susturuyor; o sırada native yoldan (`speakServerTts`) bir cümle
+      // çalıyorsa dokunmuyordu — köprü hazır değilken sayNative zaten native
+      // yola düşüyor. Sonuç: bilgilendirme, süren cümlenin ÜSTÜNE biniyordu.
+      stopServerTts();
+      // Jingle ÖNCE, söz sonra. Kullanıcı telefonu cebine koymuş ve ekranı
+      // kapatmış; araya giren bir cümlenin önce kendini duyurması gerekiyor.
+      // Bekleme süresi nota tablosundan türüyor (`sfxDurationMs`), sabit
+      // yazılmıyor: jingle değişirse söz kendiliğinden ona göre kayar.
+      sfx("premium");
+      if (guestRef.current) {
+        track("walk_listen", 0, "stt:account");
+        void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_account")));
+      } else {
+        track("walk_listen", 0, "stt:premium"); // web `walk-player` ile aynı ad
+        notePremiumGate("pocket_walk"); // kilide takılan an ölçülüyor (bkz. lib/premium)
+        void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_premium")));
+      }
+    }
+  }
 
   // Nabız halkası — YALNIZ dinlerken (mikrofon açıkken); konuşurken sakin.
   useEffect(() => {
