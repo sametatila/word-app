@@ -13,13 +13,13 @@ import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
 import { glossOf, speechOfGloss } from "../game/gloss";
 import { useAuth } from "../lib/AuthContext";
-import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
+import { speakAndWaitVoiced, currentVoiceId, stopSpeaking } from "../lib/tts";
 import { bridgeStop } from "../lib/ttsBridge";
 import { usePremiumStatus, notePremiumGate, refreshPremium, isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
 import { walkLine } from "../lib/unlock";
 import { glossVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
-import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, setWalkNowPlaying, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, cancelAzureListen, startWalkService, stopWalkService, setWalkNowPlaying, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { apiBase } from "../api/client";
 import { spokenMatches, parseSkip, skipWord, encourage, parseConfirm } from "../lib/voiceMatch";
@@ -308,7 +308,7 @@ export function WalkModeScreen() {
     track("walk_start", 0);
     mountedRef.current = true;
     setSfxWalkSession(true); // zil sessizken de efektler çalar (lib/sfx)
-    return () => { mountedRef.current = false; tokenRef.current++; setSfxWalkSession(false); stopListening(); setKeepAwake(false); stopWalkService(); flush(true); };
+    return () => { mountedRef.current = false; tokenRef.current++; setSfxWalkSession(false); stopListening(); cancelAzureListen(); stopSpeaking(); setKeepAwake(false); stopWalkService(); flush(true); };
     // flush bilerek bağımlılıkta değil: efekt yalnız mount/unmount içindir, onu
     // eklemek her render'da temizliği çalıştırıp cevapları erkenden gönderirdi.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -885,8 +885,8 @@ export function WalkModeScreen() {
     stopListening();
     nativeListeningRef.current = false;
     manualResolve.current = null;
-    try { bridgeStop(); } catch { /* yut */ }
-    stopServerTts();
+    cancelAzureListen();
+    stopSpeaking(); // köprü + native oynatıcı + çok parçalı zincir
     setVerdict(null); setHeard("");
     setPhase("paused");
     void sayNative(tx("walk.paused_spoken"));
@@ -905,10 +905,17 @@ export function WalkModeScreen() {
     })();
   }
 
-  function stopAndLeave() { endWalk(6); runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); nav.goBack(); }
+  function stopAndLeave() { endWalk(6); runToken.current++; stopListening(); cancelAzureListen(); stopSpeaking(); setKeepAwake(false); stopWalkService(); nav.goBack(); }
   // Bildirimdeki "Durdur": mikrofon kapanır, biriken cevaplar yazılır, tur özeti gösterilir.
   const stopFromNotification = useRef<() => void>(() => {});
-  stopFromNotification.current = () => { endWalk(6); runToken.current++; stopListening(); flush(true); finishDone(); };
+  /* ÇALAN SES DE KESİLİYOR (build 15 Android testi): kilit ekranından duraklatınca döngü duruyordu
+     ama o an okunan cümle sonuna kadar çalıyordu; süren Azure kaydı da durdurmadan sonra yükleniyordu. */
+  stopFromNotification.current = () => {
+    endWalk(6); runToken.current++;
+    stopListening(); cancelAzureListen(); stopSpeaking();
+    nativeListeningRef.current = false; manualResolve.current = null;
+    flush(true); finishDone();
+  };
   useEffect(() => onWalkStop(() => stopFromNotification.current()), []);
 
   /**

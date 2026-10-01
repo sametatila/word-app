@@ -273,14 +273,28 @@ export function onScreenState(cb: (off: boolean) => void): () => void {
    kapalıyken Türkçe evet/hayır dinleniyor ve buraya "tr" geçiyor.
    Varsayılanı `currentTargetLang()` olduğu için tip çıkarımı onu
    `TargetLang`e daraltıyordu; açıkça `string` yazılı. */
+/**
+ * Süren Azure dinlemesini İPTAL eder: kayıt kesilir ve sunucuya GİTMEZ.
+ *
+ * Eskiden durdurma (kilit ekranı, Durdur, Duraklat) yalnız döngüyü kesiyordu; o an süren
+ * 3 sn'lik kayıt bitiyor ve kullanıcı turu durdurduktan SONRA sunucuya yükleniyordu.
+ */
+let azureGen = 0;
+export function cancelAzureListen(): void {
+  azureGen++;
+  try { void Native?.stopRecording().catch(() => null); } catch { /* yut */ }
+}
+
 export async function azureListenOnce(target: string, windowMs = 3000, lang: string = currentTargetLang()): Promise<string[] | null> {
   if (!Native) return null;
+  const gen = ++azureGen;
   try {
     const ok = await Native.startRecording().catch(() => false);
-    if (!ok) return null;
+    if (!ok || gen !== azureGen) return null;
     await nativeDelay(windowMs);
+    if (gen !== azureGen) return null; // iptal edildi: kayıt cancelAzureListen'de kesildi, yükleme yok
     const path = await Native.stopRecording().catch(() => null);
-    if (!path) return null;
+    if (!path || gen !== azureGen) return null;
     // POST'u NATIVE yap — RN fetch ekran-kapalı (arka plan) takılıyor; native thread çalışır.
     const text = await Native.uploadStt(`${apiBase()}/api/stt`, path, lang, target ?? "").catch(() => null);
     return text ? [text.trim()] : null;
