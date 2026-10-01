@@ -295,9 +295,11 @@ okundu (2026-09-27, Samet çalıştırdı; denetim S9).
 6 + iPad 13" (`APP_IPAD_PRO_3GEN_129`) 4 kare; iki aboneliğe inceleme görseli (`paywall-plans.png`), ikisi de
 `READY_TO_SUBMIT`. Play üç dilde telefon 6, 7" ve 10" tablet 4'er, öne çıkan grafik. Yükleyiciler
 `.secrets/appstore/asc-upload-screens.mjs` (`screens` / `subreview`, `--replace`) ve
-`.secrets/play/play-upload-images.mjs` (her türü önce boşaltır). Abonelik inceleme görseli misafir hâlinde
-çekilmiş ("Create account"); giriş yapılmış hâli (deneme düğmesiyle) daha güçlü, yeniden çekilirse
-`subreview` ile değiştirilir. App Preview videosu ayrı iş (denetim M3).
+`.secrets/play/play-upload-images.mjs` (her türü önce boşaltır). Abonelik inceleme görseli
+`raw/iphone/review/paywall-signed-in.png`: giriş yapılmış, Premium'suz hesapla (İngilizce arayüz) iki plan,
+"Start free trial", deneme/yenileme şartı ve bağlantılar bir karede; iki aboneliğe yüklendi (2026-10-01).
+`screenshots@` hesabı Premium olduğu için çekim süresince bonus Premium geçici kapatıldı ve birebir geri
+yazıldı (Samet'in onayıyla). App Preview videosu ayrı iş (denetim M3).
 
 ## Yeniden üretmek
 
