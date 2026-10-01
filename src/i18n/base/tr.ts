@@ -257,6 +257,7 @@ export const trBase: Record<string, string> = {
   "common.try_again": "Tekrar dene",
   "common.unit": "ÜNİTE",
   "common.discard": "Vazgeç",
+  "common.revoke": "Geri al",
   "common.wrong": "Yanlış",
   "content.couldn_t_load": "İçerik indirilemedi. Bağlantını kontrol edip tekrar dene.",
   "common.loading": "Yükleniyor…",

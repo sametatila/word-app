@@ -661,7 +661,7 @@ function MicConsentRow() {
         }}
         className="btn btn-ghost h-9 px-3 text-caption"
       >
-        {t("common.discard")}
+        {t("common.revoke")}
       </button>
     </SettingRow>
   );
