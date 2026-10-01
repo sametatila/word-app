@@ -18,7 +18,7 @@ import UIKit
 @objc(LernomiSpeech)
 class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
 
-  private let audioEngine = AVAudioEngine()
+  private var audioEngine = AVAudioEngine()
   private var recognizer: SFSpeechRecognizer?
   private var request: SFSpeechAudioBufferRecognitionRequest?
   private var task: SFSpeechRecognitionTask?
@@ -214,6 +214,12 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
         }
         guard self.activateWalkSession() else { return }
         self.walkSessionHeld = true
+        // Tek mikrofon akışı tur boyunca açık: uygulama arka planda "kayıt yapan
+        // uygulama" sayılıyor ve kelime aralarında askıya alınmıyor (bkz. WALK MOTORU).
+        if !self.startWalkEngine() {
+          // Motor kalkmadıysa eski yol (kelime başına AVAudioRecorder) devrede kalır.
+          NSLog("%@", "LernomiWalk motor başlatılamadı; kelime başına kayıt yoluna düşülüyor")
+        }
         // Oturum etkin OLDUKTAN sonra: kayıt olmadan kilit ekranı denetimi çizilmez.
         self.showNowPlaying()
         self.enableWalkRemoteCommands()
@@ -229,6 +235,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
       let session = AVAudioSession.sharedInstance()
       try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
       try session.setActive(true)
+      applyWalkRoute()
       return true
     } catch {
       // Eskiden LernomiSpeechError yayılıyordu; onu `stt.ts` "bu kelimeyi
@@ -243,6 +250,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   func stopWalkService() {
     DispatchQueue.main.async {
       self.walkSessionHeld = false
+      self.stopWalkEngine()
       self.stopAudioObservers()
       self.hideNowPlaying()
       try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
@@ -274,6 +282,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   //   mediaServicesWereReset  ses yığını çöktü; her şey yeniden kurulmalı.
   private func startAudioObservers() {
     guard audioObservers.isEmpty else { return }
+    observeRouteAndEngine()
     let center = NotificationCenter.default
     let session = AVAudioSession.sharedInstance()
 
@@ -293,6 +302,8 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
         let opts = AVAudioSession.InterruptionOptions(rawValue: rawOpts)
         if opts.contains(.shouldResume) {
           if self.activateWalkSession() {
+            // Kesinti motoru durdurdu; tur arka planda sürsün diye yeniden başlat.
+            self.restartWalkEngine()
             self.showNowPlaying()
           } else {
             self.walkSessionHeld = false
@@ -315,12 +326,35 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
       // Sistem ses sunucusu yeniden başladı: oturum, Now Playing ve uzaktan
       // komutlar dahil her şey sıfırlandı. Hepsini yeniden kuruyoruz.
       self.hideNowPlaying()
+      // Ses sunucusu sıfırlandı: eski motor nesnesi artık geçersiz, yenisi kuruluyor.
+      self.walkEngineRunning = false
+      self.audioEngine = AVAudioEngine()
       if self.activateWalkSession() {
+        _ = self.startWalkEngine()
         self.showNowPlaying()
         self.enableWalkRemoteCommands()
       } else {
         self.walkSessionHeld = false
       }
+    })
+  }
+
+  /// Rota ve motor yapılandırma değişimleri: kulaklık takıldı/çıkarıldı, AirPods bağlandı.
+  /// Kulaklık çıkınca ses ahizeye düşmesin (applyWalkRoute); giriş biçimi değişince motor
+  /// kendiliğinden durur ve yeni biçimle yeniden kurulmalı.
+  private func observeRouteAndEngine() {
+    let center = NotificationCenter.default
+    audioObservers.append(center.addObserver(
+      forName: AVAudioSession.routeChangeNotification, object: AVAudioSession.sharedInstance(), queue: .main
+    ) { [weak self] _ in
+      guard let self = self, self.walkSessionHeld else { return }
+      self.applyWalkRoute()
+    })
+    audioObservers.append(center.addObserver(
+      forName: .AVAudioEngineConfigurationChange, object: nil, queue: .main
+    ) { [weak self] note in
+      guard let self = self, self.walkSessionHeld, (note.object as AnyObject?) === self.audioEngine else { return }
+      self.restartWalkEngine()
     })
   }
 
@@ -460,6 +494,120 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     }
   }
 
+  // --- WALK MOTORU: tur boyunca TEK mikrofon akışı (2026-10-02) ----------------------
+  //
+  // Sorun (Samet'in iPhone testi): ekran kapalıyken kelime kayıtlarının çoğu hiç sunucuya
+  // ulaşmadı (`azure:silence`), tur üç "duyamadım"la durdu. iOS'ta etkin bir ses oturumu
+  // tek başına uygulamayı arka planda uyanık tutmuyor; uygulama o an ses çalmıyor ya da
+  // kaydetmiyorsa kelimeler arasında askıya alınabiliyor ve yeni bir AVAudioRecorder arka
+  // planda başlatılamıyordu (sonucu da kontrol edilmiyordu).
+  //
+  // Yerleşik çözüm: yürüyüş oturumu boyunca bir AVAudioEngine girişi SÜREKLİ açık; tek dinleyici
+  // (tap) hem tanıyıcıyı (`request`) hem kelime kaydını (`captureOn`) besliyor. Uygulama arka
+  // planda hep kayıt yapan uygulama sayılıyor. Mikrofon göstergesi tur boyunca açık kalıyor
+  // (inceleme notu bunu zaten söylüyor); sunucuya yalnız dinleme penceresinin kaydı gidiyor.
+  // Yürüyüş dışındaki konuşma özellikleri eski yoldan (kelime başına motor) çalışıyor.
+  private var walkEngineRunning = false
+  private let captureLock = NSLock()
+  private var captureOn = false
+  private var captureData = Data()
+  private var captureConverter: AVAudioConverter?
+  private static let captureFormat = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 16000, channels: 1, interleaved: true)!
+
+  /// Motoru ve tek dinleyiciyi kurar. main thread.
+  private func startWalkEngine() -> Bool {
+    if walkEngineRunning { return true }
+    let input = audioEngine.inputNode
+    let format = input.outputFormat(forBus: 0)
+    guard format.sampleRate > 0, format.channelCount > 0 else { return false }
+    captureConverter = AVAudioConverter(from: format, to: Self.captureFormat)
+    input.removeTap(onBus: 0)
+    input.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, _ in
+      guard let self = self else { return }
+      self.request?.append(buffer)
+      self.captureLock.lock()
+      let on = self.captureOn
+      self.captureLock.unlock()
+      if on, let pcm = self.convertForCapture(buffer) {
+        self.captureLock.lock()
+        if self.captureOn { self.captureData.append(pcm) }
+        self.captureLock.unlock()
+      }
+    }
+    audioEngine.prepare()
+    do {
+      try audioEngine.start()
+    } catch {
+      input.removeTap(onBus: 0)
+      return false
+    }
+    walkEngineRunning = true
+    return true
+  }
+
+  private func stopWalkEngine() {
+    captureLock.lock(); captureOn = false; captureData = Data(); captureLock.unlock()
+    guard walkEngineRunning else { return }
+    walkEngineRunning = false
+    audioEngine.stop()
+    audioEngine.inputNode.removeTap(onBus: 0)
+    captureConverter = nil
+  }
+
+  /// Kesinti ya da giriş biçimi değişimi sonrası: aynı oturumda motoru yeniden kurar.
+  private func restartWalkEngine() {
+    if walkEngineRunning {
+      walkEngineRunning = false
+      audioEngine.stop()
+      audioEngine.inputNode.removeTap(onBus: 0)
+    }
+    if !startWalkEngine() {
+      NSLog("%@", "LernomiWalk motor yeniden başlatılamadı")
+    }
+  }
+
+  /// Donanım biçimi (genelde 48 kHz float) → 16 kHz mono Int16 (Azure'un beklediği WAV gövdesi).
+  private func convertForCapture(_ buffer: AVAudioPCMBuffer) -> Data? {
+    guard let conv = captureConverter, buffer.frameLength > 0 else { return nil }
+    let ratio = Self.captureFormat.sampleRate / buffer.format.sampleRate
+    let capacity = AVAudioFrameCount(Double(buffer.frameLength) * ratio + 32)
+    guard let out = AVAudioPCMBuffer(pcmFormat: Self.captureFormat, frameCapacity: capacity) else { return nil }
+    var fed = false
+    var error: NSError?
+    conv.convert(to: out, error: &error) { _, status in
+      if fed { status.pointee = .noDataNow; return nil }
+      fed = true
+      status.pointee = .haveData
+      return buffer
+    }
+    guard error == nil, out.frameLength > 0, let ch = out.int16ChannelData else { return nil }
+    return Data(bytes: ch[0], count: Int(out.frameLength) * 2)
+  }
+
+  /**
+   * Hoparlör yönlendirmesi. `playAndRecord` varsayılan olarak AHİZEYE çalıyor; `.defaultToSpeaker`
+   * seçeneğine rağmen Samet'in iPhone testinde yürüyüş ahizeden açıldı ve ekran kapalıyken orada
+   * kaldı. Apple'ın belgelenmiş yolu: kulaklık/Bluetooth/araç yoksa çıkışı açıkça hoparlöre
+   * zorla, varsa sistemin seçimine bırak. Rota her değiştiğinde yeniden uygulanıyor.
+   */
+  private func applyWalkRoute() {
+    let session = AVAudioSession.sharedInstance()
+    let external: Set<AVAudioSession.Port> = [.headphones, .bluetoothA2DP, .bluetoothHFP, .bluetoothLE, .airPlay, .carAudio, .usbAudio, .lineOut, .HDMI]
+    let hasExternal = session.currentRoute.outputs.contains { external.contains($0.portType) }
+    try? session.overrideOutputAudioPort(hasExternal ? .none : .speaker)
+  }
+
+  /// PCM gövdesini 16 kHz mono 16 bit WAV dosyasına yazar.
+  private static func writeWav(_ pcm: Data, to url: URL) -> Bool {
+    var header = Data()
+    func u32(_ v: UInt32) { var x = v.littleEndian; header.append(Data(bytes: &x, count: 4)) }
+    func u16(_ v: UInt16) { var x = v.littleEndian; header.append(Data(bytes: &x, count: 2)) }
+    header.append(Data("RIFF".utf8)); u32(UInt32(36 + pcm.count)); header.append(Data("WAVE".utf8))
+    header.append(Data("fmt ".utf8)); u32(16); u16(1); u16(1); u32(16000); u32(32000); u16(2); u16(16)
+    header.append(Data("data".utf8)); u32(UInt32(pcm.count))
+    do { try (header + pcm).write(to: url, options: .atomic); return true } catch { return false }
+  }
+
   // --- Ham ses kaydı (Azure/sunucu STT için): 16 kHz mono WAV. Ekran-kapalı/cepte yolu. ---
   private var audioRecorder: AVAudioRecorder?
   private var recordURL: URL?
@@ -468,10 +616,19 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   func startRecording(_ resolve: @escaping RCTPromiseResolveBlock,
                       rejecter reject: @escaping RCTPromiseRejectBlock) {
     DispatchQueue.main.async {
+      // Yürüyüş motoru açıksa (normal yol): akıştan kesmeye başla. Oturuma ve motora dokunma —
+      // arka planda yeniden kurmak tam olarak kırılan şeydi.
+      if self.walkSessionHeld && (self.walkEngineRunning || self.startWalkEngine()) {
+        self.captureLock.lock(); self.captureData = Data(); self.captureOn = true; self.captureLock.unlock()
+        resolve(true)
+        return
+      }
+      // Yedek: kelime başına AVAudioRecorder (motor kurulamadıysa). Başarısızlık artık JS'e dönüyor.
       do {
         let session = AVAudioSession.sharedInstance()
         try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
         try session.setActive(true)
+        self.applyWalkRoute()
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("walk_clip.wav")
         let settings: [String: Any] = [
           AVFormatIDKey: Int(kAudioFormatLinearPCM),
@@ -482,7 +639,10 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
           AVLinearPCMIsBigEndianKey: false,
         ]
         let rec = try AVAudioRecorder(url: url, settings: settings)
-        rec.record()
+        guard rec.prepareToRecord(), rec.record() else {
+          reject("record", "AVAudioRecorder başlamadı", nil)
+          return
+        }
         self.audioRecorder = rec
         self.recordURL = url
         resolve(true)
@@ -496,6 +656,17 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   func stopRecording(_ resolve: @escaping RCTPromiseResolveBlock,
                      rejecter reject: @escaping RCTPromiseRejectBlock) {
     DispatchQueue.main.async {
+      self.captureLock.lock()
+      let wasCapturing = self.captureOn
+      let pcm = self.captureData
+      self.captureOn = false
+      self.captureData = Data()
+      self.captureLock.unlock()
+      if wasCapturing {
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("walk_clip.wav")
+        resolve(!pcm.isEmpty && Self.writeWav(pcm, to: url) ? url.path : nil)
+        return
+      }
       self.audioRecorder?.stop()
       self.audioRecorder = nil
       let path = self.recordURL?.path
@@ -1060,12 +1231,22 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     // BAŞINA yeniden kuruluyor, yani eksik bir liste yürüyüş oturumunun kurduğu
     // yönlendirmeyi ilk kelimede geri alır ve AirPods takılıyken giriş cepteki
     // telefonun dahili mikrofonuna düşerdi.
+    let req = SFSpeechAudioBufferRecognitionRequest()
+    req.shouldReportPartialResults = true
+
+    // Yürüyüş motoru açıksa: ortak dinleyici zaten `request`e besliyor; oturuma ve motora
+    // dokunulmuyor (kategoriyi yeniden kurmak rotayı ve motoru bozuyordu).
+    if walkEngineRunning {
+      request = req
+      send("LernomiSpeechReady", nil)
+      startRecognitionTask(rec, req)
+      return
+    }
+
     let session = AVAudioSession.sharedInstance()
     try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
     try session.setActive(true, options: .notifyOthersOnDeactivation)
-
-    let req = SFSpeechAudioBufferRecognitionRequest()
-    req.shouldReportPartialResults = true
+    if walkSessionHeld { applyWalkRoute() }
     request = req
 
     let input = audioEngine.inputNode
@@ -1077,7 +1258,10 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     audioEngine.prepare()
     try audioEngine.start()
     send("LernomiSpeechReady", nil)
+    startRecognitionTask(rec, req)
+  }
 
+  private func startRecognitionTask(_ rec: SFSpeechRecognizer, _ req: SFSpeechAudioBufferRecognitionRequest) {
     task = rec.recognitionTask(with: req) { [weak self] result, error in
       guard let self = self else { return }
       if let result = result {
@@ -1111,6 +1295,8 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   func destroy() { DispatchQueue.main.async { self.cleanup() } }
 
   private func stopAudio() {
+    // Yürüyüş motoru tur boyunca açık kalır; tanıma bitince yalnız besleme kesilir.
+    if walkEngineRunning { request?.endAudio(); request = nil; return }
     if audioEngine.isRunning {
       audioEngine.stop()
       audioEngine.inputNode.removeTap(onBus: 0)
@@ -1139,6 +1325,8 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     stopTts()
     DispatchQueue.main.async {
       self.hideNowPlaying()
+      self.walkSessionHeld = false
+      self.stopWalkEngine()
       self.cleanup()
     }
     super.invalidate()
