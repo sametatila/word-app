@@ -79,10 +79,10 @@ Playwright ile `localhost:3100` (Accept-Language tr/en/de) açık ve koyu tema, 
 Sayfadaki WebP'ler: dört set 7/7, açık ve koyu (2026-09-30, B paleti). `tr-en` sayfada KULLANILMIYOR
 (`SCREEN_SET` dil başına tek set; "Diller" bölümü yalnız metin); set hazır tutuluyor.
 
-Mağaza çekimi (2026-09-29/30, main 29cd62e96 build'i): üç set dört cihazda tam, 75 kare; karelerin kullandığı
-ham görüntüler `docs/store/raw/`. Tanıtım sayfasının dört seti aynı çekimden yenilendi (2026-09-30), konuşma
-dökümleri (`landing.ts` `talk`) çekimdeki konuşmalardan birebir. Yapay zekâ zinciri Cloudflare Workers AI →
-Groq'a geçtikten sonra (b182d5d74) kota sorunu kalmadı.
+Mağaza çekimi (2026-10-01, main c42be31a1 + 230eb9ae5 build'i): üç set dört cihazda tam, 75 kare; karelerin
+kullandığı ham görüntüler `docs/store/raw/`. Tanıtım sayfasının dört seti aynı çekimden, konuşma dökümleri
+(`landing.ts` `talk`) çekimdeki konuşmalardan birebir. Sonraki UI değişikliğinde değişen ekranlar aynı yolla
+yeniden alınır.
 
 ## Tuzaklar (2026-09-28'de yaşandı)
 
@@ -133,6 +133,19 @@ Sıra ve ayarlar:
 - Build başına bir kez hukuki güncelleme bildirimi çıkar; kapatılır, karede kalmaz.
 
 Tuzaklar:
+- Android telefon için ayrı AVD (`Lernomi_Phone`, port 5558): `Medium_Phone` başka oturumlarca açık
+  tutulabiliyor ve aynı AVD iki kez açılamıyor. Yeni AVD'de giriş `login-and.sh`; simülatörde misafir
+  kalmışsa uygulamayı kaldır + `xcrun simctl keychain <udid> reset` (misafir kimliği anahtar zincirinde).
+- Android'de uzun metin Maestro `inputText` ile yarıda kalıyor ve klavye açıkken kaydırma Gboard'da kayan
+  yazmaya dönüşüp metne harf ekliyor: `and-task.sh` metni `adb shell input text` ile 12 kelimelik
+  parçalarla yazar (adb çağrısı `</dev/null` ile, yoksa kalan parçaları yutar), klavyeyi yalnız açıksa
+  geri tuşuyla kapatır ve ekrandaki kelime sayacıyla doğrular. Her görevde puan gelmeden ilerlenmez.
+- Yeni kurulumda ilk konuşmada "Eller serbest" açık gelebiliyor; anlatım sesle ilerlemeye çalışır. Kareden
+  önce kapatılır (öteki cihazlarla aynı görünsün).
+- Tablette "Bildirim bekleme süresi açık" sistem bildirimi durum çubuğuna simge koyar: bildirim
+  gölgesinden "Clear all", sonra `demo.sh`. `sbcheck.mjs` Android karelerinde simge arar.
+- `verify-raw.sh` her ham görüntünün gerçekten adının ekranı olduğunu OCR ile denetler (yanlış ekranda
+  çekilmiş kareyi yakalar).
 - Android'de adb sunucusu Maestro koşusundan sonra yeniden başlıyor; betikler `adb wait-for-device`
   ile bekliyor. Uygulamayı açmak için `am start -W -n com.lernomi.learn/com.lernomi.MainActivity`.
 - Android'de Maestro `hideKeyboard` geri tuşu gibi davranıp sohbetten ÇIKARIYOR; kullanılmaz.
