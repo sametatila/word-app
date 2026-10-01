@@ -103,13 +103,23 @@ const MP3_FALLBACK: Partial<Record<SfxKind, SfxKind>> = { near: "start", streak:
 if (Platform.OS === "ios") { try { LernomiSfx?.playSfx?.(""); } catch { /* yut */ } }
 
 function deviceSilent(): boolean {
-  if (Platform.OS !== "android" || screenOffMode) return false;
+  if (Platform.OS !== "android" || screenOffMode || walkSession) return false;
   try { return LernomiSfx?.sfxSilent?.() === true; } catch { return false; }
 }
 
 // Ekran-kapalı: WebView köprüsü askıya alınıp sustuğu için native res/raw'a düş (arka planda çalar).
 let screenOffMode = false;
 export function setSfxScreenOff(v: boolean): void { screenOffMode = v; }
+
+/*
+  YÜRÜYÜŞ OTURUMU zil modundan muaf (2026-10-02, Samet'in Android testi): ekran
+  açıkken zil sessiz/titreşimdeyse efektler susuyordu, ekran kapalıyken çalıyordu.
+  Yürüyüşte efektler arayüzün kendisi (mikrofon açıldı, karar) ve kullanıcı sesli
+  bir oturumu kendisi başlattı; iOS aynı kuralı zaten uyguluyor (`walkSessionHeld`,
+  LernomiSpeech.swift `sfxExempt`). Ses ayarı (`soundOn`) yine geçerli.
+*/
+let walkSession = false;
+export function setSfxWalkSession(v: boolean): void { walkSession = v; }
 
 /** Arka planda da çalışan gecikme (native Handler); RN setTimeout ekran-kapalı durur. */
 function waitMs(ms: number): Promise<void> {

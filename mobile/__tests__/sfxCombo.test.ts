@@ -66,4 +66,14 @@ describe("kombo merdiveni", () => {
     hit("correct");
     expect(parse(played[0])[1]).toBeCloseTo(659.25 / 523.25, 5);
   });
+
+  it("yürüyüş oturumunda zil sessizken de efekt çalar (iOS walkSessionHeld karşılığı)", () => {
+    NativeModules.LernomiSpeech.sfxSilent = () => true;
+    sfx.setSfxWalkSession(true);
+    hit("correct");
+    expect(played.length).toBe(1);
+    sfx.setSfxWalkSession(false);
+    hit("wrong");
+    expect(played.length).toBe(1); // oturum bitince zil kuralı geri geliyor
+  });
 });

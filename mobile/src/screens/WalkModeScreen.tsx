@@ -23,7 +23,7 @@ import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stop
 import { currentTargetLocale } from "../lib/courses";
 import { apiBase } from "../api/client";
 import { spokenMatches, parseSkip, skipWord, encourage, parseConfirm } from "../lib/voiceMatch";
-import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
+import { sfx, setSfxScreenOff, setSfxWalkSession, sfxDurationMs } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 import { haptic } from "../lib/haptics";
 import { reduceMotion } from "../lib/reduceMotion";
@@ -307,7 +307,8 @@ export function WalkModeScreen() {
     const tokenRef = runToken;
     track("walk_start", 0);
     mountedRef.current = true;
-    return () => { mountedRef.current = false; tokenRef.current++; stopListening(); setKeepAwake(false); stopWalkService(); flush(true); };
+    setSfxWalkSession(true); // zil sessizken de efektler çalar (lib/sfx)
+    return () => { mountedRef.current = false; tokenRef.current++; setSfxWalkSession(false); stopListening(); setKeepAwake(false); stopWalkService(); flush(true); };
     // flush bilerek bağımlılıkta değil: efekt yalnız mount/unmount içindir, onu
     // eklemek her render'da temizliği çalıştırıp cevapları erkenden gönderirdi.
     // eslint-disable-next-line react-hooks/exhaustive-deps
