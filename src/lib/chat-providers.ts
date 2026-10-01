@@ -254,6 +254,11 @@ async function post(
       body: JSON.stringify({
         model: modelFor(name),
         stream,
+        /* Akışta jeton sayısı son parçada gelsin (muhasebe: ai_usage). Zincirdeki
+           iki sağlayıcı da destekliyor (2026-10-01 ölçüldü); eskiden katı bir
+           sağlayıcı bilinmeyen alana 400 verdiği için gönderilmiyordu ve akışlı
+           sohbetin maliyeti hiç kaydedilmiyordu. */
+        ...(stream ? { stream_options: { include_usage: true } } : {}),
         temperature: TEMPERATURE,
         ...modelOptions(modelFor(name), maxTokens),
         messages: [{ role: "system", content: system }, ...messages],
@@ -346,10 +351,31 @@ export function readLimits(res: { headers: Headers }): Record<string, string> {
  * OpenAI uyumlu akış — üç sağlayıcı da aynı gövdeyi ve aynı SSE biçimini
  * kullandığı için tek gövde yetiyor.
  */
+type FrameUsage = { prompt_tokens?: number; completion_tokens?: number };
 type StreamFrame = {
   choices?: { delta?: { content?: string } }[];
   error?: { message?: string };
+  /** `stream_options.include_usage`: Cloudflare her parçada (sonuncusu dolu), Groq son parçada. */
+  usage?: FrameUsage | null;
+  /** Groq bitiş parçasında ayrıca burada veriyor. */
+  x_groq?: { usage?: FrameUsage };
 };
+
+/**
+ * Akıştaki kullanım bilgisi — son DOLU değer kazanıyor. Cloudflare ara
+ * parçalarda 0 gönderiyor, gerçek sayı son parçada; Groq bitişte `x_groq.usage`
+ * ve ardından boş `choices`li ayrı bir `usage` parçası gönderiyor (ölçüldü,
+ * 2026-10-01). Saf işlev: `test:chat-usage`.
+ */
+export function usageFromFrame(frame: StreamFrame, prev: { prompt: number; completion: number } | null): { prompt: number; completion: number } | null {
+  const u = frame.usage ?? frame.x_groq?.usage;
+  const prompt = Number(u?.prompt_tokens ?? 0);
+  const completion = Number(u?.completion_tokens ?? 0);
+  /* Giriş jetonu 0 olan parça kabul edilmiyor: Cloudflare ara parçalarda
+     kısmi sayı (ör. 0 giriş, 1 çıkış) gönderiyor; akış yarıda kesilirse bu
+     "0 giriş" diye yazılırdı. Bilinmeyen sayı boş kalır, yanlış yazılmaz. */
+  return prompt > 0 ? { prompt, completion } : prev;
+}
 
 /**
  * Tek bir SSE satırını çözer.
@@ -381,46 +407,64 @@ async function* streamOpenAiCompatible(
   if (!res.body) throw new Error(`${name}: gövdesiz yanıt`);
   const limits = readLimits(res);
   onMeta?.({ provider: name, model: modelFor(name), limits });
-  // Akışta jeton sayısı gelmiyor (son parçada isteyen sağlayıcılar var ama
-  // istek gövdesine bilinmeyen alan eklemek katı sağlayıcılarda 400 üretiyor).
-  // Ölçülen şey BAŞLIKLARA kadar geçen süre — kullanıcının beklediği gecikme
-  // de tam olarak o.
-  report?.({
-    provider: name,
-    model: modelFor(name),
-    ok: true,
-    status: res.status,
-    ms: Date.now() - ((res as Response & { startedAt?: number }).startedAt ?? Date.now()),
-    limits,
-  });
+  /*
+    MUHASEBE AKIŞ BİTİNCE: jeton sayısı son parçada geliyor (`stream_options`).
+    Satır `finally`de bir kez yazılıyor: akış tamamlanınca da, kullanıcı
+    kopunca da (üreteç erken kapanır) ve akış içi hatada da. Gecikme yine
+    BAŞLIKLARA kadar geçen süre: kullanıcının beklediği an o. Akış içi hata
+    artık başarısız çağrı sayılıyor; eskiden başlık anında "başarılı" yazılıp
+    sonra hata atılıyordu. Kullanıcı cevap bitmeden ayrılırsa giriş jetonu
+    doğru, çıkış jetonu o ana kadar görülen (alt sınır) yazılıyor.
+  */
+  const ms = Date.now() - ((res as Response & { startedAt?: number }).startedAt ?? Date.now());
+  let usage: { prompt: number; completion: number } | null = null;
+  let streamError: string | null = null;
 
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
 
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    // Chunk sınırı satırın ortasına düşebilir; son yarım satır beklemede kalır.
-    const lines = buffer.split("\n");
-    buffer = lines.pop() ?? "";
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      // Chunk sınırı satırın ortasına düşebilir; son yarım satır beklemede kalır.
+      const lines = buffer.split("\n");
+      buffer = lines.pop() ?? "";
 
-    for (const line of lines) {
-      const frame = parseFrame(line);
-      if (!frame) continue;
-      // Kapasite hatası her zaman HTTP durumuyla gelmiyor: bazı sağlayıcılar
-      // 200 döndürüp hatayı akışın içine koyuyor. Yakalamazsak akış sessizce
-      // boş biter ve yedek sağlayıcıya hiç geçilmez.
-      if (frame.error) {
-        coolDown(name, ERROR_COOLDOWN_MS);
-        throw new Error(`${name}: ${frame.error.message ?? "akış içi hata"}`);
+      for (const line of lines) {
+        const frame = parseFrame(line);
+        if (!frame) continue;
+        // Kapasite hatası her zaman HTTP durumuyla gelmiyor: bazı sağlayıcılar
+        // 200 döndürüp hatayı akışın içine koyuyor. Yakalamazsak akış sessizce
+        // boş biter ve yedek sağlayıcıya hiç geçilmez.
+        if (frame.error) {
+          coolDown(name, ERROR_COOLDOWN_MS);
+          streamError = frame.error.message ?? "akış içi hata";
+          throw new Error(`${name}: ${streamError}`);
+        }
+        usage = usageFromFrame(frame, usage);
+        // Yalnızca `content` alınıyor: gpt-oss-120b bir akıl yürütme modeli ve
+        // ayrı bir `reasoning` alanı gönderebiliyor — o kullanıcıya gitmemeli.
+        const delta = frame.choices?.[0]?.delta?.content;
+        if (delta) yield delta;
       }
-      // Yalnızca `content` alınıyor: gpt-oss-120b bir akıl yürütme modeli ve
-      // ayrı bir `reasoning` alanı gönderebiliyor — o kullanıcıya gitmemeli.
-      const delta = frame.choices?.[0]?.delta?.content;
-      if (delta) yield delta;
     }
+    // Son satır "\n" ile bitmediyse tamponda kalır; kullanım parçası o olabilir.
+    const tail = parseFrame(buffer);
+    if (tail) usage = usageFromFrame(tail, usage);
+  } finally {
+    report?.({
+      provider: name,
+      model: modelFor(name),
+      ok: streamError === null,
+      status: res.status,
+      ms,
+      ...(streamError ? { error: streamError.slice(0, 300) } : {}),
+      ...(usage ? { promptTokens: usage.prompt, completionTokens: usage.completion } : {}),
+      limits,
+    });
   }
 }
 

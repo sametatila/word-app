@@ -29,6 +29,7 @@
     "test:apple": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-apple.ts",
     "test:captcha": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-captcha.ts",
     "test:ai-providers": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-ai-providers.ts",
+    "test:chat-usage": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-chat-usage.ts",
     "test:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-password.ts",
     "make:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/make-password.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",

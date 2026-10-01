@@ -264,6 +264,11 @@ karakter): sohbet turu ~3.500 giriş + ~85 çıkış, değerlendirme ~1.450 + ~4
 | Tam Patika Konuşma (8 sohbet turu + 5 puanlama) | 0,0044 $ | 0,0071 $ |
 | Yazma/konuşma alıştırması | 0,00055 $ | 0,001 $ |
 
+**Canlı ölçüm (2026-10-01'den beri):** akışlı sohbet de `ai_usage`a jeton sayısıyla yazılıyor
+(`stream_options.include_usage`; önceden sohbet satırları jetonsuzdu). Son 30 günün maliyeti:
+`select provider, kind, sum(prompt_tokens) giris, sum(completion_tokens) cikis from ai_usage where
+created_at > now() - interval '30 days' and ok group by 1,2` → Cloudflare: giriş × 0,10 $ + çıkış × 0,30 $ / 1M.
+
 Günlük aktif kullanıcı başına ayda (az 0,3 konuşma + 1 alıştırma; dengeli 1 + 2; ağır 3 + 5; karışık
 %60/%30/%10): 0,056 / 0,16 / 0,48 / 0,13 $. Karışıkta 1.000 günlük aktif ≈ 132 $/ay, 10.000 ≈ 1.300 $/ay;
 10.000'de yoğun dakika ~500 istek, Cloudflare sınırını aşar (ikinci sağlayıcı ya da sınır artırımı).
