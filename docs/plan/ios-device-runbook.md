@@ -462,6 +462,17 @@ tanıyıcıyı hem kelime kaydını besliyor, uygulama arka planda askıya alın
 **Geçmezse:** `LernomiSpeech.swift` WALK MOTORU bölümü; `startRecording` motor kalkmadıysa
 `AVAudioRecorder`'a düşer ve başlamazsa JS'e hata döner.
 
+### 8.5c · Ekranı uyandıran bildirim, başka uygulama, kilit ekranından durdurma (iki platform)
+**Kaynak:** build 15 Android testi (2026-10-02): bildirim ekranı kilitliyken uyandırınca tur
+kilit açılana kadar donuyordu; kilit ekranından duraklatınca son cümle yine okunuyordu.
+**Yap:** Ekran kapalı turda kendine bir mesaj gönder (ekran uyansın, kilit açma); sonra
+kilidi açıp başka bir uygulamaya geç ve iki kelime cevapla; sonra cümle okunurken kilit
+ekranından duraklat.
+**Geçti:** uyanan ekranda ve başka uygulamadayken tur aksamadan sürüyor (arka plan yolu);
+duraklatınca ses ANINDA kesiliyor, son kayıt sunucuya gitmiyor.
+**Nasıl çalışıyor:** `WalkModeScreen` yol seçimi = ekran kapalı YA DA `AppState` background;
+durdurmada `stopSpeaking` + `cancelAzureListen`.
+
 ### 8.6 · `uploadStt` arka planda tamamlanıyor mu
 **Önce:** 8.1, 0.1
 **Yap:** 8.1 sürerken cevap ver ve kararın gelmesini bekle (kilit ekranındaki sesten
