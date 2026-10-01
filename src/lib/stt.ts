@@ -95,7 +95,7 @@ export async function transcribe(file: File, opts: SttOptions): Promise<SttResul
   for (const provider of providers) {
     const startedAt = Date.now();
     try {
-      const out = await callProvider(provider, file, language);
+      const out = await callProvider(provider, file, language, opts.expected);
       recordAiUsage(opts.userId, {
         kind: "stt",
         provider: provider.name,
@@ -135,14 +135,14 @@ function httpError(status: number, detail: string): Error & { status: number } {
   return e;
 }
 
-async function callProvider(p: SttProvider, file: File, language: string): Promise<Raw> {
+async function callProvider(p: SttProvider, file: File, language: string, expected?: string): Promise<Raw> {
   switch (p.dialect) {
     case "openai":
       return openaiStyle(p, file, language);
     case "deepgram":
       return deepgram(p, file, language);
     case "azure":
-      return azure(p, file, language);
+      return azure(p, file, language, expected);
   }
 }
 
@@ -161,7 +161,70 @@ async function callProvider(p: SttProvider, file: File, language: string): Promi
  */
 const AZURE_LOCALE: Record<string, string> = { de: "de-DE", tr: "tr-TR", en: "en-US", fr: "fr-FR", it: "it-IT", es: "es-ES" };
 
-async function azure(p: SttProvider, file: File, language: string): Promise<Raw> {
+/**
+ * TELAFFUZ DEĞERLENDİRMESİ (2026-10-02). Yürüyüşte beklenen kelime biliniyor
+ * (`expected`); Azure'un dil öğrenimi kipi sesi o kelimeye göre hizalayıp her
+ * kelimeye hata türü veriyor (None / Mispronunciation / Omission / Insertion).
+ * Düz tanıma kısa ve gürültülü kayıtta ilgisiz kelime uyduruyordu (canlıda
+ * "sonst" → "weiter", "die Führung" → "weiter"; yapay gürültüyle "die Luft" →
+ * "kino"); bu kip aynı kayıtları doğru kabul ediyor ve başka kelimeyi reddediyor
+ * (ölçüm `scripts/test-stt-pa.ts` başında).
+ *
+ * Kabul: artikel dışındaki her beklenen kelime ErrorType "None" (Azure'un kendi
+ * eşiği). Artikelsiz söyleyiş kabul (istemcideki `spokenMatches` de kabul ediyor);
+ * fazladan söylenen ("äh") Insertion olarak gelir, kararı bozmaz. Kabulde metin
+ * beklenen ifade; değilse ne söylendiğini görmek için düz tanıma bir kez daha
+ * (karar "doğrusu şu" mu "atla" mı ondan çıkıyor).
+ */
+const ARTICLES: Record<string, Set<string>> = {
+  de: new Set(["der", "die", "das", "den", "dem", "des", "ein", "eine", "einen", "einem", "einer", "eines"]),
+  en: new Set(["the", "a", "an", "to"]),
+};
+
+export type PaWord = { Word?: string; ErrorType?: string; AccuracyScore?: number };
+
+/** Saf karar: telaffuz değerlendirmesinin kelime listesinden kabul. `test:stt-pa`. */
+export function paAccepted(words: PaWord[] | undefined, language: string): boolean {
+  const arts = ARTICLES[language] ?? new Set<string>();
+  const ref = (words ?? []).filter((w) => w.ErrorType !== "Insertion");
+  const content = ref.filter((w) => !arts.has((w.Word ?? "").toLowerCase()));
+  return content.length > 0 && content.every((w) => w.ErrorType === "None");
+}
+
+async function azure(p: SttProvider, file: File, language: string, expected?: string): Promise<Raw> {
+  const ref = (expected ?? "").trim();
+  if (!ref) return azurePlain(p, file, language);
+  const audio = await file.arrayBuffer();
+  try {
+    const pa = await azureRequest(p, file, language, audio, ref);
+    const best = pa.NBest?.[0];
+    /* Faturalanan, gönderilen kaydın TAMAMI (Azure'un `Duration`ı yalnız konuşma
+       parçası, ~0,8 sn). WAV 16 kHz/16 bit/mono: (bayt − 44) / 32 000. Ogg'da
+       bilinmiyor; `transcribe` boyuttan tahmin ediyor. */
+    const seconds = file.type.includes("wav") && audio.byteLength > 44 ? (audio.byteLength - 44) / 32000 : undefined;
+    if (pa.RecognitionStatus === "Success" && paAccepted(best?.Words, language)) {
+      return { text: ref, confidence: typeof best?.AccuracyScore === "number" ? best.AccuracyScore / 100 : undefined, duration: seconds };
+    }
+    // Konuşma yoksa düz tanıma da bir şey bulamaz: ikinci istek kotayı sessizliğe harcamasın.
+    if (pa.RecognitionStatus === "NoMatch" || pa.RecognitionStatus === "InitialSilenceTimeout" || pa.RecognitionStatus === "BabbleTimeout") {
+      return { text: "", confidence: 0, duration: seconds };
+    }
+    const plain = await azurePlain(p, file, language, audio);
+    // İki istek: bütçe sayacı (azureBudgetOk) iki kat ses saymalı.
+    return { ...plain, duration: seconds ? seconds * 2 : plain.duration };
+  } catch {
+    // Kip desteklenmiyor ya da hata: düz tanıma (bugünkü davranış).
+    return azurePlain(p, file, language, audio);
+  }
+}
+
+type AzureJson = {
+  RecognitionStatus?: string;
+  Duration?: number;
+  NBest?: { Confidence?: number; Lexical?: string; Display?: string; AccuracyScore?: number; Words?: PaWord[] }[];
+};
+
+async function azureRequest(p: SttProvider, file: File, language: string, audio: ArrayBuffer, reference?: string): Promise<AzureJson> {
   const type = file.type.includes("wav")
     ? "audio/wav; codecs=audio/pcm; samplerate=16000"
     : file.type.includes("ogg")
@@ -171,16 +234,23 @@ async function azure(p: SttProvider, file: File, language: string): Promise<Raw>
   const locale = AZURE_LOCALE[language] ?? `${language}-${language.toUpperCase()}`;
   // Küfür maskelenir: tanınan metin ekranda "duyduğum: …" olarak yansıyor.
   const query = new URLSearchParams({ language: locale, format: "detailed", profanity: "masked" });
+  const headers: Record<string, string> = { "Ocp-Apim-Subscription-Key": p.key, "content-type": type, accept: "application/json" };
+  if (reference) {
+    headers["Pronunciation-Assessment"] = Buffer.from(JSON.stringify({
+      ReferenceText: reference, GradingSystem: "HundredMark", Granularity: "Word", Dimension: "Comprehensive", EnableMiscue: true,
+    })).toString("base64");
+  }
   const res = await sttFetch(`${p.baseUrl}/speech/recognition/conversation/cognitiveservices/v1?${query}`, {
     method: "POST",
-    headers: { "Ocp-Apim-Subscription-Key": p.key, "content-type": type, accept: "application/json" },
-    body: await file.arrayBuffer(),
+    headers,
+    body: audio,
   });
   if (!res.ok) throw httpError(res.status, await res.text().catch(() => ""));
-  const data = (await res.json()) as {
-    RecognitionStatus?: string;
-    NBest?: { Confidence?: number; Lexical?: string; Display?: string }[];
-  };
+  return (await res.json()) as AzureJson;
+}
+
+async function azurePlain(p: SttProvider, file: File, language: string, audio?: ArrayBuffer): Promise<Raw> {
+  const data = await azureRequest(p, file, language, audio ?? (await file.arrayBuffer()));
   const status = data.RecognitionStatus ?? "";
   if (status === "Success") {
     const best = data.NBest?.[0];
