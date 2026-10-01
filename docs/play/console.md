@@ -100,13 +100,14 @@ Gizlilik › "Mikrofon onayını geri al").
 2. Mikrofon açıklama ekranı (`MicDisclosure`): sağlayıcı listesi yüklenene kadar beklenir.
 3. **Kabul ediyorum, başla** → mikrofon izni → **İzin ver** → bildirim izni → **İzin ver**.
 4. Bir kelime sorulur, sesli cevap verilir.
-5. **Güç tuşuyla ekran kapatılır.** Kilit ekranında bildirim: başlık, "mikrofon dinliyor" metni,
-   **Durdur**; sistemin mikrofon göstergesi açık.
+5. **Güç tuşuyla ekran kapatılır.** Kilit ekranında medya oynatıcısı: "Yürüyüş modu · 2/12",
+   "Mikrofon dinliyor · 1 doğru", **Durdur** (kare) düğmesi; sistemin mikrofon göstergesi açık.
 6. Ekran kapalıyken bir kelime daha sorulur ve cevap verilir.
 7. Kilit ekranındaki **Durdur**; bildirim kaybolur, mikrofon kapanır.
 
-Kilit ekranında görünme kodda karşılığı olan bir iddia: kanal ve bildirim
-`VISIBILITY_PUBLIC`, `FOREGROUND_SERVICE_IMMEDIATE`. Servis kalkamazsa (izin geri alınmış,
+Kilit ekranında görünme kodda karşılığı olan bir iddia: bildirim `MediaStyle` + `MediaSessionCompat`
+(build 15'ten beri; eski düz `IMPORTANCE_LOW` bildirim Android 12+ kilit ekranında gizleniyordu),
+kanal `nomi_walk_player` `IMPORTANCE_DEFAULT` sessiz, `VISIBILITY_PUBLIC`, `FOREGROUND_SERVICE_IMMEDIATE`. Servis kalkamazsa (izin geri alınmış,
 arka planda başlatma) kendini kapatıyor, JS'e `LernomiWalkServiceFailed` gidiyor ve ekranda
 uyarı çiziliyor: servissiz arka plan kaydı yok.
 

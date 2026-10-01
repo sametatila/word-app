@@ -415,12 +415,13 @@ Takılma varsa `delay`'in gerçekten çağrıldığını doğrula.
 **Önce:** 8.3
 **Yap:** Aynı kilit ekranında oynatma kartına bak. Tur boyunca (kayıt ↔ TTS arasında
 kategori gidip gelirken) izlemeyi sürdür.
-**Geçti:** "Yürüyüş modu açık / Mikrofon dinliyor…" kaydı duruyor, **titremiyor**
-(kaybolup geri gelmiyor) ve mikrofon göstergesiyle **birlikte** görünüyor. Metin cihaz
-dilinde.
+**Geçti:** "Yürüyüş modu · 3/12 / Mikrofon dinliyor · 2 doğru" kaydı uygulama ikonuyla
+duruyor, her kelimede ilerliyor, **titremiyor** (kaybolup geri gelmiyor) ve mikrofon
+göstergesiyle **birlikte** görünüyor. Metin UYGULAMA dilinde (JS `setWalkNowPlaying`);
+yalnız JS metni gelmeden önce cihaz dilindeki varsayılan.
 **Geçmezse:** `LernomiSpeech.swift` `showNowPlaying` / `enableWalkRemoteCommands` ve
 kategori değiştiren yerler (`startWalkService` `.playAndRecord`, `startTts` `.playback`).
-Metin: `mobile/ios/Lernomi/{tr,en,de}.lproj/Localizable.strings`.
+Metin: i18n `walk.np_title`/`walk.np_text`; varsayılan `mobile/ios/Lernomi/{tr,en,de}.lproj/Localizable.strings`.
 **Neden önemli:** App Review Information'daki cümle tam olarak bu: kullanıcı arka planda
 mikrofonun açık olduğunu görüyor ve turu oradan durdurabiliyor.
 
@@ -446,6 +447,20 @@ mikrofon cepteki telefona düşer: kusur "yarım çalışıyor" diye görünür.
 `LernomiSpeech.swift`'te kategoriyi kuran ÜÇ yer de `Self.walkOptions` kullanmalı:
 `activateWalkSession`, `startRecording`, `beginSession`.
 **Geçmezse:** o üç çağrıdan biri elle yazılmış bir seçenek listesine dönmüştür.
+
+### 8.5b · Hoparlör ve ekran kapalı dinleme (build 15, 2026-10-02)
+**Önce:** 8.1 · **Kaynak:** Samet'in build 14 testi: tur ahizeden açıldı, ekran kapalıyken
+üç "duyamadım" ve tur durdu (sunucuya tek kayıt ulaştı).
+**Yap:** Kulaklıksız turu başlat; ekran açıkken iki kelime, sonra güç tuşu ve beş kelime.
+Ardından kulaklık tak/çıkar.
+**Geçti:** ses baştan HOPARLÖRDEN; ekran kapalıyken her kelimede mikrofon sesi ve karar
+geliyor; panelde (`ai_usage` stt/azure) her kelime için kayıt var. Kulaklık takılınca ses
+kulaklığa, çıkınca yine hoparlöre (ahizeye değil).
+**Nasıl çalışıyor:** tur boyunca tek `AVAudioEngine` girişi açık (`startWalkEngine`): hem
+tanıyıcıyı hem kelime kaydını besliyor, uygulama arka planda askıya alınmıyor. Rota
+`applyWalkRoute` ile her rota değişiminde yeniden uygulanıyor.
+**Geçmezse:** `LernomiSpeech.swift` WALK MOTORU bölümü; `startRecording` motor kalkmadıysa
+`AVAudioRecorder`'a düşer ve başlamazsa JS'e hata döner.
 
 ### 8.6 · `uploadStt` arka planda tamamlanıyor mu
 **Önce:** 8.1, 0.1

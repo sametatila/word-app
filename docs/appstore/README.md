@@ -101,7 +101,7 @@ ekranı denetimi kodda; cihazda doğrulanmadı (M10).
 cümleler ve inceleme notunun 7. adımında yazılı (`connect.md` §1):
 
 1. **Modu kullanıcı başlatır:** mikrofon açıklama ekranı ve sistem izni olmadan tur başlamaz.
-2. **Sürdüğü görünür:** kilit ekranında Now Playing kaydı ("Walk mode is on") ve sistemin
+2. **Sürdüğü görünür:** kilit ekranında Now Playing kaydı ("Walk mode · 3/12", uygulama ikonuyla) ve sistemin
    mikrofon göstergesi.
 3. **Her an durdurulabilir:** uygulamadan, kilit ekranındaki denetimden ya da kulaklık düğmesinden.
 
