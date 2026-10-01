@@ -377,24 +377,38 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   // togglePlayPause'a düştüğü için aynı yerden çalışıyor.
   private var walkRemoteTargets: [(command: MPRemoteCommand, target: Any)] = []
 
-  /**
-   * Kilit ekranı kaydını yazar.
-   *
-   * Metinler CİHAZ dilinden geliyor (Localizable.strings), kullanıcının uygulama içi dil
-   * seçiminden DEĞİL — Android'de de böyle (res/values-<dil>/strings.xml). İkisi ayrışabilir.
-   * Düzeltmek JS sözleşmesine metin parametresi eklemeyi ve Android'e dokunmayı gerektirir;
-   * §6'da ayrı iş olarak yazılı, bu şeridin kapsamında değil.
-   */
+  /// Kilit ekranı kaydının metni JS'ten gelir (UYGULAMA dilinde, tur ilerlemesiyle; Android'de
+  /// bildirimin ve MediaSession'ın metni aynı çağrıdan). Gelmeden önce cihaz dilindeki varsayılan.
+  private var nowPlayingTitle: String?
+  private var nowPlayingSubtitle: String?
+  private static let walkArtwork: MPMediaItemArtwork? = {
+    guard let image = UIImage(named: "WalkArtwork") else { return nil }
+    return MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+  }()
+
+  /// Kilit ekranı kaydının metni — uygulama dilinde, tur ilerledikçe (Android'de bildirimin metni).
+  @objc(setWalkNowPlaying:subtitle:)
+  func setWalkNowPlaying(_ title: String, subtitle: String) {
+    DispatchQueue.main.async {
+      self.nowPlayingTitle = title.isEmpty ? nil : title
+      self.nowPlayingSubtitle = subtitle.isEmpty ? nil : subtitle
+      if self.walkSessionHeld { self.showNowPlaying() }
+    }
+  }
+
   private func showNowPlaying() {
-    MPNowPlayingInfoCenter.default().nowPlayingInfo = [
-      MPMediaItemPropertyTitle: NSLocalizedString("walk_notification_title", comment: "Kilit ekranı kaydının başlığı"),
-      MPMediaItemPropertyArtist: NSLocalizedString("walk_notification_text", comment: "Kilit ekranı kaydının alt metni"),
+    var info: [String: Any] = [
+      MPMediaItemPropertyTitle: nowPlayingTitle ?? NSLocalizedString("walk_notification_title", comment: "Kilit ekranı kaydının başlığı"),
+      MPMediaItemPropertyArtist: nowPlayingSubtitle ?? NSLocalizedString("walk_notification_text", comment: "Kilit ekranı kaydının alt metni"),
+      MPMediaItemPropertyAlbumTitle: "Lernomi",
       // Canlı akış: yoksa kilit ekranı işe yaramaz bir konum kaydırıcısı çiziyor —
       // turun süresi belli değil ve ileri/geri sarılamaz.
       MPNowPlayingInfoPropertyIsLiveStream: true,
       // 1.0 = "çalıyor". 0.0 yazılsaydı kilit ekranı turu duraklamış gösterirdi.
       MPNowPlayingInfoPropertyPlaybackRate: 1.0,
     ]
+    if let art = Self.walkArtwork { info[MPMediaItemPropertyArtwork] = art }
+    MPNowPlayingInfoCenter.default().nowPlayingInfo = info
     // iOS 13+: kilit ekranı denetimleri, uygulama gerçek bir oynatıcı olmadığında
     // yalnız playbackState açıkça "playing" olduğunda güvenilir biçimde çiziliyor.
     // Yazılmazsa denetim bazı cihazlarda hiç görünmüyor ve "her an durdurulabilir"

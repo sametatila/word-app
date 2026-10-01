@@ -566,6 +566,12 @@ class LernomiSpeechModule(private val reactCtx: ReactApplicationContext) :
     emit("LernomiWalkServiceFailed", m)
   }
 
+  /** Kilit ekranı oynatıcısı / bildirim metni — uygulama dilinde, tur ilerlemesiyle (iOS'ta Now Playing). */
+  @ReactMethod
+  fun setWalkNowPlaying(title: String, subtitle: String) {
+    LernomiWalkService.updateNowPlaying(title, subtitle)
+  }
+
   @ReactMethod
   fun stopWalkService() {
     LernomiWalkService.onStop = null

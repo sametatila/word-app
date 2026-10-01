@@ -30,6 +30,7 @@ type SpeechNative = {
   stopRecording(): Promise<string | null>;
   startWalkService(): void;
   stopWalkService(): void;
+  setWalkNowPlaying?(title: string, subtitle: string): void;
   startScreenWatch(): void;
   stopScreenWatch(): void;
   playTtsUrl(url: string): Promise<boolean>;
@@ -226,6 +227,8 @@ export function nativeDelay(ms: number): Promise<void> {
 /** Mikrofonlu foreground service — güç tuşuyla ekran kapansa da arka planda mic açık kalsın. */
 export function startWalkService(): void { try { Native?.startWalkService(); } catch { /* yut */ } }
 export function stopWalkService(): void { try { Native?.stopWalkService(); } catch { /* yut */ } }
+/** Kilit ekranı oynatıcısının metni (iOS Now Playing, Android MediaSession + bildirim) — uygulama dilinde. */
+export function setWalkNowPlaying(title: string, subtitle: string): void { try { Native?.setWalkNowPlaying?.(title, subtitle); } catch { /* yut */ } }
 
 /**
  * Arka plan yolu kurulamadı — Android'de mikrofonlu ön plan servisi kalkmadı,

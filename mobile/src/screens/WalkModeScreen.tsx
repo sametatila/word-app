@@ -19,7 +19,7 @@ import { usePremiumStatus, notePremiumGate, refreshPremium, isPremiumRefusal, is
 import { walkLine } from "../lib/unlock";
 import { glossVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
-import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, setWalkNowPlaying, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { apiBase } from "../api/client";
 import { spokenMatches, parseSkip, skipWord, encourage, parseConfirm } from "../lib/voiceMatch";
@@ -625,6 +625,11 @@ export function WalkModeScreen() {
     for (let i = startIdx; i < rs.length; i++) {
       if (!alive()) return;
       setIdx(i);
+      // Kilit ekranı oynatıcısı: telefon cepteyken turun nerede olduğu ve kaç doğru.
+      setWalkNowPlaying(
+        tx("walk.np_title", { n: i + 1, total: rs.length }),
+        tx("walk.np_text", { correct: tallyRef.current.correct }),
+      );
       const { word, kind } = rs[i];
       setCurWord(word);
       if (kind === "intro") {
@@ -740,6 +745,8 @@ export function WalkModeScreen() {
     if (Platform.OS === "ios" && greet) await askVoiceConsent();
     if (!mounted.current) return;
     setKeepAwake(true); // ekran turu boyunca sönmesin
+    // Metin servisten ÖNCE: ilk çizimde varsayılan (cihaz dili) yerine uygulama dili görünsün.
+    setWalkNowPlaying(tx("walk.np_title", { n: 1, total: rs.length }), tx("walk.np_text", { correct: 0 }));
     startWalkService(); // güç tuşuyla ekran kapansa da arka planda mic açık kalsın (Azure yolu)
     startedAt.current = Date.now();
     tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current);

@@ -1708,6 +1708,8 @@ export const en: Record<string, string> = {
   "walk.mic_silent": "No sound detected. The round is paused; check your microphone and continue.",
   "walk.correct_is": "The correct answer is:",
   "walk.not_heard": "I didn't catch that.",
+  "walk.np_title": "Walk mode · {n}/{total}",
+  "walk.np_text": "Microphone listening · {correct} correct",
   "walk.tour_done": "Round finished. {correct} correct out of {total}.",
   "walk.tour_done_continue": "Round finished. {correct} correct out of {total}. Should we continue?",
   "walk.error_title": "The round couldn't be opened",

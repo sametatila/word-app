@@ -1713,6 +1713,8 @@ export const tr: Record<string, string> = {
   "walk.mic_silent": "Ses algılanmadı. Tur durduruldu; mikrofonu kontrol edip devam et.",
   "walk.correct_is": "Doğrusu:",
   "walk.not_heard": "Duyamadım.",
+  "walk.np_title": "Yürüyüş modu · {n}/{total}",
+  "walk.np_text": "Mikrofon dinliyor · {correct} doğru",
   "walk.tour_done": "Tur bitti. {total} sorudan {correct} doğru.",
   "walk.tour_done_continue": "Tur bitti. {total} sorudan {correct} doğru. Devam edelim mi?",
   "walk.error_title": "Tur açılamadı",

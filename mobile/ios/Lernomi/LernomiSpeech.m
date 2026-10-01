@@ -31,6 +31,7 @@ RCT_EXTERN_METHOD(httpGet:(NSString *)url
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(startWalkService)
+RCT_EXTERN_METHOD(setWalkNowPlaying:(NSString *)title subtitle:(NSString *)subtitle)
 RCT_EXTERN_METHOD(stopWalkService)
 RCT_EXTERN_METHOD(startScreenWatch)
 RCT_EXTERN_METHOD(stopScreenWatch)
