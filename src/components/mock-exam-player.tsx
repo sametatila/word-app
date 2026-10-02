@@ -58,6 +58,8 @@ type OpenScore = {
    * yanlış teşhis olurdu.
    */
   consent?: boolean;
+  /** Sunucunun kaydettiği puansız sonucun sebebi (sağlayıcı yok, kota…). */
+  reason?: string;
 };
 type Attempt = { id: number; answers: Answers; open: Record<string, string>; openScores: Record<string, OpenScore>; taskIx: number; secondsLeft: number; plays: Record<string, number> };
 type Todo = { title: string; why: string; how: string };
@@ -95,6 +97,23 @@ const GOAL_KEYS: Record<string, string> = {
 
 const mmss = (s: number) => `${String(Math.floor(Math.max(0, s) / 60)).padStart(2, "0")}:${String(Math.max(0, s) % 60).padStart(2, "0")}`;
 const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+
+/** Puanı yok ya da yalnız tarayıcıda düşmüş (ağ; izin reddi değil) açık görev — bitirişte değerlendirilecek. */
+const needsScore = (sc: OpenScore | undefined) => sc === undefined || (sc.score == null && sc.reason === undefined && !sc.consent);
+
+/**
+ * Metni olan ama puanı olmayan açık görevleri birlikte değerlendirir; yeni
+ * puanlar görev kimliğiyle döner. Düşen değerlendirme sessizce atlanıyor:
+ * bitiş yine yapılıyor, o görev eskisi gibi "puan almadı" görünüyor.
+ * Mobil `MockExamScreen` `assessPending` aynı kural.
+ */
+async function assessPending(attemptId: number, part: MockPart, open: Record<string, string>, scores: Record<string, OpenScore>): Promise<Record<string, OpenScore>> {
+  const bekleyen = part.tasks.filter((tk) => isOpenTask(tk) && needsScore(scores[tk.id]) && words(open[tk.id] ?? "") >= MIN_ASSESS_WORDS);
+  const sonuc = await Promise.allSettled(bekleyen.map((tk) => post<{ result: OpenScore }>({ action: "assess", id: attemptId, taskId: tk.id, text: (open[tk.id] ?? "").trim() })));
+  const yeni: Record<string, OpenScore> = {};
+  sonuc.forEach((r, i) => { if (r.status === "fulfilled") yeni[bekleyen[i].id] = r.value.result; });
+  return yeni;
+}
 const withBlanks = (b: string) => b.replace(/\{\{(\d+)\}\}/g, (_m, n) => ` (${n}) ______ `);
 
 /**
@@ -237,6 +256,11 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   const [answers, setAnswers] = useState<Answers>({});
   const [open, setOpen] = useState<Record<string, string>>({});
   const [openScores, setOpenScores] = useState<Record<string, OpenScore>>({});
+  /* Bitirişte okunuyor (aşağıda): efektin bağımlılığı olmasınlar diye ref. */
+  const openNow = useRef(open);
+  openNow.current = open;
+  const scoresNow = useRef(openScores);
+  scoresNow.current = openScores;
   const [plays, setPlays] = useState<Record<string, number>>({});
   /** Şu an çalan dinleme metni — iki kez basmayı ve iki hakkı birden yakmayı engelliyor. */
   const [playing, setPlaying] = useState<string | null>(null);
@@ -401,6 +425,16 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       setBusy(true);
       let final: { score: Score; ai: Feedback | null; offline: Fail | null };
       if (attempt) {
+        /*
+          DEĞERLENDİRİLMEMİŞ AÇIK GÖREV BİTİRMEDEN ÖNCE PUANLANIYOR (2026-10-02).
+          Metni yazıp "Sonraki görev"e basılan ya da süresi dolan görev hiç
+          puanlanmıyor, ortalamanın dışında kalıyordu; sınavda teslim edilen
+          metin puanlanır. Bitiş kayıtlı puanı okuduğu için puan bitişten ÖNCE
+          `assess` ile yazılıyor. Mobil `MockExamScreen` aynı.
+        */
+        const yeni = await assessPending(attempt.id, part, openNow.current, scoresNow.current);
+        if (dead) return;
+        if (Object.keys(yeni).length) setOpenScores((sc) => ({ ...sc, ...yeni }));
         try {
           const d = await post<{ score: Score; ai: Feedback }>({ action: "finish", id: attempt.id, answers });
           final = { score: d.score, ai: d.ai ?? null, offline: null };

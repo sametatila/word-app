@@ -116,6 +116,22 @@ function mmss(sec: number): string {
 
 const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 
+/** Puanı yok ya da yalnız cihazda düşmüş (ağ) açık görev — bitirişte değerlendirilecek. */
+const needsScore = (sc: OpenScore | undefined) => sc === undefined || (sc.score == null && sc.reason === "offline");
+
+/**
+ * Metni olan ama puanı olmayan açık görevleri birlikte değerlendirir; yeni
+ * puanlar görev kimliğiyle döner. Düşen değerlendirme sessizce atlanıyor:
+ * bitiş yine yapılıyor, o görev eskisi gibi "puan almadı" görünüyor.
+ */
+async function assessPending(attemptId: number, part: MockPart, open: Record<string, string>, scores: Record<string, OpenScore>): Promise<Record<string, OpenScore>> {
+  const bekleyen = part.tasks.filter((tk) => isOpenTask(tk) && needsScore(scores[tk.id]) && words(open[tk.id] ?? "") >= MIN_ASSESS_WORDS);
+  const sonuc = await Promise.allSettled(bekleyen.map((tk) => assessOpen(attemptId, tk.id, (open[tk.id] ?? "").trim())));
+  const yeni: Record<string, OpenScore> = {};
+  sonuc.forEach((r, i) => { if (r.status === "fulfilled") yeni[bekleyen[i].id] = r.value.result; });
+  return yeni;
+}
+
 /**
  * Görev hedefi -> sözlük anahtarı — web `mock-exam-player` `GOAL_KEYS` ile aynı.
  *
@@ -166,6 +182,12 @@ export function MockExamScreen() {
   const [answers, setAnswers] = useState<Answers>({});
   const [open, setOpen] = useState<Record<string, string>>({});
   const [openScores, setOpenScores] = useState<Record<string, OpenScore>>({});
+  /* Bitirişte okunuyor (aşağıda "bitir"): efektin bağımlılığı olmasınlar diye ref. */
+  const openNow = useRef(open);
+  openNow.current = open;
+  const scoresNow = useRef(openScores);
+  scoresNow.current = openScores;
+  const guest = Boolean(useAuth().user?.guest);
   const [plays, setPlays] = useState<Record<string, number>>({});
   const [speaking, setSpeaking] = useState<string | null>(null);
   const [attempt, setAttempt] = useState<Attempt | null>(null);
@@ -377,6 +399,23 @@ export function MockExamScreen() {
       */
       let final: { score: MockScore; ai: MockFeedback | null; offline: FailReason | null } | null = null;
       if (attempt) {
+        /*
+          DEĞERLENDİRİLMEMİŞ AÇIK GÖREV BİTİRMEDEN ÖNCE PUANLANIYOR (2026-10-02).
+
+          Yazma ve konuşma görevi yalnız "Değerlendir"e basılınca puanlanıyordu.
+          Metni yazıp "Sonraki görev"e basan ya da süresi dolan görev hiç
+          puanlanmıyor, sonuçta "1 görev yapay zekâ puanı almadı" yazıp
+          ortalamanın dışında kalıyordu. Sınavda teslim edilen metin puanlanır.
+          Bitiş kayıtlı puanı okuyor (`finish` metni yeniden değerlendirmiyor),
+          o yüzden puan bitişten ÖNCE `assess` ile yazılıyor; tekrar eden çağrı
+          sunucuda kayıtlı puanı dönüyor. Ağ yüzünden düşmüş değerlendirme
+          ("offline") de bir kez daha deneniyor. Web `mock-exam-player` aynı.
+        */
+        if (!guest) {
+          const yeni = await assessPending(attempt.id, part, openNow.current, scoresNow.current);
+          if (cancelled) return;
+          if (Object.keys(yeni).length) setOpenScores((sc) => ({ ...sc, ...yeni }));
+        }
         try {
           const d = await finishAttempt(attempt.id, answers);
           final = { score: d.score, ai: d.ai ?? null, offline: null };
@@ -400,7 +439,7 @@ export function MockExamScreen() {
       if (!cancelled) { setResult(final); setBusy(false); }
     })();
     return () => { cancelled = true; };
-  }, [phase, result, part, paper, attempt, answers, fail]);
+  }, [phase, result, part, paper, attempt, answers, fail, guest]);
 
   /* ── dinleme ────────────────────────────────────────────────────────── */
   /*
