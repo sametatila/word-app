@@ -39,7 +39,7 @@ Kural: `noindex` sayfa sitemap'e girmez; yeni herkese açık sayfa ya sitemap'e 
 |---|---|---|
 | Google Search Console | ✅ 2026-10-02 (Samet) | "Alan adı" mülkü `lernomi.app` (www + çıplak + http/https hepsi kapsamda), Cloudflare DNS TXT ile doğrulandı (`google-site-verification` kaydı DNS'te; silinirse mülk düşer). Sitemap gönderildi; `/`, `/en`, `/de` için URL denetimi + "Dizine eklenmesini iste" yapıldı |
 | Bing Webmaster Tools | ✅ 2026-10-02 (Samet) | Mülk `https://www.lernomi.app` ("Add site" www için "Site already added" diyor). Doğrulama Cloudflare DNS'te `verify.bing.com`a giden CNAME kaydıyla (DNS only; silinirse mülk düşer). Sitemap gönderildi; `/`, `/en`, `/de` URL Submission ile gönderildi. Bing; DuckDuckGo, Ecosia ve ChatGPT aramasını da besliyor |
-| Mağaza kayıtlarında web sitesi alanı | ⏳ Samet | App Store "Marketing URL" ve Play "Web sitesi": `https://www.lernomi.app` |
+| Mağaza kayıtlarında web sitesi alanı | ✅ | 2026-10-02 API salt okuması: ASC 1.0.0 `marketingUrl` üç dilde `https://www.lernomi.app`, Play `contactWebsite` `https://www.lernomi.app`. Web'de satın alma yolu yok (Premium yalnız mağaza içi), tanıtım sayfasında fiyat yok: 3.1.1/3.1.3 açısından vitrin bağlantısı sorunsuz |
 | Dış bağlantılar | ⏳ Samet | Sosyal profiller, Product Hunt, AlternativeTo, dil öğrenme toplulukları |
 | Cloudflare yapay zekâ bot engeli | ✅ kapalı | 2026-10-02 nginx günlüğü: GPTBot, ClaudeBot, OAI-SearchBot, Amazonbot, meta-externalagent 200 alıyor. "Block AI bots" açılırsa asistanlar siteyi okuyamaz |
 
