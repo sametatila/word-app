@@ -280,7 +280,7 @@ export async function getAdminData(days = 30): Promise<AdminData> {
         count(*) filter (where kind like '%:cap')::int cap
       from ${real("events")} where name='mail_sent' and day >= current_date - ${days - 1}::int
       group by 1 order by 2 desc`),
-    rows(sql`select provider, count(*)::int calls, round(avg(case when ok then 1.0 else 0.0 end)*100,1) ok_pct, coalesce(avg(ms),0)::int avg_ms, count(*) filter (where not ok)::int errors, coalesce(sum(prompt_tokens),0)::bigint tokens, coalesce(sum(chars),0)::bigint chars from ai_usage where day >= current_date - 6 group by provider order by calls desc`),
+    rows(sql`select provider, count(*)::int calls, round(avg(case when ok then 1.0 else 0.0 end)*100,1) ok_pct, coalesce(avg(ms),0)::int avg_ms, count(*) filter (where not ok)::int errors, coalesce(sum(prompt_tokens),0)::bigint + coalesce(sum(completion_tokens),0)::bigint tokens, coalesce(sum(chars),0)::bigint chars from ai_usage where day >= current_date - 6 group by provider order by calls desc`),
   ]);
 
   const k = kpiRows[0] ?? {};

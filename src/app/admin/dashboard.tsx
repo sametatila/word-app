@@ -642,7 +642,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
           </div>
           <DataTable
             empty="Son 7 günde yapay zekâ çağrısı yok."
-            head={["Sağlayıcı", { label: "Çağrı", align: "right" }, { label: "Başarı", align: "right" }, { label: "Hata", align: "right" }, { label: "Ort. ms", align: "right" }, { label: "Token / karakter", align: "right" }]}
+            head={["Sağlayıcı", { label: "Çağrı", align: "right" }, { label: "Başarı", align: "right" }, { label: "Hata", align: "right" }, { label: "Ort. ms", align: "right" }, { label: "Jeton (giriş+çıkış) / karakter", align: "right" }]}
             rows={d.ai.map((a) => [
               a.active ? <b key="p">{a.provider}</b> : <span key="p" style={{ opacity: 0.55 }}>{a.provider} (zincirde değil)</span>,
               a.calls,
