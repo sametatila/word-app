@@ -38,7 +38,7 @@ import { AZURE_STT_MONTHLY_SECONDS, AZURE_TTS_MONTHLY_CHARS, azureKeyHealth, azu
 import { azureConfigured } from "@/lib/tts/azure";
 import { chatConfigured } from "@/lib/chat-providers";
 import { aiBudget, quotaRejections } from "@/lib/ai-budget";
-import { WARN_AT } from "@/lib/ai-budget-limits";
+import { DEEPGRAM, WARN_AT, deepgramUsd } from "@/lib/ai-budget-limits";
 
 export type Alert = { key: string; level: "kritik" | "uyari"; text: string };
 type State = Record<string, { since: string; lastSent: string; text: string; level: Alert["level"] }>;
@@ -248,6 +248,28 @@ export async function collectAlerts(): Promise<Alert[]> {
       }
       if ((await azureKeyHealth()) === "invalid") {
         alerts.push({ key: "azure:key", level: "kritik", text: "Azure Speech anahtarı reddedildi (401/403): konuşma tanıma Deepgram/Groq'a, seslendirmenin yedeği cihaz sesine kaldı. Anahtarı Azure portalında yenile, .env'e yaz, rolling restart." });
+      }
+    }),
+    guard("deepgram", async () => {
+      /*
+        DEEPGRAM KREDİSİ (tek seferlik, yenilenmez). Bakiye API'den okunamıyor (anahtarda
+        billing:read yok); son okunan bakiyeden (`DEEPGRAM.creditAt`) sonraki kullanım
+        tarifeyle düşülüyor. Kredi bitince istekler reddediliyor ve zincir Groq'a düşüyor.
+        Karar (Samet, 2026-10-02): bitmeye yakın Azure ve Groq istatistiklerine bakılır,
+        duruma göre Soniox'a geçilir (AGENTS.md tarihli işler).
+      */
+      if (!process.env.DEEPGRAM_API_KEY) return;
+      /* Kullanım yalnız başarılı çağrılardan; ret sayısı son 24 saatten (eski bir ret uyarıyı sonsuza dek açık tutmasın). */
+      const list = await rows(sql`select model, coalesce(sum(audio_seconds) filter (where ok), 0)::int s,
+        count(*) filter (where not ok and status in (401, 402, 403) and created_at > now() - interval '24 hours')::int refused
+        from ai_usage where provider = 'deepgram' and created_at >= ${DEEPGRAM.creditAt}::timestamptz group by 1`);
+      const spent = list.reduce((a, r) => a + deepgramUsd(String(r.model), num(r.s)), 0);
+      const left = DEEPGRAM.creditUsd - spent;
+      const refused = list.reduce((a, r) => a + num(r.refused), 0);
+      if (refused > 0) {
+        alerts.push({ key: "deepgram:credit", level: "kritik", text: `Deepgram istekleri reddediliyor (${refused} kez 401/402/403): kredi bitmiş ya da anahtar geçersiz. Konuşma tanıma Azure'un aylık hakkı ve Groq'la sürüyor. Azure ve Groq istatistiklerine bak, Soniox kararı (AGENTS.md).` });
+      } else if (left < 50) {
+        alerts.push({ key: "deepgram:credit", level: left < 15 ? "kritik" : "uyari", text: `Deepgram kredisi tahminen ${left.toFixed(2)} $ kaldı (son okunan ${DEEPGRAM.creditUsd} $, sonrası ${spent.toFixed(2)} $). Konsoldan gerçek bakiyeyi oku, ai-budget-limits DEEPGRAM'a yaz; Azure ve Groq istatistiklerine bakıp Soniox kararını ver (AGENTS.md).` });
       }
     }),
     guard("budget", async () => {

@@ -54,6 +54,16 @@ export const GROQ = {
 export const DEEPGRAM = {
   /** Kayıtlı ses, tek dil. Hesaptaki 200 $ başlangıç kredisinden düşüyor; bakiye API'den okunamıyor (anahtarda billing:read yok). */
   usdPerMin: { "nova-3": 0.0043 } as Record<string, number>,
+  /**
+   * Bakiye ölçümü: Samet'in Deepgram konsolunda okuduğu kalan kredi ve okuma anı. Uyarı
+   * motoru (lib/alerts `deepgram`) bu andan sonraki kullanımı tarifeyle düşüp kalanı
+   * TAHMİN ediyor; Samet yeni bir bakiye okuduğunda ikisi birlikte güncellenir.
+   * Not (2026-10-02): o güne dek kayıtlı 384 sn için kredi ~0,05 $ düşmüştü (≈0,0078 $/dk);
+   * tarife 0,0043 $/dk. Fark yerel denemelerden ya da yuvarlamadan olabilir: tahmin
+   * iyimser kalmasın diye uyarı eşikleri geniş tutuldu.
+   */
+  creditUsd: 199.95,
+  creditAt: "2026-10-02T18:00:00+02:00",
 };
 
 export const RESEND = {
