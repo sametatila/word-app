@@ -59,6 +59,8 @@ export function alertLinks(key: string): AlertLinks {
     case "ai-down":
     case "azure":
       return { panel: ops("yapay-zeka", "Yapay zekâ sağlığı") };
+    case "budget":
+      return { panel: ops("yapay-zeka-butce", "Yapay zekâ bütçesi") };
     case "maintenance":
       return { panel: { path: "/admin/app#bakim", label: "Sistem › Uygulama › Bakım modu" } };
     case "webhook":

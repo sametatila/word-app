@@ -273,6 +273,14 @@ Günlük aktif kullanıcı başına ayda (az 0,3 konuşma + 1 alıştırma; deng
 %60/%30/%10): 0,056 / 0,16 / 0,48 / 0,13 $. Karışıkta 1.000 günlük aktif ≈ 132 $/ay, 10.000 ≈ 1.300 $/ay;
 10.000'de yoğun dakika ~500 istek, Cloudflare sınırını aşar (ikinci sağlayıcı ya da sınır artırımı).
 
+**İzleme (2026-10-02):** panel Sistem › Sunucu › Yapay zekâ bütçesi ve uyarı motoru (`budget:*`) bugünkü
+ücretsiz kotaları (Cloudflare 10.000 neuron, Groq model başına 200.000 jeton ve Whisper, Azure F0, Resend
+100/gün ve 3.000/ay) ve bu ayın tahmini maliyetini gösteriyor; %80'de Telegram. Sağlayıcının kendi reddi
+(402, Cloudflare 4006, Groq TPD) ayrıca kritik/uyarı. Aylık bütçe eşiği `AI_MONTHLY_BUDGET_USD` (sunucuda 20).
+**Devre kesici yok** (Samet): hiçbir şey kısılmıyor, ödemeyi Samet yapıyor. Tarifeler ve planlar
+`src/lib/ai-budget-limits.ts`: Workers Paid'e, Groq ücretli katmana ya da Resend Pro'ya geçilince oradaki
+`plan` değişir. Sayılar bu uygulamanın `ai_usage` kaydından, yani alt sınır.
+
 **Tavan riski:** `aiPracticePerDay: 30` her gün doldurulursa ayda ~3,9 $; yıllık abonenin aylık net
 geliri ~1,8 €. Normal kullanımda görülmez, ama tavan zararı engellemiyor (karar Samet'te).
 

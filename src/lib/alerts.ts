@@ -37,6 +37,8 @@ import { activeAiProviderNames } from "@/lib/ai-providers";
 import { AZURE_STT_MONTHLY_SECONDS, AZURE_TTS_MONTHLY_CHARS, azureKeyHealth, azureMonthUsage } from "@/lib/azure-speech-usage";
 import { azureConfigured } from "@/lib/tts/azure";
 import { chatConfigured } from "@/lib/chat-providers";
+import { aiBudget, quotaRejections } from "@/lib/ai-budget";
+import { WARN_AT } from "@/lib/ai-budget-limits";
 
 export type Alert = { key: string; level: "kritik" | "uyari"; text: string };
 type State = Record<string, { since: string; lastSent: string; text: string; level: Alert["level"] }>;
@@ -205,6 +207,65 @@ export async function collectAlerts(): Promise<Alert[]> {
       }
       if ((await azureKeyHealth()) === "invalid") {
         alerts.push({ key: "azure:key", level: "kritik", text: "Azure Speech anahtarı reddedildi (401/403): konuşma tanıma Deepgram/Groq'a, seslendirmenin yedeği cihaz sesine kaldı. Anahtarı Azure portalında yenile, .env'e yaz, rolling restart." });
+      }
+    }),
+    guard("budget", async () => {
+      /*
+        KOTA VE BÜTÇE (lib/ai-budget). Devre kesici YOK (Samet, 2026-10-02):
+        uygulama hiçbir şeyi kısmıyor; bu uyarılar ödemenin ya da plan
+        yükseltmenin ZAMANINI söylüyor. Eşik %80: ücretsiz kotanın dolmasına
+        kalan süre kullanıcıyı etkilemeden harekete geçmeye yetsin.
+      */
+      const b = await aiBudget();
+      /* İki basamak, sabit nokta değil (parite: sayaçta `.toFixed` yok). */
+      const usd = (n: number) => `${String(Math.round(n * 100) / 100)} $`;
+      const active = activeAiProviderNames();
+
+      const cf = b.cloudflare;
+      if (active.has("cloudflare") && cf.plan === "free" && cf.neuronsToday >= cf.freePerDay * WARN_AT) {
+        const pct = Math.round((cf.neuronsToday / cf.freePerDay) * 100);
+        alerts.push({ key: "budget:cloudflare", level: pct >= 100 ? "kritik" : "uyari", text: `Cloudflare Workers AI bugün ~${thousands(cf.neuronsToday)} / ${thousands(cf.freePerDay)} neuron (%${pct}, tahmin). Ücretsiz planda pay dolunca sohbet ve değerlendirme Groq'a, o da dolunca tamamen kapanır: Workers Paid'e geç (ayda 5 $), sonra lib/ai-budget-limits CLOUDFLARE.plan = "paid".` });
+      }
+      if (cf.unknownModels.length) {
+        alerts.push({ key: "budget:tariff", level: "uyari", text: `Cloudflare modeli tarife tablosunda yok, neuron ve maliyet hesaplanamıyor: ${cf.unknownModels.join(", ")} (lib/ai-budget-limits CLOUDFLARE.models).` });
+      }
+      if (active.has("groq") && b.groq.plan === "free") {
+        for (const m of b.groq.models) {
+          if (m.limit && m.tokensToday >= m.limit * WARN_AT) {
+            alerts.push({ key: `budget:groq:${m.model}`, level: "uyari", text: `Groq ${m.model} bugün ${thousands(m.tokensToday)} / ${thousands(m.limit)} jeton (ücretsiz katman, %${Math.round((m.tokensToday / m.limit) * 100)}). Dolunca sohbetin yedeği kalmaz; sık oluyorsa Groq'ta ücretli katmana geç.` });
+          }
+        }
+        const g = b.groq;
+        if (g.sttRequestsToday >= g.sttRequestsLimit * WARN_AT || g.sttSecondsToday >= g.sttSecondsLimit * WARN_AT) {
+          alerts.push({ key: "budget:groq-stt", level: "uyari", text: `Groq Whisper bugün ${g.sttRequestsToday}/${g.sttRequestsLimit} istek, ${Math.round(g.sttSecondsToday / 60)}/${Math.round(g.sttSecondsLimit / 60)} dk ses (ücretsiz katman).` });
+        }
+      }
+
+      for (const r of await quotaRejections(24)) {
+        /* Zincirden çıkmış sağlayıcının eski retleri uyarı değil (Cerebras 402'leri gibi). */
+        if (!active.has(r.provider)) continue;
+        if (r.payment) alerts.push({ key: `budget:payment:${r.provider}`, level: "kritik", text: `${r.provider} son 24 saatte ${r.payment} isteği "ödeme gerekli" (402) diye reddetti: kredi ya da kart bitmiş olabilir, hesabın faturalama sayfasına bak. ${r.sample}`.slice(0, 300) });
+        if (r.cfDaily) alerts.push({ key: "budget:cf-rejected", level: "kritik", text: `Cloudflare son 24 saatte ${r.cfDaily} isteği günlük ücretsiz pay bittiği için reddetti: Workers Paid'e geç. ${r.sample}`.slice(0, 300) });
+        if (r.groqDaily) alerts.push({ key: "budget:groq-rejected", level: "uyari", text: `Groq son 24 saatte ${r.groqDaily} isteği günlük jeton kotası (TPD) dolduğu için reddetti: o sırada sohbetin yedeği yoktu. Sık oluyorsa Groq'ta ücretli katmana geç. ${r.sample}`.slice(0, 300) });
+      }
+
+      const mail = b.resend;
+      if (mail.plan === "free") {
+        if (mail.last24h >= mail.perDay * 0.7) {
+          alerts.push({ key: "budget:resend-day", level: mail.last24h >= mail.perDay * 0.9 ? "kritik" : "uyari", text: `Resend son 24 saatte ${mail.last24h} / ${mail.perDay} posta (ücretsiz plan). Sınırda doğrulama postası gitmez, yeni kullanıcı hesabına giremez: Resend Pro'ya geç (ayda 20 $).` });
+        }
+        if (mail.month >= mail.perMonth * WARN_AT) {
+          alerts.push({ key: "budget:resend-month", level: "uyari", text: `Resend bu ay ${thousands(mail.month)} / ${thousands(mail.perMonth)} posta (ücretsiz plan).` });
+        }
+      }
+
+      if (b.budgetUsd) {
+        if (b.monthUsd >= b.budgetUsd * WARN_AT) {
+          alerts.push({ key: "budget:month", level: b.monthUsd >= b.budgetUsd ? "kritik" : "uyari", text: `Kullanıma göre ücretlenen servisler bu ay ${usd(b.monthUsd)} (bütçe ${usd(b.budgetUsd)}, ay sonu tahmini ${usd(b.projectedUsd)}). Uygulama hiçbir şeyi kısmıyor: hesaplara bak, gerekirse bütçeyi (AI_MONTHLY_BUDGET_USD) yükselt.` });
+        } else if (b.projectedUsd >= b.budgetUsd && new Date().getUTCDate() >= 4) {
+          /* İlk üç gün tahmin birkaç çağrıyla oynuyor; uyarı ancak ondan sonra. */
+          alerts.push({ key: "budget:month", level: "uyari", text: `Bu hızla kullanıma göre ücretlenen servisler ay sonunda ~${usd(b.projectedUsd)} tutacak (bütçe ${usd(b.budgetUsd)}, şu an ${usd(b.monthUsd)}).` });
+        }
       }
     }),
     guard("app", async () => {
