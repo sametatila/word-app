@@ -269,7 +269,7 @@ export async function collectAlerts(): Promise<Alert[]> {
       if (refused > 0) {
         alerts.push({ key: "deepgram:credit", level: "kritik", text: `Deepgram istekleri reddediliyor (${refused} kez 401/402/403): kredi bitmiş ya da anahtar geçersiz. Konuşma tanıma Azure'un aylık hakkı ve Groq'la sürüyor. Azure ve Groq istatistiklerine bak, Soniox kararı (AGENTS.md).` });
       } else if (left < 50) {
-        alerts.push({ key: "deepgram:credit", level: left < 15 ? "kritik" : "uyari", text: `Deepgram kredisi tahminen ${left.toFixed(2)} $ kaldı (son okunan ${DEEPGRAM.creditUsd} $, sonrası ${spent.toFixed(2)} $). Konsoldan gerçek bakiyeyi oku, ai-budget-limits DEEPGRAM'a yaz; Azure ve Groq istatistiklerine bakıp Soniox kararını ver (AGENTS.md).` });
+        alerts.push({ key: "deepgram:credit", level: left < 15 ? "kritik" : "uyari", text: `Deepgram kredisi tahminen ~${Math.round(left)} $ kaldı (son okunan ~${Math.round(DEEPGRAM.creditUsd)} $, sonra harcanan ~${Math.round(spent)} $). Konsoldan gerçek bakiyeyi oku, ai-budget-limits DEEPGRAM'a yaz; Azure ve Groq istatistiklerine bakıp Soniox kararını ver (AGENTS.md).` });
       }
     }),
     guard("budget", async () => {
