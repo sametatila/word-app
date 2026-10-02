@@ -146,6 +146,7 @@ export function startAttempt(
 ): Promise<{ attempt: Attempt; resumed: boolean; paper: DeliveredPaper | null }> {
   return api("/api/mock-exam", {
     method: "POST",
+    replay: true, // her eylem tekrara dayanıklı: start yarım denemeyi sürdürür, assess/finish kayıtlı sonucu döner
     body: JSON.stringify({ action: "start", paper: paperId, skill, day: todayStr() }),
   });
 }
@@ -174,7 +175,7 @@ export async function saveAttempt(
   patch: { answers?: Record<string, string>; open?: Record<string, string>; taskIx?: number; secondsLeft?: number; plays?: Record<string, number> },
 ): Promise<boolean> {
   try {
-    await api("/api/mock-exam", { method: "POST", body: JSON.stringify({ action: "save", id, ...patch }) });
+    await api("/api/mock-exam", { method: "POST", replay: true, body: JSON.stringify({ action: "save", id, ...patch }) });
     return true;
   } catch {
     return false;
@@ -184,6 +185,7 @@ export async function saveAttempt(
 export function assessOpen(id: number, taskId: string, text: string): Promise<{ result: OpenScore; configured: boolean }> {
   return api("/api/mock-exam", {
     method: "POST",
+    replay: true, // her eylem tekrara dayanıklı: start yarım denemeyi sürdürür, assess/finish kayıtlı sonucu döner
     body: JSON.stringify({ action: "assess", id, taskId, text, day: todayStr() }),
   });
 }
@@ -191,6 +193,7 @@ export function assessOpen(id: number, taskId: string, text: string): Promise<{ 
 export function finishAttempt(id: number, answers: Record<string, string>): Promise<{ attempt: Attempt; score: MockScore; ai: MockFeedback }> {
   return api("/api/mock-exam", {
     method: "POST",
+    replay: true, // her eylem tekrara dayanıklı: start yarım denemeyi sürdürür, assess/finish kayıtlı sonucu döner
     body: JSON.stringify({ action: "finish", id, answers, day: todayStr() }),
   });
 }

@@ -40,6 +40,10 @@ export async function sendChat(conversationId: string, messages: ChatMsg[], mode
   const res = await fetchWithTimeout(`${apiBase()}/api/chat`, {
     timeoutMs: CHAT_TIMEOUT_MS,
     method: "POST",
+    /* Tekrarı zararsız: sunucu cevabı kaydetmiyor, ikinci kopya yalnız günlük
+       tur sayacından bir tur daha düşüyor. Boşta ölen bağlantıda ilk mesaj
+       böylece "bağlantı sorunu" olmuyor (bkz. api/client `send`). */
+    replay: true,
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ conversationId, messages, mode }),
   });

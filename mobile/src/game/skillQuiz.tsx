@@ -588,6 +588,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       if (guestLocked) throw accountRequiredError();
       const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string }; id?: number | null }>("/api/assess", {
         method: "POST",
+        replay: true, // aynı metnin tekrarı önbellekten döner (lib/assess hash), yeni kayıt açmaz
         timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify(body()),
       });

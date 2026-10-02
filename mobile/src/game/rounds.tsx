@@ -946,6 +946,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
       if (guest) throw accountRequiredError();
       const d = await api<{ result: AssessmentResult; id?: number | null }>("/api/assess", {
         method: "POST",
+        replay: true, // aynı metnin tekrarı önbellekten döner (lib/assess hash), yeni kayıt açmaz
         timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify({ ...req, day: todayStr() }),
       });
@@ -1700,6 +1701,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
           "/api/assess",
           {
             method: "POST",
+            replay: true, // aynı metnin tekrarı önbellekten döner (lib/assess hash), yeni kayıt açmaz
             timeoutMs: ASSESS_WAIT_MS,
             body: JSON.stringify({
               kind: "sentence",

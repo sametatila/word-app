@@ -297,6 +297,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
       if (guestLocked) throw accountRequiredError();
       const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string }; id?: number | null }>("/api/assess", {
         method: "POST",
+        replay: true, // aynı metnin tekrarı önbellekten döner (lib/assess hash), yeni kayıt açmaz
         body: JSON.stringify({
           kind: "speaking", level,
           task: { prompt: mono.promptTr, targets: mono.targets.map((x) => x.de), constraints: [t("assess.ai_seconds", { min: mono.minSeconds, max: mono.maxSeconds }), ...(mono.rubricHint ? [mono.rubricHint] : [])] },

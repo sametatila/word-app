@@ -135,6 +135,9 @@ export function ConversationScored({
     try {
       const res = await apiFetch("/api/chat", {
         method: "POST",
+        /* Tekrarı zararsız: sunucu cevabı kaydetmiyor, ikinci kopya yalnız
+           günlük tur sayacından bir tur düşüyor (bkz. lib/api-fetch `send`). */
+        replay: true,
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ conversationId: conversation.id, messages: next, mode: "scored" }),
         /* Üretim uzun: genel tavan (25 sn) bu çağrıyı kesiyordu. Android

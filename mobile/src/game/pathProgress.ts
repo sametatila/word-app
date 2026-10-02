@@ -220,7 +220,8 @@ async function konusmalariBosalt(): Promise<number> {
   let giden = 0;
   for (const [i, item] of list.entries()) {
     try {
-      await api("/api/conversation", { method: "POST", body: JSON.stringify(item) });
+      /* `finishId` taşıyan kayıt tekrarı zararsız (uç aynı bitirişi yeniden yazmıyor); eski kayıtta yok. */
+      await api("/api/conversation", { method: "POST", body: JSON.stringify(item), replay: Boolean(item.finishId) });
       giden++;
     } catch (e) {
       if (kaliciRet(e)) continue;

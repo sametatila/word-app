@@ -198,6 +198,7 @@ async function post<T>(body: Record<string, unknown>): Promise<T> {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
+    replay: true, // her eylem tekrara dayanıklı: start yarım denemeyi sürdürür, assess/finish kayıtlı sonucu döner
   });
   if (!res.ok) {
     const body = (await res.json().catch(() => null)) as { error?: string } | null;

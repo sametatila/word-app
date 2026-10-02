@@ -87,6 +87,8 @@ async function flush(): Promise<number> {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(item),
+        /* `finishId` taşıyan kayıt tekrarı zararsız (uç aynı bitirişi yeniden yazmıyor); eski kayıtta yok. */
+        replay: Boolean(item.finishId),
       });
       /* 4xx bir daha kabul edilmeyecek demek: kuyrukta tutmak her seferinde
          aynı isteği tekrarlardı. 5xx ve ağ hatası bekletiliyor. */

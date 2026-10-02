@@ -114,7 +114,19 @@ export type ApiInit = RequestInit & {
    * tarayıcı akışı, bkz. lib/appleAuth).
    */
   pinned?: boolean;
+  /**
+   * Tekrarı ZARARSIZ bir yazma isteği: sunucuya varıp işlenmiş olsa bile ikinci
+   * kopyası yeni bir yan etki üretmiyor (idempotency anahtarı taşıyor, sunucu
+   * zaten kayıtlı sonucu dönüyor ya da yalnız bir kullanım sayacı artıyor).
+   * Bağlantı yolda koptuğunda istek bir kez kendiliğinden yeniden gidiyor;
+   * bkz. `send`. GET/HEAD/PUT/DELETE bu bayrak olmadan da tekrarlanıyor.
+   */
+  replay?: boolean;
 };
+
+/** HTTP'de tekrarı tanım gereği zararsız yöntemler (RFC 9110 §9.2.2). */
+const IDEMPOTENT = new Set(["GET", "HEAD", "PUT", "DELETE", "OPTIONS"]);
+const replayable = (init?: ApiInit): boolean => IDEMPOTENT.has((init?.method ?? "GET").toUpperCase()) || init?.replay === true;
 
 /**
  * YAPAY ZEKÂ RIZASI — kırk çağrı yerine tek yakalayıcı.
@@ -218,10 +230,15 @@ async function sendOnce(url: string, init?: ApiInit): Promise<Response> {
  * Bütün isteklerin taşıyıcısı: adres o anki tabana taşınır, ağ hatasında taban
  * değiştirme denenir (bkz. ./base `failover`).
  *
- * YENİDEN DENEME YALNIZ AĞ HATASINDA ve yalnız taban DEĞİŞTİYSE: engelli ağda
- * bağlantı el sıkışmada sıfırlanıyor, istek sunucuya hiç varmamış oluyor.
+ * YENİDEN DENEME YALNIZ AĞ HATASINDA, iki ayrı durumda:
+ *   - Tekrarı zararsız istek (`replayable`: GET/HEAD/PUT/DELETE ya da
+ *     `replay: true`) önce AYNI tabana bir kez daha gidiyor: boşta ölen
+ *     bağlantı (aşağıda).
+ *   - Taban DEĞİŞTİYSE yedek tabana: engelli ağda bağlantı el sıkışmada
+ *     sıfırlanıyor, istek sunucuya hiç varmamış oluyor.
  * Zaman aşımında taban yine değişebilir ama istek TEKRARLANMIYOR: sunucu
- * işlemiş olabilir (sohbet, cevap kaydı) ve ikinci kopya yan etki üretirdi.
+ * işlemiş olabilir ve tekrarı zararsız olmayan bir isteğin ikinci kopyası
+ * yan etki üretirdi.
  */
 async function send(url: string, init?: ApiInit): Promise<Response> {
   if (init?.pinned) return sendOnce(url, init);
@@ -229,7 +246,29 @@ async function send(url: string, init?: ApiInit): Promise<Response> {
   const target = rebaseUrl(url, apiBase());
   try {
     return await sendOnce(target, init);
-  } catch (e) {
+  } catch (first) {
+    let e = first;
+    /*
+      KOPAN BAĞLANTI: AYNI TABANA BİR KEZ DAHA (2026-10-02).
+
+      Uygulama birkaç dakika boşta kalınca (ya da arka plandan dönünce) işletim
+      sisteminin elinde tuttuğu bağlantı yolda ölmüş olabiliyor: ev
+      yönlendiricisinin ya da operatörün NAT'ı boştaki TCP akışını sessizce
+      düşürüyor. İstek o ölü bağlantıdan gidiyor ve "Ağ bağlantısı kesildi"
+      (iOS -1005) ile dönüyor. iOS bu durumda GET'i kendisi yeniden deniyor,
+      POST'u denemiyor: yürüyüşten dönen ya da cevabını düşünen kullanıcının
+      İLK sohbet mesajı "[Bağlantı sorunu]" oluyordu, oysa ağ yerindeydi
+      (simülatörde ölçüldü: ölü bağlantı 306 sn yaşındaydı, ikinci deneme
+      hemen geçti).
+
+      Yalnız tekrarı zararsız istekte (`replayable`): sunucuya varmış ve
+      işlenmiş bir isteğin ikinci kopyası yan etki üretmemeli. Bizim zaman
+      aşımımız (`ApiError(0)`) burada TEKRARLANMIYOR: o istek sunucuda hâlâ
+      sürüyor olabilir ve kullanıcı zaten süre kadar bekledi.
+    */
+    if (replayable(init) && !(e instanceof ApiError) && isTransportError(e)) {
+      try { return await sendOnce(target, init); } catch (again) { e = again; }
+    }
     const from = ownBaseOf(target);
     if (!from || !isTransportError(e)) throw e;
     const next = await failover(from);

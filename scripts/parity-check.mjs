@@ -22165,6 +22165,34 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
   );
 }
 
+/* ── KOPAN BAGLANTIDA TEKRAR: iki istemcide ayni kural (2026-10-02) ──────────
+ * Bosta olen baglantidan giden POST iOS'ta (ve Safari'de) "baglanti koptu" ile
+ * donuyor, isletim sistemi onu yinelemiyor: sohbetin ilk mesaji, acik gorevin
+ * degerlendirmesi, turun cevaplari dusuyordu. Iki istemci de TEKRARI ZARARSIZ
+ * istegi (GET/HEAD/PUT/DELETE ya da `replay: true`) ayni tabana bir kez daha
+ * gonderiyor: mobil `api/client` `send`, web `lib/api-fetch` `send`.
+ * Ayni yontem kumesi iki tarafta; sohbet cagrilari `replay` tasiyor. */
+{
+  const temiz = (x) => x.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/[^\n]*/g, "");
+  const kume = (src) => ((temiz(src).match(/const IDEMPOTENT = new Set\(\[([^\]]*)\]\)/) ?? [])[1] ?? "yok").replace(/\s/g, "");
+  const mob = read("mobile/src/api/client.ts");
+  const web = read("src/lib/api-fetch.ts");
+  sameList("tekrari zararsiz yontemler", ["mobil=" + kume(mob)], ["mobil=" + kume(web)], "mobil", "web");
+  sameList(
+    "replay bayragi ve tekrar",
+    ["mobil=" + (/replay\?: boolean/.test(mob) && /replayable\(init\)/.test(temiz(mob)) ? "var" : "yok"), "web=" + (/replay\?: boolean/.test(web) && /replayable\(init\)/.test(temiz(web)) ? "var" : "yok")],
+    ["mobil=var", "web=var"],
+    "bulunan", "beklenen",
+  );
+  const sohbet = ["mobile/src/game/chat.ts", "src/components/conversations/conversation-player.tsx", "src/components/conversations/conversation-scored.tsx"];
+  const sohbetEksik = sohbet.filter((f) => {
+    const src = temiz(read(f));
+    const i = src.search(/["`][^"`]*\/api\/chat[`"],\s*\{\s*(timeoutMs[^\n]*\n\s*)?method:\s*"POST"/);
+    return i < 0 || !/replay:\s*true/.test(src.slice(i, i + 400));
+  });
+  sameList("sohbet POST'u replay tasiyor", sohbetEksik.length ? sohbetEksik : ["hepsi"], ["hepsi"], "eksik", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

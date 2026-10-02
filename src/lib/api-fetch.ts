@@ -57,6 +57,14 @@ export type ApiFetchInit = RequestInit & {
    * Ekranın görülemediği çağrılar için: ekran kapalıyken cepte yürüyüş.
    */
   consentPrompt?: boolean;
+  /**
+   * Tekrarı ZARARSIZ bir yazma isteği: sunucuya varıp işlenmiş olsa bile ikinci
+   * kopyası yeni bir yan etki üretmiyor (idempotency anahtarı taşıyor, sunucu
+   * kayıtlı sonucu dönüyor ya da yalnız bir kullanım sayacı artıyor). Bağlantı
+   * yolda koptuğunda bir kez kendiliğinden yeniden gidiyor; bkz. `send`.
+   * GET/HEAD/PUT/DELETE bu bayrak olmadan da tekrarlanıyor. Mobil `ApiInit.replay`.
+   */
+  replay?: boolean;
 };
 
 /**
@@ -117,8 +125,31 @@ async function askConsent(req: AiConsentRequired): Promise<boolean> {
   }
 }
 
-function send(input: string, init: ApiFetchInit | undefined, retry: boolean): Promise<Response> {
-  return fetch(input, { ...init, signal: signalFor(init, retry) });
+/** HTTP'de tekrarı tanım gereği zararsız yöntemler (RFC 9110 §9.2.2). */
+const IDEMPOTENT = new Set(["GET", "HEAD", "PUT", "DELETE", "OPTIONS"]);
+const replayable = (init?: ApiFetchInit): boolean => IDEMPOTENT.has((init?.method ?? "GET").toUpperCase()) || init?.replay === true;
+
+/*
+  KOPAN BAĞLANTI: BİR KEZ DAHA (2026-10-02) — mobil `api/client` `send` ile
+  aynı kural.
+
+  Sekme birkaç dakika boşta kalınca tarayıcının elinde tuttuğu bağlantı yolda
+  ölmüş olabiliyor (NAT boştaki TCP akışını sessizce düşürüyor). Chrome ölü
+  bağlantıdaki isteği kendisi yeniden gönderiyor; Safari (WebKit, iOS'ta her
+  tarayıcı) yalnız GET'i yeniden deniyor, POST "Load failed" ile dönüyor:
+  sohbetin ilk mesajı, açık görevin değerlendirmesi "bağlantı sorunu" oluyordu.
+
+  `fetch` ağ hatasında TypeError atıyor (yanıt hiç gelmedi); kesme ve zaman
+  aşımı DOMException, onlar tekrarlanmıyor. Yalnız tekrarı zararsız istekte:
+  sunucuya varmış bir isteğin ikinci kopyası yan etki üretmemeli.
+*/
+async function send(input: string, init: ApiFetchInit | undefined, retry: boolean): Promise<Response> {
+  try {
+    return await fetch(input, { ...init, signal: signalFor(init, retry) });
+  } catch (e) {
+    if (!(e instanceof TypeError) || !replayable(init)) throw e;
+    return fetch(input, { ...init, signal: signalFor(init, retry) });
+  }
 }
 
 /**

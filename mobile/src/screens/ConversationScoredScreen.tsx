@@ -164,6 +164,7 @@ export function ConversationScoredScreen() {
     try {
       const d = await api<{ result: Result; id?: number | null }>("/api/assess", {
         method: "POST",
+        replay: true, // aynı metnin tekrarı önbellekten döner (lib/assess hash), yeni kayıt açmaz
         timeoutMs: ASSESS_CHAT_TIMEOUT_MS,
         body: JSON.stringify({
           kind: "chat",

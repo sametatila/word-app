@@ -95,6 +95,7 @@ export async function askAssess(
        tavanından yenmesin (bkz. `lib/api-fetch` `ApiFetchInit`). */
     const res = await apiFetch("/api/assess", {
       method: "POST",
+      replay: true, // aynı metnin tekrarı önbellekten döner (lib/assess hash), yeni kayıt açmaz
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ ...req, day: localDay(), ...(opts.examToken ? { examToken: opts.examToken } : {}) }),
       signal: opts.signal,

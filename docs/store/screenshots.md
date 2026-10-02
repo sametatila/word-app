@@ -114,8 +114,10 @@ düğmesine basılır), yürüyüş modu (giriş + tur), günlük tur (kartlar d
 `docs/store/raw/video/<set>/<sahne>-N.mp4` olarak kesilir; ham uzun kayıtlar `.shots/store-kit/video/`.
 
 Tuzaklar:
-- Konuşmada ilk gönderim birkaç dakikalık boşluktan sonra "[Bağlantı sorunu. Tekrar dene.]" verebiliyor
-  (bayat HTTP bağlantısı, iOS POST'u kendisi yeniden denemiyor, -1005). Gezinmeden hemen sonra gönder.
+- Konuşmada ilk gönderim birkaç dakikalık boşluktan sonra "[Bağlantı sorunu. Tekrar dene.]" veriyordu
+  (boşta ölen HTTP bağlantısı, iOS POST'u kendisi yeniden denemiyor, -1005). İstemci artık tekrarı
+  zararsız isteği bir kez daha gönderiyor (`api/client` `send`, `replay`); build 16 ve öncesinde
+  gezinmeden hemen sonra gönder.
 - Simülatör mikrofonu Mac mikrofonunu duymuyor (Simulator'ın macOS mikrofon izni): yürüyüş turu
   "Duyamadım"a düşüp duraklıyor. Kurguda "Şimdi Almanca karşılığını söyle" anları kullanılır.
 - Konum/izin değiştirmek (`simctl privacy`) uygulamayı kapatır; ilk açılışta mikrofon, konuşma tanıma
