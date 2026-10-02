@@ -1,10 +1,22 @@
 import type { NextConfig } from "next";
+import { execSync } from "node:child_process";
 import { FALLBACK_HOST } from "./src/lib/site";
 
 /** Cloudflare Turnstile — tarayıcının bağlandığı TEK dış köken (giriş/kayıt formları). */
 const TURNSTILE = "https://challenges.cloudflare.com";
 
 const isDev = process.env.NODE_ENV === "development";
+
+/** Dağıtım kimliği: deploy betiğinin verdiği, yoksa üretimde checkout'un commit kısası (bkz. `deploymentId`). */
+function deploymentId(): string | undefined {
+  if (process.env.NEXT_DEPLOYMENT_ID) return process.env.NEXT_DEPLOYMENT_ID;
+  if (process.env.NODE_ENV !== "production") return undefined;
+  try {
+    return execSync("git rev-parse --short HEAD", { cwd: process.cwd(), stdio: ["ignore", "pipe", "ignore"] }).toString().trim() || undefined;
+  } catch {
+    return undefined;
+  }
+}
 
 /**
  * Güvenlik başlıkları.
@@ -105,10 +117,18 @@ const nextConfig: NextConfig = {
    * geçmiş oluyor. Statik varlıklara da `?dpl=` ekleniyor, yani tarayıcı ve CDN
    * eski parçaları yeni sürümle karıştırmıyor.
    *
-   * Değeri deploy betiği veriyor (`NEXT_DEPLOYMENT_ID`, commit kısası). Yerelde
-   * tanımsız: özellik kapalı kalır, geliştirmede zaten tek sürüm var.
+   * Değeri deploy betiği veriyor (`NEXT_DEPLOYMENT_ID`, commit kısası).
+   *
+   * ÇALIŞIRKEN DE AYNI DEĞER (2026-10-02). Bu dosya `next start`ta yeniden
+   * okunuyor ve değişken yalnız derlemede veriliyordu: çalışan instance'ta
+   * kimlik boştu. Sonuç iki kat kötüydü: yanıtta `x-nextjs-deployment-id`
+   * yoktu (yukarıdaki koruma canlıda hiç çalışmıyordu) ve HTML aynı JS ve
+   * yazı tipi dosyasını hem `?dpl=` ile hem eksiz yazıyordu, tarayıcı ikisini
+   * de indiriyordu (sayfa başına ~450 KB). Değişken yoksa üretimde kimlik aynı
+   * checkout'un commit'inden okunuyor; deploy betiği de aynı komutu kullanıyor,
+   * derleme ve çalışma aynı değeri görüyor. Geliştirmede kapalı.
    */
-  deploymentId: process.env.NEXT_DEPLOYMENT_ID,
+  deploymentId: deploymentId(),
 
   async headers() {
     return [
