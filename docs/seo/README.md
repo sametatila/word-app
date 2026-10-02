@@ -52,17 +52,26 @@ Kural: `noindex` sayfa sitemap'e girmez; yeni herkese açık sayfa ya sitemap'e 
 
 ## Performans (Lighthouse, 2026-10-02)
 
-Son ölçüm (canlı, mobil benzetim / masaüstü): `/` 80–94 / 97, `/en` 80–81, `/de` 80–87; erişilebilirlik
-97, en iyi uygulamalar 100, SEO her sayfada 100. Gerçek yükleme ~0,25 s; mobil puan Lighthouse'un yavaş
-4G benzetiminden, belirleyen JavaScript miktarı.
+Son ölçüm (canlı, mobil benzetim): `/` 98–100, `/en` 90–91, `/de` 91–97, `/support` 99; masaüstü `/` 97.
+Erişilebilirlik 96 (tek bulgu aşağıda), en iyi uygulamalar 100, SEO 100. Sayfa 1,2 MB → 532 KB, CLS 0.
+Mobil puanı belirleyen: ilk çizimden ÖNCE istenen her bayt (Lighthouse bunları LCP tahminine katıyor;
+çizimden sonra istenenler girmiyor). Yeni bir şey eklerken buna bak.
 
-- Statik dosyalar çift iniyordu (aynı JS/yazı tipi hem `?dpl=` ile hem eksiz): `NEXT_DEPLOYMENT_ID`
-  yalnız derlemede vardı, `next start` kimliği boş görüyordu. `next.config.ts` `deploymentId()` artık
-  değişken yoksa checkout'un commit'ini okuyor (fa4090fb8). Sayfa ağırlığı 1,2 MB → 790 KB, istek
-  37 → 31; yanıtta `x-nextjs-deployment-id` artık var (sürüm kayması koruması canlıda ilk kez çalışıyor).
-- Next.js 16.3.5 → 16.3.8 (e8c921544): güvenlik düzeltmeleri (next/og RCE, görsel SSRF, önbellek zehirlenmesi).
-- Açık: CTA düğmesi beyaz yazı / #fb8f2a kontrastı 2,31 (WCAG 3; erişilebilirliği 97'de tutan tek
-  bulgu, marka rengi kararı Samet'te). Tanıtım görselleri 4 saat önbellekte (kazanç küçük, bırakıldı).
+| Ne | Kazanç | Commit |
+|---|---|---|
+| Dağıtım kimliği çalışırken de aynı: statik dosyalar çift inmiyordu (`?dpl=` ile + eksiz); sürüm kayması koruması ilk kez çalışıyor | ~450 KB | fa4090fb8 |
+| Next.js 16.3.5 → 16.3.8 (güvenlik: next/og RCE, görsel SSRF, önbellek zehirlenmesi) | — | e8c921544 |
+| Tarayıcıya yalnız arayüz dilinin sözlüğü, çizimden sonra (`lib/i18n/dicts-all`, `turbopack.resolveAlias`) | 161 → 51 KB, LCP dışı | 24c9f2376 |
+| Tanıtımda framer-motion yok (`MotionProvider` tanıtımda çizmiyor, `ThemeSetting` ayrı dosya, `Confetti` sonradan) | ~60 KB | bc871f405 |
+| Tanıtım yazı tipi sitede, kırpılmış (`src/app/fonts/`, üretim komutu `page.tsx`'te) | 182 → 91 KB | ba010f6d7 |
+| Googlebot + yapay zekâ botları künyeyi hep `<head>`'de alır (`htmlLimitedBots`) | SEO | acfd33769 |
+
+Kurallar: istemci bileşeni `@/lib/i18n/dict`ten alabilir (sözlük gelmez), ama `dicts/*` ya da
+`dicts-all`ı doğrudan içe aktarmaz. Tanıtım sayfasına framer-motion'a bağlı bileşen girmez. Next
+yükseltilince `htmlLimitedBots` listesini Next'in varsayılanıyla karşılaştır.
+
+Açık: CTA düğmesi beyaz yazı / #fb8f2a kontrastı 2,31 (WCAG 3; erişilebilirliği 96'da tutan tek
+bulgu, marka rengi kararı Samet'te). Tanıtım görselleri 4 saat önbellekte (kazanç küçük, bırakıldı).
 
 ## Sıradaki fırsat (karar Samet'te)
 
