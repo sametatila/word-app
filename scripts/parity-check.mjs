@@ -22171,7 +22171,9 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
  * degerlendirmesi, turun cevaplari dusuyordu. Iki istemci de TEKRARI ZARARSIZ
  * istegi (GET/HEAD/PUT/DELETE ya da `replay: true`) ayni tabana bir kez daha
  * gonderiyor: mobil `api/client` `send`, web `lib/api-fetch` `send`.
- * Ayni yontem kumesi iki tarafta; sohbet cagrilari `replay` tasiyor. */
+ * Ayni yontem kumesi iki tarafta; sohbet cagrilari `replay` tasiyor; cevap
+ * gonderen HER yer tekrar kimligi (`batch`) tasiyor, yoksa tekrar ayni turu iki
+ * kez saydirir (sunucu `answer_batches`). */
 {
   const temiz = (x) => x.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/[^\n]*/g, "");
   const kume = (src) => ((temiz(src).match(/const IDEMPOTENT = new Set\(\[([^\]]*)\]\)/) ?? [])[1] ?? "yok").replace(/\s/g, "");
@@ -22191,6 +22193,13 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
     return i < 0 || !/replay:\s*true/.test(src.slice(i, i + 400));
   });
   sameList("sohbet POST'u replay tasiyor", sohbetEksik.length ? sohbetEksik : ["hepsi"], ["hepsi"], "eksik", "beklenen");
+  const cevap = ["mobile/src/game/session.ts", "src/components/session-player.tsx", "src/components/walk-player.tsx", "src/components/boss-player.tsx", "src/components/challenge-player.tsx"];
+  const kimliksiz = cevap.filter((f) => {
+    const src = temiz(read(f));
+    /* Pencere iki yonlu: `sendBeacon`da govde cagridan ONCE kuruluyor. */
+    return [...src.matchAll(/\/api\/answers"/g)].some((m) => !/batch/.test(src.slice(Math.max(0, m.index - 400), m.index + 500)));
+  });
+  sameList("cevap gonderimi tekrar kimligi tasiyor", kimliksiz.length ? kimliksiz : ["hepsi"], ["hepsi"], "eksik", "beklenen");
 }
 
 console.log(

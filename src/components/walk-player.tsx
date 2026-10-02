@@ -3,6 +3,7 @@
 import { glossFor, spokenGloss, type GlossWord } from "@/lib/option-label";
 import { glossVoice } from "@/lib/tts/voices";
 import { apiFetch } from "@/lib/api-fetch";
+import { newBatchId } from "@/lib/answer-queue";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { WalkUnlock } from "@/lib/premium/unlock";
@@ -496,11 +497,14 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     pending.current = [];
     if (!batch.length) return;
     try {
+      /* Tekrar kimliği: bağlantı koparsa anlık tekrar aynı turu iki kez saydırmıyor (bkz. lib/answer-queue). */
       const res = await apiFetch("/api/answers", {
+        replay: true,
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
+          batch: newBatchId(),
           answers: batch,
           day: localDay(),
           seconds: final ? Math.round((Date.now() - startedAt.current) / 1000) : 0,

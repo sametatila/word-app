@@ -516,6 +516,32 @@ export const sessionState = pgTable("session_state", {
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
+/**
+ * Cevap gönderiminin TEKRAR KİMLİĞİ (`/api/answers` `batch`, 2026-10-02).
+ *
+ * İstemci her gönderime bir kimlik veriyor; anlık yeniden deneme, kuyruk ve
+ * sayfa kapanırken giden `sendBeacon` aynısını taşıyor. Bağlantı yanıttan
+ * önce koptuğunda istemci isteğin sunucuya varıp varmadığını bilemiyor ve
+ * yeniden gönderiyordu: varmışsa aynı tur İKİ KEZ sayılıyordu (XP, seri,
+ * aralıklı tekrarın bir basamağı fazladan). Şimdi ilk gelen kimliği alıyor,
+ * işliyor ve yanıtı `result`a yazıyor; aynı kimlikle gelen kopya turu yeniden
+ * işlemeden kayıtlı yanıtı dönüyor.
+ *
+ * Yalnız ayıklama kaydı: içerik yok, 7 günde siliniyor (`cron/assess`).
+ * Hesap silmede siliniyor; misafir birleşmesinde misafirinki atılıyor.
+ */
+export const answerBatches = pgTable(
+  "answer_batches",
+  {
+    userId: text("user_id").notNull(),
+    batch: text("batch").notNull(),
+    /** İlk işlemenin yanıtı; işlem sürerken boş. */
+    result: jsonb("result"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.batch] }), index("answer_batches_created_idx").on(t.createdAt)],
+);
+
 
 /**
  * Günlük görevlerin ödül kaydı.

@@ -368,7 +368,21 @@ export function isPermanentError(e: unknown): boolean {
   return e.status >= 400 && e.status < 500;
 }
 const ANSWER_QUEUE_KEY = "lernomi-answer-queue";
-type QueuedAnswers = { answers: AnswerOut[]; day: string; seconds: number };
+/** `batch`: gönderimin tekrar kimliği (bkz. `newBatchId`); eski kuyruk kaydında yok. */
+type QueuedAnswers = { answers: AnswerOut[]; day: string; seconds: number; batch?: string };
+
+/**
+ * Cevap gönderiminin TEKRAR KİMLİĞİ: gönderimde BİR KEZ üretiliyor; anlık
+ * yeniden deneme (api/client `replay`) ve kuyruk aynısını gönderiyor, sunucu
+ * aynı turu ikinci kez saymıyor (`/api/answers` `batch`, `answer_batches`).
+ * Web `lib/answer-queue` `newBatchId` aynı gövdeyle; biçim `newFinishId` ile
+ * aynı (8-64, harf/rakam/-/_). Hermes'te `crypto.randomUUID` olmayabilir.
+ */
+export function newBatchId(): string {
+  const c = (globalThis as { crypto?: { randomUUID?: () => string } }).crypto;
+  if (typeof c?.randomUUID === "function") return c.randomUUID();
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}${Math.random().toString(36).slice(2)}`;
+}
 
 async function queueAnswers(item: QueuedAnswers): Promise<void> {
   try {
@@ -392,7 +406,8 @@ export async function flushPendingAnswers(): Promise<void> {
   const remaining: QueuedAnswers[] = [];
   for (const [i, item] of list.entries()) {
     try {
-      await api("/api/answers", { method: "POST", body: JSON.stringify(item) });
+      /* Kimlikli kayıt tekrarı zararsız: sunucu aynı turu ikinci kez saymıyor. */
+      await api("/api/answers", { method: "POST", body: JSON.stringify(item), replay: Boolean(item.batch) });
     } catch (e) {
       /* Kalıcı hata düşürülüyor; ötekiler kuyrukta kalıyor ve sıradakiler
          denenmiyor (ağ yoksa hepsi düşer, boşuna istek atılmasın). */
@@ -406,12 +421,13 @@ export async function flushPendingAnswers(): Promise<void> {
 }
 
 export async function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress, wager?: Wager | null): Promise<SubmitResult> {
+  const batch = newBatchId();
   try {
-    const r = await api<SubmitResult>("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}), ...(wager ? { wager } : {}) }) });
+    const r = await api<SubmitResult>("/api/answers", { method: "POST", replay: true, body: JSON.stringify({ answers, day, seconds, batch, ...(progress ? { progress } : {}), ...(wager ? { wager } : {}) }) });
     void flushPendingAnswers(); // bağlantı var: bekleyenler de gitsin
     return r;
   } catch (e) {
-    if (!isPermanentError(e)) await queueAnswers({ answers, day, seconds });
+    if (!isPermanentError(e)) await queueAnswers({ answers, day, seconds, batch });
     throw e;
   }
 }

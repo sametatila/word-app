@@ -3,6 +3,7 @@
 import { RoundReportScope, roundTarget, snapshot } from "@/components/report-flag";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
+import { newBatchId } from "@/lib/answer-queue";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { fillStyle } from "@/lib/motion";
@@ -151,10 +152,13 @@ export function BossPlayer({
     pending.current = [];
     if (!batch.length) return;
     try {
+      /* Tekrar kimliği: bağlantı koparsa anlık tekrar aynı turu iki kez saydırmıyor (bkz. lib/answer-queue). */
       const res = await apiFetch("/api/answers", {
+        replay: true,
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
+          batch: newBatchId(),
           answers: batch,
           day: localDay(),
           seconds: Math.round((Date.now() - startedAt.current) / 1000),

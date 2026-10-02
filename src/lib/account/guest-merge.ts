@@ -190,6 +190,10 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
         sql`update session_state set user_id = ${T} where user_id = ${G}`,
       ],
     },
+    /* Cevap gönderiminin tekrar kimlikleri hesaba geçiyor: girişten sonra
+       kuyruktan yeniden giden misafir turu hesapta da tanınsın, iki kez
+       sayılmasın. Kimlikler rastgele, çakışma yok. */
+    { table: "answer_batches", statements: [sql`update answer_batches set user_id = ${T} where user_id = ${G}`] },
     {
       /* Aynı gün aynı görev iki kez alındıysa hesabınki kalıyor (XP zaten günlük istatistiğe yazıldı). */
       table: "quest_claims",

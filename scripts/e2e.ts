@@ -5,7 +5,8 @@
  */
 import { and, desc, eq, inArray, isNotNull, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
-import { dailyStats, leagueMembers, profiles, reviews, sessionState, userConversations, userSkills, userWords, words } from "../src/lib/db/schema";
+import { answerBatches, dailyStats, leagueMembers, profiles, reviews, sessionState, userConversations, userSkills, userWords, words } from "../src/lib/db/schema";
+import { claimBatch, isBatchId, purgeExpiredAnswerBatches, releaseBatch, settleBatch } from "../src/lib/answer-batches";
 import { joinLeague, leagueBoard } from "../src/lib/social/leagues";
 import {
   buildChallenge,
@@ -2326,6 +2327,29 @@ async function main() {
   const er2 = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 3, total: 12 }], seconds: 100 }, monday);
   check("aynı gün tekrar: satır güncellenir, yeni kayıt açılmaz", er2.id === er.id && (await examHistory(USER)).length === 1);
   check("geçilen modülün yapabilirlik satırları var", examCando("de", "A1", 2).length >= 4 && examCando("de", "A1", 2)[0].de.startsWith("Ich kann"));
+
+  // ── Cevap gönderiminin tekrar kimliği (`/api/answers` `batch`, lib/answer-batches) ──
+  {
+    console.log("\n— cevap gönderiminin tekrar kimliği —");
+    await db.delete(answerBatches).where(eq(answerBatches.userId, USER));
+    check("kimlik biçimi: uuid geçer, kısa/boşluklu geçmez", isBatchId("3f1c2a9e-7b1d-4c55-9a0e-1d2f3a4b5c6d") && !isBatchId("kisa") && !isBatchId("iki kelime 12345"));
+    const B = "e2e-batch-0001";
+    const c1 = await claimBatch(USER, B);
+    check("ilk kopya turu işler", c1.claimed === true);
+    await settleBatch(USER, B, { xpGained: 7, totalXp: 70 });
+    const c2 = await claimBatch(USER, B);
+    check("aynı kimlikle gelen kopya turu işlemez, kayıtlı yanıtı alır", !c2.claimed && c2.result?.xpGained === 7);
+    const B2 = "e2e-batch-0002";
+    const c3 = await claimBatch(USER, B2);
+    await releaseBatch(USER, B2);
+    const c4 = await claimBatch(USER, B2);
+    check("hata sonrası bırakılan kimlik yeniden işlenebilir", c3.claimed && c4.claimed);
+    await db.update(answerBatches).set({ createdAt: new Date(Date.now() - 8 * 86400_000) }).where(and(eq(answerBatches.userId, USER), eq(answerBatches.batch, B)));
+    const silinen = await purgeExpiredAnswerBatches();
+    const kalan = await db.select({ batch: answerBatches.batch }).from(answerBatches).where(eq(answerBatches.userId, USER));
+    check("7 günü dolan kimlik silinir, tazesi kalır", silinen >= 1 && kalan.length === 1 && kalan[0].batch === B2, `silinen ${silinen}, kalan ${kalan.map((k) => k.batch).join(",")}`);
+    await db.delete(answerBatches).where(eq(answerBatches.userId, USER));
+  }
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

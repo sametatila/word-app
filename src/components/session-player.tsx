@@ -40,7 +40,7 @@ import { RoundExit, ResultTopBar } from "@/components/round-exit";
 import { readCache, writeCache } from "@/lib/use-cached";
 import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
-import { flushPendingAnswers, isPermanentStatus, queueAnswers } from "@/lib/answer-queue";
+import { flushPendingAnswers, isPermanentStatus, newBatchId, queueAnswers } from "@/lib/answer-queue";
 import { formatPercent } from "@/lib/i18n/dict";
 import { CountUp } from "@/components/celebrate";
 import { StreakMoment } from "@/components/streak-moment";
@@ -538,11 +538,15 @@ function SessionRound() {
       }
       pending.current = [];
       const seconds = Math.round((Date.now() - startedAt.current) / 1000);
+      /* Tekrar kimliği: anlık yeniden deneme ve kuyruk aynı turu taşıyor (bkz. lib/answer-queue). */
+      const batchId = newBatchId();
       try {
         const res = await apiFetch("/api/answers", {
           method: "POST",
+          replay: true,
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
+            batch: batchId,
             answers: batch,
             day: localDay(),
             seconds: final ? seconds : 0,
@@ -563,7 +567,7 @@ function SessionRound() {
              ilerlemiyor, XP verilmiyor, kullanıcı aynı kelimeleri yeniden
              görüyordu — hem de ekran "kaydı bekliyor" dediği için bunu
              bilmeden. Android baştan beri depolamaya yazıyor. */
-          queueAnswers({ answers: batch, day: localDay(), seconds });
+          queueAnswers({ answers: batch, day: localDay(), seconds, batch: batchId });
           setSaveWarning("queued");
           return null;
         }
@@ -582,7 +586,7 @@ function SessionRound() {
         );
         return data;
       } catch {
-        queueAnswers({ answers: batch, day: localDay(), seconds });
+        queueAnswers({ answers: batch, day: localDay(), seconds, batch: batchId });
         setSaveWarning("queued");
         return null;
       }
@@ -759,6 +763,7 @@ function SessionRound() {
     const onHide = () => {
       if (!pending.current.length) return;
       const body = JSON.stringify({
+        batch: newBatchId(),
         answers: pending.current,
         day: localDay(),
         seconds: Math.round((Date.now() - startedAt.current) / 1000),

@@ -7,6 +7,7 @@ import { cleanDetail, isErrorType } from "@/lib/errors";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { consume } from "@/lib/social/ratelimit";
+import { claimBatch, isBatchId, releaseBatch, settleBatch } from "@/lib/answer-batches";
 import { saveSessionProgress, submitAnswers } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
 import { GAME_LABEL_KEYS, type Answer, type GameId, type Wager } from "@/lib/types";
@@ -57,6 +58,22 @@ export async function POST(req: Request) {
   const parsed = parseBody(body);
   if (!parsed) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
+  /*
+    TEKRAR KİMLİĞİ (`batch`, bkz. schema `answerBatches`). Aynı tur ikinci kez
+    geldiyse işlenmiyor, ilkinin yanıtı dönüyor: bağlantı yanıttan önce
+    koptuğunda istemci yeniden gönderiyor (anlık tekrar, kuyruk, sendBeacon)
+    ve tur iki kez sayılıyordu. Kimliksiz istek (eski istemci) eskisi gibi.
+  */
+  const batch = parsed.batch;
+  if (batch) {
+    const claim = await claimBatch(userId, batch);
+    if (!claim.claimed) {
+      return claim.result
+        ? NextResponse.json({ ...claim.result, duplicate: true })
+        : NextResponse.json({ error: "in_progress" }, { status: 409 });
+    }
+  }
+
   try {
     /*
       SERİ ANI İÇİN "ÖNCE". Tur sonundaki kısa sahne (web `streak-moment`,
@@ -83,9 +100,14 @@ export async function POST(req: Request) {
     // ağ isteği yapmak mobilde gereksiz bir gecikme olurdu.
     if (parsed.progress) await saveSessionProgress(userId, parsed.day, parsed.progress);
     const streakUp = !before?.lastActiveDay || before.lastActiveDay < parsed.day;
-    return NextResponse.json({ ...result, streakUp });
+    const payload = { ...result, streakUp };
+    /* Yazılamazsa tur YİNE işlenmiş sayılıyor: kimlik bırakılmıyor (aşağıdaki
+       catch'e düşmesin), kopya 409 alır ve tur ikinci kez sayılmaz. */
+    if (batch) await settleBatch(userId, batch, payload).catch((err) => console.error("[answers] batch", err));
+    return NextResponse.json(payload);
   } catch (err) {
     console.error("[answers]", err);
+    if (batch) await releaseBatch(userId, batch).catch(() => {});
     return NextResponse.json({ error: "database" }, { status: 500 });
   }
 }
@@ -122,7 +144,7 @@ function parseBody(body: unknown) {
   const seconds = typeof b.seconds === "number" ? Math.max(0, Math.round(b.seconds)) : 0;
   // İlerleme isteğe bağlıdır: meydan okuma turu cevap gönderir ama kayıtlı bir
   // oturuma ait değildir.
-  return { answers, day, seconds, progress: parseProgress(b.progress), wager: parseWager(b.wager) };
+  return { answers, day, seconds, progress: parseProgress(b.progress), wager: parseWager(b.wager), batch: isBatchId(b.batch) ? b.batch : null };
 }
 
 /**

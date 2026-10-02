@@ -27,7 +27,22 @@ export type QueuedAnswers = {
   answers: unknown[];
   day: string;
   seconds: number;
+  /** Gönderimin tekrar kimliği (bkz. `newBatchId`); eski kuyruk kaydında yok. */
+  batch?: string;
 };
+
+/**
+ * Cevap gönderiminin TEKRAR KİMLİĞİ: gönderimde BİR KEZ üretiliyor; anlık
+ * yeniden deneme (`apiFetch` `replay`), kuyruk ve `sendBeacon` aynısını
+ * gönderiyor, sunucu aynı turu ikinci kez saymıyor (`/api/answers` `batch`,
+ * `answer_batches`). Mobil `game/session` `newBatchId` aynı gövdeyle; biçim
+ * `newFinishId` ile aynı (8-64, harf/rakam/-/_).
+ */
+export function newBatchId(): string {
+  const c = (globalThis as { crypto?: { randomUUID?: () => string } }).crypto;
+  if (typeof c?.randomUUID === "function") return c.randomUUID();
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}${Math.random().toString(36).slice(2)}`;
+}
 
 const KEY = "lernomi-answer-queue";
 
@@ -74,6 +89,8 @@ export async function flushPendingAnswers(): Promise<void> {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(item),
+        /* Kimlikli kayıt tekrarı zararsız: sunucu aynı turu ikinci kez saymıyor. */
+        replay: Boolean(item.batch),
       });
       /* Kalıcı hata düşürülüyor; ötekiler kuyrukta kalıyor. */
       if (!res.ok && !isPermanentStatus(res.status)) throw new Error(String(res.status));

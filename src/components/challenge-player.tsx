@@ -3,6 +3,7 @@
 import { RoundReportScope, roundTarget, snapshot } from "@/components/report-flag";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
+import { newBatchId } from "@/lib/answer-queue";
 import { AnimatePresence, motion } from "framer-motion";
 import { T, fillStyle } from "@/lib/motion";
 import type { Answer, Round } from "@/lib/types";
@@ -145,8 +146,10 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       try {
         await apiFetch("/api/answers", {
           method: "POST",
+          /* Tekrar kimliği: bağlantı koparsa anlık tekrar aynı turu iki kez saydırmıyor (bkz. lib/answer-queue). */
+          replay: true,
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ answers: batch, day: localDay(), seconds }),
+          body: JSON.stringify({ batch: newBatchId(), answers: batch, day: localDay(), seconds }),
         });
       } catch {
         /* çevrimdışıysa sonuç yine gösterilir */
