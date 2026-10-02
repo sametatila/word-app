@@ -18,7 +18,7 @@
 import { DEFAULT_APP_CONTROL, parseAppControl, parseClientHeader, parseTestLabHeader, updateVerdict } from "../src/lib/app-control-shared";
 import { isTestLabSql, notTestLab, real } from "../src/lib/test-lab";
 import { errorFingerprint, scrub } from "../src/lib/client-errors";
-import { nginxTime } from "../src/lib/alerts";
+import { chunkLines, nginxTime } from "../src/lib/alerts";
 import { routeOf } from "../src/lib/server-metrics";
 import { cleanUrl, parseAudience } from "../src/lib/push-broadcast";
 import { cleanSource, platformOf } from "../src/lib/store-link";
@@ -116,6 +116,15 @@ async function main() {
   check("saat dilimli zaman", nginxTime("17/Sep/2026:10:49:26 +0200") === Date.UTC(2026, 8, 17, 8, 49, 26));
   check("negatif dilim", nginxTime("01/Jan/2026:00:00:00 -0500") === Date.UTC(2026, 0, 1, 5, 0, 0));
   check("bozuk zaman 0", nginxTime("dün") === 0);
+
+  // Telegram parçalama: satır ortadan kesilmez, her satır bir kez, sınır aşılmaz.
+  const many = Array.from({ length: 40 }, (_, i) => `<b>[UYARI]</b> satır ${i} ${"x".repeat(150)}`);
+  const parts = chunkLines(many, 3800);
+  const flat = parts.flatMap((c) => c.indexes);
+  check("parçalama: her satır tam bir kez", flat.length === 40 && new Set(flat).size === 40 && parts.every((c) => c.lines.every((l, j) => l === many[c.indexes[j]])));
+  check("parçalama: hiçbir parça sınırı aşmıyor", parts.length > 1 && parts.every((c) => c.lines.join("\n\n").length <= 3800));
+  const huge = chunkLines([`<b>[KRİTİK]</b> ${"y".repeat(5000)}`], 3800);
+  check("parçalama: tek dev satır etiketsiz kısaltılıyor", huge.length === 1 && huge[0].lines[0].length <= 3800 && !huge[0].lines[0].includes("<b>"));
   check("kimlik parçası :id", routeOf("/api/social/users/0f3a9c1e-1111-2222-3333-444455556666/profile?x=1") === "/api/social/users/:id");
   check("sayısal parça :id", routeOf("/api/certificate/123") === "/api/certificate/:id");
   check("sorgu atılıyor", routeOf("/api/tts?v=a&t=hallo") === "/api/tts");

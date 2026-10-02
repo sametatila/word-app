@@ -428,13 +428,22 @@ async function saveState(state: State): Promise<void> {
  * `err:`/`errspike:` anahtarları tek seferlik: "düzeldi" mesajı gönderilmiyor
  * (bir hata grubunun "düzelmesi" anlamlı bir olay değil).
  */
-export async function runAlerts(): Promise<{ active: number; sent: number; resolved: number; configured: boolean }> {
-  const alerts = await collectAlerts();
+export async function runAlerts(extra: Alert[] = []): Promise<{ active: number; sent: number; resolved: number; configured: boolean; failed: number }> {
+  /* `extra`: uyarı ucunun kendi yan işlerinden (zamanlı içerik yayını, özet
+     tablo) gelen hatalar; kontrol listesinde değiller ama aynı yoldan gitmeli. */
+  const alerts = [...(await collectAlerts()), ...extra];
   const state = await loadState();
   const now = new Date();
-  const lines: string[] = [];
-  let sent = 0;
-  let resolved = 0;
+  /*
+    GÖNDERİLEMEYEN UYARI KAYBOLMAZ (2026-10-02). Eskiden durum, Telegram'a
+    gidip gitmediğine bakılmadan kaydediliyordu: ağ hıçkırığında ya da 4.000
+    karakteri aşan mesajın HTML etiketi ortadan kesilip Telegram 400 verdiğinde
+    uyarı "gönderildi" sayılıyor ve bir daha gelmiyordu. Artık her satır kendi
+    durum değişikliğini taşıyor; satırlar sınırı aşmayan parçalara bölünüyor ve
+    değişiklik yalnız parçası GİTTİYSE uygulanıyor. Gitmeyen satır sonraki
+    koşuda (10 dk) yeniden deneniyor.
+  */
+  const ops: { line: string; apply: () => void; kind: "sent" | "resolved" }[] = [];
 
   /* HER SATIR NEREYE BAKILACAĞINI URL İLE SÖYLÜYOR (`lib/admin-links`): panel
      bölümü ve varsa cevabın verildiği dış konsol. Eskiden mesajın sonunda
@@ -450,15 +459,21 @@ export async function runAlerts(): Promise<{ active: number; sent: number; resol
   for (const a of alerts) {
     const prev = state[a.key];
     if (!prev) {
-      lines.push(`${a.level === "kritik" ? "<b>[KRİTİK]</b>" : "<b>[UYARI]</b>"} ${esc(a.text)}\n${where(a.key)}`);
-      state[a.key] = { since: now.toISOString(), lastSent: now.toISOString(), text: a.text, level: a.level };
-      sent++;
+      ops.push({
+        kind: "sent",
+        line: `${a.level === "kritik" ? "<b>[KRİTİK]</b>" : "<b>[UYARI]</b>"} ${esc(a.text)}\n${where(a.key)}`,
+        apply: () => (state[a.key] = { since: now.toISOString(), lastSent: now.toISOString(), text: a.text, level: a.level }),
+      });
     } else if (now.getTime() - new Date(prev.lastSent).getTime() >= REMIND_MS && !a.key.startsWith("err")) {
       const hours = Math.round((now.getTime() - new Date(prev.since).getTime()) / 3_600_000);
-      lines.push(`<b>[SÜRÜYOR ${hours} sa]</b> ${esc(a.text)}\n${where(a.key)}`);
-      prev.lastSent = now.toISOString();
-      prev.text = a.text;
-      sent++;
+      ops.push({
+        kind: "sent",
+        line: `<b>[SÜRÜYOR ${hours} sa]</b> ${esc(a.text)}\n${where(a.key)}`,
+        apply: () => {
+          prev.lastSent = now.toISOString();
+          prev.text = a.text;
+        },
+      });
     }
   }
   for (const [key, prev] of Object.entries(state)) {
@@ -471,18 +486,57 @@ export async function runAlerts(): Promise<{ active: number; sent: number; resol
     /* Zincirden çıkarılan sağlayıcının uyarısı "düzeldi" değil: sağlayıcı
        düzelmedi, artık kullanılmıyor. */
     const aiName = /^ai(?:-down)?:(.+)$/.exec(key)?.[1];
-    if (aiName && aiName !== "none" && !activeAiProviderNames().has(aiName)) {
-      lines.push(`<b>[KAPANDI]</b> Yapay zekâ sağlayıcısı ${esc(aiName)} artık zincirde değil; uyarısı kapatıldı.`);
-    } else {
-      lines.push(`<b>[DÜZELDİ]</b> ${esc(prev.text)}`);
-    }
-    delete state[key];
-    resolved++;
+    const line = aiName && aiName !== "none" && !activeAiProviderNames().has(aiName)
+      ? `<b>[KAPANDI]</b> Yapay zekâ sağlayıcısı ${esc(aiName)} artık zincirde değil; uyarısı kapatıldı.`
+      : `<b>[DÜZELDİ]</b> ${esc(prev.text)}`;
+    ops.push({ kind: "resolved", line, apply: () => delete state[key] });
   }
 
-  if (lines.length && telegramConfigured()) {
-    await sendTelegram(`<b>Lernomi</b>\n${lines.join("\n\n")}\n\nGelen işler: ${esc(absolute(SITE_URL, "/admin"))}`);
+  let sent = 0;
+  let resolved = 0;
+  let failed = 0;
+  const configured = telegramConfigured();
+  const footer = `\n\nGelen işler: ${esc(absolute(SITE_URL, "/admin"))}`;
+  for (const chunk of chunkLines(ops.map((o) => o.line), TELEGRAM_BUDGET - footer.length)) {
+    /* Telegram kapalıysa (yerel geliştirme) durum yine ilerliyor: panel aynı durumu okuyor. */
+    const ok = !configured || (await sendTelegram(`<b>Lernomi</b>\n${chunk.lines.join("\n\n")}${footer}`));
+    for (const i of chunk.indexes) {
+      if (!ok) {
+        failed++;
+        continue;
+      }
+      ops[i].apply();
+      if (ops[i].kind === "sent") sent++;
+      else resolved++;
+    }
   }
   await saveState(state);
-  return { active: alerts.length, sent, resolved, configured: telegramConfigured() };
+  return { active: alerts.length, sent, resolved, configured, failed };
+}
+
+/** Telegram mesaj sınırı 4.096; başlık ve HTML kaçışları için pay bırakılıyor. */
+const TELEGRAM_BUDGET = 3_800;
+
+/**
+ * Satırları sınırı aşmayan parçalara böler; satır ortadan kesilmez (HTML etiketi
+ * yarım kalırsa Telegram mesajın tamamını 400 ile reddediyor). Tek başına
+ * sınırı aşan satır etiketsiz kısaltılır. Saf: `test:alerts`.
+ */
+export function chunkLines(lines: string[], budget: number): { lines: string[]; indexes: number[] }[] {
+  const out: { lines: string[]; indexes: number[] }[] = [];
+  let cur: { lines: string[]; indexes: number[] } = { lines: [], indexes: [] };
+  let len = 0;
+  lines.forEach((raw, i) => {
+    const line = raw.length > budget ? raw.replace(/<[^>]+>/g, "").slice(0, budget - 1) + "…" : raw;
+    if (cur.lines.length && len + 2 + line.length > budget) {
+      out.push(cur);
+      cur = { lines: [], indexes: [] };
+      len = 0;
+    }
+    cur.lines.push(line);
+    cur.indexes.push(i);
+    len += (cur.lines.length > 1 ? 2 : 0) + line.length;
+  });
+  if (cur.lines.length) out.push(cur);
+  return out;
 }
