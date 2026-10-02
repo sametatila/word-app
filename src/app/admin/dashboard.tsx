@@ -654,6 +654,59 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
           />
         </Panel>
 
+        {/* KOTA VE BÜTÇE (lib/ai-budget): ücretsiz kotalar dolmadan ve fatura büyümeden görmek için.
+            Devre kesici yok; uyarı motoru aynı sayılarla %80'de Telegram'a yazıyor. */}
+        <Panel id="yapay-zeka-butce" title="Yapay zekâ bütçesi" hint="Bugün (UTC) ücretsiz kotalar, bu ay tahmini maliyet. Sayılar bu uygulamanın kaydından: alt sınır (aynı hesabı başka işler de kullanıyorsa gerçek daha yüksek). Plan değişince lib/ai-budget-limits." flush>
+          {d.budget ? (() => {
+            const b = d.budget;
+            const usd = (n: number) => `${n.toFixed(2)} $`;
+            const pct = (v: number, cap: number) => (cap > 0 ? (v / cap) * 100 : 0);
+            const planLabel = (p: "free" | "paid") => (p === "free" ? "ücretsiz plan" : "ücretli plan");
+            return (
+              <div className="px-4 py-3 flex flex-col gap-4">
+                <Stats cols={3}>
+                  <Stat label="Bu ay" value={usd(b.monthUsd)} sub="sabit plan ücretleri hariç" tone={b.budgetUsd && b.monthUsd >= b.budgetUsd ? "bad" : undefined} />
+                  <Stat label="Ay sonu tahmini" value={usd(b.projectedUsd)} tone={b.budgetUsd && b.projectedUsd >= b.budgetUsd ? "warn" : undefined} />
+                  <Stat label="Bütçe" value={b.budgetUsd ? usd(b.budgetUsd) : "—"} sub={b.budgetUsd ? "AI_MONTHLY_BUDGET_USD" : "AI_MONTHLY_BUDGET_USD boş: bütçe uyarısı yok"} />
+                </Stats>
+                {b.cloudflare.plan === "free" ? (
+                  <Meter label={`Cloudflare bugün (${planLabel(b.cloudflare.plan)}, dolunca reddeder)`} value={pct(b.cloudflare.neuronsToday, b.cloudflare.freePerDay)} detail={`~${fmt(b.cloudflare.neuronsToday)} / ${fmt(b.cloudflare.freePerDay)} neuron`} warnAt={80} badAt={100} />
+                ) : (
+                  <div className="text-body"><b>Cloudflare bugün:</b> ~{fmt(b.cloudflare.neuronsToday)} neuron ({fmt(b.cloudflare.freePerDay)} ücretsiz, üstü faturalanır)</div>
+                )}
+                <div className="text-caption muted -mt-2">
+                  Bu ay ~{fmt(b.cloudflare.monthNeurons)} neuron · {usd(b.cloudflare.monthUsd)}
+                  {b.cloudflare.missingTokens > 0 && ` · ${b.cloudflare.missingTokens} çağrı jetonsuz (tahmin alt sınır)`}
+                  {b.cloudflare.unknownModels.length > 0 && <span style={{ color: TONE.bad }}> · tarifede yok: {b.cloudflare.unknownModels.join(", ")}</span>}
+                </div>
+                {b.groq.models.map((m) =>
+                  m.limit ? (
+                    <Meter key={m.model} label={`Groq ${m.model} bugün (${planLabel(b.groq.plan)})`} value={pct(m.tokensToday, m.limit)} detail={`${fmt(m.tokensToday)} / ${fmt(m.limit)} jeton`} warnAt={80} badAt={100} />
+                  ) : (
+                    <div key={m.model} className="text-body"><b>Groq {m.model} bugün:</b> {fmt(m.tokensToday)} jeton</div>
+                  ),
+                )}
+                <Meter label="Groq Whisper bugün (ücretsiz katman)" value={Math.max(pct(b.groq.sttRequestsToday, b.groq.sttRequestsLimit), pct(b.groq.sttSecondsToday, b.groq.sttSecondsLimit))} detail={`${b.groq.sttRequestsToday} / ${fmt(b.groq.sttRequestsLimit)} istek · ${Math.round(b.groq.sttSecondsToday / 60)} / ${Math.round(b.groq.sttSecondsLimit / 60)} dk`} warnAt={80} badAt={100} />
+                {d.azureMonth && (
+                  <>
+                    <Meter label="Azure konuşma tanıma bu ay (F0, kod tavanı)" value={pct(d.azureMonth.sttSeconds, d.azureMonth.sttCap)} detail={`${Math.round(d.azureMonth.sttSeconds / 60)} / ${Math.round(d.azureMonth.sttCap / 60)} dk`} warnAt={80} badAt={100} />
+                    <Meter label="Azure seslendirme bu ay (F0)" value={pct(d.azureMonth.ttsChars, d.azureMonth.ttsCap)} detail={`${fmt(d.azureMonth.ttsChars)} / ${fmt(d.azureMonth.ttsCap)} karakter`} warnAt={80} badAt={100} />
+                  </>
+                )}
+                <div className="text-body"><b>Deepgram bu ay:</b> {fmt(b.deepgram.monthMinutes)} dk · {usd(b.deepgram.monthUsd)} <span className="muted">(200 $ başlangıç kredisinden düşer; bakiye yalnız Deepgram konsolunda)</span></div>
+                {b.resend.plan === "free" ? (
+                  <>
+                    <Meter label="Resend son 24 saat (ücretsiz plan, dolunca doğrulama postası gitmez)" value={pct(b.resend.last24h, b.resend.perDay)} detail={`${b.resend.last24h} / ${b.resend.perDay} posta`} warnAt={70} badAt={90} />
+                    <Meter label="Resend bu ay" value={pct(b.resend.month, b.resend.perMonth)} detail={`${fmt(b.resend.month)} / ${fmt(b.resend.perMonth)} posta`} warnAt={80} badAt={95} />
+                  </>
+                ) : (
+                  <div className="text-body"><b>Resend:</b> son 24 saat {b.resend.last24h}, bu ay {fmt(b.resend.month)} posta</div>
+                )}
+              </div>
+            );
+          })() : <div className="px-4 py-3 text-body" style={{ color: TONE.bad }}>Bütçe verisi okunamadı (sunucu günlüğünde “[admin] yapay zekâ bütçesi”).</div>}
+        </Panel>
+
         <Panel title={`Yapay zekâ kullanımı (${days}g)`} hint="Özellik başına: hangisi ne kadar harcıyor." flush>
           <DataTable
             empty="Kullanım yok."

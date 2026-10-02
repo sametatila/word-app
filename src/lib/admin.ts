@@ -10,6 +10,7 @@ import { real } from "@/lib/test-lab";
 import { activeAiProviders, type ActiveAiProvider } from "@/lib/ai-providers";
 import { AZURE_STT_MONTHLY_SECONDS, AZURE_TTS_MONTHLY_CHARS, azureMonthUsage, type AzureMonth } from "@/lib/azure-speech-usage";
 import { azureConfigured } from "@/lib/tts/azure";
+import { aiBudget, type AiBudget } from "@/lib/ai-budget";
 
 /**
  * Admin panosu veri katmanı (lernomi.app/admin). Sahibin sistemi yönetmesi + tüm
@@ -164,6 +165,8 @@ export type AdminData = {
   aiActive: ActiveAiProvider[];
   /** Azure Speech F0'ın bu ayki kullanımı; Azure yapılandırılmamışsa null. */
   azureMonth: (AzureMonth & { sttCap: number; ttsCap: number }) | null;
+  /** Kullanıma göre ücretlenen servislerin bugünkü kotası ve bu ayki tahmini maliyeti (lib/ai-budget); okunamazsa null. */
+  budget: AiBudget | null;
   generatedAt: string;
   /** Başarısız sorgular — boş değilse panel üstte kırmızı satırla söylüyor. */
   issues: QueryIssue[];
@@ -289,6 +292,10 @@ export async function getAdminData(days = 30): Promise<AdminData> {
   const azureMonth = azureConfigured()
     ? await azureMonthUsage().then((m) => ({ ...m, sttCap: AZURE_STT_MONTHLY_SECONDS, ttsCap: AZURE_TTS_MONTHLY_CHARS })).catch(() => null)
     : null;
+  const budget = await aiBudget().catch((err) => {
+    console.error("[admin] yapay zekâ bütçesi okunamadı", err);
+    return null;
+  });
   return {
     kpi: {
       totalUsers: num(k.total_users), guestUsers: num(k.guest_users), new1d: num(k.new1d), new7d: num(k.new7d), new30d: num(k.new30d),
@@ -324,6 +331,7 @@ export async function getAdminData(days = 30): Promise<AdminData> {
     ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens), chars: num(r.chars), active: activeNames.has(str(r.provider)) })),
     aiActive,
     azureMonth,
+    budget,
     generatedAt: new Date().toISOString(),
     issues,
   };
