@@ -162,6 +162,20 @@ android {
         */
         versionCode 16
         versionName "1.0.0"
+        /*
+          Yerel kod sembolleri (Play: "yerel kod içeriyor ve hata ayıklama sembolleri
+          yüklemediniz"). AGP 9 bunu varsayılan yapıyor ama varsayılana güvenilmiyor: açıkça
+          yazılı. SYMBOL_TABLE = çökme ve ANR yığınlarında işlev adları (Play Vitals'ın
+          kullandığı düzey); FULL satır numarası ekler ama boyut sınırını zorlar. Semboller
+          AAB'nin BUNDLE-METADATA'sına girer ve ayrıca
+          app/build/outputs/native-debug-symbols/release/native-debug-symbols.zip olarak
+          paketle AYNI edit'te yüklenir (Play sonradan eklemeye izin vermiyor).
+          Hermes, Fresco ve AndroidX DataStore'un hazır .so'ları üreticisinden sembolsüz
+          (stripped) geliyor; onların sembolü yayımlanmadığı için yüklenemez.
+        */
+        ndk {
+            debugSymbolLevel "SYMBOL_TABLE"
+        }
     }
     signingConfigs {
         debug {

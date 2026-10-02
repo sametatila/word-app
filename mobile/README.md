@@ -139,7 +139,9 @@ koyar; uygulama paketine girmez. Önbellek `~/Library/Caches/Lernomi/rn-dsyms`.
 **Yükledikten sonra (her build):** iOS build App Store Connect'te `VALID` olunca TestFlight'ın
 "Neler test edilecek" notu yazılır ve build **App Store sürümüne bağlanır**
 (`PATCH /v1/appStoreVersions/<id>/relationships/build`); bağlanmazsa sürüm eski build'le incelemeye
-gider. Android AAB Play iç test kanalına sürüm notuyla yüklenir; kapalı test için
+gider. Android AAB Play iç test kanalına sürüm notuyla, ProGuard eşlemi ve yerel kod sembolleriyle
+(`PLAY_NATIVE_SYMBOLS=app/build/outputs/native-debug-symbols/release/native-debug-symbols.zip`) AYNI
+yüklemede gönderilir: Play yüklenmiş pakete sonradan sembol eklemiyor (400). Kapalı test için
 `PLAY_TRACK=alpha PLAY_STATUS=draft` (Play'de henüz yayımlanmamış uygulamada API iç test dışına yalnız taslak
 koyabiliyor, yayına alma Console'dan). İnceleme notunun
 (`docs/appstore/connect.md`, `docs/play/console.md` §1) yolları yeni build'le hâlâ tutuyor mu, bakılır.
