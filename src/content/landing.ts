@@ -73,6 +73,10 @@ export type LandingCopy = {
   cta: {
     web: string;
     webSignedIn: string;
+    /** Üst çubuktaki kısa başlat bağlantısı. "Start" tek başına arama motorunca
+     *  açıklamasız bağlantı sayılıyor (Lighthouse `link-text`), o yüzden
+     *  `common.start` değil. */
+    top: string;
     appStoreSmall: string;
     appStoreLabel: string;
     playSmall: string;
@@ -171,6 +175,7 @@ const tr: LandingCopy = {
   cta: {
     web: "Tarayıcıda başla",
     webSignedIn: "Öğrenmeye devam et",
+    top: "Başla",
     appStoreSmall: "iPhone ve iPad için",
     appStoreLabel: "App Store",
     playSmall: "Android için",
@@ -354,6 +359,7 @@ const en: LandingCopy = {
   cta: {
     web: "Start in your browser",
     webSignedIn: "Continue learning",
+    top: "Get started",
     appStoreSmall: "For iPhone and iPad",
     appStoreLabel: "App Store",
     playSmall: "For Android",
@@ -537,6 +543,7 @@ const de: LandingCopy = {
   cta: {
     web: "Im Browser starten",
     webSignedIn: "Weiterlernen",
+    top: "Loslegen",
     appStoreSmall: "Für iPhone und iPad",
     appStoreLabel: "App Store",
     playSmall: "Für Android",
