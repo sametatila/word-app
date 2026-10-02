@@ -127,15 +127,27 @@ function steps(course: string): Step[] {
   ];
 }
 
+/**
+ * AKIŞIN DURUMU MODÜLDE DE TUTULUYOR (2026-10-03, kapalı test geri bildirimi).
+ * Dil seçmek arayüz dilini hemen değiştiriyor ve `ContentColumn` dil değişince
+ * ekranı BAŞTAN kuruyor (`key={lang}`, 501b037a7). Bileşenin kendi durumu
+ * (adım, seçimler) o anda sıfırlanıyor ve cihaz dilinden farklı bir dil seçen
+ * kullanıcı karşılama ekranına geri atılıyordu (iki testçi). Yeniden kurulan
+ * ekran durumu buradan alıyor; akış bitince ya da "Zaten hesabım var"da siliniyor.
+ */
+const kept: { i: number; choices: Record<string, string>; pickedLevel: string | null } = { i: 0, choices: {}, pickedLevel: null };
+function resetKept() { kept.i = 0; kept.choices = {}; kept.pickedLevel = null; }
+
 export function OnboardingScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const { heightClass, compactHeight } = useLayout();
   const scroll = useRef<ScrollViewInstance>(null);
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const [i, setI] = useState(0);
-  const [choices, setChoices] = useState<Record<string, string>>({});
-  const [pickedLevel, setPickedLevel] = useState<string | null>(null);
+  const [i, setI] = useState(kept.i);
+  const [choices, setChoices] = useState<Record<string, string>>(kept.choices);
+  const [pickedLevel, setPickedLevel] = useState<string | null>(kept.pickedLevel);
+  useEffect(() => { kept.i = i; kept.choices = choices; kept.pickedLevel = pickedLevel; }, [i, choices, pickedLevel]);
   const [saving, setSaving] = useState(false);
   const allSteps = steps(choices.course ?? DEFAULT_COURSE_ID);
   const step = allSteps[i];
@@ -153,18 +165,19 @@ export function OnboardingScreen() {
    * yoksa görünmeyen bir kursla devam edilirdi.
    */
   function pick(key: string, value: string) {
-    setChoices((c) => {
-      const secim = { ...c, [key]: value };
-      if (key === "lang") {
-        void setLang(value as NativeLang);
-        // Hesaba devredilmeyi beklesin (kurs/seviye ile aynı yol): kullanıcı
-        // henüz giriş yapmadı, seçim ancak girişte profile yazılabiliyor.
-        void saveOnboardingPrefs({ nativeLang: value });
-        const ok = coursesForNative(value as NativeLang).some((x) => x.id === secim.course);
-        if (!ok) delete secim.course;
-      }
-      return secim;
-    });
+    const secim = { ...choices, [key]: value };
+    if (key === "lang") {
+      const ok = coursesForNative(value as NativeLang).some((x) => x.id === secim.course);
+      if (!ok) delete secim.course;
+      // ÖNCE modüle yaz, SONRA dili değiştir: `setLang` dinleyicileri eşzamanlı
+      // çağırıyor ve ekran o anda yeniden kuruluyor; yeni ekran durumu buradan okur.
+      kept.i = i; kept.choices = secim; kept.pickedLevel = pickedLevel;
+      // Hesaba devredilmeyi beklesin (kurs/seviye ile aynı yol): kullanıcı
+      // henüz giriş yapmadı, seçim ancak girişte profile yazılabiliyor.
+      void saveOnboardingPrefs({ nativeLang: value });
+      void setLang(value as NativeLang);
+    }
+    setChoices(secim);
   }
   // Seviye adımında "Seviyeni seç" işaretliyse ayrıca bir seviye seçilmeli.
   const levelPickPending = step.key === "level" && chosen === "pick" && !pickedLevel;
@@ -186,6 +199,7 @@ export function OnboardingScreen() {
        başarımlar (tablet incelemesi, 2026-09-26; üretimde 40 profilin 31'i). */
     const nativeLang = currentLang();
     try { await AsyncStorage.setItem(ONBOARDED_KEY, "1"); } catch { /* geç */ }
+    resetKept();
     if (levelChoice === "test") {
       // Seviye testin sonunda belirlenir; kurs+hedef şimdiden saklanır → Placement → hesap.
       await saveOnboardingPrefs({ course, goal, nativeLang });
@@ -218,6 +232,7 @@ export function OnboardingScreen() {
   async function zatenHesabimVar() {
     track("onboarding_existing_account", i, step?.key);
     await clearOnboardingPrefs();
+    resetKept();
     nav.reset({ index: 0, routes: [{ name: "Auth" }] });
   }
 
