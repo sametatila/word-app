@@ -164,7 +164,7 @@ Tuzaklar:
 Yapay zekâ kotası:
 - Konuşma, yazma değerlendirmesi ve deneme özeti üretimdeki sohbet sağlayıcılarını (Cloudflare
   Workers AI → Groq) kullanır; `npm run test:chat` ve `assess-eval` AYNI anahtarları harcar.
-  Cloudflare günde 10.000 neuron ücretsiz (Workers Paid'de aşan kısım faturalanır), Groq'un ücretsiz
+  Cloudflare hesabı Workers Paid'de (10.000 neuron/gün ücretsiz, aşanı faturalanır, kota kapanmaz), Groq'un ücretsiz
   günlük token penceresi 200 bin. 2026-09-29'da o günkü zincirin iki sağlayıcısı kapalıydı ve Groq'un
   penceresi doldu; yapay zekâlı kareler çekilemedi. Çekim gününden önce ölçüm betikleri koşulmaz; kota şöyle okunur:
   `ssh lernomi "sudo -u postgres psql -d lernomi -At -c \"select provider, ok, status, count(*) from

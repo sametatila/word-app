@@ -6,10 +6,11 @@
  * okunuyor (`lib/ai-budget`); buradaki sayılar o kullanımı paraya ve kotaya
  * çeviriyor.
  *
- * PLAN DEĞİŞİNCE BURASI DEĞİŞİR (Samet ödeme yapınca): Cloudflare Workers Paid'e
- * geçilince `CLOUDFLARE.plan = "paid"` (günlük ücretsiz pay dolunca "istekler
- * reddedilecek" uyarısı susar, aşan kısım aylık maliyete yazılır); Groq ücretli
- * katmana geçince `GROQ.plan = "paid"`; Resend Pro'ya geçince `RESEND`.
+ * PLAN DEĞİŞİNCE BURASI DEĞİŞİR (Samet ödeme yapınca). Cloudflare hesabı Workers
+ * Paid'de (Samet, 2026-10-02): günlük ücretsiz pay dolunca istek reddedilmiyor,
+ * aşan kısım faturalanıyor ve aylık maliyete yazılıyor ("dolunca reddeder"
+ * uyarısı yalnız `plan = "free"`de). Groq ücretli katmana geçince
+ * `GROQ.plan = "paid"`; Resend Pro'ya geçince `RESEND`.
  * Devre kesici YOK (Samet, 2026-10-02): kota ya da bütçe dolunca uygulama hiçbir
  * şeyi kısmıyor, yalnız uyarı gidiyor ve ödemeyi Samet yapıyor.
  *
@@ -24,7 +25,8 @@
 export type Plan = "free" | "paid";
 
 export const CLOUDFLARE = {
-  plan: "free" as Plan,
+  /** Workers Paid (ayda 5 $ sabit), Samet 2026-10-02. */
+  plan: "paid" as Plan,
   /** Gün UTC 00:00'da sıfırlanıyor; ücretsiz planda aşınca istek reddediliyor. */
   freeNeuronsPerDay: 10_000,
   /** Workers Paid'de ücretsiz payı aşan kısım (ayrıca planın ayda 5 $ sabit ücreti var). */

@@ -255,8 +255,8 @@ adla gelen istekler reddedilir; geçici uyumluluk katmanı yok.
 ### 2.4 Yapay zekâ maliyeti (2026-09-30)
 
 **Dil modeli** zinciri Cloudflare Workers AI (Gemma 4 26B) → Groq (gpt-oss-120b), `src/lib/chat-providers.ts`.
-Cloudflare: günde 10.000 neuron ücretsiz, Workers Paid (ayda 5 $) ile aşan kısım 1.000 neuron başına
-0,011 $ (1M giriş 0,10 $, çıkış 0,30 $); model başına dakikada 300 istek. Ölçülen jeton (istem 9,5K
+Cloudflare: hesap **Workers Paid**'de (ayda 5 $ sabit; Samet, 2026-10-02). Günde 10.000 neuron ücretsiz,
+aşan kısım reddedilmiyor, 1.000 neuron başına 0,011 $ (1M giriş 0,10 $, çıkış 0,30 $); model başına dakikada 300 istek. Ölçülen jeton (istem 9,5K
 karakter): sohbet turu ~3.500 giriş + ~85 çıkış, değerlendirme ~1.450 + ~440.
 
 | Birim | Cloudflare | Groq ücretli |
@@ -274,12 +274,12 @@ Günlük aktif kullanıcı başına ayda (az 0,3 konuşma + 1 alıştırma; deng
 10.000'de yoğun dakika ~500 istek, Cloudflare sınırını aşar (ikinci sağlayıcı ya da sınır artırımı).
 
 **İzleme (2026-10-02):** panel Sistem › Sunucu › Yapay zekâ bütçesi ve uyarı motoru (`budget:*`) bugünkü
-ücretsiz kotaları (Cloudflare 10.000 neuron, Groq model başına 200.000 jeton ve Whisper, Azure F0, Resend
-100/gün ve 3.000/ay) ve bu ayın tahmini maliyetini gösteriyor; %80'de Telegram. Sağlayıcının kendi reddi
+ücretsiz kotaları (Groq model başına 200.000 jeton ve Whisper, Azure F0, Resend 100/gün ve 3.000/ay),
+Cloudflare'in günlük neuron'unu ve bu ayın tahmini maliyetini gösteriyor; %80'de Telegram. Cloudflare ücretli
+planda olduğu için onun günlük payı uyarı üretmiyor, aşan kısım aylık maliyete ve bütçe uyarısına giriyor. Sağlayıcının kendi reddi
 (402, Cloudflare 4006, Groq TPD) ayrıca kritik/uyarı. Aylık bütçe eşiği `AI_MONTHLY_BUDGET_USD` (sunucuda 20).
 **Devre kesici yok** (Samet): hiçbir şey kısılmıyor, ödemeyi Samet yapıyor. Tarifeler ve planlar
-`src/lib/ai-budget-limits.ts`: Workers Paid'e, Groq ücretli katmana ya da Resend Pro'ya geçilince oradaki
-`plan` değişir. Sayılar bu uygulamanın `ai_usage` kaydından, yani alt sınır.
+`src/lib/ai-budget-limits.ts`: Groq ücretli katmana ya da Resend Pro'ya geçilince oradaki `plan` değişir. Sayılar bu uygulamanın `ai_usage` kaydından, yani alt sınır.
 
 **Tavan riski:** `aiPracticePerDay: 30` her gün doldurulursa ayda ~3,9 $; yıllık abonenin aylık net
 geliri ~1,8 €. Normal kullanımda görülmez, ama tavan zararı engellemiyor (karar Samet'te).
