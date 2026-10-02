@@ -444,7 +444,8 @@ telefonun mikrofonuna dönüyor.
 (`.allowBluetooth` HFP giriş, `.allowBluetoothA2DP` çıkış) ve kategori **kelime başına**
 yeniden kuruluyor. Seçenek listesi bir yerde eksik kalırsa ses kulaklıktan gelir ama
 mikrofon cepteki telefona düşer: kusur "yarım çalışıyor" diye görünür.
-`LernomiSpeech.swift`'te kategoriyi kuran ÜÇ yer de `Self.walkOptions` kullanmalı:
+`LernomiSpeech.swift`'te kategoriyi kuran ÜÇ yer de `Self.walkOptions` (yürüyüş dışı tanımada
+aynı yönlendirme + kısma: `speechOptions`) ve `Self.recordMode` kullanmalı:
 `activateWalkSession`, `startRecording`, `beginSession`.
 **Geçmezse:** o üç çağrıdan biri elle yazılmış bir seçenek listesine dönmüştür.
 
@@ -461,6 +462,18 @@ tanıyıcıyı hem kelime kaydını besliyor, uygulama arka planda askıya alın
 `applyWalkRoute` ile her rota değişiminde yeniden uygulanıyor.
 **Geçmezse:** `LernomiSpeech.swift` WALK MOTORU bölümü; `startRecording` motor kalkmadıysa
 `AVAudioRecorder`'a düşer ve başlamazsa JS'e hata döner.
+
+### 8.5d · Ses yüksekliği ve müzik (build 16, 2026-10-02)
+**Kaynak:** Samet'in build 15 iPhone testi: yürüyüş ve konuşma ekranlarında TTS/efekt kısık
+("ahizeden gibi"), kilit ekranında kart yok.
+**Yap:** Uygulamanın başka bir yerinde bir TTS dinle, sonra yürüyüşte ve bir konuşma
+alıştırmasında aynı ses düzeyinde dinle. Müzik çalarken yürüyüş başlat, turu bitir.
+**Geçti:** üç yerde ses aynı yükseklikte. Yürüyüş başlayınca müzik DURAKLIYOR (kısılmıyor) ve
+kilit ekranında yalnız "Yürüyüş modu · n/N" kartı var; tur bitince kart kalkıyor. Konuşma
+alıştırmasında müzik kısılıyor, kart çıkmıyor.
+**Neden:** kayıt modu `.measurement` hoparlör işlemesini kapatıyordu → `.default`.
+`.duckOthers` oturumu karışabilir yapıyor ve iOS kilit ekranı kartını karışabilir oturuma
+vermiyor → yürüyüşte yok. Yürüyüşte iOS sesi hep native oynatıcıdan (WebView'in kendi kartı olmasın).
 
 ### 8.5c · Ekranı uyandıran bildirim, başka uygulama, kilit ekranından durdurma (iki platform)
 **Kaynak:** build 15 Android testi (2026-10-02): bildirim ekranı kilitliyken uyandırınca tur
