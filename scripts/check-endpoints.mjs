@@ -70,6 +70,21 @@ function routes(dir = path.join(ROOT, "src", "app", "api"), out = []) {
  */
 const ROUTE_PATH = /\b(?:mobile\/)?src\/app\/api\/[\w[\]./-]*route\.ts\b/g;
 
+/*
+ * UÇ YOLUNU GÜNLÜKTE ARAYAN KOD DA ÇAĞIRAN DEĞİLDİR (2026-10-02).
+ *
+ * Uyarı motoru (`lib/alerts`) nginx erişim günlüğünü okuyup yola göre sayıyor
+ * (`r.path.startsWith("/api/premium/webhook")`): mağaza bildirimleri düşüyor
+ * mu, hesap silme 5xx veriyor mu. Bu bir İZLEME, çağrı değil; tarama onu
+ * çağıran sayınca mağazanın çağırdığı webhook ucu "web çağırıyor" görünüp
+ * CI'yı düşürdü. Bu dosyalar taramaya girmiyor; ölçü zayıflamıyor çünkü
+ * içlerinde `fetch` yok (dosya değişip `fetch` eklenirse aşağıda hata).
+ */
+const LOG_READERS = new Set([
+  "src/lib/alerts.ts",
+  "scripts/test-admin.ts", // uyarı motorunun testi: sahte günlük satırları, çağrı yok
+]);
+
 function sources(dirs, out = []) {
   for (const d of dirs) {
     const abs = path.join(ROOT, d);
@@ -84,6 +99,11 @@ function sources(dirs, out = []) {
           !(p.includes(`${path.sep}api${path.sep}`) && entry === "route.ts") &&
           p !== fileURLToPath(import.meta.url)
         ) {
+          const rel = path.relative(ROOT, p).split(path.sep).join("/");
+          if (LOG_READERS.has(rel)) {
+            if (/\bfetch\(/.test(fs.readFileSync(p, "utf8"))) throw new Error(`${rel}: günlük okuyucu listesinde ama fetch çağırıyor; listeden çıkar`);
+            continue;
+          }
           /* YORUMLAR ATILIYOR. Uç yolları yorumlarda da geçiyor (ör. `/api/stt`
              kendi yorumunda `/api/premium/consume`a atıf yapıyor) ve yorumdaki
              bir atıf çağıran DEĞİL. Yorumlar sayılırsa denetim her ucu
