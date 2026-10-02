@@ -15,11 +15,10 @@ import { isTestLabDevice } from "../lib/integrity";
  * ayırabilsin (giriş ekranına yönlendirme kararı buna bağlı).
  */
 /**
- * DİKKAT: tabanlar APK'ye gömülür. Yayımlanmış eski sürümler ömür boyu
- * exfe.me'ye istek atmaya devam eder — o alan adı kapatılamaz, aynı sunucuda
- * ikinci bir server_name olarak yaşamalı (yönlendirme yetmez: çerez alan adı
- * ve POST gövdeleri yönlendirmede bozulur). Aynı kural yedek adres için de
- * geçerli (bkz. ./base).
+ * DİKKAT: tabanlar APK'ye gömülür. Yayımlanmış sürümler ömür boyu bu adreslere
+ * istek atar — bir taban kapatılamaz, aynı sunucuda server_name olarak yaşamalı
+ * (yönlendirme yetmez: çerez alan adı ve POST gövdeleri yönlendirmede bozulur).
+ * Asıl ve yedek adres için geçerli (bkz. ./base).
  *
  * Taban artık SABİT DEĞİL: `apiBase()` o an konuşulan adresi veriyor (asıl
  * ya da engelli ağlarda yedek). Adres kuran her yer onu çağırıyor; istek

@@ -164,16 +164,13 @@ export const auth = betterAuth({
   secret: process.env.BETTER_AUTH_SECRET ?? PLACEHOLDER_SECRET,
   baseURL: BASE_URL,
   basePath: "/api/auth",
-  // Eski alan adı LİSTEDE KALIR: yayımlanmış APK'lerde API adresi gömülü, o
-  // kurulumlar ömür boyu exfe.me'ye istek atacak. Çıkarılırsa eski sürümdeki
-  // herkesin girişi kırılır. Güven yalnız Origin denetimi için anlamlı:
-  // exfe.me'ye giden YÖNLENDİRME adresleri (redirectTo, callbackURL) istek
-  // buraya varmadan asıl alan adına çevriliyor, sıfırlama jetonu hiçbir
-  // koşulda o alan adına gitmiyor (bkz. lib/auth/legacy-redirects).
+  // Eski alan adı (exfe.me) 2026-10-02'de listeden çıktı: DNS'i Cloudflare'siz
+  // doğrudan sunucuyu gösteriyordu ve güvenlik duvarı yalnız Cloudflare'e açık,
+  // yani o adla gelen her istek zaten zaman aşımına düşüyordu (eski APK'ler
+  // yalnız iç testteydi). Güvende tutmak yalnız risk taşıyordu.
   trustedOrigins: [
     BASE_URL,
     "https://lernomi.app", "https://www.lernomi.app",
-    "https://exfe.me", "https://www.exfe.me",
     // Yedek köken (bkz. lib/site FALLBACK_ORIGIN): bazı ağlar asıl alan adını
     // engelliyor, mobil o zaman buraya geçiyor. Oradan gelen yönlendirme
     // adresleri de asıl alan adına sabitleniyor (lib/auth/legacy-redirects).

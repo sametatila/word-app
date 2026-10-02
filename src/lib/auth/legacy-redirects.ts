@@ -1,42 +1,29 @@
 import { FALLBACK_HOST } from "../site";
 
 /**
- * Eski alan adına (exfe.me) giden YÖNLENDİRME adreslerini asıl alan adına sabitler.
+ * YEDEK ALAN ADINA giden YÖNLENDİRME adreslerini asıl alan adına sabitler.
  *
- * `exfe.me` better-auth'un güvenilen kökenlerinde duruyor: 4 Eylül 2026 öncesi
- * APK'ler API'yi o adla çağırıyor ve `Origin` başlığına onu yazıyor. Origin
- * denetimi için bu güven zararsız; alan adı bir gün elden çıksa bile oturum
- * çerezleri `SameSite=Lax` ve CORS kapalı, başka bir siteden gelen istek
- * oturumlu çalışamaz.
+ * Mobil, asıl alan adını engelleyen ağlarda API'yi yedek adresten çağırıyor
+ * (lib/site FALLBACK_ORIGIN) ve `callbackURL`'i o anki tabanla kuruyor;
+ * e-postaya giden bağlantı ise her zaman asıl adreste olmalı (yedek yalnız API
+ * trafiği için). İstek better-auth'a ulaşmadan, yedek alan adına giden her
+ * yönlendirme adresi aynı yol ve sorguyla asıl alan adına çevriliyor; bağlantıya
+ * tıklandığı an (GET, sorgu dizesi) da aynı çeviri yapılıyor.
  *
- * ZARARLI OLAN YÖNLENDİRME. Aynı liste `redirectTo` / `callbackURL`
- * denetiminde de kullanılıyor: parola sıfırlama isteğinde
- * `redirectTo=https://exfe.me/…` kabul ediliyor ve e-postadaki bağlantı jetonu
- * o adrese taşıyor. Alan adını ele geçiren biri kurbanın e-postasıyla
- * sıfırlama isteyip jetonu kendi sitesine akıtabilirdi (güvenlik denetimi
- * 2026-09-14, bilgi maddesi: eski exfe.me güvenilen kökeni).
- *
- * Çözüm güveni kaldırmak değil (eski uygulamaların girişi kırılırdı): istek
- * better-auth'a ulaşmadan, eski alan adına giden her yönlendirme adresi aynı
- * yol ve sorguyla asıl alan adına çevriliyor. Eski uygulamalar çalışmaya devam
- * ediyor; jeton hiçbir koşulda exfe.me'ye gitmiyor. Bağlantıya tıklandığı an
- * (GET, sorgu dizesi) da aynı çeviri yapılıyor, yani daha önce gönderilmiş
- * e-postalar da kapsanıyor.
- *
- * YEDEK ALAN ADI DA SABİTLENİYOR (lib/site FALLBACK_ORIGIN). Mobil, asıl alan
- * adını engelleyen ağlarda API'yi oradan çağırıyor ve `callbackURL`'i o anki
- * tabanla kuruyor; e-postaya giden bağlantı ise her zaman asıl adreste
- * olmalı (yedek yalnız API trafiği için). Aynı çeviri ikisine de yetiyor.
+ * Eski alan adı (exfe.me) 2026-10-02'de buradan ve güvenilen kökenlerden çıktı
+ * (bkz. lib/auth/server `trustedOrigins`): o adla gelen yönlendirme artık
+ * çevrilmiyor, better-auth güvenilmeyen köken diye reddediyor. Sıfırlama
+ * jetonunun o alan adına akma riski (güvenlik denetimi 2026-09-14) kökten kalktı.
  *
  * Saf modül: sunucuya özgü bağımlılık yok, test doğrudan çağırıyor.
  */
 
-export const LEGACY_HOSTS: ReadonlySet<string> = new Set(["exfe.me", "www.exfe.me", FALLBACK_HOST]);
+export const LEGACY_HOSTS: ReadonlySet<string> = new Set([FALLBACK_HOST]);
 
 /** better-auth'un kullanıcı tarafından verilebilen yönlendirme alanları. */
 export const REDIRECT_KEYS = ["callbackURL", "redirectTo", "errorCallbackURL", "newUserCallbackURL"] as const;
 
-/** Adres eski alan adındaysa aynı yolu asıl kökende döndürür; değilse null. */
+/** Adres yedek alan adındaysa aynı yolu asıl kökende döndürür; değilse null. */
 export function pinLegacyUrl(value: string, canonicalOrigin: string): string | null {
   let u: URL;
   try {

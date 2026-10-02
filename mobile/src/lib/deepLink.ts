@@ -88,8 +88,8 @@ export type DeepLinkAction =
   | { kind: "group"; code: string }
   | null;
 
-/** Eski APK'ler exfe.me'ye bakıyor; ikisi de bizim (bkz. trustedOrigins). */
-const HOSTS = new Set(["www.lernomi.app", "lernomi.app", "www.exfe.me", "exfe.me"]);
+/** Derin bağlantı yalnız asıl alan adından (bkz. sunucu trustedOrigins; eski exfe.me 2026-10-02'de çıktı). */
+const HOSTS = new Set(["www.lernomi.app", "lernomi.app"]);
 
 /**
  * Ana makine HAM adresten de denetleniyor. RN'in `URL`i düzenli ifadeyle
@@ -98,7 +98,7 @@ const HOSTS = new Set(["www.lernomi.app", "lernomi.app", "www.exfe.me", "exfe.me
  * olarak gelmiyor: `MainActivity` dışa açık, telefondaki herhangi bir
  * uygulama ona açık bir `Intent` ile istediği adresi verebilir.
  */
-const RAW_HOST = /^https:\/\/(?:www\.)?(?:lernomi\.app|exfe\.me)(?:[/?#]|$)/;
+const RAW_HOST = /^https:\/\/(?:www\.)?lernomi\.app(?:[/?#]|$)/;
 
 export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
   if (!raw || !RAW_HOST.test(raw)) return null;

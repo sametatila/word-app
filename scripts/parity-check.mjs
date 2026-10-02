@@ -17599,11 +17599,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
   }
 
-  /* ------------------------------ 304. ALAN ADI LISTELERI AYNI DORT ADI SAYIYOR
+  /* ------------------------------ 304. ALAN ADI LISTELERI AYNI ADLARI SAYIYOR
    *
-   * Iki yerde bir alan adi listesi var ve ikisi de AYNI sebebi yaziyor: eski
-   * alan adi (`exfe.me`) listede KALMAK zorunda, cunku yayimlanmis APK'lerde
-   * API adresi gomulu ve o kurulumlar omur boyu oraya istek atiyor.
+   * Iki yerde bir alan adi listesi var ve ikisi AYNI adlari saymali (eski alan
+   * adi `exfe.me` 2026-10-02'de ikisinden birlikte cikti).
    *
    *   sunucu  `lib/auth/server` `trustedOrigins` - better-auth hangi kokenden
    *           gelen istegi kabul edecek
@@ -17611,7 +17610,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *           gelirse jetonu kabul edecek
    *
    * Ikisinden BIRINDEN bir ad dusurulurse kimse fark etmiyordu: mutasyon
-   * taramasi mobil listeden `exfe.me`yi cikardi ve hicbir kapi kirmizi
+   * taramasi mobil listeden eski alan adini cikardi ve hicbir kapi kirmizi
    * vermedi. Sonucu da sessiz - eski kurulumda derin baglanti calismayi
    * birakir (ya da tersi yonde: sunucu eski kokeni reddeder ve giris kirilir),
    * ama iki taraf ayri ayri "dogru" gorunur.
@@ -17636,8 +17635,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobilAdlar = [...hostBlok.matchAll(/"([a-z0-9.-]+)"/g)].map((m) => m[1]).sort();
     sameList(
       "alan adi listesi okunabildi",
-      ["sunucu=" + (sunucuAdlar.length >= 4 ? "4+" : sunucuAdlar.length), "mobil=" + (mobilAdlar.length >= 4 ? "4+" : mobilAdlar.length)],
-      ["sunucu=4+", "mobil=4+"],
+      ["sunucu=" + (sunucuAdlar.length >= 2 ? "2+" : sunucuAdlar.length), "mobil=" + (mobilAdlar.length >= 2 ? "2+" : mobilAdlar.length)],
+      ["sunucu=2+", "mobil=2+"],
       "bulunan",
       "beklenen",
     );
