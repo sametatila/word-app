@@ -35,7 +35,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const shareTitle = `Lernomi — ${t("meta.tagline")}`;
   return {
     metadataBase: new URL(siteUrl),
-    title: translate(lang, "meta.title", { langs }),
+    /* Alt sayfalar "Başlık · Lernomi": marka her sekmede ve arama sonucunda
+       görünsün ("Impressum" tek başına kimin künyesi olduğunu söylemiyordu). */
+    title: { default: translate(lang, "meta.title", { langs }), template: "%s · Lernomi" },
     description,
     applicationName: "Lernomi",
     manifest: "/manifest.webmanifest",
