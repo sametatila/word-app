@@ -104,6 +104,23 @@ yeniden alınır.
   karede sistem penceresi kalmaz.
 - Simülatörü iş bitince kapat: `xcrun simctl shutdown all` (Samet toplantıdayken açık kalmasın).
 
+## Vitrin videosu kaydı (2026-10-02)
+
+iPhone simülatöründe (tr-de: arayüz Türkçe, kurs Almanca, `screenshots@` Premium) `.shots/store-kit/rec.sh
+start <ad>` / `rec.sh stop` (`xcrun simctl io <udid> recordVideo --codec=h264`, 1320×2868). Akış: Patika,
+konuşma (Der Lebenslauf, "Baştan başla", anlatım `lecture-tr.yaml` ile geçilir, cümle yazılıp GÖNDER
+düğmesine basılır), yürüyüş modu (giriş + tur), günlük tur (kartlar doğru cevaplanır), yazma bölümü
+(`mockrun.sh` + `texts-de.sh`, sonuç ekranı). Kullanılan aralıklar `ffmpeg -ss … -to … -vf fps=30` ile
+`docs/store/raw/video/<set>/<sahne>-N.mp4` olarak kesilir; ham uzun kayıtlar `.shots/store-kit/video/`.
+
+Tuzaklar:
+- Konuşmada ilk gönderim birkaç dakikalık boşluktan sonra "[Bağlantı sorunu. Tekrar dene.]" verebiliyor
+  (bayat HTTP bağlantısı, iOS POST'u kendisi yeniden denemiyor, -1005). Gezinmeden hemen sonra gönder.
+- Simülatör mikrofonu Mac mikrofonunu duymuyor (Simulator'ın macOS mikrofon izni): yürüyüş turu
+  "Duyamadım"a düşüp duraklıyor. Kurguda "Şimdi Almanca karşılığını söyle" anları kullanılır.
+- Konum/izin değiştirmek (`simctl privacy`) uygulamayı kapatır; ilk açılışta mikrofon, konuşma tanıma
+  ve yürüyüş açıklaması sorulur, kayıttan önce geçilir.
+
 ## Mağaza kareleri: dört cihaz (2026-09-29)
 
 Mağaza karelerinin ham ekranları iPhone 18 Pro Max ve iPad Pro 13" (M5) simülatörü, Android telefon

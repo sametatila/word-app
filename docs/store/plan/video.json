@@ -1,0 +1,48 @@
+{
+  "_doc": "Vitrin videolarının tek tanımı. Üretici: scripts/store/video/video.mjs (npm run store:video). İki kurgu: 'promo' Play tanıtım videosu (YouTube, 1920×1080, 40 sn, motion graphics) ve 'preview' App Store App Preview (iPhone 6.9\", 886×1920, 30 sn; Apple kuralı: yalnız uygulamadan kayıt, cihaz/el yok, üstünde kısa metin serbest). Ham kayıtlar docs/store/raw/video/<set>/ altında (iPhone simülatörü, simctl recordVideo; çekim yolu docs/store/screenshots.md). Bir sahnenin parçaları biçime göre ayrışabilir ('clipsPreview' / 'clipsPromo'). Sahne süreleri müziğin ölçüsüne (2 sn) oturur; müzik scripts/store/video/music.mjs ile aynı düzenden sentezlenir.",
+  "fps": 30,
+  "formats": {
+    "promo": { "w": 1920, "h": 1080, "music": "promo", "timeline": [["intro", 4], ["conversation", 8], ["walk", 6], ["daily", 6], ["mock", 6], ["path", 4], ["end", 6]] },
+    "preview": { "w": 886, "h": 1920, "music": "preview", "timeline": [["conversation", 6], ["walk", 6], ["daily", 6], ["mock", 6], ["path", 6]] }
+  },
+  "sets": { "tr-de": { "lang": "tr" } },
+  "scenes": {
+    "intro": {
+      "bg": "orange",
+      "caption": { "tr": { "words": ["Konuş,", "anla,", "sınava hazırlan."], "s": "Almanca, A1'den C1'e, Türkçe anlatımla" } }
+    },
+    "conversation": {
+      "bg": "light", "side": "right",
+      "clips": [{ "src": "conv-1", "in": 0, "out": 2.7, "speed": 1.35 }, { "src": "conv-2", "in": 0.3, "out": 7 }],
+      "lens": { "rect": [0.036, 0.534, 0.815, 0.124], "at": 5.1, "zoom": 1.5 },
+      "caption": { "tr": { "pill": "Yapay zekâ ile konuşma", "h": "Konuş, düzeltmeni anında gör", "s": "Gerçek hayattan sahneler, yapay zekâ karakteriyle" } }
+    },
+    "walk": {
+      "bg": "dark", "side": "left", "rings": [0.5, 0.473], "screenOff": 3.7,
+      "clips": [{ "src": "walk-1", "in": 0.4, "out": 1.9 }, { "src": "walk-2", "in": 0.4, "out": 8 }],
+      "caption": { "tr": { "pill": "Cepte yürüyüş", "premium": "Premium", "h": "Ekran kapalı, yolda çalış", "s": "Türkçe ipucunu duyarsın, Almancasını söylersin" } }
+    },
+    "daily": {
+      "bg": "orange", "side": "right",
+      "clips": [{ "src": "daily-1", "in": 0.4, "out": 3.4 }, { "src": "daily-2", "in": 0.4, "out": 4.2, "speed": 1.27 }],
+      "caption": { "tr": { "pill": "Günlük tur", "h": "Her gün, unutmadan önce", "s": "Aralıklı tekrarla kelime turu" } }
+    },
+    "mock": {
+      "bg": "light", "side": "left",
+      "clips": [{ "src": "mock-1", "in": 0.6, "out": 7.4 }],
+      "lens": { "rect": [0.036, 0.4, 0.928, 0.132], "at": 2.3, "zoom": 1.45 },
+      "caption": { "tr": { "pill": "Deneme sınavları", "h": "Konuşma ve yazma da puanlanır", "s": "Dört becerili deneme sınavları" } }
+    },
+    "path": {
+      "bg": "dark", "side": "right", "ladder": true,
+      "clips": [{ "src": "path-1", "in": 1.55, "out": 2.4 }, { "src": "path-2", "in": 0.4, "out": 5.9 }],
+      "caption": { "tr": { "pill": "Patika", "h": "A1'den C1'e adım adım", "s": "Ünite ünite, Türkçe anlatımla" } }
+    },
+    "end": {
+      "bg": "orange",
+      "caption": { "tr": { "h": "Konuş, anla, sınava hazırlan.", "s": "App Store ve Google Play'de" } }
+    }
+  },
+  "levels": ["A1", "A2", "B1", "B2", "C1"],
+  "currentLevel": "B1"
+}

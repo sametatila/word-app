@@ -110,8 +110,8 @@ Tasarım bu çerçeveyle yapılır:
   kira, seyahat); okul ve çocuk sahnesi yok. Oyunlaştırma (XP, lig, seri) en fazla bir karede ve
   ana mesaj olmadan.
 - **Altyazılar** beceri ve sonuç anlatır; "eğlenceli", "oyun", "çocuk" geçmez.
-- App Store tanıtım videosu (App Preview) GÖNDERİLECEK ama şimdi değil (Cepte yürüyüş + Konuşma,
-  gerçek cihazda; aynı çekim Play ön plan servisi beyanı videosu için de kullanılabilir, AND-3).
+- Vitrin videoları tr-de için hazır (2026-10-02, aşağıda "Vitrin videosu"): App Preview ve Play tanıtım
+  videosu. Play ön plan servisi beyanı videosu ayrı iş: gerçek cihazda, kilit ekranıyla (AND-3).
 
 **Onaylanan Türkçe uzun açıklama (App Store + Play ortak, 2026-09-25):** 41 iddia koda, canlı
 ayara ve içeriğe karşı doğrulandı (kanıt tablosu oturum çıktısında). Kararlar: belge her yerde
@@ -299,7 +299,7 @@ okundu (2026-09-27, Samet çalıştırdı; denetim S9).
 `raw/iphone/review/paywall-signed-in.png`: giriş yapılmış, Premium'suz hesapla (İngilizce arayüz) iki plan,
 "Start free trial", deneme/yenileme şartı ve bağlantılar bir karede; iki aboneliğe yüklendi (2026-10-01).
 `screenshots@` hesabı Premium olduğu için çekim süresince bonus Premium geçici kapatıldı ve birebir geri
-yazıldı (Samet'in onayıyla). App Preview videosu ayrı iş (denetim M3).
+yazıldı (Samet'in onayıyla). App Preview videosu: aşağıda "Vitrin videosu".
 
 ## Yeniden üretmek
 
@@ -338,6 +338,41 @@ sonda listelenir. `--fallback android-phone=iphone` yalnız yerleşim provası: 
 
 Kontrol: `out/_sheets/<mağaza>.png` (bütün kareler) ve `<mağaza>-search.png` (ilk üç kare arama sonucu
 boyunda); başlık taşması, Türkçe/Almanca harf ve kırpım buradan gözle denetlenir.
+
+## Vitrin videosu
+
+```bash
+npm run store:video                         # iki biçim, plandaki bütün setler
+npm run store:video -- --format preview     # yalnız App Preview
+npm run store:video -- --format promo --still 10,27.5   # durağan kontrol kareleri
+```
+
+| Biçim | Nereye | Ölçü | Süre | İçerik |
+|---|---|---|---|---|
+| `preview` | App Store App Preview, iPhone 6.9" | 886×1920, 30 fps | 29,97 sn | Yalnız ekran kaydı + üstte kısa başlık çipi (Apple: uygulamadan kayıt, cihaz/el yok, en çok 30 sn) |
+| `promo` | Play tanıtım videosu (YouTube bağlantısı) | 1920×1080, 30 fps | 40 sn | Motion graphics: kinetik başlık, sahneler arası süzülen telefon, zemin geçişi, büyüteç, yürüyüşte dinleme halkaları ve kararan ekran, Patika'da A1–C1 basamakları, kapanış kartı |
+
+Tanım `plan/video.json` (sahne sırası ve süresi, hangi ham parçanın hangi aralığı, büyüteç alanı, metinler);
+üretici `scripts/store/video/video.mjs`, çıktı `out/video/<set>-<biçim>.mp4` (H.264 High, AAC 256k 48 kHz,
+−16 LUFS). Tasarım dili mağaza kareleriyle aynı (Bricolage, turuncu/koyu/açık zemin, gerçek arayüz, büyüteç
+gerçek bileşen); konfeti, maskot, uydurma arayüz eklenmez. Ekranda görünen konfeti uygulamanın kendisi
+(sınavı geçince).
+
+**Müzik** `scripts/store/video/music.mjs` ile sıfırdan sentezleniyor (örnek ya da hazır parça yok, telif
+ve atıf yok): 120 BPM, Re majör I–V–vi–IV, davul/bas/pad/arpej, sahne sınırlarında yükselen ses ve vuruş.
+Sahneler 2 sn'lik ölçüye oturur; düzen ölçü ölçü dosyanın başında. Hazır CC0 parça arandı (2026-10-02):
+FreePD kapanmış, Commons/OpenGameArt'taki CC0 parçalar deneysel ya da oyun müziği. Başka parça
+kullanılacaksa lisansı (ticari kullanım, atıfsız) buraya yazılır ve `music.mjs` yerine o dosya verilir.
+
+**Ham kayıt** `raw/video/<set>/` (iPhone 18 Pro Max simülatörü, `xcrun simctl io recordVideo`, yalnız
+kullanılan aralıklar kesilip 30 fps H.264 olarak saklı). Çekim yolu `docs/store/screenshots.md`
+"Vitrin videosu kaydı". Büyüteç alanı (`lens.rect`) kayıttaki bileşenin oranı: kayıt yenilenirse durağan
+kareyle denetlenir. Sonuç ekranındaki "1 görev yapay zekâ puanı almadı" notu ve yürüyüşte simülatörün
+mikrofonu duymadığı için "Duyamadım" anları kurguya alınmadı.
+
+Yükleme: App Preview App Store Connect'te sürüm sayfasından (iPhone 6.9"), poster karesi seçilir; Play
+tanıtım videosu YouTube'a (liste dışı, reklamsız) yüklenip bağlantısı Console › Mağaza kaydına girilir.
+İkisi de Samet'te.
 
 ## Play ikonu (512×512)
 
