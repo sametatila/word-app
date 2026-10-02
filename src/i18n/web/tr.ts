@@ -749,7 +749,7 @@ export const trWeb: Record<string, string> = {
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
   "meta.title": "Lernomi — {langs} öğren",
   "meta.tagline": "Konuşarak dil öğren, sınava hazırlan",
-  "meta.description": "A1'den C1'e adım adım, Türkçe anlatımla ve konuşarak dil öğren: yapay zekâ geri bildirimli konuşma, deneme sınavları ve günlük kelime turu. Kurslar: {langs}.",
+  "meta.description": "{langs}: A1'den C1'e Türkçe anlatımla, konuşarak öğren. Yapay zekâ geri bildirimli konuşma, deneme sınavları ve günlük kelime turu.",
   "meta.og_sub": "A1'den C1'e · yapay zekâyla konuşma · 50+ deneme sınavı",
   "meta.og_native": "Türkçe anlatım",
   "meta.profile_desc": "{name} Lernomi'de dil öğreniyor. Sen de istediğin dili seç, birlikte çalışalım.",
