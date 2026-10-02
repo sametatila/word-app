@@ -14,7 +14,7 @@ import { SoundSettings } from "@/components/sound-settings";
 import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
 import { hasMicConsent, revokeMicConsent } from "@/lib/mic-consent";
-import { ThemeSetting } from "@/components/theme-toggle";
+import { ThemeSetting } from "@/components/theme-setting";
 import { useT, useLang } from "@/lib/i18n/client";
 import { Group, Row, SETTINGS_TITLE, SettingsPanelTitle } from "@/components/settings-section";
 import { Field, InsetList } from "@/components/field";

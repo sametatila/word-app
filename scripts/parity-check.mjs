@@ -12554,7 +12554,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["kelime suzgeci", "src/components/word-list.tsx", "mobile/src/screens/WordsScreen.tsx"],
       ["gorunurluk", "src/components/social/social-settings.tsx", "mobile/src/screens/SocialSettingsScreen.tsx"],
       ["hatirlatma saati", "src/components/notification-settings.tsx", "mobile/src/screens/NotifPrimeScreen.tsx"],
-      ["tema segmenti", "src/components/theme-toggle.tsx", "mobile/src/screens/SettingsScreen.tsx"],
+      ["tema segmenti", "src/components/theme-setting.tsx", "mobile/src/screens/SettingsScreen.tsx"],
       ["avatar parcalari", "src/components/avatar-editor.tsx", "mobile/src/screens/AvatarScreen.tsx"],
       ["sinav sikki", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
       ["beceri sorusu", "src/components/skills/quiz.tsx", "mobile/src/game/skillQuiz.tsx"],
@@ -13037,7 +13037,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "hareketi azalt blogu eksiksiz",
       [
-        "kutuphane=" + (/reducedMotion="user"/.test(sil(read("src/components/motion-provider.tsx"))) ? "user" : "YOK"),
+        "kutuphane=" + (/reducedMotion="user"/.test(sil(read("src/components/motion-config.tsx"))) ? "user" : "YOK"),
         "sure=" + (/animation-duration: 0\.01ms !important/.test(blok) ? "var" : "YOK"),
         "yineleme=" + (/animation-iteration-count: 1 !important/.test(blok) ? "var" : "YOK"),
         "gecis=" + (/transition-duration: 0\.01ms !important/.test(blok) ? "var" : "YOK"),
@@ -21298,7 +21298,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 {
   const silG = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
   const mobAyar = silG(read("mobile/src/screens/SettingsScreen.tsx"));
-  const webAyar = silG(read("src/components/theme-toggle.tsx"));
+  const webAyar = silG(read("src/components/theme-setting.tsx"));
 
   /* Ray: mobilde `THEME_OPTIONS` bloğunun hemen ustundeki kap. */
   const i = mobAyar.indexOf("THEME_OPTIONS.map");

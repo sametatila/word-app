@@ -2,9 +2,14 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Confetti } from "@/components/celebrate";
+import dynamic from "next/dynamic";
 import { useT } from "@/lib/i18n/client";
 import { IconLine, lineInset } from "@/components/icon-line";
+
+/* Konfeti yalnız kutlama anında: `celebrate` framer-motion'a bağlı ve bu dosya
+   kök düzenin hata/bulunamadı sınırlarında (her sayfanın ilk paketinde). Sonradan
+   yüklenmesi tanıtım sayfasını framer'sız bırakıyor (2026-10-02, mobil performans). */
+const Confetti = dynamic(() => import("@/components/celebrate").then((m) => m.Confetti), { ssr: false });
 
 /**
  * AKIŞ ŞABLONLARI — kapak, sonuç, etap kartı ve durum ekranı tek dilde.

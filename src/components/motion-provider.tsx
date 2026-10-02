@@ -1,7 +1,9 @@
 "use client";
 
-import { MotionConfig } from "framer-motion";
+import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { LANDING_PATH } from "@/lib/landing-path";
 
 /**
  * framer-motion animasyonlarını "hareketi azalt" tercihine bağlar.
@@ -22,6 +24,21 @@ import type { ReactNode } from "react";
  * Mobil karşılığı `lib/reduceMotion.ts`; orada tek bir kütüphane olmadığı için
  * sekiz yüzey tek tek okuyor.
  */
+/*
+ * TANITIM SAYFASINDA YOK (2026-10-02). Sağlayıcı kök düzendeydi ve
+ * framer-motion'ın çekirdeğini (~53 KB sıkıştırılmış) her sayfanın ilk
+ * script listesine koyuyordu; tanıtım sayfası framer-motion KULLANMIYOR
+ * (kendi hareketi `LandingMotion`, düz CSS/JS). Mobil Lighthouse'ta ilk
+ * çizimden önce istenen her bayt LCP tahmine giriyor. Ayar artık ayrı bir
+ * parçada (`motion-config`) ve tanıtım adreslerinde hiç çizilmiyor; öteki
+ * sayfalarda sunucu çiziminde de var, yani davranış aynı. Tanıtımdan
+ * uygulamaya istemci içi geçişte parça o an yükleniyor.
+ */
+const MotionConfigUser = dynamic(() => import("@/components/motion-config"));
+const LANDING = new Set(Object.values(LANDING_PATH));
+
 export function MotionProvider({ children }: { children: ReactNode }) {
-  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
+  const pathname = usePathname();
+  if (LANDING.has(pathname)) return <>{children}</>;
+  return <MotionConfigUser>{children}</MotionConfigUser>;
 }
