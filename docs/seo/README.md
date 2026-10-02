@@ -38,7 +38,7 @@ Kural: `noindex` sayfa sitemap'e girmez; yeni herkese açık sayfa ya sitemap'e 
 | Ne | Durum | Ayrıntı |
 |---|---|---|
 | Google Search Console | ✅ 2026-10-02 (Samet) | "Alan adı" mülkü `lernomi.app` (www + çıplak + http/https hepsi kapsamda), Cloudflare DNS TXT ile doğrulandı (`google-site-verification` kaydı DNS'te; silinirse mülk düşer). Sitemap gönderildi; `/`, `/en`, `/de` için URL denetimi + "Dizine eklenmesini iste" yapıldı |
-| Bing Webmaster Tools | ⏳ Samet | Search Console'dan içe aktarma. Bing; DuckDuckGo, Ecosia ve ChatGPT aramasını da besliyor |
+| Bing Webmaster Tools | ✅ 2026-10-02 (Samet) | Mülk `https://www.lernomi.app` ("Add site" www için "Site already added" diyor). Doğrulama Cloudflare DNS'te `verify.bing.com`a giden CNAME kaydıyla (DNS only; silinirse mülk düşer). Sitemap gönderildi; `/`, `/en`, `/de` URL Submission ile gönderildi. Bing; DuckDuckGo, Ecosia ve ChatGPT aramasını da besliyor |
 | Mağaza kayıtlarında web sitesi alanı | ⏳ Samet | App Store "Marketing URL" ve Play "Web sitesi": `https://www.lernomi.app` |
 | Dış bağlantılar | ⏳ Samet | Sosyal profiller, Product Hunt, AlternativeTo, dil öğrenme toplulukları |
 | Cloudflare yapay zekâ bot engeli | ✅ kapalı | 2026-10-02 nginx günlüğü: GPTBot, ClaudeBot, OAI-SearchBot, Amazonbot, meta-externalagent 200 alıyor. "Block AI bots" açılırsa asistanlar siteyi okuyamaz |
@@ -46,7 +46,8 @@ Kural: `noindex` sayfa sitemap'e girmez; yeni herkese açık sayfa ya sitemap'e 
 ## Kontrol
 
 - Yaklaşık 2026-10-23: "lernomi" aramasında ana sayfa üstte mi; Search Console › Sayfalar'da `/en`
-  ve `/de` dizinde mi, hukuki sayfalar "noindex ile hariç tutuldu" mu.
+  ve `/de` dizinde mi, hukuki sayfalar "noindex ile hariç tutuldu" mu; Bing › URL Inspection'da
+  üç adres "Indexed" mi.
 - Canlı künye: `curl -s https://www.lernomi.app/en | grep -oE '<link rel="(canonical|alternate)"[^>]*>'`
 
 ## Sıradaki fırsat (karar Samet'te)
