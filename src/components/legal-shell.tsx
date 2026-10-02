@@ -97,7 +97,8 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
   /* Belgenin dili arayüzün dilinden bağımsız: `<html lang>` arayüzü söylüyor,
      bu kapsayıcı okunan metnin dilini (ekran okuyucu, yazım, arama motoru). */
   return (
-    <div lang={locale} className="mx-auto w-full max-w-3xl px-5 py-10">
+    // <main>: sayfanın ana bölgesi (Lighthouse `landmark-one-main`; ekran okuyucu "ana içeriğe atla").
+    <main lang={locale} className="mx-auto w-full max-w-3xl px-5 py-10">
       <DocHeader locale={locale} />
       <h1 className="text-display tracking-tight">{page.title}</h1>
       {isContract ? (
@@ -135,7 +136,7 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
         ) : null}
       </article>
       <LegalStyles />
-    </div>
+    </main>
   );
 }
 

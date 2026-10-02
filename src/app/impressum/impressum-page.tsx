@@ -15,12 +15,12 @@ import { LegalStyles } from "@/lib/legal/markdown";
 export async function ImpressumPage({ locale }: { locale: LegalLocale }) {
   const cfg = await legalConfig();
   return (
-    <div className="mx-auto w-full max-w-3xl px-5 py-10">
+    <main className="mx-auto w-full max-w-3xl px-5 py-10">
       <DocHeader locale={locale} />
       <h1 className="text-display tracking-tight">{IMPRESSUM_TEXT[locale].title}</h1>
       <ImpressumBody cfg={cfg} locale={locale} />
       <LegalStyles />
-    </div>
+    </main>
   );
 }
 
