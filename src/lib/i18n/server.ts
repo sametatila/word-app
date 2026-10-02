@@ -1,7 +1,7 @@
 import "server-only";
 import { cookies, headers } from "next/headers";
 import { DEFAULT_NATIVE, isNativeLang, translate, type NativeLang } from "@/lib/i18n/dict";
-import { LANG_COOKIE } from "@/lib/i18n/cookie";
+import { LANG_COOKIE, LANG_HEADER } from "@/lib/i18n/cookie";
 
 /**
  * Sunucu tarafında arayüz dili.
@@ -60,6 +60,13 @@ export async function getLang(): Promise<NativeLang> {
  * betiği, test) `headers()` fırlatır; o da `null`.
  */
 export async function requestLang(): Promise<NativeLang | null> {
+  try {
+    /* Dile sabit adres (`/en`, `/de`): adresin dili çerezi de geçer. */
+    const v = (await headers()).get(LANG_HEADER);
+    if (isNativeLang(v)) return v;
+  } catch {
+    /* istek bağlamı yoksa aşağıdakiler de düşer */
+  }
   try {
     const v = (await cookies()).get(LANG_COOKIE)?.value;
     if (isNativeLang(v)) return v;

@@ -228,7 +228,7 @@
 .pairMeta { color: var(--l-ink-2); font-size: 0.95rem; }
 .pairYours { margin-top: 10px; font-size: 0.9rem; font-weight: 700; color: var(--color-brand); }
 .pairSwitch {
-  margin-top: 10px; justify-self: start; padding: 0; border: 0; background: none; font: inherit;
+  display: inline-block; margin-top: 10px; justify-self: start; padding: 0; border: 0; background: none; font: inherit;
   font-size: 0.92rem; font-weight: 600; color: var(--color-brand); cursor: pointer;
   text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px;
 }
@@ -341,7 +341,7 @@
 .langs { display: inline-flex; border: 1.5px solid var(--l-line-2); border-radius: 999px; padding: 3px; background: var(--bg); }
 .langOn, .langBtn { padding: 6px 12px; border-radius: 999px; font: inherit; font-size: 0.9rem; font-weight: 600; border: 0; }
 .langOn { background: var(--text); color: var(--bg); }
-.langBtn { background: none; color: var(--l-ink-2); cursor: pointer; }
+.langBtn { display: inline-block; background: none; color: var(--l-ink-2); cursor: pointer; text-decoration: none; }
 .langBtn:hover { color: var(--text); }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { FALLBACK_HOST, FALLBACK_ORIGIN, PRIMARY_ORIGIN } from "@/lib/site";
+import { LANG_HEADER } from "@/lib/i18n/cookie";
 
 /**
  * BAĞLANTI ÖNİZLEMESİ İÇİN AÇIK PROFİL.
@@ -25,7 +26,23 @@ import { FALLBACK_HOST, FALLBACK_ORIGIN, PRIMARY_ORIGIN } from "@/lib/site";
 const PREVIEW_BOTS =
   /facebookexternalhit|facebot|whatsapp|twitterbot|telegrambot|slackbot|slack-imgproxy|discordbot|linkedinbot|skypeuripreview|vkshare|viber|pinterest|redditbot|embedly|mastodon|bluesky|iframely|snapchat|microsoftpreview|teams/i;
 
+/**
+ * DİLE SABİT TANITIM ADRESLERİ (`/en`, `/de`; bkz. `lib/landing-path`).
+ *
+ * Sayfa kökteki tanıtım sayfasının aynısı; dili adresten geliyor. Dil, isteğe
+ * başlık olarak yazılıyor ki kök düzen (`<html lang>`, sözlük sağlayıcısı) ve
+ * künye de aynı dili görsün: yalnız sayfaya parametre geçmek düzeni çerezin
+ * dilinde bırakırdı.
+ */
+const FIXED_LANG: Record<string, string> = { "/en": "en", "/de": "de" };
+
 export function proxy(request: NextRequest) {
+  const fixed = FIXED_LANG[request.nextUrl.pathname];
+  if (fixed) {
+    const headers = new Headers(request.headers);
+    headers.set(LANG_HEADER, fixed);
+    return NextResponse.next({ request: { headers } });
+  }
   if (!PREVIEW_BOTS.test(request.headers.get("user-agent") ?? "")) return NextResponse.next();
   return new NextResponse(null, {
     status: 307,
@@ -36,4 +53,5 @@ export function proxy(request: NextRequest) {
   });
 }
 
-export const config = { matcher: "/u/:username" };
+// `/en` ve `/de` `lib/landing-path` `LANDING_FIXED` ile aynı (eşleştirici durağan olmalı).
+export const config = { matcher: ["/u/:username", "/en", "/de"] };

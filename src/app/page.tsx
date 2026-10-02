@@ -12,6 +12,11 @@ import { appControl } from "@/lib/app-control";
 import { LandingLangButton } from "@/components/landing/landing-lang";
 import { LANG_LABEL, NATIVE_LANGS } from "@/lib/i18n/dict";
 import { offeredNativeLangs } from "@/lib/courses";
+import type { Metadata } from "next";
+import { translate } from "@/lib/i18n/dict";
+import { courseList, shareMeta } from "@/lib/og/langs";
+import { SITE_URL } from "@/lib/site";
+import { landingLanguages, landingPath } from "@/lib/landing-path";
 import { LANDING, PAIRS, SCREEN_FALLBACK, SCREEN_SET, SWITCH_LABEL, type LandingCopy, type Pillar, type ScreenId } from "@/content/landing";
 
 /*
@@ -38,6 +43,54 @@ const display = Bricolage_Grotesque({
 });
 
 const SCOPE_ID = "landing-trail";
+
+/*
+  ARAMA MOTORU KÜNYESİ (2026-10-02). Ana sayfada `canonical` ve `hreflang`
+  yoktu; hukuki sayfalarda ikisi de vardı ve Google marka aramasında onları
+  öne çıkarıyordu. Kanonik adres GÖSTERİLEN dilin sabit adresi: `/` İngilizce
+  çizildiyse kanonik `/en`. Başlık ve açıklama kök düzenden (aynı dil);
+  `openGraph` alt segmentte birleşmeyip yerine geçtiği için tam veriliyor.
+  Sayfa `/en` ve `/de`de de aynen kullanılıyor (bkz. `lib/landing-path`).
+*/
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getLang();
+  const path = landingPath(lang);
+  const description = translate(lang, "meta.description", { langs: courseList(lang) });
+  return {
+    alternates: { canonical: path, languages: landingLanguages() },
+    ...shareMeta(lang, `Lernomi — ${translate(lang, "meta.tagline")}`, description, path === "/" ? SITE_URL : `${SITE_URL}${path}`),
+  };
+}
+
+/*
+  Yapısal veri: Google sonuçta site adını ("Lernomi") `WebSite`tan, logoyu
+  `Organization`dan alıyor. Yalnız gerçek olan yazılıyor: puan, yorum, fiyat
+  yok; mağaza bağlantısı yalnız yayındaki mağaza için.
+*/
+function StructuredData({ lang, stores }: { lang: string; stores: string[] }) {
+  const home = `${SITE_URL}/`;
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", "@id": `${home}#website`, name: "Lernomi", url: home, inLanguage: lang, publisher: { "@id": `${home}#org` } },
+      {
+        "@type": "Organization",
+        "@id": `${home}#org`,
+        name: "Lernomi",
+        url: home,
+        logo: `${SITE_URL}/icon-512.png`,
+        ...(stores.length ? { sameAs: stores } : {}),
+      },
+    ],
+  };
+  return (
+    <script
+      type="application/ld+json"
+      // `<` kaçırılıyor: metin içinde `</script>` betiği erken kapatamasın.
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
+    />
+  );
+}
 
 /** Masaüstündeki yapışkan telefonun ekran sırası: açılış, sonra sütunlar. */
 const DOCK: ScreenId[] = ["path", "unit", "conversation", "mock-task", "walk-intro", "home", "skills"];
@@ -171,8 +224,9 @@ export default async function Home() {
 
   return (
     <div className={`${display.className} ${s.root}`}>
+      <StructuredData lang={lang} stores={[ios, android].filter((u): u is string => Boolean(u))} />
       <header className={`${s.top} ${s.wrap}`}>
-        <Link className={s.brand} href="/">
+        <Link className={s.brand} href={landingPath(lang)}>
           {/* eslint-disable-next-line @next/next/no-img-element -- küçük sabit PNG simge */}
           <img src="/logo-mark.png" width={34} height={34} alt="" />
           Lernomi
@@ -517,7 +571,7 @@ export default async function Home() {
 
       <footer className={s.footer}>
         <div className={`${s.wrap} ${s.foot}`}>
-          <Link className={s.brand} href="/">
+          <Link className={s.brand} href={landingPath(lang)}>
             {/* eslint-disable-next-line @next/next/no-img-element -- küçük sabit PNG simge */}
             <img src="/logo-mark.png" width={34} height={34} alt="" loading="lazy" />
             Lernomi
