@@ -425,6 +425,7 @@ jobs:
           npm run test:captcha
           npm run test:ai-providers
           npm run test:chat-usage
+          npm run test:ai-budget
           npm run test:stt-pa
           npm run test:password
           npm run test:award
