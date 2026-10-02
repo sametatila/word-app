@@ -35,7 +35,8 @@ test("ağ yokken tur kuyruğa alınır ve günü korunur", async () => {
   api.mockRejectedValue(new Error("network"));
   await expect(submitAnswers(answers, "2026-09-01", 42)).rejects.toBeTruthy();
   const raw = await AsyncStorage.getItem(KEY);
-  expect(JSON.parse(raw ?? "[]")).toEqual([{ answers, day: "2026-09-01", seconds: 42 }]);
+  // `batch`: tekrar kimliği (999720096) — kuyruktan yeniden gönderimde aynı tur iki kez sayılmasın.
+  expect(JSON.parse(raw ?? "[]")).toEqual([{ answers, day: "2026-09-01", seconds: 42, batch: expect.any(String) }]);
 });
 
 test("biçim hatası (400) kuyruğa girmez", async () => {
