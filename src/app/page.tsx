@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bricolage_Grotesque } from "next/font/google";
+import localFont from "next/font/local";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getAccountUserId } from "@/lib/auth/server";
 import { SignOutLink } from "@/components/sign-out-link";
@@ -36,10 +36,26 @@ import { LANDING, PAIRS, SCREEN_FALLBACK, SCREEN_SET, SWITCH_LABEL, type Landing
   sıkıştırıyor, optik boyut ekseni gövdeyi okunur tutuyor), tek hareket fikri
   (kaydırdıkça çizilen iz + masaüstünde yapışkan telefon, `LandingMotion`).
 */
-const display = Bricolage_Grotesque({
-  subsets: ["latin", "latin-ext"],
-  axes: ["opsz", "wdth"],
+/*
+  YAZI TİPİ SİTEDE, KIRPILMIŞ (2026-10-02, mobil performans). Google'dan iki
+  dosya geliyordu (latin 131 KB + latin-ext 54 KB), ilk çizimden önce iniyordu
+  ve mobil Lighthouse'ta JavaScript'ten sonra en büyük kalemdi. Şimdi tek dosya,
+  91 KB: yalnız sayfanın kullandığı aralıklar (ağırlık 400–750, genişlik
+  %80–100) ve Türkçe + Almanca harfler; optik boyut 32'de sabit (otomatikle yan
+  yana ekran görüntüsünde fark yok). Lisans OFL, ayrılmış ad yok
+  (`fonts/OFL-BricolageGrotesque.txt`). Yeniden üretmek için kaynak
+  `BricolageGrotesque[opsz,wdth,wght].ttf` (google/fonts) ve fontTools:
+    fonttools varLib.instancer KAYNAK.ttf opsz=32 wght=400:750 wdth=80:100 -o f.ttf
+    pyftsubset f.ttf --unicodes="U+0020-007E,U+00A0-00FF,U+0100-017F,U+0192,U+02C6,U+02DA,U+02DC,U+2010-2027,U+2030-203A,U+2044,U+20AC,U+2122,U+2190-2193,U+2212,U+2215,U+FEFF,U+FFFD" \
+      --layout-features='*' --flavor=woff2 --output-file=bricolage-grotesque-lernomi.woff2
+  Sayfaya yeni ağırlık ya da genişlik eklenirse aralık da genişletilir.
+*/
+const display = localFont({
+  src: "./fonts/bricolage-grotesque-lernomi.woff2",
+  weight: "400 750",
+  style: "normal",
   display: "swap",
+  declarations: [{ prop: "font-stretch", value: "80% 100%" }],
 });
 
 const SCOPE_ID = "landing-trail";
