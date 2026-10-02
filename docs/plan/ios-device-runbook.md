@@ -431,6 +431,11 @@ mikrofonun açık olduğunu görüyor ve turu oradan durdurabiliyor.
 tekrarla.
 **Geçti:** tur bitiyor, mikrofon kapanıyor, uygulamaya dönünce tur özeti görünüyor ve o
 ana kadarki cevaplar kaydedilmiş (seri/XP artmış).
+Kart "Çalmıyor"a döner ve bir süre kilit ekranında kalır: iOS SİSTEM davranışı (Müzik ve
+podcast uygulamalarında da böyle), hata değil. Kartı kaldıran genel bir API yok; kod kaydı
+siler (`nowPlayingInfo = nil`), komutları kapatır ve oturumu bırakır, kart ekran yeniden
+kilitlenince ya da başka bir uygulama ses çalınca kalkar. Android'de bildirim kaldırıldığı
+için oynatıcı hemen kaybolur; fark platformdan.
 **Geçmezse:** `LernomiSpeech.swift` `enableWalkRemoteCommands` → `LernomiWalkStop`,
 `mobile/src/lib/stt.ts` `onWalkStop`, `WalkModeScreen.tsx` durdurma yolu.
 
