@@ -50,6 +50,20 @@ Kural: `noindex` sayfa sitemap'e girmez; yeni herkese açık sayfa ya sitemap'e 
   üç adres "Indexed" mi.
 - Canlı künye: `curl -s https://www.lernomi.app/en | grep -oE '<link rel="(canonical|alternate)"[^>]*>'`
 
+## Performans (Lighthouse, 2026-10-02)
+
+Son ölçüm (canlı, mobil benzetim / masaüstü): `/` 80–94 / 97, `/en` 80–81, `/de` 80–87; erişilebilirlik
+97, en iyi uygulamalar 100, SEO her sayfada 100. Gerçek yükleme ~0,25 s; mobil puan Lighthouse'un yavaş
+4G benzetiminden, belirleyen JavaScript miktarı.
+
+- Statik dosyalar çift iniyordu (aynı JS/yazı tipi hem `?dpl=` ile hem eksiz): `NEXT_DEPLOYMENT_ID`
+  yalnız derlemede vardı, `next start` kimliği boş görüyordu. `next.config.ts` `deploymentId()` artık
+  değişken yoksa checkout'un commit'ini okuyor (fa4090fb8). Sayfa ağırlığı 1,2 MB → 790 KB, istek
+  37 → 31; yanıtta `x-nextjs-deployment-id` artık var (sürüm kayması koruması canlıda ilk kez çalışıyor).
+- Next.js 16.3.5 → 16.3.8 (e8c921544): güvenlik düzeltmeleri (next/og RCE, görsel SSRF, önbellek zehirlenmesi).
+- Açık: CTA düğmesi beyaz yazı / #fb8f2a kontrastı 2,31 (WCAG 3; erişilebilirliği 97'de tutan tek
+  bulgu, marka rengi kararı Samet'te). Tanıtım görselleri 4 saat önbellekte (kazanç küçük, bırakıldı).
+
 ## Sıradaki fırsat (karar Samet'te)
 
 Asıl trafik içerikten gelir: herkese açık rehber ve kelime listesi sayfaları ("Almanca A1 kelime
