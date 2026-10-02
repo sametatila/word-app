@@ -103,6 +103,17 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 
   /**
+   * Arayüz sözlükleri TARAYICI DERLEMESİNE GİRMİYOR: orada boş kayıt
+   * (`dicts-browser`), yalnız arayüz dili sonradan yükleniyor. Gerekçe ve
+   * akış `src/lib/i18n/dicts-all.ts`. Sunucu ve betikler asıl modülü görüyor.
+   */
+  turbopack: {
+    resolveAlias: {
+      "@/lib/i18n/dicts-all": { browser: "./src/lib/i18n/dicts-browser.ts" },
+    },
+  },
+
+  /**
    * Dağıtım kimliği — blue-green geçişinde SÜRÜM KAYMASI koruması.
    *
    * Sorun log'da görünüyordu: her deploy'dan sonra sunucu "Failed to find

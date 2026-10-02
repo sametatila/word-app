@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+import { Suspense, createContext, startTransition, use, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
+import { hasDict, loadDict } from "@/lib/i18n/dict-load";
 
 /**
  * İstemci tarafında arayüz dili.
@@ -28,13 +29,40 @@ export function LangProvider({ lang, children }: { lang: NativeLang; children: R
     yerinde kalıyor.
   */
   const [cur, setCur] = useState<NativeLang>(lang);
+  /*
+    Dil değişimi SÖZLÜK YÜKLENDİKTEN SONRA ve geçiş (transition) olarak: yeni
+    dilin parçası henüz inmediyse ekran eski dilde kalır, boş sınır
+    (`Suspense` yedeği) hiç görünmez.
+  */
+  const change = useCallback((next: NativeLang) => {
+    void loadDict(next).then(() => startTransition(() => setCur(next)));
+  }, []);
   /* Sunucu yeni bir dil bildirdiyse (gezinme, gerçek tazeleme) o kazanır. */
-  useEffect(() => { setCur(lang); }, [lang]);
+  useEffect(() => { change(lang); }, [lang, change]);
   return (
-    <SetLangContext.Provider value={setCur}>
-      <LangContext.Provider value={cur}>{children}</LangContext.Provider>
+    <SetLangContext.Provider value={change}>
+      <LangContext.Provider value={cur}>
+        <Suspense fallback={null}>
+          <DictGate lang={cur}>{children}</DictGate>
+        </Suspense>
+      </LangContext.Provider>
     </SetLangContext.Provider>
   );
+}
+
+/**
+ * Sözlük yüklenene kadar bekleten kapı (2026-10-02).
+ *
+ * Tarayıcıya artık üç dilin sözlüğü birden gitmiyor; yalnız arayüz dili,
+ * ayrı bir parça olarak (bkz. `lib/i18n/dicts-all`). İlk açılışta parça
+ * henüz yokken burası askıya alınıyor ve React SUNUCU HTML'İNİ OLDUĞU GİBİ
+ * bırakıyor (hydration'da askıya alınan sınır yedeğini göstermez): sayfa
+ * aynı anda görünüyor, yalnız etkileşim parça inince başlıyor. Sunucuda
+ * sözlükler baştan kayıtlı, kapı hiç beklemiyor.
+ */
+function DictGate({ lang, children }: { lang: NativeLang; children: ReactNode }) {
+  if (!hasDict(lang)) use(loadDict(lang));
+  return <>{children}</>;
 }
 
 export function useLang(): NativeLang {

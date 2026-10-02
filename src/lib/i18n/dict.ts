@@ -1,9 +1,4 @@
-import { trBase } from "@/i18n/base/tr";
-import { enBase } from "@/i18n/base/en";
-import { deBase } from "@/i18n/base/de";
-import { trWeb } from "@/i18n/web/tr";
-import { enWeb } from "@/i18n/web/en";
-import { deWeb } from "@/i18n/web/de";
+import { ALL_DICTS } from "@/lib/i18n/dicts-all";
 import { NATIVE_LANGS, DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
 /**
@@ -17,11 +12,16 @@ import { NATIVE_LANGS, DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
  * Sunucu tarafı zaten hazırdı — `profiles.native_lang` sütunu var, `/api/me` ve
  * `/api/profile` okuyup yazıyor. Eksik olan yalnız arayüzün onu kullanmasıydı.
  */
-export const DICTS: Record<NativeLang, Record<string, string>> = {
-  tr: { ...trBase, ...trWeb },
-  en: { ...enBase, ...enWeb },
-  de: { ...deBase, ...deWeb },
-};
+/*
+ * KAYIT, SABİT DEĞİL (2026-10-02): sunucuda üç dil baştan dolu; tarayıcıda boş
+ * başlar ve yalnız arayüz dili yüklenir (`lib/i18n/dicts-all` gerekçesi).
+ */
+export const DICTS: Partial<Record<NativeLang, Record<string, string>>> = ALL_DICTS;
+
+/** Yüklenen sözlüğü kaydeder (`lib/i18n/dict-load`). Aynı dil için aynı içerik: tekrar çağrı zararsız. */
+export function registerDict(lang: NativeLang, dict: Record<string, string>): void {
+  DICTS[lang] = dict;
+}
 
 export { NATIVE_LANGS, DEFAULT_NATIVE };
 export type { NativeLang };
@@ -69,7 +69,10 @@ export function translate(
    * etkilenmiyor. İkiden fazla biçim isteyen diller (Lehçe, Rusça) gelirse
    * burası `Intl.PluralRules`e döner; üç dil için o makine fazla.
    */
-  const bul = (k: string): string | undefined => DICTS[lang]?.[k] ?? DICTS[DEFAULT_NATIVE]?.[k];
+  /* Tarayıcıda yalnız arayüz dili yüklü: istenen dil de Türkçe de yoksa
+     yüklü olan sözlük (anahtar adından iyidir; anahtarlar üç dilde eşit). */
+  const bul = (k: string): string | undefined =>
+    DICTS[lang]?.[k] ?? DICTS[DEFAULT_NATIVE]?.[k] ?? Object.values(DICTS).find((d) => d?.[k] !== undefined)?.[k];
   const tekil = vars?.n !== undefined && Number(vars.n) === 1;
   const raw = (tekil ? bul(`${key}.one`) : undefined) ?? bul(key) ?? key;
   if (!vars) return raw;
