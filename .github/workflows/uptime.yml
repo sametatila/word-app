@@ -13,8 +13,14 @@
 # ve UptimeRobot'un ücretsiz planında olmayan sertifika süresini ölçüyor.
 #
 # NE YAPIYOR (günde bir, 06:17 UTC; elle de tetiklenebilir):
-#   - /api/config HTTP 200 mü (3 deneme, 20 sn arayla - tek hıçkırık alarm değil)
-#   - HTTPS sertifikası 10 günden az mı kaldı
+#   - /api/config HTTP 200 mü (3 deneme, 20 sn arayla - tek hıçkırık alarm değil),
+#     asıl adreste ve mobilin yedek adresinde (lernomi.rumpuskit.com; engelli
+#     ağlarda tek yol, sunucudaki bekçi de yokluyor)
+#   - HTTPS sertifikası 10 günden az mı kaldı (iki adres)
+#   - alan adlarının kaydı 30 günden az mı kaldı (lernomi.app, rumpuskit.com; RDAP)
+#   - Telegram jetonu geçerli mi (getMe): jeton iptal olursa sunucudaki bütün
+#     uyarılar sessizce düşer; bu iş o zaman kırmızı biter ve GitHub e-postası
+#     tek haber yolu olur
 # SORUN VARSA:
 #   - Telegram'a yazar: kesinti BAŞLADIĞINDA hemen, sürerse sonraki koşularda,
 #     düzelince bir kez. Durum (ne zamandan beri kapalı, son mesaj) Actions önbelleğinde.
@@ -43,7 +49,7 @@ concurrency:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - name: Önceki durum
         uses: actions/cache/restore@v4
@@ -79,26 +85,51 @@ jobs:
           down_since=$(cat uptime-state/down_since 2>/dev/null || echo "")
           last_sent=$(cat uptime-state/last_sent 2>/dev/null || echo 0)
 
-          code=000
-          for i in 1 2 3; do
-            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 https://www.lernomi.app/api/config || echo 000)
-            [ "$code" = "200" ] && break
-            sleep 20
-          done
+          probe_host() {  # $1 host → HTTP kodu (3 deneme)
+            local c=000 i
+            for i in 1 2 3; do
+              c=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$1/api/config" || echo 000)
+              [ "$c" = "200" ] && break
+              sleep 20
+            done
+            echo "$c"
+          }
+          code=$(probe_host www.lernomi.app)
+          alt_code=$(probe_host lernomi.rumpuskit.com)
 
           problem=""
           if [ "$code" != "200" ]; then
             problem="[KRİTİK] Site dışarıdan erişilemiyor: /api/config HTTP $code (3 deneme)."
           fi
-
-          end=$(echo | timeout 15 openssl s_client -servername www.lernomi.app -connect www.lernomi.app:443 2>/dev/null | openssl x509 -noout -enddate 2>/dev/null | cut -d= -f2)
-          if [ -n "$end" ]; then
-            days=$(( ( $(date -d "$end" +%s) - now ) / 86400 ))
-            echo "sertifika: $days gün"
-            if [ "$days" -lt 10 ]; then
-              problem="${problem:+$problem }[KRİTİK] HTTPS sertifikası $days gün içinde bitiyor."
-            fi
+          if [ "$alt_code" != "200" ]; then
+            problem="${problem:+$problem }[KRİTİK] Yedek adres (lernomi.rumpuskit.com, engelli ağlarda mobilin tek yolu) erişilemiyor: HTTP $alt_code."
           fi
+
+          for host in www.lernomi.app lernomi.rumpuskit.com; do
+            end=$(echo | timeout 15 openssl s_client -servername "$host" -connect "$host:443" 2>/dev/null | openssl x509 -noout -enddate 2>/dev/null | cut -d= -f2)
+            if [ -n "$end" ]; then
+              days=$(( ( $(date -d "$end" +%s) - now ) / 86400 ))
+              echo "sertifika $host: $days gün"
+              if [ "$days" -lt 10 ]; then
+                problem="${problem:+$problem }[KRİTİK] HTTPS sertifikası ($host) $days gün içinde bitiyor."
+              fi
+            fi
+          done
+
+          # Alan adı kaydı: süresi dolarsa site ve e-posta birden gider; kayıt
+          # firmasının otomatik yenilemesi kart sorununda sessizce düşebiliyor.
+          for dom in lernomi.app rumpuskit.com; do
+            exp=$(curl -s --max-time 15 -L "https://rdap.org/domain/$dom" | jq -r '[.events[]? | select(.eventAction == "expiration") | .eventDate][0] // empty' 2>/dev/null)
+            if [ -n "$exp" ]; then
+              ddays=$(( ( $(date -d "$exp" +%s) - now ) / 86400 ))
+              echo "alan adı $dom: $ddays gün"
+              if [ "$ddays" -lt 30 ]; then
+                problem="${problem:+$problem }[KRİTİK] Alan adı $dom kaydı $ddays gün içinde bitiyor: kayıt firmasında yenile."
+              fi
+            else
+              echo "alan adı $dom: RDAP okunamadı (uyarı yok)"
+            fi
+          done
 
           if [ -n "$problem" ]; then
             if [ -z "$down_since" ]; then
@@ -119,6 +150,20 @@ jobs:
             echo "tamam: HTTP $code"
           fi
 
+      - name: Telegram jetonu geçerli mi
+        id: tg
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          [ -z "${TELEGRAM_BOT_TOKEN}" ] && { echo "Telegram gizlisi yok"; exit 0; }
+          ok=$(curl -s --max-time 15 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getMe" | jq -r '.ok // false')
+          if [ "$ok" != "true" ]; then
+            echo "::error::Telegram jetonu reddedildi (getMe): sunucudaki uyarı motoru, bekçi ve deploy uyarıları da gitmiyor. BotFather'dan yeni jeton al; sunucu .env, yerel .secrets/telegram/ ve GitHub gizlilerini birlikte güncelle, rolling restart."
+            echo "failed=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "Telegram jetonu geçerli"
+          fi
+
       - name: Durumu kaydet
         if: always()
         uses: actions/cache/save@v4
@@ -127,5 +172,5 @@ jobs:
           key: uptime-state-${{ github.run_id }}
 
       - name: Sorun varsa kırmızı bit (GitHub e-postası)
-        if: steps.probe.outputs.failed == '1'
+        if: steps.probe.outputs.failed == '1' || steps.tg.outputs.failed == '1'
         run: exit 1
