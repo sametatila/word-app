@@ -90,8 +90,20 @@
 .topLink:hover { border-color: var(--l-ink-2); }
 .topPlain { font-weight: 600; font-size: 0.98rem; color: var(--l-ink-2); text-decoration: none; padding: 10px 8px; white-space: nowrap; }
 .topPlain:hover { color: var(--text); }
-@media (max-width: 380px) {
+/* Dar ekranda üst çubuk sığmıyordu: Almanca "Anmelden" + "Loslegen" 390 px'te
+   tema düğmesini "Lernomi"nin üstüne bindiriyordu (2026-10-02). Tema düğmesi
+   440 px altında gizli (tema sistemi izliyor), bağlantıların payı daralıyor. */
+@media (max-width: 440px) {
   .hideNarrow { display: none; }
+  .top { gap: 8px; }
+  .topActions { gap: 4px; }
+  .topLink { padding: 9px 13px; }
+  .topPlain { padding: 10px 6px; }
+}
+/* 320 px'te İngilizce/Almanca yine sığmıyor: ad yalnız GÖRSEL olarak gizli
+   (logo kalıyor, ekran okuyucu "Lernomi" diye okumaya devam ediyor). */
+@media (max-width: 350px) {
+  .brandText { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
 
 /* ---------- iz ---------- */

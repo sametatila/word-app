@@ -245,7 +245,7 @@ export default async function Home() {
         <Link className={s.brand} href={landingPath(lang)}>
           {/* eslint-disable-next-line @next/next/no-img-element -- küçük sabit PNG simge */}
           <img src="/logo-mark-68.png" width={34} height={34} alt="" />
-          Lernomi
+          <span className={s.brandText}>Lernomi</span>
         </Link>
         <div className={s.topActions}>
           <span className={s.hideNarrow}>
