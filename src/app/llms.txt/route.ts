@@ -4,6 +4,8 @@ import { appControl } from "@/lib/app-control";
 import { offeredNativeLangs } from "@/lib/courses";
 import { landingPath } from "@/lib/landing-path";
 import { legalPath } from "@/lib/legal";
+/* Dil adları kendi dillerinde (endonim), tek kaynaktan: dil seçicideki adlarla aynı. */
+import { LANG_LABEL } from "@/lib/i18n/dict";
 import { SITE_URL } from "@/lib/site";
 
 /**
@@ -103,13 +105,13 @@ export async function GET() {
     `- ${en.fine.cert}`,
     `- ${en.fine.disclaimer}`,
     "",
-    "## Türkçe",
+    `## ${LANG_LABEL.tr}`,
     "",
     `${LANDING.tr.hero.line1} ${LANDING.tr.hero.line2} ${LANDING.tr.hero.intro}`,
     "",
     `Sayfa: ${abs("/")}`,
     "",
-    "## Deutsch",
+    `## ${LANG_LABEL.de}`,
     "",
     `${LANDING.de.hero.line1} ${LANDING.de.hero.line2} ${LANDING.de.hero.intro}`,
     "",
@@ -117,9 +119,9 @@ export async function GET() {
     "",
     "## Links",
     "",
-    `- [Lernomi (English)](${abs(landingPath("en"))})`,
-    `- [Lernomi (Türkçe)](${abs("/")})`,
-    `- [Lernomi (Deutsch)](${abs(landingPath("de"))})`,
+    `- [Lernomi (${LANG_LABEL.en})](${abs(landingPath("en"))})`,
+    `- [Lernomi (${LANG_LABEL.tr})](${abs("/")})`,
+    `- [Lernomi (${LANG_LABEL.de})](${abs(landingPath("de"))})`,
     ...(ios ? [`- [App Store](${ios})`] : []),
     ...(android ? [`- [Google Play](${android})`] : []),
     `- [Support](${abs(legalPath("support", "en"))})`,
