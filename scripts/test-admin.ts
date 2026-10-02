@@ -18,7 +18,7 @@
 import { DEFAULT_APP_CONTROL, parseAppControl, parseClientHeader, parseTestLabHeader, updateVerdict } from "../src/lib/app-control-shared";
 import { isTestLabSql, notTestLab, real } from "../src/lib/test-lab";
 import { errorFingerprint, scrub } from "../src/lib/client-errors";
-import { chunkLines, nginxTime } from "../src/lib/alerts";
+import { chunkLines, criticalRouteAlerts, nginxTime } from "../src/lib/alerts";
 import { routeOf } from "../src/lib/server-metrics";
 import { cleanUrl, parseAudience } from "../src/lib/push-broadcast";
 import { cleanSource, platformOf } from "../src/lib/store-link";
@@ -125,6 +125,15 @@ async function main() {
   check("parçalama: hiçbir parça sınırı aşmıyor", parts.length > 1 && parts.every((c) => c.lines.join("\n\n").length <= 3800));
   const huge = chunkLines([`<b>[KRİTİK]</b> ${"y".repeat(5000)}`], 3800);
   check("parçalama: tek dev satır etiketsiz kısaltılıyor", huge.length === 1 && huge[0].lines[0].length <= 3800 && !huge[0].lines[0].includes("<b>"));
+
+  // Tek seferde bile önemli uçlar.
+  const keys = (r: { path: string; status: number }[]) => criticalRouteAlerts(r).map((a) => a.key).sort().join(",");
+  check("webhook 401 tek seferde kritik", keys([{ path: "/api/premium/webhook/revenuecat", status: 401 }]) === "err-route:webhook:401");
+  check("webhook 200 sessiz", keys([{ path: "/api/premium/webhook/revenuecat", status: 200 }]) === "");
+  check("hesap silme 500 tek seferde", keys([{ path: "/api/auth/delete-user", status: 500 }]) === "err-route:delete:500");
+  check("hesap silme 400 (yanlış parola) sessiz", keys([{ path: "/api/auth/delete-user", status: 400 }]) === "");
+  check("sosyal giriş 2 hata sessiz, 3 hata uyarı", keys(Array(2).fill({ path: "/api/auth/sign-in/social", status: 500 })) === "" && keys(Array(3).fill({ path: "/api/auth/callback/google", status: 500 })) === "err-route:social");
+  check("e-posta girişi 400 (yanlış parola) sosyal sayılmıyor", keys(Array(5).fill({ path: "/api/auth/sign-in/email", status: 400 })) === "");
   check("kimlik parçası :id", routeOf("/api/social/users/0f3a9c1e-1111-2222-3333-444455556666/profile?x=1") === "/api/social/users/:id");
   check("sayısal parça :id", routeOf("/api/certificate/123") === "/api/certificate/:id");
   check("sorgu atılıyor", routeOf("/api/tts?v=a&t=hallo") === "/api/tts");
@@ -269,6 +278,7 @@ async function main() {
     check("vitals bölümüne ve Play vitals'a", p("vitals:çökme") === "/admin/reviews#vitals" && alertLinks("vitals-api").external?.url.includes("vitals") === true);
     check("şikâyet, bakım, e-posta, webhook", p("reports") === "/admin/moderation" && p("maintenance") === "/admin/app#bakim" && p("mail") === "/admin/experience#e-posta" && p("webhook") === "/admin/revenue");
     check("sunucu uyarıları doğru bölüme", p("backup:offsite") === "/admin/ops#yedek" && p("cron:assess") === "/admin/ops#zamanlanmis-isler" && p("cronfail:assess") === "/admin/ops#zamanlanmis-isler" && p("http5xx") === "/admin/ops#istek-sagligi" && p("ai-down:cloudflare") === "/admin/ops#yapay-zeka" && p("azure:key") === "/admin/ops#yapay-zeka" && p("azure:stt-cap") === "/admin/ops#yapay-zeka" && p("ai:none") === "/admin/ops#yapay-zeka" && p("unit:x.service") === "/admin/ops#yedek" && p("disk") === "/admin/ops#kaynak" && p("pgconn") === "/admin/ops#veritabani" && p("instances") === "/admin/ops#deploy");
+    check("kritik uç, bildirim, içerik uyarıları doğru yere", p("err-route:webhook:401") === "/admin/revenue" && p("err-route:delete:500") === "/admin/ops#istek-sagligi" && p("err-route:social") === "/admin/ops#istek-sagligi" && p("push") === "/admin/experience#bildirimler" && p("content:promote") === "/admin/content" && p("mail:verify") === "/admin/experience#e-posta");
     check("bütçe uyarıları bütçe bölümüne", ["budget:cloudflare", "budget:groq:openai/gpt-oss-120b", "budget:payment:deepgram", "budget:resend-day", "budget:month"].every((k) => p(k) === "/admin/ops#yapay-zeka-butce"));
     check("bilinmeyen anahtar kaybolmuyor (Sunucu)", p("check:yeni") === "/admin/ops");
     check("etiket boş değil", ["err:a", "reports", "cron:x", "zzz"].every((k) => alertLinks(k).panel.label.length > 3));

@@ -66,9 +66,8 @@ export function nginxTime(s: string): number {
   return utc - off;
 }
 
-/** Son `minutes` dakikada API'nin 5xx cevapları, uç başına. */
-async function recent5xx(minutes: number): Promise<Map<string, number>> {
-  const out = new Map<string, number>();
+/** Son `minutes` dakikadaki API istekleri (yol sorgusuz, durum), nginx erişim günlüğünden. */
+async function recentApi(minutes: number): Promise<{ path: string; status: number }[]> {
   let text = "";
   try {
     // Yalnız dosyanın SONU: günlük log büyüyebilir, son 2 MB fazlasıyla yetiyor.
@@ -89,12 +88,47 @@ async function recent5xx(minutes: number): Promise<Map<string, number>> {
     throw new Error(`nginx logu okunamadı (${(err as NodeJS.ErrnoException).code ?? "?"})`);
   }
   const since = Date.now() - minutes * 60_000;
-  const LINE = /^\S+ \S+ \S+ \[([^\]]+)\] "\S+ (\/api\/[^\s?]*)[^"]*" (5\d\d) /;
+  const LINE = /^\S+ \S+ \S+ \[([^\]]+)\] "\S+ (\/api\/[^\s?]*)[^"]*" (\d{3}) /;
+  const out: { path: string; status: number }[] = [];
   for (const line of text.split("\n")) {
     const m = LINE.exec(line);
     if (!m || nginxTime(m[1]) < since) continue;
-    const route = m[2].split("/").slice(0, 4).join("/");
-    out.set(`${route} ${m[3]}`, (out.get(`${route} ${m[3]}`) ?? 0) + 1);
+    out.push({ path: m[2], status: Number(m[3]) });
+  }
+  return out;
+}
+
+/**
+ * TEK SEFERDE BİLE ÖNEMLİ UÇLAR. Genel 5xx kuralı 15 dakikada 5 hata istiyor;
+ * bu uçlarda tek bir hata bir kullanıcının parasını, hesabını ya da girişini
+ * etkiliyor ve genel eşiğin altında kalıyordu:
+ *   satın alma webhook'u  401/403 = paylaşılan sır uyuşmuyor, 5xx = yazılamadı;
+ *                         ikisinde de satın alınan Premium hesaba geçmiyor
+ *                         (RevenueCat birkaç kez yeniden dener, sonra bırakır).
+ *   hesap silme           yasal yükümlülük; 5xx'te silme yarım kalabilir.
+ *   sosyal giriş          Google/Apple yapılandırması bozulursa (istemci,
+ *                         anahtar, gizli) herkesin girişi düşer; 3 hata eşik.
+ * Anahtarlar `err-route:` ailesinden (tek seferlik, aynı uç+durum günde bir).
+ * Saf: `test:alerts`.
+ */
+export function criticalRouteAlerts(reqs: { path: string; status: number }[]): Alert[] {
+  const out: Alert[] = [];
+  const count = (pred: (r: { path: string; status: number }) => boolean) => {
+    const m = new Map<number, number>();
+    for (const r of reqs) if (pred(r)) m.set(r.status, (m.get(r.status) ?? 0) + 1);
+    return m;
+  };
+  for (const [status, n] of count((r) => r.path.startsWith("/api/premium/webhook") && r.status >= 400)) {
+    const why = status === 401 || status === 403 ? "paylaşılan sır uyuşmuyor (REVENUECAT_WEBHOOK_AUTH ile RevenueCat'teki başlık)" : status >= 500 ? "sunucu olayı yazamadı" : "istek reddedildi";
+    out.push({ key: `err-route:webhook:${status}`, level: "kritik", text: `Satın alma webhook'u son 15 dakikada ${n} kez HTTP ${status} döndü: ${why}. Satın alınan Premium hesaba geçmiyor olabilir; RevenueCat › Integrations › Webhooks'ta başarısız olayları yeniden gönder.` });
+  }
+  for (const [status, n] of count((r) => r.path === "/api/auth/delete-user" && r.status >= 500)) {
+    out.push({ key: `err-route:delete:${status}`, level: "kritik", text: `Hesap silme son 15 dakikada ${n} kez HTTP ${status} döndü: silme yarım kalmış olabilir (yasal yükümlülük). Sunucu günlüğüne ve account_deletions tablosuna bak.` });
+  }
+  const social = [...count((r) => /^\/api\/auth\/(sign-in\/social|callback\/)/.test(r.path) && (r.status >= 500 || r.status === 401 || r.status === 403)).entries()];
+  const socialTotal = social.reduce((a, [, n]) => a + n, 0);
+  if (socialTotal >= 3) {
+    out.push({ key: "err-route:social", level: "kritik", text: `Google/Apple girişi son 15 dakikada ${socialTotal} kez başarısız (${social.map(([s, n]) => `HTTP ${s} ×${n}`).join(", ")}): sağlayıcı yapılandırması (istemci kimliği, anahtar, gizli) bozulmuş olabilir.` });
   }
   return out;
 }
@@ -144,7 +178,14 @@ export async function collectAlerts(): Promise<Alert[]> {
       if (s.pg.maxConn && s.pg.total / s.pg.maxConn > 0.8) alerts.push({ key: "pgconn", level: "uyari", text: `PostgreSQL bağlantısı %${Math.round((s.pg.total / s.pg.maxConn) * 100)} dolu.` });
     }),
     guard("5xx", async () => {
-      const m = await recent5xx(15);
+      const reqs = await recentApi(15);
+      alerts.push(...criticalRouteAlerts(reqs));
+      const m = new Map<string, number>();
+      for (const r of reqs) {
+        if (r.status < 500) continue;
+        const k = `${r.path.split("/").slice(0, 4).join("/")} ${r.status}`;
+        m.set(k, (m.get(k) ?? 0) + 1);
+      }
       const total = [...m.values()].reduce((a, b) => a + b, 0);
       if (total >= 5) {
         const top = [...m.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([k, v]) => `${k} ×${v}`).join(", ");
@@ -338,6 +379,20 @@ export async function collectAlerts(): Promise<Alert[]> {
     guard("mail", async () => {
       const [r] = await rows(sql`select count(*)::int c from events where name = 'mail_sent' and kind like '%:fail' and created_at >= now() - interval '1 hour'`);
       if (num(r?.c) >= 3) alerts.push({ key: "mail", level: "kritik", text: `Son 1 saatte ${num(r?.c)} e-posta gönderilemedi (doğrulama postası gitmiyorsa yeni kullanıcı hesabına giremez).` });
+      /* Tek bir gidemeyen doğrulama postası bir kişinin hesabına hiç girememesi
+         demek; üçlük genel eşiğin altında kalıyordu. */
+      const [v] = await rows(sql`select count(*)::int c from events where name = 'mail_sent' and kind = 'verify:fail' and created_at >= now() - interval '1 hour'`);
+      if (num(v?.c) >= 1 && num(r?.c) < 3) alerts.push({ key: "mail:verify", level: "uyari", text: `Son 1 saatte ${num(v?.c)} doğrulama postası gönderilemedi: o kişi hesabına giremiyor. Resend panelinde reddin sebebine bak.` });
+    }),
+    guard("push", async () => {
+      /* BİLDİRİM TESLİMİ. FCM/APNs/web push kimliği bozulursa (servis hesabı
+         anahtarı, VAPID) gönderim sessizce düşüyor; hatırlatma işi yine
+         "başarılı" yazıyordu. 24 saatte yeterli deneme var ve HİÇBİRİ ulaşmadıysa
+         kanal kopmuştur (normalde denemelerin ~%70'i ulaşıyor). */
+      const [p] = await rows(sql`select count(*) filter (where name = 'push_sent')::int sent, coalesce(sum(value) filter (where name = 'push_deliver'), 0)::int delivered from events where name in ('push_sent', 'push_deliver') and created_at >= now() - interval '24 hours'`);
+      if (num(p?.sent) >= 8 && num(p?.delivered) === 0) {
+        alerts.push({ key: "push", level: "kritik", text: `Son 24 saatte ${num(p?.sent)} bildirim denendi, hiçbiri ulaşmadı: FCM servis hesabı, APNs ya da VAPID anahtarı bozulmuş olabilir (sunucu günlüğünde [fcm:token] / [push:fcm]).` });
+      }
     }),
     guard("reviews", async () => {
       // Yeni düşük puanlı mağaza yorumu (son 24 saat, cevapsız): tek seferlik

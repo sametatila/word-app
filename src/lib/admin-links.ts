@@ -82,6 +82,14 @@ export function alertLinks(key: string): AlertLinks {
       return { panel: { path: "/admin/moderation/content", label: "Bugün › İçerik geri bildirimi" } };
     case "err-reporthot":
       return { panel: { path: `/admin/moderation/content/group?g=${encodeURIComponent(tail)}`, label: "Bugün › İçerik geri bildirimi (bu hedef)" } };
+    case "push":
+      return { panel: { path: "/admin/experience#bildirimler", label: "Kullanıcılar › Deneyim › Bildirimler" } };
+    case "content":
+      return { panel: { path: "/admin/content", label: "İçerik" } };
+    case "err-route":
+      return rest[0] === "webhook"
+        ? { panel: { path: "/admin/revenue", label: "Gelir › Gelir ve huniler" } }
+        : { panel: ops("istek-sagligi", "İstek sağlığı") };
     case "mail":
       return { panel: { path: "/admin/experience#e-posta", label: "Kullanıcılar › Deneyim › Giden e-posta" } };
     case "err":

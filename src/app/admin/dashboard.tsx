@@ -337,7 +337,7 @@ export function ExperienceSection({ days, data: d, coverage: c }: Base) {
           <Funnel steps={[...d.onboarding].sort((a, b) => ONB_ORDER.indexOf(a.step) - ONB_ORDER.indexOf(b.step)).map((o) => ({ label: ONB_LABEL[o.step] ?? o.step, value: o.users }))} />
         </Panel>
 
-        <Panel title={`Bildirimler (${days}g)`} hint="İzin kararı ve gönderilen bildirimin yolu: denendi → cihaza ulaştı → açıldı. Denenip ulaşmayan: abonelik ölmüş, jeton geçersiz ya da sağlayıcı reddetmiş.">
+        <Panel id="bildirimler" title={`Bildirimler (${days}g)`} hint="İzin kararı ve gönderilen bildirimin yolu: denendi → cihaza ulaştı → açıldı. Denenip ulaşmayan: abonelik ölmüş, jeton geçersiz ya da sağlayıcı reddetmiş.">
           <Sub>İzin kararı</Sub>
           <ShareBar ordinal items={[{ label: "İzin verdi", value: n.optinYes, tone: "ok" }, { label: "Reddetti", value: n.optinNo }]} empty="İzin sorulmadı." />
           <Sub>Teslim</Sub>
