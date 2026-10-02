@@ -227,23 +227,28 @@ export function WalkModeScreen() {
   /* ANLATIM KARAKTERİN SESİYLE (web `walk-player` `say` ile aynı): yönergeler anlatım sesine (Emel/Jenny/Katja)
      gidiyordu, kelime ve anlamı ise Defne/Aras okuyordu — bir turda iki ayrı kişi. Artık seçilen karakterin anadil
      sesi; önceden üretilmiş kaydı varsa o (`k=n`), yoksa aynı karakterin Edge karşılığı. */
+  /* iOS'ta yürüyüşün sesi HEP native oynatıcıdan (2026-10-02). WebView köprüsünün <audio>'su
+     kendi ses kaydını kilit ekranına yazıyor (build 14'teki "ayarlanmamış" kart) ve yürüyüş
+     oturumunun kategorisine dokunabiliyor; kilit ekranında yalnız bizim kaydımız kalmalı.
+     Efektler iOS'ta zaten native (lib/sfx). Android'de köprü ekran açıkken kalıyor. */
+  const nativeAudio = () => screenOffRef.current || Platform.OS === "ios";
   const sayNative = (txt: string) => {
     const v = glossVoice(currentLang(), currentVoiceId());
     const fin = probeSay("native", txt);
-    return fin(speakAndWaitVoiced(txt, v, { native: screenOffRef.current, narration: true })) as Promise<void>;
+    return fin(speakAndWaitVoiced(txt, v, { native: nativeAudio(), narration: true })) as Promise<void>;
   };
   /* Hedef kelime ve anlamı KELİME KATMANI (`word`): seçilen karakterin (Defne/Aras) önceden üretilmiş
      kaydı, düşüş yok. Anlam anlatım sesiyle (Emel) değil karakterin anadil sesiyle — Aras'ı seçen "der Hund"u
      da "köpek"i de Aras'tan duyuyor (web `walk-player` `glossSegment`). */
   const sayTarget = (txt: string) => {
     const fin = probeSay("target", txt);
-    return fin(speakAndWaitVoiced(txt, currentVoiceId(), { native: screenOffRef.current, word: true })) as Promise<void>;
+    return fin(speakAndWaitVoiced(txt, currentVoiceId(), { native: nativeAudio(), word: true })) as Promise<void>;
   };
   const sayGloss = (w: WalkWord) => {
     const txt = speechOfGloss(glossText(w));
     if (!txt) return Promise.resolve();
     const fin = probeSay("native", txt);
-    return fin(speakAndWaitVoiced(txt, glossVoice(currentLang(), currentVoiceId()), { native: screenOffRef.current, word: true })) as Promise<void>;
+    return fin(speakAndWaitVoiced(txt, glossVoice(currentLang(), currentVoiceId()), { native: nativeAudio(), word: true })) as Promise<void>;
   };
 
   /** Biriken cevapları SRS'e yaz (progress YOK — walk stateless). Tur sonunda + çıkışta. */
