@@ -17,9 +17,9 @@ import { getT } from "@/lib/i18n/server";
  * Not: bir rota parçasında `metadata` ile `generateMetadata` BİRLİKTE
  * dışa aktarılamıyor (Next belgeleri) — biri gidince öteki gelir.
  */
-export function titleMeta(key: string): () => Promise<Metadata> {
+export function titleMeta(key: string, opts: { noindex?: boolean } = {}): () => Promise<Metadata> {
   return async () => {
     const t = await getT();
-    return { title: t(key) };
+    return { title: t(key), ...(opts.noindex ? { robots: { index: false, follow: true } } : {}) };
   };
 }

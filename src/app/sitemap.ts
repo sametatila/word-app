@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { LEGAL_LOCALES, LEGAL_DEFAULT_LOCALE, LEGAL_EFFECTIVE_DATE, legalPath } from "@/lib/legal";
+import { offeredNativeLangs } from "@/lib/courses";
+import { landingLanguages, landingPath } from "@/lib/landing-path";
 
 /**
  * İndekslenecek sayfalar — YALNIZ oturum istemeyenler.
@@ -16,13 +18,20 @@ import { LEGAL_LOCALES, LEGAL_DEFAULT_LOCALE, LEGAL_EFFECTIVE_DATE, legalPath } 
  * yer. Kanonik yol Türkçe (`/privacy`), çeviriler alt yolda (`/privacy/en`);
  * kural `legalPath()` ile tek yerden geliyor.
  *
+ * YALNIZ İNDEKSLENECEKLER (2026-10-02): `noindex` taşıyan sayfa burada
+ * olmamalı, ikisi çelişen sinyal. Gizlilik, Kullanım Şartları ve künye
+ * aramaya kapalı (marka aramasında ana sayfanın önüne geçiyorlardı, bkz.
+ * `legal-shell` NOINDEX_DOCS); `/first-words` ve `/level-test` istemcide
+ * çizilen huni adımları, sunucu çıktısı boş. Tanıtım sayfası dil başına
+ * (`/`, `/en`, `/de`; bkz. `lib/landing-path`).
+ *
  * `lastModified` hukuki metinlerde YÜRÜRLÜK TARİHİ: metin değiştiğinde o tarih
  * de değişiyor, yani gerçekten anlamlı bir sinyal. Vitrin sayfalarında derleme
  * anı kullanılmıyor — her dağıtımda "değişti" demek sinyali değersizleştirir.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const abs = (path: string) => `${SITE_URL}${path}`;
-  const legal = (doc: "privacy" | "terms" | "support") => ({
+  const legal = (doc: "support") => ({
     url: abs(legalPath(doc, LEGAL_DEFAULT_LOCALE)),
     lastModified: new Date(LEGAL_EFFECTIVE_DATE),
     changeFrequency: "yearly" as const,
@@ -34,21 +43,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   });
 
+  const languages = landingLanguages(abs);
   return [
-    {
-      url: abs("/"),
-      changeFrequency: "monthly",
+    ...offeredNativeLangs().map((l) => ({
+      url: abs(landingPath(l)),
+      changeFrequency: "monthly" as const,
       priority: 1,
-    },
-    {
-      // Kelime listesi vitrinin içerik tarafı: herkese açık ve aramadan gelen
-      // kullanıcının ilk karşılaştığı sayfa olabilir.
-      url: abs("/first-words"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    legal("privacy"),
-    legal("terms"),
+      alternates: { languages },
+    })),
     legal("support"),
   ];
 }

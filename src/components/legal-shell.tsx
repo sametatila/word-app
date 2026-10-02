@@ -139,12 +139,22 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
   );
 }
 
+/**
+ * Arama motoruna KAPALI hukuki metinler (2026-10-02): Google marka aramasında
+ * Kullanım Şartları'nı ve Gizlilik'i ana sayfanın önüne koyuyordu. Sayfalar
+ * açık ve bağlantılar izleniyor (`follow`): mağazaların ve kanunun istediği
+ * erişim bozulmuyor, yalnız arama sonucunda markayla yarışmıyorlar. Destek
+ * sayfası açık kalıyor: "Lernomi destek" araması gerçek bir ihtiyaç.
+ */
+const NOINDEX_DOCS: ReadonlySet<LegalDocId> = new Set<LegalDocId>(["privacy", "terms"]);
+
 /** Sayfa üstverisi — başlık ve açıklama da panelden geliyor. */
 export async function legalMetadata(doc: LegalDocId, locale: LegalLocale) {
   const page = await legalDocument(doc, locale);
   return {
     title: page.title,
     description: page.description,
+    ...(NOINDEX_DOCS.has(doc) ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: legalPath(doc, locale),
       languages: { tr: legalPath(doc), en: legalPath(doc, "en"), de: legalPath(doc, "de") },

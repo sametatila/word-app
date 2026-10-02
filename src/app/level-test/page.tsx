@@ -3,7 +3,10 @@ import { titleMeta } from "@/lib/page-meta";
 import { getAccountUserId } from "@/lib/auth/server";
 import { DemoPlacement } from "@/components/placement/demo-placement";
 
-export const generateMetadata = titleMeta("placement.title");
+/* Arama motoruna kapalı: sayfa istemcide çiziliyor, sunucu çıktısı yalnız
+   başlık. Boş sayfa indekste kalitesiz sonuç sayılır; aramadan gelen
+   tanıtım sayfasından buraya ulaşıyor (bkz. `sitemap.ts`). */
+export const generateMetadata = titleMeta("placement.title", { noindex: true });
 export const dynamic = "force-dynamic";
 
 /**

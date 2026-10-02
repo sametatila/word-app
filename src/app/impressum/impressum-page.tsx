@@ -29,6 +29,8 @@ export function impressumMetadata(locale: LegalLocale): Metadata {
   return {
     title: t.title,
     description: t.description,
+    // Erişilebilir ama aramada değil (bkz. `legalMetadata` NOINDEX_DOCS).
+    robots: { index: false, follow: true },
     alternates: {
       canonical: legalPath("impressum", locale),
       languages: { de: legalPath("impressum"), tr: legalPath("impressum", "tr"), en: legalPath("impressum", "en") },

@@ -15,7 +15,8 @@ import { SITE_URL } from "@/lib/site";
  *   /account    hesap silme — oturum gerektiriyor, herkese açık bir sayfa değil
  *   giriş akışı  parola sıfırlama ve doğrulama bağlantıları tek kullanımlık
  *
- * Geriye kalan (vitrin ve hukuki metinler) açık ve sitemap'te sayılı.
+ * Geriye kalan açık; hangilerinin İNDEKSLENECEĞİ sayfa künyesinde (`noindex`)
+ * ve sitemap'te (bkz. `sitemap.ts`).
  * `Disallow` bir güvenlik önlemi DEĞİL: erişim denetimi sunucuda, burada
  * yalnız indeksleme tercihi var.
  */
