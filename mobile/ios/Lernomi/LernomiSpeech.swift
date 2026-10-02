@@ -181,8 +181,13 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
    * Yürüyüş turunun ses oturumu.
    *
    * Kategori seçenekleri:
-   *  - `.duckOthers` — çalan müzik kısılır, susmaz. Yürürken müzik dinleyen kullanıcı
-   *    turu bitirince kaldığı yerden devam eder.
+   *  - `.duckOthers` YOK (2026-10-02). Bu seçenek oturumu KARIŞABİLİR yapıyor (mixWithOthers'ı
+   *    da açıyor) ve iOS kilit ekranı oynatıcısını (Now Playing) karışabilir oturumlu
+   *    uygulamaya vermiyor: build 15'te kart hiç çıkmadı, önceki "ayarlanmamış" kart WebView'in
+   *    kendi kaydıydı. İnceleme notunun "kilit ekranından durdurulur" sözü bu karta bağlı.
+   *    Bedeli: tur başlayınca çalan müzik kısılmak yerine duraklıyor; tur bitince oturum
+   *    `notifyOthersOnDeactivation` ile bırakılıyor, müzik uygulaması devam edebiliyor.
+   *    Yürüyüş DIŞINDAKİ tanıma (`speechOptions`) kısmaya devam ediyor.
    *  - `.defaultToSpeaker` — kulaklık yoksa ses hoparlörden çıkar; playAndRecord'un
    *    varsayılanı kulaklık deliğidir ve telefon cepteyken duyulmaz.
    *  - `.allowBluetooth` (HFP) — kulaklığın MİKROFONU kullanılabilsin diye. Bu olmadan
@@ -191,7 +196,18 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
    *  - `.allowBluetoothA2DP` — çıkış tarafı: TTS ve efektler kulaklıktan gelsin.
    */
   private static let walkOptions: AVAudioSession.CategoryOptions =
-    [.duckOthers, .defaultToSpeaker, .allowBluetooth, .allowBluetoothA2DP]
+    [.defaultToSpeaker, .allowBluetooth, .allowBluetoothA2DP]
+  /// Yürüyüş dışındaki konuşma ekranları: aynı yönlendirme, çalan müzik kısılır.
+  private static let speechOptions: AVAudioSession.CategoryOptions = walkOptions.union(.duckOthers)
+
+  /**
+   * Kayıt oturumunun modu: `.default`, `.measurement` DEĞİL (2026-10-02).
+   * `.measurement` sistemin çıkış işlemesini de kapatıyor; iPhone hoparlörü o işlemeyle
+   * yükseliyor ve onsuz TTS/efektler ahizeden geliyormuş gibi kısık çıkıyordu (Samet'in
+   * iPhone'u: yürüyüş ve konuşma ekranları kısık, geri kalan uygulama normal). Tanıma için
+   * `.default` yeterli: ses işleme (voiceChat) yine kapalı.
+   */
+  private static let recordMode: AVAudioSession.Mode = .default
 
   @objc(startWalkService)
   func startWalkService() {
@@ -233,7 +249,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   private func activateWalkSession() -> Bool {
     do {
       let session = AVAudioSession.sharedInstance()
-      try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
+      try session.setCategory(.playAndRecord, mode: Self.recordMode, options: Self.walkOptions)
       try session.setActive(true)
       applyWalkRoute()
       return true
@@ -640,7 +656,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
       // Yedek: kelime başına AVAudioRecorder (motor kurulamadıysa). Başarısızlık artık JS'e dönüyor.
       do {
         let session = AVAudioSession.sharedInstance()
-        try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
+        try session.setCategory(.playAndRecord, mode: Self.recordMode, options: Self.walkOptions)
         try session.setActive(true)
         self.applyWalkRoute()
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("walk_clip.wav")
@@ -1258,7 +1274,8 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     }
 
     let session = AVAudioSession.sharedInstance()
-    try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
+    try session.setCategory(.playAndRecord, mode: Self.recordMode,
+                            options: walkSessionHeld ? Self.walkOptions : Self.speechOptions)
     try session.setActive(true, options: .notifyOthersOnDeactivation)
     if walkSessionHeld { applyWalkRoute() }
     request = req
