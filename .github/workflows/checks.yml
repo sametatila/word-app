@@ -650,3 +650,30 @@ jobs:
       - name: Jest
         working-directory: mobile
         run: npx jest --silent
+
+  # MAIN KIRMIZIYSA TELEGRAM'A. Deploy CI'yı beklemiyor (push → webhook → sunucu),
+  # yani main'de kırılan bir kapı canlıdaki kodun bir denetimi geçemediği demek.
+  # Eskiden yalnız GitHub e-postası gidiyordu. İptal edilen koşu (yeni push) yazmaz.
+  notify:
+    needs: [web, mobile]
+    if: failure() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WEB: ${{ needs.web.result }}
+          MOBILE: ${{ needs.mobile.result }}
+          SHA: ${{ github.sha }}
+          MSG: ${{ github.event.head_commit.message }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ] && exit 0
+          NL=$'\n'
+          text="Lernomi (CI) — [UYARI] main'de kontroller kırmızı: web ${WEB}, mobil ${MOBILE}.${NL}Commit ${SHA:0:9}: $(printf '%s' "$MSG" | head -1 | cut -c1-120)${NL}Kayıt: ${RUN_URL}${NL}Deploy CI'yı beklemiyor: bu kod canlıda olabilir."
+          curl -sS --max-time 10 -o /dev/null \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${text}" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" || true
