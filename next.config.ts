@@ -107,6 +107,24 @@ const nextConfig: NextConfig = {
    * (`dicts-browser`), yalnız arayüz dili sonradan yükleniyor. Gerekçe ve
    * akış `src/lib/i18n/dicts-all.ts`. Sunucu ve betikler asıl modülü görüyor.
    */
+  /**
+   * Künyeyi <head>'de BEKLETEREK alan botlar (2026-10-02).
+   *
+   * Next 16 `generateMetadata`ı akıtıyor: künye geç çözülürse (ör. hukuki ve
+   * destek metinleri veritabanından) etiketler <body> sonuna ekleniyor. Next'in
+   * varsayılan listesi yalnız JavaScript çalıştırmayan arama/önizleme botları;
+   * Googlebot ve yapay zekâ tarayıcıları (GPTBot, ClaudeBot, Perplexity…) dışarıda
+   * kalıyordu. Ölçüm: klasik Googlebot kimliğiyle /support'ta açıklama ve kanonik
+   * <body>'deydi; JS çalıştırmayan yapay zekâ botları onları hiç görmez. Bu
+   * botlarda künye artık her zaman <head>'de; bedeli yalnız bu botlara birkaç ms.
+   *
+   * Next'in listesinin AYNISI + ekler (geçersiz kılınca varsayılan devre dışı
+   * kalıyor): Next yükseltilince `next/dist/shared/lib/router/utils/html-bots.js`
+   * ile karşılaştır.
+   */
+  htmlLimitedBots:
+    /[\w-]+-Google|Google-[\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight|Googlebot|GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-User|Claude-SearchBot|anthropic-ai|PerplexityBot|Perplexity-User|CCBot|Amazonbot|meta-externalagent|Bytespider|cohere-ai|MistralAI-User|DuckAssistBot/i,
+
   turbopack: {
     resolveAlias: {
       "@/lib/i18n/dicts-all": { browser: "./src/lib/i18n/dicts-browser.ts" },
