@@ -1,6 +1,7 @@
 "use client";
 
 import { isValidElement, useMemo, useState, type ReactNode } from "react";
+import { csvCell } from "@/lib/csv";
 
 /**
  * PANEL TABLOSU — sıralanır, aranır, parça parça açılır, CSV'ye iner.
@@ -40,10 +41,6 @@ function sortValue(node: ReactNode): number | string {
     return m[2] === "k" || m[2] === "K" ? n * 1_000 : m[2] === "M" ? n * 1_000_000 : n;
   }
   return t.toLocaleLowerCase("tr-TR");
-}
-
-function csvCell(v: string): string {
-  return /[",\n;]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
 }
 
 const PAGE = 25;

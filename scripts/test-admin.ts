@@ -18,6 +18,7 @@
 import { DEFAULT_APP_CONTROL, parseAppControl, parseClientHeader, parseTestLabHeader, updateVerdict } from "../src/lib/app-control-shared";
 import { isTestLabSql, notTestLab, real } from "../src/lib/test-lab";
 import { errorFingerprint, scrub } from "../src/lib/client-errors";
+import { csvCell } from "../src/lib/csv";
 import { chunkLines, criticalRouteAlerts, errorLabel, nginxTime } from "../src/lib/alerts";
 import { routeOf } from "../src/lib/server-metrics";
 import { cleanUrl, parseAudience } from "../src/lib/push-broadcast";
@@ -286,6 +287,11 @@ async function main() {
     check("hata uyarısı: tür + grup", errorLabel({ platform: "web", name: "TypeError", fingerprint: "abcdef1234567890" }) === "web · TypeError · abcdef12");
     check("hata uyarısı: kalıba uymayan ad ve platform yazılmıyor", errorLabel({ platform: "<b>x", name: "Ödül al https://evil.example", fingerprint: "abcdef1234567890" }) === "? · abcdef12");
   }
+
+  console.log("\nCSV hücresi (formül enjeksiyonu)");
+  check("formül başlangıcı metne çevriliyor", csvCell("=HYPERLINK(\"x\")") === `"'=HYPERLINK(""x"")"` && csvCell("@SUM(A1)") === "'@SUM(A1)" && csvCell("+cmd") === "'+cmd" && csvCell("-2+3") === "'-2+3");
+  check("salt sayı sayı kalıyor", csvCell("-5") === "-5" && csvCell("+3,5") === `"+3,5"` && csvCell(-12) === "-12" && csvCell("-12%") === "-12%");
+  check("ayraç ve tırnak kaçırılıyor", csvCell('a,"b"') === `"a,""b"""` && csvCell("düz") === "düz");
 
   console.log("\nPanel tarih aralığı");
   check("tanınan aralıklar geçiyor", parseRange("7") === 7 && parseRange("90") === 90);

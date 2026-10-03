@@ -1,6 +1,7 @@
 import "server-only";
 import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { csvCell } from "@/lib/csv";
 import { notify } from "@/lib/social/notify";
 import { disableItem } from "@/lib/content/publish";
 
@@ -518,12 +519,8 @@ export async function openContentGroups(limit = 100): Promise<ContentGroupRow[]>
 /** CSV: süzgecin TAMAMI (sayfa değil), en çok 5000 grup. */
 export async function contentFeedbackCsv(q: ContentQuery): Promise<string> {
   const list = (await rows(sql`${groupSelect(contentWhere(q))} order by max(f.created_at) desc, f.gkey limit 5000`)).map(groupRow);
-  const cell = (v: string | number) => {
-    const t = String(v);
-    /* Hesap tablosunda formül olarak çalışmasın (CSV enjeksiyonu): =, +, -, @ ile başlayan hücre tırnak + kesme işareti. */
-    const safe = /^[=+\-@\t\r]/.test(t) ? `'${t}` : t;
-    return /[",\n;]/.test(safe) ? `"${safe.replace(/"/g, '""')}"` : safe;
-  };
+  /* Hesap tablosunda formül olarak çalışmasın (CSV enjeksiyonu): bkz. lib/csv. */
+  const cell = csvCell;
   const head = ["grup", "tur", "hedef_turu", "hedef", "alt", "yuzeyler", "en_sik_neden", "nedenler", "bildirim", "acik", "ilk", "son", "kurslar", "anadiller", "platformlar", "paket", "madde", "ornek"];
   const lines = [head.join(",")];
   for (const g of list) {
