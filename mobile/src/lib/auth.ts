@@ -1,4 +1,5 @@
 import { apiBase, ApiError, FALLBACK_BASE, fetchWithTimeout, PRIMARY_BASE } from "../api/client";
+import { clearLocalCookies } from "./cookies";
 import { reportError } from "./errorReport";
 import { diagnoseNetwork } from "./reachability";
 import { t } from "./i18n";
@@ -202,13 +203,20 @@ export async function signOut(everywhere = true): Promise<void> {
     getirirdi. Beklenmiyor: öteki taban engelliyse çıkış dört saniye durmasın.
   */
   const other = apiBase() === PRIMARY_BASE ? FALLBACK_BASE : PRIMARY_BASE;
-  void fetchWithTimeout(`${other}/api/auth/sign-out`, {
+  const otherOut = fetchWithTimeout(`${other}/api/auth/sign-out`, {
     method: "POST",
     headers: { "content-type": "application/json", accept: "application/json" },
     body: "{}",
     pinned: true,
     timeoutMs: 4000,
   }).catch(() => undefined);
+  /*
+    SUNUCU NE DERSE DESİN çerezler yerelde siliniyor (bkz. lib/cookies): ağsız
+    çıkışta oturum cihazda kalıp yeniden açılışta geri geliyordu. Öteki tabanın
+    isteğine çerezini taşıyabilsin diye kısa bir süre bekleniyor, en çok 1,5 sn.
+  */
+  await Promise.race([otherOut, new Promise((r) => setTimeout(r, 1500))]);
+  await clearLocalCookies();
 }
 
 /**
