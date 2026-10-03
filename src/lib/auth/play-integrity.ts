@@ -5,6 +5,7 @@ import { eq, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { guestAttestations } from "@/lib/db/schema";
 import { parseClientHeader } from "@/lib/app-control-shared";
+import { redisClient, warnRedisOnce } from "@/lib/auth/redis";
 import { ATTESTATION_RETENTION_DAYS } from "./attestation-const";
 
 export { ATTESTATION_RETENTION_DAYS };
@@ -218,6 +219,72 @@ export function setIntegrityDecoderForTests(d: Decoder | null) {
   decoder = d ?? googleDecoder;
 }
 
+/* ── Tekrar kullanım ──────────────────────────────────────────────────────── */
+
+/** Özetin "görüldü" işaretinin ömrü: belgenin geçerlilik penceresinden (10 dk + 2 dk saat kayması) uzun. */
+const CLAIM_SECONDS = 15 * 60;
+
+/**
+ * ÖZETİ ATOMİK OLARAK SAHİPLENİR (güvenlik denetimi 2026-10-03, D16).
+ *
+ * Tekrar denetimi önce "bu özetle satır var mı" diye okuyup sonra yazıyordu;
+ * satır `after` kancasında, hem de beklenmeden yazılıyordu. Aynı belgeyle
+ * eşzamanlı N istek okumayı hep boş görüp N misafir açabiliyordu, üstelik
+ * engelleme kipinin önbelleği instance'a özeldi.
+ *
+ * Redis `SET NX` üç instance'ta ortak ve atomik: ilk istek sahipleniyor,
+ * sonrakiler "görüldü" alıyor. Ömür belgenin geçerlilik penceresini aştığı
+ * için işaret düştükten sonra aynı belge zaten bayat (`stale`) sayılıyor.
+ * Tablodaki özete benzersiz indeks bu iş için uygun değildi: kayıt kipi
+ * tekrar kullanımları da ölçüm için satır olarak yazıyor.
+ *
+ * Döner: true = ilk kez, false = daha önce görüldü, null = Redis yok
+ * (çağıran tablodaki eski okuma denetimine düşüyor).
+ */
+async function claimRequestHash(hash: string): Promise<boolean | null> {
+  try {
+    const r = redisClient();
+    if (!r) return null;
+    return (await r.set(`lernomi:attest-hash:${hash}`, "1", "EX", CLAIM_SECONDS, "NX")) === "OK";
+  } catch (err) {
+    warnRedisOnce(err);
+    return null;
+  }
+}
+
+/** Özet daha önce görüldü mü: önce atomik sahiplenme, Redis yoksa tablo. */
+async function seenBefore(hash: string): Promise<boolean> {
+  const claimed = await claimRequestHash(hash);
+  if (claimed !== null) return !claimed;
+  const seen = await db.select({ id: guestAttestations.id }).from(guestAttestations).where(eq(guestAttestations.requestHash, hash)).limit(1).catch(() => []);
+  return seen.length > 0;
+}
+
+/**
+ * iOS BAŞLIKLI MİSAFİR AÇILIŞINA IP BAŞINA SAATLİK TAVAN — yalnız engelleme kipinde.
+ *
+ * iOS'ta belge yok (App Attest Aşama 4); kural iOS'u muaf tutuyor ve başlık
+ * istemcinin elinde. Engelleme açılınca bir betik yalnız başlığı
+ * `ios/…` yazarak kapıyı tümüyle aşardı. Aşama 4 gelene dek iOS başlıklı
+ * açılış genel tavandan (saatte 10) daha sıkı bir tavana bağlanıyor: gerçek
+ * bir iPhone saatte birden fazla misafir açmıyor. Redis yoksa tavan yok.
+ */
+export const IOS_GUEST_PER_HOUR = 3;
+
+async function iosOverLimit(ip: string | null | undefined): Promise<boolean> {
+  try {
+    const r = redisClient();
+    if (!r) return false;
+    const k = `lernomi:guest-ios:${ip || "?"}`;
+    const n = await r.incr(k);
+    if (n === 1) await r.expire(k, 3600);
+    return n > IOS_GUEST_PER_HOUR;
+  } catch (err) {
+    warnRedisOnce(err);
+    return false;
+  }
+}
+
 /* ── Kayıt ────────────────────────────────────────────────────────────────── */
 
 /*
@@ -266,9 +333,8 @@ export async function recordGuestAttestation(input: {
       ev = { result: kind === "invalid" ? "fail" : "error", reasons: [`decode:${kind}`], appVerdict: null, deviceVerdict: null, licensingVerdict: null };
       if (kind !== "invalid") console.warn(`[attest] decode failed (${kind}): ${(err as Error).message}`);
     }
-    if (requestHash) {
-      const seen = await db.select({ id: guestAttestations.id }).from(guestAttestations).where(eq(guestAttestations.requestHash, requestHash)).limit(1);
-      if (seen.length) ev = { ...ev, result: ev.result === "error" ? "error" : "fail", reasons: [...ev.reasons, "replay"] };
+    if (requestHash && (await seenBefore(requestHash))) {
+      ev = { ...ev, result: ev.result === "error" ? "error" : "fail", reasons: [...ev.reasons, "replay"] };
     }
   }
 
@@ -307,7 +373,8 @@ function takePrecomputed(hash: string): Evaluation | null {
 
 export type AttestationGate =
   | { allow: true; ev: Evaluation | null }
-  | { allow: false; code: "GUEST_ATTESTATION_REQUIRED" | "GUEST_ATTESTATION_FAILED"; ev: Evaluation };
+  | { allow: false; code: "GUEST_ATTESTATION_REQUIRED" | "GUEST_ATTESTATION_FAILED"; ev: Evaluation }
+  | { allow: false; code: "GUEST_RATE_LIMITED"; ev: null };
 
 /**
  * ENGELLEME KİPİ — misafir kimliği AÇILMADAN önce karar (`before` kancası).
@@ -324,9 +391,11 @@ export type AttestationGate =
  *     bizim ya da Google'ın arızası gerçek kullanıcıyı kapıda bırakmamalı.
  * Ret de kaydediliyor (kimliksiz satır), ölçüm engellenenleri de görsün.
  */
-export async function checkGuestAttestation(input: { clientHeader: string | null | undefined; body: unknown }): Promise<AttestationGate> {
+export async function checkGuestAttestation(input: { clientHeader: string | null | undefined; body: unknown; ip?: string | null }): Promise<AttestationGate> {
   const client = parseClientHeader(input.clientHeader);
-  if (client?.platform === "ios") return { allow: true, ev: null };
+  if (client?.platform === "ios") {
+    return (await iosOverLimit(input.ip)) ? { allow: false, code: "GUEST_RATE_LIMITED", ev: null } : { allow: true, ev: null };
+  }
   const { token, nonce, clientError } = readAttestationInput(input.body);
   const requestHash = nonce ? guestRequestHash(nonce) : null;
 
@@ -334,10 +403,7 @@ export async function checkGuestAttestation(input: { clientHeader: string | null
   if (!token) {
     ev = { result: "missing", reasons: [clientError ? `client:${clientError}` : "no_token"], appVerdict: null, deviceVerdict: null, licensingVerdict: null };
   } else {
-    const seen = requestHash
-      ? await db.select({ id: guestAttestations.id }).from(guestAttestations).where(eq(guestAttestations.requestHash, requestHash)).limit(1).catch(() => [])
-      : [];
-    if (seen.length) {
+    if (requestHash && (await seenBefore(requestHash))) {
       ev = { result: "fail", reasons: ["replay"], appVerdict: null, deviceVerdict: null, licensingVerdict: null };
     } else {
       try {

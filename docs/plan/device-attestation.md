@@ -32,7 +32,9 @@ doğrulanamayan sıkı sınıra düşer.
   (`{ attestation: { error: "-1" } }`, `timeout`, `no_module`); açılış hiçbir yolda durmaz. iOS'ta bir şey
   olmaz. Belge gövdede, başlıkta değil (nginx başlık tamponunu aşabilirdi).
 - **requestHash:** her açılışta rastgele 32 bayt nonce, `base64url(sha256("lernomi/guest-sign-in/v1:" + nonce))`.
-  Sunucu özeti kendisi hesaplar; aynı özet ikinci kez gelirse `replay`.
+  Sunucu özeti kendisi hesaplar; aynı özet ikinci kez gelirse `replay`. Özet Redis `SET NX` ile atomik
+  sahipleniliyor (15 dk, belgenin geçerlilik penceresinden uzun): aynı belgeyle eşzamanlı istekler de tek
+  misafir açıyor (güvenlik denetimi 2026-10-03, D16). Redis yoksa tablodaki okuma denetimine düşülür.
 - **Sunucu:** `src/lib/auth/play-integrity.ts`. Servis hesabı JWT → OAuth (`playintegrity` kapsamı) →
   `playintegrity.googleapis.com/v1/com.lernomi.learn:decodeIntegrityToken`. `lib/auth/server` `after` kancası
   kimlik açıldıktan SONRA işi başlatır, beklemez. Geçmek için: paket, özet, tazelik (≤ 10 dk),
@@ -85,7 +87,9 @@ select platform, build, result, count(*) from guest_attestations
 
 - Ret kimliksiz satır olarak yazılır (`reasons` sonunda `rejected`), ölçüm engellenenleri de görür.
 - Mobil (`AuthScreen`): iki kodda `auth.guest_attestation_failed` ("Google Play'den güncelle ya da hesapla devam et"). Hesap yolu hiç etkilenmez.
-- Bilinen delik: iOS başlığı taklit edilebilir; Aşama 4'e kadar kapanmaz. Web misafir açmıyor.
+- Bilinen delik: iOS başlığı taklit edilebilir; Aşama 4'e kadar kapanmaz. Engelleme kipinde iOS başlıklı açılış
+  IP başına saatte 3 ile sınırlı (`IOS_GUEST_PER_HOUR`, aşınca 429): delik daraldı, kapanmadı. `enforce`'u Aşama 4
+  ile birlikte açmak hâlâ en doğrusu. Web misafir açmıyor.
 - IP sınırı (saatte 10) değişmedi; doğrulananın sınırını gevşetmek ayrı bir iş.
 - Açmadan önce: yayın sonrası 1 hafta ölçüm; `missing` ve `fail` gerçek kullanıcı oranı düşük olmalı (özellikle `client:-1` Play hizmetsiz cihazlar). Açtıktan sonra panelde misafir sayısı öncesi/sonrası karşılaştırılır. Test: `npm run test:guest-attestation` (engelleme bölümü).
 

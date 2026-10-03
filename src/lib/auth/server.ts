@@ -694,7 +694,11 @@ export const auth = betterAuth({
           const gate = await checkGuestAttestation({
             clientHeader: ctx.headers?.get(CLIENT_HEADER) ?? ctx.request?.headers.get(CLIENT_HEADER),
             body: ctx.body,
+            ip: clientIp(ctx),
           });
+          if (!gate.allow && gate.code === "GUEST_RATE_LIMITED") {
+            throw new APIError("TOO_MANY_REQUESTS", { code: gate.code, message: "Too many guest sessions from this network. Continue with an account." });
+          }
           if (!gate.allow) {
             throw new APIError("FORBIDDEN", {
               code: gate.code,
