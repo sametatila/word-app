@@ -31,6 +31,7 @@
     "test:ai-providers": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-ai-providers.ts",
     "test:chat-usage": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-chat-usage.ts",
     "test:ai-budget": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-ai-budget.ts",
+    "test:lifetime": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-lifetime.ts",
     "test:stt-pa": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-stt-pa.ts",
     "test:placement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts && tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts --bank de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts --bank en",
     "placement:sync": "node scripts/placement-sync.mjs",

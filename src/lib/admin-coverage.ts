@@ -37,6 +37,10 @@ export const CRON_EXPECTED: { name: string; label: string; maxGapH: number }[] =
   { name: "streak-alert", label: "Seri koruma (her gün 17–21 UTC)", maxGapH: 26 },
   { name: "summary", label: "Haftalık özet + kayıt silme (pazartesi)", maxGapH: 24 * 7 + 6 },
   { name: "weekly-reminder", label: "Haftalık sınav çağrısı (pazar)", maxGapH: 24 * 7 + 6 },
+  /* `lifetime` (ömür boyu Premium turu) BİLEREK YOK: geçici iş, en fazla 14 gün
+     ya da herkes katılınca timer kendini kapatıyor; burada olsaydı durduğu an
+     "koşmadı" alarmı üretirdi. Koşuları panelde yine görünüyor, hatası systemd
+     "çökmüş servis" uyarısıyla geliyor. */
   /* Uyarı motorunun kendisi: 10 dakikada bir. Susarsa kendini haber veremez;
      bunu sunucudaki bekçi yapıyor (35 dk), burada panel için. */
   { name: "alerts", label: "Uyarı motoru (10 dakikada bir)", maxGapH: 1 },

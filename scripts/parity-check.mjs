@@ -11000,7 +11000,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        "Bir yerde `recordCronRun` var" demek yetmez - kapida dusen dal
        yazmazsa `CRON_SECRET` kaymasi aynen gorunmez kalir ve tarihte tam o
        oldu. */
-    const ISLER = ["reminders", "assess", "summary", "streak-alert", "weekly-reminder"];
+    const ISLER = ["reminders", "assess", "summary", "streak-alert", "weekly-reminder", "lifetime"];
     const eksik = [];
     for (const ad of ISLER) {
       const src = sil(read(`src/app/api/cron/${ad}/route.ts`));
