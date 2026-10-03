@@ -21,9 +21,9 @@ export const maxDuration = 30;
  * yalnız bayta bakan sınır sıkıştırılmış biçimle dakikalarca sese izin
  * veriyordu (güvenlik denetimi 2026-10-03, Y3).
  */
-const MAX_SECONDS = 15;
+const MAX_CLIP_SECONDS = 15;
 /** Bayt sınırı süreden türüyor: 16 bit mono PCM saniyede 2 × örnekleme baytı, artı başlık payı. */
-const MAX_BYTES = MAX_SECONDS * STT_SAMPLE_RATE * 2 + 4_096;
+const MAX_BYTES = MAX_CLIP_SECONDS * STT_SAMPLE_RATE * 2 + 4_096;
 /** Kullanıcı başına günlük STT isteği (başarısızlar dâhil). */
 const DAILY_LIMIT = DAILY_QUOTAS.sttRequests;
 
@@ -108,7 +108,7 @@ export async function POST(req: Request) {
   const audio = await file.arrayBuffer();
   const wav = wavInfo(audio);
   if (!wav) return NextResponse.json({ error: "unsupported_audio" }, { status: 415 });
-  if (wav.seconds > MAX_SECONDS) return NextResponse.json({ error: "too_long" }, { status: 413 });
+  if (wav.seconds > MAX_CLIP_SECONDS) return NextResponse.json({ error: "too_long" }, { status: 413 });
   if (wav.dataBytes === 0) return NextResponse.json({ error: "no_audio" }, { status: 400 });
   const clip = new File([audio], "clip.wav", { type: "audio/wav" });
 
