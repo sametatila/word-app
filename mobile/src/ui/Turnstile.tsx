@@ -118,7 +118,8 @@ export function Turnstile({
         onShouldStartLoadWithRequest={(req) => {
           if (req.isTopFrame === false || req.url.startsWith("about:")) return true;
           if (req.url.startsWith(`${base}/api/turnstile`)) return true;
-          Linking.openURL(req.url).catch(() => {});
+          // Dışarıda yalnız https açılıyor (D14, güvenlik denetimi 2026-10-03).
+          if (/^https:\/\//i.test(req.url)) Linking.openURL(req.url).catch(() => {});
           return false;
         }}
         // Sayfa saydam; uygulamanın kendi zemini görünsün.

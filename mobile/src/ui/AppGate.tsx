@@ -103,7 +103,10 @@ export function AppGate() {
 
   const openStore = () => {
     const url = control.store[PLATFORM].url;
-    if (url) void Linking.openURL(url).catch(() => undefined);
+    /* Adres sunucudan (panel) geliyor: yalnız https açılıyor, başka şema
+       (`tel:`, başka uygulamaların özel şemaları) değil (güvenlik denetimi
+       2026-10-03, D14). Mağaza adresleri https. */
+    if (url && /^https:\/\//i.test(url)) void Linking.openURL(url).catch(() => undefined);
   };
 
   if (control.maintenance.enabled) {
