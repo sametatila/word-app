@@ -34,10 +34,13 @@ export type LevelStatus = {
   advance: CefrLevel | null;
 };
 
-/** Kayıtlı bölüm puanlarından BUGÜNKÜ eşikle geçti mi (eşik %70 → %60 indi; eski kayıt da sayılsın). */
+/**
+ * Kayıtlı bölüm puanlarından BUGÜNKÜ eşikle geçti mi (eşik %70 → %60 indi; eski kayıt da sayılsın).
+ * Sunucuda doğrulanmamış sınav (`verified: false`, istemcinin saydığı puan) seviye açmaz (bkz. `finishExam`).
+ */
 function passedNow(score: number, answers: unknown): boolean {
-  const a = answers as { sections?: SectionScore[]; trial?: boolean } | null;
-  if (a?.trial) return false;
+  const a = answers as { sections?: SectionScore[]; trial?: boolean; verified?: boolean } | null;
+  if (a?.trial || a?.verified === false) return false;
   const sections = a?.sections ?? [];
   return score >= PASS_TOTAL && sections.length > 0 && sections.every((s) => s.pct >= PASS_SECTION);
 }

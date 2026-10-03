@@ -351,12 +351,15 @@ jobs:
       # `test:exam-build` sınav kurucusunu (bu betik bir dönem SESSİZCE
       # kırıktı: `ensureProfile` eklenince saplama veritabanı geride kaldı,
       # kimse çalıştırmadığı için aylarca fark edilmedi), `test:loop` ise
-      # yineleme mantığını ölçüyor. Dördü de veritabanı ve ağ istemiyor.
+      # yineleme mantığını ölçüyor. `test:exam-grade` sunucu puanlamasını ve
+      # cevap anahtarının kullanıcıya/kâğıda bağlanmasını (denetim 2026-10-03
+      # O1) ölçüyor. Hepsi veritabanı ve ağ istemiyor.
       - name: Sınav üretimi
         run: |
           npm run test:exams
           npm run test:mock-exams
           npm run test:exam-build
+          npm run test:exam-grade
           npm run test:loop
       # SÖZLÜKÇE BÜTÇESİ — sıfıra inemeyen bulguyu yine de kapı yapan desen.
       # İki rapor, ünite penceresinin dışına çıkan sözcükleri sayıyor ve sayı
