@@ -133,6 +133,26 @@ type Cover = {
 type Result = { id: number; total: number; passed: boolean; trial: boolean; sections: { id: SectionId; pct: number; weight: number }[] };
 
 /**
+ * SUNUCU PUANLIYOR (güvenlik denetimi 2026-10-03, O1; web `exam-player` F7).
+ *
+ * `start` cevap anahtarını mühürleyip opak `keyToken` olarak veriyor. Mobil
+ * bunu hiç geri göndermiyordu: sunucu istemcinin saydığı doğru/toplamı olduğu
+ * gibi kabul ediyordu, yani tek bir uydurma `finish` ile sertifika ve seviye
+ * geçişi alınabiliyordu. Artık ham seçimler (`responses`, kâğıttaki sırayla) ve
+ * yazma/konuşma için uçların imzaladığı skor jetonları da gidiyor; sunucu
+ * nesnel bölümleri anahtara karşı yeniden sayıyor. Ekrandaki akış değişmedi.
+ */
+type Sealed = {
+  keyToken: string | null;
+  responses: { grammar: number[]; reading: number[][]; listening: number[][]; produce: string[] };
+  writingToken: string | null;
+  speakingTokens: string[];
+};
+const emptySealed = (keyToken: string | null = null): Sealed => ({
+  keyToken, responses: { grammar: [], reading: [], listening: [], produce: [] }, writingToken: null, speakingTokens: [],
+});
+
+/**
  * Sınav ekranı — modül ve seviye sınavı.
  *
  * ŞU AN MOBİLDE ULAŞILAMIYOR (2026-09-07). Tek kapısı Deneme Sınavları'na
@@ -233,6 +253,7 @@ export function ExamScreen() {
   });
   const speakScores = useRef<number[]>([]);
   const writeScore = useRef<number | null>(null);
+  const sealed = useRef<Sealed>(emptySealed());
   const startedAt = useRef(Date.now());
   /*
    * KELİME CEVAPLARI SUNUCUYA GİDİYOR.
@@ -267,11 +288,12 @@ export function ExamScreen() {
   /** Kâğıdı ÜRETİR ve sınavı başlatır — yalnız "Başla"ya basılınca. */
   const startExam = useCallback(() => {
     setStarting(true);
-    api<{ paper: Paper }>("/api/exam", {
+    api<{ paper: Paper; keyToken?: string }>("/api/exam", {
       method: "POST",
       body: JSON.stringify({ action: "start", level, module: moduleIx, day: todayStr() }),
     })
       .then((d) => {
+        sealed.current = emptySealed(d.keyToken ?? null);
         // Bölüm TOPLAMLARI kâğıt gelince yazılır, bölüm bitince değil. Yoksa
         // süre dolduğunda ulaşılmamış bölüm total=0 gider, sunucu onu atlar ve
         // ağırlığını kalanlara dağıtır — yani sınavı yarıda bırakmak puanı
@@ -312,6 +334,10 @@ export function ExamScreen() {
           trial: paper.trial,
           sections, vocabAnswers: vocabAnswers.current,
           speakingScore: sp, writingScore: writeScore.current,
+          keyToken: sealed.current.keyToken,
+          responses: sealed.current.responses,
+          writingScoreToken: sealed.current.writingToken,
+          speakingScoreTokens: sealed.current.speakingTokens.filter(Boolean),
           seconds: Math.round((Date.now() - startedAt.current) / 1000),
         }),
       });
@@ -766,6 +792,7 @@ export function ExamScreen() {
         onMiss={(m) => misses.current.push(m)}
         onTick={(c) => { score.current[active].correct = c; }}
         onVocabAnswer={(a) => vocabAnswers.current.push(a)}
+        sealed={sealed.current}
         onDone={(c) => sectionDone(active, c)}
       />
       {quitDialog}
@@ -794,9 +821,11 @@ function ResultChime({ passed, level }: { passed: boolean; level: boolean }) {
 }
 
 function SectionBody({
-  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer, onMiss,
+  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer, onMiss, sealed,
 }: {
   id: SectionId; paper: Paper; colors: Palette; insets: { bottom: number };
+  /** Ham seçimler ve skor jetonları — `finish`te sunucuya (bkz. `Sealed`). */
+  sealed: Sealed;
   onDone: (correct: number) => void;
   /** Kaçan madde — sonuç ekranındaki kırılım için biriktiriliyor. */
   onMiss: (m: Miss) => void;
@@ -869,6 +898,7 @@ function SectionBody({
             answerIdx={it.answer}
             colors={colors}
             onPick={(ok, pick) => {
+              sealed.responses.grammar[idx] = pick;
               if (!ok) onMiss({ section: "grammar", prompt: `${it.sheet} · ${it.label}`, answer: it.options[it.answer], given: it.options[pick], id: it.id });
               advance(ok, paper.sections.grammar.length);
             }}
@@ -881,6 +911,7 @@ function SectionBody({
             answerIdx={it.answer ? 0 : 1}
             colors={colors}
             onPick={(ok, pick) => {
+              sealed.responses.grammar[idx] = pick;
               if (!ok) onMiss({ section: "grammar", prompt: it.statement, answer: t(it.answer ? "common.true" : "common.false"), given: t(pick === 0 ? "common.true" : "common.false"), id: it.id });
               advance(ok, paper.sections.grammar.length);
             }}
@@ -893,6 +924,7 @@ function SectionBody({
   if (id === "produce") {
     const it = paper.sections.produce[idx];
     return <Produce key={it.id} it={it} idx={idx} total={paper.sections.produce.length} colors={colors} pad={pad} onDone={(ok, given) => {
+      sealed.responses.produce[idx] = given;
       if (!ok) onMiss({ section: "produce", prompt: it.prompt, answer: it.de, given, id: it.id });
       advance(ok, paper.sections.produce.length);
     }} />;
@@ -902,12 +934,13 @@ function SectionBody({
     const items = paper.sections[id];
     return <TextSection key={items[idx].id} it={items[idx]} spoken={id === "listening"} colors={colors} pad={pad}
       onMiss={(q, given) => onMiss({ section: id, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given, id: items[idx].id })}
-      onDone={(c) => { correctRef.current += c; onTick(correctRef.current); if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current); }} />;
+      onDone={(c, _total, picks) => { sealed.responses[id][idx] = picks; correctRef.current += c; onTick(correctRef.current); if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current); }} />;
   }
 
   if (id === "speaking") {
     const it = paper.sections.speaking[idx];
-    return <Speak key={it.id} it={it} colors={colors} pad={pad}
+    return <Speak key={it.id} it={it} colors={colors} pad={pad} examToken={sealed.keyToken}
+      onToken={(tk) => { sealed.speakingTokens[idx] = tk; /* maddenin son denemesi (web aynı) */ }}
       onDone={(ok, score) => {
         if (!ok) onMiss({ section: "speaking", prompt: it.situation ?? t("exam.pronunciation"), answer: it.de, id: it.id });
         onSpeakScore(score);
@@ -916,7 +949,8 @@ function SectionBody({
   }
 
   const w = paper.sections.writing[0];
-  return <Write w={w} level={paper.level} colors={colors} pad={pad}
+  return <Write w={w} level={paper.level} colors={colors} pad={pad} examToken={sealed.keyToken}
+    onToken={(tk) => { sealed.writingToken = tk; }}
     onDone={(ok, sc) => { if (sc !== null) onWriteScore(sc); onTick(ok ? 1 : 0); onDone(ok ? 1 : 0); }} />;
 }
 
@@ -1044,7 +1078,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
   );
 }
 
-function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem; spoken: boolean; colors: Palette; pad: object; onDone: (correct: number, total: number) => void; onMiss: (q: TextItem["questions"][number], given: string) => void }) {
+function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem; spoken: boolean; colors: Palette; pad: object; onDone: (correct: number, total: number, picks: number[]) => void; onMiss: (q: TextItem["questions"][number], given: string) => void }) {
   const [answers, setAnswers] = useState<(number | null)[]>(() => it.questions.map(() => null));
   const allAnswered = answers.every((a) => a !== null);
   const correctRef = answers.filter((a, i) => a === it.questions[i].answer).length;
@@ -1128,14 +1162,15 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
       {allAnswered ? (
         <PrimaryButton label={t("common.next")} onPress={() => {
           it.questions.forEach((q, i) => { const a = answers[i]; if (a !== null && a !== q.answer) onMiss(q, q.options[a]); });
-          onDone(correctRef, it.questions.length);
+          onDone(correctRef, it.questions.length, answers.map((a) => a ?? -1));
         }} />
       ) : null}
     </KeyboardAwareScroll>
   );
 }
 
-function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette; pad: object; onDone: (ok: boolean, score: number) => void }) {
+function Speak({ it, colors, pad, onDone, examToken, onToken }: { it: SpeakingItem; colors: Palette; pad: object; onDone: (ok: boolean, score: number) => void; examToken: string | null; onToken: (token: string) => void }) {
+  const guest = Boolean(useAuth().user?.guest);
   const [phase, setPhase] = useState<"idle" | "rec" | "done" | "err">("idle");
   const [heard, setHeard] = useState("");
   const [tip, setTip] = useState<string | null>(null);
@@ -1160,6 +1195,16 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
     const duyulan = await listenOnce(currentTargetLocale(), SPEAK_MAX_MS);
     if (!duyulan?.length) { setTip(t("speak.not_heard")); setPhase("err"); return; }
     setHeard(duyulan[0]);
+    /* İMZALI SKOR (bkz. `Sealed`): duyulan metin `/api/pronounce`a, hedef cümleyi
+       sunucu mühürlü kâğıttan alıyor. Ekrandaki karar yine cihazdaki eşleşme;
+       bu istek yalnız `finish`e giden jetonu getiriyor, düşerse sınav sürüyor.
+       Misafire uç kapalı (hesap ister). */
+    if (examToken && !guest) {
+      void api<{ scoreToken?: string }>("/api/pronounce", {
+        method: "POST",
+        body: JSON.stringify({ transcript: duyulan[0], target: it.de, exerciseId: it.id, examToken, language: currentTargetLang() }),
+      }).then((d) => { if (d.scoreToken) onToken(d.scoreToken); }).catch(() => undefined);
+    }
     const tutti = spokenMatches(duyulan, [it.de]);
     setOk(tutti);
     if (!tutti) {
@@ -1221,7 +1266,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
   );
 }
 
-function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: string; colors: Palette; pad: object; onDone: (ok: boolean, score: number | null) => void }) {
+function Write({ w, level, colors, pad, onDone, examToken, onToken }: { w: WritingItem; level: string; colors: Palette; pad: object; onDone: (ok: boolean, score: number | null) => void; examToken: string | null; onToken: (token: string) => void }) {
   const guest = Boolean(useAuth().user?.guest);
   const [typed, setTyped] = useState("");
   const [busy, setBusy] = useState(false);
@@ -1245,12 +1290,16 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
     }
     setBusy(true);
     try {
-      const d = await api<{ result: AssessmentResult; id?: number | null }>("/api/assess", {
+      const d = await api<{ result: AssessmentResult; id?: number | null; scoreToken?: string }>("/api/assess", {
         method: "POST",
         replay: true, // aynı metnin tekrarı önbellekten döner (lib/assess hash), yeni kayıt açmaz
         timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify({
           kind: "writing", level,
+          /* Madde kimliği + mühürlü kâğıt: sunucu görevi kâğıttan alıp skoru
+             imzalıyor (bkz. `Sealed`; web `exam-player` aynı alanlar). */
+          exerciseId: w.id,
+          ...(examToken ? { examToken } : {}),
           task: { prompt: w.task.prompt, constraints: [...w.task.checklist, t("assess.ai_min_words", { n: w.task.minWords })] },
           answer: { text: typed.trim() },
           /* `day` YAZMA anahtarı (satır + günlük kota); gönderilmezse sunucunun
@@ -1270,6 +1319,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
       setDetail(d.result ?? null);
       setDetailId(d.id ?? null);
       setScore(d.result?.score?.overall ?? null);
+      if (d.scoreToken) onToken(d.scoreToken);
     } catch (e) {
       // Premium kapısı ağ hatası DEĞİL. Uydurma bir yedek puan vermek kapıyı
       // görünmez kılar: kullanıcı yapay zekâ değerlendirmesinin hakkının
