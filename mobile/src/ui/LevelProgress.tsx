@@ -8,6 +8,7 @@ import { t, formatPercent } from "../lib/i18n";
 import { useAuth } from "../lib/AuthContext";
 import { bumpStats, useStatsBump } from "../lib/statsSignal";
 import { advanceLevel, fetchLevelStatus, type LevelStatus } from "../game/level";
+import { READY_AT } from "../lib/learningRules";
 import { Card } from "./Card";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
@@ -89,7 +90,7 @@ export function LevelProgress() {
         </PressableScale>
       ) : (
         <>
-          <Text variant="caption" color={colors.textMuted}>{t("lvl.ready_hint", { pct: formatPercent(60), level: st.level })}</Text>
+          <Text variant="caption" color={colors.textMuted}>{t("lvl.ready_hint", { pct: formatPercent(READY_AT), level: st.level })}</Text>
           <PressableScale onPress={exam} hitSlop={6} style={{ paddingVertical: spacing.xs }}>
             <Text variant="caption" color={colors.primaryText}>{t("lvl.skip_ahead")} · {t("lvl.take_exam", { level: st.level })}</Text>
           </PressableScale>

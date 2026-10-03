@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { apiFetch } from "@/lib/api-fetch";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatPercent, type NativeLang } from "@/lib/i18n/dict";
+import { READY_AT } from "@/lib/level-readiness-score";
 
 /* "Şimdilik kalsın" denen geçiş bir daha sorulmaz (aynı hedef seviye için). */
 const DISMISS_KEY = "lernomi-level-advance-dismissed";
@@ -75,7 +76,7 @@ export function LevelProgress({ status }: { status: LevelProgressData }) {
         <Link href={`/exam/${status.level}`} prefetch={false} className="btn btn-primary mt-1 px-4 py-2.5 text-center">{t("lvl.ready_now", { level: status.level })}</Link>
       ) : (
         <>
-          <p className="muted text-caption">{t("lvl.ready_hint", { pct: formatPercent(60, lang), level: status.level })}</p>
+          <p className="muted text-caption">{t("lvl.ready_hint", { pct: formatPercent(READY_AT, lang), level: status.level })}</p>
           <Link href={`/exam/${status.level}`} prefetch={false} className="link text-caption">{t("lvl.skip_ahead")} · {t("lvl.take_exam", { level: status.level })}</Link>
         </>
       )}

@@ -26,6 +26,9 @@ export const DECAY_DAYS = 30;
 /** Seviye sınavında geçme: toplam yüzde (%60: CEFR sınavlarının eşiği, docs/plan/level-progress.md). */
 export const PASS_TOTAL = 60;
 
+/** Seviye hazırlığının sınav çağrısı eşiği (yüzde) — web `lib/level-readiness-score` `READY_AT`. */
+export const READY_AT = 60;
+
 /** Seviye sınavında geçme: her bölümün en az yüzdesi. */
 export const PASS_SECTION = 50;
 
