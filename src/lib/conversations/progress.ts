@@ -148,78 +148,92 @@ export async function recordConversation(
   const total = scoredSteps(conversation);
   const passed = chatDone && total > 0 && correct / total >= PASS_RATIO;
 
-  const [existing] = await db
-    .select()
-    .from(userConversations)
-    .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, conversation.id)));
-
   /*
-    AYNI BİTİRİŞİN İKİNCİ KEZ GELMESİ — yeni deneme değil, tekrar gönderim.
+   * OKU-HESAPLA-YAZ TEK İŞLEMDE, (kullanıcı, konuşma) kilidiyle (güvenlik
+   * denetimi 2026-10-03, D1). XP iyileşme farkı `existing`ten hesaplanıyor;
+   * kilitsizken farklı bitiriş kimlikli paralel N istek hepsi aynı `existing`i
+   * görüp N kez tam XP alıyordu. Aşağıdaki `setWhere` aynı kimliğin ikinci
+   * kopyasını zaten yakalıyordu; kilit kimliği farklı kopyaları da sıraya
+   * sokuyor.
+   */
+  const outcome = await db.transaction(async (tx) => {
+    await tx.execute(sql`select pg_advisory_xact_lock(hashtext(${`conv:${userId}:${conversation.id}`}))`);
+    const [existing] = await tx
+      .select()
+      .from(userConversations)
+      .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, conversation.id)));
 
-    İstemciler kaydı ağ hatasında bir kez daha deniyor ve düşeni kuyruğa alıp
-    Patika açılırken yeniden gönderiyor (mobil `pathProgress`, web
-    `conversation-queue`). Bağlantı yanıttan önce koptuysa sunucu ilk isteği
-    işlemiş olabilir; ikinci kopya denemeyi iki kez sayar, süreyi iki kez
-    ekler ve geçilmiş konuşmada tekrar merdivenini iki basamak çıkarırdı.
-    Bitiriş kimliği son yazılanla aynıysa hiçbir şey yazılmıyor, kayıtlı durum
-    dönüyor. Eskiden bu iş bir zaman penceresiyle (2 dk) yapılıyordu; pencere
-    hızlı yapılan gerçek bir ikinci denemeyi de yutuyordu, kimlik yutmuyor.
-  */
-  if (finishId && existing?.lastFinishId === finishId) {
-    return duplicateResult(userId, passed, existing.intervalDays);
-  }
+    /*
+      AYNI BİTİRİŞİN İKİNCİ KEZ GELMESİ — yeni deneme değil, tekrar gönderim.
 
-  const step = passed
-    ? Math.min((existing?.intervalDays ?? 0) === 0 ? 0 : LADDER.indexOf(existing!.intervalDays) + 1, LADDER.length - 1)
-    : 0;
-  const nextDays = LADDER[Math.max(0, step)];
+      İstemciler kaydı ağ hatasında bir kez daha deniyor ve düşeni kuyruğa alıp
+      Patika açılırken yeniden gönderiyor (mobil `pathProgress`, web
+      `conversation-queue`). Bağlantı yanıttan önce koptuysa sunucu ilk isteği
+      işlemiş olabilir; ikinci kopya denemeyi iki kez sayar, süreyi iki kez
+      ekler ve geçilmiş konuşmada tekrar merdivenini iki basamak çıkarırdı.
+      Bitiriş kimliği son yazılanla aynıysa hiçbir şey yazılmıyor, kayıtlı durum
+      dönüyor. Eskiden bu iş bir zaman penceresiyle (2 dk) yapılıyordu; pencere
+      hızlı yapılan gerçek bir ikinci denemeyi de yutuyordu, kimlik yutmuyor.
+    */
+    if (finishId && existing?.lastFinishId === finishId) {
+      return { duplicate: true as const, intervalDays: existing.intervalDays };
+    }
 
-  const written = await db
-    .insert(userConversations)
-    .values({
-      userId,
-      conversationId: conversation.id,
-      ruleId: conversation.focusId,
-      correct,
-      total,
-      chatDone,
-      attempts: 1,
-      intervalDays: nextDays,
-      dueAt: sql`now() + (${nextDays} || ' days')::interval`,
-      lastAt: new Date(),
-      lastFinishId: finishId,
-    })
-    .onConflictDoUpdate({
-      target: [userConversations.userId, userConversations.conversationId],
-      set: {
-        // En iyi skor korunuyor: bir kez doğru yapılanı sonraki denemede
-        // kaybetmek ilerlemeyi geri almamalı.
-        correct: sql`greatest(${userConversations.correct}, ${correct})`,
+    const step = passed
+      ? Math.min((existing?.intervalDays ?? 0) === 0 ? 0 : LADDER.indexOf(existing!.intervalDays) + 1, LADDER.length - 1)
+      : 0;
+    const nextDays = LADDER[Math.max(0, step)];
+
+    const written = await tx
+      .insert(userConversations)
+      .values({
+        userId,
+        conversationId: conversation.id,
+        ruleId: conversation.focusId,
+        correct,
         total,
-        chatDone: sql`${userConversations.chatDone} or ${chatDone}`,
-        attempts: sql`${userConversations.attempts} + 1`,
+        chatDone,
+        attempts: 1,
         intervalDays: nextDays,
         dueAt: sql`now() + (${nextDays} || ' days')::interval`,
         lastAt: new Date(),
         lastFinishId: finishId,
-      },
-      /* Yukarıdaki okuma ile bu yazma arasında aynı bitirişin öbür kopyası
-         yazmış olabilir (ilk istek hâlâ işlenirken gelen yeniden deneme). Koşul
-         satır kilidi altında bir daha bakıyor: kimlik artık aynıysa güncelleme
-         yapılmıyor ve `returning` boş dönüyor. Kimliksiz istek her zaman yazar. */
-      setWhere: finishId
-        ? sql`${userConversations.lastFinishId} is distinct from ${finishId}`
-        : undefined,
-    })
-    .returning({ intervalDays: userConversations.intervalDays });
+      })
+      .onConflictDoUpdate({
+        target: [userConversations.userId, userConversations.conversationId],
+        set: {
+          // En iyi skor korunuyor: bir kez doğru yapılanı sonraki denemede
+          // kaybetmek ilerlemeyi geri almamalı.
+          correct: sql`greatest(${userConversations.correct}, ${correct})`,
+          total,
+          chatDone: sql`${userConversations.chatDone} or ${chatDone}`,
+          attempts: sql`${userConversations.attempts} + 1`,
+          intervalDays: nextDays,
+          dueAt: sql`now() + (${nextDays} || ' days')::interval`,
+          lastAt: new Date(),
+          lastFinishId: finishId,
+        },
+        /* Yukarıdaki okuma ile bu yazma arasında aynı bitirişin öbür kopyası
+           yazmış olabilir (ilk istek hâlâ işlenirken gelen yeniden deneme). Koşul
+           satır kilidi altında bir daha bakıyor: kimlik artık aynıysa güncelleme
+           yapılmıyor ve `returning` boş dönüyor. Kimliksiz istek her zaman yazar. */
+        setWhere: finishId
+          ? sql`${userConversations.lastFinishId} is distinct from ${finishId}`
+          : undefined,
+      })
+      .returning({ intervalDays: userConversations.intervalDays });
 
-  if (!written.length) {
-    const [row] = await db
-      .select({ intervalDays: userConversations.intervalDays })
-      .from(userConversations)
-      .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, conversation.id)));
-    return duplicateResult(userId, passed, row?.intervalDays ?? nextDays);
-  }
+    if (!written.length) {
+      const [row] = await tx
+        .select({ intervalDays: userConversations.intervalDays })
+        .from(userConversations)
+        .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, conversation.id)));
+      return { duplicate: true as const, intervalDays: row?.intervalDays ?? nextDays };
+    }
+    return { duplicate: false as const, existing, nextDays };
+  });
+  if (outcome.duplicate) return duplicateResult(userId, passed, outcome.intervalDays);
+  const { existing, nextDays } = outcome;
 
   // XP: konuşmanın tasarlanmış süresine göre, tekrar çözümlerde yalnızca iyileşme
   // farkı. Konuşma bölümü daha önce hiç puan vermiyordu — sekiz tamamlanmış konuşma

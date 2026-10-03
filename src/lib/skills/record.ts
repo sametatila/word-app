@@ -55,44 +55,55 @@ export async function recordSkillAttempt(
   const correct = Math.max(0, Math.min(total, Math.round(attempt.correct)));
   const lastScore = scoreOf(correct, total, attempt.score);
 
-  const [prev] = await db
-    .select()
-    .from(userSkills)
-    .where(and(eq(userSkills.userId, userId), eq(userSkills.exerciseId, exercise.id)));
-  const prevBest = prev ? Math.min(prev.correct, total) : null;
-  const best = Math.max(correct, prevBest ?? 0);
-  const xpGained = Math.max(
-    0,
-    xpFor(exercise, best) - (prevBest === null ? 0 : xpFor(exercise, prevBest)),
-  );
+  /*
+   * OKU-HESAPLA-YAZ TEK İŞLEMDE, (kullanıcı, egzersiz) kilidiyle (güvenlik
+   * denetimi 2026-10-03, D1). Önceki en iyi kilitsiz okunuyordu: aynı egzersiz
+   * için paralel N istek hepsi aynı `prev`i görüp N kez tam XP alıyordu.
+   * Satır henüz yoksa `for update` kilitleyecek bir şey bulamıyor; danışma
+   * kilidi ilk çözümü de sıraya sokuyor.
+   */
+  const { prevBest, best, xpGained } = await db.transaction(async (tx) => {
+    await tx.execute(sql`select pg_advisory_xact_lock(hashtext(${`skill:${userId}:${exercise.id}`}))`);
+    const [prev] = await tx
+      .select()
+      .from(userSkills)
+      .where(and(eq(userSkills.userId, userId), eq(userSkills.exerciseId, exercise.id)));
+    const prevBest = prev ? Math.min(prev.correct, total) : null;
+    const best = Math.max(correct, prevBest ?? 0);
+    const xpGained = Math.max(
+      0,
+      xpFor(exercise, best) - (prevBest === null ? 0 : xpFor(exercise, prevBest)),
+    );
 
-  const now = new Date();
-  await db
-    .insert(userSkills)
-    .values({
-      userId,
-      exerciseId: exercise.id,
-      correct: best,
-      total,
-      attempts: 1,
-      skill: exercise.skill,
-      level: exercise.level,
-      lastScore,
-      lastAt: now,
-      firstAt: now,
-    })
-    .onConflictDoUpdate({
-      target: [userSkills.userId, userSkills.exerciseId],
-      set: {
+    const now = new Date();
+    await tx
+      .insert(userSkills)
+      .values({
+        userId,
+        exerciseId: exercise.id,
         correct: best,
         total,
-        attempts: sql`${userSkills.attempts} + 1`,
+        attempts: 1,
         skill: exercise.skill,
         level: exercise.level,
         lastScore,
         lastAt: now,
-      },
-    });
+        firstAt: now,
+      })
+      .onConflictDoUpdate({
+        target: [userSkills.userId, userSkills.exerciseId],
+        set: {
+          correct: best,
+          total,
+          attempts: sql`${userSkills.attempts} + 1`,
+          skill: exercise.skill,
+          level: exercise.level,
+          lastScore,
+          lastAt: now,
+        },
+      });
+    return { prevBest, best, xpGained };
+  });
 
   // Öğrenme olayı: KPI 4 (beceri puanları) buradan okur. Puan son denemenin,
   // en iyinin değil — trend "bugün ne yapabildi"yi izler.

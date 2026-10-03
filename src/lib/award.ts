@@ -1,8 +1,9 @@
 import "server-only";
-import { eq, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats, profiles } from "@/lib/db/schema";
 import { onActivityAwarded } from "@/lib/social/hooks";
+import { ANSWERS_DAILY_XP_CAP, cappedDailyXp } from "@/lib/xp";
 
 /**
  * Bir çalışmanın hesaba işlenmesi: XP, günlük istatistik ve seri.
@@ -143,43 +144,64 @@ export async function awardActivity(
   xpGained: number,
   seconds: number,
 ): Promise<AwardResult> {
-  const [profile] = await db.select().from(profiles).where(eq(profiles.userId, userId)).limit(1);
-  if (!profile) throw new Error(`profil bulunamadı: ${userId}`);
-
-  const xp = Math.max(0, Math.round(xpGained));
+  const asked = Math.max(0, Math.round(xpGained));
   const secs = Math.max(0, Math.min(7200, Math.round(seconds)));
 
-  await db
-    .insert(dailyStats)
-    .values({ userId, day: today, xp, seconds: secs })
-    .onConflictDoUpdate({
-      target: [dailyStats.userId, dailyStats.day],
-      set: {
-        xp: sql`${dailyStats.xp} + ${xp}`,
-        seconds: sql`${dailyStats.seconds} + ${secs}`,
-      },
-    });
+  /*
+   * TEK İŞLEM, PROFİL SATIRI KİLİTLİ (güvenlik denetimi 2026-10-03, D1).
+   *
+   * Eskiden profil okunup `totalXp: profile.totalXp + xp` yazılıyordu: paralel
+   * iki kayıt birbirinin XP'sini eziyordu ve günlük satıra tavan yoktu. Şimdi
+   * aynı kullanıcının kayıtları sırayla işleniyor; günlük XP, kelime oyunlarının
+   * tavanıyla aynı satırda sınırlanıyor (`ANSWERS_DAILY_XP_CAP`, lig bu satırdan
+   * sıralanıyor) ve toplama yalnız günlük satıra gerçekten giren XP ekleniyor.
+   */
+  const out = await db.transaction(async (tx) => {
+    const [profile] = await tx.select().from(profiles).where(eq(profiles.userId, userId)).for("update").limit(1);
+    if (!profile) throw new Error(`profil bulunamadı: ${userId}`);
 
-  const streak = nextStreak(profile, today);
+    const [prior] = await tx
+      .select({ xp: dailyStats.xp })
+      .from(dailyStats)
+      .where(and(eq(dailyStats.userId, userId), eq(dailyStats.day, today)))
+      .limit(1);
+    const xp = cappedDailyXp(prior?.xp ?? 0, asked);
 
-  // `lastActiveDay` yalnızca İLERİ gider: geri giden bir gün (saat dilimi
-  // gürültüsü, geç istek) kaydı geriletip ertesi günü "kaçırılmış" göstermesin.
-  const lastActiveDay = profile.lastActiveDay && today < profile.lastActiveDay ? profile.lastActiveDay : today;
+    await tx
+      .insert(dailyStats)
+      .values({ userId, day: today, xp, seconds: secs })
+      .onConflictDoUpdate({
+        target: [dailyStats.userId, dailyStats.day],
+        set: {
+          xp: sql`LEAST(${dailyStats.xp} + ${xp}, ${ANSWERS_DAILY_XP_CAP})`,
+          seconds: sql`${dailyStats.seconds} + ${secs}`,
+        },
+      });
 
-  await db
-    .update(profiles)
-    .set({
-      currentStreak: streak.currentStreak,
-      longestStreak: streak.longestStreak,
-      lastActiveDay,
-      totalXp: profile.totalXp + xp,
-      ...(streak.repaired ? { streakRepairAt: today } : {}),
-    })
-    .where(eq(profiles.userId, userId));
+    const streak = nextStreak(profile, today);
+
+    // `lastActiveDay` yalnızca İLERİ gider: geri giden bir gün (saat dilimi
+    // gürültüsü, geç istek) kaydı geriletip ertesi günü "kaçırılmış" göstermesin.
+    const lastActiveDay = profile.lastActiveDay && today < profile.lastActiveDay ? profile.lastActiveDay : today;
+
+    const [updated] = await tx
+      .update(profiles)
+      .set({
+        currentStreak: streak.currentStreak,
+        longestStreak: streak.longestStreak,
+        lastActiveDay,
+        totalXp: sql`${profiles.totalXp} + ${xp}`,
+        ...(streak.repaired ? { streakRepairAt: today } : {}),
+      })
+      .where(eq(profiles.userId, userId))
+      .returning({ totalXp: profiles.totalXp });
+    return { streak, xp, previousStreak: profile.currentStreak, totalXp: updated?.totalXp ?? profile.totalXp + xp };
+  });
+  const { streak, xp } = out;
 
   // Sosyal katman: seri eşiği geçildiyse akışa olay, aktif ortak görev hedefe
   // ulaştıysa tamamlanma. Hata fırlatmaz (bkz. lib/social/hooks.ts).
-  await onActivityAwarded(userId, today, profile.currentStreak, streak.currentStreak);
+  await onActivityAwarded(userId, today, out.previousStreak, streak.currentStreak);
 
-  return { ...streak, xpGained: xp, totalXp: profile.totalXp + xp };
+  return { ...streak, xpGained: xp, totalXp: out.totalXp };
 }

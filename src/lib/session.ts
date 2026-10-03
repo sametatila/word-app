@@ -2544,21 +2544,35 @@ export async function recordChallengeScore(
   userId: string,
   score: number,
 ): Promise<{ best: number; previous: number; xpGained: number }> {
-  const profile = await ensureProfile(userId);
-  const previous = profile.challengeBest;
-  if (score <= previous) return { best: previous, previous, xpGained: 0 };
+  await ensureProfile(userId);
+  /*
+   * Rekor ve ödül profil satırı KİLİTLİYKEN (güvenlik denetimi 2026-10-03, D1):
+   * kilitsiz okumada aynı rekoru taşıyan paralel istekler hepsi eski rekoru
+   * görüp her biri ödül alıyordu. Ödül toplama artışla yazılıyor, okunan
+   * toplamın üstüne değil.
+   */
+  return db.transaction(async (tx) => {
+    const [row] = await tx
+      .select({ best: profiles.challengeBest })
+      .from(profiles)
+      .where(eq(profiles.userId, userId))
+      .for("update")
+      .limit(1);
+    const previous = row?.best ?? 0;
+    if (score <= previous) return { best: previous, previous, xpGained: 0 };
 
-  // Rekor kırmak ayrıca ödüllendiriliyor. Turun cevapları zaten `/api/answers`
-  // üzerinden XP kazandırıyor; buradaki ödül iyi oynamanın karşılığı — aksi
-  // hâlde uygulamanın en zorlu bölümü, kolay bir tekrar turuyla aynı puanı
-  // veriyordu.
-  const xpGained = xpForChallengeRecord(score, previous);
+    // Rekor kırmak ayrıca ödüllendiriliyor. Turun cevapları zaten `/api/answers`
+    // üzerinden XP kazandırıyor; buradaki ödül iyi oynamanın karşılığı — aksi
+    // hâlde uygulamanın en zorlu bölümü, kolay bir tekrar turuyla aynı puanı
+    // veriyordu.
+    const xpGained = xpForChallengeRecord(score, previous);
 
-  await db
-    .update(profiles)
-    .set({ challengeBest: score, totalXp: profile.totalXp + xpGained })
-    .where(eq(profiles.userId, userId));
-  return { best: score, previous, xpGained };
+    await tx
+      .update(profiles)
+      .set({ challengeBest: score, totalXp: sql`${profiles.totalXp} + ${xpGained}` })
+      .where(eq(profiles.userId, userId));
+    return { best: score, previous, xpGained };
+  });
 }
 
 /**

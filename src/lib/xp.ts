@@ -30,8 +30,9 @@ export const XP_PER_MINUTE = 100;
  * lig (dailyStats.xp'den sıralanıyor) SONSUZ şişirilebiliyordu. Tavan bir güne
  * sığabilecek XP'yi sınırlar. Bilerek YÜKSEK: ölçülen en uç gerçek gün ~40.000
  * XP (100 XP/dk × ~6,6 saat). 60.000, en çalışkan kullanıcıyı bile kırpmadan
- * (xp.ts felsefesi) uydurmayı "bir günde erişilemez" bölgede tutar. Beceri/konuşma
- * XP'si ayrı yollardan gelir; bu tavan yalnız kelime-oyunu yolunu bağlar.
+ * (xp.ts felsefesi) uydurmayı "bir günde erişilemez" bölgede tutar. Beceri ve
+ * konuşma XP'si de aynı günlük satıra (`awardActivity`) bu tavanla yazılıyor
+ * (denetim 2026-10-03, D1): tavan günün TOPLAM XP'sini bağlıyor.
  */
 export const ANSWERS_DAILY_XP_CAP = 60_000;
 
