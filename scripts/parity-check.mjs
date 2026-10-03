@@ -17338,6 +17338,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          kaniti, kisa omurlu. Hesaba ait OLAMAZ - devir tamamlanana kadar hesap
          yok (bkz. lib/handoff). */
       "lernomi:handoff", //            giris devri nonce'u (15 dk)
+      /* Bu cihazda baslatilan kayit/dogrulama notu (guvenlik denetimi D11,
+         2026-10-03): dogrulama baglantisi yalniz burada not edilmis adres icin
+         oturum aciyor (login CSRF). Hesaba ait OLAMAZ - not, hesap dogrulanip
+         oturum acilmadan ONCE yaziliyor (bkz. lib/pendingVerify). */
+      "lernomi:pending-verify", //     bekleyen dogrulama adresleri (kisa omurlu)
       /* API tabani secimi (asil / yedek adres, 24 saat): AGA ait, hesaba degil.
          Cikista silinseydi engelli agdaki kullanici her giriste once asil
          adresin dusmesini beklerdi (bkz. api/base). */
