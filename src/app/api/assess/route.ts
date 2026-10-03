@@ -15,7 +15,7 @@ import {
 } from "@/lib/assess-prompts";
 import { claimAssessAccess } from "@/lib/assess-access";
 import { premiumConfig, takeUsage } from "@/lib/premium";
-import { signScore, openKey, examWritingTask } from "@/lib/exam-grade";
+import { signScore, openKeyFor, examWritingTask } from "@/lib/exam-grade";
 import { clampDay } from "@/lib/award";
 import { aiConsentGate } from "@/lib/ai-consent";
 
@@ -79,7 +79,7 @@ export async function POST(req: Request) {
   let examVerified = false;
   const examToken = typeof (body as { examToken?: unknown }).examToken === "string" ? (body as { examToken: string }).examToken : null;
   if (examToken && parsed.req.kind === "writing" && typeof parsed.req.exerciseId === "string") {
-    const key = openKey(examToken);
+    const key = openKeyFor(examToken, userId);
     const wt = key ? examWritingTask(key, parsed.req.exerciseId) : null;
     if (wt) {
       parsed.req.task = { prompt: wt.prompt, constraints: wt.constraints };
