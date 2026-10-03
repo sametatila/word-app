@@ -200,6 +200,21 @@ const nextConfig: NextConfig = {
       },
       {
         /*
+          Aynı gerekçe e-posta bağlantılarının açtığı iki sayfada: parola
+          sıfırlama adresi `?token=` (kullanılmamış jetonla parola
+          değiştirilebilir), doğrulama sayfası `?email=` taşıyor. Varsayılan
+          politikada sayfanın kendi kökenine yaptığı her istek (JS, font,
+          /api/auth) tam adresi Referer olarak taşıyor ve erişim günlüğüne
+          yazıyordu (güvenlik denetimi 2026-10-03, D23).
+        */
+        source: "/:page(reset-password|verify-email)",
+        headers: [
+          { key: "Referrer-Policy", value: "no-referrer" },
+          { key: "Cache-Control", value: "no-store" },
+        ],
+      },
+      {
+        /*
           NOMİ 3B AVATAR KATALOĞU sürümlü bir kök: `/avatar/v<n>` bir kez
           yayınlanınca değişmiyor (yeni katalog yeni kök: v1 → v2). Katmanlar ve
           ikonlar bir yıl `immutable`; düzenleyici ve profil sahnesi her açılışta
