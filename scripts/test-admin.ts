@@ -20,6 +20,7 @@ import { isTestLabSql, notTestLab, real } from "../src/lib/test-lab";
 import { errorFingerprint, scrub } from "../src/lib/client-errors";
 import { csvCell } from "../src/lib/csv";
 import { chunkLines, criticalRouteAlerts, errorLabel, nginxTime } from "../src/lib/alerts";
+import { nextSort, parseSort, sortHref } from "../src/lib/admin-sort";
 import { routeOf } from "../src/lib/server-metrics";
 import { cleanUrl, parseAudience } from "../src/lib/push-broadcast";
 import { cleanSource, platformOf } from "../src/lib/store-link";
@@ -117,6 +118,13 @@ async function main() {
   check("saat dilimli zaman", nginxTime("17/Sep/2026:10:49:26 +0200") === Date.UTC(2026, 8, 17, 8, 49, 26));
   check("negatif dilim", nginxTime("01/Jan/2026:00:00:00 -0500") === Date.UTC(2026, 0, 1, 5, 0, 0));
   check("bozuk zaman 0", nginxTime("dün") === 0);
+
+  // Tablo sıralaması (lib/admin-sort): istemci ve sunucu tablosunda aynı kural.
+  const DEF = { key: "active", dir: "desc" as const };
+  check("sıra adresi: anahtar artan, -anahtar azalan", JSON.stringify(parseSort("xp", ["xp"], DEF)) === '{"key":"xp","dir":"asc"}' && JSON.stringify(parseSort("-xp", ["xp"], DEF)) === '{"key":"xp","dir":"desc"}');
+  check("tanınmayan anahtar varsayılana düşer", parseSort("drop table", ["xp"], DEF) === DEF && parseSort(undefined, ["xp"], DEF) === DEF);
+  check("yeni sütun: sayı büyükten, metin baştan; aynı sütun yön değiştirir", nextSort(null, "xp", true).dir === "desc" && nextSort(null, "name", false).dir === "asc" && nextSort({ key: "xp", dir: "desc" }, "xp", true).dir === "asc");
+  check("sıra bağlantısı süzgeci korur, sayfayı başa alır", sortHref("/admin/users?tur=premium&sayfa=3&sira=xp", { key: "xp", dir: "desc" }) === "/admin/users?tur=premium&sira=-xp");
 
   // Telegram parçalama: satır ortadan kesilmez, her satır bir kez, sınır aşılmaz.
   const many = Array.from({ length: 40 }, (_, i) => `<b>[UYARI]</b> satır ${i} ${"x".repeat(150)}`);

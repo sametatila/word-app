@@ -1,6 +1,8 @@
 "use client";
 
 import { useId, useMemo, useState } from "react";
+import { nextSort, type SortState } from "@/lib/admin-sort";
+import { SortHeader } from "./table";
 
 /**
  * PANEL GRAFİKLERİ — okunan değil, sorgulanan grafikler.
@@ -201,26 +203,32 @@ export type BarItem = { label: string; value: number; right?: string; tone?: Cha
  * Büyüklük sıralaması: her satır ad, çubuk, değer. Çubuk en büyük değere
  * (ya da `max`a) göre; gri iz YOK — bu bir "ilerleme" değil, satırlar arası
  * karşılaştırma. Tek dizi tek renk; `tone` yalnız anlamı olan satırda (hata).
- * 8'den uzunsa "tümünü göster", 5'ten uzunsa ad/değer sıralaması. Pay
- * (`share`) yalnız TOPLANABİLİR listelerde yazılıyor.
+ * 8'den uzunsa "tümünü göster". 5'ten uzunsa sütun başlıkları (Ad, Değer)
+ * tablolardakiyle AYNI sıralama başlığı (`SortHeader`, `nextSort`); hazır
+ * "değer / ad" düğmesi kaldırıldı (2026-10-03). Sırasız hâl verilen sıra.
+ * Pay (`share`) yalnız TOPLANABİLİR listelerde yazılıyor.
  */
 export function BarList({ items, max, unit, empty = "Henüz veri yok.", share = false }: { items: BarItem[]; max?: number; unit?: string; empty?: string; share?: boolean }) {
   const [all, setAll] = useState(false);
-  const [byName, setByName] = useState(false);
+  const [sort, setSort] = useState<SortState | null>(null);
   if (!items.length) return <p className="muted text-caption">{empty}</p>;
   const top = Math.max(max ?? 0, 1, ...items.map((i) => i.value));
   const total = items.reduce((a, i) => a + i.value, 0);
-  const sorted = byName ? [...items].sort((a, b) => a.label.localeCompare(b.label, "tr")) : items;
+  const dir = (key: string) => (sort?.key === key ? sort.dir : null);
+  const sorted = !sort
+    ? items
+    : [...items].sort((a, b) => (sort.key === "label" ? a.label.localeCompare(b.label, "tr") : a.value - b.value) * (sort.dir === "asc" ? 1 : -1));
   const shown = all ? sorted : sorted.slice(0, 8);
   return (
     <div>
-      {items.length > 5 ? (
-        <div className="mb-2 flex justify-end gap-1 text-caption">
-          <button type="button" aria-pressed={!byName} onClick={() => setByName(false)} className="rounded-chip px-2 py-0.5" style={!byName ? { background: "var(--surface-2)", color: "var(--text)" } : { color: "var(--text-muted)" }}>değer</button>
-          <button type="button" aria-pressed={byName} onClick={() => setByName(true)} className="rounded-chip px-2 py-0.5" style={byName ? { background: "var(--surface-2)", color: "var(--text)" } : { color: "var(--text-muted)" }}>ad</button>
-        </div>
-      ) : null}
       <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto] items-center gap-x-3 gap-y-1.5 text-caption">
+        {items.length > 5 ? (
+          <div className="contents muted text-micro font-bold">
+            <span><SortHeader label="Ad" dir={dir("label")} onClick={() => setSort((s) => nextSort(s, "label", false))} /></span>
+            <span aria-hidden />
+            <span className="text-right"><SortHeader label="Değer" dir={dir("value")} onClick={() => setSort((s) => nextSort(s, "value", true))} /></span>
+          </div>
+        ) : null}
         {shown.map((it, i) => (
           <div key={`${it.label}-${i}`} className="contents">
             <span className="min-w-0 truncate" title={it.label} aria-label={it.label}>{it.label}</span>

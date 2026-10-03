@@ -97,6 +97,8 @@ const SKIP = [
   "lib/admin-content.ts",
   // Uyarıların panel/konsol adresleri ve bölüm etiketleri: panel ve Telegram.
   "lib/admin-links.ts",
+  // Panel tablolarının sıralama durumu: yalnız adres parametre adları (sira, sayfa).
+  "lib/admin-sort.ts",
   // Geri dönüş süreleri, "nasıl dönülür" rehberi ve kuyruk özeti: yalnız panel
   // ve Telegram. Yorum yanıt şablonları üç dilli ama mağaza konsoluna elle
   // yapıştırılıyor, uygulamada gösterilmiyor.

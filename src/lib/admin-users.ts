@@ -2,6 +2,7 @@ import "server-only";
 import { sql } from "drizzle-orm";
 import { queryRunner, type QueryIssue } from "@/lib/admin-query";
 import { isTestLabSql } from "@/lib/test-lab";
+import { parseSort, type SortState } from "@/lib/admin-sort";
 
 /**
  * Kullanıcı listesi — SUNUCUDA arama, süzme, sıralama ve sayfalama
@@ -13,20 +14,22 @@ import { isTestLabSql } from "@/lib/test-lab";
  * sayısı da yalnız o 50 kişi için hesaplanıyor.
  *
  * Arama: e-posta, görünen ad, kullanıcı adı (içinde geçen) ve kimlik (baştan).
+ * Sıralama: tablo başlığından, her sütun (`USER_SORT_KEYS`, `lib/admin-sort`).
  */
 
 export const USERS_PAGE_SIZE = 50;
 export type UsersKind = "all" | "account" | "guest" | "premium" | "suspended" | "testlab";
-export type UsersSort = "active" | "joined" | "xp" | "streak";
+/** Tablo sütunlarının sıralama anahtarları (adres: `sira=xp` / `sira=-xp`). */
+export const USER_SORT_KEYS = ["name", "username", "pair", "level", "streak", "xp", "words", "active", "joined"] as const;
+export const USER_SORT_DEFAULT: SortState = { key: "active", dir: "desc" };
 
-export type UsersQuery = { q: string; kind: UsersKind; sort: UsersSort; page: number };
+export type UsersQuery = { q: string; kind: UsersKind; sort: SortState; page: number };
 
 export function parseUsersQuery(sp: Record<string, string | string[] | undefined>): UsersQuery {
   const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
   const kinds: UsersKind[] = ["all", "account", "guest", "premium", "suspended", "testlab"];
-  const sorts: UsersSort[] = ["active", "joined", "xp", "streak"];
   const kind = kinds.includes(one(sp.tur) as UsersKind) ? (one(sp.tur) as UsersKind) : "all";
-  const sort = sorts.includes(one(sp.sira) as UsersSort) ? (one(sp.sira) as UsersSort) : "active";
+  const sort = parseSort(sp.sira, USER_SORT_KEYS, USER_SORT_DEFAULT);
   const page = Math.max(1, Math.min(10_000, Math.floor(Number(one(sp.sayfa)) || 1)));
   return { q: one(sp.q).trim().slice(0, 120), kind, sort, page };
 }
@@ -68,11 +71,20 @@ export async function listUsers(query: UsersQuery): Promise<{ rows: UserRow[]; t
     : query.kind === "suspended" ? sql`and exists (select 1 from account_suspensions s where s.user_id = ${ID} and s.lifted_at is null and (s.until is null or s.until > now()))`
     : query.kind === "testlab" ? sql`and ${isTestLabSql(ID)}`
     : sql``;
-  const order =
-    query.sort === "joined" ? sql`coalesce(p.created_at, u."createdAt") desc`
-    : query.sort === "xp" ? sql`p.total_xp desc nulls last, p.last_active_day desc nulls last`
-    : query.sort === "streak" ? sql`p.current_streak desc nulls last, p.total_xp desc nulls last`
-    : sql`p.last_active_day desc nulls last, p.total_xp desc nulls last, u."createdAt" desc`;
+  /* Her sütunun sıralama ifadesi; boşlar her iki yönde sonda, eşitlikte son aktif + kimlik. */
+  const EXPR: Record<(typeof USER_SORT_KEYS)[number], ReturnType<typeof sql>> = {
+    name: sql`lower(coalesce(nullif(p.display_name, ''), nullif(u.name, ''), u.email))`,
+    username: sql`lower(nullif(p.username, ''))`,
+    pair: sql`case when p.course is null then null else coalesce(p.native_lang, 'tr') || '→' || p.course end`,
+    level: sql`nullif(p.level, '')`,
+    streak: sql`p.current_streak`,
+    xp: sql`p.total_xp`,
+    words: sql`(select count(*) from user_words w where w.user_id = ${ID} and w.state > 0)`,
+    active: sql`p.last_active_day`,
+    joined: sql`coalesce(p.created_at, u."createdAt")`,
+  };
+  const expr = EXPR[query.sort.key as keyof typeof EXPR] ?? EXPR.active;
+  const order = sql`${expr} ${sql.raw(query.sort.dir === "asc" ? "asc" : "desc")} nulls last, p.last_active_day desc nulls last, ${ID}`;
   const offset = (query.page - 1) * USERS_PAGE_SIZE;
 
   const [list, count] = await Promise.all([

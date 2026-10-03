@@ -4,6 +4,7 @@ import { adminGate } from "@/lib/admin";
 import { CONTENT_PAGE_SIZE, contentFeedbackList, contentQueryParams, parseContentQuery, type ContentQuery } from "@/lib/moderation-admin";
 import { AdminDenied, AdminPage, Badge, BTN, DataTable, Empty, Field, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, Segmented, when } from "../../_ui/ui";
 import { reasonText, surfaceText, targetText } from "./labels";
+import { sortParam } from "@/lib/admin-sort";
 import { ResponseGuide, SlaBadge } from "../../_ui/sla";
 
 export const metadata: Metadata = { title: "İçerik geri bildirimi" };
@@ -90,16 +91,17 @@ export default async function ContentFeedbackPage({ searchParams }: { searchPara
           <DataTable
             name="icerik-bildirimleri"
             empty="Eşleşme yok."
-            /* Sıralama SUNUCUDA (son bildirim tarihi): başlıkla sıralamak yalnız bu sayfayı dizerdi. */
+            /* Sıralama SUNUCUDA: başlık bağlantısı süzgecin tamamını sıralıyor, yalnız bu sayfayı değil (`lib/admin-sort`). */
+            server={{ sort: sortParam(q.sort), base: href(q, { page: 1 }) }}
             head={[
-              { label: "Hedef", sortable: false },
-              { label: "Yüzey", sortable: false },
-              { label: "En sık neden", sortable: false },
-              { label: "Bildirim", align: "right", sortable: false },
-              { label: "İlk / son", sortable: false },
-              { label: "Kurs / anadil", sortable: false },
-              { label: "Platform", sortable: false },
-              { label: "Durum", sortable: false },
+              { label: "Hedef", sortKey: "target" },
+              { label: "Yüzey", sortKey: "surface" },
+              { label: "En sık neden", sortKey: "reason" },
+              { label: "Bildirim", align: "right", sortKey: "count" },
+              { label: "İlk / son", sortKey: "last" },
+              { label: "Kurs / anadil", sortKey: "course" },
+              { label: "Platform", sortKey: "platform" },
+              { label: "Durum", sortKey: "status" },
             ]}
             rows={data.groups.map((g) => [
               <div key="t" className="min-w-56 max-w-md">

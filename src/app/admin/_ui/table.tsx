@@ -2,6 +2,7 @@
 
 import { isValidElement, useMemo, useState, type ReactNode } from "react";
 import { csvCell } from "@/lib/csv";
+import { nextSort, parseSort, sortHref, type SortState } from "@/lib/admin-sort";
 
 /**
  * PANEL TABLOSU — sıralanır, aranır, parça parça açılır, CSV'ye iner.
@@ -19,9 +20,17 @@ import { csvCell } from "@/lib/csv";
  * (`<span className="font-mono">{id}</span>`) ise içindeki metin. "%78",
  * "1.2k", "3/8" gibi biçimli metinler sayı olarak okunuyor. Türetilemeyen
  * sütun (düğme, rozet karışımı) sıralanmıyor.
+ *
+ * SUNUCUDA SAYFALANAN TABLO (`server`): veri sayfa sayfa geliyorsa tarayıcıda
+ * dizmek yalnız görünen sayfayı dizer ve yanıltır. O zaman her sütun bir
+ * `sortKey` taşır ve başlık, sorguyu o sütuna göre sıralayan bir BAĞLANTI olur
+ * (`lib/admin-sort`: `sira=xp` / `sira=-xp`). Görünüm, oklar ve tıklama kuralı
+ * (`nextSort`) iki yolda aynı; tablo içi arama yalnız istemci yolunda (sunucu
+ * yolunda sayfanın kendi arama kutusu var). Hazır "Sırala" düğmeleri bu yüzden
+ * kaldırıldı (2026-10-03): her tablo yalnız başlıktan sıralanıyor.
  */
 
-export type Column = string | { label: string; align?: "right"; sortable?: boolean };
+export type Column = string | { label: string; align?: "right"; sortable?: boolean; sortKey?: string };
 
 function textOf(node: ReactNode): string {
   if (node == null || typeof node === "boolean") return "";
@@ -45,32 +54,65 @@ function sortValue(node: ReactNode): number | string {
 
 const PAGE = 25;
 
-export function DataTable({ head, rows, empty = "Kayıt yok.", mono, name = "tablo" }: {
+/**
+ * SIRALANABİLİR SÜTUN BAŞLIĞI — panelin TEK sıralama arayüzü: tablo
+ * (`DataTable`) ve çubuk listesi (`BarList`) aynı bileşeni kullanıyor. `href`
+ * verilirse bağlantı (sunucu sıralaması), yoksa düğme.
+ */
+export function SortHeader({ label, dir, onClick, href }: { label: ReactNode; dir: "asc" | "desc" | null; onClick?: () => void; href?: string }) {
+  const cls = "inline-flex min-h-6 items-center gap-1 uppercase tracking-eyebrow";
+  const style = dir ? { color: "var(--text)" } : undefined;
+  const inner = (
+    <>
+      {label}
+      <span aria-hidden>{dir ? (dir === "asc" ? "↑" : "↓") : "↕"}</span>
+    </>
+  );
+  return href ? (
+    <a href={href} className={cls} style={style}>{inner}</a>
+  ) : (
+    <button type="button" aria-pressed={!!dir} onClick={onClick} className={cls} style={style}>{inner}</button>
+  );
+}
+
+export function DataTable({ head, rows, empty = "Kayıt yok.", mono, name = "tablo", server }: {
   head: Column[];
   rows: ReactNode[][];
   empty?: string;
   mono?: boolean;
   /** CSV dosya adının başı. */
   name?: string;
+  /**
+   * Sunucuda sıralanan tablo: `sort` adresteki değer (`-last`), `base` sayfa ve
+   * sıra içermeyen adres (süzgeçler korunur). Sütunlar `sortKey` taşır.
+   */
+  server?: { sort: string; base: string };
 }) {
-  const [sort, setSort] = useState<{ col: number; dir: 1 | -1 } | null>(null);
+  /* İstemci yolu: anahtar sütunun sırası (String). Sunucu yolu: adresteki durum. */
+  const [clientSort, setSort] = useState<SortState | null>(null);
   const [q, setQ] = useState("");
   const [limit, setLimit] = useState(PAGE);
 
-  const cols = head.map((h) => (typeof h === "string" ? { label: h, align: undefined, sortable: h !== "" } : { sortable: h.label !== "", ...h }));
+  const cols = head.map((h) => (typeof h === "string" ? { label: h, align: undefined, sortable: h !== "", sortKey: undefined } : { sortable: h.label !== "", ...h }));
+  const serverKeys = cols.map((c) => c.sortKey).filter((k): k is string => !!k);
+  const serverSort = server ? parseSort(server.sort, serverKeys, { key: "", dir: "desc" }) : null;
+  const sort = server ? serverSort : clientSort;
+  const isOn = (i: number) => (server ? !!cols[i].sortKey && sort?.key === cols[i].sortKey : sort?.key === String(i));
 
   const view = useMemo(() => {
-    const needle = q.trim().toLocaleLowerCase("tr-TR");
+    const needle = server ? "" : q.trim().toLocaleLowerCase("tr-TR");
     const indexed = rows.map((r, i) => ({ r, i, text: needle ? r.map(textOf).join(" ").toLocaleLowerCase("tr-TR") : "" }));
     const found = needle ? indexed.filter((x) => x.text.includes(needle)) : indexed;
-    if (!sort) return found;
+    if (server || !clientSort) return found;
+    const col = Number(clientSort.key);
+    const dir = clientSort.dir === "asc" ? 1 : -1;
     return [...found].sort((a, b) => {
-      const av = sortValue(a.r[sort.col]);
-      const bv = sortValue(b.r[sort.col]);
-      if (typeof av === "number" && typeof bv === "number") return (av - bv) * sort.dir || a.i - b.i;
-      return String(av).localeCompare(String(bv), "tr") * sort.dir || a.i - b.i;
+      const av = sortValue(a.r[col]);
+      const bv = sortValue(b.r[col]);
+      if (typeof av === "number" && typeof bv === "number") return (av - bv) * dir || a.i - b.i;
+      return String(av).localeCompare(String(bv), "tr") * dir || a.i - b.i;
     });
-  }, [rows, q, sort]);
+  }, [rows, q, clientSort, server]);
 
   if (!rows.length) return <p className="muted rounded-tile border border-dashed px-4 py-5 text-center text-caption" style={{ borderColor: "var(--border)" }}>{empty}</p>;
 
@@ -92,7 +134,7 @@ export function DataTable({ head, rows, empty = "Kayıt yok.", mono, name = "tab
           arama ve CSV düğmesi gürültü. */}
       {rows.length > 5 ? (
       <div className="mb-2 flex flex-wrap items-center gap-2 px-1 text-caption">
-        {rows.length > 12 ? (
+        {rows.length > 12 && !server ? (
           <input
             type="search"
             value={q}
@@ -112,24 +154,19 @@ export function DataTable({ head, rows, empty = "Kayıt yok.", mono, name = "tab
           <thead>
             <tr className="muted text-micro uppercase tracking-eyebrow">
               {cols.map((c, i) => {
-                const on = sort?.col === i;
+                const on = isOn(i);
+                const dir = on && sort ? sort.dir : null;
+                const numeric = c.align === "right";
                 return (
                   <th
                     key={i}
-                    aria-sort={on ? (sort.dir === 1 ? "ascending" : "descending") : undefined}
-                    className={`whitespace-nowrap px-3 py-2 font-bold ${c.align === "right" ? "text-right" : "text-left"}`}
+                    aria-sort={dir ? (dir === "asc" ? "ascending" : "descending") : undefined}
+                    className={`whitespace-nowrap px-3 py-2 font-bold ${numeric ? "text-right" : "text-left"}`}
                   >
-                    {c.sortable ? (
-                      <button
-                        type="button"
-                        aria-pressed={on}
-                        onClick={() => setSort((s) => (s?.col === i ? { col: i, dir: s.dir === 1 ? -1 : 1 } : { col: i, dir: c.align === "right" ? -1 : 1 }))}
-                        className="inline-flex min-h-6 items-center gap-1 uppercase tracking-eyebrow"
-                        style={on ? { color: "var(--text)" } : undefined}
-                      >
-                        {c.label}
-                        <span aria-hidden>{on ? (sort.dir === 1 ? "↑" : "↓") : "↕"}</span>
-                      </button>
+                    {server && c.sortKey ? (
+                      <SortHeader label={c.label} dir={dir} href={sortHref(server.base, nextSort(serverSort?.key ? serverSort : null, c.sortKey, numeric))} />
+                    ) : !server && c.sortable ? (
+                      <SortHeader label={c.label} dir={dir} onClick={() => setSort((s) => nextSort(s, String(i), numeric))} />
                     ) : (
                       c.label
                     )}

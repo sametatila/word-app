@@ -1,4 +1,5 @@
 import "server-only";
+import { parseSort, sortParam, type SortState } from "@/lib/admin-sort";
 import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { csvCell } from "@/lib/csv";
@@ -310,6 +311,10 @@ export async function resetReportedName(
 
 export const CONTENT_PAGE_SIZE = 50;
 
+/** Tablo sütunlarının sıralama anahtarları (`lib/admin-sort`); varsayılan son bildirim, yeni üstte. */
+export const CONTENT_SORT_KEYS = ["target", "surface", "reason", "count", "last", "course", "platform", "status"] as const;
+export const CONTENT_SORT_DEFAULT: SortState = { key: "last", dir: "desc" };
+
 export type ContentQuery = {
   status: "open" | "closed" | "all";
   surface: string;
@@ -322,6 +327,7 @@ export type ContentQuery = {
   to: string;
   q: string;
   page: number;
+  sort: SortState;
 };
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
@@ -345,6 +351,7 @@ export function parseContentQuery(sp: Record<string, string | string[] | undefin
     to: day("son"),
     q: one(sp.q).trim().slice(0, 120),
     page,
+    sort: parseSort(sp.sira, CONTENT_SORT_KEYS, CONTENT_SORT_DEFAULT),
   };
 }
 
@@ -361,8 +368,29 @@ export function contentQueryParams(q: ContentQuery, patch: Partial<ContentQuery>
   if (n.from) p.set("bas", n.from);
   if (n.to) p.set("son", n.to);
   if (n.q) p.set("q", n.q);
+  if (n.sort && sortParam(n.sort) !== sortParam(CONTENT_SORT_DEFAULT)) p.set("sira", sortParam(n.sort));
   if (n.page > 1) p.set("sayfa", String(n.page));
   return p;
+}
+
+/**
+ * Grup sorgusunun ORDER BY'ı — tablo başlığındaki her sütun (`CONTENT_SORT_KEYS`).
+ * Toplama ifadeleri `groupSelect`in `f`/`group by f.gkey`i üzerinde; boşlar sonda,
+ * eşitlikte son bildirim ve grup anahtarı (sayfalar arası kararlı).
+ */
+function contentOrder(sort: SortState) {
+  const EXPR: Record<(typeof CONTENT_SORT_KEYS)[number], ReturnType<typeof sql>> = {
+    target: sql`lower(max(coalesce(nullif(f.target_id, ''), f.ref, f.gkey)))`,
+    surface: sql`array_to_string(array_agg(distinct f.surface order by f.surface), ',')`,
+    reason: sql`mode() within group (order by f.reason)`,
+    count: sql`count(*)`,
+    last: sql`max(f.created_at)`,
+    course: sql`array_to_string(array_agg(distinct f.course order by f.course), ',')`,
+    platform: sql`array_to_string(array_agg(distinct f.platform order by f.platform), ',')`,
+    status: sql`count(*) filter (where f.status = 'open')`,
+  };
+  const expr = EXPR[sort.key as keyof typeof EXPR] ?? EXPR.last;
+  return sql`${expr} ${sql.raw(sort.dir === "asc" ? "asc" : "desc")} nulls last, max(f.created_at) desc, f.gkey`;
 }
 
 /** Grup anahtarı ifadesi: yeni satırda `group_key`, eskide `legacy:<kind>:<ref>`. */
@@ -478,7 +506,7 @@ export async function contentFeedbackList(q: ContentQuery): Promise<ContentFeedb
   try {
     const [list, opts, head] = await Promise.all([
       rows(sql`${groupSelect(contentWhere(q))}
-        order by max(f.created_at) desc, f.gkey
+        order by ${contentOrder(q.sort)}
         limit ${CONTENT_PAGE_SIZE} offset ${(q.page - 1) * CONTENT_PAGE_SIZE}`),
       rows(sql`select
         array_remove(array_agg(distinct surface), null) surfaces, array_agg(distinct reason) reasons,
@@ -518,7 +546,7 @@ export async function openContentGroups(limit = 100): Promise<ContentGroupRow[]>
 
 /** CSV: süzgecin TAMAMI (sayfa değil), en çok 5000 grup. */
 export async function contentFeedbackCsv(q: ContentQuery): Promise<string> {
-  const list = (await rows(sql`${groupSelect(contentWhere(q))} order by max(f.created_at) desc, f.gkey limit 5000`)).map(groupRow);
+  const list = (await rows(sql`${groupSelect(contentWhere(q))} order by ${contentOrder(q.sort)} limit 5000`)).map(groupRow);
   /* Hesap tablosunda formül olarak çalışmasın (CSV enjeksiyonu): bkz. lib/csv. */
   const cell = csvCell;
   const head = ["grup", "tur", "hedef_turu", "hedef", "alt", "yuzeyler", "en_sik_neden", "nedenler", "bildirim", "acik", "ilk", "son", "kurslar", "anadiller", "platformlar", "paket", "madde", "ornek"];
