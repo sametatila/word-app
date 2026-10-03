@@ -77,14 +77,14 @@ export function nginxTime(s: string): number {
 }
 
 /** Son `minutes` dakikadaki API istekleri (yol sorgusuz, durum), nginx erişim günlüğünden. */
-async function recentApi(minutes: number): Promise<{ path: string; status: number }[]> {
+async function recentApi(minutes: number): Promise<(ApiReq & { at: number })[]> {
   let text = "";
   try {
-    // Yalnız dosyanın SONU: günlük log büyüyebilir, son 2 MB fazlasıyla yetiyor.
+    // Yalnız dosyanın SONU: günlük log büyüyebilir; 8 MB kritik uçların 60 dakikalık penceresine yetiyor.
     const fh = await fs.open("/var/log/nginx/access.log", "r");
     try {
       const { size } = await fh.stat();
-      const len = Math.min(size, 2_000_000);
+      const len = Math.min(size, 8_000_000);
       const buf = Buffer.alloc(len);
       await fh.read(buf, 0, len, size - len);
       text = buf.toString("utf8");
@@ -98,47 +98,61 @@ async function recentApi(minutes: number): Promise<{ path: string; status: numbe
     throw new Error(`nginx logu okunamadı (${(err as NodeJS.ErrnoException).code ?? "?"})`);
   }
   const since = Date.now() - minutes * 60_000;
-  const LINE = /^\S+ \S+ \S+ \[([^\]]+)\] "\S+ (\/api\/[^\s?]*)[^"]*" (\d{3}) /;
-  const out: { path: string; status: number }[] = [];
+  const LINE = /^\S+ \S+ \S+ \[([^\]]+)\] "(\S+) (\/api\/[^\s?]*)[^"]*" (\d{3}) /;
+  const out: (ApiReq & { at: number })[] = [];
   for (const line of text.split("\n")) {
     const m = LINE.exec(line);
-    if (!m || nginxTime(m[1]) < since) continue;
-    out.push({ path: m[2], status: Number(m[3]) });
+    const at = m ? nginxTime(m[1]) : 0;
+    if (!m || at < since) continue;
+    out.push({ at, method: m[2], path: m[3], status: Number(m[4]) });
   }
   return out;
 }
+
+export type ApiReq = { method: string; path: string; status: number };
+
+/** Kritik uçlar için pencere (dk): tek seferlik `err-route` anahtarı Telegram'a
+    gidemezse sonraki koşular da görsün diye 10 dk'lık koşu aralığından geniş. */
+export const CRITICAL_WINDOW_MIN = 60;
 
 /**
  * TEK SEFERDE BİLE ÖNEMLİ UÇLAR. Genel 5xx kuralı 15 dakikada 5 hata istiyor;
  * bu uçlarda tek bir hata bir kullanıcının parasını, hesabını ya da girişini
  * etkiliyor ve genel eşiğin altında kalıyordu:
- *   satın alma webhook'u  401/403 = paylaşılan sır uyuşmuyor, 5xx = yazılamadı;
- *                         ikisinde de satın alınan Premium hesaba geçmiyor
- *                         (RevenueCat birkaç kez yeniden dener, sonra bırakır).
+ *   satın alma webhook'u  yalnız POST: 401/403 = paylaşılan sır uyuşmuyor, 5xx =
+ *                         yazılamadı; ikisinde de satın alınan Premium hesaba
+ *                         geçmiyor. GET (405), 404 ve 400 sayılmıyor: tarayıcı ya
+ *                         da tarayıcı botu her gün yanlış KRİTİK üretirdi.
  *   hesap silme           yasal yükümlülük; 5xx'te silme yarım kalabilir.
- *   sosyal giriş          Google/Apple yapılandırması bozulursa (istemci,
- *                         anahtar, gizli) herkesin girişi düşer; 3 hata eşik.
+ *   sosyal giriş          better-auth web/Android tarayıcı akışındaki hatayı
+ *                         (yanlış gizli, geçersiz kod, profil okunamadı) 4xx/5xx
+ *                         değil, varsayılan hata sayfasına 302 ile bildiriyor:
+ *                         `/api/auth/error` ziyareti sayılıyor. Uygulamanın kendi
+ *                         jeton yolu (`sign-in/social`) 401/403/5xx ile. Eşik 3.
  * Anahtarlar `err-route:` ailesinden (tek seferlik, aynı uç+durum günde bir).
- * Saf: `test:alerts`.
+ * Saf: `test:admin`.
  */
-export function criticalRouteAlerts(reqs: { path: string; status: number }[]): Alert[] {
+export function criticalRouteAlerts(reqs: ApiReq[]): Alert[] {
   const out: Alert[] = [];
-  const count = (pred: (r: { path: string; status: number }) => boolean) => {
+  const win = `son ${CRITICAL_WINDOW_MIN} dakikada`;
+  const count = (pred: (r: ApiReq) => boolean) => {
     const m = new Map<number, number>();
     for (const r of reqs) if (pred(r)) m.set(r.status, (m.get(r.status) ?? 0) + 1);
     return m;
   };
-  for (const [status, n] of count((r) => r.path.startsWith("/api/premium/webhook") && r.status >= 400)) {
-    const why = status === 401 || status === 403 ? "paylaşılan sır uyuşmuyor (REVENUECAT_WEBHOOK_AUTH ile RevenueCat'teki başlık)" : status >= 500 ? "sunucu olayı yazamadı" : "istek reddedildi";
-    out.push({ key: `err-route:webhook:${status}`, level: "kritik", text: `Satın alma webhook'u son 15 dakikada ${n} kez HTTP ${status} döndü: ${why}. Satın alınan Premium hesaba geçmiyor olabilir; RevenueCat › Integrations › Webhooks'ta başarısız olayları yeniden gönder.` });
+  for (const [status, n] of count((r) => r.method === "POST" && r.path.startsWith("/api/premium/webhook") && (r.status === 401 || r.status === 403 || r.status >= 500))) {
+    const why = status >= 500 ? "sunucu olayı yazamadı" : "paylaşılan sır uyuşmuyor (REVENUECAT_WEBHOOK_AUTH ile RevenueCat'teki başlık)";
+    out.push({ key: `err-route:webhook:${status}`, level: "kritik", text: `Satın alma webhook'u ${win} ${n} kez HTTP ${status} döndü: ${why}. Satın alınan Premium hesaba geçmiyor olabilir; RevenueCat › Integrations › Webhooks'ta başarısız olayları yeniden gönder.` });
   }
   for (const [status, n] of count((r) => r.path === "/api/auth/delete-user" && r.status >= 500)) {
-    out.push({ key: `err-route:delete:${status}`, level: "kritik", text: `Hesap silme son 15 dakikada ${n} kez HTTP ${status} döndü: silme yarım kalmış olabilir (yasal yükümlülük). Sunucu günlüğüne ve account_deletions tablosuna bak.` });
+    out.push({ key: `err-route:delete:${status}`, level: "kritik", text: `Hesap silme ${win} ${n} kez HTTP ${status} döndü: silme yarım kalmış olabilir (yasal yükümlülük). Sunucu günlüğüne ve account_deletions tablosuna bak.` });
   }
+  const errorPage = reqs.filter((r) => r.path === "/api/auth/error").length;
   const social = [...count((r) => /^\/api\/auth\/(sign-in\/social|callback\/)/.test(r.path) && (r.status >= 500 || r.status === 401 || r.status === 403)).entries()];
-  const socialTotal = social.reduce((a, [, n]) => a + n, 0);
+  const socialTotal = social.reduce((a, [, n]) => a + n, 0) + errorPage;
   if (socialTotal >= 3) {
-    out.push({ key: "err-route:social", level: "kritik", text: `Google/Apple girişi son 15 dakikada ${socialTotal} kez başarısız (${social.map(([s, n]) => `HTTP ${s} ×${n}`).join(", ")}): sağlayıcı yapılandırması (istemci kimliği, anahtar, gizli) bozulmuş olabilir.` });
+    const parts = [...social.map(([s, n]) => `HTTP ${s} ×${n}`), ...(errorPage ? [`giriş hata sayfası ×${errorPage}`] : [])];
+    out.push({ key: "err-route:social", level: "kritik", text: `Google/Apple girişi ${win} ${socialTotal} kez başarısız (${parts.join(", ")}): sağlayıcı yapılandırması (istemci kimliği, anahtar, gizli) bozulmuş olabilir. Sebep sunucu günlüğünde ([Better Auth]).` });
   }
   return out;
 }
@@ -168,7 +182,10 @@ export async function collectAlerts(): Promise<Alert[]> {
         const r = by.get(job.name);
         if (!r) alerts.push({ key: `cron:${job.name}`, level: "kritik", text: `Zamanlanmış iş hiç koşmamış: ${job.name}` });
         else if (num(r.age_h) > job.maxGapH) alerts.push({ key: `cron:${job.name}`, level: "kritik", text: `Zamanlanmış iş ${Math.round(num(r.age_h))} saattir koşmadı: ${job.name}` });
-        else if (r.last_ok !== true) alerts.push({ key: `cronfail:${job.name}`, level: "kritik", text: `Zamanlanmış iş son koşuda başarısız: ${job.name} — ${String(r.detail ?? "").slice(0, 120)}` });
+        /* Uyarı motorunun Telegram'a gidemediği koşu (detayda "TELEGRAM'A GİDEMEYEN")
+           burada uyarı değil: aynı kanaldan "kanal çalışmıyor" demek iki fazla mesaj
+           üretiyordu; gitmeyen satırlar zaten yeniden deneniyor. */
+        else if (r.last_ok !== true && !(job.name === "alerts" && String(r.detail ?? "").includes("TELEGRAM'A GİDEMEYEN"))) alerts.push({ key: `cronfail:${job.name}`, level: "kritik", text: `Zamanlanmış iş son koşuda başarısız: ${job.name} — ${String(r.detail ?? "").slice(0, 120)}` });
       }
     }),
     guard("server", async () => {
@@ -190,8 +207,10 @@ export async function collectAlerts(): Promise<Alert[]> {
       if (s.pg.maxConn && s.pg.total / s.pg.maxConn > 0.8) alerts.push({ key: "pgconn", level: "uyari", text: `PostgreSQL bağlantısı %${Math.round((s.pg.total / s.pg.maxConn) * 100)} dolu.` });
     }),
     guard("5xx", async () => {
-      const reqs = await recentApi(15);
-      alerts.push(...criticalRouteAlerts(reqs));
+      const wide = await recentApi(CRITICAL_WINDOW_MIN);
+      alerts.push(...criticalRouteAlerts(wide));
+      const since = Date.now() - 15 * 60_000;
+      const reqs = wide.filter((r) => r.at >= since);
       const m = new Map<string, number>();
       for (const r of reqs) {
         if (r.status < 500) continue;
@@ -415,8 +434,14 @@ export async function collectAlerts(): Promise<Alert[]> {
       if (num(r?.c) >= 3) alerts.push({ key: "mail", level: "kritik", text: `Son 1 saatte ${num(r?.c)} e-posta gönderilemedi (doğrulama postası gitmiyorsa yeni kullanıcı hesabına giremez).` });
       /* Tek bir gidemeyen doğrulama postası bir kişinin hesabına hiç girememesi
          demek; üçlük genel eşiğin altında kalıyordu. */
-      const [v] = await rows(sql`select count(*)::int c from events where name = 'mail_sent' and kind = 'verify:fail' and created_at >= now() - interval '1 hour'`);
-      if (num(v?.c) >= 1 && num(r?.c) < 3) alerts.push({ key: "mail:verify", level: "uyari", text: `Son 1 saatte ${num(v?.c)} doğrulama postası gönderilemedi: o kişi hesabına giremiyor. Resend panelinde reddin sebebine bak.` });
+      /* Tek seferlik anahtar (`err-mailverify:<son olay>`): bir saat sonra "düzeldi"
+         demek yanlıştı, o kişi hâlâ giremiyor. */
+      const [v] = await rows(sql`select count(*)::int c, max(id)::int last from events where name = 'mail_sent' and kind = 'verify:fail' and created_at >= now() - interval '1 hour'`);
+      if (num(v?.c) >= 1 && num(r?.c) < 3) alerts.push({ key: `err-mailverify:${num(v?.last)}`, level: "uyari", text: `Son 1 saatte ${num(v?.c)} doğrulama postası gönderilemedi: o kişi hesabına giremiyor. Resend panelinde reddin sebebine bak.` });
+      /* Günlük kota eşiğinde düşürülen kritik olmayan postalar (lib/email `shouldShed`):
+         ya gerçek kullanım planı aştı ya da biri posta ucunu zorluyor. */
+      const [sh] = await rows(sql`select count(*)::int c from events where name = 'mail_sent' and kind like '%:shed' and created_at >= now() - interval '24 hours'`);
+      if (num(sh?.c) >= 1) alerts.push({ key: "mail:shed", level: "uyari", text: `Son 24 saatte ${num(sh?.c)} kritik olmayan posta günlük Resend kotası eşiğinde gönderilmedi (doğrulama ve sıfırlama gidiyor). Panel › Sistem › Yapay zekâ bütçesi'nde Resend sayısına bak; gerçek kullanımsa Resend Pro'ya geç.` });
     }),
     guard("push", async () => {
       /* BİLDİRİM TESLİMİ. FCM/APNs/web push kimliği bozulursa (servis hesabı
@@ -455,7 +480,9 @@ export async function collectAlerts(): Promise<Alert[]> {
       }
     }),
     guard("errors", async () => {
-      // İstemci hata grupları (lib/client-errors): son 10 dakikada İLK KEZ görülen grup.
+      /* İstemci hata grupları (lib/client-errors): son 60 dakikada İLK KEZ görülen grup.
+         Pencere koşu aralığından (10 dk) geniş: Telegram'a gidemeyen tek seferlik
+         `err:` satırı sonraki koşularda da üretilsin; tekrarı durum 24 saat eliyor. */
       const exists = await rows(sql`select to_regclass('public.client_error_groups') is not null ok`);
       if (exists[0]?.ok !== true) return;
       /* METİN YOK, YALNIZ GRUP (güvenlik denetimi 2026-10-03, O3). Mesaj
@@ -465,7 +492,7 @@ export async function collectAlerts(): Promise<Alert[]> {
          kimliğini söylüyor; ayrıntı bağlantıdaki panel sayfasında. */
       const rs = await rows(sql`
         select fingerprint, platform, name, count from client_error_groups
-        where first_seen >= now() - interval '10 minutes' order by count desc limit 5`);
+        where first_seen >= now() - interval '60 minutes' order by count desc limit 5`);
       for (const r of rs) {
         alerts.push({ key: `err:${r.fingerprint}`, level: "uyari", text: `Yeni hata (${errorLabel(r)})` });
       }

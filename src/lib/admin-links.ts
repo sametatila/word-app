@@ -91,6 +91,7 @@ export function alertLinks(key: string): AlertLinks {
         ? { panel: { path: "/admin/revenue", label: "Gelir › Gelir ve huniler" } }
         : { panel: ops("istek-sagligi", "İstek sağlığı") };
     case "mail":
+    case "err-mailverify":
       return { panel: { path: "/admin/experience#e-posta", label: "Kullanıcılar › Deneyim › Giden e-posta" } };
     case "err":
     case "errspike":
