@@ -1740,6 +1740,7 @@ export const deBase: Record<string, string> = {
   "verify.resend": "Erneut senden",
   "verify.resend_in": "Erneut senden ({n} s)",
   "verify.verified_sign_in": "Bestätigt, anmelden",
+  "verify.verified_now_sign_in": "Deine E-Mail-Adresse ist bestätigt. Melde dich an, um weiterzumachen.",
   "voices.aras_note": "Lernomis eigene Stimme; ruhig und voll",
   "voices.defne_note": "Lernomis eigene Stimme; warm und klar",
   "voices.female": "weiblich",

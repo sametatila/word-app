@@ -1740,6 +1740,7 @@ export const trBase: Record<string, string> = {
   "verify.resend": "Tekrar gönder",
   "verify.resend_in": "Tekrar gönder ({n} sn)",
   "verify.verified_sign_in": "Doğruladım, giriş yap",
+  "verify.verified_now_sign_in": "E-posta adresin doğrulandı. Devam etmek için giriş yap.",
   "voices.aras_note": "Lernomi'nin kendi sesi; sakin ve tok",
   "voices.defne_note": "Lernomi'nin kendi sesi; sıcak ve net",
   "voices.female": "kadın",
