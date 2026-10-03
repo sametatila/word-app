@@ -5,6 +5,7 @@ import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { redisClient, warnRedisOnce } from "@/lib/auth/redis";
 import { track } from "@/lib/events";
 import { isGuestEmail } from "@/lib/auth/guest-email";
+import { RESEND } from "@/lib/ai-budget-limits";
 
 /**
  * Giden e-posta — sağlayıcı **Resend**, taşıma **SMTP**.
@@ -83,6 +84,80 @@ async function overMailCap(to: string): Promise<boolean> {
 export type MailKind = "verify" | "reset" | "pw_changed" | "exists" | "twofa" | "trial_end";
 
 /**
+ * ALICI BAŞINA, TÜR BAŞINA GÜNLÜK TAVAN (güvenlik denetimi 2026-10-03, O5).
+ *
+ * Saatlik tavan tek başına yetmiyordu: doğrulama postası ucu oturum ve
+ * Turnstile istemiyor (`/send-verification-email`), IP başına sınır ise IP
+ * değiştirerek aşılıyor. Saldırgan kendi alan adında birkaç adres kaydedip
+ * her birine saatte 10 posta yollatarak ücretsiz planın günlük 100'lük
+ * kotasını bir saatte bitirebiliyordu; sonra gerçek kullanıcıların doğrulama
+ * ve sıfırlama postası gitmiyordu. Aynı yol bir kurbanın adresine süresiz
+ * posta yağdırmaktı.
+ *
+ * Sayılar gerçek kullanımın üstünde: doğrulama kayıtta bir + üç yeniden
+ * gönderim; iki adımlı giriş kodu günde on giriş; sıfırlama günde beş.
+ * Aşılınca posta GİTMİYOR ve `<tür>:cap` olayı yazılıyor (ekran değişmiyor:
+ * uç yine 200, hesabın varlığı sızmasın).
+ */
+const DAILY_CAP: Record<MailKind, number> = { verify: 4, twofa: 10, reset: 5, pw_changed: 5, exists: 2, trial_end: 2 };
+
+async function overDailyCap(to: string, kind: MailKind | null): Promise<boolean> {
+  if (!kind) return false;
+  try {
+    const r = redisClient();
+    if (!r) return false;
+    const k = `lernomi:mailcap-day:${kind}:${to.trim().toLowerCase()}`;
+    const count = await r.incr(k);
+    if (count === 1) await r.expire(k, 86_400);
+    return count > DAILY_CAP[kind];
+  } catch (err) {
+    warnRedisOnce(err);
+    return false;
+  }
+}
+
+/**
+ * GENEL GÜNLÜK EŞİK — kota dolmadan kritik olmayan postalar düşüyor.
+ *
+ * Ücretsiz planda Resend günde `RESEND.perDay` postadan sonra HER postayı
+ * reddediyor, doğrulama ve sıfırlama dahil. Günlük sayım `RESEND.perDay`
+ * × `SHED_AT`e varınca yalnız kritik olmayan türler (var olan hesaba kayıt
+ * denemesi bildirimi, deneme bitişi hatırlatması) gönderilmiyor; kalan pay
+ * hesaba girmeyi sağlayan postalara (doğrulama, sıfırlama, giriş kodu) ve
+ * güvenlik bildirimine (parola değişti) kalıyor. Düşen posta `<tür>:shed`
+ * olayı yazıyor; uyarı motoru bunu görüyor (`lib/alerts` mail).
+ *
+ * Gün UTC. Resend'in kendi penceresiyle birebir aynı değil; eşik bu payı
+ * karşılamak için %80'de. Ücretli planda eşik yok.
+ */
+const SHED_AT = 0.8;
+const SHEDDABLE: ReadonlySet<MailKind> = new Set<MailKind>(["exists", "trial_end"]);
+const dayKey = () => `lernomi:mail-day:${new Date().toISOString().slice(0, 10)}`;
+
+async function shouldShed(kind: MailKind | null): Promise<boolean> {
+  if (RESEND.plan !== "free" || !kind || !SHEDDABLE.has(kind)) return false;
+  try {
+    const r = redisClient();
+    if (!r) return false;
+    return Number((await r.get(dayKey())) ?? 0) >= RESEND.perDay * SHED_AT;
+  } catch (err) {
+    warnRedisOnce(err);
+    return false;
+  }
+}
+
+async function countSend(): Promise<void> {
+  try {
+    const r = redisClient();
+    if (!r) return;
+    const k = dayKey();
+    if ((await r.incr(k)) === 1) await r.expire(k, 2 * 86_400);
+  } catch (err) {
+    warnRedisOnce(err);
+  }
+}
+
+/**
  * SONUÇ ÖLÇÜLÜYOR, YALNIZ LOG'LANMIYOR.
  *
  * Gönderim üç yoldan biriyle bitiyor ve üçü de sessizdi: gitti, SMTP
@@ -95,7 +170,7 @@ export type MailKind = "verify" | "reset" | "pw_changed" | "exists" | "twofa" | 
  * Kullanıcı kimliği olmayan çağrıda olay yazılmıyor (olay tablosu kullanıcıya
  * bağlı) - bugün bütün çağrı yerlerinde kimlik var.
  */
-async function yaz(userId: string | null, kind: MailKind | null, sonuc: "ok" | "fail" | "cap"): Promise<void> {
+async function yaz(userId: string | null, kind: MailKind | null, sonuc: "ok" | "fail" | "cap" | "shed"): Promise<void> {
   if (!userId || !kind) return;
   await track(userId, "mail_sent", new Date().toISOString().slice(0, 10), sonuc === "ok" ? 1 : 0, `${kind}:${sonuc}`);
 }
@@ -128,6 +203,17 @@ export async function sendEmail(
     await yaz(meta?.userId ?? null, meta?.kind ?? null, "cap");
     return;
   }
+  if (await overDailyCap(to, meta?.kind ?? null)) {
+    console.warn(`[email] daily ${meta?.kind} cap reached for ${to}, not sent: ${subject}`);
+    await yaz(meta?.userId ?? null, meta?.kind ?? null, "cap");
+    return;
+  }
+  if (await shouldShed(meta?.kind ?? null)) {
+    console.warn(`[email] daily quota near limit, non-critical mail shed: ${meta?.kind}`);
+    await yaz(meta?.userId ?? null, meta?.kind ?? null, "shed");
+    return;
+  }
+  await countSend();
   try {
     // Reply-To zorunlu: gönderen noreply@ ve Cloudflare'de catch-all "drop".
     // Kullanıcı doğrulama postasına cevap yazarsa mesajı sessizce kaybederdik;
