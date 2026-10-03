@@ -46,10 +46,20 @@ export const CRON_EXPECTED: { name: string; label: string; maxGapH: number }[] =
   { name: "alerts", label: "Uyarı motoru (10 dakikada bir)", maxGapH: 1 },
 ];
 
+/** Gerçek koşu: kapıda reddedilmemiş (`recordCronRun(..., "denied")` değil). */
+export const REAL_RUN = sql`coalesce(r.detail, '') <> 'denied'`;
+
+/** Beklenen listede olmayan (geçici) işlerin panel etiketi. */
+const CRON_EXTRA_LABELS: Record<string, string> = {
+  lifetime: "Ömür boyu Premium, test kullanıcıları (saatte bir, geçici)",
+};
+
 export type CronHealth = {
   name: string; label: string; lastAt: string | null; lastOk: boolean; ageH: number | null;
   /** Beklenen aralıktan uzun süredir koşmadı (ya da hiç koşmadı). */
   stale: boolean; ok7: number; fail7: number; detail: string | null;
+  /** Son 7 günde kapıda reddedilen (sırsız) çağrı; son koşu sayılmaz. */
+  denied7: number;
 };
 
 export type Coverage = {
@@ -270,14 +280,20 @@ export async function getCoverage(days = 30): Promise<Coverage> {
     rows(sql`
       select key k, count(distinct user_id)::int u, coalesce(sum(count), 0)::int c
       from usage_counters where updated_at >= now() - make_interval(days => ${days}::int) group by 1 order by 3 desc`),
+    /* YETKİSİZ DENEME "SON KOŞU" DEĞİL (2026-10-03). Sırsız her istek `denied`
+       satırı yazıyor; internetten biri ucu çağırınca panel ve uyarı motoru son
+       koşuyu "başarısız" görüyordu. Son koşu, yaş ve hata sayısı yalnız gerçek
+       koşulardan; yetkisizler ayrı sayılıyor. Sır kayarsa (timer'ın her çağrısı
+       reddedilir) gerçek koşu kalmaz ve iş "koşmadı" diye kırmızıya düşer. */
     rows(sql`
       select r.name,
-        max(r.ran_at)::text last_at,
-        extract(epoch from now() - max(r.ran_at)) / 3600 age_h,
-        (array_agg(r.ok order by r.ran_at desc))[1] last_ok,
-        (array_agg(r.detail order by r.ran_at desc))[1] detail,
+        max(r.ran_at) filter (where ${REAL_RUN})::text last_at,
+        extract(epoch from now() - max(r.ran_at) filter (where ${REAL_RUN})) / 3600 age_h,
+        (array_agg(r.ok order by r.ran_at desc) filter (where ${REAL_RUN}))[1] last_ok,
+        (array_agg(r.detail order by r.ran_at desc) filter (where ${REAL_RUN}))[1] detail,
         count(*) filter (where r.ok and r.ran_at >= now() - interval '7 days')::int ok7,
-        count(*) filter (where not r.ok and r.ran_at >= now() - interval '7 days')::int fail7
+        count(*) filter (where not r.ok and ${REAL_RUN} and r.ran_at >= now() - interval '7 days')::int fail7,
+        count(*) filter (where not ${REAL_RUN} and r.ran_at >= now() - interval '7 days')::int denied7
       from cron_runs r group by r.name`),
   ]);
 
@@ -412,15 +428,15 @@ export async function getCoverage(days = 30): Promise<Coverage> {
     cron: cronNames.map((name) => {
       const r = cronByName.get(name);
       const exp = CRON_EXPECTED.find((c) => c.name === name);
-      const ageH = r ? Math.round(num(r.age_h) * 10) / 10 : null;
+      const ageH = r?.last_at ? Math.round(num(r.age_h) * 10) / 10 : null;
       return {
         name,
-        label: exp?.label ?? name,
-        lastAt: r ? str(r.last_at) : null,
+        label: exp?.label ?? CRON_EXTRA_LABELS[name] ?? name,
+        lastAt: r?.last_at ? str(r.last_at) : null,
         lastOk: r ? r.last_ok === true : false,
         ageH,
         stale: ageH == null || (exp ? ageH > exp.maxGapH : false),
-        ok7: num(r?.ok7), fail7: num(r?.fail7),
+        ok7: num(r?.ok7), fail7: num(r?.fail7), denied7: num(r?.denied7),
         detail: r?.detail ? str(r.detail) : null,
       };
     }),

@@ -720,7 +720,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
         {/* ZAMANLANMIŞ İŞLER. Cron'lar bir kez çağıransız kalıp aylarca hiç
             çalışmadı. Liste artık BEKLENEN işlerden kuruluyor: hiç koşmamış
             iş de satır olarak görünüyor ve beklenen aralığı aşan kırmızı. */}
-        <Panel id="zamanlanmis-isler" title="Zamanlanmış işler" hint="Kırmızı = beklenen aralıkta koşmadı ya da son koşu hata · denied = CRON_SECRET uyuşmadı" span flush>
+        <Panel id="zamanlanmis-isler" title="Zamanlanmış işler" hint="Kırmızı = beklenen aralıkta koşmadı ya da son koşu hata · yetkisiz = sırsız çağrı (CRON_SECRET yok ya da yanlış), son koşu sayılmaz" span flush>
           <DataTable
             head={["", "İş", "Ne yapar", "Son koşu", { label: "7 gün", align: "right" }, "Ayrıntı"]}
             rows={c.cron.map((j) => {
@@ -730,7 +730,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
                 <span key="n" className="font-mono">{j.name}</span>,
                 <span key="l" className="muted">{j.label}</span>,
                 <span key="t" className="font-mono whitespace-nowrap" style={j.stale ? { color: TONE.bad } : undefined}>{j.lastAt ? `${j.lastAt.slice(0, 16)} (${Math.round(j.ageH ?? 0)} sa)` : "hiç koşmadı"}</span>,
-                <span key="o">{fmt(j.ok7)} tamam{j.fail7 > 0 && <span style={{ color: TONE.bad }}> · {fmt(j.fail7)} hata</span>}</span>,
+                <span key="o">{fmt(j.ok7)} tamam{j.fail7 > 0 && <span style={{ color: TONE.bad }}> · {fmt(j.fail7)} hata</span>}{j.denied7 > 0 && <span className="muted"> · {fmt(j.denied7)} yetkisiz</span>}</span>,
                 <span key="x" className="muted">{j.detail}</span>,
               ];
             })}

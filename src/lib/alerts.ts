@@ -4,7 +4,7 @@ import { eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { appSettings } from "@/lib/db/schema";
 import { getServerMetrics } from "@/lib/server-metrics";
-import { CRON_EXPECTED } from "@/lib/admin-coverage";
+import { CRON_EXPECTED, REAL_RUN } from "@/lib/admin-coverage";
 import { appControl } from "@/lib/app-control";
 import { esc, sendTelegram, telegramConfigured } from "@/lib/telegram";
 import { storeReviews } from "@/lib/store-reviews";
@@ -146,11 +146,13 @@ export async function collectAlerts(): Promise<Alert[]> {
 
   await Promise.all([
     guard("cron", async () => {
+      /* Yalnız gerçek koşular (`REAL_RUN`): sırsız bir istek son koşuyu
+         "başarısız" gösterip yanlış KRİTİK uyarı üretiyordu (2026-10-03). */
       const rs = await rows(sql`
-        select name, extract(epoch from now() - max(ran_at)) / 3600 age_h,
-          (array_agg(ok order by ran_at desc))[1] last_ok,
-          (array_agg(detail order by ran_at desc))[1] detail
-        from cron_runs group by name`);
+        select r.name, extract(epoch from now() - max(r.ran_at)) / 3600 age_h,
+          (array_agg(r.ok order by r.ran_at desc))[1] last_ok,
+          (array_agg(r.detail order by r.ran_at desc))[1] detail
+        from cron_runs r where ${REAL_RUN} group by r.name`);
       const by = new Map(rs.map((r) => [String(r.name), r]));
       for (const job of CRON_EXPECTED) {
         const r = by.get(job.name);
