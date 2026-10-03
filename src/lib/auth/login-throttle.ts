@@ -37,17 +37,37 @@ const PREFIX = "lernomi:login-fail:";
 /**
  * Sayaç anahtarı. E-posta normalleştiriliyor çünkü `Ali@X.com` ile
  * `ali@x.com` aynı hesap: ayrı saymak sayacı ikiye bölerdi.
+ *
+ * `scope` (IP) verilirse sayaç e-posta + IP çiftine bağlanıyor. Yalnız mağaza
+ * inceleme hesapları için (bkz. `lockScope`): adresleri herkese açık
+ * belgelerde ve Turnstile'dan muaflar, yani e-posta başına kilit onları
+ * dışarıdan, istendiği kadar kilitli tutmanın yoluydu.
  */
-function key(email: string): string {
-  return PREFIX + email.trim().toLowerCase();
+function key(email: string, scope?: string): string {
+  return PREFIX + email.trim().toLowerCase() + (scope ? `|${scope}` : "");
+}
+
+/**
+ * Kilidin kapsamı: inceleme hesabında IP, öbür herkeste yok (e-posta başına).
+ *
+ * İNCELEME HESAPLARI (`CAPTCHA_EXEMPT_EMAILS`) E-POSTA + IP'YE GÖRE KİLİTLENİYOR
+ * (güvenlik denetimi 2026-10-03, O4). E-posta başına kilitte saldırgan bu
+ * adreslere 15 dakikada bir 10 yanlış parola göndererek hesabı süresiz kilitli
+ * tutabiliyordu; incelemeci demo hesabıyla giremez, App Store 2.1 reddi.
+ * IP'ye bağlanınca kilit yalnız deneyen IP'yi durduruyor. Bedeli: bu hesaplarda
+ * dağıtılmış parola denemesi hesap başına durdurulmuyor. Parolalar rastgele ve
+ * uzun; IP başına sınır (better-auth dakikada 5 + nginx) aynen geçerli.
+ */
+export function lockScope(exempt: boolean, ip: string | null | undefined): string | undefined {
+  return exempt ? ip || "?" : undefined;
 }
 
 /** Eşik aşıldı mı. Redis erişilemezse `false` (açığa düş). */
-export async function isLockedOut(email: string): Promise<boolean> {
+export async function isLockedOut(email: string, scope?: string): Promise<boolean> {
   try {
     const r = redisClient();
     if (!r) return false;
-    const raw = await r.get(key(email));
+    const raw = await r.get(key(email, scope));
     return raw !== null && Number(raw) >= MAX_FAILED_LOGINS;
   } catch (err) {
     warnRedisOnce(err);
@@ -62,11 +82,11 @@ export async function isLockedOut(email: string): Promise<boolean> {
  * Pencere HER başarısızlıkta yenileniyor: saldırgan eşiğin hemen altında
  * durup beklemesin diye.
  */
-export async function noteFailedLogin(email: string): Promise<number | null> {
+export async function noteFailedLogin(email: string, scope?: string): Promise<number | null> {
   try {
     const r = redisClient();
     if (!r) return null;
-    const k = key(email);
+    const k = key(email, scope);
     const count = await r.incr(k);
     await r.expire(k, LOCKOUT_SECONDS);
     return count;
@@ -77,11 +97,11 @@ export async function noteFailedLogin(email: string): Promise<number | null> {
 }
 
 /** Başarılı girişten sonra sayacı sıfırlar. */
-export async function clearFailedLogins(email: string): Promise<void> {
+export async function clearFailedLogins(email: string, scope?: string): Promise<void> {
   try {
     const r = redisClient();
     if (!r) return;
-    await r.del(key(email));
+    await r.del(key(email, scope));
   } catch (err) {
     warnRedisOnce(err);
   }

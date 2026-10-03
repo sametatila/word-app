@@ -98,11 +98,16 @@ const exemptEmails = new Set(
     .filter(Boolean),
 );
 
+/** Adres inceleme hesabı mı (Turnstile muafiyeti; kilit kapsamı da buna bakıyor, bkz. login-throttle `lockScope`). */
+export function isCaptchaExemptEmail(email: string): boolean {
+  return exemptEmails.has(email.trim().toLowerCase());
+}
+
 async function isExemptSignIn(request: Request): Promise<boolean> {
   if (request.method !== "POST" || !new URL(request.url).pathname.endsWith("/sign-in/email")) return false;
   try {
     const body = (await request.clone().json()) as { email?: unknown };
-    return typeof body.email === "string" && exemptEmails.has(body.email.trim().toLowerCase());
+    return typeof body.email === "string" && isCaptchaExemptEmail(body.email);
   } catch {
     return false;
   }

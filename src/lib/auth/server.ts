@@ -19,8 +19,8 @@ import { oneTimeToken } from "better-auth/plugins/one-time-token";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/auth/password-policy";
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
-import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
-import { captchaPlugins } from "@/lib/auth/captcha";
+import { clearFailedLogins, isLockedOut, lockScope, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
+import { captchaPlugins, isCaptchaExemptEmail } from "@/lib/auth/captcha";
 import { FALLBACK_ORIGIN } from "@/lib/site";
 import { anonymous, twoFactor } from "better-auth/plugins";
 import { GUEST_EMAIL_DOMAIN, isGuestEmail } from "@/lib/auth/guest-email";
@@ -69,6 +69,11 @@ function dropSessionSetCookies(ctx: { responseHeaders?: Headers; context: { resp
     h.delete("set-cookie");
     for (const entry of keep) h.append("set-cookie", entry);
   }
+}
+
+/** İsteğin IP'si — nginx'in koyduğu `x-real-ip` (hız sınırıyla aynı kaynak, bkz. `advanced.ipAddress`). */
+function clientIp(ctx: { headers?: Headers; request?: Request }): string | null {
+  return ctx.request?.headers.get("x-real-ip") ?? ctx.headers?.get("x-real-ip") ?? null;
 }
 
 /**
@@ -694,10 +699,11 @@ export const auth = betterAuth({
        * Kontrol parola doğrulamasının ÖNÜNDE: kilitliyken doğru parola bile
        * geçmemeli, yoksa kilit yalnız yanlış tahminleri yavaşlatan bir şey
        * olur ve elindeki parolayı deneyen saldırganı hiç durdurmaz.
+       * İnceleme hesaplarında kilit IP'ye de bağlı (bkz. login-throttle `lockScope`).
        */
       if (ctx.path === "/sign-in/email") {
         const email = (ctx.body as { email?: unknown } | undefined)?.email;
-        if (typeof email === "string" && email && (await isLockedOut(email))) {
+        if (typeof email === "string" && email && (await isLockedOut(email, lockScope(isCaptchaExemptEmail(email), clientIp(ctx))))) {
           throw new APIError("TOO_MANY_REQUESTS", {
             code: "TOO_MANY_ATTEMPTS",
             message: "Too many failed sign-in attempts for this account. Try again later.",
@@ -819,10 +825,11 @@ export const auth = betterAuth({
       const email = (ctx.body as { email?: unknown } | undefined)?.email;
       if (typeof email !== "string" || !email) return;
 
+      const scope = lockScope(isCaptchaExemptEmail(email), clientIp(ctx));
       const returned = ctx.context.returned as { token?: unknown; body?: { code?: unknown } } | undefined;
       const token = returned?.token;
       if (typeof token === "string" && token.length > 0) {
-        await clearFailedLogins(email);
+        await clearFailedLogins(email, scope);
         return;
       }
 
@@ -847,8 +854,8 @@ export const auth = betterAuth({
         Eşiğe varan deneme AYRI ve daha yüksek sesle yazılıyor: kilitlenen bir
         hesap operasyonel olarak bakılması gereken bir olay.
       */
-      const count = await noteFailedLogin(email);
-      const ip = ctx.request?.headers.get("x-real-ip") ?? "?";
+      const count = await noteFailedLogin(email, scope);
+      const ip = clientIp(ctx) ?? "?";
       if (count !== null && count >= MAX_FAILED_LOGINS) {
         console.warn(`[auth] account locked after ${count} failed sign-ins: ${email} (ip ${ip})`);
       } else {
