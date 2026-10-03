@@ -183,7 +183,10 @@ export async function publicProfile(viewer: string, usernameRaw: string): Promis
     canSee ? weeklyXpFor([uid], today) : Promise.resolve(new Map<string, number>()),
     canSee ? achievementCount(uid) : Promise.resolve(0),
     rel.state === "friends" ? friendStreaks(viewer, [uid], today) : Promise.resolve(new Map<string, FriendStreak>()),
-    canSee ? feed(viewer, null, 5, uid) : Promise.resolve({ items: [] as FeedItem[], nextCursor: null }),
+    // AKIŞ YALNIZ ARKADAŞA (ve kendine): gizlilik §4a "etkinlik akışı yalnız
+    // arkadaşlarına görünür" diyor; herkese açık profil istatistiği açar, akışı
+    // açmaz (güvenlik denetimi O14).
+    isSelf || rel.state === "friends" ? feed(viewer, null, 5, uid) : Promise.resolve({ items: [] as FeedItem[], nextCursor: null }),
   ]);
   return {
     user: { userId: uid, name: p.displayName, username, avatar: p.avatar, level: p.level },

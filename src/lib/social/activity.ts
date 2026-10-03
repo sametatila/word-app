@@ -58,7 +58,8 @@ export async function feed(
   limit = 20,
   onlyUser?: string,
 ): Promise<{ items: FeedItem[]; nextCursor: string | null }> {
-  const ids = onlyUser ? [onlyUser] : [me, ...(await friendIds(me))];
+  const myFriends = await friendIds(me);
+  const ids = onlyUser ? [onlyUser] : [me, ...myFriends];
   const c = parseCursor(cursor);
   const rows = await db
     .select()
@@ -86,14 +87,15 @@ export async function feed(
     return true;
   });
 
-  const [users, reactions] = await Promise.all([
+  const [users, reactions, hidden] = await Promise.all([
     publicUsers([...new Set(kept.map((r) => r.userId))]),
     reactionSummaries(kept.map((r) => r.id), me),
+    hiddenThirdParties(me, myFriends, kept.map((r) => thirdParty(r.payload)).filter((x): x is string => !!x)),
   ]);
   const items: FeedItem[] = kept.map((r) => ({
     id: r.id,
     type: r.type as ActivityType,
-    payload: (r.payload ?? {}) as Record<string, unknown>,
+    payload: maskThirdParty((r.payload ?? {}) as Record<string, unknown>, hidden),
     createdAt: new Date(r.createdAt).toISOString(),
     user: users.get(r.userId) ?? { userId: r.userId, name: null, username: null, level: "A1", avatar: null },
     reactions: reactions.get(r.id) ?? { counts: {}, total: 0, mine: null, names: [] },
@@ -103,4 +105,41 @@ export async function feed(
   const nextCursor = more && last ? `${new Date(last.createdAt).toISOString()}|${last.id}` : null;
   if (!onlyUser) await track(me, "feed_view", serverToday(), items.length);
   return { items, nextCursor };
+}
+
+/** Olayın bahsettiği ÜÇÜNCÜ kişi ("A, B ile arkadaş oldu"daki B). */
+function thirdParty(payload: unknown): string | null {
+  const id = (payload as Record<string, unknown> | null)?.friendId;
+  return typeof id === "string" && id ? id : null;
+}
+
+/**
+ * ÜÇÜNCÜ KİŞİNİN GÖRÜNÜRLÜĞÜ. "Arkadaş oldu" ve ortak seri olayları karşı
+ * tarafın adını taşıyor; o kişi profilini gizli yapmışsa (ya da "yalnız
+ * arkadaşlar" deyip bakan onun arkadaşı değilse) adı, arkadaşının akışı
+ * üzerinden yabancılara sızmamalı (gizlilik §4a, güvenlik denetimi O14).
+ * Ad olay yazılırken yüke girdiği için maske okurken uygulanıyor: görünürlük
+ * sonradan değişse de geçerli olan bugünkü tercih.
+ */
+async function hiddenThirdParties(me: string, myFriends: string[], ids: string[]): Promise<Set<string>> {
+  const others = [...new Set(ids)].filter((id) => id !== me);
+  if (!others.length) return new Set();
+  const friends = new Set(myFriends);
+  const rows = await db
+    .select({ userId: profiles.userId, visibility: profiles.visibility })
+    .from(profiles)
+    .where(inArray(profiles.userId, others));
+  const vis = new Map(rows.map((r) => [r.userId, r.visibility]));
+  return new Set(
+    others.filter((id) => {
+      const v = vis.get(id);
+      return v !== "public" && !(v === "friends" && friends.has(id));
+    }),
+  );
+}
+
+function maskThirdParty(payload: Record<string, unknown>, hidden: Set<string>): Record<string, unknown> {
+  const id = thirdParty(payload);
+  if (!id || !hidden.has(id)) return payload;
+  return { ...payload, friendId: null, friendName: null, friendUsername: null };
 }
