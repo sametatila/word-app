@@ -8,9 +8,9 @@ import { AvatarVisual, avatarPng, genericCard, ogCard, OG_SIZE } from "@/lib/og/
  * Davet kartı — `lernomi.app/r/<KOD>` paylaşıldığında.
  *
  * Davetiye sayfasının gösterdiğinden fazlası yok: davet edenin avatarı ve
- * İLK adı (sayfa tam adı gösteriyor, önizleme gruplarda dolaştığı için
- * daha az). Bu uç YALNIZ OKUR: bağ kurma sayfanın işi, görseli çeken
- * önizleme servisi kimseyi kimseye bağlamamalı. Bilinmeyen kodda genel kart.
+ * İLK adı (`inviterCard` zaten yalnız ilk adı veriyor). Bu uç YALNIZ OKUR:
+ * bağ kurma sayfanın işi, görseli çeken önizleme servisi kimseyi kimseye
+ * bağlamamalı. Bilinmeyen kodda genel kart.
  */
 export const alt = "Lernomi";
 export const size = OG_SIZE;

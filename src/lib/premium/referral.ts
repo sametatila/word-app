@@ -5,6 +5,9 @@ import { db } from "@/lib/db";
 import { profiles, referrals } from "@/lib/db/schema";
 import type { ReferralStats } from "./referral-types";
 import { isGuestUser } from "@/lib/auth/guest-user";
+import { headers } from "next/headers";
+import { consume } from "@/lib/social/ratelimit";
+import { firstName } from "@/lib/og/langs";
 
 /**
  * Davet zinciri — kim kimi getirdi.
@@ -96,7 +99,7 @@ export type AttachResult = "ok" | "self" | "already" | "unknown_code";
 /**
  * Davet edenin KARTI — davet karşılama sayfası için (`app/r/[code]`).
  *
- * YALNIZ AD VE AVATAR. Sayfa girişsiz bir ziyaretçiye çiziliyor, yani burada
+ * YALNIZ İLK AD VE AVATAR. Sayfa girişsiz bir ziyaretçiye çiziliyor, yani burada
  * dönen her alan herkese açık demek. Kullanıcının kendi paylaştığı bir
  * bağlantıda adını göstermek beklenen şey; istatistik, kullanıcı adı ya da
  * etkinlik göstermek değil. Sosyal katmanın görünürlük kuralları
@@ -109,6 +112,15 @@ export type AttachResult = "ok" | "self" | "already" | "unknown_code";
 export async function inviterCard(code: string): Promise<{ name: string | null; avatar: string | null; userId: string } | null> {
   const c = normalizeReferral(code);
   if (!c) return null;
+  /*
+    KOD TARAMASINA KARŞI (güvenlik denetimi 2026-10-03 D2). Sayfa girişsiz
+    ve kod alanı ~887 milyon: sınırsız denemeyle gerçek adlar toplanabiliyordu.
+    IP başına saatte 90 kart (bir ziyaret künye + sayfa + görsel = 3 çağrı);
+    aşan ziyaretçi genel davetiyeyi görür. IP nginx'in `X-Real-IP`'si
+    (Cloudflare'den gerçek istemci); başlık yoksa (iç çağrı) sınır yok.
+  */
+  const ip = (await headers()).get("x-real-ip");
+  if (ip && !(await consume(`ref-card:${ip}`, 90, 3600).catch(() => ({ ok: true }))).ok) return null;
   /*
     AD İKİ SÜTUNDAN: `profiles.display_name` BOŞ OLABİLİR ve mobilden kayıt
     olan kullanıcıda GENELDE boş — o sütunu web yerleşimi dolduruyor
@@ -127,14 +139,17 @@ export async function inviterCard(code: string): Promise<{ name: string | null; 
       sql`select p.user_id as "userId",
                  nullif(coalesce(p.display_name, u.name, ''), '') as name,
                  p.avatar as avatar,
+                 p.visibility as visibility,
                  u."isAnonymous" as guest
             from profiles p join "user" u on u.id = p.user_id
            where p.referral_code = ${c} limit 1`,
     );
     const rows = (Array.isArray(res) ? res : (res as { rows?: unknown[] }).rows) ?? [];
-    const row = rows[0] as { userId?: string; name?: string | null; avatar?: string | null; guest?: boolean } | undefined;
+    const row = rows[0] as { userId?: string; name?: string | null; avatar?: string | null; visibility?: string; guest?: boolean } | undefined;
     if (!row?.userId || row.guest === true) return null;
-    return { userId: row.userId, name: row.name ?? null, avatar: row.avatar ?? null };
+    /* YALNIZ İLK AD: `u.name` Google/Apple'dan gelen TAM ad olabiliyor; davetiye
+       için ilk ad yetiyor. Profilini gizli yapanın avatarı da gösterilmiyor. */
+    return { userId: row.userId, name: firstName(row.name) || null, avatar: row.visibility === "private" ? null : (row.avatar ?? null) };
   } catch {
     return null;
   }

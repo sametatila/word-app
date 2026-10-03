@@ -56,8 +56,8 @@ export const dynamic = "force-dynamic";
  */
 /*
  * Önizleme künyesi: davet edenin İLK adı + "birlikte çalışalım". Sayfanın
- * zaten gösterdiğinden fazlası yok (ad sayfada tam, önizlemede yalnız ilk
- * ad); bilinmeyen kodda genel künye.
+ * zaten gösterdiğinden fazlası yok (`inviterCard` yalnız ilk adı veriyor);
+ * bilinmeyen kodda genel künye.
  */
 export async function generateMetadata({ params }: { params: Promise<{ code: string }> }): Promise<Metadata> {
   const robots = { index: false, follow: false };
