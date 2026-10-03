@@ -1313,7 +1313,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .map((m) => m[1])
       .filter((x) => !x.includes("lib/courses"));
   sameList("ilk kelimeler", lits("mobile/src/data/firstWords.ts"), lits("src/lib/first-words.ts"));
-  sameList("demo yerlestirme", lits("mobile/src/data/demoPlacement.ts"), lits("src/lib/placement-demo.ts"));
+  /* Seviye testi v2: banka ve motor iki tarafta ÜRETİLMİŞ birebir kopya; eşitliği
+     `check:placement` (scripts/placement-sync.mjs --check) denetliyor. */
 }
 
 /* ── 25. gorev panosunun toplu odulu ve kimligi ─────────────────────
@@ -2740,25 +2741,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("promo hata sebepleri (web)", liste("src/components/premium-paywall.tsx", "const known ="), sunucu, "web", "sunucu");
 }
 
-/* ── 57. seviye testi asamalari ───────────────────────────────────────────
- * Sunucu DORT asamali bir test veriyor (`PlacementStage`) ve iki istemci de
- * dordunu oynuyor. Uzun sure boyle DEGILDI: mobil tipi yalnizca `vocab`
- * tasiyordu, yani Android'de seviye testi kelime olcuyor, dilbilgisi/okuma/
- * dinleme hic sorulmuyor ve `perSkill` uc alanini bos donduruyordu
- * (docs/plan/web-parity.md §11.119, §11.168'de kapandi).
- *
- * Kapi artik MUAFIYETSIZ: sunucunun asama listesi ile mobil tipin alanlari
- * birebir. Sunucu besinci bir asama eklerse burasi kirmiziya doner. */
+/* ── 57. seviye testi soru turleri ────────────────────────────────────────
+ * Seviye testi v2 (docs/plan/placement-v2.md): motorun soru turleri (`BankItem.kind`)
+ * IKI ISTEMCIDE de cizilmeli. Eskiden dort asamali testte mobil yalniz `vocab` tasiyordu
+ * ve Android'de dilbilgisi/okuma/dinleme hic sorulmuyordu (§11.119); ayni kusur yeni
+ * testte de bir turun tek tarafta unutulmasiyla geri gelebilir. Motor yeni tur eklerse
+ * iki ekran onu cizene dek burasi kirmizi. */
 {
-  const sunucu = (() => {
-    const m = read("src/lib/placement-score.ts").match(/type PlacementStage =([^;]*);/);
+  const motor = (() => {
+    const m = read("src/lib/placement-engine.ts").match(/kind: ("[a-z]+"(?:\s*\|\s*"[a-z]+")*);/);
     return m ? [...m[1].matchAll(/"([a-z]+)"/g)].map((x) => x[1]).sort() : ["bulunamadi"];
   })();
-  const mobil = (() => {
-    const m = read("mobile/src/game/placement.ts").match(/type PlacementTest = \{([^}]*)\}/);
-    return m ? [...m[1].matchAll(/(\w+)\s*:/g)].map((x) => x[1]).sort() : ["bulunamadi"];
-  })();
-  sameSet("seviye testi asamalari (sunucu)", sunucu, mobil, "sunucu", "mobil");
+  const cizilen = (p) => motor.filter((k) => new RegExp(`kind === "${k}"`).test(read(p))).sort();
+  sameSet("seviye testi soru turleri (mobil)", motor, cizilen("mobile/src/screens/PlacementScreen.tsx"), "motor", "mobil");
+  sameSet("seviye testi soru turleri (web)", motor, cizilen("src/components/placement/placement-test.tsx"), "motor", "web");
 }
 
 /* ── 58. sinav sonucunun alanlari ─────────────────────────────────────────
@@ -5069,37 +5065,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 }
 
 /* ── 132. yerlestirmede cevap aciliyor mu ─────────────────────────────────
- * Web burayi bilerek ikiye bolmus: GERCEK test yalniz secimi isaretliyor
- * (`placement/placement-test`), misafir akisindaki DEMO ise cevabi aciyor
- * (`placement/demo-placement`) - biri olcum, oteki ilk temas.
+ * Seviye testi OLCER, ogretmez: dogru/yanlis gosterilmez, yalniz secim isaretlenir.
+ * Eskiden misafirin 8 soruluk ornegi cevabi aciyordu ve Android'de gercek test de
+ * aciyordu (tek ekran, `ChoiceGame` varsayilani): ayni yapi sonraki maddelerde tekrar
+ * gectigi icin ogrenilen sey sonraki cevaplari degistiriyordu. v2'den beri misafir de
+ * hesapli kullanici da ayni testi cozer (docs/plan/placement-v2.md); iki taraf da acmamali.
  *
- * Androidde ikisi de aciyordu, cunku tek ekran iki soru kumesini de ayni
- * bilesenle ciziyor (`ChoiceGame`). Yani kullanicinin seviyesini OLCEN test
- * aynı zamanda ona ogretiyordu: ayni yapi sonraki maddelerde tekrar gectigi
- * icin ogrenilen sey sonraki cevaplari degistiriyordu. Ustelik haptik ve ses
- * de dogru/yanlis tonundaydi - titresim de cevabi soyluyordu.
- *
- * Olculen: her iki tarafta gercek testin acmadigi, demonun actigi. */
+ * Olculen: mobil ekran `ChoiceGame`i `reveal={false}` ile mi cagiriyor (varsayilan
+ * ACIYOR), web secenek siniflarinda dogru/yanlis boyamasi var mi. */
 {
   const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
-  /* Web'de iki ayri dosya; mobilde tek ekran + bilesene giden bayrak. */
-  const webGercek = /o === q\.answer|=== q\.answer \? "option-correct"/.test(strip(read("src/components/placement/placement-test.tsx")));
-  const webDemo = /o === q\.answer/.test(strip(read("src/components/placement/demo-placement.tsx")));
-  const mobEkran = strip(read("mobile/src/screens/PlacementScreen.tsx"));
-  const mobOyun = strip(read("mobile/src/game/ChoiceGame.tsx"));
-  /* Bilesen bayragi tasiyor mu ve ekran GERCEK testte kapatiyor mu. */
-  const bayrak = /reveal = true/.test(mobOyun) && /reveal\?: boolean/.test(mobOyun);
-  const kosullu = /reveal=\{!usingReal\}/.test(mobEkran);
-  /* Bayrak VARSAYILAN olarak aciyor (`reveal = true`), o yuzden "acmiyor"
-     diyebilmek icin ekranin onu acikca kapatmasi gerekiyor. Ilk yazilisinda
-     demo, bayrak gecilmediginde "acmiyor" diye okunuyordu - varsayilan ters
-     okunmus. */
-  const mobGercek = !(bayrak && kosullu);
-  const mobDemo = !/reveal=\{false\}/.test(mobEkran);
+  const mob = strip(read("mobile/src/screens/PlacementScreen.tsx"));
+  const web = strip(read("src/components/placement/placement-test.tsx"));
+  const mobAcar = /<ChoiceGame\b/.test(mob) && !/reveal=\{false\}/.test(mob);
+  const webAcar = /option-correct|option-wrong|=== item\.answer \?/.test(web);
   sameList(
     "yerlestirmede cevap acilmasi",
-    ["gercek test=" + (mobGercek ? "aciyor" : "acmiyor"), "demo=" + (mobDemo ? "aciyor" : "acmiyor")],
-    ["gercek test=" + (webGercek ? "aciyor" : "acmiyor"), "demo=" + (webDemo ? "aciyor" : "acmiyor")],
+    ["mobil=" + (mobAcar ? "aciyor" : "acmiyor"), "web=" + (webAcar ? "aciyor" : "acmiyor")],
+    ["mobil=acmiyor", "web=acmiyor"],
+    "bulunan",
+    "beklenen",
   );
 }
 
@@ -6155,7 +6140,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["sosyal ayarlar", "mobile/src/screens/SocialSettingsScreen.tsx", "msg", "src/components/social/social-settings.tsx", "msg"],
     ["arkadas satiri", "mobile/src/social/FriendRows.tsx", "msg", "src/components/social/friend-list.tsx", "msg"],
     ["baskasinin profili", "mobile/src/screens/UserScreen.tsx", "msg", "src/components/social/public-profile.tsx", "msg"],
-    ["seviye belirleme", "mobile/src/screens/PlacementScreen.tsx", "saved", "src/components/placement/demo-placement.tsx", "saved"],
+    ["seviye belirleme", "mobile/src/screens/PlacementScreen.tsx", "saved", "src/components/placement/placement-test.tsx", "saved"],
     ["meydan okuma parlamasi", "mobile/src/screens/ChallengeScreen.tsx", "flash", "src/components/celebrate.tsx", "shown"],
     ["bildirim izni", "mobile/src/screens/NotificationsScreen.tsx", "msg", "src/components/push-settings.tsx", "error"],
   ];
@@ -12559,7 +12544,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["sinav sikki", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
       ["beceri sorusu", "src/components/skills/quiz.tsx", "mobile/src/game/skillQuiz.tsx"],
       ["yerlestirme sikki", "src/components/placement/placement-test.tsx", "mobile/src/game/ChoiceGame.tsx"],
-      ["ornek yerlestirme", "src/components/placement/demo-placement.tsx", "mobile/src/game/ChoiceGame.tsx"],
+      /* Seviye sonucunun ±1 secimi de radyo grubu (v2). */
+      ["seviye secimi", "src/components/placement/placement-test.tsx", "mobile/src/screens/PlacementScreen.tsx"],
       ["tepki seridi", "src/components/social/reaction-bar.tsx", "mobile/src/social/ReactionBar.tsx"],
     ];
     const webRadyo = (y) => {
@@ -15235,7 +15221,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["src/components/boss-player.tsx", 't("exam.could_not_load")'],
       ["src/components/challenge-player.tsx", 't("challenge.load_failed")'],
       ["src/components/weekly-player.tsx", 't("weekly.couldn_t_load_weekly_quiz")'],
-      ["src/components/placement/placement-test.tsx", 't("placement.couldn_t_load_test")'],
+      /* Seviye testi v2'de yukleme hatasi dali YOK: banka uygulamanin icinde, test ag beklemez. */
       ["src/components/walk-player.tsx", 't("walk.error_title")'],
       ["src/components/conversations/conversation-scored.tsx", 't("scored.service_down")'],
       ["src/components/session-player.tsx", "title={content.title}"],
@@ -15391,13 +15377,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       /* Hazırlanma beklemesi iskelet çiziyor (2026-09-29), adı `aria-label`da. */
       ["src/components/exam-player.tsx", 't("exam.preparing")'],
       ["src/components/weekly-player.tsx", 't("wquiz.preparing")'],
-      ["src/components/placement/placement-test.tsx", 't("plc.preparing")'],
+      /* Seviye testi v2: web'de tam ekran bekleme yok (banka sayfanin icinde). */
       ["src/components/session-player.tsx", 't("session.preparing")'],
     ];
     const MOBIL = [
       ["mobile/src/screens/BossScreen.tsx", 't("exam.preparing")'],
       ["mobile/src/screens/ChallengeScreen.tsx", 't("challenge.preparing")'],
-      ["mobile/src/screens/PlacementScreen.tsx", 't("placement.calculating_your_level")'],
+      /* v2: yalniz uygulama ici yeniden almada "son alma" durumu bekleniyor. */
+      ["mobile/src/screens/PlacementScreen.tsx", 't("common.loading")'],
       ["mobile/src/screens/ConversationScoredScreen.tsx", 'tx("item.mono_scoring")'],
       ["mobile/src/screens/MockExamScreen.tsx", 't("mockexam.scoring")'],
     ];
@@ -16248,27 +16235,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * yukler. Dogrudan `/first-words` adresine giren Almanca arayuzlu kullanici
    * bugun de Turkce karsilik goruyordu.
    *
-   * Kardes yuzey (`demo-placement`) bastan beri dogruydu, yani bu bir tasarim
-   * karari degil gozden kacmaydi. */
+   * Kardes yuzey (eski `demo-placement`) bastan beri dogruydu, yani bu bir tasarim
+   * karari degil gozden kacmaydi.
+   *
+   * Seviye testi v2'de (docs/plan/placement-v2.md) banka ANADILDEN bagimsiz, kursun
+   * HEDEF DILINE bagli: karar da yukleme de `targetLang`ten okumali ("kurstan"). */
   {
     const dil = (ad, f, desen) => ad + "=" + (desen.test(sil(read(f))) ? "arayuzden" : "SABIT");
+    const kurs = (ad, f, desen) => ad + "=" + (desen.test(sil(read(f))) ? "kurstan" : "BASKA");
     sameList(
       "karar ile yukleme ayni dili okuyor",
       [
         dil("web isinma karari", "src/components/course-onboarding.tsx", /hasFirstWords\(lang, course\)/),
         dil("web isinma yuklemesi", "src/components/first-practice.tsx", /firstWordsFor\(lang,/),
-        dil("web yerlestirme karari", "src/components/course-onboarding.tsx", /hasDemoPlacement\(lang, course\)/),
-        dil("web yerlestirme yuklemesi", "src/components/placement/demo-placement.tsx", /demoPlacementFor\(lang,/),
+        kurs("web yerlestirme karari", "src/components/course-onboarding.tsx", /courseOrDefault\(course\)\.targetLang in PLACEMENT_BANK/),
+        kurs("web yerlestirme yuklemesi", "src/components/placement/placement-test.tsx", /courseOrDefault\(course\)\.targetLang;[\s\S]{0,80}PLACEMENT_BANK\[lang\]/),
         dil("mobil isinma karari", "mobile/src/screens/OnboardingScreen.tsx", /hasFirstWords\(currentLang\(\), course\)/),
         dil("mobil isinma yuklemesi", "mobile/src/screens/FirstPracticeScreen.tsx", /firstWordsFor\(currentLang\(\),/),
-        dil("mobil yerlestirme karari", "mobile/src/screens/OnboardingScreen.tsx", /hasDemoPlacement\(lang, course\)/),
-        dil("mobil yerlestirme yuklemesi", "mobile/src/screens/PlacementScreen.tsx", /demoPlacementFor\(currentLang\(\),/),
+        kurs("mobil yerlestirme karari", "mobile/src/screens/OnboardingScreen.tsx", /courseOrDefault\(course\)\.targetLang in PLACEMENT_BANK/),
+        kurs("mobil yerlestirme yuklemesi", "mobile/src/screens/PlacementScreen.tsx", /currentTargetLang\(\);[\s\S]{0,80}PLACEMENT_BANK\[lang\]/),
       ],
       [
         "web isinma karari=arayuzden", "web isinma yuklemesi=arayuzden",
-        "web yerlestirme karari=arayuzden", "web yerlestirme yuklemesi=arayuzden",
+        "web yerlestirme karari=kurstan", "web yerlestirme yuklemesi=kurstan",
         "mobil isinma karari=arayuzden", "mobil isinma yuklemesi=arayuzden",
-        "mobil yerlestirme karari=arayuzden", "mobil yerlestirme yuklemesi=arayuzden",
+        "mobil yerlestirme karari=kurstan", "mobil yerlestirme yuklemesi=kurstan",
       ],
       "bulunan",
       "beklenen",
@@ -20090,7 +20081,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * soylemiyor.)
  *   `/api/weekly`     web `WeeklyStatus`      <-> mobil `WeeklyStatus`
  *   `/api/weekly`     web `WeeklyResult`      <-> mobil `WeeklyResult`
- *   `/api/placement`  web `PlacementTest`     <-> mobil `PlacementTest`
+ *   `/api/placement`  web `PlacementV2Input`  <-> mobil `PlacementV2Payload`
  *   `/api/quests`     web `QuestProgress`     <-> mobil `Quest`
  *   `/api/immersion`  uc govdesi              <-> mobil `LearningPath`
  *
@@ -20132,7 +20123,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const CIFT = [
     ["haftalik quiz puani", "src/lib/weekly-quiz/scoring.ts", "QuizScore", "mobile/src/game/weekly.ts", "QuizScore"],
     ["haftalik sonuc", "src/lib/weekly.ts", "WeeklyResult", "mobile/src/game/weekly.ts", "WeeklyResult"],
-    ["seviye testi", "src/lib/placement.ts", "PlacementTest", "mobile/src/game/placement.ts", "PlacementTest"],
+    /* v2: istemci testi cozer ve cevaplari GONDERIR; sunucunun okudugu alanlar ile mobilin
+       gonderdigi alanlar ayni olmali (biri eklenip oteki unutulursa alan sessizce duser). */
+    ["seviye testi kaydi", "src/lib/placement.ts", "PlacementV2Input", "mobile/src/game/placement.ts", "PlacementV2Payload"],
     ["gunun gorevi", "src/lib/quests.ts", "QuestProgress", "mobile/src/game/quests.ts", "Quest"],
   ];
   for (const [ad, wy, wt, my, mt] of CIFT) {
@@ -20172,32 +20165,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
-  /* "En son girdigin" satiri: dort parca, iki tarafta. */
+  /* "En son girdigin" satiri (bekleme kilidi): uc parca, iki tarafta. v2 tek olcum;
+     beceri kirilimi yok (eski 4 asamali testin `perSkill` alani v2'de theta/guven tasiyor). */
   const webPlc = silO(read("src/components/placement/placement-test.tsx")).replace(/\s+/g, " ");
   const mobPlc = silO(read("mobile/src/screens/PlacementScreen.tsx")).replace(/\s+/g, " ");
-  sameList(
-    "en son girdigin satiri",
-    [
-      "tarih=" + (/placement\.last_taken", \{ date: new Date\(last\.at\)/.test(mobPlc) ? "var" : "YOK"),
-      "onerilen=" + (/\{last\.suggested\}/.test(mobPlc) ? "var" : "YOK"),
-      "kabul edilen=" + (/placement\.you_chose", \{ level: last\.accepted \}/.test(mobPlc) ? "var" : "YOK"),
-      /* SATIR sayiliyor, CAGRI degil: her satir yardimciyi iki kez
-         cagiriyor (kosul + sablon), yani "cagri >= 2" bir satir icin de
-         dogru cikiyordu ve bir blogu silen enjeksiyon yesil geciyordu.
-         2026-09-15: iki satir tek yardimciya indi (`lastTakenLine`: kapak
-         notu + bekleme kilidi). Olculen: yardimci kirilimi yaziyor VE iki
-         cizim yerinden cagriliyor - birini silen enjeksiyon yine kirmizi. */
-      "beceri kirilimi=" + (/function lastTakenLine\([\s\S]{0,200}?describePerSkill\(last\.perSkill\)/.test(mobPlc) && (mobPlc.match(/lastTakenLine\(status\??\.last\)/g) ?? []).length === 2 ? "iki yerde" : "EKSIK"),
-    ],
-    [
-      "tarih=" + (/placement\.last_taken", \{ date: new Date\(initialLast\.at\)/.test(webPlc) ? "var" : "YOK"),
-      "onerilen=" + (/\{initialLast\.suggested\}/.test(webPlc) ? "var" : "YOK"),
-      "kabul edilen=" + (/placement\.you_chose", \{ level: initialLast\.accepted \}/.test(webPlc) ? "var" : "YOK"),
-      "beceri kirilimi=" + (/describePerSkill\(initialLast\.perSkill, t\)/.test(webPlc) ? "iki yerde" : "EKSIK"),
-    ],
-    "mobil",
-    "web",
-  );
+  const satir = (src, son) => [
+    "tarih=" + (new RegExp(`placement\\.last_taken", \\{ date: new Date\\(${son}\\.at\\)`).test(src) ? "var" : "YOK"),
+    "onerilen=" + (new RegExp(`\\$\\{${son}\\.suggested\\}`).test(src) ? "var" : "YOK"),
+    "kabul edilen=" + (new RegExp(`placement\\.you_chose", \\{ level: ${son}\\.accepted \\}`).test(src) ? "var" : "YOK"),
+  ];
+  sameList("en son girdigin satiri", satir(mobPlc, "status\\.last"), satir(webPlc, "last"), "mobil", "web");
+  sameList("en son girdigin satiri (tam)", satir(webPlc, "last"), ["tarih=var", "onerilen=var", "kabul edilen=var"], "web", "beklenen");
 }
 
 /* --- 344. DEGERLENDIRME ISTEGINDE URETIMIN DILI: DORT CAGIRAN, IKI PLATFORM
@@ -20961,7 +20939,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const mobChoice = silH(read("mobile/src/game/ChoiceGame.tsx"));
   const mobGecikme = (mobChoice.match(/reveal \? \(correct \? \d+ : \d+\) : (\d+)/) ?? [])[1] ?? "YOK";
   const webPlc = silH(read("src/components/placement/placement-test.tsx"));
-  const webGecikme = (webPlc.match(/onPick\(i === answer\), (\d+)\)/) ?? [])[1] ?? "YOK";
+  /* v2: secimden sonra `advance()` gecikmesi (setTimeout(..., N)). */
+  const webGecikme = (webPlc.match(/advance\(\); \}, (\d+)\)/) ?? [])[1] ?? "YOK";
   const webSinif = /picked === i \? "option-picked"/.test(webPlc)
     ? "secim"
     : /picked === i \? "option-correct"/.test(webPlc)
@@ -21933,11 +21912,11 @@ console.log("\n" + C.b + "251. BILGI EKRANLARINDA KAPAT" + C.off);
     ["yuruyus", "mobile/src/screens/WalkModeScreen.tsx", "src/components/walk-player.tsx"],
   ];
   /* Mobil: kapagi saran `FlowScreen`in acilis etiketi + dugmeleri. Deneme
-     kapagi kendi bileseninde (`<Cover paper=`), yerlestirme kapagi bir
-     degiskende (`{cover}`); ekran onu `FlowScreen`e koyuyor. */
+     kapagi kendi bileseninde (`<Cover paper=`). Yerlestirme kapagi v2'den beri
+     dogrudan `<CoverBody` (eskiden `{cover}` degiskeni). */
   const mobilKapak = (yol) => {
     const src = sil251(read(yol));
-    const i = src.search(yol.endsWith("/PlacementScreen.tsx") ? /\{cover\}/ : /<CoverBody\b|<Cover\s+[a-z]+=/);
+    const i = src.search(/<CoverBody\b|<Cover\s+[a-z]+=/);
     const bas = src.lastIndexOf("<FlowScreen", i);
     if (i < 0 || bas < 0) return "KAPAK YOK";
     const seg = src.slice(bas, i);

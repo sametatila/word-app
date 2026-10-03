@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { titleMeta } from "@/lib/page-meta";
 import { getAccountUserId } from "@/lib/auth/server";
-import { DemoPlacement } from "@/components/placement/demo-placement";
+import { PlacementTest } from "@/components/placement/placement-test";
 
 /* Arama motoruna kapalı: sayfa istemcide çiziliyor, sunucu çıktısı yalnız
    başlık. Boş sayfa indekste kalitesiz sonuç sayılır; aramadan gelen
@@ -14,10 +14,10 @@ export const dynamic = "force-dynamic";
  * dışında: kabuk yok, oturum yok, sekme çubuğu yok. `/first-words` ile aynı
  * sınıftan bir sayfa; mobilde de kök yığında, sekmelerin dışında bir ekran.
  *
- * Oturum açıkken gerçek yerleştirme testi (`/placement`) dört aşamalı ve
- * sunucuda puanlanıyor; burası ona rakip değil, önündeki adım.
+ * Oturum açıkken `/placement` AYNI testi (v2) çözer; burada sonuç ve cevaplar onboarding
+ * tercihlerine yazılır, hesap açılınca `OnboardingAdopt` sunucuya kaydeder.
  */
 export default async function LevelTestPage() {
   if (await getAccountUserId()) redirect("/placement");
-  return <DemoPlacement />;
+  return <PlacementTest signedIn={false} />;
 }

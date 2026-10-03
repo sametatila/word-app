@@ -4,6 +4,7 @@
  * seçimlerini kaybetmemeli: giriş yapınca kaldığı yerden, seçtiği kursla devam.
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import type { PlacementV2Payload } from "../game/placement";
 
 const KEY = "lernomi:onboarding-prefs";
 /**
@@ -13,7 +14,11 @@ const KEY = "lernomi:onboarding-prefs";
  * kural. İki anahtar farklı soruları yanıtlıyor: biri "arayüz şu an hangi
  * dilde", öteki "hesaba yazılmayı bekleyen bir seçim var mı".
  */
-export type OnboardingPrefs = { course?: string; goal?: number; level?: string; nativeLang?: string };
+/**
+ * `placement`: misafirin seviye testi v2 cevapları. Hesap açılınca sunucuya kaydedilir
+ * (`AuthContext.adoptAccount` → `recordPlacementV2`, kabul edilen seviye `level`).
+ */
+export type OnboardingPrefs = { course?: string; goal?: number; level?: string; nativeLang?: string; placement?: PlacementV2Payload };
 
 export async function loadOnboardingPrefs(): Promise<OnboardingPrefs> {
   try {

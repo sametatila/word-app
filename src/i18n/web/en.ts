@@ -527,8 +527,6 @@ export const enWeb: Record<string, string> = {
   "linked.apple_sub": "Sign in with Apple (iOS app)",
   "linked.link_failed": "Couldn't link. Try again in a moment.",
   "linked.unlink_failed": "Couldn't remove it. Try again in a moment.",
-  "plc.preparing": "Getting the test ready…",
-  "plc.text_of": "Text {n} / {total}",
   "push.friend_request_title": "New friend request",
   "push.friend_accepted_title": "You're friends now",
   "push.quest_started_title": "The quest has started",
@@ -648,7 +646,6 @@ export const enWeb: Record<string, string> = {
     bildirimi yalnız webde.
   */
   "game.exit_message_practice": "Your answers are saved; the practice starts over next time.",
-  "placement.section_n": "Section {n}",
   "push.assess_title": "Your writing has been assessed",
   "push.assess_body": "Score: {score}/100. The corrections are ready.",
   "push.league_up_title": "You moved up to the {league}",

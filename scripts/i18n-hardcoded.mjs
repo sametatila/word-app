@@ -62,7 +62,6 @@ const SKIP = [
   "lib/confusables.ts",
   "lib/cando.ts",
   "lib/first-words.ts",
-  "lib/placement-demo.ts",
   /* Seviye testi v2 bankası: hedef dildeki sorular, kelime kartları ve uydurma kelimeler
      (üretilmiş, kaynak `data/placement/*.json`). Çevrilmez: ölçtüğü şey o dil. */
   "lib/placement-bank.ts",

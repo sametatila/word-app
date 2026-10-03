@@ -50,6 +50,15 @@ export function OnboardingAdopt() {
           body: JSON.stringify(body),
         });
         if (!res.ok) return;
+        /* Seviye testi v2: misafirin cevapları kayda geçer (kalibrasyon, "son alma"). Seviye
+           yukarıda profile yazıldı; kayıt düşerse akış durmaz. */
+        if (p.placement) {
+          await apiFetch("/api/placement", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ action: "record", ...p.placement, accepted: p.level ?? null }),
+          }).catch(() => null);
+        }
         clearOnboardingPrefs();
         // Sunucu bileşenleri kursu/seviyeyi okumuş durumda; tazelenmezse
         // kullanıcı ilk ekranda eski varsayılanları görürdü.

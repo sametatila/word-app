@@ -1,180 +1,56 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t, currentLang, nativeLangName, dateLocale, formatPercent } from "../lib/i18n";
-import { track } from "../lib/track";
-import { currentCourseId } from "../lib/courses";
 import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { t, dateLocale, targetLangName } from "../lib/i18n";
+import { track } from "../lib/track";
+import { currentTargetLang } from "../lib/courses";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { SpeakerIcon, PlacementIcon, GamePluralIcon, DurationIcon, DontGuessIcon, ScoreTargetIcon, CorrectIcon, GameChoiceIcon, AccountIcon, WarningIcon } from "../ui/icons";
-import { Chip } from "../ui/Chip";
-import { FlowScreen, FlowProgress, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
-import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
-import { CoverSkeleton } from "../game/RoundSkeleton";
-import { demoPlacementFor, estimateLevel } from "../data/demoPlacement";
-import {
-  startPlacement,
-  fetchPlacementStatus,
-  finishPlacement,
-  acceptPlacement,
-  type PlacementQuestion,
-  type PlacementAnswer,
-  type PlacementRecord,
-  type PlacementStatus,
-} from "../game/placement";
+import { SpeakerIcon, PlacementIcon, DurationIcon, DontGuessIcon, CorrectIcon, GamePluralIcon, WarningIcon } from "../ui/icons";
+import { FlowScreen, FlowProgress, FlowActions, FlowNote, ResultHero, DetailCard, CoverBody, StateBody, type CoverRule } from "../ui/flow";
+import { ChoiceGame } from "../game/ChoiceGame";
+import { fetchPlacementStatus, recordPlacementV2, type PlacementStatus, type PlacementV2Payload } from "../game/placement";
 import { useAuth } from "../lib/AuthContext";
 import { updateProfile } from "../lib/updateProfile";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, fillOf, type Palette } from "../theme";
+import { useTheme, spacing, radii, fillOf } from "../theme";
 import { sfx } from "../lib/sfx";
-import { speakDialogue, speakTarget } from "../lib/tts";
+import { speakTarget, stopSpeaking } from "../lib/tts";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
-
-/** Kullanıcının seçebileceği seviyeler — web `PLACEMENT_LEVELS` ile aynı. */
-const CHOOSABLE = ["A1", "A2", "B1", "B2", "C1"] as const;
-
-/** Ekranın oynadığı birleşik soru — hem sunucudan geleni hem demo aynı biçime düşer. */
-type PQ = {
-  round: ChoiceRound;
-  level: PlacementAnswer["level"];
-  itemId: string;
-  stage: PlacementAnswer["stage"];
-  /** Okuma metni / dinleme bölümleri — sorunun ÜSTÜNDE gösteriliyor. */
-  head?: { title: string; text?: string; segments?: { speaker?: string; text: string }[]; listen: boolean };
-};
+import { PLACEMENT_BANK, type PlacementItem } from "../data/placementBank";
+import { LEVELS, adjustable, newSession, nextItem, result, sampleCards, shouldStop, type Level, type Result, type Session } from "../lib/placementEngine";
 
 /**
- * DÖRT AŞAMA TEK SIRADA. Kelime ve dil bilgisi doğrudan şıklı soru; okuma ve
- * dinleme sorunun üstünde metni (ya da dinleme düğmesini) taşıyor. Aşama adı
- * cevapla birlikte gidiyor: sunucu `perSkill`i ondan çıkarıyor.
- */
-function realQuestions(items: PlacementQuestion[]): PQ[] {
-  return items.map((q, i) => ({
-    round: {
-      wordId: i,
-      question: q.question,
-      answer: q.options[q.answer],
-      options: q.options,
-      prompt:
-        q.kind === "vocab"
-          ? t("rounds.ask_native", { nativeLang: nativeLangName() })
-          : t(q.kind === "grammar" ? "unitkind.grammar" : q.kind === "reading" ? "unitkind.read" : "unitkind.listen"),
-    },
-    level: q.level,
-    itemId: q.itemId,
-    stage: q.kind,
-    head: q.kind === "reading" || q.kind === "listening"
-      ? { title: q.title, text: q.text, segments: q.segments, listen: q.kind === "listening" }
-      : undefined,
-  }));
-}
-function demoQuestions(): PQ[] {
-  return demoPlacementFor(currentLang(), currentCourseId()).map((q, i) => ({
-    round: { wordId: i, question: q.question, answer: q.answer, options: q.options, prompt: t(q.promptKey, { anadil: nativeLangName() }) },
-    level: q.level,
-    itemId: q.id,
-    stage: "vocab" as const,
-  }));
-}
-
-/** Okuma metni ya da dinleme düğmesi — sorunun üstündeki bağlam. */
-/** Aşamanın ne yaptıracağı — web `placement-test` `STAGE_TITLE_KEYS`. */
-const STAGE_TITLE_KEY: Record<string, string> = {
-  vocab: "plc.vocab", grammar: "plc.grammar", reading: "plc.reading", listening: "plc.listening",
-};
-
-/**
- * BECERİ PROFİLİ — web `lib/placement-score` `describePerSkill` karşılığı.
+ * SEVİYE TESTİ v2 (docs/plan/placement-v2.md) — onboarding'de misafir, uygulama içinde
+ * hesaplı kullanıcı AYNI testi çözer.
  *
- * Sunucu dört aşamanın her biri için ayrı bir seviye döndürüyor (`perSkill`)
- * ve tanıtım ekranı bunu açıkça vaat ediyor ("sonunda bir seviye önerisi ve
- * BECERİ PROFİLİ alırsın"). Androidde o satır hiç çizilmiyordu: vaat edilen
- * şey veri olarak geliyor, ekranda görünmüyordu. Aşama adları sınavın kendi
- * bölüm adlarıyla aynı — ikinci bir metin yazılmadı.
+ * Eskisi 8 sabit soru ve doğru sayısıyla eşikti: şansla seviye atlıyor, C1 hiç çıkmıyordu
+ * (kapalı test, 2026-10-03: "B2 çıktı ama değilim", "B1 çıktı ama C1'im"). Şimdi:
+ *   1. kendini değerlendirme (başlangıç noktası, sonucu belirlemez),
+ *   2. kelime kartları (uydurma kelimelerle tahmin düzeltilir),
+ *   3. uyarlanabilir sorular ("Bilmiyorum" her soruda; seviye kesinleşince durur),
+ *   4. sonuç: seviye + o seviyede yapabildikleri + ±1 seçim.
+ * Ölçüm motoru `lib/placementEngine` (webin birebir kopyası), banka `data/placementBank`.
+ * Sonuç sunucuda aynı motorla yeniden hesaplanıp kaydedilir (`recordPlacementV2`); misafirin
+ * cevapları onboarding tercihlerinde bekler, hesap açılınca gider (AuthContext.adoptAccount).
  */
-const SKILL_LABEL_KEY: Record<string, string> = {
-  vocab: "exam.sec_vocab", grammar: "exam.sec_grammar", reading: "exam.sec_reading", listening: "exam.sec_listening",
+type Phase = "cover" | "self" | "cards" | "items" | "result" | "zero";
+
+/* Anahtarlar AÇIK yazılı: çeviri kapısı (i18n:check) dinamik kurulan anahtarı göremez. */
+const SELF_KEY: Record<Level, string> = {
+  A1: "plc2.self_A1", A2: "plc2.self_A2", B1: "plc2.self_B1", B2: "plc2.self_B2", C1: "plc2.self_C1",
 };
-
-function StageHead({ head, colors }: { head: { title: string; text?: string; segments?: { speaker?: string; text: string }[]; listen: boolean }; colors: Palette }) {
-  /*
-    BÜTÜN BÖLÜMLER TEK DİZGEDE BİRLEŞTİRİLİYORDU.
-
-    İkisi birden bozuluyordu: uzun bir dinleme aşaması 600 karakteri aşınca uç
-    400 dönüyor ve HİÇ ses çıkmıyordu; çıktığında da iki konuşmacı tek ağızdan,
-    aralarında hiç duraklama olmadan okunuyordu. Seviye tespitinde ölçülen şey
-    tam da konuşmayı takip edebilmek.
-
-    Artık konuşmacı başına ayrı ses, replik başına ayrı parça, sıra geçişinde
-    pay — webdeki `placement-test` ile aynı davranış. Tek parçalı (düz metin)
-    aşama eski yoldan gidiyor, o da artık gerektiğinde bölünüyor.
-  */
-  const say = () => {
-    if (head.segments?.length) {
-      void speakDialogue(currentCourseId(), head.segments);
-      return;
-    }
-    if (head.text) speakTarget(head.text, { slow: "listen" });
-  };
-  return (
-    <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, marginBottom: spacing.lg }}>
-      <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 6 }}>{head.title}</Text>
-      {head.listen ? (
-        <PressableScale onPress={say} accessibilityLabel={t("common.listen")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, alignSelf: "flex-start", backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9 }}>
-          <SpeakerIcon color={colors.primaryText} size={20} />
-          <Text variant="bodyStrong" color={colors.primaryText}>{t("common.listen")}</Text>
-        </PressableScale>
-      ) : (
-        <Text variant="body">{head.text ?? head.segments?.map((sg) => sg.text).join(" ")}</Text>
-      )}
-    </View>
-  );
-}
-
-/** `perSkill` -> "Kelime B1 · Dilbilgisi A2 · ..." (web `describePerSkill`). */
-function describePerSkill(perSkill: Record<string, string | null> | undefined): string {
-  if (!perSkill) return "";
-  return Object.keys(perSkill)
-    .filter((k) => perSkill[k] !== undefined && SKILL_LABEL_KEY[k])
-    .map((k) => `${t(SKILL_LABEL_KEY[k])} ${perSkill[k] ?? t("plc.below_a1")}`)
-    .join(" · ");
-}
-
-/**
- * "Son alma" satırı — kapakta ve bekleme kilidinde aynı cümle.
- *
- * BECERİ KIRILIMI da satırda: web aynı yerde dört aşamanın seviyesini yazıyor
- * (`placement-test` `describePerSkill`) ve veri (`perSkill`) o kayıtta duruyor.
- */
-function lastTakenLine(last: NonNullable<PlacementStatus["last"]>): string {
-  const skills = describePerSkill(last.perSkill);
-  return `${t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} ${last.suggested}${last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}${skills ? ` · ${skills}` : ""}`;
-}
-
-/**
- * BECERİ BAŞINA DOĞRU ORANI — sonuç ekranının sayı satırı.
- *
- * Sunucu beceri başına yalnız SEVİYE döndürüyor; oran cevaplardan çıkıyor
- * (web `placement-test` aynı hesabı yapıyor). Cevabı olmayan aşama (atlandı)
- * sunucunun kırılımında varsa satırda kalıyor, oranı "—".
- */
-function skillRows(answers: PlacementAnswer[], perSkill: Record<string, string | null> | undefined) {
-  return ["vocab", "grammar", "reading", "listening"].flatMap((stage) => {
-    const own = answers.filter((a) => a.stage === stage);
-    if (!own.length && perSkill?.[stage] === undefined) return [];
-    const lvl = perSkill?.[stage];
-    return [{
-      stage,
-      label: t(SKILL_LABEL_KEY[stage]),
-      pct: own.length ? formatPercent(Math.round((100 * own.filter((a) => a.correct).length) / own.length)) : "—",
-      level: lvl === undefined ? null : lvl ?? t("plc.below_a1"),
-    }];
-  });
-}
+const CAN_DO_KEYS: Record<Level, [string, string, string]> = {
+  A1: ["plc2.cando_A1_1", "plc2.cando_A1_2", "plc2.cando_A1_3"],
+  A2: ["plc2.cando_A2_1", "plc2.cando_A2_2", "plc2.cando_A2_3"],
+  B1: ["plc2.cando_B1_1", "plc2.cando_B1_2", "plc2.cando_B1_3"],
+  B2: ["plc2.cando_B2_1", "plc2.cando_B2_2", "plc2.cando_B2_3"],
+  C1: ["plc2.cando_C1_1", "plc2.cando_C1_2", "plc2.cando_C1_3"],
+};
 
 export function PlacementScreen() {
   const { colors } = useTheme();
@@ -182,366 +58,312 @@ export function PlacementScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { params } = useRoute<RouteProp<RootStackParams, "Placement">>();
   const onboarding = params?.onboarding === true;
-  // Onboarding'de bu ekran yığının köküdür; çıkış = giriş duvarı (Auth). Uygulama
-  // içinde tekrar testte ise geri döner.
-  const leave = () => { if (onboarding) nav.reset({ index: 0, routes: [{ name: "Auth" }] }); else nav.goBack(); };
+  /* Onboarding'de bu ekran yığının kökü: çıkış = giriş duvarı. Uygulama içinde geri döner. */
+  const leave = () => { stopSpeaking(); if (onboarding) nav.reset({ index: 0, routes: [{ name: "Auth" }] }); else nav.goBack(); };
   const { user } = useAuth();
 
-  // Gerçek test (oturum açıksa sunucudan). Yüklenene dek loading; hata → demo.
-  const [real, setReal] = useState<PlacementQuestion[] | null>(null);
-  const [loading, setLoading] = useState<boolean>(!!user);
-  const [loadError, setLoadError] = useState(false);
-  const [attempt, setAttempt] = useState(0);
-  const [idx, setIdx] = useState(0);
-  const [correct, setCorrect] = useState(0);
-  const [result, setResult] = useState<PlacementRecord | null>(null);
-  const [submitting, setSubmitting] = useState(false);
+  const lang = currentTargetLang();
+  const bank = PLACEMENT_BANK[lang];
+
+  const [phase, setPhase] = useState<Phase>("cover");
+  /* Oturum değişebilir bir nesne (motorun sözleşmesi); `tick` yeniden çizdirir. */
+  const session = useRef<Session | null>(null);
+  const cards = useRef(bank.cards);
+  const [cardIdx, setCardIdx] = useState(0);
+  const [item, setItem] = useState<PlacementItem | null>(null);
+  const [, setTick] = useState(0);
+  const [res, setRes] = useState<Result | null>(null);
+  const [chosen, setChosen] = useState<Level | null>(null);
+  const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
-  /* Bekleme süresi: sunucu bunu bildiriyor ama ZORLAMIYOR (bkz.
-     `fetchPlacementStatus`). Onboarding'de sorulmuyor - orada zaten ilk kez
-     alınıyor ve hesap bile yeni. */
-  const [status, setStatus] = useState<PlacementStatus | null>(null);
-  /** Sonuç sunucuya yazılamadı: seviye yine de profile yazılıyor. */
   const [notSaved, setNotSaved] = useState(false);
-  /*
-   * SEVİYEYİ KULLANICI SEÇEBİLİYOR.
-   *
-   * Sunucu öneriyi veriyor ama `accept` HANGİ seviyeyi kabul ettiğini ayrıca
-   * alıyor (`acceptPlacement(id, level)`) - yani "önerine katılmıyorum, ben
-   * B1'den başlayacağım" baştan beri mümkündü. Mobil her zaman öneriyi
-   * uyguluyordu; kendi seviyesini bilen kullanıcının burada söyleyecek sözü
-   * yoktu. Web beş seviyeyi çip olarak gösteriyor (`placement-test`).
-   */
-  const [chosen, setChosen] = useState<string | null>(null);
-  /*
-   * TANITIM EKRANI — web `placement/placement-test` `phase === "intro"`.
-   *
-   * Android testi DOĞRUDAN başlatıyordu: kaç aşama olduğunu, ne kadar
-   * süreceğini ve sonunda seviyeyi YİNE KENDİSİNİN seçeceğini hiçbir yerde
-   * okumadan ilk sorunun içinde buluyordu. Yerleştirme sınavı kullanıcının
-   * uygulamayla ilk ciddi teması; ne olduğunu bilmeden girilen on beş
-   * dakikalık bir ölçüm yarıda bırakılıyor.
-   */
-  const [started, setStarted] = useState(false);
-  const answers = useRef<PlacementAnswer[]>([]);
-  /* Testin süresi sonuç bandında (web sonucu dakikayı baştan
-     beri yazıyor). Bitişte bir kez ölçülüyor: seviye çipine her dokunuşta
-     yeniden hesaplanıp kaymasın. */
-  const startedAt = useRef(Date.now());
-  const minutes = useRef(0);
 
+  /* Bekleme süresi (30 gün): sunucu bildiriyor, kapıyı istemci tutuyor. Onboarding'de sorulmaz. */
+  const [status, setStatus] = useState<PlacementStatus | null>(null);
+  const [statusLoading, setStatusLoading] = useState(!!user && !onboarding);
   useEffect(() => {
-    if (!user) { setReal(null); setLoading(false); return; }
+    if (!user || onboarding) return;
     let alive = true;
-    setLoading(true);
-    setLoadError(false);
-    // Oturumlu kullanıcıda gerçek test gelmezse "örnek" sorulara DÜŞÜLMEZ (uydurma sonuç
-    // seviyeyi yanlış ayarlardı); hata gösterilir, tekrar denenir. Misafir (onboarding)
-    // yerleşik soru setini kullanır — o akışın gerçek testi budur.
-    if (!onboarding) {
-      /* Durum test İSTEĞİNDEN önce gelmiyor: iki istek paralel gidiyor ve
-         bekleme süresi doluysa ekran soruları hiç göstermeden kapanıyor.
-         Sıralı yapmak açılışı iki gecikme kadar yavaşlatırdı. */
-      fetchPlacementStatus().then((st) => { if (alive) setStatus(st); }).catch(() => { /* durum yoksa test yine açılır */ });
-    }
-    startPlacement()
-      .then((items) => { if (alive) { if (items.length) setReal(items); else setLoadError(true); setLoading(false); } })
-      .catch(() => { if (alive) { setLoadError(true); setLoading(false); } });
+    fetchPlacementStatus()
+      .then((st) => { if (alive) setStatus(st); })
+      .catch(() => { /* durum yoksa test yine açılır */ })
+      .finally(() => { if (alive) setStatusLoading(false); });
     return () => { alive = false; };
-  }, [user, attempt, onboarding]);
+  }, [user, onboarding]);
 
-  const usingReal = !!real;
-  const questions = usingReal ? realQuestions(real) : user ? [] : demoQuestions();
-  const total = questions.length;
-  const done = idx >= total;
-  /*
-   * ÇIKIŞ ONAYA BAĞLI — sınav ekranındaki aynı boşluk.
-   *
-   * Çarpı ve donanım geri tuşu on beş dakikalık testi tek dokunuşta çöpe
-   * atıyordu: cevaplar hiçbir yere kaydedilmiyor, test baştan başlıyor ve
-   * bekleme süresi de işlemeye devam ediyor. Tanıtım ekranında ve sonuçta
-   * onay YOK — orada kaybedilecek bir şey yok.
-   */
-  const back = useBackConfirm(started && !done);
-  // Önerilen seviye: gerçek modda sunucudan (result), yoksa yerel tahmin.
-  const level = chosen ?? result?.suggested ?? estimateLevel(correct);
+  const inTest = phase === "self" || phase === "cards" || phase === "items";
+  const back = useBackConfirm(inTest);
+  const startedAt = useRef(Date.now());
 
-  /**
-   * Aşamayı atla: o aşamanın kalan soruları CEVAPSIZ geçiliyor (web
-   * `leaveStage` de öyle - atlanan aşama puanlamada yok sayılıyor).
-   */
-  function skipStage() {
-    const cur = questions[idx]?.stage;
-    let next = idx;
-    while (next < total && questions[next].stage === cur) next += 1;
-    setIdx(next);
-    if (next >= total) finishNow();
-  }
-
-  /** Test bitti: ses, ve gerçek modda cevapları sunucuya ver. */
-  function finishNow() {
-    sfx("finish"); // tamamlanma sesi (sonuç ekranı)
-    minutes.current = Math.round((Date.now() - startedAt.current) / 60000);
-    if (!usingReal || !user) return;
-    setSubmitting(true);
-    finishPlacement(answers.current)
-      .then((r) => setResult(r))
-      /* Sunucu hata → yerel tahmin gösteriliyor AMA bunun söylenmesi şart:
-         kayıt yok demek, sonraki açılışta "son alma" satırının boş olması ve
-         bekleme süresinin işlememesi demek. Web aynı notu gösteriyor. */
-      .catch(() => setNotSaved(true))
-      .finally(() => setSubmitting(false));
-  }
-
-  function onDone(ok: boolean) {
-    const q = questions[idx];
-    if (q) answers.current.push({ stage: q.stage, level: q.level, itemId: q.itemId, correct: ok });
-    if (ok) setCorrect((c) => c + 1);
-    const next = idx + 1;
-    setIdx(next);
-    if (next >= total) finishNow();
-  }
-
-  /* Tanıtımdaki BAŞLA: `exam_start` burada, ekran açılışında değil. */
   function start() {
-    track("exam_start", 0, "placement:A1");
+    track("exam_start", 0, "placement:v2");
     startedAt.current = Date.now();
-    setStarted(true);
+    setPhase("self");
   }
 
-  async function applyLevel() {
-    /* Yerleştirme SONUCU uygulandı — web `demo-placement` ile aynı ad, aynı
-       değer (yüzde) ve aynı kind biçimi. Mobil hiç yazmıyordu: kaç kişinin
-       seviyesini yerleştirmeye göre ayarladığı ölçülmüyordu. */
-    /* GERÇEK TEST SUNUCUDA SAYILIYOR (`lib/placement` placement_finish), yani
-       burada da yazılınca her gerçek test iki kez sayılıyordu. İstemci yalnız
-       sunucuya hiç gitmeyen DEMO testi yazıyor — web `demo-placement` ile aynı. */
-    if (!usingReal) track("placement_finish", total ? Math.round((correct / total) * 100) : 0, `demo:${String(level).toLowerCase()}`);
-    // Onboarding'de misafir: seviye yerel prefs'e; hesap açınca profile taşınır.
-    if (onboarding) await saveOnboardingPrefs({ level });
+  function pickSelf(level: Level | null) {
+    if (!level) { setChosen("A1"); setPhase("zero"); return; }
+    cards.current = sampleCards(bank.cards);
+    session.current = newSession(level, cards.current, {}, true);
+    setCardIdx(0);
+    setPhase("cards");
+  }
+
+  function answerCard(know: boolean) {
+    const s = session.current;
+    const c = cards.current[cardIdx];
+    if (!s || !c) return;
+    s.known[c.id] = know;
+    const next = cardIdx + 1;
+    if (next < cards.current.length) { setCardIdx(next); return; }
+    setPhase("items");
+    advance();
+  }
+
+  /** Sıradaki soru ya da sonuç. */
+  function advance() {
+    const s = session.current;
+    if (!s) return;
+    const map = new Map(bank.items.map((it) => [it.id, it]));
+    const nx = shouldStop(s, map) ? null : (nextItem(s, bank.items) as PlacementItem | null);
+    if (!nx) { finish(); return; }
+    setItem(nx);
+    setTick((n) => n + 1);
+    if (nx.kind === "listening" && nx.audio) speakTarget(nx.audio, { slow: "listen" });
+  }
+
+  function answerItem(choice: number | "dontknow") {
+    const s = session.current;
+    if (!s || !item) return;
+    stopSpeaking();
+    s.responses.push({ id: item.id, choice });
+    advance();
+  }
+
+  /* "Şu an dinleyemiyorum": dinleme maddesi cevapsız atlanır, kalan test sessiz sürer. */
+  function cantListen() {
+    const s = session.current;
+    if (!s) return;
+    stopSpeaking();
+    s.audio = false;
+    advance();
+  }
+
+  function finish() {
+    const s = session.current;
+    if (!s) return;
+    const r = result(s, bank.items);
+    sfx("finish");
+    setRes(r);
+    setChosen(r.level);
+    setItem(null);
+    setPhase("result");
+  }
+
+  function payload(): PlacementV2Payload | null {
+    const s = session.current;
+    if (!s) return null;
+    return { lang, self: s.self, audio: s.audio, known: s.known, responses: s.responses };
+  }
+
+  async function apply() {
+    const level = chosen ?? "A1";
+    setSaving(true);
+    const p = payload();
+    /* Misafirde sunucu yok: yalnız misafir turu burada sayılıyor (hesaplıda sunucu sayar). */
+    if (!user && res) track("placement_finish", res.items, `v2:${res.level}`);
+    if (onboarding) await saveOnboardingPrefs({ level, ...(p ? { placement: p } : {}) });
     if (user) {
-      try {
-        if (result) await acceptPlacement(result.id, level);
-        else await updateProfile({ level });
-      } catch { /* yut: yine de kapat */ }
+      let ok = false;
+      if (p) {
+        try { await recordPlacementV2({ ...p, accepted: level }); ok = true; } catch { /* aşağıda not */ }
+      }
+      /* Profil yine yazılır: kayıt düşse de seçilen seviye uygulanmalı; yerel önbellek de tazelenir. */
+      await updateProfile({ level });
+      if (p && !ok) setNotSaved(true);
     }
+    setSaving(false);
     setSaved(true);
     setTimeout(leave, 700);
   }
 
-  // Misafir yolunda bu paritenin hazır seti yoksa soru üretilemez; sessiz boş
-  // ekran yerine sebebi söylenir (onboarding bu seçeneği zaten göstermiyor).
-  if (!user && !questions.length) {
+  /* ---------------------------------------------------------------- çizim */
+
+  if (statusLoading) {
     return (
-      <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: leave }} />}>
-        <StateBody title={t("placement.no_demo")} />
+      <FlowScreen center actions={null}>
+        <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ alignItems: "center" }}>
+          <ActivityIndicator color={colors.primaryText} />
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("common.loading")}</Text>
+        </View>
       </FlowScreen>
     );
   }
 
-  if (user && !loading && loadError) {
-    return (
-      <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} close={leave} />}>
-        <StateBody alert title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
-      </FlowScreen>
-    );
-  }
-
-  /* Test inerken KAPAĞIN iskeleti (beş kural, Başla / Kapat):
-     yüklenince gelen ekran kapak, tur değil. */
-  /* Yükleme yalnız hesaplı kullanıcıda (gerçek test): kapağın gerçek-test cümleleri. */
-  if (loading) {
-    return (
-      <CoverSkeleton
-        label={t("common.loading")}
-        eyebrow={t("placement.title")}
-        title={t("onboarding.kisa_yerlestirme_sinavi")}
-        pitch={t("plc.cover_pitch")}
-        rules={[t("plc.rule_stages"), t("plc.rule_time"), t("plc.rule_dont_know"), t("plc.rule_result"), t("plc.rule_choose")]}
-      />
-    );
-  }
-
-  /*
-   * BEKLEME SÜRESİ DOLMADIYSA TEST AÇILMIYOR.
-   *
-   * Test 30 günde bir alınabiliyor; sunucu bunu yalnız BİLDİRİYOR, kapıyı
-   * istemci tutuyor. Mobil hiç sormadığı için Android'de test istenildiği
-   * kadar tekrarlanabiliyor ve her bitiş seviyeyi yeniden yazabiliyordu.
-   * Durum şablonu (bekleniyor = düşünen maskot); web aynı dalı artık kapağın
-   * içinde değil, ayrı bir durum ekranı olarak çiziyor.
-   */
-  if (user && status && !status.canRetake) {
+  if (user && !onboarding && status && !status.canRetake) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: leave }} />}>
         <StateBody title={t("placement.title")} body={t("placement.retake_in", { n: status.retakeDays })}>
-          {status.last ? <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{lastTakenLine(status.last)}</Text> : null}
+          {status.last ? (
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>
+              {`${t("placement.last_taken", { date: new Date(status.last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} ${status.last.suggested}${status.last.accepted ? ` ${t("placement.you_chose", { level: status.last.accepted })}` : ""}`}
+            </Text>
+          ) : null}
         </StateBody>
       </FlowScreen>
     );
   }
 
-  /* TANITIM — soru gelmeden çizilmiyor: "başla" düğmesi boş bir teste
-     götürürdü. `exam_start` bu kapağın BAŞLA'sında (`start`); eskiden ekranı AÇAN
-     herkes "başladı" sayılıyordu ve huninin payı olduğundan büyüktü.
-     KAPAK ŞABLONU: eski tek paragraflık tanıtım ikonlu kural satırlarına
-     bölündü. Misafirin örnek turu dört aşamalı değil — kuralları kendi. */
-  if (!started && !done && total > 0) {
-    const rules: CoverRule[] = usingReal
-      ? [
-          { icon: GamePluralIcon, text: t("plc.rule_stages") },
-          { icon: DurationIcon, text: t("plc.rule_time") },
-          { icon: DontGuessIcon, text: t("plc.rule_dont_know") },
-          { icon: ScoreTargetIcon, text: t("plc.rule_result") },
-          { icon: CorrectIcon, text: t("plc.rule_choose"), tone: "ok" },
-        ]
-      : [
-          { icon: GameChoiceIcon, text: t("plc.rule_demo_count", { n: total }) },
-          { icon: CorrectIcon, text: t("plc.rule_demo_reveal") },
-          { icon: AccountIcon, text: t("plc.rule_demo_carry"), tone: "ok" },
-        ];
-    const cover = (
-      <CoverBody
-        icon={PlacementIcon}
-        tint={fillOf("primary")}
-        eyebrow={t("placement.title")}
-        title={t("onboarding.kisa_yerlestirme_sinavi")}
-        pitch={t("plc.cover_pitch")}
-        rules={rules}
-        note={status?.last ? lastTakenLine(status.last) : null}
-      />
-    );
+  if (phase === "cover") {
+    const rules: CoverRule[] = [
+      { icon: GamePluralIcon, text: t("plc2.rule_parts") },
+      { icon: DurationIcon, text: t("plc2.rule_adapt") },
+      { icon: DontGuessIcon, text: t("plc2.rule_dont_know") },
+      { icon: CorrectIcon, text: t("plc2.rule_choose"), tone: "ok" },
+    ];
     return (
       <FlowScreen actions={<FlowActions primary={{ label: t("common.start"), onPress: start }} close={leave} />}>
-        {cover}
+        <CoverBody icon={PlacementIcon} tint={fillOf("primary")} eyebrow={t("placement.title")} title={t("plc2.cover_title")} pitch={t("plc2.cover_pitch")} rules={rules} />
       </FlowScreen>
     );
   }
 
-  /*
-   * SONUÇ ŞABLONU — band (seviye) → beceri oranları → notlar → seviye seçimi.
-   * Maskotsuz dairesel rozet kalktı: seviye bandın ana sayısı. Hesaplanırken
-   * (submitting) aşağıdaki soru çerçevesinin bekleme dalı çiziliyor.
-   */
-  if (done && !submitting) {
-    const answered = answers.current.length;
-    const skills = usingReal ? skillRows(answers.current, result?.perSkill) : [];
+  if (phase === "zero" || phase === "result") {
+    const level = chosen ?? "A1";
+    const options = res ? adjustable(res.level) : [];
     return (
       <FlowScreen
-        actions={
-          <FlowActions
-            primary={{
-              label: user && result
-                ? t(level === result.suggested ? "placement.continue_with" : "placement.pick_and_continue", { level: String(level) })
-                : t(user ? "placement.set_level" : "common.got_it"),
-              onPress: () => void applyLevel(),
-            }}
-            close={leave}
-          />
-        }
+        actions={<FlowActions primary={{ label: t("plc2.start_with", { level }), onPress: () => void apply(), disabled: saving || saved }} close={leave} />}
       >
-        <ResultHero
-          eyebrow={t("placement.title")}
-          title={t("placement.your_level", { level: String(level) })}
-          figure={String(level)}
-          sub={`${t("placement.result_sub", { total: answered, correct })}${usingReal ? ` · ${t("time.minutes_short", { m: minutes.current })}` : ""}`}
-        />
-        {/* Dört beceri üç sayıya sığmıyor: fazlası sayı satırı yerine kartta. */}
-        {skills.length > 0 && skills.length <= 3 ? (
-          <StatRow items={skills.map((s) => ({ value: s.pct, label: s.level ? `${s.label} · ${s.level}` : s.label }))} />
-        ) : null}
-        {/* SONUÇ YAZILAMADI uyarısı seçimden ÖNCE: kullanıcı seviyesini
-            seçmeden önce bilmeli. Web aynı sırayı tutuyor. */}
+        {phase === "zero" ? (
+          <ResultHero eyebrow={t("placement.title")} title={t("plc2.zero_title")} figure="A1" sub={t("plc2.zero_body")} />
+        ) : (
+          <ResultHero
+            eyebrow={t("placement.title")}
+            title={t("placement.your_level", { level: res!.level })}
+            figure={res!.level}
+            sub={res!.near ? t("plc2.near", { level: res!.near }) : null}
+          />
+        )}
         {notSaved ? <FlowNote tone="bad" icon={<WarningIcon color={colors.dangerText} size={16} />} text={t("placement.not_saved")} /> : null}
         {saved ? (
           <View accessibilityLiveRegion="polite">
             <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={t("placement.saved")} />
           </View>
         ) : null}
-        {skills.length > 3 ? (
-          <DetailCard title={t("placement.skill_profile")}>
-            {skills.map((s) => <DetailRow key={s.stage} left={s.label} right={s.level ? `${s.level} · ${s.pct}` : s.pct} />)}
-          </DetailCard>
-        ) : null}
-        {/* Beş seviye: öneri işaretli, seçim kullanıcının. Yalnız oturumlu
-            kullanıcıda - misafir akışında kabul edilecek bir kayıt yok.
-            ÖNERİ NEREDEN GELİYOR notu çiplerin üstünde: neden birinin
-            işaretli olduğu ve seçimin kullanıcıda olduğu yazmalı. */}
-        {user && result ? (
-          <DetailCard title={t("placement.start_level")}>
-            <Text variant="caption" color={colors.textMuted}>{t("placew.median_note")}</Text>
-            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-              {CHOOSABLE.map((l) => (
-                <Chip key={l} role="radio" label={l === result.suggested ? `${l} · ${t("placement.suggested")}` : l} active={level === l} onPress={() => setChosen(l)} />
-              ))}
+        {/* "BU BENİM" DEDİRTEN KISIM: seviyenin harfi değil, o seviyede yapabildikleri. */}
+        <DetailCard title={`${t("plc2.cando_title")} · ${level}`}>
+          {CAN_DO_KEYS[level].map((k) => (
+            <View key={k} style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start" }}>
+              <CorrectIcon color={colors.successText} size={16} />
+              <Text variant="body" style={{ flex: 1 }}>{t(k)}</Text>
             </View>
+          ))}
+        </DetailCard>
+        {/* ±1 SEÇİM: önerilen ve bir altı/üstü; her birinin ne değiştireceği yazılı. */}
+        {options.length > 1 ? (
+          <DetailCard title={t("plc2.adjust_title")}>
+            {options.map((l) => {
+              const on = l === level;
+              const i = LEVELS.indexOf(l) - LEVELS.indexOf(res!.level);
+              const label = i === 0 ? `${l} · ${t("placement.suggested")}` : t(i < 0 ? "plc2.adjust_lower" : "plc2.adjust_higher", { level: l });
+              return (
+                <PressableScale
+                  key={l}
+                  accessibilityRole="radio"
+                  accessibilityState={{ selected: on }}
+                  onPress={() => setChosen(l)}
+                  style={{ borderRadius: radii.md, borderWidth: 1, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.surface2 : colors.surface, paddingVertical: spacing.md, paddingHorizontal: spacing.md }}
+                >
+                  <Text variant={on ? "bodyStrong" : "body"}>{label}</Text>
+                </PressableScale>
+              );
+            })}
+            <Text variant="caption" color={colors.textMuted}>{t("plc2.adjust_note")}</Text>
           </DetailCard>
         ) : null}
       </FlowScreen>
     );
   }
 
+  /* Test sırasındaki ilerleme: kartlar ~%40, sorular ~%60 (ortalama 13 soru). */
+  const s = session.current;
+  const progress = phase === "self" ? 0
+    : phase === "cards" ? 0.4 * (cardIdx / Math.max(1, cards.current.length))
+    : 0.4 + 0.6 * Math.min(1, (s?.responses.length ?? 0) / 13);
+  const partLabel = phase === "items" ? t("plc2.part_questions") : phase === "cards" ? t("plc2.part_words") : "";
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
-      {/* Simge tek başına: ekran okuyucu için adı olmalı - öteki ekranların
-          kapatma düğmeleri baştan beri `common.close` taşıyor. */}
-      <FlowProgress
-        onClose={started && !done ? back.ask : leave}
-        closeLabel={t(started && !done ? "plc.quit_title" : "common.close")}
-        value={total ? Math.min(idx, total) / total : 0}
-        count={`${Math.min(idx + (done ? 0 : 1), total)}/${total}`}
-        style={{ marginBottom: spacing.xl }}
-      />
-      {/* "Bildir" YOK: yerleştirme cevap anında geri bildirim vermeyen bir
-          ölçüm (dikkat dağıtmamalı) ve sonuç ekranı tek tek maddeleri
-          göstermiyor, yani sonuçta bağlanacak anlamlı bir hedef de yok. */}
+      <FlowProgress onClose={back.ask} closeLabel={t("plc.quit_title")} value={progress} count={partLabel} style={{ marginBottom: spacing.xl }} />
 
-      {!done ? (
-        <>
-          <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>
-            {t("placement.title")}{usingReal ? "" : t("placement.sample")}
-          </Text>
-          {/*
-            OKUMA VE DİNLEME BAŞLIĞI. Okuma sorusunun üstünde metin duruyor;
-            dinlemede metin GÖRÜNMÜYOR, bölümler sesli okunuyor (dinleme
-            ölçümünün anlamı bu). Web aynı ayrımı yapıyor (`placement-test`
-            okuma metnini yazıyor, dinlemede oynat düğmesi veriyor).
-          */}
-          {/*
-            AŞAMA NE SORUYOR + ATLAMA + "BİLMİYORUM". Üçü de mobilde yoktu:
-            ekran doğrudan soruya başlıyordu. Bilmeyen kullanıcının tek yolu
-            TAHMİN etmekti ve tutan bir tahmin yerleştirme seviyesini
-            yükseltiyordu - ölçümün kendisini bozan bir eksiklik. Web üçünü de
-            veriyor (`placement/placement-test`); "bilmiyorum" yanlış cevapla
-            aynı, farkı tahmini ortadan kaldırması.
-          */}
-          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, marginBottom: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>
-              {t(STAGE_TITLE_KEY[questions[idx].stage] ?? "plc.vocab")}
-            </Text>
-            <PressableScale onPress={skipStage} hitSlop={6}>
-              <Text variant="caption" color={colors.primaryText}>{t("plc.skip_stage")}</Text>
+      {phase === "self" ? (
+        <View style={{ gap: spacing.sm }}>
+          <Text accessibilityRole="header" variant="h1">{t("plc2.self_title")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("plc2.self_sub", { lang: targetLangName() })}</Text>
+          {LEVELS.map((l) => (
+            <PressableScale key={l} accessibilityRole="button" onPress={() => pickSelf(l)} style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, padding: spacing.lg }}>
+              <Text variant="body">{t(SELF_KEY[l])}</Text>
+            </PressableScale>
+          ))}
+          <PressableScale accessibilityRole="button" onPress={() => pickSelf(null)} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={colors.primaryText}>{t("plc2.self_none")}</Text>
+          </PressableScale>
+        </View>
+      ) : null}
+
+      {phase === "cards" && cards.current[cardIdx] ? (
+        <View style={{ flex: 1 }}>
+          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("plc2.cards_title")}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xs }}>{t("plc2.cards_hint")}</Text>
+          <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <Text variant="display" style={{ textAlign: "center" }}>{cards.current[cardIdx].word}</Text>
+          </View>
+          <View style={{ flexDirection: "row", gap: spacing.md }}>
+            <PressableScale accessibilityRole="button" onPress={() => answerCard(false)} style={{ flex: 1, paddingVertical: spacing.lg, alignItems: "center", borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface }}>
+              <Text variant="bodyStrong" color={colors.textMuted}>{t("plc.dont_know")}</Text>
+            </PressableScale>
+            <PressableScale accessibilityRole="button" onPress={() => answerCard(true)} style={{ flex: 1, paddingVertical: spacing.lg, alignItems: "center", borderRadius: radii.lg, backgroundColor: colors.primary }}>
+              <Text variant="bodyStrong" color={colors.onPrimary}>{t("plc2.know")}</Text>
             </PressableScale>
           </View>
-          {questions[idx].head ? <StageHead head={questions[idx].head!} colors={colors} /> : null}
-          {/* GERÇEK testte cevap açılmıyor, DEMO'da açılıyor: web de tam
-              böyle bölünmüş (`placement-test` yalnız seçimi işaretliyor,
-              `demo-placement` cevabı açıyor). Androidde ikisi de açıyordu,
-              yani kullanıcının seviyesini ölçen test aynı zamanda ona
-              öğretiyordu ve sonraki cevaplar bundan etkileniyordu. */}
-          <ChoiceGame key={idx} round={questions[idx].round} onDone={onDone} reveal={!usingReal} />
-          <PressableScale onPress={() => onDone(false)} style={{ marginTop: spacing.md, paddingVertical: spacing.md, alignItems: "center", borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border }}>
+        </View>
+      ) : null}
+
+      {phase === "items" && item ? (
+        <View style={{ flex: 1 }}>
+          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>
+            {t(item.kind === "cloze" ? "plc2.q_cloze" : item.kind === "reading" ? "plc2.q_reading" : "plc2.q_listening")}
+          </Text>
+          {item.kind === "reading" && item.text ? (
+            <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, marginBottom: spacing.lg }}>
+              <Text variant="body">{item.text}</Text>
+            </View>
+          ) : null}
+          {item.kind === "listening" && item.audio ? (
+            <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg, flexWrap: "wrap" }}>
+              <PressableScale onPress={() => speakTarget(item.audio!, { slow: "listen" })} accessibilityLabel={t("plc2.listen_again")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9 }}>
+                <SpeakerIcon color={colors.primaryText} size={20} />
+                <Text variant="bodyStrong" color={colors.primaryText}>{t("plc2.listen_again")}</Text>
+              </PressableScale>
+              <PressableScale onPress={cantListen} style={{ justifyContent: "center", paddingHorizontal: spacing.sm }} hitSlop={6}>
+                <Text variant="caption" color={colors.primaryText}>{t("plc2.cant_listen")}</Text>
+              </PressableScale>
+            </View>
+          ) : null}
+          {/* ÖLÇÜM KİPİ (reveal=false): doğruluk gösterilmez; test öğretmez, ölçer. */}
+          <ChoiceGame
+            key={item.id}
+            round={{ wordId: 0, question: item.kind === "cloze" ? item.text ?? "" : item.question ?? "", answer: item.options[item.answer], options: item.options, prompt: "" }}
+            onDone={(ok) => answerItem(ok ? item.answer : -1)}
+            reveal={false}
+          />
+          <PressableScale onPress={() => answerItem("dontknow")} style={{ marginTop: spacing.md, paddingVertical: spacing.md, alignItems: "center", borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("plc.dont_know")}</Text>
           </PressableScale>
-        </>
-      ) : (
-        /* Seviye hesaplanirken ekran tamamen bu dala geciyor ve sessizdi;
-           webde ayni dal `role="status" aria-busy` tasiyor. */
-        <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <ActivityIndicator color={colors.primaryText} />
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.calculating_your_level")}</Text>
         </View>
-      )}
+      ) : null}
+
       <ConfirmDialog
         visible={back.visible}
         title={t("plc.quit_title")}

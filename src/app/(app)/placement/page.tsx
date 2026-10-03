@@ -7,7 +7,7 @@ import { PlacementTest } from "@/components/placement/placement-test";
 export const generateMetadata = titleMeta("placement.title");
 export const dynamic = "force-dynamic";
 
-/** Yerleştirme testi sayfası (WP-40). Son alma sunucuda okunur; test istemcide akar. */
+/** Seviye testi (v2, docs/plan/placement-v2.md). Son alma sunucuda okunur; test istemcide akar. */
 export default async function PlacementPage() {
   const userId = await getUserId();
   if (!userId) redirect("/login");
@@ -20,7 +20,7 @@ export default async function PlacementPage() {
   const canRetake = !last || Date.now() - new Date(last.at).getTime() >= RETAKE_DAYS * 86400000;
   return (
     <div className="mx-auto w-full max-w-3xl">
-      <PlacementTest initialLast={last} canRetake={canRetake} retakeDays={RETAKE_DAYS} />
+      <PlacementTest signedIn last={last} canRetake={canRetake} retakeDays={RETAKE_DAYS} />
     </div>
   );
 }

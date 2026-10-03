@@ -585,8 +585,6 @@ export const trWeb: Record<string, string> = {
   "linked.apple_sub": "Apple ile giriş (iOS uygulaması)",
   "linked.link_failed": "Bağlanamadı. Biraz sonra tekrar dene.",
   "linked.unlink_failed": "Kaldırılamadı. Biraz sonra tekrar dene.",
-  "plc.preparing": "Test hazırlanıyor…",
-  "plc.text_of": "Metin {n} / {total}",
   "push.friend_request_title": "Yeni arkadaşlık isteği",
   "push.friend_accepted_title": "Artık arkadaşsınız",
   "push.quest_started_title": "Görev başladı",
@@ -709,7 +707,6 @@ export const trWeb: Record<string, string> = {
     bildirimi yalnız webde.
   */
   "game.exit_message_practice": "Cevapladıkların kaydedilir; alıştırma bir dahaki sefere baştan başlar.",
-  "placement.section_n": "Bölüm {n}",
   "push.assess_title": "Yazın değerlendirildi",
   "push.assess_body": "Puan: {score}/100. Düzeltmeler hazır.",
   "push.league_up_title": "{league}'e yükseldin",

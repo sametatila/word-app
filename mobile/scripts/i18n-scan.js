@@ -79,7 +79,6 @@ const SKIP_ASCII = ["data/firstWords.ts", "lib/courses.ts"].map((p) => path.join
 const SKIP_CONTENT = [
   "data/moduleThemes.ts", // modül başlıkları (müfredat) — `check:parity` "modul temalari"
   "data/firstWords.ts", //  ısınma kelimeleri + Türkçe karşılıkları — `check:parity` "ilk kelimeler"
-  "data/demoPlacement.ts", // demo yerleştirme maddeleri — `check:parity` "demo yerlestirme"
   "lib/numbers.ts", //      sayı sözcükleri — `check:parity` "sayi modulu govdesi"
   "data/example.ts", //     cümle sonu saymayan kısaltmalar — `check:parity` "ornek cumle kurali"
   // REDDEDİLEN parolalar ("şifre", "galatasaray") — kullanıcıya gösterilen metin

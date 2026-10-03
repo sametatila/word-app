@@ -1,542 +1,359 @@
 "use client";
 
-import { apiFetch } from "@/lib/api-fetch";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { fillStyle, staggerDelay } from "@/lib/motion";
-import { dialogueSegments, speakSegments } from "@/components/speak-button";
-import { CorrectIcon, DontGuessIcon, DurationIcon, GamePluralIcon, PlacementIcon, ScoreTargetIcon, SpeakerIcon, WarningIcon } from "@/components/icons";
-import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
-import { ButtonSlot, TextSlot } from "@/components/flow-skeleton";
-import { SkeletonBar, SkeletonTile } from "@/components/skeleton";
+import { T, fillX, staggerDelay } from "@/lib/motion";
+import { apiFetch } from "@/lib/api-fetch";
+import { RoundExit } from "@/components/round-exit";
+import { FlowColumn, FlowActions, FlowNote, ResultHero, DetailCard, CoverBody, StateBody } from "@/components/flow";
+import { CorrectIcon, DontGuessIcon, DurationIcon, GamePluralIcon, PlacementIcon, SpeakerIcon, WarningIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
-import { RoundExit } from "@/components/round-exit";
-import { track } from "@/lib/track";
-import { describePerSkill, nextLevel, PLACEMENT_LEVELS, scorePlacement, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
-import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
-import type { CefrLevel } from "@/lib/skills/types";
-import { useT, useLang } from "@/lib/i18n/client";
+import { dialogueSegments, speakSegments } from "@/components/speak-button";
+import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
-import { formatPercent, localeOf, type NativeLang } from "@/lib/i18n/dict";
+import { courseOrDefault } from "@/lib/courses";
+import { readOnboardingPrefs, saveOnboardingPrefs } from "@/lib/onboarding-prefs";
+import { localeOf, type NativeLang } from "@/lib/i18n/dict";
+import { useLang } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
+import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
+import { PLACEMENT_BANK, type PlacementItem } from "@/lib/placement-bank";
+import type { PlacementRecord } from "@/lib/placement";
+import { LEVELS, adjustable, newSession, nextItem, result, sampleCards, shouldStop, type Level, type Result, type Session } from "@/lib/placement-engine";
 
-type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "finishing" | "result" | "error";
+/**
+ * SEVİYE TESTİ v2 (docs/plan/placement-v2.md) — mobil `PlacementScreen` ile aynı akış:
+ * kendini değerlendirme → kelime kartları → uyarlanabilir sorular → sonuç (±1 seçim).
+ * Misafir (`/level-test`) ve hesaplı kullanıcı (`/placement`) aynı testi çözer. Sonuç sunucuda
+ * aynı motorla yeniden hesaplanıp kaydedilir (`/api/placement` `record`); misafirin cevapları
+ * onboarding tercihlerinde bekler, hesap açılınca `OnboardingAdopt` gönderir.
+ */
+type Phase = "cover" | "self" | "cards" | "items" | "result" | "zero";
 
-/** Aşama başlıkları sınav bölüm adlarıyla aynı — ikinci bir metin yazılmadı. */
-const STAGE_TITLE_KEYS: Record<PlacementStage, string> = { vocab: "exam.sec_vocab", grammar: "exam.sec_grammar", reading: "exam.sec_reading", listening: "exam.sec_listening" };
-const STAGE_HINT: Record<PlacementStage, string> = {
-  vocab: "plc.vocab",
-  grammar: "plc.grammar",
-  reading: "plc.reading",
-  listening: "plc.listening",
+/* Anahtarlar AÇIK yazılı: çeviri kapısı dinamik kurulan anahtarı göremez. */
+const SELF_KEY: Record<Level, string> = {
+  A1: "plc2.self_A1", A2: "plc2.self_A2", B1: "plc2.self_B1", B2: "plc2.self_B2", C1: "plc2.self_C1",
+};
+const CAN_DO_KEYS: Record<Level, [string, string, string]> = {
+  A1: ["plc2.cando_A1_1", "plc2.cando_A1_2", "plc2.cando_A1_3"],
+  A2: ["plc2.cando_A2_1", "plc2.cando_A2_2", "plc2.cando_A2_3"],
+  B1: ["plc2.cando_B1_1", "plc2.cando_B1_2", "plc2.cando_B1_3"],
+  B2: ["plc2.cando_B2_1", "plc2.cando_B2_2", "plc2.cando_B2_3"],
+  C1: ["plc2.cando_C1_1", "plc2.cando_C1_2", "plc2.cando_C1_3"],
 };
 
-/**
- * BECERİ BAŞINA DOĞRU ORANI — sonuç ekranının sayı satırı (mobil
- * `PlacementScreen` `skillRows` ile aynı hesap).
- *
- * Kayıt beceri başına yalnız SEVİYE taşıyor; oran cevaplardan çıkıyor.
- * Cevabı olmayan aşama (atlandı) kırılımda kalıyor, oranı "—".
- */
-function skillRows(answers: PlacementAnswer[], perSkill: PlacementRecord["perSkill"], t: (k: string) => string, lang: NativeLang) {
-  return (["vocab", "grammar", "reading", "listening"] as PlacementStage[]).flatMap((stage) => {
-    const own = answers.filter((a) => a.stage === stage);
-    if (!own.length && perSkill[stage] === undefined) return [];
-    const lvl = perSkill[stage];
-    return [{
-      stage,
-      label: t(STAGE_TITLE_KEYS[stage]),
-      pct: own.length ? formatPercent(Math.round((100 * own.filter((a) => a.correct).length) / own.length), lang) : "—",
-      level: lvl === undefined ? null : lvl ?? t("plc.below_a1"),
-    }];
-  });
-}
+export type PlacementTestProps = {
+  /** Hesaplı kullanıcı: sonuç sunucuya; misafir: tercihlere, sonra kayıt. */
+  signedIn: boolean;
+  /** Bekleme süresi (30 gün) dolmadıysa test açılmaz. */
+  canRetake?: boolean;
+  retakeDays?: number;
+  last?: PlacementRecord | null;
+  onClose?: () => void;
+};
 
-/**
- * Yerleştirme testi (WP-40): dört aşama, ≤ 15 dakika, sonunda öneri +
- * beceri profili; kullanıcı kabul eder ya da kendi seviyesini seçer.
- *
- * Kelime ve dilbilgisi uyarlanabilir: A1'den başlar, seviyenin %75'i doğruysa
- * bir üst seviye gelir, değilse aşama biter (`nextLevel`). "Bilmiyorum"
- * yanlış sayılır ama tahmin etmekten iyidir: tahmin bir seviyeyi şansla
- * geçirebilir, "bilmiyorum" geçiremez. Her aşama atlanabilir.
- */
-export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialLast: PlacementRecord | null; canRetake: boolean; retakeDays: number }) {
-  const course = useCourse();
+export function PlacementTest({ signedIn, canRetake = true, retakeDays = 30, last = null, onClose }: PlacementTestProps) {
   const t = useT();
-  const lang = useLang();
+  const ui = useLang() as NativeLang;
   const router = useRouter();
-  /* Sonuç sunucuya yazılamadı: puan istemcide hesaplandı, seviye profile
-     ayrıca yazılacak (bkz. `accept`). */
-  const [notSaved, setNotSaved] = useState(false);
-  const [phase, setPhase] = useState<Phase>("intro");
-  const [test, setTest] = useState<Test | null>(null);
-  const [level, setLevel] = useState<CefrLevel>("A1");
-  const [index, setIndex] = useState(0);
-  const [textIndex, setTextIndex] = useState(0);
-  const [qIndex, setQIndex] = useState(0);
+  const shellCourse = useCourse();
+  /* Misafirin kursu sunucuda yok: onboarding'de seçilip tercihlere yazılmıştı. */
+  const course = signedIn ? shellCourse : courseOrDefault(readOnboardingPrefs().course).id;
+  const lang = courseOrDefault(course).targetLang;
+  const bank = PLACEMENT_BANK[lang];
+
+  const [phase, setPhase] = useState<Phase>("cover");
+  const session = useRef<Session | null>(null);
+  const cards = useRef(bank.cards);
+  const [cardIdx, setCardIdx] = useState(0);
+  const [item, setItem] = useState<PlacementItem | null>(null);
   const [picked, setPicked] = useState<number | null>(null);
-  const answers = useRef<PlacementAnswer[]>([]);
-  const stageAnswers = useRef<{ correct: number; total: number }>({ correct: 0, total: 0 });
-  const [result, setResult] = useState<PlacementRecord | null>(null);
-  /** Testten çıkış onayı açık mı. */
-  const [quit, setQuit] = useState(false);
-  /* Ayrilmanin oteki yollari da ayni onaya bagli (yenileme, sekme, kenar
-     cubugu bagalantilari). Android'de kosul `started && !done`; burada
-     testin dort asamasi. */
-  const ayril = useLeaveGuard(phase === "vocab" || phase === "grammar" || phase === "reading" || phase === "listening");
-  const [chosen, setChosen] = useState<CefrLevel | null>(null);
-  const startedAt = useRef(Date.now());
+  const [res, setRes] = useState<Result | null>(null);
+  const [chosen, setChosen] = useState<Level | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [notSaved, setNotSaved] = useState(false);
+  const inTest = phase === "self" || phase === "cards" || phase === "items";
+  const ayril = useLeaveGuard(inTest);
+  const [askQuit, setAskQuit] = useState(false);
 
-  async function start() {
-    setPhase("loading");
-    track("exam_start", 0, "placement:A1");
-    try {
-      const res = await apiFetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "start" }) });
-      if (!res.ok) throw new Error(String(res.status));
-      const data = (await res.json()) as { test: Test };
-      setTest(data.test);
-      answers.current = [];
-      startedAt.current = Date.now();
-      enterStage("vocab", data.test);
-    } catch {
-      setPhase("error");
-    }
+  function leave() {
+    if (onClose) onClose();
+    else router.push(signedIn ? "/" : "/login?mode=signup");
   }
 
-  function enterStage(stage: PlacementStage, t: Test) {
+  function say(text: string) {
+    speakSegments(dialogueSegments(course, [{ text }]));
+  }
+
+  function start() {
+    track("exam_start", 0, "placement:v2");
+    setPhase("self");
+  }
+
+  function pickSelf(level: Level | null) {
+    if (!level) { setChosen("A1"); setPhase("zero"); return; }
+    cards.current = sampleCards(bank.cards);
+    session.current = newSession(level, cards.current, {}, true);
+    setCardIdx(0);
+    setPhase("cards");
+  }
+
+  function answerCard(know: boolean) {
+    const s = session.current;
+    const c = cards.current[cardIdx];
+    if (!s || !c) return;
+    s.known[c.id] = know;
+    if (cardIdx + 1 < cards.current.length) { setCardIdx(cardIdx + 1); return; }
+    setPhase("items");
+    advance();
+  }
+
+  function advance() {
+    const s = session.current;
+    if (!s) return;
+    const map = new Map(bank.items.map((it) => [it.id, it]));
+    const nx = shouldStop(s, map) ? null : (nextItem(s, bank.items) as PlacementItem | null);
+    if (!nx) { finish(); return; }
     setPicked(null);
-    setIndex(0);
-    setTextIndex(0);
-    setQIndex(0);
-    setLevel("A1");
-    stageAnswers.current = { correct: 0, total: 0 };
-    if (stage === "vocab" && !t.vocab.A1?.length) return enterStage("grammar", t);
-    if (stage === "grammar" && !t.grammar.A1?.length) return enterStage("reading", t);
-    if (stage === "reading" && !t.reading.length) return enterStage("listening", t);
-    if (stage === "listening" && !t.listening.length) return void finish();
-    setPhase(stage);
+    setItem(nx);
+    if (nx.kind === "listening" && nx.audio) say(nx.audio);
   }
 
-  const stageAfter: Record<PlacementStage, PlacementStage | null> = { vocab: "grammar", grammar: "reading", reading: "listening", listening: null };
-
-  function leaveStage(stage: PlacementStage) {
-    if (!test) return;
-    const next = stageAfter[stage];
-    if (next) enterStage(next, test);
-    else void finish();
+  function answerItem(choice: number | "dontknow") {
+    const s = session.current;
+    if (!s || !item || picked !== null) return;
+    if (choice === "dontknow") { s.responses.push({ id: item.id, choice }); advance(); return; }
+    /* ÖLÇÜM KİPİ: yalnız seçim işaretlenir, doğruluk gösterilmez (test öğretmez, ölçer). */
+    setPicked(choice);
+    /* 500 ms: mobil `ChoiceGame` ölçüm kipiyle aynı bekleme (seçim görünsün, sonra geçilsin). */
+    setTimeout(() => { s.responses.push({ id: item.id, choice }); advance(); }, 500);
   }
 
-  /** Kelime/dilbilgisi: seviye seviye. */
-  function answerLeveled(stage: "vocab" | "grammar", correct: boolean, itemId: string) {
-    if (!test) return;
-    const items = stage === "vocab" ? test.vocab[level] : test.grammar[level];
-    answers.current.push({ stage, level, itemId, correct });
-    stageAnswers.current.total++;
-    if (correct) stageAnswers.current.correct++;
-    setPicked(null);
-    if (index + 1 < items.length) return setIndex(index + 1);
-    const up = nextLevel(level, stageAnswers.current.correct, stageAnswers.current.total);
-    const upItems = up ? (stage === "vocab" ? test.vocab[up] : test.grammar[up]) : [];
-    if (up && upItems.length) {
-      setLevel(up);
-      setIndex(0);
-      stageAnswers.current = { correct: 0, total: 0 };
-    } else leaveStage(stage);
+  function cantListen() {
+    const s = session.current;
+    if (!s) return;
+    s.audio = false;
+    advance();
   }
 
-  /** Okuma/dinleme: metin başına 3 soru. */
-  function answerText(stage: "reading" | "listening", item: TextItem, qi: number, correct: boolean) {
-    answers.current.push({ stage, level: item.level, itemId: `${item.id}#${qi}`, correct });
-    setPicked(null);
-    const list = stage === "reading" ? test!.reading : test!.listening;
-    if (qi + 1 < item.questions.length) return setQIndex(qi + 1);
-    if (textIndex + 1 < list.length) {
-      setTextIndex(textIndex + 1);
-      setQIndex(0);
-    } else leaveStage(stage);
+  function finish() {
+    const s = session.current;
+    if (!s) return;
+    const r = result(s, bank.items);
+    play("finish");
+    setRes(r);
+    setChosen(r.level);
+    setItem(null);
+    setPhase("result");
   }
 
-  async function finish() {
-    setPhase("finishing");
-    try {
-      const res = await apiFetch("/api/placement", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ action: "finish", answers: answers.current, day: localDay() }),
-      });
-      if (!res.ok) throw new Error(String(res.status));
-      const data = (await res.json()) as PlacementRecord;
-      setResult(data);
-      setChosen(data.suggested);
-      setPhase("result");
-    } catch {
-      /*
-       * TEST YAPILDI AMA KAYDEDİLEMEDİ.
-       *
-       * Eskiden burada hata kartı çiziliyordu: on dakikalık testin sonucu
-       * ekrandan siliniyor, kullanıcı seviyesini hiç öğrenmiyordu. Puanlama
-       * SAF bir işlev (`scorePlacement`) ve sunucu da onu kullanıyor, yani
-       * aynı sonucu istemcide hesaplamak uydurmak değil. Android bunu baştan
-       * beri yapıyor (`PlacementScreen` yerel tahmine düşüyor); kayıt
-       * kurtarılamadığı için seviye profile ayrıca yazılıyor.
-       */
-      const local = scorePlacement(answers.current);
-      setResult({ id: 0, at: new Date().toISOString(), accepted: null, ...local });
-      setChosen(local.suggested);
-      setNotSaved(true);
-      setPhase("result");
-    }
-  }
-
-  async function accept() {
-    if (!result || !chosen) return;
-    try {
-      /* Kayıt yoksa (id 0) kabul edilecek bir satır da yok: seviye doğrudan
-         profile yazılıyor - Android'in aynı yerdeki yedeği (`updateProfile`). */
-      await (result.id
-        ? apiFetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "accept", id: result.id, level: chosen }) })
-        : apiFetch("/api/profile", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ level: chosen }) }));
-    } finally {
-      router.push("/learn");
+  async function apply() {
+    const level = chosen ?? "A1";
+    setSaving(true);
+    const s = session.current;
+    const payload = s ? { lang, self: s.self, audio: s.audio, known: s.known, responses: s.responses } : null;
+    if (!signedIn) {
+      if (res) track("placement_finish", res.items, `v2:${res.level}`);
+      saveOnboardingPrefs({ level, ...(payload ? { placement: payload } : {}) });
+    } else {
+      let ok = false;
+      if (payload) {
+        try {
+          const r = await apiFetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "record", ...payload, accepted: level, day: localDay() }) });
+          ok = r.ok;
+        } catch { /* aşağıda not */ }
+      }
+      /* Profil yine yazılır: kayıt düşse de seçilen seviye uygulanmalı. */
+      try { await apiFetch("/api/profile", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ level }) }); } catch { /* yut */ }
+      if (payload && !ok) setNotSaved(true);
       router.refresh();
     }
+    setSaving(false);
+    setSaved(true);
+    setTimeout(leave, 700);
   }
 
-  const minutes = useMemo(() => Math.round((Date.now() - startedAt.current) / 60000), [phase]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    setPicked(null);
-  }, [phase, level, index, textIndex, qIndex]);
-
-  /* Tamamlanma sesi — sonuç ekranı açıldığında bir kez (sunucu kaydı da yerel
-     tahmin de). Mobil `PlacementScreen` `finishNow` aynı `finish`i çalıyor. */
-  useEffect(() => {
-    if (phase === "result") play("finish");
-  }, [phase]);
-
-  // ── Ekranlar ──
-  /* "Son alma" satırı — kapakta ve bekleme kilidinde aynı cümle. */
-  const lastLine = initialLast ? (
-    <>
-      {t("placement.last_taken", { date: new Date(initialLast.at).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" }) })} <strong>{initialLast.suggested}</strong>
-      {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill, t)}
-    </>
-  ) : null;
-
-  if (phase === "intro") {
-    /* BEKLEME SÜRESİ DOLMADI: kilit kapağın içinde bir cümleydi (başla düğmesi
-       yerine). Mobil aynı dalı ayrı bir durum ekranı olarak çiziyor; ikisi
-       artık aynı şablonda — bekleniyor = düşünen maskot, tek çıkış. */
-    if (!canRetake) {
-      return (
-        <FlowColumn>
-          <StateBody title={t("placement.title")} body={t("placement.retake_in", { n: retakeDays })}>
-            {lastLine ? <p className="muted text-caption">{lastLine}</p> : null}
-          </StateBody>
-          <FlowActions primary={{ label: t("common.close"), href: "/profile" }} />
-        </FlowColumn>
-      );
-    }
-    /* KAPAK ŞABLONU: eski tek paragraflık tanıtım ikonlu kural satırlarına bölündü. */
+  if (signedIn && !canRetake) {
     return (
-      <FlowColumn>
+      <FlowColumn className="px-4 py-6">
+        <StateBody title={t("placement.title")} body={t("placement.retake_in", { n: retakeDays })} />
+        {last ? (
+          <p className="muted text-center text-caption">
+            {`${t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(localeOf(ui), { day: "numeric", month: "short", year: "numeric" }) })} ${last.suggested}${last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}`}
+          </p>
+        ) : null}
+        <FlowActions primary={{ label: t("common.close"), onClick: leave }} />
+      </FlowColumn>
+    );
+  }
+
+  if (phase === "cover") {
+    return (
+      <FlowColumn className="px-4 py-6">
         <CoverBody
           icon={<PlacementIcon size={28} />}
           tint="var(--color-brand-500)"
           eyebrow={t("placement.title")}
-          title={t("onboarding.kisa_yerlestirme_sinavi")}
-          pitch={t("plc.cover_pitch")}
+          title={t("plc2.cover_title")}
+          pitch={t("plc2.cover_pitch")}
           rules={[
-            { icon: <GamePluralIcon size={16} />, text: t("plc.rule_stages") },
-            { icon: <DurationIcon size={16} />, text: t("plc.rule_time") },
-            { icon: <DontGuessIcon size={16} />, text: t("plc.rule_dont_know") },
-            { icon: <ScoreTargetIcon size={16} />, text: t("plc.rule_result") },
-            { icon: <CorrectIcon size={16} />, text: t("plc.rule_choose"), tone: "ok" },
+            { icon: <GamePluralIcon size={16} />, text: t("plc2.rule_parts") },
+            { icon: <DurationIcon size={16} />, text: t("plc2.rule_adapt") },
+            { icon: <DontGuessIcon size={16} />, text: t("plc2.rule_dont_know") },
+            { icon: <CorrectIcon size={16} />, text: t("plc2.rule_choose"), tone: "ok" },
           ]}
-          note={lastLine}
         />
-        <FlowActions
-          primary={{ label: t("common.start"), onClick: () => void start() }}
-          close="/profile"
-        />
+        <FlowActions primary={{ label: t("common.start"), onClick: start }} close={leave} />
       </FlowColumn>
     );
   }
-  /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip "hazirlaniyor"
-     yaziyor ama canli bolge degildi: ekran okuyucu kullanan biri dugmeye
-     basip hicbir sey duymuyor, ekranin dondugunu mu yoksa hazirlandigini mi
-     bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
-     der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
-     Android karsiligi `accessibilityLiveRegion="polite"`. */
-  /* TEST HAZIRLANIRKEN İLK SORU KARTI çiziliyor (kelime aşaması: çıkış +
-     çubuk + "aşamayı geç", aşama adı, ipucu, kelime, dört şık, "Bilmiyorum",
-     sayaç) — "Başla"dan sonra gelen ekran o. Hesaplama beklemesi bir durum,
-     kartı kalıyor. */
-  if (phase === "loading") {
-    const pulse = { background: "var(--surface-2)", borderColor: "transparent" };
+
+  if (phase === "zero" || phase === "result") {
+    const level = chosen ?? "A1";
+    const options = res ? adjustable(res.level) : [];
     return (
-      <section role="status" aria-busy="true" aria-label={t("plc.preparing")} className="card mx-auto w-full max-w-md p-4">
-        <div aria-hidden className="mb-3 flex flex-col gap-2 text-caption">
-          <div className="flex items-center gap-3">
-            <SkeletonTile size={44} />
-            <SkeletonBar height={8} className="min-w-0 flex-1" />
-            <TextSlot as="span" k="plc.skip_stage" className="shrink-0" />
-          </div>
-          {/* Test kelime aşamasının ilk seviyesiyle açılıyor: başlık ve ipucu onun, gerçek metinle. */}
-          <TextSlot as="span" text={`${t(STAGE_TITLE_KEYS.vocab)} · A1`} />
-        </div>
-        <TextSlot k={STAGE_HINT.vocab} className="mb-3 text-caption" />
-        <TextSlot chars={9} className="mb-4 text-h1" />
-        <div aria-hidden className="grid gap-2">
-          {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="option animate-pulse px-3.5 py-3 text-strong" style={pulse}>
-              <span className="invisible">.</span>
-            </div>
-          ))}
-        </div>
-        <ButtonSlot className="mt-2 px-4 py-2.5 text-body" />
-        <TextSlot chars={6} className="mt-3 text-center text-caption" />
-      </section>
-    );
-  }
-  if (phase === "finishing") {
-    return (
-      <section role="status" aria-busy="true" className="card mx-auto w-full max-w-md p-5">
-        <p className="muted text-body">{t("placement.calculating_your_level")}</p>
-        <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
-      </section>
-    );
-  }
-  if (phase === "error") {
-    return (
-      <FlowColumn>
-        <StateBody alert title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
-        {/* Yerinde tekrar deneme — Android'deki sıra: birincil "tekrar dene",
-            ikincil çıkış (bkz. `weekly-player`). Yalnız çıkış sunmak geçici
-            bir ağ hatasında kullanıcıyı ekrandan atıyordu. */}
-        <FlowActions
-          primary={{ label: t("common.try_again"), onClick: () => void start() }}
-          close="/profile"
-        />
-      </FlowColumn>
-    );
-  }
-  if (phase === "result" && result) {
-    /* SONUÇ ŞABLONU — mobil `PlacementScreen` ile aynı alanlar, aynı sıra:
-       band (seviye) → beceri oranları → kayıt uyarısı → seviye seçimi. */
-    /* Band seçilen seviyeyi gösteriyor — mobil de çipe dokununca bandı güncelliyor. */
-    const shown = chosen ?? result.suggested;
-    const answered = answers.current.length;
-    const correctCount = answers.current.filter((a) => a.correct).length;
-    const skills = skillRows(answers.current, result.perSkill, t, lang);
-    return (
-      <FlowColumn>
-        <ResultHero
-          eyebrow={t("placement.title")}
-          title={t("placement.your_level", { level: shown })}
-          figure={shown}
-          sub={`${t("placement.result_sub", { total: answered, correct: correctCount })} · ${t("time.minutes_short", { m: minutes })}`}
-        />
-        {/* Dört beceri üç sayıya sığmıyor: fazlası sayı satırı yerine kartta. */}
-        {skills.length > 0 && skills.length <= 3 ? (
-          <StatRow items={skills.map((s) => ({ value: s.pct, label: s.level ? `${s.label} · ${s.level}` : s.label }))} />
-        ) : null}
+      <FlowColumn className="px-4 py-6">
+        {phase === "zero" ? (
+          <ResultHero eyebrow={t("placement.title")} title={t("plc2.zero_title")} figure="A1" sub={t("plc2.zero_body")} />
+        ) : (
+          <ResultHero eyebrow={t("placement.title")} title={t("placement.your_level", { level: res!.level })} figure={res!.level} sub={res!.near ? t("plc2.near", { level: res!.near }) : null} />
+        )}
         {notSaved ? <FlowNote tone="bad" icon={<WarningIcon size={16} />} text={t("placement.not_saved")} /> : null}
-        {skills.length > 3 ? (
-          <DetailCard title={t("placement.skill_profile")}>
-            {skills.map((s) => <DetailRow key={s.stage} left={s.label} right={s.level ? `${s.level} · ${s.pct}` : s.pct} />)}
+        {saved ? (
+          <div role="status">
+            <FlowNote tone="ok" icon={<CorrectIcon size={16} />} text={t("placement.saved")} />
+          </div>
+        ) : null}
+        <DetailCard title={`${t("plc2.cando_title")} · ${level}`}>
+          <ul className="grid gap-2">
+            {CAN_DO_KEYS[level].map((k) => (
+              <li key={k} className="flex items-start gap-2">
+                <CorrectIcon size={16} className="mt-1 shrink-0 text-success" />
+                <span>{t(k)}</span>
+              </li>
+            ))}
+          </ul>
+        </DetailCard>
+        {options.length > 1 ? (
+          <DetailCard title={t("plc2.adjust_title")}>
+            <div role="radiogroup" aria-label={t("plc2.adjust_title")} className="grid gap-2">
+              {options.map((l) => {
+                const i = LEVELS.indexOf(l) - LEVELS.indexOf(res!.level);
+                const label = i === 0 ? `${l} · ${t("placement.suggested")}` : t(i < 0 ? "plc2.adjust_lower" : "plc2.adjust_higher", { level: l });
+                return (
+                  <button key={l} type="button" role="radio" aria-checked={l === level} onClick={() => setChosen(l)} className={`option px-3.5 py-3 text-left ${l === level ? "option-picked text-strong" : ""}`}>
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="muted text-caption">{t("plc2.adjust_note")}</p>
           </DetailCard>
         ) : null}
-        <DetailCard title={t("placement.start_level")}>
-          <p className="muted text-caption">{t("placew.median_note")}</p>
-          {/* TEK SEÇİMLİK ŞERİT RADYO GRUBUDUR — Android'in `Chip`i de artık
-              `accessibilityRole="radio"` (bkz. parity 257). */}
-          <div role="radiogroup" aria-label={t("settings.level")} className="flex flex-wrap gap-2">
-            {PLACEMENT_LEVELS.map((l) => (
-              <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-strong ${chosen === l ? "chip-active" : ""}`} role="radio" aria-checked={chosen === l}>
-                {l}
-                {l === result.suggested ? <span className="muted ml-1 text-caption">{t("placement.suggested")}</span> : null}
-              </button>
-            ))}
-          </div>
-        </DetailCard>
-        <FlowActions
-          primary={{
-            label: chosen === result.suggested
-              ? t("placement.continue_with", { level: chosen ?? "" })
-              : t("placement.pick_and_continue", { level: chosen ?? "" }),
-            onClick: () => void accept(),
-          }}
-          /* Mobil sonuçta "Kapat" baştan beri var: seviyeyi uygulamadan çıkış. */
-          close="/profile"
-        />
+        <FlowActions primary={{ label: t("plc2.start_with", { level }), onClick: () => void apply(), disabled: saving || saved }} close={leave} />
       </FlowColumn>
     );
   }
 
-  // Aşama ekranları
-  const stage = phase as PlacementStage;
-  /* Aşama içi ilerleme: tur başlığıyla aynı çubuk (bkz. `session-player`). */
-  const stageDone = stage === "vocab" || stage === "grammar" ? index : textIndex;
-  const stageTotal = stage === "vocab" ? test!.vocab[level].length : stage === "grammar" ? test!.grammar[level].length : stage === "reading" ? test!.reading.length : test!.listening.length;
-  /* İÇERİK BİLDİRİMİ YOK (2026-09-28): bildirim cevaptan sonraki geri
-     bildirimde duruyor ve seviye testi cevaptan sonra geri bildirim vermiyor;
-     sonuç ekranı da madde listesi değil, beceri özeti — bildirilecek bir
-     madde yok. Test sırasında bayrak dikkati bölüyordu. */
-  const header = (
-    <div className="mb-3 flex flex-col gap-2 text-caption">
-      {/* Sıra tur başlığındaki gibi: çıkış en solda, sonra çubuk, sağda
-          aşamayı geç. Android'de başlıkta bir kapat düğmesi var ve
-          "cevapların kaydedilmiyor" diye sorup çıkıyor. Ölçü `RoundExit`te. */}
-      <div className="flex items-center gap-3">
-        <RoundExit onExit={() => setQuit(true)} labelKey="plc.quit_title" />
-        <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
-          <div
-            className="brand-gradient bar-fill h-full rounded-full"
-            style={fillStyle(Math.round((100 * stageDone) / Math.max(1, stageTotal)))}
-          />
-        </div>
-        <button type="button" onClick={() => leaveStage(stage)} className="muted hit-8 shrink-0 underline-offset-2 hover:underline">
-          {t("plc.skip_stage")}
-        </button>
-      </div>
-      <span>
-        {t(STAGE_TITLE_KEYS[stage])} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>
-      </span>
-    </div>
-  );
-  const quitDialog = (
-    <ConfirmDialog
-      open={quit || ayril.pending !== null}
-      title={t("plc.quit_title")}
-      message={t("plc.quit_body")}
-      confirmLabel={t("common.exit")}
-      destructive
-      onConfirm={() => { setQuit(false); if (ayril.pending) ayril.leave(); else router.push("/profile"); }}
-      onCancel={() => { setQuit(false); ayril.stay(); }}
-    />
-  );
-  const dontKnow = (onPick: () => void) => (
-    <button type="button" onClick={onPick} className="btn btn-ghost mt-2 w-full px-4 py-2.5 text-body">
-      {t("plc.dont_know")}
-    </button>
-  );
-  const options = (opts: string[], answer: number, onPick: (correct: boolean) => void, soru?: string) => (
-    /* TEK SEÇİMLİK ŞIK LİSTESİ RADYO GRUBUDUR — Android karşılığı `ChoiceGame`
-       şıkları `accessibilityRole="radio"` ile veriyor. */
-    <div role="radiogroup" aria-label={soru} className="grid gap-2">
-      {opts.map((o, i) => (
-        <motion.button
-          key={`${o}-${i}`}
-          type="button"
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          /* OLCUM KIPI: dogruluk aciklanmaz, bu yuzden tek bilgi SECIM ve o da
-             yalnizca zemin renginden okunuyordu. Android karsiligi
-             `ChoiceGame` `reveal={false}` dali. */
-          role="radio"
-          aria-checked={picked === i}
-          transition={{ delay: staggerDelay(i) }}
-          disabled={picked !== null}
-          onClick={() => {
-            setPicked(i);
-            /* Android `ChoiceGame` `reveal={false}` dalı 500 ms bekliyor
-               (`onDone` çağrısı); web 180 ms'de geçiyordu, yani seçim
-               ekranda görünmeye fırsat bulmuyordu. */
-            setTimeout(() => onPick(i === answer), 500);
-          }}
-          /* SEÇİM RENGİ, DOĞRU RENGİ DEĞİL. Ölçüm kipinde doğruluk
-             açıklanmıyor ama seçilen şık `option-correct` ile NANE YEŞİLİ
-             boyanıyordu - uygulamanın kendi dilinde yeşil "doğru" demek,
-             yani yanlış cevaplayan biri yeşil görüp doğru bildiğini
-             sanıyordu. Android aynı dalda marka tintini kullanıyor
-             (`ChoiceGame` `isPicked`: `primarySoft` + `primary`). */
-          className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-picked" : ""}`}
-        >
-          {o}
-        </motion.button>
-      ))}
-    </div>
-  );
+  const s = session.current;
+  const progress = phase === "self" ? 0
+    : phase === "cards" ? 40 * (cardIdx / Math.max(1, cards.current.length))
+    : 40 + 60 * Math.min(1, (s?.responses.length ?? 0) / 13);
+  const partLabel = phase === "items" ? t("plc2.part_questions") : phase === "cards" ? t("plc2.part_words") : "";
 
-  if (stage === "vocab" || stage === "grammar") {
-    const items = stage === "vocab" ? test!.vocab[level] : test!.grammar[level];
-    const item = items[index];
-    if (!item) return null;
-    return (
-      <section className="card mx-auto w-full max-w-md p-4">
-        {quitDialog}
-        {header}
-        <p className="muted mb-3 text-caption">{t(STAGE_HINT[stage])}</p>
-        {"de" in item ? (
-          <p className="brand-text mb-4 text-h1" lang={course}>
-            {item.artikel ? `${item.artikel} ` : ""}
-            {item.de}
-          </p>
-        ) : (
-          <p className="mb-4 text-body" lang={course}>
-            <span className="muted text-caption">{item.sheet} · {item.label}</span>
-            <br />
-            <strong>{item.key}</strong> → ?
-          </p>
-        )}
-        {options(item.options, item.answer, (c) => answerLeveled(stage, c, item.id), "de" in item ? item.de : item.key)}
-        {dontKnow(() => answerLeveled(stage, false, item.id))}
-        <p className="muted mt-3 text-center text-caption">
-          {index + 1} / {items.length}
-        </p>
-      </section>
-    );
-  }
-
-  const list = stage === "reading" ? test!.reading : test!.listening;
-  const item = list[textIndex];
-  if (!item) return null;
-  const q = item.questions[qIndex];
   return (
-    <section className="card mx-auto w-full max-w-md p-4">
-      {quitDialog}
-      {header}
-      <p className="muted mb-2 text-caption">{t(STAGE_HINT[stage])} · {item.level}</p>
-      {item.text ? (
-        <div lang={course} className="mb-3 max-h-56 overflow-y-auto rounded-panel px-3.5 py-3 text-body leading-relaxed surface-2">
-          {item.text.split("\n\n").map((p, i) => (
-            <p key={i} className={i > 0 ? "mt-2" : ""}>
-              {p}
-            </p>
-          ))}
+    <section className="mx-auto w-full max-w-md px-4 py-4">
+      <div className="mb-6 flex items-center gap-3">
+        <RoundExit onExit={() => setAskQuit(true)} labelKey="plc.quit_title" />
+        <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
+          <motion.div className="brand-gradient h-full w-full rounded-full" initial={false} animate={{ x: fillX(Math.round(progress)) }} transition={T.medium} />
         </div>
-      ) : null}
-      {/*
-        KONUŞMACI BAŞINA AYRI SES. Etiket düğmenin üstünde zaten yazıyordu
-        ("Kundin · 1. bölüm") ama iki bölüm de aynı sesle okunuyordu; seviye
-        tespitinde ölçülen şey tam da konuşmayı takip edebilmek. Kadro kurstan
-        türetiliyor, `localStorage`tan değil — bu değer zaten kancadan geliyor,
-        yani sunucuda çizilen ilk turda da doğru.
-      */}
-      {item.segments ? (
-        <div className="mb-3 flex flex-wrap gap-2">
-          {dialogueSegments(course, item.segments).map((seg, i) => (
-            <button key={i} type="button" onClick={() => speakSegments([seg])} className="chip flex items-center gap-1.5 px-3 py-1.5 text-caption">
-              <SpeakerIcon size={13} />
-              {item.segments?.[i]?.speaker ? `${item.segments[i].speaker} · ` : ""}{t("placement.section_n", { n: i + 1 })}
+        <span className="muted shrink-0 text-caption">{partLabel}</span>
+      </div>
+
+      {phase === "self" ? (
+        <div className="grid gap-2">
+          <h1 className="text-h1">{t("plc2.self_title")}</h1>
+          <p className="muted mb-2">{t("plc2.self_sub", { lang: courseOrDefault(course).label[ui] })}</p>
+          {LEVELS.map((l) => (
+            <button key={l} type="button" onClick={() => pickSelf(l)} className="option px-4 py-4 text-left">
+              {t(SELF_KEY[l])}
             </button>
           ))}
+          <button type="button" onClick={() => pickSelf(null)} className="link py-3 text-center text-strong">
+            {t("plc2.self_none")}
+          </button>
         </div>
       ) : null}
-      <p className="mb-3 text-strong" lang={course}>
-        {q.text}
-      </p>
-      {options(q.options, q.answer, (c) => answerText(stage, item, qIndex, c), q.text)}
-      {dontKnow(() => answerText(stage, item, qIndex, false))}
-      <p className="muted mt-3 text-center text-caption">
-        {t("plc.text_of", { n: textIndex + 1, total: list.length })} ·{" "}
-        {t("exam.question_of", { n: qIndex + 1, total: item.questions.length })}
-      </p>
+
+      {phase === "cards" && cards.current[cardIdx] ? (
+        <div className="flex min-h-[50vh] flex-col">
+          <h1 className="text-center text-h2">{t("plc2.cards_title")}</h1>
+          <p className="muted mt-1 text-center text-caption">{t("plc2.cards_hint")}</p>
+          <p className="flex flex-1 items-center justify-center text-center text-display" lang={lang}>
+            {cards.current[cardIdx].word}
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            <button type="button" onClick={() => answerCard(false)} className="btn btn-ghost py-4">{t("plc.dont_know")}</button>
+            <button type="button" onClick={() => answerCard(true)} className="btn btn-primary py-4">{t("plc2.know")}</button>
+          </div>
+        </div>
+      ) : null}
+
+      {phase === "items" && item ? (
+        <div className="card p-5">
+          <p className="muted mb-2 text-caption">
+            {t(item.kind === "cloze" ? "plc2.q_cloze" : item.kind === "reading" ? "plc2.q_reading" : "plc2.q_listening")}
+          </p>
+          {item.kind === "reading" && item.text ? <p className="surface-2 mb-4 rounded-panel p-4" lang={lang}>{item.text}</p> : null}
+          {item.kind === "listening" && item.audio ? (
+            <div className="mb-4 flex flex-wrap items-center gap-3">
+              <button type="button" onClick={() => say(item.audio!)} className="btn btn-ghost inline-flex items-center gap-2 px-3 py-2">
+                <SpeakerIcon size={20} />
+                {t("plc2.listen_again")}
+              </button>
+              <button type="button" onClick={cantListen} className="link text-caption">{t("plc2.cant_listen")}</button>
+            </div>
+          ) : null}
+          <p className="mb-4 text-h1" lang={lang}>{item.kind === "cloze" ? item.text : item.question}</p>
+          <div role="radiogroup" aria-label={item.kind === "cloze" ? item.text : item.question} className="grid gap-2">
+            {item.options.map((o, i) => (
+              <motion.button
+                key={`${item.id}-${o}`}
+                type="button"
+                role="radio"
+                aria-checked={picked === i}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: staggerDelay(i) }}
+                disabled={picked !== null}
+                onClick={() => answerItem(i)}
+                className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-picked" : ""}`}
+                lang={lang}
+              >
+                {o}
+              </motion.button>
+            ))}
+          </div>
+          <button type="button" onClick={() => answerItem("dontknow")} disabled={picked !== null} className="btn btn-ghost mt-3 w-full px-4 py-2.5 text-body">
+            {t("plc.dont_know")}
+          </button>
+        </div>
+      ) : null}
+
+      <ConfirmDialog
+        open={askQuit || ayril.pending !== null}
+        title={t("plc.quit_title")}
+        message={t("plc.quit_body")}
+        confirmLabel={t("common.exit")}
+        destructive
+        onConfirm={() => { setAskQuit(false); if (ayril.pending) ayril.leave(); else leave(); }}
+        onCancel={() => { setAskQuit(false); ayril.stay(); }}
+      />
     </section>
   );
 }

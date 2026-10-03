@@ -31,6 +31,8 @@ export type OnboardingPrefs = {
   goal?: string;
   level?: string;
   dailyGoal?: number;
+  /** Seviye testi v2 cevapları: hesap açılınca `/api/placement` `record` (OnboardingAdopt). */
+  placement?: { lang: "de" | "en"; self: string; audio: boolean; known: Record<string, boolean>; responses: { id: string; choice: number | "dontknow" }[] };
 };
 
 const KEY = "lernomi-onboarding";

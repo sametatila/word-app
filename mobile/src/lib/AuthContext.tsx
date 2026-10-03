@@ -8,6 +8,7 @@ import { claimGuest, clearGuestRecord, deleteGuestData, discardGuestClaim, loadG
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
 import { cancelLocalReminders, setReminderServerSync } from "./notifications";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
+import { recordPlacementV2 } from "../game/placement";
 import { updateProfile } from "./updateProfile";
 import { billingLogout, configureBilling } from "./billing";
 import { googleSignOut } from "./googleAuth";
@@ -334,6 +335,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // o hâlde kurs/seviye de yazılmamış olur, bu yüzden adsız bir kez daha denenir.
     const ok = (await updateProfile(ad ? { ...patch, displayName: ad } : patch))
       || (!!ad && (await updateProfile(patch)));
+    /* Seviye testi v2: misafirin cevapları kalibrasyon ve "son alma" için kayda geçer.
+       Seviye zaten yukarıda profile yazıldı; kayıt düşerse akış durmaz. */
+    if (ok && prefs.placement) {
+      try { await recordPlacementV2({ ...prefs.placement, accepted: prefs.level ?? null }); } catch { /* kayıt opsiyonel */ }
+    }
     if (ok) await clearOnboardingPrefs();
   }, []);
 

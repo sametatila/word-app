@@ -527,8 +527,6 @@ export const deWeb: Record<string, string> = {
   "linked.apple_sub": "Anmeldung mit Apple (iOS-App)",
   "linked.link_failed": "Verknüpfen fehlgeschlagen. Versuch es gleich noch mal.",
   "linked.unlink_failed": "Ließ sich nicht entfernen. Versuch es gleich noch mal.",
-  "plc.preparing": "Der Test wird vorbereitet…",
-  "plc.text_of": "Text {n} / {total}",
   "push.friend_request_title": "Neue Freundschaftsanfrage",
   "push.friend_accepted_title": "Ihr seid jetzt Freunde",
   "push.quest_started_title": "Die Aufgabe hat begonnen",
@@ -648,7 +646,6 @@ export const deWeb: Record<string, string> = {
     bildirimi yalnız webde.
   */
   "game.exit_message_practice": "Deine Antworten werden gespeichert; die Übung beginnt beim nächsten Mal von vorn.",
-  "placement.section_n": "Abschnitt {n}",
   "push.assess_title": "Dein Text wurde bewertet",
   "push.assess_body": "Punktzahl: {score}/100. Die Korrekturen sind bereit.",
   "push.league_up_title": "Du bist in die {league} aufgestiegen",

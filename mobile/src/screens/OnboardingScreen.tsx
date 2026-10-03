@@ -12,8 +12,8 @@ import { PrimaryButton } from "../ui/PrimaryButton";
 import { DailyRoundIcon, CourseIcon, LanguageIcon, PlacementIcon, WelcomeIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs, clearOnboardingPrefs } from "../lib/onboardingPrefs";
-import { coursesForNative, onboardingCoursesFor, offeredNativeLangs, DEFAULT_COURSE_ID, type NativeLang } from "../lib/courses";
-import { hasDemoPlacement } from "../data/demoPlacement";
+import { coursesForNative, onboardingCoursesFor, offeredNativeLangs, courseOrDefault, DEFAULT_COURSE_ID, type NativeLang } from "../lib/courses";
+import { PLACEMENT_BANK } from "../data/placementBank";
 import { hasFirstWords } from "../data/firstWords";
 import { t, currentLang, setLang } from "../lib/i18n";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -69,7 +69,8 @@ const LANG_LABEL: Record<NativeLang, string> = { tr: "Türkçe", en: "English", 
 /** `course` seçilen kurs: seviye adımının seçenekleri o paritenin verisine bağlı. */
 function steps(course: string): Step[] {
   const lang = currentLang();
-  const canTest = hasDemoPlacement(lang, course);
+  /* Seviye testi v2 hedef dilin bankasıyla çalışır (anadilden bağımsız): banka varsa sunulur. */
+  const canTest = courseOrDefault(course).targetLang in PLACEMENT_BANK;
   return [
     {
       key: "welcome", icon: WelcomeIcon,

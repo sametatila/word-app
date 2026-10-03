@@ -11,12 +11,12 @@ import { FlowNote } from "@/components/flow";
 import { track } from "@/lib/track";
 import { saveOnboardingPrefs } from "@/lib/onboarding-prefs";
 import { hasFirstWords } from "@/lib/first-words";
-import { hasDemoPlacement } from "@/lib/placement-demo";
+import { PLACEMENT_BANK } from "@/lib/placement-bank";
 import { useT, useLang } from "@/lib/i18n/client";
 import { LANG_LABEL, NATIVE_LANGS, type NativeLang } from "@/lib/i18n/dict";
 import { writeLangCookie } from "@/lib/i18n/set-lang";
 import { useSetLang } from "@/lib/i18n/client";
-import { courseName, courseSub, offeredNativeLangs, onboardingCoursesFor } from "@/lib/courses";
+import { courseName, courseOrDefault, courseSub, offeredNativeLangs, onboardingCoursesFor } from "@/lib/courses";
 
 /*
   İLK AÇILIŞ AKIŞI — MOBİLLE AYNI BEŞ EKRAN.
@@ -161,13 +161,12 @@ export function CourseOnboarding({
         { key: "A1", label: t("onboarding.from_scratch"), sub: t("onboarding.i_m_just_starting_out") },
         { key: "pick", label: t("onboarding.pick_your_level"), sub: t("onboarding.pick_level_directly") },
         /*
-          "Testle belirle" yalnız gidilecek bir test varsa. Oturum açıkken
-          gerçek yerleştirme sunucuda puanlanıyor (`/placement`) ve her kursta
-          var; misafirde ise giriş öncesi örnek tur oynatılıyor ve o yalnız
-          verisi olan paritede duruyor. Yoksa seçenek hiç görünmüyor —
-          seçilip boş bir teste düşmektense hiç sunulmamalı.
+          "Testle belirle" yalnız gidilecek bir test varsa:
+          misafir de hesaplı kullanıcı da aynı seviye testini (v2) çözer; test hedef
+          dilin bankasıyla çalışır (anadilden bağımsız). Banka yoksa seçenek hiç
+          görünmüyor — seçilip boş bir teste düşmektense hiç sunulmamalı.
         */
-        ...(signedIn || hasDemoPlacement(lang, course)
+        ...(signedIn || courseOrDefault(course).targetLang in PLACEMENT_BANK
           ? [{ key: "test", label: t("onboarding.find_out_with_test"), sub: t("onboarding.kisa_yerlestirme_sinavi") }]
           : []),
       ],
