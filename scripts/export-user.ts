@@ -27,10 +27,11 @@ import { buildUserExport } from "@/lib/account/export";
  * kuruyor. Betik üretimde nasıl çalışacaksa (env hazır) öyle bekliyor;
  * gizli değeri kendi ayrıştırmaya çalışmıyor.
  *
- * Kullanım (sunucuda):
+ * Kullanım (sunucuda; checkout'ta kod root olarak değil `asapp` ile, uygulama
+ * kullanıcısıyla çalışır — güvenlik denetimi Y1, 2026-10-03):
  *   cd /opt/lernomi/$(cat /opt/lernomi/active)
  *   set -a; . /opt/lernomi/.env; set +a
- *   ./node_modules/.bin/tsx --tsconfig scripts/tsconfig.e2e.json \
+ *   /opt/lernomi/asapp ./node_modules/.bin/tsx --tsconfig scripts/tsconfig.e2e.json \
  *       scripts/export-user.ts <e-posta|userId> cikti.json
  *
  * Yerelde: `npm run export:user -- <e-posta|userId> [cikti.json]`
