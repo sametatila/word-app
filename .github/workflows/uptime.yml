@@ -88,7 +88,8 @@ jobs:
           probe_host() {  # $1 host → HTTP kodu (3 deneme)
             local c=000 i
             for i in 1 2 3; do
-              c=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$1/api/config" || echo 000)
+              # Bağlantı hatasında -w zaten 000 basıyor ("|| echo 000" 000000 yapardı).
+              c=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$1/api/config") || true
               [ "$c" = "200" ] && break
               sleep 20
             done
@@ -119,7 +120,9 @@ jobs:
           # Alan adı kaydı: süresi dolarsa site ve e-posta birden gider; kayıt
           # firmasının otomatik yenilemesi kart sorununda sessizce düşebiliyor.
           for dom in lernomi.app rumpuskit.com; do
-            exp=$(curl -s --max-time 15 -L "https://rdap.org/domain/$dom" | jq -r '[.events[]? | select(.eventAction == "expiration") | .eventDate][0] // empty' 2>/dev/null)
+            # RDAP JSON dönmezse (429, HTML) jq düşer; adım (bash -e) yarıda kalmasın,
+            # öncesinde bulunan gerçek sorun Telegram'a yine gitsin.
+            exp=$(curl -s --max-time 15 -L "https://rdap.org/domain/$dom" | jq -r '[.events[]? | select(.eventAction == "expiration") | .eventDate][0] // empty' 2>/dev/null) || exp=""
             if [ -n "$exp" ]; then
               ddays=$(( ( $(date -d "$exp" +%s) - now ) / 86400 ))
               echo "alan adı $dom: $ddays gün"
