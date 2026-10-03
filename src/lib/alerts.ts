@@ -53,6 +53,16 @@ async function rows(q: ReturnType<typeof sql>): Promise<Row[]> {
   return ((r as { rows?: Row[] }).rows ?? []) as Row[];
 }
 const num = (v: unknown) => Number(v) || 0;
+
+/**
+ * İstemci hata grubunun uyarı etiketi: platform, hata türü (yalnız
+ * `TypeError` gibi kalıba uyuyorsa; alan istemciden geliyor) ve grup kimliği.
+ */
+export function errorLabel(r: Record<string, unknown>): string {
+  const platform = ["web", "android", "ios"].includes(String(r.platform)) ? String(r.platform) : "?";
+  const name = /^[A-Z][A-Za-z]{0,39}$/.test(String(r.name ?? "")) ? `${String(r.name)} · ` : "";
+  return `${platform} · ${name}${String(r.fingerprint).slice(0, 8)}`;
+}
 /** 500000 → "500.000" (Telegram metni; yerel ayar kullanmadan). */
 const thousands = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -448,17 +458,22 @@ export async function collectAlerts(): Promise<Alert[]> {
       // İstemci hata grupları (lib/client-errors): son 10 dakikada İLK KEZ görülen grup.
       const exists = await rows(sql`select to_regclass('public.client_error_groups') is not null ok`);
       if (exists[0]?.ok !== true) return;
+      /* METİN YOK, YALNIZ GRUP (güvenlik denetimi 2026-10-03, O3). Mesaj
+         kimliksiz uçtan geliyor: Telegram'a olduğu gibi yazılınca saldırgan
+         kendi metnini (tıklanabilir bir bağlantı dahil) uyarı kanalına
+         taşıyabiliyordu. Satır platformu, kalıba uyan hata türünü ve grup
+         kimliğini söylüyor; ayrıntı bağlantıdaki panel sayfasında. */
       const rs = await rows(sql`
-        select fingerprint, platform, message, count from client_error_groups
+        select fingerprint, platform, name, count from client_error_groups
         where first_seen >= now() - interval '10 minutes' order by count desc limit 5`);
       for (const r of rs) {
-        alerts.push({ key: `err:${r.fingerprint}`, level: "uyari", text: `Yeni hata (${r.platform}): ${String(r.message).slice(0, 160)}` });
+        alerts.push({ key: `err:${r.fingerprint}`, level: "uyari", text: `Yeni hata (${errorLabel(r)})` });
       }
       const spikes = await rows(sql`
-        select fingerprint, platform, message, count from client_error_groups
+        select fingerprint, platform, name, count from client_error_groups
         where last_seen >= now() - interval '10 minutes' and count >= 50 order by count desc limit 3`);
       for (const r of spikes) {
-        alerts.push({ key: `errspike:${r.fingerprint}`, level: "uyari", text: `Sık tekrar eden hata (${r.platform}, toplam ${num(r.count)}): ${String(r.message).slice(0, 160)}` });
+        alerts.push({ key: `errspike:${r.fingerprint}`, level: "uyari", text: `Sık tekrar eden hata (${errorLabel(r)}, toplam ${num(r.count)})` });
       }
     }),
     guard("content", async () => {

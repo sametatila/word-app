@@ -2,6 +2,7 @@ import "server-only";
 import { createHash } from "node:crypto";
 import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { consume } from "@/lib/social/ratelimit";
 
 /**
  * İSTEMCİ HATA GRUPLARI — web ve mobil JS hataları, mesaj ve yığınla.
@@ -23,6 +24,14 @@ import { db } from "@/lib/db";
  *
  * SEL KORUMASI: istemci zaten dakikada birle sınırlı; sunucu ayrıca instance
  * başına aynı grubu 5 saniyede bir yazıyor, sayacı bellekte biriktiriyor.
+ * Uç IP başına sınırlı (`api/client-errors`); YENİ grup açmanın ayrıca
+ * tavanı var (IP başına saatte 10, toplam saatte 100): mesajı her istekte
+ * değiştiren biri tabloyu şişiremesin (güvenlik denetimi 2026-10-03, O3).
+ *
+ * SAKLAMA: Gizlilik §9 "hata grubu giderilene kadar". Giderildi işaretlenen
+ * grup günlük temizlikte siliniyor (`purgeClientErrorGroups`, cron/assess);
+ * 90 gündür görülmeyen grup da (giderilmiş sayılır). Hata yeniden çıkarsa
+ * grup yeniden açılıyor.
  */
 
 export type ClientErrorInput = {
@@ -73,7 +82,23 @@ export function errorFingerprint(e: Pick<ClientErrorInput, "platform" | "name" |
 const lastWrite = new Map<string, { at: number; pending: number }>();
 const WRITE_EVERY_MS = 5_000;
 
-export async function recordClientError(e: ClientErrorInput): Promise<void> {
+/** Grup zaten varsa her zaman; yoksa yeni grup tavanlarına bakar. */
+async function mayOpenGroup(fingerprint: string, ip: string | undefined): Promise<boolean> {
+  const r = (await db.execute(sql`select 1 from client_error_groups where fingerprint = ${fingerprint}`)) as unknown as { rows?: unknown[] };
+  if ((r.rows?.length ?? 0) > 0) return true;
+  if (ip && !(await consume(`cerr-new:${ip}`, 10, 3600)).ok) return false;
+  return (await consume("cerr-new", 100, 3600)).ok;
+}
+
+/** Günlük temizlik (cron/assess): giderilmiş ve 90 gündür görülmeyen gruplar. */
+export async function purgeClientErrorGroups(): Promise<number> {
+  const r = (await db.execute(sql`
+    delete from client_error_groups
+    where resolved_at is not null or last_seen < now() - interval '90 days'`)) as unknown as { rowCount?: number };
+  return r.rowCount ?? 0;
+}
+
+export async function recordClientError(e: ClientErrorInput, ip?: string): Promise<void> {
   const message = scrub(e.message).slice(0, 500);
   if (!message) return;
   const fingerprint = errorFingerprint(e);
@@ -89,6 +114,7 @@ export async function recordClientError(e: ClientErrorInput): Promise<void> {
   if (lastWrite.size > 5_000) lastWrite.clear();
 
   try {
+    if (!(await mayOpenGroup(fingerprint, ip))) return;
     await db.execute(sql`
       insert into client_error_groups (fingerprint, platform, name, message, stack, screen, app_version, count)
       values (${fingerprint}, ${e.platform}, ${e.name?.slice(0, 80) ?? null}, ${message}, ${e.stack ? scrub(e.stack).slice(0, 4000) : null},

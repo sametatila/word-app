@@ -18,7 +18,7 @@
 import { DEFAULT_APP_CONTROL, parseAppControl, parseClientHeader, parseTestLabHeader, updateVerdict } from "../src/lib/app-control-shared";
 import { isTestLabSql, notTestLab, real } from "../src/lib/test-lab";
 import { errorFingerprint, scrub } from "../src/lib/client-errors";
-import { chunkLines, criticalRouteAlerts, nginxTime } from "../src/lib/alerts";
+import { chunkLines, criticalRouteAlerts, errorLabel, nginxTime } from "../src/lib/alerts";
 import { routeOf } from "../src/lib/server-metrics";
 import { cleanUrl, parseAudience } from "../src/lib/push-broadcast";
 import { cleanSource, platformOf } from "../src/lib/store-link";
@@ -282,6 +282,9 @@ async function main() {
     check("bütçe uyarıları bütçe bölümüne", ["budget:cloudflare", "budget:groq:openai/gpt-oss-120b", "budget:payment:deepgram", "budget:resend-day", "budget:month"].every((k) => p(k) === "/admin/ops#yapay-zeka-butce"));
     check("bilinmeyen anahtar kaybolmuyor (Sunucu)", p("check:yeni") === "/admin/ops");
     check("etiket boş değil", ["err:a", "reports", "cron:x", "zzz"].every((k) => alertLinks(k).panel.label.length > 3));
+    // İstemci hata uyarısı Telegram'a istemcinin metnini taşımıyor (güvenlik denetimi O3).
+    check("hata uyarısı: tür + grup", errorLabel({ platform: "web", name: "TypeError", fingerprint: "abcdef1234567890" }) === "web · TypeError · abcdef12");
+    check("hata uyarısı: kalıba uymayan ad ve platform yazılmıyor", errorLabel({ platform: "<b>x", name: "Ödül al https://evil.example", fingerprint: "abcdef1234567890" }) === "? · abcdef12");
   }
 
   console.log("\nPanel tarih aralığı");
