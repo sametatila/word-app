@@ -27,7 +27,7 @@ import { GUEST_EMAIL_DOMAIN, isGuestEmail } from "@/lib/auth/guest-email";
 import { guestResume } from "@/lib/auth/guest-resume";
 import { guestUpgrade } from "@/lib/auth/guest-upgrade";
 import { setSessionCookie } from "better-auth/cookies";
-import { eq } from "drizzle-orm";
+import { and, eq, ne } from "drizzle-orm";
 import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 
@@ -69,6 +69,18 @@ function dropSessionSetCookies(ctx: { responseHeaders?: Headers; context: { resp
     h.delete("set-cookie");
     for (const entry of keep) h.append("set-cookie", entry);
   }
+}
+
+/**
+ * İLK DOĞRULAMA anını `after` kancasına taşır (`afterEmailVerification`
+ * yalnız `emailVerified` false → true geçişinde çağrılıyor; kanca ve uç aynı
+ * `Request` nesnesini görüyor, bkz. better-auth api/dispatch.mjs).
+ */
+const verifiedNow = new WeakSet<Request>();
+
+/** Kullanıcının `keep` dışındaki bütün oturumlarını siler (`keep` null ise hepsini). */
+async function revokeSessionsExcept(userId: string, keep: string | null): Promise<void> {
+  await db.delete(session).where(keep ? and(eq(session.userId, userId), ne(session.token, keep)) : eq(session.userId, userId));
 }
 
 /** İsteğin IP'si — nginx'in koyduğu `x-real-ip` (hız sınırıyla aynı kaynak, bkz. `advanced.ipAddress`). */
@@ -285,10 +297,11 @@ export const auth = betterAuth({
      * kalmıştı, bayrak burada iniyor. Misafirin kendi `.invalid` adresine
      * doğrulama gidemediği için başka bir misafir bu yola düşmüyor.
      */
-    afterEmailVerification: async (u) => {
+    afterEmailVerification: async (u, request) => {
       if ((u as { isAnonymous?: boolean | null }).isAnonymous === true && !isGuestEmail(u.email)) {
         await db.update(user).set({ isAnonymous: false }).where(eq(user.id, u.id));
       }
+      if (request) verifiedNow.add(request);
     },
     sendVerificationEmail: async ({ user: u, url }) => {
       // Kayıt anında profil henüz yok (istek dili); sonradan yeniden
@@ -805,8 +818,21 @@ export const auth = betterAuth({
           okuduğu ÖNCEKİ oturum; yeni oturum `newSession`da.
         */
         const prior = ctx.context.session;
+        /*
+          İLK DOĞRULAMADA ÖTEKİ OTURUMLAR DÜŞÜYOR (güvenlik denetimi
+          2026-10-03, D10). Saldırgan kurbanın adresiyle bir misafiri yerinde
+          yükseltip (`/guest/upgrade`) kurbana gerçek bir doğrulama postası
+          yollatabiliyordu; kurban bağlantıya dokununca hesap onun olmuştu
+          ama saldırganın misafir oturumu artık bir HESAP oturumu olarak
+          yaşıyordu. Adresin sahipliği ilk kez burada kanıtlanıyor: ondan
+          önce açılmış her oturum kanıtsız, yalnız bağlantıyı açan cihazın
+          oturumu kalıyor. Yerinde yükseltmeyi kendi cihazında doğrulayan
+          kullanıcının oturumu da bu (`fresh`), yani o etkilenmiyor.
+        */
+        const firstVerify = ctx.request ? verifiedNow.has(ctx.request) : false;
         if (fresh && prior && prior.user.id !== fresh.user.id) {
           await ctx.context.internalAdapter.deleteSession(fresh.session.token);
+          if (firstVerify) await revokeSessionsExcept(fresh.user.id, null);
           dropSessionSetCookies(ctx, [
             ctx.context.authCookies.sessionToken.name,
             ctx.context.authCookies.sessionData.name,
@@ -815,6 +841,7 @@ export const auth = betterAuth({
           ctx.context.setNewSession(null);
           return;
         }
+        if (fresh && firstVerify) await revokeSessionsExcept(fresh.user.id, fresh.session.token);
         if (fresh && (fresh.user as { isAnonymous?: boolean | null }).isAnonymous === true) {
           const now = await ctx.context.internalAdapter.findUserById(fresh.user.id);
           if (now && (now as { isAnonymous?: boolean | null }).isAnonymous !== true) await setSessionCookie(ctx, { session: fresh.session, user: now });

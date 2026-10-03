@@ -16,7 +16,9 @@ import { purgeUserData } from "../src/lib/account/purge";
  * Ölçülenler: gerçek hesapta oturumu olan biri başka bir hesabın bağlantısını
  * açınca KENDİ oturumunda kalıyor, bağlantının hesabı yine doğrulanıyor ve
  * onun için açılan oturum satırı geride kalmıyor. Oturumsuz açılış ve misafirin
- * yerinde yükseltmesi (aynı kimlik) eskisi gibi giriş yapıyor.
+ * yerinde yükseltmesi (aynı kimlik) eskisi gibi giriş yapıyor. İlk doğrulama
+ * bağlantıyı açan dışındaki oturumları düşürüyor (güvenlik denetimi
+ * 2026-10-03, D10).
  *
  *   TEST_DATABASE_URL=postgres://postgres@127.0.0.1:5432/lernomi_test \
  *   DATABASE_URL=$TEST_DATABASE_URL BETTER_AUTH_SECRET=test-secret-at-least-32-characters-long \
@@ -132,6 +134,40 @@ async function main() {
     const s = await call("GET", `/verify-email?token=${sameToken}`, undefined, same.cookie);
     check("istek başarılı", s.status === 200, s);
     check("oturum aynı hesapta", (await whoIs(s.cookie)) === same.id, await whoIs(s.cookie));
+
+    /* İLK DOĞRULAMA KANITSIZ OTURUMLARI DÜŞÜRÜYOR (denetim 2026-10-03, D10):
+       saldırganın kurbanın adresiyle yükselttiği misafirin oturumu, kurban
+       bağlantıyı başka cihazda açınca hesap oturumu olarak yaşamamalı. */
+    const ctx = await auth.$context;
+    console.log("\nİlk doğrulama: bağlantıyı açmayan oturumlar düşüyor");
+    const pre = await addUnverified("onceden");
+    const stale = await ctx.internalAdapter.createSession(pre.id);
+    const preToken = await createEmailVerificationToken(SECRET, pre.email, undefined, 1800);
+    const pv = await call("GET", `/verify-email?token=${preToken}`);
+    check("istek başarılı", pv.status === 200, pv);
+    check("bağlantıyı açan hesaba girdi", (await whoIs(pv.cookie)) === pre.id, await whoIs(pv.cookie));
+    const staleLeft = rows(await db.execute(sql`select 1 from session where token = ${stale.token}`)).length;
+    check("doğrulamadan önce açılmış oturum silindi", staleLeft === 0, staleLeft);
+    const preCount = rows(await db.execute(sql`select 1 from session where "userId" = ${pre.id}`)).length;
+    check("yalnız bağlantıyı açanın oturumu kaldı", preCount === 1, preCount);
+
+    console.log("\nİlk doğrulama kendi cihazında: o oturum kalıyor, ötekiler düşüyor");
+    const mine = await signUp("kendicihaz");
+    await db.execute(sql`update "user" set "emailVerified" = false where id = ${mine.id}`);
+    const otherDevice = await ctx.internalAdapter.createSession(mine.id);
+    const mineToken = await createEmailVerificationToken(SECRET, `kendicihaz-${tag}@example.test`, undefined, 1800);
+    const mv = await call("GET", `/verify-email?token=${mineToken}`, undefined, mine.cookie);
+    check("istek başarılı", mv.status === 200, mv);
+    check("kendi oturumu yaşıyor", (await whoIs(mv.cookie)) === mine.id, await whoIs(mv.cookie));
+    const otherLeft = rows(await db.execute(sql`select 1 from session where token = ${otherDevice.token}`)).length;
+    check("öteki oturum silindi", otherLeft === 0, otherLeft);
+
+    console.log("\nZaten doğrulanmış hesabın bağlantısı oturumlara dokunmuyor");
+    const again = await ctx.internalAdapter.createSession(mine.id);
+    await call("GET", `/verify-email?token=${mineToken}`);
+    const againLeft = rows(await db.execute(sql`select 1 from session where token = ${again.token}`)).length;
+    check("oturum yerinde", againLeft === 1, againLeft);
+
   } finally {
     await cleanup();
   }
@@ -139,7 +175,7 @@ async function main() {
     console.log(`\n${failures} doğrulama başarısız.`);
     process.exit(1);
   }
-  console.log("\ntamam: doğrulama bağlantısı var olan oturumu değiştirmiyor");
+  console.log("\ntamam: doğrulama bağlantısı var olan oturumu değiştirmiyor, ilk doğrulama kanıtsız oturumları düşürüyor");
   process.exit(0);
 }
 
