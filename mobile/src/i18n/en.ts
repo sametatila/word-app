@@ -1738,6 +1738,7 @@ export const en: Record<string, string> = {
   "verify.resend": "Send again",
   "verify.resend_in": "Send again ({n} s)",
   "verify.verified_sign_in": "Verified, sign in",
+  "verify.verified_now_sign_in": "Your email address is verified. Sign in to continue.",
   "voices.aras_note": "Lernomi's own voice; calm and full",
   "voices.defne_note": "Lernomi's own voice; warm and clear",
   "voices.female": "female",
