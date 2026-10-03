@@ -28,7 +28,7 @@ import { logAdminAction, type AdminWriter } from "@/lib/admin";
  * `{ email: "<kim>", userId: "script", ip: null }` geçer.
  */
 export async function adminDeleteUser(userId: string, admin: AdminWriter, reason: string): Promise<"ok" | "not_found"> {
-  if (!admin.email.trim()) throw new Error("adminDeleteUser: yönetici kimliği zorunlu");
+  if (!admin.email.trim()) throw new Error("adminDeleteUser: admin identity required");
   const res = (await db.execute(sql`select "createdAt" created_at, coalesce("isAnonymous", false) guest from "user" where id = ${userId}`)) as unknown;
   const rows = (Array.isArray(res) ? res : (res as { rows?: unknown[] }).rows ?? []) as { created_at: string; guest: boolean }[];
   const u = rows[0];
