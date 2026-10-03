@@ -4,6 +4,7 @@ import Link from "next/link";
 import { barPct, fillStyle } from "@/lib/motion";
 import type { ReactNode } from "react";
 import { QuestCard } from "@/components/quest-card";
+import { PlacementNudge } from "@/components/learn/placement-nudge";
 import { FriendPulse } from "@/components/social/friend-pulse";
 import { CardGrid } from "@/components/layout";
 import { LearnHeader } from "@/components/app-header";
@@ -67,6 +68,8 @@ export type LearnHubData = {
   hasMockExams: boolean;
   /** Mikrofon gerektiren yürüyüş modu bu tarayıcıda mümkün mü. */
   canWalk: boolean;
+  /** İlk hafta seviye önerisi (seviye testi v2, lib/placement-nudge); yoksa null. */
+  nudge?: { direction: "up" | "down"; from: string; to: string } | null;
 };
 
 export function LearnHub({ data }: { data: LearnHubData }) {
@@ -173,6 +176,8 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           bir yüzey yok ve söylediği şey (sıradaki konuşma) zaten Patika'nın öne
           çıkan ünite kartında yazıyor. İki yerde duran bir cümle, bölüm
           sırasını mobilden ayırmaya değmiyordu. */}
+      {/* İlk hafta seviye önerisi: yalnız sunucu önerdiğinde (mobil `PlacementNudge` aynı yerde). */}
+      {data.nudge ? <PlacementNudge nudge={data.nudge} /> : null}
       <div className="mb-5">
         <QuestCard />
       </div>

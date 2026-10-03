@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { LearnHub, type LearnHubData } from "@/components/learn/learn-hub";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress, newWordsLeft } from "@/lib/session";
+import { placementNudge } from "@/lib/placement-nudge";
 import { supportsMockExams } from "@/lib/mock-exams";
 import { titleMeta } from "@/lib/page-meta";
 
@@ -84,6 +85,8 @@ export default async function LearnPage({
       dueCount: progress?.dueNow ?? 0,
       hasMockExams: supportsMockExams(profile.course),
       canWalk: true,
+      /* Öneri okunamazsa kart çizilmez; merkez yine açılır. */
+      nudge: await placementNudge(user.id).catch(() => null),
     };
   } catch (err) {
     console.error("[learn] profil okunamadı", err);

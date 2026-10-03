@@ -23,7 +23,11 @@ export type PlacementRecord = {
  * seviyeyi değiştirebiliyordu. Sık tekrar seviye tahminini "ezber"e çevirir;
  * kuralın kendisi `RETAKE_DAYS` yorumunda yazılı.
  */
+/** İlk hafta seviye önerisi (sunucu lib/placement-nudge); yoksa null. */
+export type PlacementNudge = { direction: "up" | "down"; from: string; to: string };
+
 export type PlacementStatus = {
+  nudge?: PlacementNudge | null;
   last: (PlacementRecord & { at: string; accepted: string | null }) | null;
   canRetake: boolean;
   retakeDays: number;
@@ -51,5 +55,13 @@ export async function recordPlacementV2(p: PlacementV2Payload): Promise<Placemen
   return api<PlacementRecord & { at: string; accepted: string | null }>("/api/placement", {
     method: "POST",
     body: JSON.stringify({ action: "record", ...p, day: todayStr() }),
+  });
+}
+
+/** İlk hafta önerisine karar: kabulde profil seviyesi sunucuda değişir. */
+export async function answerPlacementNudge(to: string, accept: boolean): Promise<{ ok: boolean; level?: string }> {
+  return api<{ ok: boolean; level?: string }>("/api/placement", {
+    method: "POST",
+    body: JSON.stringify({ action: "nudge", to, accept }),
   });
 }

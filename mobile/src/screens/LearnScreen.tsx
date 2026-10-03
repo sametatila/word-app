@@ -18,6 +18,7 @@ import { supportsMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
 import { AppHeader } from "../ui/AppHeader";
 import { DailyQuests } from "../ui/DailyQuests";
+import { PlacementNudge } from "../ui/PlacementNudge";
 import { FriendPulse } from "../social/FriendPulse";
 import { useTheme, spacing, radii, softShadow, fillOf } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
@@ -197,6 +198,8 @@ export function LearnScreen() {
       ) : null}
 
       {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE, gömülü kutular (ayrı ekran yok) */}
+      {/* İlk hafta seviye önerisi (seviye testi v2): yalnız sunucu önerdiğinde görünür. */}
+      <PlacementNudge />
       <DailyQuests />
 
       {/* Bu haftanın ortak görevi/daveti varsa tek satır nabız; yoksa hiç çizilmez. */}

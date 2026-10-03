@@ -3,6 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile } from "@/lib/session";
 import { nativeOf } from "@/lib/courses";
+import { answerPlacementNudge, placementNudge } from "@/lib/placement-nudge";
 import { acceptPlacement, buildPlacement, finishPlacement, lastPlacement, parsePlacementV2, recordPlacementV2, RETAKE_DAYS } from "@/lib/placement";
 import { PLACEMENT_LEVELS, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -11,13 +12,14 @@ export const dynamic = "force-dynamic";
 
 /**
  * Yerleştirme testi (WP-40).
- *   GET                       → son alma + yeniden alınabilir mi
+ *   GET                       → son alma + yeniden alınabilir mi + ilk hafta seviye önerisi (`nudge`)
  *   POST {action:"start"}     → madde bankası (test)
  *   POST {action:"finish", answers, day} → sonuç (öneri, beceri başına)
  *   POST {action:"accept", id, level}    → seviye kabul edilir, profil güncellenir
  *   POST {action:"record", lang, self, audio, known, responses, accepted?, day}
  *        → seviye testi v2: sonuç sunucuda yeniden hesaplanır ve kaydedilir; `accepted`
  *          önerilen ya da bir altı/üstüyse profile yazılır (lib/placement `recordPlacementV2`)
+ *   POST {action:"nudge", to, accept}   → ilk hafta önerisine karar (lib/placement-nudge)
  *   start/finish eski 4 aşamalı test: build 17 ve öncesi uygulamalar için duruyor.
  */
 export async function GET() {
@@ -26,7 +28,8 @@ export async function GET() {
   try {
     const last = await lastPlacement(userId);
     const canRetake = !last || Date.now() - new Date(last.at).getTime() >= RETAKE_DAYS * 86400000;
-    return NextResponse.json({ last, canRetake, retakeDays: RETAKE_DAYS }, { headers: { "cache-control": "no-store" } });
+    const nudge = await placementNudge(userId).catch(() => null);
+    return NextResponse.json({ last, canRetake, retakeDays: RETAKE_DAYS, nudge }, { headers: { "cache-control": "no-store" } });
   } catch (err) {
     console.error("[placement]", err);
     return NextResponse.json({ error: "database" }, { status: 500 });
@@ -69,6 +72,10 @@ export async function POST(req: Request) {
       if (!input || (!input.responses.length && !Object.keys(input.known).length)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
       const day = typeof body.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(body.day) ? body.day : new Date().toISOString().slice(0, 10);
       return NextResponse.json(await recordPlacementV2(userId, input, day));
+    }
+    if (body.action === "nudge") {
+      if (typeof body.to !== "string" || typeof body.accept !== "boolean") return NextResponse.json({ error: "bad_request" }, { status: 400 });
+      return NextResponse.json(await answerPlacementNudge(userId, body.to, body.accept));
     }
     if (body.action === "accept") {
       const id = Number(body.id);

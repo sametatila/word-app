@@ -120,6 +120,12 @@ export const profiles = pgTable("profiles", {
   */
   avatar: text("avatar"),
   level: text("level").notNull().default("A1"),
+  /**
+   * İlk hafta seviye önerisi (seviye testi v2, lib/placement-nudge): verilen karar
+   * "up:B2:yes" / "down:A1:no". Doluysa öneri bir daha gösterilmez. Olaylarda tutulmuyor:
+   * analitiği kapatanda olay yazılmaz ve öneri her açılışta geri gelirdi.
+   */
+  placementNudge: text("placement_nudge"),
   course: text("course").notNull().default("de"), // de | gsw-zh | en — çalışılan HEDEF dil
   /**
    * Kullanıcının ANADİLİ — arayüz ve anlatım dili (tr | en | de).
