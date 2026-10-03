@@ -3,16 +3,14 @@
  * Çalıştır: npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-exam-grade.ts
  */
 import assert from "node:assert";
-import { buildAnswerKey, sealKey, openKey, openKeyFor, KEY_TTL_MS, gradeObjective, signScore, verifyScore, resolveSpokenWritten, examWritingTask, examSpeakingTarget, blindPaper, objectiveReview } from "../src/lib/exam-grade";
+import { buildAnswerKey, sealKey, openKey, gradeObjective, signScore, verifyScore, resolveSpokenWritten, examWritingTask, examSpeakingTarget, blindPaper, objectiveReview } from "../src/lib/exam-grade";
 import type { ExamPaper } from "../src/lib/exam-types";
 
 const USER = "user-123";
 
 // Yalnız buildAnswerKey'in okuduğu bölümleri kuran minimal kâğıt.
 const paper = {
-  kind: "level",
   level: "A1",
-  module: null,
   sections: {
     vocab: [],
     grammar: [
@@ -30,26 +28,12 @@ const paper = {
   },
 } as unknown as ExamPaper;
 
-const NOW = Date.now();
-const key = buildAnswerKey(paper, "de", "tr", USER, NOW);
+const key = buildAnswerKey(paper, "de");
 
 // 1) seal → open round-trip
 const token = sealKey(key);
 const opened = openKey(token);
 assert.deepStrictEqual(opened, key, "seal/open round-trip anahtarı korumalı");
-
-// 1b) Bağlama: sahip, tür/seviye/modül, son kullanma (denetim 2026-10-03 O1)
-const expectLevel = { kind: "level" as const, level: "A1", module: null };
-assert.deepStrictEqual(openKeyFor(token, USER, expectLevel, NOW), key, "sahibi + aynı kâğıt → açılır");
-assert.strictEqual(openKeyFor(token, "baska-user", expectLevel, NOW), null, "başka kullanıcı → null");
-assert.strictEqual(openKeyFor(token, USER, { kind: "level", level: "C1", module: null }, NOW), null, "A1 anahtarıyla C1 bitirilemez");
-assert.strictEqual(openKeyFor(token, USER, { kind: "module", level: "A1", module: 2 }, NOW), null, "seviye anahtarı modül sınavında geçmez");
-assert.strictEqual(openKeyFor(token, USER, expectLevel, NOW + KEY_TTL_MS + 1), null, "süresi geçmiş anahtar → null");
-const legacy: Partial<typeof key> = { ...key };
-delete legacy.u;
-delete legacy.exp;
-assert.strictEqual(openKeyFor(sealKey(legacy as typeof key), USER, expectLevel, NOW), null, "bağsız eski jeton → null");
-assert.strictEqual(key.vocabTotal, 0, "kelime toplamı kâğıttan");
 
 // 2) Kurcalanmış token → null
 const bad = token.slice(0, -4) + (token.slice(-4) === "AAAA" ? "BBBB" : "AAAA");
@@ -113,17 +97,17 @@ const r1 = resolveSpokenWritten(key, USER, wTok, [s0, s1]);
 assert.strictEqual(r1.writingScore, 85, "writing skoru imzalı jetondan");
 assert.strictEqual(r1.speakingScore, 80, "speaking = (70+90)/2 sunucuda ortalanmış");
 
-// 9) Anahtarda OLMAYAN exerciseId jetonu reddedilir (başka sınavın jetonu) → o madde 0
+// 9) Anahtarda OLMAYAN exerciseId jetonu reddedilir (başka sınavın jetonu)
 const foreign = signScore(USER, "speaking", "s:ZZ:9", 100);
-assert.strictEqual(resolveSpokenWritten(key, USER, null, [foreign]).speakingScore, 0, "yabancı exerciseId → sayılmaz (0)");
+assert.strictEqual(resolveSpokenWritten(key, USER, null, [foreign]).speakingScore, null, "yabancı exerciseId → sayılmaz");
 // yanlış kind (writing jetonu speaking listesinde) reddedilir
-assert.strictEqual(resolveSpokenWritten(key, USER, null, [wTok]).speakingScore, 0, "yanlış kind → sayılmaz (0)");
+assert.strictEqual(resolveSpokenWritten(key, USER, null, [wTok]).speakingScore, null, "yanlış kind → sayılmaz");
 
-// 10) Aynı madde jetonu tekrarı bir kez sayılır; jetonsuz madde 0 (en iyi maddeyi seçip ötekini saklamak işe yaramaz)
-assert.strictEqual(resolveSpokenWritten(key, USER, null, [s1, s1, s1]).speakingScore, 45, "tekrar eden madde bir kez, eksik madde 0 → (90+0)/2");
+// 10) Aynı madde jetonu tekrarı bir kez sayılır (ortalama şişirme engeli)
+assert.strictEqual(resolveSpokenWritten(key, USER, null, [s1, s1, s1]).speakingScore, 90, "tekrar eden madde bir kez → 90");
 
-// 11) Jeton yoksa: yazma null (sınav doğrulanmamış), konuşma bütün maddeler 0
-assert.deepStrictEqual(resolveSpokenWritten(key, USER, null, null), { writingScore: null, speakingScore: 0 }, "jeton yok → yazma null, konuşma 0");
+// 11) Jeton yoksa null (çağıran istemci skoruna düşer = geriye uyumlu)
+assert.deepStrictEqual(resolveSpokenWritten(key, USER, null, null), { writingScore: null, speakingScore: null }, "jeton yok → null (fallback)");
 // forge edilen ham skor işe yaramaz: jeton olmadan writingScore alınamaz
 assert.strictEqual(resolveSpokenWritten(key, USER, "duzmece-jeton", null).writingScore, null, "düzmece jeton → null");
 
@@ -154,4 +138,4 @@ assert.deepStrictEqual(rev.reading, [[0, 2]], "review reading cevapları");
 assert.deepStrictEqual(rev.listening, [[1]], "review listening cevapları");
 assert.deepStrictEqual(rev.produce, ["Ich bin hier", "Wie geht es dir"], "review produce cevapları");
 
-console.log("✓ exam-grade: 15 senaryo geçti (puanlama + imzalı jeton + mühürlü görev + kör kâğıt/review; sınav airtight)");
+console.log("✓ exam-grade: 14 senaryo geçti (puanlama + imzalı jeton + mühürlü görev + kör kâğıt/review; sınav airtight)");

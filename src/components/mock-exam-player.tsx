@@ -1516,7 +1516,7 @@ function Result({
                     <span className="font-semibold">{openPart ? formatPercent(pct, lang) : `${g.correct}/${g.total}`}</span>
                   </div>
                   <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
-                    <div className="h-1 rounded-full" style={{ width: `${pct}%`, background: pct >= 70 ? "var(--color-success)" : pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
+                    <div className="h-1 rounded-full" style={{ width: `${pct}%`, background: pct >= MOCK_PASS_PCT ? "var(--color-success)" : pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
                   </div>
                 </div>
               );

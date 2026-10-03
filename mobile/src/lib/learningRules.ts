@@ -53,7 +53,7 @@ export const CONVERSATION_TRY_CEILING = 3;
  *
  * Web karşılığı `src/lib/conversations/chat-const.ts` `CONVERSATION_PASS_RATIO`.
  */
-export const CONVERSATION_PASS_RATIO = 0.7;
+export const CONVERSATION_PASS_RATIO = 0.6;
 
 /**
  * Eşiği geçmek için gereken en az doğru sayısı — sunucunun `correct / total
@@ -96,7 +96,7 @@ export const MONOLOGUE_CHUNK_MS = 20000;
  * egzersizi hâlâ "sıradaki" sayıyordu (`immersion/progress.ts` kapıyı da
  * bununla açıyor). Ölçütün sahibi sunucu; istemci onu göstermek zorunda.
  */
-export const SKILL_DONE_PCT = 70;
+export const SKILL_DONE_PCT = 60;
 
 /**
  * Orta bandın tabanı (yüzde) — web `lib/score-bands.ts` `SCORE_MID_PCT`.
@@ -132,8 +132,8 @@ export function scoreOf(correct: number, total: number, score?: number | null): 
  * Rubrikle puanlanan serbest görevin geçme notu — web `lib/score-bands.ts`
  * `RUBRIC_PASS_PCT`.
  *
- * `SKILL_DONE_PCT`ten (70) ayrı: tek görevin geçmesi ile egzersizin tamamının
- * çalışılmış sayılması aynı şey değil.
+ * `SKILL_DONE_PCT` ile aynı sayı (%60) ama ayrı ad: tek görevin geçmesi ile egzersizin
+ * tamamının çalışılmış sayılması aynı soru değil.
  */
 export const RUBRIC_PASS_PCT = 60;
 

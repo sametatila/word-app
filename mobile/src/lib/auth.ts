@@ -1,6 +1,4 @@
 import { apiBase, ApiError, FALLBACK_BASE, fetchWithTimeout, PRIMARY_BASE } from "../api/client";
-import { clearLocalCookies } from "./cookies";
-import { notePendingVerify } from "./pendingVerify";
 import { reportError } from "./errorReport";
 import { diagnoseNetwork } from "./reachability";
 import { t } from "./i18n";
@@ -137,9 +135,6 @@ async function parse(res: Response): Promise<AuthOutcome> {
 }
 
 export async function signIn(email: string, password: string, captchaToken?: string | null): Promise<AuthOutcome> {
-  /* Doğrulanmamış hesapta giriş denemesi postayı yeniden gönderiyor; bağlantı
-     bu cihaza dönünce oturum açabilsin (bkz. lib/pendingVerify). */
-  await notePendingVerify(email);
   try {
     return await parse(await post("sign-in/email", { email, password, rememberMe: true }, captchaToken));
   } catch (e) {
@@ -154,7 +149,6 @@ export async function signUp(name: string, email: string, password: string, capt
      Adsız profil sosyal ekranlarda kullanıcı adıyla ya da nötr yedekle
      görünüyor; ad Ayarlar'dan sonradan eklenebiliyor. */
   const body = { email, password, name: name.trim() };
-  await notePendingVerify(email);
   try {
     /* MİSAFİR YERİNDE HESAP OLUYOR (sunucu lib/auth/guest-upgrade): kimlik aynı
        kalıyor, satır taşınmıyor; yanıt kayıtla aynı biçimde. Uç henüz yayında
@@ -208,20 +202,13 @@ export async function signOut(everywhere = true): Promise<void> {
     getirirdi. Beklenmiyor: öteki taban engelliyse çıkış dört saniye durmasın.
   */
   const other = apiBase() === PRIMARY_BASE ? FALLBACK_BASE : PRIMARY_BASE;
-  const otherOut = fetchWithTimeout(`${other}/api/auth/sign-out`, {
+  void fetchWithTimeout(`${other}/api/auth/sign-out`, {
     method: "POST",
     headers: { "content-type": "application/json", accept: "application/json" },
     body: "{}",
     pinned: true,
     timeoutMs: 4000,
   }).catch(() => undefined);
-  /*
-    SUNUCU NE DERSE DESİN çerezler yerelde siliniyor (bkz. lib/cookies): ağsız
-    çıkışta oturum cihazda kalıp yeniden açılışta geri geliyordu. Öteki tabanın
-    isteğine çerezini taşıyabilsin diye kısa bir süre bekleniyor, en çok 1,5 sn.
-  */
-  await Promise.race([otherOut, new Promise((r) => setTimeout(r, 1500))]);
-  await clearLocalCookies();
 }
 
 /**
@@ -360,7 +347,6 @@ export async function requestPasswordReset(email: string, captchaToken?: string 
  * doğruluyor, uygulamaya dönüp giriş yapıyor.
  */
 export async function sendVerificationEmail(email: string): Promise<AuthOutcome> {
-  await notePendingVerify(email);
   try {
     return await parse(await post("send-verification-email", { email, callbackURL: `${PRIMARY_BASE}/learn` }));
   } catch (e) {

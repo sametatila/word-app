@@ -2,8 +2,8 @@ import "server-only";
 import { createCipheriv, createDecipheriv, createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import { matchSentence } from "@/lib/sentence-match";
 import type { TargetLang } from "@/lib/courses";
-import { translate, type NativeLang } from "@/lib/i18n/dict";
-import type { ExamKind, ExamPaper } from "@/lib/exam-types";
+import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
+import type { ExamPaper } from "@/lib/exam-types";
 
 /**
  * Sunucu-tarafı nesnel sınav puanlaması — güvenlik denetimi F7'nin kalıntısı.
@@ -17,29 +17,14 @@ import type { ExamKind, ExamPaper } from "@/lib/exam-types";
  * opak bir `keyToken` olarak veriyor. İstemci onu okuyamaz (şifreli) ve
  * kurcalayamaz (GCM etiketi). Finish'te istemci `keyToken` + ham `responses`
  * (her sorudaki SEÇİMİ) gönderiyor; sunucu anahtarı açıp puanı KENDİSİ
- * hesaplıyor. keyToken/responses yoksa (eski mobil istemci) sonuç kaydediliyor
- * ama DOĞRULANMAMIŞ sayılıyor: sertifika, modül tacı ve seviye geçişi vermiyor
- * (2026-10-03 denetimi O1; önceden istemci sayımıyla "geçti" yazılabiliyordu).
+ * hesaplıyor. keyToken/responses yoksa (eski mobil istemci) çağıran eski
+ * sınırlı istemci-sayımına düşüyor — kimse kırılmıyor.
  *
  * Kelime (vocab) bölümü SRS'e bağlı ve oyun-bulanık eşleşmeli; o istemci-sayımı
  * (sınırlı) kalıyor. Yazma/konuşma zaten AI-rubriği (/api/assess, /api/pronounce).
  */
 
 export type ObjectiveKey = {
-  /**
-   * BAĞLAMA (güvenlik denetimi 2026-10-03, O1): anahtar kâğıdı başlatan
-   * kullanıcıya, sınav türüne, seviyeye/modüle ve bir son kullanma anına
-   * bağlı. Eskiden bağsızdı: kolay bir A1 kâğıdının anahtarıyla C1 bitirilebiliyor,
-   * başkasının jetonu kullanılabiliyordu. Bu alanları taşımayan (eski) jeton
-   * `openKeyFor`dan geçmez.
-   */
-  u: string;
-  kind: ExamKind;
-  module: number | null;
-  /** Son kullanma (ms, epoch). */
-  exp: number;
-  /** Kelime bölümünün madde sayısı — bölüm SRS-bulanık, doğruyu istemci sayar ama toplamı kâğıt belirler. */
-  vocabTotal: number;
   grammar: ({ kind: "cell"; answer: number } | { kind: "judge"; answer: boolean })[];
   reading: number[][];
   listening: number[][];
@@ -65,25 +50,14 @@ export type ExamResponses = {
 
 export type SectionCount = { correct: number; total: number };
 
-/** Anahtarın ömrü: sınav en çok 45 dk, yazma/konuşma değerlendirmesi ve ağ için bol pay. */
-export const KEY_TTL_MS = 3 * 3600 * 1000;
-
 /** Kâğıttan nesnel cevap anahtarını çıkarır (istemciye ASLA açık gitmez). */
 export function buildAnswerKey(
   paper: ExamPaper,
   lang: TargetLang,
   /** Yazma kısıtının dili — öğrencinin anadili; istemci de aynı dilde gönderiyor (`assess.ai_min_words`). */
-  native: NativeLang,
-  /** Kâğıdı başlatan kullanıcı — anahtar yalnız onun bitirişinde açılır. */
-  userId: string,
-  now: number = Date.now(),
+  native: NativeLang = DEFAULT_NATIVE,
 ): ObjectiveKey {
   return {
-    u: userId,
-    kind: paper.kind,
-    module: paper.module ?? null,
-    exp: now + KEY_TTL_MS,
-    vocabTotal: paper.sections.vocab.length,
     grammar: paper.sections.grammar.map((g) =>
       g.kind === "cell" ? { kind: "cell", answer: g.answer } : { kind: "judge", answer: g.answer },
     ),
@@ -156,14 +130,13 @@ export function objectiveReview(key: ObjectiveKey): ObjectiveReview {
  * writingScore:100 gönderebiliyordu. Artık o uçlar puanı (userId+kind+exerciseId+
  * score+zaman) üzerinde HMAC-SHA256 ile İMZALIYOR; istemci opak jetonu sınav
  * finish'ine relay ediyor, sunucu imzayı + TTL'yi doğrulayıp exam maddesine bağlı
- * İMZALI skoru kullanıyor (istemcinin ham skoru yok sayılır). Görev ve hedef
- * cümle de mühürlü anahtardan geliyor (`examWritingTask`, `examSpeakingTarget`).
+ * İMZALI skoru kullanıyor (istemcinin ham skoru yok sayılır). Jeton yoksa/geçersizse
+ * (eski istemci) çağıran istemci skoruna düşer — geriye uyumlu.
  *
- * KALINTI (bilinçli): konuşmada döküm (transcript) cihazın/tarayıcının
- * tanıyıcısından, yani istemciden geliyor; değiştirilmiş bir istemci hedef
- * cümleyi döküm diye gönderip 100 alabilir. Sunucuda ses tanıma yalnız ekran
- * kapalı yürüyüşte (bkz. `api/stt`), sınavda yok. Konuşma payı tek başına
- * geçirmiyor: öteki bölümler sunucuda puanlanıyor ve her bölüm ≥ %50 isteniyor.
+ * NOT (dürüst kalıntı): görev tanımı (task/constraints) hâlâ istemciden gel, yani
+ * özel istemci + gerçek yazma emeğiyle daha kolay bir görevden yüksek puan
+ * alınabilir — ama "yoktan 100" ve eski-skoru-replay artık kapalı; tam kapatma
+ * görev tanımını da sunucuya taşımayı gerektirir (kendi kredin, düşük etki).
  */
 const SCORE_TTL_MS = 3 * 3600 * 1000; // sınav süresi (max 45dk) + bol pay
 
@@ -197,16 +170,9 @@ export function verifyScore(token: string, userId: string): { kind: "writing" | 
 
 /**
  * Yazma/konuşma skorlarını imzalı jetonlardan SUNUCUDA çözer. Jeton bu sınavın
- * maddesine bağlı (exerciseId ∈ key ids) ve imzası/TTL'si geçerliyse kabul edilir.
- *
- * Konuşma çok maddeli: kâğıttaki HER madde sayılır, geçerli jetonu olmayan
- * madde 0 (web oynatıcısı da arızalı maddeyi 0 sayıyor). Eskiden yalnız
- * gönderilen jetonlar ortalanıyordu: istemci en iyi maddesinin jetonunu
- * gönderip kötülerini saklayabiliyordu. Kâğıtta konuşma yoksa null.
- *
- * Yazma tek madde: geçerli jeton yoksa null — çağıran sınavı "doğrulanmamış"
- * sayar (yazma değerlendirmesi düştüğünde istemci yerel bir tahmin gösteriyor,
- * o tahmin sertifikaya sayılmamalı).
+ * maddesine bağlı (exerciseId ∈ key ids) ve imzası/TTL'si geçerliyse kabul edilir;
+ * konuşma çok maddeli → her maddenin doğrulanmış skoru bir kez sayılıp ortalanır.
+ * Bir bölüm için geçerli jeton yoksa null döner (çağıran istemci skoruna düşer).
  */
 export function resolveSpokenWritten(
   key: ObjectiveKey,
@@ -221,15 +187,19 @@ export function resolveSpokenWritten(
   }
 
   let speakingScore: number | null = null;
-  if (key.speakingIds.length) {
-    const byId = new Map<string, number>();
-    for (const tk of Array.isArray(speakingTokens) ? speakingTokens : []) {
+  if (Array.isArray(speakingTokens) && key.speakingIds.length) {
+    const scores: number[] = [];
+    const seen = new Set<string>();
+    for (const tk of speakingTokens) {
       if (typeof tk !== "string") continue;
       const v = verifyScore(tk, userId);
       // Aynı madde jetonu bir kez sayılır (ortalamayı tekrarla şişirme engeli).
-      if (v && v.kind === "speaking" && key.speakingIds.includes(v.exerciseId) && !byId.has(v.exerciseId)) byId.set(v.exerciseId, v.score);
+      if (v && v.kind === "speaking" && key.speakingIds.includes(v.exerciseId) && !seen.has(v.exerciseId)) {
+        seen.add(v.exerciseId);
+        scores.push(v.score);
+      }
     }
-    speakingScore = Math.round(key.speakingIds.reduce((a, id) => a + (byId.get(id) ?? 0), 0) / key.speakingIds.length);
+    if (scores.length) speakingScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
   }
   return { writingScore, speakingScore };
 }
@@ -250,25 +220,7 @@ export function sealKey(key: ObjectiveKey): string {
   return Buffer.concat([iv, tag, ct]).toString("base64");
 }
 
-/**
- * keyToken'ı açar VE bağlamayı doğrular: sahibi bu kullanıcı, süresi geçmemiş,
- * (verildiyse) türü/seviyesi/modülü bu bitirişle aynı. Sınav bitirişi, yazma
- * ve konuşma değerlendirmesi anahtarı yalnız bununla açar.
- */
-export function openKeyFor(
-  token: string,
-  userId: string,
-  expect?: { kind: ExamKind; level: string; module: number | null },
-  now: number = Date.now(),
-): ObjectiveKey | null {
-  const key = openKey(token);
-  if (!key || typeof key.u !== "string" || key.u !== userId) return null;
-  if (typeof key.exp !== "number" || now > key.exp) return null;
-  if (expect && (key.kind !== expect.kind || key.level !== expect.level || (key.module ?? null) !== expect.module)) return null;
-  return key;
-}
-
-/** keyToken'ı açar (yalnız şifre/etiket doğrulaması; bağlama için `openKeyFor`). */
+/** keyToken'ı açar/doğrular; kurcalanmış/geçersizse null. */
 export function openKey(token: string): ObjectiveKey | null {
   try {
     const buf = Buffer.from(token, "base64");

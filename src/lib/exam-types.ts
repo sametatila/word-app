@@ -185,7 +185,9 @@ export const LEVEL_SECONDS = 45 * 60;
     (yalnız kelimeyle, konuşamadan geçilmesin). docs/plan/level-progress.md. Mobil `learningRules` aynası. */
 export const PASS_TOTAL = 60;
 export const PASS_SECTION = 50;
-export const MODULE_PREREQ = 0.8;
+/** Modül sınavı "deneme" değil sayılsın diye modül konuşmalarının geçilmiş payı: %60 (2026-10-03'e
+    dek %80; hazırlık ve geçme eşikleriyle aynı). */
+export const MODULE_PREREQ = 0.6;
 
 export type SectionScore = { id: ExamSectionId; correct: number; total: number; pct: number; weight: number };
 

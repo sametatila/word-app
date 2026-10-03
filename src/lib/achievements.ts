@@ -1,3 +1,4 @@
+import { SKILL_DONE_PCT } from "@/lib/score-bands";
 import "server-only";
 import { and, count, desc, eq, gt, gte, inArray, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -471,7 +472,7 @@ async function collectMetrics(userId: string): Promise<{ metrics: Metrics; cours
         and(
           eq(userSkills.userId, userId),
           eq(userSkills.skill, "grammar"),
-          sql`(coalesce(${userSkills.lastScore}, 0) >= 70 or (${userSkills.total} > 0 and ${userSkills.correct}::numeric / ${userSkills.total} >= 0.7))`,
+          sql`(coalesce(${userSkills.lastScore}, 0) >= ${SKILL_DONE_PCT} or (${userSkills.total} > 0 and ${userSkills.correct}::numeric / ${userSkills.total} >= ${SKILL_DONE_PCT / 100}))`,
         ),
       ),
 

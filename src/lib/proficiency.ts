@@ -93,7 +93,7 @@ export type Proficiency = Record<ProficiencySkill, Partial<Record<CefrLevel, Cel
 
 export function bandOf(score: number): Band {
   if (score >= 85) return "mastered";
-  if (score >= 70) return "solid";
+  if (score >= 60) return "solid"; // geçme eşiğiyle aynı (2026-10-03'e dek 70)
   if (score >= 40) return "developing";
   return "beginner";
 }

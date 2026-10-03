@@ -1,5 +1,6 @@
 "use client";
 
+import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
 import { useEffect, useRef, useState } from "react";
 import { focusOnFine } from "@/lib/focus-fine";
 import { GameShell } from "./game-shell";
@@ -86,9 +87,10 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
       setResult(ai.result);
       setFailure(null);
       const o = ai.result.score.overall;
-      const quality = o >= 90 ? 5 : o >= 70 ? 4 : o >= 40 ? 3 : 2;
-      setOutcome({ correct: o >= 70, quality });
-      vibrate(o >= 70 ? "correct" : "wrong");
+      /* Doğru = rubrik geçme notu (%60, serbest yazmayla aynı; 2026-10-03'e dek 70). */
+      const quality = o >= 90 ? 5 : o >= RUBRIC_PASS_PCT ? 4 : o >= 40 ? 3 : 2;
+      setOutcome({ correct: o >= RUBRIC_PASS_PCT, quality });
+      vibrate(o >= RUBRIC_PASS_PCT ? "correct" : "wrong");
     } else {
       if (ai.reason === "aborted") return;
       const fb = fallbackAssessment(req, t);

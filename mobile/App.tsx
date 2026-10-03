@@ -23,8 +23,7 @@ import { flushPendingAnswers } from "./src/game/session";
 import { flushPendingConversations, flushPendingPathItems, pruneConversationResumes } from "./src/game/pathProgress";
 import { flushPendingPush, navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
-import { completeEmailVerification, getSessionState, signOut as endSession, verifyOneTimeToken } from "./src/lib/auth";
-import { takePendingVerify, verifyLinkEmail } from "./src/lib/pendingVerify";
+import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
 import { consumeHandoff } from "./src/lib/handoff";
 import { applyPendingReferral, attachReferral, savePendingReferral, type ReferralResult } from "./src/lib/pendingReferral";
 import { t } from "./src/lib/i18n";
@@ -32,7 +31,6 @@ import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 import { UnlockCelebration } from "./src/ui/UnlockCelebration";
 import { GuestClaimNotice } from "./src/ui/GuestClaimNotice";
-import { VerifiedNotice } from "./src/ui/VerifiedNotice";
 import { TermsUpdateNotice } from "./src/ui/TermsUpdateNotice";
 import { GuestMergeDialog } from "./src/ui/GuestMergeDialog";
 import { AiConsentHost } from "./src/ui/AiConsentSheet";
@@ -46,8 +44,6 @@ function Nav() {
   const { user, loading, refresh, guestGone } = useAuth();
   /** Doğrulama bağlantısı işlenirken gösterilen örtü (bkz. aşağıdaki derin bağlantı kancası). */
   const [verifying, setVerifying] = useState(false);
-  /** Bu cihazın beklemediği doğrulama bağlantısı: adres doğrulandı, oturum açılmadı. */
-  const [verifiedNotice, setVerifiedNotice] = useState(false);
   /** Gezgin hazır olmadan gelen derin bağlantı (bkz. onReady). */
   const pending = useRef<DeepLinkAction>(null);
   /**
@@ -245,19 +241,7 @@ function Nav() {
       // çerezini RN'in kavanozuna yazıyor, yani kullanıcı burada girmiş oluyor.
       setVerifying(true);
       await authSettled();
-      /*
-        YALNIZ BU CİHAZIN BEKLEDİĞİ DOĞRULAMA OTURUM AÇIYOR (bkz. lib/pendingVerify).
-        Oturumsuz uygulamaya gelen yabancı bağlantı kullanıcıyı başkasının
-        hesabına sokuyordu. Oturum zaten varsa sunucu onu değiştirmiyor; yol aynı.
-      */
-      const hadSession = (await getSessionState()).user !== null;
-      const linkEmail = verifyLinkEmail(action.url);
-      const expected = hadSession || (linkEmail !== null && (await takePendingVerify(linkEmail)));
-      const verified = await completeEmailVerification(action.url);
-      if (!expected) {
-        await endSession();
-        if (verified && alive) setVerifiedNotice(true);
-      }
+      await completeEmailVerification(action.url);
       await refresh();
       if (alive) setVerifying(false);
     };
@@ -452,7 +436,6 @@ function Nav() {
       <AppGate />
       {/* Doğrulama sürerken ekranı bir an boş bırakmamak için örtü: ağ çağrısı
           ve oturum tazelemesi bitene kadar duruyor. */}
-      {verifiedNotice ? <VerifiedNotice onClose={() => setVerifiedNotice(false)} /> : null}
       {verifying ? (
         <View style={{ position: "absolute", inset: 0, alignItems: "center", justifyContent: "center", backgroundColor: colors.bg }}>
           <Text variant="h3">{t("verify.checking")}</Text>

@@ -22,15 +22,18 @@
  * `SCORE_MID_PCT`) — aynı adlar, aynı değerler; "ortak sayisal sabitler"
  * kapısı ayrışmayı ada bakarak yakalıyor.
  */
-export const SKILL_DONE_PCT = 70;
+/* %60 (2026-10-03'e dek %70): uygulamanın her geçme eşiği %60 (sınav, deneme, puanlı konuşma,
+   rubrik, Patika pratiği; CEFR sınavlarının eşiği). Beceri egzersizinin "bitti"si tek başına %70'te
+   kalıyordu: %65 alan okuma Patika'da bitmemiş görünüyordu. Eşikler 2026-10-03'te hizalandı (docs/plan/level-progress.md "Eşik hizalaması") */
+export const SKILL_DONE_PCT = 60;
 
 /**
  * Rubrikle puanlanan SERBEST görevin geçme notu.
  *
  * Serbest yazma ve monolog "doğru/yanlış" değil rubrikle ölçülüyor ve o tur
  * 60'ta geçilmiş sayılıyor — beceri egzersizinin bütününü "bitti" sayan
- * `SKILL_DONE_PCT`ten (70) ayrı bir karar, çünkü tek görevin geçmesi ile
- * egzersizin tamamının çalışılmış sayılması aynı şey değil.
+ * `SKILL_DONE_PCT` ile aynı sayı (ikisi de %60) ama ayrı ad: tek görevin geçmesi ile
+ * egzersizin tamamının çalışılmış sayılması aynı soru değil.
  *
  * Bu sayı altı yerde elle yazılıydı (web'de iki oynatıcı, mobilde dört yer) ve
  * ikisi ayrışsaydı aynı metin bir platformda geçmiş öbüründe kalmış sayılırdı.

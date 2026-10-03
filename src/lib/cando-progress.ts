@@ -7,13 +7,15 @@ import { candoForExercise, candoForConversation } from "@/lib/cando-map";
 import { allConversations } from "@/lib/conversations";
 import { listExerciseMeta } from "@/lib/skills";
 import type { CefrLevel } from "@/lib/skills/types";
+import { CONVERSATION_PASS_RATIO } from "@/lib/conversations/chat-const";
+import { SKILL_DONE_PCT } from "@/lib/score-bands";
 
 /**
  * Kullanıcının yapabilirlik kanıtı (WP-43, adım 4).
  *
  * Bir ifade "kanıtlı" ⇔ ona bağlı en az iki içerik tamamlandı (konuşma geçildi
- * ya da egzersiz ≥ %70); tek içerik "gelişiyor". Sınav bölümleri (WP-41/42)
- * geldiğinde üçüncü kanıt türü olur ve eşik "≥2 içerik + son sınav ≥ %70"e
+ * ya da egzersiz bitti: `SKILL_DONE_PCT`, %60); tek içerik "gelişiyor". Sınav bölümleri (WP-41/42)
+ * geldiğinde üçüncü kanıt türü olur ve eşik "≥2 içerik + son sınav geçildi"ye
  * çıkar. Materialize edilmez; profil açılışında sorguyla hesaplanır — kanıt
  * tabloları zaten var, yeni tablo yalnız ikinci bir doğruluk kaynağı olurdu.
  */
@@ -32,7 +34,6 @@ export type CandoSummary = {
   byLevel: Record<CefrLevel, { proven: number; total: number }>;
 };
 
-const PASS_RATIO = 0.7;
 
 export async function candoSummary(userId: string, course: string): Promise<CandoSummary> {
   const [conversationRows, skillRows, metas] = await Promise.all([
@@ -40,9 +41,9 @@ export async function candoSummary(userId: string, course: string): Promise<Cand
     db.select({ exerciseId: userSkills.exerciseId, correct: userSkills.correct, total: userSkills.total, lastScore: userSkills.lastScore }).from(userSkills).where(eq(userSkills.userId, userId)),
     listExerciseMeta(course),
   ]);
-  const passedConversations = new Set(conversationRows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= PASS_RATIO).map((r) => r.conversationId));
+  const passedConversations = new Set(conversationRows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= CONVERSATION_PASS_RATIO).map((r) => r.conversationId));
   const doneExercises = new Set(
-    skillRows.filter((r) => (r.lastScore ?? 0) >= 70 || (r.total > 0 && r.correct / r.total >= PASS_RATIO)).map((r) => r.exerciseId),
+    skillRows.filter((r) => (r.lastScore ?? 0) >= SKILL_DONE_PCT || (r.total > 0 && r.correct / r.total >= SKILL_DONE_PCT / 100)).map((r) => r.exerciseId),
   );
 
   const total = new Map<string, number>();

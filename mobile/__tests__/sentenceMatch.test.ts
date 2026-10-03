@@ -91,10 +91,10 @@ describe("üretim adımı geri bildirimi", () => {
   });
 
   it("geçme eşiği sunucunun karşılaştırmasıyla aynı", () => {
-    // 0,7 × 3 kayan noktada 2,0999…: üç adımda gereken 3/3.
-    expect(conversationPassNeed(3)).toBe(3);
+    // %60 (2026-10-03'e dek %70; %70 üç adımda 3/3, yani kusursuz istiyordu).
+    expect(conversationPassNeed(3)).toBe(2);
     expect(conversationPassNeed(4)).toBe(3);
-    expect(conversationPassNeed(5)).toBe(4);
-    expect(conversationPassNeed(10)).toBe(7);
+    expect(conversationPassNeed(5)).toBe(3);
+    expect(conversationPassNeed(10)).toBe(6);
   });
 });

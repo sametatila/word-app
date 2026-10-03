@@ -182,7 +182,7 @@ export const deWeb: Record<string, string> = {
   "ach.quests20.hint": "Beende an 20 Tagen alle drei Tagesaufgaben",
   /* Yetkinlik/gelişim — bkz. tr.ts notu. */
   "growth.first_exam": "Erste Prüfung: {score} Punkte",
-  "growth.first_good_writing": "Erster Text mit 70+ Punkten",
+  "growth.first_good_writing": "Erster Text mit 60+ Punkten",
   "growth.first_conversation": "Erster Sprechen-Schritt samt Chat abgeschlossen",
   "growth.last_week": "Letzte Woche: {parts}.",
   "growth.first_placement": "Einstufungstest: {level} empfohlen",

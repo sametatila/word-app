@@ -47,7 +47,9 @@ export const CONVERSATION_TRY_CEILING = 3;
  *
  * Mobil karşılığı `mobile/src/lib/learningRules.ts` `CONVERSATION_PASS_RATIO`.
  */
-export const CONVERSATION_PASS_RATIO = 0.7;
+/* %60 (2026-10-03'e dek %70): 3 puanlı adımlı konuşmada %70 fiilen 3/3, yani KUSURSUZ demekti
+   (174 konuşma, denetim T16). %60 ile 2/3, 3/4, 3/5 geçer. Eşikler 2026-10-03'te hizalandı (docs/plan/level-progress.md "Eşik hizalaması") */
+export const CONVERSATION_PASS_RATIO = 0.6;
 
 /**
  * Eşiği geçmek için gereken en az doğru sayısı.

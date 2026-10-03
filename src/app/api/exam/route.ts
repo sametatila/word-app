@@ -5,10 +5,10 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
 import { buildExam, COUNTS as EXAM_COUNTS, examHistory, finishExam, modulePrereq, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
 import { moduleExamPlan, hasModuleExams } from "@/lib/conversations/module-exam";
-import { LEVEL_SECONDS, MODULE_SECONDS, SECTION_ORDER } from "@/lib/exam-types";
+import { LEVEL_SECONDS, MODULE_SECONDS } from "@/lib/exam-types";
 import { localiseExam, nativeExamText } from "@/lib/conversations/native-server";
 import { nativeOf, targetLangOf } from "@/lib/courses";
-import { buildAnswerKey, sealKey, openKeyFor, gradeObjective, resolveSpokenWritten, blindPaper, objectiveReview, type ExamResponses } from "@/lib/exam-grade";
+import { buildAnswerKey, sealKey, openKey, gradeObjective, resolveSpokenWritten, blindPaper, objectiveReview, type ExamResponses, type SectionCount } from "@/lib/exam-grade";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type Answer, type GameId } from "@/lib/types";
@@ -24,9 +24,7 @@ const SECTIONS = new Set<ExamSectionId>(["vocab", "grammar", "produce", "reading
  *   GET                                  → geçmiş sınavlar
  *   GET ?level=A1&module=2               → kâğıdın KAPAĞI (kâğıdın kendisi değil)
  *   POST {action:"start", level, module?} → kâğıt
- *   POST {action:"finish", level, module?, keyToken, responses, writingScoreToken?, speakingScoreTokens?,
- *         sections (yalnız kelime doğrusu okunur), vocabAnswers?, seconds, day}
- *         keyToken/responses yoksa: eski sözleşme (sections + writingScore/speakingScore), sonuç doğrulanmamış
+ *   POST {action:"finish", level, module?, trial, sections, vocabAnswers?, writingScore?, speakingScore?, seconds, day}
  *
  * Kapak ayrı bir uç, çünkü sınav başlamadan önce gösterilen şey (hangi
  * modül, ne ölçüyor, kaç dakika) kâğıdın kendisini üretmeyi gerektirmemeli:
@@ -169,7 +167,7 @@ export async function POST(req: Request) {
       await track(userId, "exam_start", day, 0, `${paper.kind}:${level}`);
       // F7: nesnel cevap anahtarını mühürleyip istemciye opak keyToken olarak
       // ver — finish'te sunucu bununla puanlar (istemci sayısına güvenmeden).
-      const keyToken = sealKey(buildAnswerKey(paper, targetLangOf(profile.course), nativeOf(profile.nativeLang), userId));
+      const keyToken = sealKey(buildAnswerKey(paper, targetLangOf(profile.course), nativeOf(profile.nativeLang)));
       // Kör kâğıt (airtight): yeni istemci `blind:true` isteyince nesnel cevaplar
       // sıyrılır — cevaplar yalnız keyToken'da. Eski istemci bayrak göndermez →
       // tam kâğıt alır (geriye uyumlu, kendi sürümünde airtight olur).
@@ -181,14 +179,7 @@ export async function POST(req: Request) {
       const sections = raw
         .filter((s) => SECTIONS.has(s.id as ExamSectionId) && typeof s.total === "number" && typeof s.correct === "number")
         .map((s) => ({ id: s.id as ExamSectionId, correct: Math.max(0, Math.round(s.correct as number)), total: Math.max(0, Math.min(60, Math.round(s.total as number))) }));
-      const kind = moduleNo === null ? ("level" as const) : ("module" as const);
-      /* Anahtar bu kullanıcıya, bu türe/seviyeye/modüle bağlı ve süresi geçmemiş
-         olmalı (`openKeyFor`). Bağsız eski jeton ya da başka kâğıdın jetonu = yok. */
-      const keyToken = typeof body.keyToken === "string" ? body.keyToken : null;
-      const key = keyToken ? openKeyFor(keyToken, userId, { kind, level, module: moduleNo }) : null;
-      const responses =
-        body.responses && typeof body.responses === "object" && !Array.isArray(body.responses) ? (body.responses as ExamResponses) : null;
-      if (!sections.length && !(key && responses)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+      if (!sections.length) return NextResponse.json({ error: "bad_request" }, { status: 400 });
       const vocabAnswers: Answer[] = [];
       for (const a of (Array.isArray(body.vocabAnswers) ? body.vocabAnswers : []) as Record<string, unknown>[]) {
         if (typeof a.wordId !== "number" || typeof a.game !== "string" || !(a.game in GAME_LABEL_KEYS) || typeof a.correct !== "boolean") continue;
@@ -206,43 +197,42 @@ export async function POST(req: Request) {
         sections,
         vocabAnswers,
         writingScore: typeof body.writingScore === "number" ? Math.max(0, Math.min(100, body.writingScore)) : null,
-        speakingScore: typeof body.speakingScore === "number" ? Math.max(0, Math.min(100, body.speakingScore)) : null,
+speakingScore: typeof body.speakingScore === "number" ? Math.max(0, Math.min(100, body.speakingScore)) : null,
         seconds: typeof body.seconds === "number" ? Math.max(0, Math.min(3 * 3600, Math.round(body.seconds))) : 0,
       };
-      /*
-       * DOĞRULANMIŞ SINAV — güvenlik denetimi F7, 2026-10-03'te kapandı (O1).
-       *
-       * Geçerli anahtar + ham seçimler (responses) geldiyse bölümler BÜTÜNÜYLE
-       * sunucuda kuruluyor: hangi bölümün var olduğu ve toplamı kâğıttan,
-       * nesnel doğrular cevap anahtarından, yazma/konuşma imzalı jetonlardan.
-       * İstemcinin `sections` listesinden yalnız kelime doğrusu okunuyor (SRS
-       * oyunu, bulanık eşleşme; toplamla sınırlı). Böylece istemci zayıf bir
-       * bölümü göndermeyip ağırlığını ötekilere dağıtamıyor.
-       *
-       * Yazma jetonu yoksa (değerlendirme düştü, istemci yerel tahmin gösterdi)
-       * ya da anahtar/seçimler yoksa (keyToken göndermeyen eski mobil istemci)
-       * sonuç kaydediliyor ama DOĞRULANMAMIŞ: sertifika, modül tacı ve seviye
-       * geçişi vermiyor. Önceden istemcinin saydığı "C1 %100" tek istekle
-       * geçmiş sınav ve sertifika oluyordu.
-       */
-      let verified = false;
-      if (key && responses) {
-        const graded = gradeObjective(key, responses);
-        const sw = resolveSpokenWritten(key, userId, body.writingScoreToken, body.speakingScoreTokens);
-        const clientVocab = sections.find((s) => s.id === "vocab")?.correct ?? 0;
-        const totals: Record<ExamSectionId, { correct: number; total: number }> = {
-          vocab: { correct: Math.min(clientVocab, key.vocabTotal), total: key.vocabTotal },
+      // NESNEL BÖLÜMLER SUNUCUDA PUANLANIR — güvenlik denetimi F7 (kalıntı kapatma).
+      // start'ta mühürlenen keyToken + istemcinin ham seçimleri (responses) geldiyse
+      // dilbilgisi/okuma/dinleme/üretim puanı burada, cevap anahtarına karşı yeniden
+      // hesaplanır; istemcinin gönderdiği doğru/toplam sayıları YOK SAYILIR. keyToken
+      // geçersiz/eksikse (eski mobil istemci) sınırlı istemci-sayımına düşülür —
+      // geriye uyumlu. (Kelime SRS-bulanık: istemci-sayımı kalır; yazma/konuşma
+      // AI-rubriği.)
+      const keyToken = typeof body.keyToken === "string" ? body.keyToken : null;
+      const key = keyToken ? openKey(keyToken) : null;
+      if (key && body.responses && typeof body.responses === "object" && !Array.isArray(body.responses)) {
+        const graded = gradeObjective(key, body.responses as ExamResponses);
+        const override: Partial<Record<ExamSectionId, SectionCount>> = {
           grammar: graded.grammar,
-          produce: graded.produce,
           reading: graded.reading,
           listening: graded.listening,
-          speaking: { correct: 0, total: key.speakingIds.length },
-          writing: { correct: 0, total: key.writingIds.length },
+          produce: graded.produce,
         };
-        sub.sections = SECTION_ORDER.filter((id) => totals[id].total > 0).map((id) => ({ id, ...totals[id] }));
-        sub.speakingScore = sw.speakingScore;
+        sub.sections = sub.sections.map((s) => (override[s.id] ? { id: s.id, ...override[s.id]! } : s));
+        // İstemci bir nesnel bölümü hiç göndermeyip puanından kaçamasın: anahtarda
+        // olup gönderilmemiş her bölümü (total>0) ekle.
+        for (const id of ["grammar", "reading", "listening", "produce"] as ExamSectionId[]) {
+          const o = override[id];
+          if (o && o.total > 0 && !sub.sections.some((s) => s.id === id)) sub.sections.push({ id, ...o });
+        }
+      }
+      // YAZMA/KONUŞMA skoru da sunucuda doğrulanır — F7 kalıntısı. assess/pronounce
+      // puanı imzalıyor (scoreToken); istemci relay ediyor. Jeton geçerli + bu
+      // sınavın maddesine bağlıysa istemcinin ham writingScore/speakingScore'u
+      // yerine İMZALI skor kullanılır. Jeton yoksa istemci skoru kalır (eski istemci).
+      if (key) {
+        const sw = resolveSpokenWritten(key, userId, body.writingScoreToken, body.speakingScoreTokens);
         if (sw.writingScore !== null) sub.writingScore = sw.writingScore;
-        verified = key.writingIds.length === 0 || sw.writingScore !== null;
+        if (sw.speakingScore !== null) sub.speakingScore = sw.speakingScore;
       }
       // Kelime cevapları SRS'e: sınav da bir tekrar (hatalar tipleriyle).
       if (vocabAnswers.length) await submitAnswers(userId, vocabAnswers, day, Math.min(sub.seconds, 3600));
@@ -251,10 +241,10 @@ export async function POST(req: Request) {
       // ön koşulsuz bir "geçti"yi roadmap tacına saydıramaz.
       const trial =
         moduleNo === null ? false : !(await modulePrereq(userId, profile.course ?? "de", level as CefrLevel, moduleNo));
-      const result = await finishExam(userId, { kind, level, module: moduleNo, trial }, sub, day, { verified });
+      const result = await finishExam(userId, { kind: moduleNo === null ? "level" : "module", level, module: moduleNo, trial }, sub, day);
       // Kör modda istemci döküm/review'ı kâğıttan kuramaz (cevaplar yoktu);
       // sunucu doğru cevapları BİTİŞTE döndürüyor (artık sömürüye yaramaz).
-      return NextResponse.json(key && responses ? { ...result, review: objectiveReview(key) } : result);
+      return NextResponse.json(key ? { ...result, review: objectiveReview(key) } : result);
     }
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   } catch (err) {

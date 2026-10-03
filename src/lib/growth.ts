@@ -1,3 +1,5 @@
+import { CONVERSATION_PASS_RATIO } from "@/lib/conversations/chat-const";
+import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
 import "server-only";
 import { and, asc, eq, gte, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -154,7 +156,7 @@ export async function growthReport(
   const [firstGoodWriting] = await db
     .select({ at: assessments.createdAt })
     .from(assessments)
-    .where(and(eq(assessments.userId, userId), eq(assessments.kind, "writing"), sql`(${assessments.result}->'score'->>'overall')::int >= 70`))
+    .where(and(eq(assessments.userId, userId), eq(assessments.kind, "writing"), sql`(${assessments.result}->'score'->>'overall')::int >= ${RUBRIC_PASS_PCT}`))
     .orderBy(asc(assessments.createdAt))
     .limit(1);
   if (firstGoodWriting) milestones.push({ at: firstGoodWriting.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_good_writing") });
@@ -189,7 +191,7 @@ export async function weeklySummary(
     .from(userSkills)
     .where(and(eq(userSkills.userId, userId), gte(userSkills.lastAt, from), sql`${userSkills.lastAt} < ${to}`));
   const [{ conversationsPassed }] = await db
-    .select({ conversationsPassed: sql<number>`count(*) filter (where ${userConversations.chatDone} and ${userConversations.correct}::float / nullif(${userConversations.total}, 0) >= 0.7)::int` })
+    .select({ conversationsPassed: sql<number>`count(*) filter (where ${userConversations.chatDone} and ${userConversations.correct}::float / nullif(${userConversations.total}, 0) >= ${CONVERSATION_PASS_RATIO})::int` })
     .from(userConversations)
     .where(and(eq(userConversations.userId, userId), gte(userConversations.lastAt, from), sql`${userConversations.lastAt} < ${to}`));
   const [top] = await db

@@ -789,7 +789,7 @@ export const trBase: Record<string, string> = {
   "exam.level_exam": "{level} seviye sınavı",
   "exam.module_exam": "{level} · Modül {n} sınavı",
   "exam.could_not_load": "Sınav yüklenemedi.",
-  "exam.trial_notice": "Bu bir deneme: modül konuşmalarının %80'i geçilmediği için sonuç sayılmaz.",
+  "exam.trial_notice": "Bu bir deneme: modül konuşmalarının %60'ı geçilmediği için sonuç sayılmaz.",
   "exam.independent_note": "Bu sınavı Lernomi hazırladı; hiçbir sınav kurumuyla bağlantılı değildir ve resmî bir sertifika yerine geçmez.",
   "exam.passed": "Geçtin",
   "exam.quit_title": "Sınavı bırakmak istiyor musun?",

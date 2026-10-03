@@ -2055,7 +2055,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    */
   /* `MIN_CONFIDENCE` 2026-09-27'de listeden çıktı: web tarafındaki sahibi
      `pocket-mic` (tanıyıcısız tarayıcının sunucu yedeği) silindi. */
-  const BELIRSIZ = ["DANGER_SECONDS", "MAX_CHARS", "MAX_TARGET", "PAGE_SIZE", "PASS_RATIO"];
+  /* PASS_RATIO 2026-10-03'te cikti: cando-progress'in yerel kopyasi `CONVERSATION_PASS_RATIO`a baglandi. */
+  const BELIRSIZ = ["DANGER_SECONDS", "MAX_CHARS", "MAX_TARGET", "PAGE_SIZE"];
   /* Dizge tarafinin belirsizleri: iki ayri "kapat" anahtari ve iki saglayicinin
      jeton adresi. Genel adlar (KEY, PREFIX) zaten GENERIC'te. */
   const BELIRSIZ_DIZGE = ["DISMISS_KEY", "TOKEN_URL"];
@@ -6967,19 +6968,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const mob = strip(read("mobile/src/game/rounds.tsx")).replace(/\s+/g, " ");
   const web = strip(read("src/components/games/free-sentence-game.tsx")).replace(/\s+/g, " ");
 
-  /* Kalite esigi tablosu: 90/70/40 -> 5/4/3/2. Iki tarafta da AYNI. */
+  /* Kalite esigi tablosu: 90/RUBRIK/40 -> 5/4/3/2. Iki tarafta da AYNI. Dogru esigi rubrik
+     gecme notu `RUBRIC_PASS_PCT` (%60, serbest yazmayla ayni; 2026-10-03'e dek elle 70). */
   const esik = (src) => {
-    const m = src.match(/(\w+) >= 90 \? 5 : \1 >= 70 \? 4 : \1 >= 40 \? 3 : 2/);
-    return m ? "90/70/40" : "baska";
+    const m = src.match(/(\w+) >= 90 \? 5 : \1 >= RUBRIC_PASS_PCT \? 4 : \1 >= 40 \? 3 : 2/);
+    return m ? "90/rubrik/40" : "baska";
   };
   const yedekKalite = (src) => (/quality: correct \? 3 : 2/.test(src) ? "en fazla 3" : "baska");
   const durum = (src) => [
     "kalite esikleri=" + esik(src),
-    "dogru esigi=" + (/>= 70/.test(src) ? "70" : "baska"),
+    "dogru esigi=" + (/correct: \w+ >= RUBRIC_PASS_PCT/.test(src) ? "rubrik" : "baska"),
     "yedek kalitesi=" + yedekKalite(src),
     "yedek puanlama=" + (/fallbackAssessment\(/.test(src) ? "var" : "yok"),
   ];
-  const beklenen = ["kalite esikleri=90/70/40", "dogru esigi=70", "yedek kalitesi=en fazla 3", "yedek puanlama=var"];
+  const beklenen = ["kalite esikleri=90/rubrik/40", "dogru esigi=rubrik", "yedek kalitesi=en fazla 3", "yedek puanlama=var"];
   sameList("serbest cumle turu", durum(mob), durum(web));
   sameList("mobil serbest cumle", durum(mob), beklenen, "bulunan", "beklenen");
   sameList("web serbest cumle", durum(web), beklenen, "bulunan", "beklenen");
@@ -16421,8 +16423,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         yer("mobil oynatici", "mobile/src/screens/ItemScreen.tsx"),
       ],
       [
-        "web sabit=70",
-        "mobil sabit=70",
+        /* %60 (2026-10-03'e dek %70): her gecme esigiyle ayni, docs/plan/level-progress.md. */
+        "web sabit=60",
+        "mobil sabit=60",
         "sunucu kapisi=kaynaktan",
         "web liste=kaynaktan",
         "web oynatici=kaynaktan",

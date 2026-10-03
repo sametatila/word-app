@@ -214,7 +214,7 @@ export const trWeb: Record<string, string> = {
    * dayatıyordu. Artık kararlı kimlik + sözlük.
    */
   "growth.first_exam": "İlk sınav: {score} puan",
-  "growth.first_good_writing": "İlk 70+ puanlı yazı",
+  "growth.first_good_writing": "İlk 60+ puanlı yazı",
   "growth.first_conversation": "İlk konuşma adımı sohbetiyle tamamlandı",
   "growth.last_week": "Geçen hafta: {parts}.",
   "growth.first_placement": "Seviye testi: {level} önerildi",

@@ -1570,12 +1570,12 @@ function ResultView({
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                   <Text variant="body">{GOAL_KEYS[g.goal] ? t(GOAL_KEYS[g.goal]) : g.goal}</Text>
                   {/* Açık bölümde hedef de görev ortalaması: sayı değil yüzde. */}
-                  <Text variant="bodyStrong" color={pct >= 70 ? colors.successText : pct >= 50 ? colors.text : colors.dangerText}>
+                  <Text variant="bodyStrong" color={pct >= MOCK_PASS_PCT ? colors.successText : pct >= 50 ? colors.text : colors.dangerText}>
                     {openPart ? formatPercent(pct) : `${g.correct}/${g.total}`}
                   </Text>
                 </View>
                 <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: spacing.xs }}>
-                  <View style={{ height: 4, borderRadius: 2, width: `${pct}%`, backgroundColor: pct >= 70 ? colors.success : pct >= 50 ? colors.primary : colors.danger }} />
+                  <View style={{ height: 4, borderRadius: 2, width: `${pct}%`, backgroundColor: pct >= MOCK_PASS_PCT ? colors.success : pct >= 50 ? colors.primary : colors.danger }} />
                 </View>
               </View>
             );

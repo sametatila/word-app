@@ -20,7 +20,7 @@ import { promptFit } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, CloseIcon, CorrectIcon, WrongIcon, SpeakerIcon } from "../ui/icons";
 import { haptic } from "../lib/haptics";
-import { MIN_FREE_WORDS } from "../lib/learningRules";
+import { MIN_FREE_WORDS, RUBRIC_PASS_PCT } from "../lib/learningRules";
 import { sfx, sfxDurationMs } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
 import { EnterView } from "../ui/EnterView";
@@ -886,8 +886,8 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
  * kelimeler. Hakem `/api/assess` rubriği; sağlayıcı yoksa kural tabanlı yedek
  * (`lib/assessFallback`) ve kartın üstünde "AI kapalı" satırı.
  *
- * SRS EŞLEMESİ WEB İLE BİREBİR: overall >= 90 → 5, >= 70 → 4 (doğru),
- * 40-69 → 3 (yanlış ama lapse yok), < 40 → 2. Yedekte kalite 3'ü aşmaz,
+ * SRS EŞLEMESİ WEB İLE BİREBİR: overall >= 90 → 5, >= RUBRIC_PASS_PCT (60) → 4 (doğru),
+ * 40-59 → 3 (yanlış ama lapse yok), < 40 → 2. Yedekte kalite 3'ü aşmaz,
  * çünkü yedek dilbilgisini ölçemiyor. İki uygulamanın aynı cevaba farklı
  * kalite vermesi, aynı kelimenin telefonda ve tarayıcıda farklı zamanda
  * tekrara düşmesi demek olurdu.
@@ -952,10 +952,10 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
       });
       setAssessId(d.id ?? null);
       const overall = d.result?.score?.overall ?? 0;
-      const quality = overall >= 90 ? 5 : overall >= 70 ? 4 : overall >= 40 ? 3 : 2;
+      const quality = overall >= 90 ? 5 : overall >= RUBRIC_PASS_PCT ? 4 : overall >= 40 ? 3 : 2;
       setResult(d.result);
-      setOutcome({ correct: overall >= 70, quality });
-      markAnswer(overall >= 70);
+      setOutcome({ correct: overall >= RUBRIC_PASS_PCT, quality });
+      markAnswer(overall >= RUBRIC_PASS_PCT);
     } catch (e) {
       /* Sebebi SÖYLENİYOR (premium kapısı, kota, kapalı servis, zaman aşımı) ve
          yanına yedeğin yedek olduğu yazılıyor — web `AssessmentCard` `failure`

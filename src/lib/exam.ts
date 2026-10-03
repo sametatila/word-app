@@ -1,3 +1,4 @@
+import { CONVERSATION_PASS_RATIO } from "@/lib/conversations/chat-const";
 import "server-only";
 import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -68,7 +69,7 @@ import { nativeOf, type NativeLang } from "@/lib/courses";
  * bunu söylüyor, madde sayısı değil.
  *
  * **Geçme:** toplam ≥ %60 ve hiçbir bölüm < %50 (2026-10-03'e dek %70). Ön koşul: modül konuşmalarının
- * ≥ %80'i geçilmiş; değilse sınav "deneme" (sayılmaz, sertifika yok).
+ * ≥ %60'ı geçilmiş; değilse sınav "deneme" (sayılmaz, sertifika yok).
  *
  * Maddeler tohumlu: aynı kullanıcı, aynı sınav, aynı hafta → aynı kâğıt.
  */
@@ -127,7 +128,7 @@ export async function modulePrereq(userId: string, course: string, level: CefrLe
     .select({ conversationId: userConversations.conversationId, correct: userConversations.correct, total: userConversations.total, chatDone: userConversations.chatDone })
     .from(userConversations)
     .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, chunk.map((l) => l.id))));
-  const passed = rows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= 0.7).length;
+  const passed = rows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= CONVERSATION_PASS_RATIO).length;
   return passed / chunk.length >= MODULE_PREREQ;
 }
 
@@ -377,23 +378,10 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   };
 }
 
-/**
- * `verified`: bölümler sunucuda, mühürlü anahtara karşı puanlandı mı (bkz.
- * `api/exam` finish). Doğrulanmamış kayıt `answers.verified = false` taşıyor
- * ve okuyan her yer onu deneme gibi sayıyor: sertifika yok, modül tacı yok,
- * seviye geçişi yok (güvenlik denetimi 2026-10-03, O1). Alanı olmayan eski
- * kayıtlar doğrulanmış sayılıyor — değiştirilmiş kayıt geriye dönük yazılamaz.
- */
-export async function finishExam(
-  userId: string,
-  paper: Pick<ExamPaper, "kind" | "level" | "module" | "trial">,
-  sub: ExamSubmission,
-  day: string,
-  opts: { verified: boolean },
-): Promise<ExamResult> {
+export async function finishExam(userId: string, paper: Pick<ExamPaper, "kind" | "level" | "module" | "trial">, sub: ExamSubmission, day: string): Promise<ExamResult> {
   const { sections, total, passed } = scoreSections(sub, paper.kind);
   const key = examKindKey(paper.kind, paper.level, paper.module);
-  const answers = { sections, passed, trial: paper.trial, verified: opts.verified, seconds: sub.seconds, vocab: sub.vocabAnswers ?? [] };
+  const answers = { sections, passed, trial: paper.trial, seconds: sub.seconds, vocab: sub.vocabAnswers ?? [] };
   const correct = Math.round(sections.reduce((a, s) => a + s.correct, 0));
   const items = sections.reduce((a, s) => a + s.total, 0);
   const [row] = await db
@@ -405,9 +393,7 @@ export async function finishExam(
     })
     .returning({ id: exams.id, at: exams.createdAt });
   await track(userId, "exam_finish", day, total, `${paper.kind}:${paper.level}`);
-  /* İstemciye `trial` "sayılmaz" anlamında gidiyor: doğrulanmamış sonuç da
-     sertifika düğmesi göstermesin (eski istemciler `verified`'ı bilmiyor). */
-  return { id: row.id, kind: paper.kind, level: paper.level, module: paper.module, trial: paper.trial || !opts.verified, sections, total, passed, at: row.at.toISOString() };
+  return { id: row.id, kind: paper.kind, level: paper.level, module: paper.module, trial: paper.trial, sections, total, passed, at: row.at.toISOString() };
 }
 
 export async function examHistory(userId: string, limit = 10): Promise<ExamResult[]> {
@@ -419,8 +405,8 @@ export async function examHistory(userId: string, limit = 10): Promise<ExamResul
     .limit(limit);
   return rows.map((r) => {
     const [kind, level, mod] = r.kind.split(":");
-    const a = r.answers as { sections: SectionScore[]; passed: boolean; trial: boolean; verified?: boolean };
-    return { id: r.id, kind: kind as ExamKind, level: level as CefrLevel, module: mod ? Number(mod) : null, trial: Boolean(a?.trial) || a?.verified === false, sections: a?.sections ?? [], total: r.score, passed: Boolean(a?.passed), at: r.createdAt.toISOString() };
+    const a = r.answers as { sections: SectionScore[]; passed: boolean; trial: boolean };
+    return { id: r.id, kind: kind as ExamKind, level: level as CefrLevel, module: mod ? Number(mod) : null, trial: Boolean(a?.trial), sections: a?.sections ?? [], total: r.score, passed: Boolean(a?.passed), at: r.createdAt.toISOString() };
   });
 }
 
@@ -442,8 +428,8 @@ export async function passedModuleExams(userId: string): Promise<Map<string, num
     .where(and(eq(exams.userId, userId), sql`${exams.kind} like 'module:%'`));
   const out = new Map<string, number>();
   for (const r of rows) {
-    const a = r.answers as { passed?: boolean; trial?: boolean; verified?: boolean } | null;
-    if (!a?.passed || a.trial || a.verified === false) continue;
+    const a = r.answers as { passed?: boolean; trial?: boolean } | null;
+    if (!a?.passed || a.trial) continue;
     const [, level, mod] = r.kind.split(":");
     const key = `${level}:${Number(mod)}`;
     out.set(key, Math.max(out.get(key) ?? 0, r.score));

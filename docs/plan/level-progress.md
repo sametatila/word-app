@@ -43,6 +43,26 @@ ve üretimden (sınavın konuşma/yazma ağırlığı) gelir. Hiçbir şey kilit
    açık kalır. Doğrulandı (2026-10-03): tur kurulumunun tekrar tabanı (`lib/session` "zamanı gelen
    kelimeler") seviyeye göre süzmüyor; seviye değişince yalnız YENİ kelimelerin seviyesi değişir.
 
+## Eşik hizalaması (2026-10-03)
+
+İlke: "geçti / bitti / yeterli" kararlarının hepsi %60 (CEFR sınavlarının geçme eşiği). Değişenler:
+
+| Kural | Eski | Yeni | Neden |
+|---|---|---|---|
+| Seviye ve modül sınavı toplam | %70 | **%60** | Goethe/telc/ÖSD; bölüm alt sınırı %50 kaldı |
+| Konuşma "geçildi" (ilk denemede isabet) `CONVERSATION_PASS_RATIO` | %70 | **%60** | 3 puanlı adımda %70 fiilen 3/3 = kusursuz demekti (174 konuşma) |
+| Beceri egzersizi "bitti" `SKILL_DONE_PCT` | %70 | **%60** | Tek kalan %70'lik "geçti" kararıydı; %65 alan okuma Patika'da bitmemiş görünüyordu |
+| Modül sınavının ön koşulu `MODULE_PREREQ` | %80 | **%60** | Hazırlık ve geçme eşikleriyle aynı |
+| Serbest cümle "doğru" (rubrik) | elle 70 | **`RUBRIC_PASS_PCT` %60** | Serbest yazma zaten %60'ta geçiyordu; aynı rubrik iki çıta |
+| Yeterlik bandı "sağlam" | 70 | **60** | Sınavı geçen "gelişiyor" görünüyordu |
+| Deneme sınavı bölüm çubuğu yeşili | elle 70 | **`MOCK_PASS_PCT` %60** | Geçen bölüm yeşil görünmüyordu |
+| Yapabildiklerim kanıtı, başarımlar, gelişim sayıları | elle 70/0,7 | **sabitlerden** | Satır içi kopyalar ayrışmasın |
+
+Bilerek DEĞİŞMEYENLER: telaffuz geçme puanı 80 (bileşik puan; 70'te bir kelimeyi tamamen atlayan
+geçiyordu, `test:pronounce`), tur kutlaması %80 doğruluk (geçme değil, iyi tura ödül), haftalık sınav
+"güçlü" bandı %90 ve deneme geri bildiriminde "güçlü yön" %80 (gösterim), pekişmiş = 21 gün (tekrar
+aralığı), ilk hafta önerisi %90/%50 (tasarım), eski 4 aşamalı yerleştirme %75 (yalnız build ≤ 17).
+
 ## Bilinen eksik: İngilizce bankası çekirdeği tam kapsamıyor
 
 Analiz (2026-10-03): Oxford çekirdeğinin bankada olmayanları A1 137, A2 178, B1 266, B2 690, C1 851

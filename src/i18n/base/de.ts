@@ -789,7 +789,7 @@ export const deBase: Record<string, string> = {
   "exam.level_exam": "Prüfung Niveau {level}",
   "exam.module_exam": "{level} · Modulprüfung {n}",
   "exam.could_not_load": "Die Prüfung konnte nicht geladen werden.",
-  "exam.trial_notice": "Das ist ein Probelauf: Das Ergebnis zählt erst, wenn 80 % der Sprechen-Schritte des Moduls bestanden sind.",
+  "exam.trial_notice": "Das ist ein Probelauf: Das Ergebnis zählt erst, wenn 60 % der Sprechen-Schritte des Moduls bestanden sind.",
   "exam.independent_note": "Diese Prüfung hat Lernomi erstellt; sie ist mit keinem Prüfungsanbieter verbunden und ersetzt kein offizielles Zertifikat.",
   "exam.passed": "Bestanden",
   "exam.quit_title": "Prüfung verlassen?",
