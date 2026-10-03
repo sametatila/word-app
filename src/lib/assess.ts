@@ -174,6 +174,15 @@ function productionKind(kind: AssessRequest["kind"]): string {
   }
 }
 
+/** Kullanıcının kuyrukta bekleyen (henüz puanlanmamış) değerlendirme sayısı. */
+export async function pendingAssessments(userId: string): Promise<number> {
+  const [row] = await db
+    .select({ n: sql<number>`count(*)::int` })
+    .from(assessments)
+    .where(and(eq(assessments.userId, userId), isNull(assessments.result)));
+  return row?.n ?? 0;
+}
+
 /**
  * Kuyruğa al (WP-30): sağlayıcı yokken yazma metni kaybolmasın. Satır
  * `result = null` ile yazılır; `runAssessQueue` servis dönünce puanlar.
@@ -231,7 +240,14 @@ export async function runAssessQueue(limit = 20): Promise<{ pending: number; don
         )`,
       ),
     )
-    .orderBy(assessments.createdAt)
+    /* KULLANICILAR ARASINDA SIRAYLA (güvenlik denetimi 2026-10-03, O8): önce
+       herkesin en eski satırı, sonra ikincisi… Düz "en eski önce" sırasında
+       çok satır bırakan bir hesap günlük yirmilik işi tek başına tüketip
+       ötekilerin değerlendirmesini süresiz bekletiyordu. */
+    .orderBy(
+      sql`(select count(*) from ${assessments} as onceki where onceki.user_id = ${assessments.userId} and onceki.result is null and onceki.created_at < ${assessments.createdAt})`,
+      assessments.createdAt,
+    )
     .limit(limit);
   if (!rows.length) return { pending: 0, done: 0, failed: 0 };
   if (!chatConfigured()) return { pending: rows.length, done: 0, failed: 0 };
