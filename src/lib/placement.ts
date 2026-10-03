@@ -9,6 +9,8 @@ import { track } from "@/lib/events";
 import { scorePlacement, type PlacementAnswer, type PlacementResult } from "@/lib/placement-score";
 import { glossFor, sharesMeaning } from "@/lib/option-label";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
+import { LEVELS as V2_LEVELS, adjustable, newSession, result as v2Result, type Level, type Response, type VocabCard } from "@/lib/placement-engine";
+import { PLACEMENT_BANK } from "@/lib/placement-bank";
 
 /**
  * Yerleştirme testi — madde bankası ve kayıt (plan WP-40).
@@ -184,6 +186,69 @@ export async function lastPlacement(userId: string): Promise<PlacementRecord | n
     perSkill: row.perSkill as PlacementResult["perSkill"],
     score: row.score,
   };
+}
+
+/**
+ * SEVİYE TESTİ v2 KAYDI (docs/plan/placement-v2.md).
+ *
+ * Test istemcide çözülüyor (misafir de çözebilsin, çevrimdışı da çalışsın); sunucu cevapları
+ * ALIP sonucu aynı motorla YENİDEN hesaplıyor, istemcinin söylediği seviyeye güvenmiyor.
+ * Kabul edilen seviye yalnız önerilen ya da bir altı/üstü (sonuç ekranının seçenekleri); daha
+ * uzağı Ayarlar'dan. Cevaplar madde kalibrasyonu için saklanıyor (plan, Doğrulama 4).
+ */
+export type PlacementV2Input = {
+  lang: "de" | "en";
+  self: Level;
+  audio: boolean;
+  /** Oturumda gösterilen kartlar → biliyorum. */
+  known: Record<string, boolean>;
+  responses: Response[];
+  accepted?: Level | null;
+};
+
+export function parsePlacementV2(body: Record<string, unknown>): PlacementV2Input | null {
+  const lang = body.lang;
+  if (lang !== "de" && lang !== "en") return null;
+  const bank = PLACEMENT_BANK[lang];
+  const cardIds = new Set(bank.cards.map((c) => c.id));
+  const itemIds = new Set(bank.items.map((i) => i.id));
+  if (!V2_LEVELS.includes(body.self as Level)) return null;
+  const knownRaw = body.known && typeof body.known === "object" ? (body.known as Record<string, unknown>) : {};
+  const known: Record<string, boolean> = {};
+  for (const [id, v] of Object.entries(knownRaw).slice(0, 60)) if (cardIds.has(id) && typeof v === "boolean") known[id] = v;
+  const raw = Array.isArray(body.responses) ? (body.responses as Record<string, unknown>[]).slice(0, 20) : [];
+  const responses: Response[] = [];
+  const seen = new Set<string>();
+  for (const r of raw) {
+    const id = typeof r?.id === "string" ? r.id : "";
+    if (!itemIds.has(id) || seen.has(id)) continue;
+    const choice = r.choice === "dontknow" ? "dontknow" : Number.isInteger(r.choice) ? (r.choice as number) : null;
+    if (choice === null) continue;
+    seen.add(id);
+    responses.push({ id, choice });
+  }
+  const accepted = V2_LEVELS.includes(body.accepted as Level) ? (body.accepted as Level) : null;
+  return { lang, self: body.self as Level, audio: body.audio !== false, known, responses, accepted };
+}
+
+export async function recordPlacementV2(userId: string, input: PlacementV2Input, day: string): Promise<PlacementRecord> {
+  const bank = PLACEMENT_BANK[input.lang];
+  const cards: VocabCard[] = bank.cards.filter((c) => c.id in input.known);
+  const s = newSession(input.self, cards, input.known, input.audio);
+  s.responses = input.responses;
+  const r = v2Result(s, bank.items);
+  const byId = new Map(bank.items.map((i) => [i.id, i]));
+  const correct = input.responses.filter((x) => x.choice === byId.get(x.id)?.answer).length;
+  const score = input.responses.length ? Math.round((100 * correct) / input.responses.length) : 0;
+  const accepted = input.accepted && adjustable(r.level).includes(input.accepted) ? input.accepted : null;
+  const perSkill = { v: 2, theta: Math.round(r.theta * 100) / 100, sd: Math.round(r.sd * 100) / 100, confidence: Math.round(r.confidence * 100) / 100, near: r.near, self: input.self, items: r.items };
+  const [row] = await db
+    .insert(placements)
+    .values({ userId, suggested: r.level, accepted, perSkill, answers: { v: 2, lang: input.lang, self: input.self, audio: input.audio, known: input.known, responses: input.responses }, score })
+    .returning({ id: placements.id, at: placements.at });
+  if (accepted) await db.update(profiles).set({ level: accepted }).where(eq(profiles.userId, userId));
+  await track(userId, "placement_finish", day, score, `v2:${r.level}`);
+  return { id: row.id, at: row.at.toISOString(), suggested: r.level as CefrLevel, accepted: accepted as CefrLevel | null, perSkill: perSkill as unknown as PlacementResult["perSkill"], score };
 }
 
 /** Yeniden alma sıklığı: 30 gün. Sık tekrar seviye tahminini "ezber"e çevirir. */

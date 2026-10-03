@@ -107,8 +107,10 @@ const STAGE_LABEL_KEYS: Record<PlacementStage, string> = {
 };
 
 export function describePerSkill(perSkill: PlacementResult["perSkill"], t: (k: string) => string): string {
+  /* Yalnız bilinen dört beceri: seviye testi v2 kaydı aynı sütunda başka alanlar taşıyor
+     (theta, güven…; lib/placement `recordPlacementV2`) ve onlar beceri değil. */
   return (Object.keys(perSkill) as PlacementStage[])
-    .filter((s) => perSkill[s] !== undefined)
+    .filter((s) => s in STAGE_LABEL_KEYS && perSkill[s] !== undefined)
     .map((s) => `${t(STAGE_LABEL_KEYS[s])} ${perSkill[s] ?? t("plc.below_a1")}`)
     .join(" · ");
 }

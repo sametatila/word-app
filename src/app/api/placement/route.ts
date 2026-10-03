@@ -3,7 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile } from "@/lib/session";
 import { nativeOf } from "@/lib/courses";
-import { acceptPlacement, buildPlacement, finishPlacement, lastPlacement, RETAKE_DAYS } from "@/lib/placement";
+import { acceptPlacement, buildPlacement, finishPlacement, lastPlacement, parsePlacementV2, recordPlacementV2, RETAKE_DAYS } from "@/lib/placement";
 import { PLACEMENT_LEVELS, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { CefrLevel } from "@/lib/skills/types";
 
@@ -15,6 +15,10 @@ export const dynamic = "force-dynamic";
  *   POST {action:"start"}     → madde bankası (test)
  *   POST {action:"finish", answers, day} → sonuç (öneri, beceri başına)
  *   POST {action:"accept", id, level}    → seviye kabul edilir, profil güncellenir
+ *   POST {action:"record", lang, self, audio, known, responses, accepted?, day}
+ *        → seviye testi v2: sonuç sunucuda yeniden hesaplanır ve kaydedilir; `accepted`
+ *          önerilen ya da bir altı/üstüyse profile yazılır (lib/placement `recordPlacementV2`)
+ *   start/finish eski 4 aşamalı test: build 17 ve öncesi uygulamalar için duruyor.
  */
 export async function GET() {
   const userId = await getUserId();
@@ -59,6 +63,12 @@ export async function POST(req: Request) {
       if (!answers.length) return NextResponse.json({ error: "bad_request" }, { status: 400 });
       const day = typeof body.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(body.day) ? body.day : new Date().toISOString().slice(0, 10);
       return NextResponse.json(await finishPlacement(userId, answers, day));
+    }
+    if (body.action === "record") {
+      const input = parsePlacementV2(body);
+      if (!input || (!input.responses.length && !Object.keys(input.known).length)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+      const day = typeof body.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(body.day) ? body.day : new Date().toISOString().slice(0, 10);
+      return NextResponse.json(await recordPlacementV2(userId, input, day));
     }
     if (body.action === "accept") {
       const id = Number(body.id);
