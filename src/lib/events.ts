@@ -269,6 +269,50 @@ export function isEventName(name: string): name is EventName {
 }
 
 /**
+ * İSTEMCİNİN YAZABİLDİĞİ OLAYLAR (`api/events`). Geri kalanı yalnız sunucu
+ * yazıyor ve uç onları reddediyor (güvenlik denetimi 2026-10-03, O2).
+ *
+ * Neden ayrı liste: uyarı motoru (`lib/alerts`) bazı olayları İŞLETİM
+ * sinyali olarak okuyor. `mail_sent` + `verify:fail` "doğrulama postası
+ * gitmiyor" KRİTİK uyarısını, `push_deliver` teslim kesintisi uyarısını
+ * besliyor. Uç bütün sözlüğü kabul ederken herhangi bir oturum (misafir
+ * dahil) sahte kritik uyarı üretebiliyor ya da `push_deliver` yazıp gerçek
+ * bir kesintiyi susturabiliyordu; `trial_code_claim`, `exam_finish` gibi
+ * sunucunun olayları da huniye uydurma satır olarak girebiliyordu.
+ *
+ * Liste web (`lib/track`) ve mobil (`mobile/src/lib/track`) çağrılarının
+ * birleşimi; `npm run test:events` istemciden yazılan her adın burada
+ * olduğunu denetliyor. İstemciye yeni olay eklemek = buraya da eklemek.
+ */
+const CLIENT = new Set<EventName>([
+  "session_start", "session_resume", "stage_done", "session_done", "session_stop",
+  "challenge_play", "walk_start", "walk_end", "walk_listen", "walk_switch",
+  "boss_play", "boss_clear", "quest_claim", "achievement_unlock", "notif_prime",
+  "nav", "push_open", "sound_toggle", "invite_open", "share",
+  "production_attempt", "exam_start", "placement_finish", "feedback_why_opened",
+  "page_view", "time_spent", "app_open", "client_error", "panel_open",
+  "conversation_start", "conversation_step", "conversation_finish",
+  "onboarding_step", "first_practice", "first_practice_done", "onboarding_existing_account",
+  "coach_show", "tts_play", "tts_fallback", "search", "setting_change", "push_optin", "install_prompt",
+  "paywall_view", "premium_gate", "store_redirect", "purchase_start", "purchase_done",
+  "guest_start", "guest_nudge", "guest_upgrade",
+]);
+
+export function isClientEventName(name: string): name is EventName {
+  return CLIENT.has(name as EventName);
+}
+
+/**
+ * İstemcinin `value`su: tam sayı, 0 … 100 000. Meşru en büyük değer ekranda
+ * geçen saniye (`time_spent`, gözlenen en çok ~31 000); sınırsız değer
+ * panodaki toplamları tek satırla bozabiliyordu.
+ */
+export function clampClientValue(value: unknown): number {
+  const v = Math.round(Number(value));
+  return Number.isFinite(v) ? Math.max(0, Math.min(100_000, v)) : 0;
+}
+
+/**
  * `kind` etiketi: küçük harf, rakam, alt çizgi, iki nokta, tire; en çok 32
  * karakter. Bu bir serbest metin alanı DEĞİL — oyun adı, hata tipi, "level:B1"
  * gibi kapalı sözlük etiketleri için var. Uymayan değer sessizce düşer; olay

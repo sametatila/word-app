@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { clampDay } from "@/lib/award";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { isEventName, track } from "@/lib/events";
+import { clampClientValue, isClientEventName, track } from "@/lib/events";
+import { consume } from "@/lib/social/ratelimit";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +17,13 @@ export const dynamic = "force-dynamic";
  *
  * Cevap her zaman 204: ölçümün başarısız olması istemcide hiçbir şeyi
  * değiştirmemeli, hata gösterilecek bir şey de yok.
+ *
+ * Yalnız İSTEMCİ olayları (`isClientEventName`): sunucunun yazdığı işletim
+ * olayları (`mail_sent`, `push_deliver` …) buradan yazılamıyor, `value`
+ * sıkıştırılıyor ve hesap başına saatte 600 olay (gözlenen en yoğun kullanım
+ * bunun çok altında). Bkz. `lib/events` `CLIENT`.
  */
+const HOURLY = 600;
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   try {
@@ -24,8 +31,9 @@ export async function POST(req: Request) {
     if (!userId) return new NextResponse(null, { status: 204 });
     const body = (await req.json()) as { name?: string; day?: string; value?: number; kind?: string };
     const day = clampDay(body.day);
-    if (!body.name || !isEventName(body.name)) return new NextResponse(null, { status: 204 });
-    await track(userId, body.name, day, Number(body.value) || 0, body.kind);
+    if (!body.name || !isClientEventName(body.name)) return new NextResponse(null, { status: 204 });
+    if (!(await consume(`events:${userId}`, HOURLY, 3600)).ok) return new NextResponse(null, { status: 204 });
+    await track(userId, body.name, day, clampClientValue(body.value), body.kind);
   } catch {
     /* ölçüm sessizce düşer */
   }

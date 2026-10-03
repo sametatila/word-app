@@ -12,7 +12,7 @@
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { EVENT_NAMES } from "../src/lib/events";
+import { EVENT_NAMES, isClientEventName } from "../src/lib/events";
 
 const KIND_RE = /^[a-z0-9_:-]{1,32}$/i;
 const files: string[] = [];
@@ -65,6 +65,10 @@ for (const f of files) {
       continue;
     }
     seen.set(name, (seen.get(name) ?? 0) + 1);
+    // İstemci çağrısı (ilk bağımsız değişken ad): `api/events` yalnız
+    // `lib/events` CLIENT listesini kabul ediyor; listede olmayan ad
+    // sessizce 204 alır ve hiç yazılmaz.
+    if (/^\s*"/.test(args) && !isClientEventName(name)) problems.push(`${f}: istemciden yazılan "${name}" lib/events CLIENT listesinde yok`);
     // Sabit kind: son bağımsız değişken çift tırnaklı dize ise.
     const kind = args.match(/,\s*"([^"]*)"\s*$/)?.[1];
     if (kind !== undefined && !KIND_RE.test(kind)) problems.push(`${f}: kind biçimi bozuk "${kind}" (${name})`);
