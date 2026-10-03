@@ -42,8 +42,9 @@ export async function POST(req: Request) {
     writer = g.admin;
     email = g.admin.email;
   }
-  const res = await handle(req, { ok: true, email });
-  if (writer && res.status < 400) {
+  const res = await handle(req, { ok: true, email }, writer);
+  /* Silmenin kaydını `adminDeleteUser` kendisi yazıyor (betik yolu da kayda düşsün). */
+  if (writer && res.status < 400 && action !== "delete") {
     const target = [peek.userId, peek.refId, peek.doc, peek.id, peek.code].find((v) => typeof v === "string" || typeof v === "number");
     void logAdminAction(writer, `users.${action || "save"}`, target == null ? null : String(target), {
       ...(peek.locale ? { locale: peek.locale } : {}),
@@ -56,7 +57,7 @@ export async function POST(req: Request) {
   return res;
 }
 
-async function handle(req: Request, gate: { ok: true; email: string }): Promise<NextResponse> {
+async function handle(req: Request, gate: { ok: true; email: string }, writer: AdminWriter | null): Promise<NextResponse> {
 
   let body: Record<string, unknown>;
   try {
@@ -94,7 +95,8 @@ async function handle(req: Request, gate: { ok: true; email: string }): Promise<
         if (body.confirm !== userId || !DELETE_REASONS.includes(reason)) {
           return NextResponse.json({ error: "bad_input" }, { status: 400 });
         }
-        const r = await adminDeleteUser(userId, gate.email, reason);
+        if (!writer) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+        const r = await adminDeleteUser(userId, writer, reason);
         if (r === "not_found") return NextResponse.json({ error: "not_found" }, { status: 404 });
         return NextResponse.json({ ok: true });
       }
