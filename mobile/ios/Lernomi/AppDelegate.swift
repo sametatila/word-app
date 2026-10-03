@@ -82,7 +82,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window = window
     appDelegate.window = window
 
-    factory.startReactNative(withModuleName: "Lernomi", in: window, launchOptions: nil)
+    factory.startReactNative(
+      withModuleName: "Lernomi", in: window, launchOptions: Self.launchOptions(from: connectionOptions))
+  }
+
+  /* BAĞLANTILAR (Universal Link, özel şema) SAHNEYE geliyor, AppDelegate'e değil.
+     React Native'in `Linking`i adresi iki yoldan alıyor: soğuk açılışta köke verilen
+     `launchOptions` (`getInitialURL`), sıcakta `RCTLinkingManager`ın sınıf yöntemleri
+     (`url` olayı). İkisi de bağlanmadığı için iPhone'da e-postadaki parola sıfırlama
+     ve doğrulama bağlantıları uygulamayı açıp hiçbir şey yapmıyordu (güvenlik
+     denetimi 2026-10-03, O6). Adresin ne yaptığına JS karar veriyor
+     (`lib/deepLink`, devirde cihaza bağlı nonce); burada yalnız iletiliyor. */
+
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    for context in URLContexts {
+      RCTLinkingManager.application(UIApplication.shared, open: context.url, options: [:])
+    }
+  }
+
+  func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+    RCTLinkingManager.application(UIApplication.shared, continue: userActivity, restorationHandler: { _ in })
+  }
+
+  /// Soğuk açılışı getiren bağlantı, `RCTLinkingManager.getInitialURL`ın okuduğu
+  /// biçimde (AppDelegate dönemindeki `launchOptions` anahtarları).
+  private static func launchOptions(from options: UIScene.ConnectionOptions) -> [AnyHashable: Any]? {
+    if let url = options.urlContexts.first?.url {
+      return [UIApplication.LaunchOptionsKey.url: url]
+    }
+    if let activity = options.userActivities.first(where: {
+      $0.activityType == NSUserActivityTypeBrowsingWeb && $0.webpageURL != nil
+    }) {
+      return [
+        UIApplication.LaunchOptionsKey.userActivityDictionary: [
+          UIApplication.LaunchOptionsKey.userActivityType: NSUserActivityTypeBrowsingWeb,
+          "UIApplicationLaunchOptionsUserActivityKey": activity,
+        ] as [AnyHashable: Any],
+      ]
+    }
+    return nil
   }
 }
 
