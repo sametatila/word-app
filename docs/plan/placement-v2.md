@@ -1,6 +1,6 @@
 # Seviye testi v2 — onboarding'de doğru ve kısa ölçüm
 
-Durum: TASARIM ONAYLI (Samet, 2026-10-03), uygulama sürüyor. Aşamalar en altta.
+Durum (2026-10-03): aşama 1–5 kodda ve canlıda (web); mobil yeni build ile testçilere gider. Kalan: cihaz kontrolü ve testçilerle doğrulama (aşama 6), canlı kalibrasyon raporu.
 
 ## Neden
 
@@ -77,11 +77,13 @@ metni, sonuç becerilerin ALT ortancası → C1'lik biri B1'in üstüne zor çı
 4. **Canlıda kalibrasyon:** her cevap kaydedilir (madde, doğru/yanlış/bilmiyorum, süre). İlk haftanın
    başarısıyla karşılaştırılıp madde zorlukları düzeltilir (`npm run report:placement`).
 
-## İlk hafta düzeltmesi (emniyet ağı)
+## İlk hafta düzeltmesi (emniyet ağı, `lib/placement-nudge`)
 
-Hiçbir test tek seferde kusursuz değil. İlk 7 günde atanan seviyede ≥ 40 cevaptan sonra doğruluk
-≥ %92 ise bir üst seviye, ≤ %55 ise bir alt seviye BİR KEZ önerilir ("Çok kolay geliyor gibi,
-B2'ye geçelim mi?"). Kabul/ret kaydedilir.
+Hiçbir test tek seferde kusursuz değil. Başlangıçtan (son test ya da hesap açılışı) sonraki 10 gün
+içinde, kişinin SEVİYESİNDEKİ kelimelerle ≥ 30 İLK karşılaşmada doğruluk ≥ %90 ise bir üst, ≤ %50
+ise bir alt seviye BİR KEZ önerilir ("Çok kolay geliyor gibi, B2'ye geçelim mi?"). Toplam doğruluk
+kullanılmıyor: canlıda B1 kullanıcıları zaten %94, A1 %80 (tekrar doğruluğu seviye bilgisi değil).
+Karar `profiles.placement_nudge`; seviye yalnız kabulde değişir. Öğren ekranında kart (iki platform).
 
 ## Yapı
 
@@ -89,7 +91,8 @@ B2'ye geçelim mi?"). Kabul/ret kaydedilir.
 - Motor: `src/lib/placement-engine.ts` (saf TS) — `npm run placement:sync` mobil kopyayı
   (`mobile/src/lib/placementEngine.ts`) ve banka modüllerini üretir; `check:parity` birebir eşitliği denetler.
 - Misafir: banka uygulamanın içinde (çevrimdışı çalışır), sonuç ve cevaplar onboarding tercihlerine;
-  hesap açılınca sunucuya (`placements`, cevaplarla).
+  hesap açılınca sunucuya (`/api/placement` `record`: sonuç sunucuda aynı motorla yeniden hesaplanır,
+  `placements` cevaplarla). Eski start/finish/accept build 17 ve öncesi için duruyor.
 - Hesaplı yeniden alma (Ayarlar/Patika): aynı motor; 30 gün kuralı kalır.
 - Web: `/level-test` ve `/placement` aynı motora geçer.
 

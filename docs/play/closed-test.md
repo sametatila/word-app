@@ -15,4 +15,5 @@ yapılan değişiklikleri soruyor. Cevaplar buradan yazılır. Testçi adı yaz�
 
 | Tarih | Geri bildirim | Kaç testçi | Yapılan | Durum |
 |---|---|---|---|---|
+| 2026-10-03 | Seviye testi yanlış seviye veriyor ("B2 çıktı ama değilim", "B1 çıktı ama C1'im") | 3–4 | Sebep: onboarding testi 8 sabit soru ve doğru sayısıyla eşikti (şansla seviye atlıyor, C1 hiç çıkmıyor). Yerine uyarlanabilir test: öz değerlendirme, uydurma kelimeli kelime kartları, "Bilmiyorum"lu sorular, sonuçta "bu seviyede" listesi ve ±1 seçim, ilk hafta seviye önerisi. Benzetimde tam isabet %38 → %73, iki seviye sapma %7 → %0,4 (`docs/plan/placement-v2.md`) | Sonraki build'de; testçilerle doğrulanacak |
 | 2026-10-03 | Onboarding'de kendi dilini seçince uygulama karşılama ekranına geri atıyor | 2 | Sebep: dil değişince ekran yeni dilde baştan kuruluyor ve akışın adımı sıfırlanıyordu (cihaz dilinden farklı dil seçende). Adım ve seçimler artık yeniden kurulmada korunuyor; test `mobile/__tests__/onboardingLang.test.tsx` | Düzeltildi, sonraki build'de |
