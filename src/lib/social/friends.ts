@@ -122,6 +122,8 @@ export async function sendRequest(me: string, other: string): Promise<{ state: R
   }
   const rl = await limited("friendRequest", me);
   if (!rl.ok) throw new SocialError("rate_limited", 429, rl.retryAfterSec);
+  const perTarget = await limited("friendRequestPerTarget", me, other);
+  if (!perTarget.ok) throw new SocialError("rate_limited", 429, perTarget.retryAfterSec);
 
   let id: number;
   if (mine) {

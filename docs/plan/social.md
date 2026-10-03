@@ -54,7 +54,7 @@ Sayılar `src/lib/social/ratelimit.ts` `LIMITS` ile aynı tutulur.
 - Engel simetrik gizler; arkadaşlığı, bekleyen isteği, aktif görevi siler; engellenenden gelen bildirimleri kaldırır; arama/öneri/profil "bulunamadı"
 - Görünürlük: public / friends / private — `publicProfile` ve `searchUsers` uygular
 - Reddedilen istek 7 gün sonra yeniden (`declined_recent` 429); karşı taraf istemişse otomatik kabul
-- Hız sınırları DB'de (`rate_limits`, atomik upsert; üç instance'a dayanıklı): istek 50/gün, arama 30/dk, tepki 300/gün, dürtme 1/arkadaş/gün + 20/gün, görev 5/gün, engel 50/gün, şikayet 10/gün; süresi geçenler hafta kapanışında silinir
+- Hız sınırları DB'de (`rate_limits`, atomik upsert; üç instance'a dayanıklı): istek 50/gün + aynı kişiye 3/gün (iptal sayacı sıfırlamıyor), arama 30/dk, tepki 300/gün, dürtme 1/arkadaş/gün + 20/gün, görev 5/gün, engel 50/gün, şikayet 10/gün; süresi geçenler hafta kapanışında silinir
 - Kullanıcı adı: küçük harfe normalize + düz benzersiz indeks; 3-20 [a-z0-9_]; rezerve liste; 14 günde bir (ilk otomatik ad serbest); eski hesaplara TEMBEL atama (`usernames.ts`, yarışa dayanıklı)
 - Akış: ben + arkadaşlar; `showActivity=false` → olay hiç yazılmaz; imleç (createdAt,id); `friend_joined` çift başına tek
 - Tepki: yalnız arkadaşın olayına; olay+kişi başına tek satır (tür değişir); sahibine bildirim yalnız ilk tepkide

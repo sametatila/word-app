@@ -55,6 +55,10 @@ const MIN = 60;
 /** Kapsam → (sınır, pencere). Sayılar docs/plan/social.md ile aynı. */
 export const LIMITS = {
   friendRequest: { limit: 50, window: DAY },
+  /* Aynı kişiye istek: gönder → iptal (satır siliniyor) → yeniden gönder
+     döngüsü her seferinde bildirim düşürüyordu; sayaç satırı arkadaşlık
+     satırından bağımsız, iptal onu sıfırlamıyor (güvenlik denetimi D4). */
+  friendRequestPerTarget: { limit: 3, window: DAY },
   search: { limit: 30, window: MIN },
   reaction: { limit: 300, window: DAY },
   nudgeTotal: { limit: 20, window: DAY },
