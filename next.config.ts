@@ -121,9 +121,16 @@ const nextConfig: NextConfig = {
    * Next'in listesinin AYNISI + ekler (geçersiz kılınca varsayılan devre dışı
    * kalıyor): Next yükseltilince `next/dist/shared/lib/router/utils/html-bots.js`
    * ile karşılaştır.
+   *
+   * TEK FARK BİLEREK: Next'in `[\w-]+-Google|Google-[\w-]+` parçası burada
+   * `[\w-]-Google|Google-[\w-]`. Desen her HTML isteğinde User-Agent'a
+   * `.test()` ile uygulanıyor; `+` uzun bir UA'da ikinci dereceden geri izleme
+   * yapıyordu (16 KB'ta ~200 ms, tek çekirdek kilitli; güvenlik denetimi
+   * 2026-10-03, D22). `.test()` için anlam aynı: "bir [\w-] ardından -Google"
+   * ancak "bir ya da daha çok [\w-] ardından -Google" varsa vardır.
    */
   htmlLimitedBots:
-    /[\w-]+-Google|Google-[\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight|Googlebot|GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-User|Claude-SearchBot|anthropic-ai|PerplexityBot|Perplexity-User|CCBot|Amazonbot|meta-externalagent|Bytespider|cohere-ai|MistralAI-User|DuckAssistBot/i,
+    /[\w-]-Google|Google-[\w-]|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight|Googlebot|GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-User|Claude-SearchBot|anthropic-ai|PerplexityBot|Perplexity-User|CCBot|Amazonbot|meta-externalagent|Bytespider|cohere-ai|MistralAI-User|DuckAssistBot/i,
 
   turbopack: {
     resolveAlias: {
