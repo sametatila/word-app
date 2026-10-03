@@ -16,7 +16,7 @@ import { recordDeletion } from "@/lib/account/deletion-log";
 import { activeSuspension } from "@/lib/account/suspension";
 import { appleClientSecret, appleRevokeConfigured } from "@/lib/auth/apple";
 import { oneTimeToken } from "better-auth/plugins/one-time-token";
-import { APIError, createAuthMiddleware } from "better-auth/api";
+import { APIError, createAuthMiddleware, getSessionFromCtx } from "better-auth/api";
 import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/auth/password-policy";
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
 import { clearFailedLogins, isLockedOut, lockScope, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
@@ -701,6 +701,29 @@ export const auth = betterAuth({
               message: "This device could not be verified for a guest session. Continue with an account.",
             });
           }
+        }
+        return;
+      }
+      /**
+       * HESAP SİLME PAROLA HESABINDA PAROLA İSTER (güvenlik denetimi
+       * 2026-10-03, D9).
+       *
+       * better-auth `password` gelmezse yalnız oturumun 24 saatten taze
+       * olmasına bakıyor (`freshAge`), hesabın parolası olsa bile: çalınan
+       * taze bir çerez ya da kilidi açık bırakılmış bir cihaz hesabı ve bütün
+       * veriyi geri dönüşsüz silebiliyordu. Web ve mobil istemciler parola
+       * hesabında parolayı zaten gönderiyor (`account-delete-form`,
+       * `DeleteAccountScreen`); kural yalnız onu atlayan isteği durduruyor.
+       * Parolası olmayan (yalnız Google/Apple) hesapta taze oturum yeterli kalıyor.
+       */
+      if (ctx.path === "/delete-user") {
+        const password = (ctx.body as { password?: unknown } | undefined)?.password;
+        if (typeof password === "string" && password) return;
+        const current = await getSessionFromCtx(ctx);
+        if (!current) return; // uç kendi 401'ini versin
+        const credential = await ctx.context.internalAdapter.findCredentialAccount(current.user.id);
+        if (credential?.password) {
+          throw new APIError("BAD_REQUEST", { code: "PASSWORD_REQUIRED", message: "Enter your password to delete this account." });
         }
         return;
       }

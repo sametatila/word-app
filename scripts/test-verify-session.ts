@@ -17,8 +17,8 @@ import { purgeUserData } from "../src/lib/account/purge";
  * açınca KENDİ oturumunda kalıyor, bağlantının hesabı yine doğrulanıyor ve
  * onun için açılan oturum satırı geride kalmıyor. Oturumsuz açılış ve misafirin
  * yerinde yükseltmesi (aynı kimlik) eskisi gibi giriş yapıyor. İlk doğrulama
- * bağlantıyı açan dışındaki oturumları düşürüyor (güvenlik denetimi
- * 2026-10-03, D10).
+ * bağlantıyı açan dışındaki oturumları düşürüyor; hesap silme parola hesabında
+ * parola istiyor (güvenlik denetimi 2026-10-03, D9/D10).
  *
  *   TEST_DATABASE_URL=postgres://postgres@127.0.0.1:5432/lernomi_test \
  *   DATABASE_URL=$TEST_DATABASE_URL BETTER_AUTH_SECRET=test-secret-at-least-32-characters-long \
@@ -168,6 +168,23 @@ async function main() {
     const againLeft = rows(await db.execute(sql`select 1 from session where token = ${again.token}`)).length;
     check("oturum yerinde", againLeft === 1, againLeft);
 
+    /* HESAP SİLME PAROLA HESABINDA PAROLA İSTİYOR (denetim 2026-10-03, D9). */
+    console.log("\nHesap silme: parola hesabı parolasız silinemiyor");
+    const del = await signUp("silme");
+    const d0 = await call("POST", "/delete-user", {}, del.cookie);
+    check("parolasız istek 400 PASSWORD_REQUIRED", d0.status === 400 && d0.json?.code === "PASSWORD_REQUIRED", d0);
+    check("hesap yerinde", rows(await db.execute(sql`select 1 from "user" where id = ${del.id}`)).length === 1);
+    const dWrong = await call("POST", "/delete-user", { password: "Yanlis-Parola-12345" }, del.cookie);
+    check("yanlış parola reddediliyor", dWrong.status === 400, dWrong);
+    const d1 = await call("POST", "/delete-user", { password: "Uzun-ve-Tahmin-Edilmez-42" }, del.cookie);
+    check("parolayla siliniyor", d1.status === 200, d1);
+    check("hesap gitti", rows(await db.execute(sql`select 1 from "user" where id = ${del.id}`)).length === 0);
+
+    console.log("\nHesap silme: parolası olmayan hesapta taze oturum yetiyor");
+    const social = await signUp("sosyal");
+    await db.execute(sql`delete from account where "userId" = ${social.id} and "providerId" = 'credential'`);
+    const ds = await call("POST", "/delete-user", {}, social.cookie);
+    check("parolasız siliniyor", ds.status === 200, ds);
   } finally {
     await cleanup();
   }
@@ -175,7 +192,7 @@ async function main() {
     console.log(`\n${failures} doğrulama başarısız.`);
     process.exit(1);
   }
-  console.log("\ntamam: doğrulama bağlantısı var olan oturumu değiştirmiyor, ilk doğrulama kanıtsız oturumları düşürüyor");
+  console.log("\ntamam: doğrulama bağlantısı var olan oturumu değiştirmiyor, ilk doğrulama kanıtsız oturumları düşürüyor, parola hesabı parolasız silinmiyor");
   process.exit(0);
 }
 
