@@ -5,7 +5,8 @@ import { SUPPORT_DEFAULT } from "@/content/legal/defaults/support";
 import type { LegalDocDefault } from "@/content/legal/defaults/types";
 import { safeHref, unbalancedConditionals, unknownTokens } from "@/lib/legal/markdown";
 import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/conversations/log-const";
-import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
+import { SESSION_MAX_DAYS, SESSION_RECORD_PURGE_DAYS } from "@/lib/auth/session-config";
+import { HEARD_RETENTION_DAYS } from "@/lib/stt-retention-const";
 import { ATTESTATION_RETENTION_DAYS } from "@/lib/auth/attestation-const";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 import {
@@ -177,6 +178,20 @@ console.log("\nSaklama süreleri");
       value: SESSION_MAX_DAYS,
       label: "oturum kaydı",
       topic: /oturum süresince|oturum kayıtları|oturum çerezi|life of the session|session records|session cookie|Dauer der Sitzung|Sitzungsdatensätze|Sitzungs-Cookie/i,
+    },
+    {
+      /* Oturum satırının ikinci sözü: süresi dolan kaydın silinmesi; süpürme `purgeExpiredSessions`. */
+      token: "sessionPurgeDays",
+      value: SESSION_RECORD_PURGE_DAYS,
+      label: "oturum kaydı silme",
+      topic: /kullanılmayan oturum|session unused|ungenutzte Sitzung/i,
+    },
+    {
+      /* Yürüyüş modunda tanınan metin; süpürme `purgeHeardTranscripts`. */
+      token: "heardDays",
+      value: HEARD_RETENTION_DAYS,
+      label: "tanınan metin",
+      topic: /tanınan metin (tutulur|ve beklenen)|recognized text (is retained|and the expected)|erkannte(r)? Text (bleibt|und erwartetes)/i,
     },
     {
       /* Tablo satırı ve §9 listesi; süpürme `purgeExpiredGuestAttestations`. */

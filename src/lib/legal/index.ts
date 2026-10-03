@@ -69,8 +69,9 @@
  * sayfalarda vurguyla basılır (bkz. legal-shell Ph).
  */
 import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/conversations/log-const";
-import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
+import { SESSION_MAX_DAYS, SESSION_RECORD_PURGE_DAYS } from "@/lib/auth/session-config";
 import { ATTESTATION_RETENTION_DAYS } from "@/lib/auth/attestation-const";
+import { HEARD_RETENTION_DAYS } from "@/lib/stt-retention-const";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 /**
  * Yürürlük tarihi ve sürüm. İkisi de EN YENİ değişikliği anlatır ve
@@ -192,9 +193,16 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * gizlilik etiketi ise Google ile Giriş kütüphanesi yüzünden "Kaba konum"
  * beyan ediyor (PrivacyInfo.xcprivacy). Metin "hassas konum (GPS)" diyor ve
  * kaba konumun kaynağını söylüyor. Yeni veri ya da alıcı yok — yama basamağı.
+ *
+ * 1.9.2 (2026-10-03) SAKLAMA SÖZÜ GERÇEKLE EŞİTLENDİ (güvenlik denetimi D27),
+ * yama basamağı: yeni veri, alıcı ya da amaç yok, iki süre kısalıp yazıya
+ * döküldü. (1) Oturum "en çok 30 gün" diyordu, oysa oturum kullanıldıkça
+ * uzuyor; metin artık "30 gün kullanılmayan oturum düşer, kaydı en geç 7 gün
+ * içinde silinir" diyor ve günlük cron bunu uyguluyor (`lib/account/retention`).
+ * (2) Yürüyüş modunda tanınan metin ve beklenen kelime süresizdi; 30 gün.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-30";
-export const LEGAL_VERSION = "1.9.1";
+export const LEGAL_EFFECTIVE_DATE = "2026-10-03";
+export const LEGAL_VERSION = "1.9.2";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -289,8 +297,11 @@ export const LEGAL_ENTITY = {
    */
   speechLogDays: String(SPEECH_LOG_RETENTION_DAYS),
   sessionMaxDays: String(SESSION_MAX_DAYS),
+  sessionPurgeDays: String(SESSION_RECORD_PURGE_DAYS),
   /** Cihaz doğrulaması kaydı (`guest_attestations`); süpürme `lib/auth/play-integrity`. Aynı gerekçe. */
   attestationDays: String(ATTESTATION_RETENTION_DAYS),
+  /** Yürüyüş modunda tanınan metin (`ai_usage.heard/expected`); süpürme `lib/account/retention`. Aynı gerekçe. */
+  heardDays: String(HEARD_RETENTION_DAYS),
 } as const;
 
 /** Adil kullanım sınırları — koddaki gerçek kotalar (route dosyalarındaki sabitler). */
@@ -423,6 +434,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: iki saklama süresi kodla eşitlendi (oturum kaydı, yürüyüş modu tanınan metni). Veri ve alıcı aynı. */
+    version: "1.9.2",
+    date: "2026-10-03",
+    changes: {
+      tr: [
+        "Saklama süreleri netleşti: oturum kayıtları (IP, cihaz tanımı) oturum 30 gün kullanılmazsa düşer ve en geç 7 gün içinde silinir; yürüyüş modunda tanınan metin ve beklenen kelime 30 gün sonra kayıttan silinir. Toplanan veri ve alıcılar değişmedi.",
+      ],
+      en: [
+        "Retention periods were clarified: session records (IP, device description) expire when a session is unused for 30 days and are deleted within 7 days at the latest; in walk mode, the recognized text and the expected word are removed from the record after 30 days. The data collected and the recipients did not change.",
+      ],
+      de: [
+        "Die Speicherfristen wurden präzisiert: Sitzungsdatensätze (IP, Gerätebezeichnung) laufen ab, wenn eine Sitzung 30 Tage nicht genutzt wird, und werden spätestens nach 7 Tagen gelöscht; im Gehmodus werden erkannter Text und erwartetes Wort nach 30 Tagen aus dem Datensatz entfernt. Erhobene Daten und Empfänger haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: anlatım App Store gizlilik etiketiyle eşitlendi (kaba konum). Veri ve alıcı aynı. */
     version: "1.9.1",
