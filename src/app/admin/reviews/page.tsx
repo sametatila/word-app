@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
 import { storeReviews, summarizeReviews, type StoreReview } from "@/lib/store-reviews";
-import { AdminDenied, AdminPage, Badge, BarList, BTN, Empty, Notice, PageHeader, Panel, PanelGrid, Stat, Stats, ThresholdTrend, TONE } from "../_ui/ui";
+import { AdminDenied, AdminPage, Badge, BarList, BTN, Empty, Notice, PageHeader, Panel, Stat, Stats, ThresholdTrend, TONE } from "../_ui/ui";
 import { androidVitals, ANR_THRESHOLD, CRASH_THRESHOLD, type VitalsSeries } from "@/lib/android-vitals";
 import { ResponseGuide, SlaBadge } from "../_ui/sla";
 import { ReplyTemplates } from "../_ui/reply-templates";
@@ -58,7 +58,9 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
         )}
       </Panel>
 
-      <PanelGrid>
+      {/* İki mağaza = iki kart: sabit iki sütun. Duvar akışı (PanelGrid) geniş ekranda
+          3-4 sütuna çıkıp sağda boş sütun bırakıyordu. */}
+      <div className="grid items-stretch gap-5 @4xl:grid-cols-2">
         {results.map((r) => {
           const s = summarizeReviews(r.reviews);
           return (
@@ -84,7 +86,7 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
             </Panel>
           );
         })}
-      </PanelGrid>
+      </div>
 
       <Panel id="yorumlar" title="Yorumlar" hint="Önce cevapsız düşük puanlılar: mağaza sıralamasını en çok onlar etkiliyor. Cevapsız 1-2★ yorumda kalan süre yazıyor (hedef 2 iş günü).">
         <div className="mb-3"><ResponseGuide queue="store_review" /></div>
