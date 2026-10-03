@@ -132,6 +132,11 @@ const SKIP = [
   "lib/content/serve.ts",
   // Parçalı yazılı: tam yol dizgisi `check:endpoints`te ucu "çağrılıyor" gösterirdi.
   ["app", "api", "cron", "alerts"].join("/"),
+  // Ömür boyu Premium turu (test kullanıcıları): metinler yalnız cron kaydı,
+  // sunucu günlüğü ve yetki defteri notu; hiçbir uç kullanıcıya döndürmüyor.
+  "lib/premium/lifetime.ts",
+  "lib/premium/lifetime-policy.ts",
+  ["app", "api", "cron", "lifetime"].join("/"),
   "app/(app)/analytics",
   "app/demo-games",
   "app/demo-feedback",

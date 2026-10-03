@@ -36,6 +36,7 @@ const ALLOW = {
   "/api/premium/consume": "tur başına kotayı sayan uç, çağıranı yok (web-parity §11.24)",
   "/api/cron/assess": "systemd timer (lernomi-cron-assess, her gün 04:15 UTC)",
   "/api/cron/alerts": "systemd timer (lernomi-cron-alerts, 10 dakikada bir) — uyarı motoru",
+  "/api/cron/lifetime": "systemd timer (lernomi-cron-lifetime, saatte bir; /opt/lernomi/lifetime-job.sh, tur bitince kendini kapatır) — ömür boyu Premium, test kullanıcıları",
   "/api/premium/webhook/[[...provider]]": "mağaza (Play/RevenueCat) sunucudan sunucuya çağırıyor",
 };
 
