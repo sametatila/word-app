@@ -4,7 +4,7 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
 import { sameOrigin } from "@/lib/auth/origin";
 import { takeUsage } from "@/lib/premium";
 import { scorePronunciation } from "@/lib/pronounce";
-import { signScore, openKey, examSpeakingTarget } from "@/lib/exam-grade";
+import { signScore, openKeyFor, examSpeakingTarget } from "@/lib/exam-grade";
 import { track } from "@/lib/events";
 import type { SpeechConfusion } from "@/lib/skills/types";
 
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
   // (istemcinin gönderdiği kolay hedef değil). Skor jetonu YALNIZ o zaman imzalanır.
   let examVerified = false;
   if (examToken && exerciseId) {
-    const key = openKey(examToken);
+    const key = openKeyFor(examToken, userId);
     const sealed = key ? examSpeakingTarget(key, exerciseId) : null;
     if (sealed) {
       target = sealed.slice(0, MAX_TARGET);

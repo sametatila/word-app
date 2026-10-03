@@ -2317,15 +2317,18 @@ async function main() {
   const scW = scoreSections({ sections: [{ id: "vocab", correct: 6, total: 6 }, { id: "grammar", correct: 6, total: 6 }, { id: "produce", correct: 0, total: 5 }, { id: "writing", correct: 0, total: 1 }], writingScore: 0, seconds: 100 }, "module");
   check("üretim bölümleri puanın ağırlığını taşıyor", scW.total < 50 && !scW.passed, String(scW.total));
 
-  const er = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 10, total: 12 }, { id: "grammar", correct: 9, total: 12 }, { id: "reading", correct: 5, total: 6 }, { id: "listening", correct: 4, total: 6 }], seconds: 900 }, monday);
+  const er = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 10, total: 12 }, { id: "grammar", correct: 9, total: 12 }, { id: "reading", correct: 5, total: 6 }, { id: "listening", correct: 4, total: 6 }], seconds: 900 }, monday, { verified: true });
   check("sonuç kaydedildi ve geçti", er.passed && er.total === 77 && er.kind === "level", String(er.total));
   check("sertifikaya uygun (geçti, deneme değil)", (await examById(USER, er.id))?.passed === true);
   const hist = await examHistory(USER);
   check("geçmişte listeleniyor", hist.length === 1 && hist[0].id === er.id);
   const evx = await db.select().from(events).where(and(eq(events.userId, USER), eq(events.name, "exam_finish")));
   check("exam_finish kind=level:A1", evx.some((e) => e.kind === "level:A1" && e.value === 77));
-  const er2 = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 3, total: 12 }], seconds: 100 }, monday);
+  const er2 = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 3, total: 12 }], seconds: 100 }, monday, { verified: true });
   check("aynı gün tekrar: satır güncellenir, yeni kayıt açılmaz", er2.id === er.id && (await examHistory(USER)).length === 1);
+  // Sunucuda doğrulanmamış (istemci sayımı) geçiş sayılmaz: sertifika yok (denetim 2026-10-03 O1).
+  const er3 = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 12, total: 12 }, { id: "grammar", correct: 12, total: 12 }], seconds: 100 }, monday, { verified: false });
+  check("doğrulanmamış geçiş: sonuç deneme sayılıyor, sertifikaya uygun değil", er3.passed && er3.trial && (await examById(USER, er3.id))?.trial === true);
   check("geçilen modülün yapabilirlik satırları var", examCando("de", "A1", 2).length >= 4 && examCando("de", "A1", 2)[0].de.startsWith("Ich kann"));
 
   // ── Cevap gönderiminin tekrar kimliği (`/api/answers` `batch`, lib/answer-batches) ──
