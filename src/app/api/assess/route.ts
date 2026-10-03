@@ -13,12 +13,9 @@ import {
   type AssessLevel,
   type AssessRequest,
 } from "@/lib/assess-prompts";
-import { claimTiered, type Access } from "@/lib/premium/access";
-import { findConversation } from "@/lib/conversations";
-import { claimSkillAi } from "@/lib/premium/skill-access";
-import { getExercise } from "@/lib/skills";
+import { claimAssessAccess } from "@/lib/assess-access";
 import { premiumConfig, takeUsage } from "@/lib/premium";
-import { signScore, openKeyFor, examWritingTask } from "@/lib/exam-grade";
+import { signScore, openKey, examWritingTask } from "@/lib/exam-grade";
 import { clampDay } from "@/lib/award";
 import { aiConsentGate } from "@/lib/ai-consent";
 
@@ -82,7 +79,7 @@ export async function POST(req: Request) {
   let examVerified = false;
   const examToken = typeof (body as { examToken?: unknown }).examToken === "string" ? (body as { examToken: string }).examToken : null;
   if (examToken && parsed.req.kind === "writing" && typeof parsed.req.exerciseId === "string") {
-    const key = openKeyFor(examToken, userId);
+    const key = openKey(examToken);
     const wt = key ? examWritingTask(key, parsed.req.exerciseId) : null;
     if (wt) {
       parsed.req.task = { prompt: wt.prompt, constraints: wt.constraints };
@@ -120,20 +117,13 @@ export async function POST(req: Request) {
    * veriliyor). Kapıya girseydi Patika/Beceriler sayacı da düşer, geri verilmez
    * ve premium_required ile misafirin tek hakkını hiç kullanamamasına yol açardı.
    */
-  const gated = parsed.req.kind === "writing" || parsed.req.kind === "speaking" || parsed.req.kind === "chat";
-  const exerciseId = typeof parsed.req.exerciseId === "string" ? parsed.req.exerciseId : null;
-  if (gated && !examVerified && !who.guest && exerciseId) {
-    let gate: Access | null = null;
-    if (parsed.req.kind === "chat") {
-      const conversation = await findConversation(exerciseId.replace(/:scored$/, ""));
-      if (conversation) gate = await claimTiered(userId, "conversation", conversation.level, conversation.id);
-    } else {
-      const exercise = await getExercise(exerciseId);
-      if (exercise) gate = await claimSkillAi(userId, exercise);
-    }
-    if (gate && !gate.allowed) {
-      return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
-    }
+  /* Kapının kendisi `lib/assess-access` (kuyruk da aynı kapıdan geçiyor);
+     kimliği bir maddeye çözülmeyen istek ücretsizde ayrı küçük bir günlük
+     haktan düşüyor (güvenlik denetimi 2026-10-03, O9). */
+  if (!examVerified && !who.guest) {
+    const exerciseId = typeof parsed.req.exerciseId === "string" ? parsed.req.exerciseId : null;
+    const denied = await claimAssessAccess(userId, parsed.req.kind, exerciseId);
+    if (denied) return NextResponse.json(denied, { status: 403 });
   }
 
   /**
