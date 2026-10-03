@@ -62,6 +62,7 @@ const emptyRow = (): Omit<Row, "userId"> => ({
   storeRef: null,
   storePaidAt: null,
   storeEnvironment: null,
+  storeEventAt: null,
   trialReminderFor: null,
   bonusMinutes: 0,
   bonusUntil: null,
@@ -260,6 +261,11 @@ export const daysToMinutes = (days: number): number => Math.round(days * 24 * 60
  *  hediye bakiyeye GERİ DÖNÜYOR. Yoksa ödediği ay hediyenin üstüne biner ve
  *  kullanıcı hediyesini fark etmeden kaybeder.
  *
+ *  SIRA. Sağlayıcı olayları sırasız ve yeniden teslim edilebiliyor: iadeden
+ *  sonra gelen (önce 500 almış) eski bir yenileme mutlak yazımla erişimi geri
+ *  açardı. Olay zamanı (`eventAt`) satırdakinden (`store_event_at`) eskiyse
+ *  olay deftere işleniyor ama yetki alanlarına yazılmıyor (denetim 2026-10-03, D7).
+ *
  */
 export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolean }> {
   const now = Date.now();
@@ -296,6 +302,13 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
         .returning({ id: premiumGrants.id });
       if (!gate) return { applied: false };
 
+      const [current] = await tx
+        .select({ at: entitlements.storeEventAt })
+        .from(entitlements)
+        .where(eq(entitlements.userId, ev.userId))
+        .for("update");
+      if (ev.eventAt && current?.at && ev.eventAt.getTime() < current.at.getTime()) return { applied: false };
+
       // Mağaza alanları — MUTLAK yazılır, orada tek kaynak sağlayıcıdır.
       const next = {
         storeUntil,
@@ -307,6 +320,8 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
         storePaidAt,
         // Son olayın ortamı; gelir sayımları sandbox satırını dışarıda bırakıyor.
         storeEnvironment: ev.sandbox ? "sandbox" : "production",
+        // Zamanı olmayan olay sırayı geriye çekmesin: son bilinen zaman kalıyor.
+        storeEventAt: ev.eventAt ?? current?.at ?? null,
         updatedAt: new Date(),
       };
       await tx
@@ -372,6 +387,7 @@ export async function applyStoreTransfer(tr: StoreTransfer): Promise<{ applied: 
         storeRef: source.storeRef,
         storePaidAt: toRow?.storePaidAt ?? source.storePaidAt,
         storeEnvironment: source.storeEnvironment,
+        storeEventAt: source.storeEventAt,
         updatedAt: new Date(),
       };
       await tx

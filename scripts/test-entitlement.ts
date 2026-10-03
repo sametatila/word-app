@@ -190,6 +190,25 @@ async function main() {
     check("iade sonrası premium DEĞİL", !v.premium, v.until);
   }
 
+  /* ──────── 5b. Sırasız teslimat: iadeden sonra gelen ESKİ yenileme ─────── */
+  console.log("\nSırasız teslimat (denetim 2026-10-03, D7)");
+  {
+    const u = uid("order");
+    created.push(u);
+    const t0 = Date.now() - 3 * 3_600_000;
+    await applyStoreEvent(storeEvent(u, { eventId: "o-buy", eventAt: new Date(t0) }));
+    await applyStoreEvent(storeEvent(u, { eventId: "o-refund", state: "refunded", expiresAt: null, paid: false, eventAt: new Date(t0 + 2 * 3_600_000) }));
+    // Önce 500 almış, şimdi yeniden teslim edilen yenileme: iadeden ÖNCE olmuş.
+    const late = await applyStoreEvent(storeEvent(u, { eventId: "o-renew-late", eventAt: new Date(t0 + 3_600_000) }));
+    check("iadeden eski yenileme yetkiye yazılmadı", !late.applied);
+    check("iade sonrası erişim kapalı kaldı", !(await resolveEntitlement(u)).premium);
+    const fresh = await applyStoreEvent(storeEvent(u, { eventId: "o-buy-again", eventAt: new Date(t0 + 2.5 * 3_600_000) }));
+    check("iadeden sonraki yeni satın alma uygulandı", fresh.applied && (await resolveEntitlement(u)).premium);
+    const untimed = await applyStoreEvent(storeEvent(u, { eventId: "o-untimed", state: "canceled", paid: false }));
+    const [r] = await db.select({ at: entitlements.storeEventAt }).from(entitlements).where(eq(entitlements.userId, u));
+    check("zamansız olay sırayı geriye çekmiyor", untimed.applied && r?.at?.getTime() === t0 + 2.5 * 3_600_000, r?.at);
+  }
+
   /* ───────────────── 6. İptal: süre sonuna kadar premium sürer ──────────── */
   console.log("\nİptal (otomatik yenileme kapatıldı)");
   {

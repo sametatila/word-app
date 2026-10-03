@@ -78,6 +78,12 @@ export type StoreEvent = {
    */
   sandbox?: boolean;
   /**
+   * Olayın sağlayıcıdaki zamanı. Yetki yazımı bundan eski olayı uygulamıyor
+   * (sırasız/yeniden teslimat; `entitlements.store_event_at`). Yoksa sıra
+   * denetlenmiyor.
+   */
+  eventAt?: Date | null;
+  /**
    * Gelir defteri için olayın mali ayrıntısı (`store_events`, lib/premium/ledger).
    * Sağlayıcıdan bağımsız sözlükle: adaptör kendi olay adlarını buraya çevirir.
    * Yetkiyi ETKİLEMEZ; yoksa defter o olayı yazmaz.

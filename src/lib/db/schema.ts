@@ -1601,6 +1601,13 @@ export const entitlements = pgTable("entitlements", {
    */
   storeEnvironment: text("store_environment"),
   /**
+   * Yetkiye son yazılan mağaza olayının SAĞLAYICIDAKİ zamanı (RevenueCat
+   * `event_timestamp_ms`). Webhook'lar sırasız ve yeniden teslim ediliyor:
+   * iadeden sonra geç gelen eski bir yenileme erişimi geri açıyordu
+   * (denetim 2026-10-03, D7). Bundan eski olay yetki alanlarını yazmıyor.
+   */
+  storeEventAt: timestamp("store_event_at", { withTimezone: true }),
+  /**
    * Deneme bitiş hatırlatmasının gönderildiği deneme bitişi (`store_until`in o
    * anki değeri). Paywall "bitmeden 2 gün önce hatırlatırız" diyor; tur
    * (`lib/premium/trial-reminder`) bir denemeye bir kez yazıyor ve bitiş

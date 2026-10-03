@@ -243,6 +243,10 @@ export const revenuecat: StoreAdapter = {
       ref: ev.original_transaction_id ?? null,
       paid: !refunded && paidPeriod && state === "active",
       sandbox,
+      eventAt:
+        typeof ev.event_timestamp_ms === "number" && Number.isFinite(ev.event_timestamp_ms) && ev.event_timestamp_ms > 0
+          ? new Date(ev.event_timestamp_ms)
+          : null,
       ledger: ledgerOf(ev, type),
     };
     return { ok: true, event: out };
