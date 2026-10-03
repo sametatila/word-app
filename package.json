@@ -32,6 +32,7 @@
     "test:chat-usage": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-chat-usage.ts",
     "test:ai-budget": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-ai-budget.ts",
     "test:stt-pa": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-stt-pa.ts",
+    "test:placement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts",
     "test:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-password.ts",
     "make:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/make-password.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
