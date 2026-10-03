@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { CSSProperties, ReactNode } from "react";
+import { Children, isValidElement, type CSSProperties, type ReactNode } from "react";
 
 /**
  * YÖNETİM PANELİNİN TASARIM DİLİ — tek yer.
@@ -144,12 +144,38 @@ export function Panel({ title, hint, actions, children, span, flush, tone, id }:
  * Panel akışı: sayfanın genişliğine göre 1-4 SÜTUN (bkz. `AdminPage`), kartlar
  * sütunlara yukarıdan aşağı akıyor (duvar düzeni). Satır ızgarasında kısa
  * kartın yanında uzun komşusu kadar boşluk kalıyordu; burada her kart bir
- * öncekinin hemen altına oturuyor. `span` kart (tablo, uzun liste) akışı
- * bölüp bütün genişliği alıyor. Okuma sırası sütun sütun: sayfalar önemli
+ * öncekinin hemen altına oturuyor. Okuma sırası sütun sütun: sayfalar önemli
  * kartı başa koyuyor.
+ *
+ * `span` KART (tablo, uzun liste) SÜTUN AKIŞINA GİRMİYOR (2026-10-03). Eskiden
+ * akışın içinde `column-span: all` ile duruyordu; çok sütun düzeninde sütun
+ * kırılmasına komşu kenar boşlukları atıldığı için üstündeki aralık kayboluyor
+ * ve kart ızgaranın dışında, yapışık görünüyordu. Artık çocuklar gruplanıyor:
+ * ardışık normal kartlar bir sütun akışında, `span` kart onların arasında tam
+ * genişlikte; hepsi aynı 20 px aralıkla alt alta. Akışın son kartının alt
+ * boşluğu sıfır: tek sütunda (dar ekran) kutunun içinde kalıp aralığı iki katına
+ * çıkarıyordu. Chromium'da ölçüldü: iki sütunda ve tek sütunda üst/alt 20 px.
  */
 export function PanelGrid({ children }: { children: ReactNode }) {
-  return <div className="gap-5 @4xl:columns-2 @[100rem]:columns-3 @[140rem]:columns-4 *:mb-5 *:break-inside-avoid">{children}</div>;
+  const blocks: ReactNode[] = [];
+  let run: ReactNode[] = [];
+  const flush = () => {
+    if (!run.length) return;
+    blocks.push(
+      <div key={`akis-${blocks.length}`} className="gap-5 @4xl:columns-2 @[100rem]:columns-3 @[140rem]:columns-4 *:mb-5 *:last:mb-0 *:break-inside-avoid">
+        {run}
+      </div>,
+    );
+    run = [];
+  };
+  for (const child of Children.toArray(children)) {
+    if (isValidElement<{ span?: boolean }>(child) && child.props.span) {
+      flush();
+      blocks.push(child);
+    } else run.push(child);
+  }
+  flush();
+  return <div className="flex flex-col gap-5">{blocks}</div>;
 }
 
 export function Stat({ label, value, sub, tone, spark }: { label: string; value: ReactNode; sub?: ReactNode; tone?: Tone; spark?: ReactNode }) {
