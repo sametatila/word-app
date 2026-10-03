@@ -6,10 +6,16 @@
  * depo herkese açık ve adresler kişisel veri. Listede olup henüz kayıt olmamış
  * kişi, kayıt olup e-postasını doğruladıktan sonraki ilk saatlik turda alır.
  *
- * TURUN ÖMRÜ (Samet): en fazla 14 gün (`LIFETIME_PREMIUM_UNTIL`, gün dahil) ya da
- * listedeki herkes doğrulanmış hesapla katılınca biter. Bitince uç "done" döner
- * ve sunucudaki sarmalayıcı (`/opt/lernomi/lifetime-job.sh`) timer'ı kapatıp
- * Telegram'a yazar. Verilmiş Premium kalır; yalnız tur durur.
+ * TURUN ÖMRÜ (Samet): `LIFETIME_PREMIUM_UNTIL` günü (dahil; 14 gün sınırı bu
+ * değerle konuyor, sunucuda 2026-10-17) ya da listedeki herkes doğrulanmış
+ * hesapla katılınca biter. Bitince uç "done" döner ve sunucudaki sarmalayıcı
+ * (`/opt/lernomi/lifetime-job.sh`) timer'ı kapatıp Telegram'a yazar. Verilmiş
+ * Premium kalır; yalnız tur durur. Boş liste ya da bozuk tarih "bitti" DEĞİL,
+ * hata: yapılandırma kazası turu sessizce ve kalıcı kapatmasın (uç 500,
+ * systemd "çökmüş servis" uyarısı).
+ *
+ * Apple ile "e-postamı gizle" seçen kişinin adresi @privaterelay.appleid.com
+ * olur ve listeyle eşleşmez; o kişi listeye o adresle eklenmeli.
  *
  * "Ömür boyu" ayrı bir yetki türü değil, 100 yıllık bonus (`grantBonus`,
  * kaynak `manual`, ref `lifetime`): mağaza aboneliğiyle aynı kurallarla
@@ -42,13 +48,20 @@ export function needsLifetime(row: { bonusMinutes: number; bonusUntil: Date | nu
   return Math.max(runningMin, 0) + row.bonusMinutes < LIFETIME_THRESHOLD_MINUTES;
 }
 
+/** Yapılandırma hatası (boş liste, bozuk tarih); yoksa null. Hata turu bitirmez, uç 500 döner. */
+export function lifetimeConfigError(emails: Set<string>, until: string | undefined): string | null {
+  if (!emails.size) return "LIFETIME_PREMIUM_EMAILS boş ya da geçersiz";
+  if (!/^\d{4}-\d{2}-\d{2}$/.test((until ?? "").trim())) return "LIFETIME_PREMIUM_UNTIL tanımsız ya da YYYY-MM-DD değil";
+  return null;
+}
+
 /**
- * Tur bitti mi: bitiş tarihi geçti (ya da tanımsız) veya bekleyen kalmadı.
- * `until` "YYYY-MM-DD", o gün dahil (UTC gün sonu).
+ * Tur bitti mi: bitiş tarihi geçti ya da bekleyen kalmadı. `until` "YYYY-MM-DD",
+ * o gün dahil (UTC gün sonu); geçerliliği önce `lifetimeConfigError` denetler.
  */
 export function lifetimeDone(until: string | undefined, waiting: number | null, now: number = Date.now()): { done: boolean; reason: string | null } {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec((until ?? "").trim());
-  if (!m) return { done: true, reason: "LIFETIME_PREMIUM_UNTIL tanımsız" };
+  if (!m) return { done: false, reason: null };
   const end = Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]) + 1);
   if (now >= end) return { done: true, reason: "süre doldu" };
   if (waiting === 0) return { done: true, reason: "listedeki herkes katıldı" };

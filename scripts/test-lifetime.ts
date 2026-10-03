@@ -3,7 +3,7 @@
  * Asıl risk iki yönlü: kişi hakkını alamaması ya da her saat yeniden verilip
  * tamsayı bakiyenin taşması (`lib/premium/lifetime-policy`).
  */
-import { LIFETIME_MINUTES, LIFETIME_THRESHOLD_MINUTES, lifetimeDone, needsLifetime, parseLifetimeEmails } from "../src/lib/premium/lifetime-policy";
+import { LIFETIME_MINUTES, LIFETIME_THRESHOLD_MINUTES, lifetimeConfigError, lifetimeDone, needsLifetime, parseLifetimeEmails } from "../src/lib/premium/lifetime-policy";
 
 let failures = 0;
 let total = 0;
@@ -40,7 +40,10 @@ check("süre içinde, bekleyen var: sürüyor", lifetimeDone("2026-10-17", 5, at
 check("bitiş günü dahil", lifetimeDone("2026-10-17", 5, at("2026-10-17", 23)).done === false);
 check("ertesi gün: süre doldu", lifetimeDone("2026-10-17", 5, at("2026-10-18", 0)).reason === "süre doldu");
 check("herkes katıldı: biter", lifetimeDone("2026-10-17", 0, at("2026-10-05")).reason === "listedeki herkes katıldı");
-check("tarih tanımsız ya da bozuk: tur kapalı", lifetimeDone(undefined, 5, at("2026-10-05")).done && lifetimeDone("17.10.2026", 5, at("2026-10-05")).done);
+check("tarih tanımsız ya da bozuk: tur BİTMİYOR (kaza timer'ı kapatmasın)", !lifetimeDone(undefined, 5, at("2026-10-05")).done && !lifetimeDone("17.10.2026", 5, at("2026-10-05")).done);
+const one = parseLifetimeEmails("a@b.co");
+check("yapılandırma hatası: boş liste, bozuk ya da eksik tarih", !!lifetimeConfigError(new Set(), "2026-10-17") && !!lifetimeConfigError(one, "17.10.2026") && !!lifetimeConfigError(one, undefined));
+check("geçerli yapılandırma hatasız", lifetimeConfigError(one, "2026-10-17") === null);
 
 console.log(`\n${total - failures}/${total} geçti`);
 if (failures) process.exit(1);
