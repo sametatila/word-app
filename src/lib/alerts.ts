@@ -443,6 +443,14 @@ export async function collectAlerts(): Promise<Alert[]> {
       const [sh] = await rows(sql`select count(*)::int c from events where name = 'mail_sent' and kind like '%:shed' and created_at >= now() - interval '24 hours'`);
       if (num(sh?.c) >= 1) alerts.push({ key: "mail:shed", level: "uyari", text: `Son 24 saatte ${num(sh?.c)} kritik olmayan posta günlük Resend kotası eşiğinde gönderilmedi (doğrulama ve sıfırlama gidiyor). Panel › Sistem › Yapay zekâ bütçesi'nde Resend sayısına bak; gerçek kullanımsa Resend Pro'ya geç.` });
     }),
+    guard("vendor-delete", async () => {
+      /* HESAP SİLMENİN ÜÇÜNCÜ TARAF AYAĞI. RevenueCat müşteri kaydı silinemezse
+         satır `vendor_deletion_retries`e düşüyor ve günlük cron yeniden deniyor;
+         bir günü geçen satır kendiliğinden düzelmiyor demek (anahtar yetkisi,
+         proje kimliği). Silme sözü (gizlilik §11) yarım kalıyor. */
+      const [r] = await rows(sql`select count(*)::int c, max(attempts)::int a, max(last_error) e from vendor_deletion_retries where created_at < now() - interval '1 day'`);
+      if (num(r?.c) >= 1) alerts.push({ key: "vendor-delete", level: "uyari", text: `${num(r?.c)} silinmiş hesabın RevenueCat müşteri kaydı bir günden uzun süredir silinemiyor (en çok ${num(r?.a)} deneme, son hata: ${String(r?.e ?? "?").slice(0, 40)}). REVENUECAT_API_KEY yazma yetkisine ve proje kimliğine bak; günlük cron yeniden deniyor.` });
+    }),
     guard("push", async () => {
       /* BİLDİRİM TESLİMİ. FCM/APNs/web push kimliği bozulursa (servis hesabı
          anahtarı, VAPID) gönderim sessizce düşüyor; hatırlatma işi yine

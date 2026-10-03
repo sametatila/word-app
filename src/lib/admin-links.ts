@@ -90,6 +90,8 @@ export function alertLinks(key: string): AlertLinks {
       return rest[0] === "webhook"
         ? { panel: { path: "/admin/revenue", label: "Gelir › Gelir ve huniler" } }
         : { panel: ops("istek-sagligi", "İstek sağlığı") };
+    case "vendor-delete":
+      return { panel: { path: "/admin/growth", label: "Büyüme › Hesap silmeleri" }, external: { url: "https://app.revenuecat.com/", label: "RevenueCat" } };
     case "mail":
     case "err-mailverify":
       return { panel: { path: "/admin/experience#e-posta", label: "Kullanıcılar › Deneyim › Giden e-posta" } };

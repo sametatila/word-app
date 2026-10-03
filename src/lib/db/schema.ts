@@ -752,6 +752,32 @@ export const accountDeletions = pgTable("account_deletions", {
 });
 
 /**
+ * Üçüncü tarafta TAMAMLANAMAYAN silmeler — yeniden deneme kuyruğu.
+ *
+ * Hesap silinince RevenueCat müşteri kaydı da siliniyor (`lib/account/
+ * revenuecat-delete`); istek düşerse satır buraya yazılıyor, günlük cron
+ * yeniden deniyor, bir günü geçen satır uyarı motorunda görünüyor (güvenlik
+ * denetimi 2026-10-03 D27). `subject_id` silinmiş hesabın opak kimliği
+ * (sağlayıcıdaki müşteri kimliği); silme tamamlanınca satır gidiyor.
+ * Kullanıcıya bağlı sütun adı (`userId`) bilerek KULLANILMIYOR: hesap zaten
+ * silinmiş, `check:purge` ve dışa aktarma bu satırı kişinin verisi saymamalı.
+ */
+export const vendorDeletionRetries = pgTable(
+  "vendor_deletion_retries",
+  {
+    id: serial("id").primaryKey(),
+    /** revenuecat */
+    vendor: text("vendor").notNull(),
+    subjectId: text("subject_id").notNull(),
+    attempts: integer("attempts").notNull().default(1),
+    lastError: text("last_error"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("vendor_deletion_retries_subject_idx").on(t.vendor, t.subjectId)],
+);
+
+/**
  * ŞEMADA OLMAYAN TABLO DEPLOY'DAN SAĞ ÇIKMAZ. `deploy.sh` her dağıtımda
  * `drizzle-kit push --force` çalıştırıyor: veritabanı bu dosyaya zorla
  * eşitleniyor. Aşağıdaki dört tablo 2026-09-17'de yalnız migration olarak
