@@ -225,6 +225,7 @@ const MOBIL_ONLY_METHOD = {
   "POST /api/account/guest/claim": "misafiri hesaba birlestirme (yalniz mobil misafir modu)",
   "GET /api/immersion": "web `lib/immersion/build`i sunucuda cagiriyor",
   "GET /api/me": "web `lib/session`i sunucuda cagiriyor",
+  "GET /api/level": "seviye hazirligi; web `lib/level-readiness`i Ogren sayfasinin sunucusunda cagiriyor (learn/page)",
   "GET /api/skills/access": "web `lib/premium/skill-access`i sunucuda cagiriyor",
   "GET /api/premium/status": "web `lib/premium/access`i sunucuda cagiriyor",
   "GET /api/premium/trial-code": "grup kodu on bakisi; web `/g/[code]` sayfasi `peekStoreTrialCode`u sunucuda cagiriyor",

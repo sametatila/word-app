@@ -28,16 +28,17 @@ ve üretimden (sınavın konuşma/yazma ağırlığı) gelir. Hiçbir şey kilit
 2. **Hazırlık göstergesi** (seviye L için, 0–100):
    - Kelime (%50): L çekirdeğinin bankada bulunan kelimelerinde puan: pekişmiş (aralık ≥ 21 gün) = 1,
      öğreniliyor (en az bir doğru tekrar, aralık ≥ 1 gün) = 0,5, görülmemiş = 0.
-   - Patika (%50): L'nin ana ünitelerinde tamamlanan adım oranı.
+   - Patika (%50): L'nin konuşmalarından tamamlananların oranı (ünitelerin çekirdeği; beceri adımları
+     zenginleştirme, sayılmaz).
    - Üretim ayrıca ölçülmüyor: seviye sınavı onu ölçüyor (konuşma + yazma + cümle kurma %50).
 3. **Eşik %60** (Samet; Goethe/telc/ÖSD'nin geçme eşiği): hazırlık ≥ %60 → "Seviye sınavına hazırsın".
 4. **Seviye sınavı geçme notu: toplam ≥ %60, her bölüm ≥ %50** (eskiden %70). Bölüm alt sınırı kalır:
    yalnız kelimeyle, konuşamadan geçilmez.
 5. **Geçiş ONAYLA** (Samet): L seviye sınavını geçen L+1'e geçmek ister mi diye sorulur; seviye yalnız
    kabulde değişir. C1'i geçen C1'de kalır (sertifika).
-6. **İleri atlama**: hazırlığı beklemeden isteyen bir üst seviyenin sınavına girebilir (sunucu zaten
-   izin veriyor); geçerse onun bir üstü önerilir. Seviye testinin yanlış yerleştirdiği ya da hızlı
-   ilerleyen için doğal çıkış.
+6. **İleri atlama**: hazırlığı beklemeden isteyen kendi seviyesinin sınavına girebilir (kartta "şimdi
+   gir"); geçerse bir üst seviye önerilir. Seviye testinin yanlış yerleştirdiği ya da hızlı ilerleyen
+   için doğal çıkış. Daha yüksek bir seviyenin sınavını geçen (Patika'dan) onun bir üstüne geçebilir.
 7. **Süreklilik**: önceki seviyenin kelimeleri tekrar sisteminde dönmeye devam eder; alt seviye içeriği
    açık kalır. Doğrulandı (2026-10-03): tur kurulumunun tekrar tabanı (`lib/session` "zamanı gelen
    kelimeler") seviyeye göre süzmüyor; seviye değişince yalnız YENİ kelimelerin seviyesi değişir.
