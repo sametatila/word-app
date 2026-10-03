@@ -36,6 +36,7 @@
     "test:placement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts && tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts --bank de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts --bank en",
     "placement:sync": "node scripts/placement-sync.mjs",
     "check:placement": "node scripts/placement-sync.mjs --check",
+    "check:core": "node scripts/core-build.mjs --check",
     "test:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-password.ts",
     "make:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/make-password.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
