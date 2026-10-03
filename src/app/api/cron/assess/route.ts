@@ -7,6 +7,7 @@ import { purgeClosedReports } from "@/lib/moderation-admin";
 import { purgeExpiredGuestAttestations } from "@/lib/auth/play-integrity";
 import { purgeExpiredAnswerBatches } from "@/lib/answer-batches";
 import { purgeClientErrorGroups } from "@/lib/client-errors";
+import { purgeStaleUnverifiedAccounts } from "@/lib/account/unverified-cleanup";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -27,6 +28,8 @@ export const maxDuration = 60;
  *     içeriksiz ayıklama kaydı; süre `lib/answer-batches`)
  *   - giderilmiş ya da 90 gündür görülmeyen istemci hata grupları
  *     (Gizlilik §9 "hata grubu giderilene kadar"; `lib/client-errors`)
+ *   - 30 gündür doğrulanmamış, hiç kullanılmamış kayıtlar
+ *     (`lib/account/unverified-cleanup`)
  * Kuyruktan ÖNCE ve kendi hatasını yutarak: model sağlayıcısı düşse de
  * saklama sözü tutulsun. Hepsi tekrar çalışmaya dayanıklı.
  */
@@ -48,13 +51,14 @@ export async function GET(req: Request) {
     console.error("[cron/assess] client error purge", err);
     return 0;
   });
+  const purgedUnverified = await purgeStaleUnverifiedAccounts();
   try {
     const result = await runAssessQueue(20);
     /* Cümle tek yerde (bkz. cron/reminders). */
-    const ozet = `bekleyen ${result.pending} · puanlanan ${result.done} · başarısız ${result.failed} · silinen konuşma kaydı ${purgedLogs} · silinen şikâyet ${purgedReports.content + purgedReports.user} · silinen cihaz doğrulaması ${purgedAttestations} · silinen cevap kimliği ${purgedBatches} · silinen hata grubu ${purgedErrors}`;
+    const ozet = `bekleyen ${result.pending} · puanlanan ${result.done} · başarısız ${result.failed} · silinen konuşma kaydı ${purgedLogs} · silinen şikâyet ${purgedReports.content + purgedReports.user} · silinen cihaz doğrulaması ${purgedAttestations} · silinen cevap kimliği ${purgedBatches} · silinen hata grubu ${purgedErrors} · silinen doğrulanmamış kayıt ${purgedUnverified}`;
     console.log(`[cron/assess] ${ozet}`);
     void recordCronRun("assess", true, Date.now() - basladi, ozet);
-    return NextResponse.json({ ...result, purgedLogs, purgedReports, purgedAttestations, purgedBatches, purgedErrors });
+    return NextResponse.json({ ...result, purgedLogs, purgedReports, purgedAttestations, purgedBatches, purgedErrors, purgedUnverified });
   } catch (err) {
     console.error("[cron/assess]", err);
     void recordCronRun("assess", false, Date.now() - basladi, String((err as Error).message ?? err));

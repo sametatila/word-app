@@ -51,7 +51,7 @@ const INSTALL_LABEL: Record<string, string> = { "0": "Reddetti", "1": "Ekledi", 
 const GUEST_UPGRADE_LABEL: Record<string, string> = {
   moved: "Yeni hesaba taşındı", merged: "Var olan hesapla birleşti", discarded: "Misafir verisi bırakıldı", upgraded: "Yerinde hesap oldu",
 };
-const DELETE_SOURCE: Record<string, string> = { self: "Kullanıcı kendisi", admin: "Panelden", guest: "Misafir (atma/süre)" };
+const DELETE_SOURCE: Record<string, string> = { self: "Kullanıcı kendisi", admin: "Panelden", guest: "Misafir (atma/süre)", unverified: "Doğrulanmamış kayıt (30 gün)" };
 const CONSENT_LABEL: Record<string, string> = { ai_text: "Yapay zekâ · metin", ai_voice: "Yapay zekâ · ses" };
 
 /** Panel içi alt başlık. */

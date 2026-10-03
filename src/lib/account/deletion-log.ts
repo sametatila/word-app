@@ -8,12 +8,12 @@ import { db } from "@/lib/db";
  * Silmeler hiçbir iz bırakmıyordu: panel "bu ay kaç kişi hesabını sildi,
  * kaçı ilk haftasında" sorusunu cevaplayamıyordu. Kimlik, e-posta ya da ad
  * yazılmıyor (gizlilik politikası §11: hesap kalıcı olarak silinir); yalnız
- * yol (self/admin/guest), hesabın yaşı ve panel silmesinde gerekçe kategorisi.
+ * yol (self/admin/guest/unverified), hesabın yaşı ve panel silmesinde gerekçe kategorisi.
  *
  * YAZMA HİÇBİR ZAMAN FIRLATMIYOR: kayıt tutulamadı diye silme durmamalı.
  */
 export async function recordDeletion(input: {
-  source: "self" | "admin" | "guest";
+  source: "self" | "admin" | "guest" | "unverified";
   adminEmail?: string | null;
   reason?: string | null;
   wasGuest?: boolean;
