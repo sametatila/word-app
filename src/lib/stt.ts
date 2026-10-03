@@ -38,6 +38,56 @@ export function sttConfigured(): boolean {
   return sttProviders().length > 0;
 }
 
+/**
+ * KABUL EDİLEN TEK BİÇİM: 16 kHz, mono, 16 bit PCM WAV.
+ *
+ * İki mobil modül de (Android `LernomiSpeechModule.wavFromPcm`, iOS
+ * `LernomiSpeech.writeWav` ve `AVAudioRecorder` yedeği) tam olarak bunu
+ * gönderiyor; başka istemci yok (`/api/stt` yalnız ekran kapalı yürüyüş).
+ *
+ * NEDEN SÜRE BAŞLIKTAN (güvenlik denetimi 2026-10-03, Y3). Uç yalnız bayt
+ * sınırına bakıyordu (2 MB). Düşük bit hızlı Opus/webm ile 2 MB'a 20-40 dakika
+ * ses sığıyor; Azure webm'i reddedip zinciri Deepgram'a geçiriyor, Deepgram
+ * dosyanın tamamını işleyip dakika başına faturalıyordu. Sıkıştırılmamış
+ * PCM'de bayt = süre (32.000 B/sn), yani süre tahmin değil hesap.
+ *
+ * Parçalar tek tek yürünüyor: `AVAudioRecorder` `fmt` ile `data` arasına
+ * dolgu parçası (`FLLR`) yazıyor, sabit 44 bayt varsaymak yanlış olur. Veri
+ * uzunluğu başlıkta yazandan değil dosyada GERÇEKTEN olandan alınıyor.
+ */
+export const STT_SAMPLE_RATE = 16_000;
+const STT_BYTES_PER_SECOND = STT_SAMPLE_RATE * 2;
+
+export function wavInfo(buf: ArrayBuffer): { seconds: number; dataBytes: number } | null {
+  const v = new DataView(buf);
+  const tag = (at: number) => String.fromCharCode(v.getUint8(at), v.getUint8(at + 1), v.getUint8(at + 2), v.getUint8(at + 3));
+  if (buf.byteLength < 44 || tag(0) !== "RIFF" || tag(8) !== "WAVE") return null;
+  let fmtOk = false;
+  let at = 12;
+  while (at + 8 <= buf.byteLength) {
+    const id = tag(at);
+    const size = v.getUint32(at + 4, true);
+    const body = at + 8;
+    if (id === "fmt ") {
+      if (size < 16 || body + 16 > buf.byteLength) return null;
+      const format = v.getUint16(body, true);
+      const channels = v.getUint16(body + 2, true);
+      const rate = v.getUint32(body + 4, true);
+      const byteRate = v.getUint32(body + 8, true);
+      const bits = v.getUint16(body + 14, true);
+      fmtOk = format === 1 && channels === 1 && rate === STT_SAMPLE_RATE && bits === 16 && byteRate === STT_BYTES_PER_SECOND;
+      if (!fmtOk) return null;
+    } else if (id === "data") {
+      if (!fmtOk) return null;
+      const dataBytes = Math.min(size, buf.byteLength - body);
+      return { seconds: dataBytes / STT_BYTES_PER_SECOND, dataBytes };
+    }
+    // RIFF parçaları çift bayta hizalı.
+    at = body + size + (size % 2);
+  }
+  return null;
+}
+
 /** Klip uzunluğu tahmini: opus ~16 kB/sn, wav 16 kHz mono ~32 kB/sn. */
 export function estimateSeconds(file: File): number {
   const rate = file.type.includes("wav") ? 32_000 : 16_000;

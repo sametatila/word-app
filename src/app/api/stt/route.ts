@@ -3,7 +3,7 @@ import { requireAccount } from "@/lib/auth/guest";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders } from "@/lib/chat-providers";
-import { SttError, transcribe } from "@/lib/stt";
+import { STT_SAMPLE_RATE, SttError, transcribe, wavInfo } from "@/lib/stt";
 import { canPocketWalk } from "@/lib/premium/access";
 import { premiumConfig, takeUsage } from "@/lib/premium";
 import { aiConsentGate } from "@/lib/ai-consent";
@@ -14,8 +14,16 @@ export const runtime = "nodejs";
 // kesilsin ki yürüyüş turu sonsuza kadar beklemesin.
 export const maxDuration = 30;
 
-/** Kabul edilen en büyük klip — bir kelimelik cevap birkaç yüz kilobayt. */
-const MAX_BYTES = 2_000_000;
+/**
+ * En uzun klip (sn). Yürüyüş kelime başına 3-4 sn dinliyor (mobil
+ * `AZURE_WINDOW_MS`, evet/hayır 4 sn); pay, konuşma bitişini algılayan bir
+ * kayıt penceresi gelirse diye. Süre WAV başlığından hesaplanıyor (`wavInfo`):
+ * yalnız bayta bakan sınır sıkıştırılmış biçimle dakikalarca sese izin
+ * veriyordu (güvenlik denetimi 2026-10-03, Y3).
+ */
+const MAX_SECONDS = 15;
+/** Bayt sınırı süreden türüyor: 16 bit mono PCM saniyede 2 × örnekleme baytı, artı başlık payı. */
+const MAX_BYTES = MAX_SECONDS * STT_SAMPLE_RATE * 2 + 4_096;
 /** Kullanıcı başına günlük STT isteği (başarısızlar dâhil). */
 const DAILY_LIMIT = DAILY_QUOTAS.sttRequests;
 
@@ -94,6 +102,15 @@ export async function POST(req: Request) {
   if (!sttProviders().length) return NextResponse.json({ error: "not_configured" }, { status: 503 });
   if (!file || file.size === 0) return NextResponse.json({ error: "no_audio" }, { status: 400 });
   if (file.size > MAX_BYTES) return NextResponse.json({ error: "too_large" }, { status: 413 });
+  /* Yalnız 16 kHz mono 16 bit PCM WAV: iki mobil modülün gönderdiği biçim.
+     Gövde bir kez okunuyor ve sağlayıcılara aynı baytlar, istemcinin yazdığı
+     türden bağımsız olarak `audio/wav` diye gidiyor. */
+  const audio = await file.arrayBuffer();
+  const wav = wavInfo(audio);
+  if (!wav) return NextResponse.json({ error: "unsupported_audio" }, { status: 415 });
+  if (wav.seconds > MAX_SECONDS) return NextResponse.json({ error: "too_long" }, { status: 413 });
+  if (wav.dataBytes === 0) return NextResponse.json({ error: "no_audio" }, { status: 400 });
+  const clip = new File([audio], "clip.wav", { type: "audio/wav" });
 
   if (!(await underDailyLimit(userId))) return NextResponse.json({ error: "quota" }, { status: 429 });
   /**
@@ -107,7 +124,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "quota" }, { status: 429 });
   }
   try {
-    const out = await transcribe(file, { language, userId, expected });
+    const out = await transcribe(clip, { language, userId, expected });
     return NextResponse.json({ text: out.text, confidence: out.confidence, provider: out.provider, model: out.model });
   } catch (err) {
     if (err instanceof SttError) console.error("[api/stt] tüm sağlayıcılar düştü", err.failures.join(" · "));
