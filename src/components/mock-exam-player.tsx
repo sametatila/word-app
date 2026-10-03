@@ -19,7 +19,7 @@ import { captureSpeech, recognitionCtor, type SpeechCapture } from "@/components
 import { localeOf } from "@/components/skills/player-context";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockBoolLabels, mockPartLabel, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
-import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
+import { isOpenTask } from "@/lib/mock-exams/scoring";
 import { castFor, type VoiceId } from "@/lib/tts/voices";
 import { useLang, useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
@@ -64,7 +64,8 @@ type OpenScore = {
 type Attempt = { id: number; answers: Answers; open: Record<string, string>; openScores: Record<string, OpenScore>; taskIx: number; secondsLeft: number; plays: Record<string, number> };
 type Todo = { title: string; why: string; how: string };
 type Feedback = { summary: string; strengths: string[]; todo: Todo[]; source: "ai" | "rules" };
-type ScoredItem = { id: string; no: number; goal: string; correct: boolean; given: string; expected: string };
+/** `explain` sonuçla geliyor: kâğıt gerekçe taşımadan iniyor (`lib/mock-exams/deliver`). */
+type ScoredItem = { id: string; no: number; goal: string; correct: boolean; given: string; expected: string; explain?: string };
 type Score = {
   correct: number; total: number; pct: number; passed: boolean;
   byGoal: { goal: string; correct: number; total: number }[];
@@ -139,14 +140,6 @@ function sayIn(course: MockCourse, text: string, onEnd?: () => void, voice?: Voi
  */
 function partnerVoice(course: MockCourse): VoiceId {
   return castFor(course).male[0];
-}
-
-function isCorrect(item: MockItem, ans: string | undefined): boolean {
-  if (!ans?.trim()) return false;
-  if (item.kind === "mcq") return Number(ans) === item.answer;
-  if (item.kind === "bool") return (ans === "true") === item.answer;
-  if (item.kind === "match") return ans === item.answer;
-  return item.accept.some((a) => foldAnswer(a) === foldAnswer(ans));
 }
 
 /*
@@ -237,7 +230,14 @@ function consentPurposesOf(skill: MockPart["skill"]): AiConsentPurpose[] {
   return [];
 }
 
-export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPart }) {
+/**
+ * Oynatıcının kâğıttan okuduğu künye. Bölüm (`part`) sunucudan `deliverPart`
+ * ile cevap anahtarı çıkarılmış geliyor: oynatıcı `answer`/`accept`/`explain`
+ * OKUMAZ, doğru cevap ve gerekçe yalnız sunucunun sonucundan çizilir.
+ */
+type PlayerPaper = Pick<MockPaper, "id" | "no" | "level" | "course" | "theme" | "themeTr">;
+
+export function MockExamPlayer({ paper, part }: { paper: PlayerPaper; part: MockPart }) {
   const t = useT();
   const lang = useLang();
   const budgets = useMemo(() => taskSeconds(part), [part]);
@@ -269,7 +269,15 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   const [autoNext, setAutoNext] = useState(false);
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<{ score: Score; ai: Feedback | null; offline: Fail | null } | null>(null);
-  const [fail, setFail] = useState<Fail | null>(null);
+  /** Bitiriş sunucuya ulaşamadı — puan yok, kayıt duruyor, yeniden denenebilir. */
+  const [finishFail, setFinishFail] = useState<Fail | null>(null);
+  const [finishTry, setFinishTry] = useState(0);
+  /* Bitiriş efekti okuyor; bağımlılığı olursa açılan denemeyi yazmak efekti
+     kendi ortasında yeniden başlatırdı. */
+  const attemptNow = useRef(attempt);
+  attemptNow.current = attempt;
+  const playsNow = useRef(plays);
+  playsNow.current = plays;
   const [reveal, setReveal] = useState<Record<string, boolean>>({});
   const announced = useRef<Set<string>>(new Set());
   useEffect(() => () => stopSpeaking(), []);
@@ -395,11 +403,17 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     } catch (e) {
       setAttempt(null);
       const why = failOf(e);
-      setFail(why);
       /* Kilide takilan an olculuyor: kagit acilmadi cunku paket kapali.
          Bitis yolundaki `failOf` cagrisinda OLCULMUYOR - orada kullanici zaten
          sinavi cozmus oluyor, kilit degil ag sorunu konusulur. */
-      if (why === "locked") track("premium_gate", 0, "mock_exam");
+      if (why === "locked") {
+        track("premium_gate", 0, "mock_exam");
+        /* Kilitli kâğıt çözülmüyor: puanı yalnız sunucu hesaplıyor ve
+           sunucu bu kâğıdı bitirmeyecek. Kilidi liste anlatıyor. */
+        setBusy(false);
+        router.replace("/mock-exams");
+        return;
+      }
       const local = readLocalRun(paper.id, part.skill);
       if (local) {
         setResumed(true);
@@ -423,8 +437,29 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     let dead = false;
     void (async () => {
       setBusy(true);
-      let final: { score: Score; ai: Feedback | null; offline: Fail | null };
-      if (attempt) {
+      setFinishFail(null);
+      /*
+        PUAN YALNIZ SUNUCUDA (güvenlik denetimi 2026-10-03, Y2).
+
+        Eskiden sunucuya ulaşılamayınca tarayıcı kendi puanını hesaplıyordu
+        (`localScore`); bunun için kâğıt cevap anahtarıyla iniyordu. Anahtar
+        artık inmiyor. Bitiriş düşerse sonuç YOK: yarım kayıt silinmiyor ve
+        "Tekrar dene" aynı cevaplarla yeniden bitiriyor. Mobil `MockExamScreen`
+        aynı kuralı izliyor.
+      */
+      try {
+        let run = attemptNow.current;
+        if (!run) {
+          /* Sınav sunucuda hiç açılamamıştı (başlatma ağa takıldı, cevaplar
+             yalnız tarayıcıda). Şimdi açılıp cevaplar yazılıyor, sonra
+             bitiriliyor; yarım bir sunucu denemesi varsa `start` onu döndürür. */
+          const d = await post<{ attempt: Attempt }>({ action: "start", paper: paper.id, skill: part.skill });
+          run = d.attempt;
+          await post({ action: "save", id: run.id, answers, open: openNow.current, taskIx: part.tasks.length - 1, secondsLeft: 0, plays: playsNow.current });
+          if (dead) return;
+          attemptNow.current = run;
+          setAttempt(run);
+        }
         /*
           DEĞERLENDİRİLMEMİŞ AÇIK GÖREV BİTİRMEDEN ÖNCE PUANLANIYOR (2026-10-02).
           Metni yazıp "Sonraki görev"e basılan ya da süresi dolan görev hiç
@@ -432,23 +467,18 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           metin puanlanır. Bitiş kayıtlı puanı okuduğu için puan bitişten ÖNCE
           `assess` ile yazılıyor. Mobil `MockExamScreen` aynı.
         */
-        const yeni = await assessPending(attempt.id, part, openNow.current, scoresNow.current);
+        const yeni = await assessPending(run.id, part, openNow.current, scoresNow.current);
         if (dead) return;
         if (Object.keys(yeni).length) setOpenScores((sc) => ({ ...sc, ...yeni }));
-        try {
-          const d = await post<{ score: Score; ai: Feedback }>({ action: "finish", id: attempt.id, answers });
-          final = { score: d.score, ai: d.ai ?? null, offline: null };
-        } catch (e) {
-          final = { score: localScore(part, answers), ai: null, offline: failOf(e) };
-        }
-      } else {
-        final = { score: localScore(part, answers), ai: null, offline: fail ?? "unreachable" };
+        const d = await post<{ score: Score; ai: Feedback }>({ action: "finish", id: run.id, answers });
+        dropLocalRun(paper.id, part.skill);
+        if (!dead) { setResult({ score: d.score, ai: d.ai ?? null, offline: null }); setBusy(false); }
+      } catch (e) {
+        if (!dead) { setFinishFail(failOf(e)); setBusy(false); }
       }
-      dropLocalRun(paper.id, part.skill);
-      if (!dead) { setResult(final); setBusy(false); }
     })();
     return () => { dead = true; };
-  }, [phase, result, attempt, answers, part, paper.id, fail]);
+  }, [phase, result, answers, part, paper.id, finishTry]);
 
   const task = part.tasks[ix];
   /* Kapakta ve sonuç bandında aynı üst satır: hangi kâğıt, hangi bölüm. */
@@ -518,6 +548,19 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   }
 
   if (phase === "result") {
+    if (finishFail && !busy && !result) {
+      /* Bitiriş düştü: sebep ve iki yol. Cevaplar sunucuda (anlık kayıt) ve
+         tarayıcıda duruyor; kilitte yeniden denemek bir şey değiştirmiyor. */
+      return (
+        <FlowColumn>
+          <StateBody alert icon={<OfflineIcon size={28} className="muted" />} title={t(FAIL_KEYS[finishFail])} body={t("mockexam.rule_saved")} />
+          <FlowActions
+            primary={finishFail === "locked" ? null : { label: t("common.try_again"), onClick: () => setFinishTry((n) => n + 1) }}
+            close="/mock-exams"
+          />
+        </FlowColumn>
+      );
+    }
     if (busy || !result) {
       /* Puanlanırken DURUM şablonu: düşünen maskot + ilerleme çubuğu. */
       return (
@@ -530,7 +573,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         </FlowColumn>
       );
     }
-    return <Result attemptId={attempt?.id ?? null} paper={paper} part={part} eyebrow={eyebrow} answers={answers} open={open} openScores={openScores} result={result} reveal={reveal} onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))} />;
+    return <Result attemptId={attempt?.id ?? null} paper={paper} part={part} eyebrow={eyebrow} open={open} openScores={openScores} result={result} reveal={reveal} onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))} />;
   }
 
   /** Cevaplanmamış kapalı uçlu madde sayısı — bırakma uyarısında geçiyor. */
@@ -652,36 +695,6 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       </div>
     </section>
   );
-}
-
-function localScore(part: MockPart, answers: Answers): Score {
-  const items: ScoredItem[] = [];
-  const goals = new Map<string, { correct: number; total: number }>();
-  for (const task of part.tasks) {
-    if (isOpenTask(task)) continue;
-    for (const it of task.items) {
-      const ok = isCorrect(it, answers[it.id]);
-      const g = goals.get(task.goal) ?? { correct: 0, total: 0 };
-      g.total++;
-      if (ok) g.correct++;
-      goals.set(task.goal, g);
-      items.push({ id: it.id, no: it.no, goal: task.goal, correct: ok, given: answers[it.id] ?? "", expected: expected(it, task) });
-    }
-  }
-  const total = items.length;
-  const correct = items.filter((i) => i.correct).length;
-  const pct = total ? Math.round((100 * correct) / total) : 0;
-  return { correct, total, pct, passed: total > 0 && pct >= MOCK_PASS_PCT, byGoal: [...goals.entries()].map(([goal, v]) => ({ goal, ...v })), items };
-}
-
-function expected(item: MockItem, task: MockTask): string {
-  if (item.kind === "mcq") return item.options[item.answer] ?? "";
-  if (item.kind === "bool") return item.answer ? "richtig" : "falsch";
-  if (item.kind === "match") {
-    const o = task.options?.find((x) => x.key === item.answer);
-    return o ? `${o.key}) ${o.label}` : item.answer;
-  }
-  return item.accept[0];
 }
 
 /* ── görev ────────────────────────────────────────────────────────────────── */
@@ -1301,13 +1314,12 @@ function shortBy(score: Score): number {
  * geri getiriyor. Mobil aynı iki görünümü çiziyor.
  */
 function Result({
-  paper, part, eyebrow, answers, open, openScores, result, reveal, onReveal, attemptId,
+  paper, part, eyebrow, open, openScores, result, reveal, onReveal, attemptId,
 }: {
   attemptId: number | null;
-  paper: MockPaper;
+  paper: PlayerPaper;
   part: MockPart;
   eyebrow: ReactNode;
-  answers: Answers;
   open: Record<string, string>;
   openScores: Record<string, OpenScore>;
   result: { score: Score; ai: Feedback | null; offline: Fail | null };
@@ -1381,7 +1393,8 @@ function Result({
               ) : (
                 task.items.map((it) => {
                   const s = score.items.find((x) => x.id === it.id);
-                  const ok = s ? s.correct : isCorrect(it, answers[it.id]);
+                  /* Sonuç sunucudan: madde orada yoksa doğru sayılmıyor. */
+                  const ok = s?.correct ?? false;
                   return (
                     <div key={it.id} className="card flex items-start gap-3 p-4">
                       <IconLine className="text-strong leading-relaxed" box="1.5rem">
@@ -1404,16 +1417,16 @@ function Result({
                           </p>
                         ) : null}
                         <p className="mt-1 text-body" style={{ color: ok ? "var(--color-success)" : undefined }}>
-                          {t("mockexam.correct_answer")}: {s?.expected ?? expected(it, task)}
+                          {t("mockexam.correct_answer")}: {s?.expected ?? ""}
                         </p>
-                        <p className="muted mt-1 text-body leading-relaxed">{it.explain}</p>
+                        {s?.explain ? <p className="muted mt-1 text-body leading-relaxed">{s.explain}</p> : null}
                         {/* İçerik bildirimi: maddenin açıklamasının altında (görev +
                             madde no). Yanlış anahtar çoğu zaman burada fark ediliyor. */}
                         <ReportFlag
                           className="mt-1"
                           surface="mock"
                           target={{ type: "mock_task", id: task.id, sub: String(it.no) }}
-                          content={() => snapshot({ item: it, given: s?.given, expected: s?.expected ?? expected(it, task), review: true })}
+                          content={() => snapshot({ item: it, given: s?.given, expected: s?.expected, review: true })}
                         />
                       </div>
                     </div>
