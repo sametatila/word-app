@@ -16,7 +16,7 @@ import { friendStreaks, type FriendStreak } from "./streaks";
 import { USERNAME_CHANGE_COOLDOWN_DAYS, normalizeUsername, usernameQuery } from "./username";
 import { assignOne, ensureUsernames } from "./usernames";
 import { isGuestUser, notGuest } from "@/lib/auth/guest-user";
-import { likeContains } from "@/lib/db/like";
+import { likeContains, likePrefix } from "@/lib/db/like";
 import { VISIBILITIES, type FeedItem, type PublicUser, type Relation, type Visibility } from "./types";
 
 export type SocialMe = {
@@ -238,7 +238,7 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
           uq ? eq(profiles.username, uq) : sql`false`,
           and(
             ne(profiles.visibility, "private"),
-            or(uq ? ilike(profiles.username, `${uq}%`) : sql`false`, ilike(profiles.displayName, like)),
+            or(uq ? ilike(profiles.username, likePrefix(uq)) : sql`false`, ilike(profiles.displayName, like)),
           ),
         ),
       ),

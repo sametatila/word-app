@@ -13,3 +13,13 @@
 export function likeContains(q: string): string {
   return `%${q.replace(/[%_\\]/g, (m) => `\\${m}`)}%`;
 }
+
+/**
+ * "İle başlıyor" kalıbı: `q%`, aynı kaçışla. Kullanıcı adı aramasında
+ * kaçışsız önek `"__"` ile en az iki karakterlik BÜTÜN adlara eşleşiyor,
+ * "en az iki harf" niyetini aşıp profilleri toplu listeletiyordu (güvenlik
+ * denetimi 2026-10-03).
+ */
+export function likePrefix(q: string): string {
+  return `${q.replace(/[%_\\]/g, (m) => `\\${m}`)}%`;
+}
