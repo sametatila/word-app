@@ -471,7 +471,7 @@ export function ExamScreen() {
       ikonlu kural satırları · altta Başla / Kapat (üstte X yok).
 
       KURALLAR. Geri dönüş olmadığı, ipucu bulunmadığı, cevapların sınav
-      bitmeden gösterilmediği ve GEÇME EŞİĞİ (toplam %70, her bölüm %50)
+      bitmeden gösterilmediği ve GEÇME EŞİĞİ (toplam %60, her bölüm %50)
       mobilde hiçbir yerde yazmıyordu: öğrenci neyi başarması gerektiğini
       bilmeden sınava giriyordu. Eskiden üç cümle tek paragraftı; artık her
       kural kendi satırında, çünkü eşik ile "yarıda bırakırsan kaydedilmez"

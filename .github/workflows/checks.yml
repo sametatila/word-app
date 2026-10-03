@@ -431,6 +431,7 @@ jobs:
           npm run test:lifetime
           npm run test:stt-pa
           npm run test:placement
+          npm run test:level
           npm run test:password
           npm run test:award
           npm run test:coach-lines

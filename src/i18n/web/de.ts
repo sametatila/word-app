@@ -612,7 +612,7 @@ export const deWeb: Record<string, string> = {
   "certw.this_document": "Dieser Leistungsnachweis",
   "certw.awarded_to": "wird ausgestellt für das Bestehen der Prüfung mit {pct}.",
   "certw.sections": "TEILE",
-  "certw.pass_rule": "Bestanden: gesamt ≥ 70 %, jeder Teil ≥ 50 %",
+  "certw.pass_rule": "Bestanden: gesamt ≥ 60 %, jeder Teil ≥ 50 %",
   "certw.disclaimer": "Lernomi-Übungsnachweis – kein offizielles Sprachzertifikat; mit keiner Prüfungsinstitution verbunden.",
   "loginw.continue_demo": "Mit der Demo fortfahren",
   "email.verify.subject": "Lernomi: Bestätige deine E-Mail",

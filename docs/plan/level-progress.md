@@ -1,6 +1,6 @@
 # Seviye ilerlemesi — bir seviye ne zaman "bitti"?
 
-Durum: TASARIM (2026-10-03, Samet: "pedagojik ve öğrenmeye dayalı olduğu sürece önerilerle devam").
+Durum (2026-10-03): aşama 1–4 kodda (Samet: "pedagojik ve öğrenmeye dayalı olduğu sürece önerilerle devam"). Kalan: İngilizce çekirdek boşlukları (içerik + ses), build 18.
 İlgili: seviye testi `docs/plan/placement-v2.md` (başlangıç seviyesi), sınav `src/lib/exam.ts`.
 
 ## Sorun
@@ -39,7 +39,8 @@ ve üretimden (sınavın konuşma/yazma ağırlığı) gelir. Hiçbir şey kilit
    izin veriyor); geçerse onun bir üstü önerilir. Seviye testinin yanlış yerleştirdiği ya da hızlı
    ilerleyen için doğal çıkış.
 7. **Süreklilik**: önceki seviyenin kelimeleri tekrar sisteminde dönmeye devam eder; alt seviye içeriği
-   açık kalır.
+   açık kalır. Doğrulandı (2026-10-03): tur kurulumunun tekrar tabanı (`lib/session` "zamanı gelen
+   kelimeler") seviyeye göre süzmüyor; seviye değişince yalnız YENİ kelimelerin seviyesi değişir.
 
 ## Bilinen eksik: İngilizce bankası çekirdeği tam kapsamıyor
 

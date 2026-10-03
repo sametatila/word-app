@@ -673,7 +673,7 @@ export const trWeb: Record<string, string> = {
   "certw.this_document": "Bu başarı belgesi",
   "certw.awarded_to": "adına, sınavı {pct} ile geçtiği için verilmiştir.",
   "certw.sections": "BÖLÜMLER",
-  "certw.pass_rule": "Geçme: toplam ≥ %70, her bölüm ≥ %50",
+  "certw.pass_rule": "Geçme: toplam ≥ %60, her bölüm ≥ %50",
   "certw.disclaimer": "Lernomi alıştırma belgesi — resmî bir dil sertifikası değildir; hiçbir sınav kurumuyla bağlantılı değildir.",
   "loginw.continue_demo": "Demo ile devam et",
   "email.verify.subject": "Lernomi: e-posta adresini doğrula",

@@ -612,7 +612,7 @@ export const enWeb: Record<string, string> = {
   "certw.this_document": "This certificate of achievement is",
   "certw.awarded_to": "awarded for passing the exam with {pct}.",
   "certw.sections": "SECTIONS",
-  "certw.pass_rule": "Pass: total ≥ 70%, each section ≥ 50%",
+  "certw.pass_rule": "Pass: total ≥ 60%, each section ≥ 50%",
   "certw.disclaimer": "Lernomi practice record — not an official language certificate; not affiliated with any examination body.",
   "loginw.continue_demo": "Continue with the demo",
   "email.verify.subject": "Lernomi: verify your email",

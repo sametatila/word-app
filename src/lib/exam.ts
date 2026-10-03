@@ -67,7 +67,7 @@ import { nativeOf, type NativeLang } from "@/lib/courses";
  * kursta üretim bölümlerinin toplam ağırlığı %50 olmalı — `SECTION_WEIGHT`
  * bunu söylüyor, madde sayısı değil.
  *
- * **Geçme:** toplam ≥ %70 ve hiçbir bölüm < %50. Ön koşul: modül konuşmalarının
+ * **Geçme:** toplam ≥ %60 ve hiçbir bölüm < %50 (2026-10-03'e dek %70). Ön koşul: modül konuşmalarının
  * ≥ %80'i geçilmiş; değilse sınav "deneme" (sayılmaz, sertifika yok).
  *
  * Maddeler tohumlu: aynı kullanıcı, aynı sınav, aynı hafta → aynı kâğıt.

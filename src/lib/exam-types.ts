@@ -181,7 +181,9 @@ export type ExamPaper = {
 
 export const MODULE_SECONDS = 25 * 60;
 export const LEVEL_SECONDS = 45 * 60;
-export const PASS_TOTAL = 70;
+/** Geçme: toplam %60 (2026-10-03'e dek %70) — Goethe/telc/ÖSD'nin eşiği; bölüm alt sınırı %50 kalıyor
+    (yalnız kelimeyle, konuşamadan geçilmesin). docs/plan/level-progress.md. Mobil `learningRules` aynası. */
+export const PASS_TOTAL = 60;
 export const PASS_SECTION = 50;
 export const MODULE_PREREQ = 0.8;
 
