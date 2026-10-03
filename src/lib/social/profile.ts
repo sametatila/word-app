@@ -228,7 +228,7 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
   const blocked = [...(await blockedSet(me)), me];
   const like = likeContains(q);
   const rows = await db
-    .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak })
+    .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak, visibility: profiles.visibility })
     .from(profiles)
     .where(
       and(
@@ -254,7 +254,14 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
     for (const r of rows) if (!r.username) r.username = map.get(r.userId) ?? null;
   }
   const rels = await relations(me, rows.map((r) => r.userId));
-  return rows.map((r) => ({ userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, currentStreak: r.currentStreak, relation: rels.get(r.userId) ?? "none" }));
+  /* SERİ BİR İSTATİSTİK: tam adla bulunan gizli profilin (ya da arkadaş
+     olmayana "yalnız arkadaşlar" diyen profilin) serisi profil sayfasında
+     görünmüyorsa aramada da görünmemeli (güvenlik denetimi D3). */
+  return rows.map((r) => {
+    const relation = rels.get(r.userId) ?? "none";
+    const statsOpen = r.visibility === "public" || (r.visibility === "friends" && relation === "friends");
+    return { userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, currentStreak: statsOpen ? r.currentStreak : 0, relation };
+  });
 }
 
 /** Davet bağlantısıyla gelen `?u=<username>` — profil sayfasına yönlendirmek için. */

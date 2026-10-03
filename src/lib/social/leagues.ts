@@ -209,7 +209,7 @@ export async function leagueBoard(userId: string, today: string): Promise<League
   const [xp, prof, result, blocked] = await Promise.all([
     xpBetween(ids, ws, shiftDay(ws, 7)),
     db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: profiles.currentStreak })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: profiles.currentStreak, visibility: profiles.visibility })
       .from(profiles)
       .where(inArray(profiles.userId, ids)),
     pendingResult(userId, ws),
@@ -221,12 +221,18 @@ export async function leagueBoard(userId: string, today: string): Promise<League
     engellenen kişinin adı aynı tabloda duruyordu. Satır SİLİNMİYOR,
     maskeleniyor: grup büyüklüğü yükselme/düşme kuşaklarını belirliyor ve
     sıra numaraları herkeste aynı kalmalı. Sıralama maskeden önce yapılıyor.
+
+    GİZLİ PROFİL DE MASKELİ (güvenlik denetimi 2026-10-03 D3): profilini
+    gizli yapan kişi ligde yine yarışıyor (XP'si sırayı belirliyor) ama
+    gruptaki yabancılara adı, avatarı ve serisi görünmüyor; kendi satırı
+    kendisine açık.
   */
+  const priv = new Set(prof.filter((p) => p.visibility === "private").map((p) => p.userId));
   const rows = prof
     .map((p) => ({ userId: p.userId, name: p.name, username: p.username, avatar: p.avatar, level: p.level, xp: xp.get(p.userId) ?? 0, streak: p.streak, isMe: p.userId === userId }))
     .sort((a, b) => b.xp - a.xp || b.streak - a.streak || (a.name ?? "").localeCompare(b.name ?? "", "tr"))
-    .map((r, i) => (blocked.has(r.userId)
-      ? { rank: i + 1, ...r, name: null, username: null, avatar: null, hidden: true }
+    .map((r, i) => (blocked.has(r.userId) || (priv.has(r.userId) && !r.isMe)
+      ? { rank: i + 1, ...r, name: null, username: null, avatar: null, streak: priv.has(r.userId) ? 0 : r.streak, hidden: true }
       : { rank: i + 1, ...r }));
   const { promote, demote } = moveCounts(rows.length, me.tier);
   return { weekStart: ws, tier: me.tier, daysLeft: daysLeftInWeek(today), rows, promote, demote, result };
