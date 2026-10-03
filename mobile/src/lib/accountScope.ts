@@ -51,6 +51,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-path-items-pending", // gonderilmeyi bekleyen patika pratik adimlari
   "lernomi-item-scores", //        oge puanlari
   "lernomi-coach-seen", //         gosterilen koc cumleleri
+  "lernomi:level-advance-dismissed", // "şimdilik kalsın" denen seviye geçişi (hesabın kararı)
   "lernomi:guest-milestones", //   misafire gosterilen kilometre tasi cagrilari (yeni misafirde yeniden)
 ];
 

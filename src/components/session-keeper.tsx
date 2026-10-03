@@ -97,6 +97,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi:mock-run:",
   // Hangi koç cümlesinin gösterildiği: öğrenene ait, cihaza değil.
   "lernomi-coach-seen",
+  "lernomi-level-advance-dismissed", // "şimdilik kalsın" denen seviye geçişi (hesabın kararı)
 ];
 
 /**

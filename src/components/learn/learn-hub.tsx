@@ -5,6 +5,7 @@ import { barPct, fillStyle } from "@/lib/motion";
 import type { ReactNode } from "react";
 import { QuestCard } from "@/components/quest-card";
 import { PlacementNudge } from "@/components/learn/placement-nudge";
+import { LevelProgress, type LevelProgressData } from "@/components/learn/level-progress";
 import { FriendPulse } from "@/components/social/friend-pulse";
 import { CardGrid } from "@/components/layout";
 import { LearnHeader } from "@/components/app-header";
@@ -70,6 +71,8 @@ export type LearnHubData = {
   canWalk: boolean;
   /** İlk hafta seviye önerisi (seviye testi v2, lib/placement-nudge); yoksa null. */
   nudge?: { direction: "up" | "down"; from: string; to: string } | null;
+  /** Seviye ilerlemesi: hazırlık ve onaylı geçiş (lib/level-readiness); okunamazsa null. */
+  levelStatus?: LevelProgressData | null;
 };
 
 export function LearnHub({ data }: { data: LearnHubData }) {
@@ -178,6 +181,8 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           sırasını mobilden ayırmaya değmiyordu. */}
       {/* İlk hafta seviye önerisi: yalnız sunucu önerdiğinde (mobil `PlacementNudge` aynı yerde). */}
       {data.nudge ? <PlacementNudge nudge={data.nudge} /> : null}
+      {/* Seviye ilerlemesi (docs/plan/level-progress.md); mobil `LevelProgress` aynı yerde. */}
+      {data.levelStatus ? <LevelProgress status={data.levelStatus} /> : null}
       <div className="mb-5">
         <QuestCard />
       </div>

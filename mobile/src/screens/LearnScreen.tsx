@@ -19,6 +19,7 @@ import { currentCourseId } from "../lib/courses";
 import { AppHeader } from "../ui/AppHeader";
 import { DailyQuests } from "../ui/DailyQuests";
 import { PlacementNudge } from "../ui/PlacementNudge";
+import { LevelProgress } from "../ui/LevelProgress";
 import { FriendPulse } from "../social/FriendPulse";
 import { useTheme, spacing, radii, softShadow, fillOf } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
@@ -200,6 +201,8 @@ export function LearnScreen() {
       {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE, gömülü kutular (ayrı ekran yok) */}
       {/* İlk hafta seviye önerisi (seviye testi v2): yalnız sunucu önerdiğinde görünür. */}
       <PlacementNudge />
+      {/* Seviye ilerlemesi: hazırlık ve sınavla onaylı geçiş (docs/plan/level-progress.md). */}
+      <LevelProgress />
       <DailyQuests />
 
       {/* Bu haftanın ortak görevi/daveti varsa tek satır nabız; yoksa hiç çizilmez. */}
