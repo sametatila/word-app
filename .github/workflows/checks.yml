@@ -161,6 +161,7 @@ jobs:
         run: |
           npm run icons:check
           npm run check:tts
+          npm run check:placement
           npm run test:tts-own
           npm run check:client-boundary
           npm run check:purge

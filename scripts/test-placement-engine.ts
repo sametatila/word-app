@@ -8,17 +8,17 @@
  * Üç davranış: dürüst ("bilmiyorum" der), tahminci (hiç "bilmiyorum" demez), abartan
  * (kelime kartlarında uydurmalara da "biliyorum" der).
  *
- * Banka verilirse (`--bank data/placement/de.json`) gerçek madde ve kartlarla, yoksa
+ * Banka verilirse (`--bank de` ya da `--bank en`, üretilmiş `placement-bank`) gerçek madde ve kartlarla, yoksa
  * sentetik bankayla koşar. Eşikler (planda gerekçesiyle): tam isabet ≥ %70, kabul ≥ %85,
  * ±1 içinde ≥ %99,5, iki seviye sapma ≤ %0,5. Sıfır hata 4 dakikada gerçekçi değil: sınırdaki
  * kişi iki seviye arasında; sonuç ekranı "X'e yakın" der, ±1 seçtirir, ilk hafta düzeltir.
  * Eski 8 soruluk test aynı insanlarla karşılaştırılır (bilgi için).
  */
-import fs from "node:fs";
 import {
   LEVELS, LEVEL_THETA, type Level, type BankItem, type VocabCard, type Session,
-  newSession, nextItem, shouldStop, result, difficulty, levelOf, VOCAB_SHIFT,
+  newSession, nextItem, shouldStop, result, difficulty, levelOf, sampleCards, VOCAB_SHIFT,
 } from "../src/lib/placement-engine";
+import { PLACEMENT_BANK } from "../src/lib/placement-bank";
 
 let seed = Number(process.env.PLACEMENT_SIM_SEED) || 20261003;
 const rng = () => { seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; };
@@ -41,9 +41,10 @@ function syntheticBank(): Bank {
   return { items, cards };
 }
 
-function loadBank(file: string): Bank {
-  const raw = JSON.parse(fs.readFileSync(file, "utf8")) as Bank;
-  return { items: raw.items, cards: raw.cards };
+function loadBank(lang: string): Bank {
+  const b = PLACEMENT_BANK[lang as "de" | "en"];
+  if (!b) throw new Error(`banka yok: ${lang}`);
+  return { items: b.items, cards: b.cards };
 }
 
 type Profile = "durust" | "tahminci" | "abartan";
@@ -52,14 +53,15 @@ type Profile = "durust" | "tahminci" | "abartan";
 function take(theta: number, profile: Profile, bank: Bank, truth: Map<string, { b: number; a: number }>): { level: Level; near: Level | null; items: number } {
   const self = levelOf(theta + gauss() * 0.8);
   const known: Record<string, boolean> = {};
-  for (const c of bank.cards) {
+  const cards = sampleCards(bank.cards, rng);
+  for (const c of cards) {
     if (c.level === null) known[c.id] = profile === "abartan" ? rng() < 0.5 : rng() < 0.05;
     else {
       const p = sig(theta - (LEVEL_THETA[c.level] + VOCAB_SHIFT + gauss() * 0.4));
       known[c.id] = rng() < p || (profile === "abartan" && rng() < 0.4);
     }
   }
-  const s: Session = newSession(self, bank.cards, known, true);
+  const s: Session = newSession(self, cards, known, true);
   const map = new Map(bank.items.map((it) => [it.id, it]));
   while (!shouldStop(s, map)) {
     const it = nextItem(s, bank.items, rng);

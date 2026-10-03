@@ -1,3 +1,4 @@
+/* ÜRETİLDİ — src/lib/placement-engine.ts'in birebir kopyası (`npm run placement:sync`). Burada değiştirme. */
 /**
  * Seviye testi v2 — ölçüm motoru (docs/plan/placement-v2.md).
  *
