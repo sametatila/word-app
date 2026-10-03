@@ -16,8 +16,9 @@ import { usePathname } from "next/navigation";
  *   İçerik       öğrenme verisi, quiz, içerik sürümü, avatar
  *   Sistem       sunucu, hatalar, mağaza, uygulama
  *
- * Hukuki metinler ve işlem kaydı ayda bir açılıyor: menüde değil, sol çubuğun
- * altında (telefonda sayfa satırının sonunda). Her sayfa tam olarak
+ * Hukuki metinler ve işlem kaydı ayda bir açılıyor: bölüm menüsünde değil, üst
+ * çubuğun sağındaki "Ayarlar"da; Ayarlar'a girince sol çubukta yalnız onlar var
+ * (2026-10-03: eskiden her bölümde sol çubuğun dibinde sürekli duruyordu). Her sayfa tam olarak
  * bir bölümde; hangi bölümde olunduğunu en uzun eşleşen adres belirliyor
  * (`/admin/moderation/content` Şikâyetler'e değil İçerik geri bildirimine düşer).
  */
@@ -73,7 +74,7 @@ export const NAV: NavSection[] = [
   },
 ];
 
-/** Menüde olmayan, sol çubuğun dibindeki bölüm. */
+/** Bölüm menüsünde olmayan, üst çubuğun sağındaki "Ayarlar" bölümü. */
 export const SETTINGS: NavSection = {
   key: "settings",
   label: "Ayarlar",
@@ -143,9 +144,31 @@ export function AdminSections({ counts }: { counts: NavCounts }) {
   );
 }
 
+/** Üst çubuğun sağındaki Ayarlar girişi; Ayarlar bölümündeyken seçili görünür. */
+export function AdminSettingsLink() {
+  const path = usePathname() ?? "/admin";
+  const on = locate(path).section === SETTINGS;
+  return (
+    <Link
+      href={SETTINGS.items[0].href}
+      aria-current={on ? "true" : undefined}
+      className="ml-auto inline-flex h-8 shrink-0 items-center gap-1.5 rounded-tile px-2.5 text-caption whitespace-nowrap transition-colors hover:bg-[var(--surface-2)] hover:text-[var(--text)]"
+      style={on ? { background: "var(--brand-soft)", color: "var(--on-brand-soft)" } : { color: "var(--text-muted)" }}
+    >
+      <svg aria-hidden viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+      </svg>
+      <span className="hidden sm:inline">{SETTINGS.label}</span>
+      <span className="sr-only sm:hidden">{SETTINGS.label}</span>
+    </Link>
+  );
+}
+
 /**
- * Sol çubuk: seçili bölümün sayfaları, dipte Ayarlar. Geniş ekranda dikey ve
- * yapışkan; dar ekranda göstergelerin altında yatay kaydırılan tek satır.
+ * Sol çubuk: seçili bölümün sayfaları. Geniş ekranda dikey ve yapışkan; dar
+ * ekranda göstergelerin altında yatay kaydırılan tek satır. Ayarlar burada değil,
+ * üst çubukta (`AdminSettingsLink`).
  */
 export function AdminRail({ counts }: { counts: NavCounts }) {
   const path = usePathname() ?? "/admin";
@@ -179,29 +202,17 @@ export function AdminRail({ counts }: { counts: NavCounts }) {
   };
   return (
     <>
-      {/* Dar ekran: yatay satır; Ayarlar sonda (üst çubukta yer yok). */}
+      {/* Dar ekran: yatay satır. */}
       <nav aria-label={`${section.label} sayfaları`} className="border-b px-4 py-2 lg:hidden" style={{ borderColor: "var(--border)" }}>
         <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 [scrollbar-width:none]">
           {section.items.map((i) => item(i, true))}
-          {section !== SETTINGS ? (
-            <Link href={SETTINGS.items[0].href} className="faint inline-flex h-8 shrink-0 items-center px-2 text-caption whitespace-nowrap">
-              {SETTINGS.label}
-            </Link>
-          ) : null}
         </div>
       </nav>
-      {/* Geniş ekran: dikey çubuk. Kenarlık dış kutuda (sayfa boyu), liste
-          içte yapışkan; Ayarlar listenin hemen altında, ekranın dışına düşmüyor. */}
+      {/* Geniş ekran: dikey çubuk. Kenarlık dış kutuda (sayfa boyu), liste içte yapışkan. */}
       <div className="hidden w-52 shrink-0 border-r lg:block" style={{ borderColor: "var(--border)" }}>
         <nav aria-label={`${section.label} sayfaları`} className="sticky top-14 flex max-h-[calc(100dvh-3.5rem)] flex-col gap-px overflow-y-auto px-2 py-4">
           <div className="faint px-2.5 pb-2 text-micro uppercase tracking-eyebrow">{section.label}</div>
           {section.items.map((i) => item(i, false))}
-          {section !== SETTINGS ? (
-            <div className="mt-5 border-t pt-3" style={{ borderColor: "var(--hairline)" }}>
-              <div className="faint px-2.5 pb-1 text-micro uppercase tracking-eyebrow">{SETTINGS.label}</div>
-              {SETTINGS.items.map((i) => item(i, false))}
-            </div>
-          ) : null}
         </nav>
       </div>
     </>

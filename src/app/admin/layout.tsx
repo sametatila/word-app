@@ -5,7 +5,7 @@ import { adminGate, adminPreview, adminSecurityState, ADMIN_FRESH_HOURS } from "
 import type { QueueSummary } from "@/lib/response-queue";
 import { QUEUE_ALERT_FAMILIES } from "@/lib/admin-inbox-shared";
 import { loadAlerts, loadPulse, loadResponses } from "./_data";
-import { AdminRail, AdminSections, type BadgeTone, type NavCounts } from "./_ui/nav";
+import { AdminRail, AdminSections, AdminSettingsLink, type BadgeTone, type NavCounts } from "./_ui/nav";
 import { PulseStrip } from "./_ui/pulse";
 import { Linkify } from "./_ui/ui";
 import { APP_LINKS } from "@/lib/admin-links";
@@ -66,7 +66,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             <span className="muted hidden text-caption md:inline">Yönetim</span>
           </Link>
           <AdminSections counts={counts} />
-          {gate.email ? <span className="faint ml-auto hidden shrink-0 truncate text-caption xl:inline">{gate.email}</span> : null}
+          <AdminSettingsLink />
+          {gate.email ? <span className="faint hidden shrink-0 truncate text-caption xl:inline">{gate.email}</span> : null}
         </div>
       </header>
       {strip ? (
