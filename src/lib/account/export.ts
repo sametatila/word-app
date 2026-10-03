@@ -62,7 +62,7 @@ export async function buildUserExport(db: NodePgDatabase<typeof schema>, who: st
       name: row.name,
       accountCreatedAt: row.createdAt,
       loginMethods: logins,
-      note: "KVKK m.11 / GDPR m.15-20 kapsaminda makine okunur kopya. Kimlik dogrulama malzemesi (parola ozeti, oturum jetonlari, 2FA sirri) guvenlik nedeniyle dahil degildir.",
+      note: "KVKK m.11 / GDPR m.15-20 kapsaminda makine okunur kopya. Kimlik dogrulama malzemesi (parola ozeti, oturum jetonlari, 2FA sirri) guvenlik nedeniyle dahil degildir. Sizi sikayet eden ya da engelleyen kisilerin kimligi ve sikayet metni, onlarin haklarini korumak icin gizlenmistir (GDPR m.15(4)).",
     },
   };
 
@@ -80,6 +80,7 @@ export async function buildUserExport(db: NodePgDatabase<typeof schema>, who: st
       .where(conditions.length === 1 ? conditions[0] : or(...conditions));
     tables++;
   }
+  maskCounterparts(data, userId);
   // `rate_limits` kullanıcıya metin anahtarıyla bağlı, sütunla değil.
   data.rate_limits = await db.select().from(schema.rateLimits).where(like(schema.rateLimits.key, `%:${userId}`));
   tables++;
@@ -88,4 +89,28 @@ export async function buildUserExport(db: NodePgDatabase<typeof schema>, who: st
     .filter(([k]) => k !== "_meta")
     .reduce((n, [, v]) => n + (Array.isArray(v) ? v.length : 0), 0);
   return { data, tables, rows };
+}
+
+/**
+ * KARŞI TARAFIN KİMLİĞİ MASKELİ (GDPR m.15(4), güvenlik denetimi 2026-10-03 D25).
+ *
+ * Kullanıcının PASİF taraf olduğu satırlar başkasının verisini taşıyor:
+ * onu şikâyet edenin kimliği ve yazdığı metin, onu engelleyenlerin
+ * kimliği. Satır duruyor (kendisi hakkında bir kayıt var), karşı taraf
+ * gizleniyor; şikâyetin gerekçe kategorisi kalıyor. Kendi yaptığı şikâyet ve
+ * engeller olduğu gibi.
+ */
+function maskCounterparts(data: Record<string, unknown>, userId: string): void {
+  const reports = data[getTableName(schema.userReports)];
+  if (Array.isArray(reports)) {
+    data[getTableName(schema.userReports)] = reports.map((r: { reporterId?: string; reportedId?: string }) =>
+      r.reportedId === userId && r.reporterId !== userId ? { ...r, reporterId: null, detail: null } : r,
+    );
+  }
+  const blocks = data[getTableName(schema.userBlocks)];
+  if (Array.isArray(blocks)) {
+    data[getTableName(schema.userBlocks)] = blocks.map((b: { blockerId?: string; blockedId?: string }) =>
+      b.blockedId === userId && b.blockerId !== userId ? { ...b, blockerId: null } : b,
+    );
+  }
 }
