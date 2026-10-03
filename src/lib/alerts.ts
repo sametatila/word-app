@@ -558,6 +558,23 @@ export async function runAlerts(extra: Alert[] = []): Promise<{ active: number; 
         line: `${a.level === "kritik" ? "<b>[KRİTİK]</b>" : "<b>[UYARI]</b>"} ${esc(a.text)}\n${where(a.key)}`,
         apply: () => (state[a.key] = { since: now.toISOString(), lastSent: now.toISOString(), text: a.text, level: a.level }),
       });
+    } else if (prev.level === "uyari" && a.level === "kritik") {
+      /* SEVİYE YÜKSELDİ: aynı anahtar uyarıdan kritiğe çıktıysa (disk %85 → %95,
+         bütçe tahmini → aşıldı, kredi azaldı → istekler reddediliyor) 6 saatlik
+         hatırlatmayı beklemeden hemen gider. Düşüş sessiz: hatırlatma yeterli. */
+      ops.push({
+        kind: "sent",
+        line: `<b>[KRİTİK, yükseldi]</b> ${esc(a.text)}\n${where(a.key)}`,
+        apply: () => {
+          prev.level = a.level;
+          prev.lastSent = now.toISOString();
+          prev.text = a.text;
+        },
+      });
+    } else if (prev.level === "kritik" && a.level === "uyari" && now.getTime() - new Date(prev.lastSent).getTime() < REMIND_MS) {
+      /* Sessiz düşüş: seviye kayıtta güncelleniyor ki yeniden kritiğe çıkınca yine haber gelsin. */
+      prev.level = a.level;
+      prev.text = a.text;
     } else if (now.getTime() - new Date(prev.lastSent).getTime() >= REMIND_MS && !a.key.startsWith("err")) {
       const hours = Math.round((now.getTime() - new Date(prev.since).getTime()) / 3_600_000);
       ops.push({
@@ -566,6 +583,7 @@ export async function runAlerts(extra: Alert[] = []): Promise<{ active: number; 
         apply: () => {
           prev.lastSent = now.toISOString();
           prev.text = a.text;
+          prev.level = a.level;
         },
       });
     }
@@ -614,7 +632,7 @@ const TELEGRAM_BUDGET = 3_800;
 /**
  * Satırları sınırı aşmayan parçalara böler; satır ortadan kesilmez (HTML etiketi
  * yarım kalırsa Telegram mesajın tamamını 400 ile reddediyor). Tek başına
- * sınırı aşan satır etiketsiz kısaltılır. Saf: `test:alerts`.
+ * sınırı aşan satır etiketsiz kısaltılır. Saf: `test:admin`.
  */
 export function chunkLines(lines: string[], budget: number): { lines: string[]; indexes: number[] }[] {
   const out: { lines: string[]; indexes: number[] }[] = [];
