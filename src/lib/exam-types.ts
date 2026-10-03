@@ -189,6 +189,15 @@ export const PASS_SECTION = 50;
     dek %80; hazırlık ve geçme eşikleriyle aynı). */
 export const MODULE_PREREQ = 0.6;
 
+/**
+ * Geçme kuralı TEK YERDE: puanlama, sınav geçmişi, modül sertifikası ve seviye hazırlığı buradan
+ * okur. Kayıttaki `passed` bayrağı sınav ANINDAKİ eşikle yazılmıştı (2026-10-03'e dek %70); geçmiş ve
+ * sertifika onu okursa %60–69 alan eski kayıt bir yerde geçmiş, başka yerde kalmış görünürdü.
+ */
+export function passesExamRules(total: number, sections: { pct: number }[]): boolean {
+  return total >= PASS_TOTAL && sections.length > 0 && sections.every((s) => s.pct >= PASS_SECTION);
+}
+
 export type SectionScore = { id: ExamSectionId; correct: number; total: number; pct: number; weight: number };
 
 export type ExamSubmission = {
@@ -233,7 +242,7 @@ export function scoreSections(sub: ExamSubmission, kind: ExamKind = "module"): {
     };
   });
   const total = Math.round(sections.reduce((a, s) => a + (s.pct * (weights[s.id] ?? 0)) / weightSum, 0));
-  const passed = total >= PASS_TOTAL && sections.every((s) => s.pct >= PASS_SECTION);
+  const passed = passesExamRules(total, sections);
   return { sections, total, passed };
 }
 

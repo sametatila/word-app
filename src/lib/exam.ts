@@ -1,5 +1,6 @@
-import { CONVERSATION_PASS_RATIO } from "@/lib/conversations/chat-const";
 import "server-only";
+import { passesExamRules } from "@/lib/exam-types";
+import { CONVERSATION_PASS_RATIO } from "@/lib/conversations/chat-const";
 import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { practiceWordsOf } from "@/lib/practice-words";
@@ -421,7 +422,7 @@ export async function examHistory(userId: string, limit = 10): Promise<ExamResul
   return rows.map((r) => {
     const [kind, level, mod] = r.kind.split(":");
     const a = r.answers as { sections: SectionScore[]; passed: boolean; trial: boolean; verified?: boolean };
-    return { id: r.id, kind: kind as ExamKind, level: level as CefrLevel, module: mod ? Number(mod) : null, trial: Boolean(a?.trial) || a?.verified === false, sections: a?.sections ?? [], total: r.score, passed: Boolean(a?.passed), at: r.createdAt.toISOString() };
+    return { id: r.id, kind: kind as ExamKind, level: level as CefrLevel, module: mod ? Number(mod) : null, trial: Boolean(a?.trial) || a?.verified === false, sections: a?.sections ?? [], total: r.score, passed: passesExamRules(r.score, a?.sections ?? []), at: r.createdAt.toISOString() };
   });
 }
 
@@ -443,8 +444,9 @@ export async function passedModuleExams(userId: string): Promise<Map<string, num
     .where(and(eq(exams.userId, userId), sql`${exams.kind} like 'module:%'`));
   const out = new Map<string, number>();
   for (const r of rows) {
-    const a = r.answers as { passed?: boolean; trial?: boolean; verified?: boolean } | null;
-    if (!a?.passed || a.trial || a.verified === false) continue;
+    const a = r.answers as { sections?: SectionScore[]; trial?: boolean; verified?: boolean } | null;
+    /* Bayrak değil BUGÜNKÜ kural (`passesExamRules`): eşik inince eski %60–69 da sayılır. */
+    if (!passesExamRules(r.score, a?.sections ?? []) || a?.trial || a?.verified === false) continue;
     const [, level, mod] = r.kind.split(":");
     const key = `${level}:${Number(mod)}`;
     out.set(key, Math.max(out.get(key) ?? 0, r.score));

@@ -6,7 +6,7 @@ import { MASTERED_DAYS } from "@/lib/srs";
 import { loadTrack } from "@/lib/immersion/build";
 import { immersionCompletion } from "@/lib/immersion/progress";
 import { courseOrDefault } from "@/lib/courses";
-import { PASS_SECTION, PASS_TOTAL, type SectionScore } from "@/lib/exam-types";
+import { passesExamRules, type SectionScore } from "@/lib/exam-types";
 import { readinessScore, type Readiness } from "@/lib/level-readiness-score";
 import coreDe from "../../data/core/de.json";
 import coreEn from "../../data/core/en.json";
@@ -41,8 +41,7 @@ export type LevelStatus = {
 function passedNow(score: number, answers: unknown): boolean {
   const a = answers as { sections?: SectionScore[]; trial?: boolean; verified?: boolean } | null;
   if (a?.trial || a?.verified === false) return false;
-  const sections = a?.sections ?? [];
-  return score >= PASS_TOTAL && sections.length > 0 && sections.every((s) => s.pct >= PASS_SECTION);
+  return passesExamRules(score, a?.sections ?? []);
 }
 
 /** Geçilmiş seviye sınavlarından açılan en yüksek seviye (geçilen L → L+1; C1 → yok). */
