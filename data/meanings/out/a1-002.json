@@ -89,7 +89,7 @@
   },
   {
     "id": 501,
-    "tr": "ders çalışma",
+    "tr": "tekrar",
     "en": "again",
     "beispiel": "Morgen regnet es wieder.",
     "beispielTr": "Yarın yine yağmur yağacak.",
@@ -201,7 +201,7 @@
   },
   {
     "id": 508,
-    "tr": "tanımak, bilmek",
+    "tr": "bilmek",
     "en": "to know",
     "beispiel": "Ich weiß seine Telefonnummer nicht.",
     "beispielTr": "Telefon numarasını bilmiyorum.",
@@ -305,7 +305,7 @@
   },
   {
     "id": 515,
-    "tr": "talep etmek",
+    "tr": "istemek",
     "en": "to want",
     "beispiel": "Willst du ein Eis essen?",
     "beispielTr": "Dondurma yemek ister misin?",

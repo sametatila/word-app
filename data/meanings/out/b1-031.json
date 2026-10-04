@@ -25,7 +25,7 @@
   },
   {
     "id": 1794,
-    "tr": "eklemek",
+    "tr": "tamamlamak",
     "en": "to complete",
     "beispiel": "Kannst du die Einkaufsliste noch um Milch ergänzen?",
     "beispielTr": "Alışveriş listesine süt de ekleyebilir misin?",
@@ -257,7 +257,7 @@
   },
   {
     "id": 2470,
-    "tr": "edilgen",
+    "tr": "pasif",
     "en": "passive",
     "beispiel": "Mein Sohn ist im Unterricht sehr passiv.",
     "beispielTr": "Oğlum derste çok pasif kalıyor.",

@@ -1,7 +1,7 @@
 [
   {
     "id": 1170,
-    "tr": "ortadan kaldırmak",
+    "tr": "toplamak",
     "en": "to collect",
     "beispiel": "Mein kleiner Bruder sammelt Briefmarken aus aller Welt.",
     "beispielTr": "Küçük kardeşim dünyanın her yerinden pul topluyor.",
@@ -17,7 +17,7 @@
   },
   {
     "id": 1206,
-    "tr": "tasarruf etmek",
+    "tr": "biriktirmek",
     "en": "to save",
     "beispiel": "Ich spare für ein neues Fahrrad.",
     "beispielTr": "Yeni bir bisiklet için para biriktiriyorum.",
@@ -49,7 +49,7 @@
   },
   {
     "id": 907,
-    "tr": "geçiş yapmak",
+    "tr": "geçmek",
     "en": "to pass",
     "beispiel": "Mein Bruder hat die Fahrprüfung beim zweiten Mal bestanden.",
     "beispielTr": "Erkek kardeşim ehliyet sınavını ikinci denemede geçti.",
@@ -81,7 +81,7 @@
   },
   {
     "id": 1168,
-    "tr": "tur",
+    "tr": "yuvarlak",
     "en": "round",
     "beispiel": "Der Tisch in der Küche ist rund.",
     "beispielTr": "Mutfaktaki masa yuvarlak.",

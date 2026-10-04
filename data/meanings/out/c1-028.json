@@ -20,7 +20,7 @@
     "tr": "taşlama yazısı",
     "en": "satirical column",
     "beispiel": "Seine Glosse über den Bahnstreik hat viele Leser amüsiert.",
-    "beispielTr": "Demiryolu grevi üzerine yazdığı taşlama yazısı birçok okuru güldürdü.",
+    "beispielTr": "Demir yolu grevi üzerine yazdığı taşlama yazısı birçok okuru güldürdü.",
     "beispielEn": "His satirical column about the rail strike amused many readers."
   },
   {
@@ -201,7 +201,7 @@
   },
   {
     "id": 6628,
-    "tr": "gizlemek",
+    "tr": "örtbas etmek",
     "en": "to cover up",
     "beispiel": "Jahrelang wurden die Vorfälle intern vertuscht und kleingeredet.",
     "beispielTr": "Olaylar yıllarca kurum içinde örtbas edildi ve küçük gösterildi.",
@@ -225,7 +225,7 @@
   },
   {
     "id": 6631,
-    "tr": "kamuya açıklamak",
+    "tr": "beyan etmek",
     "en": "to disclose",
     "beispiel": "Autoren müssen mögliche Interessenkonflikte am Textende offenlegen.",
     "beispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda açıklamak zorundadır.",

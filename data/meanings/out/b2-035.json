@@ -57,7 +57,7 @@
   },
   {
     "id": 5352,
-    "tr": "ortadan kaldırmak",
+    "tr": "tahliye etmek",
     "en": "to evacuate",
     "beispiel": "Wegen der Bombe musste man das halbe Viertel evakuieren.",
     "beispielTr": "Bomba yüzünden mahallenin yarısını tahliye etmek gerekti.",
@@ -161,7 +161,7 @@
   },
   {
     "id": 5366,
-    "tr": "gütmek",
+    "tr": "peşine düşmek",
     "en": "to pursue",
     "beispiel": "Die Polizei verfolgte den Wagen bis zur Landesgrenze.",
     "beispielTr": "Polis aracı eyalet sınırına kadar takip etti.",
@@ -212,7 +212,7 @@
     "tr": "derhâl",
     "en": "promptly",
     "beispiel": "Bitte verlassen Sie das Gebäude umgehend über den Hinterausgang.",
-    "beispielTr": "Lütfen binayı derhal arka çıkıştan terk edin.",
+    "beispielTr": "Lütfen binayı derhâl arka çıkıştan terk edin.",
     "beispielEn": "Please leave the building promptly through the rear exit."
   },
   {

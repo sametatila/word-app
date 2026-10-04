@@ -146,10 +146,10 @@
   {
     "id": 2334,
     "tr": "katma değer vergisi",
-    "en": "value added tax",
+    "en": "value-added tax",
     "beispiel": "Die Mehrwertsteuer beträgt in Deutschland 19 Prozent.",
     "beispielTr": "Almanya'da katma değer vergisi yüzde 19.",
-    "beispielEn": "In Germany the value added tax is 19 percent."
+    "beispielEn": "In Germany, the value-added tax is 19 percent."
   },
   {
     "id": 2350,

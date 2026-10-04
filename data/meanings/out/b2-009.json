@@ -25,7 +25,7 @@
  },
  {
   "id": 3882,
-  "tr": "bağlaç",
+  "tr": "bağlayıcı",
   "en": "binding",
   "beispiel": "Die Anmeldung ist ab sofort verbindlich.",
   "beispielTr": "Kayıt bu andan itibaren bağlayıcı.",
@@ -212,7 +212,7 @@
   "tr": "iş referansı",
   "en": "employment reference",
   "beispiel": "Ein wohlwollend formuliertes Arbeitszeugnis erleichtert die nächste Bewerbung.",
-  "beispielTr": "İyi niyetle yazılmış bir çalışma belgesi sonraki başvuruyu kolaylaştırır.",
+  "beispielTr": "İyi niyetle yazılmış bir iş referansı sonraki başvuruyu kolaylaştırır.",
   "beispielEn": "A favorably worded employment reference makes the next application easier."
  },
  {

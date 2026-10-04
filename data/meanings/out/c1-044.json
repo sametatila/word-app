@@ -100,7 +100,7 @@
     "tr": "devralınan yük",
     "en": "inherited burden",
     "beispiel": "Die neue Regierung übernimmt eine schwere finanzielle Erblast.",
-    "beispielTr": "Yeni hükûmet, geçmişten kalan ağır bir mali yükü devralıyor.",
+    "beispielTr": "Yeni hükûmet, geçmişten kalan ağır bir malî yükü devralıyor.",
     "beispielEn": "The new government is taking on a heavy financial burden from the past."
   },
   {
@@ -138,10 +138,10 @@
   {
     "id": 7420,
     "tr": "tersine dönmek",
-    "en": "to swing",
+    "en": "to turn",
     "beispiel": "Die Stimmung im Saal ist nach der Rede umgeschlagen.",
     "beispielTr": "Salondaki hava konuşmadan sonra tersine döndü.",
-    "beispielEn": "The mood in the hall swung after the speech."
+    "beispielEn": "The mood in the hall turned after the speech."
   },
   {
     "id": 7421,

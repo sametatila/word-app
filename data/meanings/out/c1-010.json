@@ -13,7 +13,7 @@
     "en": "farm succession",
     "beispiel": "Bei jedem zweiten Betrieb ist die Hofnachfolge völlig ungeklärt.",
     "beispielTr": "Her iki işletmeden birinde çiftliğin devri tamamen belirsiz.",
-    "beispielEn": "At one farm in two, succession is completely unresolved."
+    "beispielEn": "On half of all farms, succession is completely unresolved."
   },
   {
     "id": 5705,
@@ -225,7 +225,7 @@
   },
   {
     "id": 5731,
-    "tr": "kamuya açıklamak",
+    "tr": "beyan etmek",
     "en": "to declare",
     "beispiel": "Der Hersteller muss die Herkunft der Rohstoffe vollständig deklarieren.",
     "beispielTr": "Üretici hammaddelerin kökenini eksiksiz beyan etmek zorunda.",

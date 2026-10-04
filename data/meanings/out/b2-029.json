@@ -9,7 +9,7 @@
   },
   {
     "id": 5046,
-    "tr": "sağlama",
+    "tr": "sağlamak",
     "en": "to grant",
     "beispiel": "Die Bank gewährt uns einen Kredit zu günstigen Bedingungen.",
     "beispielTr": "Banka bize uygun koşullarda kredi sağlıyor.",
@@ -17,7 +17,7 @@
   },
   {
     "id": 5047,
-    "tr": "kanıtlamak",
+    "tr": "belgelemek",
     "en": "to certify",
     "beispiel": "Der Kursleiter bescheinigt uns die regelmäßige Teilnahme am Unterricht.",
     "beispielTr": "Kurs öğretmeni derse düzenli katıldığımızı belgeliyor.",
@@ -89,7 +89,7 @@
   },
   {
     "id": 5056,
-    "tr": "hukuka uygun",
+    "tr": "yasal",
     "en": "lawful",
     "beispiel": "Sie lebt seit sieben Jahren rechtmäßig in Deutschland.",
     "beispielTr": "Yedi yıldır Almanya'da yasal olarak yaşıyor.",

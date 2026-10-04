@@ -68,8 +68,8 @@
     "tr": "teşvik etmek",
     "en": "to promote",
     "beispiel": "Die Stadt fördert junge Künstler mit Stipendien.",
-    "beispielTr": "Şehir genç sanatçıları burslarla destekliyor.",
-    "beispielEn": "The city supports young artists with grants."
+    "beispielTr": "Şehir genç sanatçıları burslarla teşvik ediyor.",
+    "beispielEn": "The city promotes young artists with scholarships."
   },
   {
     "id": 2246,
@@ -265,7 +265,7 @@
   },
   {
     "id": 1563,
-    "tr": "aynı fikirde olmak",
+    "tr": "katılmak",
     "en": "to participate",
     "beispiel": "Viele Studenten haben sich an der Diskussion beteiligt.",
     "beispielTr": "Birçok öğrenci tartışmaya katıldı.",

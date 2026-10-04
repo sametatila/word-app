@@ -145,7 +145,7 @@
  },
  {
   "id": 751,
-  "tr": "uymak",
+  "tr": "pasaport",
   "en": "passport",
   "beispiel": "Mein Pass läuft leider nächsten Monat ab.",
   "beispielTr": "Pasaportumun süresi ne yazık ki gelecek ay doluyor.",
@@ -337,7 +337,7 @@
  },
  {
   "id": 750,
-  "tr": "üretim partisi",
+  "tr": "parti",
   "en": "party",
   "beispiel": "Nach der Party war die Küche total schmutzig.",
   "beispielTr": "Partiden sonra mutfak çok kirliydi.",
@@ -353,7 +353,7 @@
  },
  {
   "id": 294,
-  "tr": "kolay",
+  "tr": "hafif",
   "en": "light",
   "beispiel": "Meine Tasche ist heute sehr leicht.",
   "beispielTr": "Çantam bugün çok hafif.",
@@ -369,7 +369,7 @@
  },
  {
   "id": 734,
-  "tr": "talep etmek",
+  "tr": "istemek",
   "en": "would like",
   "beispiel": "Ich möchte heute Abend lieber zu Hause bleiben.",
   "beispielTr": "Bu akşam evde kalmayı tercih ederim.",

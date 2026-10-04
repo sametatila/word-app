@@ -180,7 +180,7 @@
     "tr": "mali",
     "en": "financial",
     "beispiel": "Meinem Neffen geht es finanziell jetzt besser.",
-    "beispielTr": "Yeğenim mali açıdan artık daha iyi durumda.",
+    "beispielTr": "Yeğenim malî açıdan artık daha iyi durumda.",
     "beispielEn": "My nephew is doing better financially now."
   },
   {
@@ -241,7 +241,7 @@
   },
   {
     "id": 1537,
-    "tr": "hesaba katmak",
+    "tr": "hesaplamak",
     "en": "to calculate",
     "beispiel": "Die App berechnet, wie viele Kalorien du verbrauchst.",
     "beispielTr": "Uygulama kaç kalori yaktığını hesaplıyor.",

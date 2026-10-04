@@ -201,7 +201,7 @@
   },
   {
     "id": 741,
-    "tr": "güvenlik açığı",
+    "tr": "açık",
     "en": "open",
     "beispiel": "Die Bäckerei ist am Sonntag geöffnet.",
     "beispielTr": "Fırın pazar günü açık.",
@@ -268,7 +268,7 @@
     "tr": "meslek",
     "en": "profession",
     "beispiel": "Welchen Beruf möchtest du später lernen?",
-    "beispielTr": "İleride hangi mesleği edinmek istiyorsun?",
+    "beispielTr": "İleride hangi mesleği öğrenmek istiyorsun?",
     "beispielEn": "What job do you want to train for later?"
   },
   {
@@ -321,7 +321,7 @@
   },
   {
     "id": 820,
-    "tr": "bekleme süresi",
+    "tr": "merdiven",
     "en": "stairs",
     "beispiel": "Wir nehmen die Treppe nach oben.",
     "beispielTr": "Yukarıya merdivenden çıkıyoruz.",
