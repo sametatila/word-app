@@ -2,6 +2,16 @@
 
 ## DURUM — kelime katmanı (2026-09-23)
 
+**Üretim makinesi: Mac (2026-10-05).** Linux (RTX 4060, `ssh linux`) kalıcı olarak yok. Üretim
+`~/Workspace/tts-test` (yerel git deposu: betikler + karakter referansları) ile Mac'te, aynı kapılarla:
+`TTS_SIKI=1 TTS_KUYRUK_TR=1 kelimeler.py <koşu> --ses defne|aras` (VoxCPM MPS, Whisper ve UTMOS CPU;
+2026-09-27 hız denemesi ve 2026-10-04 anlam düzeltmeleri bu yolla). DOĞRULUK KAYNAĞI SUNUCU: `tts-map.json` +
+m4a. Mac'teki arşiv eksik bir kopya; `yayin.py` (tabloyu arşivden baştan kurar) Mac'te KİLİTLİ. Mac yayını
+`anlam_yayin.py <koşu>` canlı tabloya ekler; `--yenile` yeniden üretilen kaydı eskisinin yerine koyar ama
+onaylı (`tts_reviews` ok) dosyaya dokunmaz. Sunucunun eksik listesi (`eksik.jsonl`) her gün 08:40'ta
+`eksik_mac.sh` ile (launchd `app.lernomi.tts-eksik`) üretilip yayına eklenir, sonuç Telegram'a.
+Linux'ta kalan ve kaybolan: dinleme/konuşma (k4) kuyruğunun yayınlanmamış çıktıları; bu katmanlar canlıda Edge.
+
 Samet'in kararları: seçilebilir sesler **Defne** (kadın) ve **Aras** (erkek); Mira/Can yalnız diyalog kadrosu,
 seçilemez. Günlük tur, pratik ve yürüyüş modunun kelime katmanı canlıda **yalnız** bu iki karakterin önceden
 üretilmiş dosyalarından çalar — Edge'e de cihaz sesine de düşüş YOK; tabloda olmayan metin susar.
