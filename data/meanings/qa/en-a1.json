@@ -131,12 +131,15 @@
     "deGloss": "da"
    },
    "after": {
-    "deGloss": "dort"
+    "deGloss": "dort",
+    "beispielDe": "Ist dein Bruder auch dort?"
    },
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almancadaki 'da' hem 'burada/mevcut' hem 'çünkü' anlamına geldiği için Alman öğrenci için belirsiz; 'there' karşılığı olarak 'dort' açık."
+   "reason": "Almancadaki 'da' hem 'burada/mevcut' hem 'çünkü' anlamına geldiği için Alman öğrenci için belirsiz; 'there' karşılığı olarak 'dort' açık.",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 200134,
@@ -153,7 +156,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Yemek yemek' öğün yemek demek ve 'elma yemek' gibi kullanımları kapsamıyor; ayrıca Türkçe cümle 'siz' derken Almanca cümle 'du' diyor."
+   "reason": "'Yemek yemek' öğün yemek demek ve 'elma yemek' gibi kullanımları kapsamıyor; ayrıca Türkçe cümle 'siz' derken Almanca cümle 'du' diyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200162,
@@ -172,7 +176,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Örnek 'ask for' kalıbıyla 'istemek' anlamını öğretiyor (Türkçe çeviri de 'iste' diyor), kartın anlamı ise 'sormak'."
+   "reason": "Örnek 'ask for' kalıbıyla 'istemek' anlamını öğretiyor (Türkçe çeviri de 'iste' diyor), kartın anlamı ise 'sormak'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200180,
@@ -182,12 +187,15 @@
     "deGloss": "gefallen"
    },
    "after": {
-    "deGloss": "mögen"
+    "deGloss": "mögen",
+    "beispielDe": "Ich mag deine neue Jacke sehr."
    },
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"like\" kelimesinin temel Almanca karşılığı \"mögen\"dir; \"gefallen\" ters yapılı olduğu için karşılık olarak öğrencinin kafasını karıştırır, örnek cümledeki \"gefällt\" ise doğal ve kalabilir."
+   "reason": "\"like\" kelimesinin temel Almanca karşılığı \"mögen\"dir; \"gefallen\" ters yapılı olduğu için karşılık olarak öğrencinin kafasını karıştırır, örnek cümledeki \"gefällt\" ise doğal ve kalabilir.",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 200211,
@@ -197,12 +205,15 @@
     "deGloss": "halten"
    },
    "after": {
-    "deGloss": "anhalten"
+    "deGloss": "anhalten",
+    "beispielDe": "Alle Busse halten hier an."
    },
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"halten\" önce tutmak anlamına gelir; tek başına karşılık olarak durmak anlamını net vermiyor, örnek cümledeki \"halten\" ise doğru kalabilir."
+   "reason": "\"halten\" önce tutmak anlamına gelir; tek başına karşılık olarak durmak anlamını net vermiyor, örnek cümledeki \"halten\" ise doğru kalabilir.",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 200234,
@@ -219,7 +230,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almanca karşılık yalnız resmî \"Ihr\" olmuş; Türkçe \"senin; sizin\" diyor ve Türkçe örnek \"senin\" kullanıyor, yani hitap düzeyleri birbirini tutmuyor."
+   "reason": "Almanca karşılık yalnız resmî \"Ihr\" olmuş; Türkçe \"senin; sizin\" diyor ve Türkçe örnek \"senin\" kullanıyor, yani hitap düzeyleri birbirini tutmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200245,
@@ -250,7 +262,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Vücut bölümü olarak ağrı bağlamında standart Türkçe \"baş\" ve \"başım ağrıyor\"dur; \"kafa\" günlük konuşmaya ait."
+   "reason": "Vücut bölümü olarak ağrı bağlamında standart Türkçe \"baş\" ve \"başım ağrıyor\"dur; \"kafa\" günlük konuşmaya ait.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200283,
@@ -269,7 +282,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "\"The way to school is short.\" Almancadan birebir aktarılmış, doğal olmayan bir İngilizce cümle; Amerikalı biri böyle kurmaz."
+   "reason": "\"The way to school is short.\" Almancadan birebir aktarılmış, doğal olmayan bir İngilizce cümle; Amerikalı biri böyle kurmaz.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200292,
@@ -286,7 +300,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Standart Almancada \"laufen\" koşmak anlamına da gelir; Alman öğrenci \"walk\" ile \"run\" kelimelerini karıştırabilir."
+   "reason": "Standart Almancada \"laufen\" koşmak anlamına da gelir; Alman öğrenci \"walk\" ile \"run\" kelimelerini karıştırabilir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200295,
@@ -301,7 +316,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almanca karşılık tek başına \"leid\" kalmış; bu sözcük kendi başına anlam taşımadığı için Alman öğrenci yanlış bir eşleşme ezberler."
+   "reason": "Almanca karşılık tek başına \"leid\" kalmış; bu sözcük kendi başına anlam taşımadığı için Alman öğrenci yanlış bir eşleşme ezberler.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200307,
@@ -330,7 +346,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "tr eğik çizgi ve 'mastar eki' gibi dilbilgisi terimi içeriyor; deGloss 'nach' yalnız yön anlamını veriyor, karşılıklar uyuşmuyor."
+   "reason": "tr eğik çizgi ve 'mastar eki' gibi dilbilgisi terimi içeriyor; deGloss 'nach' yalnız yön anlamını veriyor, karşılıklar uyuşmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200337,
@@ -361,7 +378,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "tr 'götürmek' ile deGloss 'nehmen' farklı anlamları gösteriyor; örnek 'bir yere götürmek' anlamında olduğundan Almancası 'bringen' olmalı."
+   "reason": "tr 'götürmek' ile deGloss 'nehmen' farklı anlamları gösteriyor; örnek 'bir yere götürmek' anlamında olduğundan Almancası 'bringen' olmalı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200353,
@@ -392,7 +410,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "deGloss yalnız resmî 'Sie' veriyor, temel 'du' eksik; ayrıca örnekte Türkçe 'sen' ile Almanca 'Sie' hitap düzeyi uyuşmuyor."
+   "reason": "deGloss yalnız resmî 'Sie' veriyor, temel 'du' eksik; ayrıca örnekte Türkçe 'sen' ile Almanca 'Sie' hitap düzeyi uyuşmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200435,
@@ -423,7 +442,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'sweet' kelimesinin temel karşılığı 'tatlı'dır; 'şekerli' dar bir anlam ve deGloss 'süß' ile örtüşmüyor."
+   "reason": "'sweet' kelimesinin temel karşılığı 'tatlı'dır; 'şekerli' dar bir anlam ve deGloss 'süß' ile örtüşmüyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200466,
@@ -441,7 +461,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "tr'de eğik çizgi ve üç nokta biçim kuralına aykırı; deGloss yalnız zaman anlamını veriyor, oysa tr ve örnek cümle yer anlamını da içeriyor."
+   "reason": "tr'de eğik çizgi ve üç nokta biçim kuralına aykırı; deGloss yalnız zaman anlamını veriyor, oysa tr ve örnek cümle yer anlamını da içeriyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200475,
@@ -456,7 +477,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'viel' sayılamayanlar için kullanılır (much); sayılabilir çoğul anlamındaki 'many'nin karşılığı 'viele'dir, örnek cümlede de 'viele' geçiyor."
+   "reason": "'viel' sayılamayanlar için kullanılır (much); sayılabilir çoğul anlamındaki 'many'nin karşılığı 'viele'dir, örnek cümlede de 'viele' geçiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200513,
@@ -488,7 +510,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "tr'deki eğik çizgi biçim kuralına aykırı; tr iki anlam veriyor ama deGloss yalnız birini gösteriyor."
+   "reason": "tr'deki eğik çizgi biçim kuralına aykırı; tr iki anlam veriyor ama deGloss yalnız birini gösteriyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200592,
@@ -505,7 +528,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Tek başına 'böse' Alman öğrenciye önce 'kötü/şeytani' anlamını çağrıştırır; 'angry' kelimesinin doğrudan karşılığı 'wütend'dir."
+   "reason": "Tek başına 'böse' Alman öğrenciye önce 'kötü/şeytani' anlamını çağrıştırır; 'angry' kelimesinin doğrudan karşılığı 'wütend'dir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200605,
@@ -552,7 +576,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'sich freuen' bir şeye sevinmek demek, 'be happy' değil; 'freut sich über' çevirisi de 'happy with' (memnun olmak) anlamını kaydırıyor, Türkçede de 'işinden mutlu' doğal değil."
+   "reason": "'sich freuen' bir şeye sevinmek demek, 'be happy' değil; 'freut sich über' çevirisi de 'happy with' (memnun olmak) anlamını kaydırıyor, Türkçede de 'işinden mutlu' doğal değil.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200680,
@@ -569,7 +594,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Halle' Almancada spor ya da fabrika salonu gibi büyük bir yapı demek; tr'deki 'giriş holü' ve cümlenin anlamı 'Flur' ile örtüşüyor."
+   "reason": "'Halle' Almancada spor ya da fabrika salonu gibi büyük bir yapı demek; tr'deki 'giriş holü' ve cümlenin anlamı 'Flur' ile örtüşüyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200692,
@@ -584,7 +610,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "tr hem 'onu' hem 'ona' derken deGloss yalnız datif 'ihm'i veriyor; Alman öğrenci 'him'i yalnız datif sanabilir."
+   "reason": "tr hem 'onu' hem 'ona' derken deGloss yalnız datif 'ihm'i veriyor; Alman öğrenci 'him'i yalnız datif sanabilir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200702,
@@ -601,7 +628,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'meslektaş' aynı mesleği yapan kişi demek; iş yerindeki 'colleague' için günlük Türkçedeki doğal karşılık 'iş arkadaşı'."
+   "reason": "'meslektaş' aynı mesleği yapan kişi demek; iş yerindeki 'colleague' için günlük Türkçedeki doğal karşılık 'iş arkadaşı'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200708,
@@ -620,7 +648,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Örnekte kelime yalnız 'coffee shop' bileşiğinin içinde geçiyor ve bu kafe demek, oysa iki çeviri de onu 'dükkân/Laden' diye aktarıyor; öğrenci yanlış eşleme öğrenir."
+   "reason": "Örnekte kelime yalnız 'coffee shop' bileşiğinin içinde geçiyor ve bu kafe demek, oysa iki çeviri de onu 'dükkân/Laden' diye aktarıyor; öğrenci yanlış eşleme öğrenir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200803,
@@ -663,7 +692,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Hava durumu\" daha çok hava tahmini/raporu anlamına gelir; weather'ın karşılığı \"hava\", örnek çeviri de zaten \"hava\" kullanıyor."
+   "reason": "\"Hava durumu\" daha çok hava tahmini/raporu anlamına gelir; weather'ın karşılığı \"hava\", örnek çeviri de zaten \"hava\" kullanıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201083,
@@ -673,12 +703,15 @@
     "deGloss": "manche"
    },
    "after": {
-    "deGloss": "einige; etwas"
+    "deGloss": "einige; etwas",
+    "beispielDe": "Einige Geschäfte haben sonntags geöffnet."
    },
    "voiced": [
     "deGloss"
    ],
-   "reason": "Türkçe \"bazı; biraz\" iki anlamı verirken Almanca yalnız \"manche\" diyor; some'ın temel Almanca karşılıkları \"einige\" ve sayılamayanlarda \"etwas\"."
+   "reason": "Türkçe \"bazı; biraz\" iki anlamı verirken Almanca yalnız \"manche\" diyor; some'ın temel Almanca karşılıkları \"einige\" ve sayılamayanlarda \"etwas\".",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 201113,
@@ -695,7 +728,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sınav öncesi heyecan/gerginlik için Türkçede doğal karşılık \"gergin\"; \"tedirgin\" daha çok kaygılı-huzursuz anlamında kalıyor."
+   "reason": "Sınav öncesi heyecan/gerginlik için Türkçede doğal karşılık \"gergin\"; \"tedirgin\" daha çok kaygılı-huzursuz anlamında kalıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201198,
@@ -710,7 +744,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'yerine oturmak' Türkçede 'koltuğuna oturmak' ya da mecazen 'oturmak, uymak' anlamı taşıyor; 'sit down' karşılığı yalın 'oturmak'tır."
+   "reason": "'yerine oturmak' Türkçede 'koltuğuna oturmak' ya da mecazen 'oturmak, uymak' anlamı taşıyor; 'sit down' karşılığı yalın 'oturmak'tır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201286,
@@ -739,7 +774,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'choose' geçişli bir fiil ve doğrudan karşılığı 'seçmek'; 'seçim yapmak' yalnız nesnesiz kullanımı karşılıyor (örnek çeviri olduğu gibi kalabilir)."
+   "reason": "'choose' geçişli bir fiil ve doğrudan karşılığı 'seçmek'; 'seçim yapmak' yalnız nesnesiz kullanımı karşılıyor (örnek çeviri olduğu gibi kalabilir).",
+   "applied": "2026-10-04"
   },
   {
    "id": 201574,
@@ -756,7 +792,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Örnekte 'before' edat olarak kullanılıyor (vor), bağlaç 'bevor' değil; Almanca çeviri de cümleye olmayan 'wir essen' öznesini ekliyor."
+   "reason": "Örnekte 'before' edat olarak kullanılıyor (vor), bağlaç 'bevor' değil; Almanca çeviri de cümleye olmayan 'wir essen' öznesini ekliyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201724,
@@ -773,7 +810,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Etkinlik olarak 'shopping' Almancada 'das Einkaufen'dir; 'Einkauf' daha çok tek bir alım/satın alma anlamı taşır."
+   "reason": "Etkinlik olarak 'shopping' Almancada 'das Einkaufen'dir; 'Einkauf' daha çok tek bir alım/satın alma anlamı taşır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202140,
@@ -790,7 +828,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'each' Almancada 'jeder/jede/jedes' karşılığını alır; 'jeweils' ayrı bir zarftır ve Alman öğrenciye yanlış eşleşme öğretir, örnek çeviri de bu yüzden zorlanmış."
+   "reason": "'each' Almancada 'jeder/jede/jedes' karşılığını alır; 'jeweils' ayrı bir zarftır ve Alman öğrenciye yanlış eşleşme öğretir, örnek çeviri de bu yüzden zorlanmış.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202420,
@@ -805,7 +844,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnek fiziksel yükseklik anlatıyor ve Türkçe çeviri de 'alçak' diyor; 'düşük' bu anlamda yanlış (düşük sandalye denmez), kart ile örnek çelişiyor."
+   "reason": "Örnek fiziksel yükseklik anlatıyor ve Türkçe çeviri de 'alçak' diyor; 'düşük' bu anlamda yanlış (düşük sandalye denmez), kart ile örnek çelişiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202543,
@@ -824,7 +864,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Biraz yukarı gel' 'biraz daha yukarı çık' anlamına kayıyor, 'for a bit' kısa süreliğine demek; 'rauf' da konuşma dili kısaltması, kart karşılığı için standart 'nach oben' daha uygun."
+   "reason": "'Biraz yukarı gel' 'biraz daha yukarı çık' anlamına kayıyor, 'for a bit' kısa süreliğine demek; 'rauf' da konuşma dili kısaltması, kart karşılığı için standart 'nach oben' daha uygun.",
+   "applied": "2026-10-04"
   },
   {
    "id": 203162,
@@ -839,7 +880,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'home' için temel karşılık 'ev'dir (örnek çeviri de 'evim' diyor); 'yuva' şiirsel/yan anlam olup A1 öğrencisine 'go home' gibi kalıpları yanlış öğretir."
+   "reason": "'home' için temel karşılık 'ev'dir (örnek çeviri de 'evim' diyor); 'yuva' şiirsel/yan anlam olup A1 öğrencisine 'go home' gibi kalıpları yanlış öğretir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 205741,
@@ -868,7 +910,7 @@
    },
    "after": {
     "tr": "korkmuş",
-    "deGloss": "ängstlich",
+    "deGloss": "Angst haben",
     "beispiel": "My little sister is afraid of big dogs.",
     "beispielTr": "Küçük kız kardeşim büyük köpeklerden korkuyor.",
     "beispielDe": "Meine kleine Schwester hat Angst vor großen Hunden."
@@ -878,7 +920,9 @@
     "deGloss",
     "beispiel"
    ],
-   "reason": "Sıfata noktalı virgülle iki anlam verilmiş ve deGloss fiil (fürchten); temel anlam 'korkmuş' tek başına verilip örnek 'I'm afraid' kalıbı yerine bu anlamı gösteren cümleyle değiştirilmeli."
+   "reason": "Sıfata noktalı virgülle iki anlam verilmiş ve deGloss fiil (fürchten); temel anlam 'korkmuş' tek başına verilip örnek 'I'm afraid' kalıbı yerine bu anlamı gösteren cümleyle değiştirilmeli.",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 209004,
@@ -921,7 +965,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Much'ın temel karşılığı 'çok' (deGloss viel ile de uyumlu); 'fazla' yalnız olumsuz kalıpta doğal."
+   "reason": "Much'ın temel karşılığı 'çok' (deGloss viel ile de uyumlu); 'fazla' yalnız olumsuz kalıpta doğal.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209024,
@@ -950,7 +995,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Ride bisiklete, ata, otobüse 'binmek' demektir; 'sürmek' daha çok araba kullanmayı çağrıştırıyor."
+   "reason": "Ride bisiklete, ata, otobüse 'binmek' demektir; 'sürmek' daha çok araba kullanmayı çağrıştırıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209034,
@@ -965,7 +1011,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Zarfa noktalı virgülle iki karşılık verilmiş; örnekteki yön anlamı için tek karşılık 'dümdüz' yeterli."
+   "reason": "Zarfa noktalı virgülle iki karşılık verilmiş; örnekteki yön anlamı için tek karşılık 'dümdüz' yeterli.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209091,
@@ -980,7 +1027,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'stays at home today' bugüne ait bir durum için geniş zaman kullandığından doğal değil; Amerikan İngilizcesinde 'is staying home today' denir."
+   "reason": "'stays at home today' bugüne ait bir durum için geniş zaman kullandığından doğal değil; Amerikan İngilizcesinde 'is staying home today' denir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209098,
@@ -998,7 +1046,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "Telephone genel olarak 'telefon' demektir, 'sabit telefon' anlamı daraltıyor ve örnek çevirisi de 'Telefon' diyor."
+   "reason": "Telephone genel olarak 'telefon' demektir, 'sabit telefon' anlamı daraltıyor ve örnek çevirisi de 'Telefon' diyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209104,
@@ -1023,7 +1072,8 @@
     "deGloss",
     "beispiel"
    ],
-   "reason": "'Summer holiday' İngiliz kullanımıdır (Amerikan: summer vacation), Amerikan İngilizcesinde holiday resmî tatil/bayram günü demektir; anlam ve örnek buna göre düzeltilmeli."
+   "reason": "'Summer holiday' İngiliz kullanımıdır (Amerikan: summer vacation), Amerikan İngilizcesinde holiday resmî tatil/bayram günü demektir; anlam ve örnek buna göre düzeltilmeli.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209123,
@@ -1038,7 +1088,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Asgari' sözlük Türkçesi, öğrencinin ilk vereceği cevap 'en az' (örnek çevirisi de öyle); ayrıca Amerikan bağlamında örnekteki 'euros' yerine 'dollars' daha uygun olur."
+   "reason": "'Asgari' sözlük Türkçesi, öğrencinin ilk vereceği cevap 'en az' (örnek çevirisi de öyle); ayrıca Amerikan bağlamında örnekteki 'euros' yerine 'dollars' daha uygun olur.",
+   "applied": "2026-10-04"
   }
  ]
 }

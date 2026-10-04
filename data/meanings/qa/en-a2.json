@@ -112,7 +112,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Glad yüklem olarak 'memnun' ya da 'sevinmek' anlamındadır; 'sevinçli' Türkçede doğal bir karşılık değil."
+   "reason": "Glad yüklem olarak 'memnun' ya da 'sevinmek' anlamındadır; 'sevinçli' Türkçede doğal bir karşılık değil.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200300,
@@ -127,7 +128,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Kind'ın temel karşılığı 'nazik'tir ve örnek çevirisi de 'nazik' diyor; kart 'iyi kalpli' deyince kart ile cümle birbirini tutmuyor."
+   "reason": "Kind'ın temel karşılığı 'nazik'tir ve örnek çevirisi de 'nazik' diyor; kart 'iyi kalpli' deyince kart ile cümle birbirini tutmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200372,
@@ -144,7 +146,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almancada Quiz bilgi yarışması demektir, okuldaki kısa sınav değil; Alman öğrenci yanlış anlam öğrenir."
+   "reason": "Almancada Quiz bilgi yarışması demektir, okuldaki kısa sınav değil; Alman öğrenci yanlış anlam öğrenir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200400,
@@ -161,7 +164,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Örnekte taste geçişli 'tadına bakmak' anlamında; Almancada bunun karşılığı schmecken değil probieren, mevcut Almanca cümle de bu yüzden dolambaçlı ve aslı aktarmıyor."
+   "reason": "Örnekte taste geçişli 'tadına bakmak' anlamında; Almancada bunun karşılığı schmecken değil probieren, mevcut Almanca cümle de bu yüzden dolambaçlı ve aslı aktarmıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200480,
@@ -190,7 +194,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Kelime bir durumu anlatıyor (zu sein); 'kapanmış olmak' bir eylemin sonucunu vurguluyor, durum karşılığı 'kapalı olmak'."
+   "reason": "Kelime bir durumu anlatıyor (zu sein); 'kapanmış olmak' bir eylemin sonucunu vurguluyor, durum karşılığı 'kapalı olmak'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200549,
@@ -205,7 +210,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'açık durumda olmak' Türkçede yapay; örnek çeviri de doğal olarak 'açık' diyor."
+   "reason": "'açık durumda olmak' Türkçede yapay; örnek çeviri de doğal olarak 'açık' diyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200555,
@@ -234,7 +240,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Fiilin karşılığı nesneyi de içine alıyor ('form doldurmak'); kelimenin anlamı yalnız 'doldurmak', deGloss da yalnız 'ausfüllen'."
+   "reason": "Fiilin karşılığı nesneyi de içine alıyor ('form doldurmak'); kelimenin anlamı yalnız 'doldurmak', deGloss da yalnız 'ausfüllen'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200699,
@@ -256,7 +263,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "Amerikan İngilizcesinde kindergarten, birinci sınıftan önceki okul yılıdır; Almanca Kindergarten (kreş, okul öncesi) yanlış dosttur ve Alman öğrenciye yanlış anlam öğretir."
+   "reason": "Amerikan İngilizcesinde kindergarten, birinci sınıftan önceki okul yılıdır; Almanca Kindergarten (kreş, okul öncesi) yanlış dosttur ve Alman öğrenciye yanlış anlam öğretir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200791,
@@ -271,7 +279,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "tr iki ayrı anlam veriyor ve noktalı virgül kullanıyor (tek karşılık kuralına aykırı); deGloss ve örnek yalnız zaman anlamını (seit) gösteriyor."
+   "reason": "tr iki ayrı anlam veriyor ve noktalı virgül kullanıyor (tek karşılık kuralına aykırı); deGloss ve örnek yalnız zaman anlamını (seit) gösteriyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200797,
@@ -286,7 +295,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "should tavsiye bildirir ve Almancada 'sollte' karşılığıdır; 'sollen' (gerekmek, -mesi istenmek) başka bir anlam; örnek çeviri de 'solltest' kullanıyor."
+   "reason": "should tavsiye bildirir ve Almancada 'sollte' karşılığıdır; 'sollen' (gerekmek, -mesi istenmek) başka bir anlam; örnek çeviri de 'solltest' kullanıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200877,
@@ -317,7 +327,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almancada 'chatten' yalnız internetten yazışmak demek; İngilizce 'chat' ve Türkçe 'sohbet etmek' ise genel olarak sohbet etmek anlamında, bu yüzden Alman öğrenci anlamı dar öğrenir."
+   "reason": "Almancada 'chatten' yalnız internetten yazışmak demek; İngilizce 'chat' ve Türkçe 'sohbet etmek' ise genel olarak sohbet etmek anlamında, bu yüzden Alman öğrenci anlamı dar öğrenir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200934,
@@ -334,7 +345,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Anlaşılır talimat için Almancada doğal karşılık 'klar'; 'deutlich' daha çok net görülen ya da duyulan şey için kullanılır ve bu cümlede yapay duruyor."
+   "reason": "Anlaşılır talimat için Almancada doğal karşılık 'klar'; 'deutlich' daha çok net görülen ya da duyulan şey için kullanılır ve bu cümlede yapay duruyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 200973,
@@ -351,7 +363,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'televizyon cihazı' Türkçede doğal değil ve çeviri kokuyor; günlük dilde 'televizyon' denir."
+   "reason": "'televizyon cihazı' Türkçede doğal değil ve çeviri kokuyor; günlük dilde 'televizyon' denir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201051,
@@ -368,7 +381,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'komisch' kelimesinin asıl anlamı 'komik'; tek karşılık olarak verilince Alman öğrenci 'strange'i 'funny' sanabilir, 'seltsam' bu sorunu taşımıyor."
+   "reason": "'komisch' kelimesinin asıl anlamı 'komik'; tek karşılık olarak verilince Alman öğrenci 'strange'i 'funny' sanabilir, 'seltsam' bu sorunu taşımıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201074,
@@ -385,7 +399,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'deliver' kelimesinin yerleşik Türkçe karşılığı 'teslim etmek'; 'ulaştırmak' daha az doğal ve 'reach/ulaşmak' kartıyla karışabilir."
+   "reason": "'deliver' kelimesinin yerleşik Türkçe karşılığı 'teslim etmek'; 'ulaştırmak' daha az doğal ve 'reach/ulaşmak' kartıyla karışabilir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201075,
@@ -400,7 +415,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Kartta anlam 'link' olarak geçiyor ama örnek çeviride 'bağlantı' kullanılmış; bu tutarsızlık öğrencinin kafasını karıştırır."
+   "reason": "Kartta anlam 'link' olarak geçiyor ama örnek çeviride 'bağlantı' kullanılmış; bu tutarsızlık öğrencinin kafasını karıştırır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201078,
@@ -436,7 +452,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "Amerikan İngilizcesinde cap siperli şapkadır; kasket yassı şapka, Mütze ise genelde örgü bere demek, ikisi de öğrenciye yanlış bir nesne öğretiyor."
+   "reason": "Amerikan İngilizcesinde cap siperli şapkadır; kasket yassı şapka, Mütze ise genelde örgü bere demek, ikisi de öğrenciye yanlış bir nesne öğretiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201189,
@@ -479,7 +496,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Türkçe cümlede bölüm kullanılmış; departman yalnız şirket dilinde geçer, bölüm hem işyeri hem okul hem mağaza için genel ve doğal karşılık."
+   "reason": "Türkçe cümlede bölüm kullanılmış; departman yalnız şirket dilinde geçer, bölüm hem işyeri hem okul hem mağaza için genel ve doğal karşılık.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201364,
@@ -496,7 +514,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Abwart İsviçre Almancası; Alman öğrenci standart Almancadaki Hausmeister'i bekler, kart ona yabancı bir kelime öğretiyor."
+   "reason": "Abwart İsviçre Almancası; Alman öğrenci standart Almancadaki Hausmeister'i bekler, kart ona yabancı bir kelime öğretiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201370,
@@ -518,7 +537,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "tr bir fiil (dikkatli olmak), deGloss ise bir isim ya da ünlem (Achtung); iki dil aynı türü göstermiyor, fiil olan aufpassen/dikkat etmek ikisini eşitliyor."
+   "reason": "tr bir fiil (dikkatli olmak), deGloss ise bir isim ya da ünlem (Achtung); iki dil aynı türü göstermiyor, fiil olan aufpassen/dikkat etmek ikisini eşitliyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201467,
@@ -533,7 +553,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "\"For you I will gladly make...\" Almanca söz dizimini kopyalıyor; doğal Amerikan İngilizcesinde \"for you\" sona gelir."
+   "reason": "\"For you I will gladly make...\" Almanca söz dizimini kopyalıyor; doğal Amerikan İngilizcesinde \"for you\" sona gelir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201490,
@@ -550,7 +571,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"Bankomat-Karte\" Avusturya'ya özgü ve tireli yazımı standart değil; Alman öğrenci Bankkarte (ya da Girokarte) der."
+   "reason": "\"Bankomat-Karte\" Avusturya'ya özgü ve tireli yazımı standart değil; Alman öğrenci Bankkarte (ya da Girokarte) der.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201523,
@@ -565,7 +587,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"az kalsın\" yalnız kıl payı atlatılan olaylarda kullanılır; nearly'nin genel karşılığı neredeyse, örnek çeviri de bunu kullanıyor."
+   "reason": "\"az kalsın\" yalnız kıl payı atlatılan olaylarda kullanılır; nearly'nin genel karşılığı neredeyse, örnek çeviri de bunu kullanıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201533,
@@ -582,7 +605,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"gerektirmek\" anlamına denk gelen ve cümlede doğal duran fiil erfordern; \"benötigt viel Geduld\" Almancada yapay duruyor."
+   "reason": "\"gerektirmek\" anlamına denk gelen ve cümlede doğal duran fiil erfordern; \"benötigt viel Geduld\" Almancada yapay duruyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201552,
@@ -597,7 +621,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"tanım\" definition demektir; description tarif ya da betimleme olur, öğrenci yanlış kelime öğrenir."
+   "reason": "\"tanım\" definition demektir; description tarif ya da betimleme olur, öğrenci yanlış kelime öğrenir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201616,
@@ -633,7 +658,8 @@
     "deGloss",
     "beispiel"
    ],
-   "reason": "\"a tin of beans\" İngiliz İngilizcesidir (Amerikan İngilizcesinde can, o da ayrı bir kart); Amerikan İngilizcesinde tin, kurabiye kutusu gibi metal kutular için doğal."
+   "reason": "\"a tin of beans\" İngiliz İngilizcesidir (Amerikan İngilizcesinde can, o da ayrı bir kart); Amerikan İngilizcesinde tin, kurabiye kutusu gibi metal kutular için doğal.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201626,
@@ -652,7 +678,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "\"Our female boss runs the department\" doğal İngilizce değil (Almanca Chefin'in kopyası); female boss ancak cinsiyet vurgulanınca söylenir."
+   "reason": "\"Our female boss runs the department\" doğal İngilizce değil (Almanca Chefin'in kopyası); female boss ancak cinsiyet vurgulanınca söylenir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201737,
@@ -663,13 +690,14 @@
     "beispielDe": "Möchten Sie heute Abend zum Essen dazukommen?"
    },
    "after": {
-    "deGloss": "sich anschließen",
-    "beispielDe": "Möchtest du mit uns zu Abend essen?"
+    "beispielDe": "Möchtest du zum Abendessen dazukommen?"
    },
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"dazukommen\" join'in zayıf bir karşılığı; Almanca cümle de İngilizcede olmayan \"heute Abend\"i ekliyor ve Türkçedeki senli hitapla uyuşmuyor (Sie)."
+   "reason": "\"dazukommen\" join'in zayıf bir karşılığı; Almanca cümle de İngilizcede olmayan \"heute Abend\"i ekliyor ve Türkçedeki senli hitapla uyuşmuyor (Sie).",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 201738,
@@ -700,7 +728,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sıfat olarak grown-up'ın Türkçe karşılığı yetişkin; \"büyümüş\" bir ortaç olduğundan Almanca erwachsen ile aynı anlamı vermiyor."
+   "reason": "Sıfat olarak grown-up'ın Türkçe karşılığı yetişkin; \"büyümüş\" bir ortaç olduğundan Almanca erwachsen ile aynı anlamı vermiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201826,
@@ -717,7 +746,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"ummak\" hope anlamına gelir; expect'in karşılığı beklemektir, örnekte de beklenti anlatılıyor."
+   "reason": "\"ummak\" hope anlamına gelir; expect'in karşılığı beklemektir, örnekte de beklenti anlatılıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201863,
@@ -736,7 +766,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Kurs Amerikan İngilizcesi, ama 1 Mayıs ABD'de resmî tatil değil; örnek öğrenciye yanlış bilgi veriyor."
+   "reason": "Kurs Amerikan İngilizcesi, ama 1 Mayıs ABD'de resmî tatil değil; örnek öğrenciye yanlış bilgi veriyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201894,
@@ -781,7 +812,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'gar' tek başına 'at all' anlamına gelmez, yalnız 'gar nicht/gar nichts' kalıbında bu anlamı taşır. Doğrudan karşılık 'überhaupt'tur."
+   "reason": "'gar' tek başına 'at all' anlamına gelmez, yalnız 'gar nicht/gar nichts' kalıbında bu anlamı taşır. Doğrudan karşılık 'überhaupt'tur.",
+   "applied": "2026-10-04"
   },
   {
    "id": 201976,
@@ -826,7 +858,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almanca 'Halt' öncelikle 'durak/dur' ya da tutunma anlamına gelir. 'support' için temel karşılık 'Unterstützung'dur; Alman öğrenci yanlış eşleştirme öğrenir."
+   "reason": "Almanca 'Halt' öncelikle 'durak/dur' ya da tutunma anlamına gelir. 'support' için temel karşılık 'Unterstützung'dur; Alman öğrenci yanlış eşleştirme öğrenir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202088,
@@ -855,7 +888,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'ever' bir zarf, işlev sözcüğü değil; SPEC noktalı virgüllü çift karşılığa yalnız işlev sözcüklerinde izin veriyor, örnek cümlede de 'hiç' kullanılıyor."
+   "reason": "'ever' bir zarf, işlev sözcüğü değil; SPEC noktalı virgüllü çift karşılığa yalnız işlev sözcüklerinde izin veriyor, örnek cümlede de 'hiç' kullanılıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202153,
@@ -872,7 +906,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Kanne' tek başına sürahi ya da cezve gibi her türlü kabı anlatır. 'teapot' için doğru karşılık 'Teekanne'dir."
+   "reason": "'Kanne' tek başına sürahi ya da cezve gibi her türlü kabı anlatır. 'teapot' için doğru karşılık 'Teekanne'dir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202265,
@@ -881,13 +916,13 @@
    "before": {
     "deGloss": "längst"
    },
-   "after": {
-    "deGloss": "vor langer Zeit"
-   },
+   "after": {},
    "voiced": [
     "deGloss"
    ],
-   "reason": "'längst' bu örnekte doğru ama 'çoktan' demektir. 'long ago' için genel karşılık 'vor langer Zeit'tır; 'Long ago there lived a king' gibi cümlelerde 'längst' yanlış olur."
+   "reason": "'längst' bu örnekte doğru ama 'çoktan' demektir. 'long ago' için genel karşılık 'vor langer Zeit'tır; 'Long ago there lived a king' gibi cümlelerde 'längst' yanlış olur.",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 202294,
@@ -904,7 +939,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Amerikan İngilizcesinde 'soda' kola dahil bütün gazlı içecekleri kapsar. 'gazoz' anlamı daraltıyor, Türkçedeki 'soda' (maden suyu) ile de karışmaya açık."
+   "reason": "Amerikan İngilizcesinde 'soda' kola dahil bütün gazlı içecekleri kapsar. 'gazoz' anlamı daraltıyor, Türkçedeki 'soda' (maden suyu) ile de karışmaya açık.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202315,
@@ -935,7 +971,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almancada 'Pille' günlük dilde çoğunlukla doğum kontrol hapını çağrıştırır; ilaç hapı için doğal kelime 'Tablette'."
+   "reason": "Almancada 'Pille' günlük dilde çoğunlukla doğum kontrol hapını çağrıştırır; ilaç hapı için doğal kelime 'Tablette'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202508,
@@ -978,7 +1015,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "tr alanında noktalı virgülle iki karşılık var, tek karşılık kuralına aykırı; örnekteki anlam 'karşıdan karşıya'."
+   "reason": "tr alanında noktalı virgülle iki karşılık var, tek karşılık kuralına aykırı; örnekteki anlam 'karşıdan karşıya'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202556,
@@ -995,7 +1033,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'on time' Almancada 'pünktlich' demek; 'rechtzeitig' 'in time' karşılığı olduğundan Alman öğrenci iki kalıbı karıştırır."
+   "reason": "'on time' Almancada 'pünktlich' demek; 'rechtzeitig' 'in time' karşılığı olduğundan Alman öğrenci iki kalıbı karıştırır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202640,
@@ -1010,7 +1049,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almancada fiil dönüşlü kullanılıyor ('sich rasieren' kartıyla tutarlı olmalı), örnek de 'schminkt sich' diyor."
+   "reason": "Almancada fiil dönüşlü kullanılıyor ('sich rasieren' kartıyla tutarlı olmalı), örnek de 'schminkt sich' diyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202648,
@@ -1025,7 +1065,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Not almak' ders/toplantıda not tutmak demek; 'write down' (bir şeyi yazıp kaydetmek) karşılığı ve örnekteki fiil 'not etmek'."
+   "reason": "'Not almak' ders/toplantıda not tutmak demek; 'write down' (bir şeyi yazıp kaydetmek) karşılığı ve örnekteki fiil 'not etmek'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202690,
@@ -1042,7 +1083,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Kartta 'emniyet', örnekte 'güvenlik' geçiyor; 'safety' için yaygın karşılık 'güvenlik', ayrıca çeviride 'especially' kaybolmuş."
+   "reason": "Kartta 'emniyet', örnekte 'güvenlik' geçiyor; 'safety' için yaygın karşılık 'güvenlik', ayrıca çeviride 'especially' kaybolmuş.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202727,
@@ -1059,7 +1101,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almancada 'özel gün' 'besonderer Tag' olur; 'spezieller Tag' doğal değil ve 'speziell' bu anlam için yanlış karşılık öğretiyor."
+   "reason": "Almancada 'özel gün' 'besonderer Tag' olur; 'spezieller Tag' doğal değil ve 'speziell' bu anlam için yanlış karşılık öğretiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202799,
@@ -1076,7 +1119,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Studierende' cinsiyetsiz ya da çoğul bir sözcük, 'male student' karşılığı olarak 'Student' olmalı; örnek çeviri de buna uymalı."
+   "reason": "'Studierende' cinsiyetsiz ya da çoğul bir sözcük, 'male student' karşılığı olarak 'Student' olmalı; örnek çeviri de buna uymalı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202827,
@@ -1093,7 +1137,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'olgu' akademik ve A2 için nadir bir sözcük; günlük karşılık 'gerçek', örnek çeviri de buna göre doğallaşmalı."
+   "reason": "'olgu' akademik ve A2 için nadir bir sözcük; günlük karşılık 'gerçek', örnek çeviri de buna göre doğallaşmalı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202840,
@@ -1108,7 +1153,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'sıcaklık derecesi' doğal bir sözlük karşılığı değil; yaygın ve örnekte de kullanılan karşılık 'sıcaklık'."
+   "reason": "'sıcaklık derecesi' doğal bir sözlük karşılığı değil; yaygın ve örnekte de kullanılan karşılık 'sıcaklık'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202849,
@@ -1137,7 +1183,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Artikelsiz 'Tote' biçimi 'dead woman' kartıyla aynı görünüyor; eril karşılığı ayırt etmek için 'Toter' olmalı."
+   "reason": "Artikelsiz 'Tote' biçimi 'dead woman' kartıyla aynı görünüyor; eril karşılığı ayırt etmek için 'Toter' olmalı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202902,
@@ -1152,7 +1199,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'inandırmak' daha çok 'bir şeye inandırmak' anlamında kalıyor; convince'in temel karşılığı 'ikna etmek' ve örnek çeviri de zaten bunu kullanıyor."
+   "reason": "'inandırmak' daha çok 'bir şeye inandırmak' anlamında kalıyor; convince'in temel karşılığı 'ikna etmek' ve örnek çeviri de zaten bunu kullanıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 202965,
@@ -1169,7 +1217,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Geçişli 'connect X to Y' kalıbının karşılığı 'bağlamak'; 'bağlantı kurmak' türü ve yapıyı yanlış öğretiyor, çeviri de yapay kalıyor."
+   "reason": "Geçişli 'connect X to Y' kalıbının karşılığı 'bağlamak'; 'bağlantı kurmak' türü ve yapıyı yanlış öğretiyor, çeviri de yapay kalıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 203180,
@@ -1184,7 +1233,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnek çeviri 'durum' kullanıyor; tek başına 'hâl' bu anlamda daha az doğal ve kartta tutarsızlık yaratıyor."
+   "reason": "Örnek çeviri 'durum' kullanıyor; tek başına 'hâl' bu anlamda daha az doğal ve kartta tutarsızlık yaratıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 204347,
@@ -1201,7 +1251,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'unverzüglich' resmî ve nadir; A2 düzeyinde temel karşılık 'sofort', ayrıca Türkçe çevirideki samimi hitapla uyumlu olur."
+   "reason": "'unverzüglich' resmî ve nadir; A2 düzeyinde temel karşılık 'sofort', ayrıca Türkçe çevirideki samimi hitapla uyumlu olur.",
+   "applied": "2026-10-04"
   },
   {
    "id": 204570,
@@ -1218,7 +1269,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"yetişmek\" kelimesinin \"zamanında varmak\" anlamı da var; çocuklar için en doğal ve tek anlamlı karşılık \"büyümek\"."
+   "reason": "\"yetişmek\" kelimesinin \"zamanında varmak\" anlamı da var; çocuklar için en doğal ve tek anlamlı karşılık \"büyümek\".",
+   "applied": "2026-10-04"
   },
   {
    "id": 205023,
@@ -1235,7 +1287,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"Niveaustufe\" teknik bir terim; \"level\" için genel ve doğal karşılık \"Niveau\"."
+   "reason": "\"Niveaustufe\" teknik bir terim; \"level\" için genel ve doğal karşılık \"Niveau\".",
+   "applied": "2026-10-04"
   },
   {
    "id": 205271,
@@ -1252,7 +1305,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"Herberge\" eski ve edebi bir kelime; bugün Almancada sırt çantalı gezginlerin kaldığı yere \"Hostel\" deniyor."
+   "reason": "\"Herberge\" eski ve edebi bir kelime; bugün Almancada sırt çantalı gezginlerin kaldığı yere \"Hostel\" deniyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 205606,
@@ -1269,7 +1323,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"Gewerbe\" resmî ve dar bir terim; örnek de \"esnaf kaydı yaptırdı\" anlamına kayıyor, oysa İngilizce cümle \"kendi işini kurdu\" diyor."
+   "reason": "\"Gewerbe\" resmî ve dar bir terim; örnek de \"esnaf kaydı yaptırdı\" anlamına kayıyor, oysa İngilizce cümle \"kendi işini kurdu\" diyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 207465,
@@ -1286,7 +1341,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"suyla doldurulmuş şişe\" çeviri kokuyor; doğal Türkçesi \"suyla dolu\"."
+   "reason": "\"suyla doldurulmuş şişe\" çeviri kokuyor; doğal Türkçesi \"suyla dolu\".",
+   "applied": "2026-10-04"
   },
   {
    "id": 207557,
@@ -1317,7 +1373,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"bir daha\" olumsuz cümlede \"asla bir daha\" anlamına da geliyor; \"bir kez daha\" tek anlamlı ve daha net."
+   "reason": "\"bir daha\" olumsuz cümlede \"asla bir daha\" anlamına da geliyor; \"bir kez daha\" tek anlamlı ve daha net.",
+   "applied": "2026-10-04"
   },
   {
    "id": 207702,
@@ -1334,7 +1391,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"Realschule\" Almanya'daki belirli bir okul türü; Amerikan middle school'u olan ortaokul kademesini karşılamıyor ve Alman öğrenciyi yanıltır."
+   "reason": "\"Realschule\" Almanya'daki belirli bir okul türü; Amerikan middle school'u olan ortaokul kademesini karşılamıyor ve Alman öğrenciyi yanıltır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 207703,
@@ -1351,7 +1409,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Günlük Türkçede \"derslik\" resmî ve seyrek kalıyor; öğrencinin kullandığı doğal kelime \"sınıf\"."
+   "reason": "Günlük Türkçede \"derslik\" resmî ve seyrek kalıyor; öğrencinin kullandığı doğal kelime \"sınıf\".",
+   "applied": "2026-10-04"
   },
   {
    "id": 207728,
@@ -1368,7 +1427,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"jemanden schwimmen lehren\" eski ve kitabi kalıyor; bu bağlamda doğal Almanca karşılık \"beibringen\"."
+   "reason": "\"jemanden schwimmen lehren\" eski ve kitabi kalıyor; bu bağlamda doğal Almanca karşılık \"beibringen\".",
+   "applied": "2026-10-04"
   },
   {
    "id": 207738,
@@ -1385,7 +1445,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"okuldan sonra okulda kalmak\" hem dolambaçlı hem tekrarlı; örnek ve \"nachsitzen\" ceza anlamında olduğu için tr de \"cezaya kalmak\" olmalı."
+   "reason": "\"okuldan sonra okulda kalmak\" hem dolambaçlı hem tekrarlı; örnek ve \"nachsitzen\" ceza anlamında olduğu için tr de \"cezaya kalmak\" olmalı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 207741,
@@ -1414,7 +1475,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Tek başına \"decken\" kelimesi \"örtmek\" anlamına da geldiği için \"sofra kurmak\" anlamı ancak \"Tisch\" ile netleşiyor."
+   "reason": "Tek başına \"decken\" kelimesi \"örtmek\" anlamına da geldiği için \"sofra kurmak\" anlamı ancak \"Tisch\" ile netleşiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 208116,
@@ -1437,13 +1499,13 @@
    "before": {
     "deGloss": "putzen"
    },
-   "after": {
-    "deGloss": "bürsten"
-   },
+   "after": {},
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"putzen\" temizlemek demek, fırçalamak değil; Alman öğrenci \"brush = putzen\" diye ezberler (\"brush your hair\" bürsten olur), örnekteki \"Zähne putzen\" çevirisi doğal olduğu için kalabilir."
+   "reason": "\"putzen\" temizlemek demek, fırçalamak değil; Alman öğrenci \"brush = putzen\" diye ezberler (\"brush your hair\" bürsten olur), örnekteki \"Zähne putzen\" çevirisi doğal olduğu için kalabilir.",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 209056,
@@ -1458,7 +1520,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sıfat olarak 'done' bitmiş demek; 'tamam' ünlem karşılığı ve örnekteki 'bitti' ile Almanca 'fertig' ile örtüşmüyor."
+   "reason": "Sıfat olarak 'done' bitmiş demek; 'tamam' ünlem karşılığı ve örnekteki 'bitti' ile Almanca 'fertig' ile örtüşmüyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209072,
@@ -1481,13 +1544,13 @@
    "before": {
     "deGloss": "wehtun"
    },
-   "after": {
-    "deGloss": "schmerzend"
-   },
+   "after": {},
    "voiced": [
     "deGloss"
    ],
-   "reason": "Sıfata fiil karşılığı (wehtun) verilmiş; tür uyumsuz."
+   "reason": "Sıfata fiil karşılığı (wehtun) verilmiş; tür uyumsuz.",
+   "applied": "2026-10-04",
+   "note": "check:en-de: Almanca karşılık cümlede geçmeli — cümle ya da karşılık buna göre ayarlandı"
   },
   {
    "id": 209133,
@@ -1516,7 +1579,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'elektrik motoru' gereksiz daraltma; kelime ve örnek genel 'motor' anlamında, Almancası da 'Motor'."
+   "reason": "'elektrik motoru' gereksiz daraltma; kelime ve örnek genel 'motor' anlamında, Almancası da 'Motor'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209154,
@@ -1538,7 +1602,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "Amerikan 'yard' ev bahçesidir; tr 'arka bahçe' ile örnekteki 'avlu' çelişiyor, Almanca 'Hinterhof hinter dem Haus' ise hem dar anlamlı hem tekrarlı."
+   "reason": "Amerikan 'yard' ev bahçesidir; tr 'arka bahçe' ile örnekteki 'avlu' çelişiyor, Almanca 'Hinterhof hinter dem Haus' ise hem dar anlamlı hem tekrarlı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209160,
@@ -1555,7 +1620,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'peşin' yalnız ödemeye özgü ve nakit çağrışımlı; 'in advance' ve 'im Voraus' genel olarak 'önceden' demek."
+   "reason": "'peşin' yalnız ödemeye özgü ve nakit çağrışımlı; 'in advance' ve 'im Voraus' genel olarak 'önceden' demek.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209165,
@@ -1570,7 +1636,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Türkçede yalın 'site' konut sitesi de demek; Almanca 'Website' ve örnekle uyum için 'web sitesi' olmalı."
+   "reason": "Türkçede yalın 'site' konut sitesi de demek; Almanca 'Website' ve örnekle uyum için 'web sitesi' olmalı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209171,
@@ -1589,7 +1656,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Örnek A2 için soyut ve bilimsel, Türkçesi 'Hava daha fazla su tutamıyor' doğal değil ve 'hava' hava durumu gibi anlaşılıyor."
+   "reason": "Örnek A2 için soyut ve bilimsel, Türkçesi 'Hava daha fazla su tutamıyor' doğal değil ve 'hava' hava durumu gibi anlaşılıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209172,
@@ -1604,7 +1672,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'azıcık' küçültmeli ve daha dar; standart karşılık örnek çevirideki gibi 'biraz'."
+   "reason": "'azıcık' küçültmeli ve daha dar; standart karşılık örnek çevirideki gibi 'biraz'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 209173,
@@ -1619,7 +1688,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'iyi biçimde' Türkçede doğal değil; zarf olarak 'iyi' kullanılır ve örnek çeviri de böyle."
+   "reason": "'iyi biçimde' Türkçede doğal değil; zarf olarak 'iyi' kullanılır ve örnek çeviri de böyle.",
+   "applied": "2026-10-04"
   }
  ]
 }

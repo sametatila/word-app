@@ -1,6 +1,6 @@
 [
  { "id": 201855, "beispielDe": "Ich brauche farbiges Papier, kein weißes." },
- { "id": 201863, "beispielDe": "Der Erste Mai ist ein gesetzlicher Feiertag." },
+ { "id": 201863, "beispielDe": "Der vierte Juli ist ein gesetzlicher Feiertag." },
  { "id": 201866, "beispielDe": "Hast du die Fernbedienung für den Fernseher gesehen?" },
  { "id": 201877, "beispielDe": "Hast du ein Feuerzeug dabei?" },
  { "id": 201878, "beispielDe": "Die Feuerwehr hat das Feuer sehr schnell gelöscht." },
@@ -20,7 +20,7 @@
  { "id": 201921, "beispielDe": "Die Friseurin hat mir die Haare sehr kurz geschnitten." },
  { "id": 201933, "beispielDe": "Du musst dich vor meinem Hund nicht fürchten." },
  { "id": 201936, "beispielDe": "Bitte füttern Sie die Tiere im Zoo nicht." },
- { "id": 201939, "beispielDe": "Davon habe ich gar nichts gewusst." },
+ { "id": 201939, "beispielDe": "Davon habe ich überhaupt nichts gewusst." },
  { "id": 201943, "beispielDe": "Zu Hause kochen wir mit Gas." },
  { "id": 201950, "beispielDe": "Sie hatte Glück, hier geboren zu werden." },
  { "id": 201955, "beispielDe": "Sie hat zum Geburtstag ihrer Oma ein kurzes Gedicht geschrieben." },
@@ -47,6 +47,6 @@
  { "id": 202024, "beispielDe": "Aus welchem Grund haben Sie gekündigt?" },
  { "id": 202027, "beispielDe": "Der Gastgeber begrüßte jeden Gast an der Tür." },
  { "id": 202031, "beispielDe": "Vom Hafen aus sieht man große Schiffe." },
- { "id": 202040, "beispielDe": "Meine Familie gibt mir viel Halt." },
+ { "id": 202040, "beispielDe": "Meine Familie gibt mir viel Unterstützung." },
  { "id": 202046, "beispielDe": "Ich hasse es, morgens früh aufzustehen." }
 ]
