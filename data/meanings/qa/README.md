@@ -4,7 +4,7 @@ Kelime kartlarının anlamsal denetimi: anlam doğru ve doğal mı, `tr` ile `en
 örnek cümle kelimeyi o anlamda mı kullanıyor, çeviriler doğru mu. Biçim kuralları `../SPEC.md`; mekanik
 denetleyici (`check.mjs`) anlamı ölçmüyor, bu klasör o boşluk için.
 
-**Bu klasörü hiçbir seed ya da deploy okumaz.** Dosyalar karara bağlanmış ama UYGULANMAMIŞ düzeltmeler.
+**Bu klasörü hiçbir seed ya da deploy okumaz.** Dosyalar karar kaydı; veriye `apply.py` işler (`applied` tarihi).
 
 ## Akış (bir parça: dil × seviye)
 
@@ -21,7 +21,7 @@ denetleyici (`check.mjs`) anlamı ölçmüyor, bu klasör o boşluk için.
 Kelime katmanının sesi yalnız Defne/Aras kayıtlarından ve düşüşsüz (`docs/plan/tts-own-voices.md`).
 Sesli alanlar: başlık, `formen` (çoğul), `beispiel` (+ boşluk doldurma ve her dizme kutusu), `tr`/`en`
 (yürüyüş modunda anlam). `beispielTr`/`beispielEn` sessiz. Sesli alanı değişen madde, kaydı üretilmeden
-canlıya çıkarsa SUSAR. Sıra: düzeltme metinlerinin kaydı Linux 4060'ta üretilir ve yayınlanır → sonra
+canlıya çıkarsa SUSAR. Sıra: düzeltme metinlerinin kaydı (Linux 4060 ya da Mac) üretilir ve yayınlanır → sonra
 düzeltme `out/` paketine (ya da İngilizce kursta `data/en-de/out`) işlenir, `meanings:check` + commit.
 Her düzeltmenin `voiced` alanı hangi kaydın gerektiğini söyler; boşsa (yalnız çeviri) hemen uygulanabilir.
 
