@@ -33,11 +33,11 @@
   },
   {
     "id": 7742,
-    "tr": "okuyup bakmak",
-    "en": "to read up",
+    "tr": "açıp bakmak",
+    "en": "to look up",
     "beispiel": "Die Regel kannst du im Buch nachlesen.",
-    "beispielTr": "Kuralı kitaptan okuyup bakabilirsin.",
-    "beispielEn": "You can read up on the rule in the book."
+    "beispielTr": "Kurala kitaptan bakabilirsin.",
+    "beispielEn": "You can look up the rule in the book."
   },
   {
     "id": 7743,
@@ -177,10 +177,10 @@
   },
   {
     "id": 7760,
-    "tr": "haftalık pazar",
+    "tr": "semt pazarı",
     "en": "weekly market",
     "beispiel": "Am Samstag kaufe ich Obst auf dem Wochenmarkt.",
-    "beispielTr": "Cumartesi günü haftalık pazardan meyve alıyorum.",
+    "beispielTr": "Cumartesi günü semt pazarından meyve alıyorum.",
     "beispielEn": "On Saturday I buy fruit at the weekly market."
   },
   {

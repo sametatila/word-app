@@ -321,7 +321,7 @@
   },
   {
     "id": 1004,
-    "tr": "bulaşık",
+    "tr": "tabak çanak",
     "en": "dishes",
     "beispiel": "Nach dem Essen spüle ich das Geschirr.",
     "beispielTr": "Yemekten sonra bulaşıkları yıkarım.",
@@ -354,10 +354,10 @@
   {
     "id": 950,
     "tr": "paketlemek",
-    "en": "to wrap up",
+    "en": "to wrap",
     "beispiel": "Die Kinder packen die Geschenke für Oma in buntes Papier ein.",
-    "beispielTr": "Çocuklar büyükannenin hediyelerini renkli kâğıda sarıyor.",
-    "beispielEn": "The kids are wrapping Grandma's presents in colorful paper."
+    "beispielTr": "Çocuklar büyükanneye aldıkları hediyeleri renkli kâğıda sarıyor.",
+    "beispielEn": "The kids are wrapping the presents for Grandma in colorful paper."
   },
   {
     "id": 1259,

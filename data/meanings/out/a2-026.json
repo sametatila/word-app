@@ -25,7 +25,7 @@
   },
   {
     "id": 8243,
-    "tr": "araçla gitmek",
+    "tr": "araçla oraya gitmek",
     "en": "to drive there",
     "beispiel": "Der Markt ist weit, wir fahren mit dem Bus hin.",
     "beispielTr": "Pazar yeri uzak, oraya otobüsle gidiyoruz.",
@@ -33,7 +33,7 @@
   },
   {
     "id": 8244,
-    "tr": "geri dönmek",
+    "tr": "araçla geri dönmek",
     "en": "to drive back",
     "beispiel": "Wir wollen am Sonntag nach München zurückfahren.",
     "beispielTr": "Pazar günü Münih'e geri dönmek istiyoruz.",
@@ -41,7 +41,7 @@
   },
   {
     "id": 8245,
-    "tr": "çekip gitmek",
+    "tr": "araçla uzaklaşmak",
     "en": "to drive away",
     "beispiel": "Nach dem Streit fährt er einfach weg.",
     "beispielTr": "Kavgadan sonra öylece çekip gidiyor.",
@@ -82,14 +82,14 @@
   {
     "id": 8250,
     "tr": "geri götürmek",
-    "en": "to bring back",
+    "en": "to return",
     "beispiel": "Kannst du die Bücher morgen zurückbringen?",
     "beispielTr": "Kitapları yarın geri götürebilir misin?",
-    "beispielEn": "Can you bring the books back tomorrow?"
+    "beispielEn": "Can you return the books tomorrow?"
   },
   {
     "id": 8251,
-    "tr": "başından savmak",
+    "tr": "geri çevirmek",
     "en": "to send away",
     "beispiel": "Der Kellner schickt den Gast einfach weg.",
     "beispielTr": "Garson misafiri öylece geri çeviriyor.",

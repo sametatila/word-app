@@ -1,11 +1,11 @@
 [
   {
     "id": 8139,
-    "tr": "devirmek",
+    "tr": "ağaç kesmek",
     "en": "to fell",
     "beispiel": "Im Winter haben sie den kranken Baum gefällt.",
-    "beispielTr": "Kışın hasta ağacı devirdiler.",
-    "beispielEn": "In winter they felled the diseased tree."
+    "beispielTr": "Kışın hastalıklı ağacı kestiler.",
+    "beispielEn": "In winter they cut down the diseased tree."
   },
   {
     "id": 8140,
@@ -17,8 +17,8 @@
   },
   {
     "id": 8141,
-    "tr": "donmak",
-    "en": "to freeze",
+    "tr": "donarak ölmek",
+    "en": "to freeze to death",
     "beispiel": "Bei diesem Frost können die Blumen erfrieren.",
     "beispielTr": "Bu ayazda çiçekler donabilir.",
     "beispielEn": "In this frost the flowers could freeze."
@@ -193,10 +193,10 @@
   },
   {
     "id": 8163,
-    "tr": "ovalamak",
+    "tr": "ovmak",
     "en": "to scrub",
     "beispiel": "Ich schrubbe den Boden im Bad mit einer Bürste.",
-    "beispielTr": "Banyodaki zemini bir fırçayla ovalıyorum.",
+    "beispielTr": "Banyonun zeminini fırçayla ovuyorum.",
     "beispielEn": "I scrub the bathroom floor with a brush."
   },
   {

@@ -25,11 +25,11 @@
   },
   {
     "id": 8041,
-    "tr": "sözleşmek",
+    "tr": "konuşup anlaşmak",
     "en": "to coordinate",
     "beispiel": "Wir müssen uns noch über den Termin absprechen.",
-    "beispielTr": "Randevu konusunda anlaşmamız gerekiyor.",
-    "beispielEn": "We still need to coordinate the appointment."
+    "beispielTr": "Randevu konusunda daha konuşup anlaşmamız gerekiyor.",
+    "beispielEn": "We still need to agree on the appointment."
   },
   {
     "id": 8042,
@@ -258,10 +258,10 @@
   {
     "id": 8070,
     "tr": "gidiş yolculuğu",
-    "en": "outward journey",
+    "en": "trip there",
     "beispiel": "Die Anreise mit dem Auto dauert fünf Stunden.",
     "beispielTr": "Arabayla gidiş yolculuğu beş saat sürüyor.",
-    "beispielEn": "The outward journey by car takes five hours."
+    "beispielEn": "The trip there by car takes five hours."
   },
   {
     "id": 8071,

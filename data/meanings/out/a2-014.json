@@ -249,10 +249,10 @@
   },
   {
     "id": 7669,
-    "tr": "not defteri",
+    "tr": "bloknot",
     "en": "notepad",
     "beispiel": "Ich schreibe die Telefonnummer in meinen Notizblock.",
-    "beispielTr": "Telefon numarasını not defterime yazıyorum.",
+    "beispielTr": "Telefon numarasını bloknotuma yazıyorum.",
     "beispielEn": "I'm writing the phone number in my notepad."
   },
   {
@@ -282,10 +282,10 @@
   {
     "id": 7673,
     "tr": "muayenehane",
-    "en": "medical practice",
+    "en": "doctor's office",
     "beispiel": "In der Arztpraxis warten heute viele Patienten.",
     "beispielTr": "Muayenehanede bugün birçok hasta bekliyor.",
-    "beispielEn": "Many patients are waiting at the medical practice today."
+    "beispielEn": "Many patients are waiting at the doctor's office today."
   },
   {
     "id": 7674,
@@ -394,9 +394,9 @@
   {
     "id": 7687,
     "tr": "genel müdür",
-    "en": "managing director",
+    "en": "general manager",
     "beispiel": "Der Geschäftsführer kommt morgen in unsere Abteilung.",
     "beispielTr": "Genel müdür yarın bizim bölüme geliyor.",
-    "beispielEn": "The managing director is coming to our department tomorrow."
+    "beispielEn": "The general manager is coming to our department tomorrow."
   }
 ]

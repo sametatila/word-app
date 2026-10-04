@@ -27,9 +27,9 @@
     "id": 1150,
     "tr": "hesaplamak",
     "en": "to calculate",
-    "beispiel": "Mein Vater rechnet jeden Monat unsere Ausgaben aus.",
-    "beispielTr": "Babam her ay masraflarımızı hesaplıyor.",
-    "beispielEn": "My dad calculates our expenses every month."
+    "beispiel": "Mein Sohn kann schon gut rechnen.",
+    "beispielTr": "Oğlum artık iyi hesap yapabiliyor.",
+    "beispielEn": "My son is already good at math."
   },
   {
     "id": 1064,
@@ -49,10 +49,10 @@
   },
   {
     "id": 871,
-    "tr": "aygıt",
+    "tr": "cihaz",
     "en": "device",
     "beispiel": "Dieser Apparat macht auch Kaffee mit Milch.",
-    "beispielTr": "Bu aygıt sütlü kahve de yapıyor.",
+    "beispielTr": "Bu cihaz sütlü kahve de yapıyor.",
     "beispielEn": "This machine also makes coffee with milk."
   },
   {

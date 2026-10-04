@@ -25,7 +25,7 @@
   },
   {
     "id": 1306,
-    "tr": "kayıp",
+    "tr": "gitmiş",
     "en": "gone",
     "beispiel": "Heute Morgen war mein Fahrrad einfach weg.",
     "beispielTr": "Bu sabah bisikletim ortadan kaybolmuştu.",
@@ -97,7 +97,7 @@
   },
   {
     "id": 1195,
-    "tr": "kendi",
+    "tr": "bizzat",
     "en": "oneself",
     "beispiel": "Ich habe den Kuchen selbst gebacken.",
     "beispielTr": "Pastayı kendim yaptım.",
@@ -241,10 +241,10 @@
   },
   {
     "id": 1299,
-    "tr": "otomobil",
+    "tr": "araba",
     "en": "car",
     "beispiel": "Mein Wagen steht in der Garage.",
-    "beispielTr": "Otomobilim garajda duruyor.",
+    "beispielTr": "Arabam garajda duruyor.",
     "beispielEn": "My car is in the garage."
   },
   {

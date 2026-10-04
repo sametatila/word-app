@@ -17,10 +17,10 @@
   },
   {
     "id": 7890,
-    "tr": "sayfa çevirmek",
+    "tr": "sayfalarını karıştırmak",
     "en": "to leaf through",
     "beispiel": "Im Wartezimmer blättere ich gern in einer Zeitschrift.",
-    "beispielTr": "Bekleme odasında dergi sayfalarını çevirmeyi severim.",
+    "beispielTr": "Bekleme odasında bir dergiyi karıştırmayı severim.",
     "beispielEn": "In the waiting room I like leafing through a magazine."
   },
   {
@@ -89,10 +89,10 @@
   },
   {
     "id": 7899,
-    "tr": "germek",
+    "tr": "esnetmek",
     "en": "to stretch",
     "beispiel": "Nach dem Laufen dehne ich immer meine Beine.",
-    "beispielTr": "Koşudan sonra hep bacaklarımı gererim.",
+    "beispielTr": "Koşudan sonra hep bacaklarımı esnetirim.",
     "beispielEn": "After running I always stretch my legs."
   },
   {
@@ -370,7 +370,7 @@
   {
     "id": 7934,
     "tr": "ense",
-    "en": "nape",
+    "en": "back of the neck",
     "beispiel": "Nach der Arbeit am Computer tut mir der Nacken weh.",
     "beispielTr": "Bilgisayarda çalıştıktan sonra ensem ağrıyor.",
     "beispielEn": "My neck hurts after working at the computer."

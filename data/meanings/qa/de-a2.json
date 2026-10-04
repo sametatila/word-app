@@ -25,6 +25,21 @@
    "id": 8019,
    "de": "Anhang",
    "reason": "değişiklik yok: Kart doğru ama \"is in the attachment\" yerine \"The invoice is attached.\" daha doğal olur; ancak o zaman isim cümlede geçmediğinden mevcut hâli kabul edilebilir, değişiklik gerekmeyebilir."
+  },
+  {
+   "id": 7701,
+   "de": "Gymnasium",
+   "reason": "uzlaştırmadan (c6ec059bc) gelen değer doğru ve sesi var; pahalı değişikliğe gerek yok"
+  },
+  {
+   "id": 8099,
+   "de": "Sonnenschirm",
+   "reason": "uzlaştırmadan (c6ec059bc) gelen değer doğru ve sesi var; pahalı değişikliğe gerek yok"
+  },
+  {
+   "id": 8107,
+   "de": "Gehweg",
+   "reason": "geri alındı: kaldırım/sidewalk Bürgersteig ile ayırt edilemez ikiz yapıyor (check.mjs)"
   }
  ],
  "fixes": [
@@ -57,7 +72,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Aygıt' gündelik Türkçede kitabi kalıyor; Apparat'ın doğal karşılığı 'cihaz'."
+   "reason": "'Aygıt' gündelik Türkçede kitabi kalıyor; Apparat'ın doğal karşılığı 'cihaz'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 899,
@@ -72,7 +88,9 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"danışmanlık yapmak\" profesyonel danışmanlık çağrıştırıyor; örnekteki eczane bağlamına ve çeviriye uyan günlük karşılık \"tavsiye vermek\"."
+   "reason": "\"danışmanlık yapmak\" profesyonel danışmanlık çağrıştırıyor; örnekteki eczane bağlamına ve çeviriye uyan günlük karşılık \"tavsiye vermek\".",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 907,
@@ -105,7 +123,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"die Geschenke für Oma\" büyükanne için alınan hediyeler demek; \"büyükannenin hediyeleri\" ve \"Grandma's presents\" hediyeyi büyükanneye ait gösteriyor, ayrıca \"to wrap up\" İngilizcede \"bitirmek\" anlamına da geliyor."
+   "reason": "\"die Geschenke für Oma\" büyükanne için alınan hediyeler demek; \"büyükannenin hediyeleri\" ve \"Grandma's presents\" hediyeyi büyükanneye ait gösteriyor, ayrıca \"to wrap up\" İngilizcede \"bitirmek\" anlamına da geliyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 962,
@@ -120,7 +139,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Öğrenci/müze indirimi için 'reduction' Amerikan İngilizcesinde doğal değil, örnek çeviri de zaten 'discount' kullanıyor."
+   "reason": "Öğrenci/müze indirimi için 'reduction' Amerikan İngilizcesinde doğal değil, örnek çeviri de zaten 'discount' kullanıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 986,
@@ -179,7 +199,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Geschirr kirli bulaşık değil, tabak çanak takımıdır; \"bulaşık\" diye ezberleyen öğrenci \"neues Geschirr kaufen\" gibi cümleleri yanlış anlar."
+   "reason": "Geschirr kirli bulaşık değil, tabak çanak takımıdır; \"bulaşık\" diye ezberleyen öğrenci \"neues Geschirr kaufen\" gibi cümleleri yanlış anlar.",
+   "applied": "2026-10-04"
   },
   {
    "id": 1009,
@@ -282,7 +303,9 @@
    "voiced": [
     "en"
    ],
-   "reason": "Amerikan İngilizcesinde \"cap\" siperli şapkadır; tr \"bere\" ve kışlık örnek cümleyle çelişiyor."
+   "reason": "Amerikan İngilizcesinde \"cap\" siperli şapkadır; tr \"bere\" ve kışlık örnek cümleyle çelişiyor.",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 1105,
@@ -300,7 +323,8 @@
     "tr",
     "en"
    ],
-   "reason": "Türkçede \"yakınlık\" çoğunlukla duygusal yakınlık demek ve \"proximity\" resmi bir kelime; \"in der Nähe\" kalıbını gösteren örneğe \"civar\" / \"vicinity\" uyar."
+   "reason": "Türkçede \"yakınlık\" çoğunlukla duygusal yakınlık demek ve \"proximity\" resmi bir kelime; \"in der Nähe\" kalıbını gösteren örneğe \"civar\" / \"vicinity\" uyar.",
+   "applied": "2026-10-04"
   },
   {
    "id": 1110,
@@ -347,7 +371,9 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Anlam 'valiz toplamak' ama örnek çantaya havuz eşyası koymayı anlatıyor ve 'çantaya koydun mu' diye çevrilmiş, ayrıca 'Badesachen' havuza değil genel olarak yüzme eşyasına işaret ediyor; örnek anlama uydurulmalı."
+   "reason": "Anlam 'valiz toplamak' ama örnek çantaya havuz eşyası koymayı anlatıyor ve 'çantaya koydun mu' diye çevrilmiş, ayrıca 'Badesachen' havuza değil genel olarak yüzme eşyasına işaret ediyor; örnek anlama uydurulmalı.",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 1150,
@@ -366,7 +392,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Örnek cümle rechnen değil ayrılabilir fiil ausrechnen'i (rechnet ... aus) kullanıyor; öğrenci aus'u rechnen'in parçası sanabilir."
+   "reason": "Örnek cümle rechnen değil ayrılabilir fiil ausrechnen'i (rechnet ... aus) kullanıyor; öğrenci aus'u rechnen'in parçası sanabilir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 1195,
@@ -381,7 +408,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Tek başına \"kendi\", \"eigen\" (own) anlamına gelir; öğrenci selbst ile eigen'i karıştırabilir, oysa örnekteki anlam \"bizzat / kendim\"."
+   "reason": "Tek başına \"kendi\", \"eigen\" (own) anlamına gelir; öğrenci selbst ile eigen'i karıştırabilir, oysa örnekteki anlam \"bizzat / kendim\".",
+   "applied": "2026-10-04"
   },
   {
    "id": 1211,
@@ -398,7 +426,9 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Consultation hours' İngiliz kullanımına yakın; Amerikan İngilizcesinde doktor ve öğretmen için 'office hours' denir."
+   "reason": "'Consultation hours' İngiliz kullanımına yakın; Amerikan İngilizcesinde doktor ve öğretmen için 'office hours' denir.",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 1232,
@@ -471,7 +501,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Günlük Türkçede \"otomobil\" resmi kalır ve \"Otomobilim garajda\" doğal değil; Wagen ile Auto gerçek eşanlamlı oldukları için ikisine de \"araba\" verilir."
+   "reason": "Günlük Türkçede \"otomobil\" resmi kalır ve \"Otomobilim garajda\" doğal değil; Wagen ile Auto gerçek eşanlamlı oldukları için ikisine de \"araba\" verilir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 1306,
@@ -486,7 +517,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"kayıp\" yalnız kaybolan eşyaya uyar ve isim olarak \"zarar\" anlamına da gelir; \"Er ist schon weg\" gibi en sık kullanımda weg \"gitmiş\" demektir, \"gone\" ile de böyle örtüşür."
+   "reason": "\"kayıp\" yalnız kaybolan eşyaya uyar ve isim olarak \"zarar\" anlamına da gelir; \"Er ist schon weg\" gibi en sık kullanımda weg \"gitmiş\" demektir, \"gone\" ile de böyle örtüşür.",
+   "applied": "2026-10-04"
   },
   {
    "id": 1322,
@@ -503,7 +535,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Çalıştay' akademik toplantı içindir; ekmek yapımı gibi uygulamalı kurslarda Türkçede doğal karşılık 'atölye (çalışması)'dır."
+   "reason": "'Çalıştay' akademik toplantı içindir; ekmek yapımı gibi uygulamalı kurslarda Türkçede doğal karşılık 'atölye (çalışması)'dır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 1330,
@@ -548,7 +581,9 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Checked' İngiliz kullanımı; Amerikan İngilizcesinde 'checkered' denir ve kartın kendi örnek çevirisi de 'checkered' kullanıyor."
+   "reason": "'Checked' İngiliz kullanımı; Amerikan İngilizcesinde 'checkered' denir ve kartın kendi örnek çevirisi de 'checkered' kullanıyor.",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 7468,
@@ -619,7 +654,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnek cümle 'bescheiden leben' (sade/mütevazı yaşamak) anlamında ve çevirisi de 'mütevazı' derken kartta kişilik özelliği olan 'alçakgönüllü' yazıyor; 'mütevazı' iki kullanımı da karşılar."
+   "reason": "Örnek cümle 'bescheiden leben' (sade/mütevazı yaşamak) anlamında ve çevirisi de 'mütevazı' derken kartta kişilik özelliği olan 'alçakgönüllü' yazıyor; 'mütevazı' iki kullanımı da karşılar.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7526,
@@ -650,7 +686,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Sevimli' Türkçede 'cute/tatlı' demektir; bir garsona 'charmant' denmesi hoş ve ilgili tavrı anlatır, 'misafirlere karşı çok sevimliydi' doğal değil."
+   "reason": "'Sevimli' Türkçede 'cute/tatlı' demektir; bir garsona 'charmant' denmesi hoş ve ilgili tavrı anlatır, 'misafirlere karşı çok sevimliydi' doğal değil.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7571,
@@ -667,7 +704,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Amerikan İngilizcesinde \"shortly\" birkaç dakika içinde demektir; demnächst ise \"yakın zamanda\" anlamına gelir, haftalar sonrasını da kapsar."
+   "reason": "Amerikan İngilizcesinde \"shortly\" birkaç dakika içinde demektir; demnächst ise \"yakın zamanda\" anlamına gelir, haftalar sonrasını da kapsar.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7573,
@@ -712,7 +750,9 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Arada bir\" Türkçede \"ara sıra\" demektir ve gelegentlich ile karışır; zwischendurch burada iki iş arasında, \"arada\" anlamında."
+   "reason": "\"Arada bir\" Türkçede \"ara sıra\" demektir ve gelegentlich ile karışır; zwischendurch burada iki iş arasında, \"arada\" anlamında.",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 7603,
@@ -733,8 +773,8 @@
    "de": "halbwegs",
    "severity": "orta",
    "before": {
-    "tr": "şöyle böyle",
-    "beispielTr": "Oda şimdi şöyle böyle temiz."
+    "tr": "az çok",
+    "beispielTr": "Oda şimdi az çok temiz."
    },
    "after": {
     "tr": "aşağı yukarı",
@@ -743,7 +783,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Şöyle böyle\" Türkçede \"vasat\" (so lala) demektir, halbwegs ise \"aşağı yukarı, kabaca\"; \"şöyle böyle temiz\" de doğal bir Türkçe değil."
+   "reason": "\"Şöyle böyle\" Türkçede \"vasat\" (so lala) demektir, halbwegs ise \"aşağı yukarı, kabaca\"; \"şöyle böyle temiz\" de doğal bir Türkçe değil.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7614,
@@ -758,7 +799,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"Thereupon\" günlük Amerikan İngilizcesinde neredeyse hiç kullanılmayan eski bir kelime; örnek cümlenin kendi çevirisi de \"as a result\" diyor."
+   "reason": "\"Thereupon\" günlük Amerikan İngilizcesinde neredeyse hiç kullanılmayan eski bir kelime; örnek cümlenin kendi çevirisi de \"as a result\" diyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7632,
@@ -831,7 +873,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Notizblock koparmalı bloknottur, 'not defteri' Notizbuch'un karşılığı ve iki kart birbirine karışır."
+   "reason": "Notizblock koparmalı bloknottur, 'not defteri' Notizbuch'un karşılığı ve iki kart birbirine karışır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7673,
@@ -848,7 +891,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Amerikan İngilizcesinde muayenehaneye 'doctor's office' denir, 'medical practice' cümlede yapay duruyor."
+   "reason": "Amerikan İngilizcesinde muayenehaneye 'doctor's office' denir, 'medical practice' cümlede yapay duruyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7680,
@@ -879,7 +923,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'managing director' İngiliz kullanımı, ABD'de başka bir unvan; Amerikan İngilizcesinde karşılığı 'general manager'."
+   "reason": "'managing director' İngiliz kullanımı, ABD'de başka bir unvan; Amerikan İngilizcesinde karşılığı 'general manager'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7691,
@@ -896,25 +941,6 @@
    "applied": "2026-10-04"
   },
   {
-   "id": 7701,
-   "de": "Gymnasium",
-   "severity": "orta",
-   "before": {
-    "beispiel": "Nach der vierten Klasse wechselt er auf das Gymnasium.",
-    "beispielTr": "Dördüncü sınıftan sonra liseye geçiyor.",
-    "beispielEn": "After fourth grade he moves on to high school."
-   },
-   "after": {
-    "beispiel": "Meine Tochter geht aufs Gymnasium und lernt dort Latein.",
-    "beispielTr": "Kızım liseye gidiyor ve orada Latince öğreniyor.",
-    "beispielEn": "My daughter goes to high school and learns Latin there."
-   },
-   "voiced": [
-    "beispiel"
-   ],
-   "reason": "Gymnasium 5. sınıfta başladığı için 'dördüncü sınıftan sonra liseye geçiyor' Türk öğrenciye yanlış bilgi veriyor; kart anlamıyla çelişmeyen bir cümle gerekiyor."
-  },
-  {
    "id": 7713,
    "de": "Sporthalle",
    "severity": "hafif",
@@ -929,7 +955,9 @@
    "voiced": [
     "en"
    ],
-   "reason": "'sports hall' İngiliz kullanımı; Amerikan İngilizcesinde okulun spor salonu 'gym'."
+   "reason": "'sports hall' İngiliz kullanımı; Amerikan İngilizcesinde okulun spor salonu 'gym'.",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 7718,
@@ -946,7 +974,9 @@
    "voiced": [
     "en"
    ],
-   "reason": "'class teacher' İngiliz kullanımı; Amerikan İngilizcesindeki karşılığı 'homeroom teacher'."
+   "reason": "'class teacher' İngiliz kullanımı; Amerikan İngilizcesindeki karşılığı 'homeroom teacher'.",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 7728,
@@ -965,7 +995,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Okul için Almanlar 'unterrichten' der, 'lehren' doğal olarak üniversitede kullanılır; mevcut cümle öğrenciye yanlış kalıp öğretir."
+   "reason": "Okul için Almanlar 'unterrichten' der, 'lehren' doğal olarak üniversitede kullanılır; mevcut cümle öğrenciye yanlış kalıp öğretir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7736,
@@ -1001,7 +1032,8 @@
     "tr",
     "en"
    ],
-   "reason": "'Okuyup bakmak' Türkçede doğal değil; nachlesen bir şeyi kaynağa bakıp kontrol etmektir, 'to read up' ise konuyu uzun uzun çalışmak demektir."
+   "reason": "'Okuyup bakmak' Türkçede doğal değil; nachlesen bir şeyi kaynağa bakıp kontrol etmektir, 'to read up' ise konuyu uzun uzun çalışmak demektir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7750,
@@ -1060,7 +1092,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Türkçede haftanın belli gününde kurulan pazara 'semt pazarı' denir, 'haftalık pazar' çeviri kokuyor."
+   "reason": "Türkçede haftanın belli gününde kurulan pazara 'semt pazarı' denir, 'haftalık pazar' çeviri kokuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7791,
@@ -1107,7 +1140,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Savings book' Amerikan İngilizcesinde yerleşik bir terim değil; karşılığı 'passbook'tur."
+   "reason": "'Savings book' Amerikan İngilizcesinde yerleşik bir terim değil; karşılığı 'passbook'tur.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7815,
@@ -1138,7 +1172,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "häuslich'in Türkçede yerleşik tek karşılığı 'evcimen'; 'çok eve düşkün' çeviri kokuyor."
+   "reason": "häuslich'in Türkçede yerleşik tek karşılığı 'evcimen'; 'çok eve düşkün' çeviri kokuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7885,
@@ -1183,7 +1218,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'in einer Zeitschrift blättern' Türkçede 'dergi karıştırmak' diye söylenir; 'sayfa çevirmek' göz gezdirme anlamını vermiyor."
+   "reason": "'in einer Zeitschrift blättern' Türkçede 'dergi karıştırmak' diye söylenir; 'sayfa çevirmek' göz gezdirme anlamını vermiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7899,
@@ -1200,7 +1236,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sporda kas germe Türkçede 'esnetmek' diye söylenir; 'bacaklarımı gererim' doğal değil."
+   "reason": "Sporda kas germe Türkçede 'esnetmek' diye söylenir; 'bacaklarımı gererim' doğal değil.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7925,
@@ -1215,7 +1252,9 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizcede 'half-time' iki devre arasındaki molayı anlatır; tr 'devre' ve örnek cümle ('erste Halbzeit' = first half) maçın yarısını gösterdiği için en 'half' olmalı."
+   "reason": "İngilizcede 'half-time' iki devre arasındaki molayı anlatır; tr 'devre' ve örnek cümle ('erste Halbzeit' = first half) maçın yarısını gösterdiği için en 'half' olmalı.",
+   "applied": "2026-10-04",
+   "note": "uzlaştırmada (c6ec059bc) katmandan aynı değer geldi"
   },
   {
    "id": 7934,
@@ -1230,7 +1269,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"nape\" Amerikan İngilizcesinde nadir bir kelime, üstelik örnek çeviride \"neck\" geçtiği için kart ile cümle birbirini tutmuyor."
+   "reason": "\"nape\" Amerikan İngilizcesinde nadir bir kelime, üstelik örnek çeviride \"neck\" geçtiği için kart ile cümle birbirini tutmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 7941,
@@ -1319,7 +1359,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'sözleşmek' bugün az kullanılıyor ve 'sözleşme' ile karışıyor, örnek çeviri de başka fiil kullanıyor ve 'noch' anlamını atlıyor."
+   "reason": "'sözleşmek' bugün az kullanılıyor ve 'sözleşme' ile karışıyor, örnek çeviri de başka fiil kullanıyor ve 'noch' anlamını atlıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8065,
@@ -1350,46 +1391,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'outward journey' İngiliz ve resmî bir ifade; Amerikan İngilizcesinde doğal karşılık 'trip there' olur."
-  },
-  {
-   "id": 8099,
-   "de": "Sonnenschirm",
-   "severity": "hafif",
-   "before": {
-    "en": "parasol",
-    "beispielEn": "At the beach we lie under the parasol."
-   },
-   "after": {
-    "en": "sun umbrella",
-    "beispielEn": "At the beach we lie under the beach umbrella."
-   },
-   "voiced": [
-    "en"
-   ],
-   "reason": "'parasol' Amerikan İngilizcesinde nadir ve eski; günlük karşılığı 'sun umbrella', plajda da 'beach umbrella' kullanılır."
-  },
-  {
-   "id": 8107,
-   "de": "Gehweg",
-   "severity": "orta",
-   "before": {
-    "tr": "yaya yolu",
-    "en": "footpath",
-    "beispielTr": "Evin önündeki yaya yolu çok dar.",
-    "beispielEn": "The footpath in front of the house is very narrow."
-   },
-   "after": {
-    "tr": "kaldırım",
-    "en": "sidewalk",
-    "beispielTr": "Evin önündeki kaldırım çok dar.",
-    "beispielEn": "The sidewalk in front of the house is very narrow."
-   },
-   "voiced": [
-    "tr",
-    "en"
-   ],
-   "reason": "Gehweg, Bürgersteig ile gerçek eşanlamlıdır ve evin önündeki kaldırımı anlatır; 'yaya yolu' ve Amerikan İngilizcesinde kır patikası çağrıştıran 'footpath' öğrenciye ayrı bir şeymiş gibi yanlış bir ayrım öğretir."
+   "reason": "'outward journey' İngiliz ve resmî bir ifade; Amerikan İngilizcesinde doğal karşılık 'trip there' olur.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8121,
@@ -1418,7 +1421,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"öngörmek\" Türkçede daha çok sezmek ya da \"kanunun öngördüğü\" anlamında kullanılır, örnekteki çeviri de zaten \"tahmin etmek\" diyor; kart ile cümle uyuşmuyor."
+   "reason": "\"öngörmek\" Türkçede daha çok sezmek ya da \"kanunun öngördüğü\" anlamında kullanılır, örnekteki çeviri de zaten \"tahmin etmek\" diyor; kart ile cümle uyuşmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8139,
@@ -1427,7 +1431,7 @@
    "before": {
     "tr": "devirmek",
     "beispielTr": "Kışın hasta ağacı devirdiler.",
-    "beispielEn": "In winter they felled the sick tree."
+    "beispielEn": "In winter they felled the diseased tree."
    },
    "after": {
     "tr": "ağaç kesmek",
@@ -1437,7 +1441,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Türkçede ağaç için \"devirmek\" denmez, \"kesmek\" denir; \"devirmek\" öğrenciye ağacı itip yıkmak ya da hükümeti devirmek anlamını öğretir, \"hasta ağaç\" da doğal değil."
+   "reason": "Türkçede ağaç için \"devirmek\" denmez, \"kesmek\" denir; \"devirmek\" öğrenciye ağacı itip yıkmak ya da hükümeti devirmek anlamını öğretir, \"hasta ağaç\" da doğal değil.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8141,
@@ -1455,7 +1460,8 @@
     "tr",
     "en"
    ],
-   "reason": "erfrieren soğuktan ölmek ya da donup gitmek demektir; \"donmak\" diye öğrenen öğrenci suyun donması için de (doğrusu gefrieren) erfrieren kullanır."
+   "reason": "erfrieren soğuktan ölmek ya da donup gitmek demektir; \"donmak\" diye öğrenen öğrenci suyun donması için de (doğrusu gefrieren) erfrieren kullanır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8163,
@@ -1472,7 +1478,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Ovalamak\" elle masaj yapar gibi ovmaktır; yeri fırçayla temizlemek için Türkçede \"ovmak\" denir."
+   "reason": "\"Ovalamak\" elle masaj yapar gibi ovmaktır; yeri fırçayla temizlemek için Türkçede \"ovmak\" denir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8191,
@@ -1501,7 +1508,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Üstünde denemek\" üçüncü şahıs ekiyle sözlük biçimi olamaz, kulağa tuhaf gelir; giysiyi deneme anlamını \"giyip denemek\" doğal biçimde verir."
+   "reason": "\"Üstünde denemek\" üçüncü şahıs ekiyle sözlük biçimi olamaz, kulağa tuhaf gelir; giysiyi deneme anlamını \"giyip denemek\" doğal biçimde verir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8209,
@@ -1537,7 +1545,8 @@
     "tr",
     "en"
    ],
-   "reason": "anrichten yemeği tabağa koyup servise hazırlamaktır; \"sunmak\" ve \"to serve\" servieren ile karışır, örnekte de kimseye bir şey sunulmuyor."
+   "reason": "anrichten yemeği tabağa koyup servise hazırlamaktır; \"sunmak\" ve \"to serve\" servieren ile karışır, örnekte de kimseye bir şey sunulmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8237,
@@ -1582,7 +1591,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Araçla gitmek\" fahren'in karşılığı olur; hinfahren'deki \"oraya\" yönü kayboluyor."
+   "reason": "\"Araçla gitmek\" fahren'in karşılığı olur; hinfahren'deki \"oraya\" yönü kayboluyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8244,
@@ -1597,7 +1607,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Aynı pakette umkehren de \"geri dönmek\"; zurückfahren araçla dönüş anlamı taşıdığı için daha kesin karşılık iki kelimeyi ayırır."
+   "reason": "Aynı pakette umkehren de \"geri dönmek\"; zurückfahren araçla dönüş anlamı taşıdığı için daha kesin karşılık iki kelimeyi ayırır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8245,
@@ -1612,7 +1623,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Çekip gitmek\" küs ya da ani bir ayrılık anlatır; wegfahren tarafsızdır (araçla gitmek, tatile gitmek), örnek cümledeki tonu kelimenin anlamına taşımak öğrenciyi yanıltır."
+   "reason": "\"Çekip gitmek\" küs ya da ani bir ayrılık anlatır; wegfahren tarafsızdır (araçla gitmek, tatile gitmek), örnek cümledeki tonu kelimenin anlamına taşımak öğrenciyi yanıltır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8246,
@@ -1659,7 +1671,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "tr \"geri götürmek\" iken en \"to bring back\" (geri getirmek) ters yönü gösteriyor; örnek çevirileri de götürmek ile getirmek arasında çelişiyor."
+   "reason": "tr \"geri götürmek\" iken en \"to bring back\" (geri getirmek) ters yönü gösteriyor; örnek çevirileri de götürmek ile getirmek arasında çelişiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8251,
@@ -1674,7 +1687,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Başından savmak\" küçümseyici bir deyimdir ve wegschicken'in tarafsız \"göndermek\" anlamını karşılamaz; ayrıca örnek çevirisindeki \"geri çevirmek\" ile anlam tutmuyor."
+   "reason": "\"Başından savmak\" küçümseyici bir deyimdir ve wegschicken'in tarafsız \"göndermek\" anlamını karşılamaz; ayrıca örnek çevirisindeki \"geri çevirmek\" ile anlam tutmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8285,
@@ -1719,7 +1733,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"Blame someone for laziness\" İngilizcede doğal değil; vorwerfen birini bir kusurla suçlamak, yüzüne vurmak demektir."
+   "reason": "\"Blame someone for laziness\" İngilizcede doğal değil; vorwerfen birini bir kusurla suçlamak, yüzüne vurmak demektir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8303,
@@ -1796,7 +1811,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Cümledeki 'zwinkert ... zu' ayrılabilir fiil zuzwinkern'dir; öğrenci zwinkern'i değil başka bir fiili görüyor."
+   "reason": "Cümledeki 'zwinkert ... zu' ayrılabilir fiil zuzwinkern'dir; öğrenci zwinkern'i değil başka bir fiili görüyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8367,
@@ -1818,7 +1834,8 @@
     "tr",
     "en"
    ],
-   "reason": "wischen'in genel anlamı 'silmek'; 'paspaslamak' yalnız 'den Boden wischen' kalıbı, öğrenci 'den Tisch wischen'i görünce şaşırır."
+   "reason": "wischen'in genel anlamı 'silmek'; 'paspaslamak' yalnız 'den Boden wischen' kalıbı, öğrenci 'den Tisch wischen'i görünce şaşırır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8370,
@@ -1835,7 +1852,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "TDK yazımı 'eviye'dir, 'evye' yanlış yazım."
+   "reason": "TDK yazımı 'eviye'dir, 'evye' yanlış yazım.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8383,
@@ -1894,7 +1912,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Bridal couple' Amerikan İngilizcesinde pek kullanılmaz; doğal karşılık 'bride and groom'."
+   "reason": "'Bridal couple' Amerikan İngilizcesinde pek kullanılmaz; doğal karşılık 'bride and groom'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8510,
@@ -1909,7 +1928,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'citizens' registration office' uzun ve doğal değil, örnek çeviri de zaten 'citizens' office' diyor; kart ile cümle tutarsız."
+   "reason": "'citizens' registration office' uzun ve doğal değil, örnek çeviri de zaten 'citizens' office' diyor; kart ile cümle tutarsız.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8511,
@@ -1938,7 +1958,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizce karşılık tek sözcüklük bir sıfat yerine açıklama cümlesi; Amerikan İngilizcesindeki doğal karşılık 'over-the-counter'."
+   "reason": "İngilizce karşılık tek sözcüklük bir sıfat yerine açıklama cümlesi; Amerikan İngilizcesindeki doğal karşılık 'over-the-counter'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8516,
@@ -1955,7 +1976,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'listless' nadir ve edebi bir kelime, 'bitkin' ile örtüşmüyor; ayrıca 'Since the flu I still feel' İngilizcede present perfect gerektiren bozuk bir yapı."
+   "reason": "'listless' nadir ve edebi bir kelime, 'bitkin' ile örtüşmüyor; ayrıca 'Since the flu I still feel' İngilizcede present perfect gerektiren bozuk bir yapı.",
+   "applied": "2026-10-04"
   }
  ]
 }

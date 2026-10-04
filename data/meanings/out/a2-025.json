@@ -129,7 +129,7 @@
   },
   {
     "id": 8206,
-    "tr": "üstünde denemek",
+    "tr": "giyip denemek",
     "en": "to try on",
     "beispiel": "Im Geschäft probiere ich zuerst die blaue Jacke an.",
     "beispielTr": "Mağazada önce mavi ceketi üstümde deniyorum.",
@@ -185,11 +185,11 @@
   },
   {
     "id": 8213,
-    "tr": "sunmak",
-    "en": "to serve",
+    "tr": "servise hazırlamak",
+    "en": "to dish up",
     "beispiel": "Meine Frau richtet den Salat auf einem Teller an.",
-    "beispielTr": "Eşim salatayı bir tabakta sunuyor.",
-    "beispielEn": "My wife serves the salad on a plate."
+    "beispielTr": "Eşim salatayı bir tabağa güzelce yerleştiriyor.",
+    "beispielEn": "My wife is arranging the salad on a plate."
   },
   {
     "id": 8214,

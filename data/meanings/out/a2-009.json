@@ -137,10 +137,10 @@
   },
   {
     "id": 1322,
-    "tr": "çalıştay",
+    "tr": "atölye çalışması",
     "en": "workshop",
     "beispiel": "Im Workshop lernen wir, wie man Brot backt.",
-    "beispielTr": "Çalıştayda ekmek yapmayı öğreniyoruz.",
+    "beispielTr": "Atölye çalışmasında ekmek yapmayı öğreniyoruz.",
     "beispielEn": "In the workshop we're learning how to bake bread."
   },
   {
@@ -234,7 +234,7 @@
   {
     "id": 962,
     "tr": "indirim",
-    "en": "reduction",
+    "en": "discount",
     "beispiel": "Mit dem Schülerausweis bekommst du im Museum eine Ermäßigung.",
     "beispielTr": "Öğrenci kartıyla müzede indirim alırsın.",
     "beispielEn": "With your student ID, you get a discount at the museum."

@@ -35,9 +35,9 @@
   "id": 8344,
   "tr": "göz kırpmak",
   "en": "to wink",
-  "beispiel": "Mein Opa zwinkert mir über den Tisch zu.",
-  "beispielTr": "Dedem masanın üstünden bana göz kırpıyor.",
-  "beispielEn": "My grandpa winks at me across the table."
+  "beispiel": "Mein Opa lächelt und zwinkert mit einem Auge.",
+  "beispielTr": "Dedem gülümseyip bir gözünü kırpıyor.",
+  "beispielEn": "My grandpa smiles and winks."
  },
  {
   "id": 8345,
@@ -217,11 +217,11 @@
  },
  {
   "id": 8367,
-  "tr": "paspaslamak",
-  "en": "to mop",
+  "tr": "silmek",
+  "en": "to wipe",
   "beispiel": "Am Samstag wische ich den Boden in der Küche.",
-  "beispielTr": "Cumartesi günü mutfakta yerleri paspaslıyorum.",
-  "beispielEn": "On Saturday I mop the kitchen floor."
+  "beispielTr": "Cumartesi günü mutfakta yerleri siliyorum.",
+  "beispielEn": "On Saturday I wipe the kitchen floor."
  },
  {
   "id": 8368,
@@ -241,10 +241,10 @@
  },
  {
   "id": 8370,
-  "tr": "evye",
+  "tr": "eviye",
   "en": "kitchen sink",
   "beispiel": "In der Spüle steht noch schmutziges Geschirr.",
-  "beispielTr": "Evyede hâlâ kirli bulaşık duruyor.",
+  "beispielTr": "Eviyede hâlâ kirli bulaşık duruyor.",
   "beispielEn": "There are still dirty dishes in the kitchen sink."
  },
  {

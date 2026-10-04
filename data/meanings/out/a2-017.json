@@ -186,10 +186,10 @@
   {
     "id": 7811,
     "tr": "tasarruf cüzdanı",
-    "en": "savings book",
+    "en": "passbook",
     "beispiel": "Für meine Tochter habe ich ein Sparbuch eröffnet.",
     "beispielTr": "Kızım için bir tasarruf cüzdanı açtırdım.",
-    "beispielEn": "I opened a savings book for my daughter."
+    "beispielEn": "I opened a savings account for my daughter."
   },
   {
     "id": 7812,

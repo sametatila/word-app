@@ -14,5 +14,15 @@
  { "conversation": "de-a1-du-oder-sie", "de": "entschuldigen", "en": "to excuse" },
  { "conversation": "de-a1-zeit-haben", "de": "fertig sein", "en": "to be ready" },
  { "conversation": "de-a1-hausordnung", "de": "laut", "en": "loud" },
- { "conversation": "de-a1-beim-zahnarzt", "de": "der Schluss", "en": "end" }
+ { "conversation": "de-a1-beim-zahnarzt", "de": "der Schluss", "en": "end" },
+ { "conversation": "de-a1-stadtplan", "de": "die Nähe", "en": "proximity" },
+ { "conversation": "de-a2-fruher", "de": "der Wagen", "en": "car" },
+ { "conversation": "de-a2-kennenlernen", "de": "charmant", "en": "charming" },
+ { "conversation": "de-a2-bank-konto", "de": "das Sparbuch", "en": "savings book" },
+ { "conversation": "de-a2-reiseplan", "de": "die Anreise", "en": "outward journey" },
+ { "conversation": "de-a2-gastgeschenk", "de": "bescheiden", "en": "modest" },
+ { "conversation": "de-a2-fotos-teilen", "de": "blättern", "en": "to leaf through" },
+ { "conversation": "de-a2-formulare", "de": "der Notizblock", "en": "notepad" },
+ { "conversation": "de-a2-volkshochschule", "de": "der Workshop", "en": "workshop" },
+ { "conversation": "de-a2-a2-rueckblick", "de": "selbst", "en": "oneself" }
 ]
