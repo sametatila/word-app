@@ -1,0 +1,1063 @@
+{
+ "reviewed": 906,
+ "rejected": [
+  {
+   "id": 106,
+   "de": "doch",
+   "reason": "Olumsuz bir söze itiraz eden cevabın başında \"Aksine,\" Türkçede çeviri kokuyor; konuşma dilinde doğal itiraz \"Yoo\" / \"Yok\" ile yapılır."
+  },
+  {
+   "id": 734,
+   "de": "möchten",
+   "reason": "\"Tercih ederim\" çevirisinde kartın öğrettiği \"istemek\" fiili hiç geçmiyor; öğrenci möchten kelimesini cümlede göremez."
+  },
+  {
+   "id": 70,
+   "de": "besonders",
+   "reason": "Burada pekiştirici olarak kullanılan \"özellikle güzel\" Türkçede çeviri kokuyor; \"schmeckt\" sözcüğünün taşıdığı lezzet anlamı da çeviride yok."
+  }
+ ],
+ "fixes": [
+  {
+   "id": 27,
+   "de": "Apotheke",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "Die Apotheke am Markt hat auch sonntags offen."
+   },
+   "after": {
+    "beispiel": "Die Apotheke am Markt hat auch sonntags geöffnet."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "'hat … offen' güney Almanca ve Avusturya'da kullanılan bölgesel bir konuşma kalıbı; standart Almancası 'hat … geöffnet' ya da 'ist … offen', A1 öğrencisine standart biçim verilmeli."
+  },
+  {
+   "id": 28,
+   "de": "Appetit",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "After working out, I have a big appetite for pasta."
+   },
+   "after": {
+    "beispielEn": "After working out, I'm really in the mood for pasta."
+   },
+   "voiced": [],
+   "reason": "'have a big appetite for pasta' İngilizcede doğal bir kalıp değil, Almancadan birebir aktarılmış duruyor."
+  },
+  {
+   "id": 69,
+   "de": "besetzt",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Ich rufe die ganze Zeit an, aber es ist besetzt.",
+    "beispielTr": "Sürekli arıyorum ama hat meşgul.",
+    "beispielEn": "I keep calling, but the line is busy."
+   },
+   "after": {
+    "beispiel": "Entschuldigung, ist der Platz hier besetzt?",
+    "beispielTr": "Pardon, buradaki yer dolu mu?",
+    "beispielEn": "Excuse me, is this seat taken?"
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Kart anlamı 'dolu / occupied' (yer, koltuk) ama örnek cümle telefon hattının meşgul olmasını anlatıyor ve çeviriler de 'meşgul / busy' diyor; öğrenci anlamla örnek arasında çelişki görüyor."
+  },
+  {
+   "id": 75,
+   "de": "bezahlen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Today I'm paying for coffee for both of us."
+   },
+   "after": {
+    "beispielEn": "Today I'm paying for both our coffees."
+   },
+   "voiced": [],
+   "reason": "\"Paying for coffee for both of us\" İngilizcede çeviri kokuyor; daha doğal biçimi \"Today I'm paying for both our coffees.\"."
+  },
+  {
+   "id": 81,
+   "de": "bleiben",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Tatilde iki hafta gölde kalıyoruz."
+   },
+   "after": {
+    "beispielTr": "Tatilde iki hafta göl kenarında kalıyoruz."
+   },
+   "voiced": [],
+   "reason": "'am See' göl kenarı demek; 'gölde kalıyoruz' Türkçede gölün içinde kalmak gibi duruyor."
+  },
+  {
+   "id": 83,
+   "de": "blöd",
+   "severity": "hafif",
+   "before": {
+    "tr": "saçma",
+    "beispielTr": "Bu fikri gerçekten saçma buluyorum."
+   },
+   "after": {
+    "tr": "aptal",
+    "beispielTr": "Bu fikri gerçekten aptalca buluyorum."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "blöd'ün çekirdek karşılığı 'aptal'dır; tr 'saçma' (absurd/silly) ile en 'stupid' aynı anlamı göstermiyor."
+  },
+  {
+   "id": 86,
+   "de": "brauchen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kek için daha şekere ihtiyacımız var."
+   },
+   "after": {
+    "beispielTr": "Kek için bir de şekere ihtiyacımız var."
+   },
+   "voiced": [],
+   "reason": "'daha şekere ihtiyacımız var' Türkçede bozuk ve çeviri kokuyor; buradaki noch 'bir de / henüz' anlamında."
+  },
+  {
+   "id": 87,
+   "de": "Brief",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bugün artık neredeyse kimse mektup yazmıyor."
+   },
+   "after": {
+    "beispielTr": "Günümüzde artık neredeyse kimse mektup yazmıyor."
+   },
+   "voiced": [],
+   "reason": "Burada \"heute\" \"günümüzde\" anlamında; \"bugün\" diye çevrilince cümle yalnız bu günden söz ediyormuş gibi okunuyor."
+  },
+  {
+   "id": 97,
+   "de": "Dank",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Güzel çiçekler için binlerce teşekkürler!"
+   },
+   "after": {
+    "beispielTr": "Güzel çiçekler için çok teşekkürler!"
+   },
+   "voiced": [],
+   "reason": "'binlerce teşekkürler' Almancadan birebir aktarılmış, Türkçede doğal değil."
+  },
+  {
+   "id": 127,
+   "de": "entschuldigen",
+   "severity": "hafif",
+   "before": {
+    "tr": "mazur görmek"
+   },
+   "after": {
+    "tr": "affetmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Mazur görmek\" eskimiş ve resmî bir kalıp, örnek çevirisi de \"affedin\" diyor; öğrenci kartla cümle arasında tutarsızlık görüyor."
+  },
+  {
+   "id": 139,
+   "de": "fahren",
+   "severity": "orta",
+   "before": {
+    "en": "to drive"
+   },
+   "after": {
+    "en": "to ride"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'to drive' aracı kendin sürmek demek; tr 'araçla gitmek' ve metroyla giden Lena cümlesiyle uyuşmuyor."
+  },
+  {
+   "id": 150,
+   "de": "fertig sein",
+   "severity": "orta",
+   "before": {
+    "tr": "hazır olmak",
+    "en": "to be ready"
+   },
+   "after": {
+    "tr": "bitirmiş olmak",
+    "en": "to be done"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Örnek cümle 'fertig sein'ı 'bitirmiş olmak' anlamında kullanıyor (beispielTr: 'Kitabı bitirdin mi?'), ama tr/en 'hazır olmak / to be ready' diyor; öğrenci kelimeyle cümle arasında bağ kuramıyor."
+  },
+  {
+   "id": 165,
+   "de": "frei",
+   "severity": "orta",
+   "before": {
+    "tr": "özgür; boş"
+   },
+   "after": {
+    "tr": "boş"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "İçerik sözcüğünde iki anlam (\"özgür; boş\") kurala aykırı ve örnek cümle yalnız \"boş/izinli\" anlamını gösteriyor; öğrenci hangisini ezberleyeceğini bilemez."
+  },
+  {
+   "id": 169,
+   "de": "froh",
+   "severity": "hafif",
+   "before": {
+    "tr": "sevinçli",
+    "beispielTr": "Yeni evimden çok memnunum."
+   },
+   "after": {
+    "tr": "memnun",
+    "beispielTr": "Yeni evimden memnunum."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Sevinçli\" kitabi duruyor ve örnekteki \"memnun\" ile uyuşmuyor; ayrıca Almancada olmayan \"çok\" çeviriye eklenmiş."
+  },
+  {
+   "id": 184,
+   "de": "gemütlich",
+   "severity": "orta",
+   "before": {
+    "tr": "huzurlu"
+   },
+   "after": {
+    "tr": "sıcacık"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'huzurlu' sakin ya da barış içinde demektir, 'cozy' ve cümledeki kafe ise rahat ve sıcak bir ortamı anlatıyor ('rahat' zaten bequem'in karşılığı)."
+  },
+  {
+   "id": 199,
+   "de": "Gleis",
+   "severity": "orta",
+   "before": {
+    "tr": "ray",
+    "beispielTr": "Üç numaralı rayda eski bir tren duruyor."
+   },
+   "after": {
+    "tr": "hat",
+    "beispielTr": "Üç numaralı hatta eski bir tren duruyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Türkçede 'ray' tek tek demir çubuk (Schiene) demektir; istasyondaki 'Gleis drei' 'üç numaralı hat' diye söylenir, 'üç numaralı rayda' doğal değil."
+  },
+  {
+   "id": 217,
+   "de": "heiraten",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ablam yazın evleniyor."
+   },
+   "after": {
+    "beispielTr": "Kız kardeşim yazın evleniyor."
+   },
+   "voiced": [],
+   "reason": "Almancada Schwester kelimesi kardeşin büyük mü küçük mü olduğunu söylemez; \"ablam\" demek cümleye olmayan bir bilgi ekliyor."
+  },
+  {
+   "id": 219,
+   "de": "helfen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ağabeyim taşınırken bana yardım ediyor."
+   },
+   "after": {
+    "beispielTr": "Erkek kardeşim taşınmamda bana yardım ediyor."
+   },
+   "voiced": [],
+   "reason": "Bruder yaş belirtmiyor; 'ağabeyim' eklenen bilgi ve aynı paketteki Bruder kartının 'erkek kardeş' karşılığıyla çelişiyor."
+  },
+  {
+   "id": 221,
+   "de": "herzlich",
+   "severity": "hafif",
+   "before": {
+    "en": "cordial"
+   },
+   "after": {
+    "en": "warm"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'cordial' resmî ve seyrek bir sözcük; herzlich'in yaygın Amerikan İngilizcesi karşılığı 'warm', örnek çeviri de zaten 'warmly' diyor."
+  },
+  {
+   "id": 243,
+   "de": "Jeans",
+   "severity": "orta",
+   "before": {
+    "formen": "(Pl.)"
+   },
+   "after": {
+    "formen": "-"
+   },
+   "voiced": [
+    "formen"
+   ],
+   "reason": "formen '(Pl.)' yanlış: die Jeans tekildir (eine Jeans, örnekte de 'Meine alte Jeans hat'), çoğulu da Jeans; '(Pl.)' öğrenciye kelimeyi yalnız çoğul sandırır, formen '-' olmalı."
+  },
+  {
+   "id": 247,
+   "de": "jung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yeni öğretmen daha çok genç."
+   },
+   "after": {
+    "beispielTr": "Yeni öğretmen henüz çok genç."
+   },
+   "voiced": [],
+   "reason": "\"daha çok genç\" ifadesi \"daha da genç\" gibi de okunabiliyor; \"noch sehr jung\" anlamını en açık \"henüz çok genç\" veriyor."
+  },
+  {
+   "id": 256,
+   "de": "Käse",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Pizzanın üstüne daha bol peynir koyuluyor."
+   },
+   "after": {
+    "beispielTr": "Pizzanın üstüne bir de bol peynir konuyor."
+   },
+   "voiced": [],
+   "reason": "Buradaki 'noch' 'ayrıca, bir de' anlamında; 'daha bol peynir' ise karşılaştırma gibi okunduğundan anlam kayıyor."
+  },
+  {
+   "id": 267,
+   "de": "Klassenarbeit",
+   "severity": "hafif",
+   "before": {
+    "en": "class test"
+   },
+   "after": {
+    "en": "test"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'class test' Amerikan İngilizcesinde doğal bir terim değil; okul bağlamında 'test' deniyor, nitekim beispielEn de 'math test' kullanıyor."
+  },
+  {
+   "id": 273,
+   "de": "können",
+   "severity": "hafif",
+   "before": {
+    "en": "to be able to"
+   },
+   "after": {
+    "en": "can"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "SPEC kip fiillerinin İngilizce karşılığında mastar istemiyor (dürfen → may), cümle çevirisi de 'can' kullanıyor; 'to be able to' bu kurala aykırı."
+  },
+  {
+   "id": 308,
+   "de": "Mädchen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Küçük kız, babaannesi için bir resim çiziyor."
+   },
+   "after": {
+    "beispielTr": "Küçük kız, büyükannesi için bir resim çiziyor."
+   },
+   "voiced": [],
+   "reason": "Oma anne ya da baba tarafını belirtmiyor; 'babaannesi' cümlede olmayan bilgi ekliyor."
+  },
+  {
+   "id": 310,
+   "de": "Mal",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Das ist mein erstes Mal hier.",
+    "beispielTr": "Buraya ilk kez geliyorum.",
+    "beispielEn": "This is my first time here."
+   },
+   "after": {
+    "beispiel": "Ich bin zum ersten Mal in Berlin.",
+    "beispielTr": "Berlin'e ilk kez geliyorum.",
+    "beispielEn": "This is my first time in Berlin."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "\"Das ist mein erstes Mal hier\" İngilizceden çeviri kokan doğal olmayan bir Almanca, ayrıca \"mein erstes Mal\" Almancada genellikle ilk cinsel deneyimi çağrıştırır; doğal kalıp \"zum ersten Mal\"dır."
+  },
+  {
+   "id": 311,
+   "de": "man",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "In the city one finds everything."
+   },
+   "after": {
+    "beispielEn": "You can find everything in the city."
+   },
+   "voiced": [],
+   "reason": "\"In the city one finds everything\" Amerikan İngilizcesinde kasıntılı ve çeviri kokan bir cümle; genel özne \"man\" doğal olarak \"you\" ile aktarılır."
+  },
+  {
+   "id": 317,
+   "de": "Marmelade",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Anneannem her yaz vişneden reçel yapar."
+   },
+   "after": {
+    "beispielTr": "Anneannem her yaz kirazdan reçel yapar."
+   },
+   "voiced": [],
+   "reason": "Kirschen 'kiraz' demektir (vişne Sauerkirsche'dir) ve İngilizce çeviri de 'cherry' diyor."
+  },
+  {
+   "id": 324,
+   "de": "mitbringen",
+   "severity": "hafif",
+   "before": {
+    "tr": "beraberinde getirmek"
+   },
+   "after": {
+    "tr": "yanında getirmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'beraberinde getirmek' daha çok mecaz ve yazı dilinde kullanılır, günlük dilde 'yanında getirmek' denir."
+  },
+  {
+   "id": 333,
+   "de": "müssen",
+   "severity": "hafif",
+   "before": {
+    "en": "to have to"
+   },
+   "after": {
+    "en": "have to"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "SPEC kip fiilinin İngilizce karşılığının başına 'to' konmasını istemiyor (dürfen → may), bu yüzden 'to have to' kurala aykırı."
+  },
+  {
+   "id": 338,
+   "de": "nehmen",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Nimm doch einen Regenschirm mit!",
+    "beispielTr": "Yanına bir şemsiye alsana!",
+    "beispielEn": "Take an umbrella with you!"
+   },
+   "after": {
+    "beispiel": "Nimm doch noch ein Stück Kuchen!",
+    "beispielTr": "Bir dilim kek daha alsana!",
+    "beispielEn": "Take another piece of cake!"
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Örnek cümle nehmen değil ayrılabilir mitnehmen fiilini kullanıyor (mit cümle sonunda), öğrenci yanlış fiil öğrenir."
+  },
+  {
+   "id": 358,
+   "de": "Paket",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The neighbor accepted a big package for us today."
+   },
+   "after": {
+    "beispielEn": "The neighbor took in a big package for us today."
+   },
+   "voiced": [],
+   "reason": "'accepted a package for us' İngilizcede çeviri kokuyor; komşunun paketi teslim alması için doğal ifade 'took in' ya da 'signed for'."
+  },
+  {
+   "id": 378,
+   "de": "Rätsel",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "Opa erzählt den Kindern jeden Abend ein Rätsel.",
+    "beispielEn": "Grandpa tells the kids a riddle every evening."
+   },
+   "after": {
+    "beispiel": "Opa stellt den Kindern jeden Abend ein Rätsel.",
+    "beispielEn": "Grandpa asks the kids a riddle every evening."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Almancada bilmece 'erzählen' ile değil 'stellen' ile sorulur; Türkçe çeviri de zaten 'soruyor' diyerek Almanca cümleden ayrılıyor."
+  },
+  {
+   "id": 416,
+   "de": "sie",
+   "severity": "hafif",
+   "before": {
+    "en": "she"
+   },
+   "after": {
+    "en": "she; they"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "tr hem 'o' hem 'onlar' anlamını veriyor ama en yalnız 'she' diyor, oysa aynı yapıdaki ihr (8857) maddesi 'her; their' biçiminde iki anlamı da gösteriyor."
+  },
+  {
+   "id": 440,
+   "de": "tanzen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Annemle babam her perşembe salsa yapıyor."
+   },
+   "after": {
+    "beispielTr": "Annemle babam her perşembe salsa dansı yapıyor."
+   },
+   "voiced": [],
+   "reason": "\"salsa yapıyor\" sos yapmak gibi de anlaşılabiliyor ve çeviride kelimenin anlamı olan dans geçmiyor."
+  },
+  {
+   "id": 452,
+   "de": "Toilette",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Unfortunately, the restroom on the first floor is broken."
+   },
+   "after": {
+    "beispielEn": "Unfortunately, the toilet on the first floor is broken."
+   },
+   "voiced": [],
+   "reason": "Bozulan şey tuvalet odası değil klozet olduğu için 'the restroom ... is broken' İngilizcede doğal durmuyor; bu bağlamda 'toilet' kullanılır."
+  },
+  {
+   "id": 466,
+   "de": "um",
+   "severity": "orta",
+   "before": {
+    "tr": "saat …-de; için",
+    "en": "at"
+   },
+   "after": {
+    "tr": "saat …-de; etrafında",
+    "en": "at; around"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Tek başına \"um\" \"için\" demek değildir (o anlam yalnız B1 seviyesindeki um…zu yapısında var); A1 öğrencisi bunu \"für\" ile karıştırır, ikinci temel anlam \"etrafında\"dır ve İngilizce anlam da yalnız \"at\" gösteriyor."
+  },
+  {
+   "id": 475,
+   "de": "viel",
+   "severity": "orta",
+   "before": {
+    "tr": "birçok",
+    "en": "many"
+   },
+   "after": {
+    "tr": "çok; birçok",
+    "en": "much; many"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Madde \"viel\", fakat \"birçok\" yalnız sayılabilen çoğul isimle kullanılır; \"viel Zeit/viel Geld\" için \"birçok\" yanlış olur, öğrenci yanlış genelleme yapar."
+  },
+  {
+   "id": 494,
+   "de": "weiter",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Nach der Pause spielen wir weiter.",
+    "beispielTr": "Moladan sonra oynamaya devam ediyoruz.",
+    "beispielEn": "We'll keep playing after the break."
+   },
+   "after": {
+    "beispiel": "Das Hotel ist noch zwei Kilometer weiter.",
+    "beispielTr": "Otel iki kilometre daha ileride.",
+    "beispielEn": "The hotel is another two kilometers farther."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Kart 'daha ileri / further' öğretiyor ama örnek ayrılabilir weiterspielen ile 'devam etmek' anlamını gösteriyor, anlam ile cümle çelişiyor."
+  },
+  {
+   "id": 501,
+   "de": "wieder",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Wir sehen uns morgen wieder.",
+    "beispielTr": "Yarın tekrar görüşürüz.",
+    "beispielEn": "We'll see each other again tomorrow."
+   },
+   "after": {
+    "beispiel": "Morgen regnet es wieder.",
+    "beispielTr": "Yarın yine yağmur yağacak.",
+    "beispielEn": "It's going to rain again tomorrow."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "\"Wir sehen uns morgen wieder\" cümlesinde wieder, ayrılabilir fiil \"wiedersehen\"in parçası olarak geçiyor, bağımsız \"tekrar\" zarfı olarak geçmiyor."
+  },
+  {
+   "id": 515,
+   "de": "wollen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Do you want to eat an ice cream?"
+   },
+   "after": {
+    "beispielEn": "Do you want some ice cream?"
+   },
+   "voiced": [],
+   "reason": "\"Do you want to eat an ice cream?\" Amerikan İngilizcesinde doğal değil ve Almancadan birebir çeviri kokuyor."
+  },
+  {
+   "id": 520,
+   "de": "Zahn",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Oğlumuz ilk dişini kaybetti."
+   },
+   "after": {
+    "beispielTr": "Oğlumuzun ilk dişi düştü."
+   },
+   "voiced": [],
+   "reason": "Türkçede çocuğun süt dişi için 'kaybetti' denmez, 'dişi düştü' denir; 'kaybetti' Almancadan kelime kelime çeviri."
+  },
+  {
+   "id": 525,
+   "de": "zu",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Pantolon bana çok büyük."
+   },
+   "after": {
+    "beispielTr": "Pantolon bana fazla büyük."
+   },
+   "voiced": [],
+   "reason": "'zu groß' aşırılık bildirir ama 'çok büyük' çevirisi bunu 'sehr groß' anlamına kaydırıyor ve tr'deki 'fazla' karşılığını göstermiyor."
+  },
+  {
+   "id": 532,
+   "de": "Abfahrt",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Tom kalkıştan hemen önce bir kahve daha alıyor.",
+    "beispielEn": "Right before departure, Tom buys another coffee."
+   },
+   "after": {
+    "beispielTr": "Tom kalkıştan hemen önce bir kahve alıyor.",
+    "beispielEn": "Right before departure, Tom grabs a coffee."
+   },
+   "voiced": [],
+   "reason": "Buradaki 'noch' 'son anda, bir de' demek, 'ikinci bir kahve' değil; iki çeviri cümlede olmayan bir bilgi ekliyor."
+  },
+  {
+   "id": 549,
+   "de": "an sein",
+   "severity": "hafif",
+   "before": {
+    "tr": "çalışıyor olmak",
+    "beispielTr": "Bilgisayar hâlâ çalışıyor."
+   },
+   "after": {
+    "tr": "açık olmak",
+    "beispielTr": "Bilgisayar hâlâ açık."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Bilgisayar hâlâ çalışıyor' Türkçede 'hâlâ bozulmadı' diye de anlaşılır; cihaz için doğal karşılık 'açık olmak', İngilizce 'to be on' zaten ayırıyor."
+  },
+  {
+   "id": 553,
+   "de": "Aufgabe",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Die erste Aufgabe im Test war sehr leicht.",
+    "beispielTr": "Sınavdaki ilk soru çok kolaydı.",
+    "beispielEn": "The first task on the test was very easy."
+   },
+   "after": {
+    "beispiel": "Im Büro habe ich heute viele Aufgaben.",
+    "beispielTr": "Bugün ofiste birçok görevim var.",
+    "beispielEn": "I have a lot of tasks at the office today."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Kart anlamı 'görev' diyor ama örnek cümle kelimeyi sınavdaki 'soru/alıştırma' anlamında kullanıyor ve Türkçe çeviri 'soru' diyor; öğrenci anlamla örnek arasında çelişki görüyor."
+  },
+  {
+   "id": 569,
+   "de": "Bahn",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Demir yolu sık sık gecikiyor.",
+    "beispielEn": "The railway is often late."
+   },
+   "after": {
+    "beispielTr": "Trenler sık sık gecikiyor.",
+    "beispielEn": "The trains are often late."
+   },
+   "voiced": [],
+   "reason": "Çeviriler tr 'tren' ve en 'train' yerine 'demir yolu' ve 'railway' diyor; 'Demir yolu gecikiyor' Türkçede doğal değil ve kelimenin verilen anlamıyla uyuşmuyor."
+  },
+  {
+   "id": 579,
+   "de": "Bekannte",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "Ein Bekannter hat mir bei dem Umzug geholfen."
+   },
+   "after": {
+    "beispiel": "Ein Bekannter hat mir beim Umzug geholfen."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Almancada burada kaynaşmış 'beim' kullanılır; 'bei dem Umzug' vurgu olmadan doğal değil, öğrenciye yanlış kalıp öğretiyor."
+  },
+  {
+   "id": 591,
+   "de": "Bogen",
+   "severity": "orta",
+   "before": {
+    "tr": "kâğıt",
+    "en": "sheet"
+   },
+   "after": {
+    "tr": "form",
+    "en": "form"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Kart 'kâğıt / sheet' öğretiyor ama örnek cümle ve iki çevirisi Bogen'i 'form' anlamında kullanıyor; öğrenci kartla cümle arasında iki ayrı anlam görüyor (ayrıca çoğul Bögen da yaygın, formen '¨-' olmalı)."
+  },
+  {
+   "id": 612,
+   "de": "Doktor",
+   "severity": "hafif",
+   "before": {
+    "en": "physician"
+   },
+   "after": {
+    "en": "doctor"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Günlük dildeki \"Doktor\" için \"physician\" fazla resmî ve nadir; örnek çevirisi de \"doctor\" diyor, kart kendi içinde tutarsız."
+  },
+  {
+   "id": 620,
+   "de": "dürfen",
+   "severity": "hafif",
+   "before": {
+    "en": "to be allowed"
+   },
+   "after": {
+    "en": "may"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Şartname kip fiillerinde mastar istemiyor ve dürfen için açıkça \"may\" diyor; \"to be allowed\" bu kurala aykırı."
+  },
+  {
+   "id": 625,
+   "de": "Ehemann",
+   "severity": "hafif",
+   "before": {
+    "formen": "ä, er"
+   },
+   "after": {
+    "formen": "¨-er"
+   },
+   "voiced": [
+    "formen"
+   ],
+   "reason": "formen alanı 'ä, er' yazılmış, tire eksik; çoğul Ehemänner için doğrusu 'ä, -er'."
+  },
+  {
+   "id": 646,
+   "de": "fertig",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ağabeyim sabahları hiç zamanında hazır olmuyor."
+   },
+   "after": {
+    "beispielTr": "Erkek kardeşim sabahları hiç zamanında hazır olmuyor."
+   },
+   "voiced": [],
+   "reason": "Bruder yaş belirtmiyor; 'ağabeyim' cümlede olmayan bilgi ekliyor ve Bruder kartıyla tutarsız."
+  },
+  {
+   "id": 695,
+   "de": "Job",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ağabeyim bir restoranda iş arıyor."
+   },
+   "after": {
+    "beispielTr": "Erkek kardeşim bir restoranda iş arıyor."
+   },
+   "voiced": [],
+   "reason": "\"Bruder\" yaşı belirtmiyor; \"ağabeyim\" Almancada olmayan \"büyük\" bilgisini ekliyor."
+  },
+  {
+   "id": 699,
+   "de": "Kindergarten",
+   "severity": "hafif",
+   "before": {
+    "en": "kindergarten",
+    "beispielEn": "The kindergarten closes at four o'clock."
+   },
+   "after": {
+    "en": "preschool",
+    "beispielEn": "The preschool closes at four o'clock."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Amerikan İngilizcesinde kindergarten ilkokulun 5-6 yaş sınıfıdır, Almanca Kindergarten (3-6 yaş) ise 'preschool'; bu bilinen bir yanlış dostluk, kart İngilizce bilen öğrenciyi yanıltıyor."
+  },
+  {
+   "id": 709,
+   "de": "laut",
+   "severity": "orta",
+   "before": {
+    "tr": "gürültülü"
+   },
+   "after": {
+    "tr": "yüksek sesli"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"gürültülü\" İngilizcedeki \"noisy\" anlamına gelir; \"loud\" ve cümledeki \"müziğin sesi yüksek\" ise \"yüksek sesli\" anlamını taşıyor."
+  },
+  {
+   "id": 744,
+   "de": "Opa",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "Mein Opa hat einen großen Garten mit Äpfeln.",
+    "beispielTr": "Dedemin elmalarla dolu büyük bir bahçesi var.",
+    "beispielEn": "My grandpa has a big garden full of apples."
+   },
+   "after": {
+    "beispiel": "Mein Opa hat einen großen Garten mit Apfelbäumen.",
+    "beispielTr": "Dedemin elma ağaçları olan büyük bir bahçesi var.",
+    "beispielEn": "My grandpa has a big garden with apple trees."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "'Garten mit Äpfeln' Almancada doğal değil (doğrusu 'mit Apfelbäumen'); ayrıca İngilizce çevirideki 'full of' Almancada olmayan bir anlam ekliyor."
+  },
+  {
+   "id": 750,
+   "de": "Party",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Partiden sonra mutfak bayağı kirliydi."
+   },
+   "after": {
+    "beispielTr": "Partiden sonra mutfak çok kirliydi."
+   },
+   "voiced": [],
+   "reason": "\"Bayağı\" anlamı \"total\" sözcüğünden daha zayıf olan \"epey\" demek; cümlenin vurgusu çeviride kayboluyor."
+  },
+  {
+   "id": 752,
+   "de": "Plan",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Çoktan bir planımız var."
+   },
+   "after": {
+    "beispielTr": "Zaten bir planımız var."
+   },
+   "voiced": [],
+   "reason": "\"Çoktan bir planımız var\" çeviri kokuyor; bu bağlamda \"schon\" Türkçede doğal olarak \"zaten\" ile karşılanır."
+  },
+  {
+   "id": 770,
+   "de": "Rezeption",
+   "severity": "hafif",
+   "before": {
+    "en": "reception",
+    "beispielEn": "The key is at the reception."
+   },
+   "after": {
+    "en": "front desk",
+    "beispielEn": "The key is at the front desk."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Otel resepsiyonunun Amerikan İngilizcesindeki doğal karşılığı 'front desk'; 'at the reception' İngiliz kullanımı ve şartnamenin Amerikan İngilizcesi kuralına aykırı."
+  },
+  {
+   "id": 776,
+   "de": "scheinen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "After the rain, the sun came out again."
+   },
+   "after": {
+    "beispielEn": "After the rain, the sun shone again."
+   },
+   "voiced": [],
+   "reason": "beispielEn 'came out' kelimenin verilen 'shine/parlamak' anlamını göstermiyor, Almanca ve Türkçe cümleden anlamca kayıyor."
+  },
+  {
+   "id": 780,
+   "de": "schließen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dükkân bugün saat altıda kapanıyor.",
+    "beispielEn": "The store closes at six today."
+   },
+   "after": {
+    "beispielTr": "Dükkân bugün erkenden, saat altıda kapanıyor.",
+    "beispielEn": "The store closes early today, at six."
+   },
+   "voiced": [],
+   "reason": "Cümledeki 'schon um sechs' (her zamankinden erken) vurgusu iki çeviride de kaybolmuş."
+  },
+  {
+   "id": 782,
+   "de": "Schluss",
+   "severity": "hafif",
+   "before": {
+    "tr": "bitiş"
+   },
+   "after": {
+    "tr": "son"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Bir Türk \"Schluss\" kelimesine \"bitiş\" değil \"son\" der; cümlenin çevirisi de zaten \"filmin sonu\"."
+  },
+  {
+   "id": 793,
+   "de": "sich",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Futbol oynarken kendini yaraladı."
+   },
+   "after": {
+    "beispielTr": "Futbol oynarken sakatlandı."
+   },
+   "voiced": [],
+   "reason": "Türkçede \"kendini yaraladı\" bilerek yapılmış bir kendine zarar verme gibi anlaşılır; \"sich verletzen\" kazayla sakatlanmak demektir."
+  },
+  {
+   "id": 841,
+   "de": "Vorsicht",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dikkat, buradan bir araba geliyor!",
+    "beispielEn": "Careful, a car is coming here!"
+   },
+   "after": {
+    "beispielTr": "Dikkat, araba geliyor!",
+    "beispielEn": "Careful, there's a car coming!"
+   },
+   "voiced": [],
+   "reason": "\"A car is coming here\" İngilizcede doğal değil, Almancadaki \"hier kommt\" kalıbı kelimesi kelimesine aktarılmış."
+  },
+  {
+   "id": 843,
+   "de": "Vorwahl",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "Für Anrufe nach Österreich brauchst du eine andere Vorwahl.",
+    "beispielTr": "Avusturya'yı aramak için başka bir alan kodu lazım.",
+    "beispielEn": "You need a different area code for calls to Austria."
+   },
+   "after": {
+    "beispiel": "Die Vorwahl von Berlin ist 030.",
+    "beispielTr": "Berlin'in alan kodu 030.",
+    "beispielEn": "The area code for Berlin is 030."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Avusturya'yı aramak için gereken kod alan kodu değil ülke kodudur; cümle kartın 'alan kodu / area code' anlamıyla çelişiyor."
+  },
+  {
+   "id": 846,
+   "de": "weiblich",
+   "severity": "orta",
+   "before": {
+    "tr": "dişi"
+   },
+   "after": {
+    "tr": "kadın"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Türkçede 'dişi' hayvanlar için kullanılır; insanlar ve formlar için 'kadın' denir, nitekim örnek cümlenin çevirisi de 'kadın' diyor ve madde başı ile çelişiyor."
+  },
+  {
+   "id": 8431,
+   "de": "Umkleide",
+   "severity": "hafif",
+   "before": {
+    "tr": "soyunma kabini"
+   },
+   "after": {
+    "tr": "deneme kabini"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Soyunma kabini' daha çok havuz ve plajdaki kabini çağrıştırıyor, İngilizce 'fitting room' ise mağazadaki deneme kabini; tr ile en farklı yerleri gösteriyor."
+  },
+  {
+   "id": 8530,
+   "de": "Freitag",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Cuma eve daha erken gidiyorum."
+   },
+   "after": {
+    "beispielTr": "Cuma günü eve daha erken gidiyorum."
+   },
+   "voiced": [],
+   "reason": "'Cuma eve daha erken gidiyorum' Türkçede kulağa eksik ve tuhaf geliyor; 'Am Freitag' doğal olarak 'Cuma günü' diye aktarılır."
+  }
+ ]
+}
