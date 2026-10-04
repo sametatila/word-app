@@ -21,7 +21,7 @@
     "en": "to attach",
     "beispiel": "Der Hausmeister bringt eine neue Lampe im Flur an.",
     "beispielTr": "Kapıcı koridora yeni bir lamba takıyor.",
-    "beispielEn": "The janitor attaches a new lamp in the hallway."
+    "beispielEn": "The janitor is putting up a new light in the hallway."
   },
   {
     "id": 8192,
@@ -157,7 +157,7 @@
     "en": "to refill",
     "beispiel": "Füll bitte das Salz nach, die Dose ist leer.",
     "beispielTr": "Lütfen tuzu yeniden doldur, kutu boş.",
-    "beispielEn": "Please refill the salt, the shaker is empty."
+    "beispielEn": "Please refill the salt, the container is empty."
   },
   {
     "id": 8210,
@@ -380,8 +380,8 @@
     "tr": "olduğu yerde durmak",
     "en": "to stand still",
     "beispiel": "Kannst du kurz stehenbleiben?",
-    "beispielTr": "Kısa bir süre olduğun yerde durabilir misin?",
-    "beispielEn": "Can you stand still for a moment?"
+    "beispielTr": "Bir saniye durur musun?",
+    "beispielEn": "Can you stop for a second?"
   },
   {
     "id": 8238,

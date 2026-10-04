@@ -61,7 +61,7 @@
     "en": "gardener",
     "beispiel": "Der Gärtner arbeitet im Sommer von früh bis spät.",
     "beispielTr": "Bahçıvan yazın sabahtan akşama kadar çalışıyor.",
-    "beispielEn": "In summer the gardener works from morning till night."
+    "beispielEn": "In summer the gardener works from early morning until late at night."
   },
   {
     "id": 7646,
@@ -340,7 +340,7 @@
     "tr": "vardiya çizelgesi",
     "en": "shift schedule",
     "beispiel": "Der neue Dienstplan hängt schon an der Tür.",
-    "beispielTr": "Yeni vardiya çizelgesi çoktan kapıda asılı.",
+    "beispielTr": "Yeni vardiya çizelgesi kapıya asılmış bile.",
     "beispielEn": "The new shift schedule is already hanging on the door."
   },
   {

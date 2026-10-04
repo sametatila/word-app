@@ -53,7 +53,7 @@
     "en": "noodle",
     "beispiel": "Heute Abend koche ich Nudeln mit Tomatensoße.",
     "beispielTr": "Bu akşam domates soslu makarna pişiriyorum.",
-    "beispielEn": "Tonight I'm cooking noodles with tomato sauce."
+    "beispielEn": "Tonight I'm cooking pasta with tomato sauce."
   },
   {
     "id": 895,
@@ -252,8 +252,8 @@
     "tr": "kayıp eşyalar",
     "en": "lost items",
     "beispiel": "Dein Schlüssel liegt bei den Fundsachen.",
-    "beispielTr": "Anahtarın kayıp eşyalarda duruyor.",
-    "beispielEn": "Your key is at the lost and found."
+    "beispielTr": "Anahtarın kayıp eşyaların arasında.",
+    "beispielEn": "Your key is in the lost and found."
   },
   {
     "id": 995,
@@ -300,7 +300,7 @@
     "tr": "yolda olmak",
     "en": "to be on the way",
     "beispiel": "Papa ist beruflich viel unterwegs.",
-    "beispielTr": "Babam iş yüzünden sık sık yolda.",
+    "beispielTr": "Babam iş gereği sık sık yolda.",
     "beispielEn": "Dad is on the road a lot for work."
   },
   {
@@ -308,7 +308,7 @@
     "tr": "sözleşmiş olmak",
     "en": "to have plans to meet",
     "beispiel": "Ich bin heute Abend mit Anna verabredet.",
-    "beispielTr": "Bu akşam Anna ile sözleştim.",
+    "beispielTr": "Bu akşam Anna ile buluşmak için sözleştim.",
     "beispielEn": "I have plans to meet Anna this evening."
   },
   {

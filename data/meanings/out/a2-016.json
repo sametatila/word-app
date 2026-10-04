@@ -101,7 +101,7 @@
     "en": "faulty",
     "beispiel": "Meine Übersetzung war leider fehlerhaft.",
     "beispielTr": "Çevirim maalesef hatalıydı.",
-    "beispielEn": "Unfortunately my translation was faulty."
+    "beispielEn": "Unfortunately my translation had mistakes in it."
   },
   {
     "id": 7751,
@@ -132,7 +132,7 @@
     "tr": "huzursuz",
     "en": "restless",
     "beispiel": "Die Klasse war heute sehr unruhig.",
-    "beispielTr": "Sınıf bugün çok huzursuzdu.",
+    "beispielTr": "Sınıf bugün hiç yerinde durmuyordu.",
     "beispielEn": "The class was very restless today."
   },
   {

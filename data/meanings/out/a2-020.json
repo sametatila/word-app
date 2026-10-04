@@ -28,7 +28,7 @@
   "tr": "baş ağrısı",
   "en": "headache",
   "beispiel": "Ich habe seit gestern Kopfschmerzen und nehme eine Tablette.",
-  "beispielTr": "Dünden beri başım ağrıyor ve bir hap alıyorum.",
+  "beispielTr": "Dünden beri başım ağrıyor, bir hap içiyorum.",
   "beispielEn": "I've had a headache since yesterday and I'm taking a pill."
  },
  {
@@ -68,7 +68,7 @@
   "tr": "migren",
   "en": "migraine",
   "beispiel": "Meine Schwester hat oft Migräne und braucht dann Ruhe.",
-  "beispielTr": "Kız kardeşim sık sık migren olur ve sessizlik ister.",
+  "beispielTr": "Kız kardeşimin sık sık migreni tutar, o zaman sessizliğe ihtiyacı olur.",
   "beispielEn": "My sister often gets migraines and then needs quiet."
  },
  {
@@ -221,7 +221,7 @@
   "en": "massage",
   "beispiel": "Gegen die Schmerzen im Rücken hilft eine Massage.",
   "beispielTr": "Sırt ağrısına masaj iyi geliyor.",
-  "beispielEn": "A massage helps against back pain."
+  "beispielEn": "A massage helps with back pain."
  },
  {
   "id": 7966,

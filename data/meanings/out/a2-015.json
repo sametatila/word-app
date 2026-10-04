@@ -28,7 +28,7 @@
     "tr": "makam arabası",
     "en": "official car",
     "beispiel": "Mein Chef hat einen großen Dienstwagen bekommen.",
-    "beispielTr": "Patronum büyük bir makam arabası aldı.",
+    "beispielTr": "Patronuma büyük bir makam arabası verildi.",
     "beispielEn": "My boss got a big official car."
   },
   {
@@ -389,7 +389,7 @@
     "en": "to read through",
     "beispiel": "Lies die Aufgabe in Ruhe durch!",
     "beispielTr": "Soruyu sakince baştan sona oku!",
-    "beispielEn": "Read the task through calmly!"
+    "beispielEn": "Take your time and read through the task!"
   },
   {
     "id": 7737,

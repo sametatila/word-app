@@ -52,7 +52,7 @@
     "tr": "yönlendirmek",
     "en": "to steer",
     "beispiel": "Sie lenkt das Auto vorsichtig in die Garage.",
-    "beispielTr": "Arabayı dikkatlice garaja yönlendiriyor.",
+    "beispielTr": "Arabayı dikkatlice sürüp garaja sokuyor.",
     "beispielEn": "She steers the car carefully into the garage."
   },
   {
@@ -76,8 +76,8 @@
     "tr": "götürmek",
     "en": "to take away",
     "beispiel": "Ich bringe den Müll schnell weg.",
-    "beispielTr": "Çöpü hemen götürüyorum.",
-    "beispielEn": "I'm taking the trash away quickly."
+    "beispielTr": "Çöpü hemen götürüp atıyorum.",
+    "beispielEn": "I'll quickly take the trash out."
   },
   {
     "id": 8250,
@@ -365,7 +365,7 @@
     "en": "to reduce",
     "beispiel": "Der Chef verringert die Kosten für Papier.",
     "beispielTr": "Patron kâğıt masraflarını azaltıyor.",
-    "beispielEn": "The boss is reducing paper costs."
+    "beispielEn": "The boss is cutting paper costs."
   },
   {
     "id": 8286,

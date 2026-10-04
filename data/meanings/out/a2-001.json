@@ -108,8 +108,8 @@
     "tr": "buraya",
     "en": "over here",
     "beispiel": "Gib mir mal den Schlüssel her.",
-    "beispielTr": "Anahtarı bir buraya ver.",
-    "beispielEn": "Hand the key over here."
+    "beispielTr": "Anahtarı bana bir versene.",
+    "beispielEn": "Hand the key over to me."
   },
   {
     "id": 1108,
@@ -237,7 +237,7 @@
     "en": "differently",
     "beispiel": "Leider geht es nicht anders.",
     "beispielTr": "Maalesef başka türlü olmuyor.",
-    "beispielEn": "Unfortunately, there's no other way."
+    "beispielEn": "Unfortunately, there's no other way to do it."
   },
   {
     "id": 1299,

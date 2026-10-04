@@ -76,7 +76,7 @@
   "tr": "e-posta atmak",
   "en": "to email",
   "beispiel": "Ich maile dir die Adresse heute Abend.",
-  "beispielTr": "Adresi bu akşam sana e-postayla atarım.",
+  "beispielTr": "Adresi bu akşam sana e-postayla gönderirim.",
   "beispielEn": "I will email you the address tonight."
  },
  {
@@ -108,7 +108,7 @@
   "tr": "duyurmak",
   "en": "to announce",
   "beispiel": "Die Lehrerin sagt den Test für Freitag an.",
-  "beispielTr": "Öğretmen sınavı cuma günü için duyuruyor.",
+  "beispielTr": "Öğretmen cuma günü sınav olacağını duyuruyor.",
   "beispielEn": "The teacher announces the test for Friday."
  },
  {
@@ -244,7 +244,7 @@
   "tr": "anlamak",
   "en": "to get it",
   "beispiel": "Jetzt kapiere ich die Regel endlich.",
-  "beispielTr": "Şimdi nihayet kuralı anlıyorum.",
+  "beispielTr": "Kuralı sonunda anladım.",
   "beispielEn": "Now I finally get the rule."
  },
  {
@@ -372,7 +372,7 @@
   "tr": "haykırmak",
   "en": "to yell",
   "beispiel": "Der Trainer brüllt über den ganzen Platz.",
-  "beispielTr": "Antrenör bütün sahaya haykırıyor.",
+  "beispielTr": "Antrenör sahanın bir ucundan öbür ucuna haykırıyor.",
   "beispielEn": "The coach yells across the whole field."
  },
  {

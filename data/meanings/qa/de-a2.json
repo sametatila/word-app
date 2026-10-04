@@ -1,0 +1,1961 @@
+{
+ "reviewed": 1447,
+ "rejected": [
+  {
+   "id": 922,
+   "de": "Büro",
+   "reason": "Amerikan kat sayımına göre \"dritten Stock\" = \"fourth floor\" doğru, ama Türkçede \"üçüncü\" denirken İngilizcede \"fourth\" görmek öğrencide dritten = dördüncü sanısı yaratır; kat numarası olmayan bir cümle bu karışıklığı kaldırır."
+  },
+  {
+   "id": 1205,
+   "de": "spannend",
+   "reason": "\"sürükleyici\" yalnız kitap ve film için uyuyor; spannend maç, oyun gibi her şey için kullanılır, en \"exciting\" ile de \"heyecanlı\" örtüşüyor."
+  },
+  {
+   "id": 7865,
+   "de": "feierlich",
+   "reason": "'törensel' bir konuşmayı anlatırken Türkçede doğal değil, en 'solemn' ile de örnek çevirideki 'resmî ve ciddi' ile de örtüşmüyor."
+  },
+  {
+   "id": 1300,
+   "de": "wählen",
+   "reason": "Almancadaki 'Menü' burada fiks menü yani tabldot anlamında, Amerikan İngilizcesinde 'two menus' iki ayrı yemek listesi gibi anlaşılıyor."
+  },
+  {
+   "id": 8019,
+   "de": "Anhang",
+   "reason": "değişiklik yok: Kart doğru ama \"is in the attachment\" yerine \"The invoice is attached.\" daha doğal olur; ancak o zaman isim cümlede geçmediğinden mevcut hâli kabul edilebilir, değişiklik gerekmeyebilir."
+  }
+ ],
+ "fixes": [
+  {
+   "id": 866,
+   "de": "anders",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Unfortunately it cannot be done differently."
+   },
+   "after": {
+    "beispielEn": "Unfortunately, there's no other way to do it."
+   },
+   "voiced": [],
+   "reason": "\"it cannot be done differently\" çeviri kokuyor; \"Es geht nicht anders\" İngilizcede doğal olarak \"there's no other way\" diye söylenir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 871,
+   "de": "Apparat",
+   "severity": "hafif",
+   "before": {
+    "tr": "aygıt",
+    "beispielTr": "Bu aygıt sütlü kahve de yapıyor."
+   },
+   "after": {
+    "tr": "cihaz",
+    "beispielTr": "Bu cihaz sütlü kahve de yapıyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Aygıt' gündelik Türkçede kitabi kalıyor; Apparat'ın doğal karşılığı 'cihaz'."
+  },
+  {
+   "id": 899,
+   "de": "beraten",
+   "severity": "hafif",
+   "before": {
+    "tr": "danışmanlık yapmak"
+   },
+   "after": {
+    "tr": "tavsiye vermek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"danışmanlık yapmak\" profesyonel danışmanlık çağrıştırıyor; örnekteki eczane bağlamına ve çeviriye uyan günlük karşılık \"tavsiye vermek\"."
+  },
+  {
+   "id": 907,
+   "de": "bestehen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ağabeyim ehliyet sınavını ikinci denemede geçti."
+   },
+   "after": {
+    "beispielTr": "Erkek kardeşim ehliyet sınavını ikinci denemede geçti."
+   },
+   "voiced": [],
+   "reason": "Bruder büyük ya da küçük olabilir; 'ağabeyim' Almanca cümlede olmayan bir bilgi ekliyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 950,
+   "de": "einpacken",
+   "severity": "orta",
+   "before": {
+    "en": "to wrap up",
+    "beispielTr": "Çocuklar büyükannenin hediyelerini renkli kâğıda sarıyor.",
+    "beispielEn": "The kids are wrapping Grandma's presents in colorful paper."
+   },
+   "after": {
+    "en": "to wrap",
+    "beispielTr": "Çocuklar büyükanneye aldıkları hediyeleri renkli kâğıda sarıyor.",
+    "beispielEn": "The kids are wrapping the presents for Grandma in colorful paper."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "\"die Geschenke für Oma\" büyükanne için alınan hediyeler demek; \"büyükannenin hediyeleri\" ve \"Grandma's presents\" hediyeyi büyükanneye ait gösteriyor, ayrıca \"to wrap up\" İngilizcede \"bitirmek\" anlamına da geliyor."
+  },
+  {
+   "id": 962,
+   "de": "Ermäßigung",
+   "severity": "hafif",
+   "before": {
+    "en": "reduction"
+   },
+   "after": {
+    "en": "discount"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Öğrenci/müze indirimi için 'reduction' Amerikan İngilizcesinde doğal değil, örnek çeviri de zaten 'discount' kullanıyor."
+  },
+  {
+   "id": 986,
+   "de": "frisch",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Pazarda yöreden taze çilek var."
+   },
+   "after": {
+    "beispielTr": "Pazarda yerli taze çilek var."
+   },
+   "voiced": [],
+   "reason": "'yöreden taze çilek' çeviri kokan, Türkçede doğal olmayan bir söyleyiş.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 989,
+   "de": "Fundsachen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Anahtarın kayıp eşyalarda duruyor.",
+    "beispielEn": "Your key is with the lost items."
+   },
+   "after": {
+    "beispielTr": "Anahtarın kayıp eşyaların arasında.",
+    "beispielEn": "Your key is in the lost and found."
+   },
+   "voiced": [],
+   "reason": "'Kayıp eşyalarda duruyor' ve 'with the lost items' çeviri kokuyor; doğal ifadeler 'kayıp eşyaların arasında' ve 'in the lost and found'.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 991,
+   "de": "Gabel",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The fork goes on the left side of the plate."
+   },
+   "after": {
+    "beispielEn": "The fork is to the left of the plate."
+   },
+   "voiced": [],
+   "reason": "\"liegt\" bir durumu anlatıyor; \"goes\" sofra kuralı gibi bir anlam ekliyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1004,
+   "de": "Geschirr",
+   "severity": "orta",
+   "before": {
+    "tr": "bulaşık"
+   },
+   "after": {
+    "tr": "tabak çanak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Geschirr kirli bulaşık değil, tabak çanak takımıdır; \"bulaşık\" diye ezberleyen öğrenci \"neues Geschirr kaufen\" gibi cümleleri yanlış anlar."
+  },
+  {
+   "id": 1009,
+   "de": "Gitarre",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Lena doğum gününde bir gitar aldı."
+   },
+   "after": {
+    "beispielTr": "Lena doğum gününde hediye olarak bir gitar aldı."
+   },
+   "voiced": [],
+   "reason": "bekommen 'hediye almak' demek; 'bir gitar aldı' Türkçede kendisi satın aldı diye de okunuyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1020,
+   "de": "Heizung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kalorifer bozuk ve hava soğuk."
+   },
+   "after": {
+    "beispielTr": "Kalorifer bozuk ve içerisi soğuk."
+   },
+   "voiced": [],
+   "reason": "Kalorifer bozukken soğuk olan ev içi; \"hava soğuk\" dışarıdaki havayı anlatıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1022,
+   "de": "her",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Anahtarı bir buraya ver.",
+    "beispielEn": "Hand the key over here."
+   },
+   "after": {
+    "beispielTr": "Anahtarı bana bir versene.",
+    "beispielEn": "Hand the key over to me."
+   },
+   "voiced": [],
+   "reason": "İngilizce \"Hand the key over here.\" doğal değil, iki çeviri de cümledeki \"mir\"i atlıyor; Türkçedeki \"bir buraya ver\" de kulağa kırık geliyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1070,
+   "de": "Lebensmittel",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Gıdaları süpermarketten alıyoruz."
+   },
+   "after": {
+    "beispielTr": "Yiyecekleri süpermarketten alıyoruz."
+   },
+   "voiced": [],
+   "reason": "\"Gıdaları ... alıyoruz\" Türkçede doğal değil, günlük dilde \"yiyecekleri\" denir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1082,
+   "de": "malen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dedem hafta sonları denizin resmini yapıyor."
+   },
+   "after": {
+    "beispielTr": "Dedem hafta sonları deniz resimleri yapıyor."
+   },
+   "voiced": [],
+   "reason": "Bilder vom Meer çoğul ve genel; 'denizin resmini yapıyor' tek bir resim gibi okunuyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1101,
+   "de": "Müll",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Pikniğin ardından çöpümüzü yanımızda geri götürüyoruz."
+   },
+   "after": {
+    "beispielTr": "Pikniğin ardından çöpümüzü yanımızda götürüyoruz."
+   },
+   "voiced": [],
+   "reason": "'yanımızda geri götürüyoruz' gereksiz tekrar içeriyor ve kulağa çeviri gibi geliyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1103,
+   "de": "Mütze",
+   "severity": "orta",
+   "before": {
+    "en": "cap",
+    "beispielEn": "In winter I always wear a cap."
+   },
+   "after": {
+    "en": "beanie",
+    "beispielEn": "In winter I always wear a beanie."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Amerikan İngilizcesinde \"cap\" siperli şapkadır; tr \"bere\" ve kışlık örnek cümleyle çelişiyor."
+  },
+  {
+   "id": 1105,
+   "de": "Nähe",
+   "severity": "orta",
+   "before": {
+    "tr": "yakınlık",
+    "en": "proximity"
+   },
+   "after": {
+    "tr": "civar",
+    "en": "vicinity"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Türkçede \"yakınlık\" çoğunlukla duygusal yakınlık demek ve \"proximity\" resmi bir kelime; \"in der Nähe\" kalıbını gösteren örneğe \"civar\" / \"vicinity\" uyar."
+  },
+  {
+   "id": 1110,
+   "de": "nebenan",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "En yakın arkadaşım yan tarafta oturuyor."
+   },
+   "after": {
+    "beispielTr": "En yakın arkadaşım yan evde oturuyor."
+   },
+   "voiced": [],
+   "reason": "'Yan tarafta oturuyor' Türkçede 'yanında oturuyor (sandalyede)' gibi de anlaşılıyor; wohnt nebenan 'yan evde oturuyor' demek.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1118,
+   "de": "Nudel",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Tonight I'm cooking noodles with tomato sauce."
+   },
+   "after": {
+    "beispielEn": "Tonight I'm cooking pasta with tomato sauce."
+   },
+   "voiced": [],
+   "reason": "Domates soslu 'Nudeln' İngilizcede 'pasta' olarak söylenir; 'noodles with tomato sauce' Türkçe 'makarna' ile de farklı bir yemek çağrıştırıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1126,
+   "de": "packen",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Hast du die Badesachen schon in die Tasche gepackt?",
+    "beispielTr": "Havuz eşyalarını çantaya koydun mu?",
+    "beispielEn": "Have you packed the swimming things in the bag yet?"
+   },
+   "after": {
+    "beispiel": "Hast du deinen Koffer schon gepackt?",
+    "beispielTr": "Valizini topladın mı?",
+    "beispielEn": "Have you packed your suitcase yet?"
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Anlam 'valiz toplamak' ama örnek çantaya havuz eşyası koymayı anlatıyor ve 'çantaya koydun mu' diye çevrilmiş, ayrıca 'Badesachen' havuza değil genel olarak yüzme eşyasına işaret ediyor; örnek anlama uydurulmalı."
+  },
+  {
+   "id": 1150,
+   "de": "rechnen",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Mein Vater rechnet jeden Monat unsere Ausgaben aus.",
+    "beispielTr": "Babam her ay masraflarımızı hesaplıyor.",
+    "beispielEn": "My dad calculates our expenses every month."
+   },
+   "after": {
+    "beispiel": "Mein Sohn kann schon gut rechnen.",
+    "beispielTr": "Oğlum artık iyi hesap yapabiliyor.",
+    "beispielEn": "My son is already good at math."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Örnek cümle rechnen değil ayrılabilir fiil ausrechnen'i (rechnet ... aus) kullanıyor; öğrenci aus'u rechnen'in parçası sanabilir."
+  },
+  {
+   "id": 1195,
+   "de": "selbst",
+   "severity": "hafif",
+   "before": {
+    "tr": "kendi"
+   },
+   "after": {
+    "tr": "bizzat"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Tek başına \"kendi\", \"eigen\" (own) anlamına gelir; öğrenci selbst ile eigen'i karıştırabilir, oysa örnekteki anlam \"bizzat / kendim\"."
+  },
+  {
+   "id": 1211,
+   "de": "Sprechstunde",
+   "severity": "hafif",
+   "before": {
+    "en": "consultation hour",
+    "beispielEn": "The consultation hours are from nine to twelve."
+   },
+   "after": {
+    "en": "office hours",
+    "beispielEn": "Office hours are from nine to twelve."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Consultation hours' İngiliz kullanımına yakın; Amerikan İngilizcesinde doktor ve öğretmen için 'office hours' denir."
+  },
+  {
+   "id": 1232,
+   "de": "austauschen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Öğrenciler teneffüste oyun kartlarını takas ediyor."
+   },
+   "after": {
+    "beispielTr": "Öğrenciler teneffüste koleksiyon kartlarını takas ediyor."
+   },
+   "voiced": [],
+   "reason": "Sammelkarten koleksiyon kartıdır, oyun kartı değil; ayrıca formen alanı 'tauscht (aus), hat (aus)getauscht' parantezli ve yanıltıcı, 'tauscht aus, hat ausgetauscht' olmalı.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1268,
+   "de": "unterwegs sein",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Babam iş yüzünden sık sık yolda."
+   },
+   "after": {
+    "beispielTr": "Babam iş gereği sık sık yolda."
+   },
+   "voiced": [],
+   "reason": "'İş yüzünden' olumsuz bir sebep tınısı katıyor; 'beruflich' tarafsızdır ve Türkçede 'iş gereği' denir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1269,
+   "de": "verabredet sein",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bu akşam Anna ile sözleştim."
+   },
+   "after": {
+    "beispielTr": "Bu akşam Anna ile buluşmak için sözleştim."
+   },
+   "voiced": [],
+   "reason": "'Bu akşam Anna ile sözleştim' anlaşmanın bu akşam yapıldığı gibi okunuyor; cümle buluşmanın bu akşam olduğunu söylüyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1285,
+   "de": "Vertrag",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ev sözleşmesi iki yıllık."
+   },
+   "after": {
+    "beispielTr": "Dairenin kira sözleşmesi iki yıllık."
+   },
+   "voiced": [],
+   "reason": "'Ev sözleşmesi' doğal değil ve satış sözleşmesi gibi de anlaşılabiliyor; cümlede kastedilen kira sözleşmesi.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 1299,
+   "de": "Wagen",
+   "severity": "hafif",
+   "before": {
+    "tr": "otomobil",
+    "beispielTr": "Otomobilim garajda duruyor."
+   },
+   "after": {
+    "tr": "araba",
+    "beispielTr": "Arabam garajda duruyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Günlük Türkçede \"otomobil\" resmi kalır ve \"Otomobilim garajda\" doğal değil; Wagen ile Auto gerçek eşanlamlı oldukları için ikisine de \"araba\" verilir."
+  },
+  {
+   "id": 1306,
+   "de": "weg",
+   "severity": "orta",
+   "before": {
+    "tr": "kayıp"
+   },
+   "after": {
+    "tr": "gitmiş"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"kayıp\" yalnız kaybolan eşyaya uyar ve isim olarak \"zarar\" anlamına da gelir; \"Er ist schon weg\" gibi en sık kullanımda weg \"gitmiş\" demektir, \"gone\" ile de böyle örtüşür."
+  },
+  {
+   "id": 1322,
+   "de": "Workshop",
+   "severity": "orta",
+   "before": {
+    "tr": "çalıştay",
+    "beispielTr": "Çalıştayda ekmek yapmayı öğreniyoruz."
+   },
+   "after": {
+    "tr": "atölye çalışması",
+    "beispielTr": "Atölye çalışmasında ekmek yapmayı öğreniyoruz."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Çalıştay' akademik toplantı içindir; ekmek yapımı gibi uygulamalı kurslarda Türkçede doğal karşılık 'atölye (çalışması)'dır."
+  },
+  {
+   "id": 1330,
+   "de": "Zeugnis",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Böyle iyi bir karneyle bir şey dileyebilirsin.",
+    "beispielEn": "With a report card that good, you get to wish for something."
+   },
+   "after": {
+    "beispielTr": "Bu kadar iyi bir karneyle bir hediye isteyebilirsin.",
+    "beispielEn": "With a report card that good, you can ask for a treat."
+   },
+   "voiced": [],
+   "reason": "\"sich etwas wünschen dürfen\" burada ödül olarak bir şey isteyebilmek demek; \"bir şey dileyebilirsin\" ve \"wish for something\" birebir çeviri kokuyor ve anlamı aktarmıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7435,
+   "de": "grob",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Tuz salata için fazla kaba."
+   },
+   "after": {
+    "beispielTr": "Tuz salata için fazla iri."
+   },
+   "voiced": [],
+   "reason": "Tuz için 'kaba' Türkçede doğal değil; tane büyüklüğü 'iri' ile anlatılır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7454,
+   "de": "kariert",
+   "severity": "hafif",
+   "before": {
+    "en": "checked"
+   },
+   "after": {
+    "en": "checkered"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Checked' İngiliz kullanımı; Amerikan İngilizcesinde 'checkered' denir ve kartın kendi örnek çevirisi de 'checkered' kullanıyor."
+  },
+  {
+   "id": 7468,
+   "de": "dreckig",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ayakkabıların resmen pis."
+   },
+   "after": {
+    "beispielTr": "Ayakkabıların çok pis."
+   },
+   "voiced": [],
+   "reason": "'Ganz' burada 'çok/iyice' demek; 'resmen pis' Almancada olmayan bir vurgu katıyor ve doğal durmuyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7472,
+   "de": "edel",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Yüzük kaliteli ve pahalı görünüyor."
+   },
+   "after": {
+    "beispielTr": "Yüzük şık ve pahalı görünüyor."
+   },
+   "voiced": [],
+   "reason": "Kartın anlamı 'şık' iken örnek çeviride 'kaliteli' kullanılmış; öğrenci kelimeyi cümlede tanıyamaz ve iki farklı anlam öğrenir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7485,
+   "de": "bedeckt",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bugün gökyüzü bütün gün bulutlu kalacak."
+   },
+   "after": {
+    "beispielTr": "Bugün hava bütün gün kapalı kalacak."
+   },
+   "voiced": [],
+   "reason": "Kartta 'kapalı' yazarken örnek çeviri 'bulutlu' diyor; Türkçede 'hava kapalı' tam karşılık ve kelimeyle eşleşir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7496,
+   "de": "stinkend",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Evin önünde pis kokan bir çöp kovası duruyor."
+   },
+   "after": {
+    "beispielTr": "Evin önünde pis kokan bir çöp bidonu duruyor."
+   },
+   "voiced": [],
+   "reason": "'Mülltonne' evin önündeki büyük çöp bidonudur; 'çöp kovası' evdeki küçük kovayı çağrıştırıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7502,
+   "de": "bescheiden",
+   "severity": "orta",
+   "before": {
+    "tr": "alçakgönüllü"
+   },
+   "after": {
+    "tr": "mütevazı"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Örnek cümle 'bescheiden leben' (sade/mütevazı yaşamak) anlamında ve çevirisi de 'mütevazı' derken kartta kişilik özelliği olan 'alçakgönüllü' yazıyor; 'mütevazı' iki kullanımı da karşılar."
+  },
+  {
+   "id": 7526,
+   "de": "begabt",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Oğlum müzik konusunda çok yetenekli."
+   },
+   "after": {
+    "beispielTr": "Oğlum müzik konusunda çok kabiliyetli."
+   },
+   "voiced": [],
+   "reason": "Kartın anlamı 'kabiliyetli' ama örnek çeviride 'talentiert' kartının karşılığı olan 'yetenekli' kullanılmış; iki kart birbirine karışıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7535,
+   "de": "charmant",
+   "severity": "orta",
+   "before": {
+    "tr": "sevimli",
+    "beispielTr": "Garson misafirlere karşı çok sevimliydi."
+   },
+   "after": {
+    "tr": "cana yakın",
+    "beispielTr": "Garson misafirlere karşı çok cana yakındı."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Sevimli' Türkçede 'cute/tatlı' demektir; bir garsona 'charmant' denmesi hoş ve ilgili tavrı anlatır, 'misafirlere karşı çok sevimliydi' doğal değil."
+  },
+  {
+   "id": 7571,
+   "de": "demnächst",
+   "severity": "hafif",
+   "before": {
+    "en": "shortly",
+    "beispielEn": "The new supermarket is opening shortly."
+   },
+   "after": {
+    "en": "soon",
+    "beispielEn": "The new supermarket is opening soon."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Amerikan İngilizcesinde \"shortly\" birkaç dakika içinde demektir; demnächst ise \"yakın zamanda\" anlamına gelir, haftalar sonrasını da kapsar."
+  },
+  {
+   "id": 7573,
+   "de": "davor",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The course starts at eight, before that I have a coffee."
+   },
+   "after": {
+    "beispielEn": "The course starts at eight; before that I have a coffee."
+   },
+   "voiced": [],
+   "reason": "İki ana cümle yalnız virgülle bağlanmış (comma splice); bu İngilizcede dilbilgisi hatası sayılır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7575,
+   "de": "anschließend",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "First we eat, afterward we go to the movies."
+   },
+   "after": {
+    "beispielEn": "First we eat, and afterward we go to the movies."
+   },
+   "voiced": [],
+   "reason": "İki ana cümle yalnız virgülle bağlanmış (comma splice); bu İngilizcede dilbilgisi hatası sayılır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7579,
+   "de": "zwischendurch",
+   "severity": "orta",
+   "before": {
+    "tr": "arada bir",
+    "beispielTr": "Üç saat çalışıyorum ve arada bir mola veriyorum."
+   },
+   "after": {
+    "tr": "arada",
+    "beispielTr": "Üç saat çalışıyorum ve arada mola veriyorum."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Arada bir\" Türkçede \"ara sıra\" demektir ve gelegentlich ile karışır; zwischendurch burada iki iş arasında, \"arada\" anlamında."
+  },
+  {
+   "id": 7603,
+   "de": "einigermaßen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Almancayı az çok iyi konuşuyorum."
+   },
+   "after": {
+    "beispielTr": "Almancayı idare eder düzeyde konuşuyorum."
+   },
+   "voiced": [],
+   "reason": "\"Az çok iyi konuşuyorum\" Türkçede kulağa yanlış geliyor; einigermaßen gut doğal olarak \"idare eder düzeyde\" diye aktarılır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7606,
+   "de": "halbwegs",
+   "severity": "orta",
+   "before": {
+    "tr": "şöyle böyle",
+    "beispielTr": "Oda şimdi şöyle böyle temiz."
+   },
+   "after": {
+    "tr": "aşağı yukarı",
+    "beispielTr": "Oda artık aşağı yukarı temiz."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Şöyle böyle\" Türkçede \"vasat\" (so lala) demektir, halbwegs ise \"aşağı yukarı, kabaca\"; \"şöyle böyle temiz\" de doğal bir Türkçe değil."
+  },
+  {
+   "id": 7614,
+   "de": "daraufhin",
+   "severity": "hafif",
+   "before": {
+    "en": "thereupon"
+   },
+   "after": {
+    "en": "as a result"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "\"Thereupon\" günlük Amerikan İngilizcesinde neredeyse hiç kullanılmayan eski bir kelime; örnek cümlenin kendi çevirisi de \"as a result\" diyor."
+  },
+  {
+   "id": 7632,
+   "de": "darum",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "I had no cash, therefore I paid by card."
+   },
+   "after": {
+    "beispielEn": "I had no cash, so I paid by card."
+   },
+   "voiced": [],
+   "reason": "\"..., therefore I paid\" İngilizcede virgülle bağlanmış hatalı bir cümle (comma splice); darum zaten konuşma dilinde \"so\" anlamına gelir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7633,
+   "de": "stattdessen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The cake was gone, instead I got an ice cream."
+   },
+   "after": {
+    "beispielEn": "The cake was gone, so I got an ice cream instead."
+   },
+   "voiced": [],
+   "reason": "\"..., instead I got\" İngilizcede virgülle bağlanmış hatalı bir cümle (comma splice).",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7635,
+   "de": "immerhin",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yemek pahalıydı ama yine de lezzetliydi."
+   },
+   "after": {
+    "beispielTr": "Yemek pahalıydı ama hiç değilse lezzetliydi."
+   },
+   "voiced": [],
+   "reason": "Kart \"hiç değilse\" öğretiyor ama örnek \"yine de\" diyor; bu \"trotzdem\" anlamına kayıyor ve öğrencinin kafasını karıştırıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7645,
+   "de": "Gärtner",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "In summer the gardener works from dawn until late."
+   },
+   "after": {
+    "beispielEn": "In summer the gardener works from early morning until late at night."
+   },
+   "voiced": [],
+   "reason": "'from dawn until late' karışık ve yapay bir kalıp; 'von früh bis spät' sabahın erkeninden geç saate kadar demek.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7669,
+   "de": "Notizblock",
+   "severity": "hafif",
+   "before": {
+    "tr": "not defteri",
+    "beispielTr": "Telefon numarasını not defterime yazıyorum."
+   },
+   "after": {
+    "tr": "bloknot",
+    "beispielTr": "Telefon numarasını bloknotuma yazıyorum."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Notizblock koparmalı bloknottur, 'not defteri' Notizbuch'un karşılığı ve iki kart birbirine karışır."
+  },
+  {
+   "id": 7673,
+   "de": "Arztpraxis",
+   "severity": "hafif",
+   "before": {
+    "en": "medical practice",
+    "beispielEn": "Many patients are waiting at the medical practice today."
+   },
+   "after": {
+    "en": "doctor's office",
+    "beispielEn": "Many patients are waiting at the doctor's office today."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Amerikan İngilizcesinde muayenehaneye 'doctor's office' denir, 'medical practice' cümlede yapay duruyor."
+  },
+  {
+   "id": 7680,
+   "de": "Dienstplan",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yeni vardiya çizelgesi çoktan kapıda asılı."
+   },
+   "after": {
+    "beispielTr": "Yeni vardiya çizelgesi kapıya asılmış bile."
+   },
+   "voiced": [],
+   "reason": "'çoktan kapıda asılı' çeviri kokuyor; 'schon' burada Türkçede 'bile' ile doğal aktarılır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7687,
+   "de": "Geschäftsführer",
+   "severity": "hafif",
+   "before": {
+    "en": "managing director",
+    "beispielEn": "The managing director is coming to our department tomorrow."
+   },
+   "after": {
+    "en": "general manager",
+    "beispielEn": "The general manager is coming to our department tomorrow."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'managing director' İngiliz kullanımı, ABD'de başka bir unvan; Amerikan İngilizcesinde karşılığı 'general manager'."
+  },
+  {
+   "id": 7691,
+   "de": "Dienstwagen",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Patronum büyük bir makam arabası aldı."
+   },
+   "after": {
+    "beispielTr": "Patronuma büyük bir makam arabası verildi."
+   },
+   "voiced": [],
+   "reason": "'bekommen' burada arabanın patrona verildiğini anlatıyor; 'aldı' Türkçede satın aldı diye anlaşılıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7701,
+   "de": "Gymnasium",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Nach der vierten Klasse wechselt er auf das Gymnasium.",
+    "beispielTr": "Dördüncü sınıftan sonra liseye geçiyor.",
+    "beispielEn": "After fourth grade he moves on to high school."
+   },
+   "after": {
+    "beispiel": "Meine Tochter geht aufs Gymnasium und lernt dort Latein.",
+    "beispielTr": "Kızım liseye gidiyor ve orada Latince öğreniyor.",
+    "beispielEn": "My daughter goes to high school and learns Latin there."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Gymnasium 5. sınıfta başladığı için 'dördüncü sınıftan sonra liseye geçiyor' Türk öğrenciye yanlış bilgi veriyor; kart anlamıyla çelişmeyen bir cümle gerekiyor."
+  },
+  {
+   "id": 7713,
+   "de": "Sporthalle",
+   "severity": "hafif",
+   "before": {
+    "en": "sports hall",
+    "beispielEn": "Gym class takes place in the sports hall."
+   },
+   "after": {
+    "en": "gym",
+    "beispielEn": "Gym class takes place in the gym."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'sports hall' İngiliz kullanımı; Amerikan İngilizcesinde okulun spor salonu 'gym'."
+  },
+  {
+   "id": 7718,
+   "de": "Klassenlehrer",
+   "severity": "hafif",
+   "before": {
+    "en": "class teacher",
+    "beispielEn": "Our class teacher is very nice."
+   },
+   "after": {
+    "en": "homeroom teacher",
+    "beispielEn": "Our homeroom teacher is very nice."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'class teacher' İngiliz kullanımı; Amerikan İngilizcesindeki karşılığı 'homeroom teacher'."
+  },
+  {
+   "id": 7728,
+   "de": "lehren",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "Er lehrt seit zehn Jahren an einer Schule.",
+    "beispielTr": "On yıldır bir okulda ders veriyor.",
+    "beispielEn": "He has been teaching at a school for ten years."
+   },
+   "after": {
+    "beispiel": "Er lehrt seit zehn Jahren an der Universität.",
+    "beispielTr": "On yıldır üniversitede ders veriyor.",
+    "beispielEn": "He has been teaching at the university for ten years."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Okul için Almanlar 'unterrichten' der, 'lehren' doğal olarak üniversitede kullanılır; mevcut cümle öğrenciye yanlış kalıp öğretir."
+  },
+  {
+   "id": 7736,
+   "de": "durchlesen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Read the task through calmly!"
+   },
+   "after": {
+    "beispielEn": "Take your time and read through the task!"
+   },
+   "voiced": [],
+   "reason": "'Read the task through calmly' doğal İngilizce değil; 'in Ruhe' acele etmeden demek.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7742,
+   "de": "nachlesen",
+   "severity": "hafif",
+   "before": {
+    "tr": "okuyup bakmak",
+    "en": "to read up",
+    "beispielTr": "Kuralı kitaptan okuyup bakabilirsin.",
+    "beispielEn": "You can read up on the rule in the book."
+   },
+   "after": {
+    "tr": "açıp bakmak",
+    "en": "to look up",
+    "beispielTr": "Kurala kitaptan bakabilirsin.",
+    "beispielEn": "You can look up the rule in the book."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "'Okuyup bakmak' Türkçede doğal değil; nachlesen bir şeyi kaynağa bakıp kontrol etmektir, 'to read up' ise konuyu uzun uzun çalışmak demektir."
+  },
+  {
+   "id": 7750,
+   "de": "fehlerhaft",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Unfortunately my translation was faulty."
+   },
+   "after": {
+    "beispielEn": "Unfortunately my translation had mistakes in it."
+   },
+   "voiced": [],
+   "reason": "İngilizcede bir çeviri için 'faulty' doğal değil; 'faulty' daha çok arızalı cihaz için kullanılır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7754,
+   "de": "unruhig",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Sınıf bugün çok huzursuzdu."
+   },
+   "after": {
+    "beispielTr": "Sınıf bugün hiç yerinde durmuyordu."
+   },
+   "voiced": [],
+   "reason": "Sınıf için 'huzursuz' kaygı çağrıştırıyor; unruhige Klasse yerinde duramayan, gürültülü sınıftır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7757,
+   "de": "staatlich",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "My children go to a state school."
+   },
+   "after": {
+    "beispielEn": "My children go to a public school."
+   },
+   "voiced": [],
+   "reason": "Amerikan İngilizcesinde devlet okuluna 'public school' denir, 'state school' İngiliz kullanımıdır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7760,
+   "de": "Wochenmarkt",
+   "severity": "hafif",
+   "before": {
+    "tr": "haftalık pazar",
+    "beispielTr": "Cumartesi günü haftalık pazardan meyve alıyorum."
+   },
+   "after": {
+    "tr": "semt pazarı",
+    "beispielTr": "Cumartesi günü semt pazarından meyve alıyorum."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Türkçede haftanın belli gününde kurulan pazara 'semt pazarı' denir, 'haftalık pazar' çeviri kokuyor."
+  },
+  {
+   "id": 7791,
+   "de": "Selbstbedienung",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "This is self-service, you get the food at the counter."
+   },
+   "after": {
+    "beispielEn": "It's self-service here; you get your food at the counter."
+   },
+   "voiced": [],
+   "reason": "İngilizce cümle iki ana cümleyi virgülle bağlıyor (comma splice); bu dilbilgisi hatası.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7806,
+   "de": "Becher",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Her sabah bir bardak kahve içiyorum.",
+    "beispielEn": "I drink a cup of coffee every morning."
+   },
+   "after": {
+    "beispielTr": "Her sabah bir kupa kahve içiyorum.",
+    "beispielEn": "I drink a mug of coffee every morning."
+   },
+   "voiced": [],
+   "reason": "Kart 'kupa / mug' öğretiyor ama iki çeviri 'bardak / cup' diyor; öğrenci Becher'i bardak sanabilir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7811,
+   "de": "Sparbuch",
+   "severity": "hafif",
+   "before": {
+    "en": "savings book",
+    "beispielEn": "I opened a savings book for my daughter."
+   },
+   "after": {
+    "en": "passbook",
+    "beispielEn": "I opened a savings account for my daughter."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Savings book' Amerikan İngilizcesinde yerleşik bir terim değil; karşılığı 'passbook'tur."
+  },
+  {
+   "id": 7815,
+   "de": "zurückschicken",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "I want to send the jacket back, it doesn't fit."
+   },
+   "after": {
+    "beispielEn": "I want to send the jacket back because it doesn't fit."
+   },
+   "voiced": [],
+   "reason": "İngilizce cümle iki ana cümleyi virgülle bağlıyor (comma splice); bu dilbilgisi hatası.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7866,
+   "de": "häuslich",
+   "severity": "hafif",
+   "before": {
+    "tr": "eve düşkün",
+    "beispielTr": "Kardeşim çok eve düşkün ve her akşam yemek pişiriyor."
+   },
+   "after": {
+    "tr": "evcimen",
+    "beispielTr": "Kardeşim çok evcimen, her akşam yemek pişiriyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "häuslich'in Türkçede yerleşik tek karşılığı 'evcimen'; 'çok eve düşkün' çeviri kokuyor."
+  },
+  {
+   "id": 7885,
+   "de": "abschalten",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Doğa yürüyüşünde gerçekten iyi kafa dağıtabiliyorum."
+   },
+   "after": {
+    "beispielTr": "Doğa yürüyüşünde kafamı gerçekten çok iyi dağıtabiliyorum."
+   },
+   "voiced": [],
+   "reason": "'gerçekten iyi kafa dağıtabiliyorum' Türkçede eksik ve çeviri kokuyor; deyim 'kafamı dağıtmak' biçiminde kurulur.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7889,
+   "de": "trommeln",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Çocuk eski bir kovanın üstünde yüksek sesle davul çalıyor."
+   },
+   "after": {
+    "beispielTr": "Çocuk eski bir kovayı davul gibi gürültüyle çalıyor."
+   },
+   "voiced": [],
+   "reason": "Kovaya vurmak için 'kovanın üstünde davul çalıyor' demek mantıksız ve çeviri kokuyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7890,
+   "de": "blättern",
+   "severity": "hafif",
+   "before": {
+    "tr": "sayfa çevirmek",
+    "beispielTr": "Bekleme odasında dergi sayfalarını çevirmeyi severim."
+   },
+   "after": {
+    "tr": "sayfalarını karıştırmak",
+    "beispielTr": "Bekleme odasında bir dergiyi karıştırmayı severim."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'in einer Zeitschrift blättern' Türkçede 'dergi karıştırmak' diye söylenir; 'sayfa çevirmek' göz gezdirme anlamını vermiyor."
+  },
+  {
+   "id": 7899,
+   "de": "dehnen",
+   "severity": "hafif",
+   "before": {
+    "tr": "germek",
+    "beispielTr": "Koşudan sonra hep bacaklarımı gererim."
+   },
+   "after": {
+    "tr": "esnetmek",
+    "beispielTr": "Koşudan sonra hep bacaklarımı esnetirim."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Sporda kas germe Türkçede 'esnetmek' diye söylenir; 'bacaklarımı gererim' doğal değil."
+  },
+  {
+   "id": 7925,
+   "de": "Halbzeit",
+   "severity": "orta",
+   "before": {
+    "en": "half-time"
+   },
+   "after": {
+    "en": "half"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "İngilizcede 'half-time' iki devre arasındaki molayı anlatır; tr 'devre' ve örnek cümle ('erste Halbzeit' = first half) maçın yarısını gösterdiği için en 'half' olmalı."
+  },
+  {
+   "id": 7934,
+   "de": "Nacken",
+   "severity": "hafif",
+   "before": {
+    "en": "nape"
+   },
+   "after": {
+    "en": "back of the neck"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "\"nape\" Amerikan İngilizcesinde nadir bir kelime, üstelik örnek çeviride \"neck\" geçtiği için kart ile cümle birbirini tutmuyor."
+  },
+  {
+   "id": 7941,
+   "de": "Kopfschmerzen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dünden beri başım ağrıyor ve bir hap alıyorum."
+   },
+   "after": {
+    "beispielTr": "Dünden beri başım ağrıyor, bir hap içiyorum."
+   },
+   "voiced": [],
+   "reason": "\"bir hap alıyorum\" Türkçede satın almak gibi de anlaşılıyor; ilacı kullanmak için doğal fiil \"içmek\".",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7946,
+   "de": "Migräne",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kız kardeşim sık sık migren olur ve sessizlik ister."
+   },
+   "after": {
+    "beispielTr": "Kız kardeşimin sık sık migreni tutar, o zaman sessizliğe ihtiyacı olur."
+   },
+   "voiced": [],
+   "reason": "\"sık sık migren olur\" Türkçede doğal değil, ayrıca \"braucht dann\" (o zaman ihtiyacı olur) \"ister\" diye kaydırılmış.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7965,
+   "de": "Massage",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "A massage helps against back pain."
+   },
+   "after": {
+    "beispielEn": "A massage helps with back pain."
+   },
+   "voiced": [],
+   "reason": "\"helps against\" Almanca \"hilft gegen\" kalıbından birebir çeviri; İngilizcede doğal olan \"helps with\".",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7968,
+   "de": "niesen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "I have to sneeze all the time."
+   },
+   "after": {
+    "beispielEn": "I keep sneezing."
+   },
+   "voiced": [],
+   "reason": "\"I have to sneeze all the time\" Almancadan birebir çeviri kokuyor; \"muss niesen\" burada \"hapşırmadan duramıyorum\" demek.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 7996,
+   "de": "Akku",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bataryam neredeyse bitti."
+   },
+   "after": {
+    "beispielTr": "Şarjım neredeyse bitti."
+   },
+   "voiced": [],
+   "reason": "Telefon için Türkçede \"bataryam bitti\" denmez, doğal ifade \"şarjım bitti\".",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8041,
+   "de": "sich absprechen",
+   "severity": "hafif",
+   "before": {
+    "tr": "sözleşmek",
+    "beispielTr": "Randevu konusunda anlaşmamız gerekiyor.",
+    "beispielEn": "We still need to coordinate the appointment."
+   },
+   "after": {
+    "tr": "konuşup anlaşmak",
+    "beispielTr": "Randevu konusunda daha konuşup anlaşmamız gerekiyor.",
+    "beispielEn": "We still need to agree on the appointment."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'sözleşmek' bugün az kullanılıyor ve 'sözleşme' ile karışıyor, örnek çeviri de başka fiil kullanıyor ve 'noch' anlamını atlıyor."
+  },
+  {
+   "id": 8065,
+   "de": "Zimmerschlüssel",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "I left the room key at the reception."
+   },
+   "after": {
+    "beispielEn": "I left the room key at the front desk."
+   },
+   "voiced": [],
+   "reason": "'at the reception' İngiliz kullanımı; Amerikan İngilizcesinde otel resepsiyonu 'front desk' olur.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8070,
+   "de": "Anreise",
+   "severity": "hafif",
+   "before": {
+    "en": "outward journey",
+    "beispielEn": "The outward journey by car takes five hours."
+   },
+   "after": {
+    "en": "trip there",
+    "beispielEn": "The trip there by car takes five hours."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'outward journey' İngiliz ve resmî bir ifade; Amerikan İngilizcesinde doğal karşılık 'trip there' olur."
+  },
+  {
+   "id": 8099,
+   "de": "Sonnenschirm",
+   "severity": "hafif",
+   "before": {
+    "en": "parasol",
+    "beispielEn": "At the beach we lie under the parasol."
+   },
+   "after": {
+    "en": "sun umbrella",
+    "beispielEn": "At the beach we lie under the beach umbrella."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'parasol' Amerikan İngilizcesinde nadir ve eski; günlük karşılığı 'sun umbrella', plajda da 'beach umbrella' kullanılır."
+  },
+  {
+   "id": 8107,
+   "de": "Gehweg",
+   "severity": "orta",
+   "before": {
+    "tr": "yaya yolu",
+    "en": "footpath",
+    "beispielTr": "Evin önündeki yaya yolu çok dar.",
+    "beispielEn": "The footpath in front of the house is very narrow."
+   },
+   "after": {
+    "tr": "kaldırım",
+    "en": "sidewalk",
+    "beispielTr": "Evin önündeki kaldırım çok dar.",
+    "beispielEn": "The sidewalk in front of the house is very narrow."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Gehweg, Bürgersteig ile gerçek eşanlamlıdır ve evin önündeki kaldırımı anlatır; 'yaya yolu' ve Amerikan İngilizcesinde kır patikası çağrıştıran 'footpath' öğrenciye ayrı bir şeymiş gibi yanlış bir ayrım öğretir."
+  },
+  {
+   "id": 8121,
+   "de": "sich ausweisen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "You have to identify yourself at the check."
+   },
+   "after": {
+    "beispielEn": "You have to show your ID during the check."
+   },
+   "voiced": [],
+   "reason": "'identify yourself at the check' İngilizcede doğal değil ve kontrol sırasında kimlik göstermeyi açıkça anlatmıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8135,
+   "de": "vorhersagen",
+   "severity": "hafif",
+   "before": {
+    "tr": "öngörmek"
+   },
+   "after": {
+    "tr": "önceden tahmin etmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"öngörmek\" Türkçede daha çok sezmek ya da \"kanunun öngördüğü\" anlamında kullanılır, örnekteki çeviri de zaten \"tahmin etmek\" diyor; kart ile cümle uyuşmuyor."
+  },
+  {
+   "id": 8139,
+   "de": "fällen",
+   "severity": "orta",
+   "before": {
+    "tr": "devirmek",
+    "beispielTr": "Kışın hasta ağacı devirdiler.",
+    "beispielEn": "In winter they felled the sick tree."
+   },
+   "after": {
+    "tr": "ağaç kesmek",
+    "beispielTr": "Kışın hastalıklı ağacı kestiler.",
+    "beispielEn": "In winter they cut down the diseased tree."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Türkçede ağaç için \"devirmek\" denmez, \"kesmek\" denir; \"devirmek\" öğrenciye ağacı itip yıkmak ya da hükümeti devirmek anlamını öğretir, \"hasta ağaç\" da doğal değil."
+  },
+  {
+   "id": 8141,
+   "de": "erfrieren",
+   "severity": "hafif",
+   "before": {
+    "tr": "donmak",
+    "en": "to freeze"
+   },
+   "after": {
+    "tr": "donarak ölmek",
+    "en": "to freeze to death"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "erfrieren soğuktan ölmek ya da donup gitmek demektir; \"donmak\" diye öğrenen öğrenci suyun donması için de (doğrusu gefrieren) erfrieren kullanır."
+  },
+  {
+   "id": 8163,
+   "de": "schrubben",
+   "severity": "hafif",
+   "before": {
+    "tr": "ovalamak",
+    "beispielTr": "Banyodaki zemini bir fırçayla ovalıyorum."
+   },
+   "after": {
+    "tr": "ovmak",
+    "beispielTr": "Banyonun zeminini fırçayla ovuyorum."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Ovalamak\" elle masaj yapar gibi ovmaktır; yeri fırçayla temizlemek için Türkçede \"ovmak\" denir."
+  },
+  {
+   "id": 8191,
+   "de": "anbringen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The janitor attaches a new lamp in the hallway."
+   },
+   "after": {
+    "beispielEn": "The janitor is putting up a new light in the hallway."
+   },
+   "voiced": [],
+   "reason": "\"attaches a new lamp in the hallway\" İngilizcede doğal değil; tavana ya da duvara lamba takmak için \"put up a light\" denir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8206,
+   "de": "anprobieren",
+   "severity": "hafif",
+   "before": {
+    "tr": "üstünde denemek"
+   },
+   "after": {
+    "tr": "giyip denemek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Üstünde denemek\" üçüncü şahıs ekiyle sözlük biçimi olamaz, kulağa tuhaf gelir; giysiyi deneme anlamını \"giyip denemek\" doğal biçimde verir."
+  },
+  {
+   "id": 8209,
+   "de": "nachfüllen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Please refill the salt, the shaker is empty."
+   },
+   "after": {
+    "beispielEn": "Please refill the salt, the container is empty."
+   },
+   "voiced": [],
+   "reason": "Almanca cümle \"Dose\" (kutu) diyor, tuzluk (Salzstreuer) değil; İngilizcedeki \"shaker\" anlamı kaydırıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8213,
+   "de": "anrichten",
+   "severity": "hafif",
+   "before": {
+    "tr": "sunmak",
+    "en": "to serve",
+    "beispielTr": "Eşim salatayı bir tabakta sunuyor.",
+    "beispielEn": "My wife serves the salad on a plate."
+   },
+   "after": {
+    "tr": "servise hazırlamak",
+    "en": "to dish up",
+    "beispielTr": "Eşim salatayı bir tabağa güzelce yerleştiriyor.",
+    "beispielEn": "My wife is arranging the salad on a plate."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "anrichten yemeği tabağa koyup servise hazırlamaktır; \"sunmak\" ve \"to serve\" servieren ile karışır, örnekte de kimseye bir şey sunulmuyor."
+  },
+  {
+   "id": 8237,
+   "de": "stehenbleiben",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kısa bir süre olduğun yerde durabilir misin?",
+    "beispielEn": "Can you stand still for a moment?"
+   },
+   "after": {
+    "beispielTr": "Bir saniye durur musun?",
+    "beispielEn": "Can you stop for a second?"
+   },
+   "voiced": [],
+   "reason": "\"Kısa bir süre olduğun yerde durabilir misin?\" çeviri kokuyor; stehenbleiben burada yürürken durmak demek, \"stand still\" kıpırdamadan durmayı anlatıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8241,
+   "de": "rutschen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "In winter cars often slip on the road."
+   },
+   "after": {
+    "beispielEn": "In winter cars often skid on the road."
+   },
+   "voiced": [],
+   "reason": "Yolda kayan arabalar için doğal İngilizce \"skid\"; \"slip\" çeviri kokuyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8243,
+   "de": "hinfahren",
+   "severity": "hafif",
+   "before": {
+    "tr": "araçla gitmek"
+   },
+   "after": {
+    "tr": "araçla oraya gitmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Araçla gitmek\" fahren'in karşılığı olur; hinfahren'deki \"oraya\" yönü kayboluyor."
+  },
+  {
+   "id": 8244,
+   "de": "zurückfahren",
+   "severity": "hafif",
+   "before": {
+    "tr": "geri dönmek"
+   },
+   "after": {
+    "tr": "araçla geri dönmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Aynı pakette umkehren de \"geri dönmek\"; zurückfahren araçla dönüş anlamı taşıdığı için daha kesin karşılık iki kelimeyi ayırır."
+  },
+  {
+   "id": 8245,
+   "de": "wegfahren",
+   "severity": "orta",
+   "before": {
+    "tr": "çekip gitmek"
+   },
+   "after": {
+    "tr": "araçla uzaklaşmak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Çekip gitmek\" küs ya da ani bir ayrılık anlatır; wegfahren tarafsızdır (araçla gitmek, tatile gitmek), örnek cümledeki tonu kelimenin anlamına taşımak öğrenciyi yanıltır."
+  },
+  {
+   "id": 8246,
+   "de": "lenken",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Arabayı dikkatlice garaja yönlendiriyor."
+   },
+   "after": {
+    "beispielTr": "Arabayı dikkatlice sürüp garaja sokuyor."
+   },
+   "voiced": [],
+   "reason": "Türkçede araba \"garaja yönlendirilmez\"; çeviri kokuyor ve direksiyonla yön verme anlamını doğal aktarmıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8249,
+   "de": "wegbringen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Çöpü hemen götürüyorum.",
+    "beispielEn": "I'm taking the trash away quickly."
+   },
+   "after": {
+    "beispielTr": "Çöpü hemen götürüp atıyorum.",
+    "beispielEn": "I'll quickly take the trash out."
+   },
+   "voiced": [],
+   "reason": "\"Çöpü götürüyorum\" ve \"taking the trash away quickly\" iki dilde de doğal değil.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8250,
+   "de": "zurückbringen",
+   "severity": "orta",
+   "before": {
+    "en": "to bring back",
+    "beispielEn": "Can you bring the books back tomorrow?"
+   },
+   "after": {
+    "en": "to return",
+    "beispielEn": "Can you return the books tomorrow?"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "tr \"geri götürmek\" iken en \"to bring back\" (geri getirmek) ters yönü gösteriyor; örnek çevirileri de götürmek ile getirmek arasında çelişiyor."
+  },
+  {
+   "id": 8251,
+   "de": "wegschicken",
+   "severity": "orta",
+   "before": {
+    "tr": "başından savmak"
+   },
+   "after": {
+    "tr": "geri çevirmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Başından savmak\" küçümseyici bir deyimdir ve wegschicken'in tarafsız \"göndermek\" anlamını karşılamaz; ayrıca örnek çevirisindeki \"geri çevirmek\" ile anlam tutmuyor."
+  },
+  {
+   "id": 8285,
+   "de": "verringern",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The boss reduces the costs for paper."
+   },
+   "after": {
+    "beispielEn": "The boss is cutting paper costs."
+   },
+   "voiced": [],
+   "reason": "\"Reduces the costs for paper\" Almancadan birebir aktarım; doğal İngilizce \"paper costs\" der.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8299,
+   "de": "mailen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Adresi bu akşam sana e-posta atarım."
+   },
+   "after": {
+    "beispielTr": "Adresi bu akşam sana e-postayla gönderirim."
+   },
+   "voiced": [],
+   "reason": "\"Adresi sana e-posta atarım\" dilbilgisi açısından bozuk; \"e-posta atmak\" nesne almaz.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8301,
+   "de": "vorwerfen",
+   "severity": "hafif",
+   "before": {
+    "en": "to blame",
+    "beispielEn": "My parents blame me for my laziness."
+   },
+   "after": {
+    "en": "to accuse",
+    "beispielEn": "My parents accuse me of being lazy."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "\"Blame someone for laziness\" İngilizcede doğal değil; vorwerfen birini bir kusurla suçlamak, yüzüne vurmak demektir."
+  },
+  {
+   "id": 8303,
+   "de": "ansagen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Öğretmen sınavı cuma günü için duyuruyor."
+   },
+   "after": {
+    "beispielTr": "Öğretmen cuma günü sınav olacağını duyuruyor."
+   },
+   "voiced": [],
+   "reason": "\"Sınavı cuma günü için duyuruyor\" Almancadan birebir aktarılmış, Türkçede doğal değil.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8320,
+   "de": "kapieren",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kuralı sonunda şimdi anlıyorum."
+   },
+   "after": {
+    "beispielTr": "Kuralı sonunda anladım."
+   },
+   "voiced": [],
+   "reason": "\"Kuralı sonunda şimdi anlıyorum\" çeviri kokuyor; Türkçede kavrama anı geçmiş zamanla söylenir.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8336,
+   "de": "brüllen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Antrenör bütün sahaya haykırıyor."
+   },
+   "after": {
+    "beispielTr": "Antrenör sahanın bir ucundan öbür ucuna haykırıyor."
+   },
+   "voiced": [],
+   "reason": "'bütün sahaya haykırıyor' Türkçede doğal değil, 'über den ganzen Platz' sahanın bir ucundan öbürüne demek.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8342,
+   "de": "beschimpfen",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Otobüste bir adam şoföre hakaret ediyor.",
+    "beispielEn": "On the bus a man insults the driver."
+   },
+   "after": {
+    "beispielTr": "Otobüste bir adam şoföre sövüyor.",
+    "beispielEn": "On the bus a man curses at the driver."
+   },
+   "voiced": [],
+   "reason": "Kart 'sövmek / to curse at' diyor ama iki çeviri de 'hakaret etmek / insult' kullanıyor, öğrenci hangisinin karşılık olduğunu karıştırır.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8344,
+   "de": "zwinkern",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Mein Opa zwinkert mir über den Tisch zu.",
+    "beispielTr": "Dedem masanın üstünden bana göz kırpıyor.",
+    "beispielEn": "My grandpa winks at me across the table."
+   },
+   "after": {
+    "beispiel": "Mein Opa lächelt und zwinkert mit einem Auge.",
+    "beispielTr": "Dedem gülümseyip bir gözünü kırpıyor.",
+    "beispielEn": "My grandpa smiles and winks."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Cümledeki 'zwinkert ... zu' ayrılabilir fiil zuzwinkern'dir; öğrenci zwinkern'i değil başka bir fiili görüyor."
+  },
+  {
+   "id": 8367,
+   "de": "wischen",
+   "severity": "hafif",
+   "before": {
+    "tr": "paspaslamak",
+    "en": "to mop",
+    "beispielTr": "Cumartesi günü mutfakta yerleri paspaslıyorum.",
+    "beispielEn": "On Saturday I mop the kitchen floor."
+   },
+   "after": {
+    "tr": "silmek",
+    "en": "to wipe",
+    "beispielTr": "Cumartesi günü mutfakta yerleri siliyorum.",
+    "beispielEn": "On Saturday I wipe the kitchen floor."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "wischen'in genel anlamı 'silmek'; 'paspaslamak' yalnız 'den Boden wischen' kalıbı, öğrenci 'den Tisch wischen'i görünce şaşırır."
+  },
+  {
+   "id": 8370,
+   "de": "Spüle",
+   "severity": "hafif",
+   "before": {
+    "tr": "evye",
+    "beispielTr": "Evyede hâlâ kirli bulaşık duruyor."
+   },
+   "after": {
+    "tr": "eviye",
+    "beispielTr": "Eviyede hâlâ kirli bulaşık duruyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "TDK yazımı 'eviye'dir, 'evye' yanlış yazım."
+  },
+  {
+   "id": 8383,
+   "de": "aufschließen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dairenin kapısını açabilir misin lütfen?"
+   },
+   "after": {
+    "beispielTr": "Dairenin kapısının kilidini açabilir misin lütfen?"
+   },
+   "voiced": [],
+   "reason": "Türkçe çeviri yalnız 'kapıyı açmak' diyor, öğrenci aufschließen'i öffnen ile karıştırabilir; kartın 'kilidi açmak' anlamı cümlede görünmeli.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8402,
+   "de": "Putzmittel",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Temizlik malzemeleri evyenin altında duruyor."
+   },
+   "after": {
+    "beispielTr": "Temizlik malzemeleri eviyenin altında duruyor."
+   },
+   "voiced": [],
+   "reason": "TDK yazımı 'eviye'dir ve Spüle kartıyla tutarlı olmalı.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8497,
+   "de": "Sonnenuntergang",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Denizde gün batımının fotoğrafını çektik."
+   },
+   "after": {
+    "beispielTr": "Deniz kenarında gün batımının fotoğrafını çektik."
+   },
+   "voiced": [],
+   "reason": "\"Am Meer\" deniz kenarı demek; \"Denizde\" denizin içinde ya da teknede olmak gibi anlaşılıyor.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8506,
+   "de": "Brautpaar",
+   "severity": "hafif",
+   "before": {
+    "en": "bridal couple",
+    "beispielEn": "All the guests congratulate the bridal couple."
+   },
+   "after": {
+    "en": "bride and groom",
+    "beispielEn": "All the guests congratulate the bride and groom."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Bridal couple' Amerikan İngilizcesinde pek kullanılmaz; doğal karşılık 'bride and groom'."
+  },
+  {
+   "id": 8510,
+   "de": "Bürgeramt",
+   "severity": "hafif",
+   "before": {
+    "en": "citizens' registration office"
+   },
+   "after": {
+    "en": "citizens' office"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'citizens' registration office' uzun ve doğal değil, örnek çeviri de zaten 'citizens' office' diyor; kart ile cümle tutarsız."
+  },
+  {
+   "id": 8511,
+   "de": "Krankmeldung",
+   "severity": "orta",
+   "before": {
+    "beispielEn": "I will send the doctor's note by email."
+   },
+   "after": {
+    "beispielEn": "I'll send the sick leave notice by email."
+   },
+   "voiced": [],
+   "reason": "İngilizce çeviri 'doctor's note' (Attest) diyor; kartın anlamı ve Türkçe çeviri 'hastalık bildirimi', farklı belge.",
+   "applied": "2026-10-04"
+  },
+  {
+   "id": 8512,
+   "de": "rezeptfrei",
+   "severity": "hafif",
+   "before": {
+    "en": "available without prescription"
+   },
+   "after": {
+    "en": "over-the-counter"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "İngilizce karşılık tek sözcüklük bir sıfat yerine açıklama cümlesi; Amerikan İngilizcesindeki doğal karşılık 'over-the-counter'."
+  },
+  {
+   "id": 8516,
+   "de": "schlapp",
+   "severity": "orta",
+   "before": {
+    "en": "listless",
+    "beispielEn": "Since the flu I still feel listless."
+   },
+   "after": {
+    "en": "worn out",
+    "beispielEn": "I've still been feeling worn out since the flu."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'listless' nadir ve edebi bir kelime, 'bitkin' ile örtüşmüyor; ayrıca 'Since the flu I still feel' İngilizcede present perfect gerektiren bozuk bir yapı."
+  }
+ ]
+}

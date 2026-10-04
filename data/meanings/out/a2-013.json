@@ -124,7 +124,7 @@
     "tr": "az çok",
     "en": "reasonably",
     "beispiel": "Ich spreche einigermaßen gut Deutsch.",
-    "beispielTr": "Almancayı idare edecek kadar iyi konuşuyorum.",
+    "beispielTr": "Almancayı idare eder düzeyde konuşuyorum.",
     "beispielEn": "I speak German reasonably well."
   },
   {
@@ -357,7 +357,7 @@
     "en": "therefore",
     "beispiel": "Ich hatte kein Bargeld, darum habe ich mit Karte bezahlt.",
     "beispielTr": "Nakit param yoktu, bu yüzden kartla ödedim.",
-    "beispielEn": "I had no cash; therefore, I paid by card."
+    "beispielEn": "I had no cash, so I paid by card."
   },
   {
     "id": 7633,
@@ -365,7 +365,7 @@
     "en": "instead",
     "beispiel": "Der Kuchen war alle, stattdessen habe ich ein Eis genommen.",
     "beispielTr": "Pasta bitmişti, onun yerine dondurma aldım.",
-    "beispielEn": "The cake was gone, so I got ice cream instead."
+    "beispielEn": "The cake was gone, so I got an ice cream instead."
   },
   {
     "id": 7634,
