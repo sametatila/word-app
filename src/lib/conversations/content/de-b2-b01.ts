@@ -477,7 +477,7 @@ export const deB2B01: Conversation[] = [
     focusId: "Nominalisierung",
     vocab: [
       { de: "die Absprache", tr: "mutabakat" },
-      { de: "die Betriebsvereinbarung", tr: "işyeri anlaşması" },
+      { de: "die Betriebsvereinbarung", tr: "iş yeri anlaşması" },
       { de: "die Richtlinie", tr: "yönerge" },
       { de: "die Vorgabe", tr: "belirlenen kural" },
       { de: "die Gleitzeit", tr: "esnek mesai" },
@@ -493,7 +493,7 @@ export const deB2B01: Conversation[] = [
       { say: [tr("Merhaba! Bugün şirket kurallarının dilini çalışacağız. O dilde cümleler yan cümleyle değil, isim öbekleriyle kısaltılır. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Örnek: 'şefinle konuştuktan sonra' yerine 'şefinle mutabakat sonrası'. Aynı anlam, daha kısa ve resmî. Bunu iki yönde de yapabilmen gerekiyor. Önce kelimeler.")] },
       word("İlk", { de: "die Absprache", tr: "mutabakat" }),
-      word("İkinci", { de: "die Betriebsvereinbarung", tr: "işyeri anlaşması" }, "İşveren ile çalışan temsilcileri arasındaki yazılı anlaşma."),
+      word("İkinci", { de: "die Betriebsvereinbarung", tr: "iş yeri anlaşması" }, "İşveren ile çalışan temsilcileri arasındaki yazılı anlaşma."),
       word("Üçüncü", { de: "die Richtlinie", tr: "yönerge" }),
       word("Dördüncü", { de: "die Vorgabe", tr: "belirlenen kural" }),
       word("Beşinci", { de: "die Gleitzeit", tr: "esnek mesai" }),

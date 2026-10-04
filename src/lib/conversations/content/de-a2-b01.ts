@@ -1337,7 +1337,7 @@ export const deA2B01: Conversation[] = [
       { de: "das Gegenteil", tr: "tersi" },
       { de: "jahrelang", tr: "yıllarca" },
       { de: "der Fernseher", tr: "televizyon" },
-      { de: "der Wagen", tr: "otomobil" },
+      { de: "der Wagen", tr: "araba" },
       { de: "verschieden", tr: "farklı" },
     ],
     patterns: [
@@ -1424,7 +1424,7 @@ export const deA2B01: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("der Wagen"),
-          tr("Türkçesi 'otomobil' demek. Lütfen"),
+          tr("Türkçesi 'araba' demek. Lütfen"),
           de("der Wagen"),
           tr("de."),
         ],

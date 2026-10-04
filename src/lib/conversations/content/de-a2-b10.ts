@@ -238,7 +238,7 @@ export const deA2B10: Conversation[] = [
       { de: "der Stift", tr: "kalem" },
       { de: "zuordnen", tr: "eşleştirmek" },
       { de: "beschriften", tr: "üzerine yazmak / etiketlemek" },
-      { de: "der Notizblock", tr: "not defteri" },
+      { de: "der Notizblock", tr: "bloknot" },
     ],
     patterns: [
       { de: "Füllen Sie das Formular vollständig aus.", tr: "resmî talimatı verir" },
@@ -334,7 +334,7 @@ export const deA2B10: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("der Notizblock"),
-          tr("Türkçesi 'not defteri' demek. Lütfen"),
+          tr("Türkçesi 'bloknot' demek. Lütfen"),
           de("der Notizblock"),
           tr("de."),
         ],
@@ -838,7 +838,7 @@ export const deA2B10: Conversation[] = [
       { de: "die Universität", tr: "üniversite" },
       { de: "die Fachhochschule", tr: "uygulamalı bilimler yüksekokulu" },
       { de: "der Stundenplan", tr: "ders programı" },
-      { de: "der Workshop", tr: "çalıştay" },
+      { de: "der Workshop", tr: "atölye çalışması" },
       { de: "beibringen", tr: "birine bir şey öğretmek" },
       { de: "das Klassenzimmer", tr: "derslik" },
       { de: "das Instrument", tr: "enstrüman" },
@@ -1836,7 +1836,7 @@ export const deA2B10: Conversation[] = [
       { de: "immerhin", tr: "hiç değilse" },
       { de: "außerdem", tr: "ayrıca" },
       { de: "ganz", tr: "bütün" },
-      { de: "selbst", tr: "kendi" },
+      { de: "selbst", tr: "bizzat" },
       { de: "erstaunt", tr: "şaşkın" },
     ],
     patterns: [

@@ -434,7 +434,7 @@ export const deA2B08: Conversation[] = [
       { de: "überreichen", tr: "takdim etmek" },
       { de: "bewirten", tr: "ağırlamak" },
       { de: "gastfreundlich", tr: "misafirperver" },
-      { de: "bescheiden", tr: "alçakgönüllü" },
+      { de: "bescheiden", tr: "mütevazı" },
     ],
     patterns: [
       { de: "Ich bringe der Gastgeberin einen Blumenstrauß mit.", tr: "kime ne götürdüğünü söyler" },

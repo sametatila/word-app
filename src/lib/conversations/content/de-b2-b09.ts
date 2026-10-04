@@ -321,7 +321,7 @@ export const deB2B09: Conversation[] = [
       { de: "die Sturheit", tr: "inatçılık" },
       { de: "das Wohlbefinden", tr: "iyilik hâli" },
       { de: "der Rückfall", tr: "nüks" },
-      { de: "nachsichtig", tr: "müsamahakâr" },
+      { de: "nachsichtig", tr: "hoşgörülü" },
     ],
     patterns: [
       { de: "…, indem man sie wiederholt", tr: "nasıl oluştuğunu söyler" },
@@ -337,7 +337,7 @@ export const deB2B09: Conversation[] = [
       word("Beşinci", { de: "die Sturheit", tr: "inatçılık" }),
       word("Altıncı", { de: "das Wohlbefinden", tr: "iyilik hâli" }),
       word("Yedinci", { de: "der Rückfall", tr: "nüks" }, "Bıraktığın alışkanlığa geri dönme."),
-      word("Son", { de: "nachsichtig", tr: "müsamahakâr" }),
+      word("Son", { de: "nachsichtig", tr: "hoşgörülü" }),
       { say: [tr("Kalıbımız:"), de("…, indem man sie täglich wiederholt"), tr("Yan cümle; fiil sonda.")] },
       { say: [tr("Örnek:"), de("Eine Gewohnheit entsteht, indem man sie täglich wiederholt."), tr("Tekrar et:"), de("Eine Gewohnheit entsteht, indem man sie täglich wiederholt")], expect: repeat("Eine Gewohnheit entsteht, indem man sie täglich wiederholt") },
       { say: [tr("Sıra sende: 'Yeni bir ritme uyum sağlamak istiyorum.'")], expect: produce("Ich möchte mich an einen neuen Rhythmus anpassen", [tr("Dönüşlü zamir belirtme hâlinde; ayrılabilen mastar sonda:"), de("Ich möchte mich an einen neuen Rhythmus anpassen."), tr("Tekrar dene.")]) },

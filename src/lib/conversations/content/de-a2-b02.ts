@@ -860,7 +860,7 @@ export const deA2B02: Conversation[] = [
       { de: "sich anfreunden", tr: "arkadaş olmak" },
       { de: "befreundet", tr: "arkadaş / dost" },
       { de: "romantisch", tr: "romantik" },
-      { de: "charmant", tr: "sevimli" },
+      { de: "charmant", tr: "cana yakın" },
       { de: "flirten", tr: "flört etmek" },
       { de: "verabredet sein", tr: "buluşmak için sözleşmiş olmak" },
       { de: "zusammenleben", tr: "birlikte yaşamak" },

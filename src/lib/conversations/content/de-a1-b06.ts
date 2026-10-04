@@ -1120,7 +1120,7 @@ export const deA1B06: Conversation[] = [
     vocab: [
       { de: "der Stadtplan", tr: "şehir haritası" },
       { de: "die Brücke", tr: "köprü" },
-      { de: "die Nähe", tr: "yakınlık" },
+      { de: "die Nähe", tr: "civar" },
       { de: "zu Fuß", tr: "yürüyerek" },
       { de: "gegenüber", tr: "karşısında" },
       { de: "die Mitte", tr: "orta" },
@@ -1172,7 +1172,7 @@ export const deA1B06: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("die Nähe"),
-          tr("Türkçesi 'yakınlık' demek; en çok"),
+          tr("Türkçesi 'civar' demek; en çok"),
           de("in der Nähe"),
           tr("yani 'yakında' biçiminde duyarsın. Lütfen"),
           de("die Nähe"),

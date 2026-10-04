@@ -531,7 +531,7 @@ export const deB1B09: Conversation[] = [
     vocab: [
       { de: "das Zuhause", tr: "yuva" },
       { de: "scheu", tr: "ürkek" },
-      { de: "füttern", tr: "yedirmek" },
+      { de: "füttern", tr: "yem vermek" },
       { de: "der Tierpark", tr: "hayvan parkı" },
       { de: "beißen", tr: "ısırmak" },
       { de: "treu", tr: "sadık" },
@@ -547,7 +547,7 @@ export const deB1B09: Conversation[] = [
       { say: [tr("Bu kez yönelme hâlli ilgi cümlelerini kullanacağız — yardım etmek ve güvenmek gibi fiiller onu istiyor. Önce kelimeler.")] },
       word("İlk", { de: "das Zuhause", tr: "yuva" }),
       word("İkinci", { de: "scheu", tr: "ürkek" }),
-      word("Üçüncü", { de: "füttern", tr: "yedirmek" }),
+      word("Üçüncü", { de: "füttern", tr: "yem vermek" }),
       word("Dördüncü", { de: "der Tierpark", tr: "hayvan parkı" }),
       word("Beşinci", { de: "beißen", tr: "ısırmak" }),
       word("Altıncı", { de: "treu", tr: "sadık" }),

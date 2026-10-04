@@ -2060,7 +2060,7 @@ export const deA1B09: Conversation[] = [
       { de: "öffnen", tr: "açmak" },
       { de: "ziehen", tr: "çekmek" },
           { de: "die Angst", tr: "korku" },
-      { de: "der Schluss", tr: "bitiş" },
+      { de: "der Schluss", tr: "son" },
       { de: "möchten", tr: "istemek" },
 ],
     patterns: [
@@ -2148,7 +2148,7 @@ export const deA1B09: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("der Schluss"),
-          tr("Türkçesi 'bitiş' demek. Lütfen"),
+          tr("Türkçesi 'son' demek. Lütfen"),
           de("der Schluss"),
           tr("de."),
         ],

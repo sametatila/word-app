@@ -1231,7 +1231,7 @@ export const deA2B09: Conversation[] = [
       { de: "der Himmel", tr: "gökyüzü" },
       { de: "der Sonnenschein", tr: "güneş ışığı" },
       { de: "auffällig", tr: "dikkat çekici" },
-      { de: "blättern", tr: "sayfa çevirmek" },
+      { de: "blättern", tr: "sayfalarını karıştırmak" },
       { de: "köstlich", tr: "nefis" },
       { de: "lebendig", tr: "canlı" },
     ],
