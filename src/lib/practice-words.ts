@@ -40,6 +40,24 @@ export const NOT_PRACTICED_WORD_IDS = [
   202357, // en: negative prefix
   202446, // en: eco-
   202923, // en: un-
+  /*
+    İNGİLİZ İNGİLİZCESİ BAŞLIKLAR (anlam denetimi 2026-10-04). Kurs Amerikan İngilizcesi öğretiyor ve
+    bunların Amerikan karşılığı AYRI kart olarak havuzda (parantezde): ikisi birden alıştırılınca öğrenci
+    İngiliz biçimini ezberliyor ya da "chemist" (ABD'de kimyager) gibi yanlış anlam öğreniyordu. Silinmedi:
+    öğrenmiş olanın geçmişi duruyor. Amerikan karşılığı olmayanlar (cinema, post, sweets, pocket money,
+    school holidays, railway, primary school) yeni kart + ses ister, alıştırılmaya devam ediyor.
+  */
+  209117, // en: chemist (pharmacy)
+  209119, // en: plaster (Band-Aid)
+  209221, // en: flat (apartment)
+  209212, // en: lift (elevator)
+  209126, // en: cheque (check)
+  209096, // en: bin (trash can)
+  208103, // en: autumn (fall)
+  209103, // en: cellar (basement)
+  209115, // en: tap (faucet)
+  209122, // en: film (movie)
+  201096, // en: mobile phone (cell phone)
 ];
 
 /** Kursun alıştırılabilir kelimeleri — `eq(words.course, …)` yerine. */

@@ -10,6 +10,7 @@ import { passesExamRules, type SectionScore } from "@/lib/exam-types";
 import { readinessScore, type Readiness } from "@/lib/level-readiness-score";
 import coreDe from "../../data/core/de.json";
 import coreEn from "../../data/core/en.json";
+import { NOT_PRACTICED_WORD_IDS } from "@/lib/practice-words";
 import type { CefrLevel } from "@/lib/skills/types";
 
 /**
@@ -21,9 +22,14 @@ import type { CefrLevel } from "@/lib/skills/types";
  * bir üst seviyenin sınavını geçen onun bir üstüne geçebilir.
  */
 const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
+/* Alıştırılmayan madde (`NOT_PRACTICED_WORD_IDS`: artikel, ön ek, Amerikan karşılığı ayrı kart olan İngiliz
+   başlık) çekirdekten düşer: oyunlara hiç girmediği için öğrenilemez, paydada kalırsa hazırlık haksız düşerdi. */
+const practiced = (ids: number[]) => ids.filter((id) => !NOT_PRACTICED_WORD_IDS.includes(id));
+const coreOf = (levels: Record<string, number[]>) =>
+  Object.fromEntries(Object.entries(levels).map(([l, ids]) => [l, practiced(ids)])) as Record<CefrLevel, number[]>;
 const CORE: Record<"de" | "en", Record<CefrLevel, number[]>> = {
-  de: coreDe.levels as Record<CefrLevel, number[]>,
-  en: coreEn.levels as Record<CefrLevel, number[]>,
+  de: coreOf(coreDe.levels),
+  en: coreOf(coreEn.levels),
 };
 
 export type LevelStatus = {
