@@ -41,6 +41,11 @@ Her düzeltmenin `voiced` alanı hangi kaydın gerektiğini söyler; boşsa (yal
 |---|---|
 | `de-a1.json` | 906 madde: 68 düzeltme, 4 red. Hepsi uygulandı (2026-10-04; 42 kayıt Mac'te üretildi). |
 | `de-a2.json` | 1.447 madde: 124 karar; uzlaştırma 9'unu karşıladı, 3 geri alındı. Hepsi uygulandı (2026-10-04; 78 kayıt). |
+| `en-a1.json` | 690 madde: 58 düzeltme uygulandı; `kararBekleyen`: 13 İngiliz İngilizcesi başlık (chemist, flat, lift…). |
+| `en-a2.json` | 1.102 madde: 95 düzeltme uygulandı (9'u Almanca karşılık kuralı yüzünden geri alındı); 5 İngiliz başlık bekliyor. |
+
+İngilizce kursta Almanca örnek cümle kartın Almanca karşılığını içermeli (`check:en-de`): karşılık değişirse
+cümle de değişir ya da karşılık korunur.
 
 ## Havuz uzlaştırması (2026-10-04, c6ec059bc)
 
