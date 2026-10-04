@@ -116,7 +116,9 @@ for (const p of packets) {
     if (numbers(de) !== numbers(k.beispiel))
       H(`sayı "${numbers(de)}" ≠ İngilizce "${numbers(k.beispiel)}"`);
     if (/\?$/.test(de) !== /\?$/.test(k.beispiel)) H("soru/düz cümle uyuşmuyor");
-    if (!contains(de, k.deGloss)) H(`«${k.deGloss}» cümlede yok`);
+    // İşlev sözcüğünde iki çekirdek anlam "; " ile ayrılıyor (SPEC: "dein; Ihr", "vor; bevor"): cümle birini
+    // göstermesi yeter, ikisini birden taşıması beklenmez.
+    if (!k.deGloss.split("; ").some((g) => contains(de, g))) H(`«${k.deGloss}» cümlede yok`);
 
     if (de === k.beispiel) U("İngilizce cümlenin aynısı — çevrilmemiş olabilir");
     const ratio = n / Math.max(1, words_(k.beispiel));
