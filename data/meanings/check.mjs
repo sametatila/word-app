@@ -139,7 +139,7 @@ function inspect(packet) {
     // like", "dürfen" → "may". Kural yalnızca "to …" kabul edince ajan
     // möchten'e wollen ile birebir aynı karşılığı ("to want") vermek zorunda
     // kaldı ve iki kelime hiçbir turda ayırt edilemez hâle geldi.
-    const verbForm = /^(to|would|can|may|must|should|shall|might)\s/;
+    const verbForm = /^(?:(?:to|would)\s|have to$|(?:can|may|must|should|shall|might)(?:\s|$))/;
     if (isVerb && !verbForm.test(en))
       H("fiilde mastar yok", `"${en}" — fiiller "to …" (ya da kip fiili) biçiminde yazılır`);
     if (!isVerb && /^to\s/.test(en)) U("fiil olmayanda to", `"${en}"`);
