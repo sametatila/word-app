@@ -62,6 +62,7 @@
     "check:no-erdi": "node scripts/check-no-erdi.mjs",
     "check:avatar-unlocks": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-avatar-unlocks.ts",
     "check:published-examples": "node scripts/check-published-examples.mjs",
+    "check:meanings-overlay": "node scripts/check-meanings-overlay.mjs",
     "export:user": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/export-user.ts",
     "check:colors": "node scripts/check-colors.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
