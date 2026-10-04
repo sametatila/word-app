@@ -20,7 +20,7 @@
   "tr": "konuşma",
   "en": "speech",
   "beispiel": "Bei der Hochzeit hielt der Bruder der Braut eine lustige Rede.",
-  "beispielTr": "Düğünde gelinin abisi komik bir konuşma yaptı.",
+  "beispielTr": "Düğünde gelinin erkek kardeşi komik bir konuşma yaptı.",
   "beispielEn": "At the wedding, the bride's brother gave a funny speech."
  },
  {
@@ -93,7 +93,7 @@
   "en": "therefore",
   "beispiel": "Ich hatte keine Zeit, deswegen habe ich nicht angerufen.",
   "beispielTr": "Zamanım yoktu, bu yüzden aramadım.",
-  "beispielEn": "I had no time, therefore I did not call."
+  "beispielEn": "I didn't have time, so I didn't call."
  },
  {
   "id": 1800,

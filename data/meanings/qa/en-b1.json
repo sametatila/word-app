@@ -1,0 +1,2140 @@
+{
+ "reviewed": 1521,
+ "rejected": [
+  {
+   "id": 200839,
+   "de": "landlord",
+   "reason": "'Mal sahibi' kira bağlamında doğru ve yaygın; 'ev sahibi' misafir ağırlayan anlamıyla da karışır. Zevk farkı.",
+   "oneri": {
+    "tr": "ev sahibi",
+    "beispielTr": "Ev sahibimiz kirayı yine artırıyor."
+   }
+  },
+  {
+   "id": 200879,
+   "de": "unpack",
+   "reason": "Mevcut cümle dilbilgisel ve anlaşılır; yalnız biraz daha doğal bir alternatif için cümle kaydı yenilenmez.",
+   "oneri": {
+    "beispiel": "He carefully unpacked the new laptop.",
+    "beispielTr": "Yeni dizüstü bilgisayarı dikkatlice paketinden çıkardı.",
+    "beispielDe": "Er packte den neuen Laptop vorsichtig aus."
+   }
+  },
+  {
+   "id": 200749,
+   "de": "female partner",
+   "reason": "Somut düzeltme önerilmemiş; başlık tasarımı sorusu bu karar kapsamında değil.",
+   "oneri": {}
+  },
+  {
+   "id": 201090,
+   "de": "memorize",
+   "reason": "\"sich merken\" ezberlemek/akılda tutmak için yerleşik karşılık; auswendig lernen cümleyi değiştirmeyi ve daha az doğal Almanca gerektirir.",
+   "oneri": {
+    "deGloss": "auswendig lernen"
+   }
+  },
+  {
+   "id": 201201,
+   "de": "ski",
+   "reason": "Cümle yanlış değil; \"go skiing\" kelimenin en yaygın kullanımı, Türkçe ve Almanca karşılıkları da uyuyor. Cümle kaydı gereksiz.",
+   "oneri": {
+    "beispiel": "My new skis are in the basement.",
+    "beispielTr": "Yeni kayaklarım bodrumda.",
+    "beispielDe": "Meine neuen Skier sind im Keller."
+   }
+  },
+  {
+   "id": 201509,
+   "de": "satisfactory",
+   "reason": "'befriedigend' satisfactory için sözlükte geçen doğru karşılık; 'zufriedenstellend' eşdeğer alternatif.",
+   "oneri": {
+    "deGloss": "zufriedenstellend",
+    "beispielDe": "Sein Vorschlag war für alle zufriedenstellend."
+   }
+  },
+  {
+   "id": 201507,
+   "de": "be located",
+   "reason": "Cümle dilbilgisi olarak doğru ve kelimeyi içeriyor; yalnız üslup farkı için yeniden ses kaydı gerekmez.",
+   "oneri": {
+    "beispiel": "The library is located downtown.",
+    "beispielTr": "Kütüphane şehir merkezinde bulunuyor.",
+    "beispielDe": "Die Bibliothek befindet sich in der Innenstadt."
+   }
+  },
+  {
+   "id": 201361,
+   "de": "absolutely",
+   "reason": "'kesinlikle çok güzeldi' anlaşılır ve kartın karşılığını gösteriyor; öneri zevk farkı.",
+   "oneri": {
+    "beispielTr": "Tepeden manzara gerçekten muhteşemdi."
+   }
+  },
+  {
+   "id": 201543,
+   "de": "employed",
+   "reason": "'istihdam edilen' doğru bir karşılık; 'çalışan' daha günlük ama mevcut hatalı değil, ayrıca 'çalışan' isimle karışır.",
+   "oneri": {
+    "tr": "çalışan",
+    "beispielTr": "Mezunların yalnızca yarısı şu anda çalışıyor."
+   }
+  },
+  {
+   "id": 201640,
+   "de": "so that",
+   "reason": "İşlev sözcüğü; 'a; b' iki anlam SPEC'e göre serbest.",
+   "oneri": {
+    "tr": "diye"
+   }
+  },
+  {
+   "id": 201571,
+   "de": "cheat",
+   "reason": "kapı: çeviri eksik"
+  },
+  {
+   "id": 202000,
+   "de": "used to",
+   "reason": "Öneri yer tutucu, somut düzeltme yok; kart (used to = alışkın / gewohnt, örnek ve çeviriler) doğru.",
+   "oneri": {}
+  },
+  {
+   "id": 202364,
+   "de": "by now",
+   "reason": "typ Sonstiges; SPEC işlev sözcüğünde iki parçalı 'a; b' karşılığa izin veriyor, iki anlam da doğru.",
+   "oneri": {
+    "tr": "artık"
+   }
+  },
+  {
+   "id": 202547,
+   "de": "realize",
+   "reason": "'realisieren' bu anlamda Duden'de kayıtlı ve yaygın; 'merken' eşdeğer alternatif, gerçek hata değil.",
+   "oneri": {
+    "deGloss": "merken",
+    "beispielDe": "Ich habe gar nicht gemerkt, dass du schon hier bist."
+   }
+  },
+  {
+   "id": 202583,
+   "de": "rescue",
+   "reason": "Ayırt edici parantez: A2 'save' zaten 'kurtarmak'; '(tehlikeden)' rescue'yu ondan ayırmak için bilerek konmuş.",
+   "oneri": {
+    "tr": "kurtarmak"
+   }
+  },
+  {
+   "id": 202566,
+   "de": "regional",
+   "reason": "'regional products' anlaşılır ve dilbilgisel olarak doğru; yalnız doğallık farkı, cümle kaydını değiştirmeye değmez.",
+   "oneri": {
+    "beispiel": "The company has three regional offices.",
+    "beispielTr": "Şirketin üç bölgesel ofisi var.",
+    "beispielDe": "Die Firma hat drei regionale Büros."
+   }
+  },
+  {
+   "id": 202725,
+   "de": "specialist",
+   "reason": "Örnek tıbbi bağlamda; 'uzman hekim' bu bağlamda doğru, değişiklik eşdeğer alternatif.",
+   "oneri": {
+    "tr": "uzman",
+    "beispielTr": "Uzman röntgenlerime uzun süre baktı."
+   }
+  },
+  {
+   "id": 202899,
+   "de": "overtime",
+   "reason": "Mevcut çeviri anlaşılır ve doğru; 'bolca fazla mesai' daha iyi değil, zevk farkı.",
+   "oneri": {
+    "beispielTr": "Bu hafta bolca fazla mesai yapmam gerekiyor."
+   }
+  },
+  {
+   "id": 203181,
+   "de": "in charge",
+   "reason": "'Yetkili kim?' in charge için doğal Türkçe; 'sorumlu' responsible ile çakışır.",
+   "oneri": {
+    "tr": "sorumlu",
+    "beispielTr": "Bu bölümden kim sorumlu?"
+   }
+  },
+  {
+   "id": 203073,
+   "de": "incredibly",
+   "reason": "'wahnsinnig' doğru ve yaygın yoğunlaştırıcı; 'unglaublich' incredible kartıyla çakışır.",
+   "oneri": {
+    "deGloss": "unglaublich",
+    "beispielDe": "Die neue Wohnung ist unglaublich teuer."
+   }
+  },
+  {
+   "id": 203779,
+   "de": "be based on",
+   "reason": "beruhen kabul edilebilir, örnek cümle auf kalıbını gösteriyor; değişiklik cümle eşleşmesini bozar",
+   "oneri": {
+    "deGloss": "beruhen auf"
+   }
+  },
+  {
+   "id": 203898,
+   "de": "insist",
+   "reason": "beharren darauf doğru Almanca; zevk farkı",
+   "oneri": {
+    "deGloss": "bestehen auf",
+    "beispielDe": "Er bestand darauf, das Abendessen zu bezahlen."
+   }
+  },
+  {
+   "id": 204265,
+   "de": "give a talk",
+   "reason": "referieren über doğru; eşdeğer alternatif, kayıt maliyetine değmez",
+   "oneri": {
+    "deGloss": "einen Vortrag halten",
+    "beispielDe": "Morgen hält sie einen Vortrag über den Klimawandel."
+   }
+  },
+  {
+   "id": 204331,
+   "de": "schedule",
+   "reason": "programlamak toplantı için de kullanılır; eşdeğer alternatif",
+   "oneri": {
+    "tr": "planlamak",
+    "beispielTr": "Toplantıyı salı sabahına planladık."
+   }
+  },
+  {
+   "id": 203610,
+   "de": "review",
+   "reason": "değerlendirme doğru ve daha geniş; eleştiri criticism ile karışır",
+   "oneri": {
+    "tr": "eleştiri",
+    "beispielTr": "Film hakkında iyi bir eleştiri okudum."
+   }
+  },
+  {
+   "id": 203757,
+   "de": "appetizer",
+   "reason": "başlangıç tek başına belirsiz; başlangıç yemeği ayırt edici ve doğru",
+   "oneri": {
+    "tr": "başlangıç",
+    "beispielTr": "Başlangıç olarak domates çorbası alacağım."
+   }
+  },
+  {
+   "id": 204807,
+   "de": "price comparison",
+   "reason": "Cümle yanlış değil; para birimi tercih meselesi, İngilizce kayıt boşuna yenilenir.",
+   "oneri": {
+    "beispiel": "A quick price comparison online often saves a hundred dollars.",
+    "beispielTr": "İnternette kısa bir fiyat karşılaştırması çoğu zaman yüz dolar kazandırır.",
+    "beispielDe": "Ein kurzer Preisvergleich im Netz spart oft hundert Dollar."
+   }
+  },
+  {
+   "id": 204808,
+   "de": "shipping costs",
+   "reason": "Cümle yanlış değil; para birimi tercih meselesi, İngilizce kayıt boşuna yenilenir.",
+   "oneri": {
+    "beispiel": "There are no shipping costs on orders over fifty dollars.",
+    "beispielTr": "Elli dolar üzeri siparişlerde kargo ücreti yok.",
+    "beispielDe": "Ab fünfzig Dollar Bestellwert fallen keine Versandkosten an."
+   }
+  },
+  {
+   "id": 204479,
+   "de": "budget",
+   "reason": "'Etat' kamu bütçesi için doğru ve cümle (kültür bütçesi) tam bu bağlam; hata yok.",
+   "oneri": {
+    "deGloss": "Budget",
+    "beispielDe": "Das Budget für Kultur wurde dieses Jahr wieder gekürzt."
+   }
+  },
+  {
+   "id": 204595,
+   "de": "test result",
+   "reason": "Cümle tıbbi bağlamda; 'Befund' burada doğru ve doğal, eşdeğer alternatif.",
+   "oneri": {
+    "deGloss": "Testergebnis",
+    "beispielDe": "Zum Glück war das Testergebnis völlig normal."
+   }
+  },
+  {
+   "id": 204767,
+   "de": "night's sleep",
+   "reason": "'meine Nachtruhe zerstört' doğal ve doğru; 'Nachtschlaf' eşdeğer alternatif.",
+   "oneri": {
+    "deGloss": "Nachtschlaf",
+    "beispielDe": "Der Lärm nebenan hat meinen Nachtschlaf ruiniert."
+   }
+  },
+  {
+   "id": 204818,
+   "de": "client",
+   "reason": "Ajans müşterisi için 'Auftraggeber' doğru ve yerinde; 'Kunde' eşdeğer alternatif.",
+   "oneri": {
+    "deGloss": "Kunde",
+    "beispielDe": "Unsere Agentur hat dieses Jahr drei neue Kunden."
+   }
+  },
+  {
+   "id": 206533,
+   "de": "powerful",
+   "reason": "'kuvvetli' de doğru ve eşdeğer; zevk farkı.",
+   "oneri": {
+    "tr": "güçlü"
+   }
+  },
+  {
+   "id": 207491,
+   "de": "uncomfortable",
+   "reason": "'rahatsız ayakkabı/koltuk' Türkçede kullanılıyor; mevcut cümle kart karşılığını içeriyor, değişiklik kaydı gereksiz.",
+   "oneri": {
+    "beispielTr": "Bu ayakkabılar güzel ama rahat değil."
+   }
+  },
+  {
+   "id": 207733,
+   "de": "make progress",
+   "reason": "\"weiterkommen\" de \"ilerleme kaydetmek\" anlamında doğru; fark zevk meselesi, cümle kaydına değmez.",
+   "oneri": {
+    "deGloss": "Fortschritte machen",
+    "beispielDe": "Dieses Jahr will ich in Englisch Fortschritte machen."
+   }
+  },
+  {
+   "id": 207673,
+   "de": "medical practice",
+   "reason": "\"medical practice\" Amerikan İngilizcesinde de geçerli, mevcut cümle yanlış değil; cümle değişikliği gereksiz.",
+   "oneri": {
+    "beispiel": "Our neighbor works at a small medical practice.",
+    "beispielTr": "Komşumuz küçük bir muayenehanede çalışıyor.",
+    "beispielDe": "Unser Nachbar arbeitet in einer kleinen Arztpraxis."
+   }
+  },
+  {
+   "id": 207952,
+   "de": "emergency doctor",
+   "reason": "Somut düzeltme yok; başlık kelimesini değiştirmek bu düzeltmenin kapsamı dışında, mevcut anlamlar ve cümleler kendi içinde doğru.",
+   "oneri": {}
+  },
+  {
+   "id": 208022,
+   "de": "send off",
+   "reason": "Send off sözlükte postayla göndermek; postalamak doğru, öneri zevk farkı.",
+   "oneri": {
+    "tr": "göndermek",
+    "beispielTr": "Formu hemen gönderiyorum."
+   }
+  },
+  {
+   "id": 208078,
+   "de": "way there",
+   "reason": "Gidiş yolu Türkçede kullanılan doğru bir karşılık; tek başına gidiş daha belirsiz, öneri zevk farkı.",
+   "oneri": {
+    "tr": "gidiş",
+    "beispielTr": "Giderken yol boyunca hep yağmur yağdı."
+   }
+  },
+  {
+   "id": 208137,
+   "de": "argue",
+   "reason": "Kursta discuss zaten tartışmak; münakaşa etmek argue'yu ayırt etmek için bilerek seçilmiş ve doğru.",
+   "oneri": {
+    "tr": "tartışmak"
+   }
+  },
+  {
+   "id": 208208,
+   "de": "fill up",
+   "reason": "Önerilen Almanca cümle deGloss auffüllen'i içermiyor; den Tank auffüllen da doğru Almanca.",
+   "oneri": {
+    "beispielDe": "Ich muss vor der Abfahrt noch volltanken."
+   }
+  },
+  {
+   "id": 208226,
+   "de": "set off",
+   "reason": "\"losgehen\" set off için sözlüklerde verilen geçerli bir karşılık; \"aufbrechen\" eşdeğer bir alternatif.",
+   "oneri": {
+    "deGloss": "aufbrechen",
+    "beispielDe": "Wir sind am nächsten Morgen früh aufgebrochen."
+   }
+  },
+  {
+   "id": 208235,
+   "de": "turn back",
+   "reason": "\"geriye dönmek\" de doğru ve doğal bir söyleyiş, fark zevk meselesi.",
+   "oneri": {
+    "tr": "geri dönmek",
+    "beispielTr": "Yağmur çok yağıyor, bu yüzden geri dönüyoruz."
+   }
+  },
+  {
+   "id": 208219,
+   "de": "change the sheets",
+   "reason": "Türkçe karşılık ve örnek bağlamı anlamı netleştiriyor, \"beziehen\" yanlış değil. Ayrıca \"das Bett beziehen\" mevcut Almanca cümlede birebir geçmiyor.",
+   "oneri": {
+    "deGloss": "das Bett beziehen"
+   }
+  },
+  {
+   "id": 208275,
+   "de": "put down",
+   "reason": "\"hinstellen\" de \"Stell die Taschen kurz hin\" de doğal ve doğru, \"abstellen\" eşdeğer bir alternatif.",
+   "oneri": {
+    "deGloss": "abstellen",
+    "beispielDe": "Stell die schweren Taschen kurz ab."
+   }
+  },
+  {
+   "id": 201634,
+   "de": "with one",
+   "reason": "Claude: İngilizce kursta 'en' alanı kullanılmıyor"
+  },
+  {
+   "id": 203124,
+   "de": "about what",
+   "reason": "Claude: '-dığı şey hakkında' doğal bir karşılık değil"
+  }
+ ],
+ "fixes": [
+  {
+   "id": 200326,
+   "de": "join in",
+   "severity": "orta",
+   "before": {
+    "tr": "katılmak; eşlik etmek"
+   },
+   "after": {
+    "tr": "katılmak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Fiil işlev sözcüğü değil, iki karşılık kurala aykırı; örnekteki anlam 'katılmak'."
+  },
+  {
+   "id": 200548,
+   "de": "connection",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Anschluss",
+    "beispielDe": "Der Internetanschluss ist heute sehr langsam."
+   },
+   "after": {
+    "deGloss": "Verbindung",
+    "beispielDe": "Die Internetverbindung ist heute sehr langsam."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Genel 'connection' ve yavaş internet için doğal karşılık Verbindung; Anschluss hat/aktarma anlamına kayıyor."
+  },
+  {
+   "id": 200562,
+   "de": "statement",
+   "severity": "orta",
+   "before": {
+    "tr": "bildiri"
+   },
+   "after": {
+    "tr": "açıklama"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Şirketin yaptığı statement Türkçede 'açıklama'; örnek çeviri de bunu kullanıyor, 'bildiri' farklı tür metin."
+  },
+  {
+   "id": 200951,
+   "de": "sign up",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "sich eintragen",
+    "beispielDe": "Sie können sich online für den Kurs eintragen."
+   },
+   "after": {
+    "deGloss": "sich anmelden",
+    "beispielDe": "Sie können sich online für den Kurs anmelden."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Kursa kaydolmak Almancada \"sich anmelden\"; \"sich eintragen\" listeye ad yazmak, bu cümlede doğal değil."
+  },
+  {
+   "id": 200961,
+   "de": "permission",
+   "severity": "hafif",
+   "before": {
+    "tr": "izin; müsaade"
+   },
+   "after": {
+    "tr": "izin"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "İçerik sözcüğünde tek karşılık kuralı; \"müsaade\" eş anlamlı fazlalık."
+  },
+  {
+   "id": 200974,
+   "de": "festival",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Fest",
+    "beispielDe": "Das Musikfest dauert drei Tage."
+   },
+   "after": {
+    "deGloss": "Festival",
+    "beispielDe": "Das Musikfestival dauert drei Tage."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Müzik festivali Almancada Musikfestival; \"Fest\" şenlik/kutlama demek."
+  },
+  {
+   "id": 201052,
+   "de": "contact",
+   "severity": "orta",
+   "before": {
+    "tr": "temas"
+   },
+   "after": {
+    "tr": "irtibat"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Kartın anlamı iletişim bağı; \"temas\" fiziksel dokunmaya kayıyor, örnek çeviri de \"irtibat\" diyor."
+  },
+  {
+   "id": 201169,
+   "de": "walking tour",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Rehberimiz bize bize eski limanda bir yürüyüş turu yaptırdı."
+   },
+   "after": {
+    "beispielTr": "Rehberimiz bize eski limanda bir yürüyüş turu yaptırdı."
+   },
+   "voiced": [],
+   "reason": "\"bize bize\" yinelemesi gerçek yazım hatası.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 201232,
+   "de": "exchange",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Öğrenciler teneffüste oyun kartlarını değiş tokuş ediyor."
+   },
+   "after": {
+    "beispielTr": "Öğrenciler teneffüste koleksiyon kartlarını değiş tokuş ediyor."
+   },
+   "voiced": [],
+   "reason": "trading cards koleksiyon kartıdır; \"oyun kartları\" yanlış anlam veriyor, Almanca da Sammelkarten.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 201260,
+   "de": "definitely",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "unbedingt",
+    "beispielDe": "Ich komme unbedingt zu deiner Party."
+   },
+   "after": {
+    "deGloss": "auf jeden Fall",
+    "beispielDe": "Ich komme auf jeden Fall zu deiner Party."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "\"unbedingt\" mutlaka/şart anlamında; definitely için sözlük karşılığı \"auf jeden Fall\", cümle doğal kalıyor."
+  },
+  {
+   "id": 201377,
+   "de": "of all",
+   "severity": "orta",
+   "before": {
+    "deGloss": "aller",
+    "beispielDe": "Omas Kuchen schmeckt am allerbesten."
+   },
+   "after": {
+    "deGloss": "von allen",
+    "beispielDe": "Omas Kuchen schmeckt von allen am besten."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'aller' tek başına karşılık değil, yalnız 'allerbesten' öneki; 'von allen' doğru karşılık ve örnek onu içeriyor."
+  },
+  {
+   "id": 201452,
+   "de": "assignment",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Auftrag",
+    "beispielDe": "Ich muss meinen Auftrag bis Freitag fertig machen."
+   },
+   "after": {
+    "deGloss": "Aufgabe",
+    "beispielDe": "Ich muss meine Aufgabe bis Freitag fertig machen."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Okul ödevi bağlamında 'Auftrag' yanlış (iş siparişi/görev); 'Aufgabe' tr 'ödev' ile ve örnekle uyumlu."
+  },
+  {
+   "id": 201481,
+   "de": "selection",
+   "severity": "orta",
+   "before": {
+    "tr": "seçenek"
+   },
+   "after": {
+    "tr": "seçki"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'seçenek' option demek; selection burada çeşit/seçki, örnek çeviri de 'seçki' kullanıyor."
+  },
+  {
+   "id": 201559,
+   "de": "recovery",
+   "severity": "orta",
+   "before": {
+    "tr": "toparlanma",
+    "deGloss": "Besserung",
+    "beispielTr": "Doktorlar bir ay içinde tam bir toparlanma bekliyor.",
+    "beispielDe": "Die Ärzte erwarten innerhalb eines Monats völlige Besserung."
+   },
+   "after": {
+    "tr": "iyileşme",
+    "deGloss": "Genesung",
+    "beispielTr": "Doktorlar bir ay içinde tam iyileşme bekliyor.",
+    "beispielDe": "Die Ärzte erwarten innerhalb eines Monats eine vollständige Genesung."
+   },
+   "voiced": [
+    "tr",
+    "deGloss"
+   ],
+   "reason": "Sağlık bağlamında 'toparlanma' ve 'völlige Besserung' yanlış ton; iyileşme/Genesung doğru karşılık. Türkçe çeviri özne eklemeden sadeleştirildi."
+  },
+  {
+   "id": 201683,
+   "de": "drugstore",
+   "severity": "orta",
+   "before": {
+    "tr": "eczane; kozmetik mağazası"
+   },
+   "after": {
+    "tr": "kozmetik mağazası"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "İsimde iki karşılık kurala aykırı; örnek çevirisi ve Drogerie kozmetik mağazası anlamında."
+  },
+  {
+   "id": 201686,
+   "de": "average",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "On average I need twenty minutes to get to work.",
+    "beispielTr": "İşe gitmem ortalama yirmi dakika sürüyor.",
+    "beispielDe": "Im Durchschnitt brauche ich zwanzig Minuten zur Arbeit."
+   },
+   "after": {
+    "beispiel": "His grades are above the class average.",
+    "beispielTr": "Notları sınıf ortalamasının üzerinde.",
+    "beispielDe": "Seine Noten liegen über dem Klassendurchschnitt."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "'on average' ayrı kart (201687); isim kartı aynı kalıbı tekrar ediyor, ismi tek başına gösteren örnek gerekli."
+  },
+  {
+   "id": 201693,
+   "de": "health insurance card",
+   "severity": "orta",
+   "before": {
+    "deGloss": "e-card",
+    "beispielDe": "Ich habe meine e-card aus Versehen zu Hause vergessen."
+   },
+   "after": {
+    "deGloss": "Gesundheitskarte",
+    "beispielDe": "Ich habe meine Gesundheitskarte aus Versehen zu Hause vergessen."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "e-card Avusturya'ya özgü; Almanya'daki standart karşılık Gesundheitskarte."
+  },
+  {
+   "id": 201705,
+   "de": "rush",
+   "severity": "hafif",
+   "before": {
+    "tr": "koşturmak",
+    "beispielTr": "Treni yakalamak için gara koşturdu."
+   },
+   "after": {
+    "tr": "acele etmek",
+    "beispielTr": "Treni yakalamak için aceleyle gara gitti."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Koşturmak' öncelikle ettirgen (birini koşturmak); rush karşılığı 'acele etmek'. Gar korundu."
+  },
+  {
+   "id": 201780,
+   "de": "development",
+   "severity": "hafif",
+   "before": {
+    "tr": "gelişim"
+   },
+   "after": {
+    "tr": "geliştirme"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Örnek park yapımı anlamında; en az değişiklik ilkesiyle cümle yerine anlam 'geliştirme' yapıldı, Entwicklung iki anlamı da karşılıyor."
+  },
+  {
+   "id": 201798,
+   "de": "recover",
+   "severity": "hafif",
+   "before": {
+    "tr": "toparlanmak"
+   },
+   "after": {
+    "tr": "iyileşmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Örnek ameliyat sonrası iyileşme; çeviri de 'iyileşti' diyor, kart anlamı uyumsuz."
+  },
+  {
+   "id": 201827,
+   "de": "short story",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Erzählung",
+    "beispielDe": "Diese Erzählung habe ich als Kind oft gelesen."
+   },
+   "after": {
+    "deGloss": "Kurzgeschichte",
+    "beispielDe": "Diese Kurzgeschichte habe ich als Kind oft gelesen."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Erzählung genel anlatı; short story'nin tam karşılığı Kurzgeschichte."
+  },
+  {
+   "id": 202168,
+   "de": "buyer",
+   "severity": "hafif",
+   "before": {
+    "tr": "satın alan"
+   },
+   "after": {
+    "tr": "alıcı"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "İsim kartı; Türkçede yerleşik isim karşılığı 'alıcı', 'satın alan' sıfat-fiil."
+  },
+  {
+   "id": 202259,
+   "de": "location",
+   "severity": "hafif",
+   "before": {
+    "beispielDe": "Die Lage des Hotels am Strand ist perfekt."
+   },
+   "after": {
+    "beispielDe": "Die Lage des Hotels in Strandnähe ist perfekt."
+   },
+   "voiced": [],
+   "reason": "'am Strand' doğrudan plajda demek; İngilizce 'near the beach', 'in Strandnähe' doğru ve 'Lage'yi koruyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 202304,
+   "de": "be worth it",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Uzun yolculuğa değdiği ortaya çıktı."
+   },
+   "after": {
+    "beispielTr": "Uzun yolculuk sonunda değdi."
+   },
+   "voiced": [],
+   "reason": "'Uzun yolculuğa değdi' anlamı kaydırıyor (başka bir şey yolculuğa değmiş gibi); önerideki 'buna' da gereksiz, sadeleştirildi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 202322,
+   "de": "mark",
+   "severity": "orta",
+   "before": {
+    "tr": "işaret koymak",
+    "beispielTr": "Lütfen metindeki en önemli yerlere işaret koyun."
+   },
+   "after": {
+    "tr": "işaretlemek",
+    "beispielTr": "Lütfen metindeki en önemli yerleri işaretleyin."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'İşaret koymak' yapay; doğal ve yerleşik karşılık 'işaretlemek'."
+  },
+  {
+   "id": 202396,
+   "de": "disadvantage",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "The only disadvantage is the poor transport connection.",
+    "beispielTr": "Tek dezavantajı ulaşımın kötü olması.",
+    "beispielDe": "Der einzige Nachteil ist die schlechte Verkehrsanbindung."
+   },
+   "after": {
+    "beispiel": "The only disadvantage is the poor public transportation.",
+    "beispielTr": "Tek dezavantajı toplu taşımanın kötü olması.",
+    "beispielDe": "Der einzige Nachteil ist der schlechte Nahverkehr."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "'Transport connection' Almancadan çeviri ve Amerikan İngilizcesinde doğal değil (ABD: transportation); Almanca sadeleştirildi, 'Nachteil' korunuyor."
+  },
+  {
+   "id": 202451,
+   "de": "victim",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kazanın kurbanı hastaneye kaldırıldı."
+   },
+   "after": {
+    "beispielTr": "Kazazede hastaneye kaldırıldı."
+   },
+   "voiced": [],
+   "reason": "'Kazanın kurbanı' Türkçede ölümü çağrıştırıyor; hastaneye kaldırılan kişi için doğal ifade 'kazazede'.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 202572,
+   "de": "advertisement",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Reklame",
+    "beispielDe": "Diese Reklame lässt das Produkt fantastisch aussehen."
+   },
+   "after": {
+    "deGloss": "Werbung",
+    "beispielDe": "Diese Werbung lässt das Produkt fantastisch aussehen."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Reklame' Almanya Almancasında eskimiş; standart karşılık 'Werbung'."
+  },
+  {
+   "id": 202607,
+   "de": "salon",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yarın kuaför salonunda randevum var."
+   },
+   "after": {
+    "beispielTr": "Yarın güzellik salonunda randevum var."
+   },
+   "voiced": [],
+   "reason": "Anlam 'güzellik salonu', örnek çeviri 'kuaför salonu'; kart kendi içinde tutarsız.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 202619,
+   "de": "estimate",
+   "severity": "orta",
+   "before": {
+    "tr": "kestirmek",
+    "beispielTr": "Maliyeti bin avro olarak kestiriyor."
+   },
+   "after": {
+    "tr": "tahmin etmek",
+    "beispielTr": "Maliyeti bin avro olarak tahmin ediyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'kestirmek' nadir ve 'şekerleme' anlamıyla karışıyor; 'tahmin etmek' doğal karşılık. İngilizce cümle yanlış değil, euro kalıyor (kayıt gereksiz)."
+  },
+  {
+   "id": 202654,
+   "de": "fault",
+   "severity": "orta",
+   "before": {
+    "tr": "kusur"
+   },
+   "after": {
+    "tr": "suç"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Örnek ve deGloss 'Schuld' (benim suçum değil) anlamında; 'kusur' defekt/ayıp anlamına kayıyor, kart kendi çevirisiyle çelişiyor."
+  },
+  {
+   "id": 202658,
+   "de": "written exam",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Schularbeit",
+    "beispielDe": "Morgen schreiben wir eine Schularbeit in Mathe."
+   },
+   "after": {
+    "deGloss": "schriftliche Prüfung",
+    "beispielDe": "Morgen haben wir eine schriftliche Prüfung in Mathe."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Schularbeit' Avusturya Almancası; standart karşılık 'schriftliche Prüfung', örnek de yeni karşılığı içeriyor."
+  },
+  {
+   "id": 202760,
+   "de": "come to a stop",
+   "severity": "hafif",
+   "before": {
+    "tr": "durma noktasına gelmek"
+   },
+   "after": {
+    "tr": "durmak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Durma noktasına gelmek' Türkçede çoğunlukla mecazi (tıkanma); örnekteki somut anlam durmak."
+  },
+  {
+   "id": 202773,
+   "de": "staircase",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Stiege",
+    "beispielDe": "Eine breite Stiege aus Holz führt in den ersten Stock."
+   },
+   "after": {
+    "deGloss": "Treppe",
+    "beispielDe": "Eine breite Treppe aus Holz führt in den ersten Stock."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Stiege bölgesel (Avusturya); standart karşılık Treppe. Cümle karşılığı ayrı sözcük olarak içeriyor, kat sayımı korunuyor."
+  },
+  {
+   "id": 202809,
+   "de": "sum",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "The sum on the bill seems too high to me.",
+    "beispielTr": "Faturadaki toplam bana çok yüksek geliyor.",
+    "beispielDe": "Die Summe auf der Rechnung scheint mir zu hoch."
+   },
+   "after": {
+    "beispiel": "The sum of three and four is seven.",
+    "beispielTr": "Üç ile dördün toplamı yedidir.",
+    "beispielDe": "Die Summe von drei und vier ist sieben."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Faturadaki tutar için 'sum' doğal değil (total denir); yeni cümle toplam anlamını doğal biçimde gösteriyor."
+  },
+  {
+   "id": 202837,
+   "de": "part-time work",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Teilzeit",
+    "beispielDe": "Arbeit in Teilzeit passt sehr gut zu Studenten."
+   },
+   "after": {
+    "deGloss": "Teilzeitarbeit",
+    "beispielDe": "Teilzeitarbeit passt sehr gut zu Studenten."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "İsim olarak part-time work karşılığı Teilzeitarbeit; 'Arbeit in Teilzeit' cümlesi yapay."
+  },
+  {
+   "id": 202897,
+   "de": "headline",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Überschrift",
+    "beispielDe": "Morgens lese ich nur die Überschriften."
+   },
+   "after": {
+    "deGloss": "Schlagzeile",
+    "beispielDe": "Morgens lese ich nur die Schlagzeilen."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Gazete manşeti Schlagzeile; Überschrift genel başlık, tr manşet ile örtüşmüyor."
+  },
+  {
+   "id": 202913,
+   "de": "handle",
+   "severity": "orta",
+   "before": {
+    "deGloss": "umgehen"
+   },
+   "after": {
+    "deGloss": "umgehen mit"
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Yalın umgehen 'atlatmak/kaçınmak' da demek; idare etmek anlamı umgehen mit ile ayırt ediliyor, cümle zaten mit içeriyor."
+  },
+  {
+   "id": 202923,
+   "de": "un-",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "un"
+   },
+   "after": {
+    "deGloss": "un-"
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Ön ek karşılığı kısa çizgiyle yazılmalı; cümle 'un-' içeriyor."
+  },
+  {
+   "id": 202927,
+   "de": "disaster",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Unglück",
+    "beispielDe": "Bei dem Unglück wurden viele Menschen verletzt."
+   },
+   "after": {
+    "deGloss": "Katastrophe",
+    "beispielDe": "Bei der Katastrophe wurden viele Menschen verletzt."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Unglück kaza/talihsizlik; disaster ve felaket için doğrudan karşılık Katastrophe."
+  },
+  {
+   "id": 202938,
+   "de": "prohibited",
+   "severity": "hafif",
+   "before": {
+    "tr": "yasaklanmış"
+   },
+   "after": {
+    "tr": "yasak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Sıfat kullanımında doğal karşılık 'yasak'; örnek çeviri de 'yasaktır'."
+  },
+  {
+   "id": 202955,
+   "de": "have plans",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "verabredet"
+   },
+   "after": {
+    "deGloss": "verabredet sein"
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Fiil öbeği 'have plans' için karşılık 'verabredet sein' olmalı; cümle 'bin verabredet' ile uyumlu."
+  },
+  {
+   "id": 202964,
+   "de": "ban",
+   "severity": "hafif",
+   "before": {
+    "tr": "yasaklama"
+   },
+   "after": {
+    "tr": "yasak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "İsim olan ban 'yasak'; 'yasaklama' eylem adı, örnek de 'yasak' kullanıyor."
+  },
+  {
+   "id": 203048,
+   "de": "above all",
+   "severity": "orta",
+   "before": {
+    "tr": "her şeyden önce; özellikle"
+   },
+   "after": {
+    "tr": "her şeyden önce"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "İçerik ifadesinde noktalı virgüllü iki anlam kurala aykırı; örnek 'her şeyden önce' anlamında."
+  },
+  {
+   "id": 203074,
+   "de": "truth",
+   "severity": "hafif",
+   "before": {
+    "tr": "hakikat",
+    "beispielTr": "Odadaki hiç kimse hakikati duymak istemedi."
+   },
+   "after": {
+    "tr": "gerçek",
+    "beispielTr": "Odadaki hiç kimse gerçeği duymak istemedi."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Hakikat' eskil ve yapay; 'gerçek' temel karşılık, reality=gerçeklik ve fact=olgu ile çakışmıyor."
+  },
+  {
+   "id": 203085,
+   "de": "refuse",
+   "severity": "hafif",
+   "before": {
+    "tr": "kabul etmemek",
+    "beispielTr": "Belgeleri imzalamayı kabul etmedi."
+   },
+   "after": {
+    "tr": "reddetmek",
+    "beispielTr": "Belgeleri imzalamayı reddetti."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Refuse'un yerleşik karşılığı 'reddetmek'; reject 'geri çevirmek' olduğundan çakışma yok."
+  },
+  {
+   "id": 203101,
+   "de": "weather report",
+   "severity": "hafif",
+   "before": {
+    "tr": "hava raporu",
+    "beispielTr": "Hava raporuna göre bu gece kar yağacak."
+   },
+   "after": {
+    "tr": "hava durumu",
+    "beispielTr": "Hava durumuna göre bu gece kar yağacak."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Günlük Türkçede 'hava durumu' denir; 'hava raporu' doğal değil, forecast 'hava tahmini' ile çakışmıyor."
+  },
+  {
+   "id": 203155,
+   "de": "zone",
+   "severity": "hafif",
+   "before": {
+    "tr": "kuşak",
+    "beispielTr": "Türkiye etkin bir deprem kuşağında yer alıyor."
+   },
+   "after": {
+    "tr": "bölge",
+    "beispielTr": "Türkiye etkin bir deprem bölgesinde yer alıyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Kuşak' yalnız deprem kuşağı gibi dar kullanım; zone'un genel karşılığı 'bölge'."
+  },
+  {
+   "id": 203249,
+   "de": "process",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Banka havaleyi bir günde işleme aldı."
+   },
+   "after": {
+    "beispielTr": "Banka havaleyi bir günde gerçekleştirdi."
+   },
+   "voiced": [],
+   "reason": "'İşleme aldı' başlangıcı anlatıyor; İngilizce cümle işlemin bir günde tamamlandığını söylüyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 203275,
+   "de": "volunteer",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "sich engagieren",
+    "beispielDe": "Sie engagiert sich seit Jahren in einem Tierheim."
+   },
+   "after": {
+    "deGloss": "ehrenamtlich arbeiten",
+    "beispielDe": "Sie arbeitet seit Jahren ehrenamtlich in einem Tierheim."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'sich engagieren' genel 'etkin olmak'; gönüllü çalışmanın kesin karşılığı 'ehrenamtlich arbeiten', cümle doğal."
+  },
+  {
+   "id": 203316,
+   "de": "immigrant",
+   "severity": "orta",
+   "before": {
+    "tr": "ülkeye gelen göçmen",
+    "beispielTr": "Ülkeye gelen birçok göçmen burada daha iyi bir hayat umuyor."
+   },
+   "after": {
+    "tr": "göçmen",
+    "beispielTr": "Birçok göçmen burada daha iyi bir hayat umuyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Ülkeye gelen göçmen' açıklama gibi ve doğal değil; kursta emigrant yok, çakışma riski yok."
+  },
+  {
+   "id": 203464,
+   "de": "conclusion",
+   "severity": "orta",
+   "before": {
+    "tr": "kanı",
+    "beispielTr": "Bu rakamlardan aceleci bir kanıya vardı."
+   },
+   "after": {
+    "tr": "sonuç",
+    "beispielTr": "Bu rakamlardan aceleyle bir sonuç çıkardı."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "conclusion'ın temel karşılığı sonuç; kanı dar ve görüş anlamına kayıyor"
+  },
+  {
+   "id": 203465,
+   "de": "analysis",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Auswertung",
+    "beispielDe": "Die statistische Auswertung dauerte mehrere Wochen."
+   },
+   "after": {
+    "deGloss": "Analyse",
+    "beispielDe": "Die statistische Analyse dauerte mehrere Wochen."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Auswertung değerlendirme demek; analysis'in doğrudan karşılığı Analyse"
+  },
+  {
+   "id": 203749,
+   "de": "ingredient",
+   "severity": "orta",
+   "before": {
+    "tr": "içerik maddesi",
+    "beispielTr": "Şeker, bu içeceğin ana içerik maddesi."
+   },
+   "after": {
+    "tr": "malzeme",
+    "beispielTr": "Şeker, bu içeceğin ana malzemesi."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "içerik maddesi doğal değil; yemek/içecekte malzeme denir"
+  },
+  {
+   "id": 203759,
+   "de": "booking",
+   "severity": "hafif",
+   "before": {
+    "tr": "yer ayırtma"
+   },
+   "after": {
+    "tr": "rezervasyon"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "yaygın karşılık rezervasyon ve cümleyle tutarlı"
+  },
+  {
+   "id": 204109,
+   "de": "leave a job",
+   "severity": "hafif",
+   "before": {
+    "beispielDe": "Sie scheidet zum Monatsende aus ihrer Stelle aus."
+   },
+   "after": {
+    "beispielDe": "Sie scheidet zum Monatsende aus dem Unternehmen aus."
+   },
+   "voiced": [],
+   "reason": "aus ihrer Stelle ausscheiden deyimsel değil; aus dem Unternehmen ausscheiden doğal",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204127,
+   "de": "slight",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Plandan sapma yalnızca hafif düzeydeydi."
+   },
+   "after": {
+    "beispielTr": "Plandan yalnızca ufak bir sapma vardı."
+   },
+   "voiced": [],
+   "reason": "mevcut çeviri kokuyor ve karşılık ufak ile uyuşmuyor",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204202,
+   "de": "loss",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Einbuße",
+    "beispielDe": "Der Sturm verursachte schwere Einbußen bei der Ernte."
+   },
+   "after": {
+    "deGloss": "Verlust",
+    "beispielDe": "Der Sturm verursachte schwere Verluste bei der Ernte."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "loss'un genel karşılığı Verlust; Einbuße dar kullanımlı"
+  },
+  {
+   "id": 204264,
+   "de": "catch up",
+   "severity": "orta",
+   "before": {
+    "deGloss": "aufholen",
+    "beispielDe": "Ich muss rennen, um den Rückstand auf die Gruppe aufzuholen."
+   },
+   "after": {
+    "deGloss": "einholen",
+    "beispielDe": "Ich muss rennen, um die Gruppe einzuholen."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "den Rückstand auf die Gruppe aufholen yapay; fiziksel yetişme einholen"
+  },
+  {
+   "id": 204312,
+   "de": "instruction",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Weisung",
+    "beispielDe": "Sie befolgte die Weisungen des Arztes sorgfältig."
+   },
+   "after": {
+    "deGloss": "Anweisung",
+    "beispielDe": "Sie befolgte die Anweisungen des Arztes sorgfältig."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Weisung yetkili makam emri; doktor talimatı için Anweisung doğru"
+  },
+  {
+   "id": 204313,
+   "de": "requirement",
+   "severity": "hafif",
+   "before": {
+    "tr": "gereklilik",
+    "beispielTr": "Merkezin koyduğu gerekliliklere herkesin uyması gerekiyor."
+   },
+   "after": {
+    "tr": "şart",
+    "beispielTr": "Herkes merkezin koyduğu şartlara uymak zorunda."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "gereklilik zorunluluk anlamı; konan koşullar için şart doğal, cümledeki gereklilik/gerekiyor tekrarı da gider"
+  },
+  {
+   "id": 204556,
+   "de": "optimism",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Zuversicht",
+    "beispielDe": "Trotz der Diagnose hat er seine Zuversicht nicht verloren."
+   },
+   "after": {
+    "deGloss": "Optimismus",
+    "beispielDe": "Trotz der Diagnose hat er seinen Optimismus nicht verloren."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Zuversicht' güven/umut demek, iyimserlikle bire bir örtüşmüyor; doğrudan karşılık 'Optimismus'."
+  },
+  {
+   "id": 204579,
+   "de": "jealous",
+   "severity": "orta",
+   "before": {
+    "deGloss": "eifersüchtig",
+    "beispielDe": "Mein kleiner Bruder ist eifersüchtig auf mein neues Fahrrad."
+   },
+   "after": {
+    "deGloss": "neidisch",
+    "beispielDe": "Mein kleiner Bruder ist neidisch auf mein neues Fahrrad."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Eşyaya duyulan kıskançlık Almancada 'neidisch'; 'eifersüchtig auf mein Fahrrad' yanlış. İngilizce cümle doğru, kayıt pahalı: yalnız Almanca karşılık ve çeviri düzeltildi."
+  },
+  {
+   "id": 204693,
+   "de": "quantity",
+   "severity": "orta",
+   "before": {
+    "tr": "adet",
+    "deGloss": "Stückzahl",
+    "beispielDe": "Ab einer bestimmten Stückzahl sinkt der Preis pro Teil deutlich."
+   },
+   "after": {
+    "tr": "miktar",
+    "deGloss": "Menge",
+    "beispielDe": "Ab einer bestimmten Menge sinkt der Preis pro Teil deutlich."
+   },
+   "voiced": [
+    "tr",
+    "deGloss"
+   ],
+   "reason": "quantity genel olarak miktar; 'adet/Stückzahl' parça sayısına daraltıyor, Türkçe örnek zaten 'miktar' diyor."
+  },
+  {
+   "id": 204709,
+   "de": "adjust",
+   "severity": "orta",
+   "before": {
+    "deGloss": "justieren",
+    "beispielDe": "Sie können den Sitz justieren, bevor Sie losfahren."
+   },
+   "after": {
+    "deGloss": "einstellen",
+    "beispielDe": "Du kannst den Sitz einstellen, bevor du losfährst."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'justieren' teknik; koltuk ayarlamak 'einstellen'. İngilizce/Türkçe 'sen' hitabına da uyuyor."
+  },
+  {
+   "id": 204760,
+   "de": "bruise",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Prellung",
+    "beispielDe": "Sie hatte eine große Prellung am Arm."
+   },
+   "after": {
+    "deGloss": "Bluterguss",
+    "beispielDe": "Sie hatte einen großen Bluterguss am Arm."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Prellung' ezilme yaralanmasının kendisi; morluk 'Bluterguss'."
+  },
+  {
+   "id": 204854,
+   "de": "scenery",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Kulisse",
+    "beispielDe": "Die Bergkulisse auf der Fahrt war atemberaubend."
+   },
+   "after": {
+    "deGloss": "Landschaft",
+    "beispielDe": "Die Berglandschaft auf der Fahrt war atemberaubend."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Tek başına 'Kulisse' tiyatro dekoru olarak anlaşılır; manzara anlamında 'Landschaft' açıkça daha doğru."
+  },
+  {
+   "id": 204900,
+   "de": "explore",
+   "severity": "hafif",
+   "before": {
+    "tr": "keşfe çıkmak",
+    "beispielTr": "İlk gün eski şehirde keşfe çıktık."
+   },
+   "after": {
+    "tr": "keşfetmek",
+    "beispielTr": "İlk gün eski şehri keşfettik."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "explore'un temel karşılığı 'keşfetmek'; 'eski şehirde keşfe çıktık' doğal değil."
+  },
+  {
+   "id": 204919,
+   "de": "sold out",
+   "severity": "hafif",
+   "before": {
+    "tr": "biletleri tükenmiş"
+   },
+   "after": {
+    "tr": "tükenmiş"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "sold out her ürün için kullanılır; 'biletleri tükenmiş' anlamı daraltıyor. Örnek cümle konser bağlamında olduğu gibi kalabilir."
+  },
+  {
+   "id": 204935,
+   "de": "category",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Rubrik",
+    "beispielDe": "Auf der Homepage gibt es eine neue Rubrik für Podcasts."
+   },
+   "after": {
+    "deGloss": "Kategorie",
+    "beispielDe": "Auf der Homepage gibt es eine neue Kategorie für Podcasts."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Rubrik' dar (gazete/site bölümü); category için doğrudan karşılık 'Kategorie'."
+  },
+  {
+   "id": 204995,
+   "de": "up-to-date",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "tagesaktuell",
+    "beispielDe": "Die App liefert tagesaktuelle Nachrichten aus der ganzen Region."
+   },
+   "after": {
+    "deGloss": "aktuell",
+    "beispielDe": "Die App liefert aktuelle Nachrichten aus der ganzen Region."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'tagesaktuell' günü gününe demek, genel 'güncel' anlamından dar; karşılık 'aktuell'."
+  },
+  {
+   "id": 205066,
+   "de": "frost",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bu sabah araba camlarında don vardı."
+   },
+   "after": {
+    "beispielTr": "Bu sabah arabanın camları donmuştu."
+   },
+   "voiced": [],
+   "reason": "'Camlarında don vardı' Türkçede doğal değil; 'camları donmuştu' doğal ve kelimeyi koruyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 205255,
+   "de": "according to",
+   "severity": "orta",
+   "before": {
+    "deGloss": "gemäß",
+    "beispielDe": "Gemäß der Wettervorhersage regnet es morgen."
+   },
+   "after": {
+    "deGloss": "laut",
+    "beispielDe": "Laut Wettervorhersage regnet es morgen."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Gemäß der Wettervorhersage' yapay; doğal karşılık 'laut'. tr işlev sözcüğü olduğu için iki anlam serbest, 'uyarınca' da geçerli: korunuyor."
+  },
+  {
+   "id": 205321,
+   "de": "attack",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "Anschlag",
+    "beispielDe": "Nach dem Anschlag wurden die Kontrollen an Bahnhöfen verschärft."
+   },
+   "after": {
+    "deGloss": "Angriff",
+    "beispielDe": "Nach dem Angriff wurden die Kontrollen an Bahnhöfen verschärft."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Anschlag' yalnız suikast/terör saldırısı; genel 'attack' = 'Angriff'. Örnek yeni karşılığı içerecek biçimde güncellendi."
+  },
+  {
+   "id": 205472,
+   "de": "warning",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Warnhinweis",
+    "beispielDe": "Er ignorierte den Warnhinweis und fuhr zu schnell."
+   },
+   "after": {
+    "deGloss": "Warnung",
+    "beispielDe": "Er ignorierte die Warnung und fuhr zu schnell."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Warnhinweis' dar (etiket notu); genel 'warning' karşılığı 'Warnung'."
+  },
+  {
+   "id": 205640,
+   "de": "top floor",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Dachgeschoss",
+    "beispielDe": "Ihre Wohnung liegt im Dachgeschoss."
+   },
+   "after": {
+    "deGloss": "oberstes Stockwerk",
+    "beispielDe": "Ihre Wohnung liegt im obersten Stockwerk."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Dachgeschoss' çatı katı demek, 'top floor' en üst kat; örnek yeni karşılığı içerecek biçimde yazıldı."
+  },
+  {
+   "id": 205865,
+   "de": "involve",
+   "severity": "hafif",
+   "before": {
+    "tr": "işin içine katmak"
+   },
+   "after": {
+    "tr": "dâhil etmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'işin içine katmak' kalıp gibi ve doğal değil; örnekte de kullanılan yerleşik karşılık 'dâhil etmek'."
+  },
+  {
+   "id": 206145,
+   "de": "disagreement",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Dissens",
+    "beispielDe": "Über den Preis gab es einen Dissens."
+   },
+   "after": {
+    "deGloss": "Meinungsverschiedenheit",
+    "beispielDe": "Über den Preis gab es eine Meinungsverschiedenheit."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'Dissens' resmî ve nadir; genel karşılık 'Meinungsverschiedenheit'."
+  },
+  {
+   "id": 206181,
+   "de": "however",
+   "severity": "orta",
+   "before": {
+    "deGloss": "indes",
+    "beispielDe": "Der Plan klang gut, war indes zu teuer."
+   },
+   "after": {
+    "deGloss": "jedoch",
+    "beispielDe": "Der Plan klang gut, war jedoch zu teuer."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "'indes' edebi ve B1 için nadir, 'jedoch' açıkça daha iyi; tr işlev sözcüğü olduğu için 'a; b' serbest, değiştirilmedi."
+  },
+  {
+   "id": 206456,
+   "de": "guard",
+   "severity": "orta",
+   "before": {
+    "tr": "nöbet tutmak"
+   },
+   "after": {
+    "tr": "korumak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'nöbet tutmak' nesne almıyor; geçişli 'guard the entrance' ve örnek çeviri 'korumak'."
+  },
+  {
+   "id": 207566,
+   "de": "retired",
+   "severity": "hafif",
+   "before": {
+    "tr": "emekli olmuş"
+   },
+   "after": {
+    "tr": "emekli"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Sıfat olarak doğal karşılık \"emekli\"; örnek de bunu kullanıyor."
+  },
+  {
+   "id": 207569,
+   "de": "familiar",
+   "severity": "hafif",
+   "before": {
+    "tr": "aşina",
+    "beispielTr": "Sesi kulağıma çok aşina geliyor."
+   },
+   "after": {
+    "tr": "tanıdık",
+    "beispielTr": "Sesi bana çok tanıdık geliyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"kulağıma aşina geliyor\" doğal Türkçe değil; ses için \"tanıdık geliyor\" denir, karşılık da örnekle uyumlu olsun diye \"tanıdık\"."
+  },
+  {
+   "id": 207606,
+   "de": "more or less",
+   "severity": "orta",
+   "before": {
+    "deGloss": "halbwegs",
+    "beispielDe": "Die Arbeit ist jetzt halbwegs fertig."
+   },
+   "after": {
+    "deGloss": "mehr oder weniger",
+    "beispielDe": "Die Arbeit ist jetzt mehr oder weniger fertig."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "\"halbwegs\" \"kısmen, idare eder\" demek; \"more or less\" karşılığı \"mehr oder weniger\"."
+  },
+  {
+   "id": 207610,
+   "de": "in particular",
+   "severity": "hafif",
+   "before": {
+    "tr": "bilhassa",
+    "beispielTr": "Kurs bilhassa yeni başlayanlara yardımcı oluyor."
+   },
+   "after": {
+    "tr": "özellikle",
+    "beispielTr": "Kurs özellikle yeni başlayanlara yardımcı oluyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"bilhassa\" eskimiş ve seyrek; öğrenici için temel karşılık \"özellikle\"."
+  },
+  {
+   "id": 207621,
+   "de": "neither",
+   "severity": "orta",
+   "before": {
+    "tr": "hiçbiri; ne de"
+   },
+   "after": {
+    "tr": "ne … ne de"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"ne de\" nor'un karşılığı, \"hiçbiri\" örnekteki neither…nor kalıbına uymuyor; either kartıyla paralel \"ne … ne de\" doğru."
+  },
+  {
+   "id": 207626,
+   "de": "the more",
+   "severity": "orta",
+   "before": {
+    "deGloss": "desto"
+   },
+   "after": {
+    "deGloss": "je mehr; desto"
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "\"desto\" kalıbın yalnız ikinci yarısı; başlık \"the more\" = \"je mehr\". İşlev sözcüğü olduğu için tr gibi iki yarı birlikte verildi, örnekte ikisi de var."
+  },
+  {
+   "id": 207730,
+   "de": "take an exam",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "ablegen"
+   },
+   "after": {
+    "deGloss": "eine Prüfung ablegen"
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Tek başına \"ablegen\" bırakmak/çıkarmak da demek; kalıp kartında nesneyle verilmeli. Örnekteki \"lege … Abschlussprüfung ab\" bunu karşılıyor."
+  },
+  {
+   "id": 207760,
+   "de": "weekly market",
+   "severity": "hafif",
+   "before": {
+    "tr": "haftalık pazar",
+    "beispielTr": "Cumartesi günleri haftalık pazardan meyve alıyorum."
+   },
+   "after": {
+    "tr": "semt pazarı",
+    "beispielTr": "Cumartesi günleri semt pazarından meyve alıyorum."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"haftalık pazar\" çeviri kokuyor; Türkçede haftada bir kurulan pazarın adı \"semt pazarı\"."
+  },
+  {
+   "id": 207776,
+   "de": "receipt",
+   "severity": "orta",
+   "before": {
+    "tr": "fiş; makbuz"
+   },
+   "after": {
+    "tr": "fiş"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "İsimde tek karşılık kuralı; örnek de \"fiş\" kullanıyor. \"umtauschen\" iade bağlamında da kullanılıyor, Almanca cümle değiştirilmedi."
+  },
+  {
+   "id": 207824,
+   "de": "groom",
+   "severity": "hafif",
+   "before": {
+    "tr": "güvey",
+    "beispielTr": "Güvey, kilisenin önünde gergin gergin bekliyor."
+   },
+   "after": {
+    "tr": "damat",
+    "beispielTr": "Damat, kilisenin önünde gergin gergin bekliyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Güvey yanlış değil ama eskimiş ve yöresel; düğündeki 'groom' için bugünkü standart karşılık 'damat'."
+  },
+  {
+   "id": 207862,
+   "de": "separated",
+   "severity": "hafif",
+   "before": {
+    "tr": "ayrı"
+   },
+   "after": {
+    "tr": "ayrı yaşayan"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Tek başına 'ayrı' genel 'separate' ile karışıyor; medeni durum anlamını 'ayrı yaşayan' veriyor, örnek çeviriyle de uyumlu."
+  },
+  {
+   "id": 208032,
+   "de": "TV schedule",
+   "severity": "hafif",
+   "before": {
+    "beispiel": "The TV schedule is really boring today.",
+    "beispielTr": "Bugünkü yayın akışı gerçekten sıkıcı.",
+    "beispielDe": "Das Fernsehprogramm ist heute wirklich langweilig."
+   },
+   "after": {
+    "beispiel": "I checked the TV schedule for tonight's movie.",
+    "beispielTr": "Bu akşamki film için yayın akışına baktım.",
+    "beispielDe": "Ich habe im Fernsehprogramm nachgesehen, wann der Film heute Abend läuft."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Yayın akışına sıkıcı demek Almancadan aktarma, İngilizcede anlamca yanlış; yeni cümle doğal ve kelimeyi içeriyor."
+  },
+  {
+   "id": 208106,
+   "de": "district",
+   "severity": "orta",
+   "before": {
+    "tr": "ilçe",
+    "beispielTr": "Kuzeydeki sakin bir ilçede oturuyoruz."
+   },
+   "after": {
+    "tr": "semt",
+    "beispielTr": "Kuzeydeki sakin bir semtte oturuyoruz."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Şehrin bir bölgesi (Stadtteil) anlamında doğru karşılık semt; ilçe idari birim."
+  },
+  {
+   "id": 208107,
+   "de": "footpath",
+   "severity": "orta",
+   "before": {
+    "deGloss": "Gehweg",
+    "beispielDe": "Der Gehweg vor dem Haus ist sehr schmal."
+   },
+   "after": {
+    "deGloss": "Fußweg",
+    "beispielDe": "Der Fußweg durch den Park ist sehr schmal."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Almanca örnek başka cümle (evin önündeki kaldırım); parktaki yol için Fußweg doğru, cümle İngilizceyle eşleşiyor."
+  },
+  {
+   "id": 208221,
+   "de": "install",
+   "severity": "orta",
+   "before": {
+    "tr": "takmak"
+   },
+   "after": {
+    "tr": "kurmak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "install için genel karşılık \"kurmak\". \"takmak\" dar kalıyor, mutfak kurulumuna uymuyor. \"montieren\" doğru olduğundan deGloss değişikliği reddedildi."
+  },
+  {
+   "id": 208234,
+   "de": "come by",
+   "severity": "hafif",
+   "before": {
+    "tr": "ziyarete gelmek"
+   },
+   "after": {
+    "tr": "uğramak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "come by kısa süre uğramak demek, örnek çeviriyle (uğrayabilirsin) de uyumlu."
+  },
+  {
+   "id": 208262,
+   "de": "set up",
+   "severity": "orta",
+   "before": {
+    "tr": "kurup hazırlamak",
+    "beispielTr": "İş arkadaşlarım parti için çadırı kurup hazırladı.",
+    "beispielDe": "Meine Kollegen bauen das Zelt für die Feier auf."
+   },
+   "after": {
+    "tr": "kurmak",
+    "beispielTr": "İş arkadaşlarım parti için çadırı kurdu.",
+    "beispielDe": "Meine Kollegen haben das Zelt für die Feier aufgebaut."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"kurup hazırlamak\" iki fiilli ve doğal değil, \"kurmak\" tek ve doğru karşılık. Almanca çeviri şimdiki zamanda kalmıştı, Türkçeyle uyumlu olsun diye geçmiş zamana alındı."
+  },
+  {
+   "id": 208301,
+   "de": "blame",
+   "severity": "orta",
+   "before": {
+    "deGloss": "vorwerfen",
+    "beispiel": "My parents blame me for my laziness.",
+    "beispielTr": "Ailem tembelliğim yüzünden beni suçluyor.",
+    "beispielDe": "Meine Eltern werfen mir meine Faulheit vor."
+   },
+   "after": {
+    "deGloss": "die Schuld geben",
+    "beispiel": "My parents blame me for the broken window.",
+    "beispielTr": "Ailem kırık pencere yüzünden beni suçluyor.",
+    "beispielDe": "Meine Eltern geben mir die Schuld am kaputten Fenster."
+   },
+   "voiced": [
+    "deGloss",
+    "beispiel"
+   ],
+   "reason": "blame bir sonucun suçunu yüklemek demek, karşılığı \"die Schuld geben\". \"vorwerfen\" sitem etmek anlamına geliyor. Eski cümle (tembellik) bu anlamı taşımadığı için cümle de değişmeli."
+  },
+  {
+   "id": 208319,
+   "de": "notice",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "mitbekommen",
+    "beispielDe": "Den Fehler habe ich zuerst gar nicht mitbekommen."
+   },
+   "after": {
+    "deGloss": "bemerken",
+    "beispielDe": "Den Fehler habe ich zuerst gar nicht bemerkt."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "notice için standart karşılık \"bemerken\", \"mitbekommen\" gündelik dilden ve çok anlamlı."
+  },
+  {
+   "id": 208339,
+   "de": "complain",
+   "severity": "hafif",
+   "before": {
+    "deGloss": "sich beklagen",
+    "beispielDe": "Die Gäste beklagen sich jede Nacht über den Lärm."
+   },
+   "after": {
+    "deGloss": "sich beschweren",
+    "beispielDe": "Die Gäste beschweren sich jede Nacht über den Lärm."
+   },
+   "voiced": [
+    "deGloss"
+   ],
+   "reason": "Gürültü şikâyeti için doğru fiil \"sich beschweren\", \"sich beklagen\" yakınmak anlamına geliyor."
+  },
+  {
+   "id": 208370,
+   "de": "kitchen sink",
+   "severity": "hafif",
+   "before": {
+    "tr": "evye",
+    "beispielTr": "Evyede kirli bulaşıklar duruyor."
+   },
+   "after": {
+    "tr": "eviye",
+    "beispielTr": "Eviyede kirli bulaşıklar duruyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "TDK yazımı \"eviye\"."
+  }
+ ],
+ "kararBekleyen": {
+  "ingilizBaslik": [
+   {
+    "id": 200267,
+    "word": "class test",
+    "reason": "'class test' İngiliz İngilizcesi kullanımı; Amerikan İngilizcesinde 'test' ya da 'quiz' denir."
+   },
+   {
+    "id": 200787,
+    "word": "pupil",
+    "reason": "Okul öğrencisi anlamında 'pupil' ağırlıklı olarak İngiliz İngilizcesi; Amerikan İngilizcesinde 'student' kullanılır."
+   },
+   {
+    "id": 201488,
+    "word": "cash machine",
+    "reason": "'cash machine' ve örnekteki 'pounds' İngiliz İngilizcesi; Amerikan karşılığı ATM."
+   },
+   {
+    "id": 202194,
+    "word": "pub",
+    "reason": "'Pub' İngiliz kökenli ve İngiliz İngilizcesine özgü; Amerikan İngilizcesinde gündelik karşılığı 'bar'."
+   },
+   {
+    "id": 202479,
+    "word": "pensioner",
+    "reason": "Başlık İngiliz İngilizcesi (Amerikan karşılığı retiree); ayrıca deGloss 'Pensionist' Avusturya Almancası, standart karşılık 'Rentner'."
+   },
+   {
+    "id": 202622,
+    "word": "shop window",
+    "reason": "'shop window' ağırlıklı olarak İngiliz kullanımı; Amerikan İngilizcesinde 'store window' ya da 'display window' denir."
+   },
+   {
+    "id": 202888,
+    "word": "overtake",
+    "reason": "Araç sollama anlamında \"overtake\" İngiliz İngilizcesidir; Amerikan İngilizcesinde \"pass\" denir."
+   },
+   {
+    "id": 203164,
+    "word": "in future",
+    "reason": "'In future' İngiliz İngilizcesi kalıbı; Amerikan İngilizcesinde 'in the future' kullanılır."
+   },
+   {
+    "id": 204370,
+    "word": "best-before date",
+    "reason": "\"best-before date\" İngiliz kullanımı; Amerikan İngilizcesinde \"best-by date\" denir."
+   },
+   {
+    "id": 207713,
+    "word": "sports hall",
+    "reason": "\"sports hall\" İngiliz İngilizcesidir; Amerikan İngilizcesinde \"gym\" denir."
+   },
+   {
+    "id": 207718,
+    "word": "class teacher",
+    "reason": "\"class teacher\" İngiliz İngilizcesidir; Amerikan İngilizcesinde \"homeroom teacher\" denir."
+   },
+   {
+    "id": 207925,
+    "word": "half-time",
+    "reason": "Kısa çizgili 'half-time' İngiliz yazımı; Amerikan İngilizcesinde 'halftime' yazılır."
+   },
+   {
+    "id": 207786,
+    "word": "dish of the day",
+    "reason": "'Dish of the day' İngiliz kullanımı; Amerikan İngilizcesinde bunun yerine 'daily special' ya da 'today's special' denir."
+   },
+   {
+    "id": 208053,
+    "word": "train driver",
+    "reason": "Train driver İngiliz kullanımı, Amerikan İngilizcesinde train engineer denir."
+   },
+   {
+    "id": 208056,
+    "word": "hand luggage",
+    "reason": "Hand luggage İngiliz kullanımı, Amerikan İngilizcesinde carry-on denir."
+   },
+   {
+    "id": 208025,
+    "word": "small parcel",
+    "reason": "Parcel günlük dilde İngiliz kullanımı, Amerikan İngilizcesinde (small) package denir."
+   }
+  ]
+ }
+}

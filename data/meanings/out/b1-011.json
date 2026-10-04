@@ -29,7 +29,7 @@
   "en": "shoulder",
   "beispiel": "Das Kind sitzt auf den Schultern seines Vaters.",
   "beispielTr": "Çocuk babasının omuzlarında oturuyor.",
-  "beispielEn": "The child is sitting on his father's shoulders."
+  "beispielEn": "The child is sitting on their father's shoulders."
  },
  {
   "id": 3032,
@@ -324,7 +324,7 @@
   "tr": "cesur",
   "en": "brave",
   "beispiel": "Es war sehr mutig von dir, das zu sagen.",
-  "beispielTr": "Bunu söylemen çok cesurcaydı.",
+  "beispielTr": "Bunu söylemekle çok cesur davrandın.",
   "beispielEn": "It was very brave of you to say that."
  },
  {

@@ -149,7 +149,7 @@
     "en": "report",
     "beispiel": "Ich muss noch einen Bericht schreiben.",
     "beispielTr": "Bir rapor daha yazmam gerekiyor.",
-    "beispielEn": "I still have to write another report."
+    "beispielEn": "I have to write another report."
   },
   {
     "id": 2637,
@@ -181,7 +181,7 @@
     "en": "therefore",
     "beispiel": "Ich bin erkältet, daher bleibe ich zu Hause.",
     "beispielTr": "Üşüttüm, bu nedenle evde kalıyorum.",
-    "beispielEn": "I have a cold, therefore I am staying home."
+    "beispielEn": "I have a cold; therefore, I'm staying home."
   },
   {
     "id": 3158,
@@ -340,7 +340,7 @@
     "tr": "davranış",
     "en": "behavior",
     "beispiel": "Der Lehrer hat mit den Eltern über das Verhalten ihres Sohnes gesprochen.",
-    "beispielTr": "Öğretmen ailesiyle oğullarının davranışı hakkında konuştu.",
+    "beispielTr": "Öğretmen, anne babayla oğullarının davranışı hakkında konuştu.",
     "beispielEn": "The teacher talked to the parents about their son's behavior."
   },
   {

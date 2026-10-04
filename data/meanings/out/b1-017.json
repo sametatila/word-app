@@ -284,8 +284,8 @@
     "tr": "yedek",
     "en": "replacement",
     "beispiel": "Wir suchen dringend Ersatz für die kranke Kollegin.",
-    "beispielTr": "Hasta olan meslektaşımızın yerine acilen yedek arıyoruz.",
-    "beispielEn": "We urgently need a replacement for our sick colleague."
+    "beispielTr": "Hasta meslektaşımız için acilen yedek arıyoruz.",
+    "beispielEn": "We're urgently looking for a replacement for our sick colleague."
   },
   {
     "id": 3150,

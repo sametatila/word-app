@@ -308,8 +308,8 @@
     "tr": "çöp toplama",
     "en": "garbage collection",
     "beispiel": "Wegen des Feiertags kommt die Müllabfuhr erst am Samstag.",
-    "beispielTr": "Bayram yüzünden çöpler ancak cumartesi toplanacak.",
-    "beispielEn": "Because of the holiday, garbage collection won't come until Saturday."
+    "beispielTr": "Resmî tatil yüzünden çöpler ancak cumartesi toplanacak.",
+    "beispielEn": "Because of the holiday, the garbage won't be picked up until Saturday."
   },
   {
     "id": 2122,

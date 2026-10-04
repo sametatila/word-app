@@ -180,7 +180,7 @@
     "tr": "betimleme",
     "en": "description",
     "beispiel": "Die Beschreibung der Wohnung klang besser als die Realität.",
-    "beispielTr": "Evin ilandaki anlatımı gerçeğinden daha iyiydi.",
+    "beispielTr": "Dairenin betimlemesi kulağa gerçekte olduğundan daha iyi geliyordu.",
     "beispielEn": "The description of the apartment sounded better than the reality."
   },
   {
@@ -284,8 +284,8 @@
     "tr": "kendini geliştirmek",
     "en": "to improve",
     "beispiel": "Seit dem Training hat sich Tim im Tennis deutlich verbessert.",
-    "beispielTr": "Tim antrenmandan beri teniste kendini epey geliştirdi.",
-    "beispielEn": "Since the training, Tim has clearly improved at tennis."
+    "beispielTr": "Tim antrenmana başladığından beri teniste epey ilerledi.",
+    "beispielEn": "Tim has improved a lot at tennis since he started training."
   },
   {
     "id": 1669,
