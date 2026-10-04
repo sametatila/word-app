@@ -212,8 +212,8 @@
     "tr": "yola çıkış",
     "en": "departure",
     "beispiel": "Kurz vor der Abfahrt kauft Tom noch einen Kaffee.",
-    "beispielTr": "Tom kalkıştan hemen önce bir de kahve alıyor.",
-    "beispielEn": "Right before departure, Tom quickly grabs a coffee."
+    "beispielTr": "Tom kalkıştan hemen önce bir kahve alıyor.",
+    "beispielEn": "Right before departure, Tom grabs a coffee."
   },
   {
     "id": 682,
@@ -252,7 +252,7 @@
     "tr": "reçel",
     "en": "jam",
     "beispiel": "Meine Oma macht jeden Sommer Marmelade aus Kirschen.",
-    "beispielTr": "Anneannem her yaz vişneden reçel yapar.",
+    "beispielTr": "Anneannem her yaz kirazdan reçel yapar.",
     "beispielEn": "My grandma makes cherry jam every summer."
   },
   {

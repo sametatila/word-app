@@ -60,7 +60,7 @@
     "tr": "dans etmek",
     "en": "to dance",
     "beispiel": "Meine Eltern tanzen jeden Donnerstag Salsa.",
-    "beispielTr": "Annemle babam her perşembe salsa yapıyor.",
+    "beispielTr": "Annemle babam her perşembe salsa dansı yapıyor.",
     "beispielEn": "My parents dance salsa every Thursday."
   },
   {
@@ -140,7 +140,7 @@
     "tr": "mektup",
     "en": "letter",
     "beispiel": "Heute schreibt kaum noch jemand einen Brief.",
-    "beispielTr": "Bugün artık neredeyse kimse mektup yazmıyor.",
+    "beispielTr": "Günümüzde artık neredeyse kimse mektup yazmıyor.",
     "beispielEn": "Hardly anyone writes a letter anymore these days."
   },
   {
@@ -164,8 +164,8 @@
     "tr": "dikkat",
     "en": "caution",
     "beispiel": "Vorsicht, hier kommt ein Auto!",
-    "beispielTr": "Dikkat, buradan bir araba geliyor!",
-    "beispielEn": "Watch out, there's a car coming!"
+    "beispielTr": "Dikkat, araba geliyor!",
+    "beispielEn": "Careful, there's a car coming!"
   },
   {
     "id": 229,

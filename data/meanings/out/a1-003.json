@@ -68,7 +68,7 @@
   "tr": "yardım etmek",
   "en": "to help",
   "beispiel": "Mein Bruder hilft mir beim Umzug.",
-  "beispielTr": "Ağabeyim taşınırken bana yardım ediyor.",
+  "beispielTr": "Erkek kardeşim taşınmamda bana yardım ediyor.",
   "beispielEn": "My brother is helping me move."
  },
  {
@@ -156,7 +156,7 @@
   "tr": "kız",
   "en": "girl",
   "beispiel": "Das kleine Mädchen malt ein Bild für ihre Oma.",
-  "beispielTr": "Küçük kız, babaannesi için bir resim çiziyor.",
+  "beispielTr": "Küçük kız, büyükannesi için bir resim çiziyor.",
   "beispielEn": "The little girl is painting a picture for her grandma."
  },
  {
@@ -300,7 +300,7 @@
   "tr": "ihtiyaç duymak",
   "en": "to need",
   "beispiel": "Für den Kuchen brauchen wir noch Zucker.",
-  "beispielTr": "Kek için şekere de ihtiyacımız var.",
+  "beispielTr": "Kek için bir de şekere ihtiyacımız var.",
   "beispielEn": "We still need sugar for the cake."
  },
  {

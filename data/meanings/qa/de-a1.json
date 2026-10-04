@@ -44,7 +44,8 @@
     "beispielEn": "After working out, I'm really in the mood for pasta."
    },
    "voiced": [],
-   "reason": "'have a big appetite for pasta' İngilizcede doğal bir kalıp değil, Almancadan birebir aktarılmış duruyor."
+   "reason": "'have a big appetite for pasta' İngilizcede doğal bir kalıp değil, Almancadan birebir aktarılmış duruyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 69,
@@ -76,7 +77,8 @@
     "beispielEn": "Today I'm paying for both our coffees."
    },
    "voiced": [],
-   "reason": "\"Paying for coffee for both of us\" İngilizcede çeviri kokuyor; daha doğal biçimi \"Today I'm paying for both our coffees.\"."
+   "reason": "\"Paying for coffee for both of us\" İngilizcede çeviri kokuyor; daha doğal biçimi \"Today I'm paying for both our coffees.\".",
+   "applied": "2026-10-04"
   },
   {
    "id": 81,
@@ -89,7 +91,8 @@
     "beispielTr": "Tatilde iki hafta göl kenarında kalıyoruz."
    },
    "voiced": [],
-   "reason": "'am See' göl kenarı demek; 'gölde kalıyoruz' Türkçede gölün içinde kalmak gibi duruyor."
+   "reason": "'am See' göl kenarı demek; 'gölde kalıyoruz' Türkçede gölün içinde kalmak gibi duruyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 83,
@@ -119,7 +122,8 @@
     "beispielTr": "Kek için bir de şekere ihtiyacımız var."
    },
    "voiced": [],
-   "reason": "'daha şekere ihtiyacımız var' Türkçede bozuk ve çeviri kokuyor; buradaki noch 'bir de / henüz' anlamında."
+   "reason": "'daha şekere ihtiyacımız var' Türkçede bozuk ve çeviri kokuyor; buradaki noch 'bir de / henüz' anlamında.",
+   "applied": "2026-10-04"
   },
   {
    "id": 87,
@@ -132,7 +136,8 @@
     "beispielTr": "Günümüzde artık neredeyse kimse mektup yazmıyor."
    },
    "voiced": [],
-   "reason": "Burada \"heute\" \"günümüzde\" anlamında; \"bugün\" diye çevrilince cümle yalnız bu günden söz ediyormuş gibi okunuyor."
+   "reason": "Burada \"heute\" \"günümüzde\" anlamında; \"bugün\" diye çevrilince cümle yalnız bu günden söz ediyormuş gibi okunuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 97,
@@ -145,7 +150,8 @@
     "beispielTr": "Güzel çiçekler için çok teşekkürler!"
    },
    "voiced": [],
-   "reason": "'binlerce teşekkürler' Almancadan birebir aktarılmış, Türkçede doğal değil."
+   "reason": "'binlerce teşekkürler' Almancadan birebir aktarılmış, Türkçede doğal değil.",
+   "applied": "2026-10-04"
   },
   {
    "id": 127,
@@ -270,7 +276,8 @@
     "beispielTr": "Kız kardeşim yazın evleniyor."
    },
    "voiced": [],
-   "reason": "Almancada Schwester kelimesi kardeşin büyük mü küçük mü olduğunu söylemez; \"ablam\" demek cümleye olmayan bir bilgi ekliyor."
+   "reason": "Almancada Schwester kelimesi kardeşin büyük mü küçük mü olduğunu söylemez; \"ablam\" demek cümleye olmayan bir bilgi ekliyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 219,
@@ -283,7 +290,8 @@
     "beispielTr": "Erkek kardeşim taşınmamda bana yardım ediyor."
    },
    "voiced": [],
-   "reason": "Bruder yaş belirtmiyor; 'ağabeyim' eklenen bilgi ve aynı paketteki Bruder kartının 'erkek kardeş' karşılığıyla çelişiyor."
+   "reason": "Bruder yaş belirtmiyor; 'ağabeyim' eklenen bilgi ve aynı paketteki Bruder kartının 'erkek kardeş' karşılığıyla çelişiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 221,
@@ -326,7 +334,8 @@
     "beispielTr": "Yeni öğretmen henüz çok genç."
    },
    "voiced": [],
-   "reason": "\"daha çok genç\" ifadesi \"daha da genç\" gibi de okunabiliyor; \"noch sehr jung\" anlamını en açık \"henüz çok genç\" veriyor."
+   "reason": "\"daha çok genç\" ifadesi \"daha da genç\" gibi de okunabiliyor; \"noch sehr jung\" anlamını en açık \"henüz çok genç\" veriyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 256,
@@ -339,7 +348,8 @@
     "beispielTr": "Pizzanın üstüne bir de bol peynir konuyor."
    },
    "voiced": [],
-   "reason": "Buradaki 'noch' 'ayrıca, bir de' anlamında; 'daha bol peynir' ise karşılaştırma gibi okunduğundan anlam kayıyor."
+   "reason": "Buradaki 'noch' 'ayrıca, bir de' anlamında; 'daha bol peynir' ise karşılaştırma gibi okunduğundan anlam kayıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 267,
@@ -382,7 +392,8 @@
     "beispielTr": "Küçük kız, büyükannesi için bir resim çiziyor."
    },
    "voiced": [],
-   "reason": "Oma anne ya da baba tarafını belirtmiyor; 'babaannesi' cümlede olmayan bilgi ekliyor."
+   "reason": "Oma anne ya da baba tarafını belirtmiyor; 'babaannesi' cümlede olmayan bilgi ekliyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 310,
@@ -414,7 +425,8 @@
     "beispielEn": "You can find everything in the city."
    },
    "voiced": [],
-   "reason": "\"In the city one finds everything\" Amerikan İngilizcesinde kasıntılı ve çeviri kokan bir cümle; genel özne \"man\" doğal olarak \"you\" ile aktarılır."
+   "reason": "\"In the city one finds everything\" Amerikan İngilizcesinde kasıntılı ve çeviri kokan bir cümle; genel özne \"man\" doğal olarak \"you\" ile aktarılır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 317,
@@ -427,7 +439,8 @@
     "beispielTr": "Anneannem her yaz kirazdan reçel yapar."
    },
    "voiced": [],
-   "reason": "Kirschen 'kiraz' demektir (vişne Sauerkirsche'dir) ve İngilizce çeviri de 'cherry' diyor."
+   "reason": "Kirschen 'kiraz' demektir (vişne Sauerkirsche'dir) ve İngilizce çeviri de 'cherry' diyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 324,
@@ -489,7 +502,8 @@
     "beispielEn": "The neighbor took in a big package for us today."
    },
    "voiced": [],
-   "reason": "'accepted a package for us' İngilizcede çeviri kokuyor; komşunun paketi teslim alması için doğal ifade 'took in' ya da 'signed for'."
+   "reason": "'accepted a package for us' İngilizcede çeviri kokuyor; komşunun paketi teslim alması için doğal ifade 'took in' ya da 'signed for'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 378,
@@ -534,7 +548,8 @@
     "beispielTr": "Annemle babam her perşembe salsa dansı yapıyor."
    },
    "voiced": [],
-   "reason": "\"salsa yapıyor\" sos yapmak gibi de anlaşılabiliyor ve çeviride kelimenin anlamı olan dans geçmiyor."
+   "reason": "\"salsa yapıyor\" sos yapmak gibi de anlaşılabiliyor ve çeviride kelimenin anlamı olan dans geçmiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 452,
@@ -547,7 +562,8 @@
     "beispielEn": "Unfortunately, the toilet on the first floor is broken."
    },
    "voiced": [],
-   "reason": "Bozulan şey tuvalet odası değil klozet olduğu için 'the restroom ... is broken' İngilizcede doğal durmuyor; bu bağlamda 'toilet' kullanılır."
+   "reason": "Bozulan şey tuvalet odası değil klozet olduğu için 'the restroom ... is broken' İngilizcede doğal durmuyor; bu bağlamda 'toilet' kullanılır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 466,
@@ -634,7 +650,8 @@
     "beispielEn": "Do you want some ice cream?"
    },
    "voiced": [],
-   "reason": "\"Do you want to eat an ice cream?\" Amerikan İngilizcesinde doğal değil ve Almancadan birebir çeviri kokuyor."
+   "reason": "\"Do you want to eat an ice cream?\" Amerikan İngilizcesinde doğal değil ve Almancadan birebir çeviri kokuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 520,
@@ -647,7 +664,8 @@
     "beispielTr": "Oğlumuzun ilk dişi düştü."
    },
    "voiced": [],
-   "reason": "Türkçede çocuğun süt dişi için 'kaybetti' denmez, 'dişi düştü' denir; 'kaybetti' Almancadan kelime kelime çeviri."
+   "reason": "Türkçede çocuğun süt dişi için 'kaybetti' denmez, 'dişi düştü' denir; 'kaybetti' Almancadan kelime kelime çeviri.",
+   "applied": "2026-10-04"
   },
   {
    "id": 525,
@@ -660,7 +678,8 @@
     "beispielTr": "Pantolon bana fazla büyük."
    },
    "voiced": [],
-   "reason": "'zu groß' aşırılık bildirir ama 'çok büyük' çevirisi bunu 'sehr groß' anlamına kaydırıyor ve tr'deki 'fazla' karşılığını göstermiyor."
+   "reason": "'zu groß' aşırılık bildirir ama 'çok büyük' çevirisi bunu 'sehr groß' anlamına kaydırıyor ve tr'deki 'fazla' karşılığını göstermiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 532,
@@ -675,7 +694,8 @@
     "beispielEn": "Right before departure, Tom grabs a coffee."
    },
    "voiced": [],
-   "reason": "Buradaki 'noch' 'son anda, bir de' demek, 'ikinci bir kahve' değil; iki çeviri cümlede olmayan bir bilgi ekliyor."
+   "reason": "Buradaki 'noch' 'son anda, bir de' demek, 'ikinci bir kahve' değil; iki çeviri cümlede olmayan bir bilgi ekliyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 549,
@@ -726,7 +746,8 @@
     "beispielEn": "The trains are often late."
    },
    "voiced": [],
-   "reason": "Çeviriler tr 'tren' ve en 'train' yerine 'demir yolu' ve 'railway' diyor; 'Demir yolu gecikiyor' Türkçede doğal değil ve kelimenin verilen anlamıyla uyuşmuyor."
+   "reason": "Çeviriler tr 'tren' ve en 'train' yerine 'demir yolu' ve 'railway' diyor; 'Demir yolu gecikiyor' Türkçede doğal değil ve kelimenin verilen anlamıyla uyuşmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 579,
@@ -817,7 +838,8 @@
     "beispielTr": "Erkek kardeşim sabahları hiç zamanında hazır olmuyor."
    },
    "voiced": [],
-   "reason": "Bruder yaş belirtmiyor; 'ağabeyim' cümlede olmayan bilgi ekliyor ve Bruder kartıyla tutarsız."
+   "reason": "Bruder yaş belirtmiyor; 'ağabeyim' cümlede olmayan bilgi ekliyor ve Bruder kartıyla tutarsız.",
+   "applied": "2026-10-04"
   },
   {
    "id": 695,
@@ -830,7 +852,8 @@
     "beispielTr": "Erkek kardeşim bir restoranda iş arıyor."
    },
    "voiced": [],
-   "reason": "\"Bruder\" yaşı belirtmiyor; \"ağabeyim\" Almancada olmayan \"büyük\" bilgisini ekliyor."
+   "reason": "\"Bruder\" yaşı belirtmiyor; \"ağabeyim\" Almancada olmayan \"büyük\" bilgisini ekliyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 699,
@@ -894,7 +917,8 @@
     "beispielTr": "Partiden sonra mutfak çok kirliydi."
    },
    "voiced": [],
-   "reason": "\"Bayağı\" anlamı \"total\" sözcüğünden daha zayıf olan \"epey\" demek; cümlenin vurgusu çeviride kayboluyor."
+   "reason": "\"Bayağı\" anlamı \"total\" sözcüğünden daha zayıf olan \"epey\" demek; cümlenin vurgusu çeviride kayboluyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 752,
@@ -907,7 +931,8 @@
     "beispielTr": "Zaten bir planımız var."
    },
    "voiced": [],
-   "reason": "\"Çoktan bir planımız var\" çeviri kokuyor; bu bağlamda \"schon\" Türkçede doğal olarak \"zaten\" ile karşılanır."
+   "reason": "\"Çoktan bir planımız var\" çeviri kokuyor; bu bağlamda \"schon\" Türkçede doğal olarak \"zaten\" ile karşılanır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 770,
@@ -937,7 +962,8 @@
     "beispielEn": "After the rain, the sun shone again."
    },
    "voiced": [],
-   "reason": "beispielEn 'came out' kelimenin verilen 'shine/parlamak' anlamını göstermiyor, Almanca ve Türkçe cümleden anlamca kayıyor."
+   "reason": "beispielEn 'came out' kelimenin verilen 'shine/parlamak' anlamını göstermiyor, Almanca ve Türkçe cümleden anlamca kayıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 780,
@@ -952,7 +978,8 @@
     "beispielEn": "The store closes early today, at six."
    },
    "voiced": [],
-   "reason": "Cümledeki 'schon um sechs' (her zamankinden erken) vurgusu iki çeviride de kaybolmuş."
+   "reason": "Cümledeki 'schon um sechs' (her zamankinden erken) vurgusu iki çeviride de kaybolmuş.",
+   "applied": "2026-10-04"
   },
   {
    "id": 782,
@@ -980,7 +1007,8 @@
     "beispielTr": "Futbol oynarken sakatlandı."
    },
    "voiced": [],
-   "reason": "Türkçede \"kendini yaraladı\" bilerek yapılmış bir kendine zarar verme gibi anlaşılır; \"sich verletzen\" kazayla sakatlanmak demektir."
+   "reason": "Türkçede \"kendini yaraladı\" bilerek yapılmış bir kendine zarar verme gibi anlaşılır; \"sich verletzen\" kazayla sakatlanmak demektir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 841,
@@ -995,7 +1023,8 @@
     "beispielEn": "Careful, there's a car coming!"
    },
    "voiced": [],
-   "reason": "\"A car is coming here\" İngilizcede doğal değil, Almancadaki \"hier kommt\" kalıbı kelimesi kelimesine aktarılmış."
+   "reason": "\"A car is coming here\" İngilizcede doğal değil, Almancadaki \"hier kommt\" kalıbı kelimesi kelimesine aktarılmış.",
+   "applied": "2026-10-04"
   },
   {
    "id": 843,
@@ -1057,7 +1086,8 @@
     "beispielTr": "Cuma günü eve daha erken gidiyorum."
    },
    "voiced": [],
-   "reason": "'Cuma eve daha erken gidiyorum' Türkçede kulağa eksik ve tuhaf geliyor; 'Am Freitag' doğal olarak 'Cuma günü' diye aktarılır."
+   "reason": "'Cuma eve daha erken gidiyorum' Türkçede kulağa eksik ve tuhaf geliyor; 'Am Freitag' doğal olarak 'Cuma günü' diye aktarılır.",
+   "applied": "2026-10-04"
   }
  ]
 }
