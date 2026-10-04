@@ -6,6 +6,16 @@ denetleyici (`check.mjs`) anlamı ölçmüyor, bu klasör o boşluk için.
 
 **Bu klasörü hiçbir seed ya da deploy okumaz.** Dosyalar karara bağlanmış ama UYGULANMAMIŞ düzeltmeler.
 
+## Akış (bir parça: dil × seviye)
+
+1. Paket (~100 madde, sıklık sırasıyla) → öğretmen yönergesiyle denetim → bulgular.
+2. Claude karara bağlar → `<parça>.json` (`fixes`: before/after/voiced, `rejected`).
+3. Sessizler hemen: `python3 data/meanings/qa/apply.py <parça> --sessiz`.
+4. Sesliler: kayıtlar üretilir (Mac `~/Workspace/tts-test/anlam_is.sh <koşu>`, sıkı kapı) → canlı tabloya EKLENİR
+   (`anlam_yayin.py <koşu>`) → `tts-own-coverage` kapsam tam → `apply.py <parça> --sesli`.
+5. Her uygulamadan sonra: `node data/meanings/qa/conv-vocab.mjs` (anlamı değişen kelimeyi tanıtan konuşmalar) ve
+   `npm run check:meanings-overlay`, `node data/meanings/check.mjs all` (ayırt edilemez ikiz!), `check:conversations-native`.
+
 ## Neden bekliyor: önce ses, sonra veri
 
 Kelime katmanının sesi yalnız Defne/Aras kayıtlarından ve düşüşsüz (`docs/plan/tts-own-voices.md`).
@@ -29,7 +39,15 @@ Her düzeltmenin `voiced` alanı hangi kaydın gerektiğini söyler; boşsa (yal
 
 | Dosya | Durum |
 |---|---|
-| `de-a1.json` | 906 madde: 69 düzeltme (orta 21, hafif 48, ağır 0), 3 red; 39'u sesli alan (11 yeni cümle). Uygulanmadı. |
+| `de-a1.json` | 906 madde: 68 düzeltme, 4 red. Hepsi uygulandı (2026-10-04; 42 kayıt Mac'te üretildi). |
+| `de-a2.json` | 1.447 madde: 124 karar; uzlaştırma 9'unu karşıladı, 3 geri alındı. Hepsi uygulandı (2026-10-04; 78 kayıt). |
+
+## Havuz uzlaştırması (2026-10-04, c6ec059bc)
+
+`meanings/out` katmanı `words.json`dan 559 alanda ayrışmıştı (28 Eylül toplu düzeltmeleri başka kelimelerin
+değerlerini yanlış maddelere yazmış; canlıda sein "yer almak", Treppe "bekleme süresi"). Her çelişen alan
+hakemle seçildi; iki dosya aynı. Kapı: `check:meanings-overlay` (CI). Denetim paketleri canlı değerden değil
+words.json'dan kuruluyordu; uzlaştırmadan sonra ikisi aynı.
 
 Tekrarlayan kalıp (ajansız taranabilir, henüz düzeltilmedi): yaşı belirtilmeyen `Bruder`/`Schwester`
 → "ağabey"/"abla", `Oma` → "anneanne"/"babaanne" (iki bankada ~60 cümle).
