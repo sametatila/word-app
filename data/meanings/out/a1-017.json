@@ -57,8 +57,8 @@
   },
   {
     "id": 150,
-    "tr": "hazır olmak",
-    "en": "to be ready",
+    "tr": "bitirmiş olmak",
+    "en": "to be done",
     "beispiel": "Bist du schon fertig mit dem Buch?",
     "beispielTr": "Kitabı bitirdin mi?",
     "beispielEn": "Are you done with the book yet?"
@@ -74,7 +74,7 @@
   {
     "id": 267,
     "tr": "yazılı sınav",
-    "en": "class test",
+    "en": "test",
     "beispiel": "Morgen schreiben wir eine Klassenarbeit in Mathe.",
     "beispielTr": "Yarın matematikten yazılımız var.",
     "beispielEn": "Tomorrow we have a math test."
@@ -169,10 +169,10 @@
   },
   {
     "id": 549,
-    "tr": "çalışıyor olmak",
+    "tr": "açık olmak",
     "en": "to be on",
     "beispiel": "Der Computer ist noch an.",
-    "beispielTr": "Bilgisayar hâlâ çalışıyor.",
+    "beispielTr": "Bilgisayar hâlâ açık.",
     "beispielEn": "The computer is still on."
   },
   {

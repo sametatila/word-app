@@ -2,7 +2,7 @@
   {
     "id": 221,
     "tr": "içten",
-    "en": "cordial",
+    "en": "warm",
     "beispiel": "Unsere Nachbarn haben uns herzlich begrüßt.",
     "beispielTr": "Komşularımız bizi içtenlikle karşıladı.",
     "beispielEn": "Our neighbors welcomed us warmly."
@@ -17,7 +17,7 @@
   },
   {
     "id": 324,
-    "tr": "beraberinde getirmek",
+    "tr": "yanında getirmek",
     "en": "to bring along",
     "beispiel": "Ich bringe dir etwas aus Italien mit.",
     "beispielTr": "Sana İtalya'dan bir şey getireceğim.",
@@ -169,7 +169,7 @@
   },
   {
     "id": 184,
-    "tr": "huzurlu",
+    "tr": "sıcacık",
     "en": "cozy",
     "beispiel": "Das kleine Café an der Ecke ist sehr gemütlich.",
     "beispielTr": "Köşedeki küçük kafe çok rahat ve sıcak.",
@@ -267,9 +267,9 @@
     "id": 69,
     "tr": "dolu",
     "en": "occupied",
-    "beispiel": "Ich rufe die ganze Zeit an, aber es ist besetzt.",
-    "beispielTr": "Sürekli arıyorum ama hat meşgul.",
-    "beispielEn": "I keep calling, but the line is busy."
+    "beispiel": "Entschuldigung, ist der Platz hier besetzt?",
+    "beispielTr": "Pardon, buradaki yer dolu mu?",
+    "beispielEn": "Excuse me, is this seat taken?"
   },
   {
     "id": 84,

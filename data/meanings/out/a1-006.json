@@ -33,7 +33,7 @@
  },
  {
   "id": 165,
-  "tr": "özgür; boş",
+  "tr": "boş",
   "en": "free",
   "beispiel": "Morgen habe ich frei, wir können schwimmen gehen.",
   "beispielTr": "Yarın boşum, yüzmeye gidebiliriz.",
@@ -106,7 +106,7 @@
  {
   "id": 620,
   "tr": "izinli olmak",
-  "en": "to be allowed",
+  "en": "may",
   "beispiel": "Heute dürfen die Kinder länger spielen.",
   "beispielTr": "Bugün çocuklar daha uzun oynayabilir.",
   "beispielEn": "Today the children are allowed to play longer."
@@ -313,10 +313,10 @@
  },
  {
   "id": 169,
-  "tr": "sevinçli",
+  "tr": "memnun",
   "en": "glad",
   "beispiel": "Ich bin froh über meine neue Wohnung.",
-  "beispielTr": "Yeni evimden çok memnunum.",
+  "beispielTr": "Yeni evimden memnunum.",
   "beispielEn": "I am glad about my new apartment."
  },
  {

@@ -74,10 +74,10 @@
   {
     "id": 699,
     "tr": "anaokulu",
-    "en": "kindergarten",
+    "en": "preschool",
     "beispiel": "Der Kindergarten macht um vier Uhr zu.",
     "beispielTr": "Anaokulu saat dörtte kapanıyor.",
-    "beispielEn": "The kindergarten closes at four o'clock."
+    "beispielEn": "The preschool closes at four o'clock."
   },
   {
     "id": 671,
@@ -289,7 +289,7 @@
   },
   {
     "id": 846,
-    "tr": "dişi",
+    "tr": "kadın",
     "en": "female",
     "beispiel": "Kreuzen Sie bitte „männlich“ oder „weiblich“ an.",
     "beispielTr": "Lütfen 'erkek' ya da 'kadın' işaretleyin.",
@@ -330,10 +330,10 @@
   {
     "id": 770,
     "tr": "resepsiyon",
-    "en": "reception",
+    "en": "front desk",
     "beispiel": "Der Schlüssel liegt an der Rezeption.",
     "beispielTr": "Anahtar resepsiyonda.",
-    "beispielEn": "The key is at the reception."
+    "beispielEn": "The key is at the front desk."
   },
   {
     "id": 756,

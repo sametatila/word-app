@@ -15,6 +15,11 @@
    "id": 70,
    "de": "besonders",
    "reason": "Burada pekiştirici olarak kullanılan \"özellikle güzel\" Türkçede çeviri kokuyor; \"schmeckt\" sözcüğünün taşıdığı lezzet anlamı da çeviride yok."
+  },
+  {
+   "id": 612,
+   "de": "Doktor",
+   "reason": "geri alındı: en \"doctor\" Arzt ile ayırt edilemez ikiz yapıyor (check.mjs); \"physician\" bilerek seçilmiş"
   }
  ],
  "fixes": [
@@ -31,7 +36,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'hat … offen' güney Almanca ve Avusturya'da kullanılan bölgesel bir konuşma kalıbı; standart Almancası 'hat … geöffnet' ya da 'ist … offen', A1 öğrencisine standart biçim verilmeli."
+   "reason": "'hat … offen' güney Almanca ve Avusturya'da kullanılan bölgesel bir konuşma kalıbı; standart Almancası 'hat … geöffnet' ya da 'ist … offen', A1 öğrencisine standart biçim verilmeli.",
+   "applied": "2026-10-04"
   },
   {
    "id": 28,
@@ -64,7 +70,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Kart anlamı 'dolu / occupied' (yer, koltuk) ama örnek cümle telefon hattının meşgul olmasını anlatıyor ve çeviriler de 'meşgul / busy' diyor; öğrenci anlamla örnek arasında çelişki görüyor."
+   "reason": "Kart anlamı 'dolu / occupied' (yer, koltuk) ama örnek cümle telefon hattının meşgul olmasını anlatıyor ve çeviriler de 'meşgul / busy' diyor; öğrenci anlamla örnek arasında çelişki görüyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 75,
@@ -109,7 +116,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "blöd'ün çekirdek karşılığı 'aptal'dır; tr 'saçma' (absurd/silly) ile en 'stupid' aynı anlamı göstermiyor."
+   "reason": "blöd'ün çekirdek karşılığı 'aptal'dır; tr 'saçma' (absurd/silly) ile en 'stupid' aynı anlamı göstermiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 86,
@@ -166,7 +174,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Mazur görmek\" eskimiş ve resmî bir kalıp, örnek çevirisi de \"affedin\" diyor; öğrenci kartla cümle arasında tutarsızlık görüyor."
+   "reason": "\"Mazur görmek\" eskimiş ve resmî bir kalıp, örnek çevirisi de \"affedin\" diyor; öğrenci kartla cümle arasında tutarsızlık görüyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 139,
@@ -181,7 +190,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'to drive' aracı kendin sürmek demek; tr 'araçla gitmek' ve metroyla giden Lena cümlesiyle uyuşmuyor."
+   "reason": "'to drive' aracı kendin sürmek demek; tr 'araçla gitmek' ve metroyla giden Lena cümlesiyle uyuşmuyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 150,
@@ -199,7 +209,8 @@
     "tr",
     "en"
    ],
-   "reason": "Örnek cümle 'fertig sein'ı 'bitirmiş olmak' anlamında kullanıyor (beispielTr: 'Kitabı bitirdin mi?'), ama tr/en 'hazır olmak / to be ready' diyor; öğrenci kelimeyle cümle arasında bağ kuramıyor."
+   "reason": "Örnek cümle 'fertig sein'ı 'bitirmiş olmak' anlamında kullanıyor (beispielTr: 'Kitabı bitirdin mi?'), ama tr/en 'hazır olmak / to be ready' diyor; öğrenci kelimeyle cümle arasında bağ kuramıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 165,
@@ -214,7 +225,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İçerik sözcüğünde iki anlam (\"özgür; boş\") kurala aykırı ve örnek cümle yalnız \"boş/izinli\" anlamını gösteriyor; öğrenci hangisini ezberleyeceğini bilemez."
+   "reason": "İçerik sözcüğünde iki anlam (\"özgür; boş\") kurala aykırı ve örnek cümle yalnız \"boş/izinli\" anlamını gösteriyor; öğrenci hangisini ezberleyeceğini bilemez.",
+   "applied": "2026-10-04"
   },
   {
    "id": 169,
@@ -231,7 +243,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Sevinçli\" kitabi duruyor ve örnekteki \"memnun\" ile uyuşmuyor; ayrıca Almancada olmayan \"çok\" çeviriye eklenmiş."
+   "reason": "\"Sevinçli\" kitabi duruyor ve örnekteki \"memnun\" ile uyuşmuyor; ayrıca Almancada olmayan \"çok\" çeviriye eklenmiş.",
+   "applied": "2026-10-04"
   },
   {
    "id": 184,
@@ -246,7 +259,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'huzurlu' sakin ya da barış içinde demektir, 'cozy' ve cümledeki kafe ise rahat ve sıcak bir ortamı anlatıyor ('rahat' zaten bequem'in karşılığı)."
+   "reason": "'huzurlu' sakin ya da barış içinde demektir, 'cozy' ve cümledeki kafe ise rahat ve sıcak bir ortamı anlatıyor ('rahat' zaten bequem'in karşılığı).",
+   "applied": "2026-10-04"
   },
   {
    "id": 199,
@@ -263,7 +277,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Türkçede 'ray' tek tek demir çubuk (Schiene) demektir; istasyondaki 'Gleis drei' 'üç numaralı hat' diye söylenir, 'üç numaralı rayda' doğal değil."
+   "reason": "Türkçede 'ray' tek tek demir çubuk (Schiene) demektir; istasyondaki 'Gleis drei' 'üç numaralı hat' diye söylenir, 'üç numaralı rayda' doğal değil.",
+   "applied": "2026-10-04"
   },
   {
    "id": 217,
@@ -306,7 +321,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'cordial' resmî ve seyrek bir sözcük; herzlich'in yaygın Amerikan İngilizcesi karşılığı 'warm', örnek çeviri de zaten 'warmly' diyor."
+   "reason": "'cordial' resmî ve seyrek bir sözcük; herzlich'in yaygın Amerikan İngilizcesi karşılığı 'warm', örnek çeviri de zaten 'warmly' diyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 243,
@@ -321,7 +337,8 @@
    "voiced": [
     "formen"
    ],
-   "reason": "formen '(Pl.)' yanlış: die Jeans tekildir (eine Jeans, örnekte de 'Meine alte Jeans hat'), çoğulu da Jeans; '(Pl.)' öğrenciye kelimeyi yalnız çoğul sandırır, formen '-' olmalı."
+   "reason": "formen '(Pl.)' yanlış: die Jeans tekildir (eine Jeans, örnekte de 'Meine alte Jeans hat'), çoğulu da Jeans; '(Pl.)' öğrenciye kelimeyi yalnız çoğul sandırır, formen '-' olmalı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 247,
@@ -364,7 +381,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'class test' Amerikan İngilizcesinde doğal bir terim değil; okul bağlamında 'test' deniyor, nitekim beispielEn de 'math test' kullanıyor."
+   "reason": "'class test' Amerikan İngilizcesinde doğal bir terim değil; okul bağlamında 'test' deniyor, nitekim beispielEn de 'math test' kullanıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 273,
@@ -379,7 +397,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "SPEC kip fiillerinin İngilizce karşılığında mastar istemiyor (dürfen → may), cümle çevirisi de 'can' kullanıyor; 'to be able to' bu kurala aykırı."
+   "reason": "SPEC kip fiillerinin İngilizce karşılığında mastar istemiyor (dürfen → may), cümle çevirisi de 'can' kullanıyor; 'to be able to' bu kurala aykırı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 308,
@@ -412,7 +431,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "\"Das ist mein erstes Mal hier\" İngilizceden çeviri kokan doğal olmayan bir Almanca, ayrıca \"mein erstes Mal\" Almancada genellikle ilk cinsel deneyimi çağrıştırır; doğal kalıp \"zum ersten Mal\"dır."
+   "reason": "\"Das ist mein erstes Mal hier\" İngilizceden çeviri kokan doğal olmayan bir Almanca, ayrıca \"mein erstes Mal\" Almancada genellikle ilk cinsel deneyimi çağrıştırır; doğal kalıp \"zum ersten Mal\"dır.",
+   "applied": "2026-10-04"
   },
   {
    "id": 311,
@@ -455,7 +475,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'beraberinde getirmek' daha çok mecaz ve yazı dilinde kullanılır, günlük dilde 'yanında getirmek' denir."
+   "reason": "'beraberinde getirmek' daha çok mecaz ve yazı dilinde kullanılır, günlük dilde 'yanında getirmek' denir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 333,
@@ -470,7 +491,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "SPEC kip fiilinin İngilizce karşılığının başına 'to' konmasını istemiyor (dürfen → may), bu yüzden 'to have to' kurala aykırı."
+   "reason": "SPEC kip fiilinin İngilizce karşılığının başına 'to' konmasını istemiyor (dürfen → may), bu yüzden 'to have to' kurala aykırı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 338,
@@ -489,7 +511,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Örnek cümle nehmen değil ayrılabilir mitnehmen fiilini kullanıyor (mit cümle sonunda), öğrenci yanlış fiil öğrenir."
+   "reason": "Örnek cümle nehmen değil ayrılabilir mitnehmen fiilini kullanıyor (mit cümle sonunda), öğrenci yanlış fiil öğrenir.",
+   "applied": "2026-10-04"
   },
   {
    "id": 358,
@@ -520,7 +543,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Almancada bilmece 'erzählen' ile değil 'stellen' ile sorulur; Türkçe çeviri de zaten 'soruyor' diyerek Almanca cümleden ayrılıyor."
+   "reason": "Almancada bilmece 'erzählen' ile değil 'stellen' ile sorulur; Türkçe çeviri de zaten 'soruyor' diyerek Almanca cümleden ayrılıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 416,
@@ -535,7 +559,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "tr hem 'o' hem 'onlar' anlamını veriyor ama en yalnız 'she' diyor, oysa aynı yapıdaki ihr (8857) maddesi 'her; their' biçiminde iki anlamı da gösteriyor."
+   "reason": "tr hem 'o' hem 'onlar' anlamını veriyor ama en yalnız 'she' diyor, oysa aynı yapıdaki ihr (8857) maddesi 'her; their' biçiminde iki anlamı da gösteriyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 440,
@@ -581,7 +606,8 @@
     "tr",
     "en"
    ],
-   "reason": "Tek başına \"um\" \"için\" demek değildir (o anlam yalnız B1 seviyesindeki um…zu yapısında var); A1 öğrencisi bunu \"für\" ile karıştırır, ikinci temel anlam \"etrafında\"dır ve İngilizce anlam da yalnız \"at\" gösteriyor."
+   "reason": "Tek başına \"um\" \"için\" demek değildir (o anlam yalnız B1 seviyesindeki um…zu yapısında var); A1 öğrencisi bunu \"für\" ile karıştırır, ikinci temel anlam \"etrafında\"dır ve İngilizce anlam da yalnız \"at\" gösteriyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 475,
@@ -599,7 +625,8 @@
     "tr",
     "en"
    ],
-   "reason": "Madde \"viel\", fakat \"birçok\" yalnız sayılabilen çoğul isimle kullanılır; \"viel Zeit/viel Geld\" için \"birçok\" yanlış olur, öğrenci yanlış genelleme yapar."
+   "reason": "Madde \"viel\", fakat \"birçok\" yalnız sayılabilen çoğul isimle kullanılır; \"viel Zeit/viel Geld\" için \"birçok\" yanlış olur, öğrenci yanlış genelleme yapar.",
+   "applied": "2026-10-04"
   },
   {
    "id": 494,
@@ -618,7 +645,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Kart 'daha ileri / further' öğretiyor ama örnek ayrılabilir weiterspielen ile 'devam etmek' anlamını gösteriyor, anlam ile cümle çelişiyor."
+   "reason": "Kart 'daha ileri / further' öğretiyor ama örnek ayrılabilir weiterspielen ile 'devam etmek' anlamını gösteriyor, anlam ile cümle çelişiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 501,
@@ -637,7 +665,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "\"Wir sehen uns morgen wieder\" cümlesinde wieder, ayrılabilir fiil \"wiedersehen\"in parçası olarak geçiyor, bağımsız \"tekrar\" zarfı olarak geçmiyor."
+   "reason": "\"Wir sehen uns morgen wieder\" cümlesinde wieder, ayrılabilir fiil \"wiedersehen\"in parçası olarak geçiyor, bağımsız \"tekrar\" zarfı olarak geçmiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 515,
@@ -712,7 +741,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Bilgisayar hâlâ çalışıyor' Türkçede 'hâlâ bozulmadı' diye de anlaşılır; cihaz için doğal karşılık 'açık olmak', İngilizce 'to be on' zaten ayırıyor."
+   "reason": "'Bilgisayar hâlâ çalışıyor' Türkçede 'hâlâ bozulmadı' diye de anlaşılır; cihaz için doğal karşılık 'açık olmak', İngilizce 'to be on' zaten ayırıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 553,
@@ -731,7 +761,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Kart anlamı 'görev' diyor ama örnek cümle kelimeyi sınavdaki 'soru/alıştırma' anlamında kullanıyor ve Türkçe çeviri 'soru' diyor; öğrenci anlamla örnek arasında çelişki görüyor."
+   "reason": "Kart anlamı 'görev' diyor ama örnek cümle kelimeyi sınavdaki 'soru/alıştırma' anlamında kullanıyor ve Türkçe çeviri 'soru' diyor; öğrenci anlamla örnek arasında çelişki görüyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 569,
@@ -762,7 +793,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Almancada burada kaynaşmış 'beim' kullanılır; 'bei dem Umzug' vurgu olmadan doğal değil, öğrenciye yanlış kalıp öğretiyor."
+   "reason": "Almancada burada kaynaşmış 'beim' kullanılır; 'bei dem Umzug' vurgu olmadan doğal değil, öğrenciye yanlış kalıp öğretiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 591,
@@ -780,22 +812,8 @@
     "tr",
     "en"
    ],
-   "reason": "Kart 'kâğıt / sheet' öğretiyor ama örnek cümle ve iki çevirisi Bogen'i 'form' anlamında kullanıyor; öğrenci kartla cümle arasında iki ayrı anlam görüyor (ayrıca çoğul Bögen da yaygın, formen '¨-' olmalı)."
-  },
-  {
-   "id": 612,
-   "de": "Doktor",
-   "severity": "hafif",
-   "before": {
-    "en": "physician"
-   },
-   "after": {
-    "en": "doctor"
-   },
-   "voiced": [
-    "en"
-   ],
-   "reason": "Günlük dildeki \"Doktor\" için \"physician\" fazla resmî ve nadir; örnek çevirisi de \"doctor\" diyor, kart kendi içinde tutarsız."
+   "reason": "Kart 'kâğıt / sheet' öğretiyor ama örnek cümle ve iki çevirisi Bogen'i 'form' anlamında kullanıyor; öğrenci kartla cümle arasında iki ayrı anlam görüyor (ayrıca çoğul Bögen da yaygın, formen '¨-' olmalı).",
+   "applied": "2026-10-04"
   },
   {
    "id": 620,
@@ -810,7 +828,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Şartname kip fiillerinde mastar istemiyor ve dürfen için açıkça \"may\" diyor; \"to be allowed\" bu kurala aykırı."
+   "reason": "Şartname kip fiillerinde mastar istemiyor ve dürfen için açıkça \"may\" diyor; \"to be allowed\" bu kurala aykırı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 625,
@@ -825,7 +844,8 @@
    "voiced": [
     "formen"
    ],
-   "reason": "formen alanı 'ä, er' yazılmış, tire eksik; çoğul Ehemänner için doğrusu 'ä, -er'."
+   "reason": "formen alanı 'ä, er' yazılmış, tire eksik; çoğul Ehemänner için doğrusu 'ä, -er'.",
+   "applied": "2026-10-04"
   },
   {
    "id": 646,
@@ -870,7 +890,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Amerikan İngilizcesinde kindergarten ilkokulun 5-6 yaş sınıfıdır, Almanca Kindergarten (3-6 yaş) ise 'preschool'; bu bilinen bir yanlış dostluk, kart İngilizce bilen öğrenciyi yanıltıyor."
+   "reason": "Amerikan İngilizcesinde kindergarten ilkokulun 5-6 yaş sınıfıdır, Almanca Kindergarten (3-6 yaş) ise 'preschool'; bu bilinen bir yanlış dostluk, kart İngilizce bilen öğrenciyi yanıltıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 709,
@@ -885,7 +906,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"gürültülü\" İngilizcedeki \"noisy\" anlamına gelir; \"loud\" ve cümledeki \"müziğin sesi yüksek\" ise \"yüksek sesli\" anlamını taşıyor."
+   "reason": "\"gürültülü\" İngilizcedeki \"noisy\" anlamına gelir; \"loud\" ve cümledeki \"müziğin sesi yüksek\" ise \"yüksek sesli\" anlamını taşıyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 744,
@@ -904,7 +926,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'Garten mit Äpfeln' Almancada doğal değil (doğrusu 'mit Apfelbäumen'); ayrıca İngilizce çevirideki 'full of' Almancada olmayan bir anlam ekliyor."
+   "reason": "'Garten mit Äpfeln' Almancada doğal değil (doğrusu 'mit Apfelbäumen'); ayrıca İngilizce çevirideki 'full of' Almancada olmayan bir anlam ekliyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 750,
@@ -949,7 +972,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Otel resepsiyonunun Amerikan İngilizcesindeki doğal karşılığı 'front desk'; 'at the reception' İngiliz kullanımı ve şartnamenin Amerikan İngilizcesi kuralına aykırı."
+   "reason": "Otel resepsiyonunun Amerikan İngilizcesindeki doğal karşılığı 'front desk'; 'at the reception' İngiliz kullanımı ve şartnamenin Amerikan İngilizcesi kuralına aykırı.",
+   "applied": "2026-10-04"
   },
   {
    "id": 776,
@@ -994,7 +1018,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Bir Türk \"Schluss\" kelimesine \"bitiş\" değil \"son\" der; cümlenin çevirisi de zaten \"filmin sonu\"."
+   "reason": "Bir Türk \"Schluss\" kelimesine \"bitiş\" değil \"son\" der; cümlenin çevirisi de zaten \"filmin sonu\".",
+   "applied": "2026-10-04"
   },
   {
    "id": 793,
@@ -1043,7 +1068,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Avusturya'yı aramak için gereken kod alan kodu değil ülke kodudur; cümle kartın 'alan kodu / area code' anlamıyla çelişiyor."
+   "reason": "Avusturya'yı aramak için gereken kod alan kodu değil ülke kodudur; cümle kartın 'alan kodu / area code' anlamıyla çelişiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 846,
@@ -1058,7 +1084,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Türkçede 'dişi' hayvanlar için kullanılır; insanlar ve formlar için 'kadın' denir, nitekim örnek cümlenin çevirisi de 'kadın' diyor ve madde başı ile çelişiyor."
+   "reason": "Türkçede 'dişi' hayvanlar için kullanılır; insanlar ve formlar için 'kadın' denir, nitekim örnek cümlenin çevirisi de 'kadın' diyor ve madde başı ile çelişiyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8431,
@@ -1073,7 +1100,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Soyunma kabini' daha çok havuz ve plajdaki kabini çağrıştırıyor, İngilizce 'fitting room' ise mağazadaki deneme kabini; tr ile en farklı yerleri gösteriyor."
+   "reason": "'Soyunma kabini' daha çok havuz ve plajdaki kabini çağrıştırıyor, İngilizce 'fitting room' ise mağazadaki deneme kabini; tr ile en farklı yerleri gösteriyor.",
+   "applied": "2026-10-04"
   },
   {
    "id": 8530,

@@ -82,7 +82,7 @@
   {
     "id": 273,
     "tr": "-ebilmek",
-    "en": "to be able to",
+    "en": "can",
     "beispiel": "Mein kleiner Bruder kann schon lesen.",
     "beispielTr": "Küçük kardeşim artık okuyabiliyor.",
     "beispielEn": "My little brother can already read."
@@ -91,9 +91,9 @@
     "id": 501,
     "tr": "ders çalışma",
     "en": "again",
-    "beispiel": "Wir sehen uns morgen wieder.",
-    "beispielTr": "Yarın tekrar görüşürüz.",
-    "beispielEn": "We'll see each other again tomorrow."
+    "beispiel": "Morgen regnet es wieder.",
+    "beispielTr": "Yarın yine yağmur yağacak.",
+    "beispielEn": "It's going to rain again tomorrow."
   },
   {
     "id": 393,
@@ -210,7 +210,7 @@
   {
     "id": 333,
     "tr": "zorunda olmak",
-    "en": "to have to",
+    "en": "have to",
     "beispiel": "Ich muss heute früh aufstehen.",
     "beispielTr": "Bugün erken kalkmak zorundayım.",
     "beispielEn": "I have to get up early today."
@@ -241,8 +241,8 @@
   },
   {
     "id": 475,
-    "tr": "birçok",
-    "en": "many",
+    "tr": "çok; birçok",
+    "en": "much; many",
     "beispiel": "Ich habe viele Fragen.",
     "beispielTr": "Birçok sorum var.",
     "beispielEn": "I have many questions."

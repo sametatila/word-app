@@ -27,7 +27,7 @@
     "id": 579,
     "tr": "tanıdık",
     "en": "acquaintance",
-    "beispiel": "Ein Bekannter hat mir bei dem Umzug geholfen.",
+    "beispiel": "Ein Bekannter hat mir beim Umzug geholfen.",
     "beispielTr": "Bir tanıdığım taşınmada bana yardım etti.",
     "beispielEn": "An acquaintance helped me with the move."
   },
@@ -217,8 +217,8 @@
   },
   {
     "id": 591,
-    "tr": "kâğıt",
-    "en": "sheet",
+    "tr": "form",
+    "en": "form",
     "beispiel": "Bitte füllen Sie diesen Bogen aus.",
     "beispielTr": "Lütfen bu formu doldurun.",
     "beispielEn": "Please fill out this form."
@@ -339,7 +339,7 @@
     "id": 27,
     "tr": "eczane",
     "en": "pharmacy",
-    "beispiel": "Die Apotheke am Markt hat auch sonntags offen.",
+    "beispiel": "Die Apotheke am Markt hat auch sonntags geöffnet.",
     "beispielTr": "Pazar yerindeki eczane pazar günleri de açık.",
     "beispielEn": "The pharmacy by the market is open on Sundays too."
   },

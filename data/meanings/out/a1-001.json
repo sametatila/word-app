@@ -307,9 +307,9 @@
     "id": 310,
     "tr": "kez",
     "en": "time",
-    "beispiel": "Das ist mein erstes Mal hier.",
-    "beispielTr": "Buraya ilk kez geliyorum.",
-    "beispielEn": "This is my first time here."
+    "beispiel": "Ich bin zum ersten Mal in Berlin.",
+    "beispielTr": "Berlin'e ilk kez geliyorum.",
+    "beispielEn": "This is my first time in Berlin."
   },
   {
     "id": 245,
@@ -337,8 +337,8 @@
   },
   {
     "id": 466,
-    "tr": "saat …-de; için",
-    "en": "at; in order to",
+    "tr": "saat …-de; etrafında",
+    "en": "at; around",
     "beispiel": "Der Film beginnt um halb neun.",
     "beispielTr": "Film sekiz buçukta başlıyor.",
     "beispielEn": "The movie starts at eight thirty."

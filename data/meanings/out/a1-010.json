@@ -33,10 +33,10 @@
   },
   {
     "id": 83,
-    "tr": "saçma",
+    "tr": "aptal",
     "en": "stupid",
     "beispiel": "Ich finde diese Idee echt blöd.",
-    "beispielTr": "Bu fikri gerçekten saçma buluyorum.",
+    "beispielTr": "Bu fikri gerçekten aptalca buluyorum.",
     "beispielEn": "I think this idea is really stupid."
   },
   {
@@ -371,9 +371,9 @@
     "id": 744,
     "tr": "dede",
     "en": "grandpa",
-    "beispiel": "Mein Opa hat einen großen Garten mit Äpfeln.",
-    "beispielTr": "Dedemin elmalarla dolu büyük bir bahçesi var.",
-    "beispielEn": "My grandpa has a big garden full of apples."
+    "beispiel": "Mein Opa hat einen großen Garten mit Apfelbäumen.",
+    "beispielTr": "Dedemin elma ağaçları olan büyük bir bahçesi var.",
+    "beispielEn": "My grandpa has a big garden with apple trees."
   },
   {
     "id": 42,

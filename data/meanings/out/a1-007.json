@@ -9,7 +9,7 @@
   },
   {
     "id": 709,
-    "tr": "gürültülü",
+    "tr": "yüksek sesli",
     "en": "loud",
     "beispiel": "Die Musik ist heute sehr laut.",
     "beispielTr": "Müziğin sesi bugün çok yüksek.",
@@ -201,7 +201,7 @@
   },
   {
     "id": 782,
-    "tr": "bitiş",
+    "tr": "son",
     "en": "end",
     "beispiel": "Der Schluss vom Film ist sehr traurig.",
     "beispielTr": "Filmin sonu çok üzücü.",
