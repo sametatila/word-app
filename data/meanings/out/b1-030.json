@@ -65,10 +65,10 @@
  },
  {
   "id": 2579,
-  "tr": "haber programı",
+  "tr": "haber belgeseli",
   "en": "news report",
   "beispiel": "Gestern lief eine spannende Reportage über Afrika.",
-  "beispielTr": "Dün Afrika hakkında heyecanlı bir haber programı vardı.",
+  "beispielTr": "Dün Afrika hakkında ilgi çekici bir haber belgeseli vardı.",
   "beispielEn": "Yesterday there was an exciting news report about Africa."
  },
  {
@@ -193,7 +193,7 @@
  },
  {
   "id": 1440,
-  "tr": "çağırmak",
+  "tr": "çağrıda bulunmak",
   "en": "to request",
   "beispiel": "Der Lehrer forderte mich auf, lauter zu sprechen.",
   "beispielTr": "Öğretmen benden daha yüksek sesle konuşmamı istedi.",

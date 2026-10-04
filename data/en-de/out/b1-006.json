@@ -1,7 +1,7 @@
 [
  { "id": 201447, "beispielDe": "Bitte lösen Sie die Tablette in Wasser auf." },
  { "id": 201450, "beispielDe": "Die Aufnahme läuft, bitte seid jetzt leise." },
- { "id": 201452, "beispielDe": "Ich muss meinen Auftrag bis Freitag fertig machen." },
+ { "id": 201452, "beispielDe": "Ich muss meine Aufgabe bis Freitag fertig machen." },
  { "id": 201453, "beispielDe": "Das Team führte die Tests sehr sorgfältig durch." },
  { "id": 201454, "beispielDe": "Ihre Leistung in der Prüfung war ausgezeichnet." },
  { "id": 201456, "beispielDe": "Von hier an geht der Weg stetig aufwärts." },
@@ -34,7 +34,7 @@
  { "id": 201537, "beispielDe": "Die Kosten der Reise müssen zuerst berechnet werden." },
  { "id": 201543, "beispielDe": "Nur die Hälfte der Absolventen ist derzeit berufstätig." },
  { "id": 201551, "beispielDe": "Wir müssen unsere Ausgaben etwas beschränken." },
- { "id": 201559, "beispielDe": "Die Ärzte erwarten innerhalb eines Monats völlige Besserung." },
+ { "id": 201559, "beispielDe": "Die Ärzte erwarten innerhalb eines Monats eine vollständige Genesung." },
  { "id": 201560, "beispielDe": "Nach der Buchung bekommen Sie eine Bestätigung per E-Mail." },
  { "id": 201562, "beispielDe": "Der Trainer bestrafte die Spieler, weil sie zu spät kamen." },
  { "id": 201571, "beispielDe": "Er hat bei der Prüfung betrogen und wurde erwischt." },

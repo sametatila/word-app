@@ -41,7 +41,7 @@
   },
   {
     "id": 2675,
-    "tr": "kendi",
+    "tr": "kendisi",
     "en": "oneself",
     "beispiel": "Das kannst du auch selber machen.",
     "beispielTr": "Bunu kendin de yapabilirsin.",
@@ -179,9 +179,9 @@
     "id": 1575,
     "tr": "hareket ettirmek",
     "en": "to move",
-    "beispiel": "Die Katze liegt in der Sonne und bewegt sich kaum.",
-    "beispielTr": "Kedi güneşte yatıyor ve neredeyse hiç kıpırdamıyor.",
-    "beispielEn": "The cat is lying in the sun and barely moves."
+    "beispiel": "Nach dem Unfall konnte er sein Bein kaum bewegen.",
+    "beispielTr": "Kazadan sonra bacağını neredeyse hiç hareket ettiremiyordu.",
+    "beispielEn": "After the accident, he could barely move his leg."
   },
   {
     "id": 2088,

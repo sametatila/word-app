@@ -106,7 +106,7 @@
   {
     "id": 2531,
     "tr": "semt",
-    "en": "Swiss word for neighborhood",
+    "en": "neighborhood",
     "beispiel": "Wir wohnen in einem ruhigen Quartier von Zürich.",
     "beispielTr": "Zürih'in sakin bir semtinde oturuyoruz.",
     "beispielEn": "We live in a quiet neighborhood of Zurich."
@@ -114,10 +114,10 @@
   {
     "id": 2865,
     "tr": "nakliye",
-    "en": "transport",
+    "en": "transportation",
     "beispiel": "Der Transport der Möbel hat viel gekostet.",
     "beispielTr": "Mobilyaların nakliyesi çok pahalıya mal oldu.",
-    "beispielEn": "The transport of the furniture cost a lot."
+    "beispielEn": "Transporting the furniture cost a lot."
   },
   {
     "id": 2596,

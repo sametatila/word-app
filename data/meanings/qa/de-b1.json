@@ -470,7 +470,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnek cümle 'bir şeye bağlı' anlamını gösteriyor; B1'de asıl anlam bu, kart 'bağımlı' diyerek uyumsuz."
+   "reason": "Örnek cümle 'bir şeye bağlı' anlamını gösteriyor; B1'de asıl anlam bu, kart 'bağımlı' diyerek uyumsuz.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1352,
@@ -485,7 +486,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "A2 vereinbaren ile tr ve en birebir aynıydı (kararlaştırmak/to arrange); en 'to agree on' örnekle uyumlu ve kartı ayırt ediyor."
+   "reason": "A2 vereinbaren ile tr ve en birebir aynıydı (kararlaştırmak/to arrange); en 'to agree on' örnekle uyumlu ve kartı ayırt ediyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1361,
@@ -504,7 +506,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "\"absolut müde\" kalıp dışı, \"tamamen yorgundum\" kartın \"kesinlikle\" anlamını göstermiyor; yeni cümle doğal ve anlamla örtüşüyor."
+   "reason": "\"absolut müde\" kalıp dışı, \"tamamen yorgundum\" kartın \"kesinlikle\" anlamını göstermiyor; yeni cümle doğal ve anlamla örtüşüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1440,
@@ -519,7 +522,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"çağırmak\" rufen ile aynı, ayırt edilemiyor; ama \"talep etmek\" de fordern/verlangen/einfordern ile çakışır. \"çağrıda bulunmak\" auffordern'in birini bir şey yapmaya çağırma anlamını verir."
+   "reason": "\"çağırmak\" rufen ile aynı, ayırt edilemiyor; ama \"talep etmek\" de fordern/verlangen/einfordern ile çakışır. \"çağrıda bulunmak\" auffordern'in birini bir şey yapmaya çağırma anlamını verir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1466,
@@ -534,7 +538,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"yardımcı eleman\" kadrolu asistan anlamına kayar; Aushilfe geçici/ek çalışandır ve İngilizce \"temporary worker\" ile örtüşür. Çakışma yok."
+   "reason": "\"yardımcı eleman\" kadrolu asistan anlamına kayar; Aushilfe geçici/ek çalışandır ve İngilizce \"temporary worker\" ile örtüşür. Çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1511,
@@ -549,7 +554,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'hayran' der Fan kartının karşılığıyla aynı, ayırt edilemiyordu; 'hayran kalmış' sıfat anlamını açık veriyor."
+   "reason": "'hayran' der Fan kartının karşılığıyla aynı, ayırt edilemiyordu; 'hayran kalmış' sıfat anlamını açık veriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1541,
@@ -596,7 +602,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Kart geçişli \"hareket ettirmek\", örnek dönüşlü \"sich bewegen\"; uyumsuzluk gerçek."
+   "reason": "Kart geçişli \"hareket ettirmek\", örnek dönüşlü \"sich bewegen\"; uyumsuzluk gerçek.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1583,
@@ -629,7 +636,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Ağaca çarpan yıldırımdır; 'şimşek ağaca çarptı' doğal değil. 'yıldırım' başka kartta yok, çakışma yok."
+   "reason": "Ağaca çarpan yıldırımdır; 'şimşek ağaca çarptı' doğal değil. 'yıldırım' başka kartta yok, çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1638,
@@ -690,7 +698,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Kartsız daha uzun beklemek gerçekçi değil, yanlış bilgi veriyor; yeni cümle kelimeyi içeriyor, 8 kelime, B1'e uygun."
+   "reason": "Kartsız daha uzun beklemek gerçekçi değil, yanlış bilgi veriyor; yeni cümle kelimeyi içeriyor, 8 kelime, B1'e uygun.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1722,
@@ -719,7 +728,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "einverstanden bir şeye onay vermek demek; \"hemfikir\" derselben Meinung karşılığı. Örnek çeviri de \"razı\" diyor, başka kartla çakışma yok (überreden \"razı etmek\")."
+   "reason": "einverstanden bir şeye onay vermek demek; \"hemfikir\" derselben Meinung karşılığı. Örnek çeviri de \"razı\" diyor, başka kartla çakışma yok (überreden \"razı etmek\").",
+   "applied": "2026-10-05"
   },
   {
    "id": 1764,
@@ -748,7 +758,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"to complete\" bitirmek anlamına kayıyor, ergänzen ekleyerek tamamlamaktır ve örnek de bu anlamda; \"eklemek\" einfügen ile çakıştığı için Türkçe \"tamamlamak\" kalır, yalnız İngilizce düzeltilir."
+   "reason": "\"to complete\" bitirmek anlamına kayıyor, ergänzen ekleyerek tamamlamaktır ve örnek de bu anlamda; \"eklemek\" einfügen ile çakıştığı için Türkçe \"tamamlamak\" kalır, yalnız İngilizce düzeltilir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1813,
@@ -793,7 +804,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "TDK nispet i'si şapkalı yazar (resmî gibi); kartın kendi örnek çevirisi de \"malî\", tutarlı olmalı."
+   "reason": "TDK nispet i'si şapkalı yazar (resmî gibi); kartın kendi örnek çevirisi de \"malî\", tutarlı olmalı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1891,
@@ -826,7 +838,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'mesleki eğitim' Weiterbildung kartıyla birebir aynı, Ausbildung'un 'meslek eğitimi' karşılığına da çok yakın; 'meslek içi eğitim' Fortbildung'u doğru ve ayırt edilebilir veriyor."
+   "reason": "'mesleki eğitim' Weiterbildung kartıyla birebir aynı, Ausbildung'un 'meslek eğitimi' karşılığına da çok yakın; 'meslek içi eğitim' Fortbildung'u doğru ve ayırt edilebilir veriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 1976,
@@ -841,7 +854,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "genauso zarf; 'just as' örnekteki 'just as much as' kullanımıyla örtüşüyor, 'just like' edat gibi okunuyor."
+   "reason": "genauso zarf; 'just as' örnekteki 'just as much as' kullanımıyla örtüşüyor, 'just like' edat gibi okunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2064,
@@ -858,7 +872,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Yeni iş büyük bir meydan okuma' çeviri kokuyor; 'zorluk' Schwierigkeit'ta, 'zorlu görev' boş ve cümleye uyuyor."
+   "reason": "'Yeni iş büyük bir meydan okuma' çeviri kokuyor; 'zorluk' Schwierigkeit'ta, 'zorlu görev' boş ve cümleye uyuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2125,
@@ -947,7 +962,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Kart human/insani, cümle humane/insancıl anlamında; temel anlamı koruyup cümleyi karta uydurmak doğru, önerilen cümle doğal ve B1'e uygun."
+   "reason": "Kart human/insani, cümle humane/insancıl anlamında; temel anlamı koruyup cümleyi karta uydurmak doğru, önerilen cümle doğal ve B1'e uygun.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2342,
@@ -964,7 +980,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Set menu' daha çok İngiliz kullanımı; Amerikan karşılığı 'fixed-price menu', çakışma yok."
+   "reason": "'Set menu' daha çok İngiliz kullanımı; Amerikan karşılığı 'fixed-price menu', çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2377,
@@ -979,7 +996,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'trouble' Ärger (1432) kartının İngilizcesiyle çakışıyor; Mühe'nin temel anlamı 'effort' ve örnek çevirisi de bunu kullanıyor."
+   "reason": "'trouble' Ärger (1432) kartının İngilizcesiyle çakışıyor; Mühe'nin temel anlamı 'effort' ve örnek çevirisi de bunu kullanıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2378,
@@ -1045,7 +1063,8 @@
     "tr",
     "en"
    ],
-   "reason": "Kulüp bağlamında Nachwuchs yetişen genç sporcular demek; 'genç nesil' anlamı kaydırıyor. Yeni karşılık başka kartla çakışmıyor, Almanca cümle değişmiyor."
+   "reason": "Kulüp bağlamında Nachwuchs yetişen genç sporcular demek; 'genç nesil' anlamı kaydırıyor. Yeni karşılık başka kartla çakışmıyor, Almanca cümle değişmiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2408,
@@ -1093,7 +1112,8 @@
     "tr",
     "en"
    ],
-   "reason": "pauschal 'her şey dâhil' değil, paket/götürü demek; örnekteki kullanım 'paket olarak'. Noktalı virgül işlev sözcüğü dışında yasak, tek karşılık seçildi."
+   "reason": "pauschal 'her şey dâhil' değil, paket/götürü demek; örnekteki kullanım 'paket olarak'. Noktalı virgül işlev sözcüğü dışında yasak, tek karşılık seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2531,
@@ -1108,7 +1128,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizce alan karşılık değil açıklama; tek karşılık kuralına aykırı, örnek çevirisi de neighborhood diyor."
+   "reason": "İngilizce alan karşılık değil açıklama; tek karşılık kuralına aykırı, örnek çevirisi de neighborhood diyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2556,
@@ -1125,7 +1146,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "rechtzeitig 'geç kalmadan, vaktinde' demek, temel karşılığı 'in time'. 'on time' pünktlich anlamına kayıyor. pünktlich kartı 'punctual' olduğu için çakışma yok."
+   "reason": "rechtzeitig 'geç kalmadan, vaktinde' demek, temel karşılığı 'in time'. 'on time' pünktlich anlamına kayıyor. pünktlich kartı 'punctual' olduğu için çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2557,
@@ -1156,7 +1178,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"haber programı\" bülten anlamına kayar; \"haber belgeseli\" Reportage'ı karşılar. İngilizce \"news report\" kalır, \"report\" Bericht ile çakışır."
+   "reason": "\"haber programı\" bülten anlamına kayar; \"haber belgeseli\" Reportage'ı karşılar. İngilizce \"news report\" kalır, \"report\" Bericht ile çakışır.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2591,
@@ -1171,7 +1194,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"Austrian word for oven\" bir açıklama, karşılık değil; kural tek doğal karşılık istiyor. Türkçede zaten Backofen/Ofen ile aynı \"fırın\"; örnek cümle de \"oven\" diyor."
+   "reason": "\"Austrian word for oven\" bir açıklama, karşılık değil; kural tek doğal karşılık istiyor. Türkçede zaten Backofen/Ofen ile aynı \"fırın\"; örnek cümle de \"oven\" diyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2605,
@@ -1202,7 +1226,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Schnupfen hastalığın kendisi ('nezle'). 'runny nose' yalnız belirtiyi anlatıyor ve 'a bad runny nose' doğal değil. 'head cold' Erkältung kartının 'cold' karşılığından da ayrılıyor."
+   "reason": "Schnupfen hastalığın kendisi ('nezle'). 'runny nose' yalnız belirtiyi anlatıyor ve 'a bad runny nose' doğal değil. 'head cold' Erkältung kartının 'cold' karşılığından da ayrılıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2647,
@@ -1217,7 +1242,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Schreck ani irkilme korkusudur; düz \"korku\" Angst kartıyla aynı, \"ani korku\" ayırt ediyor."
+   "reason": "Schreck ani irkilme korkusudur; düz \"korku\" Angst kartıyla aynı, \"ani korku\" ayırt ediyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2659,
@@ -1260,7 +1286,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"kendi\" iyelik anlamı taşıyor ve \"eigene\" (kendi) kartıyla aynı karşılık; \"kendisi\" vurgulayıcı anlamı verir ve ayırt edilir."
+   "reason": "\"kendi\" iyelik anlamı taşıyor ve \"eigene\" (kendi) kartıyla aynı karşılık; \"kendisi\" vurgulayıcı anlamı verir ve ayırt edilir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2735,
@@ -1291,7 +1318,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Amerikan İngilizcesinde isim olarak 'transportation' kullanılır; cümle de daha doğal."
+   "reason": "Amerikan İngilizcesinde isim olarak 'transportation' kullanılır; cümle de daha doğal.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2955,
@@ -1306,7 +1334,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Sözleşmiş\" bu anlamda yapay ve yanlış çağrışımlı; \"sözü olan\" örnekteki \"sözüm var\" ile örtüşüyor, çakışma yok."
+   "reason": "\"Sözleşmiş\" bu anlamda yapay ve yanlış çağrışımlı; \"sözü olan\" örnekteki \"sözüm var\" ile örtüşüyor, çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 2962,
@@ -1381,7 +1410,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Tek başına 'cover' kapak ya da örtü diye okunur, Amerikan İngilizcesinde vekil anlamı taşımaz. 'substitute' konuşma sözlüğündeki die Vertretung karşılığıyla da aynı."
+   "reason": "Tek başına 'cover' kapak ya da örtü diye okunur, Amerikan İngilizcesinde vekil anlamı taşımaz. 'substitute' konuşma sözlüğündeki die Vertretung karşılığıyla da aynı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3048,
@@ -1413,7 +1443,8 @@
     "tr",
     "en"
    ],
-   "reason": "Waschmittel özellikle çamaşır deterjanı; çakışan kart yok, karşılık daha kesin."
+   "reason": "Waschmittel özellikle çamaşır deterjanı; çakışan kart yok, karşılık daha kesin.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3087,
@@ -1435,7 +1466,8 @@
     "tr",
     "en"
    ],
-   "reason": "Fortbildung ile tr ve en birebir aynı (mesleki eğitim / further training), Ausbildung'a da çok yakın; ayırt edilemiyor. Önerilen uzun ifade yerine 'sürekli eğitim'."
+   "reason": "Fortbildung ile tr ve en birebir aynı (mesleki eğitim / further training), Ausbildung'a da çok yakın; ayırt edilemiyor. Önerilen uzun ifade yerine 'sürekli eğitim'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3131,
@@ -1464,7 +1496,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizce 'viewer' stadyum cümlesindeki 'spectators' ile çelişiyor; 'spectator' düzeltilir. Türkçe 'seyirci' Publikum kartında, çakışma olur; 'izleyici' kalır."
+   "reason": "İngilizce 'viewer' stadyum cümlesindeki 'spectators' ile çelişiyor; 'spectator' düzeltilir. Türkçe 'seyirci' Publikum kartında, çakışma olur; 'izleyici' kalır.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5741,
@@ -1479,7 +1512,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'ekmek' isimle karışıyor ve ekim anlamında dar; ancak 'yetiştirmek' erziehen/züchten/ausbilden ile çakışır, bu yüzden 'bitki yetiştirmek'."
+   "reason": "'ekmek' isimle karışıyor ve ekim anlamında dar; ancak 'yetiştirmek' erziehen/züchten/ausbilden ile çakışır, bu yüzden 'bitki yetiştirmek'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8452,
@@ -1552,7 +1586,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"higher education institution\" kart karşılığı olarak doğal değil, Amerikan karşılığı \"college\" (Universität \"university\" ile çakışmaz); \"After school\" Abitur'u yanlış veriyor."
+   "reason": "\"higher education institution\" kart karşılığı olarak doğal değil, Amerikan karşılığı \"college\" (Universität \"university\" ile çakışmaz); \"After school\" Abitur'u yanlış veriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8481,
@@ -1567,7 +1602,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "tr 'anayasa' Verfassung ile birebir çakışıyor; en zaten 'German constitution'."
+   "reason": "tr 'anayasa' Verfassung ile birebir çakışıyor; en zaten 'German constitution'.",
+   "applied": "2026-10-05"
   }
  ]
 }

@@ -362,10 +362,10 @@
   {
     "id": 2342,
     "tr": "fiks menü",
-    "en": "set menu",
+    "en": "fixed-price menu",
     "beispiel": "Das Menü des Tages kostet zwölf Euro.",
     "beispielTr": "Günün menüsü on iki avro.",
-    "beispielEn": "Today's set menu costs twelve euros."
+    "beispielEn": "Today's fixed-price menu costs twelve euros."
   },
   {
     "id": 1919,

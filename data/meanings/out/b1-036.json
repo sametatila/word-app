@@ -321,11 +321,11 @@
   },
   {
     "id": 3087,
-    "tr": "mesleki eğitim",
-    "en": "further training",
+    "tr": "sürekli eğitim",
+    "en": "continuing education",
     "beispiel": "Ich möchte nächstes Jahr eine Weiterbildung machen.",
-    "beispielTr": "Gelecek yıl bir mesleki eğitim almak istiyorum.",
-    "beispielEn": "I would like to do further training next year."
+    "beispielTr": "Gelecek yıl sürekli eğitim almak istiyorum.",
+    "beispielEn": "I would like to do some continuing education next year."
   },
   {
     "id": 3110,

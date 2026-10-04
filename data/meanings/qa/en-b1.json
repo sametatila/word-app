@@ -413,7 +413,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Fiil işlev sözcüğü değil, iki karşılık kurala aykırı; örnekteki anlam 'katılmak'."
+   "reason": "Fiil işlev sözcüğü değil, iki karşılık kurala aykırı; örnekteki anlam 'katılmak'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 200548,
@@ -430,7 +431,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Genel 'connection' ve yavaş internet için doğal karşılık Verbindung; Anschluss hat/aktarma anlamına kayıyor."
+   "reason": "Genel 'connection' ve yavaş internet için doğal karşılık Verbindung; Anschluss hat/aktarma anlamına kayıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 200562,
@@ -445,7 +447,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Şirketin yaptığı statement Türkçede 'açıklama'; örnek çeviri de bunu kullanıyor, 'bildiri' farklı tür metin."
+   "reason": "Şirketin yaptığı statement Türkçede 'açıklama'; örnek çeviri de bunu kullanıyor, 'bildiri' farklı tür metin.",
+   "applied": "2026-10-05"
   },
   {
    "id": 200951,
@@ -462,7 +465,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Kursa kaydolmak Almancada \"sich anmelden\"; \"sich eintragen\" listeye ad yazmak, bu cümlede doğal değil."
+   "reason": "Kursa kaydolmak Almancada \"sich anmelden\"; \"sich eintragen\" listeye ad yazmak, bu cümlede doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 200961,
@@ -477,7 +481,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İçerik sözcüğünde tek karşılık kuralı; \"müsaade\" eş anlamlı fazlalık."
+   "reason": "İçerik sözcüğünde tek karşılık kuralı; \"müsaade\" eş anlamlı fazlalık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 200974,
@@ -494,7 +499,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Müzik festivali Almancada Musikfestival; \"Fest\" şenlik/kutlama demek."
+   "reason": "Müzik festivali Almancada Musikfestival; \"Fest\" şenlik/kutlama demek.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201052,
@@ -509,7 +515,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Kartın anlamı iletişim bağı; \"temas\" fiziksel dokunmaya kayıyor, örnek çeviri de \"irtibat\" diyor."
+   "reason": "Kartın anlamı iletişim bağı; \"temas\" fiziksel dokunmaya kayıyor, örnek çeviri de \"irtibat\" diyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201169,
@@ -554,7 +561,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"unbedingt\" mutlaka/şart anlamında; definitely için sözlük karşılığı \"auf jeden Fall\", cümle doğal kalıyor."
+   "reason": "\"unbedingt\" mutlaka/şart anlamında; definitely için sözlük karşılığı \"auf jeden Fall\", cümle doğal kalıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201377,
@@ -571,7 +579,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'aller' tek başına karşılık değil, yalnız 'allerbesten' öneki; 'von allen' doğru karşılık ve örnek onu içeriyor."
+   "reason": "'aller' tek başına karşılık değil, yalnız 'allerbesten' öneki; 'von allen' doğru karşılık ve örnek onu içeriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201452,
@@ -588,7 +597,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Okul ödevi bağlamında 'Auftrag' yanlış (iş siparişi/görev); 'Aufgabe' tr 'ödev' ile ve örnekle uyumlu."
+   "reason": "Okul ödevi bağlamında 'Auftrag' yanlış (iş siparişi/görev); 'Aufgabe' tr 'ödev' ile ve örnekle uyumlu.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201481,
@@ -603,7 +613,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'seçenek' option demek; selection burada çeşit/seçki, örnek çeviri de 'seçki' kullanıyor."
+   "reason": "'seçenek' option demek; selection burada çeşit/seçki, örnek çeviri de 'seçki' kullanıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201559,
@@ -625,7 +636,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "Sağlık bağlamında 'toparlanma' ve 'völlige Besserung' yanlış ton; iyileşme/Genesung doğru karşılık. Türkçe çeviri özne eklemeden sadeleştirildi."
+   "reason": "Sağlık bağlamında 'toparlanma' ve 'völlige Besserung' yanlış ton; iyileşme/Genesung doğru karşılık. Türkçe çeviri özne eklemeden sadeleştirildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201683,
@@ -640,7 +652,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İsimde iki karşılık kurala aykırı; örnek çevirisi ve Drogerie kozmetik mağazası anlamında."
+   "reason": "İsimde iki karşılık kurala aykırı; örnek çevirisi ve Drogerie kozmetik mağazası anlamında.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201686,
@@ -659,7 +672,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'on average' ayrı kart (201687); isim kartı aynı kalıbı tekrar ediyor, ismi tek başına gösteren örnek gerekli."
+   "reason": "'on average' ayrı kart (201687); isim kartı aynı kalıbı tekrar ediyor, ismi tek başına gösteren örnek gerekli.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201693,
@@ -676,7 +690,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "e-card Avusturya'ya özgü; Almanya'daki standart karşılık Gesundheitskarte."
+   "reason": "e-card Avusturya'ya özgü; Almanya'daki standart karşılık Gesundheitskarte.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201705,
@@ -693,7 +708,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Koşturmak' öncelikle ettirgen (birini koşturmak); rush karşılığı 'acele etmek'. Gar korundu."
+   "reason": "'Koşturmak' öncelikle ettirgen (birini koşturmak); rush karşılığı 'acele etmek'. Gar korundu.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201780,
@@ -708,7 +724,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnek park yapımı anlamında; en az değişiklik ilkesiyle cümle yerine anlam 'geliştirme' yapıldı, Entwicklung iki anlamı da karşılıyor."
+   "reason": "Örnek park yapımı anlamında; en az değişiklik ilkesiyle cümle yerine anlam 'geliştirme' yapıldı, Entwicklung iki anlamı da karşılıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201798,
@@ -723,7 +740,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnek ameliyat sonrası iyileşme; çeviri de 'iyileşti' diyor, kart anlamı uyumsuz."
+   "reason": "Örnek ameliyat sonrası iyileşme; çeviri de 'iyileşti' diyor, kart anlamı uyumsuz.",
+   "applied": "2026-10-05"
   },
   {
    "id": 201827,
@@ -740,7 +758,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Erzählung genel anlatı; short story'nin tam karşılığı Kurzgeschichte."
+   "reason": "Erzählung genel anlatı; short story'nin tam karşılığı Kurzgeschichte.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202168,
@@ -755,7 +774,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İsim kartı; Türkçede yerleşik isim karşılığı 'alıcı', 'satın alan' sıfat-fiil."
+   "reason": "İsim kartı; Türkçede yerleşik isim karşılığı 'alıcı', 'satın alan' sıfat-fiil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202259,
@@ -800,7 +820,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'İşaret koymak' yapay; doğal ve yerleşik karşılık 'işaretlemek'."
+   "reason": "'İşaret koymak' yapay; doğal ve yerleşik karşılık 'işaretlemek'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202396,
@@ -819,7 +840,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'Transport connection' Almancadan çeviri ve Amerikan İngilizcesinde doğal değil (ABD: transportation); Almanca sadeleştirildi, 'Nachteil' korunuyor."
+   "reason": "'Transport connection' Almancadan çeviri ve Amerikan İngilizcesinde doğal değil (ABD: transportation); Almanca sadeleştirildi, 'Nachteil' korunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202451,
@@ -850,7 +872,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Reklame' Almanya Almancasında eskimiş; standart karşılık 'Werbung'."
+   "reason": "'Reklame' Almanya Almancasında eskimiş; standart karşılık 'Werbung'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202607,
@@ -881,7 +904,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'kestirmek' nadir ve 'şekerleme' anlamıyla karışıyor; 'tahmin etmek' doğal karşılık. İngilizce cümle yanlış değil, euro kalıyor (kayıt gereksiz)."
+   "reason": "'kestirmek' nadir ve 'şekerleme' anlamıyla karışıyor; 'tahmin etmek' doğal karşılık. İngilizce cümle yanlış değil, euro kalıyor (kayıt gereksiz).",
+   "applied": "2026-10-05"
   },
   {
    "id": 202654,
@@ -896,7 +920,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnek ve deGloss 'Schuld' (benim suçum değil) anlamında; 'kusur' defekt/ayıp anlamına kayıyor, kart kendi çevirisiyle çelişiyor."
+   "reason": "Örnek ve deGloss 'Schuld' (benim suçum değil) anlamında; 'kusur' defekt/ayıp anlamına kayıyor, kart kendi çevirisiyle çelişiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202658,
@@ -913,7 +938,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Schularbeit' Avusturya Almancası; standart karşılık 'schriftliche Prüfung', örnek de yeni karşılığı içeriyor."
+   "reason": "'Schularbeit' Avusturya Almancası; standart karşılık 'schriftliche Prüfung', örnek de yeni karşılığı içeriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202760,
@@ -928,7 +954,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Durma noktasına gelmek' Türkçede çoğunlukla mecazi (tıkanma); örnekteki somut anlam durmak."
+   "reason": "'Durma noktasına gelmek' Türkçede çoğunlukla mecazi (tıkanma); örnekteki somut anlam durmak.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202773,
@@ -945,7 +972,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Stiege bölgesel (Avusturya); standart karşılık Treppe. Cümle karşılığı ayrı sözcük olarak içeriyor, kat sayımı korunuyor."
+   "reason": "Stiege bölgesel (Avusturya); standart karşılık Treppe. Cümle karşılığı ayrı sözcük olarak içeriyor, kat sayımı korunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202809,
@@ -964,7 +992,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Faturadaki tutar için 'sum' doğal değil (total denir); yeni cümle toplam anlamını doğal biçimde gösteriyor."
+   "reason": "Faturadaki tutar için 'sum' doğal değil (total denir); yeni cümle toplam anlamını doğal biçimde gösteriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202837,
@@ -981,7 +1010,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "İsim olarak part-time work karşılığı Teilzeitarbeit; 'Arbeit in Teilzeit' cümlesi yapay."
+   "reason": "İsim olarak part-time work karşılığı Teilzeitarbeit; 'Arbeit in Teilzeit' cümlesi yapay.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202897,
@@ -998,7 +1028,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Gazete manşeti Schlagzeile; Überschrift genel başlık, tr manşet ile örtüşmüyor."
+   "reason": "Gazete manşeti Schlagzeile; Überschrift genel başlık, tr manşet ile örtüşmüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202913,
@@ -1013,7 +1044,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Yalın umgehen 'atlatmak/kaçınmak' da demek; idare etmek anlamı umgehen mit ile ayırt ediliyor, cümle zaten mit içeriyor."
+   "reason": "Yalın umgehen 'atlatmak/kaçınmak' da demek; idare etmek anlamı umgehen mit ile ayırt ediliyor, cümle zaten mit içeriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202923,
@@ -1028,7 +1060,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Ön ek karşılığı kısa çizgiyle yazılmalı; cümle 'un-' içeriyor."
+   "reason": "Ön ek karşılığı kısa çizgiyle yazılmalı; cümle 'un-' içeriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202927,
@@ -1045,7 +1078,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Unglück kaza/talihsizlik; disaster ve felaket için doğrudan karşılık Katastrophe."
+   "reason": "Unglück kaza/talihsizlik; disaster ve felaket için doğrudan karşılık Katastrophe.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202938,
@@ -1060,7 +1094,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sıfat kullanımında doğal karşılık 'yasak'; örnek çeviri de 'yasaktır'."
+   "reason": "Sıfat kullanımında doğal karşılık 'yasak'; örnek çeviri de 'yasaktır'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202955,
@@ -1075,7 +1110,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Fiil öbeği 'have plans' için karşılık 'verabredet sein' olmalı; cümle 'bin verabredet' ile uyumlu."
+   "reason": "Fiil öbeği 'have plans' için karşılık 'verabredet sein' olmalı; cümle 'bin verabredet' ile uyumlu.",
+   "applied": "2026-10-05"
   },
   {
    "id": 202964,
@@ -1090,7 +1126,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İsim olan ban 'yasak'; 'yasaklama' eylem adı, örnek de 'yasak' kullanıyor."
+   "reason": "İsim olan ban 'yasak'; 'yasaklama' eylem adı, örnek de 'yasak' kullanıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203048,
@@ -1105,7 +1142,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İçerik ifadesinde noktalı virgüllü iki anlam kurala aykırı; örnek 'her şeyden önce' anlamında."
+   "reason": "İçerik ifadesinde noktalı virgüllü iki anlam kurala aykırı; örnek 'her şeyden önce' anlamında.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203074,
@@ -1122,7 +1160,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Hakikat' eskil ve yapay; 'gerçek' temel karşılık, reality=gerçeklik ve fact=olgu ile çakışmıyor."
+   "reason": "'Hakikat' eskil ve yapay; 'gerçek' temel karşılık, reality=gerçeklik ve fact=olgu ile çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203085,
@@ -1139,7 +1178,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Refuse'un yerleşik karşılığı 'reddetmek'; reject 'geri çevirmek' olduğundan çakışma yok."
+   "reason": "Refuse'un yerleşik karşılığı 'reddetmek'; reject 'geri çevirmek' olduğundan çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203101,
@@ -1156,7 +1196,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Günlük Türkçede 'hava durumu' denir; 'hava raporu' doğal değil, forecast 'hava tahmini' ile çakışmıyor."
+   "reason": "Günlük Türkçede 'hava durumu' denir; 'hava raporu' doğal değil, forecast 'hava tahmini' ile çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203155,
@@ -1173,7 +1214,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Kuşak' yalnız deprem kuşağı gibi dar kullanım; zone'un genel karşılığı 'bölge'."
+   "reason": "'Kuşak' yalnız deprem kuşağı gibi dar kullanım; zone'un genel karşılığı 'bölge'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203249,
@@ -1204,7 +1246,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'sich engagieren' genel 'etkin olmak'; gönüllü çalışmanın kesin karşılığı 'ehrenamtlich arbeiten', cümle doğal."
+   "reason": "'sich engagieren' genel 'etkin olmak'; gönüllü çalışmanın kesin karşılığı 'ehrenamtlich arbeiten', cümle doğal.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203316,
@@ -1221,7 +1264,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Ülkeye gelen göçmen' açıklama gibi ve doğal değil; kursta emigrant yok, çakışma riski yok."
+   "reason": "'Ülkeye gelen göçmen' açıklama gibi ve doğal değil; kursta emigrant yok, çakışma riski yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203464,
@@ -1238,7 +1282,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "conclusion'ın temel karşılığı sonuç; kanı dar ve görüş anlamına kayıyor"
+   "reason": "conclusion'ın temel karşılığı sonuç; kanı dar ve görüş anlamına kayıyor",
+   "applied": "2026-10-05"
   },
   {
    "id": 203465,
@@ -1255,7 +1300,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Auswertung değerlendirme demek; analysis'in doğrudan karşılığı Analyse"
+   "reason": "Auswertung değerlendirme demek; analysis'in doğrudan karşılığı Analyse",
+   "applied": "2026-10-05"
   },
   {
    "id": 203749,
@@ -1272,7 +1318,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "içerik maddesi doğal değil; yemek/içecekte malzeme denir"
+   "reason": "içerik maddesi doğal değil; yemek/içecekte malzeme denir",
+   "applied": "2026-10-05"
   },
   {
    "id": 203759,
@@ -1287,7 +1334,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "yaygın karşılık rezervasyon ve cümleyle tutarlı"
+   "reason": "yaygın karşılık rezervasyon ve cümleyle tutarlı",
+   "applied": "2026-10-05"
   },
   {
    "id": 204109,
@@ -1332,7 +1380,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "loss'un genel karşılığı Verlust; Einbuße dar kullanımlı"
+   "reason": "loss'un genel karşılığı Verlust; Einbuße dar kullanımlı",
+   "applied": "2026-10-05"
   },
   {
    "id": 204264,
@@ -1349,7 +1398,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "den Rückstand auf die Gruppe aufholen yapay; fiziksel yetişme einholen"
+   "reason": "den Rückstand auf die Gruppe aufholen yapay; fiziksel yetişme einholen",
+   "applied": "2026-10-05"
   },
   {
    "id": 204312,
@@ -1366,7 +1416,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Weisung yetkili makam emri; doktor talimatı için Anweisung doğru"
+   "reason": "Weisung yetkili makam emri; doktor talimatı için Anweisung doğru",
+   "applied": "2026-10-05"
   },
   {
    "id": 204313,
@@ -1383,7 +1434,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "gereklilik zorunluluk anlamı; konan koşullar için şart doğal, cümledeki gereklilik/gerekiyor tekrarı da gider"
+   "reason": "gereklilik zorunluluk anlamı; konan koşullar için şart doğal, cümledeki gereklilik/gerekiyor tekrarı da gider",
+   "applied": "2026-10-05"
   },
   {
    "id": 204556,
@@ -1400,7 +1452,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Zuversicht' güven/umut demek, iyimserlikle bire bir örtüşmüyor; doğrudan karşılık 'Optimismus'."
+   "reason": "'Zuversicht' güven/umut demek, iyimserlikle bire bir örtüşmüyor; doğrudan karşılık 'Optimismus'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204579,
@@ -1417,7 +1470,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Eşyaya duyulan kıskançlık Almancada 'neidisch'; 'eifersüchtig auf mein Fahrrad' yanlış. İngilizce cümle doğru, kayıt pahalı: yalnız Almanca karşılık ve çeviri düzeltildi."
+   "reason": "Eşyaya duyulan kıskançlık Almancada 'neidisch'; 'eifersüchtig auf mein Fahrrad' yanlış. İngilizce cümle doğru, kayıt pahalı: yalnız Almanca karşılık ve çeviri düzeltildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204693,
@@ -1437,7 +1491,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "quantity genel olarak miktar; 'adet/Stückzahl' parça sayısına daraltıyor, Türkçe örnek zaten 'miktar' diyor."
+   "reason": "quantity genel olarak miktar; 'adet/Stückzahl' parça sayısına daraltıyor, Türkçe örnek zaten 'miktar' diyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204709,
@@ -1454,7 +1509,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'justieren' teknik; koltuk ayarlamak 'einstellen'. İngilizce/Türkçe 'sen' hitabına da uyuyor."
+   "reason": "'justieren' teknik; koltuk ayarlamak 'einstellen'. İngilizce/Türkçe 'sen' hitabına da uyuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204760,
@@ -1471,7 +1527,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Prellung' ezilme yaralanmasının kendisi; morluk 'Bluterguss'."
+   "reason": "'Prellung' ezilme yaralanmasının kendisi; morluk 'Bluterguss'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204854,
@@ -1488,7 +1545,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Tek başına 'Kulisse' tiyatro dekoru olarak anlaşılır; manzara anlamında 'Landschaft' açıkça daha doğru."
+   "reason": "Tek başına 'Kulisse' tiyatro dekoru olarak anlaşılır; manzara anlamında 'Landschaft' açıkça daha doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204900,
@@ -1505,7 +1563,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "explore'un temel karşılığı 'keşfetmek'; 'eski şehirde keşfe çıktık' doğal değil."
+   "reason": "explore'un temel karşılığı 'keşfetmek'; 'eski şehirde keşfe çıktık' doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204919,
@@ -1520,7 +1579,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "sold out her ürün için kullanılır; 'biletleri tükenmiş' anlamı daraltıyor. Örnek cümle konser bağlamında olduğu gibi kalabilir."
+   "reason": "sold out her ürün için kullanılır; 'biletleri tükenmiş' anlamı daraltıyor. Örnek cümle konser bağlamında olduğu gibi kalabilir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204935,
@@ -1537,7 +1597,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Rubrik' dar (gazete/site bölümü); category için doğrudan karşılık 'Kategorie'."
+   "reason": "'Rubrik' dar (gazete/site bölümü); category için doğrudan karşılık 'Kategorie'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204995,
@@ -1554,7 +1615,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'tagesaktuell' günü gününe demek, genel 'güncel' anlamından dar; karşılık 'aktuell'."
+   "reason": "'tagesaktuell' günü gününe demek, genel 'güncel' anlamından dar; karşılık 'aktuell'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205066,
@@ -1585,7 +1647,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Gemäß der Wettervorhersage' yapay; doğal karşılık 'laut'. tr işlev sözcüğü olduğu için iki anlam serbest, 'uyarınca' da geçerli: korunuyor."
+   "reason": "'Gemäß der Wettervorhersage' yapay; doğal karşılık 'laut'. tr işlev sözcüğü olduğu için iki anlam serbest, 'uyarınca' da geçerli: korunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205321,
@@ -1602,7 +1665,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Anschlag' yalnız suikast/terör saldırısı; genel 'attack' = 'Angriff'. Örnek yeni karşılığı içerecek biçimde güncellendi."
+   "reason": "'Anschlag' yalnız suikast/terör saldırısı; genel 'attack' = 'Angriff'. Örnek yeni karşılığı içerecek biçimde güncellendi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205472,
@@ -1619,7 +1683,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Warnhinweis' dar (etiket notu); genel 'warning' karşılığı 'Warnung'."
+   "reason": "'Warnhinweis' dar (etiket notu); genel 'warning' karşılığı 'Warnung'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205640,
@@ -1636,7 +1701,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Dachgeschoss' çatı katı demek, 'top floor' en üst kat; örnek yeni karşılığı içerecek biçimde yazıldı."
+   "reason": "'Dachgeschoss' çatı katı demek, 'top floor' en üst kat; örnek yeni karşılığı içerecek biçimde yazıldı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205865,
@@ -1651,7 +1717,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'işin içine katmak' kalıp gibi ve doğal değil; örnekte de kullanılan yerleşik karşılık 'dâhil etmek'."
+   "reason": "'işin içine katmak' kalıp gibi ve doğal değil; örnekte de kullanılan yerleşik karşılık 'dâhil etmek'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206145,
@@ -1668,7 +1735,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Dissens' resmî ve nadir; genel karşılık 'Meinungsverschiedenheit'."
+   "reason": "'Dissens' resmî ve nadir; genel karşılık 'Meinungsverschiedenheit'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206181,
@@ -1685,7 +1753,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'indes' edebi ve B1 için nadir, 'jedoch' açıkça daha iyi; tr işlev sözcüğü olduğu için 'a; b' serbest, değiştirilmedi."
+   "reason": "'indes' edebi ve B1 için nadir, 'jedoch' açıkça daha iyi; tr işlev sözcüğü olduğu için 'a; b' serbest, değiştirilmedi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206456,
@@ -1700,7 +1769,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'nöbet tutmak' nesne almıyor; geçişli 'guard the entrance' ve örnek çeviri 'korumak'."
+   "reason": "'nöbet tutmak' nesne almıyor; geçişli 'guard the entrance' ve örnek çeviri 'korumak'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207566,
@@ -1715,7 +1785,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sıfat olarak doğal karşılık \"emekli\"; örnek de bunu kullanıyor."
+   "reason": "Sıfat olarak doğal karşılık \"emekli\"; örnek de bunu kullanıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207569,
@@ -1732,7 +1803,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"kulağıma aşina geliyor\" doğal Türkçe değil; ses için \"tanıdık geliyor\" denir, karşılık da örnekle uyumlu olsun diye \"tanıdık\"."
+   "reason": "\"kulağıma aşina geliyor\" doğal Türkçe değil; ses için \"tanıdık geliyor\" denir, karşılık da örnekle uyumlu olsun diye \"tanıdık\".",
+   "applied": "2026-10-05"
   },
   {
    "id": 207606,
@@ -1749,7 +1821,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"halbwegs\" \"kısmen, idare eder\" demek; \"more or less\" karşılığı \"mehr oder weniger\"."
+   "reason": "\"halbwegs\" \"kısmen, idare eder\" demek; \"more or less\" karşılığı \"mehr oder weniger\".",
+   "applied": "2026-10-05"
   },
   {
    "id": 207610,
@@ -1766,7 +1839,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"bilhassa\" eskimiş ve seyrek; öğrenici için temel karşılık \"özellikle\"."
+   "reason": "\"bilhassa\" eskimiş ve seyrek; öğrenici için temel karşılık \"özellikle\".",
+   "applied": "2026-10-05"
   },
   {
    "id": 207621,
@@ -1781,7 +1855,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"ne de\" nor'un karşılığı, \"hiçbiri\" örnekteki neither…nor kalıbına uymuyor; either kartıyla paralel \"ne … ne de\" doğru."
+   "reason": "\"ne de\" nor'un karşılığı, \"hiçbiri\" örnekteki neither…nor kalıbına uymuyor; either kartıyla paralel \"ne … ne de\" doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207626,
@@ -1796,7 +1871,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"desto\" kalıbın yalnız ikinci yarısı; başlık \"the more\" = \"je mehr\". İşlev sözcüğü olduğu için tr gibi iki yarı birlikte verildi, örnekte ikisi de var."
+   "reason": "\"desto\" kalıbın yalnız ikinci yarısı; başlık \"the more\" = \"je mehr\". İşlev sözcüğü olduğu için tr gibi iki yarı birlikte verildi, örnekte ikisi de var.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207730,
@@ -1811,7 +1887,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Tek başına \"ablegen\" bırakmak/çıkarmak da demek; kalıp kartında nesneyle verilmeli. Örnekteki \"lege … Abschlussprüfung ab\" bunu karşılıyor."
+   "reason": "Tek başına \"ablegen\" bırakmak/çıkarmak da demek; kalıp kartında nesneyle verilmeli. Örnekteki \"lege … Abschlussprüfung ab\" bunu karşılıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207760,
@@ -1828,7 +1905,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"haftalık pazar\" çeviri kokuyor; Türkçede haftada bir kurulan pazarın adı \"semt pazarı\"."
+   "reason": "\"haftalık pazar\" çeviri kokuyor; Türkçede haftada bir kurulan pazarın adı \"semt pazarı\".",
+   "applied": "2026-10-05"
   },
   {
    "id": 207776,
@@ -1843,7 +1921,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İsimde tek karşılık kuralı; örnek de \"fiş\" kullanıyor. \"umtauschen\" iade bağlamında da kullanılıyor, Almanca cümle değiştirilmedi."
+   "reason": "İsimde tek karşılık kuralı; örnek de \"fiş\" kullanıyor. \"umtauschen\" iade bağlamında da kullanılıyor, Almanca cümle değiştirilmedi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207824,
@@ -1860,7 +1939,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Güvey yanlış değil ama eskimiş ve yöresel; düğündeki 'groom' için bugünkü standart karşılık 'damat'."
+   "reason": "Güvey yanlış değil ama eskimiş ve yöresel; düğündeki 'groom' için bugünkü standart karşılık 'damat'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207862,
@@ -1875,7 +1955,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Tek başına 'ayrı' genel 'separate' ile karışıyor; medeni durum anlamını 'ayrı yaşayan' veriyor, örnek çeviriyle de uyumlu."
+   "reason": "Tek başına 'ayrı' genel 'separate' ile karışıyor; medeni durum anlamını 'ayrı yaşayan' veriyor, örnek çeviriyle de uyumlu.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208032,
@@ -1894,7 +1975,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Yayın akışına sıkıcı demek Almancadan aktarma, İngilizcede anlamca yanlış; yeni cümle doğal ve kelimeyi içeriyor."
+   "reason": "Yayın akışına sıkıcı demek Almancadan aktarma, İngilizcede anlamca yanlış; yeni cümle doğal ve kelimeyi içeriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208106,
@@ -1911,7 +1993,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Şehrin bir bölgesi (Stadtteil) anlamında doğru karşılık semt; ilçe idari birim."
+   "reason": "Şehrin bir bölgesi (Stadtteil) anlamında doğru karşılık semt; ilçe idari birim.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208107,
@@ -1928,7 +2011,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Almanca örnek başka cümle (evin önündeki kaldırım); parktaki yol için Fußweg doğru, cümle İngilizceyle eşleşiyor."
+   "reason": "Almanca örnek başka cümle (evin önündeki kaldırım); parktaki yol için Fußweg doğru, cümle İngilizceyle eşleşiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208221,
@@ -1943,7 +2027,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "install için genel karşılık \"kurmak\". \"takmak\" dar kalıyor, mutfak kurulumuna uymuyor. \"montieren\" doğru olduğundan deGloss değişikliği reddedildi."
+   "reason": "install için genel karşılık \"kurmak\". \"takmak\" dar kalıyor, mutfak kurulumuna uymuyor. \"montieren\" doğru olduğundan deGloss değişikliği reddedildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208234,
@@ -1958,7 +2043,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "come by kısa süre uğramak demek, örnek çeviriyle (uğrayabilirsin) de uyumlu."
+   "reason": "come by kısa süre uğramak demek, örnek çeviriyle (uğrayabilirsin) de uyumlu.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208262,
@@ -1977,7 +2063,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"kurup hazırlamak\" iki fiilli ve doğal değil, \"kurmak\" tek ve doğru karşılık. Almanca çeviri şimdiki zamanda kalmıştı, Türkçeyle uyumlu olsun diye geçmiş zamana alındı."
+   "reason": "\"kurup hazırlamak\" iki fiilli ve doğal değil, \"kurmak\" tek ve doğru karşılık. Almanca çeviri şimdiki zamanda kalmıştı, Türkçeyle uyumlu olsun diye geçmiş zamana alındı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208301,
@@ -1999,7 +2086,8 @@
     "deGloss",
     "beispiel"
    ],
-   "reason": "blame bir sonucun suçunu yüklemek demek, karşılığı \"die Schuld geben\". \"vorwerfen\" sitem etmek anlamına geliyor. Eski cümle (tembellik) bu anlamı taşımadığı için cümle de değişmeli."
+   "reason": "blame bir sonucun suçunu yüklemek demek, karşılığı \"die Schuld geben\". \"vorwerfen\" sitem etmek anlamına geliyor. Eski cümle (tembellik) bu anlamı taşımadığı için cümle de değişmeli.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208319,
@@ -2016,7 +2104,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "notice için standart karşılık \"bemerken\", \"mitbekommen\" gündelik dilden ve çok anlamlı."
+   "reason": "notice için standart karşılık \"bemerken\", \"mitbekommen\" gündelik dilden ve çok anlamlı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208339,
@@ -2033,7 +2122,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Gürültü şikâyeti için doğru fiil \"sich beschweren\", \"sich beklagen\" yakınmak anlamına geliyor."
+   "reason": "Gürültü şikâyeti için doğru fiil \"sich beschweren\", \"sich beklagen\" yakınmak anlamına geliyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208370,
@@ -2050,7 +2140,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "TDK yazımı \"eviye\"."
+   "reason": "TDK yazımı \"eviye\".",
+   "applied": "2026-10-05"
   }
  ],
  "kararBekleyen": {

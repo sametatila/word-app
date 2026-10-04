@@ -10,7 +10,7 @@
   {
     "id": 3026,
     "tr": "vekâlet",
-    "en": "cover",
+    "en": "substitute",
     "beispiel": "Während meines Urlaubs übernimmt eine Kollegin die Vertretung.",
     "beispielTr": "İzindeyken bir meslektaşım bana vekâlet edecek.",
     "beispielEn": "While I'm on vacation, a colleague will fill in for me."
@@ -153,11 +153,11 @@
   },
   {
     "id": 2397,
-    "tr": "genç nesil",
-    "en": "young generation",
+    "tr": "genç yetenekler",
+    "en": "young talent",
     "beispiel": "Unser Verein fördert seit Jahren den Nachwuchs.",
-    "beispielTr": "Kulübümüz yıllardır genç nesli destekliyor.",
-    "beispielEn": "Our club has supported the young generation for years."
+    "beispielTr": "Kulübümüz yıllardır genç yetenekleri destekliyor.",
+    "beispielEn": "Our club has been supporting young talent for years."
   },
   {
     "id": 2769,
@@ -242,10 +242,10 @@
   {
     "id": 2646,
     "tr": "nezle",
-    "en": "runny nose",
+    "en": "head cold",
     "beispiel": "Ich habe seit gestern einen starken Schnupfen.",
     "beispielTr": "Dünden beri ağır bir nezlem var.",
-    "beispielEn": "I've had a bad runny nose since yesterday."
+    "beispielEn": "I've had a bad head cold since yesterday."
   },
   {
     "id": 3156,

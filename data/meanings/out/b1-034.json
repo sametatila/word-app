@@ -51,9 +51,9 @@
     "id": 1693,
     "tr": "sağlık kartı",
     "en": "health insurance card",
-    "beispiel": "Ohne e-card muss ich beim Arzt länger warten.",
-    "beispielTr": "Sağlık kartım olmadan doktorda daha uzun beklemem gerekiyor.",
-    "beispielEn": "Without my health insurance card, I have to wait longer at the doctor's."
+    "beispiel": "Beim Arzt muss ich immer meine e-card vorzeigen.",
+    "beispielTr": "Doktorda her seferinde sağlık kartımı göstermem gerekiyor.",
+    "beispielEn": "At the doctor's, I always have to show my health insurance card."
   },
   {
     "id": 1694,
@@ -217,10 +217,10 @@
   },
   {
     "id": 1905,
-    "tr": "mesleki eğitim",
+    "tr": "meslek içi eğitim",
     "en": "further training",
     "beispiel": "Nächsten Monat besucht unser Team eine Fortbildung zum Datenschutz.",
-    "beispielTr": "Ekibimiz gelecek ay veri koruma üzerine bir mesleki eğitime katılıyor.",
+    "beispielTr": "Ekibimiz gelecek ay veri koruma üzerine bir meslek içi eğitime katılıyor.",
     "beispielEn": "Next month our team is attending a training course on data protection."
   },
   {

@@ -34,10 +34,10 @@
  {
   "id": 2556,
   "tr": "zamanında",
-  "en": "on time",
+  "en": "in time",
   "beispiel": "Wir sind rechtzeitig am Bahnhof angekommen.",
   "beispielTr": "Gara zamanında vardık.",
-  "beispielEn": "We got to the station on time."
+  "beispielEn": "We got to the station in time."
  },
  {
   "id": 1449,
@@ -369,7 +369,7 @@
  },
  {
   "id": 1511,
-  "tr": "hayran",
+  "tr": "hayran kalmış",
   "en": "thrilled",
   "beispiel": "Die Kinder waren von der Vorstellung begeistert.",
   "beispielTr": "Çocuklar gösteriye hayran kaldı.",

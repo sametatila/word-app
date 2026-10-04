@@ -6,5 +6,16 @@
  { "conversation": "de-a1-zeit-haben", "de": "fertig sein", "en": "to be ready" },
  { "conversation": "de-a1-hausordnung", "de": "laut", "en": "loud" },
  { "conversation": "de-a2-bank-konto", "de": "das Sparbuch", "en": "savings book" },
- { "conversation": "de-a2-reiseplan", "de": "die Anreise", "en": "outward journey" }
+ { "conversation": "de-a2-reiseplan", "de": "die Anreise", "en": "outward journey" },
+ { "conversation": "de-b1-einbuergerung", "de": "das Grundgesetz", "en": "German constitution" },
+ { "conversation": "de-b1-weiterbildung", "de": "die Weiterbildung", "en": "further training" },
+ { "conversation": "de-b1-praktikum", "de": "die Aushilfe", "en": "temporary worker" },
+ { "conversation": "de-b1-fehlerkultur", "de": "einverstanden", "en": "agreed" },
+ { "conversation": "de-b1-zukunftsangst", "de": "der Schreck", "en": "fright" },
+ { "conversation": "de-b1-notfall-unterwegs", "de": "der Blitz", "en": "lightning" },
+ { "conversation": "de-b1-in-pension", "de": "selber", "en": "oneself" },
+ { "conversation": "de-b1-putzen-teilen", "de": "das Waschmittel", "en": "detergent" },
+ { "conversation": "de-b1-technik-diskussion", "de": "abhängig", "en": "dependent" },
+ { "conversation": "de-b1-freizeit-planen", "de": "verabredet", "en": "having plans" },
+ { "conversation": "de-c1-gerundiv", "de": "die Herausforderung", "en": "challenge" }
 ]
