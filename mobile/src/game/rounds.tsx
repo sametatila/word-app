@@ -16,7 +16,7 @@ import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
 import { Animated, Easing, Keyboard, PanResponder, Platform, ScrollView, TextInput, useWindowDimensions, View } from "react-native";
 import { Text } from "../ui/Text";
-import { promptFit } from "../ui/fontFit";
+import { promptFit, promptSize } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, CloseIcon, CorrectIcon, WrongIcon, SpeakerIcon } from "../ui/icons";
 import { haptic } from "../lib/haptics";
@@ -545,18 +545,14 @@ function useAutoSpeak(text: string | null | undefined, key: string | number) {
  * `meta`: karta AİT ikincil bilgi (kelime türü gibi). Kartın DIŞINDA duran
  * bir satır, karta ait olduğunu söylemiyordu.
  */
-function promptVariant(text: string): "display" | "h1" | "h2" {
-  if (text.length > 34) return "h2";
-  if (text.length > 18) return "h1";
-  return "display";
-}
 
 function Prompt({ label, big, sub, meta, speakText, colors }: { label: string; big: string; sub?: string | null; meta?: string | null; speakText?: string | null; colors: Palette }) {
   const kompakt = React.useContext(KeyboardOpen);
+  const size = promptSize(big);
   return (
     <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: kompakt ? spacing.md : spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: kompakt ? spacing.sm : spacing.md }, cardShadow(colors, 10)]}>
       {kompakt ? null : <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>}
-      <Text variant={promptVariant(big)} {...promptFit(big)} style={{ marginTop: kompakt ? 0 : spacing.sm, textAlign: "center" }}>{big}</Text>
+      <Text variant={size.variant} {...promptFit(big)} style={[{ marginTop: kompakt ? 0 : spacing.sm, textAlign: "center" }, size.fontSize ? { fontSize: size.fontSize } : null]}>{big}</Text>
       {speakText && !kompakt ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
       {sub ? <Text variant={kompakt ? "caption" : "body"} color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{sub}</Text> : null}
       {meta && !kompakt ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{meta}</Text> : null}
@@ -726,7 +722,7 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.correct")}</Text>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm }}>
-          <Text variant="display" {...promptFit(withArtikel(word))} style={{ textAlign: "center" }}>{withArtikel(word)}</Text>
+          <Text variant={promptSize(withArtikel(word)).variant} {...promptFit(withArtikel(word))} style={[{ textAlign: "center" }, promptSize(withArtikel(word)).fontSize ? { fontSize: promptSize(withArtikel(word)).fontSize } : null]}>{withArtikel(word)}</Text>
           <SpeakButton text={withArtikel(word)} colors={colors} size={22} />
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginVertical: spacing.md }}>
@@ -1437,7 +1433,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
           </PressableScale>
         ) : (
           <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginTop: spacing.sm }}>
-            <Text variant="display" {...promptFit(withArtikel(word))} style={{ textAlign: "center" }}>{withArtikel(word)}</Text>
+            <Text variant={promptSize(withArtikel(word)).variant} {...promptFit(withArtikel(word))} style={[{ textAlign: "center" }, promptSize(withArtikel(word)).fontSize ? { fontSize: promptSize(withArtikel(word)).fontSize } : null]}>{withArtikel(word)}</Text>
             <SpeakButton text={withArtikel(word)} colors={colors} size={24} />
           </View>
         )}

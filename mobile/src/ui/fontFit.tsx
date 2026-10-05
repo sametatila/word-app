@@ -89,13 +89,52 @@ export function FontMetricsProbe() {
  * SORU KARTINDAKİ KELİME KÜÇÜLÜR, BÖLÜNMEZ.
  *
  * Kart dar ekranda 250 pikselin altına iniyor; 32 puntoda "Anrufbeantworter"
- * sığmıyor ve kelime ortasından ikinci satıra kırılıyordu. Satır sayısı kelime
- * sayısıyla sınırlanıyor: bir kelime kendi içinde kırılmaya kalkınca satır
- * sayısı aşılıyor ve yazı sığana kadar küçülüyor. Uzun cümle (üçten çok
- * kelime) serbestçe sarılır, orada kırpma yok.
+ * sığmıyor ve kelime ortasından ikinci satıra kırılıyordu.
+ *
+ * TEK KELİME: tek satır + `adjustsFontSizeToFit` — sığana kadar küçülür (iki platformda güvenilir).
+ *
+ * İKİ-ÜÇ KELİME (2026-10-05): eskiden satır sayısı kelime sayısına sabitlenip yine
+ * `adjustsFontSizeToFit` veriliyordu. Android bu ikisini ve `Text`in sabit `lineHeight`ını birlikte
+ * ölçemiyor: yazıyı küçültürken satır yüksekliği küçülmüyor ve İKİNCİ SATIR KIRPILIYORDU — "Harfleri
+ * sırala" kartında "yemek pişirmek" yalnız "yemek" göründü (Samet, cihaz). Artık satır sayısı ve
+ * otomatik küçültme yok: metin kelime aralarından serbestçe sarılır, hiçbir satır kırpılmaz. Kelimenin
+ * ortadan bölünmemesi puntonun EN UZUN kelimeye göre seçilmesiyle sağlanıyor (kalın yazıda harf ≈ 0,6 em,
+ * kartın en dar iç genişliği 250 px).
+ *
+ * Üçten çok kelime (cümle) serbestçe sarılır, orada kırpma da küçültme de yok.
  */
 export function promptFit(text: string) {
   const n = text.trim().split(/\s+/).filter(Boolean).length;
-  if (n === 0 || n > 3) return {};
-  return { numberOfLines: n, adjustsFontSizeToFit: true, minimumFontScale: 0.45 } as const;
+  if (n !== 1) return {};
+  return { numberOfLines: 1, adjustsFontSizeToFit: true, minimumFontScale: 0.45 } as const;
+}
+
+const NARROW_PX = 250;
+const CHAR_EM = 0.6;
+const STEPS = [
+  ["display", 32],
+  ["h1", 26],
+  ["h2", 20],
+  ["h3", 16],
+] as const;
+export type PromptVariant = (typeof STEPS)[number][0];
+
+/**
+ * Soru kartı metninin puntosu. `cap` en büyük adım (soru kartı "display"). Birden çok kelimede en uzun
+ * kelime dar karta sığacak kadar küçük adım seçilir; hiçbiri yetmiyorsa (26 harften uzun kelime) en küçük
+ * adım + hesaplanan punto (`fontSize`). Tek kelimede küçültmeyi `promptFit` yapar, burada yalnız toplam
+ * uzunluk kuralı (uzun metin daha küçük başlar).
+ */
+export function promptSize(text: string, cap: PromptVariant = "display"): { variant: PromptVariant; fontSize?: number } {
+  const t = text.trim();
+  const words = t.split(/\s+/).filter(Boolean);
+  const longest = words.reduce((m, w) => Math.max(m, w.length), 0);
+  let start = STEPS.findIndex(([v]) => v === cap);
+  if (t.length > 34) start = Math.max(start, 2);
+  else if (t.length > 18) start = Math.max(start, 1);
+  if (words.length <= 1) return { variant: STEPS[start][0] };
+  for (let i = start; i < STEPS.length; i++) {
+    if (longest * CHAR_EM * STEPS[i][1] <= NARROW_PX) return { variant: STEPS[i][0] };
+  }
+  return { variant: "h3", fontSize: Math.max(11, Math.floor(NARROW_PX / (CHAR_EM * longest))) };
 }
