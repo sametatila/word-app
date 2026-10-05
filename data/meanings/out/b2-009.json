@@ -34,10 +34,10 @@
  {
   "id": 4047,
   "tr": "toplu iş sözleşmesi",
-  "en": "collective agreement",
+  "en": "collective bargaining agreement",
   "beispiel": "Der neue Tarifvertrag gilt für alle Beschäftigten der Branche.",
   "beispielTr": "Yeni toplu iş sözleşmesi sektördeki bütün çalışanları kapsıyor.",
-  "beispielEn": "The new collective agreement covers everyone in the industry."
+  "beispielEn": "The new collective bargaining agreement covers everyone in the industry."
  },
  {
   "id": 4048,
@@ -209,10 +209,10 @@
  },
  {
   "id": 4069,
-  "tr": "iş referansı",
+  "tr": "bonservis",
   "en": "employment reference",
   "beispiel": "Ein wohlwollend formuliertes Arbeitszeugnis erleichtert die nächste Bewerbung.",
-  "beispielTr": "İyi niyetle yazılmış bir iş referansı sonraki başvuruyu kolaylaştırır.",
+  "beispielTr": "Olumlu ifadelerle yazılmış bir bonservis sonraki başvuruyu kolaylaştırır.",
   "beispielEn": "A favorably worded employment reference makes the next application easier."
  },
  {

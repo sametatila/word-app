@@ -17,5 +17,16 @@
  { "conversation": "de-b1-putzen-teilen", "de": "das Waschmittel", "en": "detergent" },
  { "conversation": "de-b1-technik-diskussion", "de": "abhängig", "en": "dependent" },
  { "conversation": "de-b1-freizeit-planen", "de": "verabredet", "en": "having plans" },
- { "conversation": "de-c1-gerundiv", "de": "die Herausforderung", "en": "challenge" }
+ { "conversation": "de-c1-gerundiv", "de": "die Herausforderung", "en": "challenge" },
+ { "conversation": "de-b2-praesentation", "de": "die Gliederung", "en": "outline" },
+ { "conversation": "de-b2-kompromiss", "de": "stillschweigend", "en": "tacit" },
+ { "conversation": "de-b2-passiv-modal", "de": "absegnen", "en": "to sign off" },
+ { "conversation": "de-b2-leserbrief", "de": "die Gegendarstellung", "en": "counterstatement" },
+ { "conversation": "de-b2-experiment", "de": "betrachten", "en": "to examine" },
+ { "conversation": "de-b2-datenschutz", "de": "der Datenmissbrauch", "en": "data misuse" },
+ { "conversation": "de-b2-landflucht", "de": "der Pendler", "en": "commuter" },
+ { "conversation": "de-b2-festival", "de": "der Brauch", "en": "custom" },
+ { "conversation": "de-b2-networking-b2", "de": "das Arbeitszeugnis", "en": "employment reference" },
+ { "conversation": "de-b2-verabschiedung-kollegen", "de": "die Laufbahn", "en": "career path" },
+ { "conversation": "de-b2-verabschiedung-kollegen", "de": "die Verbundenheit", "en": "bond" }
 ]

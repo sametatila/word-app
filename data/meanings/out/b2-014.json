@@ -2,10 +2,10 @@
   {
     "id": 4293,
     "tr": "arşiv birimi",
-    "en": "registry",
+    "en": "records office",
     "beispiel": "Alte Akten lagern seit Jahren unten in der Registratur.",
     "beispielTr": "Eski dosyalar yıllardır aşağıdaki arşiv biriminde duruyor.",
-    "beispielEn": "Old files have been sitting in the registry for years."
+    "beispielEn": "Old files have been stored downstairs in the records office for years."
   },
   {
     "id": 4294,
@@ -345,7 +345,7 @@
   },
   {
     "id": 4336,
-    "tr": "onaydan geçirmek",
+    "tr": "onay vermek",
     "en": "to sign off",
     "beispiel": "Die Leitung muss das Konzept noch absegnen.",
     "beispielTr": "Konsepti bir de yönetimin onaylaması gerekiyor.",

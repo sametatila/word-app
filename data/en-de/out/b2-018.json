@@ -33,7 +33,7 @@
  { "id": 204419, "beispielDe": "Die Kartoffeln haben im warmen Keller schon gekeimt." },
  { "id": 204420, "beispielDe": "Bei dieser Hitze wird das Brot schimmeln." },
  { "id": 204421, "beispielDe": "Der Kohl muss mehrere Wochen im Fass gären." },
- { "id": 204424, "beispielDe": "Ich bringe das Problem bis Montag in Ordnung." },
+ { "id": 204424, "beispielDe": "Ich kläre das Problem bis Montag." },
  { "id": 204427, "beispielDe": "Der Hof arbeitet seit Jahren mit ökologischen Methoden." },
  { "id": 204428, "beispielDe": "Konventionelle Methoden sind immer noch billiger als die neuen." },
  { "id": 204429, "beispielDe": "Die saisonale Arbeit auf den Höfen beginnt im Juni." },
@@ -48,5 +48,5 @@
  { "id": 204444, "beispielDe": "Der Stadtrat beschließt den Haushaltsplan für das nächste Jahr." },
  { "id": 204445, "beispielDe": "Die Bibliothek verlangt eine Mahngebühr für überfällige Bücher." },
  { "id": 204446, "beispielDe": "Die Zahlungsfrist endet nächsten Freitag." },
- { "id": 204447, "beispielDe": "Die Fälligkeit der Miete ist nächsten Freitag." }
+ { "id": 204447, "beispielDe": "Das Fälligkeitsdatum der Miete ist nächsten Freitag." }
 ]

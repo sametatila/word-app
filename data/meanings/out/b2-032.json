@@ -107,9 +107,9 @@
     "id": 5208,
     "tr": "hafif suç",
     "en": "misdemeanor",
-    "beispiel": "Für ein solches Vergehen sieht das Gesetz eine Geldbuße vor.",
+    "beispiel": "Für ein solches Vergehen sieht das Gesetz eine Geldstrafe vor.",
     "beispielTr": "Kanun bu tür hafif suçlar için para cezası öngörüyor.",
-    "beispielEn": "For such a misdemeanor the law provides a fine."
+    "beispielEn": "For such a misdemeanor, the law provides for a fine."
   },
   {
     "id": 5209,
@@ -251,7 +251,7 @@
     "id": 5226,
     "tr": "madde",
     "en": "section",
-    "beispiel": "Der zuständige Paragraf regelt die Kündigung von Mietverhältnissen.",
+    "beispiel": "Der entsprechende Paragraf regelt die Kündigung von Mietverhältnissen.",
     "beispielTr": "İlgili madde kira sözleşmesinin feshini düzenliyor.",
     "beispielEn": "The relevant section governs the termination of tenancies."
   },
@@ -283,9 +283,9 @@
     "id": 5230,
     "tr": "vesayet",
     "en": "guardianship",
-    "beispiel": "Das Gericht übertrug die Vormundschaft für das Kind der Tante.",
-    "beispielTr": "Mahkeme çocuğun vesayetini teyzesine verdi.",
-    "beispielEn": "The court gave guardianship of the child to the aunt."
+    "beispiel": "Das Gericht übertrug den Großeltern die Vormundschaft für das Kind.",
+    "beispielTr": "Mahkeme çocuğun vesayetini büyükanne ve büyükbabasına verdi.",
+    "beispielEn": "The court gave guardianship of the child to the grandparents."
   },
   {
     "id": 5231,
@@ -362,7 +362,7 @@
   {
     "id": 5240,
     "tr": "süreyle sınırlamak",
-    "en": "to limit in time",
+    "en": "to put a time limit on",
     "beispiel": "Meine Stelle ist auf ein Jahr befristet.",
     "beispielTr": "İşim bir yıl süreyle sınırlı.",
     "beispielEn": "My job is limited to one year."

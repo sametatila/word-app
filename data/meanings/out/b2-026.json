@@ -17,11 +17,11 @@
   },
   {
     "id": 4897,
-    "tr": "incelemek",
-    "en": "to examine",
+    "tr": "dikkatle bakmak",
+    "en": "to look at",
     "beispiel": "Er betrachtete das Bild lange, ohne ein Wort zu sagen.",
-    "beispielTr": "Resmi tek kelime etmeden uzun uzun inceledi.",
-    "beispielEn": "He examined the painting for a long time without saying a word."
+    "beispielTr": "Resme tek kelime etmeden uzun uzun baktı.",
+    "beispielEn": "He looked at the painting for a long time without saying a word."
   },
   {
     "id": 4898,
@@ -385,10 +385,10 @@
   },
   {
     "id": 4943,
-    "tr": "karşı açıklama",
+    "tr": "tekzip",
     "en": "counterstatement",
     "beispiel": "Der Politiker verlangte eine Gegendarstellung auf derselben Seite.",
-    "beispielTr": "Siyasetçi aynı sayfada bir karşı açıklama istedi.",
+    "beispielTr": "Siyasetçi aynı sayfada bir tekzip yayımlanmasını istedi.",
     "beispielEn": "The politician demanded a counterstatement on the same page."
   },
   {

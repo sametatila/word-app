@@ -241,7 +241,7 @@
   },
   {
     "id": 3848,
-    "tr": "üniversite kaydını sildirme",
+    "tr": "üniversite kaydının silinmesi",
     "en": "disenrollment",
     "beispiel": "Nach dem Abschluss erfolgt die Exmatrikulation automatisch.",
     "beispielTr": "Mezuniyetin ardından üniversite kaydı kendiliğinden siliniyor.",
@@ -299,9 +299,9 @@
     "id": 3861,
     "tr": "çıkış bildirimi",
     "en": "deregistration",
-    "beispiel": "Bei einem Umzug ist eine Abmeldung erforderlich.",
-    "beispielTr": "Taşınırken çıkış bildirimi yapmak zorunlu.",
-    "beispielEn": "A deregistration is required when you move."
+    "beispiel": "Bei einem Umzug ins Ausland ist eine Abmeldung erforderlich.",
+    "beispielTr": "Yurt dışına taşınırken çıkış bildirimi yapmak zorunlu.",
+    "beispielEn": "Deregistration is required when you move abroad."
   },
   {
     "id": 3864,

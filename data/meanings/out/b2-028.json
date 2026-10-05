@@ -9,10 +9,10 @@
   },
   {
     "id": 4996,
-    "tr": "oturma statüsü",
+    "tr": "oturum belgesi",
     "en": "residence title",
     "beispiel": "Ohne gültigen Aufenthaltstitel darfst du hier nicht arbeiten.",
-    "beispielTr": "Geçerli bir oturma izni olmadan burada çalışamazsın.",
+    "beispielTr": "Geçerli bir oturum belgesi olmadan burada çalışamazsın.",
     "beispielEn": "Without a valid residence title you may not work here."
   },
   {

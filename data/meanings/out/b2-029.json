@@ -226,10 +226,10 @@
   {
     "id": 5073,
     "tr": "taşkın",
-    "en": "high water",
+    "en": "flooding",
     "beispiel": "Die Stadt hat am Fluss Mauern gegen Hochwasser gebaut.",
     "beispielTr": "Şehir, nehir kenarına taşkına karşı duvarlar yaptı.",
-    "beispielEn": "The city built walls against high water along the river."
+    "beispielEn": "The city built walls along the river to protect against flooding."
   },
   {
     "id": 5074,

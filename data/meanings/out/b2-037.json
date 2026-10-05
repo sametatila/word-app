@@ -17,10 +17,10 @@
  },
  {
   "id": 5448,
-  "tr": "veri kötüye kullanımı",
+  "tr": "verilerin kötüye kullanılması",
   "en": "data misuse",
   "beispiel": "Gegen den Anbieter läuft eine Untersuchung wegen möglichen Datenmissbrauchs.",
-  "beispielTr": "Sağlayıcı hakkında olası veri kötüye kullanımı nedeniyle soruşturma yürütülüyor.",
+  "beispielTr": "Sağlayıcı hakkında verilerin kötüye kullanılması şüphesiyle soruşturma yürütülüyor.",
   "beispielEn": "The provider is under investigation for possible data misuse."
  },
  {
@@ -298,10 +298,10 @@
  {
   "id": 5483,
   "tr": "bloke etmek",
-  "en": "to block",
+  "en": "to lock",
   "beispiel": "Nach drei falschen Versuchen wird der Zugang automatisch gesperrt.",
   "beispielTr": "Üç yanlış denemeden sonra erişim otomatik olarak bloke ediliyor.",
-  "beispielEn": "After three wrong attempts the access is blocked automatically."
+  "beispielEn": "After three wrong attempts, the account is locked automatically."
  },
  {
   "id": 5484,

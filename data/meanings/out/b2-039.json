@@ -114,9 +114,9 @@
   {
     "id": 5560,
     "tr": "sonraki kiracı",
-    "en": "next tenant",
+    "en": "replacement tenant",
     "beispiel": "Wenn du einen Nachmieter findest, kommst du früher aus dem Vertrag.",
-    "beispielTr": "Sonraki kiracıyı bulursan sözleşmeden daha erken çıkabilirsin.",
+    "beispielTr": "Yerine yeni bir kiracı bulursan sözleşmeden daha erken çıkabilirsin.",
     "beispielEn": "If you find a replacement tenant, you can leave the contract earlier."
   },
   {
@@ -337,7 +337,7 @@
   },
   {
     "id": 5588,
-    "tr": "üstü kapalı",
+    "tr": "zımni",
     "en": "tacit",
     "beispiel": "Der Vertrag verlängert sich stillschweigend um ein weiteres Jahr.",
     "beispielTr": "Sözleşme kendiliğinden bir yıl daha uzuyor.",

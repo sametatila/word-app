@@ -329,10 +329,10 @@
  },
  {
   "id": 5437,
-  "tr": "çalışma belleği",
+  "tr": "RAM",
   "en": "RAM",
   "beispiel": "Der Arbeitsspeicher reicht für so ein aufwendiges Programm nicht aus.",
-  "beispielTr": "Çalışma belleği bu kadar ağır bir program için yetmiyor.",
+  "beispielTr": "RAM bu kadar ağır bir program için yetmiyor.",
   "beispielEn": "The RAM is not enough for such a demanding program."
  },
  {

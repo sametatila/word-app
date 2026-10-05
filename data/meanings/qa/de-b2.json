@@ -885,7 +885,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'migration background' Almancadan kopya bir ifade; Amerikan İngilizcesinde doğal karşılık 'immigrant background'."
+   "reason": "'migration background' Almancadan kopya bir ifade; Amerikan İngilizcesinde doğal karşılık 'immigrant background'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3354,
@@ -942,7 +943,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "tr ve örnek çeviri komşuluk ilişkisi diyor; ayrıca 'neighborhood' Viertel kartının (3038) İngilizcesiyle çakışıyor, iki kart ayırt edilemiyor."
+   "reason": "tr ve örnek çeviri komşuluk ilişkisi diyor; ayrıca 'neighborhood' Viertel kartının (3038) İngilizcesiyle çakışıyor, iki kart ayırt edilemiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3746,
@@ -1013,7 +1015,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"çatışma\" en \"dispute\" ile uyumsuz ve Konflikt kartıyla aynı; ancak önerilen \"tartışma\" da Diskussion ve Debatte ile aynı karşılık olur. Bu yüzden \"dispute\"a denk gelen ve başka kartta kullanılmayan \"anlaşmazlık\" seçildi. Örnek çevirisi olduğu gibi kalıyor."
+   "reason": "\"çatışma\" en \"dispute\" ile uyumsuz ve Konflikt kartıyla aynı; ancak önerilen \"tartışma\" da Diskussion ve Debatte ile aynı karşılık olur. Bu yüzden \"dispute\"a denk gelen ve başka kartta kullanılmayan \"anlaşmazlık\" seçildi. Örnek çevirisi olduğu gibi kalıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3840,
@@ -1042,7 +1045,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Sildirme\" işi öğrencinin başlattığını söylüyor. Örnekte ise kayıt mezuniyetle kendiliğinden siliniyor."
+   "reason": "\"Sildirme\" işi öğrencinin başlattığını söylüyor. Örnekte ise kayıt mezuniyetle kendiliğinden siliniyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3861,
@@ -1061,7 +1065,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Almanya içindeki taşınmada Abmeldung gerekmiyor, cümle yanlış bilgi veriyor. Yeni cümle kelimeyi içeriyor, 9 kelime ve doğal."
+   "reason": "Almanya içindeki taşınmada Abmeldung gerekmiyor, cümle yanlış bilgi veriyor. Yeni cümle kelimeyi içeriyor, 9 kelime ve doğal.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3862,
@@ -1122,7 +1127,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Amerikan İngilizcesindeki terim \"collective bargaining agreement\"; \"collective agreement\" İngiliz kullanımı."
+   "reason": "Amerikan İngilizcesindeki terim \"collective bargaining agreement\"; \"collective agreement\" İngiliz kullanımı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4069,
@@ -1139,7 +1145,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İşverenin verdiği resmî hizmet belgesinin tam Türkçe karşılığı bonservis. \"İş referansı\" tavsiye veren kişiyi ya da mektubu çağrıştırıyor. \"wohlwollend formuliert\" ise \"olumlu ifadelerle\" demek."
+   "reason": "İşverenin verdiği resmî hizmet belgesinin tam Türkçe karşılığı bonservis. \"İş referansı\" tavsiye veren kişiyi ya da mektubu çağrıştırıyor. \"wohlwollend formuliert\" ise \"olumlu ifadelerle\" demek.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4098,
@@ -1170,7 +1177,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Sıçramalı' Türkçede doğal değil ve en 'erratic' ile örtüşmüyor; 'düzensiz' hem karşılığa hem cümleye uyuyor."
+   "reason": "'Sıçramalı' Türkçede doğal değil ve en 'erratic' ile örtüşmüyor; 'düzensiz' hem karşılığa hem cümleye uyuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4161,
@@ -1201,7 +1209,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Önüne geçmek' tümden engellemek demek, eindämmen/curb ise azaltıp denetim altında tutmak. 'Sınırlamak' begrenzen/einschränken kartlarıyla çakışır, bu yüzden 'dizginlemek' seçildi."
+   "reason": "'Önüne geçmek' tümden engellemek demek, eindämmen/curb ise azaltıp denetim altında tutmak. 'Sınırlamak' begrenzen/einschränken kartlarıyla çakışır, bu yüzden 'dizginlemek' seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4188,
@@ -1262,7 +1271,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Gliederung bir çalışmanın bölümlere ayrılışıdır; 'ana hatlar' özet gibi anlaşılıyor, 'bemängelte' de eleştirmek demek. en 'outline' doğru, 'structure' ise Struktur kartıyla çakışır, o yüzden en değişmedi."
+   "reason": "Gliederung bir çalışmanın bölümlere ayrılışıdır; 'ana hatlar' özet gibi anlaşılıyor, 'bemängelte' de eleştirmek demek. en 'outline' doğru, 'structure' ise Struktur kartıyla çakışır, o yüzden en değişmedi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4236,
@@ -1293,7 +1303,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Meslek yolu' doğal bir Türkçe ifade değil. Ancak 'kariyer' Karriere (B1) ile çakışır; o yüzden en: 'career path' ile uyumlu olan 'kariyer yolu' seçildi."
+   "reason": "'Meslek yolu' doğal bir Türkçe ifade değil. Ancak 'kariyer' Karriere (B1) ile çakışır; o yüzden en: 'career path' ile uyumlu olan 'kariyer yolu' seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4246,
@@ -1380,7 +1391,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Amerikan İngilizcesinde 'registry' bu birim için kullanılmaz, 'records office' doğru; çeviride eksik olan 'unten' de eklendi."
+   "reason": "Amerikan İngilizcesinde 'registry' bu birim için kullanılmaz, 'records office' doğru; çeviride eksik olan 'unten' de eklendi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4331,
@@ -1409,7 +1421,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Onaydan geçirmek\" onay isteyen tarafın işi gibi okunuyor. Absegnen ise onaylayanın fiili, örnekteki özne de yönetim."
+   "reason": "\"Onaydan geçirmek\" onay isteyen tarafın işi gibi okunuyor. Absegnen ise onaylayanın fiili, örnekteki özne de yönetim.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4372,
@@ -1426,7 +1439,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "\"Weniger Ernte bringen\" doğal Almanca değil, yerleşik kalıp \"weniger Ertrag bringen\". Cümlede gerçek bir hata var."
+   "reason": "\"Weniger Ernte bringen\" doğal Almanca değil, yerleşik kalıp \"weniger Ertrag bringen\". Cümlede gerçek bir hata var.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4397,
@@ -1499,7 +1513,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"bağlılık\" sadakate kayıyor ve örnekte doğal değil; \"gönül bağı\" Verbundenheit'ı karşılıyor, Bindung'un \"bağ\"ından da ayrışıyor."
+   "reason": "\"bağlılık\" sadakate kayıyor ve örnekte doğal değil; \"gönül bağı\" Verbundenheit'ı karşılıyor, Bindung'un \"bağ\"ından da ayrışıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4571,
@@ -1544,7 +1559,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"sokulgan\" çoğunlukla sevgi gösteren, sokulan anlamında anlaşılır; gesellig için \"insan canlısı\" açıkça daha isabetli ve başka kartla çakışmıyor."
+   "reason": "\"sokulgan\" çoğunlukla sevgi gösteren, sokulan anlamında anlaşılır; gesellig için \"insan canlısı\" açıkça daha isabetli ve başka kartla çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4659,
@@ -1603,7 +1619,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Schlichtung bağlayıcı olmayan uzlaştırmadır; arbitration bağlayıcı tahkimdir (Schiedsstelle). Bu kurumların resmî İngilizce adındaki terim \"conciliation\" olduğu için \"mediation\" yerine bu kullanıldı."
+   "reason": "Schlichtung bağlayıcı olmayan uzlaştırmadır; arbitration bağlayıcı tahkimdir (Schiedsstelle). Bu kurumların resmî İngilizce adındaki terim \"conciliation\" olduğu için \"mediation\" yerine bu kullanıldı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4842,
@@ -1680,7 +1697,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnek çevirisi 'gelenek' diyerek kartla çelişiyor ve Tradition kartının karşılığına kayıyor; Brauch için en doğal karşılık 'âdet'."
+   "reason": "Örnek çevirisi 'gelenek' diyerek kartla çelişiyor ve Tradition kartının karşılığına kayıyor; Brauch için en doğal karşılık 'âdet'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4896,
@@ -1716,7 +1734,8 @@
     "tr",
     "en"
    ],
-   "reason": "betrachten 'bakmak, seyretmek'; mevcut 'to examine' A2'deki untersuchen kartıyla aynı İngilizce karşılık, ayırt edilemiyor."
+   "reason": "betrachten 'bakmak, seyretmek'; mevcut 'to examine' A2'deki untersuchen kartıyla aynı İngilizce karşılık, ayırt edilemiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4908,
@@ -1761,7 +1780,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Basın hukukunda Gegendarstellung'un yerleşik Türkçe karşılığı 'tekzip'; başka kartta yok, çakışma yaratmıyor."
+   "reason": "Basın hukukunda Gegendarstellung'un yerleşik Türkçe karşılığı 'tekzip'; başka kartta yok, çakışma yaratmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4965,
@@ -1778,7 +1798,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'assumption' Annahme kartının (C1) karşılığıyla çakışıyor ve Vermutung'un anlamı değil; 'guess' tr 'tahmin' ile de uyumlu."
+   "reason": "'assumption' Annahme kartının (C1) karşılığıyla çakışıyor ve Vermutung'un anlamı değil; 'guess' tr 'tahmin' ile de uyumlu.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4985,
@@ -1823,7 +1844,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Aufenthaltstitel oturum hakkı veren belge; örnekteki 'oturma izni' Aufenthaltserlaubnis kartıyla çakışıyordu, kart ve örnek de birbirini tutmuyordu."
+   "reason": "Aufenthaltstitel oturum hakkı veren belge; örnekteki 'oturma izni' Aufenthaltserlaubnis kartıyla çakışıyordu, kart ve örnek de birbirini tutmuyordu.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5005,
@@ -1882,7 +1904,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'High water' bu anlamda Almanca kalıbı; Amerikan İngilizcesinde doğal karşılık 'flooding'. Überschwemmung 'flood' olduğu için ayırt edilebilirlik korunuyor."
+   "reason": "'High water' bu anlamda Almanca kalıbı; Amerikan İngilizcesinde doğal karşılık 'flooding'. Überschwemmung 'flood' olduğu için ayırt edilebilirlik korunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5098,
@@ -2057,7 +2080,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Geldbuße kabahatin yaptırımı, Vergehen için Geldstrafe doğru; İngilizcede 'provides for' gerekli. Türkçe cümle zaten doğru, değişmedi."
+   "reason": "Geldbuße kabahatin yaptırımı, Vergehen için Geldstrafe doğru; İngilizcede 'provides for' gerekli. Türkçe cümle zaten doğru, değişmedi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5223,
@@ -2088,7 +2112,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'zuständig' kişi ve kurumlar için kullanılır, bir kanun maddesiyle doğru eşdizim değil. Öğrenciye yanlış kalıp öğretiyor."
+   "reason": "'zuständig' kişi ve kurumlar için kullanılır, bir kanun maddesiyle doğru eşdizim değil. Öğrenciye yanlış kalıp öğretiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5230,
@@ -2107,7 +2132,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Mevcut sözcük sırasında 'das Kind der Tante' tamlama (teyzenin çocuğu) diye okunuyor; ayrıca Tante hem hala hem teyze olabilirken çeviri yalnız 'teyze' diyor. Yeni cümlede belirsizlik yok."
+   "reason": "Mevcut sözcük sırasında 'das Kind der Tante' tamlama (teyzenin çocuğu) diye okunuyor; ayrıca Tante hem hala hem teyze olabilirken çeviri yalnız 'teyze' diyor. Yeni cümlede belirsizlik yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5236,
@@ -2138,7 +2164,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'to limit in time' doğal bir İngilizce kalıp değil; önerilen ifade doğal ve doğru."
+   "reason": "'to limit in time' doğal bir İngilizce kalıp değil; önerilen ifade doğal ve doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5322,
@@ -2211,7 +2238,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Duden'e göre not/ipucu anlamında çoğul \"Stichworte\"; çeviriler zaten doğru, yalnız Almanca cümle değişir."
+   "reason": "Duden'e göre not/ipucu anlamında çoğul \"Stichworte\"; çeviriler zaten doğru, yalnız Almanca cümle değişir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5396,
@@ -2272,7 +2300,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Bilgisayar belleği için Türkçede yerleşik karşılık RAM; 'çalışma belleği' psikoloji terimi gibi okunuyor."
+   "reason": "Bilgisayar belleği için Türkçede yerleşik karşılık RAM; 'çalışma belleği' psikoloji terimi gibi okunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5448,
@@ -2289,7 +2318,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'veri kötüye kullanımı' Türkçede doğal tamlama değil; yerleşik ifade 'verilerin kötüye kullanılması'."
+   "reason": "'veri kötüye kullanımı' Türkçede doğal tamlama değil; yerleşik ifade 'verilerin kötüye kullanılması'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5450,
@@ -2348,7 +2378,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizce karşılık blockieren kartıyla aynıydı; Zugang burada oturum/hesap erişimi, 'account is locked' doğal ifade."
+   "reason": "İngilizce karşılık blockieren kartıyla aynıydı; Zugang burada oturum/hesap erişimi, 'account is locked' doğal ifade.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5498,
@@ -2384,7 +2415,8 @@
     "tr",
     "en"
    ],
-   "reason": "'İnce toz' ve 'fine dust' kelimesi kelimesine çeviri; yerleşik terimler partikül madde ve particulate matter."
+   "reason": "'İnce toz' ve 'fine dust' kelimesi kelimesine çeviri; yerleşik terimler partikül madde ve particulate matter.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5508,
@@ -2406,7 +2438,8 @@
     "tr",
     "en"
    ],
-   "reason": "Solaranlage tek panel değil tesisin tamamı; tekil 'solar panel' cümlede de yanlış resim veriyor. İngilizce cümlede yalnız terim değişti."
+   "reason": "Solaranlage tek panel değil tesisin tamamı; tekil 'solar panel' cümlede de yanlış resim veriyor. İngilizce cümlede yalnız terim değişti.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5512,
@@ -2479,7 +2512,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizcede yerleşik terim çoğul \"microplastics\"; tekil kullanım doğal değil."
+   "reason": "İngilizcede yerleşik terim çoğul \"microplastics\"; tekil kullanım doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5535,
@@ -2498,7 +2532,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Yeni binalarda \"eski\" gazlı ısıtma olamaz; cümle mantıksız, gerçekten düzeltilmeli."
+   "reason": "Yeni binalarda \"eski\" gazlı ısıtma olamaz; cümle mantıksız, gerçekten düzeltilmeli.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5537,
@@ -2529,7 +2564,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Belirsiz \"einen Nachmieter\" belirli \"sonraki kiracıyı\" diye çevrilmiş; İngilizce karşılık da örnekle uyumlu ve daha isabetli olur."
+   "reason": "Belirsiz \"einen Nachmieter\" belirli \"sonraki kiracıyı\" diye çevrilmiş; İngilizce karşılık da örnekle uyumlu ve daha isabetli olur.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5569,
@@ -2558,7 +2594,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Üstü kapalı\" ima yoluyla demek; stillschweigend/tacit açıkça söylenmeden kabul edilen demek, Türkçe karşılığı \"zımni\"."
+   "reason": "\"Üstü kapalı\" ima yoluyla demek; stillschweigend/tacit açıkça söylenmeden kabul edilen demek, Türkçe karşılığı \"zımni\".",
+   "applied": "2026-10-05"
   },
   {
    "id": 5599,
@@ -2601,7 +2638,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"mülk daire\" yerleşik bir ifade değil. Eigentumswohnung'un Türkçe hukuki karşılığı \"kat mülkiyetli daire\"; başka bir kartla da çakışmıyor."
+   "reason": "\"mülk daire\" yerleşik bir ifade değil. Eigentumswohnung'un Türkçe hukuki karşılığı \"kat mülkiyetli daire\"; başka bir kartla da çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5647,
@@ -2632,7 +2670,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"banliyö yolcusu\" yalnız banliyö treni yolcusunu anlatıyor ve dar kalıyor. Pendler her araçla işe gidip gelen kişidir; çakışma da yok."
+   "reason": "\"banliyö yolcusu\" yalnız banliyö treni yolcusunu anlatıyor ve dar kalıyor. Pendler her araçla işe gidip gelen kişidir; çakışma da yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5677,
@@ -2647,7 +2686,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"koymak\" stellen (802) kartıyla aynı olduğu için iki kart ayırt edilemiyor. Önerilen \"bırakmak\" da lassen (291) ile, \"to leave\" de lassen ve verlassen ile çakışır. Bu yüzden ayırt edici olan \"bir yere bırakmak\" seçildi; örnek cümleye de uyuyor. en \"to set down\" geçerli bir anlam, değişmiyor."
+   "reason": "\"koymak\" stellen (802) kartıyla aynı olduğu için iki kart ayırt edilemiyor. Önerilen \"bırakmak\" da lassen (291) ile, \"to leave\" de lassen ve verlassen ile çakışır. Bu yüzden ayırt edici olan \"bir yere bırakmak\" seçildi; örnek cümleye de uyuyor. en \"to set down\" geçerli bir anlam, değişmiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 5678,

@@ -162,10 +162,10 @@
   {
     "id": 4965,
     "tr": "tahmin",
-    "en": "assumption",
+    "en": "guess",
     "beispiel": "Bisher gibt es nur Vermutungen über die Ursache des Ausfalls.",
     "beispielTr": "Arızanın nedeni hakkında şimdilik yalnızca tahminler var.",
-    "beispielEn": "So far there are only assumptions about the cause of the outage."
+    "beispielEn": "So far there are only guesses about the cause of the outage."
   },
   {
     "id": 4966,
