@@ -9,6 +9,7 @@ import { assessments, profiles, userConsents } from "@/lib/db/schema";
 import { AI_CONSENT_VERSIONS } from "@/lib/ai-consent-shared";
 import { chatConfigured, completeChat, type CallReport } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
+import { recordAiUsage } from "@/lib/ai-usage";
 import { sendToUser } from "@/lib/push";
 import {
   ASSESS_MAX_CHARS,
@@ -287,8 +288,11 @@ export async function runAssessQueue(limit = 20): Promise<{ pending: number; don
     };
     let provider: string | null = null;
     try {
+      /* MUHASEBE: anlık yolla aynı `assess` satırı. Bu çağrılar eskiden `ai_usage`a
+         yazılmıyordu; panel ve bütçe uyarısı kuyruğun maliyetini görmüyordu. */
       const raw = await completeChat(assessSystemPrompt(req.kind, req.level, req.lang, req.native), [{ role: "user", content: assessUserMessage(req) }], ASSESS_MAX_TOKENS, (r) => {
         if (r.ok) provider = `${r.provider}/${r.model}`;
+        recordAiUsage(row.userId, { kind: "assess", ...r });
       });
       const result = parseAssessment(raw, row.answer, req.kind);
       if (!result) {
