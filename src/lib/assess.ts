@@ -10,6 +10,7 @@ import { AI_CONSENT_VERSIONS } from "@/lib/ai-consent-shared";
 import { chatConfigured, completeChat, type CallReport } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { recordAiUsage } from "@/lib/ai-usage";
+import { isTranslateCheck, runTranslateCheck, translateCheckAssessment } from "@/lib/translate-check";
 import { sendToUser } from "@/lib/push";
 import {
   ASSESS_MAX_CHARS,
@@ -71,6 +72,9 @@ export function assessHash(req: AssessRequest): string {
       // bağlandı (`EN_VARIETY`); eski İngilizce sonuçlar İngiliz biçimi önerebiliyordu.
       // Almanca özet değişmiyor.
       p: req.lang === "en" || req.native === "en" ? 2 : undefined,
+      // Çeviri kurtarması 2026-10-05'ten beri ayrı istemle (`lib/translate-check`):
+      // eski tam rubrik sonucu önbellekten dönmesin.
+      c: isTranslateCheck(req) ? 1 : undefined,
     }),
   );
   return h.digest("hex").slice(0, 40);
@@ -125,19 +129,32 @@ export async function assess(
     report?.(r);
   };
 
-  let raw: string;
+  /* ÇEVİRİ KURTARMASI ayrı, kısa bir istemle (bkz. `lib/translate-check`): tam
+     rubrik eşiğiyle hatalı çevirilerin neredeyse hepsi "doğru" sayılıyordu. Kayıt,
+     önbellek ve kota aynı yoldan; istemcinin eşiğine uyan puanı sunucu kuruyor. */
+  const translateCheck = isTranslateCheck(clean);
+
+  let raw = "";
+  let result: Assessment | null;
   try {
-    raw = await completeChat(
-      assessSystemPrompt(clean.kind, clean.level, clean.lang, clean.native),
-      [{ role: "user", content: assessUserMessage(clean) }],
-      ASSESS_MAX_TOKENS,
-      reportAndRemember,
-    );
+    if (translateCheck) {
+      const verdict = await runTranslateCheck(clean, async (system, user, maxTokens) => {
+        raw = await completeChat(system, [{ role: "user", content: user }], maxTokens, reportAndRemember);
+        return raw;
+      });
+      result = verdict ? translateCheckAssessment(clean, verdict) : null;
+    } else {
+      raw = await completeChat(
+        assessSystemPrompt(clean.kind, clean.level, clean.lang, clean.native),
+        [{ role: "user", content: assessUserMessage(clean) }],
+        ASSESS_MAX_TOKENS,
+        reportAndRemember,
+      );
+      result = parseAssessment(raw, text, clean.kind, minWordsFrom(clean.task.constraints));
+    }
   } catch (err) {
     return { ok: false, reason: "upstream", detail: (err as Error).message };
   }
-
-  const result = parseAssessment(raw, text, clean.kind, minWordsFrom(clean.task.constraints));
   if (!result) {
     console.error("[assess] geçersiz çıktı", raw.slice(0, 300));
     return { ok: false, reason: "invalid" };

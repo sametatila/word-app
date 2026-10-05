@@ -22,6 +22,8 @@
     "report:all": "npm run -s report:events && npm run -s report:learning && npm run -s report:stt",
     "test:events": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-events.ts",
     "test:assess": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/assess-eval.ts",
+    "test:translate-check": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/translate-check-eval.ts",
+    "test:translate-check-unit": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-translate-check.ts",
     "test:coach-lines": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-coach.ts",
     "test:rules": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-rules.ts",
     "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",
