@@ -5,7 +5,7 @@
   "en": "insolvency",
   "beispiel": "Wegen hoher Schulden musste die Firma Insolvenz anmelden.",
   "beispielTr": "Yüksek borçlar yüzünden şirket iflas başvurusu yapmak zorunda kaldı.",
-  "beispielEn": "Because of high debts the company had to file for insolvency."
+  "beispielEn": "Because of high debts, the company had to file for bankruptcy."
  },
  {
   "id": 3404,
@@ -68,8 +68,8 @@
   "tr": "büro görevlisi",
   "en": "clerk",
   "beispiel": "Der zuständige Sachbearbeiter prüft den Antrag.",
-  "beispielTr": "İlgili işlem memuru başvuruyu inceliyor.",
-  "beispielEn": "The responsible caseworker is reviewing the application."
+  "beispielTr": "İlgili görevli başvuruyu inceliyor.",
+  "beispielEn": "The clerk in charge is reviewing the application."
  },
  {
   "id": 3409,
@@ -149,7 +149,7 @@
   "en": "sustainable",
   "beispiel": "Die Firma setzt konsequent auf eine nachhaltige Produktion.",
   "beispielTr": "Şirket kararlılıkla sürdürülebilir üretime yöneliyor.",
-  "beispielEn": "The company consistently relies on sustainable production."
+  "beispielEn": "The company is firmly committed to sustainable production."
  },
  {
   "id": 3242,
@@ -324,7 +324,7 @@
   "tr": "iş piyasası",
   "en": "job market",
   "beispiel": "Der Arbeitsmarkt für IT-Fachkräfte ist zurzeit sehr angespannt.",
-  "beispielTr": "BT uzmanları için iş piyasası şu sıralar çok gergin.",
+  "beispielTr": "BT uzmanları için iş piyasasında şu sıralar büyük bir eleman sıkıntısı var.",
   "beispielEn": "The job market for IT specialists is very tight right now."
  },
  {
@@ -381,7 +381,7 @@
   "en": "market share",
   "beispiel": "Der Konzern konnte seinen Marktanteil im letzten Jahr deutlich ausbauen.",
   "beispielTr": "Şirketler grubu geçen yıl pazar payını belirgin biçimde artırdı.",
-  "beispielEn": "The corporation clearly expanded its market share last year."
+  "beispielEn": "The corporation managed to significantly expand its market share last year."
  },
  {
   "id": 3223,

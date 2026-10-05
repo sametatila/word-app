@@ -4,7 +4,7 @@
   "tr": "kaliteli",
   "en": "high-quality",
   "beispiel": "Für hochwertige Materialien zahlen viele Kunden gern etwas mehr.",
-  "beispielTr": "Kaliteli malzemeler için birçok müşteri seve seve biraz fazla ödüyor.",
+  "beispielTr": "Kaliteli malzemeler için birçok müşteri seve seve biraz daha fazla ödüyor.",
   "beispielEn": "Many customers gladly pay a bit more for high-quality materials."
  },
  {
@@ -76,8 +76,8 @@
   "tr": "dekor",
   "en": "scenery",
   "beispiel": "Die Kulissen für den zweiten Akt wurden in der Pause umgebaut.",
-  "beispielTr": "İkinci perdenin dekorları arada yeniden kuruldu.",
-  "beispielEn": "The scenery for the second act was rebuilt during the break."
+  "beispielTr": "İkinci perdenin dekorları arada değiştirildi.",
+  "beispielEn": "The scenery for the second act was changed during intermission."
  },
  {
   "id": 4855,
@@ -205,7 +205,7 @@
   "en": "tour",
   "beispiel": "Die Band geht im Frühjahr auf Tournee durch acht Länder.",
   "beispielTr": "Grup ilkbaharda sekiz ülkeyi kapsayan bir turneye çıkıyor.",
-  "beispielEn": "The band goes on tour through eight countries in the spring."
+  "beispielEn": "The band is going on a tour of eight countries in the spring."
  },
  {
   "id": 4871,

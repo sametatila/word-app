@@ -220,8 +220,8 @@
   "tr": "afet yönetimi",
   "en": "disaster management",
   "beispiel": "Der Katastrophenschutz übt zweimal jährlich den Ernstfall.",
-  "beispielTr": "Afet yönetimi yılda iki kez gerçek durum tatbikatı yapıyor.",
-  "beispielEn": "The disaster management agency rehearses a real emergency twice a year."
+  "beispielTr": "Afet yönetimi yılda iki kez acil durum tatbikatı yapıyor.",
+  "beispielEn": "The disaster management agency runs an emergency drill twice a year."
  },
  {
   "id": 5323,
@@ -332,7 +332,7 @@
   "tr": "caydırıcılık",
   "en": "deterrence",
   "beispiel": "Höhere Strafen wirken nach Ansicht vieler Fachleute kaum als Abschreckung.",
-  "beispielTr": "Birçok uzmana göre ağır cezaların caydırıcılığı neredeyse yok.",
+  "beispielTr": "Birçok uzmana göre daha ağır cezaların caydırıcılığı neredeyse yok.",
   "beispielEn": "In the view of many experts, harsher penalties hardly work as a deterrent."
  },
  {

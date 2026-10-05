@@ -44,7 +44,7 @@
     "tr": "göz önüne alındığında",
     "en": "in view of",
     "beispiel": "Angesichts der leeren Kassen wurden alle Neubauten verschoben.",
-    "beispielTr": "Boş kasalar göz önüne alındığında bütün yeni yapılar ertelendi.",
+    "beispielTr": "Kasanın boş olduğu göz önüne alındığında bütün yeni inşaatlar ertelendi.",
     "beispielEn": "In view of the empty coffers all new buildings were postponed."
   },
   {
@@ -52,7 +52,7 @@
     "tr": "avukat",
     "en": "lawyer",
     "beispiel": "Mein Rechtsanwalt rät mir, den Bescheid nicht zu akzeptieren.",
-    "beispielTr": "Avukatım tebligatı kabul etmememi öneriyor.",
+    "beispielTr": "Avukatım kararı kabul etmememi öneriyor.",
     "beispielEn": "My lawyer advises me not to accept the notice."
   },
   {
@@ -84,7 +84,7 @@
     "tr": "para cezası",
     "en": "fine",
     "beispiel": "Wer zu schnell fährt, muss mit einem empfindlichen Bußgeld rechnen.",
-    "beispielTr": "Hızlı giden sürücüler yüklü bir para cezasını göze almalı.",
+    "beispielTr": "Hız sınırını aşan sürücüler yüklü bir para cezasını göze almalı.",
     "beispielEn": "Anyone who drives too fast must expect a hefty fine."
   },
   {
@@ -228,8 +228,8 @@
     "tr": "denetimli serbestlik",
     "en": "probation",
     "beispiel": "Er erhielt eine Freiheitsstrafe von einem Jahr auf Bewährung.",
-    "beispielTr": "Bir yıllık hapis cezası aldı, ceza denetimli serbestliğe çevrildi.",
-    "beispielEn": "He received a one-year prison sentence on probation."
+    "beispielTr": "Bir yıl hapis cezası aldı, cezası ertelendi.",
+    "beispielEn": "He received a one-year suspended prison sentence."
   },
   {
     "id": 5224,
@@ -332,8 +332,8 @@
     "tr": "itiraz etmek",
     "en": "to lodge",
     "beispiel": "Wir haben gegen die Entscheidung fristgerecht Beschwerde eingelegt.",
-    "beispielTr": "Karara karşı süresi içinde şikâyet dilekçesi sunduk.",
-    "beispielEn": "We filed a complaint against the decision on time."
+    "beispielTr": "Karara karşı süresi içinde itiraz ettik.",
+    "beispielEn": "We lodged an appeal against the decision on time."
   },
   {
     "id": 5237,

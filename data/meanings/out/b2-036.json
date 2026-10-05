@@ -4,7 +4,7 @@
   "tr": "yabancı kelime",
   "en": "foreign word",
   "beispiel": "Er benutzt gern Fremdwörter, um gebildet zu wirken.",
-  "beispielTr": "Bilgili görünmek için yabancı kelimeleri bolca kullanıyor.",
+  "beispielTr": "Bilgili görünmek için yabancı kelime kullanmayı seviyor.",
   "beispielEn": "He likes to use foreign words to seem educated."
  },
  {
@@ -85,15 +85,15 @@
   "en": "moderation",
   "beispiel": "Die Moderation der Runde übernahm eine erfahrene Journalistin.",
   "beispielTr": "Oturumun moderatörlüğünü deneyimli bir gazeteci üstlendi.",
-  "beispielEn": "An experienced journalist took over the moderation of the panel."
+  "beispielEn": "An experienced journalist moderated the panel."
  },
  {
   "id": 5407,
   "tr": "konuşmacı",
   "en": "speaker",
   "beispiel": "Der Redner sprach frei und ohne einen einzigen Zettel.",
-  "beispielTr": "Konuşmacı tek bir kâğıda bakmadan doğaçlama konuştu.",
-  "beispielEn": "The speaker spoke freely without a single note."
+  "beispielTr": "Konuşmacı tek bir kâğıda bakmadan konuştu.",
+  "beispielEn": "The speaker talked without looking at a single note."
  },
  {
   "id": 5408,

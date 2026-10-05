@@ -36,7 +36,7 @@
   "tr": "kullanılabilirlik",
   "en": "availability",
   "beispiel": "Der Vertrag sichert uns eine Verfügbarkeit von fast hundert Prozent zu.",
-  "beispielTr": "Sözleşme bize neredeyse yüzde yüz erişilebilirlik güvencesi veriyor.",
+  "beispielTr": "Sözleşme bize neredeyse yüzde yüz kullanılabilirlik güvencesi veriyor.",
   "beispielEn": "The contract guarantees us almost one hundred percent availability."
  },
  {
@@ -140,7 +140,7 @@
   "tr": "virüs koruması",
   "en": "virus protection",
   "beispiel": "Ohne aktuellen Virenschutz sollte man keine fremden Anhänge öffnen.",
-  "beispielTr": "Güncel virüs koruması olmadan yabancı ekler açılmamalı.",
+  "beispielTr": "Güncel virüs koruması olmadan bilinmeyen ekler açılmamalı.",
   "beispielEn": "Without current virus protection you should not open unknown attachments."
  },
  {
@@ -213,7 +213,7 @@
   "en": "warning",
   "beispiel": "Die meisten Leute klicken den Warnhinweis einfach weg.",
   "beispielTr": "İnsanların çoğu uyarıyı okumadan kapatıp geçiyor.",
-  "beispielEn": "Most people simply click the warning away."
+  "beispielEn": "Most people just click past the warning."
  },
  {
   "id": 5473,

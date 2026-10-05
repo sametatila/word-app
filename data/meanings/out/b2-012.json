@@ -36,7 +36,7 @@
   "tr": "oran",
   "en": "rate",
   "beispiel": "Die Quote der Ausbildungsabbrüche ist leicht gestiegen.",
-  "beispielTr": "Eğitimi yarıda bırakma oranı hafifçe yükseldi.",
+  "beispielTr": "Meslek eğitimini yarıda bırakma oranı hafifçe yükseldi.",
   "beispielEn": "The dropout rate in vocational training has risen slightly."
  },
  {
@@ -140,8 +140,8 @@
   "tr": "eğitim yolu",
   "en": "educational path",
   "beispiel": "Der zweite Bildungsweg steht auch Berufstätigen offen.",
-  "beispielTr": "İkinci eğitim yolu çalışanlara da açık.",
-  "beispielEn": "The second educational path is also open to working people."
+  "beispielTr": "Diplomayı sonradan tamamlama yolu çalışanlara da açık.",
+  "beispielEn": "Second-chance education is also open to working people."
  },
  {
   "id": 4211,
@@ -348,8 +348,8 @@
   "tr": "devamsızlık",
   "en": "absence",
   "beispiel": "Wegen zu vieler Fehlzeiten wurde er nicht zugelassen.",
-  "beispielTr": "Aşırı devamsızlık yüzünden sınava alınmadı.",
-  "beispielEn": "He was not admitted to the exam because of too many absences."
+  "beispielTr": "Devamsızlığı çok fazla olduğu için kabul edilmedi.",
+  "beispielEn": "He was not admitted because of too many absences."
  },
  {
   "id": 4237,

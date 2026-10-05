@@ -149,7 +149,7 @@
     "en": "at best",
     "beispiel": "Das Konzert war bestenfalls durchschnittlich.",
     "beispielTr": "Konser en iyi ihtimalle vasattı.",
-    "beispielEn": "The concert was mediocre at best."
+    "beispielEn": "The concert was average at best."
   },
   {
     "id": 4162,
@@ -364,7 +364,7 @@
     "tr": "rakamla belirtmek",
     "en": "to put a figure on",
     "beispiel": "Die Versicherung beziffert den Schaden auf zwei Millionen.",
-    "beispielTr": "Sigorta zararı iki milyon olarak belirtiyor.",
+    "beispielTr": "Sigorta şirketi zararı iki milyon olarak belirtiyor.",
     "beispielEn": "The insurer puts the damage at two million."
   },
   {

@@ -37,7 +37,7 @@
   "en": "additive",
   "beispiel": "Das Produkt kommt ganz ohne künstliche Zusatzstoffe aus.",
   "beispielTr": "Ürün hiçbir yapay katkı maddesi kullanmadan üretiliyor.",
-  "beispielEn": "The product gets by completely without artificial additives."
+  "beispielEn": "The product contains no artificial additives at all."
  },
  {
   "id": 4398,
@@ -60,7 +60,7 @@
   "tr": "yetersiz beslenme",
   "en": "malnutrition",
   "beispiel": "Auch in reichen Ländern leiden alte Menschen an Mangelernährung.",
-  "beispielTr": "Zengin ülkelerde de yaşlılar yetersiz beslenme çekiyor.",
+  "beispielTr": "Zengin ülkelerde bile yaşlılar yetersiz beslenmeden muzdarip.",
   "beispielEn": "Even in rich countries old people suffer from malnutrition."
  },
  {

@@ -12,8 +12,8 @@
   "tr": "şehir merkezi",
   "en": "city center",
   "beispiel": "In der Innenstadt sollen künftig deutlich weniger Autos fahren.",
-  "beispielTr": "Şehir merkezinde bundan sonra çok daha az araba dolaşacak.",
-  "beispielEn": "Far fewer cars will be driving in the city center in the future."
+  "beispielTr": "Şehir merkezinde ileride çok daha az araba dolaşması planlanıyor.",
+  "beispielEn": "The plan is for far fewer cars to drive in the city center in the future."
  },
  {
   "id": 5648,
@@ -260,7 +260,7 @@
   "tr": "yörede alışılmış",
   "en": "locally customary",
   "beispiel": "Die Miete liegt leicht über der ortsüblichen Vergleichsmiete.",
-  "beispielTr": "Kira, yörede alışılmış kira bedelinin biraz üzerinde.",
+  "beispielTr": "Kira, bölgedeki emsal kiranın biraz üzerinde.",
   "beispielEn": "The rent is slightly above the usual local rate."
  },
  {
@@ -316,7 +316,7 @@
   "tr": "çevredeki",
   "en": "surrounding",
   "beispiel": "Die umliegenden Gemeinden wachsen schneller als die Großstadt.",
-  "beispielTr": "Çevredeki belediyeler büyük şehirden daha hızlı büyüyor.",
+  "beispielTr": "Çevredeki kasabalar büyük şehirden daha hızlı büyüyor.",
   "beispielEn": "The surrounding towns are growing faster than the big city."
  },
  {

@@ -4,7 +4,7 @@
     "tr": "tasfiye satışı",
     "en": "clearance sale",
     "beispiel": "Im Ausverkauf habe ich diese Jacke günstig bekommen.",
-    "beispielTr": "Sezon sonu indiriminde bu ceketi ucuza aldım.",
+    "beispielTr": "Tasfiye satışında bu ceketi ucuza aldım.",
     "beispielEn": "I got this jacket cheap in the clearance sale."
   },
   {
@@ -36,7 +36,7 @@
     "tr": "habercilik",
     "en": "reporting",
     "beispiel": "Die Berichterstattung über den Prozess war einseitig.",
-    "beispielTr": "Davayla ilgili habercilik tek yanlıydı.",
+    "beispielTr": "Davayla ilgili haberler tek yanlıydı.",
     "beispielEn": "The reporting on the trial was one-sided."
   },
   {
@@ -237,7 +237,7 @@
     "en": "prejudice",
     "beispiel": "Gegen Fremde haben viele Menschen immer noch Vorurteile.",
     "beispielTr": "Birçok insanın yabancılara karşı hâlâ önyargısı var.",
-    "beispielEn": "Many people still have prejudices against strangers."
+    "beispielEn": "Many people still have prejudices against foreigners."
   },
   {
     "id": 3446,

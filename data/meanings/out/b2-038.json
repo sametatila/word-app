@@ -21,7 +21,7 @@
     "en": "greenhouse gas",
     "beispiel": "Der Verkehr verursacht rund ein Fünftel aller Treibhausgase.",
     "beispielTr": "Ulaşım, tüm sera gazlarının yaklaşık beşte birine yol açıyor.",
-    "beispielEn": "Traffic causes about a fifth of all greenhouse gases."
+    "beispielEn": "Transportation causes about a fifth of all greenhouse gases."
   },
   {
     "id": 5499,
@@ -132,7 +132,7 @@
     "tr": "içten yanmalı motor",
     "en": "combustion engine",
     "beispiel": "Ab 2035 sollen kaum noch Verbrennungsmotoren verkauft werden.",
-    "beispielTr": "2035'ten itibaren neredeyse hiç içten yanmalı motor satılmayacak.",
+    "beispielTr": "2035'ten itibaren neredeyse hiç içten yanmalı motor satılmaması öngörülüyor.",
     "beispielEn": "From 2035 hardly any combustion engines are to be sold."
   },
   {
@@ -141,14 +141,14 @@
     "en": "limit value",
     "beispiel": "Der gesetzliche Grenzwert für Stickoxide wurde mehrfach überschritten.",
     "beispielTr": "Azot oksitler için yasal sınır değer defalarca aşıldı.",
-    "beispielEn": "The legal limit value for nitrogen oxides was exceeded several times."
+    "beispielEn": "The legal limit for nitrogen oxides was exceeded several times."
   },
   {
     "id": 5514,
     "tr": "iklim hedefi",
     "en": "climate target",
     "beispiel": "Ohne strengere Vorgaben werden die Klimaziele klar verfehlt.",
-    "beispielTr": "Daha sıkı kurallar olmadan iklim hedefleri açıkça tutturulamayacak.",
+    "beispielTr": "Daha sıkı kurallar olmadan iklim hedeflerinin çok gerisinde kalınacak.",
     "beispielEn": "Without stricter rules the climate targets will clearly be missed."
   },
   {
@@ -285,7 +285,7 @@
     "en": "consumer behavior",
     "beispiel": "Ohne verändertes Konsumverhalten sind die Ziele nicht zu schaffen.",
     "beispielTr": "Tüketim alışkanlıkları değişmeden bu hedeflere ulaşılamaz.",
-    "beispielEn": "Without changed consumer behavior the targets cannot be reached."
+    "beispielEn": "Without a change in consumer behavior, the targets cannot be reached."
   },
   {
     "id": 5532,
@@ -332,7 +332,7 @@
     "tr": "tasarruf etmek",
     "en": "to save",
     "beispiel": "Durch neue Geräte können wir viel Strom einsparen.",
-    "beispielTr": "Yeni cihazlarla çok elektrik tasarruf edebiliriz.",
+    "beispielTr": "Yeni cihazlarla elektrikten çok tasarruf edebiliriz.",
     "beispielEn": "With new appliances we can save a lot of electricity."
   },
   {

@@ -380,8 +380,8 @@
     "tr": "ücretli",
     "en": "chargeable",
     "beispiel": "Nach dem Probemonat wird das Angebot automatisch kostenpflichtig.",
-    "beispielTr": "Deneme ayından sonra teklif otomatik olarak ücretli oluyor.",
-    "beispielEn": "After the trial month, you are automatically charged for the offer."
+    "beispielTr": "Deneme ayından sonra hizmet otomatik olarak ücretli hâle geliyor.",
+    "beispielEn": "After the trial month, you are automatically charged for the service."
   },
   {
     "id": 4843,

@@ -60,8 +60,8 @@
     "tr": "demokrasi",
     "en": "democracy",
     "beispiel": "Eine Demokratie lebt davon, dass Menschen sich einmischen.",
-    "beispielTr": "Demokrasi, insanların işe karışmasıyla ayakta kalır.",
-    "beispielEn": "A democracy lives on people getting involved."
+    "beispielTr": "Demokrasi, insanların sürece katılmasıyla ayakta kalır.",
+    "beispielEn": "A democracy depends on people getting involved."
   },
   {
     "id": 5153,
@@ -253,7 +253,7 @@
     "en": "fundamental right",
     "beispiel": "Die Versammlungsfreiheit ist ein Grundrecht und keine Gefälligkeit des Staates.",
     "beispielTr": "Toplanma özgürlüğü bir temel haktır, devletin lütfu değil.",
-    "beispielEn": "Freedom of assembly is a fundamental right, not a favor of the state."
+    "beispielEn": "Freedom of assembly is a fundamental right, not a favor granted by the state."
   },
   {
     "id": 5177,
@@ -309,7 +309,7 @@
     "en": "to abolish",
     "beispiel": "Die Gebühren für Kindergärten wurden im ganzen Land abgeschafft.",
     "beispielTr": "Anaokulu ücretleri ülke genelinde kaldırıldı.",
-    "beispielEn": "The fees for kindergartens were abolished nationwide."
+    "beispielEn": "Preschool fees were abolished nationwide."
   },
   {
     "id": 5184,
@@ -349,7 +349,7 @@
     "en": "to call for",
     "beispiel": "Die Gewerkschaft rief für Freitag zu einem Warnstreik auf.",
     "beispielTr": "Sendika cuma günü için uyarı grevi çağrısı yaptı.",
-    "beispielEn": "The union called for a warning strike on Friday."
+    "beispielEn": "The union called for a Friday warning strike."
   },
   {
     "id": 5189,
@@ -388,8 +388,8 @@
     "tr": "oybirliğiyle",
     "en": "unanimously",
     "beispiel": "Der Ausschuss lehnte den Antrag am Ende einstimmig ab.",
-    "beispielTr": "Komisyon başvuruyu sonunda oybirliğiyle reddetti.",
-    "beispielEn": "The committee finally rejected the application unanimously."
+    "beispielTr": "Komisyon önergeyi sonunda oybirliğiyle reddetti.",
+    "beispielEn": "In the end, the committee rejected the motion unanimously."
   },
   {
     "id": 5194,

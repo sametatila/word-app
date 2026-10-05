@@ -28,7 +28,7 @@
   "tr": "pay",
   "en": "stake",
   "beispiel": "Der Investor hält eine Beteiligung von fünfundzwanzig Prozent.",
-  "beispielTr": "Yatırımcı yüzde yirmi beş pay sahibi.",
+  "beispielTr": "Yatırımcı yüzde yirmi beşlik bir paya sahip.",
   "beispielEn": "The investor holds a twenty-five percent stake."
  },
  {
@@ -285,7 +285,7 @@
   "en": "property",
   "beispiel": "Er hat sein Geld in Immobilien statt in Aktien angelegt.",
   "beispielTr": "Parasını hisse senedi yerine gayrimenkule yatırdı.",
-  "beispielEn": "He invested his money in property instead of shares."
+  "beispielEn": "He invested his money in property instead of stocks."
  },
  {
   "id": 5632,

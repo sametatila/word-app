@@ -148,7 +148,7 @@
     "tr": "harap etmek",
     "en": "to devastate",
     "beispiel": "Der Orkan verwüstete ganze Straßenzüge im Norden der Stadt.",
-    "beispielTr": "Kasırga şehrin kuzeyindeki koca sokakları harap etti.",
+    "beispielTr": "Kasırga şehrin kuzeyindeki sokakları baştan başa harap etti.",
     "beispielEn": "The hurricane devastated entire streets in the north of the city."
   },
   {
@@ -317,7 +317,7 @@
     "en": "contribution",
     "beispiel": "Jeder Redebeitrag sollte höchstens drei Minuten dauern.",
     "beispielTr": "Her konuşma en fazla üç dakika sürmeli.",
-    "beispielEn": "Each speaking contribution should last three minutes at most."
+    "beispielEn": "Each contribution to the discussion should last three minutes at most."
   },
   {
     "id": 5386,
