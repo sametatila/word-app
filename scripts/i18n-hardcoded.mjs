@@ -67,6 +67,8 @@ const SKIP = [
   "lib/placement-bank.ts",
   "lib/why-rules.ts",
   "lib/assess-prompts.ts",
+  /* Çeviri kurtarma kontrolünün model istemi (assess-prompts gibi): ekrana basılmıyor. */
+  "lib/translate-check.ts",
   "lib/numbers.ts",
   "lib/moderation.ts",
   /*
