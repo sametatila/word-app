@@ -558,7 +558,7 @@ export const en: Record<string, string> = {
   "plan.free_path_ai": "Path: {c} Speaking steps (AI conversation) and {w} Writing steps per level",
   "plan.free_streak_cap": "Streaks unlock new allowances at most {n} times",
   "plan.free_streak_cap.one": "Streaks unlock new allowances at most {n} time",
-  "plan.pro_fair_use": "Daily upper limit to prevent abuse: {w} walk rounds, {a} AI assessments, {c} conversation messages",
+  "plan.pro_fair_use": "Daily fair-use limit: {w} walk rounds, {a} AI assessments, {c} conversation messages",
   "premiumstate.free": "Free account",
   "premiumstate.active_until": "Premium until {date}",
   "premiumstate.trial_until": "Your free trial ends on {date}",

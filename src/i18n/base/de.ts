@@ -560,7 +560,7 @@ export const deBase: Record<string, string> = {
   "plan.free_path_ai": "Pfad: pro Niveau {c} Sprechen-Schritte (KI-Gespräch) und {w} Schreiben-Schritte",
   "plan.free_streak_cap": "Serien schalten höchstens {n}-mal neue Kontingente frei",
   "plan.free_streak_cap.one": "Serien schalten höchstens {n}-mal neue Kontingente frei",
-  "plan.pro_fair_use": "Tägliche Obergrenze gegen Missbrauch: {w} Geh-Runden, {a} KI-Bewertungen, {c} Gesprächsnachrichten",
+  "plan.pro_fair_use": "Tägliche Fair-Use-Grenze: {w} Geh-Runden, {a} KI-Bewertungen, {c} Gesprächsnachrichten",
   "premiumstate.free": "Kostenloses Konto",
   "premiumstate.active_until": "Premium bis {date}",
   "premiumstate.trial_until": "Deine kostenlose Testphase endet am {date}",

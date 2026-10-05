@@ -560,7 +560,7 @@ export const trBase: Record<string, string> = {
   "plan.free_path_ai": "Patika: seviye başına {c} Konuşma adımı (yapay zekâ sohbeti) ve {w} Yazma adımı",
   "plan.free_streak_cap": "Seriyle en çok {n} kez yeni hak açılır",
   "plan.free_streak_cap.one": "Seriyle en çok {n} kez yeni hak açılır",
-  "plan.pro_fair_use": "Kötüye kullanımı önleyen günlük üst sınır: {w} yürüyüş turu, {a} yapay zekâ değerlendirmesi, {c} sohbet mesajı",
+  "plan.pro_fair_use": "Günlük adil kullanım sınırı: {w} yürüyüş turu, {a} yapay zekâ değerlendirmesi, {c} sohbet mesajı",
   "premiumstate.free": "Ücretsiz hesap",
   "premiumstate.active_until": "{date} tarihine kadar Premium",
   "premiumstate.trial_until": "Ücretsiz denemen {date} tarihinde bitiyor",
