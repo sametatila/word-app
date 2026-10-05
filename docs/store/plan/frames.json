@@ -24,8 +24,8 @@
       "ladder": true,
       "caption": {
         "tr": { "h": "Konuş, anla, sınava hazırlan", "s": "A1'den C1'e adım adım, Türkçe anlatımla" },
-        "en": { "h": "Speak, understand, ace exams", "s": "Step by step from A1 to C1, explained in English" },
-        "de": { "h": "Sprechen, verstehen, bestehen", "s": "Schritt für Schritt von A1 bis C1, auf Deutsch erklärt" }
+        "en": { "h": "Speak, understand, exam-ready", "s": "Step by step from A1 to C1, explained in English" },
+        "de": { "h": "Reden, verstehen, prüfungsfit", "s": "Schritt für Schritt von A1 bis C1, auf Deutsch erklärt" }
       },
       "noCallout": true
     },

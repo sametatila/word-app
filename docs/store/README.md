@@ -26,9 +26,11 @@ Türkçe anlatım); sınav bu eğitimin sonucu olarak ikinci katman. Sınava haz
 kampanya vitrinde YOK (görselde fiyat/süreli teklif olmaz), grup sayfasında.
 
 **Altyazı / tek cümle:** **"Konuş, anla, sınava hazırlan"** (tr, 28 karakter; iOS subtitle,
-Play kısa açıklamanın ilk cümlesi). en-US: **"Speak, understand, ace exams"** (28) ·
-de-DE: **"Sprechen, verstehen, bestehen"** (29). "ace exams" / "bestehen" sınav geçme vaadi
-sayılabilir; risk kararı açık (denetim M14).
+Play kısa açıklamanın ilk cümlesi). en-US: **"Speak, understand, exam-ready"** (29) ·
+de-DE: **"Reden, verstehen, prüfungsfit"** (29). 2026-10-05'te eski "ace exams" / "bestehen"
+yerine geldi: ikisi sınav geçme vaadi sayılabiliyordu (denetim M14 kapandı) ve vitrin provasında
+sınava hazırlanmayan okur ilk cümlede kendini bulamadı. "Sprechen, verstehen, prüfungsfit" 32
+karakter, iOS altyazı sınırı 30.
 
 **Play kısa açıklaması (tr, 70):** "Konuş, anla, sınava hazırlan: A1'den C1'e Almanca, Türkçe
 anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
@@ -43,7 +45,7 @@ deneme sınavı**" (Samet: içerik artacak, "60" ve seviye başına kesin sayı 
 gözden geçirilir.
 
 **Konuşma adımının vitrindeki anlatımı (Samet'in seçtiği metin):** "Doktorda, iş
-görüşmesinde, yol sorarken… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle
+görüşmesinde, ev bakarken, maaş görüşmesinde… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle
 konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir." Ücretsizde
 seviye başına sınırlı olduğu için "ücretsiz ve sınırsız" denmez.
 
@@ -71,6 +73,23 @@ satırlık kanıt tablosu oturum çıktısında; kararlar:
   kilitli ve Premium ister. Misafir ve yapay zekâ iznini reddeden senaryolu konuşmayla devam
   eder (maliyetsiz). Premium tavanı 300 mesaj/gün KALIYOR. Metin sohbeti "ücretsiz ve
   sınırsız" diye anmaz.
+
+**Vitrin provası düzeltmeleri (2026-10-05, Samet onayladı):** altı hedef kişiliğin (dil modeli
+canlandırması, gerçek kullanıcı değil) vitrin okumasından. Üç uzun açıklamada ve landing'de:
+- Ücretsiz olan girişte bir cümleyle söylenir (tr "Kelime, okuma, dinleme ve dil bilgisi ücretsiz;
+  reklam yok."); ÜCRETSİZ ve PREMIUM bölümleri İNGİLİZCE/HESAPSIZ'dan önceye alındı; sondaki
+  "Reklam yok." girişe taşındı. Hak kuralı tek cümle: "2'şer konuşma ve yazma çalışması …
+  bitirip 7 günlük seri yapınca yeni haklar eklenir" (+2 / +1 sayıları vitrinde yok, uygulamada var).
+- Premium'un günlük sayıları vitrinden çıktı: "Günlük adil kullanım sınırları Premium sayfasında
+  yazar." Sayılar paywall'da satın almadan önce görünüyor (`plan.pro_fair_use`), şartlar §7a oraya
+  yönlendiriyor; "sınırsız" denmiyor (3.1.2(a)). Paket cümlesi: "sırayla, 3'er 3'er açılır".
+- Mikrofon cümlesi gizlilik politikasının özet satırıyla birebir (HESAPSIZ BAŞLA sonunda; metin
+  kuralı aşağıda).
+- Sahneler: "ev bakarken, maaş görüşmesinde" (iki kursta da var: `de-b1-besichtigung`,
+  `de-b1-gehalt`, `de-b2-gehaltsverhandlung`, `en-b1-viewing`, `en-b1-salary-talk`,
+  `en-b2-the-salary-conversation`); A1 düzeyindeki "yol sorarken" çıktı.
+- Deneme sınavları "her CEFR seviyesinde" (de "GER-Niveau"): seviye adı, sınav markası değil
+  (`docs/play/listing.md` §4.2 madde 3).
 
 **Beş sütun (öncelik sırası):** 1) **A1'den C1'e adım adım**, Türkçe anlatım ("müfredat" ve "tam" kullanılmaz) · 2) konuşarak
 öğren: gerçek hayattan durumlarda yapay zekâ karakteriyle sohbet + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
@@ -116,22 +135,22 @@ Tasarım bu çerçeveyle yapılır:
 **Onaylanan Türkçe uzun açıklama (App Store + Play ortak, 2026-09-25):** 41 iddia koda, canlı
 ayara ve içeriğe karşı doğrulandı (kanıt tablosu oturum çıktısında). Kararlar: belge her yerde
 "başarı belgesi"; seri kademesi tavansız ("sonra her 7 günlük seride yeniden" doğru); fiyat
-cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3992/4000. Anlatım ekranda yazı, sesli okunan yalnız öğrenilen dil ("okursun"). Paragraflar
+cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3984/4000 (2026-10-05). Anlatım ekranda yazı, sesli okunan yalnız öğrenilen dil ("okursun"). Paragraflar
 tek satır: Console'a yapıştırınca satır ortasında kırılmasın.
 
 ```text
 Konuş, anla, sınava hazırlan.
 
-Lernomi ile Almancayı A1'den C1'e, Türkçe anlatımla ve konuşarak öğren. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.
+Lernomi ile Almancayı A1'den C1'e, Türkçe anlatımla ve konuşarak öğren. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin. Kelime, okuma, dinleme ve dil bilgisi ücretsiz; reklam yok.
 
 A1'DEN C1'E ADIM ADIM
 Almancada 8.500'den fazla kelime ve 900'den fazla alıştırma. Patika seni seviye seviye, ünite ünite ilerletir: her ünitede okuma, dinleme, konuşma, yazma, dil bilgisi ve quiz adımları var; modül ve seviye sınavlarıyla nerede olduğunu görürsün. Başlangıç seviyeni kendin seçebilir ya da kısa bir seviye testiyle bulabilirsin. Dili biraz biliyorsan Beceriler'de istediğin seviyeden alıştırma yaparsın.
 
 KONUŞARAK ÖĞREN
-Doktorda, iş görüşmesinde, yol sorarken… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir. Konuşma adımı Türkçe bir anlatımla başlar: kullanacağın kalıpları önce kendi dilinde okursun. İstersen sonunda puanlı konuşmayı denersin. Uygulama karşındakinin yapay zekâ olduğunu ekranda söyler.
+Doktorda, iş görüşmesinde, ev bakarken, maaş görüşmesinde… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir. Konuşma adımı Türkçe bir anlatımla başlar: kullanacağın kalıpları önce kendi dilinde okursun. İstersen sonunda puanlı konuşmayı denersin. Uygulama karşındakinin yapay zekâ olduğunu ekranda söyler.
 
 DÖRT BECERİLİ DENEME SINAVLARI
-Her seviyede birden çok, toplamda 50'den fazla deneme sınavı. Her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını yapay zekâ puanlar ve hatalarını düzeltmeleriyle gösterir. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.
+Her CEFR seviyesinde birden çok, toplamda 50'den fazla deneme sınavı. Her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını yapay zekâ puanlar ve hatalarını düzeltmeleriyle gösterir. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.
 
 CEPTE YÜRÜYÜŞ
 Yürüyüş modunda ekrana bakmadan çalışırsın: Türkçe ipucunu duyar, kelimeyi sesli söylersin. Ücretsizde ekran açıkken günde 3 tur. Telefon cebindeyken, ekran kapalıyken de süren Cepte yürüyüş Premium'da.
@@ -139,22 +158,22 @@ Yürüyüş modunda ekrana bakmadan çalışırsın: Türkçe ipucunu duyar, kel
 HER GÜN BİRKAÇ DAKİKA
 Günlük kelime turunda aralıklı tekrar, kelimeleri unutmadan önce yeniden karşına çıkarır. Pratikte istediğin kadar tekrar eder, her hafta öğrendiklerinden kurulan bir quiz çözersin. Serini koru, haftalık ligde yarış, arkadaşlarınla sıralamanı karşılaştır.
 
+ÜCRETSİZ
+Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sınırsız. Haftalık quiz, ekran açık yürüyüş ve her seviyede 1 deneme sınavı da ücretsiz. Her seviyede Patika'da ve Beceriler'de 2'şer konuşma ve yazma çalışması açık; bunları bitirip 7 günlük seri yapınca yeni haklar eklenir, her yeni 7 günlük seride yine.
+
+PREMIUM
+Ekran kapalı Cepte yürüyüş, tüm deneme sınavları, Patika ve Beceriler'de bütün konuşma ve yazma çalışmaları, seri ve bitirme beklemeden. Deneme sınavları sırayla, 3'er 3'er açılır. Günlük adil kullanım sınırları Premium sayfasında yazar.
+Premium aylık ya da yıllık, otomatik yenilenen bir aboneliktir ve aynı hesapla telefonda, tablette ve web'de geçerlidir. Yeni abonelere ilk ay ücretsiz; deneme bitmeden iptal edersen ücret alınmaz. Dönem bitiminden en az 24 saat önce iptal edilmezse abonelik yenilenir; aboneliğini satın aldığın mağazanın hesap ayarlarından yönetebilir ya da iptal edebilirsin.
+
 İNGİLİZCE DE VAR
 Aynı yapıda İngilizce kursu: A1'den C1'e 7.000'den fazla kelime, 900'den fazla alıştırma ve 50'den fazla deneme sınavı.
 
 HESAPSIZ BAŞLA
-Hesap açmadan başlayabilirsin. Hesap oluşturunca ilerlemen hesabına taşınır; telefonda, tablette ve web'de aynı hesapla devam edersin. Arkadaşlar ve lig, yapay zekâyla sohbet, yapay zekâ değerlendirmesi ve Premium hesap ister; hesapsızken Konuşma adımı önceden hazırlanmış bir sohbetle sürer. Metnin yapay zekâya ancak iznini verirsen gider.
-
-ÜCRETSİZ
-Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sınırsız. Haftalık quiz, ekran açık yürüyüş ve her seviyede 1 deneme sınavı da ücretsiz. Patika'da her seviyede 2 Konuşma ve 2 Yazma adımı, Beceriler'de her seviyede 2 konuşma ve 2 yazma değerlendirmesi açık. Açık olanları bitirip 7 günlük seri yapınca her birine 2, deneme sınavına 1 yeni hak eklenir; sonra her 7 günlük seride yeniden.
-
-PREMIUM
-Ekran kapalı Cepte yürüyüş, tüm deneme sınavları, Patika ve Beceriler'de bütün konuşma ve yazma çalışmaları, seri ve bitirme beklemeden. Deneme sınavları her seviyede 3'lü paketlerle açılır: paketteki 3 sınavı bitirince sonraki paket gelir. Kötüye kullanımı önleyen günlük üst sınır: 20 yürüyüş turu, 30 yapay zekâ değerlendirmesi, 300 sohbet mesajı.
-Premium aylık ya da yıllık, otomatik yenilenen bir aboneliktir ve aynı hesapla telefonda, tablette ve web'de geçerlidir. Yeni abonelere ilk ay ücretsiz; deneme bitmeden iptal edersen ücret alınmaz. Dönem bitiminden en az 24 saat önce iptal edilmezse abonelik yenilenir; aboneliğini satın aldığın mağazanın hesap ayarlarından yönetebilir ya da iptal edebilirsin.
+Hesap açmadan başlayabilirsin. Hesap oluşturunca ilerlemen hesabına taşınır; telefonda, tablette ve web'de aynı hesapla devam edersin. Arkadaşlar ve lig, yapay zekâyla sohbet, yapay zekâ değerlendirmesi ve Premium hesap ister; hesapsızken Konuşma adımı önceden hazırlanmış bir sohbetle sürer. Metnin yapay zekâya ancak iznini verirsen gider. Mikrofon yalnız konuşarak cevap verdiğinde açılır. Sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz.
 
 Modül ve seviye sınavlarını geçince neler yapabildiğini gösteren, paylaşabileceğin bir başarı belgesi alırsın. Deneme sınavlarını Lernomi hazırladı; Lernomi hiçbir sınav kurumuyla bağlantılı değildir, belgeler resmî bir sertifika yerine geçmez.
 
-Reklam yok. Hesabını uygulamanın içinden silebilirsin.
+Hesabını uygulamanın içinden silebilirsin.
 
 Kullanım Şartları: https://www.lernomi.app/terms
 Gizlilik Politikası: https://www.lernomi.app/privacy
@@ -167,81 +186,81 @@ sahneler, bağlantılar). Almanca metinde Beceriler "Fertigkeiten" (Samet'in kar
 Haftalık quiz de en/de çevrili (kilitli `quiznative/*` paketleri); "explained in English /
 Erklärungen auf Deutsch" iddiası her içerik türü için doğru.
 
-en-US (3990/4000):
+en-US (3988/4000):
 
 ```text
-Speak, understand, ace exams.
+Speak, understand, exam-ready.
 
-Learn German from A1 to C1 with Lernomi: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready.
+Learn German from A1 to C1 with Lernomi: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready. Vocabulary, reading, listening and grammar are free, with no ads.
 
 A1 TO C1, STEP BY STEP
 More than 8,500 German words and more than 900 exercises. The Path takes you level by level, unit by unit: every unit has Reading, Listening, Speaking, Writing, Grammar and Quiz steps, and module and level exams show you where you stand. Pick your starting level yourself or find it with a short placement test. If you already know some German, practice at any level you like in Skills.
 
 LEARN BY SPEAKING
-At the doctor's, in a job interview, asking for directions… Practice real-life situations by talking with an AI character. It corrects your mistakes right away and suggests what you could say when you get stuck. Each Speaking step opens with a short intro in English to the phrases you'll use. If you like, finish with a scored round. The app tells you on screen that you're talking to an AI.
+At the doctor's, in a job interview, viewing an apartment, negotiating your salary… Practice real-life situations by talking with an AI character. It corrects your mistakes right away and suggests what you could say when you get stuck. Each Speaking step opens with a short intro in English to the phrases you'll use. If you like, finish with a scored round. The app tells you on screen that you're talking to an AI.
 
 FOUR-SKILL MOCK EXAMS
-Several at every level, more than 50 mock exams in total. Each has Reading, Listening, Writing and Speaking sections, each with its own time limit. Reading and Listening are scored automatically; AI scores your written and spoken answers and shows your mistakes with corrections. At the end you get your score as a percentage and a list of what to work on.
+Several at every CEFR level, more than 50 mock exams in total. Each has Reading, Listening, Writing and Speaking sections, each with its own time limit. Reading and Listening are scored automatically; AI scores your written and spoken answers and shows your mistakes with corrections. At the end you get your score as a percentage and a list of what to work on.
 
 POCKET WALKING
 In Walk mode you study without looking at the screen: you hear the English cue and say the German word out loud. Free: 3 rounds a day with the screen on. Pocket Walking, with your phone in your pocket and the screen off, is Premium.
 
 A FEW MINUTES A DAY
-In the daily word round, spaced repetition brings words back before you forget them. In Practice you review as much as you like, and every week you take a quiz built from what you've learned. Keep your streak, compete in the weekly league and compare your ranking with friends.
-
-START WITHOUT AN ACCOUNT
-You can start without creating an account. Once you create one, your progress moves into it, and you continue with the same account on phone, tablet and the web. Friends and leagues, AI conversation, AI feedback and Premium need an account; without one, the Speaking step runs as a prepared conversation. Your text is only sent to the AI if you allow it.
+In the daily word round, spaced repetition brings words back before you forget them. In Practice you review as much as you like, and every week you take a quiz built from what you've learned. Streaks, a weekly league and friends' rankings are there too.
 
 FREE
-Vocabulary, practice, reading, listening, grammar and quizzes are free and unlimited. The weekly quiz, Walk mode with the screen on and 1 mock exam per level are free too. In Path, 2 Speaking and 2 Writing steps per level are open; in Skills, 2 speaking and 2 writing assessments per level. Finish what's open and reach a 7-day streak to get 2 more of each and 1 more mock exam; then again with every further 7 days of streak.
+Vocabulary, practice, reading, listening, grammar and quizzes are free and unlimited. The weekly quiz, Walk mode with the screen on and 1 mock exam per level are free too. At every level, 2 speaking and 2 writing tasks are open in both Path and Skills; finish them and reach a 7-day streak to unlock more, then again with every further 7-day streak.
 
 PREMIUM
-Pocket Walking with the screen off, every mock exam, and every Speaking and Writing step in Path plus all speaking and writing assessments in Skills, with no waiting for streaks or finishing. Mock exams open in packs of 3 at each level: finish the 3 exams in a pack and the next pack opens. Daily upper limit to prevent abuse: 20 walk rounds, 30 AI assessments, 300 conversation messages.
+Pocket Walking with the screen off, every mock exam, and every Speaking and Writing step in Path plus all speaking and writing assessments in Skills, with no waiting for streaks or finishing. Mock exams unlock in order, 3 at a time. Daily fair-use limits are listed on the Premium page.
 Premium is a monthly or yearly auto-renewing subscription and works with the same account on phone, tablet and the web. New subscribers get the first month free; cancel before the trial ends and you won't be charged. It renews unless canceled at least 24 hours before the end of the period; manage or cancel it in the account settings of the store you bought it from.
+
+START WITHOUT AN ACCOUNT
+Start without an account. Create one later and your progress moves into it; continue on phone, tablet and the web with the same account. Friends and leagues, AI conversation, AI feedback and Premium need an account; without one, the Speaking step runs as a prepared conversation. Your text is only sent to the AI if you allow it. The microphone opens only when you answer by speaking. Audio reaches the server only with your permission, and the recording is not kept.
 
 Pass module and level exams to earn a certificate of achievement you can share, showing what you can do. The mock exams are Lernomi's own; Lernomi is not affiliated with any exam provider, and certificates of achievement are not official certificates.
 
-No ads. You can delete your account right in the app.
+You can delete your account right in the app.
 
 Terms of Use: https://www.lernomi.app/terms/en
 Privacy Policy: https://www.lernomi.app/privacy/en
 ```
 
-de-DE (3987/4000):
+de-DE (3995/4000):
 
 ```text
-Sprechen, verstehen, bestehen.
+Reden, verstehen, prüfungsfit.
 
-Lerne mit Lernomi Englisch von A1 bis C1, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen.
+Lerne mit Lernomi Englisch von A1 bis C1, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen. Kostenlos starten, ohne Werbung.
 
 VON A1 BIS C1, SCHRITT FÜR SCHRITT
 Mehr als 7.000 Wörter und mehr als 900 Übungen. Der Pfad führt dich Niveau für Niveau, Einheit für Einheit: Jede Einheit hat die Schritte Lesen, Hören, Sprechen, Schreiben, Grammatik und Quiz; Modul- und Niveauprüfungen zeigen, wo du stehst. Dein Startniveau wählst du selbst oder per kurzem Einstufungstest. Mit Vorkenntnissen übst du bei den Fertigkeiten auf jedem Niveau.
 
 LERNEN DURCH SPRECHEN
-Beim Arzt, im Vorstellungsgespräch, beim Fragen nach dem Weg … Alltagssituationen übst du im Gespräch mit einer KI-Figur. Sie korrigiert Fehler sofort und schlägt dir etwas vor, wenn du nicht weiterweißt. Jeder Sprechen-Schritt beginnt mit einer kurzen Einführung der Wendungen auf Deutsch. Am Ende kannst du dich bewerten lassen. Die App zeigt an, dass du mit einer KI sprichst.
+Beim Arzt, im Vorstellungsgespräch, bei der Wohnungsbesichtigung, im Gehaltsgespräch … Alltagssituationen übst du im Gespräch mit einer KI-Figur. Sie korrigiert Fehler sofort und schlägt dir etwas vor, wenn du nicht weiterweißt. Jeder Sprechen-Schritt beginnt mit einer kurzen Einführung der Wendungen auf Deutsch. Am Ende kannst du dich bewerten lassen. Die App zeigt an, dass du mit einer KI sprichst.
 
 PROBEPRÜFUNGEN IN VIER FERTIGKEITEN
-Mehrere pro Niveau, insgesamt mehr als 50 Probeprüfungen. Jede hat die Teile Lesen, Hören, Schreiben und Sprechen mit eigener Zeit. Lesen und Hören werden automatisch bewertet; Geschriebenes und Gesprochenes bewertet eine KI und zeigt deine Fehler mit Korrektur. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.
+Mehrere pro GER-Niveau, insgesamt mehr als 50 Probeprüfungen. Jede hat die Teile Lesen, Hören, Schreiben und Sprechen mit eigener Zeit. Lesen und Hören werden automatisch bewertet; Geschriebenes und Gesprochenes bewertet eine KI und zeigt deine Fehler mit Korrektur. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.
 
 TASCHEN-GEHMODUS
-Im Gehmodus lernst du ohne Blick aufs Display: Du hörst den deutschen Hinweis und sagst das englische Wort laut. Kostenlos: 3 Runden pro Tag bei eingeschaltetem Bildschirm. Der Taschen-Gehmodus, auch bei ausgeschaltetem Bildschirm, gehört zu Premium.
+Im Gehmodus lernst du ohne Blick aufs Display: Du hörst den deutschen Hinweis und sagst das englische Wort laut. Kostenlos: 3 Runden pro Tag bei eingeschaltetem Bildschirm. Der Taschen-Gehmodus mit ausgeschaltetem Bildschirm gehört zu Premium.
 
 JEDEN TAG EIN PAAR MINUTEN
-In der täglichen Runde bringt verteilte Wiederholung Wörter zurück, bevor du sie vergisst. Beim Üben wiederholst du beliebig oft, und jede Woche wartet ein Quiz aus dem Gelernten. Halte deine Serie, tritt in der Wochenliga an und vergleiche dich mit Freunden.
-
-OHNE KONTO STARTEN
-Du kannst ohne Konto loslegen. Mit einem Konto kommt dein Fortschritt mit, und du lernst auf Handy, Tablet und im Web weiter. Freunde und Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne Konto läuft der Sprechen-Schritt als vorbereitetes Gespräch. Dein Text geht nur mit deiner Erlaubnis an die KI.
+In der täglichen Runde bringt verteilte Wiederholung Wörter zurück, bevor du sie vergisst. Beim Üben wiederholst du beliebig oft, und jede Woche wartet ein Quiz aus dem Gelernten. Dazu Serie, Wochenliga und Freundesranking.
 
 KOSTENLOS
-Vokabeln, Üben, Lesen, Hören, Grammatik und Quiz sind kostenlos und unbegrenzt. Auch das Wochen-Quiz, der Gehmodus bei eingeschaltetem Bildschirm und 1 Probeprüfung pro Niveau sind kostenlos. Pro Niveau sind im Pfad 2 Sprechen- und 2 Schreiben-Schritte offen, bei den Fertigkeiten 2 Sprech- und 2 Schreibbewertungen. Schließt du das Offene ab und erreichst eine 7-Tage-Serie, kommen je 2 weitere und 1 Probeprüfung dazu; danach alle weiteren 7 Serientage erneut.
+Vokabeln, Üben, Lesen, Hören, Grammatik und Quiz sind kostenlos und unbegrenzt. Auch das Wochen-Quiz, der Gehmodus bei eingeschaltetem Bildschirm und 1 Probeprüfung pro Niveau sind kostenlos. Pro Niveau sind im Pfad und bei den Fertigkeiten je 2 Sprech- und 2 Schreibaufgaben offen; schließt du sie ab und erreichst eine 7-Tage-Serie, kommen neue dazu, mit jeder weiteren 7-Tage-Serie wieder.
 
 PREMIUM
-Taschen-Gehmodus, alle Probeprüfungen und alle Sprech- und Schreibaufgaben in Pfad und Fertigkeiten, ohne auf Serie oder Abschluss zu warten. Probeprüfungen öffnen sich pro Niveau in 3er-Paketen: Ist ein Paket fertig, kommt das nächste. Tägliche Obergrenze gegen Missbrauch: 20 Geh-Runden, 30 KI-Bewertungen, 300 Gesprächsnachrichten.
+Taschen-Gehmodus, alle Probeprüfungen und alle Sprech- und Schreibaufgaben in Pfad und Fertigkeiten, ohne auf Serie oder Abschluss zu warten. Probeprüfungen öffnen sich der Reihe nach, je 3 auf einmal. Tägliche Fair-Use-Grenzen stehen auf der Premium-Seite.
 Premium ist ein sich automatisch verlängerndes Monats- oder Jahresabo und gilt mit demselben Konto auf Handy, Tablet und im Web. Neue Abonnenten bekommen den ersten Monat kostenlos; kündigst du vor Ende der Testphase, zahlst du nichts. Es verlängert sich, wenn du nicht mindestens 24 Stunden vor Ende des Zeitraums kündigst; verwalten und kündigen kannst du es in den Kontoeinstellungen deines Stores.
+
+OHNE KONTO STARTEN
+Du kannst ohne Konto loslegen. Mit einem Konto kommt dein Fortschritt mit, und du lernst auf Handy, Tablet und im Web weiter. Freunde und Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne Konto läuft der Sprechen-Schritt als vorbereitetes Gespräch. Dein Text geht nur mit deiner Erlaubnis an die KI. Das Mikrofon öffnet sich nur, wenn du sprechend antwortest. Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert.
 
 Für bestandene Modul- und Niveauprüfungen bekommst du einen teilbaren Leistungsnachweis, der zeigt, was du kannst. Die Probeprüfungen stammen von Lernomi; Lernomi ist mit keinem Prüfungsanbieter verbunden, ein Leistungsnachweis ersetzt kein offizielles Zertifikat.
 
-Keine Werbung. Dein Konto löschst du in der App.
+Dein Konto löschst du in der App.
 
 Nutzungsbedingungen: https://www.lernomi.app/terms/de
 Datenschutzerklärung: https://www.lernomi.app/privacy/de
@@ -251,7 +270,7 @@ Datenschutzerklärung: https://www.lernomi.app/privacy/de
 
 | Alan | tr | en-US | de-DE |
 |---|---|---|---|
-| Play kısa açıklama (80) | yukarıda (70) | `Speak, understand, ace exams: German from A1 to C1, explained in English.` (73) | `Sprechen, verstehen, bestehen: Englisch von A1 bis C1, auf Deutsch erklärt.` (75) |
+| Play kısa açıklama (80) | yukarıda (70) | `Speak, understand, exam-ready: German from A1 to C1, explained in English.` (74) | `Reden, verstehen, prüfungsfit: Englisch von A1 bis C1, auf Deutsch erklärt.` (75) |
 | iOS tanıtım metni (170, incelemesiz değişir) | `Almancayı A1'den C1'e adım adım öğren: gerçek hayattan durumlarda konuş, her gün kelime turunu yap, 50'den fazla deneme sınavıyla nerede olduğunu gör.` (150) | `Learn German step by step from A1 to C1: talk through real-life situations, do a daily word round and see where you stand with 50+ mock exams.` (142) | `Englisch Schritt für Schritt von A1 bis C1: sprich in echten Alltagssituationen, übe täglich Wörter und sieh mit über 50 Probeprüfungen, wo du stehst.` (150) |
 | iOS anahtar kelimeler (100 bayt) | `ingilizce,kelime,sınav,deneme,dil,gramer,dinleme,okuma,yazma,konuşma,kurs,seviye,alman,a2,b1,b2` (97 bayt) | `vocabulary,words,grammar,listening,reading,writing,speaking,course,deutsch,mock,test,a2,b1,b2` (93) | `vokabeln,wortschatz,grammatik,hören,lesen,schreiben,prüfung,probeprüfung,test,kurs,a2,b1,b2` (94 bayt) |
 
