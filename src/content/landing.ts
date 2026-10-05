@@ -169,7 +169,7 @@ const tr: LandingCopy = {
     line1: "Konuş, anla,",
     line2: "sınava hazırlan.",
     intro:
-      "Lernomi ile Almanca ya da İngilizce öğren: sıfırdan C1'e, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
+      "Ausbildung, iş ya da aile birleşimi için Almanca mı gerekiyor? Lernomi ile Almanca ya da İngilizce öğren: sıfırdan C1'e, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
     noAccount: "Hesap açmadan, ücretsiz başlarsın. Reklam yok.",
   },
   cta: {
