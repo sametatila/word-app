@@ -40,7 +40,7 @@
     },
     "mock-result": {
       "caption": {
-        "tr": { "h": "Konuşma ve yazma da puanlanır", "s": "Her seviyede 1'i ücretsiz, fazlası Premium'da" },
+        "tr": { "h": "Dört becerili deneme sınavı", "s": "Konuşma ve yazma da puanlanır; her seviyede 1'i ücretsiz, fazlası Premium'da" },
         "en": { "h": "Speaking and writing get scored too", "s": "1 free per level, more with Premium" },
         "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "1 pro Niveau gratis, mehr mit Premium" }
       },

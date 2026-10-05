@@ -125,6 +125,12 @@ canlandırması, gerçek kullanıcı değil) vitrin okumasından. Üç uzun aç�
 - "7 günlük seri yapınca" → "7 gün üst üste çalışınca" ("seri" terimi tanımsızdı). de Premium cümlesinde
   "Taschen-Gehmodus mit Bildschirm aus" (Premium'un farkı aynı cümlede).
 
+**Vitrin provası 4. tur (2026-10-05; Samet 1 ve 2'yi onayladı, seviye başına sınav sayısı ve İngilizce iş
+içeriği önerilerini reddetti):** Türkçe 3. kare başlığı "Dört becerili deneme sınavı" (arama sonucundaki ilk
+üç karede "deneme sınavı" geçmiyordu). Türkçe uzun açıklama ve landing girişi hedefi adıyla anıyor:
+"Ausbildung, iş ya da aile birleşimi için Almancaya sıfırdan mı başlıyorsun?" (vaat yok; sertifika uyarısı
+yerinde). "Sohbette yazarak da cevap verirsin" girişe taşındı. Yer için üç cümle kısaldı.
+
 **Beş sütun (öncelik sırası):** 1) **A1'den C1'e adım adım**, Türkçe anlatım ("müfredat" ve "tam" kullanılmaz) · 2) konuşarak
 öğren: gerçek hayattan durumlarda yapay zekâ karakteriyle sohbet + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
 konuşma ve yazma da puanlanır · 4) Cepte yürüyüş (ekran kapalı, **Premium**; ekran açık
@@ -136,7 +142,7 @@ yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime tu
 |---|---|---|---|---|
 | 1 | A1'den C1'e adım adım | Patika: A1→C1 ünite haritası (Okuma, Dinleme, Konuşma, Yazma, Dil bilgisi, Quiz, Sınav) | A1, ilk ünite "şu an" (2026-10-05: `screenshots@` çekim süresince Samet'in onayıyla A1'e alındı, sonra B1/Almanca/Türkçe'ye döndü; satır öncesiyle aynı, yalnız şartlar 1.9.2 onayı yeni). Seviye çizgisi `currentLevel` A1 | Sıfırdan C1'e, Türkçe anlatımla · Seviyeni seç ya da kısa testle bul (2026-10-05; önce: A1'den C1'e adım adım, Türkçe anlatımla) |
 | 2 | Konuşma | Patika › Konuşma adımı: sahne sohbeti | Gerçek bir sahne (ör. B1 doktor randevusu); kullanıcının cümlesi ve düzeltmesi görünür; yapay zekâ bildirimi görünür | Konuş, düzeltmeni anında gör |
-| 3 | Sınav | Deneme sınavı sonucu | B1 deneme sınavı, yazma ya da konuşma bölümünün sonucu: bölüm yüzdesi, "Ölçüm hedeflerine göre" çubukları (görev puanlarından, 745930f5) ve yapılacaklar listesi; incelemede hata→düzeltme. Yeni etiketler ("yapay zekâ puanlar") build 11 ile: çekim build 11+ ile | Konuşma ve yazma da puanlanır · Her seviyede 1'i ücretsiz, fazlası Premium'da (2026-10-05) |
+| 3 | Sınav | Deneme sınavı sonucu | B1 deneme sınavı, yazma ya da konuşma bölümünün sonucu: bölüm yüzdesi, "Ölçüm hedeflerine göre" çubukları (görev puanlarından, 745930f5) ve yapılacaklar listesi; incelemede hata→düzeltme. Yeni etiketler ("yapay zekâ puanlar") build 11 ile: çekim build 11+ ile | tr: Dört becerili deneme sınavı · Konuşma ve yazma da puanlanır; her seviyede 1'i ücretsiz, fazlası Premium'da (2026-10-05, 4. tur; en/de başlık "puanlanır" cümlesi) |
 | 4 | Fark | Cepte yürüyüş + kilit ekranı | Ekran kapalı akış; kilit ekranında "Yürüyüş modu açık" | Ekrana bakmadan, yolda çalış · Günde 3 tur ücretsiz, ekran kapalıyken Premium (2026-10-05; ham görüntü ekran açık giriş) |
 | 5 | Alışkanlık | Günlük kelime turu | Sesli tur, kalan kelime sayısı | Her gün, unutmadan önce |
 | 6 | Beceriler | Beceri kütüphanesi | Beş beceri kartı | Okuma, dinleme, yazma, konuşma, dil bilgisi |
@@ -169,17 +175,17 @@ Tasarım bu çerçeveyle yapılır:
 **Onaylanan Türkçe uzun açıklama (App Store + Play ortak, 2026-09-25):** 41 iddia koda, canlı
 ayara ve içeriğe karşı doğrulandı (kanıt tablosu oturum çıktısında). Kararlar: belge her yerde
 "başarı belgesi"; seri kademesi tavansız ("sonra her 7 günlük seride yeniden" doğru); fiyat
-cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3993/4000 (2026-10-05, 3. tur). Anlatım ekranda yazı, sesli okunan yalnız öğrenilen dil ("okursun"). Paragraflar
+cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3990/4000 (2026-10-05, 4. tur). Anlatım ekranda yazı, sesli okunan yalnız öğrenilen dil ("okursun"). Paragraflar
 tek satır: Console'a yapıştırınca satır ortasında kırılmasın.
 
 ```text
-Lernomi ile Almancayı sıfırdan C1'e, Türkçe anlatımla ve konuşarak öğren. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin. Kelime, okuma, dinleme ve dil bilgisi ücretsiz; reklam yok.
+Ausbildung, iş ya da aile birleşimi için Almancaya sıfırdan mı başlıyorsun? Lernomi ile Almancayı C1'e kadar, Türkçe anlatımla ve konuşarak öğren. Dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin. Konuşmaya çekiniyorsan sohbette yazarak da cevap verirsin. Kelime, okuma, dinleme ve dil bilgisi ücretsiz; reklam yok.
 
 A1'DEN C1'E ADIM ADIM
-Almancada 8.500'den fazla kelime ve 900'den fazla alıştırma. Patika seni seviye seviye, ünite ünite ilerletir: her ünitede okuma, dinleme, konuşma, yazma, dil bilgisi ve quiz adımları var; modül ve seviye sınavlarıyla nerede olduğunu görürsün. Başlangıç seviyeni kendin seçebilir ya da kısa bir seviye testiyle bulabilirsin. Dili biraz biliyorsan Beceriler'de istediğin seviyeden alıştırma yaparsın.
+Almancada 8.500'den fazla kelime ve 900'den fazla alıştırma. Patika seni seviye seviye, ünite ünite ilerletir: her ünitede okuma, dinleme, konuşma, yazma, dil bilgisi ve quiz adımları var; modül ve seviye sınavlarıyla nerede olduğunu görürsün. Başlangıç seviyeni kendin seç ya da kısa bir seviye testiyle bul. Dili biraz biliyorsan Beceriler'de istediğin seviyeden alıştırma yaparsın.
 
 KONUŞARAK ÖĞREN
-Komşunla tanışırken, doktorda, ev bakarken, iş görüşmesinde, toplantıda… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir. Konuşmaya çekiniyorsan sohbette yazarak da cevap verirsin. Konuşma adımı Türkçe bir anlatımla başlar: kullanacağın kalıpları önce kendi dilinde okursun. İstersen sonunda puanlı konuşmayı denersin.
+Komşunla tanışırken, doktorda, ev bakarken, iş görüşmesinde, toplantıda… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir. Konuşma adımı Türkçe bir anlatımla başlar: kalıpları önce kendi dilinde okursun. İstersen sonunda puanlı konuşmayı denersin.
 
 DÖRT BECERİLİ DENEME SINAVLARI
 Her seviyede 1 deneme sınavı ücretsiz; Premium'da toplamda 50'den fazla. Her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını yapay zekâ puanlar ve hatalarını düzeltmeleriyle gösterir. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.
@@ -195,7 +201,7 @@ Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sın
 
 PREMIUM
 Ekran kapalı Cepte yürüyüş, tüm deneme sınavları, Patika ve Beceriler'de bütün konuşma ve yazma çalışmaları, seri ve bitirme beklemeden. Her seviyede ilk 3 deneme sınavı hemen açık; bitirince sıradaki 3'ü gelir. Günlük adil kullanım sınırları Premium sayfasında yazar.
-Premium aylık ya da yıllık, otomatik yenilenen bir aboneliktir ve aynı hesapla telefonda, tablette ve web'de geçerlidir. Yeni abonelere ilk ay ücretsiz; deneme bitmeden iptal edersen ücret alınmaz. Dönem bitiminden en az 24 saat önce iptal edilmezse abonelik yenilenir; aboneliğini satın aldığın mağazanın hesap ayarlarından yönetebilir ya da iptal edebilirsin.
+Premium aylık ya da yıllık, otomatik yenilenen bir aboneliktir; aynı hesapla her cihazda geçerlidir. Yeni abonelere ilk ay ücretsiz; deneme bitmeden iptal edersen ücret alınmaz. Dönem bitiminden en az 24 saat önce iptal edilmezse abonelik yenilenir; aboneliğini satın aldığın mağazanın hesap ayarlarından yönetebilir ya da iptal edebilirsin.
 
 İNGİLİZCE DE VAR
 Aynı yapıda İngilizce kursu: A1'den C1'e 7.000'den fazla kelime, 900'den fazla alıştırma ve 50'den fazla deneme sınavı.
