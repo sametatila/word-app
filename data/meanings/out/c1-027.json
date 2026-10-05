@@ -2,10 +2,10 @@
   {
     "id": 6553,
     "tr": "dize",
-    "en": "verse",
+    "en": "line of verse",
     "beispiel": "Die letzten beiden Verse bleiben bewusst unvollendet.",
     "beispielTr": "Son iki dize bilerek yarım bırakılmış.",
-    "beispielEn": "The last two verses are deliberately left unfinished."
+    "beispielEn": "The last two lines are deliberately left unfinished."
   },
   {
     "id": 6554,
@@ -81,10 +81,10 @@
   },
   {
     "id": 6563,
-    "tr": "dil imgesi",
+    "tr": "imge",
     "en": "figure of speech",
     "beispiel": "Ihre Sprachbilder stammen fast alle aus der Landwirtschaft.",
-    "beispielTr": "Dil imgelerinin neredeyse hepsi tarımdan geliyor.",
+    "beispielTr": "İmgelerinin neredeyse hepsi tarımdan geliyor.",
     "beispielEn": "Almost all her figures of speech come from farming."
   },
   {

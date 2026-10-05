@@ -18,10 +18,10 @@
   {
     "id": 6655,
     "tr": "hizmet kapsamı",
-    "en": "benefits catalog",
+    "en": "benefits package",
     "beispiel": "Diese Therapie steht nicht im Leistungskatalog der Krankenkasse.",
     "beispielTr": "Bu tedavi sigortanın hizmet kapsamında yer almıyor.",
-    "beispielEn": "This therapy is not in the insurer's benefits catalog."
+    "beispielEn": "This therapy is not part of the insurer's benefits package."
   },
   {
     "id": 6656,
@@ -193,10 +193,10 @@
   },
   {
     "id": 6677,
-    "tr": "kaynak dağılımı",
+    "tr": "kaynak tahsisi",
     "en": "resource allocation",
     "beispiel": "Die Pandemie zwang die Kliniken zu einer harten Ressourcenallokation.",
-    "beispielTr": "Salgın klinikleri sert bir kaynak dağılımına zorladı.",
+    "beispielTr": "Salgın, klinikleri katı bir kaynak tahsisine zorladı.",
     "beispielEn": "The pandemic forced clinics into a harsh resource allocation."
   },
   {
@@ -241,7 +241,7 @@
   },
   {
     "id": 6683,
-    "tr": "tabi olmak",
+    "tr": "-den geçmek",
     "en": "to undergo",
     "beispiel": "Sie hat sich freiwillig einer belastenden Untersuchung unterzogen.",
     "beispielTr": "Gönüllü olarak zorlu bir tetkikten geçti.",

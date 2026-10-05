@@ -90,14 +90,14 @@
   {
     "id": 3540,
     "tr": "zamanaşımı",
-    "en": "limitation period",
+    "en": "statute of limitations",
     "beispiel": "Nach drei Jahren tritt die Verjährung ein.",
-    "beispielTr": "Üç yıl sonra zamanaşımı devreye girer.",
-    "beispielEn": "After three years, the statute of limitations kicks in."
+    "beispielTr": "Üç yıl sonra zamanaşımı dolar.",
+    "beispielEn": "The statute of limitations expires after three years."
   },
   {
     "id": 3548,
-    "tr": "suç unsuru",
+    "tr": "suç tipi",
     "en": "criminal offense",
     "beispiel": "Der Straftatbestand des Betrugs war eindeutig erfüllt.",
     "beispielTr": "Dolandırıcılığın suç unsurları açıkça oluşmuştu.",
@@ -154,10 +154,10 @@
   {
     "id": 3567,
     "tr": "hak düşürücü süre",
-    "en": "cut-off period",
+    "en": "final deadline",
     "beispiel": "Die Ausschlussfrist für den Antrag endet am Freitag.",
     "beispielTr": "Başvuru için hak düşürücü süre cuma günü doluyor.",
-    "beispielEn": "The cut-off period for the application ends on Friday."
+    "beispielEn": "The final deadline for the application is Friday."
   },
   {
     "id": 3570,
@@ -289,10 +289,10 @@
   },
   {
     "id": 3590,
-    "tr": "gayri safi yurtiçi hasıla",
+    "tr": "gayrisafi yurt içi hasıla",
     "en": "gross domestic product",
     "beispiel": "Das Bruttoinlandsprodukt wuchs im letzten Jahr um zwei Prozent.",
-    "beispielTr": "Gayri safi yurtiçi hasıla geçen yıl yüzde iki büyüdü.",
+    "beispielTr": "Gayrisafi yurt içi hasıla geçen yıl yüzde iki büyüdü.",
     "beispielEn": "Gross domestic product grew by two percent last year."
   },
   {
@@ -321,10 +321,10 @@
   },
   {
     "id": 3599,
-    "tr": "tüzel kişilik",
+    "tr": "tüzel kişi",
     "en": "corporate body",
     "beispiel": "Die Universität ist eine Körperschaft des öffentlichen Rechts.",
-    "beispielTr": "Üniversite, bir kamu hukuku tüzel kişisidir.",
+    "beispielTr": "Üniversite bir kamu tüzel kişisidir.",
     "beispielEn": "The university is a corporate body under public law."
   },
   {

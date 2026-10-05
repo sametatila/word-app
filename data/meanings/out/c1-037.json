@@ -41,7 +41,7 @@
   },
   {
     "id": 7058,
-    "tr": "hacca gitmek",
+    "tr": "hac yolculuğu yapmak",
     "en": "to make a pilgrimage",
     "beispiel": "Jährlich pilgern Zehntausende zu diesem abgelegenen Bergkloster.",
     "beispielTr": "Her yıl on binlerce kişi bu ıssız dağ manastırına hac için gidiyor.",
@@ -194,18 +194,18 @@
   {
     "id": 7077,
     "tr": "dil kullanımı",
-    "en": "language usage",
+    "en": "usage",
     "beispiel": "Im heutigen Sprachgebrauch klingt dieser Ausdruck deutlich veraltet.",
     "beispielTr": "Bugünkü dil kullanımında bu ifade epeyce eskimiş duruyor.",
-    "beispielEn": "In today's language usage this expression sounds clearly outdated."
+    "beispielEn": "In current usage this expression sounds distinctly outdated."
   },
   {
     "id": 7078,
-    "tr": "dil düzeyi",
-    "en": "language level",
+    "tr": "dil düzlemi",
+    "en": "linguistic register",
     "beispiel": "Der Redner wechselte mitten im Vortrag die Sprachebene.",
     "beispielTr": "Konuşmacı sunumun ortasında dil düzeyini değiştirdi.",
-    "beispielEn": "The speaker switched to a different language level in the middle of the talk."
+    "beispielEn": "The speaker switched registers in the middle of the talk."
   },
   {
     "id": 7079,
@@ -361,10 +361,10 @@
   },
   {
     "id": 7098,
-    "tr": "hafife alma",
+    "tr": "olduğundan hafif gösterme",
     "en": "understatement",
     "beispiel": "Von einem kleinen Problem zu sprechen war eine glatte Untertreibung.",
-    "beispielTr": "Küçük bir sorundan söz etmek düpedüz hafife almaktı.",
+    "beispielTr": "Küçük bir sorundan söz etmek, durumu düpedüz olduğundan hafif göstermekti.",
     "beispielEn": "Calling it a small problem was a plain understatement."
   },
   {
@@ -393,10 +393,10 @@
   },
   {
     "id": 7102,
-    "tr": "atlama",
+    "tr": "atlanan kısım",
     "en": "omission",
     "beispiel": "Gerade die Auslassungen im Text verraten die Absicht des Verfassers.",
-    "beispielTr": "Metindeki atlamalar tam da yazarın niyetini ele veriyor.",
+    "beispielTr": "Metinde atlanan kısımlar tam da yazarın niyetini ele veriyor.",
     "beispielEn": "It is precisely the omissions in the text that reveal the author's intention."
   }
 ]

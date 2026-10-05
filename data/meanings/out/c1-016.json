@@ -25,10 +25,10 @@
   },
   {
     "id": 6006,
-    "tr": "amaca bağlı",
+    "tr": "amaca tahsisli",
     "en": "earmarked",
     "beispiel": "Diese Spende ist zweckgebunden und finanziert nur den Spielplatz.",
-    "beispielTr": "Bu bağış amaca bağlı ve sadece oyun parkını finanse ediyor.",
+    "beispielTr": "Bu bağış belli bir amaca tahsisli ve sadece oyun parkını finanse ediyor.",
     "beispielEn": "This donation is earmarked and funds only the playground."
   },
   {
@@ -361,11 +361,11 @@
   },
   {
     "id": 6048,
-    "tr": "ileriye taşımak",
-    "en": "to carry forward",
+    "tr": "güncelleyerek sürdürmek",
+    "en": "to update and extend",
     "beispiel": "Die Behörde schreibt den Haushaltsplan jedes Jahr fort.",
-    "beispielTr": "Kurum bütçe planını her yıl aynı şekilde ileriye taşıyor.",
-    "beispielEn": "The authority carries the budget plan forward every year."
+    "beispielTr": "Kurum bütçe planını her yıl güncelleyerek sürdürüyor.",
+    "beispielEn": "The authority updates and extends the budget plan every year."
   },
   {
     "id": 6049,

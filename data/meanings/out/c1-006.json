@@ -370,10 +370,10 @@
   {
     "id": 3692,
     "tr": "kusur bulmak",
-    "en": "to fault",
+    "en": "to find fault with",
     "beispiel": "Die Prüfer bemängeln die fehlende Dokumentation.",
     "beispielTr": "Denetçiler, belgelerin eksik olmasını kusur sayıyor.",
-    "beispielEn": "The auditors fault the missing documentation."
+    "beispielEn": "The auditors find fault with the lack of documentation."
   },
   {
     "id": 3693,

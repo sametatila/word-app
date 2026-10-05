@@ -273,10 +273,10 @@
   },
   {
     "id": 6837,
-    "tr": "ceza sorumluluğu",
+    "tr": "cezai ehliyet",
     "en": "criminal responsibility",
     "beispiel": "Das Gericht ließ die Zurechnungsfähigkeit des Angeklagten psychiatrisch prüfen.",
-    "beispielTr": "Mahkeme, sanığın ceza sorumluluğunu psikiyatrik olarak inceletti.",
+    "beispielTr": "Mahkeme, sanığın cezai ehliyetini psikiyatrik olarak inceletti.",
     "beispielEn": "The court had the defendant's criminal responsibility examined by a psychiatrist."
   },
   {
@@ -377,10 +377,10 @@
   },
   {
     "id": 6850,
-    "tr": "görecelilik",
+    "tr": "görecilik",
     "en": "relativism",
     "beispiel": "Ein radikaler Relativismus macht jede Kritik an Unrecht unmöglich.",
-    "beispielTr": "Radikal bir görecelilik, haksızlığa yönelik her eleştiriyi imkânsız kılar.",
+    "beispielTr": "Radikal bir görecilik, haksızlığa yönelik her eleştiriyi imkânsız kılar.",
     "beispielEn": "A radical relativism makes any criticism of injustice impossible."
   },
   {

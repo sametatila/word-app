@@ -41,7 +41,7 @@
  },
  {
   "id": 3641,
-  "tr": "aktarım",
+  "tr": "kuşaktan kuşağa aktarım",
   "en": "lore",
   "beispiel": "Die mündliche Überlieferung hielt die alten Lieder lebendig.",
   "beispielTr": "Sözlü gelenek eski şarkıları yaşattı.",
@@ -281,10 +281,10 @@
  },
  {
   "id": 3491,
-  "tr": "postülat",
+  "tr": "temel varsayım",
   "en": "postulate",
   "beispiel": "Dieses Postulat blieb jahrzehntelang unbestritten.",
-  "beispielTr": "Bu varsayım onlarca yıl tartışılmadan kabul gördü.",
+  "beispielTr": "Bu temel varsayım onlarca yıl tartışılmadan kabul gördü.",
   "beispielEn": "This postulate remained unchallenged for decades."
  },
  {
@@ -297,19 +297,19 @@
  },
  {
   "id": 3493,
-  "tr": "tutarlılık",
+  "tr": "bütünlük",
   "en": "coherence",
   "beispiel": "Dem Aufsatz fehlt es an innerer Kohärenz.",
-  "beispielTr": "Yazının iç tutarlılığı eksik.",
+  "beispielTr": "Yazıda iç bütünlük eksik.",
   "beispielEn": "The essay lacks inner coherence."
  },
  {
   "id": 3495,
-  "tr": "tartışma katkısı",
+  "tr": "tartışmaya katkı",
   "en": "contribution to the discussion",
   "beispiel": "Ihr Diskussionsbeitrag brachte die Debatte deutlich voran.",
   "beispielTr": "Tartışmadaki katkısı, konuyu belirgin biçimde ilerletti.",
-  "beispielEn": "Her contribution to the discussion moved the debate forward."
+  "beispielEn": "Her contribution to the discussion moved the debate forward significantly."
  },
  {
   "id": 3496,

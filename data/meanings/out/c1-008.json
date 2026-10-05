@@ -9,7 +9,7 @@
  },
  {
   "id": 3928,
-  "tr": "personel devri",
+  "tr": "personel devir hızı",
   "en": "staff turnover",
   "beispiel": "Im Callcenter ist die Fluktuation besonders hoch.",
   "beispielTr": "Çağrı merkezinde personel devri özellikle yüksek.",
@@ -226,17 +226,17 @@
  {
   "id": 3959,
   "tr": "güdüm altında tutma",
-  "en": "micromanagement",
+  "en": "regimentation",
   "beispiel": "Er beschwert sich über die ständige Gängelung durch Vorschriften.",
   "beispielTr": "Kuralların onu sürekli güdüm altında tutmasından şikâyet ediyor.",
-  "beispielEn": "He complains about constantly being patronized by regulations."
+  "beispielEn": "He complains about the constant regimentation by regulations."
  },
  {
   "id": 3960,
-  "tr": "iradesizleştirme",
+  "tr": "söz hakkını elinden alma",
   "en": "disempowerment",
   "beispiel": "Sie erlebt die Kontrolle ihrer Kinder als Entmündigung.",
-  "beispielTr": "Çocuklarının onu denetlemesini iradesizleştirme olarak görüyor.",
+  "beispielTr": "Çocuklarının onu denetlemesini, söz hakkının elinden alınması olarak görüyor.",
   "beispielEn": "She experiences her children's control as disempowerment."
  },
  {
@@ -249,10 +249,10 @@
  },
  {
   "id": 3964,
-  "tr": "yapılabilirlik saplantısı",
+  "tr": "her şeyi başarabilme yanılgısı",
   "en": "feasibility delusion",
   "beispiel": "Sein Machbarkeitswahn hat das ganze Projekt ruiniert.",
-  "beispielTr": "Yapılabilirlik saplantısı bütün projeyi mahvetti.",
+  "beispielTr": "Her şeyi başarabileceği yanılgısı bütün projeyi mahvetti.",
   "beispielEn": "His feasibility delusion ruined the whole project."
  },
  {

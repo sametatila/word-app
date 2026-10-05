@@ -297,11 +297,11 @@
   },
   {
     "id": 7340,
-    "tr": "içeriden ticaret",
+    "tr": "içeriden bilgi ticareti",
     "en": "insider trading",
     "beispiel": "Die Aufsicht prüft mögliche Insidergeschäfte kurz vor der Übernahmeankündigung.",
-    "beispielTr": "Denetim kurumu, devralma duyurusu öncesindeki olası içeriden ticareti inceliyor.",
-    "beispielEn": "The regulator is examining possible insider trading before the takeover announcement."
+    "beispielTr": "Denetim kurumu, devralma duyurusunun hemen öncesindeki olası içeriden bilgi ticaretini inceliyor.",
+    "beispielEn": "The regulator is examining possible insider trading shortly before the takeover announcement."
   },
   {
     "id": 7341,
@@ -385,11 +385,11 @@
   },
   {
     "id": 7351,
-    "tr": "kılıf",
-    "en": "pretext",
+    "tr": "kisve",
+    "en": "guise",
     "beispiel": "Unter dem Deckmantel der Forschung wurden Werbekampagnen finanziert.",
-    "beispielTr": "Araştırma kılıfı altında reklam kampanyaları finanse edildi.",
-    "beispielEn": "Advertising campaigns were funded under the pretext of research."
+    "beispielTr": "Araştırma kisvesi altında reklam kampanyaları finanse edildi.",
+    "beispielEn": "Advertising campaigns were funded under the guise of research."
   },
   {
     "id": 7352,

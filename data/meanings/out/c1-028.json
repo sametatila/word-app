@@ -10,7 +10,7 @@
   {
     "id": 6604,
     "tr": "pamflet",
-    "en": "pamphlet",
+    "en": "polemical tract",
     "beispiel": "Sein Buch ist weniger Studie als politisches Pamphlet gegen die Regierung.",
     "beispielTr": "Kitabı bir incelemeden çok hükûmete karşı yazılmış siyasi bir pamflet.",
     "beispielEn": "His book is less a study than a political pamphlet against the government."
@@ -25,10 +25,10 @@
   },
   {
     "id": 6606,
-    "tr": "kültür sanat eki",
+    "tr": "kültür sanat sayfası",
     "en": "arts section",
     "beispiel": "Im Feuilleton wird seit Wochen über den Begriff der Cancel-Kultur gestritten.",
-    "beispielTr": "Kültür sanat ekinde haftalardır iptal kültürü kavramı tartışılıyor.",
+    "beispielTr": "Kültür sanat sayfasında haftalardır iptal kültürü kavramı tartışılıyor.",
     "beispielEn": "The arts section has been arguing over the term cancel culture for weeks."
   },
   {
@@ -313,10 +313,10 @@
   },
   {
     "id": 6642,
-    "tr": "dayanaksız",
+    "tr": "kanıtlanmamış",
     "en": "unsubstantiated",
     "beispiel": "Der Vorwurf blieb bis zum Schluss unbelegt und wurde dennoch wiederholt.",
-    "beispielTr": "Suçlama sonuna kadar dayanaksız kaldı ve yine de tekrarlandı.",
+    "beispielTr": "Suçlama sonuna kadar kanıtlanmadı ama yine de tekrarlandı.",
     "beispielEn": "The accusation stayed unsubstantiated to the end and was still repeated."
   },
   {
@@ -377,10 +377,10 @@
   },
   {
     "id": 6650,
-    "tr": "yetersizlik",
+    "tr": "darlık",
     "en": "scarcity",
     "beispiel": "Die Knappheit an Intensivbetten zwang die Klinik zu harten Entscheidungen.",
-    "beispielTr": "Yoğun bakım yatağı yetersizliği kliniği zor kararlar almaya zorladı.",
+    "beispielTr": "Yoğun bakım yatağı darlığı kliniği zor kararlar almaya zorladı.",
     "beispielEn": "The scarcity of intensive care beds forced the clinic into hard choices."
   },
   {

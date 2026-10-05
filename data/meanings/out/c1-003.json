@@ -209,10 +209,10 @@
  },
  {
   "id": 3717,
-  "tr": "anlaşılır",
+  "tr": "anlaşılabilir",
   "en": "understandable",
   "beispiel": "Seine Entscheidung ist angesichts der Umstände nachvollziehbar.",
-  "beispielTr": "Koşullar göz önüne alınınca kararı gayet makul.",
+  "beispielTr": "Koşullar göz önüne alındığında kararı anlaşılabilir.",
   "beispielEn": "Given the circumstances his decision is understandable."
  },
  {
@@ -250,10 +250,10 @@
  {
   "id": 3556,
   "tr": "infaz",
-  "en": "enforcement",
+  "en": "execution",
   "beispiel": "Der Vollzug des Urteils wurde vorläufig ausgesetzt.",
   "beispielTr": "Hükmün infazı geçici olarak durduruldu.",
-  "beispielEn": "Enforcement of the judgment was suspended for now."
+  "beispielEn": "Execution of the judgment was suspended for now."
  },
  {
   "id": 3526,

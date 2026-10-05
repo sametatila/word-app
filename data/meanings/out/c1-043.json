@@ -97,10 +97,10 @@
   },
   {
     "id": 7365,
-    "tr": "iyi niyetli",
+    "tr": "kolay inanan",
     "en": "trusting",
     "beispiel": "Viele Anleger vertrauten gutgläubig auf die geprüften Zahlen.",
-    "beispielTr": "Birçok yatırımcı iyi niyetle denetlenmiş rakamlara güvendi.",
+    "beispielTr": "Birçok yatırımcı denetlenmiş rakamlara safça güvendi.",
     "beispielEn": "Many investors trustingly relied on the audited figures."
   },
   {
@@ -233,10 +233,10 @@
   },
   {
     "id": 7382,
-    "tr": "alan içi tartışma",
+    "tr": "uzman tartışması",
     "en": "expert debate",
     "beispiel": "Die Fachdebatte über den Mindestlohn wird immer schärfer.",
-    "beispielTr": "Asgari ücret üzerine alan içi tartışma giderek sertleşiyor.",
+    "beispielTr": "Asgari ücret üzerine uzman tartışması giderek sertleşiyor.",
     "beispielEn": "The expert debate about the minimum wage is growing increasingly heated."
   },
   {
@@ -361,10 +361,10 @@
   },
   {
     "id": 7398,
-    "tr": "veri durumu",
+    "tr": "eldeki veriler",
     "en": "available data",
     "beispiel": "Bei dieser dünnen Datenlage sind klare Aussagen unmöglich.",
-    "beispielTr": "Bu zayıf veri durumunda net yargılara varmak imkânsız.",
+    "beispielTr": "Veriler bu kadar yetersizken net yargılara varmak imkânsız.",
     "beispielEn": "With data this thin, clear conclusions are impossible."
   },
   {

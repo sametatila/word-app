@@ -28,5 +28,14 @@
  { "conversation": "de-b2-festival", "de": "der Brauch", "en": "custom" },
  { "conversation": "de-b2-networking-b2", "de": "das Arbeitszeugnis", "en": "employment reference" },
  { "conversation": "de-b2-verabschiedung-kollegen", "de": "die Laufbahn", "en": "career path" },
- { "conversation": "de-b2-verabschiedung-kollegen", "de": "die Verbundenheit", "en": "bond" }
+ { "conversation": "de-b2-verabschiedung-kollegen", "de": "die Verbundenheit", "en": "bond" },
+ { "conversation": "de-c1-daumen", "de": "der Wolf im Schafspelz", "en": "a wolf in sheep's clothing" },
+ { "conversation": "de-c1-tiere-idiome", "de": "die Katze im Sack kaufen", "en": "to buy a pig in a poke" },
+ { "conversation": "de-c1-tiere-idiome", "de": "schwarzmalen", "en": "to paint a bleak picture" },
+ { "conversation": "de-c1-farben-idiome", "de": "das Gelbe vom Ei", "en": "the cream of the crop" },
+ { "conversation": "de-c1-datenschutz-c1", "de": "die Zweckbindung", "en": "purpose limitation" },
+ { "conversation": "de-c1-datenschutz-c1", "de": "die Weitergabe", "en": "passing on" },
+ { "conversation": "de-c1-hypothesen", "de": "sich unterziehen", "en": "to undergo" },
+ { "conversation": "de-c1-peinlichkeiten", "de": "sich herausreden", "en": "to make excuses" },
+ { "conversation": "de-c1-kulturschock-fein", "de": "die Direktheit", "en": "directness" }
 ]

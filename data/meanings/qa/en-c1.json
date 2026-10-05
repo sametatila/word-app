@@ -592,7 +592,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Fasnacht bölgesel (İsviçre/Aleman) biçim; standart Almanca Fastnacht."
+   "reason": "Fasnacht bölgesel (İsviçre/Aleman) biçim; standart Almanca Fastnacht.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203199,
@@ -637,7 +638,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "konjunkturabhängig yalnız ekonomik anlamı veriyor; genel karşılık döngüsel = zyklisch, cümlede de doğal."
+   "reason": "konjunkturabhängig yalnız ekonomik anlamı veriyor; genel karşılık döngüsel = zyklisch, cümlede de doğal.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203284,
@@ -659,7 +661,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "Rule of law bir ilkedir; yerleşik karşılıkları hukukun üstünlüğü ve Rechtsstaatlichkeit, hukuk devleti/Rechtsstaat devlet türüdür."
+   "reason": "Rule of law bir ilkedir; yerleşik karşılıkları hukukun üstünlüğü ve Rechtsstaatlichkeit, hukuk devleti/Rechtsstaat devlet türüdür.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203327,
@@ -676,7 +679,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Söz hakkı fazla genel; Mitbestimmung karşılığı yönetime katılım. İşyeri kurulu korunarak cümle uyarlandı."
+   "reason": "Söz hakkı fazla genel; Mitbestimmung karşılığı yönetime katılım. İşyeri kurulu korunarak cümle uyarlandı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203337,
@@ -691,7 +695,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "the immune defense Almanca kalkı, doğal İngilizcede artikelsiz."
+   "reason": "the immune defense Almanca kalkı, doğal İngilizcede artikelsiz.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203463,
@@ -722,7 +727,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Kavramlar arası için ayrıştırma doğal değil; Türkçede ayrım denir."
+   "reason": "Kavramlar arası için ayrıştırma doğal değil; Türkçede ayrım denir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203546,
@@ -739,7 +745,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "State of affairs o anki durumdur, gidişat değil; Zustand ile de örtüşür."
+   "reason": "State of affairs o anki durumdur, gidişat değil; Zustand ile de örtüşür.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203567,
@@ -759,7 +766,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "Ausschlussfrist hukuki hak düşürücü süre; cutoff date Stichtag. Türkçe cümle zaten son tarih diyor."
+   "reason": "Ausschlussfrist hukuki hak düşürücü süre; cutoff date Stichtag. Türkçe cümle zaten son tarih diyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203603,
@@ -778,7 +786,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "\"don't convince me\" Almancadan birebir aktarım, İngilizcede beğeni için kullanılmaz; İngilizce cümle gerçekten hatalı."
+   "reason": "\"don't convince me\" Almancadan birebir aktarım, İngilizcede beğeni için kullanılmaz; İngilizce cümle gerçekten hatalı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203634,
@@ -795,7 +804,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sayılabilir reminiscence anlatılan anıdır; \"anımsamalarla dolu\" yapay, \"anı\" doğru karşılık."
+   "reason": "Sayılabilir reminiscence anlatılan anıdır; \"anımsamalarla dolu\" yapay, \"anı\" doğru karşılık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203658,
@@ -812,7 +822,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"transzendieren\" seyrek, akademik bir alıntı sözcük; \"Grenzen überschreiten\" doğal Almanca ve Türkçe \"aşmak\" ile örtüşüyor."
+   "reason": "\"transzendieren\" seyrek, akademik bir alıntı sözcük; \"Grenzen überschreiten\" doğal Almanca ve Türkçe \"aşmak\" ile örtüşüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203679,
@@ -829,7 +840,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "resign oneself to = istemeden kabullenmek; \"yenilgiye boyun eğmek\" doğal değil, \"kabullenmek\" tam karşılık."
+   "reason": "resign oneself to = istemeden kabullenmek; \"yenilgiye boyun eğmek\" doğal değil, \"kabullenmek\" tam karşılık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203687,
@@ -846,7 +858,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"sich verselbstständigen\" kontrolden çıkıp tırmanmak demek değil; \"außer Kontrolle geraten\" doğru karşılık."
+   "reason": "\"sich verselbstständigen\" kontrolden çıkıp tırmanmak demek değil; \"außer Kontrolle geraten\" doğru karşılık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203689,
@@ -863,7 +876,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Hataları concede etmek = kabul etmek/itiraf; \"hataları kabullendi\" doğal değil. resign oneself artık \"kabullenmek\" olduğundan ayrım da korunuyor."
+   "reason": "Hataları concede etmek = kabul etmek/itiraf; \"hataları kabullendi\" doğal değil. resign oneself artık \"kabullenmek\" olduğundan ayrım da korunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203698,
@@ -878,7 +892,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "construe = yorumlamak; örnek çeviri de \"yorumluyor\" diyor, \"anlamlandırmak\" hem uyumsuz hem daha zayıf."
+   "reason": "construe = yorumlamak; örnek çeviri de \"yorumluyor\" diyor, \"anlamlandırmak\" hem uyumsuz hem daha zayıf.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203706,
@@ -895,7 +910,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"eine Tücke haben\" bu bağlamda yapay; plandaki pürüz için doğal sözcük \"Haken\"."
+   "reason": "\"eine Tücke haben\" bu bağlamda yapay; plandaki pürüz için doğal sözcük \"Haken\".",
+   "applied": "2026-10-05"
   },
   {
    "id": 203899,
@@ -912,7 +928,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Schlichtung arabuluculuk/uzlaştırmadır; tahkim ve arbitration bağlayıcı hakem süreci = Schiedsverfahren."
+   "reason": "Schlichtung arabuluculuk/uzlaştırmadır; tahkim ve arbitration bağlayıcı hakem süreci = Schiedsverfahren.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203905,
@@ -929,7 +946,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "\"unkalkulierbar\" öngörülemez (risk) demek; zararın ölçülemeyecek büyüklüğü \"unermesslich\"."
+   "reason": "\"unkalkulierbar\" öngörülemez (risk) demek; zararın ölçülemeyecek büyüklüğü \"unermesslich\".",
+   "applied": "2026-10-05"
   },
   {
    "id": 203924,
@@ -958,7 +976,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Belirtme ekli tekil 'çalışanı' belirli bir kişiyi çağrıştırıyor; genel kavram ve örnek çoğul."
+   "reason": "Belirtme ekli tekil 'çalışanı' belirli bir kişiyi çağrıştırıyor; genel kavram ve örnek çoğul.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203950,
@@ -989,7 +1008,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Kararların keyfîliği Almancada Willkür; Beliebigkeit 'gelişigüzellik' anlamına kayıyor."
+   "reason": "Kararların keyfîliği Almancada Willkür; Beliebigkeit 'gelişigüzellik' anlamına kayıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203959,
@@ -1006,7 +1026,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Ton için yerleşik eşdizim 'herablassender Ton'; tr 'küçümseyici' ile de örtüşüyor, bevormundend vesayet anlamına kayıyor."
+   "reason": "Ton için yerleşik eşdizim 'herablassender Ton'; tr 'küçümseyici' ile de örtüşüyor, bevormundend vesayet anlamına kayıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 203987,
@@ -1023,7 +1044,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "scandalize geçişli 'birini sarsmak/infiale sürüklemek'; 'skandal yaratmak' nesnesiz ve farklı anlam."
+   "reason": "scandalize geçişli 'birini sarsmak/infiale sürüklemek'; 'skandal yaratmak' nesnesiz ve farklı anlam.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204035,
@@ -1054,7 +1076,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'iş sahibi' işveren diye de anlaşılıyor; 'bir işte çalışan' anlamı net veriyor."
+   "reason": "'iş sahibi' işveren diye de anlaşılıyor; 'bir işte çalışan' anlamı net veriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204137,
@@ -1099,7 +1122,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Lehrvertrag Avusturya/İsviçre ve eski kullanım; Almanya standardı Ausbildungsvertrag."
+   "reason": "Lehrvertrag Avusturya/İsviçre ve eski kullanım; Almanya standardı Ausbildungsvertrag.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204254,
@@ -1116,7 +1140,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Dank vermitteln an' doğal Almanca değil; übermitteln 'iletmek' ile örtüşüyor ve cümleyi düzeltiyor."
+   "reason": "'Dank vermitteln an' doğal Almanca değil; übermitteln 'iletmek' ile örtüşüyor ve cümleyi düzeltiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204422,
@@ -1147,7 +1172,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Harç resmî hizmet karşılığı ücret; poşete konan levy/Abgabe Türkçede vergi."
+   "reason": "Harç resmî hizmet karşılığı ücret; poşete konan levy/Abgabe Türkçede vergi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204680,
@@ -1164,7 +1190,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Tedarikçi bağlamında ve tr 'teslim süresi' ile uyumlu karşılık Lieferzeit; Durchlaufzeit üretim süresi."
+   "reason": "Tedarikçi bağlamında ve tr 'teslim süresi' ile uyumlu karşılık Lieferzeit; Durchlaufzeit üretim süresi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 204843,
@@ -1193,7 +1220,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Ortaklık bağlamında dissolution 'fesih'tir; örnek cümledeki 'feshi' ile de uyumlu, 'dağılma' bu anlamı karşılamıyor."
+   "reason": "Ortaklık bağlamında dissolution 'fesih'tir; örnek cümledeki 'feshi' ile de uyumlu, 'dağılma' bu anlamı karşılamıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205234,
@@ -1212,7 +1240,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'brought a large extra payment' Almancadan birebir aktarım, doğal İngilizce değil."
+   "reason": "'brought a large extra payment' Almancadan birebir aktarım, doğal İngilizce değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205236,
@@ -1229,7 +1258,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "lodge nesne alan fiil; 'dilekçe vermek' nesneyi içinde taşıyor ve Türkçe cümledeki 'sunduk' ile örtüşmüyor; complaint karşılığı Widerspruch değil Beschwerde."
+   "reason": "lodge nesne alan fiil; 'dilekçe vermek' nesneyi içinde taşıyor ve Türkçe cümledeki 'sunduk' ile örtüşmüyor; complaint karşılığı Widerspruch değil Beschwerde.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205310,
@@ -1246,7 +1276,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'unwegsam' engebeli, zor arazidir; karla kapanan yol için impassable = 'unpassierbar'."
+   "reason": "'unwegsam' engebeli, zor arazidir; karla kapanan yol için impassable = 'unpassierbar'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205493,
@@ -1263,7 +1294,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'aufwendig' elaborate/emek-masraf isteyen; laborious (yorucu, zahmetli) karşılığı 'mühsam'."
+   "reason": "'aufwendig' elaborate/emek-masraf isteyen; laborious (yorucu, zahmetli) karşılığı 'mühsam'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205576,
@@ -1280,7 +1312,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Willenserklärung hukuktaki 'irade beyanı'dır; 'niyet beyanı' Absichtserklärung karşılığıdır."
+   "reason": "Willenserklärung hukuktaki 'irade beyanı'dır; 'niyet beyanı' Absichtserklärung karşılığıdır.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205586,
@@ -1297,7 +1330,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "void hukukta baştan geçersiz, yani 'nichtig' (null and void = null und nichtig); 'unwirksam' daha geniş."
+   "reason": "void hukukta baştan geçersiz, yani 'nichtig' (null and void = null und nichtig); 'unwirksam' daha geniş.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205588,
@@ -1314,7 +1348,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "tacit agreement = zımni anlaşma; 'üstü kapalı anlaşma' gizli anlaşma gibi okunuyor."
+   "reason": "tacit agreement = zımni anlaşma; 'üstü kapalı anlaşma' gizli anlaşma gibi okunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205701,
@@ -1336,7 +1371,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "Marktordnung/piyasa düzeni piyasa yapısıdır; regulation düzenleme/denetimdir."
+   "reason": "Marktordnung/piyasa düzeni piyasa yapısıdır; regulation düzenleme/denetimdir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205715,
@@ -1353,7 +1389,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Landnahme tarihsel yerleşme/fetih terimi; güncel toprak gaspı için Landraub kullanılır."
+   "reason": "Landnahme tarihsel yerleşme/fetih terimi; güncel toprak gaspı için Landraub kullanılır.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205733,
@@ -1370,7 +1407,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "auslaugen dar (toprak/vücut) anlam; deplete ve tr tüketmek için genel karşılık erschöpfen."
+   "reason": "auslaugen dar (toprak/vücut) anlam; deplete ve tr tüketmek için genel karşılık erschöpfen.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205742,
@@ -1390,7 +1428,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "flächendeckend coğrafi kapsama çağrıştırır; durchweg genel karşılık, tr de örnekle uyumlu hâle geliyor."
+   "reason": "flächendeckend coğrafi kapsama çağrıştırır; durchweg genel karşılık, tr de örnekle uyumlu hâle geliyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205749,
@@ -1407,7 +1446,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "ackerbaulich yalnız tarla tarımı; agronomic/agronomik karşılığı agronomisch."
+   "reason": "ackerbaulich yalnız tarla tarımı; agronomic/agronomik karşılığı agronomisch.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205758,
@@ -1424,7 +1464,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Fremdheit yabancılık demek, tuhaflık değil; önerilen cümle deGloss'u içermediği için cümle düzeltildi."
+   "reason": "Fremdheit yabancılık demek, tuhaflık değil; önerilen cümle deGloss'u içermediği için cümle düzeltildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205779,
@@ -1441,7 +1482,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "sıra düzeni Türkçede bu anlamda doğal değil; hiyerarşi doğru karşılık."
+   "reason": "sıra düzeni Türkçede bu anlamda doğal değil; hiyerarşi doğru karşılık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205788,
@@ -1458,7 +1500,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Habitus sosyolojik terim; demeanor/tavır karşılığı Auftreten."
+   "reason": "Habitus sosyolojik terim; demeanor/tavır karşılığı Auftreten.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205796,
@@ -1475,7 +1518,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "tradieren akademik ve nadir; weitergeben genel ve doğal karşılık."
+   "reason": "tradieren akademik ve nadir; weitergeben genel ve doğal karşılık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205816,
@@ -1492,7 +1536,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "profan kutsal olmayan/dünyevi çağrışımlı, sıradan işler için alltäglich doğru karşılık."
+   "reason": "profan kutsal olmayan/dünyevi çağrışımlı, sıradan işler için alltäglich doğru karşılık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205819,
@@ -1507,7 +1552,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "prevailing için hâkim yerleşik karşılık ve örnekle uyumlu; yalnız anlam alanı değişiyor."
+   "reason": "prevailing için hâkim yerleşik karşılık ve örnekle uyumlu; yalnız anlam alanı değişiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205820,
@@ -1524,7 +1570,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "mütekabil eskimiş; karşılıklı açıkça daha iyi. Almanca cümle deGloss'u (wechselseitig) içermeye devam etsin diye değiştirilmedi."
+   "reason": "mütekabil eskimiş; karşılıklı açıkça daha iyi. Almanca cümle deGloss'u (wechselseitig) içermeye devam etsin diye değiştirilmedi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205822,
@@ -1539,7 +1586,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "asırlık yüz yıllık demek; time-honored köklü/geleneksel, örnek de köklü kullanıyor."
+   "reason": "asırlık yüz yıllık demek; time-honored köklü/geleneksel, örnek de köklü kullanıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205836,
@@ -1572,7 +1620,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Ötekileştirme' othering kavramı; marginalization/Marginalisierung kenara itilme demek. Gerçek anlam hatası."
+   "reason": "'Ötekileştirme' othering kavramı; marginalization/Marginalisierung kenara itilme demek. Gerçek anlam hatası.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205885,
@@ -1615,7 +1664,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Deregülasyonun yerleşik Türkçe karşılığı 'serbestleştirme'; örnek cümle de bunu kullanıyor, kartta iki farklı karşılık tutarsız. Cümle değişmiyor."
+   "reason": "Deregülasyonun yerleşik Türkçe karşılığı 'serbestleştirme'; örnek cümle de bunu kullanıyor, kartta iki farklı karşılık tutarsız. Cümle değişmiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205941,
@@ -1632,7 +1682,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Kleinteilig' parçalı/titiz yan anlamı taşır, 'ein kleinteiliges Bild' doğal değil; 'detailliert' bu bağlamın doğal karşılığı."
+   "reason": "'Kleinteilig' parçalı/titiz yan anlamı taşır, 'ein kleinteiliges Bild' doğal değil; 'detailliert' bu bağlamın doğal karşılığı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205974,
@@ -1649,7 +1700,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Yetkinlik odaklılık' yapay ve başlıktaki 'approach'u karşılamıyor; öneri açıkça daha iyi."
+   "reason": "'Yetkinlik odaklılık' yapay ve başlıktaki 'approach'u karşılamıyor; öneri açıkça daha iyi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 205980,
@@ -1666,7 +1718,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Erkenntnisinteresse' özel bir bilim felsefesi terimi; research interest ve Türkçe 'araştırma ilgi alanı'nın doğrudan karşılığı 'Forschungsinteresse'."
+   "reason": "'Erkenntnisinteresse' özel bir bilim felsefesi terimi; research interest ve Türkçe 'araştırma ilgi alanı'nın doğrudan karşılığı 'Forschungsinteresse'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206048,
@@ -1683,7 +1736,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Erfahrungen fortschreiben' doğal Almanca değil, anlamı aktarmıyor; 'weitertragen' ve yeni cümle doğru."
+   "reason": "'Erfahrungen fortschreiben' doğal Almanca değil, anlamı aktarmıyor; 'weitertragen' ve yeni cümle doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206089,
@@ -1714,7 +1768,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Ayrım hattı' yerleşik terim değil; Türkçede kullanılan karşılık 'demarkasyon hattı'."
+   "reason": "'Ayrım hattı' yerleşik terim değil; Türkçede kullanılan karşılık 'demarkasyon hattı'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206174,
@@ -1745,7 +1800,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Verklärung idealleştirme ya da başkalaşım demek; glorification ile yüceltme karşılığı Verherrlichung."
+   "reason": "Verklärung idealleştirme ya da başkalaşım demek; glorification ile yüceltme karşılığı Verherrlichung.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206275,
@@ -1760,7 +1816,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "reparation burada maddi tazminat; örnek çeviriyle de örtüşüyor, kart tutarlı oluyor."
+   "reason": "reparation burada maddi tazminat; örnek çeviriyle de örtüşüyor, kart tutarlı oluyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206276,
@@ -1785,7 +1842,8 @@
     "deGloss",
     "beispiel"
    ],
-   "reason": "perpetration suçu işleme eylemidir, faillik/Täterschaft değil; mevcut İngilizce cümle de doğal değil. Türkçe karşılık 'suç işleme' olarak düzeltildi."
+   "reason": "perpetration suçu işleme eylemidir, faillik/Täterschaft değil; mevcut İngilizce cümle de doğal değil. Türkçe karşılık 'suç işleme' olarak düzeltildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206314,
@@ -1830,7 +1888,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'özellikle' kartta 'especially' gibi okunur; expressly/ausdrücklich = açıkça."
+   "reason": "'özellikle' kartta 'especially' gibi okunur; expressly/ausdrücklich = açıkça.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206405,
@@ -1847,7 +1906,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "notwithstanding'in standart karşılığı ungeachtet; unbeschadet bu cümlede 'gecikmeye halel gelmeksizin' gibi tuhaf okunuyor."
+   "reason": "notwithstanding'in standart karşılığı ungeachtet; unbeschadet bu cümlede 'gecikmeye halel gelmeksizin' gibi tuhaf okunuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206415,
@@ -1864,7 +1924,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Türk hukukundaki karşılık 'denetimli serbestlik'; 'denetimli salıvermede kalmak' doğal değil."
+   "reason": "Türk hukukundaki karşılık 'denetimli serbestlik'; 'denetimli salıvermede kalmak' doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206430,
@@ -1886,7 +1947,8 @@
     "tr",
     "beispiel"
    ],
-   "reason": "'Özel önleme' İngilizce terimin karşılığı değil; ayrıca caydırıcılıkla hafif ceza gerekçelendirilmez ve 'justified … with' Almancadan geçme, cümle gerçekten hatalı."
+   "reason": "'Özel önleme' İngilizce terimin karşılığı değil; ayrıca caydırıcılıkla hafif ceza gerekçelendirilmez ve 'justified … with' Almancadan geçme, cümle gerçekten hatalı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206465,
@@ -1903,7 +1965,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Kart ismi öğretiyor, deGloss sıfat; isim karşılık doğru. beispielDe yeni karşılığı içerecek biçimde yazıldı."
+   "reason": "Kart ismi öğretiyor, deGloss sıfat; isim karşılık doğru. beispielDe yeni karşılığı içerecek biçimde yazıldı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206493,
@@ -1920,7 +1983,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sanat bağlamında (Mäzen) kesin karşılık 'mesen'; 'hami' genel koruyucu, 'özel hamiler' doğal değil."
+   "reason": "Sanat bağlamında (Mäzen) kesin karşılık 'mesen'; 'hami' genel koruyucu, 'özel hamiler' doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206494,
@@ -1937,7 +2001,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Kulturbetrieb kültür kurumları/endüstrisi; cultural scene karşılığı Kulturszene."
+   "reason": "Kulturbetrieb kültür kurumları/endüstrisi; cultural scene karşılığı Kulturszene.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206506,
@@ -1954,7 +2019,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İngilizce pathos acıma ve hüzün uyandıran niteliktir; 'abartılı duygusallık' Almanca Pathos'un anlamı, yanlış öğretir."
+   "reason": "İngilizce pathos acıma ve hüzün uyandıran niteliktir; 'abartılı duygusallık' Almanca Pathos'un anlamı, yanlış öğretir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206508,
@@ -1971,7 +2037,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Alaycı taklit' açıklama; Türkçede yerleşik karşılık 'parodi'."
+   "reason": "'Alaycı taklit' açıklama; Türkçede yerleşik karşılık 'parodi'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206516,
@@ -1986,7 +2053,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Göklere çıkarmak' aşırı övmek demek; exalt yüceltmek, örnek çeviri de 'yüceltiyor' diyor."
+   "reason": "'Göklere çıkarmak' aşırı övmek demek; exalt yüceltmek, örnek çeviri de 'yüceltiyor' diyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206532,
@@ -2019,7 +2087,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'set the wrong figure straight' deyimsel değil; kalıp 'set the record straight'. Türkçe çeviri kalıba uyduruldu."
+   "reason": "'set the wrong figure straight' deyimsel değil; kalıp 'set the record straight'. Türkçe çeviri kalıba uyduruldu.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206627,
@@ -2036,7 +2105,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "humiliate = demütigen; bloßstellen teşhir etmeye kayıyor, Almanca cümlede 'canlı' da eksikti."
+   "reason": "humiliate = demütigen; bloßstellen teşhir etmeye kayıyor, Almanca cümlede 'canlı' da eksikti.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206648,
@@ -2053,7 +2123,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Zumutbarkeit birine yüklenen yükün katlanılabilirliği; bir kararın makullüğü için 'Angemessenheit' doğru."
+   "reason": "Zumutbarkeit birine yüklenen yükün katlanılabilirliği; bir kararın makullüğü için 'Angemessenheit' doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206650,
@@ -2070,7 +2141,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "scarcity'nin yerleşik karşılığı 'kıtlık'; 'azlık' zayıf ve cümlede doğal değil."
+   "reason": "scarcity'nin yerleşik karşılığı 'kıtlık'; 'azlık' zayıf ve cümlede doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206653,
@@ -2087,7 +2159,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Kostenträger masrafı üstlenen kurum; havaleyi yapan kişi için yanlış, 'Zahler' doğru karşılık."
+   "reason": "Kostenträger masrafı üstlenen kurum; havaleyi yapan kişi için yanlış, 'Zahler' doğru karşılık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206710,
@@ -2104,7 +2177,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "indict resmî iddianameyle suçlamadır; 'itham etmek' genel suçlama, hukuki anlamı ve 'anklagen'i karşılamıyor."
+   "reason": "indict resmî iddianameyle suçlamadır; 'itham etmek' genel suçlama, hukuki anlamı ve 'anklagen'i karşılamıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206721,
@@ -2119,7 +2193,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Amerikan İngilizcesinde 'on the exam'; 'in the exam' İngiliz kullanımı. Çeviriler değişmiyor."
+   "reason": "Amerikan İngilizcesinde 'on the exam'; 'in the exam' İngiliz kullanımı. Çeviriler değişmiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206774,
@@ -2136,7 +2211,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "verwesen ceset/leş çürümesine özgü; genel decompose/çürümek için sich zersetzen doğru."
+   "reason": "verwesen ceset/leş çürümesine özgü; genel decompose/çürümek için sich zersetzen doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206825,
@@ -2153,7 +2229,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "zurückfordern 'geri istemek' demek; tr 'geri kazanmak' ve örnekle zurückgewinnen örtüşüyor."
+   "reason": "zurückfordern 'geri istemek' demek; tr 'geri kazanmak' ve örnekle zurückgewinnen örtüşüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206838,
@@ -2170,7 +2247,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Doğruluk' kesinlik/isabet olarak da okunur; kişinin integrity'si için dürüstlük açıkça daha iyi."
+   "reason": "'Doğruluk' kesinlik/isabet olarak da okunur; kişinin integrity'si için dürüstlük açıkça daha iyi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206860,
@@ -2187,7 +2265,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Ausweglosigkeit 'çıkışsızlık'; hopelessness/umutsuzluk karşılığı Hoffnungslosigkeit."
+   "reason": "Ausweglosigkeit 'çıkışsızlık'; hopelessness/umutsuzluk karşılığı Hoffnungslosigkeit.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206862,
@@ -2202,7 +2281,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Müsamaha eskimiş; örnek zaten hoşgörü diyor, kart tutarlı hâle geliyor, kayıt gerektirmiyor."
+   "reason": "Müsamaha eskimiş; örnek zaten hoşgörü diyor, kart tutarlı hâle geliyor, kayıt gerektirmiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206870,
@@ -2245,7 +2325,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'decides itself' dilbilgisel olarak bozuk; doğrusu 'decides for itself'. Çeviriler zaten uygun."
+   "reason": "'decides itself' dilbilgisel olarak bozuk; doğrusu 'decides for itself'. Çeviriler zaten uygun.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206886,
@@ -2262,7 +2343,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Gebietskörperschaft Bund ve Länder'i de kapsayan teknik terim; local authority karşılığı Kommune."
+   "reason": "Gebietskörperschaft Bund ve Länder'i de kapsayan teknik terim; local authority karşılığı Kommune.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206946,
@@ -2279,7 +2361,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'köreltmek' yalnız bu bağlama uyan dolaylı bir karşılık; inhibit/hemmen'in temel anlamı engellemek."
+   "reason": "'köreltmek' yalnız bu bağlama uyan dolaylı bir karşılık; inhibit/hemmen'in temel anlamı engellemek.",
+   "applied": "2026-10-05"
   },
   {
    "id": 206997,
@@ -2296,7 +2379,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'vorherrschen' yaygın olmak demek; sağduyunun galip gelmesi Almancada 'sich durchsetzen'. Mevcut cümle de doğal değil."
+   "reason": "'vorherrschen' yaygın olmak demek; sağduyunun galip gelmesi Almancada 'sich durchsetzen'. Mevcut cümle de doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207004,
@@ -2313,7 +2397,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'hiddet' öfke demek; vehemence/Vehemenz tepkinin şiddeti ve sertliği."
+   "reason": "'hiddet' öfke demek; vehemence/Vehemenz tepkinin şiddeti ve sertliği.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207008,
@@ -2330,7 +2415,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'Abgeklärtheit' deneyimden gelen olgunluk demek; kriz anındaki dinginliğin karşılığı 'Gelassenheit'."
+   "reason": "'Abgeklärtheit' deneyimden gelen olgunluk demek; kriz anındaki dinginliğin karşılığı 'Gelassenheit'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207060,
@@ -2347,7 +2433,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Mirastan feragat Almancada 'auf das Erbe verzichten'; 'entsagen' ağdalı ve dünyevi zevkler için. tr 'feragat etmek' ile birebir örtüşüyor."
+   "reason": "Mirastan feragat Almancada 'auf das Erbe verzichten'; 'entsagen' ağdalı ve dünyevi zevkler için. tr 'feragat etmek' ile birebir örtüşüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207074,
@@ -2392,7 +2479,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Begrifflichkeit terimler bütünü demek; kavramsal çerçeveyi konzeptioneller Rahmen tam karşılıyor."
+   "reason": "Begrifflichkeit terimler bütünü demek; kavramsal çerçeveyi konzeptioneller Rahmen tam karşılıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207095,
@@ -2411,7 +2499,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Yemeğin bölgesel adı için designation doğal değil; resmî/teknik ad bağlamı gerekiyor (F-35A seslendirmede sorun çıkarır, daha nötr cümle seçildi)."
+   "reason": "Yemeğin bölgesel adı için designation doğal değil; resmî/teknik ad bağlamı gerekiyor (F-35A seslendirmede sorun çıkarır, daha nötr cümle seçildi).",
+   "applied": "2026-10-05"
   },
   {
    "id": 207101,
@@ -2447,7 +2536,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "resonate with burada karşılık bulmak demek; yankılanmak ve mitschwingen bu anlamı vermiyor, Almanca cümle de zorlama."
+   "reason": "resonate with burada karşılık bulmak demek; yankılanmak ve mitschwingen bu anlamı vermiyor, Almanca cümle de zorlama.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207117,
@@ -2464,7 +2554,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "ambiguous/muğlak çok anlamlı demek; missverständlich yanlış anlaşılmaya açık demek, mehrdeutig doğru karşılık."
+   "reason": "ambiguous/muğlak çok anlamlı demek; missverständlich yanlış anlaşılmaya açık demek, mehrdeutig doğru karşılık.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207118,
@@ -2483,7 +2574,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Mevcut örnek 'dile doğal' anlamında; 'deyimsel değil' Türkçede bu anlamı vermiyor. Yeni örnek karşılıkla örtüşüyor."
+   "reason": "Mevcut örnek 'dile doğal' anlamında; 'deyimsel değil' Türkçede bu anlamı vermiyor. Yeni örnek karşılıkla örtüşüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207139,
@@ -2502,7 +2594,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'Objective conversation' Almancadan birebir çeviri, doğal İngilizce değil."
+   "reason": "'Objective conversation' Almancadan birebir çeviri, doğal İngilizce değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207151,
@@ -2517,7 +2610,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Süren süreç için geniş zaman doğal değil; şimdiki zaman doğru."
+   "reason": "Süren süreç için geniş zaman doğal değil; şimdiki zaman doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207179,
@@ -2534,7 +2628,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "İstatistikte karıştırıcı etkenler 'controlled for' edilir, 'removed' Almancadan birebir çeviri. Almanca 'herausgerechnet' doğal, kalıyor."
+   "reason": "İstatistikte karıştırıcı etkenler 'controlled for' edilir, 'removed' Almancadan birebir çeviri. Almanca 'herausgerechnet' doğal, kalıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207194,
@@ -2551,7 +2646,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Sonuçları validate etmek doğruluğunu teyit etmek; onaylamak izin/tasdik anlamına kayıyor."
+   "reason": "Sonuçları validate etmek doğruluğunu teyit etmek; onaylamak izin/tasdik anlamına kayıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207290,
@@ -2568,7 +2664,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'carry a systemic risk for' çeviri kokan eşdizim; doğal kalıp 'pose a systemic risk to'. Almanca cümle zaten uygun."
+   "reason": "'carry a systemic risk for' çeviri kokan eşdizim; doğal kalıp 'pose a systemic risk to'. Almanca cümle zaten uygun.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207294,
@@ -2585,7 +2682,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "devaluation terimi devalüasyon; değer kaybı depreciation ile karışıyor."
+   "reason": "devaluation terimi devalüasyon; değer kaybı depreciation ile karışıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207340,
@@ -2602,7 +2700,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'içeriden ticaret' yerleşik terim değil, anlamı belirsiz; yerleşik karşılık 'içeriden bilgi ticareti'."
+   "reason": "'içeriden ticaret' yerleşik terim değil, anlamı belirsiz; yerleşik karşılık 'içeriden bilgi ticareti'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207351,
@@ -2624,7 +2723,8 @@
     "tr",
     "deGloss"
    ],
-   "reason": "pretext'in düz karşılığı bahane/Vorwand; Deckmantel cümlesi doğal değil, kılıf argo. beispielDe yeni karşılığı içeriyor."
+   "reason": "pretext'in düz karşılığı bahane/Vorwand; Deckmantel cümlesi doğal değil, kılıf argo. beispielDe yeni karşılığı içeriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207379,
@@ -2639,7 +2739,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'counts as' Almanca 'gilt als' kalıbının düz çevirisi; mevcut Türkçe ve Almanca çeviri yeni cümleye zaten uyuyor."
+   "reason": "'counts as' Almanca 'gilt als' kalıbının düz çevirisi; mevcut Türkçe ve Almanca çeviri yeni cümleye zaten uyuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207382,
@@ -2658,7 +2759,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'keeps growing sharper' tartışma için doğal İngilizce değil."
+   "reason": "'keeps growing sharper' tartışma için doğal İngilizce değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207395,
@@ -2677,7 +2779,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'reported the flood' Almanca 'meldete'nin düz çevirisi, İngilizcede doğal değil."
+   "reason": "'reported the flood' Almanca 'meldete'nin düz çevirisi, İngilizcede doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207417,
@@ -2696,7 +2799,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "'sound out which...' doğal değil, kişi nesnesi gerekir; cümle düzeltildi. 'ausloten' doğru karşılık, korunup Almanca cümleye işlendi."
+   "reason": "'sound out which...' doğal değil, kişi nesnesi gerekir; cümle düzeltildi. 'ausloten' doğru karşılık, korunup Almanca cümleye işlendi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207425,
@@ -2718,7 +2822,8 @@
     "deGloss",
     "beispiel"
    ],
-   "reason": "İngilizce cümle hem doğal değil hem gereksiz tekrarlı ('still ... at the moment'); yeni cümlede doğru karşılık 'unvorhersehbar'."
+   "reason": "İngilizce cümle hem doğal değil hem gereksiz tekrarlı ('still ... at the moment'); yeni cümlede doğru karşılık 'unvorhersehbar'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207429,
@@ -2735,7 +2840,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'verhängnisvoll' felaketli demek; 'kaderi belirleyen' ile örnekteki anlam 'schicksalhaft'."
+   "reason": "'verhängnisvoll' felaketli demek; 'kaderi belirleyen' ile örnekteki anlam 'schicksalhaft'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 207865,
@@ -2752,7 +2858,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "Örnekte çocukların ağırbaşlı hâli var; 'feierlich gestimmt' doğal değil ve Türkçe karşılıkla uyuşmuyor."
+   "reason": "Örnekte çocukların ağırbaşlı hâli var; 'feierlich gestimmt' doğal değil ve Türkçe karşılıkla uyuşmuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 208277,
@@ -2769,7 +2876,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'İstiflemek' üst üste yığmak; 'stow' bir yere yerleştirip kaldırmak."
+   "reason": "'İstiflemek' üst üste yığmak; 'stow' bir yere yerleştirip kaldırmak.",
+   "applied": "2026-10-05"
   },
   {
    "id": 209202,
@@ -2786,7 +2894,8 @@
    "voiced": [
     "deGloss"
    ],
-   "reason": "'verfallen' yalnız yapıların çürümesine uyan dar anlam; genel 'kötüye gitmek' karşılığı 'sich verschlechtern'."
+   "reason": "'verfallen' yalnız yapıların çürümesine uyan dar anlam; genel 'kötüye gitmek' karşılığı 'sich verschlechtern'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 209205,
@@ -2801,7 +2910,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Mesul' eskimiş; günümüz Türkçesinde ve örnek çeviride 'sorumlu'."
+   "reason": "'Mesul' eskimiş; günümüz Türkçesinde ve örnek çeviride 'sorumlu'.",
+   "applied": "2026-10-05"
   }
  ],
  "kararBekleyen": {

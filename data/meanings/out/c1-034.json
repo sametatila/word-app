@@ -113,10 +113,10 @@
   },
   {
     "id": 6917,
-    "tr": "düşünme hatası",
+    "tr": "mantık hatası",
     "en": "flaw in reasoning",
     "beispiel": "In seiner Rechnung steckt ein einfacher Denkfehler.",
-    "beispielTr": "Hesabında basit bir düşünme hatası var.",
+    "beispielTr": "Hesabında basit bir mantık hatası var.",
     "beispielEn": "His calculation contains a simple flaw in reasoning."
   },
   {
@@ -289,8 +289,8 @@
   },
   {
     "id": 6939,
-    "tr": "duygulanım",
-    "en": "affect",
+    "tr": "duygu patlaması",
+    "en": "heat of passion",
     "beispiel": "Der Täter handelte im Affekt und nicht geplant.",
     "beispielTr": "Fail planlayarak değil, anlık bir duygu patlamasıyla hareket etti.",
     "beispielEn": "The offender acted in the heat of the moment, not with premeditation."

@@ -121,10 +121,10 @@
   },
   {
     "id": 7118,
-    "tr": "deyimsel",
+    "tr": "dilin doğasına uygun",
     "en": "idiomatic",
     "beispiel": "Die Übersetzung ist korrekt, klingt aber nicht idiomatisch.",
-    "beispielTr": "Çeviri doğru ama kulağa deyimsel gelmiyor.",
+    "beispielTr": "Çeviri doğru ama kulağa doğal gelmiyor.",
     "beispielEn": "The translation is correct but does not sound idiomatic."
   },
   {
@@ -177,10 +177,10 @@
   },
   {
     "id": 7125,
-    "tr": "mağduriyet",
+    "tr": "dezavantajlı bırakılma",
     "en": "disadvantage",
     "beispiel": "Frauen klagen in dieser Branche über systematische Benachteiligung.",
-    "beispielTr": "Kadınlar bu sektörde sistematik mağduriyetten yakınıyor.",
+    "beispielTr": "Kadınlar bu sektörde sistematik olarak dezavantajlı bırakılmaktan yakınıyor.",
     "beispielEn": "Women in this industry complain about systematic disadvantage."
   },
   {

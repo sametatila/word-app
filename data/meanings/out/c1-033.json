@@ -18,10 +18,10 @@
   {
     "id": 6855,
     "tr": "temel karakter özelliği",
-    "en": "essential trait",
+    "en": "characteristic trait",
     "beispiel": "Diese Sturheit ist ein Wesenszug seiner ganzen Familie.",
     "beispielTr": "Bu inatçılık bütün ailesinin temel bir karakter özelliği.",
-    "beispielEn": "That stubbornness is an essential trait of his whole family."
+    "beispielEn": "That stubbornness is a characteristic trait of his whole family."
   },
   {
     "id": 6856,
@@ -266,10 +266,10 @@
   {
     "id": 6886,
     "tr": "yerel yönetim birimi",
-    "en": "local authority",
+    "en": "local government",
     "beispiel": "Die Gebietskörperschaften finanzieren den Ausbau der Schulen gemeinsam.",
-    "beispielTr": "Yerel yönetim birimleri okulların yapımını birlikte finanse ediyor.",
-    "beispielEn": "The local authorities jointly finance the expansion of the schools."
+    "beispielTr": "Yerel yönetim birimleri okulların genişletilmesini birlikte finanse ediyor.",
+    "beispielEn": "The local governments jointly finance the expansion of the schools."
   },
   {
     "id": 6887,
@@ -298,18 +298,18 @@
   {
     "id": 6890,
     "tr": "iktidar yetkisi",
-    "en": "governmental power",
+    "en": "power",
     "beispiel": "Der Präsident überschritt seine Machtbefugnisse deutlich.",
-    "beispielTr": "Cumhurbaşkanı iktidar yetkilerini açıkça aştı.",
-    "beispielEn": "The president clearly exceeded his governmental powers."
+    "beispielTr": "Cumhurbaşkanı yetkilerini açıkça aştı.",
+    "beispielEn": "The president clearly exceeded his powers."
   },
   {
     "id": 6891,
     "tr": "irade oluşumu",
-    "en": "will formation",
+    "en": "formation of political will",
     "beispiel": "Parteien wirken an der politischen Willensbildung des Volkes mit.",
     "beispielTr": "Partiler halkın siyasi irade oluşumuna katkıda bulunur.",
-    "beispielEn": "Parties take part in the political will formation of the people."
+    "beispielEn": "Parties participate in forming the political will of the people."
   },
   {
     "id": 6892,
@@ -353,10 +353,10 @@
   },
   {
     "id": 6897,
-    "tr": "hükûmet programı",
+    "tr": "hükûmet açıklaması",
     "en": "government policy statement",
     "beispiel": "In seiner Regierungserklärung kündigte der Kanzler höhere Renten an.",
-    "beispielTr": "Başbakan hükûmet programı konuşmasında emekli maaşlarına zam duyurdu.",
+    "beispielTr": "Şansölye hükûmet açıklamasında emekli maaşlarına zam duyurdu.",
     "beispielEn": "In his policy statement the chancellor announced higher pensions."
   },
   {

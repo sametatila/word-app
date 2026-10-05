@@ -89,10 +89,10 @@
   },
   {
     "id": 7214,
-    "tr": "amaca bağlılık",
+    "tr": "amaçla sınırlılık",
     "en": "purpose limitation",
     "beispiel": "Die Zweckbindung erlaubt keine spätere Auswertung zu ganz anderen Zielen.",
-    "beispielTr": "Amaca bağlılık, verilerin sonradan bambaşka amaçlarla işlenmesine izin vermez.",
+    "beispielTr": "Amaçla sınırlılık ilkesi, verilerin sonradan bambaşka amaçlarla işlenmesine izin vermez.",
     "beispielEn": "Purpose limitation does not allow later analysis for entirely different aims."
   },
   {
@@ -209,11 +209,11 @@
   },
   {
     "id": 7229,
-    "tr": "hesaplanabilirlik",
-    "en": "calculability",
+    "tr": "öngörülebilirlik",
+    "en": "predictability",
     "beispiel": "Die Berechenbarkeit menschlichen Verhaltens hat klare Grenzen.",
-    "beispielTr": "İnsan davranışının hesaplanabilirliğinin belirgin sınırları var.",
-    "beispielEn": "The calculability of human behavior has clear limits."
+    "beispielTr": "İnsan davranışının öngörülebilirliğinin belirgin sınırları var.",
+    "beispielEn": "The predictability of human behavior has clear limits."
   },
   {
     "id": 7230,

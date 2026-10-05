@@ -949,7 +949,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"postülat\" TDK yazımına uymuyor (doğrusu postulat). \"temel varsayım\" anlaşılır, Annahme (varsayım) kartından da ayrılıyor."
+   "reason": "\"postülat\" TDK yazımına uymuyor (doğrusu postulat). \"temel varsayım\" anlaşılır, Annahme (varsayım) kartından da ayrılıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3493,
@@ -966,7 +967,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Konsistenz kartı da \"tutarlılık\", Türkçede iki kart ayırt edilemiyor. Metin için \"iç bütünlük\" doğal."
+   "reason": "Konsistenz kartı da \"tutarlılık\", Türkçede iki kart ayırt edilemiyor. Metin için \"iç bütünlük\" doğal.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3495,
@@ -983,7 +985,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"tartışma katkısı\" doğal bir tamlama değil. İngilizcede düşen \"deutlich\" de eklendi. Türkçe örnek zaten doğru, değişmedi."
+   "reason": "\"tartışma katkısı\" doğal bir tamlama değil. İngilizcede düşen \"deutlich\" de eklendi. Türkçe örnek zaten doğru, değişmedi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3503,
@@ -1030,7 +1033,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Amerikan İngilizcesinde terim statute of limitations; \"zamanaşımı devreye girer\" Türkçede yanlış, zamanaşımı dolar. \"expires\" de \"runs out\"tan daha yerleşik."
+   "reason": "Amerikan İngilizcesinde terim statute of limitations; \"zamanaşımı devreye girer\" Türkçede yanlış, zamanaşımı dolar. \"expires\" de \"runs out\"tan daha yerleşik.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3548,
@@ -1045,7 +1049,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Ceza hukukunda Straftatbestand'ın karşılığı \"suç tipi\"; \"suç unsuru\" Tatbestandsmerkmal. Örnek cümle çevirisi doğru kalıyor."
+   "reason": "Ceza hukukunda Straftatbestand'ın karşılığı \"suç tipi\"; \"suç unsuru\" Tatbestandsmerkmal. Örnek cümle çevirisi doğru kalıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3556,
@@ -1062,7 +1067,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Vollstreckung da \"enforcement\". \"execution of the judgment\" doğru ve iki kartı İngilizcede ayırıyor."
+   "reason": "Vollstreckung da \"enforcement\". \"execution of the judgment\" doğru ve iki kartı İngilizcede ayırıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3567,
@@ -1079,7 +1085,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"cut-off period\" doğal bir İngilizce terim değil; \"final deadline\" anlaşılır ve Frist (deadline) kartından ayrılıyor. \"deadline expires\" yerine doğal kalıp kullanıldı."
+   "reason": "\"cut-off period\" doğal bir İngilizce terim değil; \"final deadline\" anlaşılır ve Frist (deadline) kartından ayrılıyor. \"deadline expires\" yerine doğal kalıp kullanıldı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3571,
@@ -1124,7 +1131,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "TDK yazımı \"gayrisafi\" bitişik, \"yurt içi\" ayrı."
+   "reason": "TDK yazımı \"gayrisafi\" bitişik, \"yurt içi\" ayrı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3599,
@@ -1141,7 +1149,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Körperschaft kurumun kendisidir, \"tüzel kişilik\" bir statü; Türkçe terim \"kamu tüzel kişisi\"."
+   "reason": "Körperschaft kurumun kendisidir, \"tüzel kişilik\" bir statü; Türkçe terim \"kamu tüzel kişisi\".",
+   "applied": "2026-10-05"
   },
   {
    "id": 3603,
@@ -1172,7 +1181,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"aktarım\" Wiedergabe ve Übertragung ile çakışıyor, yeni karşılık bunu ayırıyor. İngilizcedeki \"tradition\" ise B1 Tradition ile çakışacağından \"lore\" kalıyor."
+   "reason": "\"aktarım\" Wiedergabe ve Übertragung ile çakışıyor, yeni karşılık bunu ayırıyor. İngilizcedeki \"tradition\" ise B1 Tradition ile çakışacağından \"lore\" kalıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3677,
@@ -1203,7 +1213,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'fault the missing documentation' doğal bir İngilizce değil. 'find fault with' bu kartı monieren kartının 'to criticize' karşılığından da ayırıyor."
+   "reason": "'fault the missing documentation' doğal bir İngilizce değil. 'find fault with' bu kartı monieren kartının 'to criticize' karşılığından da ayırıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3717,
@@ -1220,7 +1231,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"anlaşılır\" B1 verständlich ile aynı ve örnek çeviri başlıktan kopmuş; \"anlaşılabilir\" ayırt ediyor ve hak verilebilirlik anlamını taşıyor."
+   "reason": "\"anlaşılır\" B1 verständlich ile aynı ve örnek çeviri başlıktan kopmuş; \"anlaşılabilir\" ayırt ediyor ve hak verilebilirlik anlamını taşıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3891,
@@ -1235,7 +1247,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'course-setting decision' İngilizcede yerleşik değil, 'pivotal decision' doğal ve başka bir kartla çakışmıyor."
+   "reason": "'course-setting decision' İngilizcede yerleşik değil, 'pivotal decision' doğal ve başka bir kartla çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3905,
@@ -1252,7 +1265,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'incalculable' ölçülemeyecek kadar büyük demek; kart ve cümle 'öngörülemez' anlamında. Çakışma yok."
+   "reason": "'incalculable' ölçülemeyecek kadar büyük demek; kart ve cümle 'öngörülemez' anlamında. Çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3912,
@@ -1281,7 +1295,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'personel devri' personelin devredilmesi diye anlaşılabilir; terim 'personel devir hızı' ve İngilizce kursta aynı kelime zaten bu karşılığı kullanıyor. Cümle anlaşılır olduğu için yalnız anlam değişiyor."
+   "reason": "'personel devri' personelin devredilmesi diye anlaşılabilir; terim 'personel devir hızı' ve İngilizce kursta aynı kelime zaten bu karşılığı kullanıyor. Cümle anlaşılır olduğu için yalnız anlam değişiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3959,
@@ -1298,7 +1313,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Kurallarla sürekli sıkı denetim altında tutmayı 'micromanagement' değil 'regimentation' karşılıyor; 'patronized by regulations' doğal bir İngilizce değil. Çakışma yok."
+   "reason": "Kurallarla sürekli sıkı denetim altında tutmayı 'micromanagement' değil 'regimentation' karşılıyor; 'patronized by regulations' doğal bir İngilizce değil. Çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3960,
@@ -1315,7 +1331,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'iradesizleştirme' Türkçede yerleşik bir sözcük değil; önerilen karşılık doğal ve Mitbestimmung kartının 'söz hakkı' karşılığından ayrışıyor."
+   "reason": "'iradesizleştirme' Türkçede yerleşik bir sözcük değil; önerilen karşılık doğal ve Mitbestimmung kartının 'söz hakkı' karşılığından ayrışıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3964,
@@ -1332,7 +1349,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Türkçe karşılık anlaşılmıyor, önerilen hâli açık. Ancak 'hubris' Hybris'in karşılığı, kelimenin yapılabilirlik vurgusunu kaybettiriyor; bu yüzden İngilizce alanlar olduğu gibi kalıyor."
+   "reason": "Türkçe karşılık anlaşılmıyor, önerilen hâli açık. Ancak 'hubris' Hybris'in karşılığı, kelimenin yapılabilirlik vurgusunu kaybettiriyor; bu yüzden İngilizce alanlar olduğu gibi kalıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 3987,
@@ -1349,7 +1367,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizce 'scandalize' birini şoke etmek demek; 'olayı skandala çevirmek' anlamı yok, yanlış eş öğretiliyor. Öneri doğru."
+   "reason": "İngilizce 'scandalize' birini şoke etmek demek; 'olayı skandala çevirmek' anlamı yok, yanlış eş öğretiliyor. Öneri doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4016,
@@ -1382,7 +1401,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Cansız özneyle 'veranlassen' kalıbı 'jemanden zu etwas veranlassen'; mevcut cümle İngilizceden aktarma ve doğal değil."
+   "reason": "Cansız özneyle 'veranlassen' kalıbı 'jemanden zu etwas veranlassen'; mevcut cümle İngilizceden aktarma ve doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 4023,
@@ -1718,7 +1738,8 @@
     "tr",
     "en"
    ],
-   "reason": "'to gauge' tahmin etmek/ölçmek demek, bemessen'i karşılamıyor; 'ölçüp belirlemek' de doğal değil. Ancak önerilen 'belirlemek' festlegen/festsetzen ile, 'to determine' feststellen ile çakışıyor; ayırt edilebilir 'miktarını belirlemek / to determine the amount' seçildi."
+   "reason": "'to gauge' tahmin etmek/ölçmek demek, bemessen'i karşılamıyor; 'ölçüp belirlemek' de doğal değil. Ancak önerilen 'belirlemek' festlegen/festsetzen ile, 'to determine' feststellen ile çakışıyor; ayırt edilebilir 'miktarını belirlemek / to determine the amount' seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6006,
@@ -1735,7 +1756,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'amaca bağlı' Türkçede doğal değil ve şarta bağlı gibi okunuyor; zweckgebunden 'belli amaca tahsis edilmiş' demek. Önerinin 'belli amaca ayrılmış'ı yerine daha terimsel ve kısa 'amaca tahsisli' seçildi."
+   "reason": "'amaca bağlı' Türkçede doğal değil ve şarta bağlı gibi okunuyor; zweckgebunden 'belli amaca tahsis edilmiş' demek. Önerinin 'belli amaca ayrılmış'ı yerine daha terimsel ve kısa 'amaca tahsisli' seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6007,
@@ -1773,7 +1795,8 @@
     "tr",
     "en"
    ],
-   "reason": "'İleriye taşımak' belirsiz, örnekteki 'aynı şekilde' anlamı bozuyor. 'to update' tek başına aktualisieren (5476) ile aynı olurdu, o yüzden 'to update and extend' seçildi."
+   "reason": "'İleriye taşımak' belirsiz, örnekteki 'aynı şekilde' anlamı bozuyor. 'to update' tek başına aktualisieren (5476) ile aynı olurdu, o yüzden 'to update and extend' seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6081,
@@ -1790,7 +1813,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Yükümlülük ilan edildi' Türkçede anlamsız. Bündnisfall ortak savunma durumudur."
+   "reason": "'Yükümlülük ilan edildi' Türkçede anlamsız. Bündnisfall ortak savunma durumudur.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6094,
@@ -1821,7 +1845,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Ayrım hattı' yerleşik değil. Türkçede yerleşik terim 'demarkasyon hattı'."
+   "reason": "'Ayrım hattı' yerleşik değil. Türkçede yerleşik terim 'demarkasyon hattı'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6099,
@@ -1922,7 +1947,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Niedergang yavaş düşüş/gerilemedir (en: decline); 'çöküş' daha çok Untergang/Zusammenbruch karşılar. 'gerileme' başka kartta yok, çakışma yaratmıyor."
+   "reason": "Niedergang yavaş düşüş/gerilemedir (en: decline); 'çöküş' daha çok Untergang/Zusammenbruch karşılar. 'gerileme' başka kartta yok, çakışma yaratmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6308,
@@ -1939,7 +1965,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "folgenreich yansızdır (consequential); 'sonuçları ağır' olumsuz bir anlam ekliyor. Öneri anlamı daha doğru veriyor, çakışma yok."
+   "reason": "folgenreich yansızdır (consequential); 'sonuçları ağır' olumsuz bir anlam ekliyor. Öneri anlamı daha doğru veriyor, çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6340,
@@ -1984,7 +2011,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Takdir marjı' AİHM'nin margin of appreciation kavramına ait. İdare hukukunda Ermessensspielraum için 'takdir payı' doğru karşılık. Örnek çeviri de böylece kartla uyumlu oluyor. Başka kartla çakışmıyor."
+   "reason": "'Takdir marjı' AİHM'nin margin of appreciation kavramına ait. İdare hukukunda Ermessensspielraum için 'takdir payı' doğru karşılık. Örnek çeviri de böylece kartla uyumlu oluyor. Başka kartla çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6430,
@@ -2001,7 +2029,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "Spezialprävention topluma yeniden kazandırmayı da kapsıyor. Hafif cezayı 'deterrence' ile gerekçelendirmek İngilizcede çelişkili okunuyor. Yerleşik terim 'special prevention'; Türkçe 'özel önleme' ile de örtüşüyor."
+   "reason": "Spezialprävention topluma yeniden kazandırmayı da kapsıyor. Hafif cezayı 'deterrence' ile gerekçelendirmek İngilizcede çelişkili okunuyor. Yerleşik terim 'special prevention'; Türkçe 'özel önleme' ile de örtüşüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6443,
@@ -2046,7 +2075,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizcede \"verses\" çoğunlukla kıta diye anlaşılır, Türkçe \"dize\" ve Almanca anlamla çelişiyor; \"line of verse\" başka kartla çakışmıyor."
+   "reason": "İngilizcede \"verses\" çoğunlukla kıta diye anlaşılır, Türkçe \"dize\" ve Almanca anlamla çelişiyor; \"line of verse\" başka kartla çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6563,
@@ -2063,7 +2093,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"dil imgesi\" yerleşik bir terim değil, harfi harfine çeviri; \"imge\" doğal ve başka kartla çakışmıyor."
+   "reason": "\"dil imgesi\" yerleşik bir terim değil, harfi harfine çeviri; \"imge\" doğal ve başka kartla çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6600,
@@ -2092,7 +2123,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İngilizce \"pamphlet\" öncelikle broşür demek, yalancı eş öğretiyor. \"polemic\" Streitschrift ve Polemik kartlarında kullanıldığı için \"polemical tract\" ayırt edici."
+   "reason": "İngilizce \"pamphlet\" öncelikle broşür demek, yalancı eş öğretiyor. \"polemic\" Streitschrift ve Polemik kartlarında kullanıldığı için \"polemical tract\" ayırt edici.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6606,
@@ -2109,7 +2141,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Feuilleton gazetenin kültür bölümüdür, ayrı ek değil. İngilizce \"arts section\" ve örneği zaten doğru, onlara dokunulmadı."
+   "reason": "Feuilleton gazetenin kültür bölümüdür, ayrı ek değil. İngilizce \"arts section\" ve örneği zaten doğru, onlara dokunulmadı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6614,
@@ -2198,7 +2231,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Unbelegt 'kanıtı yok' demek; 'dayanaksız' ise asılsız olduğunu ima eder (unbegründet). 'Kanıtlanmamış' daha kesin ve çakışma yok."
+   "reason": "Unbelegt 'kanıtı yok' demek; 'dayanaksız' ise asılsız olduğunu ima eder (unbegründet). 'Kanıtlanmamış' daha kesin ve çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6646,
@@ -2243,7 +2277,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Yetersizlik' Unzulänglichkeit (3711) ile çakışıyor, düzeltme gerekli; ama 'kıtlık' da Hungersnot (6329) ile çakışır. Scarcity için ayırt edici 'darlık' seçildi."
+   "reason": "'Yetersizlik' Unzulänglichkeit (3711) ile çakışıyor, düzeltme gerekli; ama 'kıtlık' da Hungersnot (6329) ile çakışır. Scarcity için ayırt edici 'darlık' seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6655,
@@ -2260,7 +2295,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Benefits catalog' Amerikan İngilizcesinde kopya çeviri; 'benefits package' yerleşik terim ve çakışma yok."
+   "reason": "'Benefits catalog' Amerikan İngilizcesinde kopya çeviri; 'benefits package' yerleşik terim ve çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6673,
@@ -2291,7 +2327,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Allocation'ın yerleşik karşılığı 'tahsis'; 'sert bir kaynak dağılımına' doğal değil. Cümle isim yapısını koruyacak biçimde iyileştirildi."
+   "reason": "Allocation'ın yerleşik karşılığı 'tahsis'; 'sert bir kaynak dağılımına' doğal değil. Cümle isim yapısını koruyacak biçimde iyileştirildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6683,
@@ -2306,7 +2343,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Tabi olmak' sich unterordnen (5864) ile çakışıyor ve undergo anlamını vermiyor. '-den geçmek' örnek çeviriyle uyumlu; stammen '-den gelmek' kalıbına uyuyor."
+   "reason": "'Tabi olmak' sich unterordnen (5864) ile çakışıyor ve undergo anlamını vermiyor. '-den geçmek' örnek çeviriyle uyumlu; stammen '-den gelmek' kalıbına uyuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6692,
@@ -2393,7 +2431,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Zurechnungsfähigkeit sorumlu tutulabilme yetisidir; Türkçedeki yerleşik karşılığı \"cezai ehliyet\", \"ceza sorumluluğu\" sonucu anlatıyor."
+   "reason": "Zurechnungsfähigkeit sorumlu tutulabilme yetisidir; Türkçedeki yerleşik karşılığı \"cezai ehliyet\", \"ceza sorumluluğu\" sonucu anlatıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6846,
@@ -2424,7 +2463,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Felsefi akım 'görecilik'tir; 'görecelilik' fizikteki izafiyettir. Düzeltme doğru."
+   "reason": "Felsefi akım 'görecilik'tir; 'görecelilik' fizikteki izafiyettir. Düzeltme doğru.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6852,
@@ -2455,7 +2495,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Essential trait' vazgeçilmez özellik anlamına gelir. Wesenszug ise karakteristik özelliktir."
+   "reason": "'Essential trait' vazgeçilmez özellik anlamına gelir. Wesenszug ise karakteristik özelliktir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6871,
@@ -2502,7 +2543,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Local authority' İngiliz İngilizcesine özgü. Ayrıca Ausbau 'genişletme' demek, 'yapım' değil."
+   "reason": "'Local authority' İngiliz İngilizcesine özgü. Ayrıca Ausbau 'genişletme' demek, 'yapım' değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6890,
@@ -2521,7 +2563,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Governmental power' ve 'iktidar yetkilerini aştı' doğal değil. Başlıktaki tr 'yetki' yapılmadı, çünkü Befugnis (C1) ile çakışırdı; 'iktidar yetkisi' kaldı."
+   "reason": "'Governmental power' ve 'iktidar yetkilerini aştı' doğal değil. Başlıktaki tr 'yetki' yapılmadı, çünkü Befugnis (C1) ile çakışırdı; 'iktidar yetkisi' kaldı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6891,
@@ -2538,7 +2581,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Will formation' İngilizcede doğal değil; Temel Yasa çevirisindeki yerleşik karşılık 'formation of the political will'."
+   "reason": "'Will formation' İngilizcede doğal değil; Temel Yasa çevirisindeki yerleşik karşılık 'formation of the political will'.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6892,
@@ -2569,7 +2613,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Regierungserklärung, hükûmetin mecliste yaptığı açıklamadır; 'hükûmet programı' Regierungsprogramm demektir. Almanya bağlamında Kanzler 'Şansölye'dir."
+   "reason": "Regierungserklärung, hükûmetin mecliste yaptığı açıklamadır; 'hükûmet programı' Regierungsprogramm demektir. Almanya bağlamında Kanzler 'Şansölye'dir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6907,
@@ -2614,7 +2659,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Düşünme hatası' çeviri kokuyor; Türkçede yerleşik karşılık 'mantık hatası'. Başka bir kartla çakışmıyor."
+   "reason": "'Düşünme hatası' çeviri kokuyor; Türkçede yerleşik karşılık 'mantık hatası'. Başka bir kartla çakışmıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6928,
@@ -2646,7 +2692,8 @@
     "tr",
     "en"
    ],
-   "reason": "Genel dilde Affekt anlık şiddetli duygu hâli demek, örnek de 'im Affekt'; 'duygulanım/affect' psikoloji terimi ve cümleyle uyuşmuyor."
+   "reason": "Genel dilde Affekt anlık şiddetli duygu hâli demek, örnek de 'im Affekt'; 'duygulanım/affect' psikoloji terimi ve cümleyle uyuşmuyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 6965,
@@ -2733,7 +2780,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Adak' dilek karşılığı vaat edilen şeydir; Gelübde bağlayıcı dinî yemindir, 'ant' doğru ve çakışma yok."
+   "reason": "'Adak' dilek karşılığı vaat edilen şeydir; Gelübde bağlayıcı dinî yemindir, 'ant' doğru ve çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7058,
@@ -2748,7 +2796,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Hacca gitmek' Mekke haccını anlatır, manastır örneğiyle çelişir; Wallfahrt 'hac yolculuğu' ile de tutarlı."
+   "reason": "'Hacca gitmek' Mekke haccını anlatır, manastır örneğiyle çelişir; Wallfahrt 'hac yolculuğu' ile de tutarlı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7072,
@@ -2779,7 +2828,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'Language usage' İngilizcede doğal değil; yerleşik karşılık 'usage', çakışma yok."
+   "reason": "'Language usage' İngilizcede doğal değil; yerleşik karşılık 'usage', çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7078,
@@ -2799,7 +2849,8 @@
     "tr",
     "en"
    ],
-   "reason": "'Language level' Sprachniveau kartıyla aynı ve yeterlik düzeyi sanılıyor; 'register' Register kartında olduğu için 'linguistic register' seçildi."
+   "reason": "'Language level' Sprachniveau kartıyla aynı ve yeterlik düzeyi sanılıyor; 'register' Register kartında olduğu için 'linguistic register' seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7081,
@@ -2844,7 +2895,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Hafife alma' Unterschätzung'dur; Untertreibung bir şeyi olduğundan hafif ifade etmektir."
+   "reason": "'Hafife alma' Unterschätzung'dur; Untertreibung bir şeyi olduğundan hafif ifade etmektir.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7102,
@@ -2861,7 +2913,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Tek başına 'atlama' önce zıplamayı çağrıştırıyor; 'metindeki atlamalar' doğal değil."
+   "reason": "Tek başına 'atlama' önce zıplamayı çağrıştırıyor; 'metindeki atlamalar' doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7118,
@@ -2878,7 +2931,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Örnekteki anlam 'dile doğal gelen'; 'deyimsel' deyimle ilgili demek, 'kulağa deyimsel gelmiyor' anlamsız."
+   "reason": "Örnekteki anlam 'dile doğal gelen'; 'deyimsel' deyimle ilgili demek, 'kulağa deyimsel gelmiyor' anlamsız.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7125,
@@ -2895,7 +2949,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Mağduriyet' Viktimisierung kartıyla aynı karşılık, ayırt edilemiyor; anlam da haksız yere geride bırakılma."
+   "reason": "'Mağduriyet' Viktimisierung kartıyla aynı karşılık, ayırt edilemiyor; anlam da haksız yere geride bırakılma.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7142,
@@ -2954,7 +3009,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Karşı karşıya koymak' Türkçede çatıştırmak anlamına kayıyor; karşılaştırma için yan yana koymak doğru. Çakışma yok."
+   "reason": "'Karşı karşıya koymak' Türkçede çatıştırmak anlamına kayıyor; karşılaştırma için yan yana koymak doğru. Çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7206,
@@ -2985,7 +3041,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Veri koruma bağlamında yerleşik Türkçe terim 'amaçla sınırlılık'; 'amaca bağlılık' sadakat gibi okunuyor. Çakışma yok."
+   "reason": "Veri koruma bağlamında yerleşik Türkçe terim 'amaçla sınırlılık'; 'amaca bağlılık' sadakat gibi okunuyor. Çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7219,
@@ -3049,7 +3106,8 @@
     "tr",
     "en"
    ],
-   "reason": "Cümledeki ve gündelik anlam öngörülebilirlik; 'calculability' İngilizcede nadir ve yanıltıcı. Havuzda çakışma yok."
+   "reason": "Cümledeki ve gündelik anlam öngörülebilirlik; 'calculability' İngilizcede nadir ve yanıltıcı. Havuzda çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7230,
@@ -3140,7 +3198,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'İçeriden ticaret' yerleşik bir terim değil. Çevirilerde 'kurz vor' bilgisi de düşmüş. Yalnız çeviriler değişiyor, ses kaydı gerekmez."
+   "reason": "'İçeriden ticaret' yerleşik bir terim değil. Çevirilerde 'kurz vor' bilgisi de düşmüş. Yalnız çeviriler değişiyor, ses kaydı gerekmez.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7351,
@@ -3162,7 +3221,8 @@
     "tr",
     "en"
    ],
-   "reason": "'Unter dem Deckmantel' kalıbının yerleşik karşılığı 'kisvesi altında'. 'Guise' Deckmantel'e daha yakın ve 'pretext' (Vorwand) ile karışmayı önlüyor."
+   "reason": "'Unter dem Deckmantel' kalıbının yerleşik karşılığı 'kisvesi altında'. 'Guise' Deckmantel'e daha yakın ve 'pretext' (Vorwand) ile karışmayı önlüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7355,
@@ -3193,7 +3253,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Gündelik Türkçede 'iyi niyetli' wohlmeinend anlamına gelir. gutgläubig 'kolay inanan' demektir ve bu karşılık en 'trusting' ile de örtüşür. Çakışma yok."
+   "reason": "Gündelik Türkçede 'iyi niyetli' wohlmeinend anlamına gelir. gutgläubig 'kolay inanan' demektir ve bu karşılık en 'trusting' ile de örtüşür. Çakışma yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7382,
@@ -3210,7 +3271,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Alan içi tartışma' doğal değil. 'Uzman tartışması' en 'expert debate' ile örtüşüyor. Cümle çevirisi yeni anlamla tutarlı olacak biçimde güncellendi."
+   "reason": "'Alan içi tartışma' doğal değil. 'Uzman tartışması' en 'expert debate' ile örtüşüyor. Cümle çevirisi yeni anlamla tutarlı olacak biçimde güncellendi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 7398,
@@ -3227,7 +3289,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'Veri durumu' bir çeviri kalıbı. 'Eldeki veriler' en 'available data' ile örtüşüyor ve doğal."
+   "reason": "'Veri durumu' bir çeviri kalıbı. 'Eldeki veriler' en 'available data' ile örtüşüyor ve doğal.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8563,
@@ -3270,7 +3333,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "İyelik ekli 'kendi sorumluluğu' sözlük karşılığı olarak kusurlu. 'kişisel sorumluluk' hem doğal hem İngilizceyle örtüşüyor."
+   "reason": "İyelik ekli 'kendi sorumluluğu' sözlük karşılığı olarak kusurlu. 'kişisel sorumluluk' hem doğal hem İngilizceyle örtüşüyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8582,
@@ -3287,7 +3351,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'boyun eğmiş bir hâlde omuz silkti' doğal değil. resigniert umudu kesmek demek, 'pes etmiş' daha yakın."
+   "reason": "'boyun eğmiş bir hâlde omuz silkti' doğal değil. resigniert umudu kesmek demek, 'pes etmiş' daha yakın.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8595,
@@ -3318,7 +3383,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "'ana hat' taslak anlamına ya da hat anlamına kayıyor ve 'ana hat eksikti' doğal değil. 'ana eksen' metni bağlayan çizgiyi daha iyi veriyor."
+   "reason": "'ana hat' taslak anlamına ya da hat anlamına kayıyor ve 'ana hat eksikti' doğal değil. 'ana eksen' metni bağlayan çizgiyi daha iyi veriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8608,
@@ -3349,7 +3415,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Araba zaten görülerek alınıyor; deyim denemeden, bilmeden almak demek. Mevcut Türkçe cümle de bozuk."
+   "reason": "Araba zaten görülerek alınıyor; deyim denemeden, bilmeden almak demek. Mevcut Türkçe cümle de bozuk.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8634,
@@ -3378,7 +3445,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "İsim karşılığında baştaki artikel gereksiz."
+   "reason": "İsim karşılığında baştaki artikel gereksiz.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8641,
@@ -3398,7 +3466,8 @@
     "tr",
     "en"
    ],
-   "reason": "'cream of the crop' bir topluluğun en iyilerini anlatır, deyimin 'ideal olan' anlamını vermez; 'işin en iyisi değil' de doğal değil."
+   "reason": "'cream of the crop' bir topluluğun en iyilerini anlatır, deyimin 'ideal olan' anlamını vermez; 'işin en iyisi değil' de doğal değil.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8644,
@@ -3415,7 +3484,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'stay on the ball' 'tetikte ol' anlamına kayıyor; burada anlam 'sürdürmek, peşini bırakmamak'. İki cümle de virgülle yanlış bağlanmış."
+   "reason": "'stay on the ball' 'tetikte ol' anlamına kayıyor; burada anlam 'sürdürmek, peşini bırakmamak'. İki cümle de virgülle yanlış bağlanmış.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8648,
@@ -3446,7 +3516,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "'play first fiddle' İngilizcede çok seyrek ve öğrenciye doğal bir karşılık vermiyor."
+   "reason": "'play first fiddle' İngilizcede çok seyrek ve öğrenciye doğal bir karşılık vermiyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8661,
@@ -3575,7 +3646,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "Karşılık yalnız örnekteki bağlama daralmış ve açıklama gibi. 'aktarım' ise Überlieferung, Wiedergabe ve Übertragung kartlarında zaten kullanılıyor, bu yüzden 'aktarma' seçildi."
+   "reason": "Karşılık yalnız örnekteki bağlama daralmış ve açıklama gibi. 'aktarım' ise Überlieferung, Wiedergabe ve Übertragung kartlarında zaten kullanılıyor, bu yüzden 'aktarma' seçildi.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8708,
@@ -3606,7 +3678,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"ek olarak\" ve \"additionally\" zaten zusätzlich (3177) kartında var; tr'yi oraya çekmek kartı ayırt edilemez yapar, tr kalıyor. Asıl hata İngilizce cümlede (virgül, point out); en de zusätzlich ile aynıydı, \"in addition\" ile ayrıldı."
+   "reason": "\"ek olarak\" ve \"additionally\" zaten zusätzlich (3177) kartında var; tr'yi oraya çekmek kartı ayırt edilemez yapar, tr kalıyor. Asıl hata İngilizce cümlede (virgül, point out); en de zusätzlich ile aynıydı, \"in addition\" ile ayrıldı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8760,
@@ -3625,7 +3698,8 @@
    "voiced": [
     "beispiel"
    ],
-   "reason": "Örnek deyim kullanıyor, kartın öğrettiği 'demir yolu makası' anlamı cümlede ve çevirilerde yok; yeni cümle anlamı doğrudan gösteriyor."
+   "reason": "Örnek deyim kullanıyor, kartın öğrettiği 'demir yolu makası' anlamı cümlede ve çevirilerde yok; yeni cümle anlamı doğrudan gösteriyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8763,
@@ -3728,7 +3802,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Kendini kurtarmaya çalışmak\" çok genel; kelime bahaneyle sıyrılmak demek ve en ile örtüşüyor. Çakışma yok (Ausrede \"bahane\" isim)."
+   "reason": "\"Kendini kurtarmaya çalışmak\" çok genel; kelime bahaneyle sıyrılmak demek ve en ile örtüşüyor. Çakışma yok (Ausrede \"bahane\" isim).",
+   "applied": "2026-10-05"
   },
   {
    "id": 8791,
@@ -3759,7 +3834,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Doğrudanlık\" Türkçede doğal değil; tavır için yerleşik karşılık \"açık sözlülük\". Çakışan kart yok."
+   "reason": "\"Doğrudanlık\" Türkçede doğal değil; tavır için yerleşik karşılık \"açık sözlülük\". Çakışan kart yok.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8795,
@@ -3776,7 +3852,8 @@
    "voiced": [
     "en"
    ],
-   "reason": "\"An acquired taste\" isim öbeği ve tat/zevk içindir; örnekteki İngilizce zaten \"takes getting used to\" diyor. Türkçe cümlede \"dürüst\"ün öznesi belirsizdi; önerilen \"alışmayı gerektiriyor\" yerine daha doğal hâli yazıldı."
+   "reason": "\"An acquired taste\" isim öbeği ve tat/zevk içindir; örnekteki İngilizce zaten \"takes getting used to\" diyor. Türkçe cümlede \"dürüst\"ün öznesi belirsizdi; önerilen \"alışmayı gerektiriyor\" yerine daha doğal hâli yazıldı.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8804,
@@ -3842,7 +3919,8 @@
     "tr",
     "en"
    ],
-   "reason": "Yerleşik Türkçe deyim \"koyun postuna bürünmüş kurt\"; SPEC'e göre İngilizce isim karşılığı artikelsiz."
+   "reason": "Yerleşik Türkçe deyim \"koyun postuna bürünmüş kurt\"; SPEC'e göre İngilizce isim karşılığı artikelsiz.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8828,
@@ -3875,7 +3953,8 @@
    "voiced": [
     "tr"
    ],
-   "reason": "\"Karamsarlık yaymak\" anlamı kaydırıyor, örnek çevirisi de başka şey söylüyor; öneri kelimeyi ve cümleyi doğru karşılıyor."
+   "reason": "\"Karamsarlık yaymak\" anlamı kaydırıyor, örnek çevirisi de başka şey söylüyor; öneri kelimeyi ve cümleyi doğru karşılıyor.",
+   "applied": "2026-10-05"
   },
   {
    "id": 8841,
