@@ -173,6 +173,7 @@ jobs:
           npm run check:avatar-unlocks
           npm run check:published-examples
           npm run check:meanings-overlay
+          npm run check:content-names
           npm run check:radius
           npm run check:type
           npm run check:hit

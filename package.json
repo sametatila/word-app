@@ -63,6 +63,7 @@
     "check:avatar-unlocks": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-avatar-unlocks.ts",
     "check:published-examples": "node scripts/check-published-examples.mjs",
     "check:meanings-overlay": "node scripts/check-meanings-overlay.mjs",
+    "check:content-names": "node scripts/check-content-names.mjs",
     "export:user": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/export-user.ts",
     "check:colors": "node scripts/check-colors.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
