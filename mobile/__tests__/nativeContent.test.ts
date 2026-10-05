@@ -133,3 +133,19 @@ test("inemeyen sözlük kendiliğinden yeniden deneniyor", async () => {
     jest.useRealTimers();
   }
 });
+
+/*
+  ÖNBELLEK NESNEYE BAĞLI (denetim T20). Aynı kimlikli konuşma iki kaynaktan
+  gelebiliyor (A1 tohumu ve inen paket); kimliğe bağlı önbellek, tohumun
+  Türkçeye düşmüş sonucunu paketin çevrilebilen sürümüne de veriyordu.
+*/
+test("aynı kimlikli farklı konuşma önbellekten değil kendi çözümünden geliyor", async () => {
+  await setLang("en");
+  await ensureNativeDict();
+  const stale = JSON.parse(JSON.stringify(deConversation)) as Conversation & { lecture: { say: { lang: string; text: string }[] }[] };
+  stale.lecture[0].say[0].text = "Sözlükte olmayan eski bir Türkçe cümle.";
+  expect(nativeConversation(stale)).toBe(stale);
+  const fresh = nativeConversation(deConversation);
+  expect(fresh).not.toBe(deConversation);
+  expect(fresh.titleTr).not.toBe(deConversation.titleTr);
+});

@@ -97,21 +97,16 @@ function courseOfId(id: string): "de" | "en" {
 }
 
 /**
- * Seviye konuşmalarını indirir ve belleğe alır — ekran çizmeden ÖNCE.
- *
- * A1 tohumdan geliyor, indirme hiç yapılmıyor. Sync okuyucular paket inmeden
- * boş dönüyor: Patika "Yakında" gösteriyor, uydurma bir konuşma göstermiyor.
- *
- * @returns Havuz KULLANILABİLİR mi (tohum ya da inen paket). Çağıran ekran
- * "paket inemedi" ile "konuşma gerçekten yok" arasını buna bakarak ayırıyor;
- * ikisi de eli boş bırakıyor ama biri ağ hatası, öteki eksik içerik.
+ * A1 paketini beklemenin üst sınırı. Tohum yalnız ağ yokken ya da paket
+ * gecikirken kullanılıyor; süre dolunca ekran tohumla açılıyor, paket arkada
+ * inmeye devam ediyor ve bir sonraki açılışta o kullanılıyor.
  */
-export async function ensureConversations(level: string, course: string = currentCourseId()): Promise<boolean> {
-  const lv = level.toUpperCase();
-  const c = packCourse(course);
-  if (SEED[c]?.[lv]) return true;
-  const key = `${c}-${lv}`;
-  if (pools.has(key)) return true;
+const SEED_WAIT_MS = 3_000;
+
+/** Süren indirmeler — aynı paketi iki ekran aynı anda istemesin. */
+const loading = new Map<string, Promise<boolean>>();
+
+async function loadPack(course: string, lv: string, key: string): Promise<boolean> {
   const pack = packOf(course, lv);
   const ok = await ensurePack(pack);
   if (!ok) return false;
@@ -129,10 +124,71 @@ export async function ensureConversations(level: string, course: string = curren
   return true;
 }
 
+function load(course: string, lv: string, key: string): Promise<boolean> {
+  const running = loading.get(key);
+  if (running) return running;
+  const p = loadPack(course, lv, key)
+    .catch(() => false)
+    .finally(() => loading.delete(key));
+  loading.set(key, p);
+  return p;
+}
+
+/** Sözü en çok `ms` bekler; süre dolarsa `undefined` (söz arkada sürer). */
+function within<T>(p: Promise<T>, ms: number): Promise<T | undefined> {
+  return new Promise((resolve) => {
+    const timer = setTimeout(() => resolve(undefined), ms);
+    (timer as unknown as { unref?: () => void }).unref?.();
+    void p.then(
+      (v) => {
+        clearTimeout(timer);
+        resolve(v);
+      },
+      () => {
+        clearTimeout(timer);
+        resolve(undefined);
+      },
+    );
+  });
+}
+
+/**
+ * Seviye konuşmalarını indirir ve belleğe alır — ekran çizmeden ÖNCE.
+ *
+ * A1 DE PAKETTEN (2026-10-05, denetim T20). Anadil sözlüğü (`native/en`,
+ * `native/de`) sunucudan, Türkçe metne anahtarlı iniyor. A1 yalnız ikilideki
+ * tohumdan okunurken A1 metni değişince eski build'in tohumu yeni sözlükte
+ * bulunamıyor ve hep-ya-hiç kuralı bütün konuşmayı Türkçeye düşürüyordu
+ * (İngilizce/Almanca arayüzde "Hallo!" Türkçe). Paket ve sözlük aynı içerik
+ * sürümünden geldiği için birbirini tutuyor; tohum yalnız ağ yokken yedek.
+ *
+ * Öteki seviyelerde tohum yok: sync okuyucular paket inmeden boş dönüyor,
+ * Patika "Yakında" gösteriyor, uydurma bir konuşma göstermiyor.
+ *
+ * @returns Havuz KULLANILABİLİR mi (inen paket ya da tohum). Çağıran ekran
+ * "paket inemedi" ile "konuşma gerçekten yok" arasını buna bakarak ayırıyor;
+ * ikisi de eli boş bırakıyor ama biri ağ hatası, öteki eksik içerik.
+ */
+export async function ensureConversations(level: string, course: string = currentCourseId()): Promise<boolean> {
+  const lv = level.toUpperCase();
+  const c = packCourse(course);
+  const key = `${c}-${lv}`;
+  if (pools.has(key)) return true;
+  if (SEED[c]?.[lv]) {
+    await within(load(course, lv, key), SEED_WAIT_MS);
+    return true;
+  }
+  return load(course, lv, key);
+}
+
 function poolOf(course: string, level: string): Conversation[] {
   const lv = level.toUpperCase();
   const c = packCourse(course);
-  return SEED[c]?.[lv] ?? pools.get(`${c}-${lv}`) ?? [];
+  const pool = pools.get(`${c}-${lv}`);
+  /* Boş paket tohumu ezmiyor: inen ama içi boş A1, ikilideki konuşmaları
+     silmesin. */
+  if (pool && pool.length > 0) return pool;
+  return SEED[c]?.[lv] ?? pool ?? [];
 }
 
 /*

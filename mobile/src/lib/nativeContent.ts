@@ -185,7 +185,7 @@ export function ensureNativeDict(): Promise<void> {
     if (lang === "en") dict = (loaded as NativeDict | null) ?? null;
     else dictDe = (loaded as DeDict | null) ?? null;
     loadedFor = loaded ? lang : null;
-    cache.clear();
+    clearNativeCache();
     if (loaded) {
       failures = 0;
       bump();
@@ -279,9 +279,18 @@ function once<T>(key: string, make: () => T | null, fallback: T): T {
   return out;
 }
 
+/*
+  KONUŞMA ÖNBELLEĞİ NESNEYE BAĞLI, kimliğe değil. Aynı kimlik iki kaynaktan
+  gelebiliyor (A1'de ikilideki tohum ve inen paket, bkz. `data/conversations`):
+  kimliğe bağlı önbellek tohumun Türkçeye düşmüş sonucunu paket indikten
+  sonra da döndürürdü.
+*/
+let conversationCache = new WeakMap<object, unknown>();
+
 /** Dil değişince çağrılıyor; dışarıdan da çağrılabilir (testler). */
 export function clearNativeCache(): void {
   cache.clear();
+  conversationCache = new WeakMap();
 }
 
 /**
@@ -298,11 +307,19 @@ export function nativeConversation<T extends { id: string; course?: string }>(co
        `resolveConversation`ın beklediği şablon yapısı yok. */
     const de = deDict();
     if (!de) return conversation;
-    return once(`conversation:${conversation.id}`, () => resolveEnConversation(de, conversation as unknown as Conversation) as T | null, conversation);
+    return onceFor(conversation, () => resolveEnConversation(de, conversation as unknown as Conversation) as T | null);
   }
   const d = nativeDict();
   if (!d) return conversation;
-  return once(`conversation:${conversation.id}`, () => resolveConversation(d, conversation as unknown as Conversation) as T | null, conversation);
+  return onceFor(conversation, () => resolveConversation(d, conversation as unknown as Conversation) as T | null);
+}
+
+function onceFor<T extends object>(src: T, make: () => T | null): T {
+  const hit = conversationCache.get(src);
+  if (hit !== undefined) return hit as T;
+  const out = make() ?? src;
+  conversationCache.set(src, out);
+  return out;
 }
 
 export function nativeExercise<T extends { id: string; course?: string }>(ex: T): T {
