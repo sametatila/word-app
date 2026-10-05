@@ -483,7 +483,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               kind: "match",
               id: "de-a2-10-l4-18",
               no: 18,
-              text: "Bei Frau Ergün läuft nachts Wasser aus dem Rohr unter der Spüle.",
+              text: "Bei Frau Haberland läuft nachts Wasser aus dem Rohr unter der Spüle.",
               answer: "c",
               explain:
                 "(c) tek gece hizmeti: \"Rund um die Uhr erreichbar, auch am Wochenende\". Öteki ilanların hiçbiri gece hizmet vermiyor.",
@@ -536,9 +536,9 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               situation: "Bir kiracı arıza bildiriyor.",
               plays: 2,
               segments: [
-                { speaker: "Frau Ergün", text: "Meine Heizung wird seit Montag nicht mehr warm." },
+                { speaker: "Frau Haberland", text: "Meine Heizung wird seit Montag nicht mehr warm." },
                 { speaker: "Mitarbeiter", text: "Der Handwerker kann am Donnerstag zwischen acht und zwölf kommen." },
-                { speaker: "Frau Ergün", text: "Da arbeite ich. Geht auch der Nachmittag?" },
+                { speaker: "Frau Haberland", text: "Da arbeite ich. Geht auch der Nachmittag?" },
                 { speaker: "Mitarbeiter", text: "Dann erst nächste Woche Dienstag." },
               ],
             },
@@ -690,8 +690,8 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               situation: "Gelenler sırayla ne getirdiklerini söylüyor.",
               plays: 2,
               segments: [
-                { speaker: "Helferin", text: "Damit wir die Tische verteilen können: Was haben Sie mitgebracht? Frau Ergün?" },
-                { speaker: "Frau Ergün", text: "Meine Nähmaschine. Sie macht Geräusche, näht aber noch." },
+                { speaker: "Helferin", text: "Damit wir die Tische verteilen können: Was haben Sie mitgebracht? Frau Haberland?" },
+                { speaker: "Frau Haberland", text: "Meine Nähmaschine. Sie macht Geräusche, näht aber noch." },
                 { speaker: "Helferin", text: "Gut. Herr Mohr?" },
                 { speaker: "Herr Mohr", text: "Bei mir ist es der Wasserkocher. Er wird nicht mehr heiß." },
                 { speaker: "Helferin", text: "Und Sie, Frau Dobrev?" },
@@ -719,7 +719,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               id: "de-a2-10-h2-6",
               no: 6,
               ref: "g1",
-              text: "Frau Ergün",
+              text: "Frau Haberland",
               answer: "a",
               explain:
                 "\"Meine Nähmaschine. Sie macht Geräusche, näht aber noch\" — makine tümden bozulmamış, yalnız ses çıkarıyor. Bu yüzden `defekt` diyen bir seçenek onun durumunu karşılamaz.",
@@ -796,7 +796,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               plays: 2,
               segments: [
                 {
-                  text: "Guten Tag, Frau Ergün, hier ist die Werkstatt. Ihre Nähmaschine ist noch nicht fertig, wir warten auf ein Teil. Wir rufen an, sobald es da ist, das dauert etwa eine Woche.",
+                  text: "Guten Tag, Frau Haberland, hier ist die Werkstatt. Ihre Nähmaschine ist noch nicht fertig, wir warten auf ein Teil. Wir rufen an, sobald es da ist, das dauert etwa eine Woche.",
                 },
               ],
             },

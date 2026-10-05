@@ -545,7 +545,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
           options: [
             {
               key: "a",
-              label: "a — Deniz, recruiter",
+              label: "a — Charlie, recruiter",
               body: "I have sat on maybe four hundred panels. The thing nobody admits is that the decision is usually made in the first two minutes and the rest of the hour is spent looking for reasons. I do not think my colleagues are prejudiced people. I think an hour is a very long time to spend defending something you decided in one hundred and twenty seconds.",
             },
             {

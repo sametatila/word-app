@@ -171,16 +171,16 @@ export const a2U04: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Rana", text: "So, der Kofferraum ist leer. Das war die letzte Fuhre." },
-      { speaker: "Yusuf", text: "Endlich. Ich habe heute fünfmal Kisten in den dritten Stock geschleppt. Meine Arme tun weh." },
+      { speaker: "Fabian", text: "Endlich. Ich habe heute fünfmal Kisten in den dritten Stock geschleppt. Meine Arme tun weh." },
       { speaker: "Rana", text: "Es gibt leider keinen Aufzug. Aber die Wohnung ist schön, oder?" },
-      { speaker: "Yusuf", text: "Sehr schön. Wann seid ihr offiziell eingezogen?" },
+      { speaker: "Fabian", text: "Sehr schön. Wann seid ihr offiziell eingezogen?" },
       { speaker: "Rana", text: "Gestern. Wir haben zuerst nur die Betten aufgebaut und sofort geschlafen." },
-      { speaker: "Yusuf", text: "Und die Kisten? Habt ihr schon etwas ausgepackt?" },
+      { speaker: "Fabian", text: "Und die Kisten? Habt ihr schon etwas ausgepackt?" },
       { speaker: "Rana", text: "Nur die Küche. Der Rest steht noch in der Garage. Das machen wir demnächst, vielleicht nächstes Wochenende." },
     ],
     questions: [
       {
-        text: "In welchen Stock hat Yusuf die Kisten getragen?",
+        text: "In welchen Stock hat Fabian die Kisten getragen?",
         options: ["In den ersten", "In den dritten", "In den vierten"],
         answer: 1,
         explain: "„Ich habe heute fünfmal Kisten in den dritten Stock geschleppt.“",
@@ -230,10 +230,10 @@ export const a2U04: SkillExercise[] = [
     segments: [
       { speaker: "Gast", text: "Ihr kennt euch schon lange, oder? Wie habt ihr euch eigentlich kennengelernt?" },
       { speaker: "Marie", text: "In einem Sprachkurs, vor sieben Jahren. Wir haben uns dort ziemlich schnell angefreundet." },
-      { speaker: "Onur", text: "Sie sagt das so nett. In Wahrheit habe ich zwei Monate lang mit ihr geflirtet, und sie hat nichts gemerkt." },
+      { speaker: "Joachim", text: "Sie sagt das so nett. In Wahrheit habe ich zwei Monate lang mit ihr geflirtet, und sie hat nichts gemerkt." },
       { speaker: "Marie", text: "Das stimmt nicht! Du warst einfach charmant, aber nicht sehr deutlich." },
       { speaker: "Gast", text: "Und wann wart ihr das erste Mal verabredet?" },
-      { speaker: "Onur", text: "Im Winter danach. Seither sind wir zusammen. Seit drei Jahren leben wir auch zusammen." },
+      { speaker: "Joachim", text: "Im Winter danach. Seither sind wir zusammen. Seit drei Jahren leben wir auch zusammen." },
       { speaker: "Marie", text: "Und wir vertragen uns fast immer. Nur beim Kochen nicht." },
     ],
     questions: [
@@ -350,7 +350,7 @@ export const a2U04: SkillExercise[] = [
           { de: "Wir sind seit … befreundet.", tr: "…-den beri arkadaşız", en: "we have been friends since …" },
         ],
         sample:
-          "Hallo,\n\nmeine beste Freundin heißt Derya. Wir haben uns vor neun Jahren bei der Arbeit kennengelernt. Am ersten Tag saß sie einfach neben mir und hat mir ihren Kaffee angeboten.\n\nZuerst fand ich sie sehr laut, aber auch sehr charmant. Nach zwei Wochen haben wir uns richtig angefreundet.\n\nHeute sind wir seit neun Jahren befreundet. Wir vertragen uns fast immer — nur im Urlaub streiten wir über die Pläne.\n\nViele Grüße\nSelin",
+          "Hallo,\n\nmeine beste Freundin heißt Yvonne. Wir haben uns vor neun Jahren bei der Arbeit kennengelernt. Am ersten Tag saß sie einfach neben mir und hat mir ihren Kaffee angeboten.\n\nZuerst fand ich sie sehr laut, aber auch sehr charmant. Nach zwei Wochen haben wir uns richtig angefreundet.\n\nHeute sind wir seit neun Jahren befreundet. Wir vertragen uns fast immer — nur im Urlaub streiten wir über die Pläne.\n\nViele Grüße\nLuisa",
       },
     ],
   },

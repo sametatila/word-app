@@ -108,19 +108,19 @@ export const enA2U14: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Ela: Good morning. I'd like to send this package abroad.\n" +
+      "Lucy: Good morning. I'd like to send this package abroad.\n" +
       "Clerk: Put it here, please. I'll weigh it first. Two kilos. Where to?\n" +
-      "Ela: To Italy.\n" +
+      "Lucy: To Italy.\n" +
       "Clerk: Normal or express? Express is faster, but it's more expensive.\n" +
-      "Ela: How much more is express?\n" +
+      "Lucy: How much more is express?\n" +
       "Clerk: Normal is eleven euros and takes six days. Express is twenty-four and takes two days.\n" +
-      "Ela: And is it safe? There are books inside and one of them is old.\n" +
+      "Lucy: And is it safe? There are books inside and one of them is old.\n" +
       "Clerk: Then insure it. For three euros more the post office pays if something happens.\n" +
-      "Ela: Good. Normal with insurance, please.\n" +
+      "Lucy: Good. Normal with insurance, please.\n" +
       "Clerk: Fill out this form. Name, street, zip code and what is inside.\n" +
-      "Ela: Do I write the price of the books?\n" +
+      "Lucy: Do I write the price of the books?\n" +
       "Clerk: Yes. Not the price in the store — what they cost you.\n" +
-      "Ela: Fourteen euros for six days. Cheaper than I expected.",
+      "Lucy: Fourteen euros for six days. Cheaper than I expected.",
     questions: [
       {
         text: "How long does normal take?",
@@ -136,7 +136,7 @@ export const enA2U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela chooses express.",
+        text: "Lucy chooses express.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Normal with insurance, please.“",
@@ -164,7 +164,7 @@ export const enA2U14: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ela pay?",
+        text: "What does Lucy pay?",
         options: [],
         answer: 0,
         accept: ["fourteen euros", "14 euros", "fourteen"],
@@ -190,19 +190,19 @@ export const enA2U14: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Mert", text: "Good morning. I'd like to open an account." },
+      { speaker: "Henry", text: "Good morning. I'd like to open an account." },
       { speaker: "Bank", text: "Of course. Do you have your papers with you?" },
-      { speaker: "Mert", text: "Here. And this is the letter from my company." },
+      { speaker: "Henry", text: "Here. And this is the letter from my company." },
       { speaker: "Bank", text: "Good. One question: do you want a credit card too?" },
-      { speaker: "Mert", text: "Is there a charge for that?" },
+      { speaker: "Henry", text: "Is there a charge for that?" },
       { speaker: "Bank", text: "Three euros a month. Without the card the account is free." },
-      { speaker: "Mert", text: "Then no card for now. Can I get cash from every ATM?" },
+      { speaker: "Henry", text: "Then no card for now. Can I get cash from every ATM?" },
       { speaker: "Bank", text: "From ours, yes. From other banks it costs four euros." },
-      { speaker: "Mert", text: "Good to know. And could you transfer this money to my account, please?" },
+      { speaker: "Henry", text: "Good to know. And could you transfer this money to my account, please?" },
       { speaker: "Bank", text: "From here? Then I need the account number." },
-      { speaker: "Mert", text: "It is on this paper." },
+      { speaker: "Henry", text: "It is on this paper." },
       { speaker: "Bank", text: "Fine. Two hundred euros. You will see it tomorrow in your statement." },
-      { speaker: "Mert", text: "Not today?" },
+      { speaker: "Henry", text: "Not today?" },
       { speaker: "Bank", text: "The money arrives this evening, the statement tomorrow. The money is faster than the paper." },
     ],
     questions: [
@@ -213,21 +213,21 @@ export const enA2U14: SkillExercise[] = [
         explain: "„Three euros a month. Without the card the account is free.“",
       },
       {
-        text: "Where can Mert get cash for free?",
+        text: "Where can Henry get cash for free?",
         options: ["from this bank's ATM", "from every ATM", "from other banks"],
         answer: 0,
         explain: "„From ours, yes. From other banks it costs four euros.“",
       },
       {
         kind: "truefalse",
-        text: "Mert takes no card for now.",
+        text: "Henry takes no card for now.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Then no card for now.“",
       },
       {
         kind: "gapfill",
-        text: "Mert transfers ___ hundred euros.",
+        text: "Henry transfers ___ hundred euros.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
@@ -243,7 +243,7 @@ export const enA2U14: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When does Mert see the money in the statement?",
+        text: "When does Henry see the money in the statement?",
         options: [],
         answer: 0,
         accept: ["tomorrow", "on paper tomorrow"],
@@ -268,17 +268,17 @@ export const enA2U14: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Sena", text: "I want to cancel my contract. It is too expensive." },
+      { speaker: "Ellie", text: "I want to cancel my contract. It is too expensive." },
       { speaker: "Shop", text: "Let me look. Twenty-nine euros a month, eight gigabytes." },
-      { speaker: "Sena", text: "And this offer here in the window is nineteen." },
+      { speaker: "Ellie", text: "And this offer here in the window is nineteen." },
       { speaker: "Shop", text: "That one is cheaper, yes, but it's slower. Six gigabytes and not in every city." },
-      { speaker: "Sena", text: "How much data do I get for twenty-four?" },
+      { speaker: "Ellie", text: "How much data do I get for twenty-four?" },
       { speaker: "Shop", text: "Twenty gigabytes and the fast network. It is more expensive than the offer in the window, but it is better than your contract today." },
-      { speaker: "Sena", text: "So: cheaper than now and more data." },
+      { speaker: "Ellie", text: "So: cheaper than now and more data." },
       { speaker: "Shop", text: "Yes. Your contract ends in October. You can cancel in August." },
-      { speaker: "Sena", text: "And if I cancel today?" },
+      { speaker: "Ellie", text: "And if I cancel today?" },
       { speaker: "Shop", text: "Then you pay until October. Cancel in August, start in November." },
-      { speaker: "Sena", text: "Fine. I'll write it in my calendar." },
+      { speaker: "Ellie", text: "Fine. I'll write it in my calendar." },
       { speaker: "Shop", text: "And I'll write to you in August. That is my job." },
     ],
     questions: [
@@ -289,7 +289,7 @@ export const enA2U14: SkillExercise[] = [
         explain: "„That one is cheaper, yes, but it's slower. Six gigabytes and not in every city.“",
       },
       {
-        text: "When can Sena cancel?",
+        text: "When can Ellie cancel?",
         options: ["in August", "in October", "today"],
         answer: 0,
         explain: "„Your contract ends in October. You can cancel in August.“",
@@ -303,7 +303,7 @@ export const enA2U14: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "For twenty-four euros Sena gets ___ gigabytes.",
+        text: "For twenty-four euros Ellie gets ___ gigabytes.",
         options: [],
         answer: 0,
         accept: ["twenty", "20"],

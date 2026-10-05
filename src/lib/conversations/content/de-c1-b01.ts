@@ -168,7 +168,7 @@ export const deC1B01: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün C1'in en işlevsel becerisi: hayır demek ama karşı tarafı kaybetmemek. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Kural şu: itiraz doğrudan söylenmez, bir kabuğun içine konur. Dilek kipi o kabuktur — cümlenin içeriği aynı kalır, bağlayıcılığı düşer. Önce kelimeler.")] },
+      { say: [tr("Kural şu: itiraz doğrudan söylenmez, bir kabuğun içine konur. Leonie kipi o kabuktur — cümlenin içeriği aynı kalır, bağlayıcılığı düşer. Önce kelimeler.")] },
       word("İlk", { de: "die Zurückhaltung", tr: "çekimserlik" }),
       word("İkinci", { de: "relativieren", tr: "göreceleştirmek" }),
       word("Üçüncü", { de: "der Vorbehalt", tr: "çekince" }),
@@ -394,7 +394,7 @@ export const deC1B01: Conversation[] = [
       { say: [tr("Şimdi: 'Sorumluluğu ekibe devretmek istiyorum.'")], expect: produce("Ich möchte die Verantwortung an das Team übertragen", [tr("Edat belirtme hâli ister; mastar sonda:"), de("Ich möchte die Verantwortung an das Team übertragen."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Tam desteğim arkanızda.'")], expect: produce("Sie haben meinen vollen Rückhalt", [tr("Belirtme hâlinde sıfat -en ekini alır:"), de("Sie haben meinen vollen Rückhalt."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Es empfiehlt sich, das noch einmal prüfen."), tr("cümlesi doğru mu?")], expect: truefalse("Es empfiehlt sich, das noch einmal prüfen.", false, [tr("Mastar öbeğinde zu gerekir:"), de("Es empfiehlt sich, das noch einmal zu prüfen.")]) },
-      { say: [tr("Son: 'Kendi sorumluluk alanını genişletmeni öneririm.'")], expect: produce("Ich würde anregen, deine Eigenverantwortung zu erweitern", [tr("Dilek kipi ana cümlede, mastar öbeği virgülden sonra:"), de("Ich würde anregen, deine Eigenverantwortung zu erweitern."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Kendi sorumluluk alanını genişletmeni öneririm.'")], expect: produce("Ich würde anregen, deine Eigenverantwortung zu erweitern", [tr("Leonie kipi ana cümlede, mastar öbeği virgülden sonra:"), de("Ich würde anregen, deine Eigenverantwortung zu erweitern."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir ekibi resmî yetkin olmadan yönlendireceksin.")] },
     ],
     chat: {
@@ -549,7 +549,7 @@ export const deC1B01: Conversation[] = [
       word("Yedinci", { de: "der Unterhändler", tr: "müzakereci" }),
       word("Son", { de: "erörtern", tr: "ele almak" }),
       { say: [tr("Örnek:"), de("Herr Klein sagt, er habe nichts davon gewusst."), tr("Tekrar et:"), de("Herr Klein sagt, er habe nichts davon gewusst")], expect: repeat("Herr Klein sagt, er habe nichts davon gewusst") },
-      { say: [tr("Sıra sende: 'Bayan Yıldız ise bunun böyle kararlaştırıldığını söylüyor.'")], expect: produce("Frau Yildiz hingegen meint, das sei so vereinbart worden", [tr("Aktarım kipinde edilgen geçmiş; fiil öbeği sonda:"), de("Frau Yildiz hingegen meint, das sei so vereinbart worden."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Bayan Fink ise bunun böyle kararlaştırıldığını söylüyor.'")], expect: produce("Frau Fink hingegen meint, das sei so vereinbart worden", [tr("Aktarım kipinde edilgen geçmiş; fiil öbeği sonda:"), de("Frau Fink hingegen meint, das sei so vereinbart worden."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Görüşmeler tıkandı.'")], expect: produce("Die Gespräche haben sich festgefahren", [tr("Dönüşlü fiil; ortaç en sonda:"), de("Die Gespräche haben sich festgefahren."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Ne üzerinde anlaşabiliriz?'")], expect: produce("Worauf können wir uns einigen", [tr("Edat soru zamiriyle kaynaşır; dönüşlü zamir ortada:"), de("Worauf können wir uns einigen?"), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Herr Klein sagt, er hat nichts davon gewusst."), tr("aktarımı arabulucu için tarafsız mı?")], expect: truefalse("Herr Klein sagt, er hat nichts davon gewusst.", false, [tr("Arabulucu söyleneni aktarır, onaylamaz — bunun için aktarım kipi gerekir:"), de("Herr Klein sagt, er habe nichts davon gewusst.")]) },

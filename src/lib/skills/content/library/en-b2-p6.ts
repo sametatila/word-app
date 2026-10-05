@@ -256,7 +256,7 @@ export const enB2P6: SkillExercise[] = [
           { de: "If you apply again, I would suggest …", tr: "Tekrar başvurursanız … öneririm", en: "" },
         ],
         sample:
-          "Dear Ms. Aydin, thank you for the time you gave us on April 14. " +
+          "Dear Ms. Kelly, thank you for the time you gave us on April 14. " +
           "I'm writing to let you know that we have offered the role to another candidate, " +
           "and to give you the reasons, since you asked for them. " +
           "Your strongest areas were the written task, where you scored highest of the four, " +

@@ -542,7 +542,7 @@ export const deB1B06: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Modülün son Konuşma adımı. Bugün tavsiye alışverişi yapacağız — vermek ve istemek. İkisi de aynı fiil biçimini kullanıyor: dilek kipi. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Tavsiyeyi düz kipte söylersen emir gibi durur. Dilek kipi araya bir yumuşaklık koyuyor: 'yaparım' değil, 'yapardım'. Önce kelimeler.")] },
+      { say: [tr("Tavsiyeyi düz kipte söylersen emir gibi durur. Leonie kipi araya bir yumuşaklık koyuyor: 'yaparım' değil, 'yapardım'. Önce kelimeler.")] },
       word("İlk", { de: "begleiten", tr: "eşlik etmek" }),
       word("İkinci", { de: "der Standpunkt", tr: "bakış açısı" }),
       word("Üçüncü", { de: "die Unterstützung", tr: "destek" }),
@@ -554,7 +554,7 @@ export const deB1B06: Conversation[] = [
       { say: [tr("Kalıbımız:"), de("An deiner Stelle würde ich …"), tr("Cümle bir tümleçle başlıyor, o yüzden çekimli fiil ikinci sırada ve mastar en sonda.")] },
       { say: [tr("Örnek:"), de("An deiner Stelle würde ich mit der Chefin sprechen."), tr("Tekrar et:"), de("An deiner Stelle würde ich mit der Chefin sprechen")], expect: repeat("An deiner Stelle würde ich mit der Chefin sprechen") },
       { say: [tr("Sıra sende: 'Senin yerinde olsam önce bir kurs yapardım.'")], expect: produce("An deiner Stelle würde ich zuerst einen Kurs machen", [tr("Tümleç başta, çekimli fiil ikinci, mastar sonda:"), de("An deiner Stelle würde ich zuerst einen Kurs machen."), tr("Tekrar dene.")]) },
-      { say: [tr("Şimdi kibar bir rica: 'Bana geri bildirim verebilir misin?'")], expect: produce("Könntest du mir eine Rückmeldung geben", [tr("Dilek kipiyle soru, mastar sonda:"), de("Könntest du mir eine Rückmeldung geben?"), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi kibar bir rica: 'Bana geri bildirim verebilir misin?'")], expect: produce("Könntest du mir eine Rückmeldung geben", [tr("Leonie kipiyle soru, mastar sonda:"), de("Könntest du mir eine Rückmeldung geben?"), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha, ilgi cümlesiyle: 'Beni cesaretlendiren birine ihtiyacım var.'")], expect: produce("Ich brauche jemanden, der mich ermutigt", [tr("Belirsiz kişide ilgi zamiri eril:"), de("Ich brauche jemanden, der mich ermutigt."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("An deiner Stelle ich würde warten."), tr("cümlesi doğru mu?")], expect: truefalse("An deiner Stelle ich würde warten.", false, [tr("Cümle tümleçle başlayınca çekimli fiil ikinci sıraya gelir:"), de("An deiner Stelle würde ich warten.")]) },
       { say: [tr("Son: 'Sen benim yerimde ne yapardın?'")], expect: produce("Was würdest du an meiner Stelle tun", [tr("Soru kelimesi başta, mastar en sonda:"), de("Was würdest du an meiner Stelle tun?"), tr("Tekrar dene.")]) },

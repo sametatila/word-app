@@ -42,41 +42,41 @@ export const enA2U03: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Sena: What happened to your arm?\n" +
-      "Ali: I fell on the stairs yesterday and I hurt my arm. Luckily, it wasn't serious.\n" +
-      "Sena: Where did it happen?\n" +
-      "Ali: At home. I was carrying two boxes and I didn't see the last step.\n" +
-      "Sena: Were you alone?\n" +
-      "Ali: Yes, I was alone. But my neighbor heard me and she came fast.\n" +
-      "Sena: Did you go to the doctor?\n" +
-      "Ali: Yes. I waited two hours there. The doctor said: No break, only a bad injury.\n" +
-      "Sena: How long do you have to wait?\n" +
-      "Ali: Two weeks with no heavy work. Bad luck — we are moving to a new apartment next month!\n" +
-      "Sena: Then I'll help you. I have moved four times in my life.\n" +
-      "Ali: Really? Thank you very much.",
+      "Ellie: What happened to your arm?\n" +
+      "Harry: I fell on the stairs yesterday and I hurt my arm. Luckily, it wasn't serious.\n" +
+      "Ellie: Where did it happen?\n" +
+      "Harry: At home. I was carrying two boxes and I didn't see the last step.\n" +
+      "Ellie: Were you alone?\n" +
+      "Harry: Yes, I was alone. But my neighbor heard me and she came fast.\n" +
+      "Ellie: Did you go to the doctor?\n" +
+      "Harry: Yes. I waited two hours there. The doctor said: No break, only a bad injury.\n" +
+      "Ellie: How long do you have to wait?\n" +
+      "Harry: Two weeks with no heavy work. Bad luck — we are moving to a new apartment next month!\n" +
+      "Ellie: Then I'll help you. I have moved four times in my life.\n" +
+      "Harry: Really? Thank you very much.",
     questions: [
       {
-        text: "What happened to Ali?",
+        text: "What happened to Harry?",
         options: ["he fell on the stairs", "he had a car accident", "he broke his arm"],
         answer: 0,
         explain: "„I fell on the stairs yesterday and I hurt my arm.“ — doktor „no break“ diyor.",
       },
       {
         text: "Who came fast?",
-        options: ["his neighbor", "the doctor", "Sena"],
+        options: ["his neighbor", "the doctor", "Ellie"],
         answer: 0,
-        explain: "„But my neighbor heard me and she came fast.“ — Ali yalnızdı.",
+        explain: "„But my neighbor heard me and she came fast.“ — Harry yalnızdı.",
       },
       {
         kind: "truefalse",
-        text: "Ali has a bad injury but no break.",
+        text: "Harry has a bad injury but no break.",
         options: ["True", "False"],
         answer: 0,
         explain: "„The doctor said: No break, only a bad injury.“",
       },
       {
         kind: "gapfill",
-        text: "Ali has to wait ___ weeks with no heavy work.",
+        text: "Harry has to wait ___ weeks with no heavy work.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
@@ -84,7 +84,7 @@ export const enA2U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many times has Sena moved?",
+        text: "How many times has Ellie moved?",
         options: [],
         answer: 0,
         accept: ["four times", "four", "4"],
@@ -108,41 +108,41 @@ export const enA2U03: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Nil: Have you ever been abroad?\n" +
-      "Kaan: Yes, I have. I have been to Italy twice.\n" +
-      "Nil: Twice! When was the first time?\n" +
-      "Kaan: Three years ago. I went with my sister and we stayed in a hostel.\n" +
-      "Nil: Have you ever tried Italian food there?\n" +
-      "Kaan: Of course. Every day! It was exciting.\n" +
-      "Nil: I have never been abroad. But my brother has gone to London — he is away this week.\n" +
-      "Kaan: Is he coming back soon?\n" +
-      "Nil: Yes, he comes back on Sunday. He goes there once a year for his work.\n" +
-      "Kaan: Then ask him about foreign countries. He knows a lot.\n" +
-      "Nil: I will. Have you ever been to England?\n" +
-      "Kaan: No, I haven't. But I want to go.",
+      "Katie: Have you ever been abroad?\n" +
+      "Liam: Yes, I have. I have been to Italy twice.\n" +
+      "Katie: Twice! When was the first time?\n" +
+      "Liam: Three years ago. I went with my sister and we stayed in a hostel.\n" +
+      "Katie: Have you ever tried Italian food there?\n" +
+      "Liam: Of course. Every day! It was exciting.\n" +
+      "Katie: I have never been abroad. But my brother has gone to London — he is away this week.\n" +
+      "Liam: Is he coming back soon?\n" +
+      "Katie: Yes, he comes back on Sunday. He goes there once a year for his work.\n" +
+      "Liam: Then ask him about foreign countries. He knows a lot.\n" +
+      "Katie: I will. Have you ever been to England?\n" +
+      "Liam: No, I haven't. But I want to go.",
     questions: [
       {
-        text: "How many times has Kaan been to Italy?",
+        text: "How many times has Liam been to Italy?",
         options: ["twice", "once", "never"],
         answer: 0,
         explain: "„I have been to Italy twice.“ — „been“ gidip döndüğünü söylüyor.",
       },
       {
-        text: "Where has Nil's brother gone?",
+        text: "Where has Katie's brother gone?",
         options: ["to London", "to Italy", "to England"],
         answer: 0,
         explain: "„my brother has gone to London — he is away this week“ — „gone“ hâlâ orada demek.",
       },
       {
         kind: "truefalse",
-        text: "Nil has been abroad.",
+        text: "Katie has been abroad.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I have never been abroad.“ — yurt dışına giden kardeşi.",
       },
       {
         kind: "gapfill",
-        text: "Nil's brother comes back on ___.",
+        text: "Katie's brother comes back on ___.",
         options: [],
         answer: 0,
         accept: ["Sunday"],
@@ -163,7 +163,7 @@ export const enA2U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Has Kaan been to England?",
+        text: "Has Liam been to England?",
         options: [],
         answer: 0,
         accept: ["no", "no, he hasn't", "never"],
@@ -189,36 +189,36 @@ export const enA2U03: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Ela", text: "Where did you go last month?" },
-      { speaker: "Deniz", text: "I went to an island in the south. I was there for ten days." },
-      { speaker: "Ela", text: "How long did you stay in the hotel?" },
-      { speaker: "Deniz", text: "Only three days. After that I stayed with a friend." },
-      { speaker: "Ela", text: "Why were you alone at first?" },
-      { speaker: "Deniz", text: "Because my friend was working. He came on Thursday." },
-      { speaker: "Ela", text: "Who did you meet there?" },
-      { speaker: "Deniz", text: "Many people. We had a long conversation with an old man in a café." },
-      { speaker: "Deniz", text: "He explained the history of the island. Can you guess how old he was?" },
-      { speaker: "Ela", text: "Seventy?" },
-      { speaker: "Deniz", text: "Ninety-two! And he was still working." },
-      { speaker: "Ela", text: "Ninety-two! What happened after that?" },
-      { speaker: "Deniz", text: "We went back to my friend's house and we slept twelve hours." },
+      { speaker: "Lucy", text: "Where did you go last month?" },
+      { speaker: "Charlie", text: "I went to an island in the south. I was there for ten days." },
+      { speaker: "Lucy", text: "How long did you stay in the hotel?" },
+      { speaker: "Charlie", text: "Only three days. After that I stayed with a friend." },
+      { speaker: "Lucy", text: "Why were you alone at first?" },
+      { speaker: "Charlie", text: "Because my friend was working. He came on Thursday." },
+      { speaker: "Lucy", text: "Who did you meet there?" },
+      { speaker: "Charlie", text: "Many people. We had a long conversation with an old man in a café." },
+      { speaker: "Charlie", text: "He explained the history of the island. Can you guess how old he was?" },
+      { speaker: "Lucy", text: "Seventy?" },
+      { speaker: "Charlie", text: "Ninety-two! And he was still working." },
+      { speaker: "Lucy", text: "Ninety-two! What happened after that?" },
+      { speaker: "Charlie", text: "We went back to my friend's house and we slept twelve hours." },
     ],
     questions: [
       {
-        text: "Where did Deniz go?",
+        text: "Where did Charlie go?",
         options: ["to an island", "to a village", "to a hostel"],
         answer: 0,
         explain: "„I went to an island in the south. I was there for ten days.“",
       },
       {
-        text: "How long did Deniz stay in the hotel?",
+        text: "How long did Charlie stay in the hotel?",
         options: ["three days", "ten days", "twelve hours"],
         answer: 0,
         explain: "„Only three days. After that I stayed with a friend.“ — on gün bütün tatil.",
       },
       {
         kind: "truefalse",
-        text: "Deniz was alone until Thursday.",
+        text: "Charlie was alone until Thursday.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Because my friend was working. He came on Thursday.“ — başta yalnızdı.",
@@ -229,7 +229,7 @@ export const enA2U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ninety-two", "92"],
-        explain: "„Ninety-two! And he was still working.“ — Ela yetmiş diye tahmin ediyor.",
+        explain: "„Ninety-two! And he was still working.“ — Lucy yetmiş diye tahmin ediyor.",
       },
       {
         kind: "dictation",
@@ -264,36 +264,36 @@ export const enA2U03: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "My family travels a lot. My father has gone to Germany — he is away this week." },
-      { speaker: "Nil", text: "My mother has been to Germany twice, but she is at home now. She came back on Sunday." },
-      { speaker: "Nil", text: "My father calls us every evening. He has gone for work, so we eat dinner without him this week." },
-      { speaker: "Nil", text: "I have never been abroad. But I have been to the mountains many times." },
-      { speaker: "Nil", text: "My sister has visited six countries. Her last journey was to an island in the south." },
-      { speaker: "Nil", text: "She always comes back with a small thing for me. Last time it was a doll." },
+      { speaker: "Katie", text: "My family travels a lot. My father has gone to Germany — he is away this week." },
+      { speaker: "Katie", text: "My mother has been to Germany twice, but she is at home now. She came back on Sunday." },
+      { speaker: "Katie", text: "My father calls us every evening. He has gone for work, so we eat dinner without him this week." },
+      { speaker: "Katie", text: "I have never been abroad. But I have been to the mountains many times." },
+      { speaker: "Katie", text: "My sister has visited six countries. Her last journey was to an island in the south." },
+      { speaker: "Katie", text: "She always comes back with a small thing for me. Last time it was a doll." },
     ],
     questions: [
       {
-        text: "Where has Nil's father gone?",
+        text: "Where has Katie's father gone?",
         options: ["to Germany", "to the mountains", "to an island"],
         answer: 0,
         explain: "„My father has gone to Germany — he is away this week.“ — yani hâlâ orada.",
       },
       {
-        text: "How many countries has Nil's sister visited?",
+        text: "How many countries has Katie's sister visited?",
         options: ["six", "two", "many"],
         answer: 0,
         explain: "„My sister has visited six countries.“ — iki, annenin Almanya sayısı.",
       },
       {
         kind: "truefalse",
-        text: "Nil has been abroad.",
+        text: "Katie has been abroad.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I have never been abroad. But I have been to the mountains many times.“",
       },
       {
         kind: "gapfill",
-        text: "Nil's mother has been to Germany ___.",
+        text: "Katie's mother has been to Germany ___.",
         options: [],
         answer: 0,
         accept: ["twice"],

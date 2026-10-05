@@ -114,15 +114,15 @@ export const deA2: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Lena", text: "Hallo, hier ist Lena Brandt. Ich habe deine Anzeige in der Bibliothek gelesen." },
-      { speaker: "Murat", text: "Hallo Lena! Schön, dass du anrufst. Du suchst also einen Tandem-Partner?" },
+      { speaker: "Niklas", text: "Hallo Lena! Schön, dass du anrufst. Du suchst also einen Tandem-Partner?" },
       { speaker: "Lena", text: "Genau. Ich lerne seit einem Jahr Türkisch, aber ich spreche fast nie." },
-      { speaker: "Murat", text: "Bei mir ist es andersherum. Ich wohne seit zwei Jahren hier und verstehe schon viel, aber ich mache noch viele Fehler." },
+      { speaker: "Niklas", text: "Bei mir ist es andersherum. Ich wohne seit zwei Jahren hier und verstehe schon viel, aber ich mache noch viele Fehler." },
       { speaker: "Lena", text: "Dann passt das gut. Wie machen wir das? Eine Stunde Deutsch und eine Stunde Türkisch?" },
-      { speaker: "Murat", text: "Lieber eine halbe Stunde und eine halbe Stunde. Zwei Stunden sind mir zu lang." },
+      { speaker: "Niklas", text: "Lieber eine halbe Stunde und eine halbe Stunde. Zwei Stunden sind mir zu lang." },
       { speaker: "Lena", text: "Einverstanden. Wann hast du Zeit?" },
-      { speaker: "Murat", text: "Am Dienstagnachmittag, so gegen fünf. Und du?" },
+      { speaker: "Niklas", text: "Am Dienstagnachmittag, so gegen fünf. Und du?" },
       { speaker: "Lena", text: "Dienstag ist perfekt. Treffen wir uns im Café neben der Bibliothek?" },
-      { speaker: "Murat", text: "Gern. Aber bitte korrigier mich nicht bei jedem Wort. Das macht mich nervös." },
+      { speaker: "Niklas", text: "Gern. Aber bitte korrigier mich nicht bei jedem Wort. Das macht mich nervös." },
       { speaker: "Lena", text: "Verstanden, nur am Ende. Dann bis Dienstag!" },
     ],
     questions: [
@@ -134,7 +134,7 @@ export const deA2: SkillExercise[] = [
           "Sie sucht eine Arbeit als Lehrerin.",
         ],
         answer: 0,
-        explain: "„Ich habe deine Anzeige in der Bibliothek gelesen“ ve Murat'ın sorusu bunu onaylıyor: „Du suchst also einen Tandem-Partner?“",
+        explain: "„Ich habe deine Anzeige in der Bibliothek gelesen“ ve Niklas'ın sorusu bunu onaylıyor: „Du suchst also einen Tandem-Partner?“",
       },
       {
         text: "Was ist Lenas Problem?",
@@ -148,7 +148,7 @@ export const deA2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Murat möchte jedes Mal zwei Stunden üben.",
+        text: "Niklas möchte jedes Mal zwei Stunden üben.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "„Lieber eine halbe Stunde und eine halbe Stunde. Zwei Stunden sind mir zu lang.“ — toplam bir saat.",
@@ -163,14 +163,14 @@ export const deA2: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Murat kendi durumunu anlatıyor: hataları hakkındaki cümleyi duyduğun gibi yaz.",
+        text: "Niklas kendi durumunu anlatıyor: hataları hakkındaki cümleyi duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["aber ich mache noch viele Fehler", "ich mache noch viele Fehler"],
         explain: "„… aber ich mache noch viele Fehler.“ — „noch“ burada „hâlâ“ demek.",
       },
       {
-        text: "Was möchte Murat nicht?",
+        text: "Was möchte Niklas nicht?",
         options: [
           "Lena soll ihn nicht bei jedem Wort korrigieren.",
           "Er möchte sich nicht in einem Café treffen.",
@@ -236,7 +236,7 @@ export const deA2: SkillExercise[] = [
           "Am Anfang war es furchtbar, denn ich habe die Texte nicht gekannt und war ziemlich nervös. " +
           "Inzwischen macht es mir richtig Spaß, und die Leute sind sehr nett. " +
           "Wir proben immer am Mittwoch um 19 Uhr im Stadtteilzentrum. Hast du Lust, einmal mitzukommen? " +
-          "Melde dich, wenn du am Mittwoch Zeit hast. Liebe Grüße, Ayla",
+          "Melde dich, wenn du am Mittwoch Zeit hast. Liebe Grüße, Elke",
       },
     ],
   },

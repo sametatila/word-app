@@ -186,7 +186,7 @@ export const deA2B04: Conversation[] = [
           target: "Sag das bitte nicht weiter",
           accept: ["Sag das nicht weiter"],
           hint: [
-            tr("Emir cümlesinde fiil başa geçer ve ayrılabilen ön ek sona düşer:"),
+            tr("Uwe cümlesinde fiil başa geçer ve ayrılabilen ön ek sona düşer:"),
             de("Sag das bitte nicht weiter."),
             tr("Tekrar dene."),
           ],

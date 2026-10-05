@@ -116,7 +116,7 @@ export const deA2P4: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { text: "Guten Tag, Frau Baran. Hier ist die Tierarztpraxis Doktor Simon. Ich rufe wegen Ihres Termins am Donnerstag an." },
+      { text: "Guten Tag, Frau Seiler. Hier ist die Tierarztpraxis Doktor Simon. Ich rufe wegen Ihres Termins am Donnerstag an." },
       { text: "Leider muss Frau Doktor Simon an diesem Tag zu einer Fortbildung. Wir müssen den Termin verschieben." },
       { text: "Ich kann Ihnen Freitag um halb elf oder Montag um sechzehn Uhr anbieten." },
       { text: "Bitte bringen Sie den Impfpass von Ihrer Katze mit. Beim letzten Mal haben Sie ihn zu Hause vergessen." },
@@ -154,7 +154,7 @@ export const deA2P4: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was soll Frau Baran mitbringen?",
+        text: "Was soll Frau Seiler mitbringen?",
         options: [],
         answer: 0,
         accept: ["den Impfpass", "Impfpass", "den Impfpass der Katze", "den Impfpass von ihrer Katze"],
@@ -169,7 +169,7 @@ export const deA2P4: SkillExercise[] = [
         explain: "„Die Katze darf vorher nichts fressen.“ — hayvanların yemesi için „fressen“ kullanılır.",
       },
       {
-        text: "Bis wann soll Frau Baran zurückrufen?",
+        text: "Bis wann soll Frau Seiler zurückrufen?",
         options: ["bis morgen Mittag", "bis Donnerstag früh", "bis heute achtzehn Uhr"],
         answer: 0,
         explain: "„Rufen Sie uns bitte bis morgen Mittag zurück.“ „Von acht bis achtzehn Uhr“ ise yalnız muayenehaneye ulaşılabilen saatler.",

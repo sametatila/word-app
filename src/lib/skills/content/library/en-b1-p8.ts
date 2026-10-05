@@ -31,13 +31,13 @@ export const enB1P8: SkillExercise[] = [
     minutes: 6,
     text:
       "Topic: Cycling to work — be honest\n\n" +
-      "dilara_k: I've been cycling to work for four months now and I want to say something " +
+      "tessa_k: I've been cycling to work for four months now and I want to say something " +
       "nobody says: the first three weeks were awful. Everyone tells you it gets easier, " +
       "but nobody tells you how long that takes.\n\n" +
       "tom_w: Same here. What changed it for me was not fitness, it was the route. " +
       "I was using the main road because it was shorter. Then a colleague showed me a way " +
       "through the park that adds seven minutes and takes away all the stress.\n\n" +
-      "dilara_k: That's a good point. I'd add showers. My office has one and I use it every day. " +
+      "tessa_k: That's a good point. I'd add showers. My office has one and I use it every day. " +
       "Without it I would have given up in week two.\n\n" +
       "priya.s: This is where I get annoyed. Half of this advice only works if your employer " +
       "has a shower, secure parking and no meetings at eight in the morning. Mine has none of " +
@@ -49,7 +49,7 @@ export const enB1P8: SkillExercise[] = [
       "I still do it twice a week. Just don't tell me it's easy.",
     questions: [
       {
-        text: "What does dilara_k say that others usually don't?",
+        text: "What does tessa_k say that others usually don't?",
         options: [
           "that the first weeks are very hard",
           "that cycling is dangerous",
@@ -127,14 +127,14 @@ export const enB1P8: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Ms. Fenton", text: "Right, bikes. We now have nine people cycling in and space for four. Ideas, please." },
-      { speaker: "Ahmet", text: "The old storage room by the back door is empty. Six bikes would fit easily, maybe eight." },
+      { speaker: "Finn", text: "The old storage room by the back door is empty. Six bikes would fit easily, maybe eight." },
       { speaker: "Ms. Fenton", text: "It's empty because the door doesn't lock. That's a hundred and forty dollars for a new lock, and it isn't in this year's budget." },
       { speaker: "Clare", text: "Cheaper idea: two more racks outside, under the roof. About sixty dollars each." },
-      { speaker: "Ahmet", text: "Outside is fine in June. In November people stop cycling because the bike gets wet and nobody says why." },
+      { speaker: "Finn", text: "Outside is fine in June. In November people stop cycling because the bike gets wet and nobody says why." },
       { speaker: "Clare", text: "Then let's do both, but not at once. Racks now, and the storage room when the budget opens in April." },
       { speaker: "Ms. Fenton", text: "I can agree to that. One condition: if we open the room, we need a booking system, otherwise the same three bikes live there permanently." },
       { speaker: "Clare", text: "A sheet on the door is enough. Nobody is going to use an app for this." },
-      { speaker: "Ms. Fenton", text: "Agreed. Ahmet, can you check whether our insurance covers bikes stored inside? That decides whether the room is an option at all." },
+      { speaker: "Ms. Fenton", text: "Agreed. Finn, can you check whether our insurance covers bikes stored inside? That decides whether the room is an option at all." },
     ],
     questions: [
       {
@@ -170,7 +170,7 @@ export const enB1P8: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What must Ahmet check?",
+        text: "What must Finn check?",
         options: [],
         answer: 0,
         accept: [

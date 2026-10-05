@@ -38,13 +38,13 @@ export const enA2P11: SkillExercise[] = [
     minutes: 5,
     text:
       "TWO WEEKS IN SOMEONE ELSE'S HOME\n\n" +
-      "Last summer the Kaya family from Bursa tried something new: they swapped homes with a family from Lyon for " +
+      "Last summer the Morgan family from Bursa tried something new: they swapped homes with a family from Lyon for " +
       "two weeks. Nobody paid any money. The French family stayed in the Kayas' apartment, and the Kayas stayed in a small " +
       "house with a yard in Lyon.\n\n" +
-      "“We found them on a website in March,” says Deniz Kaya. “We wrote to each other for two months before we said yes.”\n\n" +
+      "“We found them on a website in March,” says Charlie Morgan. “We wrote to each other for two months before we said yes.”\n\n" +
       "Not everything was easy. On the first evening the family was having dinner outside when all the lights in the " +
       "house went off. They looked for the switch for an hour. In the end, the man next door showed them where it was.\n\n" +
-      "“The best part was the neighbors,” says Deniz. “While we were living there, they invited us to dinner three times.”\n\n" +
+      "“The best part was the neighbors,” says Charlie. “While we were living there, they invited us to dinner three times.”\n\n" +
       "The French family had a good time, too. They left a thank-you card and a jar of honey on the kitchen table.\n\n" +
       "Would the Kayas do it again? “Yes, but next time we will ask more questions before we arrive.”",
     questions: [
@@ -238,7 +238,7 @@ export const enA2P11: SkillExercise[] = [
           "yard, and we ate outside almost every evening. Mrs. Blanc next door was very kind: on Tuesday she brought " +
           "us a big bag of tomatoes from her garden. One small problem: we broke a glass, but we bought a new one at the " +
           "market. It is in the cabinet with the others. We watered the plants every morning, and the fridge is clean " +
-          "and empty. The key is in the green box next to the door. We hope you enjoyed Bursa, too! Best wishes, Deniz and family",
+          "and empty. The key is in the green box next to the door. We hope you enjoyed Bursa, too! Best wishes, Charlie and family",
       },
     ],
   },

@@ -198,22 +198,22 @@ export const a2U22: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Merve", text: "Emre, mein Computer spinnt. Alles ist total langsam." },
-      { speaker: "Emre", text: "Okay, ruhig. Speichere die Datei zuerst, bevor wir irgendetwas machen." },
-      { speaker: "Merve", text: "Gespeichert. Und jetzt?" },
-      { speaker: "Emre", text: "Schau unten rechts. Läuft da ein Update?" },
-      { speaker: "Merve", text: "Ja! Es lädt seit heute Morgen etwas herunter." },
-      { speaker: "Emre", text: "Das ist es. Die Software installiert ein Update im Hintergrund, deshalb ist alles langsam." },
-      { speaker: "Merve", text: "Also einfach warten?" },
-      { speaker: "Emre", text: "Ja, einfach warten. Wie voll ist dein Akku?" },
-      { speaker: "Merve", text: "Mein Akku ist fast leer, elf Prozent." },
-      { speaker: "Emre", text: "Dann schnell anstecken. Wenn er mitten im Update ausgeht, wird es unangenehm." },
-      { speaker: "Merve", text: "Mache ich. Und danach schalte ich ihn einmal aus und wieder an?" },
-      { speaker: "Emre", text: "Genau. Und schreib dir dein Passwort auf, du brauchst es danach vielleicht neu." },
+      { speaker: "Karla", text: "Till, mein Computer spinnt. Alles ist total langsam." },
+      { speaker: "Till", text: "Okay, ruhig. Speichere die Datei zuerst, bevor wir irgendetwas machen." },
+      { speaker: "Karla", text: "Gespeichert. Und jetzt?" },
+      { speaker: "Till", text: "Schau unten rechts. Läuft da ein Update?" },
+      { speaker: "Karla", text: "Ja! Es lädt seit heute Morgen etwas herunter." },
+      { speaker: "Till", text: "Das ist es. Die Software installiert ein Update im Hintergrund, deshalb ist alles langsam." },
+      { speaker: "Karla", text: "Also einfach warten?" },
+      { speaker: "Till", text: "Ja, einfach warten. Wie voll ist dein Akku?" },
+      { speaker: "Karla", text: "Mein Akku ist fast leer, elf Prozent." },
+      { speaker: "Till", text: "Dann schnell anstecken. Wenn er mitten im Update ausgeht, wird es unangenehm." },
+      { speaker: "Karla", text: "Mache ich. Und danach schalte ich ihn einmal aus und wieder an?" },
+      { speaker: "Till", text: "Genau. Und schreib dir dein Passwort auf, du brauchst es danach vielleicht neu." },
     ],
     questions: [
       {
-        text: "Was soll Merve als Erstes machen?",
+        text: "Was soll Karla als Erstes machen?",
         options: ["Den Computer ausschalten", "Die Datei speichern", "Das Passwort ändern"],
         answer: 1,
         explain: "„Speichere die Datei zuerst, bevor wir irgendetwas machen.“",
@@ -238,7 +238,7 @@ export const a2U22: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Emre'nin ilk verdiği emri yaz.",
+        text: "Till'in ilk verdiği emri yaz.",
         options: [],
         answer: 0,
         accept: [
@@ -272,17 +272,17 @@ export const a2U22: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Selin", text: "Schau mal, das ist am Meer. Blätter ruhig weiter." },
-      { speaker: "Ayhan", text: "Der Himmel ist ja unglaublich. Ist das bearbeitet?" },
-      { speaker: "Selin", text: "Nein, echt. Wir hatten drei Tage nur Sonnenschein." },
-      { speaker: "Ayhan", text: "Und das hier? Wer sitzt da mit dem großen Hut?" },
-      { speaker: "Selin", text: "Meine Schwiegermutter. Der Hut war ihr zu auffällig, sie hat ihn nach einer Stunde abgenommen." },
-      { speaker: "Ayhan", text: "Das Bild ist wirklich witzig. Und dieses Essen …" },
-      { speaker: "Selin", text: "Fisch mit Zitrone, direkt am Hafen. Köstlich, und billiger als bei uns." },
-      { speaker: "Ayhan", text: "Welches gefällt dir eigentlich am besten?" },
-      { speaker: "Selin", text: "Das mit dem Markt. Nicht das schönste, aber am lebendigsten — alle reden durcheinander." },
-      { speaker: "Ayhan", text: "Stimmt, das ist das beste. Kannst du ein paar mit mir teilen?" },
-      { speaker: "Selin", text: "Klar, ich schicke dir heute Abend zehn Stück." },
+      { speaker: "Luisa", text: "Schau mal, das ist am Meer. Blätter ruhig weiter." },
+      { speaker: "Jannik", text: "Der Himmel ist ja unglaublich. Ist das bearbeitet?" },
+      { speaker: "Luisa", text: "Nein, echt. Wir hatten drei Tage nur Sonnenschein." },
+      { speaker: "Jannik", text: "Und das hier? Wer sitzt da mit dem großen Hut?" },
+      { speaker: "Luisa", text: "Meine Schwiegermutter. Der Hut war ihr zu auffällig, sie hat ihn nach einer Stunde abgenommen." },
+      { speaker: "Jannik", text: "Das Bild ist wirklich witzig. Und dieses Essen …" },
+      { speaker: "Luisa", text: "Fisch mit Zitrone, direkt am Hafen. Köstlich, und billiger als bei uns." },
+      { speaker: "Jannik", text: "Welches gefällt dir eigentlich am besten?" },
+      { speaker: "Luisa", text: "Das mit dem Markt. Nicht das schönste, aber am lebendigsten — alle reden durcheinander." },
+      { speaker: "Jannik", text: "Stimmt, das ist das beste. Kannst du ein paar mit mir teilen?" },
+      { speaker: "Luisa", text: "Klar, ich schicke dir heute Abend zehn Stück." },
     ],
     questions: [
       {
@@ -307,7 +307,7 @@ export const a2U22: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Welches Foto findet Selin am besten?",
+        text: "Welches Foto findet Luisa am besten?",
         options: [],
         answer: 0,
         accept: [
@@ -389,7 +389,7 @@ export const a2U22: SkillExercise[] = [
           "Betreff: Frage zum Kurs im Herbst\n\n" +
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich möchte am Deutschkurs B1 im Herbst teilnehmen. Kann ich mich schon jetzt anmelden, und was kostet der Kurs?\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Aydin",
+          "Mit freundlichen Grüßen\nSascha Haas",
         checklist: [
           "İlk yazını ne zaman gönderdiğini hatırlattın mı?",
           "Ne sorduğunu kısaca tekrarladın mı?",
@@ -409,7 +409,7 @@ export const a2U22: SkillExercise[] = [
           "Meine Frage war: Kann ich mich schon jetzt für den Deutschkurs B1 im Herbst anmelden, und was kostet er?\n\n" +
           "Können Sie meine Frage bitte beantworten? Ich brauche die Information bis Freitag, weil ich mich sonst bei einer anderen Schule anmelden muss.\n\n" +
           "Vielen Dank für Ihre Mühe.\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Aydin",
+          "Mit freundlichen Grüßen\nSascha Haas",
       },
     ],
   },

@@ -66,7 +66,7 @@ export const EN_A2_07: MockPaper = {
               genre: "Note for a neighbor",
               genreTr: "Komşuya not",
               title: "Friday evening",
-              body: `Hello Celik, we have a small party on Friday evening for my son. About fifteen people, music until ten. If it is too loud, please knock on the door — do not call the office.`,
+              body: `Hello Dawson, we have a small party on Friday evening for my son. About fifteen people, music until ten. If it is too loud, please knock on the door — do not call the office.`,
             },
             {
               kind: "text",
@@ -177,7 +177,7 @@ export const EN_A2_07: MockPaper = {
               kind: "match",
               id: "en-a2-07-l2-8",
               no: 8,
-              text: "Eyup wants a cake with his daughter's name on it for Sunday.",
+              text: "Barry wants a cake with his daughter's name on it for Sunday.",
               answer: "b",
               explain:
                 "İlan iki koşulu birden karşılıyor: «Any size, from twelve euros» ve «We write a name on it for free». İki gün önceden sipariş yeterli; teslim yok, yani gidip alınacak.",

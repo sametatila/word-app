@@ -343,7 +343,7 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
               kind: "match",
               id: "de-b1-01-l3-13",
               no: 13,
-              text: "Frau Toprak war neun Jahre zu Hause und möchte wieder im Büro arbeiten. Sie hat abends Zeit und wenig Geld.",
+              text: "Frau Gerlach war neun Jahre zu Hause und möchte wieder im Büro arbeiten. Sie hat abends Zeit und wenig Geld.",
               answer: "a",
               explain:
                 "(a) doğrudan işe dönenler için, akşamları ve taksitli. (g) de iş arayanlara yönelik ama tek günlük bir görüşme eğitimi, meslek bilgisi vermiyor.",
@@ -397,7 +397,7 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
               kind: "match",
               id: "de-b1-01-l3-19",
               no: 19,
-              text: "Herr Dogan (24) ist arbeitslos und möchte eine Ausbildung in Vollzeit machen, die die Arbeitsagentur bezahlt.",
+              text: "Herr Henke (24) ist arbeitslos und möchte eine Ausbildung in Vollzeit machen, die die Arbeitsagentur bezahlt.",
               answer: "h",
               explain:
                 "(h) tam zamanlı, sekiz hafta ve \"Förderung durch die Arbeitsagentur möglich\"; yaş sınırı 21 olduğu için 24 yaşındaki için uygun.",
@@ -424,11 +424,11 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
 
 [21] Tobias R.: Schön für alle, die im Büro sitzen. In der Pflege sieht das anders aus. Wenn ich einen Tag weniger arbeite, muss jemand anderes diesen Tag übernehmen — und diesen Jemand gibt es nicht. Solange wir zu wenige sind, ist das eine Idee für andere Branchen.
 
-[22] Frau Özdemir: Natürlich kostet die Umstellung erst einmal etwas. Aber wir haben seit der Einführung keine einzige Kündigung mehr gehabt, und Bewerbungen bekommen wir jetzt ohne Anzeige. Rechnet man das gegen, war es die günstigste Entscheidung meiner Firmengeschichte.
+[22] Frau Arndt: Natürlich kostet die Umstellung erst einmal etwas. Aber wir haben seit der Einführung keine einzige Kündigung mehr gehabt, und Bewerbungen bekommen wir jetzt ohne Anzeige. Rechnet man das gegen, war es die günstigste Entscheidung meiner Firmengeschichte.
 
 [23] H. Wolter: Ich bin selbstständig und arbeite gern viel. Was mich stört, ist nicht nur die kürzere Woche, sondern auch, dass daraus eine Vorschrift werden soll. Wer vier Tage will, soll sie mit seinem Betrieb aushandeln. Ein Gesetz für alle passt hier nicht.
 
-[24] Nesrin A.: Meine Kollegen und ich machen die gleiche Arbeit jetzt in vier Tagen. Das heißt: keine Pause mehr, mittags ein Brot am Schreibtisch, abends erschöpft. Auf dem Papier ein freier Tag, in Wirklichkeit vier harte. So nicht.
+[24] Wilma A.: Meine Kollegen und ich machen die gleiche Arbeit jetzt in vier Tagen. Das heißt: keine Pause mehr, mittags ein Brot am Schreibtisch, abends erschöpft. Auf dem Papier ein freier Tag, in Wirklichkeit vier harte. So nicht.
 
 [25] Dr. Weber: Die Zahlen aus den Versuchen sind eindeutiger, als viele glauben. Krankheitstage gehen zurück, die Leistung bleibt gleich. Wer heute noch behauptet, dass das nirgends funktioniert, hat die Untersuchungen der letzten Jahre nicht gelesen.
 
@@ -469,7 +469,7 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
               id: "de-b1-01-l4-22",
               no: 22,
               ref: "f1",
-              text: "Frau Özdemir",
+              text: "Frau Arndt",
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
@@ -491,7 +491,7 @@ Die Empfehlung der Studie klingt unspektakulär: Video anhalten, selbst rechnen,
               id: "de-b1-01-l4-24",
               no: 24,
               ref: "f1",
-              text: "Nesrin A.",
+              text: "Wilma A.",
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
@@ -678,7 +678,7 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
               plays: 1,
               segments: [
                 {
-                  text: "Hallo Frau Kilic, hier ist Reinhardt von der Tischlerei Mohr. Danke für Ihre Bewerbung um den Praktikumsplatz. Wir hätten Sie gern kennengelernt, aber der Platz ist inzwischen vergeben. Falls Sie im Frühjahr noch Interesse haben, melden Sie sich gern wieder. Dann suchen wir voraussichtlich zwei Praktikanten.",
+                  text: "Hallo Frau Wirth, hier ist Reinhardt von der Tischlerei Mohr. Danke für Ihre Bewerbung um den Praktikumsplatz. Wir hätten Sie gern kennengelernt, aber der Platz ist inzwischen vergeben. Falls Sie im Frühjahr noch Interesse haben, melden Sie sich gern wieder. Dann suchen wir voraussichtlich zwei Praktikanten.",
                 },
               ],
             },
@@ -754,7 +754,7 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
               id: "de-b1-01-h1-5",
               no: 5,
               ref: "h3",
-              text: "Frau Kilic bekommt den Praktikumsplatz.",
+              text: "Frau Wirth bekommt den Praktikumsplatz.",
               answer: false,
               explain: "\"der Platz ist inzwischen vergeben\" — yer başkasına verilmiş. Nazik giriş cümlesi olumlu bir sonuç anlamına gelmiyor.",
             },
@@ -940,17 +940,17 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
               situation: "İki meslektaş yeni çalışma düzenini konuşuyor.",
               plays: 1,
               segments: [
-                { speaker: "Yusuf", text: "Hast du die Mail zur neuen Regelung gelesen? Ab Oktober nur noch zwei Tage Homeoffice." },
+                { speaker: "Fabian", text: "Hast du die Mail zur neuen Regelung gelesen? Ab Oktober nur noch zwei Tage Homeoffice." },
                 { speaker: "Britta", text: "Gelesen ja, verstanden nein. Wir hatten doch drei." },
-                { speaker: "Yusuf", text: "Drei waren es im Versuch. Jetzt sind es zwei, und einer davon muss auf einen festen Wochentag fallen." },
+                { speaker: "Fabian", text: "Drei waren es im Versuch. Jetzt sind es zwei, und einer davon muss auf einen festen Wochentag fallen." },
                 { speaker: "Britta", text: "Also kann ich mir nicht mehr aussuchen, wann ich zu Hause bleibe?" },
-                { speaker: "Yusuf", text: "Einen Tag suchst du dir aus, den zweiten legt das Team gemeinsam fest. Bei uns wäre das wahrscheinlich der Freitag." },
+                { speaker: "Fabian", text: "Einen Tag suchst du dir aus, den zweiten legt das Team gemeinsam fest. Bei uns wäre das wahrscheinlich der Freitag." },
                 { speaker: "Britta", text: "Freitag ist schlecht. Da habe ich die Termine mit den Kunden." },
-                { speaker: "Yusuf", text: "Dann sag das in der Teamsitzung am Dienstag. Der Tag steht noch nicht fest, wir sollen ihn selbst wählen." },
+                { speaker: "Fabian", text: "Dann sag das in der Teamsitzung am Dienstag. Der Tag steht noch nicht fest, wir sollen ihn selbst wählen." },
                 { speaker: "Britta", text: "Gut. Und was ist mit den Leuten, die weiter weg wohnen? Marek braucht neunzig Minuten pro Strecke." },
-                { speaker: "Yusuf", text: "Für Wege über eine Stunde gibt es eine Ausnahme, aber nur auf Antrag. Das steht ganz unten in der Mail." },
+                { speaker: "Fabian", text: "Für Wege über eine Stunde gibt es eine Ausnahme, aber nur auf Antrag. Das steht ganz unten in der Mail." },
                 { speaker: "Britta", text: "Das habe ich überlesen. Weißt du, warum sie das überhaupt ändern?" },
-                { speaker: "Yusuf", text: "Offiziell wegen der neuen Kolleginnen. Die Einarbeitung funktioniert im Büro besser, sagen sie." },
+                { speaker: "Fabian", text: "Offiziell wegen der neuen Kolleginnen. Die Einarbeitung funktioniert im Büro besser, sagen sie." },
                 { speaker: "Britta", text: "Das kann ich sogar nachvollziehen. Nur hätte man uns vorher fragen können." },
               ],
               gloss: [
@@ -989,7 +989,7 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
               text: "Der gemeinsame Tag ist schon endgültig festgelegt.",
               answer: false,
               explain:
-                "Yusuf cuma olabileceğini tahmin ediyor (\"wahrscheinlich\") ama sonra düzeltiyor: \"Der Tag steht noch nicht fest\".",
+                "Fabian cuma olabileceğini tahmin ediyor (\"wahrscheinlich\") ama sonra düzeltiyor: \"Der Tag steht noch nicht fest\".",
             },
             {
               kind: "bool",
@@ -1176,9 +1176,9 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
           format: "writing",
           goal: "interaction",
           prompt:
-            "Ihre Freundin Ela hat Ihnen geschrieben, dass sie ihre Stelle gekündigt hat und noch nicht weiß, wie es weitergeht. Antworten Sie ihr (circa 80 Wörter).",
+            "Ihre Freundin Nele hat Ihnen geschrieben, dass sie ihre Stelle gekündigt hat und noch nicht weiß, wie es weitergeht. Antworten Sie ihr (circa 80 Wörter).",
           promptTr:
-            "Arkadaşın Ela sana işinden ayrıldığını ve bundan sonrasını henüz bilmediğini yazdı. Ona cevap yaz (yaklaşık 80 kelime).",
+            "Arkadaşın Nele sana işinden ayrıldığını ve bundan sonrasını henüz bilmediğini yazdı. Ona cevap yaz (yaklaşık 80 kelime).",
           items: [],
           rubric: {
             minWords: 80,
@@ -1188,7 +1188,7 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
               { de: "Machen Sie einen konkreten Vorschlag.", tr: "Somut bir öneride bulun." },
               { de: "Fragen Sie nach, wie Sie helfen können.", tr: "Nasıl yardımcı olabileceğini sor." },
             ],
-            sample: `Liebe Ela,
+            sample: `Liebe Nele,
 
 danke für deine Nachricht. Ich habe sie zweimal gelesen — und ich finde deine Entscheidung mutig, auch wenn sie sich gerade bestimmt unsicher anfühlt.
 
@@ -1269,7 +1269,7 @@ ich habe mich für den Abendkurs Buchhaltung angemeldet, kann aber am ersten Ter
 Könnten Sie mir bitte die Unterlagen der ersten Stunde zuschicken?
 
 Mit freundlichen Grüßen
-Tarik Öz`,
+Dirk Naumann`,
             criteria: [
               "Üç içerik noktası da var mı?",
               "Resmî ileti biçimi korunmuş mu? (Sehr geehrte Frau … / Mit freundlichen Grüßen, baştan sona `Sie`)",

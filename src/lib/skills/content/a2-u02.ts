@@ -168,11 +168,11 @@ export const a2U02: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Lena", text: "Da bist du ja endlich! Ich warte seit vierzig Minuten." },
-      { speaker: "Kerem", text: "Es tut mir wirklich leid. Ich habe mich verspätet, und mein Handy war leer." },
+      { speaker: "Julian", text: "Es tut mir wirklich leid. Ich habe mich verspätet, und mein Handy war leer." },
       { speaker: "Lena", text: "Hast du wieder verschlafen?" },
-      { speaker: "Kerem", text: "Nein, diesmal nicht. Ich bin pünktlich losgegangen, aber die Bahn hat zwischen zwei Stationen einfach angehalten." },
+      { speaker: "Julian", text: "Nein, diesmal nicht. Ich bin pünktlich losgegangen, aber die Bahn hat zwischen zwei Stationen einfach angehalten." },
       { speaker: "Lena", text: "Und wie lange?" },
-      { speaker: "Kerem", text: "Fast eine halbe Stunde. Danach habe ich auch noch den Anschlussbus verpasst und bin zu Fuß gelaufen. Jetzt bin ich komplett nass." },
+      { speaker: "Julian", text: "Fast eine halbe Stunde. Danach habe ich auch noch den Anschlussbus verpasst und bin zu Fuß gelaufen. Jetzt bin ich komplett nass." },
       { speaker: "Lena", text: "Okay, dann bin ich erleichtert. Ich dachte schon, du hast unseren Termin vergessen." },
     ],
     questions: [
@@ -191,14 +191,14 @@ export const a2U02: SkillExercise[] = [
         explain: "„anhalten“ hem ayrılabilen hem kuralsız: ortaç angehalten. Durmak yer değiştirme olmadığı için yardımcı fiil „hat“.",
       },
       {
-        text: "Warum ist Kerem nass?",
+        text: "Warum ist Julian nass?",
         options: ["Er ist zu Fuß gelaufen.", "Er hat geduscht.", "Es hat im Bus geregnet."],
         answer: 0,
         explain: "Otobüsü kaçırınca yürümüş: „bin zu Fuß gelaufen. Jetzt bin ich komplett nass.“",
       },
       {
         kind: "dictation",
-        text: "Kerem'in özür diledikten hemen sonra söylediği cümleyi yaz.",
+        text: "Julian'ın özür diledikten hemen sonra söylediği cümleyi yaz.",
         options: [],
         answer: 0,
         accept: ["Ich habe mich verspätet, und mein Handy war leer."],
@@ -347,7 +347,7 @@ export const a2U02: SkillExercise[] = [
           { de: "Das war eine gute Erfahrung.", tr: "bu iyi bir deneyimdi", en: "that was a good experience" },
         ],
         sample:
-          "Hallo!\n\nBei mir war es der Führerschein. Ich habe die Prüfung im letzten Sommer gemacht. Vorher war ich furchtbar nervös und habe nachts fast nicht geschlafen.\n\nDer Prüfer hat wenig gesagt, und plötzlich war die Fahrt zu Ende. Ich habe bestanden! In dem Moment war ich einfach nur erleichtert.\n\nHeute finde ich: Das war eine sehr gute Erfahrung. Und aufregend war es auch. Ich fahre jetzt jede Woche.\n\nViele Grüße\nEmre",
+          "Hallo!\n\nBei mir war es der Führerschein. Ich habe die Prüfung im letzten Sommer gemacht. Vorher war ich furchtbar nervös und habe nachts fast nicht geschlafen.\n\nDer Prüfer hat wenig gesagt, und plötzlich war die Fahrt zu Ende. Ich habe bestanden! In dem Moment war ich einfach nur erleichtert.\n\nHeute finde ich: Das war eine sehr gute Erfahrung. Und aufregend war es auch. Ich fahre jetzt jede Woche.\n\nViele Grüße\nTill",
       },
     ],
   },

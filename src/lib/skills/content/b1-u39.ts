@@ -331,9 +331,9 @@ export const b1U39: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Durum kartını doldur.",
-        facts: "Kişi: Nuri Öz; statü: çalışan; süre: 3 yıl; sorun: işten çıkarma tehdidi; ilk adres: işyeri kurulu.",
+        facts: "Kişi: Anton Naumann; statü: çalışan; süre: 3 yıl; sorun: işten çıkarma tehdidi; ilk adres: işyeri kurulu.",
         fields: [
-          { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Name", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Status", answer: "Angestellter", accept: ["Angestellte", "Angestellter seit 3 Jahren"] },
           { label: "Dauer", answer: "3 Jahre", accept: ["drei Jahre"] },
           { label: "Erste Stelle", answer: "Betriebsrat", accept: ["der Betriebsrat", "zum Betriebsrat"] },
@@ -402,7 +402,7 @@ export const b1U39: SkillExercise[] = [
           "Ein Risiko will ich nicht verschweigen: Wenn im Herbst mehrere " +
           "Aufträge gleichzeitig kommen, wird es eng. Deshalb teile ich " +
           "Ihnen bis Freitag einen Plan mit, der genau diesen Fall regelt. Die Leitung kann mich dafür einsetzen.\n\n" +
-          "Mit freundlichen Grüßen\nNuri Öz",
+          "Mit freundlichen Grüßen\nAnton Naumann",
         phrases: [
           { de: "Ich schlage vor, dass …", tr: "… önerisinde bulunuyorum.", en: "I suggest that …" },
           { de: "Dafür sprechen zwei Gründe.", tr: "Bunun iki gerekçesi var.", en: "There are two reasons for this." },

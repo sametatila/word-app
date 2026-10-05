@@ -2,11 +2,11 @@
  "packet": "e-004",
  "words": [
   {
-   "tr": "Selin işinde ne yaptı?",
+   "tr": "Megan işinde ne yaptı?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What did Selin do in her job?"
+    "What did Megan do in her job?"
    ],
    "ctx": [
     "A2.5 Working life · dinleme sorusu"
@@ -605,11 +605,11 @@
    ]
   },
   {
-   "tr": "Adım Ali ve Ankaralıyım.",
+   "tr": "Adım Harry ve Ankaralıyım.",
    "kind": "speaking",
    "n": 1,
    "de": [
-    "My name is Ali and I'm from Ankara."
+    "My name is Harry and I'm from Ankara."
    ],
    "ctx": [
     "A1.1 Nice to meet you · konuşma"
@@ -678,11 +678,11 @@
    ]
   },
   {
-   "tr": "Emre cumartesi ne yaptı?",
+   "tr": "Owen cumartesi ne yaptı?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What did Emre do on Saturday?"
+    "What did Owen do on Saturday?"
    ],
    "ctx": [
     "A1.10 Keeping in touch · okuma sorusu"
@@ -1142,11 +1142,11 @@
    ]
   },
   {
-   "tr": "Bayan Aydın neden arıyor?",
+   "tr": "Bayan Kelly neden arıyor?",
    "kind": "question",
    "n": 1,
    "de": [
-    "Why does Mrs. Aydin call?"
+    "Why does Mrs. Kelly call?"
    ],
    "ctx": [
     "A1.10 Keeping in touch · dinleme sorusu"
@@ -1231,11 +1231,11 @@
    ]
   },
   {
-   "tr": "Elif şimdi hangi şehirde?",
+   "tr": "Holly şimdi hangi şehirde?",
    "kind": "question",
    "n": 1,
    "de": [
-    "Which city is Elif in now?"
+    "Which city is Holly in now?"
    ],
    "ctx": [
     "A1.1 Nice to meet you · dinleme sorusu"
@@ -1638,7 +1638,7 @@
     "She is tall and she has long hair."
    ],
    "ctx": [
-    "A1.2 Family and people · Ahmet"
+    "A1.2 Family and people · Finn"
    ]
   },
   {

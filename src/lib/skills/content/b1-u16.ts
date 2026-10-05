@@ -336,7 +336,7 @@ export const b1U16: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Tartışma kartını doldur.",
-        facts: "Konu: ekran süresi; artı: daha iyi uyku; eksi: ekran iş aracı; sonuç: bilinçli kullanım; yazan: Leyla Kaya.",
+        facts: "Konu: ekran süresi; artı: daha iyi uyku; eksi: ekran iş aracı; sonuç: bilinçli kullanım; yazan: Johanna Graf.",
         fields: [
           { label: "Thema", answer: "Bildschirmzeit", accept: ["die Bildschirmzeit", "Bildschirm"] },
           { label: "Vorteil", answer: "besserer Schlaf", accept: ["Schlaf", "man schläft besser"] },

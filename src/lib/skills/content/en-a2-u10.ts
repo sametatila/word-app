@@ -46,19 +46,19 @@ export const enA2U10: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Ela: Hello, is this the repair service?\n" +
+      "Lucy: Hello, is this the repair service?\n" +
       "Repairman: Yes. What is the problem?\n" +
-      "Ela: My washing machine isn't working. It starts and then it stops after two minutes.\n" +
+      "Lucy: My washing machine isn't working. It starts and then it stops after two minutes.\n" +
       "Repairman: Since when?\n" +
-      "Ela: Since Friday. The janitor looked at it but he had no tools.\n" +
+      "Lucy: Since Friday. The janitor looked at it but he had no tools.\n" +
       "Repairman: I see. Can you tell me the name on the machine?\n" +
-      "Ela: It says Bosch, and under it a number.\n" +
+      "Lucy: It says Bosch, and under it a number.\n" +
       "Repairman: Good. Can I come tomorrow morning?\n" +
-      "Ela: Tomorrow is difficult. I work until four.\n" +
+      "Lucy: Tomorrow is difficult. I work until four.\n" +
       "Repairman: Then Thursday at five.\n" +
-      "Ela: That is fine. How much will it cost?\n" +
+      "Lucy: That is fine. How much will it cost?\n" +
       "Repairman: The visit is thirty euros. With a new part it can be a hundred.\n" +
-      "Ela: Could you give me an estimate first?\n" +
+      "Lucy: Could you give me an estimate first?\n" +
       "Repairman: Of course. I look at it, I tell you the price, and then you decide.",
     questions: [
       {
@@ -71,7 +71,7 @@ export const enA2U10: SkillExercise[] = [
         text: "When does the repairman come?",
         options: ["on Thursday at five", "tomorrow morning", "on Friday"],
         answer: 0,
-        explain: "Yarın Ela dörde kadar çalışıyor, o yüzden „Then Thursday at five.“",
+        explain: "Yarın Lucy dörde kadar çalışıyor, o yüzden „Then Thursday at five.“",
       },
       {
         kind: "truefalse",
@@ -90,7 +90,7 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ela want before the work?",
+        text: "What does Lucy want before the work?",
         options: [],
         answer: 0,
         accept: ["an estimate", "the estimate", "a price"],
@@ -180,14 +180,14 @@ export const enA2U10: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Mert", text: "I moved to this area in March and now I don't want to go back." },
-      { speaker: "Mert", text: "There is a park nearby. From my front door it takes ten minutes on foot." },
-      { speaker: "Mert", text: "It's quieter than the city center, but it isn't boring. On Saturdays the market is crowded." },
-      { speaker: "Mert", text: "The bus stop is under my window. That was a problem in the first week, but now I don't hear it." },
-      { speaker: "Mert", text: "At night the streets are safe. There are always people, because the bakery opens at four." },
-      { speaker: "Mert", text: "What is missing? A movie theater. For a movie I have to take the bus for twenty minutes." },
-      { speaker: "Mert", text: "And the rents are going up. Two years ago this area was cheap." },
-      { speaker: "Mert", text: "But I know one thing already: if the rent goes up again, I will stay and cook at home." },
+      { speaker: "Henry", text: "I moved to this area in March and now I don't want to go back." },
+      { speaker: "Henry", text: "There is a park nearby. From my front door it takes ten minutes on foot." },
+      { speaker: "Henry", text: "It's quieter than the city center, but it isn't boring. On Saturdays the market is crowded." },
+      { speaker: "Henry", text: "The bus stop is under my window. That was a problem in the first week, but now I don't hear it." },
+      { speaker: "Henry", text: "At night the streets are safe. There are always people, because the bakery opens at four." },
+      { speaker: "Henry", text: "What is missing? A movie theater. For a movie I have to take the bus for twenty minutes." },
+      { speaker: "Henry", text: "And the rents are going up. Two years ago this area was cheap." },
+      { speaker: "Henry", text: "But I know one thing already: if the rent goes up again, I will stay and cook at home." },
     ],
     questions: [
       {
@@ -251,17 +251,17 @@ export const enA2U10: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Sena", text: "Good morning. Do you have any fresh bread?" },
+      { speaker: "Ellie", text: "Good morning. Do you have any fresh bread?" },
       { speaker: "Baker", text: "Yes, it came out ten minutes ago. Which one?" },
-      { speaker: "Sena", text: "The dark one, please. And two small ones for the children." },
+      { speaker: "Ellie", text: "The dark one, please. And two small ones for the children." },
       { speaker: "Baker", text: "Here you are. Anything else?" },
-      { speaker: "Sena", text: "What time do you open on Sunday?" },
+      { speaker: "Ellie", text: "What time do you open on Sunday?" },
       { speaker: "Baker", text: "At seven, like every day. But we close at twelve." },
-      { speaker: "Sena", text: "Good to know. Is the corner store open on Sunday too?" },
+      { speaker: "Ellie", text: "Good to know. Is the corner store open on Sunday too?" },
       { speaker: "Baker", text: "No, only us and the laundry. The butcher shop and the bookstore are closed." },
-      { speaker: "Sena", text: "And the shopping mall?" },
+      { speaker: "Ellie", text: "And the shopping mall?" },
       { speaker: "Baker", text: "Open, but it takes half an hour by bus. For bread that is too far." },
-      { speaker: "Sena", text: "You are right. I've already been to the bakery three times this week." },
+      { speaker: "Ellie", text: "You are right. I've already been to the bakery three times this week." },
       { speaker: "Baker", text: "Four with today. But who counts?" },
     ],
     questions: [
@@ -302,7 +302,7 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many times has Sena been to the bakery this week?",
+        text: "How many times has Ellie been to the bakery this week?",
         options: [],
         answer: 0,
         accept: ["three times", "four times", "3 times", "4 times"],

@@ -100,7 +100,7 @@ export const enA2U11: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 11,
-    title: "A letter to Mr. Arda",
+    title: "A letter to Mr. Wright",
     genre: "letter",
     intro: "Başvuru mektubu. Hangi cümle deneyimi, hangisi kapanmış dönemi söylüyor?",
     gloss: [
@@ -111,7 +111,7 @@ export const enA2U11: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Dear Mr. Arda,\n" +
+      "Dear Mr. Wright,\n" +
       "I am writing about the kitchen helper position in your ad.\n" +
       "I have worked in a kitchen for four years. From 2021 to 2023 I worked at a big company with a cafeteria for three hundred people. After that I worked for two years in a small restaurant near the station.\n" +
       "In the cafeteria I learned to work fast and in a team. In the small restaurant I learned everything else: the long evenings, the money and the noise.\n" +
@@ -119,30 +119,30 @@ export const enA2U11: SkillExercise[] = [
       "I can start on the first of March. I am free every day and I have already talked to my old boss.\n" +
       "Thank you for reading this. I hope to hear from you.\n" +
       "Best wishes,\n" +
-      "Deniz Kaya",
+      "Charlie Ellis",
     questions: [
       {
-        text: "How long has Deniz worked in a kitchen?",
+        text: "How long has Charlie worked in a kitchen?",
         options: ["four years", "two years", "three hundred days"],
         answer: 0,
         explain: "„I have worked in a kitchen for four years.“ — hâlâ süren deneyim.",
       },
       {
-        text: "Where did Deniz work from 2021 to 2023?",
+        text: "Where did Charlie work from 2021 to 2023?",
         options: ["at a big company with a cafeteria", "in a small restaurant", "in Italy"],
         answer: 0,
         explain: "Kapanmış bir dönem olduğu için „I worked“, „I have worked“ değil.",
       },
       {
         kind: "truefalse",
-        text: "Deniz speaks Italian better than English.",
+        text: "Charlie speaks Italian better than English.",
         options: ["True", "False"],
         answer: 1,
         explain: "„…I know a little Italian, but my English is better.“",
       },
       {
         kind: "gapfill",
-        text: "Deniz can start on the first of ___.",
+        text: "Charlie can start on the first of ___.",
         options: [],
         answer: 0,
         accept: ["March"],
@@ -157,13 +157,13 @@ export const enA2U11: SkillExercise[] = [
           "a big company with a cafeteria",
           "a small restaurant near the station",
           "a talk with the old boss",
-          "a letter to Mr. Arda",
+          "a letter to Mr. Wright",
         ],
         explain: "Önce iki iş, sonra bu hafta olanlar: konuşma, sonra mektup.",
       },
       {
         kind: "short_answer",
-        text: "What did Deniz learn in the cafeteria?",
+        text: "What did Charlie learn in the cafeteria?",
         options: [],
         answer: 0,
         accept: ["to work fast", "to work fast and in a team", "work in a team"],
@@ -190,36 +190,36 @@ export const enA2U11: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Boss", text: "Good morning, Deniz. Please sit down. Tell me about yourself." },
-      { speaker: "Deniz", text: "I have worked in kitchens for four years. Two years in a cafeteria, two years in a restaurant." },
+      { speaker: "Boss", text: "Good morning, Charlie. Please sit down. Tell me about yourself." },
+      { speaker: "Charlie", text: "I have worked in kitchens for four years. Two years in a cafeteria, two years in a restaurant." },
       { speaker: "Boss", text: "Why do you want a new job?" },
-      { speaker: "Deniz", text: "Not because the old one is bad. I want a team and a plan for the week." },
+      { speaker: "Charlie", text: "Not because the old one is bad. I want a team and a plan for the week." },
       { speaker: "Boss", text: "What is your greatest strength?" },
-      { speaker: "Deniz", text: "Working with people. In the cafeteria I worked in a team of twelve." },
+      { speaker: "Charlie", text: "Working with people. In the cafeteria I worked in a team of twelve." },
       { speaker: "Boss", text: "And what is your reason for choosing our business?" },
-      { speaker: "Deniz", text: "I ate here in June. The kitchen was open and everybody was calm. That is not normal at seven in the evening." },
+      { speaker: "Charlie", text: "I ate here in June. The kitchen was open and everybody was calm. That is not normal at seven in the evening." },
       { speaker: "Boss", text: "True. When can you start?" },
-      { speaker: "Deniz", text: "I can start on Monday." },
+      { speaker: "Charlie", text: "I can start on Monday." },
       { speaker: "Boss", text: "One more question: what was difficult for you at work?" },
-      { speaker: "Deniz", text: "I said yes to everything in my first year. Now I ask first." },
+      { speaker: "Charlie", text: "I said yes to everything in my first year. Now I ask first." },
       { speaker: "Boss", text: "That is a good answer. We will call you on Friday." },
     ],
     questions: [
       {
-        text: "How long has Deniz worked in kitchens?",
+        text: "How long has Charlie worked in kitchens?",
         options: ["four years", "two years", "twelve years"],
         answer: 0,
         explain: "„I have worked in kitchens for four years.“ — ikişer yıl iki yerde.",
       },
       {
-        text: "What is Deniz's greatest strength?",
+        text: "What is Charlie's greatest strength?",
         options: ["working with people", "cooking fast", "the Italian language"],
         answer: 0,
         explain: "„Working with people. In the cafeteria I worked in a team of twelve.“",
       },
       {
         kind: "truefalse",
-        text: "Deniz wants a team and a plan for the week.",
+        text: "Charlie wants a team and a plan for the week.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Not because the old one is bad. I want a team and a plan for the week.“",
@@ -242,7 +242,7 @@ export const enA2U11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What was difficult for Deniz in the first year?",
+        text: "What was difficult for Charlie in the first year?",
         options: [],
         answer: 0,
         accept: ["saying yes to everything", "to say yes", "saying yes"],
@@ -268,31 +268,31 @@ export const enA2U11: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "I work in an office on the third floor. Twelve desks, one window for two people." },
-      { speaker: "Nil", text: "There are ten people in my team. Four of them have worked here longer than me." },
-      { speaker: "Nil", text: "My boss sits in the same room. That was strange in the first week, but now it is the best thing." },
-      { speaker: "Nil", text: "The corridor is long and cold. In winter we walk fast." },
-      { speaker: "Nil", text: "The coffee break is at half past ten. It is not in the rules, but everybody comes." },
-      { speaker: "Nil", text: "The department next to us is bigger, twenty people, and their coffee is free." },
-      { speaker: "Nil", text: "We have a small kitchen. I have worked in three offices and this is the only one with a real kitchen." },
-      { speaker: "Nil", text: "What's my workplace like? Old building, cold corridor, warm people. I would not change it." },
+      { speaker: "Katie", text: "I work in an office on the third floor. Twelve desks, one window for two people." },
+      { speaker: "Katie", text: "There are ten people in my team. Four of them have worked here longer than me." },
+      { speaker: "Katie", text: "My boss sits in the same room. That was strange in the first week, but now it is the best thing." },
+      { speaker: "Katie", text: "The corridor is long and cold. In winter we walk fast." },
+      { speaker: "Katie", text: "The coffee break is at half past ten. It is not in the rules, but everybody comes." },
+      { speaker: "Katie", text: "The department next to us is bigger, twenty people, and their coffee is free." },
+      { speaker: "Katie", text: "We have a small kitchen. I have worked in three offices and this is the only one with a real kitchen." },
+      { speaker: "Katie", text: "What's my workplace like? Old building, cold corridor, warm people. I would not change it." },
     ],
     questions: [
       {
-        text: "How many people are in Nil's team?",
+        text: "How many people are in Katie's team?",
         options: ["ten", "twelve", "twenty"],
         answer: 0,
         explain: "„There are ten people in my team.“ — on iki masa, yirmi kişi yan departman.",
       },
       {
-        text: "What is special about Nil's office?",
+        text: "What is special about Katie's office?",
         options: ["it has a real kitchen", "the coffee is free", "it is on the first floor"],
         answer: 0,
         explain: "„…this is the only one with a real kitchen.“ Bedava kahve yan departmanda.",
       },
       {
         kind: "truefalse",
-        text: "Nil's boss sits far from the team.",
+        text: "Katie's boss sits far from the team.",
         options: ["True", "False"],
         answer: 1,
         explain: "„My boss sits in the same room.“",
@@ -315,7 +315,7 @@ export const enA2U11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many offices has Nil worked in?",
+        text: "How many offices has Katie worked in?",
         options: [],
         answer: 0,
         accept: ["three", "3"],

@@ -105,7 +105,7 @@ export const enA1P2: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { text: "Hello, this is a message for Mr. Karaca. My name is Piotr from Fix It Shoe Repair." },
+      { text: "Hello, this is a message for Mr. Parker. My name is Piotr from Fix It Shoe Repair." },
       { text: "Your black shoes are ready. We changed one heel and cleaned both shoes." },
       { text: "The price is twenty-two euros. That is two euros less than we said, because the other heel was fine." },
       { text: "We are open from nine to six, but on Wednesday we close at one." },
@@ -134,7 +134,7 @@ export const enA1P2: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What must Mr. Karaca bring?",
+        text: "What must Mr. Parker bring?",
         options: [],
         answer: 0,
         accept: ["the yellow ticket", "yellow ticket", "the little yellow ticket", "a ticket", "the ticket"],
@@ -210,7 +210,7 @@ export const enA1P2: SkillExercise[] = [
         sample:
           "Hello, my phone fell on the street on Saturday and now the screen is broken. It is a Nova 5, two years old. " +
           "The phone works, but I cannot see the top of the screen. How much does the repair cost and how long does it take? " +
-          "Can I come on Friday afternoon? You can call me at 0176 44 21 03. Thank you! Aylin Karaca",
+          "Can I come on Friday afternoon? You can call me at 0176 44 21 03. Thank you! Martha Parker",
       },
     ],
   },

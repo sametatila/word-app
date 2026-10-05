@@ -96,7 +96,7 @@ export const enA2P4: SkillExercise[] = [
     course: "en",
     level: "A2",
     skill: "listening",
-    title: "A Present for Kerem",
+    title: "A Present for Connor",
     genre: "dialogue",
     intro: "İki iş arkadaşı ayrılan bir meslektaşları için hazırlık yapıyor: ne alınacak, ne kadar toplanacak, kim ne yapacak.",
     gloss: [
@@ -110,7 +110,7 @@ export const enA2P4: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Ana", text: "Do you have a minute? It's about Kerem. His last day is on the twenty-eighth." },
+      { speaker: "Ana", text: "Do you have a minute? It's about Connor. His last day is on the twenty-eighth." },
       { speaker: "Bruno", text: "Already? I thought he was leaving in July." },
       { speaker: "Ana", text: "No, he found an apartment there faster than he expected. So we have two weeks." },
       { speaker: "Bruno", text: "Okay. Are we doing a present or just a card?" },
@@ -120,7 +120,7 @@ export const enA2P4: SkillExercise[] = [
       { speaker: "Bruno", text: "I can buy them on Saturday. My car is bigger than yours." },
       { speaker: "Ana", text: "Perfect. Can you also write the card and put it on the table in the kitchen? People sign it during the week." },
       { speaker: "Bruno", text: "Sure. And the cake?" },
-      { speaker: "Ana", text: "Tuana is baking. Don't tell him anything, please." },
+      { speaker: "Ana", text: "Robyn is baking. Don't tell him anything, please." },
     ],
     questions: [
       {
@@ -134,7 +134,7 @@ export const enA2P4: SkillExercise[] = [
         explain: "„Are we doing a present or just a card?“ — „Both, I think.“",
       },
       {
-        text: "When is Kerem's last day?",
+        text: "When is Connor's last day?",
         options: ["on the twenty-eighth", "at the end of July", "on Saturday morning"],
         answer: 0,
         explain: "„His last day is on the twenty-eighth.“ Temmuz Bruno'nun yanlış hatırladığı tarih.",
@@ -163,10 +163,10 @@ export const enA2P4: SkillExercise[] = [
         explain: "„My car is bigger than yours.“ — karşılaştırmada „than“ ve iyelik zamiri „yours“.",
       },
       {
-        text: "What is Tuana doing?",
+        text: "What is Robyn doing?",
         options: ["baking a cake", "buying the pots", "writing the card"],
         answer: 0,
-        explain: "„And the cake?“ — „Tuana is baking.“",
+        explain: "„And the cake?“ — „Robyn is baking.“",
       },
     ],
   },
@@ -221,12 +221,12 @@ export const enA2P4: SkillExercise[] = [
           { de: "Please send … before …", tr: "Lütfen …'i …'den önce gönder" },
         ],
         sample:
-          "Hi Marta, here are my notes from Tuesday. Nine people were there; Kerem and you were not. " +
+          "Hi Marta, here are my notes from Tuesday. Nine people were there; Connor and you were not. " +
           "We decided three things. First, the summer party is on the twelfth of July, in the garden, not in the " +
           "cafeteria. Second, we buy two new printers, one for each floor. Third, the Friday meeting starts at nine " +
           "now, not at half past eight. One question is still open: nobody knows how much money is left for the " +
           "training. Nina is going to ask the office on Monday. The deadline for the party list is the twentieth " +
-          "of June. Please send your vacation dates to Ali before Friday. That was everything important!",
+          "of June. Please send your vacation dates to Harry before Friday. That was everything important!",
       },
     ],
   },

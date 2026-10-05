@@ -686,9 +686,9 @@ The third attempt was designed by people who had read the second report carefull
               situation: "İki kişi bir işe alım pilot uygulamasını konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Eren", text: "The pilot worked, and I say that as somebody who spent two years arguing against it. What I still cannot defend is that we let managers keep a veto." },
+                { speaker: "Casey", text: "The pilot worked, and I say that as somebody who spent two years arguing against it. What I still cannot defend is that we let managers keep a veto." },
                 { speaker: "Zsofia", text: "The veto is not ours, though. It was the condition for running the thing at all." },
-                { speaker: "Eren", text: "Which is precisely the objection, not an answer to it. If we accept a condition that removes the effect, we should say so in the report rather than publish the design as though it were intact." },
+                { speaker: "Casey", text: "Which is precisely the objection, not an answer to it. If we accept a condition that removes the effect, we should say so in the report rather than publish the design as though it were intact." },
                 { speaker: "Zsofia", text: "I would go along with saying so. I would resist the next step, which is to make a recruitment pilot responsible for the whole distribution of authority in the organization." },
               ],
             },
@@ -725,11 +725,11 @@ The third attempt was designed by people who had read the second report carefull
               id: "en-c1-05-h1-1",
               no: 1,
               ref: "a1",
-              text: "What is Eren's criticism?",
+              text: "What is Casey's criticism?",
               options: ["The managers' veto", "The size of the sample", "The cost of the pilot"],
               answer: 0,
               explain:
-                "Eren pilotun işlediğini baştan kabul ediyor: «The pilot worked, and I say that as somebody who spent two years arguing against it». Eleştirisi tek noktada: «we let managers keep a veto».",
+                "Casey pilotun işlediğini baştan kabul ediyor: «The pilot worked, and I say that as somebody who spent two years arguing against it». Eleştirisi tek noktada: «we let managers keep a veto».",
             },
             {
               kind: "mcq",

@@ -100,18 +100,18 @@ export const enA1U16: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Where is my phone? I can't find it.\n" +
-      "Can: Is it on the table?\n" +
-      "Ela: No, only a book and a lamp are on the table.\n" +
-      "Can: Under the sofa?\n" +
-      "Ela: No. And not under the bed.\n" +
-      "Can: In the kitchen? Next to the fridge?\n" +
-      "Ela: Let me look. No, it is not there. Is there a phone in the bathroom?\n" +
-      "Can: Why a phone in the bathroom? But look, please.\n" +
-      "Ela: No! Wait — let me call it.\n" +
-      "Can: Good idea. Listen. I hear something. It is in the living room!\n" +
-      "Ela: Where? Next to the chair, on the floor!\n" +
-      "Can: Under the chair, I think. Now be quiet, please — the neighbor downstairs!",
+      "Lucy: Where is my phone? I can't find it.\n" +
+      "Tyler: Is it on the table?\n" +
+      "Lucy: No, only a book and a lamp are on the table.\n" +
+      "Tyler: Under the sofa?\n" +
+      "Lucy: No. And not under the bed.\n" +
+      "Tyler: In the kitchen? Next to the fridge?\n" +
+      "Lucy: Let me look. No, it is not there. Is there a phone in the bathroom?\n" +
+      "Tyler: Why a phone in the bathroom? But look, please.\n" +
+      "Lucy: No! Wait — let me call it.\n" +
+      "Tyler: Good idea. Listen. I hear something. It is in the living room!\n" +
+      "Lucy: Where? Next to the chair, on the floor!\n" +
+      "Tyler: Under the chair, I think. Now be quiet, please — the neighbor downstairs!",
     questions: [
       {
         text: "Where is the phone?",
@@ -171,9 +171,9 @@ export const enA1U16: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 16,
-    title: "Nil's apartment",
+    title: "Katie's apartment",
     genre: "monologue",
-    intro: "Nil dairesini gezdiriyor. Odaların sırasını ve sayısını yakala.",
+    intro: "Katie dairesini gezdiriyor. Odaların sırasını ve sayısını yakala.",
     gloss: [
       { de: "welcome", tr: "hoş geldiniz" },
       { de: "bell", tr: "zil" },
@@ -181,12 +181,12 @@ export const enA1U16: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Nil", text: "Welcome! This is my apartment. It is on the first floor." },
-      { speaker: "Nil", text: "There are four rooms. This is the living room, with a sofa and two chairs." },
-      { speaker: "Nil", text: "The kitchen is here, next to the living room. There is a big fridge." },
-      { speaker: "Nil", text: "Behind this door is the bathroom. The toilet is there too." },
-      { speaker: "Nil", text: "My bedroom is behind this wall. There is a bed, a table and a lamp." },
-      { speaker: "Nil", text: "Now we go downstairs. There is a basement and the bell for the door." },
+      { speaker: "Katie", text: "Welcome! This is my apartment. It is on the first floor." },
+      { speaker: "Katie", text: "There are four rooms. This is the living room, with a sofa and two chairs." },
+      { speaker: "Katie", text: "The kitchen is here, next to the living room. There is a big fridge." },
+      { speaker: "Katie", text: "Behind this door is the bathroom. The toilet is there too." },
+      { speaker: "Katie", text: "My bedroom is behind this wall. There is a bed, a table and a lamp." },
+      { speaker: "Katie", text: "Now we go downstairs. There is a basement and the bell for the door." },
     ],
     questions: [
       {
@@ -251,18 +251,18 @@ export const enA1U16: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ali", text: "Do you know the neighbor next door?" },
-      { speaker: "Sena", text: "Yes, she lives next door with her two children. She is very friendly." },
-      { speaker: "Ali", text: "And downstairs?" },
-      { speaker: "Sena", text: "Downstairs there is an old man. He is quiet, and he never opens the door." },
-      { speaker: "Ali", text: "I knock every week, but he doesn't answer." },
-      { speaker: "Sena", text: "He is at home. I hear the television through the wall." },
-      { speaker: "Ali", text: "Is there a bell?" },
-      { speaker: "Sena", text: "Yes, next to the door, under the lamp. Try the bell, not the door." },
-      { speaker: "Ali", text: "Good idea. And the apartment on the third floor?" },
-      { speaker: "Sena", text: "Nobody lives there now. There is not much furniture, only a table." },
-      { speaker: "Ali", text: "Then we have a quiet house!" },
-      { speaker: "Sena", text: "Yes, and that is good." },
+      { speaker: "Harry", text: "Do you know the neighbor next door?" },
+      { speaker: "Ellie", text: "Yes, she lives next door with her two children. She is very friendly." },
+      { speaker: "Harry", text: "And downstairs?" },
+      { speaker: "Ellie", text: "Downstairs there is an old man. He is quiet, and he never opens the door." },
+      { speaker: "Harry", text: "I knock every week, but he doesn't answer." },
+      { speaker: "Ellie", text: "He is at home. I hear the television through the wall." },
+      { speaker: "Harry", text: "Is there a bell?" },
+      { speaker: "Ellie", text: "Yes, next to the door, under the lamp. Try the bell, not the door." },
+      { speaker: "Harry", text: "Good idea. And the apartment on the third floor?" },
+      { speaker: "Ellie", text: "Nobody lives there now. There is not much furniture, only a table." },
+      { speaker: "Harry", text: "Then we have a quiet house!" },
+      { speaker: "Ellie", text: "Yes, and that is good." },
     ],
     questions: [
       {
@@ -286,7 +286,7 @@ export const enA1U16: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ali knocks every ___.",
+        text: "Harry knocks every ___.",
         options: [],
         answer: 0,
         accept: ["week"],
@@ -307,7 +307,7 @@ export const enA1U16: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Sena hear through the wall?",
+        text: "What does Ellie hear through the wall?",
         options: [],
         answer: 0,
         accept: ["the television", "television", "the TV"],

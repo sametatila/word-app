@@ -259,7 +259,7 @@ export const deB2P18: SkillExercise[] = [
           "brüten sie öfter, sodass es jedes Jahr mehr werden. " +
           "Wir bitten deshalb herzlich darum, das Füttern einzustellen. Wer darüber reden möchte, kann gern " +
           "bei uns klingeln; wir sind meistens abends zu Hause. " +
-          "Vielen Dank für Ihr Verständnis! Familie Demir und Herr Pohl, Erdgeschoss",
+          "Vielen Dank für Ihr Verständnis! Familie Böhm und Herr Pohl, Erdgeschoss",
       },
     ],
   },

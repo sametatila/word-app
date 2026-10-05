@@ -171,16 +171,16 @@ export const a2U06: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Kollegin", text: "Du siehst blass aus. Fühlst du dich nicht gut?" },
-      { speaker: "Mert", text: "Nein, seit heute Morgen nicht. Mir ist schwindlig, und mir ist auch ein bisschen übel." },
+      { speaker: "Hannes", text: "Nein, seit heute Morgen nicht. Mir ist schwindlig, und mir ist auch ein bisschen übel." },
       { speaker: "Kollegin", text: "Hast du Fieber?" },
-      { speaker: "Mert", text: "Ich glaube nicht. Aber ich niese seit gestern die ganze Zeit." },
+      { speaker: "Hannes", text: "Ich glaube nicht. Aber ich niese seit gestern die ganze Zeit." },
       { speaker: "Kollegin", text: "Das klingt eher nach einer Erkältung als nach Grippe. Trotzdem: Geh nach Hause." },
-      { speaker: "Mert", text: "So schlimm ist es nicht. Ich habe heute noch zwei Termine." },
+      { speaker: "Hannes", text: "So schlimm ist es nicht. Ich habe heute noch zwei Termine." },
       { speaker: "Kollegin", text: "Und wenn wir uns alle bei dir anstecken? Ruf lieber die Praxis an und frag, was du machen sollst." },
     ],
     questions: [
       {
-        text: "Welche Beschwerden hat Mert?",
+        text: "Welche Beschwerden hat Hannes?",
         options: ["Kopfschmerzen und Fieber", "Schwindel und Übelkeit", "Bauchschmerzen"],
         answer: 1,
         explain: "„Mir ist schwindlig, und mir ist auch ein bisschen übel.“ Ateşi olduğunu sanmıyor.",
@@ -229,18 +229,18 @@ export const a2U06: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Herr Kaya", text: "Frau Doktor, darf ich wieder Sport machen?" },
+      { speaker: "Herr Graf", text: "Frau Doktor, darf ich wieder Sport machen?" },
       { speaker: "Ärztin", text: "Spazieren gehen ja, das ist harmlos. Aber Fußball dürfen Sie noch nicht — das wäre zu gefährlich für das Knie." },
-      { speaker: "Herr Kaya", text: "Und wie lange noch?" },
+      { speaker: "Herr Graf", text: "Und wie lange noch?" },
       { speaker: "Ärztin", text: "Mindestens vier Wochen. Danach schauen wir noch einmal." },
-      { speaker: "Herr Kaya", text: "Okay. Und darf ich alles essen? Meine Frau kocht ziemlich fett." },
+      { speaker: "Herr Graf", text: "Okay. Und darf ich alles essen? Meine Frau kocht ziemlich fett." },
       { speaker: "Ärztin", text: "Erlaubt ist fast alles. Sehr fettes Essen ist aber schädlich für Ihren Magen, besonders am Abend." },
-      { speaker: "Herr Kaya", text: "Verstanden. Und Kaffee?" },
+      { speaker: "Herr Graf", text: "Verstanden. Und Kaffee?" },
       { speaker: "Ärztin", text: "Zwei Tassen am Tag, das ist in Ordnung. Mehr sollten Sie nicht trinken." },
     ],
     questions: [
       {
-        text: "Was darf Herr Kaya machen?",
+        text: "Was darf Herr Graf machen?",
         options: ["Fußball spielen", "Spazieren gehen", "Gar keinen Sport"],
         answer: 1,
         explain: "„Spazieren gehen ja, das ist harmlos. Aber Fußball dürfen Sie noch nicht.“",
@@ -334,9 +334,9 @@ export const a2U06: SkillExercise[] = [
     tasks: [
       {
         kind: "reply",
-        prompt: "Mert'in mesajına cevap yaz. Hâlini sor, en az iki çare öner ve doktora gitmesi gerekip gerekmediği hakkında bir şey söyle.",
+        prompt: "Hannes'in mesajına cevap yaz. Hâlini sor, en az iki çare öner ve doktora gitmesi gerekip gerekmediği hakkında bir şey söyle.",
         stimulus:
-          "Hey,\n\nich bin heute nicht im Büro. Mir ist seit gestern schwindlig und ich niese die ganze Zeit. Kein Fieber, aber ich fühle mich echt schlecht.\n\nHast du einen Tipp?\n\nMert",
+          "Hey,\n\nich bin heute nicht im Büro. Mir ist seit gestern schwindlig und ich niese die ganze Zeit. Kein Fieber, aber ich fühle mich echt schlecht.\n\nHast du einen Tipp?\n\nHannes",
         checklist: [
           "Hâlini sordun mu („Wie fühlst du dich?“)?",
           "En az iki çare önerdin mi („Du solltest …“)?",
@@ -350,7 +350,7 @@ export const a2U06: SkillExercise[] = [
           { de: "Das hilft gegen Halsschmerzen.", tr: "bu boğaz ağrısına iyi gelir", en: "that helps with a sore throat" },
         ],
         sample:
-          "Hey Mert,\n\ndas klingt nicht gut. Wie fühlst du dich heute?\n\nIch habe zwei Tipps für dich. Du solltest viel trinken, am besten lauwarmen Tee mit Zitrone und einem Löffel Honig. Das hilft wirklich gegen eine Erkältung. Und iss eine Orange am Tag, Vitamin C ist auch ein gutes Mittel.\n\nWenn es morgen nicht besser ist, ruf bitte die Praxis an. Die Sprechstunde ist von acht bis zwölf.\n\nGute Besserung!\nLea",
+          "Hey Hannes,\n\ndas klingt nicht gut. Wie fühlst du dich heute?\n\nIch habe zwei Tipps für dich. Du solltest viel trinken, am besten lauwarmen Tee mit Zitrone und einem Löffel Honig. Das hilft wirklich gegen eine Erkältung. Und iss eine Orange am Tag, Vitamin C ist auch ein gutes Mittel.\n\nWenn es morgen nicht besser ist, ruf bitte die Praxis an. Die Sprechstunde ist von acht bis zwölf.\n\nGute Besserung!\nLea",
       },
     ],
   },

@@ -220,11 +220,11 @@ export const enA2P2: SkillExercise[] = [
           { de: "Best regards,", tr: "Saygılarımla," },
         ],
         sample:
-          "Dear Sir or Madam, my name is Deniz Aksu and my member number is 4471. " +
+          "Dear Sir or Madam, my name is Charlie Roberts and my member number is 4471. " +
           "I would like to cancel my membership at the end of September. I am going to move to another city in " +
           "October for a new job, so I will not be able to come. According to my contract, the notice period is one month, " +
           "so I hope this email is in time. Could you send me a written confirmation? " +
-          "Thank you very much. Best regards, Deniz Aksu",
+          "Thank you very much. Best regards, Charlie Roberts",
       },
     ],
   },

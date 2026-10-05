@@ -239,7 +239,7 @@ export const enB1P9: SkillExercise[] = [
           { de: "Thank you for looking into this.", tr: "İlgilendiğiniz için teşekkürler.", en: "" },
         ],
         sample:
-          "Dear Mrs. Holt, I am writing about the lunch break for seventh grade, where my daughter Selin " +
+          "Dear Mrs. Holt, I am writing about the lunch break for seventh grade, where my daughter Megan " +
           "is a student. " +
           "Over the last few weeks I have noticed that she comes home hungry on Fridays and " +
           "almost never on other days. When I asked her why, she said she can't finish her lunch " +
@@ -251,7 +251,7 @@ export const enB1P9: SkillExercise[] = [
           "Would it be possible to let the seventh graders go in first on Fridays, or to make the break " +
           "five minutes longer? " +
           "I would be glad to hear whether the school has looked at how much food comes back " +
-          "on different days. Thank you for looking into this. Sincerely, Aylin Demir",
+          "on different days. Thank you for looking into this. Sincerely, Martha Adams",
       },
     ],
   },

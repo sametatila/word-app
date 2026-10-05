@@ -74,16 +74,16 @@ export const enC1U17: SkillExercise[] = [
     minutes: 12,
     text:
       "OPEN DAY AT BROOKFIELD DAIRY\n" +
-      "„We have no factory farming here; we have humane housing,“ says Martin Hale as he opens the gate of the new barn. It is the first thing he says to every group of visitors, and on a Saturday in June there are six groups.\n" +
+      "„We have no factory farming here; we have humane housing,“ says Martin Naomi as he opens the gate of the new barn. It is the first thing he says to every group of visitors, and on a Saturday in June there are six groups.\n" +
       "The barn is bright and airy. There are no chains, no concrete stalls and no cows standing in their own dirt. The 120 animals move freely between the barn and the pasture, which is lush after a wet spring. The old barn, which still stands at the bottom of the yard, is a different story: the pasture was lush; the old barn, less so.\n" +
-      "Hale took over the farm from his father in 2015. At the time, the family had no plan for the future and no money for a new building. „The milk quota, they said, and rather good for the small farm,“ he remembers with a dry laugh. „It was not. It kept us small and it kept us poor.“\n" +
-      "What changed the farm was not the end of the quota but a contract with a regional cheese maker, who pays a fixed price for milk from animals that spend at least 150 days a year outside. A world market price is not a producer price, Hale explains: the first moves every week on a screen in another country; the second is what he can plan a year around.\n" +
-      "Not everything is as the brochure says. The calves are still separated from their mothers after a few days, and Hale does not pretend otherwise. „There is no perfect way to do this,“ he admits. „There is only a better way and a worse one.“\n" +
-      "Visitors seem to accept that. Most of them leave with a bag of cheese and no complaints. One woman asks whether there are any antibiotics in the milk. „None,“ says Hale. „And we have the lab reports to show it.“\n" +
+      "Naomi took over the farm from his father in 2015. At the time, the family had no plan for the future and no money for a new building. „The milk quota, they said, and rather good for the small farm,“ he remembers with a dry laugh. „It was not. It kept us small and it kept us poor.“\n" +
+      "What changed the farm was not the end of the quota but a contract with a regional cheese maker, who pays a fixed price for milk from animals that spend at least 150 days a year outside. A world market price is not a producer price, Naomi explains: the first moves every week on a screen in another country; the second is what he can plan a year around.\n" +
+      "Not everything is as the brochure says. The calves are still separated from their mothers after a few days, and Naomi does not pretend otherwise. „There is no perfect way to do this,“ he admits. „There is only a better way and a worse one.“\n" +
+      "Visitors seem to accept that. Most of them leave with a bag of cheese and no complaints. One woman asks whether there are any antibiotics in the milk. „None,“ says Naomi. „And we have the lab reports to show it.“\n" +
       "By five in the afternoon the last group has gone, and the cows are back out on the grass.",
     questions: [
       {
-        text: "What does Hale say the farm does not have?",
+        text: "What does Naomi say the farm does not have?",
         options: ["factory farming", "a pasture", "a new barn"],
         answer: 0,
         explain: "„We have no factory farming here; we have humane housing.“",
@@ -115,8 +115,8 @@ export const enC1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Hale opens the gate of the new barn.",
-          "Hale took over the farm in 2015.",
+          "Naomi opens the gate of the new barn.",
+          "Naomi took over the farm in 2015.",
           "The calves are separated from their mothers.",
           "The last group has gone.",
         ],
@@ -252,19 +252,19 @@ export const enC1U17: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Doruk", text: "Soil erosion may well deplete the field in one generation. On a slope like this one, yes. On a flat field it will not." },
-      { speaker: "Sıla", text: "So it depends on the slope." },
-      { speaker: "Doruk", text: "On the slope and on what is holding the top. A centimeter takes a century to build and a bad fall to move, and those two numbers are the whole subject." },
-      { speaker: "Sıla", text: "To overfertilize might mean nitrate pollution downstream." },
-      { speaker: "Doruk", text: "Might, and usually does, and the important part is downstream. The cost does not appear on the field it came from." },
-      { speaker: "Sıla", text: "It appears in a well in the next village." },
-      { speaker: "Doruk", text: "In a well, two years later, in a village whose name is not in anybody's file. That is why the rule has to be written and cannot be left to the person paying for the fertilizer." },
-      { speaker: "Sıla", text: "Pesticide use may kill what should pollinate and let the crop protection product seep away." },
-      { speaker: "Doruk", text: "Two losses at once, and only one of them is on an invoice. The bees belong to the orchard four fields over and nobody sends a bill." },
-      { speaker: "Sıla", text: "Would a rented field change the calculation?" },
-      { speaker: "Doruk", text: "It changes everything. A tenant pays for this year and a landlord owns the century, and no lease I have read puts a number on the soil." },
-      { speaker: "Sıla", text: "What would you put in one?" },
-      { speaker: "Doruk", text: "A measurement at the start and a measurement at the end, and the difference priced. It is two afternoons of work and it would end half of these arguments." },
+      { speaker: "Sean", text: "Soil erosion may well deplete the field in one generation. On a slope like this one, yes. On a flat field it will not." },
+      { speaker: "Wendy", text: "So it depends on the slope." },
+      { speaker: "Sean", text: "On the slope and on what is holding the top. A centimeter takes a century to build and a bad fall to move, and those two numbers are the whole subject." },
+      { speaker: "Wendy", text: "To overfertilize might mean nitrate pollution downstream." },
+      { speaker: "Sean", text: "Might, and usually does, and the important part is downstream. The cost does not appear on the field it came from." },
+      { speaker: "Wendy", text: "It appears in a well in the next village." },
+      { speaker: "Sean", text: "In a well, two years later, in a village whose name is not in anybody's file. That is why the rule has to be written and cannot be left to the person paying for the fertilizer." },
+      { speaker: "Wendy", text: "Pesticide use may kill what should pollinate and let the crop protection product seep away." },
+      { speaker: "Sean", text: "Two losses at once, and only one of them is on an invoice. The bees belong to the orchard four fields over and nobody sends a bill." },
+      { speaker: "Wendy", text: "Would a rented field change the calculation?" },
+      { speaker: "Sean", text: "It changes everything. A tenant pays for this year and a landlord owns the century, and no lease I have read puts a number on the soil." },
+      { speaker: "Wendy", text: "What would you put in one?" },
+      { speaker: "Sean", text: "A measurement at the start and a measurement at the end, and the difference priced. It is two afternoons of work and it would end half of these arguments." },
     ],
     questions: [
       {
@@ -344,16 +344,16 @@ export const enC1U17: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Berna", text: "One defends the country-of-origin labeling; another doubts the traceability. Two people at one table and they are not disagreeing about the same thing." },
-      { speaker: "Berna", text: "A label is a claim on a package. Traceability is whether a batch can be followed from a field to a mill to a shelf, and the second is a question about systems." },
-      { speaker: "Berna", text: "You can have a perfectly honest label and no traceability at all, because the label says where the last step happened and nothing before it." },
-      { speaker: "Berna", text: "The sustainability report openly claims what the field research merely suggests. The report is sure and the researchers are not, and the questions start in the gap between them." },
-      { speaker: "Berna", text: "The assumption the report hides is usually the sample. Forty farms, chosen because they answered the letter, and the report says „farms in the region“ with no number in the sentence." },
-      { speaker: "Berna", text: "Find the sample size before you read anything else. It is in a footnote, and when it is not in a footnote it is not anywhere." },
-      { speaker: "Berna", text: "To call it knowledge transfer is not to call it agronomic advice. A farmer needs that difference, and a seller does not want it written down." },
-      { speaker: "Berna", text: "Transfer means somebody gave you information. Advice means somebody told you what to do on your field, and only the second one carries any responsibility." },
-      { speaker: "Berna", text: "The advice that comes free from a seller is the advice that sells a product. That is not dishonest and it is not neutral, and both of those are true at once." },
-      { speaker: "Berna", text: "So ask for the invoice. If nobody is paid for the advice, read it as information and make the decision yourself." },
+      { speaker: "Lorna", text: "One defends the country-of-origin labeling; another doubts the traceability. Two people at one table and they are not disagreeing about the same thing." },
+      { speaker: "Lorna", text: "A label is a claim on a package. Traceability is whether a batch can be followed from a field to a mill to a shelf, and the second is a question about systems." },
+      { speaker: "Lorna", text: "You can have a perfectly honest label and no traceability at all, because the label says where the last step happened and nothing before it." },
+      { speaker: "Lorna", text: "The sustainability report openly claims what the field research merely suggests. The report is sure and the researchers are not, and the questions start in the gap between them." },
+      { speaker: "Lorna", text: "The assumption the report hides is usually the sample. Forty farms, chosen because they answered the letter, and the report says „farms in the region“ with no number in the sentence." },
+      { speaker: "Lorna", text: "Find the sample size before you read anything else. It is in a footnote, and when it is not in a footnote it is not anywhere." },
+      { speaker: "Lorna", text: "To call it knowledge transfer is not to call it agronomic advice. A farmer needs that difference, and a seller does not want it written down." },
+      { speaker: "Lorna", text: "Transfer means somebody gave you information. Advice means somebody told you what to do on your field, and only the second one carries any responsibility." },
+      { speaker: "Lorna", text: "The advice that comes free from a seller is the advice that sells a product. That is not dishonest and it is not neutral, and both of those are true at once." },
+      { speaker: "Lorna", text: "So ask for the invoice. If nobody is paid for the advice, read it as information and make the decision yourself." },
     ],
     questions: [
       {

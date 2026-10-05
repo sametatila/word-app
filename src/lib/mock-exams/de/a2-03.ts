@@ -60,13 +60,13 @@ Die neue Wohnung ist billiger, aber sie ist auch dunkler. Am Anfang habe ich das
 
 Dafür ist es hier ruhig. In der alten Wohnung habe ich jede Nacht die Autos gehört. Jetzt höre ich nur die Kinder im Hof.
 
-Am zweiten Tag hat Frau Öztürk aus dem Erdgeschoss geklingelt. Sie hat mir Suppe gebracht und gefragt, ob ich Hilfe brauche. Ich war überrascht, weil ich meine alten Nachbarn nie kennengelernt habe.
+Am zweiten Tag hat Frau Dörr aus dem Erdgeschoss geklingelt. Sie hat mir Suppe gebracht und gefragt, ob ich Hilfe brauche. Ich war überrascht, weil ich meine alten Nachbarn nie kennengelernt habe.
 
 Im Haus gibt es viele Regeln. Man darf nach zehn Uhr keine Wäsche waschen. Der Müll muss in vier verschiedene Tonnen. Am Anfang habe ich das kompliziert gefunden.
 
 Nach sechs Monaten kann ich sagen: Ich vermisse das Licht, aber ich vermisse die alte Straße nicht.
 
-Nächsten Monat machen wir zusammen ein Hoffest. Frau Öztürk kocht, ich baue die Tische auf. Ich glaube, ich bleibe hier.`,
+Nächsten Monat machen wir zusammen ein Hoffest. Frau Dörr kocht, ich baue die Tische auf. Ich glaube, ich bleibe hier.`,
               gloss: [
                 { de: "das Hinterhaus", tr: "arka bina", en: "rear building" },
                 { de: "der Hof", tr: "avlu", en: "courtyard" },
@@ -94,7 +94,7 @@ Nächsten Monat machen wir zusammen ein Hoffest. Frau Öztürk kocht, ich baue d
               options: ["Die Nachbarin ist zu ihr gekommen.", "Sie haben sich im Hof getroffen.", "Sie hat bei der Nachbarin geklingelt."],
               answer: 0,
               explain:
-                "Zili çalan komşu: \"hat Frau Öztürk aus dem Erdgeschoss geklingelt\", yazar değil. Avluda karşılaşma metinde hiç geçmiyor; avlu yalnız çocuk sesiyle anılıyor.",
+                "Zili çalan komşu: \"hat Frau Dörr aus dem Erdgeschoss geklingelt\", yazar değil. Avluda karşılaşma metinde hiç geçmiyor; avlu yalnız çocuk sesiyle anılıyor.",
             },
             {
               kind: "mcq",
@@ -485,7 +485,7 @@ Danke! Ich bringe dir morgen Kuchen mit.`,
               plays: 2,
               segments: [
                 { speaker: "Frau Roth", text: "Haben Sie den Zettel gesehen? Am Dienstag kommen die Handwerker." },
-                { speaker: "Herr Ali", text: "Ja. Ich bin aber den ganzen Tag arbeiten." },
+                { speaker: "Herr Thiele", text: "Ja. Ich bin aber den ganzen Tag arbeiten." },
                 { speaker: "Frau Roth", text: "Kein Problem, sie arbeiten nur im Treppenhaus." },
               ],
             },
@@ -553,7 +553,7 @@ Danke! Ich bringe dir morgen Kuchen mit.`,
               options: ["Im Treppenhaus.", "In allen Wohnungen.", "Im Keller."],
               answer: 0,
               explain:
-                "Frau Roth endişeyi gideriyor: \"sie arbeiten nur im Treppenhaus\". Herr Ali'nin bütün gün işte olması tam bu yüzden sorun değil.",
+                "Frau Roth endişeyi gideriyor: \"sie arbeiten nur im Treppenhaus\". Herr Thiele'nin bütün gün işte olması tam bu yüzden sorun değil.",
             },
             {
               kind: "mcq",
@@ -619,15 +619,15 @@ Danke! Ich bringe dir morgen Kuchen mit.`,
               situation: "Arkadaşlar bir taşınma için işleri paylaşıyor.",
               plays: 2,
               segments: [
-                { speaker: "Yasin", text: "Also, der Umzug ist am Samstag. Marie, was machst du?" },
+                { speaker: "Achim", text: "Also, der Umzug ist am Samstag. Marie, was machst du?" },
                 { speaker: "Marie", text: "Ich fahre den Transporter. Ich habe den Führerschein dafür." },
-                { speaker: "Yasin", text: "Perfekt. Rico, kaufst du das Essen für alle?" },
+                { speaker: "Achim", text: "Perfekt. Rico, kaufst du das Essen für alle?" },
                 { speaker: "Rico", text: "Essen habe ich letztes Mal gemacht. Diesmal packe ich lieber die Bücher ein." },
-                { speaker: "Yasin", text: "Gut. Frau Kern, Sie kochen doch so gern. Übernehmen Sie das Essen?" },
+                { speaker: "Achim", text: "Gut. Frau Kern, Sie kochen doch so gern. Übernehmen Sie das Essen?" },
                 { speaker: "Frau Kern", text: "Ja, gern. Soll ich auch die Kartons besorgen?" },
-                { speaker: "Yasin", text: "Nein danke, die Kartons bringt Tim schon am Freitag." },
+                { speaker: "Achim", text: "Nein danke, die Kartons bringt Tim schon am Freitag." },
                 { speaker: "Tim", text: "Genau. Ich putze dann am Sonntag auch die alte Wohnung." },
-                { speaker: "Yasin", text: "Die alte Wohnung putze ich, du hast am Sonntag Dienst." },
+                { speaker: "Achim", text: "Die alte Wohnung putze ich, du hast am Sonntag Dienst." },
                 { speaker: "Tim", text: "Stimmt, das hatte ich vergessen." },
               ],
             },
@@ -670,7 +670,7 @@ Danke! Ich bringe dir morgen Kuchen mit.`,
               text: "Frau Kern",
               answer: "c",
               explain:
-                "Rico reddedince yemeği Frau Kern üstleniyor. Kolileri de teklif ediyor ama Yasin \"Nein danke\" diyor.",
+                "Rico reddedince yemeği Frau Kern üstleniyor. Kolileri de teklif ediyor ama Achim \"Nein danke\" diyor.",
             },
             {
               kind: "match",
@@ -687,10 +687,10 @@ Danke! Ich bringe dir morgen Kuchen mit.`,
               id: "de-a2-03-h2-10",
               no: 10,
               ref: "g1",
-              text: "Yasin",
+              text: "Achim",
               answer: "e",
               explain:
-                "Tim pazar günü çalıştığı için eski evi Yasin temizliyor: \"Die alte Wohnung putze ich\". Yasin ayrıca işleri dağıtan kişi.",
+                "Tim pazar günü çalıştığı için eski evi Achim temizliyor: \"Die alte Wohnung putze ich\". Achim ayrıca işleri dağıtan kişi.",
             },
           ],
         },
@@ -983,7 +983,7 @@ ich wohne in der Gartenstraße 21 im zweiten Stock. Seit zwei Wochen funktionier
 Können Sie das bitte bald reparieren lassen?
 
 Mit freundlichen Grüßen
-Nuri Aydin`,
+Anton Haas`,
             criteria: [
               "Üç içerik noktası da var mı?",
               "Yarı resmî ileti olduğu için `Sie` ve resmî hitap kullanıldı mı? (Sehr geehrte Damen und Herren / Mit freundlichen Grüßen)",

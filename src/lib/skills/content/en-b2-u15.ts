@@ -66,7 +66,7 @@ export const enB2U15: SkillExercise[] = [
       "In a sense, your article is right about one thing: young people are less willing to accept low pay and long hours without complaint. Nonetheless, that is not the same as not wanting to work. It is a different idea of what fair work is.\n" +
       "Some of the evidence is contradictory, I admit. Employment among people under twenty-five has fallen slightly in our region. But the reason seems to be the closure of two large factories, not a sudden change in attitude.\n" +
       "I would invite your reporter to spend a day at our college. The students are by no means perfect, but they are working hard, and they deserve a fairer headline.\n" +
-      "Hande Aksoy, Izmir",
+      "Imogen Lloyd, Izmir",
     questions: [
       {
         text: "Whom did the survey ask?",
@@ -221,22 +221,22 @@ export const enB2U15: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Kerem", text: "Did you see the old factory this morning? They have started taking down the chimney." },
-      { speaker: "Nesrin", text: "I saw it. If the firm had avoided bankruptcy, we would have stayed in the town. My husband had worked there for nineteen years." },
-      { speaker: "Kerem", text: "Where did you go?" },
-      { speaker: "Nesrin", text: "To my sister in the city. But we come back every weekend. If the severance pay had been fair, we would still be living here now." },
-      { speaker: "Kerem", text: "How much did you get?" },
-      { speaker: "Nesrin", text: "Three months of pay after nineteen years. If the union had been stronger, they would never have accepted that." },
-      { speaker: "Kerem", text: "And the court case?" },
-      { speaker: "Nesrin", text: "Still running. If the dismissal had been legal, the case would have ended last year. The judge says the company broke the rules on notice." },
-      { speaker: "Kerem", text: "So there is still hope?" },
-      { speaker: "Nesrin", text: "A little. If we win, the workers will get another six months of pay. That would not bring the jobs back, but it would help." },
-      { speaker: "Kerem", text: "The town feels empty on weekdays." },
-      { speaker: "Nesrin", text: "It does. If the factory were still open, this café would be full at lunch. Now it is you, me and the waiter." },
+      { speaker: "Connor", text: "Did you see the old factory this morning? They have started taking down the chimney." },
+      { speaker: "Becky", text: "I saw it. If the firm had avoided bankruptcy, we would have stayed in the town. My husband had worked there for nineteen years." },
+      { speaker: "Connor", text: "Where did you go?" },
+      { speaker: "Becky", text: "To my sister in the city. But we come back every weekend. If the severance pay had been fair, we would still be living here now." },
+      { speaker: "Connor", text: "How much did you get?" },
+      { speaker: "Becky", text: "Three months of pay after nineteen years. If the union had been stronger, they would never have accepted that." },
+      { speaker: "Connor", text: "And the court case?" },
+      { speaker: "Becky", text: "Still running. If the dismissal had been legal, the case would have ended last year. The judge says the company broke the rules on notice." },
+      { speaker: "Connor", text: "So there is still hope?" },
+      { speaker: "Becky", text: "A little. If we win, the workers will get another six months of pay. That would not bring the jobs back, but it would help." },
+      { speaker: "Connor", text: "The town feels empty on weekdays." },
+      { speaker: "Becky", text: "It does. If the factory were still open, this café would be full at lunch. Now it is you, me and the waiter." },
     ],
     questions: [
       {
-        text: "How long had the husband of Nesrin worked at the factory?",
+        text: "How long had the husband of Becky worked at the factory?",
         options: ["nineteen years", "nine years", "three months"],
         answer: 0,
         explain: "„My husband had worked there for nineteen years.“",
@@ -306,14 +306,14 @@ export const enB2U15: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Doruk", text: "Good morning. You asked me for a forecast for the region, so here are the numbers, with the usual warning that forecasts can be wrong." },
-      { speaker: "Doruk", text: "First, the good news. By spring the upturn will have started. Orders from abroad are already rising, and the stock market has reacted well." },
-      { speaker: "Doruk", text: "By the end of next year, investment in the port will have reached two billion euros. Most of that money has already been approved." },
-      { speaker: "Doruk", text: "Next year we will be watching the investment closely, because a third of it depends on one company, and that company is still negotiating with the government." },
-      { speaker: "Doruk", text: "The job market will be changing too. By then about three thousand new jobs will have been created, mostly in logistics and energy." },
-      { speaker: "Doruk", text: "But the workforce will not have grown at the same speed. Companies will be competing for skilled workers, and wages will be rising." },
-      { speaker: "Doruk", text: "Our biggest risk is the supply chain. If shipping costs rise again, the upturn will have lost much of its strength by the summer." },
-      { speaker: "Doruk", text: "If everything goes to plan, the picture is good. By then the market share of local firms will have doubled. I will be presenting the full report in March." },
+      { speaker: "Sean", text: "Good morning. You asked me for a forecast for the region, so here are the numbers, with the usual warning that forecasts can be wrong." },
+      { speaker: "Sean", text: "First, the good news. By spring the upturn will have started. Orders from abroad are already rising, and the stock market has reacted well." },
+      { speaker: "Sean", text: "By the end of next year, investment in the port will have reached two billion euros. Most of that money has already been approved." },
+      { speaker: "Sean", text: "Next year we will be watching the investment closely, because a third of it depends on one company, and that company is still negotiating with the government." },
+      { speaker: "Sean", text: "The job market will be changing too. By then about three thousand new jobs will have been created, mostly in logistics and energy." },
+      { speaker: "Sean", text: "But the workforce will not have grown at the same speed. Companies will be competing for skilled workers, and wages will be rising." },
+      { speaker: "Sean", text: "Our biggest risk is the supply chain. If shipping costs rise again, the upturn will have lost much of its strength by the summer." },
+      { speaker: "Sean", text: "If everything goes to plan, the picture is good. By then the market share of local firms will have doubled. I will be presenting the full report in March." },
     ],
     questions: [
       {

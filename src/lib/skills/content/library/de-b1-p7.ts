@@ -238,7 +238,7 @@ export const deB1P7: SkillExercise[] = [
           { de: "Ich würde mich freuen, wenn wir darüber sprechen könnten.", tr: "Bunu konuşabilirsek sevinirim.", en: "I would be glad if we could talk about it." },
         ],
         sample:
-          "Sehr geehrte Frau Dr. Rehm,\n\nmein Name ist Sinan Aktas und meine Tochter besucht die Klasse 6c. " +
+          "Sehr geehrte Frau Dr. Rehm,\n\nmein Name ist Elias Zander und meine Tochter besucht die Klasse 6c. " +
           "Ich wende mich an Sie, weil viele Kinder aus unserer Straße mit dem Rad zur Schule kommen " +
           "und die Abstellplätze nicht reichen. Mein Vorschlag wäre, den kleinen Hof hinter der Turnhalle " +
           "für zwanzig weitere Fahrräder zu öffnen. Dafür spricht erstens, dass der Hof morgens leer steht, " +
@@ -246,7 +246,7 @@ export const deB1P7: SkillExercise[] = [
           "Mir ist bewusst, dass dafür ein Tor geöffnet und abends wieder geschlossen werden müsste. " +
           "Ich glaube aber, dass das keinen großen Aufwand bedeutet, und einige Eltern haben schon angeboten, " +
           "sich dabei abzuwechseln. Ich würde mich freuen, wenn wir am nächsten " +
-          "Elternabend zehn Minuten darüber sprechen könnten.\n\nMit freundlichen Grüßen\nSinan Aktas",
+          "Elternabend zehn Minuten darüber sprechen könnten.\n\nMit freundlichen Grüßen\nElias Zander",
       },
     ],
   },

@@ -10,9 +10,9 @@
   "de": "Lies die Anzeige zum Ausverkauf: welche Farben es gibt und zu welchem Preis?"
  },
  {
-  "tr": "Ali iş sonrasını anlatıyor. Neyi seviyor, neyi sevmiyor?",
+  "tr": "Harry iş sonrasını anlatıyor. Neyi seviyor, neyi sevmiyor?",
   "kind": "intro",
-  "de": "Ali erzählt vom Feierabend. Was mag er, was mag er nicht?"
+  "de": "Harry erzählt vom Feierabend. Was mag er, was mag er nicht?"
  },
  {
   "tr": "Mağaza cümlelerini yaz. Sonunda alışveriş formunu doldur.",
@@ -30,9 +30,9 @@
   "de": "Schreibe Sätze zum Gefallen und zur Rückgabe. Am Ende füllst du das Rückgabeformular aus."
  },
  {
-  "tr": "Nil renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
+  "tr": "Katie renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
   "kind": "intro",
-  "de": "Nil erzählt von Farben. Welche Farbe für die Arbeit, welche fürs Wochenende?"
+  "de": "Katie erzählt von Farben. Welche Farbe für die Arbeit, welche fürs Wochenende?"
  },
  {
   "tr": "Mağazada gömlek alınıyor. Renk, beden ve fiyat art arda geliyor.",
@@ -85,9 +85,9 @@
   "de": "Schreibe die Zukunft. Sie hat drei Teile, und Verneinung und Frage entstehen, indem man die Teile verschiebt."
  },
  {
-  "tr": "Kaan yemek için miktar hesaplıyor. Hangi şey sayılabiliyor, hangisi sayılamıyor?",
+  "tr": "Liam yemek için miktar hesaplıyor. Hangi şey sayılabiliyor, hangisi sayılamıyor?",
   "kind": "intro",
-  "de": "Kaan rechnet die Mengen fürs Essen aus. Was ist zählbar, was nicht?"
+  "de": "Liam rechnet die Mengen fürs Essen aus. Was ist zählbar, was nicht?"
  },
  {
   "tr": "„You don't have many jackets. — Only two.“",
@@ -115,9 +115,9 @@
   "de": "„Tomorrow is my mother's birthday.“ — der Besitz mit „-'s“."
  },
  {
-  "tr": "„I'm going to visit my parents.“ — şehirde yürüyen Kaan.",
+  "tr": "„I'm going to visit my parents.“ — şehirde yürüyen Liam.",
   "kind": "explain",
-  "de": "„I'm going to visit my parents.“ — in der Stadt spazieren geht Kaan."
+  "de": "„I'm going to visit my parents.“ — in der Stadt spazieren geht Liam."
  },
  {
   "tr": "„It's too small. What size is it?“ — büyük olan gri ceket.",
@@ -140,9 +140,9 @@
   "de": "„Jackets: black or blue.“ — grün und gelb sind die Farben der Pullover."
  },
  {
-  "tr": "„It's eighty dollars.“ — bu yüzden Kaan daha ucuzunu istiyor.",
+  "tr": "„It's eighty dollars.“ — bu yüzden Liam daha ucuzunu istiyor.",
   "kind": "explain",
-  "de": "„It's eighty dollars.“ — deshalb möchte Kaan eine billigere."
+  "de": "„It's eighty dollars.“ — deshalb möchte Liam eine billigere."
  },
  {
   "tr": "„Our store is open every day.“ — her gün açık, yani pazar da.",
@@ -160,9 +160,9 @@
   "de": "„What do you think?“ — die Frage nach der Meinung mit „what“, nicht mit „how“."
  },
  {
-  "tr": "„How much is it? Ninety dollars.“ — iki, Sena'nın ceket sayısı.",
+  "tr": "„How much is it? Ninety dollars.“ — iki, Ellie'nin ceket sayısı.",
   "kind": "explain",
-  "de": "„How much is it? Ninety dollars.“ — zwei ist die Zahl der Jacken von Sena."
+  "de": "„How much is it? Ninety dollars.“ — zwei ist die Zahl der Jacken von Ellie."
  },
  {
   "tr": "Önce iş, sonra sevdikleri, sonra cuma, en son hafta sonu planı.",
@@ -335,9 +335,9 @@
   "de": "„I like reading, and I don't like listening to the radio.“ — die beiden Sätze stehen gegeneinander."
  },
  {
-  "tr": "„I'd like to return this and get my money back.“ — satıcı renk öneriyor, Ela istemiyor.",
+  "tr": "„I'd like to return this and get my money back.“ — satıcı renk öneriyor, Lucy istemiyor.",
   "kind": "explain",
-  "de": "„I'd like to return this and get my money back.“ — der Verkäufer bietet eine Farbe an, Ela will sie nicht."
+  "de": "„I'd like to return this and get my money back.“ — der Verkäufer bietet eine Farbe an, Lucy will sie nicht."
  },
  {
   "tr": "Önce zaman, sonra patates, sonra peynir, en son para.",

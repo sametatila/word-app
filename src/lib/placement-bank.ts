@@ -424,8 +424,8 @@ export const PLACEMENT_BANK: Record<"de" | "en", PlacementBank> = {
         "level": "A1",
         "offset": 0.2,
         "kind": "reading",
-        "text": "Herr Kaya fährt jeden Tag mit dem Bus zur Arbeit. Heute ist der Bus kaputt. Er nimmt ein Taxi.",
-        "question": "Wie fährt Herr Kaya heute zur Arbeit?",
+        "text": "Herr Graf fährt jeden Tag mit dem Bus zur Arbeit. Heute ist der Bus kaputt. Er nimmt ein Taxi.",
+        "question": "Wie fährt Herr Graf heute zur Arbeit?",
         "options": [
           "Zu Fuß",
           "Mit dem Taxi",
@@ -580,8 +580,8 @@ export const PLACEMENT_BANK: Record<"de" | "en", PlacementBank> = {
         "level": "A2",
         "offset": -0.2,
         "kind": "reading",
-        "text": "Hallo Jonas, leider kann ich am Freitag nicht zum Fußball kommen. Meine Eltern besuchen mich und ich muss sie vom Flughafen abholen. Vielleicht nächste Woche? Mehmet",
-        "question": "Warum kommt Mehmet nicht?",
+        "text": "Hallo Jonas, leider kann ich am Freitag nicht zum Fußball kommen. Meine Eltern besuchen mich und ich muss sie vom Flughafen abholen. Vielleicht nächste Woche? Carsten",
+        "question": "Warum kommt Carsten nicht?",
         "options": [
           "Er holt seine Eltern ab.",
           "Er fliegt in den Urlaub.",

@@ -20,8 +20,8 @@ import type { SkillExercise } from "../types";
  *    görmediğin için "yine görüşürüz" mantıksız kaçar. Öğrencinin en sık
  *    yaptığı hata telefonu "Auf Wiedersehen" ile kapatmaktır.
  *
- * 2) Telefonu ADINI SÖYLEYEREK açarsın: "Yılmaz?" ya da "Hier ist Elif
- *    Yılmaz." Türkçedeki "alo" karşılığı "hallo" DEĞİLDİR; adsız açmak
+ * 2) Telefonu ADINI SÖYLEYEREK açarsın: "Lutz?" ya da "Hier ist Paula
+ *    Lutz." Türkçedeki "alo" karşılığı "hallo" DEĞİLDİR; adsız açmak
  *    Almanya'da eksik sayılır. Dinleme egzersizi bunu iki uçta da gösteriyor.
  *
  * 3) Mektup/e-posta kapanışı ilişkiye göre ikiye ayrılır ve karıştırılmaz:
@@ -106,7 +106,7 @@ export const a1U23: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "A — an eine Freundin\n\nHallo Mia,\n\nwie geht es dir? Ich möchte dich bald wiedersehen. Hast du am Samstag Zeit? Schick mir eine Nachricht oder ruf mich an. Einen Brief schreibe ich nicht — für eine Briefmarke muss ich zur Post.\n\nLiebe Grüße\nElif\n\n\nB — an die Praxis\n\nSehr geehrte Frau Dr. Weber,\n\nich möchte meinen Termin am Mittwoch um 10 Uhr ändern. Ist ein Termin am Freitag möglich? Meine Nummer ist 0231 / 55 44 33.\n\nMit freundlichen Grüßen\nElif Yilmaz",
+      "A — an eine Freundin\n\nHallo Mia,\n\nwie geht es dir? Ich möchte dich bald wiedersehen. Hast du am Samstag Zeit? Schick mir eine Nachricht oder ruf mich an. Einen Brief schreibe ich nicht — für eine Briefmarke muss ich zur Post.\n\nLiebe Grüße\nPaula\n\n\nB — an die Praxis\n\nSehr geehrte Frau Dr. Weber,\n\nich möchte meinen Termin am Mittwoch um 10 Uhr ändern. Ist ein Termin am Freitag möglich? Meine Nummer ist 0231 / 55 44 33.\n\nMit freundlichen Grüßen\nPaula Lutz",
     questions: [
       {
         text: "Wie endet die Nachricht an die Freundin?",
@@ -115,7 +115,7 @@ export const a1U23: SkillExercise[] = [
         explain: "Arkadaşa „Liebe Grüße“.",
       },
       {
-        text: "Warum schreibt Elif an die Praxis?",
+        text: "Warum schreibt Paula an die Praxis?",
         options: [
           "Sie möchte ihren Termin ändern.",
           "Sie ist krank.",
@@ -133,7 +133,7 @@ export const a1U23: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Elif fragt: Ist ein Termin am ___ möglich?",
+        text: "Paula fragt: Ist ein Termin am ___ möglich?",
         options: [],
         answer: 0,
         accept: ["Freitag"],
@@ -164,11 +164,11 @@ export const a1U23: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { speaker: "Frau Yılmaz", text: "Yılmaz?" },
-      { speaker: "Tom", text: "Guten Tag, hier ist Tom Berger. Kann ich bitte mit Elif sprechen?" },
-      { speaker: "Frau Yılmaz", text: "Sie ist gerade nicht da. Sie ruft Sie später zurück." },
+      { speaker: "Frau Lutz", text: "Lutz?" },
+      { speaker: "Tom", text: "Guten Tag, hier ist Tom Berger. Kann ich bitte mit Paula sprechen?" },
+      { speaker: "Frau Lutz", text: "Sie ist gerade nicht da. Sie ruft Sie später zurück." },
       { speaker: "Tom", text: "Danke. Meine Nummer ist 0231 / 77 88 99." },
-      { speaker: "Frau Yılmaz", text: "Gut, ich schreibe es auf. Auf Wiederhören!" },
+      { speaker: "Frau Lutz", text: "Gut, ich schreibe es auf. Auf Wiederhören!" },
       { speaker: "Tom", text: "Auf Wiederhören!" },
     ],
     questions: [
@@ -177,17 +177,17 @@ export const a1U23: SkillExercise[] = [
         options: ["mit ihrem Namen", "mit „Hallo“", "gar nicht"],
         answer: 0,
         explain:
-          "„Yılmaz?“ — Almanya'da telefonu adınla açarsın. Türkçedeki „alo“nun karşılığı „hallo“ değildir.",
+          "„Lutz?“ — Almanya'da telefonu adınla açarsın. Türkçedeki „alo“nun karşılığı „hallo“ değildir.",
       },
       {
-        text: "Warum kann Tom nicht mit Elif sprechen?",
+        text: "Warum kann Tom nicht mit Paula sprechen?",
         options: ["Sie ist nicht da.", "Sie schläft.", "Sie ist krank."],
         answer: 0,
         explain: "„Sie ist gerade nicht da.“",
       },
       {
         kind: "gapfill",
-        text: "Elif ___ Tom später zurück.",
+        text: "Paula ___ Tom später zurück.",
         options: [],
         answer: 0,
         accept: ["ruft"],
@@ -351,7 +351,7 @@ export const a1U23: SkillExercise[] = [
           { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Sincerely" },
         ],
         sample:
-          "Sehr geehrte Frau Dr. Weber,\n\nich möchte meinen Termin am Mittwoch um 10 Uhr ändern. Leider muss ich an dem Tag arbeiten.\n\nIst ein Termin am Freitag möglich? Am Nachmittag habe ich Zeit.\n\nSie können mich unter 0231 / 55 44 33 anrufen. Ich bin ab 17 Uhr zu Hause.\n\nMit freundlichen Grüßen\nElif Yilmaz",
+          "Sehr geehrte Frau Dr. Weber,\n\nich möchte meinen Termin am Mittwoch um 10 Uhr ändern. Leider muss ich an dem Tag arbeiten.\n\nIst ein Termin am Freitag möglich? Am Nachmittag habe ich Zeit.\n\nSie können mich unter 0231 / 55 44 33 anrufen. Ich bin ab 17 Uhr zu Hause.\n\nMit freundlichen Grüßen\nPaula Lutz",
       },
     ],
   },

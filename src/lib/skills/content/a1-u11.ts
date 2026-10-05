@@ -93,7 +93,7 @@ export const a1U11: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: Ich trage gern Jeans und ein weißes T-Shirt. Kleider trage ich nie — sie passen mir nicht.\n\nTom: Meine Kleidung ist immer schwarz! Schwarze Hose, schwarzer Pullover, schwarze Schuhe. Für meine Freunde ist das zu viel Schwarz.\n\nElif: Ich mag Farben: Rot, Blau, alles. Aber teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot. Ein Hemd für 9 Euro ist billig und gut!",
+      "Mia: Ich trage gern Jeans und ein weißes T-Shirt. Kleider trage ich nie — sie passen mir nicht.\n\nTom: Meine Kleidung ist immer schwarz! Schwarze Hose, schwarzer Pullover, schwarze Schuhe. Für meine Freunde ist das zu viel Schwarz.\n\nPaula: Ich mag Farben: Rot, Blau, alles. Aber teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot. Ein Hemd für 9 Euro ist billig und gut!",
     questions: [
       {
         text: "Was trägt Mia gern?",
@@ -108,7 +108,7 @@ export const a1U11: SkillExercise[] = [
         explain: "„Meine Kleidung ist immer schwarz!“",
       },
       {
-        text: "Richtig oder falsch? Elif kauft gern teure Kleidung.",
+        text: "Richtig oder falsch? Paula kauft gern teure Kleidung.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot.“",

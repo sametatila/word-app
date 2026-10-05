@@ -260,7 +260,7 @@ export const deB2P11: SkillExercise[] = [
           "Ich bitte Sie deshalb, mir dreißig Prozent des Reisepreises zu erstatten. " +
           "Ich habe Ihre Reisen bisher gern weiterempfohlen und würde das auch künftig gern tun. " +
           "Ihrer Antwort sehe ich bis zum 15. Juni entgegen. " +
-          "Mit freundlichen Grüßen, Selin Arslan",
+          "Mit freundlichen Grüßen, Luisa Busch",
       },
     ],
   },

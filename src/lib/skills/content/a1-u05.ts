@@ -326,7 +326,7 @@ export const a1U05: SkillExercise[] = [
           { de: "Ich komme gern.", tr: "Memnuniyetle gelirim.", en: "I'll gladly come." },
         ],
         sample:
-          "Liebe Mia, lieber Tom,\n\nherzlichen Glückwunsch! Ich gratuliere euch sehr.\n\nJa, ich komme gern. Ich bringe einen Kuchen und Süßigkeiten für die Kinder.\n\nWir feiern zusammen — das wird schön!\n\nTschüss!\nElif",
+          "Liebe Mia, lieber Tom,\n\nherzlichen Glückwunsch! Ich gratuliere euch sehr.\n\nJa, ich komme gern. Ich bringe einen Kuchen und Süßigkeiten für die Kinder.\n\nWir feiern zusammen — das wird schön!\n\nTschüss!\nPaula",
       },
     ],
   },

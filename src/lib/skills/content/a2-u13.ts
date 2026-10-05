@@ -53,10 +53,10 @@ export const a2U13: SkillExercise[] = [
       "Ich war heute Morgen beim Arzt. Er hat gesagt, dass es ansteckend ist, und hat mich bis Freitag krankgeschrieben. Das Attest ist im Anhang; das Original verschicke ich heute noch per Post.\n\n" +
       "Meine Termine am Donnerstag habe ich abgesagt. Die Unterlagen für das Projekt liegen bei Frau Klein auf dem Schreibtisch.\n\n" +
       "Ich melde mich am Freitag wieder.\n\n" +
-      "Mit freundlichen Grüßen\nSinan Aydin",
+      "Mit freundlichen Grüßen\nElias Haas",
     questions: [
       {
-        text: "Was hat Sinan?",
+        text: "Was hat Elias?",
         options: ["Migräne", "Halsschmerzen und Fieber", "Rückenschmerzen"],
         answer: 1,
         explain: "„Ich habe seit gestern starke Halsschmerzen und Fieber.“",
@@ -77,14 +77,14 @@ export const a2U13: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Bis wann ist Sinan krankgeschrieben?",
+        text: "Bis wann ist Elias krankgeschrieben?",
         options: [],
         answer: 0,
         accept: ["bis Freitag", "Freitag"],
         explain: "„hat mich bis Freitag krankgeschrieben“ — cuma günü tekrar haber verecek.",
       },
       {
-        text: "Sinan hat seine Termine noch nicht abgesagt.",
+        text: "Elias hat seine Termine noch nicht abgesagt.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „Meine Termine am Donnerstag habe ich abgesagt.“",
@@ -175,13 +175,13 @@ export const a2U13: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Frau Petrow", text: "Setzen Sie sich. Wie war dieses Jahr für Sie?" },
-      { speaker: "Sinan", text: "Insgesamt gut. Ich bin zufrieden, weil ich viel gelernt habe." },
+      { speaker: "Elias", text: "Insgesamt gut. Ich bin zufrieden, weil ich viel gelernt habe." },
       { speaker: "Frau Petrow", text: "Das sehe ich auch so. Sie arbeiten sehr sorgfältig, und die Kunden sagen, dass Sie immer respektvoll sind." },
-      { speaker: "Sinan", text: "Danke. Gibt es auch etwas, das ich besser machen soll?" },
+      { speaker: "Elias", text: "Danke. Gibt es auch etwas, das ich besser machen soll?" },
       { speaker: "Frau Petrow", text: "Ja, ein Punkt: Ihre Berichte sind manchmal zu kurz. Schreiben Sie bitte deutlicher, was Sie gemacht haben." },
-      { speaker: "Sinan", text: "Verstanden. Darf ich auch etwas ansprechen? Ich hätte gern mehr Verantwortung, das motiviert mich." },
+      { speaker: "Elias", text: "Verstanden. Darf ich auch etwas ansprechen? Ich hätte gern mehr Verantwortung, das motiviert mich." },
       { speaker: "Frau Petrow", text: "Das höre ich gern. Eine Beförderung ist dieses Jahr schwierig, aber einen Bonus im Dezember kann ich Ihnen zusagen." },
-      { speaker: "Sinan", text: "Und im nächsten Jahr sprechen wir noch einmal über die Stelle?" },
+      { speaker: "Elias", text: "Und im nächsten Jahr sprechen wir noch einmal über die Stelle?" },
       { speaker: "Frau Petrow", text: "Auf jeden Fall. Ich notiere das." },
     ],
     questions: [
@@ -200,7 +200,7 @@ export const a2U13: SkillExercise[] = [
         explain: "Yan cümlede geçmiş zamanın yardımcı fiili en sona gider: gelernt habe.",
       },
       {
-        text: "Was soll Sinan verbessern?",
+        text: "Was soll Elias verbessern?",
         options: ["Die Pünktlichkeit", "Seine Berichte", "Den Umgang mit Kunden"],
         answer: 1,
         explain: "„Ihre Berichte sind manchmal zu kurz. Schreiben Sie bitte deutlicher.“",

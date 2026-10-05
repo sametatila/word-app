@@ -140,9 +140,9 @@
   "de": "Ich fühle mich nicht wohl."
  },
  {
-  "tr": "Yarın Ali ile buluşacağım.",
+  "tr": "Yarın Harry ile buluşacağım.",
   "kind": "build.tr",
-  "de": "Ich werde Ali morgen treffen."
+  "de": "Ich werde Harry morgen treffen."
  },
  {
   "tr": "Burada beklemek zorundasın.",
@@ -305,7 +305,7 @@
   "de": "Die Reihenfolge der Tage: Bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Nil'in gününün sırası: doğru sıraya koy.",
+  "tr": "Katie'nin gününün sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge in Nils Tag: Bring sie in die richtige Ordnung."
  }

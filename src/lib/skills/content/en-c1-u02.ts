@@ -38,7 +38,7 @@ export const enC1U02: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 2,
-    title: "A spill on the Kara River",
+    title: "A spill on the Palmer River",
     genre: "article",
     intro: "Nehre kimyasal sızıntı üzerine bir haber. Kim ne söylüyor, hangisi kanıtlanmış?",
     gloss: [
@@ -65,14 +65,14 @@ export const enC1U02: SkillExercise[] = [
     minutes: 11,
     text:
       "CHEMICAL SPILL: WHO KNEW WHAT, AND WHEN\n" +
-      "Three days after thousands of dead fish appeared in the Kara River, the people involved have told three very different stories.\n" +
-      "The mayor, Kemal Aksoy, claimed on Monday that the city had been warned „far too late“ and that its water supply had never been at risk. He did not say who had warned the city, or when.\n" +
+      "Three days after thousands of dead fish appeared in the Palmer River, the people involved have told three very different stories.\n" +
+      "The mayor, Phil Lloyd, claimed on Monday that the city had been warned „far too late“ and that its water supply had never been at risk. He did not say who had warned the city, or when.\n" +
       "Veltra Chemicals, whose plant stands two kilometers upstream, at first denied any link. On Wednesday, however, its director conceded that a valve had failed during the night of the spill and that „a limited amount“ of cleaning fluid may have reached the river. She insisted that the company had reported the fault within an hour.\n" +
       "Residents of the village of Taşlı allege that the fault was reported much later. Three farmers told this newspaper that they saw a yellow film on the water at six in the morning, and that no one from the company or the city arrived before noon. Their lawyer pointed out that the company logs have not yet been made public.\n" +
       "The regional environment agency noted only that samples had been taken and that results were expected next week. An environmental group went further and denounced what it called „a culture of silence“ at the plant, where two smaller spills were recorded in 2019.\n" +
       "The company rebuttal, published on its website on Thursday evening, said less than the headlines used to report it. It admitted no fault beyond the valve, promised a full investigation, and offered to pay for the cleanup „without accepting liability“.\n" +
       "What nobody disputes is the damage. Fishing on the lower river has been banned until further notice, and the farmers of Taşlı are watering their fields from tanks.\n" +
-      "Reporting by Selin Arı",
+      "Reporting by Megan Arı",
     questions: [
       {
         text: "What did the director of Veltra Chemicals concede?",
@@ -227,18 +227,18 @@ export const enC1U02: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ilgın", text: "So, which one? We have to tell the agent by tonight." },
-      { speaker: "Devrim", text: "Granted, the apartment on Elm Street is expensive, albeit fair for that area. It has two bedrooms and a balcony, and it is ten minutes from your office." },
-      { speaker: "Ilgın", text: "And the other one is cheap." },
-      { speaker: "Devrim", text: "Much as I'd like to say the cheaper one is just as good, it clearly isn't. It is on a main road, and the bedroom faces the traffic." },
-      { speaker: "Ilgın", text: "I would concede the noise, whereas you would gloss over the rent. Eighteen hundred a month is a lot." },
-      { speaker: "Devrim", text: "It is a lot, albeit less than we pay now for one room less." },
-      { speaker: "Ilgın", text: "Granted. But the heating on Elm Street is electric, and the last tenants said the bills were high." },
-      { speaker: "Devrim", text: "Much as I trust the last tenants, they lived there alone and worked from home all day." },
-      { speaker: "Ilgın", text: "Fair point. What about my mother? She would want us closer." },
-      { speaker: "Devrim", text: "Elm Street is twenty minutes from her by bus, whereas the cheap one is forty." },
-      { speaker: "Ilgın", text: "Then that settles it, albeit reluctantly on my side. Call the agent before six." },
-      { speaker: "Devrim", text: "I am calling now, before somebody else does." },
+      { speaker: "Carmen", text: "So, which one? We have to tell the agent by tonight." },
+      { speaker: "Jamie", text: "Granted, the apartment on Elm Street is expensive, albeit fair for that area. It has two bedrooms and a balcony, and it is ten minutes from your office." },
+      { speaker: "Carmen", text: "And the other one is cheap." },
+      { speaker: "Jamie", text: "Much as I'd like to say the cheaper one is just as good, it clearly isn't. It is on a main road, and the bedroom faces the traffic." },
+      { speaker: "Carmen", text: "I would concede the noise, whereas you would gloss over the rent. Eighteen hundred a month is a lot." },
+      { speaker: "Jamie", text: "It is a lot, albeit less than we pay now for one room less." },
+      { speaker: "Carmen", text: "Granted. But the heating on Elm Street is electric, and the last tenants said the bills were high." },
+      { speaker: "Jamie", text: "Much as I trust the last tenants, they lived there alone and worked from home all day." },
+      { speaker: "Carmen", text: "Fair point. What about my mother? She would want us closer." },
+      { speaker: "Jamie", text: "Elm Street is twenty minutes from her by bus, whereas the cheap one is forty." },
+      { speaker: "Carmen", text: "Then that settles it, albeit reluctantly on my side. Call the agent before six." },
+      { speaker: "Jamie", text: "I am calling now, before somebody else does." },
     ],
     questions: [
       {
@@ -248,14 +248,14 @@ export const enC1U02: SkillExercise[] = [
         explain: "„It is on a main road, and the bedroom faces the traffic.“",
       },
       {
-        text: "How long is the bus ride from Elm Street to the mother of Ilgın?",
+        text: "How long is the bus ride from Elm Street to the mother of Carmen?",
         options: ["twenty minutes", "ten minutes", "forty minutes"],
         answer: 0,
         explain: "„Elm Street is twenty minutes from her by bus, whereas the cheap one is forty.“",
       },
       {
         kind: "truefalse",
-        text: "The apartment on Elm Street is close to the office of Ilgın.",
+        text: "The apartment on Elm Street is close to the office of Carmen.",
         options: ["True", "False"],
         answer: 0,
         explain: "„…and it is ten minutes from your office.“",
@@ -281,7 +281,7 @@ export const enC1U02: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "By when must Devrim call the agent?",
+        text: "By when must Jamie call the agent?",
         options: [],
         answer: 0,
         accept: ["before six", "by six", "six"],
@@ -311,14 +311,14 @@ export const enC1U02: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Yalın", text: "Two years ago we launched an app that helped neighbors share tools. Drills, ladders, garden equipment. We were sure it would catch on." },
-      { speaker: "Yalın", text: "We had money at our disposal, a good team and a city that loved the idea. Six hundred people signed up in the first week." },
-      { speaker: "Yalın", text: "Then almost nobody borrowed anything. For months we grappled with why the idea did not catch on." },
-      { speaker: "Yalın", text: "Our investors wanted quick changes. I asked them to let it play out before they called it damage control, and to their credit they did." },
-      { speaker: "Yalın", text: "What we finally found was simple. People liked the idea of sharing far more than they liked lending their own drill to a stranger." },
-      { speaker: "Yalın", text: "Trust was the problem, not the app. So we changed the model: instead of neighbors, we worked with hardware stores that rent out tools." },
-      { speaker: "Yalın", text: "That version took off within three months. We now work with forty stores in four cities." },
-      { speaker: "Yalın", text: "The lesson I took from it: an idea can be popular and still not be used. Talk to the people who will actually have to do the sharing." },
+      { speaker: "Eddie", text: "Two years ago we launched an app that helped neighbors share tools. Drills, ladders, garden equipment. We were sure it would catch on." },
+      { speaker: "Eddie", text: "We had money at our disposal, a good team and a city that loved the idea. Six hundred people signed up in the first week." },
+      { speaker: "Eddie", text: "Then almost nobody borrowed anything. For months we grappled with why the idea did not catch on." },
+      { speaker: "Eddie", text: "Our investors wanted quick changes. I asked them to let it play out before they called it damage control, and to their credit they did." },
+      { speaker: "Eddie", text: "What we finally found was simple. People liked the idea of sharing far more than they liked lending their own drill to a stranger." },
+      { speaker: "Eddie", text: "Trust was the problem, not the app. So we changed the model: instead of neighbors, we worked with hardware stores that rent out tools." },
+      { speaker: "Eddie", text: "That version took off within three months. We now work with forty stores in four cities." },
+      { speaker: "Eddie", text: "The lesson I took from it: an idea can be popular and still not be used. Talk to the people who will actually have to do the sharing." },
     ],
     questions: [
       {

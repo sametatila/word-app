@@ -98,7 +98,7 @@ export const a1U21: SkillExercise[] = [
     unit: 21,
     title: "Krank im Bett",
     genre: "message",
-    intro: "Ali hasta. Arkadaşına yazıyor.",
+    intro: "Moritz hasta. Arkadaşına yazıyor.",
     gloss: [
       { de: "wehtun", tr: "ağrımak", en: "to hurt" },
       { de: "das Fieber", tr: "ateş", en: "fever" },
@@ -107,16 +107,16 @@ export const a1U21: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo Max,\n\nheute kann ich leider nicht zum Sport kommen. Ich bin krank. Mein Kopf tut weh und der Hals auch. Ich habe Fieber und liege im Bett.\n\nMeine Schwester kümmert sich um mich. Sie kocht und kauft Tee. Sehr nett!\n\nMorgen habe ich einen Termin beim Arzt — um 9 Uhr. Hoffentlich ist es nichts Schlimmes.\n\nDiesmal klappt es leider nicht. Aber am Mittwoch bin ich sicher wieder da.\n\nAli",
+      "Hallo Max,\n\nheute kann ich leider nicht zum Sport kommen. Ich bin krank. Mein Kopf tut weh und der Hals auch. Ich habe Fieber und liege im Bett.\n\nMeine Schwester kümmert sich um mich. Sie kocht und kauft Tee. Sehr nett!\n\nMorgen habe ich einen Termin beim Arzt — um 9 Uhr. Hoffentlich ist es nichts Schlimmes.\n\nDiesmal klappt es leider nicht. Aber am Mittwoch bin ich sicher wieder da.\n\nMoritz",
     questions: [
       {
-        text: "Was tut Ali weh?",
+        text: "Was tut Moritz weh?",
         options: ["der Kopf und der Hals", "der Bauch und der Rücken", "der Arm"],
         answer: 0,
         explain: "„Mein Kopf tut weh und der Hals auch.“",
       },
       {
-        text: "Wer kümmert sich um Ali?",
+        text: "Wer kümmert sich um Moritz?",
         options: ["seine Schwester", "seine Mutter", "sein Freund Max"],
         answer: 0,
         explain: "„Meine Schwester kümmert sich um mich.“",
@@ -130,7 +130,7 @@ export const a1U21: SkillExercise[] = [
         explain: "„Morgen habe ich einen Termin beim Arzt — um 9 Uhr.“",
       },
       {
-        text: "Wann will Ali wieder zum Sport kommen?",
+        text: "Wann will Moritz wieder zum Sport kommen?",
         options: ["am Mittwoch", "morgen", "am Wochenende"],
         answer: 0,
         explain: "„Aber am Mittwoch bin ich sicher wieder da.“",
@@ -161,11 +161,11 @@ export const a1U21: SkillExercise[] = [
     minutes: 2,
     segments: [
       { speaker: "Arzthelferin", text: "Praxis Dr. Weber, guten Tag." },
-      { speaker: "Elif", text: "Guten Tag, hier ist Elif Yilmaz. Ich brauche einen Termin." },
+      { speaker: "Paula", text: "Guten Tag, hier ist Paula Lutz. Ich brauche einen Termin." },
       { speaker: "Arzthelferin", text: "Gern. Was fehlt Ihnen denn?" },
-      { speaker: "Elif", text: "Mein Bauch tut seit zwei Tagen weh. Es ist sehr dringend." },
+      { speaker: "Paula", text: "Mein Bauch tut seit zwei Tagen weh. Es ist sehr dringend." },
       { speaker: "Arzthelferin", text: "Dann kommen Sie heute um 16 Uhr. Geht das?" },
-      { speaker: "Elif", text: "Ja, das ist möglich. Vielen Dank!" },
+      { speaker: "Paula", text: "Ja, das ist möglich. Vielen Dank!" },
     ],
     questions: [
       {
@@ -176,14 +176,14 @@ export const a1U21: SkillExercise[] = [
           "Kelimesi kelimesine „size ne eksik?“ — doktorun standart açılış sorusu, „neyiniz var?“ demektir.",
       },
       {
-        text: "Wo hat Elif Schmerzen?",
+        text: "Wo hat Paula Schmerzen?",
         options: ["im Bauch", "im Kopf", "im Rücken"],
         answer: 0,
         explain: "„Mein Bauch tut seit zwei Tagen weh.“",
       },
       {
         kind: "gapfill",
-        text: "Elif bekommt einen Termin um ___ Uhr.",
+        text: "Paula bekommt einen Termin um ___ Uhr.",
         options: [],
         answer: 0,
         accept: ["16"],
@@ -340,7 +340,7 @@ export const a1U21: SkillExercise[] = [
           { de: "Ich habe einen Termin beim Arzt.", tr: "Doktor randevum var.", en: "I have a doctor's appointment." },
         ],
         sample:
-          "Guten Morgen Frau Berger,\n\nleider kann ich morgen nicht kommen. Ich bin krank. Mein Hals tut weh und ich habe Fieber. Seit heute Morgen liege ich im Bett.\n\nMorgen um 16 Uhr habe ich einen Termin beim Arzt. Hoffentlich ist es nichts Schlimmes.\n\nAm Mittwoch bin ich sicher wieder da. Es tut mir leid!\n\nViele Grüße\nElif Yılmaz",
+          "Guten Morgen Frau Berger,\n\nleider kann ich morgen nicht kommen. Ich bin krank. Mein Hals tut weh und ich habe Fieber. Seit heute Morgen liege ich im Bett.\n\nMorgen um 16 Uhr habe ich einen Termin beim Arzt. Hoffentlich ist es nichts Schlimmes.\n\nAm Mittwoch bin ich sicher wieder da. Es tut mir leid!\n\nViele Grüße\nPaula Lutz",
       },
     ],
   },

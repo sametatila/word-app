@@ -52,7 +52,7 @@ export const A1_12: MockPaper = {
               genre: "E-Mail",
               genreTr: "E-posta",
               title: "Von: t.berisha@mail.de",
-              body: `Hallo Yusuf,
+              body: `Hallo Fabian,
 
 am Sonntag komme ich nach Leipzig. Mein Zug ist um 9:12 Uhr in Halle.
 
@@ -346,9 +346,9 @@ Fahrkarten bereithalten.`,
               situation: "Bir yolcu peronu soruyor.",
               plays: 2,
               segments: [
-                { speaker: "Herr Yildiz", text: "Fährt der Zug nach Erfurt von Gleis sieben?" },
+                { speaker: "Herr Fink", text: "Fährt der Zug nach Erfurt von Gleis sieben?" },
                 { speaker: "Mitarbeiterin", text: "Heute von Gleis siebzehn. Gleis sieben ist gesperrt." },
-                { speaker: "Herr Yildiz", text: "Danke, dann gehe ich rüber." },
+                { speaker: "Herr Fink", text: "Danke, dann gehe ich rüber." },
               ],
             },
             {
@@ -372,9 +372,9 @@ Fahrkarten bereithalten.`,
               situation: "Biri karşılama saatini soruyor.",
               plays: 2,
               segments: [
-                { speaker: "Yusuf", text: "Wann bist du da?" },
+                { speaker: "Fabian", text: "Wann bist du da?" },
                 { speaker: "Teuta", text: "Um zehn nach zehn. Der Zug hat fünf Minuten Verspätung." },
-                { speaker: "Yusuf", text: "Gut, ich warte am Ausgang." },
+                { speaker: "Fabian", text: "Gut, ich warte am Ausgang." },
               ],
             },
             {
@@ -607,7 +607,7 @@ Fahrkarten bereithalten.`,
               plays: 2,
               segments: [
                 {
-                  text: "Hallo Teuta, hier ist Yusuf. Ich warte nicht am Ausgang, sondern beim Bäcker in der Halle. Da ist es warm. Bis gleich.",
+                  text: "Hallo Teuta, hier ist Fabian. Ich warte nicht am Ausgang, sondern beim Bäcker in der Halle. Da ist es warm. Bis gleich.",
                 },
               ],
             },
@@ -633,7 +633,7 @@ Fahrkarten bereithalten.`,
               plays: 2,
               segments: [
                 {
-                  text: "Hallo Herr Yildiz, hier ist der Sprachkurs. Am Samstag fahren wir nach Weimar. Treffpunkt ist um acht Uhr am Gleis drei. Bitte kommen Sie pünktlich.",
+                  text: "Hallo Herr Fink, hier ist der Sprachkurs. Am Samstag fahren wir nach Weimar. Treffpunkt ist um acht Uhr am Gleis drei. Bitte kommen Sie pünktlich.",
                 },
               ],
             },
@@ -668,7 +668,7 @@ Fahrkarten bereithalten.`,
               id: "de-a1-12-h3-12",
               no: 12,
               ref: "m2",
-              text: "Wo wartet Yusuf?",
+              text: "Wo wartet Fabian?",
               options: ["Beim Bäcker.", "Am Ausgang.", "Vor dem Bahnhof."],
               answer: 0,
               explain:

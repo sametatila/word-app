@@ -332,9 +332,9 @@ export const b1U15: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Staj raporu künyesini doldur.",
-        facts: "Stajyer: Nuri Öz; işletme: küçük bir atölye; süre: 4 hafta; sorumlu: bir meslektaş; ilk görev: izlemek.",
+        facts: "Stajyer: Anton Naumann; işletme: küçük bir atölye; süre: 4 hafta; sorumlu: bir meslektaş; ilk görev: izlemek.",
         fields: [
-          { label: "Praktikant", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Praktikant", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Betrieb", answer: "kleine Werkstatt", accept: ["eine Werkstatt", "Werkstatt"] },
           { label: "Dauer", answer: "4 Wochen", accept: ["vier Wochen"] },
           { label: "Erste Aufgabe", answer: "zusehen", accept: ["beobachten", "nur zusehen"] },
@@ -391,7 +391,7 @@ export const b1U15: SkillExercise[] = [
         ],
         minWords: 70,
         sample:
-          "Hallo Aylin,\n\n" +
+          "Hallo Helene,\n\n" +
           "in der Abrechnung von gestern sind zwei Zahlen falsch — bei Nummer vier " +
           "und Nummer neun. Ich weise dich darauf hin, damit du es korrigieren " +
           "kannst, bevor sie weitergeht.\n\n" +
@@ -402,7 +402,7 @@ export const b1U15: SkillExercise[] = [
           "direkt danach. Das erleichtert die Sache wirklich.\n\n" +
           "Wenn du willst, schaue ich beim nächsten Mal kurz mit drüber. " +
           "Sag einfach Bescheid.\n\n" +
-          "Viele Grüße\nNuri",
+          "Viele Grüße\nAnton",
         phrases: [
           { de: "Ich weise dich darauf hin, damit …", tr: "Düzeltebilesin diye söylüyorum …", en: "I'm pointing it out so that …" },
           { de: "Das ist kein großes Problem.", tr: "Büyük bir sorun değil.", en: "That's not a big problem." },

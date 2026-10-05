@@ -339,7 +339,7 @@ Solange das so bleibt, ist der Vorwurf an die Kundschaft billig — im doppelten
               kind: "match",
               id: "de-b1-06-l3-13",
               no: 13,
-              text: "Herr Pehlivan hat einen kaputten Toaster und möchte lernen, ihn selbst zu öffnen.",
+              text: "Herr Quast hat einen kaputten Toaster und möchte lernen, ihn selbst zu öffnen.",
               answer: "a",
               explain:
                 "(a) tam bunu yapıyor: \"Wir helfen beim Reparieren, wir reparieren nicht für Sie\". Öğrenme isteği bu ilanla eşleşen ölçüt.",
@@ -1354,7 +1354,7 @@ Die Erstattung von 89,90 Euro habe ich bis heute nicht erhalten.
 Ich bitte Sie, den Betrag bis zum 15. April zu überweisen.
 
 Mit freundlichen Grüßen
-Ferit Alkan`,
+Jürgen Paulsen`,
             criteria: [
               "Sipariş ve iade somut tanımlanmış mı? (numara, tarih, tutar)",
               "Sorun açık mı — kargonun ulaştığı ama paranın gelmediği yazılmış mı?",

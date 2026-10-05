@@ -359,7 +359,7 @@ Unsere Antwort ist einfach: Einmal im Monat gibt es nach dem Training Essen, und
               kind: "match",
               id: "de-b1-04-l3-15",
               no: 15,
-              text: "Frau Demir ist in Rente und sucht am Vormittag Gesellschaft und Gespräche über Bücher.",
+              text: "Frau Böhm ist in Rente und sucht am Vormittag Gesellschaft und Gespräche über Bücher.",
               answer: "c",
               explain:
                 "(c) ayın ilk salısı 10–12 arası, yani sabah, ve konusu kitap. Sabah saatinde olan tek öteki ilan (j) koşu grubu, o da kitaplarla ilgili değil.",
@@ -422,13 +422,13 @@ Unsere Antwort ist einfach: Einmal im Monat gibt es nach dem Training Essen, und
 
 Frau Ackermann: Meine Tochter hat Diabetes und liest ihre Werte am Handy ab. Jedes Mal, wenn ein Verbot kommt, muss ich das erklären, und jedes Mal fällt jemandem eine Ausnahme ein, die nicht funktioniert. Regelt erst die Ausnahmen, dann sprecht über Verbote.
 
-Kenan Y.: Ich bin selbst noch Schüler. Klar nervt es, wenn im Unterricht jemand am Handy hängt. Aber ein Verbot bringt nur Kontrolle und Streit. In meiner Klasse haben wir eine Regel gemacht: Handys in die Box, freiwillig. Das läuft seit einem Jahr besser als jedes Verbot.
+Henning Y.: Ich bin selbst noch Schüler. Klar nervt es, wenn im Unterricht jemand am Handy hängt. Aber ein Verbot bringt nur Kontrolle und Streit. In meiner Klasse haben wir eine Regel gemacht: Handys in die Box, freiwillig. Das läuft seit einem Jahr besser als jedes Verbot.
 
 Herr Löffler: Man hört immer, dass Verbote nichts bringen. Die Zahlen sagen etwas anderes: An unserer Schule sind die Konflikte in den Pausen seit dem Verbot deutlich zurückgegangen. Ich verstehe die Einwände, aber ich lasse mir das Ergebnis nicht wegreden.
 
 Sina B.: Ich habe zuerst applaudiert, als es hieß, die Geräte kommen weg. Dann ist meinem Sohn auf dem Heimweg etwas passiert und er konnte niemanden erreichen, weil das Handy noch im Schrank lag. Seitdem finde ich: nicht so.
 
-Frau Dr. Ünal: Als Kinderärztin sehe ich täglich Kinder, die nachts nicht schlafen, weil sie um zwei Uhr noch Nachrichten lesen. Das Problem beginnt zu Hause, nicht in der Schule. Wer glaubt, ein Schulverbot löse das, verschiebt die Verantwortung nur.
+Frau Dr. Kallweit: Als Kinderärztin sehe ich täglich Kinder, die nachts nicht schlafen, weil sie um zwei Uhr noch Nachrichten lesen. Das Problem beginnt zu Hause, nicht in der Schule. Wer glaubt, ein Schulverbot löse das, verschiebt die Verantwortung nur.
 
 Bernd K.: Ich bin Hausmeister und sammle die Geräte am Morgen ein. Ehrlich: Es ist Arbeit, und am Anfang habe ich geflucht. Aber der Lärm im Haus ist ein anderer geworden, und die Kinder grüßen wieder. Für die zwanzig Minuten am Tag mache ich das gern weiter.`,
               gloss: [
@@ -467,7 +467,7 @@ Bernd K.: Ich bin Hausmeister und sammle die Geräte am Morgen ein. Ehrlich: Es 
               id: "de-b1-04-l4-22",
               no: 22,
               ref: "f1",
-              text: "Kenan Y.",
+              text: "Henning Y.",
               options: ["Dagegen.", "Dafür."],
               answer: 0,
               explain:
@@ -500,7 +500,7 @@ Bernd K.: Ich bin Hausmeister und sammle die Geräte am Morgen ein. Ehrlich: Es 
               id: "de-b1-04-l4-25",
               no: 25,
               ref: "f1",
-              text: "Frau Dr. Ünal",
+              text: "Frau Dr. Kallweit",
               options: ["Dagegen.", "Dafür."],
               answer: 0,
               explain:
@@ -952,31 +952,31 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               plays: 2,
               segments: [
                 {
-                  speaker: "Herr Doğan",
+                  speaker: "Herr Henke",
                   text: "Guten Abend. Ich werde heute nicht sagen, wie viele Minuten Bildschirmzeit richtig sind. Diese Zahl gibt es nicht, und wer sie Ihnen nennt, verkauft Ihnen etwas.",
                 },
                 {
-                  speaker: "Herr Doğan",
+                  speaker: "Herr Henke",
                   text: "Wichtiger als die Dauer ist die Frage, was das Gerät ersetzt. Eine Stunde Video statt einer Stunde Langeweile ist etwas anderes als eine Stunde Video statt einer Stunde Schlaf.",
                 },
                 {
-                  speaker: "Herr Doğan",
+                  speaker: "Herr Henke",
                   text: "Wir haben in unserer Beratung 600 Familien gefragt. Bei zwei Dritteln gab es Streit um die Geräte. In fast allen diesen Familien gab es keine feste Regel, sondern eine Verhandlung jeden Tag neu.",
                 },
                 {
-                  speaker: "Herr Doğan",
+                  speaker: "Herr Henke",
                   text: "Feste Regeln wirken, aber nur wenn sie für alle gelten. Wenn der Vater beim Essen Nachrichten liest, hilft keine Regel für das Kind.",
                 },
                 {
-                  speaker: "Herr Doğan",
+                  speaker: "Herr Henke",
                   text: "Zum Alter: Vor drei Jahren empfahlen wir, Kindern erst ab vierzehn ein eigenes Smartphone zu geben. Heute sagen wir das nicht mehr so, weil die Kinder ohne Gerät aus den Klassengruppen fallen. Wir raten stattdessen zu einem Gerät mit klaren Grenzen.",
                 },
                 {
-                  speaker: "Herr Doğan",
+                  speaker: "Herr Henke",
                   text: "Ein letzter Punkt: Kontrolle per App funktioniert kurzfristig. Nach unserer Erfahrung finden Jugendliche den Weg daran vorbei im Schnitt in weniger als vier Wochen. Gespräche halten länger als Sperren.",
                 },
                 {
-                  speaker: "Herr Doğan",
+                  speaker: "Herr Henke",
                   text: "Ich lasse Ihnen einen Zettel da mit drei Fragen, die Sie zu Hause stellen können. Antworten stehen nicht darauf, das wäre auch falsch.",
                 },
               ],
@@ -988,7 +988,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               id: "de-b1-04-h3-16",
               no: 16,
               ref: "v1",
-              text: "Herr Dogan nennt eine feste Zahl für die tägliche Bildschirmzeit.",
+              text: "Herr Henke nennt eine feste Zahl für die tägliche Bildschirmzeit.",
               answer: false,
               explain:
                 "Sunumun ilk cümlesi bunu reddediyor: \"Diese Zahl gibt es nicht, und wer sie Ihnen nennt, verkauft Ihnen etwas\".",
@@ -1272,7 +1272,7 @@ es tut mir wirklich leid, aber ich kann am Freitag nicht zum Konzert kommen.
 
 Meine Kollegin ist krank geworden und ich muss ihre Schicht übernehmen. Ich habe versucht zu tauschen, aber im Moment ist niemand da.
 
-Meine Karte kannst du gern weitergeben. Wenn du willst, frag Elif — sie mag die Band auch. Das Geld brauchst du mir nicht zurückzugeben.
+Meine Karte kannst du gern weitergeben. Wenn du willst, frag Paula — sie mag die Band auch. Das Geld brauchst du mir nicht zurückzugeben.
 
 Wollen wir stattdessen am Sonntag zusammen essen gehen? Dann erzählst du mir, wie es war.
 
@@ -1345,7 +1345,7 @@ ich bin für den Fotokurs F-214 im Frühjahrssemester angemeldet und habe 180 Eu
 Ich bitte Sie, mir die Kosten für acht Termine zu erstatten oder einen Ersatzkurs anzubieten.
 
 Mit freundlichen Grüßen
-Kaan Aslan`,
+Ingo Menzel`,
             criteria: [
               "Kurs somut tanımlanmış mı? (ad, numara, dönem, ödenen tutar)",
               "Kaç dersin yapıldığı ve kaçının yapılmadığı açık mı?",

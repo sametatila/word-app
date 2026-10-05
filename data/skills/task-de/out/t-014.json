@@ -300,18 +300,18 @@
   "de": "Die Farbe steht VOR dem Substantiv: a red car, dieselbe Reihenfolge wie im Deutschen. Aber das Adjektiv wird nie gebeugt: „ein rotes Auto“ hat eine Endung, „a red car“ nicht."
  },
  {
-  "tr": "Kaan'ın saydığı sıra: doğru sıraya koy.",
+  "tr": "Liam'ın saydığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge, in der Kaan zählt: Bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge, in der Liam zählt: Bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Nil'in anlattığı sıra: doğru sıraya koy.",
+  "tr": "Katie'nin anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in der Erzählung von Nil: Bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in der Erzählung von Katie: Bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Ali'nin anlattığı sıra: doğru sıraya koy.",
+  "tr": "Harry'nin anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in der Erzählung von Ali: Bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in der Erzählung von Harry: Bring sie in die richtige Ordnung."
  }
 ]

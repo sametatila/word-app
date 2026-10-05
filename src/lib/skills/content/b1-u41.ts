@@ -333,9 +333,9 @@ export const b1U41: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Dil kartını doldur.",
-        facts: "Kişi: Sedef Aydın; ana dil: Türkçe; ikinci dil: Almanca; duygular için: Türkçe; iş için: Almanca.",
+        facts: "Kişi: Amelie Haas; ana dil: Türkçe; ikinci dil: Almanca; duygular için: Türkçe; iş için: Almanca.",
         fields: [
-          { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
+          { label: "Name", answer: "Amelie Haas", accept: ["Amelie", "Haas"] },
           { label: "Muttersprache", answer: "Türkisch", accept: ["türkisch"] },
           { label: "Zweitsprache", answer: "Deutsch", accept: ["deutsch"] },
           { label: "Für Gefühle", answer: "Türkisch", accept: ["auf Türkisch", "die Muttersprache"] },

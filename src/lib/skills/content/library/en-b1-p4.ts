@@ -38,7 +38,7 @@ export const enB1P4: SkillExercise[] = [
       "Mrs. Ferreira opened the meeting and explained that the store had closed in November and that the owner " +
       "did not want to sell to another store. She said that the building was for sale for one hundred and ten " +
       "thousand euros.\n\n" +
-      "Bahar Kaya, who runs the bakery van, said that she brought bread to the village three days a week and " +
+      "Gwen Ellis, who runs the bakery van, said that she brought bread to the village three days a week and " +
       "that she could add two more days if there was somewhere to stop. She asked whether the group had thought " +
       "about a smaller solution first.\n\n" +
       "Two members disagreed. Mr. Lang said that a van was not a store, because you could not go there when you " +
@@ -47,7 +47,7 @@ export const enB1P4: SkillExercise[] = [
       "The vote: thirty-three people said that they would put in five hundred euros each; six were against; " +
       "two did not vote.\n\n" +
       "Decisions. First, a working group of five people will ask the bank about a loan before the end of April. " +
-      "Second, Bahar Kaya will try two extra days from May. These two are not alternatives.",
+      "Second, Gwen Ellis will try two extra days from May. These two are not alternatives.",
     questions: [
       {
         text: "What is this text?",
@@ -60,7 +60,7 @@ export const enB1P4: SkillExercise[] = [
         explain: "Başlık ve alt satır bunu söylüyor: „For members who could not come.“",
       },
       {
-        text: "What did Bahar Kaya offer?",
+        text: "What did Gwen Ellis offer?",
         options: [
           "two extra days with the bread van",
           "to buy the building herself",
@@ -127,14 +127,14 @@ export const enB1P4: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Chair", text: "Point four: the coach. Elif, you wrote the proposal. Two minutes, please." },
-      { speaker: "Elif", text: "Short version. We have ninety children and four volunteer trainers. Two of them told me in January that they would stop in the summer. If we do nothing, we close two groups." },
-      { speaker: "Elif", text: "A part-time coach costs about nine hundred euros a month. That is eight euros more per child per month." },
+      { speaker: "Chair", text: "Point four: the coach. Holly, you wrote the proposal. Two minutes, please." },
+      { speaker: "Holly", text: "Short version. We have ninety children and four volunteer trainers. Two of them told me in January that they would stop in the summer. If we do nothing, we close two groups." },
+      { speaker: "Holly", text: "A part-time coach costs about nine hundred euros a month. That is eight euros more per child per month." },
       { speaker: "Chair", text: "Ruben, you said last week that you were against it." },
       { speaker: "Ruben", text: "I said I was against the way it was presented, not against a coach. We were told that the money was there. Then we heard that the roof also needs work. I want one paper with both numbers on it." },
-      { speaker: "Elif", text: "That is fair. I can do that by Friday." },
-      { speaker: "Tuana", text: "Can I say something practical? Eight euros is nothing for me and a lot for three families I know. If we do this, we need a quiet way for them to pay less." },
-      { speaker: "Chair", text: "Noted. So: Elif brings one paper with the coach and the roof. Tuana writes two lines about reduced fees. We decide on the ninth. Anybody against?" },
+      { speaker: "Holly", text: "That is fair. I can do that by Friday." },
+      { speaker: "Robyn", text: "Can I say something practical? Eight euros is nothing for me and a lot for three families I know. If we do this, we need a quiet way for them to pay less." },
+      { speaker: "Chair", text: "Noted. So: Holly brings one paper with the coach and the roof. Robyn writes two lines about reduced fees. We decide on the ninth. Anybody against?" },
       { speaker: "Ruben", text: "Not against. Just tired of deciding twice." },
     ],
     questions: [
@@ -142,7 +142,7 @@ export const enB1P4: SkillExercise[] = [
         text: "What is point four of the meeting about?",
         options: ["hiring a paid coach", "repairing the roof", "the number of children in the club"],
         answer: 0,
-        explain: "„Point four: the coach. Elif, you wrote the proposal.“",
+        explain: "„Point four: the coach. Holly, you wrote the proposal.“",
       },
       {
         text: "What did Ruben say he was against?",
@@ -159,7 +159,7 @@ export const enB1P4: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What will Tuana write?",
+        text: "What will Robyn write?",
         options: [],
         answer: 0,
         accept: [
@@ -168,7 +168,7 @@ export const enB1P4: SkillExercise[] = [
           "reduced fees",
           "two lines on lower fees",
         ],
-        explain: "„Tuana writes two lines about reduced fees.“",
+        explain: "„Robyn writes two lines about reduced fees.“",
       },
       {
         kind: "dictation",
@@ -248,7 +248,7 @@ export const enB1P4: SkillExercise[] = [
           "before. Two points stayed open. He could not say whether the windows in the back rooms would be " +
           "changed at the same time, and he did not know who I should call if there is a problem on the weekend. " +
           "Could you send me those two answers in writing before May 8? If any of the above is not " +
-          "correct, please tell me. Sincerely, Emre Bulut",
+          "correct, please tell me. Sincerely, Owen Sutton",
       },
     ],
   },

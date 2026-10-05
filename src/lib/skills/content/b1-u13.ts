@@ -329,10 +329,10 @@ export const b1U13: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Vekâlet künyesini doldur.",
-        facts: "Yetki veren: Leyla Kaya; temsilci: Nuri Öz; iş: kurumdaki randevu; tarih: 14 Mart; ek: kimlik kopyası.",
+        facts: "Yetki veren: Johanna Arnold; temsilci: Anton Naumann; iş: kurumdaki randevu; tarih: 14 Mart; ek: kimlik kopyası.",
         fields: [
-          { label: "Vollmachtgeberin", answer: "Leyla Kaya", accept: ["Leyla", "Kaya"] },
-          { label: "Vertreter", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Vollmachtgeberin", answer: "Johanna Arnold", accept: ["Johanna", "Arnold"] },
+          { label: "Vertreter", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Wofür", answer: "Termin beim Amt", accept: ["der Termin beim Amt", "Termin"] },
           { label: "Datum", answer: "14. März", accept: ["14.03.", "14.3.", "vierzehnter März", "am 14. März"] },
         ],

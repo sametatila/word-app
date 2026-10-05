@@ -105,18 +105,18 @@ export const enA1U17: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Kaan: Can you help me? This box is very heavy.\n" +
-      "Ela: Of course. What is in it?\n" +
-      "Kaan: Books. Twenty books in one box — that was not a good idea.\n" +
-      "Ela: I can carry it with you. One, two, three, up!\n" +
-      "Kaan: Thank you. Please put it down here, next to the door.\n" +
-      "Ela: Is the new apartment far?\n" +
-      "Kaan: No, it is on this street. But it is on the fourth floor and the elevator doesn't work.\n" +
-      "Ela: The stairs then! Is the box hard or soft?\n" +
-      "Kaan: Hard. Don't push it — carry it.\n" +
-      "Ela: I understand. How much is the rent there?\n" +
-      "Kaan: Eight hundred euros a month. Water is included, electricity is not.\n" +
-      "Ela: That is expensive. But the apartment is clean and new.",
+      "Liam: Can you help me? This box is very heavy.\n" +
+      "Lucy: Of course. What is in it?\n" +
+      "Liam: Books. Twenty books in one box — that was not a good idea.\n" +
+      "Lucy: I can carry it with you. One, two, three, up!\n" +
+      "Liam: Thank you. Please put it down here, next to the door.\n" +
+      "Lucy: Is the new apartment far?\n" +
+      "Liam: No, it is on this street. But it is on the fourth floor and the elevator doesn't work.\n" +
+      "Lucy: The stairs then! Is the box hard or soft?\n" +
+      "Liam: Hard. Don't push it — carry it.\n" +
+      "Lucy: I understand. How much is the rent there?\n" +
+      "Liam: Eight hundred euros a month. Water is included, electricity is not.\n" +
+      "Lucy: That is expensive. But the apartment is clean and new.",
     questions: [
       {
         text: "What is in the box?",
@@ -253,7 +253,7 @@ export const enA1U17: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 17,
-    title: "Deniz's bills",
+    title: "Charlie's bills",
     genre: "monologue",
     intro: "Kira ve faturalar anlatılıyor. Hangi fatura ne zaman, ne kadar?",
     gloss: [
@@ -263,12 +263,12 @@ export const enA1U17: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Deniz", text: "I pay the rent every month: six hundred euros for two rooms." },
-      { speaker: "Deniz", text: "Water is included, but electricity is not. That is another bill." },
-      { speaker: "Deniz", text: "The electricity bill comes every three months. It is about ninety euros." },
-      { speaker: "Deniz", text: "I pay at the bank. Sometimes I get a paper bill, sometimes only an email." },
-      { speaker: "Deniz", text: "Each person in the building pays for cleaning the stairs. That is ten euros a month." },
-      { speaker: "Deniz", text: "My apartment is not expensive, and the neighbors are quiet. I am happy here." },
+      { speaker: "Charlie", text: "I pay the rent every month: six hundred euros for two rooms." },
+      { speaker: "Charlie", text: "Water is included, but electricity is not. That is another bill." },
+      { speaker: "Charlie", text: "The electricity bill comes every three months. It is about ninety euros." },
+      { speaker: "Charlie", text: "I pay at the bank. Sometimes I get a paper bill, sometimes only an email." },
+      { speaker: "Charlie", text: "Each person in the building pays for cleaning the stairs. That is ten euros a month." },
+      { speaker: "Charlie", text: "My apartment is not expensive, and the neighbors are quiet. I am happy here." },
     ],
     questions: [
       {
@@ -292,7 +292,7 @@ export const enA1U17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Deniz pays at the ___.",
+        text: "Charlie pays at the ___.",
         options: [],
         answer: 0,
         accept: ["bank"],
@@ -300,7 +300,7 @@ export const enA1U17: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Deniz'in saydığı sıra: doğru sıraya koy.",
+        text: "Charlie'nin saydığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [

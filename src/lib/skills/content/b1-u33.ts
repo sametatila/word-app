@@ -335,9 +335,9 @@ export const b1U33: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Yaralanma kartını doldur.",
-        facts: "Kişi: Nuri Öz; olay: merdivende düşme; yaralanan: diz; ek şikâyet: omuz; tedavi: yara bandı, iğne yok.",
+        facts: "Kişi: Anton Naumann; olay: merdivende düşme; yaralanan: diz; ek şikâyet: omuz; tedavi: yara bandı, iğne yok.",
         fields: [
-          { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Name", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Vorfall", answer: "Fall auf der Treppe", accept: ["gefallen", "Treppe"] },
           { label: "Verletzt", answer: "das Knie", accept: ["Knie", "am Knie"] },
           { label: "Behandlung", answer: "ein Pflaster", accept: ["Pflaster", "keine Spritze"] },

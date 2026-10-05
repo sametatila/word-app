@@ -208,7 +208,7 @@ export const deA1P20: SkillExercise[] = [
           "Hallo, ich suche eine Mitfahrgelegenheit von Bremen nach Hamburg. Ich möchte am Freitagnachmittag fahren, " +
           "zurück am Sonntagabend. Wir sind zwei Personen, meine Schwester und ich. Wir haben nur zwei kleine Rucksäcke. " +
           "Ich bezahle gern das Benzin, zum Beispiel zehn Euro pro Person. Wir sind freundlich und rauchen nicht. " +
-          "Bitte ruf mich an: 0152 34 56 78. Danke, Burak",
+          "Bitte ruf mich an: 0152 34 56 78. Danke, Norbert",
       },
     ],
   },

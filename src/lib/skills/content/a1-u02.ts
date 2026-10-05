@@ -95,7 +95,7 @@ export const a1U02: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Nadia: Hallo! Ich heiße Nadia und komme aus Marokko. Ich wohne in Hamburg. Ich bin Ärztin. Ich spreche Arabisch, Französisch und ein bisschen Deutsch.\n\nTom: Ich bin Tom. Ich komme aus England und spreche Englisch und Deutsch. Ich arbeite als Verkäufer in einer Firma in Köln.\n\nElif: Ich heiße Elif. Ich komme aus der Türkei und wohne in Wien. Ich spreche Türkisch und Deutsch. Im Moment bin ich arbeitslos, aber ich lerne viel und schreibe jeden Tag Bewerbungen.",
+      "Nadia: Hallo! Ich heiße Nadia und komme aus Marokko. Ich wohne in Hamburg. Ich bin Ärztin. Ich spreche Arabisch, Französisch und ein bisschen Deutsch.\n\nTom: Ich bin Tom. Ich komme aus England und spreche Englisch und Deutsch. Ich arbeite als Verkäufer in einer Firma in Köln.\n\nPaula: Ich heiße Paula. Ich komme aus der Türkei und wohne in Wien. Ich spreche Türkisch und Deutsch. Im Moment bin ich arbeitslos, aber ich lerne viel und schreibe jeden Tag Bewerbungen.",
     questions: [
       {
         text: "Was ist Nadia von Beruf?",
@@ -105,21 +105,21 @@ export const a1U02: SkillExercise[] = [
       },
       {
         text: "Wer arbeitet in einer Firma?",
-        options: ["Tom", "Nadia", "Elif"],
+        options: ["Tom", "Nadia", "Paula"],
         answer: 0,
         explain: "„Ich arbeite als Verkäufer in einer Firma in Köln.“ — Tom.",
       },
       {
-        text: "Richtig oder falsch? Elif ist im Moment arbeitslos.",
+        text: "Richtig oder falsch? Paula ist im Moment arbeitslos.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "Doğru: „Im Moment bin ich arbeitslos.“ — şu an işsiz.",
       },
       {
         text: "Wer spricht nur ein bisschen Deutsch?",
-        options: ["Nadia", "Tom", "Elif"],
+        options: ["Nadia", "Tom", "Paula"],
         answer: 0,
-        explain: "Nadia „ein bisschen Deutsch“ diyor. Tom ve Elif Almanca konuştuklarını sınırlama koymadan söylüyor.",
+        explain: "Nadia „ein bisschen Deutsch“ diyor. Tom ve Paula Almanca konuştuklarını sınırlama koymadan söylüyor.",
       },
           {
         kind: "gapfill",

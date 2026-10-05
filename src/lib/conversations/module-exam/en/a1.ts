@@ -26,8 +26,8 @@ import type { ModuleExamPlan } from "../types";
  * PEDAGOJİK KISIT — Almanca kardeşiyle birebir aynı: her bölüm modülün KENDİ
  * sahnesinde geçiyor ve metin modülün o noktaya kadar öğretmediği bir yapıyı
  * TAŞIMIYOR. A1.1 kâğıdı `am/is/are`, soru kelimeleri, evet-hayır sorusu,
- * sayılar ve harflemeyle sınırlı: "Where does Elif live?" gibi yardımcı
- * fiilli bir soru A1.4'te geliyor, bu yüzden aynı bilgi "Which city is Elif
+ * sayılar ve harflemeyle sınırlı: "Where does Holly live?" gibi yardımcı
+ * fiilli bir soru A1.4'te geliyor, bu yüzden aynı bilgi "Which city is Holly
  * in now?" diye soruluyor. A1.2'de `can` yok (A1.6'da geliyor), A1.3'e kadar
  * emir kipi yok, geçmiş zaman yalnız A1.10'da.
  *
@@ -62,32 +62,32 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       situation: "Dil kursunun ilk günü. İki kursiyer tanışıyor.",
       turns: [
         { speaker: "Marco", de: "Hello! I'm Marco. What's your name?", tr: "Merhaba! Ben Marco. Adın ne?" },
-        { speaker: "Elif", de: "My name is Elif. I'm very happy to meet you!", tr: "Benim adım Elif. Tanıştığımıza çok sevindim!" },
-        { speaker: "Marco", de: "Where are you from, Elif?", tr: "Nerelisin Elif?" },
-        { speaker: "Elif", de: "I'm from Türkiye. Now I live in Boston.", tr: "Türkiyeliyim. Şimdi Boston'da oturuyorum." },
+        { speaker: "Holly", de: "My name is Holly. I'm very happy to meet you!", tr: "Benim adım Holly. Tanıştığımıza çok sevindim!" },
+        { speaker: "Marco", de: "Where are you from, Holly?", tr: "Nerelisin Holly?" },
+        { speaker: "Holly", de: "I'm from Türkiye. Now I live in Boston.", tr: "Türkiyeliyim. Şimdi Boston'da oturuyorum." },
         { speaker: "Marco", de: "Do you speak English?", tr: "İngilizce konuşuyor musun?" },
-        { speaker: "Elif", de: "I speak a little English. I'm a teacher and I work in a school.", tr: "Biraz İngilizce konuşuyorum. Öğretmenim ve bir okulda çalışıyorum." },
+        { speaker: "Holly", de: "I speak a little English. I'm a teacher and I work in a school.", tr: "Biraz İngilizce konuşuyorum. Öğretmenim ve bir okulda çalışıyorum." },
         { speaker: "Marco", de: "How do you spell your name?", tr: "Adın nasıl yazılıyor?" },
-        { speaker: "Elif", de: "E-L-I-F. And I'm twenty-eight years old.", tr: "E-L-I-F. Bir de yirmi sekiz yaşındayım." },
+        { speaker: "Holly", de: "H-O-L-L-Y. And I'm twenty-eight years old.", tr: "H-O-L-L-Y. Bir de yirmi sekiz yaşındayım." },
       ],
       questions: [
-        { de: "Where is Elif from?", tr: "Elif nereli?", options: ["From Italy", "From Türkiye", "From America", "From Boston"], answer: 1 },
-        { de: "Which city is Elif in now?", tr: "Elif şimdi hangi şehirde?", options: ["In Izmir", "In London", "In Boston", "In Türkiye"], answer: 2 },
-        { de: "How old is Elif?", tr: "Elif kaç yaşında?", options: ["Eighteen", "Twenty", "Twenty-five", "Twenty-eight"], answer: 3 },
+        { de: "Where is Holly from?", tr: "Holly nereli?", options: ["From Italy", "From Türkiye", "From America", "From Boston"], answer: 1 },
+        { de: "Which city is Holly in now?", tr: "Holly şimdi hangi şehirde?", options: ["In Izmir", "In London", "In Boston", "In Türkiye"], answer: 2 },
+        { de: "How old is Holly?", tr: "Holly kaç yaşında?", options: ["Eighteen", "Twenty", "Twenty-five", "Twenty-eight"], answer: 3 },
       ],
     },
     reading: {
       title: "Language school – new student",
       titleTr: "Kayıt formu",
       genre: "Form",
-      text: "Language school – new student\n\nFirst name: Elif\nLast name: Yilmaz\nAge: 28\nCountry: Türkiye\nCity: Boston\nAddress: 12 Green Street\nZIP code: 02108\nPhone number: 617 555 0143\nEmail address: elif.y@mail.com\nWork: teacher\nBirthday: in May",
+      text: "Language school – new student\n\nFirst name: Holly\nLast name: Hayes\nAge: 28\nCountry: Türkiye\nCity: Boston\nAddress: 12 Green Street\nZIP code: 02108\nPhone number: 617 555 0143\nEmail address: holly.h@mail.com\nWork: teacher\nBirthday: in May",
       questions: [
-        { de: "What is the last name?", tr: "Soyadı ne?", options: ["Elif", "Yilmaz", "Boston", "Teacher"], answer: 1 },
+        { de: "What is the last name?", tr: "Soyadı ne?", options: ["Holly", "Hayes", "Boston", "Teacher"], answer: 1 },
         { de: "What is the zip code?", tr: "Posta kodu ne?", options: ["02108", "617 555 0143", "12 Green Street", "28"], answer: 0 },
       ],
     },
     speaking: [
-      { situation: "Kursta kendini tanıtıyorsun.", de: "My name is Ali and I'm from Ankara.", tr: "Adım Ali ve Ankaralıyım." },
+      { situation: "Kursta kendini tanıtıyorsun.", de: "My name is Harry and I'm from Ankara.", tr: "Adım Harry ve Ankaralıyım." },
       { situation: "Tanımadığın birine kibar biçimde soruyorsun.", de: "Excuse me, what's your name and where do you live?", tr: "Affedersiniz, adınız ne ve nerede oturuyorsunuz?" },
     ],
     writing: {
@@ -107,7 +107,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "I'm a … .", tr: "Mesleğim …", en: "I'm a … ." },
       ],
       sample:
-        "Hello! My name is Elif Yilmaz. I'm from Türkiye, from Izmir. Now I live in Boston. I'm twenty-eight years old. I'm a teacher and I work in a school. I speak a little English. My birthday is in May. How old are you?",
+        "Hello! My name is Holly Hayes. I'm from Türkiye, from Izmir. Now I live in Boston. I'm twenty-eight years old. I'm a teacher and I work in a school. I speak a little English. My birthday is in May. How old are you?",
     },
   },
 
@@ -136,25 +136,25 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       situation: "İki arkadaş bir fotoğrafa bakıyor.",
       turns: [
         { speaker: "Lena", de: "Is this your family in the photo?", tr: "Fotoğraftaki senin ailen mi?" },
-        { speaker: "Ahmet", de: "Yes, this is my family. These are my parents.", tr: "Evet, bu benim ailem. Bunlar da annemle babam." },
+        { speaker: "Finn", de: "Yes, this is my family. These are my parents.", tr: "Evet, bu benim ailem. Bunlar da annemle babam." },
         { speaker: "Lena", de: "And who is the girl here?", tr: "Peki buradaki kız kim?" },
-        { speaker: "Ahmet", de: "That's my sister Ayse. She is twenty years old.", tr: "O benim kız kardeşim Ayşe. Yirmi yaşında." },
+        { speaker: "Finn", de: "That's my sister Rachel. She is twenty years old.", tr: "O benim kız kardeşim Rachel. Yirmi yaşında." },
         { speaker: "Lena", de: "What does she look like?", tr: "Görünüşü nasıl?" },
-        { speaker: "Ahmet", de: "She is tall and she has long hair.", tr: "Uzun boylu ve uzun saçlı." },
+        { speaker: "Finn", de: "She is tall and she has long hair.", tr: "Uzun boylu ve uzun saçlı." },
         { speaker: "Lena", de: "Do you have a brother too?", tr: "Erkek kardeşin de var mı?" },
-        { speaker: "Ahmet", de: "No, I don't have a brother. But we have a dog!", tr: "Hayır, erkek kardeşim yok. Ama bir köpeğimiz var!" },
+        { speaker: "Finn", de: "No, I don't have a brother. But we have a dog!", tr: "Hayır, erkek kardeşim yok. Ama bir köpeğimiz var!" },
       ],
       questions: [
-        { de: "Who is in the photo?", tr: "Fotoğrafta kim var?", options: ["Ahmet's family", "Lena's parents", "Ahmet's friends", "Ahmet's club"], answer: 0 },
-        { de: "How old is Ayse?", tr: "Ayşe kaç yaşında?", options: ["Ten", "Twelve", "Twenty", "Thirty"], answer: 2 },
-        { de: "Does Ahmet have a brother?", tr: "Ahmet'in erkek kardeşi var mı?", options: ["Yes, one", "Yes, two", "No, he doesn't", "No, but two sisters"], answer: 2 },
+        { de: "Who is in the photo?", tr: "Fotoğrafta kim var?", options: ["Finn's family", "Lena's parents", "Finn's friends", "Finn's club"], answer: 0 },
+        { de: "How old is Rachel?", tr: "Rachel kaç yaşında?", options: ["Ten", "Twelve", "Twenty", "Thirty"], answer: 2 },
+        { de: "Does Finn have a brother?", tr: "Finn'in erkek kardeşi var mı?", options: ["Yes, one", "Yes, two", "No, he doesn't", "No, but two sisters"], answer: 2 },
       ],
     },
     reading: {
-      title: "A message from Nuray",
+      title: "A message from Cara",
       titleTr: "Bir davet mesajı",
       genre: "Mesaj",
-      text: "Hi Maria,\n\nOn Saturday my family is together. My grandma is eighty — it is her birthday! My aunt has a cake for her and my brother is here too. We are a big family — twenty people! Are you free on Saturday? My cousin is here too. She is very kind and she has two children.\n\nSee you\nNuray",
+      text: "Hi Maria,\n\nOn Saturday my family is together. My grandma is eighty — it is her birthday! My aunt has a cake for her and my brother is here too. We are a big family — twenty people! Are you free on Saturday? My cousin is here too. She is very kind and she has two children.\n\nSee you\nCara",
       questions: [
         { de: "How old is the grandma?", tr: "Büyükanne kaç yaşında?", options: ["Eighteen", "Twenty", "Eighty", "Two"], answer: 2 },
         { de: "Who has the cake?", tr: "Pasta kimde?", options: ["The mother", "The brother", "The aunt", "Maria"], answer: 2 },
@@ -181,7 +181,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "She works at …", tr: "… şirketinde/yerinde çalışıyor", en: "She works at …" },
       ],
       sample:
-        "There are four people in my family. These are my parents: my father's name is Kemal and my mother's name is Sevgi. My father is a teacher and my mother works in a club. I have a sister. Her name is Ayse and she is twenty years old. She is tall and she has long hair. She is very kind. I don't have a brother. But we have a dog too.",
+        "There are four people in my family. These are my parents: my father's name is Phil and my mother's name is Norah. My father is a teacher and my mother works in a club. I have a sister. Her name is Rachel and she is twenty years old. She is tall and she has long hair. She is very kind. I don't have a brother. But we have a dog too.",
     },
   },
 
@@ -401,7 +401,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "Can I change it?", tr: "Değiştirebilir miyim?", en: "Can I change it?" },
       ],
       sample:
-        "Good morning,\n\nI'm looking for a blue jacket. Do you have the jacket in size twelve? How much is it? Is it cheap now? I want to order the jacket on the computer. My address is 12 Green Road. When does it arrive? And can I change it in the store?\n\nThank you very much\nElif Yilmaz",
+        "Good morning,\n\nI'm looking for a blue jacket. Do you have the jacket in size twelve? How much is it? Is it cheap now? I want to order the jacket on the computer. My address is 12 Green Road. When does it arrive? And can I change it in the store?\n\nThank you very much\nHolly Hayes",
     },
   },
 
@@ -448,9 +448,9 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       title: "The way to my place",
       titleTr: "Yol tarifi mesajı",
       genre: "Mesaj",
-      text: "Hi Deniz,\n\nHere is the way to my place: take the bus to Park Square. Then go straight ahead to the church. At the church turn left. My place is next to the gym. It is near — you can walk from the train station too. Ask someone on the way!\n\nSee you\nJan",
+      text: "Hi Charlie,\n\nHere is the way to my place: take the bus to Park Square. Then go straight ahead to the church. At the church turn left. My place is next to the gym. It is near — you can walk from the train station too. Ask someone on the way!\n\nSee you\nJan",
       questions: [
-        { de: "How does Deniz get to Jan?", tr: "Deniz, Jan'a nasıl gidiyor?", options: ["By bus", "By car", "By taxi", "By bike"], answer: 0 },
+        { de: "How does Charlie get to Jan?", tr: "Charlie, Jan'a nasıl gidiyor?", options: ["By bus", "By car", "By taxi", "By bike"], answer: 0 },
         { de: "Where is Jan's place?", tr: "Jan'ın evi nerede?", options: ["At the station", "Next to the gym", "In front of the church", "Between the museum and the park"], answer: 1 },
       ],
     },
@@ -475,7 +475,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "You can go on foot.", tr: "Yürüyerek gidebilirsin", en: "You can go on foot." },
       ],
       sample:
-        "Hi Mert, see you on Saturday! Take the bus to Park Square — it takes ten minutes. Then go straight ahead to the church. At the church turn right. My place is next to the gym, number 15. From the train station it is not far and you can go on foot. Can you find the way? Ask someone at the station!",
+        "Hi Henry, see you on Saturday! Take the bus to Park Square — it takes ten minutes. Then go straight ahead to the church. At the church turn right. My place is next to the gym, number 15. From the train station it is not far and you can go on foot. Can you find the way? Ask someone at the station!",
     },
   },
 
@@ -503,13 +503,13 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Daire gezme",
       situation: "Bir aile kiralık daireyi geziyor.",
       turns: [
-        { speaker: "Mrs. Demir", de: "Good afternoon. Can I see the apartment?", tr: "İyi günler. Daireyi görebilir miyim?" },
+        { speaker: "Mrs. Adams", de: "Good afternoon. Can I see the apartment?", tr: "İyi günler. Daireyi görebilir miyim?" },
         { speaker: "Owner", de: "Yes, come in. There are two rooms, a kitchen and a bathroom.", tr: "Evet, buyurun. İki oda, bir mutfak ve bir banyo var." },
-        { speaker: "Mrs. Demir", de: "It is very quiet here. Is there a yard?", tr: "Burası çok sessiz. Bahçe var mı?" },
+        { speaker: "Mrs. Adams", de: "It is very quiet here. Is there a yard?", tr: "Burası çok sessiz. Bahçe var mı?" },
         { speaker: "Owner", de: "There is a yard with two trees.", tr: "İki ağaçlı bir bahçe var." },
-        { speaker: "Mrs. Demir", de: "How much is the rent?", tr: "Kira ne kadar?" },
+        { speaker: "Mrs. Adams", de: "How much is the rent?", tr: "Kira ne kadar?" },
         { speaker: "Owner", de: "620 every month. Water and electricity are 140.", tr: "Ayda 620. Su ve elektrik 140." },
-        { speaker: "Mrs. Demir", de: "The lamp in the kitchen is broken. It doesn't work.", tr: "Mutfaktaki lamba bozuk. Çalışmıyor." },
+        { speaker: "Mrs. Adams", de: "The lamp in the kitchen is broken. It doesn't work.", tr: "Mutfaktaki lamba bozuk. Çalışmıyor." },
         { speaker: "Owner", de: "Yes, but I can fix it tomorrow.", tr: "Evet, ama yarın onarabilirim." },
       ],
       questions: [
@@ -549,7 +549,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "How much is the rent?", tr: "Kira ne kadar?", en: "How much is the rent?" },
       ],
       sample:
-        "Hi Selin, I have a new apartment! There are two rooms, a kitchen and a bathroom. The apartment is quiet and the neighbors are friendly. There is also a yard with a tree. My sofa is in the living room and the lamp is on the table. The rent is 620 every month, and water and electricity are 140. Can you come on Saturday?",
+        "Hi Megan, I have a new apartment! There are two rooms, a kitchen and a bathroom. The apartment is quiet and the neighbors are friendly. There is also a yard with a tree. My sofa is in the living room and the lamp is on the table. The rent is 620 every month, and water and electricity are 140. Can you come on Saturday?",
     },
   },
 
@@ -695,7 +695,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "I'll be better tomorrow.", tr: "Yarın daha iyi olacağım.", en: "I'll be better tomorrow." },
       ],
       sample:
-        "Dear Mrs. Clark,\n\nI am sick and I can't come to work today. I have a headache and my tooth hurts. I must go to the doctor at four o'clock — I have an appointment. Then I am going to sleep. I think I'll be better tomorrow. I'm going to call you in the evening.\n\nThank you very much\nAli Kaya",
+        "Dear Mrs. Clark,\n\nI am sick and I can't come to work today. I have a headache and my tooth hurts. I must go to the doctor at four o'clock — I have an appointment. Then I am going to sleep. I think I'll be better tomorrow. I'm going to call you in the evening.\n\nThank you very much\nHarry Ellis",
     },
   },
 
@@ -723,15 +723,15 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Telefonda",
       situation: "Bir kadın işyerini arıyor ama aradığı kişi yok.",
       turns: [
-        { speaker: "Mrs. Aydin", de: "Good afternoon, this is Nuray Aydin. Can I speak to Mr. Berg?", tr: "İyi günler, ben Nuray Aydın. Bay Berg ile görüşebilir miyim?" },
+        { speaker: "Mrs. Kelly", de: "Good afternoon, this is Cara Kelly. Can I speak to Mr. Berg?", tr: "İyi günler, ben Cara Kelly. Bay Berg ile görüşebilir miyim?" },
         { speaker: "Colleague", de: "Sorry, Mr. Berg is not here now. He comes back at two o'clock.", tr: "Kusura bakmayın, Bay Berg şu an burada değil. Saat ikide dönüyor." },
-        { speaker: "Mrs. Aydin", de: "Can you send him a message? I have a question about the class.", tr: "Ona bir mesaj gönderebilir misiniz? Ders hakkında bir sorum var." },
+        { speaker: "Mrs. Kelly", de: "Can you send him a message? I have a question about the class.", tr: "Ona bir mesaj gönderebilir misiniz? Ders hakkında bir sorum var." },
         { speaker: "Colleague", de: "Yes, of course. What is your number?", tr: "Evet, tabii. Numaranız nedir?" },
-        { speaker: "Mrs. Aydin", de: "0157 88 44 21. He can call me until six o'clock.", tr: "0157 88 44 21. Beni altıya kadar arayabilir." },
+        { speaker: "Mrs. Kelly", de: "0157 88 44 21. He can call me until six o'clock.", tr: "0157 88 44 21. Beni altıya kadar arayabilir." },
         { speaker: "Colleague", de: "Fine, I'll tell him.", tr: "Tamam, ona söyleyeceğim." },
       ],
       questions: [
-        { de: "Why does Mrs. Aydin call?", tr: "Bayan Aydın neden arıyor?", options: ["She is sick", "She has a question about the class", "She wants a ticket", "She is at home"], answer: 1 },
+        { de: "Why does Mrs. Kelly call?", tr: "Bayan Kelly neden arıyor?", options: ["She is sick", "She has a question about the class", "She wants a ticket", "She is at home"], answer: 1 },
         { de: "When does Mr. Berg come back?", tr: "Bay Berg ne zaman dönüyor?", options: ["At one o'clock", "At two o'clock", "At six o'clock", "Tomorrow"], answer: 1 },
         { de: "Until when can Mr. Berg call?", tr: "Bay Berg ne zamana kadar arayabilir?", options: ["Until two o'clock", "Until four o'clock", "Until six o'clock", "Until eight o'clock"], answer: 2 },
       ],
@@ -740,14 +740,14 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       title: "Hello from London",
       titleTr: "Kartpostal",
       genre: "Kartpostal",
-      text: "Dear Grandma,\n\nHello from London! We arrived on Friday. On Saturday we visited the museum and in the evening we went to a restaurant. Yesterday the weather was not good, but we walked in the park. On May 1st we travel home.\n\nSee you soon!\nLove,\nEmre",
+      text: "Dear Grandma,\n\nHello from London! We arrived on Friday. On Saturday we visited the museum and in the evening we went to a restaurant. Yesterday the weather was not good, but we walked in the park. On May 1st we travel home.\n\nSee you soon!\nLove,\nOwen",
       questions: [
-        { de: "What did Emre do on Saturday?", tr: "Emre cumartesi ne yaptı?", options: ["He arrived in London", "He visited the museum", "He traveled home", "He stayed at the hotel"], answer: 1 },
-        { de: "When does Emre travel home?", tr: "Emre ne zaman dönüyor?", options: ["On Friday", "On Saturday", "On May 1st", "Yesterday"], answer: 2 },
+        { de: "What did Owen do on Saturday?", tr: "Owen cumartesi ne yaptı?", options: ["He arrived in London", "He visited the museum", "He traveled home", "He stayed at the hotel"], answer: 1 },
+        { de: "When does Owen travel home?", tr: "Owen ne zaman dönüyor?", options: ["On Friday", "On Saturday", "On May 1st", "Yesterday"], answer: 2 },
       ],
     },
     speaking: [
-      { situation: "Telefonda kendini tanıtıyorsun.", de: "Good afternoon, this is Ali Kaya. Can I speak to Mrs. Berg?", tr: "İyi günler, ben Ali Kaya. Bayan Berg ile görüşebilir miyim?" },
+      { situation: "Telefonda kendini tanıtıyorsun.", de: "Good afternoon, this is Harry Ellis. Can I speak to Mrs. Berg?", tr: "İyi günler, ben Harry Ellis. Bayan Berg ile görüşebilir miyim?" },
       { situation: "Hafta sonunu anlatıyorsun.", de: "On Saturday I went to the movies and on Sunday I slept a long time.", tr: "Cumartesi sinemaya gittim, pazar da uzun uyudum." },
     ],
     writing: {

@@ -332,9 +332,9 @@ export const b1U37: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Bildirim kartını doldur.",
-        facts: "Bildiren: Sedef Aydın; olay: eve girme; zaman: dün gece; çalınan: dizüstü ve iki kutu; şiddet: yok.",
+        facts: "Bildiren: Amelie Haas; olay: eve girme; zaman: dün gece; çalınan: dizüstü ve iki kutu; şiddet: yok.",
         fields: [
-          { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
+          { label: "Name", answer: "Amelie Haas", accept: ["Amelie", "Haas"] },
           { label: "Vorfall", answer: "Einbruch", accept: ["ein Einbruch", "der Einbruch"] },
           { label: "Zeit", answer: "gestern Nacht", accept: ["in der Nacht", "gestern"] },
           { label: "Gestohlen", answer: "Laptop und zwei Kisten", accept: ["Laptop", "ein Laptop, zwei Kisten"] },

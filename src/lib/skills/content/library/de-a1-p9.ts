@@ -104,7 +104,7 @@ export const deA1P9: SkillExercise[] = [
       { speaker: "Herr Lang", text: "Ich gehe am Samstag früh auf den Markt. Danach koche ich für meine Familie." },
       { speaker: "Reporterin", text: "Und am Sonntag?" },
       { speaker: "Herr Lang", text: "Am Sonntag wandern wir im Wald. Aber nur bei gutem Wetter, nicht bei Regen." },
-      { speaker: "Frau Özdemir", text: "Ich arbeite leider am Samstag. Am Sonntag kommt meine Enkelin und wir backen zusammen." },
+      { speaker: "Frau Arndt", text: "Ich arbeite leider am Samstag. Am Sonntag kommt meine Enkelin und wir backen zusammen." },
       { speaker: "Reporterin", text: "Das klingt schön. Und Sie, junger Mann?" },
       { speaker: "Tobias", text: "Ich muss mein Zimmer aufräumen. Am Abend spiele ich dann Fußball mit Freunden." },
       { speaker: "Reporterin", text: "Vielen Dank und ein schönes Wochenende!" },
@@ -124,7 +124,7 @@ export const deA1P9: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Frau Özdemir hat am Samstag frei.",
+        text: "Frau Arndt hat am Samstag frei.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "„Ich arbeite leider am Samstag“ — torunuyla pazar günü buluşuyor.",
@@ -139,7 +139,7 @@ export const deA1P9: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was macht Frau Özdemir mit ihrer Enkelin?",
+        text: "Was macht Frau Arndt mit ihrer Enkelin?",
         options: [],
         answer: 0,
         accept: ["backen", "sie backen", "sie backen zusammen"],
@@ -205,11 +205,11 @@ export const deA1P9: SkillExercise[] = [
           { de: "Vielen Dank im Voraus.", tr: "Şimdiden teşekkürler.", en: "Thank you in advance." },
         ],
         sample:
-          "Sehr geehrte Damen und Herren, mein Name ist Emre Yalcin. " +
+          "Sehr geehrte Damen und Herren, mein Name ist Till Jahn. " +
           "Ich habe am Mittwoch um zehn Uhr einen Termin bei Doktor Frank. " +
           "Leider kann ich nicht kommen, denn ich bin auf einer Dienstreise in Hamburg. " +
           "Können wir den Termin auf nächste Woche verschieben? Am Montag und am Dienstag habe ich Zeit. " +
-          "Vielen Dank im Voraus. Mit freundlichen Grüßen, Emre Yalcin",
+          "Vielen Dank im Voraus. Mit freundlichen Grüßen, Till Jahn",
       },
     ],
   },
@@ -336,7 +336,7 @@ export const deA1P9: SkillExercise[] = [
       },
       {
         heading: "Tam liste",
-        tr: "Yalın hâlden belirtme hâline beş biçim değişir: ich → mich, du → dich, er → ihn, wir → uns, ihr → euch. „sie“ ve „es“ aynı kalır; kibar „Sie“ de her iki hâlde Sie'dir.",
+        tr: "Marius hâlden belirtme hâline beş biçim değişir: ich → mich, du → dich, er → ihn, wir → uns, ihr → euch. „sie“ ve „es“ aynı kalır; kibar „Sie“ de her iki hâlde Sie'dir.",
         examples: [
           { de: "Verstehst du mich?", tr: "Beni anlıyor musun?", note: "ich → mich" },
           { de: "Ich rufe dich später an.", tr: "Seni sonra ararım.", note: "du → dich" },

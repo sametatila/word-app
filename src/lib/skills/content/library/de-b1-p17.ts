@@ -32,17 +32,17 @@ export const deB1P17: SkillExercise[] = [
     minutes: 6,
     text:
       "Kürzer, enger, wie neu\n\n" +
-      "Die kleine Schneiderei von Ahmet Demir liegt zwischen einer Apotheke und einem Handyladen. Auf dem " +
+      "Die kleine Schneiderei von Heiko Böhm liegt zwischen einer Apotheke und einem Handyladen. Auf dem " +
       "Schild steht nur „Änderungen aller Art“, aber drinnen ist fast immer etwas los.\n\n" +
       "Seit dreißig Jahren lassen die Leute hier ihre Hosen kürzen, Kleider enger machen und " +
       "Reißverschlüsse erneuern. In den letzten zwei Jahren hat sich die Arbeit aber verändert. " +
-      "„Früher kamen die Leute mit neuen Sachen, die nicht gepasst haben“, sagt Demir. „Heute bringen sie " +
+      "„Früher kamen die Leute mit neuen Sachen, die nicht gepasst haben“, sagt Böhm. „Heute bringen sie " +
       "alte Lieblingsstücke, die sie nicht wegwerfen wollen.“ Eine Kundin hat vor Kurzem den Mantel ihrer " +
       "Mutter umnähen lassen, eine andere lässt jedes Jahr dieselbe Jeans flicken.\n\n" +
       "Die Preise sind gestiegen, aber nicht so stark wie die Nachfrage. Eine Hose zu kürzen kostet zwölf " +
       "Euro, ein neuer Reißverschluss zwanzig. Wer es eilig hat, muss Geduld mitbringen: Zurzeit dauert " +
       "ein Auftrag zehn Tage.\n\n" +
-      "Sorgen macht Demir etwas anderes. Er ist einundsechzig und findet niemanden, der den Laden " +
+      "Sorgen macht Böhm etwas anderes. Er ist einundsechzig und findet niemanden, der den Laden " +
       "übernehmen will. Seine Tochter hat Informatik studiert. „Ich lasse sie manchmal hier an der Kasse " +
       "sitzen“, sagt er und lacht, „aber das Nähen will sie einfach nicht lernen.“",
     questions: [
@@ -79,14 +79,14 @@ export const deB1P17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was hat die Tochter von Herrn Demir studiert?",
+        text: "Was hat die Tochter von Herrn Böhm studiert?",
         options: [],
         answer: 0,
         accept: ["Informatik"],
         explain: "„Seine Tochter hat Informatik studiert“ — dikiş öğrenmek istemiyor.",
       },
       {
-        text: "Was macht Herrn Demir Sorgen?",
+        text: "Was macht Herrn Böhm Sorgen?",
         options: [
           "die hohe Miete für den Laden",
           "die vielen Handyläden in der Straße",
@@ -245,7 +245,7 @@ export const deB1P17: SkillExercise[] = [
           "keine Hilfe. Wichtig wäre uns außerdem, dass keine chemischen Mittel verwendet werden, denn unser " +
           "Hund spielt viel im Garten. Könnten Sie uns ein Angebot schicken? Gern können Sie sich den Garten " +
           "vorher ansehen.\n\n" +
-          "Mit freundlichen Grüßen\nCanan und Peter Wolf",
+          "Mit freundlichen Grüßen\nTamara und Peter Wolf",
       },
     ],
   },

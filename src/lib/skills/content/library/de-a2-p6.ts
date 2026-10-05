@@ -108,18 +108,18 @@ export const deA2P6: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Frau Kraus", text: "Bürgeramt Mitte, Kraus am Apparat. Was kann ich für Sie tun?" },
-      { speaker: "Herr Bilgin", text: "Guten Tag. Ich bin letzte Woche umgezogen und möchte mich ummelden. Brauche ich dafür einen Termin?" },
+      { speaker: "Herr Hollmann", text: "Guten Tag. Ich bin letzte Woche umgezogen und möchte mich ummelden. Brauche ich dafür einen Termin?" },
       { speaker: "Frau Kraus", text: "Ja, ohne Termin geht es leider nicht. Der nächste freie Platz ist am Donnerstag um elf Uhr zwanzig." },
-      { speaker: "Herr Bilgin", text: "Donnerstag passt gut. Was muss ich mitbringen?" },
+      { speaker: "Herr Hollmann", text: "Donnerstag passt gut. Was muss ich mitbringen?" },
       { speaker: "Frau Kraus", text: "Ihren Ausweis und die Bestätigung vom Vermieter. Ohne diese Bestätigung können wir die Ummeldung nicht machen." },
-      { speaker: "Herr Bilgin", text: "Die habe ich schon bekommen. Kostet das etwas?" },
+      { speaker: "Herr Hollmann", text: "Die habe ich schon bekommen. Kostet das etwas?" },
       { speaker: "Frau Kraus", text: "Die Ummeldung selbst ist kostenlos. Nur wenn Sie eine extra Bescheinigung möchten, kostet das fünf Euro Gebühr." },
-      { speaker: "Herr Bilgin", text: "Gut, dann komme ich am Donnerstag. Muss ich früher da sein?" },
+      { speaker: "Herr Hollmann", text: "Gut, dann komme ich am Donnerstag. Muss ich früher da sein?" },
       { speaker: "Frau Kraus", text: "Kommen Sie bitte zehn Minuten vorher und ziehen Sie unten eine Nummer. Auf Wiederhören!" },
     ],
     questions: [
       {
-        text: "Warum ruft Herr Bilgin an?",
+        text: "Warum ruft Herr Hollmann an?",
         options: ["Er hat seinen Ausweis verloren.", "Er sucht eine neue Wohnung.", "Er ist umgezogen."],
         answer: 2,
         explain: "„Ich bin letzte Woche umgezogen und möchte mich ummelden.“",
@@ -151,7 +151,7 @@ export const deA2P6: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was soll Herr Bilgin unten machen?",
+        text: "Was soll Herr Hollmann unten machen?",
         options: [],
         answer: 0,
         accept: ["eine Nummer ziehen", "eine Nummer", "Nummer ziehen"],
@@ -217,12 +217,12 @@ export const deA2P6: SkillExercise[] = [
           { de: "Ich hoffe auf eine Lösung.", tr: "Bir çözüm bulunmasını umuyorum.", en: "I hope for a solution." },
         ],
         sample:
-          "Sehr geehrte Damen und Herren, mein Name ist Deniz Aslan und ich wohne seit einem Jahr in der Wohnung 14. " +
+          "Sehr geehrte Damen und Herren, mein Name ist Sascha Menzel und ich wohne seit einem Jahr in der Wohnung 14. " +
           "Leider gibt es ein Problem mit dem Lärm. Fast jede Nacht läuft in der Wohnung über mir bis zwei Uhr laute Musik. " +
           "Ich stehe um halb sechs auf und kann deshalb kaum schlafen. " +
           "Ich habe schon zweimal freundlich mit den Nachbarn gesprochen, aber es hat sich nichts geändert. " +
           "Könnten Sie bitte an alle Mieter eine Information über die Nachtruhe schicken? " +
-          "Ich möchte keinen Streit, ich hoffe nur auf eine Lösung. Mit freundlichen Grüßen, Deniz Aslan",
+          "Ich möchte keinen Streit, ich hoffe nur auf eine Lösung. Mit freundlichen Grüßen, Sascha Menzel",
       },
     ],
   },

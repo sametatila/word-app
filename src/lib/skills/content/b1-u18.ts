@@ -51,7 +51,7 @@ export const b1U18: SkillExercise[] = [
       "Die Bilder sind ähnlich aufgebaut: viel Grau, ein heller Punkt, " +
       "meistens ein Fenster. Die Wirkung ist trotzdem bei jedem Bild anders. " +
       "Das erste wirkt kalt, das letzte fast warm.\n\n" +
-      "Notiz von Sedef: Mir hat der zweite Raum am besten gefallen. Dort hängen " +
+      "Notiz von Amelie: Mir hat der zweite Raum am besten gefallen. Dort hängen " +
       "die späten Werke, und der Ausdruck ist ganz anders — ruhiger, weniger " +
       "streng. Ich habe mir die Erklärung am Eingang geben lassen, sonst hätte " +
       "ich die Reihenfolge nicht verstanden.\n\n" +
@@ -72,7 +72,7 @@ export const b1U18: SkillExercise[] = [
         explain: "„Die Bilder sind ähnlich aufgebaut: viel Grau, ein heller Punkt …“",
       },
       {
-        text: "Welcher Raum hat Sedef am besten gefallen?",
+        text: "Welcher Raum hat Amelie am besten gefallen?",
         options: ["Der erste", "Der zweite", "Beide gleich"],
         answer: 1,
         explain: "„Mir hat der zweite Raum am besten gefallen.“",
@@ -339,9 +339,9 @@ export const b1U18: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Muayene kartını doldur.",
-        facts: "Hasta: Sedef Aydın; şikâyet: öksürük; süre: 3 hafta; ek belirti: merdivende nefes darlığı; istek: sevk.",
+        facts: "Hasta: Amelie Haas; şikâyet: öksürük; süre: 3 hafta; ek belirti: merdivende nefes darlığı; istek: sevk.",
         fields: [
-          { label: "Patientin", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
+          { label: "Patientin", answer: "Amelie Haas", accept: ["Amelie", "Haas"] },
           { label: "Beschwerde", answer: "Husten", accept: ["der Husten", "Husten seit Wochen"] },
           { label: "Dauer", answer: "3 Wochen", accept: ["drei Wochen"] },
           { label: "Wunsch", answer: "Überweisung", accept: ["eine Überweisung", "zum Facharzt"] },

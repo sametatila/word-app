@@ -113,33 +113,33 @@ export const deA2P19: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Frau Aksoy", text: "Guten Tag. Ich brauche Passfotos für einen neuen Personalausweis. Geht das gleich, oder brauche ich einen Termin?" },
+      { speaker: "Frau Thiel", text: "Guten Tag. Ich brauche Passfotos für einen neuen Personalausweis. Geht das gleich, oder brauche ich einen Termin?" },
       { speaker: "Herr Lorenz", text: "Das geht gleich. Setzen Sie sich bitte auf diesen Stuhl vor der weißen Wand. Und die Brille nehmen Sie bitte ab." },
-      { speaker: "Frau Aksoy", text: "Muss ich auch die Ohrringe abnehmen? Und darf ich lächeln?" },
+      { speaker: "Frau Thiel", text: "Muss ich auch die Ohrringe abnehmen? Und darf ich lächeln?" },
       { speaker: "Herr Lorenz", text: "Die Ohrringe dürfen Sie tragen. Aber bitte nicht lächeln, der Mund bleibt zu. Schauen Sie gerade in die Kamera." },
-      { speaker: "Frau Aksoy", text: "Das ist gar nicht so leicht. Auf jedem Passfoto sehe ich so ernst aus." },
+      { speaker: "Frau Thiel", text: "Das ist gar nicht so leicht. Auf jedem Passfoto sehe ich so ernst aus." },
       { speaker: "Herr Lorenz", text: "Das sagt fast jeder Kunde. So, ich habe drei Fotos gemacht. Welches nehmen wir? Bei diesem hier sind Ihre Augen fast zu." },
-      { speaker: "Frau Aksoy", text: "Dann lieber das dritte. Auf diesem sehe ich am freundlichsten aus. Was kostet das?" },
+      { speaker: "Frau Thiel", text: "Dann lieber das dritte. Auf diesem sehe ich am freundlichsten aus. Was kostet das?" },
       { speaker: "Herr Lorenz", text: "Vier Fotos auf Papier und die digitale Version kosten zusammen vierzehn Euro. Das Amt nimmt nämlich nur noch digitale Fotos." },
-      { speaker: "Frau Aksoy", text: "Und welche Fotos gebe ich dann im Bürgeramt ab?" },
+      { speaker: "Frau Thiel", text: "Und welche Fotos gebe ich dann im Bürgeramt ab?" },
       { speaker: "Herr Lorenz", text: "Gar keine. Wir schicken das Foto online an das Amt. Sie bekommen diesen Zettel mit einem Code. Bringen Sie ihn bitte zum Termin mit, dann findet das Amt Ihr Foto." },
     ],
     questions: [
       {
-        text: "Was muss Frau Aksoy vor dem Foto abnehmen?",
+        text: "Was muss Frau Thiel vor dem Foto abnehmen?",
         options: ["die Ohrringe", "die Brille", "die Jacke"],
         answer: 1,
         explain: "Fotoğrafçı „die Brille nehmen Sie bitte ab“ diyor; küpeler için „Die Ohrringe dürfen Sie tragen.“",
       },
       {
-        text: "Welches Foto nimmt Frau Aksoy?",
+        text: "Welches Foto nimmt Frau Thiel?",
         options: ["das erste", "das zweite", "das dritte"],
         answer: 2,
         explain: "„Dann lieber das dritte. Auf diesem sehe ich am freundlichsten aus.“",
       },
       {
         kind: "truefalse",
-        text: "Auf dem Passfoto darf Frau Aksoy lächeln.",
+        text: "Auf dem Passfoto darf Frau Thiel lächeln.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Fotoğrafçı „Aber bitte nicht lächeln, der Mund bleibt zu“ diyor.",
@@ -154,7 +154,7 @@ export const deA2P19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was soll Frau Aksoy zum Termin im Bürgeramt mitbringen?",
+        text: "Was soll Frau Thiel zum Termin im Bürgeramt mitbringen?",
         options: [],
         answer: 0,
         accept: ["den Zettel", "Zettel", "den Zettel mit dem Code", "den Code", "einen Zettel mit einem Code"],
@@ -226,7 +226,7 @@ export const deA2P19: SkillExercise[] = [
           "Nächste Woche habe ich jeden Vormittag Zeit. Passt Ihnen vielleicht der Dienstag oder der Donnerstag ab 8 Uhr? " +
           "Wenn das nicht geht, kann ich den Schlüssel auch bei meiner Nachbarin, Frau Schulz, im Erdgeschoss lassen. " +
           "Bitte rufen Sie mich kurz an: 0170 2468135.\n\n" +
-          "Mit freundlichen Grüßen\nAli Demir",
+          "Mit freundlichen Grüßen\nMoritz Böhm",
       },
     ],
   },

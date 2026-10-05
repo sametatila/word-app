@@ -249,7 +249,7 @@ export const enB1P14: SkillExercise[] = [
         ],
         sample:
           "Hi Emily, I saw your post on the language exchange website, and I'd like to be your " +
-          "partner. My name is Burak, I'm twenty-nine and I work as a nurse in Izmir. " +
+          "partner. My name is Joseph, I'm twenty-nine and I work as a nurse in Izmir. " +
           "The reason I'm learning English is simple: our hospital is starting a project with " +
           "a clinic in Leeds next year, and I'll have to speak on video calls every week. I can " +
           "read quite well, but speaking still makes me nervous. " +
@@ -259,7 +259,7 @@ export const enB1P14: SkillExercise[] = [
           "You said you had visited Türkiye twice, didn't you? I'd love to know which cities you saw. " +
           "I can also help with grammar, because Turkish endings confuse everyone at first. " +
           "Let me know what you think, and tell me what time it is in Manchester when it's seven " +
-          "here! Burak",
+          "here! Joseph",
       },
     ],
   },
@@ -347,7 +347,7 @@ export const enB1P14: SkillExercise[] = [
       },
       {
         heading: "Üç özel durum",
-        tr: "„I am“ cümlesinin eki „aren't I?“ olur. Emir cümlesine „will you?“, „Let's“ ile başlayan öneriye „shall we?“ eklenir. Ekte ses alçalırsa konuşan onay bekler, yükselirse gerçekten soruyordur.",
+        tr: "„I am“ cümlesinin eki „aren't I?“ olur. Ethan cümlesine „will you?“, „Let's“ ile başlayan öneriye „shall we?“ eklenir. Ekte ses alçalırsa konuşan onay bekler, yükselirse gerçekten soruyordur.",
         examples: [
           { de: "I'm late, aren't I?", tr: "Geç kaldım, değil mi?", note: "I am → aren't I" },
           { de: "Close the window, will you?", tr: "Pencereyi kapatır mısın?", note: "emir → will you" },

@@ -30,7 +30,7 @@ export const a1U10: SkillExercise[] = [
     unit: 10,
     title: "Mein Arbeitstag",
     genre: "blog",
-    intro: "Elif iş gününü anlatıyor: ne zaman başlıyor, ne zaman bitiyor?",
+    intro: "Paula iş gününü anlatıyor: ne zaman başlıyor, ne zaman bitiyor?",
     gloss: [
       { de: "anfangen", tr: "başlamak", en: "to start" },
       { de: "aufhören", tr: "bırakmak", en: "to stop" },
@@ -48,27 +48,27 @@ export const a1U10: SkillExercise[] = [
         explain: "„Meine Arbeit fängt um acht Uhr an.“ Zehn vor acht işe VARDIĞI saat.",
       },
       {
-        text: "Was macht Elif um halb eins?",
+        text: "Was macht Paula um halb eins?",
         options: ["eine Pause", "sie telefoniert", "sie geht spazieren"],
         answer: 0,
         explain: "„Um halb eins mache ich eine Pause und esse mit meinen Kollegen.“",
       },
       {
         kind: "gapfill",
-        text: "Elif hört um ___ Uhr auf.",
+        text: "Paula hört um ___ Uhr auf.",
         options: [],
         answer: 0,
         accept: ["fünf", "5"],
         explain: "„Ich höre um fünf Uhr auf.“ — aufhören ayrılabilir fiil.",
       },
       {
-        text: "Was macht Elif nach der Arbeit?",
+        text: "Was macht Paula nach der Arbeit?",
         options: ["spazieren gehen oder fernsehen", "arbeiten", "einkaufen"],
         answer: 0,
         explain: "„Nach der Arbeit gehe ich spazieren oder sitze zu Hause und sehe fern.“",
       },
       {
-        text: "Richtig oder falsch? Am Samstag arbeitet Elif.",
+        text: "Richtig oder falsch? Am Samstag arbeitet Paula.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „am Samstag habe ich frei.“",
@@ -99,7 +99,7 @@ export const a1U10: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Tom: Am Samstag mache ich einen Ausflug. Vielleicht wandern wir — das macht Spaß. Am Sonntag schlafe ich aus — bis elf!\n\nMia: Ich habe am Wochenende keine Pläne. Ich habe keine Lust auf einen Ausflug. Ich sitze zu Hause und sehe fern.\n\nElif: Meine Kinder haben Ferien. Wir machen keinen Urlaub, aber wir machen jeden Tag etwas: Am Samstag gehen wir spazieren, am Sonntag kommen meine Eltern.",
+      "Tom: Am Samstag mache ich einen Ausflug. Vielleicht wandern wir — das macht Spaß. Am Sonntag schlafe ich aus — bis elf!\n\nMia: Ich habe am Wochenende keine Pläne. Ich habe keine Lust auf einen Ausflug. Ich sitze zu Hause und sehe fern.\n\nPaula: Meine Kinder haben Ferien. Wir machen keinen Urlaub, aber wir machen jeden Tag etwas: Am Samstag gehen wir spazieren, am Sonntag kommen meine Eltern.",
     questions: [
       {
         text: "Was macht Tom am Samstag?",
@@ -330,7 +330,7 @@ export const a1U10: SkillExercise[] = [
           { de: "Leider kann ich nicht.", tr: "Maalesef olmuyor.", en: "Unfortunately I can't." },
         ],
         sample:
-          "Hallo Tom,\n\nam Samstag habe ich auch frei. Am Vormittag schlafe ich aus, aber am Nachmittag habe ich Zeit.\n\nEin Ausflug ist gut! Vielleicht wandern wir?\n\nUm drei Uhr passt es mir gut. Passt es dir auch?\n\nBis Samstag!\nElif",
+          "Hallo Tom,\n\nam Samstag habe ich auch frei. Am Vormittag schlafe ich aus, aber am Nachmittag habe ich Zeit.\n\nEin Ausflug ist gut! Vielleicht wandern wir?\n\nUm drei Uhr passt es mir gut. Passt es dir auch?\n\nBis Samstag!\nPaula",
       },
     ],
   },

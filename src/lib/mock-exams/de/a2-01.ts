@@ -575,8 +575,8 @@ Katja`,
               segments: [
                 { speaker: "Sara", text: "Also, das Fest ist am Samstag. Lena, was übernimmst du?" },
                 { speaker: "Lena", text: "Ich backe wieder Kuchen, so wie letztes Jahr." },
-                { speaker: "Sara", text: "Sehr gut. Bekir, kaufst du die Getränke?" },
-                { speaker: "Bekir", text: "Die Getränke habe ich letztes Jahr gemacht. Diesmal möchte ich lieber die Spiele für die Kinder leiten." },
+                { speaker: "Sara", text: "Sehr gut. Dominik, kaufst du die Getränke?" },
+                { speaker: "Dominik", text: "Die Getränke habe ich letztes Jahr gemacht. Diesmal möchte ich lieber die Spiele für die Kinder leiten." },
                 { speaker: "Sara", text: "In Ordnung. Herr Voss, Sie haben ein Auto. Übernehmen Sie die Getränke?" },
                 { speaker: "Herr Voss", text: "Ja, gern. Soll ich auch die Stühle aus dem Keller holen?" },
                 { speaker: "Sara", text: "Nein danke, die Stühle macht Tom. Er ist am Vormittag schon da." },
@@ -611,7 +611,7 @@ Katja`,
               id: "de-a2-01-h2-7",
               no: 7,
               ref: "g1",
-              text: "Bekir",
+              text: "Dominik",
               answer: "f",
               explain:
                 "«Die Getränke habe ich letztes Jahr gemacht. Diesmal möchte ich lieber die Spiele für die Kinder leiten» — içecek işi teklif ediliyor ama reddediliyor.",
@@ -940,7 +940,7 @@ ich bin seit zwei Jahren Mitglied in Ihrem Verein. Ab dem ersten Oktober arbeite
 Können Sie meine Mitgliedschaft für diese Zeit pausieren? Was muss ich dafür tun?
 
 Mit freundlichen Grüßen
-Ali Karaca`,
+Moritz Schmitz`,
             criteria: [
               "Üç içerik noktası da var mı?",
               "Yarı resmî ileti olduğu için `Sie` ve resmî hitap kullanıldı mı? (Sehr geehrte Damen und Herren / Mit freundlichen Grüßen)",

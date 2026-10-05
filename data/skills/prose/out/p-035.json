@@ -75,9 +75,9 @@
   "en": "Tell about an accident and ask about the past. At the end, fill out the accident form."
  },
  {
-  "tr": "„But my neighbor heard me and she came fast.“ — Ali yalnızdı.",
+  "tr": "„But my neighbor heard me and she came fast.“ — Harry yalnızdı.",
   "kind": "explain",
-  "en": "„But my neighbor heard me and she came fast.“ — Ali was alone."
+  "en": "„But my neighbor heard me and she came fast.“ — Harry was alone."
  },
  {
   "tr": "Uzun bir günün anlatısı. Sıralama sözcükleri hikâyeyi taşıyor.",
@@ -155,9 +155,9 @@
   "en": "„My sister used to play with her doll…“ — the soccer and the library are the writer's."
  },
  {
-  "tr": "„Yes, when I was a child. I used to play every day.“ — futbol Mert'in.",
+  "tr": "„Yes, when I was a child. I used to play every day.“ — futbol Henry'nin.",
   "kind": "explain",
-  "en": "„Yes, when I was a child. I used to play every day.“ — the soccer was Mert's."
+  "en": "„Yes, when I was a child. I used to play every day.“ — the soccer was Henry's."
  },
  {
   "tr": "Kaybolan bir telefonun hikâyesi. Ne zaman ne oldu, sırasıyla takip et.",
@@ -190,9 +190,9 @@
   "en": "„At first I didn't like it.“ — „at first“ says it changed later."
  },
  {
-  "tr": "„Ninety-two! And he was still working.“ — Ela yetmiş diye tahmin ediyor.",
+  "tr": "„Ninety-two! And he was still working.“ — Lucy yetmiş diye tahmin ediyor.",
   "kind": "explain",
-  "en": "„Ninety-two! And he was still working.“ — Ela guesses seventy."
+  "en": "„Ninety-two! And he was still working.“ — Lucy guesses seventy."
  },
  {
   "tr": "„I bought a small bag for the phone.“ — telefonunu buldu, yenisini almadı.",

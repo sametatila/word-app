@@ -85,7 +85,7 @@ const evidence = (row: TaskRow): string[] => {
 const CHARSET = /[\n -~ÄÖÜäöüßé·×‚„“”‘’«»–—…→↔€]/;
 
 /** Yüzeyde SÖZCÜK olarak geçen özel adlar — küme dışı harf taşısalar da
- *  yerinde kalmak zorundalar ("Ayla Yıldız" formda birebir aranıyor). */
+ *  yerinde kalmak zorundalar ("Freya Davies" formda birebir aranıyor). */
 const surfaceNames = (de: string, row: TaskRow): string[] => {
   const words = new Set(lower(row.de ?? "").match(WORD) ?? []);
   return (de.match(WORD) ?? []).filter(

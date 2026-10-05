@@ -207,7 +207,7 @@ export const enA1: SkillExercise[] = [
         ],
         sample:
           "Dear Grandma, happy birthday! I hope you have a great day. You are the best cook in the family and I love your cake. " +
-          "Your present is a new book about gardens. We are visiting you on Sunday at four o'clock. See you soon! Lots of love, Deniz",
+          "Your present is a new book about gardens. We are visiting you on Sunday at four o'clock. See you soon! Lots of love, Charlie",
       },
     ],
   },
@@ -386,7 +386,7 @@ export const enA1: SkillExercise[] = [
         explain: "„we“ ile fiil yalın kalır: go. Cümle doğru.",
       },
       {
-        text: "Ali ___ TV in the evening.",
+        text: "Harry ___ TV in the evening.",
         options: ["watches", "watchs", "watch"],
         answer: 0,
         explain: "Sonu -ch ile biten fiil üçüncü tekilde -es alır: watches.",

@@ -269,7 +269,7 @@ export const deB2: SkillExercise[] = [
           "und den Samstagvormittag anzubieten. Denkbar wäre außerdem, den Lesesaal ohne Ausleihe geöffnet zu lassen; " +
           "dafür würde weniger Personal benötigt.\n\n" +
           "Über eine kurze Rückmeldung wäre ich dankbar.\n" +
-          "Mit freundlichen Grüßen\nNuri Özkan",
+          "Mit freundlichen Grüßen\nAnton Göbel",
       },
     ],
   },

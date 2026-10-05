@@ -110,7 +110,7 @@ export const a1U25: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo zusammen,\n\nvor einem Jahr war mein Deutsch-Start. Am Anfang war es schwer. Im Unterricht habe ich nichts verstanden.\n\nAber ich habe jeden Tag ein bisschen gelernt — zehn Minuten, manchmal zwanzig. Ich habe meine Hausaufgaben gemacht und viel Musik gehört.\n\nJetzt kann ich einen Termin machen, im Supermarkt fragen und eine E-Mail schreiben. Letzte Woche habe ich eine Frau aus Berlin getroffen. Eine halbe Stunde, nur auf Deutsch!\n\nIch bin wirklich stolz. Nächsten Monat mache ich den Test.\n\nWeitermachen, jeden Tag ein bisschen! Der Anfang ist schwer, aber es wird besser.\n\nEuer Ali",
+      "Hallo zusammen,\n\nvor einem Jahr war mein Deutsch-Start. Am Anfang war es schwer. Im Unterricht habe ich nichts verstanden.\n\nAber ich habe jeden Tag ein bisschen gelernt — zehn Minuten, manchmal zwanzig. Ich habe meine Hausaufgaben gemacht und viel Musik gehört.\n\nJetzt kann ich einen Termin machen, im Supermarkt fragen und eine E-Mail schreiben. Letzte Woche habe ich eine Frau aus Berlin getroffen. Eine halbe Stunde, nur auf Deutsch!\n\nIch bin wirklich stolz. Nächsten Monat mache ich den Test.\n\nWeitermachen, jeden Tag ein bisschen! Der Anfang ist schwer, aber es wird besser.\n\nEuer Moritz",
     questions: [
       {
         text: "Wie war es am Anfang?",
@@ -119,7 +119,7 @@ export const a1U25: SkillExercise[] = [
         explain: "„Am Anfang war es schwer.“ — „war“, „ist gewesen“ DEĞİL.",
       },
       {
-        text: "Wie hat Ali gelernt?",
+        text: "Wie hat Moritz gelernt?",
         options: [
           "jeden Tag ein bisschen",
           "einmal pro Woche viel",
@@ -130,20 +130,20 @@ export const a1U25: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ali hat eine Frau aus Berlin ___.",
+        text: "Moritz hat eine Frau aus Berlin ___.",
         options: [],
         answer: 0,
         accept: ["getroffen"],
         explain: "„Letzte Woche habe ich eine Frau aus Berlin getroffen.“",
       },
       {
-        text: "Was macht Ali nächsten Monat?",
+        text: "Was macht Moritz nächsten Monat?",
         options: ["den Test", "eine Reise", "einen Kurs"],
         answer: 0,
         explain: "„Nächsten Monat mache ich den Test.“",
       },
       {
-        text: "Ali ne öneriyor?",
+        text: "Moritz ne öneriyor?",
         options: [
           "jeden Tag ein bisschen weitermachen",
           "einen langen Kurs machen",
@@ -184,7 +184,7 @@ export const a1U25: SkillExercise[] = [
       { speaker: "Freund", text: "So früh?" },
       { speaker: "Freundin", text: "Ja, ich hatte Unterricht. Danach habe ich meine Hausaufgaben gemacht." },
       { speaker: "Freund", text: "Und am Abend?" },
-      { speaker: "Freundin", text: "Am Abend habe ich mit Elif gegessen. Es war sehr gemütlich." },
+      { speaker: "Freundin", text: "Am Abend habe ich mit Paula gegessen. Es war sehr gemütlich." },
       { speaker: "Freund", text: "Schön. Vorgestern war mein Tag nicht so gut — ich war krank." },
     ],
     questions: [
@@ -321,11 +321,11 @@ export const a1U25: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Cümleyi geçmiş zamana çevir.",
-        source: "Ich esse mit Elif.",
-        answer: "Ich habe mit Elif gegessen",
-        alternatives: ["Ich habe mit Elif gegessen."],
+        source: "Ich esse mit Paula.",
+        answer: "Ich habe mit Paula gegessen",
+        alternatives: ["Ich habe mit Paula gegessen."],
         why:
-          "„essen“ yer değiştirme değil → haben. Ortaç „gegessen“ sona gider; kıskacın içinde „mit Elif“ kalır.",
+          "„essen“ yer değiştirme değil → haben. Ortaç „gegessen“ sona gider; kıskacın içinde „mit Paula“ kalır.",
       },
     ],
   },

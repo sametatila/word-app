@@ -104,17 +104,17 @@ export const enA1U08: SkillExercise[] = [
     minutes: 4,
     text:
       "Waiter: Here is the check. Twenty-four euros, please.\n" +
-      "Ali: Can we pay together?\n" +
+      "Harry: Can we pay together?\n" +
       "Waiter: Of course.\n" +
-      "Eda: I'd like to pay by card.\n" +
+      "Erin: I'd like to pay by card.\n" +
       "Waiter: No problem. Or cash, if you prefer.\n" +
-      "Ali: I only have a card too. No cash today.\n" +
+      "Harry: I only have a card too. No cash today.\n" +
       "Waiter: That's fine. Here you are.\n" +
-      "Eda: Can I get a receipt for my work, please?\n" +
+      "Erin: Can I get a receipt for my work, please?\n" +
       "Waiter: Yes, one moment.\n" +
-      "Eda: What time is it now?\n" +
+      "Erin: What time is it now?\n" +
       "Waiter: It's a quarter to nine. We close at ten.\n" +
-      "Ali: Thank you. Can I have my card back?\n" +
+      "Harry: Thank you. Can I have my card back?\n" +
       "Waiter: Here. Have a good evening!",
     questions: [
       {
@@ -127,11 +127,11 @@ export const enA1U08: SkillExercise[] = [
         text: "How do they pay?",
         options: ["by card", "with cash", "with a check"],
         answer: 0,
-        explain: "„I'd like to pay by card… I only have a card too.“ „with a check“ yanlış: Eda'nın istediği „receipt“ iş için bir fiş, ödeme biçimi değil.",
+        explain: "„I'd like to pay by card… I only have a card too.“ „with a check“ yanlış: Erin'in istediği „receipt“ iş için bir fiş, ödeme biçimi değil.",
       },
       {
         kind: "truefalse",
-        text: "Ali has cash today.",
+        text: "Harry has cash today.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I only have a card too. No cash today.“",
@@ -186,41 +186,41 @@ export const enA1U08: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Can", text: "Excuse me, what time is it?" },
-      { speaker: "Nil", text: "It's half past eight." },
-      { speaker: "Can", text: "Half past eight! I get up at seven every day. Today is not a good day!" },
-      { speaker: "Nil", text: "Do you work today?" },
-      { speaker: "Can", text: "Yes, I work from nine until five. And you?" },
-      { speaker: "Nil", text: "I don't work on Monday. I wake up at nine and I take a long shower." },
-      { speaker: "Can", text: "You are lucky! What do you do in the morning?" },
-      { speaker: "Nil", text: "I have breakfast and I read. At lunchtime I cook." },
-      { speaker: "Can", text: "And at night?" },
-      { speaker: "Nil", text: "At night I am always tired. I am in bed at a quarter past eleven." },
-      { speaker: "Can", text: "I am in bed at midnight. My phone is always in my hand!" },
+      { speaker: "Tyler", text: "Excuse me, what time is it?" },
+      { speaker: "Katie", text: "It's half past eight." },
+      { speaker: "Tyler", text: "Half past eight! I get up at seven every day. Today is not a good day!" },
+      { speaker: "Katie", text: "Do you work today?" },
+      { speaker: "Tyler", text: "Yes, I work from nine until five. And you?" },
+      { speaker: "Katie", text: "I don't work on Monday. I wake up at nine and I take a long shower." },
+      { speaker: "Tyler", text: "You are lucky! What do you do in the morning?" },
+      { speaker: "Katie", text: "I have breakfast and I read. At lunchtime I cook." },
+      { speaker: "Tyler", text: "And at night?" },
+      { speaker: "Katie", text: "At night I am always tired. I am in bed at a quarter past eleven." },
+      { speaker: "Tyler", text: "I am in bed at midnight. My phone is always in my hand!" },
     ],
     questions: [
       {
         text: "What time is it?",
         options: ["half past eight", "half past seven", "a quarter past eleven"],
         answer: 0,
-        explain: "„It's half past eight.“ — sekiz buçuk; on biri çeyrek geçe Nil'in yatma saati.",
+        explain: "„It's half past eight.“ — sekiz buçuk; on biri çeyrek geçe Katie'nin yatma saati.",
       },
       {
-        text: "When does Nil wake up on Monday?",
+        text: "When does Katie wake up on Monday?",
         options: ["at nine", "at seven", "at eight"],
         answer: 0,
-        explain: "„I don't work on Monday. I wake up at nine…“ — yedi Can'ın kalkma saati.",
+        explain: "„I don't work on Monday. I wake up at nine…“ — yedi Tyler'in kalkma saati.",
       },
       {
         kind: "truefalse",
-        text: "Nil does not work on Monday.",
+        text: "Katie does not work on Monday.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I don't work on Monday.“",
       },
       {
         kind: "gapfill",
-        text: "Can works from nine until ___.",
+        text: "Tyler works from nine until ___.",
         options: [],
         answer: 0,
         accept: ["five", "5"],
@@ -236,7 +236,7 @@ export const enA1U08: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When is Can in bed?",
+        text: "When is Tyler in bed?",
         options: [],
         answer: 0,
         accept: ["at midnight", "midnight"],
@@ -252,7 +252,7 @@ export const enA1U08: SkillExercise[] = [
     unit: 8,
     title: "Saturday at the market",
     genre: "monologue",
-    intro: "Ela pazar alışverişini anlatıyor. Ne aldı, ne kadar ödedi?",
+    intro: "Lucy pazar alışverişini anlatıyor. Ne aldı, ne kadar ödedi?",
     gloss: [
       { de: "go to", tr: "gitmek" },
       { de: "open", tr: "açılmak" },
@@ -260,16 +260,16 @@ export const enA1U08: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ela", text: "I go to the market every Saturday morning. It opens at seven." },
-      { speaker: "Ela", text: "I'd like a kilo of apples, some potatoes and two carrots." },
-      { speaker: "Ela", text: "Are the tomatoes fresh? Yes, they are very fresh and cheap today." },
-      { speaker: "Ela", text: "How much are the apples? Two euros a kilo. That is not expensive." },
-      { speaker: "Ela", text: "A banana costs half a euro. I take four bananas for my children." },
-      { speaker: "Ela", text: "At the end I pay by card. It is nine euros." },
+      { speaker: "Lucy", text: "I go to the market every Saturday morning. It opens at seven." },
+      { speaker: "Lucy", text: "I'd like a kilo of apples, some potatoes and two carrots." },
+      { speaker: "Lucy", text: "Are the tomatoes fresh? Yes, they are very fresh and cheap today." },
+      { speaker: "Lucy", text: "How much are the apples? Two euros a kilo. That is not expensive." },
+      { speaker: "Lucy", text: "A banana costs half a euro. I take four bananas for my children." },
+      { speaker: "Lucy", text: "At the end I pay by card. It is nine euros." },
     ],
     questions: [
       {
-        text: "When does Ela go to the market?",
+        text: "When does Lucy go to the market?",
         options: ["every Saturday morning", "every Monday", "at midnight"],
         answer: 0,
         explain: "„I go to the market every Saturday morning.“",
@@ -289,7 +289,7 @@ export const enA1U08: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ela takes four ___.",
+        text: "Lucy takes four ___.",
         options: [],
         answer: 0,
         accept: ["bananas"],
@@ -297,7 +297,7 @@ export const enA1U08: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Ela'nın anlattığı sıra: doğru sıraya koy.",
+        text: "Lucy'nin anlattığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -310,7 +310,7 @@ export const enA1U08: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How does Ela pay?",
+        text: "How does Lucy pay?",
         options: [],
         answer: 0,
         accept: ["by card", "card", "with a card"],

@@ -41,7 +41,7 @@ export const enB1U20: SkillExercise[] = [
     unit: 20,
     title: "An email from HR",
     genre: "email",
-    intro: "İnsan kaynaklarından bir e-posta. Emre'nin rapordan sonra ne yapması gerekiyor?",
+    intro: "İnsan kaynaklarından bir e-posta. Owen'in rapordan sonra ne yapması gerekiyor?",
     gloss: [
       { de: "the note", tr: "rapor" },
       { de: "absence", tr: "devamsızlık" },
@@ -59,7 +59,7 @@ export const enB1U20: SkillExercise[] = [
     minutes: 7,
     text:
       "Subject: Your absence last week\n" +
-      "Hi Emre,\n" +
+      "Hi Owen,\n" +
       "Thank you for your message on Monday. I am sorry to hear you were ill, and I hope you are feeling better.\n" +
       "You sent the note from your doctor; moreover, you called the office on the first morning. That was exactly right, and your manager was informed the same day.\n" +
       "Besides the note, we need one more thing: the date you are coming back. Please send it by Friday. Otherwise, the system will count the whole week as unpaid leave, and that is hard to correct later.\n" +
@@ -72,12 +72,12 @@ export const enB1U20: SkillExercise[] = [
     questions: [
       {
         text: "What does HR need besides the note?",
-        options: ["the date Emre is coming back", "a second note", "a phone call"],
+        options: ["the date Owen is coming back", "a second note", "a phone call"],
         answer: 0,
         explain: "„Besides the note, we need one more thing: the date you are coming back.“",
       },
       {
-        text: "How should Emre send the next note?",
+        text: "How should Owen send the next note?",
         options: ["bring it to reception or mail it", "by email", "by phone"],
         answer: 0,
         explain: "„Instead, please bring the paper note to reception, or mail it to us.“",
@@ -205,20 +205,20 @@ export const enB1U20: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Sena", text: "You saw the numbers. What would you do?" },
-      { speaker: "Can", text: "If the pulse is normal tomorrow, we will wait. That is not my opinion, that is what the sheet says." },
-      { speaker: "Sena", text: "And your opinion?" },
-      { speaker: "Can", text: "If I were you, I would check the heart again. Not because I think something is wrong — because one measurement is not a measurement." },
-      { speaker: "Sena", text: "The doctor was not worried." },
-      { speaker: "Can", text: "Nor am I. A second opinion is not a second doctor; it is a second day." },
-      { speaker: "Sena", text: "And the temperature?" },
-      { speaker: "Can", text: "Unless the temperature falls by tomorrow evening, call them. That one is written on the paper and it has a number on it." },
-      { speaker: "Sena", text: "Everybody keeps saying tomorrow." },
-      { speaker: "Can", text: "Because today told you very little. Blood pressure at eight in the evening after a day like yours is not information." },
-      { speaker: "Sena", text: "What if it is the same tomorrow?" },
-      { speaker: "Can", text: "Then it is the same and that is useful too. Two readings the same is a fact; one reading is a number." },
-      { speaker: "Sena", text: "And if it is higher?" },
-      { speaker: "Can", text: "Then you go in the morning and you do not wait for the afternoon appointment. That is the only part of this where I would be quick." },
+      { speaker: "Ellie", text: "You saw the numbers. What would you do?" },
+      { speaker: "Tyler", text: "If the pulse is normal tomorrow, we will wait. That is not my opinion, that is what the sheet says." },
+      { speaker: "Ellie", text: "And your opinion?" },
+      { speaker: "Tyler", text: "If I were you, I would check the heart again. Not because I think something is wrong — because one measurement is not a measurement." },
+      { speaker: "Ellie", text: "The doctor was not worried." },
+      { speaker: "Tyler", text: "Nor am I. A second opinion is not a second doctor; it is a second day." },
+      { speaker: "Ellie", text: "And the temperature?" },
+      { speaker: "Tyler", text: "Unless the temperature falls by tomorrow evening, call them. That one is written on the paper and it has a number on it." },
+      { speaker: "Ellie", text: "Everybody keeps saying tomorrow." },
+      { speaker: "Tyler", text: "Because today told you very little. Blood pressure at eight in the evening after a day like yours is not information." },
+      { speaker: "Ellie", text: "What if it is the same tomorrow?" },
+      { speaker: "Tyler", text: "Then it is the same and that is useful too. Two readings the same is a fact; one reading is a number." },
+      { speaker: "Ellie", text: "And if it is higher?" },
+      { speaker: "Tyler", text: "Then you go in the morning and you do not wait for the afternoon appointment. That is the only part of this where I would be quick." },
     ],
     questions: [
       {
@@ -228,14 +228,14 @@ export const enB1U20: SkillExercise[] = [
         explain: "„If the pulse is normal tomorrow, we will wait. That is not my opinion, that is what the sheet says.“",
       },
       {
-        text: "Why does Can want a second reading?",
+        text: "Why does Tyler want a second reading?",
         options: ["one measurement is not a measurement", "the doctor was wrong", "the paper says so"],
         answer: 0,
         explain: "„because one measurement is not a measurement.“",
       },
       {
         kind: "truefalse",
-        text: "Can does not think something is wrong with the heart.",
+        text: "Tyler does not think something is wrong with the heart.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Not because I think something is wrong…“",
@@ -258,7 +258,7 @@ export const enB1U20: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What should Sena do if it is higher?",
+        text: "What should Ellie do if it is higher?",
         options: [],
         answer: 0,
         accept: ["go in the morning", "go early", "not wait"],
@@ -283,14 +283,14 @@ export const enB1U20: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Ela", text: "They will operate tomorrow morning. Eight o'clock, and I am the first on the list, which everybody tells me is the good slot." },
-      { speaker: "Ela", text: "I am going to stay for one night. That was my decision three weeks ago and the unit agreed with it today." },
-      { speaker: "Ela", text: "My sister is visiting at eight this evening. Arranged, in the calendar, and she will bring the one thing the list does not mention: a phone charger with a long cable." },
-      { speaker: "Ela", text: "The bed by the window was free and I took it. Six hours later I understand why it was free: the door and the window are the two noisy places." },
-      { speaker: "Ela", text: "The care here is calm in a way I did not expect. Nobody hurries and nobody is late, and those two things are apparently possible together." },
-      { speaker: "Ela", text: "What I brought and did not need: three books. What I needed and did not bring: a pen." },
-      { speaker: "Ela", text: "Recovery is four weeks, of which the first is rest and the other three are walking a bit further every day." },
-      { speaker: "Ela", text: "The nurse said one thing I will keep: people who recover fastest are not the strongest; they are the ones who ask when something hurts." },
+      { speaker: "Lucy", text: "They will operate tomorrow morning. Eight o'clock, and I am the first on the list, which everybody tells me is the good slot." },
+      { speaker: "Lucy", text: "I am going to stay for one night. That was my decision three weeks ago and the unit agreed with it today." },
+      { speaker: "Lucy", text: "My sister is visiting at eight this evening. Arranged, in the calendar, and she will bring the one thing the list does not mention: a phone charger with a long cable." },
+      { speaker: "Lucy", text: "The bed by the window was free and I took it. Six hours later I understand why it was free: the door and the window are the two noisy places." },
+      { speaker: "Lucy", text: "The care here is calm in a way I did not expect. Nobody hurries and nobody is late, and those two things are apparently possible together." },
+      { speaker: "Lucy", text: "What I brought and did not need: three books. What I needed and did not bring: a pen." },
+      { speaker: "Lucy", text: "Recovery is four weeks, of which the first is rest and the other three are walking a bit further every day." },
+      { speaker: "Lucy", text: "The nurse said one thing I will keep: people who recover fastest are not the strongest; they are the ones who ask when something hurts." },
     ],
     questions: [
       {

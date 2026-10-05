@@ -54,7 +54,7 @@ export const enB1U12: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Dear Ms. Aslan,\n" +
+      "Dear Ms. Cooper,\n" +
       "Subject: account 4471 — request for a written reply\n" +
       "I am writing with a request about my account. The reference is in the subject line and on every page of this letter.\n" +
       "Although I wrote twice, I received no reply. The first letter was sent on the third of March and the second on the twenty-first. Both went to this address and neither came back.\n" +
@@ -64,7 +64,7 @@ export const enB1U12: SkillExercise[] = [
       "If the statement cannot be issued, I would be grateful for one line saying so. A short no is better than a long silence.\n" +
       "I look forward to your reply at your earliest convenience.\n" +
       "Sincerely,\n" +
-      "Deniz Kaya",
+      "Charlie Ellis",
     questions: [
       {
         text: "What is the request?",
@@ -73,7 +73,7 @@ export const enB1U12: SkillExercise[] = [
         explain: "„I would like the annual statement for last year, on paper, with a stamp.“",
       },
       {
-        text: "Why is Deniz writing now?",
+        text: "Why is Charlie writing now?",
         options: ["nobody wrote anything down", "the account is closed", "the letters came back"],
         answer: 0,
         explain: "„four people said the same thing and none of them wrote it down.“",
@@ -87,7 +87,7 @@ export const enB1U12: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Deniz has called ___ times.",
+        text: "Charlie has called ___ times.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
@@ -108,7 +108,7 @@ export const enB1U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Deniz want if the statement cannot be issued?",
+        text: "What does Charlie want if the statement cannot be issued?",
         options: [],
         answer: 0,
         accept: ["one line saying so", "a short no", "one line"],
@@ -197,21 +197,21 @@ export const enB1U12: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Ela", text: "I have declared my income this year. Two hours, and most of it was looking for one number." },
-      { speaker: "Can", text: "Which number?" },
-      { speaker: "Ela", text: "The one from the second job in the spring. I declared it last year too and I still could not find it." },
-      { speaker: "Can", text: "Have you kept the records?" },
-      { speaker: "Ela", text: "I have kept everything and I can find nothing. Those are two different skills." },
-      { speaker: "Can", text: "What can you deduct?" },
-      { speaker: "Ela", text: "The course in March, the travel to the second job, and part of the internet. Not the coffee, and I asked." },
-      { speaker: "Can", text: "Is it worth doing all that for the deduction?" },
-      { speaker: "Ela", text: "About three hundred euros this year. Two hours for three hundred is worth doing." },
-      { speaker: "Can", text: "And the deadline?" },
-      { speaker: "Ela", text: "The end of the month. If you send it late, the payment is the same but the questions are different." },
-      { speaker: "Can", text: "What do you do with the receipts?" },
-      { speaker: "Ela", text: "One envelope a year, with the year on the front. I learned that from my father and it is the only system I have kept." },
-      { speaker: "Can", text: "Then I will start tonight." },
-      { speaker: "Ela", text: "Start with the envelope. The form takes an hour; the looking takes the rest of your life." },
+      { speaker: "Lucy", text: "I have declared my income this year. Two hours, and most of it was looking for one number." },
+      { speaker: "Tyler", text: "Which number?" },
+      { speaker: "Lucy", text: "The one from the second job in the spring. I declared it last year too and I still could not find it." },
+      { speaker: "Tyler", text: "Have you kept the records?" },
+      { speaker: "Lucy", text: "I have kept everything and I can find nothing. Those are two different skills." },
+      { speaker: "Tyler", text: "What can you deduct?" },
+      { speaker: "Lucy", text: "The course in March, the travel to the second job, and part of the internet. Not the coffee, and I asked." },
+      { speaker: "Tyler", text: "Is it worth doing all that for the deduction?" },
+      { speaker: "Lucy", text: "About three hundred euros this year. Two hours for three hundred is worth doing." },
+      { speaker: "Tyler", text: "And the deadline?" },
+      { speaker: "Lucy", text: "The end of the month. If you send it late, the payment is the same but the questions are different." },
+      { speaker: "Tyler", text: "What do you do with the receipts?" },
+      { speaker: "Lucy", text: "One envelope a year, with the year on the front. I learned that from my father and it is the only system I have kept." },
+      { speaker: "Tyler", text: "Then I will start tonight." },
+      { speaker: "Lucy", text: "Start with the envelope. The form takes an hour; the looking takes the rest of your life." },
     ],
     questions: [
       {
@@ -221,14 +221,14 @@ export const enB1U12: SkillExercise[] = [
         explain: "„Two hours, and most of it was looking for one number.“",
       },
       {
-        text: "What can Ela not deduct?",
+        text: "What can Lucy not deduct?",
         options: ["the coffee", "the course", "the travel"],
         answer: 0,
         explain: "„Not the coffee, and I asked.“",
       },
       {
         kind: "truefalse",
-        text: "Ela has kept everything and can find nothing.",
+        text: "Lucy has kept everything and can find nothing.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I have kept everything and I can find nothing. Those are two different skills.“",
@@ -251,7 +251,7 @@ export const enB1U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is Ela's system for receipts?",
+        text: "What is Lucy's system for receipts?",
         options: [],
         answer: 0,
         accept: ["one envelope a year", "an envelope", "one envelope"],
@@ -277,18 +277,18 @@ export const enB1U12: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Nil", text: "I had taken a ticket before I sat down. That is the only thing I did right all morning." },
-      { speaker: "Nil", text: "By the time I got there, the line had grown to about forty people. It was twenty when the doors opened at eight." },
-      { speaker: "Nil", text: "The ticket said B62. The screen was showing B31, which sounds bad and is not: A, B and C move at different speeds." },
-      { speaker: "Nil", text: "B is the slow one. B is everything that needs a signature from somebody who is not at the counter." },
-      { speaker: "Nil", text: "Then they called my number. Two hours and ten minutes, which is under the average for a Monday." },
-      { speaker: "Nil", text: "The four minutes at the desk were the easy part. She stamped two pages, asked one question and said: next time take A." },
-      { speaker: "Nil", text: "That is the trick nobody writes down. The same task has two tickets, and A is for people who bring the form already filled out." },
-      { speaker: "Nil", text: "Patience is not the skill here. Reading the small sign next to the ticket machine is the skill." },
+      { speaker: "Katie", text: "I had taken a ticket before I sat down. That is the only thing I did right all morning." },
+      { speaker: "Katie", text: "By the time I got there, the line had grown to about forty people. It was twenty when the doors opened at eight." },
+      { speaker: "Katie", text: "The ticket said B62. The screen was showing B31, which sounds bad and is not: A, B and C move at different speeds." },
+      { speaker: "Katie", text: "B is the slow one. B is everything that needs a signature from somebody who is not at the counter." },
+      { speaker: "Katie", text: "Then they called my number. Two hours and ten minutes, which is under the average for a Monday." },
+      { speaker: "Katie", text: "The four minutes at the desk were the easy part. She stamped two pages, asked one question and said: next time take A." },
+      { speaker: "Katie", text: "That is the trick nobody writes down. The same task has two tickets, and A is for people who bring the form already filled out." },
+      { speaker: "Katie", text: "Patience is not the skill here. Reading the small sign next to the ticket machine is the skill." },
     ],
     questions: [
       {
-        text: "How long did Nil wait?",
+        text: "How long did Katie wait?",
         options: ["two hours and ten minutes", "forty minutes", "four minutes"],
         answer: 0,
         explain: "„Then they called my number. Two hours and ten minutes…“",
@@ -308,7 +308,7 @@ export const enB1U12: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Nil's ticket said B___.",
+        text: "Katie's ticket said B___.",
         options: [],
         answer: 0,
         accept: ["62"],
@@ -324,7 +324,7 @@ export const enB1U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is the skill, for Nil?",
+        text: "What is the skill, for Katie?",
         options: [],
         answer: 0,
         accept: ["reading the small sign", "reading the sign", "the sign"],

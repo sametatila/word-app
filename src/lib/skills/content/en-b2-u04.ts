@@ -71,7 +71,7 @@ export const enB2U04: SkillExercise[] = [
       "We ask for the following: payment of the heating costs by 31 March, a written apology for the removal of the bicycles, and a meeting with your representative before the end of February.\n" +
       "We would prefer to settle this matter with goodwill. If we do not receive a reply by 28 February, however, we will contact the local tenant association.\n" +
       "Yours sincerely,\n" +
-      "Kerem Arslan, on behalf of the tenants",
+      "Connor Nolan, on behalf of the tenants",
     questions: [
       {
         text: "How long was the heating out of order?",
@@ -149,7 +149,7 @@ export const enB2U04: SkillExercise[] = [
     minutes: 9,
     text:
       "WHAT A YEAR OF ARGUING TAUGHT US\n" +
-      "by Elif Demir, owner of the Corner Bakery\n" +
+      "by Holly Adams, owner of the Corner Bakery\n" +
       "Two years ago our landlord decided that the bakery had broken the rental contract by putting tables on the sidewalk. We said the tables had been there for ten years and nobody had complained. What followed was the most expensive year in the history of our small business.\n" +
       "If we had agreed in the first month, the matter would have been settled for a few hundred euros. Instead, both sides hired lawyers. By the summer, the lawyers had cost more than the tables were worth.\n" +
       "The worst part is that we are still paying for that year. If we had asked for mediation earlier, we would be calmer now, and we would have the money to repair the oven, which has been broken since March.\n" +
@@ -225,18 +225,18 @@ export const enB2U04: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Ufuk", text: "The client says we charged them twice for the March work. Have you seen their letter?" },
-      { speaker: "Deniz", text: "Yes. They must have misread the invoice. The March work and the April work are on the same page, but they are two separate items." },
-      { speaker: "Ufuk", text: "They also say we agreed to a ten percent discount." },
-      { speaker: "Deniz", text: "We can't have made that concession. There is no email, no minute and no signature. I was in every meeting, and nobody mentioned a discount." },
-      { speaker: "Ufuk", text: "Could someone from sales have promised it on the phone?" },
-      { speaker: "Deniz", text: "Possibly, but then it must have been after June. Our sales manager only started in June." },
-      { speaker: "Ufuk", text: "And our letter from April? They never replied to it." },
-      { speaker: "Deniz", text: "They should have acknowledged the letter. It asked them to confirm the new prices, and silence is not a yes." },
-      { speaker: "Ufuk", text: "So how do we answer?" },
-      { speaker: "Deniz", text: "Politely. We explain the two items, we attach the April letter, and we offer a call." },
-      { speaker: "Ufuk", text: "No discount?" },
-      { speaker: "Deniz", text: "Not ten percent. But if they pay by the end of the month, I could live with a small gesture of goodwill." },
+      { speaker: "Craig", text: "The client says we charged them twice for the March work. Have you seen their letter?" },
+      { speaker: "Charlie", text: "Yes. They must have misread the invoice. The March work and the April work are on the same page, but they are two separate items." },
+      { speaker: "Craig", text: "They also say we agreed to a ten percent discount." },
+      { speaker: "Charlie", text: "We can't have made that concession. There is no email, no minute and no signature. I was in every meeting, and nobody mentioned a discount." },
+      { speaker: "Craig", text: "Could someone from sales have promised it on the phone?" },
+      { speaker: "Charlie", text: "Possibly, but then it must have been after June. Our sales manager only started in June." },
+      { speaker: "Craig", text: "And our letter from April? They never replied to it." },
+      { speaker: "Charlie", text: "They should have acknowledged the letter. It asked them to confirm the new prices, and silence is not a yes." },
+      { speaker: "Craig", text: "So how do we answer?" },
+      { speaker: "Charlie", text: "Politely. We explain the two items, we attach the April letter, and we offer a call." },
+      { speaker: "Craig", text: "No discount?" },
+      { speaker: "Charlie", text: "Not ten percent. But if they pay by the end of the month, I could live with a small gesture of goodwill." },
     ],
     questions: [
       {
@@ -246,8 +246,8 @@ export const enB2U04: SkillExercise[] = [
         explain: "„The client says we charged them twice for the March work.“",
       },
       {
-        text: "Why does Deniz think there was no discount?",
-        options: ["There is no written record of it.", "The client is new.", "Deniz was absent."],
+        text: "Why does Charlie think there was no discount?",
+        options: ["There is no written record of it.", "The client is new.", "Charlie was absent."],
         answer: 0,
         explain: "„There is no email, no minute and no signature.“",
       },
@@ -276,7 +276,7 @@ export const enB2U04: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What would Deniz offer if the client pays by the end of the month?",
+        text: "What would Charlie offer if the client pays by the end of the month?",
         options: [],
         answer: 0,
         accept: ["a small gesture of goodwill", "a small gesture", "goodwill"],
@@ -302,14 +302,14 @@ export const enB2U04: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Lale", text: "Good evening, everyone. I know many of you are angry about the new fees, and I want to start with an honest sentence." },
-      { speaker: "Lale", text: "Admittedly, our position was rather rigid. We announced the increase in a short email and did not explain it, and that was a mistake." },
-      { speaker: "Lale", text: "Here is the explanation. Our energy bill has doubled, and the pool alone costs twice as much to heat as it did two years ago." },
-      { speaker: "Lale", text: "We have read your letters. Families with three or more children will pay the old fee until the end of the year, and students will get a twenty percent discount." },
-      { speaker: "Lale", text: "We are flexible; nevertheless, the date stands. The new fees will start on 1 January for everyone else, because we cannot wait longer." },
-      { speaker: "Lale", text: "Some of you have asked for mediation with the city. Presumably mediation would be faster than another six months of letters, and we are happy to take part." },
-      { speaker: "Lale", text: "We also want to be more open. We will publish the budget of the club online, so that every member can see where the money goes." },
-      { speaker: "Lale", text: "Thank you for your patience. After the break, we will answer your questions for as long as you like." },
+      { speaker: "Polly", text: "Good evening, everyone. I know many of you are angry about the new fees, and I want to start with an honest sentence." },
+      { speaker: "Polly", text: "Admittedly, our position was rather rigid. We announced the increase in a short email and did not explain it, and that was a mistake." },
+      { speaker: "Polly", text: "Here is the explanation. Our energy bill has doubled, and the pool alone costs twice as much to heat as it did two years ago." },
+      { speaker: "Polly", text: "We have read your letters. Families with three or more children will pay the old fee until the end of the year, and students will get a twenty percent discount." },
+      { speaker: "Polly", text: "We are flexible; nevertheless, the date stands. The new fees will start on 1 January for everyone else, because we cannot wait longer." },
+      { speaker: "Polly", text: "Some of you have asked for mediation with the city. Presumably mediation would be faster than another six months of letters, and we are happy to take part." },
+      { speaker: "Polly", text: "We also want to be more open. We will publish the budget of the club online, so that every member can see where the money goes." },
+      { speaker: "Polly", text: "Thank you for your patience. After the break, we will answer your questions for as long as you like." },
     ],
     questions: [
       {

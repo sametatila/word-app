@@ -38,7 +38,7 @@ export const DE_B2_W03: QuizWeek = {
       body:
         "Wer in diesen Wochen das Museum der Stadt besucht, sieht zunächst keine berühmten Gemälde, sondern ganz gewöhnliche Fotos von Familien: Hochzeiten, erste Schultage, Picknicks am Rhein. " +
         "Die Bilder stammen von Familien, die vor etwa sechzig Jahren aus der Türkei, Italien und Griechenland nach Köln gekommen sind.\n\n" +
-        "Die Idee zur Ausstellung entstand, als die Leiterin der Ausstellung, Selin Akgül, im Keller ihrer Großmutter einen Karton mit alten Fotos fand. " +
+        "Die Idee zur Ausstellung entstand, als die Leiterin der Ausstellung, Luisa Akgül, im Keller ihrer Großmutter einen Karton mit alten Fotos fand. " +
         "„Ich hatte das Gefühl, als würde ich meine Stadt zum ersten Mal sehen“, erzählt sie. " +
         "Nach einem Aufruf in der Zeitung meldeten sich mehr als 200 Familien, die ihre privaten Bilder zur Verfügung stellten.\n\n" +
         "Besonders beeindruckend ist ein Raum, in dem Fotos derselben Straße aus fünfzig Jahren in einer Reihe hängen. " +
@@ -56,17 +56,17 @@ export const DE_B2_W03: QuizWeek = {
       plays: 2,
       segments: [
         { speaker: "Emma", text: "Und, wie hat dir das Stück gefallen?" },
-        { speaker: "Deniz", text: "Ehrlich gesagt hatte ich am Anfang Zweifel. Ein Theaterstück in zwei Sprachen, ich dachte, das würde anstrengend werden." },
+        { speaker: "Sascha", text: "Ehrlich gesagt hatte ich am Anfang Zweifel. Ein Theaterstück in zwei Sprachen, ich dachte, das würde anstrengend werden." },
         { speaker: "Emma", text: "Mir ging es genauso. Aber die Übersetzungen über der Bühne haben ja gut funktioniert." },
-        { speaker: "Deniz", text: "Die habe ich fast nie gelesen. Die Hälfte war Türkisch, das verstehe ich sowieso." },
+        { speaker: "Sascha", text: "Die habe ich fast nie gelesen. Die Hälfte war Türkisch, das verstehe ich sowieso." },
         { speaker: "Emma", text: "Stimmt, du hattest einen Vorteil. Ich musste ständig nach oben schauen, sodass ich manche Szenen verpasst habe." },
-        { speaker: "Deniz", text: "Welche Szene hat dich am meisten beeindruckt?" },
+        { speaker: "Sascha", text: "Welche Szene hat dich am meisten beeindruckt?" },
         { speaker: "Emma", text: "Die, in der die Tochter mit ihrer Mutter streitet und mitten im Satz die Sprache wechselt. Als wäre sie plötzlich eine andere Person." },
-        { speaker: "Deniz", text: "Genau das kenne ich von mir. Wenn ich mit meinen Eltern über Gefühle spreche, rede ich Türkisch, über die Arbeit eher Deutsch." },
+        { speaker: "Sascha", text: "Genau das kenne ich von mir. Wenn ich mit meinen Eltern über Gefühle spreche, rede ich Türkisch, über die Arbeit eher Deutsch." },
         { speaker: "Emma", text: "So habe ich das nie gesehen. Hättest du mir das früher erzählt, hätte ich das Stück wahrscheinlich besser verstanden." },
-        { speaker: "Deniz", text: "Das Ende fand ich allerdings schwach. Die Konflikte wurden viel zu schnell gelöst." },
+        { speaker: "Sascha", text: "Das Ende fand ich allerdings schwach. Die Konflikte wurden viel zu schnell gelöst." },
         { speaker: "Emma", text: "Da bin ich anderer Meinung. Mir hat gefallen, dass es kein glückliches Ende gab, sondern nur eine offene Frage." },
-        { speaker: "Deniz", text: "Vielleicht sollten wir es uns noch einmal anschauen. Diesmal tauschen wir die Plätze, und ich lese die Übersetzungen." },
+        { speaker: "Sascha", text: "Vielleicht sollten wir es uns noch einmal anschauen. Diesmal tauschen wir die Plätze, und ich lese die Übersetzungen." },
       ],
     },
   ],
@@ -77,7 +77,7 @@ export const DE_B2_W03: QuizWeek = {
       id: "de-b2-w03-r1",
       block: "read",
       ref: "t1",
-      stem: "Wie kam Selin Akgül an die meisten Bilder der Ausstellung?",
+      stem: "Wie kam Luisa Akgül an die meisten Bilder der Ausstellung?",
       options: [
         "Sie fand sie im Keller ihrer Großmutter.",
         "Viele Familien schickten ihr Fotos, nachdem in der Zeitung ein Aufruf erschienen war.",
@@ -107,7 +107,7 @@ export const DE_B2_W03: QuizWeek = {
       id: "de-b2-w03-r3",
       block: "read",
       ref: "t1",
-      stem: "Wie reagiert Selin Akgül auf die Kritik?",
+      stem: "Wie reagiert Luisa Akgül auf die Kritik?",
       options: [
         "Sie gibt den Kritikern recht und will die Ausstellung ändern.",
         "Sie sagt, es habe damals keine Probleme gegeben.",
@@ -139,7 +139,7 @@ export const DE_B2_W03: QuizWeek = {
       id: "de-b2-w03-l2",
       block: "listen",
       ref: "a1",
-      stem: "Was sagt Deniz über seine beiden Sprachen?",
+      stem: "Was sagt Sascha über seine beiden Sprachen?",
       options: [
         "Er spricht mit seinen Eltern nur Deutsch.",
         "Er wechselt nie mitten im Gespräch die Sprache.",
@@ -157,9 +157,9 @@ export const DE_B2_W03: QuizWeek = {
       stem: "Wie bewerten die beiden das Ende des Stücks?",
       options: [
         "Beide finden es schwach.",
-        "Emma findet es zu schnell, Deniz gefällt es.",
+        "Emma findet es zu schnell, Sascha gefällt es.",
         "Beide finden die offene Frage gut.",
-        "Deniz findet es schwach, Emma gefällt es.",
+        "Sascha findet es schwach, Emma gefällt es.",
       ],
       answer: 3,
       why: "`Da bin ich anderer Meinung` karşıt bir görüş açıyor: Deniz sonu zayıf buluyor, Emma açık sonu beğeniyor. `zu schnell` diyen şık görüşlerin sahiplerini yer değiştiriyor; iki kişilik bir tartışmada asıl iş kimin ne dediğini takip etmek.",
@@ -268,7 +268,7 @@ export const DE_B2_W03: QuizWeek = {
     {
       id: "de-b2-w03-v2",
       block: "vocab",
-      stem: "Deniz fühlt sich in beiden Kulturen ___.",
+      stem: "Sascha fühlt sich in beiden Kulturen ___.",
       options: ["nach Hause", "zu Hause", "im Haus", "zum Haus"],
       answer: 1,
       why: "Bir yerde bulunmak `zu Hause`, bir yere gitmek `nach Hause`; 'kendini evinde hissetmek' de bir bulunma hâli: `sich zu Hause fühlen`. Türkçede '-e' ve '-de' ekleri ayrı, ama iki kalıbın ikisi de 'ev' sözcüğüyle kurulduğu için edat karışıyor. `im Haus` somut bir binanın içi.",

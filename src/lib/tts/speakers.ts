@@ -175,6 +175,17 @@ const NEUTRAL_EN_ONLY = ["Student", "Patient", "Reporter", "Journalist", "Touris
  * sayıyor; kapı kırılmıyor (ses yine veriliyor) ama sayı görünür oluyor.
  */
 const FIRST_F = [
+  // 2026-10-05: içerikte Türkçe adların yerine gelen Almanca/İngilizce adlar (Samet: hedef dil içeriğinde o dilin adları)
+  "Abby", "Abigail", "Alison", "Amanda", "Amelia", "Amelie", "Annika", "Ashley", "Audrey", "Becky", "Bethany",
+  "Brenda", "Bridget", "Caitlin", "Cara", "Carina", "Carmen", "Cassie", "Dagmar", "Darcy", "Debbie", "Diana",
+  "Edith", "Eleanor", "Eliza", "Elke", "Ellie", "Erin", "Esther", "Evelyn", "Fay", "Fiona", "Freya", "Gina",
+  "Gloria", "Gudrun", "Gwen", "Harriet", "Hayley", "Heidi", "Helene", "Holly", "Imke", "Imogen", "Inga", "Iona",
+  "Isabel", "Isla", "Jasmin", "Jessica", "Joanna", "Jodie", "Johanna", "Jutta", "Karla", "Katie", "Kayla", "Kerry",
+  "Kirsty", "Lauren", "Leah", "Leonie", "Lilli", "Lorna", "Lucy", "Luisa", "Lydia", "Maddie", "Madison", "Maike",
+  "Mareen", "Martha", "Megan", "Melissa", "Merle", "Nadine", "Naomi", "Natalie", "Nele", "Nicola", "Nicole", "Norah",
+  "Patty", "Paula", "Polly", "Rachel", "Ramona", "Rieke", "Robyn", "Rosie", "Sandy", "Shelby", "Sienna", "Sigrid",
+  "Simone", "Stacey", "Svenja", "Tabea", "Tamara", "Tessa", "Tilly", "Tina", "Trudy", "Ulrike", "Ursula", "Verena",
+  "Vicky", "Wendy", "Wiebke", "Wilma", "Yvonne",
   // 2026-09-26: deneme sınavı etiketlerinden (İngilizce kâğıtlar)
   "Vesna", "Yrsa", "Runa", "Bexi", "Noor", "Hale", "Juno", "Lenn",
   "Ada", "Aisha", "Alev", "Alina", "Amal", "Amina", "Ana", "Anneke", "Anouk", "Aslı", "Astrid", "Ava", "Ayça", "Ayla",
@@ -193,6 +204,18 @@ const FIRST_F = [
   "Yaprak", "Yaren", "Yasemin", "Zehra", "Zeynep", "Zoe", "Zsofia", "Zümrüt",
 ];
 const FIRST_M = [
+  // 2026-10-05: içerikte Türkçe adların yerine gelen Almanca/İngilizce adlar (Samet: hedef dil içeriğinde o dilin adları)
+  "Aaron", "Achim", "Aiden", "Albert", "Alfie", "Anton", "Archie", "Arne", "Arnold", "Arthur", "Barry", "Billy",
+  "Bobby", "Brian", "Callum", "Carsten", "Casey", "Charlie", "Clemens", "Connor", "Craig", "Danny", "Darren",
+  "Declan", "Dennis", "Derek", "Detlef", "Dirk", "Dominik", "Duncan", "Dylan", "Eckhard", "Eddie", "Edward", "Elias",
+  "Elliot", "Ethan", "Evan", "Fabian", "Finn", "Gary", "Gavin", "Gerhard", "Glen", "Graham", "Gunnar", "Günter",
+  "Hagen", "Hannes", "Harald", "Harold", "Harry", "Harvey", "Heiko", "Helmut", "Henning", "Henry", "Hermann",
+  "Holger", "Hubert", "Ian", "Ingo", "Isaac", "Jacob", "Jamie", "Jannik", "Jason", "Jerry", "Joachim", "Joel",
+  "Jordan", "Joseph", "Joshua", "Julian", "Jürgen", "Keith", "Kenny", "Kieran", "Lennart", "Lenny", "Liam", "Logan",
+  "Louis", "Manfred", "Marius", "Mathis", "Mika", "Morgan", "Moritz", "Nathan", "Nigel", "Niklas", "Norbert",
+  "Ollie", "Owen", "Patrick", "Phil", "Philipp", "Rainer", "Rhys", "Riley", "Roland", "Rory", "Russell", "Rüdiger",
+  "Samuel", "Sascha", "Sean", "Seth", "Steven", "Stuart", "Terry", "Till", "Tony", "Tyler", "Uwe", "Walter",
+  "Warren", "Wesley",
   // 2026-09-26: deneme sınavı etiketlerinden (İngilizce kâğıtlar)
   "Ondrej", "Piet", "Halvard", "Kiro",
   "Ahmet", "Ali", "Alp", "Amir", "Ansgar", "Aras", "Arda", "Ayhan", "Baran", "Barış", "Barkın", "Bekir",

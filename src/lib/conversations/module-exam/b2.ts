@@ -86,7 +86,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
         { de: "Nächste Sitzung: …", tr: "Bir sonraki toplantı: …", en: "Next meeting: …" },
       ],
       sample:
-        "Protokoll der Teamsitzung vom 3. Juni, Beginn 10:00 Uhr\n\nTOP 1 — Stand der Arbeiten\nFrau Yilmaz berichtete, der erste Teil sei fristgerecht abgeschlossen worden. Infolge der späten Lieferung habe sich der zweite Teil jedoch um eine Woche verschoben.\n\nTOP 2 — Entscheidungen\nEs wurde beschlossen, dass der neue Abgabetermin der 20. Juni ist. Herr Brandt merkte an, die Kundschaft sei noch in dieser Woche zu informieren.\n\nTOP 3 — Offene Punkte\nDie Zuständigkeit für die Dokumentation ist noch zu klären. Sofern bis Freitag keine Rückmeldung vorliegt, übernimmt die Projektleitung.\n\nNächste Sitzung: 17. Juni, 10:00 Uhr.",
+        "Protokoll der Teamsitzung vom 3. Juni, Beginn 10:00 Uhr\n\nTOP 1 — Stand der Arbeiten\nFrau Lutz berichtete, der erste Teil sei fristgerecht abgeschlossen worden. Infolge der späten Lieferung habe sich der zweite Teil jedoch um eine Woche verschoben.\n\nTOP 2 — Entscheidungen\nEs wurde beschlossen, dass der neue Abgabetermin der 20. Juni ist. Herr Brandt merkte an, die Kundschaft sei noch in dieser Woche zu informieren.\n\nTOP 3 — Offene Punkte\nDie Zuständigkeit für die Dokumentation ist noch zu klären. Sofern bis Freitag keine Rückmeldung vorliegt, übernimmt die Projektleitung.\n\nNächste Sitzung: 17. Juni, 10:00 Uhr.",
     },
   },
 
@@ -285,7 +285,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       title: "Leserbrief und Richtigstellung",
       titleTr: "Okur mektubu ve düzeltme",
       genre: "Okur mektubu",
-      text: "Zu Ihrem Beitrag „Anstieg der Mieten um dreißig Prozent“ vom 4. Juni\n\nSehr geehrte Redaktion,\n\nich habe Ihren Beitrag mit Interesse gelesen. Zwar teile ich Ihre Sorge, jedoch halte ich die Zahl für irreführend.\n\nIn dem Artikel wurde behauptet, die Mieten seien im gesamten Stadtgebiet um dreißig Prozent gestiegen. Tatsächlich aber betrifft dieser Wert nur Neuvermietungen in zwei Vierteln; im Bestand liegt der Anstieg bei knapp fünf Prozent. Die von Ihnen zitierte Studie sagt das auch so — die im Text genannte Zahl ist der Höchstwert, nicht der Durchschnitt.\n\nEinerseits ist es wichtig, auf die Lage hinzuweisen, andererseits schadet eine zugespitzte Schlagzeile der Debatte: Wer die Zahl nachprüft, verliert das Vertrauen in den Rest.\n\nAbschließend möchte ich vorschlagen, künftig Durchschnitt und Höchstwert getrennt auszuweisen.\n\nMit freundlichen Grüßen\nM. Erdem",
+      text: "Zu Ihrem Beitrag „Anstieg der Mieten um dreißig Prozent“ vom 4. Juni\n\nSehr geehrte Redaktion,\n\nich habe Ihren Beitrag mit Interesse gelesen. Zwar teile ich Ihre Sorge, jedoch halte ich die Zahl für irreführend.\n\nIn dem Artikel wurde behauptet, die Mieten seien im gesamten Stadtgebiet um dreißig Prozent gestiegen. Tatsächlich aber betrifft dieser Wert nur Neuvermietungen in zwei Vierteln; im Bestand liegt der Anstieg bei knapp fünf Prozent. Die von Ihnen zitierte Studie sagt das auch so — die im Text genannte Zahl ist der Höchstwert, nicht der Durchschnitt.\n\nEinerseits ist es wichtig, auf die Lage hinzuweisen, andererseits schadet eine zugespitzte Schlagzeile der Debatte: Wer die Zahl nachprüft, verliert das Vertrauen in den Rest.\n\nAbschließend möchte ich vorschlagen, künftig Durchschnitt und Höchstwert getrennt auszuweisen.\n\nMit freundlichen Grüßen\nM. Clemens",
       questions: [
         { de: "Was kritisiert der Leserbrief?", tr: "Okur mektubu neyi eleştiriyor?", options: ["Dass das Thema unwichtig sei", "Dass ein Höchstwert als Durchschnitt dargestellt wurde", "Dass die Studie erfunden sei", "Dass die Redaktion zu spät berichtet habe"], answer: 1 },
         { de: "Wie hoch ist der Anstieg im Bestand?", tr: "Mevcut kiralarda artış ne kadar?", options: ["Dreißig Prozent", "Zwanzig Prozent", "Knapp fünf Prozent", "Gar nicht gestiegen"], answer: 2 },
@@ -315,7 +315,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
         { de: "Abschließend möchte ich vorschlagen, … zu …", tr: "Son olarak …-mesini önermek isterim", en: "In closing I would like to suggest …" },
       ],
       sample:
-        "Zu Ihrem Beitrag „Anstieg der Mieten um dreißig Prozent“\n\nSehr geehrte Redaktion,\n\nich habe Ihren Beitrag mit Interesse gelesen. Zwar teile ich die Sorge um bezahlbaren Wohnraum, jedoch halte ich die genannte Zahl für irreführend.\n\nIn dem Artikel wurde behauptet, die Mieten seien überall um dreißig Prozent gestiegen. Tatsächlich aber gilt dieser Wert nur für Neuvermietungen in wenigen Vierteln. Wer die Zahl nachprüft, findet im Bestand einen deutlich niedrigeren Anstieg.\n\nEinerseits ist die Aufmerksamkeit wichtig, andererseits schadet eine zugespitzte Schlagzeile der Debatte. Abschließend möchte ich vorschlagen, künftig Durchschnitt und Höchstwert getrennt auszuweisen.\n\nMit freundlichen Grüßen\nM. Erdem",
+        "Zu Ihrem Beitrag „Anstieg der Mieten um dreißig Prozent“\n\nSehr geehrte Redaktion,\n\nich habe Ihren Beitrag mit Interesse gelesen. Zwar teile ich die Sorge um bezahlbaren Wohnraum, jedoch halte ich die genannte Zahl für irreführend.\n\nIn dem Artikel wurde behauptet, die Mieten seien überall um dreißig Prozent gestiegen. Tatsächlich aber gilt dieser Wert nur für Neuvermietungen in wenigen Vierteln. Wer die Zahl nachprüft, findet im Bestand einen deutlich niedrigeren Anstieg.\n\nEinerseits ist die Aufmerksamkeit wichtig, andererseits schadet eine zugespitzte Schlagzeile der Debatte. Abschließend möchte ich vorschlagen, künftig Durchschnitt und Höchstwert getrennt auszuweisen.\n\nMit freundlichen Grüßen\nM. Clemens",
     },
   },
   {
@@ -421,11 +421,11 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       situation: "İki tanıdık taşınma kararını ve konut piyasasını konuşuyor.",
       turns: [
         { speaker: "Jonas", de: "Ich suche seit vier Monaten in der Stadt und finde nichts Bezahlbares. Die Nachfrage übersteigt einfach das Angebot.", tr: "Dört aydır şehirde arıyorum ve ödenebilir bir şey bulamıyorum. Talep arzı aşıyor resmen." },
-        { speaker: "Beyza", de: "Je zentraler die Wohnung ist, desto teurer ist die Miete — das war schon immer so. Aufgrund der Zuzüge ist es nur schlimmer geworden.", tr: "Daire ne kadar merkezîyse kira o kadar pahalı — bu hep böyleydi. Gelen göç yüzünden sadece daha da kötüleşti." },
+        { speaker: "Ulrike", de: "Je zentraler die Wohnung ist, desto teurer ist die Miete — das war schon immer so. Aufgrund der Zuzüge ist es nur schlimmer geworden.", tr: "Daire ne kadar merkezîyse kira o kadar pahalı — bu hep böyleydi. Gelen göç yüzünden sadece daha da kötüleşti." },
         { speaker: "Jonas", de: "Auf dem Land gibt es Leerstand, aber dort fehlt die Infrastruktur. Ohne Auto geht gar nichts.", tr: "Kırsalda boş konut var ama orada altyapı yok. Arabasız hiçbir şey olmuyor." },
-        { speaker: "Beyza", de: "Genau da liegt der Punkt: Je besser die Infrastruktur ist, desto weniger Menschen wandern ab.", tr: "İşte mesele tam orada: Altyapı ne kadar iyiyse o kadar az insan göç eder." },
+        { speaker: "Ulrike", de: "Genau da liegt der Punkt: Je besser die Infrastruktur ist, desto weniger Menschen wandern ab.", tr: "İşte mesele tam orada: Altyapı ne kadar iyiyse o kadar az insan göç eder." },
         { speaker: "Jonas", de: "Trotz des Leerstands zieht also kaum jemand hin. Und neu gebaut wird zu wenig.", tr: "Yani boş konuta rağmen neredeyse kimse taşınmıyor. Üstelik çok az yeni konut yapılıyor." },
-        { speaker: "Beyza", de: "Sowohl die Städte als auch die Dörfer müssten etwas tun. Weder Warten noch Klagen hilft.", tr: "Hem şehirler hem köyler bir şey yapmalı. Ne beklemek ne yakınmak fayda eder." },
+        { speaker: "Ulrike", de: "Sowohl die Städte als auch die Dörfer müssten etwas tun. Weder Warten noch Klagen hilft.", tr: "Hem şehirler hem köyler bir şey yapmalı. Ne beklemek ne yakınmak fayda eder." },
         { speaker: "Jonas", de: "Dann schaue ich mir am Wochenende doch mal den Ort mit der neuen Bahnanbindung an.", tr: "O hâlde hafta sonu yeni tren bağlantısı olan yere bir bakayım." },
       ],
       questions: [
@@ -574,15 +574,15 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       situation: "Bir çalışan şefiyle maaş görüşmesi yapıyor.",
       turns: [
         { speaker: "Chefin", de: "Sie wollten über die Vergütung sprechen. Was schwebt Ihnen vor?", tr: "Ücretlendirme hakkında konuşmak istemiştiniz. Aklınızda ne var?" },
-        { speaker: "Herr Demir", de: "Ich hätte mir eine Anpassung um sechs Prozent vorgestellt. Gemessen an meiner Leistung wäre das angemessen.", tr: "Yüzde altılık bir iyileştirme düşünmüştüm. Performansıma göre bu makul olurdu." },
+        { speaker: "Herr Böhm", de: "Ich hätte mir eine Anpassung um sechs Prozent vorgestellt. Gemessen an meiner Leistung wäre das angemessen.", tr: "Yüzde altılık bir iyileştirme düşünmüştüm. Performansıma göre bu makul olurdu." },
         { speaker: "Chefin", de: "Sechs ist viel. Können Sie das untermauern?", tr: "Altı çok. Bunu temellendirebilir misiniz?" },
-        { speaker: "Herr Demir", de: "Ja. Ich habe zwei Projekte übernommen, die vorher zwei Personen gemacht haben. Der Umsatz im Bereich ist um zwölf Prozent gestiegen.", tr: "Evet. Daha önce iki kişinin yaptığı iki projeyi üstlendim. Bölümdeki ciro yüzde on iki arttı." },
+        { speaker: "Herr Böhm", de: "Ja. Ich habe zwei Projekte übernommen, die vorher zwei Personen gemacht haben. Der Umsatz im Bereich ist um zwölf Prozent gestiegen.", tr: "Evet. Daha önce iki kişinin yaptığı iki projeyi üstlendim. Bölümdeki ciro yüzde on iki arttı." },
         { speaker: "Chefin", de: "Das stimmt. Trotz des guten Jahres ist das Budget allerdings eng. Vier wäre machbar.", tr: "Bu doğru. İyi bir yıla rağmen bütçe dar ama. Dört yapılabilir." },
-        { speaker: "Herr Demir", de: "Sofern die Anpassung im Januar wirksam wird, könnte ich mit fünf leben.", tr: "İyileştirme ocakta geçerli olursa beşle yaşayabilirim." },
+        { speaker: "Herr Böhm", de: "Sofern die Anpassung im Januar wirksam wird, könnte ich mit fünf leben.", tr: "İyileştirme ocakta geçerli olursa beşle yaşayabilirim." },
         { speaker: "Chefin", de: "Fünf zum Januar — einverstanden. Ich lasse Ihnen das schriftlich zukommen.", tr: "Ocaktan itibaren beş — anlaştık. Size yazılı olarak ileteceğim." },
       ],
       questions: [
-        { de: "Wie viel Prozent fordert Herr Demir zuerst?", tr: "Bay Demir önce yüzde kaç istiyor?", options: ["Vier", "Fünf", "Sechs", "Zwölf"], answer: 2 },
+        { de: "Wie viel Prozent fordert Herr Böhm zuerst?", tr: "Bay Böhm önce yüzde kaç istiyor?", options: ["Vier", "Fünf", "Sechs", "Zwölf"], answer: 2 },
         { de: "Womit begründet er die Forderung?", tr: "Talebini neyle gerekçelendiriyor?", options: ["Mit seiner Betriebszugehörigkeit", "Mit zwei übernommenen Projekten und gestiegenem Umsatz", "Mit einem anderen Angebot", "Mit der Inflation"], answer: 1 },
         { de: "Worauf einigen sich beide?", tr: "İkisi ne üzerinde anlaşıyor?", options: ["Vier Prozent ab März", "Fünf Prozent ab Januar", "Sechs Prozent sofort", "Keine Anpassung"], answer: 1 },
       ],
@@ -621,7 +621,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
         { de: "Über eine kurze Rückmeldung würde ich mich freuen.", tr: "Kısa bir geri dönüş beni sevindirir.", en: "I would appreciate a brief reply." },
       ],
       sample:
-        "Betreff: Bitte um ein Gespräch über die Vergütung\n\nSehr geehrte Frau Lorenz,\n\nich würde gern in den nächsten Wochen mit Ihnen über meine Vergütung sprechen.\n\nSeit dem letzten Gespräch hat sich mein Aufgabenbereich deutlich erweitert. Ich habe im Frühjahr zwei Projekte übernommen, die vorher von zwei Personen betreut wurden; der Umsatz in unserem Bereich ist seitdem um zwölf Prozent gestiegen. Das kann ich mit Zahlen untermauern.\n\nGemessen an dieser Entwicklung hätte ich mir eine Anpassung um fünf Prozent vorgestellt. Sofern es Ihnen passt, würde ich den Termin gern noch vor dem Quartalsende legen.\n\nÜber eine kurze Rückmeldung würde ich mich freuen.\n\nMit freundlichen Grüßen\nA. Demir",
+        "Betreff: Bitte um ein Gespräch über die Vergütung\n\nSehr geehrte Frau Lorenz,\n\nich würde gern in den nächsten Wochen mit Ihnen über meine Vergütung sprechen.\n\nSeit dem letzten Gespräch hat sich mein Aufgabenbereich deutlich erweitert. Ich habe im Frühjahr zwei Projekte übernommen, die vorher von zwei Personen betreut wurden; der Umsatz in unserem Bereich ist seitdem um zwölf Prozent gestiegen. Das kann ich mit Zahlen untermauern.\n\nGemessen an dieser Entwicklung hätte ich mir eine Anpassung um fünf Prozent vorgestellt. Sofern es Ihnen passt, würde ich den Termin gern noch vor dem Quartalsende legen.\n\nÜber eine kurze Rückmeldung würde ich mich freuen.\n\nMit freundlichen Grüßen\nA. Böhm",
     },
   },
   {
@@ -726,17 +726,17 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       situation: "Bir iş görüşmesinin sonunda aday soru soruyor.",
       turns: [
         { speaker: "Personalleiter", de: "So weit von unserer Seite. Jetzt sind Sie dran — was möchten Sie noch wissen?", tr: "Bizim tarafımızdan bu kadar. Şimdi sıra sizde — başka neyi bilmek istersiniz?" },
-        { speaker: "Frau Aydin", de: "Mich würde interessieren, wie die Einarbeitung abläuft und wie die Probezeit geregelt ist.", tr: "İşe alıştırmanın nasıl işlediğini ve deneme süresinin nasıl düzenlendiğini merak ediyorum." },
+        { speaker: "Frau Haas", de: "Mich würde interessieren, wie die Einarbeitung abläuft und wie die Probezeit geregelt ist.", tr: "İşe alıştırmanın nasıl işlediğini ve deneme süresinin nasıl düzenlendiğini merak ediyorum." },
         { speaker: "Personalleiter", de: "Die ersten sechs Wochen begleitet Sie eine feste Ansprechperson. Die Probezeit beträgt sechs Monate, mit einem Gespräch nach acht Wochen.", tr: "İlk altı hafta size sabit bir sorumlu eşlik ediyor. Deneme süresi altı ay, sekizinci haftada bir görüşmeyle." },
-        { speaker: "Frau Aydin", de: "Wenn ich Sie richtig verstehe, gibt es also eine Zwischenrückmeldung, bevor etwas entschieden wird.", tr: "Doğru anladıysam, bir karar verilmeden önce bir ara geri bildirim oluyor." },
+        { speaker: "Frau Haas", de: "Wenn ich Sie richtig verstehe, gibt es also eine Zwischenrückmeldung, bevor etwas entschieden wird.", tr: "Doğru anladıysam, bir karar verilmeden önce bir ara geri bildirim oluyor." },
         { speaker: "Personalleiter", de: "Genau so ist es. Noch etwas?", tr: "Tam olarak öyle. Başka bir şey?" },
-        { speaker: "Frau Aydin", de: "Ja — darf ich fragen, wie der Ablauf jetzt weitergeht? Und wann darf ich mit einer Entscheidung rechnen?", tr: "Evet — sürecin nasıl devam edeceğini sorabilir miyim? Ve ne zaman bir karar bekleyebilirim?" },
+        { speaker: "Frau Haas", de: "Ja — darf ich fragen, wie der Ablauf jetzt weitergeht? Und wann darf ich mit einer Entscheidung rechnen?", tr: "Evet — sürecin nasıl devam edeceğini sorabilir miyim? Ve ne zaman bir karar bekleyebilirim?" },
         { speaker: "Personalleiter", de: "Wir führen diese Woche noch zwei Gespräche. Bis Freitag der kommenden Woche melden wir uns auf jeden Fall.", tr: "Bu hafta iki görüşme daha yapıyoruz. Gelecek haftanın cuma gününe kadar mutlaka dönüş yapacağız." },
       ],
       questions: [
         { de: "Wie lange dauert die Begleitung durch eine Ansprechperson?", tr: "Sorumlu kişinin eşliği ne kadar sürüyor?", options: ["Zwei Wochen", "Sechs Wochen", "Sechs Monate", "Ein Jahr"], answer: 1 },
         { de: "Was passiert nach acht Wochen?", tr: "Sekiz hafta sonra ne oluyor?", options: ["Die Probezeit endet", "Es gibt ein Zwischengespräch", "Der Vertrag wird verlängert", "Nichts"], answer: 1 },
-        { de: "Wann bekommt Frau Aydin eine Rückmeldung?", tr: "Bayan Aydın ne zaman geri dönüş alacak?", options: ["Noch diese Woche", "Bis Freitag der kommenden Woche", "In einem Monat", "Erst nach der Probezeit"], answer: 1 },
+        { de: "Wann bekommt Frau Haas eine Rückmeldung?", tr: "Bayan Haas ne zaman geri dönüş alacak?", options: ["Noch diese Woche", "Bis Freitag der kommenden Woche", "In einem Monat", "Erst nach der Probezeit"], answer: 1 },
       ],
     },
     reading: {

@@ -51,7 +51,7 @@ export const a2U16: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Hallo Selin,\n\n" +
+      "Hallo Luisa,\n\n" +
       "hier endlich unser Reiseplan.\n\n" +
       "Die Anreise ist am Freitag. Wir fahren ans Meer, aber nicht direkt: Um 8:14 geht der Zug ab Köln, in Mannheim müssen wir umsteigen. Ein Zwischenstopp von 40 Minuten, das reicht für einen Kaffee.\n\n" +
       "Auf dem Hinweg nehmen wir den Zug, zurück fliegen wir. Das Verkehrsmittel ist also nicht dasselbe — pass auf, dein Rückflug geht schon um sechs Uhr morgens.\n\n" +
@@ -181,27 +181,27 @@ export const a2U16: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Frau Solak", text: "Guten Abend. Ich habe ein Zimmer reserviert, auf den Namen Solak." },
+      { speaker: "Frau Seifert", text: "Guten Abend. Ich habe ein Zimmer reserviert, auf den Namen Seifert." },
       { speaker: "Rezeption", text: "Einen Moment … ja, hier. Ein Doppelzimmer für drei Nächte, richtig?" },
-      { speaker: "Frau Solak", text: "Für vier Nächte eigentlich. Abreise ist Sonntag." },
+      { speaker: "Frau Seifert", text: "Für vier Nächte eigentlich. Abreise ist Sonntag." },
       { speaker: "Rezeption", text: "Oh, dann korrigiere ich das gleich. Sonntag, kein Problem, das Zimmer ist frei." },
-      { speaker: "Frau Solak", text: "Danke. Hat das Zimmer ein Doppelbett?" },
+      { speaker: "Frau Seifert", text: "Danke. Hat das Zimmer ein Doppelbett?" },
       { speaker: "Rezeption", text: "Ja, Zimmer 214 im zweiten Stock. Hier ist Ihr Zimmerschlüssel." },
-      { speaker: "Frau Solak", text: "Und mein Mann kommt erst morgen früh. Ab wann kann er einchecken?" },
+      { speaker: "Frau Seifert", text: "Und mein Mann kommt erst morgen früh. Ab wann kann er einchecken?" },
       { speaker: "Rezeption", text: "Sie sind ja schon eingecheckt — er kann jederzeit kommen, auch nachts." },
-      { speaker: "Frau Solak", text: "Sehr gut. Wann gibt es Frühstück?" },
+      { speaker: "Frau Seifert", text: "Sehr gut. Wann gibt es Frühstück?" },
       { speaker: "Rezeption", text: "Von halb sieben bis zehn, im Raum hinter der Treppe." },
     ],
     questions: [
       {
-        text: "Wie lange bleibt Frau Solak?",
+        text: "Wie lange bleibt Frau Seifert?",
         options: ["Drei Nächte", "Vier Nächte", "Eine Woche"],
         answer: 1,
         explain: "Rezervasyonda üç gece yazıyordu, o düzeltti: „Für vier Nächte eigentlich.“",
       },
       {
         kind: "gapfill",
-        text: "Ich habe ein Zimmer ___, auf den Namen Solak.",
+        text: "Ich habe ein Zimmer ___, auf den Namen Seifert.",
         options: [],
         answer: 0,
         accept: ["reserviert"],
@@ -376,7 +376,7 @@ export const a2U16: SkillExercise[] = [
           "Unsere Anreise ist am Freitag gegen 13 Uhr, also vor dem Check-in. Können wir das Gepäck vorher bei Ihnen lassen?\n\n" +
           "Außerdem: Wie hoch ist der Preis pro Nacht mit Frühstück?\n\n" +
           "Vielen Dank im Voraus.\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Solak",
+          "Mit freundlichen Grüßen\nSascha Seifert",
       },
     ],
   },

@@ -99,7 +99,7 @@ Politisch höre ich immer, es müsse mehr gebaut werden. Mag sein. Nur nützt mi
               id: "pD",
               genre: "Erfahrungsbericht D",
               genreTr: "Deneyim yazısı D",
-              title: "Frau Aydin, aufs Land gezogen",
+              title: "Frau Haas, aufs Land gezogen",
               body: `Wir sind vor vier Jahren aus der Stadt in ein Dorf mit 900 Einwohnern gezogen. Das Haus hat weniger gekostet als die Dreizimmerwohnung, die wir vorher gemietet haben, und es hat einen Garten.
 
 Gerechnet hatte ich mit Ruhe. Bekommen habe ich Fahrzeit: Meine Tochter braucht zur weiterführenden Schule 55 Minuten pro Weg, und der Bus fährt dreimal am Tag. Wir haben deshalb ein zweites Auto gekauft. Rechnet man das ein, ist der finanzielle Vorteil kleiner, als er auf dem Papier aussieht.
@@ -117,17 +117,17 @@ Trotzdem würde ich es wieder tun, aber aus einem anderen Grund als damals. Ich 
               id: "de-b2-04-l1-1",
               no: 1,
               text: "Wer beschreibt, dass ein finanzieller Vorteil durch Folgekosten schrumpft?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 3,
               explain:
-                "Frau Aydin ikinci arabayı hesaba katıyor: \"Rechnet man das ein, ist der finanzielle Vorteil kleiner, als er auf dem Papier aussieht\". Öteki üçünde ek maliyet hesabı yok.",
+                "Frau Haas ikinci arabayı hesaba katıyor: \"Rechnet man das ein, ist der finanzielle Vorteil kleiner, als er auf dem Papier aussieht\". Öteki üçünde ek maliyet hesabı yok.",
             },
             {
               kind: "mcq",
               id: "de-b2-04-l1-2",
               no: 2,
               text: "Wer sieht sich in der öffentlichen Debatte falsch dargestellt?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 1,
               explain:
                 "Herr Voigt: \"In der Debatte komme ich nur als Feindbild vor\" ve sayılarının kimseyi ilgilendirmediğini söylüyor. Jasper de siyaseti eleştiriyor ama kendi temsili üzerinden değil.",
@@ -137,7 +137,7 @@ Trotzdem würde ich es wieder tun, aber aus einem anderen Grund als damals. Ich 
               id: "de-b2-04-l1-3",
               no: 3,
               text: "Wer räumt ein, dass das eigene Projekt die Zielgruppe verfehlt hat?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 0,
               explain:
                 "Miriam kooperatife \"überwiegend Leute mit Zeit und Bürojobs\" geldiğini yazıyor ve bunu \"nicht die, für die wir das eigentlich gedacht hatten\" diye tamamlıyor.",
@@ -147,7 +147,7 @@ Trotzdem würde ich es wieder tun, aber aus einem anderen Grund als damals. Ich 
               id: "de-b2-04-l1-4",
               no: 4,
               text: "Wer hält den Zugang zur Wohnung für eine Frage von Kontakten?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 2,
               explain:
                 "Jasper odayı eski bir okul arkadaşı üzerinden bulmuş ve durumu \"eine Lotterie mit Beziehungen als Losen\" diye adlandırıyor.",
@@ -157,7 +157,7 @@ Trotzdem würde ich es wieder tun, aber aus einem anderen Grund als damals. Ich 
               id: "de-b2-04-l1-5",
               no: 5,
               text: "Wer nennt gemeinsame Entscheidungen als Preis für günstiges Wohnen?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 0,
               explain:
                 "Miriam kararların genel kurulda alındığını, cephe rengi için dört akşam tartışıldığını yazıyor: \"Wer Konflikte scheut, ist hier falsch\".",
@@ -167,17 +167,17 @@ Trotzdem würde ich es wieder tun, aber aus einem anderen Grund als damals. Ich 
               id: "de-b2-04-l1-6",
               no: 6,
               text: "Wer schätzt den sozialen Zusammenhalt heute höher ein als das ursprüngliche Motiv?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 3,
               explain:
-                "Frau Aydin taşınmayı yineleyeceğini ama \"aus einem anderen Grund als damals\" diyor; gerekçesi artık komşuluk, kocası hastanedeyken bir günde kurulan plan.",
+                "Frau Haas taşınmayı yineleyeceğini ama \"aus einem anderen Grund als damals\" diyor; gerekçesi artık komşuluk, kocası hastanedeyken bir günde kurulan plan.",
             },
             {
               kind: "mcq",
               id: "de-b2-04-l1-7",
               no: 7,
               text: "Wer hält kurzfristige Lösungen im vorhandenen Gebäudebestand für wirksamer als Neubau?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 2,
               explain:
                 "Jasper 2032'de biten bir binanın ona bu dönem yaramadığını söylüyor: \"Kurzfristig hilft nur, was den Bestand betrifft\" — örneği dükkân üstündeki üç boş kat.",
@@ -187,7 +187,7 @@ Trotzdem würde ich es wieder tun, aber aus einem anderen Grund als damals. Ich 
               id: "de-b2-04-l1-8",
               no: 8,
               text: "Wer scheitert nicht am Geld, sondern an der Verwaltung?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 1,
               explain:
                 "Herr Voigt iki başvuruyu yarıda bırakmış: \"Nicht weil ich das Geld nicht wollte, sondern weil ich den Papierkram nicht bewältigt habe\".",
@@ -197,7 +197,7 @@ Trotzdem würde ich es wieder tun, aber aus einem anderen Grund als damals. Ich 
               id: "de-b2-04-l1-9",
               no: 9,
               text: "Wer beschreibt einen unbezahlten Vorlauf von mehreren Jahren?",
-              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Aydin"],
+              options: ["Miriam", "Herr Voigt", "Jasper", "Frau Haas"],
               answer: 0,
               explain:
                 "Miriam taşınmadan önceki emeği anlatıyor: \"Drei Jahre Planung, unbezahlt, neben der Arbeit\". Bu süre projeye kimlerin kalabildiğini de belirliyor.",
@@ -512,7 +512,7 @@ Die Lehre ist unbequem für alle Beteiligten: Verkehrspolitik ist weniger eine F
             },
             {
               key: "g",
-              label: "g — Frau Sahin, Reinigungskraft",
+              label: "g — Frau Heinz, Reinigungskraft",
               body: "Ich putze diese Wohnungen und verdiene damit mehr als in meinem alten Job im Hotel, weil ich mir die Zeiten einteilen kann. Wenn die Stadt das begrenzt, redet über mich niemand.",
             },
             {
@@ -715,7 +715,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, Frau Deniz, hier ist die Hausverwaltung Kroll. Die Reparatur Ihrer Heizung ist für Donnerstag zwischen acht und zwölf geplant. Wenn Sie nicht da sein können, geben Sie bitte einem Nachbarn den Schlüssel; wir dürfen die Wohnung ohne anwesende Person nicht betreten. Sollte der Termin platzen, verschiebt sich alles auf die übernächste Woche.",
+                  text: "Guten Tag, Frau Hermann, hier ist die Hausverwaltung Kroll. Die Reparatur Ihrer Heizung ist für Donnerstag zwischen acht und zwölf geplant. Wenn Sie nicht da sein können, geben Sie bitte einem Nachbarn den Schlüssel; wir dürfen die Wohnung ohne anwesende Person nicht betreten. Sollte der Termin platzen, verschiebt sich alles auf die übernächste Woche.",
                 },
               ],
             },
@@ -1424,7 +1424,7 @@ Dass Fahrräder derzeit den Hausflur blockieren, sehe ich ebenso; der Bedarf ist
 Wäre eine Teilung des Raums möglich? Die Waschmaschinen stehen an der Wand links, die rechte Hälfte böte Platz für etwa zwölf Räder. Ich helfe gern bei der Organisation.
 
 Mit freundlichen Grüßen
-Aylin Tekin`,
+Helene Haupt`,
             criteria: [
               "Duyuruya somut atıf var mı (tarih, konu)?",
               "İhtiyaç somut gerekçelendirildi mi ve yalnız kendi durumu değil, başkalarınınki de anıldı mı?",

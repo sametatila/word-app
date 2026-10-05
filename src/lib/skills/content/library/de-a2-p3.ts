@@ -112,11 +112,11 @@ export const deA2P3: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Reporterin", text: "Seit Mai ist die Marktstraße nur noch für Fußgänger offen. Was sagen Sie dazu?" },
-      { speaker: "Frau Özdemir", text: "Für mich ist es viel besser. Ich komme mit dem Kinderwagen durch und muss nicht mehr auf jedes Auto achten." },
+      { speaker: "Frau Arndt", text: "Für mich ist es viel besser. Ich komme mit dem Kinderwagen durch und muss nicht mehr auf jedes Auto achten." },
       { speaker: "Reporterin", text: "Und Sie, arbeiten Sie hier?" },
       { speaker: "Herr Bleul", text: "Ja, ich habe den Blumenladen in der Nummer zwölf. Am Anfang hatte ich Angst um meine Kunden." },
       { speaker: "Herr Bleul", text: "Aber jetzt bleiben die Leute stehen und schauen. Im Sommer war mein Umsatz sogar höher als im letzten Jahr." },
-      { speaker: "Frau Özdemir", text: "Ein Problem gibt es trotzdem: Die Lieferwagen kommen morgens sehr früh und machen viel Lärm." },
+      { speaker: "Frau Arndt", text: "Ein Problem gibt es trotzdem: Die Lieferwagen kommen morgens sehr früh und machen viel Lärm." },
       { speaker: "Herr Bleul", text: "Da hat sie recht. Die Stadt kann dafür eine feste Zeit bestimmen." },
       { speaker: "Reporterin", text: "Vielen Dank Ihnen beiden für das Gespräch." },
     ],
@@ -128,7 +128,7 @@ export const deA2P3: SkillExercise[] = [
         explain: "İlk cümle: „Seit Mai ist die Marktstraße nur noch für Fußgänger offen.“",
       },
       {
-        text: "Warum gefällt Frau Özdemir die Änderung?",
+        text: "Warum gefällt Frau Arndt die Änderung?",
         options: [
           "Sie kommt mit dem Kinderwagen besser durch.",
           "Sie kauft dort jetzt viel billiger ein.",
@@ -146,7 +146,7 @@ export const deA2P3: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was stört Frau Özdemir?",
+        text: "Was stört Frau Arndt?",
         options: [],
         answer: 0,
         accept: ["der Lärm der Lieferwagen", "der Lärm", "Lärm", "die Lieferwagen", "Lieferwagen", "der Lärm am Morgen"],

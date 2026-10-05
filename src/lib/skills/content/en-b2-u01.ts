@@ -57,7 +57,7 @@ export const enB2U01: SkillExercise[] = [
     minutes: 9,
     text:
       "MONDAY BRIEFING: NORTH REGION, WEEK 14\n" +
-      "Prepared by Deniz Kaya for the regional team. Please do not circulate this brief outside the company.\n" +
+      "Prepared by Charlie Ellis for the regional team. Please do not circulate this brief outside the company.\n" +
       "1. The forecast. It is said that the spring forecast will change again before the end of the month. Finance has not shared new numbers yet, but two of the four indicators we monitor fell last week, and our biggest customers are thought to be planning smaller orders for May.\n" +
       "2. Stakeholders. The city council and the owners of the shopping center are thought to be ready to sign the parking agreement. It is expected that the council will vote on Thursday. If the vote is delayed, the opening of the new store is likely to move by two weeks.\n" +
       "3. Findings from the customer survey. The findings are reported to be clear: customers like the new opening hours, but many are said to find our website hard to use. About 1,200 people answered, and the full report is expected on Wednesday.\n" +
@@ -208,7 +208,7 @@ export const enB2U01: SkillExercise[] = [
     unit: 1,
     title: "A handover before the late shift",
     genre: "dialogue",
-    intro: "Vardiya değişiminde iş devri. Selin'in bugün neyi halletmesi gerekiyor?",
+    intro: "Vardiya değişiminde iş devri. Megan'ın bugün neyi halletmesi gerekiyor?",
     gloss: [
       { de: "the shared drive", tr: "ortak klasör" },
       { de: "noon", tr: "öğle" },
@@ -217,27 +217,27 @@ export const enB2U01: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Selin", text: "Before you go, can you give me the handover? I start the late shift in ten minutes." },
-      { speaker: "Volkan", text: "Sure. Having finished the draft of the client report, Mira left at three. It is on the shared drive, but it still needs the numbers from Izmir." },
-      { speaker: "Selin", text: "Did Izmir send them?" },
-      { speaker: "Volkan", text: "Not yet. Being absent all week, Kerem missed the memo about the new deadline, so he thinks we need them next Friday." },
-      { speaker: "Selin", text: "And when do we need them?" },
-      { speaker: "Volkan", text: "Tomorrow at noon. I called him. Having heard the new date, he promised to send everything by ten." },
-      { speaker: "Selin", text: "Good. What about the outline for the stakeholder meeting?" },
-      { speaker: "Volkan", text: "Circulated on Friday, the outline reached everyone except the new people in finance. I sent it to them again this afternoon." },
-      { speaker: "Selin", text: "Any replies?" },
-      { speaker: "Volkan", text: "One. Reading it on the train, Ana noticed that the budget page is missing. That is the only open point." },
-      { speaker: "Selin", text: "Who is fixing it?" },
-      { speaker: "Volkan", text: "You, I am afraid. Not knowing the new numbers myself, I did not want to guess." },
-      { speaker: "Selin", text: "Fair enough. I will write to finance first thing. Anything I should escalate?" },
-      { speaker: "Volkan", text: "No, nothing. Having done three late shifts in a row, I am going straight home to sleep." },
+      { speaker: "Megan", text: "Before you go, can you give me the handover? I start the late shift in ten minutes." },
+      { speaker: "Seth", text: "Sure. Having finished the draft of the client report, Mira left at three. It is on the shared drive, but it still needs the numbers from Izmir." },
+      { speaker: "Megan", text: "Did Izmir send them?" },
+      { speaker: "Seth", text: "Not yet. Being absent all week, Connor missed the memo about the new deadline, so he thinks we need them next Friday." },
+      { speaker: "Megan", text: "And when do we need them?" },
+      { speaker: "Seth", text: "Tomorrow at noon. I called him. Having heard the new date, he promised to send everything by ten." },
+      { speaker: "Megan", text: "Good. What about the outline for the stakeholder meeting?" },
+      { speaker: "Seth", text: "Circulated on Friday, the outline reached everyone except the new people in finance. I sent it to them again this afternoon." },
+      { speaker: "Megan", text: "Any replies?" },
+      { speaker: "Seth", text: "One. Reading it on the train, Ana noticed that the budget page is missing. That is the only open point." },
+      { speaker: "Megan", text: "Who is fixing it?" },
+      { speaker: "Seth", text: "You, I am afraid. Not knowing the new numbers myself, I did not want to guess." },
+      { speaker: "Megan", text: "Fair enough. I will write to finance first thing. Anything I should escalate?" },
+      { speaker: "Seth", text: "No, nothing. Having done three late shifts in a row, I am going straight home to sleep." },
     ],
     questions: [
       {
-        text: "Why did Kerem miss the memo?",
+        text: "Why did Connor miss the memo?",
         options: ["He was absent all week.", "He was on the train.", "He works in finance."],
         answer: 0,
-        explain: "„Being absent all week, Kerem missed the memo about the new deadline…“",
+        explain: "„Being absent all week, Connor missed the memo about the new deadline…“",
       },
       {
         text: "When does the team need the numbers from Izmir?",
@@ -276,7 +276,7 @@ export const enB2U01: SkillExercise[] = [
         text: "Who will write to finance?",
         options: [],
         answer: 0,
-        accept: ["Selin", "Selin will", "she will"],
+        accept: ["Megan", "Megan will", "she will"],
         explain: "„I will write to finance first thing.“",
       },
     ],
@@ -302,15 +302,15 @@ export const enB2U01: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Emre", text: "Hi Laura, it is Emre from the project office. I promised you an update on the schedule before the end of the week, so here it is." },
-      { speaker: "Emre", text: "Here is the short version. By June we will have passed the second milestone." },
-      { speaker: "Emre", text: "The testing team will have finished the first round by the end of May, and your people will be able to try the new system in the first week of June." },
-      { speaker: "Emre", text: "This time next week we will be reviewing the scope with your IT department. If they want changes, that is the moment to ask for them, not in July." },
-      { speaker: "Emre", text: "The budget for the second phase will have been approved by then. Finance told me yesterday that they only need one more signature." },
-      { speaker: "Emre", text: "There is one problem I do not want to hide. In the second week of June we will be moving two developers to another client, and that will create a bottleneck." },
-      { speaker: "Emre", text: "I have not solved it yet. We will either allocate an extra resource or move the training by a week. I will know which on Monday." },
-      { speaker: "Emre", text: "On the ninth we will be sitting in your office with the final plan. If anything changes before that, I will call you, so nobody has to escalate anything." },
-      { speaker: "Emre", text: "Have a good weekend, and thanks again for your patience." },
+      { speaker: "Owen", text: "Hi Laura, it is Owen from the project office. I promised you an update on the schedule before the end of the week, so here it is." },
+      { speaker: "Owen", text: "Here is the short version. By June we will have passed the second milestone." },
+      { speaker: "Owen", text: "The testing team will have finished the first round by the end of May, and your people will be able to try the new system in the first week of June." },
+      { speaker: "Owen", text: "This time next week we will be reviewing the scope with your IT department. If they want changes, that is the moment to ask for them, not in July." },
+      { speaker: "Owen", text: "The budget for the second phase will have been approved by then. Finance told me yesterday that they only need one more signature." },
+      { speaker: "Owen", text: "There is one problem I do not want to hide. In the second week of June we will be moving two developers to another client, and that will create a bottleneck." },
+      { speaker: "Owen", text: "I have not solved it yet. We will either allocate an extra resource or move the training by a week. I will know which on Monday." },
+      { speaker: "Owen", text: "On the ninth we will be sitting in your office with the final plan. If anything changes before that, I will call you, so nobody has to escalate anything." },
+      { speaker: "Owen", text: "Have a good weekend, and thanks again for your patience." },
     ],
     questions: [
       {
@@ -327,7 +327,7 @@ export const enB2U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Emre has solved the problem with the developers.",
+        text: "Owen has solved the problem with the developers.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I have not solved it yet.“",
@@ -350,7 +350,7 @@ export const enB2U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When will Emre know how to solve the problem?",
+        text: "When will Owen know how to solve the problem?",
         options: [],
         answer: 0,
         accept: ["on Monday", "Monday"],

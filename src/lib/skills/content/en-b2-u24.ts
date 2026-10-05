@@ -64,32 +64,32 @@ export const enB2U24: SkillExercise[] = [
       "Hi everyone,\n" +
       "As most of you know, the division of tasks, which nobody has read since 2022, is old, and it no longer matches the way we actually work. So from Monday we are trying something new.\n" +
       "The plan, which is a new arrangement for all of us, is simple. Each of you will look after one area instead of taking whatever comes into the inbox.\n" +
-      "Leyla, whose area of responsibility is already wide, will keep the customer calls. Ege, who joined us in the spring, will take over the online orders, which Leyla has handled alone for two years. Zehra, whose Spanish is excellent, will answer all messages from our partners in Madrid.\n" +
+      "Fiona, whose area of responsibility is already wide, will keep the customer calls. Louis, who joined us in the spring, will take over the online orders, which Fiona has handled alone for two years. Fay, whose Spanish is excellent, will answer all messages from our partners in Madrid.\n" +
       "The weekly report, which I used to write myself, will rotate. Each of us will write it once a month, which should relieve the pressure on Fridays.\n" +
-      "I have also changed the workflow for complaints. Every complaint, which until now went to whoever was free, will go to Alp first. He will answer promptly and pass the difficult ones to me.\n" +
+      "I have also changed the workflow for complaints. Every complaint, which until now went to whoever was free, will go to Ian first. He will answer promptly and pass the difficult ones to me.\n" +
       "None of this is fixed. The structure, which I put together in one afternoon, will certainly need changes, and I would rather hear about them in the first week than in the sixth month.\n" +
       "We will meet on Thursday at 10:00 to see how the first days went. The old document, which some of you printed out, can go in the recycling.\n" +
       "Thanks,\n" +
-      "Deniz",
+      "Charlie",
     questions: [
       {
         text: "Who will keep the customer calls?",
-        options: ["Leyla", "Ege", "Zehra"],
+        options: ["Fiona", "Louis", "Fay"],
         answer: 0,
-        explain: "„Leyla, whose area of responsibility is already wide, will keep the customer calls.“",
+        explain: "„Fiona, whose area of responsibility is already wide, will keep the customer calls.“",
       },
       {
-        text: "Why will Zehra answer the messages from Madrid?",
+        text: "Why will Fay answer the messages from Madrid?",
         options: ["Her Spanish is excellent.", "She joined in the spring.", "She writes the report."],
         answer: 0,
-        explain: "„Zehra, whose Spanish is excellent, will answer all messages from our partners in Madrid.“",
+        explain: "„Fay, whose Spanish is excellent, will answer all messages from our partners in Madrid.“",
       },
       {
         kind: "truefalse",
-        text: "Complaints will go to Alp first.",
+        text: "Complaints will go to Ian first.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Every complaint, which until now went to whoever was free, will go to Alp first.“",
+        explain: "„Every complaint, which until now went to whoever was free, will go to Ian first.“",
       },
       {
         kind: "gapfill",
@@ -106,7 +106,7 @@ export const enB2U24: SkillExercise[] = [
         answer: 0,
         items: [
           "The old division of tasks no longer matches the work.",
-          "Ege will take over the online orders.",
+          "Louis will take over the online orders.",
           "The weekly report will rotate.",
           "The team will meet on Thursday.",
         ],
@@ -155,7 +155,7 @@ export const enB2U24: SkillExercise[] = [
     minutes: 9,
     text:
       "PROJECT REVIEW: THE SUMMER EXHIBITION\n" +
-      "Prepared by Selin Aydemir for the museum board\n" +
+      "Prepared by Megan Stewart for the museum board\n" +
       "The summer exhibition opened on July 14, nine days later than planned. This review looks at why, and at what we should do differently next year.\n" +
       "What caused the delay was a scheduling conflict. The lighting company had booked our installation week for another museum as well, and nobody noticed until the week began. It was not the paintings, the weather or the budget, although all three were blamed at the time.\n" +
       "It was the deadline extension from the insurance company that saved us. Without it, the three paintings on loan from Vienna could not have been shown at all. What made the extension possible was a phone call from our director, who knows the insurer personally.\n" +
@@ -205,7 +205,7 @@ export const enB2U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many free weeks does Selin recommend?",
+        text: "How many free weeks does Megan recommend?",
         options: [],
         answer: 0,
         accept: ["two", "2", "two weeks"],
@@ -237,19 +237,19 @@ export const enB2U24: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Ege", text: "Can you give me a quick update on the ticket machines before the meeting?" },
-      { speaker: "Zehra Nur", text: "Sure. Having read the interim report, we changed the plan. We are testing two machines instead of five." },
-      { speaker: "Ege", text: "Why only two?" },
-      { speaker: "Zehra Nur", text: "The report showed that the card readers fail in the cold. Wanting to carry out the test properly, we waited for the new readers to arrive." },
-      { speaker: "Ege", text: "And did they arrive?" },
-      { speaker: "Zehra Nur", text: "Last Tuesday. Installed on Wednesday, they worked without a problem for the whole week." },
-      { speaker: "Ege", text: "What about the station staff? Were they told?" },
-      { speaker: "Zehra Nur", text: "Asked to follow up with them, Sevgi wrote again on Friday. Having heard nothing for ten days, she was starting to worry." },
-      { speaker: "Ege", text: "Did they answer?" },
-      { speaker: "Zehra Nur", text: "Yes, promptly this time. They assured us that everyone at the station knows about the test." },
-      { speaker: "Ege", text: "Good. Is there anything that could stop us?" },
-      { speaker: "Zehra Nur", text: "Only the weather. Tested in a mild week, the machines have not seen real cold yet. We will know more in January." },
-      { speaker: "Ege", text: "Then let us not promise anything to the board before February." },
+      { speaker: "Louis", text: "Can you give me a quick update on the ticket machines before the meeting?" },
+      { speaker: "Fay Nur", text: "Sure. Having read the interim report, we changed the plan. We are testing two machines instead of five." },
+      { speaker: "Louis", text: "Why only two?" },
+      { speaker: "Fay Nur", text: "The report showed that the card readers fail in the cold. Wanting to carry out the test properly, we waited for the new readers to arrive." },
+      { speaker: "Louis", text: "And did they arrive?" },
+      { speaker: "Fay Nur", text: "Last Tuesday. Installed on Wednesday, they worked without a problem for the whole week." },
+      { speaker: "Louis", text: "What about the station staff? Were they told?" },
+      { speaker: "Fay Nur", text: "Asked to follow up with them, Norah wrote again on Friday. Having heard nothing for ten days, she was starting to worry." },
+      { speaker: "Louis", text: "Did they answer?" },
+      { speaker: "Fay Nur", text: "Yes, promptly this time. They assured us that everyone at the station knows about the test." },
+      { speaker: "Louis", text: "Good. Is there anything that could stop us?" },
+      { speaker: "Fay Nur", text: "Only the weather. Tested in a mild week, the machines have not seen real cold yet. We will know more in January." },
+      { speaker: "Louis", text: "Then let us not promise anything to the board before February." },
     ],
     questions: [
       {
@@ -273,11 +273,11 @@ export const enB2U24: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Asked to follow up with them, Sevgi wrote again on ___.",
+        text: "Asked to follow up with them, Norah wrote again on ___.",
         options: [],
         answer: 0,
         accept: ["Friday"],
-        explain: "„Asked to follow up with them, Sevgi wrote again on Friday.“",
+        explain: "„Asked to follow up with them, Norah wrote again on Friday.“",
       },
       {
         kind: "dictation",
@@ -305,7 +305,7 @@ export const enB2U24: SkillExercise[] = [
     unit: 24,
     title: "Nine weeks without internet",
     genre: "monologue",
-    intro: "Alp, internet sağlayıcısına şikâyet için sesli mesaj bırakıyor. Ne istiyor?",
+    intro: "Ian, internet sağlayıcısına şikâyet için sesli mesaj bırakıyor. Ne istiyor?",
     gloss: [
       { de: "a connection", tr: "bağlantı" },
       { de: "a text message", tr: "kısa mesaj" },
@@ -321,18 +321,18 @@ export const enB2U24: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Alp", text: "Hello, my name is Alp Demir, customer number 4471. I am calling about my internet connection, again." },
-      { speaker: "Alp", text: "I first reported the problem on the third of May. Never has an answer come so promptly. A text message thanked me within one minute. And then, nothing, for nine weeks." },
-      { speaker: "Alp", text: "Rarely does a reply arrive so swiftly and say so little. The message promised a technician within three days." },
-      { speaker: "Alp", text: "Only after my third letter did you send a reminder, and it was a reminder to pay my bill, which I have paid every month." },
-      { speaker: "Alp", text: "Not once has a technician come to the apartment. The connection still breaks every evening between eight and ten, which is exactly when I work." },
-      { speaker: "Alp", text: "I am obliged to work from home twice a week, so this is not a small problem for me." },
-      { speaker: "Alp", text: "I would like two things: a technician this week, and a refund for May and June. Please call me back on this number before Friday." },
-      { speaker: "Alp", text: "If I hear nothing by then, I will cancel the contract. Thank you." },
+      { speaker: "Ian", text: "Hello, my name is Ian Adams, customer number 4471. I am calling about my internet connection, again." },
+      { speaker: "Ian", text: "I first reported the problem on the third of May. Never has an answer come so promptly. A text message thanked me within one minute. And then, nothing, for nine weeks." },
+      { speaker: "Ian", text: "Rarely does a reply arrive so swiftly and say so little. The message promised a technician within three days." },
+      { speaker: "Ian", text: "Only after my third letter did you send a reminder, and it was a reminder to pay my bill, which I have paid every month." },
+      { speaker: "Ian", text: "Not once has a technician come to the apartment. The connection still breaks every evening between eight and ten, which is exactly when I work." },
+      { speaker: "Ian", text: "I am obliged to work from home twice a week, so this is not a small problem for me." },
+      { speaker: "Ian", text: "I would like two things: a technician this week, and a refund for May and June. Please call me back on this number before Friday." },
+      { speaker: "Ian", text: "If I hear nothing by then, I will cancel the contract. Thank you." },
     ],
     questions: [
       {
-        text: "When did Alp first report the problem?",
+        text: "When did Ian first report the problem?",
         options: ["on the third of May", "in June", "last Friday"],
         answer: 0,
         explain: "„I first reported the problem on the third of May.“",
@@ -368,7 +368,7 @@ export const enB2U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What will Alp do if he hears nothing by Friday?",
+        text: "What will Ian do if he hears nothing by Friday?",
         options: [],
         answer: 0,
         accept: ["cancel the contract", "cancel it"],
@@ -422,12 +422,12 @@ export const enB2U24: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Ekibin yeni görev dağılımı kartını doldur.",
-        facts: "Müşteri aramaları Leyla'da kalıyor; çevrimiçi siparişleri Ege devralıyor; Madrid'deki ortaklardan gelen mesajları Zehra yanıtlıyor; şikâyetler önce Alp'e gidiyor.",
+        facts: "Müşteri aramaları Fiona'da kalıyor; çevrimiçi siparişleri Ege devralıyor; Madrid'deki ortaklardan gelen mesajları Fay yanıtlıyor; şikâyetler önce Ian'a gidiyor.",
         fields: [
-          { label: "Customer calls", answer: "Leyla", accept: ["Leyla keeps them"] },
-          { label: "Online orders", answer: "Ege", accept: ["Ege takes them over"] },
-          { label: "Messages from Madrid", answer: "Zehra", accept: ["Zehra answers them"] },
-          { label: "Complaints", answer: "Alp first", accept: ["Alp", "they go to Alp first"] },
+          { label: "Customer calls", answer: "Fiona", accept: ["Fiona keeps them"] },
+          { label: "Online orders", answer: "Louis", accept: ["Louis takes them over"] },
+          { label: "Messages from Madrid", answer: "Fay", accept: ["Fay answers them"] },
+          { label: "Complaints", answer: "Ian first", accept: ["Ian", "they go to Ian first"] },
         ],
       },
     ],

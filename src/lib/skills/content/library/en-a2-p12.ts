@@ -35,18 +35,18 @@ export const enA2P12: SkillExercise[] = [
     minutes: 5,
     text:
       "DRIVING THE NIGHT BUS\n\n" +
-      "Every night at eleven, when most people are going to bed, Tarik Aslan starts his shift. He drives the N7, the " +
+      "Every night at eleven, when most people are going to bed, Aaron Cooper starts his shift. He drives the N7, the " +
       "night bus from the airport to the city center and back. He has done this job for six years.\n\n" +
       "His passengers are nurses, cooks, cleaners and students on their way home from parties. “At two o'clock the " +
       "bus is full and loud,” he says. “At four it is quiet, and people sleep. Then my job is to wake them at the right stop.”\n\n" +
-      "Tarik likes the empty streets and the orange lights. He does not like the winter, because the heater in the old " +
+      "Aaron likes the empty streets and the orange lights. He does not like the winter, because the heater in the old " +
       "buses does not always work.\n\n" +
       "Some passengers take the bus every night, so he knows them well. One nurse always brings him a cup of tea from " +
       "the hospital. “Her stop is the last one before the airport,” he laughs, “so the tea is still hot.”\n\n" +
       "He finishes at seven in the morning, has breakfast with his daughter before school and then sleeps until two.",
     questions: [
       {
-        text: "What is Tarik's job?",
+        text: "What is Aaron's job?",
         options: [
           "He cleans the buses in the morning.",
           "He works at the airport at night.",
@@ -56,7 +56,7 @@ export const enA2P12: SkillExercise[] = [
         explain: "„He drives the N7, the night bus from the airport to the city center and back.“",
       },
       {
-        text: "What does Tarik do at four o'clock?",
+        text: "What does Aaron do at four o'clock?",
         options: [
           "He has a break at the airport.",
           "He wakes passengers at their stop.",
@@ -67,7 +67,7 @@ export const enA2P12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Tarik has driven the night bus for six years.",
+        text: "Aaron has driven the night bus for six years.",
         options: ["True", "False"],
         answer: 0,
         explain: "„He has done this job for six years.“",
@@ -89,7 +89,7 @@ export const enA2P12: SkillExercise[] = [
         explain: "„One nurse always brings him a cup of tea from the hospital.“",
       },
       {
-        text: "Why does Tarik not like the winter?",
+        text: "Why does Aaron not like the winter?",
         options: [
           "The heater in the old buses does not always work.",
           "There are more passengers and more noise.",
@@ -109,7 +109,7 @@ export const enA2P12: SkillExercise[] = [
     skill: "listening",
     title: "A Trial Morning at the Bakery",
     genre: "phone",
-    intro: "Emre bir fırından gelen deneme sabahı davetine telefonla dönüyor: gün ve saat, hangi kapı, ne giyilecek, sonuç ne zaman belli olacak.",
+    intro: "Owen bir fırından gelen deneme sabahı davetine telefonla dönüyor: gün ve saat, hangi kapı, ne giyilecek, sonuç ne zaman belli olacak.",
     gloss: [
       { de: "bakery", tr: "ekmek fırını" },
       { de: "trial", tr: "deneme" },
@@ -122,21 +122,21 @@ export const enA2P12: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Ola", text: "Good afternoon, Ola's Bakery, Ola speaking." },
-      { speaker: "Emre", text: "Hi, this is Emre Demir. You sent me an email about a trial morning." },
-      { speaker: "Ola", text: "Yes, Emre, thanks for calling back. Can you come on Thursday? We start at four." },
-      { speaker: "Emre", text: "Four in the morning? Wow. Yes, I can do that. Which door should I use?" },
+      { speaker: "Owen", text: "Hi, this is Owen Adams. You sent me an email about a trial morning." },
+      { speaker: "Ola", text: "Yes, Owen, thanks for calling back. Can you come on Thursday? We start at four." },
+      { speaker: "Owen", text: "Four in the morning? Wow. Yes, I can do that. Which door should I use?" },
       { speaker: "Ola", text: "Not the store door. Go around the building to the small green door at the back and ring the bell." },
-      { speaker: "Emre", text: "Okay. What should I wear?" },
+      { speaker: "Owen", text: "Okay. What should I wear?" },
       { speaker: "Ola", text: "Comfortable shoes and pants. We have aprons and hats here, so you don't need your own." },
-      { speaker: "Emre", text: "Do I need to bring anything else?" },
+      { speaker: "Owen", text: "Do I need to bring anything else?" },
       { speaker: "Ola", text: "Only something to drink. It gets very hot next to the ovens. You'll work with Marek; he has been here for twelve years." },
-      { speaker: "Emre", text: "Great. How long is the trial?" },
+      { speaker: "Owen", text: "Great. How long is the trial?" },
       { speaker: "Ola", text: "Until nine. Then we talk for ten minutes, and I tell you my answer on Friday. We pay you for the morning, of course." },
-      { speaker: "Emre", text: "Perfect. See you on Thursday at four, then." },
+      { speaker: "Owen", text: "Perfect. See you on Thursday at four, then." },
     ],
     questions: [
       {
-        text: "Why does Emre call Ola?",
+        text: "Why does Owen call Ola?",
         options: [
           "to order bread for Thursday",
           "to ask about the price of a cake",
@@ -146,21 +146,21 @@ export const enA2P12: SkillExercise[] = [
         explain: "„You sent me an email about a trial morning.“ — „Thanks for calling back.“",
       },
       {
-        text: "Which door should Emre use?",
+        text: "Which door should Owen use?",
         options: ["the green door at the back", "the store door at the front", "the door next to the ovens"],
         answer: 0,
         explain: "„Not the store door. Go around the building to the small green door at the back …“",
       },
       {
         kind: "truefalse",
-        text: "Emre will get money for the trial morning.",
+        text: "Owen will get money for the trial morning.",
         options: ["True", "False"],
         answer: 0,
         explain: "„We pay you for the morning, of course.“",
       },
       {
         kind: "short_answer",
-        text: "Who will Emre work with?",
+        text: "Who will Owen work with?",
         options: [],
         answer: 0,
         accept: ["Marek", "with Marek"],
@@ -175,7 +175,7 @@ export const enA2P12: SkillExercise[] = [
         explain: "„It gets very hot next to the ovens.“ — „get“ burada bir değişimi, ısınmayı anlatıyor.",
       },
       {
-        text: "When will Emre hear Ola's answer?",
+        text: "When will Owen hear Ola's answer?",
         options: ["at nine on Thursday", "on Friday", "after twelve days"],
         answer: 1,
         explain: "„Then we talk for ten minutes, and I tell you my answer on Friday.“",
@@ -238,7 +238,7 @@ export const enA2P12: SkillExercise[] = [
           "from Bell Hill, twenty minutes out of town. Would you like to come with us? We're meeting at the bus stop " +
           "on Birch Road at ten, and my brother can take four people in his car. Bring a blanket and warm clothes, " +
           "because it gets very cold on the hill after midnight. Please don't use your phone lights: if the sky is " +
-          "dark, you see more stars. If it's cloudy, we'll go on Sunday instead. Tell me by Friday, please! Deniz",
+          "dark, you see more stars. If it's cloudy, we'll go on Sunday instead. Tell me by Friday, please! Charlie",
       },
     ],
   },
@@ -374,7 +374,7 @@ export const enA2P12: SkillExercise[] = [
         text: "Which sentence is a general rule, not one future situation?",
         options: [
           "If it rains tomorrow, we'll stay home.",
-          "If I see Ali, I'll tell him.",
+          "If I see Harry, I'll tell him.",
           "If you don't water plants, they die.",
         ],
         answer: 2,

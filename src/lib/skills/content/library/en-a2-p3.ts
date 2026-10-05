@@ -117,7 +117,7 @@ export const enA2P3: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { text: "Hi Melis, this is Hakan from Central Driving School. I'm calling about your lesson on Thursday." },
+      { text: "Hi Heidi, this is Rhys from Central Driving School. I'm calling about your lesson on Thursday." },
       { text: "I'm sorry, but I have to cancel it. My car is in the garage; somebody drove into it yesterday evening." },
       { text: "Nobody was hurt, don't worry, but the door has to be changed and that takes four days." },
       { text: "I can offer you two other times. Saturday at nine in the morning, or Monday at four in the afternoon." },
@@ -127,7 +127,7 @@ export const enA2P3: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Why does Hakan call?",
+        text: "Why does Rhys call?",
         options: ["He has to cancel a lesson.", "He wants to change the price.", "He needs the theory book."],
         answer: 0,
         explain: "„I'm sorry, but I have to cancel it.“",
@@ -140,14 +140,14 @@ export const enA2P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Melis can choose between a morning and an afternoon lesson.",
+        text: "Heidi can choose between a morning and an afternoon lesson.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Saturday at nine in the morning, or Monday at four in the afternoon.“",
       },
       {
         kind: "short_answer",
-        text: "When must Melis answer?",
+        text: "When must Heidi answer?",
         options: [],
         answer: 0,
         accept: ["before tomorrow evening", "tomorrow evening", "by tomorrow evening"],
@@ -155,14 +155,14 @@ export const enA2P3: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Hakan'ın cevap isteğini duyduğun gibi yaz.",
+        text: "Rhys'in cevap isteğini duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["Please text me before tomorrow evening.", "Please text me before tomorrow evening"],
         explain: "„Please text me before tomorrow evening.“ — emir kipiyle kurulmuş kibar bir rica.",
       },
       {
-        text: "What should Melis bring?",
+        text: "What should Heidi bring?",
         options: ["her theory book", "her own car", "a new photo"],
         answer: 0,
         explain: "„And one more thing: bring your theory book.“",
@@ -338,7 +338,7 @@ export const enA2P3: SkillExercise[] = [
         ],
       },
       {
-        heading: "Uzun sıfatlar: more ve the most",
+        heading: "Collins sıfatlar: more ve the most",
         tr: "Öteki iki heceli sıfatlarda ve üç ya da daha çok heceli sıfatlarda ek gelmez, önüne kelime gelir: expensive → more expensive → the most expensive. Ekle kelimeyi birlikte kullanmak („more bigger“) yaygın bir hatadır.",
         examples: [
           { de: "This phone is more expensive.", tr: "Bu telefon daha pahalı." },

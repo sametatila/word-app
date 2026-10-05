@@ -328,9 +328,9 @@ export const b1U35: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Bırakma kartını doldur.",
-        facts: "Kişi: Nuri Öz; süre: 20 yıl; deneme sayısı: 5; işe yarayan: evde sigara yok, farklı yol; bugün: içmiyor.",
+        facts: "Kişi: Anton Naumann; süre: 20 yıl; deneme sayısı: 5; işe yarayan: evde sigara yok, farklı yol; bugün: içmiyor.",
         fields: [
-          { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Name", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Wie lange", answer: "20 Jahre", accept: ["zwanzig Jahre"] },
           { label: "Versuche", answer: "5", accept: ["fünf", "fünfmal"] },
           { label: "Was half", answer: "keine Zigaretten im Haus", accept: ["anderer Weg", "keine Zigaretten"] },

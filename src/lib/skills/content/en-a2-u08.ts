@@ -45,42 +45,42 @@ export const enA2U08: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Nil: Are you OK? You look worried.\n" +
-      "Can: I am. I have a job interview on Thursday and I'm afraid of the questions.\n" +
-      "Nil: Which questions?\n" +
-      "Can: The last time they asked me about my old job and I said nothing good. I was so stressed.\n" +
-      "Nil: And what happened?\n" +
-      "Can: They said no. I was disappointed for a week.\n" +
-      "Nil: This time you are better prepared. You know the company and you have more experience.\n" +
-      "Can: Maybe. But I'm worried about the money question. What do I say?\n" +
-      "Nil: Say a number, not a story. And breathe before you answer.\n" +
-      "Can: You are always so relaxed. How do you do it?\n" +
-      "Nil: I am not relaxed. I only look relaxed. That is half of the work.\n" +
-      "Can: Then I will learn that too.\n" +
-      "Nil: Call me on Thursday evening. I want to hear everything.",
+      "Katie: Are you OK? You look worried.\n" +
+      "Tyler: I am. I have a job interview on Thursday and I'm afraid of the questions.\n" +
+      "Katie: Which questions?\n" +
+      "Tyler: The last time they asked me about my old job and I said nothing good. I was so stressed.\n" +
+      "Katie: And what happened?\n" +
+      "Tyler: They said no. I was disappointed for a week.\n" +
+      "Katie: This time you are better prepared. You know the company and you have more experience.\n" +
+      "Tyler: Maybe. But I'm worried about the money question. What do I say?\n" +
+      "Katie: Say a number, not a story. And breathe before you answer.\n" +
+      "Tyler: You are always so relaxed. How do you do it?\n" +
+      "Katie: I am not relaxed. I only look relaxed. That is half of the work.\n" +
+      "Tyler: Then I will learn that too.\n" +
+      "Katie: Call me on Thursday evening. I want to hear everything.",
     questions: [
       {
-        text: "What is Can afraid of?",
+        text: "What is Tyler afraid of?",
         options: ["the questions", "the money", "Thursday"],
         answer: 0,
         explain: "„I'm afraid of the questions.“ — para sorusu ayrı, orada „worried about“ diyor.",
       },
       {
-        text: "What does Nil say about the money question?",
+        text: "What does Katie say about the money question?",
         options: ["say a number", "say a story", "say nothing"],
         answer: 0,
         explain: "„Say a number, not a story.“",
       },
       {
         kind: "truefalse",
-        text: "Nil only looks relaxed.",
+        text: "Katie only looks relaxed.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I am not relaxed. I only look relaxed.“",
       },
       {
         kind: "gapfill",
-        text: "Can was disappointed for a ___.",
+        text: "Tyler was disappointed for a ___.",
         options: [],
         answer: 0,
         accept: ["week"],
@@ -88,7 +88,7 @@ export const enA2U08: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When should Can call Nil?",
+        text: "When should Tyler call Katie?",
         options: [],
         answer: 0,
         accept: ["on Thursday evening", "Thursday evening", "Thursday"],
@@ -193,20 +193,20 @@ export const enA2U08: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Deniz", text: "How are you feeling today?" },
-      { speaker: "Ela", text: "Better, thank you. I've already taken my medicine." },
-      { speaker: "Deniz", text: "And the fever?" },
-      { speaker: "Ela", text: "Gone since Tuesday. But I'm still tired after two hours." },
-      { speaker: "Deniz", text: "That is normal. You've had a cold for three days." },
-      { speaker: "Ela", text: "Almost a week. It started on Friday." },
-      { speaker: "Deniz", text: "Then go step by step. Don't go back to work on Monday." },
-      { speaker: "Ela", text: "My boss called this morning." },
-      { speaker: "Deniz", text: "And?" },
-      { speaker: "Ela", text: "He was kind. He said: Your health first, the work can wait." },
-      { speaker: "Deniz", text: "A good boss. Can you breathe normally now?" },
-      { speaker: "Ela", text: "Yes, that is the best part. Last week the stairs were a problem." },
-      { speaker: "Deniz", text: "You will recover. But slowly." },
-      { speaker: "Ela", text: "I know. I have already learned one thing: the body decides, not me." },
+      { speaker: "Charlie", text: "How are you feeling today?" },
+      { speaker: "Lucy", text: "Better, thank you. I've already taken my medicine." },
+      { speaker: "Charlie", text: "And the fever?" },
+      { speaker: "Lucy", text: "Gone since Tuesday. But I'm still tired after two hours." },
+      { speaker: "Charlie", text: "That is normal. You've had a cold for three days." },
+      { speaker: "Lucy", text: "Almost a week. It started on Friday." },
+      { speaker: "Charlie", text: "Then go step by step. Don't go back to work on Monday." },
+      { speaker: "Lucy", text: "My boss called this morning." },
+      { speaker: "Charlie", text: "And?" },
+      { speaker: "Lucy", text: "He was kind. He said: Your health first, the work can wait." },
+      { speaker: "Charlie", text: "A good boss. Can you breathe normally now?" },
+      { speaker: "Lucy", text: "Yes, that is the best part. Last week the stairs were a problem." },
+      { speaker: "Charlie", text: "You will recover. But slowly." },
+      { speaker: "Lucy", text: "I know. I have already learned one thing: the body decides, not me." },
     ],
     questions: [
       {
@@ -223,14 +223,14 @@ export const enA2U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela has had the cold for almost a week.",
+        text: "Lucy has had the cold for almost a week.",
         options: ["True", "False"],
         answer: 0,
-        explain: "Deniz üç gün diyor, Ela düzeltiyor: „Almost a week. It started on Friday.“",
+        explain: "Deniz üç gün diyor, Lucy düzeltiyor: „Almost a week. It started on Friday.“",
       },
       {
         kind: "gapfill",
-        text: "Ela is still ___ after two hours.",
+        text: "Lucy is still ___ after two hours.",
         options: [],
         answer: 0,
         accept: ["tired"],
@@ -246,7 +246,7 @@ export const enA2U08: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is the best part for Ela now?",
+        text: "What is the best part for Lucy now?",
         options: [],
         answer: 0,
         accept: ["she can breathe normally", "breathe normally", "breathing"],
@@ -272,14 +272,14 @@ export const enA2U08: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Mert", text: "I live in a bright apartment on the third floor of an old building." },
-      { speaker: "Mert", text: "It is not big, but it is spacious — two rooms, a kitchen and a small room for my books." },
-      { speaker: "Mert", text: "The best part is the balcony. It has a view of the park and in summer I eat there every evening." },
-      { speaker: "Mert", text: "My kitchen is brighter than the living room. The window there is bigger." },
-      { speaker: "Mert", text: "The living room is more comfortable. There is an old chair from my grandmother." },
-      { speaker: "Mert", text: "I don't like the ceiling. It is very high and in winter the room is cold." },
-      { speaker: "Mert", text: "The curtains are new. Before that, the sun came in at five in the morning." },
-      { speaker: "Mert", text: "It is quiet here, but on Saturdays my neighbors have a party — and then I go out on the balcony." },
+      { speaker: "Henry", text: "I live in a bright apartment on the third floor of an old building." },
+      { speaker: "Henry", text: "It is not big, but it is spacious — two rooms, a kitchen and a small room for my books." },
+      { speaker: "Henry", text: "The best part is the balcony. It has a view of the park and in summer I eat there every evening." },
+      { speaker: "Henry", text: "My kitchen is brighter than the living room. The window there is bigger." },
+      { speaker: "Henry", text: "The living room is more comfortable. There is an old chair from my grandmother." },
+      { speaker: "Henry", text: "I don't like the ceiling. It is very high and in winter the room is cold." },
+      { speaker: "Henry", text: "The curtains are new. Before that, the sun came in at five in the morning." },
+      { speaker: "Henry", text: "It is quiet here, but on Saturdays my neighbors have a party — and then I go out on the balcony." },
     ],
     questions: [
       {
@@ -296,7 +296,7 @@ export const enA2U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert lives on the first floor.",
+        text: "Henry lives on the first floor.",
         options: ["True", "False"],
         answer: 1,
         explain: "„…on the third floor of an old building.“",

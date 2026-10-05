@@ -101,7 +101,7 @@ export const deA2P11: SkillExercise[] = [
     skill: "listening",
     title: "Am Käsestand",
     genre: "dialogue",
-    intro: "Haftalık pazarda bir peynir tezgâhı: Leyla tadına bakıyor, misafirleri için ne kadar alacağını soruyor.",
+    intro: "Haftalık pazarda bir peynir tezgâhı: Johanna tadına bakıyor, misafirleri için ne kadar alacağını soruyor.",
     gloss: [
       { de: "probieren", tr: "tatmak", en: "to taste" },
       { de: "mild", tr: "yumuşak", en: "mild" },
@@ -113,28 +113,28 @@ export const deA2P11: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Herr Brandt", text: "Guten Morgen! Möchten Sie mal probieren? Das ist ein junger Käse aus den Bergen." },
-      { speaker: "Leyla", text: "Gern. Hm, der schmeckt mir, aber er ist sehr mild. Haben Sie auch etwas Kräftiges?" },
+      { speaker: "Johanna", text: "Gern. Hm, der schmeckt mir, aber er ist sehr mild. Haben Sie auch etwas Kräftiges?" },
       { speaker: "Herr Brandt", text: "Dann probieren Sie diesen hier. Der ist zwei Jahre alt und hat viel mehr Geschmack." },
-      { speaker: "Leyla", text: "Oh ja, der ist gut. Ich brauche ihn für ein Essen am Samstag. Wir sind acht Personen." },
+      { speaker: "Johanna", text: "Oh ja, der ist gut. Ich brauche ihn für ein Essen am Samstag. Wir sind acht Personen." },
       { speaker: "Herr Brandt", text: "Für acht Gäste nehmen Sie am besten ein halbes Kilo. Soll ich ihn in Scheiben schneiden?" },
-      { speaker: "Leyla", text: "Nein, danke, lieber in einem Stück. Was macht das?" },
+      { speaker: "Johanna", text: "Nein, danke, lieber in einem Stück. Was macht das?" },
       { speaker: "Herr Brandt", text: "Zwölf Euro achtzig. Gehört die Tasche hier Ihnen? Die steht schon eine Weile auf dem Tisch." },
-      { speaker: "Leyla", text: "Ach ja, danke! Die habe ich fast vergessen." },
+      { speaker: "Johanna", text: "Ach ja, danke! Die habe ich fast vergessen." },
       { speaker: "Herr Brandt", text: "Kein Problem. Und wenn der Käse Ihren Gästen gefällt: Wir sind jeden Mittwoch und Samstag hier." },
-      { speaker: "Leyla", text: "Am Samstag habe ich keine Zeit, da koche ich ja. Dann komme ich am Mittwoch wieder." },
+      { speaker: "Johanna", text: "Am Samstag habe ich keine Zeit, da koche ich ja. Dann komme ich am Mittwoch wieder." },
     ],
     questions: [
       {
-        text: "Wie findet Leyla den ersten Käse?",
+        text: "Wie findet Johanna den ersten Käse?",
         options: ["zu alt und zu hart", "gut, aber sehr mild", "lecker, aber zu teuer"],
         answer: 1,
         explain: "„der schmeckt mir, aber er ist sehr mild“ — bu yüzden daha kuvvetlisini istiyor.",
       },
       {
-        text: "Wie viel Käse kauft Leyla?",
+        text: "Wie viel Käse kauft Johanna?",
         options: ["ein Kilo", "zweihundert Gramm", "ein halbes Kilo"],
         answer: 2,
-        explain: "Satıcı sekiz kişi için „ein halbes Kilo“ öneriyor, Leyla da onu alıyor.",
+        explain: "Satıcı sekiz kişi için „ein halbes Kilo“ öneriyor, Johanna da onu alıyor.",
       },
       {
         kind: "truefalse",
@@ -153,14 +153,14 @@ export const deA2P11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was hat Leyla fast vergessen?",
+        text: "Was hat Johanna fast vergessen?",
         options: [],
         answer: 0,
         accept: ["ihre Tasche", "die Tasche", "Tasche"],
-        explain: "Satıcı „Gehört die Tasche hier Ihnen?“ diye soruyor; Leyla „Die habe ich fast vergessen“ diyor.",
+        explain: "Satıcı „Gehört die Tasche hier Ihnen?“ diye soruyor; Johanna „Die habe ich fast vergessen“ diyor.",
       },
       {
-        text: "Wann kommt Leyla wieder zum Markt?",
+        text: "Wann kommt Johanna wieder zum Markt?",
         options: ["am Mittwoch", "am Samstag", "nächsten Montag"],
         answer: 0,
         explain: "Cumartesi yemek yapacağı için „Dann komme ich am Mittwoch wieder.“",
@@ -227,7 +227,7 @@ export const deA2P11: SkillExercise[] = [
           "Wir bestellen sie gern am Tag vorher, zum Beispiel über eine Liste am Eingang. Ich helfe Ihnen gern dabei " +
           "und spreche mit den Kollegen.\n\n" +
           "Vielen Dank für Ihre Mühe!\n\n" +
-          "Viele Grüße\nSelin Yılmaz, Lager",
+          "Viele Grüße\nLuisa Lutz, Lager",
       },
     ],
   },

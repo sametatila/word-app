@@ -30,9 +30,9 @@
   "de": "Geldbörse verloren; Straßenbahn Linie zwei; gegen sechs Uhr; darin Ausweis und zwanzig Euro."
  },
  {
-  "tr": "Soyadı Yılmaz; doğum tarihi 3 Haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
+  "tr": "Soyadı Hayes; doğum tarihi 3 Haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
   "kind": "form.facts",
-  "de": "Nachname Yılmaz; Geburtsdatum 3. Juni; Geburtsort Bursa; Adresse Garden Street einundvierzig."
+  "de": "Nachname Hayes; Geburtsdatum 3. Juni; Geburtsort Bursa; Adresse Garden Street einundvierzig."
  },
  {
   "tr": "Sonra dilini seç.",
@@ -230,7 +230,7 @@
   "de": "„can't“ heißt hier nicht Unfähigkeit, sondern keine Erlaubnis."
  },
  {
-  "tr": "Emir cümlesi öznesiz; sırayı „first“ açıyor.",
+  "tr": "Ethan cümlesi öznesiz; sırayı „first“ açıyor.",
   "kind": "build.hint",
   "de": "Der Imperativ steht ohne Subjekt; „first“ eröffnet die Reihe."
  },

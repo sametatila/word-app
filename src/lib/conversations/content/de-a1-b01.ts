@@ -151,17 +151,17 @@ export const deA1B01: Conversation[] = [
       {
         say: [
           tr(
-            "Şimdi sıra sende: 'Benim adım Ali.' demek için hangi Almanca cümleyi kullanırsın? Lütfen söyle.",
+            "Şimdi sıra sende: 'Benim adım Moritz.' demek için hangi Almanca cümleyi kullanırsın? Lütfen söyle.",
           ),
         ],
         expect: {
           kind: "produce",
-          target: "Ich heiße Ali",
+          target: "Ich heiße Moritz",
           hint: [
             tr("Kalıbımız"),
             de("Ich heiße …"),
             tr("idi. Adı kalıbın sonuna ekle:"),
-            de("Ich heiße Ali."),
+            de("Ich heiße Moritz."),
             tr("Tekrar dene."),
           ],
         },
@@ -669,15 +669,15 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Sind Sie Herr Meyer" },
       },
       {
-        say: [tr("Şimdi aynı soruyu arkadaşına sor: 'Sen Ali misin?'")],
+        say: [tr("Şimdi aynı soruyu arkadaşına sor: 'Sen Moritz misin?'")],
         expect: {
           kind: "produce",
-          target: "Bist du Ali",
+          target: "Bist du Moritz",
           hint: [
             tr("Senli biçimde bu fiil"),
             de("bist"),
             tr("olur:"),
-            de("Bist du Ali?"),
+            de("Bist du Moritz?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1595,10 +1595,10 @@ export const deA1B01: Conversation[] = [
         say: [tr("Sıra sende: 'Kaya nasıl yazılıyor?' diye sor.")],
         expect: {
           kind: "produce",
-          target: "Wie schreibt man Kaya",
+          target: "Wie schreibt man Eckhard",
           hint: [
             tr("Kalıbın sonuna sorduğun kelimeyi ekle:"),
-            de("Wie schreibt man Kaya?"),
+            de("Wie schreibt man Eckhard?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1606,22 +1606,22 @@ export const deA1B01: Conversation[] = [
       {
         say: [
           tr("İkinci kalıbımız kendini tanıtırken işine yarayacak:"),
-          de("Mein Vorname ist Ali."),
+          de("Mein Vorname ist Moritz."),
           tr("Almanlar adı ve soyadı ayrı ayrı sorar, bu yüzden ikisinin de kendi kelimesi var."),
         ],
       },
       {
-        say: [tr("Lütfen"), de("Mein Vorname ist Ali"), tr("de.")],
-        expect: { kind: "repeat", target: "Mein Vorname ist Ali" },
+        say: [tr("Lütfen"), de("Mein Vorname ist Moritz"), tr("de.")],
+        expect: { kind: "repeat", target: "Mein Vorname ist Moritz" },
       },
       {
-        say: [tr("Şimdi soyadını söyle: 'Soyadım Yılmaz.'")],
+        say: [tr("Şimdi soyadını söyle: 'Soyadım Lutz.'")],
         expect: {
           kind: "produce",
-          target: "Mein Nachname ist Yilmaz",
+          target: "Mein Nachname ist Lutz",
           hint: [
             tr("Ad için bir kelime, soyadı için başka bir kelime vardı:"),
-            de("Mein Nachname ist Yilmaz."),
+            de("Mein Nachname ist Lutz."),
             tr("Tekrar dene."),
           ],
         },

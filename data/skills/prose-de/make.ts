@@ -37,7 +37,7 @@
  * SATIRIN İNGİLİZCE YÜZEYİ DE TAŞINIYOR (`en` alanı: metin, soru kökleri
  * ve şıklar). Kapı kanıt ölçütünü sözcük listesiyle değil BU alanla
  * kuruyor — açıklamaların çoğu metinden bir cümle alıntılıyor
- * ("Deniz «At seven o'clock.» diyor") ve o alıntı Almancada BİREBİR
+ * ("Charlie «At seven o'clock.» diyor") ve o alıntı Almancada BİREBİR
  * durmak zorunda. Gerekçenin tamamı `check.ts` başında.
  */
 import { writeFileSync, mkdirSync, rmSync, existsSync } from "node:fs";

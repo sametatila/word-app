@@ -50,14 +50,14 @@
   "de": "Miete und Rechnungen werden erklärt. Welche Rechnung wann, und wie hoch?"
  },
  {
-  "tr": "Nil dairesini gezdiriyor. Odaların sırasını ve sayısını yakala.",
+  "tr": "Katie dairesini gezdiriyor. Odaların sırasını ve sayısını yakala.",
   "kind": "intro",
-  "de": "Nil führt durch ihre Wohnung. Merke dir die Reihenfolge und die Zahl der Zimmer."
+  "de": "Katie führt durch ihre Wohnung. Merke dir die Reihenfolge und die Zahl der Zimmer."
  },
  {
-  "tr": "Ali sporlarını anlatıyor. Hangi spor „play“ ile, hangisi „go“ ile geliyor?",
+  "tr": "Harry sporlarını anlatıyor. Hangi spor „play“ ile, hangisi „go“ ile geliyor?",
   "kind": "intro",
-  "de": "Ali erzählt von seinem Sport. Welche Sportart kommt mit „play“, welche mit „go“?"
+  "de": "Harry erzählt von seinem Sport. Welche Sportart kommt mit „play“, welche mit „go“?"
  },
  {
   "tr": "Kayıp telefon aranıyor. Konum edatlarını takip et: on, under, next to, in.",
@@ -105,9 +105,9 @@
   "de": "„It is on the first floor.“ — der Keller liegt unten."
  },
  {
-  "tr": "„I can't draw. My hobby is music…“ — çizen Can.",
+  "tr": "„I can't draw. My hobby is music…“ — çizen Tyler.",
   "kind": "explain",
-  "de": "„I can't draw. My hobby is music…“ — wer zeichnet, ist Can."
+  "de": "„I can't draw. My hobby is music…“ — wer zeichnet, ist Tyler."
  },
  {
   "tr": "„In a fire: don't take the elevator. Go down the stairs.“",
@@ -145,9 +145,9 @@
   "de": "„I water the plants every morning.“ — „water“ ist hier ein Verb."
  },
  {
-  "tr": "„My sister plays tennis and basketball.“ — futbol Ali'nin.",
+  "tr": "„My sister plays tennis and basketball.“ — futbol Harry'nin.",
   "kind": "explain",
-  "de": "„My sister plays tennis and basketball.“ — Fußball spielt Ali."
+  "de": "„My sister plays tennis and basketball.“ — Fußball spielt Harry."
  },
  {
   "tr": "„I hear the television through the wall.“ — yani adam evde.",
@@ -180,9 +180,9 @@
   "de": "„A party has to end at eleven.“ — auch „has to“ drückt eine Pflicht aus."
  },
  {
-  "tr": "„I enjoy painting. I paint every weekend.“ — müzik ve video Nil'in.",
+  "tr": "„I enjoy painting. I paint every weekend.“ — müzik ve video Katie'nin.",
   "kind": "explain",
-  "de": "„I enjoy painting. I paint every weekend.“ — Musik und Videos gehören Nil."
+  "de": "„I enjoy painting. I paint every weekend.“ — Musik und Videos gehören Katie."
  },
  {
   "tr": "„The electricity bill comes every three months.“ — her ay gelen kira.",

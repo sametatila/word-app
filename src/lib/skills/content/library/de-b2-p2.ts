@@ -247,11 +247,11 @@ export const deB2P2: SkillExercise[] = [
           "voraussichtlich fünf Monate. Das Gerüst werde auf der Hofseite stehen; die Balkone im zweiten und " +
           "dritten Stock seien in dieser Zeit nicht nutzbar. Auf die Frage nach der Miete antwortete er, eine " +
           "Minderung sei möglich, müsse aber schriftlich geltend gemacht werden. Mehrere Anwesende hatten " +
-          "Einwände. Frau Kilic wies darauf hin, dass im Hof die Fahrräder stünden, und fragte, wohin diese " +
+          "Einwände. Frau Wirth wies darauf hin, dass im Hof die Fahrräder stünden, und fragte, wohin diese " +
           "sollten; der Verwalter sagte zu, bis Ende Februar eine Lösung zu nennen. Offen blieb, wie lange der " +
           "Lärm täglich dauern werde, denn auch die Arbeitszeiten seien noch nicht festgelegt. Ich schlage vor, " +
           "dass wir bis Mitte Februar warten und dann gemeinsam schriftlich nachfragen. Als Ansprechpartner hat " +
-          "die Verwaltung Herrn Alkan genannt. Viele Grüße, Deniz",
+          "die Verwaltung Herrn Paulsen genannt. Viele Grüße, Sascha",
       },
     ],
   },

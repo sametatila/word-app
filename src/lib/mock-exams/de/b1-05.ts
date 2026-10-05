@@ -664,7 +664,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, Frau Halim, hier ist der Rückenkurs im Gesundheitszentrum. Der Termin am Dienstag fällt aus, unsere Kursleiterin ist krank. Wir hängen den Termin am Ende an, der Kurs endet also eine Woche später. Eine Erstattung ist deshalb nicht nötig.",
+                  text: "Guten Tag, Frau Günther, hier ist der Rückenkurs im Gesundheitszentrum. Der Termin am Dienstag fällt aus, unsere Kursleiterin ist krank. Wir hängen den Termin am Ende an, der Kurs endet also eine Woche später. Eine Erstattung ist deshalb nicht nötig.",
                 },
               ],
             },
@@ -751,7 +751,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               id: "de-b1-05-h1-5",
               no: 5,
               ref: "h3",
-              text: "Frau Halim bekommt Geld zurück.",
+              text: "Frau Günther bekommt Geld zurück.",
               answer: false,
               explain:
                 "Ders iptal değil, sona ekleniyor; bu yüzden \"Eine Erstattung ist deshalb nicht nötig\" deniyor.",
@@ -955,31 +955,31 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               plays: 2,
               segments: [
                 {
-                  speaker: "Frau Tas",
+                  speaker: "Frau Hagedorn",
                   text: "Guten Abend. Ich spreche heute über Bewegung im Alltag, und ich beginne mit einer Enttäuschung: Die berühmten zehntausend Schritte sind keine medizinische Zahl. Sie stammen aus einer Werbekampagne der Sechzigerjahre.",
                 },
                 {
-                  speaker: "Frau Tas",
+                  speaker: "Frau Hagedorn",
                   text: "Das heißt nicht, dass Schritte egal sind. Die Untersuchungen zeigen den größten Gewinn zwischen zweitausend und siebentausend Schritten. Wer von zweitausend auf viertausend geht, gewinnt mehr als jemand, der von achttausend auf zehntausend geht.",
                 },
                 {
-                  speaker: "Frau Tas",
+                  speaker: "Frau Hagedorn",
                   text: "Zweiter Punkt: die Verteilung. Dreimal zehn Minuten wirken fast genauso gut wie einmal dreißig. Das ist praktisch wichtig, weil dreißig Minuten am Stück für viele Menschen nicht in den Tag passen.",
                 },
                 {
-                  speaker: "Frau Tas",
+                  speaker: "Frau Hagedorn",
                   text: "Drittens, und das überrascht viele: Wer im Beruf viel steht, ist nicht automatisch besser dran. Stehen allein zählt nicht als Bewegung; entscheidend ist der Wechsel zwischen Positionen.",
                 },
                 {
-                  speaker: "Frau Tas",
+                  speaker: "Frau Hagedorn",
                   text: "Zum Rücken eine Einschränkung. Bewegung hilft bei den meisten Rückenschmerzen, aber nicht bei allen. Wer Schmerzen hat, die ins Bein ziehen, sollte zuerst zum Arzt und nicht ins Fitnessstudio.",
                 },
                 {
-                  speaker: "Frau Tas",
+                  speaker: "Frau Hagedorn",
                   text: "Was am besten wirkt, ist übrigens nicht die Sportart, sondern die Verabredung. In unseren Kursen kommen Menschen, die sich mit jemandem treffen, doppelt so lange wie Menschen, die allein trainieren.",
                 },
                 {
-                  speaker: "Frau Tas",
+                  speaker: "Frau Hagedorn",
                   text: "Ich schließe mit einem Hinweis: Alles, was ich gesagt habe, gilt für gesunde Erwachsene. Für Menschen mit Herzerkrankungen gelten andere Empfehlungen, und die bespricht man nicht in einem Vortrag.",
                 },
               ],
@@ -1351,7 +1351,7 @@ Leider muss ich absagen: Mein Arzt hat mir nach einer Operation für sechs Woche
 Entfällt die Bearbeitungsgebühr in diesem Fall?
 
 Mit freundlichen Grüßen
-Erol Kaya`,
+Günter Graf`,
             criteria: [
               "Kurs somut tanımlanmış mı? (gün, saat, başlangıç tarihi)",
               "İptal ve gerekçe açıkça yazılmış mı?",

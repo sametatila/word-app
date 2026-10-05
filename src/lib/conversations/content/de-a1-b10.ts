@@ -148,19 +148,19 @@ export const deA1B10: Conversation[] = [
           tr("İlk kalıbımız:"),
           de("Hier ist …"),
           tr(
-            "Telefonda kendini tanıtırken kullanılır. Türkçede 'ben Ali' dersin; Almancada 'burası Ali' der gibi kurulur ve bu tamamen normaldir.",
+            "Telefonda kendini tanıtırken kullanılır. Türkçede 'ben Moritz' dersin; Almancada 'burası Moritz' der gibi kurulur ve bu tamamen normaldir.",
           ),
         ],
       },
       {
         say: [
-          tr("Örnek: 'Ben Ali.' Almancası:"),
-          de("Hier ist Ali."),
+          tr("Örnek: 'Ben Moritz.' Almancası:"),
+          de("Hier ist Moritz."),
           tr("Lütfen"),
-          de("Hier ist Ali"),
+          de("Hier ist Moritz"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Hier ist Ali" },
+        expect: { kind: "repeat", target: "Hier ist Moritz" },
       },
       {
         say: [tr("Sıra sende: 'Ben Anna.' demek için ne dersin?")],
@@ -188,10 +188,10 @@ export const deA1B10: Conversation[] = [
         say: [tr("Şimdi sen: 'Ali'yle görüşebilir miyim?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Kann ich mit Ali sprechen",
+          target: "Kann ich mit Moritz sprechen",
           hint: [
             tr("Asıl fiil çekilmeden cümlenin sonunda kalır:"),
-            de("Kann ich mit Ali sprechen?"),
+            de("Kann ich mit Moritz sprechen?"),
             tr("Tekrar dene."),
           ],
         },

@@ -48,7 +48,7 @@ export const b1U06: SkillExercise[] = [
       "Wir unterstützen Sie auch nach dem Kurs. Wer bisher kaum geschrieben hat, bekommt " +
       "zusätzlich eine Stunde pro Woche. Sie müssen nicht perfekt sein. Sie müssen " +
       "überhaupt erst einmal anfangen.\n\n" +
-      "Notiz von Emre: Ich arbeite ständig mit Kunden und mein Wissen reicht eigentlich, " +
+      "Notiz von Till: Ich arbeite ständig mit Kunden und mein Wissen reicht eigentlich, " +
       "aber am Telefon werde ich unsicher. Ich mache den Kurs, damit meine Kollegin mir " +
       "nicht jedes Mal helfen muss. Wenn das gelingt, bin ich zufrieden.",
     questions: [
@@ -316,9 +316,9 @@ export const b1U06: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kurs başvuru kartını doldur.",
-        facts: "Katılımcı: Emre Şahin; şu anki iş: telefonla müşteri hizmetleri; amaç: telefonda daha emin konuşmak; başlangıç: ekim; haftada ek saat: evet.",
+        facts: "Katılımcı: Till Heinz; şu anki iş: telefonla müşteri hizmetleri; amaç: telefonda daha emin konuşmak; başlangıç: ekim; haftada ek saat: evet.",
         fields: [
-          { label: "Teilnehmer", answer: "Emre Şahin", accept: ["Emre", "Şahin"] },
+          { label: "Teilnehmer", answer: "Till Heinz", accept: ["Till", "Heinz"] },
           { label: "Zweck", answer: "sicher am Telefon sprechen", accept: ["sicherer sprechen", "am Telefon sprechen"] },
           { label: "Beginn", answer: "Oktober", accept: ["im Oktober"] },
           { label: "Zusätzliche Stunde", answer: "ja", accept: ["Ja", "eine Stunde pro Woche"] },

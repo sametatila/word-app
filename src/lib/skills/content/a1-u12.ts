@@ -37,7 +37,7 @@ export const a1U12: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Tom: Hallo! Ich suche ein Geschenk für Mia. Was kaufe ich?\n\nElif: Vielleicht ein Parfüm? Oder eine Tasche? Oder Ohrringe?\n\nTom: Ein Parfüm ist ein Problem — ich weiß nicht, was ihr gefällt. Eine Tasche finde ich praktisch.\n\nElif: Mir gefällt die schwarze Tasche im Laden am Marktplatz besser als die rote. Sie kostet 35 Euro.\n\nTom: Gut, die kaufe ich. Können sie das im Laden einpacken?\n\nElif: Ja, immer. Und wenn sie Mia gar nicht gefällt, kann sie die Tasche umtauschen — mit dem Kassenbon.",
+      "Tom: Hallo! Ich suche ein Geschenk für Mia. Was kaufe ich?\n\nPaula: Vielleicht ein Parfüm? Oder eine Tasche? Oder Ohrringe?\n\nTom: Ein Parfüm ist ein Problem — ich weiß nicht, was ihr gefällt. Eine Tasche finde ich praktisch.\n\nPaula: Mir gefällt die schwarze Tasche im Laden am Marktplatz besser als die rote. Sie kostet 35 Euro.\n\nTom: Gut, die kaufe ich. Können sie das im Laden einpacken?\n\nPaula: Ja, immer. Und wenn sie Mia gar nicht gefällt, kann sie die Tasche umtauschen — mit dem Kassenbon.",
     questions: [
       {
         text: "Was kauft Tom am Ende?",
@@ -46,7 +46,7 @@ export const a1U12: SkillExercise[] = [
         explain: "„Gut, die kaufe ich.“ — siyah çanta.",
       },
       {
-        text: "Welche Tasche gefällt Elif besser?",
+        text: "Welche Tasche gefällt Paula besser?",
         options: ["die schwarze", "die rote", "beide gleich"],
         answer: 0,
         explain: "„Mir gefällt die schwarze Tasche … besser als die rote.“",
@@ -341,7 +341,7 @@ export const a1U12: SkillExercise[] = [
           { de: "Können Sie es einpacken?", tr: "Paketleyebilir misiniz?", en: "Can you wrap it?" },
         ],
         sample:
-          "Hallo Tom,\n\nmir gefällt die Tasche besser als das Parfüm. Bei einem Parfüm weißt du nicht, was ihr gefällt.\n\nIm Laden am Marktplatz gibt es Taschen in Rot und Blau. Sie kosten 35 Euro. Das finde ich günstig.\n\nEine Tasche ist auch praktisch. Und wenn sie ihr gar nicht gefällt, kann sie die Tasche umtauschen.\n\nViele Grüße\nElif",
+          "Hallo Tom,\n\nmir gefällt die Tasche besser als das Parfüm. Bei einem Parfüm weißt du nicht, was ihr gefällt.\n\nIm Laden am Marktplatz gibt es Taschen in Rot und Blau. Sie kosten 35 Euro. Das finde ich günstig.\n\nEine Tasche ist auch praktisch. Und wenn sie ihr gar nicht gefällt, kann sie die Tasche umtauschen.\n\nViele Grüße\nPaula",
       },
     ],
   },

@@ -1,8 +1,8 @@
 [
  {
-  "tr": "\"It's Ayse Demir.\" Soyadı Demir.",
+  "tr": "\"It's Rachel Adams.\" Soyadı Adams.",
   "kind": "explain",
-  "de": "\"It's Ayse Demir.\" Der Nachname ist Demir."
+  "de": "\"It's Rachel Adams.\" Der Nachname ist Adams."
  },
  {
   "tr": "\"She's studying music in London.\"",
@@ -50,14 +50,14 @@
   "de": "Die kleine Größe gibt es nicht; die Kundin sagt \"OK, medium is fine\"."
  },
  {
-  "tr": "\"He is holding our cat, Pamuk.\" Kediyi Kerem tutuyor.",
+  "tr": "\"He is holding our cat, Pamuk.\" Kediyi Connor tutuyor.",
   "kind": "explain",
-  "de": "\"He is holding our cat, Pamuk.\" Kerem hält die Katze."
+  "de": "\"He is holding our cat, Pamuk.\" Connor hält die Katze."
  },
  {
-  "tr": "\"He is nine years old.\" Kerem, Elif'in erkek kardeşi.",
+  "tr": "\"He is nine years old.\" Connor, Holly'nin erkek kardeşi.",
   "kind": "explain",
-  "de": "\"He is nine years old.\" Kerem ist Elifs Bruder."
+  "de": "\"He is nine years old.\" Connor ist Elifs Bruder."
  },
  {
   "tr": "\"Then turn left at the bank.\" Sağa değil, sola dönülüyor.",
@@ -90,9 +90,9 @@
   "de": "Es heißt \"Here in London I'm living with my aunt.\""
  },
  {
-  "tr": "\"He has an exam on Monday.\" Murat bu yüzden sinemaya gelmiyor.",
+  "tr": "\"He has an exam on Monday.\" Isaac bu yüzden sinemaya gelmiyor.",
   "kind": "explain",
-  "de": "\"He has an exam on Monday.\" Darum kommt Murat nicht ins Kino."
+  "de": "\"He has an exam on Monday.\" Darum kommt Isaac nicht ins Kino."
  },
  {
   "tr": "\"Then take the second street on the right. It's called Green Street.\"",
@@ -125,14 +125,14 @@
   "de": "\"Students have a 10% discount.\" Für den Rabatt braucht man einen Studentenausweis."
  },
  {
-  "tr": "\"don't bring food. But please bring your camera.\" Yiyeceği Mert getiriyor.",
+  "tr": "\"don't bring food. But please bring your camera.\" Yiyeceği Henry getiriyor.",
   "kind": "explain",
-  "de": "\"don't bring food. But please bring your camera.\" Das Essen bringt Mert mit."
+  "de": "\"don't bring food. But please bring your camera.\" Das Essen bringt Henry mit."
  },
  {
-  "tr": "\"Mert is a student. Anna works in a hospital.\" Telefon numarası da Anna'nın.",
+  "tr": "\"Henry is a student. Anna works in a hospital.\" Telefon numarası da Anna'nın.",
   "kind": "explain",
-  "de": "\"Mert is a student. Anna works in a hospital.\" Auch die Telefonnummer gehört Anna."
+  "de": "\"Henry is a student. Anna works in a hospital.\" Auch die Telefonnummer gehört Anna."
  },
  {
   "tr": "\"It's forty dollars. The green one is thirty dollars.\" Müşteri siyahı alıyor.",

@@ -177,7 +177,7 @@ export const enB1P15: SkillExercise[] = [
           "send extra clothes",
         ],
         answer: 0,
-        explain: "Özlem genellikle salıya kadar geçiyor; ilk gece eve gönderme istenmiyor.",
+        explain: "Jessica genellikle salıya kadar geçiyor; ilk gece eve gönderme istenmiyor.",
       },
     ],
   },
@@ -219,7 +219,7 @@ export const enB1P15: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Yeğenin Elif on sekiz yaşına giriyor ve aile, doğum gününde ona vermek için mektuplardan bir defter hazırlıyor. Ona bir mektup yaz: birlikte yaşadığınız bir çocukluk anısını anlat, ondan öğrendiğin bir şeyi söyle, ona bir tavsiye ver ve mektubu bir dilek ya da küçük bir hediyeyle bitir.",
+          "Yeğenin Holly on sekiz yaşına giriyor ve aile, doğum gününde ona vermek için mektuplardan bir defter hazırlıyor. Ona bir mektup yaz: birlikte yaşadığınız bir çocukluk anısını anlat, ondan öğrendiğin bir şeyi söyle, ona bir tavsiye ver ve mektubu bir dilek ya da küçük bir hediyeyle bitir.",
         checklist: [
           "Birlikte yaşadığınız somut bir anıyı anlat",
           "Ondan öğrendiğin bir şeyi söyle",
@@ -235,7 +235,7 @@ export const enB1P15: SkillExercise[] = [
           { de: "I hope this year brings you …", tr: "Umarım bu yıl sana … getirir", en: "" },
         ],
         sample:
-          "Dear Elif, happy eighteenth birthday! I still remember the day you learned to ride a bike in " +
+          "Dear Holly, happy eighteenth birthday! I still remember the day you learned to ride a bike in " +
           "Grandma's backyard. You were six, you fell eleven times, and every time you got up and said, “Again.” " +
           "I was watching from the kitchen window and I couldn't believe how stubborn you were. " +
           "You taught me something that day: it's fine to look silly while you're learning. I think of it " +
@@ -244,7 +244,7 @@ export const enB1P15: SkillExercise[] = [
           "You always want to do everything on your own, but the people who love you are happy to lend you a hand. " +
           "Your grandmother gave me this watch when I turned eighteen, and now I'm giving it to you. Look after it! " +
           "I hope this year brings you lots of adventures. I'm so proud of you, because you have never stopped " +
-          "getting up again. Love, Aunt Selin",
+          "getting up again. Love, Aunt Megan",
       },
     ],
   },
@@ -326,7 +326,7 @@ export const enB1P15: SkillExercise[] = [
         examples: [
           { de: "She gave the keys to her son.", tr: "Anahtarları oğluna verdi.", note: "şey + to + kişi" },
           { de: "I bought a present for my sister.", tr: "Kız kardeşime bir hediye aldım.", note: "buy → for" },
-          { de: "Could you lend your bike to Ali?", tr: "Bisikletini Ali'ye ödünç verebilir misin?", note: "lend → to" },
+          { de: "Could you lend your bike to Harry?", tr: "Bisikletini Harry'ye ödünç verebilir misin?", note: "lend → to" },
         ],
       },
       {

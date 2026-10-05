@@ -265,7 +265,7 @@ export const deC1P4: SkillExercise[] = [
           "die Kalkulation durchgehst — nicht weil ich es besser wüsste, sondern weil man beim Vorlesen selber " +
           "Sachen hört.\n\n" +
           "Und sonst: Sag einfach, wann du Hilfe beim Umräumen brauchst. Ich komme.\n\n" +
-          "Alles Gute, Emre",
+          "Alles Gute, Till",
       },
     ],
   },

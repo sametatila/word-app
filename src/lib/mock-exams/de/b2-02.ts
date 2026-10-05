@@ -1013,7 +1013,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
                   text: "Praktisch gesehen brauchen wir vor allem Leute, die antworten. Die letzte Befragung hatte elf Prozent Rücklauf. Eine perfekte Definition nützt uns bei elf Prozent gar nichts.",
                 },
                 {
-                  speaker: "Frau Ceylan",
+                  speaker: "Frau Pietsch",
                   text: "Beides hängt zusammen. Der Rücklauf war niedrig, weil der Bogen dreißig Minuten gedauert hat. Kürzer wird er nur, wenn wir vorher wissen, was wir weglassen dürfen.",
                 },
                 {
@@ -1021,7 +1021,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
                   text: "Dann kürzen wir eben. Ich würde die offenen Fragen streichen, die wertet ohnehin niemand richtig aus.",
                 },
                 {
-                  speaker: "Frau Ceylan",
+                  speaker: "Frau Pietsch",
                   text: "Da widerspreche ich. Die offenen Antworten waren letztes Mal das Einzige, was uns überrascht hat. Streichen wir sie, hören wir nur noch, was wir schon vermutet haben.",
                 },
                 {
@@ -1046,7 +1046,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               no: 17,
               ref: "b1",
               text: "Ohne klare Definition ist der Fragebogen beliebig.",
-              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
+              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Pietsch."],
               answer: 0,
               explain: "«Ohne die ist jeder Fragebogen beliebig» — Frau Ahrend toplantıyı bu itirazla açıyor.",
             },
@@ -1056,7 +1056,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               no: 18,
               ref: "b1",
               text: "Das dringendste Problem ist der geringe Rücklauf.",
-              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
+              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Pietsch."],
               answer: 1,
               explain: "Herr Nowak yüzde on birlik dönüş oranını öne çıkarıyor: \"Eine perfekte Definition nützt uns bei elf Prozent gar nichts\".",
             },
@@ -1066,10 +1066,10 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               no: 19,
               ref: "b1",
               text: "Die Länge des Bogens und die Definition hängen zusammen.",
-              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
+              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Pietsch."],
               answer: 2,
               explain:
-                "Frau Ceylan: «Beides hängt zusammen. Der Rücklauf war niedrig, weil der Bogen dreißig Minuten gedauert hat» — kısaltma ancak neyin çıkarılabileceği bilindiğinde mümkün.",
+                "Frau Pietsch: «Beides hängt zusammen. Der Rücklauf war niedrig, weil der Bogen dreißig Minuten gedauert hat» — kısaltma ancak neyin çıkarılabileceği bilindiğinde mümkün.",
             },
             {
               kind: "mcq",
@@ -1077,10 +1077,10 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               no: 20,
               ref: "b1",
               text: "Ohne offene Fragen erfährt man nur das Erwartete.",
-              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
+              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Pietsch."],
               answer: 2,
               explain:
-                "Frau Ceylan açık uçlu soruların savunusunu yapıyor: \"hören wir nur noch, was wir schon vermutet haben\".",
+                "Frau Pietsch açık uçlu soruların savunusunu yapıyor: \"hören wir nur noch, was wir schon vermutet haben\".",
             },
             {
               kind: "mcq",
@@ -1088,7 +1088,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               no: 21,
               ref: "b1",
               text: "Eine Erinnerung nach zehn Tagen hat sich bewährt.",
-              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
+              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Pietsch."],
               answer: 1,
               explain:
                 "Herr Nowak: «wenn wir zusätzlich eine Erinnerung nach zehn Tagen verschicken. Das hat beim letzten Mal mehr gebracht als alles andere.»",
@@ -1099,7 +1099,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               no: 22,
               ref: "b1",
               text: "Der Bogen soll vorab an der Zielgruppe getestet werden.",
-              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
+              options: ["Frau Ahrend.", "Herr Nowak.", "Frau Pietsch."],
               answer: 0,
               explain:
                 "Frau Ahrend: «wir testen den Bogen vorher an fünf Personen aus der Zielgruppe, nicht an Kolleginnen» — toplantının kapanış maddesi.",

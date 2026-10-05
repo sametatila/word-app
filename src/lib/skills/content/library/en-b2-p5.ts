@@ -135,18 +135,18 @@ export const enB2P5: SkillExercise[] = [
     ],
     minutes: 9,
     segments: [
-      { speaker: "Chair", text: "Our question tonight is not how to find volunteers. It is why they leave. Three people who know. Sena, you coordinate two hundred of them." },
-      { speaker: "Sena", text: "And I have stopped asking people to stay. I now ask them to tell me when they are going, four weeks in advance. Almost nobody used to do that, because leaving felt like failing." },
+      { speaker: "Chair", text: "Our question tonight is not how to find volunteers. It is why they leave. Three people who know. Ellie, you coordinate two hundred of them." },
+      { speaker: "Ellie", text: "And I have stopped asking people to stay. I now ask them to tell me when they are going, four weeks in advance. Almost nobody used to do that, because leaving felt like failing." },
       { speaker: "Chair", text: "Ilias, you left after six years." },
       { speaker: "Ilias", text: "I did, and I want to be honest: I did not stop because of the work. I stopped because I could not find a way to do less. It was all or nothing, and at some point nothing was easier." },
-      { speaker: "Sena", text: "That is the sentence I hear most often, and it is the one thing we can actually fix." },
+      { speaker: "Ellie", text: "That is the sentence I hear most often, and it is the one thing we can actually fix." },
       { speaker: "Chair", text: "Ruth, you research this." },
       { speaker: "Ruth", text: "Two findings. First, people rarely leave because of one event; they leave after a small change that nobody noticed, like a meeting moved to an evening." },
       { speaker: "Ruth", text: "Second, they almost never say the real reason on the way out." },
       { speaker: "Ilias", text: "That is true. I said I was busy." },
       { speaker: "Ruth", text: "So exit conversations tell you very little. What tells you a lot is asking people who have just reduced their hours, because they are still there and they have already decided something." },
       { speaker: "Chair", text: "One practical thing each, and then we take questions." },
-      { speaker: "Sena", text: "Offer a smaller role before somebody asks for one." },
+      { speaker: "Ellie", text: "Offer a smaller role before somebody asks for one." },
       { speaker: "Ruth", text: "And write down what changed in the last six months. That list is usually the answer." },
     ],
     questions: [
@@ -172,7 +172,7 @@ export const enB2P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Sena now asks volunteers to announce their departure in advance.",
+        text: "Ellie now asks volunteers to announce their departure in advance.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I now ask them to tell me when they are going, four weeks in advance.“",
@@ -194,7 +194,7 @@ export const enB2P5: SkillExercise[] = [
         explain: "„I said I was busy.“ — aktarımda „am“ bir adım geriye kaymış.",
       },
       {
-        text: "What does Sena recommend?",
+        text: "What does Ellie recommend?",
         options: [
           "offering a smaller role early",
           "asking people to promise a year",

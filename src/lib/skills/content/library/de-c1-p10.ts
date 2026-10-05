@@ -31,7 +31,7 @@ export const deC1P10: SkillExercise[] = [
     ],
     minutes: 10,
     text:
-      "Im dritten Jahr fiel Nuray eine Abweichung auf, die es nicht geben durfte. " +
+      "Im dritten Jahr fiel Maike eine Abweichung auf, die es nicht geben durfte. " +
       "Drei Messreihen aus dem Frühjahr lagen konstant um vier Prozent über allem, " +
       "was danach gemessen worden war. Vier Prozent sind nichts, außer wenn sie konstant sind.\n\n" +
       "Sie prüfte zuerst sich selbst, wie man es ihr beigebracht hatte: Geräte, Kalibrierung, " +
@@ -48,7 +48,7 @@ export const deC1P10: SkillExercise[] = [
       "Nach vier Monaten passierte nichts. Nach sieben schrieb sie erneut, diesmal " +
       "an die Kommission. Die Korrektur erschien im darauffolgenden Frühjahr, " +
       "in einer Fußnote, ohne ihren Namen.\n\n" +
-      "Heute, sagt Nuray, würde sie es wieder tun, aber anders: " +
+      "Heute, sagt Maike, würde sie es wieder tun, aber anders: " +
       "Sie würde die Tabelle gleich beim ersten Mal an zwei Adressen schicken. " +
       "Nicht aus Misstrauen — sondern weil ein Vorgang, den nur eine Stelle kennt, " +
       "keine Frist hat.",
@@ -97,7 +97,7 @@ export const deC1P10: SkillExercise[] = [
         explain: "„in einer Fußnote, ohne ihren Namen“.",
       },
       {
-        text: "Was würde Nuray heute anders machen und warum?",
+        text: "Was würde Maike heute anders machen und warum?",
         options: [
           "Sie würde es gar nicht melden.",
           "Sie würde sofort an zwei Stellen schreiben, damit es eine Frist gibt.",

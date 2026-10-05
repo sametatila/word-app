@@ -487,7 +487,7 @@ Mein Fazit fällt entsprechend unbequem aus: Ich halte die Reform für richtig u
           options: [
             {
               key: "a",
-              label: "a — Frau Tuncer, Richterin",
+              label: "a — Frau Brinkmann, Richterin",
               body: "Im Strafrecht rechnen wir längst nach Tagessätzen, und niemand hält das für Willkür. Dass wir es im Ordnungsrecht nicht tun, ist keine Entscheidung, sondern ein historischer Zufall.",
             },
             {
@@ -1010,9 +1010,9 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
               situation: "Gelire göre ceza tartışılıyor.",
               plays: 2,
               segments: [
-                { speaker: "Moderatorin", text: "Frau Tuncer, ist ein einkommensabhängiges Bußgeld gerecht?" },
+                { speaker: "Moderatorin", text: "Frau Brinkmann, ist ein einkommensabhängiges Bußgeld gerecht?" },
                 {
-                  speaker: "Frau Tuncer",
+                  speaker: "Frau Brinkmann",
                   text: "Es ist jedenfalls nicht ungewöhnlich. Im Strafrecht rechnen wir seit Jahrzehnten mit Tagessätzen. Die Frage ist eher, warum wir es im Ordnungsrecht nicht tun.",
                 },
                 { speaker: "Moderatorin", text: "Herr Pichler, Sie sind dagegen, obwohl Sie zu den Gutverdienenden gehören." },
@@ -1021,7 +1021,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
                   text: "Gerade deshalb. Ich gebe offen zu, dass mich fünfundfünfzig Euro nicht erreichen. Mein Einwand ist ein anderer: Der Staat kennt dann mein Einkommen auch im Straßenverkehr. Das ist mir zu viel.",
                 },
                 {
-                  speaker: "Frau Tuncer",
+                  speaker: "Frau Brinkmann",
                   text: "Der Einwand ist berechtigt, nur trifft er nicht nur diese Reform. Er trifft jede Regelung, die nach Leistungsfähigkeit fragt — auch die, von denen Sie profitieren.",
                 },
                 { speaker: "Herr Pichler", text: "Das stimmt. Ich halte den Einwand trotzdem aufrecht." },
@@ -1035,7 +1035,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
                   speaker: "Frau Lammers",
                   text: "Gegen die Reform in dieser Form, ja. Wenn die Zahl automatisch aus einer bestehenden Datenbank käme, sähe es anders aus.",
                 },
-                { speaker: "Frau Tuncer", text: "Dem würde ich zustimmen. Nur wäre genau das der Punkt, den Herr Pichler ablehnt." },
+                { speaker: "Frau Brinkmann", text: "Dem würde ich zustimmen. Nur wäre genau das der Punkt, den Herr Pichler ablehnt." },
                 { speaker: "Herr Pichler", text: "Richtig. Und ich habe darauf keine gute Antwort." },
               ],
             },
@@ -1046,7 +1046,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
               id: "de-b2-09-h3-17",
               no: 17,
               ref: "d1",
-              text: "Wie beantwortet Frau Tuncer die Eingangsfrage?",
+              text: "Wie beantwortet Frau Brinkmann die Eingangsfrage?",
               options: [
                 "Sie hält die Rechenweise für neu.",
                 "Sie verweist auf das Strafrecht.",
@@ -1076,7 +1076,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
               id: "de-b2-09-h3-19",
               no: 19,
               ref: "d1",
-              text: "Wie entkräftet Frau Tuncer seinen Einwand teilweise?",
+              text: "Wie entkräftet Frau Brinkmann seinen Einwand teilweise?",
               options: [
                 "Sie hält ihn für unbegründet.",
                 "Sie verweist auf die Kosten.",
@@ -1410,7 +1410,7 @@ Nun ließe sich einwenden, härtere Strafen setzten wenigstens ein Signal und en
 Deshalb halte ich die Forderung für gut gemeint und falsch adressiert. Sinnvoller wäre, weniger Regeln zu haben und die verbliebenen wirklich zu kontrollieren.
 
 Mit freundlichen Grüßen
-Deniz Tuncer`,
+Sascha Brinkmann`,
             criteria: [
               "İddiaya açıkça atıf yapıldı mı ve tartışma o cümle üzerinden mi yürüyor?",
               "En az iki bağımsız gerekçe var mı (aynı gerekçenin iki hâli değil)?",
@@ -1452,7 +1452,7 @@ Vorsorglich weise ich darauf hin, dass mein Fahrzeug an diesem Tag verschlossen 
 Sollten Sie weitere Unterlagen oder eine Bestätigung meines Arbeitgebers benötigen, teilen Sie mir das bitte kurz mit; ich reiche beides umgehend nach.
 
 Mit freundlichen Grüßen
-Deniz Tuncer`,
+Sascha Brinkmann`,
             criteria: [
               "İtiraz açıkça ve doğru terimle mi kuruldu (`Einspruch einlegen`)?",
               "Tebligat tarih ve dosya numarasıyla belirtildi mi?",

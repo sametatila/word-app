@@ -207,17 +207,17 @@ export const b2U04: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Alev", text: "Guten Tag, ich rufe wegen einer Störung an. Seit Dienstag habe ich kein Netz." },
+      { speaker: "Jasmin", text: "Guten Tag, ich rufe wegen einer Störung an. Seit Dienstag habe ich kein Netz." },
       { speaker: "Support", text: "Das tut mir leid. Sehen Sie eine Fehlermeldung auf dem Gerät?" },
-      { speaker: "Alev", text: "Ja, immer dieselbe: keine Verbindung zum Anbieter. Der Router ist ohnehin störanfällig." },
+      { speaker: "Jasmin", text: "Ja, immer dieselbe: keine Verbindung zum Anbieter. Der Router ist ohnehin störanfällig." },
       { speaker: "Support", text: "Bei uns ist am Montag ein Systemausfall verzeichnet worden. Das Problem lässt sich vermutlich aus der Ferne beheben." },
-      { speaker: "Alev", text: "Vermutlich? Ich arbeite von zu Hause, das ist mir zu wenig." },
+      { speaker: "Jasmin", text: "Vermutlich? Ich arbeite von zu Hause, das ist mir zu wenig." },
       { speaker: "Support", text: "Verstehe ich. Es ist zu klären, ob Ihr Anschluss betroffen war. Das prüft ein Sachbearbeiter heute noch." },
-      { speaker: "Alev", text: "Und wenn nicht? Dann liegt es am Gerät." },
+      { speaker: "Jasmin", text: "Und wenn nicht? Dann liegt es am Gerät." },
       { speaker: "Support", text: "Dann schicken wir einen Techniker. Der Dienstleister kommt in der Regel innerhalb von zwei Werktagen." },
-      { speaker: "Alev", text: "Gut. Eine Frage noch: Die Grundgebühr läuft ja weiter." },
+      { speaker: "Jasmin", text: "Gut. Eine Frage noch: Die Grundgebühr läuft ja weiter." },
       { speaker: "Support", text: "Für die Tage ohne Anschluss wird sie erstattet. Das macht der Kundendienst automatisch, Sie müssen nichts beantragen." },
-      { speaker: "Alev", text: "Das beruhigt mich. Dann warte ich auf den Rückruf." },
+      { speaker: "Jasmin", text: "Das beruhigt mich. Dann warte ich auf den Rückruf." },
     ],
     questions: [
       {
@@ -304,7 +304,7 @@ export const b2U04: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Wäre es hilfreich, wenn ich Ihnen morgen früh einen festen Termin gebe, mit Namen und Uhrzeit?"],
-        explain: "Dilek kipinde sahte özne; çözüm dayatılmıyor, teklif ediliyor ve kontrol karşı tarafta kalıyor.",
+        explain: "Leonie kipinde sahte özne; çözüm dayatılmıyor, teklif ediliyor ve kontrol karşı tarafta kalıyor.",
       },
       {
         text: "Was macht Jonas als Erstes?",
@@ -383,7 +383,7 @@ export const b2U04: SkillExercise[] = [
         kind: "build",
         tr: "Size yarın sabit bir randevu versem yardımcı olur mu?",
         answer: "Wäre es hilfreich, wenn ich Ihnen morgen einen festen Termin gebe",
-        hint: "Dilek kipinde sahte özne es; koşul cümlesinde fiil sonda.",
+        hint: "Leonie kipinde sahte özne es; koşul cümlesinde fiil sonda.",
       },
       {
         kind: "rewrite",
@@ -432,7 +432,7 @@ export const b2U04: SkillExercise[] = [
         ],
         minWords: 80,
         sample:
-          "Sehr geehrter Herr Yildirim,\n\n" +
+          "Sehr geehrter Herr Brockmann,\n\n" +
           "Ihre Wut kann ich gut verstehen. Acht Tage ohne Anschluss kann man niemandem zumuten, und drei zugesagte Rückrufe, von denen keiner kam, machen es nicht besser.\n\n" +
           "Ich habe den Vorgang gerade geprüft. Der Termin am Montag ist bei uns nie eingetragen worden; die Zusage aus dem Telefonat ist im System nicht angekommen. Das ist ein Fehler auf unserer Seite, und ich bestreite ihn nicht.\n\n" +
           "Wäre es hilfreich, wenn ich Ihnen morgen um neun Uhr einen festen Termin gebe, mit Namen des Technikers? Ich rufe Sie um acht selbst an, damit Sie nicht umsonst warten. Die Grundgebühr für die acht Tage wird Ihnen ohne Antrag erstattet; die Rückerstattung erscheint auf der nächsten Rechnung.\n\n" +

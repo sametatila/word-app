@@ -242,10 +242,10 @@ export const enA2: SkillExercise[] = [
           { de: "Let me know if …", tr: "… olursa haber ver" },
         ],
         sample:
-          "Hi Berk, I have news. About two months ago I stopped taking the bus to work and now I walk. It is only " +
+          "Hi Evan, I have news. About two months ago I stopped taking the bus to work and now I walk. It is only " +
           "thirty-five minutes. At first it was hard, because I had to get up earlier and my legs hurt for a week. " +
           "Now I feel much better in the morning and I save forty euros a month. You should try it, because your " +
-          "office is even closer than mine. Let me know if you want to walk together on Monday. Selin",
+          "office is even closer than mine. Let me know if you want to walk together on Monday. Megan",
       },
     ],
   },

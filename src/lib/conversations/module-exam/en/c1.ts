@@ -239,7 +239,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       stimulus: "Your claim is rejected; the limitation period expired on April 30.",
       checklist: [
         "Dosya numarasıyla ve resmî hitapla başla",
-        "Dilek kipiyle talebini koy („We request that …“)",
+        "Sandy kipiyle talebini koy („We request that …“)",
         "Olguları aktarma fiilleriyle ayır („stated“, „alleged“, „conceded“)",
         "Bir maddenin sessiz kaldığı yeri göster",
         "Süreyi ve sonraki adımı yaz",
@@ -253,7 +253,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { de: "The right of revocation shall remain unaffected.", tr: "Geri alma hakkı etkilenmeden kalır", en: "The right of revocation shall remain unaffected." },
       ],
       sample:
-        "NOTICE OF APPEAL — FILE 2026/318\n\nDear Sir or Madam,\n\nWe request that the office reconsider the decision of May 2, by which the claim was rejected for expiry of the limitation period.\n\nThe period runs from the service of documents. Service was effected on April 3, not on March 28: the electronic receipt in the file carries the later date. The witness stated that the folder had been complete on that day, whereas the office merely alleged the opposite; the expert report neither confirms nor contests it.\n\nClause 7.2 states who shall be heard before a decree is issued; it does not state within what period. Nor is the arbitration board mentioned at all.\n\nWe therefore request that the claim be heard on the merits. The right of revocation shall remain unaffected.\n\nSincerely,\nA. Demir",
+        "NOTICE OF APPEAL — FILE 2026/318\n\nDear Sir or Madam,\n\nWe request that the office reconsider the decision of May 2, by which the claim was rejected for expiry of the limitation period.\n\nThe period runs from the service of documents. Service was effected on April 3, not on March 28: the electronic receipt in the file carries the later date. The witness stated that the folder had been complete on that day, whereas the office merely alleged the opposite; the expert report neither confirms nor contests it.\n\nClause 7.2 states who shall be heard before a decree is issued; it does not state within what period. Nor is the arbitration board mentioned at all.\n\nWe therefore request that the claim be heard on the merits. The right of revocation shall remain unaffected.\n\nSincerely,\nA. Adams",
     },
   },
 
@@ -393,7 +393,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         "İki ayrı adı ve kaynaklarını karşılaştır",
         "Rakamın nasıl kurulduğunu göster",
         "Bir ödün ver („albeit“, „much as“)",
-        "Dilek kipiyle bir talep yaz",
+        "Sandy kipiyle bir talep yaz",
         "Tartışmanın söylemediğini adlandırarak kapat",
       ],
       minWords: 110,
@@ -424,7 +424,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "I can hear the difference between an efficiency gain and work intensification.", tr: "Verimlilik kazancı ile işin yoğunlaşması arasındaki farkı duyabiliyorum.", en: "I can hear the difference between an efficiency gain and work intensification." },
-      { de: "I can name who holds the authority to give orders.", tr: "Emir verme yetkisinin kimde olduğunu adlandırabiliyorum.", en: "I can name who holds the authority to give orders." },
+      { de: "I can name who holds the authority to give orders.", tr: "Ethan verme yetkisinin kimde olduğunu adlandırabiliyorum.", en: "I can name who holds the authority to give orders." },
       { de: "I can put a demand at the bargaining table.", tr: "Müzakere masasında bir talep koyabiliyorum.", en: "I can put a demand at the bargaining table." },
       { de: "I can weigh flexibility against status insecurity.", tr: "Esnekliği güvencesizlikle tartabiliyorum.", en: "I can weigh flexibility against status insecurity." },
       { de: "I can report a meeting so that a reader can act on it.", tr: "Bir toplantıyı okurun işine yarayacak biçimde aktarabiliyorum.", en: "I can report a meeting so that a reader can act on it." },
@@ -470,7 +470,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         "Aynı olgunun iki adını karşılaştır",
         "Yetkinin nerede durduğunu göster",
         "Bir ödün ver („albeit“, „much as“)",
-        "Dilek kipiyle bir talep ya da öneri yaz",
+        "Sandy kipiyle bir talep ya da öneri yaz",
         "Raporu tek bir bulguyla kapat",
       ],
       minWords: 110,
@@ -546,7 +546,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         "Aynı şeyin iki ya da üç adını karşılaştır",
         "Fiyatın ya da kararın ardındaki beklentiyi göster",
         "Bir ödün ver („albeit“, „much as“)",
-        "Dilek kipiyle bir talep yaz",
+        "Sandy kipiyle bir talep yaz",
         "Ölçülü bir ifadeyle kapat",
       ],
       minWords: 110,
@@ -697,7 +697,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       prompt: "Bir strateji raporunun bir bölümünü yaz.",
       checklist: [
         "Aynı rakamın iki adını karşılaştır",
-        "Dilek kipiyle bir şeffaflık talebi koy",
+        "Sandy kipiyle bir şeffaflık talebi koy",
         "İddia ile kanıtı aktarma fiilleriyle ayır",
         "Tahminin kesinliğini işaretle",
         "Ölçülü bir ifadeyle kapat",

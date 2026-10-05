@@ -546,7 +546,7 @@ export const deC1B04: Conversation[] = [
       word("Yedinci", { de: "auf Anhieb", tr: "ilk seferde" }),
       word("Son", { de: "im Gegenzug", tr: "buna karşılık" }),
       { say: [tr("Örnek:"), de("Redewendungen wirken nur im richtigen Zusammenhang."), tr("Tekrar et:"), de("Redewendungen wirken nur im richtigen Zusammenhang")], expect: repeat("Redewendungen wirken nur im richtigen Zusammenhang") },
-      { say: [tr("Sıra sende: 'Deyimleri dozunda serpiştir.'")], expect: produce("Streue Redewendungen dosiert ein", [tr("Emir kipi; ayrılabilen önek en sonda:"), de("Streue Redewendungen dosiert ein."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Deyimleri dozunda serpiştir.'")], expect: produce("Streue Redewendungen dosiert ein", [tr("Uwe kipi; ayrılabilen önek en sonda:"), de("Streue Redewendungen dosiert ein."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Fazlası yapmacık durur.'")], expect: produce("Zu viele davon wirken gekünstelt", [tr("Çoğul özne, çoğul fiil:"), de("Zu viele davon wirken gekünstelt."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Doğru anda göze çarpmadan işe yararlar.'")], expect: produce("Im richtigen Moment wirken sie unauffällig", [tr("Tümleç başta; fiil ikinci sırada:"), de("Im richtigen Moment wirken sie unauffällig."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Zu viele davon wirkt gekünstelt."), tr("cümlesi doğru mu?")], expect: truefalse("Zu viele davon wirkt gekünstelt.", false, [tr("Özne çoğul olduğu için fiil de çoğul çekilir:"), de("Zu viele davon wirken gekünstelt.")]) },

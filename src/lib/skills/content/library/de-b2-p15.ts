@@ -251,7 +251,7 @@ export const deB2P15: SkillExercise[] = [
           "den Strahler etwas weiter nach unten zu richten. Die Kosten dafür würden wir gern mit Ihnen teilen. " +
           "Den Rollladen ganz zu schließen, haben wir schon " +
           "versucht, im Sommer ist das jedoch keine Lösung. " +
-          "Vielleicht können wir am Wochenende kurz im Hof darüber sprechen? Viele Grüße, Ihre Nachbarin Sibel Kaya",
+          "Vielleicht können wir am Wochenende kurz im Hof darüber sprechen? Viele Grüße, Ihre Nachbarin Ursula Graf",
       },
     ],
   },

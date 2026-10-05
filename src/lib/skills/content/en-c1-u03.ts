@@ -155,7 +155,7 @@ export const enC1U03: SkillExercise[] = [
     text:
       "SIX MINUTES OVER THE LAKE\n" +
       "At 7:42 on Sunday evening, a small passenger plane carrying 38 people lost power in one of its two engines shortly after leaving Van. Six minutes later it was back on the runway, and nobody on board had been hurt.\n" +
-      "The captain, Deniz Kara, had flown the route more than four hundred times. This alone explains part of what happened next: she knew exactly how far away the airport was and how much height she could afford to lose. Passengers describe a calm announcement, a short silence and then the lights of the runway.\n" +
+      "The captain, Charlie Palmer, had flown the route more than four hundred times. This alone explains part of what happened next: she knew exactly how far away the airport was and how much height she could afford to lose. Passengers describe a calm announcement, a short silence and then the lights of the runway.\n" +
       "Such composure is rare, and investigators were quick to praise it. „She did everything by the book, and she did it fast,“ said one of them. The first officer, who had joined the airline only three months earlier, contacted the tower and prepared the cabin crew within ninety seconds.\n" +
       "Two explanations for the engine failure were considered on Monday: a bird strike and a problem with the fuel supply. The latter was ruled out within hours, after tests on the fuel showed nothing unusual. Remains of a large bird were later found in the engine.\n" +
       "This finding matters beyond one flight. Bird strikes near the lake have increased by a third in five years, and the airport has asked for money to scare birds away from the runway. Such requests have been refused twice before, on grounds of cost.\n" +
@@ -166,7 +166,7 @@ export const enC1U03: SkillExercise[] = [
         text: "How many times had the captain flown the route?",
         options: ["more than four hundred", "thirty-eight", "six"],
         answer: 0,
-        explain: "„The captain, Deniz Kara, had flown the route more than four hundred times.“",
+        explain: "„The captain, Charlie Palmer, had flown the route more than four hundred times.“",
       },
       {
         text: "What caused the engine failure?",
@@ -233,18 +233,18 @@ export const enC1U03: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ulaş", text: "Before the vote, can I say where I stand? I know we do not agree on this." },
-      { speaker: "Peri", text: "Go ahead. That is what the meeting is for." },
-      { speaker: "Ulaş", text: "Granted, the research on teenagers and sleep is strong, albeit mostly from other countries. A later start would probably help them." },
-      { speaker: "Peri", text: "So you support moving the start to nine." },
-      { speaker: "Ulaş", text: "Much as I acknowledge the evidence, I do not think the plan is viable this year. The buses are shared with the primary school, and the timetable cannot change before September." },
-      { speaker: "Peri", text: "Much as I respect the bus problem, the plan stays viable. The council has offered two extra buses for the morning." },
-      { speaker: "Ulaş", text: "For one year. After that there is little leeway in the budget, albeit some." },
-      { speaker: "Peri", text: "Then we try it for one year and measure it. If the grades and the attendance do not improve, we go back." },
-      { speaker: "Ulaş", text: "That is my worry. Changing the timetable is irreversible, whereas a delay is not. Parents will rearrange their work around the new start." },
-      { speaker: "Peri", text: "Fair. Could we agree to a one-year trial, with a clear date to decide?" },
-      { speaker: "Ulaş", text: "I could vote for that, albeit with a note in the minutes about the buses." },
-      { speaker: "Peri", text: "Done. I will write it down exactly as you said it." },
+      { speaker: "Terry", text: "Before the vote, can I say where I stand? I know we do not agree on this." },
+      { speaker: "Eleanor", text: "Go ahead. That is what the meeting is for." },
+      { speaker: "Terry", text: "Granted, the research on teenagers and sleep is strong, albeit mostly from other countries. A later start would probably help them." },
+      { speaker: "Eleanor", text: "So you support moving the start to nine." },
+      { speaker: "Terry", text: "Much as I acknowledge the evidence, I do not think the plan is viable this year. The buses are shared with the primary school, and the timetable cannot change before September." },
+      { speaker: "Eleanor", text: "Much as I respect the bus problem, the plan stays viable. The council has offered two extra buses for the morning." },
+      { speaker: "Terry", text: "For one year. After that there is little leeway in the budget, albeit some." },
+      { speaker: "Eleanor", text: "Then we try it for one year and measure it. If the grades and the attendance do not improve, we go back." },
+      { speaker: "Terry", text: "That is my worry. Changing the timetable is irreversible, whereas a delay is not. Parents will rearrange their work around the new start." },
+      { speaker: "Eleanor", text: "Fair. Could we agree to a one-year trial, with a clear date to decide?" },
+      { speaker: "Terry", text: "I could vote for that, albeit with a note in the minutes about the buses." },
+      { speaker: "Eleanor", text: "Done. I will write it down exactly as you said it." },
     ],
     questions: [
       {
@@ -254,7 +254,7 @@ export const enC1U03: SkillExercise[] = [
         explain: "„So you support moving the start to nine.“",
       },
       {
-        text: "Why does Ulaş think the plan is difficult this year?",
+        text: "Why does Terry think the plan is difficult this year?",
         options: ["The buses are shared with the primary school.", "The teachers are against it.", "The research is weak."],
         answer: 0,
         explain: "„The buses are shared with the primary school, and the timetable cannot change before September.“",
@@ -316,15 +316,15 @@ export const enC1U03: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ceyhun", text: "Welcome back to Fact Check. This week: a claim from the manifesto of the Future Party, published on Monday." },
-      { speaker: "Ceyhun", text: "The manifesto says that street crime in the city has doubled in five years. The party repeated the figure at three rallies this week." },
-      { speaker: "Ceyhun", text: "We asked the party for its source. It sent us a newspaper article, which in turn quoted a survey of shop owners, not police data." },
-      { speaker: "Ceyhun", text: "So we checked the police data. It does not substantiate the claim. Reported street crime rose by about twelve percent over five years, not a hundred." },
-      { speaker: "Ceyhun", text: "Does that refute the manifesto? Not entirely. Many crimes are never reported, and a survey of shop owners may capture some of them." },
-      { speaker: "Ceyhun", text: "But the party did not say that. It presented the figure as a fact. The manifesto openly claims what the survey merely suggests." },
-      { speaker: "Ceyhun", text: "Researchers at the university postulate that fear of crime rises when shops close, whatever the real numbers do. That is an idea, not yet a finding." },
-      { speaker: "Ceyhun", text: "Our verdict: misleading. To report a survey is not to falsify it, but to present it as police data comes close." },
-      { speaker: "Ceyhun", text: "The party has told us it will correct the figure on its website. We will check whether it does." },
+      { speaker: "Jerry", text: "Welcome back to Fact Check. This week: a claim from the manifesto of the Future Party, published on Monday." },
+      { speaker: "Jerry", text: "The manifesto says that street crime in the city has doubled in five years. The party repeated the figure at three rallies this week." },
+      { speaker: "Jerry", text: "We asked the party for its source. It sent us a newspaper article, which in turn quoted a survey of shop owners, not police data." },
+      { speaker: "Jerry", text: "So we checked the police data. It does not substantiate the claim. Reported street crime rose by about twelve percent over five years, not a hundred." },
+      { speaker: "Jerry", text: "Does that refute the manifesto? Not entirely. Many crimes are never reported, and a survey of shop owners may capture some of them." },
+      { speaker: "Jerry", text: "But the party did not say that. It presented the figure as a fact. The manifesto openly claims what the survey merely suggests." },
+      { speaker: "Jerry", text: "Researchers at the university postulate that fear of crime rises when shops close, whatever the real numbers do. That is an idea, not yet a finding." },
+      { speaker: "Jerry", text: "Our verdict: misleading. To report a survey is not to falsify it, but to present it as police data comes close." },
+      { speaker: "Jerry", text: "The party has told us it will correct the figure on its website. We will check whether it does." },
     ],
     questions: [
       {

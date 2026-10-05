@@ -118,7 +118,7 @@ export const a2U11: SkillExercise[] = [
     text:
       "FORUM · Deutsch lernen\n\n" +
       "Marta: Ich lerne Deutsch, weil meine Kinder hier zur Schule gehen. Ich möchte die Briefe von der Schule selbst lesen und nicht immer jemanden bitten, sie zu übersetzen.\n\n" +
-      "Ibrahim: Bei mir ist es die Arbeit. Wegen meiner neuen Stelle brauche ich mindestens B1. Am schwersten finde ich die Grammatik — Vokabeln lerne ich gern, aber die Sätze bleiben lang und kompliziert.\n\n" +
+      "Lennart: Bei mir ist es die Arbeit. Wegen meiner neuen Stelle brauche ich mindestens B1. Am schwersten finde ich die Grammatik — Vokabeln lerne ich gern, aber die Sätze bleiben lang und kompliziert.\n\n" +
       "Yara: Ich wohne seit acht Monaten hier und habe fast keine Kontakte. Darum lerne ich. Ich möchte mich beim Amt selbst informieren und nicht nur nicken. Mein Problem ist das Sprechen: Ich kenne die Wörter, aber ich kann sie nicht gut aussprechen.",
     questions: [
       {
@@ -136,7 +136,7 @@ export const a2U11: SkillExercise[] = [
         explain: "Bu bir edat: yan cümle kurmaz, fiil sona gitmez. Başta olduğu için özne fiilin arkasına düşer.",
       },
       {
-        text: "Was findet Ibrahim am schwersten?",
+        text: "Was findet Lennart am schwersten?",
         options: ["Die Vokabeln", "Die Grammatik", "Das Sprechen"],
         answer: 1,
         explain: "„Am schwersten finde ich die Grammatik — Vokabeln lerne ich gern.“ Konuşmak Yara'nın sorunu.",
@@ -178,18 +178,18 @@ export const a2U11: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Sinan", text: "Hallo Frau Petrow, hier ist Sinan. Ich komme heute leider später." },
+      { speaker: "Elias", text: "Hallo Frau Petrow, hier ist Elias. Ich komme heute leider später." },
       { speaker: "Frau Petrow", text: "Guten Morgen. Wie viel später denn?" },
-      { speaker: "Sinan", text: "Etwa vierzig Minuten. Ich bin schon unterwegs, denn der Verkehr auf der B5 steht komplett." },
+      { speaker: "Elias", text: "Etwa vierzig Minuten. Ich bin schon unterwegs, denn der Verkehr auf der B5 steht komplett." },
       { speaker: "Frau Petrow", text: "Kein Problem. Wir verschieben das Meeting auf zehn." },
-      { speaker: "Sinan", text: "Danke. Mein Arbeitsweg dauert normalerweise dreißig Minuten, heute wird es fast eine Stunde." },
+      { speaker: "Elias", text: "Danke. Mein Arbeitsweg dauert normalerweise dreißig Minuten, heute wird es fast eine Stunde." },
       { speaker: "Frau Petrow", text: "Fahren Sie eigentlich immer allein?" },
-      { speaker: "Sinan", text: "Meistens ja. Nächste Woche fahre ich bei einem Kollegen mit, das ist weniger stressig." },
+      { speaker: "Elias", text: "Meistens ja. Nächste Woche fahre ich bei einem Kollegen mit, das ist weniger stressig." },
       { speaker: "Frau Petrow", text: "Gute Idee. Und denken Sie an den neuen Dienstplan — Sie haben ab Montag Nachtschicht." },
     ],
     questions: [
       {
-        text: "Wie viel später kommt Sinan?",
+        text: "Wie viel später kommt Elias?",
         options: ["Zwanzig Minuten", "Etwa vierzig Minuten", "Eine Stunde"],
         answer: 1,
         explain: "„Etwa vierzig Minuten.“ Bir saat, bugünkü toplam yol süresi.",
@@ -210,7 +210,7 @@ export const a2U11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was hat Sinan ab Montag?",
+        text: "Was hat Elias ab Montag?",
         options: [],
         answer: 0,
         accept: ["Nachtschicht", "Nachtschicht ab Montag"],
@@ -363,7 +363,7 @@ export const a2U11: SkillExercise[] = [
           { de: "Ich kann ab Januar anfangen.", tr: "ocaktan itibaren başlayabilirim", en: "I can start in January" },
         ],
         sample:
-          "Sehr geehrte Damen und Herren,\n\nich bewerbe mich auf Ihre Anzeige für den Service im Café Linde.\n\nIch heiße Amina Yildiz und bin 27 Jahre alt. Ich habe zwei Jahre in einem Café in Bremen gearbeitet, zuerst als Nebenjob und später in Vollzeit. Ich möchte gern bei Ihnen arbeiten, weil ich die Arbeit mit Gästen sehr mag und Ihr Café ganz in meiner Nähe ist.\n\nIch kann ab dem 8. Januar anfangen. Zu einem Bewerbungsgespräch komme ich gern jederzeit.\n\nMit freundlichen Grüßen\nAmina Yildiz",
+          "Sehr geehrte Damen und Herren,\n\nich bewerbe mich auf Ihre Anzeige für den Service im Café Linde.\n\nIch heiße Amina Fink und bin 27 Jahre alt. Ich habe zwei Jahre in einem Café in Bremen gearbeitet, zuerst als Nebenjob und später in Vollzeit. Ich möchte gern bei Ihnen arbeiten, weil ich die Arbeit mit Gästen sehr mag und Ihr Café ganz in meiner Nähe ist.\n\nIch kann ab dem 8. Januar anfangen. Zu einem Bewerbungsgespräch komme ich gern jederzeit.\n\nMit freundlichen Grüßen\nAmina Fink",
       },
     ],
   },

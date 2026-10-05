@@ -51,7 +51,7 @@ export const A1_10: MockPaper = {
               genre: "E-Mail",
               genreTr: "E-posta",
               title: "Von: mia.gruber@mail.de",
-              body: `Hallo Selin,
+              body: `Hallo Luisa,
 
 am Samstag ist die Feier. Ich habe noch kein Kleid.
 
@@ -95,7 +95,7 @@ Ihr Team vom Laden am Park`,
               id: "de-a1-10-l1-1",
               no: 1,
               ref: "t1",
-              text: "Mia möchte ein Kleid von Selin leihen.",
+              text: "Mia möchte ein Kleid von Luisa leihen.",
               answer: true,
               explain:
                 "E-postanın ricası bu: \"Du hast doch das blaue Kleid in Größe 38. Kann ich es leihen?\"",
@@ -384,9 +384,9 @@ Reduzierte Ware können wir nicht zurücknehmen.`,
               situation: "Bir kadın tamirin ne zaman biteceğini soruyor.",
               plays: 2,
               segments: [
-                { speaker: "Frau Ilhan", text: "Wann sind meine Schuhe fertig?" },
+                { speaker: "Frau Schenk", text: "Wann sind meine Schuhe fertig?" },
                 { speaker: "Schuhmacher", text: "Am Donnerstag. Ich schaffe es leider nicht bis Mittwoch." },
-                { speaker: "Frau Ilhan", text: "Gut, dann komme ich am Donnerstag." },
+                { speaker: "Frau Schenk", text: "Gut, dann komme ich am Donnerstag." },
               ],
             },
             {
@@ -645,7 +645,7 @@ Reduzierte Ware können wir nicht zurücknehmen.`,
               plays: 2,
               segments: [
                 {
-                  text: "Hallo Frau Ilhan, hier ist der Sportverein. Bringen Sie zum ersten Training bitte feste Schuhe mit. Ein T-Shirt und eine kurze Hose reichen sonst.",
+                  text: "Hallo Frau Schenk, hier ist der Sportverein. Bringen Sie zum ersten Training bitte feste Schuhe mit. Ein T-Shirt und eine kurze Hose reichen sonst.",
                 },
               ],
             },

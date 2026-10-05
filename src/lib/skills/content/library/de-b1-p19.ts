@@ -123,13 +123,13 @@ export const deB1P19: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Herr Weiler", text: "Danke, dass ihr gekommen seid. Heute geht es um die Frage, ob das Jugendzentrum auch samstags öffnen kann." },
-      { speaker: "Nuray", text: "Am Samstagabend gibt es für uns nichts. Die Kleinen haben den Spielplatz, die Erwachsenen haben ihre Kneipe, und wir stehen an der Tankstelle." },
+      { speaker: "Maike", text: "Am Samstagabend gibt es für uns nichts. Die Kleinen haben den Spielplatz, die Erwachsenen haben ihre Kneipe, und wir stehen an der Tankstelle." },
       { speaker: "Frau Jansen", text: "Das verstehe ich gut. Das Problem ist das Personal. Am Wochenende muss immer eine Fachkraft da sein, und wir sind nur zu zweit." },
-      { speaker: "Nuray", text: "Und wenn Ältere aus unserer Gruppe mithelfen? Einige sind schon achtzehn und haben den Kurs für Gruppenleiter gemacht." },
+      { speaker: "Maike", text: "Und wenn Ältere aus unserer Gruppe mithelfen? Einige sind schon achtzehn und haben den Kurs für Gruppenleiter gemacht." },
       { speaker: "Herr Weiler", text: "Das wäre eine Möglichkeit. Aber allein dürfen sie nicht aufschließen. Jemand aus dem Team muss bis zweiundzwanzig Uhr bleiben." },
       { speaker: "Frau Jansen", text: "Ich könnte zwei Samstage im Monat übernehmen, wenn ich dafür am Montag frei habe." },
       { speaker: "Herr Weiler", text: "Gut, dann probieren wir es bis zu den Sommerferien: zweimal im Monat, von achtzehn bis zweiundzwanzig Uhr." },
-      { speaker: "Nuray", text: "Darf die Musik dann auch laut sein? Das ist das Einzige, was wir wirklich wollen." },
+      { speaker: "Maike", text: "Darf die Musik dann auch laut sein? Das ist das Einzige, was wir wirklich wollen." },
       { speaker: "Herr Weiler", text: "Bis zweiundzwanzig Uhr ja. Oben wohnen Nachbarn, und die haben danach ein Recht auf Ruhe." },
     ],
     questions: [
@@ -254,7 +254,7 @@ export const deB1P19: SkillExercise[] = [
           "Park als Treffpunkt zu öffnen, mit Mülleimern und klaren Zeiten. Auch die Älteren haben ein Recht " +
           "auf Ruhe, das ist klar. Ich wünsche mir, dass die Stadt vor einer Entscheidung mit beiden Gruppen " +
           "spricht.\n\n" +
-          "Mit freundlichen Grüßen\nMurat Demirel",
+          "Mit freundlichen Grüßen\nNiklas Dittmann",
       },
     ],
   },

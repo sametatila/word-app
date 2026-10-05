@@ -35,7 +35,7 @@
  { "tr": "En az bir soru sordun mu (bavul, kahvaltı ya da fiyat)?", "kind": "reply.checklist", "en": "Did you ask at least one question (luggage, breakfast or price)?" },
  { "tr": "Gerekçe somut mu (teknik çözüm iyi, ekip liderliği deneyimi eksik)?", "kind": "reply.checklist", "en": "Is the reasoning concrete (a good technical solution, too little experience leading a team)?" },
  { "tr": "Veri kaybı olmadığı söylendi, açık kalan nokta gizlenmedi mi?", "kind": "reply.checklist", "en": "Is it said that no data was lost, and is the open point not hidden?" },
- { "tr": "Yusuf'un „konuşmak istemiyorum“ isteğine saygı gösterildi mi?", "kind": "reply.checklist", "en": "Has Yusuf's wish not to talk about it been respected?" },
+ { "tr": "Fabian'ın „konuşmak istemiyorum“ isteğine saygı gösterildi mi?", "kind": "reply.checklist", "en": "Has Fabian's wish not to talk about it been respected?" },
  { "tr": "En az bir kez „Das war eine … Erfahrung“ kalıbını kullandın mı?", "kind": "reply.checklist", "en": "Did you use the pattern „Das war eine … Erfahrung“ at least once?" },
  { "tr": "Sonucu Perfekt ile yazdın mı („Am Ende habe ich es geschafft“)?", "kind": "reply.checklist", "en": "Did you write the outcome in the Perfekt („Am Ende habe ich es geschafft“)?" },
  { "tr": "Olayı Perfekt ile anlattın mı (habe … gemacht / bin … gefahren)?", "kind": "reply.checklist", "en": "Did you tell the event in the Perfekt (habe … gemacht / bin … gefahren)?" },

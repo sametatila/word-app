@@ -169,10 +169,10 @@ export const EN_B1_02: MockPaper = {
               kind: "match",
               id: "en-b1-02-l2-7",
               no: 7,
-              text: "Yusuf wants to learn how to fix his own bicycle rather than pay somebody to do it.",
+              text: "Alfie wants to learn how to fix his own bicycle rather than pay somebody to do it.",
               answer: "c",
               explain:
-                "İlan bu ayrımı kendi cümlesinde yapıyor: «Repair your own bicycle with our tools and our help» ve «we do not repair it for you». Yusuf öğrenmek istiyor, hizmet satın almak değil.",
+                "İlan bu ayrımı kendi cümlesinde yapıyor: «Repair your own bicycle with our tools and our help» ve «we do not repair it for you». Alfie öğrenmek istiyor, hizmet satın almak değil.",
             },
             {
               kind: "match",
@@ -196,10 +196,10 @@ export const EN_B1_02: MockPaper = {
               kind: "match",
               id: "en-b1-02-l2-10",
               no: 10,
-              text: "Deniz is thinking about panels on his roof but does not want a sales pitch.",
+              text: "Charlie is thinking about panels on his roof but does not want a sales pitch.",
               answer: "f",
               explain:
-                "İlan satışı açıkça dışlıyor: «No company is present and nothing is sold», bilgi veren de bağımsız bir mühendis. Deniz'in tek çekincesi satış konuşması olduğu için ölçüt tam bu cümlede karşılanıyor.",
+                "İlan satışı açıkça dışlıyor: «No company is present and nothing is sold», bilgi veren de bağımsız bir mühendis. Charlie'nin tek çekincesi satış konuşması olduğu için ölçüt tam bu cümlede karşılanıyor.",
             },
           ],
         },
@@ -588,7 +588,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               plays: 2,
               segments: [
                 { speaker: "Nils", text: "How is the cooking course going?" },
-                { speaker: "Ayse", text: "The cooking is easy. What I did not expect is how much I have learned about buying: what is in season, what freezes well." },
+                { speaker: "Rachel", text: "The cooking is easy. What I did not expect is how much I have learned about buying: what is in season, what freezes well." },
               ],
             },
             {
@@ -668,11 +668,11 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               id: "en-b1-02-h1-2",
               no: 2,
               ref: "a2",
-              text: "What surprised Ayse about the course?",
+              text: "What surprised Rachel about the course?",
               options: ["How much she has learned about shopping", "How difficult the recipes were", "How many people were in the group"],
               answer: 0,
               explain:
-                "Ayse pişirmenin kolay olduğunu söyleyip sürprizi adlandırıyor: «how much I have learned about buying». Tarif zorluğu tersine çevriliyor, grup büyüklüğü kayıtta hiç geçmiyor.",
+                "Rachel pişirmenin kolay olduğunu söyleyip sürprizi adlandırıyor: «how much I have learned about buying». Tarif zorluğu tersine çevriliyor, grup büyüklüğü kayıtta hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -784,7 +784,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               plays: 2,
               segments: [
                 { speaker: "Hanne", text: "Is the repair café worth going to?" },
-                { speaker: "Alp", text: "Go, but not with a broken laptop. They are wonderful with lamps and kettles, and honest about what they cannot do." },
+                { speaker: "Ian", text: "Go, but not with a broken laptop. They are wonderful with lamps and kettles, and honest about what they cannot do." },
               ],
             },
             {
@@ -851,11 +851,11 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               id: "en-b1-02-h2-11",
               no: 11,
               ref: "b4",
-              text: "What does Alp advise?",
+              text: "What does Ian advise?",
               options: ["To go, but with realistic expectations", "To take any broken machine there", "To wait until they open a bigger workshop"],
               answer: 0,
               explain:
-                "Alp gitmeyi öneriyor ama sınırını koyuyor: «Go, but not with a broken laptop» ve yapamadıkları konusunda dürüst olduklarını ekliyor. Her makineyi götürmek tam olarak uyarılan şey.",
+                "Ian gitmeyi öneriyor ama sınırını koyuyor: «Go, but not with a broken laptop» ve yapamadıkları konusunda dürüst olduklarını ekliyor. Her makineyi götürmek tam olarak uyarılan şey.",
             },
             {
               kind: "mcq",
@@ -1120,7 +1120,7 @@ Unfortunately the lamp was damaged. The glass shade has a crack about ten centim
 I would like a replacement rather than a refund, because I still want the lamp. Could you send it before the end of the month? If that is not possible, please tell me and I will ask for my money back.
 
 Sincerely,
-Emre Yildiz`,
+Owen Davies`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Hasar somut mu tarif edildi? (\"bozuk geldi\" bir tarif değildir)",

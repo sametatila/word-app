@@ -38,7 +38,7 @@ export const a1U18: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: In meiner Freizeit male ich. Mein Hobby ist Malen und Basteln. Ich kann nicht so gut singen — Singen ist nicht mein Talent!\n\nTom: Ich schwimme. Zweimal in der Woche gehe ich ins Schwimmbad und übe. Im Verein spielen wir auch zusammen — manchmal gewinnen wir. Wer will, kann mitmachen.\n\nElif: Ich tanze gern. Tanzen kann ich gut, aber ich übe nicht viel. Meine Kinder spielen lieber — sie mögen Spiele mit dem Ball.",
+      "Mia: In meiner Freizeit male ich. Mein Hobby ist Malen und Basteln. Ich kann nicht so gut singen — Singen ist nicht mein Talent!\n\nTom: Ich schwimme. Zweimal in der Woche gehe ich ins Schwimmbad und übe. Im Verein spielen wir auch zusammen — manchmal gewinnen wir. Wer will, kann mitmachen.\n\nPaula: Ich tanze gern. Tanzen kann ich gut, aber ich übe nicht viel. Meine Kinder spielen lieber — sie mögen Spiele mit dem Ball.",
     questions: [
       {
         text: "Was ist Mias Hobby?",
@@ -67,7 +67,7 @@ export const a1U18: SkillExercise[] = [
         explain: "„Wer will, kann mitmachen.“",
       },
       {
-        text: "Richtig oder falsch? Elif übt viel.",
+        text: "Richtig oder falsch? Paula übt viel.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „Tanzen kann ich gut, aber ich übe nicht viel.“",
@@ -98,7 +98,7 @@ export const a1U18: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Lieber Herr Berger,\n\ndie Lampe im Flur ist kaputt. Sie funktioniert seit Montag nicht. Am Abend sieht man die Treppe nicht gut.\n\nAuch das Licht auf dem Balkon funktioniert nicht. Ich sitze abends gern auf dem Balkon, aber ohne Licht sehe ich nichts.\n\nKönnen Sie kommen und das reparieren? Ich bin am Dienstag und am Mittwoch zu Hause.\n\nWas kostet die Reparatur? Bitte schreiben Sie mir.\n\nViele Grüße\nFrau Kaya (Wohnung 5)",
+      "Lieber Herr Berger,\n\ndie Lampe im Flur ist kaputt. Sie funktioniert seit Montag nicht. Am Abend sieht man die Treppe nicht gut.\n\nAuch das Licht auf dem Balkon funktioniert nicht. Ich sitze abends gern auf dem Balkon, aber ohne Licht sehe ich nichts.\n\nKönnen Sie kommen und das reparieren? Ich bin am Dienstag und am Mittwoch zu Hause.\n\nWas kostet die Reparatur? Bitte schreiben Sie mir.\n\nViele Grüße\nFrau Arnold (Wohnung 5)",
     questions: [
       {
         text: "Was ist kaputt?",
@@ -121,7 +121,7 @@ export const a1U18: SkillExercise[] = [
         explain: "„Sie funktioniert seit Montag nicht.“",
       },
       {
-        text: "Wann ist Frau Kaya zu Hause?",
+        text: "Wann ist Frau Arnold zu Hause?",
         options: ["am Dienstag und am Mittwoch", "am Montag", "immer"],
         answer: 0,
         explain: "„Ich bin am Dienstag und am Mittwoch zu Hause.“",
@@ -152,11 +152,11 @@ export const a1U18: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { speaker: "Frau Kaya", text: "Guten Tag, hier ist Kaya aus Wohnung 5. Die Lampe im Flur ist kaputt." },
+      { speaker: "Frau Arnold", text: "Guten Tag, hier ist Arnold aus Wohnung 5. Die Lampe im Flur ist kaputt." },
       { speaker: "Hausmeister", text: "Seit wann funktioniert sie nicht?" },
-      { speaker: "Frau Kaya", text: "Seit Montag. Am Abend sieht man nichts." },
+      { speaker: "Frau Arnold", text: "Seit Montag. Am Abend sieht man nichts." },
       { speaker: "Hausmeister", text: "Ich komme am Mittwoch. Können Sie um 10 Uhr?" },
-      { speaker: "Frau Kaya", text: "Ja, das passt. Was kostet die Reparatur?" },
+      { speaker: "Frau Arnold", text: "Ja, das passt. Was kostet die Reparatur?" },
       { speaker: "Hausmeister", text: "Nichts. Das macht der Vermieter." },
     ],
     questions: [
@@ -181,7 +181,7 @@ export const a1U18: SkillExercise[] = [
         explain: "„Nichts. Das macht der Vermieter.“",
       },
       {
-        text: "Richtig oder falsch? 10 Uhr passt Frau Kaya nicht.",
+        text: "Richtig oder falsch? 10 Uhr passt Frau Arnold nicht.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „Ja, das passt.“",
@@ -329,7 +329,7 @@ export const a1U18: SkillExercise[] = [
           { de: "Was kostet die Reparatur?", tr: "Tamir ne kadar?", en: "What does the repair cost?" },
         ],
         sample:
-          "Lieber Herr Berger,\n\ndie Lampe im Flur ist kaputt. Sie funktioniert seit Montag nicht. Am Abend sieht man nichts.\n\nKönnen Sie kommen und das reparieren? Ich bin am Dienstag und am Mittwoch zu Hause.\n\nWas kostet die Reparatur? Bitte schreiben Sie mir.\n\nViele Grüße\nFrau Kaya (Wohnung 5)",
+          "Lieber Herr Berger,\n\ndie Lampe im Flur ist kaputt. Sie funktioniert seit Montag nicht. Am Abend sieht man nichts.\n\nKönnen Sie kommen und das reparieren? Ich bin am Dienstag und am Mittwoch zu Hause.\n\nWas kostet die Reparatur? Bitte schreiben Sie mir.\n\nViele Grüße\nFrau Arnold (Wohnung 5)",
       },
     ],
   },

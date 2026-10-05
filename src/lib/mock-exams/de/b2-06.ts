@@ -496,7 +496,7 @@ Bleibt die unbequeme Wahrheit: Ohne Ausgleich wird die Abgabe irgendwann politis
             },
             {
               key: "b",
-              label: "b — Herr Yücel, Fernfahrer",
+              label: "b — Herr Rausch, Fernfahrer",
               body: "Für mich ändert sich fast nichts, ich fahre ohnehin achtzig. Was sich für mich ändert, ist der Abstand: Wenn hinter mir jemand mit zweihundert auftaucht, habe ich beim Überholen keine Wahl mehr. Das ist kein Umweltargument, das ist mein Arbeitsplatz.",
             },
             {
@@ -547,7 +547,7 @@ Bleibt die unbequeme Wahrheit: Ohne Ausgleich wird die Abgabe irgendwann politis
               text: "Das Argument betrifft meinen Arbeitsplatz, nicht die Umwelt.",
               answer: "b",
               explain:
-                "Herr Yücel kendi hızının değişmediğini, değişenin sollarken kalan boşluk olduğunu söylüyor: \"Das ist kein Umweltargument, das ist mein Arbeitsplatz\".",
+                "Herr Rausch kendi hızının değişmediğini, değişenin sollarken kalan boşluk olduğunu söylüyor: \"Das ist kein Umweltargument, das ist mein Arbeitsplatz\".",
             },
             {
               kind: "match",

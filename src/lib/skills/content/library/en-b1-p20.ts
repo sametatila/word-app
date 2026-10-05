@@ -234,7 +234,7 @@ export const enB1P20: SkillExercise[] = [
           { de: "In the end, it's your decision.", tr: "Sonuçta karar senin.", en: "" },
         ],
         sample:
-          "Hi Kerem, thanks for asking me about the summer. I've thought about it for two days, " +
+          "Hi Connor, thanks for asking me about the summer. I've thought about it for two days, " +
           "which is more than I usually think about my own plans. " +
           "On the one hand, the café pays well, you know the people, and you'd have money for the " +
           "fall. On the other hand, the studio is exactly the kind of place you want to work in " +
@@ -245,7 +245,7 @@ export const enB1P20: SkillExercise[] = [
           "Whatever you choose, you'd better ask the studio two things before you say yes: how many " +
           "hours they expect, and whether you will work on real projects or just make copies. " +
           "Unpaid is fine for one summer; unpaid and bored is not. " +
-          "In the end, it's your decision, and I'll help either way. Your cousin, Melis",
+          "In the end, it's your decision, and I'll help either way. Your cousin, Heidi",
       },
     ],
   },

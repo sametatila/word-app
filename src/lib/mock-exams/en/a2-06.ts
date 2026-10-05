@@ -60,7 +60,7 @@ export const EN_A2_06: MockPaper = {
               genre: "Email",
               genreTr: "E-posta",
               title: "Your vacation apartment",
-              body: `Dear Ms. Koc, thank you for your booking in September. The heating works from the first of October, so bring a warm sweater. The beach is five minutes away, but the water is cold after August.`,
+              body: `Dear Ms. Gibson, thank you for your booking in September. The heating works from the first of October, so bring a warm sweater. The beach is five minutes away, but the water is cold after August.`,
             },
             {
               kind: "text",
@@ -170,7 +170,7 @@ export const EN_A2_06: MockPaper = {
               kind: "match",
               id: "en-a2-06-l2-7",
               no: 7,
-              text: "Nuri goes to the mountains on the weekend and has no car.",
+              text: "Steven goes to the mountains on the weekend and has no car.",
               answer: "f",
               explain:
                 "İlan tam bu boşluğu dolduruyor: «Every Saturday and Sunday in the season», istasyondan kalkıyor ve rezervasyon istemiyor. Arabası olmayan biri için ulaşım sorunu böyle çözülüyor.",

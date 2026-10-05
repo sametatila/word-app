@@ -329,9 +329,9 @@ export const b1U25: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Uzlaşma kartını doldur.",
-        facts: "Yazan: Nuri Öz; konu: iki haftadır konuşulmayan mesele; istek: bir görüşme; öneri: cumartesi; ton: suçlamasız.",
+        facts: "Yazan: Anton Naumann; konu: iki haftadır konuşulmayan mesele; istek: bir görüşme; öneri: cumartesi; ton: suçlamasız.",
         fields: [
-          { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Name", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Thema", answer: "eine offene Sache seit zwei Wochen", accept: ["die offene Sache", "eine offene Sache", "der Konflikt", "ein Konflikt", "seit zwei Wochen"] },
           { label: "Wunsch", answer: "ein Gespräch", accept: ["reden", "ein Treffen"] },
           { label: "Vorschlag", answer: "Samstag", accept: ["am Samstag"] },

@@ -103,21 +103,21 @@ export const enA1U15: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Excuse me, could you help me? I'm lost.\n" +
+      "Lucy: Excuse me, could you help me? I'm lost.\n" +
       "Man: Of course. Where do you want to go?\n" +
-      "Ela: To the train station. I have a map, but I can't find the way.\n" +
+      "Lucy: To the train station. I have a map, but I can't find the way.\n" +
       "Man: It is near. Can you see the church? Take this path, behind the church.\n" +
-      "Ela: And then?\n" +
+      "Lucy: And then?\n" +
       "Man: Then turn right. The station is at the end of the street.\n" +
-      "Ela: How long does it take on foot?\n" +
+      "Lucy: How long does it take on foot?\n" +
       "Man: Ten minutes. Or you can take a bike — it is faster.\n" +
-      "Ela: Is there someone at the station? I need information.\n" +
+      "Lucy: Is there someone at the station? I need information.\n" +
       "Man: Yes, there is an information desk. You can ask there.\n" +
-      "Ela: Thank you very much! You are very kind.\n" +
+      "Lucy: Thank you very much! You are very kind.\n" +
       "Man: No problem. Good day!",
     questions: [
       {
-        text: "What is Ela's problem?",
+        text: "What is Lucy's problem?",
         options: ["she is lost", "she has no map", "the station is closed"],
         answer: 0,
         explain: "„Excuse me, could you help me? I'm lost.“ — haritası var ama yolu bulamıyor.",
@@ -130,7 +130,7 @@ export const enA1U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela doesn't have a map.",
+        text: "Lucy doesn't have a map.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I have a map, but I can't find the way.“ — harita var, yön yok.",
@@ -158,7 +158,7 @@ export const enA1U15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What can Ela find at the station?",
+        text: "What can Lucy find at the station?",
         options: [],
         answer: 0,
         accept: ["an information desk", "information", "a desk"],
@@ -184,24 +184,24 @@ export const enA1U15: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "How do you get to work, Can?" },
-      { speaker: "Can", text: "I go by bike. It is fast and I see the city." },
-      { speaker: "Nil", text: "Every day? Even in the winter?" },
-      { speaker: "Can", text: "In the winter I go on foot or by bus. My office is near." },
-      { speaker: "Nil", text: "I go by train. The station is far from my house, so I ride a bike to the station." },
-      { speaker: "Can", text: "That is a good idea. Do you go to the gym too?" },
-      { speaker: "Nil", text: "Yes, on Monday and Friday. The gym is next to the park." },
-      { speaker: "Can", text: "I walk in the park on the weekend. Sometimes I take a boat on the river." },
-      { speaker: "Nil", text: "A boat! How long does it take?" },
-      { speaker: "Can", text: "One hour. You can see the old church and the museum from the river." },
-      { speaker: "Nil", text: "Then I am going to take the boat next Sunday." },
+      { speaker: "Katie", text: "How do you get to work, Tyler?" },
+      { speaker: "Tyler", text: "I go by bike. It is fast and I see the city." },
+      { speaker: "Katie", text: "Every day? Even in the winter?" },
+      { speaker: "Tyler", text: "In the winter I go on foot or by bus. My office is near." },
+      { speaker: "Katie", text: "I go by train. The station is far from my house, so I ride a bike to the station." },
+      { speaker: "Tyler", text: "That is a good idea. Do you go to the gym too?" },
+      { speaker: "Katie", text: "Yes, on Monday and Friday. The gym is next to the park." },
+      { speaker: "Tyler", text: "I walk in the park on the weekend. Sometimes I take a boat on the river." },
+      { speaker: "Katie", text: "A boat! How long does it take?" },
+      { speaker: "Tyler", text: "One hour. You can see the old church and the museum from the river." },
+      { speaker: "Katie", text: "Then I am going to take the boat next Sunday." },
     ],
     questions: [
       {
-        text: "How does Can get to work?",
+        text: "How does Tyler get to work?",
         options: ["by bike", "by train", "by boat"],
         answer: 0,
-        explain: "„I go by bike. It is fast and I see the city.“ — trenle giden Nil.",
+        explain: "„I go by bike. It is fast and I see the city.“ — trenle giden Katie.",
       },
       {
         text: "Where is the gym?",
@@ -211,14 +211,14 @@ export const enA1U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can goes on foot or by bus in the winter.",
+        text: "Tyler goes on foot or by bus in the winter.",
         options: ["True", "False"],
         answer: 0,
         explain: "„In the winter I go on foot or by bus.“ — kışın bisiklet yok.",
       },
       {
         kind: "gapfill",
-        text: "Nil goes to the gym on Monday and ___.",
+        text: "Katie goes to the gym on Monday and ___.",
         options: [],
         answer: 0,
         accept: ["Friday"],

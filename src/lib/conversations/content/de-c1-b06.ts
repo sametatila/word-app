@@ -443,7 +443,7 @@ export const deC1B06: Conversation[] = [
       { say: [tr("Örnek:"), de("Ich möchte keine Bürgschaft übernehmen."), tr("Tekrar et:"), de("Ich möchte keine Bürgschaft übernehmen")], expect: repeat("Ich möchte keine Bürgschaft übernehmen") },
       { say: [tr("Sıra sende: 'Kefil sorumlu tutulabilir.'")], expect: produce("Der Bürge kann in Haftung genommen werden", [tr("Kipli edilgen; sonda ortaç ve werden:"), de("Der Bürge kann in Haftung genommen werden."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Bununla yükümlenmiş oluyorsun.'")], expect: produce("Damit verpflichtest du dich", [tr("Dönüşlü zamir özneye uyar:"), de("Damit verpflichtest du dich."), tr("Tekrar dene.")]) },
-      { say: [tr("Bir tane daha: 'Temerrüt riskini hafife alma.'")], expect: produce("Unterschätze das Ausfallrisiko nicht", [tr("Emir kipi; olumsuzluk sonda:"), de("Unterschätze das Ausfallrisiko nicht."), tr("Tekrar dene.")]) },
+      { say: [tr("Bir tane daha: 'Temerrüt riskini hafife alma.'")], expect: produce("Unterschätze das Ausfallrisiko nicht", [tr("Uwe kipi; olumsuzluk sonda:"), de("Unterschätze das Ausfallrisiko nicht."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Damit verpflichtest du dich."), tr("cümlesi doğru mu?")], expect: truefalse("Damit verpflichtest du dich.", true, [tr("Doğru. Dönüşlü zamir öznenin kişisine uyuyor; ikinci tekil şahısta bu biçim kullanılır.")]) },
       { say: [tr("Son: 'Bunu iyi düşünmek gerekir.'")], expect: produce("Das sollte man sich gut überlegen", [tr("Dönüşlü zamir yönelme hâlinde; mastar sonda:"), de("Das sollte man sich gut überlegen."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette senden kefil olman isteniyor.")] },

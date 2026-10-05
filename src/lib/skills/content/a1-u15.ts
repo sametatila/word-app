@@ -274,7 +274,7 @@ export const a1U15: SkillExercise[] = [
         kind: "build",
         tr: "Trafik ışığında sağa dönün.",
         answer: "Biegen Sie an der Ampel rechts ab",
-        hint: "abbiegen ayrılabilir: „Biegen Sie … ab“. Emir kipinde de ön ek SONDA kalır.",
+        hint: "abbiegen ayrılabilir: „Biegen Sie … ab“. Uwe kipinde de ön ek SONDA kalır.",
       },
       {
         kind: "build",
@@ -333,7 +333,7 @@ export const a1U15: SkillExercise[] = [
           { de: "Leih dir ein Fahrrad!", tr: "Bir bisiklet kirala!", en: "Rent a bike!" },
         ],
         sample:
-          "Hallo Tom,\n\nhier kann man viel sehen! Ich empfehle das Museum am Marktplatz und die alte Kirche daneben. Der Turm ist auch schön — von oben sieht man die Stadt.\n\nIn die Altstadt kommst du zu Fuß: Geh geradeaus bis zur Ampel und biege dann rechts ab. Nach der Kreuzung bist du da.\n\nLeih dir ein Fahrrad! Es gibt überall Radwege und es kostet nur 10 Euro für einen Tag.\n\nBis Samstag!\nElif",
+          "Hallo Tom,\n\nhier kann man viel sehen! Ich empfehle das Museum am Marktplatz und die alte Kirche daneben. Der Turm ist auch schön — von oben sieht man die Stadt.\n\nIn die Altstadt kommst du zu Fuß: Geh geradeaus bis zur Ampel und biege dann rechts ab. Nach der Kreuzung bist du da.\n\nLeih dir ein Fahrrad! Es gibt überall Radwege und es kostet nur 10 Euro für einen Tag.\n\nBis Samstag!\nPaula",
       },
     ],
   },

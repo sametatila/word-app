@@ -549,7 +549,7 @@ export const deC1B08: Conversation[] = [
       word("Yedinci", { de: "verschmelzen", tr: "kaynaşmak" }),
       word("Son", { de: "zukunftsweisend", tr: "geleceğe yön veren" }),
       { say: [tr("Örnek:"), de("Man stelle sich vor, es gäbe keine Autos in der Stadt."), tr("Tekrar et:"), de("Man stelle sich vor, es gäbe keine Autos in der Stadt")], expect: repeat("Man stelle sich vor, es gäbe keine Autos in der Stadt") },
-      { say: [tr("Sıra sende: 'Böyle bir dünya düşünülebilir mi?'")], expect: produce("Wäre eine solche Welt denkbar", [tr("Dilek kipi başta soru; sıfat sonda:"), de("Wäre eine solche Welt denkbar?"), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Böyle bir dünya düşünülebilir mi?'")], expect: produce("Wäre eine solche Welt denkbar", [tr("Leonie kipi başta soru; sıfat sonda:"), de("Wäre eine solche Welt denkbar?"), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Bir senaryo tasarlayalım.'")], expect: produce("Entwerfen wir ein Szenario", [tr("Rica biçiminde fiil başta:"), de("Entwerfen wir ein Szenario."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bu ütopik değil, planlanabilir.'")], expect: produce("Das ist nicht utopisch, sondern planbar", [tr("Olumsuzdan sonra düzeltme sondern ile:"), de("Das ist nicht utopisch, sondern planbar."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Gäbe es keine Autos, sind die Straßen leer."), tr("cümlesi doğru mu?")], expect: truefalse("Gäbe es keine Autos, sind die Straßen leer.", false, [tr("Tasarım baştan sona irreal kipte kalmalı; koşul dilek kipindeyken sonuç düz kipe kayamaz:"), de("Gäbe es keine Autos, wären die Straßen leer.")]) },

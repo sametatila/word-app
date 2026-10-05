@@ -207,7 +207,7 @@ export const deA1P3: SkillExercise[] = [
           "Sehr geehrte Frau Kunz, wir möchten im Juli eine Woche in Ihrer Ferienwohnung bleiben. " +
           "Wir sind vier Personen: zwei Erwachsene und zwei Kinder. Ist die Wohnung vom achten bis zum fünfzehnten Juli frei? " +
           "Was kostet eine Nacht? Gibt es eine Küche und einen Parkplatz? Bitte schreiben Sie mir bald. " +
-          "Freundliche Grüße, Elif Kaya",
+          "Freundliche Grüße, Paula Graf",
       },
     ],
   },

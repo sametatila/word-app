@@ -132,10 +132,10 @@ export const a2U24: SkillExercise[] = [
       "Das eigentliche Problem war aber ein anderes: Es gibt keinen Wegweiser. Ich bin zuerst ins Obergeschoss gegangen, weil mir jemand das gesagt hat, und musste dann wieder hinunter ins Erdgeschoss. Eine ältere Dame vor mir hat das dreimal gemacht.\n\n" +
       "Ich bin nicht unzufrieden mit Ihren Mitarbeitern — die Kollegin am Schalter war freundlich und schnell. Unpünktlich war nicht sie, sondern das System.\n\n" +
       "Mein Vorschlag: ein Schild an der Tür, auf dem steht, welche Nummer in welches Stockwerk gehört. Das kostet fast nichts und spart jedem eine halbe Stunde.\n\n" +
-      "Mit freundlichen Grüßen\nH. Kaya",
+      "Mit freundlichen Grüßen\nH. Arnold",
     questions: [
       {
-        text: "Wie lange hat Herr Kaya gewartet?",
+        text: "Wie lange hat Herr Arnold gewartet?",
         options: ["Eine halbe Stunde", "Zwei Stunden", "Den ganzen Tag"],
         answer: 1,
         explain: "„Ich war pünktlich da. Trotzdem habe ich zwei Stunden gewartet.“",
@@ -160,7 +160,7 @@ export const a2U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was schlägt Herr Kaya vor?",
+        text: "Was schlägt Herr Arnold vor?",
         options: [],
         answer: 0,
         accept: [
@@ -171,7 +171,7 @@ export const a2U24: SkillExercise[] = [
         explain: "„ein Schild an der Tür, auf dem steht, welche Nummer in welches Stockwerk gehört“.",
       },
       {
-        text: "Herr Kaya beschwert sich über die Kollegin am Schalter.",
+        text: "Herr Arnold beschwert sich über die Kollegin am Schalter.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „die Kollegin am Schalter war freundlich und schnell“.",
@@ -202,17 +202,17 @@ export const a2U24: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Herr Gül", text: "Guten Tag, ich möchte einen Ausweis. Was kostet das?" },
+      { speaker: "Herr Rothe", text: "Guten Tag, ich möchte einen Ausweis. Was kostet das?" },
       { speaker: "Bibliothekarin", text: "Für Erwachsene zwölf Euro im Jahr, dazu fünf Euro Pfand." },
-      { speaker: "Herr Gül", text: "Und wie lange darf ich ein Buch behalten?" },
+      { speaker: "Herr Rothe", text: "Und wie lange darf ich ein Buch behalten?" },
       { speaker: "Bibliothekarin", text: "Vier Wochen. Einmal verlängern geht online, dann acht." },
-      { speaker: "Herr Gül", text: "Haben Sie auch E-Books?" },
+      { speaker: "Herr Rothe", text: "Haben Sie auch E-Books?" },
       { speaker: "Bibliothekarin", text: "Ja, über unsere Website. Die laufen nach drei Wochen automatisch ab, da können Sie nichts vergessen." },
-      { speaker: "Herr Gül", text: "Praktisch. Wo finde ich Kochbücher?" },
+      { speaker: "Herr Rothe", text: "Praktisch. Wo finde ich Kochbücher?" },
       { speaker: "Bibliothekarin", text: "Erstes Obergeschoss, hinten links. Sie sind nach Ländern sortiert, nicht nach Autoren." },
-      { speaker: "Herr Gül", text: "Gut zu wissen. Und mein Sohn braucht ein Schulbuch zum Nachlesen." },
+      { speaker: "Herr Rothe", text: "Gut zu wissen. Und mein Sohn braucht ein Schulbuch zum Nachlesen." },
       { speaker: "Bibliothekarin", text: "Schulbücher sind im Erdgeschoss, die dürfen aber nicht mit nach Hause." },
-      { speaker: "Herr Gül", text: "Also hier lesen. Darf er dabei sprechen?" },
+      { speaker: "Herr Rothe", text: "Also hier lesen. Darf er dabei sprechen?" },
       { speaker: "Bibliothekarin", text: "Hier darf man nur flüstern. Zum Reden gibt es den Gruppenraum." },
     ],
     questions: [
@@ -242,7 +242,7 @@ export const a2U24: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Herr Gül'ün kitabı ne kadar tutabileceğini sorduğu cümleyi yaz.",
+        text: "Herr Rothe'nin kitabı ne kadar tutabileceğini sorduğu cümleyi yaz.",
         options: [],
         answer: 0,
         accept: ["Und wie lange darf ich ein Buch behalten?", "Wie lange darf ich ein Buch behalten?"],
@@ -270,17 +270,17 @@ export const a2U24: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Yusuf", text: "Sag mal, was ist eigentlich dein Ziel? So in fünf Jahren." },
+      { speaker: "Fabian", text: "Sag mal, was ist eigentlich dein Ziel? So in fünf Jahren." },
       { speaker: "Lea", text: "Konkret? Ich werde meine Ausbildung beenden, das ist im Juni." },
-      { speaker: "Yusuf", text: "Und danach?" },
+      { speaker: "Fabian", text: "Und danach?" },
       { speaker: "Lea", text: "Danach fange ich in der Firma an, in der ich jetzt schon arbeite. Sie haben mir eine Stelle angeboten." },
-      { speaker: "Yusuf", text: "Also nicht studieren?" },
+      { speaker: "Fabian", text: "Also nicht studieren?" },
       { speaker: "Lea", text: "Anstatt zu studieren, arbeite ich lieber erst ein paar Jahre. Studieren kann ich später immer noch." },
-      { speaker: "Yusuf", text: "Mutig. Ich weiß immer noch nicht, was ich wählen soll." },
+      { speaker: "Fabian", text: "Mutig. Ich weiß immer noch nicht, was ich wählen soll." },
       { speaker: "Lea", text: "Du hast doch von einer Fachhochschule gesprochen." },
-      { speaker: "Yusuf", text: "Ja, jedenfalls irgendetwas mit Technik. Mein Vater will, dass ich zu ihm in die Werkstatt komme." },
+      { speaker: "Fabian", text: "Ja, jedenfalls irgendetwas mit Technik. Mein Vater will, dass ich zu ihm in die Werkstatt komme." },
       { speaker: "Lea", text: "Und was willst du?" },
-      { speaker: "Yusuf", text: "Ehrlich? Ich weiß es nicht. Aber ich will vorwärts, nicht dasselbe wie mit zwanzig." },
+      { speaker: "Fabian", text: "Ehrlich? Ich weiß es nicht. Aber ich will vorwärts, nicht dasselbe wie mit zwanzig." },
       { speaker: "Lea", text: "Das ist auch ein Ziel. Nicht jedes muss ein Ferienhaus am Meer sein." },
     ],
     questions: [
@@ -318,7 +318,7 @@ export const a2U24: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Yusuf kommt in die Werkstatt", "dass Yusuf in die Werkstatt kommt",
+          "Fabian kommt in die Werkstatt", "dass Fabian in die Werkstatt kommt",
           "dass er zu ihm in die Werkstatt kommt",
           "dass er in der Werkstatt arbeitet",
         ],
@@ -422,7 +422,7 @@ export const a2U24: SkillExercise[] = [
           "Ich studiere an der Fachhochschule, also zahle ich die Hälfte. Meinen Ausweis bringe ich zum ersten Termin mit.\n\n" +
           "Eine Frage habe ich noch: Wie sieht der Stundenplan in den Ferien aus — fällt der Kurs im Oktober zwei Wochen aus, oder läuft er durch?\n\n" +
           "Vielen Dank im Voraus.\n\n" +
-          "Mit freundlichen Grüßen\nSelma Koc",
+          "Mit freundlichen Grüßen\nSelma Mertens",
       },
     ],
   },

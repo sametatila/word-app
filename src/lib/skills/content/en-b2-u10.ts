@@ -142,20 +142,20 @@ export const enB2U10: SkillExercise[] = [
     minutes: 9,
     text:
       "PRESS RELEASE: CITY MUSEUM\n" +
-      "The architect nobody remembers: the drawings of Selma Kaya, 1921 to 1978\n" +
-      "Never before has such a collection of drawings been shown to the public. For forty years, 212 drawings by the architect Selma Kaya lay in boxes in the basement of her family home, and not once did anybody outside the family see them.\n" +
-      "Kaya designed some of the most famous buildings in the city, including the central library and the old railway station. Yet rarely was her name mentioned at the openings. The buildings were presented under the name of her business partner, and only on a small memorial at the library is her name written today.\n" +
+      "The architect nobody remembers: the drawings of Selma Archie, 1921 to 1978\n" +
+      "Never before has such a collection of drawings been shown to the public. For forty years, 212 drawings by the architect Selma Archie lay in boxes in the basement of her family home, and not once did anybody outside the family see them.\n" +
+      "Archie designed some of the most famous buildings in the city, including the central library and the old railway station. Yet rarely was her name mentioned at the openings. The buildings were presented under the name of her business partner, and only on a small memorial at the library is her name written today.\n" +
       "Only after her granddaughter found the boxes in 2022 did the museum learn how much of the city she had shaped. Among the drawings are plans for a concert hall that was never built and for a landmark bridge that was built, but under the name of another architect.\n" +
       "Not until the exhibition opens will visitors be able to compare her original plans with the buildings they know. The museum has placed each drawing next to a photograph of the finished building, so the contrast is easy to see.\n" +
       "Nowhere else will the collection be shown. After the exhibition closes on 30 September, the drawings will go to the national archive, where they will be kept for researchers.\n" +
       "The exhibition opens on 3 May. Entry is free on Sundays.\n" +
-      "With this exhibition, the museum says, the legacy of Selma Kaya is finally being returned to her.",
+      "With this exhibition, the museum says, the legacy of Selma Archie is finally being returned to her.",
     questions: [
       {
         text: "Where were the drawings kept for forty years?",
         options: ["in boxes in a basement", "in the national archive", "in the central library"],
         answer: 0,
-        explain: "„For forty years, 212 drawings by the architect Selma Kaya lay in boxes in the basement of her family home…“",
+        explain: "„For forty years, 212 drawings by the architect Selma Archie lay in boxes in the basement of her family home…“",
       },
       {
         text: "Who found the boxes?",
@@ -221,23 +221,23 @@ export const enB2U10: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Berat", text: "Did you see the cover of City Life this month? That is the photo Deniz took of the old harbor." },
-      { speaker: "Aslı", text: "I saw it. Nobody asked us. If they had asked for consent, we would have agreed. We usually say yes to local magazines." },
-      { speaker: "Berat", text: "So why are we angry?" },
-      { speaker: "Aslı", text: "Because they did not ask and they did not pay. If the copyright had been clear to them, the case would be closed now, but they say they found the photo on a free website." },
-      { speaker: "Berat", text: "Did they?" },
-      { speaker: "Aslı", text: "Possibly. Someone put it there without our permission. If we had added our name to the file, that would never have happened." },
-      { speaker: "Berat", text: "So part of this is our fault." },
-      { speaker: "Aslı", text: "A small part. But a magazine has a duty to check. If they had checked, they would know the photo is ours." },
-      { speaker: "Berat", text: "What do we want from them?" },
-      { speaker: "Aslı", text: "A normal fee and a line on page two saying who took the picture. If they agree by Friday, there will be no court case." },
-      { speaker: "Berat", text: "And if they refuse?" },
-      { speaker: "Aslı", text: "Then our lawyer sends the letter on Monday. I hope it does not come to that. I like that magazine." },
+      { speaker: "Arthur", text: "Did you see the cover of City Life this month? That is the photo Charlie took of the old harbor." },
+      { speaker: "Kayla", text: "I saw it. Nobody asked us. If they had asked for consent, we would have agreed. We usually say yes to local magazines." },
+      { speaker: "Arthur", text: "So why are we angry?" },
+      { speaker: "Kayla", text: "Because they did not ask and they did not pay. If the copyright had been clear to them, the case would be closed now, but they say they found the photo on a free website." },
+      { speaker: "Arthur", text: "Did they?" },
+      { speaker: "Kayla", text: "Possibly. Someone put it there without our permission. If we had added our name to the file, that would never have happened." },
+      { speaker: "Arthur", text: "So part of this is our fault." },
+      { speaker: "Kayla", text: "A small part. But a magazine has a duty to check. If they had checked, they would know the photo is ours." },
+      { speaker: "Arthur", text: "What do we want from them?" },
+      { speaker: "Kayla", text: "A normal fee and a line on page two saying who took the picture. If they agree by Friday, there will be no court case." },
+      { speaker: "Arthur", text: "And if they refuse?" },
+      { speaker: "Kayla", text: "Then our lawyer sends the letter on Monday. I hope it does not come to that. I like that magazine." },
     ],
     questions: [
       {
         text: "Where does the magazine say it found the photo?",
-        options: ["on a free website", "in the agency archive", "on the phone of Deniz"],
+        options: ["on a free website", "in the agency archive", "on the phone of Charlie"],
         answer: 0,
         explain: "„they say they found the photo on a free website.“",
       },
@@ -296,14 +296,14 @@ export const enB2U10: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Sıla", text: "Morning, everyone. A quick plan for the bank merger, because next week is going to be busy." },
-      { speaker: "Sıla", text: "By Friday the merger will have been announced. The two banks are meeting on Thursday night, and our sources say the press release is ready." },
-      { speaker: "Sıla", text: "The investors will have been informed by then. The shareholders get a letter on Thursday afternoon, so expect the share price to move before the announcement." },
-      { speaker: "Sıla", text: "This time next week we will be covering the takeover from three places: the stock exchange, the head office and the two biggest branches." },
-      { speaker: "Sıla", text: "Kerem, you will be sitting outside the head office from seven. Julia, you will be talking to customers at the branches." },
-      { speaker: "Sıla", text: "By the end of the month, around four hundred jobs will have been cut. That is the story our readers care about, not the share price." },
-      { speaker: "Sıla", text: "One warning. Last year a partnership between two insurers was announced two days late, so do not print a date until you have seen it in writing." },
-      { speaker: "Sıla", text: "I will be updating the plan every morning at nine. Questions to me, please, not to the group chat." },
+      { speaker: "Wendy", text: "Morning, everyone. A quick plan for the bank merger, because next week is going to be busy." },
+      { speaker: "Wendy", text: "By Friday the merger will have been announced. The two banks are meeting on Thursday night, and our sources say the press release is ready." },
+      { speaker: "Wendy", text: "The investors will have been informed by then. The shareholders get a letter on Thursday afternoon, so expect the share price to move before the announcement." },
+      { speaker: "Wendy", text: "This time next week we will be covering the takeover from three places: the stock exchange, the head office and the two biggest branches." },
+      { speaker: "Wendy", text: "Connor, you will be sitting outside the head office from seven. Julia, you will be talking to customers at the branches." },
+      { speaker: "Wendy", text: "By the end of the month, around four hundred jobs will have been cut. That is the story our readers care about, not the share price." },
+      { speaker: "Wendy", text: "One warning. Last year a partnership between two insurers was announced two days late, so do not print a date until you have seen it in writing." },
+      { speaker: "Wendy", text: "I will be updating the plan every morning at nine. Questions to me, please, not to the group chat." },
     ],
     questions: [
       {
@@ -343,7 +343,7 @@ export const enB2U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When will Sıla update the plan?",
+        text: "When will Wendy update the plan?",
         options: [],
         answer: 0,
         accept: ["every morning at nine", "every morning", "at nine"],
@@ -391,7 +391,7 @@ export const enB2U10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Rıza isteselerdi kabul ederdik.",
+        tr: "Keith isteselerdi kabul ederdik.",
         answer: "If they had asked for consent, we would have agreed.",
         hint: "Kapalı kutu: iki yarı da geçmişte.",
       },

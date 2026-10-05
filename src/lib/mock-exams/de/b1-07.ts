@@ -387,7 +387,7 @@ Wer allein lebt, bleibt deshalb oft in einer Wohnung, die für zwei oder drei Pe
               kind: "match",
               id: "de-b1-07-l3-13",
               no: 13,
-              text: "Frau Cimen fährt drei Wochen weg und sorgt sich um ihre Pflanzen und ihre Katze.",
+              text: "Frau Rademacher fährt drei Wochen weg und sorgt sich um ihre Pflanzen und ihre Katze.",
               answer: "b",
               explain:
                 "(b) üçünü de sayıyor: \"gießen Blumen, holen Post und versorgen Katzen, wenn Sie verreisen\". Başka hiçbir ilan hayvan bakımına girmiyor.",
@@ -468,7 +468,7 @@ Wer allein lebt, bleibt deshalb oft in einer Wohnung, die für zwei oder drei Pe
 
 Susanne Rehm: Mir geht es nicht um die Tiere, sondern um die Absprachen. In meinem Haus wohnen vier Hunde, und keiner der Halter hat je gefragt, ob jemand Angst hat. Eine allgemeine Erlaubnis nimmt genau dieses Gespräch weg.
 
-Ercan Yildirim: Ich bin Allergiker und trotzdem für die Erlaubnis. Ein Verbot hilft mir nämlich nicht: Die Katze der Nachbarin sitzt seit Jahren im Treppenhaus, und niemand kontrolliert das. Helfen würden getrennte Aufgänge oder eine Absprache, nicht ein Satz im Vertrag, an den sich keiner hält.
+Dennis Brockmann: Ich bin Allergiker und trotzdem für die Erlaubnis. Ein Verbot hilft mir nämlich nicht: Die Katze der Nachbarin sitzt seit Jahren im Treppenhaus, und niemand kontrolliert das. Helfen würden getrennte Aufgänge oder eine Absprache, nicht ein Satz im Vertrag, an den sich keiner hält.
 
 Frau Dr. Petrick: Als Tierärztin sehe ich, was passiert, wenn Menschen heimlich Tiere halten. Sie kommen zu spät in die Praxis, weil sie Angst vor der Kündigung haben. Eine Erlaubnis wäre für die Tiere die bessere Lösung, auch wenn sie den Vermietern mehr Arbeit macht.
 
@@ -516,7 +516,7 @@ Jonas Feddersen: Vermieter dürfen schon heute jeden Einzelfall prüfen, und gen
               id: "de-b1-07-l4-22",
               no: 22,
               ref: "f1",
-              text: "Ercan Yildirim",
+              text: "Dennis Brockmann",
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:

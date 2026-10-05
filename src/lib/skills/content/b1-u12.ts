@@ -52,7 +52,7 @@ export const b1U12: SkillExercise[] = [
       "Nicht jede Strafe ist richtig. Manchmal ist die Aufnahme nicht klar, manchmal " +
       "stand das Schild hinter einem Baum. Man wird nicht bestraft, wenn man " +
       "beweisen kann, dass das Schild nicht zu sehen war.\n\n" +
-      "Notiz von Herrn Öz: Ich bin am Dienstag um sieben dort gefahren. Ich habe " +
+      "Notiz von Herrn Naumann: Ich bin am Dienstag um sieben dort gefahren. Ich habe " +
       "gebremst, sobald ich das Schild gesehen habe. Danach bin ich rechts " +
       "abgebogen und habe niemanden überholt. Der Polizist hat mir gesagt, ich " +
       "solle die Sache schriftlich angeben.\n\n" +
@@ -87,7 +87,7 @@ export const b1U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was schickt Herr Öz mit?",
+        text: "Was schickt Herr Naumann mit?",
         options: [],
         answer: 0,
         accept: ["die Quittung", "die Quittung der Werkstatt", "Quittung"],
@@ -328,9 +328,9 @@ export const b1U12: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Hasar bildirim formunu doldur.",
-        facts: "Bildiren: Nuri Öz; olay: kaza; gün: salı, saat 7; tanık: eşi; ek: tamirhane makbuzu.",
+        facts: "Bildiren: Anton Naumann; olay: kaza; gün: salı, saat 7; tanık: eşi; ek: tamirhane makbuzu.",
         fields: [
-          { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Name", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Vorfall", answer: "Unfall", accept: ["ein Unfall", "der Unfall", "Autounfall"] },
           { label: "Zeit", answer: "Dienstag um 7", accept: ["Dienstag", "am Dienstag", "Dienstag um sieben", "am Dienstag um sieben", "Dienstag, 7 Uhr", "am Dienstag um 7 Uhr"] },
           { label: "Zeuge", answer: "meine Frau", accept: ["die Frau", "seine Frau", "Frau"] },
@@ -394,7 +394,7 @@ export const b1U12: SkillExercise[] = [
           "Könnten Sie mir den neuen Termin kurz schriftlich bestätigen? " +
           "Dann muss ich mich am Morgen nicht beeilen und bin sicher pünktlich.\n\n" +
           "Für Ihr Verständnis bin ich Ihnen dankbar.\n\n" +
-          "Mit freundlichen Grüßen\nNuri Öz",
+          "Mit freundlichen Grüßen\nAnton Naumann",
         phrases: [
           { de: "Leider muss ich … absagen.", tr: "Ne yazık ki … iptal etmem gerekiyor.", en: "Unfortunately I have to cancel …" },
           { de: "Geeignet wären für mich …", tr: "Bana uygun olan …", en: "Suitable for me would be …" },

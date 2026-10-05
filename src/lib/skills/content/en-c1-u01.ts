@@ -68,7 +68,7 @@ export const enC1U01: SkillExercise[] = [
       "We also ask that no one exert pressure on tenants who have joined this committee. Two members have told us that they were warned about their contracts after speaking at our meeting. We would prefer to believe that this was a misunderstanding.\n" +
       "Were it not for the patience of our residents, this dispute would already be in the hands of lawyers. We would rather settle it at a table. We therefore propose that a representative of the committee attend the next board meeting, and we request a written reply by March 1.\n" +
       "Yours sincerely,\n" +
-      "Hande Aksoy, Chair, Linden House Residents' Committee",
+      "Imogen Lloyd, Chair, Linden House Residents' Committee",
     questions: [
       {
         text: "What do the residents want done about the boiler?",
@@ -147,7 +147,7 @@ export const enC1U01: SkillExercise[] = [
     ],
     minutes: 11,
     text:
-      "BOOK REVIEW: The Quiet Plot, by Leyla Arman\n" +
+      "BOOK REVIEW: The Quiet Plot, by Fiona Arman\n" +
       "Few books arrive with less noise than this one. Arman's fourth collection of essays is about a small garden behind a rented house in Ankara, and for the first forty pages it seems to be about nothing else.\n" +
       "Then, somewhere in the third essay, the tone changes. Into her careful notes on tomatoes and rain creeps a connotation of loss: the garden, we learn, belonged to her mother, and the house will soon be sold.\n" +
       "What the essayist does next is an allusion rather than an announcement. She never tells us that her mother has died. Instead she describes an empty chair by the fence, and the subtext does the rest.\n" +
@@ -228,36 +228,36 @@ export const enC1U01: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Eylül", text: "Have you seen the paper this morning? Our reply to Mrs. Demir is on page three." },
-      { speaker: "Sinan", text: "Our reply? The one about the broken elevator?" },
-      { speaker: "Eylül", text: "That one. Quoted verbatim, the line reads differently. „We regret any inconvenience this may have caused.“ Printed next to a photo of her on the stairs, it sounds heartless." },
-      { speaker: "Sinan", text: "Who sent it to the paper?" },
-      { speaker: "Eylül", text: "She did, and I do not blame her. Written in a hurry on a Friday, the letter did not even use her name. The salutation was just „Dear Customer“." },
-      { speaker: "Sinan", text: "So what do we do now? Apologize in public?" },
-      { speaker: "Eylül", text: "First we call her. Then we send a proper letter, cordial rather than matter-of-fact, and signed by the director, not by the service team." },
-      { speaker: "Sinan", text: "And the elevator?" },
-      { speaker: "Eylül", text: "Repaired yesterday, according to the technicians. Before we say so in public, I want someone to check it in person." },
-      { speaker: "Sinan", text: "I can go this afternoon. Anything else?" },
-      { speaker: "Eylül", text: "The journalist wants a statement by five. Kept short and honest, it can convey that we got it wrong without sounding as if a lawyer wrote it." },
-      { speaker: "Sinan", text: "I will draft it and send it to you by three." },
-      { speaker: "Eylül", text: "Thank you. And from now on, nothing leaves this office addressed to „Dear Customer“." },
+      { speaker: "Patty", text: "Have you seen the paper this morning? Our reply to Mrs. Adams is on page three." },
+      { speaker: "Derek", text: "Our reply? The one about the broken elevator?" },
+      { speaker: "Patty", text: "That one. Quoted verbatim, the line reads differently. „We regret any inconvenience this may have caused.“ Printed next to a photo of her on the stairs, it sounds heartless." },
+      { speaker: "Derek", text: "Who sent it to the paper?" },
+      { speaker: "Patty", text: "She did, and I do not blame her. Written in a hurry on a Friday, the letter did not even use her name. The salutation was just „Dear Customer“." },
+      { speaker: "Derek", text: "So what do we do now? Apologize in public?" },
+      { speaker: "Patty", text: "First we call her. Then we send a proper letter, cordial rather than matter-of-fact, and signed by the director, not by the service team." },
+      { speaker: "Derek", text: "And the elevator?" },
+      { speaker: "Patty", text: "Repaired yesterday, according to the technicians. Before we say so in public, I want someone to check it in person." },
+      { speaker: "Derek", text: "I can go this afternoon. Anything else?" },
+      { speaker: "Patty", text: "The journalist wants a statement by five. Kept short and honest, it can convey that we got it wrong without sounding as if a lawyer wrote it." },
+      { speaker: "Derek", text: "I will draft it and send it to you by three." },
+      { speaker: "Patty", text: "Thank you. And from now on, nothing leaves this office addressed to „Dear Customer“." },
     ],
     questions: [
       {
-        text: "Where did the reply to Mrs. Demir appear?",
+        text: "Where did the reply to Mrs. Adams appear?",
         options: ["in the newspaper", "on the radio", "on the company website"],
         answer: 0,
-        explain: "„Our reply to Mrs. Demir is on page three.“",
+        explain: "„Our reply to Mrs. Adams is on page three.“",
       },
       {
         text: "Who will sign the new letter?",
-        options: ["the director", "the service team", "Sinan"],
+        options: ["the director", "the service team", "Derek"],
         answer: 0,
         explain: "„…and signed by the director, not by the service team.“",
       },
       {
         kind: "truefalse",
-        text: "The first letter did not use Mrs. Demir's name.",
+        text: "The first letter did not use Mrs. Adams's name.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Written in a hurry on a Friday, the letter did not even use her name.“",
@@ -280,7 +280,7 @@ export const enC1U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When will Sinan send the draft?",
+        text: "When will Derek send the draft?",
         options: [],
         answer: 0,
         accept: ["by three", "at three", "three", "by 3"],
@@ -306,15 +306,15 @@ export const enC1U01: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Bilge", text: "Good morning, and welcome to City Hour. Today: the Eastside library branch, which may close in June." },
-      { speaker: "Bilge", text: "Some call the closure a saving; others, a loss. The council says the branch costs four hundred thousand dollars a year to run." },
-      { speaker: "Bilge", text: "The mayor would keep it open if she could, and so would most of the council. The problem is the building, which needs a new roof." },
-      { speaker: "Bilge", text: "Two plans are on the table. The first is cheap; the second is not." },
-      { speaker: "Bilge", text: "The cheap plan moves the books to the school next door. The children would lose a quiet room; the pensioners, their newspapers." },
-      { speaker: "Bilge", text: "The expensive plan repairs the roof and opens the branch on Sundays. Volunteers have offered to staff it, and local shops have too." },
-      { speaker: "Bilge", text: "I asked the head librarian which plan she prefers. She said she would choose the second if the council would, and I believe her." },
-      { speaker: "Bilge", text: "The council votes on Thursday. If you want your view heard, the meeting is open to the public, and so is the online survey." },
-      { speaker: "Bilge", text: "That is all for today. Tomorrow: why the number 12 bus is always late." },
+      { speaker: "Riley", text: "Good morning, and welcome to City Hour. Today: the Eastside library branch, which may close in June." },
+      { speaker: "Riley", text: "Some call the closure a saving; others, a loss. The council says the branch costs four hundred thousand dollars a year to run." },
+      { speaker: "Riley", text: "The mayor would keep it open if she could, and so would most of the council. The problem is the building, which needs a new roof." },
+      { speaker: "Riley", text: "Two plans are on the table. The first is cheap; the second is not." },
+      { speaker: "Riley", text: "The cheap plan moves the books to the school next door. The children would lose a quiet room; the pensioners, their newspapers." },
+      { speaker: "Riley", text: "The expensive plan repairs the roof and opens the branch on Sundays. Volunteers have offered to staff it, and local shops have too." },
+      { speaker: "Riley", text: "I asked the head librarian which plan she prefers. She said she would choose the second if the council would, and I believe her." },
+      { speaker: "Riley", text: "The council votes on Thursday. If you want your view heard, the meeting is open to the public, and so is the online survey." },
+      { speaker: "Riley", text: "That is all for today. Tomorrow: why the number 12 bus is always late." },
     ],
     questions: [
       {

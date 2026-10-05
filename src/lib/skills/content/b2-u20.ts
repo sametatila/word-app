@@ -292,17 +292,17 @@ export const b2U20: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Ronja", text: "Ein Hobby, dessen Kosten man einmal ausrechnet, ist danach ein anderes Hobby." },
-      { speaker: "Kemal", text: "So schlimm?" },
+      { speaker: "Philipp", text: "So schlimm?" },
       { speaker: "Ronja", text: "Ausrüstung, Mitgliedschaft, Fahrten. Bei mir sind es knapp zweitausend im Jahr." },
-      { speaker: "Kemal", text: "Das ist kostspielig. Und trotz der Kosten machst du weiter?" },
+      { speaker: "Philipp", text: "Das ist kostspielig. Und trotz der Kosten machst du weiter?" },
       { speaker: "Ronja", text: "Ja. Das ist es mir wert — es ist kein Zeitvertreib, es ist eine Leidenschaft." },
-      { speaker: "Kemal", text: "Wie bekommst du das in den Haushaltsplan?" },
+      { speaker: "Philipp", text: "Wie bekommst du das in den Haushaltsplan?" },
       { speaker: "Ronja", text: "Ich habe es zu einem festen Posten gemacht. Danach war es leichter, an anderer Stelle maßvoll zu sein." },
-      { speaker: "Kemal", text: "Und die große Anschaffung letztes Jahr?" },
+      { speaker: "Philipp", text: "Und die große Anschaffung letztes Jahr?" },
       { speaker: "Ronja", text: "Auf Ratenzahlung. Ich würde es heute nicht mehr so machen, aber es lief gut." },
-      { speaker: "Kemal", text: "Warum nicht mehr so?" },
+      { speaker: "Philipp", text: "Warum nicht mehr so?" },
       { speaker: "Ronja", text: "Weil Raten die Entscheidung leicht machen. Bar hätte ich länger nachgedacht." },
-      { speaker: "Kemal", text: "Das ist ein guter Punkt. Bei mir wäre es das Fotografieren." },
+      { speaker: "Philipp", text: "Das ist ein guter Punkt. Bei mir wäre es das Fotografieren." },
     ],
     questions: [
       {

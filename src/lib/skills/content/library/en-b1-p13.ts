@@ -248,7 +248,7 @@ export const enB1P13: SkillExercise[] = [
           "everything, even for water, and I was exhausted by four. I was a bit disappointed that " +
           "the cooking talks were so short and hard to hear. " +
           "If you go, make sure you arrive before twelve, bring your own bottle and eat something " +
-          "small first, so you're not choosing lunch while you're starving. Have fun! Selin",
+          "small first, so you're not choosing lunch while you're starving. Have fun! Megan",
       },
     ],
   },

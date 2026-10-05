@@ -51,7 +51,7 @@ export const A1_04: MockPaper = {
               id: "t1",
               genre: "E-Mail",
               genreTr: "E-posta",
-              title: "Von: kemal.d@mail.de",
+              title: "Von: philipp.d@mail.de",
               body: `Hallo Marta,
 
 am Samstag habe ich Geburtstag. Wir feiern bei mir ab 18 Uhr.
@@ -63,7 +63,7 @@ Meine Wohnung ist im vierten Stock. Der Aufzug ist leider klein.
 Sag mir bis Donnerstag Bescheid, okay?
 
 Viele Grüße
-Kemal`,
+Philipp`,
               gloss: [
                 { de: "feiern", tr: "kutlamak", en: "to celebrate" },
                 { de: "Bescheid sagen", tr: "haber vermek", en: "to let someone know" },
@@ -99,14 +99,14 @@ Bei Regen fällt das Fest aus.`,
               text: "Marta soll etwas zu essen mitbringen.",
               answer: false,
               explain:
-                "E-postada \"Bring bitte nichts mit!\" yazıyor. Kemal çorbayı kendi pişiriyor, yani misafirden yiyecek beklenmiyor.",
+                "E-postada \"Bring bitte nichts mit!\" yazıyor. Philipp çorbayı kendi pişiriyor, yani misafirden yiyecek beklenmiyor.",
             },
             {
               kind: "bool",
               id: "de-a1-04-l1-2",
               no: 2,
               ref: "t1",
-              text: "Kemal wohnt nicht im Erdgeschoss.",
+              text: "Philipp wohnt nicht im Erdgeschoss.",
               answer: true,
               explain:
                 "Daire \"im vierten Stock\", yani dördüncü katta; zemin katta (Erdgeschoss) oturmuyor.",
@@ -629,7 +629,7 @@ Wir backen täglich ab 5 Uhr.`,
               plays: 2,
               segments: [
                 {
-                  text: "Hallo, hier ist Ela. Das Essen am Freitag verschiebt sich auf Samstag. Der Ort bleibt gleich. Bis dann!",
+                  text: "Hallo, hier ist Nele. Das Essen am Freitag verschiebt sich auf Samstag. Der Ort bleibt gleich. Bis dann!",
                 },
               ],
             },
@@ -850,7 +850,7 @@ Unterschrift:             L. Novak`,
 vielen Dank für die Einladung! Leider kann ich am Samstag nicht kommen, denn ich arbeite bis zweiundzwanzig Uhr. Ich wünsche dir ein schönes Fest. Wollen wir am Sonntag zusammen Kaffee trinken?
 
 Liebe Grüße
-Yusuf`,
+Fabian`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Hitap ve veda var mı? Arkadaşa yazıldığı için `Liebe …` ve `Liebe Grüße` uygun.",

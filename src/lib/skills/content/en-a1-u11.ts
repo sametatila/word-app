@@ -38,22 +38,22 @@ export const enA1U11: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Good morning. I'm looking for a shirt.\n" +
+      "Lucy: Good morning. I'm looking for a shirt.\n" +
       "Seller: What color would you like?\n" +
-      "Ela: Blue or white. Not black.\n" +
+      "Lucy: Blue or white. Not black.\n" +
       "Seller: What size are you?\n" +
-      "Ela: I don't know. Large, I think.\n" +
+      "Lucy: I don't know. Large, I think.\n" +
       "Seller: Try this blue shirt. Can I help you?\n" +
-      "Ela: Where is the fitting room?\n" +
+      "Lucy: Where is the fitting room?\n" +
       "Seller: There, near the red jacket.\n" +
-      "Ela: Thank you. It's too big. Do you have it in small?\n" +
+      "Lucy: Thank you. It's too big. Do you have it in small?\n" +
       "Seller: Yes, here. And this yellow sweater is cheap — only ten dollars.\n" +
-      "Ela: How much is the shirt?\n" +
+      "Lucy: How much is the shirt?\n" +
       "Seller: Twenty dollars. The shoes are expensive: sixty dollars.\n" +
-      "Ela: Then I'm going to buy the shirt and the sweater.",
+      "Lucy: Then I'm going to buy the shirt and the sweater.",
     questions: [
       {
-        text: "What is Ela looking for?",
+        text: "What is Lucy looking for?",
         options: ["a shirt", "a jacket", "shoes"],
         answer: 0,
         explain: "„I'm looking for a shirt.“ — ceket deneme kabininin yanında duruyor.",
@@ -73,7 +73,7 @@ export const enA1U11: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ela is looking for a blue or ___ shirt.",
+        text: "Lucy is looking for a blue or ___ shirt.",
         options: [],
         answer: 0,
         accept: ["white"],
@@ -81,7 +81,7 @@ export const enA1U11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ela buy?",
+        text: "What does Lucy buy?",
         options: [],
         answer: 0,
         accept: ["the shirt and the sweater", "a shirt and a sweater", "shirt and sweater"],
@@ -170,17 +170,17 @@ export const enA1U11: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Kaan", text: "Excuse me, how much is this jacket?" },
+      { speaker: "Liam", text: "Excuse me, how much is this jacket?" },
       { speaker: "Seller", text: "It's eighty dollars. It's a very good jacket." },
-      { speaker: "Kaan", text: "Eighty! That's expensive. Do you have a cheaper one?" },
+      { speaker: "Liam", text: "Eighty! That's expensive. Do you have a cheaper one?" },
       { speaker: "Seller", text: "This black jacket is forty dollars." },
-      { speaker: "Kaan", text: "Can I try it on?" },
+      { speaker: "Liam", text: "Can I try it on?" },
       { speaker: "Seller", text: "Of course. The fitting room is there." },
-      { speaker: "Kaan", text: "It's too small. What size is it?" },
+      { speaker: "Liam", text: "It's too small. What size is it?" },
       { speaker: "Seller", text: "That is a small size. Try this one — it is big." },
-      { speaker: "Kaan", text: "Better. And the color is nice. Is it black or gray?" },
+      { speaker: "Liam", text: "Better. And the color is nice. Is it black or gray?" },
       { speaker: "Seller", text: "It's gray. Black is only in a small size now." },
-      { speaker: "Kaan", text: "Good. I'm going to buy it. Can I pay by card?" },
+      { speaker: "Liam", text: "Good. I'm going to buy it. Can I pay by card?" },
       { speaker: "Seller", text: "Yes, of course." },
     ],
     questions: [
@@ -191,14 +191,14 @@ export const enA1U11: SkillExercise[] = [
         explain: "„This black jacket is forty dollars.“ — seksen ilk ceketin fiyatı.",
       },
       {
-        text: "What color does Kaan buy?",
+        text: "What color does Liam buy?",
         options: ["gray", "black", "blue"],
         answer: 0,
         explain: "„It's gray. Black is only in a small size now.“ — siyah olan küçük geldi.",
       },
       {
         kind: "truefalse",
-        text: "The black jacket is too small for Kaan.",
+        text: "The black jacket is too small for Liam.",
         options: ["True", "False"],
         answer: 0,
         explain: "„It's too small. What size is it?“ — büyük olan gri ceket.",
@@ -209,7 +209,7 @@ export const enA1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["eighty", "80"],
-        explain: "„It's eighty dollars.“ — bu yüzden Kaan daha ucuzunu istiyor.",
+        explain: "„It's eighty dollars.“ — bu yüzden Liam daha ucuzunu istiyor.",
       },
       {
         kind: "dictation",
@@ -221,7 +221,7 @@ export const enA1U11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How does Kaan pay?",
+        text: "How does Liam pay?",
         options: [],
         answer: 0,
         accept: ["by card", "card", "with a card"],
@@ -235,9 +235,9 @@ export const enA1U11: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 11,
-    title: "Nil's favorite color",
+    title: "Katie's favorite color",
     genre: "monologue",
-    intro: "Nil renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
+    intro: "Katie renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
     gloss: [
       { de: "favorite", tr: "favori" },
       { de: "wear", tr: "giymek" },
@@ -246,36 +246,36 @@ export const enA1U11: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Nil", text: "I like colors. My favorite is blue, but I don't buy blue shirts." },
-      { speaker: "Nil", text: "Blue is a color for the sea, I think. For work I wear white or gray." },
-      { speaker: "Nil", text: "My jacket is black. My shoes are black too. That is easy in the morning." },
-      { speaker: "Nil", text: "On the weekend I wear red or yellow. A red sweater is not for the office!" },
-      { speaker: "Nil", text: "My sister likes green. She has a green car and a green jacket." },
-      { speaker: "Nil", text: "Her shoes are white. She says: white is not a color, it is a problem!" },
+      { speaker: "Katie", text: "I like colors. My favorite is blue, but I don't buy blue shirts." },
+      { speaker: "Katie", text: "Blue is a color for the sea, I think. For work I wear white or gray." },
+      { speaker: "Katie", text: "My jacket is black. My shoes are black too. That is easy in the morning." },
+      { speaker: "Katie", text: "On the weekend I wear red or yellow. A red sweater is not for the office!" },
+      { speaker: "Katie", text: "My sister likes green. She has a green car and a green jacket." },
+      { speaker: "Katie", text: "Her shoes are white. She says: white is not a color, it is a problem!" },
     ],
     questions: [
       {
-        text: "What is Nil's favorite color?",
+        text: "What is Katie's favorite color?",
         options: ["blue", "white", "green"],
         answer: 0,
         explain: "„My favorite is blue, but I don't buy blue shirts.“ — yeşil kız kardeşinin rengi.",
       },
       {
-        text: "What color does Nil wear for work?",
+        text: "What color does Katie wear for work?",
         options: ["white or gray", "red or yellow", "green"],
         answer: 0,
         explain: "„For work I wear white or gray.“ — kırmızı ve sarı hafta sonu için.",
       },
       {
         kind: "truefalse",
-        text: "Nil buys blue shirts.",
+        text: "Katie buys blue shirts.",
         options: ["True", "False"],
         answer: 1,
         explain: "„My favorite is blue, but I don't buy blue shirts.“ — seviyor ama almıyor.",
       },
       {
         kind: "gapfill",
-        text: "Nil's sister has a green ___.",
+        text: "Katie's sister has a green ___.",
         options: [],
         answer: 0,
         accept: ["car"],
@@ -283,7 +283,7 @@ export const enA1U11: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Nil'in anlattığı sıra: doğru sıraya koy.",
+        text: "Katie'nin anlattığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [

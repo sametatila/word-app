@@ -263,7 +263,7 @@ export const deC1P20: SkillExercise[] = [
           "Gemäß den Fahrgastrechten steht mir die Erstattung des Fahrpreises sowie der " +
           "angemessenen Übernachtungskosten zu. Ich bitte Sie daher, den Betrag von insgesamt " +
           "313 Euro bis zum 30. November auf mein unten genanntes Konto zu erstatten. " +
-          "Mit freundlichen Grüßen, Selin Hartmann",
+          "Mit freundlichen Grüßen, Luisa Hartmann",
       },
     ],
   },

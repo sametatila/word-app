@@ -362,7 +362,7 @@ export const a2U14: SkillExercise[] = [
           { de: "Ich möchte das Geld zurück.", tr: "paramı geri istiyorum", en: "I would like a refund" },
         ],
         sample:
-          "Betreff: Reklamation — Reißverschluss fehlerhaft\n\nSehr geehrte Damen und Herren,\n\nich habe am 3. April in Ihrer Filiale in der Bahnhofstraße eine dunkelblaue Jacke gekauft.\n\nLeider ist der Reißverschluss fehlerhaft: Er geht seit zwei Tagen nicht mehr zu. Im Laden habe ich die Jacke anprobiert, da hat noch alles funktioniert.\n\nIch möchte die Jacke gern umtauschen, am liebsten in Grau. Wenn Sie diese Farbe nicht mehr haben, hätte ich lieber das Geld zurück.\n\nDen Kassenzettel bringe ich natürlich mit.\n\nMit freundlichen Grüßen\nNuray Roth",
+          "Betreff: Reklamation — Reißverschluss fehlerhaft\n\nSehr geehrte Damen und Herren,\n\nich habe am 3. April in Ihrer Filiale in der Bahnhofstraße eine dunkelblaue Jacke gekauft.\n\nLeider ist der Reißverschluss fehlerhaft: Er geht seit zwei Tagen nicht mehr zu. Im Laden habe ich die Jacke anprobiert, da hat noch alles funktioniert.\n\nIch möchte die Jacke gern umtauschen, am liebsten in Grau. Wenn Sie diese Farbe nicht mehr haben, hätte ich lieber das Geld zurück.\n\nDen Kassenzettel bringe ich natürlich mit.\n\nMit freundlichen Grüßen\nMaike Roth",
       },
     ],
   },

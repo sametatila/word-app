@@ -63,12 +63,12 @@ export const b2U25: SkillExercise[] = [
     minutes: 6,
     text:
       "EMPFEHLUNGSSCHREIBEN\n\n" +
-      "Frau Amina Yalcin war von März bis August 2026 als Werkstudentin in unserer Abteilung Planung tätig. Ich habe ihre Arbeit in diesen sechs Monaten unmittelbar begleitet und schreibe dieses Empfehlungsschreiben gern.\n\n" +
-      "Die von ihr geleistete Arbeit umfasste die Auswertung von Lieferdaten, die Vorbereitung von zwei Zwischenberichten und ab Mai die eigenständige Betreuung eines kleinen Standorts. Der zuletzt genannte Bereich war ursprünglich nicht vorgesehen; wir haben ihn ihr übertragen, nachdem sich gezeigt hatte, dass Frau Yalcin komplexe Zusammenhänge schnell begreift.\n\n" +
+      "Frau Amina Jahn war von März bis August 2026 als Werkstudentin in unserer Abteilung Planung tätig. Ich habe ihre Arbeit in diesen sechs Monaten unmittelbar begleitet und schreibe dieses Empfehlungsschreiben gern.\n\n" +
+      "Die von ihr geleistete Arbeit umfasste die Auswertung von Lieferdaten, die Vorbereitung von zwei Zwischenberichten und ab Mai die eigenständige Betreuung eines kleinen Standorts. Der zuletzt genannte Bereich war ursprünglich nicht vorgesehen; wir haben ihn ihr übertragen, nachdem sich gezeigt hatte, dass Frau Jahn komplexe Zusammenhänge schnell begreift.\n\n" +
       "Neben einer sichtbaren fachlichen Begabung ist besonders ihre Zuverlässigkeit hervorzuheben. Zugesagte Termine wurden ausnahmslos gehalten, und zwar auch dann, wenn Zulieferungen aus anderen Bereichen fehlten — in solchen Fällen hat sie früh nachgefragt, statt spät zu melden. Sie ist zielstrebig und lernbereit, ohne dabei über andere hinwegzugehen, und im besten Sinne wissbegierig: Sie fragt so lange nach, bis sie eine Sache verstanden hat, und nicht nur so lange, bis sie sie ausführen kann.\n\n" +
       "In Besprechungen mit externen Partnern hat sie sich als durchsetzungsfähig erwiesen. Zwei von ihr vorgeschlagene Änderungen am Ablauf sind übernommen worden und gelten bis heute.\n\n" +
-      "Frau Yalcin verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen. Das Abschlusszeugnis wird sie im Frühjahr erhalten. Wir hätten sie gern länger beschäftigt und würden sie jederzeit wieder einstellen.\n\n" +
-      "Ich empfehle Frau Yalcin ohne Einschränkung. Für Rückfragen stehe ich zur Verfügung.\n\n" +
+      "Frau Jahn verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen. Das Abschlusszeugnis wird sie im Frühjahr erhalten. Wir hätten sie gern länger beschäftigt und würden sie jederzeit wieder einstellen.\n\n" +
+      "Ich empfehle Frau Jahn ohne Einschränkung. Für Rückfragen stehe ich zur Verfügung.\n\n" +
       "Dr. Katrin Möller, Leiterin Planung",
     questions: [
       {
@@ -87,7 +87,7 @@ export const b2U25: SkillExercise[] = [
           "weil niemand sonst da war",
         ],
         answer: 1,
-        explain: "„…nachdem sich gezeigt hatte, dass Frau Yalçın komplexe Zusammenhänge schnell begreift.“",
+        explain: "„…nachdem sich gezeigt hatte, dass Frau Jahn komplexe Zusammenhänge schnell begreift.“",
       },
       {
         kind: "short_answer",
@@ -108,10 +108,10 @@ export const b2U25: SkillExercise[] = [
         explain: "„Sie fragt so lange nach, bis sie eine Sache verstanden hat, und nicht nur so lange, bis sie sie ausführen kann.“",
       },
       {
-        text: "Frau Yalçın wurde gekündigt.",
+        text: "Frau Jahn wurde gekündigt.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Frau Yalçın verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen.“",
+        explain: "Yanlış: „Frau Jahn verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen.“",
       },
     ],
   },
@@ -219,31 +219,31 @@ export const b2U25: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Selin", text: "Ich bin nach elf Jahren zurück, und es fühlt sich an, als ob ich zu Besuch wäre." },
-      { speaker: "Nuri", text: "In deiner eigenen Stadt?" },
-      { speaker: "Selin", text: "Ja. Die Straßen kenne ich. Aber die Selbstverständlichkeiten nicht mehr." },
-      { speaker: "Nuri", text: "Hast du dich entfremdet oder hat sich der Ort verändert?" },
-      { speaker: "Selin", text: "Beides, glaube ich. Und keiner von beiden hat es gemerkt." },
-      { speaker: "Nuri", text: "War die Eingliederung im Aufnahmeland damals schwer?" },
-      { speaker: "Selin", text: "Am Anfang ja. Von Willkommenskultur habe ich damals wenig gemerkt, später wurde es leichter." },
-      { speaker: "Nuri", text: "Und hier bist du jetzt die, die weg war." },
-      { speaker: "Selin", text: "Genau. Und ich habe nie in einer Parallelgesellschaft gelebt, in keinem der beiden Länder — ich vermisse beides gleichzeitig." },
-      { speaker: "Nuri", text: "Sprichst du mit deinen Kindern die Herkunftssprache?" },
-      { speaker: "Selin", text: "Ja, beide Sprachen. Sie wachsen mehrsprachig auf und finden das völlig normal." },
-      { speaker: "Nuri", text: "Das ist vielleicht die ehrlichste Weltoffenheit — die, die man gar nicht bemerkt." },
-      { speaker: "Selin", text: "Schön gesagt. Beides ist Heimat, und ich muss mich nicht entscheiden." },
+      { speaker: "Luisa", text: "Ich bin nach elf Jahren zurück, und es fühlt sich an, als ob ich zu Besuch wäre." },
+      { speaker: "Anton", text: "In deiner eigenen Stadt?" },
+      { speaker: "Luisa", text: "Ja. Die Straßen kenne ich. Aber die Selbstverständlichkeiten nicht mehr." },
+      { speaker: "Anton", text: "Hast du dich entfremdet oder hat sich der Ort verändert?" },
+      { speaker: "Luisa", text: "Beides, glaube ich. Und keiner von beiden hat es gemerkt." },
+      { speaker: "Anton", text: "War die Eingliederung im Aufnahmeland damals schwer?" },
+      { speaker: "Luisa", text: "Am Anfang ja. Von Willkommenskultur habe ich damals wenig gemerkt, später wurde es leichter." },
+      { speaker: "Anton", text: "Und hier bist du jetzt die, die weg war." },
+      { speaker: "Luisa", text: "Genau. Und ich habe nie in einer Parallelgesellschaft gelebt, in keinem der beiden Länder — ich vermisse beides gleichzeitig." },
+      { speaker: "Anton", text: "Sprichst du mit deinen Kindern die Herkunftssprache?" },
+      { speaker: "Luisa", text: "Ja, beide Sprachen. Sie wachsen mehrsprachig auf und finden das völlig normal." },
+      { speaker: "Anton", text: "Das ist vielleicht die ehrlichste Weltoffenheit — die, die man gar nicht bemerkt." },
+      { speaker: "Luisa", text: "Schön gesagt. Beides ist Heimat, und ich muss mich nicht entscheiden." },
     ],
     questions: [
       {
         kind: "dictation",
-        text: "Selin'in dönüşünü anlattığı ilk cümleyi yaz.",
+        text: "Luisa'nın dönüşünü anlattığı ilk cümleyi yaz.",
         options: [],
         answer: 0,
         accept: ["Ich bin nach elf Jahren zurück, und es fühlt sich an, als ob ich zu Besuch wäre."],
         explain: "als ob Konjunktiv II ister: wäre, çünkü gerçekte misafir değil.",
       },
       {
-        text: "Was hat sich laut Selin verändert?",
+        text: "Was hat sich laut Luisa verändert?",
         options: [
           "nur sie selbst",
           "nur der Ort",
@@ -261,7 +261,7 @@ export const b2U25: SkillExercise[] = [
         explain: "„Ja, beide Sprachen. Sie wachsen mehrsprachig auf.“",
       },
       {
-        text: "Wie nennt Nuri die unbemerkte Weltoffenheit?",
+        text: "Wie nennt Anton die unbemerkte Weltoffenheit?",
         options: [
           "die ehrlichste",
           "die schwierigste",
@@ -271,7 +271,7 @@ export const b2U25: SkillExercise[] = [
         explain: "„Das ist vielleicht die ehrlichste Weltoffenheit — die, die man gar nicht bemerkt.“",
       },
       {
-        text: "Selin muss sich zwischen beiden Orten entscheiden.",
+        text: "Luisa muss sich zwischen beiden Orten entscheiden.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „Beides ist Heimat, und ich muss mich nicht entscheiden.“",
@@ -306,19 +306,19 @@ export const b2U25: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Deniz", text: "B2 ist durch. Ist C1 in einem Jahr realistisch?" },
+      { speaker: "Sascha", text: "B2 ist durch. Ist C1 in einem Jahr realistisch?" },
       { speaker: "Frau Weiß", text: "Das dürfte machbar sein, aber anders als bisher." },
-      { speaker: "Deniz", text: "Was heißt anders?" },
+      { speaker: "Sascha", text: "Was heißt anders?" },
       { speaker: "Frau Weiß", text: "Bis B2 haben Sie erlernt, was alle brauchen. Ab jetzt spezialisieren Sie sich." },
-      { speaker: "Deniz", text: "Also nicht mehr breit, sondern tief." },
+      { speaker: "Sascha", text: "Also nicht mehr breit, sondern tief." },
       { speaker: "Frau Weiß", text: "Genau. Wo ist bei Ihnen noch eine Wissenslücke?" },
-      { speaker: "Deniz", text: "Beim Konjunktiv I. Ich erkenne ihn, aber ich benutze ihn nicht." },
+      { speaker: "Sascha", text: "Beim Konjunktiv I. Ich erkenne ihn, aber ich benutze ihn nicht." },
       { speaker: "Frau Weiß", text: "Typisch für diese Stufe. Erkennen reicht nicht, Sie müssen ihn festigen." },
-      { speaker: "Deniz", text: "Wie? Listen einprägen hat bei mir noch nie funktioniert." },
+      { speaker: "Sascha", text: "Wie? Listen einprägen hat bei mir noch nie funktioniert." },
       { speaker: "Frau Weiß", text: "Dann ist es die falsche Lernmethode für Sie. Schreiben Sie stattdessen wöchentlich eine Meldung um." },
-      { speaker: "Deniz", text: "Also Zeitungsnachrichten in indirekte Rede?" },
+      { speaker: "Sascha", text: "Also Zeitungsnachrichten in indirekte Rede?" },
       { speaker: "Frau Weiß", text: "Ja, zehn Zeilen genügen. In drei Monaten haben Sie das aufgeholt." },
-      { speaker: "Deniz", text: "Und fortgeschrittene Texte?" },
+      { speaker: "Sascha", text: "Und fortgeschrittene Texte?" },
       { speaker: "Frau Weiß", text: "Lesen Sie in Ihrem eigenen Fach. Da bringen Sie das Wissen schon mit." },
     ],
     questions: [
@@ -342,7 +342,7 @@ export const b2U25: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wo hat Deniz eine Wissenslücke?",
+        text: "Wo hat Sascha eine Wissenslücke?",
         options: [],
         answer: 0,
         accept: ["beim Konjunktiv I", "Konjunktiv I", "indirekte Rede"],
@@ -359,7 +359,7 @@ export const b2U25: SkillExercise[] = [
         explain: "„Schreiben Sie stattdessen wöchentlich eine Meldung um.“",
       },
       {
-        text: "Deniz benutzt den Konjunktiv I bereits sicher.",
+        text: "Sascha benutzt den Konjunktiv I bereits sicher.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „Ich erkenne ihn, aber ich benutze ihn nicht.“",

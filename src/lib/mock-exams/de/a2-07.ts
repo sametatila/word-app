@@ -49,7 +49,7 @@ export const A2_07: MockPaper = {
               id: "t1",
               genre: "Kurznachricht",
               genreTr: "Kısa mesaj",
-              body: `Hallo Yusuf,
+              body: `Hallo Fabian,
 
 mein Handy ist gestern kaputtgegangen. Ich schreibe dir vom Rechner meiner Schwester.
 
@@ -115,9 +115,9 @@ Wer keinen Link bekommen hat, meldet sich bei mir.`,
               ref: "t1",
               text: "Worum geht es in der Nachricht?",
               options: [
-                "Yusuf soll eine andere Telefonnummer benutzen.",
-                "Yusuf soll das kaputte Handy reparieren.",
-                "Yusuf soll bis Freitag lieber schreiben.",
+                "Fabian soll eine andere Telefonnummer benutzen.",
+                "Fabian soll das kaputte Handy reparieren.",
+                "Fabian soll bis Freitag lieber schreiben.",
               ],
               answer: 2,
               explain:
@@ -986,7 +986,7 @@ Ich schaue damit die Videos für meinen Deutschkurs an und schreibe die Hausaufg
 Wie lange darf ich es behalten? Wenn du es früher brauchst, sag mir einfach Bescheid.
 
 Herzliche Grüße
-Elif`,
+Paula`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Arkadaşa yazıldığı için `du` kullanıldı mı? `Sie` burada fazla resmî kalır.",
@@ -1022,7 +1022,7 @@ Ich habe das Gerät zweimal aus- und wieder eingeschaltet. Das hat leider nichts
 Können Sie mir bitte in dieser Woche einen Termin geben?
 
 Mit freundlichen Grüßen
-Ismail Ayaz`,
+Mattern Ayaz`,
             criteria: [
               "Üç içerik noktası da var mı?",
               "Yarı resmî ileti olduğu için `Sie` ve resmî hitap kullanıldı mı?",

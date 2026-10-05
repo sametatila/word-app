@@ -331,8 +331,8 @@ We give you a paper for your insurance.`,
               id: "t4",
               genre: "Message",
               genreTr: "İleti",
-              title: "To Aras",
-              body: `Hello Aras,
+              title: "To Rory",
+              body: `Hello Rory,
 
 I am at the doctor {{15}} Wednesday morning. Come after twelve!
 
@@ -854,7 +854,7 @@ I can bring soup and the tablets from the pharmacy. It is no problem.
 When can I come? I am free after five.
 
 Get well soon!
-Aras`,
+Rory`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Teklif somut mu (ne getireceği söylendi mi)?",
@@ -893,7 +893,7 @@ Aras`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "My doctor is Doctor Ilic and her office is near my house. I go on Wednesday mornings, because I work in the afternoon. I take two tablets a day for my back. My friend Aras comes with me and we have a coffee afterward. The tablets are eight euros a month. I do not like the waiting room; it is always very warm.",
+              "My doctor is Doctor Ilic and her office is near my house. I go on Wednesday mornings, because I work in the afternoon. I take two tablets a day for my back. My friend Rory comes with me and we have a coffee afterward. The tablets are eight euros a month. I do not like the waiting room; it is always very warm.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",

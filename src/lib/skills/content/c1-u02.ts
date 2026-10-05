@@ -233,15 +233,15 @@ export const c1U02: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Frau Roth", text: "Ich würde anregen, dass Sie die Abstimmung mit dem Labor selbst übernehmen." },
-      { speaker: "Herr Kaya", text: "Gern. Heißt das, ich entscheide auch über die Termine?" },
+      { speaker: "Herr Graf", text: "Gern. Heißt das, ich entscheide auch über die Termine?" },
       { speaker: "Frau Roth", text: "Das läge in Ihrem Ermessen, ja." },
-      { speaker: "Herr Kaya", text: "Und wenn das Labor eine Zusatzprüfung verlangt, die Geld kostet?" },
+      { speaker: "Herr Graf", text: "Und wenn das Labor eine Zusatzprüfung verlangt, die Geld kostet?" },
       { speaker: "Frau Roth", text: "Bis fünftausend haben Sie die Befugnis. Darüber sprechen wir vorher." },
-      { speaker: "Herr Kaya", text: "Gut zu wissen. Ehrlich gesagt war mir bisher nicht klar, wo die Grenze liegt." },
+      { speaker: "Herr Graf", text: "Gut zu wissen. Ehrlich gesagt war mir bisher nicht klar, wo die Grenze liegt." },
       { speaker: "Frau Roth", text: "Das ist mein Versäumnis. Eine übertragene Aufgabe ohne klare Grenze ist keine Übertragung, sondern ein Risiko." },
-      { speaker: "Herr Kaya", text: "Und wenn etwas schiefgeht?" },
+      { speaker: "Herr Graf", text: "Und wenn etwas schiefgeht?" },
       { speaker: "Frau Roth", text: "Dann stehe ich davor, nicht dahinter. Den Rückhalt haben Sie." },
-      { speaker: "Herr Kaya", text: "Das macht die Eigenverantwortung leichter." },
+      { speaker: "Herr Graf", text: "Das macht die Eigenverantwortung leichter." },
       { speaker: "Frau Roth", text: "So ist es gedacht. Es empfiehlt sich trotzdem, mir wöchentlich kurz den Sachstand zu schicken." },
     ],
     questions: [
@@ -313,17 +313,17 @@ export const c1U02: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Deniz", text: "Hast du die Mail von Herrn Kranz gelesen? Er will im Nachgang zur Abstimmung mit dem Vertrieb einen Termin aufsetzen." },
+      { speaker: "Sascha", text: "Hast du die Mail von Herrn Kranz gelesen? Er will im Nachgang zur Abstimmung mit dem Vertrieb einen Termin aufsetzen." },
       { speaker: "Marek", text: "Ja, für Donnerstag. Es geht um die Tagung im Oktober. Der Vertrieb will dort zwei große Kunden einladen, und bei uns wusste niemand davon." },
-      { speaker: "Deniz", text: "Schon wieder die Schnittstelle zum Vertrieb. Letztes Jahr sind da drei Bestellungen liegen geblieben." },
+      { speaker: "Sascha", text: "Schon wieder die Schnittstelle zum Vertrieb. Letztes Jahr sind da drei Bestellungen liegen geblieben." },
       { speaker: "Marek", text: "Genau deshalb will Kranz diesmal alles vorher abstimmen: wer die Einladungen schickt, wer die Hotelzimmer bucht und wer am Ende die Rechnung bekommt." },
-      { speaker: "Deniz", text: "Und wer schreibt das alles auf?" },
+      { speaker: "Sascha", text: "Und wer schreibt das alles auf?" },
       { speaker: "Marek", text: "Er selbst. „Den Sachstand übermittle ich dem Ausschuss“, schreibt er, und zwar bis Freitag." },
-      { speaker: "Deniz", text: "Und der Ausschuss entscheidet dann über das Budget?" },
+      { speaker: "Sascha", text: "Und der Ausschuss entscheidet dann über das Budget?" },
       { speaker: "Marek", text: "Über das Budget und über die Frage, ob wir überhaupt einen eigenen Stand haben. Achttausend Euro sind nicht wenig." },
-      { speaker: "Deniz", text: "Dann sollten wir am Donnerstag mit Zahlen kommen, nicht mit Wünschen." },
+      { speaker: "Sascha", text: "Dann sollten wir am Donnerstag mit Zahlen kommen, nicht mit Wünschen." },
       { speaker: "Marek", text: "Ich bringe die Zahlen vom letzten Jahr mit. Vierhundert Gespräche am Stand, daraus sind elf Aufträge entstanden." },
-      { speaker: "Deniz", text: "Elf klingt nach wenig." },
+      { speaker: "Sascha", text: "Elf klingt nach wenig." },
       { speaker: "Marek", text: "Elf Aufträge mit zusammen neunzigtausend Euro Umsatz. Das rechne ich dem Ausschuss gern vor." },
     ],
     questions: [
@@ -461,7 +461,7 @@ export const c1U02: SkillExercise[] = [
         sample:
           "Liebes Team,\n\n" +
           "ihr habt die Pressemitteilung gelesen; hier steht, was tatsächlich passiert ist.\n\n" +
-          "Am 14. März hat jemand von außen auf unsere Kundendatenbank zugegriffen. Aylin hat den Zugriff um 6:40 Uhr in den Logs entdeckt und sofort das Sicherheitsteam alarmiert. Das Team hat die betroffenen Systeme innerhalb von zwanzig Minuten vom Netz genommen. Damit konnten wir einen Abfluss von Zahlungsdaten abwenden — Namen und Adressen von rund 4.000 Personen sind allerdings betroffen.\n\n" +
+          "Am 14. März hat jemand von außen auf unsere Kundendatenbank zugegriffen. Helene hat den Zugriff um 6:40 Uhr in den Logs entdeckt und sofort das Sicherheitsteam alarmiert. Das Team hat die betroffenen Systeme innerhalb von zwanzig Minuten vom Netz genommen. Damit konnten wir einen Abfluss von Zahlungsdaten abwenden — Namen und Adressen von rund 4.000 Personen sind allerdings betroffen.\n\n" +
           "Ein Punkt geht auf mich: Ich habe die Aufsichtsbehörde erst am Nachmittag informiert, vorgeschrieben wären vier Stunden gewesen. Das war mein Fehler, nicht der der Meldekette.\n\n" +
           "Die externe Prüfung läuft. Bis sie abgeschlossen ist, bringt bitte jede Auffälligkeit sofort zur Sprache, auch wenn sie klein wirkt. Den Sachstand stimme ich täglich um 9 Uhr kurz mit euch ab.\n\n" +
           "Danke für die schnelle Reaktion am Freitag.\nJ. Ostermann",

@@ -34,14 +34,14 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       situation: "İki iş arkadaşı pazartesi gününü konuşuyor.",
       turns: [
         { speaker: "Nina", de: "Und, wie war dein Montag?", tr: "Ee, pazartesin nasıldı?" },
-        { speaker: "Tarik", de: "Furchtbar! Ich habe verschlafen. Der Wecker hat nicht geklingelt.", tr: "Berbat! Uyuyakaldım. Çalar saat çalmadı." },
+        { speaker: "Dirk", de: "Furchtbar! Ich habe verschlafen. Der Wecker hat nicht geklingelt.", tr: "Berbat! Uyuyakaldım. Çalar saat çalmadı." },
         { speaker: "Nina", de: "Oh nein. Und dann?", tr: "Olamaz. Sonra?" },
-        { speaker: "Tarik", de: "Ich bin ohne Frühstück losgegangen, aber der Bus ist schon weggefahren. Ich habe eine halbe Stunde gewartet.", tr: "Kahvaltı etmeden çıktım ama otobüs gitmişti. Yarım saat bekledim." },
+        { speaker: "Dirk", de: "Ich bin ohne Frühstück losgegangen, aber der Bus ist schon weggefahren. Ich habe eine halbe Stunde gewartet.", tr: "Kahvaltı etmeden çıktım ama otobüs gitmişti. Yarım saat bekledim." },
         { speaker: "Nina", de: "Und im Büro?", tr: "Peki ofiste?" },
-        { speaker: "Tarik", de: "Im Büro habe ich meinen Schlüssel vergessen. Zum Glück war die Chefin nett.", tr: "Ofiste anahtarımı unuttum. İyi ki müdür anlayışlıydı." },
+        { speaker: "Dirk", de: "Im Büro habe ich meinen Schlüssel vergessen. Zum Glück war die Chefin nett.", tr: "Ofiste anahtarımı unuttum. İyi ki müdür anlayışlıydı." },
       ],
       questions: [
-        { de: "Warum hat Tarik verschlafen?", tr: "Tarik neden uyuyakaldı?", options: ["Er war krank", "Der Wecker hat nicht geklingelt", "Er hat lange gearbeitet", "Er hatte keinen Wecker"], answer: 1 },
+        { de: "Warum hat Dirk verschlafen?", tr: "Dirk neden uyuyakaldı?", options: ["Er war krank", "Der Wecker hat nicht geklingelt", "Er hat lange gearbeitet", "Er hatte keinen Wecker"], answer: 1 },
         { de: "Was ist an der Haltestelle passiert?", tr: "Durakta ne oldu?", options: ["Der Bus ist weggefahren", "Der Bus hatte Verspätung", "Er hat den Schlüssel verloren", "Er hat gefrühstückt"], answer: 0 },
         { de: "Wie war die Chefin?", tr: "Müdür nasıldı?", options: ["Wütend", "Nett", "Krank", "Nicht da"], answer: 1 },
       ],
@@ -105,11 +105,11 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       titleTr: "Nasıl tanıştınız?",
       situation: "Üç arkadaş tanışma hikâyesini konuşuyor.",
       turns: [
-        { speaker: "Ayla", de: "Wie habt ihr euch eigentlich kennengelernt?", tr: "Aslında siz nasıl tanıştınız?" },
+        { speaker: "Elke", de: "Wie habt ihr euch eigentlich kennengelernt?", tr: "Aslında siz nasıl tanıştınız?" },
         { speaker: "Jonas", de: "Ganz zufällig. Vor sechs Jahren habe ich einen Deutschkurs gemacht. Marie war die Lehrerin.", tr: "Tamamen tesadüfen. Altı yıl önce Almanca kursuna gitmiştim. Marie öğretmendi." },
-        { speaker: "Ayla", de: "Im Ernst? Und dann?", tr: "Cidden mi? Sonra?" },
+        { speaker: "Elke", de: "Im Ernst? Und dann?", tr: "Cidden mi? Sonra?" },
         { speaker: "Jonas", de: "Am Anfang durfte ich sie natürlich nicht einladen. Aber nach dem Kurs haben wir uns im Café getroffen.", tr: "Başta onu davet edemezdim tabii. Ama kurs bitince kafede buluştuk." },
-        { speaker: "Ayla", de: "Und seit wann seid ihr zusammen?", tr: "Ne zamandır berabersiniz?" },
+        { speaker: "Elke", de: "Und seit wann seid ihr zusammen?", tr: "Ne zamandır berabersiniz?" },
         { speaker: "Jonas", de: "Seit fünf Jahren. Wir haben uns schnell verliebt.", tr: "Beş yıldır. Çabuk âşık olduk." },
       ],
       questions: [
@@ -221,7 +221,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Gute Besserung!", tr: "Geçmiş olsun!", en: "Get well soon!" },
       ],
       sample:
-        "Hallo Deniz, ich habe gehört, du bist krank. Das tut mir leid! Du solltest heute unbedingt zu Hause bleiben und dich ausruhen. Trink viel Tee mit Honig, das hilft wirklich. Du sollst nicht arbeiten, auch nicht von zu Hause. Wenn du Fieber über 39 Grad hast, sollst du sofort zum Arzt gehen. Sport darfst du diese Woche auch nicht machen. Soll ich dir etwas aus der Apotheke mitbringen? Gute Besserung!",
+        "Hallo Sascha, ich habe gehört, du bist krank. Das tut mir leid! Du solltest heute unbedingt zu Hause bleiben und dich ausruhen. Trink viel Tee mit Honig, das hilft wirklich. Du sollst nicht arbeiten, auch nicht von zu Hause. Wenn du Fieber über 39 Grad hast, sollst du sofort zum Arzt gehen. Sport darfst du diese Woche auch nicht machen. Soll ich dir etwas aus der Apotheke mitbringen? Gute Besserung!",
     },
   },
 
@@ -249,17 +249,17 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       titleTr: "Üst kattaki gürültü",
       situation: "Bir komşu üst kata çıkıp gürültüyü konuşuyor.",
       turns: [
-        { speaker: "Frau Klein", de: "Guten Abend, Herr Yildiz. Haben Sie kurz Zeit?", tr: "İyi akşamlar Bay Yıldız. Kısa bir dakikanız var mı?" },
-        { speaker: "Herr Yildiz", de: "Natürlich, kommen Sie rein.", tr: "Tabii, buyurun." },
+        { speaker: "Frau Klein", de: "Guten Abend, Herr Fink. Haben Sie kurz Zeit?", tr: "İyi akşamlar Bay Fink. Kısa bir dakikanız var mı?" },
+        { speaker: "Herr Fink", de: "Natürlich, kommen Sie rein.", tr: "Tabii, buyurun." },
         { speaker: "Frau Klein", de: "Es geht um den Lärm. Wenn Ihre Kinder abends spielen, kann ich nicht schlafen.", tr: "Gürültü hakkında. Akşamları çocuklarınız oynayınca uyuyamıyorum." },
-        { speaker: "Herr Yildiz", de: "Das tut mir wirklich leid. Ab wann stört es Sie?", tr: "Gerçekten özür dilerim. Saat kaçtan sonra rahatsız oluyorsunuz?" },
+        { speaker: "Herr Fink", de: "Das tut mir wirklich leid. Ab wann stört es Sie?", tr: "Gerçekten özür dilerim. Saat kaçtan sonra rahatsız oluyorsunuz?" },
         { speaker: "Frau Klein", de: "Ab zehn Uhr. Vorher ist es kein Problem.", tr: "Saat ondan sonra. Öncesinde sorun değil." },
-        { speaker: "Herr Yildiz", de: "Verstanden. Ich sage ihnen, dass sie ab neun leise sein sollen.", tr: "Anladım. Onlara dokuzdan sonra sessiz olmalarını söylerim." },
+        { speaker: "Herr Fink", de: "Verstanden. Ich sage ihnen, dass sie ab neun leise sein sollen.", tr: "Anladım. Onlara dokuzdan sonra sessiz olmalarını söylerim." },
       ],
       questions: [
         { de: "Worüber spricht Frau Klein?", tr: "Bayan Klein ne hakkında konuşuyor?", options: ["Über die Miete", "Über den Lärm", "Über ein Paket", "Über die Heizung"], answer: 1 },
         { de: "Ab wann stört der Lärm?", tr: "Gürültü saat kaçtan sonra rahatsız ediyor?", options: ["Ab acht Uhr", "Ab neun Uhr", "Ab zehn Uhr", "Ab elf Uhr"], answer: 2 },
-        { de: "Was macht Herr Yildiz?", tr: "Bay Yıldız ne yapıyor?", options: ["Er sagt den Kindern Bescheid", "Er zieht aus", "Er ruft den Hausmeister", "Er sagt nichts"], answer: 0 },
+        { de: "Was macht Herr Fink?", tr: "Bay Fink ne yapıyor?", options: ["Er sagt den Kindern Bescheid", "Er zieht aus", "Er ruft den Hausmeister", "Er sagt nichts"], answer: 0 },
       ],
     },
     reading: {
@@ -293,7 +293,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Das stört mich nicht.", tr: "Bu beni rahatsız etmiyor.", en: "That doesn't bother me." },
       ],
       sample:
-        "Hallo Lena, ich wohne jetzt in der Gartenstraße. Die Wohnung liegt im dritten Stock und mein Fenster geht auf den Spielplatz. Gegenüber von meinem Haus ist eine Bäckerei, und neben der Schule gibt es einen kleinen Markt. Wenn ich morgens Brot brauche, gehe ich einfach über die Straße. Meine Nachbarn sind sehr freundlich: Frau Weber hat mir Kaffee gebracht und Herr Yildiz hat mir seine Bohrmaschine geliehen. Abends ist es manchmal laut, aber das stört mich nicht.",
+        "Hallo Lena, ich wohne jetzt in der Gartenstraße. Die Wohnung liegt im dritten Stock und mein Fenster geht auf den Spielplatz. Gegenüber von meinem Haus ist eine Bäckerei, und neben der Schule gibt es einen kleinen Markt. Wenn ich morgens Brot brauche, gehe ich einfach über die Straße. Meine Nachbarn sind sehr freundlich: Frau Weber hat mir Kaffee gebracht und Herr Fink hat mir seine Bohrmaschine geliehen. Abends ist es manchmal laut, aber das stört mich nicht.",
     },
   },
 
@@ -321,17 +321,17 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       titleTr: "İzin talebi",
       situation: "Bir çalışan şefinden izin istiyor.",
       turns: [
-        { speaker: "Herr Sahin", de: "Frau Wagner, haben Sie kurz Zeit? Ich will Urlaub nehmen.", tr: "Bayan Wagner, kısa bir dakikanız var mı? İzin almak istiyorum." },
+        { speaker: "Herr Heinz", de: "Frau Wagner, haben Sie kurz Zeit? Ich will Urlaub nehmen.", tr: "Bayan Wagner, kısa bir dakikanız var mı? İzin almak istiyorum." },
         { speaker: "Frau Wagner", de: "Gern. Von wann bis wann denn?", tr: "Tabii. Ne zamandan ne zamana kadar?" },
-        { speaker: "Herr Sahin", de: "Vom zwölften bis zum dreiundzwanzigsten August. Meine Schwester heiratet.", tr: "12'sinden 23 Ağustos'a kadar. Kız kardeşim evleniyor." },
+        { speaker: "Herr Heinz", de: "Vom zwölften bis zum dreiundzwanzigsten August. Meine Schwester heiratet.", tr: "12'sinden 23 Ağustos'a kadar. Kız kardeşim evleniyor." },
         { speaker: "Frau Wagner", de: "Das ist mitten in der Ferienzeit. Wer macht die Vertretung?", tr: "Tam tatil sezonuna denk geliyor. Yerinize kim bakacak?" },
-        { speaker: "Herr Sahin", de: "Ich denke, dass Herr Kaya das übernehmen kann. Ich habe schon mit ihm gesprochen.", tr: "Bay Kaya'nın devralabileceğini düşünüyorum. Onunla konuştum bile." },
+        { speaker: "Herr Heinz", de: "Ich denke, dass Herr Graf das übernehmen kann. Ich habe schon mit ihm gesprochen.", tr: "Bay Graf'ın devralabileceğini düşünüyorum. Onunla konuştum bile." },
         { speaker: "Frau Wagner", de: "Gut, dann genehmige ich den Antrag. Bitte schreiben Sie es noch ins System.", tr: "Tamam, o zaman talebi onaylıyorum. Lütfen bir de sisteme girin." },
       ],
       questions: [
-        { de: "Warum will Herr Sahin Urlaub?", tr: "Bay Şahin neden izin istiyor?", options: ["Er ist krank", "Seine Schwester heiratet", "Er zieht um", "Er macht einen Kurs"], answer: 1 },
-        { de: "Wer macht die Vertretung?", tr: "Yerine kim bakacak?", options: ["Frau Wagner", "Herr Kaya", "Niemand", "Die Chefin"], answer: 1 },
-        { de: "Was soll Herr Sahin noch machen?", tr: "Bay Şahin ayrıca ne yapmalı?", options: ["Mit Herrn Kaya sprechen", "Den Antrag ins System schreiben", "Ein Attest schicken", "Die Kollegen fragen"], answer: 1 },
+        { de: "Warum will Herr Heinz Urlaub?", tr: "Bay Heinz neden izin istiyor?", options: ["Er ist krank", "Seine Schwester heiratet", "Er zieht um", "Er macht einen Kurs"], answer: 1 },
+        { de: "Wer macht die Vertretung?", tr: "Yerine kim bakacak?", options: ["Frau Wagner", "Herr Graf", "Niemand", "Die Chefin"], answer: 1 },
+        { de: "Was soll Herr Heinz noch machen?", tr: "Bay Heinz ayrıca ne yapmalı?", options: ["Mit Herrn Graf sprechen", "Den Antrag ins System schreiben", "Ein Attest schicken", "Die Kollegen fragen"], answer: 1 },
       ],
     },
     reading: {
@@ -365,7 +365,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Vielen Dank im Voraus.", tr: "Şimdiden teşekkürler.", en: "Thank you in advance." },
       ],
       sample:
-        "Sehr geehrte Frau Wagner,\n\nich möchte gern Urlaub beantragen, und zwar vom zwölften bis zum dreiundzwanzigsten August. Ich brauche die Tage, weil meine Schwester in Izmir heiratet und meine Familie schon alles geplant hat. Ich denke, dass Herr Kaya meine Aufgaben in dieser Zeit übernehmen kann. Ich habe schon mit ihm gesprochen und er ist einverstanden. Die offenen Projekte gebe ich vorher ab. Können Sie mir bitte Bescheid sagen?\n\nVielen Dank im Voraus und freundliche Grüße\nMurat Sahin",
+        "Sehr geehrte Frau Wagner,\n\nich möchte gern Urlaub beantragen, und zwar vom zwölften bis zum dreiundzwanzigsten August. Ich brauche die Tage, weil meine Schwester in Izmir heiratet und meine Familie schon alles geplant hat. Ich denke, dass Herr Graf meine Aufgaben in dieser Zeit übernehmen kann. Ich habe schon mit ihm gesprochen und er ist einverstanden. Die offenen Projekte gebe ich vorher ab. Können Sie mir bitte Bescheid sagen?\n\nVielen Dank im Voraus und freundliche Grüße\nNiklas Heinz",
     },
   },
 
@@ -437,7 +437,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
       ],
       sample:
-        "Sehr geehrte Damen und Herren,\n\nam 3. März habe ich bei Ihnen einen Wasserkocher bestellt (Bestellnummer 48219). Leider funktioniert das Gerät seit gestern nicht mehr: Es wird heiß, aber es schaltet nicht ab. Ich habe den Beleg noch und die Garantie gilt zwei Jahre. Ich möchte lieber mein Geld zurück als ein neues Gerät, denn ich möchte ein anderes Modell kaufen. Können Sie mir bitte sagen, wie ich den Wasserkocher zurückschicken soll?\n\nMit freundlichen Grüßen\nElif Yilmaz",
+        "Sehr geehrte Damen und Herren,\n\nam 3. März habe ich bei Ihnen einen Wasserkocher bestellt (Bestellnummer 48219). Leider funktioniert das Gerät seit gestern nicht mehr: Es wird heiß, aber es schaltet nicht ab. Ich habe den Beleg noch und die Garantie gilt zwei Jahre. Ich möchte lieber mein Geld zurück als ein neues Gerät, denn ich möchte ein anderes Modell kaufen. Können Sie mir bitte sagen, wie ich den Wasserkocher zurückschicken soll?\n\nMit freundlichen Grüßen\nPaula Lutz",
     },
   },
 
@@ -465,7 +465,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       titleTr: "Otel resepsiyonunda",
       situation: "Bir konuk otele giriş yapıyor.",
       turns: [
-        { speaker: "Gast", de: "Guten Abend, ich habe ein Doppelzimmer reserviert, auf den Namen Öztürk.", tr: "İyi akşamlar, Öztürk adına çift kişilik oda ayırtmıştım." },
+        { speaker: "Gast", de: "Guten Abend, ich habe ein Doppelzimmer reserviert, auf den Namen Dörr.", tr: "İyi akşamlar, Dörr adına çift kişilik oda ayırtmıştım." },
         { speaker: "Rezeption", de: "Willkommen! Drei Nächte, richtig? Zimmer 214, im zweiten Stock.", tr: "Hoş geldiniz! Üç gece, değil mi? 214 numara, ikinci katta." },
         { speaker: "Gast", de: "Danke. Wann gibt es Frühstück?", tr: "Teşekkürler. Kahvaltı ne zaman?" },
         { speaker: "Rezeption", de: "Von halb sieben bis zehn Uhr, im Restaurant im Erdgeschoss.", tr: "Altı buçuktan ona kadar, zemin kattaki restoranda." },
@@ -537,16 +537,16 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       titleTr: "Parti planı",
       situation: "İki arkadaş sürpriz doğum günü planlıyor.",
       turns: [
-        { speaker: "Sena", de: "Marc wird am dritten Mai dreißig. Wir sollten etwas organisieren.", tr: "Marc 3 Mayıs'ta otuz oluyor. Bir şeyler organize etmeliyiz." },
+        { speaker: "Annika", de: "Marc wird am dritten Mai dreißig. Wir sollten etwas organisieren.", tr: "Marc 3 Mayıs'ta otuz oluyor. Bir şeyler organize etmeliyiz." },
         { speaker: "Tobias", de: "Gute Idee! Ich finde, dass wir im Garten feiern sollten.", tr: "İyi fikir! Bence bahçede kutlamalıyız." },
-        { speaker: "Sena", de: "Perfekt. Ich besorge den Kuchen und die Kerzen.", tr: "Mükemmel. Pastayı ve mumları ben alırım." },
+        { speaker: "Annika", de: "Perfekt. Ich besorge den Kuchen und die Kerzen.", tr: "Mükemmel. Pastayı ve mumları ben alırım." },
         { speaker: "Tobias", de: "Und ich kümmere mich um die Getränke. Was schenken wir ihm?", tr: "Ben de içecekleri hallederim. Ona ne hediye edelim?" },
-        { speaker: "Sena", de: "Ich schenke ihm ein Buch. Vielleicht kaufen wir zusammen einen Gutschein?", tr: "Ben ona kitap alacağım. Belki birlikte bir hediye çeki alırız?" },
+        { speaker: "Annika", de: "Ich schenke ihm ein Buch. Vielleicht kaufen wir zusammen einen Gutschein?", tr: "Ben ona kitap alacağım. Belki birlikte bir hediye çeki alırız?" },
         { speaker: "Tobias", de: "Machen wir. Ich hoffe, dass alle kommen können.", tr: "Öyle yapalım. Umarım herkes gelebilir." },
       ],
       questions: [
         { de: "Wann hat Marc Geburtstag?", tr: "Marc'ın doğum günü ne zaman?", options: ["Am ersten Mai", "Am dritten Mai", "Am dreißigsten Mai", "Am dritten März"], answer: 1 },
-        { de: "Was besorgt Sena?", tr: "Sena ne alıyor?", options: ["Die Getränke", "Den Kuchen und die Kerzen", "Den Gutschein", "Die Musik"], answer: 1 },
+        { de: "Was besorgt Annika?", tr: "Annika ne alıyor?", options: ["Die Getränke", "Den Kuchen und die Kerzen", "Den Gutschein", "Die Musik"], answer: 1 },
         { de: "Wo soll die Feier sein?", tr: "Kutlama nerede olacak?", options: ["In einem Restaurant", "Im Garten", "In der Wohnung", "Im Park"], answer: 1 },
       ],
     },
@@ -554,7 +554,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       title: "Wir heiraten!",
       titleTr: "Düğün davetiyesi",
       genre: "Davetiye",
-      text: "Liebe Familie, liebe Freunde,\n\nwir heiraten! Am Samstag, dem 17. August, geben wir uns im Standesamt Bonn das Ja-Wort. Danach feiern wir ab 15 Uhr im Landhaus Sonnenhof.\n\nBitte sagt uns bis zum 20. Juli Bescheid, ob ihr kommen könnt. Wir wünschen uns keine Geschenke — wer möchte, kann etwas für die Hochzeitsreise dazugeben.\n\nWir freuen uns auf euch!\nLea und Deniz",
+      text: "Liebe Familie, liebe Freunde,\n\nwir heiraten! Am Samstag, dem 17. August, geben wir uns im Standesamt Bonn das Ja-Wort. Danach feiern wir ab 15 Uhr im Landhaus Sonnenhof.\n\nBitte sagt uns bis zum 20. Juli Bescheid, ob ihr kommen könnt. Wir wünschen uns keine Geschenke — wer möchte, kann etwas für die Hochzeitsreise dazugeben.\n\nWir freuen uns auf euch!\nLea und Sascha",
       questions: [
         { de: "Wann ist die Hochzeit?", tr: "Düğün ne zaman?", options: ["Am 20. Juli", "Am 15. August", "Am 17. August", "Am 17. Juli"], answer: 2 },
         { de: "Was wünscht sich das Paar?", tr: "Çift ne istiyor?", options: ["Blumen", "Keine Geschenke", "Bücher", "Geld für ein Haus"], answer: 1 },
@@ -581,7 +581,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Liebe Grüße", tr: "Sevgiler", en: "Best wishes" },
       ],
       sample:
-        "Liebe Sena, vielen Dank für die Einladung zu Marcs Geburtstag! Leider kann ich am dritten Mai nicht kommen, weil ich an diesem Wochenende arbeiten muss. Das tut mir wirklich leid. Ich hoffe, dass ihr trotzdem einen schönen Abend habt. Sag Marc bitte, dass ich an ihn denke. Mein Geschenk bringe ich nächste Woche vorbei. Und wenn du Zeit hast, holen wir das bei einem Kaffee nach. Liebe Grüße, Elif",
+        "Liebe Annika, vielen Dank für die Einladung zu Marcs Geburtstag! Leider kann ich am dritten Mai nicht kommen, weil ich an diesem Wochenende arbeiten muss. Das tut mir wirklich leid. Ich hoffe, dass ihr trotzdem einen schönen Abend habt. Sag Marc bitte, dass ich an ihn denke. Mein Geschenk bringe ich nächste Woche vorbei. Und wenn du Zeit hast, holen wir das bei einem Kaffee nach. Liebe Grüße, Paula",
     },
   },
 
@@ -607,18 +607,18 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     listening: {
       title: "Der Computer spinnt",
       titleTr: "Bilgisayar çıldırdı",
-      situation: "Ali bilgisayar sorununu Mona'ya anlatıyor.",
+      situation: "Moritz bilgisayar sorununu Mona'ya anlatıyor.",
       turns: [
-        { speaker: "Ali", de: "Kannst du mir helfen? Mein Computer stürzt immer ab.", tr: "Bana yardım edebilir misin? Bilgisayarım sürekli çöküyor." },
+        { speaker: "Moritz", de: "Kannst du mir helfen? Mein Computer stürzt immer ab.", tr: "Bana yardım edebilir misin? Bilgisayarım sürekli çöküyor." },
         { speaker: "Mona", de: "Wann passiert das genau?", tr: "Tam olarak ne zaman oluyor?" },
-        { speaker: "Ali", de: "Immer wenn ich das Videoprogramm öffne. Danach geht nichts mehr.", tr: "Ne zaman video programını açsam. Sonrasında hiçbir şey çalışmıyor." },
+        { speaker: "Moritz", de: "Immer wenn ich das Videoprogramm öffne. Danach geht nichts mehr.", tr: "Ne zaman video programını açsam. Sonrasında hiçbir şey çalışmıyor." },
         { speaker: "Mona", de: "Hast du vorher gespeichert?", tr: "Öncesinde kaydetmiş miydin?" },
-        { speaker: "Ali", de: "Zum Glück ja. Aber ich warte schon seit einer Woche auf eine Antwort vom Support.", tr: "Neyse ki evet. Ama bir haftadır destekten cevap bekliyorum." },
+        { speaker: "Moritz", de: "Zum Glück ja. Aber ich warte schon seit einer Woche auf eine Antwort vom Support.", tr: "Neyse ki evet. Ama bir haftadır destekten cevap bekliyorum." },
         { speaker: "Mona", de: "Starte den Computer neu und mach ein Update. Das hilft meistens.", tr: "Bilgisayarı yeniden başlat ve güncelleme yap. Genelde işe yarar." },
       ],
       questions: [
-        { de: "Wann stürzt der Computer ab?", tr: "Bilgisayar ne zaman çöküyor?", options: ["Beim Start", "Wenn Ali das Videoprogramm öffnet", "Nach einer Stunde", "Wenn der Akku leer ist"], answer: 1 },
-        { de: "Worauf wartet Ali?", tr: "Ali neyi bekliyor?", options: ["Auf ein Update", "Auf eine Antwort vom Support", "Auf einen neuen Computer", "Auf Mona"], answer: 1 },
+        { de: "Wann stürzt der Computer ab?", tr: "Bilgisayar ne zaman çöküyor?", options: ["Beim Start", "Wenn Moritz das Videoprogramm öffnet", "Nach einer Stunde", "Wenn der Akku leer ist"], answer: 1 },
+        { de: "Worauf wartet Moritz?", tr: "Moritz neyi bekliyor?", options: ["Auf ein Update", "Auf eine Antwort vom Support", "Auf einen neuen Computer", "Auf Mona"], answer: 1 },
         { de: "Was empfiehlt Mona?", tr: "Mona ne öneriyor?", options: ["Einen neuen Computer kaufen", "Neu starten und ein Update machen", "Zum Support gehen", "Nichts machen"], answer: 1 },
       ],
     },
@@ -653,7 +653,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Sag mir Bescheid!", tr: "Bana haber ver!", en: "Let me know!" },
       ],
       sample:
-        "Hallo Kaan, du hast doch nach einer Serie gefragt. Ich empfehle dir „Kleine Stadt, große Pläne“. Es geht um eine junge Ärztin, die aus Berlin in ein Dorf zieht. Die erste Staffel ist gut, aber die zweite ist am besten. Die Folgen sind nur dreißig Minuten lang, also perfekt für den Abend. Wenn du dich für ruhige Geschichten interessierst, wird sie dir gefallen. Schau mal rein und sag mir Bescheid!",
+        "Hallo Ingo, du hast doch nach einer Serie gefragt. Ich empfehle dir „Kleine Stadt, große Pläne“. Es geht um eine junge Ärztin, die aus Berlin in ein Dorf zieht. Die erste Staffel ist gut, aber die zweite ist am besten. Die Folgen sind nur dreißig Minuten lang, also perfekt für den Abend. Wenn du dich für ruhige Geschichten interessierst, wird sie dir gefallen. Schau mal rein und sag mir Bescheid!",
     },
   },
 
@@ -726,7 +726,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Gibt es noch freie Plätze?", tr: "Boş yer var mı?", en: "Are there still spots available?" },
       ],
       sample:
-        "Sehr geehrte Damen und Herren,\n\nich interessiere mich für den B1-Kurs ab September. Ich habe im Juni die A2-Prüfung bestanden und ich möchte weitermachen, weil ich hier eine Ausbildung anfangen will. Können Sie mir bitte sagen, welche Unterlagen ich für die Anmeldung brauche? Ich möchte auch wissen, ob es noch freie Plätze gibt und ob man den Kurs in zwei Raten bezahlen kann. Nächste Woche komme ich auch persönlich vorbei.\n\nVielen Dank und freundliche Grüße\nElif Yilmaz",
+        "Sehr geehrte Damen und Herren,\n\nich interessiere mich für den B1-Kurs ab September. Ich habe im Juni die A2-Prüfung bestanden und ich möchte weitermachen, weil ich hier eine Ausbildung anfangen will. Können Sie mir bitte sagen, welche Unterlagen ich für die Anmeldung brauche? Ich möchte auch wissen, ob es noch freie Plätze gibt und ob man den Kurs in zwei Raten bezahlen kann. Nächste Woche komme ich auch persönlich vorbei.\n\nVielen Dank und freundliche Grüße\nPaula Lutz",
     },
   },
 ];

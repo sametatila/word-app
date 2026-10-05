@@ -102,7 +102,7 @@ export const a1U19: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: Ich höre gern Musik aus der Türkei. Meine Mutter hat viele CDs zu Hause. Ich spiele auch Gitarre, aber nicht so gut.\n\nTom: Ich spiele Klavier, seit ich zehn bin. In meiner Band spielen wir zusammen und schreiben Lieder. Konzert: am Samstag im Theater!\n\nElif: Ich spiele nicht Gitarre und nicht Klavier. Aber ich höre jeden Tag Musik — beim Putzen, beim Kochen, überall. Mein Lieblingslied ist alt, aber wunderbar.",
+      "Mia: Ich höre gern Musik aus der Türkei. Meine Mutter hat viele CDs zu Hause. Ich spiele auch Gitarre, aber nicht so gut.\n\nTom: Ich spiele Klavier, seit ich zehn bin. In meiner Band spielen wir zusammen und schreiben Lieder. Konzert: am Samstag im Theater!\n\nPaula: Ich spiele nicht Gitarre und nicht Klavier. Aber ich höre jeden Tag Musik — beim Putzen, beim Kochen, überall. Mein Lieblingslied ist alt, aber wunderbar.",
     questions: [
       {
         text: "Was spielt Tom?",
@@ -117,7 +117,7 @@ export const a1U19: SkillExercise[] = [
         explain: "„Konzert: am Samstag im Theater!“",
       },
       {
-        text: "Richtig oder falsch? Elif spielt Gitarre.",
+        text: "Richtig oder falsch? Paula spielt Gitarre.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „Ich spiele nicht Gitarre und nicht Klavier.“",

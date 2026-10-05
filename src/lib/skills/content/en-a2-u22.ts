@@ -43,20 +43,20 @@ export const enA2U22: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Can: My laptop is very slow. It takes four minutes to open a file.\n" +
-      "Deniz: Since when?\n" +
-      "Can: Since Monday. I've already restarted it. Twice.\n" +
-      "Deniz: And the mouse?\n" +
-      "Can: The mouse works. Everything works. It just works slowly.\n" +
-      "Deniz: How much is free on the disk?\n" +
-      "Can: I don't know. Where do I look?\n" +
-      "Deniz: Open the settings and look for the number. If it is under ten, that is the problem.\n" +
-      "Can: Six.\n" +
-      "Deniz: There it is. Delete the videos from last year. You have them on the phone too.\n" +
-      "Can: And if I delete something I need?\n" +
-      "Deniz: Then save it first. But nobody needs a video of a meeting from March.\n" +
-      "Can: You are right. Twenty minutes and it is done.\n" +
-      "Deniz: And next month the same. That is the only rule.",
+      "Tyler: My laptop is very slow. It takes four minutes to open a file.\n" +
+      "Charlie: Since when?\n" +
+      "Tyler: Since Monday. I've already restarted it. Twice.\n" +
+      "Charlie: And the mouse?\n" +
+      "Tyler: The mouse works. Everything works. It just works slowly.\n" +
+      "Charlie: How much is free on the disk?\n" +
+      "Tyler: I don't know. Where do I look?\n" +
+      "Charlie: Open the settings and look for the number. If it is under ten, that is the problem.\n" +
+      "Tyler: Six.\n" +
+      "Charlie: There it is. Delete the videos from last year. You have them on the phone too.\n" +
+      "Tyler: And if I delete something I need?\n" +
+      "Charlie: Then save it first. But nobody needs a video of a meeting from March.\n" +
+      "Tyler: You are right. Twenty minutes and it is done.\n" +
+      "Charlie: And next month the same. That is the only rule.",
     questions: [
       {
         text: "What is the problem with the laptop?",
@@ -65,14 +65,14 @@ export const enA2U22: SkillExercise[] = [
         explain: "„My laptop is very slow. It takes four minutes to open a file.“",
       },
       {
-        text: "What should Can delete?",
+        text: "What should Tyler delete?",
         options: ["the videos from last year", "the files from March", "the settings"],
         answer: 0,
         explain: "„Delete the videos from last year. You have them on the phone too.“",
       },
       {
         kind: "truefalse",
-        text: "Can has already restarted the laptop twice.",
+        text: "Tyler has already restarted the laptop twice.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I've already restarted it. Twice.“",
@@ -87,7 +87,7 @@ export const enA2U22: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where else does Can have the videos?",
+        text: "Where else does Tyler have the videos?",
         options: [],
         answer: 0,
         accept: ["on the phone", "the phone"],
@@ -188,38 +188,38 @@ export const enA2U22: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Nil", text: "You should change your password." },
-      { speaker: "Mert", text: "Why? Nobody knows it." },
-      { speaker: "Nil", text: "I know it. You wrote it on the paper under the keyboard." },
-      { speaker: "Mert", text: "That is a safe place." },
-      { speaker: "Nil", text: "It is the first place. And the second is the name of your cat." },
-      { speaker: "Mert", text: "The cat is private information." },
-      { speaker: "Nil", text: "Your cat is on your account, with a name and a birthday." },
-      { speaker: "Mert", text: "Fine. What do I take?" },
-      { speaker: "Nil", text: "Three words that do not go together. Green bus lemon. Nobody guesses that and you remember it." },
-      { speaker: "Mert", text: "And for every site?" },
-      { speaker: "Nil", text: "A different one for the bank and the email. The rest can be the same." },
-      { speaker: "Mert", text: "That is not what the article said." },
-      { speaker: "Nil", text: "The article is right and nobody does it. Two good ones are better than fifteen you write down." },
-      { speaker: "Mert", text: "And the public wifi?" },
-      { speaker: "Nil", text: "Be careful with public wifi. Not for the news — for the bank." },
+      { speaker: "Katie", text: "You should change your password." },
+      { speaker: "Henry", text: "Why? Nobody knows it." },
+      { speaker: "Katie", text: "I know it. You wrote it on the paper under the keyboard." },
+      { speaker: "Henry", text: "That is a safe place." },
+      { speaker: "Katie", text: "It is the first place. And the second is the name of your cat." },
+      { speaker: "Henry", text: "The cat is private information." },
+      { speaker: "Katie", text: "Your cat is on your account, with a name and a birthday." },
+      { speaker: "Henry", text: "Fine. What do I take?" },
+      { speaker: "Katie", text: "Three words that do not go together. Green bus lemon. Nobody guesses that and you remember it." },
+      { speaker: "Henry", text: "And for every site?" },
+      { speaker: "Katie", text: "A different one for the bank and the email. The rest can be the same." },
+      { speaker: "Henry", text: "That is not what the article said." },
+      { speaker: "Katie", text: "The article is right and nobody does it. Two good ones are better than fifteen you write down." },
+      { speaker: "Henry", text: "And the public wifi?" },
+      { speaker: "Katie", text: "Be careful with public wifi. Not for the news — for the bank." },
     ],
     questions: [
       {
-        text: "Where is Mert's password?",
+        text: "Where is Henry's password?",
         options: ["on paper under the keyboard", "on the phone", "in the email"],
         answer: 0,
         explain: "„You wrote it on the paper under the keyboard.“",
       },
       {
-        text: "What does Nil suggest?",
+        text: "What does Katie suggest?",
         options: ["three words that do not go together", "the name of the cat", "one password for everything"],
         answer: 0,
         explain: "„Three words that do not go together. Green bus lemon.“",
       },
       {
         kind: "truefalse",
-        text: "Nil says the bank and the email need different passwords.",
+        text: "Katie says the bank and the email need different passwords.",
         options: ["True", "False"],
         answer: 0,
         explain: "„A different one for the bank and the email. The rest can be the same.“",
@@ -266,22 +266,22 @@ export const enA2U22: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ela", text: "Can you hear me?" },
-      { speaker: "Sena", text: "Yes, now I can. Before that, nothing for ten seconds." },
-      { speaker: "Ela", text: "The connection here is bad when it rains. Can you see me?" },
-      { speaker: "Sena", text: "The camera is off." },
-      { speaker: "Ela", text: "One moment… now?" },
-      { speaker: "Sena", text: "Yes, now I can. Green shirt, white wall, half a plant." },
-      { speaker: "Ela", text: "That is my office. So — the report." },
-      { speaker: "Sena", text: "Sorry, could you say that again? Somebody came in." },
-      { speaker: "Ela", text: "The report for October. Is it ready?" },
-      { speaker: "Sena", text: "Ready. I sent it —" },
-      { speaker: "Ela", text: "Sorry, go ahead." },
-      { speaker: "Sena", text: "No, you go ahead." },
-      { speaker: "Ela", text: "We do this every week." },
-      { speaker: "Sena", text: "Every week. One day we'll learn." },
-      { speaker: "Ela", text: "I'll put on headphones now. Then my voice is clear and the room is quiet." },
-      { speaker: "Sena", text: "Do that. And I'll close the window. The street is louder than both of us." },
+      { speaker: "Lucy", text: "Can you hear me?" },
+      { speaker: "Ellie", text: "Yes, now I can. Before that, nothing for ten seconds." },
+      { speaker: "Lucy", text: "The connection here is bad when it rains. Can you see me?" },
+      { speaker: "Ellie", text: "The camera is off." },
+      { speaker: "Lucy", text: "One moment… now?" },
+      { speaker: "Ellie", text: "Yes, now I can. Green shirt, white wall, half a plant." },
+      { speaker: "Lucy", text: "That is my office. So — the report." },
+      { speaker: "Ellie", text: "Sorry, could you say that again? Somebody came in." },
+      { speaker: "Lucy", text: "The report for October. Is it ready?" },
+      { speaker: "Ellie", text: "Ready. I sent it —" },
+      { speaker: "Lucy", text: "Sorry, go ahead." },
+      { speaker: "Ellie", text: "No, you go ahead." },
+      { speaker: "Lucy", text: "We do this every week." },
+      { speaker: "Ellie", text: "Every week. One day we'll learn." },
+      { speaker: "Lucy", text: "I'll put on headphones now. Then my voice is clear and the room is quiet." },
+      { speaker: "Ellie", text: "Do that. And I'll close the window. The street is louder than both of us." },
     ],
     questions: [
       {
@@ -291,7 +291,7 @@ export const enA2U22: SkillExercise[] = [
         explain: "„The connection here is bad when it rains.“",
       },
       {
-        text: "What does Ela put on?",
+        text: "What does Lucy put on?",
         options: ["headphones", "a green shirt", "a plant"],
         answer: 0,
         explain: "„I'll put on headphones now. Then my voice is clear and the room is quiet.“",
@@ -305,7 +305,7 @@ export const enA2U22: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Sena closes the ___.",
+        text: "Ellie closes the ___.",
         options: [],
         answer: 0,
         accept: ["window"],
@@ -321,7 +321,7 @@ export const enA2U22: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Sena not hear the first time?",
+        text: "What does Ellie not hear the first time?",
         options: [],
         answer: 0,
         accept: ["the report", "the report for October"],

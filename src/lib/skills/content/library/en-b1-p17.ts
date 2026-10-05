@@ -249,7 +249,7 @@ export const enB1P17: SkillExercise[] = [
           "to reach my brother, and he came to get me an hour later. " +
           "You'll be glad to hear that the car is fine now: it was only the battery. " +
           "If you're ever in Wells, please let me buy you lunch at the café on the square. I really " +
-          "mean it. With many thanks, Leyla Arslan",
+          "mean it. With many thanks, Fiona Nolan",
       },
     ],
   },

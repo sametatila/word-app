@@ -130,7 +130,7 @@ export const deB2P19: SkillExercise[] = [
       { speaker: "Moderatorin", text: "Wonach entscheiden sich Eltern überhaupt?" },
       { speaker: "Herr Brückner", text: "Viel stärker nach dem Klang, als sie glauben. Seit Jahren sind kurze Namen mit vielen Vokalen beliebt, etwa Mia oder Noah. Harte Konsonanten wie in Gerd oder Kurt sind dagegen fast verschwunden." },
       { speaker: "Moderatorin", text: "Spielt es eine Rolle, woher eine Familie kommt?" },
-      { speaker: "Herr Brückner", text: "Eine große. Viele Familien suchen Namen, die in zwei Sprachen funktionieren, zum Beispiel Elif, Aylin oder Deniz. Die Großeltern können sie aussprechen, und in der Schule muss niemand buchstabieren." },
+      { speaker: "Herr Brückner", text: "Eine große. Viele Familien suchen Namen, die in zwei Sprachen funktionieren, zum Beispiel Paula, Helene oder Sascha. Die Großeltern können sie aussprechen, und in der Schule muss niemand buchstabieren." },
       { speaker: "Moderatorin", text: "Kann man vorhersagen, was als Nächstes kommt?" },
       { speaker: "Herr Brückner", text: "Ungefähr. In zwanzig Jahren werden wohl Namen aus den Dreißigerjahren wieder auftauchen, also Namen, die dann kaum noch jemand mit einem bestimmten Menschen verbindet." },
       { speaker: "Moderatorin", text: "Und wenn einem der eigene Name gar nicht gefällt?" },
@@ -170,7 +170,7 @@ export const deB2P19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wer kann Namen wie Elif oder Deniz gut aussprechen?",
+        text: "Wer kann Namen wie Paula oder Sascha gut aussprechen?",
         options: [],
         answer: 0,
         accept: ["die Großeltern", "Großeltern", "auch die Großeltern"],
@@ -242,15 +242,15 @@ export const deB2P19: SkillExercise[] = [
         sample:
           "Sehr geehrte Damen und Herren, ich wende mich mit einer Frage zum Nachnamen unseres Kindes an Sie. " +
           "Mein Mann und ich sind seit 2022 verheiratet, haben aber beide unseren Namen behalten: Ich heiße " +
-          "Demir, er heißt Hoffmann. Unser erstes Kind wird wohl Anfang März zur Welt kommen. " +
-          "Da seit Mai 2025 auch Doppelnamen möglich sind, möchten wir, dass unser Kind Demir-Hoffmann heißt. " +
+          "Böhm, er heißt Hoffmann. Unser erstes Kind wird wohl Anfang März zur Welt kommen. " +
+          "Da seit Mai 2025 auch Doppelnamen möglich sind, möchten wir, dass unser Kind Böhm-Hoffmann heißt. " +
           "Könnten Sie mir bitte mitteilen, welche Unterlagen Sie dafür brauchen und ob wir den Namen schon vor " +
           "der Geburt festlegen können? Außerdem würde mich interessieren, ob dafür eine Gebühr anfällt und wie " +
           "lange die Bearbeitung ungefähr dauert. " +
           "Bis zur Geburt werden wir alle Unterlagen gesammelt haben, damit danach nichts liegen bleibt. Wenn " +
           "es Ihnen die Arbeit erleichtert, schicken wir Ihnen die Kopien gern vorab per E-Mail. Für " +
           "einen kurzen Termin in den nächsten Wochen wäre ich Ihnen sehr dankbar. " +
-          "Mit freundlichen Grüßen, Zeynep Demir",
+          "Mit freundlichen Grüßen, Verena Böhm",
       },
     ],
   },

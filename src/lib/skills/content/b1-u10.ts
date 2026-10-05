@@ -55,7 +55,7 @@ export const b1U10: SkillExercise[] = [
       "Knopf und zwei Karten darin ist dagegen leicht zu erkennen.\n\n" +
       "Bringen Sie einen Ausweis mit. Sie bekommen die Sache nur zurück, wenn Sie " +
       "den Inhalt nennen können, bevor die Schachtel geöffnet wird.\n\n" +
-      "Meldung von Frau Kaya: Ich habe gestern im Bus meine Brieftasche verloren. " +
+      "Meldung von Frau Arnold: Ich habe gestern im Bus meine Brieftasche verloren. " +
       "Sie ist braun, ziemlich alt und nicht besonders auffällig. Darin sind mein " +
       "Ausweis, eine Karte und ein kleines Foto. Die Marke steht nicht darauf, " +
       "aber der Verschluss ist kaputt — daran erkenne ich sie sofort.",
@@ -331,9 +331,9 @@ export const b1U10: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kayıp bildirim formunu doldur.",
-        facts: "Bildiren: Leyla Kaya; kayıp: cüzdan; renk: kahverengi; yer: otobüs; içerik: kimlik, kart, fotoğraf; işaret: kilit bozuk.",
+        facts: "Bildiren: Johanna Arnold; kayıp: cüzdan; renk: kahverengi; yer: otobüs; içerik: kimlik, kart, fotoğraf; işaret: kilit bozuk.",
         fields: [
-          { label: "Name", answer: "Leyla Kaya", accept: ["Leyla", "Kaya"] },
+          { label: "Name", answer: "Johanna Arnold", accept: ["Johanna", "Arnold"] },
           { label: "Gegenstand", answer: "Brieftasche", accept: ["eine Brieftasche", "die Brieftasche"] },
           { label: "Farbe", answer: "braun", accept: ["Braun", "braune"] },
           { label: "Ort", answer: "im Bus", accept: ["Bus", "der Bus"] },

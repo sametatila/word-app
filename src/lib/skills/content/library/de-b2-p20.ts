@@ -258,7 +258,7 @@ export const deB2P20: SkillExercise[] = [
           "nachvollziehbar machen. " +
           "Wir würden uns freuen, zu einem gemeinsamen Gespräch eingeladen zu werden, gern schon nächste Woche " +
           "nach der Frühschicht. " +
-          "Mit freundlichen Grüßen, Deniz Aksoy",
+          "Mit freundlichen Grüßen, Sascha Thiel",
       },
     ],
   },

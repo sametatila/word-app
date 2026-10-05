@@ -106,40 +106,40 @@ export const enA2U04: SkillExercise[] = [
     minutes: 5,
     text:
       "Boss: Have you finished the report yet?\n" +
-      "Ela: Almost. I have already written four pages, but I haven't finished the last part yet.\n" +
+      "Lucy: Almost. I have already written four pages, but I haven't finished the last part yet.\n" +
       "Boss: How long have you been at it?\n" +
-      "Ela: Since nine this morning. For five hours!\n" +
+      "Lucy: Since nine this morning. For five hours!\n" +
       "Boss: And the numbers? Are they ready?\n" +
-      "Ela: I have just sent them to Deniz. He is going to read them.\n" +
+      "Lucy: I have just sent them to Charlie. He is going to read them.\n" +
       "Boss: Good. The meeting is at four, so we have two hours.\n" +
-      "Ela: Don't worry, it will be ready on time. I promise.\n" +
+      "Lucy: Don't worry, it will be ready on time. I promise.\n" +
       "Boss: I know. You have worked here for three years and you have never been late.\n" +
-      "Ela: Thank you. But I'm going to take a break now — ten minutes.\n" +
+      "Lucy: Thank you. But I'm going to take a break now — ten minutes.\n" +
       "Boss: Of course. Take twenty.\n" +
-      "Ela: Then the report will be complete at half past three.",
+      "Lucy: Then the report will be complete at half past three.",
     questions: [
       {
-        text: "What has Ela already written?",
+        text: "What has Lucy already written?",
         options: ["four pages", "the last part", "the numbers"],
         answer: 0,
         explain: "„I have already written four pages, but I haven't finished the last part yet.“",
       },
       {
-        text: "How long has Ela worked there?",
+        text: "How long has Lucy worked there?",
         options: ["three years", "five hours", "two hours"],
         answer: 0,
         explain: "„You have worked here for three years…“ — beş saat bugünkü çalışma.",
       },
       {
         kind: "truefalse",
-        text: "Ela has finished the report.",
+        text: "Lucy has finished the report.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Almost… I haven't finished the last part yet.“",
       },
       {
         kind: "gapfill",
-        text: "Ela has been at it since ___ this morning.",
+        text: "Lucy has been at it since ___ this morning.",
         options: [],
         answer: 0,
         accept: ["nine", "9"],
@@ -153,7 +153,7 @@ export const enA2U04: SkillExercise[] = [
         items: [
           "Have you finished the report yet?",
           "I have already written four pages.",
-          "I have just sent them to Deniz.",
+          "I have just sent them to Charlie.",
           "I'm going to take a break now.",
         ],
         explain: "Önce soru, sonra yapılmış olan, sonra az önce olan, en son plan.",
@@ -187,43 +187,43 @@ export const enA2U04: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Mert", text: "How long have you been here?" },
-      { speaker: "Nil", text: "In this city? Since March. So about six months." },
-      { speaker: "Mert", text: "And your job?" },
-      { speaker: "Nil", text: "I have worked at the school for two months. Before that I had no job." },
-      { speaker: "Mert", text: "Do you know many people here?" },
-      { speaker: "Nil", text: "Not many. I have known Ela since the first week — we met on the bus." },
-      { speaker: "Mert", text: "For me it is easier. I have lived here for eleven years." },
-      { speaker: "Nil", text: "Eleven years! Then you know everybody." },
-      { speaker: "Mert", text: "Almost. I was born in this city, I moved away for three years and then I came back." },
-      { speaker: "Nil", text: "Why did you come back?" },
-      { speaker: "Mert", text: "Because of my family. And because the city has changed a lot since twenty ten." },
-      { speaker: "Nil", text: "Changed how?" },
-      { speaker: "Mert", text: "More parks, more cafés. Better for children." },
+      { speaker: "Henry", text: "How long have you been here?" },
+      { speaker: "Katie", text: "In this city? Since March. So about six months." },
+      { speaker: "Henry", text: "And your job?" },
+      { speaker: "Katie", text: "I have worked at the school for two months. Before that I had no job." },
+      { speaker: "Henry", text: "Do you know many people here?" },
+      { speaker: "Katie", text: "Not many. I have known Lucy since the first week — we met on the bus." },
+      { speaker: "Henry", text: "For me it is easier. I have lived here for eleven years." },
+      { speaker: "Katie", text: "Eleven years! Then you know everybody." },
+      { speaker: "Henry", text: "Almost. I was born in this city, I moved away for three years and then I came back." },
+      { speaker: "Katie", text: "Why did you come back?" },
+      { speaker: "Henry", text: "Because of my family. And because the city has changed a lot since twenty ten." },
+      { speaker: "Katie", text: "Changed how?" },
+      { speaker: "Henry", text: "More parks, more cafés. Better for children." },
     ],
     questions: [
       {
-        text: "How long has Nil been in the city?",
+        text: "How long has Katie been in the city?",
         options: ["since March", "for two months", "for eleven years"],
         answer: 0,
-        explain: "„In this city? Since March.“ — iki ay işte, on bir yıl Mert'in.",
+        explain: "„In this city? Since March.“ — iki ay işte, on bir yıl Henry'nin.",
       },
       {
-        text: "Where did Nil meet Ela?",
+        text: "Where did Katie meet Lucy?",
         options: ["on the bus", "at the school", "in a park"],
         answer: 0,
-        explain: "„I have known Ela since the first week — we met on the bus.“",
+        explain: "„I have known Lucy since the first week — we met on the bus.“",
       },
       {
         kind: "truefalse",
-        text: "Mert was born in this city.",
+        text: "Henry was born in this city.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I was born in this city, I moved away for three years and then I came back.“",
       },
       {
         kind: "gapfill",
-        text: "Mert has lived here for ___ years.",
+        text: "Henry has lived here for ___ years.",
         options: [],
         answer: 0,
         accept: ["eleven", "11"],
@@ -239,7 +239,7 @@ export const enA2U04: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Why did Mert come back?",
+        text: "Why did Henry come back?",
         options: [],
         answer: 0,
         accept: ["because of his family", "his family", "family"],
@@ -264,36 +264,36 @@ export const enA2U04: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Deniz", text: "Hi Ela, it's Deniz. Thanks for the invitation to the lake, but I have two plans this weekend." },
-      { speaker: "Deniz", text: "First, I'm going to visit my sister on Sunday. We decided that last week." },
-      { speaker: "Deniz", text: "Second, my apartment is dirty. I will clean it on Saturday — I decided just now, while I was listening to your message!" },
-      { speaker: "Deniz", text: "Are you free next weekend? Then I'll come to the lake with you." },
-      { speaker: "Deniz", text: "I told my sister: I promise I won't be late on Sunday. She is never happy when I come at two." },
-      { speaker: "Deniz", text: "Hopefully the weather will be good. Then we will probably walk by the river. Call me back tonight!" },
+      { speaker: "Charlie", text: "Hi Lucy, it's Charlie. Thanks for the invitation to the lake, but I have two plans this weekend." },
+      { speaker: "Charlie", text: "First, I'm going to visit my sister on Sunday. We decided that last week." },
+      { speaker: "Charlie", text: "Second, my apartment is dirty. I will clean it on Saturday — I decided just now, while I was listening to your message!" },
+      { speaker: "Charlie", text: "Are you free next weekend? Then I'll come to the lake with you." },
+      { speaker: "Charlie", text: "I told my sister: I promise I won't be late on Sunday. She is never happy when I come at two." },
+      { speaker: "Charlie", text: "Hopefully the weather will be good. Then we will probably walk by the river. Call me back tonight!" },
     ],
     questions: [
       {
-        text: "When is Deniz going to visit his sister?",
+        text: "When is Charlie going to visit his sister?",
         options: ["on Sunday", "on Saturday", "just now"],
         answer: 0,
         explain: "„First, I'm going to visit my sister on Sunday.“ — karar geçen hafta verilmiş.",
       },
       {
-        text: "When did Deniz decide to clean the apartment?",
+        text: "When did Charlie decide to clean the apartment?",
         options: ["just now", "last week", "on Sunday"],
         answer: 0,
         explain: "„I will clean it on Saturday — I decided just now, while I was listening to your message!“",
       },
       {
         kind: "truefalse",
-        text: "Deniz decided to visit his sister a moment ago.",
+        text: "Charlie decided to visit his sister a moment ago.",
         options: ["True", "False"],
         answer: 1,
         explain: "„We decided that last week.“ — o yüzden „going to“ kullanıyor.",
       },
       {
         kind: "gapfill",
-        text: "Deniz promises he ___ be late.",
+        text: "Charlie promises he ___ be late.",
         options: [],
         answer: 0,
         accept: ["won't", "will not"],

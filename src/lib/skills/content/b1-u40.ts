@@ -340,9 +340,9 @@ export const b1U40: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Memnuniyet kartını doldur.",
-        facts: "Kişi: Sedef Aydın; iş: bedensel, yorucu; iyi yön: takım; kötü yön: öğleden sonra sıkılma; sonuç: genelde memnun.",
+        facts: "Kişi: Amelie Haas; iş: bedensel, yorucu; iyi yön: takım; kötü yön: öğleden sonra sıkılma; sonuç: genelde memnun.",
         fields: [
-          { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
+          { label: "Name", answer: "Amelie Haas", accept: ["Amelie", "Haas"] },
           { label: "Art der Arbeit", answer: "körperlich", accept: ["körperliche Arbeit", "anstrengend"] },
           { label: "Positiv", answer: "das Team", accept: ["Team", "die Kollegen"] },
           { label: "Negativ", answer: "Langeweile am Nachmittag", accept: ["Langeweile", "nachmittags"] },

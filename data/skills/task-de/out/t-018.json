@@ -60,9 +60,9 @@
   "de": "Bist du fertig geworden?"
  },
  {
-  "tr": "Alo, ben Ela.",
+  "tr": "Alo, ben Lucy.",
   "kind": "build.tr",
-  "de": "Hallo, hier ist Ela."
+  "de": "Hallo, hier ist Lucy."
  },
  {
   "tr": "Dün çalıştım.",
@@ -210,9 +210,9 @@
   "de": "Entschuldigung, ich höre dich nicht."
  },
  {
-  "tr": "Bay Demir ile konuşabilir miyim?",
+  "tr": "Bay Adams ile konuşabilir miyim?",
   "kind": "build.tr",
-  "de": "Kann ich Herrn Demir sprechen?"
+  "de": "Kann ich Herrn Adams sprechen?"
  },
  {
   "tr": "Biraz ilaç alabilir miyim, lütfen?",

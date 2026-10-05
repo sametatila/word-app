@@ -43,7 +43,7 @@ export const EN_A1_02: MockPaper = {
               id: "t1",
               genre: "Email",
               genreTr: "E-posta",
-              title: "From: kemal@post.net",
+              title: "From: phil@post.net",
               body: `Hi Sofia,
 
 Good news! I have an apartment on Green Street. It is on the fourth floor and it is very quiet.
@@ -54,7 +54,7 @@ There is no elevator, so I carry everything up the stairs. My back is not happy!
 
 I move on August 3. Can you help me on that day?
 
-Kemal`,
+Phil`,
               gloss: [
                 { de: "the rent", tr: "kira", en: "die Miete" },
                 { de: "the elevator", tr: "asansör", en: "der Aufzug" },
@@ -89,7 +89,7 @@ Anna (office)`,
               id: "en-a1-02-l1-1",
               no: 1,
               ref: "t1",
-              text: "Kemal pays for the water every month.",
+              text: "Phil pays for the water every month.",
               answer: false,
               explain:
                 "E-postada «Water is in the price» yazıyor: su kiraya dâhil, ayrıca ödenmiyor. Ayrı ödenen şey elektrik. Metin iki gideri ayırıyor ve madde bu ayrımı ölçüyor.",
@@ -109,7 +109,7 @@ Anna (office)`,
               id: "en-a1-02-l1-3",
               no: 3,
               ref: "t1",
-              text: "Kemal asks Sofia for help on August 3.",
+              text: "Phil asks Sofia for help on August 3.",
               answer: true,
               explain:
                 "Son iki cümle birlikte okunur: taşınma günü 3 Ağustos ve «Can you help me on that day?». `that day` bir önceki cümledeki tarihi gösteriyor; gönderme öğesini izlemek A1'de ölçülen becerilerden.",
@@ -440,7 +440,7 @@ Rita`,
               plays: 2,
               segments: [
                 { speaker: "Neighbor", text: "Hello, a box came for you this morning. It is in my apartment." },
-                { speaker: "Yusuf", text: "Oh, thank you. Can I come at six?" },
+                { speaker: "Alfie", text: "Oh, thank you. Can I come at six?" },
                 { speaker: "Neighbor", text: "I work until seven today. Come after that, please." },
               ],
             },
@@ -516,11 +516,11 @@ Rita`,
               id: "en-a1-02-h1-1",
               no: 1,
               ref: "a1",
-              text: "When can Yusuf get his box?",
+              text: "When can Alfie get his box?",
               options: ["After seven", "At six", "Tomorrow morning"],
               answer: 0,
               explain:
-                "Komşu «I work until seven today. Come after that» diyor: yediden sonra. Yusuf altıyı öneriyor ama kabul edilmiyor; ilk söylenen saati doğru sanan öğrenci yanılır.",
+                "Komşu «I work until seven today. Come after that» diyor: yediden sonra. Alfie altıyı öneriyor ama kabul edilmiyor; ilk söylenen saati doğru sanan öğrenci yanılır.",
             },
             {
               kind: "mcq",
@@ -691,7 +691,7 @@ Rita`,
               situation: "Bir usta telesekretere ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is Ali from the shop. Your bike is ready. We are open until six, and on Saturday until one." },
+                { text: "Hello, this is Harry from the shop. Your bike is ready. We are open until six, and on Saturday until one." },
               ],
             },
             {

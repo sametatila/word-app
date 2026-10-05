@@ -399,7 +399,7 @@ Licht bis 22 Uhr. Danach bitte leise sein.`,
               plays: 2,
               segments: [
                 { speaker: "Lars", text: "Was machst du am Samstag?" },
-                { speaker: "Meryem", text: "Erst Fußball, dann ins Kino. Am Sonntag schlafe ich lang." },
+                { speaker: "Dagmar", text: "Erst Fußball, dann ins Kino. Am Sonntag schlafe ich lang." },
                 { speaker: "Lars", text: "Das klingt gut." },
               ],
             },
@@ -465,7 +465,7 @@ Licht bis 22 Uhr. Danach bitte leise sein.`,
               id: "de-a1-08-h1-6",
               no: 6,
               ref: "a6",
-              text: "Was macht Meryem am Samstag?",
+              text: "Was macht Dagmar am Samstag?",
               options: ["Fußball und Kino.", "Nur schlafen.", "Nichts Besonderes."],
               answer: 0,
               explain:
@@ -646,7 +646,7 @@ Licht bis 22 Uhr. Danach bitte leise sein.`,
               plays: 2,
               segments: [
                 {
-                  text: "Hallo Deniz, hier ist Milan. Morgen soll es den ganzen Tag regnen. Wollen wir statt Fußball ins Museum gehen? Ruf mich bitte heute Abend an.",
+                  text: "Hallo Sascha, hier ist Milan. Morgen soll es den ganzen Tag regnen. Wollen wir statt Fußball ins Museum gehen? Ruf mich bitte heute Abend an.",
                 },
               ],
             },
@@ -818,7 +818,7 @@ Wir können uns um sieben Uhr vor dem Kino treffen. Es ist am Marktplatz.
 Welchen Film möchtest du sehen?
 
 Bis Freitag
-Nuray`,
+Maike`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Hitap ve veda var mı? Arkadaşa yazıldığı için `Liebe Sara` ve kısa bir veda uygun.",

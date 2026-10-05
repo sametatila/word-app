@@ -472,7 +472,7 @@ Vielleicht ist das die eigentliche Nachricht: Lokaljournalismus ist keine Frage 
             },
             {
               key: "d",
-              label: "d — Frau Öztürk, Schülervertreterin",
+              label: "d — Frau Dörr, Schülervertreterin",
               body: "Wir bekommen ständig Regeln erklärt, aber nie gezeigt, wie eine Redaktion arbeitet. Ich wäre für ein Fach, in dem wir selbst etwas veröffentlichen und dafür geradestehen müssen.",
             },
             {
@@ -540,7 +540,7 @@ Vielleicht ist das die eigentliche Nachricht: Lokaljournalismus ist keine Frage 
               text: "Jugendliche sollten selbst veröffentlichen und die Folgen tragen.",
               answer: "d",
               explain:
-                "Frau Öztürk kural anlatımından değil, üretimden yana: \"in dem wir selbst etwas veröffentlichen und dafür geradestehen müssen\".",
+                "Frau Dörr kural anlatımından değil, üretimden yana: \"in dem wir selbst etwas veröffentlichen und dafür geradestehen müssen\".",
             },
             {
               kind: "match",
@@ -693,9 +693,9 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               situation: "İki çalışan yeni bir bildirim düzenini konuşuyor.",
               plays: 1,
               segments: [
-                { speaker: "Aylin", text: "Hast du gesehen, dass die Benachrichtigungen abends jetzt automatisch stumm sind?" },
+                { speaker: "Helene", text: "Hast du gesehen, dass die Benachrichtigungen abends jetzt automatisch stumm sind?" },
                 { speaker: "Pierre", text: "Ja, und ich finde es ehrlich gesagt unangenehm. Ich arbeite gern spät und will nicht, dass das aussieht wie Faulheit." },
-                { speaker: "Aylin", text: "Es sieht nach gar nichts aus. Die Nachricht kommt an, sie klingelt nur nicht." },
+                { speaker: "Helene", text: "Es sieht nach gar nichts aus. Die Nachricht kommt an, sie klingelt nur nicht." },
                 { speaker: "Pierre", text: "Das wusste ich nicht. Dann nehme ich die Hälfte meiner Beschwerde zurück." },
               ],
             },
@@ -1029,7 +1029,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
                   text: "Aus der Werkstatt gesehen ist es einfacher: Die Kollegen dort haben keinen Rechner. Was nicht auf dem Aushang steht, kommt bei ihnen nicht an — egal, wie gut das Programm ist.",
                 },
                 {
-                  speaker: "Frau Yilmaz",
+                  speaker: "Frau Lutz",
                   text: "Ich würde die Sache anders anfassen. Bevor wir wieder ein Werkzeug einführen, sollten wir einmal messen, wie viele Nachrichten überhaupt gelesen werden. Wir raten seit Jahren.",
                 },
                 {
@@ -1041,7 +1041,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
                   text: "Dann bitte wenigstens eine Regel: Alles, was für die Werkstatt gilt, wird zusätzlich ausgedruckt. Das kostet niemanden etwas.",
                 },
                 {
-                  speaker: "Frau Yilmaz",
+                  speaker: "Frau Lutz",
                   text: "Damit habe ich kein Problem, solange es eine Übergangslösung bleibt. Ein Aushang ist keine Kommunikationsstrategie.",
                 },
                 {
@@ -1062,7 +1062,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               no: 17,
               ref: "b1",
               text: "Das Problem liegt nicht am Programm, sondern an der Zahl der Kanäle.",
-              options: ["Frau Hübner.", "Herr Draghi.", "Frau Yilmaz."],
+              options: ["Frau Hübner.", "Herr Draghi.", "Frau Lutz."],
               answer: 0,
               explain: "Açılış özetini Frau Hübner yapıyor: \"Das ist der eigentliche Punkt, nicht die Software\".",
             },
@@ -1072,7 +1072,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               no: 18,
               ref: "b1",
               text: "Ein Teil der Belegschaft erreicht digitale Nachrichten grundsätzlich nicht.",
-              options: ["Frau Hübner.", "Herr Draghi.", "Frau Yilmaz."],
+              options: ["Frau Hübner.", "Herr Draghi.", "Frau Lutz."],
               answer: 1,
               explain:
                 "Herr Draghi atölyeyi hatırlatıyor: bilgisayarı olmayan çalışanlara \"Was nicht auf dem Aushang steht, kommt bei ihnen nicht an\".",
@@ -1083,9 +1083,9 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               no: 19,
               ref: "b1",
               text: "Vor einer neuen Lösung sollte die Nutzung erst gemessen werden.",
-              options: ["Frau Hübner.", "Herr Draghi.", "Frau Yilmaz."],
+              options: ["Frau Hübner.", "Herr Draghi.", "Frau Lutz."],
               answer: 2,
-              explain: "Frau Yilmaz: \"sollten wir einmal messen, wie viele Nachrichten überhaupt gelesen werden. Wir raten seit Jahren\".",
+              explain: "Frau Lutz: \"sollten wir einmal messen, wie viele Nachrichten überhaupt gelesen werden. Wir raten seit Jahren\".",
             },
             {
               kind: "mcq",
@@ -1093,10 +1093,10 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               no: 20,
               ref: "b1",
               text: "Ein Aushang darf nur eine Übergangslösung sein.",
-              options: ["Frau Hübner.", "Herr Draghi.", "Frau Yilmaz."],
+              options: ["Frau Hübner.", "Herr Draghi.", "Frau Lutz."],
               answer: 2,
               explain:
-                "Kuralı kabul eden Frau Yilmaz, ama koşullu: \"solange es eine Übergangslösung bleibt. Ein Aushang ist keine Kommunikationsstrategie\".",
+                "Kuralı kabul eden Frau Lutz, ama koşullu: \"solange es eine Übergangslösung bleibt. Ein Aushang ist keine Kommunikationsstrategie\".",
             },
             {
               kind: "mcq",
@@ -1104,7 +1104,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               no: 21,
               ref: "b1",
               text: "Die Entscheidung über den Kanal soll verschoben werden.",
-              options: ["Frau Hübner.", "Herr Draghi.", "Frau Yilmaz."],
+              options: ["Frau Hübner.", "Herr Draghi.", "Frau Lutz."],
               answer: 0,
               explain: "Frau Hübner öneriyor: kanal kararı yaz tatilinden sonraya, şimdilik yalnız kural.",
             },
@@ -1114,7 +1114,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               no: 22,
               ref: "b1",
               text: "Jemand sollte die Betroffenen vor Ort selbst befragen.",
-              options: ["Frau Hübner.", "Herr Draghi.", "Frau Yilmaz."],
+              options: ["Frau Hübner.", "Herr Draghi.", "Frau Lutz."],
               answer: 1,
               explain:
                 "Herr Draghi'nin son isteği: \"jemand einmal in die Halle geht und fragt. Von hier oben sieht das alles sehr geordnet aus\".",
@@ -1369,7 +1369,7 @@ Für die nächste Runde würde ich vorschlagen, die Gruppe zu teilen oder die Za
 Ist bereits geplant, eine Folgeveranstaltung anzubieten? Ich würde gern teilnehmen.
 
 Mit freundlichen Grüßen
-Deniz Aktas`,
+Sascha Zander`,
             criteria: [
               "Dört içerik noktası da var mı?",
               "Eleştiri kibar bir dille ve somut bir gerekçeyle mi yapılmış?",

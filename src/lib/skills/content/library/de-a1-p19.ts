@@ -208,10 +208,10 @@ export const deA1P19: SkillExercise[] = [
           { de: "Kennt jemand …?", tr: "… bilen var mı?", en: "Does anyone know …?" },
         ],
         sample:
-          "Hallo zusammen, ich bin Hatice, die Mutter von Emil. Emil ist neu in der Klasse 2b. " +
+          "Hallo zusammen, ich bin Gudrun, die Mutter von Emil. Emil ist neu in der Klasse 2b. " +
           "Wir wohnen seit Mai in der Blumenstraße, das ist nicht weit von der Schule. " +
           "Ich arbeite vormittags, aber nachmittags habe ich Zeit. Beim Schulfest kann ich gern helfen, ich backe gern Kuchen. " +
-          "Eine Frage: Emil spielt gern Fußball. Kennt jemand einen Verein für Kinder? Viele Grüße, Hatice",
+          "Eine Frage: Emil spielt gern Fußball. Kennt jemand einen Verein für Kinder? Viele Grüße, Gudrun",
       },
     ],
   },

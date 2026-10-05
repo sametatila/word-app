@@ -39,21 +39,21 @@ export const enA1U21: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Good morning. I need a doctor. Can I have an appointment today?\n" +
+      "Lucy: Good morning. I need a doctor. Can I have an appointment today?\n" +
       "Clerk: Good morning. What is the problem?\n" +
-      "Ela: I don't feel well. I have a headache and my back hurts.\n" +
+      "Lucy: I don't feel well. I have a headache and my back hurts.\n" +
       "Clerk: Since when?\n" +
-      "Ela: Since Monday. And I feel cold — maybe thirty-eight degrees.\n" +
+      "Lucy: Since Monday. And I feel cold — maybe thirty-eight degrees.\n" +
       "Clerk: I understand. The doctor is here at ten o'clock.\n" +
-      "Ela: Do I have to wait?\n" +
+      "Lucy: Do I have to wait?\n" +
       "Clerk: Yes, a little. You have to wait here, please. Take this paper.\n" +
-      "Ela: And do I have to pay?\n" +
+      "Lucy: And do I have to pay?\n" +
       "Clerk: No, not today. But you must bring your card tomorrow.\n" +
-      "Ela: Thank you. My arm hurts too — is that bad?\n" +
+      "Lucy: Thank you. My arm hurts too — is that bad?\n" +
       "Clerk: Only the doctor can say that. Be patient, please.",
     questions: [
       {
-        text: "What does Ela need?",
+        text: "What does Lucy need?",
         options: ["an appointment", "a paper", "a card"],
         answer: 0,
         explain: "„I need a doctor. Can I have an appointment today?“ — kâğıt ve kart sonra geliyor.",
@@ -66,14 +66,14 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela has to bring her card tomorrow.",
+        text: "Lucy has to bring her card tomorrow.",
         options: ["True", "False"],
         answer: 0,
         explain: "„No, not today. But you must bring your card tomorrow.“",
       },
       {
         kind: "gapfill",
-        text: "Ela has a ___ and her back hurts.",
+        text: "Lucy has a ___ and her back hurts.",
         options: [],
         answer: 0,
         accept: ["headache"],
@@ -81,7 +81,7 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What must Ela bring tomorrow?",
+        text: "What must Lucy bring tomorrow?",
         options: [],
         answer: 0,
         accept: ["her card", "the card", "card"],
@@ -165,17 +165,17 @@ export const enA1U21: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Doctor", text: "Good morning. What is the problem?" },
-      { speaker: "Kaan", text: "I don't feel well. My back hurts." },
+      { speaker: "Liam", text: "I don't feel well. My back hurts." },
       { speaker: "Doctor", text: "Since when?" },
-      { speaker: "Kaan", text: "For three days. And my shoulder hurts too." },
+      { speaker: "Liam", text: "For three days. And my shoulder hurts too." },
       { speaker: "Doctor", text: "Do you have a headache?" },
-      { speaker: "Kaan", text: "No, no headache. But I can't carry a box." },
+      { speaker: "Liam", text: "No, no headache. But I can't carry a box." },
       { speaker: "Doctor", text: "I understand. Is the pain in the left or the right shoulder?" },
-      { speaker: "Kaan", text: "The right. And sometimes my arm." },
+      { speaker: "Liam", text: "The right. And sometimes my arm." },
       { speaker: "Doctor", text: "Do you work with your hands?" },
-      { speaker: "Kaan", text: "Yes, every day. I carry heavy boxes." },
+      { speaker: "Liam", text: "Yes, every day. I carry heavy boxes." },
       { speaker: "Doctor", text: "Then you must stay at home for one week. No heavy work." },
-      { speaker: "Kaan", text: "One week! And my leg? Is it OK?" },
+      { speaker: "Liam", text: "One week! And my leg? Is it OK?" },
       { speaker: "Doctor", text: "Your leg is fine. Come again on Monday." },
     ],
     questions: [
@@ -193,14 +193,14 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Kaan has a headache.",
+        text: "Liam has a headache.",
         options: ["True", "False"],
         answer: 1,
         explain: "„No, no headache. But I can't carry a box.“",
       },
       {
         kind: "gapfill",
-        text: "Kaan must stay at home for one ___.",
+        text: "Liam must stay at home for one ___.",
         options: [],
         answer: 0,
         accept: ["week"],
@@ -216,7 +216,7 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When does Kaan come again?",
+        text: "When does Liam come again?",
         options: [],
         answer: 0,
         accept: ["on Monday", "Monday"],
@@ -240,12 +240,12 @@ export const enA1U21: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Nil", text: "Today I have many things to do. First, I must go to the doctor." },
-      { speaker: "Nil", text: "I have an appointment at ten o'clock. I have to be there at a quarter to ten." },
-      { speaker: "Nil", text: "I don't feel well: I have a headache and my knee hurts." },
-      { speaker: "Nil", text: "After the doctor I have to wait for the medicine. Then I take the bus home." },
-      { speaker: "Nil", text: "At home I must lock the door. My neighbor is sick too, so I can't ask her." },
-      { speaker: "Nil", text: "In the evening I need a warm bed and nothing else. That is my plan." },
+      { speaker: "Katie", text: "Today I have many things to do. First, I must go to the doctor." },
+      { speaker: "Katie", text: "I have an appointment at ten o'clock. I have to be there at a quarter to ten." },
+      { speaker: "Katie", text: "I don't feel well: I have a headache and my knee hurts." },
+      { speaker: "Katie", text: "After the doctor I have to wait for the medicine. Then I take the bus home." },
+      { speaker: "Katie", text: "At home I must lock the door. My neighbor is sick too, so I can't ask her." },
+      { speaker: "Katie", text: "In the evening I need a warm bed and nothing else. That is my plan." },
     ],
     questions: [
       {
@@ -262,14 +262,14 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil's neighbor can help her.",
+        text: "Katie's neighbor can help her.",
         options: ["True", "False"],
         answer: 1,
         explain: "„My neighbor is sick too, so I can't ask her.“",
       },
       {
         kind: "gapfill",
-        text: "At home Nil must ___ the door.",
+        text: "At home Katie must ___ the door.",
         options: [],
         answer: 0,
         accept: ["lock"],
@@ -277,7 +277,7 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Nil'in gününün sırası: doğru sıraya koy.",
+        text: "Katie'nin gününün sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -290,7 +290,7 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Nil wait for after the doctor?",
+        text: "What does Katie wait for after the doctor?",
         options: [],
         answer: 0,
         accept: ["the medicine", "medicine"],

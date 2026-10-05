@@ -199,7 +199,7 @@ We do not buy clothes.`,
               kind: "match",
               id: "en-a2-10-l2-9",
               no: 9,
-              text: "Eren wants to know what his grandfather's old watch is worth.",
+              text: "Casey wants to know what his grandfather's old watch is worth.",
               answer: "d",
               explain:
                 "İlan tam bu soruyu yanıtlıyor: «Bring one object. We look at it and we tell you. We do not buy anything». Yani değer öğrenilir, satış yapılmaz.",
@@ -965,7 +965,7 @@ The price is forty euros and I cannot go lower.
 You can come on Saturday morning to 8 Mill Street. Please bring a car; it is heavy.
 
 Best wishes,
-Eren`,
+Casey`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi? Biri eksikse metin tam sayılmaz.",
               "Betimleme somut mu (ölçü, renk ya da yaş)?",

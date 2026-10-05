@@ -93,7 +93,7 @@ Am schwersten fällt sie bei Themen, die uns wichtig sind. Wer eine Sache voranb
               id: "pC",
               genre: "Erfahrungsbericht",
               genreTr: "Deneyim yazısı",
-              title: "Frau Uzun, Ärztin",
+              title: "Frau Pfeiffer, Ärztin",
               body: `Patientinnen fragen mich oft nach der Wahrscheinlichkeit. Ich habe gelernt, nicht mit Prozent zu antworten.
 
 Wenn ich sage, das Risiko steige um fünfzig Prozent, hört jemand etwas Bedrohliches. Wenn ich sage, es steige von zwei auf drei von tausend, hört dieselbe Person etwas anderes. Beides ist richtig.
@@ -133,7 +133,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-1",
               no: 1,
               text: "Wer nennt eine Regel, die auch gegen die eigenen Interessen gilt?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 1,
               explain:
                 "\"Ich verteidige diese Regel auch gegen mich selbst\" — en iyi başlıklarını bu denetimden sonra silmek zorunda kalmış.",
@@ -143,7 +143,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-2",
               no: 2,
               text: "Wer beschreibt Widerstand aus dem eigenen Berufsfeld?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 3,
               explain:
                 "\"Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium\" — çünkü dağılım değerlendirme farklarını da gösteriyor.",
@@ -153,7 +153,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-3",
               no: 3,
               text: "Wer erklärt einen Anstieg mit einer geänderten Definition?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 0,
               explain:
                 "\"Seitdem sind die Zahlen um vierzig Prozent höher. Verändert hat sich nicht die Lage, sondern die Definition.\"",
@@ -163,7 +163,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-4",
               no: 4,
               text: "Wer nennt zwei richtige Darstellungen desselben Risikos?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 2,
               explain:
                 "Yüzde elli artış ile \"von zwei auf drei von tausend\" aynı şeyi anlatıyor: \"Beides ist richtig.\"",
@@ -173,7 +173,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-5",
               no: 5,
               text: "Wer sagt, dass eine richtige Zahl fast nichts aussagen kann?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 3,
               explain:
                 "\"Er ist richtig und sagt fast nichts\" — üç ortalamasıyla bir sınıfta herkes üç alabilir ya da yarısı bir yarısı beş.",
@@ -183,7 +183,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-6",
               no: 6,
               text: "Wer ärgert sich über einen Vorwurf, der auf einem Missverständnis beruht?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 0,
               explain:
                 "\"Es ist die Empörung darüber, dass wir angeblich vorher falsch gezählt hätten. Wir haben anders gezählt.\"",
@@ -193,7 +193,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-7",
               no: 7,
               text: "Wer nennt Zeit als das eigentliche Hindernis?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 2,
               explain:
                 "\"Ein solches Gespräch dauert zehn Minuten, und ich habe im Schnitt sieben\" — yöntem doğru ama süre yetmiyor.",
@@ -203,7 +203,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-8",
               no: 8,
               text: "Wer sagt, dass die Versuchung zur größeren Zahl ohne böse Absicht entsteht?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 1,
               explain:
                 "\"Wer eine Sache voranbringen will, greift zur größeren Zahl — auch ohne böse Absicht.\"",
@@ -213,7 +213,7 @@ Widerstand kam anfangs nicht von den Eltern, sondern aus dem Kollegium. Eine Ver
               id: "de-b2-10-l1-9",
               no: 9,
               text: "Wer erklärt seine Methode regelmäßig, ohne dass es ankommt?",
-              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Uzun", "Herr Dellwig"],
+              options: ["Frau Rehberg", "Herr Kaltschmidt", "Frau Pfeiffer", "Herr Dellwig"],
               answer: 0,
               explain:
                 "\"Das erkläre ich in jedem Bericht, meistens auf Seite zwei. Zitiert wird trotzdem die Zahl von Seite eins.\"",
@@ -500,7 +500,7 @@ Mein Vorschlag ist deshalb bescheiden: Wer eine Veränderung nennt, nennt den Ve
             },
             {
               key: "c",
-              label: "c — Frau Ilkay, Datenschutzbeauftragte",
+              label: "c — Frau Eichler, Datenschutzbeauftragte",
               body: "Bei kleinen Gemeinden lässt sich aus vermeintlich anonymen Zahlen die einzelne Person rekonstruieren. Das ist kein theoretisches Risiko; wir hatten den Fall zweimal.",
             },
             {
@@ -1038,9 +1038,9 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
                   speaker: "Frau Detering",
                   text: "Ja, und zwar aus einem Grund, der oft untergeht: Ohne Rohdaten kann niemand eine Auswertung nachrechnen. Wir müssten dann glauben, und Glauben ist keine Grundlage für Politik.",
                 },
-                { speaker: "Moderator", text: "Frau Ilkay, Sie sehen ein Risiko." },
+                { speaker: "Moderator", text: "Frau Eichler, Sie sehen ein Risiko." },
                 {
-                  speaker: "Frau Ilkay",
+                  speaker: "Frau Eichler",
                   text: "Ich sehe ein bestimmtes Risiko, nicht das allgemeine. In einer Gemeinde mit vierhundert Einwohnern ist eine Tabelle mit Alter und Beruf keine Statistik mehr, sondern eine Personenbeschreibung. Wir hatten den Fall zweimal.",
                 },
                 {
@@ -1048,7 +1048,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
                   text: "Das bestreite ich nicht. Nur ist die Antwort darauf eine Schwelle für kleine Fallzahlen, keine grundsätzliche Zurückhaltung. Diese Schwelle gibt es längst.",
                 },
                 {
-                  speaker: "Frau Ilkay",
+                  speaker: "Frau Eichler",
                   text: "In der Theorie. In der Praxis wird sie auf jede Tabelle einzeln angewandt, und die Kombination mehrerer Tabellen prüft niemand.",
                 },
                 { speaker: "Moderator", text: "Das klingt nach einem ungelösten Problem." },
@@ -1057,7 +1057,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
                   text: "Ist es auch, und es spricht für mehr Personal, nicht für weniger Veröffentlichung. Wer die Prüfung nicht leisten kann, veröffentlicht heute einfach gar nicht — das ist die bequemste Lösung.",
                 },
                 {
-                  speaker: "Frau Ilkay",
+                  speaker: "Frau Eichler",
                   text: "Da haben Sie recht, und ich sage das ungern. Zurückhaltung ist bei uns oft keine Abwägung, sondern Personalmangel mit gutem Argument.",
                 },
                 { speaker: "Moderator", text: "Ein gemeinsamer Punkt?" },
@@ -1089,7 +1089,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
               id: "de-b2-10-h3-18",
               no: 18,
               ref: "d1",
-              text: "Wie beschreibt Frau Ilkay ihre Bedenken?",
+              text: "Wie beschreibt Frau Eichler ihre Bedenken?",
               options: [
                 "Als bestimmtes, nicht allgemeines Risiko.",
                 "Als grundsätzlichen Einwand gegen die Praxis.",
@@ -1119,7 +1119,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
               id: "de-b2-10-h3-20",
               no: 20,
               ref: "d1",
-              text: "Welche Lücke nennt Frau Ilkay bei dieser Schwelle?",
+              text: "Welche Lücke nennt Frau Eichler bei dieser Schwelle?",
               options: [
                 "Sie gilt nur für die größeren Gemeinden.",
                 "Die Kombination bleibt ungeprüft.",
@@ -1134,7 +1134,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
               id: "de-b2-10-h3-21",
               no: 21,
               ref: "d1",
-              text: "Was räumt Frau Ilkay am Ende ein?",
+              text: "Was räumt Frau Eichler am Ende ein?",
               options: [
                 "Dass das Risiko deutlich übertrieben war.",
                 "Dass die Schwelle völlig ausreicht.",

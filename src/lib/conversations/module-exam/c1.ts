@@ -88,7 +88,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "Für Rückfragen stehe ich Ihnen gern zur Verfügung.", tr: "Sorularınız için memnuniyetle hizmetinizdeyim.", en: "I remain at your disposal for any questions." },
       ],
       sample:
-        "Betreff: Ihr Vorschlag zur Umstellung des Ablaufs\n\nSehr geehrter Herr Wolf,\n\nvielen Dank für Ihren ausführlichen Vorschlag. Die Analyse der Engpässe halte ich für treffend, und den Grundgedanken, die Freigaben zu bündeln, ziehen wir durchaus in Betracht.\n\nBei allem Respekt hätte ich dennoch einen Einwand. Die vorgeschlagene Umstellung zum Ersten kommt für uns derzeit nicht in Frage, da die neuen Zahlen erst Mitte des Monats vorliegen. Man könnte argumentieren, dass ein früherer Start Zeit spart; aus meiner Sicht überwiegt jedoch die Tragweite eines Fehlstarts.\n\nIch würde daher anregen, die Umstellung um vier Wochen zu verschieben und in dieser Zeit einen Testlauf in einer Abteilung durchzuführen. Sofern die Ergebnisse überzeugen, setzen wir sie flächendeckend um.\n\nFür Rückfragen stehe ich Ihnen gern zur Verfügung.\n\nMit freundlichen Grüßen\nB. Şimşek",
+        "Betreff: Ihr Vorschlag zur Umstellung des Ablaufs\n\nSehr geehrter Herr Wolf,\n\nvielen Dank für Ihren ausführlichen Vorschlag. Die Analyse der Engpässe halte ich für treffend, und den Grundgedanken, die Freigaben zu bündeln, ziehen wir durchaus in Betracht.\n\nBei allem Respekt hätte ich dennoch einen Einwand. Die vorgeschlagene Umstellung zum Ersten kommt für uns derzeit nicht in Frage, da die neuen Zahlen erst Mitte des Monats vorliegen. Man könnte argumentieren, dass ein früherer Start Zeit spart; aus meiner Sicht überwiegt jedoch die Tragweite eines Fehlstarts.\n\nIch würde daher anregen, die Umstellung um vier Wochen zu verschieben und in dieser Zeit einen Testlauf in einer Abteilung durchzuführen. Sofern die Ergebnisse überzeugen, setzen wir sie flächendeckend um.\n\nFür Rückfragen stehe ich Ihnen gern zur Verfügung.\n\nMit freundlichen Grüßen\nB. Dreyer",
     },
   },
 
@@ -117,18 +117,18 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       titleTr: "İptal olan akşam",
       situation: "İki arkadaş iptal olan bir planı konuşuyor.",
       turns: [
-        { speaker: "Deniz", de: "Sag mal, hast du es schon gehört? Der Abend fällt aus.", tr: "Söylesene, duydun mu? Bu akşamki etkinlik iptal olmuş." },
+        { speaker: "Sascha", de: "Sag mal, hast du es schon gehört? Der Abend fällt aus.", tr: "Söylesene, duydun mu? Bu akşamki etkinlik iptal olmuş." },
         { speaker: "Mira", de: "Das ist ja ein Ding. Und ich hatte mir extra freigenommen.", tr: "Vay canına. Ben de özellikle izin almıştım." },
-        { speaker: "Deniz", de: "Ärgerlich, ja. Aber die Halle ist gesperrt — da ist eben nichts zu machen.", tr: "Can sıkıcı, evet. Ama salon kapatılmış — yapılacak bir şey yok işte." },
+        { speaker: "Sascha", de: "Ärgerlich, ja. Aber die Halle ist gesperrt — da ist eben nichts zu machen.", tr: "Can sıkıcı, evet. Ama salon kapatılmış — yapılacak bir şey yok işte." },
         { speaker: "Mira", de: "Das hättest du mir doch früher sagen können. Ich stehe seit einer Stunde vor der Tür.", tr: "Bunu bana daha önce söyleyebilirdin. Bir saattir kapının önünde duruyorum." },
-        { speaker: "Deniz", de: "Tut mir leid, ich habe es selbst erst vor zwanzig Minuten erfahren — die Halle ist wohl wegen eines Wasserschadens gesperrt.", tr: "Üzgünüm, ben de ancak yirmi dakika önce öğrendim — salon galiba su hasarı yüzünden kapatılmış." },
+        { speaker: "Sascha", de: "Tut mir leid, ich habe es selbst erst vor zwanzig Minuten erfahren — die Halle ist wohl wegen eines Wasserschadens gesperrt.", tr: "Üzgünüm, ben de ancak yirmi dakika önce öğrendim — salon galiba su hasarı yüzünden kapatılmış." },
         { speaker: "Mira", de: "Schon gut. Und jetzt? Willst du nicht wenigstens einen Kaffee trinken?", tr: "Tamam, boş ver. Peki şimdi? Hiç değilse bir kahve içmek istemez misin?" },
-        { speaker: "Deniz", de: "Doch, sehr gern. Komm, das wird schon — der Abend ist ja noch nicht vorbei.", tr: "İsterim tabii. Hadi, her şey yoluna girer — akşam daha bitmedi ki." },
+        { speaker: "Sascha", de: "Doch, sehr gern. Komm, das wird schon — der Abend ist ja noch nicht vorbei.", tr: "İsterim tabii. Hadi, her şey yoluna girer — akşam daha bitmedi ki." },
       ],
       questions: [
         { de: "Warum fällt der Abend aus?", tr: "Akşamki etkinlik neden iptal oldu?", options: ["Wegen Krankheit", "Weil die Halle gesperrt ist", "Wegen zu weniger Gäste", "Wegen des Wetters"], answer: 1 },
         { de: "Was drückt Miras Satz „Das hättest du mir doch früher sagen können“ aus?", tr: "Mira'nın „Das hättest du mir doch früher sagen können“ cümlesi ne bildiriyor?", options: ["Eine Bitte", "Einen Vorwurf", "Ein Lob", "Eine Vermutung"], answer: 1 },
-        { de: "Warum antwortet Deniz mit „Doch, sehr gern“?", tr: "Deniz neden „Doch, sehr gern“ diye cevap veriyor?", options: ["Weil die Frage verneint war", "Weil er ablehnt", "Weil er unsicher ist", "Weil er die Frage nicht verstanden hat"], answer: 0 },
+        { de: "Warum antwortet Sascha mit „Doch, sehr gern“?", tr: "Deniz neden „Doch, sehr gern“ diye cevap veriyor?", options: ["Weil die Frage verneint war", "Weil er ablehnt", "Weil er unsicher ist", "Weil er die Frage nicht verstanden hat"], answer: 0 },
       ],
     },
     reading: {
@@ -164,7 +164,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "Komm doch einfach mal vorbei.", tr: "Bir uğrasana.", en: "Why don't you just drop by?" },
       ],
       sample:
-        "Hallo Mira,\n\nsag mal, hast du es schon gehört? Der Abend fällt aus — die Halle ist kurzfristig gesperrt worden. Ich habe es selbst erst vor zwanzig Minuten erfahren, sonst hätte ich mich früher gemeldet. Das hättest du von mir tatsächlich eher hören sollen, und das tut mir leid.\n\nÄrgerlich ist es allemal, vor allem, weil du dir extra freigenommen hast. Aber da ist eben nichts zu machen; gegen eine gesperrte Halle kommt keiner von uns an.\n\nJetzt der Vorschlag: Komm doch einfach mal zu mir, ich koche etwas, und wir schauen uns die Aufzeichnung vom letzten Mal an. Das wird schon — der Abend ist ja noch nicht vorbei.\n\nSag kurz Bescheid, ob es dir passt.\n\nLiebe Grüße\nDeniz",
+        "Hallo Mira,\n\nsag mal, hast du es schon gehört? Der Abend fällt aus — die Halle ist kurzfristig gesperrt worden. Ich habe es selbst erst vor zwanzig Minuten erfahren, sonst hätte ich mich früher gemeldet. Das hättest du von mir tatsächlich eher hören sollen, und das tut mir leid.\n\nÄrgerlich ist es allemal, vor allem, weil du dir extra freigenommen hast. Aber da ist eben nichts zu machen; gegen eine gesperrte Halle kommt keiner von uns an.\n\nJetzt der Vorschlag: Komm doch einfach mal zu mir, ich koche etwas, und wir schauen uns die Aufzeichnung vom letzten Mal an. Das wird schon — der Abend ist ja noch nicht vorbei.\n\nSag kurz Bescheid, ob es dir passt.\n\nLiebe Grüße\nSascha",
     },
   },
   {
@@ -268,17 +268,17 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Dar geçen ay",
       situation: "İki arkadaş ortak bir harcamayı konuşuyor.",
       turns: [
-        { speaker: "Selin", de: "Ganz ehrlich: Ich bin diesen Monat knapp bei Kasse. Für das teure Modell müsste ich tief in die Tasche greifen.", tr: "Açıkçası: Bu ay param kıt. Pahalı model için cebimden epey para çıkarmam gerekir." },
+        { speaker: "Luisa", de: "Ganz ehrlich: Ich bin diesen Monat knapp bei Kasse. Für das teure Modell müsste ich tief in die Tasche greifen.", tr: "Açıkçası: Bu ay param kıt. Pahalı model için cebimden epey para çıkarmam gerekir." },
         { speaker: "Jonas", de: "Verstehe. Aber billig kaufen heißt oft zweimal kaufen — das wäre Geld zum Fenster hinausgeworfen.", tr: "Anlıyorum. Ama ucuz almak çoğu zaman iki kez almak demek — o para çöpe atılmış olur." },
-        { speaker: "Selin", de: "Da hast du nicht unrecht. Trotzdem ist mir die Farbe zum Beispiel völlig Wurst — da muss ich nichts extra zahlen.", tr: "Haksız değilsin. Yine de mesela renk benim hiç umurumda değil — onun için fazladan ödemem gerekmiyor." },
+        { speaker: "Luisa", de: "Da hast du nicht unrecht. Trotzdem ist mir die Farbe zum Beispiel völlig Wurst — da muss ich nichts extra zahlen.", tr: "Haksız değilsin. Yine de mesela renk benim hiç umurumda değil — onun için fazladan ödemem gerekmiyor." },
         { speaker: "Jonas", de: "Dann nehmen wir das mittlere. Das ist zwar nicht das Gelbe vom Ei, aber es hat Hand und Fuß.", tr: "O hâlde ortadakini alalım. Gerçi en iyisi değil ama sağlam bir seçim." },
-        { speaker: "Selin", de: "Einverstanden. Und beim Termin gebe ich nach — ich will da kein Haar in der Suppe suchen.", tr: "Kabul. Tarihte de geri adım atıyorum — orada kusur aramak istemiyorum." },
+        { speaker: "Luisa", de: "Einverstanden. Und beim Termin gebe ich nach — ich will da kein Haar in der Suppe suchen.", tr: "Kabul. Tarihte de geri adım atıyorum — orada kusur aramak istemiyorum." },
         { speaker: "Jonas", de: "Gut. Dann bleiben wir am Ball und bestellen heute Abend.", tr: "Güzel. O hâlde peşini bırakmayalım ve bu akşam sipariş verelim." },
-        { speaker: "Selin", de: "Abgemacht. Und wenn es doch schiefgeht, haben wir wenigstens Schwein gehabt, dass wir nicht das teuerste genommen haben.", tr: "Anlaştık. Ve yine de ters giderse, en azından en pahalısını almadığımız için şansımız varmış deriz." },
+        { speaker: "Luisa", de: "Abgemacht. Und wenn es doch schiefgeht, haben wir wenigstens Schwein gehabt, dass wir nicht das teuerste genommen haben.", tr: "Anlaştık. Ve yine de ters giderse, en azından en pahalısını almadığımız için şansımız varmış deriz." },
       ],
       questions: [
-        { de: "Warum will Selin nicht das teure Modell?", tr: "Selin neden pahalı modeli istemiyor?", options: ["Es gefällt ihr nicht", "Sie ist diesen Monat knapp bei Kasse", "Es ist nicht lieferbar", "Jonas hat es verboten"], answer: 1 },
-        { de: "Was bedeutet Selins Satz „Die Farbe ist mir völlig Wurst“?", tr: "Selin'in „Die Farbe ist mir völlig Wurst“ cümlesi ne demek?", options: ["Sie mag die Farbe", "Die Farbe ist ihr gleichgültig", "Sie will eine andere Farbe", "Die Farbe ist teuer"], answer: 1 },
+        { de: "Warum will Luisa nicht das teure Modell?", tr: "Luisa neden pahalı modeli istemiyor?", options: ["Es gefällt ihr nicht", "Sie ist diesen Monat knapp bei Kasse", "Es ist nicht lieferbar", "Jonas hat es verboten"], answer: 1 },
+        { de: "Was bedeutet Selins Satz „Die Farbe ist mir völlig Wurst“?", tr: "Luisa'nın „Die Farbe ist mir völlig Wurst“ cümlesi ne demek?", options: ["Sie mag die Farbe", "Die Farbe ist ihr gleichgültig", "Sie will eine andere Farbe", "Die Farbe ist teuer"], answer: 1 },
         { de: "Wie bewertet Jonas das mittlere Modell?", tr: "Jonas ortadaki modeli nasıl değerlendiriyor?", options: ["Als das Beste überhaupt", "Als nicht ideal, aber solide", "Als Geldverschwendung", "Als zu billig"], answer: 1 },
       ],
     },
@@ -467,7 +467,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "Ich bitte um eine schriftliche Bestätigung.", tr: "Yazılı teyit rica ediyorum.", en: "I request written confirmation." },
       ],
       sample:
-        "Betreff: Einspruch gegen den Bescheid vom 3. Juni (Az. 2024-1187)\n\nSehr geehrte Damen und Herren,\n\nhiermit lege ich fristwahrend Einspruch gegen den oben genannten Bescheid ein.\n\nWenngleich ich nachvollziehe, dass die Berechnung nach dem üblichen Schema erfolgt ist, halte ich das Ergebnis gleichwohl für unzutreffend. Nach meinen Unterlagen wurde der Zeitraum von März bis Mai doppelt berücksichtigt; im Falle einer bereinigten Berechnung ergibt sich ein deutlich abweichender Betrag.\n\nIch erhebe daher Anspruch auf eine Korrektur des Bescheids und werde diesen Anspruch, sofern erforderlich, weiter geltend machen. Die vollständige Begründung nebst Belegen reiche ich bis zum 30. Juni nach.\n\nIch bitte Sie um eine kurze schriftliche Bestätigung des Eingangs.\n\nMit freundlichen Grüßen\nB. Simsek",
+        "Betreff: Einspruch gegen den Bescheid vom 3. Juni (Az. 2024-1187)\n\nSehr geehrte Damen und Herren,\n\nhiermit lege ich fristwahrend Einspruch gegen den oben genannten Bescheid ein.\n\nWenngleich ich nachvollziehe, dass die Berechnung nach dem üblichen Schema erfolgt ist, halte ich das Ergebnis gleichwohl für unzutreffend. Nach meinen Unterlagen wurde der Zeitraum von März bis Mai doppelt berücksichtigt; im Falle einer bereinigten Berechnung ergibt sich ein deutlich abweichender Betrag.\n\nIch erhebe daher Anspruch auf eine Korrektur des Bescheids und werde diesen Anspruch, sofern erforderlich, weiter geltend machen. Die vollständige Begründung nebst Belegen reiche ich bis zum 30. Juni nach.\n\nIch bitte Sie um eine kurze schriftliche Bestätigung des Eingangs.\n\nMit freundlichen Grüßen\nB. Dreyer",
     },
   },
   {
@@ -495,13 +495,13 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Anlaşılmayan tebligat",
       situation: "İki meslektaş resmî bir yazıyı birlikte çözüyor.",
       turns: [
-        { speaker: "Tuna", de: "Ich habe den Satz jetzt fünfmal gelesen. Was wollen die von mir?", tr: "Cümleyi beş kez okudum. Benden ne istiyorlar?" },
+        { speaker: "Patrick", de: "Ich habe den Satz jetzt fünfmal gelesen. Was wollen die von mir?", tr: "Cümleyi beş kez okudum. Benden ne istiyorlar?" },
         { speaker: "Ines", de: "Such zuerst den Kern. Subjekt und finites Verb — der Rest ist Beiwerk.", tr: "Önce çekirdeği bul. Özne ve çekimli fiil — gerisi süs." },
-        { speaker: "Tuna", de: "Also: „Die Frist verlängert sich.“ Und der ganze Rest davor?", tr: "Yani: „Süre uzar.“ Peki öndeki onca şey?" },
+        { speaker: "Patrick", de: "Also: „Die Frist verlängert sich.“ Und der ganze Rest davor?", tr: "Yani: „Süre uzar.“ Peki öndeki onca şey?" },
         { speaker: "Ines", de: "Das ist ein vorangestelltes Attribut: die dem Antrag beizufügenden Unterlagen. Aufgelöst heißt das: die Unterlagen, die dem Antrag beigefügt werden müssen.", tr: "O, öne konmuş bir niteleyici: „die dem Antrag beizufügenden Unterlagen“. Açılınca şu demek: başvuruya eklenmesi gereken belgeler." },
-        { speaker: "Tuna", de: "Anscheinend fehlt bei mir genau eine davon.", tr: "Görünüşe göre bende tam olarak onlardan biri eksik." },
+        { speaker: "Patrick", de: "Anscheinend fehlt bei mir genau eine davon.", tr: "Görünüşe göre bende tam olarak onlardan biri eksik." },
         { speaker: "Ines", de: "Anscheinend, ja — nicht scheinbar. Scheinbar hieße: es sieht so aus, ist aber nicht so.", tr: "Görünüşe göre, evet — 'görünüşte' değil. 'Görünüşte' şu demek olurdu: öyle görünüyor ama değil." },
-        { speaker: "Tuna", de: "Verstanden. Diesbezüglich rufe ich morgen an, darauf komme ich dann zurück.", tr: "Anladım. Bu konuda yarın telefon ederim, sonra buna dönerim." },
+        { speaker: "Patrick", de: "Verstanden. Diesbezüglich rufe ich morgen an, darauf komme ich dann zurück.", tr: "Anladım. Bu konuda yarın telefon ederim, sonra buna dönerim." },
       ],
       questions: [
         { de: "Was rät Ines als ersten Schritt?", tr: "Ines ilk adım olarak ne öneriyor?", options: ["Den Satz laut lesen", "Zuerst Subjekt und finites Verb suchen", "Einen Anwalt fragen", "Den Text übersetzen"], answer: 1 },
@@ -649,11 +649,11 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       situation: "İki meslektaş kötü geçen bir sunumun ardından konuşuyor.",
       turns: [
         { speaker: "Jan", de: "Na, das lief ja super heute.", tr: "Ee, bugün her şey harika gitti." },
-        { speaker: "Elif", de: "Das war jetzt ironisch, oder? Sag es ruhig direkt.", tr: "Bu ironikti, değil mi? Rahatça doğrudan söyle." },
+        { speaker: "Paula", de: "Das war jetzt ironisch, oder? Sag es ruhig direkt.", tr: "Bu ironikti, değil mi? Rahatça doğrudan söyle." },
         { speaker: "Jan", de: "Ehrlich? Der Anfang war nicht schlecht. Beim zweiten Teil ist noch Luft nach oben.", tr: "Dürüst olayım mı? Giriş fena değildi. İkinci bölümde daha iyi olabilirdi." },
-        { speaker: "Elif", de: "„Nicht schlecht“ heißt bei dir also gut, und „Luft nach oben“ heißt: es reicht nicht.", tr: "Yani sende „fena değil“ iyi demek, „Luft nach oben“ ise yetmiyor demek." },
+        { speaker: "Paula", de: "„Nicht schlecht“ heißt bei dir also gut, und „Luft nach oben“ heißt: es reicht nicht.", tr: "Yani sende „fena değil“ iyi demek, „Luft nach oben“ ise yetmiyor demek." },
         { speaker: "Jan", de: "Genau. Alle Achtung übrigens für die Ruhe bei den Zwischenrufen — das war souverän.", tr: "Aynen. Bu arada laf atmalar sırasındaki sakinliğine helal olsun — duruma tamamen hâkimdin." },
-        { speaker: "Elif", de: "Danke. Und der Spruch über meine Folien? Der ist nicht gut angekommen.", tr: "Teşekkürler. Peki slaytlarım hakkındaki laf? O iyi karşılanmadı." },
+        { speaker: "Paula", de: "Danke. Und der Spruch über meine Folien? Der ist nicht gut angekommen.", tr: "Teşekkürler. Peki slaytlarım hakkındaki laf? O iyi karşılanmadı." },
         { speaker: "Jan", de: "Stimmt, das war auf deine Kosten. Ich nehme das zurück.", tr: "Doğru, o espri senin üzerinden yapılmıştı. Sözümü geri alıyorum." },
       ],
       questions: [

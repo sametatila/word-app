@@ -47,25 +47,25 @@ export const enA1U01: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hello! My name is Deniz. I am from Türkiye. I live in Izmir. Izmir is a big city. I am a student. I am not married.\n\n" +
+      "Hello! My name is Charlie. I am from Türkiye. I live in Izmir. Izmir is a big city. I am a student. I am not married.\n\n" +
       "Hello! My name is Ana. I am from Spain. I live in a town in the north. I am a teacher. I am very happy here.\n\n" +
-      "Hello! My name is Tom. I am from Ireland. I am not from Türkiye, but I live in Türkiye now. My city is Izmir too. Deniz and I meet on Friday.",
+      "Hello! My name is Tom. I am from Ireland. I am not from Türkiye, but I live in Türkiye now. My city is Izmir too. Charlie and I meet on Friday.",
     questions: [
       {
-        text: "Where is Deniz from?",
+        text: "Where is Charlie from?",
         options: ["Türkiye", "Spain", "Ireland"],
         answer: 0,
-        explain: "„I am from Türkiye.“ — Deniz Türkiye'den. Spain Ana'nın, Ireland Tom'un ülkesi.",
+        explain: "„I am from Türkiye.“ — Charlie Türkiye'den. Spain Ana'nın, Ireland Tom'un ülkesi.",
       },
       {
         text: "Who is a teacher?",
-        options: ["Ana", "Deniz", "Tom"],
+        options: ["Ana", "Charlie", "Tom"],
         answer: 0,
         explain: "„I am a teacher.“ satırı Ana'nın paragrafında. Deniz öğrenci, Tom ne olduğunu söylemiyor.",
       },
       {
         kind: "truefalse",
-        text: "Deniz is not married.",
+        text: "Charlie is not married.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I am not married.“ — „not“ cümleyi olumsuz yapıyor, yani evli değil.",
@@ -94,9 +94,9 @@ export const enA1U01: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 1,
-    title: "Mert meets Lena",
+    title: "Henry meets Lena",
     genre: "dialogue",
-    intro: "Mert ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hâl hatır sorma.",
+    intro: "Henry ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hâl hatır sorma.",
     gloss: [
       { de: "a little", tr: "biraz" },
       { de: "See you", tr: "görüşürüz" },
@@ -104,18 +104,18 @@ export const enA1U01: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Mert: Hello! Excuse me, are you a student here?\n" +
+      "Henry: Hello! Excuse me, are you a student here?\n" +
       "Lena: Hi! Yes, I am. My name is Lena.\n" +
-      "Mert: I am Mert. Where are you from, Lena?\n" +
+      "Henry: I am Henry. Where are you from, Lena?\n" +
       "Lena: I am from Germany. I live in Bremen. And you?\n" +
-      "Mert: I am from Türkiye. I live in this town now.\n" +
+      "Henry: I am from Türkiye. I live in this town now.\n" +
       "Lena: How are you today?\n" +
-      "Mert: I am fine, thanks. But I am very hungry! And you?\n" +
+      "Henry: I am fine, thanks. But I am very hungry! And you?\n" +
       "Lena: I am not hungry, I am thirsty. And I am a little tired.\n" +
-      "Mert: Are you a teacher too?\n" +
+      "Henry: Are you a teacher too?\n" +
       "Lena: No, I am not a teacher. I am a student.\n" +
-      "Mert: Good! See you on Monday. Goodbye!\n" +
-      "Lena: Goodbye, Mert!",
+      "Henry: Good! See you on Monday. Goodbye!\n" +
+      "Lena: Goodbye, Henry!",
     questions: [
       {
         text: "Where is Lena from?",
@@ -124,7 +124,7 @@ export const enA1U01: SkillExercise[] = [
         explain: "„I am from Germany. I live in Bremen.“ — ülke Almanya, şehir Bremen.",
       },
       {
-        text: "How is Mert today?",
+        text: "How is Henry today?",
         options: ["fine, but hungry", "sick and sad", "tired and thirsty"],
         answer: 0,
         explain: "„I am fine, thanks. But I am very hungry!“ — yorgun ve susamış olan Lena.",
@@ -159,7 +159,7 @@ export const enA1U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Is Mert from Türkiye?",
+        text: "Is Henry from Türkiye?",
         options: [],
         answer: 0,
         accept: ["Yes", "Yes, he is"],
@@ -246,7 +246,7 @@ export const enA1U01: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 1,
-    title: "Mr. Kaya and Ms. Rossi",
+    title: "Mr. Ellis and Ms. Rossi",
     genre: "dialogue",
     intro: "Resmî bir tanışma. Dikkat: burada ad değil, „Mr.“ ve „Ms.“ ile soyadı kullanılıyor.",
     gloss: [
@@ -258,23 +258,23 @@ export const enA1U01: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ms. Rossi", text: "Excuse me. Are you Mr. Kaya?" },
-      { speaker: "Mr. Kaya", text: "Yes, I am. Good morning!" },
+      { speaker: "Ms. Rossi", text: "Excuse me. Are you Mr. Ellis?" },
+      { speaker: "Mr. Ellis", text: "Yes, I am. Good morning!" },
       { speaker: "Ms. Rossi", text: "Good morning. My name is Sofia Rossi." },
-      { speaker: "Mr. Kaya", text: "Nice to meet you, Ms. Rossi. Where are you from?" },
+      { speaker: "Mr. Ellis", text: "Nice to meet you, Ms. Rossi. Where are you from?" },
       { speaker: "Ms. Rossi", text: "I am from Italy, but I live in Ankara now." },
-      { speaker: "Mr. Kaya", text: "Ankara is a big city. Are you a student here?" },
+      { speaker: "Mr. Ellis", text: "Ankara is a big city. Are you a student here?" },
       { speaker: "Ms. Rossi", text: "No, I am not a student. I am a teacher." },
-      { speaker: "Mr. Kaya", text: "And how are you today?" },
+      { speaker: "Mr. Ellis", text: "And how are you today?" },
       { speaker: "Ms. Rossi", text: "I am fine, thanks. And you?" },
-      { speaker: "Mr. Kaya", text: "I am a little tired, but I am happy." },
-      { speaker: "Ms. Rossi", text: "Goodbye, Mr. Kaya." },
-      { speaker: "Mr. Kaya", text: "Goodbye, Ms. Rossi. See you on Friday!" },
+      { speaker: "Mr. Ellis", text: "I am a little tired, but I am happy." },
+      { speaker: "Ms. Rossi", text: "Goodbye, Mr. Ellis." },
+      { speaker: "Mr. Ellis", text: "Goodbye, Ms. Rossi. See you on Friday!" },
     ],
     questions: [
       {
         text: "What is the name of the teacher?",
-        options: ["Sofia Rossi", "Mr. Kaya", "Ankara"],
+        options: ["Sofia Rossi", "Mr. Ellis", "Ankara"],
         answer: 0,
         explain: "İki satırı birleştir: „I am a teacher.“ diyen kişi „My name is Sofia Rossi.“ diyen kişi. Ankara şehir, kişi değil.",
       },
@@ -305,7 +305,7 @@ export const enA1U01: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Excuse me. Are you Mr. Kaya?",
+          "Excuse me. Are you Mr. Ellis?",
           "My name is Sofia Rossi.",
           "Where are you from?",
           "I am from Italy.",
@@ -314,7 +314,7 @@ export const enA1U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How is Mr. Kaya today?",
+        text: "How is Mr. Ellis today?",
         options: [],
         answer: 0,
         accept: ["a little tired", "tired", "tired but happy", "a little tired but happy"],
@@ -330,7 +330,7 @@ export const enA1U01: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 1,
-    title: "A card for Ali",
+    title: "A card for Harry",
     genre: "profile",
     intro: "Kendini tanıtmayı yazarak çalış. Önce parçaları birleştir, sonra tanışma kartını doldur.",
     gloss: [
@@ -368,10 +368,10 @@ export const enA1U01: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "Tanışma kartını Ali için doldur.",
-        facts: "Ali Demir; Türkiye'den; şu an Bremen'de yaşıyor.",
+        prompt: "Tanışma kartını Harry için doldur.",
+        facts: "Harry Adams; Türkiye'den; şu an Bremen'de yaşıyor.",
         fields: [
-          { label: "Name", answer: "Ali Demir", accept: ["Ali", "Demir"] },
+          { label: "Name", answer: "Harry Adams", accept: ["Harry", "Adams"] },
           { label: "Country", answer: "Türkiye", accept: ["Turkey"] },
           { label: "City", answer: "Bremen" },
         ],

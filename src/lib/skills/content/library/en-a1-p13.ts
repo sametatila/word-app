@@ -212,9 +212,9 @@ export const enA1P13: SkillExercise[] = [
           { de: "Can you come on …?", tr: "… günü gelebilir misin?" },
         ],
         sample:
-          "Hi Defne, I have a new apartment! It is on Maple Street, near the river. There are two rooms, a small kitchen " +
+          "Hi Gina, I have a new apartment! It is on Maple Street, near the river. There are two rooms, a small kitchen " +
           "and a balcony. There is a big window in the kitchen and I can see the park from my room. The only problem is " +
-          "the street: it is loud in the morning. Can you come on Saturday at six? I can cook for us. Love, Pelin",
+          "the street: it is loud in the morning. Can you come on Saturday at six? I can cook for us. Love, Jodie",
       },
     ],
   },
@@ -327,7 +327,7 @@ export const enA1P13: SkillExercise[] = [
         heading: "there was / there were ve born",
         tr: "„vardı“ demek için tekilde „there was“, çoğulda „there were“ kullanılır. Doğum da was / were ile söylenir: I was born in May. Türkçedeki „doğdum“ gibi tek bir fiil yoktur.",
         examples: [
-          { de: "There was a party at Ela's apartment.", tr: "Ela'nın evinde bir parti vardı.", note: "tekil → was" },
+          { de: "There was a party at Lucy's apartment.", tr: "Lucy'nin evinde bir parti vardı.", note: "tekil → was" },
           { de: "There were twenty people at the party.", tr: "Partide yirmi kişi vardı.", note: "çoğul → were" },
           { de: "I was born in May.", tr: "Mayısta doğdum.", note: "born: was ile" },
         ],
@@ -347,7 +347,7 @@ export const enA1P13: SkillExercise[] = [
         explain: "„you“ ile were kullanılır ve soruda başa geçer; did gerekmez.",
       },
       {
-        text: "There ___ a party at Ela's apartment on Friday.",
+        text: "There ___ a party at Lucy's apartment on Friday.",
         options: ["was", "were", "are"],
         answer: 0,
         explain: "„a party“ tekil ve geçmişte, bu yüzden there was.",

@@ -220,7 +220,7 @@ export const deA2P15: SkillExercise[] = [
           "nasse Feld gehen. Außerdem hängt direkt über dem Weg ein dicker Ast. Er kann jederzeit herunterfallen. " +
           "Das ist besonders für Kinder und ältere Leute gefährlich, denn am Wochenende sind dort viele Familien unterwegs. " +
           "Könnten Sie den Weg bitte bald frei machen oder wenigstens ein Schild aufstellen? Ein Foto schicke ich Ihnen im Anhang.\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Kaya",
+          "Mit freundlichen Grüßen\nSascha Graf",
       },
     ],
   },

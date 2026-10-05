@@ -149,7 +149,7 @@
      },
      {
       "lang": "en",
-      "text": "My name is Deniz."
+      "text": "My name is Charlie."
      },
      {
       "lang": "tr",
@@ -161,16 +161,16 @@
      },
      {
       "lang": "tr",
-      "text": "isim, \"is\" -dir. Yani \"benim ismim Deniz\". Lütfen tekrar et:"
+      "text": "isim, \"is\" -dir. Yani \"benim ismim Charlie\". Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "My name is Deniz."
+      "text": "My name is Charlie."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "My name is Deniz."
+     "target": "My name is Charlie."
     }
    },
    {
@@ -189,7 +189,7 @@
      },
      {
       "lang": "en",
-      "text": "I'm Deniz."
+      "text": "I'm Charlie."
      },
      {
       "lang": "en",
@@ -205,16 +205,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende. Adın Ali olsun. Kendini tanıt: \"Benim adım Ali.\" Nasıl dersin?"
+      "text": "Sıra sende. Adın Harry olsun. Kendini tanıt: \"Benim adım Harry.\" Nasıl dersin?"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "My name is Ali.",
+     "target": "My name is Harry.",
      "accept": [
-      "I'm Ali.",
-      "I am Ali.",
-      "My name's Ali."
+      "I'm Harry.",
+      "I am Harry.",
+      "My name's Harry."
      ],
      "hint": [
       {
@@ -227,7 +227,7 @@
       },
       {
        "lang": "en",
-       "text": "My name is Ali."
+       "text": "My name is Harry."
       },
       {
        "lang": "tr",
@@ -280,7 +280,7 @@
      },
      {
       "lang": "en",
-      "text": "Hi! My name is Deniz."
+      "text": "Hi! My name is Charlie."
      },
      {
       "lang": "tr",
@@ -584,21 +584,21 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi hepsini birleştiriyoruz. Adın Deniz, Türkiyelisin. Selam ver, adını söyle ve nereli olduğunu ekle."
+      "text": "Şimdi hepsini birleştiriyoruz. Adın Charlie, Türkiyelisin. Selam ver, adını söyle ve nereli olduğunu ekle."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Hello, my name is Deniz. I'm from Türkiye.",
+     "target": "Hello, my name is Charlie. I'm from Türkiye.",
      "accept": [
-      "Hello, my name is Deniz. I'm from Turkey.",
-      "Hello, I'm Deniz. I'm from Turkey.",
-      "Hi, my name is Deniz. I'm from Turkey.",
-      "Hello, my name is Deniz. I am from Turkey.",
-      "Hi, I'm Deniz. I'm from Turkey.",
-      "Hi, I am Deniz. I am from Turkey.",
-      "Hello, I am Deniz. I am from Turkey.",
-      "Hi, my name is Deniz. I am from Turkey."
+      "Hello, my name is Charlie. I'm from Turkey.",
+      "Hello, I'm Charlie. I'm from Turkey.",
+      "Hi, my name is Charlie. I'm from Turkey.",
+      "Hello, my name is Charlie. I am from Turkey.",
+      "Hi, I'm Charlie. I'm from Turkey.",
+      "Hi, I am Charlie. I am from Turkey.",
+      "Hello, I am Charlie. I am from Turkey.",
+      "Hi, my name is Charlie. I am from Turkey."
      ],
      "hint": [
       {
@@ -615,7 +615,7 @@
       },
       {
        "lang": "en",
-       "text": "my name is Deniz"
+       "text": "my name is Charlie"
       },
       {
        "lang": "tr",
@@ -631,7 +631,7 @@
       },
       {
        "lang": "en",
-       "text": "Hello, my name is Deniz. I'm from Türkiye."
+       "text": "Hello, my name is Charlie. I'm from Türkiye."
       },
       {
        "lang": "tr",
@@ -664,7 +664,7 @@
      },
      {
       "lang": "en",
-      "text": "Hi! My name is Deniz. I'm from Trabzon, and I live in Istanbul. Nice to meet you."
+      "text": "Hi! My name is Charlie. I'm from Trabzon, and I live in Istanbul. Nice to meet you."
      },
      {
       "lang": "tr",
@@ -4044,7 +4044,7 @@
     "tr": "bir şeyin nasıl yazıldığını sorarken kullanılır"
    },
    {
-    "de": "My name is Emre. E, M, R, E.",
+    "de": "My name is Owen. E, M, R, E.",
     "tr": "adını söyleyip harf harf tekrarlarken kullanılır"
    },
    {
@@ -4376,7 +4376,7 @@
      },
      {
       "lang": "en",
-      "text": "My name is Emre. E, M, R, E."
+      "text": "My name is Owen. E, M, R, E."
      },
      {
       "lang": "tr",
@@ -6121,11 +6121,11 @@
      },
      {
       "lang": "en",
-      "text": "My name is Ayse."
+      "text": "My name is Rachel."
      },
      {
       "lang": "tr",
-      "text": "Benim adım Ayşe. Sen kendi adınla söyleyebilirsin: My name is… ve adın."
+      "text": "Benim adım Rachel. Sen kendi adınla söyleyebilirsin: My name is… ve adın."
      }
     ]
    },
@@ -6725,7 +6725,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün aileni tanıtmayı öğreneceğiz. 'Bu benim annem', 'Onun adı Ali', 'Bir erkek kardeşim var' gibi cümleler kuracaksın. Hazır mısın?"
+      "text": "Merhaba! Bugün aileni tanıtmayı öğreneceğiz. 'Bu benim annem', 'Onun adı Harry', 'Bir erkek kardeşim var' gibi cümleler kuracaksın. Hazır mısın?"
      }
     ],
     "expect": {
@@ -7082,7 +7082,7 @@
      },
      {
       "lang": "en",
-      "text": "This is my brother. His name is Ali."
+      "text": "This is my brother. His name is Harry."
      }
     ]
    },
@@ -7090,14 +7090,14 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şunu sen kur: annenden söz ediyorsun ve 'Onun adı Ayşe.' demek istiyorsun."
+      "text": "Şunu sen kur: annenden söz ediyorsun ve 'Onun adı Rachel.' demek istiyorsun."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Her name is Ayşe",
+     "target": "Her name is Rachel",
      "accept": [
-      "Her name's Ayşe"
+      "Her name's Rachel"
      ],
      "hint": [
       {
@@ -7114,7 +7114,7 @@
       },
       {
        "lang": "en",
-       "text": "Her name is Ayşe."
+       "text": "Her name is Rachel."
       },
       {
        "lang": "tr",
@@ -7212,7 +7212,7 @@
      },
      {
       "lang": "en",
-      "text": "This is my sister. Her name is Ayşe."
+      "text": "This is my sister. Her name is Rachel."
      },
      {
       "lang": "tr",
@@ -7221,7 +7221,7 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "This is my sister. Her name is Ayşe.",
+     "statement": "This is my sister. Her name is Rachel.",
      "answer": true,
      "why": [
       {
@@ -11582,7 +11582,7 @@
     "tr": "bir akrabanı tanıtırken kullanılır"
    },
    {
-    "de": "Ali's cousin",
+    "de": "Harry's cousin",
     "tr": "kimin kimi olduğunu söylerken: isim + 's"
    },
    {
@@ -11746,7 +11746,7 @@
      },
      {
       "lang": "en",
-      "text": "Ali's cousin"
+      "text": "Harry's cousin"
      },
      {
       "lang": "tr",
@@ -11807,18 +11807,18 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Ali's cousin",
+     "target": "Harry's cousin",
      "accept": [
       "Alis cousin"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce isim, sonra kesme işaretli s, sonra akraba: Ali artı 's artı cousin."
+       "text": "Önce isim, sonra kesme işaretli s, sonra akraba: Harry artı 's artı cousin."
       },
       {
        "lang": "en",
-       "text": "Ali's cousin."
+       "text": "Harry's cousin."
       },
       {
        "lang": "tr",
@@ -12008,23 +12008,23 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi ikisini birleştirelim. 'Bu Elif'in büyükannesi.' cümlesini kur."
+      "text": "Şimdi ikisini birleştirelim. 'Bu Holly'nin büyükannesi.' cümlesini kur."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "This is Elif's grandmother.",
+     "target": "This is Holly's grandmother.",
      "accept": [
-      "This is Elif's grandma."
+      "This is Holly's grandma."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "This is ile başla, sonra Elif artı kesme işaretli s, sonra büyükanne."
+       "text": "This is ile başla, sonra Holly artı kesme işaretli s, sonra büyükanne."
       },
       {
        "lang": "en",
-       "text": "This is Elif's grandmother."
+       "text": "This is Holly's grandmother."
       },
       {
        "lang": "tr",
@@ -12065,7 +12065,7 @@
      },
      {
       "lang": "en",
-      "text": "Ali's cousin,"
+      "text": "Harry's cousin,"
      },
      {
       "lang": "en",
@@ -14015,7 +14015,7 @@
   "titleTr": "Büfede",
   "summary": "Büfede kibarca bir şey isteme (Can I have …?) ve fiyat sorma kalıplarını öğretir.",
   "minutes": 8,
-  "focusId": "Can-I-have",
+  "focusId": "Tyler-I-have",
   "vocab": [
    {
     "de": "buy",
@@ -28873,7 +28873,7 @@
   "titleTr": "Değişim ve iade",
   "summary": "Mağazada aldığın bir ürünü değiştirmeyi ya da iade etmeyi İngilizce olarak kibarca istemeyi öğreniyorsun.",
   "minutes": 9,
-  "focusId": "Can-I-have",
+  "focusId": "Tyler-I-have",
   "vocab": [
    {
     "de": "change",
@@ -31574,11 +31574,11 @@
      },
      {
       "lang": "en",
-      "text": "My address is 5 Bahar Street."
+      "text": "My address is 5 Gwen Street."
      },
      {
       "lang": "tr",
-      "text": "Yani 'Adresim Bahar Sokak numara beş.' Dikkat: İngilizcede önce numara, sonra sokak adı gelir — Türkçenin tersi."
+      "text": "Yani 'Adresim Gwen Sokak numara beş.' Dikkat: İngilizcede önce numara, sonra sokak adı gelir — Türkçenin tersi."
      }
     ]
    },
@@ -31590,7 +31590,7 @@
      },
      {
       "lang": "en",
-      "text": "My address is 5 Bahar Street."
+      "text": "My address is 5 Gwen Street."
      },
      {
       "lang": "tr",
@@ -31599,7 +31599,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "My address is 5 Bahar Street."
+     "target": "My address is 5 Gwen Street."
     }
    },
    {
@@ -34441,7 +34441,7 @@
   "titleTr": "Takside",
   "summary": "Takside şoföre adres verip yolun ne kadar süreceğini ve uzak olup olmadığını İngilizce sormayı öğretir.",
   "minutes": 8,
-  "focusId": "Can-I-have",
+  "focusId": "Tyler-I-have",
   "vocab": [
    {
     "de": "taxi",
@@ -35763,7 +35763,7 @@
   "titleTr": "Gezilecek yerler",
   "summary": "\"can\" ile bir yerde neler yapabileceğini söylemeyi ve izin sormayı öğretir: You can visit the museum, Can I see the park?",
   "minutes": 8,
-  "focusId": "Can",
+  "focusId": "Tyler",
   "vocab": [
    {
     "de": "visit",
@@ -42518,7 +42518,7 @@
   "titleTr": "Taşınma",
   "summary": "Taşınırken kutular hakkında konuşmayı ve can / can't ile yardım istemeyi öğretir.",
   "minutes": 8,
-  "focusId": "Can",
+  "focusId": "Tyler",
   "vocab": [
    {
     "de": "box",
@@ -47861,7 +47861,7 @@
      },
      {
       "lang": "tr",
-      "text": "Çimen, yani grass. Lütfen grass de."
+      "text": "Jackson, yani grass. Lütfen grass de."
      }
     ],
     "expect": {
@@ -48398,7 +48398,7 @@
   "titleTr": "Havuzda",
   "summary": "Havuz kelimeleriyle birlikte \"can\" kullanarak neyi yapabildiğini, neyi yapamadığını söylemeyi ve karşındakine sormayı öğreniyorsun.",
   "minutes": 9,
-  "focusId": "Can",
+  "focusId": "Tyler",
   "vocab": [
    {
     "de": "swim",
@@ -50148,7 +50148,7 @@
   ],
   "patterns": [
    {
-    "de": "I'm going to meet Ali tomorrow.",
+    "de": "I'm going to meet Harry tomorrow.",
     "tr": "kendi planını söylerken kullanılır"
    },
    {
@@ -50328,20 +50328,20 @@
      },
      {
       "lang": "en",
-      "text": "I'm going to meet Ali tomorrow."
+      "text": "I'm going to meet Harry tomorrow."
      },
      {
       "lang": "tr",
-      "text": "\"Yarın Ali'yle buluşacağım.\" Yavaşça benimle söyle:"
+      "text": "\"Yarın Harry'yle buluşacağım.\" Yavaşça benimle söyle:"
      },
      {
       "lang": "en",
-      "text": "I'm going to meet Ali tomorrow."
+      "text": "I'm going to meet Harry tomorrow."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I'm going to meet Ali tomorrow."
+     "target": "I'm going to meet Harry tomorrow."
     }
    },
    {
@@ -50408,16 +50408,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende. Şunu İngilizce kur: \"Yarın Ali'yle buluşacağım.\""
+      "text": "Sıra sende. Şunu İngilizce kur: \"Yarın Harry'yle buluşacağım.\""
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I'm going to meet Ali tomorrow.",
+     "target": "I'm going to meet Harry tomorrow.",
      "accept": [
-      "I am going to meet Ali tomorrow.",
-      "Tomorrow I'm going to meet Ali.",
-      "Tomorrow I am going to meet Ali."
+      "I am going to meet Harry tomorrow.",
+      "Tomorrow I'm going to meet Harry.",
+      "Tomorrow I am going to meet Harry."
      ],
      "hint": [
       {
@@ -50430,7 +50430,7 @@
       },
       {
        "lang": "en",
-       "text": "I'm going to meet Ali tomorrow."
+       "text": "I'm going to meet Harry tomorrow."
       },
       {
        "lang": "tr",
@@ -50721,7 +50721,7 @@
      },
      {
       "lang": "en",
-      "text": "I'm going to meet Ali tomorrow. Are you going to come? Let's meet at seven."
+      "text": "I'm going to meet Harry tomorrow. Are you going to come? Let's meet at seven."
      }
     ]
    },
@@ -52462,7 +52462,7 @@
      },
      {
       "lang": "en",
-      "text": "Can"
+      "text": "Tyler"
      },
      {
       "lang": "tr",
@@ -54294,11 +54294,11 @@
      },
      {
       "lang": "en",
-      "text": "Hi, this is Ayse. I'm calling because I'm sick."
+      "text": "Hi, this is Rachel. I'm calling because I'm sick."
      },
      {
       "lang": "tr",
-      "text": "Yani 'Merhaba, ben Ayşe. Hasta olduğum için arıyorum.' Telefonda 'ben' derken I am değil, this is denir."
+      "text": "Yani 'Merhaba, ben Rachel. Hasta olduğum için arıyorum.' Telefonda 'ben' derken I am değil, this is denir."
      }
     ]
    },
@@ -55777,7 +55777,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Emir cümlesi sert durabilir. Başına ya da sonuna please eklersen yumuşar."
+      "text": "Ethan cümlesi sert durabilir. Başına ya da sonuna please eklersen yumuşar."
      },
      {
       "lang": "en",
@@ -57082,7 +57082,7 @@
   ],
   "patterns": [
    {
-    "de": "Hello, this is Ayse.",
+    "de": "Hello, this is Rachel.",
     "tr": "telefonda kendini tanıtırken kullanılır"
    },
    {
@@ -57278,7 +57278,7 @@
      },
      {
       "lang": "en",
-      "text": "I am Ayse"
+      "text": "I am Rachel"
      },
      {
       "lang": "tr",
@@ -57286,7 +57286,7 @@
      },
      {
       "lang": "en",
-      "text": "This is Ayse."
+      "text": "This is Rachel."
      },
      {
       "lang": "tr",
@@ -57298,16 +57298,16 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Deneyelim. Telefonu açtın ve kendini tanıtıyorsun. Adın Ayşe. 'Merhaba, ben Ayşe.' cümlesini İngilizce söyle."
+      "text": "Deneyelim. Telefonu açtın ve kendini tanıtıyorsun. Adın Rachel. 'Merhaba, ben Rachel.' cümlesini İngilizce söyle."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Hello, this is Ayse.",
+     "target": "Hello, this is Rachel.",
      "accept": [
-      "Hi, this is Ayse.",
-      "This is Ayse.",
-      "Hello, this is Ayse."
+      "Hi, this is Rachel.",
+      "This is Rachel.",
+      "Hello, this is Rachel."
      ],
      "hint": [
       {
@@ -57324,7 +57324,7 @@
       },
       {
        "lang": "en",
-       "text": "Hello, this is Ayse."
+       "text": "Hello, this is Rachel."
       },
       {
        "lang": "tr",
@@ -57700,7 +57700,7 @@
      },
      {
       "lang": "en",
-      "text": "This is Ayse."
+      "text": "This is Rachel."
      },
      {
       "lang": "tr",
@@ -58909,7 +58909,7 @@
      },
      {
       "lang": "en",
-      "text": "Best wishes, Ali"
+      "text": "Best wishes, Harry"
      }
     ]
    },
@@ -58972,7 +58972,7 @@
      },
      {
       "lang": "en",
-      "text": "Best wishes, Ali"
+      "text": "Best wishes, Harry"
      }
     ]
    },

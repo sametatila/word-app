@@ -95,7 +95,7 @@ Please bring your children. We have games and music.
 
 Bad weather? Then we go to the big room in the basement.
 
-The Aydin family, apartment 3B`,
+The Kelly family, apartment 3B`,
               gloss: [
                 { de: "free", tr: "ücretsiz", en: "kostenlos" },
                 { de: "the basement", tr: "bodrum", en: "der Keller" },
@@ -383,7 +383,7 @@ Yesterday I {{17}} on a boat trip on the river. It was my best day here.
 I come home {{18}} Sunday evening. I bring you a small present!
 
 Love,
-Nuray`,
+Cara`,
             },
           ],
           items: [
@@ -844,9 +844,9 @@ Nuray`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your friend Aylin Kaya wants a library card for her daughter. The daughter is nine years old. The family lives at 24 Park Road, Portland, ZIP code 97205. Aylin wants to come on Saturday. She pays by card, not with cash. Five things are missing from the form. Write them in the gaps.",
+            "Your friend Martha Morgan wants a library card for her daughter. The daughter is nine years old. The family lives at 24 Park Road, Portland, ZIP code 97205. Martha wants to come on Saturday. She pays by card, not with cash. Five things are missing from the form. Write them in the gaps.",
           promptTr:
-            "Arkadaşın Aylin Kaya kızı için kütüphane kartı istiyor. Kızı dokuz yaşında. Aile 24 Park Road, Portland, posta kodu 97205 adresinde oturuyor. Aylin cumartesi gelmek istiyor. Nakit değil kartla ödüyor. Formda beş bilgi eksik; boşluklara yaz.",
+            "Arkadaşın Martha Morgan kızı için kütüphane kartı istiyor. Kızı dokuz yaşında. Aile 24 Park Road, Portland, posta kodu 97205 adresinde oturuyor. Martha cumartesi gelmek istiyor. Nakit değil kartla ödüyor. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
             {
               kind: "text",
@@ -854,13 +854,13 @@ Nuray`,
               genre: "Form",
               genreTr: "Form",
               title: "LIBRARY CARD — APPLICATION",
-              body: `Family name, first name:   Kaya, Aylin
+              body: `Family name, first name:   Morgan, Martha
 Age of the child:          {{1}}
 Street and number:         {{2}}
 ZIP code:                  {{3}} Portland
 First visit:               {{4}}
 Payment:                   {{5}}
-Signature:                 A. Kaya`,
+Signature:                 A. Morgan`,
             },
           ],
           items: [
@@ -898,7 +898,7 @@ Signature:                 A. Kaya`,
               text: "First visit",
               accept: ["Saturday", "on Saturday"],
               explain:
-                "Yönerge «Aylin wants to come on Saturday» diyor; ilk geliş günü cumartesi. Gün adı büyük harfle yazılır ama karşılaştırma büyük-küçük harfe bakmadığı için küçük yazım da doğru sayılır.",
+                "Yönerge «Martha wants to come on Saturday» diyor; ilk geliş günü cumartesi. Gün adı büyük harfle yazılır ama karşılaştırma büyük-küçük harfe bakmadığı için küçük yazım da doğru sayılır.",
             },
             {
               kind: "gap",
@@ -935,7 +935,7 @@ I am coming to your city in June and I want to visit the museum. When is the mus
 Thank you very much.
 
 Best wishes,
-Deniz Arslan`,
+Charlie Nolan`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Hitap ve veda var mı? (Dear Sir or Madam … / Best wishes …)",
@@ -974,7 +974,7 @@ Deniz Arslan`,
               { de: "one free time activity", tr: "Bir boş zaman etkinliği" },
             ],
             sample:
-              "My name is Elif Demir. I am twenty-three years old and I come from Türkiye. Now I live in Bristol. I speak Turkish, a little English and some German. I am a nurse. In my free time I like swimming.",
+              "My name is Holly Adams. I am twenty-three years old and I come from Türkiye. Now I live in Bristol. I speak Turkish, a little English and some German. I am a nurse. In my free time I like swimming.",
             criteria: [
               "Yedi sözcüğün her birine değinildi mi?",
               "Cümleler kısa ve tam mı? A1'de «My name is …», «I come from …» kalıpları yeterli.",

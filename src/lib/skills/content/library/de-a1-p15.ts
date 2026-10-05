@@ -207,10 +207,10 @@ export const deA1P15: SkillExercise[] = [
           { de: "Dürfen wir einen Hund haben?", tr: "Köpek besleyebilir miyiz?", en: "May we have a dog?" },
         ],
         sample:
-          "Sehr geehrter Herr Schmitt, ich heiße Merve Kaya und wohne mit meinem Mann in der Wohnung 5 im zweiten Stock. " +
+          "Sehr geehrter Herr Schmitt, ich heiße Karla Graf und wohne mit meinem Mann in der Wohnung 5 im zweiten Stock. " +
           "Wir möchten gern einen kleinen Hund aus dem Tierheim nehmen. Er heißt Pepe, ist vier Jahre alt und sehr ruhig. " +
           "Wir arbeiten beide nur am Vormittag und haben viel Zeit für ihn. " +
-          "Dürfen wir einen Hund in der Wohnung haben? Mit freundlichen Grüßen, Merve Kaya",
+          "Dürfen wir einen Hund in der Wohnung haben? Mit freundlichen Grüßen, Karla Graf",
       },
     ],
   },

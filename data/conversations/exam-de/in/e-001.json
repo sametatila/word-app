@@ -285,7 +285,7 @@
    ],
    "ctx": [
     "A1.7 Home and living · yazma kalıbı",
-    "A1.7 Home and living · Mrs. Demir"
+    "A1.7 Home and living · Mrs. Adams"
    ]
   },
   {
@@ -404,7 +404,7 @@
    ]
   },
   {
-   "tr": "Dilek kipiyle bir talep yaz",
+   "tr": "Sandy kipiyle bir talep yaz",
    "kind": "writing.checklist",
    "n": 2,
    "de": [],
@@ -1006,8 +1006,8 @@
     "A1.1 Nice to meet you · okuma sorusu"
    ],
    "options": [
-    "Elif",
-    "Yilmaz",
+    "Holly",
+    "Hayes",
     "Boston",
     "Teacher"
    ]
@@ -1222,11 +1222,11 @@
    ]
   },
   {
-   "tr": "Elif nereli?",
+   "tr": "Holly nereli?",
    "kind": "question",
    "n": 1,
    "de": [
-    "Where is Elif from?"
+    "Where is Holly from?"
    ],
    "ctx": [
     "A1.1 Nice to meet you · dinleme sorusu"

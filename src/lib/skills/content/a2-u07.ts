@@ -110,7 +110,7 @@ export const a2U07: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Sehr geehrte Frau Demir,\n\n" +
+      "Sehr geehrte Frau Böhm,\n\n" +
       "vielen Dank für Ihren Anruf. Mit diesem Bescheid bestätigen wir Ihre neue Adresse.\n\n" +
       "Ihre alte Versichertenkarte ist noch bis zum 31. Dezember gültig. Vorher schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.\n\n" +
       "Eine Sache ist aber notwendig: Bitte schicken Sie uns eine Kopie Ihres Arbeitsvertrags. Ohne dieses Dokument sind Sie ab Januar nicht mehr berechtigt, unsere Leistungen zu nutzen.\n\n" +
@@ -132,7 +132,7 @@ export const a2U07: SkillExercise[] = [
         explain: "Sıfat yüklem olarak kullanıldığı için ek almıyor: „ist gültig“.",
       },
       {
-        text: "Was soll Frau Demir schicken?",
+        text: "Was soll Frau Böhm schicken?",
         options: ["Eine neue Karte", "Eine Kopie des Arbeitsvertrags", "Ein Foto"],
         answer: 1,
         explain: "„Bitte schicken Sie uns eine Kopie Ihres Arbeitsvertrags.“ Yeni kartı sigorta kendisi gönderiyor.",
@@ -146,7 +146,7 @@ export const a2U07: SkillExercise[] = [
         explain: "„Ohne dieses Dokument sind Sie ab Januar nicht mehr berechtigt.“",
       },
       {
-        text: "Frau Demir bekommt die neue Karte automatisch.",
+        text: "Frau Böhm bekommt die neue Karte automatisch.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "Doğru: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“",
@@ -343,7 +343,7 @@ export const a2U07: SkillExercise[] = [
         kind: "reply",
         prompt: "Sigortadan gelen mektuba cevap yaz. Belgeyi gönderdiğini söyle, kartının ne zamana kadar geçerli olduğunu teyit et ve bir soru sor.",
         stimulus:
-          "Sehr geehrte Frau Demir,\n\nmit diesem Bescheid bestätigen wir Ihre neue Adresse. Ihre alte Karte ist noch bis zum 31. Dezember gültig.\n\nBitte schicken Sie uns eine Kopie Ihres Arbeitsvertrags. Ohne dieses Dokument sind Sie ab Januar nicht mehr berechtigt, unsere Leistungen zu nutzen.\n\nMit freundlichen Grüßen\nAOK Nordwest",
+          "Sehr geehrte Frau Böhm,\n\nmit diesem Bescheid bestätigen wir Ihre neue Adresse. Ihre alte Karte ist noch bis zum 31. Dezember gültig.\n\nBitte schicken Sie uns eine Kopie Ihres Arbeitsvertrags. Ohne dieses Dokument sind Sie ab Januar nicht mehr berechtigt, unsere Leistungen zu nutzen.\n\nMit freundlichen Grüßen\nAOK Nordwest",
         checklist: [
           "Resmî hitapla başladın mı („Sehr geehrte Damen und Herren“)?",
           "Belgeyi gönderdiğini yazdın mı?",
@@ -357,7 +357,7 @@ export const a2U07: SkillExercise[] = [
           { de: "Mit freundlichen Grüßen", tr: "saygılarımla", en: "sincerely" },
         ],
         sample:
-          "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihren Bescheid vom 3. November.\n\nIm Anhang finden Sie eine Kopie meines Arbeitsvertrags. Ich hoffe, das Dokument reicht so.\n\nKönnen Sie mir bitte bestätigen, dass meine alte Karte wirklich bis zum 31. Dezember gültig ist? Ich habe im Januar einen Termin beim Zahnarzt und möchte sicher sein, dass alles in Ordnung ist.\n\nIst für die Zahnbehandlung noch etwas anderes notwendig?\n\nMit freundlichen Grüßen\nAyşe Demir",
+          "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihren Bescheid vom 3. November.\n\nIm Anhang finden Sie eine Kopie meines Arbeitsvertrags. Ich hoffe, das Dokument reicht so.\n\nKönnen Sie mir bitte bestätigen, dass meine alte Karte wirklich bis zum 31. Dezember gültig ist? Ich habe im Januar einen Termin beim Zahnarzt und möchte sicher sein, dass alles in Ordnung ist.\n\nIst für die Zahnbehandlung noch etwas anderes notwendig?\n\nMit freundlichen Grüßen\nSvenja Böhm",
       },
     ],
   },

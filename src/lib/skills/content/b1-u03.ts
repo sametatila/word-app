@@ -120,7 +120,7 @@ export const b1U03: SkillExercise[] = [
       "Der Flur ist lang und dunkel. Frei ab dem ersten Juli.\n\n" +
       "Wohnung C: Erdgeschoss, sechzig Quadratmeter, alter Zustand, günstig. " +
       "Der Mieter muss selbst renovieren. Zusätzlich gibt es einen kleinen Garten.\n\n" +
-      "Notiz von Herrn Kaya: Ich ziehe im August aus meiner alten Wohnung aus, also passt B " +
+      "Notiz von Herrn Graf: Ich ziehe im August aus meiner alten Wohnung aus, also passt B " +
       "vom Datum her am besten. Aber ich überlege, ob ich die hohen Kosten im Winter bezahlen will. " +
       "Wohnung A ist kleiner, dafür ist der Zustand besser und ich könnte sofort einziehen. " +
       "Wohnung C wäre günstig, aber ich habe keine Zeit zu renovieren. " +
@@ -139,13 +139,13 @@ export const b1U03: SkillExercise[] = [
         explain: "„… aber im Winter teuer zu heizen.“",
       },
       {
-        text: "Warum passt Wohnung C nicht für Herrn Kaya?",
+        text: "Warum passt Wohnung C nicht für Herrn Graf?",
         options: ["Sie ist zu teuer", "Er hat keine Zeit zu renovieren", "Sie ist zu klein"],
         answer: 1,
         explain: "„Wohnung C wäre günstig, aber ich habe keine Zeit zu renovieren.“",
       },
       {
-        text: "Wann zieht Herr Kaya aus seiner alten Wohnung aus?",
+        text: "Wann zieht Herr Graf aus seiner alten Wohnung aus?",
         options: ["Im Juli", "Im August", "Im September"],
         answer: 1,
         explain: "„Ich ziehe im August aus meiner alten Wohnung aus.“",
@@ -188,18 +188,18 @@ export const b1U03: SkillExercise[] = [
       { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     segments: [
-      { speaker: "Herr Öz", text: "Entschuldigung, darf ich Sie kurz ansprechen? Ich bin Nuri Öz." },
+      { speaker: "Herr Naumann", text: "Entschuldigung, darf ich Sie kurz ansprechen? Ich bin Anton Naumann." },
       { speaker: "Frau Klein", text: "Gern. Mein Name ist Klein. Womit beschäftigen Sie sich denn?" },
-      { speaker: "Herr Öz", text: "Ich arbeite seit sechs Jahren in der Möbelbranche." },
+      { speaker: "Herr Naumann", text: "Ich arbeite seit sechs Jahren in der Möbelbranche." },
       { speaker: "Frau Klein", text: "Interessant. Und was suchen Sie hier auf der Messe?" },
-      { speaker: "Herr Öz", text: "Ich möchte wissen, ob es bei Ihnen offene Stellen gibt." },
+      { speaker: "Herr Naumann", text: "Ich möchte wissen, ob es bei Ihnen offene Stellen gibt." },
       { speaker: "Frau Klein", text: "Im Moment nicht, aber im Herbst vielleicht. Haben Sie eine Visitenkarte?" },
-      { speaker: "Herr Öz", text: "Ja, hier bitte. Darf ich auch Ihre Karte haben?" },
+      { speaker: "Herr Naumann", text: "Ja, hier bitte. Darf ich auch Ihre Karte haben?" },
       { speaker: "Frau Klein", text: "Natürlich. Melden Sie sich einfach im September." },
     ],
     questions: [
       {
-        text: "In welcher Branche arbeitet Herr Öz?",
+        text: "In welcher Branche arbeitet Herr Naumann?",
         options: ["Möbel", "Bau", "Verkauf"],
         answer: 0,
         explain: "„Ich arbeite seit sechs Jahren in der Möbelbranche.“",
@@ -226,7 +226,7 @@ export const b1U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie viele Jahre arbeitet Herr Öz schon in der Branche?",
+        text: "Wie viele Jahre arbeitet Herr Naumann schon in der Branche?",
         options: [],
         answer: 0,
         accept: ["sechs Jahre", "sechs", "6"],
@@ -336,9 +336,9 @@ export const b1U03: SkillExercise[] = [
       {
         kind: "form",
         prompt: "İstifa mektubunun künyesini doldur.",
-        facts: "Çalışan: Nuri Öz; son gün 31 Ağustos; ihbar süresi dört hafta; ek istek: çalışma belgesi; kapanış formülü.",
+        facts: "Çalışan: Anton Naumann; son gün 31 Ağustos; ihbar süresi dört hafta; ek istek: çalışma belgesi; kapanış formülü.",
         fields: [
-          { label: "Absender", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Absender", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Letzter Tag", answer: "31. August", accept: ["31.08.", "31.8.", "einunddreißigster August", "31 August", "am 31. August"] },
           { label: "Frist", answer: "vier Wochen", accept: ["4 Wochen", "vier Wochen zum Monatsende"] },
           { label: "Zusätzlich", answer: "Zeugnis", accept: ["ein Zeugnis", "Arbeitszeugnis"] },
@@ -397,14 +397,14 @@ export const b1U03: SkillExercise[] = [
         sample:
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich habe Ihre Anzeige gelesen und interessiere mich sehr für die Wohnung. " +
-          "Ich heiße Nuri Öz, bin dreißig Jahre alt und arbeite seit sechs Jahren " +
+          "Ich heiße Anton Naumann, bin dreißig Jahre alt und arbeite seit sechs Jahren " +
           "in einer Firma hier in der Stadt.\n\n" +
           "Ich hätte ein paar Fragen. Können Sie mir sagen, in welcher Etage die Wohnung " +
           "liegt? Darf ich fragen, wie hoch die Kosten für das Heizen sind? " +
           "Und ich würde gern wissen, ab wann ich einziehen kann. Außerdem würde ich gern wissen, in welchem Zustand die Küche ist und ob dort eine Reparatur nötig ist.\n\n" +
           "Wäre eine Besichtigung am Samstag möglich? Ich bin den ganzen Tag frei " +
           "und komme gern zu Ihnen.\n\n" +
-          "Mit freundlichen Grüßen\nNuri Öz",
+          "Mit freundlichen Grüßen\nAnton Naumann",
         phrases: [
           { de: "Ich interessiere mich für …", tr: "… ile ilgileniyorum", en: "I am interested in …" },
           { de: "Können Sie mir sagen, …", tr: "Bana söyleyebilir misiniz …", en: "Could you tell me …" },

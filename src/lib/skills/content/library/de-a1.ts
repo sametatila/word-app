@@ -39,7 +39,7 @@ export const deA1: SkillExercise[] = [
       "Sie ist sehr lieb, aber sie hat Angst vor Hunden.\n\n" +
       "Haben Sie Luna gesehen? Bitte rufen Sie uns an: 0176 55 43 21. Sie können auch eine Nachricht schreiben. " +
       "Luna braucht ihre Familie!\n\n" +
-      "Vielen Dank!\nFamilie Öztürk",
+      "Vielen Dank!\nFamilie Dörr",
     questions: [
       {
         text: "Was ist das für ein Text?",
@@ -105,19 +105,19 @@ export const deA1: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Frau Lang", text: "Guten Tag! Was kann ich für Sie tun?" },
-      { speaker: "Herr Demir", text: "Guten Tag. Ich möchte dieses Paket in die Türkei schicken." },
+      { speaker: "Herr Böhm", text: "Guten Tag. Ich möchte dieses Paket in die Türkei schicken." },
       { speaker: "Frau Lang", text: "Gern. Was ist im Paket?" },
-      { speaker: "Herr Demir", text: "Kleidung und ein bisschen Schokolade. Ein Geschenk für meine Oma." },
+      { speaker: "Herr Böhm", text: "Kleidung und ein bisschen Schokolade. Ein Geschenk für meine Oma." },
       { speaker: "Frau Lang", text: "Alles klar. Das Paket ist nicht schwer. Das kostet neunzehn Euro." },
-      { speaker: "Herr Demir", text: "Neunzehn Euro, okay. Wann kommt das Paket an?" },
+      { speaker: "Herr Böhm", text: "Neunzehn Euro, okay. Wann kommt das Paket an?" },
       { speaker: "Frau Lang", text: "In fünf bis sieben Tagen. Bitte schreiben Sie hier die Adresse und Ihre Telefonnummer." },
-      { speaker: "Herr Demir", text: "Hier, bitte. Kann ich mit Karte bezahlen?" },
+      { speaker: "Herr Böhm", text: "Hier, bitte. Kann ich mit Karte bezahlen?" },
       { speaker: "Frau Lang", text: "Ja, klar. Danke und einen schönen Tag noch!" },
-      { speaker: "Herr Demir", text: "Danke, Ihnen auch. Auf Wiedersehen!" },
+      { speaker: "Herr Böhm", text: "Danke, Ihnen auch. Auf Wiedersehen!" },
     ],
     questions: [
       {
-        text: "Wohin schickt Herr Demir das Paket?",
+        text: "Wohin schickt Herr Böhm das Paket?",
         options: ["in die Türkei", "nach Österreich", "in die Schweiz"],
         answer: 0,
         explain: "„Ich möchte dieses Paket in die Türkei schicken.“ Ülke adı ilk cümlede geçiyor.",
@@ -145,14 +145,14 @@ export const deA1: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Herr Demir soruyor: ödeme cümlesini duyduğun gibi yaz.",
+        text: "Herr Böhm soruyor: ödeme cümlesini duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["Kann ich mit Karte bezahlen?", "Kann ich mit Karte bezahlen"],
         explain: "„Kann ich mit Karte bezahlen?“ — soru cümlesinde fiil (kann) başa gelir.",
       },
       {
-        text: "Was muss Herr Demir schreiben?",
+        text: "Was muss Herr Böhm schreiben?",
         options: ["die Adresse und die Telefonnummer", "seinen Namen und sein Alter", "die E-Mail-Adresse"],
         answer: 0,
         explain: "„Bitte schreiben Sie hier die Adresse und Ihre Telefonnummer.“",
@@ -205,9 +205,9 @@ export const deA1: SkillExercise[] = [
           { de: "Bis bald!", tr: "Yakında görüşürüz!", en: "See you soon!" },
         ],
         sample:
-          "Hallo Ali, viele Grüße aus Italien! Ich bin mit meiner Familie am Meer. Das Wetter ist super, jeden Tag scheint die Sonne. " +
+          "Hallo Moritz, viele Grüße aus Italien! Ich bin mit meiner Familie am Meer. Das Wetter ist super, jeden Tag scheint die Sonne. " +
           "Wir schwimmen viel und essen jeden Abend Fisch. Morgen fahren wir mit dem Schiff auf eine kleine Insel. " +
-          "Am Sonntag komme ich zurück. Bis bald! Deine Selin",
+          "Am Sonntag komme ich zurück. Bis bald! Deine Luisa",
       },
     ],
   },

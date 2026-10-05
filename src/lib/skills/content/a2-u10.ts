@@ -53,7 +53,7 @@ export const a2U10: SkillExercise[] = [
       "Hallo Kim, willkommen im Haus!\n\n" +
       "Einen Staubsauger kannst du bei mir holen, ich bin fast immer ab 18 Uhr da. Wenn du Werkzeug brauchst: Ich habe eine kleine Werkstatt im Keller, Schraubenzieher und alles Weitere findest du dort.\n\n" +
       "Und wenn beim Umzug etwas schwer ist, sag Bescheid — ich helfe dir gern aus.\n\n" +
-      "Ahmet, Wohnung 1a",
+      "Heiko, Wohnung 1a",
     questions: [
       {
         text: "Was möchte Kim ausleihen?",
@@ -70,7 +70,7 @@ export const a2U10: SkillExercise[] = [
         explain: "Bu yüzden Kim „bitte einfach klopfen“ diye ekliyor.",
       },
       {
-        text: "Ab wann ist Ahmet meistens zu Hause?",
+        text: "Ab wann ist Heiko meistens zu Hause?",
         options: ["Ab 16 Uhr", "Ab 18 Uhr", "Nur am Wochenende"],
         answer: 1,
         explain: "„ich bin fast immer ab 18 Uhr da“.",
@@ -84,7 +84,7 @@ export const a2U10: SkillExercise[] = [
         explain: "„ich habe eine kleine Werkstatt im Keller, Schraubenzieher und alles Weitere findest du dort“.",
       },
       {
-        text: "Ahmet will beim Umzug gern helfen.",
+        text: "Heiko will beim Umzug gern helfen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "Doğru: „sag Bescheid — ich helfe dir gern aus“.",
@@ -234,13 +234,13 @@ export const a2U10: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Verwaltung", text: "Hausverwaltung Weber, guten Tag." },
-      { speaker: "Frau Cetin", text: "Guten Tag, Cetin, Lindenweg 8. Bei uns ist die Heizung defekt, seit gestern Abend." },
+      { speaker: "Frau Hesse", text: "Guten Tag, Hesse, Lindenweg 8. Bei uns ist die Heizung defekt, seit gestern Abend." },
       { speaker: "Verwaltung", text: "Im ganzen Haus oder nur bei Ihnen?" },
-      { speaker: "Frau Cetin", text: "Ich glaube nur bei uns. Und der Wasserhahn in der Küche tropft auch schon länger." },
+      { speaker: "Frau Hesse", text: "Ich glaube nur bei uns. Und der Wasserhahn in der Küche tropft auch schon länger." },
       { speaker: "Verwaltung", text: "Gut, dann schicke ich Ihnen den Klempner. Er kann morgen zwischen acht und zwölf kommen." },
-      { speaker: "Frau Cetin", text: "Das passt. Können Sie mir auch einen Elektriker schicken? Im Flur ist der Lichtschalter kaputt." },
+      { speaker: "Frau Hesse", text: "Das passt. Können Sie mir auch einen Elektriker schicken? Im Flur ist der Lichtschalter kaputt." },
       { speaker: "Verwaltung", text: "Ist es nur die Glühbirne oder wirklich der Schalter?" },
-      { speaker: "Frau Cetin", text: "Der Schalter. Die Birne habe ich schon gewechselt." },
+      { speaker: "Frau Hesse", text: "Der Schalter. Die Birne habe ich schon gewechselt." },
       { speaker: "Verwaltung", text: "Alles klar, ich notiere beides." },
     ],
     questions: [
@@ -356,7 +356,7 @@ export const a2U10: SkillExercise[] = [
           { de: "Ich bin vormittags zu Hause.", tr: "sabahları evdeyim", en: "I am at home in the mornings" },
         ],
         sample:
-          "Sehr geehrte Damen und Herren,\n\nich wohne im Lindenweg 8, Wohnung 3b, und möchte Ihnen zwei Schäden melden.\n\nDie Heizung ist seit gestern Abend defekt. Das Wohnzimmer wird gar nicht mehr warm. Außerdem tropft der Wasserhahn in der Küche, das ist schon seit zwei Wochen so.\n\nKönnen Sie mir bitte einen Klempner schicken? Ich bin von Montag bis Mittwoch vormittags zu Hause, danach erst wieder ab 17 Uhr.\n\nBitte benachrichtigen Sie mich kurz per E-Mail, wann jemand kommt.\n\nMit freundlichen Grüßen\nElif Cetin",
+          "Sehr geehrte Damen und Herren,\n\nich wohne im Lindenweg 8, Wohnung 3b, und möchte Ihnen zwei Schäden melden.\n\nDie Heizung ist seit gestern Abend defekt. Das Wohnzimmer wird gar nicht mehr warm. Außerdem tropft der Wasserhahn in der Küche, das ist schon seit zwei Wochen so.\n\nKönnen Sie mir bitte einen Klempner schicken? Ich bin von Montag bis Mittwoch vormittags zu Hause, danach erst wieder ab 17 Uhr.\n\nBitte benachrichtigen Sie mich kurz per E-Mail, wann jemand kommt.\n\nMit freundlichen Grüßen\nPaula Hesse",
       },
     ],
   },

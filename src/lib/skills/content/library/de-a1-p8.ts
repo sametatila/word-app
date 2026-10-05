@@ -210,7 +210,7 @@ export const deA1P8: SkillExercise[] = [
           { de: "Bitte melden Sie sich bei mir.", tr: "Lütfen bana haber verin.", en: "Please get in touch with me." },
         ],
         sample:
-          "Hallo, liebe Nachbarn, ich heiße Tarik und wohne seit zwei Monaten in der Lindenstraße 12. " +
+          "Hallo, liebe Nachbarn, ich heiße Dirk und wohne seit zwei Monaten in der Lindenstraße 12. " +
           "Hat jemand eine Bohrmaschine? Ich möchte ein Regal in der Küche montieren. " +
           "Ich brauche sie nur für zwei Stunden und bringe sie am Samstag zurück. " +
           "Bitte melden Sie sich bei mir, Wohnung 7, oder schreiben Sie hier. Vielen Dank!",

@@ -40,18 +40,18 @@ export const enA1U19: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Can: Would you like to go to the movies tonight?\n" +
-      "Ela: Tonight? Sorry, I can't tonight. I am busy.\n" +
-      "Can: And tomorrow?\n" +
-      "Ela: Tomorrow is good. What movie?\n" +
-      "Can: A story about a music band in the sixties. The stars are very good.\n" +
-      "Ela: I like music movies! Is there a ticket for me?\n" +
-      "Can: Yes, I'm going to buy two tickets. Let's go together at eight.\n" +
-      "Ela: Good. How's the weather tomorrow?\n" +
-      "Can: Cold and windy, I think. Maybe rain.\n" +
-      "Ela: Then the movie theater is perfect. In the park it is too cold now.\n" +
-      "Can: Yes. And the grass is wet from the snow.\n" +
-      "Ela: See you tomorrow at eight!",
+      "Tyler: Would you like to go to the movies tonight?\n" +
+      "Lucy: Tonight? Sorry, I can't tonight. I am busy.\n" +
+      "Tyler: And tomorrow?\n" +
+      "Lucy: Tomorrow is good. What movie?\n" +
+      "Tyler: A story about a music band in the sixties. The stars are very good.\n" +
+      "Lucy: I like music movies! Is there a ticket for me?\n" +
+      "Tyler: Yes, I'm going to buy two tickets. Let's go together at eight.\n" +
+      "Lucy: Good. How's the weather tomorrow?\n" +
+      "Tyler: Cold and windy, I think. Maybe rain.\n" +
+      "Lucy: Then the movie theater is perfect. In the park it is too cold now.\n" +
+      "Tyler: Yes. And the grass is wet from the snow.\n" +
+      "Lucy: See you tomorrow at eight!",
     questions: [
       {
         text: "When do they go to the movies?",
@@ -67,14 +67,14 @@ export const enA1U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela is busy tonight.",
+        text: "Lucy is busy tonight.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Sorry, I can't tonight. I am busy.“ — meşgul olduğu gün bu akşam.",
       },
       {
         kind: "gapfill",
-        text: "Can is going to buy two ___.",
+        text: "Tyler is going to buy two ___.",
         options: [],
         answer: 0,
         accept: ["tickets"],
@@ -167,42 +167,42 @@ export const enA1U19: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "What music do you like?" },
-      { speaker: "Ali", text: "I prefer pop music. And you?" },
-      { speaker: "Nil", text: "I like old songs. My father has three hundred CDs!" },
-      { speaker: "Ali", text: "Three hundred! Do you listen to them?" },
-      { speaker: "Nil", text: "Sometimes. I play the guitar too, and my sister plays the piano." },
-      { speaker: "Ali", text: "Can you sing?" },
-      { speaker: "Nil", text: "No, I can't sing. But I like this song — listen." },
-      { speaker: "Ali", text: "That is a good band. Are they from here?" },
-      { speaker: "Nil", text: "No, from Ireland. They play in the city on Friday." },
-      { speaker: "Ali", text: "Would you like to go together?" },
-      { speaker: "Nil", text: "Yes! Is there a ticket for me too?" },
-      { speaker: "Ali", text: "I'm going to buy two. Let's meet at seven." },
+      { speaker: "Katie", text: "What music do you like?" },
+      { speaker: "Harry", text: "I prefer pop music. And you?" },
+      { speaker: "Katie", text: "I like old songs. My father has three hundred CDs!" },
+      { speaker: "Harry", text: "Three hundred! Do you listen to them?" },
+      { speaker: "Katie", text: "Sometimes. I play the guitar too, and my sister plays the piano." },
+      { speaker: "Harry", text: "Can you sing?" },
+      { speaker: "Katie", text: "No, I can't sing. But I like this song — listen." },
+      { speaker: "Harry", text: "That is a good band. Are they from here?" },
+      { speaker: "Katie", text: "No, from Ireland. They play in the city on Friday." },
+      { speaker: "Harry", text: "Would you like to go together?" },
+      { speaker: "Katie", text: "Yes! Is there a ticket for me too?" },
+      { speaker: "Harry", text: "I'm going to buy two. Let's meet at seven." },
     ],
     questions: [
       {
-        text: "What music does Ali prefer?",
+        text: "What music does Harry prefer?",
         options: ["pop music", "old songs", "piano music"],
         answer: 0,
-        explain: "„I prefer pop music.“ — eski şarkılar Nil'in.",
+        explain: "„I prefer pop music.“ — eski şarkılar Katie'nin.",
       },
       {
-        text: "What does Nil play?",
+        text: "What does Katie play?",
         options: ["the guitar", "the piano", "nothing"],
         answer: 0,
         explain: "„I play the guitar too, and my sister plays the piano.“",
       },
       {
         kind: "truefalse",
-        text: "Nil can sing.",
+        text: "Katie can sing.",
         options: ["True", "False"],
         answer: 1,
         explain: "„No, I can't sing.“ — çalıyor ama söylemiyor.",
       },
       {
         kind: "gapfill",
-        text: "Nil's father has three hundred ___.",
+        text: "Katie's father has three hundred ___.",
         options: [],
         answer: 0,
         accept: ["CDs"],
@@ -241,35 +241,35 @@ export const enA1U19: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Sena", text: "Hello! How's the weather there?" },
-      { speaker: "Kaan", text: "It's raining. And it's cold — ten degrees." },
-      { speaker: "Sena", text: "Here it is sunny and hot! Twenty-eight degrees." },
-      { speaker: "Kaan", text: "Twenty-eight! Where are you now?" },
-      { speaker: "Sena", text: "In the park, under a tree. It is very nice." },
-      { speaker: "Kaan", text: "Here the children can't play outside. The playground is wet." },
-      { speaker: "Sena", text: "Is there snow?" },
-      { speaker: "Kaan", text: "No, not now. But it is windy and the rain doesn't stop." },
-      { speaker: "Sena", text: "Then come here for the weekend!" },
-      { speaker: "Kaan", text: "Good idea. Is there a lake?" },
-      { speaker: "Sena", text: "Yes, with boats. And in the evening we listen to music outside." },
-      { speaker: "Kaan", text: "Perfect. I'm going to buy a ticket tonight." },
+      { speaker: "Ellie", text: "Hello! How's the weather there?" },
+      { speaker: "Liam", text: "It's raining. And it's cold — ten degrees." },
+      { speaker: "Ellie", text: "Here it is sunny and hot! Twenty-eight degrees." },
+      { speaker: "Liam", text: "Twenty-eight! Where are you now?" },
+      { speaker: "Ellie", text: "In the park, under a tree. It is very nice." },
+      { speaker: "Liam", text: "Here the children can't play outside. The playground is wet." },
+      { speaker: "Ellie", text: "Is there snow?" },
+      { speaker: "Liam", text: "No, not now. But it is windy and the rain doesn't stop." },
+      { speaker: "Ellie", text: "Then come here for the weekend!" },
+      { speaker: "Liam", text: "Good idea. Is there a lake?" },
+      { speaker: "Ellie", text: "Yes, with boats. And in the evening we listen to music outside." },
+      { speaker: "Liam", text: "Perfect. I'm going to buy a ticket tonight." },
     ],
     questions: [
       {
-        text: "How is the weather at Kaan's?",
+        text: "How is the weather at Liam's?",
         options: ["raining and cold", "sunny and hot", "windy with snow"],
         answer: 0,
         explain: "„It's raining. And it's cold — ten degrees.“ — kar yok, rüzgâr var.",
       },
       {
-        text: "How many degrees is it at Sena's?",
+        text: "How many degrees is it at Ellie's?",
         options: ["twenty-eight", "ten", "eight"],
         answer: 0,
-        explain: "„Here it is sunny and hot! Twenty-eight degrees.“ — on, Kaan'ın şehrinde.",
+        explain: "„Here it is sunny and hot! Twenty-eight degrees.“ — on, Liam'ın şehrinde.",
       },
       {
         kind: "truefalse",
-        text: "There is snow at Kaan's.",
+        text: "There is snow at Liam's.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Is there snow? — No, not now.“",
@@ -297,7 +297,7 @@ export const enA1U19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Kaan buy tonight?",
+        text: "What does Liam buy tonight?",
         options: [],
         answer: 0,
         accept: ["a ticket", "ticket", "the ticket"],

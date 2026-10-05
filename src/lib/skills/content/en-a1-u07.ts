@@ -103,17 +103,17 @@ export const enA1U07: SkillExercise[] = [
     minutes: 4,
     text:
       "Seller: Good morning! How many kilos do you want?\n" +
-      "Ayla: Two kilos of tomatoes, please. Are they fresh?\n" +
+      "Freya: Two kilos of tomatoes, please. Are they fresh?\n" +
       "Seller: Very fresh. They are from a farm near the city.\n" +
-      "Ayla: How much is it?\n" +
+      "Freya: How much is it?\n" +
       "Seller: Four euros. Tomatoes are cheap this week — they're on sale.\n" +
-      "Ayla: Good. And the meat? I'd like five hundred grams.\n" +
+      "Freya: Good. And the meat? I'd like five hundred grams.\n" +
       "Seller: The meat is eighteen euros a kilo, so nine euros.\n" +
-      "Ayla: Nine euros! That's too expensive for me.\n" +
+      "Freya: Nine euros! That's too expensive for me.\n" +
       "Seller: Then take three hundred grams. It costs five euros.\n" +
-      "Ayla: Yes, please. And a bottle of water too.\n" +
+      "Freya: Yes, please. And a bottle of water too.\n" +
       "Seller: Here you are. Eleven euros, please.\n" +
-      "Ayla: Thank you. Can I pay with coins?\n" +
+      "Freya: Thank you. Can I pay with coins?\n" +
       "Seller: Of course!",
     questions: [
       {
@@ -123,7 +123,7 @@ export const enA1U07: SkillExercise[] = [
         explain: "„Four euros. Tomatoes are cheap this week.“ — dokuz ve beş avro etin fiyatları.",
       },
       {
-        text: "Why does Ayla take only three hundred grams of meat?",
+        text: "Why does Freya take only three hundred grams of meat?",
         options: ["it is too expensive", "it is not fresh", "she doesn't like meat"],
         answer: 0,
         explain: "„Nine euros! That's too expensive for me.“ — daha az alınca beş avro oluyor.",
@@ -137,7 +137,7 @@ export const enA1U07: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ayla buys a bottle of ___.",
+        text: "Freya buys a bottle of ___.",
         options: [],
         answer: 0,
         accept: ["water"],
@@ -158,7 +158,7 @@ export const enA1U07: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How much does Ayla pay?",
+        text: "How much does Freya pay?",
         options: [],
         answer: 0,
         accept: ["eleven euros", "11 euros", "eleven"],
@@ -187,18 +187,18 @@ export const enA1U07: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ali", text: "What can we cook today?" },
-      { speaker: "Nil", text: "Rice with vegetables. It's easy and cheap." },
-      { speaker: "Ali", text: "Good. What do I do first?" },
-      { speaker: "Nil", text: "First, wash the rice. Then cut the onions." },
-      { speaker: "Ali", text: "The onions! I hate cutting onions." },
-      { speaker: "Nil", text: "I know, but it is only one onion. After that, cut the tomatoes." },
-      { speaker: "Ali", text: "Is the water hot?" },
-      { speaker: "Nil", text: "Yes, it's very hot. Don't touch it!" },
-      { speaker: "Ali", text: "And the rice? Is it ready?" },
-      { speaker: "Nil", text: "Not yet. Ten more minutes. Then it is ready." },
-      { speaker: "Ali", text: "Would you like some tea?" },
-      { speaker: "Nil", text: "Yes, please. But not too hot — I drink warm tea — it is better for me." },
+      { speaker: "Harry", text: "What can we cook today?" },
+      { speaker: "Katie", text: "Rice with vegetables. It's easy and cheap." },
+      { speaker: "Harry", text: "Good. What do I do first?" },
+      { speaker: "Katie", text: "First, wash the rice. Then cut the onions." },
+      { speaker: "Harry", text: "The onions! I hate cutting onions." },
+      { speaker: "Katie", text: "I know, but it is only one onion. After that, cut the tomatoes." },
+      { speaker: "Harry", text: "Is the water hot?" },
+      { speaker: "Katie", text: "Yes, it's very hot. Don't touch it!" },
+      { speaker: "Harry", text: "And the rice? Is it ready?" },
+      { speaker: "Katie", text: "Not yet. Ten more minutes. Then it is ready." },
+      { speaker: "Harry", text: "Would you like some tea?" },
+      { speaker: "Katie", text: "Yes, please. But not too hot — I drink warm tea — it is better for me." },
     ],
     questions: [
       {
@@ -208,7 +208,7 @@ export const enA1U07: SkillExercise[] = [
         explain: "„Rice with vegetables. It's easy and cheap.“",
       },
       {
-        text: "What does Ali do first?",
+        text: "What does Harry do first?",
         options: ["wash the rice", "cut the onions", "cut the tomatoes"],
         answer: 0,
         explain: "„First, wash the rice. Then cut the onions.“ — soğan ikinci, domates üçüncü adım.",
@@ -222,7 +222,7 @@ export const enA1U07: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ali hates cutting ___.",
+        text: "Harry hates cutting ___.",
         options: [],
         answer: 0,
         accept: ["onions"],
@@ -238,7 +238,7 @@ export const enA1U07: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Nil want to drink?",
+        text: "What does Katie want to drink?",
         options: [],
         answer: 0,
         accept: ["tea", "warm tea", "some tea"],
@@ -269,26 +269,26 @@ export const enA1U07: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Waiter", text: "Good evening. Would you like something to drink?" },
-      { speaker: "Ela", text: "Yes, please. I'd like a juice. Is it fresh?" },
+      { speaker: "Lucy", text: "Yes, please. I'd like a juice. Is it fresh?" },
       { speaker: "Waiter", text: "Very fresh. Apple or orange?" },
-      { speaker: "Ela", text: "Apple, please." },
-      { speaker: "Kaan", text: "And I'd like a beer, please. A big one." },
+      { speaker: "Lucy", text: "Apple, please." },
+      { speaker: "Liam", text: "And I'd like a beer, please. A big one." },
       { speaker: "Waiter", text: "Of course. And you?" },
-      { speaker: "Deniz", text: "Only water for me, thank you. A bottle of cold water." },
+      { speaker: "Charlie", text: "Only water for me, thank you. A bottle of cold water." },
       { speaker: "Waiter", text: "Would you like some wine too?" },
-      { speaker: "Kaan", text: "No, thank you. Beer is enough." },
-      { speaker: "Ela", text: "How much is the juice?" },
+      { speaker: "Liam", text: "No, thank you. Beer is enough." },
+      { speaker: "Lucy", text: "How much is the juice?" },
       { speaker: "Waiter", text: "Three euros. The beer is four euros and the water is one euro." },
-      { speaker: "Deniz", text: "So that's eight euros, then." },
+      { speaker: "Charlie", text: "So that's eight euros, then." },
       { speaker: "Waiter", text: "Yes. Anything else?" },
-      { speaker: "Ela", text: "No, thank you." },
+      { speaker: "Lucy", text: "No, thank you." },
     ],
     questions: [
       {
-        text: "What does Ela drink?",
+        text: "What does Lucy drink?",
         options: ["apple juice", "beer", "water"],
         answer: 0,
-        explain: "„I'd like a juice… Apple, please.“ — bira Kaan'ın, su Deniz'in.",
+        explain: "„I'd like a juice… Apple, please.“ — bira Liam'ın, su Charlie'nin.",
       },
       {
         text: "How much is the beer?",
@@ -298,14 +298,14 @@ export const enA1U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Kaan would like some wine.",
+        text: "Liam would like some wine.",
         options: ["True", "False"],
         answer: 1,
         explain: "„No, thank you. Beer is enough.“ — şarabı reddediyor.",
       },
       {
         kind: "gapfill",
-        text: "Deniz takes a bottle of cold ___.",
+        text: "Charlie takes a bottle of cold ___.",
         options: [],
         answer: 0,
         accept: ["water"],
@@ -322,7 +322,7 @@ export const enA1U07: SkillExercise[] = [
           "Only water for me, thank you.",
           "So that's eight euros, then.",
         ],
-        explain: "Önce Ela, sonra Kaan, sonra Deniz söylüyor; toplam en sonda çıkıyor.",
+        explain: "Önce Lucy, sonra Liam, sonra Charlie söylüyor; toplam en sonda çıkıyor.",
       },
       {
         kind: "short_answer",
@@ -398,7 +398,7 @@ export const enA1U07: SkillExercise[] = [
     unit: 7,
     title: "A simple recipe",
     genre: "personal",
-    intro: "Tarif yaz. Emir kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
+    intro: "Tarif yaz. Ethan kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
     gloss: [
       { de: "Cut the tomatoes.", tr: "domatesleri kes" },
       { de: "Don't touch it.", tr: "ona dokunma" },

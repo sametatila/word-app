@@ -258,7 +258,7 @@ Für Essen und Getränke ist gesorgt.
 
 Bitte sagt bis Mittwoch Bescheid, damit wir planen können.
 
-Lina und Ferhat`,
+Lina und Mathis`,
             },
             {
               kind: "text",
@@ -277,7 +277,7 @@ Wer helfen kann, trägt sich unten in die Liste ein.`,
               id: "n3",
               genre: "Kurznachricht",
               genreTr: "Kısa mesaj",
-              body: `Hi Selin, ich habe das Geschenk gekauft.
+              body: `Hi Luisa, ich habe das Geschenk gekauft.
 
 Es hat 32 Euro gekostet, wir sind vier Personen.
 
@@ -346,7 +346,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               id: "de-a2-06-l3-13",
               no: 13,
               ref: "n3",
-              text: "Wie viel soll Selin bezahlen?",
+              text: "Wie viel soll Luisa bezahlen?",
               options: ["32 Euro für das ganze Geschenk.", "8 Euro.", "Nichts, es ist schon bezahlt."],
               answer: 1,
               explain:
@@ -551,7 +551,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               plays: 2,
               segments: [
                 { speaker: "Frau Bruhn", text: "Wir feiern am Samstag. Es kann bis elf lauter werden." },
-                { speaker: "Herr Kilic", text: "Kein Problem, wir sind am Wochenende weg." },
+                { speaker: "Herr Wirth", text: "Kein Problem, wir sind am Wochenende weg." },
                 { speaker: "Frau Bruhn", text: "Gut. Nach elf machen wir die Musik leise." },
               ],
             },
@@ -608,11 +608,11 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               id: "de-a2-06-h1-4",
               no: 4,
               ref: "k4",
-              text: "Warum stört das Fest Herrn Kilic nicht?",
+              text: "Warum stört das Fest Herrn Wirth nicht?",
               options: ["Er hört sowieso schlecht.", "Er feiert am Samstag mit.", "Er ist am Wochenende nicht da."],
               answer: 2,
               explain:
-                "Herr Kilic \"wir sind am Wochenende weg\" diyor. Yani gürültü onu ilgilendirmiyor, çünkü evde olmayacak.",
+                "Herr Wirth \"wir sind am Wochenende weg\" diyor. Yani gürültü onu ilgilendirmiyor, çünkü evde olmayacak.",
             },
             {
               kind: "mcq",
@@ -645,8 +645,8 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               situation: "Arkadaşlar kutlama için ne getireceklerini paylaşıyor.",
               plays: 2,
               segments: [
-                { speaker: "Pia", text: "Also, das Fest ist am Samstag. Kemal, bringst du den Salat?" },
-                { speaker: "Kemal", text: "Salat habe ich letztes Mal gemacht. Diesmal backe ich lieber den Kuchen." },
+                { speaker: "Pia", text: "Also, das Fest ist am Samstag. Philipp, bringst du den Salat?" },
+                { speaker: "Philipp", text: "Salat habe ich letztes Mal gemacht. Diesmal backe ich lieber den Kuchen." },
                 { speaker: "Pia", text: "Gut. Frau Dahl, Sie kochen so gern. Übernehmen Sie den Salat?" },
                 { speaker: "Frau Dahl", text: "Ja, gern. Soll ich auch die Getränke kaufen?" },
                 { speaker: "Pia", text: "Nein danke, die Getränke bringt Robin. Er hat ein Auto." },
@@ -674,7 +674,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               id: "de-a2-06-h2-6",
               no: 6,
               ref: "g1",
-              text: "Kemal",
+              text: "Philipp",
               answer: "a",
               explain:
                 "Salata işi ona teklif ediliyor ama geçen sefer yaptığını söyleyip reddediyor: \"Diesmal backe ich lieber den Kuchen\".",
@@ -687,7 +687,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               text: "Frau Dahl",
               answer: "b",
               explain:
-                "Kemal reddedince salatayı Frau Dahl üstleniyor. İçecekleri de teklif ediyor ama Pia \"Nein danke\" diyor.",
+                "Philipp reddedince salatayı Frau Dahl üstleniyor. İçecekleri de teklif ediyor ama Pia \"Nein danke\" diyor.",
             },
             {
               kind: "match",

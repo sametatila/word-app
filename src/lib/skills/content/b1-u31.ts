@@ -335,9 +335,9 @@ export const b1U31: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Yolculuk kartını doldur.",
-        facts: "Yolcu: Nuri Öz; ilk araç: tramvay; ikinci araç: tren; mola: ortada 40 dakika; son bölüm: yürüyerek.",
+        facts: "Yolcu: Anton Naumann; ilk araç: tramvay; ikinci araç: tren; mola: ortada 40 dakika; son bölüm: yürüyerek.",
         fields: [
-          { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Name", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Zuerst", answer: "mit dem Tram", accept: ["Tram", "mit der Tram", "mit dem Tram zum Bahnhof"] },
           { label: "Dann", answer: "mit dem Zug", accept: ["Zug", "mit dem Zug"] },
           { label: "Letztes Stück", answer: "zu Fuß", accept: ["zu Fuss", "zu Fuß gehen"] },

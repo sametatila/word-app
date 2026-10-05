@@ -206,7 +206,7 @@ export const EN_B1_01: MockPaper = {
               kind: "match",
               id: "en-b1-01-l2-9",
               no: 9,
-              text: "Mehmet works in an office all week and wants to learn a creative skill on the weekend.",
+              text: "Stuart works in an office all week and wants to learn a creative skill on the weekend.",
               answer: "g",
               explain:
                 "Atölye baharda altı cumartesi sürüyor, yani hafta içi işiyle çakışmıyor, ve öğrenilen şey yaratıcı bir beceri. Okuma kulübü de gönüllü bir uğraş ama perşembe öğleden sonra, hafta içi çalışan biri için uygun değil.",
@@ -786,7 +786,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               situation: "İki meslektaş yeni bir programdan söz ediyor.",
               plays: 2,
               segments: [
-                { speaker: "Ilhan", text: "The new system is slower than the old one." },
+                { speaker: "Wesley", text: "The new system is slower than the old one." },
                 { speaker: "Mia", text: "It is, but it does the invoices automatically. I used to spend Friday afternoon on them." },
               ],
             },
@@ -1150,7 +1150,7 @@ Could you tell me whether there is a laundry room in the building, and whether I
 Thank you in advance.
 
 Best regards,
-Selin Aydin`,
+Megan Kelly`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi? Biri eksikse metin tam sayılmaz.",
               "Tercih bir gerekçeyle mi verildi, yoksa yalnız seçim mi bildirildi?",

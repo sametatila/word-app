@@ -181,10 +181,10 @@ export const enA2P17: SkillExercise[] = [
       },
       {
         heading: "Aynı cümleden iki soru",
-        tr: "„Ali saw Mia.“ cümlesinden iki ayrı soru çıkar. Ali'yi soruyorsan „Who saw Mia?“, Mia'yı soruyorsan „Who did Ali see?“ Anlamı ayıran tek şey „did“dir. „which“ ve „whose“ ile kurulan öbekler de özne olabilir.",
+        tr: "„Harry saw Mia.“ cümlesinden iki ayrı soru çıkar. Harry'yi soruyorsan „Who saw Mia?“, Mia'yı soruyorsan „Who did Harry see?“ Anlamı ayıran tek şey „did“dir. „which“ ve „whose“ ile kurulan öbekler de özne olabilir.",
         examples: [
-          { de: "Who saw Mia? — Ali did.", tr: "Mia'yı kim gördü? — Ali.", note: "özne sorusu" },
-          { de: "Who did Ali see? — Mia.", tr: "Ali kimi gördü? — Mia'yı.", note: "nesne sorusu" },
+          { de: "Who saw Mia? — Harry did.", tr: "Mia'yı kim gördü? — Harry.", note: "özne sorusu" },
+          { de: "Who did Harry see? — Mia.", tr: "Harry kimi gördü? — Mia'yı.", note: "nesne sorusu" },
           { de: "Which bus goes to the station?", tr: "Hangi otobüs istasyona gidiyor?", note: "which bus = özne" },
         ],
       },
@@ -197,10 +197,10 @@ export const enA2P17: SkillExercise[] = [
         explain: "Olanı soruyor, yani özneyi: did gelmez. What happened …?",
       },
       {
-        text: "Kerem met somebody. — Who ___ Kerem meet?",
+        text: "Connor met somebody. — Who ___ Connor meet?",
         options: ["does", "did", "was"],
         answer: 1,
-        explain: "Kerem özne, sorulan kişi nesne: Who did Kerem meet?",
+        explain: "Connor özne, sorulan kişi nesne: Who did Connor meet?",
       },
       {
         text: "Somebody broke the window. — Who ___ the window?",

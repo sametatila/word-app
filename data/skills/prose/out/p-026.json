@@ -1,8 +1,8 @@
 [
  {
-  "tr": "Mert ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hâl hatır sorma.",
+  "tr": "Henry ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hâl hatır sorma.",
   "kind": "intro",
-  "en": "Mert and Lena meet for the first time. A short greeting, an introduction and a question about how they are."
+  "en": "Henry and Lena meet for the first time. A short greeting, an introduction and a question about how they are."
  },
  {
   "tr": "Resmî bir tanışma. Dikkat: burada ad değil, „Mr.“ ve „Ms.“ ile soyadı kullanılıyor.",
@@ -85,9 +85,9 @@
   "en": "„I live in Bremen.“ — Germany is the country, Bremen the city; the gap takes the city."
  },
  {
-  "tr": "„I am from Türkiye.“ — Deniz Türkiye'den. Spain Ana'nın, Ireland Tom'un ülkesi.",
+  "tr": "„I am from Türkiye.“ — Charlie Türkiye'den. Spain Ana'nın, Ireland Tom'un ülkesi.",
   "kind": "explain",
-  "en": "„I am from Türkiye.“ — Deniz is from Türkiye. Spain is Ana's country, Ireland is Tom's."
+  "en": "„I am from Türkiye.“ — Charlie is from Türkiye. Spain is Ana's country, Ireland is Tom's."
  },
  {
   "tr": "Önce kim olduğunu doğrular, sonra adını söyler, sonra soru gelir, en son ülke.",
@@ -112,7 +112,7 @@
  {
   "tr": "„I am a teacher.“ satırı Ana'nın paragrafında. Deniz öğrenci, Tom ne olduğunu söylemiyor.",
   "kind": "explain",
-  "en": "The line „I am a teacher.“ is in Ana's paragraph. Deniz is a student, Tom does not say what he is."
+  "en": "The line „I am a teacher.“ is in Ana's paragraph. Charlie is a student, Tom does not say what he is."
  },
  {
   "tr": "„I am not from Türkiye, but I live in Türkiye now.“ — Tom İrlandalı ama Türkiye'de yaşıyor.",

@@ -233,7 +233,7 @@ export const deB1P14: SkillExercise[] = [
           "Ein Fachbetrieb hat mir ein Angebot über 1.400 Euro gemacht. Selbstverständlich würde ich die " +
           "Montage organisieren, und ich könnte die Hälfte der Kosten übernehmen. Ich bitte um eine " +
           "Rückmeldung bis zum 30. April, damit alles vor dem Sommer fertig ist.\n\n" +
-          "Mit freundlichen Grüßen\nEmre Kaplan",
+          "Mit freundlichen Grüßen\nTill Michels",
       },
     ],
   },

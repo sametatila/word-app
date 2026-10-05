@@ -56,7 +56,7 @@ export const DE_B1_W05: QuizWeek = {
         "Könnten Sie mir bitte bis Freitag mitteilen, wann die Heizung repariert wird? " +
         "Außerdem würde ich Sie bitten, uns die höheren Kosten für den Strom zu bezahlen.\n\n" +
         "Falls ich bis Freitag keine Antwort bekomme, werde ich mich an einen Anwalt wenden.\n\n" +
-        "Mit freundlichen Grüßen\nEmre Kaya",
+        "Mit freundlichen Grüßen\nTill Graf",
     },
     {
       kind: "audio",

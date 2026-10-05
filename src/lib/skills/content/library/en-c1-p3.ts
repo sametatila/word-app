@@ -152,9 +152,9 @@ export const enC1P3: SkillExercise[] = [
       { speaker: "Chair", text: "So it brought in more of the same people?" },
       { speaker: "Anneke", text: "More or less. It appears to have removed a threshold for people who were already close to coming, and it did very little for those who were not." },
       { speaker: "Anneke", text: "That is not an argument against it, but it is an argument against selling it as equality." },
-      { speaker: "Chair", text: "Yusuf, you have looked at this across twelve countries." },
-      { speaker: "Yusuf", text: "And the pattern seems consistent. Where free admission is combined with outreach work, the mix does change. Where it stands alone, it tends to subsidize existing visitors, many of whom would have paid." },
-      { speaker: "Yusuf", text: "I would add one thing that is often missed. Free entry changes how people use a building. Visits get shorter and more frequent, which is arguably the point." },
+      { speaker: "Chair", text: "Alfie, you have looked at this across twelve countries." },
+      { speaker: "Alfie", text: "And the pattern seems consistent. Where free admission is combined with outreach work, the mix does change. Where it stands alone, it tends to subsidize existing visitors, many of whom would have paid." },
+      { speaker: "Alfie", text: "I would add one thing that is often missed. Free entry changes how people use a building. Visits get shorter and more frequent, which is arguably the point." },
       { speaker: "Chair", text: "Ruth, you were a director for two decades and you are against it." },
       { speaker: "Ruth", text: "I am against it as a national rule, which is not quite the same thing. A museum with an endowment can afford it." },
       { speaker: "Ruth", text: "A small museum without one gives up its only flexible income and becomes dependent on a grant that is decided every three years." },
@@ -173,7 +173,7 @@ export const enC1P3: SkillExercise[] = [
         explain: "„Attendance roughly doubled … the social mix of our visitors barely moved.“",
       },
       {
-        text: "According to Yusuf, when does the mix change?",
+        text: "According to Alfie, when does the mix change?",
         options: [
           "when free entry is combined with outreach",
           "when free entry stands on its own",
@@ -184,10 +184,10 @@ export const enC1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Yusuf has looked at the question in more than ten countries.",
+        text: "Alfie has looked at the question in more than ten countries.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Yusuf, you have looked at this across twelve countries.“",
+        explain: "„Alfie, you have looked at this across twelve countries.“",
       },
       {
         kind: "short_answer",

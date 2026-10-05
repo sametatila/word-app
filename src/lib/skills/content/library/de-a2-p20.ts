@@ -227,7 +227,7 @@ export const deA2P20: SkillExercise[] = [
           "eine ältere Frau in der Hitze schwach geworden. Deshalb schlage ich einen Trinkbrunnen vor. " +
           "Ein Trinkbrunnen hilft allen Menschen: Kindern nach dem Spielen, Touristen, Radfahrern und alten Leuten. " +
           "Ein guter Platz ist neben dem Rathaus, dort gibt es schon Wasser. In anderen Städten gibt es das schon lange.\n\n" +
-          "Mit freundlichen Grüßen\nEmre Kaya",
+          "Mit freundlichen Grüßen\nTill Graf",
       },
     ],
   },

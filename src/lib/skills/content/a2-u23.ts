@@ -198,17 +198,17 @@ export const a2U23: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Frau Demir", text: "Guten Tag, hören Sie mich? Ihr Ton ist ganz unverständlich." },
+      { speaker: "Frau Böhm", text: "Guten Tag, hören Sie mich? Ihr Ton ist ganz unverständlich." },
       { speaker: "Herr Klein", text: "Jetzt besser? Ich hatte das falsche Mikrofon eingestellt." },
-      { speaker: "Frau Demir", text: "Perfekt, jetzt ist es klar. Wenn Sie mich nicht hören, schreiben Sie bitte im Chat." },
+      { speaker: "Frau Böhm", text: "Perfekt, jetzt ist es klar. Wenn Sie mich nicht hören, schreiben Sie bitte im Chat." },
       { speaker: "Herr Klein", text: "Mache ich. Wo finde ich denn die Unterlagen?" },
-      { speaker: "Frau Demir", text: "Ich schicke Ihnen den Link. Er steht auch auf unserer Website unter „Kurse“." },
+      { speaker: "Frau Böhm", text: "Ich schicke Ihnen den Link. Er steht auch auf unserer Website unter „Kurse“." },
       { speaker: "Herr Klein", text: "Danke. Muss ich mich vorher irgendwo eintragen?" },
-      { speaker: "Frau Demir", text: "Ja, mit Name und Mailadresse. Das dauert zwei Minuten." },
+      { speaker: "Frau Böhm", text: "Ja, mit Name und Mailadresse. Das dauert zwei Minuten." },
       { speaker: "Herr Klein", text: "Und wenn ich später doch nicht kann?" },
-      { speaker: "Frau Demir", text: "Dann melden Sie sich bitte bis Montag ab, damit der Platz frei wird." },
+      { speaker: "Frau Böhm", text: "Dann melden Sie sich bitte bis Montag ab, damit der Platz frei wird." },
       { speaker: "Herr Klein", text: "Verstanden. Ich schreibe kurz mit, sonst vergesse ich die Hälfte." },
-      { speaker: "Frau Demir", text: "Gute Idee. Am Ende schicke ich Ihnen aber sowieso alles schriftlich." },
+      { speaker: "Frau Böhm", text: "Gute Idee. Am Ende schicke ich Ihnen aber sowieso alles schriftlich." },
     ],
     questions: [
       {
@@ -241,7 +241,7 @@ export const a2U23: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Frau Demir'in bağlantıyı göndereceğini söylediği cümleyi yaz.",
+        text: "Frau Böhm'ün bağlantıyı göndereceğini söylediği cümleyi yaz.",
         options: [],
         answer: 0,
         accept: ["Ich schicke Ihnen den Link."],
@@ -272,15 +272,15 @@ export const a2U23: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Beamter", text: "So, Ihr Formular. Zwei Sachen fehlen noch." },
-      { speaker: "Frau Yıldız", text: "Oh. Welche denn?" },
+      { speaker: "Frau Fink", text: "Oh. Welche denn?" },
       { speaker: "Beamter", text: "Die Hausnummer bei der alten Adresse, und hier unten die Unterschrift." },
-      { speaker: "Frau Yıldız", text: "Entschuldigung. Haben Sie einen Stift?" },
+      { speaker: "Frau Fink", text: "Entschuldigung. Haben Sie einen Stift?" },
       { speaker: "Beamter", text: "Bitte, hier. Und schreiben Sie die Hausnummer leserlich — die letzte Zahl konnte ich nicht zuordnen: Ist das eine Eins oder eine Sieben?" },
-      { speaker: "Frau Yıldız", text: "Ist es besser, wenn ich in Druckbuchstaben schreibe?" },
+      { speaker: "Frau Fink", text: "Ist es besser, wenn ich in Druckbuchstaben schreibe?" },
       { speaker: "Beamter", text: "Viel besser. Bei Zahlen hilft das am meisten." },
-      { speaker: "Frau Yıldız", text: "So. Und das Datum hier oben — ist das richtig?" },
+      { speaker: "Frau Fink", text: "So. Und das Datum hier oben — ist das richtig?" },
       { speaker: "Beamter", text: "Ja. Lesen Sie es aber bitte noch einmal ganz durch, bevor Sie unterschreiben." },
-      { speaker: "Frau Yıldız", text: "Gut. Brauchen Sie den Umschlag auch?" },
+      { speaker: "Frau Fink", text: "Gut. Brauchen Sie den Umschlag auch?" },
       { speaker: "Beamter", text: "Nein, nur das Formular. Vollständig und unterschrieben, dann sind wir fertig." },
     ],
     questions: [
@@ -310,7 +310,7 @@ export const a2U23: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was soll Frau Yildiz vor dem Unterschreiben machen?",
+        text: "Was soll Frau Fink vor dem Unterschreiben machen?",
         options: [],
         answer: 0,
         accept: [
@@ -420,11 +420,11 @@ export const a2U23: SkillExercise[] = [
           "Betreff: Terminwunsch — Anmeldung nach Umzug\n\n" +
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich möchte mich anmelden. Ich bin am 3. Juni in die Lindenstraße 12 umgezogen und wohne jetzt in Ihrem Bezirk.\n\n" +
-          "Mein Name ist Deniz Aydin, geboren am 14. März 1994.\n\n" +
+          "Mein Name ist Sascha Haas, geboren am 14. März 1994.\n\n" +
           "Möglich wäre bei mir Donnerstag, der 19. Juni, am späten Nachmittag, oder Freitag, der 20. Juni, am Vormittag.\n\n" +
           "Eine Frage noch: Was muss ich mitbringen? Das Anmeldeformular habe ich schon von Ihrer Website heruntergeladen und ausgefüllt. Reicht mein Pass, oder brauchen Sie auch die Bestätigung des Vermieters?\n\n" +
           "Vielen Dank im Voraus.\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Aydin",
+          "Mit freundlichen Grüßen\nSascha Haas",
       },
     ],
   },

@@ -397,7 +397,7 @@ Wer den Raum nicht sauber hinterlässt, kann ihn ein halbes Jahr nicht mehr buch
               kind: "match",
               id: "de-b1-09-l3-14",
               no: 14,
-              text: "Frau Doganay möchte ihren Vater zweimal in der Woche an die Luft bringen, ohne Pflege.",
+              text: "Frau Isenberg möchte ihren Vater zweimal in der Woche an die Luft bringen, ohne Pflege.",
               answer: "i",
               explain:
                 "(i) sıklığı ve sınırı veriyor: \"ein- bis zweimal pro Woche … Kein Pflegedienst, nur Bewegung und Gespräch\".",
@@ -471,13 +471,13 @@ Rolf Bastian: Ich habe meinen Vater seit zwanzig Jahren nicht gesehen. Trotzdem 
 
 Frau Dr. Alberti: Als Ärztin sehe ich täglich, was fehlende Mittel bedeuten: zu wenig Personal, zu wenig Zeit. Wer gut verdient und sich ganz heraushält, verschiebt die Kosten auf Menschen mit weniger. Eine Beteiligung halte ich deshalb für richtig, auch wenn sie unbeliebt ist.
 
-Sinan Doganay: Bei uns ist es selbstverständlich, dass man für die Eltern sorgt. Ein Gesetz braucht es dafür nicht — und wer es nicht tut, wird es auch mit Gesetz nicht tun. Ich bin dagegen, weil ich nicht glaube, dass es wirkt.
+Elias Isenberg: Bei uns ist es selbstverständlich, dass man für die Eltern sorgt. Ein Gesetz braucht es dafür nicht — und wer es nicht tut, wird es auch mit Gesetz nicht tun. Ich bin dagegen, weil ich nicht glaube, dass es wirkt.
 
 Katrin Solms: Ich war lange dagegen und habe meine Meinung geändert. In unserer Familie hat eine Tochter alles bezahlt, die andere nichts, und niemand konnte das ändern. Eine Regel hätte wenigstens für Gerechtigkeit unter Geschwistern gesorgt.
 
 Herr Wieser: Ich bin Rentner und sage etwas Unbequemes. Ich habe vierzig Jahre eingezahlt, und es reicht trotzdem nicht. Wenn meine Tochter gut verdient und ich im Heim liege, finde ich einen Beitrag von ihr richtig. Lieber das als eine Pflege, die an allen Ecken spart.
 
-Elif Radek: Wer für die Pflicht argumentiert, denkt an gute Familien. Ich denke an die anderen. Ein Gesetz zwingt Menschen, für jemanden zu zahlen, vor dem sie als Kind weggelaufen sind. Das darf ein Staat nicht verlangen.`,
+Paula Radek: Wer für die Pflicht argumentiert, denkt an gute Familien. Ich denke an die anderen. Ein Gesetz zwingt Menschen, für jemanden zu zahlen, vor dem sie als Kind weggelaufen sind. Das darf ein Staat nicht verlangen.`,
               gloss: [
                 { de: "das Schuldverhältnis", tr: "borç ilişkisi", en: "debt relationship" },
                 { de: "die Abrechnung", tr: "hesap görme", en: "settling of accounts" },
@@ -525,7 +525,7 @@ Elif Radek: Wer für die Pflicht argumentiert, denkt an gute Familien. Ich denke
               id: "de-b1-09-l4-23",
               no: 23,
               ref: "f1",
-              text: "Sinan Doganay",
+              text: "Elias Isenberg",
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
@@ -558,7 +558,7 @@ Elif Radek: Wer für die Pflicht argumentiert, denkt an gute Familien. Ich denke
               id: "de-b1-09-l4-26",
               no: 26,
               ref: "f1",
-              text: "Elif Radek",
+              text: "Paula Radek",
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
@@ -690,7 +690,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, Frau Doganay, hier ist der Pflegedienst. Ab Montag kommen wir morgens zwischen sieben und halb neun. Die genaue Zeit können wir leider nicht zusagen, weil sie von der Tour abhängt. Rufen Sie an, wenn das nicht geht.",
+                  text: "Guten Tag, Frau Isenberg, hier ist der Pflegedienst. Ab Montag kommen wir morgens zwischen sieben und halb neun. Die genaue Zeit können wir leider nicht zusagen, weil sie von der Tour abhängt. Rufen Sie an, wenn das nicht geht.",
                 },
               ],
             },
@@ -763,7 +763,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               id: "de-b1-09-h1-2",
               no: 2,
               ref: "h1",
-              text: "Was soll Frau Doganay tun, wenn es nicht passt?",
+              text: "Was soll Frau Isenberg tun, wenn es nicht passt?",
               options: ["Einen anderen Dienst suchen.", "Anrufen.", "Schriftlich widersprechen."],
               answer: 1,
               explain:
@@ -1318,7 +1318,7 @@ Mein Vorschlag wäre: Du bleibst wie bisher unter der Woche, ich übernehme jede
 Was hältst du davon?
 
 Viele Grüße
-Deniz`,
+Sascha`,
             criteria: [
               "Dört içerik noktasının hepsi işlendi mi?",
               "Çekinceler somut mu (mesafe, iş, annenin alışkanlıkları), yoksa genel bir tereddüt mü?",
@@ -1388,7 +1388,7 @@ Da meine Geschwister aus dem Ausland anreisen, lässt sich das Datum nicht versc
 Gibt es eine Möglichkeit, den Raum am Nachmittag zu teilen, oder wisst ihr einen anderen Weg?
 
 Viele Grüße
-Deniz Kemper`,
+Sascha Kemper`,
             criteria: [
               "Üç içerik noktası da var mı?",
               "Tarih ve durum somut verildi mi?",

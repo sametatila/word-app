@@ -31,9 +31,9 @@ export const deA1P16: SkillExercise[] = [
     minutes: 4,
     text:
       "PUTZPLAN — WG GARTENWEG 7\n\n" +
-            "Woche 1: Lena putzt das Bad, Tarik die Küche und Jonas bringt den Müll raus.\n" +
-      "Woche 2: Tarik putzt das Bad, Jonas die Küche und Lena bringt den Müll raus.\n" +
-      "Woche 3: Jonas putzt das Bad, Lena die Küche und Tarik bringt den Müll raus.\n\n" +
+            "Woche 1: Lena putzt das Bad, Dirk die Küche und Jonas bringt den Müll raus.\n" +
+      "Woche 2: Dirk putzt das Bad, Jonas die Küche und Lena bringt den Müll raus.\n" +
+      "Woche 3: Jonas putzt das Bad, Lena die Küche und Dirk bringt den Müll raus.\n\n" +
       "Wichtig: Jeder wäscht sein Geschirr selbst, gleich nach dem Essen.\n\n" +
       "Den Kühlschrank putzen wir zusammen, am letzten Samstag im Monat um zehn Uhr.\n\n" +
       "Du hast keine Zeit? Dann tausch bitte mit einer anderen Person und schreib es hier auf.\n\n" +
@@ -41,9 +41,9 @@ export const deA1P16: SkillExercise[] = [
     questions: [
       {
         text: "Wer putzt in Woche 2 das Bad?",
-        options: ["Lena", "Tarik", "Jonas"],
+        options: ["Lena", "Dirk", "Jonas"],
         answer: 1,
-        explain: "„Woche 2: Tarik putzt das Bad“; Lena o hafta çöpü çıkarıyor.",
+        explain: "„Woche 2: Dirk putzt das Bad“; Lena o hafta çöpü çıkarıyor.",
       },
       {
         text: "Wann putzen alle zusammen den Kühlschrank?",
@@ -209,10 +209,10 @@ export const deA1P16: SkillExercise[] = [
           { de: "Schreiben Sie mir: …", tr: "Bana yazın: …", en: "Write to me: …" },
         ],
         sample:
-          "Türkisch lernen? Ich helfe gern! Ich heiße Aylin, ich komme aus Ankara und wohne seit zwei Jahren in Köln. " +
+          "Türkisch lernen? Ich helfe gern! Ich heiße Helene, ich komme aus Ankara und wohne seit zwei Jahren in Köln. " +
           "Ich gebe Türkischunterricht für Anfänger, für Kinder und für Erwachsene. " +
           "Am Dienstag und am Donnerstag habe ich abends Zeit. Wir lernen bei mir in der Südstadt oder online. " +
-          "Eine Stunde kostet fünfzehn Euro. Schreiben Sie mir: aylin.t@post.de",
+          "Eine Stunde kostet fünfzehn Euro. Schreiben Sie mir: helene.t@post.de",
       },
     ],
   },

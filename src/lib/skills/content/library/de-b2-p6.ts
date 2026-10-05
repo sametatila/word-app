@@ -125,13 +125,13 @@ export const deB2P6: SkillExercise[] = [
     segments: [
       { speaker: "Frau Dr. Winter", text: "Wir haben zwei Vorlagen. Erstens der Neubau auf dem städtischen Grundstück, zweitens die Anmietung von Wohnungen im Bestand." },
       { speaker: "Herr Feldmann", text: "Der Neubau ist zweifellos die sauberere Lösung, aber wir reden über frühestens vier Jahre. Die Azubis von heute sind dann fertig." },
-      { speaker: "Frau Ünal", text: "Deshalb befürworte ich die Anmietung. Vierzig Wohnungen wären kurzfristig zu haben, und die Förderung läuft nur noch bis zum Jahresende." },
+      { speaker: "Frau Kallweit", text: "Deshalb befürworte ich die Anmietung. Vierzig Wohnungen wären kurzfristig zu haben, und die Förderung läuft nur noch bis zum Jahresende." },
       { speaker: "Herr Feldmann", text: "Kurzfristig ja, aber wir zahlen dann dauerhaft Marktmiete und besitzen am Ende nichts." },
       { speaker: "Frau Dr. Winter", text: "Beides schließt sich nicht aus. Denkbar wäre, jetzt anzumieten und parallel zu bauen." },
-      { speaker: "Frau Ünal", text: "Rechnerisch schon, politisch schwierig. Sobald wir vierzig Wohnungen haben, ist der Druck weg und der Neubau verschwindet in der Schublade." },
+      { speaker: "Frau Kallweit", text: "Rechnerisch schon, politisch schwierig. Sobald wir vierzig Wohnungen haben, ist der Druck weg und der Neubau verschwindet in der Schublade." },
       { speaker: "Herr Feldmann", text: "Dann müsste der Beschluss beides binden: Anmietung nur, wenn der Bauantrag bis Juni eingereicht wird." },
       { speaker: "Frau Dr. Winter", text: "Das ließe sich formulieren. Ich lasse einen entsprechenden Entwurf vorbereiten und wir stimmen in der nächsten Sitzung ab." },
-      { speaker: "Frau Ünal", text: "Einverstanden, solange die Belegung klar geregelt ist. Sonst wohnen dort in zwei Jahren keine Auszubildenden mehr." },
+      { speaker: "Frau Kallweit", text: "Einverstanden, solange die Belegung klar geregelt ist. Sonst wohnen dort in zwei Jahren keine Auszubildenden mehr." },
     ],
     questions: [
       {
@@ -145,7 +145,7 @@ export const deB2P6: SkillExercise[] = [
         explain: "„wir zahlen dann dauerhaft Marktmiete und besitzen am Ende nichts“.",
       },
       {
-        text: "Warum drängt Frau Ünal auf eine schnelle Entscheidung?",
+        text: "Warum drängt Frau Kallweit auf eine schnelle Entscheidung?",
         options: [
           "Die Förderung läuft zum Jahresende aus.",
           "Das Grundstück wird verkauft.",
@@ -178,7 +178,7 @@ export const deB2P6: SkillExercise[] = [
         explain: "„Vierzig Wohnungen wären kurzfristig zu haben.“",
       },
       {
-        text: "Welche Sorge äußert Frau Ünal zum Schluss?",
+        text: "Welche Sorge äußert Frau Kallweit zum Schluss?",
         options: [
           "dass die Kosten steigen",
           "dass dort später keine Auszubildenden mehr wohnen",

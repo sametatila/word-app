@@ -1,6 +1,6 @@
 [
  { "tr": "Yeni bir iş arkadaşını ekibe tanıtan e-posta. Ana kim, işi ne olacak?", "kind": "intro", "de": "Eine E-Mail, die dem Team eine neue Kollegin vorstellt. Wer ist Ana, und was wird ihre Aufgabe sein?" },
- { "tr": "Vardiya değişiminde iş devri. Selin'in bugün neyi halletmesi gerekiyor?", "kind": "intro", "de": "Eine Übergabe beim Schichtwechsel. Was muss Selin heute erledigen?" },
+ { "tr": "Vardiya değişiminde iş devri. Megan'ın bugün neyi halletmesi gerekiyor?", "kind": "intro", "de": "Eine Übergabe beim Schichtwechsel. Was muss Megan heute erledigen?" },
  { "tr": "Proje yöneticisinin müşteriye bıraktığı sesli mesaj. Haziranda ne bitmiş olacak?", "kind": "intro", "de": "Eine Sprachnachricht, die der Projektleiter einer Kundin hinterlassen hat. Was wird bis Juni fertig sein?" },
  { "tr": "Bölge ekibinin pazartesi bilgilendirme notu. Hangi bilgi kesin, hangisi yalnız duyulmuş?", "kind": "intro", "de": "Die Montagsnotiz des Regionalteams. Welche Information ist sicher, welche nur vom Hörensagen bekannt?" },
  { "tr": "Takdim, geçmiş deneyim, iş devri, en sonda davet.", "kind": "explain", "de": "Vorstellung, bisherige Erfahrung, Übergabe, zum Schluss die Einladung." },

@@ -108,7 +108,7 @@ export const a1U22: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Frage von Ali: Ich habe eine Erkältung und Husten. Was soll ich machen?\n\nMia: Trink viel! Tee mit Honig ist gut gegen Husten. Und schlaf viel — mindestens acht Stunden.\n\nTom: Bleib zu Hause und geh nicht arbeiten. Mit einer Erkältung ist Sport keine gute Idee. Nach drei oder vier Tagen ist es oft wieder weg.\n\nElif: Keine Sorge, das ist oft so. Aber wenn du Fieber über 39 hast oder es nach einer Woche nicht besser ist, dann geh bitte zum Arzt. Tabletten nur mit Rezept!\n\nGute Besserung, Ali!",
+      "Frage von Moritz: Ich habe eine Erkältung und Husten. Was soll ich machen?\n\nMia: Trink viel! Tee mit Honig ist gut gegen Husten. Und schlaf viel — mindestens acht Stunden.\n\nTom: Bleib zu Hause und geh nicht arbeiten. Mit einer Erkältung ist Sport keine gute Idee. Nach drei oder vier Tagen ist es oft wieder weg.\n\nPaula: Keine Sorge, das ist oft so. Aber wenn du Fieber über 39 hast oder es nach einer Woche nicht besser ist, dann geh bitte zum Arzt. Tabletten nur mit Rezept!\n\nGute Besserung, Moritz!",
     questions: [
       {
         text: "Was ist gut gegen Husten?",
@@ -118,7 +118,7 @@ export const a1U22: SkillExercise[] = [
       },
       {
         text: "Was sagt Tom?",
-        options: ["Ali soll zu Hause bleiben.", "Ali soll Sport machen.", "Ali soll sofort zum Arzt."],
+        options: ["Moritz soll zu Hause bleiben.", "Moritz soll Sport machen.", "Moritz soll sofort zum Arzt."],
         answer: 0,
         explain: "„Bleib zu Hause und geh nicht arbeiten.“",
       },
@@ -131,7 +131,7 @@ export const a1U22: SkillExercise[] = [
         explain: "„Und schlaf viel — mindestens acht Stunden.“",
       },
       {
-        text: "Wann soll Ali zum Arzt gehen?",
+        text: "Wann soll Moritz zum Arzt gehen?",
         options: [
           "bei Fieber über 39 oder wenn es nach einer Woche nicht besser ist",
           "sofort",
@@ -143,11 +143,11 @@ export const a1U22: SkillExercise[] = [
       },
           {
         kind: "gapfill",
-        text: "Frage von Ali: Ich habe eine ___ und Husten.",
+        text: "Frage von Moritz: Ich habe eine ___ und Husten.",
         options: [],
         answer: 0,
         accept: ["Erkältung"],
-        explain: "„Frage von Ali: Ich habe eine Erkältung und Husten.“",
+        explain: "„Frage von Moritz: Ich habe eine Erkältung und Husten.“",
       },
 ],
   },
@@ -352,7 +352,7 @@ export const a1U22: SkillExercise[] = [
           { de: "Gute Besserung!", tr: "Geçmiş olsun!", en: "Get well soon!" },
         ],
         sample:
-          "Hallo Mia,\n\ndas tut mir leid! Eine Erkältung ist wirklich nicht schön.\n\nTrink viel Tee mit Honig — das ist gut gegen Husten. Und bleib zu Hause, geh nicht arbeiten. Schlaf viel!\n\nKeine Sorge, nach drei oder vier Tagen ist es oft wieder weg. Aber wenn du Fieber hast oder es nach einer Woche nicht besser ist, dann geh bitte zum Arzt.\n\nGute Besserung!\nDein Ali",
+          "Hallo Mia,\n\ndas tut mir leid! Eine Erkältung ist wirklich nicht schön.\n\nTrink viel Tee mit Honig — das ist gut gegen Husten. Und bleib zu Hause, geh nicht arbeiten. Schlaf viel!\n\nKeine Sorge, nach drei oder vier Tagen ist es oft wieder weg. Aber wenn du Fieber hast oder es nach einer Woche nicht besser ist, dann geh bitte zum Arzt.\n\nGute Besserung!\nDein Moritz",
       },
     ],
   },

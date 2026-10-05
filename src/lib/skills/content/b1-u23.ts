@@ -231,7 +231,7 @@ export const b1U23: SkillExercise[] = [
     unit: 23,
     title: "Ein Wunsch und eine Entscheidung",
     genre: "personal",
-    intro: "Biri bir karar vermiş. Dilek ne, karar ne?",
+    intro: "Biri bir karar vermiş. Leonie ne, karar ne?",
     minutes: 4,
     gloss: [
       { de: "sich wünschen", tr: "dilemek", en: "to wish" },
@@ -377,7 +377,7 @@ export const b1U23: SkillExercise[] = [
         kind: "free",
         prompt: "Bir dileğini yaz: ne dilersin, neden, gerçekleşse hayatında ne değişirdi ve şimdi bunun için ne yapabilirsin. En az üç Konjunktiv II cümlesi kullan ve en az birinde wäre ya da hätte geçsin.",
         checklist: [
-          "Dilek net söylenmiş mi?",
+          "Leonie net söylenmiş mi?",
           "Sebep verilmiş mi?",
           "Gerçekleşse ne değişirdi anlatılmış mı?",
           "En az üç Konjunktiv II cümlesi var mı?",

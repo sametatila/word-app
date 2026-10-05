@@ -37,7 +37,7 @@ export const a1U07: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo Elif,\n\nich koche heute für uns. Kannst du bitte in den Supermarkt gehen?\n\nWir brauchen:\n— ein Kilo Tomaten\n— zwei Kilo Kartoffeln\n— drei Zwiebeln\n— eine Flasche Öl\n— zwei Flaschen Mineralwasser\n— ein Stück Käse\n— Salz\n\nObst brauchen wir nicht, wir haben noch Äpfel, Birnen und Bananen.\n\nFleisch bitte auch nicht — ich koche heute mit Gemüse und Reis.\n\nDanke! Tschüss,\nTom",
+      "Hallo Paula,\n\nich koche heute für uns. Kannst du bitte in den Supermarkt gehen?\n\nWir brauchen:\n— ein Kilo Tomaten\n— zwei Kilo Kartoffeln\n— drei Zwiebeln\n— eine Flasche Öl\n— zwei Flaschen Mineralwasser\n— ein Stück Käse\n— Salz\n\nObst brauchen wir nicht, wir haben noch Äpfel, Birnen und Bananen.\n\nFleisch bitte auch nicht — ich koche heute mit Gemüse und Reis.\n\nDanke! Tschüss,\nTom",
     questions: [
       {
         text: "Wie viele Kilo Kartoffeln braucht Tom?",
@@ -96,7 +96,7 @@ export const a1U07: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: Ich esse gern Obst. Äpfel und Bananen mag ich sehr. Schokolade esse ich auch gern, aber nicht zu viel!\n\nTom: Ich mag Fleisch nicht. Ich esse lieber Gemüse und Reis. Am liebsten koche ich mit Tomaten und Zwiebeln.\n\nElif: Ich esse gern Salat mit Öl und Salz. Meine Kinder mögen keinen Salat — sie essen lieber Kartoffeln.",
+      "Mia: Ich esse gern Obst. Äpfel und Bananen mag ich sehr. Schokolade esse ich auch gern, aber nicht zu viel!\n\nTom: Ich mag Fleisch nicht. Ich esse lieber Gemüse und Reis. Am liebsten koche ich mit Tomaten und Zwiebeln.\n\nPaula: Ich esse gern Salat mit Öl und Salz. Meine Kinder mögen keinen Salat — sie essen lieber Kartoffeln.",
     questions: [
       {
         text: "Was mag Mia sehr?",
@@ -118,7 +118,7 @@ export const a1U07: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Elif isst gern Salat mit Öl und ___.",
+        text: "Paula isst gern Salat mit Öl und ___.",
         options: [],
         answer: 0,
         accept: ["Salz"],
@@ -323,7 +323,7 @@ export const a1U07: SkillExercise[] = [
           { de: "Kannst du bitte …?", tr: "… yapabilir misin?", en: "Could you please …?" },
         ],
         sample:
-          "Hallo Mia,\n\nich koche heute Reis mit Gemüse. Kannst du bitte in den Supermarkt gehen?\n\nWir brauchen ein Kilo Tomaten, zwei Zwiebeln und eine Flasche Öl. Salz haben wir noch.\n\nFleisch brauchen wir nicht — ich koche ohne Fleisch.\n\nDanke!\nElif",
+          "Hallo Mia,\n\nich koche heute Reis mit Gemüse. Kannst du bitte in den Supermarkt gehen?\n\nWir brauchen ein Kilo Tomaten, zwei Zwiebeln und eine Flasche Öl. Salz haben wir noch.\n\nFleisch brauchen wir nicht — ich koche ohne Fleisch.\n\nDanke!\nPaula",
       },
     ],
   },

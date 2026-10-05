@@ -1292,7 +1292,7 @@ I would also like the discontinuation date for this model in writing.
 If I have had no reply within three weeks, I will send the file to the consumer body and publish the correspondence.
 
 Sincerely,
-Fikret Alay`,
+Jordan Alay`,
             criteria: [
               "Olay sırası tarih ve tutarlarla verildi mi?",
               "İstenen ve istenmeyen açıkça ayrıldı mı?",

@@ -39,14 +39,14 @@ export const a2U01: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo Deniz,\n\n" +
+      "Hallo Sascha,\n\n" +
       "endlich habe ich Zeit zum Schreiben! Ich bin am ersten Juli mit meiner Schwester verreist. Wir sind nicht ans Meer gefahren, sondern in die Berge. Das war eine gute Idee: Die Natur dort ist wirklich fantastisch.\n\n" +
       "Wir haben jeden Tag etwas unternommen. Am Montag sind wir schon um sechs Uhr losgegangen, weil wir vor dem Regen oben sein wollten. Am Dienstag habe ich meine Sonnenbrille verloren, aber ein Kind hat sie später gefunden. Am Mittwoch hat unsere Vermieterin einen Kuchen gebacken und uns eingeladen.\n\n" +
       "Am Sonntag bin ich zurückgekommen. Ich bin müde, aber sehr glücklich. Nächstes Jahr fahren wir wieder dorthin.\n\n" +
-      "Liebe Grüße\nSelin",
+      "Liebe Grüße\nLuisa",
     questions: [
       {
-        text: "Wohin sind Selin und ihre Schwester gefahren?",
+        text: "Wohin sind Luisa und ihre Schwester gefahren?",
         options: ["Ans Meer", "In die Berge", "In eine große Stadt"],
         answer: 1,
         explain: "„Wir sind nicht ans Meer gefahren, sondern in die Berge.“ „Ans Meer“ bilerek konmuş bir çeldirici.",
@@ -60,7 +60,7 @@ export const a2U01: SkillExercise[] = [
         explain: "„losgehen“ hem ayrılabilen hem yer değiştiren bir fiil: ortacı „losgegangen“ ve yardımcı fiili „sein“.",
       },
       {
-        text: "Was hat Selin am Dienstag verloren?",
+        text: "Was hat Luisa am Dienstag verloren?",
         options: ["Ihren Schlüssel", "Ihre Sonnenbrille", "Ihr Handy"],
         answer: 1,
         explain: "„Am Dienstag habe ich meine Sonnenbrille verloren.“ Sonra bir çocuk bulmuş.",
@@ -74,7 +74,7 @@ export const a2U01: SkillExercise[] = [
         explain: "„Am Mittwoch hat unsere Vermieterin einen Kuchen gebacken.“",
       },
       {
-        text: "Selin ist am Sonntag zurückgekommen.",
+        text: "Luisa ist am Sonntag zurückgekommen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "Doğru: „Am Sonntag bin ich zurückgekommen.“",
@@ -219,17 +219,17 @@ export const a2U01: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ela", text: "So, wir fahren in zwanzig Minuten. Hast du alles vorbereitet?" },
-      { speaker: "Murat", text: "Ich glaube schon. Ich habe die Taschen ins Auto gestellt und den Herd ausgeschaltet." },
-      { speaker: "Ela", text: "Und die Bücher aus der Bibliothek? Hast du die zurückgebracht?" },
-      { speaker: "Murat", text: "Oh nein. Die liegen noch auf dem Schreibtisch. Das mache ich schnell." },
-      { speaker: "Ela", text: "Bitte hör mir kurz zu: Die Bibliothek macht erst um zehn auf. Wir sind dann längst weg." },
-      { speaker: "Murat", text: "Stimmt. Dann bringe ich sie nächste Woche zurück. Hast du die Kinder schon aufgeweckt?" },
-      { speaker: "Ela", text: "Ja, vor einer halben Stunde. Und die Wohnungstür habe ich noch nicht abgeschlossen — das machen wir zuletzt." },
+      { speaker: "Nele", text: "So, wir fahren in zwanzig Minuten. Hast du alles vorbereitet?" },
+      { speaker: "Niklas", text: "Ich glaube schon. Ich habe die Taschen ins Auto gestellt und den Herd ausgeschaltet." },
+      { speaker: "Nele", text: "Und die Bücher aus der Bibliothek? Hast du die zurückgebracht?" },
+      { speaker: "Niklas", text: "Oh nein. Die liegen noch auf dem Schreibtisch. Das mache ich schnell." },
+      { speaker: "Nele", text: "Bitte hör mir kurz zu: Die Bibliothek macht erst um zehn auf. Wir sind dann längst weg." },
+      { speaker: "Niklas", text: "Stimmt. Dann bringe ich sie nächste Woche zurück. Hast du die Kinder schon aufgeweckt?" },
+      { speaker: "Nele", text: "Ja, vor einer halben Stunde. Und die Wohnungstür habe ich noch nicht abgeschlossen — das machen wir zuletzt." },
     ],
     questions: [
       {
-        text: "Was hat Murat schon gemacht?",
+        text: "Was hat Niklas schon gemacht?",
         options: ["Die Bücher zurückgebracht", "Den Herd ausgeschaltet", "Die Tür abgeschlossen"],
         answer: 1,
         explain: "„Ich habe die Taschen ins Auto gestellt und den Herd ausgeschaltet.“",
@@ -243,8 +243,8 @@ export const a2U01: SkillExercise[] = [
         explain: "„aufwecken“ ayrılabilen ve kurallı: ortacın „ge“ hecesi araya girer, sonu -t ile biter: aufgeweckt.",
       },
       {
-        text: "Warum bringt Murat die Bücher jetzt nicht zurück?",
-        options: ["Er findet sie nicht.", "Die Bibliothek ist noch zu.", "Ela will nicht warten."],
+        text: "Warum bringt Niklas die Bücher jetzt nicht zurück?",
+        options: ["Er findet sie nicht.", "Die Bibliothek ist noch zu.", "Nele will nicht warten."],
         answer: 1,
         explain: "„Die Bibliothek macht erst um zehn auf. Wir sind dann längst weg.“",
       },
@@ -324,14 +324,14 @@ export const a2U01: SkillExercise[] = [
     tasks: [
       {
         kind: "reply",
-        prompt: "Selin'in e-postasına cevap yaz. Kendi son tatilini anlat: nereye gittin, ne yaptın, ne zaman döndün.",
+        prompt: "Luisa'nın e-postasına cevap yaz. Kendi son tatilini anlat: nereye gittin, ne yaptın, ne zaman döndün.",
         stimulus:
-          "Hallo,\n\nich bin im Juli mit meiner Schwester in die Berge verreist. Wir haben jeden Tag etwas unternommen und am Sonntag bin ich zurückgekommen. Es war fantastisch!\n\nUnd du? Wohin bist du gefahren?\n\nLiebe Grüße\nSelin",
+          "Hallo,\n\nich bin im Juli mit meiner Schwester in die Berge verreist. Wir haben jeden Tag etwas unternommen und am Sonntag bin ich zurückgekommen. Es war fantastisch!\n\nUnd du? Wohin bist du gefahren?\n\nLiebe Grüße\nLuisa",
         checklist: [
           "Nereye gittiğini yer değiştiren bir fiille yazdın mı (bin … gefahren / verreist)?",
           "Orada ne yaptığını „haben“ ile yazdın mı (habe … gemacht / unternommen)?",
           "Ne zaman döndüğünü söyledin mi?",
-          "Selin'e bir soru sordun mu?",
+          "Luisa'ya bir soru sordun mu?",
         ],
         minWords: 40,
         phrases: [
@@ -340,7 +340,7 @@ export const a2U01: SkillExercise[] = [
           { de: "Am … bin ich zurückgekommen.", tr: "…-de geri döndüm", en: "I came back on …" },
         ],
         sample:
-          "Hallo Selin,\n\nvielen Dank für deine E-Mail! Ich bin im August nach Antalya gefahren, zusammen mit meinem Bruder. Wir sind am ersten August losgefahren und waren zwei Wochen dort.\n\nWir haben viel unternommen: Wir sind jeden Morgen geschwommen und haben abends in der Altstadt gegessen. Einmal sind wir mit dem Boot gefahren, das war fantastisch. Die Natur dort ist wirklich schön.\n\nAm 15. August bin ich zurückgekommen. Wohin fährst du nächstes Jahr?\n\nLiebe Grüße\nDeniz",
+          "Hallo Luisa,\n\nvielen Dank für deine E-Mail! Ich bin im August nach Antalya gefahren, zusammen mit meinem Bruder. Wir sind am ersten August losgefahren und waren zwei Wochen dort.\n\nWir haben viel unternommen: Wir sind jeden Morgen geschwommen und haben abends in der Altstadt gegessen. Einmal sind wir mit dem Boot gefahren, das war fantastisch. Die Natur dort ist wirklich schön.\n\nAm 15. August bin ich zurückgekommen. Wohin fährst du nächstes Jahr?\n\nLiebe Grüße\nSascha",
       },
     ],
   },

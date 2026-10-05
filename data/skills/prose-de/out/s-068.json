@@ -47,7 +47,7 @@
  { "tr": "İçinde bulunduğumuz hafta „this week“ ile söylenir.", "kind": "explain", "de": "Die laufende Woche heißt „this week“." },
  { "tr": "İngilizcede olumsuzluk genellikle „think“e taşınır.", "kind": "explain", "de": "Im Englischen wandert die Verneinung meist zu „think“." },
  { "tr": "Kendisi de emin değil; olasılık „may“ ile söylenir.", "kind": "explain", "de": "Sie ist selbst nicht sicher; die Möglichkeit wird mit „may“ ausgedrückt." },
- { "tr": "Kerem özne, sorulan kişi nesne: Who did Kerem meet?", "kind": "explain", "de": "Kerem ist das Subjekt, gefragt wird nach dem Objekt: Who did Kerem meet?" },
+ { "tr": "Connor özne, sorulan kişi nesne: Who did Connor meet?", "kind": "explain", "de": "Connor ist das Subjekt, gefragt wird nach dem Objekt: Who did Connor meet?" },
  { "tr": "Olaylar sırasıyla anlatıldığında past simple yeter.", "kind": "explain", "de": "Werden Ereignisse der Reihe nach erzählt, genügt das past simple." },
  { "tr": "Yazanı soruyor, yani özneyi: Who wrote this letter?", "kind": "explain", "de": "Gefragt wird nach dem Schreiber, also nach dem Subjekt: Who wrote this letter?" },
  { "tr": "Yazıda „only“ sınırladığı öğenin hemen önüne konur.", "kind": "explain", "de": "Geschrieben steht „only“ direkt vor dem Element, das es einschränkt." },

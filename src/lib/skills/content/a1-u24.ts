@@ -120,7 +120,7 @@ export const a1U24: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Tom: Gestern habe ich viel gemacht. Am Morgen bin ich in die Stadt gefahren und habe einen Pullover gekauft. Am Abend habe ich einen Film gesehen. Meine Schwester ist auch gekommen.\n\nElif: Ich bin gestern zu Hause geblieben. Ich war krank. Ich habe nur Musik gehört. Kein schöner Tag!\n\nAli: Ich bin mit dem Zug nach Berlin gefahren. In Berlin habe ich meine Schwester gesehen. Am Abend sind wir zusammen ins Kino gegangen. Berlin ist wirklich schön — die Welt kommt nach Berlin! Ich denke oft an die Stadt.",
+      "Tom: Gestern habe ich viel gemacht. Am Morgen bin ich in die Stadt gefahren und habe einen Pullover gekauft. Am Abend habe ich einen Film gesehen. Meine Schwester ist auch gekommen.\n\nPaula: Ich bin gestern zu Hause geblieben. Ich war krank. Ich habe nur Musik gehört. Kein schöner Tag!\n\nMoritz: Ich bin mit dem Zug nach Berlin gefahren. In Berlin habe ich meine Schwester gesehen. Am Abend sind wir zusammen ins Kino gegangen. Berlin ist wirklich schön — die Welt kommt nach Berlin! Ich denke oft an die Stadt.",
     questions: [
       {
         text: "Was hat Tom gekauft?",
@@ -129,7 +129,7 @@ export const a1U24: SkillExercise[] = [
         explain: "„…und habe einen Pullover gekauft.“",
       },
       {
-        text: "Warum ist Elif zu Hause geblieben?",
+        text: "Warum ist Paula zu Hause geblieben?",
         options: ["Sie war krank.", "Es hat geregnet.", "Sie hatte keine Zeit."],
         answer: 0,
         explain: "„Ich bin gestern zu Hause geblieben. Ich war krank.“",
@@ -147,7 +147,7 @@ export const a1U24: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ali ist mit dem Zug nach Berlin ___.",
+        text: "Moritz ist mit dem Zug nach Berlin ___.",
         options: [],
         answer: 0,
         accept: ["gefahren"],
@@ -155,11 +155,11 @@ export const a1U24: SkillExercise[] = [
       },
           {
         kind: "gapfill",
-        text: "Elif: Ich bin ___ zu Hause geblieben.",
+        text: "Paula: Ich bin ___ zu Hause geblieben.",
         options: [],
         answer: 0,
         accept: ["gestern"],
-        explain: "„Elif: Ich bin gestern zu Hause geblieben.“",
+        explain: "„Paula: Ich bin gestern zu Hause geblieben.“",
       },
 ],
   },
@@ -180,16 +180,16 @@ export const a1U24: SkillExercise[] = [
     minutes: 2,
     segments: [
       { speaker: "Arzthelferin", text: "Praxis Weber, guten Tag." },
-      { speaker: "Ali", text: "Guten Tag, hier ist Ali Demir. Ich möchte meinen Termin verschieben." },
+      { speaker: "Moritz", text: "Guten Tag, hier ist Moritz Böhm. Ich möchte meinen Termin verschieben." },
       { speaker: "Arzthelferin", text: "Gern. Welches Datum haben Sie denn?" },
-      { speaker: "Ali", text: "Mittwoch um 10 Uhr. Leider muss ich da arbeiten." },
+      { speaker: "Moritz", text: "Mittwoch um 10 Uhr. Leider muss ich da arbeiten." },
       { speaker: "Arzthelferin", text: "Kein Problem. Geht es nächste Woche am Freitag um 16 Uhr?" },
-      { speaker: "Ali", text: "Ja, das passt gut. Vielen Dank!" },
+      { speaker: "Moritz", text: "Ja, das passt gut. Vielen Dank!" },
       { speaker: "Arzthelferin", text: "Ich schreibe es in den Kalender. Auf Wiederhören!" },
     ],
     questions: [
       {
-        text: "Was möchte Ali machen?",
+        text: "Was möchte Moritz machen?",
         options: ["seinen Termin verschieben", "einen neuen Termin machen", "den Termin absagen"],
         answer: 0,
         explain: "„Ich möchte meinen Termin verschieben.“ — iptal değil, erteleme.",

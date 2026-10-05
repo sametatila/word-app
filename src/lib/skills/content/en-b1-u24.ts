@@ -133,8 +133,8 @@ export const enB1U24: SkillExercise[] = [
     minutes: 7,
     text:
       "ASK ANNA\n" +
-      "Dear Anna, last year my brother borrowed money from me and never paid it back. We have not spoken for eight months. My mother wants us both at her birthday in June. I miss him, but I am still angry. If I were less shy, I would call him, but I do not know what to say. Deniz\n" +
-      "Dear Deniz,\n" +
+      "Dear Anna, last year my brother borrowed money from me and never paid it back. We have not spoken for eight months. My mother wants us both at her birthday in June. I miss him, but I am still angry. If I were less shy, I would call him, but I do not know what to say. Charlie\n" +
+      "Dear Charlie,\n" +
       "If you forgive him, everything gets easier, for you first and then maybe for him. Forgiving does not mean that the money is not important. It means that you stop carrying it with you every day.\n" +
       "If I were you, I would not wait for June. A birthday is a bad place for a difficult talk. Write him a short message this week. If he answers, meet for coffee, just the two of you.\n" +
       "You say you are shy. That is fine; you don't have to make a speech. Tell him one true thing: that you miss him.\n" +
@@ -142,13 +142,13 @@ export const enB1U24: SkillExercise[] = [
       "Anna",
     questions: [
       {
-        text: "Why is Deniz angry?",
+        text: "Why is Charlie angry?",
         options: ["His brother never paid the money back.", "His brother missed a birthday.", "His brother lost his job."],
         answer: 0,
         explain: "„last year my brother borrowed money from me and never paid it back.“",
       },
       {
-        text: "What does Anna advise Deniz to do this week?",
+        text: "What does Anna advise Charlie to do this week?",
         options: ["write his brother a short message", "call his mother", "wait for June"],
         answer: 0,
         explain: "„Write him a short message this week.“",
@@ -183,7 +183,7 @@ export const enB1U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What true thing should Deniz tell his brother?",
+        text: "What true thing should Charlie tell his brother?",
         options: [],
         answer: 0,
         accept: ["that he misses him", "I miss you", "he misses him"],
@@ -201,7 +201,7 @@ export const enB1U24: SkillExercise[] = [
     unit: 24,
     title: "A dream with no date",
     genre: "monologue",
-    intro: "Altı yıllık bir hayal. Bade şimdi ne yapıyor?",
+    intro: "Altı yıllık bir hayal. Rosie şimdi ne yapıyor?",
     gloss: [
       { de: "whole", tr: "bütün" },
       { de: "of my own", tr: "kendime ait" },
@@ -217,24 +217,24 @@ export const enB1U24: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Bade", text: "I will follow that dream one day. I have said that for six years, about a small bakery of my own." },
-      { speaker: "Bade", text: "For six years there was no date, no first step and nobody waiting for me. Just the dream and a lot of bread at home." },
-      { speaker: "Bade", text: "I am going to write the wish down. The notebook is on the table and I bought it in May. Tonight I am going to write the plan in it: money, place, time." },
-      { speaker: "Bade", text: "And I am taking the brave step next week. Tuesday, four o'clock, a meeting at the bank with a woman who has my file." },
-      { speaker: "Bade", text: "The desire was always there. What was missing was the calendar, and a calendar is the only proof a plan ever has." },
-      { speaker: "Bade", text: "I was curious about why the dream felt good and the meeting felt like fear. Now I think the good feeling was the whole point of the dream." },
-      { speaker: "Bade", text: "„One day“ is comfortable. Tuesday is not comfortable, and that is how you know which one of them is real." },
-      { speaker: "Bade", text: "The longing does not go away when you make the appointment. It just stops being the only thing you do about it." },
+      { speaker: "Rosie", text: "I will follow that dream one day. I have said that for six years, about a small bakery of my own." },
+      { speaker: "Rosie", text: "For six years there was no date, no first step and nobody waiting for me. Just the dream and a lot of bread at home." },
+      { speaker: "Rosie", text: "I am going to write the wish down. The notebook is on the table and I bought it in May. Tonight I am going to write the plan in it: money, place, time." },
+      { speaker: "Rosie", text: "And I am taking the brave step next week. Tuesday, four o'clock, a meeting at the bank with a woman who has my file." },
+      { speaker: "Rosie", text: "The desire was always there. What was missing was the calendar, and a calendar is the only proof a plan ever has." },
+      { speaker: "Rosie", text: "I was curious about why the dream felt good and the meeting felt like fear. Now I think the good feeling was the whole point of the dream." },
+      { speaker: "Rosie", text: "„One day“ is comfortable. Tuesday is not comfortable, and that is how you know which one of them is real." },
+      { speaker: "Rosie", text: "The longing does not go away when you make the appointment. It just stops being the only thing you do about it." },
     ],
     questions: [
       {
-        text: "What is Bade doing next Tuesday?",
+        text: "What is Rosie doing next Tuesday?",
         options: ["meeting a woman at the bank", "opening a bakery", "buying a notebook"],
         answer: 0,
         explain: "„a meeting at the bank with a woman who has my file.“",
       },
       {
-        text: "When did Bade buy the notebook?",
+        text: "When did Rosie buy the notebook?",
         options: ["in May", "on Tuesday", "next week"],
         answer: 0,
         explain: "„The notebook is on the table and I bought it in May…“",
@@ -290,17 +290,17 @@ export const enB1U24: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "İpek", text: "You have to cheer her up first. Not with advice — with tea and forty minutes." },
+      { speaker: "Audrey", text: "You have to cheer her up first. Not with advice — with tea and forty minutes." },
       { speaker: "Timur", text: "Why not advice?" },
-      { speaker: "İpek", text: "You can't give advice too early. It sounds like a door closing, and she will stop talking about the thing that actually hurts." },
+      { speaker: "Audrey", text: "You can't give advice too early. It sounds like a door closing, and she will stop talking about the thing that actually hurts." },
       { speaker: "Timur", text: "And if I say nothing at all?" },
-      { speaker: "İpek", text: "Then you are doing it right. Tell her she doesn't have to face it alone, and then show it: sit there with her." },
+      { speaker: "Audrey", text: "Then you are doing it right. Tell her she doesn't have to face it alone, and then show it: sit there with her." },
       { speaker: "Timur", text: "Do I have to stay the whole evening?" },
-      { speaker: "İpek", text: "No, you don't have to. Forty minutes is enough. But you can't look at your phone, not once." },
+      { speaker: "Audrey", text: "No, you don't have to. Forty minutes is enough. But you can't look at your phone, not once." },
       { speaker: "Timur", text: "What does she need courage for?" },
-      { speaker: "İpek", text: "For Thursday. She has to call them, and she has been calm about it for three weeks, which is her way of not doing it." },
+      { speaker: "Audrey", text: "For Thursday. She has to call them, and she has been calm about it for three weeks, which is her way of not doing it." },
       { speaker: "Timur", text: "And the stress?" },
-      { speaker: "İpek", text: "The stress is the part she can cope with. It is being alone with it that she cannot, and that is the only part you can change." },
+      { speaker: "Audrey", text: "The stress is the part she can cope with. It is being alone with it that she cannot, and that is the only part you can change." },
     ],
     questions: [
       {

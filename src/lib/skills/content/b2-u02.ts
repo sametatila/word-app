@@ -137,7 +137,7 @@ export const b2U02: SkillExercise[] = [
     text:
       "WER MACHT WAS BIS WANN\n\n" +
       "In unserer letzten Umfrage stand ein Satz, der mich seit Wochen beschäftigt: „Ich weiß nie genau, ob eine Aufgabe wirklich mir gehört.“ Achtzehn von vierzig Kolleginnen und Kollegen haben etwas Ähnliches geschrieben.\n\n" +
-      "Das ist kein Motivationsproblem. Es ist ein Sprachproblem. Zwischen „Könnte da jemand mal draufschauen?“ und „Frau Sahin ist federführend, Abgabe Donnerstag“ liegt der ganze Unterschied.\n\n" +
+      "Das ist kein Motivationsproblem. Es ist ein Sprachproblem. Zwischen „Könnte da jemand mal draufschauen?“ und „Frau Heinz ist federführend, Abgabe Donnerstag“ liegt der ganze Unterschied.\n\n" +
       "Wer delegiert, muss drei Dinge sagen: wer, was und bis wann. Fehlt eines davon, wandert die Aufgabe durch die Abteilung, bis sie jemand aus schlechtem Gewissen übernimmt — meistens die Person mit der geringsten Kapazität, weil sie am schwersten Nein sagt.\n\n" +
       "Genauso wichtig ist die Frage, was nicht dazugehört. Eine Zuständigkeit ohne Grenze entlastet niemanden. Wer beauftragt wird, ein Thema zu betreuen, sollte auch hören, wofür er ausdrücklich nicht zuständig ist.\n\n" +
       "Und die Reihenfolge? Wir haben in diesem Quartal versucht, alle offenen Punkte parallel abzuarbeiten. Das Ergebnis war, dass alles gleichzeitig zu achtzig Prozent fertig war und nichts abgeschlossen. Seit August arbeiten wir wieder in Reihenfolge, und die Stimmung ist messbar besser.\n\n" +
@@ -231,7 +231,7 @@ export const b2U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Hätten Sie diese Woche kurz Zeit?"],
-        explain: "Dilek kipi ricayı yumuşatır. Düz kipteki „Haben Sie Zeit?“ bir talep gibi durur.",
+        explain: "Leonie kipi ricayı yumuşatır. Düz kipteki „Haben Sie Zeit?“ bir talep gibi durur.",
       },
       {
         text: "Worum geht es Ilir?",
@@ -285,28 +285,28 @@ export const b2U02: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Kunde", text: "Ich rufe wegen des Abgabetermins an. Schaffen Sie den Freitag noch?" },
-      { speaker: "Melis", text: "Sofern nichts dazwischenkommt, ja. Ich sage Ihnen aber gleich, wo der Engpass liegt." },
+      { speaker: "Jutta", text: "Sofern nichts dazwischenkommt, ja. Ich sage Ihnen aber gleich, wo der Engpass liegt." },
       { speaker: "Kunde", text: "Bitte, das ist mir lieber als eine schöne Antwort." },
-      { speaker: "Melis", text: "Die Daten aus Ihrer Abteilung fehlen noch. Ohne die kann ich den Termin nicht einhalten." },
+      { speaker: "Jutta", text: "Die Daten aus Ihrer Abteilung fehlen noch. Ohne die kann ich den Termin nicht einhalten." },
       { speaker: "Kunde", text: "Die kommen morgen. Ich fasse gleich nach." },
-      { speaker: "Melis", text: "Gut. Dann bleibt eine Pufferzeit von einem Tag, und das reicht." },
+      { speaker: "Jutta", text: "Gut. Dann bleibt eine Pufferzeit von einem Tag, und das reicht." },
       { speaker: "Kunde", text: "Und wenn sie doch erst Donnerstag kommen?" },
-      { speaker: "Melis", text: "Dann liefere ich Montag, es sei denn, Sie beschleunigen die Prüfung auf Ihrer Seite." },
+      { speaker: "Jutta", text: "Dann liefere ich Montag, es sei denn, Sie beschleunigen die Prüfung auf Ihrer Seite." },
       { speaker: "Kunde", text: "Wäre eine Fristverlängerung um zwei Tage für Sie einfacher?" },
-      { speaker: "Melis", text: "Ehrlich gesagt ja. Dann arbeite ich termingerecht statt in Panik." },
+      { speaker: "Jutta", text: "Ehrlich gesagt ja. Dann arbeite ich termingerecht statt in Panik." },
       { speaker: "Kunde", text: "Dann machen wir Dienstag. Die Dringlichkeit war ohnehin eher gefühlt als echt." },
     ],
     questions: [
       {
         kind: "dictation",
-        text: "Melis'in koşullu söz verdiği ilk cümleyi yaz.",
+        text: "Jutta'nın koşullu söz verdiği ilk cümleyi yaz.",
         options: [],
         answer: 0,
         accept: ["Sofern nichts dazwischenkommt, ja."],
         explain: "sofern bir koşul bağlacıdır: söz veriliyor ama koşulu da açıkça söyleniyor.",
       },
       {
-        text: "Warum sieht Melis den Termin gefährdet?",
+        text: "Warum sieht Jutta den Termin gefährdet?",
         options: [
           "Weil ihr Team zu klein ist.",
           "Weil die Daten aus der Abteilung des Kunden fehlen.",
@@ -430,7 +430,7 @@ export const b2U02: SkillExercise[] = [
         sample:
           "Liebes Team,\n\n" +
           "kurz zur Abgabe am Freitag, damit niemand raten muss.\n\n" +
-          "Federführend ist Frau Sahin. Sie sammelt die Zahlen und schickt die Endfassung raus. Herr Weber liefert bis Mittwoch die Daten aus der Technik; das lässt sich seiner Aussage nach bis Dienstagabend erledigen. Alles Weitere ist noch zu prüfen und gehört ausdrücklich nicht zu dieser Zuständigkeit — bitte nichts nebenbei mitmachen.\n\n" +
+          "Federführend ist Frau Heinz. Sie sammelt die Zahlen und schickt die Endfassung raus. Herr Weber liefert bis Mittwoch die Daten aus der Technik; das lässt sich seiner Aussage nach bis Dienstagabend erledigen. Alles Weitere ist noch zu prüfen und gehört ausdrücklich nicht zu dieser Zuständigkeit — bitte nichts nebenbei mitmachen.\n\n" +
           "Sofern die Daten am Mittwoch da sind, arbeiten wir termingerecht und behalten einen Tag Pufferzeit. Es sei denn, in der Technik gibt es einen Engpass; dann sagt mir Herr Weber bitte am Dienstag Bescheid, und ich fasse bei der Leitung nach.\n\n" +
           "Danke euch. Fragen gern direkt an mich, nicht in die große Runde.\n\n" +
           "Viele Grüße",

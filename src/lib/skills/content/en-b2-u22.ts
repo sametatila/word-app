@@ -57,8 +57,8 @@ export const enB2U22: SkillExercise[] = [
     text:
       "Dear Nadia,\n" +
       "My brother did not come to my wedding in June. He sent a short message the night before, and since then we have hardly spoken. My mother says he must have had a good reason. My husband says he must have forgotten how much it meant to me. I think he simply did not care. Am I being unforgiving?\n" +
-      "Selin, Izmir\n" +
-      "Dear Selin,\n" +
+      "Megan, Izmir\n" +
+      "Dear Megan,\n" +
       "I cannot tell you what your brother was thinking, but I can tell you what the facts suggest. He sent a message the night before, so he can't have forgotten the date. He must have known that you would be hurt, and he must have decided that staying away was still easier than coming. That is not the same as not caring.\n" +
       "You describe him as reserved, and reserved people often find it hard to explain themselves. He must have failed to find the words, and a short message was the only thing he could manage. That does not make it right. He should have called you, and he should have called earlier.\n" +
       "But look at your own part too, gently. You have hardly spoken since June. You must have been waiting for him to take the first step, and he must have been waiting for you. Two people who are waiting can wait for years.\n" +
@@ -73,7 +73,7 @@ export const enB2U22: SkillExercise[] = [
         explain: "„He sent a short message the night before, and since then we have hardly spoken.“",
       },
       {
-        text: "How does Selin describe her brother?",
+        text: "How does Megan describe her brother?",
         options: ["reserved", "moody", "ambitious"],
         answer: 0,
         explain: "„You describe him as reserved…“",
@@ -99,16 +99,16 @@ export const enB2U22: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Selin asks if she is being unforgiving.",
-          "Nadia says he must have known Selin would be hurt.",
+          "Megan asks if she is being unforgiving.",
+          "Nadia says he must have known Megan would be hurt.",
           "Nadia says he should have called earlier.",
           "Nadia suggests asking one question.",
         ],
-        explain: "Önce Selin'in sorusu, sonra Nadia'nın çıkarımı, eleştirisi ve en sonda önerisi.",
+        explain: "Önce Megan'ın sorusu, sonra Nadia'nın çıkarımı, eleştirisi ve en sonda önerisi.",
       },
       {
         kind: "short_answer",
-        text: "What question should Selin ask her brother?",
+        text: "What question should Megan ask her brother?",
         options: [],
         answer: 0,
         accept: ["what happened that night", "what happened"],
@@ -231,36 +231,36 @@ export const enB2U22: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "İnci", text: "Can you help me with the seating for Saturday? Ten people, one long table, and I want everybody to enjoy it." },
-      { speaker: "Barkın", text: "Sure. Who is the difficult one?" },
-      { speaker: "İnci", text: "Nobody is difficult, but my friend Leyla, who is very reserved, will not talk to anyone she does not know." },
-      { speaker: "Barkın", text: "Then put her next to someone sociable. What about your cousin Emir?" },
-      { speaker: "İnci", text: "Emir, who is sociable but a bit impulsive, might tell her his whole life story in ten minutes." },
-      { speaker: "Barkın", text: "That could work, actually. Reserved people often like people who do the talking for them." },
-      { speaker: "İnci", text: "True. Then there is my sister, who is ambitious and wants to talk about work all evening." },
-      { speaker: "Barkın", text: "Put her next to my colleague Deniz, whose manner is composed. He can listen to anything without getting bored." },
-      { speaker: "İnci", text: "And your brother, who has been so moody lately?" },
-      { speaker: "Barkın", text: "He is going through a hard time. Put him near the end, next to Mom, who is the most considerate person I know." },
-      { speaker: "İnci", text: "Your mother, whose generosity is famous, will feed him all night." },
-      { speaker: "Barkın", text: "Exactly. That is her way of helping." },
-      { speaker: "İnci", text: "Good. I think we have a table." },
+      { speaker: "Gloria", text: "Can you help me with the seating for Saturday? Ten people, one long table, and I want everybody to enjoy it." },
+      { speaker: "Nigel", text: "Sure. Who is the difficult one?" },
+      { speaker: "Gloria", text: "Nobody is difficult, but my friend Fiona, who is very reserved, will not talk to anyone she does not know." },
+      { speaker: "Nigel", text: "Then put her next to someone sociable. What about your cousin Ethan?" },
+      { speaker: "Gloria", text: "Ethan, who is sociable but a bit impulsive, might tell her his whole life story in ten minutes." },
+      { speaker: "Nigel", text: "That could work, actually. Reserved people often like people who do the talking for them." },
+      { speaker: "Gloria", text: "True. Then there is my sister, who is ambitious and wants to talk about work all evening." },
+      { speaker: "Nigel", text: "Put her next to my colleague Charlie, whose manner is composed. He can listen to anything without getting bored." },
+      { speaker: "Gloria", text: "And your brother, who has been so moody lately?" },
+      { speaker: "Nigel", text: "He is going through a hard time. Put him near the end, next to Mom, who is the most considerate person I know." },
+      { speaker: "Gloria", text: "Your mother, whose generosity is famous, will feed him all night." },
+      { speaker: "Nigel", text: "Exactly. That is her way of helping." },
+      { speaker: "Gloria", text: "Good. I think we have a table." },
     ],
     questions: [
       {
-        text: "Why could Leyla be a problem at the table?",
+        text: "Why could Fiona be a problem at the table?",
         options: ["She will not talk to strangers.", "She talks about work.", "She is always late."],
         answer: 0,
-        explain: "„my friend Leyla, who is very reserved, will not talk to anyone she does not know.“",
+        explain: "„my friend Fiona, who is very reserved, will not talk to anyone she does not know.“",
       },
       {
         text: "Who will sit next to the ambitious sister?",
-        options: ["Deniz", "Emir", "Leyla"],
+        options: ["Charlie", "Ethan", "Fiona"],
         answer: 0,
-        explain: "„Put her next to my colleague Deniz, whose manner is composed.“",
+        explain: "„Put her next to my colleague Charlie, whose manner is composed.“",
       },
       {
         kind: "truefalse",
-        text: "Barkın's brother is having a hard time.",
+        text: "Nigel's brother is having a hard time.",
         options: ["True", "False"],
         answer: 0,
         explain: "„He is going through a hard time.“",
@@ -310,21 +310,21 @@ export const enB2U22: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Ceren Su", text: "Last year was the hardest year our family has had. My son Arda was fourteen, angry and hardly at home, and my husband and I were exhausted." },
-      { speaker: "Ceren Su", text: "So in January we sat down and made a plan, and I want to tell you where we will be a year from now if it works." },
-      { speaker: "Ceren Su", text: "By next summer we will have passed the turning point. Arda will have finished his first year at the new school, and he will have made at least one real friend there." },
-      { speaker: "Ceren Su", text: "Next year we will be building a sense of security at home. That means we will be eating dinner together four nights a week, phones off." },
-      { speaker: "Ceren Su", text: "My husband will be working from home on Fridays, so somebody will always be there when Arda comes back from school." },
-      { speaker: "Ceren Su", text: "By then his puberty will have ended. Or at least the worst of it will be over. I say that as a hope, not as a fact." },
-      { speaker: "Ceren Su", text: "We will also have stopped asking for obedience. We will be asking for honesty instead, which is harder for us and easier for him." },
-      { speaker: "Ceren Su", text: "Will it work? I do not know. But this time next year I will be sitting here again, and I will tell you." },
+      { speaker: "Leah Melissa", text: "Last year was the hardest year our family has had. My son Gary was fourteen, angry and hardly at home, and my husband and I were exhausted." },
+      { speaker: "Leah Melissa", text: "So in January we sat down and made a plan, and I want to tell you where we will be a year from now if it works." },
+      { speaker: "Leah Melissa", text: "By next summer we will have passed the turning point. Gary will have finished his first year at the new school, and he will have made at least one real friend there." },
+      { speaker: "Leah Melissa", text: "Next year we will be building a sense of security at home. That means we will be eating dinner together four nights a week, phones off." },
+      { speaker: "Leah Melissa", text: "My husband will be working from home on Fridays, so somebody will always be there when Gary comes back from school." },
+      { speaker: "Leah Melissa", text: "By then his puberty will have ended. Or at least the worst of it will be over. I say that as a hope, not as a fact." },
+      { speaker: "Leah Melissa", text: "We will also have stopped asking for obedience. We will be asking for honesty instead, which is harder for us and easier for him." },
+      { speaker: "Leah Melissa", text: "Will it work? I do not know. But this time next year I will be sitting here again, and I will tell you." },
     ],
     questions: [
       {
-        text: "How old was Arda last year?",
+        text: "How old was Gary last year?",
         options: ["fourteen", "sixteen", "twelve"],
         answer: 0,
-        explain: "„My son Arda was fourteen, angry and hardly at home…“",
+        explain: "„My son Gary was fourteen, angry and hardly at home…“",
       },
       {
         text: "What will the family be doing four nights a week?",
@@ -334,7 +334,7 @@ export const enB2U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The family will keep asking Arda for obedience.",
+        text: "The family will keep asking Gary for obedience.",
         options: ["True", "False"],
         answer: 1,
         explain: "„We will also have stopped asking for obedience.“",
@@ -411,7 +411,7 @@ export const enB2U22: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Tavsiye köşesi için vaka kartını doldur.",
-        facts: "Selin'in kardeşi haziranda düğüne gelmedi; düğünden önceki akşam kısa bir mesaj gönderdi; köşe yazarına göre onu aramalıydı; öneri: ona tek bir soru sormak.",
+        facts: "Megan'ın kardeşi haziranda düğüne gelmedi; düğünden önceki akşam kısa bir mesaj gönderdi; köşe yazarına göre onu aramalıydı; öneri: ona tek bir soru sormak.",
         fields: [
           { label: "What happened", answer: "he missed the wedding", accept: ["he did not come", "he missed the wedding in June"] },
           { label: "His message", answer: "the night before", accept: ["the night before the wedding", "a short message"] },

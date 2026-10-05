@@ -102,41 +102,41 @@ export const enA2U01: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Ali: What were you doing yesterday at eight? I called you three times.\n" +
-      "Sena: At eight? I was cooking. My phone was in the other room.\n" +
-      "Ali: I called again at nine.\n" +
-      "Sena: At nine I was sleeping! I went to bed early.\n" +
-      "Ali: Early? Why?\n" +
-      "Sena: Because I worked twelve hours. While I was working, it was raining all day.\n" +
-      "Ali: And this morning?\n" +
-      "Sena: This morning I was waiting for the bus when I saw your message.\n" +
-      "Ali: Good. I was looking for my keys all last week and I found them yesterday — in your car!\n" +
-      "Sena: In my car! When did you leave them there?\n" +
-      "Ali: Two weeks ago, I think. I was wearing a big jacket that day and the keys fell down.\n" +
-      "Sena: Then come and take them. I am at home now.",
+      "Harry: What were you doing yesterday at eight? I called you three times.\n" +
+      "Ellie: At eight? I was cooking. My phone was in the other room.\n" +
+      "Harry: I called again at nine.\n" +
+      "Ellie: At nine I was sleeping! I went to bed early.\n" +
+      "Harry: Early? Why?\n" +
+      "Ellie: Because I worked twelve hours. While I was working, it was raining all day.\n" +
+      "Harry: And this morning?\n" +
+      "Ellie: This morning I was waiting for the bus when I saw your message.\n" +
+      "Harry: Good. I was looking for my keys all last week and I found them yesterday — in your car!\n" +
+      "Ellie: In my car! When did you leave them there?\n" +
+      "Harry: Two weeks ago, I think. I was wearing a big jacket that day and the keys fell down.\n" +
+      "Ellie: Then come and take them. I am at home now.",
     questions: [
       {
-        text: "What was Sena doing at eight?",
+        text: "What was Ellie doing at eight?",
         options: ["cooking", "sleeping", "waiting for the bus"],
         answer: 0,
         explain: "„At eight? I was cooking.“ — dokuzda uyuyordu, sabah otobüs bekliyordu.",
       },
       {
-        text: "Where were Ali's keys?",
-        options: ["in Sena's car", "in his jacket", "at the bus stop"],
+        text: "Where were Harry's keys?",
+        options: ["in Ellie's car", "in his jacket", "at the bus stop"],
         answer: 0,
         explain: "„I was looking for my keys all last week and I found them yesterday — in your car!“",
       },
       {
         kind: "truefalse",
-        text: "Sena was sleeping at eight.",
+        text: "Ellie was sleeping at eight.",
         options: ["True", "False"],
         answer: 1,
         explain: "„At nine I was sleeping!“ — sekizde yemek pişiriyordu.",
       },
       {
         kind: "gapfill",
-        text: "While Sena was working, it was ___ all day.",
+        text: "While Ellie was working, it was ___ all day.",
         options: [],
         answer: 0,
         accept: ["raining"],
@@ -149,15 +149,15 @@ export const enA2U01: SkillExercise[] = [
         answer: 0,
         items: [
           "Two weeks ago the keys fell down.",
-          "Last week Ali was looking for his keys.",
+          "Last week Harry was looking for his keys.",
           "Yesterday he found them.",
-          "This morning Sena saw the message.",
+          "This morning Ellie saw the message.",
         ],
         explain: "En eski olay iki hafta önce, en yenisi bu sabah. Zaman ifadeleri sırayı veriyor.",
       },
       {
         kind: "short_answer",
-        text: "When did Ali leave the keys in the car?",
+        text: "When did Harry leave the keys in the car?",
         options: [],
         answer: 0,
         accept: ["two weeks ago", "2 weeks ago", "two weeks"],
@@ -185,29 +185,29 @@ export const enA2U01: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "What happened yesterday? I called you four times!" },
-      { speaker: "Can", text: "Sorry! While I was cooking, the phone rang and I answered." },
-      { speaker: "Nil", text: "And?" },
-      { speaker: "Can", text: "It was my brother. While we were talking, the rice was burning." },
-      { speaker: "Nil", text: "Oh no." },
-      { speaker: "Can", text: "Then somebody was waving at the window — the neighbor. She was shouting: Fire!" },
-      { speaker: "Nil", text: "Fire!" },
-      { speaker: "Can", text: "No fire, only smoke. But at the same time the sun was shining and the kitchen was very hot." },
-      { speaker: "Nil", text: "And the rice?" },
-      { speaker: "Can", text: "In the trash. We ate bread and cheese." },
-      { speaker: "Nil", text: "Poor you. Did you buy new rice?" },
-      { speaker: "Can", text: "Yes, I bought two kilos." },
+      { speaker: "Katie", text: "What happened yesterday? I called you four times!" },
+      { speaker: "Tyler", text: "Sorry! While I was cooking, the phone rang and I answered." },
+      { speaker: "Katie", text: "And?" },
+      { speaker: "Tyler", text: "It was my brother. While we were talking, the rice was burning." },
+      { speaker: "Katie", text: "Oh no." },
+      { speaker: "Tyler", text: "Then somebody was waving at the window — the neighbor. She was shouting: Fire!" },
+      { speaker: "Katie", text: "Fire!" },
+      { speaker: "Tyler", text: "No fire, only smoke. But at the same time the sun was shining and the kitchen was very hot." },
+      { speaker: "Katie", text: "And the rice?" },
+      { speaker: "Tyler", text: "In the trash. We ate bread and cheese." },
+      { speaker: "Katie", text: "Poor you. Did you buy new rice?" },
+      { speaker: "Tyler", text: "Yes, I bought two kilos." },
     ],
     questions: [
       {
-        text: "What was Can doing when the phone rang?",
+        text: "What was Tyler doing when the phone rang?",
         options: ["cooking", "sleeping", "waiting"],
         answer: 0,
         explain: "„While I was cooking, the phone rang and I answered.“ — pişirmek arka plan, telefon bir an.",
       },
       {
         text: "Who was shouting?",
-        options: ["the neighbor", "his brother", "Nil"],
+        options: ["the neighbor", "his brother", "Katie"],
         answer: 0,
         explain: "„Then somebody was waving at the window — the neighbor. She was shouting: Fire!“",
       },
@@ -260,22 +260,22 @@ export const enA2U01: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Deniz", text: "I bought a new computer two days ago. The old one was ten years old." },
-      { speaker: "Deniz", text: "Last week I lost all my work on it. Suddenly the screen was dark." },
-      { speaker: "Deniz", text: "I brought it to a store. The man there was teaching a course, so I waited one hour." },
-      { speaker: "Deniz", text: "Finally he looked at it and said: This computer is very old. Buy a new one." },
-      { speaker: "Deniz", text: "Three days ago I went to the city and I looked at three computers. They were not cheap." },
-      { speaker: "Deniz", text: "I have worked at home a lot recently, so I need a good computer." },
+      { speaker: "Charlie", text: "I bought a new computer two days ago. The old one was ten years old." },
+      { speaker: "Charlie", text: "Last week I lost all my work on it. Suddenly the screen was dark." },
+      { speaker: "Charlie", text: "I brought it to a store. The man there was teaching a course, so I waited one hour." },
+      { speaker: "Charlie", text: "Finally he looked at it and said: This computer is very old. Buy a new one." },
+      { speaker: "Charlie", text: "Three days ago I went to the city and I looked at three computers. They were not cheap." },
+      { speaker: "Charlie", text: "I have worked at home a lot recently, so I need a good computer." },
     ],
     questions: [
       {
-        text: "When did Deniz lose his work?",
+        text: "When did Charlie lose his work?",
         options: ["last week", "two days ago", "yesterday"],
         answer: 0,
         explain: "„Last week I lost all my work on it.“ — iki gün önce bilgisayarı aldı.",
       },
       {
-        text: "Why did Deniz wait one hour?",
+        text: "Why did Charlie wait one hour?",
         options: ["the man was teaching a course", "the store was closed", "the computer was dark"],
         answer: 0,
         explain: "„The man there was teaching a course, so I waited one hour.“",
@@ -310,7 +310,7 @@ export const enA2U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where has Deniz worked a lot recently?",
+        text: "Where has Charlie worked a lot recently?",
         options: [],
         answer: 0,
         accept: ["at home", "home"],

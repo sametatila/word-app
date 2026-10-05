@@ -119,7 +119,7 @@ export const deB1P13: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Reporter", text: "Unsere Frage heute auf dem Marktplatz: Würden Sie Ihren Beruf noch einmal wählen? Wir haben vier Menschen gefragt." },
-      { speaker: "Frau Ünal", text: "Ich bin seit fünfzehn Jahren Krankenpflegerin. Ja, ich würde es wieder machen, aber nicht wieder im Schichtdienst. Die Nächte haben mich mehr gekostet, als ich damals dachte." },
+      { speaker: "Frau Kallweit", text: "Ich bin seit fünfzehn Jahren Krankenpflegerin. Ja, ich würde es wieder machen, aber nicht wieder im Schichtdienst. Die Nächte haben mich mehr gekostet, als ich damals dachte." },
       { speaker: "Herr Petrov", text: "Busfahrer, seit zweiundzwanzig Jahren. Ehrlich gesagt: nein. Nicht wegen der Fahrgäste, sondern wegen des Verkehrs. Für dieselbe Linie brauche ich heute zwanzig Minuten länger als früher." },
       { speaker: "Frau Barth", text: "Ich habe Jura studiert, weil meine Eltern das wollten, und arbeite jetzt als Tischlerin. Beide Entscheidungen würde ich wieder treffen. Ohne das Studium wüsste ich nicht so genau, was ich nicht will." },
       { speaker: "Herr Kunze", text: "Lehrer an einer Grundschule. Sowohl ja als auch nein. Die Kinder sind großartig, aber die Verwaltung frisst die Hälfte meiner Zeit." },
@@ -128,7 +128,7 @@ export const deB1P13: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Was möchte Frau Ünal nicht noch einmal erleben?",
+        text: "Was möchte Frau Kallweit nicht noch einmal erleben?",
         options: ["die Arbeit mit Patienten", "den Schichtdienst mit den Nächten", "die lange Ausbildung"],
         answer: 1,
         explain: "Mesleği yine seçer „aber nicht wieder im Schichtdienst“ — geceler ona pahalıya patlamış.",
@@ -235,7 +235,7 @@ export const deB1P13: SkillExercise[] = [
           "und eine Rücklage für ein Jahr planen. Unterschätze aber nicht, dass der Beruf auch den " +
           "Körper fordert: Man sitzt viel auf kleinen Stühlen und hebt Kinder hoch. Du bist nicht zu alt, " +
           "sondern erfahren. Entweder du probierst es jetzt, oder du ärgerst dich mit sechzig darüber.\n\n" +
-          "Viele Grüße\nAyla",
+          "Viele Grüße\nElke",
       },
     ],
   },

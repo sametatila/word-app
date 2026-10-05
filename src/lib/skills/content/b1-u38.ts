@@ -51,7 +51,7 @@ export const b1U38: SkillExercise[] = [
     text:
       "Frau Berger ist Architektin. Sie hat studiert, sechs Jahre lang, und " +
       "arbeitet heute in einem kleinen Büro mit vier Personen.\n\n" +
-      "Herr Aydin ist Übersetzer. Er hat kein Diplom in diesem Fach, sondern " +
+      "Herr Haas ist Übersetzer. Er hat kein Diplom in diesem Fach, sondern " +
       "zwei Sprachen von zu Hause und ein Zertifikat aus einer Fortbildung. " +
       "Seine Frau ist Ingenieurin und verdient mehr, das sagt er ganz " +
       "offen.\n\n" +
@@ -69,7 +69,7 @@ export const b1U38: SkillExercise[] = [
         explain: "„Sie hat studiert, sechs Jahre lang …“",
       },
       {
-        text: "Was hat Herr Aydin statt eines Diploms?",
+        text: "Was hat Herr Haas statt eines Diploms?",
         options: ["Zwei Sprachen und ein Zertifikat", "Ein Abitur", "Eine Lehre"],
         answer: 0,
         explain: "„… sondern zwei Sprachen von zu Hause und ein Zertifikat aus einer Fortbildung.“",
@@ -337,9 +337,9 @@ export const b1U38: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Meslek kartını doldur.",
-        facts: "Kişi: Sedef Berger; meslek: mimar; eğitim: 6 yıl üniversite; iş yeri: 4 kişilik büro; ek: sertifika yok.",
+        facts: "Kişi: Amelie Berger; meslek: mimar; eğitim: 6 yıl üniversite; iş yeri: 4 kişilik büro; ek: sertifika yok.",
         fields: [
-          { label: "Name", answer: "Sedef Berger", accept: ["Sedef", "Berger"] },
+          { label: "Name", answer: "Amelie Berger", accept: ["Amelie", "Berger"] },
           { label: "Beruf", answer: "Architektin", accept: ["Architekt", "sie ist Architektin"] },
           { label: "Ausbildung", answer: "6 Jahre Studium", accept: ["sechs Jahre", "Studium"] },
           { label: "Arbeitsort", answer: "ein Büro mit vier Personen", accept: ["Büro mit vier Personen", "kleines Büro", "Büro"] },

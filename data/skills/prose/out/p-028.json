@@ -40,9 +40,9 @@
   "en": "Shopping at the kiosk. Catch the prices and the total."
  },
  {
-  "tr": "„He doesn't like cheese.“ — peyniri yiyen Deniz.",
+  "tr": "„He doesn't like cheese.“ — peyniri yiyen Charlie.",
   "kind": "explain",
-  "en": "„He doesn't like cheese.“ — the one who eats cheese is Deniz."
+  "en": "„He doesn't like cheese.“ — the one who eats cheese is Charlie."
  },
  {
   "tr": "„But I don't have a brother. I only have two sisters.“",
@@ -62,7 +62,7 @@
  {
   "tr": "Deniz fotoğraftaki akrabalarını tanıtıyor. Kim kimin nesi?",
   "kind": "intro",
-  "en": "Deniz introduces the relatives in the photo. Who is related to whom?"
+  "en": "Charlie introduces the relatives in the photo. Who is related to whom?"
  },
  {
   "tr": "„I have a cat and a fish.“ — at ve kuş hayvanat bahçesinde.",
@@ -87,27 +87,27 @@
  {
   "tr": "„He is quiet, but he is very strong.“ Can ise „never quiet“.",
   "kind": "explain",
-  "en": "„He is quiet, but he is very strong.“ Can, on the other hand, is „never quiet“."
+  "en": "„He is quiet, but he is very strong.“ Tyler, on the other hand, is „never quiet“."
  },
  {
-  "tr": "„I'd like a soup, please. And a water.“ — sandviçi Eda alıyor.",
+  "tr": "„I'd like a soup, please. And a water.“ — sandviçi Erin alıyor.",
   "kind": "explain",
-  "en": "„I'd like a soup, please. And a water.“ — the sandwich is Eda's order."
+  "en": "„I'd like a soup, please. And a water.“ — the sandwich is Erin's order."
  },
  {
-  "tr": "„My friend Kaan is nineteen.“ — yaşta „years old“ düşebiliyor.",
+  "tr": "„My friend Liam is nineteen.“ — yaşta „years old“ düşebiliyor.",
   "kind": "explain",
-  "en": "„My friend Kaan is nineteen.“ — with an age, „years old“ can be dropped."
+  "en": "„My friend Liam is nineteen.“ — with an age, „years old“ can be dropped."
  },
  {
-  "tr": "„Nil's cousin Ali plays with us too.“ — kuzenlik iki yönlüdür.",
+  "tr": "„Katie's cousin Harry plays with us too.“ — kuzenlik iki yönlüdür.",
   "kind": "explain",
-  "en": "„Nil's cousin Ali plays with us too.“ — being cousins goes both ways."
+  "en": "„Katie's cousin Harry plays with us too.“ — being cousins goes both ways."
  },
  {
-  "tr": "„one, two, three … eight!“ — Eda sayıyor ve sekizde bitiriyor.",
+  "tr": "„one, two, three … eight!“ — Erin sayıyor ve sekizde bitiriyor.",
   "kind": "explain",
-  "en": "„one, two, three … eight!“ — Eda counts and stops at eight."
+  "en": "„one, two, three … eight!“ — Erin counts and stops at eight."
  },
  {
   "tr": "Sipariş kalıplarını yaz. Sonunda kafe siparişi formunu doldur.",
@@ -145,9 +145,9 @@
   "en": "A friend is described: both what he looks like and what he is like."
  },
  {
-  "tr": "Lena ile Can evcil hayvanları konuşuyor. Kimin nesi var, kimin yok?",
+  "tr": "Lena ile Tyler evcil hayvanları konuşuyor. Kimin nesi var, kimin yok?",
   "kind": "intro",
-  "en": "Lena and Can talk about pets. Who has what, who has nothing?"
+  "en": "Lena and Tyler talk about pets. Who has what, who has nothing?"
  },
  {
   "tr": "„he has short, dark hair“ — iki sıfat virgülle art arda geliyor.",
@@ -170,9 +170,9 @@
   "en": "Write about character. The negative and the question are built with „be“, not with „do“."
  },
  {
-  "tr": "„Kaan's cousin Ada is in our club.“ — iyelik „-'s“ ile: Kaan's cousin.",
+  "tr": "„Liam's cousin Ada is in our club.“ — iyelik „-'s“ ile: Liam's cousin.",
   "kind": "explain",
-  "en": "„Kaan's cousin Ada is in our club.“ — possession with „-'s“: Kaan's cousin."
+  "en": "„Liam's cousin Ada is in our club.“ — possession with „-'s“: Liam's cousin."
  },
  {
   "tr": "Önce tek kişi sorulur, sonra anne baba. Cevaplar kısa biçimde geliyor.",
@@ -185,9 +185,9 @@
   "en": "„It is nine euros.“ — five euros the soup, four euros the sandwich; nine together."
  },
  {
-  "tr": "„No, that is my aunt's husband. His name is Kaan.“ — Ayse amca sanıyor.",
+  "tr": "„No, that is my aunt's husband. His name is Liam.“ — Rachel amca sanıyor.",
   "kind": "explain",
-  "en": "„No, that is my aunt's husband. His name is Kaan.“ — Ayse takes him for the uncle."
+  "en": "„No, that is my aunt's husband. His name is Liam.“ — Rachel takes him for the uncle."
  },
  {
   "tr": "Önce fotoğrafın kendisi, sonra tek kişi, sonra iki kişi, en son kendisi.",
@@ -195,9 +195,9 @@
   "en": "First the photo itself, then one person, then two people, last of all herself."
  },
  {
-  "tr": "Deniz kahvaltısını anlatıyor. „some“ ile „any“ nerede geçiyor, dikkat et.",
+  "tr": "Charlie kahvaltısını anlatıyor. „some“ ile „any“ nerede geçiyor, dikkat et.",
   "kind": "intro",
-  "en": "Deniz talks about his breakfast. Watch where „some“ and where „any“ appears."
+  "en": "Charlie talks about his breakfast. Watch where „some“ and where „any“ appears."
  },
  {
   "tr": "„I only have two sisters.“ — iki tane olduğu için çoğul: sister → sisters.",
@@ -205,9 +205,9 @@
   "en": "„I only have two sisters.“ — there are two, so the plural: sister → sisters."
  },
  {
-  "tr": "Ayse iş yerindeki grup fotoğrafını anlatıyor. Kim kim, kim fotoğrafta yok?",
+  "tr": "Rachel iş yerindeki grup fotoğrafını anlatıyor. Kim kim, kim fotoğrafta yok?",
   "kind": "intro",
-  "en": "Ayse explains the group photo from work. Who is who, who is missing from the photo?"
+  "en": "Rachel explains the group photo from work. Who is who, who is missing from the photo?"
  },
  {
   "tr": "Önce kim olduğu, sonra nasıl göründüğü. İki soru iki ayrı kalıpla geliyor.",
@@ -220,9 +220,9 @@
   "en": "„I don't have an animal at home.“ His mother says „Don't bring a dog here!“ as well."
  },
  {
-  "tr": "„Kaan likes music very much.“ Oyun da oynuyorlar ama „very much“ müzik için.",
+  "tr": "„Liam likes music very much.“ Oyun da oynuyorlar ama „very much“ müzik için.",
   "kind": "explain",
-  "en": "„Kaan likes music very much.“ They play games too, but „very much“ belongs to the music."
+  "en": "„Liam likes music very much.“ They play games too, but „very much“ belongs to the music."
  },
  {
   "tr": "„But can I have a spoon? There is only a knife here.“ — kaşık yok, bıçak var.",
@@ -230,9 +230,9 @@
   "en": "„But can I have a spoon? There is only a knife here.“ — no spoon, only a knife."
  },
  {
-  "tr": "„Kaan is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
+  "tr": "„Liam is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
   "kind": "explain",
-  "en": "„Kaan is not quiet. He is funny, and he talks a lot.“ The quiet one is his cousin Ada."
+  "en": "„Liam is not quiet. He is funny, and he talks a lot.“ The quiet one is his cousin Ada."
  },
  {
   "tr": "„some“ olumlu cümlede, „any“ soru ve olumsuzda. Türkçede böyle bir ayrım yok.",
@@ -270,9 +270,9 @@
   "en": "„My sister has two cats.“ The brother plays with the dog, the father reminds them of the bird."
  },
  {
-  "tr": "„No, he isn't. That is my grandfather.“ — Mert amcası sanıyor, Sena düzeltiyor.",
+  "tr": "„No, he isn't. That is my grandfather.“ — Henry amcası sanıyor, Ellie düzeltiyor.",
   "kind": "explain",
-  "en": "„No, he isn't. That is my grandfather.“ — Mert takes him for the uncle, Sena corrects him."
+  "en": "„No, he isn't. That is my grandfather.“ — Henry takes him for the uncle, Ellie corrects him."
  },
  {
   "tr": "„He is tall and he has short, dark hair.“ — „funny“ karakter, görünüş değil.",
@@ -295,14 +295,14 @@
   "en": "First breakfast itself, then what he eats, then what his brother eats, last what comes after."
  },
  {
-  "tr": "Eda bir fotoğrafı anlatıyor. „this“, „that“ ve „these“ arasındaki farka dikkat et.",
+  "tr": "Erin bir fotoğrafı anlatıyor. „this“, „that“ ve „these“ arasındaki farka dikkat et.",
   "kind": "intro",
-  "en": "Eda explains a photo. Watch the difference between „this“, „that“ and „these“."
+  "en": "Erin explains a photo. Watch the difference between „this“, „that“ and „these“."
  },
  {
-  "tr": "Sena akrabalarını anlatıyor. „look like“ görünüşü sorar — cevabı da görünüş olmalı.",
+  "tr": "Ellie akrabalarını anlatıyor. „look like“ görünüşü sorar — cevabı da görünüş olmalı.",
   "kind": "intro",
-  "en": "Sena introduces her relatives. „look like“ asks about appearance — so the answer has to be appearance."
+  "en": "Ellie introduces her relatives. „look like“ asks about appearance — so the answer has to be appearance."
  },
  {
   "tr": "Bir aile evcil hayvanlarını anlatıyor. Kimin hangi hayvanı var, hangisi ne yapmıyor?",
@@ -310,9 +310,9 @@
   "en": "A family talks about its pets. Who has which animal, which one does not do what?"
  },
  {
-  "tr": "Eda kulübündeki üç kişiyi anlatıyor. Her biri için hem görünüş hem karakter geliyor.",
+  "tr": "Erin kulübündeki üç kişiyi anlatıyor. Her biri için hem görünüş hem karakter geliyor.",
   "kind": "intro",
-  "en": "Eda introduces three people from her club. For each one you get both looks and character."
+  "en": "Erin introduces three people from her club. For each one you get both looks and character."
  },
  {
   "tr": "Önce tek kişi sorulur, sonra kaç kişi olduğu. „who“ kişiyi, „how many“ sayıyı sorar.",
@@ -340,9 +340,9 @@
   "en": "„I eat some bread with butter and cheese. I don't eat eggs.“ — the egg is his brother's."
  },
  {
-  "tr": "„I am not in the picture. I don't like photos!“ — Deniz resimde ama artık orada çalışmıyor.",
+  "tr": "„I am not in the picture. I don't like photos!“ — Charlie resimde ama artık orada çalışmıyor.",
   "kind": "explain",
-  "en": "„I am not in the picture. I don't like photos!“ — Deniz is in the picture but no longer works there."
+  "en": "„I am not in the picture. I don't like photos!“ — Charlie is in the picture but no longer works there."
  },
  {
   "tr": "Tekil ile çoğulu yaz. İngilizcede çoğul, ismi ve ona bağlı sözcükleri birlikte değiştiriyor.",

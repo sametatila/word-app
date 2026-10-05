@@ -25,9 +25,9 @@
   "de": "Museum; öffnet um zehn; dauert zwei Stunden; Karte an der Information."
  },
  {
-  "tr": "Deniz Kaya; 12 Green Street, Bremen; iki kitap; cuma günü teslim.",
+  "tr": "Charlie Morgan; 12 Green Street, Bremen; iki kitap; cuma günü teslim.",
   "kind": "form.facts",
-  "de": "Deniz Kaya; 12 Green Street, Bremen; zwei Bücher; Lieferung am Freitag."
+  "de": "Charlie Morgan; 12 Green Street, Bremen; zwei Bücher; Lieferung am Freitag."
  },
  {
   "tr": "Hastayım.",
@@ -300,9 +300,9 @@
   "de": "Die Dauer mit „how long“, und das Verb ist „take“ — nicht „dauern“ wie im Deutschen. „How much time“ ginge auch, klingt aber weniger natürlich."
  },
  {
-  "tr": "Kaan'ın anlattığı sıra: doğru sıraya koy.",
+  "tr": "Liam'ın anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in der Erzählung von Kaan: Bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in der Erzählung von Liam: Bring sie in die richtige Ordnung."
  },
  {
   "tr": "Sorulan şeylerin sırası: doğru sıraya koy.",

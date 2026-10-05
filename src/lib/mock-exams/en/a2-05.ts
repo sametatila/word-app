@@ -44,7 +44,7 @@ export const EN_A2_05: MockPaper = {
               genre: "Email from a restaurant",
               genreTr: "Lokantadan e-posta",
               title: "Your table on Friday",
-              body: `Dear Ms. Baran, we have your table for four on Friday at eight. If you are more than fifteen minutes late we cannot keep it. Please tell us today if somebody in your group does not eat meat.`,
+              body: `Dear Ms. Lawson, we have your table for four on Friday at eight. If you are more than fifteen minutes late we cannot keep it. Please tell us today if somebody in your group does not eat meat.`,
             },
             {
               kind: "text",

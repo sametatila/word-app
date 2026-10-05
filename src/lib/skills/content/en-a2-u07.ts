@@ -45,23 +45,23 @@ export const enA2U07: SkillExercise[] = [
     minutes: 5,
     text:
       "Pharmacist: Good morning. How can I help you?\n" +
-      "Ela: I have this from my doctor. It is my first time with this medicine.\n" +
+      "Lucy: I have this from my doctor. It is my first time with this medicine.\n" +
       "Pharmacist: Let me look. One tablet twice a day.\n" +
-      "Ela: Twice a day — in the morning and in the evening?\n" +
+      "Lucy: Twice a day — in the morning and in the evening?\n" +
       "Pharmacist: Yes. And you should take it after meals, never before.\n" +
-      "Ela: Why after a meal?\n" +
+      "Lucy: Why after a meal?\n" +
       "Pharmacist: Because of the stomach. On an empty stomach it can hurt.\n" +
-      "Ela: How many tablets are in the box?\n" +
+      "Lucy: How many tablets are in the box?\n" +
       "Pharmacist: Twenty. That is ten days.\n" +
-      "Ela: Are there side effects?\n" +
+      "Lucy: Are there side effects?\n" +
       "Pharmacist: You can get tired. Don't drive in the first two days.\n" +
-      "Ela: My son has the same cold. Can he take it too?\n" +
+      "Lucy: My son has the same cold. Can he take it too?\n" +
       "Pharmacist: No. For children we have a syrup. This dose is for adults.\n" +
-      "Ela: Good to know. And if I forget a pill?\n" +
+      "Lucy: Good to know. And if I forget a pill?\n" +
       "Pharmacist: Take the next one at the normal time. Never take two together.",
     questions: [
       {
-        text: "How often should Ela take the tablet?",
+        text: "How often should Lucy take the tablet?",
         options: ["twice a day", "once a day", "after two days"],
         answer: 0,
         explain: "„One tablet twice a day.“ — sabah bir, akşam bir.",
@@ -193,19 +193,19 @@ export const enA2U07: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Ela", text: "Excuse me, could you tell me where the unit is?" },
+      { speaker: "Lucy", text: "Excuse me, could you tell me where the unit is?" },
       { speaker: "Nurse", text: "Which unit? There are three in this building." },
-      { speaker: "Ela", text: "I'm not sure. My mother has been here since yesterday. Her name is Nur Aslan." },
-      { speaker: "Nurse", text: "One moment. Aslan… yes, Unit 2. Go through the green door and then to the right." },
-      { speaker: "Ela", text: "Do you know how long I can stay?" },
+      { speaker: "Lucy", text: "I'm not sure. My mother has been here since yesterday. Her name is Nur Cooper." },
+      { speaker: "Nurse", text: "One moment. Cooper… yes, Unit 2. Go through the green door and then to the right." },
+      { speaker: "Lucy", text: "Do you know how long I can stay?" },
       { speaker: "Nurse", text: "Until seven. And only two people in the room." },
-      { speaker: "Ela", text: "Could you tell me where I can find a nurse there?" },
-      { speaker: "Nurse", text: "At the desk on the right. Ask for Sena." },
-      { speaker: "Ela", text: "One more question: do I have to show my card?" },
+      { speaker: "Lucy", text: "Could you tell me where I can find a nurse there?" },
+      { speaker: "Nurse", text: "At the desk on the right. Ask for Ellie." },
+      { speaker: "Lucy", text: "One more question: do I have to show my card?" },
       { speaker: "Nurse", text: "No, only the patients show a card. But please write your name in the book." },
-      { speaker: "Ela", text: "And where can I buy water?" },
+      { speaker: "Lucy", text: "And where can I buy water?" },
       { speaker: "Nurse", text: "In the store next to the door. But not in the room, please." },
-      { speaker: "Ela", text: "Thank you very much." },
+      { speaker: "Lucy", text: "Thank you very much." },
       { speaker: "Nurse", text: "You're welcome. Get well soon — I mean your mother." },
     ],
     questions: [
@@ -216,7 +216,7 @@ export const enA2U07: SkillExercise[] = [
         explain: "„Go through the green door and then to the right.“",
       },
       {
-        text: "Until when can Ela stay?",
+        text: "Until when can Lucy stay?",
         options: ["until seven", "until two", "until yesterday"],
         answer: 0,
         explain: "„Until seven. And only two people in the room.“",
@@ -230,7 +230,7 @@ export const enA2U07: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ela must write her name in the ___.",
+        text: "Lucy must write her name in the ___.",
         options: [],
         answer: 0,
         accept: ["book"],
@@ -271,18 +271,18 @@ export const enA2U07: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ela", text: "People ask me how I stay healthy. The answer is boring: nothing special." },
-      { speaker: "Ela", text: "I usually get up at seven and I walk to work. That is twenty minutes every morning." },
-      { speaker: "Ela", text: "I exercise three times a week. On Monday and Wednesday I swim, on Saturday I play soccer." },
-      { speaker: "Ela", text: "I hardly ever drink cola. Sugar is my only problem — I love cake." },
-      { speaker: "Ela", text: "My diet is simple: vegetables, rice, fish. I eat meat twice a month, not more." },
-      { speaker: "Ela", text: "Protein in the morning helps me. With bread and an egg I am not hungry until two." },
-      { speaker: "Ela", text: "And I sleep seven hours. That is the hard part, because the phone is always near the bed." },
-      { speaker: "Ela", text: "My daily plan is not a diet. It is a habit. A diet stops, a habit doesn't." },
+      { speaker: "Lucy", text: "People ask me how I stay healthy. The answer is boring: nothing special." },
+      { speaker: "Lucy", text: "I usually get up at seven and I walk to work. That is twenty minutes every morning." },
+      { speaker: "Lucy", text: "I exercise three times a week. On Monday and Wednesday I swim, on Saturday I play soccer." },
+      { speaker: "Lucy", text: "I hardly ever drink cola. Sugar is my only problem — I love cake." },
+      { speaker: "Lucy", text: "My diet is simple: vegetables, rice, fish. I eat meat twice a month, not more." },
+      { speaker: "Lucy", text: "Protein in the morning helps me. With bread and an egg I am not hungry until two." },
+      { speaker: "Lucy", text: "And I sleep seven hours. That is the hard part, because the phone is always near the bed." },
+      { speaker: "Lucy", text: "My daily plan is not a diet. It is a habit. A diet stops, a habit doesn't." },
     ],
     questions: [
       {
-        text: "How often does Ela exercise?",
+        text: "How often does Lucy exercise?",
         options: ["three times a week", "every day", "twice a month"],
         answer: 0,
         explain: "„I exercise three times a week.“ — ayda iki kez olan et.",
@@ -295,14 +295,14 @@ export const enA2U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela eats meat every week.",
+        text: "Lucy eats meat every week.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I eat meat twice a month, not more.“",
       },
       {
         kind: "gapfill",
-        text: "Ela sleeps ___ hours.",
+        text: "Lucy sleeps ___ hours.",
         options: [],
         answer: 0,
         accept: ["seven", "7"],
@@ -348,7 +348,7 @@ export const enA2U07: SkillExercise[] = [
         kind: "build",
         tr: "Günde iki kez bir tablet al.",
         answer: "Take one tablet twice a day.",
-        hint: "Emir cümlesi öznesiz başlıyor; sıklık en sonda: twice a day.",
+        hint: "Ethan cümlesi öznesiz başlıyor; sıklık en sonda: twice a day.",
       },
       {
         kind: "build",

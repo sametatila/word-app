@@ -245,13 +245,13 @@ export const b1U04: SkillExercise[] = [
       { de: "spätestens", tr: "en geç", en: "at the latest" },
     ],
     segments: [
-      { speaker: "Herr Yıldız", text: "Guten Tag, hier ist Familie Yildiz aus der zweiten Etage." },
+      { speaker: "Herr Fink", text: "Guten Tag, hier ist Familie Fink aus der zweiten Etage." },
       { speaker: "Vermieterin", text: "Guten Tag. Was kann ich für Sie tun?" },
-      { speaker: "Herr Yıldız", text: "Unsere Heizung funktioniert seit gestern nicht mehr." },
+      { speaker: "Herr Fink", text: "Unsere Heizung funktioniert seit gestern nicht mehr." },
       { speaker: "Vermieterin", text: "Haben Sie schon geprüft, ob genug Wasser drin ist?" },
-      { speaker: "Herr Yıldız", text: "Ja, das habe ich. Der Schaden ist sicher größer." },
+      { speaker: "Herr Fink", text: "Ja, das habe ich. Der Schaden ist sicher größer." },
       { speaker: "Vermieterin", text: "Dann schicke ich einen Handwerker. Passt Ihnen morgen Vormittag?" },
-      { speaker: "Herr Yıldız", text: "Morgen arbeite ich. Ginge es auch am Freitag?" },
+      { speaker: "Herr Fink", text: "Morgen arbeite ich. Ginge es auch am Freitag?" },
       { speaker: "Vermieterin", text: "Ja, Freitag spätestens um zwölf ist er bei Ihnen." },
     ],
     questions: [
@@ -299,7 +299,7 @@ export const b1U04: SkillExercise[] = [
     unit: 4,
     title: "Ein Zettel an die Nachbarn",
     genre: "message",
-    intro: "Aynı şikâyeti kibar biçimde yaz. Dilek kipi burada nezaket değil, işe yarama meselesi.",
+    intro: "Aynı şikâyeti kibar biçimde yaz. Leonie kipi burada nezaket değil, işe yarama meselesi.",
     minutes: 8,
     gloss: [
       { de: "der Lärm", tr: "gürültü", en: "noise" },
@@ -386,7 +386,7 @@ export const b1U04: SkillExercise[] = [
           "Handwerker spätestens am Freitag kommt. Am Vormittag bin ich zu Hause.\n\n" +
           "Bitte sorgen Sie dafür, dass der Schaden schnell repariert wird. " +
           "Falls Sie Fragen haben, klopfen Sie einfach oder rufen Sie an.\n\n" +
-          "Mit freundlichen Grüßen\nAyla Yildiz",
+          "Mit freundlichen Grüßen\nElke Fink",
         phrases: [
           { de: "Ich melde Ihnen einen Schaden.", tr: "Size bir arıza bildiriyorum.", en: "I am reporting some damage." },
           { de: "seit dem …", tr: "…'den beri", en: "since …" },

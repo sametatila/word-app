@@ -213,7 +213,7 @@ Eines noch zur Begrifflichkeit, weil sie mehr anrichtet, als man gemeinhin annim
               id: "s2",
               genre: "Stellungnahme",
               genreTr: "Görüş yazısı",
-              title: "B — Herr Tekin, Schulleiter",
+              title: "B — Herr Haupt, Schulleiter",
               body: `Ich leite eine Schule, an der siebzehn Erstsprachen gesprochen werden. Wer mir sagt, wir sollten Herkunftssprachenunterricht anbieten, sagt mir selten, welche davon.
 
 Als wir es versucht haben, konnten wir drei Sprachen abdecken. Das Ergebnis war nicht Zufriedenheit, sondern ein Konflikt: Die übrigen Familien fragten zu Recht, warum ihre Kinder leer ausgingen. Eine Maßnahme, die nur einen Teil erreicht, erzeugt am Ende mehr Unfrieden als gar keine.

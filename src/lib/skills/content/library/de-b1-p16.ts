@@ -244,7 +244,7 @@ export const deB1P16: SkillExercise[] = [
           "Tag einen Termin für die Reparatur gefunden haben. Am nächsten Morgen hat Herr Nowak sogar " +
           "angerufen und gefragt, ob der Techniker gekommen ist. So einen Service erlebt man selten. " +
           "Bitte richten Sie ihm und seinem Kollegen meinen Dank aus.\n\n" +
-          "Mit freundlichen Grüßen\nSelin Öztürk",
+          "Mit freundlichen Grüßen\nLuisa Dörr",
       },
     ],
   },

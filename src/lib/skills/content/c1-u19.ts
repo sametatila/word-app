@@ -227,25 +227,25 @@ export const c1U19: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Moderator", text: "Frau Öztürk, Sie sind hier geboren. Wo fühlen Sie sich zu Hause?" },
-      { speaker: "Frau Öztürk", text: "Ich merke, dass die Frage immer mir gestellt wird und nie meinem Kollegen." },
+      { speaker: "Moderator", text: "Frau Dörr, Sie sind hier geboren. Wo fühlen Sie sich zu Hause?" },
+      { speaker: "Frau Dörr", text: "Ich merke, dass die Frage immer mir gestellt wird und nie meinem Kollegen." },
       { speaker: "Moderator", text: "Das ist ein fairer Einwand." },
-      { speaker: "Frau Öztürk", text: "Die Antwort ist trotzdem einfach: hier. Und in Izmir auch. Beides ist zugleich möglich — nur wird es selten so gefragt." },
-      { speaker: "Frau Öztürk", text: "Ich bin hier beheimatet, ohne dort aufgehört zu haben." },
+      { speaker: "Frau Dörr", text: "Die Antwort ist trotzdem einfach: hier. Und in Izmir auch. Beides ist zugleich möglich — nur wird es selten so gefragt." },
+      { speaker: "Frau Dörr", text: "Ich bin hier beheimatet, ohne dort aufgehört zu haben." },
       { speaker: "Moderator", text: "Manche sagen, das gehe nicht. Man müsse sich entscheiden." },
-      { speaker: "Frau Öztürk", text: "So sehr ich diese Erwartung verstehe, so oft geht sie an der Wirklichkeit vorbei. Zugehörigkeit ist keine Prüfung mit einer richtigen Antwort." },
+      { speaker: "Frau Dörr", text: "So sehr ich diese Erwartung verstehe, so oft geht sie an der Wirklichkeit vorbei. Zugehörigkeit ist keine Prüfung mit einer richtigen Antwort." },
       { speaker: "Herr Lang", text: "Ich sehe schon eine Grenze. Irgendwann muss man sagen können, wohin man gehört." },
-      { speaker: "Frau Öztürk", text: "Sie sagen es doch auch nicht. Sie sind Bayer und Deutscher und Europäer, und niemand fragt Sie, was davon zählt." },
+      { speaker: "Frau Dörr", text: "Sie sagen es doch auch nicht. Sie sind Bayer und Deutscher und Europäer, und niemand fragt Sie, was davon zählt." },
       { speaker: "Herr Lang", text: "Das ist etwas anderes." },
-      { speaker: "Frau Öztürk", text: "Warum? Der Unterschied liegt in der Abstammung, nicht in der Teilhabe. Und genau das macht die Zuschreibung schwer erträglich — sie richtet sich nach etwas, das ich nicht ändern kann und nicht getan habe." },
+      { speaker: "Frau Dörr", text: "Warum? Der Unterschied liegt in der Abstammung, nicht in der Teilhabe. Und genau das macht die Zuschreibung schwer erträglich — sie richtet sich nach etwas, das ich nicht ändern kann und nicht getan habe." },
       { speaker: "Moderator", text: "Was würden Sie stattdessen fragen?" },
-      { speaker: "Frau Öztürk", text: "Wo ich mich niedergelassen habe. Oder woran ich arbeite. Beides sagt mehr über mich aus als eine Landkarte." },
+      { speaker: "Frau Dörr", text: "Wo ich mich niedergelassen habe. Oder woran ich arbeite. Beides sagt mehr über mich aus als eine Landkarte." },
       { speaker: "Herr Lang", text: "Damit kann ich leben." },
-      { speaker: "Frau Öztürk", text: "Sehen Sie — wir sind uns nicht einig geworden. Wir haben nur die Frage ausgetauscht." },
+      { speaker: "Frau Dörr", text: "Sehen Sie — wir sind uns nicht einig geworden. Wir haben nur die Frage ausgetauscht." },
     ],
     questions: [
       {
-        text: "Was kritisiert Frau Öztürk an der Ausgangsfrage?",
+        text: "Was kritisiert Frau Dörr an der Ausgangsfrage?",
         options: [
           "Sie ist zu persönlich",
           "Sie wird immer ihr gestellt und nie ihrem Kollegen",
@@ -274,7 +274,7 @@ export const c1U19: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Frau Öztürk'ün konuşmanın sonunda vardıkları noktayı özetlediği cümleyi yaz.",
+        text: "Frau Dörr'ün konuşmanın sonunda vardıkları noktayı özetlediği cümleyi yaz.",
         options: [],
         answer: 0,
         accept: [
@@ -312,22 +312,22 @@ export const c1U19: SkillExercise[] = [
     segments: [
       { speaker: "Moderatorin", text: "Herr Brandt, Sie sagen, die Weichen würden zu früh gestellt." },
       { speaker: "Herr Brandt", text: "Mit zehn Jahren. Hätte man das vor zwanzig Jahren geändert, stünden wir heute anders da." },
-      { speaker: "Frau Ceylan", text: "Da bin ich vorsichtig. „Hätte man“ ist bequem — wir wissen nicht, was stattdessen passiert wäre." },
+      { speaker: "Frau Pietsch", text: "Da bin ich vorsichtig. „Hätte man“ ist bequem — wir wissen nicht, was stattdessen passiert wäre." },
       { speaker: "Herr Brandt", text: "Wir haben Länder, die es anders machen. Das ist kein Gedankenspiel." },
-      { speaker: "Frau Ceylan", text: "Andere Länder haben auch andere Voraussetzungen. Eine Adaption ist keine Kopie." },
+      { speaker: "Frau Pietsch", text: "Andere Länder haben auch andere Voraussetzungen. Eine Adaption ist keine Kopie." },
       { speaker: "Moderatorin", text: "Worin sind Sie sich einig?" },
-      { speaker: "Frau Ceylan", text: "Dass die Entscheidung mit zehn zu früh kommt. Nur nicht darin, was daraus folgt." },
+      { speaker: "Frau Pietsch", text: "Dass die Entscheidung mit zehn zu früh kommt. Nur nicht darin, was daraus folgt." },
       { speaker: "Herr Brandt", text: "Es wäre an der Zeit gewesen, das vor der letzten Reform zu klären. Man hat es versäumt, und jetzt reden wir wieder über Strukturen statt über Unterricht." },
-      { speaker: "Frau Ceylan", text: "Das unterschreibe ich. Die Chancengleichheit entscheidet sich im Klassenzimmer, nicht im Schulgesetz." },
+      { speaker: "Frau Pietsch", text: "Das unterschreibe ich. Die Chancengleichheit entscheidet sich im Klassenzimmer, nicht im Schulgesetz." },
       { speaker: "Herr Brandt", text: "Und solange sie sich dort nicht entscheidet, bleibt der Aufstieg eine Sache der Elite, die ihn ohnehin schafft." },
       { speaker: "Herr Brandt", text: "Wenn wir das ernst meinten, müssten wir die Fachgebiete öffnen. Wer Mathematik unterrichtet, sollte auch lesen lehren dürfen." },
-      { speaker: "Frau Ceylan", text: "Das ist überfällig, ja. Aber es setzt voraus, dass wir Lehrkräfte anders ausbilden — und darüber redet niemand gern, weil es zehn Jahre dauert." },
+      { speaker: "Frau Pietsch", text: "Das ist überfällig, ja. Aber es setzt voraus, dass wir Lehrkräfte anders ausbilden — und darüber redet niemand gern, weil es zehn Jahre dauert." },
       { speaker: "Moderatorin", text: "Also Umdenken statt Umbau?" },
-      { speaker: "Frau Ceylan", text: "Beides. Nur in dieser Reihenfolge." },
+      { speaker: "Frau Pietsch", text: "Beides. Nur in dieser Reihenfolge." },
     ],
     questions: [
       {
-        text: "Was kritisiert Frau Ceylan an Herrn Brandts erstem Satz?",
+        text: "Was kritisiert Frau Pietsch an Herrn Brandts erstem Satz?",
         options: [
           "Er sei sachlich falsch",
           "„Hätte man“ sei bequem — man wisse nicht, was stattdessen passiert wäre",
@@ -356,7 +356,7 @@ export const c1U19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Warum redet laut Frau Ceylan niemand gern über die Lehrerausbildung?",
+        text: "Warum redet laut Frau Pietsch niemand gern über die Lehrerausbildung?",
         options: [],
         answer: 0,
         accept: [

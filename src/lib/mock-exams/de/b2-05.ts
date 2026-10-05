@@ -105,7 +105,7 @@ Trotzdem halte ich nichts von der Rede vom kaputten System. Es funktioniert für
               id: "pD",
               genre: "Erfahrungsbericht D",
               genreTr: "Deneyim yazısı D",
-              title: "Sinem, mit 34 zum Studium",
+              title: "Rieke, mit 34 zum Studium",
               body: `Ich habe mit sechzehn eine Lehre begonnen, weil Geld gebraucht wurde. Achtzehn Jahre später sitze ich im dritten Semester Sozialer Arbeit, und die meisten in meinem Kurs könnten meine Kinder sein.
 
 Der Zugang war einfacher, als alle behauptet haben. Mit drei Jahren Berufserfahrung und einer bestandenen Prüfung darf man hier ohne Abitur studieren. Diese Regel gibt es seit Jahren; gewusst hat sie in meinem Umfeld niemand, auch nicht die Beratungsstelle, bei der ich zuerst war.
@@ -126,17 +126,17 @@ Was mir niemand gesagt hat: Der teuerste Teil ist nicht die Gebühr, sondern das
               id: "de-b2-05-l1-1",
               no: 1,
               text: "Wer beschreibt eine Regel, die kaum jemand kennt?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 3,
               explain:
-                "Sinem abitursuz okuma hakkını anlatıyor: \"Diese Regel gibt es seit Jahren; gewusst hat sie in meinem Umfeld niemand\" — danışma merkezi bile bilmiyormuş.",
+                "Rieke abitursuz okuma hakkını anlatıyor: \"Diese Regel gibt es seit Jahren; gewusst hat sie in meinem Umfeld niemand\" — danışma merkezi bile bilmiyormuş.",
             },
             {
               kind: "mcq",
               id: "de-b2-05-l1-2",
               no: 2,
               text: "Wer hält eine Empfehlung für ein verkleidetes Urteil über die Familie?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 0,
               explain:
                 "Ruth tavsiyeyi \"als fachliches Urteil auftrat und in Wahrheit eine Vermutung über meine Familie war\" diye niteliyor. Rahatsız eden şey yolun kendisi değil, gerekçenin kılığı.",
@@ -146,17 +146,17 @@ Was mir niemand gesagt hat: Der teuerste Teil ist nicht die Gebühr, sondern das
               id: "de-b2-05-l1-3",
               no: 3,
               text: "Wer nennt einen Kostenpunkt, den andere übersehen?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 3,
               explain:
-                "Sinem son cümlede söylüyor: \"Der teuerste Teil ist nicht die Gebühr, sondern das fehlende Gehalt.\" Yani asıl maliyet kazanılmayan para.",
+                "Rieke son cümlede söylüyor: \"Der teuerste Teil ist nicht die Gebühr, sondern das fehlende Gehalt.\" Yani asıl maliyet kazanılmayan para.",
             },
             {
               kind: "mcq",
               id: "de-b2-05-l1-4",
               no: 4,
               text: "Wer beschreibt ein bestehendes Förderangebot als praktisch wirkungslos?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 1,
               explain:
                 "Herr Wittkamp desteğin var olduğunu kabul ediyor ama koşullarını sayıyor: \"dienstags in der siebten Stunde, freiwillig\" ve yedi saat ders vermiş öğretmenlerle. Kızı üç kez gitmiş ve bir daha gitmemiş.",
@@ -166,7 +166,7 @@ Was mir niemand gesagt hat: Der teuerste Teil ist nicht die Gebühr, sondern das
               id: "de-b2-05-l1-5",
               no: 5,
               text: "Wer vermeidet einen verbreiteten Begriff, weil er etwas anderes verdeckt?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 2,
               explain:
                 "Frau Delgado yetenek sözcüğünü kullanmayı bırakmış, çünkü okulun gündelik hayatında \"fast immer die Herkunft beschreibt\". Varlığını değil, işlevini reddediyor.",
@@ -176,7 +176,7 @@ Was mir niemand gesagt hat: Der teuerste Teil ist nicht die Gebühr, sondern das
               id: "de-b2-05-l1-6",
               no: 6,
               text: "Wer leistet selbst eine Hilfe, die im offiziellen Plan nicht vorgesehen ist?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 0,
               explain:
                 "Ruth çıraklarıyla ilk haftalarda birlikte form dolduruyor ve ekliyor: \"Das steht in keinem Ausbildungsplan\". İlk yılı belirleyen kısmın bu olduğunu söylüyor.",
@@ -186,7 +186,7 @@ Was mir niemand gesagt hat: Der teuerste Teil ist nicht die Gebühr, sondern das
               id: "de-b2-05-l1-7",
               no: 7,
               text: "Wer verlangt vor allem Ehrlichkeit über die eigenen Grenzen?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 1,
               explain:
                 "Herr Wittkamp talebini küçültüyor: \"Ich fordere, dass die Schule ehrlich sagt, was sie leisten kann\". Böylece veliler çocuklarını suçlamayı bırakabilir.",
@@ -196,17 +196,17 @@ Was mir niemand gesagt hat: Der teuerste Teil ist nicht die Gebühr, sondern das
               id: "de-b2-05-l1-8",
               no: 8,
               text: "Wer hat eine fremde Sprachform zuerst falsch gedeutet?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 3,
               explain:
-                "Sinem üniversitenin dilini iki dönem boyunca \"für Dummheit gehalten\", sonra öğrenilebilir bir zanaat saymaya başlamış.",
+                "Rieke üniversitenin dilini iki dönem boyunca \"für Dummheit gehalten\", sonra öğrenilebilir bir zanaat saymaya başlamış.",
             },
             {
               kind: "mcq",
               id: "de-b2-05-l1-9",
               no: 9,
               text: "Wer widerspricht der Rede vom grundsätzlich kaputten System?",
-              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
+              options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Rieke"],
               answer: 2,
               explain:
                 "Frau Delgado \"halte ich nichts von der Rede vom kaputten System\" diyor: sistem üçte iki için işliyor, sorun son üçte birin aynı araçlarla ele alınması.",
@@ -506,7 +506,7 @@ Zuletzt ein Wort zur Ehrlichkeit. Solange Schulen behaupten, sie könnten alle K
             },
             {
               key: "d",
-              label: "d — Herr Özkan, Vater",
+              label: "d — Herr Göbel, Vater",
               body: "Mein Sohn hat die neunte Klasse wiederholt und ist danach zum ersten Mal gern zur Schule gegangen. Ich weiß, dass das kein Beweis ist. Ich weiß aber auch, dass Statistiken keine einzelnen Kinder retten.",
             },
             {
@@ -565,7 +565,7 @@ Zuletzt ein Wort zur Ehrlichkeit. Solange Schulen behaupten, sie könnten alle K
               text: "Ein Einzelfall widerlegt keine Statistik — und umgekehrt.",
               answer: "d",
               explain:
-                "Herr Özkan oğlunun deneyimini anlatıyor ve kendisi sınırlıyor: \"Ich weiß, dass das kein Beweis ist\", ama istatistiklerin tek tek çocukları kurtarmadığını ekliyor.",
+                "Herr Göbel oğlunun deneyimini anlatıyor ve kendisi sınırlıyor: \"Ich weiß, dass das kein Beweis ist\", ama istatistiklerin tek tek çocukları kurtarmadığını ekliyor.",
             },
             {
               kind: "match",
@@ -1380,7 +1380,7 @@ Natürlich gibt es Kinder, die alle Möglichkeiten haben und sie nicht nutzen. D
 Mein Schluss: Solange wir Ausnahmen als Beweis nehmen, müssen wir nichts ändern. Genau das ist die Funktion solcher Sätze.
 
 Mit freundlichen Grüßen
-Meral Dogan`,
+Wiebke Henke`,
             criteria: [
               "İddiaya doğrudan atıf yapıldı mı ve tutum net mi?",
               "En az iki farklı gerekçe var mı ve bunlar somut mu?",

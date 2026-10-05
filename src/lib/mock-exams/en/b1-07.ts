@@ -68,7 +68,7 @@ export const EN_B1_07: MockPaper = {
               genre: "Email",
               genreTr: "E-posta",
               title: "Thank you for the offer",
-              body: `Dear Aras, thank you for the offer of twenty hours a week. That is more than I can use. People who come for two hours and keep coming are worth more to us than people who give a great deal and stop after six weeks. Would two hours on Tuesdays work for you?`,
+              body: `Dear Rory, thank you for the offer of twenty hours a week. That is more than I can use. People who come for two hours and keep coming are worth more to us than people who give a great deal and stop after six weeks. Would two hours on Tuesdays work for you?`,
             },
             {
               kind: "text",
@@ -119,7 +119,7 @@ export const EN_B1_07: MockPaper = {
               no: 4,
               ref: "m4",
               text: "Why does the writer not accept the offer?",
-              options: ["There is no work at all on Tuesdays", "Small and regular is worth more", "Aras has no experience of this work"],
+              options: ["There is no work at all on Tuesdays", "Small and regular is worth more", "Rory has no experience of this work"],
               answer: 1,
               explain:
                 "E-posta ölçütü veriyor: «People who come for two hours and keep coming are worth more». Salı günü işin olmadığı gün değil, tam tersine önerilen gün.",
@@ -151,7 +151,7 @@ export const EN_B1_07: MockPaper = {
             { key: "b", label: "Repair Evening", body: "First Thursday of the month, six to nine. Electrical items, wood and bicycles. Bring your own tools if you have them." },
             { key: "c", label: "Daytime Repairs", body: "We collect small electrical items and mend them in a workshop that is open on weekday mornings. There is no evening work at all." },
             { key: "d", label: "Drivers Wanted", body: "One afternoon a week, your own car, we pay for the fuel. Eleven people on the list and four drivers." },
-            { key: "e", label: "Come When You Can", body: "The garden and the hallway shelf need doing every week and nobody keeps a list. Turn up, do what is there, go home." },
+            { key: "e", label: "Come When You Tyler", body: "The garden and the hallway shelf need doing every week and nobody keeps a list. Turn up, do what is there, go home." },
             { key: "f", label: "Interpreting at the Advice Desk", body: "Thursday mornings. We need people who can sit between a visitor and an official and say exactly what each of them said." },
             { key: "g", label: "River Path Group", body: "Saturday mornings, cutting back and clearing. Gloves provided, bring boots. Very little talking and a great deal of walking." },
             { key: "h", label: "Telephone Friends", body: "Twenty minutes a week on the phone with somebody who lives alone. Training in September, then one call a week." },

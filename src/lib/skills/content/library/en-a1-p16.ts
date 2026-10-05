@@ -62,9 +62,9 @@ export const enA1P16: SkillExercise[] = [
           { de: "Can I bring you …?", tr: "Sana … getireyim mi?" },
         ],
         sample:
-          "Hi Arda, how are you? We are going to the lake next weekend with Sinan and Tom. We want to sleep there on " +
+          "Hi Gary, how are you? We are going to the lake next weekend with Derek and Tom. We want to sleep there on " +
           "Saturday night, but I haven't got a tent. Can I borrow your tent, please? I can pick it up on Friday evening " +
-          "after work, and I can give the tent back to you on Monday. Can I bring you some fish from the lake? Thanks a lot! Umut",
+          "after work, and I can give the tent back to you on Monday. Can I bring you some fish from the lake? Thanks a lot! Lenny",
       },
     ],
   },

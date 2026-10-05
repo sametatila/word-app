@@ -35,14 +35,14 @@
   "en": "„Tomorrow is my mother's birthday.“ — possession with „-'s“."
  },
  {
-  "tr": "„I'm going to visit my parents.“ — şehirde yürüyen Kaan.",
+  "tr": "„I'm going to visit my parents.“ — şehirde yürüyen Liam.",
   "kind": "explain",
-  "en": "„I'm going to visit my parents.“ — the one walking in the city is Kaan."
+  "en": "„I'm going to visit my parents.“ — the one walking in the city is Liam."
  },
  {
-  "tr": "Ali iş sonrasını anlatıyor. Neyi seviyor, neyi sevmiyor?",
+  "tr": "Harry iş sonrasını anlatıyor. Neyi seviyor, neyi sevmiyor?",
   "kind": "intro",
-  "en": "Ali talks about his time after work. What does he like, what does he not like?"
+  "en": "Harry talks about his time after work. What does he like, what does he not like?"
  },
  {
   "tr": "Mağaza cümlelerini yaz. Sonunda alışveriş formunu doldur.",
@@ -80,9 +80,9 @@
   "en": "Write sentences for liking and returning. At the end, fill out the return form."
  },
  {
-  "tr": "„It's eighty dollars.“ — bu yüzden Kaan daha ucuzunu istiyor.",
+  "tr": "„It's eighty dollars.“ — bu yüzden Liam daha ucuzunu istiyor.",
   "kind": "explain",
-  "en": "„It's eighty dollars.“ — that is why Kaan asks for a cheaper one."
+  "en": "„It's eighty dollars.“ — that is why Liam asks for a cheaper one."
  },
  {
   "tr": "„Our store is open every day.“ — her gün açık, yani pazar da.",
@@ -95,9 +95,9 @@
   "en": "„The office opens early, at eight.“ — nine is when the store opens."
  },
  {
-  "tr": "Nil renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
+  "tr": "Katie renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
   "kind": "intro",
-  "en": "Nil talks about colors. Which color is for work, which for the weekend?"
+  "en": "Katie talks about colors. Which color is for work, which for the weekend?"
  },
  {
   "tr": "„What do you think?“ — fikir sorusu „what“ ile kurulur; „how“ ile değil.",
@@ -105,9 +105,9 @@
   "en": "„What do you think?“ — an opinion question starts with „what“, not „how“."
  },
  {
-  "tr": "„How much is it? Ninety dollars.“ — iki, Sena'nın ceket sayısı.",
+  "tr": "„How much is it? Ninety dollars.“ — iki, Ellie'nin ceket sayısı.",
   "kind": "explain",
-  "en": "„How much is it? Ninety dollars.“ — two is how many jackets Sena has."
+  "en": "„How much is it? Ninety dollars.“ — two is how many jackets Ellie has."
  },
  {
   "tr": "Önce iş, sonra sevdikleri, sonra cuma, en son hafta sonu planı.",
@@ -310,9 +310,9 @@
   "en": "Write the future. It has three parts, and the negative and the question are built by moving those parts."
  },
  {
-  "tr": "Kaan yemek için miktar hesaplıyor. Hangi şey sayılabiliyor, hangisi sayılamıyor?",
+  "tr": "Liam yemek için miktar hesaplıyor. Hangi şey sayılabiliyor, hangisi sayılamıyor?",
   "kind": "intro",
-  "en": "Kaan works out the quantities for a meal. Which things are countable, which are not?"
+  "en": "Liam works out the quantities for a meal. Which things are countable, which are not?"
  },
  {
   "tr": "„My favorite is blue, but I don't buy blue shirts.“ — yeşil kız kardeşinin rengi.",
@@ -335,8 +335,8 @@
   "en": "„I like reading, and I don't like listening to the radio.“ — the two sentences stand against each other."
  },
  {
-  "tr": "„I'd like to return this and get my money back.“ — satıcı renk öneriyor, Ela istemiyor.",
+  "tr": "„I'd like to return this and get my money back.“ — satıcı renk öneriyor, Lucy istemiyor.",
   "kind": "explain",
-  "en": "„I'd like to return this and get my money back.“ — the seller offers a color, Ela does not want it."
+  "en": "„I'd like to return this and get my money back.“ — the seller offers a color, Lucy does not want it."
  }
 ]

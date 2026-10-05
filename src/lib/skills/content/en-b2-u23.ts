@@ -63,10 +63,10 @@ export const enB2U23: SkillExercise[] = [
       "1. Incoming mail. The sorting of the incoming mail starts at eight and should be finished by nine. Opening envelopes that are marked „confidential“ is not allowed in the mail room; they go straight to the person named on them.\n" +
       "2. Outgoing mail. The sending of a certified letter is recorded in the new online template. Please fill in the template before you bring the letter down. Bringing letters after three in the afternoon means that they will leave the next day.\n" +
       "3. Enclosures. The filing of the enclosure is done by the department that sends the letter, not by the mail room. Attach a copy of every enclosure to the case file before sending.\n" +
-      "4. Confidentiality. The handling of court papers and custody documents needs special care. Only two people, Ms. Demir and Mr. Kurt, may sign for them.\n" +
+      "4. Confidentiality. The handling of court papers and custody documents needs special care. Only two people, Ms. Adams and Mr. Kurt, may sign for them.\n" +
       "5. Status. You can check the status of any letter online. The recording of each step makes it easy to find out where a letter is at any moment.\n" +
       "Why the change? Last year three important letters were lost, and finding them took weeks. We hope the new system will improve the reliability of our service.\n" +
-      "Questions? Contact Burak Kurt, extension 214.",
+      "Questions? Contact Joseph Kurt, extension 214.",
     questions: [
       {
         text: "When does the sorting of the incoming mail start?",
@@ -76,7 +76,7 @@ export const enB2U23: SkillExercise[] = [
       },
       {
         text: "Who files the enclosures?",
-        options: ["the department that sends the letter", "the mail room", "Ms. Demir"],
+        options: ["the department that sends the letter", "the mail room", "Ms. Adams"],
         answer: 0,
         explain: "„The filing of the enclosure is done by the department that sends the letter, not by the mail room.“",
       },
@@ -113,8 +113,8 @@ export const enB2U23: SkillExercise[] = [
         text: "Who may sign for court papers?",
         options: [],
         answer: 0,
-        accept: ["Ms. Demir and Mr. Kurt", "Demir and Kurt", "two people"],
-        explain: "„Only two people, Ms. Demir and Mr. Kurt, may sign for them.“",
+        accept: ["Ms. Adams and Mr. Kurt", "Adams and Kurt", "two people"],
+        explain: "„Only two people, Ms. Adams and Mr. Kurt, may sign for them.“",
       },
     ],
   },
@@ -150,7 +150,7 @@ export const enB2U23: SkillExercise[] = [
     minutes: 9,
     text:
       "PARENTS TAKE CITY TO COURT OVER SCHOOL CLOSURE\n" +
-      "By Mina Arslan, city reporter\n" +
+      "By Mina Nolan, city reporter\n" +
       "The fight over the closing of Hill Street Primary School has moved from the town hall to the courts. A group of forty parents is reported to have filed a case against the city last week, and the proceedings are thought to have started on Monday.\n" +
       "The city decided in March to close the school at the end of the year and send its 220 children to two larger schools across the river. Parents say the decision was taken without proper consultation. The city is said to have held only one public meeting, and that meeting is reported to have lasted less than an hour.\n" +
       "According to the parents' lawyer, Daniel Price, the case file is said to be complete, and a first hearing is expected to take place in November. Price would not comment on the details, citing confidentiality, but he confirmed that the families are asking the court to stop the closure until a new consultation has been held.\n" +
@@ -231,22 +231,22 @@ export const enB2U23: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Su", text: "Mom called last night. She said something I did not expect: if they had talked more, the divorce would never have happened." },
-      { speaker: "Ali Rıza", text: "Twenty years later. Did she say why they did not talk?" },
-      { speaker: "Su", text: "She said Dad was never at home. If he had been more reliable, she would have stayed." },
-      { speaker: "Ali Rıza", text: "That is not fair. He worked two jobs because of us." },
-      { speaker: "Su", text: "I know. And if the child support had been fair, Mom would be less angry now. She still talks about the money." },
-      { speaker: "Ali Rıza", text: "Does she think custody would have been different if they had used a mediator?" },
-      { speaker: "Su", text: "Maybe. Those were her exact words. If we had talked, custody would have been shared." },
-      { speaker: "Ali Rıza", text: "We were eight and ten. If someone had asked us, we would have said that we wanted both of them." },
-      { speaker: "Su", text: "Nobody asked. That is the part I still cannot forgive." },
-      { speaker: "Ali Rıza", text: "I almost can. If they had not divorced, we would probably still be listening to them fight every night." },
-      { speaker: "Su", text: "True. And you would not be living in Berlin now." },
-      { speaker: "Ali Rıza", text: "Exactly. So let us call Mom this weekend, both of us. She sounds lonely." },
+      { speaker: "Melissa", text: "Mom called last night. She said something I did not expect: if they had talked more, the divorce would never have happened." },
+      { speaker: "Harry Keith", text: "Twenty years later. Did she say why they did not talk?" },
+      { speaker: "Melissa", text: "She said Dad was never at home. If he had been more reliable, she would have stayed." },
+      { speaker: "Harry Keith", text: "That is not fair. He worked two jobs because of us." },
+      { speaker: "Melissa", text: "I know. And if the child support had been fair, Mom would be less angry now. She still talks about the money." },
+      { speaker: "Harry Keith", text: "Does she think custody would have been different if they had used a mediator?" },
+      { speaker: "Melissa", text: "Maybe. Those were her exact words. If we had talked, custody would have been shared." },
+      { speaker: "Harry Keith", text: "We were eight and ten. If someone had asked us, we would have said that we wanted both of them." },
+      { speaker: "Melissa", text: "Nobody asked. That is the part I still cannot forgive." },
+      { speaker: "Harry Keith", text: "I almost can. If they had not divorced, we would probably still be listening to them fight every night." },
+      { speaker: "Melissa", text: "True. And you would not be living in Berlin now." },
+      { speaker: "Harry Keith", text: "Exactly. So let us call Mom this weekend, both of us. She sounds lonely." },
     ],
     questions: [
       {
-        text: "Who called Su last night?",
+        text: "Who called Melissa last night?",
         options: ["her mother", "her father", "a mediator"],
         answer: 0,
         explain: "„Mom called last night.“",
@@ -298,7 +298,7 @@ export const enB2U23: SkillExercise[] = [
     unit: 23,
     title: "A message from the kindergarten",
     genre: "monologue",
-    intro: "Anaokulu öğretmeni bir anneye sesli mesaj bırakıyor. Emre'ye ne olmuş olabilir?",
+    intro: "Anaokulu öğretmeni bir anneye sesli mesaj bırakıyor. Owen'e ne olmuş olabilir?",
     gloss: [
       { de: "a kindergarten", tr: "anaokulu" },
       { de: "serious", tr: "ciddi" },
@@ -318,10 +318,10 @@ export const enB2U23: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Mina", text: "Hello Mrs. Kaya, this is Mina from Sunflower Kindergarten. I am calling about Emre, and please do not worry, nothing serious has happened." },
-      { speaker: "Mina", text: "Over the last two weeks Emre seems to have become much quieter. He still plays, but he seems to prefer playing alone, which is new for him." },
-      { speaker: "Mina", text: "Apparently something happened on the bus last Monday. Another child told me that two older boys laughed at a drawing Emre had made." },
-      { speaker: "Mina", text: "Emre has not said anything about it himself. But when the bus is mentioned, he looks away and holds his bag very tightly. It seems to be a nonverbal signal that he is upset." },
+      { speaker: "Mina", text: "Hello Mrs. Ellis, this is Mina from Sunflower Kindergarten. I am calling about Owen, and please do not worry, nothing serious has happened." },
+      { speaker: "Mina", text: "Over the last two weeks Owen seems to have become much quieter. He still plays, but he seems to prefer playing alone, which is new for him." },
+      { speaker: "Mina", text: "Apparently something happened on the bus last Monday. Another child told me that two older boys laughed at a drawing Owen had made." },
+      { speaker: "Mina", text: "Owen has not said anything about it himself. But when the bus is mentioned, he looks away and holds his bag very tightly. It seems to be a nonverbal signal that he is upset." },
       { speaker: "Mina", text: "On balance, I do not think this is a big problem. Children his age often go through a quiet phase, and it is arguably a good sign that he still comes to school happily." },
       { speaker: "Mina", text: "Apparently he also told his grandmother on Friday that he does not want to take the bus anymore." },
       { speaker: "Mina", text: "So I would like to hear what you have noticed at home. Could we meet on Thursday after four? It would only take twenty minutes." },
@@ -329,16 +329,16 @@ export const enB2U23: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "What seems to have changed in Emre?",
+        text: "What seems to have changed in Owen?",
         options: ["He has become quieter.", "He has become angry.", "He no longer comes to school."],
         answer: 0,
-        explain: "„Over the last two weeks Emre seems to have become much quieter.“",
+        explain: "„Over the last two weeks Owen seems to have become much quieter.“",
       },
       {
         text: "What happened on the bus?",
         options: ["Older boys laughed at his drawing.", "He lost his bag.", "He fell asleep."],
         answer: 0,
-        explain: "„Another child told me that two older boys laughed at a drawing Emre had made.“",
+        explain: "„Another child told me that two older boys laughed at a drawing Owen had made.“",
       },
       {
         kind: "truefalse",
@@ -419,12 +419,12 @@ export const enB2U23: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Posta odası için bilgi kartını doldur.",
-        facts: "Gelen postanın ayıklanması sekizde başlıyor ve dokuzda bitiyor; taahhütlü mektuplar çevrimiçi şablona kaydediliyor; ekleri mektubu gönderen birim dosyalıyor; mahkeme evrakını yalnız Demir ve Kurt imzalayabiliyor.",
+        facts: "Gelen postanın ayıklanması sekizde başlıyor ve dokuzda bitiyor; taahhütlü mektuplar çevrimiçi şablona kaydediliyor; ekleri mektubu gönderen birim dosyalıyor; mahkeme evrakını yalnız Adams ve Kurt imzalayabiliyor.",
         fields: [
           { label: "Sorting of the incoming mail", answer: "starts at eight", accept: ["at eight", "eight to nine"] },
           { label: "Sending of certified letters", answer: "recorded online", accept: ["recorded in the template", "in the online template"] },
           { label: "Filing of enclosures", answer: "done by the sending department", accept: ["the sending department", "the department"] },
-          { label: "Court papers signed by", answer: "Ms. Demir and Mr. Kurt", accept: ["Demir and Kurt"] },
+          { label: "Court papers signed by", answer: "Ms. Adams and Mr. Kurt", accept: ["Adams and Kurt"] },
         ],
       },
     ],

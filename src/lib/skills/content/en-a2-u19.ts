@@ -105,41 +105,41 @@ export const enA2U19: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Nil: Congratulations on your new job! When do you start?\n" +
-      "Deniz: Thank you! On the first of October. I still can't believe it.\n" +
-      "Nil: I can. You worked for it for two years.\n" +
-      "Deniz: And your exam? Good luck with your exam on Friday!\n" +
-      "Nil: Thanks. I'm not ready. Three chapters and two days.\n" +
-      "Deniz: You said the same thing last year and you got the best result in the class.\n" +
-      "Nil: That is true. But I worry about the last chapter. It's about things I never understood.\n" +
-      "Deniz: Then ask Mert. Mert is good at that.\n" +
-      "Nil: I asked. Izmir until Sunday.\n" +
-      "Deniz: Then call. Bad luck is only a plan you didn't make.\n" +
-      "Nil: Thanks for that. I'm proud of you. The job is big news.\n" +
-      "Deniz: And I'm proud of you on Friday. In advance.",
+      "Katie: Congratulations on your new job! When do you start?\n" +
+      "Charlie: Thank you! On the first of October. I still can't believe it.\n" +
+      "Katie: I can. You worked for it for two years.\n" +
+      "Charlie: And your exam? Good luck with your exam on Friday!\n" +
+      "Katie: Thanks. I'm not ready. Three chapters and two days.\n" +
+      "Charlie: You said the same thing last year and you got the best result in the class.\n" +
+      "Katie: That is true. But I worry about the last chapter. It's about things I never understood.\n" +
+      "Charlie: Then ask Henry. Henry is good at that.\n" +
+      "Katie: I asked. Izmir until Sunday.\n" +
+      "Charlie: Then call. Bad luck is only a plan you didn't make.\n" +
+      "Katie: Thanks for that. I'm proud of you. The job is big news.\n" +
+      "Charlie: And I'm proud of you on Friday. In advance.",
     questions: [
       {
-        text: "When does Deniz start the new job?",
+        text: "When does Charlie start the new job?",
         options: ["on the first of October", "on Friday", "next year"],
         answer: 0,
         explain: "„Thank you! On the first of October. I still can't believe it.“",
       },
       {
-        text: "What does Nil worry about?",
+        text: "What does Katie worry about?",
         options: ["the last chapter", "the first chapter", "the result"],
         answer: 0,
         explain: "„But I worry about the last chapter. It's about things I never understood.“",
       },
       {
         kind: "truefalse",
-        text: "Mert can help before Friday.",
+        text: "Henry can help before Friday.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„I asked. Izmir until Sunday.“ — sınav cuma, Mert pazara kadar yok.",
+        explain: "„I asked. Izmir until Sunday.“ — sınav cuma, Henry pazara kadar yok.",
       },
       {
         kind: "gapfill",
-        text: "Nil has ___ days for three chapters.",
+        text: "Katie has ___ days for three chapters.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
@@ -160,7 +160,7 @@ export const enA2U19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What did Nil get last year?",
+        text: "What did Katie get last year?",
         options: [],
         answer: 0,
         accept: ["the best result", "the best result in the class", "a good result"],
@@ -187,14 +187,14 @@ export const enA2U19: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ela", text: "We celebrate the end of the summer in September. It is not a public holiday, only a family tradition." },
-      { speaker: "Ela", text: "My grandmother started it in 1980. She cooked for twenty people on the last warm Sunday." },
-      { speaker: "Ela", text: "Now we are forty and we cook together. Everybody brings one special food from their kitchen." },
-      { speaker: "Ela", text: "It's a tradition to eat outside, even when it rains. Two years ago we ate under three umbrellas." },
-      { speaker: "Ela", text: "There is no religion in it and no presents. Only the food and the long table." },
-      { speaker: "Ela", text: "Have you ever been to a festival with no music? This is one. People talk instead." },
-      { speaker: "Ela", text: "At the end everybody takes something home. The rule is: you never go home with your plate empty." },
-      { speaker: "Ela", text: "My grandmother is ninety now. She sits, she eats, and she counts us. Forty-one this year." },
+      { speaker: "Lucy", text: "We celebrate the end of the summer in September. It is not a public holiday, only a family tradition." },
+      { speaker: "Lucy", text: "My grandmother started it in 1980. She cooked for twenty people on the last warm Sunday." },
+      { speaker: "Lucy", text: "Now we are forty and we cook together. Everybody brings one special food from their kitchen." },
+      { speaker: "Lucy", text: "It's a tradition to eat outside, even when it rains. Two years ago we ate under three umbrellas." },
+      { speaker: "Lucy", text: "There is no religion in it and no presents. Only the food and the long table." },
+      { speaker: "Lucy", text: "Have you ever been to a festival with no music? This is one. People talk instead." },
+      { speaker: "Lucy", text: "At the end everybody takes something home. The rule is: you never go home with your plate empty." },
+      { speaker: "Lucy", text: "My grandmother is ninety now. She sits, she eats, and she counts us. Forty-one this year." },
     ],
     questions: [
       {
@@ -259,37 +259,37 @@ export const enA2U19: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Can", text: "I'm sorry I'm late. The bus stopped for twenty minutes." },
-      { speaker: "Sena", text: "That's OK, don't worry about it. We start in five minutes." },
-      { speaker: "Can", text: "And I'm sorry about the file. I sent the old version yesterday." },
-      { speaker: "Sena", text: "I saw it. I opened the new one from the folder." },
-      { speaker: "Can", text: "You are too kind. I made two mistakes in one day." },
-      { speaker: "Sena", text: "Three. You forgot the meeting on Tuesday." },
-      { speaker: "Can", text: "Unfortunately that is true. I apologize." },
-      { speaker: "Sena", text: "I forgive you. But write it in your calendar now, in front of me." },
-      { speaker: "Can", text: "Done. Tuesday, ten o'clock, with an alarm." },
-      { speaker: "Sena", text: "Good. And everybody forgets. The problem is not the mistake." },
-      { speaker: "Can", text: "What is the problem?" },
-      { speaker: "Sena", text: "Promising that it will never happen again. Don't promise. Just write it down." },
-      { speaker: "Can", text: "I promise I won't promise." },
-      { speaker: "Sena", text: "Now that is a good start." },
+      { speaker: "Tyler", text: "I'm sorry I'm late. The bus stopped for twenty minutes." },
+      { speaker: "Ellie", text: "That's OK, don't worry about it. We start in five minutes." },
+      { speaker: "Tyler", text: "And I'm sorry about the file. I sent the old version yesterday." },
+      { speaker: "Ellie", text: "I saw it. I opened the new one from the folder." },
+      { speaker: "Tyler", text: "You are too kind. I made two mistakes in one day." },
+      { speaker: "Ellie", text: "Three. You forgot the meeting on Tuesday." },
+      { speaker: "Tyler", text: "Unfortunately that is true. I apologize." },
+      { speaker: "Ellie", text: "I forgive you. But write it in your calendar now, in front of me." },
+      { speaker: "Tyler", text: "Done. Tuesday, ten o'clock, with an alarm." },
+      { speaker: "Ellie", text: "Good. And everybody forgets. The problem is not the mistake." },
+      { speaker: "Tyler", text: "What is the problem?" },
+      { speaker: "Ellie", text: "Promising that it will never happen again. Don't promise. Just write it down." },
+      { speaker: "Tyler", text: "I promise I won't promise." },
+      { speaker: "Ellie", text: "Now that is a good start." },
     ],
     questions: [
       {
-        text: "Why is Can late?",
+        text: "Why is Tyler late?",
         options: ["the bus stopped for twenty minutes", "the meeting was early", "the file was old"],
         answer: 0,
         explain: "„I'm sorry I'm late. The bus stopped for twenty minutes.“",
       },
       {
-        text: "How many mistakes did Can make?",
+        text: "How many mistakes did Tyler make?",
         options: ["three", "two", "one"],
         answer: 0,
-        explain: "„Three. You forgot the meeting on Tuesday.“ — Can iki diyor, Sena üçüncüsünü hatırlatıyor.",
+        explain: "„Three. You forgot the meeting on Tuesday.“ — Tyler iki diyor, Ellie üçüncüsünü hatırlatıyor.",
       },
       {
         kind: "truefalse",
-        text: "Sena opened the old version.",
+        text: "Ellie opened the old version.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I saw it. I opened the new one from the folder.“",
@@ -312,7 +312,7 @@ export const enA2U19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Sena tell Can to do?",
+        text: "What does Ellie tell Tyler to do?",
         options: [],
         answer: 0,
         accept: ["write it down", "write it in the calendar", "write it"],

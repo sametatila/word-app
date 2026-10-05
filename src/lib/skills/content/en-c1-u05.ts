@@ -63,14 +63,14 @@ export const enC1U05: SkillExercise[] = [
     minutes: 12,
     text:
       "THE SLOW BOOK THAT SELLS FAST\n" +
-      "Nobody at Mavi Press expected much from the first novel of Ela Soner. The print run was three thousand copies, and the marketing budget would not have paid for a single billboard.\n" +
+      "Nobody at Mavi Press expected much from the first novel of Lucy Harold. The print run was three thousand copies, and the marketing budget would not have paid for a single billboard.\n" +
       "Eighteen months later, „The Night Ferry“ has sold 140,000 copies in Turkish and is being translated into eleven languages. It sells steadily in airports and in small bookstores, and it has never been on television.\n" +
       "Booksellers say the reason is simple: the book reads quickly. The chapters are short, the dialogue is sharp, and the story, about a woman who crosses the Bosphorus every night for a year to visit her father in the hospital, opens gently and then refuses to let go.\n" +
       "The English translation reads well, according to early reviewers, although the title translates badly. In English it sounds like the name of a thriller, and some readers were disappointed to find a family story instead. The German edition will carry a different title.\n" +
       "The paperback has another advantage that publishers rarely mention: it prints cheaply. The novel is under two hundred pages, and at eight dollars it costs less than a movie ticket. „A short book sells to people who are nervous about long ones,“ the editor told me, „and there are a lot of those.“\n" +
-      "Not everyone is impressed. One critic wrote that the story „washes over you and leaves nothing behind“. Soner has answered politely: she wanted a book that people would finish, and most of them do.\n" +
+      "Not everyone is impressed. One critic wrote that the story „washes over you and leaves nothing behind“. Harold has answered politely: she wanted a book that people would finish, and most of them do.\n" +
       "The film rights were sold in March. Whether the story adapts easily to the screen is another question; much of it takes place inside the head of one woman, and that does not photograph well.\n" +
-      "Soner is working on her second novel. It is set on a train, she says, and it will be even shorter.",
+      "Harold is working on her second novel. It is set on a train, she says, and it will be even shorter.",
     questions: [
       {
         text: "How many copies were printed at first?",
@@ -222,18 +222,18 @@ export const enC1U05: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Tunç", text: "The staff meeting is on Friday, and the motion has to be on the agenda by tomorrow. Shall we read it once more?" },
-      { speaker: "Melek", text: "Go ahead. I will listen for anything the board could misread." },
-      { speaker: "Tunç", text: "We move that the board grant worker participation in all decisions about shift patterns. Two seats on the planning committee, elected by staff." },
-      { speaker: "Melek", text: "Good. Keep the word „all“. Last year they only asked us about the easy decisions." },
-      { speaker: "Tunç", text: "Second paragraph. We request that the new schedule be stopped until the committee has met." },
-      { speaker: "Melek", text: "They will say that costs money. Were it not for the overtime we worked in the winter, the warehouse would have closed. Put that in." },
-      { speaker: "Tunç", text: "Fine. Third: we ask that no member abstain from the vote without a reason." },
-      { speaker: "Melek", text: "Is that fair? Some people are afraid of being seen on the wrong side." },
-      { speaker: "Tunç", text: "That is exactly why. If half the room abstains, the board will say we are divided." },
-      { speaker: "Melek", text: "Then add that the vote be secret. People will vote when nobody is counting hands." },
-      { speaker: "Tunç", text: "We ask that the vote be held in secret. Done." },
-      { speaker: "Melek", text: "Now read me the first sentence again, slowly. That one has to be perfect." },
+      { speaker: "Elliot", text: "The staff meeting is on Friday, and the motion has to be on the agenda by tomorrow. Shall we read it once more?" },
+      { speaker: "Stacey", text: "Go ahead. I will listen for anything the board could misread." },
+      { speaker: "Elliot", text: "We move that the board grant worker participation in all decisions about shift patterns. Two seats on the planning committee, elected by staff." },
+      { speaker: "Stacey", text: "Good. Keep the word „all“. Last year they only asked us about the easy decisions." },
+      { speaker: "Elliot", text: "Second paragraph. We request that the new schedule be stopped until the committee has met." },
+      { speaker: "Stacey", text: "They will say that costs money. Were it not for the overtime we worked in the winter, the warehouse would have closed. Put that in." },
+      { speaker: "Elliot", text: "Fine. Third: we ask that no member abstain from the vote without a reason." },
+      { speaker: "Stacey", text: "Is that fair? Some people are afraid of being seen on the wrong side." },
+      { speaker: "Elliot", text: "That is exactly why. If half the room abstains, the board will say we are divided." },
+      { speaker: "Stacey", text: "Then add that the vote be secret. People will vote when nobody is counting hands." },
+      { speaker: "Elliot", text: "We ask that the vote be held in secret. Done." },
+      { speaker: "Stacey", text: "Now read me the first sentence again, slowly. That one has to be perfect." },
     ],
     questions: [
       {
@@ -250,7 +250,7 @@ export const enC1U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Melek wants the vote to be secret.",
+        text: "Stacey wants the vote to be secret.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Then add that the vote be secret.“",
@@ -302,14 +302,14 @@ export const enC1U05: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Rüzgar", text: "Good evening. Tonight our report is about Rota, the scheduling app that the city hospital introduced for its nurses in January." },
-      { speaker: "Rüzgar", text: "The hospital says the app may well reduce overtime by a fifth. That figure comes from the company that sells it, and nobody has checked it yet." },
-      { speaker: "Rüzgar", text: "The app might have been expected to make planning fairer. Instead, several nurses told us it gives the best shifts to whoever answers first." },
-      { speaker: "Rüzgar", text: "Such a system would tend to favor young staff without children, who can check their phones at any hour." },
-      { speaker: "Rüzgar", text: "Nurses with children may well be the ones who lose most. One of them, a mother of three, said she now works more weekends than before." },
-      { speaker: "Rüzgar", text: "The hospital director disagrees. She told us the app might have saved the hospital two hundred thousand dollars already, although she could not share the figures." },
-      { speaker: "Rüzgar", text: "The nurses union has asked for an independent review. The hospital has agreed, and the results are expected in June." },
-      { speaker: "Rüzgar", text: "Until then, the honest answer is that nobody knows whether Rota works. We will report back when the review is published." },
+      { speaker: "Kenny", text: "Good evening. Tonight our report is about Rota, the scheduling app that the city hospital introduced for its nurses in January." },
+      { speaker: "Kenny", text: "The hospital says the app may well reduce overtime by a fifth. That figure comes from the company that sells it, and nobody has checked it yet." },
+      { speaker: "Kenny", text: "The app might have been expected to make planning fairer. Instead, several nurses told us it gives the best shifts to whoever answers first." },
+      { speaker: "Kenny", text: "Such a system would tend to favor young staff without children, who can check their phones at any hour." },
+      { speaker: "Kenny", text: "Nurses with children may well be the ones who lose most. One of them, a mother of three, said she now works more weekends than before." },
+      { speaker: "Kenny", text: "The hospital director disagrees. She told us the app might have saved the hospital two hundred thousand dollars already, although she could not share the figures." },
+      { speaker: "Kenny", text: "The nurses union has asked for an independent review. The hospital has agreed, and the results are expected in June." },
+      { speaker: "Kenny", text: "Until then, the honest answer is that nobody knows whether Rota works. We will report back when the review is published." },
     ],
     questions: [
       {

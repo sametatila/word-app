@@ -307,7 +307,7 @@ Help: 0800 22 11.`,
               text: "You must show your ticket to the driver on bus 9.",
               answer: true,
               explain:
-                "Levhadaki üç talimattan biri bu: «Show your ticket to the driver». Emir kipi bir zorunluluk bildiriyor.",
+                "Levhadaki üç talimattan biri bu: «Show your ticket to the driver». Ethan kipi bir zorunluluk bildiriyor.",
             },
             {
               kind: "bool",

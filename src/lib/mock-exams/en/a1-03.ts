@@ -43,8 +43,8 @@ export const EN_A1_03: MockPaper = {
               id: "t1",
               genre: "Note in the kitchen",
               genreTr: "Mutfaktaki not",
-              title: "For Zeynep",
-              body: `Hi Zeynep,
+              title: "For Lydia",
+              body: `Hi Lydia,
 
 I go to the market at four. We need bread, milk and six eggs.
 
@@ -75,7 +75,7 @@ Children under six eat for free.
 
 We do not take cards. Please pay in cash.
 
-Greta and Hakan`,
+Greta and Rhys`,
               gloss: [
                 { de: "for free", tr: "ücretsiz", en: "kostenlos" },
                 { de: "together", tr: "birlikte", en: "zusammen" },
@@ -89,7 +89,7 @@ Greta and Hakan`,
               id: "en-a1-03-l1-1",
               no: 1,
               ref: "t1",
-              text: "Zeynep must buy apples.",
+              text: "Lydia must buy apples.",
               answer: false,
               explain:
                 "Not tam tersini söylüyor: «Please do not buy fruit», çünkü Mateo elmayı ve portakalı kız kardeşinden alıyor. Meyve adları metinde geçiyor ama alınacaklar listesinde değil, alınmayacaklar listesinde.",
@@ -99,7 +99,7 @@ Greta and Hakan`,
               id: "en-a1-03-l1-2",
               no: 2,
               ref: "t1",
-              text: "Zeynep can take twelve euros.",
+              text: "Lydia can take twelve euros.",
               answer: false,
               explain:
                 "Notta sınır yazılı: «Take ten euros, no more». On iki avro bu sınırın üstünde. A1'de sayıyı okumak yetmiyor, sayının bir sınır olduğunu da görmek gerekiyor.",
@@ -112,7 +112,7 @@ Greta and Hakan`,
               text: "Mateo makes the food in the evening.",
               answer: true,
               explain:
-                "Not «I cook at seven» diyor ve öncesinde saat dörtte pazara gideceğini söylüyor; saat yedi burada akşam demek. Yemeği yapan Mateo, Zeynep değil — madde kimin pişirdiğini de ölçüyor.",
+                "Not «I cook at seven» diyor ve öncesinde saat dörtte pazara gideceğini söylüyor; saat yedi burada akşam demek. Yemeği yapan Mateo, Lydia değil — madde kimin pişirdiğini de ölçüyor.",
             },
             {
               kind: "bool",
@@ -463,9 +463,9 @@ Paulo`,
               situation: "İki ev arkadaşı akşam yemeğini konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Sena", text: "There is rice and there are eggs. What do we make?" },
+                { speaker: "Ellie", text: "There is rice and there are eggs. What do we make?" },
                 { speaker: "Dario", text: "I ate rice at work today. Can we make soup?" },
-                { speaker: "Sena", text: "Good. We have tomatoes for that." },
+                { speaker: "Ellie", text: "Good. We have tomatoes for that." },
               ],
             },
             {
@@ -540,7 +540,7 @@ Paulo`,
               options: ["Soup", "Rice", "Eggs and tomatoes together"],
               answer: 0,
               explain:
-                "Dario işte pilav yediğini söyleyip «Can we make soup?» diyor; Sena kabul ediyor. Pirinç ve yumurta kayıtta geçiyor ama pişirilen yemek çorba.",
+                "Dario işte pilav yediğini söyleyip «Can we make soup?» diyor; Ellie kabul ediyor. Pirinç ve yumurta kayıtta geçiyor ama pişirilen yemek çorba.",
             },
             {
               kind: "mcq",
@@ -714,8 +714,8 @@ Paulo`,
               situation: "İki meslektaş öğle yemeğini konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Hakan", text: "Are you coming to the cafeteria at twelve?" },
-                { speaker: "Zeynep", text: "I have food from home today. But I'll come for a coffee at one." },
+                { speaker: "Rhys", text: "Are you coming to the cafeteria at twelve?" },
+                { speaker: "Lydia", text: "I have food from home today. But I'll come for a coffee at one." },
               ],
             },
             {
@@ -773,11 +773,11 @@ Paulo`,
               id: "en-a1-03-h3-13",
               no: 13,
               ref: "c3",
-              text: "What does Zeynep do at twelve?",
+              text: "What does Lydia do at twelve?",
               options: ["She goes to the cafeteria", "She drinks a coffee there", "She eats her own food"],
               answer: 2,
               explain:
-                "Zeynep «I have food from home today» diyor, yani on ikide yemekhaneye gitmiyor. Kahve için geliyor ama saat birde; iki saati ayırmak gerekiyor.",
+                "Lydia «I have food from home today» diyor, yani on ikide yemekhaneye gitmiyor. Kahve için geliyor ama saat birde; iki saati ayırmak gerekiyor.",
             },
             {
               kind: "mcq",
@@ -819,9 +819,9 @@ Paulo`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your friend Sena Kaplan orders a food box for one week. She wants the small box. She does not eat meat. The box comes to 5 River Street, Leeds. She wants it on Thursday. Five things are missing on the form. Write them in the gaps.",
+            "Your friend Ellie Ashworth orders a food box for one week. She wants the small box. She does not eat meat. The box comes to 5 River Street, Leeds. She wants it on Thursday. Five things are missing on the form. Write them in the gaps.",
           promptTr:
-            "Arkadaşın Sena Kaplan bir haftalık yiyecek kutusu sipariş ediyor. Küçük kutuyu istiyor. Et yemiyor. Kutu 5 River Street, Leeds adresine gelecek. Perşembe istiyor. Formda beş bilgi eksik; boşluklara yaz.",
+            "Arkadaşın Ellie Ashworth bir haftalık yiyecek kutusu sipariş ediyor. Küçük kutuyu istiyor. Et yemiyor. Kutu 5 River Street, Leeds adresine gelecek. Perşembe istiyor. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
             {
               kind: "text",
@@ -829,7 +829,7 @@ Paulo`,
               genre: "Form",
               genreTr: "Form",
               title: "FOOD BOX — ORDER",
-              body: `Family name:        Kaplan
+              body: `Family name:        Ashworth
 First name:         {{1}}
 Size of the box:    {{2}}
 No meat?            {{3}}
@@ -844,9 +844,9 @@ Day:                {{5}}`,
               id: "en-a1-03-w1-1",
               no: 1,
               text: "First name",
-              accept: ["Sena"],
+              accept: ["Ellie"],
               explain:
-                "Yönergede tam ad «Sena Kaplan» olarak geçiyor. Soyadı formda zaten basılı, bu yüzden boşluğa yalnız ilk ad yazılır; iki alanı karıştıran öğrenci soyadını tekrarlar.",
+                "Yönergede tam ad «Ellie Ashworth» olarak geçiyor. Soyadı formda zaten basılı, bu yüzden boşluğa yalnız ilk ad yazılır; iki alanı karıştıran öğrenci soyadını tekrarlar.",
             },
             {
               kind: "gap",

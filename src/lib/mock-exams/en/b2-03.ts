@@ -514,7 +514,7 @@ None of this argues against buying from a nearby farm, which supports things tha
           options: [
             {
               key: "a",
-              label: "a — Berna, dairy farmer",
+              label: "a — Lorna, dairy farmer",
               body: "I am paid roughly what I was paid in 2011, and my costs have doubled since then. People tell me to sell direct, and I have tried it: it is a second full-time job, and I already have one. The advice is given kindly and it is useless.",
             },
             {
@@ -524,7 +524,7 @@ None of this argues against buying from a nearby farm, which supports things tha
             },
             {
               key: "c",
-              label: "c — Devrim, food researcher",
+              label: "c — Jamie, food researcher",
               body: "The cheapest food in history is also the most expensive, once you count the water, the soil and the health bill. Nobody pays that bill at the checkout, so nobody sees it. Until it appears somewhere, no label will change anything.",
             },
             {
@@ -541,7 +541,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               text: "Which text says that well-meant advice does not help?",
               answer: "a",
               explain:
-                "Berna öğüdün niyetini kabul edip sonucunu reddediyor: «The advice is given kindly and it is useless». Nese de bir şeye itiraz ediyor ama itirazı öğüde değil, kendisinin reklamda kullanılmasına.",
+                "Lorna öğüdün niyetini kabul edip sonucunu reddediyor: «The advice is given kindly and it is useless». Nese de bir şeye itiraz ediyor ama itirazı öğüde değil, kendisinin reklamda kullanılmasına.",
             },
             {
               kind: "match",
@@ -577,7 +577,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               text: "Which text mentions having already tried the solution that others suggest?",
               answer: "a",
               explain:
-                "Berna öneriyi denediğini söylüyor: «I have tried it: it is a second full-time job». Öteki metinlerde denenmiş bir çözüm anlatılmıyor.",
+                "Lorna öneriyi denediğini söylüyor: «I have tried it: it is a second full-time job». Öteki metinlerde denenmiş bir çözüm anlatılmıyor.",
             },
           ],
         },
@@ -667,7 +667,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               situation: "Bir kişi perşembe teslimatı için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, about Thursday. I can bring the van and do the delivery route, but I have to be back by two for the vet. If we load at six we will have finished the town before the traffic, and Cengiz said he can do the villages." },
+                { text: "Hi, about Thursday. I can bring the van and do the delivery route, but I have to be back by two for the vet. If we load at six we will have finished the town before the traffic, and Graham said he can do the villages." },
               ],
             },
             {
@@ -761,7 +761,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               options: ["Agreeing to help within a time limit", "Asking somebody to take the route instead", "Canceling the delivery"],
               answer: 0,
               explain:
-                "Konuşmacı geliyor ama sınır koyuyor: «I can bring the van and do the delivery route, but I have to be back by two». Cengiz köyleri alıyor, onun turunu devralmıyor.",
+                "Konuşmacı geliyor ama sınır koyuyor: «I can bring the van and do the delivery route, but I have to be back by two». Graham köyleri alıyor, onun turunu devralmıyor.",
             },
             {
               kind: "mcq",
@@ -1082,22 +1082,22 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               situation: "Bir radyo programında çiftçilikte yön değiştiren biriyle söyleşi yapılıyor.",
               plays: 2,
               segments: [
-                { speaker: "Host", text: "Ilkay, you farmed two hundred hectares of wheat and you now farm forty. People assume that was forced on you." },
-                { speaker: "Ilkay", text: "They do, and it makes a better story than the truth. Nobody took the land from me; I sold it. I had reached the point where I could not tell you what the farm was for, beyond staying large enough to survive the next year." },
+                { speaker: "Host", text: "Darren, you farmed two hundred hectares of wheat and you now farm forty. People assume that was forced on you." },
+                { speaker: "Darren", text: "They do, and it makes a better story than the truth. Nobody took the land from me; I sold it. I had reached the point where I could not tell you what the farm was for, beyond staying large enough to survive the next year." },
                 { speaker: "Host", text: "Was the money the hardest part?" },
-                { speaker: "Ilkay", text: "No. The hardest part was the neighbors. In this valley, area is the way people measure you, and I made myself smaller in public. Two men who had been at my wedding stopped speaking to me for about a year." },
+                { speaker: "Darren", text: "No. The hardest part was the neighbors. In this valley, area is the way people measure you, and I made myself smaller in public. Two men who had been at my wedding stopped speaking to me for about a year." },
                 { speaker: "Host", text: "How long did the decision take?" },
-                { speaker: "Ilkay", text: "Six years, which is embarrassing to say out loud. I built a very detailed spreadsheet, which is what people like me do instead of deciding. It said sell, three times, and I ignored it three times." },
+                { speaker: "Darren", text: "Six years, which is embarrassing to say out loud. I built a very detailed spreadsheet, which is what people like me do instead of deciding. It said sell, three times, and I ignored it three times." },
                 { speaker: "Host", text: "What finally moved you?" },
-                { speaker: "Ilkay", text: "A dry August. I watched a younger neighbor take on more land in the same month, and I recognized exactly the reasoning he was using, because it had been mine. It was like hearing a recording of yourself." },
+                { speaker: "Darren", text: "A dry August. I watched a younger neighbor take on more land in the same month, and I recognized exactly the reasoning he was using, because it had been mine. It was like hearing a recording of yourself." },
                 { speaker: "Host", text: "And the smaller farm in practice?" },
-                { speaker: "Ilkay", text: "We earn slightly less and we work slightly less, which is not the dramatic answer people want. The real change is that I now know the name of every person who eats what I grow, and I did not expect that to matter as much as it does." },
+                { speaker: "Darren", text: "We earn slightly less and we work slightly less, which is not the dramatic answer people want. The real change is that I now know the name of every person who eats what I grow, and I did not expect that to matter as much as it does." },
                 { speaker: "Host", text: "Do you miss anything about the larger farm?" },
-                { speaker: "Ilkay", text: "The machinery, honestly. There is a particular pleasure in a big field and a good machine, and anybody who says otherwise is performing. I miss it, and I would still not go back." },
+                { speaker: "Darren", text: "The machinery, honestly. There is a particular pleasure in a big field and a good machine, and anybody who says otherwise is performing. I miss it, and I would still not go back." },
                 { speaker: "Host", text: "What do people get wrong about small farms?" },
-                { speaker: "Ilkay", text: "They think small means safe. A bad year on forty hectares can end you just as quickly, and you have fewer places to hide it. The risk did not go away; it changed shape." },
+                { speaker: "Darren", text: "They think small means safe. A bad year on forty hectares can end you just as quickly, and you have fewer places to hide it. The risk did not go away; it changed shape." },
                 { speaker: "Host", text: "Would you recommend it?" },
-                { speaker: "Ilkay", text: "Not as a general rule. If you have debt, or a family depending on the income, this is advice from a comfortable position and it is worth saying so. What I would recommend is writing down what the farm is for, and then reading your own sentence honestly." },
+                { speaker: "Darren", text: "Not as a general rule. If you have debt, or a family depending on the income, this is advice from a comfortable position and it is worth saying so. What I would recommend is writing down what the farm is for, and then reading your own sentence honestly." },
               ],
               gloss: [
                 { de: "a hectare", tr: "hektar", en: "der Hektar" },
@@ -1112,11 +1112,11 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               id: "en-b2-03-h4-23",
               no: 23,
               ref: "d1",
-              text: "Why did Ilkay reduce the size of her farm?",
+              text: "Why did Darren reduce the size of her farm?",
               options: ["She had lost her sense of its purpose", "The bank forced her to sell part of the land", "A neighbor made her a good offer"],
               answer: 0,
               explain:
-                "Ilkay zorlama savını reddedip gerekçesini veriyor: «I could not tell you what the farm was for, beyond staying large enough to survive the next year». Toprağı kimse almamış, kendisi satmış.",
+                "Darren zorlama savını reddedip gerekçesini veriyor: «I could not tell you what the farm was for, beyond staying large enough to survive the next year». Toprağı kimse almamış, kendisi satmış.",
             },
             {
               kind: "mcq",
@@ -1171,7 +1171,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               options: ["It was the main reason she sold the land", "She never enjoyed using it", "She misses it and says so openly"],
               answer: 2,
               explain:
-                "Ilkay özlemi kabul ediyor ve inkâr edenleri eleştiriyor: «anybody who says otherwise is performing». Yine de «I would still not go back» diyor, yani özlem kararı değiştirmiyor.",
+                "Darren özlemi kabul ediyor ve inkâr edenleri eleştiriyor: «anybody who says otherwise is performing». Yine de «I would still not go back» diyor, yani özlem kararı değiştirmiyor.",
             },
             {
               kind: "mcq",

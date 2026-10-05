@@ -237,21 +237,21 @@ export const c1U04: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Selin", text: "Ich habe die Zusage immer noch nicht. Seit elf Tagen." },
+      { speaker: "Luisa", text: "Ich habe die Zusage immer noch nicht. Seit elf Tagen." },
       { speaker: "Timo", text: "Ach, das wird schon." },
-      { speaker: "Selin", text: "Hm." },
+      { speaker: "Luisa", text: "Hm." },
       { speaker: "Timo", text: "Das war jetzt falsch, oder?" },
-      { speaker: "Selin", text: "Nicht falsch. Nur — du hast das Thema damit zugemacht." },
+      { speaker: "Luisa", text: "Nicht falsch. Nur — du hast das Thema damit zugemacht." },
       { speaker: "Timo", text: "Ich wollte dich aufmuntern." },
-      { speaker: "Selin", text: "Ich weiß. Aber „das wird schon“ heißt auch: Reden wir über etwas anderes." },
+      { speaker: "Luisa", text: "Ich weiß. Aber „das wird schon“ heißt auch: Reden wir über etwas anderes." },
       { speaker: "Timo", text: "Dann noch mal. Was ist das Schlimmste an den elf Tagen?" },
-      { speaker: "Selin", text: "Die Ungewissheit. Eine Absage könnte ich einordnen." },
+      { speaker: "Luisa", text: "Die Ungewissheit. Eine Absage könnte ich einordnen." },
       { speaker: "Timo", text: "Das verstehe ich. Und du kannst nichts tun außer warten." },
-      { speaker: "Selin", text: "Genau das." },
+      { speaker: "Luisa", text: "Genau das." },
       { speaker: "Timo", text: "Dann sage ich es jetzt anders: Ich glaube, es wird gut ausgehen. Und wenn nicht, gehen wir das durch." },
-      { speaker: "Selin", text: "Siehst du, das tröstet. Das andere war wohlwollend, aber nur nett gemeint." },
+      { speaker: "Luisa", text: "Siehst du, das tröstet. Das andere war wohlwollend, aber nur nett gemeint." },
       { speaker: "Timo", text: "Der Unterschied ist mir vorher nie aufgefallen." },
-      { speaker: "Selin", text: "Zuversicht kann man teilen. Gelassenheit muss jeder selbst finden — und wer sie mir verordnet, verlangt sie, statt sie anzubieten." },
+      { speaker: "Luisa", text: "Zuversicht kann man teilen. Gelassenheit muss jeder selbst finden — und wer sie mir verordnet, verlangt sie, statt sie anzubieten." },
       { speaker: "Timo", text: "Dann bitte ich um Nachsicht für die ersten drei Sätze." },
     ],
     questions: [
@@ -285,7 +285,7 @@ export const c1U04: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Selin'in iki teselliyi ayırdığı cümleyi yaz.",
+        text: "Luisa'nın iki teselliyi ayırdığı cümleyi yaz.",
         options: [],
         answer: 0,
         accept: [
@@ -472,7 +472,7 @@ export const c1U04: SkillExercise[] = [
           "Ich glaube, das Schlimmste ist gerade nicht die Wohnung, sondern dass du ab dem Ersten formal nirgends gemeldet bist. Ist das der Punkt, oder drückt etwas anderes mehr? Sag es mir genau, dann sortieren wir es der Reihe nach.\n\n" +
           "Für die Meldeadresse habe ich eine Idee: Du kannst dich vorübergehend bei mir anmelden, das ist geregelt und dauert einen Vormittag. Damit fällt schon mal die Ungewissheit weg, die nichts mit der Wohnungssuche zu tun hat.\n\n" +
           "Ich bin ziemlich zuversichtlich, dass sich in vier Wochen etwas findet; die Lage ist im Frühjahr besser. Und wenn es länger dauert, ziehst du zu mir, bis es passt — das ist keine Floskel, das Zimmer steht leer.\n\n" +
-          "Ruf mich heute Abend an, ja? Dann machen wir eine Liste statt eines Gefühls.\n\nDeniz",
+          "Ruf mich heute Abend an, ja? Dann machen wir eine Liste statt eines Gefühls.\n\nSascha",
       },
     ],
   },

@@ -126,21 +126,21 @@ export const enB1U04: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Sena: Before you move in, three things. They are not rules, they are the reasons we still talk to each other.\n" +
-      "Can: Go on.\n" +
-      "Sena: You have to clean up the kitchen after cooking. Not the next morning — after.\n" +
-      "Can: That is fair. I am the person who cooks at eleven at night.\n" +
-      "Sena: Then you are the person who cleans up at half past eleven.\n" +
-      "Can: And guests?\n" +
-      "Sena: You don't have to ask about guests. This is your apartment too. Tell us if somebody stays three nights, because of the bathroom in the morning.\n" +
-      "Can: And the chores?\n" +
-      "Sena: We should agree on a schedule. The last one lasted four months and then it lived on the fridge as a picture.\n" +
-      "Can: Why did it stop working?\n" +
-      "Sena: Because it had nine lines and nobody reads nine lines. The new one has three.\n" +
-      "Can: Three chores?\n" +
-      "Sena: Three columns. Kitchen, bathroom, trash. Everything else is: if you see it, you do it.\n" +
-      "Can: And if somebody does not?\n" +
-      "Sena: Then we argue once, quietly, and we split the work again. We have argued twice in two years. Both times about the same cabinet.",
+      "Ellie: Before you move in, three things. They are not rules, they are the reasons we still talk to each other.\n" +
+      "Tyler: Go on.\n" +
+      "Ellie: You have to clean up the kitchen after cooking. Not the next morning — after.\n" +
+      "Tyler: That is fair. I am the person who cooks at eleven at night.\n" +
+      "Ellie: Then you are the person who cleans up at half past eleven.\n" +
+      "Tyler: And guests?\n" +
+      "Ellie: You don't have to ask about guests. This is your apartment too. Tell us if somebody stays three nights, because of the bathroom in the morning.\n" +
+      "Tyler: And the chores?\n" +
+      "Ellie: We should agree on a schedule. The last one lasted four months and then it lived on the fridge as a picture.\n" +
+      "Tyler: Why did it stop working?\n" +
+      "Ellie: Because it had nine lines and nobody reads nine lines. The new one has three.\n" +
+      "Tyler: Three chores?\n" +
+      "Ellie: Three columns. Kitchen, bathroom, trash. Everything else is: if you see it, you do it.\n" +
+      "Tyler: And if somebody does not?\n" +
+      "Ellie: Then we argue once, quietly, and we split the work again. We have argued twice in two years. Both times about the same cabinet.",
     questions: [
       {
         text: "When do you have to clean up the kitchen?",
@@ -198,20 +198,20 @@ export const enB1U04: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Nil", text: "The boiler stopped on Saturday. No hot water since then." },
-      { speaker: "Mert", text: "Did you call the landlord?" },
-      { speaker: "Nil", text: "Twice. He said that he would come on Monday." },
-      { speaker: "Mert", text: "And today is Wednesday." },
-      { speaker: "Nil", text: "Today is Wednesday. Then he called and told me to wait for the plumber. The plumber called nobody." },
-      { speaker: "Mert", text: "Write it down. Every call, the date and what was said." },
-      { speaker: "Nil", text: "I have. Four lines so far." },
-      { speaker: "Mert", text: "Good. That list is the only thing that works after two weeks." },
-      { speaker: "Nil", text: "He asked if the boiler was old. I said it was in the apartment before me and before the person before me." },
-      { speaker: "Mert", text: "Then it is old." },
-      { speaker: "Nil", text: "There is also moisture in the corner of the bathroom now. Probably not the boiler." },
-      { speaker: "Mert", text: "Probably the same leak. Send both in one email and ask for a date, not a promise." },
-      { speaker: "Nil", text: "And if nothing happens?" },
-      { speaker: "Mert", text: "Then you complain in writing and the delay becomes his problem, not yours. But most of the time the email with two dates is enough." },
+      { speaker: "Katie", text: "The boiler stopped on Saturday. No hot water since then." },
+      { speaker: "Henry", text: "Did you call the landlord?" },
+      { speaker: "Katie", text: "Twice. He said that he would come on Monday." },
+      { speaker: "Henry", text: "And today is Wednesday." },
+      { speaker: "Katie", text: "Today is Wednesday. Then he called and told me to wait for the plumber. The plumber called nobody." },
+      { speaker: "Henry", text: "Write it down. Every call, the date and what was said." },
+      { speaker: "Katie", text: "I have. Four lines so far." },
+      { speaker: "Henry", text: "Good. That list is the only thing that works after two weeks." },
+      { speaker: "Katie", text: "He asked if the boiler was old. I said it was in the apartment before me and before the person before me." },
+      { speaker: "Henry", text: "Then it is old." },
+      { speaker: "Katie", text: "There is also moisture in the corner of the bathroom now. Probably not the boiler." },
+      { speaker: "Henry", text: "Probably the same leak. Send both in one email and ask for a date, not a promise." },
+      { speaker: "Katie", text: "And if nothing happens?" },
+      { speaker: "Henry", text: "Then you complain in writing and the delay becomes his problem, not yours. But most of the time the email with two dates is enough." },
     ],
     questions: [
       {
@@ -221,7 +221,7 @@ export const enB1U04: SkillExercise[] = [
         explain: "„He said that he would come on Monday.“ — aktarılınca „will“ „would“ oluyor.",
       },
       {
-        text: "What does Mert say Nil should ask for?",
+        text: "What does Henry say Katie should ask for?",
         options: ["a date", "a promise", "a new boiler"],
         answer: 0,
         explain: "„Send both in one email and ask for a date, not a promise.“",
@@ -235,7 +235,7 @@ export const enB1U04: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Nil has written ___ lines so far.",
+        text: "Katie has written ___ lines so far.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
@@ -280,14 +280,14 @@ export const enB1U04: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Ela", text: "The lease was signed last week and I have read it three times since." },
-      { speaker: "Ela", text: "The deposit is paid before you move in. Two months, into an account that is not the landlord's normal one." },
-      { speaker: "Ela", text: "That last part matters. If the deposit sits in a separate account, it comes back. If it sits with the rent, it becomes a conversation." },
-      { speaker: "Ela", text: "When is the lease renewed? Automatically, every twelve months, if nobody writes three months before." },
-      { speaker: "Ela", text: "Three months. Not one. I put it in my calendar for the first of August and I will forget it anyway, so I put a second one in July." },
-      { speaker: "Ela", text: "The part nobody reads is the middle: who pays for what. The boiler is the landlord. The light in the corridor is me." },
-      { speaker: "Ela", text: "I asked why. The answer was honest: because the last three people broke it and nobody ever said how." },
-      { speaker: "Ela", text: "A lease is not a rulebook. It is a list of arguments that already happened to somebody else." },
+      { speaker: "Lucy", text: "The lease was signed last week and I have read it three times since." },
+      { speaker: "Lucy", text: "The deposit is paid before you move in. Two months, into an account that is not the landlord's normal one." },
+      { speaker: "Lucy", text: "That last part matters. If the deposit sits in a separate account, it comes back. If it sits with the rent, it becomes a conversation." },
+      { speaker: "Lucy", text: "When is the lease renewed? Automatically, every twelve months, if nobody writes three months before." },
+      { speaker: "Lucy", text: "Three months. Not one. I put it in my calendar for the first of August and I will forget it anyway, so I put a second one in July." },
+      { speaker: "Lucy", text: "The part nobody reads is the middle: who pays for what. The boiler is the landlord. The light in the corridor is me." },
+      { speaker: "Lucy", text: "I asked why. The answer was honest: because the last three people broke it and nobody ever said how." },
+      { speaker: "Lucy", text: "A lease is not a rulebook. It is a list of arguments that already happened to somebody else." },
     ],
     questions: [
       {
@@ -311,7 +311,7 @@ export const enB1U04: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ela has read the lease ___ times.",
+        text: "Lucy has read the lease ___ times.",
         options: [],
         answer: 0,
         accept: ["three", "3"],
@@ -327,7 +327,7 @@ export const enB1U04: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is a lease, in Ela's words?",
+        text: "What is a lease, in Lucy's words?",
         options: [],
         answer: 0,
         accept: ["a list of arguments", "old arguments", "not a rulebook"],

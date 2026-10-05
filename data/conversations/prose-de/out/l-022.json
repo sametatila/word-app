@@ -41,7 +41,7 @@
  { "tr": "ve köpek kelimesine s ekle: dogs.", "kind": "hint.tr", "de": "und ans Wort Hund ein s anfügen: dogs." },
  { "tr": "Where do I ile başla, sonra sign.", "kind": "hint.tr", "de": "Mit Where do I beginnen, dann sign." },
  { "tr": "... sonuna yemeklerden sonra ekle.", "kind": "hint.tr", "de": "… ans Ende nach den Mahlzeiten anfügen." },
- { "tr": "Ali is the best student ile başla.", "kind": "hint.tr", "de": "Mit Ali is the best student beginnen." },
+ { "tr": "Harry is the best student ile başla.", "kind": "hint.tr", "de": "Mit Harry is the best student beginnen." },
  { "tr": "Could I ile başla, saati söylerken", "kind": "hint.tr", "de": "Mit Could I beginnen, beim Nennen der Uhrzeit" },
  { "tr": "didn't var, o yüzden 'used' değil.", "kind": "hint.tr", "de": "didn't steht da, deshalb nicht „used“." },
  { "tr": "Fiilin üçüncü biçimi burada kolay,", "kind": "hint.tr", "de": "Die dritte Form des Verbs ist hier leicht," },

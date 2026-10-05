@@ -43,7 +43,7 @@ export const DE_B2_W01: QuizWeek = {
         "Sein Unternehmen könne die bisherigen Bedingungen deshalb nicht länger halten. " +
         "Er schlug vor, den Vertrag um zwei Jahre zu verlängern und dafür eine Erhöhung der Preise um acht Prozent zu akzeptieren.\n\n" +
         "Wir haben deutlich gemacht, dass eine Erhöhung in dieser Höhe für uns nicht in Frage kommt. " +
-        "Frau Aksoy wies darauf hin, dass wir in den letzten drei Jahren alle Rechnungen pünktlich bezahlt und die bestellten Mengen regelmäßig erhöht hätten. " +
+        "Frau Thiel wies darauf hin, dass wir in den letzten drei Jahren alle Rechnungen pünktlich bezahlt und die bestellten Mengen regelmäßig erhöht hätten. " +
         "Hätte die Firma Berger uns früher informiert, hätten wir die höheren Kosten in unserer Planung beachten können.\n\n" +
         "Nach einer längeren Diskussion einigten wir uns auf einen Kompromiss: Die Preise steigen zunächst nur um vier Prozent. " +
         "Im Gegenzug verpflichten wir uns, die bestellte Menge im kommenden Jahr nicht zu reduzieren. " +

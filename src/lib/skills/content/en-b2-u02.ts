@@ -56,7 +56,7 @@ export const enB2U02: SkillExercise[] = [
     minutes: 9,
     text:
       "PROJECT REVIEW: MOVING THE CALL CENTER TO THE NEW BUILDING\n" +
-      "Written by Leyla Aksoy, project lead, for the management team.\n" +
+      "Written by Fiona Lloyd, project lead, for the management team.\n" +
       "The move is finished, three weeks late and 18 percent over budget. This review is not about blame. It is about what we would do differently, and about the costs we are still paying today.\n" +
       "1. Planning. If we had known about the building work next door, we would have changed the moving date. Nobody asked the landlord, and the noise stopped us from working for four days. If we had planned better, the loss would be smaller now: we are still paying overtime to catch up with the calls we missed.\n" +
       "2. The budget. If the expense had been clear from the start, we would have waited until the summer, when moving companies are cheaper. Instead, the overrun is now part of this year's budget, and the margin we expected for the second half of the year is gone.\n" +
@@ -138,15 +138,15 @@ export const enB2U02: SkillExercise[] = [
     minutes: 9,
     text:
       "MINUTES: MONTHLY BUDGET MEETING, 14 MARCH\n" +
-      "Present: Selin Demir (chair), Kaan Ersoy, Zehra Kaya, Tom Berger. Absent: Merve Tan.\n" +
+      "Present: Megan Adams (chair), Liam Porter, Fay Ellis, Tom Berger. Absent: Isla Tan.\n" +
       "1. Review of last month. The assignment of the tasks from February took ten minutes. All actions were completed except the update of the supplier list, which is now due on 21 March.\n" +
-      "2. Travel costs. Kaan presented the figures for the first quarter. Travel expenses were 12 percent above plan, mainly because of two trips to the Izmir office. An objection by Zehra to the new booking rules was noted. After a short discussion, the group agreed to keep the rules until June and to review them then.\n" +
+      "2. Travel costs. Liam presented the figures for the first quarter. Travel expenses were 12 percent above plan, mainly because of two trips to the Izmir office. An objection by Fay to the new booking rules was noted. After a short discussion, the group agreed to keep the rules until June and to review them then.\n" +
       "3. Printer contract. The proposal to change the printer supplier did not reach a consensus. Tom raised the question of the cancellation fee, and nobody could answer it. Decision postponed.\n" +
-      "4. The office party. A compromise was reached on the party budget: 800 euros instead of 1,200, and the team pays for its own drinks. Selin and Zehra will adjust the plan together.\n" +
-      "5. Other business. Kaan pointed out that the wording of the new travel policy is unclear. The policy says „economy class where possible“, and several people have read that differently. Tom will suggest new wording.\n" +
+      "4. The office party. A compromise was reached on the party budget: 800 euros instead of 1,200, and the team pays for its own drinks. Megan and Fay will adjust the plan together.\n" +
+      "5. Other business. Liam pointed out that the wording of the new travel policy is unclear. The policy says „economy class where possible“, and several people have read that differently. Tom will suggest new wording.\n" +
       "The meeting concluded at 11:40 with the consensus of the group on items 1, 2 and 4.\n" +
       "Next meeting: 11 April, 10:00, room 2.\n" +
-      "Actions: Tom (cancellation fee, wording of the travel policy), Selin and Zehra (party plan), Kaan (supplier list).",
+      "Actions: Tom (cancellation fee, wording of the travel policy), Megan and Fay (party plan), Liam (supplier list).",
     questions: [
       {
         text: "Why were travel expenses above plan?",
@@ -156,7 +156,7 @@ export const enB2U02: SkillExercise[] = [
       },
       {
         text: "What happened to the printer proposal?",
-        options: ["The decision was postponed.", "It was accepted.", "Zehra objected to it."],
+        options: ["The decision was postponed.", "It was accepted.", "Fay objected to it."],
         answer: 0,
         explain: "„The proposal to change the printer supplier did not reach a consensus.“",
       },
@@ -182,7 +182,7 @@ export const enB2U02: SkillExercise[] = [
         answer: 0,
         items: [
           "The supplier list is now due on 21 March.",
-          "Zehra objected to the new booking rules.",
+          "Fay objected to the new booking rules.",
           "Nobody could answer the question about the fee.",
           "The party budget is now 800 euros.",
         ],
@@ -221,19 +221,19 @@ export const enB2U02: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Merve", text: "So what happened on Tuesday? The whole booking system was down for three hours." },
-      { speaker: "Tuna", text: "We are still checking, but the fault must have been there for weeks. Three separate logs show the same error, and the first one is from early May." },
-      { speaker: "Merve", text: "Weeks? Then why did nobody notice?" },
-      { speaker: "Tuna", text: "The alert must have gone to the old email address. We changed the team address in April, and the monitoring tool still sends everything to the old one." },
-      { speaker: "Merve", text: "Could the update we installed on Monday have caused it?" },
-      { speaker: "Tuna", text: "No. We can't have caused the breakdown. Our update was only for the reports, and it did not touch the booking system at all." },
-      { speaker: "Merve", text: "That is a relief. But somebody must have seen something." },
-      { speaker: "Tuna", text: "The support team did. Two customers called on Monday afternoon about slow pages. Someone should have raised the alert then, but it was the end of the day." },
-      { speaker: "Merve", text: "So what was the root cause?" },
-      { speaker: "Tuna", text: "An assumption nobody wrote down. Everyone thought the disk was checked automatically. It was not, and on Tuesday it was simply full." },
-      { speaker: "Merve", text: "And the trigger?" },
-      { speaker: "Tuna", text: "A big report that ran at nine. It needed space the disk did not have." },
-      { speaker: "Merve", text: "Right. Write it up for the minutes, and let us make sure the alerts reach a real person next time." },
+      { speaker: "Isla", text: "So what happened on Tuesday? The whole booking system was down for three hours." },
+      { speaker: "Duncan", text: "We are still checking, but the fault must have been there for weeks. Three separate logs show the same error, and the first one is from early May." },
+      { speaker: "Isla", text: "Weeks? Then why did nobody notice?" },
+      { speaker: "Duncan", text: "The alert must have gone to the old email address. We changed the team address in April, and the monitoring tool still sends everything to the old one." },
+      { speaker: "Isla", text: "Could the update we installed on Monday have caused it?" },
+      { speaker: "Duncan", text: "No. We can't have caused the breakdown. Our update was only for the reports, and it did not touch the booking system at all." },
+      { speaker: "Isla", text: "That is a relief. But somebody must have seen something." },
+      { speaker: "Duncan", text: "The support team did. Two customers called on Monday afternoon about slow pages. Someone should have raised the alert then, but it was the end of the day." },
+      { speaker: "Isla", text: "So what was the root cause?" },
+      { speaker: "Duncan", text: "An assumption nobody wrote down. Everyone thought the disk was checked automatically. It was not, and on Tuesday it was simply full." },
+      { speaker: "Isla", text: "And the trigger?" },
+      { speaker: "Duncan", text: "A big report that ran at nine. It needed space the disk did not have." },
+      { speaker: "Isla", text: "Right. Write it up for the minutes, and let us make sure the alerts reach a real person next time." },
     ],
     questions: [
       {
@@ -301,24 +301,24 @@ export const enB2U02: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Yasemin", text: "Good morning, everyone. I only have ten minutes, so I will start with the main point. What I want to highlight today is the cost of shipping." },
-      { speaker: "Yasemin", text: "Our sales are fine. They are largely where we expected them to be. What worries me is the money we spend getting products to customers." },
-      { speaker: "Yasemin", text: "Shipping costs rose by a quarter this year. Many of you think it was the fuel price. It was the circular from our main carrier that changed everything." },
-      { speaker: "Yasemin", text: "That circular arrived in March. It introduced a new charge for every parcel over two kilos, and most of our parcels weigh two and a half." },
-      { speaker: "Yasemin", text: "What nobody noticed at the time was the small print. The charge applies to every return as well, so we pay it twice." },
-      { speaker: "Yasemin", text: "What is essential now is the timing. The contract with the carrier ends in August, and we have to adjust our packaging before then." },
-      { speaker: "Yasemin", text: "It is the design team who will lead this. They think a smaller box could bring most parcels under two kilos." },
-      { speaker: "Yasemin", text: "What I need from each of you is one idea by Friday. Small ideas are welcome. Thank you." },
+      { speaker: "Isabel", text: "Good morning, everyone. I only have ten minutes, so I will start with the main point. What I want to highlight today is the cost of shipping." },
+      { speaker: "Isabel", text: "Our sales are fine. They are largely where we expected them to be. What worries me is the money we spend getting products to customers." },
+      { speaker: "Isabel", text: "Shipping costs rose by a quarter this year. Many of you think it was the fuel price. It was the circular from our main carrier that changed everything." },
+      { speaker: "Isabel", text: "That circular arrived in March. It introduced a new charge for every parcel over two kilos, and most of our parcels weigh two and a half." },
+      { speaker: "Isabel", text: "What nobody noticed at the time was the small print. The charge applies to every return as well, so we pay it twice." },
+      { speaker: "Isabel", text: "What is essential now is the timing. The contract with the carrier ends in August, and we have to adjust our packaging before then." },
+      { speaker: "Isabel", text: "It is the design team who will lead this. They think a smaller box could bring most parcels under two kilos." },
+      { speaker: "Isabel", text: "What I need from each of you is one idea by Friday. Small ideas are welcome. Thank you." },
     ],
     questions: [
       {
-        text: "What does Yasemin want to highlight?",
+        text: "What does Isabel want to highlight?",
         options: ["the cost of shipping", "the sales figures", "the new boxes"],
         answer: 0,
         explain: "„What I want to highlight today is the cost of shipping.“",
       },
       {
-        text: "What changed everything, according to Yasemin?",
+        text: "What changed everything, according to Isabel?",
         options: ["the circular from the carrier", "the fuel price", "the new sales team"],
         answer: 0,
         explain: "„It was the circular from our main carrier that changed everything.“",
@@ -351,7 +351,7 @@ export const enB2U02: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Yasemin need from everyone by Friday?",
+        text: "What does Isabel need from everyone by Friday?",
         options: [],
         answer: 0,
         accept: ["one idea", "an idea", "ideas"],

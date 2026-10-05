@@ -42,20 +42,20 @@ export const a1U01: SkillExercise[] = [
     minutes: 3,
     text:
       "Hallo! Ich heiße Mia. Ich komme aus Deutschland. Ich wohne in Hamburg.\n\n" +
-      "Hallo! Ich heiße Ali. Ich komme aus der Türkei. Ich wohne in Berlin.\n\n" +
+      "Hallo! Ich heiße Moritz. Ich komme aus der Türkei. Ich wohne in Berlin.\n\n" +
       "Hallo! Ich heiße Nora. Ich komme aus Österreich. Ich wohne in Wien.",
     questions: [
       {
         text: "Wie heißt die Frau aus Hamburg?",
-        options: ["Mia", "Ali", "Nora"],
+        options: ["Mia", "Moritz", "Nora"],
         answer: 0,
         explain: "„Ich heiße Mia … Ich wohne in Hamburg.“ — Hamburg'da oturan Mia.",
       },
       {
-        text: "Woher kommt Ali?",
+        text: "Woher kommt Moritz?",
         options: ["aus Deutschland", "aus der Türkei", "aus Österreich"],
         answer: 1,
-        explain: "Ali „Ich komme aus der Türkei“ diyor — Türkiye'den geliyor.",
+        explain: "Moritz „Ich komme aus der Türkei“ diyor — Türkiye'den geliyor.",
       },
       {
         text: "Wo wohnt Nora?",
@@ -218,9 +218,9 @@ export const a1U01: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 1,
-    title: "Sind Sie Frau Yilmaz?",
+    title: "Sind Sie Frau Lutz?",
     genre: "dialogue",
-    intro: "Resmî bir tanışma (siz/Sie). Bay Koch, Bayan Yılmaz'la tanışıyor. Dikkat: burada „Sie“ (siz) kullanılıyor.",
+    intro: "Resmî bir tanışma (siz/Sie). Bay Koch, Bayan Lutz'la tanışıyor. Dikkat: burada „Sie“ (siz) kullanılıyor.",
     gloss: [
       { de: "Guten Tag", tr: "iyi günler", en: "good day" },
       { de: "Frau / Herr", tr: "Bayan / Bay", en: "Mrs. / Mr." },
@@ -230,25 +230,25 @@ export const a1U01: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Herr Koch", text: "Guten Tag! Sind Sie Frau Yilmaz?" },
-      { speaker: "Frau Yılmaz", text: "Ja, ich heiße Elif Yilmaz." },
+      { speaker: "Herr Koch", text: "Guten Tag! Sind Sie Frau Lutz?" },
+      { speaker: "Frau Lutz", text: "Ja, ich heiße Paula Lutz." },
       { speaker: "Herr Koch", text: "Woher kommen Sie?" },
-      { speaker: "Frau Yılmaz", text: "Ich komme aus der Türkei, aus Izmir." },
+      { speaker: "Frau Lutz", text: "Ich komme aus der Türkei, aus Izmir." },
       { speaker: "Herr Koch", text: "Und wo wohnen Sie jetzt?" },
-      { speaker: "Frau Yılmaz", text: "Jetzt wohne ich in Frankfurt." },
+      { speaker: "Frau Lutz", text: "Jetzt wohne ich in Frankfurt." },
       { speaker: "Herr Koch", text: "Gut. Ich bin hier der Chef." },
-      { speaker: "Frau Yılmaz", text: "Und wer ist die Dame?" },
+      { speaker: "Frau Lutz", text: "Und wer ist die Dame?" },
       { speaker: "Herr Koch", text: "Die Dame heißt Frau Berger." },
     ],
     questions: [
       {
         text: "Wie heißt die Frau?",
-        options: ["Elif Yılmaz", "Emma", "Mia"],
+        options: ["Paula Lutz", "Emma", "Mia"],
         answer: 0,
-        explain: "„Ja, ich heiße Elif Yilmaz.“",
+        explain: "„Ja, ich heiße Paula Lutz.“",
       },
       {
-        text: "Woher kommt Frau Yılmaz?",
+        text: "Woher kommt Frau Lutz?",
         options: ["aus der Türkei", "aus Deutschland", "aus Frankreich"],
         answer: 0,
         explain: "„Ich komme aus der Türkei, aus Izmir.“",
@@ -267,7 +267,7 @@ export const a1U01: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Frau Yilmaz wohnt jetzt in ___.",
+        text: "Frau Lutz wohnt jetzt in ___.",
         options: [],
         answer: 0,
         accept: ["Frankfurt"],
@@ -278,7 +278,7 @@ export const a1U01: SkillExercise[] = [
         text: "Konuşmanın sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
-        items: ["Herr Koch fragt: Sind Sie Frau Yilmaz?", "Sie sagt ihren Namen.", "Herr Koch fragt: Woher kommen Sie?", "Sie sagt: aus der Türkei."],
+        items: ["Herr Koch fragt: Sind Sie Frau Lutz?", "Sie sagt ihren Namen.", "Herr Koch fragt: Woher kommen Sie?", "Sie sagt: aus der Türkei."],
         explain: "Önce „siz misiniz“, sonra ad, sonra „nerelisiniz“, sonra cevap.",
       },
           {
@@ -334,10 +334,10 @@ export const a1U01: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "Tanışma kartını Ali için doldur.",
-        facts: "Ali Demir; Türkiye'den (memleket ülkesi Türkei); şu an Berlin'de oturuyor.",
+        prompt: "Tanışma kartını Moritz için doldur.",
+        facts: "Moritz Böhm; Türkiye'den (memleket ülkesi Türkei); şu an Berlin'de oturuyor.",
         fields: [
-          { label: "Name", answer: "Ali Demir", accept: ["Ali", "Demir"] },
+          { label: "Name", answer: "Moritz Böhm", accept: ["Moritz", "Böhm"] },
           { label: "Land", answer: "Türkei", accept: ["die Türkei", "Turkei"] },
           { label: "Stadt", answer: "Berlin" },
         ],

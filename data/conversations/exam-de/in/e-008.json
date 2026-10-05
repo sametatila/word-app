@@ -76,7 +76,7 @@
     "Why didn't you tell me? I would have come earlier."
    ],
    "ctx": [
-    "B1.10 Feelings and dreams · Ela"
+    "B1.10 Feelings and dreams · Lucy"
    ]
   },
   {
@@ -281,7 +281,7 @@
    ]
   },
   {
-   "tr": "Dilek kipiyle bir şeffaflık talebi koy",
+   "tr": "Sandy kipiyle bir şeffaflık talebi koy",
    "kind": "writing.checklist",
    "n": 1,
    "de": [],
@@ -534,11 +534,11 @@
    ]
   },
   {
-   "tr": "Yağmur başladığında Onur ne yapıyordu?",
+   "tr": "Yağmur başladığında Callum ne yapıyordu?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What was Onur doing when it started to rain?"
+    "What was Callum doing when it started to rain?"
    ],
    "ctx": [
     "A2.1 What happened? · dinleme sorusu"
@@ -732,7 +732,7 @@
    ]
   },
   {
-   "tr": "Dilek kipiyle bir talep ya da öneri yaz",
+   "tr": "Sandy kipiyle bir talep ya da öneri yaz",
    "kind": "writing.checklist",
    "n": 1,
    "de": [],
@@ -741,14 +741,14 @@
    ]
   },
   {
-   "tr": "E-L-I-F. Bir de yirmi sekiz yaşındayım.",
+   "tr": "H-O-L-L-Y. Bir de yirmi sekiz yaşındayım.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "E-L-I-F. And I'm twenty-eight years old."
+    "H-O-L-L-Y. And I'm twenty-eight years old."
    ],
    "ctx": [
-    "A1.1 Nice to meet you · Elif"
+    "A1.1 Nice to meet you · Holly"
    ]
   },
   {
@@ -1182,7 +1182,7 @@
     "How long have you lived in this city?"
    ],
    "ctx": [
-    "A2.2 My story, then and now · Merve"
+    "A2.2 My story, then and now · Isla"
    ]
   },
   {
@@ -1292,11 +1292,11 @@
    ]
   },
   {
-   "tr": "Kerem şehirde ne zamandan beri oturuyor?",
+   "tr": "Connor şehirde ne zamandan beri oturuyor?",
    "kind": "question",
    "n": 1,
    "de": [
-    "How long has Kerem lived in the city?"
+    "How long has Connor lived in the city?"
    ],
    "ctx": [
     "A2.2 My story, then and now · dinleme sorusu"
@@ -1387,11 +1387,11 @@
    ]
   },
   {
-   "tr": "Selin ekibe katılmadan önce ne yapmıştı?",
+   "tr": "Megan ekibe katılmadan önce ne yapmıştı?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What did Selin do before she joined the team?"
+    "What did Megan do before she joined the team?"
    ],
    "ctx": [
     "B1.1 My career so far · dinleme sorusu"

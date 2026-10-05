@@ -59,7 +59,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 4,
-    "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new movie at the Star Theater. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has an exam on Monday.\nEmma: Poor Murat! I have twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
+    "text": "Charlie: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nCharlie: There is a new movie at the Star Theater. It is a comedy.\nEmma: Nice! What time does it start?\nCharlie: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nCharlie: Sure. Let's meet at half past five in front of the movie theater.\nEmma: Perfect. Is Isaac coming too?\nCharlie: No, he is busy. He has an exam on Monday.\nEmma: Poor Isaac! I have twenty lira. Is that enough for a ticket?\nCharlie: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
     "questions": [
       {
         "text": "What time does the movie start?",
@@ -69,26 +69,26 @@ export const enMobile2026: SkillExercise[] = [
           "At seven o'clock"
         ],
         "answer": 2,
-        "explain": "Deniz \"At seven o'clock.\" diyor. Beş buçuk filmin saati değil, buluşma saatidir."
+        "explain": "Charlie \"At seven o'clock.\" diyor. Beş buçuk filmin saati değil, buluşma saatidir."
       },
       {
-        "text": "Murat is going to the movies with them.",
+        "text": "Isaac is going to the movies with them.",
         "options": [
           "True",
           "False"
         ],
         "answer": 1,
-        "explain": "Deniz \"No, he is busy. He has an exam on Monday.\" diyor, yani Murat gelmiyor."
+        "explain": "Charlie \"No, he is busy. He has an exam on Monday.\" diyor, yani Isaac gelmiyor."
       },
       {
-        "text": "Where do Deniz and Emma meet?",
+        "text": "Where do Charlie and Emma meet?",
         "options": [
           "At Emma's home",
           "In front of the movie theater",
           "At Emma's workplace"
         ],
         "answer": 1,
-        "explain": "Deniz \"Let's meet at half past five in front of the movie theater.\" diyor. Buluşma yeri sinemanın önü."
+        "explain": "Charlie \"Let's meet at half past five in front of the movie theater.\" diyor. Buluşma yeri sinemanın önü."
       },
       {
         "text": "How much is one ticket?",
@@ -98,7 +98,7 @@ export const enMobile2026: SkillExercise[] = [
           "Five lira"
         ],
         "answer": 0,
-        "explain": "Deniz \"a ticket is fifteen lira\" diyor. Yirmi lira Emma'nın cebindeki para."
+        "explain": "Charlie \"a ticket is fifteen lira\" diyor. Yirmi lira Emma'nın cebindeki para."
       },
       {
         "kind": "gapfill",
@@ -113,7 +113,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What does Murat have on Monday?",
+        "text": "What does Isaac have on Monday?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -121,7 +121,7 @@ export const enMobile2026: SkillExercise[] = [
           "exam",
           "an exam on Monday"
         ],
-        "explain": "\"He has an exam on Monday.\" Murat bu yüzden sinemaya gelmiyor."
+        "explain": "\"He has an exam on Monday.\" Isaac bu yüzden sinemaya gelmiyor."
       }
     ]
   },
@@ -232,7 +232,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "reading",
     "title": "Our Family Photo",
     "genre": "email",
-    "intro": "Elif'in arkadaşına gönderdiği, aile fotoğrafını anlatan e-postayı okuyacaksın.",
+    "intro": "Holly'nin arkadaşına gönderdiği, aile fotoğrafını anlatan e-postayı okuyacaksın.",
     "gloss": [
       {
         "de": "middle",
@@ -260,39 +260,39 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "From: Elif\nTo: Anna\nSubject: Our family photo\n\nHi Anna,\n\nHere is the photo from my birthday. It is our new family photo.\n\nMy mother is in the middle. She is wearing a red dress. Her name is Ayse. My father is next to her. He is tall and he has gray hair.\n\nI am on the left with my brother Kerem. He is nine years old. He is holding our cat, Pamuk.\n\nThere are two women behind us. They are my aunts. My aunt Zeynep is a nurse. She is laughing in the photo!\n\nMy grandmother is not in the photo. She is taking the photo.\n\nWrite soon,\nElif",
+    "text": "From: Holly\nTo: Anna\nSubject: Our family photo\n\nHi Anna,\n\nHere is the photo from my birthday. It is our new family photo.\n\nMy mother is in the middle. She is wearing a red dress. Her name is Rachel. My father is next to her. He is tall and he has gray hair.\n\nI am on the left with my brother Connor. He is nine years old. He is holding our cat, Pamuk.\n\nThere are two women behind us. They are my aunts. My aunt Lydia is a nurse. She is laughing in the photo!\n\nMy grandmother is not in the photo. She is taking the photo.\n\nWrite soon,\nHolly",
     "questions": [
       {
         "text": "Who is in the middle of the photo?",
         "options": [
-          "Elif's father",
-          "Elif's mother",
-          "Elif's aunt"
+          "Holly's father",
+          "Holly's mother",
+          "Holly's aunt"
         ],
         "answer": 1,
-        "explain": "Metinde \"My mother is in the middle.\" yazıyor. Yani ortadaki kişi Elif'in annesi."
+        "explain": "Metinde \"My mother is in the middle.\" yazıyor. Yani ortadaki kişi Holly'nin annesi."
       },
       {
-        "text": "What is aunt Zeynep's job?",
+        "text": "What is aunt Lydia's job?",
         "options": [
           "She is a nurse",
           "She is a teacher",
           "She is a doctor"
         ],
         "answer": 0,
-        "explain": "E-postada \"My aunt Zeynep is a nurse.\" diyor. Zeynep hemşire."
+        "explain": "E-postada \"My aunt Lydia is a nurse.\" diyor. Lydia hemşire."
       },
       {
-        "text": "Kerem is ten years old.",
+        "text": "Connor is ten years old.",
         "options": [
           "True",
           "False"
         ],
         "answer": 1,
-        "explain": "Yanlış. Metinde Kerem için \"He is nine years old.\" yazıyor, yani dokuz yaşında."
+        "explain": "Yanlış. Metinde Connor için \"He is nine years old.\" yazıyor, yani dokuz yaşında."
       },
       {
-        "text": "Why is Elif's grandmother not in the photo?",
+        "text": "Why is Holly's grandmother not in the photo?",
         "options": [
           "She is at work",
           "She is taking the photo",
@@ -303,14 +303,14 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Kerem is ___ years old.",
+        "text": "Connor is ___ years old.",
         "options": [],
         "answer": 0,
         "accept": [
           "nine",
           "9"
         ],
-        "explain": "\"He is nine years old.\" Kerem, Elif'in erkek kardeşi."
+        "explain": "\"He is nine years old.\" Connor, Holly'nin erkek kardeşi."
       },
       {
         "kind": "short_answer",
@@ -322,7 +322,7 @@ export const enMobile2026: SkillExercise[] = [
           "It is Pamuk",
           "The cat is Pamuk"
         ],
-        "explain": "\"He is holding our cat, Pamuk.\" Kediyi Kerem tutuyor."
+        "explain": "\"He is holding our cat, Pamuk.\" Kediyi Connor tutuyor."
       }
     ]
   },
@@ -362,7 +362,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "toast", "tr": "tost" },
     ],
     "minutes": 4,
-    "text": "GREEN CUP CAFE\nOpen every day, 8:00 - 19:00\n\nDRINKS\nTea ................ 30 TL\nCoffee ............. 45 TL\nHot chocolate ...... 50 TL\nOrange juice ....... 55 TL\n\nFOOD\nCheese toast ....... 60 TL\nChocolate cake ..... 65 TL\nSoup of the day .... 70 TL\n\nNOTE\nBreakfast is only in the morning. We serve it from 8:00 to 11:00.\nStudents have a 10% discount. Please show your student card.\nThere is free water on every table.\nWe don't have Wi-Fi in the garden, but there is Wi-Fi inside.\nOur waiter Emre is here on the weekend. He can help you in English.",
+    "text": "GREEN CUP CAFE\nOpen every day, 8:00 - 19:00\n\nDRINKS\nTea ................ 30 TL\nCoffee ............. 45 TL\nHot chocolate ...... 50 TL\nOrange juice ....... 55 TL\n\nFOOD\nCheese toast ....... 60 TL\nChocolate cake ..... 65 TL\nSoup of the day .... 70 TL\n\nNOTE\nBreakfast is only in the morning. We serve it from 8:00 to 11:00.\nStudents have a 10% discount. Please show your student card.\nThere is free water on every table.\nWe don't have Wi-Fi in the garden, but there is Wi-Fi inside.\nOur waiter Owen is here on the weekend. He can help you in English.",
     "questions": [
       {
         "text": "How much is a hot chocolate?",
@@ -396,12 +396,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "Who can help you in English on the weekend?",
         "options": [
-          "Emre, the waiter",
+          "Owen, the waiter",
           "A student",
           "The manager"
         ],
         "answer": 0,
-        "explain": "\"Our waiter Emre is here on the weekend. He can help you in English.\" cümlesi bunu söylüyor."
+        "explain": "\"Our waiter Owen is here on the weekend. He can help you in English.\" cümlesi bunu söylüyor."
       },
       {
         "kind": "gapfill",
@@ -469,7 +469,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "math", "tr": "matematik" },
     ],
     "minutes": 4,
-    "text": "Tuesday, March 14\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nClasses start at eight. My favorite subject is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a movie.\nI go to bed at eleven. Tomorrow is Wednesday and I have a math exam!",
+    "text": "Tuesday, March 14\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Holly. She makes tea.\nI walk to school. It is twenty minutes.\nClasses start at eight. My favorite subject is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Charlie. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a movie.\nI go to bed at eleven. Tomorrow is Wednesday and I have a math exam!",
     "questions": [
       {
         "text": "What time does the writer get up?",
@@ -493,12 +493,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "Who does the writer do homework with after school?",
         "options": [
-          "Elif",
-          "Deniz",
+          "Holly",
+          "Charlie",
           "The science teacher"
         ],
         "answer": 1,
-        "explain": "\"After school I go to the library with Deniz. We do our homework there until five.\" Elif kahvaltıdaki kız kardeşi."
+        "explain": "\"After school I go to the library with Charlie. We do our homework there until five.\" Holly kahvaltıdaki kız kardeşi."
       },
       {
         "text": "What does the writer have tomorrow?",
@@ -570,7 +570,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "brown", "tr": "kahverengi" },
     ],
     "minutes": 4,
-    "text": "BIG SUMMER SALE\nMango Street Shop - 24 Green Road\n\nOur sale starts on Friday at 9 a.m. Everything is cheap this week!\n\nT-shirts: red, blue and white. Sizes S, M and L. Only 12 dollars.\nJeans: 30 dollars. Sizes 36 to 44.\nShoes: black or brown. 45 dollars.\nBags: 20 dollars. We have big bags and small bags.\n\nThere are 200 new dresses in the store. They are yellow, green and pink.\n\nDo you want a different size? Ask Elif. She works at the front desk and she is very friendly.\n\nWe are open from 9 a.m. to 8 p.m. every day. On Sunday we close at 6 p.m.\nYou can pay with cash or card.",
+    "text": "BIG SUMMER SALE\nMango Street Shop - 24 Green Road\n\nOur sale starts on Friday at 9 a.m. Everything is cheap this week!\n\nT-shirts: red, blue and white. Sizes S, M and L. Only 12 dollars.\nJeans: 30 dollars. Sizes 36 to 44.\nShoes: black or brown. 45 dollars.\nBags: 20 dollars. We have big bags and small bags.\n\nThere are 200 new dresses in the store. They are yellow, green and pink.\n\nDo you want a different size? Ask Holly. She works at the front desk and she is very friendly.\n\nWe are open from 9 a.m. to 8 p.m. every day. On Sunday we close at 6 p.m.\nYou can pay with cash or card.",
     "questions": [
       {
         "text": "The store closes at 8 p.m. on Sunday.",
@@ -594,12 +594,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "Who can help you with a different size?",
         "options": [
-          "Elif",
+          "Holly",
           "Mango",
           "Green"
         ],
         "answer": 0,
-        "explain": "Metinde \"Do you want a different size? Ask Elif.\" deniyor. Elif danışmada çalışıyor."
+        "explain": "Metinde \"Do you want a different size? Ask Holly.\" deniyor. Holly danışmada çalışıyor."
       },
       {
         "text": "What colors are the new dresses?",
@@ -780,7 +780,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "pet", "tr": "evcil hayvan" },
     ],
     "minutes": 4,
-    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 dollars a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna at (206) 555-0412 after 6 p.m. You can also send a message.",
+    "text": "ROOM FOR RENT — CITY CENTER\n\nThere is a nice room in a big apartment. The apartment is on Green Street, near the train station.\n\nThe room has a bed, a desk and a small closet. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Henry and Anna. Henry is a student. Anna works in a hospital.\n\nPrice: 320 dollars a month. Water and electricity are not in the price.\n\nThe room is free from October 1.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna at (206) 555-0412 after 6 p.m. You can also send a message.",
     "questions": [
       {
         "text": "Where is the apartment?",
@@ -841,7 +841,7 @@ export const enMobile2026: SkillExercise[] = [
           "Anna does",
           "Anna works in a hospital"
         ],
-        "explain": "\"Mert is a student. Anna works in a hospital.\" Telefon numarası da Anna'nın."
+        "explain": "\"Henry is a student. Anna works in a hospital.\" Telefon numarası da Anna'nın."
       }
     ]
   },
@@ -880,7 +880,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "Hi Ela,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small store on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big closet.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the store is on the table — twenty dollars.\n\nThanks a lot!\nDan",
+    "text": "Hi Lucy,\n\nI am at work until six o'clock. Sorry, the apartment is a little messy! Can you help me today, please?\n\n1. The kitchen trash can is full. Please take it out.\n2. There is no milk and no bread. Can you go to the small store on Green Street? It closes at seven.\n3. My brother Tom is coming at eight. He is sleeping here tonight. There are clean sheets in the big closet.\n\nI am cooking pasta for dinner. You don't need to cook!\n\nThe washing machine is on now. Please don't open it.\n\nMoney for the store is on the table — twenty dollars.\n\nThanks a lot!\nDan",
     "questions": [
       {
         "text": "What time is Dan at work until?",
@@ -893,7 +893,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Notun başında \"I am at work until six o'clock\" yazıyor. Yedi dükkânın kapanma saati, sekiz de Tom'un geliş saati."
       },
       {
-        "text": "Ela must cook dinner tonight.",
+        "text": "Lucy must cook dinner tonight.",
         "options": [
           "True",
           "False"
@@ -906,7 +906,7 @@ export const enMobile2026: SkillExercise[] = [
         "options": [
           "Dan's brother",
           "Dan's boss",
-          "Ela's sister"
+          "Lucy's sister"
         ],
         "answer": 0,
         "explain": "Notta \"My brother Tom is coming at eight\" yazıyor. Gelen kişi Dan'in kardeşi Tom."
@@ -934,7 +934,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What must Ela take out?",
+        "text": "What must Lucy take out?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -985,7 +985,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "NEW MEMBERS WELCOME!\n\nDo you want to be fit and healthy? Come to Green Park Sports Club!\n\nWe are open every day, from 7 a.m. to 10 p.m.\nThere is a big swimming pool, a new gym and two tennis courts.\n\nClasses this month:\nYoga - Monday and Wednesday, 6 p.m., with Elif\nBasketball - Tuesday, 8 p.m., with Marco\nSwimming for beginners - Saturday, 11 a.m.\n\nMembership is 40 euros a month. Students pay only 25 euros.\nYou can bring a friend on Sunday. It is free!\n\nOur cafe is next to the gym. You can have a coffee after your class.\n\nCall us at 555 34 12 or visit our website.",
+    "text": "NEW MEMBERS WELCOME!\n\nDo you want to be fit and healthy? Come to Green Park Sports Club!\n\nWe are open every day, from 7 a.m. to 10 p.m.\nThere is a big swimming pool, a new gym and two tennis courts.\n\nClasses this month:\nYoga - Monday and Wednesday, 6 p.m., with Holly\nBasketball - Tuesday, 8 p.m., with Marco\nSwimming for beginners - Saturday, 11 a.m.\n\nMembership is 40 euros a month. Students pay only 25 euros.\nYou can bring a friend on Sunday. It is free!\n\nOur cafe is next to the gym. You can have a coffee after your class.\n\nCall us at 555 34 12 or visit our website.",
     "questions": [
       {
         "text": "What time does the club close?",
@@ -1000,12 +1000,12 @@ export const enMobile2026: SkillExercise[] = [
       {
         "text": "Who teaches the basketball class?",
         "options": [
-          "Elif",
+          "Holly",
           "Marco",
           "A student"
         ],
         "answer": 1,
-        "explain": "Listede \"Basketball - Tuesday, 8 p.m., with Marco\" yazıyor. Elif yoga dersini veriyor."
+        "explain": "Listede \"Basketball - Tuesday, 8 p.m., with Marco\" yazıyor. Holly yoga dersini veriyor."
       },
       {
         "text": "Students pay 40 euros a month.",
@@ -1091,10 +1091,10 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "medicine", "tr": "ilaç" },
     ],
     "minutes": 4,
-    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white pill after breakfast.\nTake one blue pill before bed.\nDo not take the pills with coffee or tea. Drink a big glass of water.\nYou have a cough, so drink hot water with lemon.\nAre you feeling bad? Call us at 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
+    "text": "GREEN PARK HEALTH CENTER\nAppointment Card\n\nPatient: Holly Davies\nDoctor: Dr. Moore\nDate: Tuesday, October 14\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white pill after breakfast.\nTake one blue pill before bed.\nDo not take the pills with coffee or tea. Drink a big glass of water.\nYou have a cough, so drink hot water with lemon.\nAre you feeling bad? Call us at 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
     "questions": [
       {
-        "text": "What time is Elif's appointment?",
+        "text": "What time is Holly's appointment?",
         "options": [
           "At 8:00",
           "At 9:30",
@@ -1123,7 +1123,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Not diyor ki: \"Take one blue pill before bed.\" Kahvaltıdan sonra alınan hap beyaz olan."
       },
       {
-        "text": "What must Elif bring to the health center?",
+        "text": "What must Holly bring to the health center?",
         "options": [
           "This card and her ID",
           "A big glass of water",
@@ -1164,7 +1164,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "reading",
     "title": "Postcard from Antalya",
     "genre": "personal",
-    "intro": "Deniz'in tatilden arkadaşı Elif'e gönderdiği kartpostalı okuyacaksın.",
+    "intro": "Charlie'nin tatilden arkadaşı Holly'ye gönderdiği kartpostalı okuyacaksın.",
     "gloss": [
       {
         "de": "arrived",
@@ -1196,10 +1196,10 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 4,
-    "text": "Hi Elif!\n\nGreetings from Antalya! We arrived on Friday evening. The hotel is small but very nice. Our room has a big balcony.\n\nOn Saturday we were at the beach all day. The water was warm and my brother swam for two hours. In the afternoon we ate fish at a small restaurant near the harbor. It cost only 200 lira!\n\nOn Sunday morning I visited the old town with Dad. We walked for three hours and I took forty photos. Mom stayed at the hotel because she was tired.\n\nNow I am sitting on the balcony. The sun is going down and the sea is orange. I am writing this postcard to you.\n\nSee you next week!\nDeniz",
+    "text": "Hi Holly!\n\nGreetings from Antalya! We arrived on Friday evening. The hotel is small but very nice. Our room has a big balcony.\n\nOn Saturday we were at the beach all day. The water was warm and my brother swam for two hours. In the afternoon we ate fish at a small restaurant near the harbor. It cost only 200 lira!\n\nOn Sunday morning I visited the old town with Dad. We walked for three hours and I took forty photos. Mom stayed at the hotel because she was tired.\n\nNow I am sitting on the balcony. The sun is going down and the sea is orange. I am writing this postcard to you.\n\nSee you next week!\nCharlie",
     "questions": [
       {
-        "text": "When did Deniz's family arrive in Antalya?",
+        "text": "When did Charlie's family arrive in Antalya?",
         "options": [
           "On Friday evening",
           "On Saturday morning",
@@ -1209,7 +1209,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Metinde \"We arrived on Friday evening\" yazıyor, yani cuma akşamı vardılar. Cumartesi plaja gittiler, ama varış günü değil."
       },
       {
-        "text": "Deniz's brother swam for two hours.",
+        "text": "Charlie's brother swam for two hours.",
         "options": [
           "True",
           "False"
@@ -1218,7 +1218,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Metinde \"my brother swam for two hours\" diyor. Yani doğru."
       },
       {
-        "text": "How many photos did Deniz take in the old town?",
+        "text": "How many photos did Charlie take in the old town?",
         "options": [
           "Four",
           "Fourteen",
@@ -1235,7 +1235,7 @@ export const enMobile2026: SkillExercise[] = [
           "She was writing a postcard"
         ],
         "answer": 0,
-        "explain": "Metinde \"Mom stayed at the hotel because she was tired\" yazıyor. Kartpostalı yazan kişi ise Deniz."
+        "explain": "Metinde \"Mom stayed at the hotel because she was tired\" yazıyor. Kartpostalı yazan kişi ise Charlie."
       },
       {
         "kind": "gapfill",
@@ -1250,7 +1250,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "Who did Deniz visit the old town with?",
+        "text": "Who did Charlie visit the old town with?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -1270,7 +1270,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "listening",
     "title": "A Coffee and a Sandwich",
     "genre": "dialogue",
-    "intro": "Bir kafede Emre'nin sipariş verirken garsonla konuşmasını dinleyeceksin; ne istediğine ve fiyata dikkat et.",
+    "intro": "Bir kafede Owen'in sipariş verirken garsonla konuşmasını dinleyeceksin; ne istediğine ve fiyata dikkat et.",
     "gloss": [
       {
         "de": "sandwich",
@@ -1308,7 +1308,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Good morning! Welcome to Green Cup. What can I get you?"
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Hi. I'd like a cheese sandwich and a small coffee, please."
       },
       {
@@ -1316,7 +1316,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Sure. Do you want milk in your coffee?"
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "No, thanks. I don't like milk. But I'd like some water too."
       },
       {
@@ -1324,7 +1324,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Of course. That's seven dollars fifty."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Here you are. Is the sandwich hot?"
       },
       {
@@ -1332,24 +1332,24 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Yes, it is. It's coming in five minutes. What's your name?"
       },
       {
-        "speaker": "Emre",
-        "text": "Emre. E-M-R-E. Thanks."
+        "speaker": "Owen",
+        "text": "Owen. O-W-E-N. Thanks."
       },
       {
         "speaker": "Waiter",
-        "text": "Thank you, Emre. Please take a seat by the window. Your order is coming."
+        "text": "Thank you, Owen. Please take a seat by the window. Your order is coming."
       }
     ],
     "questions": [
       {
-        "text": "What does Emre order to eat?",
+        "text": "What does Owen order to eat?",
         "options": [
           "A cheese sandwich",
           "A chicken sandwich",
           "A piece of cake"
         ],
         "answer": 0,
-        "explain": "Emre \"I'd like a cheese sandwich and a small coffee, please.\" diyor; yani peynirli sandviç istiyor."
+        "explain": "Owen \"I'd like a cheese sandwich and a small coffee, please.\" diyor; yani peynirli sandviç istiyor."
       },
       {
         "text": "How much is the order?",
@@ -1362,13 +1362,13 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Garson fiyatı \"That's seven dollars fifty.\" diye söylüyor."
       },
       {
-        "text": "Emre wants milk in his coffee.",
+        "text": "Owen wants milk in his coffee.",
         "options": [
           "True",
           "False"
         ],
         "answer": 1,
-        "explain": "Garson \"Do you want milk in your coffee?\" diye soruyor, Emre \"No, thanks. I don't like milk.\" diyor. Yani sütlü istemiyor."
+        "explain": "Garson \"Do you want milk in your coffee?\" diye soruyor, Owen \"No, thanks. I don't like milk.\" diyor. Yani sütlü istemiyor."
       },
       {
         "text": "When is the sandwich ready?",
@@ -1393,7 +1393,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "Where does the waiter ask Emre to sit?",
+        "text": "Where does the waiter ask Owen to sit?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -1443,31 +1443,31 @@ export const enMobile2026: SkillExercise[] = [
     "minutes": 3,
     "segments": [
       {
-        "speaker": "Emre",
-        "text": "Hello, everyone. My name is Emre. I'm from Türkiye. My city is Izmir. I'm twenty-four years old. I'm a nurse and I work at a big hospital."
+        "speaker": "Owen",
+        "text": "Hello, everyone. My name is Owen. I'm from Türkiye. My city is Izmir. I'm twenty-four years old. I'm a nurse and I work at a big hospital."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "I've got two brothers and one sister. Here in London I'm living with my aunt. I can speak a little English, but I can't speak French. I love music and soccer."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "My class is on Monday and Wednesday at six o'clock. I'm going to study here for six months. I'm a little nervous today, but I'm very happy. Nice to meet you all."
       }
     ],
     "questions": [
       {
-        "text": "What is Emre's job?",
+        "text": "What is Owen's job?",
         "options": [
           "A teacher",
           "A nurse",
           "A doctor"
         ],
         "answer": 1,
-        "explain": "Emre \"I'm a nurse and I work at a big hospital\" diyor, yani hemşire."
+        "explain": "Owen \"I'm a nurse and I work at a big hospital\" diyor, yani hemşire."
       },
       {
-        "text": "How old is Emre?",
+        "text": "How old is Owen?",
         "options": [
           "Twenty-two",
           "Twenty-four",
@@ -1477,7 +1477,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "\"I'm twenty-four years old\" cümlesinden yaşını anlıyoruz: 24."
       },
       {
-        "text": "Emre can speak French.",
+        "text": "Owen can speak French.",
         "options": [
           "True",
           "False"
@@ -1497,7 +1497,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Emre is going to study here for ___ months.",
+        "text": "Owen is going to study here for ___ months.",
         "options": [],
         "answer": 0,
         "accept": [
@@ -1508,7 +1508,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "Who is Emre living with in London?",
+        "text": "Who is Owen living with in London?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -1561,7 +1561,7 @@ export const enMobile2026: SkillExercise[] = [
     "minutes": 3,
     "segments": [
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Excuse me. I'm looking for the train station. Is it near here?"
       },
       {
@@ -1569,7 +1569,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "It's not very near, but you can walk. It's about ten minutes."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Okay. Which way is it?"
       },
       {
@@ -1577,7 +1577,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Go straight down this street. Then turn left at the bank."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Turn left at the bank. And then?"
       },
       {
@@ -1585,7 +1585,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Then take the second street on the right. It's called Green Street."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Is there a bus stop near the station?"
       },
       {
@@ -1593,20 +1593,20 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Yes, there are two bus stops in front of it. You can't miss it."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Thank you very much!"
       }
     ],
     "questions": [
       {
-        "text": "What is Emre looking for?",
+        "text": "What is Owen looking for?",
         "options": [
           "The bank",
           "The train station",
           "A bus stop"
         ],
         "answer": 1,
-        "explain": "Emre ilk cümlede \"I'm looking for the train station\" diyor. Tren istasyonunu arıyor."
+        "explain": "Owen ilk cümlede \"I'm looking for the train station\" diyor. Tren istasyonunu arıyor."
       },
       {
         "text": "How long is the walk?",
@@ -1619,7 +1619,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Kadın \"It's about ten minutes\" diyor, yani yürüyüş yaklaşık on dakika."
       },
       {
-        "text": "Emre must turn right at the bank.",
+        "text": "Owen must turn right at the bank.",
         "options": [
           "True",
           "False"
@@ -1823,7 +1823,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Green Street Hair Salon. Good morning. How can I help you?"
       },
       {
-        "speaker": "Ayse",
+        "speaker": "Rachel",
         "text": "Hello. I want an appointment for a haircut, please."
       },
       {
@@ -1831,7 +1831,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Of course. Which day are you free?"
       },
       {
-        "speaker": "Ayse",
+        "speaker": "Rachel",
         "text": "Is Thursday afternoon OK? I finish work at twelve."
       },
       {
@@ -1839,7 +1839,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "I'm sorry, Thursday is full. We've got Friday at half past ten."
       },
       {
-        "speaker": "Ayse",
+        "speaker": "Rachel",
         "text": "Friday is good for me. How much is a haircut?"
       },
       {
@@ -1847,24 +1847,24 @@ export const enMobile2026: SkillExercise[] = [
         "text": "It's twenty euros. Can I have your name, please?"
       },
       {
-        "speaker": "Ayse",
-        "text": "It's Ayse Demir. Thank you very much."
+        "speaker": "Rachel",
+        "text": "It's Rachel Adams. Thank you very much."
       },
       {
         "speaker": "Receptionist",
-        "text": "Thank you, Ayse. See you on Friday at half past ten."
+        "text": "Thank you, Rachel. See you on Friday at half past ten."
       }
     ],
     "questions": [
       {
-        "text": "Which day is Ayse's appointment?",
+        "text": "Which day is Rachel's appointment?",
         "options": [
           "Thursday",
           "Friday",
           "Monday"
         ],
         "answer": 1,
-        "explain": "Görevli \"We've got Friday at half past ten\" diyor ve Ayse \"Friday is good for me\" diye cevaplıyor."
+        "explain": "Görevli \"We've got Friday at half past ten\" diyor ve Rachel \"Friday is good for me\" diye cevaplıyor."
       },
       {
         "text": "What time is the appointment?",
@@ -1874,7 +1874,7 @@ export const enMobile2026: SkillExercise[] = [
           "At ten past nine"
         ],
         "answer": 0,
-        "explain": "Konuşmanın sonunda \"See you on Friday at half past ten\" deniyor. On iki, Ayse'nin işten çıkış saati."
+        "explain": "Konuşmanın sonunda \"See you on Friday at half past ten\" deniyor. On iki, Rachel'in işten çıkış saati."
       },
       {
         "text": "A haircut is twenty euros.",
@@ -1883,10 +1883,10 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 0,
-        "explain": "Ayse \"How much is a haircut?\" diye soruyor, görevli \"It's twenty euros\" diyor. Yani doğru."
+        "explain": "Rachel \"How much is a haircut?\" diye soruyor, görevli \"It's twenty euros\" diyor. Yani doğru."
       },
       {
-        "text": "Why can't Ayse come on Thursday?",
+        "text": "Why can't Rachel come on Thursday?",
         "options": [
           "Because she is sick",
           "Because the salon is full that day",
@@ -1912,10 +1912,10 @@ export const enMobile2026: SkillExercise[] = [
         "options": [],
         "answer": 0,
         "accept": [
-          "Demir",
-          "Ayse Demir"
+          "Adams",
+          "Rachel Adams"
         ],
-        "explain": "\"It's Ayse Demir.\" Soyadı Demir."
+        "explain": "\"It's Rachel Adams.\" Soyadı Adams."
       }
     ]
   },
@@ -2208,7 +2208,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Oh, is this your family photo? Can I see it?"
       },
       {
-        "speaker": "Kaan",
+        "speaker": "Liam",
         "text": "Sure. It's from my sister's birthday. There are six people here."
       },
       {
@@ -2216,7 +2216,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Who's the woman with short blonde hair?"
       },
       {
-        "speaker": "Kaan",
+        "speaker": "Liam",
         "text": "That's my aunt Julia. She's my mother's sister. She's a nurse."
       },
       {
@@ -2224,7 +2224,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "And the tall man with glasses?"
       },
       {
-        "speaker": "Kaan",
+        "speaker": "Liam",
         "text": "That's my uncle. He's very tall, and he's got a big beard now."
       },
       {
@@ -2232,7 +2232,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Your sister looks young. How old is she?"
       },
       {
-        "speaker": "Kaan",
+        "speaker": "Liam",
         "text": "She's nineteen. She's studying music in London."
       },
       {
@@ -2249,40 +2249,40 @@ export const enMobile2026: SkillExercise[] = [
           "Nine"
         ],
         "answer": 1,
-        "explain": "Kaan fotoğrafı gösterirken \"There are six people here.\" diyor. Yani fotoğrafta altı kişi var."
+        "explain": "Liam fotoğrafı gösterirken \"There are six people here.\" diyor. Yani fotoğrafta altı kişi var."
       },
       {
-        "text": "Julia is the sister of Kaan's mother.",
+        "text": "Julia is the sister of Liam's mother.",
         "options": [
           "True",
           "False"
         ],
         "answer": 0,
-        "explain": "Kaan \"That's my aunt Julia. She's my mother's sister.\" diyor. Julia, annesinin kız kardeşi, yani teyzesi."
+        "explain": "Liam \"That's my aunt Julia. She's my mother's sister.\" diyor. Julia, annesinin kız kardeşi, yani teyzesi."
       },
       {
-        "text": "What is Kaan's sister studying?",
+        "text": "What is Liam's sister studying?",
         "options": [
           "Music",
           "Medicine",
           "English"
         ],
         "answer": 0,
-        "explain": "Kaan kız kardeşi için \"She's nineteen. She's studying music in London.\" diyor."
+        "explain": "Liam kız kardeşi için \"She's nineteen. She's studying music in London.\" diyor."
       },
       {
-        "text": "How does Kaan describe his uncle?",
+        "text": "How does Liam describe his uncle?",
         "options": [
           "He is short and he doesn't have glasses.",
           "He is tall and he has a beard.",
           "He has short blonde hair."
         ],
         "answer": 1,
-        "explain": "Emma \"the tall man with glasses\" diye soruyor, Kaan da \"He's very tall, and he's got a big beard now.\" diye cevaplıyor."
+        "explain": "Emma \"the tall man with glasses\" diye soruyor, Liam da \"He's very tall, and he's got a big beard now.\" diye cevaplıyor."
       },
       {
         "kind": "gapfill",
-        "text": "Kaan's sister is ___ years old.",
+        "text": "Liam's sister is ___ years old.",
         "options": [],
         "answer": 0,
         "accept": [
@@ -2293,7 +2293,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "Where is Kaan's sister studying?",
+        "text": "Where is Liam's sister studying?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -2342,7 +2342,7 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Voice message",
-        "text": "Hi Ayse, it's Mert. I'm calling about the weekend. There's a music festival in the new park near the river. I'm going to meet Deniz there on Saturday at eleven o'clock."
+        "text": "Hi Rachel, it's Henry. I'm calling about the weekend. There's a music festival in the new park near the river. I'm going to meet Charlie there on Saturday at eleven o'clock."
       },
       {
         "speaker": "Voice message",
@@ -2362,7 +2362,7 @@ export const enMobile2026: SkillExercise[] = [
           "At twelve o'clock"
         ],
         "answer": 1,
-        "explain": "Mert \"I'm going to meet Deniz there on Saturday at eleven o'clock.\" diyor, yani buluşma saat on birde."
+        "explain": "Henry \"I'm going to meet Charlie there on Saturday at eleven o'clock.\" diyor, yani buluşma saat on birde."
       },
       {
         "text": "How much is a student ticket?",
@@ -2375,20 +2375,20 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "\"The tickets are only twenty lira for students.\" cümlesinden öğrenci biletinin yirmi lira olduğu anlaşılıyor."
       },
       {
-        "text": "Mert wants Ayse to bring food.",
+        "text": "Henry wants Rachel to bring food.",
         "options": [
           "True",
           "False"
         ],
         "answer": 1,
-        "explain": "Yanlış. Mert \"I've got a big bag with sandwiches, so don't bring food.\" diyor; yemeği kendisi getiriyor, ondan sadece fotoğraf makinesini istiyor."
+        "explain": "Yanlış. Henry \"I've got a big bag with sandwiches, so don't bring food.\" diyor; yemeği kendisi getiriyor, ondan sadece fotoğraf makinesini istiyor."
       },
       {
         "text": "Why is Saturday better than Sunday?",
         "options": [
           "Because Sunday is rainy",
           "Because the park is closed on Sunday",
-          "Because Deniz is busy on Sunday"
+          "Because Charlie is busy on Sunday"
         ],
         "answer": 0,
         "explain": "\"Saturday is sunny, but Sunday is rainy, so Saturday is better.\" cümlesinde pazar gününün yağmurlu olduğu söyleniyor."
@@ -2406,7 +2406,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What does Mert ask Ayse to bring?",
+        "text": "What does Henry ask Rachel to bring?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -2414,7 +2414,7 @@ export const enMobile2026: SkillExercise[] = [
           "a camera",
           "camera"
         ],
-        "explain": "\"don't bring food. But please bring your camera.\" Yiyeceği Mert getiriyor."
+        "explain": "\"don't bring food. But please bring your camera.\" Yiyeceği Henry getiriyor."
       }
     ]
   },
@@ -2463,7 +2463,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Good morning. Come in, please. What's the matter?"
       },
       {
-        "speaker": "Merve",
+        "speaker": "Isla",
         "text": "Good morning. I'm not feeling well. I've got a headache and a sore throat."
       },
       {
@@ -2471,7 +2471,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Do you have a fever?"
       },
       {
-        "speaker": "Merve",
+        "speaker": "Isla",
         "text": "Yes. This morning it's 38 degrees."
       },
       {
@@ -2479,7 +2479,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Okay. Open your mouth, please. Your throat is very red. It's just a bad cold."
       },
       {
-        "speaker": "Merve",
+        "speaker": "Isla",
         "text": "Can you give me something for the pain?"
       },
       {
@@ -2487,7 +2487,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Sure. Here's a prescription. Take one pill three times a day, after meals."
       },
       {
-        "speaker": "Merve",
+        "speaker": "Isla",
         "text": "Thank you. Can I go to work tomorrow?"
       },
       {
@@ -2497,14 +2497,14 @@ export const enMobile2026: SkillExercise[] = [
     ],
     "questions": [
       {
-        "text": "What is Merve's problem?",
+        "text": "What is Isla's problem?",
         "options": [
           "A headache and a sore throat",
           "A stomach ache",
           "A bad tooth"
         ],
         "answer": 0,
-        "explain": "Merve doktora 'I've got a headache and a sore throat.' diyor; yani başı ve boğazı ağrıyor."
+        "explain": "Isla doktora 'I've got a headache and a sore throat.' diyor; yani başı ve boğazı ağrıyor."
       },
       {
         "text": "What is her temperature this morning?",
@@ -2517,7 +2517,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Ateşi sorulunca 'Yes. This morning it's 38 degrees.' diyor."
       },
       {
-        "text": "Merve can go to work tomorrow.",
+        "text": "Isla can go to work tomorrow.",
         "options": [
           "True",
           "False"
@@ -2537,7 +2537,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Merve must stay at home for ___ days.",
+        "text": "Isla must stay at home for ___ days.",
         "options": [],
         "answer": 0,
         "accept": [
@@ -2548,7 +2548,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "When must Merve come back?",
+        "text": "When must Isla come back?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -2718,48 +2718,48 @@ export const enMobile2026: SkillExercise[] = [
     "minutes": 3,
     "segments": [
       {
-        "speaker": "Emre",
-        "text": "Hi Deniz! How was your weekend?"
+        "speaker": "Owen",
+        "text": "Hi Charlie! How was your weekend?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "It was great! I went to Izmir with my sister."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Nice! When did you go?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "We took the bus on Saturday morning at seven o'clock. It was a long trip. Five hours!"
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Wow. What did you do there?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "We walked by the sea and ate fish. The dinner was only 200 lira for two people."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "That's cheap! I stayed at home. I watched three movies and cooked for my family."
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "Three movies? You were busy too!"
       }
     ],
     "questions": [
       {
-        "text": "Where did Deniz go on the weekend?",
+        "text": "Where did Charlie go on the weekend?",
         "options": [
           "To Ankara",
           "To Izmir",
           "To Antalya"
         ],
         "answer": 1,
-        "explain": "Deniz \"I went to Izmir with my sister.\" diyor, yani kız kardeşiyle İzmir'e gitti."
+        "explain": "Charlie \"I went to Izmir with my sister.\" diyor, yani kız kardeşiyle İzmir'e gitti."
       },
       {
         "text": "What time did they take the bus?",
@@ -2778,17 +2778,17 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 0,
-        "explain": "Doğru. Deniz \"The dinner was only 200 lira for two people.\" diyor."
+        "explain": "Doğru. Charlie \"The dinner was only 200 lira for two people.\" diyor."
       },
       {
-        "text": "What did Emre do on the weekend?",
+        "text": "What did Owen do on the weekend?",
         "options": [
-          "He went to Izmir with Deniz",
+          "He went to Izmir with Charlie",
           "He stayed at home and watched three movies",
           "He worked in a fish restaurant"
         ],
         "answer": 1,
-        "explain": "Emre \"I stayed at home. I watched three movies and cooked for my family.\" diyor; evde kaldı."
+        "explain": "Owen \"I stayed at home. I watched three movies and cooked for my family.\" diyor; evde kaldı."
       },
       {
         "kind": "gapfill",
@@ -2803,11 +2803,11 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "Who went to Izmir with Deniz?",
+        "text": "Who went to Izmir with Charlie?",
         "options": [],
         "answer": 0,
         "accept": [
-          "Deniz's sister",
+          "Charlie's sister",
           "his sister",
           "her sister",
           "sister",
@@ -2859,13 +2859,13 @@ export const enMobile2026: SkillExercise[] = [
     "tasks": [
       {
         "kind": "build",
-        "tr": "Merhaba, benim adım Elif.",
-        "answer": "Hello, my name is Elif.",
+        "tr": "Merhaba, benim adım Holly.",
+        "answer": "Hello, my name is Holly.",
         "alternatives": [
-          "Hello, my name's Elif.",
-          "Hi, my name is Elif.",
-          "Hello, my name is Elif",
-          "Hello, my name's Elif"
+          "Hello, my name's Holly.",
+          "Hi, my name is Holly.",
+          "Hello, my name is Holly",
+          "Hello, my name's Holly"
         ],
         "hint": "Kendini tanıtırken 'my name is ...' kalıbını kullan; 'name is' kısaltılırsa 'name's' olur."
       },
@@ -2933,7 +2933,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Hepinizle tanıştığıma memnun oldum!"
           }
         ],
-        "sample": "Hello, everyone! My name is Elif and I'm from Türkiye. I live in Izmir with my family. I'm a student, and I also work in a small cafe on the weekend. In my free time, I like listening to music and reading books. I want to speak English every day here. Nice to meet you all!"
+        "sample": "Hello, everyone! My name is Holly and I'm from Türkiye. I live in Izmir with my family. I'm a student, and I also work in a small cafe on the weekend. In my free time, I like listening to music and reading books. I want to speak English every day here. Nice to meet you all!"
       }
     ]
   },
@@ -3054,7 +3054,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Lütfen bana cevap yaz."
           }
         ],
-        "sample": "Hi Deniz! How are you? There is a new action movie at the movie theater this Saturday. Do you want to come with me? The movie starts at seven, so let's meet in front of the movie theater at six. We can have a coffee first. I can buy the tickets today. They are cheap. Please text me back tonight. See you soon!"
+        "sample": "Hi Charlie! How are you? There is a new action movie at the movie theater this Saturday. Do you want to come with me? The movie starts at seven, so let's meet in front of the movie theater at six. We can have a coffee first. I can buy the tickets today. They are cheap. Please text me back tonight. See you soon!"
       }
     ]
   },
@@ -3169,7 +3169,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Yakında yaz!"
           }
         ],
-        "sample": "Hi Emma,\n\nHow are you? Today I want to tell you about my family. There are five people in my family: my mother, my father, my two sisters and me. We live in Izmir.\n\nMy big sister is tall and she has got long brown hair and green eyes. My father is a teacher and he is very kind. My uncle lives near us, so we see him every week.\n\nOn Sundays we cook together and watch a movie at home. I love my family very much.\n\nWrite soon and tell me about your family!\n\nLove,\nDeniz"
+        "sample": "Hi Emma,\n\nHow are you? Today I want to tell you about my family. There are five people in my family: my mother, my father, my two sisters and me. We live in Izmir.\n\nMy big sister is tall and she has got long brown hair and green eyes. My father is a teacher and he is very kind. My uncle lives near us, so we see him every week.\n\nOn Sundays we cook together and watch a movie at home. I love my family very much.\n\nWrite soon and tell me about your family!\n\nLove,\nCharlie"
       }
     ]
   },
@@ -3287,7 +3287,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Çok teşekkürler! Akşam görüşürüz."
           }
         ],
-        "sample": "Hi Deniz, I'm at work now. There isn't any milk in the fridge and we need some bread too. Can you buy two bottles of milk, some bread and six eggs, please? I'm going to cook pasta this evening, so I need tomatoes too. Thanks a lot! See you at seven. Ali"
+        "sample": "Hi Charlie, I'm at work now. There isn't any milk in the fridge and we need some bread too. Can you buy two bottles of milk, some bread and six eggs, please? I'm going to cook pasta this evening, so I need tomatoes too. Thanks a lot! See you at seven. Harry"
       }
     ]
   },
@@ -3521,7 +3521,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Paramı geri istiyorum."
           }
         ],
-        "sample": "Dear Sir or Madam,\n\nMy name is Elif Demir and my order number is 4512. There is a problem with my new T-shirt. It is blue, but I want a red one. The size is also too small, so it doesn't fit me. I'd like to return the T-shirt and get my money back. Can you help me, please?\n\nBest wishes,\nElif"
+        "sample": "Dear Sir or Madam,\n\nMy name is Holly Adams and my order number is 4512. There is a problem with my new T-shirt. It is blue, but I want a red one. The size is also too small, so it doesn't fit me. I'd like to return the T-shirt and get my money back. Can you help me, please?\n\nBest wishes,\nHolly"
       }
     ]
   },
@@ -3633,7 +3633,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Lütfen bana geri yazın."
           }
         ],
-        "sample": "Hello, my name is Deniz. I saw your advertisement for the room and I'm very interested. I'm a student and I'm quiet. I don't smoke. I want to move in next month. How much is the rent? Is there a bed in the room? Please write back to me. Thank you."
+        "sample": "Hello, my name is Charlie. I saw your advertisement for the room and I'm very interested. I'm a student and I'm quiet. I don't smoke. I want to move in next month. How much is the rent? Is there a bed in the room? Please write back to me. Thank you."
       }
     ]
   },
@@ -3750,7 +3750,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Yakında görüşürüz!"
           }
         ],
-        "sample": "Hi Elif! Greetings from Antalya. I'm writing this postcard on the beach. Last weekend I was here with my family. The weather was sunny and very warm. On Saturday we swam in the sea and we ate fish for dinner. On Sunday we took a boat trip. I was a little tired in the evening, but I was very happy. The boat trip was my favorite part. See you soon! Love, Deniz"
+        "sample": "Hi Holly! Greetings from Antalya. I'm writing this postcard on the beach. Last weekend I was here with my family. The weather was sunny and very warm. On Saturday we swam in the sea and we ate fish for dinner. On Sunday we took a boat trip. I was a little tired in the evening, but I was very happy. The boat trip was my favorite part. See you soon! Love, Charlie"
       }
     ]
   },
@@ -3761,7 +3761,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "reading",
     "title": "How Was Your Weekend?",
     "genre": "message",
-    "intro": "Elif ile Kerem'in hafta sonlarını anlattıkları mesajlaşmayı okuyacaksın.",
+    "intro": "Holly ile Connor'un hafta sonlarını anlattıkları mesajlaşmayı okuyacaksın.",
     "gloss": [
       {
         "de": "cousin",
@@ -3791,29 +3791,29 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 5,
-    "text": "Elif, 10:14\nHi Kerem! How was your weekend? I called you on Saturday but you never answered.\n\nKerem, 10:20\nSorry! I was on a train to Bursa. My cousin got married on Saturday evening, so the whole family traveled together.\n\nElif, 10:22\nWow, a wedding! Did you dance?\n\nKerem, 10:25\nOf course. The music was louder than at last year's party and we stayed until one o'clock. My little brother fell asleep on a chair.\n\nElif, 10:27\nPoor kid. My weekend was quieter. I used to hate cooking, but now I really enjoy it. On Sunday I made lentil soup for my neighbors.\n\nKerem, 10:30\nThat sounds better than my Sunday. I slept until noon and then I cleaned the car.\n\nElif, 10:31\nHave you finished your report yet?\n\nKerem, 10:33\nNot yet! I must start tonight. I have never written thirty pages in one week.\n\nElif, 10:35\nGood luck. I will bring you a cup of soup tomorrow. It is the best thing I have ever cooked.",
+    "text": "Holly, 10:14\nHi Connor! How was your weekend? I called you on Saturday but you never answered.\n\nConnor, 10:20\nSorry! I was on a train to Bursa. My cousin got married on Saturday evening, so the whole family traveled together.\n\nHolly, 10:22\nWow, a wedding! Did you dance?\n\nConnor, 10:25\nOf course. The music was louder than at last year's party and we stayed until one o'clock. My little brother fell asleep on a chair.\n\nHolly, 10:27\nPoor kid. My weekend was quieter. I used to hate cooking, but now I really enjoy it. On Sunday I made lentil soup for my neighbors.\n\nConnor, 10:30\nThat sounds better than my Sunday. I slept until noon and then I cleaned the car.\n\nHolly, 10:31\nHave you finished your report yet?\n\nConnor, 10:33\nNot yet! I must start tonight. I have never written thirty pages in one week.\n\nHolly, 10:35\nGood luck. I will bring you a cup of soup tomorrow. It is the best thing I have ever cooked.",
     "questions": [
       {
-        "text": "Why didn't Kerem answer the phone on Saturday?",
+        "text": "Why didn't Connor answer the phone on Saturday?",
         "options": [
           "He was on a train to Bursa",
           "He was sleeping at home",
           "He was writing his report"
         ],
         "answer": 0,
-        "explain": "Kerem şöyle yazıyor: \"I was on a train to Bursa.\" Ailesiyle birlikte düğün için yola çıkmıştı."
+        "explain": "Connor şöyle yazıyor: \"I was on a train to Bursa.\" Ailesiyle birlikte düğün için yola çıkmıştı."
       },
       {
-        "text": "Kerem has already finished his report.",
+        "text": "Connor has already finished his report.",
         "options": [
           "True",
           "False"
         ],
         "answer": 1,
-        "explain": "Elif \"Have you finished your report yet?\" diye soruyor, Kerem ise \"Not yet! I must start tonight.\" diye cevap veriyor. Yani raporu henüz bitirmedi."
+        "explain": "Holly \"Have you finished your report yet?\" diye soruyor, Connor ise \"Not yet! I must start tonight.\" diye cevap veriyor. Yani raporu henüz bitirmedi."
       },
       {
-        "text": "When did Kerem and his family leave the wedding?",
+        "text": "When did Connor and his family leave the wedding?",
         "options": [
           "At eleven o'clock",
           "At noon",
@@ -3823,29 +3823,29 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Metinde \"we stayed until one o'clock\" yazıyor. Saat birde ayrılmışlar."
       },
       {
-        "text": "What did Elif do on Sunday?",
+        "text": "What did Holly do on Sunday?",
         "options": [
           "She made lentil soup for her neighbors",
           "She cleaned the car",
           "She danced at a wedding"
         ],
         "answer": 0,
-        "explain": "Elif \"On Sunday I made lentil soup for my neighbors\" diyor. Arabayı temizleyen ise Kerem."
+        "explain": "Holly \"On Sunday I made lentil soup for my neighbors\" diyor. Arabayı temizleyen ise Connor."
       },
       {
         "kind": "gapfill",
-        "text": "Kerem has never written ___ pages in one week.",
+        "text": "Connor has never written ___ pages in one week.",
         "options": [],
         "answer": 0,
         "accept": [
           "thirty",
           "30"
         ],
-        "explain": "\"I have never written thirty pages in one week.\" Kerem rapora henüz başlamadı."
+        "explain": "\"I have never written thirty pages in one week.\" Connor rapora henüz başlamadı."
       },
       {
         "kind": "short_answer",
-        "text": "What will Elif bring Kerem tomorrow?",
+        "text": "What will Holly bring Connor tomorrow?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -3864,7 +3864,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "reading",
     "title": "My Life in Three Cities",
     "genre": "blog",
-    "intro": "Elif'in kendi hayat hikâyesini anlattığı blog yazısını okuyacaksın.",
+    "intro": "Holly'nin kendi hayat hikâyesini anlattığı blog yazısını okuyacaksın.",
     "gloss": [
       {
         "de": "fisherman",
@@ -3892,10 +3892,10 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 5,
-    "text": "MY LIFE IN THREE CITIES\nPosted by Elif Kaya · March 14\n\nHello! I have had this blog for two years now, but I have never told you my own story. So here it is.\n\nI grew up in Izmir. My father was a fisherman, and I used to help him on the boat every summer. I hated it when I was ten. Now I miss it.\n\nWhen I was nineteen, I moved to Ankara to study engineering. I was terrible at it. One evening, while I was studying for an exam, I started drawing small houses in my notebook. My teacher saw them and said, \"You should study design.\"\n\nI have lived in Istanbul since 2019. I work for a small studio near Kadıköy, and I have already designed four cafés. It is harder than engineering, but it is much more fun.\n\nNext year I am going to open my own studio. I am a little afraid, but my father always says the same thing: \"A fisherman must not wait for good weather.\" He is right.\n\nHave you ever changed your job? Tell me below!",
+    "text": "MY LIFE IN THREE CITIES\nPosted by Holly Ellis · March 14\n\nHello! I have had this blog for two years now, but I have never told you my own story. So here it is.\n\nI grew up in Izmir. My father was a fisherman, and I used to help him on the boat every summer. I hated it when I was ten. Now I miss it.\n\nWhen I was nineteen, I moved to Ankara to study engineering. I was terrible at it. One evening, while I was studying for an exam, I started drawing small houses in my notebook. My teacher saw them and said, \"You should study design.\"\n\nI have lived in Istanbul since 2019. I work for a small studio near Kadıköy, and I have already designed four cafés. It is harder than engineering, but it is much more fun.\n\nNext year I am going to open my own studio. I am a little afraid, but my father always says the same thing: \"A fisherman must not wait for good weather.\" He is right.\n\nHave you ever changed your job? Tell me below!",
     "questions": [
       {
-        "text": "Where did Elif grow up?",
+        "text": "Where did Holly grow up?",
         "options": [
           "Ankara",
           "Izmir",
@@ -3905,7 +3905,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Metinde \"I grew up in Izmir\" diyor. Ankara'ya üniversite için, İstanbul'a ise 2019'da taşındı."
       },
       {
-        "text": "Elif studied design in college in Ankara.",
+        "text": "Holly studied design in college in Ankara.",
         "options": [
           "True",
           "False"
@@ -3914,7 +3914,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Yanlış. Ankara'ya \"to study engineering\" yani mühendislik okumak için gitti; tasarımı ona öğretmeni önerdi."
       },
       {
-        "text": "How many cafés has Elif designed?",
+        "text": "How many cafés has Holly designed?",
         "options": [
           "Three",
           "Four",
@@ -3924,7 +3924,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "\"I have already designed four cafés\" cümlesinde dört kafe tasarladığını söylüyor."
       },
       {
-        "text": "What is Elif going to do next year?",
+        "text": "What is Holly going to do next year?",
         "options": [
           "Go back to her father's boat",
           "Open her own studio",
@@ -3935,7 +3935,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Elif moved to Ankara when she was ___.",
+        "text": "Holly moved to Ankara when she was ___.",
         "options": [],
         "answer": 0,
         "accept": [
@@ -3946,7 +3946,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What did Elif's father do?",
+        "text": "What did Holly's father do?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -3954,7 +3954,7 @@ export const enMobile2026: SkillExercise[] = [
           "a fisherman",
           "fisherman"
         ],
-        "explain": "\"My father was a fisherman\" — Elif yazları teknede ona yardım ederdi."
+        "explain": "\"My father was a fisherman\" — Holly yazları teknede ona yardım ederdi."
       }
     ]
   },
@@ -3993,7 +3993,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 5,
-    "text": "GREEN VALLEY HEALTH CENTER\nFree Wellness Program — October\n\nDo you feel tired every morning? Small changes can help.\n\nSLEEP\nYou should go to bed before eleven o'clock. Avoid your phone in bed. Screens make sleep harder.\n\nFOOD\nDrink six glasses of water a day. You should eat fruit at breakfast. Avoid sugar in the afternoon — it gives you energy for twenty minutes only.\n\nMOVE\nWalking is the easiest exercise. Thirty minutes a day is enough. Our nurse, Elif Kaya, says: \"I used to drive to work. Now I walk, and I feel much stronger than before.\"\n\nJOIN US\nFree classes every Tuesday at 6 p.m. in Room 4.\nYoga for beginners — bring a towel.\nCooking workshop — first Saturday of the month, 10 a.m.\n\nWe have already helped 300 people this year. You must call before you come, because the classes are small. Call 0212 555 04 18.\n\nYour health will thank you!",
+    "text": "GREEN VALLEY HEALTH CENTER\nFree Wellness Program — October\n\nDo you feel tired every morning? Small changes can help.\n\nSLEEP\nYou should go to bed before eleven o'clock. Avoid your phone in bed. Screens make sleep harder.\n\nFOOD\nDrink six glasses of water a day. You should eat fruit at breakfast. Avoid sugar in the afternoon — it gives you energy for twenty minutes only.\n\nMOVE\nWalking is the easiest exercise. Thirty minutes a day is enough. Our nurse, Holly Ellis, says: \"I used to drive to work. Now I walk, and I feel much stronger than before.\"\n\nJOIN US\nFree classes every Tuesday at 6 p.m. in Room 4.\nYoga for beginners — bring a towel.\nCooking workshop — first Saturday of the month, 10 a.m.\n\nWe have already helped 300 people this year. You must call before you come, because the classes are small. Call 0212 555 04 18.\n\nYour health will thank you!",
     "questions": [
       {
         "text": "When are the free classes?",
@@ -4006,7 +4006,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Broşürde \"Free classes every Tuesday at 6 p.m. in Room 4\" yazıyor. Cumartesi 10.00 ise sadece yemek atölyesinin saati."
       },
       {
-        "text": "Elif Kaya walks to work now.",
+        "text": "Holly Ellis walks to work now.",
         "options": [
           "True",
           "False"
@@ -4099,7 +4099,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "oven", "tr": "fırın" },
     ],
     "minutes": 5,
-    "text": "APARTMENT FOR RENT — 14 Green Street, Santa Cruz\n\nRent: $850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on October 1.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz at (831) 555-0412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
+    "text": "APARTMENT FOR RENT — 14 Green Street, Santa Cruz\n\nRent: $850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on October 1.\n\nThe apartment is on the third floor of a quiet building. There is no elevator, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Charlie at (831) 555-0412 after 6 p.m. I have already shown the apartment to three people, so please call today. We do not answer emails.",
     "questions": [
       {
         "text": "How much is the rent every month?",
@@ -4199,7 +4199,7 @@ export const enMobile2026: SkillExercise[] = [
       }
     ],
     "minutes": 5,
-    "text": "GREEN CUP CAFÉ — WEEKEND HELP WANTED\n\nWe are looking for a friendly person to work in our café on Saturdays and Sundays, from 8 a.m. to 3 p.m.\n\nWhat we offer:\n- 14 dollars an hour\n- a free lunch every day\n- two short breaks\n\nWhat we need:\n- You must speak good English.\n- You should be over 18.\n- Experience is not necessary, but we like people who have already worked in a café or a store.\n\nAsk for Martina at the counter, or leave a note in the blue box near the door.\n\n- - -\n\nHello Martina,\n\nMy name is Deniz. I am 21 and I am a student at the city college here.\n\nI used to work in a small pizza place in Izmir, and I made coffee every morning. I have never worked in the United States before, but I studied English at school for six years.\n\nI am free on both weekend days. I will come to the café on Thursday afternoon.\n\nDeniz",
+    "text": "GREEN CUP CAFÉ — WEEKEND HELP WANTED\n\nWe are looking for a friendly person to work in our café on Saturdays and Sundays, from 8 a.m. to 3 p.m.\n\nWhat we offer:\n- 14 dollars an hour\n- a free lunch every day\n- two short breaks\n\nWhat we need:\n- You must speak good English.\n- You should be over 18.\n- Experience is not necessary, but we like people who have already worked in a café or a store.\n\nAsk for Martina at the counter, or leave a note in the blue box near the door.\n\n- - -\n\nHello Martina,\n\nMy name is Charlie. I am 21 and I am a student at the city college here.\n\nI used to work in a small pizza place in Izmir, and I made coffee every morning. I have never worked in the United States before, but I studied English at school for six years.\n\nI am free on both weekend days. I will come to the café on Thursday afternoon.\n\nCharlie",
     "questions": [
       {
         "text": "What time does the work start?",
@@ -4231,14 +4231,14 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "İlanın sonunda \"leave a note in the blue box near the door\" deniyor; not kapının yanındaki mavi kutuya bırakılıyor."
       },
       {
-        "text": "What did Deniz do at the pizza place in Izmir?",
+        "text": "What did Charlie do at the pizza place in Izmir?",
         "options": [
-          "Deniz made coffee every morning.",
-          "Deniz washed the plates every evening.",
-          "Deniz worked there only on Sundays."
+          "Charlie made coffee every morning.",
+          "Charlie washed the plates every evening.",
+          "Charlie worked there only on Sundays."
         ],
         "answer": 0,
-        "explain": "Deniz notunda \"I used to work in a small pizza place in Izmir, and I made coffee every morning\" diyor."
+        "explain": "Charlie notunda \"I used to work in a small pizza place in Izmir, and I made coffee every morning\" diyor."
       },
       {
         "kind": "gapfill",
@@ -4253,7 +4253,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "How long did Deniz study English at school?",
+        "text": "How long did Charlie study English at school?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -4302,7 +4302,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "sales clerk", "tr": "satış görevlisi" },
     ],
     "minutes": 5,
-    "text": "NOTICE — RETURNS AND EXCHANGES\n\nDear customers,\n\nWe changed our returns policy last month, so please read this notice.\n\nYou can bring an item back within 30 days. You must show the receipt. Without a receipt we cannot give your money back, but we can offer an exchange or a store card.\n\nCLOTHES: please keep the label on the item. We have already helped hundreds of shoppers this year, and the label makes everything faster.\n\nSHOES: you must not wear them outside. We only accept shoes in the original box.\n\nSALE ITEMS: these things are cheaper, so the rules are stricter. We exchange them, but we never give money back for them.\n\nELECTRONICS: you have 14 days. Please bring the box, the cable and the charger.\n\nThe returns desk is on the second floor, next to the coffee shop. It opens at 10:00 every day and closes at 19:00. On Sundays it closes earlier, at 17:00.\n\nElif Demir, our new manager, will answer your questions on Saturday morning.\n\nThank you!",
+    "text": "NOTICE — RETURNS AND EXCHANGES\n\nDear customers,\n\nWe changed our returns policy last month, so please read this notice.\n\nYou can bring an item back within 30 days. You must show the receipt. Without a receipt we cannot give your money back, but we can offer an exchange or a store card.\n\nCLOTHES: please keep the label on the item. We have already helped hundreds of shoppers this year, and the label makes everything faster.\n\nSHOES: you must not wear them outside. We only accept shoes in the original box.\n\nSALE ITEMS: these things are cheaper, so the rules are stricter. We exchange them, but we never give money back for them.\n\nELECTRONICS: you have 14 days. Please bring the box, the cable and the charger.\n\nThe returns desk is on the second floor, next to the coffee shop. It opens at 10:00 every day and closes at 19:00. On Sundays it closes earlier, at 17:00.\n\nHolly Adams, our new manager, will answer your questions on Saturday morning.\n\nThank you!",
     "questions": [
       {
         "text": "How many days do you have to bring back electronics?",
@@ -4337,11 +4337,11 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Who will answer questions on Saturday morning?",
         "options": [
           "A sales clerk at the door",
-          "Elif Demir, the new manager",
+          "Holly Adams, the new manager",
           "The staff of the coffee shop"
         ],
         "answer": 1,
-        "explain": "Son satırda \"Elif Demir, our new manager, will answer your questions on Saturday morning\" deniyor."
+        "explain": "Son satırda \"Holly Adams, our new manager, will answer your questions on Saturday morning\" deniyor."
       },
       {
         "kind": "gapfill",
@@ -4408,7 +4408,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "popular", "tr": "popüler" },
     ],
     "minutes": 5,
-    "text": "THREE DAYS IN EDINBURGH - GROUP PROGRAM\n\nDAY 1 (Friday)\n14:00 Arrival at the hotel. Leave your bags at reception.\n16:30 Walk to the Old Town with our guide, Emma.\n19:00 Dinner on Rose Street. This restaurant is quieter than the one we used last year.\n\nDAY 2 (Saturday)\n08:00 Breakfast in the hotel.\n09:30 Bus to the castle. It is the most popular place in the city, so we will go early.\n13:00 Free time in the stores. You must be back at the bus stop before 16:00.\n20:00 Music evening. Deniz is going to play the guitar for us.\n\nDAY 3 (Sunday)\n07:30 Breakfast.\n09:00 Boat trip. Bring a warm coat! Last year it rained all morning and everybody was cold.\n12:00 Lunch near the harbor.\n15:00 Bus to the airport.\n\nNOTES\nSome of you have not sent us your passport number yet. Please do it today.\nWe have worked with this hotel since 2019 and the staff are very helpful.\nYou should bring comfortable shoes because we are going to walk a lot.",
+    "text": "THREE DAYS IN EDINBURGH - GROUP PROGRAM\n\nDAY 1 (Friday)\n14:00 Arrival at the hotel. Leave your bags at reception.\n16:30 Walk to the Old Town with our guide, Emma.\n19:00 Dinner on Rose Street. This restaurant is quieter than the one we used last year.\n\nDAY 2 (Saturday)\n08:00 Breakfast in the hotel.\n09:30 Bus to the castle. It is the most popular place in the city, so we will go early.\n13:00 Free time in the stores. You must be back at the bus stop before 16:00.\n20:00 Music evening. Charlie is going to play the guitar for us.\n\nDAY 3 (Sunday)\n07:30 Breakfast.\n09:00 Boat trip. Bring a warm coat! Last year it rained all morning and everybody was cold.\n12:00 Lunch near the harbor.\n15:00 Bus to the airport.\n\nNOTES\nSome of you have not sent us your passport number yet. Please do it today.\nWe have worked with this hotel since 2019 and the staff are very helpful.\nYou should bring comfortable shoes because we are going to walk a lot.",
     "questions": [
       {
         "text": "The group visits the castle on Saturday morning.",
@@ -4433,11 +4433,11 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Who is going to play the guitar on Saturday evening?",
         "options": [
           "Emma",
-          "Deniz",
+          "Charlie",
           "The hotel staff"
         ],
         "answer": 1,
-        "explain": "\"20:00 Music evening. Deniz is going to play the guitar for us.\" Emma ise 1. gündeki rehber."
+        "explain": "\"20:00 Music evening. Charlie is going to play the guitar for us.\" Emma ise 1. gündeki rehber."
       },
       {
         "text": "Why does the program say \"Bring a warm coat\" for the boat trip?",
@@ -4480,7 +4480,7 @@ export const enMobile2026: SkillExercise[] = [
     "course": "en",
     "level": "A2",
     "skill": "reading",
-    "title": "Elif and Daniel's Wedding",
+    "title": "Holly and Daniel's Wedding",
     "genre": "personal",
     "intro": "Bir düğün davetiyesini ve gelinin yanına eklediği kısa notu okuyacaksın.",
     "gloss": [
@@ -4515,7 +4515,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "pretty", "tr": "şirin" },
     ],
     "minutes": 5,
-    "text": "WEDDING INVITATION\n\nElif Yilmaz & Daniel Brooks\nare getting married!\n\nSaturday, September 12\nCeremony: 4:00 p.m.\nDinner and dancing: 6:30 p.m.\n\nRosewood Garden Hotel\n45 Lake Road, Brighton\n\nPlease answer before August 20.\nCall Elif: 0555 214 88 90\n\n------------------------------\n\nHi Marta,\n\nHere is our invitation! We have known each other since 2019, so we really want you at our wedding.\n\nMy parents used to live in Brighton, and we chose this hotel because the garden is prettier than any other garden in the city.\n\nThe ceremony will start at four, but please come earlier. We are going to take photos in the garden at half past three.\n\nYou should bring a jacket. September evenings are colder than you think, and the dinner is outside.\n\nI have already booked a room for you at the hotel. You must not pay for it. It is our present.\n\nPlease write to me soon. I haven't heard from you since June!\n\nLove,\nElif",
+    "text": "WEDDING INVITATION\n\nHolly Hayes & Daniel Brooks\nare getting married!\n\nSaturday, September 12\nCeremony: 4:00 p.m.\nDinner and dancing: 6:30 p.m.\n\nRosewood Garden Hotel\n45 Lake Road, Brighton\n\nPlease answer before August 20.\nCall Holly: 0555 214 88 90\n\n------------------------------\n\nHi Marta,\n\nHere is our invitation! We have known each other since 2019, so we really want you at our wedding.\n\nMy parents used to live in Brighton, and we chose this hotel because the garden is prettier than any other garden in the city.\n\nThe ceremony will start at four, but please come earlier. We are going to take photos in the garden at half past three.\n\nYou should bring a jacket. September evenings are colder than you think, and the dinner is outside.\n\nI have already booked a room for you at the hotel. You must not pay for it. It is our present.\n\nPlease write to me soon. I haven't heard from you since June!\n\nLove,\nHolly",
     "questions": [
       {
         "text": "What time does the ceremony start?",
@@ -4528,7 +4528,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Davetiyede \"Ceremony: 4:00 p.m.\" yazıyor; saat üç buçuk fotoğraf saati, altı buçuk ise yemek saati."
       },
       {
-        "text": "Elif has already booked a hotel room for Marta.",
+        "text": "Holly has already booked a hotel room for Marta.",
         "options": [
           "True",
           "False"
@@ -4537,7 +4537,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Notta \"I have already booked a room for you at the hotel\" diyor ve parasını ödememesini, bunun hediyeleri olduğunu ekliyor."
       },
       {
-        "text": "Why does Elif tell Marta to bring a jacket?",
+        "text": "Why does Holly tell Marta to bring a jacket?",
         "options": [
           "Because it is going to rain all day",
           "Because the hotel is far from the station",
@@ -4572,11 +4572,11 @@ export const enMobile2026: SkillExercise[] = [
         "options": [],
         "answer": 0,
         "accept": [
-          "Elif",
-          "Elif did",
-          "Elif has"
+          "Holly",
+          "Holly did",
+          "Holly has"
         ],
-        "explain": "\"I have already booked a room for you at the hotel.\" Mektubu Elif yazıyor."
+        "explain": "\"I have already booked a room for you at the hotel.\" Mektubu Holly yazıyor."
       }
     ]
   },
@@ -4617,16 +4617,16 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "alarm", "tr": "alarm" },
     ],
     "minutes": 5,
-    "text": "FocusLeaf — Study Timer\n4.2 stars · 12,400 reviews\n\n★★★★★ Deniz K. — March 2\nI have used this app since January and I love it. I used to study with music, but I could never finish anything. Now I start a 25-minute timer and I stop only when it rings. The free version is enough for me. Last week I studied 20 hours!\n\n★★☆☆☆ Marta — February 28\nThe new update is worse than the old one. Before, I could see my whole week on one screen. Now I must open three menus to find the same chart. Also, the app crashed twice while I was writing my notes. Please bring the old screen back.\n\n★★★★☆ Tom_92 — February 26\nGood app, cheap price. I paid 3 euros for a year. The alarm is louder than my phone ringtone, so I never miss a break. The support team has not translated the help page into Turkish yet, but they answered my email in one day. I am going to buy the family plan in April.",
+    "text": "FocusLeaf — Study Timer\n4.2 stars · 12,400 reviews\n\n★★★★★ Charlie K. — March 2\nI have used this app since January and I love it. I used to study with music, but I could never finish anything. Now I start a 25-minute timer and I stop only when it rings. The free version is enough for me. Last week I studied 20 hours!\n\n★★☆☆☆ Marta — February 28\nThe new update is worse than the old one. Before, I could see my whole week on one screen. Now I must open three menus to find the same chart. Also, the app crashed twice while I was writing my notes. Please bring the old screen back.\n\n★★★★☆ Tom_92 — February 26\nGood app, cheap price. I paid 3 euros for a year. The alarm is louder than my phone ringtone, so I never miss a break. The support team has not translated the help page into Turkish yet, but they answered my email in one day. I am going to buy the family plan in April.",
     "questions": [
       {
-        "text": "Deniz used to study with music.",
+        "text": "Charlie used to study with music.",
         "options": [
           "True",
           "False"
         ],
         "answer": 0,
-        "explain": "Deniz yorumunda \"I used to study with music, but I could never finish anything\" diyor. Yani eskiden müzikle çalışıyordu."
+        "explain": "Charlie yorumunda \"I used to study with music, but I could never finish anything\" diyor. Yani eskiden müzikle çalışıyordu."
       },
       {
         "text": "How much did Tom_92 pay for the app?",
@@ -4660,7 +4660,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Deniz starts a ___-minute timer.",
+        "text": "Charlie starts a ___-minute timer.",
         "options": [],
         "answer": 0,
         "accept": [
@@ -4722,7 +4722,7 @@ export const enMobile2026: SkillExercise[] = [
       },
     ],
     "minutes": 5,
-    "text": "GREENFIELD TOWN COUNCIL\nPublic Notice - March 12\n\nDear resident,\n\nOur Housing Office has moved. Since Monday we have worked at 4 King Street, next to the library. The old office on Birch Road is closed.\n\nOpening hours:\nMonday to Friday: 08:30 - 16:00\nSaturday: 09:00 - 12:00\nSunday: closed\n\nYou must bring your ID card and your last bill when you pay for water. We cannot take cash anymore, so please bring a bank card.\n\nWe used to send paper bills every month. From April 1 we are going to send all bills by email. Please give us your email address before March 25. Email is faster and cheaper than regular mail.\n\nThe new building is bigger than the old one, but the parking lot is much smaller. You should come by bus. Bus 14 stops in front of the door.\n\nMonday morning is our busiest time, so Wednesday is the best day for a visit.\n\nElif Barnes\nOffice Manager",
+    "text": "GREENFIELD TOWN COUNCIL\nPublic Notice - March 12\n\nDear resident,\n\nOur Housing Office has moved. Since Monday we have worked at 4 King Street, next to the library. The old office on Birch Road is closed.\n\nOpening hours:\nMonday to Friday: 08:30 - 16:00\nSaturday: 09:00 - 12:00\nSunday: closed\n\nYou must bring your ID card and your last bill when you pay for water. We cannot take cash anymore, so please bring a bank card.\n\nWe used to send paper bills every month. From April 1 we are going to send all bills by email. Please give us your email address before March 25. Email is faster and cheaper than regular mail.\n\nThe new building is bigger than the old one, but the parking lot is much smaller. You should come by bus. Bus 14 stops in front of the door.\n\nMonday morning is our busiest time, so Wednesday is the best day for a visit.\n\nHolly Barnes\nOffice Manager",
     "questions": [
       {
         "text": "Where is the Housing Office now?",
@@ -4830,7 +4830,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "truck", "tr": "kamyon" },
     ],
     "minutes": 5,
-    "text": "RIVERTON DAILY — Local News\n\nOld Mill Bridge Opens Again\nBy Clara Novak, May 12\n\nThe Old Mill Bridge opened again on Saturday morning after six months of repair work. More than three hundred people came to the small park next to the river at nine o'clock.\n\nThe mayor, Deniz Yalın, cut the red ribbon. \"This bridge is safer and wider than the old one,\" she said. \"Children can walk to school here now.\"\n\nThe bridge closed last November because heavy rain damaged the stone under it. While the workers were fixing it, people used the bus or drove ten kilometers to the next bridge. Many stores near the river lost money.\n\n\"I have lived here for thirty years, and I have never seen the bridge closed before,\" said Mr. Owens, who sells bread on Green Street. \"My customers are already coming back.\"\n\nThe town spent 1.2 million euros on the project. The council will plant fifty new trees along the river path next spring. Visitors should use the free parking lot behind the library.",
+    "text": "RIVERTON DAILY — Local News\n\nOld Mill Bridge Opens Again\nBy Clara Novak, May 12\n\nThe Old Mill Bridge opened again on Saturday morning after six months of repair work. More than three hundred people came to the small park next to the river at nine o'clock.\n\nThe mayor, Charlie Eddie, cut the red ribbon. \"This bridge is safer and wider than the old one,\" she said. \"Children can walk to school here now.\"\n\nThe bridge closed last November because heavy rain damaged the stone under it. While the workers were fixing it, people used the bus or drove ten kilometers to the next bridge. Many stores near the river lost money.\n\n\"I have lived here for thirty years, and I have never seen the bridge closed before,\" said Mr. Owens, who sells bread on Green Street. \"My customers are already coming back.\"\n\nThe town spent 1.2 million euros on the project. The council will plant fifty new trees along the river path next spring. Visitors should use the free parking lot behind the library.",
     "questions": [
       {
         "text": "What time did people come to the park?",
@@ -4934,7 +4934,7 @@ export const enMobile2026: SkillExercise[] = [
         { "de": "confirmation", "tr": "teyit" },
     ],
     "minutes": 5,
-    "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Santa Cruz\nReference: SPH-4471\n\nDear Ms. Elif Aydin,\n\nThank you for your booking. We have already received your deposit of $60.\n\nCheck-in: Friday, June 12, after 15:00\nCheck-out: Monday, June 15, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: $240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel parking lot is free, but you must tell us your license plate number when you arrive. The nearest bus stop is 200 meters from the hotel.\n\nCANCELLATION\nYou can cancel for free until June 5. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is (831) 555-0108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
+    "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Santa Cruz\nReference: SPH-4471\n\nDear Ms. Holly Kelly,\n\nThank you for your booking. We have already received your deposit of $60.\n\nCheck-in: Friday, June 12, after 15:00\nCheck-out: Monday, June 15, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: $240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel parking lot is free, but you must tell us your license plate number when you arrive. The nearest bus stop is 200 meters from the hotel.\n\nCANCELLATION\nYou can cancel for free until June 5. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is (831) 555-0108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
     "questions": [
       {
         "text": "When must the guests leave the room on Monday?",
@@ -5183,10 +5183,10 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Ms. Clark",
-        "text": "Good morning, Deniz. Please sit down. Thanks for coming."
+        "text": "Good morning, Charlie. Please sit down. Thanks for coming."
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "Good morning. Thank you for the interview."
       },
       {
@@ -5194,7 +5194,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "So, how long have you worked as a cook?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "For three years. I started in a small hotel in Izmir, and now I work in a restaurant."
       },
       {
@@ -5202,7 +5202,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Have you ever worked in a big kitchen? We have twelve cooks here."
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "No, I haven't. But I learn fast, and I've already taken a food safety course."
       },
       {
@@ -5210,33 +5210,33 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Good. The shift starts at seven thirty in the morning. Is that okay?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "Sure, no problem. I'm always early. I live near the station."
       },
       {
         "speaker": "Ms. Clark",
-        "text": "Great. We'll call you on Friday morning. Thank you, Deniz."
+        "text": "Great. We'll call you on Friday morning. Thank you, Charlie."
       }
     ],
     "questions": [
       {
-        "text": "How long has Deniz worked as a cook?",
+        "text": "How long has Charlie worked as a cook?",
         "options": [
           "For one year",
           "For three years",
           "For five years"
         ],
         "answer": 1,
-        "explain": "Deniz \"For three years. I started in a small hotel in Izmir\" diyor, yani üç yıldır aşçılık yapıyor."
+        "explain": "Charlie \"For three years. I started in a small hotel in Izmir\" diyor, yani üç yıldır aşçılık yapıyor."
       },
       {
-        "text": "Deniz has worked in a big kitchen before.",
+        "text": "Charlie has worked in a big kitchen before.",
         "options": [
           "True",
           "False"
         ],
         "answer": 1,
-        "explain": "Ms. Clark \"Have you ever worked in a big kitchen?\" diye soruyor, Deniz \"No, I haven't.\" diye cevaplıyor. Yani yanlış."
+        "explain": "Ms. Clark \"Have you ever worked in a big kitchen?\" diye soruyor, Charlie \"No, I haven't.\" diye cevaplıyor. Yani yanlış."
       },
       {
         "text": "What time does the shift start?",
@@ -5260,7 +5260,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Deniz has already taken a ___ safety course.",
+        "text": "Charlie has already taken a ___ safety course.",
         "options": [],
         "answer": 0,
         "accept": [
@@ -5270,7 +5270,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "When will the company call Deniz?",
+        "text": "When will the company call Charlie?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -5320,10 +5320,10 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Doctor",
-        "text": "Good morning, Mrs. Kaya. Please sit down. What's the problem?"
+        "text": "Good morning, Mrs. Ellis. Please sit down. What's the problem?"
       },
       {
-        "speaker": "Mrs. Kaya",
+        "speaker": "Mrs. Ellis",
         "text": "Good morning, doctor. I have a bad headache, and I feel very tired."
       },
       {
@@ -5331,7 +5331,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "I'm sorry to hear that. How long have you had this headache?"
       },
       {
-        "speaker": "Mrs. Kaya",
+        "speaker": "Mrs. Ellis",
         "text": "Since Monday. So about four days now. It's always worse in the evening."
       },
       {
@@ -5339,7 +5339,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Do you sleep well? How many hours a night?"
       },
       {
-        "speaker": "Mrs. Kaya",
+        "speaker": "Mrs. Ellis",
         "text": "Only five hours. I've had a lot of work at the office this month."
       },
       {
@@ -5347,7 +5347,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "That's probably the problem. You should sleep at least eight hours, and you should drink more water — two liters a day."
       },
       {
-        "speaker": "Mrs. Kaya",
+        "speaker": "Mrs. Ellis",
         "text": "Should I take any medicine?"
       },
       {
@@ -5357,7 +5357,7 @@ export const enMobile2026: SkillExercise[] = [
     ],
     "questions": [
       {
-        "text": "How long has Mrs. Kaya had the headache?",
+        "text": "How long has Mrs. Ellis had the headache?",
         "options": [
           "Since Monday",
           "Since last month",
@@ -5367,7 +5367,7 @@ export const enMobile2026: SkillExercise[] = [
         "explain": "Doktor \"How long have you had this headache?\" diye soruyor, hasta \"Since Monday. So about four days now.\" diyor."
       },
       {
-        "text": "Mrs. Kaya sleeps only five hours a night.",
+        "text": "Mrs. Ellis sleeps only five hours a night.",
         "options": [
           "True",
           "False"
@@ -5397,7 +5397,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "gapfill",
-        "text": "Mrs. Kaya should sleep at least ___ hours.",
+        "text": "Mrs. Ellis should sleep at least ___ hours.",
         "options": [],
         "answer": 0,
         "accept": [
@@ -5583,7 +5583,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Good afternoon, Sea View Hotel. How can I help you?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "Hello. I'd like to book a room for two nights, please. I've never stayed at your hotel before."
       },
       {
@@ -5591,7 +5591,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Sure. Which dates?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "From June 14th to the 16th. A double room, if you have one."
       },
       {
@@ -5599,7 +5599,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Let me check... Yes, we have a double room on the third floor. It's 60 euros a night, and the price includes breakfast."
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "That's fine. Is there parking near the hotel? I'm coming by car."
       },
       {
@@ -5607,17 +5607,17 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Yes, but it costs 5 euros a day. Check-in starts at two o'clock in the afternoon."
       },
       {
-        "speaker": "Deniz",
-        "text": "Great. My name's Deniz Kaya. I'll pay when I arrive."
+        "speaker": "Charlie",
+        "text": "Great. My name's Charlie Ellis. I'll pay when I arrive."
       },
       {
         "speaker": "Receptionist",
-        "text": "No problem. See you in June, Mr. Kaya. Have a nice day."
+        "text": "No problem. See you in June, Mr. Ellis. Have a nice day."
       }
     ],
     "questions": [
       {
-        "text": "How many nights does Deniz want to stay?",
+        "text": "How many nights does Charlie want to stay?",
         "options": [
           "One night",
           "Two nights",
@@ -5846,7 +5846,7 @@ export const enMobile2026: SkillExercise[] = [
     "minutes": 3,
     "segments": [
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Hello. I bought these headphones here last Saturday, but they don't work. There is no sound on the left side."
       },
       {
@@ -5854,7 +5854,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "I'm sorry about that. Do you have the receipt?"
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Yes, here it is. I paid 450 lira."
       },
       {
@@ -5862,7 +5862,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Thank you. The warranty is two years, so this isn't a problem. Do you want your money back, or a new pair?"
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "A new pair, please. These were the cheapest ones, but my old ones were better."
       },
       {
@@ -5870,7 +5870,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Of course. We have the same model in black. I'll get it from the storeroom."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Great. How long will it take?"
       },
       {
@@ -5878,7 +5878,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "About two minutes. And please keep the receipt. You must show it for any repair."
       },
       {
-        "speaker": "Emre",
+        "speaker": "Owen",
         "text": "Sure. Thank you very much."
       }
     ],
@@ -5891,36 +5891,36 @@ export const enMobile2026: SkillExercise[] = [
           "The color is wrong."
         ],
         "answer": 0,
-        "explain": "Emre ilk cümlesinde \"There is no sound on the left side.\" diyor, yani sol taraftan ses gelmiyor."
+        "explain": "Owen ilk cümlesinde \"There is no sound on the left side.\" diyor, yani sol taraftan ses gelmiyor."
       },
       {
-        "text": "Emre has the receipt with him.",
+        "text": "Owen has the receipt with him.",
         "options": [
           "True",
           "False"
         ],
         "answer": 0,
-        "explain": "Görevli \"Do you have the receipt?\" diye sorunca Emre \"Yes, here it is.\" diyor; fiş yanında."
+        "explain": "Görevli \"Do you have the receipt?\" diye sorunca Owen \"Yes, here it is.\" diyor; fiş yanında."
       },
       {
-        "text": "How much did Emre pay for the headphones?",
+        "text": "How much did Owen pay for the headphones?",
         "options": [
           "350 lira",
           "450 lira",
           "540 lira"
         ],
         "answer": 1,
-        "explain": "Emre fişi uzatırken \"I paid 450 lira.\" diyor."
+        "explain": "Owen fişi uzatırken \"I paid 450 lira.\" diyor."
       },
       {
-        "text": "What does Emre choose?",
+        "text": "What does Owen choose?",
         "options": [
           "His money back",
           "A new pair",
           "A repair"
         ],
         "answer": 1,
-        "explain": "Görevli para iadesi mi yeni kulaklık mı diye sorunca Emre \"A new pair, please.\" diyor."
+        "explain": "Görevli para iadesi mi yeni kulaklık mı diye sorunca Owen \"A new pair, please.\" diyor."
       },
       {
         "kind": "gapfill",
@@ -5955,7 +5955,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "listening",
     "title": "A Wedding Invitation",
     "genre": "phone",
-    "intro": "Merve'nin, arkadaşı Elif'i düğüne davet ettiği sesli mesajı dinleyeceksin.",
+    "intro": "Isla'nın, arkadaşı Holly'yi düğüne davet ettiği sesli mesajı dinleyeceksin.",
     "gloss": [
       {
         "de": "wedding",
@@ -5990,11 +5990,11 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Voicemail",
-        "text": "Hi Elif, it's Merve. I have great news! My brother Kaan is getting married. The wedding is on Saturday, June twelfth, at seven in the evening."
+        "text": "Hi Holly, it's Isla. I have great news! My brother Liam is getting married. The wedding is on Saturday, June twelfth, at seven in the evening."
       },
       {
         "speaker": "Voicemail",
-        "text": "It's at the Green Garden Hotel, near the train station. Please come! Ayse and Deniz are coming too. Dinner starts at eight, so don't be late."
+        "text": "It's at the Green Garden Hotel, near the train station. Please come! Rachel and Charlie are coming too. Dinner starts at eight, so don't be late."
       },
       {
         "speaker": "Voicemail",
@@ -6014,10 +6014,10 @@ export const enMobile2026: SkillExercise[] = [
           "Sunday"
         ],
         "answer": 1,
-        "explain": "Merve \"The wedding is on Saturday, June twelfth\" diyor, yani düğün cumartesi günü."
+        "explain": "Isla \"The wedding is on Saturday, June twelfth\" diyor, yani düğün cumartesi günü."
       },
       {
-        "text": "Merve says everybody is giving four hundred lira for the present.",
+        "text": "Isla says everybody is giving four hundred lira for the present.",
         "options": [
           "True",
           "False"
@@ -6029,14 +6029,14 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Where is the wedding?",
         "options": [
           "At the Green Garden Hotel",
-          "At Merve's house",
+          "At Isla's house",
           "At a restaurant near the airport"
         ],
         "answer": 0,
         "explain": "\"It's at the Green Garden Hotel, near the train station\" cümlesinden yer anlaşılıyor; havaalanı değil, tren istasyonunun yanı."
       },
       {
-        "text": "What does Merve want Elif to do tonight?",
+        "text": "What does Isla want Holly to do tonight?",
         "options": [
           "Call her back",
           "Buy the present alone",
@@ -6057,7 +6057,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What color must Elif not wear?",
+        "text": "What color must Holly not wear?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -6109,15 +6109,15 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Good afternoon, TechCare support. My name is Emma. How can I help you?"
       },
       {
-        "speaker": "Deniz",
-        "text": "Hi Emma. My name is Deniz. My laptop doesn't connect to the internet. I tried everything."
+        "speaker": "Charlie",
+        "text": "Hi Emma. My name is Charlie. My laptop doesn't connect to the internet. I tried everything."
       },
       {
         "speaker": "Emma",
         "text": "I'm sorry about that. Have you restarted the router already?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "Yes, twice. The small light on the front is orange, not green."
       },
       {
@@ -6125,7 +6125,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "Okay. An orange light usually means a cable problem. Look at the back of the router. Is the black cable in the yellow port?"
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "Just a second... No, it's in the gray one."
       },
       {
@@ -6133,7 +6133,7 @@ export const enMobile2026: SkillExercise[] = [
         "text": "That's the problem. Move it to the yellow port and wait two minutes."
       },
       {
-        "speaker": "Deniz",
+        "speaker": "Charlie",
         "text": "It's green now! Thank you so much. Do I have to pay for this call?"
       },
       {
@@ -6143,23 +6143,23 @@ export const enMobile2026: SkillExercise[] = [
     ],
     "questions": [
       {
-        "text": "Why does Deniz call the support line?",
+        "text": "Why does Charlie call the support line?",
         "options": [
           "His laptop doesn't connect to the internet.",
           "He wants to buy a new router.",
           "He can't find his reference number."
         ],
         "answer": 0,
-        "explain": "Deniz konuşmanın başında 'My laptop doesn't connect to the internet.' diyor. Sorun internet bağlantısı."
+        "explain": "Charlie konuşmanın başında 'My laptop doesn't connect to the internet.' diyor. Sorun internet bağlantısı."
       },
       {
-        "text": "Deniz restarted the router two times.",
+        "text": "Charlie restarted the router two times.",
         "options": [
           "True",
           "False"
         ],
         "answer": 0,
-        "explain": "Emma 'Have you restarted the router already?' diye soruyor, Deniz 'Yes, twice.' yani iki kez diye cevap veriyor."
+        "explain": "Emma 'Have you restarted the router already?' diye soruyor, Charlie 'Yes, twice.' yani iki kez diye cevap veriyor."
       },
       {
         "text": "Where was the black cable at the beginning?",
@@ -6169,7 +6169,7 @@ export const enMobile2026: SkillExercise[] = [
           "In the black port"
         ],
         "answer": 1,
-        "explain": "Emma sarı portu soruyor, Deniz bakıp 'No, it's in the gray one.' diyor. Kablo yanlışlıkla gri porttaydı."
+        "explain": "Emma sarı portu soruyor, Charlie bakıp 'No, it's in the gray one.' diyor. Kablo yanlışlıkla gri porttaydı."
       },
       {
         "text": "How much does a home visit cost?",
@@ -6193,7 +6193,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "kind": "short_answer",
-        "text": "What is Deniz's reference number?",
+        "text": "What is Charlie's reference number?",
         "options": [],
         "answer": 0,
         "accept": [
@@ -6366,51 +6366,51 @@ export const enMobile2026: SkillExercise[] = [
     "minutes": 3,
     "segments": [
       {
-        "speaker": "Mert",
-        "text": "Eda, are you free next weekend? My brother and I are going to visit Izmir."
+        "speaker": "Henry",
+        "text": "Erin, are you free next weekend? My brother and I are going to visit Izmir."
       },
       {
-        "speaker": "Eda",
+        "speaker": "Erin",
         "text": "Really? I've never been there. How are you going to travel?"
       },
       {
-        "speaker": "Mert",
+        "speaker": "Henry",
         "text": "By bus. It's cheaper than the plane. The ticket is only 350 lira."
       },
       {
-        "speaker": "Eda",
+        "speaker": "Erin",
         "text": "That's nice. What time does the bus leave?"
       },
       {
-        "speaker": "Mert",
+        "speaker": "Henry",
         "text": "At seven in the morning, on Saturday. We'll arrive around one o'clock."
       },
       {
-        "speaker": "Eda",
+        "speaker": "Erin",
         "text": "That's a long trip! Will you stay in a hotel?"
       },
       {
-        "speaker": "Mert",
+        "speaker": "Henry",
         "text": "No, my cousin has an apartment near the sea. We're going to stay there for three nights."
       },
       {
-        "speaker": "Eda",
+        "speaker": "Erin",
         "text": "Sounds great. I'll ask my boss tomorrow, and then I'll call you."
       },
       {
-        "speaker": "Mert",
+        "speaker": "Henry",
         "text": "Perfect. Don't forget your camera. The sunsets there are the best in Türkiye."
       }
     ],
     "questions": [
       {
-        "text": "Mert is going to travel to Izmir by plane.",
+        "text": "Henry is going to travel to Izmir by plane.",
         "options": [
           "True",
           "False"
         ],
         "answer": 1,
-        "explain": "Mert \"By bus. It's cheaper than the plane.\" diyor, yani uçakla değil otobüsle gidiyor."
+        "explain": "Henry \"By bus. It's cheaper than the plane.\" diyor, yani uçakla değil otobüsle gidiyor."
       },
       {
         "text": "What time does the bus leave?",
@@ -6420,7 +6420,7 @@ export const enMobile2026: SkillExercise[] = [
           "At three o'clock"
         ],
         "answer": 0,
-        "explain": "Mert \"At seven in the morning, on Saturday.\" diyor. Saat bir, otobüsün varış saati."
+        "explain": "Henry \"At seven in the morning, on Saturday.\" diyor. Saat bir, otobüsün varış saati."
       },
       {
         "text": "How much is the bus ticket?",
@@ -6430,17 +6430,17 @@ export const enMobile2026: SkillExercise[] = [
           "550 lira"
         ],
         "answer": 0,
-        "explain": "Mert biletten söz ederken \"The ticket is only 350 lira.\" diyor."
+        "explain": "Henry biletten söz ederken \"The ticket is only 350 lira.\" diyor."
       },
       {
         "text": "Where are they going to stay in Izmir?",
         "options": [
           "In a hotel near the sea",
-          "At Mert's cousin's apartment",
-          "At Eda's boss's house"
+          "At Henry's cousin's apartment",
+          "At Erin's boss's house"
         ],
         "answer": 1,
-        "explain": "Mert otelde kalmayacaklarını söylüyor: \"my cousin has an apartment near the sea. We're going to stay there for three nights.\""
+        "explain": "Henry otelde kalmayacaklarını söylüyor: \"my cousin has an apartment near the sea. We're going to stay there for three nights.\""
       },
       {
         "kind": "gapfill",
@@ -6675,8 +6675,8 @@ export const enMobile2026: SkillExercise[] = [
         "minWords": 35,
         "phrases": [
           {
-            "de": "Hi Emre! How was your weekend?",
-            "tr": "Merhaba Emre! Hafta sonun nasıldı?"
+            "de": "Hi Owen! How was your weekend?",
+            "tr": "Merhaba Owen! Hafta sonun nasıldı?"
           },
           {
             "de": "Last weekend I went to …",
@@ -6699,7 +6699,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Bir dahaki sefere sen de bizimle gelmelisin."
           }
         ],
-        "sample": "Hi Emre! How was your weekend? Last weekend I went to my grandmother's village with my family. On Saturday we walked in the forest and cooked outside. The market was very crowded on Sunday, but we bought fresh bread and cheese there. I came home tired, but I had a great time. You should come with us next month. Write back soon!"
+        "sample": "Hi Owen! How was your weekend? Last weekend I went to my grandmother's village with my family. On Saturday we walked in the forest and cooked outside. The market was very crowded on Sunday, but we bought fresh bread and cheese there. I came home tired, but I had a great time. You should come with us next month. Write back soon!"
       }
     ]
   },
@@ -6816,7 +6816,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Yazmaya devam et!"
           }
         ],
-        "sample": "Hi Deniz, thanks for this post! I've studied English for two years, and your story sounds like mine. Last summer I went to Istanbul for the first time and I spoke English with tourists there. I was very nervous, but the people were kind and they understood me. I haven't finished your book list yet, but I will start it this week. Have you ever tried a language exchange app? Thanks again and keep writing!"
+        "sample": "Hi Charlie, thanks for this post! I've studied English for two years, and your story sounds like mine. Last summer I went to Istanbul for the first time and I spoke English with tourists there. I was very nervous, but the people were kind and they understood me. I haven't finished your book list yet, but I will start it this week. Have you ever tried a language exchange app? Thanks again and keep writing!"
       }
     ]
   },
@@ -6933,7 +6933,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Yardımınız için teşekkür ederim."
           }
         ],
-        "sample": "Dear Mr. Brown,\n\nI am writing about a problem in my apartment. The heater hasn't worked since yesterday evening, so there is no hot water in the bathroom. The rooms are very cold at night and I can't take a shower before work.\n\nCould you please send someone to repair it this week? I am at home after five o'clock every day.\n\nThank you for your help.\n\nBest wishes,\nElif"
+        "sample": "Dear Mr. Brown,\n\nI am writing about a problem in my apartment. The heater hasn't worked since yesterday evening, so there is no hot water in the bathroom. The rooms are very cold at night and I can't take a shower before work.\n\nCould you please send someone to repair it this week? I am at home after five o'clock every day.\n\nThank you for your help.\n\nBest wishes,\nHolly"
       }
     ]
   },
@@ -7046,7 +7046,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Bir görüşmeye gelmek isterim."
           }
         ],
-        "sample": "Dear Mr. Yilmaz,\n\nI am writing about the waiter job at your cafe. I saw your job advertisement on your website yesterday. I have worked in a restaurant in Izmir for two years, so I have a lot of experience with customers. I can speak Turkish and English, and I am available on weekends and in the evenings. I think I am the right person for this job because I am fast and friendly. I would like to come to an interview next week.\n\nBest regards,\nDeniz Kaya"
+        "sample": "Dear Mr. Hayes,\n\nI am writing about the waiter job at your cafe. I saw your job advertisement on your website yesterday. I have worked in a restaurant in Izmir for two years, so I have a lot of experience with customers. I can speak Turkish and English, and I am available on weekends and in the evenings. I think I am the right person for this job because I am fast and friendly. I would like to come to an interview next week.\n\nBest regards,\nCharlie Ellis"
       }
     ]
   },
@@ -7168,7 +7168,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Yakında sizden haber almayı umuyorum."
           }
         ],
-        "sample": "Dear Customer Service,\n\nI am writing about a jacket. I bought it in your store on March 12. The problem is that the zipper doesn't work, and there is also a small hole in the left pocket. I have never worn the jacket outside.\n\nThe jacket is still under warranty, and I still have the receipt. I would like a refund, or a new jacket in the same size. Please reply by the end of this week.\n\nI hope to hear from you soon.\n\nBest regards,\nElif Demir"
+        "sample": "Dear Customer Service,\n\nI am writing about a jacket. I bought it in your store on March 12. The problem is that the zipper doesn't work, and there is also a small hole in the left pocket. I have never worn the jacket outside.\n\nThe jacket is still under warranty, and I still have the receipt. I would like a refund, or a new jacket in the same size. Please reply by the end of this week.\n\nI hope to hear from you soon.\n\nBest regards,\nHolly Adams"
       }
     ]
   },
@@ -7284,7 +7284,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Yakında görüşürüz!"
           }
         ],
-        "sample": "Hi Elif! Greetings from Rome! We arrived here last Saturday and the weather has been great. Yesterday we visited the old town and had pizza in a small restaurant. The streets were very crowded, but I loved them. This morning I bought a small souvenir for you. Tomorrow we're going to see the big museum, and on Sunday we will fly home. This is the best trip of my life. See you soon! Love, Deniz"
+        "sample": "Hi Holly! Greetings from Rome! We arrived here last Saturday and the weather has been great. Yesterday we visited the old town and had pizza in a small restaurant. The streets were very crowded, but I loved them. This morning I bought a small souvenir for you. Tomorrow we're going to see the big museum, and on Sunday we will fly home. This is the best trip of my life. See you soon! Love, Charlie"
       }
     ]
   },
@@ -7401,7 +7401,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Umarım gelebilirsin."
           }
         ],
-        "sample": "Hi Deniz! I'm having a birthday party on Saturday evening. It starts at seven o'clock at my house. My sister will make a big cake and we're going to eat pizza, listen to music and dance a little. Please bring your brother too, but don't bring a present. Can you tell me before Friday? I hope you can come. See you soon!"
+        "sample": "Hi Charlie! I'm having a birthday party on Saturday evening. It starts at seven o'clock at my house. My sister will make a big cake and we're going to eat pizza, listen to music and dance a little. Please bring your brother too, but don't bring a present. Can you tell me before Friday? I hope you can come. See you soon!"
       }
     ]
   },
@@ -7512,7 +7512,7 @@ export const enMobile2026: SkillExercise[] = [
             "tr": "Saygılarımla,"
           }
         ],
-        "sample": "Dear Sir or Madam,\n\nMy name is Elif Yilmaz and I have just moved to your city. I would like to make an appointment at your office to register my new address. I can come on Tuesday or Wednesday morning, but unfortunately I can't come on Friday. Could you also tell me which documents I have to bring? I don't know if my ID card is enough. Thank you very much for your help. I look forward to your reply.\n\nKind regards,\nElif Yilmaz"
+        "sample": "Dear Sir or Madam,\n\nMy name is Holly Hayes and I have just moved to your city. I would like to make an appointment at your office to register my new address. I can come on Tuesday or Wednesday morning, but unfortunately I can't come on Friday. Could you also tell me which documents I have to bring? I don't know if my ID card is enough. Thank you very much for your help. I look forward to your reply.\n\nKind regards,\nHolly Hayes"
       }
     ]
   }

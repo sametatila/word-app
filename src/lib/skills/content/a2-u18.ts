@@ -182,15 +182,15 @@ export const a2U18: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Schaffner", text: "Die Fahrscheine bitte." },
-      { speaker: "Frau Genç", text: "Hier, bitte. Sagen Sie, stimmt das — unser Zug hat Verspätung?" },
+      { speaker: "Frau Jürgens", text: "Hier, bitte. Sagen Sie, stimmt das — unser Zug hat Verspätung?" },
       { speaker: "Schaffner", text: "Leider ja, etwa fünfundzwanzig Minuten. Vor uns steht ein Güterzug." },
-      { speaker: "Frau Genç", text: "Oh nein. Ich muss in Fulda umsteigen, mein Anschluss geht um 17:20." },
+      { speaker: "Frau Jürgens", text: "Oh nein. Ich muss in Fulda umsteigen, mein Anschluss geht um 17:20." },
       { speaker: "Schaffner", text: "Den bekommen Sie nicht mehr. Aber um 18:05 fährt der nächste." },
-      { speaker: "Frau Genç", text: "Und wann bin ich dann zu Hause?" },
+      { speaker: "Frau Jürgens", text: "Und wann bin ich dann zu Hause?" },
       { speaker: "Schaffner", text: "Kurz nach neun. Sie fahren ja bis zur Endstation, oder?" },
-      { speaker: "Frau Genç", text: "Ja, bis Kassel. Ich bin gestern schon zwei Stunden zu spät eingetroffen." },
+      { speaker: "Frau Jürgens", text: "Ja, bis Kassel. Ich bin gestern schon zwei Stunden zu spät eingetroffen." },
       { speaker: "Schaffner", text: "Das tut mir leid. Heben Sie den Fahrschein auf. Damit bekommen Sie Geld zurück." },
-      { speaker: "Frau Genç", text: "Gut zu wissen. Ist das Abteil hinten noch frei? Hier ist es sehr laut." },
+      { speaker: "Frau Jürgens", text: "Gut zu wissen. Ist das Abteil hinten noch frei? Hier ist es sehr laut." },
       { speaker: "Schaffner", text: "Ja, gehen Sie ruhig nach hinten." },
     ],
     questions: [
@@ -248,15 +248,15 @@ export const a2U18: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Lena", text: "Also, Samstag um acht. Ich hoffe, dass alle kommen." },
-      { speaker: "Kaan", text: "Bis jetzt haben elf zugesagt. Rechne mit fünfzehn." },
+      { speaker: "Ingo", text: "Bis jetzt haben elf zugesagt. Rechne mit fünfzehn." },
       { speaker: "Lena", text: "Fünfzehn? Dann brauchen wir mehr Teller. Wir haben nur acht." },
-      { speaker: "Kaan", text: "Ich glaube, dass meine Mutter uns welche leiht. Ich frage sie morgen." },
+      { speaker: "Ingo", text: "Ich glaube, dass meine Mutter uns welche leiht. Ich frage sie morgen." },
       { speaker: "Lena", text: "Perfekt. Kannst du dann auch die Servietten kaufen?" },
-      { speaker: "Kaan", text: "Mache ich. Und wer stellt die Tische auf?" },
+      { speaker: "Ingo", text: "Mache ich. Und wer stellt die Tische auf?" },
       { speaker: "Lena", text: "Die stellen wir zusammen auf, Samstagnachmittag. Danach decke ich den Tisch." },
-      { speaker: "Kaan", text: "Und das Essen? Kochen wir, oder bestellen wir?" },
+      { speaker: "Ingo", text: "Und das Essen? Kochen wir, oder bestellen wir?" },
       { speaker: "Lena", text: "Ich koche eine große Suppe. Den Rest bringt der Besuch mit." },
-      { speaker: "Kaan", text: "Gut. Ich organisiere die Getränke und die Musik." },
+      { speaker: "Ingo", text: "Gut. Ich organisiere die Getränke und die Musik." },
     ],
     questions: [
       {
@@ -281,7 +281,7 @@ export const a2U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was organisiert Kaan?",
+        text: "Was organisiert Ingo?",
         options: [],
         answer: 0,
         accept: [
@@ -379,7 +379,7 @@ export const a2U18: SkillExercise[] = [
           "Ich bringe einen Nudelsalat mit, für ungefähr acht Personen. Sagt Bescheid, wenn schon jemand anders Nudelsalat macht, dann nehme ich etwas anderes.\n\n" +
           "Für die Zwillinge haben wir zwei Bücher und einen Ball gekauft. Kein Zucker, versprochen.\n\n" +
           "Eine Frage noch: Sollen wir Stühle mitbringen? Wir haben vier im Keller.\n\n" +
-          "Bis zum sechsten Mai!\nNilay und Tim",
+          "Bis zum sechsten Mai!\nSimone und Tim",
       },
     ],
   },

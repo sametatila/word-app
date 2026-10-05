@@ -151,7 +151,7 @@ export const enB2U11: SkillExercise[] = [
       "The study was carried out at a private institute in Geneva and has not yet been published in a scientific journal. The company that sells the therapy is thought to have paid for most of the research, although neither the company nor the institute has confirmed this.\n" +
       "Some doctors are worried. The cohort is thought to have been too small: only 36 patients took part, and all of them are believed to have been under forty. Older patients, who make up most of the people with sleep problems, are said to react quite differently to this kind of treatment.\n" +
       "It is also reported that the experiment was repeated with a second group, but the numbers from that group are not included in the press release.\n" +
-      "Dr. Elif Tan, a sleep specialist at the city hospital, said that the idea behind the therapy was interesting and deserved a proper trial. She advised patients not to pay for the therapy until larger studies are available. The measurements are said to be stable, she added, but a stable result from 36 young people says very little about everybody else.\n" +
+      "Dr. Holly Tan, a sleep specialist at the city hospital, said that the idea behind the therapy was interesting and deserved a proper trial. She advised patients not to pay for the therapy until larger studies are available. The measurements are said to be stable, she added, but a stable result from 36 young people says very little about everybody else.\n" +
       "A larger study with 400 patients is expected to begin next year.",
     questions: [
       {
@@ -226,17 +226,17 @@ export const enB2U11: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Koray", text: "Selma, the open day is on Saturday and our poster is still empty. What do we put at the top?" },
+      { speaker: "Declan", text: "Selma, the open day is on Saturday and our poster is still empty. What do we put at the top?" },
       { speaker: "Selma", text: "The big news. The automation of the process took a year. Before the robot, two technicians sorted every blood sample by hand." },
-      { speaker: "Koray", text: "How many samples a day?" },
+      { speaker: "Declan", text: "How many samples a day?" },
       { speaker: "Selma", text: "About three thousand. Now the robot does it in half the time, and the number of mistakes has dropped to almost zero." },
-      { speaker: "Koray", text: "Should we mention the invention of the gripper? That was our own idea." },
+      { speaker: "Declan", text: "Should we mention the invention of the gripper? That was our own idea." },
       { speaker: "Selma", text: "Yes, definitely. The invention of the soft gripper is the reason the tubes no longer break. Put a photo next to it." },
-      { speaker: "Koray", text: "And the software problem in March?" },
+      { speaker: "Declan", text: "And the software problem in March?" },
       { speaker: "Selma", text: "Just one line. The introduction of the patch was delayed by two weeks, but nothing was lost." },
-      { speaker: "Koray", text: "Visitors always ask about jobs. Did anybody lose theirs?" },
+      { speaker: "Declan", text: "Visitors always ask about jobs. Did anybody lose theirs?" },
       { speaker: "Selma", text: "No. After the introduction of the robot, the two technicians moved to the research team. Say that clearly. People worry." },
-      { speaker: "Koray", text: "Okay. What about a title: from hand to robot in one year?" },
+      { speaker: "Declan", text: "Okay. What about a title: from hand to robot in one year?" },
       { speaker: "Selma", text: "Perfect. Short, and everybody will understand it." },
     ],
     questions: [
@@ -302,14 +302,14 @@ export const enB2U11: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Devrim", text: "Hello, this is Devrim from the transport lab with the monthly update on the electric bus project." },
-      { speaker: "Devrim", text: "The good news first. By June the emissions will have been measured on all three routes, including the steep one up to the hospital." },
-      { speaker: "Devrim", text: "This time next week we will be testing the vehicle in the mountains, where the cold and the hills put the most pressure on the battery." },
-      { speaker: "Devrim", text: "The consumption will have been checked by then. So far, on the city routes, the bus uses about a third less energy than we expected." },
-      { speaker: "Devrim", text: "The insulation around the driver is still a problem. The drivers say it is too cold in the mornings, and they are right." },
-      { speaker: "Devrim", text: "By the end of next month the heating will have been replaced. The supplier has promised us, and they have kept every date so far." },
-      { speaker: "Devrim", text: "In September we will be running the bus with real passengers for the first time, on route 12, for six weeks." },
-      { speaker: "Devrim", text: "If you have questions before then, I will be in the lab all week. Thanks, and speak soon." },
+      { speaker: "Jamie", text: "Hello, this is Jamie from the transport lab with the monthly update on the electric bus project." },
+      { speaker: "Jamie", text: "The good news first. By June the emissions will have been measured on all three routes, including the steep one up to the hospital." },
+      { speaker: "Jamie", text: "This time next week we will be testing the vehicle in the mountains, where the cold and the hills put the most pressure on the battery." },
+      { speaker: "Jamie", text: "The consumption will have been checked by then. So far, on the city routes, the bus uses about a third less energy than we expected." },
+      { speaker: "Jamie", text: "The insulation around the driver is still a problem. The drivers say it is too cold in the mornings, and they are right." },
+      { speaker: "Jamie", text: "By the end of next month the heating will have been replaced. The supplier has promised us, and they have kept every date so far." },
+      { speaker: "Jamie", text: "In September we will be running the bus with real passengers for the first time, on route 12, for six weeks." },
+      { speaker: "Jamie", text: "If you have questions before then, I will be in the lab all week. Thanks, and speak soon." },
     ],
     questions: [
       {

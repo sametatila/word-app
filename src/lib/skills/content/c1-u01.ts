@@ -237,22 +237,22 @@ export const c1U01: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Frau Kern", text: "Ich fasse zusammen: Wir starten im Mai mit dem neuen Verfahren. Gibt es Einwände?" },
-      { speaker: "Herr Yilmaz", text: "Ich hätte da einen Einwand. Nicht gegen das Verfahren als solches — gegen den Zeitpunkt." },
+      { speaker: "Herr Lutz", text: "Ich hätte da einen Einwand. Nicht gegen das Verfahren als solches — gegen den Zeitpunkt." },
       { speaker: "Frau Kern", text: "Bitte." },
-      { speaker: "Herr Yilmaz", text: "Im Mai läuft die Zertifizierung. Zwei große Umstellungen gleichzeitig halte ich für nicht umsichtig." },
+      { speaker: "Herr Lutz", text: "Im Mai läuft die Zertifizierung. Zwei große Umstellungen gleichzeitig halte ich für nicht umsichtig." },
       { speaker: "Frau Bauer", text: "Bei allem Respekt: Wir verschieben das jetzt zum dritten Mal. Irgendwann ist Zurückhaltung auch keine Tugend mehr." },
-      { speaker: "Herr Yilmaz", text: "Das nehme ich auf. Ich sage nicht nein, ich sage September." },
-      { speaker: "Frau Kern", text: "Das war taktvoll formuliert, Herr Yilmaz, und es bleibt trotzdem ein Nein für Mai." },
-      { speaker: "Herr Yilmaz", text: "Es ist ein Nein für Mai. Nach reiflicher Erwägung, nicht aus dem Bauch." },
-      { speaker: "Frau Kern", text: "Herr Aydin, Sie waren bisher sehr still." },
-      { speaker: "Herr Aydin", text: "Ich würde die Zahlen gern noch einmal in Ruhe ansehen, bevor ich mich festlege." },
+      { speaker: "Herr Lutz", text: "Das nehme ich auf. Ich sage nicht nein, ich sage September." },
+      { speaker: "Frau Kern", text: "Das war taktvoll formuliert, Herr Lutz, und es bleibt trotzdem ein Nein für Mai." },
+      { speaker: "Herr Lutz", text: "Es ist ein Nein für Mai. Nach reiflicher Erwägung, nicht aus dem Bauch." },
+      { speaker: "Frau Kern", text: "Herr Haas, Sie waren bisher sehr still." },
+      { speaker: "Herr Haas", text: "Ich würde die Zahlen gern noch einmal in Ruhe ansehen, bevor ich mich festlege." },
       { speaker: "Frau Bauer", text: "Das heißt, Sie sind dagegen." },
-      { speaker: "Herr Aydin", text: "Das heißt, ich möchte es besonnen entscheiden und nicht in dieser Sitzung." },
+      { speaker: "Herr Haas", text: "Das heißt, ich möchte es besonnen entscheiden und nicht in dieser Sitzung." },
       { speaker: "Frau Kern", text: "Gut. Dann vertagen wir mit dem Vorbehalt, dass bis Freitag die Zahlen vorliegen." },
     ],
     questions: [
       {
-        text: "Wogegen richtet sich Herrn Yilmaz' Einwand?",
+        text: "Wogegen richtet sich Herrn Lutz’ Einwand?",
         options: ["Gegen das Verfahren selbst", "Gegen den Zeitpunkt", "Gegen die Zertifizierung"],
         answer: 1,
         explain: "„Nicht gegen das Verfahren als solches — gegen den Zeitpunkt.“ C1'de itirazın KAPSAMI ayrıca belirtilir.",
@@ -263,10 +263,10 @@ export const c1U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["hätte"],
-        explain: "Dilek kipi itirazı yumuşatıyor: „Ich habe einen Einwand“ karşı çıkma, „Ich hätte“ ise kapı aralama.",
+        explain: "Leonie kipi itirazı yumuşatıyor: „Ich habe einen Einwand“ karşı çıkma, „Ich hätte“ ise kapı aralama.",
       },
       {
-        text: "Was macht Herr Aydin wirklich?",
+        text: "Was macht Herr Haas wirklich?",
         options: [
           "Er lehnt den Vorschlag ab.",
           "Er stimmt zu.",
@@ -320,19 +320,19 @@ export const c1U01: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Nils", text: "Frau Brandt hat unseren Entwurf für den neuen Pausenraum zurückgeschickt. Sie schreibt: „Die Idee ist an sich überzeugend.“" },
-      { speaker: "Ayla", text: "Und dann?" },
+      { speaker: "Elke", text: "Und dann?" },
       { speaker: "Nils", text: "„Nur bei den Kosten hätte ich noch Fragen.“ Mehr steht da nicht. Eigentlich klingt das doch gut, oder?" },
-      { speaker: "Ayla", text: "Ich höre da ein Aber heraus. Achtzehntausend für Möbel sind viel, und letztes Jahr hat sie die neue Küche im dritten Stock mit genau diesem Satz abgelehnt." },
+      { speaker: "Elke", text: "Ich höre da ein Aber heraus. Achtzehntausend für Möbel sind viel, und letztes Jahr hat sie die neue Küche im dritten Stock mit genau diesem Satz abgelehnt." },
       { speaker: "Nils", text: "Die Küche? Davon wusste ich nichts." },
-      { speaker: "Ayla", text: "Es gab keine Absage, nur eine Andeutung — und danach kam nie wieder etwas. So etwas steht bei ihr unterschwellig in jedem zweiten Satz." },
+      { speaker: "Elke", text: "Es gab keine Absage, nur eine Andeutung — und danach kam nie wieder etwas. So etwas steht bei ihr unterschwellig in jedem zweiten Satz." },
       { speaker: "Nils", text: "Dann sollten wir die Zahl nicht verteidigen, sondern senken. Die Sofas könnten wir gebraucht kaufen." },
-      { speaker: "Ayla", text: "Das spart gut sechstausend. Und die Kaffeemaschine zahlt der Betriebsrat, das hat er schon zugesagt." },
+      { speaker: "Elke", text: "Das spart gut sechstausend. Und die Kaffeemaschine zahlt der Betriebsrat, das hat er schon zugesagt." },
       { speaker: "Nils", text: "Dann liegen wir bei knapp zwölftausend. Kann sie das nachvollziehen, ohne dass wir ihr drei Seiten schicken?" },
-      { speaker: "Ayla", text: "Eine Tabelle, eine Seite. Und aus ihrer Perspektive geschrieben: Was kostet der Raum, und was spart er?" },
+      { speaker: "Elke", text: "Eine Tabelle, eine Seite. Und aus ihrer Perspektive geschrieben: Was kostet der Raum, und was spart er?" },
       { speaker: "Nils", text: "Was spart denn ein Pausenraum?" },
-      { speaker: "Ayla", text: "Wege. Die Schichtleitung sagt, die Leute laufen jeden Tag zum Bäcker gegenüber, und das kostet pro Person zwanzig Minuten." },
+      { speaker: "Elke", text: "Wege. Die Schichtleitung sagt, die Leute laufen jeden Tag zum Bäcker gegenüber, und das kostet pro Person zwanzig Minuten." },
       { speaker: "Nils", text: "Die Schlussfolgerung ziehe ich aber nicht für sie. Ich schreibe die Zahlen hin und rufe sie morgen früh an." },
-      { speaker: "Ayla", text: "Gut. Frag sie direkt, welche Summe für sie in Frage kommt. Dann bleibt nichts Unausgesprochenes, nur eine Zahl." },
+      { speaker: "Elke", text: "Gut. Frag sie direkt, welche Summe für sie in Frage kommt. Dann bleibt nichts Unausgesprochenes, nur eine Zahl." },
     ],
     questions: [
       {
@@ -445,7 +445,7 @@ export const c1U01: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Herr Demir'in önümüzdeki yarıyıl için gönderdiği iş birliği önerisine olumsuz ama kapıyı kapatmayan bir yanıt yaz. Kaliteyi ret gerekçesinden ayır, çekinceyi açıkça koy, somut bir yol göster ve en az bir işlev fiili öbeği kullan (in Frage kommen, zur Verfügung stehen, in Anspruch nehmen, Abstand nehmen).",
+          "Herr Böhm'ün önümüzdeki yarıyıl için gönderdiği iş birliği önerisine olumsuz ama kapıyı kapatmayan bir yanıt yaz. Kaliteyi ret gerekçesinden ayır, çekinceyi açıkça koy, somut bir yol göster ve en az bir işlev fiili öbeği kullan (in Frage kommen, zur Verfügung stehen, in Anspruch nehmen, Abstand nehmen).",
         checklist: [
           "Kaliteyi ret gerekçesinden ayırdın mı?",
           "Çekinceyi (neye bağlı olduğunu) açıkça yazdın mı?",
@@ -459,7 +459,7 @@ export const c1U01: SkillExercise[] = [
           { de: "Wir möchten Ihre Zeit nicht in Anspruch nehmen.", tr: "vaktinizi almak istemiyoruz", en: "we do not wish to take up your time" },
         ],
         sample:
-          "Sehr geehrter Herr Demir,\n\n" +
+          "Sehr geehrter Herr Böhm,\n\n" +
           "vielen Dank für den von Ihnen eingereichten Vorschlag zur Zusammenarbeit im kommenden Halbjahr.\n\n" +
           "Ihr Konzept ist in der Sache überzeugend; die Gutachter heben die klare Struktur eigens hervor. Der Grund für unsere Rückmeldung liegt daher nicht in der Qualität des Vorschlags.\n\n" +
           "Zum jetzigen Zeitpunkt können wir Ihnen jedoch keine verbindliche Zusage in Aussicht stellen. Die für Kooperationen zur Verfügung stehenden Mittel sind für dieses Jahr gebunden; eine Entscheidung über das Folgejahr trifft der Ausschuss im Oktober. Von einer vorzeitigen Zusage nehmen wir bis dahin bewusst Abstand.\n\n" +

@@ -68,14 +68,14 @@ Bitte unterschreiben Sie den Zettel bis Dienstag.`,
               genreTr: "Öğretmene ileti",
               body: `Sehr geehrte Frau Wendland,
 
-mein Sohn Emre war gestern krank und konnte nicht kommen.
+mein Sohn Till war gestern krank und konnte nicht kommen.
 
 Er hat Fieber gehabt und musste zum Arzt. Heute geht es ihm besser.
 
 Können Sie mir bitte sagen, was die Klasse gemacht hat?
 
 Mit freundlichen Grüßen
-Ayla Demir`,
+Elke Böhm`,
               gloss: [{ de: "das Fieber", tr: "ateş", en: "fever" }],
             },
             {
@@ -208,7 +208,7 @@ Wer nicht backen möchte, kann auch beim Aufbau helfen.`,
 
 Das ist kein Bus mit Motor. Eine erwachsene Person geht zu Fuß und sammelt auf dem Weg Kinder ein, wie eine Buslinie mit festen Haltestellen.
 
-"Am Anfang haben nur vier Familien mitgemacht", sagt Meral Pazarci, die den Plan schreibt. Heute laufen jeden Morgen achtzehn Kinder mit.
+"Am Anfang haben nur vier Familien mitgemacht", sagt Wiebke Kleinert, die den Plan schreibt. Heute laufen jeden Morgen achtzehn Kinder mit.
 
 Der Weg dauert zwanzig Minuten. Das ist länger als mit dem Auto, aber die Eltern sparen sich das Fahren.
 
@@ -240,7 +240,7 @@ Die Schule freut sich, denn vor dem Tor stehen morgens weniger Autos. Das war fr
               ],
               answer: 1,
               explain:
-                "Metin bunu açıkça söylüyor: \"Das ist kein Bus mit Motor. Eine erwachsene Person geht zu Fuß und sammelt auf dem Weg Kinder ein.\"",
+                "Arne bunu açıkça söylüyor: \"Das ist kein Bus mit Motor. Eine erwachsene Person geht zu Fuß und sammelt auf dem Weg Kinder ein.\"",
             },
             {
               kind: "mcq",
@@ -481,7 +481,7 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               kind: "match",
               id: "de-a2-09-l4-18",
               no: 18,
-              text: "Frau Aydemir hat Fragen zum Zeugnis ihrer Tochter und möchte mit jemandem sprechen.",
+              text: "Frau Beckmann hat Fragen zum Zeugnis ihrer Tochter und möchte mit jemandem sprechen.",
               answer: "h",
               explain:
                 "(h) konuyu adıyla sayıyor: \"Gespräche zu Schule, Übergang und Zeugnissen\", randevuyla ve ücretsiz.",
@@ -576,9 +576,9 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               situation: "Bir anne çocuğunu erken alacağını söylüyor.",
               plays: 2,
               segments: [
-                { speaker: "Frau Aydemir", text: "Ich hole meinen Sohn heute schon um zwei ab." },
+                { speaker: "Frau Beckmann", text: "Ich hole meinen Sohn heute schon um zwei ab." },
                 { speaker: "Betreuerin", text: "Gut. Dann sagen Sie ihm bitte selbst Bescheid, damit er nicht zum Essen geht." },
-                { speaker: "Frau Aydemir", text: "Mache ich." },
+                { speaker: "Frau Beckmann", text: "Mache ich." },
               ],
             },
             {
@@ -589,9 +589,9 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               situation: "Bir veli yüzme kursunu soruyor.",
               plays: 2,
               segments: [
-                { speaker: "Herr Pazarci", text: "Sind im Schwimmkurs noch Plätze frei?" },
+                { speaker: "Herr Kleinert", text: "Sind im Schwimmkurs noch Plätze frei?" },
                 { speaker: "Mitarbeiterin", text: "Im Samstagskurs nicht mehr. Wir machen aber einen zweiten Kurs am Sonntag auf." },
-                { speaker: "Herr Pazarci", text: "Dann nehmen wir den." },
+                { speaker: "Herr Kleinert", text: "Dann nehmen wir den." },
               ],
             },
           ],
@@ -649,7 +649,7 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               id: "de-a2-09-h1-5",
               no: 5,
               ref: "a5",
-              text: "Welchen Kurs nimmt Herr Pazarci?",
+              text: "Welchen Kurs nimmt Herr Kleinert?",
               options: ["Den vollen Samstagskurs.", "Gar keinen Kurs.", "Den Sonntagskurs."],
               answer: 2,
               explain:
@@ -679,8 +679,8 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
                 { speaker: "Frau Brink", text: "Backen kann ich nicht, ich arbeite bis Samstagmittag. Aber ich kann beim Aufbau helfen." },
                 { speaker: "Frau Kuhn", text: "Gut. Herr Stein?" },
                 { speaker: "Herr Stein", text: "Ich bringe die Getränke mit, ich habe einen Anhänger am Auto." },
-                { speaker: "Frau Kuhn", text: "Und Sie, Frau Aydemir?" },
-                { speaker: "Frau Aydemir", text: "Ich backe zwei Kuchen. Für die Getränke habe ich kein Auto." },
+                { speaker: "Frau Kuhn", text: "Und Sie, Frau Beckmann?" },
+                { speaker: "Frau Beckmann", text: "Ich backe zwei Kuchen. Für die Getränke habe ich kein Auto." },
                 { speaker: "Frau Kuhn", text: "Herr Baier, wären Sie an der Kasse?" },
                 { speaker: "Herr Baier", text: "Lieber nicht mit Geld. Ich mache die Spiele für die Kinder." },
                 { speaker: "Frau Kuhn", text: "Dann nehme ich die Kasse selbst." },
@@ -723,7 +723,7 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               id: "de-a2-09-h2-8",
               no: 8,
               ref: "g1",
-              text: "Frau Aydemir",
+              text: "Frau Beckmann",
               answer: "c",
               explain:
                 "\"Ich backe zwei Kuchen\" — arabası olmadığı için içecekleri alamıyor.",

@@ -227,7 +227,7 @@ export const deB1B15: Conversation[] = [
       word("Son", { de: "umsonst", tr: "bedava; boşuna" }, "iki anlamı da yaygın"),
       { say: [tr("İlk kalıbımız izin isteyerek rica ediyor. Dönüşlü zamir burada 'kendim için' anlamını taşıyor.")] },
       { say: [tr("Örnek:"), de("Dürfte ich mir kurz die Leiter leihen?"), tr("Tekrar et:"), de("Dürfte ich mir kurz die Leiter leihen")], expect: repeat("Dürfte ich mir kurz die Leiter leihen") },
-      { say: [tr("Sıra sende: 'Çekicinizi ödünç alabilir miyim?'")], expect: produce("Dürfte ich mir Ihren Hammer leihen", [tr("Dilek kipi başta, dönüşlü zamir arkasında, mastar sonda:"), de("Dürfte ich mir Ihren Hammer leihen?"), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Çekicinizi ödünç alabilir miyim?'")], expect: produce("Dürfte ich mir Ihren Hammer leihen", [tr("Leonie kipi başta, dönüşlü zamir arkasında, mastar sonda:"), de("Dürfte ich mir Ihren Hammer leihen?"), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıbımız ricayı yumuşatıyor: kişisiz dilek kipi ve koşul yan cümlesi.")] },
       { say: [tr("Şimdi: 'Bana yardım etseniz çok iyi olurdu.'")], expect: produce("Es wäre nett, wenn Sie mir helfen würden", [tr("Koşul yan cümlesinde dilek kipi ve fiil sonda:"), de("Es wäre nett, wenn Sie mir helfen würden."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Dürfte ich mir die Zange leihen?"), tr("cümlesi doğru mu?")], expect: truefalse("Dürfte ich mir die Zange leihen?", true, [tr("Doğru. Soruda çekimli fiil başta, mastar en sonda duruyor.")]) },

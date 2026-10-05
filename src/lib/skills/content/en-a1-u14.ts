@@ -41,21 +41,21 @@ export const enA1U14: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ali: Good morning. I'd like a ticket to London, please.\n" +
+      "Harry: Good morning. I'd like a ticket to London, please.\n" +
       "Clerk: One-way or round-trip?\n" +
-      "Ali: Round-trip, please. When does the next train leave?\n" +
+      "Harry: Round-trip, please. When does the next train leave?\n" +
       "Clerk: At ten past nine, from platform four.\n" +
-      "Ali: How much is it?\n" +
+      "Harry: How much is it?\n" +
       "Clerk: Forty pounds. Do you want a seat near the window?\n" +
-      "Ali: Yes, please. And how long does it take?\n" +
+      "Harry: Yes, please. And how long does it take?\n" +
       "Clerk: Two hours. But the train is running late today — twenty minutes.\n" +
-      "Ali: Twenty minutes! How long is the delay in the evening?\n" +
+      "Harry: Twenty minutes! How long is the delay in the evening?\n" +
       "Clerk: I am sorry, I don't know. Please wait here and listen.\n" +
-      "Ali: Thank you. Is the airport near the station?\n" +
+      "Harry: Thank you. Is the airport near the station?\n" +
       "Clerk: No, it is far. Take a taxi from the square in front of the station.",
     questions: [
       {
-        text: "What ticket does Ali buy?",
+        text: "What ticket does Harry buy?",
         options: ["a round-trip ticket", "a one-way ticket", "a plane ticket"],
         answer: 0,
         explain: "„One-way or round-trip? — Round-trip, please.“",
@@ -109,23 +109,23 @@ export const enA1U14: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Hello. To the airport, please.\n" +
+      "Lucy: Hello. To the airport, please.\n" +
       "Driver: Of course. Which terminal?\n" +
-      "Ela: I don't know. My flight is at two o'clock.\n" +
+      "Lucy: I don't know. My flight is at two o'clock.\n" +
       "Driver: Then terminal one. How long does it take? Forty minutes today.\n" +
-      "Ela: Forty! Is that far?\n" +
+      "Lucy: Forty! Is that far?\n" +
       "Driver: The airport is far from here, yes. But the road is good.\n" +
-      "Ela: Please stop here for one minute. I want to buy water.\n" +
+      "Lucy: Please stop here for one minute. I want to buy water.\n" +
       "Driver: No problem.\n" +
-      "Ela: Thank you. Can I have a receipt, please?\n" +
+      "Lucy: Thank you. Can I have a receipt, please?\n" +
       "Driver: Yes, here it is. That is thirty-five euros.\n" +
-      "Ela: Can I pay by card?\n" +
+      "Lucy: Can I pay by card?\n" +
       "Driver: Yes. The card machine is next to your seat, on the left.\n" +
-      "Ela: Thank you. Sorry for the stop!\n" +
+      "Lucy: Thank you. Sorry for the stop!\n" +
       "Driver: No problem at all.",
     questions: [
       {
-        text: "Where does Ela go?",
+        text: "Where does Lucy go?",
         options: ["to the airport", "to the station", "to the square"],
         answer: 0,
         explain: "„Hello. To the airport, please.“",
@@ -166,7 +166,7 @@ export const enA1U14: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ela get from the driver?",
+        text: "What does Lucy get from the driver?",
         options: [],
         answer: 0,
         accept: ["a receipt", "the receipt", "receipt"],
@@ -262,17 +262,17 @@ export const enA1U14: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Sena", text: "Excuse me, is the bank far from here?" },
+      { speaker: "Ellie", text: "Excuse me, is the bank far from here?" },
       { speaker: "Man", text: "No, it's near here. The bank is next to the hotel." },
-      { speaker: "Sena", text: "And the hotel?" },
+      { speaker: "Ellie", text: "And the hotel?" },
       { speaker: "Man", text: "Go straight. The hotel is behind the square, on the right." },
-      { speaker: "Sena", text: "Is there a taxi near here?" },
+      { speaker: "Ellie", text: "Is there a taxi near here?" },
       { speaker: "Man", text: "Yes, in front of the station. But the bank is only five minutes on foot." },
-      { speaker: "Sena", text: "Good. And the post office?" },
+      { speaker: "Ellie", text: "Good. And the post office?" },
       { speaker: "Man", text: "Between the bank and the hotel. You can see it from here." },
-      { speaker: "Sena", text: "Thank you! One more thing: how long does it take to get to the airport?" },
+      { speaker: "Ellie", text: "Thank you! One more thing: how long does it take to get to the airport?" },
       { speaker: "Man", text: "By taxi, forty minutes. By train, one hour." },
-      { speaker: "Sena", text: "Then I'm going to take a taxi. Thank you very much!" },
+      { speaker: "Ellie", text: "Then I'm going to take a taxi. Thank you very much!" },
     ],
     questions: [
       {

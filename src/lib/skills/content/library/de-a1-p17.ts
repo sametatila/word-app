@@ -209,7 +209,7 @@ export const deA1P17: SkillExercise[] = [
           { de: "Schreib mir eine Nachricht!", tr: "Bana mesaj yaz!", en: "Send me a message!" },
         ],
         sample:
-          "Hallo, ich heiße Emre und bin einunddreißig Jahre alt. Ich suche jemanden zum Laufen. " +
+          "Hallo, ich heiße Till und bin einunddreißig Jahre alt. Ich suche jemanden zum Laufen. " +
           "Ich laufe dreimal pro Woche im Stadtpark, am Montag, am Mittwoch und am Freitag. " +
           "Ich möchte morgens um sieben Uhr laufen, vor der Arbeit. Ich laufe ungefähr dreißig Minuten, nicht sehr schnell. " +
           "Allein ist es oft langweilig. Hast du Lust? Schreib mir eine Nachricht!",
@@ -385,7 +385,7 @@ export const deA1P17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Frau Demir besucht ___ Sohn. (ihr)",
+        text: "Frau Böhm besucht ___ Sohn. (ihr)",
         options: [],
         answer: 0,
         accept: ["ihren"],

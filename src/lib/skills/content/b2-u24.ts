@@ -291,19 +291,19 @@ export const b2U24: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Erol", text: "Ich soll am Freitag die Rede halten. Wo fange ich an?" },
+      { speaker: "Günter", text: "Ich soll am Freitag die Rede halten. Wo fange ich an?" },
       { speaker: "Lore", text: "Nicht beim Werdegang. Den kennen alle, das wird eine Aufzählung." },
-      { speaker: "Erol", text: "Womit dann?" },
+      { speaker: "Günter", text: "Womit dann?" },
       { speaker: "Lore", text: "Mit einem Moment. Nachdem wir 2014 das Lager verloren hatten, hat sie die ganze Abteilung zusammengehalten." },
-      { speaker: "Erol", text: "Stimmt, daran erinnern sich alle." },
+      { speaker: "Günter", text: "Stimmt, daran erinnern sich alle." },
       { speaker: "Lore", text: "Genau. Ein Bild sagt mehr als vierzig Jahre Laufbahn in Stichpunkten." },
-      { speaker: "Erol", text: "Und dann?" },
+      { speaker: "Günter", text: "Und dann?" },
       { speaker: "Lore", text: "Dann ein Satz über deine Bewunderung. Ehrlich, nicht feierlich." },
-      { speaker: "Erol", text: "Ihre Zuwendung zu neuen Kollegen. Sie hat sich immer Zeit genommen." },
+      { speaker: "Günter", text: "Ihre Zuwendung zu neuen Kollegen. Sie hat sich immer Zeit genommen." },
       { speaker: "Lore", text: "Das ist gut. Das ist konkret und wahr." },
-      { speaker: "Erol", text: "Und zum Schluss etwas über den Lebensabend?" },
+      { speaker: "Günter", text: "Und zum Schluss etwas über den Lebensabend?" },
       { speaker: "Lore", text: "Kurz. Sie ist gesellig, sie wird nicht verschwinden. Sag lieber, dass die Tür offen bleibt." },
-      { speaker: "Erol", text: "Verbundenheit zeigt man so. Das ist wohltuender als jeder Wunsch für die Zukunft." },
+      { speaker: "Günter", text: "Verbundenheit zeigt man so. Das ist wohltuender als jeder Wunsch für die Zukunft." },
     ],
     questions: [
       {
@@ -322,14 +322,14 @@ export const b2U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was bewundert Erol an der Kollegin?",
+        text: "Was bewundert Günter an der Kollegin?",
         options: [],
         answer: 0,
         accept: ["ihre Zuwendung zu Neuen", "ihre Zeit für Neue", "die Zuwendung"],
         explain: "„Ihre Zuwendung zu neuen Kollegen. Sie hat sich immer Zeit genommen.“",
       },
       {
-        text: "Was soll Erol statt Zukunftswünschen sagen?",
+        text: "Was soll Günter statt Zukunftswünschen sagen?",
         options: [
           "dass die Tür offen bleibt",
           "dass sie fehlen wird",
@@ -436,7 +436,7 @@ export const b2U24: SkillExercise[] = [
         sample:
           "SCHLUSS DER PROJEKTPRÄSENTATION — 14. NOVEMBER\n\n" +
           "Zusammenfassend lässt sich sagen, dass wir zwei der drei Ziele erreicht haben. Die Durchlaufzeit ist von elf auf sieben Tage gesunken. Die Fehlerquote liegt bei 1,8 Prozent und damit unter der Zielmarke. Das dritte Ziel, die Umstellung der Altdaten, haben wir nicht geschafft — die Abweichung beträgt zwei Monate.\n\n" +
-          "Zum Ausblick. Bis zum 15. Dezember stellt Team Nord die verbleibenden Altdaten um; Frau Deniz übernimmt die Prüfung. Der nächste Zwischenbericht kommt in der zweiten Januarwoche.\n\n" +
+          "Zum Ausblick. Bis zum 15. Dezember stellt Team Nord die verbleibenden Altdaten um; Frau Hermann übernimmt die Prüfung. Der nächste Zwischenbericht kommt in der zweiten Januarwoche.\n\n" +
           "Und damit zu meiner Frage an Sie, die eigentliche Frage dieses Termins: Sollen wir die zwei Monate im ersten Quartal aufholen — dann brauchen wir eine halbe Stelle mehr — oder passen wir den Projektauftrag an und verschieben den Endtermin auf Ende März?\n\n" +
           "Beides ist vertretbar, aber wir sollten es heute entscheiden. Vielen Dank für Ihre Aufmerksamkeit.",
       },

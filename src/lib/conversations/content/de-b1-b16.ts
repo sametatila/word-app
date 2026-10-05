@@ -176,7 +176,7 @@ export const deB1B16: Conversation[] = [
       { say: [tr("Örnek:"), de("Wissen Sie, ob das Institut auch Kurse anbietet?"), tr("Tekrar et:"), de("Wissen Sie, ob das Institut auch Kurse anbietet")], expect: repeat("Wissen Sie, ob das Institut auch Kurse anbietet") },
       { say: [tr("Sıra sende: 'Araştırmanın bitip bitmediğini biliyor musunuz?'")], expect: produce("Wissen Sie, ob die Forschung fertig ist", [tr("Bağlaçtan sonra fiil en sonda:"), de("Wissen Sie, ob die Forschung fertig ist?"), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıbımız kibarca bilgi istiyor: dilek kipi ve soru sözcüğü bağlacı. Uzmanla konuşmanın standart açılışı.")] },
-      { say: [tr("Şimdi: 'Bunun nasıl işlediğini öğrenmek isterdim.'")], expect: produce("Ich würde gern wissen, wie das funktioniert", [tr("Dilek kipi başta, bağlaçtan sonra fiil sonda:"), de("Ich würde gern wissen, wie das funktioniert."), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi: 'Bunun nasıl işlediğini öğrenmek isterdim.'")], expect: produce("Ich würde gern wissen, wie das funktioniert", [tr("Leonie kipi başta, bağlaçtan sonra fiil sonda:"), de("Ich würde gern wissen, wie das funktioniert."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ich würde gern wissen, wie viel das kostet."), tr("cümlesi doğru mu?")], expect: truefalse("Ich würde gern wissen, wie viel das kostet.", true, [tr("Doğru. Dolaylı soruda çekimli fiil soru kelimesinden sonra değil, cümlenin en sonunda duruyor.")]) },
       { say: [tr("Son: 'Uzmanların bu konuda ne düşündüğünü sorabilir miyim?'")], expect: produce("Darf ich fragen, was die Fachleute davon halten", [tr("Kibar giriş, bağlaç ve sonda fiil:"), de("Darf ich fragen, was die Fachleute davon halten?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi bir uzmana danışacak ve bilmediklerini soracaksın.")] },
@@ -322,7 +322,7 @@ export const deB1B16: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Yöneticinle konuşacaksın. Almanca iş dilinde öneri emir gibi durmamalı; dilek kipi bunu sağlıyor. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Dilek kipiyle sunulan öneri hem kibardır hem geri çekilebilir — muhatabın hayır demesi kolaylaşır ve bu bilinçli bir nezakettir. Önce kelimeler.")] },
+      { say: [tr("Leonie kipiyle sunulan öneri hem kibardır hem geri çekilebilir — muhatabın hayır demesi kolaylaşır ve bu bilinçli bir nezakettir. Önce kelimeler.")] },
       word("İlk", { de: "die Chefin", tr: "kadın patron" }),
       word("İkinci", { de: "leiten", tr: "yönetmek" }),
       word("Üçüncü", { de: "die Leitung", tr: "yönetim" }),

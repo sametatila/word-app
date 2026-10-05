@@ -129,7 +129,7 @@
     "Yes, this is my family. These are my parents."
    ],
    "ctx": [
-    "A1.2 Family and people · Ahmet"
+    "A1.2 Family and people · Finn"
    ]
   },
   {
@@ -243,7 +243,7 @@
     "What a pity! The wedding is in a garden and there is music and dancing."
    ],
    "ctx": [
-    "A2.8 Celebrations and people · Nuray"
+    "A2.8 Celebrations and people · Cara"
    ]
   },
   {
@@ -472,7 +472,7 @@
     "That's a great idea. Thank you for your help!"
    ],
    "ctx": [
-    "A2.8 Celebrations and people · Nuray"
+    "A2.8 Celebrations and people · Cara"
    ]
   },
   {
@@ -630,7 +630,7 @@
     "I am. Could we discuss the bonus as well?"
    ],
    "ctx": [
-    "B1.1 My career so far · Selin"
+    "B1.1 My career so far · Megan"
    ]
   },
   {
@@ -681,7 +681,7 @@
     "First open Settings, then choose the camera. Is it on?"
    ],
    "ctx": [
-    "A2.9 Media and technology · Deniz"
+    "A2.9 Media and technology · Charlie"
    ]
   },
   {
@@ -953,7 +953,7 @@
    ]
   },
   {
-   "tr": "Dilek kipiyle talebini koy („We request that …“)",
+   "tr": "Sandy kipiyle talebini koy („We request that …“)",
    "kind": "writing.checklist",
    "n": 1,
    "de": [],
@@ -1024,18 +1024,18 @@
    ]
   },
   {
-   "tr": "Mülakatı yapan kişi Ela'nın kuzenine ne söyledi?",
+   "tr": "Mülakatı yapan kişi Lucy'nin kuzenine ne söyledi?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What did the interviewer tell Ela's cousin?"
+    "What did the interviewer tell Lucy's cousin?"
    ],
    "ctx": [
     "B1.10 Feelings and dreams · dinleme sorusu"
    ],
    "options": [
-    "Bora's report was excellent",
-    "Bora had been late",
+    "Jacob's report was excellent",
+    "Jacob had been late",
     "The team wanted a second interview",
     "The letter was a mistake"
    ]
@@ -1390,7 +1390,7 @@
     "Even though the answer was no, the interview was good practice."
    ],
    "ctx": [
-    "B1.10 Feelings and dreams · Ela"
+    "B1.10 Feelings and dreams · Lucy"
    ]
   },
   {
@@ -1432,7 +1432,7 @@
     "No, I don't have a brother. But we have a dog!"
    ],
    "ctx": [
-    "A1.2 Family and people · Ahmet"
+    "A1.2 Family and people · Finn"
    ]
   },
   {

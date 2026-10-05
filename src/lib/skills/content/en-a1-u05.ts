@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           husband, kind, funny, quiet, busy, nice, angry, strong, great.
  *   Kalıp:  He is tall. · She has long hair. · What does he look like? ·
  *           He plays soccer. · She likes music. · We work together. ·
- *           This is my aunt. · Ali's cousin · Who is this? ·
+ *           This is my aunt. · Harry's cousin · Who is this? ·
  *           He is very kind. · She isn't quiet. · Is she nice?
  *
  * Ünitenin ayırt edici zorluğu İKİ „gibi“: „What does he look like?“ dış
@@ -28,7 +28,7 @@ export const enA1U05: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 5,
-    title: "My friend Kaan",
+    title: "My friend Liam",
     genre: "personal",
     intro: "Bir arkadaş anlatılıyor: hem nasıl göründüğü hem nasıl biri olduğu.",
     gloss: [
@@ -39,33 +39,33 @@ export const enA1U05: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "My friend Kaan is nineteen. He is very tall and he has short hair. His eyes are green.\n\n" +
-      "Kaan is not quiet. He is funny, and he talks a lot. He is kind too — he never forgets a birthday.\n\n" +
-      "We work together in a small school. After work we play a game or we talk about music. Kaan likes music very much.\n\n" +
-      "Kaan's cousin Ada is in our club. She is quiet, but she is nice. Her hair is long and she looks like Kaan. They are a funny group!",
+      "My friend Liam is nineteen. He is very tall and he has short hair. His eyes are green.\n\n" +
+      "Liam is not quiet. He is funny, and he talks a lot. He is kind too — he never forgets a birthday.\n\n" +
+      "We work together in a small school. After work we play a game or we talk about music. Liam likes music very much.\n\n" +
+      "Liam's cousin Ada is in our club. She is quiet, but she is nice. Her hair is long and she looks like Liam. They are a funny group!",
     questions: [
       {
-        text: "How old is Kaan?",
+        text: "How old is Liam?",
         options: ["nineteen", "nine", "ninety"],
         answer: 0,
-        explain: "„My friend Kaan is nineteen.“ — yaşta „years old“ düşebiliyor.",
+        explain: "„My friend Liam is nineteen.“ — yaşta „years old“ düşebiliyor.",
       },
       {
-        text: "What does Kaan like very much?",
+        text: "What does Liam like very much?",
         options: ["music", "games", "birthdays"],
         answer: 0,
-        explain: "„Kaan likes music very much.“ Oyun da oynuyorlar ama „very much“ müzik için.",
+        explain: "„Liam likes music very much.“ Oyun da oynuyorlar ama „very much“ müzik için.",
       },
       {
         kind: "truefalse",
-        text: "Kaan talks a lot.",
+        text: "Liam talks a lot.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Kaan is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
+        explain: "„Liam is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
       },
       {
         kind: "gapfill",
-        text: "Kaan has ___ hair.",
+        text: "Liam has ___ hair.",
         options: [],
         answer: 0,
         accept: ["short"],
@@ -76,8 +76,8 @@ export const enA1U05: SkillExercise[] = [
         text: "Who is Ada?",
         options: [],
         answer: 0,
-        accept: ["Kaan's cousin", "his cousin", "a cousin"],
-        explain: "„Kaan's cousin Ada is in our club.“ — iyelik „-'s“ ile: Kaan's cousin.",
+        accept: ["Liam's cousin", "his cousin", "a cousin"],
+        explain: "„Liam's cousin Ada is in our club.“ — iyelik „-'s“ ile: Liam's cousin.",
       },
     ],
   },
@@ -87,9 +87,9 @@ export const enA1U05: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 5,
-    title: "Sena's grandfather",
+    title: "Ellie's grandfather",
     genre: "dialogue",
-    intro: "Sena akrabalarını anlatıyor. „look like“ görünüşü sorar — cevabı da görünüş olmalı.",
+    intro: "Ellie akrabalarını anlatıyor. „look like“ görünüşü sorar — cevabı da görünüş olmalı.",
     gloss: [
       { de: "really", tr: "gerçekten" },
       { de: "know", tr: "bilmek" },
@@ -97,41 +97,41 @@ export const enA1U05: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Mert: Who is that man? Is he your uncle?\n" +
-      "Sena: No, he isn't. That is my grandfather.\n" +
-      "Mert: Really? He looks very strong!\n" +
-      "Sena: Yes, he is. He is seventy-one, but he plays with us every day.\n" +
-      "Mert: And the woman with him?\n" +
-      "Sena: That is my grandmother. My grandparents live together in Izmir.\n" +
-      "Mert: What does your aunt look like?\n" +
-      "Sena: She is short and she has long hair. She is very funny.\n" +
-      "Mert: Is she busy?\n" +
-      "Sena: Yes, she is always busy. She has four children.\n" +
-      "Mert: Four! Ali's cousin has four children too.\n" +
-      "Sena: I know. Ada is my friend.",
+      "Henry: Who is that man? Is he your uncle?\n" +
+      "Ellie: No, he isn't. That is my grandfather.\n" +
+      "Henry: Really? He looks very strong!\n" +
+      "Ellie: Yes, he is. He is seventy-one, but he plays with us every day.\n" +
+      "Henry: And the woman with him?\n" +
+      "Ellie: That is my grandmother. My grandparents live together in Izmir.\n" +
+      "Henry: What does your aunt look like?\n" +
+      "Ellie: She is short and she has long hair. She is very funny.\n" +
+      "Henry: Is she busy?\n" +
+      "Ellie: Yes, she is always busy. She has four children.\n" +
+      "Henry: Four! Harry's cousin has four children too.\n" +
+      "Ellie: I know. Ada is my friend.",
     questions: [
       {
         text: "Who is the strong man?",
-        options: ["Sena's grandfather", "Sena's uncle", "Mert"],
+        options: ["Ellie's grandfather", "Ellie's uncle", "Henry"],
         answer: 0,
-        explain: "„No, he isn't. That is my grandfather.“ — Mert amcası sanıyor, Sena düzeltiyor.",
+        explain: "„No, he isn't. That is my grandfather.“ — Henry amcası sanıyor, Ellie düzeltiyor.",
       },
       {
-        text: "What does Sena's aunt look like?",
+        text: "What does Ellie's aunt look like?",
         options: ["short, with long hair", "tall, with short hair", "strong and quiet"],
         answer: 0,
         explain: "„She is short and she has long hair.“ — „funny“ ve „busy“ görünüş değil, karakter.",
       },
       {
         kind: "truefalse",
-        text: "Sena's grandparents live in Izmir.",
+        text: "Ellie's grandparents live in Izmir.",
         options: ["True", "False"],
         answer: 0,
         explain: "„My grandparents live together in Izmir.“ — ikisi birlikte.",
       },
       {
         kind: "gapfill",
-        text: "Sena's aunt has ___ children.",
+        text: "Ellie's aunt has ___ children.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
@@ -170,7 +170,7 @@ export const enA1U05: SkillExercise[] = [
     unit: 5,
     title: "Our club",
     genre: "monologue",
-    intro: "Eda kulübündeki üç kişiyi anlatıyor. Her biri için hem görünüş hem karakter geliyor.",
+    intro: "Erin kulübündeki üç kişiyi anlatıyor. Her biri için hem görünüş hem karakter geliyor.",
     gloss: [
       { de: "dark", tr: "koyu" },
       { de: "music", tr: "müzik" },
@@ -178,36 +178,36 @@ export const enA1U05: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Eda", text: "Hello! I am Eda. This is our music club. We play music together every week." },
-      { speaker: "Eda", text: "My friend Can is here. He is tall and he has short, dark hair." },
-      { speaker: "Eda", text: "Can is very funny. He talks a lot and he is never quiet." },
-      { speaker: "Eda", text: "This is Nil. She is short and she has great eyes. She is kind and nice." },
-      { speaker: "Eda", text: "Nil's cousin Ali plays with us too. He is quiet, but he is very strong." },
-      { speaker: "Eda", text: "We are a good group. We play, we talk, and we are never angry." },
+      { speaker: "Erin", text: "Hello! I am Erin. This is our music club. We play music together every week." },
+      { speaker: "Erin", text: "My friend Tyler is here. He is tall and he has short, dark hair." },
+      { speaker: "Erin", text: "Tyler is very funny. He talks a lot and he is never quiet." },
+      { speaker: "Erin", text: "This is Katie. She is short and she has great eyes. She is kind and nice." },
+      { speaker: "Erin", text: "Katie's cousin Harry plays with us too. He is quiet, but he is very strong." },
+      { speaker: "Erin", text: "We are a good group. We play, we talk, and we are never angry." },
     ],
     questions: [
       {
-        text: "What does Can look like?",
+        text: "What does Tyler look like?",
         options: ["tall, with short hair", "short, with long hair", "strong and quiet"],
         answer: 0,
         explain: "„He is tall and he has short, dark hair.“ — „funny“ karakter, görünüş değil.",
       },
       {
         text: "Who is quiet?",
-        options: ["Ali", "Can", "Eda"],
+        options: ["Harry", "Tyler", "Erin"],
         answer: 0,
         explain: "„He is quiet, but he is very strong.“ Can ise „never quiet“.",
       },
       {
         kind: "truefalse",
-        text: "Nil is Ali's cousin.",
+        text: "Katie is Harry's cousin.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Nil's cousin Ali plays with us too.“ — kuzenlik iki yönlüdür.",
+        explain: "„Katie's cousin Harry plays with us too.“ — kuzenlik iki yönlüdür.",
       },
       {
         kind: "gapfill",
-        text: "Can has short, ___ hair.",
+        text: "Tyler has short, ___ hair.",
         options: [],
         answer: 0,
         accept: ["dark"],
@@ -248,41 +248,41 @@ export const enA1U05: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ayse", text: "Deniz, who is this in the photo? Your uncle?" },
-      { speaker: "Deniz", text: "No, that is my aunt's husband. His name is Kaan." },
-      { speaker: "Ayse", text: "And this woman with the great hair?" },
-      { speaker: "Deniz", text: "That is my grandmother. My grandfather is here too, with the dog." },
-      { speaker: "Ayse", text: "Your grandparents look very nice." },
-      { speaker: "Deniz", text: "They are. My grandmother is funny and my grandfather is quiet." },
-      { speaker: "Ayse", text: "Is this your cousin?" },
-      { speaker: "Deniz", text: "Yes, that is my cousin Ali. We are one family!" },
-      { speaker: "Ayse", text: "Are your parents in the photo?" },
-      { speaker: "Deniz", text: "No, they aren't. My mother always takes our photos." },
-      { speaker: "Ayse", text: "Then it is a good photo!" },
+      { speaker: "Rachel", text: "Charlie, who is this in the photo? Your uncle?" },
+      { speaker: "Charlie", text: "No, that is my aunt's husband. His name is Liam." },
+      { speaker: "Rachel", text: "And this woman with the great hair?" },
+      { speaker: "Charlie", text: "That is my grandmother. My grandfather is here too, with the dog." },
+      { speaker: "Rachel", text: "Your grandparents look very nice." },
+      { speaker: "Charlie", text: "They are. My grandmother is funny and my grandfather is quiet." },
+      { speaker: "Rachel", text: "Is this your cousin?" },
+      { speaker: "Charlie", text: "Yes, that is my cousin Harry. We are one family!" },
+      { speaker: "Rachel", text: "Are your parents in the photo?" },
+      { speaker: "Charlie", text: "No, they aren't. My mother always takes our photos." },
+      { speaker: "Rachel", text: "Then it is a good photo!" },
     ],
     questions: [
       {
-        text: "Who is Kaan?",
-        options: ["Deniz's aunt's husband", "Deniz's uncle", "Deniz's grandfather"],
+        text: "Who is Liam?",
+        options: ["Charlie's aunt's husband", "Charlie's uncle", "Charlie's grandfather"],
         answer: 0,
-        explain: "„No, that is my aunt's husband. His name is Kaan.“ — Ayse amca sanıyor.",
+        explain: "„No, that is my aunt's husband. His name is Liam.“ — Rachel amca sanıyor.",
       },
       {
         text: "Who takes the family photos?",
-        options: ["Deniz's mother", "Deniz's grandmother", "Ayse"],
+        options: ["Charlie's mother", "Charlie's grandmother", "Rachel"],
         answer: 0,
         explain: "„My mother always takes our photos.“ — bu yüzden anne fotoğrafta yok.",
       },
       {
         kind: "truefalse",
-        text: "Deniz's grandfather is funny.",
+        text: "Charlie's grandfather is funny.",
         options: ["True", "False"],
         answer: 1,
         explain: "„My grandmother is funny and my grandfather is quiet.“ — komik olan büyükanne.",
       },
       {
         kind: "gapfill",
-        text: "Deniz's grandfather is ___.",
+        text: "Charlie's grandfather is ___.",
         options: [],
         answer: 0,
         accept: ["quiet"],
@@ -306,7 +306,7 @@ export const enA1U05: SkillExercise[] = [
         text: "Who is with the dog?",
         options: [],
         answer: 0,
-        accept: ["the grandfather", "his grandfather", "grandfather", "Deniz's grandfather"],
+        accept: ["the grandfather", "his grandfather", "grandfather", "Charlie's grandfather"],
         explain: "„My grandfather is here too, with the dog.“",
       },
     ],
@@ -319,7 +319,7 @@ export const enA1U05: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 5,
-    title: "A card about Kaan",
+    title: "A card about Liam",
     genre: "personal",
     intro: "Görünüş yaz. Sonunda kişi kartını doldur.",
     gloss: [
@@ -355,10 +355,10 @@ export const enA1U05: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "Kişi kartını Kaan için doldur.",
-        facts: "Kaan; uzun boylu; kısa saçlı; komik; on dokuz yaşında.",
+        prompt: "Kişi kartını Liam için doldur.",
+        facts: "Liam; uzun boylu; kısa saçlı; komik; on dokuz yaşında.",
         fields: [
-          { label: "Name", answer: "Kaan" },
+          { label: "Name", answer: "Liam" },
           { label: "Hair", answer: "short" },
           { label: "Character", answer: "funny" },
           { label: "Age", answer: "19", accept: ["nineteen"] },

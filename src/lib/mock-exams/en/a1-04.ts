@@ -69,7 +69,7 @@ Mrs. Talia Roth`,
               title: "For our patients",
               body: `Doctor Otto is not here from July 12 to 15.
 
-Doctor Pelin works here on those days. Her room is number 4.
+Doctor Jodie works here on those days. Her room is number 4.
 
 For a new appointment please call us. Do not write an email; we are slow with email.
 
@@ -120,7 +120,7 @@ At night and on the weekend, call 112.`,
               text: "You can see a doctor on July 13.",
               answer: true,
               explain:
-                "13 Temmuz, Doktor Otto'nun olmadığı aralıkta (12–15) ama not devamı veriyor: «Doctor Pelin works here on those days». Yani o günlerde başka bir doktor var.",
+                "13 Temmuz, Doktor Otto'nun olmadığı aralıkta (12–15) ama not devamı veriyor: «Doctor Jodie works here on those days». Yani o günlerde başka bir doktor var.",
             },
             {
               kind: "bool",
@@ -450,7 +450,7 @@ Clara Weiss`,
               plays: 2,
               segments: [
                 { speaker: "Janne", text: "Is the homework for tomorrow?" },
-                { speaker: "Meral", text: "No, for Thursday. But the book must go back tomorrow." },
+                { speaker: "Harriet", text: "No, for Thursday. But the book must go back tomorrow." },
               ],
             },
             {
@@ -528,7 +528,7 @@ Clara Weiss`,
               options: ["Bring the book back", "Finish the homework", "Nothing at all"],
               answer: 0,
               explain:
-                "Meral ödevin perşembeye olduğunu söylüyor ama «the book must go back tomorrow» diyor. Yarın için tek iş kitabı geri vermek; ödev sorusu tuzak.",
+                "Harriet ödevin perşembeye olduğunu söylüyor ama «the book must go back tomorrow» diyor. Yarın için tek iş kitabı geri vermek; ödev sorusu tuzak.",
             },
             {
               kind: "mcq",
@@ -906,7 +906,7 @@ No sports in:         {{5}}`,
 I am at home today. I have a bad cold and I cannot come to the class. I will come back on Thursday. Can you send me the homework, please?
 
 Thank you!
-Meral`,
+Harriet`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Hitap ve veda var mı? (Dear … / Thank you …)",

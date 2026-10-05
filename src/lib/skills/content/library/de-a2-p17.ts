@@ -111,26 +111,26 @@ export const deA2P17: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Selin", text: "Guten Tag, haben Sie noch zwei Karten für Samstagabend?" },
+      { speaker: "Luisa", text: "Guten Tag, haben Sie noch zwei Karten für Samstagabend?" },
       { speaker: "Frau Rieger", text: "Samstag ist leider ausverkauft. Am Sonntag gibt es aber noch eine Vorstellung um sechzehn Uhr." },
-      { speaker: "Selin", text: "Sonntag geht auch. Wo sind noch Plätze frei?" },
+      { speaker: "Luisa", text: "Sonntag geht auch. Wo sind noch Plätze frei?" },
       { speaker: "Frau Rieger", text: "Unten gibt es nur noch einzelne Plätze. Zusammen sitzen können Sie oben auf dem Balkon, in Reihe drei." },
-      { speaker: "Selin", text: "Sieht man von dort gut?" },
+      { speaker: "Luisa", text: "Sieht man von dort gut?" },
       { speaker: "Frau Rieger", text: "Ja, sehr gut. Man hört die Schauspieler nur manchmal etwas leiser. Die Karte kostet dort zweiundzwanzig Euro." },
-      { speaker: "Selin", text: "Meine Freundin studiert noch. Gibt es eine Ermäßigung?" },
+      { speaker: "Luisa", text: "Meine Freundin studiert noch. Gibt es eine Ermäßigung?" },
       { speaker: "Frau Rieger", text: "Ja, mit Studentenausweis zahlt sie die Hälfte. Den Ausweis muss sie am Eingang zeigen." },
-      { speaker: "Selin", text: "Gut, dann nehme ich die zwei. Kann ich mit Karte zahlen?" },
+      { speaker: "Luisa", text: "Gut, dann nehme ich die zwei. Kann ich mit Karte zahlen?" },
       { speaker: "Frau Rieger", text: "Natürlich. Die Vorstellung dauert zwei Stunden mit Pause. Viel Spaß!" },
     ],
     questions: [
       {
-        text: "Warum kauft Selin keine Karten für Samstag?",
+        text: "Warum kauft Luisa keine Karten für Samstag?",
         options: ["Sie hat am Samstag keine Zeit.", "Es gibt keine Karten mehr.", "Die Karten sind zu teuer."],
         answer: 1,
         explain: "„Samstag ist leider ausverkauft.“",
       },
       {
-        text: "Wo sitzen Selin und ihre Freundin?",
+        text: "Wo sitzen Luisa und ihre Freundin?",
         options: ["unten in Reihe drei", "ganz vorne unten", "oben auf dem Balkon"],
         answer: 2,
         explain: "Aşağıda yalnız tek tük yer var; birlikte oturmak için „oben auf dem Balkon, in Reihe drei“.",
@@ -219,7 +219,7 @@ export const deA2P17: SkillExercise[] = [
         ],
         sample:
           "Hallo Tom,\n\n" +
-          "wie geht's dir? Ich muss dir von Samstag erzählen! Ich war mit Deniz im Konzert von Lina Berg in der Stadthalle. " +
+          "wie geht's dir? Ich muss dir von Samstag erzählen! Ich war mit Sascha im Konzert von Lina Berg in der Stadthalle. " +
           "Du weißt ja, ich höre ihre Lieder schon seit Jahren. Das Konzert hat eine halbe Stunde später angefangen, " +
           "aber dann war es fantastisch. Am schönsten war das letzte Lied: Alle haben mitgesungen, das Licht war aus " +
           "und nur die Handys haben geleuchtet. Nicht so toll war die Luft in der Halle, es war sehr warm und eng. " +
@@ -237,7 +237,7 @@ export const deA2P17: SkillExercise[] = [
     skill: "speaking",
     title: "Bitte oder Befehl?",
     genre: "pronounce",
-    intro: "Emir kipi Almancada kaba değildir; kibarlığı „bitte, mal, doch“ ve yumuşak bir ezgi taşır. Altı cümlede ricayı rica gibi söyle.",
+    intro: "Uwe kipi Almancada kaba değildir; kibarlığı „bitte, mal, doch“ ve yumuşak bir ezgi taşır. Altı cümlede ricayı rica gibi söyle.",
     gloss: [
       { de: "das Fenster", tr: "pencere", en: "window" },
       { de: "vorbeikommen", tr: "uğramak", en: "to come by" },

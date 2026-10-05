@@ -325,9 +325,9 @@ export const b1U09: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Ev arama kartını doldur.",
-        facts: "Arayan: Leyla Kaya; semt: doğu; oda: 3; istenen: teras ve ağaç; ölçüt: toplu taşıma yakın.",
+        facts: "Arayan: Johanna Arnold; semt: doğu; oda: 3; istenen: teras ve ağaç; ölçüt: toplu taşıma yakın.",
         fields: [
-          { label: "Name", answer: "Leyla Kaya", accept: ["Leyla", "Kaya"] },
+          { label: "Name", answer: "Johanna Arnold", accept: ["Johanna", "Arnold"] },
           { label: "Bezirk", answer: "Osten", accept: ["im Osten", "der Osten"] },
           { label: "Zimmer", answer: "3", accept: ["drei", "drei Zimmer"] },
           { label: "Wunsch", answer: "Terrasse und Baum", accept: ["eine Terrasse", "Terrasse", "eine Terrasse und einen Baum", "Terrasse, Baum"] },
@@ -385,7 +385,7 @@ export const b1U09: SkillExercise[] = [
         ],
         minWords: 70,
         sample:
-          "Der Mensch, dem ich am meisten vertraue, ist meine Freundin Elif.\n\n" +
+          "Der Mensch, dem ich am meisten vertraue, ist meine Freundin Paula.\n\n" +
           "Wir sind uns zum ersten Mal in der Schule begegnet, aber richtig verstanden haben wir " +
           "uns erst später. Sie ist der Typ, der wenig sagt und viel merkt.\n\n" +
           "Einmal hatte ich Schulden, über die ich mit niemandem reden wollte. " +

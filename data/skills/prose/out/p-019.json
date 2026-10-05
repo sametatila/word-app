@@ -245,9 +245,9 @@
   "en": "With a modal a separable verb stays whole and last: „können Sie … dranbleiben“."
  },
  {
-  "tr": "Ayse \"How much is a haircut?\" diye soruyor, görevli \"It's twenty euros\" diyor. Yani doğru.",
+  "tr": "Rachel \"How much is a haircut?\" diye soruyor, görevli \"It's twenty euros\" diyor. Yani doğru.",
   "kind": "explain",
-  "en": "Ayse asks \"How much is a haircut?\" and the assistant says \"It's twenty euros\". So it is true."
+  "en": "Rachel asks \"How much is a haircut?\" and the assistant says \"It's twenty euros\". So it is true."
  },
  {
   "tr": "Bir gazete yazarı, sunumlarda gösterilen sayıların neden yanıltıcı olabildiğini anlatıyor.",
@@ -260,9 +260,9 @@
   "en": "A reference written for an intern. Watch the information the participle adjectives carry."
  },
  {
-  "tr": "Elif \"On Sunday I made lentil soup for my neighbors\" diyor. Arabayı temizleyen ise Kerem.",
+  "tr": "Holly \"On Sunday I made lentil soup for my neighbors\" diyor. Arabayı temizleyen ise Connor.",
   "kind": "explain",
-  "en": "Elif says \"On Sunday I made lentil soup for my neighbors\". Kerem is the one who cleaned the car."
+  "en": "Holly says \"On Sunday I made lentil soup for my neighbors\". Connor is the one who cleaned the car."
  },
  {
   "tr": "Gönüllü emeğin ne taşıdığını anlatan bir yazı. Nasıl sorusuna verilen cevaplara dikkat et.",
@@ -280,9 +280,9 @@
   "en": "In German a comparison is not made with a separate word but with endings on the adjective itself."
  },
  {
-  "tr": "Merve doktora 'I've got a headache and a sore throat.' diyor; yani başı ve boğazı ağrıyor.",
+  "tr": "Isla doktora 'I've got a headache and a sore throat.' diyor; yani başı ve boğazı ağrıyor.",
   "kind": "explain",
-  "en": "Merve tells the doctor 'I've got a headache and a sore throat.'; her head and her throat hurt."
+  "en": "Isla tells the doctor 'I've got a headache and a sore throat.'; her head and her throat hurt."
  },
  {
   "tr": "Son satırda \"She is taking the photo.\" diyor. Büyükanne fotoğrafı çektiği için karede yok.",
@@ -355,9 +355,9 @@
   "en": "dessen is for masculine and neuter owners; its form follows the owner, not the phrase owned."
  },
  {
-  "tr": "Emre \"I stayed at home. I watched three movies and cooked for my family.\" diyor; evde kaldı.",
+  "tr": "Owen \"I stayed at home. I watched three movies and cooked for my family.\" diyor; evde kaldı.",
   "kind": "explain",
-  "en": "Emre says \"I stayed at home. I watched three movies and cooked for my family.\"; he stayed at home."
+  "en": "Owen says \"I stayed at home. I watched three movies and cooked for my family.\"; he stayed at home."
  },
  {
   "tr": "Evine iki hafta bakacak birine yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
@@ -365,9 +365,9 @@
   "en": "You are going to write instructions for somebody looking after your home for two weeks; first form two sentences, then the instructions."
  },
  {
-  "tr": "Görevli \"Do you have the receipt?\" diye sorunca Emre \"Yes, here it is.\" diyor; fiş yanında.",
+  "tr": "Görevli \"Do you have the receipt?\" diye sorunca Owen \"Yes, here it is.\" diyor; fiş yanında.",
   "kind": "explain",
-  "en": "Asked \"Do you have the receipt?\" Emre says \"Yes, here it is.\"; he has it with him."
+  "en": "Asked \"Do you have the receipt?\" Owen says \"Yes, here it is.\"; he has it with him."
  },
  {
   "tr": "Hece başındaki „r“ boğazdan gelir, hece sonundaki „r“ ise neredeyse bir „a“ sesine dönüşür.",
@@ -420,9 +420,9 @@
   "en": "False. The text says \"Total price: $240 (breakfast included)\", so breakfast is in the price."
  },
  {
-  "tr": "\"20:00 Music evening. Deniz is going to play the guitar for us.\" Emma ise 1. gündeki rehber.",
+  "tr": "\"20:00 Music evening. Charlie is going to play the guitar for us.\" Emma ise 1. gündeki rehber.",
   "kind": "explain",
-  "en": "\"20:00 Music evening. Deniz is going to play the guitar for us.\" Emma is the guide on day 1."
+  "en": "\"20:00 Music evening. Charlie is going to play the guitar for us.\" Emma is the guide on day 1."
  },
  {
   "tr": "„Am schwersten finde ich die Grammatik — Vokabeln lerne ich gern.“ Konuşmak Yara'nın sorunu.",
@@ -455,9 +455,9 @@
   "en": "With „Not only“ at the front the inversion is obligatory: the auxiliary comes before the subject (did he miss)."
  },
  {
-  "tr": "\"Our waiter Emre is here on the weekend. He can help you in English.\" cümlesi bunu söylüyor.",
+  "tr": "\"Our waiter Owen is here on the weekend. He can help you in English.\" cümlesi bunu söylüyor.",
   "kind": "explain",
-  "en": "The sentence \"Our waiter Emre is here on the weekend. He can help you in English.\" says so."
+  "en": "The sentence \"Our waiter Owen is here on the weekend. He can help you in English.\" says so."
  },
  {
   "tr": "„That said“ önceki cümleye ödün verir ve virgülle ayrılır: That said, the objection is real.",
@@ -490,7 +490,7 @@
   "en": "„stehen“ for things standing upright, „liegen“ for things lying down. The folder stands on the shelf."
  },
  {
-  "tr": "Dilek kipi teklifi bir karara değil bir öneriye çeviriyor; karşı tarafın alanı açık kalıyor.",
+  "tr": "Leonie kipi teklifi bir karara değil bir öneriye çeviriyor; karşı tarafın alanı açık kalıyor.",
   "kind": "explain",
   "en": "The subjunctive turns the offer from a decision into a suggestion; the other side keeps its room."
  },
@@ -635,7 +635,7 @@
   "en": "The finite verb must stand second; with „daraus“ filling the Vorfeld the verb comes straight after."
  },
  {
-  "tr": "Dilek kipiyle sorulan bu soru kararı kayda geçirir ve karşı tarafa hâlâ itiraz alanı bırakır.",
+  "tr": "Leonie kipiyle sorulan bu soru kararı kayda geçirir ve karşı tarafa hâlâ itiraz alanı bırakır.",
   "kind": "explain",
   "en": "Asked in the subjunctive, this question puts the decision on record and still leaves room to object."
  },
@@ -665,9 +665,9 @@
   "en": "It carries the claim without naming a source and in measured terms; it is well established in academic register."
  },
  {
-  "tr": "Kaan fotoğrafı gösterirken \"There are six people here.\" diyor. Yani fotoğrafta altı kişi var.",
+  "tr": "Liam fotoğrafı gösterirken \"There are six people here.\" diyor. Yani fotoğrafta altı kişi var.",
   "kind": "explain",
-  "en": "Showing the photo Kaan says \"There are six people here.\" So there are six people in the photo."
+  "en": "Showing the photo Liam says \"There are six people here.\" So there are six people in the photo."
  },
  {
   "tr": "Kulübün gürültüsünü inkâr etmiyor; kapıya iki kişi koyduklarından beri şikâyetlerin yarıya indiğini anlatarak sorunu dolaylı olarak kabul ediyor.",

@@ -1032,7 +1032,7 @@ Mein Arbeitsverhältnis besteht seit vier Jahren; die Probezeit ist {{2}} abgesc
 {{9}} füge ich die ausgefüllte Anmeldung sowie eine Kopie meines Arbeitsvertrags bei.
 
 {{10}}
-Halim Yücel`,
+Manfred Rausch`,
             },
           ],
           items: [

@@ -209,10 +209,10 @@
     "A1.2 Family and people · dinleme sorusu"
    ],
    "options": [
-    "Ahmet's family",
+    "Finn's family",
     "Lena's parents",
-    "Ahmet's friends",
-    "Ahmet's club"
+    "Finn's friends",
+    "Finn's club"
    ]
   },
   {
@@ -316,11 +316,11 @@
    ]
   },
   {
-   "tr": "Kerem neyi bitirdi?",
+   "tr": "Connor neyi bitirdi?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What has Kerem already finished?"
+    "What has Connor already finished?"
    ],
    "ctx": [
     "A2.2 My story, then and now · dinleme sorusu"
@@ -1611,11 +1611,11 @@
    ]
   },
   {
-   "tr": "Emre ne zaman dönüyor?",
+   "tr": "Owen ne zaman dönüyor?",
    "kind": "question",
    "n": 1,
    "de": [
-    "When does Emre travel home?"
+    "When does Owen travel home?"
    ],
    "ctx": [
     "A1.10 Keeping in touch · okuma sorusu"

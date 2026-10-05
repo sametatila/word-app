@@ -239,18 +239,18 @@ export const a2U12: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Frau Petrow", text: "Sie wollten mit mir über Ihren Urlaub sprechen. Wann hätten Sie denn gern frei?" },
-      { speaker: "Sinan", text: "Am liebsten die erste Juliwoche. Ich habe noch zwölf Urlaubstage." },
+      { speaker: "Elias", text: "Am liebsten die erste Juliwoche. Ich habe noch zwölf Urlaubstage." },
       { speaker: "Frau Petrow", text: "Moment, ich schaue in den Kalender. Im Juli ist die Geschäftsreise nach Wien." },
-      { speaker: "Sinan", text: "Stimmt, die hatte ich vergessen. Wann genau ist die?" },
+      { speaker: "Elias", text: "Stimmt, die hatte ich vergessen. Wann genau ist die?" },
       { speaker: "Frau Petrow", text: "Vom zweiten bis zum fünften. Frühestens ab dem achten wäre es also möglich." },
-      { speaker: "Sinan", text: "Dann nehme ich vom achten bis zum fünfzehnten frei. Passt das?" },
+      { speaker: "Elias", text: "Dann nehme ich vom achten bis zum fünfzehnten frei. Passt das?" },
       { speaker: "Frau Petrow", text: "Ja, das können wir so vereinbaren. Bitte stellen Sie den Antrag noch schriftlich." },
-      { speaker: "Sinan", text: "Mache ich heute noch. Und notfalls bin ich per Handy erreichbar." },
+      { speaker: "Elias", text: "Mache ich heute noch. Und notfalls bin ich per Handy erreichbar." },
       { speaker: "Frau Petrow", text: "Das ist nicht nötig. Urlaub ist Urlaub." },
     ],
     questions: [
       {
-        text: "Wie viele Urlaubstage hat Sinan noch?",
+        text: "Wie viele Urlaubstage hat Elias noch?",
         options: ["Acht", "Zwölf", "Fünfzehn"],
         answer: 1,
         explain: "„Ich habe noch zwölf Urlaubstage.“ Sekiz ve on beş, sonunda üzerinde anlaşılan tarihler.",
@@ -264,7 +264,7 @@ export const a2U12: SkillExercise[] = [
         explain: "İş seyahati beşine kadar sürdüğü için izin en erken sekizinde başlayabiliyor.",
       },
       {
-        text: "Was muss Sinan noch machen?",
+        text: "Was muss Elias noch machen?",
         options: ["Den Antrag schriftlich stellen", "Die Reise buchen", "Den Kalender aktualisieren"],
         answer: 0,
         explain: "„Bitte stellen Sie den Antrag noch schriftlich.“",
@@ -360,7 +360,7 @@ export const a2U12: SkillExercise[] = [
           { de: "Meine Aufgaben übernimmt …", tr: "işlerimi … devralıyor", en: "my tasks will be taken over by …" },
         ],
         sample:
-          "Betreff: Urlaubsantrag 8. bis 15. Juli\n\nSehr geehrte Frau Petrow,\n\nhiermit beantrage ich Urlaub vom 8. bis zum 15. Juli, also sechs Arbeitstage. Danach habe ich noch sechs Urlaubstage übrig.\n\nWie besprochen habe ich die erste Juliwoche nicht gewählt, weil in dieser Zeit die Geschäftsreise nach Wien stattfindet. Ich denke, dass der spätere Termin für das Team besser ist.\n\nMeine Aufgaben übernimmt in dieser Zeit Frau Klein. Die offenen Punkte trage ich vorher in den gemeinsamen Kalender ein.\n\nMit freundlichen Grüßen\nSinan Aydin",
+          "Betreff: Urlaubsantrag 8. bis 15. Juli\n\nSehr geehrte Frau Petrow,\n\nhiermit beantrage ich Urlaub vom 8. bis zum 15. Juli, also sechs Arbeitstage. Danach habe ich noch sechs Urlaubstage übrig.\n\nWie besprochen habe ich die erste Juliwoche nicht gewählt, weil in dieser Zeit die Geschäftsreise nach Wien stattfindet. Ich denke, dass der spätere Termin für das Team besser ist.\n\nMeine Aufgaben übernimmt in dieser Zeit Frau Klein. Die offenen Punkte trage ich vorher in den gemeinsamen Kalender ein.\n\nMit freundlichen Grüßen\nElias Haas",
       },
     ],
   },

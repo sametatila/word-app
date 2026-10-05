@@ -394,7 +394,7 @@ Selma Idrissi`,
               kind: "match",
               id: "de-b1-11-l3-13",
               no: 13,
-              text: "Herr Aksoy hat wenig Geld und möchte mittags warm essen, ohne sich vorher anzumelden.",
+              text: "Herr Thiel hat wenig Geld und möchte mittags warm essen, ohne sich vorher anzumelden.",
               answer: "c",
               explain:
                 "(c) hem ucuz hem de kayıt istemiyor: \"ein warmes Gericht für 4 Euro. Keine Anmeldung.\"",
@@ -473,7 +473,7 @@ Selma Idrissi`,
               title: "Nur noch aus der Region — ja oder nein?",
               body: `Ruth Kirchhoff: Ich leite eine Mensa, die genau das gemacht hat, und ich bin dafür. Der Einkauf kostet uns achtzehn Cent mehr pro Portion, aber wir werfen drei Viertel weniger weg. Wer nur auf den Einkaufspreis schaut, rechnet die Hälfte.
 
-Timur Aksoy: Ich koche in einer Kita und bin dagegen. Nicht weil regional schlecht wäre, sondern weil wir zwei Köche für hundertzwanzig Kinder sind. Kleine Lieferungen heißen mehr Bestellungen, mehr Rechnungen, mehr Telefonate. Diese Zeit haben wir schlicht nicht.
+Timur Thiel: Ich koche in einer Kita und bin dagegen. Nicht weil regional schlecht wäre, sondern weil wir zwei Köche für hundertzwanzig Kinder sind. Kleine Lieferungen heißen mehr Bestellungen, mehr Rechnungen, mehr Telefonate. Diese Zeit haben wir schlicht nicht.
 
 Frau Pantel: Als Mutter bin ich dafür, aber nur, wenn der Preis für die Familien gleich bleibt. Bei uns hat eine Umstellung fünfzig Cent gekostet, und danach sind acht Kinder aus der Mensa raus. Für die war das kein besseres Essen, sondern gar keins.
 
@@ -509,7 +509,7 @@ Frau Merzig: Ich bin dafür, unter einer Bedingung: Die Schule muss zwei Tage vo
               id: "de-b1-11-l4-21",
               no: 21,
               ref: "f1",
-              text: "Timur Aksoy",
+              text: "Timur Thiel",
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:

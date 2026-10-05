@@ -7171,7 +7171,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kalıbımız. Ahmet Londra'ya gitti, şu anda Londra'da. İngilizcesi:"
+      "text": "İlk kalıbımız. Finn Londra'ya gitti, şu anda Londra'da. İngilizcesi:"
      },
      {
       "lang": "en",
@@ -7623,11 +7623,11 @@
    }
   ],
   "chat": {
-   "scene": "Arkadaşın Emre'nin evine uğradın, kapıyı ev arkadaşı açtı. Emre şu anda evde değil.",
-   "partner": "Emre'nin ev arkadaşı",
-   "opening": "Hi! Emre isn't here. He has gone to the airport. Can I help you?",
-   "openingTr": "Merhaba! Emre burada değil. Havalimanına gitti. Yardımcı olabilir miyim?",
-   "goal": "Emre'nin nereye gittiğini ve ne zaman döneceğini öğrenip, kendi gittiğin ülkeleri been to kalıbıyla anlatabilmek.",
+   "scene": "Arkadaşın Owen'in evine uğradın, kapıyı ev arkadaşı açtı. Owen şu anda evde değil.",
+   "partner": "Owen'in ev arkadaşı",
+   "opening": "Hi! Owen isn't here. He has gone to the airport. Can I help you?",
+   "openingTr": "Merhaba! Owen burada değil. Havalimanına gitti. Yardımcı olabilir miyim?",
+   "goal": "Owen'in nereye gittiğini ve ne zaman döneceğini öğrenip, kendi gittiğin ülkeleri been to kalıbıyla anlatabilmek.",
    "minTurns": 7
   }
  },
@@ -11926,20 +11926,20 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle kuralım. \"Ali sınıftaki en iyi öğrenci\" nasıl denir?"
+      "text": "Son bir cümle kuralım. \"Harry sınıftaki en iyi öğrenci\" nasıl denir?"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Ali is the best student in the class.",
+     "target": "Harry is the best student in the class.",
      "accept": [
-      "Ali is the best student in class.",
-      "Ali is the best student in the classroom."
+      "Harry is the best student in class.",
+      "Harry is the best student in the classroom."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Ali is the best student ile başla."
+       "text": "Harry is the best student ile başla."
       },
       {
        "lang": "tr",
@@ -11947,7 +11947,7 @@
       },
       {
        "lang": "en",
-       "text": "Ali is the best student in the class."
+       "text": "Harry is the best student in the class."
       },
       {
        "lang": "tr",
@@ -11960,7 +11960,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Kısa sıfatta the ve -est: the oldest, the biggest. Uzun sıfatta the most:"
+      "text": "Toparlayalım. Kısa sıfatta the ve -est: the oldest, the biggest. Collins sıfatta the most:"
      },
      {
       "lang": "en",
@@ -31615,7 +31615,7 @@
      },
      {
       "lang": "en",
-      "text": "Dear Mr. Brown, I am writing about the meeting on Monday. I have attached the file with the numbers. Could you confirm the time? Best regards, Ayse"
+      "text": "Dear Mr. Brown, I am writing about the meeting on Monday. I have attached the file with the numbers. Could you confirm the time? Best regards, Rachel"
      },
      {
       "lang": "tr",
@@ -40712,7 +40712,7 @@
      },
      {
       "lang": "en",
-      "text": "I have a reservation under the name Kaya."
+      "text": "I have a reservation under the name Archie."
      },
      {
       "lang": "tr",
@@ -40721,7 +40721,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I have a reservation under the name Kaya."
+     "target": "I have a reservation under the name Archie."
     }
    },
    {
@@ -47942,7 +47942,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Peki bayramda ne dilenir? Ramazan ve Kurban Bayramı için İngilizcede Arapçadan gelen kalıp kullanılır:"
+      "text": "Peki bayramda ne dilenir? Joshua ve Kurban Bayramı için İngilizcede Arapçadan gelen kalıp kullanılır:"
      },
      {
       "lang": "en",
@@ -49837,11 +49837,11 @@
      },
      {
       "lang": "en",
-      "text": "Ayse is my best friend."
+      "text": "Rachel is my best friend."
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: Ayşe benim en yakın arkadaşım."
+      "text": "Türkçesi: Rachel benim en yakın arkadaşım."
      }
     ]
    },
@@ -50672,7 +50672,7 @@
      },
      {
       "lang": "en",
-      "text": "She married Ali."
+      "text": "She married Harry."
      },
      {
       "lang": "tr",
@@ -50680,7 +50680,7 @@
      },
      {
       "lang": "en",
-      "text": "She got married to Ali."
+      "text": "She got married to Harry."
      }
     ]
    },
@@ -51304,7 +51304,7 @@
      },
      {
       "lang": "en",
-      "text": "I'm Deniz. Nice to meet you."
+      "text": "I'm Charlie. Nice to meet you."
      },
      {
       "lang": "tr",
@@ -51313,7 +51313,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I'm Deniz. Nice to meet you."
+     "target": "I'm Charlie. Nice to meet you."
     }
    },
    {
@@ -57143,7 +57143,7 @@
      "hint": [
       {
        "lang": "en",
-       "text": "Can"
+       "text": "Tyler"
       },
       {
        "lang": "tr",
@@ -59803,7 +59803,7 @@
      },
      {
       "lang": "en",
-      "text": "My name is Deniz."
+      "text": "My name is Charlie."
      },
      {
       "lang": "tr",
@@ -59811,7 +59811,7 @@
      },
      {
       "lang": "en",
-      "text": "My last name is Demir."
+      "text": "My last name is Adams."
      },
      {
       "lang": "tr",
@@ -59939,15 +59939,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir alıştırma. Görevli sana soyadını sordu. Soyadın Demir. İngilizce nasıl söylersin?"
+      "text": "Küçük bir alıştırma. Görevli sana soyadını sordu. Soyadın Adams. İngilizce nasıl söylersin?"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "My last name is Demir.",
+     "target": "My last name is Adams.",
      "accept": [
-      "My last name's Demir.",
-      "My family name is Demir."
+      "My last name's Adams.",
+      "My family name is Adams."
      ],
      "hint": [
       {
@@ -59956,7 +59956,7 @@
       },
       {
        "lang": "en",
-       "text": "My last name is Demir."
+       "text": "My last name is Adams."
       },
       {
        "lang": "tr",

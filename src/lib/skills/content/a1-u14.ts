@@ -331,7 +331,7 @@ export const a1U14: SkillExercise[] = [
           { de: "gegenüber vom Bahnhof", tr: "garın karşısında", en: "opposite the station" },
         ],
         sample:
-          "Hallo Tom,\n\nich wohne nicht weit. Es ist zehn Minuten zu Fuß vom Bahnhof.\n\nGeh geradeaus, dann links. Meine Wohnung ist gegenüber von der Post, daneben ist eine Bäckerei.\n\nEin Taxi brauchst du nicht — es ist wirklich in der Nähe. Mit dem Bus geht es auch, Linie 7.\n\nIch warte um 14:40 am Bahnhof!\nElif",
+          "Hallo Tom,\n\nich wohne nicht weit. Es ist zehn Minuten zu Fuß vom Bahnhof.\n\nGeh geradeaus, dann links. Meine Wohnung ist gegenüber von der Post, daneben ist eine Bäckerei.\n\nEin Taxi brauchst du nicht — es ist wirklich in der Nähe. Mit dem Bus geht es auch, Linie 7.\n\nIch warte um 14:40 am Bahnhof!\nPaula",
       },
     ],
   },

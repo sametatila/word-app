@@ -147,7 +147,7 @@ export const unitQuiz: Authored[] = [
     explain: { tr: "wohnen in = -de oturmak: Berlin'de oturuyorum.", en: "wohnen in = to live in: I live in Berlin." },
   },
   {
-    text: "Ich ___ Ali.",
+    text: "Ich ___ Moritz.",
     options: ["heiße", "heißt", "heißen"],
     explain: { tr: "„ich“ ile -e: ich heiße.", en: "With „ich“ the ending is -e: ich heiße." },
   },
@@ -182,7 +182,7 @@ export const unitQuiz: Authored[] = [
     explain: { tr: "Arkadaşa „du“: „Wie heißt du?“", en: "To a friend you say „du“: „Wie heißt du?“" },
   },
   {
-    text: { tr: "„___ Sie Frau Yılmaz?“ (kibarca: Yılmaz Hanım siz misiniz?)", en: "„___ Sie Frau Yılmaz?“ (politely: Are you Ms Yılmaz?)" },
+    text: { tr: "„___ Sie Frau Lutz?“ (kibarca: Lutz Hanım siz misiniz?)", en: "„___ Sie Frau Lutz?“ (politely: Are you Ms Lutz?)" },
     options: ["Sind", "Bist", "Ist"],
     explain: { tr: "„Sind Sie …?“ kibarca „Siz … misiniz?“ diye sorar.", en: "„Sind Sie …?“ is the polite way to ask „Are you …?“." },
   },

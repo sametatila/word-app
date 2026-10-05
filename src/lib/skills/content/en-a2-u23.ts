@@ -44,23 +44,23 @@ export const enA2U23: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Deniz: Good morning. I'd like to register, please.\n" +
+      "Charlie: Good morning. I'd like to register, please.\n" +
       "Assistant: Have you taken a number?\n" +
-      "Deniz: I have already taken a number. Sixty-four.\n" +
+      "Charlie: I have already taken a number. Sixty-four.\n" +
       "Assistant: Then wait for the announcement. We are at fifty-nine.\n" +
-      "Deniz: Could you tell me where the counter is?\n" +
+      "Charlie: Could you tell me where the counter is?\n" +
       "Assistant: Counter four, on the left after the entrance. But first the form.\n" +
-      "Deniz: Which form?\n" +
+      "Charlie: Which form?\n" +
       "Assistant: The green one, on the table by the window. Last name, address, date of birth.\n" +
-      "Deniz: And my ID card?\n" +
+      "Charlie: And my ID card?\n" +
       "Assistant: At the counter, not before. And the form in black, not blue.\n" +
-      "Deniz: Black. Why?\n" +
+      "Charlie: Black. Why?\n" +
       "Assistant: Because the machine reads it. Blue is a form you fill out twice.\n" +
-      "Deniz: Then black. Thank you.\n" +
+      "Charlie: Then black. Thank you.\n" +
       "Assistant: And one more thing: don't sign it here. You sign at the counter, in front of us.",
     questions: [
       {
-        text: "What number does Deniz have?",
+        text: "What number does Charlie have?",
         options: ["sixty-four", "fifty-nine", "four"],
         answer: 0,
         explain: "„I have already taken a number. Sixty-four.“ — elli dokuz şu anki sıra.",
@@ -73,7 +73,7 @@ export const enA2U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz should sign the form at the counter.",
+        text: "Charlie should sign the form at the counter.",
         options: ["True", "False"],
         answer: 0,
         explain: "„don't sign it here. You sign at the counter, in front of us.“",
@@ -189,25 +189,25 @@ export const enA2U23: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Mert", text: "First, press the button on the left." },
-      { speaker: "Nil", text: "This one?" },
-      { speaker: "Mert", text: "That one. Now wait. It takes six seconds." },
-      { speaker: "Nil", text: "Nothing happens." },
-      { speaker: "Mert", text: "Wait. Don't press it twice. Then it starts again from the beginning." },
-      { speaker: "Nil", text: "There. A list." },
-      { speaker: "Mert", text: "Then choose your language. It is the third line." },
-      { speaker: "Nil", text: "Done." },
-      { speaker: "Mert", text: "Now pay attention: the next screen looks finished but it isn't. Scroll down and you'll see one more question." },
-      { speaker: "Nil", text: "I see it. Address?" },
-      { speaker: "Mert", text: "Yes, and then continue. Two more screens." },
-      { speaker: "Nil", text: "And if I make a mistake?" },
-      { speaker: "Mert", text: "Go back and repeat that screen. Nothing is lost until the last button." },
-      { speaker: "Nil", text: "Done. That was easier than the letter." },
-      { speaker: "Mert", text: "Everything is easier than the letter." },
+      { speaker: "Henry", text: "First, press the button on the left." },
+      { speaker: "Katie", text: "This one?" },
+      { speaker: "Henry", text: "That one. Now wait. It takes six seconds." },
+      { speaker: "Katie", text: "Nothing happens." },
+      { speaker: "Henry", text: "Wait. Don't press it twice. Then it starts again from the beginning." },
+      { speaker: "Katie", text: "There. A list." },
+      { speaker: "Henry", text: "Then choose your language. It is the third line." },
+      { speaker: "Katie", text: "Done." },
+      { speaker: "Henry", text: "Now pay attention: the next screen looks finished but it isn't. Scroll down and you'll see one more question." },
+      { speaker: "Katie", text: "I see it. Address?" },
+      { speaker: "Henry", text: "Yes, and then continue. Two more screens." },
+      { speaker: "Katie", text: "And if I make a mistake?" },
+      { speaker: "Henry", text: "Go back and repeat that screen. Nothing is lost until the last button." },
+      { speaker: "Katie", text: "Done. That was easier than the letter." },
+      { speaker: "Henry", text: "Everything is easier than the letter." },
     ],
     questions: [
       {
-        text: "What should Nil do first?",
+        text: "What should Katie do first?",
         options: ["press the button on the left", "choose the language", "scroll down"],
         answer: 0,
         explain: "„First, press the button on the left.“",
@@ -243,7 +243,7 @@ export const enA2U23: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What should Nil do after a mistake?",
+        text: "What should Katie do after a mistake?",
         options: [],
         answer: 0,
         accept: ["go back and repeat", "repeat the screen", "go back"],
@@ -268,26 +268,26 @@ export const enA2U23: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Assistant", text: "Your last name, please." },
-      { speaker: "Ela", text: "Yılmaz." },
+      { speaker: "Lucy", text: "Hayes." },
       { speaker: "Assistant", text: "Could you spell that, please?" },
-      { speaker: "Ela", text: "Y, I with no dot, L, M, A, Z." },
+      { speaker: "Lucy", text: "Y, I with no dot, L, M, A, Z." },
       { speaker: "Assistant", text: "Thank you. Date of birth?" },
-      { speaker: "Ela", text: "The third of June, nineteen ninety-four." },
+      { speaker: "Lucy", text: "The third of June, nineteen ninety-four." },
       { speaker: "Assistant", text: "Place of birth?" },
-      { speaker: "Ela", text: "Bursa." },
+      { speaker: "Lucy", text: "Bursa." },
       { speaker: "Assistant", text: "Address?" },
-      { speaker: "Ela", text: "Forty-one Garden Street, second floor." },
+      { speaker: "Lucy", text: "Forty-one Garden Street, second floor." },
       { speaker: "Assistant", text: "With or without an apartment number?" },
-      { speaker: "Ela", text: "There is no number. Two apartments, one door." },
+      { speaker: "Lucy", text: "There is no number. Two apartments, one door." },
       { speaker: "Assistant", text: "Then I'll write left. The post office needs it." },
-      { speaker: "Ela", text: "Good idea." },
+      { speaker: "Lucy", text: "Good idea." },
       { speaker: "Assistant", text: "And where do I sign? — you will ask that next." },
-      { speaker: "Ela", text: "Where do I sign?" },
+      { speaker: "Lucy", text: "Where do I sign?" },
       { speaker: "Assistant", text: "Here, and here. Not there — that line is mine." },
     ],
     questions: [
       {
-        text: "Where was Ela born?",
+        text: "Where was Lucy born?",
         options: ["in Bursa", "in Garden Street", "in June"],
         answer: 0,
         explain: "„Place of birth? — Bursa.“",
@@ -307,7 +307,7 @@ export const enA2U23: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ela was born on the third of ___.",
+        text: "Lucy was born on the third of ___.",
         options: [],
         answer: 0,
         accept: ["June"],
@@ -341,7 +341,7 @@ export const enA2U23: SkillExercise[] = [
     unit: 23,
     title: "A registration form",
     genre: "info",
-    intro: "Emir zinciri. Özne yok, sırayı zarflar kuruyor.",
+    intro: "Ethan zinciri. Özne yok, sırayı zarflar kuruyor.",
     gloss: [
       { de: "press", tr: "basmak" },
       { de: "choose", tr: "seçmek" },
@@ -354,7 +354,7 @@ export const enA2U23: SkillExercise[] = [
         tr: "Önce soldaki düğmeye bas.",
         answer: "First, press the button on the left.",
         alternatives: ["First press the button on the left."],
-        hint: "Emir cümlesi öznesiz; sırayı „first“ açıyor.",
+        hint: "Ethan cümlesi öznesiz; sırayı „first“ açıyor.",
       },
       {
         kind: "build",
@@ -379,9 +379,9 @@ export const enA2U23: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kayıt formunu doldur.",
-        facts: "Soyadı Yılmaz; doğum tarihi 3 Haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
+        facts: "Soyadı Hayes; doğum tarihi 3 Haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
         fields: [
-          { label: "Last name", answer: "Yılmaz" },
+          { label: "Last name", answer: "Hayes" },
           { label: "Date of birth", answer: "the third of June", accept: ["June 3", "June third", "June 3rd"] },
           { label: "Place of birth", answer: "Bursa" },
           { label: "Address", answer: "41 Garden Street", accept: ["forty-one Garden Street", "Garden Street 41", "Garden Street forty-one"] },

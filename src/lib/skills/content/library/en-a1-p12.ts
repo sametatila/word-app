@@ -96,7 +96,7 @@ export const enA1P12: SkillExercise[] = [
     skill: "listening",
     title: "Checking In at the Park Hotel",
     genre: "dialogue",
-    intro: "Ela bir otele varıyor ve resepsiyonda giriş yapıyor; oda, kahvaltı, internet ve çantası için ne öğrendiğini dinle.",
+    intro: "Lucy bir otele varıyor ve resepsiyonda giriş yapıyor; oda, kahvaltı, internet ve çantası için ne öğrendiğini dinle.",
     gloss: [
       { de: "single room", tr: "tek kişilik oda" },
       { de: "passport", tr: "pasaport" },
@@ -108,34 +108,34 @@ export const enA1P12: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Receptionist", text: "Good evening, welcome to the Park Hotel." },
-      { speaker: "Ela", text: "Hello. I have a room for one night. My name is Ela Kaya." },
+      { speaker: "Lucy", text: "Hello. I have a room for one night. My name is Lucy Ellis." },
       { speaker: "Receptionist", text: "Yes, a single room with a shower. Can I see your passport, please?" },
-      { speaker: "Ela", text: "Here you are." },
+      { speaker: "Lucy", text: "Here you are." },
       { speaker: "Receptionist", text: "Thank you. You're in room 305, on the third floor. The elevator is on the left." },
-      { speaker: "Ela", text: "What time is breakfast?" },
+      { speaker: "Lucy", text: "What time is breakfast?" },
       { speaker: "Receptionist", text: "From seven to ten, in the room next to reception." },
-      { speaker: "Ela", text: "Is there Wi-Fi in the room?" },
+      { speaker: "Lucy", text: "Is there Wi-Fi in the room?" },
       { speaker: "Receptionist", text: "Yes, it's free. The password is on your key card." },
-      { speaker: "Ela", text: "Great. My train is at four tomorrow. Can I leave my bag here after breakfast?" },
+      { speaker: "Lucy", text: "Great. My train is at four tomorrow. Can I leave my bag here after breakfast?" },
       { speaker: "Receptionist", text: "Of course. Please leave the room by eleven, but your bag can stay here until four." },
-      { speaker: "Ela", text: "Perfect. Thank you!" },
+      { speaker: "Lucy", text: "Perfect. Thank you!" },
     ],
     questions: [
       {
-        text: "How long does Ela stay at the hotel?",
+        text: "How long does Lucy stay at the hotel?",
         options: ["two nights", "one night", "one week"],
         answer: 1,
-        explain: "„I have a room for one night.“ — Ela yarın trenle ayrılıyor.",
+        explain: "„I have a room for one night.“ — Lucy yarın trenle ayrılıyor.",
       },
       {
-        text: "Where is Ela's room?",
+        text: "Where is Lucy's room?",
         options: ["next to reception", "on the first floor", "on the third floor"],
         answer: 2,
         explain: "„You're in room 305, on the third floor.“ — resepsiyonun yanındaki oda kahvaltı salonu.",
       },
       {
         kind: "truefalse",
-        text: "Ela can use the Wi-Fi for free.",
+        text: "Lucy can use the Wi-Fi for free.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Yes, it's free.“ — şifre de oda kartının üstünde yazıyor.",
@@ -157,7 +157,7 @@ export const enA1P12: SkillExercise[] = [
         explain: "„The elevator is on the left.“ — yön „on the left / on the right“ kalıbıyla söylenir.",
       },
       {
-        text: "Why does Ela want to leave her bag at the hotel?",
+        text: "Why does Lucy want to leave her bag at the hotel?",
         options: ["Her train is at four.", "Her room is very small.", "The elevator is not working."],
         answer: 0,
         explain: "„My train is at four tomorrow.“ — odayı on birde boşaltıyor, çanta dörde kadar otelde kalabiliyor.",
@@ -217,7 +217,7 @@ export const enA1P12: SkillExercise[] = [
         sample:
           "Hello, I would like to book a double room for two nights, from Friday, July 12 to Sunday, July 14. " +
           "We are two adults and one small child. How much is the room for one night? Is breakfast included in the price? " +
-          "We arrive at seven on Friday evening. Thank you and best wishes, Kaan Demir",
+          "We arrive at seven on Friday evening. Thank you and best wishes, Liam Adams",
       },
     ],
   },

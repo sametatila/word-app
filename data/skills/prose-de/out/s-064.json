@@ -391,7 +391,7 @@
  { "tr": "tost", "kind": "gloss.tr", "de": "der Toast" },
  { "tr": "fen bilgisi", "kind": "gloss.tr", "de": "die Naturwissenschaften" },
  { "tr": "ilaç", "kind": "gloss.tr", "de": "das Medikament" },
- { "tr": "\"I have never written thirty pages in one week.\" Kerem rapora henüz başlamadı.", "kind": "explain", "de": "\"I have never written thirty pages in one week.\" Kerem hat mit dem Bericht noch nicht angefangen." },
+ { "tr": "\"I have never written thirty pages in one week.\" Connor rapora henüz başlamadı.", "kind": "explain", "de": "\"I have never written thirty pages in one week.\" Connor hat mit dem Bericht noch nicht angefangen." },
  { "tr": "elektronik ürünler", "kind": "gloss.tr", "de": "die Elektronik" },
  { "tr": "Programda 2. gün (cumartesi) 09.30'da \"Bus to the castle\" yazıyor, yani kaleye cumartesi sabahı gidiliyor.", "kind": "explain", "de": "Im Programm steht an Tag 2 (Samstag) um 09:30 \"Bus to the castle\", zur Burg geht es also am Samstagmorgen." },
  { "tr": "kek kalıbı", "kind": "gloss.tr", "de": "die Backform" },

@@ -230,8 +230,8 @@ Umtausch nur mit Kassenbon, im Erdgeschoss`,
               id: "t3",
               genre: "E-Mail",
               genreTr: "E-posta",
-              title: "Von: Selin · An: Ferhat",
-              body: `Hallo Ferhat,
+              title: "Von: Luisa · An: Mathis",
+              body: `Hallo Mathis,
 
 danke für deine Nachricht. Ja, wir sind gut angekommen, aber die Fahrt war lang.
 
@@ -246,7 +246,7 @@ Am Freitag fahren wir mit dem Bus an die Küste. Ich schicke dir dann Fotos.
 Und dein neues Fahrrad? Bist du damit schon zur Arbeit gefahren?
 
 Liebe Grüße
-Selin`,
+Luisa`,
               gloss: [
                 { de: "die Verspätung", tr: "gecikme", en: "delay" },
                 { de: "den Anschluss verpassen", tr: "aktarmayı kaçırmak", en: "to miss the connection" },
@@ -269,7 +269,7 @@ Selin`,
               kind: "mcq",
               id: "de-a2-02-l3-12",
               no: 12,
-              text: "Was schreibt Selin über die Wohnung?",
+              text: "Was schreibt Luisa über die Wohnung?",
               options: ["Sie hat keinen Aufzug.", "Sie ist schlechter als auf den Fotos.", "Sie ist zu klein."],
               answer: 0,
               explain:
@@ -297,11 +297,11 @@ Selin`,
               kind: "mcq",
               id: "de-a2-02-l3-15",
               no: 15,
-              text: "Was möchte Selin von Ferhat wissen?",
+              text: "Was möchte Luisa von Mathis wissen?",
               options: ["Wann er kommt.", "Ob er mit dem Rad zur Arbeit fährt.", "Wie das Wetter bei ihm ist."],
               answer: 1,
               explain:
-                "E-postanın tek sorusu bu: \"Bist du damit schon zur Arbeit gefahren?\" Hava durumu Selin'in kendi haberi.",
+                "E-postanın tek sorusu bu: \"Bist du damit schon zur Arbeit gefahren?\" Hava durumu Luisa'nın kendi haberi.",
             },
           ],
         },
@@ -388,7 +388,7 @@ Selin`,
               kind: "match",
               id: "de-a2-02-l4-19",
               no: 19,
-              text: "Familie Kaya sucht gebrauchte Kinderkleidung in guter Qualität.",
+              text: "Familie Graf sucht gebrauchte Kinderkleidung in guter Qualität.",
               answer: "a",
               explain:
                 "(a) ikinci el çocuk kıyafeti satıyor ve \"alles geprüft und sauber\" diyor — kalite koşulu da karşılanıyor.",
@@ -896,7 +896,7 @@ Am besten hat mir die kleine Stadt am Meer gefallen. Dort haben wir jeden Abend 
 Kommst du am Samstag zu uns? Ich zeige dir die Fotos und koche etwas Portugiesisches.
 
 Liebe Grüße
-Emre`,
+Till`,
             criteria: [
               "Üç içerik noktası da işlendi mi?",
               "Yolculuk geçmiş zamanda anlatıldı mı? (Perfekt: sind … zurückgekommen, hat … gefallen)",
@@ -930,7 +930,7 @@ am 3. Mai habe ich bei Ihnen eine Tischlampe bestellt, Bestellnummer 48210. Das 
 Ich möchte gern eine neue Lampe. Soll ich die alte zurückschicken? Bitte sagen Sie mir, wie ich das machen soll.
 
 Mit freundlichen Grüßen
-Ayla Demir`,
+Elke Böhm`,
             criteria: [
               "Üç içerik noktası da var mı?",
               "Resmî hitap ve veda kullanıldı mı? (Sehr geehrte Damen und Herren / Mit freundlichen Grüßen)",

@@ -51,7 +51,7 @@ export const enB2U20: SkillExercise[] = [
     text:
       "OUR PLAN TO PAY OFF THE LOAN BY DECEMBER\n" +
       "Two years ago we borrowed 12,000 euros to renovate the kitchen. The loan has cost us more than we expected, and this spring we finally sat down to decide what to do about it.\n" +
-      "The plan is simple. By December we will have saved enough to pay off the loan. We are putting 700 euros a month into a separate account, and my partner Onur has taken on some weekend work until the summer.\n" +
+      "The plan is simple. By December we will have saved enough to pay off the loan. We are putting 700 euros a month into a separate account, and my partner Callum has taken on some weekend work until the summer.\n" +
       "Next month we will be preparing for the due date of the last big installment. The bank charges a late fee of 40 euros, so we have written the date on the calendar in red.\n" +
       "The hard part was knowing where to start. We did not know whether to pay the loan off early or to keep some money for emergencies. In the end we asked a free advice service, and the adviser showed us how to compare the two options on one page.\n" +
       "We also had to decide what to give up. We will be cooking at home five days a week, and the gym membership has gone.\n" +
@@ -131,8 +131,8 @@ export const enB2U20: SkillExercise[] = [
       "I am 58 and I have started to worry. Two years ago a pipe burst in our apartment and damaged the ceiling of the apartment below. If the liability insurance had covered it, we would have paid nothing. It did not, because we had canceled the policy a year earlier to save money, and the repair cost us 6,000 euros.\n" +
       "Then there is my pension. I started working at 25, but for the first ten years I worked for myself and paid almost nothing into the pension insurance. If the pension insurance had started earlier, the company pension would be higher now. My statement says I will get 1,100 euros a month.\n" +
       "My husband says that if the retirement savings had grown, we would have stopped working already. I think that is just a dream. What can we still do?\n" +
-      "Sevgi, Ankara\n" +
-      "Dear Sevgi,\n" +
+      "Norah, Ankara\n" +
+      "Dear Norah,\n" +
       "Thank you for your honest letter. You are not alone: if more people had asked these questions at 40, fewer of them would be worried now.\n" +
       "First, the insurance. Liability insurance is cheap and a single accident can be costly, so please take out a new policy this week.\n" +
       "Second, the pension. You cannot change the past, but you can still make extra payments for the next seven years, and your pension will grow in proportion to them. If you had started at 50, the effect would be bigger now, but it is not too late.\n" +
@@ -145,7 +145,7 @@ export const enB2U20: SkillExercise[] = [
         explain: "„we had canceled the policy a year earlier to save money…“",
       },
       {
-        text: "How much will Sevgi get from her pension?",
+        text: "How much will Norah get from her pension?",
         options: ["1,100 euros a month", "6,000 euros a month", "40 euros a month"],
         answer: 0,
         explain: "„My statement says I will get 1,100 euros a month.“",
@@ -172,15 +172,15 @@ export const enB2U20: SkillExercise[] = [
         answer: 0,
         items: [
           "A pipe burst in the apartment.",
-          "Sevgi worked for herself for ten years.",
+          "Norah worked for herself for ten years.",
           "The column recommends new liability insurance.",
-          "Sevgi should talk to an independent adviser.",
+          "Norah should talk to an independent adviser.",
         ],
         explain: "Hasar, emeklilik geçmişi, sigorta önerisi, en sonda danışman önerisi.",
       },
       {
         kind: "short_answer",
-        text: "When should Sevgi take out a new policy?",
+        text: "When should Norah take out a new policy?",
         options: [],
         answer: 0,
         accept: ["this week", "now"],
@@ -203,18 +203,18 @@ export const enB2U20: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Tolga", text: "Have you looked at the Arslan file? The couple who lost their house." },
-      { speaker: "Yağmur", text: "I have. The creditor must have warned them. There is a letter in the file from March, and nobody answered it." },
-      { speaker: "Tolga", text: "Maybe they never received it. They moved twice last year." },
-      { speaker: "Yağmur", text: "They can't have missed all of them. The bank sent three letters and called twice." },
-      { speaker: "Tolga", text: "And the mortgage? Mrs. Arslan says she never agreed to it." },
-      { speaker: "Yağmur", text: "They can't have signed the mortgage alone. The form needs two signatures, and both are there." },
-      { speaker: "Tolga", text: "So she must have signed it without reading it." },
-      { speaker: "Yağmur", text: "Probably. Or somebody must have explained it badly. The interest rate went up after two years, and I doubt anyone told them." },
-      { speaker: "Tolga", text: "Could the seizure have been stopped?" },
-      { speaker: "Yağmur", text: "Yes. They should have asked for an interest-free plan when the first late fee arrived. Most banks offer one." },
-      { speaker: "Tolga", text: "And we should have seen them earlier. They called our office in January." },
-      { speaker: "Yağmur", text: "I know. That one is on us. Let us make sure it does not happen again." },
+      { speaker: "Brian", text: "Have you looked at the Nolan file? The couple who lost their house." },
+      { speaker: "Diana", text: "I have. The creditor must have warned them. There is a letter in the file from March, and nobody answered it." },
+      { speaker: "Brian", text: "Maybe they never received it. They moved twice last year." },
+      { speaker: "Diana", text: "They can't have missed all of them. The bank sent three letters and called twice." },
+      { speaker: "Brian", text: "And the mortgage? Mrs. Nolan says she never agreed to it." },
+      { speaker: "Diana", text: "They can't have signed the mortgage alone. The form needs two signatures, and both are there." },
+      { speaker: "Brian", text: "So she must have signed it without reading it." },
+      { speaker: "Diana", text: "Probably. Or somebody must have explained it badly. The interest rate went up after two years, and I doubt anyone told them." },
+      { speaker: "Brian", text: "Could the seizure have been stopped?" },
+      { speaker: "Diana", text: "Yes. They should have asked for an interest-free plan when the first late fee arrived. Most banks offer one." },
+      { speaker: "Brian", text: "And we should have seen them earlier. They called our office in January." },
+      { speaker: "Diana", text: "I know. That one is on us. Let us make sure it does not happen again." },
     ],
     questions: [
       {
@@ -270,7 +270,7 @@ export const enB2U20: SkillExercise[] = [
     unit: 20,
     title: "Advice before a salary talk",
     genre: "monologue",
-    intro: "Maaş görüşmesinden önce bırakılan bir sesli mesaj. Deniz neye dikkat etmeli?",
+    intro: "Maaş görüşmesinden önce bırakılan bir sesli mesaj. Charlie neye dikkat etmeli?",
     gloss: [
       { de: "a phrase", tr: "ifade" },
       { de: "concrete", tr: "somut" },
@@ -280,13 +280,13 @@ export const enB2U20: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Berrak", text: "Hi Deniz, it is Berrak from the works council. You asked me for tips before your salary talk on Thursday, so here is a quick voice message." },
-      { speaker: "Berrak", text: "First, the numbers. Your raise last year seems to be proportional to the others in your team, but only just. Bring the figures, and let them speak." },
-      { speaker: "Berrak", text: "Apparently your raise was refused for operational reasons last spring. Ask them what those reasons were. That phrase usually means nothing concrete." },
-      { speaker: "Berrak", text: "On balance, the work-life balance is arguably the point for you, not only the money. You mentioned parental leave next year, so ask about that too." },
-      { speaker: "Berrak", text: "It seems that the company is doing well this year. Profits are apparently up, so you are not asking at a bad moment." },
-      { speaker: "Berrak", text: "Be careful with too many hedges, though. Say what you want clearly: a five percent raise, or four percent plus one day of remote work." },
-      { speaker: "Berrak", text: "And if they say no, ask when you can talk again. Call me after the meeting. Good luck." },
+      { speaker: "Joanna", text: "Hi Charlie, it is Joanna from the works council. You asked me for tips before your salary talk on Thursday, so here is a quick voice message." },
+      { speaker: "Joanna", text: "First, the numbers. Your raise last year seems to be proportional to the others in your team, but only just. Bring the figures, and let them speak." },
+      { speaker: "Joanna", text: "Apparently your raise was refused for operational reasons last spring. Ask them what those reasons were. That phrase usually means nothing concrete." },
+      { speaker: "Joanna", text: "On balance, the work-life balance is arguably the point for you, not only the money. You mentioned parental leave next year, so ask about that too." },
+      { speaker: "Joanna", text: "It seems that the company is doing well this year. Profits are apparently up, so you are not asking at a bad moment." },
+      { speaker: "Joanna", text: "Be careful with too many hedges, though. Say what you want clearly: a five percent raise, or four percent plus one day of remote work." },
+      { speaker: "Joanna", text: "And if they say no, ask when you can talk again. Call me after the meeting. Good luck." },
     ],
     questions: [
       {
@@ -296,14 +296,14 @@ export const enB2U20: SkillExercise[] = [
         explain: "„You asked me for tips before your salary talk on Thursday…“",
       },
       {
-        text: "What should Deniz ask about besides money?",
+        text: "What should Charlie ask about besides money?",
         options: ["parental leave", "a new office", "a company car"],
         answer: 0,
         explain: "„You mentioned parental leave next year, so ask about that too.“",
       },
       {
         kind: "truefalse",
-        text: "Berrak thinks this is a bad moment to ask for a raise.",
+        text: "Joanna thinks this is a bad moment to ask for a raise.",
         options: ["True", "False"],
         answer: 1,
         explain: "„so you are not asking at a bad moment.“",
@@ -329,10 +329,10 @@ export const enB2U20: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What should Deniz do after the meeting?",
+        text: "What should Charlie do after the meeting?",
         options: [],
         answer: 0,
-        accept: ["call Berrak", "call her", "phone Berrak"],
+        accept: ["call Joanna", "call her", "phone Joanna"],
         explain: "„Call me after the meeting.“",
       },
     ],

@@ -105,37 +105,37 @@ export const enA2U12: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Dear Ms. Kaya,\n" +
+      "Dear Ms. Ellis,\n" +
       "Could I take a day off on Friday? My sister arrives from Ankara in the morning and I would like to meet her at the station.\n" +
-      "I have already talked to Mert and he can do my tasks that day. The reports for the week are finished and the meeting on Friday is not mine.\n" +
+      "I have already talked to Henry and he can do my tasks that day. The reports for the week are finished and the meeting on Friday is not mine.\n" +
       "If Friday is not possible, would it be possible to leave early, at two? Then I can work in the morning and still meet her.\n" +
       "I have one more question. I have five days of vacation this year. Can I take three of them in August? I ask now because my brother arranges his vacation in May.\n" +
       "Thank you very much. If you need anything from me before Friday, tell me today or tomorrow.\n" +
       "Best wishes,\n" +
-      "Nil",
+      "Katie",
     questions: [
       {
         text: "Who arrives from Ankara on Friday?",
-        options: ["the sister", "the brother", "Mert"],
+        options: ["the sister", "the brother", "Henry"],
         answer: 0,
         explain: "„My sister arrives from Ankara in the morning…“ — erkek kardeşi mayısta tatil ayarlıyor.",
       },
       {
-        text: "What does Nil ask for if Friday is not possible?",
+        text: "What does Katie ask for if Friday is not possible?",
         options: ["to leave early at two", "to work on the weekend", "to take August off"],
         answer: 0,
         explain: "„…would it be possible to leave early, at two?“",
       },
       {
         kind: "truefalse",
-        text: "Mert cannot do the tasks on Friday.",
+        text: "Henry cannot do the tasks on Friday.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„I have already talked to Mert and he can do my tasks that day.“",
+        explain: "„I have already talked to Henry and he can do my tasks that day.“",
       },
       {
         kind: "gapfill",
-        text: "Nil has ___ vacation days this year.",
+        text: "Katie has ___ vacation days this year.",
         options: [],
         answer: 0,
         accept: ["five", "5"],
@@ -148,7 +148,7 @@ export const enA2U12: SkillExercise[] = [
         answer: 0,
         items: [
           "Could I take a day off on Friday?",
-          "Mert can do my tasks that day.",
+          "Henry can do my tasks that day.",
           "Would it be possible to leave early?",
           "Can I take three days in August?",
         ],
@@ -182,30 +182,30 @@ export const enA2U12: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Mert", text: "Good morning. Twenty minutes, as always. First point: the reports." },
-      { speaker: "Sena", text: "Can I say something before we start?" },
-      { speaker: "Mert", text: "Of course." },
-      { speaker: "Sena", text: "The long report takes three hours and nobody reads it. I suggest we write one page." },
-      { speaker: "Can", text: "I agree with you. I have read it twice this year and I found nothing new." },
-      { speaker: "Mert", text: "Then I think we should try it for a month. One page, five numbers." },
-      { speaker: "Sena", text: "And if the boss asks for the long one?" },
-      { speaker: "Mert", text: "Then we write it again. But he hasn't asked since January." },
-      { speaker: "Can", text: "Second point: the meeting on Friday. Could we move it to Thursday?" },
-      { speaker: "Mert", text: "Why?" },
-      { speaker: "Can", text: "Friday at four nobody is here. On Thursday everybody is." },
-      { speaker: "Sena", text: "True. I agree." },
-      { speaker: "Mert", text: "Good. So we agree: one page, and Thursday. Anything more?" },
-      { speaker: "Can", text: "No. Nineteen minutes. A record." },
+      { speaker: "Henry", text: "Good morning. Twenty minutes, as always. First point: the reports." },
+      { speaker: "Ellie", text: "Can I say something before we start?" },
+      { speaker: "Henry", text: "Of course." },
+      { speaker: "Ellie", text: "The long report takes three hours and nobody reads it. I suggest we write one page." },
+      { speaker: "Tyler", text: "I agree with you. I have read it twice this year and I found nothing new." },
+      { speaker: "Henry", text: "Then I think we should try it for a month. One page, five numbers." },
+      { speaker: "Ellie", text: "And if the boss asks for the long one?" },
+      { speaker: "Henry", text: "Then we write it again. But he hasn't asked since January." },
+      { speaker: "Tyler", text: "Second point: the meeting on Friday. Could we move it to Thursday?" },
+      { speaker: "Henry", text: "Why?" },
+      { speaker: "Tyler", text: "Friday at four nobody is here. On Thursday everybody is." },
+      { speaker: "Ellie", text: "True. I agree." },
+      { speaker: "Henry", text: "Good. So we agree: one page, and Thursday. Anything more?" },
+      { speaker: "Tyler", text: "No. Nineteen minutes. A record." },
     ],
     questions: [
       {
-        text: "What does Sena suggest?",
+        text: "What does Ellie suggest?",
         options: ["to write one page", "to stop the meeting", "to read the report twice"],
         answer: 0,
         explain: "„I suggest we write one page.“",
       },
       {
-        text: "Why does Can want to move the meeting?",
+        text: "Why does Tyler want to move the meeting?",
         options: ["on Friday at four nobody is here", "Thursday is quieter", "the boss asks for it"],
         answer: 0,
         explain: "„Friday at four nobody is here. On Thursday everybody is.“",
@@ -260,20 +260,20 @@ export const enA2U12: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Can", text: "Do you have two minutes?" },
-      { speaker: "Ela", text: "Yes. What is it?" },
-      { speaker: "Can", text: "I'm sorry, I made a mistake. The report for the customer has the numbers from June, not from July." },
-      { speaker: "Ela", text: "Has it gone out?" },
-      { speaker: "Can", text: "Yesterday at five." },
-      { speaker: "Ela", text: "Then we have to call today, before the customer finds it." },
-      { speaker: "Can", text: "I haven't finished the new one yet. I need two hours." },
-      { speaker: "Ela", text: "Take them. I'll call and say the second version comes at four." },
-      { speaker: "Can", text: "Thank you. I'll fix it today." },
-      { speaker: "Ela", text: "Good. And next time?" },
-      { speaker: "Can", text: "Next time I'll check the month before I send it." },
-      { speaker: "Ela", text: "That's the whole lesson. Everybody here has sent a wrong number once." },
-      { speaker: "Can", text: "Even you?" },
-      { speaker: "Ela", text: "Twice. But I was faster with the call." },
+      { speaker: "Tyler", text: "Do you have two minutes?" },
+      { speaker: "Lucy", text: "Yes. What is it?" },
+      { speaker: "Tyler", text: "I'm sorry, I made a mistake. The report for the customer has the numbers from June, not from July." },
+      { speaker: "Lucy", text: "Has it gone out?" },
+      { speaker: "Tyler", text: "Yesterday at five." },
+      { speaker: "Lucy", text: "Then we have to call today, before the customer finds it." },
+      { speaker: "Tyler", text: "I haven't finished the new one yet. I need two hours." },
+      { speaker: "Lucy", text: "Take them. I'll call and say the second version comes at four." },
+      { speaker: "Tyler", text: "Thank you. I'll fix it today." },
+      { speaker: "Lucy", text: "Good. And next time?" },
+      { speaker: "Tyler", text: "Next time I'll check the month before I send it." },
+      { speaker: "Lucy", text: "That's the whole lesson. Everybody here has sent a wrong number once." },
+      { speaker: "Tyler", text: "Even you?" },
+      { speaker: "Lucy", text: "Twice. But I was faster with the call." },
     ],
     questions: [
       {
@@ -290,14 +290,14 @@ export const enA2U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can has finished the new report.",
+        text: "Tyler has finished the new report.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I haven't finished the new one yet. I need two hours.“",
       },
       {
         kind: "gapfill",
-        text: "Can needs ___ hours.",
+        text: "Tyler needs ___ hours.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
@@ -313,7 +313,7 @@ export const enA2U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What will Can do next time?",
+        text: "What will Tyler do next time?",
         options: [],
         answer: 0,
         accept: ["check the month", "check the month first", "check"],
@@ -366,11 +366,11 @@ export const enA2U12: SkillExercise[] = [
       {
         kind: "form",
         prompt: "İzin talebini doldur.",
-        facts: "İzin cuma; sebep ablanın gelişi; görevlere Mert bakacak; ağustosta üç gün isteniyor.",
+        facts: "İzin cuma; sebep ablanın gelişi; görevlere Henry bakacak; ağustosta üç gün isteniyor.",
         fields: [
           { label: "Day", answer: "Friday", accept: ["on Friday"] },
           { label: "Reason", answer: "my sister arrives", accept: ["the sister arrives"] },
-          { label: "Covered by", answer: "Mert" },
+          { label: "Covered by", answer: "Henry" },
           { label: "August", answer: "three days", accept: ["3 days"] },
         ],
       },

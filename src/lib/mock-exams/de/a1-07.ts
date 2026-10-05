@@ -341,9 +341,9 @@ Den Code finden Sie in Ihrer E-Mail.`,
               situation: "Bir kadın paketinin ne zaman geleceğini soruyor.",
               plays: 2,
               segments: [
-                { speaker: "Frau Tekin", text: "Wann kommt mein Paket heute?" },
+                { speaker: "Frau Haupt", text: "Wann kommt mein Paket heute?" },
                 { speaker: "Mitarbeiter", text: "Zwischen zwei und sechs. Der Fahrer klingelt zweimal." },
-                { speaker: "Frau Tekin", text: "Vor drei bin ich noch nicht da." },
+                { speaker: "Frau Haupt", text: "Vor drei bin ich noch nicht da." },
               ],
             },
             {
@@ -416,7 +416,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               id: "de-a1-07-h1-2",
               no: 2,
               ref: "a2",
-              text: "Ab wann ist Frau Tekin zu Hause?",
+              text: "Ab wann ist Frau Haupt zu Hause?",
               options: ["Ab zwei Uhr.", "Ab drei Uhr.", "Ab sechs Uhr."],
               answer: 1,
               explain:
@@ -813,7 +813,7 @@ Der Schal ist blau und sehr lang. Er lag bei der Kasse zwei.
 Wann kann ich ihn abholen?
 
 Vielen Dank und freundliche Grüße
-Elif Yalcin`,
+Paula Jahn`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Hitap ve veda var mı? Kuruma yazıldığı için `Sehr geehrte Damen und Herren` uygun.",

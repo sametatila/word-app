@@ -63,9 +63,9 @@ export const enA1P15: SkillExercise[] = [
           { de: "Thanks a lot!", tr: "Çok teşekkürler!" },
         ],
         sample:
-          "Hi Onur, I have a problem with my shift on Saturday. My brother's wedding is on Saturday afternoon, so I can't " +
+          "Hi Callum, I have a problem with my shift on Saturday. My brother's wedding is on Saturday afternoon, so I can't " +
           "work that day. Can we change days? I can work for you on Monday from eight to four. Please tell me by Thursday, " +
-          "because I have to talk to our boss. Thanks a lot! Kerem",
+          "because I have to talk to our boss. Thanks a lot! Connor",
       },
     ],
   },

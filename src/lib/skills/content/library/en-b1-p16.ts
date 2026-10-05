@@ -238,7 +238,7 @@ export const enB1P16: SkillExercise[] = [
         ],
         sample:
           "Dear Ms. Carter, I'm replying to your ad for a weekend helper at Hill Farm Stables. " +
-          "My name is Elif Kaya, I'm nineteen and I'm studying biology at the university in town. " +
+          "My name is Holly Ellis, I'm nineteen and I'm studying biology at the university in town. " +
           "I've always been interested in horses. I rode every summer at my uncle's farm until I " +
           "was fifteen, so I know how much work a stable needs. I'm not afraid of dirty jobs, and I'm " +
           "not afraid of cold mornings either. I'm also quite good at working with children. " +
@@ -248,7 +248,7 @@ export const enB1P16: SkillExercise[] = [
           "that was sick, and I would need someone to show me what to look for. " +
           "I'm available on Saturdays and Sundays from seven until two, and during university " +
           "breaks I could do some weekdays as well. I would be happy to come for a trial day. " +
-          "Kind regards, Elif Kaya",
+          "Kind regards, Holly Ellis",
       },
     ],
   },

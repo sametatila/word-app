@@ -40,27 +40,27 @@ export const enA1U22: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Good morning. I have a headache. Can I have some medicine, please?\n" +
+      "Lucy: Good morning. I have a headache. Can I have some medicine, please?\n" +
       "Pharmacist: Of course. These tablets are good. Take one with a glass of water.\n" +
-      "Ela: How many times a day?\n" +
+      "Lucy: How many times a day?\n" +
       "Pharmacist: Three times: morning, afternoon and evening. But not more!\n" +
-      "Ela: And can I drink coffee?\n" +
+      "Lucy: And can I drink coffee?\n" +
       "Pharmacist: A little, yes. But you should drink more water and sleep more.\n" +
-      "Ela: I can't sleep. I work every day and I am tired.\n" +
+      "Lucy: I can't sleep. I work every day and I am tired.\n" +
       "Pharmacist: Then you shouldn't work tomorrow. Call your office and tell them.\n" +
-      "Ela: Maybe. How much are the tablets?\n" +
+      "Lucy: Maybe. How much are the tablets?\n" +
       "Pharmacist: Six euros. And be careful: this medicine is not for children.\n" +
-      "Ela: I understand. Thank you.\n" +
+      "Lucy: I understand. Thank you.\n" +
       "Pharmacist: Get better soon!",
     questions: [
       {
-        text: "What does Ela need?",
+        text: "What does Lucy need?",
         options: ["medicine for a headache", "a glass of water", "coffee"],
         answer: 0,
         explain: "„I have a headache. Can I have some medicine, please?“ — su ilacı içmek için.",
       },
       {
-        text: "How many times a day does Ela take the tablets?",
+        text: "How many times a day does Lucy take the tablets?",
         options: ["three", "one", "six"],
         answer: 0,
         explain: "„Three times: morning, afternoon and evening.“ — her seferde bir tane, altı ise fiyat.",
@@ -96,7 +96,7 @@ export const enA1U22: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 22,
-    title: "A call to Mr. Kaya",
+    title: "A call to Mr. Ellis",
     genre: "phone",
     intro: "İşe rapor bildiriliyor. Bugün ne oluyor, yarın ne, öbür gün ne?",
     gloss: [
@@ -106,41 +106,41 @@ export const enA1U22: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Deniz: Good morning, this is Deniz. Can I speak to Mr. Kaya?\n" +
-      "Office: One moment. Yes, here is Mr. Kaya.\n" +
-      "Deniz: Good morning. I'm not feeling well. I can't come to work today.\n" +
-      "Mr. Kaya: I'm sorry. What is the problem?\n" +
-      "Deniz: I have a headache and I am cold. I think I am sick.\n" +
-      "Mr. Kaya: Then you should stay at home. Do you have medicine?\n" +
-      "Deniz: Yes, tablets. I take them three times a day.\n" +
-      "Mr. Kaya: Good. And drink more water.\n" +
-      "Deniz: I'll be better tomorrow, I think.\n" +
-      "Mr. Kaya: Don't come tomorrow. Come on Thursday. Call me tomorrow and tell me.\n" +
-      "Deniz: Thank you. I'll call you on my cell phone.\n" +
-      "Mr. Kaya: Get better soon!",
+      "Charlie: Good morning, this is Charlie. Can I speak to Mr. Ellis?\n" +
+      "Office: One moment. Yes, here is Mr. Ellis.\n" +
+      "Charlie: Good morning. I'm not feeling well. I can't come to work today.\n" +
+      "Mr. Ellis: I'm sorry. What is the problem?\n" +
+      "Charlie: I have a headache and I am cold. I think I am sick.\n" +
+      "Mr. Ellis: Then you should stay at home. Do you have medicine?\n" +
+      "Charlie: Yes, tablets. I take them three times a day.\n" +
+      "Mr. Ellis: Good. And drink more water.\n" +
+      "Charlie: I'll be better tomorrow, I think.\n" +
+      "Mr. Ellis: Don't come tomorrow. Come on Thursday. Call me tomorrow and tell me.\n" +
+      "Charlie: Thank you. I'll call you on my cell phone.\n" +
+      "Mr. Ellis: Get better soon!",
     questions: [
       {
-        text: "Why can't Deniz come to work?",
+        text: "Why can't Charlie come to work?",
         options: ["he is not feeling well", "he has no medicine", "the office is closed"],
         answer: 0,
         explain: "„I'm not feeling well. I can't come to work today.“ — ilacı var.",
       },
       {
-        text: "When does Deniz come to work?",
+        text: "When does Charlie come to work?",
         options: ["on Thursday", "tomorrow", "today"],
         answer: 0,
         explain: "„Don't come tomorrow. Come on Thursday.“ — yarın yalnız telefon edecek.",
       },
       {
         kind: "truefalse",
-        text: "Deniz has no medicine.",
+        text: "Charlie has no medicine.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Yes, tablets. I take them three times a day.“",
       },
       {
         kind: "gapfill",
-        text: "Deniz takes the tablets three ___ a day.",
+        text: "Charlie takes the tablets three ___ a day.",
         options: [],
         answer: 0,
         accept: ["times"],
@@ -152,7 +152,7 @@ export const enA1U22: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Can I speak to Mr. Kaya?",
+          "Can I speak to Mr. Ellis?",
           "I can't come to work today.",
           "Then you should stay at home.",
           "Come on Thursday.",
@@ -161,10 +161,10 @@ export const enA1U22: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What must Deniz do tomorrow?",
+        text: "What must Charlie do tomorrow?",
         options: [],
         answer: 0,
-        accept: ["call Mr. Kaya", "call the office", "call and tell"],
+        accept: ["call Mr. Ellis", "call the office", "call and tell"],
         explain: "„Call me tomorrow and tell me.“ — gelmeyecek, yalnız arayacak.",
       },
     ],
@@ -187,35 +187,35 @@ export const enA1U22: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "I am tired every morning. What should I do?" },
-      { speaker: "Can", text: "You should sleep more. How many hours do you sleep?" },
-      { speaker: "Nil", text: "Five, maybe six." },
-      { speaker: "Can", text: "That is too little. You should sleep eight hours." },
-      { speaker: "Nil", text: "And in the evening I drink three cups of coffee." },
-      { speaker: "Can", text: "Then you shouldn't drink coffee after six! Try water or light tea." },
-      { speaker: "Nil", text: "Maybe you are right. And food?" },
-      { speaker: "Can", text: "A light dinner is better. Something simple: soup, bread, cheese." },
-      { speaker: "Nil", text: "I eat a big dinner at ten in the evening." },
-      { speaker: "Can", text: "At ten! You shouldn't eat so late. And be careful with sugar." },
-      { speaker: "Nil", text: "OK. I'm going to try it for one week." },
-      { speaker: "Can", text: "Then call me on Sunday and tell me!" },
+      { speaker: "Katie", text: "I am tired every morning. What should I do?" },
+      { speaker: "Tyler", text: "You should sleep more. How many hours do you sleep?" },
+      { speaker: "Katie", text: "Five, maybe six." },
+      { speaker: "Tyler", text: "That is too little. You should sleep eight hours." },
+      { speaker: "Katie", text: "And in the evening I drink three cups of coffee." },
+      { speaker: "Tyler", text: "Then you shouldn't drink coffee after six! Try water or light tea." },
+      { speaker: "Katie", text: "Maybe you are right. And food?" },
+      { speaker: "Tyler", text: "A light dinner is better. Something simple: soup, bread, cheese." },
+      { speaker: "Katie", text: "I eat a big dinner at ten in the evening." },
+      { speaker: "Tyler", text: "At ten! You shouldn't eat so late. And be careful with sugar." },
+      { speaker: "Katie", text: "OK. I'm going to try it for one week." },
+      { speaker: "Tyler", text: "Then call me on Sunday and tell me!" },
     ],
     questions: [
       {
-        text: "How many hours should Nil sleep?",
+        text: "How many hours should Katie sleep?",
         options: ["eight", "five", "six"],
         answer: 0,
         explain: "„You should sleep eight hours.“ — beş ve altı şu anki hâli.",
       },
       {
-        text: "What shouldn't Nil drink after six?",
+        text: "What shouldn't Katie drink after six?",
         options: ["coffee", "water", "light tea"],
         answer: 0,
         explain: "„Then you shouldn't drink coffee after six! Try water or light tea.“",
       },
       {
         kind: "truefalse",
-        text: "Nil eats a light dinner.",
+        text: "Katie eats a light dinner.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I eat a big dinner at ten in the evening.“ — hafif akşam yemeği öğüdün kendisi.",
@@ -238,7 +238,7 @@ export const enA1U22: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When should Nil call Can?",
+        text: "When should Katie call Tyler?",
         options: [],
         answer: 0,
         accept: ["on Sunday", "Sunday"],

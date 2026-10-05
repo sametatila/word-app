@@ -67,7 +67,7 @@ export const EN_B1_03: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "From the physical therapist",
-              body: `Bora, I have looked at your knee again. Keep doing the first two exercises, but stop the third one for now: it is the one that hurts the next morning. Come back in three weeks, earlier if the swelling returns.`,
+              body: `Jacob, I have looked at your knee again. Keep doing the first two exercises, but stop the third one for now: it is the one that hurts the next morning. Come back in three weeks, earlier if the swelling returns.`,
             },
             {
               kind: "text",
@@ -117,7 +117,7 @@ export const EN_B1_03: MockPaper = {
               id: "en-b1-03-l1-4",
               no: 4,
               ref: "m4",
-              text: "What must Bora do?",
+              text: "What must Jacob do?",
               options: ["Do all three exercises more slowly", "Come back in three weeks in any case", "Leave out one of the exercises"],
               answer: 2,
               explain:
@@ -723,7 +723,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               plays: 2,
               segments: [
                 { speaker: "Nella", text: "I have moved my desk to the window." },
-                { speaker: "Kerem", text: "Because of the light?" },
+                { speaker: "Connor", text: "Because of the light?" },
                 { speaker: "Nella", text: "Because of the noise, actually. I could not hear myself think next to the kitchen." },
               ],
             },
@@ -747,7 +747,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               situation: "İki arkadaş spor salonu üyeliğini konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Ozan", text: "Did you cancel the gym?" },
+                { speaker: "Tony", text: "Did you cancel the gym?" },
                 { speaker: "Rana", text: "Not yet. I go once a month and pay every month, so the math is embarrassing. But I know that the day I cancel, I will never go again." },
               ],
             },
@@ -759,10 +759,10 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               situation: "İki meslektaş bir uyku kliniğini konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Kerem", text: "How was the sleep clinic?" },
-                { speaker: "Sinem", text: "Useful, but not how I thought. They did not give me anything. They changed what time I get up, including on the weekend." },
-                { speaker: "Kerem", text: "And?" },
-                { speaker: "Sinem", text: "Three weeks in, it works." },
+                { speaker: "Connor", text: "How was the sleep clinic?" },
+                { speaker: "Trudy", text: "Useful, but not how I thought. They did not give me anything. They changed what time I get up, including on the weekend." },
+                { speaker: "Connor", text: "And?" },
+                { speaker: "Trudy", text: "Three weeks in, it works." },
               ],
             },
             {
@@ -786,9 +786,9 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               situation: "İki koşucu bir yarıştan söz ediyor.",
               plays: 2,
               segments: [
-                { speaker: "Bora", text: "You did the half marathon, didn't you? How was it?" },
+                { speaker: "Jacob", text: "You did the half marathon, didn't you? How was it?" },
                 { speaker: "Ingrid", text: "I finished, which was the plan. But I went too fast for the first five kilometers and I paid for it after ten." },
-                { speaker: "Bora", text: "Everybody does that once." },
+                { speaker: "Jacob", text: "Everybody does that once." },
                 { speaker: "Ingrid", text: "I have done it three times." },
               ],
             },
@@ -832,11 +832,11 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               id: "en-b1-03-h2-11",
               no: 11,
               ref: "b4",
-              text: "What surprised Sinem at the clinic?",
+              text: "What surprised Trudy at the clinic?",
               options: ["The clinic was free", "The treatment was not medicine", "The results came slowly"],
               answer: 1,
               explain:
-                "Sinem beklentisinin bozulduğunu söylüyor: «They did not give me anything. They changed what time I get up». Sonuç üç haftada gelmiş, yani yavaş değil; ücretten hiç söz edilmiyor.",
+                "Trudy beklentisinin bozulduğunu söylüyor: «They did not give me anything. They changed what time I get up». Sonuç üç haftada gelmiş, yani yavaş değil; ücretten hiç söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -1105,7 +1105,7 @@ I would like to pause my membership for two months rather than cancel it, becaus
 Could you let me know before the end of this month?
 
 Sincerely,
-Bora Aksoy`,
+Jacob Lloyd`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Tarih ve süre somut mu verildi?",

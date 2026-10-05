@@ -55,7 +55,7 @@
  { "tr": "Bugün mü, pazartesiden mi?", "kind": "sayTr", "en": "Today, or from Monday?" },
  { "tr": "E-posta adresiniz, lütfen.", "kind": "sayTr", "en": "Your email address, please." },
  { "tr": "Hangi katta oturuyorsunuz?", "kind": "askTr", "en": "Which floor do you live on?" },
- { "tr": "Harf harf söyle: D-E-M-I-R", "kind": "cue", "en": "Spell it letter by letter: D-E-M-I-R" },
+ { "tr": "Harf harf söyle: B-Ö-H-M", "kind": "cue", "en": "Spell it letter by letter: B-Ö-H-M" },
  { "tr": "İşten sonra ne yapıyorsun?", "kind": "sayTr", "en": "What are you doing after work?" },
  { "tr": "Numaranı rakam rakam söyle", "kind": "cue", "en": "Say your number digit by digit" },
  { "tr": "Sokağınız nasıl yazılıyor?", "kind": "askTr", "en": "How is your street spelled?" },

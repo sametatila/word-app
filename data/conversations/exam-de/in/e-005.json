@@ -248,11 +248,11 @@
    ]
   },
   {
-   "tr": "Onur kolunu nasıl incitti?",
+   "tr": "Callum kolunu nasıl incitti?",
    "kind": "question",
    "n": 1,
    "de": [
-    "How did Onur hurt his arm?"
+    "How did Callum hurt his arm?"
    ],
    "ctx": [
     "A2.1 What happened? · dinleme sorusu"
@@ -529,11 +529,11 @@
    ]
   },
   {
-   "tr": "Deniz, Jan'a nasıl gidiyor?",
+   "tr": "Charlie, Jan'a nasıl gidiyor?",
    "kind": "question",
    "n": 1,
    "de": [
-    "How does Deniz get to Jan?"
+    "How does Charlie get to Jan?"
    ],
    "ctx": [
     "A1.6 In town · okuma sorusu"
@@ -975,11 +975,11 @@
    ]
   },
   {
-   "tr": "Bora'nın morali neden bozuk?",
+   "tr": "Jacob'un morali neden bozuk?",
    "kind": "question",
    "n": 1,
    "de": [
-    "Why has Bora's mood been low?"
+    "Why has Jacob's mood been low?"
    ],
    "ctx": [
     "B1.10 Feelings and dreams · dinleme sorusu"
@@ -1239,11 +1239,11 @@
    ]
   },
   {
-   "tr": "Selin ne zaman başlayabilir?",
+   "tr": "Megan ne zaman başlayabilir?",
    "kind": "question",
    "n": 1,
    "de": [
-    "When can Selin start?"
+    "When can Megan start?"
    ],
    "ctx": [
     "A2.5 Working life · dinleme sorusu"
@@ -1582,7 +1582,7 @@
     "Have you ever worked abroad?"
    ],
    "ctx": [
-    "A2.2 My story, then and now · Merve"
+    "A2.2 My story, then and now · Isla"
    ]
   },
   {
@@ -1666,7 +1666,7 @@
    "kind": "question",
    "n": 1,
    "de": [
-    "How long did Onur stay at the doctor?"
+    "How long did Callum stay at the doctor?"
    ],
    "ctx": [
     "A2.1 What happened? · dinleme sorusu"

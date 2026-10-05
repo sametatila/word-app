@@ -73,8 +73,8 @@ export const enC1U14: SkillExercise[] = [
     minutes: 12,
     text:
       "Talks between the union and the management of the Hartmann engine plant resumed on Monday after a two-week pause. Both sides say an agreement is possible before the summer, but several points remain open.\n" +
-      "The union's central demand concerns young workers. The union representative, Pelin Aksoy, asks that the firm make permanent every apprenticeship contract signed since the merger with Norden Motors in 2022. About 180 apprentices are affected. Management has offered to make permanent only those contracts that end this year.\n" +
-      "The second issue is outsourcing. Management would like to spin off the logistics unit and hand over to an external company all the transport jobs currently done by plant staff. The union rejects this. „Much as they would like to spin it off, the real work stays in the building,“ Aksoy said.\n" +
+      "The union's central demand concerns young workers. The union representative, Jodie Lloyd, asks that the firm make permanent every apprenticeship contract signed since the merger with Norden Motors in 2022. About 180 apprentices are affected. Management has offered to make permanent only those contracts that end this year.\n" +
+      "The second issue is outsourcing. Management would like to spin off the logistics unit and hand over to an external company all the transport jobs currently done by plant staff. The union rejects this. „Much as they would like to spin it off, the real work stays in the building,“ Lloyd said.\n" +
       "Collective bargaining rights demand that the conduct of negotiations be free from state interference, and neither side has asked the regional government to step in. However, the state labor minister visited the plant last week and said she hoped for „a fair result for everybody“.\n" +
       "Were it not for the consensus building of recent years, observers say, the talks would already have failed. A code of conduct agreed in 2020 requires both sides to publish a short joint statement after every round, and so far both have kept to it.\n" +
       "The next round is planned for Thursday. On the table: a proposal to bring into the plant's own pay system the forty cleaning and security staff hired through agencies, and a request that management put in writing its promise not to cut jobs before 2027.",
@@ -100,11 +100,11 @@ export const enC1U14: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Aksoy asks that the firm make ___ every apprenticeship contract signed since the merger.",
+        text: "Lloyd asks that the firm make ___ every apprenticeship contract signed since the merger.",
         options: [],
         answer: 0,
         accept: ["permanent"],
-        explain: "„The union representative, Pelin Aksoy, asks that the firm make permanent every apprenticeship contract signed since the merger with Norden Motors in 2022.“",
+        explain: "„The union representative, Jodie Lloyd, asks that the firm make permanent every apprenticeship contract signed since the merger with Norden Motors in 2022.“",
       },
       {
         kind: "order",
@@ -236,19 +236,19 @@ export const enC1U14: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Cem", text: "Much as they would like to spin off the unit, the real work stays in-house. Read that sentence to anybody who has been through one and watch their face." },
-      { speaker: "Pelin", text: "The same desk, a new badge." },
-      { speaker: "Cem", text: "The same desk, the same corridor, the same two people to ask, and a new contract with a different notice period at the bottom of page four." },
-      { speaker: "Pelin", text: "The border, albeit permeable, does not remove the job insecurity." },
-      { speaker: "Cem", text: "That is the one line from the whole debate I would keep. The border can be crossed both ways and it is still a border, and everybody knows which side of it they are standing on." },
-      { speaker: "Pelin", text: "So permeable is not the same as gone." },
-      { speaker: "Cem", text: "Permeable is what a border is called by the people who never have to cross it. Ask somebody who crosses it twice a week and you will get a different adjective." },
-      { speaker: "Pelin", text: "Although gainfully employed, many still work on the side." },
-      { speaker: "Cem", text: "And this is where the numbers stop helping. A person with a job is counted as having one, and the evening hours are in nobody's figure at all." },
-      { speaker: "Pelin", text: "Because the form has one box." },
-      { speaker: "Cem", text: "The form has one box and the second job is not in it, so a country can report that almost everybody is employed and be telling the truth about a picture nobody lives in." },
-      { speaker: "Pelin", text: "What would you ask instead?" },
-      { speaker: "Cem", text: "Ask how many hours, from how many sources, and whether the answer changed last year. Three questions, and no form in this country asks the third one." },
+      { speaker: "Logan", text: "Much as they would like to spin off the unit, the real work stays in-house. Read that sentence to anybody who has been through one and watch their face." },
+      { speaker: "Jodie", text: "The same desk, a new badge." },
+      { speaker: "Logan", text: "The same desk, the same corridor, the same two people to ask, and a new contract with a different notice period at the bottom of page four." },
+      { speaker: "Jodie", text: "The border, albeit permeable, does not remove the job insecurity." },
+      { speaker: "Logan", text: "That is the one line from the whole debate I would keep. The border can be crossed both ways and it is still a border, and everybody knows which side of it they are standing on." },
+      { speaker: "Jodie", text: "So permeable is not the same as gone." },
+      { speaker: "Logan", text: "Permeable is what a border is called by the people who never have to cross it. Ask somebody who crosses it twice a week and you will get a different adjective." },
+      { speaker: "Jodie", text: "Although gainfully employed, many still work on the side." },
+      { speaker: "Logan", text: "And this is where the numbers stop helping. A person with a job is counted as having one, and the evening hours are in nobody's figure at all." },
+      { speaker: "Jodie", text: "Because the form has one box." },
+      { speaker: "Logan", text: "The form has one box and the second job is not in it, so a country can report that almost everybody is employed and be telling the truth about a picture nobody lives in." },
+      { speaker: "Jodie", text: "What would you ask instead?" },
+      { speaker: "Logan", text: "Ask how many hours, from how many sources, and whether the answer changed last year. Three questions, and no form in this country asks the third one." },
     ],
     questions: [
       {
@@ -320,16 +320,16 @@ export const enC1U14: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Sevil", text: "Hi everyone, this is Sevil with a short summary of yesterday's staff meeting, for those of you on the early shift." },
-      { speaker: "Sevil", text: "Management presented the new call rating system. Every call will be scored by software, and team leaders will see the scores every morning." },
-      { speaker: "Sevil", text: "Two concerns were raised. One colleague said the system obscures the segmentation of our work: a question about a lost parcel gets the same time limit as a call about a death in the family." },
-      { speaker: "Sevil", text: "Another colleague said it undermines our professional ethic. We are trained to take time with confused or elderly callers, and the software counts that time as a failure." },
-      { speaker: "Sevil", text: "Management replied with a line from the policy paper. The written rule openly claims what everyday practice merely assumes." },
-      { speaker: "Sevil", text: "In other words, every call should already be answered within four minutes, and the software only makes that visible." },
-      { speaker: "Sevil", text: "Several of us called the scores a form of disciplining, and management called that a platitude. To call it disciplining is not to call it a platitude, and we asked that this be recorded in the minutes." },
-      { speaker: "Sevil", text: "Two decisions were made. First, the system will run as a test for three months without any effect on pay." },
-      { speaker: "Sevil", text: "Second, the team leaders will read out at the next meeting all the comments submitted anonymously by staff." },
-      { speaker: "Sevil", text: "If you want to add a comment, the box is next to the coffee machine. The next meeting is on the fifteenth." },
+      { speaker: "Lauren", text: "Hi everyone, this is Lauren with a short summary of yesterday's staff meeting, for those of you on the early shift." },
+      { speaker: "Lauren", text: "Management presented the new call rating system. Every call will be scored by software, and team leaders will see the scores every morning." },
+      { speaker: "Lauren", text: "Two concerns were raised. One colleague said the system obscures the segmentation of our work: a question about a lost parcel gets the same time limit as a call about a death in the family." },
+      { speaker: "Lauren", text: "Another colleague said it undermines our professional ethic. We are trained to take time with confused or elderly callers, and the software counts that time as a failure." },
+      { speaker: "Lauren", text: "Management replied with a line from the policy paper. The written rule openly claims what everyday practice merely assumes." },
+      { speaker: "Lauren", text: "In other words, every call should already be answered within four minutes, and the software only makes that visible." },
+      { speaker: "Lauren", text: "Several of us called the scores a form of disciplining, and management called that a platitude. To call it disciplining is not to call it a platitude, and we asked that this be recorded in the minutes." },
+      { speaker: "Lauren", text: "Two decisions were made. First, the system will run as a test for three months without any effect on pay." },
+      { speaker: "Lauren", text: "Second, the team leaders will read out at the next meeting all the comments submitted anonymously by staff." },
+      { speaker: "Lauren", text: "If you want to add a comment, the box is next to the coffee machine. The next meeting is on the fifteenth." },
     ],
     questions: [
       {

@@ -36,11 +36,11 @@ export const a1U04: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: Ich habe einen Hund. Er heißt Bruno und ist zwei Jahre alt. Bruno ist sehr süß. Er liebt den Ball.\n\nTom: Ich habe keinen Hund und keine Katze. Ich habe zwei Fische. Fische machen nichts, aber ich liebe sie.\n\nElif: Ich habe leider kein Tier. Ich habe keine Zeit und kein Geld. Aber meine Oma hat ein Pferd! Das Pferd heißt Luna. Ich liebe Luna.",
+      "Mia: Ich habe einen Hund. Er heißt Bruno und ist zwei Jahre alt. Bruno ist sehr süß. Er liebt den Ball.\n\nTom: Ich habe keinen Hund und keine Katze. Ich habe zwei Fische. Fische machen nichts, aber ich liebe sie.\n\nPaula: Ich habe leider kein Tier. Ich habe keine Zeit und kein Geld. Aber meine Oma hat ein Pferd! Das Pferd heißt Luna. Ich liebe Luna.",
     questions: [
       {
         text: "Wer hat einen Hund?",
-        options: ["Mia", "Tom", "Elif"],
+        options: ["Mia", "Tom", "Paula"],
         answer: 0,
         explain: "„Ich habe einen Hund. Er heißt Bruno.“ — Mia.",
       },
@@ -51,7 +51,7 @@ export const a1U04: SkillExercise[] = [
         explain: "„Ich habe zwei Fische.“ — Çoğul: Fisch → Fische.",
       },
       {
-        text: "Richtig oder falsch? Elif hat kein Tier.",
+        text: "Richtig oder falsch? Paula hat kein Tier.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "Doğru: „Ich habe leider kein Tier.“ At büyükannesinin, kendisinin değil.",
@@ -65,18 +65,18 @@ export const a1U04: SkillExercise[] = [
         explain: "„Das Pferd heißt Luna.“",
       },
       {
-        text: "Warum hat Elif kein Tier?",
+        text: "Warum hat Paula kein Tier?",
         options: ["Sie hat keine Zeit und kein Geld", "Sie liebt Tiere nicht", "Sie hat kein Foto"],
         answer: 0,
         explain: "„Ich habe keine Zeit und kein Geld.“ Hayvan sevmemekle ilgisi yok — Luna'yı seviyor.",
       },
           {
         kind: "gapfill",
-        text: "Elif: Ich habe leider kein ___.",
+        text: "Paula: Ich habe leider kein ___.",
         options: [],
         answer: 0,
         accept: ["Tier"],
-        explain: "„Elif: Ich habe leider kein Tier.“",
+        explain: "„Paula: Ich habe leider kein Tier.“",
       },
 ],
   },

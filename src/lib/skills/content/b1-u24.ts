@@ -326,9 +326,9 @@ export const b1U24: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Geriye bakış kartını doldur.",
-        facts: "Kişi: Sedef Aydın; kaçırılan: yurt dışında bir yıl; ne zaman: 6 yıl önce; sebep: annesi hastaydı; bugün: bilinçli seçim olarak görüyor.",
+        facts: "Kişi: Amelie Haas; kaçırılan: yurt dışında bir yıl; ne zaman: 6 yıl önce; sebep: annesi hastaydı; bugün: bilinçli seçim olarak görüyor.",
         fields: [
-          { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
+          { label: "Name", answer: "Amelie Haas", accept: ["Amelie", "Haas"] },
           { label: "Chance", answer: "ein Jahr im Ausland", accept: ["im Ausland arbeiten", "Ausland"] },
           { label: "Wann", answer: "vor sechs Jahren", accept: ["sechs Jahre", "vor 6 Jahren"] },
           { label: "Grund", answer: "die Mutter war krank", accept: ["die Mutter", "Krankheit der Mutter"] },
@@ -384,7 +384,7 @@ export const b1U24: SkillExercise[] = [
         ],
         minWords: 70,
         sample:
-          "Ich kenne Elif seit zwanzig Jahren. Wir haben uns in der Schule " +
+          "Ich kenne Paula seit zwanzig Jahren. Wir haben uns in der Schule " +
           "kennengelernt, zufällig, weil wir am selben Tisch saßen.\n\n" +
           "Seit sechs Jahren wohnt sie in einer anderen Stadt. Anfangs habe ich " +
           "gedacht, dass die Distanz alles ändert. Heute weiß ich, dass das " +

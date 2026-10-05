@@ -5,9 +5,9 @@
   "de": "Zwei Personen erzählen von ihren Berufen, ihrem Alter und den Sprachen, die sie sprechen."
  },
  {
-  "tr": "Ela doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
+  "tr": "Lucy doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
   "kind": "intro",
-  "de": "Ela erzählt von ihrem Geburtstag. Wie alt ist sie, in welchem Monat, wer ist zu Hause?"
+  "de": "Lucy erzählt von ihrem Geburtstag. Wie alt ist sie, in welchem Monat, wer ist zu Hause?"
  },
  {
   "tr": "Yaşı, fiyatı ve harf harf söylemeyi yazarak çalış. Sonunda kurs formunu doldur.",
@@ -15,19 +15,19 @@
   "de": "Übe schriftlich Alter, Preis und Buchstabieren. Am Ende füllst du das Kursformular aus."
  },
  {
-  "tr": "Emre dil okulunu arıyor. Dinlerken sayıları yakala: yaş, fiyat ve süre.",
+  "tr": "Owen dil okulunu arıyor. Dinlerken sayıları yakala: yaş, fiyat ve süre.",
   "kind": "intro",
-  "de": "Emre ruft die Sprachschule an. Achte beim Hören auf die Zahlen: Alter, Preis und Dauer."
+  "de": "Owen ruft die Sprachschule an. Achte beim Hören auf die Zahlen: Alter, Preis und Dauer."
  },
  {
-  "tr": "Ayla ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
+  "tr": "Freya ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
   "kind": "intro",
-  "de": "Ayla erzählt von ihrer Familie. Verfolge beim Lesen, wer wer ist und wie alt jeder ist."
+  "de": "Freya erzählt von ihrer Familie. Verfolge beim Lesen, wer wer ist und wie alt jeder ist."
  },
  {
-  "tr": "Mia ile Tarik ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
+  "tr": "Mia ile Aaron ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
   "kind": "intro",
-  "de": "Mia und Tarik sprechen über ihre Familien. Wie viele Geschwister, wie viele Kinder, wer ist wie alt?"
+  "de": "Mia und Aaron sprechen über ihre Familien. Wie viele Geschwister, wie viele Kinder, wer ist wie alt?"
  },
  {
   "tr": "Yaşı, doğum gününü ve form sorularını yaz. Sonunda kütüphane kartını doldur.",
@@ -95,9 +95,9 @@
   "de": "„he is one year old“ — weil es nur eins ist, bleibt „year“ im Singular."
  },
  {
-  "tr": "„One hundred euros.“ Emre de duyduğuna inanamayıp tekrar soruyor.",
+  "tr": "„One hundred euros.“ Owen de duyduğuna inanamayıp tekrar soruyor.",
   "kind": "explain",
-  "de": "„One hundred euros.“ Emre traut seinen Ohren nicht und fragt noch einmal nach."
+  "de": "„One hundred euros.“ Owen traut seinen Ohren nicht und fragt noch einmal nach."
  },
  {
   "tr": "„I have two sisters and one brother.“ — bir olan erkek kardeş.",
@@ -130,9 +130,9 @@
   "de": "„He is a baby, so he does not eat cake.“ — weil er ein Baby ist, isst er keinen Kuchen."
  },
  {
-  "tr": "Doktor olan anne. „His name is Kemal“ öğretmen olan babayı anlatıyor.",
+  "tr": "Doktor olan anne. „His name is Phil“ öğretmen olan babayı anlatıyor.",
   "kind": "explain",
-  "de": "Ärztin ist die Mutter. „His name is Kemal“ meint den Vater, der Lehrer ist."
+  "de": "Ärztin ist die Mutter. „His name is Phil“ meint den Vater, der Lehrer ist."
  },
  {
   "tr": "„my brother is only nine“ — yirmi kız kardeşin, elli iki annenin yaşı.",
@@ -155,9 +155,9 @@
   "de": "„We are there in May, for my grandma's birthday.“ — der Monatsname wird großgeschrieben."
  },
  {
-  "tr": "„Her name is Ela. She is six.“ — bir yaşında olan Tarik'in erkek kardeşi.",
+  "tr": "„Her name is Lucy. She is six.“ — bir yaşında olan Aaron'un erkek kardeşi.",
   "kind": "explain",
-  "de": "„Her name is Ela. She is six.“ — ein Jahr alt ist der Bruder von Tarik."
+  "de": "„Her name is Lucy. She is six.“ — ein Jahr alt ist der Bruder von Aaron."
  },
  {
   "tr": "„The course is one hundred euros for three months.“ — üç, ayların sayısı.",
@@ -165,9 +165,9 @@
   "de": "„The course is one hundred euros for three months.“ — drei ist die Zahl der Monate."
  },
  {
-  "tr": "„I am twenty-six years old.“ Otuz dört Leyla'nın, kırk bir Meryem'in yaşı.",
+  "tr": "„I am twenty-six years old.“ Otuz dört Fiona'nın, kırk bir Iona'nın yaşı.",
   "kind": "explain",
-  "de": "„I am twenty-six years old.“ Vierunddreißig ist das Alter von Leyla, einundvierzig das von Meryem."
+  "de": "„I am twenty-six years old.“ Vierunddreißig ist das Alter von Fiona, einundvierzig das von Iona."
  },
  {
   "tr": "„One lesson is ninety minutes.“ Sayıyı yazıyla da rakamla da yazabilirsin.",
@@ -175,9 +175,9 @@
   "de": "„One lesson is ninety minutes.“ Du kannst die Zahl als Wort oder als Ziffer schreiben."
  },
  {
-  "tr": "„I am a doctor and I work in a small town.“ — Ben şarkıcı, Meryem antrenör.",
+  "tr": "„I am a doctor and I work in a small town.“ — Ben şarkıcı, Iona antrenör.",
   "kind": "explain",
-  "de": "„I am a doctor and I work in a small town.“ — Ben ist Sänger, Meryem Trainerin."
+  "de": "„I am a doctor and I work in a small town.“ — Ben ist Sänger, Iona Trainerin."
  },
  {
   "tr": "„I speak a little English and a little German.“ — iki dili de az konuşuyor.",
@@ -190,9 +190,9 @@
   "de": "„I speak a little English … but I do not speak fast.“ — genau das sagt er."
  },
  {
-  "tr": "Önce Leyla (doktor), sonra Ben (şarkıcı), en son Meryem (antrenör) konuşuyor.",
+  "tr": "Önce Fiona (doktor), sonra Ben (şarkıcı), en son Iona (antrenör) konuşuyor.",
   "kind": "explain",
-  "de": "Zuerst spricht Leyla (Ärztin), dann Ben (Sänger), zuletzt Meryem (Trainerin)."
+  "de": "Zuerst spricht Fiona (Ärztin), dann Ben (Sänger), zuletzt Iona (Trainerin)."
  },
  {
   "tr": "„I've got one daughter.“ Günlük konuşmada „I have“ yerine „I've got“ da sık duyulur.",
@@ -215,9 +215,9 @@
   "de": "Für Studenten dreißig Euro: „For students: thirty euros.“ Vierzig Euro gilt für die anderen."
  },
  {
-  "tr": "„Last name: Yalin.“ — Deniz ad, Bremen şehir. Formda her satırın kendi etiketi var.",
+  "tr": "„Last name: Thornton.“ — Charlie ad, Bremen şehir. Formda her satırın kendi etiketi var.",
   "kind": "explain",
-  "de": "„Last name: Yalin.“ — Deniz ist der Vorname, Bremen die Stadt. Im Formular hat jede Zeile ihre eigene Beschriftung."
+  "de": "„Last name: Thornton.“ — Charlie ist der Vorname, Bremen die Stadt. Im Formular hat jede Zeile ihre eigene Beschriftung."
  },
  {
   "tr": "Önce gün, sonra pasta, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",

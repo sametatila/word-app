@@ -50,21 +50,21 @@ export const enB1U18: SkillExercise[] = [
     minutes: 7,
     text:
       "Doctor: Tell me what is happening, and start with the first thing you noticed.\n" +
-      "Ela: I have had a fever since Monday. It has not been very high, but it has not gone.\n" +
+      "Lucy: I have had a fever since Monday. It has not been very high, but it has not gone.\n" +
       "Doctor: And the pain?\n" +
-      "Ela: The pain started on Tuesday. In the stomach, in the morning, and it was gone by the afternoon.\n" +
+      "Lucy: The pain started on Tuesday. In the stomach, in the morning, and it was gone by the afternoon.\n" +
       "Doctor: Those are two different things and I need both. The fever is still here, so I ask how long. The pain has a beginning, so I ask when.\n" +
-      "Ela: There is also a cough. That one I have had for about two weeks, before everything else.\n" +
+      "Lucy: There is also a cough. That one I have had for about two weeks, before everything else.\n" +
       "Doctor: Before the fever?\n" +
-      "Ela: Ten days before. I had not thought about it until now, because it is a small cough and I have one every winter.\n" +
+      "Lucy: Ten days before. I had not thought about it until now, because it is a small cough and I have one every winter.\n" +
       "Doctor: That may be the most useful thing you have said. Anything else?\n" +
-      "Ela: I have never had this symptom before — the dizzy feeling when I stand up. That started on Wednesday and it is worse in the morning.\n" +
+      "Lucy: I have never had this symptom before — the dizzy feeling when I stand up. That started on Wednesday and it is worse in the morning.\n" +
       "Doctor: Then we have four things and three of them started in one week. Have you been sleeping?\n" +
-      "Ela: Badly, since Monday.\n" +
+      "Lucy: Badly, since Monday.\n" +
       "Doctor: Then that is five. Sleep is not a symptom people report, and it is the one I ask about last and write down first.",
     questions: [
       {
-        text: "Since when has Ela had a fever?",
+        text: "Since when has Lucy had a fever?",
         options: ["since Monday", "since Tuesday", "for two weeks"],
         answer: 0,
         explain: "„I have had a fever since Monday. It has not been very high, but it has not gone.“",
@@ -198,19 +198,19 @@ export const enB1U18: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Mert", text: "By the time I spoke, they had already decided. Eleven minutes into a ninety-minute meeting." },
-      { speaker: "Mert", text: "That is not a complaint about them. It is the thing I got wrong, and I got it wrong in a way that repeats." },
-      { speaker: "Mert", text: "The situation had become serious before we met. Two weeks before, in an email chain I had read and closed." },
-      { speaker: "Mert", text: "I had heard about the problem earlier. Twice, from two people, in the corridor, in the way problems always arrive first." },
-      { speaker: "Mert", text: "What I did with both was nothing, because neither of them was my work and both of them sounded like a bad week." },
-      { speaker: "Mert", text: "The moment to speak was not the meeting. It was the second corridor conversation, when the same thing came from a second direction." },
-      { speaker: "Mert", text: "I have a rule now and it is one line: two people, one problem, one email from me that day." },
-      { speaker: "Mert", text: "The email does not solve anything. It puts the problem somewhere with a date on it, and after that the meeting is about a thing everybody has read." },
+      { speaker: "Henry", text: "By the time I spoke, they had already decided. Eleven minutes into a ninety-minute meeting." },
+      { speaker: "Henry", text: "That is not a complaint about them. It is the thing I got wrong, and I got it wrong in a way that repeats." },
+      { speaker: "Henry", text: "The situation had become serious before we met. Two weeks before, in an email chain I had read and closed." },
+      { speaker: "Henry", text: "I had heard about the problem earlier. Twice, from two people, in the corridor, in the way problems always arrive first." },
+      { speaker: "Henry", text: "What I did with both was nothing, because neither of them was my work and both of them sounded like a bad week." },
+      { speaker: "Henry", text: "The moment to speak was not the meeting. It was the second corridor conversation, when the same thing came from a second direction." },
+      { speaker: "Henry", text: "I have a rule now and it is one line: two people, one problem, one email from me that day." },
+      { speaker: "Henry", text: "The email does not solve anything. It puts the problem somewhere with a date on it, and after that the meeting is about a thing everybody has read." },
     ],
     questions: [
       {
         text: "When had they decided?",
-        options: ["eleven minutes into the meeting", "two weeks before", "after Mert spoke"],
+        options: ["eleven minutes into the meeting", "two weeks before", "after Henry spoke"],
         answer: 0,
         explain: "„By the time I spoke, they had already decided. Eleven minutes into a ninety-minute meeting.“",
       },
@@ -222,7 +222,7 @@ export const enB1U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert had heard about the problem earlier.",
+        text: "Henry had heard about the problem earlier.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I had heard about the problem earlier. Twice, from two people, in the corridor…“",
@@ -245,7 +245,7 @@ export const enB1U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is Mert's rule now?",
+        text: "What is Henry's rule now?",
         options: [],
         answer: 0,
         accept: ["one email that day", "send an email", "two people one email"],
@@ -272,37 +272,37 @@ export const enB1U18: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Sena", text: "You said in January that prices would fall. They did not." },
-      { speaker: "Can", text: "They did not, and I said it with more confidence than I had. Prices will increase soon — that is what I would say now, and I would say it quieter." },
-      { speaker: "Sena", text: "Why quieter?" },
-      { speaker: "Can", text: "Because a prediction with a date is a promise and a prediction without one is a feeling. I have stopped giving dates." },
-      { speaker: "Sena", text: "And the system?" },
-      { speaker: "Can", text: "The system is going to change. That one I am sure about, because the decision has been made and the papers are signed." },
-      { speaker: "Sena", text: "So that is not a prediction." },
-      { speaker: "Can", text: "It is a plan I have seen, on paper, with two signatures." },
-      { speaker: "Sena", text: "Is anybody talking about it?" },
-      { speaker: "Can", text: "We are discussing society on Friday, which is the largest subject anybody has put on a Friday." },
-      { speaker: "Sena", text: "Ninety minutes for society." },
-      { speaker: "Can", text: "Ninety minutes and eleven people, three of whom will speak. I hope somebody brings one number." },
-      { speaker: "Sena", text: "Will you?" },
-      { speaker: "Can", text: "I will bring one number and no prediction. That is the whole change since January." },
+      { speaker: "Ellie", text: "You said in January that prices would fall. They did not." },
+      { speaker: "Tyler", text: "They did not, and I said it with more confidence than I had. Prices will increase soon — that is what I would say now, and I would say it quieter." },
+      { speaker: "Ellie", text: "Why quieter?" },
+      { speaker: "Tyler", text: "Because a prediction with a date is a promise and a prediction without one is a feeling. I have stopped giving dates." },
+      { speaker: "Ellie", text: "And the system?" },
+      { speaker: "Tyler", text: "The system is going to change. That one I am sure about, because the decision has been made and the papers are signed." },
+      { speaker: "Ellie", text: "So that is not a prediction." },
+      { speaker: "Tyler", text: "It is a plan I have seen, on paper, with two signatures." },
+      { speaker: "Ellie", text: "Is anybody talking about it?" },
+      { speaker: "Tyler", text: "We are discussing society on Friday, which is the largest subject anybody has put on a Friday." },
+      { speaker: "Ellie", text: "Ninety minutes for society." },
+      { speaker: "Tyler", text: "Ninety minutes and eleven people, three of whom will speak. I hope somebody brings one number." },
+      { speaker: "Ellie", text: "Will you?" },
+      { speaker: "Tyler", text: "I will bring one number and no prediction. That is the whole change since January." },
     ],
     questions: [
       {
-        text: "What is Can sure about?",
+        text: "What is Tyler sure about?",
         options: ["the system is going to change", "prices will fall", "Friday will be long"],
         answer: 0,
         explain: "„The system is going to change. That one I am sure about, because the decision has been made…“",
       },
       {
-        text: "Why has Can stopped giving dates?",
+        text: "Why has Tyler stopped giving dates?",
         options: ["a prediction with a date is a promise", "dates are hard to remember", "nobody asks"],
         answer: 0,
         explain: "„a prediction with a date is a promise and a prediction without one is a feeling.“",
       },
       {
         kind: "truefalse",
-        text: "Prices fell as Can said in January.",
+        text: "Prices fell as Tyler said in January.",
         options: ["True", "False"],
         answer: 1,
         explain: "„You said in January that prices would fall. They did not.“",
@@ -325,7 +325,7 @@ export const enB1U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What will Can bring on Friday?",
+        text: "What will Tyler bring on Friday?",
         options: [],
         answer: 0,
         accept: ["one number", "a number", "one number and no prediction"],

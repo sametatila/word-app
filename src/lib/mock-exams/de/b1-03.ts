@@ -355,7 +355,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               kind: "match",
               id: "de-b1-03-l3-16",
               no: 16,
-              text: "Herr Osman sitzt im Rollstuhl und möchte eine fremde Stadt kennenlernen.",
+              text: "Herr Janssen sitzt im Rollstuhl und möchte eine fremde Stadt kennenlernen.",
               answer: "g",
               explain:
                 "(g) turu tekerlekli sandalyeyle de yapılabiliyor ve engelsiz oda sunuyor. Öteki ilanların hiçbirinde erişilebilirlikle ilgili tek satır yok.",
@@ -364,7 +364,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               kind: "match",
               id: "de-b1-03-l3-17",
               no: 17,
-              text: "Yusuf (16) soll in den Sommerferien sein Englisch verbessern.",
+              text: "Fabian (16) soll in den Sommerferien sein Englisch verbessern.",
               answer: "d",
               explain:
                 "(d) temmuzda, 14–17 yaş için ve sabahları İngilizce dersi var. Yaş aralığı ve dil, iki ölçütü birlikte karşılayan tek ilan.",
@@ -405,7 +405,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               genre: "Forum",
               genreTr: "Forum",
               title: "Autofreie Innenstadt — ja oder nein?",
-              body: `Melis A.: Ich habe gegen die Sperrung gestimmt, das gebe ich zu. Mein Laden lebt von Laufkundschaft und ich hatte Angst um den Umsatz. Nach anderthalb Jahren muss ich sagen: Es kommen mehr Leute, nicht weniger. Sie bleiben nur länger stehen. Zurück will ich nicht.
+              body: `Jutta A.: Ich habe gegen die Sperrung gestimmt, das gebe ich zu. Mein Laden lebt von Laufkundschaft und ich hatte Angst um den Umsatz. Nach anderthalb Jahren muss ich sagen: Es kommen mehr Leute, nicht weniger. Sie bleiben nur länger stehen. Zurück will ich nicht.
 
 Torben H.: Alle reden von der Innenstadt, niemand von den Straßen daneben. Der Verkehr ist nicht verschwunden, er fährt jetzt an meinem Fenster vorbei. Solange man nur verlagert statt zu verringern, ist das keine Lösung, sondern eine Verschiebung des Problems.
 
@@ -415,7 +415,7 @@ Kevin S.: Ich bin Handwerker. Mein Wagen wiegt mit Werkzeug zwei Tonnen, das tra
 
 Ilona P.: Ich bin 74 und komme schlecht zu Fuß. Zuerst war ich entsetzt, weil ich dachte, ich komme gar nicht mehr in die Stadt. Jetzt fährt ein kleiner Elektrobus alle zehn Minuten durch die Zone und hält direkt vor der Apotheke. Für mich ist es besser geworden, nicht schlechter.
 
-Ahmet Y.: Ich finde die Idee gut, wirklich. Aber unsere Stadt hat es falsch gemacht: keine neuen Buslinien, kein Parkhaus am Rand, dafür sofort Bußgelder. Wer so anfängt, verliert die Leute, die er eigentlich überzeugen will. Ich bin dagegen, bis das nachgeholt ist.
+Heiko Y.: Ich finde die Idee gut, wirklich. Aber unsere Stadt hat es falsch gemacht: keine neuen Buslinien, kein Parkhaus am Rand, dafür sofort Bußgelder. Wer so anfängt, verliert die Leute, die er eigentlich überzeugen will. Ich bin dagegen, bis das nachgeholt ist.
 
 Nora B.: Man vergisst schnell, wie es vorher war. Ich bin hier aufgewachsen und wir haben als Kinder auf dem Bürgersteig gespielt, weil kein Platz war. Meine Tochter spielt jetzt auf dem Marktplatz. Das ist kein Nebeneffekt, das ist der eigentliche Gewinn.`,
               gloss: [
@@ -432,7 +432,7 @@ Nora B.: Man vergisst schnell, wie es vorher war. Ich bin hier aufgewachsen und 
               id: "de-b1-03-l4-20",
               no: 20,
               ref: "f1",
-              text: "Melis A.",
+              text: "Jutta A.",
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
@@ -487,7 +487,7 @@ Nora B.: Man vergisst schnell, wie es vorher war. Ich bin hier aufgewachsen und 
               id: "de-b1-03-l4-25",
               no: 25,
               ref: "f1",
-              text: "Ahmet Y.",
+              text: "Heiko Y.",
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
@@ -1478,7 +1478,7 @@ Jan Petrov`,
               { de: "eine Vereinbarung treffen", tr: "Bir anlaşmaya varmak" },
             ],
             sample:
-              "Das tut mir leid, am Samstag geht es wirklich nicht — meine Schwester heiratet und ich bin schon eingeladen. Aber ich könnte den Sonntag übernehmen, wenn dir das hilft. Oder du fragst Kemal, er hat letzte Woche gesagt, dass er Stunden sammeln will. Wenn du dafür meinen Freitag nimmst, machen wir es so: Ich nehme deinen Sonntag, du meinen Freitag. Einverstanden?",
+              "Das tut mir leid, am Samstag geht es wirklich nicht — meine Schwester heiratet und ich bin schon eingeladen. Aber ich könnte den Sonntag übernehmen, wenn dir das hilft. Oder du fragst Philipp, er hat letzte Woche gesagt, dass er Stunden sammeln will. Wenn du dafür meinen Freitag nimmst, machen wir es so: Ich nehme deinen Sonntag, du meinen Freitag. Einverstanden?",
             criteria: [
               "Ret kibar ve gerekçeli mi? (Das tut mir leid, weil …)",
               "Gerçekten bir alternatif sunuldu mu, yoksa yalnız reddedildi mi?",

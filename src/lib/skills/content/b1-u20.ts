@@ -328,9 +328,9 @@ export const b1U20: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Acil kayıt kartını doldur.",
-        facts: "Hasta: Sedef Aydın; olay: merdivende düşme; gün: cumartesi akşamı; yaralanma: kol; çağrı: acil çağrı yapıldı.",
+        facts: "Hasta: Amelie Haas; olay: merdivende düşme; gün: cumartesi akşamı; yaralanma: kol; çağrı: acil çağrı yapıldı.",
         fields: [
-          { label: "Patientin", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
+          { label: "Patientin", answer: "Amelie Haas", accept: ["Amelie", "Haas"] },
           { label: "Vorfall", answer: "Sturz auf der Treppe", accept: ["Sturz", "gestürzt"] },
           { label: "Zeit", answer: "Samstagabend", accept: ["am Samstagabend", "Samstag"] },
           { label: "Verletzung", answer: "am Arm", accept: ["Arm", "der Arm"] },
@@ -386,7 +386,7 @@ export const b1U20: SkillExercise[] = [
         ],
         minWords: 70,
         sample:
-          "Liebe Aylin,\n\n" +
+          "Liebe Helene,\n\n" +
           "gute Besserung! Ich habe erst gestern Abend gehört, dass du auf " +
           "Station 3 liegst.\n\n" +
           "Ich konnte diese Woche leider nicht kommen. Am Dienstag musste ich " +
@@ -397,7 +397,7 @@ export const b1U20: SkillExercise[] = [
           "Ruhe haben möchtest — dann komme ich nur kurz.\n\n" +
           "Ich denke oft an dich. Die Kraft kommt zurück, auch wenn es gerade " +
           "langsam geht. Bis Samstag!\n\n" +
-          "Nuri",
+          "Anton",
         phrases: [
           { de: "Gute Besserung!", tr: "Geçmiş olsun!", en: "Get well soon!" },
           { de: "Ich konnte leider nicht kommen.", tr: "Ne yazık ki gelemedim.", en: "Unfortunately I couldn't come." },

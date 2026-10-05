@@ -58,14 +58,14 @@ export const enB2U19: SkillExercise[] = [
     minutes: 9,
     text:
       "HOW WE HIRED OUR NEW TEAM LEAD\n" +
-      "Posted by Aylin Demir, human resources\n" +
+      "Posted by Martha Adams, human resources\n" +
       "Last spring our customer service team lost its team lead, and we had six weeks to find a new one. This is how it went.\n" +
       "Wanting to recruit fast, we cut the selection process from four rounds to two. It was a risk, and we knew it.\n" +
       "The advertisement went online on a Monday. Having received more than ninety applications in the first week, we invited twelve people to a short video interview. Most of them were strong; two were clearly overqualified and, asked about the salary, admitted that they were looking for something else.\n" +
       "Five candidates came to the second round: half a day in the office. Given a real customer complaint, each of them had forty minutes to write a reply and explain it to the team.\n" +
-      "Having read the personnel file of our strongest internal candidate, Mert, the panel almost decided on the spot. But one of our senior colleagues, asked to lead the final discussion, suggested that we should also hear what the team thought.\n" +
-      "We did, and it changed our minds. The team preferred Leyla, an external candidate who had listened to them more than she had talked. Asked to supervise the team, she agreed on the same afternoon.\n" +
-      "Looking back, cutting two rounds was the right decision. Having the team in the room was even more important. Leyla starts her onboarding in May, and Mert, who is staying with us, will be her deputy.",
+      "Having read the personnel file of our strongest internal candidate, Henry, the panel almost decided on the spot. But one of our senior colleagues, asked to lead the final discussion, suggested that we should also hear what the team thought.\n" +
+      "We did, and it changed our minds. The team preferred Fiona, an external candidate who had listened to them more than she had talked. Asked to supervise the team, she agreed on the same afternoon.\n" +
+      "Looking back, cutting two rounds was the right decision. Having the team in the room was even more important. Fiona starts her onboarding in May, and Henry, who is staying with us, will be her deputy.",
     questions: [
       {
         text: "Why did they cut the selection process?",
@@ -84,7 +84,7 @@ export const enB2U19: SkillExercise[] = [
         text: "The team preferred an external candidate.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„The team preferred Leyla, an external candidate who had listened to them more than she had talked.“",
+        explain: "„The team preferred Fiona, an external candidate who had listened to them more than she had talked.“",
       },
       {
         kind: "gapfill",
@@ -103,17 +103,17 @@ export const enB2U19: SkillExercise[] = [
           "The advertisement went online.",
           "Twelve people had a video interview.",
           "Five candidates came to the office.",
-          "The team preferred Leyla.",
+          "The team preferred Fiona.",
         ],
         explain: "İlan, görüntülü görüşme, ofisteki ikinci tur, en sonda ekibin tercihi.",
       },
       {
         kind: "short_answer",
-        text: "What will Mert be?",
+        text: "What will Henry be?",
         options: [],
         answer: 0,
         accept: ["her deputy", "the deputy", "deputy"],
-        explain: "„Mert, who is staying with us, will be her deputy.“",
+        explain: "„Henry, who is staying with us, will be her deputy.“",
       },
     ],
   },
@@ -144,7 +144,7 @@ export const enB2U19: SkillExercise[] = [
     minutes: 9,
     text:
       "ELECTRICIANS WANTED: KAYA ENERGY SYSTEMS, BURSA\n" +
-      "Never has a skilled worker been so hard to find, and never have we needed good people more. Kaya Energy Systems installs solar panels on homes, schools and factories across the region, and our order book is full until next summer.\n" +
+      "Never has a skilled worker been so hard to find, and never have we needed good people more. Archie Energy Systems installs solar panels on homes, schools and factories across the region, and our order book is full until next summer.\n" +
       "We are looking for four electricians for permanent positions.\n" +
       "What we offer:\n" +
       "- a permanent position after a three-month trial period\n" +
@@ -170,7 +170,7 @@ export const enB2U19: SkillExercise[] = [
         text: "What does the company do?",
         options: ["It installs solar panels.", "It trains apprentices only.", "It sells vans."],
         answer: 0,
-        explain: "„Kaya Energy Systems installs solar panels on homes, schools and factories across the region…“",
+        explain: "„Archie Energy Systems installs solar panels on homes, schools and factories across the region…“",
       },
       {
         kind: "truefalse",
@@ -220,30 +220,30 @@ export const enB2U19: SkillExercise[] = [
     unit: 19,
     title: "A permanent offer",
     genre: "dialogue",
-    intro: "Duru'nun elinde iki iş teklifi var. Hangisini seçmeli?",
+    intro: "Tina'nın elinde iki iş teklifi var. Hangisini seçmeli?",
     gloss: [
       { de: "logistics", tr: "lojistik" },
     ],
     minutes: 7,
     segments: [
-      { speaker: "Duru", text: "I need your advice. I have two offers, and I have to answer both by Friday." },
-      { speaker: "Aras", text: "Lucky you. Tell me about them." },
-      { speaker: "Duru", text: "The first offer, which is a permanent position, arrived today. It is with the logistics company in Gebze, which I visited last week." },
-      { speaker: "Aras", text: "And the second?" },
-      { speaker: "Duru", text: "The other job, which has a fixed term, pays more. Two years at the bank, whose office is ten minutes from my apartment." },
-      { speaker: "Aras", text: "How much more?" },
-      { speaker: "Duru", text: "About fifteen percent. But the contract ends after two years, which worries me." },
-      { speaker: "Aras", text: "What does your colleague think? The one who is leaving?" },
-      { speaker: "Duru", text: "Sena? My colleague, whose notice period is short, leaves in May. She says the fixed term does not matter if you are good." },
-      { speaker: "Aras", text: "Easy for her to say. She has a job to go to." },
-      { speaker: "Duru", text: "Exactly. The logistics company, which is growing fast, also offers flextime and a training budget." },
-      { speaker: "Aras", text: "Then take the permanent one. The money, which is nice, will not help much if you are looking for work again in two years." },
-      { speaker: "Duru", text: "That is what my mother said, which is why I asked you." },
-      { speaker: "Aras", text: "Well, now you have two votes." },
+      { speaker: "Tina", text: "I need your advice. I have two offers, and I have to answer both by Friday." },
+      { speaker: "Rory", text: "Lucky you. Tell me about them." },
+      { speaker: "Tina", text: "The first offer, which is a permanent position, arrived today. It is with the logistics company in Gebze, which I visited last week." },
+      { speaker: "Rory", text: "And the second?" },
+      { speaker: "Tina", text: "The other job, which has a fixed term, pays more. Two years at the bank, whose office is ten minutes from my apartment." },
+      { speaker: "Rory", text: "How much more?" },
+      { speaker: "Tina", text: "About fifteen percent. But the contract ends after two years, which worries me." },
+      { speaker: "Rory", text: "What does your colleague think? The one who is leaving?" },
+      { speaker: "Tina", text: "Ellie? My colleague, whose notice period is short, leaves in May. She says the fixed term does not matter if you are good." },
+      { speaker: "Rory", text: "Easy for her to say. She has a job to go to." },
+      { speaker: "Tina", text: "Exactly. The logistics company, which is growing fast, also offers flextime and a training budget." },
+      { speaker: "Rory", text: "Then take the permanent one. The money, which is nice, will not help much if you are looking for work again in two years." },
+      { speaker: "Tina", text: "That is what my mother said, which is why I asked you." },
+      { speaker: "Rory", text: "Well, now you have two votes." },
     ],
     questions: [
       {
-        text: "When does Duru have to answer?",
+        text: "When does Tina have to answer?",
         options: ["by Friday", "in May", "today"],
         answer: 0,
         explain: "„I have two offers, and I have to answer both by Friday.“",
@@ -256,7 +256,7 @@ export const enB2U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Sena is leaving in May.",
+        text: "Ellie is leaving in May.",
         options: ["True", "False"],
         answer: 0,
         explain: "„My colleague, whose notice period is short, leaves in May.“",
@@ -279,7 +279,7 @@ export const enB2U19: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Which job does Aras recommend?",
+        text: "Which job does Rory recommend?",
         options: [],
         answer: 0,
         accept: ["the permanent one", "the permanent job", "the logistics job"],
@@ -305,30 +305,30 @@ export const enB2U19: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Sedef", text: "Good morning, everyone. I have coached people through career changes for fifteen years, and today I want to share three lessons." },
-      { speaker: "Sedef", text: "The first lesson: what decides a career is strategy. Not luck, and not only talent. People with a clear plan move further, even when they start lower." },
-      { speaker: "Sedef", text: "The second lesson is about why people leave. Last year I worked with a manager called Elif. It was the leadership style that drove her out, not the workload." },
-      { speaker: "Sedef", text: "What she needed was a boss who trusted her. What she had was a boss who checked every email." },
-      { speaker: "Sedef", text: "The third lesson is about networking. It is not the people you know well who find you your next job. It is the people you meet once a year." },
-      { speaker: "Sedef", text: "So here is the point of today. What we aim for is not a dead end. What we aim for is a plan you can start on Monday." },
-      { speaker: "Sedef", text: "What I would like you to do now is write down one goal for the next twelve months. Then we will work in pairs." },
+      { speaker: "Shelby", text: "Good morning, everyone. I have coached people through career changes for fifteen years, and today I want to share three lessons." },
+      { speaker: "Shelby", text: "The first lesson: what decides a career is strategy. Not luck, and not only talent. People with a clear plan move further, even when they start lower." },
+      { speaker: "Shelby", text: "The second lesson is about why people leave. Last year I worked with a manager called Holly. It was the leadership style that drove her out, not the workload." },
+      { speaker: "Shelby", text: "What she needed was a boss who trusted her. What she had was a boss who checked every email." },
+      { speaker: "Shelby", text: "The third lesson is about networking. It is not the people you know well who find you your next job. It is the people you meet once a year." },
+      { speaker: "Shelby", text: "So here is the point of today. What we aim for is not a dead end. What we aim for is a plan you can start on Monday." },
+      { speaker: "Shelby", text: "What I would like you to do now is write down one goal for the next twelve months. Then we will work in pairs." },
     ],
     questions: [
       {
-        text: "How long has Sedef coached people?",
+        text: "How long has Shelby coached people?",
         options: ["fifteen years", "one year", "twelve months"],
         answer: 0,
         explain: "„I have coached people through career changes for fifteen years…“",
       },
       {
-        text: "What drove Elif out?",
+        text: "What drove Holly out?",
         options: ["the leadership style", "the workload", "the salary"],
         answer: 0,
         explain: "„It was the leadership style that drove her out, not the workload.“",
       },
       {
         kind: "truefalse",
-        text: "According to Sedef, the people you know well usually find you your next job.",
+        text: "According to Shelby, the people you know well usually find you your next job.",
         options: ["True", "False"],
         answer: 1,
         explain: "„It is not the people you know well who find you your next job.“",

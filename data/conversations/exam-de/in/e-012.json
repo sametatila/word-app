@@ -57,7 +57,7 @@
    ]
   },
   {
-   "tr": "Emir verme yetkisinin kimde olduğunu adlandırabiliyorum.",
+   "tr": "Ethan verme yetkisinin kimde olduğunu adlandırabiliyorum.",
    "kind": "cando",
    "n": 1,
    "de": [
@@ -677,11 +677,11 @@
    ]
   },
   {
-   "tr": "İyi günler, ben Ali Kaya. Bayan Berg ile görüşebilir miyim?",
+   "tr": "İyi günler, ben Harry Ellis. Bayan Berg ile görüşebilir miyim?",
    "kind": "speaking",
    "n": 1,
    "de": [
-    "Good afternoon, this is Ali Kaya. Can I speak to Mrs. Berg?"
+    "Good afternoon, this is Harry Ellis. Can I speak to Mrs. Berg?"
    ],
    "ctx": [
     "A1.10 Keeping in touch · konuşma"
@@ -737,7 +737,7 @@
     "I organized projects and I worked with a team of ten people."
    ],
    "ctx": [
-    "A2.5 Working life · Selin"
+    "A2.5 Working life · Megan"
    ]
   },
   {
@@ -786,14 +786,14 @@
    ]
   },
   {
-   "tr": "Adım Selin Kaya. Dört yıldır büyük bir şirkette çalışıyorum.",
+   "tr": "Adım Megan Morgan. Dört yıldır büyük bir şirkette çalışıyorum.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "My name is Selin Kaya. I have worked in a big company for four years."
+    "My name is Megan Morgan. I have worked in a big company for four years."
    ],
    "ctx": [
-    "A2.5 Working life · Selin"
+    "A2.5 Working life · Megan"
    ]
   },
   {
@@ -826,7 +826,7 @@
     "By the time I called, they had already noticed the problem. I explained the reason."
    ],
    "ctx": [
-    "B1.3 Linking ideas · Deniz"
+    "B1.3 Linking ideas · Charlie"
    ]
   },
   {
@@ -948,14 +948,14 @@
    ]
   },
   {
-   "tr": "İyi günler, ben Nuray Aydın. Bay Berg ile görüşebilir miyim?",
+   "tr": "İyi günler, ben Cara Kelly. Bay Berg ile görüşebilir miyim?",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Good afternoon, this is Nuray Aydin. Can I speak to Mr. Berg?"
+    "Good afternoon, this is Cara Kelly. Can I speak to Mr. Berg?"
    ],
    "ctx": [
-    "A1.10 Keeping in touch · Mrs. Aydin"
+    "A1.10 Keeping in touch · Mrs. Kelly"
    ]
   },
   {
@@ -1019,7 +1019,7 @@
     "Thank you. Although the deadline was short, the team was supportive."
    ],
    "ctx": [
-    "B1.1 My career so far · Selin"
+    "B1.1 My career so far · Megan"
    ]
   },
   {
@@ -1442,7 +1442,7 @@
     "I read the summary. We take a copy of the schedule in case the train stops."
    ],
    "ctx": [
-    "B1.3 Linking ideas · Deniz"
+    "B1.3 Linking ideas · Charlie"
    ]
   },
   {
@@ -1596,7 +1596,7 @@
     "If I were braver, I would apply again. But I am afraid of the same answer."
    ],
    "ctx": [
-    "B1.10 Feelings and dreams · Bora"
+    "B1.10 Feelings and dreams · Jacob"
    ]
   },
   {

@@ -147,18 +147,18 @@ export const enB2P15: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Agent", text: "Thanks for holding. I understand you'd like to cancel your weekly recipe box. Can I ask what the reason is?" },
-      { speaker: "Mr. Hale", text: "It's nothing to do with the food, which is fine. We've just realized we throw away about a third of it, because we're rarely home before eight." },
+      { speaker: "Mr. Morris", text: "It's nothing to do with the food, which is fine. We've just realized we throw away about a third of it, because we're rarely home before eight." },
       { speaker: "Agent", text: "That's useful to know. Before you go, we could switch you to a box every other week, at twenty percent off for the first three months." },
-      { speaker: "Mr. Hale", text: "Would that change my contract? The last time I accepted a discount somewhere, I found out later that I'd agreed to another year." },
+      { speaker: "Mr. Morris", text: "Would that change my contract? The last time I accepted a discount somewhere, I found out later that I'd agreed to another year." },
       { speaker: "Agent", text: "No, there's no minimum period on this plan. You can pause or cancel at any time, as long as you do it before Wednesday midnight for the following week." },
-      { speaker: "Mr. Hale", text: "In that case I'll try it, but I'd like it in writing. Could you send me an email confirming the new price and the fact that there's no minimum term?" },
+      { speaker: "Mr. Morris", text: "In that case I'll try it, but I'd like it in writing. Could you send me an email confirming the new price and the fact that there's no minimum term?" },
       { speaker: "Agent", text: "Of course, you'll have it within the hour. I've also noted that you're interested in smaller portions, which we're launching in the spring." },
-      { speaker: "Mr. Hale", text: "Thanks. And if the new box doesn't work either, I'm assuming I can just cancel online without calling again?" },
+      { speaker: "Mr. Morris", text: "Thanks. And if the new box doesn't work either, I'm assuming I can just cancel online without calling again?" },
       { speaker: "Agent", text: "Yes, there's a button in your account settings. You shouldn't have been told to phone us in the first place; that page is being corrected." },
     ],
     questions: [
       {
-        text: "Why does Mr. Hale want to cancel?",
+        text: "Why does Mr. Morris want to cancel?",
         options: [
           "They throw a lot of it away.",
           "The food quality is poor.",
@@ -194,7 +194,7 @@ export const enB2P15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Mr. Hale ask to receive in writing?",
+        text: "What does Mr. Morris ask to receive in writing?",
         options: [],
         answer: 0,
         accept: ["an email confirming it", "a confirmation email", "an email", "an email confirming the new price", "a confirmation of the new price", "confirmation of the new price", "the new price", "the new price and no minimum term"],

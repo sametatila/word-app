@@ -74,11 +74,11 @@
    ]
   },
   {
-   "tr": "Ahmet'in erkek kardeşi var mı?",
+   "tr": "Finn'in erkek kardeşi var mı?",
    "kind": "question",
    "n": 1,
    "de": [
-    "Does Ahmet have a brother?"
+    "Does Finn have a brother?"
    ],
    "ctx": [
     "A1.2 Family and people · dinleme sorusu"
@@ -277,7 +277,7 @@
     "Have you finished your English course yet?"
    ],
    "ctx": [
-    "A2.2 My story, then and now · Merve"
+    "A2.2 My story, then and now · Isla"
    ]
   },
   {
@@ -846,7 +846,7 @@
     "I can start on April 1st."
    ],
    "ctx": [
-    "A2.5 Working life · Selin"
+    "A2.5 Working life · Megan"
    ]
   },
   {
@@ -1106,7 +1106,7 @@
     "It is very quiet here. Is there a yard?"
    ],
    "ctx": [
-    "A1.7 Home and living · Mrs. Demir"
+    "A1.7 Home and living · Mrs. Adams"
    ]
   },
   {
@@ -1478,11 +1478,11 @@
    ]
   },
   {
-   "tr": "Bayan Kaya mülakata ne getirmeli?",
+   "tr": "Bayan Morgan mülakata ne getirmeli?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What must Ms. Kaya bring to the interview?"
+    "What must Ms. Morgan bring to the interview?"
    ],
    "ctx": [
     "B1.1 My career so far · okuma sorusu"
@@ -1725,7 +1725,7 @@
     "I was waiting for the bus when it started to rain."
    ],
    "ctx": [
-    "A2.1 What happened? · Onur"
+    "A2.1 What happened? · Callum"
    ]
   },
   {

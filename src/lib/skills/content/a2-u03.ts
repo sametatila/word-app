@@ -48,7 +48,7 @@ export const a2U03: SkillExercise[] = [
       "Hallo Jan,\n\n" +
       "sorry, dass ich erst heute schreibe. Meine Woche war wirklich voll.\n\n" +
       "Am Montag hat unser großes Team-Meeting stattgefunden, und danach hatte ich drei Tage nur Termine. Jeder Arbeitstag ging bis nach sieben. Am Mittwoch habe ich es trotzdem geschafft, die Zahlen für das neue Projekt fertig zu machen.\n\n" +
-      "Die Liste mit den offenen Fragen bin ich noch nicht durchgegangen. Das mache ich am Montag, versprochen. Den Rest hat zum Glück Frau Öztürk übernommen.\n\n" +
+      "Die Liste mit den offenen Fragen bin ich noch nicht durchgegangen. Das mache ich am Montag, versprochen. Den Rest hat zum Glück Frau Dörr übernommen.\n\n" +
       "Wenigstens war das Wochenende ruhig. Ich habe zwei Tage lang gar nichts gemacht und viel geschlafen.\n\n" +
       "Bis Montag!\nClaudia",
     questions: [
@@ -77,8 +77,8 @@ export const a2U03: SkillExercise[] = [
         text: "Wer hat den Rest übernommen?",
         options: [],
         answer: 0,
-        accept: ["Frau Öztürk", "Öztürk"],
-        explain: "„Den Rest hat zum Glück Frau Öztürk übernommen.“",
+        accept: ["Frau Dörr", "Dörr"],
+        explain: "„Den Rest hat zum Glück Frau Dörr übernommen.“",
       },
       {
         text: "Claudias Wochenende war ruhig.",
@@ -170,13 +170,13 @@ export const a2U03: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Fatma", text: "Hallo Leon! Rate mal, was passiert ist!" },
+      { speaker: "Imke", text: "Hallo Leon! Rate mal, was passiert ist!" },
       { speaker: "Leon", text: "Keine Ahnung. Hast du die Prüfung bestanden?" },
-      { speaker: "Fatma", text: "Richtig erraten — aber das ist nicht alles. Die Zusage ist heute gekommen — ich bekomme das Stipendium!" },
+      { speaker: "Imke", text: "Richtig erraten — aber das ist nicht alles. Die Zusage ist heute gekommen — ich bekomme das Stipendium!" },
       { speaker: "Leon", text: "Was? Das ist ja außergewöhnlich! Ich staune wirklich." },
-      { speaker: "Fatma", text: "Meine Mutter hat am Telefon gejubelt. Ich glaube, die ganze Straße hat es gehört." },
+      { speaker: "Imke", text: "Meine Mutter hat am Telefon gejubelt. Ich glaube, die ganze Straße hat es gehört." },
       { speaker: "Leon", text: "Das glaube ich sofort. Und wann geht es los?" },
-      { speaker: "Fatma", text: "Im Oktober. Zwei Jahre lang, mit Kurs und allem. Ich kann es selbst noch gar nicht glauben." },
+      { speaker: "Imke", text: "Im Oktober. Zwei Jahre lang, mit Kurs und allem. Ich kann es selbst noch gar nicht glauben." },
     ],
     questions: [
       {
@@ -195,17 +195,17 @@ export const a2U03: SkillExercise[] = [
       },
       {
         text: "Wer hat am Telefon gejubelt?",
-        options: ["Leon", "Fatmas Mutter", "Fatma"],
+        options: ["Leon", "Fatmas Mutter", "Imke"],
         answer: 1,
         explain: "„Meine Mutter hat am Telefon gejubelt.“",
       },
       {
         kind: "dictation",
-        text: "Fatma'nın telefondaki ilk sözlerini yaz.",
+        text: "Imke'nin telefondaki ilk sözlerini yaz.",
         options: [],
         answer: 0,
         accept: ["Hallo Leon! Rate mal, was passiert ist!"],
-        explain: "Emir cümlesi artı yan cümle: yan cümlede fiil sona gider — „was passiert ist“.",
+        explain: "Uwe cümlesi artı yan cümle: yan cümlede fiil sona gider — „was passiert ist“.",
       },
     ],
   },
@@ -230,17 +230,17 @@ export const a2U03: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Sofia", text: "Sag mal, was wolltest du als Kind eigentlich werden?" },
-      { speaker: "Aylin", text: "Feuerwehrmann. Also Feuerwehrfrau. Ich habe jahrelang davon geträumt." },
+      { speaker: "Helene", text: "Feuerwehrmann. Also Feuerwehrfrau. Ich habe jahrelang davon geträumt." },
       { speaker: "Sofia", text: "Ernsthaft? Und warum ist nichts daraus geworden?" },
-      { speaker: "Aylin", text: "Ich konnte nicht gut schwimmen, und dafür muss man das können. Später wollte ich dann Tierärztin werden." },
+      { speaker: "Helene", text: "Ich konnte nicht gut schwimmen, und dafür muss man das können. Später wollte ich dann Tierärztin werden." },
       { speaker: "Sofia", text: "Und das hat auch nicht geklappt?" },
-      { speaker: "Aylin", text: "Nein, ich musste nach der Schule sofort arbeiten. Mein Bruder war der Begabte in der Familie — er ist heute Pilot." },
+      { speaker: "Helene", text: "Nein, ich musste nach der Schule sofort arbeiten. Mein Bruder war der Begabte in der Familie — er ist heute Pilot." },
       { speaker: "Sofia", text: "Ein Pilot in der Familie! Ist er berühmt geworden?" },
-      { speaker: "Aylin", text: "Nur bei uns zu Hause. Aber er sagt, sein Traum war immer nur das Fliegen." },
+      { speaker: "Helene", text: "Nur bei uns zu Hause. Aber er sagt, sein Traum war immer nur das Fliegen." },
     ],
     questions: [
       {
-        text: "Was wollte Aylin zuerst werden?",
+        text: "Was wollte Helene zuerst werden?",
         options: ["Tierärztin", "Feuerwehrfrau", "Pilotin"],
         answer: 1,
         explain: "İlk cevabı: „Feuerwehrmann. Also Feuerwehrfrau.“ Veterinerlik daha sonraki hayali.",
@@ -254,7 +254,7 @@ export const a2U03: SkillExercise[] = [
         explain: "Kip fiilleri geçmişte Perfekt kurmaz, kısa biçimlerini alır: können → konnte.",
       },
       {
-        text: "Warum ist Aylin nicht Tierärztin geworden?",
+        text: "Warum ist Helene nicht Tierärztin geworden?",
         options: ["Sie musste sofort arbeiten.", "Sie mochte keine Tiere.", "Die Schule war zu teuer."],
         answer: 0,
         explain: "„ich musste nach der Schule sofort arbeiten“ — zorunluluk fiilinin kısa geçmişi.",
@@ -333,11 +333,11 @@ export const a2U03: SkillExercise[] = [
     tasks: [
       {
         kind: "reply",
-        prompt: "Fatma'nın mesajına cevap yaz. Onu tebrik et ve kendi iyi haberini anlat: ne oldu, o an ne hissettin, bundan sonra ne olacak.",
+        prompt: "Imke'nin mesajına cevap yaz. Onu tebrik et ve kendi iyi haberini anlat: ne oldu, o an ne hissettin, bundan sonra ne olacak.",
         stimulus:
-          "Hey!\n\nRate mal, was passiert ist — ich habe die Prüfung bestanden UND die Zusage für das Stipendium bekommen! Meine Mutter hat gejubelt.\n\nIm Oktober geht es los. Und bei dir? Gibt es auch etwas Neues?\n\nFatma",
+          "Hey!\n\nRate mal, was passiert ist — ich habe die Prüfung bestanden UND die Zusage für das Stipendium bekommen! Meine Mutter hat gejubelt.\n\nIm Oktober geht es los. Und bei dir? Gibt es auch etwas Neues?\n\nImke",
         checklist: [
-          "Fatma'yı tebrik ettin mi?",
+          "Imke'yi tebrik ettin mi?",
           "Kendi haberini Perfekt ile anlattın mı (habe … bestanden / bekommen)?",
           "O anki duyguyu söyledin mi?",
           "Ne zaman başlayacağını yazdın mı?",
@@ -349,7 +349,7 @@ export const a2U03: SkillExercise[] = [
           { de: "Ich habe wirklich gestaunt.", tr: "gerçekten hayret ettim", en: "I was really amazed" },
         ],
         sample:
-          "Hey Fatma,\n\nherzlichen Glückwunsch! Das ist wirklich außergewöhnlich — beides an einem Tag!\n\nBei mir gibt es auch Neues: Ich habe letzte Woche meine Prüfung bestanden und heute die Zusage für den Praktikumsplatz bekommen. Als die Mail gekommen ist, habe ich erst gestaunt und dann meine Schwester angerufen. Ich habe es kaum geschafft, ruhig zu bleiben.\n\nIch fange im November an. Wir müssen das feiern!\n\nLiebe Grüße\nMerve",
+          "Hey Imke,\n\nherzlichen Glückwunsch! Das ist wirklich außergewöhnlich — beides an einem Tag!\n\nBei mir gibt es auch Neues: Ich habe letzte Woche meine Prüfung bestanden und heute die Zusage für den Praktikumsplatz bekommen. Als die Mail gekommen ist, habe ich erst gestaunt und dann meine Schwester angerufen. Ich habe es kaum geschafft, ruhig zu bleiben.\n\nIch fange im November an. Wir müssen das feiern!\n\nLiebe Grüße\nKarla",
       },
     ],
   },

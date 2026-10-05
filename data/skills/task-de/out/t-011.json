@@ -1,23 +1,23 @@
 [
  {
-  "tr": "Kurs formunu Emre için doldur.",
+  "tr": "Kurs formunu Owen için doldur.",
   "kind": "form.prompt",
-  "de": "Fülle das Kursformular für Emre aus."
+  "de": "Fülle das Kursformular für Owen aus."
  },
  {
-  "tr": "Kütüphane kartı formunu Ela için doldur.",
+  "tr": "Kütüphane kartı formunu Lucy için doldur.",
   "kind": "form.prompt",
-  "de": "Fülle für Ela das Formular für die Bibliothekskarte aus."
+  "de": "Fülle für Lucy das Formular für die Bibliothekskarte aus."
  },
  {
-  "tr": "Emre Kaya; 22 yaşında; öğretmen; Bremen'de yaşıyor.",
+  "tr": "Owen Morgan; 22 yaşında; öğretmen; Bremen'de yaşıyor.",
   "kind": "form.facts",
-  "de": "Emre Kaya; 22 Jahre alt; Lehrer; wohnt in Bremen."
+  "de": "Owen Morgan; 22 Jahre alt; Lehrer; wohnt in Bremen."
  },
  {
-  "tr": "Ela Yalin; adı Ela, soyadı Yalin; Bremen'de oturuyor; doğum günü haziranda.",
+  "tr": "Lucy Thornton; adı Lucy, soyadı Thornton; Bremen'de oturuyor; doğum günü haziranda.",
   "kind": "form.facts",
-  "de": "Ela Yalin; Vorname Ela, Nachname Yalin; wohnt in Bremen; Geburtstag im Juni."
+  "de": "Lucy Thornton; Vorname Lucy, Nachname Thornton; wohnt in Bremen; Geburtstag im Juni."
  },
  {
   "tr": "Soruya kısa cevap ver: evet.",
@@ -70,9 +70,9 @@
   "de": "Sie hat zwei Kinder."
  },
  {
-  "tr": "Onun adı Kemal.",
+  "tr": "Onun adı Phil.",
   "kind": "build.tr",
-  "de": "Er heißt Kemal."
+  "de": "Er heißt Phil."
  },
  {
   "tr": "Ne iş yapıyorsun?",
@@ -190,9 +190,9 @@
   "de": "Wie im Deutschen ist das Possessivpronomen ein eigenes Wort: my mother, meine Mutter. Anders als deutsch „meine“ wird „my“ aber nie gebeugt."
  },
  {
-  "tr": "Kemal erkek, o yüzden „his“. Kadın olsaydı „her name“ olurdu — iyelik SAHİBE bakıyor.",
+  "tr": "Phil erkek, o yüzden „his“. Kadın olsaydı „her name“ olurdu — iyelik SAHİBE bakıyor.",
   "kind": "build.hint",
-  "de": "Kemal ist männlich, deshalb „his“. Bei einer Frau wäre es „her name“ — wie bei deutsch „sein“ und „ihr“ richtet es sich nach dem BESITZER."
+  "de": "Phil ist männlich, deshalb „his“. Bei einer Frau wäre es „her name“ — wie bei deutsch „sein“ und „ihr“ richtet es sich nach dem BESITZER."
  },
  {
   "tr": "Konuşmacıların sırası: doğru sıraya koy.",
@@ -200,7 +200,7 @@
   "de": "Die Reihenfolge der Sprecher: Bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Ela'nın anlattığı sıra: doğru sıraya koy.",
+  "tr": "Lucy'nin anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge in Elas Erzählung: Bring sie in die richtige Ordnung."
  }

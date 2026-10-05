@@ -220,17 +220,17 @@ export const b2U15: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Erhan", text: "In der Zeitung stand wieder, die Jungen zahlten für die Alten. Ich finde das zu einfach." },
+      { speaker: "Roland", text: "In der Zeitung stand wieder, die Jungen zahlten für die Alten. Ich finde das zu einfach." },
       { speaker: "Britta", text: "Ich auch. Sowohl die Jungen als auch die Alten zahlen — nur zu verschiedenen Zeiten." },
-      { speaker: "Erhan", text: "Genau. Meine Mutter hat vierzig Jahre eingezahlt." },
+      { speaker: "Roland", text: "Genau. Meine Mutter hat vierzig Jahre eingezahlt." },
       { speaker: "Britta", text: "Und trotzdem stimmt etwas nicht am Verhältnis. Die Lebenserwartung ist gestiegen, die Einzahlungsdauer nicht." },
-      { speaker: "Erhan", text: "Das ist ein Wandel, den niemand geplant hat. Aber es ist weder ein Skandal noch jemandes Schuld." },
+      { speaker: "Roland", text: "Das ist ein Wandel, den niemand geplant hat. Aber es ist weder ein Skandal noch jemandes Schuld." },
       { speaker: "Britta", text: "Nein. Trotzdem muss man darüber reden, ohne gleich eine Bevölkerungsgruppe zum Gegner zu machen." },
-      { speaker: "Erhan", text: "Der Umgang miteinander ist ja das Problem. Kaum sagt jemand Rente, sind die Vorurteile da." },
+      { speaker: "Roland", text: "Der Umgang miteinander ist ja das Problem. Kaum sagt jemand Rente, sind die Vorurteile da." },
       { speaker: "Britta", text: "Und dabei ist die Ungleichheit innerhalb der Generationen größer als zwischen ihnen." },
-      { speaker: "Erhan", text: "Das habe ich auch gelesen. Zwei Rentner können völlig verschieden leben." },
+      { speaker: "Roland", text: "Das habe ich auch gelesen. Zwei Rentner können völlig verschieden leben." },
       { speaker: "Britta", text: "Eben. Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit." },
-      { speaker: "Erhan", text: "Was hat dich eigentlich geprägt in dieser Sache?" },
+      { speaker: "Roland", text: "Was hat dich eigentlich geprägt in dieser Sache?" },
       { speaker: "Britta", text: "Meine Großmutter. Sie hat gearbeitet bis siebzig und nie darüber geklagt." },
     ],
     questions: [
@@ -243,7 +243,7 @@ export const b2U15: SkillExercise[] = [
         explain: "sowohl … als auch iki tarafı birden kapsar; fiil çoğul olur.",
       },
       {
-        text: "Was ist laut Erhan der Wandel?",
+        text: "Was ist laut Roland der Wandel?",
         options: [
           "ein Skandal",
           "etwas, das niemand geplant hat",

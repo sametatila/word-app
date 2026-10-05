@@ -35,7 +35,7 @@ export const enA2P5: SkillExercise[] = [
       "Question from Nils:\n" +
       "My old phone still works, but the battery is bad and it is slow. It is in a drawer with two others. " +
       "What do you do with yours?\n\n" +
-      "Selin:\n" +
+      "Megan:\n" +
       "I sold mine on a second-hand site. It took three weeks and a lot of messages, but I got sixty euros. " +
       "Important: delete everything first and take the card out. I forgot that once.\n\n" +
       "Marcus:\n" +
@@ -52,7 +52,7 @@ export const enA2P5: SkillExercise[] = [
         explain: "Başlık ve Nils'in son cümlesi aynı soruyu soruyor: „What do you do with yours?“",
       },
       {
-        text: "What does Selin say is important?",
+        text: "What does Megan say is important?",
         options: [
           "delete everything and take the card out",
           "sell the phone in three weeks",
@@ -226,11 +226,11 @@ export const enA2P5: SkillExercise[] = [
           { de: "Good luck!", tr: "Bol şans!" },
         ],
         sample:
-          "Dear Ferhat, welcome to the team! Here is everything I know. The shift starts at five on " +
+          "Dear Warren, welcome to the team! Here is everything I know. The shift starts at five on " +
           "Tuesday and Thursday and finishes at eight. The key is with Mrs. Lang in apartment two; she is at home " +
           "after four. First, turn on the two heaters in the back room, because it takes an hour to get warm. " +
           "The coffee machine often stops in the middle. Do not open it; just turn it off and on again. " +
-          "If something is really broken, call Deniz at 0176 33 88 12. She answers late in the evening too. " +
+          "If something is really broken, call Charlie at 0176 33 88 12. She answers late in the evening too. " +
           "I am moving to Portugal next month, but write to me if you have questions. Good luck!",
       },
     ],
@@ -352,7 +352,7 @@ export const enA2P5: SkillExercise[] = [
         heading: "Plan için şimdiki zaman",
         tr: "Kesinleşmiş bir randevu ya da bilet için gelecek zaman yerine present continuous kullanılır. Cümlede bir zaman ifadesi bulunması gerekir, yoksa cümle „şu an“ anlaşılır.",
         examples: [
-          { de: "I am meeting Ali at six tonight.", tr: "Bu akşam altıda Ali ile buluşuyorum.", note: "randevu var" },
+          { de: "I am meeting Harry at six tonight.", tr: "Bu akşam altıda Harry ile buluşuyorum.", note: "randevu var" },
           { de: "We are flying to Rome tomorrow.", tr: "Yarın Roma'ya uçuyoruz.", note: "bilet alınmış" },
           { de: "She is starting her new job on Monday.", tr: "Pazartesi yeni işine başlıyor." },
         ],
@@ -395,7 +395,7 @@ export const enA2P5: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I ___ (meet) Ali at six tonight.",
+        text: "I ___ (meet) Harry at six tonight.",
         options: [],
         answer: 0,
         accept: ["am meeting", "'m meeting"],

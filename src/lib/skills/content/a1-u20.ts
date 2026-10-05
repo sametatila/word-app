@@ -339,7 +339,7 @@ export const a1U20: SkillExercise[] = [
           { de: "Geht es am Sonntag?", tr: "Pazar olur mu?", en: "Does Sunday work?" },
         ],
         sample:
-          "Hallo Jonas,\n\ndanke für die Einladung! Ein Picknick am See ist eine schöne Idee.\n\nLeider kann ich am Samstag nicht. Ich muss am Samstag arbeiten — diesmal klappt es einfach nicht. Schade!\n\nAber geht es am Sonntag? Ich hoffe, das Wetter ist dann auch schön. Ich komme unbedingt.\n\nSchreib mir kurz. Bis dann!\nDein Ali",
+          "Hallo Jonas,\n\ndanke für die Einladung! Ein Picknick am See ist eine schöne Idee.\n\nLeider kann ich am Samstag nicht. Ich muss am Samstag arbeiten — diesmal klappt es einfach nicht. Schade!\n\nAber geht es am Sonntag? Ich hoffe, das Wetter ist dann auch schön. Ich komme unbedingt.\n\nSchreib mir kurz. Bis dann!\nDein Moritz",
       },
     ],
   },

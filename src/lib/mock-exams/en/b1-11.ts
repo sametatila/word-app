@@ -169,7 +169,7 @@ This is not a charity meal and nobody asks you why you came.`,
               kind: "match",
               id: "en-b1-11-l2-6",
               no: 6,
-              text: "Emir lives alone and throws away half of every package of vegetables.",
+              text: "Ethan lives alone and throws away half of every package of vegetables.",
               answer: "a",
               explain:
                 "İlan tam bu sorunu çözüyor: «sells by the piece: one carrot, half a loaf, two eggs. Nothing here comes in a bag».",
@@ -652,7 +652,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               situation: "Biri dükkândan arıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Marta, it is Emir. I am at the store. The half loaves are gone and the whole ones are the same price. Should I buy one and we split it, or do you want nothing?" },
+                { text: "Hi Marta, it is Ethan. I am at the store. The half loaves are gone and the whole ones are the same price. Should I buy one and we split it, or do you want nothing?" },
               ],
             },
             {
@@ -728,7 +728,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               id: "en-b1-11-h1-6",
               no: 6,
               ref: "a6",
-              text: "What is Emir asking?",
+              text: "What is Ethan asking?",
               options: ["Whether the bread is fresh", "Whether to buy and share a loaf", "Whether the store is still open"],
               answer: 1,
               explain:

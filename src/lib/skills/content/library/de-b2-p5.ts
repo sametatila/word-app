@@ -131,16 +131,16 @@ export const deB2P5: SkillExercise[] = [
     minutes: 9,
     segments: [
       { speaker: "Moderator", text: "Willkommen zurück. Heute geht es um eine Ausbildung, die zwei Jahre dauert, und um Menschen, die dabei fast alles machen und am Ende nichts behalten." },
-      { speaker: "Moderator", text: "Assistenzhunde werden nicht in einem Zentrum groß. Sie leben die ersten anderthalb Jahre in einer Familie. Ich habe mit Nuray Kilic gesprochen, die das zum dritten Mal macht." },
-      { speaker: "Nuray", text: "Man gewöhnt den Hund an alles, woran ein normaler Hund nie gewöhnt wird: an Aufzüge, an Rolltreppen, an Krankenhausflure, an Menschen, die plötzlich schreien." },
-      { speaker: "Nuray", text: "Dafür bekommt man eine Liste, und auf dieser Liste steht nichts über Kunststücke. Es geht um Ruhe. Ein Hund, der sich über jeden Besucher freut, ist für diese Arbeit nicht geeignet." },
+      { speaker: "Moderator", text: "Assistenzhunde werden nicht in einem Zentrum groß. Sie leben die ersten anderthalb Jahre in einer Familie. Ich habe mit Maike Wirth gesprochen, die das zum dritten Mal macht." },
+      { speaker: "Maike", text: "Man gewöhnt den Hund an alles, woran ein normaler Hund nie gewöhnt wird: an Aufzüge, an Rolltreppen, an Krankenhausflure, an Menschen, die plötzlich schreien." },
+      { speaker: "Maike", text: "Dafür bekommt man eine Liste, und auf dieser Liste steht nichts über Kunststücke. Es geht um Ruhe. Ein Hund, der sich über jeden Besucher freut, ist für diese Arbeit nicht geeignet." },
       { speaker: "Moderator", text: "Und was ist das Schwierigste?" },
-      { speaker: "Nuray", text: "Nicht das Abgeben, was alle denken. Das Schwierigste ist das erste halbe Jahr, weil man ständig damit rechnen muss, etwas falsch zu machen, und weil einem niemand sagt, was genau." },
-      { speaker: "Nuray", text: "Beim Abgeben weint man einen Tag. Danach denkt man an den Menschen, der ihn jetzt hat, und das trägt erstaunlich gut." },
+      { speaker: "Maike", text: "Nicht das Abgeben, was alle denken. Das Schwierigste ist das erste halbe Jahr, weil man ständig damit rechnen muss, etwas falsch zu machen, und weil einem niemand sagt, was genau." },
+      { speaker: "Maike", text: "Beim Abgeben weint man einen Tag. Danach denkt man an den Menschen, der ihn jetzt hat, und das trägt erstaunlich gut." },
       { speaker: "Moderator", text: "Wie viele Hunde schaffen die Prüfung?" },
-      { speaker: "Nuray", text: "Etwa die Hälfte. Die anderen werden vermittelt, meistens an die Familie, die sie großgezogen hat. Darüber wird selten gesprochen, und ich finde das falsch: Es gehört dazu." },
+      { speaker: "Maike", text: "Etwa die Hälfte. Die anderen werden vermittelt, meistens an die Familie, die sie großgezogen hat. Darüber wird selten gesprochen, und ich finde das falsch: Es gehört dazu." },
       { speaker: "Moderator", text: "Worauf sollte jemand achten, der sich dafür interessiert?" },
-      { speaker: "Nuray", text: "Auf die eigene Wohnung nicht. Auf den eigenen Alltag schon. Wer den Hund nicht überallhin mitnehmen kann, kann ihn nicht ausbilden, und das merkt man erst im dritten Monat." },
+      { speaker: "Maike", text: "Auf die eigene Wohnung nicht. Auf den eigenen Alltag schon. Wer den Hund nicht überallhin mitnehmen kann, kann ihn nicht ausbilden, und das merkt man erst im dritten Monat." },
     ],
     questions: [
       {
@@ -165,7 +165,7 @@ export const deB2P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Für Nuray ist die Abgabe des Hundes das Schwierigste.",
+        text: "Für Maike ist die Abgabe des Hundes das Schwierigste.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Tam tersi: „Nicht das Abgeben, was alle denken. Das Schwierigste ist das erste halbe Jahr …“",
@@ -187,7 +187,7 @@ export const deB2P5: SkillExercise[] = [
         explain: "„Beim Abgeben weint man einen Tag.“ — „bei“ + adlaştırma bir zaman öbeği kurar.",
       },
       {
-        text: "Worauf sollte man laut Nuray achten?",
+        text: "Worauf sollte man laut Maike achten?",
         options: ["auf den eigenen Alltag", "auf die Größe der Wohnung", "auf die Erfahrung mit Hunden"],
         answer: 0,
         explain: "„Auf die eigene Wohnung nicht. Auf den eigenen Alltag schon.“",

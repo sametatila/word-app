@@ -52,7 +52,7 @@ export const b1U01: SkillExercise[] = [
       "Voraussetzung ist eine abgeschlossene Ausbildung und mindestens zwei Jahre Erfahrung im Büro. " +
       "Gute Deutschkenntnisse sind wichtig, weil Sie jeden Tag mit Kunden sprechen. " +
       "Wir bieten eine feste Stelle, dreißig Tage Urlaub und die Gelegenheit, sich beruflich zu entwickeln.\n\n" +
-      "Notiz von Yasemin: Ich arbeite seit vier Jahren im Büro, also habe ich genug Erfahrung. " +
+      "Notiz von Ramona: Ich arbeite seit vier Jahren im Büro, also habe ich genug Erfahrung. " +
       "Meinen Abschluss habe ich in der Türkei gemacht, aber das war kein Problem. " +
       "Meine Qualifikation passt gut, obwohl ich noch nie im Lager gearbeitet habe. " +
       "Am Telefon bin ich ruhig und geduldig, das ist meine Stärke. " +
@@ -78,14 +78,14 @@ export const b1U01: SkillExercise[] = [
         explain: "„Ich arbeite seit vier Jahren im Büro, also habe ich genug Erfahrung.“ — seit + Dativ.",
       },
       {
-        text: "Was sagt Yasemin über ihre Schwäche?",
+        text: "Was sagt Ramona über ihre Schwäche?",
         options: ["Sie hat keine Schwäche", "Der Computer, aber sie lernt gerade", "Das Telefon"],
         answer: 1,
         explain: "„Meine Schwäche ist der Computer, aber ich lerne gerade und ich will mich verbessern.“",
       },
       {
         kind: "gapfill",
-        text: "Yasemin bewirbt sich, ___ die Stelle zu ihr passt.",
+        text: "Ramona bewirbt sich, ___ die Stelle zu ihr passt.",
         options: [],
         answer: 0,
         accept: ["weil"],
@@ -123,7 +123,7 @@ export const b1U01: SkillExercise[] = [
       "und war dort für den Einkauf zuständig. Seine Leistung war gut, aber er suchte eine neue " +
       "Herausforderung. Deshalb bewarb er sich 2024 bei einer größeren Firma. Heute arbeitet er mit " +
       "vier Personen zusammen und ist stolz auf seine Karriere.\n\n" +
-      "Leyla Kaya kam 2016 nach Deutschland. Ihren Abschluss machte sie in Izmir, aber der Weg " +
+      "Johanna Graf kam 2016 nach Deutschland. Ihren Abschluss machte sie in Izmir, aber der Weg " +
       "zur ersten Stelle war lang. Das dauerte fast zwei Jahre und brauchte viel Geduld. Danach arbeitete " +
       "sie zuerst in einem Laden, obwohl das nicht ihr Beruf war. Seit 2021 ist sie in einer Abteilung " +
       "für Kunden und entwickelt dort neue Ideen. Ihre Kollegen sagen, sie sei kreativ und ordentlich. " +
@@ -155,7 +155,7 @@ export const b1U01: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Leyla arbeitete zuerst in einem Laden, ___ das nicht ihr Beruf war.",
+        text: "Johanna arbeitete zuerst in einem Laden, ___ das nicht ihr Beruf war.",
         options: [],
         answer: 0,
         accept: ["obwohl"],
@@ -189,18 +189,18 @@ export const b1U01: SkillExercise[] = [
       { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     segments: [
-      { speaker: "Personaler", text: "Guten Tag, Frau Demir. Sie haben sich bei uns beworben. Haben Sie kurz Zeit?" },
-      { speaker: "Frau Demir", text: "Ja, natürlich. Ich freue mich, dass Sie anrufen." },
+      { speaker: "Personaler", text: "Guten Tag, Frau Böhm. Sie haben sich bei uns beworben. Haben Sie kurz Zeit?" },
+      { speaker: "Frau Böhm", text: "Ja, natürlich. Ich freue mich, dass Sie anrufen." },
       { speaker: "Personaler", text: "Sie arbeiten seit drei Jahren im Verkauf. Warum wollen Sie wechseln?" },
-      { speaker: "Frau Demir", text: "Ich möchte mich beruflich entwickeln. Bei Ihnen sehe ich eine gute Gelegenheit. Meine Erfahrung im Verkauf hilft mir dabei, und die Motivation ist da." },
+      { speaker: "Frau Böhm", text: "Ich möchte mich beruflich entwickeln. Bei Ihnen sehe ich eine gute Gelegenheit. Meine Erfahrung im Verkauf hilft mir dabei, und die Motivation ist da." },
       { speaker: "Personaler", text: "Was ist Ihre größte Stärke?" },
-      { speaker: "Frau Demir", text: "Ich habe viel Geduld mit Kunden, auch wenn es schwierig wird." },
+      { speaker: "Frau Böhm", text: "Ich habe viel Geduld mit Kunden, auch wenn es schwierig wird." },
       { speaker: "Personaler", text: "Und wann könnten Sie anfangen?" },
-      { speaker: "Frau Demir", text: "Ab dem ersten Mai bin ich bereit." },
+      { speaker: "Frau Böhm", text: "Ab dem ersten Mai bin ich bereit." },
     ],
     questions: [
       {
-        text: "Wie lange arbeitet Frau Demir schon im Verkauf?",
+        text: "Wie lange arbeitet Frau Böhm schon im Verkauf?",
         options: ["Seit einem Jahr", "Seit drei Jahren", "Seit fünf Jahren"],
         answer: 1,
         explain: "„Sie arbeiten seit drei Jahren im Verkauf.“ — seit + Dativ.",
@@ -219,7 +219,7 @@ export const b1U01: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Frau Demir ist ab dem ersten ___ bereit.",
+        text: "Frau Böhm ist ab dem ersten ___ bereit.",
         options: [],
         answer: 0,
         accept: ["Mai"],
@@ -410,7 +410,7 @@ export const b1U01: SkillExercise[] = [
           "Ich bewerbe mich bei Ihnen, um mich beruflich zu entwickeln. Meine Motivation ist deshalb sehr groß. Die Zusammenarbeit in " +
           "einem kleinen Team ist für mich eine schöne Herausforderung.\n\n" +
           "Über ein Gespräch würde ich mich sehr freuen.\n\n" +
-          "Mit freundlichen Grüßen\nLeyla Kaya",
+          "Mit freundlichen Grüßen\nJohanna Graf",
         phrases: [
           { de: "Ich bewerbe mich auf die Stelle als …", tr: "… pozisyonuna başvuruyorum", en: "I am applying for the position of …" },
           { de: "Seit … arbeite ich …", tr: "…'den beri … çalışıyorum", en: "I have been working … since …" },

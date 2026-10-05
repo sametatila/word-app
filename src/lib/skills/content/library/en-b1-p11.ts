@@ -250,7 +250,7 @@ export const enB1P11: SkillExercise[] = [
           "sure whether he saw me. The van had a blue logo on the side, and I remember the first " +
           "three letters of the license plate: KTR. " +
           "If it helps, I'm happy to speak to the police or to your insurance company. " +
-          "Best wishes, Deniz Aksoy",
+          "Best wishes, Charlie Lloyd",
       },
     ],
   },

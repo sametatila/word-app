@@ -67,7 +67,7 @@ export const enA2P16: SkillExercise[] = [
           "the window. At that time I couldn't read well, and I was afraid of every test. You stayed after school with " +
           "me twice a week and gave me easy books about animals. Thanks to you, I was able to read a whole book in one " +
           "month, and I never stopped after that. These days I work in a library in Izmir, and I read stories to " +
-          "children every Saturday. I often think of you when I do it. I just wanted to say thank you. Best wishes, Kaan Demir",
+          "children every Saturday. I often think of you when I do it. I just wanted to say thank you. Best wishes, Liam Adams",
       },
     ],
   },

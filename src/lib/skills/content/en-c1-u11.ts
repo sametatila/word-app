@@ -63,8 +63,8 @@ export const enC1U11: SkillExercise[] = [
     text:
       "Ask ten people in Eastfield about the community center on Carter Street and you will get at least three answers. What one calls a cultural scene, another calls a parallel society, and a third simply calls „the place where my daughter learned to dance“.\n" +
       "The center opened in 2009 in a former bakery. Today it offers music lessons, a homework club, a small library in four languages and, on Friday evenings, concerts that regularly fill the street. In the arts section of the local paper it is a subculture worth visiting; in the ministry, a line in the cultural policy budget.\n" +
-      "You notice the difference as soon as you walk in. One is greeted in Turkish, Arabic or German, depending on who is behind the desk, and nobody asks where you are from. „We do not check passports at the door,“ says Leyla Demir, who has run the center for eleven years. „We check whether you brought a cake.“\n" +
-      "Not everyone is charmed. A local council member recently described the center as proof that newcomers refuse to join the dominant culture. What marginalization does, Demir replies, is create a marginal group: „If one is told for twenty years that one does not belong, one eventually builds a room of one's own.“\n" +
+      "You notice the difference as soon as you walk in. One is greeted in Turkish, Arabic or German, depending on who is behind the desk, and nobody asks where you are from. „We do not check passports at the door,“ says Fiona Adams, who has run the center for eleven years. „We check whether you brought a cake.“\n" +
+      "Not everyone is charmed. A local council member recently described the center as proof that newcomers refuse to join the dominant culture. What marginalization does, Adams replies, is create a marginal group: „If one is told for twenty years that one does not belong, one eventually builds a room of one's own.“\n" +
       "The numbers do not support the council member's fears. According to the center's own survey, two thirds of its visitors also use the public library, and half of the teenagers in the homework club go on to university.\n" +
       "Behind the argument stands an older question: who decides what counts as culture at all? High culture is a register; dominant culture is a claim. The first describes an opera house. The second tells everybody else what to do.\n" +
       "For now, the center's biggest problem is more practical. The roof leaks, and the city has not yet said who will pay for it.",
@@ -90,11 +90,11 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "What marginalization does, Demir replies, is create a ___ group.",
+        text: "What marginalization does, Adams replies, is create a ___ group.",
         options: [],
         answer: 0,
         accept: ["marginal"],
-        explain: "„What marginalization does, Demir replies, is create a marginal group…“",
+        explain: "„What marginalization does, Adams replies, is create a marginal group…“",
       },
       {
         kind: "order",
@@ -103,7 +103,7 @@ export const enC1U11: SkillExercise[] = [
         answer: 0,
         items: [
           "The center opened in a former bakery.",
-          "Leyla Demir talks about passports and cake.",
+          "Fiona Adams talks about passports and cake.",
           "A council member speaks against the center.",
           "The roof leaks.",
         ],
@@ -219,20 +219,20 @@ export const enC1U11: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Defne", text: "So, how was the town hall? I only saw the last twenty minutes." },
-      { speaker: "Onur", text: "Loud. A woman in the front row put it in one sentence. Much as we like to call it acculturation, they mean assimilation." },
-      { speaker: "Defne", text: "Who did she mean by they?" },
-      { speaker: "Onur", text: "The city. The mayor calls the new program acculturation, and most people in the room heard assimilation." },
-      { speaker: "Defne", text: "Why? The program itself is not bad." },
-      { speaker: "Onur", text: "No. The integration course, albeit useful, is not a culture of welcome. People said that again and again." },
-      { speaker: "Defne", text: "What did they mean by that?" },
-      { speaker: "Onur", text: "A course ends after six months and you get a certificate. Being welcome does not end, and nobody hands you a paper for it." },
-      { speaker: "Defne", text: "Fair. Did anyone defend the program?" },
-      { speaker: "Onur", text: "A teacher did. Although tired of the debate, she spoke very calmly. Her students learn fast, she said, much as they complain about the homework." },
-      { speaker: "Defne", text: "And the critics?" },
-      { speaker: "Onur", text: "An older man asked why no course teaches the neighbors anything about the people moving in next door. Although a sign of hybridity, he said, adaptability is asked of one side only." },
-      { speaker: "Defne", text: "That is actually a good idea. We could run evening sessions at the library." },
-      { speaker: "Onur", text: "Put it in writing and send it to the mayor. Much as she dislikes long letters, she reads them all." },
+      { speaker: "Gina", text: "So, how was the town hall? I only saw the last twenty minutes." },
+      { speaker: "Callum", text: "Loud. A woman in the front row put it in one sentence. Much as we like to call it acculturation, they mean assimilation." },
+      { speaker: "Gina", text: "Who did she mean by they?" },
+      { speaker: "Callum", text: "The city. The mayor calls the new program acculturation, and most people in the room heard assimilation." },
+      { speaker: "Gina", text: "Why? The program itself is not bad." },
+      { speaker: "Callum", text: "No. The integration course, albeit useful, is not a culture of welcome. People said that again and again." },
+      { speaker: "Gina", text: "What did they mean by that?" },
+      { speaker: "Callum", text: "A course ends after six months and you get a certificate. Being welcome does not end, and nobody hands you a paper for it." },
+      { speaker: "Gina", text: "Fair. Did anyone defend the program?" },
+      { speaker: "Callum", text: "A teacher did. Although tired of the debate, she spoke very calmly. Her students learn fast, she said, much as they complain about the homework." },
+      { speaker: "Gina", text: "And the critics?" },
+      { speaker: "Callum", text: "An older man asked why no course teaches the neighbors anything about the people moving in next door. Although a sign of hybridity, he said, adaptability is asked of one side only." },
+      { speaker: "Gina", text: "That is actually a good idea. We could run evening sessions at the library." },
+      { speaker: "Callum", text: "Put it in writing and send it to the mayor. Much as she dislikes long letters, she reads them all." },
     ],
     questions: [
       {
@@ -300,19 +300,19 @@ export const enC1U11: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ela", text: "Good evening. My name is Ela Kaplan, and I speak for the tenants of the Linden Park estate: three hundred and twenty households." },
-      { speaker: "Ela", text: "The principle of equality demands that human dignity be untouchable for all, not just for some. That includes the people who live on the top floors of Block C." },
-      { speaker: "Ela", text: "Since March, the elevators in Block C have been out of order. Families with small children and a man in a wheelchair have been carrying their shopping up nine floors." },
-      { speaker: "Ela", text: "The owner has now announced a renovation. We welcome it. But we ask that every participation model give tenants a vote, not just a seat at the back of the room." },
-      { speaker: "Ela", text: "Our second demand concerns the rents. We insist that any increase after the renovation be limited to what the law allows, and that it be explained in writing." },
-      { speaker: "Ela", text: "Our third demand is about the children. Were it not for the homework room in Block A, many of them would have nowhere quiet to study. We ask that it stay open during the works." },
-      { speaker: "Ela", text: "Some call these small things. Were it not for small things like these, educational inequality would be a phrase in a report and not a fact on our stairs." },
-      { speaker: "Ela", text: "We have collected four hundred signatures. We propose that the city and the owner meet us before the end of the month." },
-      { speaker: "Ela", text: "Thank you. Our full list of demands is on the table by the door." },
+      { speaker: "Lucy", text: "Good evening. My name is Lucy Ashworth, and I speak for the tenants of the Linden Park estate: three hundred and twenty households." },
+      { speaker: "Lucy", text: "The principle of equality demands that human dignity be untouchable for all, not just for some. That includes the people who live on the top floors of Block C." },
+      { speaker: "Lucy", text: "Since March, the elevators in Block C have been out of order. Families with small children and a man in a wheelchair have been carrying their shopping up nine floors." },
+      { speaker: "Lucy", text: "The owner has now announced a renovation. We welcome it. But we ask that every participation model give tenants a vote, not just a seat at the back of the room." },
+      { speaker: "Lucy", text: "Our second demand concerns the rents. We insist that any increase after the renovation be limited to what the law allows, and that it be explained in writing." },
+      { speaker: "Lucy", text: "Our third demand is about the children. Were it not for the homework room in Block A, many of them would have nowhere quiet to study. We ask that it stay open during the works." },
+      { speaker: "Lucy", text: "Some call these small things. Were it not for small things like these, educational inequality would be a phrase in a report and not a fact on our stairs." },
+      { speaker: "Lucy", text: "We have collected four hundred signatures. We propose that the city and the owner meet us before the end of the month." },
+      { speaker: "Lucy", text: "Thank you. Our full list of demands is on the table by the door." },
     ],
     questions: [
       {
-        text: "How many households does Ela speak for?",
+        text: "How many households does Lucy speak for?",
         options: ["three hundred and twenty", "four hundred", "nine"],
         answer: 0,
         explain: "„I speak for the tenants of the Linden Park estate: three hundred and twenty households.“",
@@ -410,11 +410,11 @@ export const enC1U11: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kültür merkezi haberi için bilgi kartını doldur.",
-        facts: "Merkez 2009'da eski bir fırında açıldı; on bir yıldır Leyla Demir yönetiyor; ziyaretçilerin üçte ikisi halk kütüphanesini de kullanıyor; onarımın masrafını kimin ödeyeceği henüz belli değil.",
+        facts: "Merkez 2009'da eski bir fırında açıldı; on bir yıldır Fiona Adams yönetiyor; ziyaretçilerin üçte ikisi halk kütüphanesini de kullanıyor; onarımın masrafını kimin ödeyeceği henüz belli değil.",
         fields: [
           { label: "Opened", answer: "in 2009", accept: ["2009"] },
           { label: "Building", answer: "a former bakery", accept: ["a bakery", "an old bakery"] },
-          { label: "Run by", answer: "Leyla Demir", accept: ["Demir"] },
+          { label: "Run by", answer: "Fiona Adams", accept: ["Adams"] },
           { label: "Also use the public library", answer: "two thirds of visitors", accept: ["two thirds"] },
           { label: "Open question", answer: "who pays for the repair", accept: ["the repair", "who will pay"] },
         ],

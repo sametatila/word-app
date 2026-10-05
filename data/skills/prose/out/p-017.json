@@ -180,14 +180,14 @@
   "en": "There is no such mixed form: it is either „die lesende Frau“ or „die gelesene Zeitung“."
  },
  {
-  "tr": "Deniz \"I went to Izmir with my sister.\" diyor, yani kız kardeşiyle İzmir'e gitti.",
+  "tr": "Charlie \"I went to Izmir with my sister.\" diyor, yani kız kardeşiyle İzmir'e gitti.",
   "kind": "explain",
-  "en": "Deniz says \"I went to Izmir with my sister.\", so she went to Izmir with her sister."
+  "en": "Charlie says \"I went to Izmir with my sister.\", so she went to Izmir with her sister."
  },
  {
-  "tr": "Deniz \"No, he is busy. He has an exam on Monday.\" diyor, yani Murat gelmiyor.",
+  "tr": "Charlie \"No, he is busy. He has an exam on Monday.\" diyor, yani Isaac gelmiyor.",
   "kind": "explain",
-  "en": "Deniz says \"No, he is busy. He has an exam on Monday.\", so Murat is not coming."
+  "en": "Charlie says \"No, he is busy. He has an exam on Monday.\", so Isaac is not coming."
  },
  {
   "tr": "drängen: gerekçesiz baskı. Gerekçe eklenince aynı istek priorisieren'e dönüşüyor.",
@@ -275,9 +275,9 @@
   "en": "A metaphor brings its own logic; even when the speaker stops, the image goes on working."
  },
  {
-  "tr": "Metinde \"My mother is in the middle.\" yazıyor. Yani ortadaki kişi Elif'in annesi.",
+  "tr": "Metinde \"My mother is in the middle.\" yazıyor. Yani ortadaki kişi Holly'nin annesi.",
   "kind": "explain",
-  "en": "The text says \"My mother is in the middle.\" So the person in the middle is Elif's mother."
+  "en": "The text says \"My mother is in the middle.\" So the person in the middle is Holly's mother."
  },
  {
   "tr": "Notta \"My brother Tom is coming at eight\" yazıyor. Gelen kişi Dan'in kardeşi Tom.",
@@ -615,9 +615,9 @@
   "en": "An article about the balance between country and city. Watch the linked trends."
  },
  {
-  "tr": "Mert \"At seven in the morning, on Saturday.\" diyor. Saat bir, otobüsün varış saati.",
+  "tr": "Henry \"At seven in the morning, on Saturday.\" diyor. Saat bir, otobüsün varış saati.",
   "kind": "explain",
-  "en": "Mert says \"At seven in the morning, on Saturday.\" One o'clock is when the bus arrives."
+  "en": "Henry says \"At seven in the morning, on Saturday.\" One o'clock is when the bus arrives."
  },
  {
   "tr": "Metin baştan sona uyarı ve öneri veriyor: „Genau darauf warten unseriöse Anbieter.“",

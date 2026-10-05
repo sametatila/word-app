@@ -242,7 +242,7 @@ export const deB1P12: SkillExercise[] = [
           "entspannten sich alle. Unsere Mannschaft hat zwei von fünf Spielen gewonnen und am Ende den " +
           "sechsten Platz erreicht. In Erinnerung bleibt vor allem der Moment, als Lina im letzten Spiel " +
           "den Ball aus der Ecke ins Tor geschossen hat. Ein großes Dankeschön geht an unseren Trainer " +
-          "Herrn Yilmaz und an alle Eltern, die Kuchen gebacken haben. Das nächste Turnier findet am " +
+          "Herrn Lutz und an alle Eltern, die Kuchen gebacken haben. Das nächste Turnier findet am " +
           "14. November in Weststadt statt.",
       },
     ],

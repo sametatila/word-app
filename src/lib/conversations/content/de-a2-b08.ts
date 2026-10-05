@@ -1631,7 +1631,7 @@ export const deA2B08: Conversation[] = [
     level: "A2",
     course: "de",
     title: "Meine Familie ist weit weg",
-    titleTr: "Özlem",
+    titleTr: "Sigrid",
     summary: "Uzaktaki aileyle iletişimi ve özlemi anlatmayı öğretir.",
     minutes: 10,
     focusId: "Nebensatz-wenn",

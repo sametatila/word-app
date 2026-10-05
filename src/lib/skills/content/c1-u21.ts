@@ -234,21 +234,21 @@ export const c1U21: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Ela", text: "Alle haben gelacht und ich habe nur „Bank“ verstanden." },
+      { speaker: "Nele", text: "Alle haben gelacht und ich habe nur „Bank“ verstanden." },
       { speaker: "Tobias", text: "Genau da liegt der Witz. „Bank“ ist Geldinstitut und Sitzgelegenheit." },
-      { speaker: "Ela", text: "Und das reicht für einen Lacher?" },
+      { speaker: "Nele", text: "Und das reicht für einen Lacher?" },
       { speaker: "Tobias", text: "Für einen kleinen. Das war ein Kalauer, kein guter Witz. Bei einem Kalauer stöhnt man mehr, als man lacht." },
-      { speaker: "Ela", text: "Warum macht ihr sie dann?" },
+      { speaker: "Nele", text: "Warum macht ihr sie dann?" },
       { speaker: "Tobias", text: "Weil das Stöhnen dazugehört. Es ist ein Signal: Wir sind entspannt genug für schlechte Witze." },
-      { speaker: "Ela", text: "Muss man den dann interpretieren?" },
+      { speaker: "Nele", text: "Muss man den dann interpretieren?" },
       { speaker: "Tobias", text: "Nein, gerade nicht. Wer einen Witz erklärt bekommt, versteht ihn und lacht trotzdem nicht. Bei einem Reim geht es ähnlich — man hört ihn oder man hört ihn nicht." },
-      { speaker: "Ela", text: "Und gibt es Themen, über die man nicht scherzt?" },
+      { speaker: "Nele", text: "Und gibt es Themen, über die man nicht scherzt?" },
       { speaker: "Tobias", text: "Einige. Manches ist tabu, und die Grenze verschiebt sich je nachdem, wer im Raum sitzt." },
-      { speaker: "Ela", text: "Ich merke, dass ich Wortspiele nie mitbekomme." },
+      { speaker: "Nele", text: "Ich merke, dass ich Wortspiele nie mitbekomme." },
       { speaker: "Tobias", text: "Die kommen zuletzt. Erst versteht man die Wörter, dann die Sätze, dann den Ton — und ganz am Ende den doppelten Boden." },
-      { speaker: "Ela", text: "Das klingt tröstlich und trotzdem ärgerlich." },
+      { speaker: "Nele", text: "Das klingt tröstlich und trotzdem ärgerlich." },
       { speaker: "Tobias", text: "Es ist keine Frage der Intelligenz. Mir geht es auf Türkisch genauso — du hast mir mal einen erklärt, und ich habe verstanden, warum er funktioniert, ohne dass er lustig wurde." },
-      { speaker: "Ela", text: "Der geht in der Übersetzung verloren." },
+      { speaker: "Nele", text: "Der geht in der Übersetzung verloren." },
       { speaker: "Tobias", text: "Und das ist der Unterschied zu allem anderen. Eine Nachricht kann man übersetzen. Ein Wortspiel muss man neu erfinden." },
     ],
     questions: [
@@ -319,19 +319,19 @@ export const c1U21: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Mareike", text: "Du bist aus Hamburg? Dann sagst du also drei Sätze am Tag." },
-      { speaker: "Halil", text: "Zwei. Der dritte war der hier." },
+      { speaker: "Helmut", text: "Zwei. Der dritte war der hier." },
       { speaker: "Mareike", text: "Sehr gut. Ich bin aus Bayern, ich rede also ununterbrochen und trinke Bier zum Frühstück." },
-      { speaker: "Halil", text: "Und wir gelten dafür als zugeknöpft. Pauschal, versteht sich — für einen ganzen Landstrich." },
+      { speaker: "Helmut", text: "Und wir gelten dafür als zugeknöpft. Pauschal, versteht sich — für einen ganzen Landstrich." },
       { speaker: "Mareike", text: "Genau wie bei uns angeblich jede Sitte mit Bier anfängt." },
-      { speaker: "Halil", text: "Ich hätte gesagt: Weißwurst." },
+      { speaker: "Helmut", text: "Ich hätte gesagt: Weißwurst." },
       { speaker: "Mareike", text: "Vor zwölf Uhr, sonst ist es ein Verbrechen. Das ist übrigens kein Klischee, das ist ein Ritual — und ein Ritual verteidigt man nicht, man vollzieht es." },
-      { speaker: "Halil", text: "Bei uns im Norden gibt es das auch. Nur ohne Kult, mit Fischbrötchen und ohne Erklärung." },
+      { speaker: "Helmut", text: "Bei uns im Norden gibt es das auch. Nur ohne Kult, mit Fischbrötchen und ohne Erklärung." },
       { speaker: "Mareike", text: "Das ist der eigentliche Unterschied. Nicht was ihr esst, sondern dass ihr nichts dazu sagt." },
-      { speaker: "Halil", text: "Wobei — bei den Sprüchen über Norddeutsche fällt mir auf, dass wir sie immer selbst machen." },
+      { speaker: "Helmut", text: "Wobei — bei den Sprüchen über Norddeutsche fällt mir auf, dass wir sie immer selbst machen." },
       { speaker: "Mareike", text: "Stimmt. Über die eigene Region darf man alles sagen." },
-      { speaker: "Halil", text: "Und über eine andere nur mit Augenzwinkern. Fehlt das Zwinkern, ist es keine Übertreibung mehr, sondern eine Behauptung." },
+      { speaker: "Helmut", text: "Und über eine andere nur mit Augenzwinkern. Fehlt das Zwinkern, ist es keine Übertreibung mehr, sondern eine Behauptung." },
       { speaker: "Mareike", text: "Genau deshalb funktioniert es zwischen uns und nicht überall." },
-      { speaker: "Halil", text: "Man sagt das eben, aber man meint eine Landkarte, keine Menschen." },
+      { speaker: "Helmut", text: "Man sagt das eben, aber man meint eine Landkarte, keine Menschen." },
     ],
     questions: [
       {
@@ -353,7 +353,7 @@ export const c1U21: SkillExercise[] = [
         explain: "mit einem Augenzwinkern: abartının işareti.",
       },
       {
-        text: "Was passiert laut Halil, wenn das Augenzwinkern fehlt?",
+        text: "Was passiert laut Helmut, wenn das Augenzwinkern fehlt?",
         options: [
           "Der Witz wird schärfer",
           "Es ist keine Übertreibung mehr, sondern eine Behauptung",
@@ -364,7 +364,7 @@ export const c1U21: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was fällt Halil an den Sprüchen über Norddeutsche auf?",
+        text: "Was fällt Helmut an den Sprüchen über Norddeutsche auf?",
         options: [],
         answer: 0,
         accept: [
@@ -450,14 +450,14 @@ export const c1U21: SkillExercise[] = [
           "Espriyi yapan sensin. Etkilenen kişiye kısa bir mesaj yaz. Kurallar: (1) niyetini savunma — „so war das nicht gemeint“ yasak; (2) neden komik olduğunu açıklama; (3) neyin yanlış olduğunu somut adlandır (hedef ve tanıklık); (4) tek bir sonraki adım öner. Yalvarma da yapma — kısa ve net kal. Kendini gereğinden fazla alçaltmak da karşı tarafa iş çıkarır.",
         stimulus:
           "DURUM\n\n" +
-          "Ekip toplantısı, on bir kişi. Meslektaşın Yusuf üç aydır ilk kez sunum yaptı ve sunum sırasında iki kez duraksadı.\n\n" +
+          "Ekip toplantısı, on bir kişi. Meslektaşın Fabian üç aydır ilk kez sunum yaptı ve sunum sırasında iki kez duraksadı.\n\n" +
           "Sen sunumdan sonra şunu söyledin: „Sehr souverän — vor allem die Pausen. Da hatten wir alle Zeit zum Nachdenken.“\n\n" +
-          "İki kişi güldü. Yusuf gülmedi ve toplantının kalanında konuşmadı. Bir meslektaşın sana sonradan yazdı: „Das war unnötig.“\n\n" +
-          "Yusuf akşam yazdı: „Ich möchte nicht darüber reden.“",
+          "İki kişi güldü. Fabian gülmedi ve toplantının kalanında konuşmadı. Bir meslektaşın sana sonradan yazdı: „Das war unnötig.“\n\n" +
+          "Fabian akşam yazdı: „Ich möchte nicht darüber reden.“",
         checklist: [
           "Niyet savunması yok mu?",
           "Neyin yanlış olduğu somut mu (hedef seçimi + on bir kişinin önünde)?",
-          "Yusuf'un „konuşmak istemiyorum“ isteğine saygı gösterildi mi?",
+          "Fabian'ın „konuşmak istemiyorum“ isteğine saygı gösterildi mi?",
           "Tek bir somut sonraki adım var mı, aşırı yalvarma yok mu?",
         ],
         minWords: 70,
@@ -467,7 +467,7 @@ export const c1U21: SkillExercise[] = [
           { de: "Du musst darauf nicht antworten.", tr: "buna cevap vermek zorunda değilsin", en: "you don't have to reply to this" },
         ],
         sample:
-          "Hallo Yusuf,\n\n" +
+          "Hallo Fabian,\n\n" +
           "mein Kommentar zu deinen Pausen war unpassend, und ich nehme ihn zurück.\n\n" +
           "Es waren zwei Dinge falsch daran. Du hast zum ersten Mal seit Monaten präsentiert, und ich habe ausgerechnet die Stelle herausgegriffen, die dir schwerfiel. Und ich habe es vor elf Leuten getan, nicht unter vier Augen — das war der eigentliche Fehler.\n\n" +
           "Du musst darauf nicht antworten, und wir müssen auch nicht darüber reden; ich habe deine Nachricht verstanden.\n\n" +

@@ -101,19 +101,19 @@ export const enA1U12: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Good morning. Can I exchange this sweater?\n" +
+      "Lucy: Good morning. Can I exchange this sweater?\n" +
       "Seller: Of course. Is there a problem?\n" +
-      "Ela: Yes. There is a button here, and it is dirty. Look.\n" +
+      "Lucy: Yes. There is a button here, and it is dirty. Look.\n" +
       "Seller: I see. Do you have the receipt?\n" +
-      "Ela: Yes, here it is. I keep all my receipts.\n" +
+      "Lucy: Yes, here it is. I keep all my receipts.\n" +
       "Seller: Good. Would you like the same sweater in another color?\n" +
-      "Ela: I'd like to return this and get my money back.\n" +
+      "Lucy: I'd like to return this and get my money back.\n" +
       "Seller: No problem. How much did you pay?\n" +
-      "Ela: Thirty dollars.\n" +
+      "Lucy: Thirty dollars.\n" +
       "Seller: Here is your money. I am really sorry.\n" +
-      "Ela: Thank you. It's not a big problem.\n" +
+      "Lucy: Thank you. It's not a big problem.\n" +
       "Seller: Can I help you with anything else?\n" +
-      "Ela: No, thank you. Have a good day!",
+      "Lucy: No, thank you. Have a good day!",
     questions: [
       {
         text: "What is the problem with the sweater?",
@@ -122,21 +122,21 @@ export const enA1U12: SkillExercise[] = [
         explain: "„There is a button here, and it is dirty.“",
       },
       {
-        text: "What does Ela want?",
+        text: "What does Lucy want?",
         options: ["her money back", "another color", "a second receipt"],
         answer: 0,
-        explain: "„I'd like to return this and get my money back.“ — satıcı renk öneriyor, Ela istemiyor.",
+        explain: "„I'd like to return this and get my money back.“ — satıcı renk öneriyor, Lucy istemiyor.",
       },
       {
         kind: "truefalse",
-        text: "Ela doesn't have the receipt.",
+        text: "Lucy doesn't have the receipt.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Yes, here it is. I keep all my receipts.“",
       },
       {
         kind: "gapfill",
-        text: "Ela paid ___ dollars.",
+        text: "Lucy paid ___ dollars.",
         options: [],
         answer: 0,
         accept: ["thirty", "30"],
@@ -157,7 +157,7 @@ export const enA1U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How much money does Ela get back?",
+        text: "How much money does Lucy get back?",
         options: [],
         answer: 0,
         accept: ["thirty dollars", "30 dollars", "thirty"],
@@ -173,7 +173,7 @@ export const enA1U12: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 12,
-    title: "Sena's new jacket",
+    title: "Ellie's new jacket",
     genre: "dialogue",
     intro: "Bir ceket üzerine fikir soruluyor. Beğeni cümleleri art arda geliyor.",
     gloss: [
@@ -183,21 +183,21 @@ export const enA1U12: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Sena", text: "Look at this jacket. What do you think?" },
-      { speaker: "Ali", text: "I like it. The color is beautiful." },
-      { speaker: "Sena", text: "Really? It's not too big?" },
-      { speaker: "Ali", text: "No, it suits you. It is perfect." },
-      { speaker: "Sena", text: "How much is it? Ninety dollars. That is a lot of money." },
-      { speaker: "Ali", text: "Yes, but you are going to wear it every day." },
-      { speaker: "Sena", text: "I think you are right. And I have enough money today." },
-      { speaker: "Ali", text: "Then buy it! You don't have many jackets." },
-      { speaker: "Sena", text: "Only two, and both are black. This one is blue." },
-      { speaker: "Ali", text: "Blue is my favorite color." },
-      { speaker: "Sena", text: "Good. Then I am going to choose this one." },
+      { speaker: "Ellie", text: "Look at this jacket. What do you think?" },
+      { speaker: "Harry", text: "I like it. The color is beautiful." },
+      { speaker: "Ellie", text: "Really? It's not too big?" },
+      { speaker: "Harry", text: "No, it suits you. It is perfect." },
+      { speaker: "Ellie", text: "How much is it? Ninety dollars. That is a lot of money." },
+      { speaker: "Harry", text: "Yes, but you are going to wear it every day." },
+      { speaker: "Ellie", text: "I think you are right. And I have enough money today." },
+      { speaker: "Harry", text: "Then buy it! You don't have many jackets." },
+      { speaker: "Ellie", text: "Only two, and both are black. This one is blue." },
+      { speaker: "Harry", text: "Blue is my favorite color." },
+      { speaker: "Ellie", text: "Good. Then I am going to choose this one." },
     ],
     questions: [
       {
-        text: "What does Ali think about the jacket?",
+        text: "What does Harry think about the jacket?",
         options: ["it suits her", "it is too big", "it is too expensive"],
         answer: 0,
         explain: "„No, it suits you. It is perfect.“ — büyük olmadığını da söylüyor.",
@@ -206,18 +206,18 @@ export const enA1U12: SkillExercise[] = [
         text: "How much is the jacket?",
         options: ["ninety dollars", "two dollars", "thirty dollars"],
         answer: 0,
-        explain: "„How much is it? Ninety dollars.“ — iki, Sena'nın ceket sayısı.",
+        explain: "„How much is it? Ninety dollars.“ — iki, Ellie'nin ceket sayısı.",
       },
       {
         kind: "truefalse",
-        text: "Sena has only two jackets.",
+        text: "Ellie has only two jackets.",
         options: ["True", "False"],
         answer: 0,
         explain: "„You don't have many jackets. — Only two.“",
       },
       {
         kind: "gapfill",
-        text: "Sena's two jackets are ___.",
+        text: "Ellie's two jackets are ___.",
         options: [],
         answer: 0,
         accept: ["black"],
@@ -249,7 +249,7 @@ export const enA1U12: SkillExercise[] = [
     unit: 12,
     title: "Cooking for six",
     genre: "monologue",
-    intro: "Kaan yemek için miktar hesaplıyor. Hangi şey sayılabiliyor, hangisi sayılamıyor?",
+    intro: "Liam yemek için miktar hesaplıyor. Hangi şey sayılabiliyor, hangisi sayılamıyor?",
     gloss: [
       { de: "need", tr: "ihtiyacı olmak" },
       { de: "a piece of", tr: "bir parça" },
@@ -257,36 +257,36 @@ export const enA1U12: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Kaan", text: "Today I am going to cook for six people. How much time do I have? Two hours." },
-      { speaker: "Kaan", text: "How many potatoes do I need? A kilo. And how much water? Two liters." },
-      { speaker: "Kaan", text: "I have a few onions, but not many. I am going to buy some." },
-      { speaker: "Kaan", text: "I don't have enough cheese. A little is not enough for six people." },
-      { speaker: "Kaan", text: "I have a piece of chocolate for after dinner. Only one piece!" },
-      { speaker: "Kaan", text: "I don't have much money today, but this dinner is cheap. That is perfect." },
+      { speaker: "Liam", text: "Today I am going to cook for six people. How much time do I have? Two hours." },
+      { speaker: "Liam", text: "How many potatoes do I need? A kilo. And how much water? Two liters." },
+      { speaker: "Liam", text: "I have a few onions, but not many. I am going to buy some." },
+      { speaker: "Liam", text: "I don't have enough cheese. A little is not enough for six people." },
+      { speaker: "Liam", text: "I have a piece of chocolate for after dinner. Only one piece!" },
+      { speaker: "Liam", text: "I don't have much money today, but this dinner is cheap. That is perfect." },
     ],
     questions: [
       {
-        text: "How many people is Kaan going to cook for?",
+        text: "How many people is Liam going to cook for?",
         options: ["six", "two", "one"],
         answer: 0,
         explain: "„Today I am going to cook for six people.“ — iki saatin ve litrenin sayısı.",
       },
       {
-        text: "What does Kaan not have enough of?",
+        text: "What does Liam not have enough of?",
         options: ["cheese", "potatoes", "time"],
         answer: 0,
         explain: "„I don't have enough cheese.“ — patates bir kilo, zaman iki saat.",
       },
       {
         kind: "truefalse",
-        text: "Kaan has many onions.",
+        text: "Liam has many onions.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I have a few onions, but not many.“ — „a few“ birkaç demek, çok değil.",
       },
       {
         kind: "gapfill",
-        text: "Kaan needs a ___ of potatoes.",
+        text: "Liam needs a ___ of potatoes.",
         options: [],
         answer: 0,
         accept: ["kilo"],
@@ -294,7 +294,7 @@ export const enA1U12: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Kaan'ın saydığı sıra: doğru sıraya koy.",
+        text: "Liam'ın saydığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -307,7 +307,7 @@ export const enA1U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How much time does Kaan have?",
+        text: "How much time does Liam have?",
         options: [],
         answer: 0,
         accept: ["two hours", "2 hours", "two"],

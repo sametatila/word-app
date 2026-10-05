@@ -45,35 +45,35 @@ export const enA2U15: SkillExercise[] = [
     minutes: 5,
     text:
       "Hairdresser: Good morning. What would you like today?\n" +
-      "Deniz: I'd like a haircut, please. Not too short.\n" +
+      "Charlie: I'd like a haircut, please. Not too short.\n" +
       "Hairdresser: Can you show me a photo?\n" +
-      "Deniz: This one on the left. The short one is my brother, not me.\n" +
+      "Charlie: This one on the left. The short one is my brother, not me.\n" +
       "Hairdresser: Understood. Can I wash your hair first?\n" +
-      "Deniz: Yes, please. Warm, not hot.\n" +
+      "Charlie: Yes, please. Warm, not hot.\n" +
       "Hairdresser: And the beard?\n" +
-      "Deniz: A little shorter. My mother says I look like a bear.\n" +
+      "Charlie: A little shorter. My mother says I look like a bear.\n" +
       "Hairdresser: Mothers always say that. Which comb do you use at home?\n" +
-      "Deniz: The small one from the store here. The big one broke in March.\n" +
+      "Charlie: The small one from the store here. The big one broke in March.\n" +
       "Hairdresser: Then take a new one today. They are two euros and they last two years.\n" +
-      "Deniz: Fine. And the style — the same as last time?\n" +
+      "Charlie: Fine. And the style — the same as last time?\n" +
       "Hairdresser: The same. Last time you were happy.\n" +
-      "Deniz: I was. That is the best reason.",
+      "Charlie: I was. That is the best reason.",
     questions: [
       {
-        text: "Which photo does Deniz show?",
+        text: "Which photo does Charlie show?",
         options: ["the one on the left", "the short one", "the one from last time"],
         answer: 0,
         explain: "„This one on the left. The short one is my brother, not me.“",
       },
       {
-        text: "What does Deniz buy today?",
+        text: "What does Charlie buy today?",
         options: ["a new comb", "a photo", "a style"],
         answer: 0,
         explain: "„Then take a new one today. They are two euros and they last two years.“",
       },
       {
         kind: "truefalse",
-        text: "Deniz wants a haircut that is not too short.",
+        text: "Charlie wants a haircut that is not too short.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I'd like a haircut, please. Not too short.“",
@@ -114,19 +114,19 @@ export const enA2U15: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Can: Hello. I bought this here two weeks ago and the screen is broken.\n" +
+      "Tyler: Hello. I bought this here two weeks ago and the screen is broken.\n" +
       "Clerk: Do you have the receipt?\n" +
-      "Can: Yes, here. It's still under warranty.\n" +
+      "Tyler: Yes, here. It's still under warranty.\n" +
       "Clerk: Two years, yes. But the warranty is not valid for every problem.\n" +
-      "Can: What do you mean?\n" +
+      "Tyler: What do you mean?\n" +
       "Clerk: If it fell down, it is not the warranty, it is you. If the screen just went dark, it is us.\n" +
-      "Can: It just went dark. On Tuesday morning, on the table.\n" +
+      "Tyler: It just went dark. On Tuesday morning, on the table.\n" +
       "Clerk: Then the receipt is your proof and we replace it free.\n" +
-      "Can: How long will it take?\n" +
+      "Tyler: How long will it take?\n" +
       "Clerk: Ten days. The technical service is not here — it is two hours away.\n" +
-      "Can: Ten days without a phone.\n" +
+      "Tyler: Ten days without a phone.\n" +
       "Clerk: We have old ones here for those ten days. Not a good one, but it makes calls.\n" +
-      "Can: I'll take it. The cheap one with the big buttons?\n" +
+      "Tyler: I'll take it. The cheap one with the big buttons?\n" +
       "Clerk: That one. Everybody says the same thing after two days: it is the best phone in the store.",
     questions: [
       {
@@ -143,14 +143,14 @@ export const enA2U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can gets no phone for those ten days.",
+        text: "Tyler gets no phone for those ten days.",
         options: ["True", "False"],
         answer: 1,
         explain: "„We have old ones here for those ten days. Not a good one, but it makes calls.“",
       },
       {
         kind: "gapfill",
-        text: "The receipt is Can's ___.",
+        text: "The receipt is Tyler's ___.",
         options: [],
         answer: 0,
         accept: ["proof"],
@@ -197,14 +197,14 @@ export const enA2U15: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "Two stores, one machine, forty euros difference. I went to both." },
-      { speaker: "Nil", text: "The first one is cheaper: two hundred and ten. The second one is two hundred and fifty." },
-      { speaker: "Nil", text: "But the cheap one has no warranty after one year. The expensive one has three years." },
-      { speaker: "Nil", text: "So the question is not which one is cheaper. The question is which one is better value." },
-      { speaker: "Nil", text: "I asked for a discount in the second store. They said no, but they gave me the cable for free." },
-      { speaker: "Nil", text: "That is nine euros. The difference is now thirty-one." },
-      { speaker: "Nil", text: "The advantage of the second store: they repair it here. The first one sends it away for four weeks." },
-      { speaker: "Nil", text: "I chose the expensive one. Not because I am rich, but because four weeks without a machine is not cheap either." },
+      { speaker: "Katie", text: "Two stores, one machine, forty euros difference. I went to both." },
+      { speaker: "Katie", text: "The first one is cheaper: two hundred and ten. The second one is two hundred and fifty." },
+      { speaker: "Katie", text: "But the cheap one has no warranty after one year. The expensive one has three years." },
+      { speaker: "Katie", text: "So the question is not which one is cheaper. The question is which one is better value." },
+      { speaker: "Katie", text: "I asked for a discount in the second store. They said no, but they gave me the cable for free." },
+      { speaker: "Katie", text: "That is nine euros. The difference is now thirty-one." },
+      { speaker: "Katie", text: "The advantage of the second store: they repair it here. The first one sends it away for four weeks." },
+      { speaker: "Katie", text: "I chose the expensive one. Not because I am rich, but because four weeks without a machine is not cheap either." },
     ],
     questions: [
       {
@@ -244,7 +244,7 @@ export const enA2U15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Why did Nil choose the expensive one?",
+        text: "Why did Katie choose the expensive one?",
         options: [],
         answer: 0,
         accept: ["four weeks without a machine", "the repair is here", "the warranty"],
@@ -269,20 +269,20 @@ export const enA2U15: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Ela", text: "Hello. My screen is broken." },
-      { speaker: "Deniz", text: "Let me see. Was it under water?" },
-      { speaker: "Ela", text: "No. It fell from the table on Sunday." },
-      { speaker: "Deniz", text: "Then a new screen. It's still under warranty, but the warranty does not pay for that." },
-      { speaker: "Ela", text: "How much is it?" },
-      { speaker: "Deniz", text: "A hundred and twenty with the spare part. Or a hundred and sixty for a new one — the small model." },
-      { speaker: "Ela", text: "That is a hard choice." },
-      { speaker: "Deniz", text: "Take the repair. The phone is two years old, the battery is fine and you know the phone." },
-      { speaker: "Ela", text: "How long will it take?" },
-      { speaker: "Deniz", text: "The part comes on Wednesday. It will be ready on Thursday afternoon." },
-      { speaker: "Ela", text: "And the charger? Mine is broken too." },
-      { speaker: "Deniz", text: "The cable or the part in the wall?" },
-      { speaker: "Ela", text: "The cable." },
-      { speaker: "Deniz", text: "Take this one. Nine euros, and it charges faster than yours." },
+      { speaker: "Lucy", text: "Hello. My screen is broken." },
+      { speaker: "Charlie", text: "Let me see. Was it under water?" },
+      { speaker: "Lucy", text: "No. It fell from the table on Sunday." },
+      { speaker: "Charlie", text: "Then a new screen. It's still under warranty, but the warranty does not pay for that." },
+      { speaker: "Lucy", text: "How much is it?" },
+      { speaker: "Charlie", text: "A hundred and twenty with the spare part. Or a hundred and sixty for a new one — the small model." },
+      { speaker: "Lucy", text: "That is a hard choice." },
+      { speaker: "Charlie", text: "Take the repair. The phone is two years old, the battery is fine and you know the phone." },
+      { speaker: "Lucy", text: "How long will it take?" },
+      { speaker: "Charlie", text: "The part comes on Wednesday. It will be ready on Thursday afternoon." },
+      { speaker: "Lucy", text: "And the charger? Mine is broken too." },
+      { speaker: "Charlie", text: "The cable or the part in the wall?" },
+      { speaker: "Lucy", text: "The cable." },
+      { speaker: "Charlie", text: "Take this one. Nine euros, and it charges faster than yours." },
     ],
     questions: [
       {
@@ -292,7 +292,7 @@ export const enA2U15: SkillExercise[] = [
         explain: "„No. It fell from the table on Sunday.“",
       },
       {
-        text: "What does Deniz suggest?",
+        text: "What does Charlie suggest?",
         options: ["the repair", "a new phone", "a new battery"],
         answer: 0,
         explain: "„Take the repair. The phone is two years old, the battery is fine and you know the phone.“",

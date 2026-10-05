@@ -40,7 +40,7 @@ export const deA2P5: SkillExercise[] = [
       "Wir haben keinen Plan, aber eine Regel: Man wäscht sofort ab, sonst gar nicht. " +
       "Wichtiger als der Plan ist bei uns das Reden. Einmal im Monat sitzen wir zwanzig Minuten zusammen " +
       "und sagen ehrlich, was uns nervt.\n\n" +
-      "Antwort von Meryem:\n" +
+      "Antwort von Dagmar:\n" +
       "Ehrlich? Wir haben eine Putzhilfe geteilt. Zwölf Euro pro Person und Monat, und der Streit war weg. " +
       "Nicht romantisch, aber billiger als eine neue Wohnung.",
     questions: [
@@ -62,7 +62,7 @@ export const deA2P5: SkillExercise[] = [
           "mit einer Putzhilfe für alle drei",
         ],
         answer: 0,
-        explain: "„Bei uns hängt ein Plan … Jede Woche wechselt die Aufgabe.“ Aylık konuşma Aleksandar'ın, temizlikçi Meryem'in çözümü.",
+        explain: "„Bei uns hängt ein Plan … Jede Woche wechselt die Aufgabe.“ Aylık konuşma Aleksandar'ın, temizlikçi Dagmar'ın çözümü.",
       },
       {
         kind: "truefalse",
@@ -73,7 +73,7 @@ export const deA2P5: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Bei Meryem kostet die Putzhilfe ___ Euro pro Person.",
+        text: "Bei Dagmar kostet die Putzhilfe ___ Euro pro Person.",
         options: [],
         answer: 0,
         accept: ["zwölf", "12"],
@@ -88,7 +88,7 @@ export const deA2P5: SkillExercise[] = [
         explain: "„Wer seine Woche verpasst, kocht am Sonntag für alle.“",
       },
       {
-        text: "Wie beurteilt Meryem ihre Lösung?",
+        text: "Wie beurteilt Dagmar ihre Lösung?",
         options: ["nicht romantisch, aber günstig", "romantisch und sehr günstig", "teuer, aber sehr romantisch"],
         answer: 0,
         explain: "„Nicht romantisch, aber billiger als eine neue Wohnung.“",
@@ -220,12 +220,12 @@ export const deA2P5: SkillExercise[] = [
           { de: "Ich vermisse dich!", tr: "Seni özlüyorum!", en: "I miss you!" },
         ],
         sample:
-          "Liebe Ayse, seit sechs Monaten habe ich dir nicht geschrieben, das tut mir leid. " +
+          "Liebe Svenja, seit sechs Monaten habe ich dir nicht geschrieben, das tut mir leid. " +
           "Bei mir hat sich viel verändert. Letzten Monat sind wir in eine neue Wohnung gezogen, " +
           "jetzt haben wir endlich einen Balkon. Ich arbeite noch in derselben Firma, aber nur vier Tage " +
           "pro Woche. Der freie Freitag tut mir sehr gut. Und wie geht es dir? Gefällt dir die Arbeit " +
           "in Wien noch? Möchtest du uns im Sommer besuchen? Ab Juli haben wir ein freies Zimmer. " +
-          "Schreib mir bald, ich vermisse dich! Herzliche Grüße, Derya",
+          "Schreib mir bald, ich vermisse dich! Herzliche Grüße, Yvonne",
       },
     ],
   },
@@ -298,7 +298,7 @@ export const deA2P5: SkillExercise[] = [
       {
         de: "Steh bitte etwas früher auf.",
         tr: "Lütfen biraz daha erken kalk.",
-        hint: "Emir cümlesinde de ayrılan ön ek sonda ve vurgulu kalır: … früher AUF.",
+        hint: "Uwe cümlesinde de ayrılan ön ek sonda ve vurgulu kalır: … früher AUF.",
         confusions: [
           { heard: ["aufsteh bitte"], fix: "Ön ek fiile geri yapışmaz ve vurgu onda kalır: şteh … AUF.", expected: "auf" },
         ],

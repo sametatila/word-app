@@ -5,9 +5,9 @@
   "en": "Two people talk about their jobs, their age and the languages they speak."
  },
  {
-  "tr": "Ela doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
+  "tr": "Lucy doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
   "kind": "intro",
-  "en": "Ela talks about her birthday. How old is she, which month, who is in the house?"
+  "en": "Lucy talks about her birthday. How old is she, which month, who is in the house?"
  },
  {
   "tr": "Yaşı, fiyatı ve harf harf söylemeyi yazarak çalış. Sonunda kurs formunu doldur.",
@@ -15,19 +15,19 @@
   "en": "Practice writing age, price and spelling. At the end, fill out the course form."
  },
  {
-  "tr": "Emre dil okulunu arıyor. Dinlerken sayıları yakala: yaş, fiyat ve süre.",
+  "tr": "Owen dil okulunu arıyor. Dinlerken sayıları yakala: yaş, fiyat ve süre.",
   "kind": "intro",
-  "en": "Emre calls the language school. Listen for the numbers: age, price and length."
+  "en": "Owen calls the language school. Listen for the numbers: age, price and length."
  },
  {
-  "tr": "Ayla ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
+  "tr": "Freya ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
   "kind": "intro",
-  "en": "Ayla talks about her family. While you read, keep track of who is who and how old they are."
+  "en": "Freya talks about her family. While you read, keep track of who is who and how old they are."
  },
  {
-  "tr": "Mia ile Tarik ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
+  "tr": "Mia ile Aaron ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
   "kind": "intro",
-  "en": "Mia and Tarik talk about their families. How many siblings, how many children, who is how old?"
+  "en": "Mia and Aaron talk about their families. How many siblings, how many children, who is how old?"
  },
  {
   "tr": "Yaşı, doğum gününü ve form sorularını yaz. Sonunda kütüphane kartını doldur.",
@@ -95,9 +95,9 @@
   "en": "„he is one year old“ — because there is only one, „year“ stays singular."
  },
  {
-  "tr": "„One hundred euros.“ Emre de duyduğuna inanamayıp tekrar soruyor.",
+  "tr": "„One hundred euros.“ Owen de duyduğuna inanamayıp tekrar soruyor.",
   "kind": "explain",
-  "en": "„One hundred euros.“ Emre cannot believe his ears and asks again."
+  "en": "„One hundred euros.“ Owen cannot believe his ears and asks again."
  },
  {
   "tr": "„I have two sisters and one brother.“ — bir olan erkek kardeş.",
@@ -130,9 +130,9 @@
   "en": "„He is a baby, so he does not eat cake.“ — he does not eat it because he is a baby."
  },
  {
-  "tr": "Doktor olan anne. „His name is Kemal“ öğretmen olan babayı anlatıyor.",
+  "tr": "Doktor olan anne. „His name is Phil“ öğretmen olan babayı anlatıyor.",
   "kind": "explain",
-  "en": "The mother is the doctor. „His name is Kemal“ is about the father, who is a teacher."
+  "en": "The mother is the doctor. „His name is Phil“ is about the father, who is a teacher."
  },
  {
   "tr": "„my brother is only nine“ — yirmi kız kardeşin, elli iki annenin yaşı.",
@@ -155,9 +155,9 @@
   "en": "„We are there in May, for my grandma's birthday.“ — the name of the month is capitalized."
  },
  {
-  "tr": "„Her name is Ela. She is six.“ — bir yaşında olan Tarik'in erkek kardeşi.",
+  "tr": "„Her name is Lucy. She is six.“ — bir yaşında olan Aaron'un erkek kardeşi.",
   "kind": "explain",
-  "en": "„Her name is Ela. She is six.“ — the one-year-old is Tarik's brother."
+  "en": "„Her name is Lucy. She is six.“ — the one-year-old is Aaron's brother."
  },
  {
   "tr": "„The course is one hundred euros for three months.“ — üç, ayların sayısı.",
@@ -165,9 +165,9 @@
   "en": "„The course is one hundred euros for three months.“ — three is the number of months."
  },
  {
-  "tr": "„I am twenty-six years old.“ Otuz dört Leyla'nın, kırk bir Meryem'in yaşı.",
+  "tr": "„I am twenty-six years old.“ Otuz dört Fiona'nın, kırk bir Iona'nın yaşı.",
   "kind": "explain",
-  "en": "„I am twenty-six years old.“ Thirty-four is Leyla's age, forty-one is Meryem's."
+  "en": "„I am twenty-six years old.“ Thirty-four is Fiona's age, forty-one is Iona's."
  },
  {
   "tr": "„One lesson is ninety minutes.“ Sayıyı yazıyla da rakamla da yazabilirsin.",
@@ -175,9 +175,9 @@
   "en": "„One lesson is ninety minutes.“ You can write the number as a word or as a figure."
  },
  {
-  "tr": "„I am a doctor and I work in a small town.“ — Ben şarkıcı, Meryem antrenör.",
+  "tr": "„I am a doctor and I work in a small town.“ — Ben şarkıcı, Iona antrenör.",
   "kind": "explain",
-  "en": "„I am a doctor and I work in a small town.“ — Ben is a singer, Meryem is a coach."
+  "en": "„I am a doctor and I work in a small town.“ — Ben is a singer, Iona is a coach."
  },
  {
   "tr": "„I speak a little English and a little German.“ — iki dili de az konuşuyor.",
@@ -185,9 +185,9 @@
   "en": "„I speak a little English and a little German.“ — she speaks a little of both."
  },
  {
-  "tr": "Önce Leyla (doktor), sonra Ben (şarkıcı), en son Meryem (antrenör) konuşuyor.",
+  "tr": "Önce Fiona (doktor), sonra Ben (şarkıcı), en son Iona (antrenör) konuşuyor.",
   "kind": "explain",
-  "en": "First Leyla (a doctor) speaks, then Ben (a singer), last Meryem (a coach)."
+  "en": "First Fiona (a doctor) speaks, then Ben (a singer), last Iona (a coach)."
  },
  {
   "tr": "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan Ana.",
@@ -205,9 +205,9 @@
   "en": "Thirty euros for students: „For students: thirty euros.“ Forty euros is for everybody else."
  },
  {
-  "tr": "„Last name: Yalin.“ — Deniz ad, Bremen şehir. Formda her satırın kendi etiketi var.",
+  "tr": "„Last name: Thornton.“ — Charlie ad, Bremen şehir. Formda her satırın kendi etiketi var.",
   "kind": "explain",
-  "en": "„Last name: Yalin.“ — Deniz is the first name, Bremen the city. On a form every line has its own label."
+  "en": "„Last name: Thornton.“ — Charlie is the first name, Bremen the city. On a form every line has its own label."
  },
  {
   "tr": "Önce gün, sonra pasta, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",

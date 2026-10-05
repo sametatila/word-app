@@ -107,7 +107,7 @@
  { "tr": "Şimdi sen kur. Şunu İngilizce söyle: Önce duş alırım. Sonra kahvaltı yaparım.", "kind": "say.tr", "de": "Jetzt bildest du den Satz. Sag auf Englisch: Zuerst dusche ich. Dann frühstücke ich." },
  { "tr": "Şuna dikkat et: İngilizcede bir durumdan başka bir duruma geçerken çoğu zaman", "kind": "say.tr", "de": "Achte darauf: Beim Wechsel von einem Zustand in den anderen gilt im Englischen meist:" },
  { "tr": "ve thanks ile teşekkür etmek, sebebi söylemek için for ve fiile -ing eklemek,", "kind": "say.tr", "de": "und thanks danken, mit for und -ing den Grund nennen," },
- { "tr": "Yani 'Merhaba, ben Ayşe. Hasta olduğum için arıyorum.' Telefonda 'ben' derken I am değil, this is denir.", "kind": "say.tr", "de": "Also „Hallo, hier ist Ayse. Ich rufe an, weil ich krank bin.“ Am Telefon sagt man für ich nicht I am, sondern this is." },
+ { "tr": "Yani 'Merhaba, ben Rachel. Hasta olduğum için arıyorum.' Telefonda 'ben' derken I am değil, this is denir.", "kind": "say.tr", "de": "Also „Hallo, hier ist Rachel. Ich rufe an, weil ich krank bin.“ Am Telefon sagt man für ich nicht I am, sondern this is." },
  { "tr": "Yani already olumluda, yet olumsuzda ve soruda. İkisi birbirinin yerini alır.", "kind": "say.tr", "de": "Also already im positiven Satz, yet in Verneinung und Frage. Sie lösen einander ab." },
  { "tr": "Yani düğünün için tebrikler. Bir fiil kullanmak istersen fiile -ing takarsın:", "kind": "say.tr", "de": "Also Glückwunsch zur Hochzeit. Willst du ein Verb nehmen, kommt -ing dazu:" },
  { "tr": "Yani: Üzgünüm, bu akşam olmaz. Genelde arkasına bir de sebep eklenir, mesela:", "kind": "say.tr", "de": "Also: Tut mir leid, heute Abend nicht. Meist folgt noch ein Grund, zum Beispiel:" },

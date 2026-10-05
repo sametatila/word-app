@@ -387,7 +387,7 @@ export const a2U20: SkillExercise[] = [
           "danke, dass du es mir direkt gesagt hast. Es tut mir wirklich leid, dass ich das vor allen gesagt habe.\n\n" +
           "Ich habe das nicht absichtlich gemacht und wollte dich nicht verletzen. Aber du hast recht: Lustig war es nur für mich, nicht für dich. Das war gemein.\n\n" +
           "Ich verstehe, dass du beleidigt bist. Können wir darüber reden? Ich lade dich am Donnerstag zum Kaffee ein, dann sage ich es dir auch persönlich.\n\n" +
-          "Bitte schreib mir zurück.\nKerem",
+          "Bitte schreib mir zurück.\nJulian",
       },
     ],
   },

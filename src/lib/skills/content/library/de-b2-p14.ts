@@ -124,21 +124,21 @@ export const deB2P14: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Frau Neumann", text: "Pflegestützpunkt Nordstadt, Sie sprechen mit Frau Neumann. Worum geht es?" },
-      { speaker: "Herr Özdemir", text: "Um meine Mutter. Sie ist achtzig, lebt allein und ist vor zwei Wochen in der Küche gestürzt. Gebrochen hat sie sich nichts, aber sie traut sich seitdem kaum noch aus der Wohnung." },
+      { speaker: "Herr Arndt", text: "Um meine Mutter. Sie ist achtzig, lebt allein und ist vor zwei Wochen in der Küche gestürzt. Gebrochen hat sie sich nichts, aber sie traut sich seitdem kaum noch aus der Wohnung." },
       { speaker: "Frau Neumann", text: "Das tut mir leid. Wohnen Sie in ihrer Nähe?" },
-      { speaker: "Herr Özdemir", text: "Leider nicht. Ich wohne zweihundert Kilometer entfernt und arbeite Vollzeit. Ich fahre jedes zweite Wochenende hin, aber das reicht nicht mehr." },
+      { speaker: "Herr Arndt", text: "Leider nicht. Ich wohne zweihundert Kilometer entfernt und arbeite Vollzeit. Ich fahre jedes zweite Wochenende hin, aber das reicht nicht mehr." },
       { speaker: "Frau Neumann", text: "Dann wäre der erste Schritt ein Antrag auf einen Pflegegrad bei der Pflegekasse Ihrer Mutter. Danach kommt eine Gutachterin zu ihr nach Hause und schaut, wobei sie Unterstützung braucht." },
-      { speaker: "Herr Özdemir", text: "Und wie lange dauert das?" },
+      { speaker: "Herr Arndt", text: "Und wie lange dauert das?" },
       { speaker: "Frau Neumann", text: "Meistens einige Wochen. Bis dahin würde ich Ihnen einen Hausnotruf empfehlen. Ihre Mutter trägt dann einen Knopf am Handgelenk, und wenn sie stürzt, drückt sie darauf." },
-      { speaker: "Herr Özdemir", text: "Das wird sie nicht wollen. Sie sagt immer, sie sei doch keine Kranke." },
+      { speaker: "Herr Arndt", text: "Das wird sie nicht wollen. Sie sagt immer, sie sei doch keine Kranke." },
       { speaker: "Frau Neumann", text: "Das hören wir oft. Viele Betroffene nehmen es eher an, wenn man es als Hilfe für die Familie darstellt und nicht als Hilfe für sie selbst." },
       { speaker: "Frau Neumann", text: "Und noch etwas: Gibt es vor Ort eine Nachbarin oder einen Bekannten, der einen Schlüssel haben könnte?" },
-      { speaker: "Herr Özdemir", text: "Eine Nachbarin, ja. Die kennt meine Mutter seit dreißig Jahren." },
+      { speaker: "Herr Arndt", text: "Eine Nachbarin, ja. Die kennt meine Mutter seit dreißig Jahren." },
       { speaker: "Frau Neumann", text: "Gut. Dann schicke ich Ihnen den Antrag und eine Liste mit Diensten in ihrer Stadt. Rufen Sie gern wieder an, wenn der Termin mit der Gutachterin feststeht." },
     ],
     questions: [
       {
-        text: "Warum ruft Herr Özdemir an?",
+        text: "Warum ruft Herr Arndt an?",
         options: [
           "Seine Mutter liegt im Krankenhaus.",
           "Seine Mutter ist gestürzt und unsicher.",
@@ -166,7 +166,7 @@ export const deB2P14: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Herr Özdemir wohnt ___ Kilometer von seiner Mutter entfernt.",
+        text: "Herr Arndt wohnt ___ Kilometer von seiner Mutter entfernt.",
         options: [],
         answer: 0,
         accept: ["zweihundert", "200"],
@@ -255,7 +255,7 @@ export const deB2P14: SkillExercise[] = [
           "und Mittwoch würde ich wie bisher im Büro wahrnehmen, und meine Vertretung bei Kundenterminen ist " +
           "mit Herrn Brenner bereits abgesprochen. " +
           "Über einen Termin für ein kurzes Gespräch würde ich mich freuen, gern schon in der nächsten Woche. " +
-          "Mit freundlichen Grüßen, Mehmet Kaya",
+          "Mit freundlichen Grüßen, Carsten Graf",
       },
     ],
   },

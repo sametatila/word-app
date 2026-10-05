@@ -399,7 +399,7 @@ export const b1U36: SkillExercise[] = [
           "einer Wiederherstellung sind kleiner als der Verlust. " +
           "Ich bitte Sie deshalb, das Gerät bis Freitag anzusehen.\n\n" +
           "Ich sichere die Daten seitdem jede Woche. Für einen Rückruf am Vormittag wäre ich dankbar.\n\n" +
-          "Mit freundlichen Grüßen\nNuri Öz",
+          "Mit freundlichen Grüßen\nAnton Naumann",
         phrases: [
           { de: "Seit gestern sind die Daten weg.", tr: "Dünden beri veriler kayıp.", en: "The data has been gone since yesterday." },
           { de: "Gelöscht habe ich nichts.", tr: "Hiçbir şey silmedim.", en: "I didn't delete anything." },

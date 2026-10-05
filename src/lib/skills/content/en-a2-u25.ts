@@ -59,7 +59,7 @@ export const enA2U25: SkillExercise[] = [
       "Please put it on the list. I expect an answer within a week.\n" +
       "If you need a photo, I have eleven.\n" +
       "Sincerely,\n" +
-      "Nil Aslan",
+      "Katie Cooper",
     questions: [
       {
         text: "When do they collect the trash?",
@@ -68,7 +68,7 @@ export const enA2U25: SkillExercise[] = [
         explain: "„They collect the trash on Mondays.“ — perşembe sözü verilen kamyonun günü.",
       },
       {
-        text: "How long has Nil waited?",
+        text: "How long has Katie waited?",
         options: ["three weeks", "one week", "eleven days"],
         answer: 0,
         explain: "„That is three weeks. I have waited for three weeks and I have called twice.“",
@@ -82,7 +82,7 @@ export const enA2U25: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Nil has called ___ times.",
+        text: "Katie has called ___ times.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
@@ -90,7 +90,7 @@ export const enA2U25: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Nil expect?",
+        text: "What does Katie expect?",
         options: [],
         answer: 0,
         accept: ["an answer", "an answer within a week", "an answer in a week"],
@@ -189,21 +189,21 @@ export const enA2U25: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Mert", text: "Good morning. Could I book an appointment for Monday?" },
+      { speaker: "Henry", text: "Good morning. Could I book an appointment for Monday?" },
       { speaker: "Office", text: "Monday is full." },
-      { speaker: "Mert", text: "Do you have anything available on Tuesday?" },
+      { speaker: "Henry", text: "Do you have anything available on Tuesday?" },
       { speaker: "Office", text: "Tuesday, yes. At ten or at half past two." },
-      { speaker: "Mert", text: "Ten. What should I bring with me?" },
+      { speaker: "Henry", text: "Ten. What should I bring with me?" },
       { speaker: "Office", text: "Your passport, the form, and proof of address." },
-      { speaker: "Mert", text: "What is proof of address?" },
+      { speaker: "Henry", text: "What is proof of address?" },
       { speaker: "Office", text: "A bill with your name on it. Water, electricity, phone — not a letter from a friend." },
-      { speaker: "Mert", text: "I have the water bill from August." },
+      { speaker: "Henry", text: "I have the water bill from August." },
       { speaker: "Office", text: "That works. Not older than three months." },
-      { speaker: "Mert", text: "And if I am late?" },
+      { speaker: "Henry", text: "And if I am late?" },
       { speaker: "Office", text: "Then you have to come again. Arrive early — the line at the entrance takes ten minutes." },
-      { speaker: "Mert", text: "So nine fifty." },
+      { speaker: "Henry", text: "So nine fifty." },
       { speaker: "Office", text: "Nine forty. The entrance and then the second door on the left." },
-      { speaker: "Mert", text: "Nine forty. It is in my calendar." },
+      { speaker: "Henry", text: "Nine forty. It is in my calendar." },
     ],
     questions: [
       {
@@ -227,7 +227,7 @@ export const enA2U25: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Mert should arrive at nine ___.",
+        text: "Henry should arrive at nine ___.",
         options: [],
         answer: 0,
         accept: ["forty", "40"],
@@ -267,21 +267,21 @@ export const enA2U25: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Sena", text: "Could you make a copy, please?" },
+      { speaker: "Ellie", text: "Could you make a copy, please?" },
       { speaker: "Office", text: "How many?" },
-      { speaker: "Sena", text: "Two. And I need an official copy of this one." },
+      { speaker: "Ellie", text: "Two. And I need an official copy of this one." },
       { speaker: "Office", text: "Then it is not a copy, it is a stamp. Four euros." },
-      { speaker: "Sena", text: "What is the difference?" },
+      { speaker: "Ellie", text: "What is the difference?" },
       { speaker: "Office", text: "A copy is paper. An official copy has a stamp and a date. The office believes the stamp, not the paper." },
-      { speaker: "Sena", text: "Do I have to sign it?" },
+      { speaker: "Ellie", text: "Do I have to sign it?" },
       { speaker: "Office", text: "You sign the form, not the copy. Here, and the date next to it." },
-      { speaker: "Sena", text: "Exactly like on the ID card?" },
+      { speaker: "Ellie", text: "Exactly like on the ID card?" },
       { speaker: "Office", text: "Exactly. If it is different, they call you and you have to come again." },
-      { speaker: "Sena", text: "Then I'll sign slowly." },
+      { speaker: "Ellie", text: "Then I'll sign slowly." },
       { speaker: "Office", text: "Slowly is right. Everybody signs fast and comes back twice." },
-      { speaker: "Sena", text: "Done. Two copies, one stamp, one signature." },
+      { speaker: "Ellie", text: "Done. Two copies, one stamp, one signature." },
       { speaker: "Office", text: "And one year until the next time. That is how it works here." },
-      { speaker: "Sena", text: "Then see you next September." },
+      { speaker: "Ellie", text: "Then see you next September." },
     ],
     questions: [
       {
@@ -291,7 +291,7 @@ export const enA2U25: SkillExercise[] = [
         explain: "„An official copy has a stamp and a date. The office believes the stamp, not the paper.“",
       },
       {
-        text: "What does Sena sign?",
+        text: "What does Ellie sign?",
         options: ["the form", "the copy", "the ID card"],
         answer: 0,
         explain: "„You sign the form, not the copy.“",

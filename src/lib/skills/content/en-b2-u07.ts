@@ -61,7 +61,7 @@ export const enB2U07: SkillExercise[] = [
       "What we do not know yet. The sensor on the main tank can't have been checked last week, because the maintenance log for that week is empty. It may have been checked and not recorded, or it may not have been checked at all. We are asking the night shift.\n" +
       "What went wrong in the process. The update must have been approved by somebody, but the approval is not in the system. Someone should have tested it on one line first. The manual says that every update has to be tried on a single line for 24 hours, and this rule was not followed.\n" +
       "Actions. The update has been removed from Lines 3 and 4. A technician will check every sensor before Friday, and the maintenance log will be printed and signed every day until the new system is fixed. From next month, no update can be installed without two signatures.\n" +
-      "Report prepared by Hakan Demir, maintenance manager.",
+      "Report prepared by Rhys Adams, maintenance manager.",
     questions: [
       {
         text: "What must have caused the disruption?",
@@ -143,7 +143,7 @@ export const enB2U07: SkillExercise[] = [
       "Under no circumstances should anyone try to repair the electrical system alone. If the lights go out, call the maintenance number first.\n" +
       "Never again do I want to stand in a dark warehouse and wonder which machines are still running. With your help, I am sure I will not have to.\n" +
       "Best regards,\n" +
-      "Leyla Arslan, Site Manager",
+      "Fiona Nolan, Site Manager",
     questions: [
       {
         text: "How often was the generator tested before the outage?",
@@ -214,19 +214,19 @@ export const enB2U07: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Sinem", text: "Have you seen the report from the cold room? The sensor, which was checked in May, failed on Saturday night." },
-      { speaker: "Tarık", text: "Only one sensor? I thought there were several in that room." },
-      { speaker: "Sinem", text: "No, there is just one on that line, which is exactly the problem. When it failed, nothing else was watching the temperature." },
-      { speaker: "Tarık", text: "How warm did it get?" },
-      { speaker: "Sinem", text: "Eleven degrees for about six hours. The fish, which we had moved there on Friday, all had to be thrown away." },
-      { speaker: "Tarık", text: "And the alarm? Nobody called me." },
-      { speaker: "Sinem", text: "The alarm is connected to the sensor, which is why it stayed silent. If the sensor says everything is fine, the alarm believes it." },
-      { speaker: "Tarık", text: "What does the manual say?" },
-      { speaker: "Sinem", text: "The manual is five years old, which is why we stopped using it. But the rule to which we refer in every audit is clear: two sensors in every cold room." },
-      { speaker: "Tarık", text: "So we were breaking our own rule." },
-      { speaker: "Sinem", text: "We were. The footnote under the inventory table even says so, in row twelve, which nobody ever reads." },
-      { speaker: "Tarık", text: "What happens now?" },
-      { speaker: "Sinem", text: "A second sensor goes in on Monday. The supplier, whose technician is coming at eight, has promised to stay until both are working." },
+      { speaker: "Trudy", text: "Have you seen the report from the cold room? The sensor, which was checked in May, failed on Saturday night." },
+      { speaker: "Aaron", text: "Only one sensor? I thought there were several in that room." },
+      { speaker: "Trudy", text: "No, there is just one on that line, which is exactly the problem. When it failed, nothing else was watching the temperature." },
+      { speaker: "Aaron", text: "How warm did it get?" },
+      { speaker: "Trudy", text: "Eleven degrees for about six hours. The fish, which we had moved there on Friday, all had to be thrown away." },
+      { speaker: "Aaron", text: "And the alarm? Nobody called me." },
+      { speaker: "Trudy", text: "The alarm is connected to the sensor, which is why it stayed silent. If the sensor says everything is fine, the alarm believes it." },
+      { speaker: "Aaron", text: "What does the manual say?" },
+      { speaker: "Trudy", text: "The manual is five years old, which is why we stopped using it. But the rule to which we refer in every audit is clear: two sensors in every cold room." },
+      { speaker: "Aaron", text: "So we were breaking our own rule." },
+      { speaker: "Trudy", text: "We were. The footnote under the inventory table even says so, in row twelve, which nobody ever reads." },
+      { speaker: "Aaron", text: "What happens now?" },
+      { speaker: "Trudy", text: "A second sensor goes in on Monday. The supplier, whose technician is coming at eight, has promised to stay until both are working." },
     ],
     questions: [
       {
@@ -237,7 +237,7 @@ export const enB2U07: SkillExercise[] = [
       },
       {
         text: "Why did the alarm stay silent?",
-        options: ["It is connected to the sensor.", "Nobody switched it on.", "Tarık turned it off."],
+        options: ["It is connected to the sensor.", "Nobody switched it on.", "Aaron turned it off."],
         answer: 0,
         explain: "„The alarm is connected to the sensor, which is why it stayed silent.“",
       },
@@ -292,14 +292,14 @@ export const enB2U07: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Ozan", text: "Hi everyone, it is Ozan. A quick update on the stock count before the weekend, because I know there have been rumors." },
-      { speaker: "Ozan", text: "First, what was changed is the entry, not the stock. Nobody has taken anything from the warehouse." },
-      { speaker: "Ozan", text: "It was the inventory that failed. The software counted the same pallet of printer paper twice, once in row four and once in row nine." },
-      { speaker: "Ozan", text: "What is missing is the surplus we expected. We thought we had two hundred boxes in reserve. In reality we have about forty." },
-      { speaker: "Ozan", text: "It was Julia who noticed the problem. She compared the screen with the shelves on Tuesday, during her overtime, and the numbers did not align." },
-      { speaker: "Ozan", text: "What I need from you is simple. Please do not order anything from the reserve until Monday." },
-      { speaker: "Ozan", text: "The correct entry was inserted this morning, and a full count by hand will take place on Saturday." },
-      { speaker: "Ozan", text: "It is the Saturday team that I want to thank in advance. Coffee and breakfast are on me." },
+      { speaker: "Tony", text: "Hi everyone, it is Tony. A quick update on the stock count before the weekend, because I know there have been rumors." },
+      { speaker: "Tony", text: "First, what was changed is the entry, not the stock. Nobody has taken anything from the warehouse." },
+      { speaker: "Tony", text: "It was the inventory that failed. The software counted the same pallet of printer paper twice, once in row four and once in row nine." },
+      { speaker: "Tony", text: "What is missing is the surplus we expected. We thought we had two hundred boxes in reserve. In reality we have about forty." },
+      { speaker: "Tony", text: "It was Julia who noticed the problem. She compared the screen with the shelves on Tuesday, during her overtime, and the numbers did not align." },
+      { speaker: "Tony", text: "What I need from you is simple. Please do not order anything from the reserve until Monday." },
+      { speaker: "Tony", text: "The correct entry was inserted this morning, and a full count by hand will take place on Saturday." },
+      { speaker: "Tony", text: "It is the Saturday team that I want to thank in advance. Coffee and breakfast are on me." },
     ],
     questions: [
       {
@@ -310,7 +310,7 @@ export const enB2U07: SkillExercise[] = [
       },
       {
         text: "Who noticed the problem?",
-        options: ["Julia", "Ozan", "the Saturday team"],
+        options: ["Julia", "Tony", "the Saturday team"],
         answer: 0,
         explain: "„It was Julia who noticed the problem.“",
       },

@@ -192,7 +192,7 @@ export const EN_A2_09: MockPaper = {
               kind: "match",
               id: "en-a2-09-l2-9",
               no: 9,
-              text: "Aras needs somebody today because there is water on the kitchen floor.",
+              text: "Rory needs somebody today because there is water on the kitchen floor.",
               answer: "a",
               explain:
                 "İlan hızı ve günü veriyor: «Seven days … We come within two hours». Su acil bir durum, bekleyemez.",

@@ -124,19 +124,19 @@ export const enB1U03: SkillExercise[] = [
     minutes: 7,
     text:
       "Agent: This is the apartment that I mentioned on the phone.\n" +
-      "Sena: It is brighter than the photos.\n" +
+      "Ellie: It is brighter than the photos.\n" +
       "Agent: The photos were taken in November. The woman who lived here painted the corridor.\n" +
-      "Sena: And the ceiling is high. What is the storage like?\n" +
+      "Ellie: And the ceiling is high. What is the storage like?\n" +
       "Agent: There is a basement, two meters by three, and the closet in the corridor.\n" +
-      "Sena: Is the basement dry?\n" +
+      "Ellie: Is the basement dry?\n" +
       "Agent: In this building, yes. I would not say that about the one next door.\n" +
-      "Sena: That is an honest answer. The apartment I saw yesterday was spacious but the landlord was not there.\n" +
+      "Ellie: That is an honest answer. The apartment I saw yesterday was spacious but the landlord was not there.\n" +
       "Agent: Who showed it?\n" +
-      "Sena: A man who had never been inside. He read the ad to me in the kitchen.\n" +
+      "Ellie: A man who had never been inside. He read the ad to me in the kitchen.\n" +
       "Agent: That happens. Ask two questions and you know: when was the heating last checked, and who lives above.\n" +
-      "Sena: Who lives above?\n" +
+      "Ellie: Who lives above?\n" +
       "Agent: A teacher and a cat. The cat is loud on Sunday morning.\n" +
-      "Sena: I can live with that. Is the apartment still available?\n" +
+      "Ellie: I can live with that. Is the apartment still available?\n" +
       "Agent: Until Friday. Two showings after you, and both of them asked about the basement.",
     questions: [
       {
@@ -146,7 +146,7 @@ export const enB1U03: SkillExercise[] = [
         explain: "„The photos were taken in November.“ — kasımda ışık az.",
       },
       {
-        text: "What was wrong at the apartment Sena saw yesterday?",
+        text: "What was wrong at the apartment Ellie saw yesterday?",
         options: ["the landlord was not there", "it was too small", "the basement was wet"],
         answer: 0,
         explain: "„The apartment I saw yesterday was spacious but the landlord was not there.“",
@@ -196,14 +196,14 @@ export const enB1U03: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Ela", text: "I resigned on a Thursday and the handover took five weeks. Both numbers matter." },
-      { speaker: "Ela", text: "Although I am leaving, I am grateful. That is not a polite line; it is the reason I gave six weeks and not four." },
-      { speaker: "Ela", text: "The work was hard. However, the staff was kind, and kind staff is rarer than easy work." },
-      { speaker: "Ela", text: "My replacement started two weeks before my last day. That was my one rule and the manager agreed in the same meeting." },
-      { speaker: "Ela", text: "Despite the pressure of those two weeks, we wrote everything down. Forty pages, most of them boring." },
-      { speaker: "Ela", text: "The boring pages are the handover. The interesting parts everybody remembers anyway." },
-      { speaker: "Ela", text: "On my last day somebody asked why I was happy. I said: because nobody will call me in November." },
-      { speaker: "Ela", text: "They called me in November. I answered, because the person who called had covered for me twice in April." },
+      { speaker: "Lucy", text: "I resigned on a Thursday and the handover took five weeks. Both numbers matter." },
+      { speaker: "Lucy", text: "Although I am leaving, I am grateful. That is not a polite line; it is the reason I gave six weeks and not four." },
+      { speaker: "Lucy", text: "The work was hard. However, the staff was kind, and kind staff is rarer than easy work." },
+      { speaker: "Lucy", text: "My replacement started two weeks before my last day. That was my one rule and the manager agreed in the same meeting." },
+      { speaker: "Lucy", text: "Despite the pressure of those two weeks, we wrote everything down. Forty pages, most of them boring." },
+      { speaker: "Lucy", text: "The boring pages are the handover. The interesting parts everybody remembers anyway." },
+      { speaker: "Lucy", text: "On my last day somebody asked why I was happy. I said: because nobody will call me in November." },
+      { speaker: "Lucy", text: "They called me in November. I answered, because the person who called had covered for me twice in April." },
     ],
     questions: [
       {
@@ -213,14 +213,14 @@ export const enB1U03: SkillExercise[] = [
         explain: "„I resigned on a Thursday and the handover took five weeks.“",
       },
       {
-        text: "What was Ela's one rule?",
+        text: "What was Lucy's one rule?",
         options: ["the replacement starts two weeks before", "six weeks of notice", "forty pages"],
         answer: 0,
         explain: "„My replacement started two weeks before my last day. That was my one rule…“",
       },
       {
         kind: "truefalse",
-        text: "They called Ela in November.",
+        text: "They called Lucy in November.",
         options: ["True", "False"],
         answer: 0,
         explain: "„They called me in November. I answered…“",
@@ -243,7 +243,7 @@ export const enB1U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Why did Ela answer the call?",
+        text: "Why did Lucy answer the call?",
         options: [],
         answer: 0,
         accept: ["that person had covered", "they covered for her", "because of April"],
@@ -267,27 +267,27 @@ export const enB1U03: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Mert", text: "I have seen five apartments this month and I have not signed anything." },
-      { speaker: "Nil", text: "Five is a lot. What is wrong with them?" },
-      { speaker: "Mert", text: "Nothing is wrong. That is the problem. I saw that apartment near the park last week — bright, furnished, fine." },
-      { speaker: "Nil", text: "And?" },
-      { speaker: "Mert", text: "The deposit was three months. The landlord said that everybody pays three months here." },
-      { speaker: "Nil", text: "Not everybody does. Two is normal in this city." },
-      { speaker: "Mert", text: "He also said that the ad was old and the rent had changed." },
-      { speaker: "Nil", text: "That is the moment to leave. An ad is a price." },
-      { speaker: "Mert", text: "The agency told me to send my last three pay stubs before the showing." },
-      { speaker: "Nil", text: "Before? After a showing, yes. Before, no." },
-      { speaker: "Mert", text: "I asked if that was normal. She said it was." },
-      { speaker: "Nil", text: "She said it was. That is different from: it is." },
-      { speaker: "Mert", text: "So five apartments and no apartment." },
-      { speaker: "Nil", text: "Five apartments and two rules you did not have in September. That is not nothing." },
+      { speaker: "Henry", text: "I have seen five apartments this month and I have not signed anything." },
+      { speaker: "Katie", text: "Five is a lot. What is wrong with them?" },
+      { speaker: "Henry", text: "Nothing is wrong. That is the problem. I saw that apartment near the park last week — bright, furnished, fine." },
+      { speaker: "Katie", text: "And?" },
+      { speaker: "Henry", text: "The deposit was three months. The landlord said that everybody pays three months here." },
+      { speaker: "Katie", text: "Not everybody does. Two is normal in this city." },
+      { speaker: "Henry", text: "He also said that the ad was old and the rent had changed." },
+      { speaker: "Katie", text: "That is the moment to leave. An ad is a price." },
+      { speaker: "Henry", text: "The agency told me to send my last three pay stubs before the showing." },
+      { speaker: "Katie", text: "Before? After a showing, yes. Before, no." },
+      { speaker: "Henry", text: "I asked if that was normal. She said it was." },
+      { speaker: "Katie", text: "She said it was. That is different from: it is." },
+      { speaker: "Henry", text: "So five apartments and no apartment." },
+      { speaker: "Katie", text: "Five apartments and two rules you did not have in September. That is not nothing." },
     ],
     questions: [
       {
         text: "What did the landlord say about the deposit?",
         options: ["everybody pays three months", "two months is normal", "it depends on the apartment"],
         answer: 0,
-        explain: "„The landlord said that everybody pays three months here.“ — Nil bunun doğru olmadığını söylüyor.",
+        explain: "„The landlord said that everybody pays three months here.“ — Katie bunun doğru olmadığını söylüyor.",
       },
       {
         text: "What did the agency ask for before the showing?",
@@ -297,7 +297,7 @@ export const enB1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert has signed a contract.",
+        text: "Henry has signed a contract.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I have seen five apartments this month and I have not signed anything.“",
@@ -320,7 +320,7 @@ export const enB1U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What did Mert get from the five showings?",
+        text: "What did Henry get from the five showings?",
         options: [],
         answer: 0,
         accept: ["two rules", "two new rules", "rules"],

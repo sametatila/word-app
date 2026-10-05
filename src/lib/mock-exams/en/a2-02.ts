@@ -169,10 +169,10 @@ export const EN_A2_02: MockPaper = {
               kind: "match",
               id: "en-a2-02-l2-7",
               no: 7,
-              text: "Ela travels alone and wants to spend as little money as possible on the journey and the hotel.",
+              text: "Lucy travels alone and wants to spend as little money as possible on the journey and the hotel.",
               answer: "a",
               explain:
-                "İlan iki tasarrufu birden veriyor: 24 pound yol ve «you save one hotel night». Ela hem yol hem konaklama harcamasını düşürmek istiyor; havaalanı servisi yalnız yol, otel gecesini kurtarmıyor.",
+                "İlan iki tasarrufu birden veriyor: 24 pound yol ve «you save one hotel night». Lucy hem yol hem konaklama harcamasını düşürmek istiyor; havaalanı servisi yalnız yol, otel gecesini kurtarmıyor.",
             },
             {
               kind: "match",
@@ -947,7 +947,7 @@ From the airport you can take the train. It is cheaper than a taxi and it takes 
 On Saturday we can walk by the river and eat fish in the old town.
 
 See you in May!
-Elif`,
+Holly`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi? Biri eksikse metin tam sayılmaz.",
               "Ay seçimi bir gerekçeyle mi verildi? (because …)",

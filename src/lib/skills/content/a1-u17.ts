@@ -100,7 +100,7 @@ export const a1U17: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Liebe Frau Kaya,\n\nhier die Informationen zur Miete:\n\nDie Miete kostet 550 Euro kalt. Und 100 Euro Nebenkosten. Zusammen sind das 650 Euro warm.\n\n„Kalt“ heißt: nur die Wohnung. „Warm“ heißt: mit Nebenkosten — mit Wasser und Müll.\n\nBitte überweisen Sie die Miete jeden Monat bis zum 3.\n\nDie Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.\n\nHaben Sie eine Frage? Ich wohne im Haus.\n\nViele Grüße\nHerr Weber (Vermieter)",
+      "Liebe Frau Graf,\n\nhier die Informationen zur Miete:\n\nDie Miete kostet 550 Euro kalt. Und 100 Euro Nebenkosten. Zusammen sind das 650 Euro warm.\n\n„Kalt“ heißt: nur die Wohnung. „Warm“ heißt: mit Nebenkosten — mit Wasser und Müll.\n\nBitte überweisen Sie die Miete jeden Monat bis zum 3.\n\nDie Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.\n\nHaben Sie eine Frage? Ich wohne im Haus.\n\nViele Grüße\nHerr Weber (Vermieter)",
     questions: [
       {
         text: "Was kostet die Miete warm?",
@@ -334,7 +334,7 @@ export const a1U17: SkillExercise[] = [
           { de: "Vorsicht, das ist schwer!", tr: "Dikkat, bu ağır!", en: "Careful, that's heavy!" },
         ],
         sample:
-          "Hallo Tom,\n\nam Samstag ziehe ich um. Kannst du mir helfen?\n\nWir packen die Kartons und tragen sie nach unten. Der Schrank ist sehr schwer — da brauche ich dich!\n\nDie Wohnung ist im 2. Stock und es gibt keinen Aufzug. Wir nehmen die Treppe.\n\nDanach räumen wir auf und ich koche für uns.\n\nKommst du?\nElif",
+          "Hallo Tom,\n\nam Samstag ziehe ich um. Kannst du mir helfen?\n\nWir packen die Kartons und tragen sie nach unten. Der Schrank ist sehr schwer — da brauche ich dich!\n\nDie Wohnung ist im 2. Stock und es gibt keinen Aufzug. Wir nehmen die Treppe.\n\nDanach räumen wir auf und ich koche für uns.\n\nKommst du?\nPaula",
       },
     ],
   },

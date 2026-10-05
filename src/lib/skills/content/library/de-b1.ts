@@ -35,12 +35,12 @@ export const deB1: SkillExercise[] = [
       "KLEINGÄRTEN: WARTEN AUF EIN STÜCK GRÜN\n\n" +
       "In vielen deutschen Städten braucht man Geduld, wenn man einen Kleingarten möchte. Die Wartelisten sind lang, " +
       "in manchen Vereinen dauert es fünf bis sieben Jahre. Gleichzeitig klagen andere Vereine, dass ihnen die Mitglieder fehlen.\n\n" +
-      "Wie passt das zusammen? Frau Özdemir sitzt seit zwölf Jahren im Vorstand eines Vereins in Hannover und erklärt es so: " +
+      "Wie passt das zusammen? Frau Arndt sitzt seit zwölf Jahren im Vorstand eines Vereins in Hannover und erklärt es so: " +
       "„Bei uns in der Stadt ist jede Parzelle vergeben. Zwanzig Kilometer weiter draußen steht die Hälfte leer, " +
       "weil niemand so weit fahren will.“\n\n" +
       "Verändert hat sich auch, wer kommt. Früher waren es vor allem Rentnerinnen und Rentner. Heute bewerben sich junge " +
       "Familien, die in ihrer Wohnung keinen Balkon haben, und Leute, die ihr Gemüse selbst anbauen möchten.\n\n" +
-      "Nicht alle bleiben lange. „Manche denken, ein Garten ist ein Café mit Blumen“, sagt Frau Özdemir. „Dann kommt der " +
+      "Nicht alle bleiben lange. „Manche denken, ein Garten ist ein Café mit Blumen“, sagt Frau Arndt. „Dann kommt der " +
       "erste heiße Sommer, und sie merken, dass sie jede Woche kommen müssen.“ Rund ein Fünftel gibt die Parzelle schon " +
       "im ersten Jahr wieder ab.\n\n" +
       "Streit gibt es meistens nicht um Pflanzen, sondern um Regeln. Wie hoch darf die Hütte sein? Darf man grillen? " +
@@ -68,7 +68,7 @@ export const deB1: SkillExercise[] = [
         explain: "„… steht die Hälfte leer, weil niemand so weit fahren will.“ Toprak ve kurallar bu cümlede hiç geçmiyor.",
       },
       {
-        text: "Was meint Frau Özdemir mit „ein Café mit Blumen“?",
+        text: "Was meint Frau Arndt mit „ein Café mit Blumen“?",
         options: [
           "Manche unterschätzen, wie viel Arbeit ein Garten macht.",
           "Manche möchten in ihrem Garten Kaffee verkaufen.",
@@ -252,13 +252,13 @@ export const deB1: SkillExercise[] = [
         sample:
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich habe Ihre Anzeige für Lesepaten auf der Internetseite der Bibliothek gelesen und interessiere mich sehr dafür. " +
-          "Mein Name ist Elif Yalcin, ich bin 34 Jahre alt und arbeite zurzeit halbtags in einem Büro. " +
+          "Mein Name ist Paula Jahn, ich bin 34 Jahre alt und arbeite zurzeit halbtags in einem Büro. " +
           "Ich möchte mitmachen, weil ich selbst als Kind kaum Bücher zu Hause hatte und weiß, wie viel eine Stunde Vorlesen " +
           "bedeuten kann. Außerdem habe ich zwei Jahre lang meiner Nichte beim Lesen geholfen.\n\n" +
           "Dienstags hätte ich immer Zeit, donnerstags nur jede zweite Woche. Eine Frage habe ich noch: " +
           "Wie viele Kinder betreut man an einem Nachmittag?\n\n" +
           "Über eine Antwort würde ich mich freuen.\n" +
-          "Mit freundlichen Grüßen\nElif Yalcin",
+          "Mit freundlichen Grüßen\nPaula Jahn",
       },
     ],
   },

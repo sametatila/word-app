@@ -68,7 +68,7 @@ export const EN_A2_03: MockPaper = {
               genre: "Note for a roommate",
               genreTr: "Ev arkadaşına not",
               title: "Back on Sunday",
-              body: `Selim, I am at my sister's until Sunday. Can you water the plants on Friday? The key for the balcony door is in the kitchen drawer. Do not put the small green plant in the sun.`,
+              body: `Nathan, I am at my sister's until Sunday. Can you water the plants on Friday? The key for the balcony door is in the kitchen drawer. Do not put the small green plant in the sun.`,
             },
             {
               kind: "text",
@@ -118,7 +118,7 @@ export const EN_A2_03: MockPaper = {
               id: "en-a2-03-l1-4",
               no: 4,
               ref: "m4",
-              text: "What must Selim do on Friday?",
+              text: "What must Nathan do on Friday?",
               options: ["Give the plants water", "Move the green plant into the sun", "Take the key to the writer's sister"],
               answer: 0,
               explain:

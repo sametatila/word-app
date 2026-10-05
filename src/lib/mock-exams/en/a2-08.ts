@@ -187,7 +187,7 @@ export const EN_A2_08: MockPaper = {
               kind: "match",
               id: "en-a2-08-l2-9",
               no: 9,
-              text: "Yasin wants to move to music but he has nobody to go with.",
+              text: "Harvey wants to move to music but he has nobody to go with.",
               answer: "e",
               explain:
                 "İlan tam bu engeli kaldırıyor: «Two hours, no partner needed». Koro (b) da yalnız gidilebilir ama dans etmek istiyor.",
@@ -196,7 +196,7 @@ export const EN_A2_08: MockPaper = {
               kind: "match",
               id: "en-a2-08-l2-10",
               no: 10,
-              text: "Fikret wants to do sport on Sunday and is not interested in winning.",
+              text: "Jordan wants to do sport on Sunday and is not interested in winning.",
               answer: "h",
               explain:
                 "İlan hem günü hem havayı veriyor: «Nine o'clock in the park. Everybody plays, nobody counts the goals».",

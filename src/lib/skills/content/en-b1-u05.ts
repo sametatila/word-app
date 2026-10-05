@@ -125,19 +125,19 @@ export const enB1U05: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Mert: The electricity bill came. Two hundred and forty for three months.\n" +
-      "Nil: That is high for two people.\n" +
-      "Mert: That is what I said. Then I looked at the reading. The last one was an estimate, not a real reading.\n" +
-      "Nil: So they guessed.\n" +
-      "Mert: They guessed high. If we send the real reading today, the next bill will be lower and the difference will come back.\n" +
-      "Nil: And the heating?\n" +
-      "Mert: The heating is the other half. If we used less heating, the bill would be lower — but I am not cold in this apartment and I am not going to be.\n" +
-      "Nil: Nobody said cold. One degree is not cold.\n" +
-      "Mert: One degree is about six in a hundred. That is eight euros a month in this apartment.\n" +
-      "Nil: Then two degrees at night, when nobody is in the room.\n" +
-      "Mert: That I can do. Waste is heating an empty room, not being warm in a full one.\n" +
-      "Nil: Could we change the provider?\n" +
-      "Mert: We could, and we should look, but not this week. First the real reading. A wrong number stays wrong at every provider.",
+      "Henry: The electricity bill came. Two hundred and forty for three months.\n" +
+      "Katie: That is high for two people.\n" +
+      "Henry: That is what I said. Then I looked at the reading. The last one was an estimate, not a real reading.\n" +
+      "Katie: So they guessed.\n" +
+      "Henry: They guessed high. If we send the real reading today, the next bill will be lower and the difference will come back.\n" +
+      "Katie: And the heating?\n" +
+      "Henry: The heating is the other half. If we used less heating, the bill would be lower — but I am not cold in this apartment and I am not going to be.\n" +
+      "Katie: Nobody said cold. One degree is not cold.\n" +
+      "Henry: One degree is about six in a hundred. That is eight euros a month in this apartment.\n" +
+      "Katie: Then two degrees at night, when nobody is in the room.\n" +
+      "Henry: That I can do. Waste is heating an empty room, not being warm in a full one.\n" +
+      "Katie: Could we change the provider?\n" +
+      "Henry: We could, and we should look, but not this week. First the real reading. A wrong number stays wrong at every provider.",
     questions: [
       {
         text: "What was the problem with the last reading?",
@@ -146,14 +146,14 @@ export const enB1U05: SkillExercise[] = [
         explain: "„The last one was an estimate, not a real reading.“",
       },
       {
-        text: "What does Mert want to do first?",
+        text: "What does Henry want to do first?",
         options: ["send the real reading", "change the provider", "turn off the heating"],
         answer: 0,
         explain: "„First the real reading. A wrong number stays wrong at every provider.“",
       },
       {
         kind: "truefalse",
-        text: "Mert agrees to be cold in the apartment.",
+        text: "Henry agrees to be cold in the apartment.",
         options: ["True", "False"],
         answer: 1,
         explain: "„but I am not cold in this apartment and I am not going to be.“",
@@ -168,7 +168,7 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is waste, in Mert's words?",
+        text: "What is waste, in Henry's words?",
         options: [],
         answer: 0,
         accept: ["heating an empty room", "an empty room", "heating a room"],
@@ -196,18 +196,18 @@ export const enB1U05: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Ela", text: "The inspection was at ten and I had cleaned everything before they arrived. That line is the whole story." },
-      { speaker: "Ela", text: "I had taken photos of every room the day I moved in, two years earlier. Nine photos, in a folder I never opened." },
-      { speaker: "Ela", text: "At the inspection the man pointed at a mark on the wall behind the door. I opened the folder on my phone and the mark was there in the first photo." },
-      { speaker: "Ela", text: "They returned the deposit in full. Eleven days, into the same account. That is not normal and I know it." },
-      { speaker: "Ela", text: "What had you done before the inspection? A friend asked me that and I said: nothing special. Then I counted." },
-      { speaker: "Ela", text: "I had cleaned the oven, which takes three hours and which nobody thanks you for. I had returned both keys and written down the date." },
-      { speaker: "Ela", text: "And I had left the apartment empty. Really empty — not a shelf in the basement, not a box in the corridor." },
-      { speaker: "Ela", text: "The final charge was zero. The cost was one evening in September two years earlier, taking nine photos nobody asked for." },
+      { speaker: "Lucy", text: "The inspection was at ten and I had cleaned everything before they arrived. That line is the whole story." },
+      { speaker: "Lucy", text: "I had taken photos of every room the day I moved in, two years earlier. Nine photos, in a folder I never opened." },
+      { speaker: "Lucy", text: "At the inspection the man pointed at a mark on the wall behind the door. I opened the folder on my phone and the mark was there in the first photo." },
+      { speaker: "Lucy", text: "They returned the deposit in full. Eleven days, into the same account. That is not normal and I know it." },
+      { speaker: "Lucy", text: "What had you done before the inspection? A friend asked me that and I said: nothing special. Then I counted." },
+      { speaker: "Lucy", text: "I had cleaned the oven, which takes three hours and which nobody thanks you for. I had returned both keys and written down the date." },
+      { speaker: "Lucy", text: "And I had left the apartment empty. Really empty — not a shelf in the basement, not a box in the corridor." },
+      { speaker: "Lucy", text: "The final charge was zero. The cost was one evening in September two years earlier, taking nine photos nobody asked for." },
     ],
     questions: [
       {
-        text: "What did Ela do on the day she moved in?",
+        text: "What did Lucy do on the day she moved in?",
         options: ["took photos of every room", "cleaned the oven", "returned the keys"],
         answer: 0,
         explain: "„I had taken photos of every room the day I moved in, two years earlier.“",
@@ -270,28 +270,28 @@ export const enB1U05: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Can", text: "So — one more year here or not?" },
-      { speaker: "Sena", text: "I decided to stay another year. I enjoy living in this area and I could not say that in the first six months." },
-      { speaker: "Can", text: "What changed?" },
-      { speaker: "Sena", text: "Nothing changed. I started using it. The park is eight minutes away and it is worth walking there instead of taking the bus for two stops." },
-      { speaker: "Can", text: "The bus takes four minutes." },
-      { speaker: "Sena", text: "The bus takes four minutes and the walk takes eight and I arrive in a different mood. That is the whole calculation." },
-      { speaker: "Can", text: "And the stores?" },
-      { speaker: "Sena", text: "Three local ones and a big one. I use the big one twice a month and the local ones four times a week." },
-      { speaker: "Can", text: "Is that good or strange?" },
-      { speaker: "Sena", text: "Both. It is also why I feel safe here at eleven at night. There is no camera on that street. There is a man who would notice." },
-      { speaker: "Can", text: "That is a community." },
-      { speaker: "Sena", text: "That is a community. Nobody calls it that and nobody organizes it." },
+      { speaker: "Tyler", text: "So — one more year here or not?" },
+      { speaker: "Ellie", text: "I decided to stay another year. I enjoy living in this area and I could not say that in the first six months." },
+      { speaker: "Tyler", text: "What changed?" },
+      { speaker: "Ellie", text: "Nothing changed. I started using it. The park is eight minutes away and it is worth walking there instead of taking the bus for two stops." },
+      { speaker: "Tyler", text: "The bus takes four minutes." },
+      { speaker: "Ellie", text: "The bus takes four minutes and the walk takes eight and I arrive in a different mood. That is the whole calculation." },
+      { speaker: "Tyler", text: "And the stores?" },
+      { speaker: "Ellie", text: "Three local ones and a big one. I use the big one twice a month and the local ones four times a week." },
+      { speaker: "Tyler", text: "Is that good or strange?" },
+      { speaker: "Ellie", text: "Both. It is also why I feel safe here at eleven at night. There is no camera on that street. There is a man who would notice." },
+      { speaker: "Tyler", text: "That is a community." },
+      { speaker: "Ellie", text: "That is a community. Nobody calls it that and nobody organizes it." },
     ],
     questions: [
       {
-        text: "Why does Sena walk to the park?",
+        text: "Why does Ellie walk to the park?",
         options: ["she arrives in a different mood", "the bus is expensive", "there is no bus"],
         answer: 0,
         explain: "„…and I arrive in a different mood. That is the whole calculation.“",
       },
       {
-        text: "Why does Sena feel safe at night?",
+        text: "Why does Ellie feel safe at night?",
         options: ["there is a man who would notice", "there is a camera", "the street is empty"],
         answer: 0,
         explain: "„There is no camera on that street. There is a man who would notice.“",
@@ -321,7 +321,7 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How often does Sena use the local stores?",
+        text: "How often does Ellie use the local stores?",
         options: [],
         answer: 0,
         accept: ["four times a week", "4 times a week", "four times"],

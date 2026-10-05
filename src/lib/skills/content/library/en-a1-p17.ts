@@ -35,7 +35,7 @@ export const enA1P17: SkillExercise[] = [
         tr: "Köşedeki fırında sola dön.",
         answer: "Turn left at the bakery on the corner.",
         alternatives: ["At the bakery on the corner turn left."],
-        hint: "Emir cümlesi fiille başlar ve özne almaz; „köşede“ „on the corner“ ile söylenir. Yer ifadesi başa da alınabilir.",
+        hint: "Ethan cümlesi fiille başlar ve özne almaz; „köşede“ „on the corner“ ile söylenir. Yer ifadesi başa da alınabilir.",
       },
       {
         kind: "build",

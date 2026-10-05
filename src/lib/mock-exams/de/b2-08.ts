@@ -480,7 +480,7 @@ Mein Vorschlag ist deshalb unspektakulär: Nachweis ja, aber binnen zwölf Monat
           options: [
             {
               key: "a",
-              label: "a — Frau Aslan, Betriebsrätin",
+              label: "a — Frau Menzel, Betriebsrätin",
               body: "Eine Regel, die alle betrifft, wird am Ende nur bei einigen kontrolliert. Bei uns hat niemand beanstandet, dass die Geschäftsführung Englisch spricht. Beanstandet wurde Türkisch in der Umkleide. Deshalb bin ich gegen jede Sprachregel, die nicht für alle gleich gilt.",
             },
             {
@@ -505,7 +505,7 @@ Mein Vorschlag ist deshalb unspektakulär: Nachweis ja, aber binnen zwölf Monat
             },
             {
               key: "f",
-              label: "f — Herr Erdal, Arbeitsrechtler",
+              label: "f — Herr Tietz, Arbeitsrechtler",
               body: "Rechtlich ist die Lage klarer, als viele denken: Eine pauschale Anordnung ist unzulässig, eine auf die Tätigkeit bezogene zulässig. Wer eine Regel formuliert, muss also sagen, wofür sie gilt — nicht wogegen sie sich richtet.",
             },
             {
@@ -711,7 +711,7 @@ Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertu
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, Herr Erol, hier ist die Anerkennungsstelle. Ihre eingereichten Unterlagen sind vollständig. Für die Anerkennung Ihres Abschlusses fehlt allerdings noch ein Nachweis über Deutsch auf dem geforderten Niveau. Das medizinische Fachdeutsch prüfen wir gesondert und erst im Anschluss.",
+                  text: "Guten Tag, Herr Martens, hier ist die Anerkennungsstelle. Ihre eingereichten Unterlagen sind vollständig. Für die Anerkennung Ihres Abschlusses fehlt allerdings noch ein Nachweis über Deutsch auf dem geforderten Niveau. Das medizinische Fachdeutsch prüfen wir gesondert und erst im Anschluss.",
                 },
               ],
             },

@@ -18,7 +18,7 @@ export const enC1P13: SkillExercise[] = [
     course: "en",
     level: "C1",
     skill: "reading",
-    title: "The Hour Nobody Can Agree On",
+    title: "The Hour Nobody Tyler Agree On",
     genre: "essay",
     intro: "Bir deneme: herkes saatlerin ileri geri alınmasından bıkmış görünüyor; asıl anlaşmazlık hangi saatin kalacağında.",
     gloss: [

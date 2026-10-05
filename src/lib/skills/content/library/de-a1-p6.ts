@@ -30,7 +30,7 @@ export const deA1P6: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Liebe Familie Demir,\n\n" +
+      "Liebe Familie Böhm,\n\n" +
       "ich fahre am Freitag zu meiner Tochter nach Hamburg. Ich komme erst am Sonntagabend zurück.\n\n" +
       "Können Sie bitte meine Blumen gießen? Der Schlüssel liegt bei Frau Weber in Wohnung 4. " +
       "Die Blumen im Wohnzimmer brauchen wenig Wasser, die Pflanze auf dem Balkon braucht viel.\n\n" +
@@ -82,7 +82,7 @@ export const deA1P6: SkillExercise[] = [
         text: "Was macht der Postbote am Samstag?",
         options: [
           "Er bringt den Schlüssel zurück.",
-          "Er klingelt bei Familie Demir.",
+          "Er klingelt bei Familie Böhm.",
           "Er legt das Paket in den Briefkasten.",
         ],
         answer: 1,
@@ -111,38 +111,38 @@ export const deA1P6: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Frau Berger", text: "Praxis Doktor Sommer, guten Morgen. Was kann ich für Sie tun?" },
-      { speaker: "Herr Aydin", text: "Guten Morgen. Mein Name ist Kerem Aydin. Ich brauche einen Termin. Ich habe seit drei Tagen Husten und Fieber." },
+      { speaker: "Herr Haas", text: "Guten Morgen. Mein Name ist Julian Haas. Ich brauche einen Termin. Ich habe seit drei Tagen Husten und Fieber." },
       { speaker: "Frau Berger", text: "Das tut mir leid. Waren Sie schon einmal bei uns in der Praxis?" },
-      { speaker: "Herr Aydin", text: "Nein, ich bin neu hier. Ich wohne erst seit einem Monat in Bonn." },
+      { speaker: "Herr Haas", text: "Nein, ich bin neu hier. Ich wohne erst seit einem Monat in Bonn." },
       { speaker: "Frau Berger", text: "Kein Problem. Bringen Sie dann bitte Ihre Versichertenkarte mit. Passt Ihnen morgen um halb neun?" },
-      { speaker: "Herr Aydin", text: "Morgen früh ist leider schlecht. Ich arbeite bis zwölf Uhr. Geht es auch am Nachmittag?" },
+      { speaker: "Herr Haas", text: "Morgen früh ist leider schlecht. Ich arbeite bis zwölf Uhr. Geht es auch am Nachmittag?" },
       { speaker: "Frau Berger", text: "Einen Moment ... ja, um sechzehn Uhr ist noch etwas frei." },
-      { speaker: "Herr Aydin", text: "Sehr gut, dann komme ich um vier. Vielen Dank!" },
+      { speaker: "Herr Haas", text: "Sehr gut, dann komme ich um vier. Vielen Dank!" },
       { speaker: "Frau Berger", text: "Bitte schön. Kommen Sie bitte zehn Minuten früher. Gute Besserung!" },
     ],
     questions: [
       {
-        text: "Warum ruft Herr Aydin an?",
+        text: "Warum ruft Herr Haas an?",
         options: ["Er sucht eine neue Wohnung.", "Er braucht die Adresse der Praxis.", "Er möchte einen Termin."],
         answer: 2,
         explain: "İlk cümlesi „Ich brauche einen Termin“ — üç günden beri öksürüğü ve ateşi var.",
       },
       {
-        text: "Was soll Herr Aydin mitbringen?",
+        text: "Was soll Herr Haas mitbringen?",
         options: ["ein Rezept vom Arzt", "seine Versichertenkarte", "einen Brief von der Arbeit"],
         answer: 1,
         explain: "İlk kez geldiği için „Bringen Sie dann bitte Ihre Versichertenkarte mit“ deniyor.",
       },
       {
         kind: "truefalse",
-        text: "Herr Aydin war schon oft in dieser Praxis.",
+        text: "Herr Haas war schon oft in dieser Praxis.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "„Nein, ich bin neu hier“ — bir aydır Bonn'da ve muayenehaneye ilk kez geliyor.",
       },
       {
         kind: "gapfill",
-        text: "Herr Aydin bekommt einen Termin um ___ Uhr.",
+        text: "Herr Haas bekommt einen Termin um ___ Uhr.",
         options: [],
         answer: 0,
         accept: ["sechzehn", "16", "vier"],
@@ -150,7 +150,7 @@ export const deA1P6: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie lange hat Herr Aydin schon Husten?",
+        text: "Wie lange hat Herr Haas schon Husten?",
         options: [],
         answer: 0,
         accept: ["seit drei Tagen", "drei Tage", "drei Tagen"],
@@ -192,10 +192,10 @@ export const deA1P6: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "Kayıt formunu Selin için doldur.",
-        facts: "Selin Kara, 24 yaşında, Türkiye'den; Köln'de Gartenstraße 8'de oturuyor; voleybol oynamak istiyor.",
+        prompt: "Kayıt formunu Luisa için doldur.",
+        facts: "Luisa Riedel, 24 yaşında, Türkiye'den; Köln'de Gartenstraße 8'de oturuyor; voleybol oynamak istiyor.",
         fields: [
-          { label: "Name", answer: "Selin Kara", accept: ["Selin", "Kara"] },
+          { label: "Name", answer: "Luisa Riedel", accept: ["Luisa", "Riedel"] },
           { label: "Alter", answer: "24", accept: ["vierundzwanzig", "24 Jahre"] },
           { label: "Straße", answer: "Gartenstraße 8", accept: ["Gartenstrasse 8", "Gartenstraße"] },
           { label: "Stadt", answer: "Köln", accept: ["Koeln"] },
@@ -221,10 +221,10 @@ export const deA1P6: SkillExercise[] = [
           { de: "Vielen Dank für Ihre Antwort.", tr: "Cevabınız için teşekkürler.", en: "Many thanks for your reply." },
         ],
         sample:
-          "Guten Tag, mein Name ist Selin Kara. Ich bin vierundzwanzig Jahre alt und wohne in Köln. " +
+          "Guten Tag, mein Name ist Luisa Riedel. Ich bin vierundzwanzig Jahre alt und wohne in Köln. " +
           "Ich möchte Mitglied in Ihrem Sportverein werden. Ich spiele gern Volleyball. " +
           "Am Dienstag und am Donnerstag habe ich Zeit, am Wochenende leider nicht. " +
-          "Wie hoch ist der Beitrag pro Monat? Vielen Dank für Ihre Antwort. Freundliche Grüße, Selin Kara",
+          "Wie hoch ist der Beitrag pro Monat? Vielen Dank für Ihre Antwort. Freundliche Grüße, Luisa Riedel",
       },
     ],
   },

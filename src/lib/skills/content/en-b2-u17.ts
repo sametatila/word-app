@@ -145,7 +145,7 @@ export const enB2U17: SkillExercise[] = [
       "THE SECOND ACT LETS IT DOWN\n" +
       "The Commission, the new play at the City Theater, starts better than anything I have seen this year. The first act is sharp, funny and full of small, revealing moments. Then the second act arrives, and something goes wrong.\n" +
       "The ending must have been hasty. Two characters who have not spoken for an hour suddenly solve everything in five minutes, and a line that the whole evening had been building toward is given to the wrong person. The writer must have run out of time, or the director must have cut twenty minutes in the last week of rehearsals. There is no other explanation.\n" +
-      "The actors can't have missed the shortcoming. You can see it in their faces: Selin Akar, who plays the mother, rushes through her last speech as if she wants to get off the stage. She can't have been happy with it, and she should not have had to carry it alone.\n" +
+      "The actors can't have missed the shortcoming. You can see it in their faces: Megan Akar, who plays the mother, rushes through her last speech as if she wants to get off the stage. She can't have been happy with it, and she should not have had to carry it alone.\n" +
       "It is not all bad news. The set is gorgeous, the music is well chosen, and the first act deserves every bit of praise it has received.\n" +
       "But the theater should have given this play two more weeks. And we should have noticed the revealing line in the first scene, too, when the father says that nothing in this house ends the way it should. He was right, and the play did not end well either.\n" +
       "Go for the first act. Leave at the interval if you like; you will not have missed much.",
@@ -158,9 +158,9 @@ export const enB2U17: SkillExercise[] = [
       },
       {
         text: "Who plays the mother?",
-        options: ["Selin Akar", "the director", "the writer"],
+        options: ["Megan Akar", "the director", "the writer"],
         answer: 0,
-        explain: "„Selin Akar, who plays the mother, rushes through her last speech…“",
+        explain: "„Megan Akar, who plays the mother, rushes through her last speech…“",
       },
       {
         kind: "truefalse",
@@ -227,29 +227,29 @@ export const enB2U17: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Bora", text: "Good evening, this is Sports Talk, and the phones have not stopped ringing. Never has a defeat caused such outrage in this city. Esin, you were at the stadium. Go ahead." },
-      { speaker: "Esin", text: "Thanks, Bora. Five goals at home. Never have I seen our team play so badly, and I have had a season ticket for twenty years." },
-      { speaker: "Bora", text: "What was the mood in the grandstand?" },
-      { speaker: "Esin", text: "Angry, then silent. Rarely does a supporter leave the grandstand early, but by the fourth goal half the seats were empty." },
-      { speaker: "Bora", text: "Did you stay?" },
-      { speaker: "Esin", text: "I stayed. Only after the final whistle did the loyal ones cheer on the rest of the team, and I was one of them." },
-      { speaker: "Bora", text: "Some listeners say the coach should go." },
-      { speaker: "Esin", text: "Not so fast. Not once this season has he blamed the players, and that counts for something." },
-      { speaker: "Bora", text: "So what went wrong?" },
-      { speaker: "Esin", text: "Injuries, mostly. Seldom has a team lost three defenders in one month. Under no circumstances should we panic now." },
-      { speaker: "Bora", text: "Strong words. And the next match?" },
-      { speaker: "Esin", text: "Saturday, away. Rarely do we win there, but I will be in the away section anyway." },
-      { speaker: "Bora", text: "Esin, thank you. Next caller, you are on Sports Talk." },
+      { speaker: "Jacob", text: "Good evening, this is Sports Talk, and the phones have not stopped ringing. Never has a defeat caused such outrage in this city. Amelia, you were at the stadium. Go ahead." },
+      { speaker: "Amelia", text: "Thanks, Jacob. Five goals at home. Never have I seen our team play so badly, and I have had a season ticket for twenty years." },
+      { speaker: "Jacob", text: "What was the mood in the grandstand?" },
+      { speaker: "Amelia", text: "Angry, then silent. Rarely does a supporter leave the grandstand early, but by the fourth goal half the seats were empty." },
+      { speaker: "Jacob", text: "Did you stay?" },
+      { speaker: "Amelia", text: "I stayed. Only after the final whistle did the loyal ones cheer on the rest of the team, and I was one of them." },
+      { speaker: "Jacob", text: "Some listeners say the coach should go." },
+      { speaker: "Amelia", text: "Not so fast. Not once this season has he blamed the players, and that counts for something." },
+      { speaker: "Jacob", text: "So what went wrong?" },
+      { speaker: "Amelia", text: "Injuries, mostly. Seldom has a team lost three defenders in one month. Under no circumstances should we panic now." },
+      { speaker: "Jacob", text: "Strong words. And the next match?" },
+      { speaker: "Amelia", text: "Saturday, away. Rarely do we win there, but I will be in the away section anyway." },
+      { speaker: "Jacob", text: "Amelia, thank you. Next caller, you are on Sports Talk." },
     ],
     questions: [
       {
-        text: "How long has Esin had a season ticket?",
+        text: "How long has Amelia had a season ticket?",
         options: ["twenty years", "one season", "five years"],
         answer: 0,
         explain: "„I have had a season ticket for twenty years.“",
       },
       {
-        text: "According to Esin, what went wrong?",
+        text: "According to Amelia, what went wrong?",
         options: ["injuries", "the coach", "the supporters"],
         answer: 0,
         explain: "„Injuries, mostly.“",
@@ -300,14 +300,14 @@ export const enB2U17: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Ferda", text: "Hello everyone, this is Ferda with the weekly update on the festival archive and the exhibition that opens in September." },
-      { speaker: "Ferda", text: "First, the good news. By June we will have archived the letters. That is almost four hundred letters from the families who started the festival in the fifties." },
-      { speaker: "Ferda", text: "The photographs will take longer. By the end of July we will have scanned about half of them, and the rest will have been done by the middle of August." },
-      { speaker: "Ferda", text: "Next month we will be waiting for approval. The city council has to agree to the exhibition budget, and until then we cannot order the display cases." },
-      { speaker: "Ferda", text: "By fall we will have decided to commission the work, or not. I mean the large painting of the square, which the committee has been discussing since March." },
-      { speaker: "Ferda", text: "The documentation is going well. Two students will be working with us over the summer, and they will be preserving the old costumes and writing the labels." },
-      { speaker: "Ferda", text: "One warning: in the first week of August I will be traveling, so please send any questions before the end of July." },
-      { speaker: "Ferda", text: "By the opening we will have been working on this for two years. I think it will be worth it. Thanks, everyone." },
+      { speaker: "Darcy", text: "Hello everyone, this is Darcy with the weekly update on the festival archive and the exhibition that opens in September." },
+      { speaker: "Darcy", text: "First, the good news. By June we will have archived the letters. That is almost four hundred letters from the families who started the festival in the fifties." },
+      { speaker: "Darcy", text: "The photographs will take longer. By the end of July we will have scanned about half of them, and the rest will have been done by the middle of August." },
+      { speaker: "Darcy", text: "Next month we will be waiting for approval. The city council has to agree to the exhibition budget, and until then we cannot order the display cases." },
+      { speaker: "Darcy", text: "By fall we will have decided to commission the work, or not. I mean the large painting of the square, which the committee has been discussing since March." },
+      { speaker: "Darcy", text: "The documentation is going well. Two students will be working with us over the summer, and they will be preserving the old costumes and writing the labels." },
+      { speaker: "Darcy", text: "One warning: in the first week of August I will be traveling, so please send any questions before the end of July." },
+      { speaker: "Darcy", text: "By the opening we will have been working on this for two years. I think it will be worth it. Thanks, everyone." },
     ],
     questions: [
       {

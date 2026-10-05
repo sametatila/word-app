@@ -113,7 +113,7 @@ export const deA2P13: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Frau Lindner", text: "Guten Tag, Herr Kaya, hier ist Sabine Lindner von der Fahrschule Blinker." },
+      { speaker: "Frau Lindner", text: "Guten Tag, Herr Graf, hier ist Sabine Lindner von der Fahrschule Blinker." },
       { speaker: "Frau Lindner", text: "Ich rufe wegen Ihrer Theorieprüfung an. Der Termin am Dienstag fällt leider aus." },
       { speaker: "Frau Lindner", text: "Das Prüfungsbüro ist an dem Tag geschlossen, das haben wir erst heute erfahren." },
       { speaker: "Frau Lindner", text: "Wir haben aber schon einen neuen Termin für Sie: Freitag, den siebzehnten, um halb neun." },
@@ -126,7 +126,7 @@ export const deA2P13: SkillExercise[] = [
       {
         text: "Warum ruft Frau Lindner an?",
         options: [
-          "Herr Kaya hat die Prüfung bestanden.",
+          "Herr Graf hat die Prüfung bestanden.",
           "Die Fahrstunde am Montag fällt aus.",
           "Der Termin für die Prüfung ändert sich.",
         ],
@@ -135,13 +135,13 @@ export const deA2P13: SkillExercise[] = [
       },
       {
         text: "Warum ist am Dienstag keine Prüfung?",
-        options: ["Frau Lindner ist krank.", "Das Prüfungsbüro ist geschlossen.", "Herr Kaya hat keine Zeit."],
+        options: ["Frau Lindner ist krank.", "Das Prüfungsbüro ist geschlossen.", "Herr Graf hat keine Zeit."],
         answer: 1,
         explain: "„Das Prüfungsbüro ist an dem Tag geschlossen.“",
       },
       {
         kind: "truefalse",
-        text: "Herr Kaya soll um acht Uhr in der Fahrschule sein.",
+        text: "Herr Graf soll um acht Uhr in der Fahrschule sein.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "„Bitte seien Sie schon um acht Uhr bei uns in der Fahrschule.“ Sınav saat sekiz buçukta.",
@@ -156,14 +156,14 @@ export const deA2P13: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was muss Herr Kaya mitbringen?",
+        text: "Was muss Herr Graf mitbringen?",
         options: [],
         answer: 0,
         accept: ["seinen Personalausweis", "den Personalausweis", "Personalausweis", "seinen Ausweis"],
         explain: "„bringen Sie Ihren Personalausweis mit“ — kimliksiz sınava giremiyor.",
       },
       {
-        text: "Bis wann soll Herr Kaya zurückrufen?",
+        text: "Bis wann soll Herr Graf zurückrufen?",
         options: ["bis Donnerstag", "bis Freitag", "bis Montag"],
         answer: 0,
         explain: "„Rufen Sie mich bitte bis Donnerstag zurück.“",
@@ -229,7 +229,7 @@ export const deA2P13: SkillExercise[] = [
           "Leider hatten wir wenig Zeit zum Sprechen, weil wir viele Aufgaben im Buch gemacht haben. " +
           "Mein Vorschlag: Vielleicht können wir im nächsten Kurs öfter in kleinen Gruppen sprechen. " +
           "Ich möchte im September gern den B1-Kurs machen.\n\n" +
-          "Mit freundlichen Grüßen\nMerve Aksoy",
+          "Mit freundlichen Grüßen\nKarla Thiel",
       },
     ],
   },

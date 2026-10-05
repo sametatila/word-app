@@ -242,7 +242,7 @@ export const deB1P10: SkillExercise[] = [
           "im Sommer genutzt, und ich verstehe, wenn das jemandem leidtut. " +
           "Eine zweite Möglichkeit wäre, die Bank an die andere Wand zu stellen. " +
           "Bitte gebt mir bis Sonntag kurz Rückmeldung, dann zählen wir einfach die Stimmen.\n\n" +
-          "Viele Grüße\nYasemin aus Wohnung 9",
+          "Viele Grüße\nRamona aus Wohnung 9",
       },
     ],
   },

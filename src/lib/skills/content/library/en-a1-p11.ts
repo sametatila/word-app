@@ -97,7 +97,7 @@ export const enA1P11: SkillExercise[] = [
     skill: "listening",
     title: "Who Brings What?",
     genre: "phone",
-    intro: "Selin, arkadaşları Ben için sürpriz bir parti hazırlıyor ve Mert'i arıyor; kim ne getiriyor, parti ne zaman, hediye ne kadar tutuyor, dinle.",
+    intro: "Megan, arkadaşları Ben için sürpriz bir parti hazırlıyor ve Henry'yi arıyor; kim ne getiriyor, parti ne zaman, hediye ne kadar tutuyor, dinle.",
     gloss: [
       { de: "surprise", tr: "sürpriz" },
       { de: "bring", tr: "getirmek" },
@@ -108,31 +108,31 @@ export const enA1P11: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Selin", text: "Hi Mert, it's Selin. Do you have a minute?" },
-      { speaker: "Mert", text: "Sure. Is it about the party for Ben?" },
-      { speaker: "Selin", text: "Yes. It's a surprise, so don't tell him! It's on Friday at eight, at my apartment." },
-      { speaker: "Mert", text: "Great. What can I bring?" },
-      { speaker: "Selin", text: "Can you bring some drinks? Juice and water, please, but no cola." },
-      { speaker: "Mert", text: "No problem. What about the cake?" },
-      { speaker: "Selin", text: "My sister is making an apple cake. It's Ben's favorite." },
-      { speaker: "Mert", text: "How many people are coming?" },
-      { speaker: "Selin", text: "Twelve. Please come at half past seven. Nora is bringing Ben at eight." },
-      { speaker: "Mert", text: "And what about a present?" },
-      { speaker: "Selin", text: "We're buying him a new bag. It's twenty-four euros, so everyone pays two euros." },
-      { speaker: "Mert", text: "Perfect. See you on Friday!" },
+      { speaker: "Megan", text: "Hi Henry, it's Megan. Do you have a minute?" },
+      { speaker: "Henry", text: "Sure. Is it about the party for Ben?" },
+      { speaker: "Megan", text: "Yes. It's a surprise, so don't tell him! It's on Friday at eight, at my apartment." },
+      { speaker: "Henry", text: "Great. What can I bring?" },
+      { speaker: "Megan", text: "Can you bring some drinks? Juice and water, please, but no cola." },
+      { speaker: "Henry", text: "No problem. What about the cake?" },
+      { speaker: "Megan", text: "My sister is making an apple cake. It's Ben's favorite." },
+      { speaker: "Henry", text: "How many people are coming?" },
+      { speaker: "Megan", text: "Twelve. Please come at half past seven. Nora is bringing Ben at eight." },
+      { speaker: "Henry", text: "And what about a present?" },
+      { speaker: "Megan", text: "We're buying him a new bag. It's twenty-four euros, so everyone pays two euros." },
+      { speaker: "Henry", text: "Perfect. See you on Friday!" },
     ],
     questions: [
       {
         text: "Who is the party for?",
-        options: ["Nora", "Mert", "Ben"],
+        options: ["Nora", "Henry", "Ben"],
         answer: 2,
-        explain: "„Is it about the party for Ben?“ sorusuna Selin evet diyor; Nora yalnız Ben'i partiye getiren kişi.",
+        explain: "„Is it about the party for Ben?“ sorusuna Megan evet diyor; Nora yalnız Ben'i partiye getiren kişi.",
       },
       {
-        text: "What does Mert bring?",
+        text: "What does Henry bring?",
         options: ["an apple cake", "juice and water", "cola and water"],
         answer: 1,
-        explain: "Selin ondan içecek istiyor: „Juice and water, please, but no cola.“ — keki kız kardeşi yapıyor.",
+        explain: "Megan ondan içecek istiyor: „Juice and water, please, but no cola.“ — keki kız kardeşi yapıyor.",
       },
       {
         kind: "truefalse",
@@ -143,7 +143,7 @@ export const enA1P11: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What time must Mert come?",
+        text: "What time must Henry come?",
         options: [],
         answer: 0,
         accept: ["at half past seven", "half past seven", "7.30", "at 7.30", "7:30", "at 7:30", "seven thirty"],
@@ -151,7 +151,7 @@ export const enA1P11: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Selin'in Mert'e yaptığı uyarıyı duyduğun gibi yaz.",
+        text: "Megan'ın Henry'ye yaptığı uyarıyı duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["It's a surprise, so don't tell him!", "It's a surprise, so don't tell him", "It is a surprise, so do not tell him!", "It is a surprise, so do not tell him"],
@@ -218,7 +218,7 @@ export const enA1P11: SkillExercise[] = [
         sample:
           "Dear Aunt Rita, thank you so much for the birthday present! The sweater is very warm and I love the color. " +
           "Blue is my favorite. I wear it to work every morning, and my friends like it too. It is perfect for the cold " +
-          "weather this week. See you at Grandma's house on Sunday! Love, Ceren",
+          "weather this week. See you at Grandma's house on Sunday! Love, Leah",
       },
     ],
   },
@@ -329,10 +329,10 @@ export const enA1P11: SkillExercise[] = [
       },
       {
         heading: "Tanıştırma, telefon ve zaman",
-        tr: "Birini tanıştırırken ve telefonda kendini tanıtırken „this“ kullanılır: „This is Ela.“ Zaman ifadesinde de „this“ içinde bulunduğumuz dönemi anlatır: „this week“ bu hafta demektir. Tek başına da durabilir: „What is that?“",
+        tr: "Birini tanıştırırken ve telefonda kendini tanıtırken „this“ kullanılır: „This is Lucy.“ Zaman ifadesinde de „this“ içinde bulunduğumuz dönemi anlatır: „this week“ bu hafta demektir. Tek başına da durabilir: „What is that?“",
         examples: [
-          { de: "This is my friend Ali.", tr: "Bu arkadaşım Ali.", note: "tanıştırma" },
-          { de: "Hello, this is Ela.", tr: "Merhaba, ben Ela.", note: "telefonda" },
+          { de: "This is my friend Harry.", tr: "Bu arkadaşım Harry.", note: "tanıştırma" },
+          { de: "Hello, this is Lucy.", tr: "Merhaba, ben Lucy.", note: "telefonda" },
           { de: "I'm very busy this week.", tr: "Bu hafta çok meşgulüm.", note: "zaman" },
         ],
       },
@@ -382,7 +382,7 @@ export const enA1P11: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Hello, ___ is Ela. Can I talk to Mert? (on the phone)",
+        text: "Hello, ___ is Lucy. Can I talk to Henry? (on the phone)",
         options: [],
         answer: 0,
         accept: ["this"],

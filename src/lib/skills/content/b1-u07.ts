@@ -320,9 +320,9 @@ export const b1U07: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Gecikme bildiriminin künyesini doldur.",
-        facts: "Bildiren: Nuri Öz; gecikme: 40 dakika; sebep: trafik; sonuç: toplantıya katılamadı; sonraki adım: ertesi gün rapor.",
+        facts: "Bildiren: Anton Naumann; gecikme: 40 dakika; sebep: trafik; sonuç: toplantıya katılamadı; sonraki adım: ertesi gün rapor.",
         fields: [
-          { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Name", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Verspätung", answer: "40 Minuten", accept: ["vierzig Minuten", "40"] },
           { label: "Ursache", answer: "Stau", accept: ["ein Stau", "der Verkehr"] },
           { label: "Folge", answer: "Besprechung verpasst", accept: ["die Besprechung verpasst", "nicht bei der Besprechung"] },

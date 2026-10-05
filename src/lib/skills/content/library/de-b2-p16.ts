@@ -126,10 +126,10 @@ export const deB2P16: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Moderator", text: "Willkommen zum Verbrauchertelefon. Heute bei uns im Studio ist die Juristin Frau Brückner. Die erste Anruferin ist Frau Aksoy. Bitte sehr!" },
-      { speaker: "Frau Aksoy", text: "Ich habe einem Freund vor einem Jahr zweitausend Euro geliehen. Er wollte es nach drei Monaten zurückzahlen, aber bis heute ist nichts gekommen. Einen Vertrag haben wir nicht." },
+      { speaker: "Moderator", text: "Willkommen zum Verbrauchertelefon. Heute bei uns im Studio ist die Juristin Frau Brückner. Die erste Anruferin ist Frau Thiel. Bitte sehr!" },
+      { speaker: "Frau Thiel", text: "Ich habe einem Freund vor einem Jahr zweitausend Euro geliehen. Er wollte es nach drei Monaten zurückzahlen, aber bis heute ist nichts gekommen. Einen Vertrag haben wir nicht." },
       { speaker: "Frau Brückner", text: "Das ist leider häufig. Auch ohne schriftlichen Vertrag ist ein Darlehen gültig, vorausgesetzt, Sie können es beweisen. Haben Sie das Geld überwiesen?" },
-      { speaker: "Frau Aksoy", text: "Ja, und als Verwendungszweck steht sogar „Darlehen“ auf der Überweisung." },
+      { speaker: "Frau Thiel", text: "Ja, und als Verwendungszweck steht sogar „Darlehen“ auf der Überweisung." },
       { speaker: "Frau Brückner", text: "Sehr gut, das hilft Ihnen. Schreiben Sie ihm eine Nachricht mit einer klaren Frist, zum Beispiel vierzehn Tage." },
       { speaker: "Frau Brückner", text: "Falls er dann nicht zahlt, können Sie beim Gericht einen Mahnbescheid beantragen. Das geht online und kostet nicht viel." },
       { speaker: "Moderator", text: "Danke. Unser zweiter Anrufer ist Herr Lang." },
@@ -151,7 +151,7 @@ export const deB2P16: SkillExercise[] = [
         explain: "Sözleşme olmasa da borç kanıtlanabiliyorsa geçerli; havalede „Darlehen“ yazıyor.",
       },
       {
-        text: "Was soll Frau Aksoy als Erstes tun?",
+        text: "Was soll Frau Thiel als Erstes tun?",
         options: [
           "eine klare Frist setzen",
           "sofort zum Gericht gehen",
@@ -231,7 +231,7 @@ export const deB2P16: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Kuzenin Deniz yeni bir telefonu taksitle almak istiyor ve fikrini soruyor. Ona samimi bir e-posta yaz: isteğini anlayışla karşıla, hangi koşulda sorun olmadığını söyle, bir riski somut bir örnekle anlat, bir seçenek öner ve kararı ona bırak.",
+          "Kuzenin Sascha yeni bir telefonu taksitle almak istiyor ve fikrini soruyor. Ona samimi bir e-posta yaz: isteğini anlayışla karşıla, hangi koşulda sorun olmadığını söyle, bir riski somut bir örnekle anlat, bir seçenek öner ve kararı ona bırak.",
         checklist: [
           "İsteğini anlayışla karşıla",
           "Hangi koşulda sorun olmadığını söyle",
@@ -247,7 +247,7 @@ export const deB2P16: SkillExercise[] = [
           { de: "Am Ende ist es natürlich deine Entscheidung.", tr: "Sonuçta karar elbette senin.", en: "In the end, of course, it is your decision." },
         ],
         sample:
-          "Hallo Deniz, danke für deine Nachricht! Ich verstehe gut, dass du ein neues Handy willst, dein altes " +
+          "Hallo Sascha, danke für deine Nachricht! Ich verstehe gut, dass du ein neues Handy willst, dein altes " +
           "hat ja schon einiges mitgemacht. " +
           "Grundsätzlich ist ein Ratenkauf kein Problem, sofern du die Raten locker bezahlen kannst, also auch " +
           "in einem Monat, in dem du im Café weniger Schichten bekommst. Rechne das vorher einmal ehrlich durch. " +
@@ -257,7 +257,7 @@ export const deB2P16: SkillExercise[] = [
           "An deiner Stelle würde ich noch drei Monate sparen und das Gerät dann direkt kaufen, es sei denn, dein " +
           "altes gibt vorher ganz den Geist auf. Vielleicht findest du auch ein gutes gebrauchtes Modell. " +
           "Am Ende ist es natürlich deine Entscheidung. Melde dich, wenn wir zusammen rechnen sollen! " +
-          "Liebe Grüße, Aylin",
+          "Liebe Grüße, Helene",
       },
     ],
   },

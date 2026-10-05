@@ -27,7 +27,7 @@
     "I'm happy your arm is better today."
    ],
    "ctx": [
-    "A2.1 What happened? · Ela"
+    "A2.1 What happened? · Lucy"
    ]
   },
   {
@@ -60,14 +60,14 @@
    ]
   },
   {
-   "tr": "O benim kız kardeşim Ayşe. Yirmi yaşında.",
+   "tr": "O benim kız kardeşim Rachel. Yirmi yaşında.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "That's my sister Ayse. She is twenty years old."
+    "That's my sister Rachel. She is twenty years old."
    ],
    "ctx": [
-    "A1.2 Family and people · Ahmet"
+    "A1.2 Family and people · Finn"
    ]
   },
   {
@@ -96,7 +96,7 @@
     "I can hear you, but I can't see you. What is the problem?"
    ],
    "ctx": [
-    "A2.9 Media and technology · Deniz"
+    "A2.9 Media and technology · Charlie"
    ]
   },
   {
@@ -107,7 +107,7 @@
     "I'm from Türkiye. Now I live in Boston."
    ],
    "ctx": [
-    "A1.1 Nice to meet you · Elif"
+    "A1.1 Nice to meet you · Holly"
    ]
   },
   {
@@ -644,7 +644,7 @@
     "I haven't bought a present yet. I have no idea what to buy!"
    ],
    "ctx": [
-    "A2.8 Celebrations and people · Nuray"
+    "A2.8 Celebrations and people · Cara"
    ]
   },
   {
@@ -874,7 +874,7 @@
     "0157 88 44 21. He can call me until six o'clock."
    ],
    "ctx": [
-    "A1.10 Keeping in touch · Mrs. Aydin"
+    "A1.10 Keeping in touch · Mrs. Kelly"
    ]
   },
   {
@@ -885,7 +885,7 @@
     "Oh no! Was it serious? How long did you stay at the doctor?"
    ],
    "ctx": [
-    "A2.1 What happened? · Ela"
+    "A2.1 What happened? · Lucy"
    ]
   },
   {
@@ -900,14 +900,14 @@
    ]
   },
   {
-   "tr": "Benim adım Elif. Tanıştığımıza çok sevindim!",
+   "tr": "Benim adım Holly. Tanıştığımıza çok sevindim!",
    "kind": "turn",
    "n": 1,
    "de": [
-    "My name is Elif. I'm very happy to meet you!"
+    "My name is Holly. I'm very happy to meet you!"
    ],
    "ctx": [
-    "A1.1 Nice to meet you · Elif"
+    "A1.1 Nice to meet you · Holly"
    ]
   },
   {
@@ -1015,11 +1015,11 @@
    ]
   },
   {
-   "tr": "İyi akşamlar. Aydın adına rezervasyonum var.",
+   "tr": "İyi akşamlar. Kelly adına rezervasyonum var.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Good evening. I have a reservation under the name Aydin."
+    "Good evening. I have a reservation under the name Kelly."
    ],
    "ctx": [
     "A2.7 Traveling · Guest"
@@ -1094,7 +1094,7 @@
    ]
   },
   {
-   "tr": "Nuray arkadaşını bir kutlamaya davet ediyor.",
+   "tr": "Cara arkadaşını bir kutlamaya davet ediyor.",
    "kind": "listening.situation",
    "n": 1,
    "de": [],
@@ -1125,11 +1125,11 @@
    ]
   },
   {
-   "tr": "Selin bu birimde ne zamandan beri çalışıyor?",
+   "tr": "Megan bu birimde ne zamandan beri çalışıyor?",
    "kind": "question",
    "n": 1,
    "de": [
-    "How long has Selin worked in this department?"
+    "How long has Megan worked in this department?"
    ],
    "ctx": [
     "B1.1 My career so far · dinleme sorusu"
@@ -1536,7 +1536,7 @@
     "You have been quiet since Monday. Has something happened?"
    ],
    "ctx": [
-    "B1.10 Feelings and dreams · Ela"
+    "B1.10 Feelings and dreams · Lucy"
    ]
   },
   {
@@ -1573,11 +1573,11 @@
    ]
   },
   {
-   "tr": "Y-I-L-M-A-Z. Pasaportum 2030'a kadar geçerli.",
+   "tr": "H-A-Y-E-S. Pasaportum 2030'a kadar geçerli.",
    "kind": "turn",
    "n": 1,
    "de": [
-    "Y-I-L-M-A-Z. My passport is valid until 2030."
+    "H-A-Y-E-S. My passport is valid until 2030."
    ],
    "ctx": [
     "A2.10 Offices and official business · Visitor"

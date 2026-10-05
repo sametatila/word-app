@@ -147,7 +147,7 @@ export const enB1U01: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 1,
-    title: "Can's interview",
+    title: "Tyler's interview",
     genre: "interview",
     intro: "Bir mülakat baştan sona. Hangi cevap neden işe yarıyor?",
     gloss: [
@@ -159,43 +159,43 @@ export const enB1U01: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Deniz: Come in. Please sit down. Did you find us easily?\n" +
-      "Can: Yes, thank you. The tram stops at the door.\n" +
-      "Deniz: Good. Tell me about the last two years.\n" +
-      "Can: I have worked in a small company since last March. Before that I had worked in a bigger one for three years, but I wanted a team where I know every name.\n" +
-      "Deniz: And why are you leaving the small one?\n" +
-      "Can: I am not leaving because it is bad. The work stopped growing and I did not.\n" +
-      "Deniz: Fair. What is your weakness?\n" +
-      "Can: I say yes too fast. I once said yes to four projects in one week, and two of them were late. Now I ask for the deadline before I answer.\n" +
-      "Deniz: That is a real answer. Salary?\n" +
-      "Can: I read the ad. The number there works for me.\n" +
-      "Deniz: You have to give one month's notice, yes?\n" +
-      "Can: One month, from the first of the month.\n" +
-      "Deniz: Then March. You don't have to wear a suit here, by the way. Nobody does.\n" +
-      "Can: I noticed at the door. I wore it for me, not for you.",
+      "Charlie: Come in. Please sit down. Did you find us easily?\n" +
+      "Tyler: Yes, thank you. The tram stops at the door.\n" +
+      "Charlie: Good. Tell me about the last two years.\n" +
+      "Tyler: I have worked in a small company since last March. Before that I had worked in a bigger one for three years, but I wanted a team where I know every name.\n" +
+      "Charlie: And why are you leaving the small one?\n" +
+      "Tyler: I am not leaving because it is bad. The work stopped growing and I did not.\n" +
+      "Charlie: Fair. What is your weakness?\n" +
+      "Tyler: I say yes too fast. I once said yes to four projects in one week, and two of them were late. Now I ask for the deadline before I answer.\n" +
+      "Charlie: That is a real answer. Salary?\n" +
+      "Tyler: I read the ad. The number there works for me.\n" +
+      "Charlie: You have to give one month's notice, yes?\n" +
+      "Tyler: One month, from the first of the month.\n" +
+      "Charlie: Then March. You don't have to wear a suit here, by the way. Nobody does.\n" +
+      "Tyler: I noticed at the door. I wore it for me, not for you.",
     questions: [
       {
-        text: "Where did Can work before the small company?",
+        text: "Where did Tyler work before the small company?",
         options: ["in a bigger company", "in a team of three", "in a store"],
         answer: 0,
         explain: "„Before that I had worked in a bigger one for three years…“ — önceki geçmiş „had worked“ ile.",
       },
       {
-        text: "Why is Can leaving the small company?",
+        text: "Why is Tyler leaving the small company?",
         options: ["the work stopped growing", "the company is bad", "the salary is low"],
         answer: 0,
         explain: "„I am not leaving because it is bad. The work stopped growing and I did not.“",
       },
       {
         kind: "truefalse",
-        text: "Can has to wear a suit in the new job.",
+        text: "Tyler has to wear a suit in the new job.",
         options: ["True", "False"],
         answer: 1,
         explain: "„You don't have to wear a suit here, by the way. Nobody does.“",
       },
       {
         kind: "gapfill",
-        text: "Can has to give ___ month's notice.",
+        text: "Tyler has to give ___ month's notice.",
         options: [],
         answer: 0,
         accept: ["one", "1"],
@@ -203,7 +203,7 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Can do now before saying yes?",
+        text: "What does Tyler do now before saying yes?",
         options: [],
         answer: 0,
         accept: ["ask for the deadline", "ask about the deadline", "ask the deadline"],
@@ -233,24 +233,24 @@ export const enB1U01: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Nil", text: "I have worked in this industry for six years. Three companies, two cities, one long lesson." },
-      { speaker: "Nil", text: "The first position was in a store that sold machines. I had studied something else, so everything was new and slow." },
-      { speaker: "Nil", text: "I worked there for two years and was promoted once. Then the company closed. Nobody asked me why I left; there was nothing to leave." },
-      { speaker: "Nil", text: "The second job I took on purpose: less money, more responsibility. Before I applied, I had asked three people from that team what a bad week looks like." },
-      { speaker: "Nil", text: "That question turned out to be the best one I have ever asked in an interview. Two of them said the same thing and I still believe them." },
-      { speaker: "Nil", text: "The third move was a step sideways. Same title, same salary, different industry. My family thought I had made a mistake." },
-      { speaker: "Nil", text: "Two years later I achieved more there than in the four years before, because everything I had learned somewhere else was new in that room." },
-      { speaker: "Nil", text: "How long have you been in this industry? People ask it to hear a number. The number is six. The answer is three." },
+      { speaker: "Katie", text: "I have worked in this industry for six years. Three companies, two cities, one long lesson." },
+      { speaker: "Katie", text: "The first position was in a store that sold machines. I had studied something else, so everything was new and slow." },
+      { speaker: "Katie", text: "I worked there for two years and was promoted once. Then the company closed. Nobody asked me why I left; there was nothing to leave." },
+      { speaker: "Katie", text: "The second job I took on purpose: less money, more responsibility. Before I applied, I had asked three people from that team what a bad week looks like." },
+      { speaker: "Katie", text: "That question turned out to be the best one I have ever asked in an interview. Two of them said the same thing and I still believe them." },
+      { speaker: "Katie", text: "The third move was a step sideways. Same title, same salary, different industry. My family thought I had made a mistake." },
+      { speaker: "Katie", text: "Two years later I achieved more there than in the four years before, because everything I had learned somewhere else was new in that room." },
+      { speaker: "Katie", text: "How long have you been in this industry? People ask it to hear a number. The number is six. The answer is three." },
     ],
     questions: [
       {
-        text: "Why did Nil leave the first job?",
+        text: "Why did Katie leave the first job?",
         options: ["the company closed", "the salary was low", "a better offer came"],
         answer: 0,
         explain: "„Then the company closed. Nobody asked me why I left; there was nothing to leave.“",
       },
       {
-        text: "What did Nil do before applying for the second job?",
+        text: "What did Katie do before applying for the second job?",
         options: ["asked three people about a bad week", "studied something else", "took a bigger salary"],
         answer: 0,
         explain: "„Before I applied, I had asked three people from that team what a bad week looks like.“",
@@ -264,7 +264,7 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Nil has worked in this industry for ___ years.",
+        text: "Katie has worked in this industry for ___ years.",
         options: [],
         answer: 0,
         accept: ["six", "6"],
@@ -280,7 +280,7 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many companies has Nil worked for?",
+        text: "How many companies has Katie worked for?",
         options: [],
         answer: 0,
         accept: ["three", "3"],
@@ -305,20 +305,20 @@ export const enB1U01: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Sena", text: "Can you read this before I send it?" },
-      { speaker: "Mert", text: "Send me the file… here. First line: „I am writing to apply for the position.“" },
-      { speaker: "Sena", text: "That is the normal opening." },
-      { speaker: "Mert", text: "It is the opening four hundred people write. What did you do that they did not?" },
-      { speaker: "Sena", text: "I moved a team from paper to a system in six months." },
-      { speaker: "Mert", text: "Then that is your first line. „I moved a team of nine from paper to a system in six months.“ The rest can stay." },
-      { speaker: "Sena", text: "Isn't that too direct?" },
-      { speaker: "Mert", text: "It is a cover letter, not a poem. Second thing: you mention three strengths and you show no proof." },
-      { speaker: "Sena", text: "I enclosed the reference." },
-      { speaker: "Mert", text: "Nobody opens the second file before the first line works. Put one number in every strength." },
-      { speaker: "Sena", text: "And the end?" },
-      { speaker: "Mert", text: "„I would enjoy contributing to this team.“ Not „I hope you will consider me.“ One of those two lines has a person in it." },
-      { speaker: "Sena", text: "Two hours for four lines." },
-      { speaker: "Mert", text: "Two hours for the four lines that decide it. The other twenty are already fine." },
+      { speaker: "Ellie", text: "Can you read this before I send it?" },
+      { speaker: "Henry", text: "Send me the file… here. First line: „I am writing to apply for the position.“" },
+      { speaker: "Ellie", text: "That is the normal opening." },
+      { speaker: "Henry", text: "It is the opening four hundred people write. What did you do that they did not?" },
+      { speaker: "Ellie", text: "I moved a team from paper to a system in six months." },
+      { speaker: "Henry", text: "Then that is your first line. „I moved a team of nine from paper to a system in six months.“ The rest can stay." },
+      { speaker: "Ellie", text: "Isn't that too direct?" },
+      { speaker: "Henry", text: "It is a cover letter, not a poem. Second thing: you mention three strengths and you show no proof." },
+      { speaker: "Ellie", text: "I enclosed the reference." },
+      { speaker: "Henry", text: "Nobody opens the second file before the first line works. Put one number in every strength." },
+      { speaker: "Ellie", text: "And the end?" },
+      { speaker: "Henry", text: "„I would enjoy contributing to this team.“ Not „I hope you will consider me.“ One of those two lines has a person in it." },
+      { speaker: "Ellie", text: "Two hours for four lines." },
+      { speaker: "Henry", text: "Two hours for the four lines that decide it. The other twenty are already fine." },
     ],
     questions: [
       {
@@ -329,13 +329,13 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         text: "What should the first line say?",
-        options: ["what Sena did", "why Sena wants the job", "which file is attached"],
+        options: ["what Ellie did", "why Ellie wants the job", "which file is attached"],
         answer: 0,
         explain: "„I moved a team of nine from paper to a system in six months.“",
       },
       {
         kind: "truefalse",
-        text: "Mert says the reference file is read first.",
+        text: "Henry says the reference file is read first.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Nobody opens the second file before the first line works.“",

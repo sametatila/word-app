@@ -328,9 +328,9 @@ export const b1U34: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Alışkanlık kartını doldur.",
-        facts: "Kişi: Sedef Aydın; sabah: 10 dakika jimnastik; beslenme: her gün sebze; vitamin: gerekli değil; nezle: yarım gün dinlenme.",
+        facts: "Kişi: Amelie Haas; sabah: 10 dakika jimnastik; beslenme: her gün sebze; vitamin: gerekli değil; nezle: yarım gün dinlenme.",
         fields: [
-          { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
+          { label: "Name", answer: "Amelie Haas", accept: ["Amelie", "Haas"] },
           { label: "Morgens", answer: "10 Minuten Gymnastik", accept: ["Gymnastik", "zehn Minuten"] },
           { label: "Essen", answer: "jeden Tag Gemüse", accept: ["Gemüse", "täglich Gemüse"] },
           { label: "Bei Schnupfen", answer: "ein halber Tag Ruhe", accept: ["Ruhe", "halber Tag", "einen halben Tag Ruhe"] },

@@ -214,7 +214,7 @@ export const enB1P10: SkillExercise[] = [
         tr: "Sözleşmeyi imzalamadan önce depozitoyu kontrol et.",
         answer: "Check the deposit before you sign the contract.",
         alternatives: ["Before you sign the contract, check the deposit."],
-        hint: "Emir kipi + zaman yan cümlesi; „before“ arkasından present simple gelir.",
+        hint: "Ethan kipi + zaman yan cümlesi; „before“ arkasından present simple gelir.",
       },
       {
         kind: "build",

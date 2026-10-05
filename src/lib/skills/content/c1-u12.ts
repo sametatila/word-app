@@ -231,19 +231,19 @@ export const c1U12: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Prof. Reinhardt", text: "Ihre These ist schlüssig aufgebaut. Es ließe sich allerdings einwenden, dass die Stichprobe nur städtisch ist." },
-      { speaker: "Frau Kilic", text: "Das ist richtig. Dem ist entgegenzuhalten, dass die Fragestellung ausdrücklich städtische Mobilität betrifft." },
+      { speaker: "Frau Wirth", text: "Das ist richtig. Dem ist entgegenzuhalten, dass die Fragestellung ausdrücklich städtische Mobilität betrifft." },
       { speaker: "Prof. Reinhardt", text: "Ihre Schlussfolgerung im letzten Kapitel geht aber darüber hinaus." },
-      { speaker: "Frau Kilic", text: "Da haben Sie recht. Der Satz auf Seite 112 ist zu weit formuliert." },
+      { speaker: "Frau Wirth", text: "Da haben Sie recht. Der Satz auf Seite 112 ist zu weit formuliert." },
       { speaker: "Dr. Weber", text: "Mit Verlaub — mich interessiert eher die Prämisse. Sie setzen voraus, dass Wegezeit der wichtigste Faktor ist." },
-      { speaker: "Frau Kilic", text: "Das setze ich voraus, ja. Ich stütze mich dabei auf drei ältere Studien." },
+      { speaker: "Frau Wirth", text: "Das setze ich voraus, ja. Ich stütze mich dabei auf drei ältere Studien." },
       { speaker: "Dr. Weber", text: "Die sind zehn Jahre alt und stammen aus der Zeit vor den Sharing-Diensten." },
-      { speaker: "Frau Kilic", text: "Das kann ich nicht widerlegen. Ich würde die Prämisse in der Endfassung als solche kennzeichnen, statt sie als gesichert zu behandeln." },
+      { speaker: "Frau Wirth", text: "Das kann ich nicht widerlegen. Ich würde die Prämisse in der Endfassung als solche kennzeichnen, statt sie als gesichert zu behandeln." },
       { speaker: "Prof. Reinhardt", text: "Das wäre die saubere Lösung." },
       { speaker: "Dr. Weber", text: "Und es schwächt Ihre Arbeit nicht. Eine benannte Prämisse ist stärker als eine versteckte." },
     ],
     questions: [
       {
-        text: "Wie reagiert Frau Kilic auf den ersten Einwand?",
+        text: "Wie reagiert Frau Wirth auf den ersten Einwand?",
         options: [
           "Sie weist ihn zurück.",
           "Sie räumt ihn ein und verweist auf die Fragestellung.",
@@ -258,7 +258,7 @@ export const c1U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["einwenden"],
-        explain: "Dilek kipi itirazı kişiselleştirmeden ortaya koyuyor.",
+        explain: "Leonie kipi itirazı kişiselleştirmeden ortaya koyuyor.",
       },
       {
         text: "Was ist Dr. Webers eigentlicher Einwand?",

@@ -433,9 +433,9 @@ Nach dem Bezahlen haben Sie 15 Minuten Zeit.`,
               situation: "Biri gecikeceğini haber veriyor.",
               plays: 2,
               segments: [
-                { speaker: "Nuri", text: "Ich stehe im Stau. Ich komme zwanzig Minuten später." },
+                { speaker: "Anton", text: "Ich stehe im Stau. Ich komme zwanzig Minuten später." },
                 { speaker: "Eva", text: "Kein Problem. Wir warten im Café." },
-                { speaker: "Nuri", text: "Bestellt schon, ich esse nichts." },
+                { speaker: "Anton", text: "Bestellt schon, ich esse nichts." },
               ],
             },
           ],
@@ -500,7 +500,7 @@ Nach dem Bezahlen haben Sie 15 Minuten Zeit.`,
               id: "de-a1-05-h1-6",
               no: 6,
               ref: "a6",
-              text: "Warum kommt Nuri später?",
+              text: "Warum kommt Anton später?",
               options: ["Er hat den Bus verpasst.", "Er arbeitet noch im Büro.", "Er steht im Stau."],
               answer: 2,
               explain:
@@ -851,7 +851,7 @@ ich komme leider später. Mein Bus steht im Stau und ich bin erst um halb sieben
 Kaufst du bitte schon die Karten? Dann warten wir nicht so lange.
 
 Bis gleich!
-Mert`,
+Hannes`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Hitap ve veda var mı? Arkadaşa yazıldığı için `Liebe …` ve `Bis gleich` uygun.",

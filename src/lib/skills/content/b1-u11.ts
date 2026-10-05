@@ -324,9 +324,9 @@ export const b1U11: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Başvuru takip kartını doldur.",
-        facts: "Başvuran: Nuri Öz; başvuru: yeni vize; başvuru ayı: mart; eksik belge: konut kaydı; süre: 8 hafta.",
+        facts: "Başvuran: Anton Naumann; başvuru: yeni vize; başvuru ayı: mart; eksik belge: konut kaydı; süre: 8 hafta.",
         fields: [
-          { label: "Name", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
+          { label: "Name", answer: "Anton Naumann", accept: ["Anton", "Naumann"] },
           { label: "Antrag", answer: "neues Visum", accept: ["ein neues Visum", "Visum"] },
           { label: "Monat", answer: "März", accept: ["im März"] },
           { label: "Dauer", answer: "8 Wochen", accept: ["acht Wochen", "etwa acht Wochen"] },
@@ -391,7 +391,7 @@ export const b1U11: SkillExercise[] = [
           "Beide Dokumente sind offiziell und tragen ein Datum.\n\n" +
           "Ich bitte Sie, den Antrag noch einmal zu prüfen und mich über den Stand " +
           "zu informieren.\n\n" +
-          "Mit freundlichen Grüßen\nLeyla Kaya",
+          "Mit freundlichen Grüßen\nJohanna Graf",
         phrases: [
           { de: "Hiermit lege ich Widerspruch ein.", tr: "İşbu yazıyla itiraz ediyorum.", en: "I hereby file an objection." },
           { de: "Als Anlage schicke ich …", tr: "Ek olarak gönderiyorum …", en: "Enclosed I am sending …" },

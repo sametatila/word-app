@@ -407,7 +407,7 @@ export const b1U27: SkillExercise[] = [
           "Ich schreibe nicht, weil ich Geld zurückwill. Ich schreibe, " +
           "weil wir gern wiederkommen würden und die Wirtin das vermutlich " +
           "auch möchte.\n\n" +
-          "Mit freundlichen Grüßen\nSedef Aydin",
+          "Mit freundlichen Grüßen\nAmelie Haas",
         phrases: [
           { de: "Ich hatte etwas Warmes bestellt.", tr: "Sıcak bir şey sipariş etmiştim.", en: "I had ordered something warm." },
           { de: "Ich habe das sofort gesagt.", tr: "Bunu hemen söyledim.", en: "I said so right away." },

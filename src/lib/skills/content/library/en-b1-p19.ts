@@ -250,7 +250,7 @@ export const enB1P19: SkillExercise[] = [
           "ourselves, and should we bring our own trash bags? " +
           "I understand that the hall is used for a yoga class at half past six, so we will leave by " +
           "six at the latest and put all the chairs back. " +
-          "Thank you for your help. I look forward to hearing from you. Kind regards, Merve Kaplan",
+          "Thank you for your help. I look forward to hearing from you. Kind regards, Isla Ashworth",
       },
     ],
   },

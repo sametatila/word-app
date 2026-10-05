@@ -308,23 +308,23 @@ export const c1U07: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Kollege", text: "Na, wieder eine Folie mehr als beim letzten Mal? Sie haben ja einen Hang zur Gründlichkeit." },
-      { speaker: "Frau Alp", text: "Gut, dass Sie das ansprechen. Es sind zwei weniger — ich habe Ihre Kritik von damals ernst genommen." },
+      { speaker: "Frau Stoll", text: "Gut, dass Sie das ansprechen. Es sind zwei weniger — ich habe Ihre Kritik von damals ernst genommen." },
       { speaker: "Kollege", text: "Das habe ich nicht gesagt." },
-      { speaker: "Frau Alp", text: "Sie haben es angedeutet. Ich leugne nicht, dass es damals zu viele waren." },
+      { speaker: "Frau Stoll", text: "Sie haben es angedeutet. Ich leugne nicht, dass es damals zu viele waren." },
       { speaker: "Kollege", text: "Hm. Trotzdem: vierzig Minuten für ein Quartalsergebnis?" },
-      { speaker: "Frau Alp", text: "Dreißig. Die letzten zehn sind für Ihre Fragen — die kommen ja erfahrungsgemäß." },
+      { speaker: "Frau Stoll", text: "Dreißig. Die letzten zehn sind für Ihre Fragen — die kommen ja erfahrungsgemäß." },
       { speaker: "Kollege", text: "Touché. Ihre Schlagfertigkeit ist gefürchtet." },
-      { speaker: "Frau Alp", text: "Ich kontere selten. Ich nehme die Spitze auf und gebe ihr eine Richtung — das ist etwas anderes." },
+      { speaker: "Frau Stoll", text: "Ich kontere selten. Ich nehme die Spitze auf und gebe ihr eine Richtung — das ist etwas anderes." },
       { speaker: "Kollege", text: "Und wenn jemand nachlegt?" },
-      { speaker: "Frau Alp", text: "Dann pariere ich einmal, gelassen, und lasse es dabei. Wer zweimal zurückschlägt, verliert den Raum an sich selbst." },
+      { speaker: "Frau Stoll", text: "Dann pariere ich einmal, gelassen, und lasse es dabei. Wer zweimal zurückschlägt, verliert den Raum an sich selbst." },
       { speaker: "Kollege", text: "Und meine Spitzen stören Sie gar nicht?" },
-      { speaker: "Frau Alp", text: "Das sehe ich sportlich. Wenn Sie mir vorher sagen, was Sie interessiert, spare ich uns beiden zehn Minuten." },
+      { speaker: "Frau Stoll", text: "Das sehe ich sportlich. Wenn Sie mir vorher sagen, was Sie interessiert, spare ich uns beiden zehn Minuten." },
       { speaker: "Kollege", text: "Die Margen im Süden." },
-      { speaker: "Frau Alp", text: "Dann fange ich damit an. Sehen Sie, das war jetzt produktiv." },
+      { speaker: "Frau Stoll", text: "Dann fange ich damit an. Sehen Sie, das war jetzt produktiv." },
     ],
     questions: [
       {
-        text: "Wie pariert Frau Alp die erste Spitze?",
+        text: "Wie pariert Frau Stoll die erste Spitze?",
         options: [
           "Sie ignoriert sie.",
           "Sie greift sie auf und macht daraus ein Kompliment an den Kollegen.",
@@ -353,7 +353,7 @@ export const c1U07: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie nennt Frau Alp ihre Haltung gegenüber der Stichelei?",
+        text: "Wie nennt Frau Stoll ihre Haltung gegenüber der Stichelei?",
         options: [],
         answer: 0,
         accept: [

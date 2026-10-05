@@ -71,7 +71,7 @@
  { "tr": "Hayır, teşekkürler. Ama hesabı alabilir miyim?", "kind": "turn", "en": "No, thank you. But could I have the check?" },
  { "tr": "Hem şehirlerin hem köylerin bir şeyleri değiştirmesi gerekir.", "kind": "speaking", "en": "Both the cities and the villages would have to change something." },
  { "tr": "İki kardeş anneannelerinin bakımını konuşuyor.", "kind": "listening.situation", "en": "Two siblings discuss the care of their grandmother." },
- { "tr": "İyi günler, ben on iki numaradan Demir ailesi.", "kind": "turn", "en": "Hello, this is the Demir family from apartment twelve." },
+ { "tr": "İyi günler, ben on iki numaradan Böhm ailesi.", "kind": "turn", "en": "Hello, this is the Böhm family from apartment twelve." },
  { "tr": "Kimlik var ama kira sözleşmesini evde unuttum.", "kind": "turn", "en": "I have my ID card, but I left the lease at home." },
  { "tr": "Metne göre „Nicht schlecht“ ne anlama geliyor?", "kind": "question", "en": "How is “Nicht schlecht” to be understood according to the text?" },
  { "tr": "Peki bugün? Geç olmadan tiyatroya gidebiliriz.", "kind": "turn", "en": "And today? We could go to the theater before it gets too late." },
@@ -120,7 +120,7 @@
  { "tr": "Bir iş ilanına başvuru mektubu (Anschreiben) yaz.", "kind": "writing.prompt", "en": "Write a cover letter (Anschreiben) for a job posting." },
  { "tr": "Burada iki yıldır o meslekte çalıştığım hâlde mi?", "kind": "turn", "en": "Even though I have been working in that profession here for two years?" },
  { "tr": "Cevap gelmezse gönderen ne yapacağını bildiriyor?", "kind": "question", "en": "What does the sender say they will do if no reply comes?" },
- { "tr": "Deniz neden „Doch, sehr gern“ diye cevap veriyor?", "kind": "question", "en": "Why does Deniz answer with “Doch, sehr gern”?" },
+ { "tr": "Deniz neden „Doch, sehr gern“ diye cevap veriyor?", "kind": "question", "en": "Why does Sascha answer with “Doch, sehr gern”?" },
  { "tr": "Doktorda kendini nasıl hissettiğini anlatıyorsun.", "kind": "speaking.situation", "en": "You are describing how you feel at the doctor's." },
  { "tr": "Fiyatta bize yaklaşırsanız miktarı artırabiliriz.", "kind": "speaking", "en": "If you were to meet us on the price, we could increase the quantity." },
  { "tr": "Hayır ama çok halsiz hissediyorum ve öksürüyorum.", "kind": "turn", "en": "No, but I feel very run down and I have a cough." },
@@ -148,5 +148,5 @@
  { "tr": "İkisi bir dahaki sefer için ne üzerinde anlaşıyor?", "kind": "question", "en": "What do the two of them agree on for next time?" },
  { "tr": "İnternette daha ucuz ama mağazada deneyebiliyorum.", "kind": "speaking", "en": "It is cheaper online, but in the store I can try it on." },
  { "tr": "Koyu mavi, kumaştan, sapında kırmızı bir bant var.", "kind": "turn", "en": "It is dark blue, made of fabric, with a red band on the handle." },
- { "tr": "Nuray Aydın, İzmir doğumlu, evli. Pasaport burada.", "kind": "turn", "en": "Nuray Aydin, born in Izmir, married. Here is the passport." }
+ { "tr": "Maike Haas, İzmir doğumlu, evli. Pasaport burada.", "kind": "turn", "en": "Maike Haas, born in Izmir, married. Here is the passport." }
 ]

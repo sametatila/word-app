@@ -88,7 +88,7 @@
  { "tr": "Güzel, o zaman Almanca devam. Türkçede Danke nasıl deniyor?", "kind": "sayTr", "en": "Good, German it is then. How do you say Danke in Turkish?" },
  { "tr": "Aldım. Kartı bugün almak ister misiniz, yoksa göndereyim mi?", "kind": "sayTr", "en": "Got it. Would you like to pick up the card today, or should I send it?" },
  { "tr": "Cevap ver: Ja, ein bisschen. / Nein, aber ich lerne Deutsch.", "kind": "cue", "en": "Answer: Ja, ein bisschen. / Nein, aber ich lerne Deutsch." },
- { "tr": "Harika. O zaman kursta görüşürüz — bu arada benim adım Ayla!", "kind": "sayTr", "en": "Wonderful. See you in class then — my name is Ayla, by the way!" },
+ { "tr": "Harika. O zaman kursta görüşürüz — bu arada benim adım Elke!", "kind": "sayTr", "en": "Wonderful. See you in class then — my name is Elke, by the way!" },
  { "tr": "O zaman yakında yine kutlarız! En iyi arkadaşın kaç yaşında?", "kind": "sayTr", "en": "Then we will be celebrating again soon! How old is your best friend?" },
  { "tr": "Ah, ne güzel! Peki şimdi nerede oturuyorsunuz — bu binada mı?", "kind": "sayTr", "en": "Ah, how nice! And where do you live now — here in this building?" },
  { "tr": "Hepsi kaydedildi. Buraya imza atın lütfen — her şey doğru mu?", "kind": "sayTr", "en": "That is all recorded. Please sign here — is everything correct?" },

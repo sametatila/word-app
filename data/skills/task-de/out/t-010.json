@@ -1,13 +1,13 @@
 [
  {
-  "tr": "Tanışma kartını Ali için doldur.",
+  "tr": "Tanışma kartını Harry için doldur.",
   "kind": "form.prompt",
-  "de": "Fülle die Karte für Ali aus."
+  "de": "Fülle die Karte für Harry aus."
  },
  {
-  "tr": "Ali Demir; Türkiye'den; şu an Bremen'de yaşıyor.",
+  "tr": "Harry Adams; Türkiye'den; şu an Bremen'de yaşıyor.",
   "kind": "form.facts",
-  "de": "Ali Demir; aus der Türkei; wohnt jetzt in Bremen."
+  "de": "Harry Adams; aus der Türkei; wohnt jetzt in Bremen."
  },
  {
   "tr": "Cümleyi soru yap.",

@@ -64,7 +64,7 @@ Kleine Tüten aus Papier sind erlaubt.`,
               id: "t2",
               genre: "Kurznachricht",
               genreTr: "Kısa mesaj",
-              body: `Hallo Deniz,
+              body: `Hallo Sascha,
 
 jemand hat mein Rad am Bahnhof geklaut. Ich komme morgen mit dem Bus.
 
@@ -133,7 +133,7 @@ Stadtverwaltung`,
               text: "Was möchte der Schreiber?",
               options: [
                 "Am Bahnhof ein neues Rad kaufen.",
-                "Dass Deniz ihn abholt.",
+                "Dass Sascha ihn abholt.",
                 "Den Bus zwanzig Minuten früher nehmen.",
               ],
               answer: 1,
@@ -442,7 +442,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               kind: "match",
               id: "de-a2-08-l4-17",
               no: 17,
-              text: "Herr Sagdic muss einen alten Schrank loswerden und hat kein Auto.",
+              text: "Herr Kehl muss einen alten Schrank loswerden und hat kein Auto.",
               answer: "f",
               explain:
                 "(f) \"Wir holen große Sachen bei Ihnen ab\" diyor — araba gerekmiyor. Üç haftalık bekleme dolabı atmayı geciktirir ama engellemez.",
@@ -469,7 +469,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               kind: "match",
               id: "de-a2-08-l4-20",
               no: 20,
-              text: "Frau Yildiz fährt jeden Morgen allein ins Gewerbegebiet und möchte Kosten sparen.",
+              text: "Frau Fink fährt jeden Morgen allein ins Gewerbegebiet und möchte Kosten sparen.",
               answer: "b",
               explain:
                 "(b) hem yeri hem tasarrufu karşılıyor: \"eine Fahrgemeinschaft ins Gewerbegebiet\" ve \"wir teilen die Kosten\".",
@@ -546,9 +546,9 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               situation: "Bir kadın bisiklet deposu için başvuruyor.",
               plays: 2,
               segments: [
-                { speaker: "Frau Yildiz", text: "Ich möchte einen Platz im Fahrradkeller." },
+                { speaker: "Frau Fink", text: "Ich möchte einen Platz im Fahrradkeller." },
                 { speaker: "Mitarbeiter", text: "Da gibt es eine Liste. Im Moment warten neun Leute." },
-                { speaker: "Frau Yildiz", text: "Wie lange dauert das ungefähr?" },
+                { speaker: "Frau Fink", text: "Wie lange dauert das ungefähr?" },
                 { speaker: "Mitarbeiter", text: "Etwa ein halbes Jahr." },
               ],
             },
@@ -606,7 +606,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               id: "de-a2-08-h1-4",
               no: 4,
               ref: "a4",
-              text: "Wie lange muss Frau Yildiz warten?",
+              text: "Wie lange muss Frau Fink warten?",
               options: ["Etwa neun Wochen.", "Sechs Monate.", "Nur wenige Tage."],
               answer: 1,
               explain:
@@ -645,14 +645,14 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               segments: [
                 { speaker: "Moderatorin", text: "Wir fragen heute: Wie kommen Sie zur Arbeit? Frau Kubis?" },
                 { speaker: "Frau Kubis", text: "Mit dem Rad, jeden Tag, auch im Winter. Zwölf Kilometer." },
-                { speaker: "Moderatorin", text: "Herr Sagdic?" },
-                { speaker: "Herr Sagdic", text: "Früher bin ich selbst gefahren. Jetzt nehme ich den Zug und arbeite unterwegs." },
+                { speaker: "Moderatorin", text: "Herr Kehl?" },
+                { speaker: "Herr Kehl", text: "Früher bin ich selbst gefahren. Jetzt nehme ich den Zug und arbeite unterwegs." },
                 { speaker: "Moderatorin", text: "Frau Prohaska?" },
                 { speaker: "Frau Prohaska", text: "Bei mir sind es nur zehn Minuten. Ich gehe zu Fuß." },
                 { speaker: "Moderatorin", text: "Herr Larsen?" },
                 { speaker: "Herr Larsen", text: "Wir sind zu dritt in einem Wagen. Jede Woche fährt eine andere Person." },
-                { speaker: "Moderatorin", text: "Und Frau Yildiz?" },
-                { speaker: "Frau Yildiz", text: "Ich muss gar nicht mehr hin. Ich sitze zu Hause am Rechner." },
+                { speaker: "Moderatorin", text: "Und Frau Fink?" },
+                { speaker: "Frau Fink", text: "Ich muss gar nicht mehr hin. Ich sitze zu Hause am Rechner." },
               ],
             },
           ],
@@ -682,7 +682,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               id: "de-a2-08-h2-7",
               no: 7,
               ref: "g1",
-              text: "Herr Sagdic",
+              text: "Herr Kehl",
               answer: "b",
               explain:
                 "Eskiyi bugünden ayırıyor: \"Früher bin ich selbst gefahren. Jetzt nehme ich den Zug\". (h) tam bu yüzden çeldirici — o eski hâli.",
@@ -712,7 +712,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               id: "de-a2-08-h2-10",
               no: 10,
               ref: "g1",
-              text: "Frau Yildiz",
+              text: "Frau Fink",
               answer: "e",
               explain:
                 "Yolculuk hiç yok: \"Ich muss gar nicht mehr hin. Ich sitze zu Hause am Rechner.\"",
@@ -964,9 +964,9 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
           format: "writing",
           goal: "interaction",
           prompt:
-            "Sie sind mit dem Rad gestürzt und können nächste Woche nicht in den Kurs kommen. Schreiben Sie Ihrer Lernpartnerin Meral eine Nachricht (circa 40 Wörter). Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
+            "Sie sind mit dem Rad gestürzt und können nächste Woche nicht in den Kurs kommen. Schreiben Sie Ihrer Lernpartnerin Wiebke eine Nachricht (circa 40 Wörter). Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
           promptTr:
-            "Bisikletle düştün ve haftaya kursa gelemeyeceksin. Ders arkadaşın Meral'e bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir-iki cümle yaz.",
+            "Bisikletle düştün ve haftaya kursa gelemeyeceksin. Ders arkadaşın Wiebke'ye bir ileti yaz (yaklaşık 40 kelime). Her maddeye bir-iki cümle yaz.",
           items: [],
           rubric: {
             minWords: 40,
@@ -975,7 +975,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               { de: "Bitten Sie um die Aufgaben.", tr: "Ödevleri iste." },
               { de: "Schlagen Sie einen Termin zum Lernen vor.", tr: "Birlikte çalışmak için bir gün öner." },
             ],
-            sample: `Liebe Meral,
+            sample: `Liebe Wiebke,
 
 gestern bin ich mit dem Rad gestürzt. Mein Arm tut sehr weh, und ich darf ihn eine Woche nicht bewegen.
 

@@ -122,10 +122,10 @@ export const deB1P8: SkillExercise[] = [
     segments: [
       { speaker: "Frau Adler", text: "Heute nur ein Punkt: Wir brauchen eine Kernzeit, in der alle erreichbar sind. Zurzeit ist das Zufall." },
       { speaker: "Herr Bruns", text: "Ich wäre für zehn bis vierzehn Uhr. Vorher schaffe ich die ruhige Arbeit, die sonst liegen bleibt." },
-      { speaker: "Frau Özkan", text: "Zehn ist für mich zu spät. Ich muss um sechzehn Uhr in der Kita sein und verliere dann die letzte Stunde." },
+      { speaker: "Frau Göbel", text: "Zehn ist für mich zu spät. Ich muss um sechzehn Uhr in der Kita sein und verliere dann die letzte Stunde." },
       { speaker: "Frau Adler", text: "Was wäre mit neun bis dreizehn Uhr? Dann hätten wir vier gemeinsame Stunden." },
       { speaker: "Herr Bruns", text: "Neun geht bei mir nur an drei Tagen. Dienstag und Donnerstag bringe ich mein Kind zum Sport." },
-      { speaker: "Frau Özkan", text: "Dann machen wir es doch unterschiedlich: montags, mittwochs und freitags neun bis dreizehn, dienstags und donnerstags zehn bis vierzehn." },
+      { speaker: "Frau Göbel", text: "Dann machen wir es doch unterschiedlich: montags, mittwochs und freitags neun bis dreizehn, dienstags und donnerstags zehn bis vierzehn." },
       { speaker: "Frau Adler", text: "Das ist ein Kompromiss, aber schwer zu merken. Ich schlage vor, wir probieren es vier Wochen und schauen dann." },
       { speaker: "Herr Bruns", text: "Einverstanden. Wichtig ist nur, dass die Absprache im Kalender steht und nicht in irgendeiner Nachricht." },
       { speaker: "Frau Adler", text: "Ich protokolliere das und trage die Zeiten heute noch ein." },
@@ -142,7 +142,7 @@ export const deB1P8: SkillExercise[] = [
         explain: "„Wir brauchen eine Kernzeit, in der alle erreichbar sind.“",
       },
       {
-        text: "Warum passt Frau Özkan der Beginn um zehn Uhr nicht?",
+        text: "Warum passt Frau Göbel der Beginn um zehn Uhr nicht?",
         options: [
           "Sie beginnt erst um elf.",
           "Sie muss um sechzehn Uhr in der Kita sein.",

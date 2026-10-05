@@ -123,7 +123,7 @@ export const enB1U25: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 25,
-    title: "Goodbye to Mrs. Kaya",
+    title: "Goodbye to Mrs. Ellis",
     genre: "info",
     intro: "Okul bülteninde bir veda duyurusu. Parti nasıl hazırlanıyor?",
     gloss: [
@@ -142,18 +142,18 @@ export const enB1U25: SkillExercise[] = [
     minutes: 7,
     text:
       "GOODBYE, MRS. KAYA\n" +
-      "After thirty-two years at our school, Mrs. Kaya is retiring in June, and the day must be celebrated properly.\n" +
+      "After thirty-two years at our school, Mrs. Ellis is retiring in June, and the day must be celebrated properly.\n" +
       "Her work is appreciated by everyone: by the students she taught to read, by the parents she called on Sunday evenings, and by the teachers who learned the job from her. Many of our teachers were once her students.\n" +
       "The party will be held in the school garden on Friday, 20 June, at three o'clock. Food is being made by the parents, and the music will be played by the school band.\n" +
-      "The gift was chosen with care. For months, the students collected stories about Mrs. Kaya, and the art class turned them into a book. The book will be given to her at the party, together with a small tree for her garden.\n" +
-      "Cards can be left at the office until Wednesday. If you would like to help, please speak to Mr. Demir. Chairs must be carried from the hall at two o'clock, and every pair of hands is appreciated.\n" +
-      "Mrs. Kaya has asked for no speeches. She will not get her wish.",
+      "The gift was chosen with care. For months, the students collected stories about Mrs. Ellis, and the art class turned them into a book. The book will be given to her at the party, together with a small tree for her garden.\n" +
+      "Cards can be left at the office until Wednesday. If you would like to help, please speak to Mr. Adams. Chairs must be carried from the hall at two o'clock, and every pair of hands is appreciated.\n" +
+      "Mrs. Ellis has asked for no speeches. She will not get her wish.",
     questions: [
       {
-        text: "How long has Mrs. Kaya worked at the school?",
+        text: "How long has Mrs. Ellis worked at the school?",
         options: ["thirty-two years", "twenty years", "three years"],
         answer: 0,
-        explain: "„After thirty-two years at our school, Mrs. Kaya is retiring in June…“",
+        explain: "„After thirty-two years at our school, Mrs. Ellis is retiring in June…“",
       },
       {
         text: "Who is making the food?",
@@ -163,10 +163,10 @@ export const enB1U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mrs. Kaya wants a lot of speeches.",
+        text: "Mrs. Ellis wants a lot of speeches.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Mrs. Kaya has asked for no speeches.“",
+        explain: "„Mrs. Ellis has asked for no speeches.“",
       },
       {
         kind: "gapfill",
@@ -182,7 +182,7 @@ export const enB1U25: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Mrs. Kaya is retiring in June.",
+          "Mrs. Ellis is retiring in June.",
           "The party will be held in the school garden.",
           "The gift was chosen with care.",
           "Cards can be left at the office.",
@@ -209,7 +209,7 @@ export const enB1U25: SkillExercise[] = [
     unit: 25,
     title: "Walking home in the dark",
     genre: "dialogue",
-    intro: "Karanlıkta eve yürümek. Derya korkusuyla nasıl yüzleşti?",
+    intro: "Karanlıkta eve yürümek. Vicky korkusuyla nasıl yüzleşti?",
     gloss: [
       { de: "a map", tr: "harita" },
       { de: "a taxi", tr: "taksi" },
@@ -221,27 +221,27 @@ export const enB1U25: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Derya", text: "I decided to face the fear in March. That was easier to say than to do, and the saying took four months." },
-      { speaker: "Onur", text: "What does facing it mean here?" },
-      { speaker: "Derya", text: "Walking home. He avoids walking in the dark and I used to as well. The two of us made a small map of streets we would not use." },
-      { speaker: "Onur", text: "Who is he?" },
-      { speaker: "Derya", text: "My brother. He still avoids walking in the dark. He takes a taxi for five hundred meters." },
-      { speaker: "Onur", text: "And your mother?" },
-      { speaker: "Derya", text: "She kept fighting the same worry for two years. She called us every night at ten to check that we were home." },
-      { speaker: "Onur", text: "Did the map help?" },
-      { speaker: "Derya", text: "The map was the danger. Every street we crossed off made the next one worse, and by the summer there were three streets left." },
-      { speaker: "Onur", text: "So you lost." },
-      { speaker: "Derya", text: "I lost for a year and then I won a small thing: one street, once, in October. Later it was two. The fear did not go; it stopped choosing the route." },
+      { speaker: "Vicky", text: "I decided to face the fear in March. That was easier to say than to do, and the saying took four months." },
+      { speaker: "Callum", text: "What does facing it mean here?" },
+      { speaker: "Vicky", text: "Walking home. He avoids walking in the dark and I used to as well. The two of us made a small map of streets we would not use." },
+      { speaker: "Callum", text: "Who is he?" },
+      { speaker: "Vicky", text: "My brother. He still avoids walking in the dark. He takes a taxi for five hundred meters." },
+      { speaker: "Callum", text: "And your mother?" },
+      { speaker: "Vicky", text: "She kept fighting the same worry for two years. She called us every night at ten to check that we were home." },
+      { speaker: "Callum", text: "Did the map help?" },
+      { speaker: "Vicky", text: "The map was the danger. Every street we crossed off made the next one worse, and by the summer there were three streets left." },
+      { speaker: "Callum", text: "So you lost." },
+      { speaker: "Vicky", text: "I lost for a year and then I won a small thing: one street, once, in October. Later it was two. The fear did not go; it stopped choosing the route." },
     ],
     questions: [
       {
-        text: "When did Derya decide to face the fear?",
+        text: "When did Vicky decide to face the fear?",
         options: ["in March", "in October", "in the summer"],
         answer: 0,
         explain: "„I decided to face the fear in March.“",
       },
       {
-        text: "How does Derya's brother travel at night?",
+        text: "How does Vicky's brother travel at night?",
         options: ["by taxi", "on foot", "by bus"],
         answer: 0,
         explain: "„He takes a taxi for five hundred meters.“",
@@ -287,7 +287,7 @@ export const enB1U25: SkillExercise[] = [
     unit: 25,
     title: "The end of a friendship",
     genre: "monologue",
-    intro: "Biten bir dostluk. Cemre neyi anlatıyor, neye saygı duyuyor?",
+    intro: "Biten bir dostluk. Tilly neyi anlatıyor, neye saygı duyuyor?",
     gloss: [
       { de: "sounds", tr: "gibi geliyor" },
       { de: "either", tr: "de" },
@@ -303,14 +303,14 @@ export const enB1U25: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Cemre", text: "She said the friendship was over. We were in her kitchen, and she said it very quietly, as if she was talking about the weather." },
-      { speaker: "Cemre", text: "We had been friends for fifteen years. We met at school, and we shared an apartment for three of those years." },
-      { speaker: "Cemre", text: "He told me not to whisper about it. He is her brother, and he said it kindly, but I understood that everybody already knew." },
-      { speaker: "Cemre", text: "Our friends asked whether I had heard it from her or from somebody else. From her, I said, and they looked relieved." },
-      { speaker: "Cemre", text: "Loyal is a word I have stopped using. It sounds like a rule, and a friendship is not a rule; it is a hundred small hours." },
-      { speaker: "Cemre", text: "There was an excuse and it was a good one. Good excuses are worse than bad ones, because you cannot argue with them and you cannot believe them either." },
-      { speaker: "Cemre", text: "We speak rarely now. Twice a year, and both times it is warm and neither time is close." },
-      { speaker: "Cemre", text: "What I respect is that she said it out loud. Most of these endings are never reported at all, because nobody ever says the sentence in the first place." },
+      { speaker: "Tilly", text: "She said the friendship was over. We were in her kitchen, and she said it very quietly, as if she was talking about the weather." },
+      { speaker: "Tilly", text: "We had been friends for fifteen years. We met at school, and we shared an apartment for three of those years." },
+      { speaker: "Tilly", text: "He told me not to whisper about it. He is her brother, and he said it kindly, but I understood that everybody already knew." },
+      { speaker: "Tilly", text: "Our friends asked whether I had heard it from her or from somebody else. From her, I said, and they looked relieved." },
+      { speaker: "Tilly", text: "Loyal is a word I have stopped using. It sounds like a rule, and a friendship is not a rule; it is a hundred small hours." },
+      { speaker: "Tilly", text: "There was an excuse and it was a good one. Good excuses are worse than bad ones, because you cannot argue with them and you cannot believe them either." },
+      { speaker: "Tilly", text: "We speak rarely now. Twice a year, and both times it is warm and neither time is close." },
+      { speaker: "Tilly", text: "What I respect is that she said it out loud. Most of these endings are never reported at all, because nobody ever says the sentence in the first place." },
     ],
     questions: [
       {
@@ -327,7 +327,7 @@ export const enB1U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Cemre still uses the word „loyal“.",
+        text: "Tilly still uses the word „loyal“.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Loyal is a word I have stopped using.“",
@@ -350,7 +350,7 @@ export const enB1U25: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Cemre respect?",
+        text: "What does Tilly respect?",
         options: [],
         answer: 0,
         accept: ["she said it out loud", "saying it out loud", "that she said it"],

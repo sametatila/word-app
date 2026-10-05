@@ -125,7 +125,7 @@ export const enB2U18: SkillExercise[] = [
     unit: 18,
     title: "A book club review",
     genre: "forum",
-    intro: "Okuma kulübü forumunda bir roman yorumu. Nilay kitabı neden tam beğenmemiş?",
+    intro: "Okuma kulübü forumunda bir roman yorumu. Eliza kitabı neden tam beğenmemiş?",
     gloss: [
       { de: "a harbor", tr: "liman" },
       { de: "a forum", tr: "forum" },
@@ -137,30 +137,30 @@ export const enB2U18: SkillExercise[] = [
     minutes: 9,
     text:
       "BOOK CLUB FORUM: This month, The Glass Harbor by Ada Moss\n" +
-      "Posted by Nilay, Thursday\n" +
+      "Posted by Eliza, Thursday\n" +
       "I finished The Glass Harbor last night, and I want to be fair to it, because many of you loved it.\n" +
       "The first half is excellent. The depiction of the old port town is picturesque without being sweet, and the two sisters are among the most convincing characters I have met this year.\n" +
       "My problem is the ending. It seems to be rushed. Apparently the author wrote the last three chapters in a month, which would explain a lot. On balance, the ending is arguably weak, especially since the start was so strong. When a book builds a world this carefully, the reader expects the same care at the end.\n" +
-      "I know Deniz will say that the open ending is the point, and there is a good counterargument there. In that respect I agree with her: the book does not need a happy ending. But an open ending and an unfinished one are not the same thing.\n" +
+      "I know Charlie will say that the open ending is the point, and there is a good counterargument there. In that respect I agree with her: the book does not need a happy ending. But an open ending and an unfinished one are not the same thing.\n" +
       "To be honest, I would still recommend it. It seems to be the kind of book that is better in a group than alone, and I suspect our discussion will be better than the last chapter.\n" +
-      "Reply from Deniz\n" +
-      "Nilay, I will argue with you on Tuesday, with all the tact I have. Apparently I am the only one who liked the ending, so bring cake.",
+      "Reply from Charlie\n" +
+      "Eliza, I will argue with you on Tuesday, with all the tact I have. Apparently I am the only one who liked the ending, so bring cake.",
     questions: [
       {
-        text: "What does Nilay think of the first half?",
+        text: "What does Eliza think of the first half?",
         options: ["It is excellent.", "It is rushed.", "It is too sweet."],
         answer: 0,
         explain: "„The first half is excellent.“",
       },
       {
         text: "Why might the ending be rushed?",
-        options: ["The author wrote the last chapters in a month.", "The book was too long.", "Deniz did not like it."],
+        options: ["The author wrote the last chapters in a month.", "The book was too long.", "Charlie did not like it."],
         answer: 0,
         explain: "„Apparently the author wrote the last three chapters in a month, which would explain a lot.“",
       },
       {
         kind: "truefalse",
-        text: "Nilay does not recommend the book.",
+        text: "Eliza does not recommend the book.",
         options: ["True", "False"],
         answer: 1,
         explain: "„To be honest, I would still recommend it.“",
@@ -181,8 +181,8 @@ export const enB2U18: SkillExercise[] = [
         items: [
           "The first half is excellent.",
           "The ending seems to be rushed.",
-          "Nilay partly agrees with Deniz.",
-          "Nilay would still recommend the book.",
+          "Eliza partly agrees with Charlie.",
+          "Eliza would still recommend the book.",
         ],
         explain: "Övgü, çekinceli eleştiri, karşı görüşe kısmen katılma, en sonda öneri.",
       },
@@ -192,7 +192,7 @@ export const enB2U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["on Tuesday", "Tuesday"],
-        explain: "„Nilay, I will argue with you on Tuesday, with all the tact I have.“",
+        explain: "„Eliza, I will argue with you on Tuesday, with all the tact I have.“",
       },
     ],
   },
@@ -215,17 +215,17 @@ export const enB2U18: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Melis", text: "Look at this. Forty people in a hall for four hundred. If we had advertised earlier, the hall would be full now." },
-      { speaker: "Sarp", text: "Maybe. But if the reviews had been better, we would not need so much advertising." },
-      { speaker: "Melis", text: "The reviews were about the set. If the designer had portrayed the room the way the writer wanted, the work would have been grand." },
-      { speaker: "Sarp", text: "She did what we asked. If we had given her more money, the set would have been stylish." },
-      { speaker: "Melis", text: "True. If the set had been stylish, the play would have lasted. We closed the first one after three weeks." },
-      { speaker: "Sarp", text: "And if we had kept it open, we would still be paying the actors now, with half the tickets unsold." },
-      { speaker: "Melis", text: "So what do we do tonight?" },
-      { speaker: "Sarp", text: "We play. Forty people bought tickets. If I were one of them, I would want the actors to give everything." },
-      { speaker: "Melis", text: "Fine. And tomorrow?" },
-      { speaker: "Sarp", text: "Tomorrow we talk about the fall program. If we had planned it in the spring, we would not be in this position now." },
-      { speaker: "Melis", text: "Agreed. Let us not make the same mistake twice." },
+      { speaker: "Heidi", text: "Look at this. Forty people in a hall for four hundred. If we had advertised earlier, the hall would be full now." },
+      { speaker: "Billy", text: "Maybe. But if the reviews had been better, we would not need so much advertising." },
+      { speaker: "Heidi", text: "The reviews were about the set. If the designer had portrayed the room the way the writer wanted, the work would have been grand." },
+      { speaker: "Billy", text: "She did what we asked. If we had given her more money, the set would have been stylish." },
+      { speaker: "Heidi", text: "True. If the set had been stylish, the play would have lasted. We closed the first one after three weeks." },
+      { speaker: "Billy", text: "And if we had kept it open, we would still be paying the actors now, with half the tickets unsold." },
+      { speaker: "Heidi", text: "So what do we do tonight?" },
+      { speaker: "Billy", text: "We play. Forty people bought tickets. If I were one of them, I would want the actors to give everything." },
+      { speaker: "Heidi", text: "Fine. And tomorrow?" },
+      { speaker: "Billy", text: "Tomorrow we talk about the fall program. If we had planned it in the spring, we would not be in this position now." },
+      { speaker: "Heidi", text: "Agreed. Let us not make the same mistake twice." },
     ],
     questions: [
       {
@@ -235,7 +235,7 @@ export const enB2U18: SkillExercise[] = [
         explain: "„Forty people in a hall for four hundred.“",
       },
       {
-        text: "According to Sarp, what would have made the set stylish?",
+        text: "According to Billy, what would have made the set stylish?",
         options: ["more money", "a new designer", "better reviews"],
         answer: 0,
         explain: "„If we had given her more money, the set would have been stylish.“",
@@ -295,13 +295,13 @@ export const enB2U18: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Cem", text: "Good morning, this is the business update at eight. We start with Nordtex, the textile company, which published its annual report last night." },
-      { speaker: "Cem", text: "The expansion is said to be paused. The company had planned to open a second factory in Manisa this year, but insiders say the work has stopped." },
-      { speaker: "Cem", text: "The profitability is expected to fall for the second year in a row. Higher energy prices and weaker orders from Europe are thought to be the main reasons." },
-      { speaker: "Cem", text: "The business model is thought to have changed. Nordtex is reported to be moving from its own shops to online sales, and two city center stores are said to be closing." },
-      { speaker: "Cem", text: "The company itself has not confirmed any of this. A spokeswoman said only that the pricing strategy is under review." },
-      { speaker: "Cem", text: "Speculation about a restructuring has been growing for months. The chief executive is expected to speak to investors on Friday." },
-      { speaker: "Cem", text: "Nordtex shares fell four percent in early trading. We will have more on this story at nine." },
+      { speaker: "Logan", text: "Good morning, this is the business update at eight. We start with Nordtex, the textile company, which published its annual report last night." },
+      { speaker: "Logan", text: "The expansion is said to be paused. The company had planned to open a second factory in Manisa this year, but insiders say the work has stopped." },
+      { speaker: "Logan", text: "The profitability is expected to fall for the second year in a row. Higher energy prices and weaker orders from Europe are thought to be the main reasons." },
+      { speaker: "Logan", text: "The business model is thought to have changed. Nordtex is reported to be moving from its own shops to online sales, and two city center stores are said to be closing." },
+      { speaker: "Logan", text: "The company itself has not confirmed any of this. A spokeswoman said only that the pricing strategy is under review." },
+      { speaker: "Logan", text: "Speculation about a restructuring has been growing for months. The chief executive is expected to speak to investors on Friday." },
+      { speaker: "Logan", text: "Nordtex shares fell four percent in early trading. We will have more on this story at nine." },
     ],
     questions: [
       {

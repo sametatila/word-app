@@ -330,9 +330,9 @@ export const b1U14: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Kurs seçim kartını doldur.",
-        facts: "Katılımcı: Leyla Kaya; seçilen: akşam kursu; süre: 6 ay; sıklık: haftada 2; sebep: gündüz çalışıyor.",
+        facts: "Katılımcı: Johanna Arnold; seçilen: akşam kursu; süre: 6 ay; sıklık: haftada 2; sebep: gündüz çalışıyor.",
         fields: [
-          { label: "Name", answer: "Leyla Kaya", accept: ["Leyla", "Kaya"] },
+          { label: "Name", answer: "Johanna Arnold", accept: ["Johanna", "Arnold"] },
           { label: "Kurs", answer: "Abendkurs", accept: ["der Abendkurs", "Abend"] },
           { label: "Dauer", answer: "6 Monate", accept: ["sechs Monate", "ein halbes Jahr"] },
           { label: "Grund", answer: "arbeitet tagsüber", accept: ["Arbeit", "sie arbeitet", "tagsüber arbeiten", "sie arbeitet tagsüber"] },
@@ -400,7 +400,7 @@ export const b1U14: SkillExercise[] = [
           "Außerdem bin ich nicht sicher, ob meine Ausbildung reicht oder ob " +
           "ich zusätzlich eine Prüfung machen muss. Über eine kurze Auskunft " +
           "wäre ich sehr dankbar.\n\n" +
-          "Mit freundlichen Grüßen\nLeyla Kaya",
+          "Mit freundlichen Grüßen\nJohanna Arnold",
         phrases: [
           { de: "Ich möchte mich über … erkundigen.", tr: "… hakkında bilgi almak istiyorum.", en: "I would like to inquire about …" },
           { de: "Ich würde gern wissen, ob …", tr: "… olup olmadığını bilmek isterdim.", en: "I would like to know whether …" },

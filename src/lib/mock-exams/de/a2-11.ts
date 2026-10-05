@@ -56,7 +56,7 @@ ich möchte meine Mitgliedschaft zum 31. Dezember kündigen. Ich bin im Sommer u
 Bitte schicken Sie mir eine kurze Bestätigung.
 
 Mit freundlichen Grüßen
-Vedat Kaya`,
+Gerhard Graf`,
               gloss: [
                 { de: "die Mitgliedschaft", tr: "üyelik", en: "membership" },
                 { de: "kündigen", tr: "(üyeliği) sonlandırmak", en: "to cancel, terminate" },
@@ -518,7 +518,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
               kind: "match",
               id: "de-a2-11-l4-19",
               no: 19,
-              text: "Herr Kaya hat eine dreijährige Tochter und möchte mit ihr zusammen etwas machen.",
+              text: "Herr Graf hat eine dreijährige Tochter und möchte mit ihr zusammen etwas machen.",
               answer: "b",
               explain:
                 "(b) yaşı ve birlikteliği veriyor: \"von 2 bis 4 Jahren mit einem Elternteil\".",
@@ -712,8 +712,8 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
                 { speaker: "Herr Nowotny", text: "Ich brauche etwas für den Rücken. Mein Arzt hat mir das aufgeschrieben." },
                 { speaker: "Vorsitzende", text: "Und Sie, Frau Wienholt?" },
                 { speaker: "Frau Wienholt", text: "Ich möchte draußen laufen, aber nicht allein." },
-                { speaker: "Vorsitzende", text: "Herr Kaya?" },
-                { speaker: "Herr Kaya", text: "Etwas mit meiner Tochter zusammen. Sie ist drei." },
+                { speaker: "Vorsitzende", text: "Herr Graf?" },
+                { speaker: "Herr Graf", text: "Etwas mit meiner Tochter zusammen. Sie ist drei." },
                 { speaker: "Vorsitzende", text: "Und zum Schluss Frau Ruppert." },
                 { speaker: "Frau Ruppert", text: "Ich kann nicht schwimmen. Das möchte ich endlich lernen." },
               ],
@@ -765,7 +765,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
               id: "de-a2-11-h2-9",
               no: 9,
               ref: "g1",
-              text: "Herr Kaya",
+              text: "Herr Graf",
               answer: "d",
               explain:
                 "\"Etwas mit meiner Tochter zusammen. Sie ist drei\" — üç yaş, ebeveyn-çocuk jimnastiğine uyuyor.",
@@ -799,7 +799,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
               plays: 2,
               segments: [
                 {
-                  text: "Guten Tag, Herr Kaya, hier ist der Turnverein. Ihre Anmeldung ist angekommen. Der erste Beitrag geht Anfang März vom Konto ab. Den Ausweis bekommen Sie beim nächsten Training.",
+                  text: "Guten Tag, Herr Graf, hier ist der Turnverein. Ihre Anmeldung ist angekommen. Der erste Beitrag geht Anfang März vom Konto ab. Den Ausweis bekommen Sie beim nächsten Training.",
                 },
               ],
             },
@@ -1059,7 +1059,7 @@ Es tut mir wirklich leid, weil ich das Spiel gern gespielt hätte.
 Wann ist das nächste Spiel? Dann bin ich sicher dabei.
 
 Viele Grüße
-Vedat`,
+Gerhard`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Gerekçe somut mu, yoksa yalnız `ich kann nicht` mi deniyor?",

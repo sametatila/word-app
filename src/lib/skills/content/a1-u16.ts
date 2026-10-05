@@ -100,7 +100,7 @@ export const a1U16: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Liebe Familie Yilmaz,\n\nherzlich willkommen im Haus! Wir sind Ihre Nachbarn aus dem zweiten Stock.\n\nSie sind neu hier. Ein paar Informationen:\n\nDer Aufzug geht manchmal nicht — dann nimmt man die Treppe. Der Eingang unten ist bis 22 Uhr auf.\n\nIm Flur bitte keine Möbel stellen. Das ist die Hausordnung.\n\nBrauchen Sie etwas? Klopfen Sie einfach! Wir sind immer zu Hause.\n\nViele Grüße\nFamilie Weber (Wohnung 5)",
+      "Liebe Familie Lutz,\n\nherzlich willkommen im Haus! Wir sind Ihre Nachbarn aus dem zweiten Stock.\n\nSie sind neu hier. Ein paar Informationen:\n\nDer Aufzug geht manchmal nicht — dann nimmt man die Treppe. Der Eingang unten ist bis 22 Uhr auf.\n\nIm Flur bitte keine Möbel stellen. Das ist die Hausordnung.\n\nBrauchen Sie etwas? Klopfen Sie einfach! Wir sind immer zu Hause.\n\nViele Grüße\nFamilie Weber (Wohnung 5)",
     questions: [
       {
         text: "In welchem Stock wohnt Familie Weber?",
@@ -123,7 +123,7 @@ export const a1U16: SkillExercise[] = [
         explain: "„Der Eingang unten ist bis 22 Uhr auf.“",
       },
       {
-        text: "Was soll Familie Yilmaz machen, wenn sie etwas braucht?",
+        text: "Was soll Familie Lutz machen, wenn sie etwas braucht?",
         options: ["klopfen", "eine E-Mail schreiben", "zum Eingang gehen"],
         answer: 0,
         explain: "„Klopfen Sie einfach!“",

@@ -182,19 +182,19 @@ export const a2U19: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Nora", text: "Und, wie findest du die Feier?" },
-      { speaker: "Emre", text: "Sehr schön. Ich finde, dass die Rede vom Trauzeugen richtig gut war." },
+      { speaker: "Till", text: "Sehr schön. Ich finde, dass die Rede vom Trauzeugen richtig gut war." },
       { speaker: "Nora", text: "Ja, lustig und trotzdem feierlich. So etwas ist schwer." },
-      { speaker: "Emre", text: "Wer ist eigentlich die Frau im blauen Kleid neben der Braut?" },
+      { speaker: "Till", text: "Wer ist eigentlich die Frau im blauen Kleid neben der Braut?" },
       { speaker: "Nora", text: "Das ist die Schwiegermutter — also die Mutter vom Bräutigam." },
-      { speaker: "Emre", text: "Ach so. Sie hat vorhin geweint, glaube ich." },
+      { speaker: "Till", text: "Ach so. Sie hat vorhin geweint, glaube ich." },
       { speaker: "Nora", text: "Die hat den ganzen Tag geweint. Aber vor Freude, sagt sie." },
-      { speaker: "Emre", text: "Wann stoßen wir eigentlich auf das Brautpaar an?" },
+      { speaker: "Till", text: "Wann stoßen wir eigentlich auf das Brautpaar an?" },
       { speaker: "Nora", text: "Gleich nach dem Essen, mit dem Sekt. In etwa zwanzig Minuten." },
-      { speaker: "Emre", text: "Gut, dann hole ich uns schon mal zwei Gläser." },
+      { speaker: "Till", text: "Gut, dann hole ich uns schon mal zwei Gläser." },
     ],
     questions: [
       {
-        text: "Wie fand Emre die Rede?",
+        text: "Wie fand Till die Rede?",
         options: ["Zu lang", "Richtig gut", "Zu ernst"],
         answer: 1,
         explain: "„Ich finde, dass die Rede vom Trauzeugen richtig gut war.“",
@@ -245,21 +245,21 @@ export const a2U19: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Deniz", text: "Hallo Marie, ich rufe wegen morgen an." },
+      { speaker: "Sascha", text: "Hallo Marie, ich rufe wegen morgen an." },
       { speaker: "Marie", text: "Oh nein. Das klingt nach einer Absage." },
-      { speaker: "Deniz", text: "Leider ja. Ich kann nicht kommen, weil ich arbeiten muss. Meine Kollegin ist krank." },
+      { speaker: "Sascha", text: "Leider ja. Ich kann nicht kommen, weil ich arbeiten muss. Meine Kollegin ist krank." },
       { speaker: "Marie", text: "Schade! Ich bin ehrlich gesagt ein bisschen enttäuscht." },
-      { speaker: "Deniz", text: "Das verstehe ich, und es tut mir wirklich leid. Ich bedauere das sehr." },
+      { speaker: "Sascha", text: "Das verstehe ich, und es tut mir wirklich leid. Ich bedauere das sehr." },
       { speaker: "Marie", text: "Kannst du wenigstens später kommen? Wir sitzen sicher bis elf." },
-      { speaker: "Deniz", text: "Ich bin erst um halb elf fertig, und dann fahre ich noch eine Stunde mit dem Bus." },
+      { speaker: "Sascha", text: "Ich bin erst um halb elf fertig, und dann fahre ich noch eine Stunde mit dem Bus." },
       { speaker: "Marie", text: "Verstehe. Dann lassen wir es." },
-      { speaker: "Deniz", text: "Können wir es noch mal versuchen? Nächsten Samstag habe ich frei." },
+      { speaker: "Sascha", text: "Können wir es noch mal versuchen? Nächsten Samstag habe ich frei." },
       { speaker: "Marie", text: "Nächsten Samstag passt. Dann kommen wir eben stattdessen bei mir zusammen." },
     ],
     questions: [
       {
-        text: "Warum kann Deniz nicht kommen?",
-        options: ["Deniz ist krank.", "Deniz muss arbeiten.", "Der Bus fährt nicht."],
+        text: "Warum kann Sascha nicht kommen?",
+        options: ["Sascha ist krank.", "Sascha muss arbeiten.", "Der Bus fährt nicht."],
         answer: 1,
         explain: "„Ich kann nicht kommen, weil ich arbeiten muss. Meine Kollegin ist krank.“",
       },
@@ -272,10 +272,10 @@ export const a2U19: SkillExercise[] = [
         explain: "Gerekçe weil ile verilir ve çekimli fiil (muss) en sona gider.",
       },
       {
-        text: "Warum kommt Deniz nicht wenigstens später?",
+        text: "Warum kommt Sascha nicht wenigstens später?",
         options: [
-          "Deniz hat keine Lust.",
-          "Deniz wird erst um halb elf fertig und braucht eine Stunde mit dem Bus.",
+          "Sascha hat keine Lust.",
+          "Sascha wird erst um halb elf fertig und braucht eine Stunde mit dem Bus.",
           "Marie will das nicht.",
         ],
         answer: 1,
@@ -283,7 +283,7 @@ export const a2U19: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Deniz'in yeni bir tarih önerdiği soruyu yaz.",
+        text: "Sascha'nın yeni bir tarih önerdiği soruyu yaz.",
         options: [],
         answer: 0,
         accept: ["Können wir es noch mal versuchen?"],
@@ -379,7 +379,7 @@ export const a2U19: SkillExercise[] = [
           "Leider kann ich am Samstag nicht kommen, weil meine Kollegin krank ist und ich ihre Schicht übernehmen muss. Ich bin erst um halb elf fertig, und dann fährt kein Bus mehr zu euch.\n\n" +
           "Ich bedauere das wirklich sehr.\n\n" +
           "Können wir es noch mal versuchen? Nächsten Samstag habe ich frei. Wenn ihr wollt, kommen wir stattdessen bei mir zusammen, dann koche ich.\n\n" +
-          "Viele Grüße und viel Spaß am Samstag!\nDeniz",
+          "Viele Grüße und viel Spaß am Samstag!\nSascha",
       },
     ],
   },

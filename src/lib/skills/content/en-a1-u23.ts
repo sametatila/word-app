@@ -13,13 +13,13 @@ import type { SkillExercise } from "../types";
  *           bye-bye, smile.
  *   Kalıp:  You should … · You shouldn't … · Should I …? ·
  *           I have a toothache. · My tooth hurts. · Does it hurt? ·
- *           Hello, this is Ayse. · Can I speak to …? ·
+ *           Hello, this is Rachel. · Can I speak to …? ·
  *           Sorry, I can't hear you. · I'll send you a message. ·
  *           I'm sorry, I'm busy. · I can't talk now. I'll reply later.
  *
- * Telefonda kendini tanıtmanın kalıbı ŞAŞIRTICI: „Hello, this is Ela“ —
- * „I am Ela“ değil. Yüz yüze „I am“, telefonda „this is“. Türkçede ikisi
- * de "ben Ela'yım" ve fark hiç yok; öğrenci telefonda „I am Ela“ diyor ve
+ * Telefonda kendini tanıtmanın kalıbı ŞAŞIRTICI: „Hello, this is Lucy“ —
+ * „I am Lucy“ değil. Yüz yüze „I am“, telefonda „this is“. Türkçede ikisi
+ * de "ben Lucy'yim" ve fark hiç yok; öğrenci telefonda „I am Lucy“ diyor ve
  * anlaşılıyor ama yerli kulağa yanlış geliyor. İçerik kalıbı iki ayrı
  * egzersizde kullanıyor.
  */
@@ -90,7 +90,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 23,
-    title: "Kaan's tooth",
+    title: "Liam's tooth",
     genre: "dialogue",
     intro: "Diş hekiminde. Ne zaman ağrıyor, sebebi ne?",
     gloss: [
@@ -104,17 +104,17 @@ export const enA1U23: SkillExercise[] = [
     minutes: 4,
     text:
       "Dentist: Good morning. Please sit here. What is the problem?\n" +
-      "Kaan: I have a toothache. My tooth has hurt for two days.\n" +
+      "Liam: I have a toothache. My tooth has hurt for two days.\n" +
       "Dentist: Which tooth? This one?\n" +
-      "Kaan: Yes! That one.\n" +
+      "Liam: Yes! That one.\n" +
       "Dentist: Does it hurt with cold water?\n" +
-      "Kaan: Very much. And with ice cream too. And with lemon.\n" +
+      "Liam: Very much. And with ice cream too. And with lemon.\n" +
       "Dentist: I see. The tooth is not clean here. Do you eat a lot of sugar?\n" +
-      "Kaan: Maybe. I eat ice cream every evening.\n" +
+      "Liam: Maybe. I eat ice cream every evening.\n" +
       "Dentist: Then you should eat less ice cream. And you should come every year.\n" +
-      "Kaan: I know. This is my first visit in four years.\n" +
+      "Liam: I know. This is my first visit in four years.\n" +
       "Dentist: Four years! Today I'm going to clean the tooth. Come again in one week.\n" +
-      "Kaan: Is it going to hurt?\n" +
+      "Liam: Is it going to hurt?\n" +
       "Dentist: A little. But after that you'll feel better.",
     questions: [
       {
@@ -124,21 +124,21 @@ export const enA1U23: SkillExercise[] = [
         explain: "„I have a toothache. My tooth has hurt for two days.“ — aynı şey iki kalıpla.",
       },
       {
-        text: "What does Kaan eat every evening?",
+        text: "What does Liam eat every evening?",
         options: ["ice cream", "lemon", "salad"],
         answer: 0,
         explain: "„Maybe. I eat ice cream every evening.“",
       },
       {
         kind: "truefalse",
-        text: "Kaan comes to the dentist every year.",
+        text: "Liam comes to the dentist every year.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I know. This is my first visit in four years.“ — her yıl gelmek öğüdün kendisi.",
       },
       {
         kind: "gapfill",
-        text: "This is Kaan's first visit in ___ years.",
+        text: "This is Liam's first visit in ___ years.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
@@ -159,7 +159,7 @@ export const enA1U23: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When does Kaan come again?",
+        text: "When does Liam come again?",
         options: [],
         answer: 0,
         accept: ["in one week", "one week", "next week"],
@@ -185,42 +185,42 @@ export const enA1U23: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ela", text: "Hello, this is Ela. Can I speak to Mr. Demir, please?" },
+      { speaker: "Lucy", text: "Hello, this is Lucy. Can I speak to Mr. Adams, please?" },
       { speaker: "Office", text: "One moment, please. Sorry, he is not here today." },
-      { speaker: "Ela", text: "Sorry, I don't understand. Can you speak more slowly?" },
-      { speaker: "Office", text: "Mr. Demir is not here today. He is at the dentist." },
-      { speaker: "Ela", text: "I understand. Can he call me tomorrow?" },
+      { speaker: "Lucy", text: "Sorry, I don't understand. Can you speak more slowly?" },
+      { speaker: "Office", text: "Mr. Adams is not here today. He is at the dentist." },
+      { speaker: "Lucy", text: "I understand. Can he call me tomorrow?" },
       { speaker: "Office", text: "Of course. What is your number?" },
-      { speaker: "Ela", text: "My cell phone number is oh five three two, one two three, four five six." },
+      { speaker: "Lucy", text: "My cell phone number is oh five three two, one two three, four five six." },
       { speaker: "Office", text: "Oh five three two, one two three, four five six. Good." },
-      { speaker: "Ela", text: "Thank you. Can you give him my number, please?" },
+      { speaker: "Lucy", text: "Thank you. Can you give him my number, please?" },
       { speaker: "Office", text: "Yes, of course." },
-      { speaker: "Ela", text: "Thank you very much. Bye!" },
+      { speaker: "Lucy", text: "Thank you very much. Bye!" },
       { speaker: "Office", text: "Bye-bye!" },
     ],
     questions: [
       {
-        text: "Where is Mr. Demir?",
+        text: "Where is Mr. Adams?",
         options: ["at the dentist", "at home", "in the office"],
         answer: 0,
-        explain: "„Mr. Demir is not here today. He is at the dentist.“",
+        explain: "„Mr. Adams is not here today. He is at the dentist.“",
       },
       {
-        text: "What does Ela give?",
+        text: "What does Lucy give?",
         options: ["her number", "her address", "a message"],
         answer: 0,
         explain: "„What is your number? — My cell phone number is oh five three two…“",
       },
       {
         kind: "truefalse",
-        text: "Ela understands the office well.",
+        text: "Lucy understands the office well.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Sorry, I don't understand. Can you speak more slowly?“",
       },
       {
         kind: "gapfill",
-        text: "Ela asks: can he ___ me tomorrow?",
+        text: "Lucy asks: can he ___ me tomorrow?",
         options: [],
         answer: 0,
         accept: ["call"],
@@ -231,15 +231,15 @@ export const enA1U23: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Can I speak to Mr. Demir, please?", "Can I speak to Mr. Demir please?"],
-        explain: "„Can I speak to Mr. Demir, please?“ — „speak to“ biriyle konuşmak demek.",
+        accept: ["Can I speak to Mr. Adams, please?", "Can I speak to Mr. Adams please?"],
+        explain: "„Can I speak to Mr. Adams, please?“ — „speak to“ biriyle konuşmak demek.",
       },
       {
         kind: "short_answer",
         text: "Who is at the dentist?",
         options: [],
         answer: 0,
-        accept: ["Mr. Demir", "Demir"],
+        accept: ["Mr. Adams", "Adams"],
         explain: "„He is at the dentist.“",
       },
     ],
@@ -260,16 +260,16 @@ export const enA1U23: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Nil", text: "My friend sends me a message: Are you free tonight?" },
-      { speaker: "Nil", text: "I am busy, so I reply: I'm sorry, I'm busy. Maybe tomorrow?" },
-      { speaker: "Nil", text: "Then she writes: I can't talk now. I'll reply later." },
-      { speaker: "Nil", text: "Two hours later she sends a smile and one word: Tomorrow!" },
-      { speaker: "Nil", text: "I write back: Good! At seven, in the café next to the park." },
-      { speaker: "Nil", text: "A quick message is better than a long call. But for bad news I always call." },
+      { speaker: "Katie", text: "My friend sends me a message: Are you free tonight?" },
+      { speaker: "Katie", text: "I am busy, so I reply: I'm sorry, I'm busy. Maybe tomorrow?" },
+      { speaker: "Katie", text: "Then she writes: I can't talk now. I'll reply later." },
+      { speaker: "Katie", text: "Two hours later she sends a smile and one word: Tomorrow!" },
+      { speaker: "Katie", text: "I write back: Good! At seven, in the café next to the park." },
+      { speaker: "Katie", text: "A quick message is better than a long call. But for bad news I always call." },
     ],
     questions: [
       {
-        text: "What does Nil's friend ask?",
+        text: "What does Katie's friend ask?",
         options: ["if she is free tonight", "where she is", "for a call"],
         answer: 0,
         explain: "„My friend sends me a message: Are you free tonight?“",
@@ -282,7 +282,7 @@ export const enA1U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil calls for bad news.",
+        text: "Katie calls for bad news.",
         options: ["True", "False"],
         answer: 0,
         explain: "„But for bad news I always call.“ — kötü haber mesajla verilmiyor.",
@@ -379,7 +379,7 @@ export const enA1U23: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 23,
-    title: "Calling Mr. Demir",
+    title: "Calling Mr. Adams",
     genre: "phone",
     intro: "Telefon cümlelerini yaz. Telefonda kendini „this is“ ile tanıtıyorsun.",
     gloss: [
@@ -391,14 +391,14 @@ export const enA1U23: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Alo, ben Ela.",
-        answer: "Hello, this is Ela.",
+        tr: "Alo, ben Lucy.",
+        answer: "Hello, this is Lucy.",
         hint: "Telefonda „this is“, yüz yüze „I am“. Türkçede ikisi de aynı cümle.",
       },
       {
         kind: "build",
-        tr: "Bay Demir ile konuşabilir miyim?",
-        answer: "Can I speak to Mr. Demir?",
+        tr: "Bay Adams ile konuşabilir miyim?",
+        answer: "Can I speak to Mr. Adams?",
         hint: "Kişiyle konuşmak „speak to“; „speak with“ de duyulur ama „speak to“ daha yaygın.",
       },
       {

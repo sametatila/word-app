@@ -44,7 +44,7 @@
     "You look tired. What happened yesterday?"
    ],
    "ctx": [
-    "A2.1 What happened? · Ela"
+    "A2.1 What happened? · Lucy"
    ]
   },
   {
@@ -396,11 +396,11 @@
    ]
   },
   {
-   "tr": "Kerem yurt dışında nerede çalıştı?",
+   "tr": "Connor yurt dışında nerede çalıştı?",
    "kind": "question",
    "n": 1,
    "de": [
-    "Where has Kerem worked abroad?"
+    "Where has Connor worked abroad?"
    ],
    "ctx": [
     "A2.2 My story, then and now · dinleme sorusu"
@@ -726,11 +726,11 @@
    ]
   },
   {
-   "tr": "Bora yazıyı anladığında ne olmuştu?",
+   "tr": "Jacob yazıyı anladığında ne olmuştu?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What had happened by the time Bora understood the letter?"
+    "What had happened by the time Jacob understood the letter?"
    ],
    "ctx": [
     "B1.10 Feelings and dreams · dinleme sorusu"
@@ -739,7 +739,7 @@
     "Everyone had already asked him about it",
     "The job had been given to a colleague",
     "He had written to the team",
-    "Ela had called him"
+    "Lucy had called him"
    ]
   },
   {
@@ -872,7 +872,7 @@
     "The lamp in the kitchen is broken. It doesn't work."
    ],
    "ctx": [
-    "A1.7 Home and living · Mrs. Demir"
+    "A1.7 Home and living · Mrs. Adams"
    ]
   },
   {
@@ -1096,11 +1096,11 @@
    ]
   },
   {
-   "tr": "Ayşe ve Mert konuklardan ne istiyor?",
+   "tr": "Rachel ve Henry konuklardan ne istiyor?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What do Ayse and Mert want from the guests?"
+    "What do Rachel and Henry want from the guests?"
    ],
    "ctx": [
     "A2.8 Celebrations and people · okuma sorusu"
@@ -1327,7 +1327,7 @@
     "Good afternoon. Can I see the apartment?"
    ],
    "ctx": [
-    "A1.7 Home and living · Mrs. Demir"
+    "A1.7 Home and living · Mrs. Adams"
    ]
   },
   {
@@ -1622,11 +1622,11 @@
    ]
   },
   {
-   "tr": "Deniz aradığında müşteri ne yapmıştı?",
+   "tr": "Charlie aradığında müşteri ne yapmıştı?",
    "kind": "question",
    "n": 1,
    "de": [
-    "What had the client done by the time Deniz called?"
+    "What had the client done by the time Charlie called?"
    ],
    "ctx": [
     "B1.3 Linking ideas · dinleme sorusu"

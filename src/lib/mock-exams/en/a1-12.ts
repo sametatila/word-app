@@ -42,7 +42,7 @@ export const EN_A1_12: MockPaper = {
               genre: "Email from the office",
               genreTr: "Ofisten e-posta",
               title: "Welcome",
-              body: `Dear Eyup,
+              body: `Dear Barry,
 
 Welcome! Your first day is Monday.
 
@@ -81,7 +81,7 @@ You cannot pay with money here.`,
               id: "en-a1-12-l1-1",
               no: 1,
               ref: "t1",
-              text: "Eyup starts on Monday.",
+              text: "Barry starts on Monday.",
               answer: true,
               explain:
                 "E-posta günü doğrudan veriyor: «Your first day is Monday». Aynı e-postada saat de düzeltiliyor (dokuz, sekiz değil), ama sorulan bilgi gün; iki sayıyı ayırmak gerekiyor.",
@@ -91,7 +91,7 @@ You cannot pay with money here.`,
               id: "en-a1-12-l1-2",
               no: 2,
               ref: "t1",
-              text: "Eyup must come at eight.",
+              text: "Barry must come at eight.",
               answer: false,
               explain:
                 "E-posta iki saati karşılaştırıyor: «come at nine, not at eight». Sekiz bilerek elenen saat.",
@@ -101,7 +101,7 @@ You cannot pay with money here.`,
               id: "en-a1-12-l1-3",
               no: 3,
               ref: "t1",
-              text: "Eyup must bring money.",
+              text: "Barry must bring money.",
               answer: false,
               explain:
                 "E-posta tek bir şey istiyor: «Bring your passport». Paradan hiç söz edilmiyor.",
@@ -342,7 +342,7 @@ The office is very near, {{17}} I go by bicycle. Ten minutes only.
 
 Last week I {{18}} my new colleagues at a small party.
 
-Eyup`,
+Barry`,
             },
           ],
           items: [
@@ -416,7 +416,7 @@ Eyup`,
               situation: "Ofisten yeni çalışana ileti bırakılıyor.",
               plays: 2,
               segments: [
-                { text: "Hello Eyup, this is Mira from the office. Your first day is Monday at nine. Come to the third floor and ask for me. Bring your passport." },
+                { text: "Hello Barry, this is Mira from the office. Your first day is Monday at nine. Come to the third floor and ask for me. Bring your passport." },
               ],
             },
             {
@@ -478,7 +478,7 @@ Eyup`,
               situation: "Biri arkadaşına ilk gününü anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Fikret, it is Eyup. My first day was good. The people are friendly and the office is near my house. Coffee on Saturday?" },
+                { text: "Hi Jordan, it is Barry. My first day was good. The people are friendly and the office is near my house. Coffee on Saturday?" },
               ],
             },
           ],
@@ -488,7 +488,7 @@ Eyup`,
               id: "en-a1-12-h1-1",
               no: 1,
               ref: "a1",
-              text: "What must Eyup bring?",
+              text: "What must Barry bring?",
               options: ["A pen", "Money", "His passport"],
               answer: 2,
               explain:
@@ -853,7 +853,7 @@ The soup and the bread are free for us. Hot food is four euros.
 Bring your card! You cannot pay with cash.
 
 See you at twelve,
-Eyup`,
+Barry`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Saatler açıkça verildi mi?",
@@ -965,7 +965,7 @@ Eyup`,
               { de: "ask about the break politely", tr: "Kibarca molayı sormak" },
             ],
             sample:
-              "Good morning. My name is Eyup and today is my first day. — Where is room 5, please? — When is the break, please?",
+              "Good morning. My name is Barry and today is my first day. — Where is room 5, please? — When is the break, please?",
             criteria: [
               "Ad ve durum açıkça söylendi mi?",
               "Yer sorusu doğru kuruldu mu? (Where is … please)",

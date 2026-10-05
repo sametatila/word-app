@@ -103,18 +103,18 @@ export const deA1P13: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Herr Brandt", text: "Guten Abend und willkommen im Hotel Lindenhof. Wie kann ich Ihnen helfen?" },
-      { speaker: "Frau Yilmaz", text: "Guten Abend. Ich habe ein Zimmer reserviert. Mein Name ist Elif Yilmaz." },
+      { speaker: "Frau Lutz", text: "Guten Abend. Ich habe ein Zimmer reserviert. Mein Name ist Paula Lutz." },
       { speaker: "Herr Brandt", text: "Einen Moment, bitte ... Ja, hier: ein Einzelzimmer für drei Nächte, bis Freitag. Ihren Ausweis, bitte." },
-      { speaker: "Frau Yilmaz", text: "Hier, bitte. Ist das Frühstück im Preis?" },
+      { speaker: "Frau Lutz", text: "Hier, bitte. Ist das Frühstück im Preis?" },
       { speaker: "Herr Brandt", text: "Ja, das Frühstück kostet nichts extra. Es gibt Frühstück von halb sieben bis zehn Uhr im ersten Stock." },
-      { speaker: "Frau Yilmaz", text: "Sehr gut. Und gibt es hier WLAN?" },
+      { speaker: "Frau Lutz", text: "Sehr gut. Und gibt es hier WLAN?" },
       { speaker: "Herr Brandt", text: "Ja, das Passwort steht auf Ihrer Karte. Ihr Zimmer ist im dritten Stock, Nummer dreihundertzwölf. Der Aufzug ist dort links." },
-      { speaker: "Frau Yilmaz", text: "Danke. Kann ich für morgen früh ein Taxi bestellen? Um sieben Uhr?" },
+      { speaker: "Frau Lutz", text: "Danke. Kann ich für morgen früh ein Taxi bestellen? Um sieben Uhr?" },
       { speaker: "Herr Brandt", text: "Natürlich, ich bestelle es für Sie. Das Taxi wartet dann vor dem Eingang. Einen schönen Abend!" },
     ],
     questions: [
       {
-        text: "Wie lange bleibt Frau Yilmaz im Hotel?",
+        text: "Wie lange bleibt Frau Lutz im Hotel?",
         options: ["drei Nächte", "eine Woche", "zwei Nächte"],
         answer: 0,
         explain: "„ein Einzelzimmer für drei Nächte, bis Freitag“.",
@@ -210,7 +210,7 @@ export const deA1P13: SkillExercise[] = [
           "Liebe Familie Wagner, vielen Dank für die schönen Tage bei euch in Freiburg! Die Woche bei euch war sehr schön. " +
           "Besonders schön war der Tag im Schwarzwald, und der Apfelkuchen von Oma Helga war super. " +
           "Jetzt bin ich wieder in Istanbul und arbeite viel. Nächsten Sommer könnt ihr uns besuchen. " +
-          "Ich hoffe, wir sehen uns bald wieder! Liebe Grüße, Aylin",
+          "Ich hoffe, wir sehen uns bald wieder! Liebe Grüße, Helene",
       },
     ],
   },

@@ -482,7 +482,7 @@ export const deB1B14: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Kuaförde en zor şey ne istediğini tarif etmek. Almancada bunun kibar biçimi dilek kipiyle kurulur. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Dilek kipi burada istekleri yumuşatıyor. Ama dikkat: yumuşak olması belirsiz olması demek değil, ne istediğini yine net söylemelisin. Önce kelimeler.")] },
+      { say: [tr("Leonie kipi burada istekleri yumuşatıyor. Ama dikkat: yumuşak olması belirsiz olması demek değil, ne istediğini yine net söylemelisin. Önce kelimeler.")] },
       word("İlk", { de: "der Friseur", tr: "kuaför" }),
       word("İkinci", { de: "die Friseurin", tr: "kadın kuaför" }),
       word("Üçüncü", { de: "die Frisur", tr: "saç modeli" }),
@@ -495,7 +495,7 @@ export const deB1B14: Conversation[] = [
       { say: [tr("Örnek:"), de("Ich hätte gern die gleiche Frisur wie letztes Mal."), tr("Tekrar et:"), de("Ich hätte gern die gleiche Frisur wie letztes Mal")], expect: repeat("Ich hätte gern die gleiche Frisur wie letztes Mal") },
       { say: [tr("Sıra sende: 'Sakalımı kısa isterim.'")], expect: produce("Ich hätte gern den Bart kurz", [tr("İstek kalıbı, sonra nesne ve sıfat:"), de("Ich hätte gern den Bart kurz."), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıbımız düzeltme istiyor: yapabilmek fiilinin dilek kipiyle soru. İş sürerken müdahale etmenin kibar yolu.")] },
-      { say: [tr("Şimdi: 'Yanlarını biraz daha kısa yapabilir misiniz?'")], expect: produce("Könnten Sie die Seiten etwas kürzer machen", [tr("Dilek kipi başta, mastar sonda:"), de("Könnten Sie die Seiten etwas kürzer machen?"), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi: 'Yanlarını biraz daha kısa yapabilir misiniz?'")], expect: produce("Könnten Sie die Seiten etwas kürzer machen", [tr("Leonie kipi başta, mastar sonda:"), de("Könnten Sie die Seiten etwas kürzer machen?"), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ich hätte gern, dass Sie machen die Haare kürzer."), tr("cümlesi doğru mu?")], expect: truefalse("Ich hätte gern, dass Sie machen die Haare kürzer.", false, [tr("Bağlaçtan sonra fiil cümlenin sonuna gider:"), de("Ich hätte gern, dass Sie die Haare kürzer machen.")]) },
       { say: [tr("Son: 'Böyle bir fırçayı nereden alabilirim?'")], expect: produce("Wo könnte ich so eine Bürste kaufen", [tr("Soru sözcüğü başta, dilek kipi ikinci sırada, mastar sonda:"), de("Wo könnte ich so eine Bürste kaufen?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi kuaförde ne istediğini tarif edeceksin.")] },

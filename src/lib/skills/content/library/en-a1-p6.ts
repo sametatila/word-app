@@ -85,7 +85,7 @@ export const enA1P6: SkillExercise[] = [
     course: "en",
     level: "A1",
     skill: "grammar",
-    title: "have got, my and Ali's",
+    title: "have got, my and Harry's",
     genre: "grammar",
     intro: "Bir şeyin kime ait olduğunu üç ayrı yolla söyleyebilirsin; hangisinin nerede kullanıldığını öğren.",
     focus: "have got, iyelik sıfatları ve isimlerde 's",
@@ -116,8 +116,8 @@ export const enA1P6: SkillExercise[] = [
         ],
       },
       {
-        heading: "my, your ve Ali's",
-        tr: "Kişi zamiri iyelik sıfatına dönüşür: I → my, you → your, he → his, she → her, we → our, they → their. Bir İSİM sahip oluyorsa sonuna 's eklenir: „Ali's car“, „my brother's apartment“. -s ile biten çoğul isimlerde yalnız kesme işareti eklenir: „my parents' house“.",
+        heading: "my, your ve Harry's",
+        tr: "Kişi zamiri iyelik sıfatına dönüşür: I → my, you → your, he → his, she → her, we → our, they → their. Bir İSİM sahip oluyorsa sonuna 's eklenir: „Harry's car“, „my brother's apartment“. -s ile biten çoğul isimlerde yalnız kesme işareti eklenir: „my parents' house“.",
         examples: [
           { de: "This is my brother's car.", tr: "Bu, erkek kardeşimin arabası.", note: "isim + 's" },
           { de: "Their keys are on the table.", tr: "Anahtarları masanın üstünde.", note: "they → their" },

@@ -152,7 +152,7 @@ export const c1U09: SkillExercise[] = [
       "Wer im Januar durch unsere Halle ging, spürte es sofort: Es herrschte dicke Luft. Der neue Schichtplan war ohne Absprache eingeführt worden, zwei erfahrene Kolleginnen hatten gekündigt, und im Pausenraum wurde mehr geschimpft als gegessen.\n\n" +
       "Der Streit um die Parkplätze, über den damals alle sprachen, war dagegen ein Sturm im Wasserglas. Nach einer Woche hatte die Stadt zwanzig neue Plätze freigegeben, und niemand redete mehr davon.\n\n" +
       "Ernster war die Sache mit den Krankmeldungen. Im Februar fehlten an manchen Tagen zwölf Leute. Einige in der Verwaltung vermuteten sofort, hier werde blaugemacht. Das war ungerecht und, wie sich zeigte, falsch: Eine Grippewelle hatte das halbe Viertel erwischt. Wer bei Wind und Wetter an der Rampe steht, wird eben öfter krank als jemand im Büro.\n\n" +
-      "Das Eis brach erst im März, bei der Betriebsversammlung. Frau Demir aus der Frühschicht sagte offen, dass sie jedes Mal rotsehe, wenn der Plan am Freitagabend für die nächste Woche geändert werde. Der Saal applaudierte, und die Geschäftsleitung gab danach grünes Licht für einen Plan, der vier Wochen im Voraus feststeht.\n\n" +
+      "Das Eis brach erst im März, bei der Betriebsversammlung. Frau Böhm aus der Frühschicht sagte offen, dass sie jedes Mal rotsehe, wenn der Plan am Freitagabend für die nächste Woche geändert werde. Der Saal applaudierte, und die Geschäftsleitung gab danach grünes Licht für einen Plan, der vier Wochen im Voraus feststeht.\n\n" +
       "Seitdem gibt es Lichtblicke. Die Kündigungen haben aufgehört, und zwei neue Kollegen sind geblieben, obwohl man sie anfangs eiskalt empfangen hatte. Das Gelbe vom Ei ist der neue Plan nicht, aber er ist verlässlich.\n\n" +
       "Blauäugig wäre es allerdings, jetzt zu glauben, alle Probleme seien gelöst. Die Personaldecke ist dünn, und im Herbst kommen die großen Bestellungen. Wir bleiben dran, mit offenen Karten.\n\n" +
       "Jens Albrecht, Standortleiter",
@@ -236,17 +236,17 @@ export const c1U09: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Nora", text: "Vier Absagen in zwei Wochen. Ich überlege, das Handtuch zu werfen." },
-      { speaker: "Ilhan", text: "Bevor du das tust: Wie viele Angebote hast du überhaupt abgegeben?" },
+      { speaker: "Detlef", text: "Bevor du das tust: Wie viele Angebote hast du überhaupt abgegeben?" },
       { speaker: "Nora", text: "Sechs." },
-      { speaker: "Ilhan", text: "Dann bist du nicht aus dem Rennen, du hast erst angefangen." },
+      { speaker: "Detlef", text: "Dann bist du nicht aus dem Rennen, du hast erst angefangen." },
       { speaker: "Nora", text: "Beim letzten hätte es fast geklappt. Bis ich in der Mail den Preis genannt habe, bevor sie gefragt haben." },
-      { speaker: "Ilhan", text: "Das war ein Eigentor, ja. Aber ein lehrreiches." },
+      { speaker: "Detlef", text: "Das war ein Eigentor, ja. Aber ein lehrreiches." },
       { speaker: "Nora", text: "Ich weiß. Ich kannte die Spielregeln nicht." },
-      { speaker: "Ilhan", text: "Die kennt am Anfang niemand. Wichtig ist, dass du am Ball bleibst — sechs Angebote sind keine Statistik." },
+      { speaker: "Detlef", text: "Die kennt am Anfang niemand. Wichtig ist, dass du am Ball bleibst — sechs Angebote sind keine Statistik." },
       { speaker: "Nora", text: "Und wenn ich die Latte etwas niedriger lege? Kleinere Aufträge zuerst?" },
-      { speaker: "Ilhan", text: "Das ist keine Aufgabe, das ist Strategie. Mit drei kleinen Referenzen gehst du beim vierten Angebot in Führung." },
+      { speaker: "Detlef", text: "Das ist keine Aufgabe, das ist Strategie. Mit drei kleinen Referenzen gehst du beim vierten Angebot in Führung." },
       { speaker: "Nora", text: "Ich habe mit dem Preis wohl wirklich ein Eigentor geschossen." },
-      { speaker: "Ilhan", text: "Einmal. Und beim nächsten Mal legst du die Latte da hoch, wo sie hingehört — nach der Frage, nicht davor." },
+      { speaker: "Detlef", text: "Einmal. Und beim nächsten Mal legst du die Latte da hoch, wo sie hingehört — nach der Frage, nicht davor." },
       { speaker: "Nora", text: "Gut. Dann schreibe ich heute Abend zwei neue." },
     ],
     questions: [
@@ -269,7 +269,7 @@ export const c1U09: SkillExercise[] = [
         explain: "am Ball bleiben: peşini bırakmamak. Edat ve artikel sabit.",
       },
       {
-        text: "Wie bewertet Ilhan den Vorschlag, kleinere Aufträge zu nehmen?",
+        text: "Wie bewertet Detlef den Vorschlag, kleinere Aufträge zu nehmen?",
         options: [
           "Als Aufgeben",
           "Als Strategie",
@@ -280,7 +280,7 @@ export const c1U09: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Ilhan'ın altı teklifin istatistik olmadığını söylediği cümleyi yaz.",
+        text: "Detlef'in altı teklifin istatistik olmadığını söylediği cümleyi yaz.",
         options: [],
         answer: 0,
         accept: [
@@ -298,7 +298,7 @@ export const c1U09: SkillExercise[] = [
     unit: 9,
     title: "Verlobt nach acht Monaten",
     genre: "dialogue",
-    intro: "Meral nişanlanmış ve hemen ev almak istiyor. Bernd'in çekincesi ne, Meral sonunda neye karar veriyor?",
+    intro: "Wiebke nişanlanmış ve hemen ev almak istiyor. Bernd'in çekincesi ne, Wiebke sonunda neye karar veriyor?",
     gloss: [
       { de: "auf Wolke sieben schweben", tr: "bulutların üstünde olmak", en: "to be on cloud nine" },
       { de: "blauäugig", tr: "saf", en: "naive" },
@@ -323,32 +323,32 @@ export const c1U09: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Bernd", text: "Du strahlst ja heute. Gibt es etwas zu feiern?" },
-      { speaker: "Meral", text: "Ich schwebe auf Wolke sieben. Am Wochenende hat mich Deniz gefragt, ob ich ihn heirate." },
+      { speaker: "Wiebke", text: "Ich schwebe auf Wolke sieben. Am Wochenende hat mich Sascha gefragt, ob ich ihn heirate." },
       { speaker: "Bernd", text: "Herzlichen Glückwunsch! Wie lange kennt ihr euch jetzt?" },
-      { speaker: "Meral", text: "Seit Februar. Ich weiß, das ist nicht lange. Aber wir wollen schon im Herbst zusammen eine Wohnung kaufen." },
+      { speaker: "Wiebke", text: "Seit Februar. Ich weiß, das ist nicht lange. Aber wir wollen schon im Herbst zusammen eine Wohnung kaufen." },
       { speaker: "Bernd", text: "Kaufen? Nicht erst mieten?" },
-      { speaker: "Meral", text: "Die Mieten in Köln sind verrückt. Für drei Zimmer zahlt man inzwischen fast zweitausend Euro im Monat." },
+      { speaker: "Wiebke", text: "Die Mieten in Köln sind verrückt. Für drei Zimmer zahlt man inzwischen fast zweitausend Euro im Monat." },
       { speaker: "Bernd", text: "Das stimmt. Trotzdem: Wer nach acht Monaten gemeinsam einen Kredit über dreißig Jahre aufnimmt, ist ein bisschen blauäugig, findest du nicht?" },
-      { speaker: "Meral", text: "Jetzt übertreib mal nicht. Wir sind beide keine Kinder mehr." },
+      { speaker: "Wiebke", text: "Jetzt übertreib mal nicht. Wir sind beide keine Kinder mehr." },
       { speaker: "Bernd", text: "Ich will nicht schwarzmalen. Ich habe das selbst erlebt. Meine erste Wohnung habe ich mit meiner damaligen Freundin gekauft, und nach der Trennung gab es zwei Jahre Streit über den Verkauf." },
-      { speaker: "Meral", text: "Das tut mir leid. Was hat euch damals gefehlt?" },
+      { speaker: "Wiebke", text: "Das tut mir leid. Was hat euch damals gefehlt?" },
       { speaker: "Bernd", text: "Ein Vertrag. Beim Notar hätten wir festlegen können, wem welcher Anteil gehört. Wir dachten, so etwas braucht man nur, wenn man sich nicht vertraut." },
-      { speaker: "Meral", text: "Ich glaube, Deniz würde rotsehen, wenn ich ihm einen Vertrag vorlege." },
+      { speaker: "Wiebke", text: "Ich glaube, Sascha würde rotsehen, wenn ich ihm einen Vertrag vorlege." },
       { speaker: "Bernd", text: "Vielleicht. Oder er ist erleichtert. Ein Lichtblick ist ja, dass die Zinsen gerade sinken. Ihr müsst also nichts überstürzen." },
-      { speaker: "Meral", text: "Du meinst, wir sollten erst ein Jahr zusammen mieten?" },
+      { speaker: "Wiebke", text: "Du meinst, wir sollten erst ein Jahr zusammen mieten?" },
       { speaker: "Bernd", text: "Das wäre mein Rat. Wenn ihr dann noch kaufen wollt, kauft ihr mit mehr Wissen und weniger Eile." },
-      { speaker: "Meral", text: "Ich glaube, das sage ich ihm heute Abend. Die Hochzeit bleibt, die Wohnung wartet." },
+      { speaker: "Wiebke", text: "Ich glaube, das sage ich ihm heute Abend. Die Hochzeit bleibt, die Wohnung wartet." },
     ],
     questions: [
       {
-        text: "Warum ist Meral so glücklich?",
+        text: "Warum ist Wiebke so glücklich?",
         options: [
           "Sie hat eine Wohnung gefunden",
           "Sie hat sich verlobt",
           "Sie hat eine neue Stelle",
         ],
         answer: 1,
-        explain: "Deniz ona evlenme teklif etmiş; Meral bu yüzden bulutların üstünde.",
+        explain: "Deniz ona evlenme teklif etmiş; Wiebke bu yüzden bulutların üstünde.",
       },
       {
         kind: "gapfill",
@@ -370,7 +370,7 @@ export const c1U09: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Zu welchem Schluss kommt Meral am Ende?",
+        text: "Zu welchem Schluss kommt Wiebke am Ende?",
         options: [],
         answer: 0,
         accept: [

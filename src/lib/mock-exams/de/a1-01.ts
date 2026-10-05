@@ -86,7 +86,7 @@ Bringen Sie bitte Ihre Kinder mit! Wir haben Spiele und Musik.
 
 Bei Regen feiern wir unten im Waschkeller.
 
-Familie Yilmaz, Wohnung 3 B`,
+Familie Lutz, Wohnung 3 B`,
               gloss: [
                 { de: "der Hof", tr: "avlu", en: "courtyard" },
                 { de: "kosten nichts", tr: "ücretsiz", en: "free of charge" },
@@ -892,7 +892,7 @@ Ana Ferreira`,
               { de: "ein Hobby", tr: "Bir hobi" },
             ],
             sample:
-              "Ich heiße Elif Demir. Ich bin dreiundzwanzig Jahre alt und komme aus der Türkei. Jetzt wohne ich in Leipzig. Ich spreche Türkisch, Englisch und ein bisschen Deutsch. Ich bin Krankenpflegerin. In meiner Freizeit schwimme ich gern.",
+              "Ich heiße Paula Böhm. Ich bin dreiundzwanzig Jahre alt und komme aus der Türkei. Jetzt wohne ich in Leipzig. Ich spreche Türkisch, Englisch und ein bisschen Deutsch. Ich bin Krankenpflegerin. In meiner Freizeit schwimme ich gern.",
             criteria: [
               "Yedi anahtar sözcüğün her birine değinildi mi?",
               "Cümleler kısa ve tam mı? A1'de \"Ich heiße …\", \"Ich komme aus …\" kalıpları yeterli.",

@@ -142,23 +142,23 @@ export const c1U17: SkillExercise[] = [
     text:
       "TEAMCHAT ZUR MESSE, DIENSTAG\n\n" +
       "07:42 Jana: Guten Morgen! Stand steht, Strom fehlt noch. Techniker kommt um neun.\n" +
-      "07:45 Murat: Danke. Plakate?\n" +
+      "07:45 Niklas: Danke. Plakate?\n" +
       "07:46 Jana: Im Auto. Bringe ich gleich rein.\n" +
-      "08:10 Murat: Anbei die Preisliste, Version 3. Wie besprochen, ohne Rabatte.\n" +
+      "08:10 Niklas: Anbei die Preisliste, Version 3. Wie besprochen, ohne Rabatte.\n" +
       "08:12 Jana: Gesehen. Drucke ich aus.\n" +
       "09:20 Jana: Strom läuft. Bildschirm auch. Kaffeemaschine leider nicht.\n" +
-      "09:21 Murat: Egal. Hauptsache Bildschirm.\n" +
+      "09:21 Niklas: Egal. Hauptsache Bildschirm.\n" +
       "10:05 Frau Hartmann: Kurze Frage an alle: Wer betreut morgen früh den Stand? Herr Sommer von der Firma Kranich hat sich für 10 Uhr angekündigt.\n" +
-      "10:07 Murat: Ich. Wenn nötig, auch schon ab acht.\n" +
+      "10:07 Niklas: Ich. Wenn nötig, auch schon ab acht.\n" +
       "10:08 Frau Hartmann: Danke. Bitte die neuen Muster mitnehmen, nicht die vom letzten Jahr.\n" +
-      "10:09 Murat: Klar.\n" +
+      "10:09 Niklas: Klar.\n" +
       "11:30 Jana: Lieferung Prospekte: 200 statt 500. Rest angeblich morgen.\n" +
       "11:31 Frau Hartmann: Das reicht nicht. Bitte in der Druckerei anrufen und eine feste Uhrzeit verlangen.\n" +
       "11:52 Jana: Erledigt. Morgen 8 Uhr, direkt an den Stand.\n" +
-      "14:15 Murat: Herr Sommer hat abgesagt. Neuer Termin Donnerstag, 14 Uhr.\n" +
+      "14:15 Niklas: Herr Sommer hat abgesagt. Neuer Termin Donnerstag, 14 Uhr.\n" +
       "14:16 Frau Hartmann: Schade. Dann morgen mehr Zeit für Laufkundschaft. Bitte trotzdem pünktlich.\n" +
       "14:40 Jana: Frage: Abendessen mit dem Vertrieb heute, 19 Uhr, noch aktuell?\n" +
-      "14:41 Murat: Ja. Restaurant am Hauptbahnhof. Tisch auf Hartmann.\n" +
+      "14:41 Niklas: Ja. Restaurant am Hauptbahnhof. Tisch auf Hartmann.\n" +
       "17:55 Frau Hartmann: Danke euch beiden für heute. Ein guter Aufbau, trotz Strom, Druckerei und Absage. Bis gleich beim Essen.",
     questions: [
       {
@@ -229,23 +229,23 @@ export const c1U17: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Nesrin", text: "Der Chef hat gesagt, meine Präsentation sei „bemerkenswert“. Ist das gut?" },
+      { speaker: "Wilma", text: "Der Chef hat gesagt, meine Präsentation sei „bemerkenswert“. Ist das gut?" },
       { speaker: "Jonas", text: "Kommt darauf an, wie er es gesagt hat." },
-      { speaker: "Nesrin", text: "Warum sagt er dann nicht einfach, was er meint?" },
+      { speaker: "Wilma", text: "Warum sagt er dann nicht einfach, was er meint?" },
       { speaker: "Jonas", text: "Weil er sich nicht festlegen will. „Bemerkenswert“ lässt sich in beide Richtungen auslegen — er kann später sagen, er habe es positiv gemeint." },
-      { speaker: "Nesrin", text: "Also verschleiert er einfach seine Meinung." },
+      { speaker: "Wilma", text: "Also verschleiert er einfach seine Meinung." },
       { speaker: "Jonas", text: "Manchmal. Manchmal lässt er sie bewusst offen, weil er sie selbst noch prüft." },
-      { speaker: "Nesrin", text: "Also Feigheit." },
+      { speaker: "Wilma", text: "Also Feigheit." },
       { speaker: "Jonas", text: "Manchmal. Manchmal Rücksicht. Wenn zwanzig Leute im Raum sitzen, ist offene Kritik etwas anderes als unter vier Augen." },
-      { speaker: "Nesrin", text: "Und wie soll ich damit umgehen?" },
+      { speaker: "Wilma", text: "Und wie soll ich damit umgehen?" },
       { speaker: "Jonas", text: "Frag nach. Nicht vorwurfsvoll — einfach: „Woran haben Sie da besonders gedacht?“ Damit machst du die Zweideutigkeit sichtbar, ohne sie ihm vorzuwerfen." },
-      { speaker: "Nesrin", text: "Und wenn er ausweicht?" },
+      { speaker: "Wilma", text: "Und wenn er ausweicht?" },
       { speaker: "Jonas", text: "Dann war es beabsichtigt, und du hast deine Antwort." },
-      { speaker: "Nesrin", text: "Ich hätte gedacht, so etwas gibt es nur bei uns zu Hause." },
+      { speaker: "Wilma", text: "Ich hätte gedacht, so etwas gibt es nur bei uns zu Hause." },
       { speaker: "Jonas", text: "Das gibt es überall. Nur die Mittel sind andere. Hier läuft vieles über Untertreibung — je harmloser das Wort, desto schärfer manchmal die Anspielung." },
-      { speaker: "Nesrin", text: "Und woran merke ich, ob es subtil gemeint war oder ich zu viel hineinlese?" },
+      { speaker: "Wilma", text: "Und woran merke ich, ob es subtil gemeint war oder ich zu viel hineinlese?" },
       { speaker: "Jonas", text: "Nie ganz sicher. Deshalb fragt man." },
-      { speaker: "Nesrin", text: "Das ist anstrengend." },
+      { speaker: "Wilma", text: "Das ist anstrengend." },
       { speaker: "Jonas", text: "Ist es. Aber es ist keine Geheimsprache. Wer nachfragt, kommt fast immer durch." },
     ],
     questions: [
@@ -471,7 +471,7 @@ export const c1U17: SkillExercise[] = [
         ],
         sample:
           "Betreff: Ihre Bewerbung als Teamleitung — Rückmeldung\n\n" +
-          "Sehr geehrte Frau Kaya,\n\n" +
+          "Sehr geehrte Frau Graf,\n\n" +
           "wir haben uns nach der zweiten Runde für eine andere Bewerberin entschieden. Das Ergebnis tut mir leid, und ich möchte Ihnen sagen, worauf es beruht.\n\n" +
           "Ihre Lösung, gerade im technischen Teil, hat uns überzeugt; sie war die durchdachteste der Runde. Ausschlaggebend war ein anderer Punkt: Die Stelle führt vom ersten Tag an ein Team von neun Personen, und diesbezüglich hatte die andere Kandidatin mehrere Jahre Erfahrung vorzuweisen.\n\n" +
           "Ihre Unterlagen löschen wir, wie vorgeschrieben, nach Abschluss des Verfahrens — es sei denn, Sie stimmen einer Speicherung zu. Letzteres würde ich mir wünschen: Im Frühjahr besetzen wir eine zweite Stelle im selben Bereich, und ich würde Sie gern erneut einladen.\n\n" +

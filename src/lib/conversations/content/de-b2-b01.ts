@@ -178,7 +178,7 @@ export const deB2B01: Conversation[] = [
       word("Son", { de: "überziehen", tr: "süreyi aşmak" }),
       { say: [tr("Kalıbımız:"), de("Ich würde vorschlagen, … zu …"), tr("Düz kipte söylenseydi bir karar olurdu; dilek kipi onu bir öneriye çeviriyor.")] },
       { say: [tr("Örnek:"), de("Ich würde vorschlagen, zuerst die Zahlen anzusehen."), tr("Tekrar et:"), de("Ich würde vorschlagen, zuerst die Zahlen anzusehen")], expect: repeat("Ich würde vorschlagen, zuerst die Zahlen anzusehen") },
-      { say: [tr("Sıra sende: 'Önce gündemi baştan sona geçmeyi öneririm.'")], expect: produce("Ich würde vorschlagen, zuerst die Tagesordnung durchzugehen", [tr("Dilek kipi ana cümlede; ayrılabilen fiilde zu öneğin ardına girer:"), de("Ich würde vorschlagen, zuerst die Tagesordnung durchzugehen."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Önce gündemi baştan sona geçmeyi öneririm.'")], expect: produce("Ich würde vorschlagen, zuerst die Tagesordnung durchzugehen", [tr("Leonie kipi ana cümlede; ayrılabilen fiilde zu öneğin ardına girer:"), de("Ich würde vorschlagen, zuerst die Tagesordnung durchzugehen."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi kararı kayda geçir: 'Bu konuda anlaştığımızı kayda geçirebilir miyiz?'")], expect: produce("Könnten wir festhalten, dass wir uns einig sind", [tr("Kibar soru, yan cümlede fiil sonda:"), de("Könnten wir festhalten, dass wir uns einig sind?"), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Toparlayalım: üç noktada anlaştık.'")], expect: produce("Fassen wir zusammen: In drei Punkten sind wir uns einig", [tr("Rica biçiminde fiil başta; ikinci cümlede tümleç öne alınmış:"), de("Fassen wir zusammen: In drei Punkten sind wir uns einig."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Könnten wir festhalten, dass wir sind uns einig?"), tr("cümlesi doğru mu?")], expect: truefalse("Könnten wir festhalten, dass wir sind uns einig?", false, [tr("Yan cümlede çekimli fiil en sona gider:"), de("Könnten wir festhalten, dass wir uns einig sind?")]) },
@@ -329,7 +329,7 @@ export const deB2B01: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün çok kısa ama çok işlevsel bir tür: asansör sohbeti. Kimse gerçek bir konu açmaz ama ilişki tam da orada kurulur. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Bu sohbetin dili bilerek bağlayıcı değildir. 'Bir ara yapmalıyız' der, tarih vermez. Dilek kipi bu belirsizliği kibarca taşır. Önce kelimeler.")] },
+      { say: [tr("Bu sohbetin dili bilerek bağlayıcı değildir. 'Bir ara yapmalıyız' der, tarih vermez. Leonie kipi bu belirsizliği kibarca taşır. Önce kelimeler.")] },
       word("İlk", { de: "unverbindlich", tr: "bağlayıcı olmayan" }),
       word("İkinci", { de: "beiläufig", tr: "laf arasında" }),
       word("Üçüncü", { de: "die Belegschaft", tr: "çalışanlar" }),

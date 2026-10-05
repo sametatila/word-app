@@ -223,12 +223,12 @@ export const deA2P7: SkillExercise[] = [
         ],
         sample:
           "Sehr geehrte Frau Bloom, ich bewerbe mich um die Stelle als Aushilfe in Ihrem Gartencenter. " +
-          "Ich habe Ihre Anzeige gestern im Internet gelesen. Mein Name ist Hande Yildiz, ich bin sechsundzwanzig Jahre alt " +
+          "Ich habe Ihre Anzeige gestern im Internet gelesen. Mein Name ist Mareen Fink, ich bin sechsundzwanzig Jahre alt " +
           "und wohne seit zwei Jahren in Peine. Zurzeit arbeite ich zwei Tage pro Woche in einem Café. " +
           "Vorher habe ich zwei Jahre in einem Blumenladen gearbeitet, deshalb kenne ich viele Pflanzen. " +
           "Ich arbeite gern draußen und der Regen stört mich nicht. Am Freitag und am Samstag stehe ich Ihnen zur Verfügung " +
           "und ich kann ab April anfangen. Über eine Einladung zu einem Vorstellungsgespräch würde ich mich freuen. " +
-          "Mit freundlichen Grüßen, Hande Yildiz",
+          "Mit freundlichen Grüßen, Mareen Fink",
       },
     ],
   },

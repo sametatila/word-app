@@ -43,23 +43,23 @@ export const enA2U18: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Nil: Excuse me, how much is this?\n" +
+      "Katie: Excuse me, how much is this?\n" +
       "Clerk: The small one is nine euros, the big one fourteen.\n" +
-      "Nil: Do you have anything cheaper? I need six gifts.\n" +
+      "Katie: Do you have anything cheaper? I need six gifts.\n" +
       "Clerk: Six! Then look here. These postcards are two euros and this jewelry is four.\n" +
-      "Nil: The jewelry is nice. Is it from here?\n" +
+      "Katie: The jewelry is nice. Is it from here?\n" +
       "Clerk: From this street, yes. A woman makes it in the house opposite.\n" +
-      "Nil: Then I'll take four of them. And two postcards for my parents.\n" +
+      "Katie: Then I'll take four of them. And two postcards for my parents.\n" +
       "Clerk: Your parents get postcards and your friends get jewelry?\n" +
-      "Nil: My parents want postcards. They put them on the door.\n" +
+      "Katie: My parents want postcards. They put them on the door.\n" +
       "Clerk: Then they are right. Could I wrap them as a gift?\n" +
-      "Nil: Yes, please. The four small ones — not the postcards.\n" +
+      "Katie: Yes, please. The four small ones — not the postcards.\n" +
       "Clerk: Understood. Twenty euros for everything.\n" +
-      "Nil: Here you are. And thank you for the cheaper idea.\n" +
+      "Katie: Here you are. And thank you for the cheaper idea.\n" +
       "Clerk: Everybody asks. Not everybody listens.",
     questions: [
       {
-        text: "How many gifts does Nil need?",
+        text: "How many gifts does Katie need?",
         options: ["six", "four", "two"],
         answer: 0,
         explain: "„Do you have anything cheaper? I need six gifts.“",
@@ -87,7 +87,7 @@ export const enA2U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Nil want the store to do?",
+        text: "What does Katie want the store to do?",
         options: [],
         answer: 0,
         accept: ["wrap them", "wrap the jewelry", "wrap them as a gift"],
@@ -189,21 +189,21 @@ export const enA2U18: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Sena", text: "Are you free on Saturday?" },
-      { speaker: "Can", text: "In the evening, yes. Why?" },
-      { speaker: "Sena", text: "It's my birthday. Would you like to come?" },
-      { speaker: "Can", text: "I'd love to. What time?" },
-      { speaker: "Sena", text: "From seven. Nothing big — eight people, food, and my brother with his guitar." },
-      { speaker: "Can", text: "Should I bring something?" },
-      { speaker: "Sena", text: "Only yourself. And if you want to bring somebody, that is fine too." },
-      { speaker: "Can", text: "Then I'll bring Mert. Is that all right?" },
-      { speaker: "Sena", text: "With pleasure. Mert is funny." },
-      { speaker: "Can", text: "What about Nil?" },
-      { speaker: "Sena", text: "I invited Nil, but she can't come. She's in Izmir until Sunday." },
-      { speaker: "Can", text: "Then we'll call her from the party." },
-      { speaker: "Sena", text: "Good idea. And you don't have to buy a present." },
-      { speaker: "Can", text: "I know. I want to." },
-      { speaker: "Sena", text: "Then come anytime after seven. The door is open." },
+      { speaker: "Ellie", text: "Are you free on Saturday?" },
+      { speaker: "Tyler", text: "In the evening, yes. Why?" },
+      { speaker: "Ellie", text: "It's my birthday. Would you like to come?" },
+      { speaker: "Tyler", text: "I'd love to. What time?" },
+      { speaker: "Ellie", text: "From seven. Nothing big — eight people, food, and my brother with his guitar." },
+      { speaker: "Tyler", text: "Should I bring something?" },
+      { speaker: "Ellie", text: "Only yourself. And if you want to bring somebody, that is fine too." },
+      { speaker: "Tyler", text: "Then I'll bring Henry. Is that all right?" },
+      { speaker: "Ellie", text: "With pleasure. Henry is funny." },
+      { speaker: "Tyler", text: "What about Katie?" },
+      { speaker: "Ellie", text: "I invited Katie, but she can't come. She's in Izmir until Sunday." },
+      { speaker: "Tyler", text: "Then we'll call her from the party." },
+      { speaker: "Ellie", text: "Good idea. And you don't have to buy a present." },
+      { speaker: "Tyler", text: "I know. I want to." },
+      { speaker: "Ellie", text: "Then come anytime after seven. The door is open." },
     ],
     questions: [
       {
@@ -213,17 +213,17 @@ export const enA2U18: SkillExercise[] = [
         explain: "„It's my birthday. Would you like to come? … From seven.“",
       },
       {
-        text: "Who does Can bring?",
-        options: ["Mert", "Nil", "nobody"],
+        text: "Who does Tyler bring?",
+        options: ["Henry", "Katie", "nobody"],
         answer: 0,
-        explain: "„Then I'll bring Mert. Is that all right? — With pleasure.“",
+        explain: "„Then I'll bring Henry. Is that all right? — With pleasure.“",
       },
       {
         kind: "truefalse",
-        text: "Nil is in Izmir until Sunday.",
+        text: "Katie is in Izmir until Sunday.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I invited Nil, but she can't come. She's in Izmir until Sunday.“",
+        explain: "„I invited Katie, but she can't come. She's in Izmir until Sunday.“",
       },
       {
         kind: "gapfill",
@@ -243,7 +243,7 @@ export const enA2U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Sena say about a present?",
+        text: "What does Ellie say about a present?",
         options: [],
         answer: 0,
         accept: ["don't buy a present", "no present", "nothing"],
@@ -267,18 +267,18 @@ export const enA2U18: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Mert", text: "Happy birthday! This is for you. I hope you like it." },
-      { speaker: "Mert", text: "Every year the same problem: what do I buy? And every year the same answer, two days too late." },
-      { speaker: "Mert", text: "This year I asked in January. My sister said: a book. In March I forgot the name of the book." },
-      { speaker: "Mert", text: "In May I asked again. She said: the same book. In June I bought it." },
-      { speaker: "Mert", text: "And now, in September, I'm giving it to her. Four candles on the cake, one for every month since I asked again." },
-      { speaker: "Mert", text: "My sister opened it and laughed. Then she said: I haven't bought your present yet. Your birthday is in November." },
-      { speaker: "Mert", text: "That is our family. Candy, jokes, a hug, and the presents come when they come." },
-      { speaker: "Mert", text: "We celebrate the day, not the paper. That is the surprise nobody buys." },
+      { speaker: "Henry", text: "Happy birthday! This is for you. I hope you like it." },
+      { speaker: "Henry", text: "Every year the same problem: what do I buy? And every year the same answer, two days too late." },
+      { speaker: "Henry", text: "This year I asked in January. My sister said: a book. In March I forgot the name of the book." },
+      { speaker: "Henry", text: "In May I asked again. She said: the same book. In June I bought it." },
+      { speaker: "Henry", text: "And now, in September, I'm giving it to her. Four candles on the cake, one for every month since I asked again." },
+      { speaker: "Henry", text: "My sister opened it and laughed. Then she said: I haven't bought your present yet. Your birthday is in November." },
+      { speaker: "Henry", text: "That is our family. Candy, jokes, a hug, and the presents come when they come." },
+      { speaker: "Henry", text: "We celebrate the day, not the paper. That is the surprise nobody buys." },
     ],
     questions: [
       {
-        text: "When did Mert buy the present?",
+        text: "When did Henry buy the present?",
         options: ["in June", "in January", "in September"],
         answer: 0,
         explain: "„In May I asked again. She said: the same book. In June I bought it.“",
@@ -291,14 +291,14 @@ export const enA2U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The sister has bought Mert's present.",
+        text: "The sister has bought Henry's present.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I haven't bought your present yet. Your birthday is in November.“",
       },
       {
         kind: "gapfill",
-        text: "Mert's birthday is in ___.",
+        text: "Henry's birthday is in ___.",
         options: [],
         answer: 0,
         accept: ["November"],
@@ -318,7 +318,7 @@ export const enA2U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["in September", "September", "today"],
-        explain: "Mert hediyeyi eylülde, kız kardeşinin doğum gününde veriyor; Mert'in kendi doğum günü kasımda.",
+        explain: "Henry hediyeyi eylülde, kız kardeşinin doğum gününde veriyor; Henry'nin kendi doğum günü kasımda.",
       },
     ],
   },

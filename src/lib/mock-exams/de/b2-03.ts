@@ -53,7 +53,7 @@ export const B2_03: MockPaper = {
               id: "pA",
               genre: "Erfahrungsbericht A",
               genreTr: "Deneyim yazısı A",
-              title: "Aylin, Übersetzerin",
+              title: "Helene, Übersetzerin",
               body: `Seit zwei Jahren übersetze ich kaum noch von null. Der erste Entwurf kommt aus der Maschine, ich prüfe ihn und schreibe die Hälfte um. Das klingt nach weniger Arbeit, ist aber anstrengender: Fehler in einem flüssigen Text zu finden verlangt mehr Aufmerksamkeit als selbst zu formulieren.
 
 Bezahlt werde ich inzwischen nach Zeilen, die ich ändere. Wer schnell prüft, verdient weniger als früher; wer gründlich prüft, verdient ebenfalls weniger, weil er langsamer ist. Diese Rechnung geht für niemanden auf, und darüber wird in meiner Branche zu selten offen gesprochen.
@@ -123,17 +123,17 @@ Kollegen halten mir vor, ich machte es den Schülern zu leicht. Ich sehe es umge
               id: "de-b2-03-l1-1",
               no: 1,
               text: "Wer beschreibt, dass die Prüfung des maschinellen Ergebnisses mehr Konzentration verlangt als die eigene Arbeit?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 0,
               explain:
-                "Aylin: \"Fehler in einem flüssigen Text zu finden verlangt mehr Aufmerksamkeit als selbst zu formulieren\". Frau Doll da güvene değiniyor ama zihinsel yükü değil, genç meslektaşların acele etmesini eleştiriyor.",
+                "Helene: \"Fehler in einem flüssigen Text zu finden verlangt mehr Aufmerksamkeit als selbst zu formulieren\". Frau Doll da güvene değiniyor ama zihinsel yükü değil, genç meslektaşların acele etmesini eleştiriyor.",
             },
             {
               kind: "mcq",
               id: "de-b2-03-l1-2",
               no: 2,
               text: "Wer berichtet, dass eine Verbesserung erst nach dokumentierten Fehlern kam?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 1,
               explain:
                 "Robert: \"Erst nachdem eine Kollegin die Fehler systematisch gesammelt hatte, wurde nachgebessert\" — düzeltme ancak belgelenmiş hatalardan sonra geliyor. Öteki üç metinde böyle bir düzeltme süreci anlatılmıyor.",
@@ -143,7 +143,7 @@ Kollegen halten mir vor, ich machte es den Schülern zu leicht. Ich sehe es umge
               id: "de-b2-03-l1-3",
               no: 3,
               text: "Wer sieht eine Fähigkeit verschwinden, die nur durch eigene Irrtümer entsteht?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 2,
               explain:
                 "Frau Doll sesi yerli yerine oturtma becerisini kastediyor: \"Diese Fähigkeit entsteht nur, wenn man oft danebenliegt\". Nils de bir kayıptan söz ediyor ama onunki ölçme sorunu.",
@@ -153,7 +153,7 @@ Kollegen halten mir vor, ich machte es den Schülern zu leicht. Ich sehe es umge
               id: "de-b2-03-l1-4",
               no: 4,
               text: "Wer hat die eigene Bewertungspraxis grundlegend geändert?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 3,
               explain:
                 "Nils düzeni tersine çevirmiş: \"geschrieben wird im Unterricht, überarbeitet wird zu Hause\" ve not gerekçeli düzeltmeye veriliyor. Frau Doll sınavın kolaylaştığını söylüyor ama bunu kendisi değiştirmiş değil.",
@@ -163,17 +163,17 @@ Kollegen halten mir vor, ich machte es den Schülern zu leicht. Ich sehe es umge
               id: "de-b2-03-l1-5",
               no: 5,
               text: "Wer stellt fest, dass die Bezahlung unabhängig vom Arbeitstempo schlechter ausfällt?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 0,
               explain:
-                "Aylin iki yolu da kapalı buluyor: hızlı denetleyen az kazanıyor, dikkatli denetleyen de yavaş olduğu için az kazanıyor. \"Diese Rechnung geht für niemanden auf\".",
+                "Helene iki yolu da kapalı buluyor: hızlı denetleyen az kazanıyor, dikkatli denetleyen de yavaş olduğu için az kazanıyor. \"Diese Rechnung geht für niemanden auf\".",
             },
             {
               kind: "mcq",
               id: "de-b2-03-l1-6",
               no: 6,
               text: "Wer verlangt von Auszubildenden eine eigene Einschätzung, bevor das Gerät antwortet?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 2,
               explain:
                 "Frau Doll'un yöntemi: önce genç meslektaş kendi tahminini söylüyor, \"und dann darf das Gerät sprechen\". Sıralamayı bilerek tersine çeviriyor.",
@@ -183,7 +183,7 @@ Kollegen halten mir vor, ich machte es den Schülern zu leicht. Ich sehe es umge
               id: "de-b2-03-l1-7",
               no: 7,
               text: "Wer weist den Vorwurf zurück, die eigene Lösung mache es den Betroffenen zu bequem?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 3,
               explain:
                 "Nils meslektaşlarının eleştirisini aktarıp \"Ich sehe es umgekehrt\" diyor: bir cümleyi neden değiştirdiğini açıklamak zorunda olan tek tıkla kurtulamaz.",
@@ -193,17 +193,17 @@ Kollegen halten mir vor, ich machte es den Schülern zu leicht. Ich sehe es umge
               id: "de-b2-03-l1-8",
               no: 8,
               text: "Wer betont, dass das Werkzeug trotz aller Kritik in bestimmten Textsorten überzeugt?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 0,
               explain:
-                "Aylin kullanım kılavuzları ve sözleşmeler için \"besser als sein Ruf\" diyor, edebî metinler için değil. Yani eleştirisi tümden bir ret değil.",
+                "Helene kullanım kılavuzları ve sözleşmeler için \"besser als sein Ruf\" diyor, edebî metinler için değil. Yani eleştirisi tümden bir ret değil.",
             },
             {
               kind: "mcq",
               id: "de-b2-03-l1-9",
               no: 9,
               text: "Wer beschreibt, dass ein Zeitgewinn durch höhere Anforderungen wieder aufgezehrt wurde?",
-              options: ["Aylin", "Robert", "Frau Doll", "Nils"],
+              options: ["Helene", "Robert", "Frau Doll", "Nils"],
               answer: 1,
               explain:
                 "Robert vardiya başına kazanılan 40 dakikayı anlatıyor, ardından bir hasta daha bakma beklentisini: \"Damit ist der Gewinn wieder weg\".",
@@ -513,7 +513,7 @@ Es wäre also ehrlicher, offen über die Verteilung dieser Kosten zu streiten, s
             },
             {
               key: "f",
-              label: "f — Herr Yildiz, Facharbeiter",
+              label: "f — Herr Fink, Facharbeiter",
               body: "Bei uns wurde eine neue Anlage eingeführt und die Einweisung fand in der Freizeit statt, unbezahlt. Ich habe teilgenommen, weil ich meine Stelle behalten wollte. Freiwillig war daran nichts, nur unbezahlt.",
             },
             {
@@ -571,7 +571,7 @@ Es wäre also ehrlicher, offen über die Verteilung dieser Kosten zu streiten, s
               text: "Was formal freiwillig heißt, kann in der Praxis erzwungen sein.",
               answer: "f",
               explain:
-                "Herr Yildiz eğitime işini kaybetmemek için katıldığını söylüyor: \"Freiwillig war daran nichts, nur unbezahlt\". Gönüllülük burada yalnız kâğıt üstünde.",
+                "Herr Fink eğitime işini kaybetmemek için katıldığını söylüyor: \"Freiwillig war daran nichts, nur unbezahlt\". Gönüllülük burada yalnız kâğıt üstünde.",
             },
             {
               kind: "match",
@@ -724,7 +724,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, Frau Örs, hier ist Rehm aus der Personalabteilung. Ihre Anmeldung für die Schulung im Mai ist angekommen. Der Kurs ist allerdings ausgebucht; ich habe Sie deshalb für den Junitermin vorgemerkt. Falls Ihnen das nicht passt, sagen Sie bitte bis Donnerstag Bescheid, dann setze ich Sie auf die Warteliste für Mai zurück.",
+                  text: "Guten Tag, Frau Nolting, hier ist Rehm aus der Personalabteilung. Ihre Anmeldung für die Schulung im Mai ist angekommen. Der Kurs ist allerdings ausgebucht; ich habe Sie deshalb für den Junitermin vorgemerkt. Falls Ihnen das nicht passt, sagen Sie bitte bis Donnerstag Bescheid, dann setze ich Sie auf die Warteliste für Mai zurück.",
                 },
               ],
             },
@@ -811,7 +811,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
               id: "de-b2-03-h1-5",
               no: 5,
               ref: "h3",
-              text: "Frau Örs ist ohne ihr Zutun für einen späteren Termin eingetragen worden.",
+              text: "Frau Nolting ist ohne ihr Zutun für einen späteren Termin eingetragen worden.",
               answer: true,
               explain:
                 "Mayıs kursu dolu olduğu için \"ich habe Sie deshalb für den Junitermin vorgemerkt\" deniyor; itirazı varsa perşembeye kadar bildirmesi isteniyor.",
@@ -821,7 +821,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
               id: "de-b2-03-h1-6",
               no: 6,
               ref: "h3",
-              text: "Was passiert, wenn Frau Örs sich bis Donnerstag meldet?",
+              text: "Was passiert, wenn Frau Nolting sich bis Donnerstag meldet?",
               options: [
                 "Sie wird wieder für den Maitermin vorgemerkt.",
                 "Ihre Anmeldung wird vollständig gelöscht und muss neu erfolgen.",
@@ -1429,7 +1429,7 @@ Mir ist wichtig, dass Sie das nicht als Desinteresse verstehen. Ich arbeite täg
 Wäre es möglich, einen zweiten Termin unter der Woche anzubieten? Falls sich das nicht einrichten lässt, würde ich die Inhalte gern in zwei kürzeren Einheiten während der Schicht nachholen und die Kolleginnen anschließend selbst einweisen.
 
 Mit freundlichen Grüßen
-Deniz Kaya`,
+Sascha Graf`,
             criteria: [
               "Duyuruya somut atıf var mı (tarih, konu)?",
               "Ret gerekçesi inandırıcı ve kısa mı, savunmaya kaçmıyor mu?",

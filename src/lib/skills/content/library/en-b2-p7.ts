@@ -200,7 +200,7 @@ export const enB2P7: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "writing",
-    title: "What a Study Can and Cannot Show",
+    title: "What a Study Tyler and Cannot Show",
     genre: "essay",
     intro: "Kısa bir deneme yazıyorsun: önce iki cümle kur, sonra bir bulguyu ve sınırlarını tartış.",
     gloss: [

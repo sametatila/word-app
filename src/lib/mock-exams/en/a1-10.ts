@@ -332,8 +332,8 @@ On Saturday: 12:00.`,
               id: "t4",
               genre: "Message",
               genreTr: "İleti",
-              title: "To Hale",
-              body: `Hello Hale,
+              title: "To Naomi",
+              body: `Hello Naomi,
 
 I am at the post office {{15}} Tuesday. The package is very big!
 
@@ -847,7 +847,7 @@ Phone:              {{5}}`,
               { de: "Say when your friend can come.", tr: "Arkadaşının ne zaman gelebileceğini söyle." },
               { de: "Ask one question about the package.", tr: "Koliyle ilgili bir soru sor." },
             ],
-            sample: `Hi Hale,
+            sample: `Hi Naomi,
 
 Your package came to my house today. It is very big!
 

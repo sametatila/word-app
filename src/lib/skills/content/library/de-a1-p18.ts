@@ -30,7 +30,7 @@ export const deA1P18: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Liebe Deniz,\n\n" +
+      "Liebe Sascha,\n\n" +
       "in zwei Wochen bist du bei uns in Freiburg!\n\n" +
       "Wir sind vier Personen: Peter, ich, unsere Tochter Mia und unser Sohn Ben. Mia ist zwölf Jahre alt und Ben neun. " +
       "Wir haben auch einen Hund, er heißt Bruno. Hast du Angst vor Hunden? Bitte schreib es uns.\n\n" +
@@ -42,19 +42,19 @@ export const deA1P18: SkillExercise[] = [
     questions: [
       {
         text: "Wer schreibt die E-Mail?",
-        options: ["die Sprachschule in Freiburg", "die Mutter in der Gastfamilie", "Deniz"],
+        options: ["die Sprachschule in Freiburg", "die Mutter in der Gastfamilie", "Sascha"],
         answer: 1,
         explain: "E-postayı Julia Hoffmann yazıyor; kızı Mia ve oğlu Ben'den söz ediyor, yani ailenin annesi.",
       },
       {
-        text: "Wie kommt Deniz am schnellsten zur Schule?",
+        text: "Wie kommt Sascha am schnellsten zur Schule?",
         options: ["mit dem Bus", "zu Fuß", "mit dem Fahrrad"],
         answer: 2,
         explain: "Otobüsle on beş dakika, „mit dem Fahrrad nur zehn“.",
       },
       {
         kind: "truefalse",
-        text: "Deniz isst mittags bei der Familie.",
+        text: "Sascha isst mittags bei der Familie.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "„Mittags isst du in der Schule“; ailede kahvaltı ve akşam yemeği var.",
@@ -69,7 +69,7 @@ export const deA1P18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wer holt Deniz vom Bahnhof ab?",
+        text: "Wer holt Sascha vom Bahnhof ab?",
         options: [],
         answer: 0,
         accept: ["Peter", "Peter Hoffmann"],
@@ -77,7 +77,7 @@ export const deA1P18: SkillExercise[] = [
       },
       {
         text: "Warum fragt Julia: „Hast du Angst vor Hunden?“",
-        options: ["Die Familie hat einen Hund.", "Deniz möchte einen Hund.", "In der Schule gibt es einen Hund."],
+        options: ["Die Familie hat einen Hund.", "Sascha möchte einen Hund.", "In der Schule gibt es einen Hund."],
         answer: 0,
         explain: "„Wir haben auch einen Hund, er heißt Bruno“ — soru bu yüzden soruluyor.",
       },
@@ -104,22 +104,22 @@ export const deA1P18: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Friseurin", text: "Guten Tag! Haben Sie einen Termin?" },
-      { speaker: "Herr Aksu", text: "Ja, um vier Uhr. Mein Name ist Aksu." },
+      { speaker: "Herr Kretschmer", text: "Ja, um vier Uhr. Mein Name ist Kretschmer." },
       { speaker: "Friseurin", text: "Richtig, bitte setzen Sie sich hier hin. Was machen wir heute?" },
-      { speaker: "Herr Aksu", text: "Meine Haare sind zu lang. Bitte hinten und an den Seiten kurz, aber oben nicht so kurz." },
+      { speaker: "Herr Kretschmer", text: "Meine Haare sind zu lang. Bitte hinten und an den Seiten kurz, aber oben nicht so kurz." },
       { speaker: "Friseurin", text: "Gut. Soll ich die Haare zuerst waschen?" },
-      { speaker: "Herr Aksu", text: "Ja, gern. Und bitte schneiden Sie den Bart nicht, der bleibt so." },
+      { speaker: "Herr Kretschmer", text: "Ja, gern. Und bitte schneiden Sie den Bart nicht, der bleibt so." },
       { speaker: "Friseurin", text: "So, fertig. Wie gefällt es Ihnen?" },
-      { speaker: "Herr Aksu", text: "Sehr gut, danke! Was kostet das?" },
+      { speaker: "Herr Kretschmer", text: "Sehr gut, danke! Was kostet das?" },
       { speaker: "Friseurin", text: "Waschen und Schneiden kostet zweiundzwanzig Euro." },
-      { speaker: "Herr Aksu", text: "Hier sind fünfundzwanzig. Der Rest ist für Sie." },
+      { speaker: "Herr Kretschmer", text: "Hier sind fünfundzwanzig. Der Rest ist für Sie." },
     ],
     questions: [
       {
-        text: "Wann hat Herr Aksu seinen Termin?",
+        text: "Wann hat Herr Kretschmer seinen Termin?",
         options: ["um halb vier", "um fünf Uhr", "um vier Uhr"],
         answer: 2,
-        explain: "„Ja, um vier Uhr. Mein Name ist Aksu.“",
+        explain: "„Ja, um vier Uhr. Mein Name ist Kretschmer.“",
       },
       {
         text: "Wie möchte er die Haare oben?",
@@ -144,7 +144,7 @@ export const deA1P18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie viel Trinkgeld gibt Herr Aksu?",
+        text: "Wie viel Trinkgeld gibt Herr Kretschmer?",
         options: [],
         answer: 0,
         accept: ["drei Euro", "drei", "3 Euro", "3"],
@@ -212,7 +212,7 @@ export const deA1P18: SkillExercise[] = [
         sample:
           "Mein Lieblingsort ist der Park am Fluss. Er liegt nicht weit von meiner Wohnung, nur zehn Minuten zu Fuß. " +
           "Dort gibt es viele alte Bäume, einen kleinen See und ein Café. " +
-          "Am Sonntag gehe ich dort oft spazieren, manchmal mit meiner Freundin Selin. " +
+          "Am Sonntag gehe ich dort oft spazieren, manchmal mit meiner Freundin Luisa. " +
           "Wir trinken Tee und sehen die Boote auf dem Wasser. Ich mag den Ort, denn dort ist es immer ruhig und grün.",
       },
     ],

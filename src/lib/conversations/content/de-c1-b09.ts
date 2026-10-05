@@ -125,7 +125,7 @@ export const deC1B09: Conversation[] = [
       { say: [tr("Şimdi: 'Sözümü geri alıyorum.'")], expect: produce("Ich nehme das zurück", [tr("Ayrılabilen fiilin öneki sonda:"), de("Ich nehme das zurück."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Kimse hedef tahtası olmak istemez.'")], expect: produce("Niemand will die Zielscheibe sein", [tr("Belirsiz zamir özne; mastar sonda:"), de("Niemand will die Zielscheibe sein."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Das ist nicht gut ankommen."), tr("cümlesi doğru mu?")], expect: truefalse("Das ist nicht gut ankommen.", false, [tr("Geçmiş zamanda mastar değil ortaç gelir:"), de("Das ist nicht gut angekommen.")]) },
-      { say: [tr("Son: 'Bu incitici olabilir.'")], expect: produce("Das könnte verletzend sein", [tr("Dilek kipiyle temkinli uyarı:"), de("Das könnte verletzend sein."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Bu incitici olabilir.'")], expect: produce("Das könnte verletzend sein", [tr("Leonie kipiyle temkinli uyarı:"), de("Das könnte verletzend sein."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette sınırı aşan bir şakayı konuşacaksın.")] },
     ],
     chat: {

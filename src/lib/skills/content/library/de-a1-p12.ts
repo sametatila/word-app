@@ -106,15 +106,15 @@ export const deA1P12: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Frau Aksoy", text: "Herr Wolf, haben Sie kurz Zeit? Wir müssen den Betriebsausflug planen." },
+      { speaker: "Frau Thiel", text: "Herr Wolf, haben Sie kurz Zeit? Wir müssen den Betriebsausflug planen." },
       { speaker: "Herr Wolf", text: "Ja, gern. Letztes Jahr waren wir im Museum. Das war ein bisschen langweilig." },
-      { speaker: "Frau Aksoy", text: "Ich habe zwei Ideen: eine Fahrt mit dem Schiff auf dem Rhein oder eine Radtour." },
+      { speaker: "Frau Thiel", text: "Ich habe zwei Ideen: eine Fahrt mit dem Schiff auf dem Rhein oder eine Radtour." },
       { speaker: "Herr Wolf", text: "Eine Radtour ist schwierig. Nicht alle Kollegen haben ein Fahrrad." },
-      { speaker: "Frau Aksoy", text: "Stimmt. Dann nehmen wir das Schiff. Es fährt um zehn Uhr in Bonn ab. Wir treffen uns um neun Uhr am Bahnhof." },
+      { speaker: "Frau Thiel", text: "Stimmt. Dann nehmen wir das Schiff. Es fährt um zehn Uhr in Bonn ab. Wir treffen uns um neun Uhr am Bahnhof." },
       { speaker: "Herr Wolf", text: "Gibt es auf dem Schiff auch etwas zu essen?" },
-      { speaker: "Frau Aksoy", text: "Ja, es gibt ein Mittagessen. Die Firma bezahlt das Essen und die Fahrt. Nur die Getränke bezahlt jeder selbst." },
+      { speaker: "Frau Thiel", text: "Ja, es gibt ein Mittagessen. Die Firma bezahlt das Essen und die Fahrt. Nur die Getränke bezahlt jeder selbst." },
       { speaker: "Herr Wolf", text: "Super. Wie viele Leute kommen mit?" },
-      { speaker: "Frau Aksoy", text: "Vierzehn Kollegen. Ich schreibe heute noch eine E-Mail an alle." },
+      { speaker: "Frau Thiel", text: "Vierzehn Kollegen. Ich schreibe heute noch eine E-Mail an alle." },
     ],
     questions: [
       {
@@ -215,7 +215,7 @@ export const deA1P12: SkillExercise[] = [
           "Liebe Frau Hartmann, ich möchte vom zehnten bis zum vierundzwanzigsten Juli Urlaub nehmen. " +
           "Meine Schwester heiratet in Izmir und die ganze Familie kommt zur Hochzeit. " +
           "In dieser Zeit macht meine Kollegin Lena meine Arbeit, sie kennt alle Kunden. " +
-          "Ist das möglich? Ich freue mich auf Ihre Antwort. Viele Grüße, Deniz Aydin",
+          "Ist das möglich? Ich freue mich auf Ihre Antwort. Viele Grüße, Sascha Haas",
       },
     ],
   },

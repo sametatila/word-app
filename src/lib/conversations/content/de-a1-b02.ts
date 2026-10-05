@@ -41,7 +41,7 @@ export const deA1B02: Conversation[] = [
       {
         say: [
           tr(
-            "Merhaba! Bugün aileni tanıtmayı öğreneceğiz: 'Bu benim annem', 'Oğlumun adı Ali' gibi cümleler kuracaksın. Hazır mısın?",
+            "Merhaba! Bugün aileni tanıtmayı öğreneceğiz: 'Bu benim annem', 'Oğlumun adı Moritz' gibi cümleler kuracaksın. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -161,13 +161,13 @@ export const deA1B02: Conversation[] = [
       {
         say: [
           tr("İkinci kalıbımız aile üyesinin adını söyler:"),
-          de("Mein Sohn heißt Ali."),
+          de("Mein Sohn heißt Moritz."),
           tr("Buradaki fiili tanıyorsun; kendini tanıtırken de aynısını kullanmıştın."),
         ],
       },
       {
-        say: [tr("Lütfen"), de("Mein Sohn heißt Ali"), tr("de.")],
-        expect: { kind: "repeat", target: "Mein Sohn heißt Ali" },
+        say: [tr("Lütfen"), de("Mein Sohn heißt Moritz"), tr("de.")],
+        expect: { kind: "repeat", target: "Mein Sohn heißt Moritz" },
       },
       {
         say: [tr("Şimdi sen söyle: 'Kızımın adı Anna.'")],
@@ -1785,8 +1785,8 @@ export const deA1B02: Conversation[] = [
       scene:
         "Yeni bir tanıdığın, senin sık sık adını andığın arkadaşını merak ediyor. Nerede oturduğunu, ne iş yaptığını ve ne sıklıkta buluştuğunuzu anlat.",
       partner: "dinlemeyi seven, soru üstüne soru soran yeni bir tanıdık",
-      opening: "Du sprichst so oft von Murat. Wer ist das?",
-      openingTr: "Murat'tan çok söz ediyorsun. Kim bu?",
+      opening: "Du sprichst so oft von Niklas. Wer ist das?",
+      openingTr: "Niklas'tan çok söz ediyorsun. Kim bu?",
       goal: "Arkadaşının nerede oturduğu, ne iş yaptığı ve ne sıklıkta buluştuğunuz anlatılmış olur.",
       minTurns: 6,
     },

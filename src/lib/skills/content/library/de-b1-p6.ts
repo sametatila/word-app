@@ -117,18 +117,18 @@ export const deB1P6: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Frau Molnar", text: "Sie wollten über Ihre Stunden sprechen. Erzählen Sie mir, was Sie sich vorstellen." },
-      { speaker: "Herr Kaya", text: "Ich würde gern auf dreißig Stunden reduzieren, am liebsten ab April, erst einmal befristet auf ein Jahr." },
+      { speaker: "Herr Graf", text: "Ich würde gern auf dreißig Stunden reduzieren, am liebsten ab April, erst einmal befristet auf ein Jahr." },
       { speaker: "Frau Molnar", text: "Befristet klingt vernünftig. Was passiert dann mit den Projekten, die bei Ihnen liegen?" },
-      { speaker: "Herr Kaya", text: "Das größte Projekt läuft im März aus. Die beiden kleineren könnte ich behalten, wenn ich die Berichte abgebe." },
+      { speaker: "Herr Graf", text: "Das größte Projekt läuft im März aus. Die beiden kleineren könnte ich behalten, wenn ich die Berichte abgebe." },
       { speaker: "Frau Molnar", text: "Die Berichte sind aber genau der Teil, den sonst niemand machen kann. Wir müssten jemanden einarbeiten." },
-      { speaker: "Herr Kaya", text: "Das stimmt. Ich könnte Frau Reuter drei Monate lang einarbeiten, bevor ich reduziere." },
+      { speaker: "Herr Graf", text: "Das stimmt. Ich könnte Frau Reuter drei Monate lang einarbeiten, bevor ich reduziere." },
       { speaker: "Frau Molnar", text: "Damit kann ich arbeiten. Schreiben Sie mir den Antrag bitte bis Ende der Woche, mit einem Vorschlag, wie die Aufgaben verteilt werden." },
-      { speaker: "Herr Kaya", text: "Mache ich. Und die Frage nach dem Gehalt?" },
+      { speaker: "Herr Graf", text: "Mache ich. Und die Frage nach dem Gehalt?" },
       { speaker: "Frau Molnar", text: "Das Gehalt sinkt natürlich anteilig. Aber der Urlaub bleibt in Tagen gleich, weil Sie weiter an fünf Tagen kommen." },
     ],
     questions: [
       {
-        text: "Was möchte Herr Kaya?",
+        text: "Was möchte Herr Graf?",
         options: [
           "die Stelle wechseln",
           "auf dreißig Stunden reduzieren",
@@ -149,7 +149,7 @@ export const deB1P6: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Herr Kaya soll seine Stunden sofort reduzieren.",
+        text: "Herr Graf soll seine Stunden sofort reduzieren.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Önce üç ay Frau Reuter'i yetiştirecek; başvuruyu da hafta bitmeden yazacak.",
@@ -164,7 +164,7 @@ export const deB1P6: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "An wie vielen Tagen kommt Herr Kaya weiterhin?",
+        text: "An wie vielen Tagen kommt Herr Graf weiterhin?",
         options: [],
         answer: 0,
         accept: ["an fünf Tagen", "fünf", "fünf Tage"],

@@ -47,30 +47,30 @@ export const enA1U24: SkillExercise[] = [
       "I have a question: which website do you use for the course? I know two, but I can't find the class.\n\n" +
       "My password doesn't work either. Can you send me a new one? Or can we speak on the phone?\n\n" +
       "Last week I was very tired. I was sick and the internet was not important.\n\n" +
-      "Thank you and see you soon,\nDeniz",
+      "Thank you and see you soon,\nCharlie",
     questions: [
       {
-        text: "What is Deniz's question?",
+        text: "What is Charlie's question?",
         options: ["which website for the course", "how much a stamp is", "where Anna is"],
         answer: 0,
         explain: "„I have a question: which website do you use for the course?“",
       },
       {
-        text: "Where was Deniz yesterday?",
+        text: "Where was Charlie yesterday?",
         options: ["at home", "at the course", "on the phone"],
         answer: 0,
         explain: "„I was at home yesterday and I was happy with your message.“",
       },
       {
         kind: "truefalse",
-        text: "Deniz's password does not work.",
+        text: "Charlie's password does not work.",
         options: ["True", "False"],
         answer: 0,
         explain: "„My password doesn't work either.“ — yeni bir tane istiyor.",
       },
       {
         kind: "gapfill",
-        text: "Last week Deniz was very ___.",
+        text: "Last week Charlie was very ___.",
         options: [],
         answer: 0,
         accept: ["tired"],
@@ -78,7 +78,7 @@ export const enA1U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Deniz want from Anna?",
+        text: "What does Charlie want from Anna?",
         options: [],
         answer: 0,
         accept: ["a new password", "the website", "a password"],
@@ -102,20 +102,20 @@ export const enA1U24: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Good morning. I'd like to send this letter to Ireland.\n" +
+      "Lucy: Good morning. I'd like to send this letter to Ireland.\n" +
       "Clerk: Of course. What is in it? Only paper?\n" +
-      "Ela: Only paper and a photo.\n" +
+      "Lucy: Only paper and a photo.\n" +
       "Clerk: Then it is two euros.\n" +
-      "Ela: And how much is a stamp for Germany?\n" +
+      "Lucy: And how much is a stamp for Germany?\n" +
       "Clerk: One euro.\n" +
-      "Ela: I have a package too. How much is that?\n" +
+      "Lucy: I have a package too. How much is that?\n" +
       "Clerk: The package is heavy. Nine euros. Is it full?\n" +
-      "Ela: Yes, full. Books and a plastic box.\n" +
-      "Ela: Can I have two stamps, please? For two letters tomorrow.\n" +
+      "Lucy: Yes, full. Books and a plastic box.\n" +
+      "Lucy: Can I have two stamps, please? For two letters tomorrow.\n" +
       "Clerk: Here you are. And here is a pencil — you have to write the address.\n" +
-      "Ela: The address of the package is on the paper.\n" +
+      "Lucy: The address of the package is on the paper.\n" +
       "Clerk: Good. Thirteen euros together, please.\n" +
-      "Ela: Here is my card. Thank you!",
+      "Lucy: Here is my card. Thank you!",
     questions: [
       {
         text: "How much is the letter to Ireland?",
@@ -138,7 +138,7 @@ export const enA1U24: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ela buys two ___.",
+        text: "Lucy buys two ___.",
         options: [],
         answer: 0,
         accept: ["stamps"],
@@ -186,22 +186,22 @@ export const enA1U24: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Can", text: "Do you use this app?" },
-      { speaker: "Nil", text: "Yes, every day. I use the internet for my class." },
-      { speaker: "Can", text: "Which website?" },
-      { speaker: "Nil", text: "It is called Green School. My sister uses it too — she makes a video every week." },
-      { speaker: "Can", text: "And the password?" },
-      { speaker: "Nil", text: "You make your own password. It has to be long." },
-      { speaker: "Can", text: "My password is my name. Is that bad?" },
-      { speaker: "Nil", text: "Very bad! You should make a new one today." },
-      { speaker: "Can", text: "OK. And the phone app?" },
-      { speaker: "Nil", text: "The app is the same website, only smaller. I use it on the bus." },
-      { speaker: "Can", text: "Then I'm going to try it tomorrow." },
-      { speaker: "Nil", text: "And don't write your password on paper!" },
+      { speaker: "Tyler", text: "Do you use this app?" },
+      { speaker: "Katie", text: "Yes, every day. I use the internet for my class." },
+      { speaker: "Tyler", text: "Which website?" },
+      { speaker: "Katie", text: "It is called Green School. My sister uses it too — she makes a video every week." },
+      { speaker: "Tyler", text: "And the password?" },
+      { speaker: "Katie", text: "You make your own password. It has to be long." },
+      { speaker: "Tyler", text: "My password is my name. Is that bad?" },
+      { speaker: "Katie", text: "Very bad! You should make a new one today." },
+      { speaker: "Tyler", text: "OK. And the phone app?" },
+      { speaker: "Katie", text: "The app is the same website, only smaller. I use it on the bus." },
+      { speaker: "Tyler", text: "Then I'm going to try it tomorrow." },
+      { speaker: "Katie", text: "And don't write your password on paper!" },
     ],
     questions: [
       {
-        text: "What does Nil use the internet for?",
+        text: "What does Katie use the internet for?",
         options: ["her class", "a video", "the bus"],
         answer: 0,
         explain: "„I use the internet for my class.“ — video kız kardeşinin işi.",
@@ -240,7 +240,7 @@ export const enA1U24: SkillExercise[] = [
         text: "Who makes a video every week?",
         options: [],
         answer: 0,
-        accept: ["Nil's sister", "her sister", "the sister"],
+        accept: ["Katie's sister", "her sister", "the sister"],
         explain: "„My sister uses it too — she makes a video every week.“",
       },
     ],
@@ -251,7 +251,7 @@ export const enA1U24: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 24,
-    title: "Deniz in Ireland",
+    title: "Charlie in Ireland",
     genre: "monologue",
     intro: "Geçmişte „olmak“ fiili. „was“ ve „were“ art arda geçiyor.",
     gloss: [
@@ -261,16 +261,16 @@ export const enA1U24: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Deniz", text: "Yesterday I was at home all day. I was tired and I was a little sick." },
-      { speaker: "Deniz", text: "Last week I was in Ireland. The weather was cold but the people were friendly." },
-      { speaker: "Deniz", text: "We were in a small town near the sea. My sister was with me." },
-      { speaker: "Deniz", text: "In the evening we were in a café. The soup was good and the bread was warm." },
-      { speaker: "Deniz", text: "Were you at home yesterday too? Or were you at work?" },
-      { speaker: "Deniz", text: "My friends were at the lake. They were happy — the weather was sunny there!" },
+      { speaker: "Charlie", text: "Yesterday I was at home all day. I was tired and I was a little sick." },
+      { speaker: "Charlie", text: "Last week I was in Ireland. The weather was cold but the people were friendly." },
+      { speaker: "Charlie", text: "We were in a small town near the sea. My sister was with me." },
+      { speaker: "Charlie", text: "In the evening we were in a café. The soup was good and the bread was warm." },
+      { speaker: "Charlie", text: "Were you at home yesterday too? Or were you at work?" },
+      { speaker: "Charlie", text: "My friends were at the lake. They were happy — the weather was sunny there!" },
     ],
     questions: [
       {
-        text: "Where was Deniz yesterday?",
+        text: "Where was Charlie yesterday?",
         options: ["at home", "in Ireland", "at the lake"],
         answer: 0,
         explain: "„Yesterday I was at home all day.“ — İrlanda geçen haftaydı.",
@@ -283,7 +283,7 @@ export const enA1U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz's sister was with him.",
+        text: "Charlie's sister was with him.",
         options: ["True", "False"],
         answer: 0,
         explain: "„We were in a small town near the sea. My sister was with me.“",
@@ -298,7 +298,7 @@ export const enA1U24: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Deniz'in anlattığı sıra: doğru sıraya koy.",
+        text: "Charlie'nin anlattığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -311,7 +311,7 @@ export const enA1U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where were Deniz's friends?",
+        text: "Where were Charlie's friends?",
         options: [],
         answer: 0,
         accept: ["at the lake", "the lake", "lake"],

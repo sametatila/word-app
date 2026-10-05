@@ -104,24 +104,24 @@ export const enA1U06: SkillExercise[] = [
     minutes: 4,
     text:
       "Waiter: Good evening. A table for two?\n" +
-      "Ali: Yes, please. A table for two.\n" +
+      "Harry: Yes, please. A table for two.\n" +
       "Waiter: Here is the menu. What would you like?\n" +
-      "Ali: I'd like a soup, please. And a water.\n" +
-      "Eda: I'll have a sandwich with cheese, please.\n" +
+      "Harry: I'd like a soup, please. And a water.\n" +
+      "Erin: I'll have a sandwich with cheese, please.\n" +
       "Waiter: Anything else?\n" +
-      "Eda: No, thank you. But can I have a spoon? There is only a knife here.\n" +
+      "Erin: No, thank you. But can I have a spoon? There is only a knife here.\n" +
       "Waiter: Of course. One moment, please.\n" +
-      "Ali: How much is the soup?\n" +
+      "Harry: How much is the soup?\n" +
       "Waiter: Five euros. The sandwich is four euros.\n" +
-      "Eda: Can I have the check, please?\n" +
+      "Erin: Can I have the check, please?\n" +
       "Waiter: Yes. It is nine euros.\n" +
-      "Ali: Here is the money. Thank you!",
+      "Harry: Here is the money. Thank you!",
     questions: [
       {
-        text: "What does Ali order?",
+        text: "What does Harry order?",
         options: ["a soup and a water", "a sandwich", "a coffee"],
         answer: 0,
-        explain: "„I'd like a soup, please. And a water.“ — sandviçi Eda alıyor.",
+        explain: "„I'd like a soup, please. And a water.“ — sandviçi Erin alıyor.",
       },
       {
         text: "How much is the check?",
@@ -131,7 +131,7 @@ export const enA1U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is a spoon on Eda's table.",
+        text: "There is a spoon on Erin's table.",
         options: ["True", "False"],
         answer: 1,
         explain: "„But can I have a spoon? There is only a knife here.“ — kaşık yok, bıçak var.",
@@ -187,21 +187,21 @@ export const enA1U06: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ela", text: "Good morning. Can I have a newspaper, please?" },
+      { speaker: "Lucy", text: "Good morning. Can I have a newspaper, please?" },
       { speaker: "Seller", text: "Good morning. Here you are. Anything else?" },
-      { speaker: "Ela", text: "Yes, a coffee, please. A big cup." },
+      { speaker: "Lucy", text: "Yes, a coffee, please. A big cup." },
       { speaker: "Seller", text: "Here is your coffee. Any milk?" },
-      { speaker: "Ela", text: "No milk, thank you. How much is it?" },
+      { speaker: "Lucy", text: "No milk, thank you. How much is it?" },
       { speaker: "Seller", text: "The newspaper is two euros and the coffee is three euros. That's five euros." },
-      { speaker: "Ela", text: "Here is the money. I only have coins — is that a problem?" },
+      { speaker: "Lucy", text: "Here is the money. I only have coins — is that a problem?" },
       { speaker: "Seller", text: "No, it isn't a problem. Thank you." },
-      { speaker: "Ela", text: "Can I have a bag too?" },
+      { speaker: "Lucy", text: "Can I have a bag too?" },
       { speaker: "Seller", text: "Of course. Here you are." },
-      { speaker: "Ela", text: "Thank you very much. Have a nice day!" },
+      { speaker: "Lucy", text: "Thank you very much. Have a nice day!" },
     ],
     questions: [
       {
-        text: "What does Ela buy first?",
+        text: "What does Lucy buy first?",
         options: ["a newspaper", "a coffee", "a bag"],
         answer: 0,
         explain: "„Can I have a newspaper, please?“ ilk cümle; kahve sonra, çanta en son geliyor.",
@@ -214,14 +214,14 @@ export const enA1U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is no milk in Ela's coffee.",
+        text: "There is no milk in Lucy's coffee.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Any milk? — No milk, thank you.“ Soruda „any“, cevapta yok.",
       },
       {
         kind: "gapfill",
-        text: "Ela only has ___.",
+        text: "Lucy only has ___.",
         options: [],
         answer: 0,
         accept: ["coins"],
@@ -253,7 +253,7 @@ export const enA1U06: SkillExercise[] = [
     unit: 6,
     title: "Breakfast at home",
     genre: "monologue",
-    intro: "Deniz kahvaltısını anlatıyor. „some“ ile „any“ nerede geçiyor, dikkat et.",
+    intro: "Charlie kahvaltısını anlatıyor. „some“ ile „any“ nerede geçiyor, dikkat et.",
     gloss: [
       { de: "breakfast", tr: "kahvaltı" },
       { de: "small", tr: "küçük" },
@@ -263,36 +263,36 @@ export const enA1U06: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Deniz", text: "Good morning! This is my breakfast. I eat it every day at seven." },
-      { speaker: "Deniz", text: "I eat some bread with butter and cheese. I don't eat eggs." },
-      { speaker: "Deniz", text: "Is there any milk? Yes, there is. I take some milk with my tea." },
-      { speaker: "Deniz", text: "My plate is small, but my cup is big. I like tea very much." },
-      { speaker: "Deniz", text: "My brother eats an egg every morning. He doesn't like cheese." },
-      { speaker: "Deniz", text: "After breakfast I buy a newspaper at the kiosk. It is only one euro." },
+      { speaker: "Charlie", text: "Good morning! This is my breakfast. I eat it every day at seven." },
+      { speaker: "Charlie", text: "I eat some bread with butter and cheese. I don't eat eggs." },
+      { speaker: "Charlie", text: "Is there any milk? Yes, there is. I take some milk with my tea." },
+      { speaker: "Charlie", text: "My plate is small, but my cup is big. I like tea very much." },
+      { speaker: "Charlie", text: "My brother eats an egg every morning. He doesn't like cheese." },
+      { speaker: "Charlie", text: "After breakfast I buy a newspaper at the kiosk. It is only one euro." },
     ],
     questions: [
       {
-        text: "What does Deniz eat for breakfast?",
+        text: "What does Charlie eat for breakfast?",
         options: ["bread with butter and cheese", "eggs", "soup"],
         answer: 0,
         explain: "„I eat some bread with butter and cheese. I don't eat eggs.“ — yumurtayı kardeşi yiyor.",
       },
       {
         text: "Who eats an egg?",
-        options: ["Deniz's brother", "Deniz", "the waiter"],
+        options: ["Charlie's brother", "Charlie", "the waiter"],
         answer: 0,
         explain: "„My brother eats an egg every morning.“",
       },
       {
         kind: "truefalse",
-        text: "Deniz's brother likes cheese.",
+        text: "Charlie's brother likes cheese.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„He doesn't like cheese.“ — peyniri yiyen Deniz.",
+        explain: "„He doesn't like cheese.“ — peyniri yiyen Charlie.",
       },
       {
         kind: "gapfill",
-        text: "Deniz buys a ___ at the kiosk.",
+        text: "Charlie buys a ___ at the kiosk.",
         options: [],
         answer: 0,
         accept: ["newspaper"],
@@ -300,7 +300,7 @@ export const enA1U06: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Deniz'in anlattığı sıra: doğru sıraya koy.",
+        text: "Charlie'nin anlattığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [

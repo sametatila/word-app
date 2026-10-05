@@ -411,7 +411,7 @@ Vereine finden also Mitglieder, aber keine Verantwortlichen.`,
               kind: "match",
               id: "de-b1-08-l3-16",
               no: 16,
-              text: "Frau Terzi arbeitet Vollzeit und kann nur abends von zu Hause aus etwas tun.",
+              text: "Frau Sievers arbeitet Vollzeit und kann nur abends von zu Hause aus etwas tun.",
               answer: "j",
               explain:
                 "(j) tek uzaktan görev: \"von zu Hause aus und zeitlich flexibel\". Öteki ilanların hepsi belirli bir saatte bir yerde olmayı istiyor.",
@@ -463,7 +463,7 @@ Vereine finden also Mitglieder, aber keine Verantwortlichen.`,
               title: "Ehrenamt bezahlen — ja oder nein?",
               body: `Katrin Wollny: Ich koordiniere seit acht Jahren einen Fahrdienst und bekomme keinen Cent dafür. Trotzdem bin ich dagegen. Sobald Geld fließt, kommt die Frage, wer wie viel bekommt — und dann ist der Verein kein Verein mehr, sondern ein kleiner Betrieb mit schlechten Löhnen.
 
-Ismail Cakir: Wer sagt, Ehrenamt müsse unbezahlt sein, hat meistens genug Geld. Bei uns fahren Leute vierzig Kilometer zum Einsatz und legen das Benzin selbst drauf. Eine Aufwandsentschädigung ist keine Bezahlung, sondern das Mindeste.
+Mattern Dornbusch: Wer sagt, Ehrenamt müsse unbezahlt sein, hat meistens genug Geld. Bei uns fahren Leute vierzig Kilometer zum Einsatz und legen das Benzin selbst drauf. Eine Aufwandsentschädigung ist keine Bezahlung, sondern das Mindeste.
 
 Herr Dietz: Ich bin Vorstand in einem Sportverein und wäre dafür, wenn die Regeln es zuließen. Sobald wir etwas zahlen, ändert sich unser Status, und wir verlieren Zuschüsse. Das Problem liegt also nicht am Willen, sondern an den Vorschriften.
 
@@ -501,7 +501,7 @@ Timo Reichert: Bezahlung nein, Ersatz der Auslagen ja. Und vor allem: Versicheru
               id: "de-b1-08-l4-21",
               no: 21,
               ref: "f1",
-              text: "Ismail Cakir",
+              text: "Mattern Dornbusch",
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:

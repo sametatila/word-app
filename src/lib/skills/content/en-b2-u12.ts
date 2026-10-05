@@ -59,11 +59,11 @@ export const enB2U12: SkillExercise[] = [
     text:
       "UNIVERSITY NEWS: A BATTERY THAT FAILS ONLY IN HEAT\n" +
       "For two years, a team at the engineering faculty has tested a new battery for electric buses. The results, published this week, surprised even the people who ran the tests.\n" +
-      "„Never has such a pattern emerged in our lab,“ says Dr. Leyla Aksoy, who led the study. The batteries worked perfectly in cold and normal weather. Only under extreme heat does the fault occur: above 45 degrees, the power falls suddenly and then comes back after a few minutes.\n" +
+      "„Never has such a pattern emerged in our lab,“ says Dr. Fiona Lloyd, who led the study. The batteries worked perfectly in cold and normal weather. Only under extreme heat does the fault occur: above 45 degrees, the power falls suddenly and then comes back after a few minutes.\n" +
       "Rarely does a problem appear so clearly in the data. The team observed the same drop in numerous tests, at different charging speeds, and always at the same temperature. Not once did it happen below 40 degrees.\n" +
-      "What causes it has not been determined yet. The researchers think the material expands in the heat, but they do not want to exaggerate what they know. „Only after a year of further tests will we be able to say why,“ Aksoy explains.\n" +
+      "What causes it has not been determined yet. The researchers think the material expands in the heat, but they do not want to exaggerate what they know. „Only after a year of further tests will we be able to say why,“ Lloyd explains.\n" +
       "The bus company that paid for the study is not worried. Its buses run in a city where temperatures rarely rise above 35 degrees. But the team has shared its data with two other universities, because such a clear fault is scarce, and rarely does a question arise so early in a project.\n" +
-      "„In science, you usually wait years for a result like this,“ says Aksoy. „Never have I been happier to see something fail.“",
+      "„In science, you usually wait years for a result like this,“ says Lloyd. „Never have I been happier to see something fail.“",
     questions: [
       {
         text: "When does the fault occur?",
@@ -222,19 +222,19 @@ export const enB2U12: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Emir", text: "IT support, Emir speaking." },
-      { speaker: "Ayça", text: "Hi Emir, it is Ayça from accounting. The software, which was updated in May, failed again this morning." },
-      { speaker: "Emir", text: "The invoice program? Which version do you see on the start screen?" },
-      { speaker: "Ayça", text: "Version four. The interface is very old, which is why we stopped using the search function last year." },
-      { speaker: "Emir", text: "I see. Did the crash happen when you opened a file?" },
-      { speaker: "Ayça", text: "When I saved one. I was using the method to which the manual refers, the one with encryption for customer data." },
-      { speaker: "Emir", text: "That explains a lot. The encryption tool, which we installed in March, does not work well with version four." },
-      { speaker: "Ayça", text: "So what should I do? My manager, who needs the report today, is already asking." },
-      { speaker: "Emir", text: "I will connect to your computer remotely. Can you close every window except the program?" },
-      { speaker: "Ayça", text: "Done. Should I worry about malware? A colleague, whose laptop was attacked last year, told me that crashes can be a sign." },
-      { speaker: "Emir", text: "It is unlikely. The scan, which runs every night, found nothing on your machine. This is a known bug." },
-      { speaker: "Ayça", text: "Good. And the report?" },
-      { speaker: "Emir", text: "Save it without encryption for now, then send it through the secure folder, which is encrypted anyway." },
+      { speaker: "Ethan", text: "IT support, Ethan speaking." },
+      { speaker: "Kerry", text: "Hi Ethan, it is Kerry from accounting. The software, which was updated in May, failed again this morning." },
+      { speaker: "Ethan", text: "The invoice program? Which version do you see on the start screen?" },
+      { speaker: "Kerry", text: "Version four. The interface is very old, which is why we stopped using the search function last year." },
+      { speaker: "Ethan", text: "I see. Did the crash happen when you opened a file?" },
+      { speaker: "Kerry", text: "When I saved one. I was using the method to which the manual refers, the one with encryption for customer data." },
+      { speaker: "Ethan", text: "That explains a lot. The encryption tool, which we installed in March, does not work well with version four." },
+      { speaker: "Kerry", text: "So what should I do? My manager, who needs the report today, is already asking." },
+      { speaker: "Ethan", text: "I will connect to your computer remotely. Can you close every window except the program?" },
+      { speaker: "Kerry", text: "Done. Should I worry about malware? A colleague, whose laptop was attacked last year, told me that crashes can be a sign." },
+      { speaker: "Ethan", text: "It is unlikely. The scan, which runs every night, found nothing on your machine. This is a known bug." },
+      { speaker: "Kerry", text: "Good. And the report?" },
+      { speaker: "Ethan", text: "Save it without encryption for now, then send it through the secure folder, which is encrypted anyway." },
     ],
     questions: [
       {
@@ -277,7 +277,7 @@ export const enB2U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How should Ayça send the report?",
+        text: "How should Kerry send the report?",
         options: [],
         answer: 0,
         accept: ["through the secure folder", "the secure folder", "secure folder"],
@@ -304,14 +304,14 @@ export const enB2U12: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Tuğçe", text: "Good morning, everyone. I want to talk about the sensor tests from last week before we start the new series." },
-      { speaker: "Tuğçe", text: "We ran the test three times, and three times the readings vanished after about ten minutes. The team must have neglected one step, because only one step is missing from the log." },
-      { speaker: "Tuğçe", text: "Somebody must have skipped the calibration. It is the only thing that is not written down, and without it the frequency readings always fluctuate." },
-      { speaker: "Tuğçe", text: "They can't have misjudged the scale. We fixed the scale in the protocol before the first test, and everybody signed it." },
-      { speaker: "Tuğçe", text: "And it can't have been the equipment. The same sensors worked perfectly in the other lab on Thursday." },
-      { speaker: "Tuğçe", text: "So this is not about blaming anyone. It is about us. We should have observed each run twice, with two people, as we did last year." },
-      { speaker: "Tuğçe", text: "We should have checked the log before the second run, too. Then we would have lost one day, not a whole week." },
-      { speaker: "Tuğçe", text: "From today, every run needs a second name on the log. It takes five minutes, and it would have saved us four days." },
+      { speaker: "Ashley", text: "Good morning, everyone. I want to talk about the sensor tests from last week before we start the new series." },
+      { speaker: "Ashley", text: "We ran the test three times, and three times the readings vanished after about ten minutes. The team must have neglected one step, because only one step is missing from the log." },
+      { speaker: "Ashley", text: "Somebody must have skipped the calibration. It is the only thing that is not written down, and without it the frequency readings always fluctuate." },
+      { speaker: "Ashley", text: "They can't have misjudged the scale. We fixed the scale in the protocol before the first test, and everybody signed it." },
+      { speaker: "Ashley", text: "And it can't have been the equipment. The same sensors worked perfectly in the other lab on Thursday." },
+      { speaker: "Ashley", text: "So this is not about blaming anyone. It is about us. We should have observed each run twice, with two people, as we did last year." },
+      { speaker: "Ashley", text: "We should have checked the log before the second run, too. Then we would have lost one day, not a whole week." },
+      { speaker: "Ashley", text: "From today, every run needs a second name on the log. It takes five minutes, and it would have saved us four days." },
     ],
     questions: [
       {

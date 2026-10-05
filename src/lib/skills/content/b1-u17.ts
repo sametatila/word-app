@@ -120,7 +120,7 @@ export const b1U17: SkillExercise[] = [
       "Unser Buchclub trifft sich jeden ersten Montag in der Buchhandlung am " +
       "Markt. Diesmal lesen wir bis Kapitel zehn. Wer nicht fertig wird, kommt " +
       "trotzdem — es geht ums Reden, nicht ums Schaffen.\n\n" +
-      "Kommentar von Sedef: Mir gefällt vor allem die Hauptfigur. Sie ist keine " +
+      "Kommentar von Amelie: Mir gefällt vor allem die Hauptfigur. Sie ist keine " +
       "Heldin, sie macht ständig Fehler, und genau deshalb glaube ich ihr. " +
       "Die Autorin schreibt einfach, aber nie langweilig.\n\n" +
       "Kommentar von Jonas: Mir gefallen die ersten Kapitel nicht so gut. " +
@@ -138,7 +138,7 @@ export const b1U17: SkillExercise[] = [
         explain: "„Unser Buchclub trifft sich jeden ersten Montag in der Buchhandlung am Markt.“",
       },
       {
-        text: "Warum glaubt Sedef der Hauptfigur?",
+        text: "Warum glaubt Amelie der Hauptfigur?",
         options: ["Weil sie eine Heldin ist", "Weil sie ständig Fehler macht", "Weil sie klug ist"],
         answer: 1,
         explain: "„Sie ist keine Heldin, sie macht ständig Fehler, und genau deshalb glaube ich ihr.“",
@@ -332,9 +332,9 @@ export const b1U17: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Değerlendirme kartını doldur.",
-        facts: "Yazan: Sedef Aydın; tür: dizi; beğenilen: ana karakter; beğenilmeyen: ilk bölümler; puan: 4/5.",
+        facts: "Yazan: Amelie Haas; tür: dizi; beğenilen: ana karakter; beğenilmeyen: ilk bölümler; puan: 4/5.",
         fields: [
-          { label: "Name", answer: "Sedef Aydın", accept: ["Sedef", "Aydın"] },
+          { label: "Name", answer: "Amelie Haas", accept: ["Amelie", "Haas"] },
           { label: "Art", answer: "Serie", accept: ["eine Serie", "die Serie"] },
           { label: "Gut", answer: "die Hauptfigur", accept: ["Hauptfigur", "die Figur"] },
           { label: "Weniger gut", answer: "die ersten Folgen", accept: ["erste Folgen", "der Anfang"] },

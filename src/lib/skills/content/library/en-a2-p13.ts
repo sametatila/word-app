@@ -225,10 +225,10 @@ export const enA2P13: SkillExercise[] = [
         ],
         sample:
           "Hi Lina, thank you for coming tonight! Dinner is in the fridge: pasta for the kids, just warm it for three " +
-          "minutes. Mert doesn't eat tomatoes, so give him the blue bowl. After dinner they are allowed to watch one " +
+          "minutes. Henry doesn't eat tomatoes, so give him the blue bowl. After dinner they are allowed to watch one " +
           "movie, but not on the tablets. They can wash and dress themselves, but please check their teeth. They have to " +
-          "be in bed by half past eight. Duru always asks for one more story, and one is enough. If there is a problem, " +
-          "call me at 0532 118 40 27. If you can't reach me, call Mrs. Hale in apartment four. We'll be back at eleven. Thanks! Aylin",
+          "be in bed by half past eight. Tina always asks for one more story, and one is enough. If there is a problem, " +
+          "call me at 0532 118 40 27. If you can't reach me, call Mrs. Morris in apartment four. We'll be back at eleven. Thanks! Martha",
       },
     ],
   },
@@ -341,7 +341,7 @@ export const enA2P13: SkillExercise[] = [
         heading: "each other ve zamirsiz fiiller",
         tr: "İki kişi aynı şeyi birbirine yapıyorsa „each other“ gelir: „They help each other.“ Ayrıca Türkçede „-n-“ eki alan bazı fiiller İngilizcede genelde zamir almaz: wash, dress, relax („I washed and dressed“). Küçük bir çocuğun bunu kendi başına yapabildiği vurgulanırken „dress themselves“ denebilir. „feel“ ise hiç almaz: „I feel myself tired“ yanlıştır.",
         examples: [
-          { de: "Ali and Sara help each other with homework.", tr: "Ali ile Sara ödevde birbirine yardım ediyor." },
+          { de: "Harry and Sara help each other with homework.", tr: "Harry ile Sara ödevde birbirine yardım ediyor." },
           { de: "We wrote to each other every week.", tr: "Her hafta birbirimize yazdık." },
           { de: "I feel tired today.", tr: "Bugün kendimi yorgun hissediyorum.", note: "feel zamir almaz" },
         ],
@@ -355,7 +355,7 @@ export const enA2P13: SkillExercise[] = [
         explain: "Öğreten ile öğrenen aynı kişi: herself.",
       },
       {
-        text: "Tom and Nil send ___ messages every day.",
+        text: "Tom and Katie send ___ messages every day.",
         options: ["each other", "themselves", "ourselves"],
         answer: 0,
         explain: "İki kişi birbirine mesaj atıyor: each other.",

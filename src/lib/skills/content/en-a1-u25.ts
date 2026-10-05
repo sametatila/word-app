@@ -104,42 +104,42 @@ export const enA1U25: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: What did you do yesterday?\n" +
-      "Can: I worked in the morning and I played tennis in the afternoon.\n" +
-      "Ela: Did you finish the work?\n" +
-      "Can: No, I didn't finish. I have two more hours today.\n" +
-      "Ela: And the tennis? Did you win?\n" +
-      "Can: No! My friend played very well. I didn't win, but it was good.\n" +
-      "Ela: Where did you play?\n" +
-      "Can: Near the river, next to the farm. Do you know that place?\n" +
-      "Ela: Yes. I was there last week with my sister. We saw many birds.\n" +
-      "Can: Did you go by bike?\n" +
-      "Ela: No, we went by bus. The bike is too slow for me.\n" +
-      "Can: Then let's meet again on Saturday. I'll call you.\n" +
-      "Ela: Good. See you soon!",
+      "Lucy: What did you do yesterday?\n" +
+      "Tyler: I worked in the morning and I played tennis in the afternoon.\n" +
+      "Lucy: Did you finish the work?\n" +
+      "Tyler: No, I didn't finish. I have two more hours today.\n" +
+      "Lucy: And the tennis? Did you win?\n" +
+      "Tyler: No! My friend played very well. I didn't win, but it was good.\n" +
+      "Lucy: Where did you play?\n" +
+      "Tyler: Near the river, next to the farm. Do you know that place?\n" +
+      "Lucy: Yes. I was there last week with my sister. We saw many birds.\n" +
+      "Tyler: Did you go by bike?\n" +
+      "Lucy: No, we went by bus. The bike is too slow for me.\n" +
+      "Tyler: Then let's meet again on Saturday. I'll call you.\n" +
+      "Lucy: Good. See you soon!",
     questions: [
       {
-        text: "What did Can do in the afternoon?",
+        text: "What did Tyler do in the afternoon?",
         options: ["he played tennis", "he worked", "he went by bus"],
         answer: 0,
         explain: "„I worked in the morning and I played tennis in the afternoon.“",
       },
       {
-        text: "Did Can win?",
+        text: "Did Tyler win?",
         options: ["no", "yes", "he didn't play"],
         answer: 0,
         explain: "„I didn't win, but it was good.“ — „didn't“ sonrası „win“ ilk hâlinde.",
       },
       {
         kind: "truefalse",
-        text: "Can finished the work.",
+        text: "Tyler finished the work.",
         options: ["True", "False"],
         answer: 1,
         explain: "„No, I didn't finish. I have two more hours today.“",
       },
       {
         kind: "gapfill",
-        text: "Ela and her sister saw many ___.",
+        text: "Lucy and her sister saw many ___.",
         options: [],
         answer: 0,
         accept: ["birds"],
@@ -160,7 +160,7 @@ export const enA1U25: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How did Ela go there?",
+        text: "How did Lucy go there?",
         options: [],
         answer: 0,
         accept: ["by bus", "bus", "she went by bus"],
@@ -186,42 +186,42 @@ export const enA1U25: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "Where did you go last weekend?" },
-      { speaker: "Kaan", text: "I went to a farm near the mountains." },
-      { speaker: "Nil", text: "Really? What did you do there?" },
-      { speaker: "Kaan", text: "I helped with the animals. I saw two horses and many birds." },
-      { speaker: "Nil", text: "Did you stay there?" },
-      { speaker: "Kaan", text: "Yes, two days. I ate with the family in the evening." },
-      { speaker: "Nil", text: "And the weather?" },
-      { speaker: "Kaan", text: "On Saturday it was sunny, but on Sunday it rained all day." },
-      { speaker: "Nil", text: "I visited my parents. We watched an old movie and I played with my brother." },
-      { speaker: "Kaan", text: "Did you finish your homework too?" },
-      { speaker: "Nil", text: "No, I didn't finish it. I'm going to do it tonight." },
-      { speaker: "Kaan", text: "Then work now! And call me later." },
+      { speaker: "Katie", text: "Where did you go last weekend?" },
+      { speaker: "Liam", text: "I went to a farm near the mountains." },
+      { speaker: "Katie", text: "Really? What did you do there?" },
+      { speaker: "Liam", text: "I helped with the animals. I saw two horses and many birds." },
+      { speaker: "Katie", text: "Did you stay there?" },
+      { speaker: "Liam", text: "Yes, two days. I ate with the family in the evening." },
+      { speaker: "Katie", text: "And the weather?" },
+      { speaker: "Liam", text: "On Saturday it was sunny, but on Sunday it rained all day." },
+      { speaker: "Katie", text: "I visited my parents. We watched an old movie and I played with my brother." },
+      { speaker: "Liam", text: "Did you finish your homework too?" },
+      { speaker: "Katie", text: "No, I didn't finish it. I'm going to do it tonight." },
+      { speaker: "Liam", text: "Then work now! And call me later." },
     ],
     questions: [
       {
-        text: "Where did Kaan go?",
+        text: "Where did Liam go?",
         options: ["to a farm", "to his parents", "to the movies"],
         answer: 0,
-        explain: "„I went to a farm near the mountains.“ — anne babayı ziyaret eden Nil.",
+        explain: "„I went to a farm near the mountains.“ — anne babayı ziyaret eden Katie.",
       },
       {
-        text: "What did Nil do?",
+        text: "What did Katie do?",
         options: ["she visited her parents", "she went to a farm", "she finished her homework"],
         answer: 0,
         explain: "„I visited my parents. We watched an old movie…“",
       },
       {
         kind: "truefalse",
-        text: "Nil finished her homework.",
+        text: "Katie finished her homework.",
         options: ["True", "False"],
         answer: 1,
         explain: "„No, I didn't finish it. I'm going to do it tonight.“",
       },
       {
         kind: "gapfill",
-        text: "Kaan saw two ___.",
+        text: "Liam saw two ___.",
         options: [],
         answer: 0,
         accept: ["horses"],
@@ -251,7 +251,7 @@ export const enA1U25: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 25,
-    title: "Ela's last day",
+    title: "Lucy's last day",
     genre: "dialogue",
     intro: "A1'in son metni: bir veda. Sonra ne olacak, ne zaman görüşülecek?",
     gloss: [
@@ -262,25 +262,25 @@ export const enA1U25: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ela", text: "So, this is my last day here." },
-      { speaker: "Kaan", text: "I know. We are going to miss you." },
-      { speaker: "Ela", text: "I'm going to miss you too. But I'll call you every week." },
-      { speaker: "Kaan", text: "And I'll send you a message every day!" },
-      { speaker: "Ela", text: "Good. And you can visit me. Come here in the summer." },
-      { speaker: "Kaan", text: "I'll come, I promise. Is there a lake there?" },
-      { speaker: "Ela", text: "Yes, and mountains. We can walk together." },
-      { speaker: "Kaan", text: "Then let's meet again in July." },
-      { speaker: "Ela", text: "July is good. I'll write you the address." },
-      { speaker: "Kaan", text: "See you soon, then!" },
-      { speaker: "Ela", text: "Yes. Thank you for everything, my friend." },
-      { speaker: "Kaan", text: "Bye-bye, Ela!" },
+      { speaker: "Lucy", text: "So, this is my last day here." },
+      { speaker: "Liam", text: "I know. We are going to miss you." },
+      { speaker: "Lucy", text: "I'm going to miss you too. But I'll call you every week." },
+      { speaker: "Liam", text: "And I'll send you a message every day!" },
+      { speaker: "Lucy", text: "Good. And you can visit me. Come here in the summer." },
+      { speaker: "Liam", text: "I'll come, I promise. Is there a lake there?" },
+      { speaker: "Lucy", text: "Yes, and mountains. We can walk together." },
+      { speaker: "Liam", text: "Then let's meet again in July." },
+      { speaker: "Lucy", text: "July is good. I'll write you the address." },
+      { speaker: "Liam", text: "See you soon, then!" },
+      { speaker: "Lucy", text: "Yes. Thank you for everything, my friend." },
+      { speaker: "Liam", text: "Bye-bye, Lucy!" },
     ],
     questions: [
       {
-        text: "What is Ela going to do?",
+        text: "What is Lucy going to do?",
         options: ["call every week", "send a message every day", "stay here"],
         answer: 0,
-        explain: "„But I'll call you every week.“ — her gün mesaj atacak olan Kaan.",
+        explain: "„But I'll call you every week.“ — her gün mesaj atacak olan Liam.",
       },
       {
         text: "When do they meet again?",
@@ -290,14 +290,14 @@ export const enA1U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Kaan is going to visit Ela.",
+        text: "Liam is going to visit Lucy.",
         options: ["True", "False"],
         answer: 0,
         explain: "„And you can visit me. Come here in the summer. — I'll come, I promise.“",
       },
       {
         kind: "gapfill",
-        text: "Kaan sends a message every ___.",
+        text: "Liam sends a message every ___.",
         options: [],
         answer: 0,
         accept: ["day"],
@@ -318,7 +318,7 @@ export const enA1U25: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is Ela going to write to Kaan?",
+        text: "What is Lucy going to write to Liam?",
         options: [],
         answer: 0,
         accept: ["the address", "her address", "address"],

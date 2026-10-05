@@ -49,19 +49,19 @@ export const enA2U16: SkillExercise[] = [
     minutes: 6,
     text:
       "Hotel: Good afternoon, Hotel Marmara.\n" +
-      "Ela: Hello. I'd like to book a room for two nights.\n" +
+      "Lucy: Hello. I'd like to book a room for two nights.\n" +
       "Hotel: Of course. Single or double?\n" +
-      "Ela: A double room, please. From the fourth of May.\n" +
+      "Lucy: A double room, please. From the fourth of May.\n" +
       "Hotel: Fourth and fifth. We have a room on the second floor.\n" +
-      "Ela: Does the price include breakfast?\n" +
+      "Lucy: Does the price include breakfast?\n" +
       "Hotel: Yes, from seven to ten. But the parking is extra: eight euros a night.\n" +
-      "Ela: We're coming by train, so no parking. Are there any rooms with a balcony?\n" +
+      "Lucy: We're coming by train, so no parking. Are there any rooms with a balcony?\n" +
       "Hotel: On the second floor, no. On the fourth there are two, but they cost fifteen euros more.\n" +
-      "Ela: Then the second floor is fine. How much is it for everything?\n" +
+      "Lucy: Then the second floor is fine. How much is it for everything?\n" +
       "Hotel: A hundred and forty for two nights, with breakfast.\n" +
-      "Ela: Could I have a room away from the street?\n" +
+      "Lucy: Could I have a room away from the street?\n" +
       "Hotel: I'll write it down. I can't promise, but usually it works.\n" +
-      "Ela: Thank you. Could you confirm it by email?\n" +
+      "Lucy: Thank you. Could you confirm it by email?\n" +
       "Hotel: Of course. What is your address?",
     questions: [
       {
@@ -71,7 +71,7 @@ export const enA2U16: SkillExercise[] = [
         explain: "„Does the price include breakfast? — Yes, from seven to ten.“ Otopark ayrı ücret.",
       },
       {
-        text: "Why does Ela not want parking?",
+        text: "Why does Lucy not want parking?",
         options: ["they come by train", "it is too expensive", "the hotel has no parking"],
         answer: 0,
         explain: "„We're coming by train, so no parking.“",
@@ -93,7 +93,7 @@ export const enA2U16: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ela ask for at the end?",
+        text: "What does Lucy ask for at the end?",
         options: [],
         answer: 0,
         accept: ["an email", "email", "an email from the hotel"],
@@ -181,19 +181,19 @@ export const enA2U16: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Deniz", text: "Good evening. I have a reservation under the name Kaya." },
-      { speaker: "Reception", text: "Kaya… yes, two nights, a double room. Could I have your passport?" },
-      { speaker: "Deniz", text: "Here you are." },
+      { speaker: "Charlie", text: "Good evening. I have a reservation under the name Archie." },
+      { speaker: "Reception", text: "Archie… yes, two nights, a double room. Could I have your passport?" },
+      { speaker: "Charlie", text: "Here you are." },
       { speaker: "Reception", text: "Thank you. Room three hundred and four, on the third floor." },
-      { speaker: "Deniz", text: "Is there any breakfast tomorrow? We leave early." },
+      { speaker: "Charlie", text: "Is there any breakfast tomorrow? We leave early." },
       { speaker: "Reception", text: "From half past six. Your train is at eight?" },
-      { speaker: "Deniz", text: "At twenty past eight." },
+      { speaker: "Charlie", text: "At twenty past eight." },
       { speaker: "Reception", text: "Then it works. Here is the room key. The wifi name is on the back." },
-      { speaker: "Deniz", text: "Thank you. One thing: there aren't any towels in the room." },
+      { speaker: "Charlie", text: "Thank you. One thing: there aren't any towels in the room." },
       { speaker: "Reception", text: "In the room? That is not possible." },
-      { speaker: "Deniz", text: "I looked twice. The bathroom is empty." },
+      { speaker: "Charlie", text: "I looked twice. The bathroom is empty." },
       { speaker: "Reception", text: "I am sorry. I'll send some up now. Anything else?" },
-      { speaker: "Deniz", text: "Is there a store nearby? We have no water." },
+      { speaker: "Charlie", text: "Is there a store nearby? We have no water." },
       { speaker: "Reception", text: "Opposite the hotel, open until eleven." },
     ],
     questions: [
@@ -229,7 +229,7 @@ export const enA2U16: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["I have a reservation under the name Kaya.", "I have a reservation under the name Kaya"],
+        accept: ["I have a reservation under the name Archie.", "I have a reservation under the name Archie"],
         explain: "Otelde adı „under the name“ ile veriyorsun.",
       },
       {
@@ -258,19 +258,19 @@ export const enA2U16: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Sena", text: "Excuse me, how do I get to the post office?" },
+      { speaker: "Ellie", text: "Excuse me, how do I get to the post office?" },
       { speaker: "Man", text: "On foot or by bus?" },
-      { speaker: "Sena", text: "On foot, if it isn't far." },
+      { speaker: "Ellie", text: "On foot, if it isn't far." },
       { speaker: "Man", text: "Twelve minutes. Go straight to the end of this street and turn left at the corner." },
-      { speaker: "Sena", text: "Left at the corner. And then?" },
+      { speaker: "Ellie", text: "Left at the corner. And then?" },
       { speaker: "Man", text: "Then you cross the bridge. After the bridge you'll see a big bank." },
-      { speaker: "Sena", text: "Is the post office behind the bank?" },
+      { speaker: "Ellie", text: "Is the post office behind the bank?" },
       { speaker: "Man", text: "No, it's opposite the bank. It is easy to find — the door is yellow." },
-      { speaker: "Sena", text: "Do you have a city map?" },
+      { speaker: "Ellie", text: "Do you have a city map?" },
       { speaker: "Man", text: "In the store at the station. But the way is easy: straight, left, bridge, bank." },
-      { speaker: "Sena", text: "Straight, left, bridge, bank. Thank you very much." },
+      { speaker: "Ellie", text: "Straight, left, bridge, bank. Thank you very much." },
       { speaker: "Man", text: "One more thing: it closes at half past five. It is five now." },
-      { speaker: "Sena", text: "Then I'll run." },
+      { speaker: "Ellie", text: "Then I'll run." },
       { speaker: "Man", text: "Then you'll be there in ten minutes. Good luck!" },
     ],
     questions: [
@@ -288,7 +288,7 @@ export const enA2U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The man gives Sena a city map.",
+        text: "The man gives Ellie a city map.",
         options: ["True", "False"],
         answer: 1,
         explain: "„In the store at the station.“ — haritayı satan dükkân, adamın kendisi değil.",
@@ -403,7 +403,7 @@ export const enA2U16: SkillExercise[] = [
         kind: "build",
         tr: "Dosdoğru git ve köşeden sola dön.",
         answer: "Go straight and turn left at the corner.",
-        hint: "Emir cümlesi öznesiz; noktayı „at the corner“ gösteriyor.",
+        hint: "Ethan cümlesi öznesiz; noktayı „at the corner“ gösteriyor.",
       },
       {
         kind: "build",

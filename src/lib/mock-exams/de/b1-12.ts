@@ -228,7 +228,7 @@ ich bin im Kurs A2.2 angemeldet, arbeite aber seit Februar im Schichtdienst. Der
 Gibt es einen Kurs am Vormittag, in den ich wechseln könnte? Ich möchte nicht abbrechen.
 
 Mit freundlichen Grüßen
-Ayla Cakir`,
+Elke Dornbusch`,
               gloss: [{ de: "abbrechen", tr: "yarıda bırakmak", en: "to drop out" }],
             },
           ],
@@ -400,7 +400,7 @@ Ayla Cakir`,
               kind: "match",
               id: "de-b1-12-l3-14",
               no: 14,
-              text: "Frau Cakir arbeitet abends im Schichtdienst und sucht einen Kurs am Vormittag.",
+              text: "Frau Dornbusch arbeitet abends im Schichtdienst und sucht einen Kurs am Vormittag.",
               answer: "b",
               explain:
                 "(b) sabah saatlerinde: \"Mo bis Do 9 bis 12 Uhr\" — üstelik taksitle ödeme de mümkün.",
@@ -472,7 +472,7 @@ Ayla Cakir`,
 
 Tesfay Tadesse: Ich arbeite in der Pflege und bin dagegen, obwohl ich den Kurs bräuchte. Wenn ich zwei Stunden im Unterricht sitze, macht meine Kollegin meine Arbeit mit. Solange niemand die Stelle ersetzt, geht der Kurs auf ihre Kosten und nicht auf die des Betriebs.
 
-Ayla Cakir: Ich bin dafür, und zwar aus Erfahrung. Mein alter Betrieb hat es angeboten, mein neuer nicht. Im alten habe ich in einem Jahr mehr gelernt als vorher in dreien. Der Unterschied war nicht der Kurs, sondern dass ich nicht müde war.
+Elke Dornbusch: Ich bin dafür, und zwar aus Erfahrung. Mein alter Betrieb hat es angeboten, mein neuer nicht. Im alten habe ich in einem Jahr mehr gelernt als vorher in dreien. Der Unterschied war nicht der Kurs, sondern dass ich nicht müde war.
 
 Jörg Bendig: Als Betriebsleiter bin ich dagegen, dass man es vorschreibt. Bei uns arbeiten neunzehn Leute. Wenn drei gleichzeitig im Kurs sind, steht die Werkstatt. Freiwillig mache ich gern mit, aber eine Pflicht würde kleine Betriebe härter treffen als große.
 
@@ -517,7 +517,7 @@ Frau Sperling: Ich bin dafür. Bei uns bezahlt die Firma die Hälfte der Zeit un
               id: "de-b1-12-l4-22",
               no: 22,
               ref: "f1",
-              text: "Ayla Cakir",
+              text: "Elke Dornbusch",
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
@@ -707,7 +707,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, Frau Cakir, hier ist die Volkshochschule. Im Vormittagskurs ist ein Platz frei geworden. Der Kurs läuft seit zwei Wochen, Sie könnten also noch wechseln. Bitte melden Sie sich bis Donnerstag.",
+                  text: "Guten Tag, Frau Dornbusch, hier ist die Volkshochschule. Im Vormittagskurs ist ein Platz frei geworden. Der Kurs läuft seit zwei Wochen, Sie könnten also noch wechseln. Bitte melden Sie sich bis Donnerstag.",
                 },
               ],
             },
@@ -788,7 +788,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
               id: "de-b1-12-h1-4",
               no: 4,
               ref: "h2",
-              text: "Bis wann soll sich Frau Cakir melden?",
+              text: "Bis wann soll sich Frau Dornbusch melden?",
               options: ["Bis Mittwoch.", "Bis Freitag.", "Bis Donnerstag."],
               answer: 2,
               explain:
@@ -1315,7 +1315,7 @@ Was mir geholfen hat, war nicht ein neuer Kurs, sondern eine feste Stunde pro Wo
 Wenn du magst, frag im Bürgerhaus nach einer Patenschaft. Und rede viel, auch mit Fehlern — auf perfekte Sätze wartet niemand.
 
 Viele Grüße
-Ayla`,
+Elke`,
             criteria: [
               "Dört içerik noktasının hepsi var mı?",
               "Deneyim somut mu (ne zaman, ne oldu)?",

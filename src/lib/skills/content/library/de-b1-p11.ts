@@ -237,7 +237,7 @@ export const deB1P11: SkillExercise[] = [
         ],
         sample:
           "Sehr geehrte Damen und Herren,\n\n" +
-          "mein Name ist Deniz Arslan, und ich wohne seit zwei Jahren im Haus Lindenweg 7. " +
+          "mein Name ist Sascha Busch, und ich wohne seit zwei Jahren im Haus Lindenweg 7. " +
           "Ich beschäftige mich seit einiger Zeit mit der Geschichte dieses Hauses. " +
           "Bisher habe ich herausgefunden, dass hier bis 1960 eine Bäckerei war. " +
           "Nachdem der alte Besitzer ausgezogen war, stand das Haus zehn Jahre leer; " +
@@ -247,7 +247,7 @@ export const deB1P11: SkillExercise[] = [
           "Wäre es möglich, die Akten vor Ort anzusehen? Ich hätte donnerstags und freitags " +
           "ab vierzehn Uhr Zeit.\n\n" +
           "Für einen Hinweis wäre ich Ihnen sehr dankbar.\n" +
-          "Mit freundlichen Grüßen\nDeniz Arslan",
+          "Mit freundlichen Grüßen\nSascha Busch",
       },
     ],
   },

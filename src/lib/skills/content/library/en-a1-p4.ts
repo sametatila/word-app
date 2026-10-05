@@ -102,19 +102,19 @@ export const enA1P4: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Shop", text: "Bella Pizza, good evening." },
-      { speaker: "Kaan", text: "Good evening. I would like to order two pizzas, please." },
+      { speaker: "Liam", text: "Good evening. I would like to order two pizzas, please." },
       { speaker: "Shop", text: "Of course. Which ones?" },
-      { speaker: "Kaan", text: "One with cheese and tomato, and one with mushrooms. Both big, please." },
+      { speaker: "Liam", text: "One with cheese and tomato, and one with mushrooms. Both big, please." },
       { speaker: "Shop", text: "Big cheese and tomato, big mushroom. Anything to drink?" },
-      { speaker: "Kaan", text: "Yes, two bottles of water. How much is it?" },
+      { speaker: "Liam", text: "Yes, two bottles of water. How much is it?" },
       { speaker: "Shop", text: "That is twenty-six euros fifty. What is your address?" },
-      { speaker: "Kaan", text: "Fourteen Rose Street, second floor. The name is Kaan." },
+      { speaker: "Liam", text: "Fourteen Rose Street, second floor. The name is Liam." },
       { speaker: "Shop", text: "Thank you. It's coming in forty minutes. Please have the money ready." },
-      { speaker: "Kaan", text: "Great, thank you. Goodbye!" },
+      { speaker: "Liam", text: "Great, thank you. Goodbye!" },
     ],
     questions: [
       {
-        text: "What does Kaan order?",
+        text: "What does Liam order?",
         options: ["two pizzas and water", "one pizza and a salad", "two pizzas and coffee"],
         answer: 0,
         explain: "„… two pizzas, please“ ve sonra „two bottles of water“.",
@@ -127,7 +127,7 @@ export const enA1P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Kaan orders one small pizza.",
+        text: "Liam orders one small pizza.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Both big, please.“ — ikisi de büyük.",
@@ -330,8 +330,8 @@ export const enA1P4: SkillExercise[] = [
         ],
       },
       {
-        heading: "Emir kipi: yalın fiil",
-        tr: "Emir ve yönergede özne yazılmaz ve fiil yalın hâliyle başta durur: Come in. Olumsuz için başa „Don't“ gelir: Don't be late. Nazikleştirmek için „please“ eklenir.",
+        heading: "Ethan kipi: yalın fiil",
+        tr: "Ethan ve yönergede özne yazılmaz ve fiil yalın hâliyle başta durur: Come in. Olumsuz için başa „Don't“ gelir: Don't be late. Nazikleştirmek için „please“ eklenir.",
         examples: [
           { de: "Come in and sit down.", tr: "İçeri gel ve otur." },
           { de: "Don't forget your ticket.", tr: "Biletini unutma." },
@@ -348,7 +348,7 @@ export const enA1P4: SkillExercise[] = [
       },
       {
         text: "___ you open the window, please?",
-        options: ["Can", "Do", "Are"],
+        options: ["Tyler", "Do", "Are"],
         answer: 0,
         explain: "Rica „Can you …?“ ile kurulur; ayrı bir yardımcı fiil gerekmez.",
       },
@@ -372,7 +372,7 @@ export const enA1P4: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Come", "come"],
-        explain: "Emir kipinde özne yazılmaz ve fiil yalın hâliyle başta durur.",
+        explain: "Ethan kipinde özne yazılmaz ve fiil yalın hâliyle başta durur.",
       },
       {
         kind: "gapfill",
@@ -395,7 +395,7 @@ export const enA1P4: SkillExercise[] = [
         text: "Soruyu doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Can", "you", "help", "me?"],
+        items: ["Tyler", "you", "help", "me?"],
         explain: "Soruda „can“ başa geçer, sonra özne ve yalın fiil gelir: Can you help me?",
       },
       {
@@ -410,7 +410,7 @@ export const enA1P4: SkillExercise[] = [
         text: "„Please close the door.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
-        explain: "Emir kipinde özne yoktur ve fiil yalındır; „please“ cümleyi nazikleştirir.",
+        explain: "Ethan kipinde özne yoktur ve fiil yalındır; „please“ cümleyi nazikleştirir.",
       },
     ],
   },

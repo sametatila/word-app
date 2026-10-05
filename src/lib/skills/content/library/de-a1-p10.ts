@@ -205,11 +205,11 @@ export const deA1P10: SkillExercise[] = [
           { de: "Kann ich das Zimmer sehen?", tr: "Odayı görebilir miyim?", en: "Can I see the room?" },
         ],
         sample:
-          "Hallo, ich heiße Melis und interessiere mich für das Zimmer. " +
+          "Hallo, ich heiße Jutta und interessiere mich für das Zimmer. " +
           "Ich bin zweiundzwanzig Jahre alt und studiere in Leipzig Biologie. " +
           "Ich bin ruhig und ordentlich, ich koche gern und putze auch gern. " +
           "Ich rauche nicht. Ich kann ab Oktober einziehen und zahle die Miete immer pünktlich. " +
-          "Kann ich das Zimmer am Wochenende sehen? Viele Grüße, Melis",
+          "Kann ich das Zimmer am Wochenende sehen? Viele Grüße, Jutta",
       },
     ],
   },

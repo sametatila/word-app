@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *           I watch series every evening. · Do you watch this channel? ·
  *           This series is boring. · I'm afraid I can't. ·
  *           Sorry, I'm busy today. · Maybe next time. ·
- *           I'm going to meet Ali tomorrow. · Are you going to come? ·
+ *           I'm going to meet Harry tomorrow. · Are you going to come? ·
  *           Let's meet at seven.
  *
  * Ünitenin asıl işi NAZİK RET ve bu bir dil bilgisi değil bir ADET.
@@ -91,7 +91,7 @@ export const enA1U20: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 20,
-    title: "Ali's invitation",
+    title: "Harry's invitation",
     genre: "dialogue",
     intro: "Bir davet reddediliyor ama kapı kapanmıyor. Reddin üç parçasını bul.",
     gloss: [
@@ -101,34 +101,34 @@ export const enA1U20: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ali: I'm going to meet Deniz tomorrow. Are you going to come?\n" +
-      "Nil: Tomorrow? I'm afraid I can't. I'm busy.\n" +
-      "Ali: And later, at seven?\n" +
-      "Nil: Sorry, I'm busy today and tomorrow. Maybe next time.\n" +
-      "Ali: No problem. What are you doing?\n" +
-      "Nil: I work, and in the evening I watch a series. Every evening!\n" +
-      "Ali: Which channel?\n" +
-      "Nil: It is not on a channel. I watch it on the computer.\n" +
-      "Ali: Is it interesting?\n" +
-      "Nil: Very. The other series on TV are boring.\n" +
-      "Ali: Then let's meet on Sunday. We can do something together.\n" +
-      "Nil: Sunday is good. Let's meet at seven.",
+      "Harry: I'm going to meet Charlie tomorrow. Are you going to come?\n" +
+      "Katie: Tomorrow? I'm afraid I can't. I'm busy.\n" +
+      "Harry: And later, at seven?\n" +
+      "Katie: Sorry, I'm busy today and tomorrow. Maybe next time.\n" +
+      "Harry: No problem. What are you doing?\n" +
+      "Katie: I work, and in the evening I watch a series. Every evening!\n" +
+      "Harry: Which channel?\n" +
+      "Katie: It is not on a channel. I watch it on the computer.\n" +
+      "Harry: Is it interesting?\n" +
+      "Katie: Very. The other series on TV are boring.\n" +
+      "Harry: Then let's meet on Sunday. We can do something together.\n" +
+      "Katie: Sunday is good. Let's meet at seven.",
     questions: [
       {
-        text: "Why can't Nil come tomorrow?",
+        text: "Why can't Katie come tomorrow?",
         options: ["she is busy", "she is sick", "she watches a series"],
         answer: 0,
         explain: "„I'm afraid I can't. I'm busy.“ — ret üç parçalı: özür, gerekçe, sonraki sefer.",
       },
       {
-        text: "Where does Nil watch the series?",
+        text: "Where does Katie watch the series?",
         options: ["on the computer", "on TV", "at the movies"],
         answer: 0,
         explain: "„It is not on a channel. I watch it on the computer.“",
       },
       {
         kind: "truefalse",
-        text: "Nil thinks the other series are interesting.",
+        text: "Katie thinks the other series are interesting.",
         options: ["True", "False"],
         answer: 1,
         explain: "„The other series on TV are boring.“ — ilginç olan kendi izlediği.",
@@ -182,22 +182,22 @@ export const enA1U20: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Mert", text: "Can you swim?" },
-      { speaker: "Ela", text: "A little. I can swim in a pool, but not in a lake." },
-      { speaker: "Mert", text: "Why not?" },
-      { speaker: "Ela", text: "The water is deep and cold. I am afraid." },
-      { speaker: "Mert", text: "I understand. I am learning to swim at forty!" },
-      { speaker: "Ela", text: "Really? Where?" },
-      { speaker: "Mert", text: "Here, in this pool. The course is on Monday and Thursday." },
-      { speaker: "Ela", text: "Is it difficult?" },
-      { speaker: "Mert", text: "No, it isn't. The water is warm and there are not many people." },
-      { speaker: "Ela", text: "Do I need a towel?" },
-      { speaker: "Mert", text: "Yes, a towel and water. And don't jump into deep water!" },
-      { speaker: "Ela", text: "I promise. Maybe I can come with you on Monday." },
+      { speaker: "Henry", text: "Can you swim?" },
+      { speaker: "Lucy", text: "A little. I can swim in a pool, but not in a lake." },
+      { speaker: "Henry", text: "Why not?" },
+      { speaker: "Lucy", text: "The water is deep and cold. I am afraid." },
+      { speaker: "Henry", text: "I understand. I am learning to swim at forty!" },
+      { speaker: "Lucy", text: "Really? Where?" },
+      { speaker: "Henry", text: "Here, in this pool. The course is on Monday and Thursday." },
+      { speaker: "Lucy", text: "Is it difficult?" },
+      { speaker: "Henry", text: "No, it isn't. The water is warm and there are not many people." },
+      { speaker: "Lucy", text: "Do I need a towel?" },
+      { speaker: "Henry", text: "Yes, a towel and water. And don't jump into deep water!" },
+      { speaker: "Lucy", text: "I promise. Maybe I can come with you on Monday." },
     ],
     questions: [
       {
-        text: "Where can Ela swim?",
+        text: "Where can Lucy swim?",
         options: ["in a pool", "in a lake", "everywhere"],
         answer: 0,
         explain: "„I can swim in a pool, but not in a lake.“ — göl derin ve soğuk.",
@@ -210,14 +210,14 @@ export const enA1U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert can swim very fast.",
+        text: "Henry can swim very fast.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I am learning to swim at forty!“ — daha yeni öğreniyor.",
       },
       {
         kind: "gapfill",
-        text: "Ela needs a ___ and water.",
+        text: "Lucy needs a ___ and water.",
         options: [],
         answer: 0,
         accept: ["towel"],
@@ -233,7 +233,7 @@ export const enA1U20: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Why doesn't Ela swim in a lake?",
+        text: "Why doesn't Lucy swim in a lake?",
         options: [],
         answer: 0,
         accept: ["the water is deep", "the water is deep and cold", "it is deep and cold", "she is afraid", "because she is afraid"],
@@ -247,7 +247,7 @@ export const enA1U20: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 20,
-    title: "Deniz's busy week",
+    title: "Charlie's busy week",
     genre: "monologue",
     intro: "Bir haftanın planı. Hangi gün ne var, hangi gün boş?",
     gloss: [
@@ -257,36 +257,36 @@ export const enA1U20: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Deniz", text: "This week I have many plans. On Monday I'm going to meet Ali." },
-      { speaker: "Deniz", text: "On Tuesday I go to the pool. I swim for one hour, then I take a towel and go home." },
-      { speaker: "Deniz", text: "On Wednesday evening I'm going to watch the new series. Two hours!" },
-      { speaker: "Deniz", text: "On Thursday I am busy at work. I'm not going to do anything in the evening." },
-      { speaker: "Deniz", text: "On Friday my sister is going to visit. We are going to cook together." },
-      { speaker: "Deniz", text: "And on the weekend? Maybe the movies, maybe the park. I can decide later." },
+      { speaker: "Charlie", text: "This week I have many plans. On Monday I'm going to meet Harry." },
+      { speaker: "Charlie", text: "On Tuesday I go to the pool. I swim for one hour, then I take a towel and go home." },
+      { speaker: "Charlie", text: "On Wednesday evening I'm going to watch the new series. Two hours!" },
+      { speaker: "Charlie", text: "On Thursday I am busy at work. I'm not going to do anything in the evening." },
+      { speaker: "Charlie", text: "On Friday my sister is going to visit. We are going to cook together." },
+      { speaker: "Charlie", text: "And on the weekend? Maybe the movies, maybe the park. I can decide later." },
     ],
     questions: [
       {
-        text: "When does Deniz meet Ali?",
+        text: "When does Charlie meet Harry?",
         options: ["on Monday", "on Tuesday", "on the weekend"],
         answer: 0,
-        explain: "„On Monday I'm going to meet Ali.“ — salı havuz günü.",
+        explain: "„On Monday I'm going to meet Harry.“ — salı havuz günü.",
       },
       {
-        text: "What is Deniz going to do on Friday?",
+        text: "What is Charlie going to do on Friday?",
         options: ["cook with his sister", "watch a series", "go to the pool"],
         answer: 0,
         explain: "„On Friday my sister is going to visit. We are going to cook together.“",
       },
       {
         kind: "truefalse",
-        text: "Deniz has a plan for Thursday evening.",
+        text: "Charlie has a plan for Thursday evening.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I'm not going to do anything in the evening.“ — perşembe akşamı boş.",
       },
       {
         kind: "gapfill",
-        text: "Deniz swims for one ___.",
+        text: "Charlie swims for one ___.",
         options: [],
         answer: 0,
         accept: ["hour"],
@@ -298,7 +298,7 @@ export const enA1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "On Monday I'm going to meet Ali.",
+          "On Monday I'm going to meet Harry.",
           "On Tuesday I go to the pool.",
           "On Thursday I am busy at work.",
           "On Friday my sister is going to visit.",
@@ -307,7 +307,7 @@ export const enA1U20: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is Deniz going to decide later?",
+        text: "What is Charlie going to decide later?",
         options: [],
         answer: 0,
         accept: ["the weekend", "the weekend plan", "movies or park", "the movies or the park"],
@@ -410,9 +410,9 @@ export const enA1U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yarın Ali ile buluşacağım.",
-        answer: "I'm going to meet Ali tomorrow.",
-        alternatives: ["I am going to meet Ali tomorrow.", "Tomorrow I'm going to meet Ali."],
+        tr: "Yarın Harry ile buluşacağım.",
+        answer: "I'm going to meet Harry tomorrow.",
+        alternatives: ["I am going to meet Harry tomorrow.", "Tomorrow I'm going to meet Harry."],
         hint: "Plan için „going to“; zaman sözcüğü cümlenin sonunda.",
       },
       {

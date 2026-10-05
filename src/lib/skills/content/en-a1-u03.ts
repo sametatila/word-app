@@ -33,9 +33,9 @@ export const enA1U03: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 3,
-    title: "Ayla's family",
+    title: "Freya's family",
     genre: "personal",
-    intro: "Ayla ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
+    intro: "Freya ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
     gloss: [
       { de: "house", tr: "ev" },
       { de: "small", tr: "küçük" },
@@ -44,33 +44,33 @@ export const enA1U03: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Hello! My name is Ayla. This is my family.\n\n" +
-      "My mother is a doctor. Her name is Sevgi. She is fifty-two years old. My father is a teacher. His name is Kemal.\n\n" +
+      "Hello! My name is Freya. This is my family.\n\n" +
+      "My mother is a doctor. Her name is Norah. She is fifty-two years old. My father is a teacher. His name is Phil.\n\n" +
       "I have one sister and one brother. My sister is twenty and my brother is only nine. He is still a boy, but he grows very fast!\n\n" +
       "My grandma and my grandpa live in a small town. Their house is old. We are there in May, for my grandma's birthday. We eat cake and we are all very happy.",
     questions: [
       {
-        text: "What is Ayla's mother?",
+        text: "What is Freya's mother?",
         options: ["a doctor", "a teacher", "a student"],
         answer: 0,
         explain: "„My mother is a doctor.“ — öğretmen olan baba: „My father is a teacher.“",
       },
       {
-        text: "How old is Ayla's brother?",
+        text: "How old is Freya's brother?",
         options: ["nine", "twenty", "fifty-two"],
         answer: 0,
         explain: "„my brother is only nine“ — yirmi kız kardeşin, elli iki annenin yaşı.",
       },
       {
         kind: "truefalse",
-        text: "Ayla's mother is a doctor.",
+        text: "Freya's mother is a doctor.",
         options: ["True", "False"],
         answer: 0,
-        explain: "Doktor olan anne. „His name is Kemal“ öğretmen olan babayı anlatıyor.",
+        explain: "Doktor olan anne. „His name is Phil“ öğretmen olan babayı anlatıyor.",
       },
       {
         kind: "gapfill",
-        text: "Ayla's grandma and grandpa live in a small ___.",
+        text: "Freya's grandma and grandpa live in a small ___.",
         options: [],
         answer: 0,
         accept: ["town"],
@@ -103,14 +103,14 @@ export const enA1U03: SkillExercise[] = [
     minutes: 4,
     text:
       "CITY LIBRARY — NEW CARD\n\n" +
-      "First name: Deniz\n" +
-      "Last name: Yalin\n" +
+      "First name: Charlie\n" +
+      "Last name: Thornton\n" +
       "Age: 34\n" +
       "Address: 12 Green Street, Bremen\n" +
       "City: Bremen\n" +
       "Code: 28195\n" +
       "Phone number: 0421 55 66 77\n" +
-      "Email address: deniz.yalin@mail.com\n\n" +
+      "Email address: charlie.thornton@mail.com\n\n" +
       "Do you have a card? No.\n" +
       "Do you live in Bremen? Yes, I do.\n" +
       "How old are you? I am thirty-four years old.\n" +
@@ -119,19 +119,19 @@ export const enA1U03: SkillExercise[] = [
     questions: [
       {
         text: "What is the last name?",
-        options: ["Yalin", "Deniz", "Bremen"],
+        options: ["Thornton", "Charlie", "Bremen"],
         answer: 0,
-        explain: "„Last name: Yalin.“ — Deniz ad, Bremen şehir. Formda her satırın kendi etiketi var.",
+        explain: "„Last name: Thornton.“ — Charlie ad, Bremen şehir. Formda her satırın kendi etiketi var.",
       },
       {
-        text: "How old is Deniz?",
+        text: "How old is Charlie?",
         options: ["thirty-four", "twelve", "twenty-eight"],
         answer: 0,
         explain: "„Age: 34“ ve „I am thirty-four years old.“ — on iki adresin numarası.",
       },
       {
         kind: "truefalse",
-        text: "Deniz lives in Bremen.",
+        text: "Charlie lives in Bremen.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Do you live in Bremen? Yes, I do.“ — kısa cevap soruyu doğruluyor.",
@@ -162,9 +162,9 @@ export const enA1U03: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 3,
-    title: "Tarik's family",
+    title: "Aaron's family",
     genre: "dialogue",
-    intro: "Mia ile Tarik ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
+    intro: "Mia ile Aaron ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
     gloss: [
       { de: "big", tr: "büyük" },
       { de: "Do you have …?", tr: "senin … var mı" },
@@ -173,21 +173,21 @@ export const enA1U03: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Mia", text: "Do you have a big family, Tarik?" },
-      { speaker: "Tarik", text: "Yes, I do. I have two sisters and one brother." },
+      { speaker: "Mia", text: "Do you have a big family, Aaron?" },
+      { speaker: "Aaron", text: "Yes, I do. I have two sisters and one brother." },
       { speaker: "Mia", text: "How old are they?" },
-      { speaker: "Tarik", text: "My sisters are twelve and nineteen. My brother is a baby — he is one year old." },
+      { speaker: "Aaron", text: "My sisters are twelve and nineteen. My brother is a baby — he is one year old." },
       { speaker: "Mia", text: "A baby! And your parents?" },
-      { speaker: "Tarik", text: "My mother is forty-five and my father is fifty. They live in Izmir." },
+      { speaker: "Aaron", text: "My mother is forty-five and my father is fifty. They live in Izmir." },
       { speaker: "Mia", text: "Do you have children?" },
-      { speaker: "Tarik", text: "No, I don't. And you?" },
-      { speaker: "Mia", text: "I've got one daughter. Her name is Ela. She is six." },
-      { speaker: "Tarik", text: "Six! Is she in school?" },
+      { speaker: "Aaron", text: "No, I don't. And you?" },
+      { speaker: "Mia", text: "I've got one daughter. Her name is Lucy. She is six." },
+      { speaker: "Aaron", text: "Six! Is she in school?" },
       { speaker: "Mia", text: "Yes, she is. She can write her first name and her last name." },
     ],
     questions: [
       {
-        text: "How many sisters does Tarik have?",
+        text: "How many sisters does Aaron have?",
         options: ["two", "one", "three"],
         answer: 0,
         explain: "„I have two sisters and one brother.“ — bir olan erkek kardeş.",
@@ -196,18 +196,18 @@ export const enA1U03: SkillExercise[] = [
         text: "How old is Mia's daughter?",
         options: ["six", "one", "twelve"],
         answer: 0,
-        explain: "„Her name is Ela. She is six.“ — bir yaşında olan Tarik'in erkek kardeşi.",
+        explain: "„Her name is Lucy. She is six.“ — bir yaşında olan Aaron'un erkek kardeşi.",
       },
       {
         kind: "truefalse",
-        text: "Tarik doesn't have children.",
+        text: "Aaron doesn't have children.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Do you have children? No, I don't.“ — kardeşi var, çocuğu yok.",
       },
       {
         kind: "gapfill",
-        text: "Tarik's brother is one ___ old.",
+        text: "Aaron's brother is one ___ old.",
         options: [],
         answer: 0,
         accept: ["year"],
@@ -223,7 +223,7 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where do Tarik's parents live?",
+        text: "Where do Aaron's parents live?",
         options: [],
         answer: 0,
         accept: ["in Izmir", "Izmir"],
@@ -239,7 +239,7 @@ export const enA1U03: SkillExercise[] = [
     unit: 3,
     title: "My birthday",
     genre: "monologue",
-    intro: "Ela doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
+    intro: "Lucy doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
     gloss: [
       { de: "make", tr: "yapmak" },
       { de: "big", tr: "büyük" },
@@ -248,16 +248,16 @@ export const enA1U03: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ela", text: "Hello! My name is Ela. Today is my birthday." },
-      { speaker: "Ela", text: "I am seven years old. My birthday is in June." },
-      { speaker: "Ela", text: "My mother makes a big cake. My father writes my name on the cake." },
-      { speaker: "Ela", text: "My grandma and my grandpa are here. My grandma is seventy-two." },
-      { speaker: "Ela", text: "I've got one brother. He is a baby, so he does not eat cake." },
-      { speaker: "Ela", text: "My family says: happy birthday, Ela! I am very happy." },
+      { speaker: "Lucy", text: "Hello! My name is Lucy. Today is my birthday." },
+      { speaker: "Lucy", text: "I am seven years old. My birthday is in June." },
+      { speaker: "Lucy", text: "My mother makes a big cake. My father writes my name on the cake." },
+      { speaker: "Lucy", text: "My grandma and my grandpa are here. My grandma is seventy-two." },
+      { speaker: "Lucy", text: "I've got one brother. He is a baby, so he does not eat cake." },
+      { speaker: "Lucy", text: "My family says: happy birthday, Lucy! I am very happy." },
     ],
     questions: [
       {
-        text: "How old is Ela today?",
+        text: "How old is Lucy today?",
         options: ["seven", "seventy-two", "one"],
         answer: 0,
         explain: "„I am seven years old.“ — yetmiş iki ninenin yaşı.",
@@ -270,14 +270,14 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela's brother eats cake.",
+        text: "Lucy's brother eats cake.",
         options: ["True", "False"],
         answer: 1,
         explain: "„He is a baby, so he does not eat cake.“ — bebek olduğu için yemiyor.",
       },
       {
         kind: "gapfill",
-        text: "Ela's birthday is in ___.",
+        text: "Lucy's birthday is in ___.",
         options: [],
         answer: 0,
         accept: ["June"],
@@ -285,14 +285,14 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Ela'nın anlattığı sıra: doğru sıraya koy.",
+        text: "Lucy'nin anlattığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
           "Today is my birthday.",
           "My mother makes a big cake.",
           "My grandma and my grandpa are here.",
-          "My family says: happy birthday, Ela!",
+          "My family says: happy birthday, Lucy!",
         ],
         explain: "Önce gün, sonra pasta, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",
       },
@@ -353,11 +353,11 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "Kütüphane kartı formunu Ela için doldur.",
-        facts: "Ela Yalin; adı Ela, soyadı Yalin; Bremen'de oturuyor; doğum günü haziranda.",
+        prompt: "Kütüphane kartı formunu Lucy için doldur.",
+        facts: "Lucy Thornton; adı Lucy, soyadı Thornton; Bremen'de oturuyor; doğum günü haziranda.",
         fields: [
-          { label: "First name", answer: "Ela" },
-          { label: "Last name", answer: "Yalin" },
+          { label: "First name", answer: "Lucy" },
+          { label: "Last name", answer: "Thornton" },
           { label: "City", answer: "Bremen" },
           { label: "Birthday", answer: "June", accept: ["in June"] },
         ],
@@ -395,9 +395,9 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Onun adı Kemal.",
-        answer: "His name is Kemal.",
-        hint: "Kemal erkek, o yüzden „his“. Kadın olsaydı „her name“ olurdu — iyelik SAHİBE bakıyor.",
+        tr: "Onun adı Phil.",
+        answer: "His name is Phil.",
+        hint: "Phil erkek, o yüzden „his“. Kadın olsaydı „her name“ olurdu — iyelik SAHİBE bakıyor.",
       },
       {
         kind: "rewrite",

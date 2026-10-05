@@ -15,9 +15,9 @@
   "de": "Drei Personen bestellen Getränke. Wer nimmt was, wie viel macht das zusammen?"
  },
  {
-  "tr": "Ela pazar alışverişini anlatıyor. Ne aldı, ne kadar ödedi?",
+  "tr": "Lucy pazar alışverişini anlatıyor. Ne aldı, ne kadar ödedi?",
   "kind": "intro",
-  "de": "Ela erzählt von ihrem Einkauf auf dem Markt. Was hat sie gekauft, was hat sie bezahlt?"
+  "de": "Lucy erzählt von ihrem Einkauf auf dem Markt. Was hat sie gekauft, was hat sie bezahlt?"
  },
  {
   "tr": "Bir günün tamamı saatleriyle anlatılıyor. Hangi iş hangi saatte?",
@@ -25,7 +25,7 @@
   "de": "Ein ganzer Tag wird mit seinen Uhrzeiten erzählt. Was passiert wann?"
  },
  {
-  "tr": "Tarif yaz. Emir kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
+  "tr": "Tarif yaz. Ethan kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
   "kind": "intro",
   "de": "Schreibe ein Rezept. Im Imperativ steht kein Subjekt, der Satz beginnt mit dem Verb."
  },
@@ -165,9 +165,9 @@
   "de": "„I usually walk to work.“ — in der dritten Person Singular ein „-s“: he walks."
  },
  {
-  "tr": "„I'd like a juice… Apple, please.“ — bira Kaan'ın, su Deniz'in.",
+  "tr": "„I'd like a juice… Apple, please.“ — bira Liam'ın, su Charlie'nin.",
   "kind": "explain",
-  "de": "„I'd like a juice… Apple, please.“ — das Bier ist von Kaan, das Wasser von Deniz."
+  "de": "„I'd like a juice… Apple, please.“ — das Bier ist von Liam, das Wasser von Charlie."
  },
  {
   "tr": "„Tomatoes are cheap this week — they're on sale.“ — pahalı olan et.",
@@ -175,9 +175,9 @@
   "de": "„Tomatoes are cheap this week — they're on sale.“ — teuer ist das Fleisch."
  },
  {
-  "tr": "„Never! I work Monday through Friday.“ — hafta sonu çalışan Nil.",
+  "tr": "„Never! I work Monday through Friday.“ — hafta sonu çalışan Katie.",
   "kind": "explain",
-  "de": "„Never! I work Monday through Friday.“ — am Wochenende arbeitet Nil."
+  "de": "„Never! I work Monday through Friday.“ — am Wochenende arbeitet Katie."
  },
  {
   "tr": "„Two euros a kilo.“ — yarım avro muzun fiyatı, dokuz avro toplam.",
@@ -205,9 +205,9 @@
   "de": "„Yes, it's very hot. Don't touch it!“ — lauwarm ist der Tee, das Wasser ist sehr heiß."
  },
  {
-  "tr": "Önce Ela, sonra Kaan, sonra Deniz söylüyor; toplam en sonda çıkıyor.",
+  "tr": "Önce Lucy, sonra Liam, sonra Charlie söylüyor; toplam en sonda çıkıyor.",
   "kind": "explain",
-  "de": "Zuerst bestellt Ela, dann Kaan, dann Deniz; die Summe kommt zuletzt."
+  "de": "Zuerst bestellt Lucy, dann Liam, dann Charlie; die Summe kommt zuletzt."
  },
  {
   "tr": "„I work from nine until five.“ — „from … until …“ başlangıç ve bitiş.",
@@ -230,9 +230,9 @@
   "de": "„In the evening I turn off the radio.“ — morgens schaltet er es an, abends aus."
  },
  {
-  "tr": "„It's half past eight.“ — sekiz buçuk; on biri çeyrek geçe Nil'in yatma saati.",
+  "tr": "„It's half past eight.“ — sekiz buçuk; on biri çeyrek geçe Katie'nin yatma saati.",
   "kind": "explain",
-  "de": "„It's half past eight.“ — halb neun; um Viertel nach elf geht Nil ins Bett."
+  "de": "„It's half past eight.“ — halb neun; um Viertel nach elf geht Katie ins Bett."
  },
  {
   "tr": "„The meat is expensive: nine euros a kilo.“ İndirimde daha ucuz oluyor.",
@@ -245,9 +245,9 @@
   "de": "„At the end I pay by card.“ — die Zahlungsart mit „by“: by card, by check."
  },
  {
-  "tr": "„I don't work on Monday. I wake up at nine…“ — yedi Can'ın kalkma saati.",
+  "tr": "„I don't work on Monday. I wake up at nine…“ — yedi Tyler'in kalkma saati.",
   "kind": "explain",
-  "de": "„I don't work on Monday. I wake up at nine…“ — sieben ist die Aufstehzeit von Can."
+  "de": "„I don't work on Monday. I wake up at nine…“ — sieben ist die Aufstehzeit von Tyler."
  },
  {
   "tr": "„I usually walk to work.“ — „usually“ „always“ değil; her zaman demiyor.",
@@ -275,9 +275,9 @@
   "de": "„Nine euros! That's too expensive for me.“ — bei weniger sind es fünf Euro."
  },
  {
-  "tr": "„We begin at half past nine.“ — çeyrek geçe şimdiki saat, yani Ali geç değil.",
+  "tr": "„We begin at half past nine.“ — çeyrek geçe şimdiki saat, yani Harry geç değil.",
   "kind": "explain",
-  "de": "„We begin at half past nine.“ — Viertel nach ist die jetzige Zeit, Ali ist also nicht zu spät."
+  "de": "„We begin at half past nine.“ — Viertel nach ist die jetzige Zeit, Harry ist also nicht zu spät."
  },
  {
   "tr": "„I usually wake up at seven“ — „wake up“ iki parçalı bir fiil, parçası düşmez.",
@@ -315,9 +315,9 @@
   "de": "„I always drink tea, never coffee.“ — das Häufigkeitsadverb steht vor dem Vollverb: always drink."
  },
  {
-  "tr": "„I'd like to pay by card… I only have a card too.“ „with a check“ yanlış: Eda'nın istediği „receipt“ iş için bir fiş, ödeme biçimi değil.",
+  "tr": "„I'd like to pay by card… I only have a card too.“ „with a check“ yanlış: Erin'in istediği „receipt“ iş için bir fiş, ödeme biçimi değil.",
   "kind": "explain",
-  "de": "„I'd like to pay by card… I only have a card too.“ „with a check“ ist falsch: Was Eda möchte, ist eine „receipt“, ein Beleg für die Arbeit, keine Zahlungsart."
+  "de": "„I'd like to pay by card… I only have a card too.“ „with a check“ ist falsch: Was Erin möchte, ist eine „receipt“, ein Beleg für die Arbeit, keine Zahlungsart."
  },
  {
   "tr": "„After work I buy fruit and vegetables at the market.“ — ekmek ve peynir kahvaltıda.",
@@ -335,9 +335,9 @@
   "de": "„Sometimes I am late, but my boss is never angry.“ — „never“ steht NACH dem Verb „be“."
  },
  {
-  "tr": "„Then look for a new clock on the weekend!“ — Ali de „On Saturday I have time“ diyor.",
+  "tr": "„Then look for a new clock on the weekend!“ — Harry de „On Saturday I have time“ diyor.",
   "kind": "explain",
-  "de": "„Then look for a new clock on the weekend!“ — Ali stimmt mit „On Saturday I have time“ zu."
+  "de": "„Then look for a new clock on the weekend!“ — Harry stimmt mit „On Saturday I have time“ zu."
  },
  {
   "tr": "„I have dinner at half past seven.“ — „half past seven“ yedi buçuk, sekiz buçuk değil.",

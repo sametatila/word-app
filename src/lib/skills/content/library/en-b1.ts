@@ -98,7 +98,7 @@ export const enB1: SkillExercise[] = [
     skill: "listening",
     title: "Swapping Homes for the Summer",
     genre: "interview",
-    intro: "Radyo sunucusu, tatillerini ev takasıyla geçiren Leyla'yla konuşuyor: sistem nasıl işliyor, başta neden endişeliydi, şimdi ne düşünüyor.",
+    intro: "Radyo sunucusu, tatillerini ev takasıyla geçiren Fiona'yla konuşuyor: sistem nasıl işliyor, başta neden endişeliydi, şimdi ne düşünüyor.",
     gloss: [
       { de: "home exchange", tr: "ev takası" },
       { de: "swap", tr: "takas etmek" },
@@ -112,48 +112,48 @@ export const enB1: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Host", text: "Welcome back. My guest today is Leyla, who has spent the last three summers in other people's homes and let other people stay in hers. Leyla, how does a home exchange work?" },
-      { speaker: "Leyla", text: "It's simple, really. You put your apartment on a website, with photos, and look for a family who wants to visit your city. You agree on dates, and then you just swap keys." },
+      { speaker: "Host", text: "Welcome back. My guest today is Fiona, who has spent the last three summers in other people's homes and let other people stay in hers. Fiona, how does a home exchange work?" },
+      { speaker: "Fiona", text: "It's simple, really. You put your apartment on a website, with photos, and look for a family who wants to visit your city. You agree on dates, and then you just swap keys." },
       { speaker: "Host", text: "And you don't pay anything?" },
-      { speaker: "Leyla", text: "No rent, no. You pay for the flights, of course, but for a family of four, that saves a lot of money." },
+      { speaker: "Fiona", text: "No rent, no. You pay for the flights, of course, but for a family of four, that saves a lot of money." },
       { speaker: "Host", text: "Weren't you worried about strangers living in your home?" },
-      { speaker: "Leyla", text: "At first, yes, I have to admit. Before our first exchange, I hid all our photos and locked one room. It sounds silly now." },
+      { speaker: "Fiona", text: "At first, yes, I have to admit. Before our first exchange, I hid all our photos and locked one room. It sounds silly now." },
       { speaker: "Host", text: "So what changed?" },
-      { speaker: "Leyla", text: "We came home, and the apartment was cleaner than before. There was even a cake on the table. Since then, we have done it every year, and we've never had a real problem." },
+      { speaker: "Fiona", text: "We came home, and the apartment was cleaner than before. There was even a cake on the table. Since then, we have done it every year, and we've never had a real problem." },
       { speaker: "Host", text: "Never? Not one?" },
-      { speaker: "Leyla", text: "Well, once a guest broke a lamp. He wrote us a long apology and left money for a new one. Honestly, my own children have broken more." },
+      { speaker: "Fiona", text: "Well, once a guest broke a lamp. He wrote us a long apology and left money for a new one. Honestly, my own children have broken more." },
       { speaker: "Host", text: "Any advice for someone who wants to try it?" },
-      { speaker: "Leyla", text: "Be honest in your description. If the shower is slow, say so. Nobody wants surprises on vacation." },
+      { speaker: "Fiona", text: "Be honest in your description. If the shower is slow, say so. Nobody wants surprises on vacation." },
     ],
     questions: [
       {
         text: "What is the interview mainly about?",
         options: ["vacations in other people's homes without paying rent", "renting your apartment to tourists to make money", "a website where families sell vacation photos"],
         answer: 0,
-        explain: "Leyla ev takasını anlatıyor: „you just swap keys“, „No rent, no.“ Para kazanmak ya da fotoğraf satmak yok.",
+        explain: "Fiona ev takasını anlatıyor: „you just swap keys“, „No rent, no.“ Para kazanmak ya da fotoğraf satmak yok.",
       },
       {
-        text: "What did Leyla do before her first exchange?",
+        text: "What did Fiona do before her first exchange?",
         options: ["She hid her photos and locked a room.", "She cleaned the apartment and baked a cake.", "She paid the other family some money."],
         answer: 0,
         explain: "„Before our first exchange, I hid all our photos and locked one room.“ Pasta ve temiz ev, döndüklerinde buldukları şey.",
       },
       {
-        text: "How does Leyla feel about the broken lamp now?",
+        text: "How does Fiona feel about the broken lamp now?",
         options: ["It was not a big problem for her.", "She is still angry with the guest.", "She thinks the guest should pay more."],
         answer: 0,
         explain: "„He wrote us a long apology … my own children have broken more.“ — özür ve karşılaştırma, olayı küçümsediğini gösteriyor.",
       },
       {
         kind: "truefalse",
-        text: "The guests pay Leyla rent for her apartment.",
+        text: "The guests pay Fiona rent for her apartment.",
         options: ["True", "False"],
         answer: 1,
         explain: "„And you don't pay anything?“ — „No rent, no.“ Yalnız kendi uçak biletleri ödeniyor.",
       },
       {
         kind: "dictation",
-        text: "Leyla'nın son tavsiye cümlesini duyduğun gibi yaz.",
+        text: "Fiona'nın son tavsiye cümlesini duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["Nobody wants surprises on vacation.", "Nobody wants surprises on vacation"],
@@ -161,7 +161,7 @@ export const enB1: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many summers has Leyla spent in other people's homes?",
+        text: "How many summers has Fiona spent in other people's homes?",
         options: [],
         answer: 0,
         accept: ["three", "3", "three summers", "the last three summers"],
@@ -176,9 +176,9 @@ export const enB1: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "writing",
-    title: "Should Ayla Get a Dog?",
+    title: "Should Freya Get a Dog?",
     genre: "email",
-    intro: "Arkadaşın Ayla köpek almayı düşünüyor ve fikrini soruyor; önce iki cümle kur, sonra e-postasına görüşünü ve gerekçelerini yaz.",
+    intro: "Arkadaşın Freya köpek almayı düşünüyor ve fikrini soruyor; önce iki cümle kur, sonra e-postasına görüşünü ve gerekçelerini yaz.",
     gloss: [
       { de: "opinion", tr: "görüş" },
       { de: "honest", tr: "dürüst" },
@@ -204,10 +204,10 @@ export const enB1: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Arkadaşın Ayla köpek almayı düşünüyor ve senin dürüst görüşünü istiyor. E-postasına cevap yaz: görüşünü açıkça söyle, en az iki gerekçe ver, kendi deneyiminden ya da tanıdığın birinden örnek ver ve ona bir soru sor.",
+          "Arkadaşın Freya köpek almayı düşünüyor ve senin dürüst görüşünü istiyor. E-postasına cevap yaz: görüşünü açıkça söyle, en az iki gerekçe ver, kendi deneyiminden ya da tanıdığın birinden örnek ver ve ona bir soru sor.",
         stimulus:
           "Hi! I need your honest opinion. I have been thinking about getting a dog for months. I live alone in a small apartment, and I work from home three days a week. " +
-          "My neighbor says a dog would be too much for me, but I have wanted one since I was a child. What do you think? Should I do it, or should I wait? Write soon! Ayla",
+          "My neighbor says a dog would be too much for me, but I have wanted one since I was a child. What do you think? Should I do it, or should I wait? Write soon! Freya",
         checklist: ["Görüşünü açıkça söyle: al, alma ya da bekle", "En az iki gerekçe ver", "Kendi deneyiminden ya da tanıdığın birinden örnek ver", "Bir soru sor ve vedalaş"],
         minWords: 60,
         phrases: [
@@ -218,10 +218,10 @@ export const enB1: SkillExercise[] = [
           { de: "Have you thought about …?", tr: "…-i düşündün mü?" },
         ],
         sample:
-          "Hi Ayla, thanks for your message! In my opinion, you should get a dog, but not yet. I have had one for two years, and it is the best thing that has happened to me. " +
+          "Hi Freya, thanks for your message! In my opinion, you should get a dog, but not yet. I have had one for two years, and it is the best thing that has happened to me. " +
           "But a dog needs a lot of time, and the first months are hard. Since I got mine, I have not slept late once! " +
           "The problem is that you are away from home two days a week. If I were you, I would wait until you have found someone who can walk the dog on those days. " +
-          "Have you thought about a smaller dog? They are happier in an apartment. Let me know what you decide! Love, Deniz",
+          "Have you thought about a smaller dog? They are happier in an apartment. Let me know what you decide! Love, Charlie",
       },
     ],
   },

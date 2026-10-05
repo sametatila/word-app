@@ -103,19 +103,19 @@ export const enA1U09: SkillExercise[] = [
     minutes: 4,
     text:
       "Teacher: Good morning! Come in and sit down, please.\n" +
-      "Ali: Good morning. Sorry, I am late again.\n" +
+      "Harry: Good morning. Sorry, I am late again.\n" +
       "Teacher: It's only a quarter past nine. What time do you get up?\n" +
-      "Ali: I usually wake up at seven, but today my clock doesn't work.\n" +
+      "Harry: I usually wake up at seven, but today my clock doesn't work.\n" +
       "Teacher: Turn on your phone at night, then.\n" +
-      "Ali: I always turn it off before I sleep.\n" +
+      "Harry: I always turn it off before I sleep.\n" +
       "Teacher: Then look for a new clock on the weekend!\n" +
-      "Ali: Yes. On Saturday I have time.\n" +
+      "Harry: Yes. On Saturday I have time.\n" +
       "Teacher: Good. Now, first take off your coat and sit down.\n" +
-      "Ali: Sorry again!\n" +
+      "Harry: Sorry again!\n" +
       "Teacher: Never mind. We begin at half past nine. You are not late.",
     questions: [
       {
-        text: "Why is Ali late?",
+        text: "Why is Harry late?",
         options: ["his clock doesn't work", "he sleeps at midnight", "he has no phone"],
         answer: 0,
         explain: "„I usually wake up at seven, but today my clock doesn't work.“",
@@ -124,18 +124,18 @@ export const enA1U09: SkillExercise[] = [
         text: "What time do they begin?",
         options: ["at half past nine", "at a quarter past nine", "at seven"],
         answer: 0,
-        explain: "„We begin at half past nine.“ — çeyrek geçe şimdiki saat, yani Ali geç değil.",
+        explain: "„We begin at half past nine.“ — çeyrek geçe şimdiki saat, yani Harry geç değil.",
       },
       {
         kind: "truefalse",
-        text: "Ali turns off his phone before he sleeps.",
+        text: "Harry turns off his phone before he sleeps.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I always turn it off before I sleep.“ — nesne zamir olunca ARAYA giriyor: turn it off.",
       },
       {
         kind: "gapfill",
-        text: "Ali usually wakes ___ at seven.",
+        text: "Harry usually wakes ___ at seven.",
         options: [],
         answer: 0,
         accept: ["up"],
@@ -156,11 +156,11 @@ export const enA1U09: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When will Ali look for a new clock?",
+        text: "When will Harry look for a new clock?",
         options: [],
         answer: 0,
         accept: ["on the weekend", "on Saturday", "the weekend"],
-        explain: "„Then look for a new clock on the weekend!“ — Ali de „On Saturday I have time“ diyor.",
+        explain: "„Then look for a new clock on the weekend!“ — Harry de „On Saturday I have time“ diyor.",
       },
     ],
   },
@@ -172,7 +172,7 @@ export const enA1U09: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 9,
-    title: "Deniz's morning",
+    title: "Charlie's morning",
     genre: "monologue",
     intro: "Sabahın adımları sırayla. First, then, after that, before, finally.",
     gloss: [
@@ -183,36 +183,36 @@ export const enA1U09: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Deniz", text: "My morning is always the same. First, I wake up at six." },
-      { speaker: "Deniz", text: "Then I get up and I turn on the TV. I put on my clothes." },
-      { speaker: "Deniz", text: "After that, I have breakfast. I always drink tea, never coffee." },
-      { speaker: "Deniz", text: "Before work, I turn off the TV and I look for my keys." },
-      { speaker: "Deniz", text: "I usually walk to work. Sometimes, in the evening, I also walk." },
-      { speaker: "Deniz", text: "Finally, at night, I sit down and I am happy. That is my usual day." },
+      { speaker: "Charlie", text: "My morning is always the same. First, I wake up at six." },
+      { speaker: "Charlie", text: "Then I get up and I turn on the TV. I put on my clothes." },
+      { speaker: "Charlie", text: "After that, I have breakfast. I always drink tea, never coffee." },
+      { speaker: "Charlie", text: "Before work, I turn off the TV and I look for my keys." },
+      { speaker: "Charlie", text: "I usually walk to work. Sometimes, in the evening, I also walk." },
+      { speaker: "Charlie", text: "Finally, at night, I sit down and I am happy. That is my usual day." },
     ],
     questions: [
       {
-        text: "What does Deniz do first?",
+        text: "What does Charlie do first?",
         options: ["he wakes up", "he gets up", "he has breakfast"],
         answer: 0,
         explain: "„First, I wake up at six.“ — kalkmak ikinci adım, kahvaltı üçüncü.",
       },
       {
-        text: "What does Deniz always drink?",
+        text: "What does Charlie always drink?",
         options: ["tea", "coffee", "milk"],
         answer: 0,
         explain: "„I always drink tea, never coffee.“ — iki zarf aynı cümlede karşıt duruyor.",
       },
       {
         kind: "truefalse",
-        text: "Deniz turns off the TV before work.",
+        text: "Charlie turns off the TV before work.",
         options: ["True", "False"],
         answer: 0,
         explain: "„Before work, I turn off the TV.“ — açmak sabahın başında, kapatmak işten önce.",
       },
       {
         kind: "gapfill",
-        text: "Deniz usually ___ to work.",
+        text: "Charlie usually ___ to work.",
         options: [],
         answer: 0,
         accept: ["walks"],
@@ -228,7 +228,7 @@ export const enA1U09: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Deniz look for?",
+        text: "What does Charlie look for?",
         options: [],
         answer: 0,
         accept: ["his keys", "keys", "the keys"],
@@ -253,22 +253,22 @@ export const enA1U09: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "What do you do on the weekend, Kaan?" },
-      { speaker: "Kaan", text: "On Saturday I always sleep until ten. Then I have a big breakfast." },
-      { speaker: "Nil", text: "And on Sunday?" },
-      { speaker: "Kaan", text: "On Sunday I usually cook. Sometimes my friends come over and we eat together." },
-      { speaker: "Nil", text: "Do you work on the weekend?" },
-      { speaker: "Kaan", text: "Never! I work Monday through Friday, that is enough." },
-      { speaker: "Nil", text: "I often work on Saturday morning. But in the evening I am free." },
-      { speaker: "Kaan", text: "Then come over next Saturday. We can cook together." },
-      { speaker: "Kaan", text: "First we buy the vegetables, after that we cook, and finally we eat." },
-      { speaker: "Nil", text: "Good! What time?" },
-      { speaker: "Kaan", text: "At half past six. Don't be late!" },
-      { speaker: "Nil", text: "I am never late." },
+      { speaker: "Katie", text: "What do you do on the weekend, Liam?" },
+      { speaker: "Liam", text: "On Saturday I always sleep until ten. Then I have a big breakfast." },
+      { speaker: "Katie", text: "And on Sunday?" },
+      { speaker: "Liam", text: "On Sunday I usually cook. Sometimes my friends come over and we eat together." },
+      { speaker: "Katie", text: "Do you work on the weekend?" },
+      { speaker: "Liam", text: "Never! I work Monday through Friday, that is enough." },
+      { speaker: "Katie", text: "I often work on Saturday morning. But in the evening I am free." },
+      { speaker: "Liam", text: "Then come over next Saturday. We can cook together." },
+      { speaker: "Liam", text: "First we buy the vegetables, after that we cook, and finally we eat." },
+      { speaker: "Katie", text: "Good! What time?" },
+      { speaker: "Liam", text: "At half past six. Don't be late!" },
+      { speaker: "Katie", text: "I am never late." },
     ],
     questions: [
       {
-        text: "What does Kaan do on Sunday?",
+        text: "What does Liam do on Sunday?",
         options: ["he usually cooks", "he works", "he sleeps until ten"],
         answer: 0,
         explain: "„On Sunday I usually cook.“ — ona kadar uyumak cumartesi.",
@@ -281,14 +281,14 @@ export const enA1U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Kaan works on the weekend.",
+        text: "Liam works on the weekend.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Never! I work Monday through Friday.“ — hafta sonu çalışan Nil.",
+        explain: "„Never! I work Monday through Friday.“ — hafta sonu çalışan Katie.",
       },
       {
         kind: "gapfill",
-        text: "Nil often works on Saturday ___.",
+        text: "Katie often works on Saturday ___.",
         options: [],
         answer: 0,
         accept: ["morning"],

@@ -247,7 +247,7 @@ export const deB2P7: SkillExercise[] = [
           "Gibt es bei euch eine feste Regel, wer einen Entwurf freigibt? " +
           "Für einen Rat wäre ich dir dankbar, weil wir gerade genau darüber streiten. " +
           "Und wenn du im Herbst in der Stadt bist, melde dich — ein Kaffee wäre längst fällig. " +
-          "Herzliche Grüße, Derya",
+          "Herzliche Grüße, Yvonne",
       },
     ],
   },

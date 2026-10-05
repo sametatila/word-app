@@ -137,29 +137,29 @@ export const enB2: SkillExercise[] = [
     ],
     minutes: 9,
     segments: [
-      { speaker: "Marek", text: "So, the vacancy. I want to promote Dilara. She has done half the job for eight months already, and the team trusts her." },
-      { speaker: "Ana", text: "I like Dilara. But I would like to see an external shortlist as well, even if we end up choosing her." },
+      { speaker: "Marek", text: "So, the vacancy. I want to promote Tessa. She has done half the job for eight months already, and the team trusts her." },
+      { speaker: "Ana", text: "I like Tessa. But I would like to see an external shortlist as well, even if we end up choosing her." },
       { speaker: "Marek", text: "That feels like a waste of everyone's time. And if she finds out we interviewed outsiders, what does that tell her?" },
       { speaker: "Ana", text: "It tells her the role was worth a proper process. If we hand it over quietly, the other three people in the team never get to apply." },
       { speaker: "Marek", text: "Nobody else wants it. I have asked." },
       { speaker: "Ana", text: "You asked in a meeting, with you in the room. That is not the same as an open call." },
       { speaker: "Marek", text: "Fair point. But there is a cost. An external hire needs six months before they are useful. We do not have six months." },
-      { speaker: "Ana", text: "Agreed, and that is a real argument for Dilara. I just want it written down as a decision, not as an assumption." },
+      { speaker: "Ana", text: "Agreed, and that is a real argument for Tessa. I just want it written down as a decision, not as an assumption." },
       { speaker: "Marek", text: "What would change your mind about the shortlist?" },
       { speaker: "Ana", text: "If we advertise internally for two weeks and nobody applies, I will drop the external search completely." },
-      { speaker: "Marek", text: "Two weeks I can live with. But I want to tell Dilara today that she is the strongest candidate, otherwise she will start looking elsewhere." },
+      { speaker: "Marek", text: "Two weeks I can live with. But I want to tell Tessa today that she is the strongest candidate, otherwise she will start looking elsewhere." },
       { speaker: "Ana", text: "Tell her she is the strongest candidate. Do not tell her the job is hers. Those are different sentences, and one of them we can keep." },
     ],
     questions: [
       {
         text: "What do Marek and Ana disagree about?",
         options: [
-          "Whether the role should be advertised before Dilara is chosen.",
-          "Whether Dilara is good enough for the job.",
+          "Whether the role should be advertised before Tessa is chosen.",
+          "Whether Tessa is good enough for the job.",
           "How much the new manager should be paid.",
         ],
         answer: 0,
-        explain: "Ana da Dilara'yı beğeniyor; tartışma süreç üzerine: „I would like to see an external shortlist as well, even if we end up choosing her.“",
+        explain: "Ana da Tessa'yı beğeniyor; tartışma süreç üzerine: „I would like to see an external shortlist as well, even if we end up choosing her.“",
       },
       {
         text: "Why does Ana question Marek's claim that nobody else wants the job?",
@@ -176,7 +176,7 @@ export const enB2: SkillExercise[] = [
         text: "Marek accepts that an internal advertisement is reasonable.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Two weeks I can live with.“ — Ana'nın koşullu önerisini kabul ediyor, yalnız Dilara'ya bugün konuşmak istiyor.",
+        explain: "„Two weeks I can live with.“ — Ana'nın koşullu önerisini kabul ediyor, yalnız Tessa'ya bugün konuşmak istiyor.",
       },
       {
         kind: "short_answer",
@@ -188,7 +188,7 @@ export const enB2: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Ana'nın Dilara'ya ne söylenmesi gerektiğini ayıran son cümlesini duyduğun gibi yaz.",
+        text: "Ana'nın Tessa'ya ne söylenmesi gerektiğini ayıran son cümlesini duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: [
@@ -280,7 +280,7 @@ export const enB2: SkillExercise[] = [
           "this year, or we can refund 160 euros directly. We will also send the full plan for the remaining weeks " +
           "tomorrow, with the name of the teacher for each date. If neither option works for you, please call me and " +
           "we will find something that does.\n\n" +
-          "Kind regards,\nLeyla Arslan, Course Office",
+          "Kind regards,\nFiona Nolan, Course Office",
       },
     ],
   },

@@ -213,7 +213,7 @@ export const deA1P5: SkillExercise[] = [
           "Hallo Marie, herzlichen Glückwunsch zur neuen Stelle! Ich freue mich sehr für dich. " +
           "Wie lange arbeitest du jeden Tag? Und ist der Weg zur Apotheke weit? " +
           "Können wir am Samstagabend zusammen feiern? Ich habe ab sechs Uhr Zeit. " +
-          "Schreib mir bitte kurz. Bis bald, Deniz",
+          "Schreib mir bitte kurz. Bis bald, Sascha",
       },
     ],
   },

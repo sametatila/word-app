@@ -174,17 +174,17 @@ export const a2U17: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ayla", text: "Hast du den Wetterbericht gesehen? Sonntag soll es trocken sein." },
-      { speaker: "Mert", text: "Trocken, aber nur 14 Grad. Was schlägst du vor?" },
-      { speaker: "Ayla", text: "Wenn das Wetter gut ist, machen wir eine Bootsfahrt. Und wenn nicht, gehen wir ins Museum." },
-      { speaker: "Mert", text: "Bei 14 Grad auf dem Wasser? Da friere ich." },
-      { speaker: "Ayla", text: "Stimmt. Dann lieber der Zoo — draußen, aber man bewegt sich." },
-      { speaker: "Mert", text: "Gute Idee. Wie viel kostet die Eintrittskarte?" },
-      { speaker: "Ayla", text: "Zwölf Euro, für Studenten acht. Du hast doch noch deinen Ausweis?" },
-      { speaker: "Mert", text: "Ja, der gilt noch bis Dezember. Und danach?" },
-      { speaker: "Ayla", text: "Danach bummeln wir durch die Altstadt und trinken irgendwo einen Kaffee." },
-      { speaker: "Mert", text: "Und auf dem Rückweg halten wir kurz an der Raststätte, ja? Ich habe dann immer Hunger." },
-      { speaker: "Ayla", text: "Abgemacht. Ich hole dich um zehn ab." },
+      { speaker: "Elke", text: "Hast du den Wetterbericht gesehen? Sonntag soll es trocken sein." },
+      { speaker: "Hannes", text: "Trocken, aber nur 14 Grad. Was schlägst du vor?" },
+      { speaker: "Elke", text: "Wenn das Wetter gut ist, machen wir eine Bootsfahrt. Und wenn nicht, gehen wir ins Museum." },
+      { speaker: "Hannes", text: "Bei 14 Grad auf dem Wasser? Da friere ich." },
+      { speaker: "Elke", text: "Stimmt. Dann lieber der Zoo — draußen, aber man bewegt sich." },
+      { speaker: "Hannes", text: "Gute Idee. Wie viel kostet die Eintrittskarte?" },
+      { speaker: "Elke", text: "Zwölf Euro, für Studenten acht. Du hast doch noch deinen Ausweis?" },
+      { speaker: "Hannes", text: "Ja, der gilt noch bis Dezember. Und danach?" },
+      { speaker: "Elke", text: "Danach bummeln wir durch die Altstadt und trinken irgendwo einen Kaffee." },
+      { speaker: "Hannes", text: "Und auf dem Rückweg halten wir kurz an der Raststätte, ja? Ich habe dann immer Hunger." },
+      { speaker: "Elke", text: "Abgemacht. Ich hole dich um zehn ab." },
     ],
     questions: [
       {
@@ -359,7 +359,7 @@ export const a2U17: SkillExercise[] = [
         stimulus:
           "Hey! Sonntag habe ich endlich frei. Wollen wir was machen?\n\n" +
           "Der Wetterbericht sagt: vormittags bewölkt, nachmittags vielleicht Sonne, 16 Grad. Also nicht super, aber trocken.\n\n" +
-          "Ich hätte Lust auf den Freizeitpark, aber der ist teuer (29 Euro!). Zoo oder Stadtführung ginge auch. Sag mal, was du denkst — und wann du kannst.\n\nBis dann, Kerem",
+          "Ich hätte Lust auf den Freizeitpark, aber der ist teuer (29 Euro!). Zoo oder Stadtführung ginge auch. Sag mal, was du denkst — und wann du kannst.\n\nBis dann, Julian",
         checklist: [
           "İyi hava için bir plan yazdın mı (wenn ile)?",
           "Kötü hava için bir alternatif verdin mi?",
@@ -373,12 +373,12 @@ export const a2U17: SkillExercise[] = [
           { de: "Passt dir elf Uhr?", tr: "saat on bir sana uyar mı", en: "does eleven work for you" },
         ],
         sample:
-          "Hallo Kerem,\n\n" +
+          "Hallo Julian,\n\n" +
           "schön, dass du Sonntag frei hast!\n\n" +
           "Wenn die Sonne am Nachmittag kommt, gehen wir in den Zoo — bei 16 Grad läuft man gut, und die Eintrittskarte kostet nur zwölf Euro. Der Freizeitpark ist mir mit 29 Euro wirklich zu teuer.\n\n" +
           "Wenn es doch bewölkt bleibt oder regnet, mache ich lieber die Stadtführung. Die geht zum Teil durchs Schloss und dauert nur eine Stunde.\n\n" +
           "Passt dir elf Uhr am Hauptbahnhof? Danach können wir noch durch die Altstadt bummeln.\n\n" +
-          "Hast du deinen Studentenausweis noch? Damit wird es billiger.\n\nBis Sonntag, Ayla",
+          "Hast du deinen Studentenausweis noch? Damit wird es billiger.\n\nBis Sonntag, Elke",
       },
     ],
   },

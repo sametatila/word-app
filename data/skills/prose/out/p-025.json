@@ -1,8 +1,8 @@
 [
  {
-  "tr": "\"It's Ayse Demir.\" Soyadı Demir.",
+  "tr": "\"It's Rachel Adams.\" Soyadı Adams.",
   "kind": "explain",
-  "en": "\"It's Ayse Demir.\" The family name is Demir."
+  "en": "\"It's Rachel Adams.\" The family name is Adams."
  },
  {
   "tr": "\"She's studying music in London.\"",
@@ -65,14 +65,14 @@
   "en": "There is no small size; the customer says \"OK, medium is fine\"."
  },
  {
-  "tr": "\"He is holding our cat, Pamuk.\" Kediyi Kerem tutuyor.",
+  "tr": "\"He is holding our cat, Pamuk.\" Kediyi Connor tutuyor.",
   "kind": "explain",
-  "en": "\"He is holding our cat, Pamuk.\" Kerem is holding the cat."
+  "en": "\"He is holding our cat, Pamuk.\" Connor is holding the cat."
  },
  {
-  "tr": "\"He is nine years old.\" Kerem, Elif'in erkek kardeşi.",
+  "tr": "\"He is nine years old.\" Connor, Holly'nin erkek kardeşi.",
   "kind": "explain",
-  "en": "\"He is nine years old.\" Kerem is Elif's brother."
+  "en": "\"He is nine years old.\" Connor is Holly's brother."
  },
  {
   "tr": "\"The warranty is two years, so this isn't a problem.\"",
@@ -145,9 +145,9 @@
   "en": "\"You should sleep at least eight hours\" — at the moment she sleeps five."
  },
  {
-  "tr": "\"He has an exam on Monday.\" Murat bu yüzden sinemaya gelmiyor.",
+  "tr": "\"He has an exam on Monday.\" Isaac bu yüzden sinemaya gelmiyor.",
   "kind": "explain",
-  "en": "\"He has an exam on Monday.\" That is why Murat is not coming."
+  "en": "\"He has an exam on Monday.\" That is why Isaac is not coming."
  },
  {
   "tr": "\"The apartment is on the third floor of a quiet building.\" Asansör yok.",
@@ -155,9 +155,9 @@
   "en": "\"The apartment is on the third floor of a quiet building.\" There is no elevator."
  },
  {
-  "tr": "\"My father was a fisherman\" — Elif yazları teknede ona yardım ederdi.",
+  "tr": "\"My father was a fisherman\" — Holly yazları teknede ona yardım ederdi.",
   "kind": "explain",
-  "en": "\"My father was a fisherman\" — Elif used to help him on the boat in summer."
+  "en": "\"My father was a fisherman\" — Holly used to help him on the boat in summer."
  },
  {
   "tr": "\"Then take the second street on the right. It's called Green Street.\"",
@@ -205,14 +205,14 @@
   "en": "\"Students have a 10% discount.\" You need a student card for it."
  },
  {
-  "tr": "\"don't bring food. But please bring your camera.\" Yiyeceği Mert getiriyor.",
+  "tr": "\"don't bring food. But please bring your camera.\" Yiyeceği Henry getiriyor.",
   "kind": "explain",
-  "en": "\"don't bring food. But please bring your camera.\" Mert brings the food."
+  "en": "\"don't bring food. But please bring your camera.\" Henry brings the food."
  },
  {
-  "tr": "\"I have already booked a room for you at the hotel.\" Mektubu Elif yazıyor.",
+  "tr": "\"I have already booked a room for you at the hotel.\" Mektubu Holly yazıyor.",
   "kind": "explain",
-  "en": "\"I have already booked a room for you at the hotel.\" Elif writes the letter."
+  "en": "\"I have already booked a room for you at the hotel.\" Holly writes the letter."
  },
  {
   "tr": "\"We're going to stay there for three nights.\" Otelde değil, kuzenin evinde.",
@@ -225,9 +225,9 @@
   "en": "The mayor cut the ribbon and said the bridge was safer."
  },
  {
-  "tr": "\"Mert is a student. Anna works in a hospital.\" Telefon numarası da Anna'nın.",
+  "tr": "\"Henry is a student. Anna works in a hospital.\" Telefon numarası da Anna'nın.",
   "kind": "explain",
-  "en": "\"Mert is a student. Anna works in a hospital.\" The phone number is Anna's too."
+  "en": "\"Henry is a student. Anna works in a hospital.\" The phone number is Anna's too."
  },
  {
   "tr": "\"It's forty dollars. The green one is thirty dollars.\" Müşteri siyahı alıyor.",

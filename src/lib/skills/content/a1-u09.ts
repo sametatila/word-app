@@ -87,7 +87,7 @@ export const a1U09: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 9,
-    title: "Morgens bei Mia und Elif",
+    title: "Morgens bei Mia und Paula",
     genre: "forum",
     intro: "İki kişi sabah rutinini anlatıyor. Sıraya dikkat et.",
     gloss: [
@@ -97,7 +97,7 @@ export const a1U09: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: Zuerst wecke ich meine Kinder. Dann dusche ich schnell. Danach ziehe ich mich an und frühstücke. Um acht Uhr gehe ich zur Arbeit.\n\nElif: Bei mir ist es anders. Zuerst frühstücke ich, dann wasche ich mich. Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.\n\nMein Ehemann steht immer sehr früh auf. Er macht die Tür auf und kocht Kaffee. Ich stehe später auf.",
+      "Mia: Zuerst wecke ich meine Kinder. Dann dusche ich schnell. Danach ziehe ich mich an und frühstücke. Um acht Uhr gehe ich zur Arbeit.\n\nPaula: Bei mir ist es anders. Zuerst frühstücke ich, dann wasche ich mich. Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.\n\nMein Ehemann steht immer sehr früh auf. Er macht die Tür auf und kocht Kaffee. Ich stehe später auf.",
     questions: [
       {
         text: "Was macht Mia zuerst?",
@@ -106,13 +106,13 @@ export const a1U09: SkillExercise[] = [
         explain: "„Zuerst wecke ich meine Kinder.“",
       },
       {
-        text: "Was macht Elif zuerst?",
+        text: "Was macht Paula zuerst?",
         options: ["Sie frühstückt", "Sie wäscht sich", "Sie duscht"],
         answer: 0,
         explain: "„Zuerst frühstücke ich, dann wasche ich mich.“ Mia'nın tam tersi sıra.",
       },
       {
-        text: "Richtig oder falsch? Elif duscht jeden Morgen.",
+        text: "Richtig oder falsch? Paula duscht jeden Morgen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "Yanlış: „Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.“",

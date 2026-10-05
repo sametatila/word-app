@@ -45,9 +45,9 @@
   "en": "dürfte marks a high probability; müsste is a logical inference and könnte a weak possibility."
  },
  {
-  "tr": "Emre ilk cümlede \"I'm looking for the train station\" diyor. Tren istasyonunu arıyor.",
+  "tr": "Owen ilk cümlede \"I'm looking for the train station\" diyor. Tren istasyonunu arıyor.",
   "kind": "explain",
-  "en": "In his first sentence Emre says \"I'm looking for the train station\". He is looking for the station."
+  "en": "In his first sentence Owen says \"I'm looking for the train station\". He is looking for the station."
  },
  {
   "tr": "Ev sahibinden kira hakkında bir e-posta. Dikkat: „warm“ burada sıcaklık demek değil!",
@@ -80,9 +80,9 @@
   "en": "An article about the housing market. Watch the sentences that link two trends."
  },
  {
-  "tr": "Metinde \"Do you want a different size? Ask Elif.\" deniyor. Elif danışmada çalışıyor.",
+  "tr": "Metinde \"Do you want a different size? Ask Holly.\" deniyor. Holly danışmada çalışıyor.",
   "kind": "explain",
-  "en": "The text says \"Do you want a different size? Ask Elif.\" Elif works at the information desk."
+  "en": "The text says \"Do you want a different size? Ask Holly.\" Holly works at the information desk."
  },
  {
   "tr": "Mr. Owens \"I have lived here for thirty years\" diyor, yani otuz yıldır orada yaşıyor.",
@@ -105,9 +105,9 @@
   "en": "In the language of meetings the order comes first, then the sharing out. Setting priorities before sharing out the tasks was Kai's condition."
  },
  {
-  "tr": "Yanlış: „Frau Yalçın verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen.“",
+  "tr": "Yanlış: „Frau Jahn verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen.“",
   "kind": "explain",
-  "en": "False: „Frau Yalçın verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen.“"
+  "en": "False: „Frau Jahn verlässt uns auf eigenen Wunsch, um ihr Studium abzuschließen.“"
  },
  {
   "tr": "Yanlış. Metinde \"I live in Milan with my sister\" diyor, yani kız kardeşiyle yaşıyor.",
@@ -330,7 +330,7 @@
   "en": "„We start at nine, so please come ten minutes earlier.“ — he has to be there at ten to nine."
  },
  {
-  "tr": "Aynı şikâyeti kibar biçimde yaz. Dilek kipi burada nezaket değil, işe yarama meselesi.",
+  "tr": "Aynı şikâyeti kibar biçimde yaz. Leonie kipi burada nezaket değil, işe yarama meselesi.",
   "kind": "intro",
   "en": "Write the same complaint politely. Here the subjunctive is not about manners but about getting results."
  },
@@ -365,9 +365,9 @@
   "en": "The spoken way of telling the past: a two-part Perfekt and the right auxiliary."
  },
  {
-  "tr": "Görevli para iadesi mi yeni kulaklık mı diye sorunca Emre \"A new pair, please.\" diyor.",
+  "tr": "Görevli para iadesi mi yeni kulaklık mı diye sorunca Owen \"A new pair, please.\" diyor.",
   "kind": "explain",
-  "en": "\"A new pair, please.\" — that is what Emre answers when asked whether he wants his money back or new headphones."
+  "en": "\"A new pair, please.\" — that is what Owen answers when asked whether he wants his money back or new headphones."
  },
  {
   "tr": "Güven üzerine kısa bir yazı. Hangi fiillerin ardından 'dem/denen' geldiğine dikkat et.",
@@ -415,14 +415,14 @@
   "en": "lassen plus a reflexive stands in for the passive and carries the sense 'can it be done'."
  },
  {
-  "tr": "Listede \"Basketball - Tuesday, 8 p.m., with Marco\" yazıyor. Elif yoga dersini veriyor.",
+  "tr": "Listede \"Basketball - Tuesday, 8 p.m., with Marco\" yazıyor. Holly yoga dersini veriyor.",
   "kind": "explain",
-  "en": "The list says \"Basketball - Tuesday, 8 p.m., with Marco\". Elif teaches the yoga class."
+  "en": "The list says \"Basketball - Tuesday, 8 p.m., with Marco\". Holly teaches the yoga class."
  },
  {
-  "tr": "Mert \"By bus. It's cheaper than the plane.\" diyor, yani uçakla değil otobüsle gidiyor.",
+  "tr": "Henry \"By bus. It's cheaper than the plane.\" diyor, yani uçakla değil otobüsle gidiyor.",
   "kind": "explain",
-  "en": "Mert says \"By bus. It's cheaper than the plane.\", so he is going by bus, not by plane."
+  "en": "Henry says \"By bus. It's cheaper than the plane.\", so he is going by bus, not by plane."
  },
  {
   "tr": "Müşteri \"Can I pay by card?\" diye soruyor, görevli de \"Of course.\" diye cevap veriyor.",

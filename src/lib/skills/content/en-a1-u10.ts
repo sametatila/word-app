@@ -99,17 +99,17 @@ export const enA1U10: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Good morning. What time do you open?\n" +
+      "Lucy: Good morning. What time do you open?\n" +
       "Clerk: We open at nine and we close at seven.\n" +
-      "Ela: And on Sunday?\n" +
+      "Lucy: And on Sunday?\n" +
       "Clerk: On Sunday we are closed.\n" +
-      "Ela: Is the office in the same building?\n" +
+      "Lucy: Is the office in the same building?\n" +
       "Clerk: Yes, it is. The office opens early, at eight.\n" +
-      "Ela: I'd like to come tomorrow. Is that a problem?\n" +
+      "Lucy: I'd like to come tomorrow. Is that a problem?\n" +
       "Clerk: No. Tomorrow is Friday, we are open all day.\n" +
-      "Ela: When does the bus leave from the city?\n" +
+      "Lucy: When does the bus leave from the city?\n" +
       "Clerk: Every hour. The next bus leaves at ten.\n" +
-      "Ela: Then I am going to take the bus at ten. Is my card ready?\n" +
+      "Lucy: Then I am going to take the bus at ten. Is my card ready?\n" +
       "Clerk: Yes, your card is ready. Don't be late — we close at seven!",
     questions: [
       {
@@ -154,7 +154,7 @@ export const enA1U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When is Ela going to come?",
+        text: "When is Lucy going to come?",
         options: [],
         answer: 0,
         accept: ["tomorrow", "on Friday", "Friday"],
@@ -170,7 +170,7 @@ export const enA1U10: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 10,
-    title: "Sena's weekend",
+    title: "Ellie's weekend",
     genre: "dialogue",
     intro: "İki kişi hafta sonu planını konuşuyor. Gelecek kalıbının üç biçimi de geçiyor.",
     gloss: [
@@ -182,35 +182,35 @@ export const enA1U10: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Kaan", text: "What are you going to do on the weekend?" },
-      { speaker: "Sena", text: "I'm going to visit my parents. They live near the sea." },
-      { speaker: "Kaan", text: "Nice! Are you going to stay there?" },
-      { speaker: "Sena", text: "Yes, two days. On Sunday I'm going to travel back early." },
-      { speaker: "Kaan", text: "And your brother?" },
-      { speaker: "Sena", text: "He is not going to come. He has a meeting on Saturday." },
-      { speaker: "Kaan", text: "On Saturday! Poor man." },
-      { speaker: "Sena", text: "Yes. What is your plan?" },
-      { speaker: "Kaan", text: "Nothing special. I'm going to read, watch a movie and walk in the city." },
-      { speaker: "Sena", text: "That is a good plan too." },
-      { speaker: "Kaan", text: "Are you going to take the car?" },
-      { speaker: "Sena", text: "No, I'm going to take the bus. It leaves at half past six." },
+      { speaker: "Liam", text: "What are you going to do on the weekend?" },
+      { speaker: "Ellie", text: "I'm going to visit my parents. They live near the sea." },
+      { speaker: "Liam", text: "Nice! Are you going to stay there?" },
+      { speaker: "Ellie", text: "Yes, two days. On Sunday I'm going to travel back early." },
+      { speaker: "Liam", text: "And your brother?" },
+      { speaker: "Ellie", text: "He is not going to come. He has a meeting on Saturday." },
+      { speaker: "Liam", text: "On Saturday! Poor man." },
+      { speaker: "Ellie", text: "Yes. What is your plan?" },
+      { speaker: "Liam", text: "Nothing special. I'm going to read, watch a movie and walk in the city." },
+      { speaker: "Ellie", text: "That is a good plan too." },
+      { speaker: "Liam", text: "Are you going to take the car?" },
+      { speaker: "Ellie", text: "No, I'm going to take the bus. It leaves at half past six." },
     ],
     questions: [
       {
-        text: "What is Sena going to do on the weekend?",
+        text: "What is Ellie going to do on the weekend?",
         options: ["visit her parents", "work", "walk in the city"],
         answer: 0,
-        explain: "„I'm going to visit my parents.“ — şehirde yürüyen Kaan.",
+        explain: "„I'm going to visit my parents.“ — şehirde yürüyen Liam.",
       },
       {
-        text: "Why is Sena's brother not going to come?",
+        text: "Why is Ellie's brother not going to come?",
         options: ["he has a meeting", "he is sick", "he is at the sea"],
         answer: 0,
         explain: "„He is not going to come. He has a meeting on Saturday.“",
       },
       {
         kind: "truefalse",
-        text: "Sena is going to take the bus.",
+        text: "Ellie is going to take the bus.",
         options: ["True", "False"],
         answer: 0,
         explain: "„No, I'm going to take the bus.“ — soru arabayı soruyor, cevap otobüs diyor.",
@@ -233,7 +233,7 @@ export const enA1U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is Kaan's plan?",
+        text: "What is Liam's plan?",
         options: [],
         answer: 0,
         accept: ["nothing special", "read and watch a movie", "walk in the city", "to walk in the city", "read, watch a movie and walk in the city"],
@@ -247,9 +247,9 @@ export const enA1U10: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 10,
-    title: "Ali's free time",
+    title: "Harry's free time",
     genre: "monologue",
-    intro: "Ali iş sonrasını anlatıyor. Neyi seviyor, neyi sevmiyor?",
+    intro: "Harry iş sonrasını anlatıyor. Neyi seviyor, neyi sevmiyor?",
     gloss: [
       { de: "park", tr: "park" },
       { de: "listen to", tr: "dinlemek" },
@@ -258,36 +258,36 @@ export const enA1U10: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ali", text: "I start work at eight and I finish at four. After work I am free." },
-      { speaker: "Ali", text: "I don't like watching television. I prefer reading or walking." },
-      { speaker: "Ali", text: "On Monday and Wednesday I walk in the park near my office." },
-      { speaker: "Ali", text: "In the afternoon I sometimes listen to music on the radio." },
-      { speaker: "Ali", text: "On Friday I meet my friends. We watch a movie together." },
-      { speaker: "Ali", text: "On the weekend I am going to travel. I'm going to stay by the sea for two days." },
+      { speaker: "Harry", text: "I start work at eight and I finish at four. After work I am free." },
+      { speaker: "Harry", text: "I don't like watching television. I prefer reading or walking." },
+      { speaker: "Harry", text: "On Monday and Wednesday I walk in the park near my office." },
+      { speaker: "Harry", text: "In the afternoon I sometimes listen to music on the radio." },
+      { speaker: "Harry", text: "On Friday I meet my friends. We watch a movie together." },
+      { speaker: "Harry", text: "On the weekend I am going to travel. I'm going to stay by the sea for two days." },
     ],
     questions: [
       {
-        text: "What does Ali not like?",
+        text: "What does Harry not like?",
         options: ["watching television", "reading", "walking"],
         answer: 0,
         explain: "„I don't like watching television. I prefer reading or walking.“",
       },
       {
-        text: "When does Ali meet his friends?",
+        text: "When does Harry meet his friends?",
         options: ["on Friday", "on Monday", "on the weekend"],
         answer: 0,
         explain: "„On Friday I meet my friends.“ — pazartesi parkta yürüyor.",
       },
       {
         kind: "truefalse",
-        text: "Ali finishes work at five.",
+        text: "Harry finishes work at five.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I start work at eight and I finish at four.“",
       },
       {
         kind: "gapfill",
-        text: "Ali walks in the ___ near his office.",
+        text: "Harry walks in the ___ near his office.",
         options: [],
         answer: 0,
         accept: ["park"],
@@ -295,7 +295,7 @@ export const enA1U10: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Ali'nin anlattığı sıra: doğru sıraya koy.",
+        text: "Harry'nin anlattığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -308,7 +308,7 @@ export const enA1U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is Ali going to do on the weekend?",
+        text: "What is Harry going to do on the weekend?",
         options: [],
         answer: 0,
         accept: ["travel", "stay by the sea", "he is going to travel"],

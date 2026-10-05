@@ -16,7 +16,7 @@ export const deA1P7: SkillExercise[] = [
     course: "de",
     level: "A1",
     skill: "reading",
-    title: "Nachrichten: Ein Geschenk für Nuri",
+    title: "Nachrichten: Ein Geschenk für Anton",
     genre: "message",
     intro: "İki arkadaş telefondan yazışıyor: kime hediye alınacak, ne alınacak, parayı kim topluyor.",
     gloss: [
@@ -29,7 +29,7 @@ export const deA1P7: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Mia, 18:02\nHallo Jan! Nuri hat am Samstag Geburtstag. Hast du eine Idee für ein Geschenk?\n\n" +
+      "Mia, 18:02\nHallo Jan! Anton hat am Samstag Geburtstag. Hast du eine Idee für ein Geschenk?\n\n" +
       "Jan, 18:09\nHallo! Ein Buch vielleicht? Oder wir kaufen zusammen etwas Großes.\n\n" +
       "Mia, 18:11\nZusammen ist besser. Er kocht so gern. Eine Pfanne?\n\n" +
       "Jan, 18:15\nGute Idee! Aber eine gute Pfanne ist teuer. Wie viel bezahlen wir?\n\n" +
@@ -42,7 +42,7 @@ export const deA1P7: SkillExercise[] = [
         text: "Worüber schreiben Mia und Jan?",
         options: ["über einen Kochkurs", "über ein Geschenk", "über eine neue Wohnung"],
         answer: 1,
-        explain: "Konu Nuri'nin cumartesi günkü doğum günü ve ona ne alınacağı.",
+        explain: "Konu Anton'un cumartesi günkü doğum günü ve ona ne alınacağı.",
       },
       {
         text: "Was kaufen sie am Ende?",
@@ -74,7 +74,7 @@ export const deA1P7: SkillExercise[] = [
         explain: "„Bitte überweist mir das Geld bis Freitag.“",
       },
       {
-        text: "Warum passt eine Pfanne gut zu Nuri?",
+        text: "Warum passt eine Pfanne gut zu Anton?",
         options: ["Er kocht sehr gern.", "Er hat eine neue Küche.", "Er arbeitet in einem Restaurant."],
         answer: 0,
         explain: "„Er kocht so gern“ cümlesi hediyenin gerekçesi; mutfak ve iş konusu hiç geçmiyor.",
@@ -204,10 +204,10 @@ export const deA1P7: SkillExercise[] = [
           { de: "Vielen Dank für Ihr Verständnis.", tr: "Anlayışınız için teşekkürler.", en: "Thank you for your understanding." },
         ],
         sample:
-          "Sehr geehrte Frau Lehmann, mein Sohn Deniz aus der Klasse 3b ist seit gestern krank. " +
+          "Sehr geehrte Frau Lehmann, mein Sohn Sascha aus der Klasse 3b ist seit gestern krank. " +
           "Er hat Fieber und kann heute nicht in die Schule kommen. Der Arzt sagt, er bleibt zwei Tage zu Hause. " +
           "Am Donnerstag ist er wieder im Unterricht. Vielen Dank für Ihr Verständnis. " +
-          "Mit freundlichen Grüßen, Aylin Kaya",
+          "Mit freundlichen Grüßen, Helene Graf",
       },
     ],
   },

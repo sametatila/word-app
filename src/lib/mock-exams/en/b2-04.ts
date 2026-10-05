@@ -518,22 +518,22 @@ None of this argues that a copy equals an original, which it plainly does not. I
           options: [
             {
               key: "a",
-              label: "a — Berk, museum director",
+              label: "a — Evan, museum director",
               body: "We returned two objects last year and I was warned that it would start a flood. It did not. What it started was three years of correspondence about a third object that we still cannot trace, and that work is the real cost, not the loss of the objects themselves.",
             },
             {
               key: "b",
-              label: "b — Hulya, archaeologist",
+              label: "b — Edwards, archaeologist",
               body: "Everybody wants to discuss the famous pieces. Meanwhile the site itself is being dug up at night and sold in fragments, and that removes more material every month than any single museum holds. The argument is aimed at the wrong century.",
             },
             {
               key: "c",
-              label: "c — Onur, teacher",
+              label: "c — Callum, teacher",
               body: "My students can argue about ownership for an hour without once asking who wrote the record we are reading. That is the harder skill and we barely teach it, because it is slower and there is nothing satisfying to disagree about at the end.",
             },
             {
               key: "d",
-              label: "d — Zehra, conservator",
+              label: "d — Fay, conservator",
               body: "I am asked whether an object is safer here. Sometimes it is, and saying so out loud is unpopular. But safety is a question about buildings and money, and it is used as though it were a question about rights, which it is not.",
             },
           ],
@@ -545,7 +545,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               text: "Which text says that the real cost was not the objects themselves?",
               answer: "a",
               explain:
-                "Berk maliyeti yeniden tanımlıyor: «that work is the real cost, not the loss of the objects themselves» — üç yıllık yazışma. Nesnelerin gitmesi ona göre bedelin kendisi değil.",
+                "Evan maliyeti yeniden tanımlıyor: «that work is the real cost, not the loss of the objects themselves» — üç yıllık yazışma. Nesnelerin gitmesi ona göre bedelin kendisi değil.",
             },
             {
               kind: "match",
@@ -554,7 +554,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               text: "Which text argues that the debate is aimed at the wrong period?",
               answer: "b",
               explain:
-                "Hulya bugünkü kaybı öne çıkarıyor: kazı alanı gece kazılıp parçalanarak satılıyor ve «The argument is aimed at the wrong century». Tartışma geçmişte, sorun şimdide.",
+                "Edwards bugünkü kaybı öne çıkarıyor: kazı alanı gece kazılıp parçalanarak satılıyor ve «The argument is aimed at the wrong century». Tartışma geçmişte, sorun şimdide.",
             },
             {
               kind: "match",
@@ -572,7 +572,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               text: "Which text objects to one kind of question being used in place of another?",
               answer: "d",
               explain:
-                "Zehra iki soruyu ayırıyor: güvenlik binalar ve para hakkındadır, «it is used as though it were a question about rights, which it is not». İtiraz cevaba değil, sorunun yer değiştirmesine.",
+                "Fay iki soruyu ayırıyor: güvenlik binalar ve para hakkındadır, «it is used as though it were a question about rights, which it is not». İtiraz cevaba değil, sorunun yer değiştirmesine.",
             },
             {
               kind: "match",
@@ -581,7 +581,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               text: "Which text mentions a prediction that did not come true?",
               answer: "a",
               explain:
-                "Berk uyarıyı ve sonucunu yan yana koyuyor: «I was warned that it would start a flood. It did not». Öteki metinlerde gerçekleşmemiş bir öngörü anlatılmıyor.",
+                "Evan uyarıyı ve sonucunu yan yana koyuyor: «I was warned that it would start a flood. It did not». Öteki metinlerde gerçekleşmemiş bir öngörü anlatılmıyor.",
             },
           ],
         },
@@ -1086,22 +1086,22 @@ The communities the project wants to hear from find the {{15}} almost unusable.
               situation: "Bir radyo programında bölge müzesi müdürüyle söyleşi yapılıyor.",
               plays: 2,
               segments: [
-                { speaker: "Host", text: "Tarik, you gave four hundred objects to other museums rather than build a new store. That is unusual." },
-                { speaker: "Tarik", text: "It is, and people assume it was a funding crisis. It was not. We had the money for the store. What we did not have was any honest answer to the question of why we were keeping things that nobody in this town had asked about since 1971." },
+                { speaker: "Host", text: "Aaron, you gave four hundred objects to other museums rather than build a new store. That is unusual." },
+                { speaker: "Aaron", text: "It is, and people assume it was a funding crisis. It was not. We had the money for the store. What we did not have was any honest answer to the question of why we were keeping things that nobody in this town had asked about since 1971." },
                 { speaker: "Host", text: "Was the money the hardest part?" },
-                { speaker: "Tarik", text: "No. The hardest part was the word collection. A collection is what makes a museum a museum in most people's minds, and I made ours smaller in public. Two members of the board resigned, and one of them had appointed me." },
+                { speaker: "Aaron", text: "No. The hardest part was the word collection. A collection is what makes a museum a museum in most people's minds, and I made ours smaller in public. Two members of the board resigned, and one of them had appointed me." },
                 { speaker: "Host", text: "How long did the decision take?" },
-                { speaker: "Tarik", text: "Five years, which is embarrassing to say out loud. I commissioned three reports, which is what people like me do instead of deciding. All three said the same thing, and I read all three as though they had said something else." },
+                { speaker: "Aaron", text: "Five years, which is embarrassing to say out loud. I commissioned three reports, which is what people like me do instead of deciding. All three said the same thing, and I read all three as though they had said something else." },
                 { speaker: "Host", text: "What finally moved you?" },
-                { speaker: "Tarik", text: "A leak. Water came through the store roof one November and I stood there with a flashlight looking at boxes I could not identify. I realized I was not a custodian of those objects; I was a landlord who had lost the tenancy agreement." },
+                { speaker: "Aaron", text: "A leak. Water came through the store roof one November and I stood there with a flashlight looking at boxes I could not identify. I realized I was not a custodian of those objects; I was a landlord who had lost the tenancy agreement." },
                 { speaker: "Host", text: "And the smaller museum in practice?" },
-                { speaker: "Tarik", text: "We show about the same number of objects and we know far more about each of them. Visitor numbers are almost unchanged, which is not the dramatic answer people want. The real change is that a researcher who writes to us now gets an answer in a week rather than a year." },
+                { speaker: "Aaron", text: "We show about the same number of objects and we know far more about each of them. Visitor numbers are almost unchanged, which is not the dramatic answer people want. The real change is that a researcher who writes to us now gets an answer in a week rather than a year." },
                 { speaker: "Host", text: "Do you miss anything?" },
-                { speaker: "Tarik", text: "The possibility, honestly. A large store is a store of futures: somebody might one day need that. I miss that feeling, and I think it was mostly a comfort rather than a plan." },
+                { speaker: "Aaron", text: "The possibility, honestly. A large store is a store of futures: somebody might one day need that. I miss that feeling, and I think it was mostly a comfort rather than a plan." },
                 { speaker: "Host", text: "What do people get wrong about small museums?" },
-                { speaker: "Tarik", text: "They think small means simple. Forty thousand objects and two staff is not simpler than four hundred thousand and forty; it is the same problem with fewer hands. The difficulty did not go away; it changed shape." },
+                { speaker: "Aaron", text: "They think small means simple. Forty thousand objects and two staff is not simpler than four hundred thousand and forty; it is the same problem with fewer hands. The difficulty did not go away; it changed shape." },
                 { speaker: "Host", text: "Would you recommend it?" },
-                { speaker: "Tarik", text: "Not as a general rule. If your collection is the only record of a community that has no other archive, this is advice from a comfortable position, and it is worth saying so. What I would recommend is writing down who each part of the store is for, and then reading your own answer honestly." },
+                { speaker: "Aaron", text: "Not as a general rule. If your collection is the only record of a community that has no other archive, this is advice from a comfortable position, and it is worth saying so. What I would recommend is writing down who each part of the store is for, and then reading your own answer honestly." },
               ],
               gloss: [
                 { de: "a custodian", tr: "emanetçi, koruyucu", en: "der Verwahrer" },
@@ -1116,11 +1116,11 @@ The communities the project wants to hear from find the {{15}} almost unusable.
               id: "en-b2-04-h4-23",
               no: 23,
               ref: "d1",
-              text: "Why did Tarik give away part of the collection?",
+              text: "Why did Aaron give away part of the collection?",
               options: ["The museum could not afford to build a new store", "He could not justify keeping unused objects", "The board instructed him to do so"],
               answer: 1,
               explain:
-                "Tarik para savını doğrudan reddediyor: «We had the money for the store». Eksik olan şey gerekçe: 1971'den beri kimsenin sormadığı nesnelerin neden tutulduğuna dair «any honest answer».",
+                "Aaron para savını doğrudan reddediyor: «We had the money for the store». Eksik olan şey gerekçe: 1971'den beri kimsenin sormadığı nesnelerin neden tutulduğuna dair «any honest answer».",
             },
             {
               kind: "mcq",
@@ -1197,7 +1197,7 @@ The communities the project wants to hear from find the {{15}} almost unusable.
               options: ["Asking honestly who each area is kept for", "Giving objects to larger institutions nearby first", "Commissioning an independent report"],
               answer: 0,
               explain:
-                "Öğüt son cümlede: «writing down who each part of the store is for», sonra kendi cevabını dürüstçe okumak. Rapor ısmarlamak ise Tarik'in kendi anlattığı erteleme yöntemi; nesneleri büyük kurumlara vermeyi de genel bir kural olarak önermiyor.",
+                "Öğüt son cümlede: «writing down who each part of the store is for», sonra kendi cevabını dürüstçe okumak. Rapor ısmarlamak ise Aaron'un kendi anlattığı erteleme yöntemi; nesneleri büyük kurumlara vermeyi de genel bir kural olarak önermiyor.",
             },
           ],
         },

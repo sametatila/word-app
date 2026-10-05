@@ -101,17 +101,17 @@ export const enA1U18: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Hello. I have a problem in my apartment.\n" +
+      "Lucy: Hello. I have a problem in my apartment.\n" +
       "Office: Good morning. What is wrong?\n" +
-      "Ela: The faucet in the kitchen is broken. It doesn't work.\n" +
+      "Lucy: The faucet in the kitchen is broken. It doesn't work.\n" +
       "Office: Only the faucet? Is the water in the bathroom good?\n" +
-      "Ela: Yes, the bathroom is fine. But there is water on the floor.\n" +
+      "Lucy: Yes, the bathroom is fine. But there is water on the floor.\n" +
       "Office: I understand. Can you call me this afternoon?\n" +
-      "Ela: Of course. And one more thing: the printer in the basement doesn't work either.\n" +
+      "Lucy: Of course. And one more thing: the printer in the basement doesn't work either.\n" +
       "Office: The printer is not our problem. Call the store.\n" +
-      "Ela: And the telephone in the hall?\n" +
+      "Lucy: And the telephone in the hall?\n" +
       "Office: Is it broken too? Then we can come on Wednesday.\n" +
-      "Ela: Can you fix the faucet today? The water is everywhere!\n" +
+      "Lucy: Can you fix the faucet today? The water is everywhere!\n" +
       "Office: Yes, today. Somebody is coming at four.",
     questions: [
       {
@@ -182,42 +182,42 @@ export const enA1U18: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "What do you do in your free time?" },
-      { speaker: "Can", text: "I enjoy painting. I paint every weekend." },
-      { speaker: "Nil", text: "Really? What do you paint?" },
-      { speaker: "Can", text: "Trees, flowers, the garden. Sometimes I draw people too." },
-      { speaker: "Nil", text: "I can't draw. My hobby is music — I play an instrument." },
-      { speaker: "Can", text: "Which one?" },
-      { speaker: "Nil", text: "The guitar. And I collect old videos." },
-      { speaker: "Can", text: "Videos! Do you like collecting things?" },
-      { speaker: "Nil", text: "Yes, very much. I have two hundred videos." },
-      { speaker: "Can", text: "Two hundred! Where do you put them?" },
-      { speaker: "Nil", text: "In the basement. My apartment is small." },
-      { speaker: "Can", text: "Then come to my garden. There is a lot of sun and you can play the guitar there." },
+      { speaker: "Katie", text: "What do you do in your free time?" },
+      { speaker: "Tyler", text: "I enjoy painting. I paint every weekend." },
+      { speaker: "Katie", text: "Really? What do you paint?" },
+      { speaker: "Tyler", text: "Trees, flowers, the garden. Sometimes I draw people too." },
+      { speaker: "Katie", text: "I can't draw. My hobby is music — I play an instrument." },
+      { speaker: "Tyler", text: "Which one?" },
+      { speaker: "Katie", text: "The guitar. And I collect old videos." },
+      { speaker: "Tyler", text: "Videos! Do you like collecting things?" },
+      { speaker: "Katie", text: "Yes, very much. I have two hundred videos." },
+      { speaker: "Tyler", text: "Two hundred! Where do you put them?" },
+      { speaker: "Katie", text: "In the basement. My apartment is small." },
+      { speaker: "Tyler", text: "Then come to my garden. There is a lot of sun and you can play the guitar there." },
     ],
     questions: [
       {
-        text: "What is Can's hobby?",
+        text: "What is Tyler's hobby?",
         options: ["painting", "music", "collecting videos"],
         answer: 0,
-        explain: "„I enjoy painting. I paint every weekend.“ — müzik ve video Nil'in.",
+        explain: "„I enjoy painting. I paint every weekend.“ — müzik ve video Katie'nin.",
       },
       {
-        text: "What instrument does Nil play?",
+        text: "What instrument does Katie play?",
         options: ["the guitar", "the video", "the printer"],
         answer: 0,
         explain: "„The guitar. And I collect old videos.“",
       },
       {
         kind: "truefalse",
-        text: "Nil cannot draw.",
+        text: "Katie cannot draw.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I can't draw. My hobby is music…“ — çizen Can.",
+        explain: "„I can't draw. My hobby is music…“ — çizen Tyler.",
       },
       {
         kind: "gapfill",
-        text: "Nil has two hundred ___.",
+        text: "Katie has two hundred ___.",
         options: [],
         answer: 0,
         accept: ["videos"],
@@ -233,7 +233,7 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where does Nil put the videos?",
+        text: "Where does Katie put the videos?",
         options: [],
         answer: 0,
         accept: ["in the basement", "the basement", "basement"],
@@ -249,7 +249,7 @@ export const enA1U18: SkillExercise[] = [
     unit: 18,
     title: "Soccer and swimming",
     genre: "monologue",
-    intro: "Ali sporlarını anlatıyor. Hangi spor „play“ ile, hangisi „go“ ile geliyor?",
+    intro: "Harry sporlarını anlatıyor. Hangi spor „play“ ile, hangisi „go“ ile geliyor?",
     gloss: [
       { de: "soccer", tr: "futbol" },
       { de: "summer", tr: "yaz" },
@@ -258,36 +258,36 @@ export const enA1U18: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ali", text: "I play soccer every Saturday. My team is not good, but we enjoy it." },
-      { speaker: "Ali", text: "Sometimes we win, sometimes we don't. That's sports!" },
-      { speaker: "Ali", text: "On Monday and Thursday I go swimming. I swim for one hour." },
-      { speaker: "Ali", text: "In the summer I run in the park. In the winter I run on the stairs!" },
-      { speaker: "Ali", text: "My sister plays tennis and basketball. She is on a team too." },
-      { speaker: "Ali", text: "Do you play tennis? Then come with us on Sunday. We need one more player." },
+      { speaker: "Harry", text: "I play soccer every Saturday. My team is not good, but we enjoy it." },
+      { speaker: "Harry", text: "Sometimes we win, sometimes we don't. That's sports!" },
+      { speaker: "Harry", text: "On Monday and Thursday I go swimming. I swim for one hour." },
+      { speaker: "Harry", text: "In the summer I run in the park. In the winter I run on the stairs!" },
+      { speaker: "Harry", text: "My sister plays tennis and basketball. She is on a team too." },
+      { speaker: "Harry", text: "Do you play tennis? Then come with us on Sunday. We need one more player." },
     ],
     questions: [
       {
-        text: "When does Ali play soccer?",
+        text: "When does Harry play soccer?",
         options: ["every Saturday", "on Monday", "in the summer"],
         answer: 0,
         explain: "„I play soccer every Saturday.“ — pazartesi yüzme günü.",
       },
       {
-        text: "What does Ali's sister play?",
+        text: "What does Harry's sister play?",
         options: ["tennis and basketball", "soccer", "nothing"],
         answer: 0,
-        explain: "„My sister plays tennis and basketball.“ — futbol Ali'nin.",
+        explain: "„My sister plays tennis and basketball.“ — futbol Harry'nin.",
       },
       {
         kind: "truefalse",
-        text: "Ali's team always wins.",
+        text: "Harry's team always wins.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Sometimes we win, sometimes we don't. That's sports!“",
       },
       {
         kind: "gapfill",
-        text: "Ali swims for one ___.",
+        text: "Harry swims for one ___.",
         options: [],
         answer: 0,
         accept: ["hour"],
@@ -295,7 +295,7 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Ali'nin saydığı sıra: doğru sıraya koy.",
+        text: "Harry'nin saydığı sıra: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -308,7 +308,7 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where does Ali run in the summer?",
+        text: "Where does Harry run in the summer?",
         options: [],
         answer: 0,
         accept: ["in the park", "the park", "park"],

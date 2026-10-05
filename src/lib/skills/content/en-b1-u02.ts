@@ -54,12 +54,12 @@ export const enB1U02: SkillExercise[] = [
       "Subject: Friday — agenda and the deadline\n" +
       "Hi all,\n" +
       "Three things before Friday.\n" +
-      "The agenda is attached. It was written by Sena and me on Tuesday, so if something is missing it is our fault, not yours. Add a line under point four if you need one.\n" +
+      "The agenda is attached. It was written by Ellie and me on Tuesday, so if something is missing it is our fault, not yours. Add a line under point four if you need one.\n" +
       "The client meeting has been moved. I am seeing the client on Friday at two, not on Thursday. That means the numbers are needed by Thursday evening and not Friday morning. I am sorry — the change came from their side.\n" +
-      "The report itself is going to be submitted tonight. Mert is going to check the last table and then it goes. If you find a mistake after that, tell me and I will send a short note to the client. A note is not a problem. A wrong number that nobody mentions is.\n" +
+      "The report itself is going to be submitted tonight. Henry is going to check the last table and then it goes. If you find a mistake after that, tell me and I will send a short note to the client. A note is not a problem. A wrong number that nobody mentions is.\n" +
       "One more thing, and it is not urgent. The old agenda template is still used by two teams. It was replaced in March. If you are one of those teams, nobody told you, and that is on us.\n" +
       "See you Friday,\n" +
-      "Deniz",
+      "Charlie",
     questions: [
       {
         text: "When is the client meeting?",
@@ -82,11 +82,11 @@ export const enB1U02: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The agenda was written by Sena and Deniz on ___.",
+        text: "The agenda was written by Ellie and Charlie on ___.",
         options: [],
         answer: 0,
         accept: ["Tuesday"],
-        explain: "„It was written by Sena and me on Tuesday…“",
+        explain: "„It was written by Ellie and me on Tuesday…“",
       },
       {
         kind: "order",
@@ -103,7 +103,7 @@ export const enB1U02: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is a problem for Deniz?",
+        text: "What is a problem for Charlie?",
         options: [],
         answer: 0,
         accept: ["a wrong number", "a number nobody mentions", "a hidden mistake"],
@@ -133,21 +133,21 @@ export const enB1U02: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Ela: Do you have ten minutes? I would like to discuss the budget for my role.\n" +
+      "Lucy: Do you have ten minutes? I would like to discuss the budget for my role.\n" +
       "Boss: Now is fine. Say what you want first.\n" +
-      "Ela: A raise of eight percent from January.\n" +
+      "Lucy: A raise of eight percent from January.\n" +
       "Boss: That is a clear number. Why eight?\n" +
-      "Ela: Two reasons. The work changed in March — I took the second client and nobody was hired. And eight is the middle of what this role pays in this city.\n" +
+      "Lucy: Two reasons. The work changed in March — I took the second client and nobody was hired. And eight is the middle of what this role pays in this city.\n" +
       "Boss: The middle is a fair place to start. The problem is the budget: it was written in October and it is not opened again until April.\n" +
-      "Ela: Then April, with January's date.\n" +
+      "Lucy: Then April, with January's date.\n" +
       "Boss: You have done this before.\n" +
-      "Ela: I have read about it before. That is not the same.\n" +
+      "Lucy: I have read about it before. That is not the same.\n" +
       "Boss: If I get the department budget in April, I will do eight from January. If they say no, I can offer a bonus in July instead.\n" +
-      "Ela: If they offered a bonus only, I would still want the raise written somewhere.\n" +
+      "Lucy: If they offered a bonus only, I would still want the raise written somewhere.\n" +
       "Boss: That is reasonable. I will put both in an email today, so neither of us remembers it differently in April.",
     questions: [
       {
-        text: "What does Ela ask for?",
+        text: "What does Lucy ask for?",
         options: ["eight percent from January", "a bonus in July", "a new role"],
         answer: 0,
         explain: "„A raise of eight percent from January.“",
@@ -175,7 +175,7 @@ export const enB1U02: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ela want if there is only a bonus?",
+        text: "What does Lucy want if there is only a bonus?",
         options: [],
         answer: 0,
         accept: ["the raise written", "the raise in writing", "the raise somewhere"],
@@ -191,7 +191,7 @@ export const enB1U02: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 2,
-    title: "Mert's team",
+    title: "Henry's team",
     genre: "monologue",
     intro: "Bir ekip anlatılıyor. Hangi cümlede „that“ düşüyor?",
     gloss: [
@@ -204,18 +204,18 @@ export const enB1U02: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Mert", text: "My manager is the person who hired me. That is rare after four years and I notice it." },
-      { speaker: "Mert", text: "The supervisor in my department is the one who answers at eleven at night. I have asked her to stop and she has not." },
-      { speaker: "Mert", text: "There is a trainee who started in June. The questions that she asks are the questions nobody asked for years." },
-      { speaker: "Mert", text: "The report that I sent last Friday was late. She found the reason in ten minutes: the table I copied was old." },
-      { speaker: "Mert", text: "The report I sent this Friday was on time. Same table, new date, one line in a document that everybody can see." },
-      { speaker: "Mert", text: "Teamwork is a big word. In this room it means one thing: the person who finds a mistake is thanked, not blamed." },
-      { speaker: "Mert", text: "We had a manager once who did it the other way. Three people left in one year and nobody wrote the reason in the handover." },
-      { speaker: "Mert", text: "Reliable is not a person. It is a system that survives a bad week." },
+      { speaker: "Henry", text: "My manager is the person who hired me. That is rare after four years and I notice it." },
+      { speaker: "Henry", text: "The supervisor in my department is the one who answers at eleven at night. I have asked her to stop and she has not." },
+      { speaker: "Henry", text: "There is a trainee who started in June. The questions that she asks are the questions nobody asked for years." },
+      { speaker: "Henry", text: "The report that I sent last Friday was late. She found the reason in ten minutes: the table I copied was old." },
+      { speaker: "Henry", text: "The report I sent this Friday was on time. Same table, new date, one line in a document that everybody can see." },
+      { speaker: "Henry", text: "Teamwork is a big word. In this room it means one thing: the person who finds a mistake is thanked, not blamed." },
+      { speaker: "Henry", text: "We had a manager once who did it the other way. Three people left in one year and nobody wrote the reason in the handover." },
+      { speaker: "Henry", text: "Reliable is not a person. It is a system that survives a bad week." },
     ],
     questions: [
       {
-        text: "Who hired Mert?",
+        text: "Who hired Henry?",
         options: ["the manager", "the supervisor", "the trainee"],
         answer: 0,
         explain: "„My manager is the person who hired me.“",
@@ -277,20 +277,20 @@ export const enB1U02: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Nil", text: "How was your first week?" },
-      { speaker: "Can", text: "Three parts: the induction, the equipment, and a badge that did not work." },
-      { speaker: "Nil", text: "It is always the badge." },
-      { speaker: "Can", text: "The induction was Monday morning. Two hours, eleven people, and the fire door explained twice." },
-      { speaker: "Nil", text: "And the equipment?" },
-      { speaker: "Can", text: "The equipment is given on the first day. That is the rule. On my first day the laptop was in a box in another building." },
-      { speaker: "Nil", text: "Who arranged the badge?" },
-      { speaker: "Can", text: "My badge was arranged by the office, but the name on it was Arslan. I am Aslan. Small thing, closed door." },
-      { speaker: "Nil", text: "So you stood outside." },
-      { speaker: "Can", text: "Until Wednesday. Then a colleague from my department saw me there and said: everybody stands here in the first week." },
-      { speaker: "Nil", text: "That line is the induction." },
-      { speaker: "Can", text: "By Friday the laptop had arrived, the badge was correct, and I had answered the same question about my name nine times." },
-      { speaker: "Nil", text: "When is the induction arranged? Before the badge, or after?" },
-      { speaker: "Can", text: "Before. They should change the order." },
+      { speaker: "Katie", text: "How was your first week?" },
+      { speaker: "Tyler", text: "Three parts: the induction, the equipment, and a badge that did not work." },
+      { speaker: "Katie", text: "It is always the badge." },
+      { speaker: "Tyler", text: "The induction was Monday morning. Two hours, eleven people, and the fire door explained twice." },
+      { speaker: "Katie", text: "And the equipment?" },
+      { speaker: "Tyler", text: "The equipment is given on the first day. That is the rule. On my first day the laptop was in a box in another building." },
+      { speaker: "Katie", text: "Who arranged the badge?" },
+      { speaker: "Tyler", text: "My badge was arranged by the office, but the name on it was Nolan. I am Cooper. Small thing, closed door." },
+      { speaker: "Katie", text: "So you stood outside." },
+      { speaker: "Tyler", text: "Until Wednesday. Then a colleague from my department saw me there and said: everybody stands here in the first week." },
+      { speaker: "Katie", text: "That line is the induction." },
+      { speaker: "Tyler", text: "By Friday the laptop had arrived, the badge was correct, and I had answered the same question about my name nine times." },
+      { speaker: "Katie", text: "When is the induction arranged? Before the badge, or after?" },
+      { speaker: "Tyler", text: "Before. They should change the order." },
     ],
     questions: [
       {
@@ -303,7 +303,7 @@ export const enB1U02: SkillExercise[] = [
         text: "What was wrong with the badge?",
         options: ["the name", "the photo", "the date"],
         answer: 0,
-        explain: "„the name on it was Arslan. I am Aslan.“",
+        explain: "„the name on it was Nolan. I am Cooper.“",
       },
       {
         kind: "truefalse",
@@ -330,7 +330,7 @@ export const enB1U02: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Until when was Can outside?",
+        text: "Until when was Tyler outside?",
         options: [],
         answer: 0,
         accept: ["until Wednesday", "Wednesday"],

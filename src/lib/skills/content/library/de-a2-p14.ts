@@ -111,15 +111,15 @@ export const deA2P14: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Kemal", text: "Hallo! Ich möchte für das Wochenende zwei Fahrräder mieten. Was kostet das?" },
+      { speaker: "Philipp", text: "Hallo! Ich möchte für das Wochenende zwei Fahrräder mieten. Was kostet das?" },
       { speaker: "Frau Jansen", text: "Ein normales Rad kostet zwölf Euro am Tag. Von Freitag bis Sonntag sind es dreißig Euro." },
-      { speaker: "Kemal", text: "Dreißig pro Rad, also sechzig. Haben Sie auch E-Bikes?" },
+      { speaker: "Philipp", text: "Dreißig pro Rad, also sechzig. Haben Sie auch E-Bikes?" },
       { speaker: "Frau Jansen", text: "Leider sind schon alle weg. Am Wochenende sind sie immer schnell reserviert." },
-      { speaker: "Kemal", text: "Schade. Dann nehmen wir zwei normale. Muss ich etwas dalassen?" },
+      { speaker: "Philipp", text: "Schade. Dann nehmen wir zwei normale. Muss ich etwas dalassen?" },
       { speaker: "Frau Jansen", text: "Ja, hundert Euro Kaution pro Rad oder Ihren Ausweis. Das Geld bekommen Sie am Sonntag zurück." },
-      { speaker: "Kemal", text: "Wir zahlen lieber die Kaution. Sind Helme dabei?" },
+      { speaker: "Philipp", text: "Wir zahlen lieber die Kaution. Sind Helme dabei?" },
       { speaker: "Frau Jansen", text: "Ein Helm kostet zwei Euro extra, ein Schloss ist immer dabei. Bitte bringen Sie die Räder bis achtzehn Uhr zurück." },
-      { speaker: "Kemal", text: "Und wenn wir später kommen?" },
+      { speaker: "Philipp", text: "Und wenn wir später kommen?" },
       { speaker: "Frau Jansen", text: "Dann kostet es einen Tag mehr. Rufen Sie einfach an, wenn es ein Problem gibt." },
     ],
     questions: [
@@ -130,7 +130,7 @@ export const deA2P14: SkillExercise[] = [
         explain: "„Von Freitag bis Sonntag sind es dreißig Euro“; altmış avro iki bisikletin toplamı.",
       },
       {
-        text: "Warum nimmt Kemal keine E-Bikes?",
+        text: "Warum nimmt Philipp keine E-Bikes?",
         options: ["Es gibt keine mehr.", "Sie sind zu teuer.", "Er fährt nicht gern damit."],
         answer: 0,
         explain: "„Leider sind schon alle weg.“",
@@ -152,14 +152,14 @@ export const deA2P14: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Bis wann muss Kemal die Räder zurückbringen?",
+        text: "Bis wann muss Philipp die Räder zurückbringen?",
         options: [],
         answer: 0,
         accept: ["bis achtzehn Uhr", "bis 18 Uhr", "achtzehn Uhr", "18 Uhr"],
         explain: "„Bitte bringen Sie die Räder bis achtzehn Uhr zurück.“",
       },
       {
-        text: "Was passiert, wenn Kemal zu spät kommt?",
+        text: "Was passiert, wenn Philipp zu spät kommt?",
         options: ["Er verliert die Kaution.", "Er muss nichts bezahlen.", "Er bezahlt einen Tag mehr."],
         answer: 2,
         explain: "„Dann kostet es einen Tag mehr.“",
@@ -225,7 +225,7 @@ export const deA2P14: SkillExercise[] = [
           "Deshalb schreibe ich Ihnen heute. Bitte überweisen Sie mir das Geld bis zum 15. Juli. " +
           "Ich habe jetzt ein neues Konto, die Nummer finden Sie unter meinem Namen.\n\n" +
           "Vielen Dank im Voraus.\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Arslan\nIBAN: DE00 1234 5678 9012 3456 78",
+          "Mit freundlichen Grüßen\nSascha Busch\nIBAN: DE00 1234 5678 9012 3456 78",
       },
     ],
   },

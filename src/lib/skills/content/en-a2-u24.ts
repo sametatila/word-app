@@ -51,19 +51,19 @@ export const enA2U24: SkillExercise[] = [
     minutes: 5,
     text:
       "Police: Good afternoon. What happened?\n" +
-      "Ela: I lost my wallet. Or somebody stole it — I don't know.\n" +
+      "Lucy: I lost my wallet. Or somebody stole it — I don't know.\n" +
       "Police: Where were you?\n" +
-      "Ela: On the tram, line two, between the station and the market.\n" +
+      "Lucy: On the tram, line two, between the station and the market.\n" +
       "Police: When?\n" +
-      "Ela: It happened at about six o'clock. I paid at the market at half past five and at six the wallet was gone.\n" +
+      "Lucy: It happened at about six o'clock. I paid at the market at half past five and at six the wallet was gone.\n" +
       "Police: What was in it?\n" +
-      "Ela: My ID card, a transit card, twenty euros and a photo.\n" +
+      "Lucy: My ID card, a transit card, twenty euros and a photo.\n" +
       "Police: Can you describe the wallet?\n" +
-      "Ela: Brown, small, with a broken button.\n" +
+      "Lucy: Brown, small, with a broken button.\n" +
       "Police: And the tram was full?\n" +
-      "Ela: Very full. Somebody stood very close for two stops.\n" +
+      "Lucy: Very full. Somebody stood very close for two stops.\n" +
       "Police: Then it is not lost. Somebody stole it. That is a different report.\n" +
-      "Ela: Does that change anything?\n" +
+      "Lucy: Does that change anything?\n" +
       "Police: For the insurance, yes. And for us: three today on line two.",
     questions: [
       {
@@ -197,21 +197,21 @@ export const enA2U24: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Can", text: "Good morning. I want to apply for a residence permit." },
+      { speaker: "Tyler", text: "Good morning. I want to apply for a residence permit." },
       { speaker: "Office", text: "Is it your first permit, or do you want to renew it?" },
-      { speaker: "Can", text: "Renew it. The old one is valid until November." },
+      { speaker: "Tyler", text: "Renew it. The old one is valid until November." },
       { speaker: "Office", text: "Good — you are early. Most people come in the last week." },
-      { speaker: "Can", text: "I have already filled out the form. Here." },
+      { speaker: "Tyler", text: "I have already filled out the form. Here." },
       { speaker: "Office", text: "Passport?" },
-      { speaker: "Can", text: "Valid until 2030." },
+      { speaker: "Tyler", text: "Valid until 2030." },
       { speaker: "Office", text: "Work contract?" },
-      { speaker: "Can", text: "Here. And the letter from the company." },
+      { speaker: "Tyler", text: "Here. And the letter from the company." },
       { speaker: "Office", text: "We don't require the letter this year. But the address paper, yes. Do you have it?" },
-      { speaker: "Can", text: "No. Where do I get it?" },
+      { speaker: "Tyler", text: "No. Where do I get it?" },
       { speaker: "Office", text: "At the city hall, counter four. Ten minutes if you go now — they close at two." },
-      { speaker: "Can", text: "And then I come back?" },
+      { speaker: "Tyler", text: "And then I come back?" },
       { speaker: "Office", text: "Then you come back. There is one exception: with a document from the university you don't need it. But you are not a student." },
-      { speaker: "Can", text: "I am not. I'll go now." },
+      { speaker: "Tyler", text: "I am not. I'll go now." },
     ],
     questions: [
       {
@@ -221,7 +221,7 @@ export const enA2U24: SkillExercise[] = [
         explain: "„Renew it. The old one is valid until November.“ — 2030 pasaportun tarihi.",
       },
       {
-        text: "What does Can still need?",
+        text: "What does Tyler still need?",
         options: ["the address paper", "the letter from the company", "a passport"],
         answer: 0,
         explain: "„We don't require the letter this year. But the address paper, yes.“",
@@ -278,19 +278,19 @@ export const enA2U24: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Nil", text: "Where can I buy a transit card?" },
+      { speaker: "Katie", text: "Where can I buy a transit card?" },
       { speaker: "Man", text: "At the machine, over there. The green one, not the blue." },
-      { speaker: "Nil", text: "What is the blue one?" },
+      { speaker: "Katie", text: "What is the blue one?" },
       { speaker: "Man", text: "Tickets for one trip. The card is cheaper after the fourth trip." },
-      { speaker: "Nil", text: "Good. And how does it work?" },
+      { speaker: "Katie", text: "Good. And how does it work?" },
       { speaker: "Man", text: "First put the card in, then press the green button. Then the money." },
-      { speaker: "Nil", text: "Coins only?" },
+      { speaker: "Katie", text: "Coins only?" },
       { speaker: "Man", text: "Coins and cards. Not paper money — the machine eats it and says nothing." },
-      { speaker: "Nil", text: "Good to know. And on the tram?" },
+      { speaker: "Katie", text: "Good to know. And on the tram?" },
       { speaker: "Man", text: "You have to reload the card before you get in. On the tram there is nothing." },
-      { speaker: "Nil", text: "And if the card is empty?" },
+      { speaker: "Katie", text: "And if the card is empty?" },
       { speaker: "Man", text: "Then it is a fine. Sixty euros. The inspectors always come in twos, and they are always in the third car." },
-      { speaker: "Nil", text: "Why the third?" },
+      { speaker: "Katie", text: "Why the third?" },
       { speaker: "Man", text: "Because everybody with an empty card walks to the third car." },
     ],
     questions: [

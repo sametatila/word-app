@@ -338,7 +338,7 @@ export const a1U13: SkillExercise[] = [
           { de: "Die Haltestelle ist …", tr: "Durak …", en: "The stop is …" },
         ],
         sample:
-          "Hallo Tom,\n\nvom Bahnhof gehst du geradeaus. Nach der Post gehst du links.\n\nMeine Wohnung ist rechts, zwischen einer Bäckerei und einem Kiosk.\n\nZu Fuß dauert es zehn Minuten. Mit dem Bus geht es schneller: Linie 7, die Haltestelle ist vor der Post.\n\nBis Samstag!\nElif",
+          "Hallo Tom,\n\nvom Bahnhof gehst du geradeaus. Nach der Post gehst du links.\n\nMeine Wohnung ist rechts, zwischen einer Bäckerei und einem Kiosk.\n\nZu Fuß dauert es zehn Minuten. Mit dem Bus geht es schneller: Linie 7, die Haltestelle ist vor der Post.\n\nBis Samstag!\nPaula",
       },
     ],
   },

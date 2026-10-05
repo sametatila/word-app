@@ -67,7 +67,7 @@ export const enB2U08: SkillExercise[] = [
       "We have also looked again at our premise. Were the premise wrong, the whole inference would fail. We do not think it is wrong: the plants in greenhouse A, which had no fungus and no broken heater, grew 15 percent faster than the control group.\n" +
       "For the next trial we will change three things. All soil will be tested before it enters a greenhouse. The heaters will be checked every morning. And should any parameter change during the trial, the team will record it on the same day and inform the head of research.\n" +
       "Had we done all this last spring, this note would be much shorter.\n" +
-      "Dr. Mina Aksoy, Head of Research",
+      "Dr. Mina Lloyd, Head of Research",
     questions: [
       {
         text: "Why did the plants in greenhouse B start to die?",
@@ -148,7 +148,7 @@ export const enB2U08: SkillExercise[] = [
       "The station is also losing money. Its sister newspaper, the Evening Post, is said to be losing readers fast: the latest figures are reported to show a fall in circulation of 12 percent in one year. Advertisers are thought to be moving to online outlets, where an algorithm decides what people see in their news feed.\n" +
       "Staff at the station are said to be worried about their jobs. Two senior presenters are believed to have left last month, although neither has spoken publicly.\n" +
       "The owner, Carla Rossi, is expected to answer questions at a public meeting on Thursday. In a short statement, she said that the station had always been open with its listeners and that an independent review of the interview had already started.\n" +
-      "Media experts are less sure. Professor Hakan Ural of the city university said that a small network like this depends completely on trust. If listeners believe that airtime can be bought, he added, the damage will be much bigger than any fall in readership.\n" +
+      "Media experts are less sure. Professor Rhys Simpson of the city university said that a small network like this depends completely on trust. If listeners believe that airtime can be bought, he added, the damage will be much bigger than any fall in readership.\n" +
       "The review is expected to be published by the end of May.",
     questions: [
       {
@@ -224,18 +224,18 @@ export const enB2U08: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Efe", text: "So, what do you think? Is turbine six safe to start again?" },
-      { speaker: "Nehir", text: "I think so. The speed sensor seems to have been replaced recently. The part is new and the label is from this year." },
-      { speaker: "Efe", text: "And the motor?" },
-      { speaker: "Nehir", text: "It seems to have been calibrated last month. There is a note in the log, but it is only a photocopy, so I am not completely sure." },
-      { speaker: "Efe", text: "What about the noise the farmer reported?" },
-      { speaker: "Nehir", text: "Apparently the bolts on one blade were loose. They seem to have been tightened twice since then, once in May and once last week." },
-      { speaker: "Efe", text: "Twice? That is unusual." },
-      { speaker: "Nehir", text: "It is. It suggests something is still moving. From one perspective the repair is good enough, but I would like to watch it rotate before we sign." },
-      { speaker: "Efe", text: "How long do you need?" },
-      { speaker: "Nehir", text: "About an hour. Can you unlock the door at the top? I want to see the bolts myself." },
-      { speaker: "Efe", text: "Sure. Apparently the key was left in the office, but I have a spare one." },
-      { speaker: "Nehir", text: "Perfect. If the blade swings the way it should, we can restart it this afternoon." },
+      { speaker: "Bobby", text: "So, what do you think? Is turbine six safe to start again?" },
+      { speaker: "Nicola", text: "I think so. The speed sensor seems to have been replaced recently. The part is new and the label is from this year." },
+      { speaker: "Bobby", text: "And the motor?" },
+      { speaker: "Nicola", text: "It seems to have been calibrated last month. There is a note in the log, but it is only a photocopy, so I am not completely sure." },
+      { speaker: "Bobby", text: "What about the noise the farmer reported?" },
+      { speaker: "Nicola", text: "Apparently the bolts on one blade were loose. They seem to have been tightened twice since then, once in May and once last week." },
+      { speaker: "Bobby", text: "Twice? That is unusual." },
+      { speaker: "Nicola", text: "It is. It suggests something is still moving. From one perspective the repair is good enough, but I would like to watch it rotate before we sign." },
+      { speaker: "Bobby", text: "How long do you need?" },
+      { speaker: "Nicola", text: "About an hour. Can you unlock the door at the top? I want to see the bolts myself." },
+      { speaker: "Bobby", text: "Sure. Apparently the key was left in the office, but I have a spare one." },
+      { speaker: "Nicola", text: "Perfect. If the blade swings the way it should, we can restart it this afternoon." },
     ],
     questions: [
       {
@@ -245,14 +245,14 @@ export const enB2U08: SkillExercise[] = [
         explain: "„The speed sensor seems to have been replaced recently.“",
       },
       {
-        text: "What does Nehir want to do before they sign?",
+        text: "What does Nicola want to do before they sign?",
         options: ["watch it rotate", "call the farmer", "replace the bolts"],
         answer: 0,
         explain: "„I would like to watch it rotate before we sign.“",
       },
       {
         kind: "truefalse",
-        text: "Nehir is not completely sure about the calibration.",
+        text: "Nicola is not completely sure about the calibration.",
         options: ["True", "False"],
         answer: 0,
         explain: "„There is a note in the log, but it is only a photocopy, so I am not completely sure.“",
@@ -299,14 +299,14 @@ export const enB2U08: SkillExercise[] = [
     ],
     minutes: 7,
     segments: [
-      { speaker: "Beren", text: "Good morning, everyone. Before we start, I want to talk about the hospital story, because we made a mistake and you should hear it from me." },
-      { speaker: "Beren", text: "We printed a quotation and gave it to the wrong person. The words were said by a nurse, not by the hospital director, which is why the director called me at seven this morning." },
-      { speaker: "Beren", text: "The reporter, who checked the quotation, was new. She did what she was told: she compared it with the recording that an intern had sent her." },
-      { speaker: "Beren", text: "The problem is that the intern who sent it had named the files incorrectly. We have four interns, and I am not going to say which one, because it could have been any of us." },
-      { speaker: "Beren", text: "The attribution was unclear, which is why we should have waited. A quotation that cannot be traced to a named recording does not go on the front page." },
-      { speaker: "Beren", text: "The publisher, to whom I wrote last night, agrees that we print a correction tomorrow, on page two, with a headline of the same size." },
-      { speaker: "Beren", text: "From today, every quotation that goes into a story needs a second person to listen to the recording. Yes, it takes time. Transparency always does." },
-      { speaker: "Beren", text: "Right. Let us move on to the budget story, which, I am told, has no quotations at all." },
+      { speaker: "Natalie", text: "Good morning, everyone. Before we start, I want to talk about the hospital story, because we made a mistake and you should hear it from me." },
+      { speaker: "Natalie", text: "We printed a quotation and gave it to the wrong person. The words were said by a nurse, not by the hospital director, which is why the director called me at seven this morning." },
+      { speaker: "Natalie", text: "The reporter, who checked the quotation, was new. She did what she was told: she compared it with the recording that an intern had sent her." },
+      { speaker: "Natalie", text: "The problem is that the intern who sent it had named the files incorrectly. We have four interns, and I am not going to say which one, because it could have been any of us." },
+      { speaker: "Natalie", text: "The attribution was unclear, which is why we should have waited. A quotation that cannot be traced to a named recording does not go on the front page." },
+      { speaker: "Natalie", text: "The publisher, to whom I wrote last night, agrees that we print a correction tomorrow, on page two, with a headline of the same size." },
+      { speaker: "Natalie", text: "From today, every quotation that goes into a story needs a second person to listen to the recording. Yes, it takes time. Transparency always does." },
+      { speaker: "Natalie", text: "Right. Let us move on to the budget story, which, I am told, has no quotations at all." },
     ],
     questions: [
       {
@@ -323,7 +323,7 @@ export const enB2U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Beren names the intern who made the mistake.",
+        text: "Natalie names the intern who made the mistake.",
         options: ["True", "False"],
         answer: 1,
         explain: "„We have four interns, and I am not going to say which one, because it could have been any of us.“",

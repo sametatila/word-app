@@ -74,7 +74,7 @@ export const enC1U15: SkillExercise[] = [
       "According to the report, the average pension fell to 46 percent of the average wage, down from 48 percent five years ago. Over the same period, the full retirement age stayed at 67, and the number of people working past that age rose sharply.\n" +
       "Several other figures moved as well. The labor force participation rate rose; the earmarked money, not at all. Payments into the pension fund grew by four percent, mainly because more women now work full time. At the same time, the reserve that was supposed to protect pensions from sudden shocks shrank for the third year in a row.\n" +
       "The report is careful not to say why. It notes that prices increased faster than pensions, that wages improved in some sectors and slipped in others, and that two large regional funds closed during the period. None of these sentences names a decision, and none of them says who made it.\n" +
-      "Critics say that is the problem. „Pensions did not simply fall,“ said Ayla Brandt of the Pensioners' Association. „The formula was changed in 2021, and people voted for that change.“ The ministry replied that the formula had been changed to protect younger workers, who will pay into the system for decades.\n" +
+      "Critics say that is the problem. „Pensions did not simply fall,“ said Freya Brandt of the Pensioners' Association. „The formula was changed in 2021, and people voted for that change.“ The ministry replied that the formula had been changed to protect younger workers, who will pay into the system for decades.\n" +
       "The intergenerational contract promises twilight years, the job self-fulfillment. For many of those interviewed for this article, neither promise feels secure. A 64-year-old nurse from Hanover said she plans to keep working part time after 67, „not because I love it, but because the numbers do not work otherwise.“\n" +
       "Parliament will debate the report next month.",
     questions: [
@@ -241,19 +241,19 @@ export const enC1U15: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ayça", text: "Knowledge work may well end in self-exploitation. That is what two years of interviews with designers and software developers suggest." },
-      { speaker: "Tolga", text: "But not always?" },
-      { speaker: "Ayça", text: "Not always. Some of them were relaxed and well paid, and a study that claimed otherwise would lose its readers on the first page." },
-      { speaker: "Tolga", text: "What makes the difference?" },
-      { speaker: "Ayça", text: "Whether the deadline was set by the person doing the work. Not whether they like the work, not whether anybody told them to stay: who owns the date." },
-      { speaker: "Tolga", text: "A role conflict might look like a pacing problem." },
-      { speaker: "Ayça", text: "And it will be treated as one, because a rhythm can be fixed with a planner and a role conflict cannot be fixed without somebody losing half of a job." },
-      { speaker: "Tolga", text: "So the cheaper reading wins." },
-      { speaker: "Ayça", text: "The cheaper reading always wins the first meeting. It loses the fourth one, a year later, when the same person is in the room with the same two jobs." },
-      { speaker: "Tolga", text: "Piecework may weaken collegiality and strain the interpersonal side." },
-      { speaker: "Ayça", text: "That one I have watched happen. Once the rate is per piece, a question from a colleague costs money, and helping becomes a favor rather than the work." },
-      { speaker: "Tolga", text: "Nobody decides that." },
-      { speaker: "Ayça", text: "Nobody decides it and everybody notices it, and it never appears in a report because the thing that was lost was never counted when it was there." },
+      { speaker: "Kerry", text: "Knowledge work may well end in self-exploitation. That is what two years of interviews with designers and software developers suggest." },
+      { speaker: "Brian", text: "But not always?" },
+      { speaker: "Kerry", text: "Not always. Some of them were relaxed and well paid, and a study that claimed otherwise would lose its readers on the first page." },
+      { speaker: "Brian", text: "What makes the difference?" },
+      { speaker: "Kerry", text: "Whether the deadline was set by the person doing the work. Not whether they like the work, not whether anybody told them to stay: who owns the date." },
+      { speaker: "Brian", text: "A role conflict might look like a pacing problem." },
+      { speaker: "Kerry", text: "And it will be treated as one, because a rhythm can be fixed with a planner and a role conflict cannot be fixed without somebody losing half of a job." },
+      { speaker: "Brian", text: "So the cheaper reading wins." },
+      { speaker: "Kerry", text: "The cheaper reading always wins the first meeting. It loses the fourth one, a year later, when the same person is in the room with the same two jobs." },
+      { speaker: "Brian", text: "Piecework may weaken collegiality and strain the interpersonal side." },
+      { speaker: "Kerry", text: "That one I have watched happen. Once the rate is per piece, a question from a colleague costs money, and helping becomes a favor rather than the work." },
+      { speaker: "Brian", text: "Nobody decides that." },
+      { speaker: "Kerry", text: "Nobody decides it and everybody notices it, and it never appears in a report because the thing that was lost was never counted when it was there." },
     ],
     questions: [
       {
@@ -322,15 +322,15 @@ export const enC1U15: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ufuk", text: "Good morning. I will take you through the main points of our report on the regional bus company. It is ninety pages long, so I will be brief." },
-      { speaker: "Ufuk", text: "Chapter two describes the structural change in the region: fewer children, more older people, and new housing far from the old routes." },
-      { speaker: "Ufuk", text: "The structural change described above threatens the core business discussed below. That core business is school transport, which still brings in almost half of its income." },
-      { speaker: "Ufuk", text: "The distortion of competition, as noted earlier, was flagged in the feasibility study of 2019. Private coaches now take the most profitable routes, and the company keeps the rest." },
-      { speaker: "Ufuk", text: "Chapter five looks at the performance indicators. The company measures forty of them, from punctuality to fuel use." },
-      { speaker: "Ufuk", text: "Where the operational responsibility is unclear, the performance indicator does not help. The punctuality alarm has been red for three quarters, and nobody was sure whose job it was to act." },
-      { speaker: "Ufuk", text: "Our first recommendation is simple. Every indicator gets the name of a person next to it, not the name of a department." },
-      { speaker: "Ufuk", text: "Our second recommendation, discussed in chapter seven, is a new route plan for the housing areas described in chapter two." },
-      { speaker: "Ufuk", text: "I am happy to take questions now. The full report, as noted earlier, is on your desks." },
+      { speaker: "Craig", text: "Good morning. I will take you through the main points of our report on the regional bus company. It is ninety pages long, so I will be brief." },
+      { speaker: "Craig", text: "Chapter two describes the structural change in the region: fewer children, more older people, and new housing far from the old routes." },
+      { speaker: "Craig", text: "The structural change described above threatens the core business discussed below. That core business is school transport, which still brings in almost half of its income." },
+      { speaker: "Craig", text: "The distortion of competition, as noted earlier, was flagged in the feasibility study of 2019. Private coaches now take the most profitable routes, and the company keeps the rest." },
+      { speaker: "Craig", text: "Chapter five looks at the performance indicators. The company measures forty of them, from punctuality to fuel use." },
+      { speaker: "Craig", text: "Where the operational responsibility is unclear, the performance indicator does not help. The punctuality alarm has been red for three quarters, and nobody was sure whose job it was to act." },
+      { speaker: "Craig", text: "Our first recommendation is simple. Every indicator gets the name of a person next to it, not the name of a department." },
+      { speaker: "Craig", text: "Our second recommendation, discussed in chapter seven, is a new route plan for the housing areas described in chapter two." },
+      { speaker: "Craig", text: "I am happy to take questions now. The full report, as noted earlier, is on your desks." },
     ],
     questions: [
       {

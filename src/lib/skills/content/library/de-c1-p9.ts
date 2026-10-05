@@ -34,7 +34,7 @@ export const deC1P9: SkillExercise[] = [
       "mehr, die ich früher im Schlaf gegangen bin. Das ist kein Gefühl, das ist messbar: " +
       "Ich bin letzte Woche zweimal falsch abgebogen, auf einer Strecke, die ich zehn Jahre " +
       "gefahren bin.\n\n" +
-      "ela_w: Dass eine Fähigkeit abnimmt, wenn man sie nicht nutzt, ist trivial. " +
+      "nele_w: Dass eine Fähigkeit abnimmt, wenn man sie nicht nutzt, ist trivial. " +
       "Interessant wäre, ob man dabei etwas anderes gewinnt. Ich merke mir keine Telefonnummern " +
       "mehr, dafür merke ich mir, wo ich was finde — und das ist auch eine Leistung, " +
       "nur eine andere.\n\n" +
@@ -43,7 +43,7 @@ export const deC1P9: SkillExercise[] = [
       "auf Wege. Ein Arzt, der ohne Datenbank keine Diagnose mehr stellt, ist nicht schlechter " +
       "als früher — er ist nur anders abhängig. Die Frage ist, ob wir diese Abhängigkeit " +
       "bewusst eingehen oder ob sie uns einfach passiert.\n\n" +
-      "ela_w: Das ist fair. Aber ich würde dann auch fragen, was die alte Fähigkeit " +
+      "nele_w: Das ist fair. Aber ich würde dann auch fragen, was die alte Fähigkeit " +
       "vorausgesetzt hat. Sich Wege zu merken war nie umsonst; es hat Kapazität gekostet, " +
       "die woanders gefehlt hat. Wir reden über den Verlust und nie über den Preis, " +
       "den wir vorher gezahlt haben.\n\n" +
@@ -64,7 +64,7 @@ export const deC1P9: SkillExercise[] = [
         explain: "On yıl gittiği bir güzergâhta iki kez yanlış dönmüş.",
       },
       {
-        text: "Was hält ela_w dem entgegen?",
+        text: "Was hält nele_w dem entgegen?",
         options: [
           "dass die Beobachtung falsch ist",
           "dass an anderer Stelle eine neue Fähigkeit entsteht",
@@ -101,7 +101,7 @@ export const deC1P9: SkillExercise[] = [
         explain: "„Welche Fähigkeit will ich behalten, auch wenn ich sie nicht brauche?“",
       },
       {
-        text: "Was wirft ela_w der Debatte vor?",
+        text: "Was wirft nele_w der Debatte vor?",
         options: [
           "Sie redet nur über den Verlust, nie über den früheren Preis.",
           "Sie übertreibt die Rolle der Technik.",
@@ -239,7 +239,7 @@ export const deC1P9: SkillExercise[] = [
           "Forum — Thema: Was wir auslagern, verlernen wir\n\n" +
           "mko: Seit ich navigiere statt zu suchen, finde ich in meiner eigenen Stadt Wege nicht mehr, " +
           "die ich früher im Schlaf gegangen bin. Da geht etwas verloren.\n\n" +
-          "ela_w: Dass eine Fähigkeit abnimmt, wenn man sie nicht nutzt, ist trivial. Ich merke mir keine " +
+          "nele_w: Dass eine Fähigkeit abnimmt, wenn man sie nicht nutzt, ist trivial. Ich merke mir keine " +
           "Telefonnummern mehr, dafür merke ich mir, wo ich was finde — das ist auch eine Leistung, nur eine andere.",
         checklist: [
           "Hangi konumlara yanıt verdiğini yaz",
@@ -257,7 +257,7 @@ export const deC1P9: SkillExercise[] = [
         ],
         sample:
           "Ich lese hier zwei Positionen, die sich weniger widersprechen, als es scheint. " +
-          "mko beschreibt einen Verlust, ela_w eine Verschiebung — beides kann gleichzeitig zutreffen. " +
+          "mko beschreibt einen Verlust, nele_w eine Verschiebung — beides kann gleichzeitig zutreffen. " +
           "Hilfreich fände ich die Unterscheidung zwischen Fähigkeiten, die sich jederzeit " +
           "zurückholen lassen, und solchen, bei denen der Weg zurück praktisch versperrt ist. " +
           "Konkret heißt das: Telefonnummern kann ich mir wieder merken, sobald ich will; " +

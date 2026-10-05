@@ -389,7 +389,7 @@ export const b1U44: SkillExercise[] = [
         sample:
           "Wir feiern am Samstag im Hof hinter dem Haus. Es geht um vier " +
           "los und dauert wahrscheinlich den ganzen Abend.\n\n" +
-          "Wie beim Fasching wollen wir uns einfach vergnügen, und am Ende sollen alle vergnügt nach Hause gehen. Jeder bringt etwas mit: Aylin den Salat, ich das Brot, Nuri die " +
+          "Wie beim Fasching wollen wir uns einfach vergnügen, und am Ende sollen alle vergnügt nach Hause gehen. Jeder bringt etwas mit: Helene den Salat, ich das Brot, Anton die " +
           "Getränke. Musik machen wir selbst, zwei Stunden lang, dann " +
           "reicht es auch den Nachbarn.\n\n" +
           "Ein Risiko gibt es: das Wetter. Wenn es regnet, gehen wir nach " +

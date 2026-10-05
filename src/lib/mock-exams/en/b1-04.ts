@@ -196,10 +196,10 @@ export const EN_B1_04: MockPaper = {
               kind: "match",
               id: "en-b1-04-l2-10",
               no: 10,
-              text: "Mert can fix almost anything but has no money to pay somebody to teach his daughter math.",
+              text: "Henry can fix almost anything but has no money to pay somebody to teach his daughter math.",
               answer: "e",
               explain:
-                "İlan takası tarif ediyor: «You give an hour of what you can do and take an hour of what you cannot», üstelik «No money changes hands». Mert'in verecek becerisi var, parası yok; kurulan denklem tam bu.",
+                "İlan takası tarif ediyor: «You give an hour of what you can do and take an hour of what you cannot», üstelik «No money changes hands». Henry'nin verecek becerisi var, parası yok; kurulan denklem tam bu.",
             },
           ],
         },
@@ -737,9 +737,9 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               plays: 2,
               segments: [
                 { speaker: "Farah", text: "The new invoice system rejected mine twice." },
-                { speaker: "Mert", text: "Did you put the project number in?" },
+                { speaker: "Henry", text: "Did you put the project number in?" },
                 { speaker: "Farah", text: "There is no field for it." },
-                { speaker: "Mert", text: "There is, but it only appears after you choose the client. Everybody loses an hour to that." },
+                { speaker: "Henry", text: "There is, but it only appears after you choose the client. Everybody loses an hour to that." },
               ],
             },
             {
@@ -750,7 +750,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               situation: "İki arkadaş bir kursu konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Mert", text: "How was the return-to-work course?" },
+                { speaker: "Henry", text: "How was the return-to-work course?" },
                 { speaker: "Yara", text: "Better than I expected. I thought it would be about writing letters. Half of it was about how to talk about three years at home without apologizing for them." },
               ],
             },
@@ -818,7 +818,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               options: ["The system is offline", "A field is hidden until a choice is made", "The invoice was sent to the wrong client last week"],
               answer: 1,
               explain:
-                "Mert alanın var olduğunu ama koşullu göründüğünü söylüyor: «it only appears after you choose the client». Sistem çalışıyor, yalnız fatura reddediliyor; yanlış müşteriye gönderim hiç geçmiyor.",
+                "Henry alanın var olduğunu ama koşullu göründüğünü söylüyor: «it only appears after you choose the client». Sistem çalışıyor, yalnız fatura reddediliyor; yanlış müşteriye gönderim hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -1107,7 +1107,7 @@ Since the middle of October my employer has moved me onto late shifts, and I now
 I would like to move my place to the spring group rather than ask for my money back, because I still want to do the course. If that is not possible, please tell me what my options are.
 
 Sincerely,
-Farah Demir`,
+Farah Adams`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Tarih, tutar ve gün gibi somut bilgiler verildi mi?",

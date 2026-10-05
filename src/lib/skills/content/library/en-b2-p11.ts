@@ -433,7 +433,7 @@ export const enB2P11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„We had been walking for three hours when it started to rain.“ — Yağmur başladığında yürüyüş sürüyor muydu?",
+        text: "„We had been walking for three hours when it started to rain.“ — Diana başladığında yürüyüş sürüyor muydu?",
         options: ["True", "False"],
         answer: 0,
         explain: "„had been + -ing“ eylemin o ana kadar sürdüğünü söyler.",

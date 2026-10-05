@@ -75,7 +75,7 @@ export const enC1U21: SkillExercise[] = [
       "PAY RISE OR PAY CUT? A TEXTILE TOWN DOES THE SUMS\n" +
       "When the wage agreement at the Bursa textile plant was signed in March, the union called it a victory. In nominal terms, it was one: every worker on the floor gets four percent more on the monthly pay stub. In real terms, the picture is darker. Prices in the region rose by about five percent over the same year, so the same pay stub buys roughly one percent less than it did twelve months ago.\n" +
       "Both numbers are true, and that is exactly why the argument in the town has become so bitter. The company points to the first. The workers point to the second. Neither side is wrong.\n" +
-      "In the press release it is a downturn; in the central bank's model, stagnation. Economists at the local chamber of commerce say the difference matters. A downturn is expected to end. Stagnation is a condition that can last for years, and in terms of planning, a family treats the two very differently. Ayten Demir, who has worked at the plant for eighteen years, put it simply: „I do not need a word for it. I need to know if I can pay the rent in the autumn.“\n" +
+      "In the press release it is a downturn; in the central bank's model, stagnation. Economists at the local chamber of commerce say the difference matters. A downturn is expected to end. Stagnation is a condition that can last for years, and in terms of planning, a family treats the two very differently. Madison Adams, who has worked at the plant for eighteen years, put it simply: „I do not need a word for it. I need to know if I can pay the rent in the autumn.“\n" +
       "The currency has not helped. What the bank calls a devaluation, the real economy calls a loss: imported cotton now costs more in lira terms, even though the price in dollars has barely moved. In terms of jobs, the plant is stable for now, but two smaller suppliers closed in the winter.\n" +
       "Deflation is a number; the business cycle is a story. Nobody in the town is worried about deflation, since prices are still going up. What people want is a story they can believe: when will this part of the cycle end?\n" +
       "The union has promised to reopen talks in September. By then, it says, it will have the only figure that matters, the wage in real terms, and it will not sign anything that measures pay in nominal terms alone.",
@@ -250,19 +250,19 @@ export const enC1U21: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Melis", text: "Much as I welcome the monetary policy, the key interest rate hurts the young. Both halves are true and the second one is almost never in the same paragraph as the first." },
-      { speaker: "Arda", text: "Why the young in particular?" },
-      { speaker: "Melis", text: "Because they are the borrowers. A saver with an apartment already bought is on the other side of every rate, and the average of the two says nothing about either." },
-      { speaker: "Arda", text: "So the average hides two directions." },
-      { speaker: "Melis", text: "It hides two directions and a deposit. The rate moves the monthly payment, and the deposit is the part that decides who gets in at all." },
-      { speaker: "Arda", text: "An expansionary step, albeit restrictive later, buys time." },
-      { speaker: "Melis", text: "That is the honest defense of the whole policy and it is worth taking seriously. Time is a real thing to buy, and somebody has to decide what it is spent on." },
-      { speaker: "Arda", text: "Who usually decides?" },
-      { speaker: "Melis", text: "Nobody, in my experience. The time is bought and then it passes, and the same committee meets again with the same question and a worse starting point." },
-      { speaker: "Arda", text: "Although countercyclical, the fiscal policy arrives too late." },
-      { speaker: "Melis", text: "And that is the second half of the same problem. The design is right and the calendar is wrong, because the measurement that triggers it takes two quarters to arrive." },
-      { speaker: "Arda", text: "Could that be fixed?" },
-      { speaker: "Melis", text: "With rules that start themselves on a number rather than on a vote. It has been proposed in every decade I have read about and it loses the vote every time." },
+      { speaker: "Heidi", text: "Much as I welcome the monetary policy, the key interest rate hurts the young. Both halves are true and the second one is almost never in the same paragraph as the first." },
+      { speaker: "Gary", text: "Why the young in particular?" },
+      { speaker: "Heidi", text: "Because they are the borrowers. A saver with an apartment already bought is on the other side of every rate, and the average of the two says nothing about either." },
+      { speaker: "Gary", text: "So the average hides two directions." },
+      { speaker: "Heidi", text: "It hides two directions and a deposit. The rate moves the monthly payment, and the deposit is the part that decides who gets in at all." },
+      { speaker: "Gary", text: "An expansionary step, albeit restrictive later, buys time." },
+      { speaker: "Heidi", text: "That is the honest defense of the whole policy and it is worth taking seriously. Time is a real thing to buy, and somebody has to decide what it is spent on." },
+      { speaker: "Gary", text: "Who usually decides?" },
+      { speaker: "Heidi", text: "Nobody, in my experience. The time is bought and then it passes, and the same committee meets again with the same question and a worse starting point." },
+      { speaker: "Gary", text: "Although countercyclical, the fiscal policy arrives too late." },
+      { speaker: "Heidi", text: "And that is the second half of the same problem. The design is right and the calendar is wrong, because the measurement that triggers it takes two quarters to arrive." },
+      { speaker: "Gary", text: "Could that be fixed?" },
+      { speaker: "Heidi", text: "With rules that start themselves on a number rather than on a vote. It has been proposed in every decade I have read about and it loses the vote every time." },
     ],
     questions: [
       {
@@ -344,16 +344,16 @@ export const enC1U21: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Volkan", text: "What the budget deficit does is hide a market failure. A number everybody argues about, standing in front of a thing nobody has named." },
-      { speaker: "Volkan", text: "A deficit is the gap between two columns. A market failure is a price that stopped telling the truth about a cost, and the second is what produced the first." },
-      { speaker: "Volkan", text: "Arguing about the deficit is arguing about the size of a symptom, and it can be done for ten years without the word „price“ ever appearing." },
-      { speaker: "Volkan", text: "Behind the bailout package stands a speculative bubble. Two years of cheap loans for office towers that nobody needed, and banks that kept lending because everyone else was." },
-      { speaker: "Volkan", text: "The package is visible, dated and countable. The bubble was none of those things while it was growing, and everyone I have met remembers noticing it." },
-      { speaker: "Volkan", text: "The systemic risk we insure; the trade deficit we do not. That choice was made on purpose, and it is worth knowing why." },
-      { speaker: "Volkan", text: "We insure the first because a bank failing takes others with it. We do not insure the second because it is not an event; it is a direction." },
-      { speaker: "Volkan", text: "So here is the line I would put at the end of any lecture on this. Losses that are shared and gains that are private are not a failure of the system." },
-      { speaker: "Volkan", text: "They are the system working as it was built, and the building was done in public, in daylight, by people whose names are on the law." },
-      { speaker: "Volkan", text: "A taxpayer who understands that will ask a better question at the next election than one who thinks somebody stole something." },
+      { speaker: "Seth", text: "What the budget deficit does is hide a market failure. A number everybody argues about, standing in front of a thing nobody has named." },
+      { speaker: "Seth", text: "A deficit is the gap between two columns. A market failure is a price that stopped telling the truth about a cost, and the second is what produced the first." },
+      { speaker: "Seth", text: "Arguing about the deficit is arguing about the size of a symptom, and it can be done for ten years without the word „price“ ever appearing." },
+      { speaker: "Seth", text: "Behind the bailout package stands a speculative bubble. Two years of cheap loans for office towers that nobody needed, and banks that kept lending because everyone else was." },
+      { speaker: "Seth", text: "The package is visible, dated and countable. The bubble was none of those things while it was growing, and everyone I have met remembers noticing it." },
+      { speaker: "Seth", text: "The systemic risk we insure; the trade deficit we do not. That choice was made on purpose, and it is worth knowing why." },
+      { speaker: "Seth", text: "We insure the first because a bank failing takes others with it. We do not insure the second because it is not an event; it is a direction." },
+      { speaker: "Seth", text: "So here is the line I would put at the end of any lecture on this. Losses that are shared and gains that are private are not a failure of the system." },
+      { speaker: "Seth", text: "They are the system working as it was built, and the building was done in public, in daylight, by people whose names are on the law." },
+      { speaker: "Seth", text: "A taxpayer who understands that will ask a better question at the next election than one who thinks somebody stole something." },
     ],
     questions: [
       {

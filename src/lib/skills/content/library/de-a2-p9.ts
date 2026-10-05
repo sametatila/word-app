@@ -400,7 +400,7 @@ export const deA2P9: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["dich"],
-        explain: "Emir kipinde de dönüşlü zamir kalır: Beeil dich!",
+        explain: "Uwe kipinde de dönüşlü zamir kalır: Beeil dich!",
       },
       {
         kind: "gapfill",

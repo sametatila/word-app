@@ -105,21 +105,21 @@ export const enA2U20: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Mert: Is that your sister in the photo?\n" +
-      "Nil: My cousin. She got married young.\n" +
-      "Mert: And the man next to her?\n" +
-      "Nil: Her husband. They have been married for ten years — no, nine. I always say ten.\n" +
-      "Mert: And the little one?\n" +
-      "Nil: Their daughter. My aunt's first grandchild. She was born in the same month as my other cousin's son.\n" +
-      "Mert: So your aunt got two grandchildren in one month.\n" +
-      "Nil: In three weeks. She did not sleep that year.\n" +
-      "Mert: My family is smaller. My parents divorced when I was six and I have one relative in this city.\n" +
-      "Nil: Is that hard?\n" +
-      "Mert: It was. Now it is normal. Two houses, two kitchens, two ways of cooking rice.\n" +
-      "Nil: And you? Single?\n" +
-      "Mert: Engaged. Since March.\n" +
-      "Nil: Congratulations! Why is that not the first thing you say?\n" +
-      "Mert: Because you asked about the photo.",
+      "Henry: Is that your sister in the photo?\n" +
+      "Katie: My cousin. She got married young.\n" +
+      "Henry: And the man next to her?\n" +
+      "Katie: Her husband. They have been married for ten years — no, nine. I always say ten.\n" +
+      "Henry: And the little one?\n" +
+      "Katie: Their daughter. My aunt's first grandchild. She was born in the same month as my other cousin's son.\n" +
+      "Henry: So your aunt got two grandchildren in one month.\n" +
+      "Katie: In three weeks. She did not sleep that year.\n" +
+      "Henry: My family is smaller. My parents divorced when I was six and I have one relative in this city.\n" +
+      "Katie: Is that hard?\n" +
+      "Henry: It was. Now it is normal. Two houses, two kitchens, two ways of cooking rice.\n" +
+      "Katie: And you? Single?\n" +
+      "Henry: Engaged. Since March.\n" +
+      "Katie: Congratulations! Why is that not the first thing you say?\n" +
+      "Henry: Because you asked about the photo.",
     questions: [
       {
         text: "Who is in the photo?",
@@ -135,14 +135,14 @@ export const enA2U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert has a big family in this city.",
+        text: "Henry has a big family in this city.",
         options: ["True", "False"],
         answer: 1,
         explain: "„My family is smaller … I have one relative in this city.“",
       },
       {
         kind: "gapfill",
-        text: "Mert has been engaged since ___.",
+        text: "Henry has been engaged since ___.",
         options: [],
         answer: 0,
         accept: ["March"],
@@ -159,11 +159,11 @@ export const enA2U20: SkillExercise[] = [
           "My parents divorced when I was six.",
           "Engaged. Since March.",
         ],
-        explain: "Önce fotoğraf, sonra kuzenin evliliği, sonra Mert'in ailesi, en son Mert'in haberi.",
+        explain: "Önce fotoğraf, sonra kuzenin evliliği, sonra Henry'nin ailesi, en son Henry'nin haberi.",
       },
       {
         kind: "short_answer",
-        text: "How old was Mert when the parents divorced?",
+        text: "How old was Henry when the parents divorced?",
         options: [],
         answer: 0,
         accept: ["six", "6", "six years old"],
@@ -189,26 +189,26 @@ export const enA2U20: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Sena", text: "Hi. Nice to meet you. I'm Sena." },
-      { speaker: "Can", text: "Can. Nice to meet you too. How do you know Nil?" },
-      { speaker: "Sena", text: "We work together. Four years now. And you?" },
-      { speaker: "Can", text: "School. We were in the same class and we still have the same jokes." },
-      { speaker: "Sena", text: "Have you been here before?" },
-      { speaker: "Can", text: "To this apartment, yes. To a party here, no. Nil doesn't like parties." },
-      { speaker: "Sena", text: "Nil told me. Nil said: eight people is a party, nine is a problem." },
-      { speaker: "Can", text: "There are eleven of us." },
-      { speaker: "Sena", text: "Then it is a problem. Is the food from Nil's mother?" },
-      { speaker: "Can", text: "The bread, yes. The rest is from the store and everybody knows." },
-      { speaker: "Sena", text: "Nobody says it." },
-      { speaker: "Can", text: "That is the tradition. Thanks for not saying it." },
-      { speaker: "Sena", text: "Thank you for telling me. Now I can't stop thinking about it." },
+      { speaker: "Ellie", text: "Hi. Nice to meet you. I'm Ellie." },
+      { speaker: "Tyler", text: "Can. Nice to meet you too. How do you know Katie?" },
+      { speaker: "Ellie", text: "We work together. Four years now. And you?" },
+      { speaker: "Tyler", text: "School. We were in the same class and we still have the same jokes." },
+      { speaker: "Ellie", text: "Have you been here before?" },
+      { speaker: "Tyler", text: "To this apartment, yes. To a party here, no. Katie doesn't like parties." },
+      { speaker: "Ellie", text: "Katie told me. Katie said: eight people is a party, nine is a problem." },
+      { speaker: "Tyler", text: "There are eleven of us." },
+      { speaker: "Ellie", text: "Then it is a problem. Is the food from Katie's mother?" },
+      { speaker: "Tyler", text: "The bread, yes. The rest is from the store and everybody knows." },
+      { speaker: "Ellie", text: "Nobody says it." },
+      { speaker: "Tyler", text: "That is the tradition. Thanks for not saying it." },
+      { speaker: "Ellie", text: "Thank you for telling me. Now I can't stop thinking about it." },
     ],
     questions: [
       {
-        text: "How does Sena know Nil?",
+        text: "How does Ellie know Katie?",
         options: ["they work together", "from school", "from a party"],
         answer: 0,
-        explain: "„We work together. Four years now.“ — okul Can'ın yolu.",
+        explain: "„We work together. Four years now.“ — okul Tyler'in yolu.",
       },
       {
         text: "How many people are at the party?",
@@ -218,14 +218,14 @@ export const enA2U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Only the bread is from Nil's mother.",
+        text: "Only the bread is from Katie's mother.",
         options: ["True", "False"],
         answer: 0,
         explain: "„The bread, yes. The rest is from the store and everybody knows.“",
       },
       {
         kind: "gapfill",
-        text: "Sena and Nil have worked together for ___ years.",
+        text: "Ellie and Katie have worked together for ___ years.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
@@ -266,18 +266,18 @@ export const enA2U20: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "Thank you for your help. Five words, and most people never say them at work." },
-      { speaker: "Nil", text: "Last month a colleague stayed two hours after five for my report. I wrote a note the next morning." },
-      { speaker: "Nil", text: "Not an email. A note, on paper, on the desk. It took four minutes." },
-      { speaker: "Nil", text: "Three weeks later that person helped me again, before I asked." },
-      { speaker: "Nil", text: "I don't think that is luck. Thanks for helping me is a sentence people remember." },
-      { speaker: "Nil", text: "My grandmother said: respect costs nothing and buys everything. She was right about the second half." },
-      { speaker: "Nil", text: "There is one rule. Say what the help was. Thank you for your help is fine. Thank you for the Tuesday report is better." },
-      { speaker: "Nil", text: "And when somebody thanks you, the answer is two words: You're welcome. Not it was nothing. It was something." },
+      { speaker: "Katie", text: "Thank you for your help. Five words, and most people never say them at work." },
+      { speaker: "Katie", text: "Last month a colleague stayed two hours after five for my report. I wrote a note the next morning." },
+      { speaker: "Katie", text: "Not an email. A note, on paper, on the desk. It took four minutes." },
+      { speaker: "Katie", text: "Three weeks later that person helped me again, before I asked." },
+      { speaker: "Katie", text: "I don't think that is luck. Thanks for helping me is a sentence people remember." },
+      { speaker: "Katie", text: "My grandmother said: respect costs nothing and buys everything. She was right about the second half." },
+      { speaker: "Katie", text: "There is one rule. Say what the help was. Thank you for your help is fine. Thank you for the Tuesday report is better." },
+      { speaker: "Katie", text: "And when somebody thanks you, the answer is two words: You're welcome. Not it was nothing. It was something." },
     ],
     questions: [
       {
-        text: "What did Nil write?",
+        text: "What did Katie write?",
         options: ["a note on paper", "an email", "a report"],
         answer: 0,
         explain: "„Not an email. A note, on paper, on the desk. It took four minutes.“",
@@ -290,7 +290,7 @@ export const enA2U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil thinks it was luck.",
+        text: "Katie thinks it was luck.",
         options: ["True", "False"],
         answer: 1,
         explain: "„I don't think that is luck.“",

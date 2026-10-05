@@ -45,41 +45,41 @@ export const enA2U06: SkillExercise[] = [
     minutes: 5,
     text:
       "Doctor: Good morning. What is the problem?\n" +
-      "Ela: I have a fever and my throat is sore. I've had a cough for three days.\n" +
+      "Lucy: I have a fever and my throat is sore. I've had a cough for three days.\n" +
       "Doctor: How long have you had the fever?\n" +
-      "Ela: Since Monday. It started in the evening.\n" +
+      "Lucy: Since Monday. It started in the evening.\n" +
       "Doctor: And is it worse now or better?\n" +
-      "Ela: Worse. Yesterday I was dizzy in the morning and I couldn't work.\n" +
+      "Lucy: Worse. Yesterday I was dizzy in the morning and I couldn't work.\n" +
       "Doctor: Do you have a pain in the stomach?\n" +
-      "Ela: No, only the throat and the head.\n" +
+      "Lucy: No, only the throat and the head.\n" +
       "Doctor: It is a cold, not a serious illness. You should rest for a week.\n" +
-      "Ela: A week! I have a lot of work.\n" +
+      "Lucy: A week! I have a lot of work.\n" +
       "Doctor: Then you will be sick for a month. You should drink enough water, avoid cold drinks and relax.\n" +
-      "Ela: Should I take vitamins?\n" +
+      "Lucy: Should I take vitamins?\n" +
       "Doctor: They don't hurt. But rest is the best medicine.",
     questions: [
       {
-        text: "How long has Ela had a cough?",
+        text: "How long has Lucy had a cough?",
         options: ["three days", "one week", "one month"],
         answer: 0,
         explain: "„I've had a cough for three days.“ — ateş pazartesiden beri, ayrı bir süre.",
       },
       {
-        text: "What does the doctor say Ela should do?",
+        text: "What does the doctor say Lucy should do?",
         options: ["rest for a week", "take vitamins", "avoid water"],
         answer: 0,
         explain: "„You should rest for a week.“ — vitaminler zararsız ama asıl ilaç dinlenmek.",
       },
       {
         kind: "truefalse",
-        text: "Ela has a pain in the throat and the head.",
+        text: "Lucy has a pain in the throat and the head.",
         options: ["True", "False"],
         answer: 0,
         explain: "„No, only the throat and the head.“",
       },
       {
         kind: "gapfill",
-        text: "Ela has had the fever since ___.",
+        text: "Lucy has had the fever since ___.",
         options: [],
         answer: 0,
         accept: ["Monday"],
@@ -111,19 +111,19 @@ export const enA2U06: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Deniz: Good morning. I'd like to change my appointment.\n" +
+      "Charlie: Good morning. I'd like to change my appointment.\n" +
       "Office: Of course. What is your name?\n" +
-      "Deniz: Deniz Kaya. The appointment is on Friday at ten.\n" +
+      "Charlie: Charlie Ellis. The appointment is on Friday at ten.\n" +
       "Office: I see it. When would you like to come?\n" +
-      "Deniz: Do you have anything earlier? Friday is too late for me.\n" +
+      "Charlie: Do you have anything earlier? Friday is too late for me.\n" +
       "Office: Let me look. Wednesday at two is available. Or Thursday at half past eight.\n" +
-      "Deniz: Thursday is better. Half past eight is fine.\n" +
+      "Charlie: Thursday is better. Half past eight is fine.\n" +
       "Office: Good. And Friday? Should I cancel it?\n" +
-      "Deniz: Yes, please cancel it.\n" +
+      "Charlie: Yes, please cancel it.\n" +
       "Office: Is the problem urgent?\n" +
-      "Deniz: Not urgent, but I have had the pain for two weeks and it is getting worse.\n" +
+      "Charlie: Not urgent, but I have had the pain for two weeks and it is getting worse.\n" +
       "Office: Then Thursday is good. If it is worse tomorrow, call back and we'll find something the same day.\n" +
-      "Deniz: Thank you. I'll let you know.",
+      "Charlie: Thank you. I'll let you know.",
     questions: [
       {
         text: "When is the new appointment?",
@@ -146,7 +146,7 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Deniz has had the pain for ___ weeks.",
+        text: "Charlie has had the pain for ___ weeks.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
@@ -167,7 +167,7 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What should Deniz do if it is worse tomorrow?",
+        text: "What should Charlie do if it is worse tomorrow?",
         options: [],
         answer: 0,
         accept: ["call back", "call the office", "call"],
@@ -193,43 +193,43 @@ export const enA2U06: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Nil", text: "You look tired. What is wrong?" },
-      { speaker: "Can", text: "I have had a cold for a week. And I get tired after two hours at work." },
-      { speaker: "Nil", text: "A week! You should go to the doctor." },
-      { speaker: "Can", text: "I have an appointment on Thursday." },
-      { speaker: "Nil", text: "Good. Until then you should rest and drink enough water." },
-      { speaker: "Can", text: "I drink coffee." },
-      { speaker: "Nil", text: "You shouldn't drink coffee with a cold! You should avoid it." },
-      { speaker: "Can", text: "And my throat is sore. Should I take something?" },
-      { speaker: "Nil", text: "Warm tea with lemon. My grandmother's advice — and it works." },
-      { speaker: "Can", text: "Should I stay at home tomorrow?" },
-      { speaker: "Nil", text: "Of course. Call your office and let them know." },
-      { speaker: "Can", text: "OK, I will. Thank you for the advice." },
-      { speaker: "Nil", text: "Get well soon. And relax — the work can wait." },
+      { speaker: "Katie", text: "You look tired. What is wrong?" },
+      { speaker: "Tyler", text: "I have had a cold for a week. And I get tired after two hours at work." },
+      { speaker: "Katie", text: "A week! You should go to the doctor." },
+      { speaker: "Tyler", text: "I have an appointment on Thursday." },
+      { speaker: "Katie", text: "Good. Until then you should rest and drink enough water." },
+      { speaker: "Tyler", text: "I drink coffee." },
+      { speaker: "Katie", text: "You shouldn't drink coffee with a cold! You should avoid it." },
+      { speaker: "Tyler", text: "And my throat is sore. Should I take something?" },
+      { speaker: "Katie", text: "Warm tea with lemon. My grandmother's advice — and it works." },
+      { speaker: "Tyler", text: "Should I stay at home tomorrow?" },
+      { speaker: "Katie", text: "Of course. Call your office and let them know." },
+      { speaker: "Tyler", text: "OK, I will. Thank you for the advice." },
+      { speaker: "Katie", text: "Get well soon. And relax — the work can wait." },
     ],
     questions: [
       {
-        text: "How long has Can had a cold?",
+        text: "How long has Tyler had a cold?",
         options: ["a week", "two hours", "since Thursday"],
         answer: 0,
         explain: "„I have had a cold for a week.“ — iki saat işte dayanabildiği süre.",
       },
       {
-        text: "What shouldn't Can drink?",
+        text: "What shouldn't Tyler drink?",
         options: ["coffee", "warm tea", "water"],
         answer: 0,
         explain: "„You shouldn't drink coffee with a cold! You should avoid it.“",
       },
       {
         kind: "truefalse",
-        text: "Can has an appointment on Thursday.",
+        text: "Tyler has an appointment on Thursday.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I have an appointment on Thursday.“",
       },
       {
         kind: "gapfill",
-        text: "Nil says: warm tea with ___.",
+        text: "Katie says: warm tea with ___.",
         options: [],
         answer: 0,
         accept: ["lemon"],
@@ -245,7 +245,7 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What should Can do tomorrow?",
+        text: "What should Tyler do tomorrow?",
         options: [],
         answer: 0,
         accept: ["stay at home", "stay home", "rest"],
@@ -269,16 +269,16 @@ export const enA2U06: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ela", text: "My knee has hurt since March. That is six months." },
-      { speaker: "Ela", text: "At first it was only after sports. Then it was every evening. Now it hurts in the morning too." },
-      { speaker: "Ela", text: "I have had three appointments this year. The first doctor said: rest. The second said: sports." },
-      { speaker: "Ela", text: "The third one asked the right question: How long have you had it and when is it worse?" },
-      { speaker: "Ela", text: "I said: I've had it for six months and it is worse when I sit for hours." },
-      { speaker: "Ela", text: "Now I stand at my desk two hours a day. My condition is better now. Sometimes a question is the medicine." },
+      { speaker: "Lucy", text: "My knee has hurt since March. That is six months." },
+      { speaker: "Lucy", text: "At first it was only after sports. Then it was every evening. Now it hurts in the morning too." },
+      { speaker: "Lucy", text: "I have had three appointments this year. The first doctor said: rest. The second said: sports." },
+      { speaker: "Lucy", text: "The third one asked the right question: How long have you had it and when is it worse?" },
+      { speaker: "Lucy", text: "I said: I've had it for six months and it is worse when I sit for hours." },
+      { speaker: "Lucy", text: "Now I stand at my desk two hours a day. My condition is better now. Sometimes a question is the medicine." },
     ],
     questions: [
       {
-        text: "How long has Ela's knee hurt?",
+        text: "How long has Lucy's knee hurt?",
         options: ["six months", "three years", "two hours"],
         answer: 0,
         explain: "„My knee has hurt since March. That is six months.“ — aynı süre iki biçimde.",
@@ -298,7 +298,7 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ela has had ___ appointments this year.",
+        text: "Lucy has had ___ appointments this year.",
         options: [],
         answer: 0,
         accept: ["three", "3"],
@@ -319,7 +319,7 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Ela do now for two hours a day?",
+        text: "What does Lucy do now for two hours a day?",
         options: [],
         answer: 0,
         accept: ["stand at her desk", "stand", "she stands"],

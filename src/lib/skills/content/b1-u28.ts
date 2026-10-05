@@ -400,7 +400,7 @@ export const b1U28: SkillExercise[] = [
           "ich brauche, ist ein Gerät, das ohne Trick funktioniert.\n\n" +
           "Bitte antworten Sie mir bis zum 30. März. Danach würde ich mich " +
           "an die Verbraucherberatung wenden.\n\n" +
-          "Mit freundlichen Grüßen\nSedef Aydin",
+          "Mit freundlichen Grüßen\nAmelie Haas",
         phrases: [
           { de: "Den Beleg lege ich bei.", tr: "Fişi ekliyorum.", en: "I enclose the receipt." },
           { de: "Als Käufer habe ich …", tr: "Alıcı olarak … hakkım var.", en: "As a buyer I have …" },

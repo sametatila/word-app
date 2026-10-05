@@ -45,7 +45,7 @@ export const EN_B1_10: MockPaper = {
               genre: "Note in a box",
               genreTr: "Kutudaki not",
               title: "Your grandmother's",
-              body: `These are your grandmother's. I have written on the back of the ones I am sure about. The others I have left blank, because a wrong name is worse than no name. Ask Aunt Hale before September; she is the last one who was there.`,
+              body: `These are your grandmother's. I have written on the back of the ones I am sure about. The others I have left blank, because a wrong name is worse than no name. Ask Aunt Naomi before September; she is the last one who was there.`,
             },
             {
               kind: "text",
@@ -65,7 +65,7 @@ We scan up to five for you free. More than five costs one euro each.`,
               genre: "Email",
               genreTr: "E-posta",
               title: "The album",
-              body: `Dear Fikret, I found the album. There are about two hundred pictures and I recognize perhaps thirty people. I am not going to guess at the rest. Could we sit down with your mother one Sunday and go through them together?`,
+              body: `Dear Jordan, I found the album. There are about two hundred pictures and I recognize perhaps thirty people. I am not going to guess at the rest. Could we sit down with your mother one Sunday and go through them together?`,
             },
             {
               kind: "text",
@@ -188,7 +188,7 @@ We do not keep a copy unless you ask us to.`,
               kind: "match",
               id: "en-b1-10-l2-8",
               no: 8,
-              text: "Hale has one photograph and wants to tell its story to other people.",
+              text: "Naomi has one photograph and wants to tell its story to other people.",
               answer: "c",
               explain:
                 "İlan tam bu biçimi kuruyor: «One picture, five minutes, and we record what you say in front of the group».",
@@ -197,7 +197,7 @@ We do not keep a copy unless you ask us to.`,
               kind: "match",
               id: "en-b1-10-l2-9",
               no: 9,
-              text: "Yasin has old film that has never been developed.",
+              text: "Harvey has old film that has never been developed.",
               answer: "d",
               explain:
                 "İlan yaş sınırı koymuyor: «Black and white film of any age», üstelik boş çıkarsa önceden haber veriyor.",
@@ -206,7 +206,7 @@ We do not keep a copy unless you ask us to.`,
               kind: "match",
               id: "en-b1-10-l2-10",
               no: 10,
-              text: "Eyup wants his ninety-year-old neighbor's memories recorded before it is too late.",
+              text: "Barry wants his ninety-year-old neighbor's memories recorded before it is too late.",
               answer: "e",
               explain:
                 "İlan hizmeti tarif ediyor: «Volunteers visit older people at home with a recorder». Çarşamba akşamları (c) ise kişinin kendisinin gelmesini gerektiriyor.",
@@ -665,7 +665,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               situation: "Biri arkadaşına bulduğu şeyi anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Hale, it is Lenn. I found the street on the old map. It is under the parking lot now. I have printed it and I will bring it on Sunday, because your mother will want to see it." },
+                { text: "Hi Naomi, it is Lenn. I found the street on the old map. It is under the parking lot now. I have printed it and I will bring it on Sunday, because your mother will want to see it." },
               ],
             },
           ],
@@ -1137,7 +1137,7 @@ Volunteers come on Saturday: {{19}}`,
               { de: "Say what you can and cannot do on your own.", tr: "Kendi başına neyi yapabildiğini ve neyi yapamadığını söyle." },
               { de: "Suggest a specific time and say how long it would take.", tr: "Somut bir zaman öner ve ne kadar süreceğini söyle." },
             ],
-            sample: `Dear Aunt Hale,
+            sample: `Dear Aunt Naomi,
 
 I was clearing my mother's apartment last month and I found a shoebox of photographs in the back of a closet. There are about a hundred and fifty and most of them are from before 1960.
 
@@ -1148,7 +1148,7 @@ Could I come on a Sunday afternoon in March with the box and a notebook? I would
 I would be very grateful.
 
 Yours,
-Eyup`,
+Barry`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Somut sayılar ve tarihler verildi mi?",

@@ -1370,7 +1370,7 @@ export const deA2B09: Conversation[] = [
         say: [
           tr("İkinci kalıbımız bir fotoğrafı gösteriyor:"),
           de("Schau mal, das ist am Meer."),
-          tr("Emir kipi ve kısa bir açıklama; fotoğraf gösterirken en doğal başlangıç."),
+          tr("Uwe kipi ve kısa bir açıklama; fotoğraf gösterirken en doğal başlangıç."),
         ],
       },
       {

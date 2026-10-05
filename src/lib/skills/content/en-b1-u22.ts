@@ -143,7 +143,7 @@ export const enB1U22: SkillExercise[] = [
       "The town has changed a lot since 2010. Ask anybody who has lived here for more than ten years and they will tell you the same thing: it has become bigger, louder and much busier.\n" +
       "They built the bridge in 2015. Before that, cars had to go around through the old center, and the trip to the station took half an hour. Now it takes eight minutes.\n" +
       "The square was rebuilt in 2018, with new trees, a fountain and a market on Saturdays. The traffic around it has doubled since then, and the shop owners have asked the mayor twice for a Sunday without cars.\n" +
-      "„I have never seen so much traffic,“ says Mrs. Aksoy, who has sold newspapers on the corner for thirty years. She has seen three mayors, two new schools and one bridge.\n" +
+      "„I have never seen so much traffic,“ says Mrs. Lloyd, who has sold newspapers on the corner for thirty years. She has seen three mayors, two new schools and one bridge.\n" +
       "The suburb grew fastest of all. Four streets in 2012, thirty by 2019, and the pollution followed the new buildings out of the center.\n" +
       "What surprised me is that nobody here talks about the bridge. They talk about the square, which is smaller, older and in every photograph. The bridge carries four times more people and has never once been in the paper.",
     questions: [
@@ -224,17 +224,17 @@ export const enB1U22: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Ada", text: "They decided to clean the river last spring. The first thing they found was a pipe that nobody had on a map." },
-      { speaker: "Kerem", text: "Who pays for that?" },
+      { speaker: "Connor", text: "Who pays for that?" },
       { speaker: "Ada", text: "The city council. They suggested repairing the pipe first and cleaning the water afterward, which is the right order and took two years to agree on." },
-      { speaker: "Kerem", text: "And the bottles?" },
+      { speaker: "Connor", text: "And the bottles?" },
       { speaker: "Ada", text: "We gave up buying bottles at home in March. Six people, one faucet, and the landfill is forty kilometers away, so it is a small thing that is easy to measure." },
-      { speaker: "Kerem", text: "Did you really stop buying them completely?" },
+      { speaker: "Connor", text: "Did you really stop buying them completely?" },
       { speaker: "Ada", text: "Almost. We decided to buy a filter instead, and my son keeps asking me to buy fizzy water again." },
-      { speaker: "Kerem", text: "And the council? Did they promise to do anything about the landfill?" },
+      { speaker: "Connor", text: "And the council? Did they promise to do anything about the landfill?" },
       { speaker: "Ada", text: "They agreed to look at it next year. They also suggested using the old pipe for the park, which nobody understood." },
-      { speaker: "Kerem", text: "What was the dirty water doing to the plant?" },
+      { speaker: "Connor", text: "What was the dirty water doing to the plant?" },
       { speaker: "Ada", text: "Destroying it slowly. The plant was built for a town of nine thousand and the suburb alone is twelve now." },
-      { speaker: "Kerem", text: "So the supply is the problem, not the river." },
+      { speaker: "Connor", text: "So the supply is the problem, not the river." },
       { speaker: "Ada", text: "The supply is the problem. The river is only the place where you can see it." },
     ],
     questions: [
@@ -307,14 +307,14 @@ export const enB1U22: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Doruk", text: "The mayor said the space was free. That sentence is the reason forty people gave up a Saturday." },
-      { speaker: "Doruk", text: "She said it in May, in front of forty people, and we believed her. We planned a garden with benches and a small stage." },
-      { speaker: "Doruk", text: "They told us not to remove the poster from the door of the committee room, which we had already removed." },
-      { speaker: "Doruk", text: "The poster had our phone numbers on it. Somebody from the council had put a notice on top of it, and we took the notice down." },
-      { speaker: "Doruk", text: "She asked whether we had signed the petition. We had, all forty of us, and then we collected more signatures at the bus stop." },
-      { speaker: "Doruk", text: "Two hundred and forty signatures in the end, and the vote was in September." },
-      { speaker: "Doruk", text: "We lost it by nine. The committee had promised a second date and there has not been one." },
-      { speaker: "Doruk", text: "What I learned is that the poster mattered more than the petition. People sign in thirty seconds and forget in thirty more; a poster at a bus stop is read by the same person twice a day for a month." },
+      { speaker: "Sean", text: "The mayor said the space was free. That sentence is the reason forty people gave up a Saturday." },
+      { speaker: "Sean", text: "She said it in May, in front of forty people, and we believed her. We planned a garden with benches and a small stage." },
+      { speaker: "Sean", text: "They told us not to remove the poster from the door of the committee room, which we had already removed." },
+      { speaker: "Sean", text: "The poster had our phone numbers on it. Somebody from the council had put a notice on top of it, and we took the notice down." },
+      { speaker: "Sean", text: "She asked whether we had signed the petition. We had, all forty of us, and then we collected more signatures at the bus stop." },
+      { speaker: "Sean", text: "Two hundred and forty signatures in the end, and the vote was in September." },
+      { speaker: "Sean", text: "We lost it by nine. The committee had promised a second date and there has not been one." },
+      { speaker: "Sean", text: "What I learned is that the poster mattered more than the petition. People sign in thirty seconds and forget in thirty more; a poster at a bus stop is read by the same person twice a day for a month." },
     ],
     questions: [
       {

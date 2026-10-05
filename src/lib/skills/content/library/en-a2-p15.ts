@@ -69,7 +69,7 @@ export const enA2P15: SkillExercise[] = [
           "clue is under the red slide. Then walk past the café and go up the hill. The second clue is behind the " +
           "tree with a yellow ribbon. Go down the other side, across the wooden bridge and onto the little island " +
           "in the pond. The treasure is in a blue box next to the duck house! If a child gets tired, call me and " +
-          "I'll come. Ela",
+          "I'll come. Lucy",
       },
     ],
   },

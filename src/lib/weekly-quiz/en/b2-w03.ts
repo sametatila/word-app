@@ -35,16 +35,16 @@ export const EN_B2_W03: QuizWeek = {
       genreTr: "Dergi portresi",
       title: "Writing in a borrowed language",
       body:
-        "When Elif Demir published her first novel in English, few readers knew that English was her third language. " +
+        "When Holly Adams published her first novel in English, few readers knew that English was her third language. " +
         "Born in Izmir to a Turkish father and a Greek mother, she had grown up speaking two languages at home and only started learning English at the age of fourteen.\n\n" +
         "Her novel, which has since been translated into eleven languages, tells the story of a young woman who returns to her grandmother's village after thirty years abroad. " +
         "Critics have praised its precise, almost musical style. Some have even suggested that it could only have been written by someone who was not a native speaker. " +
-        "\"You notice things about a language that people who grew up with it never think about,\" Demir explains.\n\n" +
+        "\"You notice things about a language that people who grew up with it never think about,\" Adams explains.\n\n" +
         "Writing in English, however, has not always been easy. She admits that she had been working on the book for six years before she found a publisher. " +
         "\"At first, several publishers told me my sentences sounded strange. Looking back, they were probably right about some of them, but that was also what made the book mine.\"\n\n" +
         "The question of identity runs through the whole novel. The main character feels at home neither in the city where she has built her life nor in the village her family comes from. " +
         "Many readers who have moved to another country say they see themselves in her.\n\n" +
-        "Demir is currently working on her second book, which she is writing in Turkish for the first time. " +
+        "Adams is currently working on her second book, which she is writing in Turkish for the first time. " +
         "\"It feels like coming home,\" she says, \"and at the same time like visiting a foreign country. I guess that is what identity means for people like me.\"",
     },
     {
@@ -76,7 +76,7 @@ export const EN_B2_W03: QuizWeek = {
       id: "en-b2-w03-r1",
       block: "read",
       ref: "t1",
-      stem: "Which statement about Demir's languages is true?",
+      stem: "Which statement about Adams's languages is true?",
       options: [
         "She grew up speaking English with her parents at home.",
         "English was the third language she learned.",
@@ -106,7 +106,7 @@ export const EN_B2_W03: QuizWeek = {
       id: "en-b2-w03-r3",
       block: "read",
       ref: "t1",
-      stem: "How does Demir feel about writing her second book in Turkish?",
+      stem: "How does Adams feel about writing her second book in Turkish?",
       options: [
         "It feels both familiar and foreign to her.",
         "It is simply easier than writing in English.",
@@ -277,7 +277,7 @@ export const EN_B2_W03: QuizWeek = {
     {
       id: "en-b2-w03-v2",
       block: "vocab",
-      stem: "Demir ___ in Izmir, but she has lived in London for twenty years.",
+      stem: "Adams ___ in Izmir, but she has lived in London for twenty years.",
       options: ["was grown up", "grew up", "grew out", "is grown up"],
       answer: 1,
       why: "`grow up` edilgen olmayan bir deyimsel fiil: kişinin kendisi büyür ve bitmiş geçmişte past simple gelir. `was grown up` kurulamaz, `grew out` ise 'büyüyüp sığmaz olmak'. Çocuğu büyüten kişinin fiili başkadır (`raise`).",

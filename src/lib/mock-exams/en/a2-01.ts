@@ -78,7 +78,7 @@ export const EN_A2_01: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "From Ana",
-              body: `Hi Deniz, I cannot come to the yoga class tonight. My sister is sick and I am staying with her children. Can you tell the teacher? Thanks!`,
+              body: `Hi Charlie, I cannot come to the yoga class tonight. My sister is sick and I am staying with her children. Can you tell the teacher? Thanks!`,
             },
             {
               kind: "text",
@@ -126,10 +126,10 @@ export const EN_A2_01: MockPaper = {
               no: 3,
               ref: "m3",
               text: "Why does Ana write?",
-              options: ["She wants Deniz to give a message", "She wants to change the class", "She wants Deniz to visit her sister"],
+              options: ["She wants Charlie to give a message", "She wants to change the class", "She wants Charlie to visit her sister"],
               answer: 0,
               explain:
-                "İletinin sonu isteği taşıyor: «Can you tell the teacher?» — Ana, Deniz'den öğretmene haber vermesini istiyor. Kız kardeş ve ders metinde geçiyor ama biri sebep, öteki gidilemeyen yer; ikisi de istek değil.",
+                "İletinin sonu isteği taşıyor: «Can you tell the teacher?» — Ana, Charlie'den öğretmene haber vermesini istiyor. Kız kardeş ve ders metinde geçiyor ama biri sebep, öteki gidilemeyen yer; ikisi de istek değil.",
             },
             {
               kind: "mcq",
@@ -188,7 +188,7 @@ export const EN_A2_01: MockPaper = {
               kind: "match",
               id: "en-a2-01-l2-7",
               no: 7,
-              text: "Bekir was in the hospital last month. He wants to start again slowly, with other people.",
+              text: "Samuel was in the hospital last month. He wants to start again slowly, with other people.",
               answer: "b",
               explain:
                 "İlan tam bu durumu adlandırıyor: «Good for people who come back after an illness». Yavaş yürüyüş ve grup birlikte veriliyor. Sırt dersi de yavaş ama o özellikle sırt ağrısı için, hastane sonrası genel dönüş için değil.",
@@ -206,7 +206,7 @@ export const EN_A2_01: MockPaper = {
               kind: "match",
               id: "en-a2-01-l2-9",
               no: 9,
-              text: "The Kaya family wants to do something together on Sunday with their seven-year-old son.",
+              text: "The Archie family wants to do something together on Sunday with their seven-year-old son.",
               answer: "d",
               explain:
                 "İlan üç ölçütü birden karşılıyor: pazar sabahı, ebeveynle birlikte ve «Children from six years». Yedi yaşındaki çocuk bu sınırın üstünde. Tırmanma duvarı on altı yaşından itibaren, uymuyor.",
@@ -215,10 +215,10 @@ export const EN_A2_01: MockPaper = {
               kind: "match",
               id: "en-a2-01-l2-10",
               no: 10,
-              text: "Ayla is twelve. She wants to play a team sport after school in the week.",
+              text: "Freya is twelve. She wants to play a team sport after school in the week.",
               answer: "f",
               explain:
-                "İlandaki yaş aralığı «from nine to fourteen years» ve zamanı «on Wednesdays after school». Ayla on iki yaşında, aralığın içinde. Masa tenisi de hafta içi ama tek başına ya da eşli oynanıyor, takım sporu değil; futbol ilanı üç ölçütü birden tutuyor.",
+                "İlandaki yaş aralığı «from nine to fourteen years» ve zamanı «on Wednesdays after school». Freya on iki yaşında, aralığın içinde. Masa tenisi de hafta içi ama tek başına ya da eşli oynanıyor, takım sporu değil; futbol ilanı üç ölçütü birden tutuyor.",
             },
           ],
         },
@@ -386,7 +386,7 @@ These tips are free and easy. {{19}} you follow them for two weeks, you will see
               id: "t5",
               genre: "Email",
               genreTr: "E-posta",
-              title: "From: leyla@post.net",
+              title: "From: fiona@post.net",
               body: `Hi Tom,
 
 Thank you for the invitation. I would like to come {{20}} the picnic on Saturday.
@@ -400,7 +400,7 @@ We do not have a car, so we {{23}} take the train. It arrives at ten past eleven
 Please tell me {{24}} you need anything else.
 
 See you soon,
-Leyla`,
+Fiona`,
             },
           ],
           items: [
@@ -969,7 +969,7 @@ Thanks for your email! In my town a lot of people play soccer, and in summer eve
 When you come in July, come running with me. It is easy, I promise!
 
 See you soon,
-Deniz`,
+Charlie`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi? Biri eksikse metin tam sayılmaz.",
               "Yaklaşık 50 kelime yazıldı mı?",

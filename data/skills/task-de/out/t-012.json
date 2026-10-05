@@ -5,14 +5,14 @@
   "de": "Fülle das Bestellformular des Cafés aus."
  },
  {
-  "tr": "Kişi kartını Kaan için doldur.",
+  "tr": "Kişi kartını Liam için doldur.",
   "kind": "form.prompt",
-  "de": "Fülle die Personenkarte für Kaan aus."
+  "de": "Fülle die Personenkarte für Liam aus."
  },
  {
-  "tr": "Kaan; uzun boylu; kısa saçlı; komik; on dokuz yaşında.",
+  "tr": "Liam; uzun boylu; kısa saçlı; komik; on dokuz yaşında.",
   "kind": "form.facts",
-  "de": "Kaan; groß; kurze Haare; lustig; neunzehn Jahre alt."
+  "de": "Liam; groß; kurze Haare; lustig; neunzehn Jahre alt."
  },
  {
   "tr": "Masa iki kişilik; bir çorba; bir peynirli sandviç; iki çay.",
@@ -185,7 +185,7 @@
   "de": "„people“ ist schon Plural wie „Leute“: kein „-s“, und es verlangt „are“."
  },
  {
-  "tr": "Emir olumsuzu „Don't“ ile başlar; özne yazılmaz.",
+  "tr": "Ethan olumsuzu „Don't“ ile başlar; özne yazılmaz.",
   "kind": "build.hint",
   "de": "Der verneinte Imperativ beginnt mit „Don't“; das Subjekt wird nicht geschrieben."
  },
@@ -270,13 +270,13 @@
   "de": "Der Entscheidungssatz beim Einkauf. „I'll“ = „I will“ und meint hier „jetzt sofort“."
  },
  {
-  "tr": "Ayse'nin anlattığı sıra: doğru sıraya koy.",
+  "tr": "Rachel'in anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge in Ayses Erzählung: Bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Deniz'in anlattığı sıra: doğru sıraya koy.",
+  "tr": "Charlie'nin anlattığı sıra: doğru sıraya koy.",
   "kind": "question.text",
-  "de": "Die Reihenfolge in Deniz' Erzählung: Bring sie in die richtige Ordnung."
+  "de": "Die Reihenfolge in Charlie' Erzählung: Bring sie in die richtige Ordnung."
  }
 ]

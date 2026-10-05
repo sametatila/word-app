@@ -187,7 +187,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Lütfen benim için bir çay ısmarla.",
         answer: "Please order a tea for me.",
         alternatives: ["Order a tea for me, please."],
-        hint: "Emir cümlesi özne almaz; kime yapıldığını „for me“ ile ya da doğrudan „me“ ile söylersin.",
+        hint: "Ethan cümlesi özne almaz; kime yapıldığını „for me“ ile ya da doğrudan „me“ ile söylersin.",
       },
       {
         kind: "free",

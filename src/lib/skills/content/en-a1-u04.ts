@@ -44,7 +44,7 @@ export const enA1U04: SkillExercise[] = [
     minutes: 4,
     text:
       "Hello! This is a photo of my family and our animals.\n\n" +
-      "I have a dog. Its name is Luna. Luna is very big and she is not young. She plays with my brother. My sister has two cats. Their names are Mia and Nil. The cats don't play with Luna — they only sleep.\n\n" +
+      "I have a dog. Its name is Luna. Luna is very big and she is not young. She plays with my brother. My sister has two cats. Their names are Mia and Katie. The cats don't play with Luna — they only sleep.\n\n" +
       "We have a bird too. Its name is Pit. Pit doesn't talk, and he never sings. My father says: \"Don't forget the bird!\"\n\n" +
       "We don't have a horse. A horse is for a farm, not for a house. But there are many horses at the zoo.",
     questions: [
@@ -91,9 +91,9 @@ export const enA1U04: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 4,
-    title: "Eda's photo",
+    title: "Erin's photo",
     genre: "dialogue",
-    intro: "Eda bir fotoğrafı anlatıyor. „this“, „that“ ve „these“ arasındaki farka dikkat et.",
+    intro: "Erin bir fotoğrafı anlatıyor. „this“, „that“ ve „these“ arasındaki farka dikkat et.",
     gloss: [
       { de: "know", tr: "bilmek" },
       { de: "big", tr: "büyük" },
@@ -102,41 +102,41 @@ export const enA1U04: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ali: This is a good photo. Who is this?\n" +
-      "Eda: This is my mother. And these are my friends.\n" +
-      "Ali: How many people are there in the photo?\n" +
-      "Eda: There are many people — one, two, three … eight!\n" +
-      "Ali: Is that a man or a woman?\n" +
-      "Eda: That is a man. He doesn't live here. He is from Ankara.\n" +
-      "Ali: And this group here?\n" +
-      "Eda: Those are my cousins. I don't know all their names!\n" +
-      "Ali: You have a big family.\n" +
-      "Eda: Yes. But I don't have a brother. I only have two sisters.\n" +
-      "Ali: Is there an animal in the photo?\n" +
-      "Eda: Yes, there is a dog. Its name is Nero. Don't forget Nero!",
+      "Harry: This is a good photo. Who is this?\n" +
+      "Erin: This is my mother. And these are my friends.\n" +
+      "Harry: How many people are there in the photo?\n" +
+      "Erin: There are many people — one, two, three … eight!\n" +
+      "Harry: Is that a man or a woman?\n" +
+      "Erin: That is a man. He doesn't live here. He is from Ankara.\n" +
+      "Harry: And this group here?\n" +
+      "Erin: Those are my cousins. I don't know all their names!\n" +
+      "Harry: You have a big family.\n" +
+      "Erin: Yes. But I don't have a brother. I only have two sisters.\n" +
+      "Harry: Is there an animal in the photo?\n" +
+      "Erin: Yes, there is a dog. Its name is Nero. Don't forget Nero!",
     questions: [
       {
         text: "How many people are there in the photo?",
         options: ["eight", "two", "three"],
         answer: 0,
-        explain: "„one, two, three … eight!“ — Eda sayıyor ve sekizde bitiriyor.",
+        explain: "„one, two, three … eight!“ — Erin sayıyor ve sekizde bitiriyor.",
       },
       {
         text: "What is the dog's name?",
-        options: ["Nero", "Eda", "Ali"],
+        options: ["Nero", "Erin", "Harry"],
         answer: 0,
         explain: "„there is a dog. Its name is Nero.“ — hayvan için „its“ kullanılıyor.",
       },
       {
         kind: "truefalse",
-        text: "Eda has a brother.",
+        text: "Erin has a brother.",
         options: ["True", "False"],
         answer: 1,
         explain: "„But I don't have a brother. I only have two sisters.“",
       },
       {
         kind: "gapfill",
-        text: "Eda only has two ___.",
+        text: "Erin only has two ___.",
         options: [],
         answer: 0,
         accept: ["sisters"],
@@ -175,7 +175,7 @@ export const enA1U04: SkillExercise[] = [
     unit: 4,
     title: "No pet at home",
     genre: "dialogue",
-    intro: "Lena ile Can evcil hayvanları konuşuyor. Kimin nesi var, kimin yok?",
+    intro: "Lena ile Tyler evcil hayvanları konuşuyor. Kimin nesi var, kimin yok?",
     gloss: [
       { de: "bring", tr: "getirmek" },
       { de: "home", tr: "ev" },
@@ -185,16 +185,16 @@ export const enA1U04: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Lena", text: "Do you have a pet, Can?" },
-      { speaker: "Can", text: "No, I don't. I don't have an animal at home." },
+      { speaker: "Lena", text: "Do you have a pet, Tyler?" },
+      { speaker: "Tyler", text: "No, I don't. I don't have an animal at home." },
       { speaker: "Lena", text: "Why not?" },
-      { speaker: "Can", text: "My mother says: Don't bring a dog here!" },
+      { speaker: "Tyler", text: "My mother says: Don't bring a dog here!" },
       { speaker: "Lena", text: "I have a cat and a fish. The cat's name is Zeyno." },
-      { speaker: "Can", text: "And the fish?" },
+      { speaker: "Tyler", text: "And the fish?" },
       { speaker: "Lena", text: "The fish doesn't have a name. It's only a fish!" },
-      { speaker: "Can", text: "Is the zoo good?" },
+      { speaker: "Tyler", text: "Is the zoo good?" },
       { speaker: "Lena", text: "Yes, it is very good. There are horses, birds and many animals." },
-      { speaker: "Can", text: "I never go to the zoo. I always forget!" },
+      { speaker: "Tyler", text: "I never go to the zoo. I always forget!" },
       { speaker: "Lena", text: "Don't forget this year! There are two young birds there." },
     ],
     questions: [
@@ -206,13 +206,13 @@ export const enA1U04: SkillExercise[] = [
       },
       {
         text: "What is the cat's name?",
-        options: ["Zeyno", "Can", "Lena"],
+        options: ["Zeyno", "Tyler", "Lena"],
         answer: 0,
         explain: "„The cat's name is Zeyno.“ — balığın adı yok.",
       },
       {
         kind: "truefalse",
-        text: "Can does not have an animal at home.",
+        text: "Tyler does not have an animal at home.",
         options: ["True", "False"],
         answer: 0,
         explain: "„I don't have an animal at home.“ Annesi de „Don't bring a dog here!“ diyor.",
@@ -251,7 +251,7 @@ export const enA1U04: SkillExercise[] = [
     unit: 4,
     title: "A photo from work",
     genre: "monologue",
-    intro: "Ayse iş yerindeki grup fotoğrafını anlatıyor. Kim kim, kim fotoğrafta yok?",
+    intro: "Rachel iş yerindeki grup fotoğrafını anlatıyor. Kim kim, kim fotoğrafta yok?",
     gloss: [
       { de: "cousin", tr: "kuzen" },
       { de: "like", tr: "sevmek" },
@@ -259,29 +259,29 @@ export const enA1U04: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ayse", text: "This is a picture of my group at work. There are many people here." },
-      { speaker: "Ayse", text: "This is Deniz. He doesn't work here now. He is in Bremen." },
-      { speaker: "Ayse", text: "These are my two friends, Nil and Mert. They are not only friends — they are cousins." },
-      { speaker: "Ayse", text: "That woman there is our teacher. Her name is Ela." },
-      { speaker: "Ayse", text: "The man with the dog is my brother. The dog's name is Tosun." },
-      { speaker: "Ayse", text: "I am not in the picture. I don't like photos!" },
+      { speaker: "Rachel", text: "This is a picture of my group at work. There are many people here." },
+      { speaker: "Rachel", text: "This is Charlie. He doesn't work here now. He is in Bremen." },
+      { speaker: "Rachel", text: "These are my two friends, Katie and Henry. They are not only friends — they are cousins." },
+      { speaker: "Rachel", text: "That woman there is our teacher. Her name is Lucy." },
+      { speaker: "Rachel", text: "The man with the dog is my brother. The dog's name is Tosun." },
+      { speaker: "Rachel", text: "I am not in the picture. I don't like photos!" },
     ],
     questions: [
       {
         text: "Who is not in the picture?",
-        options: ["Ayse", "Deniz", "Ela"],
+        options: ["Rachel", "Charlie", "Lucy"],
         answer: 0,
-        explain: "„I am not in the picture. I don't like photos!“ — Deniz resimde ama artık orada çalışmıyor.",
+        explain: "„I am not in the picture. I don't like photos!“ — Charlie resimde ama artık orada çalışmıyor.",
       },
       {
         text: "Who is the teacher?",
-        options: ["Ela", "Nil", "Mert"],
+        options: ["Lucy", "Katie", "Henry"],
         answer: 0,
-        explain: "„That woman there is our teacher. Her name is Ela.“",
+        explain: "„That woman there is our teacher. Her name is Lucy.“",
       },
       {
         kind: "truefalse",
-        text: "Deniz works here now.",
+        text: "Charlie works here now.",
         options: ["True", "False"],
         answer: 1,
         explain: "„He doesn't work here now. He is in Bremen.“",
@@ -296,14 +296,14 @@ export const enA1U04: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Ayse'nin anlattığı sıra: doğru sıraya koy.",
+        text: "Rachel'in anlattığı sıra: doğru sıraya koy.",
         options: [
         ],
         answer: 0,
         items: [
           "This is a picture of my group at work.",
-          "This is Deniz.",
-          "These are my two friends, Nil and Mert.",
+          "This is Charlie.",
+          "These are my two friends, Katie and Henry.",
           "I am not in the picture.",
         ],
         explain: "Önce fotoğrafın kendisi, sonra tek kişi, sonra iki kişi, en son kendisi.",
@@ -313,7 +313,7 @@ export const enA1U04: SkillExercise[] = [
         text: "Who is the man with the dog?",
         options: [],
         answer: 0,
-        accept: ["her brother", "brother", "Ayse's brother"],
+        accept: ["her brother", "brother", "Rachel's brother"],
         explain: "„The man with the dog is my brother.“",
       },
     ],
@@ -362,7 +362,7 @@ export const enA1U04: SkillExercise[] = [
         kind: "build",
         tr: "Kuşu unutma!",
         answer: "Don't forget the bird!",
-        hint: "Emir olumsuzu „Don't“ ile başlar; özne yazılmaz.",
+        hint: "Ethan olumsuzu „Don't“ ile başlar; özne yazılmaz.",
       },
       {
         kind: "build",

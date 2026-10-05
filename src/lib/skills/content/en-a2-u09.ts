@@ -46,7 +46,7 @@ export const enA2U09: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Dear Mr. Yılmaz,\n" +
+      "Dear Mr. Hayes,\n" +
       "I am writing about two problems in my apartment.\n" +
       "There's a leak in the bathroom. The water comes from the pipe under the sink and it has been there since Saturday. There is already damage on the carpet.\n" +
       "The second problem is the heating. The heating hasn't worked since Monday. In the morning the rooms are very cold and my daughter is sick.\n" +
@@ -55,7 +55,7 @@ export const enA2U09: SkillExercise[] = [
       "If it is easier for you, I can be at home on Saturday too.\n" +
       "Thank you very much.\n" +
       "Sincerely,\n" +
-      "Ela Demir",
+      "Lucy Adams",
     questions: [
       {
         text: "Since when has the heating not worked?",
@@ -86,7 +86,7 @@ export const enA2U09: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When is Ela at home?",
+        text: "When is Lucy at home?",
         options: [],
         answer: 0,
         accept: ["after four", "after four o'clock", "after 4"],
@@ -192,19 +192,19 @@ export const enA2U09: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Sena", text: "Come in! This is the living room." },
-      { speaker: "Mert", text: "It's bigger than the ad said. Is there a carpet under the table?" },
-      { speaker: "Sena", text: "Yes, and there are two shelves on the wall. My father put them there." },
-      { speaker: "Mert", text: "And the armchair in the corner — is it old?" },
-      { speaker: "Sena", text: "From my grandmother. It is the most comfortable chair in the apartment." },
-      { speaker: "Mert", text: "Where do you put your books?" },
-      { speaker: "Sena", text: "In the cabinet next to the door. The drawers are for papers." },
-      { speaker: "Mert", text: "Is there a mirror in the bathroom?" },
-      { speaker: "Sena", text: "Of course. And one in the hallway, next to the front door." },
-      { speaker: "Mert", text: "You have a lot of furniture for two rooms." },
-      { speaker: "Sena", text: "It's not a lot — it's just old. Everything here has a story." },
-      { speaker: "Mert", text: "Then tell me one story. The mirror first." },
-      { speaker: "Sena", text: "Later. First the coffee." },
+      { speaker: "Ellie", text: "Come in! This is the living room." },
+      { speaker: "Henry", text: "It's bigger than the ad said. Is there a carpet under the table?" },
+      { speaker: "Ellie", text: "Yes, and there are two shelves on the wall. My father put them there." },
+      { speaker: "Henry", text: "And the armchair in the corner — is it old?" },
+      { speaker: "Ellie", text: "From my grandmother. It is the most comfortable chair in the apartment." },
+      { speaker: "Henry", text: "Where do you put your books?" },
+      { speaker: "Ellie", text: "In the cabinet next to the door. The drawers are for papers." },
+      { speaker: "Henry", text: "Is there a mirror in the bathroom?" },
+      { speaker: "Ellie", text: "Of course. And one in the hallway, next to the front door." },
+      { speaker: "Henry", text: "You have a lot of furniture for two rooms." },
+      { speaker: "Ellie", text: "It's not a lot — it's just old. Everything here has a story." },
+      { speaker: "Henry", text: "Then tell me one story. The mirror first." },
+      { speaker: "Ellie", text: "Later. First the coffee." },
     ],
     questions: [
       {
@@ -269,19 +269,19 @@ export const enA2U09: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "The family above us moved in in June. Since then, Saturday night is not my night." },
-      { speaker: "Nil", text: "The first week I said nothing. The second week I couldn't sleep until two." },
-      { speaker: "Nil", text: "Then I went up. I said: Sorry to bother you, but the noise is really loud after eleven." },
-      { speaker: "Nil", text: "The man was polite. He said sorry and closed the door." },
-      { speaker: "Nil", text: "The next Saturday it was loud again. This time I wrote a letter — short, and without angry words." },
-      { speaker: "Nil", text: "Two residents from the second floor signed it with me." },
-      { speaker: "Nil", text: "After the letter the man came down with cake. A real apology, with sugar." },
-      { speaker: "Nil", text: "And now? It is quiet. I haven't heard the music since August." },
-      { speaker: "Nil", text: "One thing I learned: a polite word first, a letter second. In that order it works." },
+      { speaker: "Katie", text: "The family above us moved in in June. Since then, Saturday night is not my night." },
+      { speaker: "Katie", text: "The first week I said nothing. The second week I couldn't sleep until two." },
+      { speaker: "Katie", text: "Then I went up. I said: Sorry to bother you, but the noise is really loud after eleven." },
+      { speaker: "Katie", text: "The man was polite. He said sorry and closed the door." },
+      { speaker: "Katie", text: "The next Saturday it was loud again. This time I wrote a letter — short, and without angry words." },
+      { speaker: "Katie", text: "Two residents from the second floor signed it with me." },
+      { speaker: "Katie", text: "After the letter the man came down with cake. A real apology, with sugar." },
+      { speaker: "Katie", text: "And now? It is quiet. I haven't heard the music since August." },
+      { speaker: "Katie", text: "One thing I learned: a polite word first, a letter second. In that order it works." },
     ],
     questions: [
       {
-        text: "What did Nil do first?",
+        text: "What did Katie do first?",
         options: ["she said nothing", "she wrote a letter", "she went up"],
         answer: 0,
         explain: "„The first week I said nothing.“ — yukarı çıkmak ikinci, mektup üçüncü adım.",
@@ -317,7 +317,7 @@ export const enA2U09: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Since when has Nil not heard the music?",
+        text: "Since when has Katie not heard the music?",
         options: [],
         answer: 0,
         accept: ["since August", "August"],

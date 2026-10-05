@@ -105,21 +105,21 @@ export const enA2U17: SkillExercise[] = [
     ],
     minutes: 5,
     text:
-      "Mert: Good morning. I'd like to rent a car for three days.\n" +
+      "Henry: Good morning. I'd like to rent a car for three days.\n" +
       "Office: Of course. Do you have your license?\n" +
-      "Mert: Here. And my passport.\n" +
+      "Henry: Here. And my passport.\n" +
       "Office: Thank you. A small car or a bigger one?\n" +
-      "Mert: The small one. Two people, two bags.\n" +
+      "Henry: The small one. Two people, two bags.\n" +
       "Office: Ninety euros for three days.\n" +
-      "Mert: Is the fuel included?\n" +
+      "Henry: Is the fuel included?\n" +
       "Office: No. You get it full and you bring it back full. The gas station is next to the airport.\n" +
-      "Mert: And if I come back with half a tank?\n" +
+      "Henry: And if I come back with half a tank?\n" +
       "Office: Then we fill it and it costs more than at the station. Always more.\n" +
-      "Mert: Understood. What is the speed limit on the highway?\n" +
+      "Henry: Understood. What is the speed limit on the highway?\n" +
       "Office: A hundred and thirty. In the city fifty.\n" +
-      "Mert: I have to return the car at six on Friday, yes?\n" +
+      "Henry: I have to return the car at six on Friday, yes?\n" +
       "Office: Six, yes. After that every hour is extra.\n" +
-      "Mert: Then I'll come at five. I don't like paying extra.",
+      "Henry: Then I'll come at five. I don't like paying extra.",
     questions: [
       {
         text: "What does the car cost?",
@@ -163,7 +163,7 @@ export const enA2U17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When does Mert want to come back?",
+        text: "When does Henry want to come back?",
         options: [],
         answer: 0,
         accept: ["at five", "five", "at 5"],
@@ -189,19 +189,19 @@ export const enA2U17: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Ela", text: "Excuse me. Could you help me, please? My flight was delayed and I've missed my connection." },
+      { speaker: "Lucy", text: "Excuse me. Could you help me, please? My flight was delayed and I've missed my connection." },
       { speaker: "Desk", text: "Which flight?" },
-      { speaker: "Ela", text: "The one from Rome at eleven. It landed at half past two." },
+      { speaker: "Lucy", text: "The one from Rome at eleven. It landed at half past two." },
       { speaker: "Desk", text: "And your connection was at one. I see it. We have a flight at seven this evening." },
-      { speaker: "Ela", text: "Seven? That is almost five hours." },
+      { speaker: "Lucy", text: "Seven? That is almost five hours." },
       { speaker: "Desk", text: "I am sorry. There is nothing before that." },
-      { speaker: "Ela", text: "And my luggage?" },
+      { speaker: "Lucy", text: "And my luggage?" },
       { speaker: "Desk", text: "It goes with the seven o'clock flight. You get it at the end." },
-      { speaker: "Ela", text: "One more problem. My travel bag is lost. Not the big one — the small one, from the plane." },
+      { speaker: "Lucy", text: "One more problem. My travel bag is lost. Not the big one — the small one, from the plane." },
       { speaker: "Desk", text: "Did you leave it on the plane?" },
-      { speaker: "Ela", text: "I think so." },
+      { speaker: "Lucy", text: "I think so." },
       { speaker: "Desk", text: "Then it will come here in an hour. Everything from the plane comes here. Do you have insurance?" },
-      { speaker: "Ela", text: "Yes." },
+      { speaker: "Lucy", text: "Yes." },
       { speaker: "Desk", text: "Then don't worry. Eat something. Five hours is long only when you stand." },
     ],
     questions: [
@@ -226,7 +226,7 @@ export const enA2U17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ela has to wait almost ___ hours.",
+        text: "Lucy has to wait almost ___ hours.",
         options: [],
         answer: 0,
         accept: ["five", "5"],
@@ -267,24 +267,24 @@ export const enA2U17: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Waitress", text: "Good evening. A table for two?" },
-      { speaker: "Can", text: "Yes, please. Could I see the menu?" },
+      { speaker: "Tyler", text: "Yes, please. Could I see the menu?" },
       { speaker: "Waitress", text: "Here you are. Today we have fish with rice — that is what I recommend." },
-      { speaker: "Can", text: "I'm allergic to fish. Is there anything with chicken?" },
+      { speaker: "Tyler", text: "I'm allergic to fish. Is there anything with chicken?" },
       { speaker: "Waitress", text: "The main course with chicken and vegetables. There's no fish in it." },
-      { speaker: "Can", text: "Good. And for my friend the soup first." },
+      { speaker: "Tyler", text: "Good. And for my friend the soup first." },
       { speaker: "Waitress", text: "And to drink?" },
-      { speaker: "Can", text: "Water for both, please." },
+      { speaker: "Tyler", text: "Water for both, please." },
       { speaker: "Waitress", text: "Dessert comes after the main course here, and it takes twenty minutes. Is that fine?" },
-      { speaker: "Can", text: "Yes. What is the dessert today?" },
+      { speaker: "Tyler", text: "Yes. What is the dessert today?" },
       { speaker: "Waitress", text: "Apple cake. It is worth waiting for." },
-      { speaker: "Can", text: "Then we'll wait." },
+      { speaker: "Tyler", text: "Then we'll wait." },
       { speaker: "Waitress", text: "Could I bring you bread now?" },
-      { speaker: "Can", text: "Yes, please. And later could we have the check together, not separately?" },
+      { speaker: "Tyler", text: "Yes, please. And later could we have the check together, not separately?" },
       { speaker: "Waitress", text: "Of course." },
     ],
     questions: [
       {
-        text: "What is Can allergic to?",
+        text: "What is Tyler allergic to?",
         options: ["fish", "chicken", "apples"],
         answer: 0,
         explain: "„I'm allergic to fish. Is there anything with chicken?“",

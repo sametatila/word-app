@@ -29,7 +29,7 @@ export const enB1P7: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "Mert, 22, worked for eight months in a hotel kitchen. We asked him about the first weeks.\n\n" +
+      "Henry, 22, worked for eight months in a hotel kitchen. We asked him about the first weeks.\n\n" +
       "Q: What surprised you most?\n" +
       "A: How little training there was. I had one afternoon with the head chef and then I was " +
       "on a shift. Everyone assumed I knew where things were, and I didn't want to ask, because asking three times looks " +
@@ -48,7 +48,7 @@ export const enB1P7: SkillExercise[] = [
       "everyone already expects it.",
     questions: [
       {
-        text: "What surprised Mert most?",
+        text: "What surprised Henry most?",
         options: [
           "how long the shifts were",
           "how little training he got",
@@ -76,7 +76,7 @@ export const enB1P7: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Mert worked in the hotel kitchen for ___ months.",
+        text: "Henry worked in the hotel kitchen for ___ months.",
         options: [],
         answer: 0,
         accept: ["eight", "8"],

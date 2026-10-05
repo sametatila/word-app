@@ -112,22 +112,22 @@ export const b1U02: SkillExercise[] = [
       { de: "die Notiz", tr: "not", en: "note" },
     ],
     text:
-      "Sehr geehrte Frau Aydin,\n\n" +
+      "Sehr geehrte Frau Haas,\n\n" +
       "vielen Dank für Ihre Bewerbung. Leider müssen wir Ihnen eine Absage schicken. " +
       "Wir hatten sehr viele Bewerbungen und haben eine andere Person genommen. " +
       "Das sagt nichts über Ihre Erfahrung. Wir wünschen Ihnen für Ihre nächsten Versuche viel Erfolg.\n\n" +
       "Mit freundlichen Grüßen, Firma Weber\n\n" +
-      "Liebe Frau Aydin,\n\n" +
+      "Liebe Frau Haas,\n\n" +
       "wir haben Ihre Unterlagen gelesen und würden Sie gern kennenlernen. " +
       "Hätten Sie am Mittwoch um zehn Uhr Zeit? Wenn der Termin nicht passt, melden Sie sich bitte. " +
       "Bringen Sie bitte Ihren Abschluss mit.\n\n" +
       "Freundliche Grüße, Firma Lange\n\n" +
-      "Notiz von Frau Aydin: Die erste Mail war eine Enttäuschung, aber die zweite kam am selben Tag. " +
+      "Notiz von Frau Haas: Die erste Mail war eine Enttäuschung, aber die zweite kam am selben Tag. " +
       "Nachdem ich die Absage gelesen hatte, wollte ich fast aufgeben. Das wäre ein Fehler gewesen. " +
       "Manchmal ist es einfach Pech, und der nächste Versuch ist der richtige.",
     questions: [
       {
-        text: "Warum bekam Frau Aydin von der Firma Weber eine Absage?",
+        text: "Warum bekam Frau Haas von der Firma Weber eine Absage?",
         options: ["Ihre Erfahrung war schlecht", "Es gab sehr viele Bewerbungen", "Sie kam zu spät"],
         answer: 1,
         explain: "„Wir hatten sehr viele Bewerbungen und haben eine andere Person genommen.“",
@@ -139,13 +139,13 @@ export const b1U02: SkillExercise[] = [
         explain: "„… würden Sie gern kennenlernen.“",
       },
       {
-        text: "Was soll Frau Aydin tun, wenn der Termin nicht passt?",
+        text: "Was soll Frau Haas tun, wenn der Termin nicht passt?",
         options: ["Nichts tun", "Sich melden", "Später kommen"],
         answer: 1,
         explain: "„Wenn der Termin nicht passt, melden Sie sich bitte.“",
       },
       {
-        text: "Was wollte Frau Aydin nach der Absage fast tun?",
+        text: "Was wollte Frau Haas nach der Absage fast tun?",
         options: ["Aufgeben", "Die Firma anrufen", "Eine neue Ausbildung machen"],
         answer: 0,
         explain: "„Nachdem ich die Absage gelesen hatte, wollte ich fast aufgeben.“",
@@ -160,7 +160,7 @@ export const b1U02: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "An welchem Tag soll Frau Aydin kommen?",
+        text: "An welchem Tag soll Frau Haas kommen?",
         options: [],
         answer: 0,
         accept: ["am Mittwoch", "Mittwoch"],
@@ -405,7 +405,7 @@ export const b1U02: SkillExercise[] = [
           "Falls Sie später wieder eine Stelle frei haben, würde ich mich über eine " +
           "Nachricht freuen. Ich melde mich in sechs Monaten noch einmal, denn " +
           "meine Hoffnung ist, dass der nächste Versuch klappt.\n\n" +
-          "Mit freundlichen Grüßen\nSelin Aydin",
+          "Mit freundlichen Grüßen\nLuisa Haas",
         phrases: [
           { de: "Vielen Dank für Ihre Nachricht.", tr: "Mesajınız için teşekkürler.", en: "Thank you for your message." },
           { de: "Ich würde gern wissen, …", tr: "… öğrenmek isterdim.", en: "I would like to know …" },
