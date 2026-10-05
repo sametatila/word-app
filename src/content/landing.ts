@@ -353,7 +353,7 @@ const tr: LandingCopy = {
 const en: LandingCopy = {
   hero: {
     line1: "Speak, understand,",
-    line2: "exam-ready.",
+    line2: "settle in.",
     intro:
       "Learn German from zero to C1 with Lernomi: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready.",
     noAccount: "Start free, no account needed. No ads.",
@@ -538,8 +538,8 @@ const en: LandingCopy = {
 
 const de: LandingCopy = {
   hero: {
-    line1: "Reden, verstehen,",
-    line2: "prüfungsfit.",
+    line1: "Sprechen, verstehen,",
+    line2: "bis C1.",
     intro:
       "Lerne mit Lernomi Englisch von null bis C1, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen.",
     noAccount: "Du startest kostenlos und ohne Konto. Keine Werbung.",

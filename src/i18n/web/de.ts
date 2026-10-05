@@ -684,7 +684,7 @@ export const deWeb: Record<string, string> = {
   "store.soon_notice": "Die App ist im Store dieses Geräts noch nicht verfügbar.",
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
   "meta.title": "Lernomi — {langs} lernen",
-  "meta.tagline": "Sprachen sprechend lernen, fit für die Prüfung",
+  "meta.tagline": "Sprachen sprechend lernen, von null bis C1",
   "meta.description": "Lerne {langs} von null bis C1, auf Deutsch erklärt und durch Sprechen: KI-Gespräche, Probeprüfungen und eine tägliche Wortrunde. Kostenlos starten, ohne Werbung.",
   "meta.og_sub": "A1 bis C1 · Sprechen mit KI · über 50 Probeprüfungen",
   "meta.og_native": "Auf Deutsch erklärt",
