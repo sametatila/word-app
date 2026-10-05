@@ -23,9 +23,9 @@
     "path": {
       "ladder": true,
       "caption": {
-        "tr": { "h": "Konuş, anla, sınava hazırlan", "s": "A1'den C1'e adım adım, Türkçe anlatımla" },
-        "en": { "h": "Speak, understand, exam-ready", "s": "Step by step from A1 to C1, explained in English" },
-        "de": { "h": "Reden, verstehen, prüfungsfit", "s": "Schritt für Schritt von A1 bis C1, auf Deutsch erklärt" }
+        "tr": { "h": "Sıfırdan C1'e, Türkçe anlatımla", "s": "Seviyeni seç ya da kısa testle bul" },
+        "en": { "h": "From zero to C1, explained in English", "s": "Pick your level or take a short placement test" },
+        "de": { "h": "Von null bis C1, auf Deutsch erklärt", "s": "Niveau wählen oder per Kurztest finden" }
       },
       "noCallout": true
     },
@@ -39,18 +39,18 @@
     },
     "mock-result": {
       "caption": {
-        "tr": { "h": "Konuşma ve yazma da puanlanır", "s": "Dört becerili deneme sınavları" },
-        "en": { "h": "Speaking and writing get scored too", "s": "Four-skill mock exams" },
-        "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "Probeprüfungen in vier Fertigkeiten" }
+        "tr": { "h": "Konuşma ve yazma da puanlanır", "s": "Her seviyede 1'i ücretsiz, tümü Premium'da" },
+        "en": { "h": "Speaking and writing get scored too", "s": "1 free per level, all of them with Premium" },
+        "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "1 pro Niveau gratis, alle mit Premium" }
       },
       "callout": { "anchor": "^(ÖLÇÜM HEDEFLERİNE GÖRE|BY WHAT IT MEASURES|NACH PRÜFUNGSZIEL)$", "card": true, "zoom": 1.25 }
     },
     "walk": {
-      "premium": true,
+      "premium": false,
       "caption": {
-        "tr": { "h": "Ekran kapalı, yolda çalış", "s": "Cepte yürüyüş" },
-        "en": { "h": "Screen off, learn on the go", "s": "Pocket Walking" },
-        "de": { "h": "Bildschirm aus, unterwegs lernen", "s": "Taschen-Gehmodus" }
+        "tr": { "h": "Ekrana bakmadan, yolda çalış", "s": "Günde 3 tur ücretsiz, ekran kapalıyken Premium" },
+        "en": { "h": "Eyes off the screen, learn on the go", "s": "3 free rounds a day, screen-off with Premium" },
+        "de": { "h": "Unterwegs lernen, ohne hinzusehen", "s": "3 Runden täglich gratis, Bildschirm aus mit Premium" }
       },
       "callout": [
         { "source": "walk", "anchor": "(Yürürken çalış|Practice while walking|Üben beim Gehen)", "card": true, "zoom": 1.6 },
