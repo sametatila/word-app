@@ -44,8 +44,8 @@ export const NOT_PRACTICED_WORD_IDS = [
     İNGİLİZ İNGİLİZCESİ BAŞLIKLAR (anlam denetimi 2026-10-04). Kurs Amerikan İngilizcesi öğretiyor ve
     bunların Amerikan karşılığı AYRI kart olarak havuzda (parantezde): ikisi birden alıştırılınca öğrenci
     İngiliz biçimini ezberliyor ya da "chemist" (ABD'de kimyager) gibi yanlış anlam öğreniyordu. Silinmedi:
-    öğrenmiş olanın geçmişi duruyor. Amerikan karşılığı olmayanlar (cinema, post, sweets, pocket money,
-    school holidays, railway, primary school) yeni kart + ses ister, alıştırılmaya devam ediyor.
+    öğrenmiş olanın geçmişi duruyor. Amerikan karşılığı olmayanların kendisi Amerikan biçimine çevrildi (cinema → movie theater, post → mail…;
+    data/meanings/qa/en-ingiliz.json).
   */
   209117, // en: chemist (pharmacy)
   209119, // en: plaster (Band-Aid)
@@ -58,6 +58,14 @@ export const NOT_PRACTICED_WORD_IDS = [
   209115, // en: tap (faucet)
   209122, // en: film (movie)
   201096, // en: mobile phone (cell phone)
+  // B1–C1 denetimi (2026-10-05): Amerikan karşılığı yine ayrı kart.
+  200267, // en: class test (quiz)
+  200787, // en: pupil (student)
+  201488, // en: cash machine (ATM)
+  202194, // en: pub (bar)
+  202479, // en: pensioner (retiree)
+  204620, // en: care worker (caregiver)
+  207713, // en: sports hall (gymnasium)
 ];
 
 /** Kursun alıştırılabilir kelimeleri — `eq(words.course, …)` yerine. */
