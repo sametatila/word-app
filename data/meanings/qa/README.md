@@ -25,7 +25,7 @@ canlıya çıkarsa SUSAR. Sıra: düzeltme metinlerinin kaydı Mac'te üretilir 
 düzeltme `out/` paketine (ya da İngilizce kursta `data/en-de/out`) işlenir, `meanings:check` + commit.
 Her düzeltmenin `voiced` alanı hangi kaydın gerektiğini söyler; boşsa (yalnız çeviri) hemen uygulanabilir.
 
-## Yöntem (pilot: Almanca A1, 2026-10-04)
+## Yöntem (pilot: Almanca A1, 2026-10-04; B1–C1 2026-10-05 gece hattı: denetim + baş editör hakemi + Claude incelemesi)
 
 - Paketler sıklık sırasıyla ~100 madde. Denetçi: "yayından önce kartları kontrol eden, ana dili Türkçe
   Almanca öğretmeni; kartı ezberleyen öğrenci yanlış bir şey öğrenir mi" yönergesi.
@@ -39,10 +39,16 @@ Her düzeltmenin `voiced` alanı hangi kaydın gerektiğini söyler; boşsa (yal
 
 | Dosya | Durum |
 |---|---|
-| `de-a1.json` | 906 madde: 68 düzeltme, 4 red. Hepsi uygulandı (2026-10-04; 42 kayıt Mac'te üretildi). |
-| `de-a2.json` | 1.447 madde: 124 karar; uzlaştırma 9'unu karşıladı, 3 geri alındı. Hepsi uygulandı (2026-10-04; 78 kayıt). |
-| `en-a1.json` | 690 madde: 58 düzeltme uygulandı; `kararBekleyen`: 13 İngiliz İngilizcesi başlık (chemist, flat, lift…). |
-| `en-a2.json` | 1.102 madde: 95 düzeltme uygulandı (9'u Almanca karşılık kuralı yüzünden geri alındı); 5 İngiliz başlık bekliyor. |
+| `de-a1.json` | 906 madde · 68 düzeltme uygulandı |
+| `de-a2.json` | 1447 madde · 121 düzeltme uygulandı |
+| `de-b1.json` | 1845 madde · 72 düzeltme uygulandı |
+| `de-b2.json` | 2061 madde · 127 düzeltme uygulandı |
+| `de-c1.json` | 2456 madde · 191 düzeltme uygulandı |
+| `en-a1.json` | 690 madde · 58 düzeltme uygulandı · 13 İngiliz başlık karar bekliyor (`kararBekleyen`) |
+| `en-a2.json` | 1102 madde · 95 düzeltme uygulandı · 5 İngiliz başlık karar bekliyor (`kararBekleyen`) |
+| `en-b1.json` | 1521 madde · 101 düzeltme uygulandı · 16 İngiliz başlık karar bekliyor (`kararBekleyen`) |
+| `en-b2.json` | 2225 madde · 181 düzeltme uygulandı · 28 İngiliz başlık karar bekliyor (`kararBekleyen`) |
+| `en-c1.json` | 1634 madde · 133 düzeltme uygulandı · 11 İngiliz başlık karar bekliyor (`kararBekleyen`) |
 
 İngilizce kursta Almanca örnek cümle kartın Almanca karşılığını içermeli (`check:en-de`): karşılık değişirse
 cümle de değişir ya da karşılık korunur.
