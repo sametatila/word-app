@@ -319,6 +319,12 @@ ile geri okundu, eşit). Değişiklik yalnız ilk kare başlığında: en "Speak
 de "Reden, verstehen, prüfungsfit". App Store sürümü henüz incelemeye gönderilmedi (ilk gönderim
 Samet'te, aboneliklerin sürüme bağlanması arayüzden).
 
+**Mağazaya YENİDEN GİRİLDİ (2026-10-05, 2. tur; Samet istedi):** ASC 1.0.0 üç dilde açıklama, tanıtım metni ve
+anahtar kelimeler (geri okundu, eşit); üç dilde iPhone 6,9" (6) ve iPad 13" (4) kareleri `--replace` (hepsi
+`COMPLETE`). Play tek edit: üç dilde tam ve kısa açıklama, üç dilde telefon 6, 7"/10" tablet 4'er, öne çıkan
+grafik; edit içinde ve commit sonrası `play-dump` ile geri okundu, eşit. Altyazılar (ASC `appInfoLocalizations`)
+değişmedi.
+
 **Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
 farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
 seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yazılmaz (ücretsizde de seviye başına hak var).

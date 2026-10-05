@@ -24,6 +24,11 @@ Sebepler: ana sayfada `canonical`/`hreflang` yoktu (hukuki sayfalarda vardı); a
 | `/llms.txt`: dil modelleri için ürün özeti, vitrin metninden (`src/content/landing.ts`) üretiliyor | `src/app/llms.txt/route.ts` |
 | Yedek adres `lernomi.rumpuskit.com` `noindex, nofollow` | `next.config.ts` |
 
+**Arama metinleri (2026-10-05, vitrin provası):** meta açıklama (`src/i18n/web/<dil>.ts` `meta.description`)
+"sıfırdan C1'e / from zero to C1 / von null bis C1" + "Ücretsiz başla, reklam yok" (tr 167, en 151, de 162 karakter);
+mağazalarla aynı mesaj (`docs/store/README.md` "Vitrin provası 2. tur"). Hedef sorgu: "sıfırdan almanca" türü
+başlangıç aramaları; "A1–C1" ad ve başlıklarda duruyor. `/llms.txt` girişi "from complete beginner (A1) to advanced (C1)".
+
 Kural: `noindex` sayfa sitemap'e girmez; yeni herkese açık sayfa ya sitemap'e ya `noindex`e yazılır.
 İstemcide çizilen (sunucu çıktısı boş) sayfa `noindex`.
 
