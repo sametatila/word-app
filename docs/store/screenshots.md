@@ -107,6 +107,13 @@ yeniden alınır.
   Tanıtım sayfası ana ekrandaki günlük tur kutusunu, mağaza karesi "boşluğu doldur" kartını kullanıyor.
 - Uygulamada hukuki güncelleme bildirimi ya da bildirim izni penceresi çıkarsa önce kapatılır;
   karede sistem penceresi kalmaz.
+- **İngilizce/Almanca arayüzde konuşma Türkçe geliyorsa** (sahne, çeviri, başlık): kurulu build'in paketli
+  konuşma metni sunucudaki anadil sözlüğüyle eşleşmiyor (audit T20). Güncel main'den build alınır
+  (`scripts/shots/sim.sh build` + iPad'e `simctl install`; Android `npm run release:android` + `adb install -r`),
+  sonra çekilir (2026-10-05).
+- Konuşma karesi 2026-10-05'ten beri A1 ilk sohbetten: "Yazarak cevapla / Answer by typing / Lieber tippen", tek
+  fiil çekimi hatası (tr-de "ich kommen aus der Türkei", en-de "ich kommen aus den USA", de-en "I comes from
+  Hamburg"). Aynı girdi aynı yanıtı döndürüyor; yanıt zayıfsa cümle değiştirilir.
 - Simülatörü iş bitince kapat: `xcrun simctl shutdown all` (Samet toplantıdayken açık kalmasın).
 
 ## Vitrin videosu kaydı (2026-10-02)

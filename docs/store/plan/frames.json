@@ -2,7 +2,7 @@
   "_doc": "Mağaza karelerinin tek tanımı: hangi mağaza hangi ölçüde, hangi ekran hangi sırayla (screensByLocale: dile özgü sıra), altyazılar (tr/en/de) ve büyüteç kırpımları. Üretici: scripts/store/frames.mjs (npm run store:frames). Kurallar docs/store/README.md 'Vitrin kararları' ve 'Kurallar'.",
   "locales": { "tr-TR": { "set": "tr-de", "lang": "tr" }, "en-US": { "set": "en-de", "lang": "en" }, "de-DE": { "set": "de-en", "lang": "de" } },
   "stores": {
-    "appstore-iphone": { "w": 1320, "h": 2868, "device": "iphone", "frame": "iphone", "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "walk", "daily", "mock-result", "skills"], "de-DE": ["path", "conversation", "walk", "daily", "mock-result", "skills"] } },
+    "appstore-iphone": { "w": 1320, "h": 2868, "device": "iphone", "frame": "iphone", "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "daily", "walk", "mock-result", "skills"], "de-DE": ["path", "conversation", "daily", "walk", "mock-result", "skills"] } },
     "appstore-ipad": { "w": 2752, "h": 2064, "device": "ipad", "frame": "ipad", "screens": ["path", "conversation", "mock-result", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "skills", "mock-result"], "de-DE": ["path", "conversation", "skills", "mock-result"] } },
     "play-phone": {
       "w": 1440,
@@ -10,7 +10,7 @@
       "device": "android-phone",
       "frame": "android",
       "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"],
-      "screensByLocale": { "en-US": ["path", "conversation", "walk", "daily", "mock-result", "skills"], "de-DE": ["path", "conversation", "walk", "daily", "mock-result", "skills"] }
+      "screensByLocale": { "en-US": ["path", "conversation", "daily", "walk", "mock-result", "skills"], "de-DE": ["path", "conversation", "daily", "walk", "mock-result", "skills"] }
     },
     "play-tablet-7": { "w": 1920, "h": 1080, "device": "android-tablet", "frame": "android-tablet", "screens": ["path", "conversation", "mock-result", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "skills", "mock-result"], "de-DE": ["path", "conversation", "skills", "mock-result"] } },
     "play-tablet-10": { "w": 2560, "h": 1440, "device": "android-tablet", "frame": "android-tablet", "screens": ["path", "conversation", "mock-result", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "skills", "mock-result"], "de-DE": ["path", "conversation", "skills", "mock-result"] } },
@@ -32,9 +32,9 @@
     },
     "conversation": {
       "caption": {
-        "tr": { "h": "Konuş, düzeltmeni anında gör", "s": "Gerçek hayattan sahneler, yapay zekâ karakteriyle" },
-        "en": { "h": "Speak and get corrected on the spot", "s": "Real-life scenes with an AI character" },
-        "de": { "h": "Sprich und sieh die Korrektur sofort", "s": "Alltagsszenen im Gespräch mit einer KI-Figur" }
+        "tr": { "h": "Konuş, düzeltmeni anında gör", "s": "Gerçek hayattan sahneler; istersen yazarak cevap ver" },
+        "en": { "h": "Speak and get corrected on the spot", "s": "Real-life scenes; type your answers if you prefer" },
+        "de": { "h": "Sprich und sieh die Korrektur sofort", "s": "Alltagsszenen; lieber tippen geht auch" }
       },
       "callout": { "anchor": "^(Düzeltme|Correction|Korrektur):", "card": true, "zoom": 1.35 }
     },
@@ -62,9 +62,9 @@
     },
     "daily": {
       "caption": {
-        "tr": { "h": "Her gün, unutmadan önce", "s": "Günlük kelime turu, aralıklı tekrarla" },
-        "en": { "h": "Every day, before you forget", "s": "A daily word round with spaced repetition" },
-        "de": { "h": "Jeden Tag, bevor du vergisst", "s": "Tägliche Wortrunde mit verteilter Wiederholung" }
+        "tr": { "h": "Her gün, unutmadan önce", "s": "Aralıklı tekrar; seri ve arkadaşlarla haftalık lig" },
+        "en": { "h": "Every day, before you forget", "s": "Spaced repetition, streaks and a weekly league with friends" },
+        "de": { "h": "Jeden Tag, bevor du vergisst", "s": "Verteilte Wiederholung, Serie und Wochenliga mit Freunden" }
       },
       "callout": { "source": "daily", "anchor": "^(Boşluğu doldur|Fill in the blank|Lücke füllen)$", "card": true, "zoom": 1.2 },
       "sources": ["daily", "home"]
