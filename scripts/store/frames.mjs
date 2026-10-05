@@ -472,7 +472,9 @@ async function main() {
       if (onlyLocales && !onlyLocales.includes(locale)) continue;
       const dir = path.join(OUT, store, locale);
       fs.mkdirSync(dir, { recursive: true });
-      for (const [i, screen] of st.screens.entries()) {
+      // Dile özgü sıra (ör. en/de'de sınav karesi arama sonucundaki ilk üçün dışında): `screensByLocale`.
+      const screens = st.screensByLocale?.[locale] || st.screens;
+      for (const [i, screen] of screens.entries()) {
         if (onlyScreens && !onlyScreens.includes(screen)) continue;
         const src0 = rawPath(st.device, loc.set, screen);
         if (!src0) {

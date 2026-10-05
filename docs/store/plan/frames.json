@@ -1,18 +1,19 @@
 {
-  "_doc": "Mağaza karelerinin tek tanımı: hangi mağaza hangi ölçüde, hangi ekran hangi sırayla, altyazılar (tr/en/de) ve büyüteç kırpımları. Üretici: scripts/store/frames.mjs (npm run store:frames). Kurallar docs/store/README.md 'Vitrin kararları' ve 'Kurallar'.",
+  "_doc": "Mağaza karelerinin tek tanımı: hangi mağaza hangi ölçüde, hangi ekran hangi sırayla (screensByLocale: dile özgü sıra), altyazılar (tr/en/de) ve büyüteç kırpımları. Üretici: scripts/store/frames.mjs (npm run store:frames). Kurallar docs/store/README.md 'Vitrin kararları' ve 'Kurallar'.",
   "locales": { "tr-TR": { "set": "tr-de", "lang": "tr" }, "en-US": { "set": "en-de", "lang": "en" }, "de-DE": { "set": "de-en", "lang": "de" } },
   "stores": {
-    "appstore-iphone": { "w": 1320, "h": 2868, "device": "iphone", "frame": "iphone", "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"] },
-    "appstore-ipad": { "w": 2752, "h": 2064, "device": "ipad", "frame": "ipad", "screens": ["path", "conversation", "mock-result", "skills"] },
+    "appstore-iphone": { "w": 1320, "h": 2868, "device": "iphone", "frame": "iphone", "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "walk", "daily", "mock-result", "skills"], "de-DE": ["path", "conversation", "walk", "daily", "mock-result", "skills"] } },
+    "appstore-ipad": { "w": 2752, "h": 2064, "device": "ipad", "frame": "ipad", "screens": ["path", "conversation", "mock-result", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "skills", "mock-result"], "de-DE": ["path", "conversation", "skills", "mock-result"] } },
     "play-phone": {
       "w": 1440,
       "h": 2560,
       "device": "android-phone",
       "frame": "android",
-      "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"]
+      "screens": ["path", "conversation", "mock-result", "walk", "daily", "skills"],
+      "screensByLocale": { "en-US": ["path", "conversation", "walk", "daily", "mock-result", "skills"], "de-DE": ["path", "conversation", "walk", "daily", "mock-result", "skills"] }
     },
-    "play-tablet-7": { "w": 1920, "h": 1080, "device": "android-tablet", "frame": "android-tablet", "screens": ["path", "conversation", "mock-result", "skills"] },
-    "play-tablet-10": { "w": 2560, "h": 1440, "device": "android-tablet", "frame": "android-tablet", "screens": ["path", "conversation", "mock-result", "skills"] },
+    "play-tablet-7": { "w": 1920, "h": 1080, "device": "android-tablet", "frame": "android-tablet", "screens": ["path", "conversation", "mock-result", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "skills", "mock-result"], "de-DE": ["path", "conversation", "skills", "mock-result"] } },
+    "play-tablet-10": { "w": 2560, "h": 1440, "device": "android-tablet", "frame": "android-tablet", "screens": ["path", "conversation", "mock-result", "skills"], "screensByLocale": { "en-US": ["path", "conversation", "skills", "mock-result"], "de-DE": ["path", "conversation", "skills", "mock-result"] } },
     "play-feature": { "w": 1024, "h": 500, "device": "android-phone", "frame": "android", "kind": "feature", "screens": ["conversation"], "captionFrom": "path" }
   },
   "backgrounds": ["orange", "dark", "light"],

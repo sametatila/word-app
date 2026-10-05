@@ -26,11 +26,13 @@ Türkçe anlatım); sınav bu eğitimin sonucu olarak ikinci katman. Sınava haz
 kampanya vitrinde YOK (görselde fiyat/süreli teklif olmaz), grup sayfasında.
 
 **Altyazı / tek cümle:** **"Konuş, anla, sınava hazırlan"** (tr, 28 karakter; iOS subtitle,
-Play kısa açıklamanın ilk cümlesi). en-US: **"Speak, understand, exam-ready"** (29) ·
-de-DE: **"Reden, verstehen, prüfungsfit"** (29). 2026-10-05'te eski "ace exams" / "bestehen"
-yerine geldi: ikisi sınav geçme vaadi sayılabiliyordu (denetim M14 kapandı) ve vitrin provasında
-sınava hazırlanmayan okur ilk cümlede kendini bulamadı. "Sprechen, verstehen, prüfungsfit" 32
-karakter, iOS altyazı sınırı 30.
+Play kısa açıklamanın ilk cümlesi). en-US: **"Speak, understand, settle in"** (28) ·
+de-DE: **"Sprechen, verstehen, bis C1"** (27). 2026-10-05 (prova 3. tur, Samet'in kararı): en ve de
+vitrinde sınav geri planda; taşınan ve iş için öğrenen okur "exam-ready / prüfungsfit"i görüp
+kendini dışarıda hissediyordu (iki turda aynı sonuç). Türkçe vitrin sınav odaklı kalıyor. en/de uzun
+açıklamada sınav bölümü günlük turdan sonra, karelerde sınav karesi 5. sırada (`screensByLocale`).
+Ondan önce "exam-ready" / "prüfungsfit", ilk olarak "ace exams" / "bestehen" vardı ("ace exams" ve
+"bestehen" sınav geçme vaadi sayılabiliyordu; denetim M14 kapandı).
 
 **Play kısa açıklaması (tr, 70):** "Konuş, anla, sınava hazırlan: sıfırdan C1'e Almanca, Türkçe anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
 
@@ -227,14 +229,14 @@ More than 8,500 German words and more than 900 exercises. The Path takes you lev
 LEARN BY SPEAKING
 Meeting your neighbor, at the doctor's, viewing an apartment, in a job interview, in a meeting… Practice real-life situations by talking with an AI character. It corrects your mistakes right away and suggests what you could say when you get stuck. Shy about speaking? Type your answers in the chat. Each Speaking step opens with a short intro in English to the phrases you'll use. If you like, finish with a scored round.
 
-FOUR-SKILL MOCK EXAMS
-1 free mock exam per level; more than 50 in total with Premium. Each has Reading, Listening, Writing and Speaking sections, each with its own time limit. Reading and Listening are scored automatically; AI scores your written and spoken answers and shows your mistakes with corrections. At the end you get your score as a percentage and a list of what to work on.
-
 POCKET WALKING
 In Walk mode you study without looking at the screen: you hear the English cue and say the German word out loud. Free: 3 rounds a day with the screen on. Pocket Walking, with your phone in your pocket and the screen off, is Premium.
 
 A FEW MINUTES A DAY
 In the daily word round, spaced repetition brings words back before you forget them. Review as much as you like in Practice; a weekly quiz, streaks and a league with friends are there too.
+
+FOUR-SKILL MOCK EXAMS
+1 free mock exam per level; more than 50 in total with Premium. Each has Reading, Listening, Writing and Speaking sections, each with its own time limit. Reading and Listening are scored automatically; AI scores your written and spoken answers and shows your mistakes with corrections. At the end you get your score as a percentage and a list of what to work on.
 
 FREE
 Vocabulary, practice, reading, listening, grammar and quizzes are free and unlimited. The weekly quiz, Walk mode with the screen on and 1 mock exam per level are free too. At every level, 2 speaking and 2 writing tasks are open in both Path and Skills; finish them and study 7 days in a row to unlock 2 more of each and 1 more mock exam, then again every 7 days.
@@ -265,14 +267,14 @@ Mehr als 7.000 Wörter und mehr als 900 Übungen. Der Pfad führt dich Niveau f�
 LERNEN DURCH SPRECHEN
 Beim Kennenlernen der Nachbarn, beim Arzt, bei der Wohnungsbesichtigung, im Vorstellungsgespräch, im Meeting … Alltagssituationen übst du im Gespräch mit einer KI-Figur. Sie korrigiert Fehler sofort und schlägt dir etwas vor, wenn du nicht weiterweißt. Im Chat kannst du auch schriftlich antworten. Jeder Sprechen-Schritt beginnt mit einer kurzen Einführung auf Deutsch. Am Ende kannst du dich bewerten lassen.
 
-PROBEPRÜFUNGEN IN VIER FERTIGKEITEN
-1 Probeprüfung pro Niveau kostenlos, mit Premium insgesamt mehr als 50. Jede hat die Teile Lesen, Hören, Schreiben und Sprechen mit eigener Zeit. Lesen und Hören werden automatisch bewertet; Geschriebenes und Gesprochenes bewertet eine KI und zeigt deine Fehler mit Korrektur. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.
-
 TASCHEN-GEHMODUS
 Im Gehmodus lernst du ohne Blick aufs Display: Du hörst den deutschen Hinweis und sagst das englische Wort laut. Kostenlos: 3 Runden täglich bei eingeschaltetem Bildschirm; der Taschen-Gehmodus mit Bildschirm aus ist Premium.
 
 JEDEN TAG EIN PAAR MINUTEN
 In der täglichen Runde bringt verteilte Wiederholung Wörter zurück, bevor du sie vergisst. Üben kannst du beliebig oft; dazu Wochen-Quiz, Serie und Liga mit Freunden.
+
+PROBEPRÜFUNGEN IN VIER FERTIGKEITEN
+1 Probeprüfung pro Niveau kostenlos, mit Premium insgesamt mehr als 50. Jede hat die Teile Lesen, Hören, Schreiben und Sprechen mit eigener Zeit. Lesen und Hören werden automatisch bewertet; Geschriebenes und Gesprochenes bewertet eine KI und zeigt deine Fehler mit Korrektur. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.
 
 KOSTENLOS
 Vokabeln, Üben, Lesen, Hören, Grammatik und Quiz sind kostenlos und unbegrenzt. Auch das Wochen-Quiz, der Gehmodus bei eingeschaltetem Bildschirm und 1 Probeprüfung pro Niveau sind kostenlos. Pro Niveau sind im Pfad und bei den Fertigkeiten je 2 Sprech- und 2 Schreibaufgaben offen; schließt du sie ab und lernst 7 Tage am Stück, kommen je 2 weitere und 1 Probeprüfung dazu, alle 7 Tage wieder.
@@ -296,7 +298,7 @@ Datenschutzerklärung: https://www.lernomi.app/privacy/de
 
 | Alan | tr | en-US | de-DE |
 |---|---|---|---|
-| Play kısa açıklama (80) | yukarıda (70) | `Speak, understand, exam-ready: German from zero to C1, explained in English.` (76) | `Reden, verstehen, prüfungsfit: Englisch von null bis C1, auf Deutsch erklärt.` (77) |
+| Play kısa açıklama (80) | yukarıda (70) | `Speak, understand, settle in: German from zero to C1, explained in English.` (75) | `Sprechen, verstehen, bis C1: Englisch von null an, auf Deutsch erklärt.` (71) |
 | iOS tanıtım metni (170, incelemesiz değişir) | `Almancayı sıfırdan C1'e adım adım öğren: gerçek hayattan durumlarda konuş, her gün kelime turunu yap, her seviyede ücretsiz bir deneme sınavıyla nerede olduğunu gör.` (165) | `Learn German step by step from zero to C1: talk through real-life situations, do a daily word round and see where you stand with a free mock exam at every level.` (161) | `Englisch Schritt für Schritt von null bis C1: sprich in Alltagssituationen, übe täglich Wörter und sieh mit einer kostenlosen Probeprüfung pro Niveau, wo du stehst.` (164) |
 | iOS anahtar kelimeler (100 bayt) | `ingilizce,kelime,sınav,deneme,dil,gramer,dinleme,okuma,yazma,konuşma,sıfırdan,alman,a2,b1,b2` (96 bayt) | `vocabulary,beginner,grammar,listening,reading,writing,speaking,course,deutsch,mock,test,a2,b1,b2` (96 bayt) | `vokabeln,wortschatz,grammatik,hören,lesen,schreiben,prüfung,probeprüfung,anfänger,kurs,a2,b1,b2` (99 bayt) |
 
