@@ -2032,7 +2032,7 @@ async function main() {
   const halloSum = offlineSummary(hallo, ost);
   check("özet: üç kalıp kullanıldı, puan 100", halloSum.used.length === 3 && halloSum.score === 100);
   const miss1 = offlineReply(hallo, offlineStart(hallo).state, "guten abend, schönes wetter heute");
-  check("anlaşılmayan cevap: tur ilerlemiyor, örnek öneriliyor", !miss1.understood && miss1.state.turnId === "t1" && miss1.content.includes("[SAY] Ich heiße Mehmet."));
+  check("anlaşılmayan cevap: tur ilerlemiyor, örnek öneriliyor", !miss1.understood && miss1.state.turnId === "t1" && miss1.content.includes("[SAY] Ich heiße Carsten."));
   const noScript = CONVERSATIONS.find((l) => !l.chat.script?.length && l.patterns.length >= 2)!;
   os = offlineStart(noScript);
   check("senaryosuz konuşma: kalıp modu, ilk kalıp isteniyor", os.state.turnId === null && os.hint?.key === "chat.hint_use_pattern");
