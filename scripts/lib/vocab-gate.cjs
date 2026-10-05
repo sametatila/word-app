@@ -65,6 +65,7 @@ wen wem wessen`.split(/\s+/).filter(Boolean));
 // hiç yoksa ve metinde büyük harfle geçiyorsa büyük olasılıkla bir isim
 // (Emma, Bremen, Türkei). Bunları "seviye dışı kelime" saymak yanıltıcı.
 const pool = require(`${R}/data/app/words.json`);
+const BILINEN_ADLAR = require("./known-names.cjs").bilinenAdlar();
 // ALMANCA HARF SINIFI — yedi yerde aynısı. `[a-zäöüß]` idi ve ödünç sözcüğün
 // aksanlı harfinde kırılıyordu: havuzda öğretilen "Café" metinde "caf" diye
 // belirteçleniyor, hiçbir izin kümesiyle eşleşmiyor ve raporda "caf×3" diye
@@ -245,6 +246,12 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   const adMetni = String(ham0 || "").replace(/[ıİşŞğĞçÇ]/g, (c) => TR_ASCII[c]);
   const ozelAd = new Set((adMetni.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüßéèêáàóúï]{2,}\b/g) || [])
     .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w) && !TAKVIM.has(w)));
+  // Bilinen kişi adı cümle başında da addır ("Paula wohnt …"; bkz. known-names.cjs). Havuzda sözcük olarak da
+  // geçen ad ("Iris") muaf değil: orada büyük harf adı değil cümle başını gösteriyor olabilir.
+  for (const m of adMetni.matchAll(/\b([A-ZÄÖÜ][a-zäöüßéèêáàóúï]+)\b/g)) {
+    const w = m[1].toLowerCase();
+    if (BILINEN_ADLAR.has(m[1]) && !havuzKok.has(w)) ozelAd.add(w);
+  }
   // Unvan ZİNCİRLENEBİLİR ("Frau Dr. Weber"); tek unvanlı desen ilk eşleşmede
   // lastIndex'i ilerletip asıl adı yutuyordu.
   // İki büyük harfli sözcük yan yana ise ad-soyaddır ("Leyla Kaya", "Markus

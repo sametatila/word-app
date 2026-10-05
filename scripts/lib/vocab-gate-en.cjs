@@ -21,6 +21,7 @@
  * Amaç oranı görmek ve gözden kaçan ağır sözcüğü yakalamak.
  */
 const fs = require("fs");
+const BILINEN_ADLAR = require("./known-names.cjs").bilinenAdlar();
 /* Yazım çiftleri (neighbour/neighbor, grey/gray) ÖTEKİ İngilizce kapıyla ORTAK
    kuraldan: `en-gate.ts` `yazimVaryant`. Kopyalanmadı — iki kapı aynı metne
    farklı oran basmasın. Bu dosyayı çağıranların hepsi tsx altında çalışıyor. */
@@ -298,6 +299,8 @@ function olc(ham0, seviye = "a1", ekIzin = []) {
   const adlar = new Set();
   for (const m of ham.matchAll(/[a-z,;:]\s+([A-Z][a-z]{2,})\b/g)) adlar.add(m[1].toLowerCase());
   for (const m of ham.matchAll(/\b([A-Z][a-z]+)\s+([A-Z][a-z]+)\b/g)) { adlar.add(m[1].toLowerCase()); adlar.add(m[2].toLowerCase()); }
+  // Bilinen kişi adı cümle başında da addır ("Holly lives in Boston."; bkz. known-names.cjs).
+  for (const m of ham.matchAll(/\b([A-Z][a-z]+)\b/g)) if (BILINEN_ADLAR.has(m[1])) adlar.add(m[1].toLowerCase());
 
   const tok = [];
   const disi = [];
