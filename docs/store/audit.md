@@ -31,7 +31,7 @@ ASC salt okuma dökümünden güncellendi.
 | M11 | İnceleme notu arayüzde olmayan adlar kullanıyor | ✅ | f1b75548; canlı not 2026-09-26'da `docs/appstore/connect.md` §1 bloğuyla birebirdi (3.905 karakter); 2026-09-29'da blok güncellendi, canlıda yalnız 9. madde düzeltildi (3.867), kalanı yeniden girilecek. Play'de bu not yok: iki kısa talimat, 500 karakter (`docs/play/console.md` §1) |
 | M12 | TestFlight beta açıklamaları kursları ters anlatıyor | ✅ | f1b75548, üç dil geri okundu |
 | M13 | releaseType AFTER_APPROVAL | ✅ | 54ab2ef7: `releaseType: MANUAL` (2026-09-26, Samet); onaydan sonra "Release this version" ile açılır |
-| M14 | Altyazı "ace exams" / "bestehen" sınav geçme vaadi | ⏳ Samet (karar) | Altyazılar Samet'in onayıyla girildi; risk kararı açık, değişirse iki mağazaya yeniden girilir |
+| M14 | Altyazı "ace exams" / "bestehen" sınav geçme vaadi | ✅ | 2026-10-05: en "Speak, understand, exam-ready", de "Reden, verstehen, prüfungsfit"; ASC altyazı + Play kısa açıklama + ilk kare (iki mağaza, en/de) + landing hero; API'den geri okundu (`docs/store/README.md` "Mağazaya YENİDEN GİRİLDİ (2026-10-05)") |
 | M15 | Maskotlu öne çıkan grafik ↔ "çocuklara çekici değil" | ◐ Samet (tasarım) | Karar verildi (2026-09-26): `docs/store/README.md` › "Görsel çerçeve" (gerçek ekran ana unsur, mirket köşede, yetişkin sahneler). 18+ kalıyor. Kalan: tasarımın bu çerçeveyle yapılması (M3) |
 | M16 | İçerik hakları beyanı "üçüncü taraf içerik yok" | ⏳ Samet (karar) | 2026-09-26: ASC `DOES_NOT_USE_THIRD_PARTY_CONTENT`. Edge seslendirmesi (İ6) ve Defne/Aras referansı (İ5) kararına bağlı |
 

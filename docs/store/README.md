@@ -295,6 +295,15 @@ paywall ve abonelik açıklamasıyla aynı "Taschen-Gehmodus" (uygulamada 0f8c20
 PREMIUM paragrafının başı. Alanlar: ASC 1.0.0 açıklama (tr, en-US, de-DE) + Play tam açıklama
 (tr-TR, en-US, de-DE). Kısa metinler, anahtar kelimeler ve abonelik açıklamaları değişmedi.
 
+**Mağazaya YENİDEN GİRİLDİ (2026-10-05, vitrin provası düzeltmeleri; Samet istedi):** ASC 1.0.0 üç dilde
+açıklama + en-US/de-DE altyazı (`appInfoLocalizations`); en-US ve de-DE iPhone 6,9" (6) ve iPad 13" (4)
+kareleri `--replace` ile (yalnız iki dil: `ASC_LOCALES=en-US,de-DE`, tr setine dokunulmadı). Play tek
+edit: üç dilde tam açıklama, en-US/de-DE kısa açıklama, en-US/de-DE telefon 6, 7" ve 10" tablet 4'er
+ve öne çıkan grafik (`.secrets/play/play-listing-update.mjs`, edit içinde ve commit sonrası `play-dump`
+ile geri okundu, eşit). Değişiklik yalnız ilk kare başlığında: en "Speak, understand, exam-ready",
+de "Reden, verstehen, prüfungsfit". App Store sürümü henüz incelemeye gönderilmedi (ilk gönderim
+Samet'te, aboneliklerin sürüme bağlanması arayüzden).
+
 **Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
 farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
 seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yazılmaz (ücretsizde de seviye başına hak var).
