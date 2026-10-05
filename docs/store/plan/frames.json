@@ -39,9 +39,9 @@
     },
     "mock-result": {
       "caption": {
-        "tr": { "h": "Konuşma ve yazma da puanlanır", "s": "Her seviyede 1'i ücretsiz, tümü Premium'da" },
-        "en": { "h": "Speaking and writing get scored too", "s": "1 free per level, all of them with Premium" },
-        "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "1 pro Niveau gratis, alle mit Premium" }
+        "tr": { "h": "Konuşma ve yazma da puanlanır", "s": "Her seviyede 1'i ücretsiz, fazlası Premium'da" },
+        "en": { "h": "Speaking and writing get scored too", "s": "1 free per level, more with Premium" },
+        "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "1 pro Niveau gratis, mehr mit Premium" }
       },
       "callout": { "anchor": "^(ÖLÇÜM HEDEFLERİNE GÖRE|BY WHAT IT MEASURES|NACH PRÜFUNGSZIEL)$", "card": true, "zoom": 1.25 }
     },
