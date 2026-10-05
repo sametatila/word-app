@@ -1,0 +1,899 @@
+{
+ "reviewed": 62,
+ "aciklama": "73 İngiliz başlık: 11 A1 (önce) + 7 burada alıştırmadan çıkarıldı (Amerikan karşılığı ayrı kart: practice-words NOT_PRACTICED); 44 yeniden adlandırıldı; 11 bırakıldı (Amerikan İngilizcesinde de doğal ya da karşılığı olmayan Alman kavramı).",
+ "alistirmadanCikan": [
+  200267,
+  200787,
+  201488,
+  202194,
+  202479,
+  204620,
+  207713
+ ],
+ "birakilan": [
+  203675,
+  206133,
+  204483,
+  204842,
+  205316,
+  204059,
+  202888,
+  204207,
+  204458,
+  204086,
+  205111
+ ],
+ "rejected": [],
+ "fixes": [
+  {
+   "id": 200147,
+   "de": "school holidays",
+   "severity": "orta",
+   "before": {
+    "de": "school holidays",
+    "beispiel": "The school holidays start next week."
+   },
+   "after": {
+    "de": "school break",
+    "beispiel": "School break starts next week."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 200263,
+   "de": "cinema",
+   "severity": "orta",
+   "before": {
+    "de": "cinema",
+    "beispiel": "The cinema in our town is very old."
+   },
+   "after": {
+    "de": "movie theater",
+    "beispiel": "The movie theater in our town is very old."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 200438,
+   "de": "sweets",
+   "severity": "orta",
+   "before": {
+    "de": "sweets",
+    "beispiel": "The children ate too many sweets at the party."
+   },
+   "after": {
+    "de": "candy",
+    "beispiel": "The children ate too much candy at the party."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 200439,
+   "de": "likeable",
+   "severity": "orta",
+   "before": {
+    "de": "likeable",
+    "beispiel": "The waiter was friendly and really likeable."
+   },
+   "after": {
+    "de": "likable",
+    "beispiel": "The waiter was friendly and really likable."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 200442,
+   "de": "pocket money",
+   "severity": "orta",
+   "before": {
+    "de": "pocket money",
+    "beispiel": "She spends all her pocket money on books."
+   },
+   "after": {
+    "de": "allowance",
+    "beispiel": "She spends all her allowance on books."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 201211,
+   "de": "consultation hour",
+   "severity": "orta",
+   "before": {
+    "de": "consultation hour",
+    "beispiel": "The consultation hours are from nine to twelve."
+   },
+   "after": {
+    "de": "office hours",
+    "beispiel": "Office hours are from nine to twelve."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 201365,
+   "de": "female caretaker",
+   "severity": "orta",
+   "before": {
+    "de": "female caretaker",
+    "tr": "kadın kapıcı",
+    "deGloss": "Abwartin",
+    "beispiel": "The female caretaker has just cleaned the hallway.",
+    "beispielTr": "Kadın kapıcı koridoru yeni temizledi.",
+    "beispielDe": "Die Abwartin hat gerade den Flur geputzt."
+   },
+   "after": {
+    "de": "female janitor",
+    "tr": "kadın bina görevlisi",
+    "deGloss": "Hausmeisterin",
+    "beispiel": "The female janitor has just cleaned the hallway.",
+    "beispielTr": "Kadın bina görevlisi koridoru yeni temizledi.",
+    "beispielDe": "Die Hausmeisterin hat gerade den Flur geputzt."
+   },
+   "voiced": [
+    "de",
+    "tr",
+    "deGloss",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 201748,
+   "de": "railway",
+   "severity": "orta",
+   "before": {
+    "de": "railway",
+    "beispiel": "The railway was built a hundred years ago."
+   },
+   "after": {
+    "de": "railroad",
+    "beispiel": "The railroad was built a hundred years ago."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 201912,
+   "de": "cheeky",
+   "severity": "orta",
+   "before": {
+    "de": "cheeky",
+    "beispiel": "Don't be so cheeky to your teacher!"
+   },
+   "after": {
+    "de": "sassy",
+    "beispiel": "Don't be so sassy with your teacher!"
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 202324,
+   "de": "school-leaving exam",
+   "severity": "orta",
+   "before": {
+    "de": "school-leaving exam",
+    "tr": "okul bitirme sınavı",
+    "deGloss": "Matura",
+    "beispiel": "He studied every weekend for the school-leaving exam.",
+    "beispielTr": "Okul bitirme sınavı için her hafta sonu çalıştı.",
+    "beispielDe": "Er hat jedes Wochenende für die Matura gelernt."
+   },
+   "after": {
+    "de": "final exam",
+    "tr": "bitirme sınavı",
+    "deGloss": "Abschlussprüfung",
+    "beispiel": "He studied every weekend for the final exam.",
+    "beispielTr": "Bitirme sınavı için her hafta sonu çalıştı.",
+    "beispielDe": "Er hat jedes Wochenende für die Abschlussprüfung gelernt."
+   },
+   "voiced": [
+    "de",
+    "tr",
+    "deGloss",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 202622,
+   "de": "shop window",
+   "severity": "orta",
+   "before": {
+    "de": "shop window",
+    "beispiel": "I saw a stylish blouse in the shop window."
+   },
+   "after": {
+    "de": "store window",
+    "beispiel": "I saw a stylish blouse in the store window."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 203006,
+   "de": "cater for",
+   "severity": "orta",
+   "before": {
+    "de": "cater for",
+    "beispiel": "They catered for a hundred guests at the wedding.",
+    "beispielTr": "Düğünde yüz konuğa yemek sağladılar.",
+    "beispielDe": "Sie haben auf der Hochzeit hundert Gäste verpflegt."
+   },
+   "after": {
+    "de": "cater",
+    "beispiel": "They catered a wedding for a hundred guests.",
+    "beispielTr": "Yüz konuklu bir düğüne yemek sağladılar.",
+    "beispielDe": "Sie haben bei einer Hochzeit hundert Gäste verpflegt."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 203164,
+   "de": "in future",
+   "severity": "orta",
+   "before": {
+    "de": "in future",
+    "beispiel": "Please be more careful in future."
+   },
+   "after": {
+    "de": "in the future",
+    "beispiel": "Please be more careful in the future."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 203278,
+   "de": "constituency",
+   "severity": "orta",
+   "before": {
+    "de": "constituency",
+    "beispiel": "She won her constituency by a narrow margin."
+   },
+   "after": {
+    "de": "electoral district",
+    "beispiel": "She won her electoral district by a narrow margin."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 203540,
+   "de": "limitation period",
+   "severity": "orta",
+   "before": {
+    "de": "limitation period",
+    "beispiel": "After three years the limitation period expires."
+   },
+   "after": {
+    "de": "statute of limitations",
+    "beispiel": "After three years the statute of limitations expires."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 203764,
+   "de": "holiday apartment",
+   "severity": "orta",
+   "before": {
+    "de": "holiday apartment",
+    "beispiel": "We booked a holiday apartment near the beach."
+   },
+   "after": {
+    "de": "vacation rental",
+    "beispiel": "We booked a vacation rental near the beach."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 203886,
+   "de": "unique selling point",
+   "severity": "orta",
+   "before": {
+    "de": "unique selling point",
+    "beispiel": "Without a unique selling point, your product gets lost."
+   },
+   "after": {
+    "de": "unique selling proposition",
+    "beispiel": "Without a unique selling proposition, your product gets lost."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204110,
+   "de": "take up a post",
+   "severity": "orta",
+   "before": {
+    "de": "take up a post",
+    "beispiel": "She will take up a post at the ministry."
+   },
+   "after": {
+    "de": "take up a position",
+    "beispiel": "She will take up a position at the ministry."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204209,
+   "de": "tuition fee",
+   "severity": "orta",
+   "before": {
+    "de": "tuition fee",
+    "beispiel": "Many students cannot afford the high tuition fees.",
+    "beispielTr": "Birçok öğrenci yüksek öğrenim ücretlerini karşılayamıyor."
+   },
+   "after": {
+    "de": "tuition",
+    "beispiel": "Many students cannot afford the high tuition.",
+    "beispielTr": "Birçok öğrenci yüksek öğrenim ücretini karşılayamıyor."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204350,
+   "de": "at short notice",
+   "severity": "orta",
+   "before": {
+    "de": "at short notice",
+    "beispiel": "The appointment was moved to Thursday at short notice."
+   },
+   "after": {
+    "de": "on short notice",
+    "beispiel": "The appointment was moved to Thursday on short notice."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204370,
+   "de": "best-before date",
+   "severity": "orta",
+   "before": {
+    "de": "best-before date",
+    "beispiel": "Many yogurts are still fine after the best-before date."
+   },
+   "after": {
+    "de": "best-by date",
+    "beispiel": "Many yogurts are still fine after the best-by date."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204440,
+   "de": "direct debit",
+   "severity": "orta",
+   "before": {
+    "de": "direct debit",
+    "beispiel": "The rent is collected by direct debit every month."
+   },
+   "after": {
+    "de": "automatic payment",
+    "beispiel": "The rent is taken out by automatic payment every month."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204441,
+   "de": "standing order",
+   "severity": "orta",
+   "before": {
+    "de": "standing order",
+    "beispiel": "I set up a standing order for the insurance."
+   },
+   "after": {
+    "de": "recurring payment",
+    "beispiel": "I set up a recurring payment for the insurance."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204613,
+   "de": "sick note",
+   "severity": "orta",
+   "before": {
+    "de": "sick note",
+    "beispiel": "The doctor gave me a sick note for three days.",
+    "beispielTr": "Doktor bana üç günlük istirahat raporu verdi.",
+    "beispielDe": "Der Arzt hat mir eine Krankschreibung für drei Tage gegeben."
+   },
+   "after": {
+    "de": "doctor's note",
+    "beispiel": "I need a doctor's note for my three sick days.",
+    "beispielTr": "Üç günlük hastalık iznim için istirahat raporu lazım.",
+    "beispielDe": "Für meine drei Krankheitstage brauche ich eine Krankschreibung."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 204809,
+   "de": "credit note",
+   "severity": "orta",
+   "before": {
+    "de": "credit note",
+    "beispiel": "Instead of cash she got a credit note for eighty euros."
+   },
+   "after": {
+    "de": "store credit",
+    "beispiel": "Instead of cash she got store credit for eighty euros."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 205149,
+   "de": "party conference",
+   "severity": "orta",
+   "before": {
+    "de": "party conference",
+    "beispiel": "The party conference will elect a new leader in May."
+   },
+   "after": {
+    "de": "party convention",
+    "beispiel": "The party convention will elect a new leader in May."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 205162,
+   "de": "polling station",
+   "severity": "orta",
+   "before": {
+    "de": "polling station",
+    "beispiel": "The polling stations open at eight in the morning."
+   },
+   "after": {
+    "de": "polling place",
+    "beispiel": "The polling places open at eight in the morning."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 205233,
+   "de": "land register",
+   "severity": "orta",
+   "before": {
+    "de": "land register",
+    "beispiel": "The new owner is entered in the land register weeks later."
+   },
+   "after": {
+    "de": "land records",
+    "beispiel": "The new owner is entered in the land records weeks later."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 205622,
+   "de": "as standard",
+   "severity": "orta",
+   "before": {
+    "de": "as standard",
+    "beispiel": "The navigation system is fitted as standard in this model."
+   },
+   "after": {
+    "de": "standard",
+    "beispiel": "The navigation system comes standard in this model."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 205977,
+   "de": "specialist journal",
+   "severity": "orta",
+   "before": {
+    "de": "specialist journal",
+    "beispiel": "The paper appeared in a respected international specialist journal."
+   },
+   "after": {
+    "de": "academic journal",
+    "beispiel": "The paper appeared in a respected international academic journal."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 206215,
+   "de": "tender procedure",
+   "severity": "orta",
+   "before": {
+    "de": "tender procedure",
+    "beispiel": "The tender procedure took several months."
+   },
+   "after": {
+    "de": "bidding process",
+    "beispiel": "The bidding process took several months."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 207687,
+   "de": "managing director",
+   "severity": "orta",
+   "before": {
+    "de": "managing director",
+    "beispiel": "The managing director is coming to our department tomorrow."
+   },
+   "after": {
+    "de": "general manager",
+    "beispiel": "The general manager is coming to our department tomorrow."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 207700,
+   "de": "primary school",
+   "severity": "orta",
+   "before": {
+    "de": "primary school",
+    "beispiel": "My daughter has been going to primary school for a year."
+   },
+   "after": {
+    "de": "elementary school",
+    "beispiel": "My daughter has been going to elementary school for a year."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 207718,
+   "de": "class teacher",
+   "severity": "orta",
+   "before": {
+    "de": "class teacher",
+    "beispiel": "Our new class teacher is very friendly."
+   },
+   "after": {
+    "de": "homeroom teacher",
+    "beispiel": "Our new homeroom teacher is very friendly."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 207786,
+   "de": "dish of the day",
+   "severity": "orta",
+   "before": {
+    "de": "dish of the day",
+    "beispiel": "The dish of the day costs only 8 euros today."
+   },
+   "after": {
+    "de": "daily special",
+    "beispiel": "The daily special costs only 8 euros today."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 207811,
+   "de": "savings book",
+   "severity": "orta",
+   "before": {
+    "de": "savings book",
+    "beispiel": "She keeps her savings book in a drawer."
+   },
+   "after": {
+    "de": "passbook",
+    "beispiel": "She keeps her passbook in a drawer."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 207925,
+   "de": "half-time",
+   "severity": "orta",
+   "before": {
+    "de": "half-time",
+    "beispiel": "We had a drink at half-time."
+   },
+   "after": {
+    "de": "halftime",
+    "beispiel": "We had a drink at halftime."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 208025,
+   "de": "small parcel",
+   "severity": "orta",
+   "before": {
+    "de": "small parcel",
+    "beispiel": "A small parcel has arrived for my sister."
+   },
+   "after": {
+    "de": "small package",
+    "beispiel": "A small package has arrived for my sister."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 208053,
+   "de": "train driver",
+   "severity": "orta",
+   "before": {
+    "de": "train driver",
+    "beispiel": "My uncle works as a train driver."
+   },
+   "after": {
+    "de": "train engineer",
+    "beispiel": "My uncle works as a train engineer."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 208056,
+   "de": "hand luggage",
+   "severity": "orta",
+   "before": {
+    "de": "hand luggage",
+    "beispiel": "I'm only taking hand luggage."
+   },
+   "after": {
+    "de": "carry-on luggage",
+    "beispiel": "I'm only taking carry-on luggage."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 208070,
+   "de": "outward journey",
+   "severity": "orta",
+   "before": {
+    "de": "outward journey",
+    "beispiel": "The outward journey takes about five hours."
+   },
+   "after": {
+    "de": "trip there",
+    "beispiel": "The trip there takes about five hours."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 208099,
+   "de": "parasol",
+   "severity": "orta",
+   "before": {
+    "de": "parasol",
+    "beispiel": "At the beach we sit under a parasol.",
+    "beispielTr": "Plajda güneş şemsiyesinin altında oturuyoruz.",
+    "beispielDe": "Am Strand sitzen wir unter einem Sonnenschirm."
+   },
+   "after": {
+    "de": "beach umbrella",
+    "beispiel": "We sit under a big beach umbrella.",
+    "beispielTr": "Büyük bir güneş şemsiyesinin altında oturuyoruz.",
+    "beispielDe": "Wir sitzen unter einem großen Sonnenschirm."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 208392,
+   "de": "duvet",
+   "severity": "orta",
+   "before": {
+    "de": "duvet",
+    "beispiel": "In winter I need a thick duvet."
+   },
+   "after": {
+    "de": "comforter",
+    "beispiel": "In winter I need a thick comforter."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 209210,
+   "de": "post",
+   "severity": "orta",
+   "before": {
+    "de": "post",
+    "beispiel": "The post comes before ten."
+   },
+   "after": {
+    "de": "mail",
+    "beispiel": "The mail comes before ten."
+   },
+   "voiced": [
+    "de",
+    "beispiel"
+   ],
+   "reason": "İngiliz İngilizcesi başlık → Amerikan karşılığı (kurs Amerikan İngilizcesi)",
+   "applied": "2026-10-05"
+  }
+ ]
+}

@@ -48,6 +48,7 @@ Her düzeltmenin `voiced` alanı hangi kaydın gerektiğini söyler; boşsa (yal
 | `en-a2.json` | 1102 madde · 95 düzeltme uygulandı · 5 İngiliz başlık karar bekliyor (`kararBekleyen`) |
 | `en-b1.json` | 1521 madde · 101 düzeltme uygulandı · 16 İngiliz başlık karar bekliyor (`kararBekleyen`) |
 | `en-b2.json` | 2225 madde · 181 düzeltme uygulandı · 28 İngiliz başlık karar bekliyor (`kararBekleyen`) |
+| `en-ingiliz.json` | 73 İngiliz başlık kararı: 44 Amerikan karşılığına çevrildi, 18 alıştırmadan çıktı (Amerikan karşılığı ayrı kart), 11 bırakıldı. |
 | `en-c1.json` | 1634 madde · 133 düzeltme uygulandı · 11 İngiliz başlık karar bekliyor (`kararBekleyen`) |
 
 İngilizce kursta Almanca örnek cümle kartın Almanca karşılığını içermeli (`check:en-de`): karşılık değişirse
