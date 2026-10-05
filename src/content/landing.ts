@@ -188,7 +188,7 @@ const tr: LandingCopy = {
     { value: "900+", label: "alıştırma, her kursta" },
     { value: "50+", label: "deneme sınavı, her kursta" },
   ],
-  statsNote: "Almancada 8.500'den, İngilizcede 7.000'den fazla kelime. Her seviyede 1 deneme sınavı ücretsiz, tümü Premium'da. Aşağıdaki örnekler Almanca kursundan.",
+  statsNote: "Almancada 8.500'den, İngilizcede 7.000'den fazla kelime. Her seviyede 1 deneme sınavı ücretsiz, fazlası Premium'da. Aşağıdaki örnekler Almanca kursundan.",
   langs: {
     title: "Tek dil değil: dört dil yolu.",
     lede: "Patika, konuşma adımları, deneme sınavları ve anlatım her yolda aynı yapıda. Anlatım, ipuçları ve geri bildirim senin dilinde.",
@@ -324,7 +324,7 @@ const tr: LandingCopy = {
       "Her seviyede 1 deneme sınavı.",
       "Patika'da her seviyede 2 Konuşma ve 2 Yazma adımı; Beceriler'de 2 konuşma ve 2 yazma değerlendirmesi.",
     ],
-    earn: "Bunları bitirip 7 günlük seri yapınca 2'şer hak ve 1 deneme sınavı daha açılır; her yeni 7 günlük seride yine.",
+    earn: "Bunları bitirip 7 gün üst üste çalışınca 2'şer hak ve 1 deneme sınavı daha açılır; her 7 günde yine.",
     premiumTitle: "Premium",
     premiumSub: "Aylık ya da yıllık abonelik.",
     premium: [
@@ -332,7 +332,7 @@ const tr: LandingCopy = {
       "Bütün deneme sınavları.",
       "Patika'da ve Beceriler'de bütün konuşma ve yazma çalışmaları, seri ve bitirme beklemeden.",
     ],
-    packs: "Deneme sınavları sırayla, 3'er 3'er açılır. Günlük adil kullanım sınırları Premium sayfasında yazar.",
+    packs: "Her seviyede ilk 3 deneme sınavı hemen açık; bitirince sıradaki 3'ü gelir. Günlük adil kullanım sınırları Premium sayfasında yazar.",
     trial: "Yeni abonelere ilk ay ücretsiz.",
   },
   fine: {
@@ -341,7 +341,7 @@ const tr: LandingCopy = {
       "Hesap açmadan başlarsın. Arkadaşlar ve lig, yapay zekâyla sohbet, yapay zekâ değerlendirmesi ve Premium hesap ister; hesapsızken Konuşma adımı önceden hazırlanmış bir sohbetle sürer.",
       "Metnin yapay zekâya ancak iznini verirsen gider.",
       "Mikrofon yalnız konuşarak cevap verdiğinde açılır. Sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz.",
-      "Sunucular AB'de; sohbet kayıtların 30 gün sonra silinir.",
+      "Yazılı sohbet geçmişin 30 gün sonra silinir. Lernomi sunucuları AB'de; yapay zekâ ve ses tanıma için dış sağlayıcılar kullanılır.",
     ],
     certTitle: "Başarı belgesi",
     cert: "Modül ve seviye sınavlarını geçince neler yapabildiğini gösteren, paylaşabileceğin bir başarı belgesi alırsın.",
@@ -374,7 +374,7 @@ const en: LandingCopy = {
     { value: "900+", label: "exercises" },
     { value: "50+", label: "mock exams" },
   ],
-  statsNote: "From zero to C1, with explanations in English. 1 free mock exam per level, all of them with Premium.",
+  statsNote: "From zero to C1, with explanations in English. 1 free mock exam per level, more with Premium.",
   langs: {
     title: "One app, four language paths.",
     lede: "Path, speaking steps, mock exams and explanations work the same way on every path. Explanations, hints and feedback come in your own language.",
@@ -510,7 +510,7 @@ const en: LandingCopy = {
       "1 mock exam per level.",
       "In Path, 2 Speaking and 2 Writing steps per level; in Skills, 2 speaking and 2 writing assessments.",
     ],
-    earn: "Finish them and reach a 7-day streak to unlock 2 more of each and 1 more mock exam, then again with every further 7-day streak.",
+    earn: "Finish them and study 7 days in a row to unlock 2 more of each and 1 more mock exam, then again every 7 days.",
     premiumTitle: "Premium",
     premiumSub: "Monthly or yearly subscription.",
     premium: [
@@ -518,7 +518,7 @@ const en: LandingCopy = {
       "Every mock exam.",
       "Every Speaking and Writing step in Path and every assessment in Skills, with no waiting for streaks or finishing.",
     ],
-    packs: "Mock exams unlock in order, 3 at a time. Daily fair-use limits are listed on the Premium page.",
+    packs: "The first 3 mock exams per level open right away, then 3 more once you finish them. Daily fair-use limits are listed on the Premium page.",
     trial: "New subscribers get the first month free.",
   },
   fine: {
@@ -527,7 +527,7 @@ const en: LandingCopy = {
       "You can start without an account. Friends and leagues, AI conversation, AI feedback and Premium need one; without an account, the Speaking step runs as a prepared conversation.",
       "Your text is only sent to the AI if you allow it.",
       "The microphone opens only when you answer by speaking. Audio reaches the server only with your permission, and the recording is not kept.",
-      "Servers are in the EU; conversation logs are deleted after 30 days.",
+      "Your chat history is deleted after 30 days. Lernomi's servers are in the EU; external providers handle AI and speech recognition.",
     ],
     certTitle: "Certificate of achievement",
     cert: "Pass module and level exams to earn a certificate of achievement you can share, showing what you can do.",
@@ -560,7 +560,7 @@ const de: LandingCopy = {
     { value: "900+", label: "Übungen" },
     { value: "50+", label: "Probeprüfungen" },
   ],
-  statsNote: "Von null bis C1, mit Erklärungen auf Deutsch. 1 Probeprüfung pro Niveau gratis, alle mit Premium.",
+  statsNote: "Von null bis C1, mit Erklärungen auf Deutsch. 1 Probeprüfung pro Niveau gratis, mehr mit Premium.",
   langs: {
     title: "Eine App, vier Sprachwege.",
     lede: "Pfad, Sprechen-Schritte, Probeprüfungen und Erklärungen sind auf jedem Weg gleich aufgebaut. Erklärungen, Hinweise und Feedback bekommst du in deiner Sprache.",
@@ -699,7 +699,7 @@ const de: LandingCopy = {
       "1 Probeprüfung pro Niveau.",
       "Pro Niveau 2 Sprechen- und 2 Schreiben-Schritte im Pfad, bei den Fertigkeiten 2 Sprech- und 2 Schreibbewertungen.",
     ],
-    earn: "Schließt du sie ab und erreichst eine 7-Tage-Serie, kommen je 2 weitere und 1 Probeprüfung dazu, mit jeder weiteren 7-Tage-Serie wieder.",
+    earn: "Schließt du sie ab und lernst 7 Tage am Stück, kommen je 2 weitere und 1 Probeprüfung dazu, alle 7 Tage wieder.",
     premiumTitle: "Premium",
     premiumSub: "Monats- oder Jahresabo.",
     premium: [
@@ -707,7 +707,7 @@ const de: LandingCopy = {
       "Alle Probeprüfungen.",
       "Alle Sprech- und Schreibaufgaben in Pfad und Fertigkeiten, ohne auf Serie oder Abschluss zu warten.",
     ],
-    packs: "Probeprüfungen öffnen sich der Reihe nach, je 3 auf einmal. Tägliche Fair-Use-Grenzen stehen auf der Premium-Seite.",
+    packs: "Pro Niveau sind 3 Probeprüfungen sofort offen, danach jeweils 3 weitere. Tägliche Fair-Use-Grenzen stehen auf der Premium-Seite.",
     trial: "Neue Abonnenten bekommen den ersten Monat kostenlos.",
   },
   fine: {
@@ -716,7 +716,7 @@ const de: LandingCopy = {
       "Du kannst ohne Konto loslegen. Freunde und Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne Konto läuft der Sprechen-Schritt als vorbereitetes Gespräch.",
       "Dein Text geht nur mit deiner Erlaubnis an die KI.",
       "Das Mikrofon öffnet sich nur, wenn du sprechend antwortest. Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert.",
-      "Server in der EU; Chatverläufe werden nach 30 Tagen gelöscht.",
+      "Dein Chatverlauf wird nach 30 Tagen gelöscht. Lernomis Server stehen in der EU; für KI und Spracherkennung nutzen wir externe Anbieter.",
     ],
     certTitle: "Leistungsnachweis",
     cert: "Für bestandene Modul- und Niveauprüfungen bekommst du einen teilbaren Leistungsnachweis, der zeigt, was du kannst.",
