@@ -18,7 +18,7 @@
   },
   "backgrounds": ["orange", "dark", "light"],
   "levels": ["A1", "A2", "B1", "B2", "C1"],
-  "currentLevel": "B1",
+  "currentLevel": "A1",
   "premium": { "tr": "Premium", "en": "Premium", "de": "Premium" },
   "screens": {
     "path": {

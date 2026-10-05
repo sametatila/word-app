@@ -24,7 +24,7 @@ Her sette 7 ekran, her biri açık VE koyu tema (sayfa temaya göre değiştiriy
 | Ekran (`<ekran>`) | Nereden | İçerik durumu |
 |---|---|---|
 | `home` | Öğren sekmesi | Günlük tur kutusu (maskot görünür), günün görevleri |
-| `path` | Patika sekmesi | B1, ilk ünite "şu an", ilk adım bitmiş |
+| `path` | Patika sekmesi | A1, ilk ünite "şu an", hiç adım bitmemiş (2026-10-05'ten beri; hesap çekim için geçici A1'e alınır, sonra B1'e döner) |
 | `unit` | Patika › ilk ünite kartı | Konuşma adımı tamamlandı (yeşil tik), sıradaki "Şimdi" |
 | `conversation` | Ünite › Konuşma adımı › sohbet | Kullanıcının TEK net hatası + doğru düzeltme + 3 öneri; yapay zekâ bildirimi görünür |
 | `mock-task` | Öğren › Deneme sınavları › B1 › bir bölüm › Bölüme başla | Görev ekranı (süre sayacı, görev + anadil açıklaması) |
@@ -46,6 +46,9 @@ bariz bir hatayla (ör. `seit drei Jahre` → `Jahren`) yeniden yazılır. Sayfa
   2026-09-28). Premium (2026-12-28'e dek, bonus): kareler kilitsiz ve kota şeridi olmadan çekilir.
   Süre dolunca yeniden vermek üretim veritabanına yazmak demek, Samet'e sorulur.
 - Hesapta B1 seçili (Ayarlar › Öğrenme › Seviye). Onboarding'deki seviye seçimi hesaba geçmiyor.
+  `path` ekranı A1'de çekilir: çekimden önce profil satırı salt okunarak saklanır (`row_to_json(profiles)`),
+  seviye uygulamadan A1'e alınır, üç set dört cihazda çekilir, sonra Türkçe arayüz + Almanca + B1'e dönülür
+  ve satır öncekiyle karşılaştırılır (2026-10-05).
 
 ## Akış
 
@@ -78,6 +81,8 @@ Playwright ile `localhost:3100` (Accept-Language tr/en/de) açık ve koyu tema, 
 
 Sayfadaki WebP'ler: dört set 7/7, açık ve koyu (2026-09-30, B paleti). `tr-en` sayfada KULLANILMIYOR
 (`SCREEN_SET` dil başına tek set; "Diller" bölümü yalnız metin); set hazır tutuluyor.
+
+`path` yeniden çekimi (2026-10-05, build 16, A1; üç set dört cihaz + tanıtım sayfasının üç seti açık/koyu).
 
 Mağaza çekimi (2026-10-01, main c42be31a1 + 230eb9ae5 build'i): üç set dört cihazda tam, 75 kare; karelerin
 kullandığı ham görüntüler `docs/store/raw/`. Tanıtım sayfasının dört seti aynı çekimden, konuşma dökümleri
