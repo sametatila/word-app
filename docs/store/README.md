@@ -341,6 +341,11 @@ değişmedi.
 **Mağazaya YENİDEN GİRİLDİ (2026-10-05, 3. tur):** ASC üç dilde açıklama (geri okundu, eşit) ve üç dilde
 30 kare (`COMPLETE`); Play tek edit: üç dilde tam açıklama + bütün görseller, commit sonrası geri okundu, eşit.
 
+**Mağazaya YENİDEN GİRİLDİ (2026-10-05, en/de konumlandırma + A1 kare):** ASC en-US/de-DE altyazı ("Speak,
+understand, settle in" / "Sprechen, verstehen, bis C1") ve üç dilde açıklama (geri okundu, eşit); üç dilde 30 kare
+(en/de sırası `screensByLocale`, `COMPLETE`). Play tek edit: üç dilde tam + kısa açıklama, bütün görseller; commit
+sonrası geri okundu, eşit.
+
 **Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
 farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
 seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yazılmaz (ücretsizde de seviye başına hak var).
