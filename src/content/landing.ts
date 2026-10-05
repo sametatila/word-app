@@ -200,7 +200,7 @@ const tr: LandingCopy = {
     langNav: "Sayfanın dili",
   },
   alt: {
-    path: "Patika ekranı: B1 seviyesi, şu anki ünite İş dünyası, sıradaki adım okuma, Devam et düğmesi.",
+    path: "Patika ekranı: A1 seviyesi, şu anki ünite Tanışma ve ben, sıradaki adım konuşma (Hallo!), Devam et düğmesi.",
     unit: "Ünite ekranı: İş dünyası ünitesinin adımları; konuşma adımı tamamlanmış, sıradaki okuma.",
     conversation:
       "Konuşma adımı: iş görüşmesinde yapay zekâ karakteri soruyor, kullanıcının cevabındaki seit drei Jahre hatası seit drei Jahren olarak düzeltiliyor, altta üç öneri.",
@@ -386,7 +386,7 @@ const en: LandingCopy = {
     langNav: "Page language",
   },
   alt: {
-    path: "Path screen: level B1, current unit on the working world, next step reading, Continue button.",
+    path: "Path screen: level A1, current unit Introductions and me, next step speaking (Hallo!), Continue button.",
     unit: "Unit screen: the steps of the working-world unit; the speaking step is done, reading is next.",
     conversation:
       "Speaking step: in a job interview the AI character asks a question; the user's mistake seit drei Jahre is corrected to seit drei Jahren; three suggestions below.",
@@ -572,7 +572,7 @@ const de: LandingCopy = {
     langNav: "Sprache der Seite",
   },
   alt: {
-    path: "Pfad-Ansicht: Niveau B1, aktuelle Einheit, nächster Schritt und die Schaltfläche Weiter.",
+    path: "Pfad-Ansicht: Niveau A1, aktuelle Einheit Sich vorstellen, nächster Schritt Sprechen (Hello!) und die Schaltfläche Weiter.",
     unit: "Einheit-Ansicht im Englischkurs: My career so far ist erledigt, als Nächstes der Lesetext Three rules for a résumé.",
     conversation:
       "Sprechen-Schritt im Englischkurs: Die KI-Figur aus der Karriereberatung fragt nach deiner Ausbildung; I work … since three years wird zu I have worked … for three years korrigiert, darunter drei Vorschläge.",
