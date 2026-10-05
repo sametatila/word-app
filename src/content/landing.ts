@@ -169,7 +169,7 @@ const tr: LandingCopy = {
     line1: "Konuş, anla,",
     line2: "sınava hazırlan.",
     intro:
-      "Lernomi ile Almanca ya da İngilizce öğren: A1'den C1'e, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
+      "Lernomi ile Almanca ya da İngilizce öğren: sıfırdan C1'e, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
     noAccount: "Hesap açmadan, ücretsiz başlarsın. Reklam yok.",
   },
   cta: {
@@ -188,7 +188,7 @@ const tr: LandingCopy = {
     { value: "900+", label: "alıştırma, her kursta" },
     { value: "50+", label: "deneme sınavı, her kursta" },
   ],
-  statsNote: "Almancada 8.500'den, İngilizcede 7.000'den fazla kelime. Aşağıdaki örnekler Almanca kursundan.",
+  statsNote: "Almancada 8.500'den, İngilizcede 7.000'den fazla kelime. Her seviyede 1 deneme sınavı ücretsiz, tümü Premium'da. Aşağıdaki örnekler Almanca kursundan.",
   langs: {
     title: "Tek dil değil: dört dil yolu.",
     lede: "Patika, konuşma adımları, deneme sınavları ve anlatım her yolda aynı yapıda. Anlatım, ipuçları ve geri bildirim senin dilinde.",
@@ -225,7 +225,7 @@ const tr: LandingCopy = {
     id: "konusma",
     screen: "conversation",
     title: "Konuşarak öğren.",
-    lede: "Doktorda, iş görüşmesinde, ev bakarken, maaş görüşmesinde… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir.",
+    lede: "Komşunla tanışırken, doktorda, ev bakarken, iş görüşmesinde, toplantıda… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir. Konuşmaya çekiniyorsan sohbette yazarak da cevap verirsin.",
     more: [
       "Her Konuşma adımı Türkçe bir anlatımla başlar: kullanacağın kalıpları önce kendi dilinde okursun. Karşındakinin yapay zekâ olduğunu uygulama ekranda söyler.",
     ],
@@ -259,7 +259,7 @@ const tr: LandingCopy = {
     id: "deneme-sinavlari",
     screen: "mock-task",
     title: "Dört becerili deneme sınavları.",
-    lede: "Her CEFR seviyesinde birden çok, toplamda 50'den fazla deneme sınavı. Okuma, dinleme, yazma ve konuşma bölümlerinin her birinin kendi süresi var. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.",
+    lede: "Her seviyede 1 deneme sınavı ücretsiz; Premium'da toplamda 50'den fazla. Okuma, dinleme, yazma ve konuşma bölümlerinin her birinin kendi süresi var. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.",
     head: ["Bölüm", "Nasıl puanlanır"],
     rows: [
       { name: "Lesen", nameLang: "de", local: "Okuma", how: "Otomatik puanlanır." },
@@ -324,7 +324,7 @@ const tr: LandingCopy = {
       "Her seviyede 1 deneme sınavı.",
       "Patika'da her seviyede 2 Konuşma ve 2 Yazma adımı; Beceriler'de 2 konuşma ve 2 yazma değerlendirmesi.",
     ],
-    earn: "Bunları bitirip 7 günlük seri yapınca yeni haklar eklenir; her yeni 7 günlük seride yine.",
+    earn: "Bunları bitirip 7 günlük seri yapınca 2'şer hak ve 1 deneme sınavı daha açılır; her yeni 7 günlük seride yine.",
     premiumTitle: "Premium",
     premiumSub: "Aylık ya da yıllık abonelik.",
     premium: [
@@ -341,6 +341,7 @@ const tr: LandingCopy = {
       "Hesap açmadan başlarsın. Arkadaşlar ve lig, yapay zekâyla sohbet, yapay zekâ değerlendirmesi ve Premium hesap ister; hesapsızken Konuşma adımı önceden hazırlanmış bir sohbetle sürer.",
       "Metnin yapay zekâya ancak iznini verirsen gider.",
       "Mikrofon yalnız konuşarak cevap verdiğinde açılır. Sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz.",
+      "Sunucular AB'de; sohbet kayıtların 30 gün sonra silinir.",
     ],
     certTitle: "Başarı belgesi",
     cert: "Modül ve seviye sınavlarını geçince neler yapabildiğini gösteren, paylaşabileceğin bir başarı belgesi alırsın.",
@@ -354,7 +355,7 @@ const en: LandingCopy = {
     line1: "Speak, understand,",
     line2: "exam-ready.",
     intro:
-      "Learn German from A1 to C1 with Lernomi: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready.",
+      "Learn German from zero to C1 with Lernomi: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready.",
     noAccount: "Start free, no account needed. No ads.",
   },
   cta: {
@@ -373,7 +374,7 @@ const en: LandingCopy = {
     { value: "900+", label: "exercises" },
     { value: "50+", label: "mock exams" },
   ],
-  statsNote: "From A1 to C1, with explanations in English.",
+  statsNote: "From zero to C1, with explanations in English. 1 free mock exam per level, all of them with Premium.",
   langs: {
     title: "One app, four language paths.",
     lede: "Path, speaking steps, mock exams and explanations work the same way on every path. Explanations, hints and feedback come in your own language.",
@@ -410,7 +411,7 @@ const en: LandingCopy = {
     id: "speaking",
     screen: "conversation",
     title: "Learn by speaking.",
-    lede: "At the doctor's, in a job interview, viewing an apartment, negotiating your salary… Practice real-life situations by talking with an AI character. It corrects your mistakes right away and suggests what you could say when you get stuck.",
+    lede: "Meeting your neighbor, at the doctor's, viewing an apartment, in a job interview, in a meeting… Practice real-life situations by talking with an AI character. It corrects your mistakes right away and suggests what you could say when you get stuck. Shy about speaking? Type your answers in the chat.",
     more: [
       "Each Speaking step opens with a short intro in English to the phrases you'll use. The app tells you on screen that you're talking to an AI.",
     ],
@@ -444,7 +445,7 @@ const en: LandingCopy = {
     id: "mock-exams",
     screen: "mock-task",
     title: "Four-skill mock exams.",
-    lede: "Several at every CEFR level, more than 50 in total. Reading, Listening, Writing and Speaking each have their own time limit. At the end you get your score as a percentage and a list of what to work on.",
+    lede: "1 free mock exam per level; more than 50 in total with Premium. Reading, Listening, Writing and Speaking each have their own time limit. At the end you get your score as a percentage and a list of what to work on.",
     head: ["Section", "How it's scored"],
     rows: [
       { name: "Lesen", nameLang: "de", local: "Reading", how: "Scored automatically." },
@@ -509,7 +510,7 @@ const en: LandingCopy = {
       "1 mock exam per level.",
       "In Path, 2 Speaking and 2 Writing steps per level; in Skills, 2 speaking and 2 writing assessments.",
     ],
-    earn: "Finish them and reach a 7-day streak to unlock more, then again with every further 7-day streak.",
+    earn: "Finish them and reach a 7-day streak to unlock 2 more of each and 1 more mock exam, then again with every further 7-day streak.",
     premiumTitle: "Premium",
     premiumSub: "Monthly or yearly subscription.",
     premium: [
@@ -526,6 +527,7 @@ const en: LandingCopy = {
       "You can start without an account. Friends and leagues, AI conversation, AI feedback and Premium need one; without an account, the Speaking step runs as a prepared conversation.",
       "Your text is only sent to the AI if you allow it.",
       "The microphone opens only when you answer by speaking. Audio reaches the server only with your permission, and the recording is not kept.",
+      "Servers are in the EU; conversation logs are deleted after 30 days.",
     ],
     certTitle: "Certificate of achievement",
     cert: "Pass module and level exams to earn a certificate of achievement you can share, showing what you can do.",
@@ -539,7 +541,7 @@ const de: LandingCopy = {
     line1: "Reden, verstehen,",
     line2: "prüfungsfit.",
     intro:
-      "Lerne mit Lernomi Englisch von A1 bis C1, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen.",
+      "Lerne mit Lernomi Englisch von null bis C1, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen.",
     noAccount: "Du startest kostenlos und ohne Konto. Keine Werbung.",
   },
   cta: {
@@ -558,7 +560,7 @@ const de: LandingCopy = {
     { value: "900+", label: "Übungen" },
     { value: "50+", label: "Probeprüfungen" },
   ],
-  statsNote: "Von A1 bis C1, mit Erklärungen auf Deutsch.",
+  statsNote: "Von null bis C1, mit Erklärungen auf Deutsch. 1 Probeprüfung pro Niveau gratis, alle mit Premium.",
   langs: {
     title: "Eine App, vier Sprachwege.",
     lede: "Pfad, Sprechen-Schritte, Probeprüfungen und Erklärungen sind auf jedem Weg gleich aufgebaut. Erklärungen, Hinweise und Feedback bekommst du in deiner Sprache.",
@@ -595,7 +597,7 @@ const de: LandingCopy = {
     id: "sprechen",
     screen: "conversation",
     title: "Lernen durch Sprechen.",
-    lede: "Beim Arzt, im Vorstellungsgespräch, bei der Wohnungsbesichtigung, im Gehaltsgespräch … Alltagssituationen übst du im Gespräch mit einer KI-Figur. Sie korrigiert Fehler sofort und schlägt dir etwas vor, wenn du nicht weiterweißt.",
+    lede: "Beim Kennenlernen der Nachbarn, beim Arzt, bei der Wohnungsbesichtigung, im Vorstellungsgespräch, im Meeting … Alltagssituationen übst du im Gespräch mit einer KI-Figur. Sie korrigiert Fehler sofort und schlägt dir etwas vor, wenn du nicht weiterweißt. Im Chat kannst du auch schriftlich antworten.",
     more: [
       "Jeder Sprechen-Schritt beginnt mit einer kurzen Einführung der Wendungen auf Deutsch. Die App zeigt an, dass du mit einer KI sprichst.",
     ],
@@ -633,7 +635,7 @@ const de: LandingCopy = {
     id: "probepruefungen",
     screen: "mock-task",
     title: "Probeprüfungen in vier Fertigkeiten.",
-    lede: "Mehrere pro GER-Niveau, insgesamt mehr als 50. Lesen, Hören, Schreiben und Sprechen haben jeweils eine eigene Zeit. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.",
+    lede: "1 Probeprüfung pro Niveau kostenlos, mit Premium insgesamt mehr als 50. Lesen, Hören, Schreiben und Sprechen haben jeweils eine eigene Zeit. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.",
     head: ["Teil", "Bewertung"],
     rows: [
       { name: "Reading", nameLang: "en", local: "Lesen", how: "Wird automatisch bewertet." },
@@ -697,7 +699,7 @@ const de: LandingCopy = {
       "1 Probeprüfung pro Niveau.",
       "Pro Niveau 2 Sprechen- und 2 Schreiben-Schritte im Pfad, bei den Fertigkeiten 2 Sprech- und 2 Schreibbewertungen.",
     ],
-    earn: "Schließt du sie ab und erreichst eine 7-Tage-Serie, kommen neue dazu, mit jeder weiteren 7-Tage-Serie wieder.",
+    earn: "Schließt du sie ab und erreichst eine 7-Tage-Serie, kommen je 2 weitere und 1 Probeprüfung dazu, mit jeder weiteren 7-Tage-Serie wieder.",
     premiumTitle: "Premium",
     premiumSub: "Monats- oder Jahresabo.",
     premium: [
@@ -714,6 +716,7 @@ const de: LandingCopy = {
       "Du kannst ohne Konto loslegen. Freunde und Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne Konto läuft der Sprechen-Schritt als vorbereitetes Gespräch.",
       "Dein Text geht nur mit deiner Erlaubnis an die KI.",
       "Das Mikrofon öffnet sich nur, wenn du sprechend antwortest. Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert.",
+      "Server in der EU; Chatverläufe werden nach 30 Tagen gelöscht.",
     ],
     certTitle: "Leistungsnachweis",
     cert: "Für bestandene Modul- und Niveauprüfungen bekommst du einen teilbaren Leistungsnachweis, der zeigt, was du kannst.",
