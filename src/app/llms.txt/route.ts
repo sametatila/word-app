@@ -44,7 +44,7 @@ export async function GET() {
   const lines = [
     "# Lernomi",
     "",
-    `> Lernomi is a language-learning app for German and English, from A1 to C1, on ${on}. Explanations, hints and feedback come in the learner's own language (Turkish, English or German), and learners practice by speaking: AI conversation with instant corrections, four-skill mock exams, a daily spaced-repetition word round and a hands-free Walk mode.`,
+    `> Lernomi is a language-learning app for German and English, from complete beginner (A1) to advanced (C1), on ${on}. Explanations, hints and feedback come in the learner's own language (Turkish, English or German), and learners practice by speaking: AI conversation with instant corrections, four-skill mock exams, a daily spaced-repetition word round and a hands-free Walk mode.`,
     "",
     `Website: ${abs("/")} (Turkish), ${abs(landingPath("en"))} (English), ${abs(landingPath("de"))} (German). No account is needed to start in the browser.`,
     "",
