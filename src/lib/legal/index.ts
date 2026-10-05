@@ -200,9 +200,16 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * uzuyor; metin artık "30 gün kullanılmayan oturum düşer, kaydı en geç 7 gün
  * içinde silinir" diyor ve günlük cron bunu uyguluyor (`lib/account/retention`).
  * (2) Yürüyüş modunda tanınan metin ve beklenen kelime süresizdi; 30 gün.
+ *
+ * 1.10.0 (2026-10-05) SES ALICISI EKLENDİ, küçük basamak. Cloudflare Workers AI
+ * (Whisper) ekran kapalı yürüyüşte konuşma tanıma zincirine Deepgram'ın yedeği
+ * olarak döndü (Samet: Deepgram kredisi bitince otomatik geçiş). Alıcılar
+ * tablosunda satır "dil modeli"nden "konuşma tanıma ve dil modeli"ne geçti, gizlilik
+ * §4 sağlayıcı cümlesine Cloudflare girdi, ses rızası sürüm 4 (bir kez yeniden
+ * sorulur). Metin rızası değişmedi: metnin alıcıları aynı.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-10-03";
-export const LEGAL_VERSION = "1.9.2";
+export const LEGAL_EFFECTIVE_DATE = "2026-10-05";
+export const LEGAL_VERSION = "1.10.0";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -434,6 +441,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* KÜÇÜK BASAMAK: ses alıcısı eklendi (Cloudflare Workers AI, konuşma tanıma). Ses rızası sürüm 4. */
+    version: "1.10.0",
+    date: "2026-10-05",
+    changes: {
+      tr: [
+        "Konuşma tanıma sağlayıcılarına Cloudflare Workers AI eklendi: ekran kapalı yürüyüşte ses, izin verdiysen, Deepgram kullanılamadığında Cloudflare Workers AI'a gönderilebilir. Cloudflare girdiyi saklamaz ve model eğitiminde kullanmaz. Alıcı listesi değiştiği için ses izni bir kez yeniden sorulur. Toplanan veri, saklama süreleri ve metnin alıcıları değişmedi.",
+      ],
+      en: [
+        "Cloudflare Workers AI was added to the speech recognition providers: in walk mode with the screen off, if you have given permission, audio may be sent to Cloudflare Workers AI when Deepgram is unavailable. Cloudflare does not store the input and does not use it to train models. Because the list of recipients changed, the audio permission is asked once more. The data collected, the retention periods and the recipients of text did not change.",
+      ],
+      de: [
+        "Cloudflare Workers AI wurde zu den Spracherkennungsanbietern hinzugefügt: Im Gehmodus bei ausgeschaltetem Bildschirm kann Audio, wenn du es erlaubt hast, an Cloudflare Workers AI gesendet werden, wenn Deepgram nicht verfügbar ist. Cloudflare speichert die Eingaben nicht und nutzt sie nicht zum Trainieren von Modellen. Da sich die Liste der Empfänger geändert hat, wird die Audio-Erlaubnis einmal erneut abgefragt. Die erhobenen Daten, die Speicherfristen und die Empfänger von Texten haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: iki saklama süresi kodla eşitlendi (oturum kaydı, yürüyüş modu tanınan metni). Veri ve alıcı aynı. */
     version: "1.9.2",
@@ -990,7 +1013,6 @@ const PURPOSES = {
   sttTts: { tr: "Konuşma tanıma ve seslendirme", en: "Speech recognition and speech synthesis", de: "Spracherkennung und Sprachausgabe" },
   sttWhisperLlm: { tr: "Konuşma tanıma (Whisper) ve dil modeli", en: "Speech recognition (Whisper) and language model", de: "Spracherkennung (Whisper) und Sprachmodell" },
   stt: { tr: "Konuşma tanıma", en: "Speech recognition", de: "Spracherkennung" },
-  llm: { tr: "Dil modeli", en: "Language model", de: "Sprachmodell" },
   googleSignIn: { tr: "Google ile giriş", en: "Sign-in with Google", de: "Anmeldung mit Google" },
   appleSignIn: { tr: "Apple ile giriş", en: "Sign-in with Apple", de: "Anmeldung mit Apple" },
   distribution: { tr: "Uygulama dağıtımı ve abonelik ödemeleri", en: "App distribution and subscription payments", de: "App-Vertrieb und Abonnementzahlungen" },
@@ -1019,7 +1041,6 @@ const DATA_KINDS = {
   audioAndTtsText: { tr: "Ses kaydı (geçici), seslendirilecek metin", en: "Audio recording (temporary), text to be spoken", de: "Audioaufnahme (temporär), zu sprechender Text" },
   audioAndTexts: { tr: "Ses kaydı (geçici), konuşma ve değerlendirme metinleri", en: "Audio recording (temporary), conversation and assessment texts", de: "Audioaufnahme (temporär), Gesprächs- und Bewertungstexte" },
   audio: { tr: "Ses kaydı (geçici)", en: "Audio recording (temporary)", de: "Audioaufnahme (temporär)" },
-  texts: { tr: "Konuşma ve değerlendirme metinleri", en: "Conversation and assessment texts", de: "Gesprächs- und Bewertungstexte" },
   googleIdentity: { tr: "Google hesabı kimliği, ad, e-posta", en: "Google account id, name, e-mail", de: "Google-Konto-ID, Name, E-Mail" },
   appleIdentity: {
     tr: "Apple hesabı kimliği, ad, e-posta (kullanıcı isterse Apple'ın gizli aktarma adresi)",
@@ -1232,8 +1253,12 @@ export const PROCESSORS: Processor[] = [
     şartları). Çıkarım Cloudflare'in ağında, bölge garantisi yok; aktarım
     güvencesi ağ satırıyla aynı veri işleme koşulları. Mistral AI ve Cerebras
     aynı sürümde çıktı (ücretsiz API'leri kapandı, Samet).
+
+    KONUŞMA TANIMA (1.10.0, 2026-10-05): Whisper large v3 turbo, ekran kapalı
+    yürüyüşte Deepgram'ın yedeği (lib/stt). Satır Groq'unkiyle aynı amaç ve
+    veriyi taşıyor; ses rızasının alıcı listesine bu yüzden giriyor.
   */
-  { name: "Cloudflare Workers AI", purpose: "llm", data: "texts", region: "globalNetwork", safeguard: "scc" },
+  { name: "Cloudflare Workers AI", purpose: "sttWhisperLlm", data: "audioAndTexts", region: "globalNetwork", safeguard: "scc" },
   { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "independentController", when: "googleSignInChosen" },
   /*
     Apple ile giriş web'de, Android'de ve iOS'ta açık (canlı `/api/config`:

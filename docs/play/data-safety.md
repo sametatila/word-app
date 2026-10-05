@@ -43,7 +43,7 @@ tablosu aynı commit'te değişir; kapı `npm run check:declarations` (CI).
 | Kişisel bilgi › E-posta adresi | Evet | Hayır | Hayır | Zorunlu | Hesap yönetimi, güvenlik (doğrulama, parola sıfırlama) |
 | Kişisel bilgi › Kullanıcı kimlikleri | Evet | Evet (RevenueCat) | Hayır | Zorunlu | Hesap yönetimi, satın alma eşleme |
 | Kişisel bilgi › Diğer bilgi (IP, tarayıcı/cihaz tanımı — oturum kaydı) | Evet | Hayır | Hayır | Zorunlu | Dolandırıcılık önleme, güvenlik, hız sınırı |
-| Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Deepgram, Groq) | Evet (aşağıya bak) | İsteğe bağlı (ekran kapalı yürüyüş; uygulama içi açık rıza) | Uygulama işlevi (konuşma tanıma) |
+| Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Deepgram, Cloudflare Workers AI, Groq) | Evet (aşağıya bak) | İsteğe bağlı (ekran kapalı yürüyüş; uygulama içi açık rıza) | Uygulama işlevi (konuşma tanıma) |
 | Mesajlar › Diğer uygulama içi mesajlar (yazma görevleri, sohbet, sınav cevapları) | Evet | Evet (Cloudflare Workers AI, Groq) | Hayır | İsteğe bağlı (uygulama içi açık rıza) | Uygulama işlevi (değerlendirme ve geri bildirim) |
 | Uygulama etkinliği › Uygulama içi etkileşimler (ilerleme, seri, XP, ekran olayları) | Evet | Hayır | Hayır | Zorunlu (ilerleme) / isteğe bağlı (olaylar) | Uygulama işlevi, analitik, kişiselleştirme |
 | Uygulama etkinliği › Diğer kullanıcı içeriği (görünen ad, kullanıcı adı, bildirimler) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi, kişiselleştirme, güvenlik (moderasyon) |
@@ -61,10 +61,11 @@ tablosu aynı commit'te değişir; kapı `npm run check:declarations` (CI).
 - **Ses "geçici" koşullu.** Ses sunucuya yalnız Android'de ekran kapalı yürüyüşte gidiyor; ekran
   açıkken cihazın kendi tanıyıcısı çalışıyor (2026-09-27, denetim G9). Lernomi sunucusu sesi
   saklamıyor. Zincir: önce Azure (kısa ses, belgelerine göre saklamıyor), o düşer ya da aylık
-  tavanı dolarsa Deepgram (`mip_opt_out=true`, denetim LEG-3), sonra Groq (Zero Data Retention,
-  Global + Inference APIs, 2026-09-27; denetim G5) — `src/lib/chat-providers.ts` `sttProviders`.
-  Cloudflare Workers AI (yalnız dil modeli, metin) ve Speechmatics ses almıyor. Koşullardan biri geri alınırsa
-  "geçici" kalkar.
+  tavanı dolarsa Deepgram (`mip_opt_out=true`, denetim LEG-3), Deepgram'ın kredisi biterse ya da düşerse
+  Cloudflare Workers AI (Whisper; girdi saklanmıyor ve eğitimde kullanılmıyor, 2026-10-05; denetim G10), sonra
+  Groq (Zero Data Retention, Global + Inference APIs, 2026-09-27; denetim G5) — `src/lib/chat-providers.ts`
+  `sttProviders`. Speechmatics ses almıyor. Koşullardan biri geri alınırsa "geçici" kalkar. Console formu
+  alıcıları adıyla sormuyor: veri türleri ve işaretler değişmedi, formda yapılacak iş yok.
 - **Paylaşım izinle.** Metin dil modellerine, ses konuşma tanıma sağlayıcılarına ancak
   sağlayıcıları adıyla sayan ekranda izin verildikten sonra gidiyor; karar sunucuda
   (`user_consents`). Bu yüzden bu türler "isteğe bağlı".

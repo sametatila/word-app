@@ -40,8 +40,9 @@ export const AI_CONSENT_VERSIONS: Record<AiConsentPurpose, number> = {
   ai_text: 2,
   /* 2 (2026-09-25): Mistral AI ses alıcılarından çıktı (denetim G5).
      3 (2026-09-27): Cloudflare Workers AI ve Speechmatics çıktı; ses yalnız
-     ekran kapalı yürüyüşte sunucuya gidiyor. */
-  ai_voice: 3,
+     ekran kapalı yürüyüşte sunucuya gidiyor.
+     4 (2026-10-05): Cloudflare Workers AI Deepgram'ın yedeği olarak döndü. */
+  ai_voice: 4,
 };
 
 /**
@@ -50,7 +51,7 @@ export const AI_CONSENT_VERSIONS: Record<AiConsentPurpose, number> = {
  */
 export const AI_CONSENT_FINGERPRINT: Record<AiConsentPurpose, string> = {
   ai_text: "Cloudflare Workers AI|Groq",
-  ai_voice: "Deepgram|Groq|Microsoft Azure Speech",
+  ai_voice: "Cloudflare Workers AI|Deepgram|Groq|Microsoft Azure Speech",
 };
 
 /** Uçların rıza yokken döndürdüğü hata kodu (403 gövdesinde `error`). */

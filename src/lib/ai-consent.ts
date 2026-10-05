@@ -144,7 +144,7 @@ export async function aiConsentStateFor(userId: string, purpose: AiConsentPurpos
  * ve `test-legal` sürümün artırılmasını ister.
  */
 const PURPOSE_DATA: Record<AiConsentPurpose, readonly Processor["data"][]> = {
-  ai_text: ["audioAndTexts", "texts"],
+  ai_text: ["audioAndTexts"],
   ai_voice: ["audioAndTtsText", "audioAndTexts", "audio"],
 };
 
