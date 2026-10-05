@@ -35,6 +35,7 @@
     "test:ai-budget": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-ai-budget.ts",
     "test:lifetime": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-lifetime.ts",
     "test:stt-pa": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-stt-pa.ts",
+    "test:stt-quality": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/stt-quality-eval.ts",
     "test:placement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts && tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts --bank de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts --bank en",
     "placement:sync": "node scripts/placement-sync.mjs",
     "check:placement": "node scripts/placement-sync.mjs --check",

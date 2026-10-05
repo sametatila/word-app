@@ -285,7 +285,8 @@ planda olduğu için onun günlük payı uyarı üretmiyor, aşan kısım aylık
 geliri ~1,8 €. Normal kullanımda görülmez, ama tavan zararı engellemiyor (karar Samet'te).
 
 **Konuşma tanıma** yalnız ekran kapalı yürüyüşte (Premium): Azure F0 (ayda 5 saat, kod 4,5 saatte
-keser, `AZURE_STT_MONTHLY_SECONDS`) → Deepgram → Groq Whisper. F0 aşımda faturalamaz, reddeder; yani
+keser, `AZURE_STT_MONTHLY_SECONDS`) → Deepgram → Cloudflare Workers AI Whisper (0,0005 $/dk, istek tabanı
+yok; Deepgram'ın kredisi bitince kendiliğinden) → Groq Whisper. F0 aşımda faturalamaz, reddeder; yani
 Azure bugün 0 $. Ölçülen (ai_usage, 2026-08-23 → 09-29): yürüyüş yapılan günde kişi başı ~16 klip,
 ~75 sn ses (medyan 57, en çok 229). S1'e geçilirse 1 $/saat; Groq Whisper 0,04 $/saat ama istek başı en
 az 10 sn faturalanıyor (klip ortalaması ~4,6 sn).

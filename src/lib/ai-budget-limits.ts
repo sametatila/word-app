@@ -35,6 +35,10 @@ export const CLOUDFLARE = {
   models: {
     "@cf/google/gemma-4-26b-a4b-it": { inPerM: 9_091, outPerM: 27_273 },
   } as Record<string, { inPerM: number; outPerM: number }>,
+  /** Konuşma tanıma: dakika başına neuron (Whisper turbo 0,0005 $/dk). Deepgram'ın yedeği (lib/stt). */
+  sttNeuronsPerMinute: {
+    "@cf/openai/whisper-large-v3-turbo": 46.63,
+  } as Record<string, number>,
 };
 
 export const GROQ = {
@@ -81,6 +85,12 @@ export function cloudflareNeurons(model: string, promptTokens: number, completio
   const r = CLOUDFLARE.models[model];
   if (!r) return null;
   return (promptTokens * r.inPerM + completionTokens * r.outPerM) / 1_000_000;
+}
+
+/** Cloudflare konuşma tanıma neuron'u; model tarifede yoksa null. */
+export function cloudflareSttNeurons(model: string, seconds: number): number | null {
+  const perMin = CLOUDFLARE.sttNeuronsPerMinute[model];
+  return perMin == null ? null : (seconds / 60) * perMin;
 }
 
 /** Bir günün Cloudflare maliyeti: ücretsiz planda 0 (aşım reddedilir), ücretlide ücretsiz payın üstü. */

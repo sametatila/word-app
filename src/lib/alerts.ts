@@ -36,7 +36,7 @@ import { REASON_LABEL } from "@/lib/content-feedback-labels";
 import { activeAiProviderNames } from "@/lib/ai-providers";
 import { AZURE_STT_MONTHLY_SECONDS, AZURE_TTS_MONTHLY_CHARS, azureKeyHealth, azureMonthUsage } from "@/lib/azure-speech-usage";
 import { azureConfigured } from "@/lib/tts/azure";
-import { chatConfigured } from "@/lib/chat-providers";
+import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { aiBudget, quotaRejections } from "@/lib/ai-budget";
 import { DEEPGRAM, WARN_AT, deepgramUsd } from "@/lib/ai-budget-limits";
 
@@ -269,7 +269,7 @@ export async function collectAlerts(): Promise<Alert[]> {
       const m = await azureMonthUsage();
       const sttPct = Math.round((m.sttSeconds / AZURE_STT_MONTHLY_SECONDS) * 100);
       if (sttPct >= 100) {
-        alerts.push({ key: "azure:stt-cap", level: "uyari", text: `Azure konuşma tanıma bu ayın tavanını doldurdu (${Math.round(m.sttSeconds / 60)} dk / ${Math.round(AZURE_STT_MONTHLY_SECONDS / 60)} dk): ay sonuna kadar zincirde değil, Deepgram ve Groq devralıyor.` });
+        alerts.push({ key: "azure:stt-cap", level: "uyari", text: `Azure konuşma tanıma bu ayın tavanını doldurdu (${Math.round(m.sttSeconds / 60)} dk / ${Math.round(AZURE_STT_MONTHLY_SECONDS / 60)} dk): ay sonuna kadar zincirde değil, Deepgram (kredisi bitmişse Workers AI) devralıyor.` });
       } else if (sttPct >= 80) {
         alerts.push({ key: "azure:stt-cap", level: "uyari", text: `Azure konuşma tanıma bu ayın tavanının %${sttPct}'inde (${Math.round(m.sttSeconds / 60)} dk / ${Math.round(AZURE_STT_MONTHLY_SECONDS / 60)} dk).` });
       }
@@ -278,16 +278,17 @@ export async function collectAlerts(): Promise<Alert[]> {
         alerts.push({ key: "azure:tts-cap", level: ttsPct >= 100 ? "kritik" : "uyari", text: `Azure seslendirme bu ay ${thousands(m.ttsChars)} karakter kullandı (ücretsiz kota ${thousands(AZURE_TTS_MONTHLY_CHARS)}, %${ttsPct}). Azure yalnız Edge düşünce devreye girer: Edge'e bak.` });
       }
       if ((await azureKeyHealth()) === "invalid") {
-        alerts.push({ key: "azure:key", level: "kritik", text: "Azure Speech anahtarı reddedildi (401/403): konuşma tanıma Deepgram/Groq'a, seslendirmenin yedeği cihaz sesine kaldı. Anahtarı Azure portalında yenile, .env'e yaz, rolling restart." });
+        alerts.push({ key: "azure:key", level: "kritik", text: "Azure Speech anahtarı reddedildi (401/403): konuşma tanıma Deepgram/Workers AI/Groq'a, seslendirmenin yedeği cihaz sesine kaldı. Anahtarı Azure portalında yenile, .env'e yaz, rolling restart." });
       }
     }),
     guard("deepgram", async () => {
       /*
         DEEPGRAM KREDİSİ (tek seferlik, yenilenmez). Bakiye API'den okunamıyor (anahtarda
         billing:read yok); son okunan bakiyeden (`DEEPGRAM.creditAt`) sonraki kullanım
-        tarifeyle düşülüyor. Kredi bitince istekler reddediliyor ve zincir Groq'a düşüyor.
-        Karar (Samet, 2026-10-02): bitmeye yakın Azure ve Groq istatistiklerine bakılır,
-        duruma göre Soniox'a geçilir (AGENTS.md tarihli işler).
+        tarifeyle düşülüyor. Kredi bitince istekler reddediliyor (402) ve zincir
+        KENDİLİĞİNDEN Cloudflare Workers AI'ya (Whisper) geçiyor (Samet, 2026-10-05: "tekrar
+        düşünmek zorunda kalmayalım"; lib/stt `deepgramResting`). Uyarı bu yüzden bilgi
+        düzeyinde: yapılacak iş yok, kredi yüklenirse Deepgram kendiliğinden döner.
       */
       if (!process.env.DEEPGRAM_API_KEY) return;
       /* Kullanım yalnız başarılı çağrılardan; ret sayısı son 24 saatten (eski bir ret uyarıyı sonsuza dek açık tutmasın). */
@@ -298,9 +299,16 @@ export async function collectAlerts(): Promise<Alert[]> {
       const left = DEEPGRAM.creditUsd - spent;
       const refused = list.reduce((a, r) => a + num(r.refused), 0);
       if (refused > 0) {
-        alerts.push({ key: "deepgram:credit", level: "kritik", text: `Deepgram istekleri reddediliyor (${refused} kez 401/402/403): kredi bitmiş ya da anahtar geçersiz. Konuşma tanıma Azure'un aylık hakkı ve Groq'la sürüyor. Azure ve Groq istatistiklerine bak, Soniox kararı (AGENTS.md).` });
+        const fallback = sttProviders().some((p) => p.name === "cloudflare");
+        alerts.push({
+          key: "deepgram:credit",
+          level: fallback ? "uyari" : "kritik",
+          text: fallback
+            ? `Deepgram istekleri reddediliyor (${refused} kez 401/402/403): kredi bitmiş ya da anahtar geçersiz. Konuşma tanıma kendiliğinden Cloudflare Workers AI'ya (Whisper) geçti, yapılacak iş yok. Kredi yüklenirse Deepgram bir saat içinde kendiliğinden döner.`
+            : `Deepgram istekleri reddediliyor (${refused} kez 401/402/403): kredi bitmiş ya da anahtar geçersiz. Workers AI yedeği yapılandırılmamış (CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_AI_TOKEN): konuşma tanıma yalnız Azure'un aylık hakkı ve Groq'la sürüyor.`,
+        });
       } else if (left < 50) {
-        alerts.push({ key: "deepgram:credit", level: left < 15 ? "kritik" : "uyari", text: `Deepgram kredisi tahminen ~${Math.round(left)} $ kaldı (son okunan ~${Math.round(DEEPGRAM.creditUsd)} $, sonra harcanan ~${Math.round(spent)} $). Konsoldan gerçek bakiyeyi oku, ai-budget-limits DEEPGRAM'a yaz; Azure ve Groq istatistiklerine bakıp Soniox kararını ver (AGENTS.md).` });
+        alerts.push({ key: "deepgram:credit", level: left < 15 ? "kritik" : "uyari", text: `Deepgram kredisi tahminen ~${Math.round(left)} $ kaldı (son okunan ~${Math.round(DEEPGRAM.creditUsd)} $, sonra harcanan ~${Math.round(spent)} $). Bitince konuşma tanıma kendiliğinden Cloudflare Workers AI'ya geçer, yapılacak iş yok. İstersen konsoldan gerçek bakiyeyi okuyup ai-budget-limits DEEPGRAM'a yaz.` });
       }
     }),
     guard("budget", async () => {

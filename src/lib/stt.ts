@@ -9,8 +9,9 @@ import { recordAiUsage } from "@/lib/ai-usage";
  * Sunucuya ses yalnız ekran kapalıyken geliyor (Samet, 2026-09-27): ekran
  * açıkken mobil cihazın, web tarayıcının kendi tanıyıcısını kullanıyor.
  * `/api/pronounce` artık ses almıyor, tarayıcının metnini puanlıyor. Zincir
- * Azure → Deepgram → Groq (bkz. chat-providers `sttProviders`); Azure'un
- * aylık F0 kotası burada korunuyor.
+ * Azure → Deepgram → Cloudflare Workers AI → Groq (bkz. chat-providers
+ * `sttProviders`); Azure'un aylık F0 kotası ve Deepgram'ın kredi bitişi burada
+ * izleniyor.
  *
  * Her deneme `ai_usage`'a yazılır (başarısızlar dâhil): kotaya ne kadar
  * yaklaşıldığı ancak buradan görülür. Ses saklanmaz.
@@ -137,6 +138,10 @@ export async function transcribe(file: File, opts: SttOptions): Promise<SttResul
   if (providers.some((p) => p.name === "azure") && !(await azureBudgetOk())) {
     providers = providers.filter((p) => p.name !== "azure");
   }
+  /* Kredisi bitmiş Deepgram'a her klipte önce gidip 402 almak yalnız gecikme: dinlenirken atlanıyor. */
+  if (deepgramResting() && providers.some((p) => p.name !== "deepgram")) {
+    providers = providers.filter((p) => p.name !== "deepgram");
+  }
   if (!providers.length) throw new SttError("not_configured", []);
   const language = opts.language ?? "de";
   const seconds = estimateSeconds(file);
@@ -161,6 +166,7 @@ export async function transcribe(file: File, opts: SttOptions): Promise<SttResul
       return { ...out, duration: out.duration || seconds, provider: provider.name, model: provider.model };
     } catch (err) {
       const e = err as Error & { status?: number };
+      if (provider.name === "deepgram") noteDeepgramFailure(e.status);
       recordAiUsage(opts.userId, {
         kind: "stt",
         provider: provider.name,
@@ -193,7 +199,40 @@ async function callProvider(p: SttProvider, file: File, language: string, expect
       return deepgram(p, file, language);
     case "azure":
       return azure(p, file, language, expected);
+    case "workers-ai":
+      return workersAi(p, file, language);
   }
+}
+
+/** Ölçüm için (`stt-quality-eval`): tek sağlayıcıyı zincirsiz çağırır. */
+export function sttCall(p: SttProvider, file: File, language: string, expected?: string): Promise<Raw> {
+  return callProvider(p, file, language, expected);
+}
+
+/**
+ * Cloudflare Workers AI, Whisper large v3 turbo (`/ai/run`, JSON gövde, ses base64).
+ *
+ * `vad_filter`: konuşma olmayan bölümler modele gitmeden atılıyor; Whisper'ın
+ * sessizlikte ve başı kesik klipte uydurması (walk-stt "Wolfsfatter") bunun
+ * hedefi. `condition_on_previous_text: false`: tek parçalık klipte önceki metin
+ * yok, açık bırakmak yalnız tekrar döngüsü riski. Dakikası 0,0005 $; Groq'taki
+ * 10 sn'lik istek tabanı yok.
+ */
+async function workersAi(p: SttProvider, file: File, language: string, opts: { vad?: boolean } = {}): Promise<Raw> {
+  const audio = Buffer.from(await file.arrayBuffer()).toString("base64");
+  const res = await sttFetch(`${p.baseUrl}/ai/run/${p.model}`, {
+    method: "POST",
+    headers: { authorization: `Bearer ${p.key}`, "content-type": "application/json" },
+    body: JSON.stringify({ audio, language, vad_filter: opts.vad ?? true, condition_on_previous_text: false }),
+  });
+  if (!res.ok) throw httpError(res.status, await res.text().catch(() => ""));
+  const data = (await res.json()) as { result?: { text?: string; transcription_info?: { duration?: number } } };
+  return { text: (data.result?.text ?? "").trim(), duration: data.result?.transcription_info?.duration };
+}
+
+/** Ölçüm için: VAD kapalı Workers AI (karşılaştırma). */
+export function sttCallWorkersAiNoVad(p: SttProvider, file: File, language: string): Promise<Raw> {
+  return workersAi(p, file, language, { vad: false });
 }
 
 /**
@@ -311,6 +350,26 @@ async function azurePlain(p: SttProvider, file: File, language: string, audio?: 
     return { text: "", confidence: 0 };
   }
   throw httpError(502, `azure: ${status || "cevap yok"}`);
+}
+
+/**
+ * DEEPGRAM KREDİSİ BİTİNCE (2026-10-05, Samet: "otomatik Workers AI'ya geçsin,
+ * tekrar düşünmek zorunda kalmayalım"). Deepgram bakiyesi sıfırlanınca 402
+ * (`ASR_PAYMENT_REQUIRED`), anahtar sorununda 401/403 dönüyor. Üçü de geçici bir
+ * aksaklık değil: Deepgram bir saat zincirden düşüyor, ses doğrudan Workers AI'a
+ * gidiyor. Bir saat sonra yeniden deneniyor; kredi yüklendiyse kendiliğinden
+ * döner. Bellek süreç başına (her Node örneği kendi 402'sini bir kez görür).
+ * Telegram uyarısı ayrı: `lib/alerts` `deepgram:credit`.
+ */
+const DEEPGRAM_REST_MS = 60 * 60_000;
+let deepgramRestUntil = 0;
+
+export function noteDeepgramFailure(status: number | undefined, now = Date.now()): void {
+  if (status === 401 || status === 402 || status === 403) deepgramRestUntil = now + DEEPGRAM_REST_MS;
+}
+
+export function deepgramResting(now = Date.now()): boolean {
+  return now < deepgramRestUntil;
 }
 
 /**

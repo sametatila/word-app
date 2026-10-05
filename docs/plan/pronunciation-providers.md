@@ -20,13 +20,13 @@ SpeechSuper aylık 20 $ taban, ELSA ücretli). Bu yüzden:
 ## Zincirler (`lib/chat-providers.ts` `sttProviders`, `lib/stt.ts`)
 
 Tek zincir, yalnız mobilde ekran kapalı yürüyüş (`/api/stt`, `mode=walk` zorunlu; diğer istekler
-400 `screen_on_uses_device`): **Azure → Deepgram → Groq**. Ekran açıkken ses hiçbir yüzeyde sunucuya
+400 `screen_on_uses_device`): **Azure → Deepgram → Cloudflare Workers AI → Groq**. Ekran açıkken ses hiçbir yüzeyde sunucuya
 gitmiyor (Samet, 2026-09-27): mobil native tanıyıcı, web Web Speech API; tanıyıcısı olmayan tarayıcıda
 sesli özellik açılmıyor.
 
 Her sağlayıcı çağrısı 8 sn tavanlı; 429'da hemen sıradakine geçilir. Her deneme `ai_usage`a yazılır;
-ses saklanmaz. Cloudflare Workers AI ve Speechmatics (2026-09-27) ses zincirinden kalıcı olarak
-çıktı; Workers AI yalnız dil modeli olarak metin alıyor. Kota modeli: `stt-capacity.md` (tarihsel).
+ses saklanmaz. Speechmatics (2026-09-27) ses zincirinden kalıcı olarak çıktı. Cloudflare Workers AI
+2026-09-27'de çıkmış, 2026-10-05'te Deepgram'ın yedeği olarak dönmüştür (ölçüm `walk-stt.md`). Kota modeli: `stt-capacity.md` (tarihsel).
 
 ## Env
 

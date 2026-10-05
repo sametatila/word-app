@@ -10,6 +10,7 @@ import {
   CLOUDFLARE,
   cloudflareDayUsd,
   cloudflareNeurons,
+  cloudflareSttNeurons,
   deepgramUsd,
   groqChatUsd,
   groqSttBilledSeconds,
@@ -35,6 +36,9 @@ const n = cloudflareNeurons(gemma, 16, 8);
 check("Gemma 4: sağlayıcının bildirdiği 0,36 neuron", n != null && Math.abs(n - 0.36) < 0.01, String(n));
 check("varsayılan model tarifede", cloudflareNeurons(gemma, 1, 1) != null);
 check("tarifede olmayan model null", cloudflareNeurons("@cf/yok/model", 100, 100) === null);
+const w = cloudflareSttNeurons("@cf/openai/whisper-large-v3-turbo", 60);
+check("Whisper turbo: dakikası 46,63 neuron (≈ 0,0005 $)", w != null && near(w, 46.63) && near((w / 1000) * CLOUDFLARE.usdPer1kNeurons, 0.000513), String(w));
+check("tarifede olmayan ses modeli null", cloudflareSttNeurons("@cf/yok/stt", 60) === null);
 check("ücretsiz planda maliyet 0", cloudflareDayUsd(50_000, "free") === 0);
 check("ücretlide ücretsiz pay düşülüyor", cloudflareDayUsd(CLOUDFLARE.freeNeuronsPerDay, "paid") === 0 && near(cloudflareDayUsd(CLOUDFLARE.freeNeuronsPerDay + 1000, "paid"), 0.011));
 

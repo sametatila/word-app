@@ -589,7 +589,7 @@ export function chatConfigured(): boolean {
  */
 export type SttProvider = {
   name: string;
-  dialect: "openai" | "deepgram" | "azure";
+  dialect: "openai" | "deepgram" | "azure" | "workers-ai";
   baseUrl: string;
   key: string;
   model: string;
@@ -605,21 +605,27 @@ export type SttProvider = {
  * deneme sınavı konuşması ve tanıyıcısız tarayıcıdaki yürüyüş sesi buraya
  * geliyordu ("default" kip, Groq önde); o kip kaldırıldı.
  *
- * Sıra sabit: Azure → Deepgram → Groq.
+ * Sıra sabit: Azure → Deepgram → Cloudflare Workers AI → Groq.
  *   1. Azure kısa ses (F0, ayda 5 saat): mobil modülün 16 kHz mono WAV'ını
  *      doğrudan alıyor; öncelikli sağlayıcı. Aylık tavanı dolarsa o ay atlanıyor
  *      (bkz. lib/stt `azureBudgetOk`).
  *   2. Deepgram: başı kesik seste uydurmuyor, boş dönüyor (ölçüldü) — güvenli yedek.
- *   3. Groq Whisper: son yedek; Zero Data Retention açık (2026-09-27).
- * Cloudflare Workers AI ve Speechmatics ses zincirinden KALICI olarak çıktı
- * (2026-09-27, Samet); Cloudflare yalnız dil modeli olarak alıcı. Geri
- * eklemek alıcılar tablosunu (lib/legal PROCESSORS), ses rızası sürümünü
- * (ai-consent-shared) ve iki mağaza beyanını birlikte değiştirmek demek.
+ *      Kredisi 200 $ başlangıç kredisi; bitince 402 dönüyor ve bir saat atlanıyor.
+ *   3. Cloudflare Workers AI, Whisper large v3 turbo (2026-10-05, Samet: "Deepgram
+ *      bitince otomatik Workers AI"). Dakikası 0,0005 $, istek tabanı yok, VAD
+ *      süzgeci açık. 2026-09-27'de ses zincirinden çıkarılmıştı; dönüşüyle alıcılar
+ *      tablosu, ses rızası (sürüm 4) ve gizlilik §4 birlikte değişti (hukuk 1.10.0).
+ *      Ölçüm `npm run test:stt-quality`.
+ *   4. Groq Whisper: son yedek; Zero Data Retention açık (2026-09-27).
+ * Speechmatics ses zincirinden kalıcı olarak çıktı (2026-09-27).
  *
  * STT_ORDER="deepgram,azure" gibi bir liste bu üçünün sırasını ezer ve
  * listede olmayanı dışarıda bırakır (bir hattı geçici olarak denemek ya da
  * kaldırmak için); listede olmayan bir sağlayıcıyı ekleyemez.
  */
+/** Workers AI'daki konuşma tanıma modeli (fiyatı `ai-budget-limits` CLOUDFLARE.sttNeuronsPerMinute). */
+export const CLOUDFLARE_STT_MODEL = "@cf/openai/whisper-large-v3-turbo";
+
 export function sttProviders(): SttProvider[] {
   const out: SttProvider[] = [];
   const azKey = process.env.AZURE_SPEECH_KEY;
@@ -630,6 +636,12 @@ export function sttProviders(): SttProvider[] {
   const dgKey = process.env.DEEPGRAM_API_KEY;
   if (dgKey) {
     out.push({ name: "deepgram", dialect: "deepgram", baseUrl: "https://api.deepgram.com/v1/listen", key: dgKey, model: process.env.DEEPGRAM_STT_MODEL || "nova-3" });
+  }
+  /* Deepgram'ın yedeği: kredisi bitince (402) ya da düşünce ses buraya geliyor (bkz. lib/stt `deepgramResting`). */
+  const cfAccount = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const cfToken = process.env[CATALOG.cloudflare.envKey];
+  if (cfAccount && cfToken) {
+    out.push({ name: "cloudflare", dialect: "workers-ai", baseUrl: `https://api.cloudflare.com/client/v4/accounts/${cfAccount}`, key: cfToken, model: CLOUDFLARE_STT_MODEL });
   }
   const groq = process.env[CATALOG.groq.envKey];
   if (groq && CATALOG.groq.sttModel) {

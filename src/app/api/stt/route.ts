@@ -37,7 +37,7 @@ const DAILY_LIMIT = DAILY_QUOTAS.sttRequests;
  * isteği 400 ile reddediyor: iki mobil modül (Android `LernomiSpeechModule`,
  * iOS `LernomiSpeech`) bu alanı her yüklemede gönderiyor.
  *
- * Sağlayıcı zinciri (Azure → Deepgram → Groq) ve muhasebe `lib/stt.ts`'te.
+ * Sağlayıcı zinciri (Azure → Deepgram → Cloudflare Workers AI → Groq) ve muhasebe `lib/stt.ts`'te.
  * Ses saklanmıyor.
  */
 export async function POST(req: Request) {

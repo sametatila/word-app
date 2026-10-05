@@ -39,7 +39,7 @@ async function main() {
   process.env.AZURE_SPEECH_REGION = "germanywestcentral";
   process.env.DEEPGRAM_API_KEY = "dg";
   check("dil modeli sırası Cloudflare, Groq", roles("chat") === "cloudflare,groq", roles("chat"));
-  check("konuşma tanıma sırası Azure, Deepgram, Groq", roles("stt") === "azure,deepgram,groq", roles("stt"));
+  check("konuşma tanıma sırası Azure, Deepgram, Cloudflare, Groq", roles("stt") === "azure,deepgram,cloudflare,groq", roles("stt"));
   check("Azure anahtarı varsa seslendirme yedeği", roles("tts") === "edge,azure", roles("tts"));
   check("kaldırılan sağlayıcılar listede yok", !activeAiProviderNames().has("mistral") && !activeAiProviderNames().has("cerebras"));
 
@@ -49,6 +49,21 @@ async function main() {
 
   delete process.env.CLOUDFLARE_ACCOUNT_ID;
   check("hesap kimliği yoksa Cloudflare etkin değil", roles("chat") === "groq", roles("chat"));
+  check("hesap kimliği yoksa Cloudflare ses zincirinde de yok", roles("stt") === "azure,deepgram,groq", roles("stt"));
+
+  console.log("\nDeepgram kredisi bitince");
+  const { noteDeepgramFailure, deepgramResting } = await import("../src/lib/stt");
+  const t0 = 1_000_000;
+  check("başta dinlenmiyor", !deepgramResting(t0));
+  noteDeepgramFailure(500, t0);
+  check("5xx geçici: dinlenmiyor", !deepgramResting(t0 + 1));
+  noteDeepgramFailure(429, t0);
+  check("429 geçici: dinlenmiyor", !deepgramResting(t0 + 1));
+  noteDeepgramFailure(402, t0);
+  check("402 (kredi bitti): bir saat dinleniyor", deepgramResting(t0 + 59 * 60_000));
+  check("bir saat sonra yeniden deneniyor", !deepgramResting(t0 + 61 * 60_000));
+  noteDeepgramFailure(401, t0);
+  check("401 (anahtar): dinleniyor", deepgramResting(t0 + 1));
 
   console.log(`\n${total - failures}/${total} geçti`);
   if (failures) process.exit(1);

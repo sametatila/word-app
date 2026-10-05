@@ -7,6 +7,7 @@ import {
   RESEND,
   cloudflareDayUsd,
   cloudflareNeurons,
+  cloudflareSttNeurons,
   deepgramUsd,
   groqChatUsd,
   groqSttUsd,
@@ -79,7 +80,7 @@ export async function aiBudget(now: Date = new Date()): Promise<AiBudget> {
   const monthStart = `${today.slice(0, 8)}01`;
   const monthStartTs = `${monthStart}T00:00:00Z`;
 
-  const [cf, groqChat, groqStt, groqSttMonth, groqChatMonth, dg, mail] = await Promise.all([
+  const [cf, groqChat, groqStt, groqSttMonth, groqChatMonth, dg, mail, cfStt] = await Promise.all([
     rows(sql`select day::text as day, model, coalesce(sum(prompt_tokens),0)::bigint pin, coalesce(sum(completion_tokens),0)::bigint pout,
         count(*) filter (where ok and prompt_tokens is null)::int missing
       from ai_usage where provider = 'cloudflare' and kind in ('chat','assess','coach') and day >= ${monthStart}::date group by 1, 2`),
@@ -96,6 +97,9 @@ export async function aiBudget(now: Date = new Date()): Promise<AiBudget> {
     rows(sql`select count(*) filter (where created_at >= now() - interval '24 hours')::int d,
         count(*) filter (where created_at >= ${monthStartTs}::timestamptz)::int m
       from events where name = 'mail_sent' and kind like '%:ok' and created_at >= least(now() - interval '24 hours', ${monthStartTs}::timestamptz)`),
+    /* Workers AI konuşma tanıma (Deepgram'ın yedeği): saniyeden neuron, aynı günlük paydan düşüyor. */
+    rows(sql`select day::text as day, model, coalesce(sum(audio_seconds),0)::int s
+      from ai_usage where provider = 'cloudflare' and kind = 'stt' and ok and day >= ${monthStart}::date group by 1, 2`),
   ]);
 
   /* Cloudflare: neuron gün gün (ücretsiz pay günlük), maliyet günlerin toplamı. */
@@ -107,6 +111,14 @@ export async function aiBudget(now: Date = new Date()): Promise<AiBudget> {
     const n = cloudflareNeurons(String(r.model), num(r.pin), num(r.pout));
     if (n == null) {
       if (num(r.pin) + num(r.pout) > 0 || num(r.missing) > 0) unknown.add(String(r.model));
+      continue;
+    }
+    byDay.set(String(r.day), (byDay.get(String(r.day)) ?? 0) + n);
+  }
+  for (const r of cfStt) {
+    const n = cloudflareSttNeurons(String(r.model), num(r.s));
+    if (n == null) {
+      if (num(r.s) > 0) unknown.add(String(r.model));
       continue;
     }
     byDay.set(String(r.day), (byDay.get(String(r.day)) ?? 0) + n);
