@@ -36,6 +36,27 @@ Kaynak: `scripts/tts-inventory.ts` (çıktı `reports/tts-inventory.json`) ve tt
 Kapsam dışı: **sohbet** (AI cevapları; Edge'de kalıyor) ve **gsw-zh** (Zürih; karakterlerin İsviçre
 Almancası yok, de-CH Edge sesinde kalıyor).
 
+## KALAN ÜRETİM ENVANTERİ (2026-10-05, ölçüm)
+
+İş listeleri uygulamanın kendi kurallarıyla (`tts-own-coverage`, `tts-listening-jobs`, `tts-reading-jobs`,
+`tts-conversation-jobs` + anadili İngilizce/Almanca konuşmalar `resolveConversation`/`resolveEnConversation` ile)
+kuruldu, canlı `tts-map.json` ile karşılaştırıldı. Ses süresi 14 karakter/sn.
+
+| Katman | Kim çalar | Eksik iş | ≈ ses |
+|---|---|---|---|
+| Kelime + yürüyüş + anlam (3 anadil) | seçilen karakter | **0** (KAPSAM TAM, ses bekçisi) | — |
+| Dinleme | sabit kadro (Defne, Aras, Mira, Can) | 7.137 (Aras 4.566 · Defne 1.806 · Mira 471 · Can 294) | 13,8 sa |
+| Okuma | seçilen karakter (Defne VE Aras) | 5.492 (Aras 4.122 · Defne 1.370) | 21,5 sa |
+| Konuşma | seçilen karakter (Defne VE Aras); anlatım kullanıcının anadilinde | 132.332 (karakter başına ~66 bin) | 143 sa |
+| **Toplam** | | **~145 bin** | **~178 sa** |
+
+Konuşma, karakter başına: anlatım tr 29,8 sa, anlatım de (İngilizce kurs, anadili Almanca) 19,5 sa, anlatım en
+(Almanca kurs, anadili İngilizce) 14,8 sa, hedef dil parçaları 7,5 sa. Dinleme/okumanın yavaş sürümleri (`#listen`,
+`#listenSlow`) üretim değil, yayında kodlama.
+Ayrıca yeniden üretim: yukarıdaki "açmadan önce" maddeleri (okunuşu değişen 435 katman anahtarı, reddedilen katman
+kayıtları, 163 karışık anlatım satırı). Kapsam dışı: sohbet (yapay zekâ cevabı, Edge) ve Zürih (gsw-zh).
+Ölçek: 4090 kiralamada önceki hesap ses başına ~104 sa için 35–60 $ → bu envanter ≈ 60–105 $; Mac'te haftalar.
+
 ## DURUM — dinleme ve okuma katmanı: açmadan önce (2026-10-05)
 
 `TTS_OWN_LAYERS` canlıda boş: bu katmanlar Edge'den çalıyor. Tablodaki katman kayıtları Linux döneminden ve eksik
