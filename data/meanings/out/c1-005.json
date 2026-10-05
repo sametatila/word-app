@@ -172,7 +172,7 @@
     "tr": "tebligat",
     "en": "service of documents",
     "beispiel": "Die Zustellung des Bescheids erfolgte per Einschreiben.",
-    "beispielTr": "Kararın tebligatı iadeli taahhütlü mektupla yapıldı.",
+    "beispielTr": "Kararın tebligatı taahhütlü mektupla yapıldı.",
     "beispielEn": "The decision was served by registered mail."
   },
   {
@@ -181,7 +181,7 @@
     "en": "file number",
     "beispiel": "Bitte geben Sie bei Rückfragen das Aktenzeichen an.",
     "beispielTr": "Sorularınızda lütfen dosya numarasını belirtin.",
-    "beispielEn": "Please quote the file number if you have questions."
+    "beispielEn": "Please include the file number with any questions."
   },
   {
     "id": 3576,

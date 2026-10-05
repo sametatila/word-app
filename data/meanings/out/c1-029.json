@@ -164,7 +164,7 @@
     "tr": "organ bağışı",
     "en": "organ donation",
     "beispiel": "Er hat sich vor Jahren für die Organspende entschieden.",
-    "beispielTr": "Yıllar önce organ bağışına karar vermişti.",
+    "beispielTr": "Yıllar önce organ bağışına karar verdi.",
     "beispielEn": "He decided in favor of organ donation years ago."
   },
   {
@@ -317,7 +317,7 @@
     "en": "refugee convention",
     "beispiel": "Das Gericht berief sich auf die Flüchtlingskonvention.",
     "beispielTr": "Mahkeme mülteci sözleşmesine dayandı.",
-    "beispielEn": "The court based its ruling on the refugee convention."
+    "beispielEn": "The court invoked the refugee convention."
   },
   {
     "id": 6693,

@@ -93,7 +93,7 @@
     "en": "emotionalization",
     "beispiel": "Die Emotionalisierung des Falls trieb die Klickzahlen nach oben.",
     "beispielTr": "Olayın duygusallaştırılması tıklanma sayılarını yukarı çekti.",
-    "beispielEn": "The emotionalization of the case drove the click numbers up."
+    "beispielEn": "The emotionalization of the case drove up the number of clicks."
   },
   {
     "id": 6615,
@@ -101,7 +101,7 @@
     "en": "commercialization",
     "beispiel": "Die Kommerzialisierung des Sports hat die Ticketpreise verdoppelt.",
     "beispielTr": "Sporun ticarileşmesi bilet fiyatlarını ikiye katladı.",
-    "beispielEn": "The commercialization of sport has doubled ticket prices."
+    "beispielEn": "The commercialization of sports has doubled ticket prices."
   },
   {
     "id": 6616,
@@ -173,7 +173,7 @@
     "en": "to set straight",
     "beispiel": "Die Redaktion stellte die falsche Zahl erst nach drei Tagen richtig.",
     "beispielTr": "Yayın kurulu yanlış sayıyı ancak üç gün sonra düzeltti.",
-    "beispielEn": "The editors set the wrong figure straight only after three days."
+    "beispielEn": "The editors corrected the wrong figure only after three days."
   },
   {
     "id": 6625,
@@ -196,8 +196,8 @@
     "tr": "rezil etmek",
     "en": "to humiliate",
     "beispiel": "Der Moderator stellte seinen Gast vor laufender Kamera bloß.",
-    "beispielTr": "Sunucu, konuğunu canlı yayında rezil etti.",
-    "beispielEn": "The host humiliated his guest on live television."
+    "beispielTr": "Sunucu, konuğunu kameralar önünde rezil etti.",
+    "beispielEn": "The host humiliated his guest on camera."
   },
   {
     "id": 6628,
@@ -228,7 +228,7 @@
     "tr": "beyan etmek",
     "en": "to disclose",
     "beispiel": "Autoren müssen mögliche Interessenkonflikte am Textende offenlegen.",
-    "beispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda açıklamak zorundadır.",
+    "beispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda beyan etmek zorundadır.",
     "beispielEn": "Authors have to disclose possible conflicts of interest at the end of the text."
   },
   {
@@ -349,7 +349,7 @@
     "en": "euthanasia",
     "beispiel": "Über die Zulässigkeit aktiver Sterbehilfe wird seit Jahrzehnten gestritten.",
     "beispielTr": "Aktif ötanazinin serbest olup olmadığı onlarca yıldır tartışılıyor.",
-    "beispielEn": "The admissibility of active euthanasia has been disputed for decades."
+    "beispielEn": "The permissibility of active euthanasia has been debated for decades."
   },
   {
     "id": 6647,
@@ -372,7 +372,7 @@
     "tr": "dağıtım adaleti",
     "en": "distributive justice",
     "beispiel": "Bei knappen Spenderorganen stellt sich die Frage der Verteilungsgerechtigkeit.",
-    "beispielTr": "Bağış organları kıt olunca dağıtım adaleti sorunu gündeme gelir.",
+    "beispielTr": "Bağışlanan organlar kıt olduğunda dağıtım adaleti sorunu gündeme gelir.",
     "beispielEn": "When donor organs are scarce the question of distributive justice arises."
   },
   {

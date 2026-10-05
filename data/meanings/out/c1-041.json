@@ -85,7 +85,7 @@
     "en": "administrative assistance",
     "beispiel": "Die Polizei leistete dem Finanzamt bei der Durchsuchung Amtshilfe.",
     "beispielTr": "Polis, aramada vergi dairesine idari yardım sağladı.",
-    "beispielEn": "The police provided administrative assistance to the tax office."
+    "beispielEn": "The police provided administrative assistance to the tax office during the search."
   },
   {
     "id": 7264,
@@ -172,8 +172,8 @@
     "tr": "tarafından",
     "en": "on the part of",
     "beispiel": "Seitens der Verwaltung kam bisher keine Stellungnahme.",
-    "beispielTr": "İdare tarafından şimdiye dek bir açıklama gelmedi.",
-    "beispielEn": "There has been no statement on the part of the administration."
+    "beispielTr": "İdare tarafından şimdiye dek bir açıklama yapılmadı.",
+    "beispielEn": "So far there has been no statement on the part of the administration."
   },
   {
     "id": 7275,
@@ -365,7 +365,7 @@
     "en": "opportunity cost",
     "beispiel": "Wer studiert, trägt Opportunitätskosten in Form entgangener Löhne.",
     "beispielTr": "Üniversite okuyan kişi, kazanamadığı ücretler biçiminde fırsat maliyeti üstlenir.",
-    "beispielEn": "Anyone who studies bears opportunity costs in the form of lost wages."
+    "beispielEn": "Anyone who goes to college bears opportunity costs in the form of forgone wages."
   },
   {
     "id": 7299,

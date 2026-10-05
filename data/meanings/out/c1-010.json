@@ -92,7 +92,7 @@
     "tr": "arazi toplulaştırması",
     "en": "land consolidation",
     "beispiel": "Die Flurbereinigung der Nachkriegszeit hat unzählige Hecken beseitigt.",
-    "beispielTr": "Savaş sonrası dönemin arazi toplulaştırması sayısız çalıyı yok etti.",
+    "beispielTr": "Savaş sonrası dönemin arazi toplulaştırması sayısız çalı çitini yok etti.",
     "beispielEn": "The postwar land consolidation removed countless hedgerows."
   },
   {
@@ -180,7 +180,7 @@
     "tr": "doğrudan pazarlama",
     "en": "direct marketing",
     "beispiel": "Über die Direktvermarktung umgehen Höfe den Druck des Handels.",
-    "beispielTr": "Doğrudan pazarlamayla çiftlikler perakendenin baskısını atlatıyor.",
+    "beispielTr": "Doğrudan pazarlamayla çiftlikler perakendecilerin baskısından kurtuluyor.",
     "beispielEn": "Through direct marketing farms bypass the pressure of the retail trade."
   },
   {
@@ -245,7 +245,7 @@
     "en": "to deplete",
     "beispiel": "Jahrzehntelanger Maisanbau hat die Böden vollständig ausgelaugt.",
     "beispielTr": "Onlarca yıllık mısır ekimi toprakları tamamen çoraklaştırdı.",
-    "beispielEn": "Decades of maize cultivation have completely depleted the soils."
+    "beispielEn": "Decades of corn cultivation have completely depleted the soils."
   },
   {
     "id": 5734,
@@ -261,7 +261,7 @@
     "en": "to refine",
     "beispiel": "Regional veredelte Produkte erzielen auf dem Markt höhere Preise.",
     "beispielTr": "Bölgede işlenen ürünler piyasada daha yüksek fiyat getiriyor.",
-    "beispielEn": "Regionally refined products fetch higher prices on the market."
+    "beispielEn": "Regionally processed products fetch higher prices on the market."
   },
   {
     "id": 5736,
@@ -372,7 +372,7 @@
     "tr": "tarla tarımına ilişkin",
     "en": "agronomic",
     "beispiel": "Ackerbauliche Maßnahmen allein lösen das Problem der Verdichtung nicht.",
-    "beispielTr": "Tarla tarımına ilişkin önlemler tek başına sıkışma sorununu çözmez.",
+    "beispielTr": "Tarla tarımına ilişkin önlemler tek başına toprak sıkışması sorununu çözmez.",
     "beispielEn": "Agronomic measures alone do not solve the problem of soil compaction."
   },
   {

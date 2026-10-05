@@ -36,7 +36,7 @@
     "tr": "soy",
     "en": "descent",
     "beispiel": "Die Abstammung wird in dieser Gruppe über die Mutter gerechnet.",
-    "beispielTr": "Bu grupta soy anne üzerinden hesaplanır.",
+    "beispielTr": "Bu grupta soy anne tarafından izlenir.",
     "beispielEn": "In this group descent is traced through the mother."
   },
   {
@@ -172,7 +172,7 @@
     "tr": "davranış kuralları",
     "en": "code of conduct",
     "beispiel": "Ein ungeschriebener Verhaltenskodex regelt, wer zuerst spricht.",
-    "beispielTr": "Yazılı olmayan bir davranış kuralı kimin önce konuşacağını belirler.",
+    "beispielTr": "Yazılı olmayan davranış kuralları kimin önce konuşacağını belirler.",
     "beispielEn": "An unwritten code of conduct governs who speaks first."
   },
   {
@@ -277,7 +277,7 @@
     "en": "meaning-making",
     "beispiel": "Rituale dienen der Sinnstiftung in Zeiten großer Unsicherheit.",
     "beispielTr": "Ritüeller büyük belirsizlik zamanlarında anlam kurmaya yarar.",
-    "beispielEn": "Rituals serve meaning-making in times of great uncertainty."
+    "beispielEn": "Rituals help create meaning in times of great uncertainty."
   },
   {
     "id": 5788,

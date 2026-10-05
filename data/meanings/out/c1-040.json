@@ -28,7 +28,7 @@
     "tr": "eğilim olarak",
     "en": "tend to",
     "beispiel": "Jüngere Befragte antworten tendenziell kritischer als ältere.",
-    "beispielTr": "Genç katılımcılar eğilim olarak yaşlılardan daha eleştirel yanıt veriyor.",
+    "beispielTr": "Genç katılımcılar, yaşça büyüklere göre daha eleştirel yanıt verme eğiliminde.",
     "beispielEn": "Younger respondents tend to answer more critically than older ones."
   },
   {
@@ -133,7 +133,7 @@
     "en": "regulation",
     "beispiel": "Die EU plant eine strengere Regulierung von Kryptowährungen.",
     "beispielTr": "AB, kripto paralar için daha sıkı bir düzenleme planlıyor.",
-    "beispielEn": "The EU plans a stricter regulation of cryptocurrencies."
+    "beispielEn": "The EU is planning stricter regulation of cryptocurrencies."
   },
   {
     "id": 7220,
@@ -189,7 +189,7 @@
     "en": "diffusion of responsibility",
     "beispiel": "In verteilten Systemen droht eine Verantwortungsdiffusion zwischen Entwicklern und Betreibern.",
     "beispielTr": "Dağıtık sistemlerde geliştiricilerle işletmeciler arasında sorumluluğun dağılması tehlikesi var.",
-    "beispielEn": "In distributed systems, responsibility risks diffusing between developers and operators."
+    "beispielEn": "In distributed systems, there is a risk of diffusion of responsibility between developers and operators."
   },
   {
     "id": 7227,
@@ -204,7 +204,7 @@
     "tr": "erişim yetkisi",
     "en": "access right",
     "beispiel": "Zu weit gefasste Zugriffsrechte sind eine häufige Ursache für Datenpannen.",
-    "beispielTr": "Fazla geniş tanımlanmış erişim yetkileri veri sızıntılarının sık görülen sebebidir.",
+    "beispielTr": "Fazla geniş tanımlanmış erişim yetkileri, veri sızıntılarının sık görülen nedenlerinden biridir.",
     "beispielEn": "Overly broad access rights are a common cause of data breaches."
   },
   {
@@ -220,7 +220,7 @@
     "tr": "nicelleştirme",
     "en": "quantification",
     "beispiel": "Die Quantifizierung von Bildung verkennt, was sich schwer messen lässt.",
-    "beispielTr": "Eğitimin sayısallaştırılması, zor ölçülen şeyleri görmezden geliyor.",
+    "beispielTr": "Eğitimin nicelleştirilmesi, zor ölçülen şeyleri görmezden geliyor.",
     "beispielEn": "The quantification of education ignores what is hard to measure."
   },
   {
@@ -388,7 +388,7 @@
     "tr": "kamu denetçiliği",
     "en": "ombudsman's office",
     "beispiel": "Bürger können sich bei Konflikten mit Ämtern an die Ombudsstelle wenden.",
-    "beispielTr": "Vatandaşlar dairelerle yaşadıkları anlaşmazlıklarda kamu denetçiliğine başvurabilir.",
+    "beispielTr": "Vatandaşlar resmî dairelerle yaşadıkları anlaşmazlıklarda kamu denetçiliğine başvurabilir.",
     "beispielEn": "Citizens can turn to the ombudsman's office in conflicts with public offices."
   },
   {

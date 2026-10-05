@@ -12,7 +12,7 @@
   "tr": "rekabet baskısı",
   "en": "competitive pressure",
   "beispiel": "Der Konkurrenzdruck im Büro raubt ihm den Schlaf.",
-  "beispielTr": "Ofisteki rekabet baskısı adamın uykusunu kaçırıyor.",
+  "beispielTr": "Ofisteki rekabet baskısı onun uykusunu kaçırıyor.",
   "beispielEn": "The competitive pressure at the office robs him of sleep."
  },
  {
@@ -124,8 +124,8 @@
   "tr": "takdir etmek",
   "en": "to recognize",
   "beispiel": "Niemand hat ihre Mehrarbeit am Wochenende honoriert.",
-  "beispielTr": "Hafta sonundaki fazla mesaisini kimse ödüllendirmedi.",
-  "beispielEn": "Nobody rewarded her extra work on the weekend."
+  "beispielTr": "Hafta sonundaki fazla mesaisini kimse takdir etmedi.",
+  "beispielEn": "Nobody recognized her extra work on the weekend."
  },
  {
   "id": 5869,
@@ -244,7 +244,7 @@
   "tr": "geçirgen",
   "en": "permeable",
   "beispiel": "Das Schulsystem ist nur auf dem Papier durchlässig.",
-  "beispielTr": "Okul sistemi yalnızca kâğıt üzerinde geçirgen.",
+  "beispielTr": "Okul sistemi yalnızca kâğıt üzerinde geçişlere açık.",
   "beispielEn": "The school system is permeable only on paper."
  },
  {
@@ -380,7 +380,7 @@
   "tr": "uydu kent",
   "en": "satellite town",
   "beispiel": "Meine Großeltern wohnen in einer Trabantenstadt bei Hannover.",
-  "beispielTr": "Büyükannemler Hannover yakınlarındaki bir uydu kentte oturuyor.",
+  "beispielTr": "Büyükannemle dedem Hannover yakınlarındaki bir uydu kentte oturuyor.",
   "beispielEn": "My grandparents live in a satellite town near Hanover."
  },
  {

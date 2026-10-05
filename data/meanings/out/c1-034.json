@@ -37,7 +37,7 @@
     "en": "sovereign",
     "beispiel": "Private Firmen dürfen keine hoheitlichen Aufgaben übernehmen.",
     "beispielTr": "Özel şirketler kamu gücüne dayalı görevleri üstlenemez.",
-    "beispielEn": "Private companies may not take on sovereign tasks."
+    "beispielEn": "Private companies may not perform sovereign functions."
   },
   {
     "id": 6908,
@@ -68,7 +68,7 @@
     "tr": "çarpıtma",
     "en": "distortion",
     "beispiel": "Die Statistik enthält eine Verzerrung zugunsten junger Befragter.",
-    "beispielTr": "İstatistikte genç katılımcılar lehine bir çarpıtma var.",
+    "beispielTr": "İstatistikte genç katılımcılar lehine bir sapma var.",
     "beispielEn": "The statistics contain a distortion favoring young respondents."
   },
   {
@@ -204,7 +204,7 @@
     "tr": "aktarım",
     "en": "transference",
     "beispiel": "In der Therapie richtete sich die Übertragung auf den Arzt.",
-    "beispielTr": "Terapide aktarım doğrudan doktora yöneldi.",
+    "beispielTr": "Terapide aktarım doktora yöneldi.",
     "beispielEn": "In therapy the transference was directed at the doctor."
   },
   {

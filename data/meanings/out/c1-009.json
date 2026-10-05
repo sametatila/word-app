@@ -173,7 +173,7 @@
   "en": "to forfeit",
   "beispiel": "Die Partei büßte bei der Wahl deutlich an Zustimmung ein.",
   "beispielTr": "Parti, seçimde ciddi ölçüde destek yitirdi.",
-  "beispielEn": "The party forfeited considerable support in the election."
+  "beispielEn": "The party lost considerable support in the election."
  },
  {
   "id": 4024,
@@ -388,8 +388,8 @@
   "tr": "piyasa düzeni",
   "en": "market organization",
   "beispiel": "Ohne eine wirksame Marktordnung bleiben die Erzeuger dem Handel ausgeliefert.",
-  "beispielTr": "Etkili bir piyasa düzeni olmadan üreticiler ticaretin insafına kalıyor.",
-  "beispielEn": "Without an effective market organization producers are at the mercy of trade."
+  "beispielTr": "Etkili bir piyasa düzeni olmadan üreticiler perakendecilerin insafına kalıyor.",
+  "beispielEn": "Without an effective market organization, producers are at the mercy of retailers."
  },
  {
   "id": 5702,

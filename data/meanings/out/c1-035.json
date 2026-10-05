@@ -101,7 +101,7 @@
     "en": "benevolent",
     "beispiel": "Sie beurteilte die Arbeit ihrer Studenten wohlwollend.",
     "beispielTr": "Öğrencilerinin çalışmalarını iyi niyetle değerlendirdi.",
-    "beispielEn": "She judged her students' work benevolently."
+    "beispielEn": "She judged her students' work favorably."
   },
   {
     "id": 6966,
@@ -156,7 +156,7 @@
     "tr": "haddini bilmez",
     "en": "presumptuous",
     "beispiel": "Es wäre anmaßend, über fremde Lebensentwürfe zu urteilen.",
-    "beispielTr": "Başkalarının hayat tasarıları hakkında hüküm vermek haddini bilmezlik olur.",
+    "beispielTr": "Başkalarının hayat tercihleri hakkında hüküm vermek haddini bilmezlik olur.",
     "beispielEn": "It would be presumptuous to judge other people's life choices."
   },
   {
@@ -332,7 +332,7 @@
     "tr": "izlenimi vermek",
     "en": "to seem",
     "beispiel": "Der Vorschlag mutet auf den ersten Blick naiv an.",
-    "beispielTr": "Öneri ilk bakışta saf bir izlenim veriyor.",
+    "beispielTr": "Öneri ilk bakışta naif bir izlenim veriyor.",
     "beispielEn": "At first glance the proposal seems naive."
   },
   {
@@ -381,7 +381,7 @@
     "en": "to sense",
     "beispiel": "Die Tragweite dieser Entscheidung lässt sich nur erahnen.",
     "beispielTr": "Bu kararın kapsamı ancak sezilebiliyor.",
-    "beispielEn": "The scope of this decision can only be sensed."
+    "beispielEn": "One can only guess at the full implications of this decision."
   },
   {
     "id": 7001,

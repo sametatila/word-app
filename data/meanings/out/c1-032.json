@@ -60,7 +60,7 @@
     "tr": "ikincil hammadde",
     "en": "secondary raw material",
     "beispiel": "Aus Altgeräten gewonnene Sekundärrohstoffe ersetzen zunehmend importierte Metalle.",
-    "beispielTr": "Eski cihazlardan elde edilen ikincil hammaddeler ithal metallerin yerini alıyor.",
+    "beispielTr": "Eski cihazlardan elde edilen ikincil hammaddeler giderek ithal metallerin yerini alıyor.",
     "beispielEn": "Secondary raw materials from old devices increasingly replace imported metals."
   },
   {
@@ -236,7 +236,7 @@
     "tr": "geleceğe dayanıklı",
     "en": "future-proof",
     "beispiel": "Ein zukunftsfähiges Wirtschaftsmodell darf nicht auf ewigem Mengenwachstum beruhen.",
-    "beispielTr": "Geleceğe dayanıklı bir ekonomi modeli sonsuz nicelik büyümesine dayanamaz.",
+    "beispielTr": "Geleceğe dayanıklı bir ekonomi modeli sonsuz nicelik büyümesine dayanmamalı.",
     "beispielEn": "A future-proof economic model must not rest on endless growth in volume."
   },
   {
@@ -349,7 +349,7 @@
     "en": "mind",
     "beispiel": "Sein wacher Verstand fiel allen sofort auf.",
     "beispielTr": "Uyanık zihni herkesin hemen dikkatini çekti.",
-    "beispielEn": "His alert mind immediately struck everyone."
+    "beispielEn": "Everyone noticed his alert mind right away."
   },
   {
     "id": 6847,
@@ -397,6 +397,6 @@
     "en": "commandment",
     "beispiel": "Fairness ist hier weniger ein Gesetz als ein moralisches Gebot.",
     "beispielTr": "Adillik burada bir yasadan çok ahlaki bir buyruktur.",
-    "beispielEn": "Fairness here is less a law than a moral commandment."
+    "beispielEn": "Fairness here is less a law than a moral imperative."
   }
 ]

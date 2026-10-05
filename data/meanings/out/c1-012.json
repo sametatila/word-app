@@ -124,7 +124,7 @@
   "tr": "yaygın",
   "en": "commonly used",
   "beispiel": "Diese Anrede ist nur noch in wenigen Bergdörfern gebräuchlich.",
-  "beispielTr": "Bu hitap biçimi artık yalnızca birkaç dağ köyünde yaygın.",
+  "beispielTr": "Bu hitap biçimi artık yalnızca birkaç dağ köyünde kullanılıyor.",
   "beispielEn": "This form of address is still common only in a few mountain villages."
  },
  {
@@ -149,7 +149,7 @@
   "en": "unspoken",
   "beispiel": "Zwischen den beiden steht ein unausgesprochener Vorwurf.",
   "beispielTr": "İkisinin arasında söylenmemiş bir sitem duruyor.",
-  "beispielEn": "An unspoken reproach stands between the two of them."
+  "beispielEn": "There is an unspoken reproach between the two of them."
  },
  {
   "id": 5822,
@@ -164,8 +164,8 @@
   "tr": "dünya görüşüyle ilgili",
   "en": "ideological",
   "beispiel": "Der Streit im Verein ist weltanschaulich, nicht sachlich.",
-  "beispielTr": "Dernekteki kavga nesnel değil, dünya görüşüyle ilgili.",
-  "beispielEn": "The dispute in the club is ideological, not factual."
+  "beispielTr": "Dernekteki kavga konuyla değil, dünya görüşüyle ilgili.",
+  "beispielEn": "The dispute in the club is ideological, not about substance."
  },
  {
   "id": 5824,
@@ -300,8 +300,8 @@
   "tr": "özdeşleşme",
   "en": "identification",
   "beispiel": "Ihre Identifikation mit dem Verein geht sehr weit.",
-  "beispielTr": "Kulüple özdeşleşmesi çok ileri gidiyor.",
-  "beispielEn": "Her identification with the club goes very far."
+  "beispielTr": "Kulüple özdeşleşmesi çok derin.",
+  "beispielEn": "Her identification with the club runs very deep."
  },
  {
   "id": 5841,
@@ -356,7 +356,7 @@
   "tr": "vasıfsızlaşma",
   "en": "deskilling",
   "beispiel": "Die neuen Automaten führen zur Dequalifizierung der Bäcker.",
-  "beispielTr": "Yeni otomatlar fırıncıların vasıfsızlaşmasına yol açıyor.",
+  "beispielTr": "Yeni makineler fırıncıların vasıfsızlaşmasına yol açıyor.",
   "beispielEn": "The new machines lead to the deskilling of bakers."
  },
  {

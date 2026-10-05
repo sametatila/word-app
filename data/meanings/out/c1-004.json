@@ -364,7 +364,7 @@
   "tr": "gözler önüne sermek",
   "en": "to illustrate",
   "beispiel": "Eine Grafik veranschaulicht die Entwicklung der Preise.",
-  "beispielTr": "Bir grafik, fiyatların gelişimini somutlaştırıyor.",
+  "beispielTr": "Bir grafik, fiyatların seyrini gözler önüne seriyor.",
   "beispielEn": "A chart illustrates how prices developed."
  },
  {
@@ -389,7 +389,7 @@
   "en": "to falsify",
   "beispiel": "Schon ein Gegenbeweis kann die Theorie falsifizieren.",
   "beispielTr": "Tek bir karşı kanıt bile teoriyi yanlışlayabilir.",
-  "beispielEn": "Even a single counterexample can falsify the theory."
+  "beispielEn": "Even a single piece of counterevidence can falsify the theory."
  },
  {
   "id": 3510,

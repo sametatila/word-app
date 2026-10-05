@@ -140,7 +140,7 @@
     "tr": "kuşku duymak",
     "en": "to doubt",
     "beispiel": "Niemand bezweifelt die Fakten, wohl aber ihre Deutung.",
-    "beispielTr": "Olgulardan kimse kuşku duymuyor, ama yorumlarından duyuyor.",
+    "beispielTr": "Olgulardan kimse kuşku duymuyor, ama yorumlarından kuşku duyuluyor.",
     "beispielEn": "Nobody doubts the facts, but they do doubt their interpretation."
   },
   {
@@ -188,7 +188,7 @@
     "tr": "kusur bulmak",
     "en": "to criticize",
     "beispiel": "Mehrere Gutachter monierten die unklare Fragestellung der Arbeit.",
-    "beispielTr": "Birkaç hakem çalışmanın belirsiz soru kurgusuna kusur buldu.",
+    "beispielTr": "Birkaç hakem çalışmanın belirsiz araştırma sorusunu eleştirdi.",
     "beispielEn": "Several reviewers criticized the study's unclear research question."
   },
   {
@@ -205,7 +205,7 @@
     "en": "to concede",
     "beispiel": "Selbst seine Gegner konzedieren ihm eine gewisse gedankliche Konsequenz.",
     "beispielTr": "Rakipleri bile onda belli bir düşünsel tutarlılık olduğunu kabul ediyor.",
-    "beispielEn": "Even his opponents concede that he is intellectually consistent."
+    "beispielEn": "Even his opponents concede that he has a certain intellectual consistency."
   },
   {
     "id": 6179,

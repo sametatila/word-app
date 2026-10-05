@@ -156,7 +156,7 @@
     "tr": "saygıdeğer",
     "en": "venerable",
     "beispiel": "Das ehrwürdige Gebäude dient seit dem Mittelalter demselben Zweck.",
-    "beispielTr": "Saygıdeğer yapı, Orta Çağ'dan beri aynı amaca hizmet ediyor.",
+    "beispielTr": "Bu kadim yapı, Orta Çağ'dan beri aynı amaca hizmet ediyor.",
     "beispielEn": "The venerable building has served the same purpose since the Middle Ages."
   },
   {
@@ -229,7 +229,7 @@
     "en": "source language",
     "beispiel": "Manche Wortspiele der Ausgangssprache gehen bei der Übertragung verloren.",
     "beispielTr": "Kaynak dildeki bazı kelime oyunları aktarımda kayboluyor.",
-    "beispielEn": "Some of the source language's wordplay gets lost in the transfer."
+    "beispielEn": "Some wordplay in the source language gets lost in translation."
   },
   {
     "id": 7082,
@@ -341,7 +341,7 @@
     "en": "designation",
     "beispiel": "Für dieselbe Sache gibt es in den Regionen ganz verschiedene Bezeichnungen.",
     "beispielTr": "Aynı şey için bölgelere göre bambaşka adlandırmalar var.",
-    "beispielEn": "There are quite different designations for the same thing in the regions."
+    "beispielEn": "The same thing has quite different designations from region to region."
   },
   {
     "id": 7096,

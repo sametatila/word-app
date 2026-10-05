@@ -1,0 +1,3895 @@
+{
+ "reviewed": 2456,
+ "rejected": [
+  {
+   "id": 3568,
+   "de": "Verfügung",
+   "reason": "'talimat' en 'order' ile uyumlu ve yanlış değil; 'karara karşı itiraz' hukuk Türkçesinde kullanılır. Zevk farkı.",
+   "oneri": {
+    "tr": "idari karar",
+    "beispielTr": "İdarenin kararına itiraz etti."
+   }
+  },
+  {
+   "id": 8616,
+   "de": "Wendung",
+   "reason": "'dönüş' Rückkehr kartının karşılığı, ayırt edilemez olur; 'dönemeç' mecazen de kullanılır.",
+   "oneri": {
+    "tr": "dönüş"
+   }
+  },
+  {
+   "id": 3505,
+   "de": "belegen",
+   "reason": "'kanıtlamak' beweisen ve nachweisen ile çakışır; TDK'ye göre 'belgelemek' zaten 'belge ile kanıtlamak' demek.",
+   "oneri": {
+    "tr": "kanıtlamak"
+   }
+  },
+  {
+   "id": 3474,
+   "de": "Annahme",
+   "reason": "Tren için 'dakik' Türkçede kullanılır; zevk farkı.",
+   "oneri": {
+    "beispielTr": "Trenin zamanında geleceği varsayımı ne yazık ki yanlış çıktı."
+   }
+  },
+  {
+   "id": 8752,
+   "de": "Normalität",
+   "reason": "Kartta placeholder yok; tüm alanlar dolu ve doğru (normallik / normality, cümle ve çevirileri uygun). Önerilen bir düzeltme de yok.",
+   "oneri": {}
+  },
+  {
+   "id": 3622,
+   "de": "Parodie",
+   "reason": "\"Patronun parodisi\" Türkçede doğal olarak patronu taklit eden parodi demek; önerilen hâl de belirsiz, gerçek hata yok.",
+   "oneri": {
+    "beispielTr": "Patronun parodisini yapması herkesi güldürdü."
+   }
+  },
+  {
+   "id": 3662,
+   "de": "kontrovers",
+   "reason": "\"tartışmalı\" B2 umstritten kartının karşılığı (İngilizcesi de aynı controversial); iki kart ayırt edilemez olur. \"ihtilaflı\" doğru.",
+   "oneri": {
+    "tr": "tartışmalı"
+   }
+  },
+  {
+   "id": 3546,
+   "de": "Sachverhalt",
+   "reason": "\"vakıa\" doğru bir karşılık. \"olayın aslı\" daha çok \"işin doğrusu\" demek, daha iyi değil.",
+   "oneri": {
+    "tr": "olayın aslı"
+   }
+  },
+  {
+   "id": 3991,
+   "de": "bevormunden",
+   "reason": "Sözlüklerde bevormunden için \"to patronize\" standart karşılık; değişiklik zevk farkı.",
+   "oneri": {
+    "en": "to treat like a child",
+    "beispielEn": "My parents still treat me like a child."
+   }
+  },
+  {
+   "id": 3574,
+   "de": "Vermerk",
+   "reason": "Vermerk resmî bir dosya notu, \"dosyaya şerh düşmek\" tam karşılığı. \"not\" Notiz ile çakışır.",
+   "oneri": {
+    "tr": "not",
+    "beispielTr": "Memur dosyaya bir not ekledi."
+   }
+  },
+  {
+   "id": 3463,
+   "de": "Argumentation",
+   "reason": "\"akıl yürütme\" reasoning demek, Argumentation değil. Mevcut \"argumentation\" da doğru bir İngilizce sözcük.",
+   "oneri": {
+    "tr": "akıl yürütme",
+    "en": "line of argument",
+    "beispielTr": "Akıl yürütmesi en sert eleştirmenleri bile ikna etti.",
+    "beispielEn": "Her line of argument convinced even the harshest critics."
+   }
+  },
+  {
+   "id": 8592,
+   "de": "auflockern",
+   "reason": "\"lighten up the mood\" kullanılan bir İngilizce. \"to lighten\" tek başına belirsiz, açıkça daha iyi değil.",
+   "oneri": {
+    "en": "to lighten",
+    "beispielEn": "With a short anecdote she lightened the mood."
+   }
+  },
+  {
+   "id": 8663,
+   "de": "Wiedergabe",
+   "reason": "\"rendering\" bir olayın aktarılmış hâli anlamında geçerli. Öneri yalnız üslup farkı.",
+   "oneri": {
+    "beispielEn": "The account of the conversation differed between the two reports."
+   }
+  },
+  {
+   "id": 3972,
+   "de": "Weltbild",
+   "reason": "\"dünya tasavvuru\" doğru bir karşılık; \"dünya anlayışı\" eşdeğer bir alternatif.",
+   "oneri": {
+    "tr": "dünya anlayışı",
+    "beispielTr": "Kopernik, Orta Çağ'ın dünya anlayışını yıktı."
+   }
+  },
+  {
+   "id": 8575,
+   "de": "Clou",
+   "reason": "\"püf noktası\" örnekteki zekice çözümü karşılıyor. \"işin güzel yanı\" Clou'nun çarpıcılığını zayıflatıyor, açıkça daha iyi değil.",
+   "oneri": {
+    "tr": "işin güzel yanı",
+    "beispielTr": "Cihazın güzel yanı, elektriksiz çalışması."
+   }
+  },
+  {
+   "id": 3634,
+   "de": "Reminiszenz",
+   "reason": "Edebi bağlamda \"çocukluğa dair çağrışımlar\" doğal ve kabul edilebilir; \"anımsatma\" açıkça daha iyi değil, öneri de cümleye \"insanın\" ekliyor.",
+   "oneri": {
+    "tr": "anımsatma",
+    "beispielTr": "Roman, insanın kendi çocukluğunu anımsatan öğelerle dolu.",
+    "beispielEn": "The novel is full of echoes of one's own childhood."
+   }
+  },
+  {
+   "id": 3534,
+   "de": "mutmaßlich",
+   "reason": "\"tahmin edilen\" geschätzt demektir, mutmaßlich'i daha iyi karşılamıyor; \"varsayılan\" bu bağlamda doğru.",
+   "oneri": {
+    "tr": "tahmin edilen",
+    "beispielTr": "Tahmin edilen bağlantı doğrulanamadı."
+   }
+  },
+  {
+   "id": 3576,
+   "de": "formlos",
+   "reason": "\"serbest biçimli\" yerleşik bir terim değil; mevcut \"şekle bağlı olmayan\" doğru ve anlaşılır.",
+   "oneri": {
+    "tr": "serbest biçimli",
+    "beispielTr": "E-postayla gönderilen serbest biçimli bir başvuru tamamen yeterli."
+   }
+  },
+  {
+   "id": 3638,
+   "de": "Zäsur",
+   "reason": "\"turning point\" Wendepunkt kartının (4548) karşılığı, iki kart ayırt edilemez olur; \"rupture\" Zäsur için savunulabilir.",
+   "oneri": {
+    "en": "turning point",
+    "beispielEn": "The fall of the Wall was a major turning point for the country."
+   }
+  },
+  {
+   "id": 3669,
+   "de": "kontemplativ",
+   "reason": "\"derin düşünceli\" kontemplativ için kabul edilebilir; \"tefekküre dayalı\" doğal değil ve açıkça daha iyi sayılmaz.",
+   "oneri": {
+    "tr": "tefekküre dayalı",
+    "beispielTr": "Manastırda tefekküre adanmış bir hayat sürüyor."
+   }
+  },
+  {
+   "id": 3672,
+   "de": "sich häufen",
+   "reason": "\"çoğalmak\" sich vermehren kartının (6767) karşılığı, ayırt edilemez olur; \"birikmek\" şikâyetler için doğal, \"iyice\" küçük bir vurgu.",
+   "oneri": {
+    "tr": "çoğalmak",
+    "beispielTr": "Son haftalarda şikâyetler çoğaldı."
+   }
+  },
+  {
+   "id": 3515,
+   "de": "verallgemeinern",
+   "reason": "Mevcut çeviri dilbilgisel olarak doğru ve kartın \"genellemek\" fiilini kullanıyor; öneri yalnız üslup farkı.",
+   "oneri": {
+    "beispielTr": "Tek tek vakalardan aceleyle genelleme yapmamak gerekir."
+   }
+  },
+  {
+   "id": 3958,
+   "de": "Bevormundung",
+   "reason": "'paternalism' zaten Paternalismus (C1) kartının karşılığı; iki kart ayırt edilemez olur. 'tutelage' sözlükte geçen bir karşılık.",
+   "oneri": {
+    "en": "paternalism"
+   }
+  },
+  {
+   "id": 3925,
+   "de": "Vernetzung",
+   "reason": "Vernetzung için 'networking / ağ oluşturma' sözlükte geçen geçerli karşılıklar; cümle de yanlış değil. Cümleyi yeniden kaydettirmek gereksiz.",
+   "oneri": {
+    "tr": "birbirine bağlama",
+    "en": "interconnection",
+    "beispielTr": "Bölümlerin birbirine bağlanması bilgi akışını iyileştiriyor.",
+    "beispielEn": "Connecting the departments improves the flow of information."
+   }
+  },
+  {
+   "id": 3705,
+   "de": "Missstand",
+   "reason": "Almanya'da Pflege bağlamında 'elderly care' kabul edilebilir bir aktarım; zevk farkı, ses kaydına değmez.",
+   "oneri": {
+    "beispielEn": "The report exposes serious abuses in nursing care."
+   }
+  },
+  {
+   "id": 3701,
+   "de": "Beweggrund",
+   "reason": "Mevcut cümle kartın karşılığı 'güdü'yü ve 'wahren' sözcüğünü taşıyor; öneri ikisini de düşürüyor. Mevcut cümle doğru.",
+   "oneri": {
+    "beispielTr": "Asıl sebepleri uzun süre bilinmedi."
+   }
+  },
+  {
+   "id": 3932,
+   "de": "Weiterbildungsmaßnahme",
+   "reason": "'training course' Lehrgang kartının karşılığı, iki kart ayırt edilemez olur. 'training initiative' de Maßnahme'yi karşılıyor.",
+   "oneri": {
+    "en": "training course",
+    "beispielEn": "The company pays for two training courses per year."
+   }
+  },
+  {
+   "id": 3940,
+   "de": "Marktsättigung",
+   "reason": "Çeviriler anlamı doğru veriyor; 'noch' nüansı küçük bir fark. Türkçede 'satamıyoruz' bu bağlamda doğal. Ses kaydına değmez.",
+   "oneri": {
+    "beispielTr": "Pazar doygunluğu yüzünden artık neredeyse hiç yazıcı satmıyoruz.",
+    "beispielEn": "Because of market saturation we hardly sell any printers anymore."
+   }
+  },
+  {
+   "id": 5742,
+   "de": "flächendeckend",
+   "reason": "'Across the board' flächendeckend için yerleşik bir karşılık ve doğru. 'Comprehensive' alan anlamını kaybettiriyor, ayrıca umfassend ile karışır.",
+   "oneri": {
+    "en": "comprehensive",
+    "beispielEn": "So far the inspections have not been comprehensive."
+   }
+  },
+  {
+   "id": 3994,
+   "de": "suggerieren",
+   "reason": "'To imply' suggerieren için doğru. 'To suggest' vorschlagen kartıyla aynı İngilizce karşılığı verir, iki kart ayırt edilemez.",
+   "oneri": {
+    "en": "to suggest"
+   }
+  },
+  {
+   "id": 4036,
+   "de": "eruieren",
+   "reason": "'Tespit edecek' Türkçede verilmiş bir görevi de anlatıyor. Mevcut çeviri doğru, öneri üslup farkı.",
+   "oneri": {
+    "beispielTr": "Komisyonun kesin nedenleri tespit etmesi gerekiyor."
+   }
+  },
+  {
+   "id": 5694,
+   "de": "Direktzahlung",
+   "reason": "'Bağlanacak' alınmış bir kararı ve planı da anlatıyor. Mevcut çeviri doğru, öneri üslup farkı.",
+   "oneri": {
+    "beispielTr": "Doğrudan ödemelerin bundan böyle çevresel hizmetlere bağlanması planlanıyor."
+   }
+  },
+  {
+   "id": 4039,
+   "de": "undurchsichtig",
+   "reason": "'Bugüne kadar şeffaf değil' anlaşılır ve doğru. 'Hâlâ' yalnızca biraz daha doğal, bu bir üslup farkı.",
+   "oneri": {
+    "beispielTr": "Projenin finansmanı bugün hâlâ şeffaf değil."
+   }
+  },
+  {
+   "id": 5816,
+   "de": "profan",
+   "reason": "Mevcut 'sıradan/mundane' bağlamda yanlış değil (mundane 'dünyevi' anlamını da taşır); önerilen 'dünyevi/secular' weltlich (7069) kartıyla birebir aynı olur, ayırt edilemez.",
+   "oneri": {
+    "tr": "dünyevi",
+    "en": "secular",
+    "beispielTr": "Şapel bugün tamamen dünyevi amaçlara hizmet ediyor.",
+    "beispielEn": "Today the chapel serves purely secular purposes."
+   }
+  },
+  {
+   "id": 5773,
+   "de": "Handlungsmuster",
+   "reason": "'eylem kalıbı/action pattern' Handlung'un doğru karşılığı; 'behavior pattern' Verhaltensweise (4518) ile çakışır. Örnek çevirisinin farklı sözcük seçmesi hata değil.",
+   "oneri": {
+    "tr": "davranış kalıbı",
+    "en": "behavior pattern"
+   }
+  },
+  {
+   "id": 5835,
+   "de": "Subordination",
+   "reason": "'itaat' Gehorsam (4535) kartının karşılığı, ayırt edilemez olur; 'boyun eğme' Unterordnung anlamını karşılıyor, yanlış değil.",
+   "oneri": {
+    "tr": "itaat",
+    "beispielTr": "Orduda itaat bugün hâlâ doğal karşılanıyor."
+   }
+  },
+  {
+   "id": 5874,
+   "de": "entfalten",
+   "reason": "to develop zaten entwickeln ve erschließen kartlarında var; entfalten ayırt edilemez olur. really, Erst ... konnte vurgusunun kabul edilebilir karşılığı.",
+   "oneri": {
+    "en": "to develop",
+    "beispielEn": "Only in a small team could she develop her talent."
+   }
+  },
+  {
+   "id": 5865,
+   "de": "einbinden",
+   "reason": "dâhil etmek einbeziehen kartının karşılığı; einbinden ayırt edilemez olur. Ayrıca TDK yazımı dâhil. sürece katmak yanlış değil.",
+   "oneri": {
+    "tr": "dahil etmek",
+    "beispielTr": "Müdür, çırakları planlamaya erkenden dahil ediyor."
+   }
+  },
+  {
+   "id": 5938,
+   "de": "deregulieren",
+   "reason": "serbestleştirmek liberalisieren kartının karşılığı; çakışma yaratır. Kuralsızlaştırma Türkçe iktisat yazınında deregülasyon karşılığı olarak kullanılıyor.",
+   "oneri": {
+    "tr": "serbestleştirmek"
+   }
+  },
+  {
+   "id": 5945,
+   "de": "repräsentativ",
+   "reason": "Kartın anlamı (gösterişli/temsili görünüm, repräsentativ wirken) gerçek ve örnekle tutarlı; hata değil. Öneri yeni cümle kaydı gerektiriyor, mevcut kart yanlış değil.",
+   "oneri": {
+    "tr": "temsil edici",
+    "en": "representative",
+    "beispiel": "Die Umfrage ist für die gesamte Bevölkerung repräsentativ.",
+    "beispielTr": "Anket tüm nüfusu temsil edici nitelikte.",
+    "beispielEn": "The survey is representative of the entire population."
+   }
+  },
+  {
+   "id": 5977,
+   "de": "Fachzeitschrift",
+   "reason": "'specialist journal' Amerikan İngilizcesinde de anlaşılır ve doğru; 'professional journal' akademik bağlamda daha iyi değil (meslek dergisi çağrışımı). Zevk farkı.",
+   "oneri": {
+    "en": "professional journal",
+    "beispielEn": "The paper appeared in a respected international professional journal."
+   }
+  },
+  {
+   "id": 5984,
+   "de": "Inklusion",
+   "reason": "'Kapsayıcılık' Inklusion'ın yerleşik genel karşılığı (MEB de 'kapsayıcı eğitim' diyor); Inklusion yalnız okul kaynaştırması değil. Mevcut doğru, öneri eşdeğer alternatif.",
+   "oneri": {
+    "tr": "kaynaştırma",
+    "beispielTr": "Kaynaştırma ancak yeterince eğitimli personelle başarılabilir."
+   }
+  },
+  {
+   "id": 6052,
+   "de": "ausbluten",
+   "reason": "'Bleed out' ausbluten'in düz karşılığı ve mecaz kullanımda da anlaşılır. Öneri yalnız üslup farkı.",
+   "oneri": {
+    "en": "to be bled dry",
+    "beispielEn": "Without jobs the whole region is being bled dry."
+   }
+  },
+  {
+   "id": 6100,
+   "de": "Nichteinmischung",
+   "reason": "Nichteinmischung tek başına 'karışmama' demek. 'İç işleri' Almancada yok ve anlamı daraltıyor. 'Karışmama ilkesi' de kullanılan bir ifade.",
+   "oneri": {
+    "tr": "iç işlerine karışmama",
+    "beispielTr": "İç işlerine karışmama ilkesi uygulamada sık sık deliniyor."
+   }
+  },
+  {
+   "id": 6129,
+   "de": "gesprächsbereit",
+   "reason": "'Sich zeigen' için 'seems' kabul edilebilir bir karşılık. Önerilen 'remains' de 'zeigt sich'i karşılamıyor, yani fark yalnız üslupta.",
+   "oneri": {
+    "beispielEn": "Despite all setbacks the other side remains willing to talk."
+   }
+  },
+  {
+   "id": 6172,
+   "de": "anführen",
+   "reason": "'Kanıt olarak öne sürmek' Türkçede yerleşik bir kullanım; mevcut çeviri doğru, öneri zevk farkı.",
+   "oneri": {
+    "beispielTr": "Kanıt olarak İsveç'ten eski bir çalışmayı gösterdi."
+   }
+  },
+  {
+   "id": 6203,
+   "de": "Amortisation",
+   "reason": "'Amortisman süresi' Türkçede geri ödeme süresi için yaygın; Amortisation'ın borç itfası anlamı da var, 'amortization' doğru karşılık. Mevcut hatalı değil.",
+   "oneri": {
+    "tr": "amorti etme",
+    "en": "payback",
+    "beispielTr": "Güneş enerjisi tesisi kendini yaklaşık on yılda amorti ediyor."
+   }
+  },
+  {
+   "id": 6175,
+   "de": "entgegenhalten",
+   "reason": "'Bir dizi çalışmayla karşı çıktı' cümleyi doğru aktarıyor; cümle çevirisinin kart karşılığını birebir taşıması gerekmiyor.",
+   "oneri": {
+    "beispielTr": "Eleştirmen buna bir dizi yeni çalışmayla karşılık verdi."
+   }
+  },
+  {
+   "id": 6162,
+   "de": "Resümee",
+   "reason": "'Ein Resümee ziehen' bağlamda değerlendirme/sonuç çıkarma demek; 'değerlendirme yaptı' ve 'assessment' doğru ve doğal.",
+   "oneri": {
+    "beispielTr": "Sonunda moderatör serinkanlı bir özet çıkardı.",
+    "beispielEn": "At the end the moderator gave a sober summary."
+   }
+  },
+  {
+   "id": 6233,
+   "de": "umrüsten",
+   "reason": "'Hidrojene dönüştürmek' Türkçede 'doğalgaza dönüştürmek' gibi yerleşik kalıp; mevcut çeviri doğru.",
+   "oneri": {
+    "beispielTr": "Tesisin kışa kadar hidrojenle çalışacak şekilde dönüştürülmesi planlanıyor."
+   }
+  },
+  {
+   "id": 6310,
+   "de": "zwiespältig",
+   "reason": "'ikircikli duygular' Türkçede yerleşik ve doğru; 'çelişkili' zaten widersprüchlich kartının karşılığı, iki kart ayırt edilemez olur.",
+   "oneri": {
+    "tr": "çelişkili",
+    "beispielTr": "Kavuşmanın ardından duyguları çok çelişkiliydi."
+   }
+  },
+  {
+   "id": 6303,
+   "de": "überdauern",
+   "reason": "Mevcut çeviriler anlaşılır ve doğru; 'outlasted the centuries' kartın 'to outlast' karşılığıyla örtüşüyor. Öneri zevk farkı ve kart-cümle bağını zayıflatıyor.",
+   "oneri": {
+    "beispielTr": "Yalnızca birkaç el yazması yüzyıllara dayanabildi.",
+    "beispielEn": "Only a few manuscripts have survived the centuries."
+   }
+  },
+  {
+   "id": 6354,
+   "de": "Rechtsquelle",
+   "reason": "'Verträge' çevirisi olarak 'contracts/sözleşmeler' cümleye sadık; 'treaties' anlamı daraltan bir yorum. Toplu sözleşme gibi sözleşmeler de hukuk kaynağı sayılabiliyor, yani ortada açık bir hata yok.",
+   "oneri": {
+    "beispielTr": "Kanunun yanı sıra uluslararası antlaşmalar da tanınmış hukuk kaynakları sayılıyor.",
+    "beispielEn": "Alongside statutes, treaties also count as recognized sources of law."
+   }
+  },
+  {
+   "id": 6352,
+   "de": "Rechtsstaatlichkeit",
+   "reason": "'Hukuk devleti ilkesine uygunluk', Rechtsstaatlichkeit des Verfahrens için doğru ve doğal bir çeviri. İngilizce de anlaşılır. Öneri yalnızca bir üslup tercihi.",
+   "oneri": {
+    "beispielTr": "Reform, sürecin hukukun üstünlüğüne uygunluğunu sorgulatıyor.",
+    "beispielEn": "The reform calls into question whether the procedure respects the rule of law."
+   }
+  },
+  {
+   "id": 6460,
+   "de": "abschotten",
+   "reason": "İnsanlar için 'sealed itself off' mecazi olarak kullanılır ve anlam doğru; kartın 'to seal off' karşılığıyla da tutarlı. Öneri zevk farkı.",
+   "oneri": {
+    "beispielEn": "After the scandal the family completely cut itself off."
+   }
+  },
+  {
+   "id": 6491,
+   "de": "Geschmacksurteil",
+   "reason": "Mevcut cümle dil bilgisi bakımından doğru ve anlamlı, terimi de doğru kullanıyor. Cümleyi değiştirmek yeni ses kaydı gerektirir; bu öneri gerçek bir hatayı değil zevk farkını düzeltiyor.",
+   "oneri": {
+    "beispiel": "Kant fragt, ob ein Geschmacksurteil allgemein gültig sein kann.",
+    "beispielTr": "Kant, bir beğeni yargısının genel geçer olup olamayacağını soruyor.",
+    "beispielEn": "Kant asks whether a judgment of taste can be universally valid."
+   }
+  },
+  {
+   "id": 6686,
+   "de": "aussagekräftig",
+   "reason": "'Anlamlı' signifikant (4147) kartıyla aynı Türkçe karşılığı alır, kart ayırt edilemez olur. 'Açıklayıcı' (informative) aussagekräftig için kabul edilebilir.",
+   "oneri": {
+    "tr": "anlamlı"
+   }
+  },
+  {
+   "id": 6710,
+   "de": "anklagen",
+   "reason": "'Dava açmak' verklagen (5235) kartının karşılığı, çakışma olur; 'suçlamak' da vorwerfen'de var. 'İtham etmek' hukuki bağlamda da kullanılır ve ayırt edici.",
+   "oneri": {
+    "tr": "dava açmak",
+    "beispielTr": "İki eski bakan hakkında ağır yolsuzluktan dava açıldı."
+   }
+  },
+  {
+   "id": 6705,
+   "de": "Misshandlung",
+   "reason": "Bağlamda 'gözaltı' Haft için kabul edilebilir bir çeviri, İngilizce de 'detention' diyor. Zevk farkı.",
+   "oneri": {
+    "beispielTr": "Doktorlar tutukluluk sırasında yapılan ağır kötü muamelenin izlerini doğruladı."
+   }
+  },
+  {
+   "id": 6693,
+   "de": "Zurückweisung",
+   "reason": "Mevcut İngilizce cümle anlamca doğru ve kartın 'rejection' karşılığını kullanıyor. Öneri üslup tercihi.",
+   "oneri": {
+    "beispielEn": "Turning people back at the border violates applicable law."
+   }
+  },
+  {
+   "id": 6702,
+   "de": "Verbindlichkeit",
+   "reason": "Öneri formen alanını hedefliyor ama düzeltme boş; bu karar yalnız anlam ve cümle alanlarını kapsıyor. Tespit ayrıca formen denetiminde ele alınmalı.",
+   "oneri": {}
+  },
+  {
+   "id": 6806,
+   "de": "Gemeingut",
+   "reason": "\"common good\" Gemeinwohl kartının İngilizce karşılığı (kamu yararı/common good); kart ayırt edilemez olur. \"ortak mal\" da ortak mülkiyet çağrıştırıyor, mevcut \"kamusal varlık / common property\" kabul edilebilir.",
+   "oneri": {
+    "tr": "ortak mal",
+    "en": "common good"
+   }
+  },
+  {
+   "id": 6825,
+   "de": "wiederverwerten",
+   "reason": "\"geri dönüştürmek / to recycle\" recyceln kartıyla iki alanda da birebir aynı olur; kart tamamen ayırt edilemez hâle gelir. Mevcut değer daha az çakışmalı.",
+   "oneri": {
+    "tr": "geri dönüştürmek"
+   }
+  },
+  {
+   "id": 6779,
+   "de": "organisch",
+   "reason": "Mevcut çeviri doğru ve anlaşılır; öneri üslup tercihi.",
+   "oneri": {
+    "beispielTr": "Araştırmacılar tortuda şaşırtıcı derecede fazla organik madde buldu."
+   }
+  },
+  {
+   "id": 6780,
+   "de": "thermisch",
+   "reason": "\"ısıl olarak kötü yalıtılmış\" doğru ve kelimeyi doğrudan karşılıyor; öneri üslup farkı.",
+   "oneri": {
+    "beispielTr": "Eski cephenin ısıl yalıtımı kötü."
+   }
+  },
+  {
+   "id": 6815,
+   "de": "Ökobilanz",
+   "reason": "\"quite differently\" Amerikan İngilizcesinde de belirgin farkı anlatır; anlam hatası yok, nüans farkı.",
+   "oneri": {
+    "beispielEn": "A product's life cycle assessment turns out completely different depending on the system boundary."
+   }
+  },
+  {
+   "id": 6858,
+   "de": "Selbsterkenntnis",
+   "reason": "'Ihm fehlt jede Selbsterkenntnis' doğal ve yerleşik bir Almanca kalıp; cümleyi değiştirip yeniden kaydettirmeye gerek yok. Türkçe cümle kartın 'kendini bilme' karşılığıyla tutarlı.",
+   "oneri": {
+    "beispiel": "Selbsterkenntnis ist der erste Schritt zur Besserung.",
+    "beispielTr": "Kendini tanımak, düzelmenin ilk adımıdır.",
+    "beispielEn": "Self-knowledge is the first step toward improvement."
+   }
+  },
+  {
+   "id": 6870,
+   "de": "bejahen",
+   "reason": "'Olumlamak' TDK'da var ve 'hayatı olumlamak' yerleşik felsefi ifade; 'affirm' da doğru. Öneri eşdeğer bir alternatif.",
+   "oneri": {
+    "tr": "evet demek",
+    "beispielTr": "Bütün aksiliklere rağmen hayata evet diyor.",
+    "beispielEn": "She says yes to life despite all the setbacks."
+   }
+  },
+  {
+   "id": 6860,
+   "de": "Ausweglosigkeit",
+   "reason": "'Çaresizlik' zaten Verzweiflung'un (B2) karşılığı; iki kart ayırt edilemez olur. 'Çıkışsızlık' doğru ve kullanılan bir sözcük.",
+   "oneri": {
+    "tr": "çaresizlik",
+    "beispielTr": "Üçüncü ret cevabından sonra onu bir çaresizlik duygusu sardı."
+   }
+  },
+  {
+   "id": 6894,
+   "de": "Einflussnahme",
+   "reason": "'İhalelerin dağıtımı' Türkçede kullanılan doğal bir ifade, İngilizce çeviri de çoğul. Öneri eşdeğer bir alternatif.",
+   "oneri": {
+    "beispielTr": "Savcılık, ihalenin verilmesine etki edilip edilmediğini araştırıyor."
+   }
+  },
+  {
+   "id": 6936,
+   "de": "Selbstregulation",
+   "reason": "Türkçede çoğul özneyle tekil iyelik ('Çocuklar anne babasından') dağıtıcı anlamda doğru ve yaygın. Hata değil.",
+   "oneri": {
+    "beispielTr": "Çocuklar öz düzenlemeyi en çok anne babalarından öğrenir."
+   }
+  },
+  {
+   "id": 6938,
+   "de": "Frustration",
+   "reason": "'Engellenmişlik' frustration'ın yerleşik psikoloji karşılığı, C1 için uygun. 'Hüsran' ise daha çok hayal kırıklığı ya da başarısızlık anlamında; açıkça daha iyi değil.",
+   "oneri": {
+    "tr": "hüsran",
+    "beispielTr": "İşteki sürekli hüsran onu saldırganlaştırdı."
+   }
+  },
+  {
+   "id": 6946,
+   "de": "hemmen",
+   "reason": "'Ketlemek' TDK'da var ve inhibit'e tam karşılık; 'engellemek' blockieren ve unterbinden kartlarında kullanılıyor, kart ayırt edilemez olur.",
+   "oneri": {
+    "tr": "engellemek",
+    "beispielTr": "Aşırı sert eleştiri çocukların yaratıcılığını engeller."
+   }
+  },
+  {
+   "id": 6950,
+   "de": "deuten",
+   "reason": "'to interpret' interpretieren kartında (o da 'yorumlamak'); deuten onunla birebir aynı karta döner. 'to read' örnekte doğru.",
+   "oneri": {
+    "en": "to interpret"
+   }
+  },
+  {
+   "id": 6991,
+   "de": "zaudern",
+   "reason": "TDK'da duraksamak 'tereddüt etmek, bocalamak' anlamını da taşıyor; mevcut değer doğru, öneri zevk farkı.",
+   "oneri": {
+    "tr": "ayak sürümek",
+    "beispielTr": "Maliyetler artmaya devam ederken siyasetçiler ayak sürüyor."
+   }
+  },
+  {
+   "id": 7027,
+   "de": "Buße",
+   "reason": "'kefaret' Sühne kartının karşılığı, iki kart çakışır; dinî 'Buße tun' tövbe anlamını da taşıyor, mevcut değer yanlış değil.",
+   "oneri": {
+    "tr": "kefaret",
+    "beispielTr": "Keşiş, hatası için haftalarca kefaret ödedi."
+   }
+  },
+  {
+   "id": 6976,
+   "de": "unterschwellig",
+   "reason": "'subliminal' unterschwellig'in sözlük karşılığı ve doğru; 'underlying' zugrunde liegend ile karışır.",
+   "oneri": {
+    "en": "underlying"
+   }
+  },
+  {
+   "id": 6962,
+   "de": "behutsam",
+   "reason": "behutsam 'vorsichtig, sorgsam' anlamını da taşır; ihtiyatlı/cautious doğru. 'incelikli' ise subtle/refined demek, daha iyi değil.",
+   "oneri": {
+    "tr": "incelikli",
+    "en": "gentle",
+    "beispielTr": "Bu konuyu incelikle açmak gerekir.",
+    "beispielEn": "This topic has to be raised gently."
+   }
+  },
+  {
+   "id": 6985,
+   "de": "zaghaft",
+   "reason": "'ürkek' timid için doğru; 'çekingen' zurückhaltend kartında kullanılıyor, çakışma olur.",
+   "oneri": {
+    "tr": "çekingen"
+   }
+  },
+  {
+   "id": 6993,
+   "de": "entgegnen",
+   "reason": "'to reply' erwidern kartında; entgegnen çoğu zaman karşı çıkarak cevap vermek, 'retort' kabul edilebilir, 'retorted calmly' doğal İngilizce.",
+   "oneri": {
+    "en": "to reply",
+    "beispielEn": "She responded to that accusation with striking calm."
+   }
+  },
+  {
+   "id": 7005,
+   "de": "Schattierung",
+   "reason": "'nüans' Nuance kartının karşılığı; 'ton farkı' Schattierung için doğru düz çeviri.",
+   "oneri": {
+    "tr": "nüans"
+   }
+  },
+  {
+   "id": 7006,
+   "de": "Gesinnung",
+   "reason": "'siyasi zihniyet' ve 'political mindset' anlaşılır ve doğru; öneri zevk farkı.",
+   "oneri": {
+    "beispielTr": "Roman, yazarın siyasi görüşleri hakkında pek bir şey söylemiyor.",
+    "beispielEn": "The novel says little about the author's political views."
+   }
+  },
+  {
+   "id": 7037,
+   "de": "Fastenzeit",
+   "reason": "Fastenzeit genel olarak oruç dönemi de demek; 'fasting period' doğru, tr ile de uyumlu. 'Lent' yalnız Hristiyan anlamını verir, tr ile de ayrışır.",
+   "oneri": {
+    "en": "Lent",
+    "beispielEn": "During Lent he doesn't eat meat."
+   }
+  },
+  {
+   "id": 6955,
+   "de": "voreilig",
+   "reason": "'Aceleci sonuçlar/kararlar' Türkçede yaygın ve anlaşılır; zevk farkı.",
+   "oneri": {
+    "beispielTr": "Tek bir testten aceleyle sonuç çıkarılmamalı."
+   }
+  },
+  {
+   "id": 7051,
+   "de": "Entzauberung",
+   "reason": "'Büyübozumu' Weber'in kavramının Türkçe sosyolojide yerleşik karşılığı; hata değil, zevk farkı.",
+   "oneri": {
+    "tr": "büyünün bozulması",
+    "beispielTr": "Max Weber bu süreci dünyanın büyüsünün bozulması olarak adlandırdı."
+   }
+  },
+  {
+   "id": 7202,
+   "de": "abbilden",
+   "reason": "'to reflect' widerspiegeln ve reflektieren kartlarıyla çakışır; cümledeki 'temsil ediyor/represents' de doğru.",
+   "oneri": {
+    "en": "to reflect",
+    "beispielTr": "Endeks, gerçek yükü ancak eksik biçimde yansıtıyor.",
+    "beispielEn": "The index reflects the actual burden only incompletely."
+   }
+  },
+  {
+   "id": 7217,
+   "de": "Lernverfahren",
+   "reason": "'öğrenme yöntemi/learning method' Lernmethode kartının karşılığı; kart ayırt edilemez olur.",
+   "oneri": {
+    "tr": "öğrenme yöntemi",
+    "en": "learning method"
+   }
+  },
+  {
+   "id": 7235,
+   "de": "nachbilden",
+   "reason": "'taklit etmek' nachahmen ve nachmachen kartlarıyla çakışır; mevcut çeviriler yanlış değil.",
+   "oneri": {
+    "tr": "taklit etmek",
+    "beispielTr": "Makineler dilsel kalıpları anlamadan taklit ediyor.",
+    "beispielEn": "Machines recreate linguistic patterns without understanding them."
+   }
+  },
+  {
+   "id": 7193,
+   "de": "extrapolieren",
+   "reason": "Mevcut çeviri biraz ağır ama anlamı doğru aktarıyor; öneri kartın 'ekstrapolasyon yapmak' karşılığından da uzaklaşıyor. Zevk farkı.",
+   "oneri": {
+    "beispielTr": "Eğilim, sorgulanmadan geleceğe doğru ekstrapole edilmemeli."
+   }
+  },
+  {
+   "id": 7175,
+   "de": "Bezugsgröße",
+   "reason": "'referans değer' Richtwert kartının Türkçe karşılığı; çakışma olur. 'Referans büyüklük' teknik metinde kabul edilebilir.",
+   "oneri": {
+    "tr": "referans değer",
+    "beispielTr": "Net bir referans değer olmadan yüzde bilgisi pek bir şey söylemiyor."
+   }
+  },
+  {
+   "id": 7268,
+   "de": "anberaumen",
+   "reason": "Mevcut çeviri doğru ve \"gün belirlemek\" karşılığıyla uyumlu; \"planlandı\" resmî tarih koyma anlamını zayıflatıyor, zevk farkı.",
+   "oneri": {
+    "beispielTr": "Pazartesi için ek bir oturum planlandı."
+   }
+  },
+  {
+   "id": 7245,
+   "de": "zwangsläufig",
+   "reason": "\"zorunlu olarak\" \"necessarily\" karşılığı olarak doğru; olumsuz cümlede de anlaşılır. Öneri üslup tercihi, ayrıca karşılık ile cümle arasında tutarsızlık yaratıyor.",
+   "oneri": {
+    "tr": "kaçınılmaz olarak",
+    "beispielTr": "Daha fazla işlem gücü illa ki daha iyi kararlara yol açmaz."
+   }
+  },
+  {
+   "id": 7282,
+   "de": "Konjunkturzyklus",
+   "reason": "Cümle sonunda \"bile\" Türkçede doğal ve doğru; \"şimdiden\" eşdeğer alternatif, zevk farkı.",
+   "oneri": {
+    "beispielTr": "Mevcut konjonktür döngüsü şimdiden sekiz yıldır sürüyor."
+   }
+  },
+  {
+   "id": 7326,
+   "de": "Fehlverhalten",
+   "reason": "\"usulsüzlük\" kurumsal bağlamda misconduct/Fehlverhalten için yerinde ve örnek cümleyle uyumlu; \"hatalı davranış\" daha genel ve açıkça daha iyi değil.",
+   "oneri": {
+    "tr": "hatalı davranış"
+   }
+  },
+  {
+   "id": 7375,
+   "de": "Aufsatz",
+   "reason": "'article' zaten Artikel kartında (makale/article). Aufsatz'ı ondan ayıran şey 'essay'. Akademik bağlamda 'essay' de doğru.",
+   "oneri": {
+    "en": "article",
+    "beispielEn": "Her article appeared in a respected academic journal."
+   }
+  },
+  {
+   "id": 7366,
+   "de": "Genauigkeit",
+   "reason": "Ölçüm bağlamında 'kesinlik' doğru. 'Hassasiyet' yalnızca eşdeğer bir alternatif.",
+   "oneri": {
+    "tr": "hassasiyet",
+    "beispielTr": "Ölçümün hassasiyeti kullanılan cihaza bağlı."
+   }
+  },
+  {
+   "id": 7368,
+   "de": "Beweisführung",
+   "reason": "'Kanıtlaması hakemleri ikna etmedi' doğru bir cümle. Öneri bir zevk farkı ve 'Seine' bilgisini de düşürüyor.",
+   "oneri": {
+    "beispielTr": "Kanıtlama biçimi hakemleri ikna etmedi."
+   }
+  },
+  {
+   "id": 7372,
+   "de": "Denkschule",
+   "reason": "'Düşünce okulu' Türkçede de yaygın ve doğru. 'Ekol' eşdeğer bir alternatif.",
+   "oneri": {
+    "tr": "düşünce ekolü",
+    "beispielTr": "Her iki düşünce ekolü de aynı klasik esere dayanıyor."
+   }
+  },
+  {
+   "id": 7390,
+   "de": "strittig",
+   "reason": "'Tartışmalı' umstritten kartının karşılığı, değiştirilirse iki kart ayırt edilemez. 'At all' ise vurgu için kabul edilebilir bir ekleme.",
+   "oneri": {
+    "tr": "tartışmalı",
+    "beispielEn": "Whether the effect exists remains disputed."
+   }
+  },
+  {
+   "id": 7424,
+   "de": "sich wappnen",
+   "reason": "'Hazırlanmak' sich vorbereiten kartının karşılığı, çakışma olur. 'Hazırlıklı olmak' anlamı karşılıyor.",
+   "oneri": {
+    "tr": "hazırlanmak"
+   }
+  },
+  {
+   "id": 7417,
+   "de": "ausloten",
+   "reason": "Siyasette ausloten çoğunlukla 'nabız yoklamak' anlamında kullanılır, bu yüzden 'sound out' uygun. 'To explore' erkunden kartıyla çakışır.",
+   "oneri": {
+    "en": "to explore",
+    "beispielEn": "The committee is exploring which measures are politically feasible."
+   }
+  },
+  {
+   "id": 7429,
+   "de": "verhängnisvoll",
+   "reason": "'Fateful' verhängnisvoll için standart bir sözlük karşılığı ve 'proved fateful' doğal bir kullanım. 'Disastrous' katastrophal veya verheerend ile karışabilir.",
+   "oneri": {
+    "en": "disastrous",
+    "beispielEn": "The hesitation in the first weeks proved disastrous."
+   }
+  },
+  {
+   "id": 8557,
+   "de": "zur Verfügung stehen",
+   "reason": "'Emre amade olmak' Türkçede hâlâ kullanılıyor ve doğru. 'Hazır bulunmak' açıkça daha iyi değil, anlamı daraltıyor.",
+   "oneri": {
+    "tr": "hazır bulunmak"
+   }
+  },
+  {
+   "id": 8622,
+   "de": "Hand und Fuß haben",
+   "reason": "'to make sense' sözlüklerde verilen geçerli bir karşılık; öneri eşdeğer bir alternatif.",
+   "oneri": {
+    "en": "to be well thought out",
+    "beispielEn": "Your proposal is really well thought out."
+   }
+  },
+  {
+   "id": 8581,
+   "de": "Gegebenheit",
+   "reason": "'local circumstances' doğru İngilizce ve kartın 'circumstance' karşılığıyla uyumlu; öneri zevk farkı.",
+   "oneri": {
+    "beispielEn": "We have to work with the local conditions."
+   }
+  },
+  {
+   "id": 8767,
+   "de": "abgrenzen",
+   "reason": "\"to delimit\" abgrenzen için doğru ve tr \"sınırını çizmek\" ile örtüşüyor; \"to differentiate\" ise differenzieren ve ausdifferenzieren kartlarıyla aynı olur.",
+   "oneri": {
+    "en": "to differentiate"
+   }
+  },
+  {
+   "id": 8798,
+   "de": "Eskalationsstufe",
+   "reason": "\"Tırmanma basamağı\" Türkçede kullanılan bir terim (tırmanma merdiveni/basamakları) ve Stufe'yi doğrudan karşılıyor; \"aşama\" yalnız eşdeğer bir alternatif.",
+   "oneri": {
+    "tr": "tırmanma aşaması",
+    "beispielTr": "Şimdiden ikinci tırmanma aşamasındayız."
+   }
+  }
+ ],
+ "fixes": [
+  {
+   "id": 3491,
+   "de": "Postulat",
+   "severity": "orta",
+   "before": {
+    "tr": "postülat",
+    "beispielTr": "Bu varsayım onlarca yıl tartışılmadan kabul gördü."
+   },
+   "after": {
+    "tr": "temel varsayım",
+    "beispielTr": "Bu temel varsayım onlarca yıl tartışılmadan kabul gördü."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"postülat\" TDK yazımına uymuyor (doğrusu postulat). \"temel varsayım\" anlaşılır, Annahme (varsayım) kartından da ayrılıyor."
+  },
+  {
+   "id": 3493,
+   "de": "Kohärenz",
+   "severity": "hafif",
+   "before": {
+    "tr": "tutarlılık",
+    "beispielTr": "Yazının iç tutarlılığı eksik."
+   },
+   "after": {
+    "tr": "bütünlük",
+    "beispielTr": "Yazıda iç bütünlük eksik."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Konsistenz kartı da \"tutarlılık\", Türkçede iki kart ayırt edilemiyor. Metin için \"iç bütünlük\" doğal."
+  },
+  {
+   "id": 3495,
+   "de": "Diskussionsbeitrag",
+   "severity": "hafif",
+   "before": {
+    "tr": "tartışma katkısı",
+    "beispielEn": "Her contribution to the discussion moved the debate forward."
+   },
+   "after": {
+    "tr": "tartışmaya katkı",
+    "beispielEn": "Her contribution to the discussion moved the debate forward significantly."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"tartışma katkısı\" doğal bir tamlama değil. İngilizcede düşen \"deutlich\" de eklendi. Türkçe örnek zaten doğru, değişmedi."
+  },
+  {
+   "id": 3503,
+   "de": "veranschaulichen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bir grafik, fiyatların gelişimini somutlaştırıyor."
+   },
+   "after": {
+    "beispielTr": "Bir grafik, fiyatların seyrini gözler önüne seriyor."
+   },
+   "voiced": [],
+   "reason": "Örnek çeviri kartın anlamını değil \"somutlaştırmak\"ı kullanıyordu; öğrenci kart ile cümle arasında bağ kuramıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 3508,
+   "de": "falsifizieren",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Even a single counterexample can falsify the theory."
+   },
+   "after": {
+    "beispielEn": "Even a single piece of counterevidence can falsify the theory."
+   },
+   "voiced": [],
+   "reason": "Gegenbeweis karşı kanıttır, karşı örnek değil; İngilizce çeviri Türkçe çeviriyle de uyumlu hâle geliyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 3540,
+   "de": "Verjährung",
+   "severity": "orta",
+   "before": {
+    "en": "limitation period",
+    "beispielTr": "Üç yıl sonra zamanaşımı devreye girer.",
+    "beispielEn": "After three years, the statute of limitations kicks in."
+   },
+   "after": {
+    "en": "statute of limitations",
+    "beispielTr": "Üç yıl sonra zamanaşımı dolar.",
+    "beispielEn": "The statute of limitations expires after three years."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Amerikan İngilizcesinde terim statute of limitations; \"zamanaşımı devreye girer\" Türkçede yanlış, zamanaşımı dolar. \"expires\" de \"runs out\"tan daha yerleşik."
+  },
+  {
+   "id": 3548,
+   "de": "Straftatbestand",
+   "severity": "hafif",
+   "before": {
+    "tr": "suç unsuru"
+   },
+   "after": {
+    "tr": "suç tipi"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Ceza hukukunda Straftatbestand'ın karşılığı \"suç tipi\"; \"suç unsuru\" Tatbestandsmerkmal. Örnek cümle çevirisi doğru kalıyor."
+  },
+  {
+   "id": 3556,
+   "de": "Vollzug",
+   "severity": "hafif",
+   "before": {
+    "en": "enforcement",
+    "beispielEn": "Enforcement of the judgment was suspended for now."
+   },
+   "after": {
+    "en": "execution",
+    "beispielEn": "Execution of the judgment was suspended for now."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Vollstreckung da \"enforcement\". \"execution of the judgment\" doğru ve iki kartı İngilizcede ayırıyor."
+  },
+  {
+   "id": 3567,
+   "de": "Ausschlussfrist",
+   "severity": "hafif",
+   "before": {
+    "en": "cut-off period",
+    "beispielEn": "The cut-off period for the application ends on Friday."
+   },
+   "after": {
+    "en": "final deadline",
+    "beispielEn": "The final deadline for the application is Friday."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "\"cut-off period\" doğal bir İngilizce terim değil; \"final deadline\" anlaşılır ve Frist (deadline) kartından ayrılıyor. \"deadline expires\" yerine doğal kalıp kullanıldı."
+  },
+  {
+   "id": 3571,
+   "de": "Zustellung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kararın tebligatı iadeli taahhütlü mektupla yapıldı."
+   },
+   "after": {
+    "beispielTr": "Kararın tebligatı taahhütlü mektupla yapıldı."
+   },
+   "voiced": [],
+   "reason": "Einschreiben düz taahhütlü mektup, \"iadeli\" fazladan bilgi. En az değişiklikle yalnız \"iadeli\" çıkarıldı, kelime \"tebligat\" cümlede kaldı.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 3575,
+   "de": "Aktenzeichen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Please quote the file number if you have questions."
+   },
+   "after": {
+    "beispielEn": "Please include the file number with any questions."
+   },
+   "voiced": [],
+   "reason": "Bu anlamda \"quote\" İngiliz kullanımı; kurala göre Amerikan İngilizcesi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 3590,
+   "de": "Bruttoinlandsprodukt",
+   "severity": "hafif",
+   "before": {
+    "tr": "gayri safi yurtiçi hasıla",
+    "beispielTr": "Gayri safi yurtiçi hasıla geçen yıl yüzde iki büyüdü."
+   },
+   "after": {
+    "tr": "gayrisafi yurt içi hasıla",
+    "beispielTr": "Gayrisafi yurt içi hasıla geçen yıl yüzde iki büyüdü."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "TDK yazımı \"gayrisafi\" bitişik, \"yurt içi\" ayrı."
+  },
+  {
+   "id": 3599,
+   "de": "Körperschaft",
+   "severity": "hafif",
+   "before": {
+    "tr": "tüzel kişilik",
+    "beispielTr": "Üniversite, bir kamu hukuku tüzel kişisidir."
+   },
+   "after": {
+    "tr": "tüzel kişi",
+    "beispielTr": "Üniversite bir kamu tüzel kişisidir."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Körperschaft kurumun kendisidir, \"tüzel kişilik\" bir statü; Türkçe terim \"kamu tüzel kişisi\"."
+  },
+  {
+   "id": 3603,
+   "de": "Ästhetik",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bu binanın estetiği beni ikna etmiyor.",
+    "beispielEn": "The aesthetics of this building don't convince me."
+   },
+   "after": {
+    "beispielTr": "Bu binanın estetiği bana hitap etmiyor.",
+    "beispielEn": "The aesthetics of this building don't win me over."
+   },
+   "voiced": [],
+   "reason": "\"beni ikna etmiyor\" ve \"don't convince me\" estetik için calque. Beğeni anlamı düzeltildi, \"pek\" eklenmedi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 3641,
+   "de": "Überlieferung",
+   "severity": "orta",
+   "before": {
+    "tr": "aktarım"
+   },
+   "after": {
+    "tr": "kuşaktan kuşağa aktarım"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"aktarım\" Wiedergabe ve Übertragung ile çakışıyor, yeni karşılık bunu ayırıyor. İngilizcedeki \"tradition\" ise B1 Tradition ile çakışacağından \"lore\" kalıyor."
+  },
+  {
+   "id": 3677,
+   "de": "sich entpuppen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dost sandığı kişi dolandırıcı çıktı."
+   },
+   "after": {
+    "beispielTr": "Dost sanılan kişi dolandırıcı çıktı."
+   },
+   "voiced": [],
+   "reason": "\"sandığı\" Almancada olmayan bir özne ekliyor; vermeintlich kişisiz, \"sanılan\" doğru.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 3692,
+   "de": "bemängeln",
+   "severity": "orta",
+   "before": {
+    "en": "to fault",
+    "beispielEn": "The auditors fault the missing documentation."
+   },
+   "after": {
+    "en": "to find fault with",
+    "beispielEn": "The auditors find fault with the lack of documentation."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'fault the missing documentation' doğal bir İngilizce değil. 'find fault with' bu kartı monieren kartının 'to criticize' karşılığından da ayırıyor."
+  },
+  {
+   "id": 3717,
+   "de": "nachvollziehbar",
+   "severity": "orta",
+   "before": {
+    "tr": "anlaşılır",
+    "beispielTr": "Koşullar göz önüne alınınca kararı gayet makul."
+   },
+   "after": {
+    "tr": "anlaşılabilir",
+    "beispielTr": "Koşullar göz önüne alındığında kararı anlaşılabilir."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"anlaşılır\" B1 verständlich ile aynı ve örnek çeviri başlıktan kopmuş; \"anlaşılabilir\" ayırt ediyor ve hak verilebilirlik anlamını taşıyor."
+  },
+  {
+   "id": 3891,
+   "de": "Weichenstellung",
+   "severity": "hafif",
+   "before": {
+    "en": "course-setting decision"
+   },
+   "after": {
+    "en": "pivotal decision"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'course-setting decision' İngilizcede yerleşik değil, 'pivotal decision' doğal ve başka bir kartla çakışmıyor."
+  },
+  {
+   "id": 3905,
+   "de": "unkalkulierbar",
+   "severity": "orta",
+   "before": {
+    "en": "incalculable",
+    "beispielEn": "Political crises make delivery costs incalculable."
+   },
+   "after": {
+    "en": "unpredictable",
+    "beispielEn": "Political crises make delivery costs unpredictable."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'incalculable' ölçülemeyecek kadar büyük demek; kart ve cümle 'öngörülemez' anlamında. Çakışma yok."
+  },
+  {
+   "id": 3912,
+   "de": "Kreislaufwirtschaft",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The startup consistently relies on the circular economy."
+   },
+   "after": {
+    "beispielEn": "The startup is fully committed to the circular economy."
+   },
+   "voiced": [],
+   "reason": "'relies on' bağımlı olmak demek; 'setzt konsequent auf' bir şeye kararlılıkla yönelmeyi anlatıyor, mevcut çeviri anlamı kaydırıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 3928,
+   "de": "Fluktuation",
+   "severity": "orta",
+   "before": {
+    "tr": "personel devri"
+   },
+   "after": {
+    "tr": "personel devir hızı"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'personel devri' personelin devredilmesi diye anlaşılabilir; terim 'personel devir hızı' ve İngilizce kursta aynı kelime zaten bu karşılığı kullanıyor. Cümle anlaşılır olduğu için yalnız anlam değişiyor."
+  },
+  {
+   "id": 3959,
+   "de": "Gängelung",
+   "severity": "hafif",
+   "before": {
+    "en": "micromanagement",
+    "beispielEn": "He complains about constantly being patronized by regulations."
+   },
+   "after": {
+    "en": "regimentation",
+    "beispielEn": "He complains about the constant regimentation by regulations."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Kurallarla sürekli sıkı denetim altında tutmayı 'micromanagement' değil 'regimentation' karşılıyor; 'patronized by regulations' doğal bir İngilizce değil. Çakışma yok."
+  },
+  {
+   "id": 3960,
+   "de": "Entmündigung",
+   "severity": "orta",
+   "before": {
+    "tr": "iradesizleştirme",
+    "beispielTr": "Çocuklarının onu denetlemesini iradesizleştirme olarak görüyor."
+   },
+   "after": {
+    "tr": "söz hakkını elinden alma",
+    "beispielTr": "Çocuklarının onu denetlemesini, söz hakkının elinden alınması olarak görüyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'iradesizleştirme' Türkçede yerleşik bir sözcük değil; önerilen karşılık doğal ve Mitbestimmung kartının 'söz hakkı' karşılığından ayrışıyor."
+  },
+  {
+   "id": 3964,
+   "de": "Machbarkeitswahn",
+   "severity": "orta",
+   "before": {
+    "tr": "yapılabilirlik saplantısı",
+    "beispielTr": "Yapılabilirlik saplantısı bütün projeyi mahvetti."
+   },
+   "after": {
+    "tr": "her şeyi başarabilme yanılgısı",
+    "beispielTr": "Her şeyi başarabileceği yanılgısı bütün projeyi mahvetti."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Türkçe karşılık anlaşılmıyor, önerilen hâli açık. Ancak 'hubris' Hybris'in karşılığı, kelimenin yapılabilirlik vurgusunu kaybettiriyor; bu yüzden İngilizce alanlar olduğu gibi kalıyor."
+  },
+  {
+   "id": 3987,
+   "de": "skandalisieren",
+   "severity": "orta",
+   "before": {
+    "en": "to scandalize",
+    "beispielEn": "The media scandalized the incident before the facts were clear."
+   },
+   "after": {
+    "en": "to make a scandal of",
+    "beispielEn": "The media made a scandal of the incident before the facts were clear."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "İngilizce 'scandalize' birini şoke etmek demek; 'olayı skandala çevirmek' anlamı yok, yanlış eş öğretiliyor. Öneri doğru."
+  },
+  {
+   "id": 4016,
+   "de": "verdeutlichen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The chart clearly shows the drop in births."
+   },
+   "after": {
+    "beispielEn": "The chart clearly shows the decline in the birth rate."
+   },
+   "voiced": [],
+   "reason": "Geburtenrate doğum oranı demek, doğum sayısı değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 4020,
+   "de": "veranlassen",
+   "severity": "orta",
+   "before": {
+    "beispiel": "Der Vorfall veranlasste eine gründliche Untersuchung des Betriebs.",
+    "beispielTr": "Olay, işletmede kapsamlı bir soruşturmaya yol açtı.",
+    "beispielEn": "The incident prompted a thorough investigation of the plant."
+   },
+   "after": {
+    "beispiel": "Der Vorfall veranlasste die Behörde zu einer gründlichen Untersuchung.",
+    "beispielTr": "Olay, kurumun kapsamlı bir soruşturma başlatmasına yol açtı.",
+    "beispielEn": "The incident prompted the authority to conduct a thorough investigation."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Cansız özneyle 'veranlassen' kalıbı 'jemanden zu etwas veranlassen'; mevcut cümle İngilizceden aktarma ve doğal değil."
+  },
+  {
+   "id": 4023,
+   "de": "einbüßen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The party forfeited considerable support in the election."
+   },
+   "after": {
+    "beispielEn": "The party lost considerable support in the election."
+   },
+   "voiced": [],
+   "reason": "Örnek cümledeki 'forfeited support' doğal değil, düzeltildi. Ama en 'to lose' verlieren kartıyla aynı olur; einbüßen kendi hatasıyla kaybetmek anlamında olduğundan 'to forfeit' kalıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5701,
+   "de": "Marktordnung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Etkili bir piyasa düzeni olmadan üreticiler ticaretin insafına kalıyor.",
+    "beispielEn": "Without an effective market organization producers are at the mercy of trade."
+   },
+   "after": {
+    "beispielTr": "Etkili bir piyasa düzeni olmadan üreticiler perakendecilerin insafına kalıyor.",
+    "beispielEn": "Without an effective market organization, producers are at the mercy of retailers."
+   },
+   "voiced": [],
+   "reason": "'At the mercy of trade' ve 'ticaretin insafına' anlamı bulanıklaştırıyor; burada Handel perakendeciler demek.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5714,
+   "de": "Flurbereinigung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Savaş sonrası dönemin arazi toplulaştırması sayısız çalıyı yok etti."
+   },
+   "after": {
+    "beispielTr": "Savaş sonrası dönemin arazi toplulaştırması sayısız çalı çitini yok etti."
+   },
+   "voiced": [],
+   "reason": "Hecke tek tek çalı değil, tarla sınırındaki çit. 'Çalı çiti' doğru anlamı veriyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5725,
+   "de": "Direktvermarktung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Doğrudan pazarlamayla çiftlikler perakendenin baskısını atlatıyor."
+   },
+   "after": {
+    "beispielTr": "Doğrudan pazarlamayla çiftlikler perakendecilerin baskısından kurtuluyor."
+   },
+   "voiced": [],
+   "reason": "'Baskıyı atlatmak' baskıya katlanıp geçmek demek, umgehen ise aradan çıkarmak. Cümle düzeltildi. 'Doğrudan pazarlama' tarımda da yerleşik terim, bu yüzden tr korunuyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5733,
+   "de": "auslaugen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Decades of maize cultivation have completely depleted the soils."
+   },
+   "after": {
+    "beispielEn": "Decades of corn cultivation have completely depleted the soils."
+   },
+   "voiced": [],
+   "reason": "'Maize' İngiliz kullanımı, kural Amerikan sözcüğü olan 'corn'u istiyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5735,
+   "de": "veredeln",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Regionally refined products fetch higher prices on the market."
+   },
+   "after": {
+    "beispielEn": "Regionally processed products fetch higher prices on the market."
+   },
+   "voiced": [],
+   "reason": "Gıdada 'refined products' arıtılmış ürün gibi okunuyor, örnek cümle düzeltildi. en 'to process' ise verarbeiten kartıyla aynı olur (tr zaten aynı), bu yüzden 'to refine' kalıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5749,
+   "de": "ackerbaulich",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Tarla tarımına ilişkin önlemler tek başına sıkışma sorununu çözmez."
+   },
+   "after": {
+    "beispielTr": "Tarla tarımına ilişkin önlemler tek başına toprak sıkışması sorununu çözmez."
+   },
+   "voiced": [],
+   "reason": "'Sıkışma sorunu' belirsiz; Verdichtung burada toprak sıkışması, İngilizce çeviriyle de uyumlu olur.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5757,
+   "de": "Abstammung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bu grupta soy anne üzerinden hesaplanır."
+   },
+   "after": {
+    "beispielTr": "Bu grupta soy anne tarafından izlenir."
+   },
+   "voiced": [],
+   "reason": "'Soy anne üzerinden hesaplanır' Almanca kalıbının birebir aktarımı; 'anne tarafından izlenir' doğal Türkçe.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5774,
+   "de": "Verhaltenskodex",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yazılı olmayan bir davranış kuralı kimin önce konuşacağını belirler."
+   },
+   "after": {
+    "beispielTr": "Yazılı olmayan davranış kuralları kimin önce konuşacağını belirler."
+   },
+   "voiced": [],
+   "reason": "Kodex bir kurallar bütünü; tekil 'bir davranış kuralı' kartın 'davranış kuralları' anlamıyla uyuşmuyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5787,
+   "de": "Sinnstiftung",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Rituals serve meaning-making in times of great uncertainty."
+   },
+   "after": {
+    "beispielEn": "Rituals help create meaning in times of great uncertainty."
+   },
+   "voiced": [],
+   "reason": "'Rituals serve meaning-making' bozuk, çeviri kokan İngilizce.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5818,
+   "de": "gebräuchlich",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bu hitap biçimi artık yalnızca birkaç dağ köyünde yaygın."
+   },
+   "after": {
+    "beispielTr": "Bu hitap biçimi artık yalnızca birkaç dağ köyünde kullanılıyor."
+   },
+   "voiced": [],
+   "reason": "'Yalnızca birkaç köyde yaygın' Türkçede çelişkili okunuyor; 'kullanılıyor' doğru. İngilizce 'still common only in' doğal, değişmesine gerek yok.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5821,
+   "de": "unausgesprochen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "An unspoken reproach stands between the two of them."
+   },
+   "after": {
+    "beispielEn": "There is an unspoken reproach between the two of them."
+   },
+   "voiced": [],
+   "reason": "'A reproach stands between' Almancadan birebir aktarım, doğal İngilizce değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5823,
+   "de": "weltanschaulich",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dernekteki kavga nesnel değil, dünya görüşüyle ilgili.",
+    "beispielEn": "The dispute in the club is ideological, not factual."
+   },
+   "after": {
+    "beispielTr": "Dernekteki kavga konuyla değil, dünya görüşüyle ilgili.",
+    "beispielEn": "The dispute in the club is ideological, not about substance."
+   },
+   "voiced": [],
+   "reason": "sachlich burada 'konunun özüyle ilgili'; 'nesnel değil' ve 'not factual' anlamı kaydırıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5840,
+   "de": "Identifikation",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kulüple özdeşleşmesi çok ileri gidiyor.",
+    "beispielEn": "Her identification with the club goes very far."
+   },
+   "after": {
+    "beispielTr": "Kulüple özdeşleşmesi çok derin.",
+    "beispielEn": "Her identification with the club runs very deep."
+   },
+   "voiced": [],
+   "reason": "'Çok ileri gidiyor' aşırılık sitemi gibi okunuyor, 'goes very far' doğal değil; 'derin/runs deep' kastedilen anlam.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5847,
+   "de": "Dequalifizierung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yeni otomatlar fırıncıların vasıfsızlaşmasına yol açıyor."
+   },
+   "after": {
+    "beispielTr": "Yeni makineler fırıncıların vasıfsızlaşmasına yol açıyor."
+   },
+   "voiced": [],
+   "reason": "Türkçede otomat çoğunlukla satış otomatı anlamına geliyor; İngilizce de machines diyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5854,
+   "de": "Konkurrenzdruck",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ofisteki rekabet baskısı adamın uykusunu kaçırıyor."
+   },
+   "after": {
+    "beispielTr": "Ofisteki rekabet baskısı onun uykusunu kaçırıyor."
+   },
+   "voiced": [],
+   "reason": "ihm için adamın demek cümleye olmayan bir kişi ve ton katıyor; onun doğrudan karşılık.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5868,
+   "de": "honorieren",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Hafta sonundaki fazla mesaisini kimse ödüllendirmedi.",
+    "beispielEn": "Nobody rewarded her extra work on the weekend."
+   },
+   "after": {
+    "beispielTr": "Hafta sonundaki fazla mesaisini kimse takdir etmedi.",
+    "beispielEn": "Nobody recognized her extra work on the weekend."
+   },
+   "voiced": [],
+   "reason": "Örnek çeviri, belohnen kartının karşılığını (ödüllendirmek/to reward) kullanıyor; kartın kendi karşılığıyla hizalanması ayırt etmeyi kolaylaştırıyor. Almanca cümle değişmiyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5883,
+   "de": "durchlässig",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Okul sistemi yalnızca kâğıt üzerinde geçirgen."
+   },
+   "after": {
+    "beispielTr": "Okul sistemi yalnızca kâğıt üzerinde geçişlere açık."
+   },
+   "voiced": [],
+   "reason": "Okul sistemi için geçirgen kelimesi kelimesine çeviri, anlaşılmıyor. Mecaz anlam doğru aktarılıyor, Almanca cümle değişmiyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5900,
+   "de": "Trabantenstadt",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Büyükannemler Hannover yakınlarındaki bir uydu kentte oturuyor."
+   },
+   "after": {
+    "beispielTr": "Büyükannemle dedem Hannover yakınlarındaki bir uydu kentte oturuyor."
+   },
+   "voiced": [],
+   "reason": "Großeltern iki kişiyi kapsıyor; büyükannemler anlamı büyükanneye kaydırıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5904,
+   "de": "Monumentalität",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yapının anıtsallığı bugün yüceden çok ürkütücü geliyor."
+   },
+   "after": {
+    "beispielTr": "Yapının anıtsallığı bugün yüce olmaktan çok ürkütücü görünüyor."
+   },
+   "voiced": [],
+   "reason": "yüceden çok kuruluşu Türkçede bozuk; düzeltilmiş hâli wirkt'i de doğru karşılıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5946,
+   "de": "unwirtlich",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "In the wind the wide forecourt becomes thoroughly inhospitable."
+   },
+   "after": {
+    "beispielEn": "In windy weather, the wide forecourt becomes thoroughly inhospitable."
+   },
+   "voiced": [],
+   "reason": "'In the wind' İngilizcede 'söylentide/yolda' çağrışımı taşıyor; 'Bei Wind' koşulu 'in windy weather' ile doğru aktarılıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 5993,
+   "de": "ausdifferenzieren",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Üniversite, ders programını çok sayıda alt dala ayırdı.",
+    "beispielEn": "The university has greatly differentiated its range of courses."
+   },
+   "after": {
+    "beispielTr": "Üniversite, program yelpazesini çok sayıda alt dala ayırdı.",
+    "beispielEn": "The university has greatly differentiated its range of degree programs."
+   },
+   "voiced": [],
+   "reason": "'ders programı' Türkçede ders çizelgesi demek, Studienangebot'u yanlış aktarıyor; 'degree programs' daha doğru. Yalnız çeviriler değişiyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6000,
+   "de": "bemessen",
+   "severity": "orta",
+   "before": {
+    "tr": "ölçüp belirlemek",
+    "en": "to gauge"
+   },
+   "after": {
+    "tr": "miktarını belirlemek",
+    "en": "to determine the amount"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "'to gauge' tahmin etmek/ölçmek demek, bemessen'i karşılamıyor; 'ölçüp belirlemek' de doğal değil. Ancak önerilen 'belirlemek' festlegen/festsetzen ile, 'to determine' feststellen ile çakışıyor; ayırt edilebilir 'miktarını belirlemek / to determine the amount' seçildi."
+  },
+  {
+   "id": 6006,
+   "de": "zweckgebunden",
+   "severity": "hafif",
+   "before": {
+    "tr": "amaca bağlı",
+    "beispielTr": "Bu bağış amaca bağlı ve sadece oyun parkını finanse ediyor."
+   },
+   "after": {
+    "tr": "amaca tahsisli",
+    "beispielTr": "Bu bağış belli bir amaca tahsisli ve sadece oyun parkını finanse ediyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'amaca bağlı' Türkçede doğal değil ve şarta bağlı gibi okunuyor; zweckgebunden 'belli amaca tahsis edilmiş' demek. Önerinin 'belli amaca ayrılmış'ı yerine daha terimsel ve kısa 'amaca tahsisli' seçildi."
+  },
+  {
+   "id": 6007,
+   "de": "ungeachtet",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kötü notlarına rağmen sınıfı geçti.",
+    "beispielEn": "He was moved up regardless of his bad grades."
+   },
+   "after": {
+    "beispielTr": "Kötü notlarına bakılmaksızın sınıfı geçti.",
+    "beispielEn": "He was promoted to the next grade regardless of his bad grades."
+   },
+   "voiced": [],
+   "reason": "Örnek çeviri kartın karşılığını (bakılmaksızın) göstermiyor; 'moved up' İngiliz kullanımı, AmE 'promoted to the next grade'. Türkçe etken yapı korunarak en az değişiklik yapıldı.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6048,
+   "de": "fortschreiben",
+   "severity": "orta",
+   "before": {
+    "tr": "ileriye taşımak",
+    "en": "to carry forward",
+    "beispielTr": "Kurum bütçe planını her yıl aynı şekilde ileriye taşıyor.",
+    "beispielEn": "The authority carries the budget plan forward every year."
+   },
+   "after": {
+    "tr": "güncelleyerek sürdürmek",
+    "en": "to update and extend",
+    "beispielTr": "Kurum bütçe planını her yıl güncelleyerek sürdürüyor.",
+    "beispielEn": "The authority updates and extends the budget plan every year."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "'İleriye taşımak' belirsiz, örnekteki 'aynı şekilde' anlamı bozuyor. 'to update' tek başına aktualisieren (5476) ile aynı olurdu, o yüzden 'to update and extend' seçildi."
+  },
+  {
+   "id": 6081,
+   "de": "Bündnisfall",
+   "severity": "orta",
+   "before": {
+    "tr": "ittifak yükümlülüğü",
+    "beispielTr": "Tarihte ilk kez ittifak yükümlülüğü ilan edildi."
+   },
+   "after": {
+    "tr": "ortak savunma durumu",
+    "beispielTr": "Tarihte ilk kez ortak savunma durumu ilan edildi."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Yükümlülük ilan edildi' Türkçede anlamsız. Bündnisfall ortak savunma durumudur."
+  },
+  {
+   "id": 6094,
+   "de": "Truppenabzug",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Birliklerin tamamen çekilmesi yıl sonuna kadar tamamlanacak."
+   },
+   "after": {
+    "beispielTr": "Birliklerin tamamen çekilmesinin yıl sonuna kadar tamamlanması planlanıyor."
+   },
+   "voiced": [],
+   "reason": "'Soll erfolgen' plan bildiriyor, 'tamamlanacak' bunu kesinlik olarak veriyor. Düzeltme kipliği geri getiriyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6096,
+   "de": "Demarkationslinie",
+   "severity": "orta",
+   "before": {
+    "tr": "ayrım hattı",
+    "beispielTr": "Gözlemciler ayrım hattına uyulmasını gece gündüz denetliyor."
+   },
+   "after": {
+    "tr": "demarkasyon hattı",
+    "beispielTr": "Gözlemciler demarkasyon hattına uyulmasını gece gündüz denetliyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Ayrım hattı' yerleşik değil. Türkçede yerleşik terim 'demarkasyon hattı'."
+  },
+  {
+   "id": 6099,
+   "de": "Selbstbestimmungsrecht",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Azınlık kendi kaderini tayin hakkında ısrar ediyor."
+   },
+   "after": {
+    "beispielTr": "Azınlık kendi kaderini tayin hakkını ısrarla talep ediyor."
+   },
+   "voiced": [],
+   "reason": "'Hakkında' ekiyle 'konusunda' diye okunuyor ve iki anlama geliyor. Düzeltme bu belirsizliği gideriyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6102,
+   "de": "Verhandlungsführung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ustaca müzakere yönetimi anlaşmayı son dakikada kurtardı."
+   },
+   "after": {
+    "beispielTr": "Müzakereleri ustaca yönetmesi anlaşmayı son dakikada kurtardı."
+   },
+   "voiced": [],
+   "reason": "'Seine' çeviride kaybolmuştu. İyelik eki öznenin kim olduğunu geri getiriyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6170,
+   "de": "bezweifeln",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Olgulardan kimse kuşku duymuyor, ama yorumlarından duyuyor."
+   },
+   "after": {
+    "beispielTr": "Olgulardan kimse kuşku duymuyor, ama yorumlarından kuşku duyuluyor."
+   },
+   "voiced": [],
+   "reason": "İkinci yarıda özne 'kimse' kalıyor ve olumlu fiille çelişiyor; edilgen yapı anlamı doğru veriyor ve fiili koruyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6176,
+   "de": "monieren",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Birkaç hakem çalışmanın belirsiz soru kurgusuna kusur buldu."
+   },
+   "after": {
+    "beispielTr": "Birkaç hakem çalışmanın belirsiz araştırma sorusunu eleştirdi."
+   },
+   "voiced": [],
+   "reason": "'Soru kurgusuna kusur buldu' bozuk Türkçe (kusur -de bulunur), cümle çevirisi düzeltildi. tr 'eleştirmek' yapılmadı: kritisieren ile aynı tr ve en olur, ayırt edilemez.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6178,
+   "de": "konzedieren",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Even his opponents concede that he is intellectually consistent."
+   },
+   "after": {
+    "beispielEn": "Even his opponents concede that he has a certain intellectual consistency."
+   },
+   "voiced": [],
+   "reason": "İngilizce çeviri 'eine gewisse' sınırlamasını düşürüp anlamı değiştiriyor; öneri bunu düzeltiyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6280,
+   "de": "Heldenverehrung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yazarlar kahraman kültü yerine serinkanlı bir bilanço istiyor."
+   },
+   "after": {
+    "beispielTr": "Yazarlar kahraman kültü yerine nesnel bir değerlendirme istiyor."
+   },
+   "voiced": [],
+   "reason": "'serinkanlı bir bilanço' Türkçede doğal değil (serinkanlı kişiler için kullanılır); 'nesnel bir değerlendirme' nüchterne Bilanz'ı doğru aktarıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6283,
+   "de": "Niedergang",
+   "severity": "hafif",
+   "before": {
+    "tr": "çöküş",
+    "beispielTr": "İmparatorluğun çöküşü birkaç kuşağa yayıldı."
+   },
+   "after": {
+    "tr": "gerileme",
+    "beispielTr": "İmparatorluğun gerilemesi birkaç kuşak boyunca sürdü."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Niedergang yavaş düşüş/gerilemedir (en: decline); 'çöküş' daha çok Untergang/Zusammenbruch karşılar. 'gerileme' başka kartta yok, çakışma yaratmıyor."
+  },
+  {
+   "id": 6308,
+   "de": "folgenreich",
+   "severity": "hafif",
+   "before": {
+    "tr": "sonuçları ağır",
+    "beispielTr": "Bakanın istifasının sonuçları beklenenden ağır oldu."
+   },
+   "after": {
+    "tr": "büyük sonuçlar doğuran",
+    "beispielTr": "Bakanın istifası beklenenden daha büyük sonuçlar doğurdu."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "folgenreich yansızdır (consequential); 'sonuçları ağır' olumsuz bir anlam ekliyor. Öneri anlamı daha doğru veriyor, çakışma yok."
+  },
+  {
+   "id": 6340,
+   "de": "Kapitalflucht",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "A massive capital flight set in after the election."
+   },
+   "after": {
+    "beispielEn": "Massive capital flight set in after the election."
+   },
+   "voiced": [],
+   "reason": "'capital flight' İngilizcede sayılamayan isimdir; belirsiz tanımlık gereksiz ve tuhaf.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6350,
+   "de": "gemeinnützig",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dernek kamu yararına dernek olarak tanınıyor."
+   },
+   "after": {
+    "beispielTr": "Dernek, kamu yararına çalışan bir kuruluş olarak tanınıyor."
+   },
+   "voiced": [],
+   "reason": "Mevcut çeviride 'dernek' sözcüğü iki kez geçiyor ve 'kamu yararına dernek' kuruluşu bozuk. Önerilen cümle doğru ve doğal.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6373,
+   "de": "Ermessensspielraum",
+   "severity": "hafif",
+   "before": {
+    "tr": "takdir marjı",
+    "beispielTr": "İdarenin bu kararda hatırı sayılır bir takdir yetkisi kalıyor."
+   },
+   "after": {
+    "tr": "takdir payı",
+    "beispielTr": "İdarenin bu kararda hatırı sayılır bir takdir payı kalıyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Takdir marjı' AİHM'nin margin of appreciation kavramına ait. İdare hukukunda Ermessensspielraum için 'takdir payı' doğru karşılık. Örnek çeviri de böylece kartla uyumlu oluyor. Başka kartla çakışmıyor."
+  },
+  {
+   "id": 6430,
+   "de": "Spezialprävention",
+   "severity": "hafif",
+   "before": {
+    "en": "specific deterrence",
+    "beispielEn": "The judge justified the mild sentence with specific deterrence."
+   },
+   "after": {
+    "en": "special prevention",
+    "beispielEn": "The judge justified the mild sentence on grounds of special prevention."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "Spezialprävention topluma yeniden kazandırmayı da kapsıyor. Hafif cezayı 'deterrence' ile gerekçelendirmek İngilizcede çelişkili okunuyor. Yerleşik terim 'special prevention'; Türkçe 'özel önleme' ile de örtüşüyor."
+  },
+  {
+   "id": 6443,
+   "de": "Entkriminalisierung",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Decriminalizing soft drugs noticeably relieves the authorities."
+   },
+   "after": {
+    "beispielEn": "Decriminalizing soft drugs noticeably eases the burden on the authorities."
+   },
+   "voiced": [],
+   "reason": "Nesnesiz 'relieves the authorities' İngilizcede 'görevden almak, nöbeti devralmak' gibi okunuyor; 'entlasten' anlamını 'eases the burden on' doğru veriyor. Değişen yalnız çeviri, cümle kaydı gerekmiyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6489,
+   "de": "Tabubruch",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "His latest film lives off taboo breaking alone."
+   },
+   "after": {
+    "beispielEn": "His latest film relies entirely on breaking taboos."
+   },
+   "voiced": [],
+   "reason": "'lives off taboo breaking alone' Almancadan kelime kelime aktarılmış, doğal olmayan bir İngilizce. Önerilen çeviri anlamı doğal veriyor; değişen yalnız çeviri.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6553,
+   "de": "Vers",
+   "severity": "hafif",
+   "before": {
+    "en": "verse",
+    "beispielEn": "The last two verses are deliberately left unfinished."
+   },
+   "after": {
+    "en": "line of verse",
+    "beispielEn": "The last two lines are deliberately left unfinished."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "İngilizcede \"verses\" çoğunlukla kıta diye anlaşılır, Türkçe \"dize\" ve Almanca anlamla çelişiyor; \"line of verse\" başka kartla çakışmıyor."
+  },
+  {
+   "id": 6563,
+   "de": "Sprachbild",
+   "severity": "hafif",
+   "before": {
+    "tr": "dil imgesi",
+    "beispielTr": "Dil imgelerinin neredeyse hepsi tarımdan geliyor."
+   },
+   "after": {
+    "tr": "imge",
+    "beispielTr": "İmgelerinin neredeyse hepsi tarımdan geliyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"dil imgesi\" yerleşik bir terim değil, harfi harfine çeviri; \"imge\" doğal ve başka kartla çakışmıyor."
+  },
+  {
+   "id": 6600,
+   "de": "Zeugnisverweigerungsrecht",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Gazeteciler mahkemede tanıklıktan çekinme haklarına dayanıyor."
+   },
+   "after": {
+    "beispielTr": "Gazeteciler mahkemede tanıklıktan çekinme haklarını kullanıyor."
+   },
+   "voiced": [],
+   "reason": "\"haklarına dayanıyor\" çeviri kokuyor; Türkçede hak için doğal fiil \"kullanmak\".",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6604,
+   "de": "Pamphlet",
+   "severity": "hafif",
+   "before": {
+    "en": "pamphlet"
+   },
+   "after": {
+    "en": "polemical tract"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "İngilizce \"pamphlet\" öncelikle broşür demek, yalancı eş öğretiyor. \"polemic\" Streitschrift ve Polemik kartlarında kullanıldığı için \"polemical tract\" ayırt edici."
+  },
+  {
+   "id": 6606,
+   "de": "Feuilleton",
+   "severity": "hafif",
+   "before": {
+    "tr": "kültür sanat eki",
+    "beispielTr": "Kültür sanat ekinde haftalardır iptal kültürü kavramı tartışılıyor."
+   },
+   "after": {
+    "tr": "kültür sanat sayfası",
+    "beispielTr": "Kültür sanat sayfasında haftalardır iptal kültürü kavramı tartışılıyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Feuilleton gazetenin kültür bölümüdür, ayrı ek değil. İngilizce \"arts section\" ve örneği zaten doğru, onlara dokunulmadı."
+  },
+  {
+   "id": 6614,
+   "de": "Emotionalisierung",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The emotionalization of the case drove the click numbers up."
+   },
+   "after": {
+    "beispielEn": "The emotionalization of the case drove up the number of clicks."
+   },
+   "voiced": [],
+   "reason": "\"click numbers\" İngilizcede doğal değil, Almancadan birebir aktarılmış.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6615,
+   "de": "Kommerzialisierung",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The commercialization of sport has doubled ticket prices."
+   },
+   "after": {
+    "beispielEn": "The commercialization of sports has doubled ticket prices."
+   },
+   "voiced": [],
+   "reason": "Amerikan İngilizcesinde genel anlamda \"sports\" denir, \"sport\" İngiliz kullanımı.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6624,
+   "de": "richtigstellen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The editors set the wrong figure straight only after three days."
+   },
+   "after": {
+    "beispielEn": "The editors corrected the wrong figure only after three days."
+   },
+   "voiced": [],
+   "reason": "\"set the wrong figure straight\" doğal değil, cümle düzeltildi. Ancak en \"to correct\" korrigieren kartıyla çakışacağı için anlam \"to set straight\" olarak kalıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6627,
+   "de": "bloßstellen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Sunucu, konuğunu canlı yayında rezil etti.",
+    "beispielEn": "The host humiliated his guest on live television."
+   },
+   "after": {
+    "beispielTr": "Sunucu, konuğunu kameralar önünde rezil etti.",
+    "beispielEn": "The host humiliated his guest on camera."
+   },
+   "voiced": [],
+   "reason": "\"vor laufender Kamera\" canlı yayın demek değil; çeviriler kaynakta olmayan bilgi ekliyordu.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6631,
+   "de": "offenlegen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda açıklamak zorundadır."
+   },
+   "after": {
+    "beispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda beyan etmek zorundadır."
+   },
+   "voiced": [],
+   "reason": "Çıkar çatışması için yerleşik kalıp \"beyan etmek\"; örnek böylece kartın anlamıyla örtüşüyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6642,
+   "de": "unbelegt",
+   "severity": "hafif",
+   "before": {
+    "tr": "dayanaksız",
+    "beispielTr": "Suçlama sonuna kadar dayanaksız kaldı ve yine de tekrarlandı."
+   },
+   "after": {
+    "tr": "kanıtlanmamış",
+    "beispielTr": "Suçlama sonuna kadar kanıtlanmadı ama yine de tekrarlandı."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Unbelegt 'kanıtı yok' demek; 'dayanaksız' ise asılsız olduğunu ima eder (unbegründet). 'Kanıtlanmamış' daha kesin ve çakışma yok."
+  },
+  {
+   "id": 6646,
+   "de": "Sterbehilfe",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The admissibility of active euthanasia has been disputed for decades."
+   },
+   "after": {
+    "beispielEn": "The permissibility of active euthanasia has been debated for decades."
+   },
+   "voiced": [],
+   "reason": "'Admissibility' delil/başvuru için kullanılır; etik ve hukuki izin için 'permissibility' doğru.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6649,
+   "de": "Verteilungsgerechtigkeit",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bağış organları kıt olunca dağıtım adaleti sorunu gündeme gelir."
+   },
+   "after": {
+    "beispielTr": "Bağışlanan organlar kıt olduğunda dağıtım adaleti sorunu gündeme gelir."
+   },
+   "voiced": [],
+   "reason": "'Bağış organları' doğal bir Türkçe tamlama değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6650,
+   "de": "Knappheit",
+   "severity": "orta",
+   "before": {
+    "tr": "yetersizlik",
+    "beispielTr": "Yoğun bakım yatağı yetersizliği kliniği zor kararlar almaya zorladı."
+   },
+   "after": {
+    "tr": "darlık",
+    "beispielTr": "Yoğun bakım yatağı darlığı kliniği zor kararlar almaya zorladı."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Yetersizlik' Unzulänglichkeit (3711) ile çakışıyor, düzeltme gerekli; ama 'kıtlık' da Hungersnot (6329) ile çakışır. Scarcity için ayırt edici 'darlık' seçildi."
+  },
+  {
+   "id": 6655,
+   "de": "Leistungskatalog",
+   "severity": "hafif",
+   "before": {
+    "en": "benefits catalog",
+    "beispielEn": "This therapy is not in the insurer's benefits catalog."
+   },
+   "after": {
+    "en": "benefits package",
+    "beispielEn": "This therapy is not part of the insurer's benefits package."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Benefits catalog' Amerikan İngilizcesinde kopya çeviri; 'benefits package' yerleşik terim ve çakışma yok."
+  },
+  {
+   "id": 6673,
+   "de": "Organspende",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yıllar önce organ bağışına karar vermişti."
+   },
+   "after": {
+    "beispielTr": "Yıllar önce organ bağışına karar verdi."
+   },
+   "voiced": [],
+   "reason": "Perfekt cümlede '-mişti' cümlede olmayan daha önceki bir zamanı ima ediyor; görülen geçmiş doğru.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6677,
+   "de": "Ressourcenallokation",
+   "severity": "hafif",
+   "before": {
+    "tr": "kaynak dağılımı",
+    "beispielTr": "Salgın klinikleri sert bir kaynak dağılımına zorladı."
+   },
+   "after": {
+    "tr": "kaynak tahsisi",
+    "beispielTr": "Salgın, klinikleri katı bir kaynak tahsisine zorladı."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Allocation'ın yerleşik karşılığı 'tahsis'; 'sert bir kaynak dağılımına' doğal değil. Cümle isim yapısını koruyacak biçimde iyileştirildi."
+  },
+  {
+   "id": 6683,
+   "de": "sich unterziehen",
+   "severity": "hafif",
+   "before": {
+    "tr": "tabi olmak"
+   },
+   "after": {
+    "tr": "-den geçmek"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Tabi olmak' sich unterordnen (5864) ile çakışıyor ve undergo anlamını vermiyor. '-den geçmek' örnek çeviriyle uyumlu; stammen '-den gelmek' kalıbına uyuyor."
+  },
+  {
+   "id": 6692,
+   "de": "Flüchtlingskonvention",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The court based its ruling on the refugee convention."
+   },
+   "after": {
+    "beispielEn": "The court invoked the refugee convention."
+   },
+   "voiced": [],
+   "reason": "'Sich berufen auf' 'invoke' demek; 'based its ruling on' Almancada olmayan bir bilgi ekliyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6707,
+   "de": "Übergriff",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Polisin taşkınlıkları aylarca soruşturulmadı."
+   },
+   "after": {
+    "beispielTr": "Polisin saldırıları aylarca soruşturulmadı."
+   },
+   "voiced": [],
+   "reason": "'Taşkınlık' Übergriff'in anlamını zayıflatıyor ve kartın 'saldırı' karşılığıyla uyuşmuyor. İngilizcedeki 'abuses' ise doğru bir çeviri, ona dokunulmadı.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6714,
+   "de": "entschädigen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Havayolu kaybolan bavul için bizi tazmin etti."
+   },
+   "after": {
+    "beispielTr": "Havayolu şirketi kaybolan bavul için bize tazminat ödedi."
+   },
+   "voiced": [],
+   "reason": "'Bizi tazmin etti' Türkçede bozuk; tazmin edilen kişi değil zarardır.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6810,
+   "de": "Sekundärrohstoff",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Eski cihazlardan elde edilen ikincil hammaddeler ithal metallerin yerini alıyor."
+   },
+   "after": {
+    "beispielTr": "Eski cihazlardan elde edilen ikincil hammaddeler giderek ithal metallerin yerini alıyor."
+   },
+   "voiced": [],
+   "reason": "\"zunehmend\" çeviride karşılanmamıştı; eksik anlam tamamlanıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6832,
+   "de": "zukunftsfähig",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Geleceğe dayanıklı bir ekonomi modeli sonsuz nicelik büyümesine dayanamaz."
+   },
+   "after": {
+    "beispielTr": "Geleceğe dayanıklı bir ekonomi modeli sonsuz nicelik büyümesine dayanmamalı."
+   },
+   "voiced": [],
+   "reason": "\"darf nicht\" gereklilik bildirir; \"dayanamaz\" imkânsızlık anlatıyordu, anlam kayıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6837,
+   "de": "Zurechnungsfähigkeit",
+   "severity": "orta",
+   "before": {
+    "tr": "ceza sorumluluğu",
+    "beispielTr": "Mahkeme, sanığın ceza sorumluluğunu psikiyatrik olarak inceletti."
+   },
+   "after": {
+    "tr": "cezai ehliyet",
+    "beispielTr": "Mahkeme, sanığın cezai ehliyetini psikiyatrik olarak inceletti."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Zurechnungsfähigkeit sorumlu tutulabilme yetisidir; Türkçedeki yerleşik karşılığı \"cezai ehliyet\", \"ceza sorumluluğu\" sonucu anlatıyor."
+  },
+  {
+   "id": 6846,
+   "de": "Verstand",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "His alert mind immediately struck everyone."
+   },
+   "after": {
+    "beispielEn": "Everyone noticed his alert mind right away."
+   },
+   "voiced": [],
+   "reason": "'Struck everyone' tek başına doğal değil. 'Wach' karşılığı olan 'alert' korunarak düzeltildi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6850,
+   "de": "Relativismus",
+   "severity": "orta",
+   "before": {
+    "tr": "görecelilik",
+    "beispielTr": "Radikal bir görecelilik, haksızlığa yönelik her eleştiriyi imkânsız kılar."
+   },
+   "after": {
+    "tr": "görecilik",
+    "beispielTr": "Radikal bir görecilik, haksızlığa yönelik her eleştiriyi imkânsız kılar."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Felsefi akım 'görecilik'tir; 'görecelilik' fizikteki izafiyettir. Düzeltme doğru."
+  },
+  {
+   "id": 6852,
+   "de": "Gebot",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Fairness here is less a law than a moral commandment."
+   },
+   "after": {
+    "beispielEn": "Fairness here is less a law than a moral imperative."
+   },
+   "voiced": [],
+   "reason": "'Moralisches Gebot' İngilizcede yerleşik olarak 'moral imperative' diye söylenir; 'moral commandment' çeviri kokuyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6855,
+   "de": "Wesenszug",
+   "severity": "hafif",
+   "before": {
+    "en": "essential trait",
+    "beispielEn": "That stubbornness is an essential trait of his whole family."
+   },
+   "after": {
+    "en": "characteristic trait",
+    "beispielEn": "That stubbornness is a characteristic trait of his whole family."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Essential trait' vazgeçilmez özellik anlamına gelir. Wesenszug ise karakteristik özelliktir."
+  },
+  {
+   "id": 6871,
+   "de": "verneinen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "He curtly said no to the question about a witness."
+   },
+   "after": {
+    "beispielEn": "When asked about a witness, he curtly said no."
+   },
+   "voiced": [],
+   "reason": "'Said no to the question' soruyu geri çevirmek gibi okunabiliyor. Öneri anlamı netleştiriyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6885,
+   "de": "Subsidiarität",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Under the principle of subsidiarity the municipality decides itself."
+   },
+   "after": {
+    "beispielEn": "Under the principle of subsidiarity, the municipality decides for itself."
+   },
+   "voiced": [],
+   "reason": "'Decides itself' hatalı; doğru kalıp 'decides for itself'.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6886,
+   "de": "Gebietskörperschaft",
+   "severity": "hafif",
+   "before": {
+    "en": "local authority",
+    "beispielTr": "Yerel yönetim birimleri okulların yapımını birlikte finanse ediyor.",
+    "beispielEn": "The local authorities jointly finance the expansion of the schools."
+   },
+   "after": {
+    "en": "local government",
+    "beispielTr": "Yerel yönetim birimleri okulların genişletilmesini birlikte finanse ediyor.",
+    "beispielEn": "The local governments jointly finance the expansion of the schools."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Local authority' İngiliz İngilizcesine özgü. Ayrıca Ausbau 'genişletme' demek, 'yapım' değil."
+  },
+  {
+   "id": 6890,
+   "de": "Machtbefugnis",
+   "severity": "hafif",
+   "before": {
+    "en": "governmental power",
+    "beispielTr": "Cumhurbaşkanı iktidar yetkilerini açıkça aştı.",
+    "beispielEn": "The president clearly exceeded his governmental powers."
+   },
+   "after": {
+    "en": "power",
+    "beispielTr": "Cumhurbaşkanı yetkilerini açıkça aştı.",
+    "beispielEn": "The president clearly exceeded his powers."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Governmental power' ve 'iktidar yetkilerini aştı' doğal değil. Başlıktaki tr 'yetki' yapılmadı, çünkü Befugnis (C1) ile çakışırdı; 'iktidar yetkisi' kaldı."
+  },
+  {
+   "id": 6891,
+   "de": "Willensbildung",
+   "severity": "hafif",
+   "before": {
+    "en": "will formation",
+    "beispielEn": "Parties take part in the political will formation of the people."
+   },
+   "after": {
+    "en": "formation of political will",
+    "beispielEn": "Parties participate in forming the political will of the people."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Will formation' İngilizcede doğal değil; Temel Yasa çevirisindeki yerleşik karşılık 'formation of the political will'."
+  },
+  {
+   "id": 6892,
+   "de": "Interessenverband",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Powerful interest groups in Berlin stand up for their industry."
+   },
+   "after": {
+    "beispielEn": "Powerful interest groups lobby for their industry in Berlin."
+   },
+   "voiced": [],
+   "reason": "Mevcut çeviri, Berlin'de savunuculuk yapmayı grupların Berlin'de bulunduğu anlamına kaydırıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6897,
+   "de": "Regierungserklärung",
+   "severity": "orta",
+   "before": {
+    "tr": "hükûmet programı",
+    "beispielTr": "Başbakan hükûmet programı konuşmasında emekli maaşlarına zam duyurdu."
+   },
+   "after": {
+    "tr": "hükûmet açıklaması",
+    "beispielTr": "Şansölye hükûmet açıklamasında emekli maaşlarına zam duyurdu."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Regierungserklärung, hükûmetin mecliste yaptığı açıklamadır; 'hükûmet programı' Regierungsprogramm demektir. Almanya bağlamında Kanzler 'Şansölye'dir."
+  },
+  {
+   "id": 6907,
+   "de": "hoheitlich",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Private companies may not take on sovereign tasks."
+   },
+   "after": {
+    "beispielEn": "Private companies may not perform sovereign functions."
+   },
+   "voiced": [],
+   "reason": "'Take on sovereign tasks' Almancadan birebir aktarım; hukuk İngilizcesinde yerleşik ifade 'sovereign functions'.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6911,
+   "de": "Verzerrung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "İstatistikte genç katılımcılar lehine bir çarpıtma var."
+   },
+   "after": {
+    "beispielTr": "İstatistikte genç katılımcılar lehine bir sapma var."
+   },
+   "voiced": [],
+   "reason": "İstatistikteki Verzerrung kasıtsız bir sapmadır; 'çarpıtma' kasıtlı bir manipülasyon izlenimi veriyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6917,
+   "de": "Denkfehler",
+   "severity": "hafif",
+   "before": {
+    "tr": "düşünme hatası",
+    "beispielTr": "Hesabında basit bir düşünme hatası var."
+   },
+   "after": {
+    "tr": "mantık hatası",
+    "beispielTr": "Hesabında basit bir mantık hatası var."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Düşünme hatası' çeviri kokuyor; Türkçede yerleşik karşılık 'mantık hatası'. Başka bir kartla çakışmıyor."
+  },
+  {
+   "id": 6928,
+   "de": "Übertragung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Terapide aktarım doğrudan doktora yöneldi."
+   },
+   "after": {
+    "beispielTr": "Terapide aktarım doktora yöneldi."
+   },
+   "voiced": [],
+   "reason": "Almancada olmayan 'doğrudan' çeviriye eklenmiş.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6939,
+   "de": "Affekt",
+   "severity": "orta",
+   "before": {
+    "tr": "duygulanım",
+    "en": "affect"
+   },
+   "after": {
+    "tr": "duygu patlaması",
+    "en": "heat of passion"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Genel dilde Affekt anlık şiddetli duygu hâli demek, örnek de 'im Affekt'; 'duygulanım/affect' psikoloji terimi ve cümleyle uyuşmuyor."
+  },
+  {
+   "id": 6965,
+   "de": "wohlwollend",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "She judged her students' work benevolently."
+   },
+   "after": {
+    "beispielEn": "She judged her students' work favorably."
+   },
+   "voiced": [],
+   "reason": "'judged benevolently' İngilizcede doğal bir eşdizim değil; 'favorably' wohlwollend beurteilen'in doğal karşılığı.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6972,
+   "de": "anmaßend",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Başkalarının hayat tasarıları hakkında hüküm vermek haddini bilmezlik olur."
+   },
+   "after": {
+    "beispielTr": "Başkalarının hayat tercihleri hakkında hüküm vermek haddini bilmezlik olur."
+   },
+   "voiced": [],
+   "reason": "'Hayat tasarıları' kelimesi kelimesine çeviri ve doğal değil; 'hayat tercihleri' İngilizce çeviriyle de örtüşüyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 6994,
+   "de": "anmuten",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Öneri ilk bakışta saf bir izlenim veriyor."
+   },
+   "after": {
+    "beispielTr": "Öneri ilk bakışta naif bir izlenim veriyor."
+   },
+   "voiced": [],
+   "reason": "'Saf bir izlenim' 'katıksız izlenim' diye de okunabiliyor. 'Naif' bu belirsizliği gideriyor, başlıktaki 'izlenimi vermek' de cümlede kalıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7000,
+   "de": "erahnen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The scope of this decision can only be sensed."
+   },
+   "after": {
+    "beispielEn": "One can only guess at the full implications of this decision."
+   },
+   "voiced": [],
+   "reason": "'The scope … can only be sensed' çeviri kokuyor; 'guess at the implications' Tragweite erahnen'in doğal İngilizcesi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7044,
+   "de": "Agnostizismus",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "After long doubts he ended up with agnosticism."
+   },
+   "after": {
+    "beispielEn": "After much doubting, he arrived at agnosticism."
+   },
+   "voiced": [],
+   "reason": "'Ended up with agnosticism' doğal değil; öneri kelimeyi agnostic'e çeviriyordu, cümle 'agnosticism'i koruyacak biçimde düzeltildi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7050,
+   "de": "Gelübde",
+   "severity": "orta",
+   "before": {
+    "tr": "adak",
+    "beispielTr": "Kendisini ömür boyu bağlayan bir adak adadı."
+   },
+   "after": {
+    "tr": "ant",
+    "beispielTr": "Kendisini ömür boyu bağlayan bir ant içti."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Adak' dilek karşılığı vaat edilen şeydir; Gelübde bağlayıcı dinî yemindir, 'ant' doğru ve çakışma yok."
+  },
+  {
+   "id": 7058,
+   "de": "pilgern",
+   "severity": "orta",
+   "before": {
+    "tr": "hacca gitmek"
+   },
+   "after": {
+    "tr": "hac yolculuğu yapmak"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Hacca gitmek' Mekke haccını anlatır, manastır örneğiyle çelişir; Wallfahrt 'hac yolculuğu' ile de tutarlı."
+  },
+  {
+   "id": 7072,
+   "de": "ehrwürdig",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Saygıdeğer yapı, Orta Çağ'dan beri aynı amaca hizmet ediyor."
+   },
+   "after": {
+    "beispielTr": "Bu kadim yapı, Orta Çağ'dan beri aynı amaca hizmet ediyor."
+   },
+   "voiced": [],
+   "reason": "Bir binaya 'saygıdeğer' denmez; 'kadim' venerable anlamını 'köklü'den daha iyi taşıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7077,
+   "de": "Sprachgebrauch",
+   "severity": "hafif",
+   "before": {
+    "en": "language usage",
+    "beispielEn": "In today's language usage this expression sounds clearly outdated."
+   },
+   "after": {
+    "en": "usage",
+    "beispielEn": "In current usage this expression sounds distinctly outdated."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'Language usage' İngilizcede doğal değil; yerleşik karşılık 'usage', çakışma yok."
+  },
+  {
+   "id": 7078,
+   "de": "Sprachebene",
+   "severity": "orta",
+   "before": {
+    "tr": "dil düzeyi",
+    "en": "language level",
+    "beispielEn": "The speaker switched to a different language level in the middle of the talk."
+   },
+   "after": {
+    "tr": "dil düzlemi",
+    "en": "linguistic register",
+    "beispielEn": "The speaker switched registers in the middle of the talk."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "'Language level' Sprachniveau kartıyla aynı ve yeterlik düzeyi sanılıyor; 'register' Register kartında olduğu için 'linguistic register' seçildi."
+  },
+  {
+   "id": 7081,
+   "de": "Ausgangssprache",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Some of the source language's wordplay gets lost in the transfer."
+   },
+   "after": {
+    "beispielEn": "Some wordplay in the source language gets lost in translation."
+   },
+   "voiced": [],
+   "reason": "'Lost in the transfer' doğal değil; Übertragung burada çeviri, 'lost in translation' yerleşik söyleyiş.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7095,
+   "de": "Bezeichnung",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "There are quite different designations for the same thing in the regions."
+   },
+   "after": {
+    "beispielEn": "The same thing has quite different designations from region to region."
+   },
+   "voiced": [],
+   "reason": "'In the regions' bölgeden bölgeye değişimi aktarmıyor; öneri açıkça daha doğal.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7098,
+   "de": "Untertreibung",
+   "severity": "orta",
+   "before": {
+    "tr": "hafife alma",
+    "beispielTr": "Küçük bir sorundan söz etmek düpedüz hafife almaktı."
+   },
+   "after": {
+    "tr": "olduğundan hafif gösterme",
+    "beispielTr": "Küçük bir sorundan söz etmek, durumu düpedüz olduğundan hafif göstermekti."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Hafife alma' Unterschätzung'dur; Untertreibung bir şeyi olduğundan hafif ifade etmektir."
+  },
+  {
+   "id": 7102,
+   "de": "Auslassung",
+   "severity": "hafif",
+   "before": {
+    "tr": "atlama",
+    "beispielTr": "Metindeki atlamalar tam da yazarın niyetini ele veriyor."
+   },
+   "after": {
+    "tr": "atlanan kısım",
+    "beispielTr": "Metinde atlanan kısımlar tam da yazarın niyetini ele veriyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Tek başına 'atlama' önce zıplamayı çağrıştırıyor; 'metindeki atlamalar' doğal değil."
+  },
+  {
+   "id": 7118,
+   "de": "idiomatisch",
+   "severity": "orta",
+   "before": {
+    "tr": "deyimsel",
+    "beispielTr": "Çeviri doğru ama kulağa deyimsel gelmiyor."
+   },
+   "after": {
+    "tr": "dilin doğasına uygun",
+    "beispielTr": "Çeviri doğru ama kulağa doğal gelmiyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Örnekteki anlam 'dile doğal gelen'; 'deyimsel' deyimle ilgili demek, 'kulağa deyimsel gelmiyor' anlamsız."
+  },
+  {
+   "id": 7125,
+   "de": "Benachteiligung",
+   "severity": "orta",
+   "before": {
+    "tr": "mağduriyet",
+    "beispielTr": "Kadınlar bu sektörde sistematik mağduriyetten yakınıyor."
+   },
+   "after": {
+    "tr": "dezavantajlı bırakılma",
+    "beispielTr": "Kadınlar bu sektörde sistematik olarak dezavantajlı bırakılmaktan yakınıyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Mağduriyet' Viktimisierung kartıyla aynı karşılık, ayırt edilemiyor; anlam da haksız yere geride bırakılma."
+  },
+  {
+   "id": 7142,
+   "de": "eingliedern",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "İşletme yeni çalışanları çabucak bünyesine kattı."
+   },
+   "after": {
+    "beispielTr": "İşletme yeni çalışanları ekibe çabucak kaynaştırdı."
+   },
+   "voiced": [],
+   "reason": "Cümlede 'bünyesine kattı' işe alma gibi okunuyor, kastedilen ekibe uyum. Kart karşılığı 'entegre etmek' integrieren ile çakışacağı için korunuyor, yalnız cümle çevirisi düzeltildi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7156,
+   "de": "sesshaft",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "After years of commuting the family has finally settled down."
+   },
+   "after": {
+    "beispielEn": "After years of moving back and forth, the family has finally settled down."
+   },
+   "voiced": [],
+   "reason": "İngilizce 'commuting' cümleyi mantıksız yapıyor; Almanca cümle (iki yer arasında gidip gelmek) savunulabilir, kayıt gerektirmemek için yalnız İngilizce çeviri düzeltildi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7196,
+   "de": "unterschätzen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Eski modeller gelişmenin hızını iyice hafife aldı."
+   },
+   "after": {
+    "beispielTr": "Eski modeller gelişmenin hızını olduğundan epey düşük tahmin etti."
+   },
+   "voiced": [],
+   "reason": "Tahmin modelleri bir şeyi 'hafife almaz', düşük tahmin eder; 'iyice' de deutlich için uygun değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7197,
+   "de": "gegenüberstellen",
+   "severity": "hafif",
+   "before": {
+    "tr": "karşı karşıya koymak",
+    "beispielTr": "Tablo, iki araştırma yılının değerlerini karşı karşıya koyuyor."
+   },
+   "after": {
+    "tr": "yan yana koymak",
+    "beispielTr": "Tablo, iki araştırma yılının değerlerini yan yana koyuyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Karşı karşıya koymak' Türkçede çatıştırmak anlamına kayıyor; karşılaştırma için yan yana koymak doğru. Çakışma yok."
+  },
+  {
+   "id": 7206,
+   "de": "tendenziell",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Genç katılımcılar eğilim olarak yaşlılardan daha eleştirel yanıt veriyor."
+   },
+   "after": {
+    "beispielTr": "Genç katılımcılar, yaşça büyüklere göre daha eleştirel yanıt verme eğiliminde."
+   },
+   "voiced": [],
+   "reason": "'Eğilim olarak ... yanıt veriyor' doğal değil; 'yaşlılar' da ältere için fazla güçlü.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7214,
+   "de": "Zweckbindung",
+   "severity": "hafif",
+   "before": {
+    "tr": "amaca bağlılık",
+    "beispielTr": "Amaca bağlılık, verilerin sonradan bambaşka amaçlarla işlenmesine izin vermez."
+   },
+   "after": {
+    "tr": "amaçla sınırlılık",
+    "beispielTr": "Amaçla sınırlılık ilkesi, verilerin sonradan bambaşka amaçlarla işlenmesine izin vermez."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Veri koruma bağlamında yerleşik Türkçe terim 'amaçla sınırlılık'; 'amaca bağlılık' sadakat gibi okunuyor. Çakışma yok."
+  },
+  {
+   "id": 7219,
+   "de": "Regulierung",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The EU plans a stricter regulation of cryptocurrencies."
+   },
+   "after": {
+    "beispielEn": "The EU is planning stricter regulation of cryptocurrencies."
+   },
+   "voiced": [],
+   "reason": "Burada regulation sayılamayan isim; 'plans a stricter regulation of' doğal değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7226,
+   "de": "Verantwortungsdiffusion",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "In distributed systems, responsibility risks diffusing between developers and operators."
+   },
+   "after": {
+    "beispielEn": "In distributed systems, there is a risk of diffusion of responsibility between developers and operators."
+   },
+   "voiced": [],
+   "reason": "'responsibility risks diffusing' doğal değil; terimi gösteren çeviri açıkça daha iyi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7228,
+   "de": "Zugriffsrecht",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Fazla geniş tanımlanmış erişim yetkileri veri sızıntılarının sık görülen sebebidir."
+   },
+   "after": {
+    "beispielTr": "Fazla geniş tanımlanmış erişim yetkileri, veri sızıntılarının sık görülen nedenlerinden biridir."
+   },
+   "voiced": [],
+   "reason": "'eine häufige Ursache' birkaç nedenden biri demek; mevcut çeviri tek neden gibi okunuyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7229,
+   "de": "Berechenbarkeit",
+   "severity": "orta",
+   "before": {
+    "tr": "hesaplanabilirlik",
+    "en": "calculability",
+    "beispielTr": "İnsan davranışının hesaplanabilirliğinin belirgin sınırları var.",
+    "beispielEn": "The calculability of human behavior has clear limits."
+   },
+   "after": {
+    "tr": "öngörülebilirlik",
+    "en": "predictability",
+    "beispielTr": "İnsan davranışının öngörülebilirliğinin belirgin sınırları var.",
+    "beispielEn": "The predictability of human behavior has clear limits."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Cümledeki ve gündelik anlam öngörülebilirlik; 'calculability' İngilizcede nadir ve yanıltıcı. Havuzda çakışma yok."
+  },
+  {
+   "id": 7230,
+   "de": "Quantifizierung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Eğitimin sayısallaştırılması, zor ölçülen şeyleri görmezden geliyor."
+   },
+   "after": {
+    "beispielTr": "Eğitimin nicelleştirilmesi, zor ölçülen şeyleri görmezden geliyor."
+   },
+   "voiced": [],
+   "reason": "'Sayısallaştırma' dijitalleştirme anlamına da gelir; kartla uyumlu 'nicelleştirme' daha doğru.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7251,
+   "de": "Ombudsstelle",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Vatandaşlar dairelerle yaşadıkları anlaşmazlıklarda kamu denetçiliğine başvurabilir."
+   },
+   "after": {
+    "beispielTr": "Vatandaşlar resmî dairelerle yaşadıkları anlaşmazlıklarda kamu denetçiliğine başvurabilir."
+   },
+   "voiced": [],
+   "reason": "Yalın \"daireler\" konut dairesi diye okunabiliyor; \"resmî daireler\" Ämter'i net karşılıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7263,
+   "de": "Amtshilfe",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The police provided administrative assistance to the tax office."
+   },
+   "after": {
+    "beispielEn": "The police provided administrative assistance to the tax office during the search."
+   },
+   "voiced": [],
+   "reason": "İngilizce çeviride \"bei der Durchsuchung\" düşmüş; Türkçe çeviride var, eklemek doğru.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7274,
+   "de": "seitens",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "İdare tarafından şimdiye dek bir açıklama gelmedi.",
+    "beispielEn": "There has been no statement on the part of the administration."
+   },
+   "after": {
+    "beispielTr": "İdare tarafından şimdiye dek bir açıklama yapılmadı.",
+    "beispielEn": "So far there has been no statement on the part of the administration."
+   },
+   "voiced": [],
+   "reason": "\"tarafından\" edilgen yüklem ister, \"gelmedi\" ile dil bilgisi bozuk; İngilizceye \"bisher\" de eklendi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7298,
+   "de": "Opportunitätskosten",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Anyone who studies bears opportunity costs in the form of lost wages."
+   },
+   "after": {
+    "beispielEn": "Anyone who goes to college bears opportunity costs in the form of forgone wages."
+   },
+   "voiced": [],
+   "reason": "\"studies\" ders çalışmak diye anlaşılıyor; Almanca ve Türkçe üniversite okumayı söylüyor. \"forgone wages\" iktisat terimi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7340,
+   "de": "Insidergeschäft",
+   "severity": "orta",
+   "before": {
+    "tr": "içeriden ticaret",
+    "beispielTr": "Denetim kurumu, devralma duyurusu öncesindeki olası içeriden ticareti inceliyor.",
+    "beispielEn": "The regulator is examining possible insider trading before the takeover announcement."
+   },
+   "after": {
+    "tr": "içeriden bilgi ticareti",
+    "beispielTr": "Denetim kurumu, devralma duyurusunun hemen öncesindeki olası içeriden bilgi ticaretini inceliyor.",
+    "beispielEn": "The regulator is examining possible insider trading shortly before the takeover announcement."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'İçeriden ticaret' yerleşik bir terim değil. Çevirilerde 'kurz vor' bilgisi de düşmüş. Yalnız çeviriler değişiyor, ses kaydı gerekmez."
+  },
+  {
+   "id": 7351,
+   "de": "Deckmantel",
+   "severity": "hafif",
+   "before": {
+    "tr": "kılıf",
+    "en": "pretext",
+    "beispielTr": "Araştırma kılıfı altında reklam kampanyaları finanse edildi.",
+    "beispielEn": "Advertising campaigns were funded under the pretext of research."
+   },
+   "after": {
+    "tr": "kisve",
+    "en": "guise",
+    "beispielTr": "Araştırma kisvesi altında reklam kampanyaları finanse edildi.",
+    "beispielEn": "Advertising campaigns were funded under the guise of research."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "'Unter dem Deckmantel' kalıbının yerleşik karşılığı 'kisvesi altında'. 'Guise' Deckmantel'e daha yakın ve 'pretext' (Vorwand) ile karışmayı önlüyor."
+  },
+  {
+   "id": 7355,
+   "de": "billigen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The majority approved of the proposal without much debate."
+   },
+   "after": {
+    "beispielEn": "The majority approved the proposal without much debate."
+   },
+   "voiced": [],
+   "reason": "Oylamayla kabul bağlamında 'approved of' yanlış anlam veriyor, bu yüzden cümle çevirisi düzeltildi. Anlam alanı 'to approve of' olarak kalıyor, çünkü 'to approve' genehmigen ve bewilligen kartlarında da var.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 7365,
+   "de": "gutgläubig",
+   "severity": "orta",
+   "before": {
+    "tr": "iyi niyetli",
+    "beispielTr": "Birçok yatırımcı iyi niyetle denetlenmiş rakamlara güvendi."
+   },
+   "after": {
+    "tr": "kolay inanan",
+    "beispielTr": "Birçok yatırımcı denetlenmiş rakamlara safça güvendi."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Gündelik Türkçede 'iyi niyetli' wohlmeinend anlamına gelir. gutgläubig 'kolay inanan' demektir ve bu karşılık en 'trusting' ile de örtüşür. Çakışma yok."
+  },
+  {
+   "id": 7382,
+   "de": "Fachdebatte",
+   "severity": "hafif",
+   "before": {
+    "tr": "alan içi tartışma",
+    "beispielTr": "Asgari ücret üzerine alan içi tartışma giderek sertleşiyor."
+   },
+   "after": {
+    "tr": "uzman tartışması",
+    "beispielTr": "Asgari ücret üzerine uzman tartışması giderek sertleşiyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Alan içi tartışma' doğal değil. 'Uzman tartışması' en 'expert debate' ile örtüşüyor. Cümle çevirisi yeni anlamla tutarlı olacak biçimde güncellendi."
+  },
+  {
+   "id": 7398,
+   "de": "Datenlage",
+   "severity": "hafif",
+   "before": {
+    "tr": "veri durumu",
+    "beispielTr": "Bu zayıf veri durumunda net yargılara varmak imkânsız."
+   },
+   "after": {
+    "tr": "eldeki veriler",
+    "beispielTr": "Veriler bu kadar yetersizken net yargılara varmak imkânsız."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'Veri durumu' bir çeviri kalıbı. 'Eldeki veriler' en 'available data' ile örtüşüyor ve doğal."
+  },
+  {
+   "id": 8563,
+   "de": "in Kraft treten",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Yeni düzenleme bir Ocak'ta yürürlüğe giriyor."
+   },
+   "after": {
+    "beispielTr": "Yeni düzenleme 1 Ocak'ta yürürlüğe giriyor."
+   },
+   "voiced": [],
+   "reason": "Tarih rakamla yazılmalı; 'bir Ocak'ta' herhangi bir ocak ayı gibi okunabiliyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8572,
+   "de": "sich empfehlen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "With this rush it is advisable to come early."
+   },
+   "after": {
+    "beispielEn": "With crowds like this, it is advisable to come early."
+   },
+   "voiced": [],
+   "reason": "'With this rush' doğal değil ve Andrang'ı (kalabalık) karşılamıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8573,
+   "de": "Eigenverantwortung",
+   "severity": "hafif",
+   "before": {
+    "tr": "kendi sorumluluğu"
+   },
+   "after": {
+    "tr": "kişisel sorumluluk"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "İyelik ekli 'kendi sorumluluğu' sözlük karşılığı olarak kusurlu. 'kişisel sorumluluk' hem doğal hem İngilizceyle örtüşüyor."
+  },
+  {
+   "id": 8582,
+   "de": "resigniert",
+   "severity": "hafif",
+   "before": {
+    "tr": "boyun eğmiş",
+    "beispielTr": "Sadece boyun eğmiş bir hâlde omuz silkti."
+   },
+   "after": {
+    "tr": "pes etmiş",
+    "beispielTr": "Sadece çaresizce omuz silkti."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'boyun eğmiş bir hâlde omuz silkti' doğal değil. resigniert umudu kesmek demek, 'pes etmiş' daha yakın."
+  },
+  {
+   "id": 8595,
+   "de": "treffsicher",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Her observations are usually astonishingly spot-on."
+   },
+   "after": {
+    "beispielEn": "Her observations are usually astonishingly accurate."
+   },
+   "voiced": [],
+   "reason": "'spot-on' ağırlıklı olarak İngiliz kullanımı.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8602,
+   "de": "rote Faden",
+   "severity": "hafif",
+   "before": {
+    "tr": "ana hat",
+    "beispielTr": "Sunumda maalesef ana hat eksikti."
+   },
+   "after": {
+    "tr": "ana eksen",
+    "beispielTr": "Sunumda maalesef bir ana eksen yoktu."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "'ana hat' taslak anlamına ya da hat anlamına kayıyor ve 'ana hat eksikti' doğal değil. 'ana eksen' metni bağlayan çizgiyi daha iyi veriyor."
+  },
+  {
+   "id": 8608,
+   "de": "routiniert",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Programı deneyimli bir biçimde yönetti."
+   },
+   "after": {
+    "beispielTr": "Programın sunuculuğunu ustalıkla yaptı."
+   },
+   "voiced": [],
+   "reason": "'deneyimli bir biçimde yönetti' doğal değil; 'durch das Programm führen' sunuculuk yapmak demek.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8630,
+   "de": "die Katze im Sack kaufen",
+   "severity": "hafif",
+   "before": {
+    "tr": "görmeden almak",
+    "beispielTr": "Deneme sürüşü olmadan görmeden almış olurum."
+   },
+   "after": {
+    "tr": "gözü kapalı almak",
+    "beispielTr": "Deneme sürüşü yapmadan alırsam gözü kapalı almış olurum."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Araba zaten görülerek alınıyor; deyim denemeden, bilmeden almak demek. Mevcut Türkçe cümle de bozuk."
+  },
+  {
+   "id": 8634,
+   "de": "dicke Luft",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Toplantıdan sonra ofiste hava gerginleşti."
+   },
+   "after": {
+    "beispielTr": "Toplantıdan sonra ofiste hava gergindi."
+   },
+   "voiced": [],
+   "reason": "'herrschte' bir durumu anlatır; 'gerginleşti' cümleye bir değişim anlamı katıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8637,
+   "de": "Sturm im Wasserglas",
+   "severity": "hafif",
+   "before": {
+    "en": "a tempest in a teapot"
+   },
+   "after": {
+    "en": "tempest in a teapot"
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "İsim karşılığında baştaki artikel gereksiz."
+  },
+  {
+   "id": 8641,
+   "de": "Gelbe vom Ei",
+   "severity": "orta",
+   "before": {
+    "tr": "işin en iyisi",
+    "en": "the cream of the crop",
+    "beispielTr": "Uzlaşma işin en iyisi değil ama işe yarıyor."
+   },
+   "after": {
+    "tr": "dört dörtlük",
+    "en": "the ideal",
+    "beispielTr": "Uzlaşma dört dörtlük değil ama işe yarıyor."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "'cream of the crop' bir topluluğun en iyilerini anlatır, deyimin 'ideal olan' anlamını vermez; 'işin en iyisi değil' de doğal değil."
+  },
+  {
+   "id": 8644,
+   "de": "am Ball bleiben",
+   "severity": "hafif",
+   "before": {
+    "en": "to stay on the ball",
+    "beispielEn": "Stay on the ball, the answer will surely come."
+   },
+   "after": {
+    "en": "to keep at it",
+    "beispielEn": "Keep at it; the answer is sure to come."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'stay on the ball' 'tetikte ol' anlamına kayıyor; burada anlam 'sürdürmek, peşini bırakmamak'. İki cümle de virgülle yanlış bağlanmış."
+  },
+  {
+   "id": 8648,
+   "de": "in Führung gehen",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Shortly before half-time the team took the lead."
+   },
+   "after": {
+    "beispielEn": "Shortly before halftime the team took the lead."
+   },
+   "voiced": [],
+   "reason": "Amerikan yazımı tiresiz 'halftime'.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8657,
+   "de": "die erste Geige spielen",
+   "severity": "hafif",
+   "before": {
+    "en": "to play first fiddle",
+    "beispielEn": "In this team nobody plays first fiddle alone."
+   },
+   "after": {
+    "en": "to play the leading role",
+    "beispielEn": "In this team nobody plays the leading role alone."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "'play first fiddle' İngilizcede çok seyrek ve öğrenciye doğal bir karşılık vermiyor."
+  },
+  {
+   "id": 8661,
+   "de": "einstreuen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Sunumlarına sık sık kısa anekdotlar serpiştiriyor."
+   },
+   "after": {
+    "beispielTr": "Sunumlarına kısa anekdotlar serpiştirmeyi sever."
+   },
+   "voiced": [],
+   "reason": "'gern' sevmek demek; çeviri anlamı 'sık sık' diyerek sıklığa kaydırıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8665,
+   "de": "Quellenlage",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "For this period the state of the sources is very thin."
+   },
+   "after": {
+    "beispielEn": "For this period, the available sources are very sparse."
+   },
+   "voiced": [],
+   "reason": "'the state of the sources is very thin' İngilizcede doğal değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8667,
+   "de": "sich ergeben",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "A clear connection follows from the data."
+   },
+   "after": {
+    "beispielEn": "A clear connection emerges from the data."
+   },
+   "voiced": [],
+   "reason": "'a connection follows from' doğal değil; 'emerges' hem doğal hem Türkçe 'ortaya çıkıyor' ile uyumlu.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8671,
+   "de": "Interessenlage",
+   "severity": "orta",
+   "before": {
+    "beispielTr": "Bu çalışmada işverenin çıkar durumunu bilmek gerekir.",
+    "beispielEn": "With this study one should know the client's vested interests."
+   },
+   "after": {
+    "beispielTr": "Bu çalışmada, çalışmayı yaptıranın çıkar durumunu bilmek gerekir.",
+    "beispielEn": "For this study, you should know the vested interests of whoever commissioned it."
+   },
+   "voiced": [],
+   "reason": "Auftraggeber çalışmayı sipariş eden taraftır, 'işveren' yanlış. 'With this study one should know' da doğal İngilizce değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8679,
+   "de": "Urheberschaft",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Metnin eser sahipliği bugüne kadar tartışmalı."
+   },
+   "after": {
+    "beispielTr": "Metnin kime ait olduğu bugün hâlâ tartışmalı."
+   },
+   "voiced": [],
+   "reason": "'bis heute' burada 'hâlâ' demek; 'bugüne kadar tartışmalı' yanlış ve doğal değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8685,
+   "de": "vorbehaltlich",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Onay, yönetim kurulunun kabulü kaydıyla geçerlidir."
+   },
+   "after": {
+    "beispielTr": "Taahhüt, yönetim kurulunun onayı kaydıyla geçerlidir."
+   },
+   "voiced": [],
+   "reason": "Çeviri Zusage ile Zustimmung'u karıştırıyor: Zusage 'onay' olarak, Zustimmung 'kabul' olarak çevrilmiş.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8686,
+   "de": "Verzug",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "In case of default, reminder fees become payable."
+   },
+   "after": {
+    "beispielEn": "In case of default, late fees are charged."
+   },
+   "voiced": [],
+   "reason": "'delay' Verspätung ve Verzögerung ile aynı karşılık olur, ayırt edilemez; 'default' Zahlungsverzug için doğru. Yalnız 'reminder fees become payable' Amerikan İngilizcesinde doğal değil, o düzeltildi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8692,
+   "de": "Beseitigung",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Ayıbın iki hafta içinde giderilmesini talep ediyoruz."
+   },
+   "after": {
+    "beispielTr": "Kusurun iki hafta içinde giderilmesini talep ediyoruz."
+   },
+   "voiced": [],
+   "reason": "Öğrenci \"ayıp\"ı \"utanç\" diye okur ve yanlış anlar. Mangel için \"kusur\" hem doğru hem açık.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8700,
+   "de": "Weitergabe",
+   "severity": "orta",
+   "before": {
+    "tr": "üçüncü tarafa aktarım"
+   },
+   "after": {
+    "tr": "aktarma"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "Karşılık yalnız örnekteki bağlama daralmış ve açıklama gibi. 'aktarım' ise Überlieferung, Wiedergabe ve Übertragung kartlarında zaten kullanılıyor, bu yüzden 'aktarma' seçildi."
+  },
+  {
+   "id": 8708,
+   "de": "Obliegenheit",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Anyone who breaches their obligations loses the cover."
+   },
+   "after": {
+    "beispielEn": "Anyone who breaches their obligations loses coverage."
+   },
+   "voiced": [],
+   "reason": "'loses the cover' İngiliz kullanımı. Türkçe cümle doğru olduğu için değiştirilmedi (en az değişiklik).",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8732,
+   "de": "ergänzend",
+   "severity": "hafif",
+   "before": {
+    "en": "additionally",
+    "beispielEn": "Additionally I would like to point to the footnote."
+   },
+   "after": {
+    "en": "in addition",
+    "beispielEn": "In addition, I would like to point out the footnote."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "\"ek olarak\" ve \"additionally\" zaten zusätzlich (3177) kartında var; tr'yi oraya çekmek kartı ayırt edilemez yapar, tr kalıyor. Asıl hata İngilizce cümlede (virgül, point out); en de zusätzlich ile aynıydı, \"in addition\" ile ayrıldı."
+  },
+  {
+   "id": 8760,
+   "de": "Weiche",
+   "severity": "orta",
+   "before": {
+    "beispiel": "In der Grundschule werden die Weichen früh gestellt.",
+    "beispielTr": "İlkokulda yön erken belirleniyor.",
+    "beispielEn": "In elementary school the course is set early."
+   },
+   "after": {
+    "beispiel": "Wegen einer defekten Weiche hatte der Zug Verspätung.",
+    "beispielTr": "Arızalı bir makas yüzünden tren rötar yaptı.",
+    "beispielEn": "The train was delayed because of a faulty switch."
+   },
+   "voiced": [
+    "beispiel"
+   ],
+   "reason": "Örnek deyim kullanıyor, kartın öğrettiği 'demir yolu makası' anlamı cümlede ve çevirilerde yok; yeni cümle anlamı doğrudan gösteriyor."
+  },
+  {
+   "id": 8763,
+   "de": "solidarisch",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Dayanışmacı bir sistem güçsüzleri de taşır.",
+    "beispielEn": "A system based on solidarity carries the weaker along."
+   },
+   "after": {
+    "beispielTr": "Dayanışmacı bir sistem zayıfları da destekler.",
+    "beispielEn": "A system based on solidarity also supports the weaker members."
+   },
+   "voiced": [],
+   "reason": "\"Carries the weaker along\" ve \"güçsüzleri de taşır\" doğal değil; mittragen burada desteklemek. \"kollar\" yerine mittragen'e daha yakın \"destekler\" yazıldı.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8764,
+   "de": "zulasten",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The reform is at the expense of the younger generation."
+   },
+   "after": {
+    "beispielEn": "The reform comes at the expense of the younger generation."
+   },
+   "voiced": [],
+   "reason": "\"is at the expense of\" yapay; İngilizcede doğal kalıp \"comes at the expense of\".",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8769,
+   "de": "utopisch",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Otuz yıl önce bu hâlâ ütopik geliyordu."
+   },
+   "after": {
+    "beispielTr": "Otuz yıl önce bu kulağa ütopik geliyordu."
+   },
+   "voiced": [],
+   "reason": "\"Otuz yıl önce ... hâlâ\" Türkçede çelişkili; buradaki noch \"o zamanlar\" demek.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8775,
+   "de": "Zielscheibe",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "The new colleague quickly became the target of the jokes."
+   },
+   "after": {
+    "beispielEn": "The new guy quickly became the target of the jokes."
+   },
+   "voiced": [],
+   "reason": "'colleague' kaynakta olmayan bilgi; 'Der Neue' yeni gelen kişi.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8778,
+   "de": "Kalauer",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bu ucuz espri için kendisi bile utandı."
+   },
+   "after": {
+    "beispielTr": "Bu ucuz espriden kendisi bile utandı."
+   },
+   "voiced": [],
+   "reason": "Türkçede doğal kalıp \"bir şeyden utanmak\".",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8786,
+   "de": "übertrieben",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "Exaggerated praise quickly seems implausible."
+   },
+   "after": {
+    "beispielEn": "Exaggerated praise quickly comes across as insincere."
+   },
+   "voiced": [],
+   "reason": "'praise seems implausible' İngilizcede doğal değil; yeni çeviri 'unglaubwürdig wirken' anlamını karşılıyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8789,
+   "de": "sich herausreden",
+   "severity": "orta",
+   "before": {
+    "tr": "kendini kurtarmaya çalışmak",
+    "beispielTr": "Özür dilemek yerine kendini kurtarmaya çalıştı."
+   },
+   "after": {
+    "tr": "bahane uydurmak",
+    "beispielTr": "Özür dilemek yerine bahaneler uydurdu."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Kendini kurtarmaya çalışmak\" çok genel; kelime bahaneyle sıyrılmak demek ve en ile örtüşüyor. Çakışma yok (Ausrede \"bahane\" isim)."
+  },
+  {
+   "id": 8791,
+   "de": "unterschätzt",
+   "severity": "hafif",
+   "before": {
+    "beispielEn": "German humor is strongly underrated abroad."
+   },
+   "after": {
+    "beispielEn": "German humor is greatly underrated abroad."
+   },
+   "voiced": [],
+   "reason": "'strongly underrated' İngilizcede doğal bir eşdizim değil.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8793,
+   "de": "Direktheit",
+   "severity": "orta",
+   "before": {
+    "tr": "doğrudanlık",
+    "beispielTr": "Doğrudanlığa önce alışmak gerekiyor."
+   },
+   "after": {
+    "tr": "açık sözlülük",
+    "beispielTr": "Açık sözlülüğe önce alışmak gerekiyor."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Doğrudanlık\" Türkçede doğal değil; tavır için yerleşik karşılık \"açık sözlülük\". Çakışan kart yok."
+  },
+  {
+   "id": 8795,
+   "de": "gewöhnungsbedürftig",
+   "severity": "hafif",
+   "before": {
+    "en": "an acquired taste",
+    "beispielTr": "Buradaki üsluba alışmak zaman alıyor ama dürüst."
+   },
+   "after": {
+    "en": "takes getting used to",
+    "beispielTr": "Buradaki üsluba alışmak zaman alıyor ama üslup dürüst."
+   },
+   "voiced": [
+    "en"
+   ],
+   "reason": "\"An acquired taste\" isim öbeği ve tat/zevk içindir; örnekteki İngilizce zaten \"takes getting used to\" diyor. Türkçe cümlede \"dürüst\"ün öznesi belirsizdi; önerilen \"alışmayı gerektiriyor\" yerine daha doğal hâli yazıldı."
+  },
+  {
+   "id": 8804,
+   "de": "gleichbedeutend",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Burada bir hayır, sonun gelmesiyle aynı kapıya çıkar."
+   },
+   "after": {
+    "beispielTr": "Burada hayır demek, işin bitmesiyle aynı kapıya çıkardı."
+   },
+   "voiced": [],
+   "reason": "Konjunktiv \"wäre\" geniş zamanla aktarılmıştı. \"sonun gelmesiyle\" de tuhaf duruyordu.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8806,
+   "de": "nachhallen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Bu cümlenin etkisi uzun süre sürüyor.",
+    "beispielEn": "This sentence resonates for a long time."
+   },
+   "after": {
+    "beispielTr": "Bu cümle uzun süre zihinde yankılanıyor.",
+    "beispielEn": "This sentence reverberates for a long time."
+   },
+   "voiced": [],
+   "reason": "Türkçede \"süre sürüyor\" tekrarı var ve yankı imgesi kayboluyor. Önerilen İngilizce çoğul ve anlamdan uzak (\"linger\"); kartın karşılığıyla uyumlu tekil hâli yazıldı.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8815,
+   "de": "Jugendsprache",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Gençlik dili her katmandan hızlı değişiyor.",
+    "beispielEn": "Youth slang changes faster than any other layer."
+   },
+   "after": {
+    "beispielTr": "Gençlik dili, dilin öteki katmanlarından daha hızlı değişiyor.",
+    "beispielEn": "Youth slang changes faster than any other layer of the language."
+   },
+   "voiced": [],
+   "reason": "Türkçe \"her katmandan\" çeviride \"andere\"yi kaçırıyor ve neyin katmanı olduğu belirsiz; öneri anlamı netleştiriyor.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8826,
+   "de": "Wolf im Schafspelz",
+   "severity": "hafif",
+   "before": {
+    "tr": "koyun postundaki kurt",
+    "en": "a wolf in sheep's clothing",
+    "beispielTr": "Teklif koyun postundaki kurt."
+   },
+   "after": {
+    "tr": "koyun postuna bürünmüş kurt",
+    "en": "wolf in sheep's clothing",
+    "beispielTr": "Bu teklif, koyun postuna bürünmüş bir kurt."
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "Yerleşik Türkçe deyim \"koyun postuna bürünmüş kurt\"; SPEC'e göre İngilizce isim karşılığı artikelsiz."
+  },
+  {
+   "id": 8828,
+   "de": "auf Wolke sieben schweben",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Kabulden beri bulutların üstünde.",
+    "beispielEn": "Since the acceptance she has been on cloud nine."
+   },
+   "after": {
+    "beispielTr": "Olumlu cevabı aldığından beri bulutların üstünde.",
+    "beispielEn": "Since getting the offer, she has been on cloud nine."
+   },
+   "voiced": [],
+   "reason": "\"Kabulden beri\" ve \"since the acceptance\" belirsiz ve çeviri kokuyor; Zusage olumlu cevap ya da teklif demek.",
+   "applied": "2026-10-05"
+  },
+  {
+   "id": 8832,
+   "de": "schwarzmalen",
+   "severity": "orta",
+   "before": {
+    "tr": "karamsarlık yaymak",
+    "beispielTr": "Hemen karamsarlığa kapılmamalı."
+   },
+   "after": {
+    "tr": "her şeyi kara görmek",
+    "beispielTr": "Hemen her şeyi kara görmemeli."
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "\"Karamsarlık yaymak\" anlamı kaydırıyor, örnek çevirisi de başka şey söylüyor; öneri kelimeyi ve cümleyi doğru karşılıyor."
+  },
+  {
+   "id": 8841,
+   "de": "den richtigen Ton treffen",
+   "severity": "hafif",
+   "before": {
+    "beispielTr": "Taziye konuşmasında doğru tonu tutturdu."
+   },
+   "after": {
+    "beispielTr": "Cenaze konuşmasında doğru tonu tutturdu."
+   },
+   "voiced": [],
+   "reason": "Trauerrede cenaze konuşmasıdır; \"taziye konuşması\" yanlış çağrışım yapıyor.",
+   "applied": "2026-10-05"
+  }
+ ]
+}
