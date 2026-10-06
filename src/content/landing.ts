@@ -256,7 +256,7 @@ const tr: LandingCopy = {
     id: "deneme-sinavlari",
     screen: "mock-task",
     title: "Dört becerili deneme sınavları.",
-    lede: "Her seviyede 1 deneme sınavı ücretsiz; Premium'da toplamda 50'den fazla. Okuma, dinleme, yazma ve konuşma bölümlerinin her birinin kendi süresi var. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.",
+    lede: "Her seviyede 1 deneme sınavı ücretsiz; Premium'da toplamda 50'den fazla. Okuma, dinleme, yazma ve konuşma bölümlerinin her birinin kendi süresi var; görevler dil sınavlarında sık görülen türlerde: e-posta ve görüş yazısı, birlikte plan yapma, kısa sunum. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.",
     head: ["Bölüm", "Nasıl puanlanır"],
     rows: [
       { name: "Lesen", nameLang: "de", local: "Okuma", how: "Otomatik puanlanır." },
@@ -352,7 +352,7 @@ const en: LandingCopy = {
     line1: "Speak, understand,",
     line2: "settle in.",
     intro:
-      "Learn German from zero to C1 with Lernomi: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready.",
+      "Learn German to C1 with Lernomi, from zero or from your level: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready.",
     noAccount: "Start free, no account needed. No ads.",
   },
   cta: {
@@ -371,7 +371,7 @@ const en: LandingCopy = {
     { value: "900+", label: "exercises" },
     { value: "50+", label: "mock exams" },
   ],
-  statsNote: "From zero to C1, with explanations in English. 1 free mock exam per level, more with Premium.",
+  statsNote: "From zero or your level to C1, explained in English. 1 free mock exam per level, more with Premium.",
   langs: {
     title: "One app, four language paths.",
     lede: "Path, speaking steps, mock exams and explanations work the same way on every path. Explanations, hints and feedback come in your own language.",
@@ -438,7 +438,7 @@ const en: LandingCopy = {
     id: "mock-exams",
     screen: "mock-task",
     title: "Four-skill mock exams.",
-    lede: "1 free mock exam per level; more than 50 in total with Premium. Reading, Listening, Writing and Speaking each have their own time limit. At the end you get your score as a percentage and a list of what to work on.",
+    lede: "1 free mock exam per level; more than 50 in total with Premium. Reading, Listening, Writing and Speaking each have their own time limit, with task types common in language exams: emails and opinion posts, planning together, short presentations. At the end you get your score as a percentage and a list of what to work on.",
     head: ["Section", "How it's scored"],
     rows: [
       { name: "Lesen", nameLang: "de", local: "Reading", how: "Scored automatically." },
@@ -534,7 +534,7 @@ const de: LandingCopy = {
     line1: "Sprechen, verstehen,",
     line2: "bis C1.",
     intro:
-      "Lerne mit Lernomi Englisch von null bis C1, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen.",
+      "Lerne mit Lernomi Englisch bis C1, von null oder ab deinem Niveau, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen.",
     noAccount: "Du startest kostenlos und ohne Konto. Keine Werbung.",
   },
   cta: {
@@ -553,7 +553,7 @@ const de: LandingCopy = {
     { value: "900+", label: "Übungen" },
     { value: "50+", label: "Probeprüfungen" },
   ],
-  statsNote: "Von null bis C1, mit Erklärungen auf Deutsch. 1 Probeprüfung pro Niveau gratis, mehr mit Premium.",
+  statsNote: "Von null oder ab deinem Niveau bis C1, auf Deutsch erklärt. 1 Probeprüfung pro Niveau gratis, mehr mit Premium.",
   langs: {
     title: "Eine App, vier Sprachwege.",
     lede: "Pfad, Sprechen-Schritte, Probeprüfungen und Erklärungen sind auf jedem Weg gleich aufgebaut. Erklärungen, Hinweise und Feedback bekommst du in deiner Sprache.",
@@ -621,7 +621,7 @@ const de: LandingCopy = {
     id: "probepruefungen",
     screen: "mock-task",
     title: "Probeprüfungen in vier Fertigkeiten.",
-    lede: "1 Probeprüfung pro Niveau kostenlos, mit Premium insgesamt mehr als 50. Lesen, Hören, Schreiben und Sprechen haben jeweils eine eigene Zeit. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.",
+    lede: "1 Probeprüfung pro Niveau kostenlos, mit Premium insgesamt mehr als 50. Lesen, Hören, Schreiben und Sprechen haben jeweils eine eigene Zeit, mit gängigen Aufgabentypen: E-Mails und Meinungstexte, Fragen beantworten, gemeinsam diskutieren. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.",
     head: ["Teil", "Bewertung"],
     rows: [
       { name: "Reading", nameLang: "en", local: "Lesen", how: "Wird automatisch bewertet." },

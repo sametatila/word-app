@@ -685,7 +685,7 @@ export const enWeb: Record<string, string> = {
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
   "meta.title": "Lernomi — Learn {langs}",
   "meta.tagline": "Learn a language by speaking, from zero to C1",
-  "meta.description": "Learn {langs} from zero to C1, explained in English and by speaking: AI conversation practice, mock exams and a daily word round. Free to start, no ads.",
+  "meta.description": "Learn {langs} from zero or your level to C1, explained in English and by speaking: AI conversation practice, mock exams and a daily word round. Free to start, no ads.",
   "meta.og_sub": "A1 to C1 · AI conversation practice · 50+ mock exams",
   "meta.og_native": "Explained in English",
   "meta.profile_desc": "{name} is learning a language on Lernomi. Pick any language you like and let's study together.",

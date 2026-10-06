@@ -685,7 +685,7 @@ export const deWeb: Record<string, string> = {
   /* Sayfa künyesi: <title>, açıklama, PWA manifesti ve paylaşım görseli (app/layout, manifest, opengraph-image). */
   "meta.title": "Lernomi — {langs} lernen",
   "meta.tagline": "Sprachen sprechend lernen, von null bis C1",
-  "meta.description": "Lerne {langs} von null bis C1, auf Deutsch erklärt und durch Sprechen: KI-Gespräche, Probeprüfungen und eine tägliche Wortrunde. Kostenlos starten, ohne Werbung.",
+  "meta.description": "Lerne {langs} von null oder ab deinem Niveau bis C1, auf Deutsch erklärt: KI-Gespräche, Probeprüfungen und eine tägliche Wortrunde. Kostenlos starten, ohne Werbung.",
   "meta.og_sub": "A1 bis C1 · Sprechen mit KI · über 50 Probeprüfungen",
   "meta.og_native": "Auf Deutsch erklärt",
   "meta.profile_desc": "{name} lernt eine Sprache mit Lernomi. Such dir eine Sprache aus und lass uns zusammen lernen.",
