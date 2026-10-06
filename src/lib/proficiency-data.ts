@@ -5,6 +5,9 @@ import { assessments, exams, reviews, userConversations, userSkills, words } fro
 import { findConversation } from "@/lib/conversations";
 import { type GameId } from "@/lib/types";
 import { listExerciseMeta } from "@/lib/skills";
+import { exerciseDisabled } from "@/lib/content/read";
+import { isSkillLocked, skillLibraryAccess } from "@/lib/premium/skill-access";
+import { SKILL_DONE_PCT } from "@/lib/score-bands";
 import { nextConversation } from "@/lib/conversations/progress";
 import { nativeTitles } from "@/lib/conversations/native-server";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
@@ -231,9 +234,27 @@ export type NextStep = {
 };
 
 /**
- * En düşük kanıtlı beceri × mevcut seviye → o beceriden yapılmamış bir
- * egzersiz; beceri egzersizi olmayan beceriler (kelime, dilbilgisi) için
- * kelime turu / dilbilgisi çalışması; hiçbiri yoksa sıradaki konuşma.
+ * SIRADAKİ EN İYİ ADIM — Gelişim'in "Sıradaki"si ve profil panosu.
+ *
+ * 2026-10-06 (Samet'in bildirimi: telaffuz alıştırmasını bitirdi, "Sıradaki"
+ * değişmedi, yeniden açınca alıştırma baştan geldi). Kural yeniden yazıldı:
+ *
+ *  1. Dört beceri (okuma, dinleme, yazma, konuşma), seviyedeki puanı en düşük
+ *     olandan başlayarak: o beceriden GEÇİLMEMİŞ bir alıştırma. "Yapıldı" artık
+ *     her yerde aynı ölçüt (Samet: "geçince"): `SKILL_DONE_PCT`, Beceriler ve
+ *     Patika ile aynı (`skillPassed`). Eskiden herhangi bir deneme sayılıyordu,
+ *     Beceriler ise geçmeyi istiyordu; iki öneri birbirini yalanlıyordu.
+ *  2. Geçemediğin alıştırma öneride kalır ama ÜST ÜSTE önerilmez: en son
+ *     denenen alıştırma, başka geçilmemiş aday varsa atlanır.
+ *  3. Kapatılmış (`exerciseDisabled`: kaydı reddediliyor, öneri hiç geçilemezdi)
+ *     ve kilitli (Premium kapısı, `isSkillLocked`) alıştırma önerilmez.
+ *  4. Dört beceride aday yoksa sıradaki KONUŞMA: her konuşma bir dilbilgisi
+ *     kuralını öğretip ölçüyor (`user_conversations` dilbilgisi kanıtı). Eski
+ *     "dilbilgisi çalışması → /immersion" önerisi tamamlanamıyordu: Patika'nın
+ *     dilbilgisi adımları kanıta girmiyor, öneri sonsuza dek orada kalıyordu.
+ *     Eski sıralama dilbilgisini ve kelimeyi dört becerinin önüne de alabiliyordu
+ *     (puana göre) ve konuşma dalı hiç çalışmıyordu.
+ *  5. Son çare kelime turu.
  */
 export async function nextStep(
   userId: string,
@@ -244,22 +265,41 @@ export async function nextStep(
   lang: NativeLang = DEFAULT_NATIVE,
 ): Promise<NextStep | null> {
   const metas = (await listExerciseMeta(course)).filter((m) => m.level === level);
-  const done = new Set(
-    (await db.select({ exerciseId: userSkills.exerciseId }).from(userSkills).where(eq(userSkills.userId, userId))).map((r) => r.exerciseId),
-  );
-  const order = [...PROFICIENCY_SKILLSORDERED].sort((a, b) => (prof[a]?.[level]?.score ?? -1) - (prof[b]?.[level]?.score ?? -1));
-  for (const skill of order) {
-    const cell = prof[skill]?.[level];
+  const rows = await db
+    .select({ exerciseId: userSkills.exerciseId, correct: userSkills.correct, total: userSkills.total, lastScore: userSkills.lastScore, lastAt: userSkills.lastAt })
+    .from(userSkills)
+    .where(eq(userSkills.userId, userId));
+  const passed = new Set(rows.filter(skillPassed).map((r) => r.exerciseId));
+  const lastTried = rows.reduce<(typeof rows)[number] | null>((a, r) => (!a || r.lastAt > a.lastAt ? r : a), null)?.exerciseId ?? null;
+  let access: Awaited<ReturnType<typeof skillLibraryAccess>> | null = null;
+  try {
+    access = await skillLibraryAccess(userId, level);
+  } catch {
+    /* kilit okunamazsa kilitli alıştırma da önerilebilir; kayıt yine kapıdan geçer */
+  }
+  const open = async (skill: ProficiencySkill, allowLast: boolean) => {
+    for (const m of metas) {
+      if (m.skill !== skill || passed.has(m.id) || isSkillLocked(m, access)) continue;
+      if (!allowLast && m.id === lastTried) continue;
+      if (await exerciseDisabled(m.id)) continue;
+      return m;
+    }
+    return null;
+  };
+
+  const four = FOUR_SKILLS.slice().sort((a, b) => (prof[a]?.[level]?.score ?? -1) - (prof[b]?.[level]?.score ?? -1));
+  /* İlk tur son deneneni atlıyor (başka bir beceriye de geçerek); ancak hiç aday yoksa o önerilir. */
+  for (const [skill, allowLast] of [...four.map((k) => [k, false] as const), ...four.map((k) => [k, true] as const)]) {
+    const m = await open(skill, allowLast);
+    if (!m) continue;
     const name = translate(lang, PROFICIENCY_LABEL_KEYS[skill]);
+    const cell = prof[skill]?.[level];
     const reason = cell
       ? `${name} ${level} ${cell.score} — ${translate(lang, bandKey(cell.band ?? "beginner"))}`
       : translate(lang, "proficiency.not_measured", { skill: name, level });
-    if (skill === "vocab") return { skill, label: name, reason, href: "/learn/game", title: translate(lang, "plan.word_round"), minutes: 6 };
-    if (skill === "grammar") return { skill, label: name, reason, href: "/immersion", title: translate(lang, "proficiency.grammar_practice"), minutes: 5 };
-    const open = metas.find((m) => m.skill === skill && !done.has(m.id));
     // Başlık Türkçe yazılmışsa anadile (Patika ile aynı kural, `nativeTitles`);
     // hedef dildeki başlık olduğu gibi kalıyor.
-    if (open) return { skill, label: name, reason, href: `/immersion/skill/${open.id}`, title: (await nativeTitles(lang)).skill(open.title), minutes: open.minutes };
+    return { skill, label: name, reason, href: `/immersion/skill/${m.id}`, title: (await nativeTitles(lang)).skill(m.title), minutes: m.minutes };
   }
   const conversation = await nextConversation(userId, course, level);
   if (conversation)
@@ -271,11 +311,25 @@ export async function nextStep(
       title: conversation.conversation.title,
       minutes: conversation.conversation.minutes,
     };
-  return null;
+  const vocab = translate(lang, PROFICIENCY_LABEL_KEYS.vocab);
+  const cell = prof.vocab?.[level];
+  return {
+    skill: "vocab",
+    label: vocab,
+    reason: cell ? `${vocab} ${level} ${cell.score} — ${translate(lang, bandKey(cell.band ?? "beginner"))}` : translate(lang, "proficiency.not_measured", { skill: vocab, level }),
+    href: "/learn/game",
+    title: translate(lang, "plan.word_round"),
+    minutes: 6,
+  };
 }
 
-/** Öneri sırası: dört beceri önce; kelime ve dilbilgisi zaten günlük turda çalışılıyor, en sona. */
-const PROFICIENCY_SKILLSORDERED: ProficiencySkill[] = ["reading", "listening", "writing", "speaking", "grammar", "vocab"];
+/** Önerinin dört becerisi; kelime ve dilbilgisi günlük turda ve konuşmalarda çalışılıyor. */
+const FOUR_SKILLS: ProficiencySkill[] = ["reading", "listening", "writing", "speaking"];
+
+/** Alıştırma geçildi mi — Beceriler ve Patika ile aynı ölçüt (`cando-progress` `doneExercises`). */
+export function skillPassed(r: { lastScore: number | null; correct: number; total: number }): boolean {
+  return (r.lastScore ?? 0) >= SKILL_DONE_PCT || (r.total > 0 && r.correct / r.total >= SKILL_DONE_PCT / 100);
+}
 
 export async function proficiencyFor(userId: string, course: string, level: CefrLevel, lang: NativeLang = DEFAULT_NATIVE) {
   const evidence = await gatherEvidence(userId);

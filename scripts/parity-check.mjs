@@ -2816,7 +2816,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const mobil = [...new Set(
     [...read("mobile/src/lib/pushRoute.ts").matchAll(/path\s*(?:===|\.startsWith\()\s*"([^"]+)"/g)].map((m) => m[1]),
   )].filter((p) => /^\/(learn\/game|immersion|conversations)/.test(p)).sort();
-  sameSet("onerilen adim adresleri", mobil, sunucu, "mobil esleyici", "sunucu");
+  /* KAPSAMA: sunucunun ürettiği her biçimi mobil tanımalı. Mobil eşleyicide fazlası
+     olabilir (`/immersion` bildirimlerden de geliyor); 2026-10-06'dan beri öneri
+     `/immersion` üretmiyor. */
+  sameSet("onerilen adim adresleri", mobil.filter((p) => sunucu.includes(p)), sunucu, "mobil esleyici", "sunucu");
 }
 
 /* ── 62. gelisim serisi cizgisinin geometrisi ─────────────────────────────

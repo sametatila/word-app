@@ -2187,6 +2187,20 @@ async function main() {
   const pf = await proficiencyFor(USER, "de", "A1");
   check("okuma A1 ustalaştı, diğerleri ölçülmedi", pf.proficiency.reading.A1?.band === "mastered" && pf.proficiency.listening.A1 === undefined);
   check("sıradaki adım okuma değil, ölçülmemiş bir beceri", pf.next !== null && pf.next.skill !== "reading" && pf.next.reason.includes("ölçülmedi"), pf.next?.reason);
+  // 2026-10-06: "yapıldı" = GEÇTİ; geçilen alıştırma bir daha önerilmiyor, geçilemeyen
+  // üst üste önerilmiyor, dilbilgisi/kelime dört becerinin önüne geçmiyor.
+  check("sıradaki adım dört beceriden biri", pf.next !== null && ["listening", "writing", "speaking"].includes(pf.next.skill), pf.next?.skill);
+  const firstHref = pf.next?.href ?? "";
+  const firstId = firstHref.startsWith("/immersion/skill/") ? firstHref.slice("/immersion/skill/".length) : null;
+  if (firstId) {
+    const ex1 = BUNDLED_EXERCISES.find((e) => e.id === firstId)!;
+    await recordSkillAttempt(USER, ex1, { exerciseId: ex1.id, correct: 0, day: monday, score: 10 });
+    const after = await proficiencyFor(USER, "de", "A1");
+    check("geçilemeyen alıştırma üst üste önerilmiyor", after.next?.href !== firstHref, after.next?.href);
+    await recordSkillAttempt(USER, ex1, { exerciseId: ex1.id, correct: itemCount(ex1), day: monday, score: 95 });
+    const done = await proficiencyFor(USER, "de", "A1");
+    check("geçilen alıştırma bir daha önerilmiyor", done.next?.href !== firstHref, done.next?.href);
+  } else check("sıradaki adım bir alıştırma", false, firstHref);
 
   console.log("\n40) Hata analitiği ve hedefli tekrar (WP-51)");
   await reset();
