@@ -169,7 +169,7 @@ const tr: LandingCopy = {
     line1: "Konuş, anla,",
     line2: "sınava hazırlan.",
     intro:
-      "Ausbildung, iş ya da aile birleşimi için Almanca mı gerekiyor? Lernomi ile Almanca ya da İngilizce öğren: sıfırdan da, bildiğin seviyeden de C1'e kadar, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
+      "Ausbildung, üniversite, iş ya da aile birleşimi için Almanca mı gerekiyor? Lernomi ile Almanca ya da İngilizce öğren: sıfırdan da, bildiğin seviyeden de C1'e kadar, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
     noAccount: "Hesap açmadan, ücretsiz başlarsın. Reklam yok.",
   },
   cta: {
@@ -352,7 +352,7 @@ const en: LandingCopy = {
     line1: "Speak, understand,",
     line2: "settle in.",
     intro:
-      "Learn German to C1 with Lernomi, from zero or from your level: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready.",
+      "Moving to Germany for work, study or family? Learn German to C1 with Lernomi, from zero or from your level: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready.",
     noAccount: "Start free, no account needed. No ads.",
   },
   cta: {
@@ -534,7 +534,7 @@ const de: LandingCopy = {
     line1: "Sprechen, verstehen,",
     line2: "bis C1.",
     intro:
-      "Lerne mit Lernomi Englisch bis C1, von null oder ab deinem Niveau, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen.",
+      "Studium oder Job im Ausland? Lerne mit Lernomi Englisch bis C1, von null oder ab deinem Niveau, mit Erklärungen auf Deutsch und durch Sprechen. Statt nur Vokabeln zu pauken, benutzt du die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen.",
     noAccount: "Du startest kostenlos und ohne Konto. Keine Werbung.",
   },
   cta: {
