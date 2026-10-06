@@ -8,7 +8,8 @@ import { DetailCard, StateBody } from "../ui/flow";
 import { PressableScale } from "../ui/PressableScale";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { CheckIcon, CorrectIcon, SkillSpeakingIcon, SpeakerIcon, WrongIcon } from "../ui/icons";
-import { speakTarget } from "../lib/tts";
+import { currentVoiceId, speakAndWaitVoiced, speakTarget, stopSpeaking } from "../lib/tts";
+import { sfx } from "../lib/sfx";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { SPEAK_CLIP_MS, MONOLOGUE_CHUNK_MS } from "../lib/learningRules";
 import { spokenMatches } from "../lib/voiceMatch";
@@ -78,6 +79,14 @@ type Verdict = "idle" | "listening" | "ok" | "near" | "miss" | "unheard";
 
 /**
  * Cümle cümle söyleyiş: dinle → söyle → tanıyıcı ne duydu → tuttu/tutmadı.
+ *
+ * YÜRÜYÜŞ MODUNUN AKIŞI (2026-10-06, Samet'in bildirimi: "mikrofon yaklaşımı
+ * yürüyüş modundaki gibi olmalı"). Her cümlede "Kaydet"e basmak gerekiyordu.
+ * Artık cümle okunuyor, mikrofon KENDİLİĞİNDEN açılıyor (önce mikrofon, ~180 ms
+ * sonra "şimdi konuş" sesi: kısa cümlenin ilk hecesi kaçmasın — `WalkModeScreen`
+ * `listenNative` hilesi), karar `haptic` ile (titreşim + ses) veriliyor, doğruysa
+ * kısa bir duraktan sonra sıradaki cümleye geçiliyor.
+ * Tutmazsa "Tekrar söyle / Sonraki" duruyor: tekrar etmek alıştırmanın kendisi.
  * "near": duyulan metin bilinen bir sapmayla eşleşiyor (`confusions.heard`),
  * o zaman düzeltme cümlesi gösterilir — sayı değil, düzeltme öğretir.
  */
@@ -89,32 +98,61 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
   const [sttOk, setSttOk] = useState<boolean | null>(null);
   const task = tasks[idx];
   const last = idx + 1 >= tasks.length;
+  /* Ekrandan çıkılınca ya da cümle değişince süren okuma/dinleme sonucu yok sayılıyor. */
+  const alive = useRef(true);
+  const run = useRef(0);
 
   useEffect(() => {
-    let alive = true;
-    sttAvailable().then((v) => { if (alive) setSttOk(v); }).catch(() => { if (alive) setSttOk(false); });
-    return () => { alive = false; stopListening(); };
+    alive.current = true;
+    sttAvailable().then((v) => { if (alive.current) setSttOk(v); }).catch(() => { if (alive.current) setSttOk(false); });
+    /* `alive` yeterli: söküldükten sonra hiçbir sonuç işlenmiyor (sayaç ayrıca artmıyor). */
+    return () => { alive.current = false; stopListening(); stopSpeaking(); };
   }, []);
 
-  async function listen() {
+  /* Yeni cümle: önce okunuyor, bitince mikrofon kendiliğinden açılıyor. */
+  useEffect(() => {
+    if (!task || sttOk !== true) return;
+    const my = ++run.current;
+    void (async () => {
+      try { await speakAndWaitVoiced(task.de, currentVoiceId()); } catch { /* okunamadıysa da dinle */ }
+      if (alive.current && run.current === my) void listen(my);
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idx, sttOk]);
+
+  async function listen(my = ++run.current) {
     if (verdict === "listening") return;
     const izin = await ensureMicPermission();
     if (!izin) { setSttOk(false); return; }
+    if (!alive.current || run.current !== my) return;
     setVerdict("listening");
     setHeard("");
+    /* Önce mikrofon, sonra "şimdi konuş" sesi (yürüyüş modu ile aynı hile). */
+    const micon = setTimeout(() => sfx("micon"), 180);
     /* Pencere ortak sabitten; satir icinde adsiz bir 9000 yaziliydi. */
     const h = await listenOnce(currentTargetLocale(), SPEAK_CLIP_MS);
+    clearTimeout(micon);
+    if (!alive.current || run.current !== my) return;
     if (!h?.length) { setVerdict("unheard"); return; }
     setHeard(h[0]);
-    if (spokenMatches(h, [task.de])) { haptic("correct"); setVerdict("ok"); return; }
+    if (spokenMatches(h, [task.de])) {
+      haptic("correct"); // titreşim + doğru sesi (lib/haptics)
+      setVerdict("ok");
+      /* Doğru: kısa durak (karar okunsun), sonra sıradaki cümle. */
+      setTimeout(() => { if (alive.current && run.current === my) advance(true); }, 1100);
+      return;
+    }
     const lower = h.map((s) => s.toLowerCase());
     const hit = task.confusions?.some((c) => c.heard.some((x) => lower.some((s) => s.includes(x.toLowerCase()))));
     haptic("wrong");
     setVerdict(hit ? "near" : "miss");
   }
 
-  function advance() {
-    const p = passed + (verdict === "ok" ? 1 : 0);
+  /** `ok`: bu cümle tuttu mu — kendiliğinden geçişte durum henüz çizilmemiş olabilir, o yüzden açıkça veriliyor. */
+  function advance(ok = verdict === "ok") {
+    run.current++;
+    stopListening();
+    const p = passed + (ok ? 1 : 0);
     setPassed(p);
     setVerdict("idle");
     setHeard("");
@@ -162,7 +200,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
 
       {verdict === "idle" || verdict === "listening" ? (
         /* Dinlerken düğme meşgul: mikrofonun yerinde dönen gösterge. */
-        <PrimaryButton size="md" onPress={listen} disabled={sttOk === false} busy={verdict === "listening"}
+        <PrimaryButton size="md" onPress={() => void listen()} disabled={sttOk === false} busy={verdict === "listening"}
           icon={<SkillSpeakingIcon color={colors.onPrimary} size={18} />}
           label={t(verdict === "listening" ? "item.speak_listening" : "item.speak_record")}
           style={{ marginTop: spacing.md }} />
@@ -183,10 +221,10 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
             </View>
           ))}
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-            <PressableScale onPress={listen} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}>
+            <PressableScale onPress={() => void listen()} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.text}>{t("item.speak_again")}</Text>
             </PressableScale>
-            <PressableScale onPress={advance} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}>
+            <PressableScale onPress={() => advance()} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.onPrimary}>{t(last ? "item.speak_finish" : "item.speak_next")}</Text>
             </PressableScale>
           </View>
@@ -196,7 +234,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
       ) : null}
 
       {sttOk === false && (verdict === "idle") ? (
-        <PressableScale onPress={advance} style={{ marginTop: spacing.sm, alignSelf: "center" }}>
+        <PressableScale onPress={() => advance()} style={{ marginTop: spacing.sm, alignSelf: "center" }}>
           <Text variant="bodyStrong" color={colors.primaryText}>{t(last ? "item.skip_unscored_finish" : "item.skip_unscored")}</Text>
         </PressableScale>
       ) : null}
