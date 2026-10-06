@@ -11,6 +11,7 @@ import { exampleFor } from "@/lib/option-label";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { SpeakButton, speakWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
+import { ReportFlag, useRoundReport } from "@/components/report-flag";
 
 type IntroRound = Extract<Round, { game: "intro" }>;
 
@@ -27,6 +28,9 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   const { word } = round;
   const [revealed, setRevealed] = useState(false);
   const [skipping, setSkipping] = useState(false);
+  /* "BİLDİR" TANITIM KARTINDA DA (2026-10-06, Samet): sonuç katmanı olmadığı için öteki
+     turların bağlantısı burada hiç çıkmıyordu. Sınavda kapsam yok, bayrak da yok. */
+  const report = useRoundReport();
   const started = useRef(Date.now());
   const example = firstExample(word.beispiel);
   /* Örneğin çevirisi ANADİLDE (`exampleFor`): Türkçe ve İngilizce satır herkese birlikte basılıyordu. */
@@ -162,6 +166,11 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         >
           {tx(skipping ? "rounds.saving" : "rounds.already_known")}
         </button>
+        {report && revealed ? (
+          <div className="flex justify-center">
+            <ReportFlag surface={report.surface} target={report.target} content={report.content} onOpenChange={report.onOpenChange} />
+          </div>
+        ) : null}
       </div>
     </GameShell>
   );

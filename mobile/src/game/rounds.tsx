@@ -300,7 +300,7 @@ const AnswerSink = React.createContext<((a: RoundAnswerInfo) => void) | null>(nu
  * katman "Devam"ın soluna bağlantıyı koyuyor. Sınavda verilmiyor (sınav
  * sırasında bildirim yok; kaçanlar sonuç listesinde bildiriliyor).
  */
-const ReportFor = React.createContext<{ build: (a: RoundAnswerInfo) => ContentReport; onOpen?: () => void; onClose?: () => void } | null>(null);
+const ReportFor = React.createContext<{ build: (a: RoundAnswerInfo | null) => ContentReport; onOpen?: () => void; onClose?: () => void } | null>(null);
 const tokensText = (k?: MarkedToken[] | null) => (k?.length ? k.map((x) => x.text).join(" ") : null);
 
 function RoundShell({ children, footer, sheet, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; sheet?: React.ReactNode; scroll?: boolean }) {
@@ -1260,6 +1260,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   const [revealed, setReveal] = useState(false);
   const reveal = intro || revealed;
   const [skipping, setSkipping] = useState(false);
+  const reportFor = React.useContext(ReportFor);
   const spoke = useRef(false);
   useEffect(() => {
     if (intro && word && !spoke.current) { spoke.current = true; speakTarget(withArtikel(word), { word: true }); }
@@ -1305,8 +1306,16 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
       <View style={{ flex: 1 }}><OptionButton text={tx("rounds.recall_yes")} state="idle" onPress={() => onDone(true, { hintUsed: true })} colors={colors} /></View>
     </View>
   );
+  /* "BİLDİR" YENİ KELİME KARTINDA DA (2026-10-06, Samet): kartın sonuç katmanı yok, yani
+     öteki turların "Devam" yanındaki bağlantısı burada hiç çıkmıyordu. Kart öğretiyor, cevap
+     yok: bildirim cevapsız gidiyor (`roundReport` null kabul ediyor). Sınavda `ReportFor` yok. */
+  const report = reportFor && reveal ? (
+    <View style={{ alignItems: "center", marginTop: spacing.xs }}>
+      <ReportFlag report={() => reportFor.build(null)} onOpen={reportFor.onOpen} onClose={reportFor.onClose} />
+    </View>
+  ) : null;
   return (
-    <RoundShell footer={footer}>
+    <RoundShell footer={<>{footer}{report}</>}>
       <Prompt label={tx(intro ? "rounds.new_word" : "rounds.recall")} big={withArtikel(word)} speakText={withArtikel(word)} sub={typeof round.sentence === "string" ? round.sentence : null} colors={colors} />
       {/*
         TÜR VE ÇOĞUL. Sunucu her kelimede `typ` ve `formen` gönderiyor ve web
@@ -1986,7 +1995,7 @@ export function RoundView({ round, onDone, onAnswer, report }: {
   const onOpen = report?.onOpen;
   const onClose = report?.onClose;
   const reportFor = React.useMemo(
-    () => (surface ? { build: (a: RoundAnswerInfo) => roundReport(round, surface, a, sub), onOpen, onClose } : null),
+    () => (surface ? { build: (a: RoundAnswerInfo | null) => roundReport(round, surface, a, sub), onOpen, onClose } : null),
     [round, surface, sub, onOpen, onClose],
   );
   return (
