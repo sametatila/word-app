@@ -71,7 +71,6 @@ import { deC1B07 } from "./content/de-c1-b07";
 import { deC1B08 } from "./content/de-c1-b08";
 import { deC1B09 } from "./content/de-c1-b09";
 import { deC1B10 } from "./content/de-c1-b10";
-import { A1_SCRIPTS } from "./content/scripts-a1";
 import enA1 from "./content/en-a1.json";
 import enA2 from "./content/en-a2.json";
 import enB1 from "./content/en-b1.json";
@@ -90,18 +89,6 @@ import enC1 from "./content/en-c1.json";
  * bkz. EN_CONVERSATIONS). Zürih'in kendi konuşması yok; hedef dili Almanca olduğu için
  * aynı iskelet doğrulandıktan sonra bu yapıda yeniden yazılacak.
  */
-/**
- * Çevrimdışı senaryolar konuşmaya kimliğiyle bağlanıyor (WP-04). Konuşma dosyasına
- * gömülmemesinin sebebi içerik hattı: senaryolar ayrı üretilip ayrı gözden
- * geçiriliyor (WP-71/72) ve konuşma metnine dokunmadan eklenebiliyor. Konuşmada
- * zaten `script` varsa o kazanır.
- */
-const SCRIPTS: Record<string, Conversation["chat"]["script"]> = { ...A1_SCRIPTS };
-
-function withScript(conversation: Conversation): Conversation {
-  if (conversation.chat.script || !SCRIPTS[conversation.id]) return conversation;
-  return { ...conversation, chat: { ...conversation.chat, script: SCRIPTS[conversation.id] } };
-}
 
 /**
  * İngilizce kursunun konuşmaları JSON, Almancanınkiler TypeScript.
@@ -184,7 +171,7 @@ export const CONVERSATIONS: Conversation[] = [
   ...deC1B08,
   ...deC1B09,
   ...deC1B10,
-  ].map(withScript),
+  ],
   ...EN_CONVERSATIONS,
 ];
 

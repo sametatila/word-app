@@ -1,4 +1,3 @@
-import type { DialogueTurn } from "../../lib/native";
 /**
  * Konuşma kataloğu — A1 İKİLİDE, gerisi iniyor.
  *
@@ -47,13 +46,6 @@ export type ConversationChat = {
    * duruyordu.
    */
   scene: string; partner: string; opening: string; openingTr: string; goal: string; minTurns: number;
-  /**
-   * Dallanan senaryo — yalnız 780 konuşmanın 10'unda var. Sağlayıcı kapalıyken
-   * konuşma bundan oynanıyor (`game/offlineChat`); yoksa konuşmanın kalıpları
-   * sırayla isteniyor. Tip `lib/native` içindekiyle aynı (döküm yolu onu
-   * çevirmek için zaten tanıyor).
-   */
-  script?: DialogueTurn[];
 };
 export type Conversation = {
   id: string; level: string; course: string; icon: string;

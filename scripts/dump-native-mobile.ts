@@ -18,7 +18,7 @@
  * çünkü ikinci kopya kaynağın türevi.
  *
  * TİPLER SATIR İÇİNE ALINIYOR. `native.ts`in tek bağımlılığı iki TİP
- * içe aktarımı (`Conversation`/`LectureStep`/`Segment` ve `DialogueTurn`).
+ * içe aktarımı (`Conversation`/`LectureStep`/`Segment`).
  * Gerçek tip dosyası `CefrLevel` üzerinden sunucu tarafının ağır ağacını
  * çekiyor; mobil kopyaya onun girmesi anlamsız. Çözücü zaten YAPISAL
  * okuyor (`ExamShape`, `MockShape`, `ExerciseShape` hep öyle yazıldı), o
@@ -48,7 +48,6 @@ const OUT_JSON_DE = join(OUT_DIR, "de.json");
 
 const IMPORTS = [
   'import type { Conversation, LectureStep, Segment } from "./types";',
-  'import type { DialogueTurn } from "@/lib/dialogue";',
 ];
 /* Almanca çözücünün tek bağımlılığı iki tip ve ikisi de kardeş dökümde
    ZATEN tanımlı — mobilde `./native`ten geliyor, ikinci bir kopya yok. */
@@ -60,8 +59,8 @@ const PRELUDE = `/* ÜRETİLEN DOSYA — ELLE DEĞİŞTİRME.
    Üretici: npx tsx scripts/dump-native-mobile.ts
    Değişiklik kaynakta yapılır ve betik yeniden koşturulur. */
 
-/* Çözücünün okuduğu dört tip, yapısal olarak. Gerçekleri
-   \`src/lib/conversations/types.ts\` ve \`src/lib/dialogue.ts\` içinde; oradan içe
+/* Çözücünün okuduğu tipler, yapısal olarak. Gerçekleri
+   \`src/lib/conversations/types.ts\` içinde; oradan içe
    aktarmak mobil pakete sunucu tarafının tip ağacını sokardı. */
 export type Segment = { lang: "tr" | "de" | "en"; text: string };
 export type Expectation =
@@ -70,21 +69,6 @@ export type Expectation =
   | { kind: "produce"; target: string; accept?: string[]; hint: Segment[] }
   | { kind: "truefalse"; statement: string; answer: boolean; why: Segment[] };
 export type LectureStep = { say: Segment[]; expect?: Expectation };
-export type DialogueReply = {
-  match: string[];
-  say: string;
-  sayTr: string;
-  next?: string;
-  uses?: string[];
-};
-export type DialogueTurn = {
-  id: string;
-  ask: string;
-  askTr: string;
-  cue: string;
-  replies: DialogueReply[];
-  fallback: { say: string; sayTr: string; example: string };
-};
 export type Conversation = {
   id: string;
   titleTr: string;

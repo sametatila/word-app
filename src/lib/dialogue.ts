@@ -1,24 +1,15 @@
 import { normalizeSpoken } from "./speech";
 
 /**
- * Diyalog eşleştirme — senaryolu ama dallanan konuşma.
+ * Diyalog yardımcıları.
  *
- * Ne olduğu konusunda dürüst olmak gerekir: bu bir sohbet **modeli** değil.
- * Açık uçlu bir muhatap için dil modeli gerekir ve o ücretsiz değildir. Burada
- * yapılan şey **niyet eşleştirme**: sınırlı bir tema içinde (kafede sipariş,
- * randevu alma) öğrencinin verebileceği cevaplar önceden yazılır, tanıyıcının
- * döndürdüğü metinde bu cevapların anahtar kökleri aranır ve tutan dala göre
- * konuşma devam eder.
+ * Açık diyalog (aşağıda): yapay zekâ muhatabıyla konuşmada hedef kalıpların
+ * kullanılıp kullanılmadığı ve konuşmanın ne zaman kapanacağı.
  *
- * Bu, kapalı bir tema için şaşırtıcı ölçüde iyi çalışır: kafede "kahve",
- * "Tee", "Wasser", "mit Milch", "ohne Zucker" gibi sayılı yol vardır. Sınırı
- * da açıktır — yazılmamış bir şey söylenirse anlaşılmaz ve diyalog örnek
- * göstererek yardım eder.
- *
- * Cümlenin tamamını değil kökleri aramanın sebebi: tanıyıcı çekimi ve
- * noktalamayı her seferinde farklı yazar, öğrenci de tam cümle kurmayabilir.
- * "kaffee" kökü hem "Einen Kaffee, bitte" hem "Ich hätte gern einen Kaffee"
- * içinde bulunur.
+ * `DialogueTurn`/`DialogueReply`: becerilerin senaryolu diyalog içeriğinin
+ * tipi (`lib/skills/types`). Konuşma adımının niyet eşleştirmeli çevrimdışı
+ * sohbeti 2026-10-05'te kaldırıldı (Samet): sohbet yalnız yapay zekâyla,
+ * izinsiz kullanıcıda atlanıyor (`api/conversation` muafiyeti).
  */
 
 export type DialogueReply = {
@@ -44,59 +35,6 @@ export type DialogueTurn = {
   /** Hiçbir dal tutmazsa: karşılık + söylenebilecek somut bir örnek. */
   fallback: { say: string; sayTr: string; example: string };
 };
-
-/** Üçten kısa kökler yalnızca tam kelime olarak aranır. */
-const WHOLE_WORD_MAX = 3;
-
-/**
- * Bir kökün metinde geçip geçmediği.
- *
- * Uzun kökler parça olarak aranır ("möcht" → "möchte", "möchten"). Kısa kökler
- * ("ja", "ein") parça olarak aransaydı "ja" kelimesi "Januar" içinde,
- * "ein" ise "keine" içinde bulunurdu — tam tersi anlamlar.
- */
-function contains(words: string[], haystack: string, stem: string): boolean {
-  const needle = normalizeSpoken(stem);
-  if (!needle) return false;
-  if (needle.includes(" ")) return haystack.includes(needle);
-  return needle.length <= WHOLE_WORD_MAX ? words.includes(needle) : haystack.includes(needle);
-}
-
-export type DialogueMatch = { reply: DialogueReply; score: number; matched: string[] };
-
-/**
- * Söylenene en çok uyan dalı seçer; hiçbiri tutmazsa null.
- *
- * Puan, tutan kök sayısıdır: "einen Kaffee mit Milch" hem kahve hem süt dalına
- * uyuyorsa daha çok kökü tutan kazanır. Eşitlikte içerikteki sıra korunur —
- * yazar en olası cevabı başa koyabilsin.
- */
-export function matchReply(transcript: string, replies: DialogueReply[]): DialogueMatch | null {
-  const haystack = normalizeSpoken(transcript);
-  if (!haystack) return null;
-  const words = haystack.split(" ");
-
-  let best: DialogueMatch | null = null;
-  for (const reply of replies) {
-    const matched = reply.match.filter((stem) => contains(words, haystack, stem));
-    if (!matched.length) continue;
-    if (!best || matched.length > best.score) best = { reply, score: matched.length, matched };
-  }
-  return best;
-}
-
-/**
- * Konuşma boyunca kullanılan hedef kalıplar.
- *
- * Pekiştirme kısmı bu: sonunda öğrenciye "şunları kullandın, şunlara hiç
- * gelmedin" denir. Ölçü gerçek — uydurma bir yüzde değil, konuşmada fiilen
- * tutan dalların taşıdığı kalıplar.
- */
-export function usedTargets(path: DialogueReply[]): string[] {
-  const out = new Set<string>();
-  for (const reply of path) for (const target of reply.uses ?? []) out.add(target);
-  return [...out];
-}
 
 /* ───────────── açık diyalog (WP-23) ───────────── */
 

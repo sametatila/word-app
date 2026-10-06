@@ -1,4 +1,3 @@
-import type { DialogueTurn } from "@/lib/dialogue";
 import type { CefrLevel } from "../skills/types";
 
 /**
@@ -162,15 +161,6 @@ export type ConversationChat = {
    * kalıbı değil sabrı tüketiyor.
    */
   minTurns: number;
-  /**
-   * Çevrimdışı senaryo (WP-04): sohbet sağlayıcısı yokken aynı sahnenin
-   * niyet eşleştirmeli, dallanan hâli (`lib/dialogue.ts` motoru). İlk turun
-   * `ask`i açılış repliğiyle aynı olmalı; en az `minTurns` tur içermeli ki
-   * sağlayıcısız ortamda da konuşma geçilebilsin. Yoksa oynatıcı "hedef
-   * kalıpları kullan" görevine düşer (`lib/conversations/offline-chat.ts`).
-   * İçerik ayrı dosyada durur (`content/scripts-*.ts`) ve `source.ts` bağlar.
-   */
-  script?: DialogueTurn[];
 };
 
 /**

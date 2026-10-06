@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
-import { View, TextInput } from "react-native";
+import { AppState, View, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useKeyboardLift } from "../lib/useKeyboardHeight";
 import { useLayout } from "../lib/useLayout";
@@ -26,7 +26,6 @@ import { foldContractions } from "../lib/contractions";
 import { foldEnglishSpelling } from "../lib/en-spelling";
 import { sendChat, chatAvailability, parseReply, patternUsed, type ChatMsg } from "../game/chat";
 import { isAiConsentDeclined } from "../lib/aiConsent";
-import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineChat";
 import { markItemDone, newFinishId, queueConversationResult, loadConversationResume, saveConversationResume, clearConversationResume, type ConversationResume } from "../game/pathProgress";
 import { speakTarget, speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -46,6 +45,7 @@ import { track } from "../lib/track";
 import { reduceMotion } from "../lib/reduceMotion";
 import { MicPulse, TypingDots } from "../ui/ConversationFx";
 import { ApiError } from "../api/client";
+import { isAccountRequired } from "../lib/guest";
 import { useAuth } from "../lib/AuthContext";
 import { notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
 import { useAiDeclined } from "../lib/useAiDeclined";
@@ -148,6 +148,20 @@ function stepTone(step: LectureStep, colors: Palette): string {
  * ~800 ms sonra dönüyor, yani süreyi uzatmak kimseyi bekletmiyor.
  */
 const LISTEN_CEILING_MS = 12000;
+
+
+/**
+ * GÖNDERİLEMEYEN CÜMLE (2026-10-05, Samet: çevrimdışı senaryo kalktı, kopmalar
+ * doğru anlatılıp doğru yönetilsin; web `conversation-player` aynı). Cümle
+ * sohbet akışına girmiyor (tur sayacını doldurmasın); panelde sebebiyle
+ * bekliyor ve kendiliğinden yeniden deneniyor.
+ *   unreachable  sunucuya ulaşılamadı (internet yok ya da ağ engeli)
+ *   service      sunucu cevap verdi ama sohbet servisi yok (5xx) → sorun bizde
+ *   slow         cevap tavanı aştı
+ */
+type SendFailure = { text: string; kind: "unreachable" | "service" | "slow"; attempt: number; retryIn: number | null };
+/** Kendiliğinden yeniden deneme aralıkları (sn); bitince "Şimdi dene" kalır. */
+const RETRY_DELAYS = [5, 15, 30];
 
 export function ConversationScreen() {
   const { colors } = useTheme();
@@ -254,28 +268,27 @@ export function ConversationScreen() {
    */
   const [corrections, setCorrections] = useState<string[]>([]);
   /*
-   * SAĞLAYICI KAPALIYSA SENARYO YOLU. `null` = model çalışıyor. Web aynı
-   * durumda konuşmaya ait senaryoya düşüyor ve konuşma sürüyor; mobil yalnız
-   * "yapay zekâ kapalı" deyip bırakıyordu ve konuşma GEÇİLEMİYORDU - geçme
-   * koşulu konuşmanın yapılmasını istiyor (bkz. web-parity 11.9).
+   * SOHBET KAPISI (2026-10-05, Samet). Çevrimdışı senaryolu sohbet kalktı:
+   * sohbet yalnız yapay zekâyla. Yapamayan iki grup için sohbet ATLANIYOR,
+   * konuşma anlatım puanıyla geçiliyor; muafiyeti sunucu veriyor
+   * (`api/conversation`). Servis kesintisi bir kapı değil: cümle bekler ve
+   * yeniden denenir (`failed`). Web `conversation-player` aynı kural.
+   *   ai       sohbet yapay zekâyla
+   *   consent  metin izni reddedilmiş
+   *   account  misafir
    */
-  const [offline, setOffline] = useState<OfflineState | null>(null);
-  const offlineRef = useRef(false);
-  /* Senaryoya NEDEN düşüldüğünü söyleyen öğretmen notu. Konuşma açılırken
-     basılıyor, ama konuşmaya geçiş akışı temizliyor (`setFeed([])`) ve not
-     tam senaryonun başladığı anda kayboluyordu; giriş ve devamda yeniden basılıyor. */
-  const offNoteRef = useRef<BubbleData | null>(null);
-  /*
-   * Yönlendirme BALONCUK olarak çiziliyor. Web onu mikrofon etiketine
-   * koyuyor; mobilde o etiket tek satır ve kalıp cümlesi sığmıyor, üstelik
-   * ekranda zaten "ipucu" tonlu baloncuk var. Metin ANAHTARDAN çözülüyor;
-   * boş anahtar "olduğu gibi göster" demek (senaryo dalının kendi `cue`su).
-   */
-  function pushHint(h: Hint | null) {
-    if (!h) return;
-    const text = h.key ? tx(h.key, h.vars) : (h.vars?.text ?? "");
-    if (text) push({ role: "teacher", segments: [{ lang: "tr", text }], tone: "hint" });
-  }
+  const [chatGate, setChatGate] = useState<"ai" | "consent" | "account">("ai");
+  const waivedRef = useRef(false);
+  const waived = chatGate !== "ai";
+  useEffect(() => { waivedRef.current = waived; }, [waived]);
+  /** Gönderilemeyen cümle (bkz. `SendFailure`): sohbet akışına girmiyor, panelde bekliyor. */
+  const [failed, setFailed] = useState<SendFailure | null>(null);
+  const [countdown, setCountdown] = useState<number | null>(null);
+  const waivedNote = (gate: "consent" | "account"): BubbleData => ({
+    role: "teacher",
+    segments: [{ lang: "tr", text: tx(gate === "consent" ? "conversationp.chat_waived_consent" : "conversationp.chat_waived_account") }],
+    tone: "hint",
+  });
   const [suggestions, setSuggestions] = useState<string[]>([]);
   /*
     Sunucuya YAZILAN son hüküm: null = yazılmadı, false = yarım (deneme),
@@ -339,67 +352,20 @@ export function ConversationScreen() {
     let alive = true;
     sttAvailable().then((v) => { if (alive) { setSttOk(v); sttOkRef.current = v; if (!v) setSttSebep("unavailable"); } }).catch(() => { if (alive) { setSttOk(false); sttOkRef.current = false; setSttSebep("unavailable"); } });
     /*
-     * YAPAY ZEKÂ KAPALIYSA BUNU BAŞTA SÖYLE.
-     *
-     * Yapılandırma yoksa sunucu 503 dönüyor ve her tur genel `catch`e düşüp
-     * "bağlantı sorunu" yazıyordu — yanlış teşhis: bağlantı yerinde, sohbet
-     * yapılandırılmamış. Kullanıcı aynı yanlış cümleyi her denemede yeniden
-     * görüyordu. Durumu okuyan yardımcı (`chatConfigured`) yazılmıştı ama
-     * çağıran yoktu.
-     *
-     * Web bu durumda konuşmaya ait SENARYOYA düşüyor (`lib/conversations/offline-chat`)
-     * ve konuşma çalışmaya devam ediyor; o yolun mobile taşınması ayrı bir iş.
-     * Burada yapılan yalnız doğruyu söylemek.
+     * SOHBET KAPISI BAŞTA SORULUYOR: misafir ve izni reddeden için sohbet
+     * atlanıyor, anlatımın sonunda "konuşmayı bitir" çıkıyor. Sağlayıcının
+     * yapılandırılmamış olması ("off") kapı değil; cümle gönderilince servis
+     * kesintisi olarak anlatılıyor ve yeniden deneniyor.
      */
     chatAvailability()
       .then((route) => {
-        if (alive && route === "account") {
-          /* MİSAFİR: yapay zekâyla konuşma hesap istiyor (mağaza ön inceleme
-             B24). Servis kapalı değil; senaryo devralıyor ve konuşma sayılıyor. */
-          offlineRef.current = true;
-          /* "Servis kapalı" notu EKLENMİYOR: servis kapalı değil. */
-          offNoteRef.current = { role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_off_account") }], tone: "hint" };
-          push(offNoteRef.current);
-          return;
-        }
-        if (alive && route === "declined") {
-          /* İZİN YOK, SERVİS KAPALI DEĞİL. "Servis kapalı" demek yanlış
-             teşhis olurdu; kullanıcıya neden senaryoya düşüldüğü ve nereden
-             açılacağı söyleniyor. */
-          offlineRef.current = true;
-          offNoteRef.current = { role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_off_consent") }], tone: "hint" };
-          push(offNoteRef.current);
-          return;
-        }
-        if (alive && route === "off") {
-          offlineRef.current = true;
-          /* HANGİ YEDEĞE DÜŞTÜĞÜ SÖYLENİYOR. Mesaj "birazdan tekrar dene"
-             diyordu ama konuşma DURMUYOR: çevrimdışı sohbet devralıyor
-             (`game/offlineChat`) - senaryosu olan konuşmada senaryo, olmayanda
-             kalıplar. Yani kullanıcı çalışan bir şeyi bozuk sanıyordu. Web iki
-             yedeği ayrı ayrı adlandırıyor. */
-          /* "KONUŞMA YİNE SAYILIR" da söyleniyor. Balon yalnız "servis kapalı"
-             diyordu; kullanıcı konuşmasının sayılmayacağını sanıp konuşmayı
-             bırakabilirdi. Web'de bu cümle vardı ama `title=` ipucu balonunda
-             duruyordu (dokunmatikte hiç açılmıyor) - aynı turda ortak anahtara
-             alındı ve iki tarafta da yazılır oldu. */
-          offNoteRef.current = {
-            role: "teacher",
-            segments: [
-              { lang: "tr", text: tx(conversation?.chat.script?.length ? "conversationp.chat_off_scripted" : "conversationp.chat_off_patterns") },
-              { lang: "tr", text: tx("conversation.chat_offline_note") },
-            ],
-            tone: "hint",
-          };
-          push(offNoteRef.current);
-        }
+        if (!alive) return;
+        if (route === "account") setChatGate("account");
+        else if (route === "declined") setChatGate("consent");
       })
       .catch(() => {});
     return () => { alive = false; stopListening(); };
-    /* Efekt yalnız MOUNT içindir (konuşma kimliği değişmiyor, ekran yeniden
-       kuruluyor); `conversation` bağımlılığa eklenirse sohbet uyarısı her çizimde
-       yeniden basılır. */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    /* Efekt yalnız MOUNT içindir (konuşma kimliği değişmiyor, ekran yeniden kuruluyor). */
   }, []);
 
   // Anlatımı başlat: yarım kalan kayıt varsa devam teklif et, yoksa baştan.
@@ -423,7 +389,7 @@ export function ConversationScreen() {
   // Konuşma ilerledikçe de sakla: sohbet, tur sayısı, senaryo yolunun durumu.
   useEffect(() => {
     if (!conversation || phase !== "chat" || kaydedilen.current === true || !roleMsgs.length) return;
-    void saveConversationResume(conversation.id, conversation.lecture.length, correct, { phase: "chat", roleMsgs, roleTurns, offline, corrections });
+    void saveConversationResume(conversation.id, conversation.lecture.length, correct, { phase: "chat", roleMsgs, roleTurns, corrections });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roleMsgs, roleTurns, phase, corrections]);
 
@@ -679,18 +645,15 @@ export function ConversationScreen() {
     /* Kayıt SİLİNMİYOR: konuşma fazı da saklanıyor (bkz. `saveConversationResume`). */
     setFeed([]);
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: conversation.chat.scene }) }] });
-    if (offlineRef.current && offNoteRef.current) push(offNoteRef.current);
-    /* Çevrimdışı yolda açılış senaryodan geliyor (ilk turun sorusu); model
-       çalışıyorsa konuşmanın kendi açılış repliği. */
-    let opening = conversation.chat.opening;
-    if (offlineRef.current) {
-      const st = offlineStart(conversation);
-      setOffline(st.state);
-      opening = st.opening;
-      pushHint(st.hint);
+    /* Sohbet atlandıysa (izin yok ya da misafir) açılış yok: not ve "konuşmayı bitir". */
+    if (waivedRef.current) {
+      push(waivedNote(chatGate === "account" ? "account" : "consent"));
+      scrollDown();
+      return;
     }
+    const opening = conversation.chat.opening;
     if (opening) {
-      push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(conversation.chat.openingTr ? [{ lang: "tr" as const, text: conversation.chat.openingTr }] : [])], content: { sub: "0", snapshot: { phase: "chat", opening, scripted: !!offlineRef.current } } });
+      push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(conversation.chat.openingTr ? [{ lang: "tr" as const, text: conversation.chat.openingTr }] : [])], content: { sub: "0", snapshot: { phase: "chat", opening } } });
       setRoleMsgs([{ role: "assistant", content: opening }]);
       speakTarget(opening);
     }
@@ -720,18 +683,15 @@ export function ConversationScreen() {
     setRoleTurns(r.roleTurns ?? msgs.filter((m) => m.role === "user").length);
     /* Eski kayıtta alan yok: düzeltmeler o zaman kaybolmuştu, boş başlıyor. */
     setCorrections(Array.isArray(r.corrections) ? r.corrections : []);
-    if (r.offline) {
-      offlineRef.current = true;
-      setOffline(r.offline as OfflineState);
-      if (offNoteRef.current) push(offNoteRef.current);
-    }
+    if (waivedRef.current) push(waivedNote(chatGate === "account" ? "account" : "consent"));
     scrollDown();
   }
 
-  async function sendRole(textArg?: string) {
-    if (!conversation || busy) return;
+  async function sendRole(textArg?: string, attempt = 0) {
+    if (!conversation || busy || waivedRef.current) return;
     const text = (textArg ?? input).trim();
     if (!text) return;
+    setFailed(null);
     push({ role: "student", text });
     setInput("");
     setSuggestions([]);
@@ -741,23 +701,16 @@ export function ConversationScreen() {
     const turn = roleTurns + 1;
     setRoleTurns(turn);
     scrollDown();
-    /* ÇEVRİMDIŞI: model yok, cevabı senaryo veriyor. Aynı baloncuk, aynı
-       ayrıştırıcı - `[SAY]` satırı yine öneri çipi oluyor. */
-    if (offline) {
-      const r = offlineReply(conversation, offline, text);
-      setOffline(r.state);
-      const parsed = parseReply(r.content);
-      const bodyText = parsed.body || r.content;
-      setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
-      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], content: { sub: String(turn), snapshot: { phase: "chat", scripted: true, you: text, reply: bodyText } } });
-      setSuggestions(parsed.suggestions);
-      if (parsed.corrections.length) setCorrections((c) => [...c, ...parsed.corrections]);
-      pushHint(r.hint);
-      if (r.speak) speakTarget(r.speak);
-      setBusy(false);
-      scrollDown();
-      return;
-    }
+    /* Gönderilmeyen tur sayılmıyor ve akışta kalmıyor: sayaç, modele giden
+       geçmiş ve öğrenci baloncuğu geri alınıyor (web `conversation-player` aynı). */
+    const undoTurn = () => {
+      setRoleTurns(turn - 1);
+      setRoleMsgs(roleMsgs);
+      setFeed((f) => {
+        const i = f.map((b) => b.role).lastIndexOf("student");
+        return i < 0 ? f : [...f.slice(0, i), ...f.slice(i + 1)];
+      });
+    };
     try {
       const reply = await sendChat(conversation.id, next);
       const parsed = parseReply(reply || "…");
@@ -769,54 +722,31 @@ export function ConversationScreen() {
       if (parsed.corrections.length) setCorrections((c) => [...c, ...parsed.corrections]);
       if (bodyText) speakTarget(bodyText);
     } catch (e) {
-      if (isAiConsentDeclined(e)) {
-        /*
-          İLK TURDA İZİN VERİLMEDİ. Metin sağlayıcıya gitmedi; konuşma
-          durmuyor, senaryoya geçip bu turu da senaryodan cevaplıyor. Yoksa
-          kullanıcı her cümlesinde "bağlantı sorunu" görürdü — oysa bağlantı
-          yerinde, yalnız yapay zekâ kapalı.
-        */
-        offlineRef.current = true;
-        const st = offlineStart(conversation);
-        const r = offlineReply(conversation, st.state, text);
-        setOffline(r.state);
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_off_consent") }], tone: "hint" });
-        const parsed = parseReply(r.content);
-        const bodyText = parsed.body || r.content;
-        setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
-        push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], content: { sub: String(turn), snapshot: { phase: "chat", scripted: true, you: text, reply: bodyText } } });
-        setSuggestions(parsed.suggestions);
-        if (parsed.corrections.length) setCorrections((c) => [...c, ...parsed.corrections]);
-        pushHint(r.hint);
-        if (r.speak) speakTarget(r.speak);
+      undoTurn();
+      if (isAiConsentDeclined(e) || isAccountRequired(e)) {
+        /* İZİN VERİLMEDİ ya da MİSAFİR: cümle sağlayıcıya gitmedi. Sohbet
+           atlanıyor, konuşma anlatım puanıyla bitiriliyor (muafiyeti sunucu veriyor). */
+        const gate = isAccountRequired(e) ? "account" : "consent";
+        setChatGate(gate);
+        waivedRef.current = true;
+        push(waivedNote(gate));
       } else if (e instanceof ApiError && e.status === 403 && e.message === "premium_required") {
-        /* HAK YOK — bağlantı hatası değil, kilit. Tur geri alınıyor (gönderilmedi). */
-        setRoleTurns(turn - 1);
+        /* HAK YOK — bağlantı hatası değil, kilit. */
         setServerLocked(true);
         void refreshPremium();
-      } else {
-        /*
-          CEVAPSIZ TUR SAYILMIYOR. Cümle modele ulaşmadı ya da cevap gelmedi;
-          tur sayacı (7/7) ve modele giden geçmiş geri alınıyor, cümle kutuya
-          dönüyor ki kullanıcı aynı cümleyi yeniden gönderebilsin. Önce tur
-          sayılıyordu: bağlantısı kopan kullanıcı cevap almadan "konuşmayı
-          bitir"e ulaşabiliyordu ve geçmişte arka arkaya iki kullanıcı mesajı
-          kalıyordu. Web `conversation-player` aynı kural (bkz. check:parity).
-        */
-        setRoleTurns(turn - 1);
-        setRoleMsgs(roleMsgs);
-        setFeed((f) => {
-          const i = f.map((b) => b.role).lastIndexOf("student");
-          return i < 0 ? f : [...f.slice(0, i), ...f.slice(i + 1)];
-        });
+      } else if (e instanceof ApiError && e.status === 429) {
+        /* Günlük sohbet mesajı tavanı (kötüye kullanım sınırı) — "bağlantı
+           sorunu" DEĞİL, yarın sürüyor. */
         setInput(text);
-        if (e instanceof ApiError && e.status === 429) {
-          /* Günlük sohbet mesajı tavanı (kötüye kullanım sınırı) — "bağlantı
-             sorunu" DEĞİL, yarın sürüyor. */
-          push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
-        } else {
-          push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.connection_problem") }], tone: "hint" });
-        }
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
+      } else {
+        /* GÖNDERİLEMEDİ: sebebi doğru söyle, cümleyi tut, kendiliğinden yeniden dene.
+           Sunucu cevap verdiyse (5xx) sorun bizde; zaman aşımı `ApiError(0)`;
+           ikisi de değilse sunucuya ulaşılamadı (internet ya da ağ engeli: mobil
+           ikisini ayıramıyor, cümle ikisini de söylüyor). */
+        const kind: SendFailure["kind"] =
+          e instanceof ApiError && e.status >= 500 ? "service" : e instanceof ApiError && e.status === 0 ? "slow" : e instanceof ApiError ? "service" : "unreachable";
+        setFailed({ text, kind, attempt, retryIn: RETRY_DELAYS[attempt] ?? null });
       }
     } finally {
       setBusy(false);
@@ -824,11 +754,49 @@ export function ConversationScreen() {
     }
   }
 
+  /*
+    GÖNDERİLEMEYEN CÜMLENİN YENİDEN DENENMESİ: geri sayım bitince ya da uygulama
+    öne gelince. `RETRY_DELAYS` bitince durup "Şimdi dene"ye bırakıyor.
+  */
+  const retryRef = useRef<() => void>(() => {});
+  useEffect(() => {
+    retryRef.current = () => {
+      if (failed) void sendRole(failed.text, failed.attempt + 1);
+    };
+  });
+  useEffect(() => {
+    if (!failed || failed.retryIn == null || phase !== "chat") {
+      setCountdown(null);
+      return;
+    }
+    let left = failed.retryIn;
+    setCountdown(left);
+    const tick = setInterval(() => {
+      left -= 1;
+      setCountdown(left);
+      if (left <= 0) {
+        clearInterval(tick);
+        retryRef.current();
+      }
+    }, 1000);
+    const sub = AppState.addEventListener("change", (st) => {
+      if (st === "active") {
+        clearInterval(tick);
+        retryRef.current();
+      }
+    });
+    return () => {
+      clearInterval(tick);
+      sub.remove();
+    };
+  }, [failed, phase]);
+
   /* `conversation` henüz yüklenmemişken de okunuyor, o yüzden `??` kalıyor - ama
      uydurulmuş bir eşik değil sıfır: konuşma gelmeden "yeter" demesin. Eşiğin
      kendisi içerikten, artık zorunlu alandan geliyor. */
   const minTurns = conversation?.chat.minTurns ?? 0;
-  const chatReady = roleTurns >= minTurns;
+  /* Muaf sohbette (izin yok ya da misafir) konuşma anlatımla bitiriliyor. */
+  const chatReady = roleTurns >= minTurns || waived;
 
   // ---- Özet + kayıt ----
   async function finish(roleDone: boolean) {
@@ -846,7 +814,6 @@ export function ConversationScreen() {
     /* Senaryolu konuşmanın puanı: kalıpların kaçı kullanıldı. Web
        `conversation-player` aynı adı aynı değerle yazıyor; mobilde çevrimdışı yol
        yeni geldiği için ölçüm de şimdi geliyor. */
-    if (offline) track("production_attempt", offlineSummary(conversation, offline).score, "chat");
     /* "Şimdilik bırak" konuşmayı BİTMİŞ işaretlemiyor ve kaldığı yeri silmiyor:
        bir sonraki açılışta konuşmaya dönülüyor. Sunucuya yine yazılıyor ki
        Patika adımı "denendi" görünsün ve sıra ilerlesin. */
@@ -857,7 +824,8 @@ export function ConversationScreen() {
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     /* `finishId` bu bitiriş için bir kez: anlık yeniden deneme ve kuyruk aynısını
        gönderiyor, sunucu aynı bitirişi ikinci kez yazmıyor. */
-    const payload = { conversationId: conversation.id, correct, chatDone: roleDone, day: todayStr(), seconds, finishId: newFinishId() };
+    /* Muaf sohbet YAPILMIŞ sayılmıyor: `chatDone` false gidiyor, muafiyeti sunucu veriyor. */
+    const payload = { conversationId: conversation.id, correct, chatDone: roleDone && !waivedRef.current, day: todayStr(), seconds, finishId: newFinishId() };
     const gonder = () => fetchWithTimeout(`${apiBase()}/api/conversation`, {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -985,7 +953,7 @@ export function ConversationScreen() {
           baloncuk, konuşmanın ortasına dönen kullanıcıya hiçbir şey söylemez. */}
       {/* Senaryoda (misafir, izin yok, servis kapalı) karşıdaki yapay zekâ
           değil: "yapay zekâ ile konuşuyorsun" demek yanlış olurdu. */}
-      {phase === "chat" && !offline && (
+      {phase === "chat" && !waived && (
         <AiNotice variant="character" style={{ marginHorizontal: spacing.lg, marginBottom: spacing.xs }} />
       )}
       {phase === "lecture" && (
@@ -1023,6 +991,7 @@ export function ConversationScreen() {
           onNext={nextConversation ? () => nav.replace("Conversation", { id: nextConversation.id }) : undefined}
           passed={passed}
           turnsDone={chatReady}
+          skipped={waived && roleTurns === 0}
           onResume={() => setPhase("chat")}
           onExam={() => nav.navigate("ConversationScored", { id: conversation.id })} />
       ) : resumeOffer ? (
@@ -1081,6 +1050,7 @@ export function ConversationScreen() {
                 onSpeak={() => void speakRole()}
                 suggestions={suggestions} onSuggest={(s) => sendRole(s)}
                 ready={chatReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)} onLeave={() => void finish(false)}
+                waived={waived} failed={failed} countdown={countdown} onRetry={() => { if (failed) void sendRole(failed.text, failed.attempt); }}
                 sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping} colors={colors} />
             )}
           </View>
@@ -1365,10 +1335,13 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   );
 }
 
-function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, onLeave, sttOk, sttSebep, listening, typing, setTyping, colors }: {
+function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, onLeave, waived, failed, countdown, onRetry, sttOk, sttSebep, listening, typing, setTyping, colors }: {
   input: string; setInput: (s: string) => void; busy: boolean; onSend: () => void; onSpeak: () => void;
   suggestions: string[]; onSuggest: (s: string) => void;
   ready: boolean; turns: number; minTurns: number; onFinish: () => void; onLeave: () => void;
+  /** Sohbet atlandı (izin yok ya da misafir): yalnız "konuşmayı bitir". */
+  waived: boolean;
+  failed: SendFailure | null; countdown: number | null; onRetry: () => void;
   sttOk: boolean | null; sttSebep: "denied" | "unavailable" | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void; colors: Palette;
 }) {
   const yaziYolu = sttOk === false || typing;
@@ -1381,8 +1354,33 @@ function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onS
         {tx(sttSebep === "denied" ? "speak.mic_needed" : "conversation.no_asr")}
       </Text>
     ) : null;
+  if (waived) {
+    return <BigButton label={tx("conversation.end_conversation_summary")} onPress={onFinish} tint={colors.success} colors={colors} />;
+  }
+  const n = Math.max(0, countdown ?? 0);
+  const failText = !failed
+    ? null
+    : busy
+      ? tx("conversationp.send_retrying")
+      : failed.retryIn == null
+        ? tx("conversationp.send_gave_up")
+        : tx(failed.kind === "service" ? "conversationp.send_service" : failed.kind === "slow" ? "conversationp.send_slow" : "conversationp.send_unreachable", { n });
   return (
     <View style={{ gap: spacing.sm }}>
+      {failed ? (
+        /* Gönderilemeyen cümle: soluk metin, sebep, "Şimdi dene" (bkz. `SendFailure`). */
+        <View accessibilityLiveRegion="polite" style={{ gap: spacing.xs, padding: spacing.sm, borderRadius: radii.md, backgroundColor: colors.surface2 }}>
+          <Text variant="body" color={colors.textMuted} numberOfLines={3}>“{failed.text}”</Text>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+            <Text variant="caption" color={colors.streakText} style={{ flex: 1 }}>{failText}</Text>
+            {busy ? null : (
+              <PressableScale onPress={onRetry} hitSlop={6} style={{ paddingHorizontal: spacing.sm, paddingVertical: spacing.xs }}>
+                <Text variant="caption" color={colors.primaryText}>{tx("conversationp.retry_now")}</Text>
+              </PressableScale>
+            )}
+          </View>
+        </View>
+      ) : null}
       {sttNotu}
       {!busy && suggestions.length > 0 && (
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs }}>
@@ -1420,11 +1418,13 @@ function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onS
   );
 }
 
-function Summary({ conversation, correct, total, next, roleMsgs, corrections, nextDays, passed, turnsDone, colors, insets, onBack, onNext, onExam, onResume }: {
+function Summary({ conversation, correct, total, next, roleMsgs, corrections, nextDays, passed, turnsDone, skipped, colors, insets, onBack, onNext, onExam, onResume }: {
   conversation: Conversation; correct: number; total: number; next: Conversation | null; roleMsgs: ChatMsg[]; corrections: string[]; nextDays: number | null; colors: Palette;
   passed: boolean | null;
   /** Yerel hüküm: asgari tur doldu mu. Sunucu yanıtı gelmezse (çevrimdışı) başlık buna bakıyor. */
   turnsDone: boolean;
+  /** Sohbet atlandı (izin yok ya da misafir): tur yerine "Sohbet atlandı". */
+  skipped: boolean;
   insets: { bottom: number }; onBack: () => void; onNext?: () => void; onExam?: () => void; onResume?: () => void;
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
@@ -1496,7 +1496,7 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
           eyebrow={`${tx("unitkind.conversation")} · ${conversation.title}`}
           title={tx(unfinished ? "conversationp.conversation_unfinished" : "conversation.conversation_complete")}
           figure={total ? `${correct}/${total}` : null}
-          sub={tx("conversationp.n_turns", { n: userTurns })}
+          sub={skipped ? tx("conversationp.chat_skipped") : tx("conversationp.n_turns", { n: userTurns })}
           quiet={unfinished}
           pill={unfinished ? { text: tx("conversationp.pill_min_turns", { n: conversation.chat.minTurns }), tone: "bad" } : scoreLow ? { text: tx("conversationp.pill_score_low", { need, total }), tone: "brand" } : null}
         />
@@ -1505,7 +1505,9 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
             aralıklı tekrar merdiveninden (kayıt yanıtı). */}
         <StatRow items={[
           { value: formatPercent(pct), label: tx("conversation.accuracy"), tone: scoreLow ? "bad" : null },
-          { value: `${userTurns}/${conversation.chat.minTurns}`, label: tx("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
+          skipped
+            ? { value: "—", label: tx("conversationp.chat_skipped") }
+            : { value: `${userTurns}/${conversation.chat.minTurns}`, label: tx("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
           ...(!unfinished && nextDays !== null ? [{ value: tx("profile.days", { n: nextDays }), label: tx("conversationp.stat_review") }] : []),
         ]} />
 

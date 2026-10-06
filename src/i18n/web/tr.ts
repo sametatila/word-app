@@ -393,7 +393,6 @@ export const trWeb: Record<string, string> = {
   "conversationp.mic_denied": "Mikrofon izni verilmedi. Yazarak da devam edebilirsin.",
   "conversationp.not_heard": "Sesini duyamadım. Hazır olunca mikrofona dokun ya da yazarak devam et.",
   "conversationp.no_answer": "Cevap alınamadı. Tekrar dene.",
-  "conversationp.no_connection": "İnternet bağlantısı kurulamadı.",
   "conversationp.answer_coming": "Cevap geliyor…",
   "conversationp.listening_take_time": "Dinliyorum, acele etme",
   "conversationp.listening_true_false": "Dinliyorum: “doğru” ya da “yanlış” de",

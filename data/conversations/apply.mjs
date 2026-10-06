@@ -101,13 +101,6 @@ const chat = {};
 for (const r of read("chat"))
   chat[r.conversation] = { scene: r.sceneEn, partner: r.partnerEn, openingTr: r.openingEn, goal: r.goalEn };
 
-/**
- * Sohbet SENARYOSU — anahtar dizenin kendisi. Alanların adı yok (kaynak
- * konumsal kısayollarla yazılmış), o yüzden metin anahtar oluyor.
- */
-const script = {};
-for (const r of read("script")) script[r.tr] = r.en;
-
 /** Can-do ifadeleri — anahtar `id` (`A1.SPK.1`), kaynakta zaten var. */
 const cando = {};
 for (const r of read("cando")) cando[r.id] = r.en;
@@ -210,7 +203,7 @@ if (existsSync(swapFile))
     for (const [from, to] of r.en) swapEn[r.conversation + SEP + from] = to;
   }
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, chat, cando, script, exam, prose, task, mock, quiz, swap, swapEn };
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, chat, cando, exam, prose, task, mock, quiz, swap, swapEn };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -219,7 +212,7 @@ const n = (o) => Object.keys(o).length;
 console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
-    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · konuşma ${n(meta)} · sohbet ${n(chat)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}\n` +
+    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · konuşma ${n(meta)} · sohbet ${n(chat)} · can-do ${n(cando)} · sınav ${n(exam)}\n` +
     `  beceri düz metni ${n(prose)} · görev metni ${n(task)} · deneme kâğıdı ${n(mock)} · haftalık quiz ${n(quiz)}\n` +
     `  takas ${n(swap)} Almanca + ${n(swapEn)} İngilizce`,
 );

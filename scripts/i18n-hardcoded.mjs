@@ -151,7 +151,7 @@ const SKIP = [
  *
  * `lib/conversations` bütünüyle atlanıyor çünkü konuşma içeriği orada duruyor — ama o
  * dizinde MANTIK da var ve mantığın ürettiği metin kullanıcıya görünüyor.
- * Somut örnek: `offline-chat` yapay zekâ kapalıyken mikrofon etiketine
+ * Somut örnek: `offline-chat` (2026-10-06'da kalktı) yapay zekâ kapalıyken mikrofon etiketine
  * "Kalıbı kullan: …", "Anlaşılmadı — ör. …", "Sıradaki kalıp: …" yazıyordu.
  * Üçü de İngilizce ve Almanca arayüzde Türkçe görünüyordu ve tarayıcı hiçbirini
  * göremiyordu: dizin atlanıyor.
@@ -176,7 +176,6 @@ const SKIP = [
  * istiyor. Temizlenen dosya bu listeye eklenir.
  */
 const FORCE = [
-  "lib/conversations/offline-chat.ts",
   "lib/conversations/progress.ts",
   "lib/conversations/boss.ts",
   "lib/conversations/module-exam/index.ts",

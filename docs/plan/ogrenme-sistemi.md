@@ -13,7 +13,7 @@ sözlüğü `kpi.md`de; Beceriler kütüphanesi `90-beceri-kutuphanesi.md`de; Pa
 | 01 | Beceri ilerlemesi sunucuda | `lib/skills/record.ts`, `/api/skills`, `user_skills` |
 | 02 | Hata taksonomisi, SRS hata ağırlığı | `lib/errors.ts`, `reviews.error_type/detail` |
 | 03 | AI değerlendirme (rubrik 0–4, span, önbellek, kota) | `/api/assess`, `lib/assess.ts`, `lib/assess-prompts.ts`, `lib/assess-client.ts`; kalite ölçümü `assess-samples.md` |
-| 04 | Sağlayıcısız sohbet yedeği | `lib/conversations/offline-chat.ts`, `content/scripts-a1.ts` |
+| 04 | Sağlayıcısız sohbet yedeği — 2026-10-06'da KALDIRILDI (Samet): izinsiz/misafirde sohbet atlanır (`user_conversations.chat_waived`), kesintide cümle saklanıp yeniden denenir | `api/conversation`, `conversation-player` `SendFailure` |
 | 10 | Çeviri turu | `lib/sentence-match.ts`, `lib/session.ts` |
 | 12 | Serbest cümle | `components/games/free-sentence-game.tsx` |
 | 13, 61 | "Neden" satırı ve fark vurgusu | `lib/why.ts`, `components/feedback/*`, `/demo-feedback` (canlıda yalnız admin) |

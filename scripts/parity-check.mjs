@@ -2249,77 +2249,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kalip kullanildi mi", kural("mobile/src/game/chat.ts"), kural("src/components/conversations/conversation-player.tsx"));
 }
 
-/* ── 42. niyet eslestirme (dialogue) ───────────────────────────────────────
- * Kapali temali senaryoda ogrencinin soyledigi, dallarin `match` koklerine
- * gore eslestiriliyor - model gerekmiyor. Kural mobile YENI kopyalandi
- * (cevrimdisi sohbet portunun ilk adimi) ve bir kopya en cok kopyalandigi
- * gun dogrudur.
- *
- * Olculen: kisa kok siniri, kok arama kurali ve puanlama. Ayrisirsa ayni
- * cumle bir uygulamada dali tutar, otekinde tutmaz - yani ayni konuşma bir
- * tarafta ilerler, otekinde tikanir. */
-{
-  const kural = (p, fn) => {
-    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
-    const i = src.indexOf(fn);
-    const body = i < 0 ? "" : src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ");
-    return body;
-  };
-  const say = [
-    "kisasinir=" + ((read("mobile/src/game/dialogue.ts").match(/WHOLE_WORD_MAX = (\d+)/) ?? [])[1] ?? "yok"),
-    "contains=" + kural("mobile/src/game/dialogue.ts", "function contains").replace(/\breply\.match \?\? \[\]/, "reply.match"),
-    "match=" + kural("mobile/src/game/dialogue.ts", "export function matchReply").replace(/\(reply\.match \?\? \[\]\)/, "reply.match"),
-    "used=" + kural("mobile/src/game/dialogue.ts", "export function usedTargets"),
-  ];
-  const web = [
-    "kisasinir=" + ((read("src/lib/dialogue.ts").match(/WHOLE_WORD_MAX = (\d+)/) ?? [])[1] ?? "yok"),
-    "contains=" + kural("src/lib/dialogue.ts", "function contains"),
-    "match=" + kural("src/lib/dialogue.ts", "export function matchReply"),
-    "used=" + kural("src/lib/dialogue.ts", "export function usedTargets"),
-  ];
-  sameList("niyet eslestirme", say, web);
-
-  /* Sozlu metnin normalizasyonu: iki tarafta ayni noktalama kumesi ve ayni
-     kucultme yerelı. Umlaut BILEREK korunuyor (schön/schon). */
-  const norm = (p) => {
-    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
-    return [
-      "noktalama=" + ((src.match(/const PUNCTUATION = (\/[^\n]+\/g)/) ?? [])[1] ?? "yok"),
-      "govde=" + ((src.match(/export function normalizeSpoken[\s\S]*?return ([\s\S]*?);\s*\n\}/) ?? [])[1] ?? "yok").replace(/\s+/g, " ").replace(/lang === "de"/, "DE"),
-    ];
-  };
-  sameList("sozlu metin normalizasyonu", norm("mobile/src/lib/speech.ts"), norm("src/lib/speech.ts"));
-}
-
-/* ── 43. cevrimdisi sohbet ──────────────────────────────────────────────
- * Saglayici kapaliyken konusma konuşma verisinden oynaniyor. Iki gerceklestirme
- * ayri dosyada; ayrisirlarsa ayni konuşma bir uygulamada gecilebilir, otekinde
- * gecilemez (gecme kosulu konusmanin YAPILMASINI istiyor).
- *
- * Olculen: kalip esiginin uzunlugu, ozet puan formulu ve KARSI TARAFIN
- * cumleleri. Cumleler hedef DILE gore secilen bir tabloda: dordu de Almanca
- * SABITTI ve Ingilizce kursta da Almanca cikiyordu (11.96). */
-{
-  const kural = (p) => {
-    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
-    const fn = (ad) => {
-      const i = src.indexOf(ad);
-      return i < 0 ? "yok" : src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ");
-    };
-    const coach = (() => {
-      const i = src.indexOf("const COACH");
-      if (i < 0) return "yok";
-      return src.slice(i, src.indexOf("\n};", i)).replace(/\s+/g, " ");
-    })();
-    return [
-      "uzunkok=" + ((fn("export function patternUsed").match(/length >= (\d+)/) ?? [])[1] ?? "yok"),
-      "puan=" + ((fn("export function offlineSummary").match(/Math\.round\(\(100 \* \(([^)]+)\)\) \/ ([\w.]+)\)/) ?? []).slice(1).join("/") || "yok"),
-      "koc=" + coach,
-    ];
-  };
-  sameList("cevrimdisi sohbet", kural("mobile/src/game/offlineChat.ts"), kural("src/lib/conversations/offline-chat.ts"));
-}
-
 /* ── 44. olcum paritesi: istemciden atilan olaylar ─────────────────────────
  * Sunucudan atilan olaylar iki platforma da yaziliyor; ISTEMCIDEN atilanlar
  * platforma ozgu. Webin istemcisinden atilip mobilde hic atilmayan bir ad,
@@ -4369,11 +4298,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 /* ── 116. sohbet servisi kapaliyken ve yarim kalan konusma ────────────────
  * Iki yanlis mesaj:
  *
- * "BIRAZDAN TEKRAR DENE" derken konuşma DEVAM EDIYORDU. Saglayici kapaliysa
- * mobil cevrimdisi sohbete dusuyor (`game/offlineChat`) ama mesaj
- * "yapay zeka sohbeti kullanilamiyor, birazdan tekrar dene" diyordu: calisan
- * bir sey bozuk sanilyordu. Web hangi yedege dusuldugunu adlandiriyor
- * (senaryolu konusma / kaliplar).
+ * Cevrimdisi senaryolu sohbet 2026-10-06'da kalkti (Samet). Yerine iki sey:
+ * izni reddeden ve misafir icin sohbet ATLANIYOR (muafiyet notu, iki dil
+ * anahtari), servis aksarsa cumle saklanip SEBEBIYLE yeniden deneniyor
+ * (sunucuya ulasilamadi / servis yanit vermiyor / gecikti / vazgecildi).
  *
  * "KONUSMA BITTI" yarim birakildiginda da yaziliyordu. Sunucu `passed`
  * donduruyor (asgari tur doldu mu) ve mobil yaniti okumuyordu. */
@@ -4381,7 +4309,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const sohbet = (p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
-      "yedegin adi=" + (/chat_off_scripted/.test(src) && /chat_off_patterns/.test(src) ? "var" : "yok"),
+      "muafiyet notu=" + (/conversationp\.chat_waived_consent/.test(src) && /conversationp\.chat_waived_account/.test(src) ? "var" : "yok"),
+      "gonderilemedi sebepleri=" + (["send_unreachable", "send_service", "send_slow", "send_gave_up", "retry_now"].every((k) => src.includes(`conversationp.${k}`)) ? "var" : "yok"),
       "yarim kaldi basligi=" + (/conversationp\.conversation_unfinished/.test(src) ? "var" : "yok"),
       /* SUNUCU YANITINDAN okunuyor mu: özet bileşeninin kendi `passed`
          alanı da dosyada geçtiği için gevşek desen yanıt okumasını hiç
@@ -12771,7 +12700,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["cevap kuyrugu", "src/lib/answer-queue.ts", "mobile/src/game/session.ts", /lernomi-answer-queue/],
       ["konusma ilerlemesi", "src/lib/conversation-queue.ts", "mobile/src/game/pathProgress.ts", /queue|Queue/],
       ["deneme yerel kaydi", "src/components/mock-exam-player.tsx", "mobile/src/game/mockExamLocal.ts", /LocalRun|localRun/],
-      ["modelsiz sohbet", "src/lib/conversations/offline-chat.ts", "mobile/src/game/offlineChat.ts", /offlineReply|matchReply/],
     ];
     sameList(
       "cevrimdisi altyapisi",
@@ -14469,19 +14397,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "mobil",
       "web",
     );
-    sameList(
-      "servis kapaliyken guvence gorunur",
-      [
-        "guvence=" + (/conversation\.chat_offline_note/.test(dm) ? "var" : "YOK"),
-        "ipucu balonunda mi=" + (/title=\{t\("conversation\.chat_offline_note"\)\}/.test(dm) ? "EVET" : "hayir"),
-      ],
-      [
-        "guvence=" + (/conversation\.chat_offline_note/.test(dw) ? "var" : "YOK"),
-        "ipucu balonunda mi=" + (/title=\{t\("conversation\.chat_offline_note"\)\}/.test(dw) ? "EVET" : "hayir"),
-      ],
-      "mobil",
-      "web",
-    );
+    /* Gonderilemeyen cumle iki tarafta ayni aralikla yeniden deneniyor
+       (2026-10-06; eski "konusma yine sayilir" guvencesi senaryoyla kalkti). */
+    const aralik = (x) => (x.match(/const RETRY_DELAYS = (\[[^\]]*\])/) ?? [])[1] ?? "yok";
+    sameList("yeniden deneme araliklari", [aralik(dm)], [aralik(dw)], "mobil", "web");
     sameList(
       "sohbetin olu anahtari kalkti",
       ["conversationp.chat_offline_note=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"conversationp.chat_offline_note":') ? 1 : 0), 0)],
@@ -14575,7 +14494,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "esik=" + ((sm.match(/CONVERSATION_PASS_RATIO = ([\d.]+)/) ?? [])[1] ?? "YOK"),
         "gereken=" + esikFn(sm),
-        "yarim=" + (/const unfinished = !turnsDone;/.test(dm) ? "yalniz tur" : "BASKA"),
+        /* Muaf sohbet (izin yok ya da misafir) yarım değil: mobilde `turnsDone`
+           (chatReady) muafiyeti içeriyor, webde koşul açıkça yazılı. */
+        "yarim=" + (/const unfinished = !turnsDone;/.test(dm) && /const chatReady = roleTurns >= minTurns \|\| waived;/.test(dm) ? "yalniz tur, muaf degil" : "BASKA"),
         "isabet notu=" + (/scoreLow \?[\s\S]{0,200}conversationp\.score_low_note_unfinished" : "conversationp\.score_low_note"/.test(dm) ? "var" : "YOK"),
         "isabet bandi=" + (/conversationp\.pill_score_low/.test(dm) ? "var" : "YOK"),
         "uretim ipucu=" + (/produceMiss\([\s\S]{0,120}=== "other"[\s\S]{0,800}conversationp\.produce_other/.test(dm) ? "hakemden" : "YOK"),
@@ -14583,7 +14504,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "esik=" + ((sw.match(/CONVERSATION_PASS_RATIO = ([\d.]+)/) ?? [])[1] ?? "YOK"),
         "gereken=" + esikFn(sw),
-        "yarim=" + (/const unfinished = !chatDone;/.test(dw) ? "yalniz tur" : "BASKA"),
+        "yarim=" + (/const unfinished = !chatDone && !waived;/.test(dw) ? "yalniz tur, muaf degil" : "BASKA"),
         "isabet notu=" + (/scoreLow \?[\s\S]{0,200}conversationp\.score_low_note_unfinished" : "conversationp\.score_low_note"/.test(dw) ? "var" : "YOK"),
         "isabet bandi=" + (/conversationp\.pill_score_low/.test(dw) ? "var" : "YOK"),
         "uretim ipucu=" + (/produceMiss\([\s\S]{0,120}=== "other"[\s\S]{0,800}conversationp\.produce_other/.test(dw) ? "hakemden" : "YOK"),

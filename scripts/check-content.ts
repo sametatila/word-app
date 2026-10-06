@@ -644,7 +644,6 @@ function checkConversations(list: Conversation[]) {
     // ve kataloğun 426 konuşması, öteki doğrulayıcının dayattığı değer yüzünden burada
     // uyarı üretir oldu. İki doğrulayıcı aynı alan için farklı şey söyleyemez.
     if (r.minTurns < 6 || r.minTurns > 9) W(w, `minTurns ${r.minTurns} (6–9)`);
-    if (r.script?.length) checkTurns(`${w} senaryo`, r.script, { minTurns: r.minTurns, opening: r.opening });
   }
 }
 

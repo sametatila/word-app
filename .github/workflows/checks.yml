@@ -344,7 +344,6 @@ jobs:
           npm run check:conversations-chat
           npm run check:conversations-lecture
           npm run check:conversations-word
-          npm run check:conversations-script
           npm run check:conversations-exam
           npm run check:conversations-exam-de
           npm run check:skills-prose

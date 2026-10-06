@@ -357,7 +357,6 @@ export const enWeb: Record<string, string> = {
   "conversationp.mic_denied": "Microphone permission was denied. You can carry on by typing.",
   "conversationp.not_heard": "I couldn't hear you. Tap the mic when you're ready, or carry on by typing.",
   "conversationp.no_answer": "No answer came back. Try again.",
-  "conversationp.no_connection": "Couldn't connect to the internet.",
   "conversationp.answer_coming": "The answer is coming…",
   "conversationp.listening_take_time": "Listening, take your time",
   "conversationp.listening_true_false": "Listening: say “true” or “false”",

@@ -174,7 +174,6 @@
     "check:conversations-word": "node data/conversations/word/check.mjs",
     "check:conversations-cando": "node data/conversations/cando/check.mjs",
     "check:conversations-cando-de": "node data/conversations/cando-de/check.mjs",
-    "check:conversations-script": "node data/conversations/script/check.mjs",
     "check:conversations-exam": "tsx --tsconfig scripts/tsconfig.e2e.json data/conversations/exam/check.ts",
     "check:conversations-exam-de": "tsx --tsconfig scripts/tsconfig.e2e.json data/conversations/exam-de/check.ts",
     "check:conversations-swap": "tsx --tsconfig scripts/tsconfig.e2e.json data/conversations/swap/check.ts",

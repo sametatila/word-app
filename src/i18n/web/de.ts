@@ -357,7 +357,6 @@ export const deWeb: Record<string, string> = {
   "conversationp.mic_denied": "Die Mikrofonberechtigung wurde verweigert. Du kannst auch tippend weitermachen.",
   "conversationp.not_heard": "Ich habe dich nicht gehört. Tipp aufs Mikro, wenn du bereit bist, oder mach tippend weiter.",
   "conversationp.no_answer": "Es kam keine Antwort. Versuch es noch einmal.",
-  "conversationp.no_connection": "Es kam keine Internetverbindung zustande.",
   "conversationp.answer_coming": "Die Antwort kommt…",
   "conversationp.listening_take_time": "Ich höre zu, lass dir Zeit",
   "conversationp.listening_true_false": "Ich höre zu: Sag „richtig“ oder „falsch“",

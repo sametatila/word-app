@@ -71,7 +71,6 @@ import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
 import { overallScore, parseAssessment, repairQuotes } from "../src/lib/assess-prompts";
 import { fallbackAssessment } from "../src/lib/assess-client";
 import { assess, assessHash, deleteAssessment, listAssessments, queueAssessment, runAssessQueue } from "../src/lib/assess";
-import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/conversations/offline-chat";
 import { clozeTypeChance, easeRound, gamesFor as ladderGames, isProductionGame } from "../src/lib/ladder";
 import { CANDO } from "../src/lib/cando";
 import { candoForExercise, candoForConversation } from "../src/lib/cando-map";
@@ -2012,60 +2011,6 @@ async function main() {
   check("assessHash farklı seviye → farklı özet", assessHash({ kind: "sentence", level: "A1", lang: "de", task: { prompt: "a" }, answer: { text: "x" } }) !== assessHash({ kind: "sentence", level: "A2", lang: "de", task: { prompt: "a" }, answer: { text: "x" } }));
   const noProvider = await assess(USER, { kind: "sentence", level: "A1", lang: "de", task: { prompt: "a" }, answer: { text: "x" } }, monday);
   check("sağlayıcısız ortamda not_configured", chatConfigured() ? noProvider.ok || !noProvider.ok : !noProvider.ok && noProvider.reason === "not_configured");
-
-  console.log("\n30) Çevrimdışı sohbet (WP-04)");
-  const scripted = CONVERSATIONS.filter((l) => l.chat.script?.length);
-  check("10 A1 konuşmasında senaryo var", scripted.length >= 10 && scripted.every((l) => l.level === "A1"));
-  check("her senaryo minTurns kadar tur içeriyor", scripted.every((l) => l.chat.script!.length >= l.chat.minTurns));
-  check("senaryonun ilk turu açılışla aynı", scripted.every((l) => l.chat.script![0].ask === l.chat.opening));
-  check("senaryo dalları var olan turlara gidiyor", scripted.every((l) => l.chat.script!.every((t) => t.replies.every((r) => !r.next || l.chat.script!.some((x) => x.id === r.next)))));
-  const hallo = findConversation("de-a1-hallo")!;
-  let os = offlineStart(hallo);
-  check("açılış senaryodan", os.opening === hallo.chat.opening && os.hint !== null);
-  let ost = os.state;
-  const said = ["ich heisse mehmet", "ich komme aus der türkei", "ich wohne hier im zweiten stock", "mit meiner familie"];
-  let ended = false;
-  let understoodAll = true;
-  for (const line of said) {
-    const r = offlineReply(hallo, ost, line);
-    ost = r.state;
-    ended = r.ended;
-    if (!r.understood) understoodAll = false;
-  }
-  check("dört tipik cevap dört dalı tutuyor", understoodAll);
-  /*
-    Senaryo SABİT bir tur sayısında bitmiyor. Test dördüncü turda bitmesini
-    bekliyordu; konuşmalar `894ddb0b` ile 6-9 tura uzatıldı (amaç + yay) ve
-    beklenti güncellenmemişti. Ölçüt artık senaryonun kendi uzunluğu: her
-    turda örnek cevabı söyleyerek sonuna kadar gidiliyor.
-  */
-  for (const turn of hallo.chat.script!.slice(said.length)) {
-    if (ended) break;
-    const r = offlineReply(hallo, ost, turn.replies[0]?.match[0] ?? turn.fallback.example);
-    ost = r.state;
-    ended = r.ended;
-  }
-  check("senaryo sonuna kadar gidince bitiyor", ended && ost.userTurns >= hallo.chat.minTurns, `(${ost.userTurns}/${hallo.chat.minTurns})`);
-  const halloSum = offlineSummary(hallo, ost);
-  check("özet: üç kalıp kullanıldı, puan 100", halloSum.used.length === 3 && halloSum.score === 100);
-  const miss1 = offlineReply(hallo, offlineStart(hallo).state, "guten abend, schönes wetter heute");
-  check("anlaşılmayan cevap: tur ilerlemiyor, örnek öneriliyor", !miss1.understood && miss1.state.turnId === "t1" && miss1.content.includes("[SAY] Ich heiße Carsten."));
-  const noScript = CONVERSATIONS.find((l) => !l.chat.script?.length && l.patterns.length >= 2)!;
-  os = offlineStart(noScript);
-  check("senaryosuz konuşma: kalıp modu, ilk kalıp isteniyor", os.state.turnId === null && os.hint?.key === "chat.hint_use_pattern");
-  const p0 = noScript.patterns[0].de;
-  const r0 = offlineReply(noScript, os.state, p0.replace(/…/g, "Berlin"));
-  check("kalıp söylenince sayılıyor", r0.understood && r0.state.usedPatterns.includes(p0));
-  const rX = offlineReply(noScript, r0.state, "blabla");
-  check("alakasız cümle: kalıp sayılmıyor, ipucu kalıbı gösteriyor", !rX.understood && rX.hint?.vars?.pattern === noScript.patterns[1].de);
-  let stAll = r0.state;
-  for (const p of noScript.patterns.slice(1)) stAll = offlineReply(noScript, stAll, p.de.replace(/…/g, "x")).state;
-  check("bütün kalıplar → bitti, puan 100", stAll.ended && offlineSummary(noScript, stAll).score === 100);
-  check("patternUsed: kısa kalıp tam kelime ister", patternUsed("Und dir?", "gut und dir") && !patternUsed("Und dir?", "gut, dirigent"));
-  // Sağlayıcısız ortamda konuşma geçilebiliyor: senaryo bitti → chatDone → recordConversation.passed
-  await db.delete(userConversations).where(eq(userConversations.userId, USER));
-  const offlineRec = await recordConversation(USER, hallo, scoredSteps(hallo), ost.userTurns >= hallo.chat.minTurns, monday);
-  check("senaryolu konuşmayla konuşma geçildi", offlineRec.passed === true);
 
   console.log("\n31) Çeviri turu ve kısmi kalite (WP-10)");
   await db.delete(reviews).where(eq(reviews.userId, USER));

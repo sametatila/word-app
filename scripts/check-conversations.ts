@@ -247,11 +247,6 @@ for (const l of CONVERSATIONS) {
   ok(l.chat.goal.trim().length > 25, "konuşmanın amacı yazılmış", `(${l.chat.goal.length})`);
   ok(l.chat.goal.trim() !== l.chat.scene.trim(), "amaç sahnenin kopyası değil");
   ok(l.chat.minTurns >= 6 && l.chat.minTurns <= 9, "tur alt sınırı 6-9", `(${l.chat.minTurns})`);
-  // Senaryolu konuşmada çevrimdışı yol da alt sınıra ulaşabilmeli; yoksa
-  // sağlayıcısız ortamda konuşma hiç geçilemez.
-  ok(!l.chat.script || l.chat.script.length >= l.chat.minTurns,
-    "senaryo tur sayısı alt sınırı karşılıyor",
-    l.chat.script ? `(${l.chat.script.length} < ${l.chat.minTurns})` : "");
   const prompt = chatPrompt(l);
   ok(l.patterns.every((p) => prompt.includes(p.de)), "istem kalıpları taşıyor");
   ok(l.vocab.every((v) => prompt.includes(v.de)), "istem kelimeleri taşıyor");

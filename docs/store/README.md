@@ -71,8 +71,8 @@ satırlık kanıt tablosu oturum çıktısında; kararlar:
   zorunlu değil. Metinde Android/Google Play adı geçmez (App Store 2.3.10).
 - KARAR VERİLDİ (2026-09-25, `docs/premium/README.md` §2): konuşmanın yapay zekâ sohbeti artık
   Patika'nın **Konuşma** adımı ve ücretsizde seviye başına 2 + "bitir + seri"; hak yoksa adım
-  kilitli ve Premium ister. Misafir ve yapay zekâ iznini reddeden senaryolu konuşmayla devam
-  eder (maliyetsiz). Premium tavanı 300 mesaj/gün KALIYOR. Metin sohbeti "ücretsiz ve
+  kilitli ve Premium ister. Misafir ve yapay zekâ iznini reddeden için sohbet bölümü atlanır,
+  konuşma anlatım puanıyla sayılır (2026-10-06; senaryolu sohbet kalktı). Premium tavanı 300 mesaj/gün KALIYOR. Metin sohbeti "ücretsiz ve
   sınırsız" diye anmaz.
 
 **Vitrin provası düzeltmeleri (2026-10-05, Samet onayladı):** altı hedef kişiliğin (dil modeli

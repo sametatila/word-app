@@ -1,5 +1,4 @@
 import type { Conversation, LectureStep, Segment } from "./types";
-import type { DialogueTurn } from "@/lib/dialogue";
 
 /**
  * Anlatımı öğrencinin ANA DİLİNE çevirir.
@@ -51,11 +50,6 @@ export type NativeDict = {
   chat: Record<string, { scene: string; partner: string; openingTr: string; goal: string }>;
   /** Can-do ifadesi — anahtar `A1.SPK.1` biçiminde. */
   cando: Record<string, string>;
-  /**
-   * Çevrimdışı sohbet senaryosunun Türkçe alanları. Anahtar DİZENİN
-   * KENDİSİ: kaynak konumsal kısayollarla yazıldığı için alanların adı yok.
-   */
-  script: Record<string, string>;
   /**
    * Modül sınavı kâğıtlarının Türkçe alanları — anahtar yine dizenin kendisi.
    *
@@ -263,52 +257,6 @@ export function resolveConversation(dict: NativeDict, conversation: Conversation
 
   const rp = dict.chat[conversation.id];
 
-  /*
-    SENARYO, SOHBETNIN İÇİNDE. On konuşmanın `chat.script` dizisi var ve
-    içindeki üç alan Türkçe. Buradaki eksik de konuşmayı TÜMDEN düşürüyor:
-    modelin çalışmadığı anda devreye giren akış bu, yani yarım çevrilirse
-    tam da en kırılgan anda Türkçe çıkar.
-  */
-  const src = conversation.chat as unknown as { script?: DialogueTurn[] };
-  let script: DialogueTurn[] | undefined;
-  if (src.script) {
-    const turns: DialogueTurn[] = [];
-    for (const t of src.script) {
-      const askTr = dict.script[t.askTr];
-      const cue = dict.script[t.cue];
-      if (askTr === undefined || cue === undefined) return null;
-      const replies: DialogueTurn["replies"] = [];
-      for (const r of t.replies ?? []) {
-        const sayTr = dict.script[r.sayTr];
-        if (sayTr === undefined) return null;
-        replies.push({ ...r, sayTr: swapEn(dict, conversation.id, sayTr), say: sw(r.say) });
-      }
-      let fallback = t.fallback;
-      if (fallback) {
-        const sayTr = dict.script[fallback.sayTr];
-        if (sayTr === undefined) return null;
-        /* `example` de Almanca ve öğrencinin söyleyeceği örnek cevap —
-           replik takas edilip örnek eski kalırsa ikisi çelişir. */
-        const ex = (fallback as { example?: string }).example;
-        fallback = {
-          ...fallback,
-          sayTr: swapEn(dict, conversation.id, sayTr),
-          say: sw(fallback.say),
-          ...(ex ? { example: sw(ex) } : {}),
-        };
-      }
-      turns.push({
-        ...t,
-        ask: sw(t.ask),
-        askTr: swapEn(dict, conversation.id, askTr),
-        cue: swapEn(dict, conversation.id, cue),
-        replies,
-        fallback,
-      });
-    }
-    script = turns;
-  }
-
   /* SÖZLÜKÇE VE KALIP DA HEP-YA-HİÇ. Eskiden ikisi de `?? v.tr` ile sessizce
      Türkçesine düşüyordu ve bu bir kez gerçekten oldu: biçimlendirici bir
      kalıp maddesini üç satıra açıp sonuna virgül koyunca çıkarıcı onu
@@ -346,7 +294,6 @@ export function resolveConversation(dict: NativeDict, conversation: Conversation
          "Du bist also in Manchester aufgewachsen?" olup altındaki İngilizce
          "So you grew up in Izmir?" kalsaydı ikisi birbirini yalanlardı. */
       ...(rp?.openingTr ? { openingTr: swapEn(dict, conversation.id, rp.openingTr) } : {}),
-      ...(script ? { script } : {}),
     },
     lecture,
   };

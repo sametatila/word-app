@@ -38,9 +38,9 @@ const SEP = String.fromCharCode(0);
 const raw: NativeDict = { ...dict, swap: {}, swapEn: {} };
 
 const errors: string[] = [];
+/* Uyarı yolu şu an boş (senaryo taraması 2026-10-06'da çevrimdışı sohbetle kalktı); çıktı biçimi duruyor. */
 const warnings: string[] = [];
 const H = (m: string) => errors.push(`  ${m}`);
-const U = (m: string) => warnings.push(`  ${m}`);
 /**
  * Türkiye izi. `Türk` tek başına yetmiyor: Almancada `Tür` kapı demek ve
  * `die Türklingel` (kapı zili) taramaya takılıyordu. `Türkei`/`Türkisch`
@@ -48,20 +48,6 @@ const U = (m: string) => warnings.push(`  ${m}`);
  * kapı sözcükleri etmiyor.
  */
 const LEFTOVER = /Türk(?=[ei])|Turkish|Turkey|Izmir|Istanbul|Ankara/i;
-
-type ScriptTurn = {
-  ask: string;
-  askTr: string;
-  cue: string;
-  replies?: { say: string; sayTr: string }[];
-  fallback?: { say: string; sayTr: string; example?: string };
-};
-/** Konuşmanın sohbet senaryosu — yoksa boş. */
-const script = (conversation: { chat?: unknown }): ScriptTurn[] =>
-  (conversation.chat as { script?: ScriptTurn[] } | undefined)?.script ?? [];
-
-/** Satırın Almanca takasını uygular — senaryo taraması için. */
-const sw = (r: Row, x: string): string => r.de.find(([f]) => f === x)?.[1] ?? x;
 
 let de = 0;
 let en = 0;
@@ -86,16 +72,7 @@ for (const r of rows) {
   for (const v of conversation.vocab ?? []) source.add(v.de);
   const rp = conversation.chat as { opening?: string } | undefined;
   if (rp?.opening) source.add(rp.opening);
-  /* Senaryonun Almancası da takas edilebiliyor — replik, örnek cevap ve
-     modelin çalışmadığı anda devreye giren yedek replik. */
-  for (const t of script(conversation)) {
-    source.add(t.ask);
-    for (const x of t.replies ?? []) source.add(x.say);
-    if (t.fallback) {
-      source.add(t.fallback.say);
-      if (t.fallback.example) source.add(t.fallback.example);
-    }
-  }
+
 
   for (const [from, to] of r.de) {
     de++;
@@ -122,19 +99,6 @@ for (const r of rows) {
        edilince bunun da dönmesi gerekiyor, yoksa ikisi birbirini yalanlar. */
     const op = d.chat[conversation.id]?.openingTr;
     if (op) set.add(d.swapEn[conversation.id + SEP + op] ?? op);
-    /* Senaryonun İngilizcesi `script` sözlüğünden geliyor ve takas ona da
-       uygulanıyor; kapı aynı yoldan geçiyor. */
-    const en2 = (x: string | undefined) => {
-      if (x === undefined) return;
-      const t = d.script[x];
-      if (t !== undefined) set.add(d.swapEn[conversation.id + SEP + t] ?? t);
-    };
-    for (const t of script(conversation)) {
-      en2(t.askTr);
-      en2(t.cue);
-      for (const x of t.replies ?? []) en2(x.sayTr);
-      en2(t.fallback?.sayTr);
-    }
     return set;
   };
   const before = english(raw);
@@ -150,20 +114,6 @@ for (const r of rows) {
      SONRA kalan her iz bildiriliyor. Bunlar `en` listesine girmeli. */
   for (const t of after) if (LEFTOVER.test(t)) H(`[${r.conversation}] İngilizcede iz kaldı: «${t}»`);
 
-  /*
-    SOHBET SENARYOSU UYARI, HATA DEĞİL. `de-a1-sprachen`in senaryosu
-    1:1 takasla düzelmiyor: muhatap "ich spreche Spanisch und Englisch.
-    Sprichst du auch Englisch?" diyor ve sonra "Sprichst du Türkisch?"
-    sorusunu bekliyor. Öğrencinin ana dili İngilizce olunca konuşma
-    kendi kendini yiyor — "İngilizce biliyor musun?" sorusuna "o benim
-    dilim" cevabı akışı bitirir. Burada gereken takas değil BAŞKA BİR
-    SENARYO. Kapı bunu susarak geçmiyor ama iş bitene kadar da
-    durdurmuyor: bilinen ve yazılı bir açık.
-  */
-  for (const t of script(conversation)) {
-    for (const x of [t.ask, ...(t.replies ?? []).map((y) => y.say), t.fallback?.say, t.fallback?.example])
-      if (x && LEFTOVER.test(sw(r, x))) U(`[${r.conversation}] senaryoda iz kaldı: «${x}»`);
-  }
 }
 
 /*
@@ -201,21 +151,8 @@ for (const conversation of CONVERSATIONS.filter((l) => l.course === "de")) {
     if (e?.target && LEFTOVER.test(e.target)) seen.push(e.target);
   }
   for (const v of out.vocab ?? []) for (const x of [v.de, v.tr]) if (LEFTOVER.test(x)) seen.push(x);
-  const rp = out.chat as
-    | { opening?: string; openingTr?: string; script?: ScriptTurn[] }
-    | undefined;
+  const rp = out.chat as { opening?: string; openingTr?: string } | undefined;
   for (const x of [rp?.opening, rp?.openingTr]) if (x && LEFTOVER.test(x)) seen.push(x);
-  for (const t of rp?.script ?? [])
-    for (const x of [
-      t.ask,
-      t.askTr,
-      t.cue,
-      ...(t.replies ?? []).flatMap((y) => [y.say, y.sayTr]),
-      t.fallback?.say,
-      t.fallback?.sayTr,
-      t.fallback?.example,
-    ])
-      if (x && LEFTOVER.test(x)) seen.push(x);
   if (seen.length && !KEEP[conversation.id])
     for (const x of [...new Set(seen)]) H(`[${conversation.id}] karara bağlanmamış iz: «${x}»`);
 }

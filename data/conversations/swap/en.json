@@ -10,10 +10,6 @@
       [
         "Ich wohne in Izmir.",
         "Ich wohne in Manchester."
-      ],
-      [
-        "Ich komme aus der Türkei. Und du?",
-        "Ich komme aus England. Und du?"
       ]
     ],
     "en": []
@@ -29,10 +25,6 @@
       [
         "Ich bin in Izmir geboren",
         "Ich bin in Manchester geboren"
-      ],
-      [
-        "Ich bin in Istanbul geboren.",
-        "Ich bin in Manchester geboren."
       ]
     ],
     "en": []
@@ -52,50 +44,6 @@
       [
         "Ich spreche Türkisch und ein bisschen Deutsch",
         "Ich spreche Englisch und ein bisschen Deutsch"
-      ],
-      [
-        "Toll! Und ich spreche Spanisch und Englisch. Sprichst du auch Englisch?",
-        "Toll! Und ich spreche Spanisch und Englisch. Sprichst du auch Spanisch?"
-      ],
-      [
-        "Welche Sprachen? Türkisch, Englisch …?",
-        "Welche Sprachen? Englisch, Spanisch …?"
-      ],
-      [
-        "Ich spreche Türkisch und ein bisschen Englisch.",
-        "Ich spreche Englisch und ein bisschen Spanisch."
-      ],
-      [
-        "Sprichst du auch Englisch?",
-        "Sprichst du auch Spanisch?"
-      ],
-      [
-        "Nein, leider kein Türkisch! Wo lernst du Deutsch?",
-        "Englisch schon, aber wir üben Deutsch! Wo lernst du Deutsch?"
-      ],
-      [
-        "Englisch — ja oder nein?",
-        "Spanisch — ja oder nein?"
-      ],
-      [
-        "Ja, ein bisschen. Sprichst du Türkisch?",
-        "Ja, ein bisschen. Sprichst du Englisch?"
-      ],
-      [
-        "Gut, dann bleiben wir bei Deutsch. Wie sagt man Danke auf Türkisch?",
-        "Gut, dann bleiben wir bei Deutsch. Wie sagt man Danke auf Englisch?"
-      ],
-      [
-        "Wie sagt man Danke auf Türkisch?",
-        "Wie sagt man Danke auf Englisch?"
-      ],
-      [
-        "Wie sagt man das auf Türkisch?",
-        "Wie sagt man das auf Englisch?"
-      ],
-      [
-        "Auf Türkisch sagt man teşekkürler.",
-        "Auf Englisch sagt man thank you."
       ]
     ],
     "en": [
@@ -110,50 +58,6 @@
       [
         "That is, 'Yes, I speak Turkish and a little German.'",
         "That is, 'Yes, I speak English and a little German.'"
-      ],
-      [
-        "List your languages: Ich spreche Türkisch und …",
-        "List your languages: Ich spreche Englisch und …"
-      ],
-      [
-        "Wonderful! I speak Spanish and English. Do you speak English too?",
-        "Wonderful! I speak Spanish and English. Do you speak Spanish too?"
-      ],
-      [
-        "Which languages? Turkish, English…?",
-        "Which languages? English, Spanish…?"
-      ],
-      [
-        "Do you speak English too?",
-        "Do you speak Spanish too?"
-      ],
-      [
-        "Say yes or no and ask them: Sprichst du Türkisch?",
-        "Say yes or no and ask them: Sprichst du Englisch?"
-      ],
-      [
-        "No, I am afraid I do not know Turkish! Where are you learning German?",
-        "English yes, but we are practicing German! Where are you learning German?"
-      ],
-      [
-        "English — yes or no?",
-        "Spanish — yes or no?"
-      ],
-      [
-        "Good, German it is then. How do you say Danke in Turkish?",
-        "Good, German it is then. How do you say Danke in English?"
-      ],
-      [
-        "How do you say Danke in Turkish?",
-        "How do you say Danke in English?"
-      ],
-      [
-        "Say it in Turkish and explain briefly",
-        "Say it in English and explain briefly"
-      ],
-      [
-        "How do you say that in Turkish?",
-        "How do you say that in English?"
       ]
     ]
   },
@@ -200,16 +104,5 @@
         "Last: 'English and German are related languages.'"
       ]
     ]
-  },
-  {
-    "conversation": "de-a1-du-oder-sie",
-    "why": "Rol yapmanın yedek örnek cevabı öğrencinin KENDİ cevabı: 'Aus welchem Land kommen Sie?' sorusuna model. Bu ders artikelli ülke kalıbını ÖĞRETMİYOR (de-a1-hallo öğretiyor), o yüzden burada artikeli korumak gerekmiyor. AYNI DİZE de-a1-hallo'da da var ve orada DEĞİŞMİYOR — anahtarın derse bağlı olmasının sebebi bu: aynı cümle bir derste öğretilen kalıp, ötekinde öğrenciye atfedilen cevap.",
-    "de": [
-      [
-        "Ich komme aus der Türkei.",
-        "Ich komme aus England."
-      ]
-    ],
-    "en": []
   }
 ]

@@ -4,13 +4,8 @@
  * Web konuşmayı koddan okuyor (findConversation); mobilin de aynı içeriğe ihtiyacı var
  * çünkü /api/conversation yalnızca SONUCU kaydeder, içeriği sunmaz.
  *
- * ÇEVRİMDIŞI SENARYO ARTIK DÖKÜLÜYOR. Eskiden `script` hariç tutuluyordu
- * ("mobil konuşmayı /api/chat ile yürütür") ve bu, sağlayıcı kapalıyken
- * Android'de hiçbir Konuşma adımının geçilememesi demekti — geçme koşulu
- * konuşmanın yapılmasını istiyor. Web o durumda senaryoya düşüyor; mobil de
- * artık düşüyor (`game/offlineChat`).
- *
- * Paket şişmesi ölçüldü: senaryo 780 konuşmanın yalnız 10'unda var.
+ * Çevrimdışı senaryo (`chat.script`) 2026-10-06'da kalktı; sohbet yalnız
+ * yapay zekâyla, izinsiz ve misafirde atlanıyor.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
