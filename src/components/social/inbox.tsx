@@ -6,7 +6,7 @@ import { AddFriendIcon, ChevronNextIcon, CorrectIcon, InboxIcon, LeagueUpIcon, Q
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
-import { errorText, notificationText, social, timeAgo, type NotificationView } from "@/lib/social/client";
+import { errorText, notificationText, reportContext, social, timeAgo, type NotificationView } from "@/lib/social/client";
 import { REACTION_TONE, REACTION_FILL, ReactionGlyph, softFill } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
 import { achievementHref } from "@/lib/achievement-groups";
@@ -198,6 +198,7 @@ export function Inbox() {
                   {/* Okunmamış satır KALIN. Tek işaret satırın arka planıydı ve
                       Android okunmamışı yazı ağırlığı + nokta ile söylüyor. */}
                   <span className={`block ${n.read ? "text-body" : "text-strong"}`}>{notificationText(n, lang)}</span>
+                  {reportContext(n, lang) ? <span className="muted mt-0.5 block line-clamp-3 break-words text-caption">{reportContext(n, lang)}</span> : null}
                   <span className="block text-micro" style={{ color: "var(--text-faint)" }}>{timeAgo(n.createdAt, lang)}</span>
                 </span>
                 {reaction ? (

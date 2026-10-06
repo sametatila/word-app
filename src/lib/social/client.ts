@@ -253,6 +253,14 @@ export function feedText(item: FeedItem, lang: NativeLang): string {
   }
 }
 
+/** Şikâyet sonucunun alt satırı: neyin bildirildiği + bildirenin notu (mobil `api/social` `reportContext`). */
+export function reportContext(n: NotificationView, lang: NativeLang): string | null {
+  if (n.type !== "report_closed") return null;
+  const subject = typeof n.detail.subject === "string" && n.detail.subject ? `«${n.detail.subject}»` : null;
+  const note = typeof n.detail.yourNote === "string" && n.detail.yourNote ? translate(lang, "social.notif_report_note", { note: n.detail.yourNote }) : null;
+  return [subject, note].filter(Boolean).join(" · ") || null;
+}
+
 /** Gelen kutusu satırının cümlesi. */
 export function notificationText(n: NotificationView, lang: NativeLang): string {
   const T = (k: string, v?: Record<string, string | number>) => translate(lang, k, v);

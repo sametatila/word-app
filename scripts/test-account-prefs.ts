@@ -5,6 +5,7 @@ import { contentReports, events, moderationActions, profiles, socialNotification
 import { track } from "@/lib/events";
 import { ensureProfile, termsUpdateFor } from "@/lib/session";
 import { closeReport, purgeClosedReports } from "@/lib/moderation-admin";
+import { listNotifications, reportSubject } from "@/lib/social/notify";
 import { LEGAL_VERSION } from "@/lib/legal";
 
 /**
@@ -95,6 +96,16 @@ async function main() {
   await closeReport("user_report", ur.id, "dismissed", "admin@test", null);
   const notes2 = await db.select().from(socialNotifications).where(and(eq(socialNotifications.userId, R), eq(socialNotifications.type, "report_closed")));
   check("kullanıcı şikâyeti de bildiriliyor", notes2.length === 2, String(notes2.length));
+
+  /* NEYİN SONUCU (2026-10-07): satırın alt satırı bildirilen içerik + bildirenin notu. */
+  const [cc] = await db.insert(contentReports).values({ userId: R, kind: "content", ref: "word:9", reason: "audio", content: JSON.stringify({ game: "truefalse", word: "völlig" }), detail: "  G ile   bitiriyor " }).returning({ id: contentReports.id });
+  await closeReport("content_report", cc.id, "resolved", "admin@test", null);
+  const page = await listNotifications(R, null, 20);
+  const row = page.items.find((n) => n.ref?.type === "content_report" && n.ref.id === cc.id);
+  check("içerik sonucu: bildirilen kelime ve bildirenin notu", row?.detail.subject === "völlig" && row?.detail.yourNote === "G ile bitiriyor", JSON.stringify(row?.detail));
+  const chat = page.items.find((n) => n.ref?.type === "content_report" && n.ref.id === cr.id);
+  check("yapay zekâ bildiriminde çıktı yazılmıyor (subject yok)", chat != null && chat.detail.subject == null);
+  check("görüntüden konu: soru cümlesi, düz metin yok sayılır", reportSubject(JSON.stringify({ q: "Zehn Minuten." })) === "Zehn Minuten." && reportSubject("düz metin") === null);
 
   console.log("\nLEG-17 — kapanıştan 1 yıl sonra silme");
   const [open] = await db.insert(contentReports).values({ userId: R, kind: "chat", ref: "x:2", reason: "other", createdAt: new Date("2024-01-01") }).returning({ id: contentReports.id });

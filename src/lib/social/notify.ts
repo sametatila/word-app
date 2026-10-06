@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { activityEvents, contentReports, eventReactions, friendQuests, moderationActions, nudges, socialNotifications } from "@/lib/db/schema";
+import { activityEvents, contentReports, eventReactions, friendQuests, moderationActions, nudges, socialNotifications, userReports } from "@/lib/db/schema";
 import { sendToUser, type PushPayload } from "@/lib/push";
 import { track } from "@/lib/events";
 import { serverToday } from "./dates";
@@ -108,6 +108,24 @@ export async function notifyMany(userIds: string[], n: NotifyInput): Promise<voi
   );
 }
 
+/** Bildirilen içeriğin tanınır parçası: anlık görüntüdeki kelime ya da soru cümlesi. */
+const SUBJECT_KEYS = ["word", "q", "prompt", "sentence", "text", "title", "front"];
+export function reportSubject(snapshot: string | null | undefined): string | null {
+  if (!snapshot) return null;
+  try {
+    const o = JSON.parse(snapshot) as Record<string, unknown>;
+    for (const k of SUBJECT_KEYS) {
+      const v = o?.[k];
+      if (typeof v === "string" && v.trim()) return clip(v.trim(), 80);
+    }
+  } catch {
+    /* düz metin görüntü: başlık olarak kullanılmıyor (uzun, bağlamsız) */
+  }
+  return null;
+}
+const clip = (v: string, n: number) => (v.length > n ? `${v.slice(0, n - 1).trimEnd()}…` : v);
+const clipNote = (v: string | null | undefined) => (v && v.trim() ? clip(v.trim().replace(/\s+/g, " "), 140) : null);
+
 export async function unreadCount(userId: string): Promise<number> {
   // Sayıyı veritabanı sayıyor. Önce en çok yüz satırın kimliği çekilip
   // uzunluğu ölçülüyordu: hem yüzün üstünde yanlış, hem de bir sayaç için
@@ -169,7 +187,8 @@ export async function listNotifications(
   const nudgeIds = [...new Set(page.filter((r) => r.refType === "nudge" && r.refId).map((r) => r.refId as number))];
   const reportIds = [...new Set(page.filter((r) => r.type === "report_closed" && r.refId).map((r) => r.refId as number))];
   const contentReportIds = [...new Set(page.filter((r) => r.type === "report_closed" && r.refType === "content_report" && r.refId).map((r) => r.refId as number))];
-  const [events, quests, nudgeRows, reactions, decisions, reportKinds] = await Promise.all([
+  const userReportIds = [...new Set(page.filter((r) => r.type === "report_closed" && r.refType === "user_report" && r.refId).map((r) => r.refId as number))];
+  const [events, quests, nudgeRows, reactions, decisions, reportKinds, userReportNotes] = await Promise.all([
     eventIds.length ? db.select().from(activityEvents).where(inArray(activityEvents.id, eventIds)) : Promise.resolve([]),
     questIds.length ? db.select().from(friendQuests).where(inArray(friendQuests.id, questIds)) : Promise.resolve([]),
     nudgeIds.length ? db.select().from(nudges).where(inArray(nudges.id, nudgeIds)) : Promise.resolve([]),
@@ -183,10 +202,15 @@ export async function listNotifications(
     /* Bildirimin TÜRÜ: içerik hatası (`content`) ile yapay zekâ şikâyeti aynı tabloda; sonuç
        cümlesi farklı ("içerik düzeltildi" / "kurallara aykırı bir şey yok"), 2026-10-06 Samet. */
     contentReportIds.length
-      ? db.select({ id: contentReports.id, kind: contentReports.kind }).from(contentReports).where(inArray(contentReports.id, contentReportIds)).catch(() => [])
+      ? db.select({ id: contentReports.id, kind: contentReports.kind, content: contentReports.content, detail: contentReports.detail })
+          .from(contentReports).where(inArray(contentReports.id, contentReportIds)).catch(() => [])
+      : Promise.resolve([]),
+    userReportIds.length
+      ? db.select({ id: userReports.id, detail: userReports.detail }).from(userReports).where(inArray(userReports.id, userReportIds)).catch(() => [])
       : Promise.resolve([]),
   ]);
-  const reportKindMap = new Map(reportKinds.map((k) => [k.id, k.kind]));
+  const contentReportMap = new Map(reportKinds.map((k) => [k.id, k]));
+  const userReportMap = new Map(userReportNotes.map((k) => [k.id, k]));
   const decisionMap = new Map(decisions.map((d) => [`${d.target}:${d.refId}`, d.action]));
   const eventMap = new Map(events.map((e) => [e.id, e]));
   const questMap = new Map(quests.map((q) => [q.id, q]));
@@ -207,7 +231,18 @@ export async function listNotifications(
       if (n) detail.kind = n.kind;
     } else if (r.type === "report_closed" && r.refType && r.refId) {
       detail.decision = decisionMap.get(`${r.refType}:${r.refId}`) ?? null;
-      if (r.refType === "content_report") detail.reportKind = reportKindMap.get(r.refId) ?? null;
+      /* NEYİN SONUCU (Samet, 2026-10-07: "kullanıcı neyi anlaması lazım"): satır yalnız
+         "düzeltildi" diyordu; hangi bildirim olduğu yazmıyordu. `subject` bildirilen
+         içeriğin kendisi (öğrenme içeriğinde kelime ya da cümle, hedef dilde), `yourNote`
+         bildirenin KENDİ açıklaması. Kim bildirildi / yapay zekâ çıktısı yazılmıyor (CNT-7). */
+      if (r.refType === "content_report") {
+        const c = contentReportMap.get(r.refId);
+        detail.reportKind = c?.kind ?? null;
+        if (c?.kind === "content") detail.subject = reportSubject(c.content);
+        detail.yourNote = clipNote(c?.detail);
+      } else if (r.refType === "user_report") {
+        detail.yourNote = clipNote(userReportMap.get(r.refId)?.detail);
+      }
     }
     return {
       id: r.id,

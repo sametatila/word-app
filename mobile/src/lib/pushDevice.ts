@@ -18,6 +18,7 @@ import { api } from "../api/client";
 import { navigateFromPush } from "./pushRoute";
 import { setPushDevice } from "./pushState";
 import { cancelLocalReminders, ensureChannel, CHANNEL_ID } from "./notifications";
+import { refreshUnread } from "../social/useUnread";
 
 /**
  * Uzak bildirim (FCM) — uygulamanın geri çağırma kanalı.
@@ -167,6 +168,8 @@ export function attachPushListeners(): () => void {
   });
 
   const offMessage = onMessage(fcm, async (msg: RemoteMessage) => {
+    /* Ön planda gelen bildirim gelen kutusuna da düştü: zil hemen saysın. */
+    refreshUnread(true);
     const title = msg.notification?.title ?? "Lernomi";
     const body = msg.notification?.body ?? "";
     if (!body) return;

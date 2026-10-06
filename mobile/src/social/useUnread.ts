@@ -29,9 +29,23 @@ export function setUnreadGlobal(n: number) {
   for (const l of listeners) l(n);
 }
 
+let lastPull = 0;
 function pull() {
   if (!enabled || AppState.currentState !== "active") return;
+  lastPull = Date.now();
   social.unreadCount().then((r) => setUnreadGlobal(r.unread)).catch(() => undefined);
+}
+
+/**
+ * SAYAÇ GEÇ KALIYORDU (Samet, 2026-10-07): uygulama açıkken düşen bildirim (şikâyet
+ * sonucu push'suz; sürüm beklemesi onu tam açılışta, ilk sayımdan SONRA yazıyor) beş
+ * dakikalık yoklamaya kadar zilde görünmüyordu. Zilli bir ekrana gelince ve ön planda
+ * push gelince yeniden sorulur; art arda ekran geçişinde en çok 20 sn'de bir.
+ */
+export const UNREAD_REFRESH_MIN_MS = 20000;
+export function refreshUnread(force = false): void {
+  if (!force && Date.now() - lastPull < UNREAD_REFRESH_MIN_MS) return;
+  pull();
 }
 
 function start() {

@@ -1,13 +1,13 @@
 import React from "react";
 import { View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { NotificationsIcon } from "../ui/icons";
 import { useTheme, radii, spacing } from "../theme";
-import { useUnread } from "./useUnread";
+import { refreshUnread, useUnread } from "./useUnread";
 import { t } from "../lib/i18n";
 import { useAuth } from "../lib/AuthContext";
 
@@ -16,6 +16,8 @@ export function InboxBell() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const unread = useUnread();
+  /* Zilli ekrana her gelişte sayı tazelenir (`refreshUnread`, kısma içinde). */
+  useFocusEffect(React.useCallback(() => { refreshUnread(); }, []));
   /* Misafirin gelen kutusu yok (sosyal hesap istiyor); zil her sekmede
      yalnız hesap kartına götürüyordu. Hesap çağrısı Profil'de duruyor. */
   if (useAuth().user?.guest) return null;

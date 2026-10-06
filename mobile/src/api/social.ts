@@ -182,6 +182,18 @@ function reactionTarget(type: string, p: Record<string, unknown>): string {
   }
 }
 
+/**
+ * ŞİKÂYET SONUCUNUN ALT SATIRI (Samet, 2026-10-07: "kullanıcı neyi anlaması lazım"):
+ * neyin bildirildiği (kelime ya da cümle, sunucu `subject`) ve bildirenin kendi notu.
+ * Web `lib/social/client` `reportContext` ile aynı.
+ */
+export function reportContext(n: NotificationView): string | null {
+  if (n.type !== "report_closed") return null;
+  const subject = typeof n.detail.subject === "string" && n.detail.subject ? `«${n.detail.subject}»` : null;
+  const note = typeof n.detail.yourNote === "string" && n.detail.yourNote ? t("social.notif_report_note", { note: n.detail.yourNote }) : null;
+  return [subject, note].filter(Boolean).join(" · ") || null;
+}
+
 export function notificationText(n: NotificationView): string {
   const who = n.actor?.name ?? t("social.notif_someone");
   const d = n.detail;
