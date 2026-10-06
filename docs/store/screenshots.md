@@ -114,6 +114,11 @@ yeniden alınır.
 - Konuşma karesi 2026-10-05'ten beri A1 ilk sohbetten: "Yazarak cevapla / Answer by typing / Lieber tippen", tek
   fiil çekimi hatası (tr-de "ich kommen aus der Türkei", en-de "ich kommen aus den USA", de-en "I comes from
   Hamburg"). Aynı girdi aynı yanıtı döndürüyor; yanıt zayıfsa cümle değiştirilir.
+- Günlük tur karesinde "boşluğu doldur" kartının cümlesi gündelik ve kasvetsiz seçilir (işsizlik, işten ayrılma gibi
+  cümleler kullanılmaz; 2026-10-06 provası). Kart türüne göre ilerleme: doğru/yanlış kartında "Richtig/Doğru",
+  seçmelide ilk seçenek, sonra "Weiter/Devam"; cevaplar hesaba yazılır (puan ve seri değişir, geri yazılmaz).
+- Arayüz dili değiştirilip geri alınınca Ayarlar › Öğrenme'de kurs seçimi sunucudan kopabiliyor (denetim T21):
+  dönüşte uygulamayı yeniden başlatıp kursu seç, profil satırını sunucuda doğrula.
 - Simülatörü iş bitince kapat: `xcrun simctl shutdown all` (Samet toplantıdayken açık kalmasın).
 
 ## Vitrin videosu kaydı (2026-10-02)

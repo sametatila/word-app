@@ -25,8 +25,8 @@ Türkçe anlatım); sınav bu eğitimin sonucu olarak ikinci katman. Sınava haz
 (tarihi olan öğrenci) ayrıca WhatsApp/Telegram grup kampanyasıyla (2 ay) hedefleniyor;
 kampanya vitrinde YOK (görselde fiyat/süreli teklif olmaz), grup sayfasında.
 
-**Altyazı / tek cümle:** **"Konuş, anla, sınava hazırlan"** (tr, 28 karakter; iOS subtitle,
-Play kısa açıklamanın ilk cümlesi). en-US: **"Speak, understand, settle in"** (28) ·
+**Altyazı / tek cümle:** **"Konuş, anla, sınava hazırlan"** (tr, 28 karakter; iOS subtitle. Play kısa
+açıklaması 2026-10-06'dan beri altyazıyı tekrarlamıyor, farkı söylüyor; aşağıda). en-US: **"Speak, understand, settle in"** (28) ·
 de-DE: **"Sprechen, verstehen, bis C1"** (27). 2026-10-05 (prova 3. tur, Samet'in kararı): en ve de
 vitrinde sınav geri planda; taşınan ve iş için öğrenen okur "exam-ready / prüfungsfit"i görüp
 kendini dışarıda hissediyordu (iki turda aynı sonuç). Türkçe vitrin sınav odaklı kalıyor. en/de uzun
@@ -34,7 +34,7 @@ açıklamada sınav bölümü günlük turdan sonra, karelerde sınav karesi 5. 
 Ondan önce "exam-ready" / "prüfungsfit", ilk olarak "ace exams" / "bestehen" vardı ("ace exams" ve
 "bestehen" sınav geçme vaadi sayılabiliyordu; denetim M14 kapandı).
 
-**Play kısa açıklaması (tr, 70):** "Konuş, anla, sınava hazırlan: sıfırdan C1'e Almanca, Türkçe anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
+**Play kısa açıklaması (tr, 75):** "Almancayı konuşarak öğren: yapay zekâ düzeltir, Türkçe anlatır. Reklam yok." (2026-10-06: altyazıyı tekrarlamak yerine farkı söylüyor: konuşarak, yapay zekâ düzeltmesi, Türkçe anlatım, reklamsız)
 
 **Sayılar (2026-09-25, Samet):** birim KELİME + ALIŞTIRMA + DENEME SINAVI; adım/ünite sayısı
 anılmaz. Yuvarlak ve doğru: Almanca "8.500'den fazla kelime, 900'den fazla alıştırma, **50'den fazla
@@ -131,6 +131,22 @@ içeriği önerilerini reddetti):** Türkçe 3. kare başlığı "Dört becerili
 "Ausbildung, iş ya da aile birleşimi için Almancaya sıfırdan mı başlıyorsun?" (vaat yok; sertifika uyarısı
 yerinde). "Sohbette yazarak da cevap verirsin" girişe taşındı. Yer için üç cümle kısaldı.
 
+**Vitrin provası 8. tur (2026-10-06; Samet beş önerinin hepsini onayladı):**
+- en/de 1. kare ve açılış "sıfırdan ya da seviyenden" (en "From zero or your level to C1", de "Von null oder ab
+  deinem Niveau bis C1"); landing ve meta açıklama aynı.
+- Play kısa açıklaması altyazıyı tekrarlamıyor, farkı söylüyor (konuşarak, yapay zekâ düzeltmesi, anadilde anlatım,
+  reklamsız); tablo aşağıda.
+- Premium paragrafı ne açtığıyla: "Premium; … bütün yapay zekâlı konuşma ve yazma çalışmalarını hemen, tüm deneme
+  sınavlarını (her seviyede 3'lü paketler hâlinde, bitirdikçe sıradaki) ve ekran kapalı Cepte yürüyüşü açar".
+- Deneme sınavlarının görev türleri, marka anmadan: tr/en "e-posta ve görüş yazısı, birlikte plan yapma, kısa sunum"
+  (Almanca kurs: Nachricht/E-Mail, Forumbeitrag, birlikte planlama, sunum); de vitrin İngilizce kursu için
+  "E-Mails und Meinungstexte, Fragen beantworten, gemeinsam diskutieren" (İngilizce kurs: email/letter, opinion,
+  soru-cevap, tartışma). "Sık görülen türler" kurumla bağ iması değil.
+- Günlük tur karesi üç dil çiftinde yeniden çekildi (iPhone + Android telefon): tr/en-de "Bei dem Wetter will ich
+  nicht ___ (raus)", de-en "Did you check the ___ this morning?". Eskileri işsizlik ve işten ayrılma cümlesiydi.
+- Yer için hesap silme cümlesi açıklamadan çıktı (mağazalar uygulama içinde istiyor; uygulamada ve gizlilik
+  politikasında duruyor), tr başarı belgesi ve de abonelik cümlesi kısaldı.
+
 **Vitrin provası 7. tur, 16 kişi (2026-10-06; Samet 1–3'ü onayladı, içerikteki ek sahneleri anma önerisini
 reddetti):** de "Probeprüfungen öffnen sich pro Niveau zu dritt" yanlıştı ("zu dritt" = üç kişi olarak) →
 "in Dreierpaketen". Paket kuralı üç dilde koddaki gibi açık (`computePacks`): "3'lü paketler hâlinde açılır, paketi
@@ -182,7 +198,7 @@ yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime tu
 | 2 | Konuşma | Patika › Konuşma adımı: sahne sohbeti | A1 ilk sohbet (tr/en: "Hallo!" komşuyla tanışma, de: "Hello!" dil kursunun ilk günü), yazarak cevaplanmış, tek fiil çekimi hatası ve düzeltmesi, üç öneri; yapay zekâ bildirimi görünür (2026-10-05) | Konuş, düzeltmeni anında gör · Gerçek hayattan sahneler; istersen yazarak cevap ver |
 | 3 | Sınav | Deneme sınavı sonucu | B1 deneme sınavı, yazma ya da konuşma bölümünün sonucu: bölüm yüzdesi, "Ölçüm hedeflerine göre" çubukları (görev puanlarından, 745930f5) ve yapılacaklar listesi; incelemede hata→düzeltme. Yeni etiketler ("yapay zekâ puanlar") build 11 ile: çekim build 11+ ile | tr: Dört becerili deneme sınavı · Konuşma ve yazma da puanlanır; her seviyede 1'i ücretsiz, fazlası Premium'da (2026-10-05, 4. tur; en/de başlık "puanlanır" cümlesi) |
 | 4 | Fark | Cepte yürüyüş + kilit ekranı | Ekran kapalı akış; kilit ekranında "Yürüyüş modu açık" | Ekrana bakmadan, yolda çalış · Günde 3 tur ücretsiz, ekran kapalıyken Premium (2026-10-05; ham görüntü ekran açık giriş) |
-| 5 | Alışkanlık | Günlük kelime turu | Sesli tur, kalan kelime sayısı | Her gün, unutmadan önce · Aralıklı tekrar; seri ve arkadaşlarla haftalık lig (oyunlaştırmanın tek karesi, ana mesaj değil) |
+| 5 | Alışkanlık | Günlük kelime turu | "Boşluğu doldur" kartı, gündelik ve kasvetsiz cümle (2026-10-06: tr/en-de "Bei dem Wetter will ich nicht ___", de-en "Did you check the ___ this morning?") | Her gün, unutmadan önce · Aralıklı tekrar; seri ve arkadaşlarla haftalık lig (oyunlaştırmanın tek karesi, ana mesaj değil) |
 | 6 | Beceriler | Beceri kütüphanesi | Beş beceri kartı | Okuma, dinleme, yazma, konuşma, dil bilgisi |
 
 **iPad 13" (yatay, 4 kare):** 1, 2, 3 ve 6 (tablet içerik kolonu en iyi bu ekranlarda).
@@ -213,7 +229,7 @@ Tasarım bu çerçeveyle yapılır:
 **Onaylanan Türkçe uzun açıklama (App Store + Play ortak, 2026-09-25):** 41 iddia koda, canlı
 ayara ve içeriğe karşı doğrulandı (kanıt tablosu oturum çıktısında). Kararlar: belge her yerde
 "başarı belgesi"; seri kademesi tavansız ("sonra her 7 günlük seride yeniden" doğru); fiyat
-cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3974/4000 (2026-10-06, 7. tur). Anlatım ekranda yazı, sesli okunan yalnız öğrenilen dil ("okursun"). Paragraflar
+cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3975/4000 (2026-10-06, 8. tur). Anlatım ekranda yazı, sesli okunan yalnız öğrenilen dil ("okursun"). Paragraflar
 tek satır: Console'a yapıştırınca satır ortasında kırılmasın.
 
 ```text
@@ -226,7 +242,7 @@ KONUŞARAK ÖĞREN
 Komşunla tanışırken, doktorda, ev bakarken, iş görüşmesinde, toplantıda… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir. İstersen sonunda puanlı konuşmayı denersin.
 
 DÖRT BECERİLİ DENEME SINAVLARI
-Her seviyede 1 deneme sınavı ücretsiz; Premium'da toplamda 50'den fazla. Her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını yapay zekâ puanlar ve hatalarını düzeltmeleriyle gösterir. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.
+Her seviyede 1 deneme sınavı ücretsiz; Premium'da toplamda 50'den fazla. Her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var; görevler dil sınavlarında sık görülen türlerde: e-posta ve görüş yazısı, birlikte plan yapma, kısa sunum. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını yapay zekâ puanlar ve hatalarını düzeltmeleriyle gösterir. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.
 
 CEPTE YÜRÜYÜŞ
 Yürüyüş modunda ekrana bakmadan çalışırsın: Türkçe ipucunu duyar, kelimeyi sesli söylersin. Ücretsizde ekran açıkken günde 3 tur. Ekran kapalı Cepte yürüyüş Premium'da.
@@ -238,7 +254,7 @@ Günlük kelime turunda aralıklı tekrar, kelimeleri unutmadan önce yeniden ka
 Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sınırsız; haftalık quiz, günde 3 yürüyüş turu (ekran açık) ve her seviyede 1 deneme sınavı da. Yapay zekâyla konuşma ve yazma da ücretsiz: her seviyede 4'er çalışma; bitirip 7 gün üst üste çalışınca yenileri ve 1 deneme sınavı daha açılır.
 
 PREMIUM
-Premium'da Patika ve Beceriler'deki bütün konuşma ve yazma çalışmaları seri ve bitirme beklemeden açık, tüm deneme sınavları her seviyede 3'lü paketler hâlinde açılır, paketi bitirince sıradaki gelir, ekran kapalı Cepte yürüyüş de açılır. Günlük adil kullanım sınırları Premium sayfasında, satın almadan önce görünür.
+Premium; Patika ve Beceriler'deki bütün yapay zekâlı konuşma ve yazma çalışmalarını hemen, tüm deneme sınavlarını (her seviyede 3'lü paketler hâlinde, bitirdikçe sıradaki) ve ekran kapalı Cepte yürüyüşü açar. Günlük adil kullanım sınırları satın almadan önce Premium sayfasında görünür.
 Premium aylık ya da yıllık, otomatik yenilenen bir aboneliktir; aynı hesapla her cihazda geçerlidir. Yeni abonelere ilk ay ücretsiz; deneme bitmeden iptal edersen ücret alınmaz. Deneme bitmeden 2 gün önce bildirim ve e-postayla hatırlatırız. Dönem bitiminden en az 24 saat önce iptal edilmezse abonelik yenilenir; aboneliğini satın aldığın mağazanın hesap ayarlarından yönetebilir ya da iptal edebilirsin.
 
 İNGİLİZCE DE VAR
@@ -247,9 +263,7 @@ Aynı yapıda İngilizce kursu: A1'den C1'e 7.000'den fazla kelime, 900'den fazl
 HESAPSIZ BAŞLA
 Hesap açmadan başlarsın; hesap açınca ilerlemen taşınır, telefonda, tablette ve web'de devam edersin. Lig, yapay zekâ sohbeti ve değerlendirmesi ile Premium hesap ister; hesapsız Konuşma adımı hazır bir sohbetle sürer. Metnin yapay zekâya ancak iznini verirsen gider. Mikrofon yalnız konuşarak cevap verdiğinde açılır. Sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz. Yazılı sohbet geçmişin 30 gün sonra silinir. Lernomi sunucuları AB'de; yapay zekâ ve ses tanıma için dış sağlayıcılar kullanılır.
 
-Modül ve seviye sınavlarını geçince neler yapabildiğini gösteren, paylaşabileceğin bir başarı belgesi alırsın. Deneme sınavlarını Lernomi hazırladı; Lernomi hiçbir sınav kurumuyla bağlantılı değildir, belgeler resmî bir sertifika yerine geçmez.
-
-Hesabını uygulamanın içinden silebilirsin.
+Modül ve seviye sınavlarını geçince paylaşabileceğin bir başarı belgesi alırsın. Deneme sınavlarını Lernomi hazırladı; Lernomi hiçbir sınav kurumuyla bağlantılı değildir, belgeler resmî bir sertifika yerine geçmez.
 
 Kullanım Şartları: https://www.lernomi.app/terms
 Gizlilik Politikası: https://www.lernomi.app/privacy
@@ -262,10 +276,10 @@ sahneler, bağlantılar). Almanca metinde Beceriler "Fertigkeiten" (Samet'in kar
 Haftalık quiz de en/de çevrili (kilitli `quiznative/*` paketleri); "explained in English /
 Erklärungen auf Deutsch" iddiası her içerik türü için doğru.
 
-en-US (3977/4000):
+en-US (3999/4000):
 
 ```text
-Learn German from zero to C1 with Lernomi: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready. Vocabulary, reading, listening and grammar are free, with no ads.
+Learn German to C1 with Lernomi, from zero or from your level: explained in English, practiced by speaking. Go beyond word lists: use the language, get feedback on your speaking and writing, and test yourself with mock exams when you're ready. Vocabulary, reading, listening and grammar are free, with no ads.
 
 A1 TO C1, STEP BY STEP
 More than 8,500 German words and more than 900 exercises. The Path takes you level by level, unit by unit: every unit has Reading, Listening, Speaking, Writing, Grammar and Quiz steps, and module and level exams show you where you stand. Pick your level or find it with a short placement test. Already know some German? Start at B2 or C1 in Skills, with formal letters, applications and complaints to write.
@@ -280,13 +294,13 @@ A FEW MINUTES A DAY
 In the daily word round, spaced repetition brings words back before you forget them. Review as much as you like in Practice; a weekly quiz, streaks and a league with friends are there too.
 
 FOUR-SKILL MOCK EXAMS
-1 free mock exam per level; more than 50 in total with Premium. Each has Reading, Listening, Writing and Speaking sections, each with its own time limit. Reading and Listening are scored automatically; AI scores your written and spoken answers and shows your mistakes with corrections. At the end you get your score as a percentage and a list of what to work on.
+1 free mock exam per level; more than 50 in total with Premium. Each has Reading, Listening, Writing and Speaking sections, each with its own time limit, and tasks of types common in language exams: emails and opinion posts, planning together, short presentations. Reading and Listening are scored automatically; AI scores your written and spoken answers and shows your mistakes with corrections. At the end you get your score as a percentage and a list of what to work on.
 
 FREE
 Vocabulary, practice, reading, listening, grammar and quizzes are free and unlimited, plus the weekly quiz, 3 walk rounds a day with the screen on and 1 mock exam per level. AI speaking and writing are free to try: 4 tasks each per level; finish them and study 7 days in a row to unlock more plus 1 more mock exam.
 
 PREMIUM
-With Premium, every speaking and writing task in Path and Skills is open with no waiting for streaks or finishing, all mock exams open in packs of 3 per level, the next pack once you finish one, and Pocket Walking keeps going with the screen off. Daily fair-use limits are shown on the Premium page before you buy.
+Premium opens every AI speaking and writing task in Path and Skills right away, all mock exams (in packs of 3 per level, the next as you finish) and Pocket Walking with the screen off. Daily fair-use limits are shown on the Premium page before you buy.
 Premium is a monthly or yearly auto-renewing subscription and works with the same account on phone, tablet and the web. New subscribers get the first month free; cancel before the trial ends and you won't be charged. We remind you by notification and email 2 days before the trial ends. It renews unless canceled at least 24 hours before the end of the period; manage or cancel it in the account settings of the store you bought it from.
 
 START WITHOUT AN ACCOUNT
@@ -294,16 +308,14 @@ Start without an account; create one later and your progress moves with you to p
 
 Pass module and level exams to earn a certificate of achievement you can share, showing what you can do. The mock exams are Lernomi's own; Lernomi is not affiliated with any exam provider, and certificates of achievement are not official certificates.
 
-You can delete your account right in the app.
-
 Terms of Use: https://www.lernomi.app/terms/en
 Privacy Policy: https://www.lernomi.app/privacy/en
 ```
 
-de-DE (3977/4000):
+de-DE (3995/4000):
 
 ```text
-Lerne mit Lernomi Englisch von null bis C1, mit Erklärungen auf Deutsch und durch Sprechen. Du benutzt die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen. Vokabeln, Lesen, Hören und Grammatik: kostenlos, ohne Werbung.
+Lerne mit Lernomi Englisch bis C1, von null oder ab deinem Niveau, mit Erklärungen auf Deutsch und durch Sprechen. Du benutzt die Sprache, bekommst Feedback zu Sprechen und Schreiben und misst dich mit Probeprüfungen. Vokabeln, Lesen, Hören und Grammatik: kostenlos, ohne Werbung.
 
 VON A1 BIS C1, SCHRITT FÜR SCHRITT
 Mehr als 7.000 Wörter und mehr als 900 Übungen. Der Pfad führt dich Niveau für Niveau, Einheit für Einheit: Jede Einheit hat die Schritte Lesen, Hören, Sprechen, Schreiben, Grammatik und Quiz; Modul- und Niveauprüfungen zeigen, wo du stehst. Dein Startniveau wählst du selbst oder per kurzem Einstufungstest. Mit Vorkenntnissen startest du bei den Fertigkeiten auf B2 oder C1, auch mit formellen Briefen, E-Mails und Berichten.
@@ -318,21 +330,19 @@ JEDEN TAG EIN PAAR MINUTEN
 In der täglichen Runde bringt verteilte Wiederholung Wörter zurück, bevor du sie vergisst. Dazu Wochen-Quiz, Serie und Liga mit Freunden.
 
 PROBEPRÜFUNGEN IN VIER FERTIGKEITEN
-1 Probeprüfung pro Niveau kostenlos, mit Premium insgesamt mehr als 50. Jede hat die Teile Lesen, Hören, Schreiben und Sprechen mit eigener Zeit. Lesen und Hören werden automatisch bewertet; Geschriebenes und Gesprochenes bewertet eine KI und zeigt deine Fehler mit Korrektur. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.
+1 Probeprüfung pro Niveau kostenlos, mit Premium insgesamt mehr als 50. Jede hat die Teile Lesen, Hören, Schreiben und Sprechen mit eigener Zeit, mit gängigen Aufgabentypen: E-Mails und Meinungstexte, Fragen beantworten, gemeinsam diskutieren. Lesen und Hören werden automatisch bewertet; Geschriebenes und Gesprochenes bewertet eine KI und zeigt deine Fehler mit Korrektur. Am Ende siehst du dein Ergebnis in Prozent und woran du arbeiten solltest.
 
 KOSTENLOS
 Vokabeln, Üben, Lesen, Hören, Grammatik und Quiz sind kostenlos und unbegrenzt, dazu das Wochen-Quiz, 3 Geh-Runden am Tag bei eingeschaltetem Bildschirm und 1 Probeprüfung pro Niveau. Sprechen und Schreiben mit der KI testest du kostenlos: je 4 Aufgaben pro Niveau; schließt du sie ab und lernst 7 Tage am Stück, kommen weitere und 1 Probeprüfung dazu.
 
 PREMIUM
-Mit Premium sind alle Sprech- und Schreibaufgaben in Pfad und Fertigkeiten offen, ohne auf Serie oder Abschluss zu warten, alle Probeprüfungen öffnen sich pro Niveau in Dreierpaketen, das nächste nach dem Abschluss, und der Taschen-Gehmodus läuft mit Bildschirm aus. Tägliche Fair-Use-Grenzen: vor dem Kauf auf der Premium-Seite.
-Premium ist ein sich automatisch verlängerndes Monats- oder Jahresabo und gilt mit demselben Konto auf Handy, Tablet und im Web. Neue Abonnenten bekommen den ersten Monat kostenlos; kündigst du vor Ende der Testphase, zahlst du nichts. Wir erinnern dich 2 Tage vorher per Mitteilung und E-Mail. Es verlängert sich, wenn du nicht mindestens 24 Stunden vor Ende des Zeitraums kündigst; verwalten und kündigen kannst du es in den Kontoeinstellungen deines Stores.
+Premium öffnet sofort alle KI-Sprech- und Schreibaufgaben in Pfad und Fertigkeiten, alle Probeprüfungen (pro Niveau in Dreierpaketen, das nächste nach dem Abschluss) und den Taschen-Gehmodus mit Bildschirm aus. Tägliche Fair-Use-Grenzen: vor dem Kauf auf der Premium-Seite.
+Premium ist ein sich automatisch verlängerndes Monats- oder Jahresabo für Handy, Tablet und Web mit demselben Konto. Neue Abonnenten bekommen den ersten Monat kostenlos; kündigst du vor Ende der Testphase, zahlst du nichts. Wir erinnern dich 2 Tage vorher per Mitteilung und E-Mail. Es verlängert sich, wenn du nicht mindestens 24 Stunden vor Ende des Zeitraums kündigst; verwalten und kündigen kannst du es in den Kontoeinstellungen deines Stores.
 
 OHNE KONTO STARTEN
 Starte ohne Konto; mit Konto kommt dein Fortschritt mit, auf Handy, Tablet und im Web. Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne läuft der Sprechen-Schritt als vorbereitetes Gespräch. Dein Text geht nur mit deiner Erlaubnis an die KI. Das Mikrofon öffnet sich nur, wenn du sprechend antwortest. Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert. Dein Chatverlauf wird nach 30 Tagen gelöscht. Lernomis Server stehen in der EU; für KI und Spracherkennung nutzen wir externe Anbieter.
 
 Bestandene Modul- und Niveauprüfungen bringen dir einen teilbaren Leistungsnachweis. Die Probeprüfungen stammen von Lernomi; Lernomi ist mit keinem Prüfungsanbieter verbunden, ein Leistungsnachweis ersetzt kein offizielles Zertifikat.
-
-Dein Konto löschst du in der App.
 
 Nutzungsbedingungen: https://www.lernomi.app/terms/de
 Datenschutzerklärung: https://www.lernomi.app/privacy/de
@@ -342,7 +352,7 @@ Datenschutzerklärung: https://www.lernomi.app/privacy/de
 
 | Alan | tr | en-US | de-DE |
 |---|---|---|---|
-| Play kısa açıklama (80) | yukarıda (70) | `Speak, understand, settle in: German from zero to C1, explained in English.` (75) | `Sprechen, verstehen, bis C1: Englisch von null an, auf Deutsch erklärt.` (71) |
+| Play kısa açıklama (80) | yukarıda (70) | `Real-life German conversations with AI feedback, explained in English. No ads.` (78) | `Englisch im Gespräch: KI-Korrektur, Erklärungen auf Deutsch, keine Werbung.` (75) |
 | iOS tanıtım metni (170, incelemesiz değişir) | `Almancayı sıfırdan ya da kendi seviyenden C1'e öğren: gerçek hayattan durumlarda konuş, her gün kelime turu yap, ücretsiz deneme sınavıyla nerede olduğunu gör.` (159) | `Learn German step by step from zero to C1: talk through real-life situations, do a daily word round and see where you stand with a free mock exam at every level.` (161) | `Englisch Schritt für Schritt von null bis C1: sprich in Alltagssituationen, übe täglich Wörter und sieh mit einer kostenlosen Probeprüfung pro Niveau, wo du stehst.` (164) |
 | iOS anahtar kelimeler (100 bayt) | `ingilizce,kelime,sınav,deneme,dil,gramer,dinleme,okuma,yazma,konuşma,sıfırdan,alman,a2,b1,b2` (96 bayt) | `vocabulary,beginner,grammar,listening,reading,writing,speaking,course,deutsch,mock,test,a2,b1,b2` (96 bayt) | `vokabeln,wortschatz,grammatik,hören,lesen,schreiben,prüfung,probeprüfung,anfänger,kurs,a2,b1,b2` (99 bayt) |
 
@@ -431,6 +441,18 @@ okundu (2026-09-27, Samet çalıştırdı; denetim S9).
 "Start free trial", deneme/yenileme şartı ve bağlantılar bir karede; iki aboneliğe yüklendi (2026-10-01).
 `screenshots@` hesabı Premium olduğu için çekim süresince bonus Premium geçici kapatıldı ve birebir geri
 yazıldı (Samet'in onayıyla). App Preview videosu: aşağıda "Vitrin videosu".
+
+## Vitrin provası paneli (hedef kitle, 2026-10-06)
+
+Prova (bağımsız ve şüpheci bir değerlendirici, kişiler dil modeli canlandırması) Samet'in hedef kitlesiyle kurulur:
+lisans/lisansüstü öğrenciler, iş arayanlar, aile birleşimi ve oturum için dil şartı olanlar. Emekli, gezgin, film/şarkı
+için öğrenen, "resmî yazı" isteyen akıcı konuşan hedef dışıdır; itirazları sorun listesine girmez.
+
+| Vitrin | Kişiler |
+|---|---|
+| tr (Almanca kursu) | Elif 23 Ausbildung A1 · Murat 36 oturum için B1 sınavı · Ayşe 29 aile birleşimi A1 · Zeynep 20 Erasmus lisans A2 · Burak 24 Almanya'da yüksek lisans başvurusu B2→C1 · Emre 27 iş arayan (Chancenkarte) A2 · Kerem 31 iş teklifi B1–B2 · Selin 33 hemşire, denklik için B2 |
+| en (Almanca kursu) | Daniel 29 işle Münih'e taşınıyor A1 · Priya 34 Blue Card adayı A1 · Ahmad 26 Leipzig, uyum kursu ve iş için B1 · Lucas 23 Brezilya, Almanya'da yüksek lisans A1 |
+| de (İngilizce kursu) | Jonas 20 lisans, yurt dışı dönemi B1→B2 · Lena 26 İngilizce yüksek lisans başvurusu C1 · Aylin 30 uluslararası firmada iş arıyor B2 · Tobias 24 Ausbildung sonrası yurt dışında iş B1 |
 
 ## Yeniden üretmek
 

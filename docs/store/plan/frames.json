@@ -25,8 +25,8 @@
       "ladder": true,
       "caption": {
         "tr": { "h": "Sıfırdan ya da seviyenden C1'e", "s": "Türkçe anlatım; seviyeni seç ya da kısa testle bul" },
-        "en": { "h": "From zero to C1, explained in English", "s": "Pick your level or take a short placement test" },
-        "de": { "h": "Von null bis C1, auf Deutsch erklärt", "s": "Niveau wählen oder per Kurztest finden" }
+        "en": { "h": "From zero or your level to C1", "s": "Explained in English; pick your level or take a short test" },
+        "de": { "h": "Von null oder ab deinem Niveau bis C1", "s": "Auf Deutsch erklärt; Niveau wählen oder per Kurztest finden" }
       },
       "noCallout": true
     },
