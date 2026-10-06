@@ -87,14 +87,28 @@ export function ownLayerEnabled(layer: OwnLayer, character: string): boolean {
 const LAYER_PACE: Partial<Record<Pace, string>> = { normal: "", listen: "#listen", listenSlow: "#listenSlow" };
 
 /**
+ * Dinleme kadrosunun 2. koltuğu (karar 2026-09-21, `scripts/tts-listening-jobs.ts` `CHAR`): 2. kadın Mira, 2. erkek
+ * Can. Bu karakterler kullanıcının seçebildiği ses değil, `OWN_VOICES`ta yoklar; katman isteği onların Edge sesiyle
+ * (Amala, Killian, Aria, Andrew) geliyor. 1. koltuk `ownCastFor` (Defne/Aras). 3. koltuk (Seraphina, Florian …)
+ * Edge'de kalıyor: üretimi aynı karakterin perde kaydırılmış hâli, sunucuda o eşleme yok (2026-10-06 açılışta
+ * bulundu: `l:mira,l:can` açıktı ama hiçbir istek bu karakterlere ulaşmıyordu).
+ */
+const LAYER_SECOND_SEAT: Partial<Record<VoiceId, { character: string; lang: "de" | "en" }>> = {
+  "de-DE-AmalaNeural": { character: "mira", lang: "de" },
+  "de-DE-KillianNeural": { character: "can", lang: "de" },
+  "en-US-AriaNeural": { character: "mira", lang: "en" },
+  "en-US-AndrewNeural": { character: "can", lang: "en" },
+};
+
+/**
  * Katman isteğinin karakter dosyası: istek EDGE sesiyle geliyor (Katja, Jenny …), karakter `ownCastFor` ile
- * bulunuyor. Anahtar kapalıysa, perde kaydırılmışsa (kadronun 3.+ koltuğu), hız üretilmemişse ya da metin tabloda
+ * (2. koltukta `LAYER_SECOND_SEAT` ile) bulunuyor. Anahtar kapalıysa, perde kaydırılmışsa (kadronun 3.+ koltuğu), hız üretilmemişse ya da metin tabloda
  * yoksa `null` → çağıran Edge'le sürüyor. Katman DÜŞÜŞLÜ: kelime katmanı gibi 404 değil.
  */
 export async function ownLayerAudio(layer: OwnLayer, text: string, edgeVoice: VoiceId, pace: Pace, pitch: Pitch): Promise<OwnAudio | null> {
   const dir = process.env.TTS_OWN_DIR;
   const ownId = ownCastFor(edgeVoice);
-  const own = ownId ? OWN_VOICES[ownId] : undefined;
+  const own = (ownId ? OWN_VOICES[ownId] : undefined) ?? LAYER_SECOND_SEAT[edgeVoice];
   const suffix = LAYER_PACE[pace];
   if (!dir || !own || pitch !== "mid" || suffix === undefined || !ownLayerEnabled(layer, own.character)) return null;
   try {
