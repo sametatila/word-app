@@ -138,7 +138,8 @@ yerinde). "Sohbette yazarak da cevap verirsin" girişe taşındı. Yer için ü�
   `gates.ts` kademe: en uzun serinin 7'ye bölümü, tavansız). Landing zaten böyle diyordu.
 - Yer için: ücretsiz bölümündeki "haftalık quiz" tekrarı (günlük tur bölümünde var), en "Go beyond word lists" ve
   "when you're ready", abonelik cümlesinde "aynı hesapla", de sonuçta "in Prozent".
-- Almanca vitrinin günlük tur karesi iş/okul cümlesiyle yeniden çekildi (kare listesi).
+- Almanca vitrinin günlük tur karesi okul cümlesiyle yeniden çekildi: "I made a ___ in my homework." (seçenekler nötr;
+  olumsuz kelime içeren seçenekli kartlar, ör. "torture", elendi).
 - Değerlendiricinin "kötüye kullanımı önleyen sınır" önerisi alınmadı (1. turda bu ifade olumsuz bulunmuştu).
 
 **Vitrin provası 8. tur (2026-10-06; Samet beş önerinin hepsini onayladı):**
@@ -208,7 +209,7 @@ yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime tu
 | 2 | Konuşma | Patika › Konuşma adımı: sahne sohbeti | A1 ilk sohbet (tr/en: "Hallo!" komşuyla tanışma, de: "Hello!" dil kursunun ilk günü), yazarak cevaplanmış, tek fiil çekimi hatası ve düzeltmesi, üç öneri; yapay zekâ bildirimi görünür (2026-10-05) | Konuş, düzeltmeni anında gör · Gerçek hayattan sahneler; istersen yazarak cevap ver |
 | 3 | Sınav | Deneme sınavı sonucu | B1 deneme sınavı, yazma ya da konuşma bölümünün sonucu: bölüm yüzdesi, "Ölçüm hedeflerine göre" çubukları (görev puanlarından, 745930f5) ve yapılacaklar listesi; incelemede hata→düzeltme. Yeni etiketler ("yapay zekâ puanlar") build 11 ile: çekim build 11+ ile | tr: Dört becerili deneme sınavı · Konuşma ve yazma da puanlanır; her seviyede 1'i ücretsiz, fazlası Premium'da (2026-10-05, 4. tur; en/de başlık "puanlanır" cümlesi) |
 | 4 | Fark | Cepte yürüyüş + kilit ekranı | Ekran kapalı akış; kilit ekranında "Yürüyüş modu açık" | Ekrana bakmadan, yolda çalış · Günde 3 tur ücretsiz, ekran kapalıyken Premium (2026-10-05; ham görüntü ekran açık giriş) |
-| 5 | Alışkanlık | Günlük kelime turu | "Boşluğu doldur" kartı, gündelik ve kasvetsiz cümle (2026-10-06: tr/en-de "Bei dem Wetter will ich nicht ___", de-en "Did you check the ___ this morning?") | Her gün, unutmadan önce · Aralıklı tekrar; seri ve arkadaşlarla haftalık lig (oyunlaştırmanın tek karesi, ana mesaj değil) |
+| 5 | Alışkanlık | Günlük kelime turu | "Boşluğu doldur" kartı, gündelik ve kasvetsiz cümle (2026-10-06: tr/en-de "Bei dem Wetter will ich nicht ___", de-en "I made a ___ in my homework." (9. tur; önce "Did you check the ___ this morning?" eski moda bulundu)) | Her gün, unutmadan önce · Aralıklı tekrar; seri ve arkadaşlarla haftalık lig (oyunlaştırmanın tek karesi, ana mesaj değil) |
 | 6 | Beceriler | Beceri kütüphanesi | Beş beceri kartı | Okuma, dinleme, yazma, konuşma, dil bilgisi |
 
 **iPad 13" (yatay, 4 kare):** 1, 2, 3 ve 6 (tablet içerik kolonu en iyi bu ekranlarda).
