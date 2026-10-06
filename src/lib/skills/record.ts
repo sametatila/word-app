@@ -159,16 +159,21 @@ export async function listSkillStatus(
 }
 
 /**
- * Eski cihaz kayıtlarının tek seferlik taşınması.
+ * Cihazda bekleyen sonuçların sunucuya aktarılması (PUT): web'in yerel kaydı ve
+ * mobilin çevrimdışı kuyruğu.
  *
- * localStorage'da duran "bitti" kayıtları sunucuda yoksa ya da sunucudakinden
- * iyiyse yazılır. XP verilmez: o kayıtlar ya zamanında XP almıştı ya da
- * çevrimdışıyken alınmamıştı — ikisini ayırt edemeyiz ve hesabı kabartmamak
- * daha güvenli. Bilinmeyen egzersiz kimlikleri sessizce atlanır.
+ * XP verilmez: o kayıtlar ya zamanında XP almıştı ya da çevrimdışıyken
+ * alınmamıştı — ikisini ayırt edemeyiz ve hesabı kabartmamak daha güvenli.
+ * Bilinmeyen egzersiz kimlikleri sessizce atlanır.
+ *
+ * 2026-10-06: kayıt SUNUCUDAKİNDEN YENİYSE bir deneme olarak işleniyor (son puan,
+ * son deneme zamanı, deneme sayısı; en iyi skor korunuyor). Eskiden yalnız daha iyi
+ * skor yazılıyordu ve `last_at` hiç değişmiyordu: çevrimdışı tamamlanan alıştırma
+ * ne yetkinliği ne günlük görevi ne de Gelişim'in "Sıradaki"sini değiştiriyordu.
  */
 export async function importSkillRecords(
   userId: string,
-  records: { id: string; correct: number; total: number; at?: string }[],
+  records: { id: string; correct: number; total: number; at?: string; score?: number }[],
 ): Promise<number> {
   let written = 0;
   for (const rec of records.slice(0, 200)) {
@@ -176,12 +181,16 @@ export async function importSkillRecords(
     if (!exercise) continue;
     const total = itemCount(exercise);
     const correct = Math.max(0, Math.min(total, Math.round(rec.correct)));
-    const at = rec.at && !Number.isNaN(Date.parse(rec.at)) ? new Date(rec.at) : new Date();
+    const dated = !!rec.at && !Number.isNaN(Date.parse(rec.at));
+    const at = dated ? new Date(rec.at as string) : new Date();
+    const score = rec.score ?? scoreOf(correct, total);
     const [prev] = await db
-      .select({ correct: userSkills.correct })
+      .select({ correct: userSkills.correct, lastAt: userSkills.lastAt })
       .from(userSkills)
       .where(and(eq(userSkills.userId, userId), eq(userSkills.exerciseId, exercise.id)));
-    if (prev && prev.correct >= correct) continue;
+    /* Tarihsiz kayıt (eski istemci) deneme sayılmıyor: ne zaman yapıldığı bilinmiyor. */
+    const newer = !prev || (dated && at.getTime() > prev.lastAt.getTime());
+    if (prev && !newer && prev.correct >= correct) continue;
     await db
       .insert(userSkills)
       .values({
@@ -192,13 +201,23 @@ export async function importSkillRecords(
         attempts: 1,
         skill: exercise.skill,
         level: exercise.level,
-        lastScore: scoreOf(correct, total),
+        lastScore: score,
         lastAt: at,
         firstAt: at,
       })
       .onConflictDoUpdate({
         target: [userSkills.userId, userSkills.exerciseId],
-        set: { correct, total, skill: exercise.skill, level: exercise.level },
+        set: newer
+          ? {
+              correct: sql`greatest(${userSkills.correct}, ${correct})`,
+              total,
+              skill: exercise.skill,
+              level: exercise.level,
+              lastScore: score,
+              lastAt: at,
+              attempts: sql`${userSkills.attempts} + 1`,
+            }
+          : { correct, total, skill: exercise.skill, level: exercise.level },
       });
     written++;
   }

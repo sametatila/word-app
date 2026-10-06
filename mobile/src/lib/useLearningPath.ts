@@ -7,7 +7,7 @@ import { buildLocalLearningPath, refIndex } from "../game/immersionTrack";
 import { ensureSkills } from "../data/skills";
 import { ensureConversations } from "../data/conversations";
 import { useNativeContentVersion } from "./nativeContent";
-import { flushPendingConversations, flushPendingPathItems, getDoneItems } from "../game/pathProgress";
+import { flushPendingConversations, flushPendingItems, flushPendingPathItems, getDoneItems } from "../game/pathProgress";
 import { useStatsBump } from "./statsSignal";
 
 /** Pratik adım — içeriği ünitenin konuşmalarından türetilen, kaydı öğe kimliğiyle tutulan. */
@@ -111,7 +111,7 @@ async function yukle(level: string | undefined): Promise<void> {
       turunda harcanmıştı (iOS, İngilizce B1, 2026-09-28). Kuyruk boşsa iki
       çağrı yalnız bir depolama okuması; hata Patika'yı durdurmuyor.
     */
-    await Promise.all([flushPendingConversations(), flushPendingPathItems()]).catch(() => {});
+    await Promise.all([flushPendingConversations(), flushPendingPathItems(), flushPendingItems().catch(() => {})]).catch(() => {});
     const d = await api<LearningPath>("/api/immersion");
     if (!d?.units?.length) throw new Error("empty");
     // /api/immersion item ref taşımıyor → oynatıcıya gidebilmek için pakete

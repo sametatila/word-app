@@ -127,7 +127,7 @@ function parseRecords(body: unknown) {
   if (typeof body !== "object" || body === null) return null;
   const list = (body as { records?: unknown }).records;
   if (!Array.isArray(list) || list.length > 200) return null;
-  const out: { id: string; correct: number; total: number; at?: string }[] = [];
+  const out: { id: string; correct: number; total: number; at?: string; score?: number }[] = [];
   for (const item of list) {
     if (typeof item !== "object" || item === null) continue;
     const r = item as Record<string, unknown>;
@@ -138,6 +138,8 @@ function parseRecords(body: unknown) {
       correct: Math.max(0, Math.round(r.correct)),
       total: Math.max(0, Math.round(r.total)),
       at: typeof r.at === "string" ? r.at : undefined,
+      /* Rubrik puanı (monolog, yazma): yoksa doğru/toplamdan. */
+      score: typeof r.score === "number" && Number.isFinite(r.score) ? Math.max(0, Math.min(100, Math.round(r.score))) : undefined,
     });
   }
   return out;

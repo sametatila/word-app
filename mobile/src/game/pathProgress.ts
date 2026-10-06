@@ -46,7 +46,8 @@ let scoreCache: Record<string, number> | null = null;
  * (`PUT /api/skills` bunları istiyor); yalnız puan yetmiyor.
  */
 const PENDING_KEY = "lernomi-items-pending";
-type PendingRecord = { id: string; correct: number; total: number; at: string };
+/** `score`: rubrik puanı (monolog, yazma); yoksa sunucu doğru/toplamdan hesaplıyor. */
+type PendingRecord = { id: string; correct: number; total: number; at: string; score?: number };
 let pendingCache: Record<string, PendingRecord> | null = null;
 
 async function getPending(): Promise<Record<string, PendingRecord>> {
@@ -61,9 +62,9 @@ async function getPending(): Promise<Record<string, PendingRecord>> {
 }
 
 /** Sunucuya yazılamayan sonuç — bir sonraki bağlantıda taşınacak. */
-export async function queueItemRecord(id: string, correct: number, total: number): Promise<void> {
+export async function queueItemRecord(id: string, correct: number, total: number, score?: number): Promise<void> {
   const q = await getPending();
-  q[id] = { id, correct, total, at: new Date().toISOString() };
+  q[id] = { id, correct, total, at: new Date().toISOString(), ...(typeof score === "number" ? { score } : {}) };
   pendingCache = q;
   try { await AsyncStorage.setItem(PENDING_KEY, JSON.stringify(q)); } catch { /* yut */ }
 }
@@ -91,18 +92,26 @@ export async function getItemScores(): Promise<Record<string, number>> {
  * Birleştirme TEK YÖNLÜ değil: sunucudan gelenler yerele ekleniyor, yerelde
  * olup sunucuda olmayanlar (çevrimdışı bitirilmiş) korunuyor.
  */
+/**
+ * Çevrimdışı bitirilen alıştırmaları sunucuya gönderir (`PUT /api/skills`).
+ *
+ * YALNIZ BECERİLER SEKMESİ BOŞALTIYORDU (2026-10-06): kuyruk `syncItemProgress`
+ * içindeydi ve onu yalnız Beceriler odakta çağırıyordu; Gelişim ve Patika kuyruğu
+ * hiç göndermiyordu, yani sunucu (ve Gelişim'in "Sıradaki"si) kullanıcı Beceriler'i
+ * açana dek tamamlanmayı görmüyordu. Artık Gelişim ve Patika da yeniliyor.
+ * Sunucu yeni kaydı deneme olarak işliyor; yeniden gönderim zararsız.
+ */
+export async function flushPendingItems(): Promise<void> {
+  const bekleyen = Object.values(await getPending());
+  if (!bekleyen.length) return;
+  await api("/api/skills", { method: "PUT", body: JSON.stringify({ records: bekleyen.slice(0, 200) }) });
+  pendingCache = {};
+  try { await AsyncStorage.removeItem(PENDING_KEY); } catch { /* yut */ }
+}
+
 export async function syncItemProgress(level?: string): Promise<void> {
   try {
-    /* ÖNCE BEKLEYENLER GİDİYOR. Web aynı ucu (`PUT /api/skills`) yerel
-       geçmişini taşımak için kullanıyor; mobilde taşınacak şey çevrimdışı
-       bitirilmiş egzersizler. Uç idempotent (en iyi sonucu tutuyor), o yüzden
-       yeniden gönderim zararsız. */
-    const bekleyen = Object.values(await getPending());
-    if (bekleyen.length) {
-      await api("/api/skills", { method: "PUT", body: JSON.stringify({ records: bekleyen.slice(0, 200) }) });
-      pendingCache = {};
-      try { await AsyncStorage.removeItem(PENDING_KEY); } catch { /* yut */ }
-    }
+    await flushPendingItems();
     const r = await api<{ progress?: Record<string, { correct: number; total: number; lastScore: number | null; lastAt: string }> }>(
       `/api/skills${level ? `?level=${encodeURIComponent(level)}` : ""}`,
     );

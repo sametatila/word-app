@@ -340,12 +340,19 @@ export function ItemScreen() {
           if (isSkillDone(d.lastScore)) void markItemDone(exercise.id);
         }
         bumpStats(); // XP/seri değişti
+      } else if (res.status !== 400 && res.status !== 403) {
+        /* KAYIT DÜŞMESİN (2026-10-06): sunucu hatası ya da süresi dolmuş oturum (5xx,
+           401, 429) sessizce yutuluyordu ve tamamlanma kayboluyordu; Gelişim aynı
+           alıştırmayı önermeye devam ediyordu. Kuyruğa alınıp sonra gönderiliyor.
+           400 (bilinmeyen/kapatılmış alıştırma) ve 403 (kilit) yeniden denense de geçmez. */
+        void queueItemRecord(exercise.id, c, total, score);
+        setQueued(true);
       }
     } catch {
       /* ÇEVRİMDIŞI: sonuç kuyruğa alınıyor ve bir sonraki bağlantıda
          taşınıyor. Eskiden yalnız yerel işaret kalıyordu ve sunucu bu
          egzersizi HİÇ öğrenmiyordu - cihaz değişince gidiyordu. */
-      void queueItemRecord(exercise.id, c, total);
+      void queueItemRecord(exercise.id, c, total, score);
       setQueued(true);
     }
   }

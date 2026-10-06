@@ -133,7 +133,26 @@ export function syncSkillProgress(): Promise<SkillProgress> {
 
       const res = await apiFetch("/api/skills");
       if (!res.ok) return local;
-      const data = (await res.json()) as { progress: ServerStatus };
+      let data = (await res.json()) as { progress: ServerStatus };
+      /*
+        BEKLEYEN SONUÇLAR HER SENKRONDA (2026-10-06). Yukarıdaki PUT yalnız tek seferlik
+        taşımaydı; taşıma bittikten sonra çevrimdışı tamamlanan alıştırma cihazda
+        kalıyordu ("sonraki senkronda aktarılır" sözü tutulmuyordu) ve Gelişim aynı
+        alıştırmayı önermeye devam ediyordu. Sunucuda olmayan ya da sunucudakinden YENİ
+        kayıtlar gönderiliyor; sunucu onları deneme olarak işliyor (`importSkillRecords`).
+      */
+      const pending = localIds.filter((id) => {
+        const s = data.progress[id];
+        return !s || (local[id].at && Date.parse(local[id].at) > Date.parse(s.lastAt));
+      });
+      if (migrated && pending.length) {
+        const put = await apiFetch("/api/skills", {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ records: pending.slice(0, 200).map((id) => ({ id, ...local[id] })) }),
+        });
+        if (put.ok) data = (await put.json()) as { progress: ServerStatus };
+      }
       if (!migrated) {
         try {
           localStorage.setItem(MIGRATED_KEY, "1");
