@@ -389,6 +389,10 @@ Play tr tam açıklama + tr görseller; ikisi de geri okundu, eşit.
 (`COMPLETE`); Play tek edit: üç dilde tam açıklama + bütün görseller, commit sonrası geri okundu, eşit. Konuşma
 kareleri güncel main build'inden (iOS simülatör Release, Android release APK; T20 yüzünden).
 
+**Mağazaya YENİDEN GİRİLDİ (2026-10-06, 6. tur):** ASC üç dilde açıklama + tr tanıtım metni (geri okundu, eşit),
+tr 10 kare (`ASC_LOCALES=tr-TR`, `COMPLETE`); Play tek edit: üç dilde tam açıklama + tr görseller, commit sonrası
+geri okundu, eşit.
+
 **Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
 farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
 seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yazılmaz (ücretsizde de seviye başına hak var).
