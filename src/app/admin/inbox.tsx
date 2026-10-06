@@ -7,7 +7,7 @@ import { adminErrorText } from "@/lib/admin-errors";
 import { CATEGORY_LABEL, slaProgress, type Inbox as InboxData, type InboxCategory, type InboxItem } from "@/lib/admin-inbox-shared";
 import { RESPONSE_SLA, REVIEW_TEMPLATES, slaState, slaText, type QueueId } from "@/lib/response-sla";
 import { KIND_LABEL, REASON_LABEL } from "@/lib/content-feedback-labels";
-import type { ReportedPerson } from "@/lib/moderation-admin";
+import type { ReportedPerson, ReporterRecord } from "@/lib/moderation-admin";
 import { Badge, BTN, Empty, FIELD, FIELD_AREA, FIELD_STYLE, KeyValue, Notice, Segmented, TONE, when } from "./_ui/ui";
 import { TwoStep } from "./_ui/two-step";
 import { ResponseGuide } from "./_ui/sla";
@@ -112,6 +112,28 @@ function Person({ p }: { p: ReportedPerson }) {
   );
 }
 
+type Reporters = Record<string, ReporterRecord>;
+
+/**
+ * Bildiren + geçmişi: kaç bildirim yaptı, kaçı gereği yapıldı / asılsız kapandı.
+ * Kararların yarısından çoğu asılsızsa (en az 2) uyarı renginde.
+ */
+function Reporter({ p, rec }: { p: ReportedPerson; rec?: ReporterRecord }) {
+  const noisy = rec ? rec.dismissed >= 2 && rec.dismissed * 2 > rec.resolved + rec.dismissed : false;
+  return (
+    <span className="inline-flex flex-wrap items-baseline gap-x-1.5">
+      <Person p={rec ?? p} />
+      {rec ? (
+        <span className="text-caption tabular-nums" style={{ color: noisy ? TONE.warn : "var(--text-muted)" }}>
+          · {rec.reports} bildirim{rec.resolved ? ` · ${rec.resolved} gereği yapıldı` : ""}{rec.dismissed ? ` · ${rec.dismissed} asılsız` : ""}
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
+const unknownPerson = (id: string): ReportedPerson => ({ id, username: "", name: "", joined: "", guest: false });
+
 /** Kartın üç satırı: tür, başlık, ayrıntı. */
 function summary(i: InboxItem): { kind: string; title: string; meta: string } {
   switch (i.kind) {
@@ -125,7 +147,7 @@ function summary(i: InboxItem): { kind: string; title: string; meta: string } {
     }
     case "content": {
       const g = i.group;
-      return { kind: `İçerik bildirimi · ${g.open} bildirim`, title: targetText(g), meta: [g.topReason ? reasonText(g.topReason) : "", g.courses.join(", "), g.notes[0]?.text ?? g.sample].filter(Boolean).join(" · ") };
+      return { kind: `İçerik bildirimi · ${g.open} bildirim${g.people > 1 ? `, ${g.people} kişi` : ""}`, title: targetText(g), meta: [g.topReason ? reasonText(g.topReason) : "", g.courses.join(", "), g.notes[0]?.text ?? g.sample].filter(Boolean).join(" · ") };
     }
     case "review": {
       const r = i.review;
@@ -275,7 +297,7 @@ const langOf = (territory: string): "tr" | "en" | "de" => {
   return "en";
 };
 
-function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; ready: boolean; busy: boolean; send: Send; note: string; onNote: (v: string) => void }) {
+function Detail({ item, ready, busy, send, note, onNote, reporters }: { item: InboxItem; ready: boolean; busy: boolean; send: Send; note: string; onNote: (v: string) => void; reporters: Reporters }) {
   switch (item.kind) {
     case "alert":
       return (
@@ -299,7 +321,7 @@ function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; re
             <div className="text-caption" style={{ color: repeat ? TONE.bad : "var(--text-muted)" }}>Bu hesap hakkında toplam {r.reportsAgainst} şikâyet · {r.blockedBy} engel</div>
           </Section>
           <Section title="Şikâyet eden">
-            <div className="text-caption"><Person p={r.reporter} /></div>
+            <div className="text-caption"><Reporter p={r.reporter} rec={reporters[r.reporter.id]} /></div>
           </Section>
           {r.detail ? <Section title="Açıklama"><Quote>{r.detail}</Quote></Section> : null}
           <Section title="Karar">
@@ -326,7 +348,7 @@ function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; re
           <Section title="Hedef">
             <a href={`/admin/moderation/content/group?g=${encodeURIComponent(r.group)}`} className="font-mono text-caption underline-offset-2 hover:underline">{r.ref}</a>
           </Section>
-          <Section title="Bildiren"><div className="text-caption"><Person p={r.reporter} /></div></Section>
+          <Section title="Bildiren"><div className="text-caption"><Reporter p={r.reporter} rec={reporters[r.reporter.id]} /></div></Section>
           {r.detail ? <Section title="Açıklama"><Quote>{r.detail}</Quote></Section> : null}
           {r.content ? <Section title="Yapay zekâ çıktısı"><Quote>{r.content}</Quote></Section> : null}
           <Section title="Karar">
@@ -345,6 +367,7 @@ function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; re
       const g = item.group;
       const info: Record<string, string | number> = {
         Bildirim: g.open,
+        Kişi: g.people,
         Nedenler: Object.entries(g.reasons).map(([k, v]) => `${reasonText(k)} ×${v}`).join(", "),
         İlk: when(g.first),
         Son: when(g.last),
@@ -362,10 +385,20 @@ function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; re
                 {g.notes.map((n, i) => (
                   <div key={i}>
                     <Quote>{n.text}</Quote>
-                    <div className="muted mt-0.5 text-caption">{[reasonText(n.reason), when(n.at)].filter(Boolean).join(" · ")}</div>
+                    <div className="muted mt-0.5 flex flex-wrap items-baseline gap-x-1.5 text-caption">
+                      <span>{[reasonText(n.reason), when(n.at)].filter(Boolean).join(" · ")} ·</span>
+                      {n.userId ? <Person p={reporters[n.userId] ?? unknownPerson(n.userId)} /> : <span>bildiren bilinmiyor</span>}
+                    </div>
                   </div>
                 ))}
               </div>
+            </Section>
+          ) : null}
+          {g.reporterIds.length ? (
+            <Section title={g.reporterIds.length > 1 ? `Bildirenler (${g.reporterIds.length})` : "Bildiren"}>
+              <ul className="space-y-1 text-caption">
+                {g.reporterIds.map((id) => <li key={id}><Reporter p={unknownPerson(id)} rec={reporters[id]} /></li>)}
+              </ul>
             </Section>
           ) : null}
           {g.sample ? <Section title="Son bildirimin görüntüsü"><Quote>{g.sample}</Quote></Section> : null}
@@ -612,6 +645,7 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
                 send={send}
                 note={notes[current.id] ?? ""}
                 onNote={(v) => setNotes((n) => ({ ...n, [current.id]: v }))}
+                reporters={inbox.reporters}
               />
             </div>
             {current.kind !== "alert" ? (

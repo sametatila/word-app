@@ -2,7 +2,7 @@ import "server-only";
 import { collectAlerts } from "@/lib/alerts";
 import { alertLinks } from "@/lib/admin-links";
 import { cached } from "@/lib/admin-query";
-import { moderationData, openContentGroups } from "@/lib/moderation-admin";
+import { moderationData, openContentGroups, reporterRecords, type ReporterRecord } from "@/lib/moderation-admin";
 import { storeReviews } from "@/lib/store-reviews";
 import { slaState, type QueueId } from "@/lib/response-sla";
 import { QUEUE_ALERT_FAMILIES, rankOf, sortInbox, type Inbox, type InboxClaude, type InboxItem } from "@/lib/admin-inbox-shared";
@@ -87,5 +87,15 @@ export async function loadInbox(): Promise<Inbox> {
     items.push({ kind: "alert", id: `alert:${a.key}`, cat: "sistem", level: a.level, text: a.text, links: alertLinks(a.key), rank: rankOf({ kind: "alert", level: a.level }), due: null, created: null });
   }
 
-  return { items: sortInbox(items), ready: mod?.ready ?? false, now, errors };
+  const ids = [
+    ...(mod?.userReports ?? []).map((r) => r.reporter.id),
+    ...(mod?.contentReports ?? []).map((r) => r.reporter.id),
+    ...groups.flatMap((g) => g.reporterIds),
+  ];
+  const reporters = await reporterRecords(ids).catch((err) => {
+    errors.push(`Bildirenlerin geçmişi okunamadı: ${(err as Error).message?.slice(0, 120)}`);
+    return {} as Record<string, ReporterRecord>;
+  });
+
+  return { items: sortInbox(items), ready: mod?.ready ?? false, now, errors, reporters };
 }

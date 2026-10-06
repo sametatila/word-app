@@ -19,6 +19,7 @@ import { sql } from "drizzle-orm";
 import { db } from "../src/lib/db";
 import { claudeQueue, markClaudeDone, type ClaudeTask } from "../src/lib/claude-tasks";
 import { RESPONSE_SLA } from "../src/lib/response-sla";
+import { reporterRecords, type ReporterRecord } from "../src/lib/moderation-admin";
 
 type Row = Record<string, unknown>;
 
@@ -39,12 +40,22 @@ function left(due: number | null): string {
   return h >= 0 ? `son tarih ${iso(due)} UTC (~${h} sa kaldı)` : `son tarih ${iso(due)} UTC (${-h} sa GECİKTİ)`;
 }
 
+/** Bildiren: kim, misafir mi, geçmişi (kaç bildirim, kaçı gereği yapıldı / asılsız). */
+async function who(id: unknown): Promise<string> {
+  const k = String(id ?? "");
+  if (!k) return "bildiren bilinmiyor";
+  const r: ReporterRecord | undefined = (await reporterRecords([k]))[k];
+  if (!r) return `bildiren ${k} (hesap yok)`;
+  const name = r.name || (r.username ? `@${r.username}` : "adsız");
+  return `bildiren ${name}${r.guest ? " (misafir)" : ""} ${k} · ${r.reports} bildirim, ${r.resolved} gereği yapıldı, ${r.dismissed} asılsız`;
+}
+
 /** Bildirimin kendisi: Claude'un işi yapması için gereken her şey. */
 async function details(t: ClaudeTask): Promise<string[]> {
   const out: string[] = [];
   if (t.queue === "content_feedback") {
     const rs = await rows(sql`
-      select id, created_at, reason, detail, content, kind, ref, target_type, target_id, target_sub, surface, game, pack, item, course, native_lang, platform, app_version
+      select id, user_id, created_at, reason, detail, content, kind, ref, target_type, target_id, target_sub, surface, game, pack, item, course, native_lang, platform, app_version
       from content_reports
       where coalesce(group_key, 'legacy:' || kind || ':' || ref) = ${t.ref} and status = 'open'
       order by created_at desc limit 8`);
@@ -53,24 +64,26 @@ async function details(t: ClaudeTask): Promise<string[]> {
     if (f) out.push(`  hedef: ${[f.target_type, f.target_id, f.target_sub].filter(Boolean).join(" / ") || `${f.kind}:${f.ref}`} · yüzey ${f.surface ?? "—"} · kurs ${f.course ?? "—"} · anadil ${f.native_lang ?? "—"} · ${f.platform ?? "—"} ${f.app_version ?? ""}`);
     if (f?.pack) out.push(`  paket: ${f.pack}:${f.item ?? ""}${f.game ? ` · oyun ${f.game}` : ""}`);
     for (const r of rs) {
-      out.push(`  - #${r.id} ${iso(r.created_at)} · ${r.reason}${r.detail ? ` · açıklama: ${clip(r.detail, 600)}` : ""}`);
+      out.push(`  - #${r.id} ${iso(r.created_at)} · ${r.reason} · ${await who(r.user_id)}${r.detail ? `\n    açıklama: ${clip(r.detail, 600)}` : ""}`);
     }
     if (f?.content) out.push(`  son görüntü: ${clip(f.content)}`);
   } else if (t.queue === "ai_report") {
-    const [r] = await rows(sql`select id, created_at, kind, ref, reason, detail, content, status from content_reports where id = ${Number(t.ref)}`);
+    const [r] = await rows(sql`select id, user_id, created_at, kind, ref, reason, detail, content, status from content_reports where id = ${Number(t.ref)}`);
     if (!r) out.push("  (bildirim bulunamadı)");
     else {
       out.push(`  ${r.kind} · ${r.ref} · ${r.reason} · durum ${r.status}`);
+      out.push(`  ${await who(r.user_id)}`);
       if (r.detail) out.push(`  açıklama: ${clip(r.detail, 800)}`);
       if (r.content) out.push(`  yapay zekâ çıktısı: ${clip(r.content)}`);
     }
   } else {
     const [r] = await rows(sql`
-      select r.id, r.created_at, r.reason, r.detail, r.reported_id, u.name, p.username
+      select r.id, r.created_at, r.reason, r.detail, r.reported_id, r.reporter_id, u.name, p.username
       from user_reports r left join "user" u on u.id = r.reported_id left join profiles p on p.user_id = r.reported_id where r.id = ${Number(t.ref)}`);
     if (!r) out.push("  (şikâyet bulunamadı)");
     else {
       out.push(`  şikâyet edilen: ${r.name ?? "adsız"}${r.username ? ` @${r.username}` : ""} (${r.reported_id}) · ${r.reason}`);
+      out.push(`  şikâyet eden: ${await who(r.reporter_id)}`);
       if (r.detail) out.push(`  açıklama: ${clip(r.detail, 800)}`);
     }
   }

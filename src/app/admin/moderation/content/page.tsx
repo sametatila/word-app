@@ -112,7 +112,7 @@ export default async function ContentFeedbackPage({ searchParams }: { searchPara
               </div>,
               <span key="s">{g.surfaces.length ? g.surfaces.map(surfaceText).join(", ") : "—"}</span>,
               <span key="r">{g.topReason ? reasonText(g.topReason) : "—"}{Object.keys(g.reasons).length > 1 ? <span className="muted"> +{Object.keys(g.reasons).length - 1}</span> : null}</span>,
-              <span key="n" className="tabular-nums">{g.count}{g.open !== g.count && g.open > 0 ? <span className="muted"> ({g.open} açık)</span> : null}</span>,
+              <span key="n" className="tabular-nums">{g.count}{g.open !== g.count && g.open > 0 ? <span className="muted"> ({g.open} açık)</span> : null}{g.people > 1 ? <div className="muted">{g.people} kişi</div> : null}</span>,
               <span key="d" className="whitespace-nowrap tabular-nums">{when(g.first)}<br /><span className="muted">{when(g.last)}</span></span>,
               <span key="c" className="font-mono">{g.courses.join(", ") || "—"} / {g.natives.join(", ") || "—"}</span>,
               <span key="p">{g.platforms.join(", ") || "—"}</span>,

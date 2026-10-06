@@ -1,5 +1,5 @@
 import type { AlertLinks } from "@/lib/admin-links";
-import type { ContentGroupRow, ContentReportRow, UserReportRow } from "@/lib/moderation-admin";
+import type { ContentGroupRow, ContentReportRow, ReporterRecord, UserReportRow } from "@/lib/moderation-admin";
 import type { StoreReview } from "@/lib/store-reviews";
 import { slaState, type QueueId, type SlaLevel } from "@/lib/response-sla";
 
@@ -46,6 +46,8 @@ export type Inbox = {
   now: number;
   /** Okunamayan kaynaklar: kuyruk "boş" değil EKSİK görünsün. */
   errors: string[];
+  /** Bildirenler: kim + geçmişi (kaç bildirim, kaçı asılsız), kimliğe göre. */
+  reporters: Record<string, ReporterRecord>;
 };
 
 /**

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
-import { contentGroupDetail, isGroupKey, type ContentReportDetail } from "@/lib/moderation-admin";
+import { contentGroupDetail, isGroupKey, reporterRecords, type ContentReportDetail, type ReporterRecord } from "@/lib/moderation-admin";
 import { AdminDenied, AdminPage, Badge, Empty, KeyValue, Notice, PageHeader, Panel, when } from "../../../_ui/ui";
 import { reasonText, sourceHint, surfaceText, targetText } from "../labels";
 import { GroupActions } from "./group-actions";
@@ -32,7 +32,7 @@ function pretty(s: string): string {
 
 const DECISION: Record<string, string> = { resolved: "gereği yapıldı", dismissed: "asılsız" };
 
-function Report({ r }: { r: ContentReportDetail }) {
+function Report({ r, rec }: { r: ContentReportDetail; rec?: ReporterRecord }) {
   const ctx: Record<string, string | number> = {};
   if (r.surface) ctx["Yüzey"] = surfaceText(r.surface);
   if (r.game) ctx["Oyun"] = r.game;
@@ -55,6 +55,7 @@ function Report({ r }: { r: ContentReportDetail }) {
         {p.username ? <span className="font-mono"> @{p.username}</span> : null}
         <span className="font-mono"> {p.id.slice(0, 10)}…</span>
         {p.guest ? <> <Badge>misafir</Badge></> : null}
+        {rec ? <span className="tabular-nums"> · {rec.reports} bildirim{rec.resolved ? ` · ${rec.resolved} gereği yapıldı` : ""}{rec.dismissed ? ` · ${rec.dismissed} asılsız` : ""}</span> : null}
       </div>
       {Object.keys(ctx).length ? <div className="mt-2"><KeyValue data={ctx} /></div> : null}
       {r.detail ? (
@@ -94,6 +95,8 @@ export default async function ContentGroupPage({ searchParams }: { searchParams:
     );
   }
   const d = await contentGroupDetail(g);
+  /* Bildirenin geçmişi: güvenilir bildireni sürekli asılsız bildirenden ayırmak için. */
+  const recs = await reporterRecords(d.reports.map((r) => r.reporter.id)).catch(() => ({}) as Record<string, ReporterRecord>);
   const s = d.summary;
   if (!s) {
     return (
@@ -135,7 +138,7 @@ export default async function ContentGroupPage({ searchParams }: { searchParams:
       <Panel title={`Bildirimler (${d.reports.length})`}>
         <div className="space-y-3">
           {d.reports.map((r) => (
-            <Report key={r.id} r={r} />
+            <Report key={r.id} r={r} rec={recs[r.reporter.id]} />
           ))}
         </div>
       </Panel>

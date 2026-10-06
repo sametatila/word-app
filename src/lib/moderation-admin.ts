@@ -97,6 +97,32 @@ function joinWho(prefix: string, idCol: string) {
     left join "user" ${prefix}u on ${prefix}u.id = ${idCol}`);
 }
 
+/**
+ * BİLDİRENİN KAYDI (2026-10-06, Samet: "kullanıcıyı da belirlememiz gerekiyor"):
+ * kim olduğu + şimdiye kadar kaç bildirim/şikâyet yaptı, kaçı "gereği yapıldı",
+ * kaçı "asılsız" kapandı. Güvenilir bildireni ve sürekli asılsız bildireni ayırmak için.
+ */
+export type ReporterRecord = ReportedPerson & { reports: number; resolved: number; dismissed: number };
+
+export async function reporterRecords(ids: string[]): Promise<Record<string, ReporterRecord>> {
+  const list = [...new Set(ids.filter(Boolean))].slice(0, 500);
+  if (!list.length) return {};
+  const ready = await hasActionsTable();
+  const decided = (action: string) =>
+    ready
+      ? sql`(select count(*) from moderation_actions m join content_reports c on m.target = 'content_report' and m.ref_id = c.id where c.user_id = x.id and m.action = ${action})::int
+          + (select count(*) from moderation_actions m join user_reports ur on m.target = 'user_report' and m.ref_id = ur.id where ur.reporter_id = x.id and m.action = ${action})::int`
+      : sql`0`;
+  const r = await rows(sql`
+    select ${who("a", "x.id")},
+      ((select count(*) from content_reports c where c.user_id = x.id)::int + (select count(*) from user_reports ur where ur.reporter_id = x.id)::int) as reports,
+      ${decided("resolved")} as resolved,
+      ${decided("dismissed")} as dismissed
+    from (select unnest(array[${sql.join(list.map((id) => sql`${id}`), sql`, `)}]::text[]) as id) x
+    ${joinWho("a", "x.id")}`);
+  return Object.fromEntries(r.map((row) => [str(row.a_id), { ...person(row, "a"), reports: num(row.reports), resolved: num(row.resolved), dismissed: num(row.dismissed) }]));
+}
+
 export async function hasActionsTable(): Promise<boolean> {
   try {
     const r = await rows(sql`select to_regclass('public.moderation_actions') is not null as ok`);
@@ -444,7 +470,11 @@ export type ContentGroupRow = {
    * `sample` vardı ve `coalesce(content, detail)` olduğu için ekran görüntüsü
    * taşıyan her bildirimde açıklama hiç görünmüyordu (Samet, 2026-10-06).
    */
-  notes: { text: string; reason: string; at: string }[];
+  notes: { text: string; reason: string; at: string; userId: string }[];
+  /** Kaç FARKLI kişi bildirdi (beş bildirim bir kişiden mi, beş kişiden mi). */
+  people: number;
+  /** Açık bildirimlerin bildirenleri; kişi ve geçmişi `reporterRecords` ile. */
+  reporterIds: string[];
 };
 
 const arr = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x) => x != null && x !== "").map(String) : []);
@@ -473,7 +503,9 @@ function groupRow(r: Row): ContentGroupRow {
     pack: str(r.pack),
     item: str(r.item),
     sample: str(r.sample).replace(/\s+/g, " ").slice(0, 160),
-    notes: (Array.isArray(r.notes) ? (r.notes as Row[]) : []).map((n) => ({ text: str(n.text), reason: str(n.reason), at: iso(n.at) })).filter((n) => n.text),
+    notes: (Array.isArray(r.notes) ? (r.notes as Row[]) : []).map((n) => ({ text: str(n.text), reason: str(n.reason), at: iso(n.at), userId: str(n.user) })).filter((n) => n.text),
+    people: num(r.people),
+    reporterIds: arr(r.reporter_ids),
   };
 }
 
@@ -494,8 +526,10 @@ function groupSelect(where: ReturnType<typeof sql>) {
       array_remove(array_agg(distinct f.native_lang), null) natives,
       array_remove(array_agg(distinct f.platform), null) platforms,
       (array_agg(coalesce(f.content, f.detail, '') order by f.created_at desc))[1] sample,
-      (select coalesce(jsonb_agg(jsonb_build_object('text', d.detail, 'reason', d.reason, 'at', d.created_at) order by d.created_at desc), '[]'::jsonb)
-         from (select f2.detail, f2.reason, f2.created_at from f f2 where f2.gkey = f.gkey and nullif(f2.detail, '') is not null
+      count(distinct f.user_id)::int people,
+      array_remove(array_agg(distinct f.user_id) filter (where f.status = 'open'), null) reporter_ids,
+      (select coalesce(jsonb_agg(jsonb_build_object('text', d.detail, 'reason', d.reason, 'at', d.created_at, 'user', d.user_id) order by d.created_at desc), '[]'::jsonb)
+         from (select f2.detail, f2.reason, f2.created_at, f2.user_id from f f2 where f2.gkey = f.gkey and nullif(f2.detail, '') is not null
                order by f2.created_at desc limit 5) d) notes,
       count(*) over ()::int total
     from f group by f.gkey`;
@@ -562,13 +596,13 @@ export async function contentFeedbackCsv(q: ContentQuery): Promise<string> {
   const list = (await rows(sql`${groupSelect(contentWhere(q))} order by ${contentOrder(q.sort)} limit 5000`)).map(groupRow);
   /* Hesap tablosunda formül olarak çalışmasın (CSV enjeksiyonu): bkz. lib/csv. */
   const cell = csvCell;
-  const head = ["grup", "tur", "hedef_turu", "hedef", "alt", "yuzeyler", "en_sik_neden", "nedenler", "bildirim", "acik", "ilk", "son", "kurslar", "anadiller", "platformlar", "paket", "madde", "ornek", "aciklamalar"];
+  const head = ["grup", "tur", "hedef_turu", "hedef", "alt", "yuzeyler", "en_sik_neden", "nedenler", "bildirim", "acik", "ilk", "son", "kurslar", "anadiller", "platformlar", "paket", "madde", "ornek", "aciklamalar", "kisi", "bildirenler"];
   const lines = [head.join(",")];
   for (const g of list) {
     lines.push([
       g.key, g.kind, g.targetType, g.targetId || g.ref, g.targetSub, g.surfaces.join(" "), g.topReason,
       Object.entries(g.reasons).map(([k, v]) => `${k}:${v}`).join(" "), g.count, g.open, g.first, g.last,
-      g.courses.join(" "), g.natives.join(" "), g.platforms.join(" "), g.pack, g.item, g.sample, g.notes.map((n) => n.text).join(" | "),
+      g.courses.join(" "), g.natives.join(" "), g.platforms.join(" "), g.pack, g.item, g.sample, g.notes.map((n) => n.text).join(" | "), g.people, g.reporterIds.join(" "),
     ].map(cell).join(","));
   }
   return "﻿" + lines.join("\n");
