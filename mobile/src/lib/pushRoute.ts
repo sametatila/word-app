@@ -68,6 +68,12 @@ export function routeFromPush(url: string): PushRoute | null {
   if (path === "/premium") return { name: "Paywall" };
   /* Rozetine gelen tepki (sunucu `social/reactions` `reactionUrl`): o rozete
      kayan duvar. `?a=` yoksa duvar normal açılıyor. */
+  /* HAFTALIK ÖZET ve GECİKMELİ DEĞERLENDİRME (2026-10-06): sunucu `/profile` ve
+     `/profile#writings` gönderiyor (cron/summary, lib/assess kuyruğu) ve ikisi de
+     eşlenmiyordu: bildirime dokunan ana ekrana düşüyordu. Özet Gelişim'e, değerlendirme
+     Yazılarım'a gidiyor. */
+  if (path === "/profile#writings" || path === "/profile/writings") return { name: "Writings" };
+  if (path === "/profile" || path === "/profile#progress") return { name: "Progress" };
   if (path === "/profile/achievements") {
     const focus = new URLSearchParams(query).get("a");
     return { name: "Achievements", params: focus ? { focus } : undefined };

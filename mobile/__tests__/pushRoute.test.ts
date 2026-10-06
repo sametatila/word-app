@@ -20,7 +20,14 @@ const oku = (p: string) => readFileSync(path.join(REPO, p), "utf8");
 
 /** Sunucunun push gövdelerine koyduğu bütün adresler. */
 function serverUrls(): string[] {
-  const files = ["src/lib/push.ts", ...readdirSync(path.join(REPO, "src/lib/social")).filter((f) => f.endsWith(".ts")).map((f) => `src/lib/social/${f}`)];
+  /* Haftalık özet ve gecikmeli değerlendirme de push gönderiyor; ikisi taramada yoktu ve
+     eşlenmemiş adresleri (`/profile`, `/profile#writings`) yakalanmadı (2026-10-06). */
+  const files = [
+    "src/lib/push.ts",
+    "src/app/api/cron/summary/route.ts",
+    "src/lib/assess.ts",
+    ...readdirSync(path.join(REPO, "src/lib/social")).filter((f) => f.endsWith(".ts")).map((f) => `src/lib/social/${f}`),
+  ];
   const urls = new Set<string>();
   for (const f of files) {
     for (const m of oku(f).matchAll(/\burl:\s*"([^"]+)"/g)) urls.add(m[1]);
