@@ -400,6 +400,9 @@ kareleri güncel main build'inden (iOS simülatör Release, Android release APK;
 tr 10 kare (`ASC_LOCALES=tr-TR`, `COMPLETE`); Play tek edit: üç dilde tam açıklama + tr görseller, commit sonrası
 geri okundu, eşit.
 
+**Mağazaya YENİDEN GİRİLDİ (2026-10-06, 7. tur):** ASC ve Play üç dilde uzun açıklama (yalnız metin; kareler
+değişmedi), ikisi de geri okundu, eşit.
+
 **Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
 farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
 seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yazılmaz (ücretsizde de seviye başına hak var).
