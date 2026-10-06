@@ -169,7 +169,7 @@ const tr: LandingCopy = {
     line1: "Konuş, anla,",
     line2: "sınava hazırlan.",
     intro:
-      "Ausbildung, iş ya da aile birleşimi için Almanca mı gerekiyor? Lernomi ile Almanca ya da İngilizce öğren: sıfırdan C1'e, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
+      "Ausbildung, iş ya da aile birleşimi için Almanca mı gerekiyor? Lernomi ile Almanca ya da İngilizce öğren: sıfırdan da, bildiğin seviyeden de C1'e kadar, Türkçe anlatımla ve konuşarak. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.",
     noAccount: "Hesap açmadan, ücretsiz başlarsın. Reklam yok.",
   },
   cta: {
@@ -329,8 +329,8 @@ const tr: LandingCopy = {
       "Bütün deneme sınavları.",
       "Patika'da ve Beceriler'de bütün konuşma ve yazma çalışmaları, seri ve bitirme beklemeden.",
     ],
-    packs: "Her seviyede ilk 3 deneme sınavı hemen açık; bitirince sıradaki 3'ü gelir. Günlük adil kullanım sınırları Premium sayfasında yazar.",
-    trial: "Yeni abonelere ilk ay ücretsiz.",
+    packs: "Deneme sınavları her seviyede 3'er 3'er açılır. Günlük adil kullanım sınırları Premium sayfasında, satın almadan önce görünür.",
+    trial: "Yeni abonelere ilk ay ücretsiz; bitmeden 2 gün önce bildirim ve e-postayla hatırlatırız.",
   },
   fine: {
     accountTitle: "Hesabın ve verin",
@@ -511,8 +511,8 @@ const en: LandingCopy = {
       "Every mock exam.",
       "Every Speaking and Writing step in Path and every assessment in Skills, with no waiting for streaks or finishing.",
     ],
-    packs: "The first 3 mock exams per level open right away, then 3 more once you finish them. Daily fair-use limits are listed on the Premium page.",
-    trial: "New subscribers get the first month free.",
+    packs: "Mock exams open 3 at a time per level. Daily fair-use limits are shown on the Premium page before you buy.",
+    trial: "New subscribers get the first month free; we remind you by notification and email 2 days before it ends.",
   },
   fine: {
     accountTitle: "Your account and your data",
@@ -693,8 +693,8 @@ const de: LandingCopy = {
       "Alle Probeprüfungen.",
       "Alle Sprech- und Schreibaufgaben in Pfad und Fertigkeiten, ohne auf Serie oder Abschluss zu warten.",
     ],
-    packs: "Pro Niveau sind 3 Probeprüfungen sofort offen, danach jeweils 3 weitere. Tägliche Fair-Use-Grenzen stehen auf der Premium-Seite.",
-    trial: "Neue Abonnenten bekommen den ersten Monat kostenlos.",
+    packs: "Probeprüfungen öffnen sich pro Niveau zu dritt. Tägliche Fair-Use-Grenzen siehst du vor dem Kauf auf der Premium-Seite.",
+    trial: "Neue Abonnenten bekommen den ersten Monat kostenlos; wir erinnern dich 2 Tage vorher per Mitteilung und E-Mail.",
   },
   fine: {
     accountTitle: "Dein Konto, deine Daten",
