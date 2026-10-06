@@ -1,5 +1,6 @@
 import "server-only";
 import { eq } from "drizzle-orm";
+import { conversationStepDone } from "@/lib/conversations/chat-const";
 import { db } from "@/lib/db";
 import { userSkills } from "@/lib/db/schema";
 import { conversationBoard } from "@/lib/conversations/progress";
@@ -26,7 +27,7 @@ export async function immersionCompletion(userId: string, course: string): Promi
   try {
     const cards = await conversationBoard(userId, course);
     for (const c of cards) {
-      if (c.state?.chatDone) doneConversations.add(c.conversation.id);
+      if (c.state && conversationStepDone(c.state)) doneConversations.add(c.conversation.id);
       // Kayıt varsa konuşma en az bir kez açılıp cevaplanmıştır.
       if (c.state) triedConversations.add(c.conversation.id);
     }

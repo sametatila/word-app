@@ -7,7 +7,7 @@ import { candoForExercise, candoForConversation } from "@/lib/cando-map";
 import { allConversations } from "@/lib/conversations";
 import { listExerciseMeta } from "@/lib/skills";
 import type { CefrLevel } from "@/lib/skills/types";
-import { CONVERSATION_PASS_RATIO } from "@/lib/conversations/chat-const";
+import { conversationPassed } from "@/lib/conversations/chat-const";
 import { SKILL_DONE_PCT } from "@/lib/score-bands";
 
 /**
@@ -41,7 +41,7 @@ export async function candoSummary(userId: string, course: string): Promise<Cand
     db.select({ exerciseId: userSkills.exerciseId, correct: userSkills.correct, total: userSkills.total, lastScore: userSkills.lastScore }).from(userSkills).where(eq(userSkills.userId, userId)),
     listExerciseMeta(course),
   ]);
-  const passedConversations = new Set(conversationRows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= CONVERSATION_PASS_RATIO).map((r) => r.conversationId));
+  const passedConversations = new Set(conversationRows.filter(conversationPassed).map((r) => r.conversationId));
   const doneExercises = new Set(
     skillRows.filter((r) => (r.lastScore ?? 0) >= SKILL_DONE_PCT || (r.total > 0 && r.correct / r.total >= SKILL_DONE_PCT / 100)).map((r) => r.exerciseId),
   );

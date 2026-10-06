@@ -1,5 +1,6 @@
 import "server-only";
 import { and, eq, inArray, sql } from "drizzle-orm";
+import { conversationStepDone } from "@/lib/conversations/chat-const";
 import { db } from "@/lib/db";
 import { practiceWordsOf } from "@/lib/practice-words";
 import { moduleClears, words } from "@/lib/db/schema";
@@ -100,7 +101,7 @@ export async function buildModuleBoss(
   // hazır olmadan girene ne beklediğini söylemek için.
   const board = await conversationBoard(userId, course);
   const done = new Set(
-    board.filter((c) => c.state?.chatDone).map((c) => c.conversation.id),
+    board.filter((c) => c.state && conversationStepDone(c.state)).map((c) => c.conversation.id),
   );
 
   const meta: BossMeta = {

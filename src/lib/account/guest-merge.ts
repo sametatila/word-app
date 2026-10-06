@@ -239,6 +239,7 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
               correct = greatest(t.correct, g.correct),
               total = greatest(t.total, g.total),
               chat_done = t.chat_done or g.chat_done,
+              chat_waived = t.chat_waived or g.chat_waived,
               attempts = t.attempts + g.attempts,
               rule_id = case when g.last_at > t.last_at then g.rule_id else t.rule_id end,
               due_at = case when g.last_at > t.last_at then g.due_at else t.due_at end,

@@ -1,6 +1,6 @@
 import "server-only";
 import { passesExamRules } from "@/lib/exam-types";
-import { CONVERSATION_PASS_RATIO } from "@/lib/conversations/chat-const";
+import { conversationPassed } from "@/lib/conversations/chat-const";
 import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { practiceWordsOf } from "@/lib/practice-words";
@@ -126,10 +126,10 @@ export async function modulePrereq(userId: string, course: string, level: CefrLe
   const chunk = (await conversationsForLevel(course, level)).filter((l) => l.course === course).slice(module * MODULE_SIZE, (module + 1) * MODULE_SIZE);
   if (!chunk.length) return false;
   const rows = await db
-    .select({ conversationId: userConversations.conversationId, correct: userConversations.correct, total: userConversations.total, chatDone: userConversations.chatDone })
+    .select({ conversationId: userConversations.conversationId, correct: userConversations.correct, total: userConversations.total, chatDone: userConversations.chatDone, chatWaived: userConversations.chatWaived })
     .from(userConversations)
     .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, chunk.map((l) => l.id))));
-  const passed = rows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= CONVERSATION_PASS_RATIO).length;
+  const passed = rows.filter(conversationPassed).length;
   return passed / chunk.length >= MODULE_PREREQ;
 }
 

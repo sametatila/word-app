@@ -46,6 +46,8 @@ export type ConversationState = {
   correct: number;
   total: number;
   chatDone: boolean;
+  /** Sohbet muaf (izin yok ya da misafir); adım yine bitmiş sayılır. */
+  chatWaived: boolean;
   attempts: number;
   dueAt: Date;
   intervalDays: number;
@@ -76,6 +78,7 @@ export async function conversationBoard(userId: string, course: string): Promise
       correct: row.correct,
       total: row.total,
       chatDone: row.chatDone,
+      chatWaived: row.chatWaived,
       attempts: row.attempts,
       dueAt: row.dueAt,
       intervalDays: row.intervalDays,
@@ -138,6 +141,12 @@ export async function recordConversation(
    * istek eskisi gibi her seferinde yeni deneme sayılıyor.
    */
   finishId: string | null = null,
+  /**
+   * Sohbet muaf mı — SUNUCU karar veriyor (`api/conversation`: misafir ya da
+   * yapay zekâ metin izni reddedilmiş). Muafta konuşma anlatım puanıyla geçilir,
+   * sohbet XP'si verilmez (XP `chatDone`a bakıyor).
+   */
+  chatWaived = false,
 ): Promise<{
   passed: boolean;
   nextDays: number;
@@ -146,7 +155,7 @@ export async function recordConversation(
   totalXp: number;
 }> {
   const total = scoredSteps(conversation);
-  const passed = chatDone && total > 0 && correct / total >= PASS_RATIO;
+  const passed = (chatDone || chatWaived) && total > 0 && correct / total >= PASS_RATIO;
 
   /*
    * OKU-HESAPLA-YAZ TEK İŞLEMDE, (kullanıcı, konuşma) kilidiyle (güvenlik
@@ -193,6 +202,7 @@ export async function recordConversation(
         correct,
         total,
         chatDone,
+        chatWaived: chatWaived && !chatDone,
         attempts: 1,
         intervalDays: nextDays,
         dueAt: sql`now() + (${nextDays} || ' days')::interval`,
@@ -207,6 +217,7 @@ export async function recordConversation(
           correct: sql`greatest(${userConversations.correct}, ${correct})`,
           total,
           chatDone: sql`${userConversations.chatDone} or ${chatDone}`,
+          chatWaived: sql`${userConversations.chatWaived} or ${chatWaived && !chatDone}`,
           attempts: sql`${userConversations.attempts} + 1`,
           intervalDays: nextDays,
           dueAt: sql`now() + (${nextDays} || ' days')::interval`,

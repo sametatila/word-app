@@ -1040,6 +1040,15 @@ export const userConversations = pgTable(
     total: integer("total").notNull(),
     /** Sohbet tamamlandı mı — konuşmanın asıl parçası o. */
     chatDone: boolean("chat_done").notNull().default(false),
+    /**
+     * Sohbet MUAF tutuldu (2026-10-05, Samet): yapay zekâ izni reddedilmiş ya da
+     * misafir. Sohbet yapay zekâyla yürüyor; izin yokken yapılamıyor ve Patika
+     * bunun yüzünden kilitlenmemeli. Muafiyeti sunucu veriyor (`api/conversation`),
+     * istemci değil. `chatDone` YAPILMIŞ sohbet demek ve öyle kalıyor: sohbet XP'si
+     * ve sohbet başarımları yalnız onunla. Adımı "bitti" sayan yerler ikisine
+     * birden bakıyor (`conversationStepDone`).
+     */
+    chatWaived: boolean("chat_waived").notNull().default(false),
     attempts: integer("attempts").notNull().default(1),
     /** Bir sonraki tekrar; kelimelerdeki gibi artan aralıklarla uzuyor. */
     dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),

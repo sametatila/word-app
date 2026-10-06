@@ -191,7 +191,7 @@ export async function weeklySummary(
     .from(userSkills)
     .where(and(eq(userSkills.userId, userId), gte(userSkills.lastAt, from), sql`${userSkills.lastAt} < ${to}`));
   const [{ conversationsPassed }] = await db
-    .select({ conversationsPassed: sql<number>`count(*) filter (where ${userConversations.chatDone} and ${userConversations.correct}::float / nullif(${userConversations.total}, 0) >= ${CONVERSATION_PASS_RATIO})::int` })
+    .select({ conversationsPassed: sql<number>`count(*) filter (where (${userConversations.chatDone} or ${userConversations.chatWaived}) and ${userConversations.correct}::float / nullif(${userConversations.total}, 0) >= ${CONVERSATION_PASS_RATIO})::int` })
     .from(userConversations)
     .where(and(eq(userConversations.userId, userId), gte(userConversations.lastAt, from), sql`${userConversations.lastAt} < ${to}`));
   const [top] = await db

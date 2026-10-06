@@ -42,7 +42,7 @@ import { germanLexicon } from "../src/lib/speech-lexicon";
 import { CONVERSATIONS, sourceConversationsFor as conversationsFor, sourceFindConversation as findConversation } from "../src/lib/conversations/source";
 import { scoredSteps } from "../src/lib/conversations/types";
 import { conversationBoard, isFinishId, nextConversation, recordConversation, weakRules } from "../src/lib/conversations/progress";
-import { MAX_HISTORY } from "../src/lib/conversations/chat-const";
+import { MAX_HISTORY, conversationPassed, conversationStepDone } from "../src/lib/conversations/chat-const";
 import { chatPrompt } from "../src/lib/conversations/chat";
 import { chatConfigured, chatProviders, readLimits } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
@@ -870,6 +870,23 @@ async function main() {
     check("en iyi skor korunuyor", card.state?.correct === full, `(${card.state?.correct})`);
     check("sohbet bayrağı kalıcı", card.state?.chatDone === true);
     check("deneme sayısı artıyor", (card.state?.attempts ?? 0) >= 4);
+
+    // SOHBET MUAFİYETİ (2026-10-05): izin reddedilmiş ya da misafir. Konuşma anlatım
+    // puanıyla geçiliyor; sohbet "yapıldı" görünmüyor ve sohbet XP'si verilmiyor.
+    {
+      const other = CONVERSATIONS[1];
+      const otherFull = scoredSteps(other);
+      const waived = await recordConversation(USER, other, otherFull, false, conversationDay, 0, null, true);
+      check("muaf sohbetle konuşma geçiliyor", waived.passed === true);
+      const wCard = (await conversationBoard(USER, other.course)).find((c) => c.conversation.id === other.id)!;
+      check("muafiyet kaydediliyor, sohbet yapılmış görünmüyor", wCard.state?.chatWaived === true && wCard.state?.chatDone === false);
+      check("muaf adım bitmiş sayılıyor", wCard.state != null && conversationStepDone(wCard.state));
+      const chatted = await recordConversation(USER, other, otherFull, true, conversationDay, 0, null, false);
+      check("sonradan yapılan sohbet XP kazandırıyor (muafken verilmemişti)", chatted.xpGained > 0, `(${chatted.xpGained})`);
+      const notWaived = await recordConversation(USER, CONVERSATIONS[2], scoredSteps(CONVERSATIONS[2]), false, conversationDay, 0, null, false);
+      check("muaf olmayan sohbetsiz konuşma geçilmiyor", notWaived.passed === false);
+      check("geçme yardımcısı muafiyeti tanıyor", conversationPassed({ chatDone: false, chatWaived: true, correct: 2, total: 3 }) && !conversationPassed({ chatDone: false, chatWaived: false, correct: 3, total: 3 }));
+    }
 
     // Sıradaki konuşma: yarına planlanan konuşma bugün "tekrarı gelmiş" değil, o
     // yüzden açılmamış ilk konuşma öneriliyor.

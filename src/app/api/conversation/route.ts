@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
+import { aiConsentStateFor } from "@/lib/ai-consent";
 import { sameOrigin } from "@/lib/auth/origin";
 import { clampDay } from "@/lib/award";
 import { findConversation } from "@/lib/conversations";
@@ -18,8 +19,9 @@ export const dynamic = "force-dynamic";
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const who = await getUserInfo();
+  if (!who) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const userId = who.id;
 
   let body: unknown;
   try {
@@ -52,6 +54,16 @@ export async function POST(req: Request) {
   const today = clampDay(day);
   const secs = typeof seconds === "number" ? Math.max(0, Math.min(3600, Math.round(seconds))) : 0;
 
+  /*
+    SOHBET MUAFİYETİ (2026-10-05, Samet). Çevrimdışı senaryolu sohbet kalktı:
+    sohbet yalnız yapay zekâyla yürüyor. Yapamayan iki grup var: misafir (yapay
+    zekâ sohbeti hesap istiyor) ve metin iznini REDDEDEN kullanıcı. Onların
+    konuşması sohbetsiz, anlatım puanıyla geçiliyor; Patika ve modül sınavı
+    kilitlenmiyor. Karar burada, istemcinin söylediğine bakılmadan: hiç karar
+    vermemiş ya da izni eskimiş kullanıcı muaf DEĞİL (sohbete girince sorulur).
+  */
+  const chatWaived = chatDone !== true && (who.guest || (await aiConsentStateFor(userId, "ai_text")) === "declined");
+
   try {
     const result = await recordConversation(
       userId,
@@ -61,6 +73,7 @@ export async function POST(req: Request) {
       today,
       secs,
       isFinishId(finishId) ? finishId : null,
+      chatWaived,
     );
     return NextResponse.json(result);
   } catch (err) {

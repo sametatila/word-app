@@ -1,5 +1,5 @@
 import "server-only";
-import { and, eq, inArray, isNotNull, like, sql } from "drizzle-orm";
+import { and, eq, inArray, isNotNull, like, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { mockExamAttempts, profiles, usageCounters, userConversations } from "@/lib/db/schema";
 import { mockCourseOf } from "@/lib/courses";
@@ -139,7 +139,7 @@ async function ownedWithPrefix(userId: string, prefix: string): Promise<string[]
 /**
  * Bitirilmiş konuşmalar — Konuşma adımının "bitirildi" ölçüsü (`user_conversations`).
  *
- * ÖLÇÜ `chat_done`, satırın varlığı DEĞİL — Patika'nın adımı "bitti" saydığı
+ * ÖLÇÜ `chat_done` (ya da muafiyet `chat_waived`), satırın varlığı DEĞİL — Patika'nın adımı "bitti" saydığı
  * ölçüyle aynı (`immersion/progress`). Satır "Şimdilik bırak"ta da yazılıyor
  * (adım "denendi" görünsün diye); yalnız varlığa bakınca yarım bırakılan
  * konuşma kilit açma sayacında "bitirildi", Patika'da "bitmedi" görünüyordu.
@@ -151,7 +151,7 @@ async function finishedConversations(userId: string, ids: string[]): Promise<num
     const [row] = await db
       .select({ n: sql<number>`count(*)::int` })
       .from(userConversations)
-      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids), eq(userConversations.chatDone, true)));
+      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids), or(eq(userConversations.chatDone, true), eq(userConversations.chatWaived, true))));
     return row?.n ?? 0;
   } catch {
     return 0;
@@ -624,7 +624,7 @@ async function finishedConversationSet(userId: string, ids: string[]): Promise<S
     const rows = await db
       .select({ id: userConversations.conversationId })
       .from(userConversations)
-      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids), eq(userConversations.chatDone, true)));
+      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids), or(eq(userConversations.chatDone, true), eq(userConversations.chatWaived, true))));
     return new Set(rows.map((r) => r.id));
   } catch {
     return new Set();

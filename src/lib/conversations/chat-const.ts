@@ -52,6 +52,21 @@ export const CONVERSATION_TRY_CEILING = 3;
 export const CONVERSATION_PASS_RATIO = 0.6;
 
 /**
+ * Konuşma adımı bitti mi: sohbet YAPILDI ya da MUAF tutuldu (yapay zekâ izni
+ * reddedilmiş ya da misafir; bkz. schema `userConversations.chatWaived`). Adımı
+ * "bitti" sayan her yer buna bakıyor; sohbet XP'si ve sohbet başarımları yalnız
+ * `chatDone`a.
+ */
+export function conversationStepDone(r: { chatDone: boolean; chatWaived?: boolean | null }): boolean {
+  return r.chatDone || r.chatWaived === true;
+}
+
+/** Konuşma geçildi mi: adım bitti ve anlatım isabeti eşikte. */
+export function conversationPassed(r: { chatDone: boolean; chatWaived?: boolean | null; correct: number; total: number }): boolean {
+  return conversationStepDone(r) && r.total > 0 && r.correct / r.total >= CONVERSATION_PASS_RATIO;
+}
+
+/**
  * Eşiği geçmek için gereken en az doğru sayısı.
  *
  * Oran sunucudaki karşılaştırmanın (`correct / total >= oran`) AYNISIYLA
