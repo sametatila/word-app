@@ -329,7 +329,7 @@ const tr: LandingCopy = {
       "Bütün deneme sınavları.",
       "Patika'da ve Beceriler'de bütün konuşma ve yazma çalışmaları, seri ve bitirme beklemeden.",
     ],
-    packs: "Deneme sınavları her seviyede 3'er 3'er açılır. Günlük adil kullanım sınırları Premium sayfasında, satın almadan önce görünür.",
+    packs: "Deneme sınavları her seviyede 3'lü paketler hâlinde açılır; paketi bitirince sıradaki gelir. Günlük adil kullanım sınırları Premium sayfasında, satın almadan önce görünür.",
     trial: "Yeni abonelere ilk ay ücretsiz; bitmeden 2 gün önce bildirim ve e-postayla hatırlatırız.",
   },
   fine: {
@@ -511,7 +511,7 @@ const en: LandingCopy = {
       "Every mock exam.",
       "Every Speaking and Writing step in Path and every assessment in Skills, with no waiting for streaks or finishing.",
     ],
-    packs: "Mock exams open 3 at a time per level. Daily fair-use limits are shown on the Premium page before you buy.",
+    packs: "Mock exams open in packs of 3 per level; finish a pack and the next one opens. Daily fair-use limits are shown on the Premium page before you buy.",
     trial: "New subscribers get the first month free; we remind you by notification and email 2 days before it ends.",
   },
   fine: {
@@ -693,7 +693,7 @@ const de: LandingCopy = {
       "Alle Probeprüfungen.",
       "Alle Sprech- und Schreibaufgaben in Pfad und Fertigkeiten, ohne auf Serie oder Abschluss zu warten.",
     ],
-    packs: "Probeprüfungen öffnen sich pro Niveau zu dritt. Tägliche Fair-Use-Grenzen siehst du vor dem Kauf auf der Premium-Seite.",
+    packs: "Probeprüfungen öffnen sich pro Niveau in Dreierpaketen; nach einem Paket kommt das nächste. Tägliche Fair-Use-Grenzen siehst du vor dem Kauf auf der Premium-Seite.",
     trial: "Neue Abonnenten bekommen den ersten Monat kostenlos; wir erinnern dich 2 Tage vorher per Mitteilung und E-Mail.",
   },
   fine: {
