@@ -99,7 +99,9 @@ export default async function ImmersionSkillPage({
   // dönmeli, yoksa Beceriler'den giren kullanıcı Patika'ya düşüyor.
   const from = (await searchParams)?.from;
   const fromSkills = from === "skills";
-  const backHref = fromSkills ? `/skills?level=${exercise.level}` : "/immersion";
+  /* Gelişim'in "Sıradaki"sinden gelindiyse Kapat Gelişim'e dönüyor (2026-10-06): Patika'ya
+     düşüp öneriyi göremiyordu. */
+  const backHref = fromSkills ? `/skills?level=${exercise.level}` : from === "growth" ? "/profile/progress" : "/immersion";
 
   const frame: PlayerFrameValue = {
     lang: targetLangOf(exercise),

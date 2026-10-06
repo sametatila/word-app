@@ -46,8 +46,10 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
     // kendi hattında duruyor (`data/conversations/cando/`, anahtar `A1.SPK.1`).
     const cando = await nativeCando(candoForConversation(source), lang);
     if (cando) extras.cando = cando;
-    const n = await nextConversation(userId, profile.course, profile.level);
-    if (n && n.conversation.id !== conversation.id) {
+    /* Şu anki konuşma dışarıda: önerinin başı bu konuşmaysa (öneriden gelindiyse hep
+       öyle) "sıradaki" düğmesi hiç çıkmıyordu; ikinci aday gösteriliyor (2026-10-06). */
+    const n = await nextConversation(userId, profile.course, profile.level, conversation.id);
+    if (n) {
       const titleTr = (await nativeTitle(n.conversation.id, lang)) ?? n.conversation.titleTr;
       extras.next = { id: n.conversation.id, title: n.conversation.title, titleTr };
     }

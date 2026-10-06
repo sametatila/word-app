@@ -105,8 +105,10 @@ export async function nextConversation(
   userId: string,
   course: string,
   level = "A1",
+  /** Atlanacak konuşma (ör. şu an açık olan): onun yerine sıradaki aday döner. */
+  exclude?: string,
 ): Promise<ConversationCard | null> {
-  const board = await conversationBoard(userId, course);
+  const board = (await conversationBoard(userId, course)).filter((c) => c.conversation.id !== exclude);
   const due = board.filter((c) => c.due);
   if (due.length) {
     // En uzun süredir bekleyen önce.

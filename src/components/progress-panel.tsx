@@ -114,7 +114,7 @@ export function HowAmIDoing({ data }: { data: GrowthReport | null | undefined })
       <section className="card p-4">
         <p className="text-strong">{t("progp.empty_title")}</p>
         <p className="muted mt-0.5 text-body">{t("progp.empty_text")}</p>
-        <Link href={next?.href ?? "/learn"} prefetch={false} className="btn btn-primary mt-3 inline-flex px-4 py-2 text-body">
+        <Link href={next ? growthHref(next.href) : "/learn"} prefetch={false} className="btn btn-primary mt-3 inline-flex px-4 py-2 text-body">
           {t("common.start")}
         </Link>
       </section>
@@ -189,7 +189,7 @@ export function HowAmIDoing({ data }: { data: GrowthReport | null | undefined })
       {/* Önerilen adım hükmün hemen altında: "buradasın" ile "şunu yap"
           arasında bir ekran mesafesi olmamalı. */}
       {next ? (
-        <Link href={next.href} prefetch={false} className="pressable mt-4 flex items-center gap-3 rounded-panel p-3" style={{ background: "var(--brand-tint)" }}>
+        <Link href={growthHref(next.href)} prefetch={false} className="pressable mt-4 flex items-center gap-3 rounded-panel p-3" style={{ background: "var(--brand-tint)" }}>
           <span
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile glow-tint-sm"
             style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
@@ -324,4 +324,9 @@ function Spark({
       </svg>
     </figure>
   );
+}
+
+/** Gelişim'den açılan alıştırma Kapat'ta Gelişim'e dönsün (`immersion/skill/[id]` `from=growth`). */
+function growthHref(href: string): string {
+  return href.startsWith("/immersion/skill/") ? `${href}${href.includes("?") ? "&" : "?"}from=growth` : href;
 }
