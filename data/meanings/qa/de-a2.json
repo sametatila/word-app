@@ -1978,6 +1978,25 @@
    ],
    "reason": "'listless' nadir ve edebi bir kelime, 'bitkin' ile örtüşmüyor; ayrıca 'Since the flu I still feel' İngilizcede present perfect gerektiren bozuk bir yapı.",
    "applied": "2026-10-04"
+  },
+  {
+   "id": 964,
+   "de": "erst",
+   "severity": "orta",
+   "before": {
+    "tr": "ancak",
+    "en": "only"
+   },
+   "after": {
+    "tr": "ancak; önce",
+    "en": "only; first"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "İşlev sözcüğünün iki çekirdek anlamı var: zaman 'ancak' (erst um acht) ve sıra 'önce' (erst ... dann, Goethe A2 listesi ikisini de veriyor). Yalnız 'ancak' yazınca 'Erst schicke ich den Brief' diyen öğrenci kelimeyi yanlış kullandığını sandı (Samet, Claude'a bıraktı, 2026-10-07).",
+   "applied": "2026-10-07"
   }
  ]
 }

@@ -37,5 +37,6 @@
  { "conversation": "de-c1-datenschutz-c1", "de": "die Weitergabe", "en": "passing on" },
  { "conversation": "de-c1-hypothesen", "de": "sich unterziehen", "en": "to undergo" },
  { "conversation": "de-c1-peinlichkeiten", "de": "sich herausreden", "en": "to make excuses" },
- { "conversation": "de-c1-kulturschock-fein", "de": "die Direktheit", "en": "directness" }
+ { "conversation": "de-c1-kulturschock-fein", "de": "die Direktheit", "en": "directness" },
+ { "conversation": "de-a2-drei-jahre", "de": "erst", "en": "only" }
 ]
