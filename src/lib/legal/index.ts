@@ -207,9 +207,13 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * tablosunda satır "dil modeli"nden "konuşma tanıma ve dil modeli"ne geçti, gizlilik
  * §4 sağlayıcı cümlesine Cloudflare girdi, ses rızası sürüm 4 (bir kez yeniden
  * sorulur). Metin rızası değişmedi: metnin alıcıları aynı.
+ *
+ * 1.10.1 (2026-10-06) yama basamağı: izin vermeyen kullanıcıda konuşmalar artık
+ * senaryoyla ilerlemiyor, sohbet bölümü atlanıyor (çevrimdışı senaryolu sohbet
+ * kalktı, Samet). Veri, alıcı ve amaç aynı; yalnız izinsiz akışın anlatımı.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-10-05";
-export const LEGAL_VERSION = "1.10.0";
+export const LEGAL_EFFECTIVE_DATE = "2026-10-06";
+export const LEGAL_VERSION = "1.10.1";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -441,6 +445,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: izinsiz akışın anlatımı (senaryolu sohbet kalktı). Veri ve alıcı aynı. */
+    version: "1.10.1",
+    date: "2026-10-06",
+    changes: {
+      tr: [
+        "Yapay zekâya izin vermeyen kullanıcıda konuşmanın sohbet bölümü artık önceden yazılmış bir senaryoyla sürmüyor, atlanıyor; konuşma anlatım puanıyla sayılıyor. Toplanan veri ve alıcılar değişmedi.",
+      ],
+      en: [
+        "If you don't allow AI, the chat part of a conversation no longer runs from a written script; it is skipped and the conversation counts with your explanation score. The data collected and the recipients did not change.",
+      ],
+      de: [
+        "Wenn du KI nicht erlaubst, läuft der Chat-Teil eines Gesprächs nicht mehr nach einem geschriebenen Skript, er wird übersprungen und das Gespräch zählt mit deinem Ergebnis aus der Erklärung. Erhobene Daten und Empfänger haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* KÜÇÜK BASAMAK: ses alıcısı eklendi (Cloudflare Workers AI, konuşma tanıma). Ses rızası sürüm 4. */
     version: "1.10.0",
