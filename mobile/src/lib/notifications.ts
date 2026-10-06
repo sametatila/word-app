@@ -302,6 +302,53 @@ export async function setStreakAlert(on: boolean): Promise<boolean> {
   return true;
 }
 
+/* ------------------------------------------------------- bugün çalışıldı */
+
+/** Yarın verilen saatte (yerel). */
+function tomorrowAt(hhmm: string): number {
+  const [h, m] = hhmm.split(":").map((n) => parseInt(n, 10));
+  const d = new Date();
+  d.setDate(d.getDate() + 1);
+  d.setHours(h, m, 0, 0);
+  return d.getTime();
+}
+
+let lastSync = "";
+
+/**
+ * "SERİYİ YAPTIM AMA HATIRLATMA GELDİ" (Samet, 2026-10-06).
+ *
+ * Uzak bildirimi olmayan cihazda günlük ve seri hatırlatması burada her gün aynı
+ * saatte tekrarlayan bir tetikleyici; o gün çalışılıp çalışılmadığını bilmiyordu.
+ * Sunucu yolu (`lib/push`) baştan beri "bugün çalıştıysa gönderme" diyor, yerel
+ * yedek demiyordu. Artık hesap özeti (`/api/me` `lastActiveDay`) her geldiğinde:
+ * bugün çalışıldıysa iki tetikleyicinin ilki YARINA kurulur, çalışılmadıysa
+ * olağan saatine. Uygulama hiç açılmayan günde hatırlatma yine çalar (doğru:
+ * o gün çalışılmadı). Haftalık sınav çağrısı bundan bağımsız.
+ */
+export async function syncLocalReminders(activeToday: boolean): Promise<void> {
+  if (hasPushDevice()) return;
+  const key = `${new Date().toDateString()}:${activeToday}`;
+  if (key === lastSync) return;
+  lastSync = key;
+  try {
+    const [daily, streak] = await Promise.all([getReminder(), getStreakAlert()]);
+    if (daily) {
+      await notifee.cancelTriggerNotification(ID_DAILY);
+      await schedule(ID_DAILY, t("notif.daily_body"), activeToday ? tomorrowAt(daily) : nextDaily(daily), RepeatFrequency.DAILY);
+    }
+    if (streak) {
+      await notifee.cancelTriggerNotification(ID_STREAK);
+      await schedule(ID_STREAK, t("notif.streak_body"), activeToday ? tomorrowAt(STREAK_TIME) : nextDaily(STREAK_TIME), RepeatFrequency.DAILY);
+    }
+  } catch {
+    lastSync = ""; // izin geri alınmış ya da notifee hata verdi: bir sonraki özette yeniden denenir
+  }
+}
+
+/** Yalnız testler: tekrar önleyiciyi sıfırla. */
+export function __resetReminderSync(): void { lastSync = ""; }
+
 /* ----------------------------------------------------------------- weekly */
 
 export async function getWeeklyReminder(): Promise<boolean> {

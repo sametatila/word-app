@@ -72,6 +72,10 @@ export async function GET() {
         // sunucuda "tr" diye uydurulmuyor.
         nativeLang: profile.nativeLang,
         streak: profile.currentStreak,
+        /* SON ÇALIŞILAN GÜN (istemcinin yerel günü, `award`). Mobil, uzak bildirimi
+           olmayan cihazda kurduğu yedek hatırlatmayı buna bakıp o gün çalışıldıysa
+           yarına kaydırıyor: "seri yapıldı ama hatırlatma geldi" (Samet, 2026-10-06). */
+        lastActiveDay: profile.lastActiveDay,
         longestStreak: profile.longestStreak,
         xp: profile.totalXp,
         dailyGoal: profile.dailyGoal,

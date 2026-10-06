@@ -9,6 +9,7 @@ import { bumpStats, useStatsBump } from "./statsSignal";
 import { updateProfile } from "./updateProfile";
 import { loadVoicePref } from "./tts";
 import { todayStr } from "../game/session";
+import { syncLocalReminders } from "./notifications";
 
 /** /api/me özeti — ana ekran ve profilin gösterdiği gerçek sayılar. */
 export type Me = {
@@ -20,6 +21,8 @@ export type Me = {
   /** Hesabın avatarı; null = hiç seçilmemiş (arma çiziliyor). */
   avatar?: AvatarConfig | null;
   streak: number;
+  /** Son çalışılan gün (YYYY-MM-DD, yerel); yerel hatırlatmanın "bugün yapıldı" ayarı buna bakıyor. */
+  lastActiveDay?: string | null;
   longestStreak: number;
   xp: number;
   dailyGoal: number;
@@ -147,6 +150,8 @@ export function useMe(): { me: Me | null; loading: boolean } {
         /* Avatar da hesabın: başka bir cihazda ya da web'de değiştirildiyse
            burada da o görünsün (bkz. lib/avatar `syncAvatarWithServer`). */
         void syncAvatarWithServer(d.avatar);
+        /* Bugün çalışıldıysa cihazdaki yedek hatırlatma bugün çalmasın (lib/notifications). */
+        if (d.lastActiveDay !== undefined) void syncLocalReminders(d.lastActiveDay === todayStr());
         setMe(d);
       })
       .catch(async () => {
