@@ -305,7 +305,9 @@ function GameRound() {
       if (!pending.length) return;
       submittedRef.current = true;
       const secs = Math.round((Date.now() - startedRef.current) / 1000);
-      void submitAnswers(pending, dayRef.current, secs, progressRef.current()).catch(() => { /* sessizce düşer */ });
+      /* Gönderim bitince sayılar tazeleniyor (Öğren, Gelişim, günlük görev): odak tazelemesi
+         gönderimden ÖNCE koşup eski sayıları gösteriyordu (2026-10-06). */
+      void submitAnswers(pending, dayRef.current, secs, progressRef.current()).then(() => bumpStats()).catch(() => { /* sessizce düşer */ });
     };
   }, []);
 

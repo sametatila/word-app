@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
+import { useStatsBump } from "../lib/statsSignal";
 import { View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatPercent } from "../lib/i18n";
@@ -41,19 +42,25 @@ export function WeakSpots() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [report, setReport] = useState<ErrorReport | null | undefined>(undefined);
 
-  useEffect(() => {
-    let alive = true;
-    api<Partial<ErrorReport>>("/api/errors")
-      .then((d) => {
-        if (!alive) return;
-        /* Gövde doğrulanıyor: 200 dönen ama biçimi tutmayan bir cevapta
-           `types.length` patlıyor ve kart değil bütün ekran iniyordu.
-           Web aynı denetimi yapıyor. */
-        setReport(Array.isArray(d?.types) && Array.isArray(d?.weakRules) ? (d as ErrorReport) : null);
-      })
-      .catch(() => { if (alive) setReport(null); });
-    return () => { alive = false; };
-  }, []);
+  /* Odakta ve sayılar değişince tazeleniyor (Gelişim ile aynı gerekçe, 2026-10-06):
+     zayıf noktadan açılan alıştırma bitince kart eski kalıyordu. */
+  const bump = useStatsBump();
+  useFocusEffect(
+    useCallback(() => {
+      if (bump < 0) return;
+      let alive = true;
+      api<Partial<ErrorReport>>("/api/errors")
+        .then((d) => {
+          if (!alive) return;
+          /* Gövde doğrulanıyor: 200 dönen ama biçimi tutmayan bir cevapta
+             `types.length` patlıyor ve kart değil bütün ekran iniyordu.
+             Web aynı denetimi yapıyor. */
+          setReport(Array.isArray(d?.types) && Array.isArray(d?.weakRules) ? (d as ErrorReport) : null);
+        })
+        .catch(() => { if (alive) setReport((prev) => prev ?? null); });
+      return () => { alive = false; };
+    }, [bump]),
+  );
 
   if (report === undefined) {
     return (

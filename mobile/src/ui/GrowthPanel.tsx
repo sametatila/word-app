@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
+import { useStatsBump } from "../lib/statsSignal";
+import { flushPendingItems } from "../game/pathProgress";
 import { DECAY_DAYS } from "../lib/learningRules";
 import { View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { routeFromHref } from "../lib/pushRoute";
@@ -50,20 +52,32 @@ export type Growth = {
   milestones: { at: string; text: string }[];
 };
 
+/**
+ * GELİŞİM ODAKTA VE SAYILAR DEĞİŞİNCE TAZELENİYOR (2026-10-06, Samet'in bildirimi:
+ * "Sıradaki"den açtığı telaffuz alıştırmasını bitirip döndü, öneri değişmedi). Rapor
+ * yalnız ekran kurulurken çekiliyordu; alıştırma ekranı `goBack()` ile kurulu
+ * Gelişim'e dönüyor ve eski öneri kalıyordu (web her açılışta ve `lernomi:stats`te
+ * çekiyor). Önce çevrimdışı bekleyen sonuçlar gidiyor. Tazelemede eski rapor ekranda
+ * kalıyor; hata eski raporu silmiyor.
+ */
 export function useGrowth(): Growth | null | undefined {
   const [data, setData] = useState<Growth | null | undefined>(undefined);
-  useEffect(() => {
-    let alive = true;
-    api<Partial<Growth>>(`/api/growth?day=${todayStr()}`)
-      .then((g) => {
+  const bump = useStatsBump();
+  useFocusEffect(
+    useCallback(() => {
+      if (bump < 0) return;
+      let alive = true;
+      void (async () => {
+        await flushPendingItems().catch(() => {});
+        const g = await api<Partial<Growth>>(`/api/growth?day=${todayStr()}`);
         if (!alive) return;
         /* Gövde doğrulanıyor: 200 dönen ama biçimi tutmayan bir cevapta
            `proficiency.map` patlıyor ve kart değil bütün ekran iniyor. */
         setData(Array.isArray(g?.proficiency) ? (g as Growth) : null);
-      })
-      .catch(() => { if (alive) setData(null); });
-    return () => { alive = false; };
-  }, []);
+      })().catch(() => { if (alive) setData((prev) => prev ?? null); });
+      return () => { alive = false; };
+    }, [bump]),
+  );
   return data;
 }
 
