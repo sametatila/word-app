@@ -43,6 +43,12 @@ type Sample = {
    * (ayrıştırıcının son kilidinden ÖNCE ölçülüyor; kilit onu zaten siler).
    */
   noLengthTip?: boolean;
+  /**
+   * Düzeltilmiş metin bu kalıba uymalı. Başa zarf + özne + fiil yazana ("Heute ich gehe") doğru
+   * düzeltme TERSİNE ÇEVİRMEK (Heute gehe ich); zarfı sona atmak anlamı değiştiriyor (Samet,
+   * 2026-10-07: "Erst ich schicke…" → "…den Brief erst zu" düzeltmesi "önce"yi "ancak"a çevirdi).
+   */
+  expectCorrected?: RegExp;
 };
 
 const S = (
@@ -69,7 +75,9 @@ export const SAMPLES: Sample[] = [
   // ── A1 cümle ─────────────────────────────────────────────────────
   S("a1-s-ok", "sentence", "A1", "Çevir: Ben kahve içiyorum.", "Ich trinke Kaffee.", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { target: "Ich trinke Kaffee." }),
   S("a1-s-conj", "sentence", "A1", "Çevir: O (kadın) Berlin'de yaşıyor.", "Sie wohne in Berlin.", { task: 3, grammar: 2, vocab: 4, structure: 4 }, ["conjugation"], { target: "Sie wohnt in Berlin." }, ["wohne"]),
-  S("a1-s-verbpos", "sentence", "A1", "Çevir: Bugün sinemaya gidiyorum.", "Heute ich gehe ins Kino.", { task: 3, grammar: 2, vocab: 4, structure: 1 }, ["verb_position"], { target: "Heute gehe ich ins Kino." }, ["ich gehe"]),
+  { ...S("a1-s-verbpos", "sentence", "A1", "Çevir: Bugün sinemaya gidiyorum.", "Heute ich gehe ins Kino.", { task: 3, grammar: 2, vocab: 4, structure: 1 }, ["verb_position"], { target: "Heute gehe ich ins Kino." }, ["ich gehe"]), expectCorrected: /^Heute gehe ich/i },
+  /* Cihazda görüldü (2026-10-07, Cümle Kur, kelime "erst"): öğrenci "erst"i "önce" anlamında başa koymuş. */
+  { ...S("a2-s-erst-v2", "sentence", "A2", "'erst' kelimesini kullanarak bir cümle kur.", "Erst ich schicke der Brief zu Herr Devald", { task: 4, grammar: 1, vocab: 4, structure: 2 }, ["verb_position", "case"], {}, ["ich schicke", "der Brief"]), expectCorrected: /^Erst schicke ich\b/i },
   S("a1-s-article", "sentence", "A1", "'Tisch' kelimesiyle bir cümle kur.", "Die Tisch ist groß.", { task: 3, grammar: 2, vocab: 3, structure: 4 }, ["article"], {}, ["Die"]),
   S("a1-s-meaning", "sentence", "A1", "Çevir: Ben yorgunum.", "Ich bin hungrig.", { task: 0, grammar: 4, vocab: 1, structure: 4 }, ["meaning"], { target: "Ich bin müde." }, ["hungrig"]),
   // ── A2 ───────────────────────────────────────────────────────────
@@ -134,7 +142,7 @@ async function main() {
   const samples = only ? SAMPLES.filter((s) => s.id === only) : SAMPLES;
   console.log(`Sağlayıcı zinciri: ${providers.map((p) => `${p.name}/${p.model}`).join(" → ")}\n`);
 
-  let within = 0, subscores = 0, errorsHit = 0, errorsExpected = 0, spansOk = 0, spansExpected = 0, parsed = 0, extraErrorsOnClean = 0, lengthClean = 0, lengthExpected = 0;
+  let within = 0, subscores = 0, errorsHit = 0, errorsExpected = 0, spansOk = 0, spansExpected = 0, parsed = 0, extraErrorsOnClean = 0, lengthClean = 0, lengthExpected = 0, correctedOk = 0, correctedExpected = 0;
   for (const s of samples) {
     const started = Date.now();
     let raw = "";
@@ -172,6 +180,11 @@ async function main() {
     );
     if (a.errors.length) for (const e of a.errors) console.log(`     · ${e.type}: "${e.wrong}" → "${e.fix}" — ${e.why_tr}`);
     console.log(`     övgü: ${a.praise_tr}\n     ipucu: ${a.next_tip_tr}`);
+    if (s.expectCorrected) {
+      correctedExpected++;
+      if (s.expectCorrected.test(a.corrected.trim())) correctedOk++;
+      else console.log(`     ✗ düzeltme anlamı/yapıyı korumuyor: ${a.corrected}`);
+    }
     if (s.noLengthTip) {
       lengthExpected++;
       const hamIpucu = parseAssessment(raw, s.req.answer.text, s.req.kind)?.next_tip_tr ?? "";
@@ -181,7 +194,7 @@ async function main() {
     if (showJson) console.log(raw);
   }
   const n = samples.length;
-  console.log(`\nÖzet: ${parsed}/${n} ayrıştı · ${within}/${parsed} örnekte dört alt puan ±1 içinde · alt puan isabeti ${subscores}/${parsed * 4} · beklenen hata tipi ${errorsHit}/${errorsExpected} · span ${spansOk}/${spansExpected} · temiz cevaba hata yazma ${extraErrorsOnClean} · hedef tutunca uzunluk tavsiyesi yok ${lengthClean}/${lengthExpected}`);
+  console.log(`\nÖzet: ${parsed}/${n} ayrıştı · ${within}/${parsed} örnekte dört alt puan ±1 içinde · alt puan isabeti ${subscores}/${parsed * 4} · beklenen hata tipi ${errorsHit}/${errorsExpected} · span ${spansOk}/${spansExpected} · temiz cevaba hata yazma ${extraErrorsOnClean} · hedef tutunca uzunluk tavsiyesi yok ${lengthClean}/${lengthExpected} · düzeltme yapıyı koruyor ${correctedOk}/${correctedExpected}`);
   console.log("Kabul (WP-03): ±1 içinde ≥ 16/20, hata tipi ≥ %75, span ≥ %75, temiz cevaba hata ≤ 2; uzunluk tavsiyesi hepsinde yok.");
 }
 

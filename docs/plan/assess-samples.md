@@ -22,6 +22,14 @@ Gemma 4 26B (Cloudflare): 24/27 örnek ±1 içinde · hata tipi 16/19 · temiz c
 **Kabul ölçütleri sağlandı** (±1 %89, hata tipi %84). Yedek gpt-oss-120b (Groq) 2026-08-25'te
 26/26 ±1, hata tipi 19/21, span 14/14, temiz cevaba hata 0 ile geçmişti.
 
+## 2026-10-07: başa konan öğe başta kalır (28 örnek, Gemma 4 26B)
+Cihazda Cümle Kur: "Erst ich schicke der Brief zu Herr Devald" → model "Ich schicke Herrn Devald den Brief erst zu"
+diye düzeltti; öğrencinin "önce"si "ancak"a döndü. İsteme kural: başa konan öğe başta kalır, fiil ikinci sıraya
+gelir ("Erst schicke ich"), ve bu hata `verb_position`. Yeni alan `expectCorrected`, yeni örnek `a2-s-erst-v2`.
+Önce/sonra aynı set: ±1 25/28 ↔ 25/28 · hata tipi 18/21 ↔ 18/21 · span 19/19 ↔ 19/19 · temiz cevaba hata 0 ↔ 0 ·
+düzeltme yapıyı koruyor **1/2 → 2/2**; yalnız `a2-s-erst-v2` beş koşuda: eski istem 3'te 1 doğru, yeni 5'te 5
+("Erst schicke ich", tür `verb_position`).
+
 ## Gözlemler
 - Model insan puanından sistematik olarak **+1 cömert** (özellikle `task` ve `grammar`), hiç ±1
   dışına çıkmadı. Ham puanı eşiğe çevirirken bu pay hesaba katılır.
