@@ -686,7 +686,10 @@ function ArtikelRound({ word, onDone, colors }: { word: RoundWord; onDone: Done;
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "article", picked))} colors={colors} /> : undefined}>
-      <Prompt label={tx("rounds.which_article")} big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
+      {/* HOPARLÖR YOK (2026-10-06, Samet): "der Tisch" okuyan hoparlör cevabı söylüyordu ve ipucu
+          sayılmıyordu; 2026-08-31'de her tura toplu hoparlör eklenirken girmişti. Web gibi: kelime
+          cevaptan SONRA doğru artikeliyle okunuyor (`markAnswer`). */}
+      <Prompt label={tx("rounds.which_article")} big={word.de} sub={meaningLine(word)} colors={colors} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
           const st = picked ? (a === word.artikel ? "correct" : a === picked ? "wrong" : "idle") : "idle";
