@@ -13,6 +13,7 @@ import { absolute, alertLinks } from "@/lib/admin-links";
 import { SITE_URL } from "@/lib/site";
 import { responseQueues } from "@/lib/response-queue";
 import { RESPONSE_SLA } from "@/lib/response-sla";
+import { claudeQueue } from "@/lib/claude-tasks";
 
 /**
  * UYARI MOTORU — panelin "bakınca konuşan" hâlini "kendisi haber veren" hâle
@@ -397,6 +398,18 @@ export async function collectAlerts(): Promise<Alert[]> {
         if (q.soon > 0) {
           alerts.push({ key: `sla-soon:${q.queue}`, level: "uyari", text: `${def.label}: ${q.soon} işin geri dönüş süresi (${def.target}) dolmak üzere.` });
         }
+      }
+    }),
+    guard("claude", async () => {
+      /*
+        CLAUDE'A BIRAKILAN İŞLER (`lib/claude-tasks`). Claude kendiliğinden
+        başlamıyor (Samet "bıraktığım işleri yap" der); süre ise işlemeye devam
+        ediyor. Son tarihe 24 saatten az kalan bekleyen iş varsa hatırlat.
+      */
+      const due = (await claudeQueue("waiting")).filter((t) => t.due != null && t.due - Date.now() < 24 * 3_600_000);
+      if (due.length) {
+        const first = Math.round((Math.min(...due.map((t) => t.due!)) - Date.now()) / 3_600_000);
+        alerts.push({ key: "claude:due", level: "uyari", text: `Claude'a bırakılan ${due.length} işin geri dönüş süresine 24 saatten az kaldı (${first >= 0 ? `en yakını ~${first} sa sonra` : `en eskisi ${-first} sa gecikti`}). Claude oturumunda "bıraktığım işleri yap" de.` });
       }
     }),
     guard("feedback", async () => {

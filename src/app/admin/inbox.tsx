@@ -138,24 +138,71 @@ function summary(i: InboxItem): { kind: string; title: string; meta: string } {
 
 /* ---------- ayrıntı ---------- */
 
-type Send = (body: Record<string, unknown>, done: string) => Promise<void>;
+/** `keep`: iş kuyrukta kalır (Claude'a bırak / geri al), yalnız sayfa tazelenir. */
+type Send = (body: Record<string, unknown>, done: string, keep?: boolean) => Promise<void>;
+
+type ClaudeRef = { queue: "content_feedback" | "ai_report" | "user_report"; ref: string | number };
+
+/**
+ * CLAUDE'A BIRAK (2026-10-06, `lib/claude-tasks`): bildirim kapanmaz, beklemeye
+ * alınır; yanıt süresi işlemeye devam eder. Not alanı Claude'a talimat olur.
+ * Claude bitirince iş "Claude bitirdi" diye kuyruğun başına gelir; kapatmak ve
+ * kullanıcıya giden sonuç yine buradaki kararla.
+ */
+function ClaudeBox({ item, target, busy, send }: { item: InboxItem; target: ClaudeRef; busy: boolean; send: Send }) {
+  const c = item.claude;
+  const assign = (label: string) => (
+    <button type="button" disabled={busy} onClick={() => void send({ action: "claude_assign", ...target }, "Claude'a bırakıldı: bildirim açık, süre işliyor", true)} className={BTN.secondary}>{label}</button>
+  );
+  const cancel = <button type="button" disabled={busy} onClick={() => void send({ action: "claude_cancel", ...target }, "Claude'dan geri alındı", true)} className={BTN.small}>Geri al</button>;
+  if (!c) {
+    return (
+      <div className="space-y-1.5">
+        <div className="flex flex-wrap items-center gap-2">{assign("Claude'a bırak")}</div>
+        <p className="muted text-caption">Not alanına Claude&apos;un ne yapmasını istediğini yaz. Bildirim kapanmaz, beklemeye alınır; yanıt süresi işlemeye devam eder.</p>
+      </div>
+    );
+  }
+  if (c.status === "waiting") {
+    return (
+      <Notice tone="info" title={`Claude'da · bırakıldı ${when(c.at)}`}>
+        <div className="space-y-2">
+          {c.note ? <Quote>{c.note}</Quote> : <p className="muted text-caption">Not yok.</p>}
+          <p className="muted text-caption">Samet &quot;bıraktığım işleri yap&quot; dediğinde Claude en yakın son tarihten başlar. Süre işliyor; son tarihe 24 saat kala uyarı gelir.</p>
+          <div className="flex flex-wrap items-center gap-2">{cancel}</div>
+        </div>
+      </Notice>
+    );
+  }
+  return (
+    <Notice tone="ok" title={`Claude bitirdi, kontrol et · ${c.doneAt ? when(c.doneAt) : ""}`}>
+      <div className="space-y-2">
+        {c.result ? <Quote>{c.result}</Quote> : null}
+        {c.note ? <p className="muted text-caption">Senin notun: {c.note}</p> : null}
+        <p className="muted text-caption">Doğruysa aşağıdan kapat (bildirene sonuç gider). Eksikse nota ne kaldığını yazıp yeniden bırak.</p>
+        <div className="flex flex-wrap items-center gap-2">{assign("Yeniden bırak")}{cancel}</div>
+      </div>
+    </Notice>
+  );
+}
 
 /** Karar satırı: not + düğmeler. Not alanı işe özel (başka işe geçince boşalır). */
-function Decide({ busy, disabled, children, note, onNote }: { busy: boolean; disabled?: boolean; children: React.ReactNode; note: string; onNote: (v: string) => void }) {
+function Decide({ busy, disabled, children, note, onNote, claude }: { busy: boolean; disabled?: boolean; children: React.ReactNode; note: string; onNote: (v: string) => void; claude?: React.ReactNode }) {
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <input
         id="inbox-note"
         value={note}
         onChange={(e) => onNote(e.target.value)}
         maxLength={500}
         disabled={busy || disabled}
-        placeholder="Not (isteğe bağlı): ne yapıldı"
+        placeholder="Not (isteğe bağlı): ne yapıldı ya da Claude ne yapsın"
         aria-label="Karar notu"
         className={FIELD}
         style={FIELD_STYLE}
       />
       <div className="flex flex-wrap items-center gap-2">{children}</div>
+      {claude}
     </div>
   );
 }
@@ -257,7 +304,7 @@ function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; re
           {r.detail ? <Section title="Açıklama"><Quote>{r.detail}</Quote></Section> : null}
           <Section title="Karar">
             {ready ? (
-              <Decide busy={busy} note={note} onNote={onNote}>
+              <Decide busy={busy} note={note} onNote={onNote} claude={<ClaudeBox item={item} target={{ queue: "user_report", ref: r.id }} busy={busy} send={send} />}>
                 <>
                     <button type="button" disabled={busy} onClick={() => void send({ target: "user_report", refId: r.id, action: "resolved" }, "Şikâyet kapandı: gereği yapıldı")} className={BTN.primary}>Gereği yapıldı</button>
                     <button type="button" disabled={busy} onClick={() => void send({ target: "user_report", refId: r.id, action: "dismissed" }, "Şikâyet kapandı: asılsız")} className={BTN.secondary}>Asılsız</button>
@@ -283,7 +330,7 @@ function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; re
           {r.detail ? <Section title="Açıklama"><Quote>{r.detail}</Quote></Section> : null}
           {r.content ? <Section title="Yapay zekâ çıktısı"><Quote>{r.content}</Quote></Section> : null}
           <Section title="Karar">
-            <Decide busy={busy} note={note} onNote={onNote}>
+            <Decide busy={busy} note={note} onNote={onNote} claude={<ClaudeBox item={item} target={{ queue: "ai_report", ref: r.id }} busy={busy} send={send} />}>
               <>
                   <button type="button" disabled={busy} onClick={() => void send({ target: "content_report", refId: r.id, action: "resolved" }, "Bildirim kapandı: gereği yapıldı")} className={BTN.primary}>Gereği yapıldı</button>
                   <button type="button" disabled={busy} onClick={() => void send({ target: "content_report", refId: r.id, action: "dismissed" }, "Bildirim kapandı: asılsız")} className={BTN.secondary}>Asılsız</button>
@@ -325,7 +372,7 @@ function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; re
           <KeyValue data={info} />
           {hint ? <p className="muted text-caption">Düzeltme yeri: {hint}</p> : null}
           <Section title="Karar">
-            <Decide busy={busy} note={note} onNote={onNote}>
+            <Decide busy={busy} note={note} onNote={onNote} claude={<ClaudeBox item={item} target={{ queue: "content_feedback", ref: g.key }} busy={busy} send={send} />}>
               <>
                   <button type="button" disabled={busy} onClick={() => void send({ action: "close_group", decision: "resolved", group: g.key }, "Grup kapandı: gereği yapıldı")} className={BTN.primary}>Gereği yapıldı</button>
                   <button type="button" disabled={busy} onClick={() => void send({ action: "close_group", decision: "dismissed", group: g.key }, "Grup kapandı: asılsız")} className={BTN.secondary}>Asılsız</button>
@@ -408,7 +455,7 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
     return () => window.removeEventListener("keydown", onKey);
   });
 
-  const send: Send = async (body, done) => {
+  const send: Send = async (body, done, keep = false) => {
     if (!current) return;
     const id = current.id;
     setBusy(true);
@@ -423,6 +470,12 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
       if (!res.ok) {
         const code = String(j.error ?? res.status);
         setFlash({ tone: "bad", text: ERROR_TR[code] ?? adminErrorText(code) });
+        return;
+      }
+      if (keep) {
+        setNotes((n) => ({ ...n, [id]: "" }));
+        setFlash({ tone: "ok", text: `${done}.` });
+        router.refresh();
         return;
       }
       /* Sıradaki iş seçilsin: kapanan kartın yerindeki. */
@@ -500,7 +553,10 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
                   >
                     <Ring item={i} now={now} />
                     <span className="min-w-0">
-                      <span className="muted block truncate text-micro">{s.kind}</span>
+                      <span className="flex items-center gap-1.5">
+                        <span className="muted truncate text-micro">{s.kind}</span>
+                        {i.claude ? <Badge tone={i.claude.status === "done" ? "ok" : "info"}>{i.claude.status === "done" ? "Claude bitirdi" : "Claude'da"}</Badge> : null}
+                      </span>
                       <span className="line-clamp-2 break-words text-caption" style={{ color: "var(--text)" }}>{s.title}</span>
                       {s.meta ? <span className="faint mt-0.5 block truncate text-micro">{s.meta}</span> : null}
                     </span>

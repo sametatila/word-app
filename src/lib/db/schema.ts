@@ -688,6 +688,37 @@ export const moderationActions = pgTable(
 );
 
 /**
+ * CLAUDE'A BIRAKILAN İŞLER (2026-10-06, Samet). Panelde bir bildirim (içerik grubu,
+ * yapay zekâ bildirimi, kullanıcı şikâyeti) "Claude'a bırak" ile buraya düşer;
+ * bildirim KAPANMAZ, yanıt süresi işlemeye devam eder. Claude işi yapınca durumu
+ * `done` yapar ve ne yaptığını `result`a yazar (`npm run claude:tasks`); kapatma ve
+ * bildirene giden sonuç Samet'in kararıyla. Bildirim kapanınca görev `closed`.
+ * Kullanıcıya bağlı değil (kimlik yok), silme ve misafir birleştirmesi dokunmuyor.
+ */
+export const claudeTasks = pgTable(
+  "claude_tasks",
+  {
+    id: serial("id").primaryKey(),
+    /** content_feedback · ai_report · user_report */
+    queue: text("queue").notNull(),
+    /** content_feedback: grup anahtarı · ai_report/user_report: bildirim kimliği */
+    ref: text("ref").notNull(),
+    /** waiting (Claude'da) · done (Claude bitirdi, kontrol bekliyor) · closed (bildirim kapandı) · cancelled (geri alındı) */
+    status: text("status").notNull().default("waiting"),
+    /** Samet'in talimatı. */
+    note: text("note"),
+    /** Claude'un notu: ne yaptı, commit'ler. */
+    result: text("result"),
+    /** Bırakan admin e-postası. */
+    assignedBy: text("assigned_by"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    doneAt: timestamp("done_at", { withTimezone: true }),
+  },
+  (t) => [uniqueIndex("claude_tasks_item_uq").on(t.queue, t.ref), index("claude_tasks_status_idx").on(t.status, t.createdAt)],
+);
+
+/**
  * İstemci sürümü — platform başına son görülen uygulama sürümü ve build.
  * Mobil her istekte `x-lernomi-client` başlığı gönderiyor, `/api/me` yazıyor
  * (`lib/app-control`). Zorunlu güncellemenin kime etki edeceği buradan okunur.

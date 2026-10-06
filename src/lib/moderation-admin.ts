@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 import { csvCell } from "@/lib/csv";
 import { notify } from "@/lib/social/notify";
 import { disableItem } from "@/lib/content/publish";
+import { closeClaudeTask } from "@/lib/claude-tasks";
 
 /**
  * Şikâyet kuyruğu — yönetim panelinin moderasyon sayfası (/admin/moderation).
@@ -203,6 +204,8 @@ export async function closeReport(
       returning id`);
     first = ins.length > 0;
   }
+  /* Claude'a bırakılmışsa görev de kapanıyor (bildirim kapandı). */
+  await closeClaudeTask(target === "user_report" ? "user_report" : "ai_report", String(refId));
   let reporter: string | null = null;
   if (target === "content_report") {
     const upd = await rows(sql`update content_reports set status = 'closed' where id = ${refId} and status <> 'closed' returning user_id`);
@@ -682,6 +685,7 @@ export async function closeContentGroup(
     const uid = str(r.user_id);
     if (first && uid && !firstByUser.has(uid)) firstByUser.set(uid, id);
   }
+  await closeClaudeTask("content_feedback", key);
   let notified = 0;
   for (const [uid, refId] of firstByUser) {
     try {

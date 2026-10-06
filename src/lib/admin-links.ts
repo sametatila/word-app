@@ -67,6 +67,8 @@ export function alertLinks(key: string): AlertLinks {
       return { panel: { path: "/admin/revenue", label: "Gelir › Gelir ve huniler" } };
     case "reports":
       return { panel: { path: "/admin/moderation", label: "Bugün › Şikâyetler" } };
+    case "claude":
+      return { panel: { path: "/admin", label: "Bugün › Gelen işler" } };
     case "sla-late":
     case "sla-soon": {
       if (tail === "content_feedback") return { panel: { path: "/admin/moderation/content", label: "Bugün › İçerik geri bildirimi" } };

@@ -3,6 +3,9 @@ import type { ContentGroupRow, ContentReportRow, UserReportRow } from "@/lib/mod
 import type { StoreReview } from "@/lib/store-reviews";
 import { slaState, type QueueId, type SlaLevel } from "@/lib/response-sla";
 
+/** Claude'a bırakılmış işin görünümü (`lib/claude-tasks`); istemcide de kullanılıyor. */
+export type InboxClaude = { status: "waiting" | "done"; note: string | null; result: string | null; at: string; doneAt: string | null };
+
 /**
  * GELEN İŞLER — panelin açılış kuyruğunun istemciyle PAYLAŞILAN kısmı (tipler,
  * sıralama, kategori). Veri `admin-inbox.ts`te (server-only).
@@ -24,6 +27,8 @@ type Base = {
   due: number | null;
   /** İşin başladığı an (süre halkası için); uyarıda yok. */
   created: string | null;
+  /** Claude'a bırakıldıysa (içerik, yapay zekâ bildirimi, şikâyet). */
+  claude?: InboxClaude | null;
 };
 
 export type InboxItem =
@@ -48,7 +53,7 @@ export type Inbox = {
  * Telegram için ayrıca üretiyor ("3 şikâyetin süresi doluyor", "yeni 1★
  * yorum"); kuyrukta ikinci kez görünmeleri aynı işi iki satır yapardı.
  */
-export const QUEUE_ALERT_FAMILIES = new Set(["reports", "sla-late", "sla-soon", "err-review", "err-reportnew", "err-reporthot"]);
+export const QUEUE_ALERT_FAMILIES = new Set(["reports", "sla-late", "sla-soon", "err-review", "err-reportnew", "err-reporthot", "claude"]);
 
 /**
  * Aciliyet: kritik uyarı → süresi geçen → süresi yaklaşan → uyarı → süresi olan.

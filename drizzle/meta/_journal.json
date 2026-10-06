@@ -575,6 +575,13 @@
       "when": 1791500000000,
       "tag": "0081_chat_waived",
       "breakpoints": true
+    },
+    {
+      "idx": 82,
+      "version": "7",
+      "when": 1791510000000,
+      "tag": "0082_claude_tasks",
+      "breakpoints": true
     }
   ]
 }

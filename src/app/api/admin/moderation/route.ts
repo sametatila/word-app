@@ -10,6 +10,7 @@ import {
   type ModerationDecision,
   type ModerationTarget,
 } from "@/lib/moderation-admin";
+import { assignToClaude, cancelClaudeTask, isClaudeQueue } from "@/lib/claude-tasks";
 
 export const dynamic = "force-dynamic";
 
@@ -49,7 +50,7 @@ export async function POST(req: Request) {
   }
   const res = await handle(req, { ok: true, email });
   if (writer && res.status < 400) {
-    const target = [peek.userId, peek.refId, peek.group, peek.doc, peek.id, peek.code].find((v) => typeof v === "string" || typeof v === "number");
+    const target = [peek.userId, peek.refId, peek.group, peek.ref, peek.doc, peek.id, peek.code].find((v) => typeof v === "string" || typeof v === "number");
     void logAdminAction(writer, `moderation.${action || "save"}`, target == null ? null : String(target), {
       ...(peek.locale ? { locale: peek.locale } : {}),
       ...(peek.days ? { days: peek.days } : {}),
@@ -83,6 +84,24 @@ async function handle(req: Request, gate: { ok: true; email: string }): Promise<
       return NextResponse.json({ ok: true });
     } catch (err) {
       console.error("[admin/moderation] reset_name", refId, err);
+      return NextResponse.json({ error: "failed" }, { status: 500 });
+    }
+  }
+
+  /* CLAUDE'A BIRAK / GERİ AL (2026-10-06): bildirim kapanmıyor, beklemeye alınıyor
+     (`lib/claude-tasks`). `ref`: içerikte grup anahtarı, şikâyetlerde bildirim kimliği. */
+  if (body.action === "claude_assign" || body.action === "claude_cancel") {
+    const queue = body.queue;
+    const ref = typeof body.ref === "string" || typeof body.ref === "number" ? String(body.ref) : "";
+    if (!isClaudeQueue(queue) || !ref || ref.length > 300 || (queue === "content_feedback" ? !isGroupKey(ref) : !/^\d+$/.test(ref))) {
+      return NextResponse.json({ error: "bad_input" }, { status: 400 });
+    }
+    try {
+      if (body.action === "claude_cancel") return NextResponse.json({ ok: await cancelClaudeTask(queue, ref) });
+      const task = await assignToClaude(queue, ref, note, gate.email);
+      return NextResponse.json({ ok: true, task });
+    } catch (err) {
+      console.error("[admin/moderation]", body.action, queue, ref, err);
       return NextResponse.json({ error: "failed" }, { status: 500 });
     }
   }
