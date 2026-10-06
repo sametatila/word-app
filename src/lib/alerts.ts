@@ -14,6 +14,7 @@ import { SITE_URL } from "@/lib/site";
 import { responseQueues } from "@/lib/response-queue";
 import { RESPONSE_SLA } from "@/lib/response-sla";
 import { claudeQueue } from "@/lib/claude-tasks";
+import { staleReleaseHolds } from "@/lib/release-holds";
 
 /**
  * UYARI MOTORU — panelin "bakınca konuşan" hâlini "kendisi haber veren" hâle
@@ -410,6 +411,13 @@ export async function collectAlerts(): Promise<Alert[]> {
       if (due.length) {
         const first = Math.round((Math.min(...due.map((t) => t.due!)) - Date.now()) / 3_600_000);
         alerts.push({ key: "claude:due", level: "uyari", text: `Claude'a bırakılan ${due.length} işin geri dönüş süresine 24 saatten az kaldı (${first >= 0 ? `en yakını ~${first} sa sonra` : `en eskisi ${-first} sa gecikti`}). Claude oturumunda "bıraktığım işleri yap" de.` });
+      }
+    }),
+    guard("releasehold", async () => {
+      /* SÜRÜM BEKLEYEN BİLDİRİM 30. gününde hâlâ güncellememiş bildireni varsa bir kez
+         (`lib/release-holds`): build gecikti mi, kalanları elle kapatmak mı gerek. */
+      for (const h of await staleReleaseHolds()) {
+        alerts.push({ key: `err-releasehold:${h.id}`, level: "uyari", text: `Build ${h.build}'de düzelecek denen bildirim 30 gündür bekliyor (${h.queue} ${h.ref.slice(0, 80)}): bazı bildirenler hâlâ güncellemedi. Build yayında mı bak; gerekirse Gelen işler'den elle kapat.` });
       }
     }),
     guard("feedback", async () => {

@@ -334,6 +334,7 @@ async function main() {
     check("aynı kademede süresi önce dolan üstte", order === "dbac", order);
     check("kuyrukta iş olan konunun uyarısı ikinci kez girmiyor", ["sla-late", "sla-soon", "reports", "err-review"].every((f) => QUEUE_ALERT_FAMILIES.has(f)) && !QUEUE_ALERT_FAMILIES.has("cron"));
     check("Claude'a bırakılan işin hatırlatması Telegram'a gidiyor, kuyrukta ikinci kez durmuyor, Gelen işler'e bağlı", QUEUE_ALERT_FAMILIES.has("claude") && alertLinks("claude:due").panel.path === "/admin");
+    check("sürüm bekleyen bildirimin 30. gün hatırlatması kuyrukta ikinci kez durmuyor, Gelen işler'e bağlı", QUEUE_ALERT_FAMILIES.has("err-releasehold") && alertLinks("err-releasehold:1").panel.path === "/admin");
     const created = new Date(Date.now() - 36 * 3_600_000).toISOString();
     const p = slaProgress("user_report", created, Date.now());
     check("süre halkası: 48 saatin 36'sı geçti → %75, yaklaşan", !!p && Math.abs(p.ratio - 0.75) < 0.01 && p.level === "soon", JSON.stringify(p));

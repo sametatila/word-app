@@ -91,6 +91,8 @@ const SKIP = [
   "lib/admin-coverage.ts",
   "lib/admin-user.ts",
   "lib/moderation-admin.ts",
+  // Sürüm beklemesinin karar notu ("build N ile düzeldi"): moderation-admin gibi yalnız panelde.
+  "lib/release-holds.ts",
   "lib/content-feedback-labels.ts",
   "lib/admin-app.ts",
   // Panonun haftalık karşılaştırma etiketleri: yalnız panelde görünüyor.

@@ -230,8 +230,9 @@ export async function closeReport(
       returning id`);
     first = ins.length > 0;
   }
-  /* Claude'a bırakılmışsa görev de kapanıyor (bildirim kapandı). */
+  /* Claude'a bırakılmışsa görev de, sürüm bekliyorsa bekleme de kapanıyor (bildirim kapandı). */
   await closeClaudeTask(target === "user_report" ? "user_report" : "ai_report", String(refId));
+  if (target === "content_report") await finishReleaseHold("ai_report", String(refId));
   let reporter: string | null = null;
   if (target === "content_report") {
     const upd = await rows(sql`update content_reports set status = 'closed' where id = ${refId} and status <> 'closed' returning user_id`);
@@ -698,8 +699,38 @@ export async function closeContentGroup(
   actor: string | null,
   note: string | null,
 ): Promise<{ closed: number; notified: number }> {
+  const open = await rows(sql`select r.id from content_reports r where ${GKEY} = ${key} and r.status = 'open' order by r.id`);
+  const out = await closeContentReportIds(open.map((r) => num(r.id)), action, actor, note);
+  await closeClaudeTask("content_feedback", key);
+  await finishReleaseHold("content_feedback", key);
+  return out;
+}
+
+/**
+ * Sürüm beklemesi bitti (bildirim kapandı). `lib/release-holds` buradan
+ * çağırmıyor, burası onu çağıramıyor (döngü): tek satırlık SQL burada.
+ */
+export async function finishReleaseHold(queue: "content_feedback" | "ai_report", ref: string): Promise<void> {
+  await db
+    .execute(sql`update release_holds set status = 'done', done_at = now(), updated_at = now() where queue = ${queue} and ref = ${ref} and status = 'waiting'`)
+    .catch((err) => console.error("[moderation] sürüm beklemesi kapatılamadı", queue, ref, err));
+}
+
+/**
+ * İçerik bildirimlerini (kimliğe göre) tek kararla kapatır; bildirene KİŞİ BAŞINA
+ * tek sonuç. Grup kapatma ve sürüm beklemesi (`lib/release-holds`: bildirenin
+ * uygulaması düzeltmeyi içeren build'e geçince) aynı yoldan geçiyor.
+ */
+export async function closeContentReportIds(
+  ids: number[],
+  action: ModerationDecision,
+  actor: string | null,
+  note: string | null,
+): Promise<{ closed: number; notified: number }> {
+  if (!ids.length) return { closed: 0, notified: 0 };
   const ready = await hasActionsTable();
-  const open = await rows(sql`select r.id, r.user_id from content_reports r where ${GKEY} = ${key} and r.status = 'open' order by r.id`);
+  const open = await rows(sql`select r.id, r.user_id from content_reports r
+    where r.id in (${sql.join(ids.map((id) => sql`${id}`), sql`, `)}) and r.status = 'open' order by r.id`);
   const firstByUser = new Map<string, number>();
   let closed = 0;
   for (const r of open) {
@@ -719,7 +750,6 @@ export async function closeContentGroup(
     const uid = str(r.user_id);
     if (first && uid && !firstByUser.has(uid)) firstByUser.set(uid, id);
   }
-  await closeClaudeTask("content_feedback", key);
   let notified = 0;
   for (const [uid, refId] of firstByUser) {
     try {

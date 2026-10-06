@@ -7,6 +7,7 @@ import { storeReviews } from "@/lib/store-reviews";
 import { slaState, type QueueId } from "@/lib/response-sla";
 import { QUEUE_ALERT_FAMILIES, rankOf, sortInbox, type Inbox, type InboxClaude, type InboxItem } from "@/lib/admin-inbox-shared";
 import { openClaudeTasks, taskKey, type ClaudeTask } from "@/lib/claude-tasks";
+import { openReleaseHolds, suggestedBuild, type HoldView } from "@/lib/release-holds";
 
 export type { Inbox, InboxItem } from "@/lib/admin-inbox-shared";
 
@@ -31,7 +32,7 @@ function sla(queue: QueueId, created: string, now: number) {
 export async function loadInbox(): Promise<Inbox> {
   const now = Date.now();
   const errors: string[] = [];
-  const [mod, groups, reviews, alerts, claude] = await Promise.all([
+  const [mod, groups, reviews, alerts, claude, holds, nextBuild] = await Promise.all([
     moderationData().catch((err) => {
       errors.push(`Şikâyetler okunamadı: ${(err as Error).message?.slice(0, 120)}`);
       return null;
@@ -52,7 +53,16 @@ export async function loadInbox(): Promise<Inbox> {
       errors.push(`Claude'a bırakılan işler okunamadı: ${(err as Error).message?.slice(0, 120)}`);
       return new Map<string, ClaudeTask>();
     }),
+    openReleaseHolds().catch((err) => {
+      errors.push(`Sürüm bekleyen işler okunamadı: ${(err as Error).message?.slice(0, 120)}`);
+      return new Map<string, HoldView>();
+    }),
+    suggestedBuild().catch(() => 0),
   ]);
+  /* Sürüm bekleyen iş en alta, süresi durmuş: düzeltme yapıldı, sonuç bildirenin
+     uygulaması güncellenince kendiliğinden gidiyor (`lib/release-holds`). */
+  const HELD_RANK = 90;
+  const holdOf = (queue: string, ref: string | number) => holds.get(`${queue}:${ref}`) ?? null;
   const claudeOf = (queue: string, ref: string | number): InboxClaude | null => {
     const t = claude.get(taskKey(queue, String(ref)));
     return t && (t.status === "waiting" || t.status === "done") ? { status: t.status, note: t.note, result: t.result, at: t.createdAt, doneAt: t.doneAt } : null;
@@ -68,11 +78,19 @@ export async function loadInbox(): Promise<Inbox> {
   }
   for (const r of mod?.contentReports ?? []) {
     const t = sla("ai_report", r.at, now);
-    if (t) { const c = claudeOf("ai_report", r.id); items.push({ kind: "ai_report", queue: "ai_report", report: r, id: `ai_report:${r.id}`, cat: "sikayet", ...t, rank: boost(c, t.rank), claude: c }); }
+    if (t) {
+      const c = claudeOf("ai_report", r.id);
+      const h = holdOf("ai_report", r.id);
+      items.push({ kind: "ai_report", queue: "ai_report", report: r, id: `ai_report:${r.id}`, cat: "sikayet", ...t, rank: h ? HELD_RANK : boost(c, t.rank), ...(h ? { due: null } : {}), claude: c, hold: h });
+    }
   }
   for (const g of groups) {
     const t = sla("content_feedback", g.first, now);
-    if (t) { const c = claudeOf("content_feedback", g.key); items.push({ kind: "content", queue: "content_feedback", group: g, id: `content:${g.key}`, cat: "icerik", ...t, rank: boost(c, t.rank), claude: c }); }
+    if (t) {
+      const c = claudeOf("content_feedback", g.key);
+      const h = holdOf("content_feedback", g.key);
+      items.push({ kind: "content", queue: "content_feedback", group: g, id: `content:${g.key}`, cat: "icerik", ...t, rank: h ? HELD_RANK : boost(c, t.rank), ...(h ? { due: null } : {}), claude: c, hold: h });
+    }
   }
   for (const res of reviews?.results ?? []) {
     if (res.configured && res.error) errors.push(`${res.store === "ios" ? "App Store" : "Google Play"} yorumları okunamadı: ${res.error}`);
@@ -97,5 +115,5 @@ export async function loadInbox(): Promise<Inbox> {
     return {} as Record<string, ReporterRecord>;
   });
 
-  return { items: sortInbox(items), ready: mod?.ready ?? false, now, errors, reporters };
+  return { items: sortInbox(items), ready: mod?.ready ?? false, now, errors, reporters, suggestedBuild: nextBuild };
 }

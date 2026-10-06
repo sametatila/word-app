@@ -68,6 +68,7 @@ export function alertLinks(key: string): AlertLinks {
     case "reports":
       return { panel: { path: "/admin/moderation", label: "Bugün › Şikâyetler" } };
     case "claude":
+    case "err-releasehold":
       return { panel: { path: "/admin", label: "Bugün › Gelen işler" } };
     case "sla-late":
     case "sla-soon": {

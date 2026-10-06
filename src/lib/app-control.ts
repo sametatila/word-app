@@ -65,4 +65,10 @@ export async function recordClient(userId: string, header: string | null, testLa
   } catch (err) {
     console.error("[app-control] sürüm yazılamadı", err);
   }
+  /* SÜRÜM BEKLEYEN BİLDİRİM (`lib/release-holds`): bu build bir düzeltmeyi
+     içeriyorsa bu kişinin bildirimi şimdi kapanır, sonucu gider. Dinamik içe
+     aktarma: bu modül her yerden içe alınıyor, moderasyon zincirini taşımasın. */
+  await import("@/lib/release-holds")
+    .then((m) => m.releaseForUser(userId, c.platform, c.build))
+    .catch((err) => console.error("[app-control] sürüm beklemesi", err));
 }

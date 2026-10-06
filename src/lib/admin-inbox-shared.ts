@@ -3,6 +3,9 @@ import type { ContentGroupRow, ContentReportRow, ReporterRecord, UserReportRow }
 import type { StoreReview } from "@/lib/store-reviews";
 import { slaState, type QueueId, type SlaLevel } from "@/lib/response-sla";
 
+/** "Sonraki sürümde düzelecek" beklemesi (`lib/release-holds`): build, kaç bildiren kaldı, kaçı güncelledi. */
+export type InboxHold = { build: number; note: string | null; at: string; open: number; reporters: number; updated: number };
+
 /** Claude'a bırakılmış işin görünümü (`lib/claude-tasks`); istemcide de kullanılıyor. */
 export type InboxClaude = { status: "waiting" | "done"; note: string | null; result: string | null; at: string; doneAt: string | null };
 
@@ -29,6 +32,8 @@ type Base = {
   created: string | null;
   /** Claude'a bırakıldıysa (içerik, yapay zekâ bildirimi, şikâyet). */
   claude?: InboxClaude | null;
+  /** Sürüm bekliyorsa (içerik, yapay zekâ bildirimi): süre durur, iş alttaki bölümde. */
+  hold?: InboxHold | null;
 };
 
 export type InboxItem =
@@ -48,6 +53,8 @@ export type Inbox = {
   errors: string[];
   /** Bildirenler: kim + geçmişi (kaç bildirim, kaçı asılsız), kimliğe göre. */
   reporters: Record<string, ReporterRecord>;
+  /** "Sonraki sürümde düzelecek"in önerdiği build: görülen en yüksek + 1. */
+  suggestedBuild: number;
 };
 
 /**
@@ -55,7 +62,7 @@ export type Inbox = {
  * Telegram için ayrıca üretiyor ("3 şikâyetin süresi doluyor", "yeni 1★
  * yorum"); kuyrukta ikinci kez görünmeleri aynı işi iki satır yapardı.
  */
-export const QUEUE_ALERT_FAMILIES = new Set(["reports", "sla-late", "sla-soon", "err-review", "err-reportnew", "err-reporthot", "claude"]);
+export const QUEUE_ALERT_FAMILIES = new Set(["reports", "sla-late", "sla-soon", "err-review", "err-reportnew", "err-reporthot", "claude", "err-releasehold"]);
 
 /**
  * Aciliyet: kritik uyarı → süresi geçen → süresi yaklaşan → uyarı → süresi olan.

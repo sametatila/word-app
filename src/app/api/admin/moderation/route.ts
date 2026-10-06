@@ -11,6 +11,7 @@ import {
   type ModerationTarget,
 } from "@/lib/moderation-admin";
 import { assignToClaude, cancelClaudeTask, isClaudeQueue } from "@/lib/claude-tasks";
+import { cancelReleaseHold, holdForRelease, isHoldQueue } from "@/lib/release-holds";
 
 export const dynamic = "force-dynamic";
 
@@ -100,6 +101,26 @@ async function handle(req: Request, gate: { ok: true; email: string }): Promise<
       if (body.action === "claude_cancel") return NextResponse.json({ ok: await cancelClaudeTask(queue, ref) });
       const task = await assignToClaude(queue, ref, note, gate.email);
       return NextResponse.json({ ok: true, task });
+    } catch (err) {
+      console.error("[admin/moderation]", body.action, queue, ref, err);
+      return NextResponse.json({ error: "failed" }, { status: 500 });
+    }
+  }
+
+  /* SONRAKİ SÜRÜMDE DÜZELECEK / GERİ AL (2026-10-06, `lib/release-holds`): her
+     bildiren uygulaması `build`e geçince ayrı kapanır ve sonucu alır. */
+  if (body.action === "release_hold" || body.action === "release_cancel") {
+    const queue = body.queue;
+    const ref = typeof body.ref === "string" || typeof body.ref === "number" ? String(body.ref) : "";
+    if (!isHoldQueue(queue) || !ref || ref.length > 300 || (queue === "content_feedback" ? !isGroupKey(ref) : !/^\d+$/.test(ref))) {
+      return NextResponse.json({ error: "bad_input" }, { status: 400 });
+    }
+    try {
+      if (body.action === "release_cancel") return NextResponse.json({ ok: await cancelReleaseHold(queue, ref) });
+      const build = Number(body.build);
+      if (!Number.isInteger(build) || build < 1 || build > 1_000_000) return NextResponse.json({ error: "bad_input" }, { status: 400 });
+      const r = await holdForRelease(queue, ref, build, note, gate.email);
+      return NextResponse.json({ ok: true, ...r });
     } catch (err) {
       console.error("[admin/moderation]", body.action, queue, ref, err);
       return NextResponse.json({ error: "failed" }, { status: 500 });

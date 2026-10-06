@@ -58,10 +58,15 @@ export async function responseQueues(fresh = false): Promise<QueueSummary[]> {
         ? sql`select r.created_at at from user_reports r where not exists (select 1 from moderation_actions m where m.target = 'user_report' and m.ref_id = r.id)`
         : sql`select r.created_at at from user_reports r`,
     ),
-    sqlQueue("ai_report", sql`select created_at at from content_reports where status = 'open' and kind <> 'content'`),
+    /* SÜRÜM BEKLEYEN iş sayılmıyor (`lib/release-holds`): düzeltme yapıldı, sonuç
+       bildirenin uygulaması güncellenince gidiyor; gecikme uyarısı üretmemeli. */
+    sqlQueue("ai_report", sql`select created_at at from content_reports r where status = 'open' and kind <> 'content'
+          and not exists (select 1 from release_holds h where h.status = 'waiting' and h.queue = 'ai_report' and h.ref = r.id::text)`),
     sqlQueue(
       "content_feedback",
       sql`select min(created_at) at from content_reports r where status = 'open' and kind = 'content'
+          and not exists (select 1 from release_holds h where h.status = 'waiting' and h.queue = 'content_feedback'
+            and h.ref = coalesce(r.group_key, 'legacy:' || r.kind || ':' || r.ref))
           group by coalesce(r.group_key, 'legacy:' || r.kind || ':' || r.ref)`,
     ),
     reviewQueue(fresh),

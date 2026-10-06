@@ -719,6 +719,36 @@ export const claudeTasks = pgTable(
 );
 
 /**
+ * SONRAKİ SÜRÜMDE DÜZELECEK (2026-10-06, Samet). Düzeltmesi mobil build'de olan
+ * bildirim (içerik grubu ya da yapay zekâ bildirimi) burada bekler: yanıt süresi
+ * durur, iş Gelen işler'de "Sürüm bekliyor" bölümüne iner. Her bildirenin
+ * uygulaması `build`e geçince (`user_clients`, `recordClient`) o kişinin
+ * bildirimi "gereği yapıldı" diye kapanır ve sonuç gider; web'den bildiren hemen
+ * kapanır. Hepsi kapanınca `done`. 30. gününde bekleyen kalırsa bir kez uyarı
+ * (`lib/alerts` `err-releasehold`). Kullanıcıya bağlı değil.
+ */
+export const releaseHolds = pgTable(
+  "release_holds",
+  {
+    id: serial("id").primaryKey(),
+    /** content_feedback · ai_report */
+    queue: text("queue").notNull(),
+    /** content_feedback: grup anahtarı · ai_report: bildirim kimliği */
+    ref: text("ref").notNull(),
+    /** Düzeltmenin geldiği build (iki platformda aynı numara). */
+    build: integer("build").notNull(),
+    /** waiting · done (hepsi kapandı) · cancelled (geri alındı) */
+    status: text("status").notNull().default("waiting"),
+    note: text("note"),
+    actor: text("actor"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    doneAt: timestamp("done_at", { withTimezone: true }),
+  },
+  (t) => [uniqueIndex("release_holds_item_uq").on(t.queue, t.ref), index("release_holds_status_idx").on(t.status, t.createdAt)],
+);
+
+/**
  * İstemci sürümü — platform başına son görülen uygulama sürümü ve build.
  * Mobil her istekte `x-lernomi-client` başlığı gönderiyor, `/api/me` yazıyor
  * (`lib/app-control`). Zorunlu güncellemenin kime etki edeceği buradan okunur.

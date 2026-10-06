@@ -70,6 +70,7 @@ function Icon({ cat, size = 14 }: { cat: InboxCategory; size?: number }) {
  */
 function toneOf(i: InboxItem, now: number): string {
   if (i.kind === "alert") return i.level === "kritik" ? TONE.bad : TONE.warn;
+  if (i.hold) return "var(--text-muted)";
   const p = i.created ? slaProgress(i.queue, i.created, now) : null;
   return p?.level === "late" ? TONE.bad : p?.level === "soon" ? TONE.warn : "var(--text-muted)";
 }
@@ -77,7 +78,7 @@ function toneOf(i: InboxItem, now: number): string {
 /** Süre halkası: hedefin geçen kısmı dolu. Uyarıda halka tam, rengi seviyesi. */
 function Ring({ item, now }: { item: InboxItem; now: number }) {
   const R = 15, C = 2 * Math.PI * R;
-  const ratio = item.kind === "alert" ? 1 : item.created ? (slaProgress(item.queue, item.created, now)?.ratio ?? 0) : 0;
+  const ratio = item.kind === "alert" ? 1 : item.hold ? 0 : item.created ? (slaProgress(item.queue, item.created, now)?.ratio ?? 0) : 0;
   const tone = toneOf(item, now);
   return (
     <span className="relative inline-flex h-9 w-9 shrink-0 items-center justify-center" style={{ color: tone }}>
@@ -90,9 +91,10 @@ function Ring({ item, now }: { item: InboxItem; now: number }) {
   );
 }
 
-/** Kartın sağındaki kısa durum: "6 sa kaldı", "2 sa gecikti", "kritik". */
+/** Kartın sağındaki kısa durum: "6 sa kaldı", "2 sa gecikti", "kritik", "build 20 bekliyor". */
 function statusText(i: InboxItem, now: number): string {
   if (i.kind === "alert") return i.level === "kritik" ? "kritik" : "uyarı";
+  if (i.hold) return `build ${i.hold.build} bekliyor`;
   const s = i.created ? slaState(i.queue, i.created, now) : null;
   return s ? slaText(s) : "";
 }
@@ -229,6 +231,44 @@ function Decide({ busy, disabled, children, note, onNote, claude }: { busy: bool
   );
 }
 
+/**
+ * SONRAKİ SÜRÜMDE DÜZELECEK (2026-10-06, `lib/release-holds`): düzeltme mobil
+ * build'deyse bildirim şimdi kapatılmaz. Build girilir; iş "Sürüm bekliyor"a
+ * iner, süre durur. Her bildirenin uygulaması o build'e geçince onun bildirimi
+ * kapanır ve "düzeltildi" sonucu gider; web'den bildiren hemen kapanır.
+ */
+function ReleaseBox({ item, target, busy, send, suggested }: { item: InboxItem; target: { queue: "content_feedback" | "ai_report"; ref: string | number }; busy: boolean; send: Send; suggested: number }) {
+  const h = item.hold;
+  const [build, setBuild] = useState(String(h?.build ?? (suggested || "")));
+  const n = Number(build);
+  const valid = Number.isInteger(n) && n > 0;
+  if (h) {
+    return (
+      <Notice tone="info" title={`Sürüm bekliyor · build ${h.build} · ${when(h.at)}`}>
+        <div className="space-y-2">
+          <p className="text-caption tabular-nums">
+            {h.reporters} bildirenden {h.updated} kişi güncelledi. Uygulaması build {h.build}&apos;e geçen her bildirenin bildirimi kendiliğinden kapanır ve &quot;düzeltildi&quot; sonucunu alır; süre durdu.
+          </p>
+          {h.note ? <p className="muted text-caption">Not: {h.note}</p> : null}
+          <div className="flex flex-wrap items-center gap-2">
+            <button type="button" disabled={busy} onClick={() => void send({ action: "release_cancel", ...target }, "Sürüm beklemesi geri alındı: iş normal kuyrukta", true)} className={BTN.small}>Geri al</button>
+          </div>
+        </div>
+      </Notice>
+    );
+  }
+  return (
+    <div className="space-y-1.5">
+      <div className="flex flex-wrap items-center gap-2">
+        <label className="muted text-caption" htmlFor="inbox-build">Build</label>
+        <input id="inbox-build" inputMode="numeric" value={build} onChange={(e) => setBuild(e.target.value.replace(/\D/g, "").slice(0, 7))} disabled={busy} className={`${FIELD} w-20`} style={FIELD_STYLE} aria-label="Düzeltmenin geleceği build" />
+        <button type="button" disabled={busy || !valid} onClick={() => void send({ action: "release_hold", ...target, build: n }, `Build ${n}'de düzelecek: güncelleyen bildiren kapanıp sonucunu alacak`, true)} className={BTN.secondary}>Sonraki sürümde düzelecek</button>
+      </div>
+      <p className="muted text-caption">Düzeltme mobil build&apos;deyse: şimdi kapatma, bildirene &quot;düzeltildi&quot; deyip eski uygulamada hatayı göstermek olur. Burada her bildiren uygulaması bu build&apos;e geçince ayrı kapanır; web&apos;den bildiren hemen. Süre durur.</p>
+    </div>
+  );
+}
+
 function Quote({ children }: { children: React.ReactNode }) {
   return <p className="whitespace-pre-wrap break-words rounded-tile px-3.5 py-2.5 text-body" style={{ background: "var(--surface-2)" }}>{children}</p>;
 }
@@ -297,7 +337,7 @@ const langOf = (territory: string): "tr" | "en" | "de" => {
   return "en";
 };
 
-function Detail({ item, ready, busy, send, note, onNote, reporters }: { item: InboxItem; ready: boolean; busy: boolean; send: Send; note: string; onNote: (v: string) => void; reporters: Reporters }) {
+function Detail({ item, ready, busy, send, note, onNote, reporters, suggested }: { item: InboxItem; ready: boolean; busy: boolean; send: Send; note: string; onNote: (v: string) => void; reporters: Reporters; suggested: number }) {
   switch (item.kind) {
     case "alert":
       return (
@@ -352,7 +392,7 @@ function Detail({ item, ready, busy, send, note, onNote, reporters }: { item: In
           {r.detail ? <Section title="Açıklama"><Quote>{r.detail}</Quote></Section> : null}
           {r.content ? <Section title="Yapay zekâ çıktısı"><Quote>{r.content}</Quote></Section> : null}
           <Section title="Karar">
-            <Decide busy={busy} note={note} onNote={onNote} claude={<ClaudeBox item={item} target={{ queue: "ai_report", ref: r.id }} busy={busy} send={send} />}>
+            <Decide busy={busy} note={note} onNote={onNote} claude={<><ReleaseBox item={item} target={{ queue: "ai_report", ref: r.id }} busy={busy} send={send} suggested={suggested} /><ClaudeBox item={item} target={{ queue: "ai_report", ref: r.id }} busy={busy} send={send} /></>}>
               <>
                   <button type="button" disabled={busy} onClick={() => void send({ target: "content_report", refId: r.id, action: "resolved" }, "Bildirim kapandı: gereği yapıldı")} className={BTN.primary}>Gereği yapıldı</button>
                   <button type="button" disabled={busy} onClick={() => void send({ target: "content_report", refId: r.id, action: "dismissed" }, "Bildirim kapandı: asılsız")} className={BTN.secondary}>Asılsız</button>
@@ -405,7 +445,7 @@ function Detail({ item, ready, busy, send, note, onNote, reporters }: { item: In
           <KeyValue data={info} />
           {hint ? <p className="muted text-caption">Düzeltme yeri: {hint}</p> : null}
           <Section title="Karar">
-            <Decide busy={busy} note={note} onNote={onNote} claude={<ClaudeBox item={item} target={{ queue: "content_feedback", ref: g.key }} busy={busy} send={send} />}>
+            <Decide busy={busy} note={note} onNote={onNote} claude={<><ReleaseBox item={item} target={{ queue: "content_feedback", ref: g.key }} busy={busy} send={send} suggested={suggested} /><ClaudeBox item={item} target={{ queue: "content_feedback", ref: g.key }} busy={busy} send={send} /></>}>
               <>
                   <button type="button" disabled={busy} onClick={() => void send({ action: "close_group", decision: "resolved", group: g.key }, "Grup kapandı: gereği yapıldı")} className={BTN.primary}>Gereği yapıldı</button>
                   <button type="button" disabled={busy} onClick={() => void send({ action: "close_group", decision: "dismissed", group: g.key }, "Grup kapandı: asılsız")} className={BTN.secondary}>Asılsız</button>
@@ -455,6 +495,7 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
   const count = (f: Filter) => live.filter((i) => (f === "hepsi" ? true : f === "acil" ? isUrgent(i) : i.cat === f)).length;
   const visible = useMemo(() => live.filter((i) => (filter === "hepsi" ? true : filter === "acil" ? isUrgent(i) : i.cat === filter)), [live, filter]);
   const current = visible.find((i) => i.id === selected) ?? visible[0] ?? null;
+  const held = live.filter((i) => i.hold).length;
   const late = live.filter((i) => i.rank === 1).length;
   const soon = live.filter((i) => i.rank === 2).length;
   const critical = live.filter((i) => i.rank === 0).length;
@@ -507,7 +548,7 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
       }
       if (keep) {
         setNotes((n) => ({ ...n, [id]: "" }));
-        setFlash({ tone: "ok", text: `${done}.` });
+        setFlash({ tone: "ok", text: j.closed ? `${done} (${j.closed} bildirim şimdi kapandı).` : `${done}.` });
         router.refresh();
         return;
       }
@@ -536,7 +577,8 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
         <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
           <h1 className="text-h2">Gelen işler</h1>
           <span className="muted text-caption tabular-nums">
-            {live.length} iş
+            {live.length - held} iş
+            {held ? <> · <span className="muted">{held} sürüm bekliyor</span></> : null}
             {critical ? <> · <span style={{ color: TONE.bad }}>{critical} kritik</span></> : null}
             {late ? <> · <span style={{ color: TONE.bad }}>{late} gecikmiş</span></> : null}
             {soon ? <> · <span style={{ color: TONE.warn }}>{soon} yaklaşan</span></> : null}
@@ -572,11 +614,14 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
 
         {visible.length ? (
           <ol ref={listRef} className="mt-3 space-y-2" aria-label="İşler">
-            {visible.map((i) => {
+            {visible.map((i, at) => {
               const s = summary(i);
               const on = current?.id === i.id;
+              /* Sürüm bekleyenler sıralamada en sonda (rank 90): ilkinin önüne başlık. */
+              const heldHead = i.hold && !visible[at - 1]?.hold;
               return (
                 <li key={i.id} data-id={i.id}>
+                  {heldHead ? <h2 className="muted mb-2 mt-5 text-micro uppercase tracking-eyebrow">Sürüm bekliyor · bildiren güncelleyince kendiliğinden kapanır</h2> : null}
                   <button
                     type="button"
                     onClick={() => select(i.id, true)}
@@ -646,6 +691,7 @@ export function Inbox({ inbox }: { inbox: InboxData }) {
                 note={notes[current.id] ?? ""}
                 onNote={(v) => setNotes((n) => ({ ...n, [current.id]: v }))}
                 reporters={inbox.reporters}
+                suggested={inbox.suggestedBuild}
               />
             </div>
             {current.kind !== "alert" ? (
