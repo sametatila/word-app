@@ -137,6 +137,7 @@ reddetti):** de "Probeprüfungen öffnen sich pro Niveau zu dritt" yanlıştı (
 bitirince sıradaki gelir". Ücretsiz hak kuralı kısaldı ("her seviyede 4'er çalışma"). Yer için günlük tur
 paragrafındaki "pratikte istediğin kadar tekrar" çıktı (ÜCRETSİZ bölümü "pratik ücretsiz ve sınırsız" diyor).
 Yürüyüş bölümündeki Premium cümlesi BİLEREK kaldı: başlık Premium özelliğin adı, aynı paragrafta "Premium" geçmeli.
+Türkçe 1. kare "Sıfırdan ya da seviyenden C1'e" (6. turda orta seviye, 7. turda sıfırdan başlayan dışarıda kalıyordu).
 
 **Vitrin provası 6. tur, 16 kişi (2026-10-06; Samet 1–3'ü onayladı, gizlilik cümlesi olduğu gibi, en/de 3. kare
 günlük tur kalıyor):**
@@ -177,7 +178,7 @@ yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime tu
 
 | # | Sütun | Ekran | İçerik durumu (çekimde hazırlanacak) | Altyazı taslağı |
 |---|---|---|---|---|
-| 1 | A1'den C1'e adım adım | Patika: A1→C1 ünite haritası (Okuma, Dinleme, Konuşma, Yazma, Dil bilgisi, Quiz, Sınav) | A1, ilk ünite "şu an" (2026-10-05: `screenshots@` çekim süresince Samet'in onayıyla A1'e alındı, sonra B1/Almanca/Türkçe'ye döndü; satır öncesiyle aynı, yalnız şartlar 1.9.2 onayı yeni). Seviye çizgisi `currentLevel` A1 | Seviyenden başla, C1'e kadar · Türkçe anlatım; seviyeni seç ya da kısa testle bul (2026-10-06; 2026-10-05: Sıfırdan C1'e, Türkçe anlatımla; önce: A1'den C1'e adım adım, Türkçe anlatımla) |
+| 1 | A1'den C1'e adım adım | Patika: A1→C1 ünite haritası (Okuma, Dinleme, Konuşma, Yazma, Dil bilgisi, Quiz, Sınav) | A1, ilk ünite "şu an" (2026-10-05: `screenshots@` çekim süresince Samet'in onayıyla A1'e alındı, sonra B1/Almanca/Türkçe'ye döndü; satır öncesiyle aynı, yalnız şartlar 1.9.2 onayı yeni). Seviye çizgisi `currentLevel` A1 | Sıfırdan ya da seviyenden C1'e · Türkçe anlatım; seviyeni seç ya da kısa testle bul (2026-10-06, 7. tur: "Seviyenden başla, C1'e kadar" sıfırdan başlayanı dışarıda bırakıyordu; 2026-10-05: Sıfırdan C1'e, Türkçe anlatımla; önce: A1'den C1'e adım adım, Türkçe anlatımla) |
 | 2 | Konuşma | Patika › Konuşma adımı: sahne sohbeti | A1 ilk sohbet (tr/en: "Hallo!" komşuyla tanışma, de: "Hello!" dil kursunun ilk günü), yazarak cevaplanmış, tek fiil çekimi hatası ve düzeltmesi, üç öneri; yapay zekâ bildirimi görünür (2026-10-05) | Konuş, düzeltmeni anında gör · Gerçek hayattan sahneler; istersen yazarak cevap ver |
 | 3 | Sınav | Deneme sınavı sonucu | B1 deneme sınavı, yazma ya da konuşma bölümünün sonucu: bölüm yüzdesi, "Ölçüm hedeflerine göre" çubukları (görev puanlarından, 745930f5) ve yapılacaklar listesi; incelemede hata→düzeltme. Yeni etiketler ("yapay zekâ puanlar") build 11 ile: çekim build 11+ ile | tr: Dört becerili deneme sınavı · Konuşma ve yazma da puanlanır; her seviyede 1'i ücretsiz, fazlası Premium'da (2026-10-05, 4. tur; en/de başlık "puanlanır" cümlesi) |
 | 4 | Fark | Cepte yürüyüş + kilit ekranı | Ekran kapalı akış; kilit ekranında "Yürüyüş modu açık" | Ekrana bakmadan, yolda çalış · Günde 3 tur ücretsiz, ekran kapalıyken Premium (2026-10-05; ham görüntü ekran açık giriş) |
