@@ -97,29 +97,25 @@ const MP3_FALLBACK: Partial<Record<SfxKind, SfxKind>> = { near: "start", streak:
  * tarifle bir kez çağrılıyor: Swift sessiz tuş yoklamasını başlatıyor, ses çalmıyor
  * (yoksa sessizdeki telefonda turun ilk sesi yoklama sonucunu beklemeden çalardı).
  *
- * Android: `AudioManager.getRingerMode()` NORMAL değilse efekt susuyor. Ekran-kapalı
- * yürüyüşte kapı YOK: orada efektler arayüzün kendisi (mikrofon açıldı, karar).
+ * Android: ZİL MODUNA BAKILMIYOR (2026-10-06, Samet'in bildirimi: "uygulama geneli
+ * sfx'lerin hiçbiri çalışmıyor"). 2026-09-28'den beri `getRingerMode()` NORMAL
+ * değilse efekt susuyordu; telefonların çoğu titreşimde durduğu için efektler
+ * fiilen hiç çalmıyordu. Android'de uygulama sesleri zil moduna değil MEDYA ses
+ * seviyesine bağlı (sistem ayarı); susturmanın yolu uygulamadaki ses anahtarı
+ * (`soundOn`) ya da medya sesi. Native `sfxSilent` duruyor ama çağrılmıyor.
  */
 if (Platform.OS === "ios") { try { LernomiSfx?.playSfx?.(""); } catch { /* yut */ } }
-
-function deviceSilent(): boolean {
-  if (Platform.OS !== "android" || screenOffMode || walkSession) return false;
-  try { return LernomiSfx?.sfxSilent?.() === true; } catch { return false; }
-}
 
 // Ekran-kapalı: WebView köprüsü askıya alınıp sustuğu için native res/raw'a düş (arka planda çalar).
 let screenOffMode = false;
 export function setSfxScreenOff(v: boolean): void { screenOffMode = v; }
 
 /*
-  YÜRÜYÜŞ OTURUMU zil modundan muaf (2026-10-02, Samet'in Android testi): ekran
-  açıkken zil sessiz/titreşimdeyse efektler susuyordu, ekran kapalıyken çalıyordu.
-  Yürüyüşte efektler arayüzün kendisi (mikrofon açıldı, karar) ve kullanıcı sesli
-  bir oturumu kendisi başlattı; iOS aynı kuralı zaten uyguluyor (`walkSessionHeld`,
-  LernomiSpeech.swift `sfxExempt`). Ses ayarı (`soundOn`) yine geçerli.
+  YÜRÜYÜŞ OTURUMU: Android'de zil modu kapısı kalktığı için (yukarıdaki SESSİZ TUŞ
+  notu) muafiyet de gereksizleşti; çağrı duruyor, iOS'ta muafiyet Swift'te
+  (`walkSessionHeld`, LernomiSpeech.swift `sfxExempt`).
 */
-let walkSession = false;
-export function setSfxWalkSession(v: boolean): void { walkSession = v; }
+export function setSfxWalkSession(_v: boolean): void { /* Android'de kapı yok */ }
 
 /** Arka planda da çalışan gecikme (native Handler); RN setTimeout ekran-kapalı durur. */
 function waitMs(ms: number): Promise<void> {
@@ -239,7 +235,6 @@ export function sfx(kind: SfxKind): void {
      ilerletiyor — ama kendi sesiyle, perde kaydırmadan (web `play("near")` aynı). */
   if (kind === "near") climb();
   const spec = kind === "correct" ? correctSpec() : kind;
-  if (deviceSilent()) return; // Android zil modu sessiz/titreşim (merdiven yine ilerledi)
   const wait = Math.min(600, Math.max(0, busyUntil - now));
   busyUntil = now + wait + (SFX_DUR[kind] ?? 300);
   if (wait > 0) void waitMs(wait).then(() => playNow(kind, spec));

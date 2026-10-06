@@ -312,7 +312,7 @@ export function WalkModeScreen() {
     const tokenRef = runToken;
     track("walk_start", 0);
     mountedRef.current = true;
-    setSfxWalkSession(true); // zil sessizken de efektler çalar (lib/sfx)
+    setSfxWalkSession(true); // iOS: sessiz tuş açıkken de efektler çalar (Swift `sfxExempt`)
     return () => { mountedRef.current = false; tokenRef.current++; setSfxWalkSession(false); stopListening(); cancelAzureListen(); stopSpeaking(); setKeepAwake(false); stopWalkService(); flush(true); };
     // flush bilerek bağımlılıkta değil: efekt yalnız mount/unmount içindir, onu
     // eklemek her render'da temizliği çalıştırıp cevapları erkenden gönderirdi.
