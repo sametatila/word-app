@@ -201,6 +201,9 @@ export function notificationText(n: NotificationView): string {
        `lib/social/client` ile aynı üç cümle). Karar bilinmiyorsa (null)
        genel "incelendi ve kapatıldı". */
     case "report_closed":
+      /* İçerik hatası bildirimi kendi cümlesiyle (web `lib/social/client` ile aynı, 2026-10-06). */
+      if (d.reportKind === "content" && (d.decision === "resolved" || d.decision === "dismissed"))
+        return t(d.decision === "resolved" ? "social.notif_content_fixed" : "social.notif_content_no_error");
       return t(d.decision === "resolved" ? "social.notif_report_resolved" : d.decision === "dismissed" ? "social.notif_report_dismissed" : "social.notif_report_closed");
     default: return t("social.notif_default");
   }

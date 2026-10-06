@@ -236,6 +236,8 @@ export const deWeb: Record<string, string> = {
   "paywallw.faq3_a": "Ja. Premium gehört zu deinem Konto und ist überall aktiv, wo du dich anmeldest.",
   "notifw.report_resolved": "Deine Meldung wurde geprüft und es wurden Maßnahmen ergriffen. Danke.",
   "notifw.report_dismissed": "Deine Meldung wurde geprüft; wir haben keinen Verstoß gegen unsere Regeln festgestellt. Einspruch ist über die Support-Seite möglich.",
+  "notifw.content_fixed": "Der Inhalt, den du gemeldet hast, wurde korrigiert. Danke.",
+  "notifw.content_no_error": "Wir haben den gemeldeten Inhalt geprüft und keinen Fehler gefunden. Danke.",
   "notifw.report_closed": "Deine Meldung wurde geprüft und abgeschlossen. Danke.",
   "settings.add_to_home": "Zum Startbildschirm",
   "settings.add_to_home_hint": "Vollbild, offline",

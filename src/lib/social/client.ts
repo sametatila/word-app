@@ -290,6 +290,10 @@ export function notificationText(n: NotificationView, lang: NativeLang): string 
     /* Karar tarafsız söyleniyor: kimin bildirildiği ya da ne yapıldığının
        ayrıntısı yok, yalnız incelendiği ve sonucun türü (CNT-7). */
     case "report_closed":
+      /* İçerik hatası bildirimi kendi cümlesiyle: "kurallarımıza aykırı bir durum yok" bir çeviri
+         hatasına cevap değil (2026-10-06, Samet). */
+      if (d.reportKind === "content" && (d.decision === "resolved" || d.decision === "dismissed"))
+        return T(d.decision === "resolved" ? "notifw.content_fixed" : "notifw.content_no_error");
       return T(d.decision === "resolved" ? "notifw.report_resolved" : d.decision === "dismissed" ? "notifw.report_dismissed" : "notifw.report_closed");
     default:
       return T("social.notif_default");

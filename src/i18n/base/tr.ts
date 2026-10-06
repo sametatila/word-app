@@ -1612,6 +1612,8 @@ export const trBase: Record<string, string> = {
   "social.notif_report_closed": "Bildirimin incelendi ve kapatıldı. Teşekkürler.",
   "social.notif_report_resolved": "Bildirimin incelendi ve gereği yapıldı. Teşekkürler.",
   "social.notif_report_dismissed": "Bildirimin incelendi; kurallarımıza aykırı bir durum bulunmadı. İtiraz için Destek sayfasına bakabilirsin.",
+  "social.notif_content_fixed": "Bildirdiğin içerik düzeltildi. Teşekkürler.",
+  "social.notif_content_no_error": "Bildirdiğin içeriği inceledik, bir hata bulamadık. Teşekkürler.",
   "social.notif_friend_accepted": "{who} arkadaşlık isteğini kabul etti",
   "social.notif_friend_request": "{who} seni arkadaş olarak eklemek istiyor",
   "social.notif_milestone": "{who} {event}",

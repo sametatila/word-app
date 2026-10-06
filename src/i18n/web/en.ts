@@ -236,6 +236,8 @@ export const enWeb: Record<string, string> = {
   "paywallw.faq3_a": "Yes. Premium belongs to your account and is active wherever you sign in.",
   "notifw.report_resolved": "Your report was reviewed and action was taken. Thank you.",
   "notifw.report_dismissed": "Your report was reviewed; we found no breach of our rules. See the Support page if you want to appeal.",
+  "notifw.content_fixed": "The content you reported has been fixed. Thank you.",
+  "notifw.content_no_error": "We checked the content you reported and found no error. Thank you.",
   "notifw.report_closed": "Your report was reviewed and closed. Thank you.",
   "settings.add_to_home": "Add to home screen",
   "settings.add_to_home_hint": "full screen, offline",

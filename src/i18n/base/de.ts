@@ -1612,6 +1612,8 @@ export const deBase: Record<string, string> = {
   "social.notif_report_closed": "Deine Meldung wurde geprüft und abgeschlossen. Danke.",
   "social.notif_report_resolved": "Deine Meldung wurde geprüft und es wurden Maßnahmen ergriffen. Danke.",
   "social.notif_report_dismissed": "Deine Meldung wurde geprüft; wir haben keinen Verstoß gegen unsere Regeln festgestellt. Einspruch ist über die Support-Seite möglich.",
+  "social.notif_content_fixed": "Der Inhalt, den du gemeldet hast, wurde korrigiert. Danke.",
+  "social.notif_content_no_error": "Wir haben den gemeldeten Inhalt geprüft und keinen Fehler gefunden. Danke.",
   "social.notif_friend_accepted": "{who} hat deine Freundschaftsanfrage angenommen",
   "social.notif_friend_request": "{who} möchte dich als Freund hinzufügen",
   "social.notif_milestone": "{who} {event}",

@@ -1610,6 +1610,8 @@ export const en: Record<string, string> = {
   "social.notif_report_closed": "Your report was reviewed and closed. Thank you.",
   "social.notif_report_resolved": "Your report was reviewed and action was taken. Thank you.",
   "social.notif_report_dismissed": "Your report was reviewed; we found no breach of our rules. See the Support page if you want to appeal.",
+  "social.notif_content_fixed": "The content you reported has been fixed. Thank you.",
+  "social.notif_content_no_error": "We checked the content you reported and found no error. Thank you.",
   "social.notif_friend_accepted": "{who} accepted your friend request",
   "social.notif_friend_request": "{who} wants to add you as a friend",
   "social.notif_milestone": "{who} {event}",

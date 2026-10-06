@@ -270,6 +270,8 @@ export const trWeb: Record<string, string> = {
   /* Şikâyet sonucu gelen kutusunda (lib/social/client `report_closed`, CNT-7). */
   "notifw.report_resolved": "Bildirimin incelendi ve gereği yapıldı. Teşekkürler.",
   "notifw.report_dismissed": "Bildirimin incelendi; kurallarımıza aykırı bir durum bulunmadı. İtiraz için Destek sayfasına bakabilirsin.",
+  "notifw.content_fixed": "Bildirdiğin içerik düzeltildi. Teşekkürler.",
+  "notifw.content_no_error": "Bildirdiğin içeriği inceledik, bir hata bulamadık. Teşekkürler.",
   "notifw.report_closed": "Bildirimin incelendi ve kapatıldı. Teşekkürler.",
   "settings.add_to_home": "Ana ekrana ekle",
   "settings.add_to_home_hint": "tam ekran, çevrimdışı",
