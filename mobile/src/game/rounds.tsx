@@ -8,7 +8,7 @@ import { foldCase, foldCompare, foldTight } from "../lib/textFold";
 import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
 import { markKnown, optionCards, optionTexts, todayStr } from "./session";
 import { CharMarked, MarkTag, DiffLines, MarkedSentence, type MarkedToken } from "../ui/TokenDiff";
-import { classifyOrder, classifyTyping, miss } from "../lib/errors";
+import { classifyOrder, classifyTyping, miss, typoNear } from "../lib/errors";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { accountRequiredError } from "../lib/guest";
 import { useAuth } from "../lib/AuthContext";
@@ -814,6 +814,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
      `typing-game` `hintShown` başlangıcı da `round.assist`). */
   const [hintShown, setHintShown] = useState(Boolean(round.assist));
   const [fb, setFb] = useState<Feedback | null>(null);
+  const [typo, setTypo] = useState(false);
   function check() {
     if (fb) return;
     // Boşluksuz yedek: tireli başlıklarda ("t-shirt") tire boşluğa döndüğü için
@@ -829,14 +830,19 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
     const cands = [word.de, withArtikel(word), ...(round.alternatives ?? [])];
     const t = norm(val);
     const tight = foldTight(val, lang);
-    const ok = (!!t && cands.some((c) => t === norm(c)))
+    const exact = (!!t && cands.some((c) => t === norm(c)))
       || (!!tight && cands.some((c) => foldTight(c, lang) === tight));
+    /* Tek harflik yazım hatası doğru sayılır, "Neredeyse · yazım" ve doğrusu (`lib/errors`
+       `typoNear`; web `typing-game` aynı). Kalite 4: tam doğrudan bir basamak aşağı. */
+    const near = !exact && typoNear(val, [word.de, ...(round.alternatives ?? [])]) !== null;
+    const ok = exact || near;
     Keyboard.dismiss();
-    markAnswer(ok, withArtikel(word)); // doğru kelimeyi oku (Almanca = cevap)
+    markAnswer(ok, withArtikel(word), near); // doğru kelimeyi oku (Almanca = cevap); yazım sapması "near"
     /* Hata tipi yazılandan çıkarılıyor - web `typing-game` de aynı: yazım
        hatası ile anlam hatası farklı gerekçe alıyor. */
     const why = ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val, targetLang: currentTargetLang() });
-    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, detail: grammarDetail(word), you: val.trim(), why });
+    setFb({ correct: ok, ...(near ? { tone: "near" as const, label: tx("sheet.near_spelling") } : {}), answer: withArtikel(word), meaning: glossOf(word).text, detail: grammarDetail(word), you: val.trim(), why });
+    setTypo(near);
   }
   const inputBlock = (
     <View>
@@ -860,7 +866,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
     </View>
   );
   return (
-    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown })} colors={colors} /> : undefined}>
+    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown, ...(typo ? { quality: hintShown ? 3 : 4 } : {}) })} colors={colors} /> : undefined}>
       {/*
         TÜR KARTIN İÇİNDE. Kartın dışında, altında duran bir satırdı ve
         neye ait olduğu belirsizdi.

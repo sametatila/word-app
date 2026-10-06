@@ -123,6 +123,57 @@ export function classifyTyping(typed: string, candidates: string[]): ErrorType {
   return best <= SPELLING_TOLERANCE ? "spelling" : "meaning";
 }
 
+/**
+ * KÜÇÜK YAZIM HATASI DOĞRU SAYILIR (Samet, 2026-10-07: "beantworyen" yanlış sayılmıştı;
+ * "düzeltmesi verilerek doğru sayılmalı"). Yazarak Hatırla'da cevap hedeflerden birine
+ * TEK düzenleme uzaklığındaysa (bir harf değişik, eksik ya da fazla; yan yana iki
+ * harfin yeri) kabul edilir, katman "Neredeyse · yazım" der ve doğrusunu gösterir.
+ * Sınırlar bilerek dar:
+ *  - hedef en az 6 harf: kısa kelimede tek harf başka kelime ("Bein"/"Wein", "Hand"/"Band");
+ *  - UMLAUT ve ß hata sayılmaz, yanlıştır: "schon"/"schön", "Mutter"/"Mütter" ayrı
+ *    kelimeler (umlautsuz yazım "ae/oe/ue" ise zaten tam eşleşmede kabul).
+ * Dönen değer eşleşen aday (katmanda gösterilen doğru yazım) ya da null. Web ve mobil
+ * `lib/errors` aynı.
+ */
+export const TYPO_MIN_LEN = 6;
+/* Kod noktasından: düz yazılınca çeviri tarayıcısı "çevrilmemiş Türkçe" sanıyor (ö/ü iki dilde de var). */
+const UMLAUT_PAIRS = new Set(["a\u00e4", "\u00e4a", "o\u00f6", "\u00f6o", "u\u00fc", "\u00fcu", "s\u00df", "\u00dfs"]);
+
+function foldTypo(s: string): string {
+  return s
+    .toLocaleLowerCase("de-DE")
+    .replace(/^(der|die|das|the|an|a)\s+/, "")
+    .replace(/[^a-z0-9äöüß ]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** a ile b tam bir düzenleme uzakta mı (Damerau: yan yana yer değiştirme de bir)? Umlaut değişimi sayılmaz. */
+function oneEdit(a: string, b: string): boolean {
+  if (a === b) return false;
+  if (a.length === b.length) {
+    const diff: number[] = [];
+    for (let i = 0; i < a.length && diff.length <= 2; i++) if (a[i] !== b[i]) diff.push(i);
+    if (diff.length === 1) return !UMLAUT_PAIRS.has(a[diff[0]] + b[diff[0]]);
+    return diff.length === 2 && diff[1] === diff[0] + 1 && a[diff[0]] === b[diff[1]] && a[diff[1]] === b[diff[0]];
+  }
+  const [s, l] = a.length < b.length ? [a, b] : [b, a];
+  if (l.length - s.length !== 1) return false;
+  let i = 0;
+  while (i < s.length && s[i] === l[i]) i++;
+  return s.slice(i) === l.slice(i + 1);
+}
+
+export function typoNear(typed: string, candidates: string[]): string | null {
+  const t = foldTypo(typed);
+  if (!t) return null;
+  for (const c of candidates) {
+    const f = foldTypo(c);
+    if (f.length >= TYPO_MIN_LEN && oneEdit(t, f)) return c;
+  }
+  return null;
+}
+
 const W_WORDS = new Set(["wer", "was", "wo", "wann", "wie", "warum", "wohin", "woher", "welche", "welcher", "welches", "wieso", "weshalb", "wem", "wen", "wessen"]);
 
 /**
