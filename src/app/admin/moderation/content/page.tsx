@@ -107,6 +107,7 @@ export default async function ContentFeedbackPage({ searchParams }: { searchPara
               <div key="t" className="min-w-56 max-w-md">
                 <a href={`/admin/moderation/content/group?g=${encodeURIComponent(g.key)}`} className="text-strong underline-offset-2 hover:underline">{targetText(g)}</a>
                 {g.pack ? <div className="muted font-mono">{g.pack}:{g.item}</div> : null}
+                {g.notes[0] ? <div className="mt-0.5 line-clamp-2 break-words">“{g.notes[0].text}”</div> : null}
                 {g.sample ? <div className="muted mt-0.5 line-clamp-2 break-words">{g.sample}</div> : null}
               </div>,
               <span key="s">{g.surfaces.length ? g.surfaces.map(surfaceText).join(", ") : "—"}</span>,

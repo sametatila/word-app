@@ -125,7 +125,7 @@ function summary(i: InboxItem): { kind: string; title: string; meta: string } {
     }
     case "content": {
       const g = i.group;
-      return { kind: `İçerik bildirimi · ${g.open} bildirim`, title: targetText(g), meta: [g.topReason ? reasonText(g.topReason) : "", g.courses.join(", "), g.sample].filter(Boolean).join(" · ") };
+      return { kind: `İçerik bildirimi · ${g.open} bildirim`, title: targetText(g), meta: [g.topReason ? reasonText(g.topReason) : "", g.courses.join(", "), g.notes[0]?.text ?? g.sample].filter(Boolean).join(" · ") };
     }
     case "review": {
       const r = i.review;
@@ -309,6 +309,18 @@ function Detail({ item, ready, busy, send, note, onNote }: { item: InboxItem; re
       const hint = sourceHint(g.targetType, g.pack);
       return (
         <div className="space-y-5">
+          {g.notes.length ? (
+            <Section title={g.notes.length > 1 ? `Bildirenlerin açıklaması (${g.notes.length})` : "Bildirenin açıklaması"}>
+              <div className="space-y-2">
+                {g.notes.map((n, i) => (
+                  <div key={i}>
+                    <Quote>{n.text}</Quote>
+                    <div className="muted mt-0.5 text-caption">{[reasonText(n.reason), when(n.at)].filter(Boolean).join(" · ")}</div>
+                  </div>
+                ))}
+              </div>
+            </Section>
+          ) : null}
           {g.sample ? <Section title="Son bildirimin görüntüsü"><Quote>{g.sample}</Quote></Section> : null}
           <KeyValue data={info} />
           {hint ? <p className="muted text-caption">Düzeltme yeri: {hint}</p> : null}

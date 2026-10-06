@@ -436,6 +436,12 @@ export type ContentGroupRow = {
   item: string;
   /** En yeni bildirimin anlık görüntüsünden kısa parça — "hangi soru" diye tanımak için. */
   sample: string;
+  /**
+   * Bildirenlerin KENDİ açıklamaları (en yeni beş, boş olmayan). Eskiden yalnız
+   * `sample` vardı ve `coalesce(content, detail)` olduğu için ekran görüntüsü
+   * taşıyan her bildirimde açıklama hiç görünmüyordu (Samet, 2026-10-06).
+   */
+  notes: { text: string; reason: string; at: string }[];
 };
 
 const arr = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x) => x != null && x !== "").map(String) : []);
@@ -464,6 +470,7 @@ function groupRow(r: Row): ContentGroupRow {
     pack: str(r.pack),
     item: str(r.item),
     sample: str(r.sample).replace(/\s+/g, " ").slice(0, 160),
+    notes: (Array.isArray(r.notes) ? (r.notes as Row[]) : []).map((n) => ({ text: str(n.text), reason: str(n.reason), at: iso(n.at) })).filter((n) => n.text),
   };
 }
 
@@ -484,6 +491,9 @@ function groupSelect(where: ReturnType<typeof sql>) {
       array_remove(array_agg(distinct f.native_lang), null) natives,
       array_remove(array_agg(distinct f.platform), null) platforms,
       (array_agg(coalesce(f.content, f.detail, '') order by f.created_at desc))[1] sample,
+      (select coalesce(jsonb_agg(jsonb_build_object('text', d.detail, 'reason', d.reason, 'at', d.created_at) order by d.created_at desc), '[]'::jsonb)
+         from (select f2.detail, f2.reason, f2.created_at from f f2 where f2.gkey = f.gkey and nullif(f2.detail, '') is not null
+               order by f2.created_at desc limit 5) d) notes,
       count(*) over ()::int total
     from f group by f.gkey`;
 }
@@ -549,13 +559,13 @@ export async function contentFeedbackCsv(q: ContentQuery): Promise<string> {
   const list = (await rows(sql`${groupSelect(contentWhere(q))} order by ${contentOrder(q.sort)} limit 5000`)).map(groupRow);
   /* Hesap tablosunda formül olarak çalışmasın (CSV enjeksiyonu): bkz. lib/csv. */
   const cell = csvCell;
-  const head = ["grup", "tur", "hedef_turu", "hedef", "alt", "yuzeyler", "en_sik_neden", "nedenler", "bildirim", "acik", "ilk", "son", "kurslar", "anadiller", "platformlar", "paket", "madde", "ornek"];
+  const head = ["grup", "tur", "hedef_turu", "hedef", "alt", "yuzeyler", "en_sik_neden", "nedenler", "bildirim", "acik", "ilk", "son", "kurslar", "anadiller", "platformlar", "paket", "madde", "ornek", "aciklamalar"];
   const lines = [head.join(",")];
   for (const g of list) {
     lines.push([
       g.key, g.kind, g.targetType, g.targetId || g.ref, g.targetSub, g.surfaces.join(" "), g.topReason,
       Object.entries(g.reasons).map(([k, v]) => `${k}:${v}`).join(" "), g.count, g.open, g.first, g.last,
-      g.courses.join(" "), g.natives.join(" "), g.platforms.join(" "), g.pack, g.item, g.sample,
+      g.courses.join(" "), g.natives.join(" "), g.platforms.join(" "), g.pack, g.item, g.sample, g.notes.map((n) => n.text).join(" | "),
     ].map(cell).join(","));
   }
   return "﻿" + lines.join("\n");
