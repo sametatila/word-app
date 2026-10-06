@@ -431,6 +431,9 @@ telefon 6, tabletler 4'er ve öne çıkan grafik (ilk deneme hata verip edit sil
 **Mağazaya YENİDEN GİRİLDİ (2026-10-06, 8. tur):** ASC üç dilde açıklama (geri okundu, eşit) ve üç dilde 30 kare
 (`COMPLETE`); Play tek edit: üç dilde tam ve kısa açıklama, bütün görseller; commit sonrası geri okundu, eşit.
 
+**Mağazaya YENİDEN GİRİLDİ (2026-10-06, 9. tur):** ASC ve Play üç dilde uzun açıklama (geri okundu, eşit); de-DE
+kareleri ASC'de 10 kare (`ASC_LOCALES=de-DE`), Play'de de-DE bütün görseller (commit edildi).
+
 **Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
 farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
 seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yazılmaz (ücretsizde de seviye başına hak var).
