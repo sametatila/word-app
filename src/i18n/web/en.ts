@@ -188,7 +188,6 @@ export const enWeb: Record<string, string> = {
   "growth.first_placement": "Placement test: {level} recommended",
   "growth.last_week_empty": "No study last week. Start this week with a short round.",
   "proficiency.not_measured": "{skill} {level} not measured yet",
-  "proficiency.grammar_practice": "Grammar practice",
   "proficiency.next_conversation": "next conversation",
   "plan.word_round": "Word round",
   "words.subtitle": "{n} words · A1 to C1",

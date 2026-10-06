@@ -188,7 +188,6 @@ export const deWeb: Record<string, string> = {
   "growth.first_placement": "Einstufungstest: {level} empfohlen",
   "growth.last_week_empty": "Letzte Woche hast du nicht gelernt. Starte diese Woche mit einer kurzen Runde.",
   "proficiency.not_measured": "{skill} {level} noch nicht gemessen",
-  "proficiency.grammar_practice": "Grammatikübung",
   "proficiency.next_conversation": "nächstes Gespräch",
   "plan.word_round": "Wortrunde",
   "words.subtitle": "{n} Wörter · A1 bis C1",

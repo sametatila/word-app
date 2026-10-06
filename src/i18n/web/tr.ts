@@ -220,7 +220,6 @@ export const trWeb: Record<string, string> = {
   "growth.first_placement": "Seviye testi: {level} önerildi",
   "growth.last_week_empty": "Geçen hafta çalışma yok. Bu hafta kısa bir turla başla.",
   "proficiency.not_measured": "{skill} {level} henüz ölçülmedi",
-  "proficiency.grammar_practice": "Dil bilgisi çalışması",
   "proficiency.next_conversation": "sıradaki konuşma",
   "plan.word_round": "Kelime turu",
   "words.subtitle": "{n} kelime · A1'den C1'e",
