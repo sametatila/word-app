@@ -442,6 +442,8 @@ kareleri ASC'de 10 kare (`ASC_LOCALES=de-DE`), Play'de de-DE bütün görseller 
 **Mağazaya YENİDEN GİRİLDİ (2026-10-06, 10. tur):** ASC ve Play üç dilde uzun açıklama (yalnız metin), ikisi de geri
 okundu, eşit.
 
+**Mağazaya YENİDEN GİRİLDİ (2026-10-07, build 21 öncesi; Samet onayladı, API, üç dilde geri okundu, ASC ve Play birebir):** uzun açıklamada hesapsız Konuşma adımı cümlesi: "hazır bir sohbetle sürer" / "uses a prepared conversation" / "läuft … als vorbereitetes Gespräch" → "yapay zekâ sohbet bölümü atlanır" / "skips its AI chat part" / "ohne Konto entfällt beim Sprechen-Schritt der KI-Chat" (hazır sohbet 2026-10-05'te kalktı). Uzunluk tr 3.979, en 3.956, de 3.972.
+
 **Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
 farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
 seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yazılmaz (ücretsizde de seviye başına hak var).
