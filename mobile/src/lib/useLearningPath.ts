@@ -7,7 +7,7 @@ import { buildLocalLearningPath, refIndex } from "../game/immersionTrack";
 import { ensureSkills } from "../data/skills";
 import { ensureConversations } from "../data/conversations";
 import { useNativeContentVersion } from "./nativeContent";
-import { flushPendingConversations, flushPendingItems, flushPendingPathItems, getDoneItems } from "../game/pathProgress";
+import { flushPendingConversations, flushPendingItems, flushPendingPathItems, getDoneItems, type ItemResult } from "../game/pathProgress";
 import { useStatsBump } from "./statsSignal";
 
 /** Pratik adım — içeriği ünitenin konuşmalarından türetilen, kaydı öğe kimliğiyle tutulan. */
@@ -24,6 +24,8 @@ export type LearningPathItem = {
   done: boolean;
   /** Bir kez oynandı mı — puanı yetmese bile (sunucu yolu). */
   attempted?: boolean;
+  /** Önceki sonuç (sunucu, 2026-10-07): ünite satırının yüzdesi ve "Önceki sonucun" ekranı. */
+  result?: ItemResult | null;
   /**
    * Açılabilir mi: biten + denenen + SIRADAKİ tek öğe.
    *

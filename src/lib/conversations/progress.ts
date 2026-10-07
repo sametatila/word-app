@@ -6,7 +6,7 @@ import { allConversations, conversationsFor, levelIndex } from "./index";
 import { scoredSteps, type Conversation } from "./types";
 import { awardActivity } from "@/lib/award";
 import { xpDelta, xpForConversation } from "@/lib/xp";
-import { CONVERSATION_PASS_RATIO } from "./chat-const";
+import { CONVERSATION_PASS_RATIO, conversationStepDone } from "./chat-const";
 
 /**
  * Konuşma ilerlemesi ve kuralların tekrar zamanlaması.
@@ -51,6 +51,8 @@ export type ConversationState = {
   attempts: number;
   dueAt: Date;
   intervalDays: number;
+  /** Son deneme ("Önceki sonucun" ekranının tarihi). */
+  lastAt?: Date | null;
 };
 
 export type ConversationCard = {
@@ -82,6 +84,7 @@ export async function conversationBoard(userId: string, course: string): Promise
       attempts: row.attempts,
       dueAt: row.dueAt,
       intervalDays: row.intervalDays,
+      lastAt: row.lastAt,
     };
     return { conversation, state, due: row.dueAt.getTime() <= now, fresh: false };
   });
@@ -316,6 +319,28 @@ async function duplicateResult(userId: string, passed: boolean, nextDays: number
  * Kural kimlikleri sohbet düzeltmelerinin ürettiği etiketlerle aynı uzayda
  * (V2-Regel, Akkusativ) — ileride düzeltmeler doğrudan bu kuyruğu besleyebilir.
  */
+/**
+ * Tek konuşmanın önceki sonucu ("Önceki sonucun", 2026-10-07) ve adım geçildi mi;
+ * denenmemişse null. Okuma hatası sayfayı düşürmez.
+ */
+export async function conversationResult(
+  userId: string,
+  conversationId: string,
+): Promise<{ result: { pct: number; best: number; attempts: number; at: string | null }; passed: boolean } | null> {
+  try {
+    const [r] = await db
+      .select()
+      .from(userConversations)
+      .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, conversationId)));
+    if (!r) return null;
+    const pct = r.total > 0 ? Math.round((r.correct / r.total) * 100) : 0;
+    return { result: { pct, best: pct, attempts: r.attempts, at: r.lastAt ? r.lastAt.toISOString() : null }, passed: conversationStepDone(r) };
+  } catch (err) {
+    console.error("[conversation] previous", err);
+    return null;
+  }
+}
+
 export async function weakRules(userId: string, limit = 3): Promise<string[]> {
   const rows = await db
     .select({

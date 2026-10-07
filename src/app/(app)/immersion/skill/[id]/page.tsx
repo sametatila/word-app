@@ -1,4 +1,7 @@
 import { notFound } from "next/navigation";
+import { PreviousGate } from "@/components/previous-result";
+import type { ItemResult } from "@/lib/immersion/state";
+import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import { getUserId, getUserInfo } from "@/lib/auth/server";
 import { getT } from "@/lib/i18n/server";
 import { LockedIcon } from "@/components/icons";
@@ -113,10 +116,14 @@ export default async function ImmersionSkillPage({
      yalnız yapay zekâ puanı gelmiyor. O durumda (bu alıştırmaya hak düşmemişse)
      oynatıcının üstünde nasıl açılacağı yazıyor. */
   const banner = quota && !quota.owned && quota.remaining <= 0 ? <UnlockProgress copy={quota.copy} /> : null;
+  /* ÖNCEKİ SONUÇ (2026-10-07): denenmiş alıştırma sıfırdan açılmıyor (`PreviousGate`). */
+  const previous = await previousResult(exercise.id, exercise.level);
   return (
     <PlayerFrame value={frame}>
       {banner ? <div className="mx-auto mb-3 w-full max-w-2xl">{banner}</div> : null}
-      {pickPlayer(exercise, backHref)}
+      <PreviousGate result={previous} eyebrowKey={SKILL_LABEL_KEYS[exercise.skill]} eyebrowSuffix={exercise.level} passed={previous ? isSkillDone(previous.pct) : false} close={backHref}>
+        {pickPlayer(exercise, backHref)}
+      </PreviousGate>
     </PlayerFrame>
   );
 }
@@ -179,6 +186,22 @@ function pickPlayer(exercise: NonNullable<Awaited<ReturnType<typeof getExercise>
  * null (bitiş kartı yalnız "geri" gösterir). İlerleme okunamazsa sıradaki
  * yine hesaplanır — yalnız "bitmiş" süzgeci boş kalır.
  */
+/** Bu alıştırmanın önceki sonucu (son puan, en iyi, deneme, tarih); denenmemişse ya da misafirse null. */
+async function previousResult(id: string, level: string): Promise<ItemResult | null> {
+  try {
+    const userId = await getUserId();
+    if (!userId) return null;
+    const s = (await listSkillStatus(userId, level))[id];
+    if (!s) return null;
+    const best = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+    const last = s.lastScore ?? best;
+    return { pct: last, best: Math.max(best, last), attempts: s.attempts, at: s.lastAt ? new Date(s.lastAt).toISOString() : null };
+  } catch (err) {
+    console.error("[skill] previous", err);
+    return null;
+  }
+}
+
 async function nextInLibrary(
   currentId: string,
   course: string,

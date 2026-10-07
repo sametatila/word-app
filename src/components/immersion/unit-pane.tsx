@@ -16,7 +16,8 @@ import {
   SkillWritingIcon,
   UnitQuizIcon,
 } from "@/components/icons";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
+import { formatPercent } from "@/lib/i18n/dict";
 import { useCourse } from "@/components/app-shell";
 import { UnlockProgress } from "@/components/unlock-progress";
 import type { PathQuota } from "@/lib/premium/unlock-copy";
@@ -131,6 +132,7 @@ export function UnitPane({
   // İçeriği olmayan (oynanamaz) slotlar listede hiç görünmez: "Yakında" rozeti
   // yerine ünite yalnız gerçekten yapılabilecek adımları gösteriyor.
   const t = useT();
+  const lang = useLang();
   const course = useCourse();
   const items = unit.items.filter((i) => i.playable || i.kind === "conversation");
 
@@ -194,6 +196,21 @@ export function UnitPane({
                 <span className="muted block text-micro">{t(KIND_KEY[it.kind] ?? "") || it.kind}</span>
                 <span className="block truncate text-strong">{it.title}</span>
               </span>
+              {/* ADIMIN YÜZDESİ (2026-10-07): denenmiş adımda son sonuç, Beceriler listesindeki
+                  çiple aynı (`skill-browser`): geçtiyse yeşil, geçemediyse kehribar. */}
+              {it.result && !convLocked(it) ? (
+                <span
+                  className="shrink-0 rounded-chip px-1.5 py-0.5 text-micro"
+                  style={{
+                    background: it.done
+                      ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)"
+                      : "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
+                    color: it.done ? "var(--color-mint)" : "var(--color-flame)",
+                  }}
+                >
+                  {formatPercent(it.result.pct, lang)}
+                </span>
+              ) : null}
               {convLocked(it) ? (
                 <span
                   className="flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-micro"

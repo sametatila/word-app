@@ -3,6 +3,7 @@ import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userPathItems } from "@/lib/db/schema";
 import { PRACTICE_PASS_PCT } from "@/lib/score-bands";
+import type { ItemResult } from "./state";
 
 /**
  * Patika'nın pratik adımları (dil bilgisi, tekrar, ünite quizi) — kayıt.
@@ -52,16 +53,39 @@ export async function recordPracticeItem(
 }
 
 /** Kullanıcının kursundaki pratik adım kayıtları: denenen ve geçilen kimlikler. */
-export async function practiceProgress(userId: string, course: string): Promise<{ tried: Set<string>; passed: Set<string> }> {
+export async function practiceProgress(
+  userId: string,
+  course: string,
+): Promise<{ tried: Set<string>; passed: Set<string>; results: Map<string, ItemResult> }> {
   const rows = await db
-    .select({ itemId: userPathItems.itemId, passedAt: userPathItems.passedAt })
+    .select({ itemId: userPathItems.itemId, passedAt: userPathItems.passedAt, lastPct: userPathItems.lastPct, bestPct: userPathItems.bestPct, attempts: userPathItems.attempts, lastAt: userPathItems.lastAt })
     .from(userPathItems)
     .where(and(eq(userPathItems.userId, userId), sql`${userPathItems.itemId} like ${`${course}-%`}`));
   const tried = new Set<string>();
   const passed = new Set<string>();
+  const results = new Map<string, ItemResult>();
   for (const r of rows) {
     tried.add(r.itemId);
     if (r.passedAt) passed.add(r.itemId);
+    results.set(r.itemId, { pct: r.lastPct, best: r.bestPct, attempts: r.attempts, at: r.lastAt.toISOString() });
   }
-  return { tried, passed };
+  return { tried, passed, results };
+}
+
+/**
+ * Tek pratik adımın önceki sonucu ("Önceki sonucun", 2026-10-07); oturumsuz ya da
+ * denenmemişse null. Okuma hatası sayfayı düşürmez.
+ */
+export async function practiceResult(userId: string | null, itemId: string): Promise<ItemResult | null> {
+  if (!userId) return null;
+  try {
+    const [r] = await db
+      .select({ lastPct: userPathItems.lastPct, bestPct: userPathItems.bestPct, attempts: userPathItems.attempts, lastAt: userPathItems.lastAt })
+      .from(userPathItems)
+      .where(and(eq(userPathItems.userId, userId), eq(userPathItems.itemId, itemId)));
+    return r ? { pct: r.lastPct, best: r.bestPct, attempts: r.attempts, at: r.lastAt.toISOString() } : null;
+  } catch (err) {
+    console.error("[practice] previous", err);
+    return null;
+  }
 }

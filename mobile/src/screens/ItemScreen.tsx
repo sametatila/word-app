@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { PreviousResult } from "../ui/PreviousResult";
 import { kindIcon, kindFill } from "../ui/unitKind";
 import { t, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
@@ -20,7 +21,7 @@ import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
 import { QuestionList, GlossPanel, WritingList, SkillReportContext, type WritingTask } from "../game/skillQuiz";
 import { ReportFlag } from "../ui/ReportFlag";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
-import { markItemDone, recordItemScore, queueItemRecord } from "../game/pathProgress";
+import { getItemResult, markItemDone, recordItemScore, queueItemRecord, type ItemResult } from "../game/pathProgress";
 import { isSkillDone, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
 import { speakTarget, speakAndWaitVoiced, prefetchDialogue, speakPassage, stopSpeaking } from "../lib/tts";
 import { dialogueCast } from "../lib/speakers";
@@ -257,6 +258,16 @@ export function ItemScreen() {
   const [packReady, setPackReady] = useState(() => !!getExercise(params.id) && nativeContentReady());
   /* Paket inemediyse "açılamıyor" değil "indirilemedi" deniyor. */
   const [packFailed, setPackFailed] = useState(false);
+  /* ÖNCEKİ SONUÇ (2026-10-07): denenmiş alıştırma sıfırdan açılmıyor, önce "Önceki sonucun"
+     (`ui/PreviousResult`); "Tekrar çöz" baştan açar. Patika sunucudaki sonucu parametreyle
+     veriyor, Beceriler cihaz deposundan (sunucuyla eşitleniyor). `undefined` = henüz bilinmiyor. */
+  const [review, setReview] = useState<ItemResult | null | undefined>(params.result ?? undefined);
+  useEffect(() => {
+    if (review !== undefined) return;
+    let dead = false;
+    void getItemResult(params.id).then((r) => { if (!dead) setReview(r); });
+    return () => { dead = true; };
+  }, [params.id, review]);
   useEffect(() => {
     const level = skillLevelOf(params.id);
     if (!level) { setPackReady(true); return; }
@@ -369,7 +380,7 @@ export function ItemScreen() {
     setRound((r) => r + 1);
   }
 
-  if (!exercise && !packReady) {
+  if ((!exercise && !packReady) || review === undefined) {
     /* İSKELET YÜKLENMİŞ EKRANIN KABUĞUNDA. Genel `ContentLoadingBody`
        `FlowScreen` içinde geri oku + düğme çifti çiziyordu; gerçek ekranın
        başlığı çarpı + tür karosu + başlık, gövdesi yönerge → metin kartı →
@@ -421,6 +432,19 @@ export function ItemScreen() {
             birincil "Kapat"; üstte ikinci bir geri oku yok (bilgi ekranı). */}
         <StateBody alert title={packFailed ? t("content.couldn_t_load") : t("item.this_exercise_can_t_be_opened")} body={packFailed ? t("social.err_offline") : null} />
       </FlowScreen>
+    );
+  }
+
+  if (review) {
+    const sk = SKILL_KEY[exercise.skill];
+    return (
+      <PreviousResult
+        eyebrow={`${sk ? t(sk) : t("item.content")} · ${exercise.level}`}
+        result={review}
+        passed={isSkillDone(review.pct)}
+        onRetry={() => setReview(null)}
+        onClose={() => nav.goBack()}
+      />
     );
   }
 

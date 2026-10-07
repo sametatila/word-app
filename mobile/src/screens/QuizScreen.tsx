@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { PreviousResult } from "../ui/PreviousResult";
 import { t, formatPercent, currentLang } from "../lib/i18n";
 import { View } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
@@ -37,6 +38,7 @@ export function QuizScreen() {
   const [correct, setCorrect] = useState(0);
   const [finished, setFinished] = useState(false);
   const [round, setRound] = useState(0);
+  const [review, setReview] = useState(params.result ?? null);
 
   const isGrammar = params.kind === "grammar";
   /* Sorular konuşmalardan türüyor ve konuşmalar A1 dışında ikilide değil: seviye
@@ -96,6 +98,19 @@ export function QuizScreen() {
   const total = questions.length;
   const pct = total ? Math.round((correct / total) * 100) : 0;
   const passed = pct >= PASS_PCT;
+
+  /* ÖNCEKİ SONUÇ (2026-10-07): denenmiş adım sıfırdan açılmıyor (`ui/PreviousResult`). */
+  if (review) {
+    return (
+      <PreviousResult
+        eyebrow={`${t("common.unit")} ${params.unitIndex} · ${t(isGrammar ? "unitkind.grammar" : isUnitQuiz ? "unitkind.unit_quiz" : "unitkind.quiz")}`}
+        result={review}
+        passed={review.pct >= PASS_PCT}
+        onRetry={() => setReview(null)}
+        onClose={() => nav.goBack()}
+      />
+    );
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>

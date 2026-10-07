@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { forgetItemCaches } from "../game/pathProgress";
 
 /**
  * HESABA AİT cihaz anahtarları — çıkışta silinir.
@@ -50,6 +51,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-items-pending", //      gonderilmeyi bekleyen beceri ogeleri
   "lernomi-path-items-pending", // gonderilmeyi bekleyen patika pratik adimlari
   "lernomi-item-scores", //        oge puanlari
+  "lernomi-item-results", //       oge onceki sonuclari (en iyi, deneme, tarih)
   "lernomi-coach-seen", //         gosterilen koc cumleleri
   "lernomi:level-advance-dismissed", // "şimdilik kalsın" denen seviye geçişi (hesabın kararı)
   "lernomi:guest-milestones", //   misafire gosterilen kilometre tasi cagrilari (yeni misafirde yeniden)
@@ -57,6 +59,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
 
 /** Çıkışta çağrılır. Hata yutulur: temizlik çıkışı engellememeli. */
 export async function forgetAccountScoped(): Promise<void> {
+  forgetItemCaches();
   try {
     const keys = await AsyncStorage.getAllKeys();
     const doomed = keys.filter((k) => ACCOUNT_SCOPED_PREFIXES.some((p) => k.startsWith(p)));

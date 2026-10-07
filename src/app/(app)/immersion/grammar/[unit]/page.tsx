@@ -1,4 +1,8 @@
 import { notFound } from "next/navigation";
+import { PreviousGate } from "@/components/previous-result";
+import { practiceResult } from "@/lib/immersion/practice";
+import { PRACTICE_PASS_PCT } from "@/lib/score-bands";
+import { getUserId } from "@/lib/auth/server";
 import { getT, getLang } from "@/lib/i18n/server";
 import { nativeUnitBriefs } from "@/lib/immersion/brief";
 import { localiseConversation } from "@/lib/conversations/native-server";
@@ -61,7 +65,10 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
      oynatıcı "henüz soru yok" durumunu çiziyor — mobil `QuizScreen` gibi. */
   if (!questions.length && !brief) notFound();
 
+  /* ÖNCEKİ SONUÇ (2026-10-07): denenmiş adım sıfırdan açılmıyor (`PreviousGate`). */
+  const previous = await practiceResult(await getUserId(), `${unit}-grammar1`);
   return (
+    <PreviousGate result={previous} eyebrowKey={"unitkind.grammar"} passed={previous ? previous.pct >= PRACTICE_PASS_PCT : false} close="/immersion">
     <ImmersionQuizPlayer
       title={t("skills.grammar")}
       subtitle={brief ? `${t("common.unit")} ${brief.index} · ${brief.theme}` : t("immw.grammar_exercise")}
@@ -75,5 +82,6 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
       intro={t("quiz.intro_grammar")}
       questions={questions}
     />
+    </PreviousGate>
   );
 }

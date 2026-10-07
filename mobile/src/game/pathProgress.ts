@@ -69,6 +69,46 @@ export async function queueItemRecord(id: string, correct: number, total: number
   try { await AsyncStorage.setItem(PENDING_KEY, JSON.stringify(q)); } catch { /* yut */ }
 }
 
+/**
+ * ÖNCEKİ SONUÇ (Samet, 2026-10-07: "her açtığımda sıfırdan gösteriyor; önceki başarı
+ * istatistiğim varsa onu göstermeli"). Puanın yanında en iyi puan, deneme sayısı ve son
+ * deneme anı; alıştırma açılınca "Önceki sonucun" ekranı (`ui/PreviousResult`) bunu
+ * çiziyor. Kaynak sunucu (`syncItemProgress`), bitirişte yerelde de güncelleniyor.
+ */
+export type ItemResult = { pct: number; best: number; attempts: number; at: string | null };
+const RESULT_KEY = "lernomi-item-results";
+let resultCache: Record<string, ItemResult> | null = null;
+
+export async function getItemResults(): Promise<Record<string, ItemResult>> {
+  if (resultCache) return resultCache;
+  try {
+    const raw = await AsyncStorage.getItem(RESULT_KEY);
+    resultCache = raw ? (JSON.parse(raw) as Record<string, ItemResult>) : {};
+  } catch {
+    resultCache = {};
+  }
+  return resultCache;
+}
+
+async function saveItemResults(r: Record<string, ItemResult>): Promise<void> {
+  resultCache = r;
+  try { await AsyncStorage.setItem(RESULT_KEY, JSON.stringify(r)); } catch { /* yut */ }
+}
+
+/**
+ * Bellekteki önbellekler çıkışta sıfırlanıyor (`lib/accountScope` `forgetAccountScoped`):
+ * cihazdaki anahtarlar silinse de önbellek kalıyordu ve uygulama kapanmadan girilen
+ * başka hesap öncekinin puanlarını görüyordu.
+ */
+export function forgetItemCaches(): void {
+  scoreCache = null;
+  resultCache = null;
+}
+
+export async function getItemResult(id: string): Promise<ItemResult | null> {
+  return (await getItemResults())[id] ?? null;
+}
+
 export async function getItemScores(): Promise<Record<string, number>> {
   if (scoreCache) return scoreCache;
   try {
@@ -112,11 +152,19 @@ export async function flushPendingItems(): Promise<void> {
 export async function syncItemProgress(level?: string): Promise<void> {
   try {
     await flushPendingItems();
-    const r = await api<{ progress?: Record<string, { correct: number; total: number; lastScore: number | null; lastAt: string }> }>(
+    const r = await api<{ progress?: Record<string, { correct: number; total: number; attempts?: number; lastScore: number | null; lastAt: string }> }>(
       `/api/skills${level ? `?level=${encodeURIComponent(level)}` : ""}`,
     );
     const progress = r?.progress;
     if (!progress) return;
+    /* Önceki sonuç ayrıntısı her eşitlemede sunucudan (otorite). */
+    const results = { ...(await getItemResults()) };
+    for (const [id, v] of Object.entries(progress)) {
+      const best = v.total > 0 ? scoreOf(v.correct, v.total) : 0;
+      const last = v.lastScore ?? best;
+      results[id] = { pct: last, best: Math.max(best, last), attempts: v.attempts ?? 1, at: v.lastAt ?? null };
+    }
+    await saveItemResults(results);
     const s = await getDoneItems();
     const scores = await getItemScores();
     let degisti = false;
@@ -321,6 +369,10 @@ async function adimlariBosalt(): Promise<number> {
 
 /** Egzersiz bitince puanı da yerele yazılır (web `recordSkillResult` karşılığı). */
 export async function recordItemScore(id: string, score: number): Promise<void> {
+  const results = { ...(await getItemResults()) };
+  const prev = results[id];
+  results[id] = { pct: score, best: Math.max(prev?.best ?? 0, score), attempts: (prev?.attempts ?? 0) + 1, at: new Date().toISOString() };
+  await saveItemResults(results);
   const scores = await getItemScores();
   if (scores[id] === score) return;
   scores[id] = score;

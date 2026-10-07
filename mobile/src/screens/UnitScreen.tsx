@@ -1,6 +1,6 @@
 import React from "react";
 import { kindIcon, kindFill } from "../ui/unitKind";
-import { t } from "../lib/i18n";
+import { formatPercent, t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -56,7 +56,7 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
   // ünite yalnız gerçekten yapılabilecek adımları gösterir; ilerleme yüzdesi de onlara göre.
   const raw = (canliUnit?.items ?? gelenItems ?? [])
     .filter((i) => i.playable || i.kind === "conversation")
-    .map((i) => ({ id: i.id, kind: i.kind as ItemKind, title: i.title, done: i.done, playable: i.playable, open: i.open !== false, attempted: i.attempted ?? i.done, ref: i.ref ?? null }));
+    .map((i) => ({ id: i.id, kind: i.kind as ItemKind, title: i.title, done: i.done, playable: i.playable, open: i.open !== false, attempted: i.attempted ?? i.done, ref: i.ref ?? null, result: i.result ?? null }));
   /*
     "Şimdi" = ilk açık ve HENÜZ DENENMEMİŞ adım — bitmemiş ilk adım değil.
 
@@ -93,16 +93,16 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
     // Kapalı adım açılmaz: kullanıcı sıradakine geçebilir ama daha sonrakine
     // geçemez — pencere ilerledikçe kendiliğinden kayar.
     if (!it.open) return;
-    if (it.kind === "conversation") { if (it.ref) nav.navigate("Conversation", { id: it.ref }); return; }
+    if (it.kind === "conversation") { if (it.ref) nav.navigate("Conversation", { id: it.ref, result: it.result, done: it.done }); return; }
     if (!it.playable) return;
     // Gramer de ünite kimliğinden TÜRETİLİYOR (immersionQuiz.deriveGrammar),
     // yani egzersiz havuzunda karşılığı yok. Item ekranına gönderilirse
     // "açılamıyor" der; quiz oynatıcısı ise türetilmiş soruyu zaten çiziyor.
     if (it.kind === "quiz" || it.kind === "unitQuiz" || it.kind === "grammar") {
-      nav.navigate("Quiz", { itemId: it.id, level, unitIndex: index, kind: it.kind, theme });
+      nav.navigate("Quiz", { itemId: it.id, level, unitIndex: index, kind: it.kind, theme, result: it.result });
       return;
     }
-    nav.navigate("Item", { id: it.ref ?? it.id, kind: it.kind, title: it.title });
+    nav.navigate("Item", { id: it.ref ?? it.id, kind: it.kind, title: it.title, result: it.result });
   }
 
   return (
@@ -143,6 +143,13 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
                       <Text variant="micro" color={colors.textMuted}>{t(aiLock ? "unlock.locked_conv" : "unlock.spent_write")}</Text>
                     ) : null}
                   </View>
+                  {/* ADIMIN YÜZDESİ (2026-10-07): denenmiş adımda son sonuç, Beceriler listesindeki çiple
+                      aynı görünüm — geçtiyse yeşil, geçemediyse turuncu. */}
+                  {it.result && !aiLock ? (
+                    <View style={{ paddingHorizontal: spacing.sm, paddingVertical: 3, borderRadius: radii.sm, backgroundColor: (it.done ? colors.success : colors.streak) + "22" }}>
+                      <Text variant="micro" color={it.done ? colors.successText : colors.streakText}>{formatPercent(it.result.pct)}</Text>
+                    </View>
+                  ) : null}
                   {aiLock ? (
                     <LockedIcon color={colors.textMuted} size={18} />
                   ) : it.done ? (

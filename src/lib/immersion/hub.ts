@@ -1,5 +1,6 @@
 import type { ImmersionItem } from "@/lib/immersion/types";
 import type { HubUnit } from "@/components/immersion/immersion-hub";
+import type { ItemResult } from "@/lib/immersion/state";
 
 /**
  * Patika durumundan arayüzün beklediği ünite listesi.
@@ -19,7 +20,7 @@ type TrackState = {
     total: number;
     conversationsDone: number;
     conversationsTotal: number;
-    items: { item: ImmersionItem; playable: boolean; done: boolean; attempted: boolean; open: boolean }[];
+    items: { item: ImmersionItem; playable: boolean; done: boolean; attempted: boolean; open: boolean; result: ItemResult | null }[];
   }[];
   currentIndex: number;
 };
@@ -48,6 +49,7 @@ export function buildHubUnits(state: TrackState): HubUnit[] {
       done: s.done,
       attempted: s.attempted,
       open: s.open,
+      result: s.result,
     })),
   }));
 }

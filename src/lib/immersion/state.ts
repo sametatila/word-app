@@ -14,8 +14,17 @@ import type { ImmersionItem, ImmersionTrack, ImmersionUnit } from "./types";
  * aynı mantık onları da kapsar (o zaman ref taşıyacaklar).
  */
 
+/**
+ * ADIMIN SONUCU (Samet, 2026-10-07: "önceki başarı istatistiğim varsa onu göstermeli";
+ * ünite kartında adımın yüzdesi). `pct` son deneme, `best` en iyi (0–100), `at` son
+ * deneme anı. Denenmemiş adımda null.
+ */
+export type ItemResult = { pct: number; best: number; attempts: number; at: string | null };
+
 export type ItemState = {
   item: ImmersionItem;
+  /** Önceki sonuç; denenmemişse null. */
+  result: ItemResult | null;
   /** İçerik kurulu mu (ref var). Placeholder ise false — "yakında". */
   playable: boolean;
   /** Tamamlandı mı (beceride skor ≥ eşik) — yalnız playable item için anlamlı. */
@@ -87,6 +96,8 @@ export type Completion = {
    */
   practiceDone?: (itemId: string) => boolean;
   practiceAttempted?: (itemId: string) => boolean;
+  /** Adımın önceki sonucu (`ItemResult`); verilmezse hep null. */
+  result?: (item: ImmersionItem) => ItemResult | null;
 };
 
 /** Pratik adım: içeriği ünitenin konuşmalarından türetilen, kaydı öğe kimliğiyle tutulan. */
@@ -124,6 +135,7 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
       const done = itemDone(item, c);
       return {
         item,
+        result: item.ref !== null ? (c.result?.(item) ?? null) : null,
         playable: item.ref !== null,
         done,
         attempted: done || itemAttempted(item, c),

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { PreviousResult } from "../ui/PreviousResult";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { AppState, View, TextInput } from "react-native";
@@ -301,6 +302,12 @@ export function ConversationScreen() {
   // Yarım kayıt okunana dek boş sohbet kabuğu çizilmez: ya "devam et" ekranı ya
   // da ilk baloncuklar geliyor, ikisi de boş kabuğun yerine geçip ekranı zıplatır.
   const [resumeChecked, setResumeChecked] = useState(false);
+  /* ÖNCEKİ SONUÇ (2026-10-07): yarım kalmamış, daha önce yapılmış konuşma sıfırdan başlamıyor;
+     önce "Önceki sonucun" (`ui/PreviousResult`), "Tekrar çöz" anlatımı baştan açar. Yarım
+     kalan konuşmada "kaldığın yerden" teklifi öncelikli. */
+  const [review, setReview] = useState(params.result ?? null);
+  const reviewRef = useRef(review);
+  reviewRef.current = review;
   const [report, setReport] = useState<ReportRef | null>(null); // "Bildir" açık olan yapay zekâ yanıtı
   // Konuşma tanıma durumu. `sttOk === false` tek yer: mikrofon yok ya da izin
   // verilmedi — o zaman yazma alanı açılır, yoksa konuşma tamamlanamaz hâle gelir.
@@ -373,7 +380,7 @@ export function ConversationScreen() {
     if (!conversation) return;
     loadConversationResume(conversation.id).then((r) => {
       if (r && (r.phase === "chat" || r.cursor < conversation.lecture.length)) setResumeOffer(r);
-      else beginLecture(0, false);
+      else if (!reviewRef.current) beginLecture(0, false);
       setResumeChecked(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -904,6 +911,18 @@ export function ConversationScreen() {
             sayfa, orada bağlantı "Geri dön"). */}
         <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("conversation.this_conversation_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
+    );
+  }
+
+  if (review && resumeChecked && !resumeOffer && phase === "lecture") {
+    return (
+      <PreviousResult
+        eyebrow={`${tx("unitkind.conversation")} · ${conversation.level}`}
+        result={review}
+        passed={params.done ?? false}
+        onRetry={() => { setReview(null); beginLecture(0, false); }}
+        onClose={() => nav.goBack()}
+      />
     );
   }
 

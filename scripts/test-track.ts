@@ -359,6 +359,22 @@ const örnek = deriveGrammar("de-a1-u02", gercekA1.slice(4, 8), 8, DENEME_METNI)
 check("gramer türetmesi hüküm İÇERİR", örnek.some((q) => q.kind === "truefalse"));
 check("gramer sorularının şıkkı ya da maddesi var", örnek.every((q) => q.options.length > 0 || (q.items?.length ?? 0) > 0));
 
+/* ÖNCEKİ SONUÇ (2026-10-07): Completion.result adıma taşınıyor, yer tutucuda ve denenmemişte yok. */
+{
+  const res = { pct: 55, best: 80, attempts: 2, at: "2026-10-07T08:00:00.000Z" };
+  const sR = buildTrackState(t, {
+    conversationDone: () => false,
+    skillDone: () => false,
+    result: (it) => (it.kind === "conversation" && it === t.units[0].items.find((x) => x.kind === "conversation") ? res : null),
+  });
+  const items = sR.units[0].items;
+  const first = items.find((s) => s.item.kind === "conversation");
+  check("önceki sonuç adımda", first?.result?.best === 80 && first.result.attempts === 2);
+  check("denenmemiş adımda sonuç null", items.filter((s) => s !== first).every((s) => s.result === null));
+  const s0r = buildTrackState(t, { conversationDone: () => false, skillDone: () => false });
+  check("result verilmezse hep null (eski çağıran)", s0r.units.every((u) => u.items.every((s) => s.result === null)));
+}
+
 if (fail.length) {
   console.error(`\n${fail.length} TEST BAŞARISIZ:`);
   for (const f of fail) console.error("  ✗ " + f);

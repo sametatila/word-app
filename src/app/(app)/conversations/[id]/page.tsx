@@ -5,7 +5,9 @@ import { findConversation, conversationIndexInLevel } from "@/lib/conversations"
 import { characterFor } from "@/lib/conversations/characters";
 import { ConversationPlayer, type ConversationExtras } from "@/components/conversations/conversation-player";
 import { ensureProfile } from "@/lib/session";
-import { nextConversation } from "@/lib/conversations/progress";
+import { conversationResult, nextConversation } from "@/lib/conversations/progress";
+import { PreviousGate } from "@/components/previous-result";
+import { CONVERSATION_RESUME_KEY } from "@/lib/storage-hygiene";
 import { candoForConversation } from "@/lib/cando-map";
 import { candoById } from "@/lib/cando";
 import { titleMeta } from "@/lib/page-meta";
@@ -60,5 +62,12 @@ export default async function ConversationPage({ params }: { params: Promise<{ i
      açılacağını gösteriyor. Okunamazsa kilit çizilmiyor — kapıyı yine
      `/api/chat` tutuyor. */
   const quota = await conversationQuota(who, source).catch(() => null);
-  return <ConversationPlayer conversation={conversation} character={character} extras={extras} quota={quota} />;
+  /* ÖNCEKİ SONUÇ (2026-10-07): bitmiş konuşma sıfırdan açılmıyor (`PreviousGate`); tarayıcıda
+     yarım kalmış kayıt varsa oynatıcı kaldığı yerden sürer. */
+  const previous = await conversationResult(userId, conversation.id);
+  return (
+    <PreviousGate result={previous?.result ?? null} eyebrowKey="unitkind.conversation" eyebrowSuffix={conversation.level} passed={previous?.passed ?? false} close="/immersion" resumeKey={`${CONVERSATION_RESUME_KEY}:${conversation.id}`}>
+      <ConversationPlayer conversation={conversation} character={character} extras={extras} quota={quota} />
+    </PreviousGate>
+  );
 }

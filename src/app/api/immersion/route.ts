@@ -62,6 +62,9 @@ export async function GET() {
         // tek öğe açık. İstemci `open`a bakmalı, `done`a değil.
         attempted: s.attempted,
         open: s.open,
+        /* Önceki sonuç: ünite kartının yüzdesi ve açılıştaki "önceki sonucun" ekranı
+           (2026-10-07). Eski istemci alanı yok sayar. */
+        result: s.result,
       })),
     }));
 

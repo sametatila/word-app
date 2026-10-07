@@ -1,4 +1,8 @@
 import { notFound } from "next/navigation";
+import { PreviousGate } from "@/components/previous-result";
+import { practiceResult } from "@/lib/immersion/practice";
+import { PRACTICE_PASS_PCT } from "@/lib/score-bands";
+import { getUserId } from "@/lib/auth/server";
 import { getT, getLang } from "@/lib/i18n/server";
 import { courseName } from "@/lib/courses";
 import { nativeUnitBriefs } from "@/lib/immersion/brief";
@@ -78,7 +82,10 @@ export default async function ImmersionQuizPage({
   /* Soru yoksa 404 DEĞİL: oynatıcı "henüz soru yok" durumunu çiziyor (mobil
      `QuizScreen` ile aynı). Ünite kimliği geçersizse yukarıda zaten 404. */
 
+  /* ÖNCEKİ SONUÇ (2026-10-07): denenmiş adım sıfırdan açılmıyor (`PreviousGate`). */
+  const previous = await practiceResult(await getUserId(), `${unit}-${unitQuiz ? "unitQuiz" : "quiz"}1`);
   return (
+    <PreviousGate result={previous} eyebrowKey={unitQuiz ? "unitkind.unit_quiz" : "unitkind.quiz"} passed={previous ? previous.pct >= PRACTICE_PASS_PCT : false} close="/immersion">
     <ImmersionQuizPlayer
       title={t(unitQuiz ? "immw.unit_quiz" : "immw.review")}
       subtitle={`${t("common.unit")} ${brief.index} · ${brief.theme}`}
@@ -88,5 +95,6 @@ export default async function ImmersionQuizPage({
       intro={t(unitQuiz ? "quiz.intro_unit_quiz" : "quiz.intro_review")}
       questions={questions}
     />
+    </PreviousGate>
   );
 }

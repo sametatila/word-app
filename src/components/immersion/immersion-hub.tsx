@@ -1,5 +1,6 @@
 "use client";
 
+import type { ItemResult } from "@/lib/immersion/state";
 import { useEffect, useState } from "react";
 import { barPct, fillStyle } from "@/lib/motion";
 import Link from "next/link";
@@ -50,6 +51,8 @@ export type HubItem = {
   attempted: boolean;
   /** Açılabilir mi: biten + denenen + sıradaki tek öğe (bkz. lib/immersion/state). */
   open: boolean;
+  /** Önceki sonuç (yüzde, en iyi, deneme, tarih); denenmemişse null. */
+  result?: ItemResult | null;
 };
 
 export type HubUnit = {

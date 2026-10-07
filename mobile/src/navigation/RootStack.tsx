@@ -1,4 +1,5 @@
 import React from "react";
+import type { ItemResult } from "../game/pathProgress";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import type { NavigatorScreenParams } from "@react-navigation/native";
 import { contentColumnLayout } from "../ui/ContentColumn";
@@ -69,11 +70,12 @@ export type RootStackParams = {
   /** `from: "web"` — webdeki satın alma yönlendirmesinden geldi (`/get/premium`). */
   /* `group`: `/g/<KOD>` bağlantısından gelen grup kodu (yalnız Android, bkz. lib/deepLink). */
   Paywall: { ref?: string; from?: "web"; group?: string } | undefined;
-  Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
-  Conversation: { id: string };
+  Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null; result?: ItemResult | null }[] };
+  /** `result`/`done`: Patika adımının önceki sonucu ve geçildi mi ("Önceki sonucun" ekranı). */
+  Conversation: { id: string; result?: ItemResult | null; done?: boolean };
   /** Puanlı kısım (WP-22): aynı sahne, yardım yok, 5 tur, puanlı. */
   ConversationScored: { id: string };
-  Quiz: { itemId: string; level: string; unitIndex: number; kind: string; theme: string };
+  Quiz: { itemId: string; level: string; unitIndex: number; kind: string; theme: string; result?: ItemResult | null };
   Auth: undefined;
   /** E-postadaki sıfırlama bağlantısı uygulamada açıldığında (bkz. lib/deepLink). */
   ResetPassword: { token?: string };
@@ -93,7 +95,8 @@ export type RootStackParams = {
   Cando: undefined;
   Writings: undefined;
   /** `from`: "skills" → bitiş kartı Beceriler'e döner (Patika'ya değil). */
-  Item: { id: string; kind: string; title: string; from?: string };
+  /** `result`: Patika adımının önceki sonucu (sunucu); yoksa ekran cihaz deposuna bakar. */
+  Item: { id: string; kind: string; title: string; from?: string; result?: ItemResult | null };
   /** Sosyal katman: herkese açık profil, gelen kutusu, sosyal ayarlar.
       Arkadaş merkezinin kendisi artık bir SEKME (bkz. RootTabs). */
   User: { username: string };

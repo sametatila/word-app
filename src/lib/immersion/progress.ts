@@ -6,7 +6,7 @@ import { userSkills } from "@/lib/db/schema";
 import { conversationBoard } from "@/lib/conversations/progress";
 import { isSkillDone } from "@/lib/score-bands";
 import { practiceProgress } from "./practice";
-import type { Completion } from "./state";
+import type { Completion, ItemResult } from "./state";
 
 /**
  * Faz 3 tamamlanma adaptörü — mevcut ilerleme kaynaklarını immersion'ın saf
@@ -23,13 +23,22 @@ export async function immersionCompletion(userId: string, course: string): Promi
   // hâlâ "bitti"ye bakıyor. İkisini birleştirmek üniteleri hak edilmeden açardı.
   const triedConversations = new Set<string>();
   const triedSkills = new Set<string>();
+  /* Önceki sonuç (ünite kartının yüzdesi, "önceki sonucun" ekranı). Konuşmada
+     doğru/toplam en iyi denemenin, ayrı bir son puan yok. */
+  const convResults = new Map<string, ItemResult>();
+  const skillResults = new Map<string, ItemResult>();
+  const pct = (c: number, t: number) => (t > 0 ? Math.round((c / t) * 100) : 0);
 
   try {
     const cards = await conversationBoard(userId, course);
     for (const c of cards) {
       if (c.state && conversationStepDone(c.state)) doneConversations.add(c.conversation.id);
       // Kayıt varsa konuşma en az bir kez açılıp cevaplanmıştır.
-      if (c.state) triedConversations.add(c.conversation.id);
+      if (c.state) {
+        triedConversations.add(c.conversation.id);
+        const p = pct(c.state.correct, c.state.total);
+        convResults.set(c.conversation.id, { pct: p, best: p, attempts: c.state.attempts, at: c.state.lastAt ? c.state.lastAt.toISOString() : null });
+      }
     }
   } catch (err) {
     console.error("[immersion] konuşma ilerlemesi okunamadı", err);
@@ -37,20 +46,22 @@ export async function immersionCompletion(userId: string, course: string): Promi
 
   try {
     const rows = await db
-      .select({ exerciseId: userSkills.exerciseId, lastScore: userSkills.lastScore })
+      .select({ exerciseId: userSkills.exerciseId, lastScore: userSkills.lastScore, correct: userSkills.correct, total: userSkills.total, attempts: userSkills.attempts, lastAt: userSkills.lastAt })
       .from(userSkills)
       .where(eq(userSkills.userId, userId));
     for (const r of rows) {
       if (isSkillDone(r.lastScore)) doneSkills.add(r.exerciseId);
       // Satırın kendisi denemenin kanıtı; puanı yetmemiş olabilir.
       triedSkills.add(r.exerciseId);
+      const best = pct(r.correct, r.total);
+      skillResults.set(r.exerciseId, { pct: r.lastScore ?? best, best: Math.max(best, r.lastScore ?? 0), attempts: r.attempts, at: r.lastAt.toISOString() });
     }
   } catch (err) {
     console.error("[immersion] beceri ilerlemesi okunamadı", err);
   }
 
   // Pratik adımlar (dil bilgisi, tekrar, ünite quizi) — öğe kimliğiyle.
-  let practice = { tried: new Set<string>(), passed: new Set<string>() };
+  let practice = { tried: new Set<string>(), passed: new Set<string>(), results: new Map<string, ItemResult>() };
   try {
     practice = await practiceProgress(userId, course);
   } catch (err) {
@@ -64,5 +75,11 @@ export async function immersionCompletion(userId: string, course: string): Promi
     skillDone: (ref) => doneSkills.has(ref),
     conversationAttempted: (ref) => triedConversations.has(ref),
     skillAttempted: (ref) => triedSkills.has(ref),
+    result: (it) => {
+      if (!it.ref) return null;
+      if (it.kind === "conversation") return convResults.get(it.ref) ?? null;
+      if (it.kind === "read" || it.kind === "listen" || it.kind === "write") return skillResults.get(it.ref) ?? null;
+      return practice.results.get(it.id) ?? null;
+    },
   };
 }
