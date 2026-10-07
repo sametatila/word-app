@@ -906,6 +906,11 @@ export async function buildSession(
         .filter((s) => s.gloss === key && s.de !== r.word.de && second(s) === own)
         .map((s) => s.de)
         .slice(0, 6);
+      const other = synonyms
+        .filter((s) => s.gloss === key && s.de !== r.word.de && second(s) !== own)
+        .map((s) => ({ de: s.de, sub: second(s) }))
+        .slice(0, 6);
+      if (other.length) r.sameGloss = other;
     }
   }
 
@@ -1920,6 +1925,8 @@ function pickDistractors(
   count: number,
   label: Labeler,
   native: NativeLang,
+  /** Şıkkın ait olduğu kelimenin öbür yüzü (`Option.of`). */
+  other?: (p: (typeof words.$inferSelect)) => string | null,
 ): Option[] {
   const target = label(word);
   if (!target) return [];
@@ -1936,7 +1943,7 @@ function pickDistractors(
     // Anlam benzerliği de ANADİLDE ölçülüyor: Türkçe metinleri karşılaştırmak
     // İngilizce oynayan kullanıcıda hiçbir şey ifade etmiyordu.
     const glossBonus = similarity(target.text, option.text) / 2;
-    scored.push({ option, score: similarity(p.de, word.de) + typBonus + glossBonus });
+    scored.push({ option: other ? { ...option, of: other(p) } : option, score: similarity(p.de, word.de) + typBonus + glossBonus });
   }
 
   scored.sort((a, b) => b.score - a.score);
@@ -2057,7 +2064,7 @@ function pickFalseClaim(
     if ([...other].some((m) => own.has(m))) continue; // ortak anlam varsa iddia yanlış sayılamaz
     seen.add(option.text);
     const typBonus = p.typ === word.typ ? 6 : 0;
-    scored.push({ option, score: similarity(p.de, word.de) + typBonus });
+    scored.push({ option: { ...option, of: withArtikel(p) }, score: similarity(p.de, word.de) + typBonus });
   }
   if (!scored.length) return null;
 
@@ -2079,7 +2086,9 @@ function optionsFor(
   // Havuz süzüldüğü için buraya anlamsız kelime gelmemeli; yine de tip
   // düzeyinde ele alınıyor — sessizce Türkçeye düşmektense boş şık listesi.
   if (!correct) return [];
-  return shuffle([correct, ...pickDistractors(word, pool, 3, label, native)]);
+  const other = (p: (typeof words.$inferSelect)) =>
+    direction === "de-tr" ? withArtikel(p) : (optionLabel(p, "de-tr", native)?.text ?? null);
+  return shuffle([correct, ...pickDistractors(word, pool, 3, label, native, other)]);
 }
 
 function shuffle<T>(arr: T[]): T[] {

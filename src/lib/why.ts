@@ -354,6 +354,10 @@ export type WhyInput = {
   word?: WhyWord | null;
   /** Seçilen şık / yazılan kelime. */
   detail?: string | null;
+  /** Seçilen şıkkın ait olduğu kelime (`Option.of`): "Seçtiğin „…“ = …". */
+  detailOf?: string | null;
+  /** Yazılan kelime anadilde aynı anlamı taşıyor, ikinci satırı farklı (typing `sameGloss`). */
+  sameGloss?: { sub: string | null; wordSub: string | null } | null;
   /** Doğru cevap metni (çoğul oyunu: doğru çoğul biçim). */
   correct?: string | null;
   /** Cümle oyunları: doğru sıra ve sondaki noktalama. */
@@ -399,11 +403,13 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
       */
       const pair = lang === "tr" && w ? confusableHint(w.de, input.detail) : null;
       if (pair) return { type: "meaning", text: `${pair.hint} (${pair.example})`, href: null };
+      if (w && input.detail && input.sameGloss)
+        return { type: "meaning", text: translate(lang, "why.same_gloss_other", { typed: input.detail, gloss: whyGloss(w, lang), typedSub: input.sameGloss.sub ?? "", word: withArt(w), sub: input.sameGloss.wordSub ?? "" }), href: null };
       return {
         type: "meaning",
         text: w
           ? input.detail
-            ? translate(lang, "why.meaning_wrong_pick", { picked: input.detail, word: withArt(w), meaning: whyGloss(w, lang) })
+            ? translate(lang, input.detailOf ? "why.meaning_wrong_pick_of" : "why.meaning_wrong_pick", { picked: input.detail, of: input.detailOf ?? "", word: withArt(w), meaning: whyGloss(w, lang) })
             : `${withArt(w)} = ${whyGloss(w, lang)}.`
           : translate(lang, "whyrule.meaning.general"),
         href: null,
@@ -413,7 +419,8 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
       return {
         type: "listening",
         text: w
-          ? translate(lang, input.detail ? "why.listening_with_pick" : "why.listening", {
+          ? translate(lang, input.detail ? (input.detailOf ? "why.listening_with_pick_of" : "why.listening_with_pick") : "why.listening", {
+              of: input.detailOf ?? "",
               word: withArt(w),
               // Açıklama da anadilde: "Auto = araba" mı "Auto = car" mı.
               meaning: whyGloss(w, lang),

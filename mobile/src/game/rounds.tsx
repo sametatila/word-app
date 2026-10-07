@@ -410,9 +410,11 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
   const label = data.label ?? tx(data.correct ? "sheet.correct" : "sheet.wrong");
   const speakText = data.speak ?? data.answer ?? undefined;
   const wrong = !data.correct;
-  const showYou = wrong && (data.youTokens?.length || data.you);
+  /* "Neredeyse" de ne yazıldığını ve nedenini gösteriyor (web `round-sheet` aynı, 2026-10-07). */
+  const flawed = wrong || tone === "near";
+  const showYou = flawed && (data.youTokens?.length || data.you);
   const showDiffs = !!data.diffs && (data.diffs.target.some((k) => k.mark !== "same") || data.diffs.typed.some((k) => k.mark === "extra"));
-  const showWhy = wrong && !!data.why;
+  const showWhy = flawed && !!data.why;
   /* Devam: doğruda koyu yeşil (açık temada beyaz yazı #2f9a61 üzerinde 3,4:1
      idi), yanlışta marka rengi. Koyu temada `*Text` dolgu tonuna eşit ve açık;
      yazı orada `onFill`. */
@@ -659,7 +661,7 @@ function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: Roun
     // Almanca CEVAP olduğunda (tr-de) doğru Almanca'yı oku; de-tr'de Almanca zaten
     // soru olarak mount'ta okundu → tekrar okuma.
     markAnswer(ok, deSide ? null : withArtikel(word));
-    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, detail: grammarDetail(word), you: o.text, why: ok ? null : whyFor({ type: "meaning", word, detail: o.text }) });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, detail: grammarDetail(word), you: o.text, why: ok ? null : whyFor({ type: "meaning", word, detail: o.text, detailOf: o.of }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", picked))} colors={colors} /> : undefined}>
@@ -709,7 +711,7 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
     const ok = v === round.isTrue;
     setAns(v);
     markAnswer(ok, null); // Almanca zaten mount'ta okundu
-    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, why: ok ? null : whyFor({ type: "meaning", word, detail: round.isTrue ? null : (round.claim?.text ?? null) }) });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, why: ok ? null : whyFor({ type: "meaning", word, detail: round.isTrue ? null : (round.claim?.text ?? null), detailOf: round.isTrue ? null : (round.claim?.of ?? null) }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", round.claim?.text ?? null))} colors={colors} /> : undefined}>
@@ -815,6 +817,8 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
   const [hintShown, setHintShown] = useState(Boolean(round.assist));
   const [fb, setFb] = useState<Feedback | null>(null);
   const [typo, setTypo] = useState(false);
+  /* Anadilde aynı anlamlı başka kelime (`round.sameGloss`): ceza yok, ayrım söylenir (web aynı). */
+  const [same, setSame] = useState(false);
   function check() {
     if (fb) return;
     // Boşluksuz yedek: tireli başlıklarda ("t-shirt") tire boşluğa döndüğü için
@@ -834,15 +838,21 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
       || (!!tight && cands.some((c) => foldTight(c, lang) === tight));
     /* Tek harflik yazım hatası doğru sayılır, "Neredeyse · yazım" ve doğrusu (`lib/errors`
        `typoNear`; web `typing-game` aynı). Kalite 4: tam doğrudan bir basamak aşağı. */
-    const near = !exact && typoNear(val, [word.de, ...(round.alternatives ?? [])]) !== null;
-    const ok = exact || near;
+    const sameHit = !exact
+      ? (round.sameGloss ?? []).find((s) => (!!t && t === norm(s.de)) || (!!tight && foldTight(s.de, lang) === tight)) ?? null
+      : null;
+    const near = !exact && !sameHit && typoNear(val, [word.de, ...(round.alternatives ?? [])]) !== null;
+    const ok = exact || near || !!sameHit;
     Keyboard.dismiss();
-    markAnswer(ok, withArtikel(word), near); // doğru kelimeyi oku (Almanca = cevap); yazım sapması "near"
+    markAnswer(ok, withArtikel(word), near || !!sameHit); // doğru kelimeyi oku (Almanca = cevap); sapma "near"
     /* Hata tipi yazılandan çıkarılıyor - web `typing-game` de aynı: yazım
        hatası ile anlam hatası farklı gerekçe alıyor. */
-    const why = ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val, targetLang: currentTargetLang() });
-    setFb({ correct: ok, ...(near ? { tone: "near" as const, label: tx("sheet.near_spelling") } : {}), answer: withArtikel(word), meaning: glossOf(word).text, detail: grammarDetail(word), you: val.trim(), why });
+    const why = sameHit
+      ? whyFor({ type: "meaning", word, detail: val.trim(), sameGloss: { sub: sameHit.sub, wordSub: glossOf(word).sub ?? null }, targetLang: currentTargetLang() })
+      : ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val, targetLang: currentTargetLang() });
+    setFb({ correct: ok, ...(near ? { tone: "near" as const, label: tx("sheet.near_spelling") } : sameHit ? { tone: "near" as const, label: tx("sheet.near_same_gloss", { gloss: glossOf(word).text }) } : {}), answer: withArtikel(word), meaning: glossOf(word).text, detail: grammarDetail(word), you: val.trim(), why });
     setTypo(near);
+    setSame(!!sameHit);
   }
   const inputBlock = (
     <View>
@@ -866,7 +876,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
     </View>
   );
   return (
-    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown, ...(typo ? { quality: hintShown ? 3 : 4 } : {}) })} colors={colors} /> : undefined}>
+    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown, ...(typo ? { quality: hintShown ? 3 : 4 } : same ? { quality: 3 } : {}) })} colors={colors} /> : undefined}>
       {/*
         TÜR KARTIN İÇİNDE. Kartın dışında, altında duran bir satırdı ve
         neye ait olduğu belirsizdi.
@@ -1439,7 +1449,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
     const ok = o.text === glossOf(word).text;
     setPicked(o.text);
     markAnswer(ok, null); // dinleme turu: Almanca zaten çalındı
-    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, you: o.text, why: ok ? null : whyFor({ type: "listening", word, detail: o.text }) });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, you: o.text, why: ok ? null : whyFor({ type: "listening", word, detail: o.text, detailOf: o.of }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "listening", picked), hintUsed: replays >= 2 })} colors={colors} /> : undefined}>

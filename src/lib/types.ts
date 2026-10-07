@@ -125,7 +125,12 @@ export type RoundWord = {
  * Şıkların düz metin yerine nesne olmasının sebebi eşitlik: doğru cevap
  * `text` üzerinden karşılaştırılıyor, İngilizce satır kararın parçası değil.
  */
-export type Option = { text: string; sub: string | null };
+/**
+ * `of`: çeldiricinin AİT OLDUĞU kelime (Samet, 2026-10-07: yanlış şıkta "başka bir kelimenin
+ * karşılığı" deniyor ama hangisi söylenmiyordu). Anadil şıkkında Almanca kelime (artikelli),
+ * Almanca şıkta onun anadil karşılığı; doğru şıkta yok. "Neden" satırı onu söylüyor.
+ */
+export type Option = { text: string; sub: string | null; of?: string | null };
 
 export type Round =
   | { id: string; game: "intro"; word: RoundWord }
@@ -168,6 +173,13 @@ export type Round =
       game: "typing";
       word: RoundWord;
       alternatives: string[];
+      /**
+       * ANADİLDE AYNI, İKİNCİ SATIRDA FARKLI kelimeler (Samet, 2026-10-07: "almak" sorusuna
+       * nehmen yazdı, bekommen isteniyordu; ayrım yalnız küçük İngilizce satırda). Bunlardan
+       * biri yazılırsa ceza yok: "Neredeyse · o da „almak“", kalite 3, neden satırı farkı söyler.
+       * `sub` o kelimenin ikinci satırı (to take).
+       */
+      sameGloss?: { de: string; sub: string | null }[];
       /**
        * İpuçlu yazma: iskelet (ilk harfler) baştan açık ve ceza yok. Yeni
        * kelimenin aynı oturumdaki ilk yazılışı ve basamak inişi (WP-14).

@@ -92,7 +92,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
               answer: spoken,
               meaning,
               you: picked,
-              why: picked !== meaning ? whyFor({ type: "listening", word, detail: picked }, lang) : null,
+              why: picked !== meaning ? whyFor({ type: "listening", word, detail: picked, detailOf: round.options.find((o) => o.text === picked)?.of }, lang) : null,
             }
       }
       prompt={

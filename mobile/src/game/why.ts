@@ -338,6 +338,10 @@ export type WhyInput = {
   word?: WhyWord | null;
   /** Seçilen şık / yazılan kelime. */
   detail?: string | null;
+  /** Seçilen şıkkın ait olduğu kelime (`Option.of`): "Seçtiğin „…“ = …" (web `lib/why` aynı). */
+  detailOf?: string | null;
+  /** Yazılan kelime anadilde aynı anlamı taşıyor, ikinci satırı farklı (typing `sameGloss`). */
+  sameGloss?: { sub: string | null; wordSub: string | null } | null;
   /** Doğru cevap metni (çoğul oyunu: doğru çoğul biçim). */
   correct?: string | null;
   /** Cümle oyunları: doğru sıra ve sondaki noktalama. */
@@ -383,11 +387,13 @@ export function whyFor(input: WhyInput): Why {
       */
       const pair = currentLang() === "tr" && w ? confusableHint(w.de, input.detail) : null;
       if (pair) return { type: "meaning", text: `${pair.hint} (${pair.example})`, href: null };
+      if (w && input.detail && input.sameGloss)
+        return { type: "meaning", text: tx("why.same_gloss_other", { typed: input.detail, gloss: gloss(w), typedSub: input.sameGloss.sub ?? "", word: withArt(w), sub: input.sameGloss.wordSub ?? "" }), href: null };
       return {
         type: "meaning",
         text: w
           ? input.detail
-            ? tx("why.meaning_wrong_pick", { picked: input.detail, word: withArt(w), meaning: gloss(w) })
+            ? tx(input.detailOf ? "why.meaning_wrong_pick_of" : "why.meaning_wrong_pick", { picked: input.detail, of: input.detailOf ?? "", word: withArt(w), meaning: gloss(w) })
             : `${withArt(w)} = ${gloss(w)}.`
           : tx("whyrule.meaning.general"),
         href: null,
@@ -397,7 +403,8 @@ export function whyFor(input: WhyInput): Why {
       return {
         type: "listening",
         text: w
-          ? tx(input.detail ? "why.listening_with_pick" : "why.listening", {
+          ? tx(input.detail ? (input.detailOf ? "why.listening_with_pick_of" : "why.listening_with_pick") : "why.listening", {
+              of: input.detailOf ?? "",
               word: withArt(w),
               // Açıklama da anadilde: "Auto = araba" mı "Auto = car" mı.
               meaning: gloss(w),

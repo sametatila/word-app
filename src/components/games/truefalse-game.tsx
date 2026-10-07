@@ -73,7 +73,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
               correct: wasRight,
               answer: withArtikel(word),
               meaning: meaningOf(word, lang),
-              why: !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }, lang) : null,
+              why: !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text, detailOf: isTrue ? null : claim.of }, lang) : null,
             }
       }
     >

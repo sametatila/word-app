@@ -93,7 +93,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
               meaning: meaning,
               detail: grammarLine(word, lang),
               you: picked,
-              why: picked !== answer ? whyFor({ type: "meaning", word, detail: picked }, lang) : null,
+              why: picked !== answer ? whyFor({ type: "meaning", word, detail: picked, detailOf: round.options.find((o) => o.text === picked)?.of }, lang) : null,
             }
       }
       prompt={

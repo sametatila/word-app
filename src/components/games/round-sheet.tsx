@@ -312,10 +312,13 @@ function SheetBody({ data }: { data: SheetData }) {
   const course = useCourse();
   const speakText = data.speak ?? data.answer ?? "";
   const wrong = !data.correct;
-  const showYou = wrong && Boolean(data.youTokens?.length || data.you);
+  /* "Neredeyse" (kabul edildi ama kusurlu) da ne yazıldığını ve nedenini gösteriyor: tek harf
+     hatası ya da aynı anlamlı başka kelime (2026-10-07); mobil `FeedbackFooter` aynı. */
+  const flawed = wrong || data.tone === "near";
+  const showYou = flawed && Boolean(data.youTokens?.length || data.you);
   const showDiffs =
     !!data.diffs && (data.diffs.target.some((k) => k.mark !== "same") || data.diffs.typed.some((k) => k.mark === "extra"));
-  const showWhy = wrong && !!data.why;
+  const showWhy = flawed && !!data.why;
   const hasTop = Boolean(data.answerTokens?.length || (data.why?.diff && wrong) || data.answer || data.meaning || data.detail || data.extra || speakText);
 
   return (

@@ -60,6 +60,8 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
   const [status, setStatus] = useState<Status>("idle");
   /* Doğru sayılan tek harflik yazım hatası (`typoNear`): katman "Neredeyse · yazım". */
   const [typo, setTypo] = useState(false);
+  /* Anadilde aynı anlamı taşıyan başka kelime yazıldı (`round.sameGloss`): ceza yok, ayrım söylenir. */
+  const [same, setSame] = useState<{ de: string; sub: string | null } | null>(null);
   const [hintUsed, setHintUsed] = useState(false);
   // İpuçlu tur (yeni kelime / basamak inişi): iskelet baştan açık, ceza yok.
   const [hintShown, setHintShown] = useState(Boolean(round.assist));
@@ -74,6 +76,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     setValue("");
     setStatus("idle");
     setTypo(false);
+    setSame(null);
     setPending(null);
     setHintUsed(false);
     setHintShown(Boolean(round.assist));
@@ -98,9 +101,13 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     /* Tek harflik yazım hatası doğru sayılır, "Neredeyse · yazım" ve doğrusu gösterilir
        (`lib/errors` `typoNear`; mobil `game/rounds` `TypingRound` aynı). Kalite 4: tam
        doğrudan bir basamak aşağı (çeviri oyununun yazım sapmasıyla aynı). */
-    const near = !exact && typoNear(value, [word.de, ...(round.alternatives ?? [])]) !== null;
-    const correct = exact || near;
+    /* "almak" sorusuna nehmen (bekommen istenirken): Türkçe soru iki anlamlı, ayrım yalnız ikinci
+       satırda. Doğru sayılır, kalite 3, katman farkı söyler (Samet, 2026-10-07). */
+    const sameHit = !exact ? (round.sameGloss ?? []).find((s) => matchesAnswer(value, [s.de])) ?? null : null;
+    const near = !exact && !sameHit && typoNear(value, [word.de, ...(round.alternatives ?? [])]) !== null;
+    const correct = exact || near || !!sameHit;
     setTypo(near);
+    setSame(sameHit);
     setStatus(correct ? "correct" : "wrong");
     const latencyMs = Date.now() - started.current;
 
@@ -113,14 +120,14 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     // Süre de artık sabit değil: geçiş çizgisi okumanın gerçek uzunluğunda
     // dolduruluyor, yoksa kısa kelimede boşuna bekleniyor, uzun kelimede ses
     // yarıda kesiliyordu.
-    vibrate(near ? "near" : correct ? "correct" : "wrong");
+    vibrate(near || sameHit ? "near" : correct ? "correct" : "wrong");
     setPending({
       wordId: word.id,
       correct,
       latencyMs,
       hintUsed,
       /* Kalite verilince sunucu ipucu cezasını kendisi uygulamıyor: ipucuyla 3. */
-      ...(near ? { quality: hintUsed ? 3 : 4 } : {}),
+      ...(near ? { quality: hintUsed ? 3 : 4 } : sameHit ? { quality: 3 } : {}),
       ...miss(correct, classifyTyping(value, [word.de, ...(round.alternatives ?? [])]), value),
     });
     speak(withArtikel(word));
@@ -158,12 +165,14 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           : {
               correct: status === "correct",
               ...(typo ? { tone: "near" as const, label: tx("sheet.near_spelling") } : {}),
+              ...(same ? { tone: "near" as const, label: tx("sheet.near_same_gloss", { gloss: meaningOf(word, lang) }) } : {}),
               answer: withArtikel(word),
               meaning: meaningOf(word, lang),
               detail: grammarLine(word, lang),
               you: value.trim(),
-              why:
-                status === "wrong"
+              why: same
+                ? whyFor({ type: "meaning", targetLang: currentTargetLang(), word, detail: value, sameGloss: { sub: same.sub, wordSub: meaningSubOf(word, lang) } }, lang)
+                : status === "wrong"
                   ? whyFor({
                       type: classifyTyping(value, [word.de, ...(round.alternatives ?? [])]),
                       targetLang: currentTargetLang(),

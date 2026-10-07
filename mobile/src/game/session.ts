@@ -28,7 +28,8 @@ export type RoundWord = {
   isNew: boolean;
 };
 
-export type Option = { text: string; sub: string | null };
+/** `of`: çeldiricinin ait olduğu kelime (sunucu, web `lib/types` `Option`). */
+export type Option = { text: string; sub: string | null; of?: string | null };
 
 /** Nesne şıklar (`choice`, `listen`). Dizge şıklı turlarda boş döner. */
 export function optionCards(round: { options?: Option[] | string[] }): Option[] {
@@ -103,6 +104,8 @@ export type Round = {
   tail?: string;
   /** translate: kabul edilen başka kuruluşlar. */
   alternatives?: string[];
+  /** Yazma: anadilde aynı, ikinci satırda farklı kelimeler (sunucu, web `lib/types` aynı alan). */
+  sameGloss?: { de: string; sub: string | null }[];
   /**
    * cloze: "type" ise boşluk YAZILARAK dolduruluyor, şıkla değil.
    *
