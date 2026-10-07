@@ -1604,6 +1604,25 @@
    ],
    "reason": "tr 'anayasa' Verfassung ile birebir çakışıyor; en zaten 'German constitution'.",
    "applied": "2026-10-05"
+  },
+  {
+   "id": 2314,
+   "de": "mal",
+   "severity": "orta",
+   "before": {
+    "tr": "bir ara",
+    "en": "sometime"
+   },
+   "after": {
+    "tr": "bir; bir ara",
+    "en": "just; sometime"
+   },
+   "voiced": [
+    "tr",
+    "en"
+   ],
+   "reason": "En sık kullanımı emri yumuşatan parçacık ('Schau mal!' = 'Bir bak!', 'Komm mal her!'); kart yalnız 'bir ara' (einmal kısaltması) diyordu. İşlev sözcüğü, iki çekirdek anlam (SPEC). Örnek cümle 'bir ara' anlamını gösteriyor, korundu (Samet, Claude'a bıraktı, 2026-10-07).",
+   "applied": "2026-10-07"
   }
  ]
 }
