@@ -64,6 +64,7 @@
     "check:no-paper-word": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-no-paper-word.ts",
     "check:no-erdi": "node scripts/check-no-erdi.mjs",
     "check:avatar-unlocks": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-avatar-unlocks.ts",
+    "check:seo": "node scripts/check-seo.mjs",
     "check:published-examples": "node scripts/check-published-examples.mjs",
     "check:meanings-overlay": "node scripts/check-meanings-overlay.mjs",
     "check:content-names": "node scripts/check-content-names.mjs",

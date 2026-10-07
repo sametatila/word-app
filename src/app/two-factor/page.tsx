@@ -4,7 +4,7 @@ import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
-export const generateMetadata = titleMeta("twofa.verify_title");
+export const generateMetadata = titleMeta("twofa.verify_title", { noindex: true });
 
 /**
  * Girişin ikinci adımı. Buraya YALNIZ giriş formu yönlendiriyor; doğrudan

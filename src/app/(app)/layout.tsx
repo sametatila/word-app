@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { getLang, getT } from "@/lib/i18n/server";
 import { appControl } from "@/lib/app-control";
 import { adminGate } from "@/lib/admin";
@@ -13,6 +14,12 @@ import { AccountSync } from "@/components/account-sync";
 import { LangSync } from "@/components/lang-sync";
 
 export const dynamic = "force-dynamic";
+
+/* UYGULAMA ARAMAYA KAPALI (Search Console, 2026-10-07): oturum isteyen her sayfa. Girişsiz
+   istek `proxy`de zaten 307 → /login; bu, oturumlu ya da süresi dolmuş çerezli taramada
+   sayfanın dizine girmemesi için ikinci kat. Sayfaların `titleMeta`sı robots yazmadığı
+   için miras kalıyor. */
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const { user, failed } = await getSessionRead();

@@ -32,6 +32,25 @@ başlangıç aramaları; "A1–C1" ad ve başlıklarda duruyor. `/llms.txt` giri
 Kural: `noindex` sayfa sitemap'e girmez; yeni herkese açık sayfa ya sitemap'e ya `noindex`e yazılır.
 İstemcide çizilen (sunucu çıktısı boş) sayfa `noindex`.
 
+**Gerçek durum kodu (2026-10-07, Search Console "Sayfalar" raporu: 12 dizinde, 64 değil; 44 "tarandı,
+dizine eklenmedi", 8 404).** Sayfalar akışla gidiyor; `redirect()`/`notFound()` akış başladıktan sonra
+durum kodunu değiştiremiyor (Next docs `not-found` "Status codes"). Sonuç: oturum isteyen her uygulama
+sayfası girişsiz Googlebot'a **200 + sayfa içi meta refresh → /login** dönüyordu (içeriksiz 200 =
+"tarandı, eklenmedi"); `/terms/tr`, `/impressum/de` 200 + meta refresh, `/privacy/xx` yumuşak 404;
+2026-09-25'te `/lessons/*` → `/conversations/*` taşınırken yönlendirme yoktu (404'ler). Düzeltme:
+
+| Ne | Nerede |
+|---|---|
+| Oturum çerezi yoksa uygulama bölümleri gerçek 307 → /login (better-auth `getSessionCookie`, iyimser; geçerlilik düzende) | `src/proxy.ts` `APP_SECTIONS` + eşleştirici |
+| Hukuki belgenin varsayılan ya da bilinmeyen dil alt yolu 308 → kök (404 için `rewrite` yok: nginx arkasında 500) | `src/proxy.ts` `LEGAL_DOCS` |
+| `(app)` düzeni `noindex, nofollow` (ikinci kat), `/two-factor` `noindex` | `src/app/(app)/layout.tsx`, `src/app/two-factor/page.tsx` |
+| Taşınan adresler 308: `/lessons*`, `/learn/daily`, `/profile/rozetler`, `/sohbet`, `/cheatsheet*`, `/indir` | `next.config.ts` `redirects` |
+| Kapı: `(app)` bölümleri = `APP_SECTIONS` = eşleştirici, düzen `noindex` | `npm run check:seo` (CI) |
+
+Yeni uygulama bölümü (`src/app/(app)/<ad>`) eklenince `APP_SECTIONS` ve eşleştiriciye de yazılır; kapı
+yakalar. Uygulama sayfaları robots.txt'e EKLENMEZ: engellenen sayfanın `noindex`ini Google göremez,
+adresi bağlantıdan dizine alabilir.
+
 ## Sunucuda (git dışı)
 
 Çıplak `lernomi.app` → `https://www.lernomi.app` 301; yalnız GET/HEAD, `/api/`, `/gh-webhook`,
@@ -49,6 +68,10 @@ Kural: `noindex` sayfa sitemap'e girmez; yeni herkese açık sayfa ya sitemap'e 
 | Cloudflare yapay zekâ bot engeli | ✅ kapalı | 2026-10-02 nginx günlüğü: GPTBot, ClaudeBot, OAI-SearchBot, Amazonbot, meta-externalagent 200 alıyor. "Block AI bots" açılırsa asistanlar siteyi okuyamaz |
 
 ## Kontrol
+
+- 2026-10-07 düzeltmesinden sonra (Samet, Search Console › Sayfalar): "Tarandı, dizine eklenmedi" ve
+  "Bulunamadı (404)" satırlarında **Düzeltmeyi doğrula**; 404 listesinde `/lessons` dışında kalan adres
+  varsa bildirilir. Sayfa sayısı dışa aktarımı adres vermiyor; her satırın içinden "Dışa aktar" adresleri verir.
 
 - Yaklaşık 2026-10-23: "lernomi" aramasında ana sayfa üstte mi; Search Console › Sayfalar'da `/en`
   ve `/de` dizinde mi, hukuki sayfalar "noindex ile hariç tutuldu" mu; Bing › URL Inspection'da

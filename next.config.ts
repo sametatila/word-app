@@ -254,6 +254,17 @@ const nextConfig: NextConfig = {
       { source: "/gizlilik", destination: "/privacy", permanent: true },
       { source: "/kullanim-sartlari", destination: "/terms", permanent: true },
       { source: "/hesap-sil", destination: "/account/delete", permanent: true },
+      /* Taşınan uygulama sayfaları (Search Console 404'leri, 2026-10-07): ders → konuşma
+         (2026-09-25), günlük tur, rozetler, eski sohbet ve kopya kâğıdı. */
+      { source: "/lessons", destination: "/immersion", permanent: true },
+      { source: "/lessons/boss/:level/:module", destination: "/boss/:level/:module", permanent: true },
+      { source: "/lessons/:id/exam", destination: "/conversations/:id/scored", permanent: true },
+      { source: "/lessons/:id", destination: "/conversations/:id", permanent: true },
+      { source: "/learn/daily", destination: "/learn", permanent: true },
+      { source: "/profile/rozetler", destination: "/profile/achievements", permanent: true },
+      { source: "/sohbet", destination: "/immersion", permanent: true },
+      { source: "/cheatsheet/:path*", destination: "/learn", permanent: true },
+      { source: "/indir", destination: "/", permanent: true },
     ];
   },
 };
