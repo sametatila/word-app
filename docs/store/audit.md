@@ -33,7 +33,7 @@ ASC salt okuma dökümünden güncellendi.
 | M13 | releaseType AFTER_APPROVAL | ✅ | 54ab2ef7: `releaseType: MANUAL` (2026-09-26, Samet); onaydan sonra "Release this version" ile açılır |
 | M14 | Altyazı "ace exams" / "bestehen" sınav geçme vaadi | ✅ | 2026-10-05: en "Speak, understand, exam-ready", de "Reden, verstehen, prüfungsfit"; ASC altyazı + Play kısa açıklama + ilk kare (iki mağaza, en/de) + landing hero; API'den geri okundu (`docs/store/README.md` "Mağazaya YENİDEN GİRİLDİ (2026-10-05)") |
 | M15 | Maskotlu öne çıkan grafik ↔ "çocuklara çekici değil" | ◐ Samet (tasarım) | Karar verildi (2026-09-26): `docs/store/README.md` › "Görsel çerçeve" (gerçek ekran ana unsur, mirket köşede, yetişkin sahneler). 18+ kalıyor. Kalan: tasarımın bu çerçeveyle yapılması (M3) |
-| M16 | İçerik hakları beyanı "üçüncü taraf içerik yok" | ⏳ Samet (karar) | 2026-09-26: ASC `DOES_NOT_USE_THIRD_PARTY_CONTENT`. Edge seslendirmesi (İ6) ve Defne/Aras referansı (İ5) kararına bağlı |
+| M16 | İçerik hakları beyanı "üçüncü taraf içerik yok" | ◐ | 2026-10-07: ASC `DOES_NOT_USE_THIRD_PARTY_CONTENT` korunuyor. Karakter sesleri bizim (İ5 ✅); metin ve ses servis çıktıları (yapay zekâ, Azure) servis şartlarıyla bizim. Tek açık nokta Edge (İ6): 20 Ekim'de Azure'a geçince beyan tam doğru. Apple'ın gönderim engeli değil |
 
 ### S — Satın alma ve hesap akışları
 
@@ -60,8 +60,8 @@ ASC salt okuma dökümünden güncellendi.
 | İ2 | Deneme sınavı yapay zekâ sonucunda Bildir ve etiket | ✅ | b6775252; sürdürülen sohbet 247d11cb |
 | İ3 | "officially / resmen", kapakta "resmî değil" notu | ✅ | 607a5fd8, 311edc83 |
 | İ4 | Sınav yönergesi kalıpları + BRANDS | ✅ | BRANDS listesi 1a36d07d; 1.466 yönerge alanı kendi üslubumuzla 6feb7eff (Türkçe `*Tr` alanları aynı anlamda, değişmedi) |
-| İ5 | Defne/Aras referans ses izni ve model lisansı | ⏳ Samet | Kaynak, izin ve lisans `docs/plan/tts-own-voices.md`'ye tek paragraf |
-| İ6 | Edge TTS (resmî olmayan uç) | ⏳ Samet | Beyan tarafı LEG-2 ile kapalı; çıkış planı (Azure ya da kendi sesler) açık |
+| İ5 | Defne/Aras referans ses izni ve model lisansı | ✅ | 2026-10-07: sesler VoxCPM2 ses tasarımıyla yazılı tariften üretildi, gerçek kişi yok; model kod+ağırlık Apache-2.0. Kaynak ve lisans paragrafı `docs/plan/tts-own-voices.md` "KAYNAK VE LİSANS" |
+| İ6 | Edge TTS (resmî olmayan uç) | ⏳ Claude, hedef 2026-10-20 (Samet) | Beyan tarafı LEG-2 ile kapalı. Kelime dışı katmanlar (dinleme, okuma, konuşma, beceri, sohbet) Edge'den; 30 günde 71.699 karakter (önbellek dışı). Plan: Edge kalkar, Azure (aynı sesler, resmî; F0 ayda 500 bin karakter) birincil; uzun vadede kendi sesler (~178 sa üretim). Samet: 20 Ekim'e kadar Edge kalıyor |
 | İ7 | Açık kaynak lisans ekranı | ✅ | b01006ea, acbc8cee (`/licenses`, `npm run licenses:gen`) |
 | İ8 | Sıklık listesi ve maskot çiziminin kaynağı | ✅ | Liste FrequencyWords 2018 `de_50k.txt` ile bayt bayt aynı (upstream karşılaştırması 2026-09-26), içerik CC BY-SA 4.0: atıf `/licenses` › Data ve `data/README.md` › Kaynaklar. Maskotu Lernomi ekibi oluşturdu (Samet, 2026-09-26), üçüncü taraf hakkı yok |
 | İ9 | Ligde bildirme yalnız uzun basış | ✅ | 333d7113 |

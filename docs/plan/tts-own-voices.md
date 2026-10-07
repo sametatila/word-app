@@ -1,5 +1,17 @@
 # Kendi karakter sesleri (Defne, Aras) — durum, envanter, sunum
 
+## KAYNAK VE LİSANS — karakter sesleri (denetim İ5, 2026-10-07)
+
+Defne, Aras, Mira ve Can **gerçek bir kişinin sesi değil**: VoxCPM2'nin ses tasarımı (voice design) özelliğiyle
+yazılı bir tariften üretildiler (örnek, Defne: "warm, clear woman in her late thirties; calm, reassuring teacher…";
+referans `tasarim_studyo_s100/s114` tohumları). Kimse kaydedilmedi, kimsenin sesi kopyalanmadı. Tarif ve
+referanslar tts-test `characters/<ad>/character.json` ve `ref_<dil>.wav` (git'te, 631242a). Model VoxCPM2
+(openbmb): kod ve ağırlıklar **Apache-2.0**, ticari kullanım serbest
+([model kartı](https://huggingface.co/openbmb/VoxCPM2)). Hatta kalan öteki bileşenlerin lisansları tts-test
+`LICENSES.md` (hepsi MIT/Apache/LGPL; ticari olmayan NISQA ürün hattında yok). Kalan risk (genel, düşük):
+modelin eğitim verisi tam açıklanmamış; tasarlanmış bir sesin tesadüfen tanınmış birine benzemesi (kulak kontrolü).
+Hukuki görüş değildir; LEG-5 hukukçusuna bu paragraf gösterilir.
+
 ## DURUM — kelime katmanı (2026-09-23)
 
 **Üretim makinesi: Mac (2026-10-05).** Linux (RTX 4060, `ssh linux`) kalıcı olarak yok. Üretim
