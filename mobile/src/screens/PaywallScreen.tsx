@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t, dateLocale } from "../lib/i18n";
-import { View, AppState, Linking, Platform, TextInput, ScrollView, Modal, Pressable, KeyboardAvoidingView, useWindowDimensions, type NativeSyntheticEvent, type NativeScrollEvent } from "react-native";
+import { View, AppState, Platform, TextInput, ScrollView, Modal, Pressable, KeyboardAvoidingView, useWindowDimensions, type NativeSyntheticEvent, type NativeScrollEvent } from "react-native";
 import { useLayout } from "../lib/useLayout";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -14,7 +14,7 @@ import { CheckIcon, PremiumIcon } from "../ui/icons";
 import { SkeletonLine } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
-import { awaitProcessedPurchase, billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, purchaseGroupTrial, restore, trialEligibleProducts, type PurchaseOutcome } from "../lib/billing";
+import { awaitProcessedPurchase, billingAvailable, getPackages, offerCodesAvailable, openManageSubscriptions, presentOfferCodeRedemption, purchase, purchaseGroupTrial, restore, trialEligibleProducts, type PurchaseOutcome } from "../lib/billing";
 import { usePremiumStatus, refreshPremium, type PremiumStatus } from "../lib/premium";
 import { api } from "../api/client";
 import { openLegal } from "../lib/legal";
@@ -38,11 +38,6 @@ import { IconLine } from "../ui/IconLine";
  * Web karşılığı `src/components/premium-paywall.tsx`; ikisi aynı anahtarları
  * ve aynı sayıları kullanıyor.
  */
-/** "Aboneliği yönet" — abonelik hangi mağazadan alındıysa oranın abonelik ekranı. */
-const SUBSCRIPTIONS_URL = Platform.OS === "ios"
-  ? "https://apps.apple.com/account/subscriptions"
-  : "https://play.google.com/store/account/subscriptions";
-
 const IOS = Platform.OS === "ios";
 
 /**
@@ -314,7 +309,7 @@ export function PaywallScreen() {
       {onCode && (!guest || codeOpen) ? link(t("promo.title"), onCode, true) : null}
       {link(t("auth.terms_of_use"), () => openLegal("terms"))}
       {link(t("auth.privacy_policy"), () => openLegal("privacy"))}
-      {link(t("paywall.manage_subscription"), () => { Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {}); })}
+      {link(t("paywall.manage_subscription"), () => { void openManageSubscriptions(); })}
     </View>
   );
   const codeSheet = OWN_CODES ? (

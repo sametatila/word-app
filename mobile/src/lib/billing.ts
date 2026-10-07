@@ -1,4 +1,4 @@
-import { Platform } from "react-native";
+import { Linking, Platform } from "react-native";
 import Purchases, { type CustomerInfo, type PurchasesPackage, type SubscriptionOption } from "react-native-purchases";
 import { REVENUECAT, billingConfigured } from "./billingConfig";
 import { awaitPremiumAfterPurchase, refreshPremium } from "./premium";
@@ -222,6 +222,38 @@ export async function awaitProcessedPurchase(): Promise<boolean> {
  * Geri yükleme düğmesi POLİTİKA GEREĞİ zorunlu (App Store 3.1.1): kullanıcı
  * cihaz değiştirdiğinde aboneliğine yeniden ulaşabilmeli.
  */
+/** Mağazanın genel abonelik sayfası — yedek yol. */
+export const SUBSCRIPTIONS_URL = Platform.OS === "ios"
+  ? "https://apps.apple.com/account/subscriptions"
+  : "https://play.google.com/store/account/subscriptions";
+
+/**
+ * "ABONELİĞİ YÖNET" (Samet, 2026-10-07: TestFlight'ta satın aldıktan sonra App Store
+ * "aboneliğiniz yok" dedi). Genel adres gerçek App Store'u açıyordu; test (sandbox) ve
+ * TestFlight aboneliği orada yok, inceleyen de sandbox'ta satın alıyor. Apple'ın önerdiği
+ * yol uygulama içi abonelik sayfası (StoreKit `showManageSubscriptions`): hangi ortamda
+ * alındıysa onu gösteriyor. Android'de RevenueCat'in verdiği yönetim adresi doğrudan o
+ * aboneliği açıyor. İkisi de olmazsa genel adres.
+ */
+export async function openManageSubscriptions(): Promise<void> {
+  if (configured) {
+    try {
+      if (platform() === "ios") {
+        await Purchases.showManageSubscriptions();
+        return;
+      }
+      const url = (await Purchases.getCustomerInfo()).managementURL;
+      if (url) {
+        await Linking.openURL(url);
+        return;
+      }
+    } catch {
+      /* yedek yol aşağıda */
+    }
+  }
+  await Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {});
+}
+
 export async function restore(): Promise<boolean> {
   if (!configured) return false;
   try {
