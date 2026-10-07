@@ -36,6 +36,12 @@ import { decideAiConsent, fetchAiConsent, requestAiConsent, type AiConsentProces
 
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır; RN setTimeout ekran-kapalıda durur)
+/* Turlar arası nefes. DÜZELTMEDEN SONRA UZUN (Samet, 2026-10-07): "Doğrusu: der Tisch" ile
+   sıradaki kelimenin anlamı ("kalem") arka arkaya okununca tek cümle gibi duyuluyor, düzeltme
+   bir sonraki soruyla karışıyordu. Doğrudan sonra kısa (akış ağırlaşmasın). Web `walk-player`
+   aynı düzeltme esi; kısa es web'de 450 (her cümle orada ayrı ses isteği), bilerek farklı ad. */
+const ROUND_GAP_MS = 320;
+const CORRECTION_GAP_MS = 1200;
 /* Azure'a gönderilen kayıt penceresi. Sabit yazılıydı ve iki yerde ayrı ayrı
    duruyordu; ölçüm (`walk_listen` değeri = gönderilen saniye) buna baktığı için
    tek ada bağlandı — pencere değişirse ölçü kendiliğinden onunla değişir. */
@@ -479,7 +485,8 @@ export function WalkModeScreen() {
 
   /** Kelimeyi sor (speak turu). justTaught: az önce intro'da öğretilen kelime → "Şimdi sen söyle".
       "stopped" = duyamadım penceresi turu durdurdu. */
-  async function judgeSpeak(w: WalkWord, alive: () => boolean, justTaught: boolean): Promise<"ok" | "stopped"> {
+  /** "corrected": doğrusu okundu (yanlış, bilmiyorum, duyamadım) → sonraki tura uzun es. */
+  async function judgeSpeak(w: WalkWord, alive: () => boolean, justTaught: boolean): Promise<"ok" | "corrected" | "stopped"> {
     setPhase("speaking"); setVerdict(null); setHeard(""); wordStart.current = Date.now();
     if (justTaught) { await sayNative(tx("walk.your_turn")); if (!alive()) return "ok"; } // yeni kelime → geçiş
     await sayGloss(w); // anadilde ipucu (seçilen karakter)
@@ -615,6 +622,7 @@ export function WalkModeScreen() {
       await sayTarget(target);
       if (!alive()) return "ok";
       recordSpeak(w, false);
+      return "corrected";
     } else if (result === "skip") {
       setVerdict("skip");
       await sayNative(encourage());
@@ -622,6 +630,7 @@ export function WalkModeScreen() {
       await sayTarget(target);
       if (!alive()) return "ok";
       bumpTally(false); // atla: SRS'e yazılmaz ama tur sayısına dahil (sayaç /toplam tutarlı)
+      return "corrected";
     } else {
       setVerdict("unheard");
       await sayNative(tx("walk.not_heard"));
@@ -629,6 +638,7 @@ export function WalkModeScreen() {
       await sayTarget(target);
       if (!alive()) return "ok";
       bumpTally(false); // duyulmadı: SRS'e yazılmaz (kelime due kalır) ama tur sayısına dahil
+      return "corrected";
     }
     return "ok";
   }
@@ -650,6 +660,7 @@ export function WalkModeScreen() {
     const my = ++runToken.current;
     const alive = () => my === runToken.current && mounted.current;
     let lastIntroId = -1; // az önce intro'da öğretilen kelime → sonraki speak'te "Şimdi sen söyle"
+    let corrected = false;
     for (let i = startIdx; i < rs.length; i++) {
       if (!alive()) return;
       setIdx(i);
@@ -668,8 +679,10 @@ export function WalkModeScreen() {
         const status = await judgeSpeak(word, alive, word.id === lastIntroId);
         lastIntroId = -1;
         if (status === "stopped" || !alive()) return;
+        corrected = status === "corrected";
       }
-      await gap(320); // turlar arası nefes — kısa tutuluyor, akış beklemeyle ağırlaşmasın
+      await gap(corrected ? CORRECTION_GAP_MS : ROUND_GAP_MS); // turlar arası nefes; düzeltmeden sonra uzun
+      corrected = false;
     }
     if (!alive()) return;
     flush(true); // tur bitti — SRS'e yaz

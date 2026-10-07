@@ -251,6 +251,12 @@ const BROWSER_DEAD = new Set(["not-allowed", "service-not-allowed", "audio-captu
  * karşılığı `WalkModeScreen` `gap(320)`.
  */
 const GAP_MS = 450;
+/**
+ * DÜZELTMEDEN SONRA UZUN ES (Samet, 2026-10-07): "Doğrusu: der Tisch" ile sıradaki kelimenin
+ * anlamı arka arkaya okununca tek cümle gibi duyuluyor, düzeltme bir sonraki soruyla
+ * karışıyordu. Mobil `WalkModeScreen` aynı değer.
+ */
+const CORRECTION_GAP_MS = 1200;
 
 /**
  * Ağ isteklerinin üst sınırı.
@@ -1027,10 +1033,10 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
               targetSegment(target),
             ]);
             if (!alive()) return;
-            if (document.visibilityState === "visible") {
-              await new Promise<void>((r) => afterMs(GAP_MS, r));
-              if (!alive()) return;
-            }
+            /* Düzeltme esi ekran kapalıyken de (`pocket-clock` cepte de sayıyor): karışıklık en
+               çok yürürken oluyor. */
+            await new Promise<void>((r) => afterMs(CORRECTION_GAP_MS, r));
+            if (!alive()) return;
             continue;
           }
 
@@ -1063,6 +1069,9 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
               { lang, narration: true, text: t("walk.not_heard") },
               targetSegment(target),
             ]);
+            if (!alive()) return;
+            await new Promise<void>((r) => afterMs(CORRECTION_GAP_MS, r));
+            if (!alive()) return;
             continue;
           }
 
@@ -1115,8 +1124,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
             sonraki soru hemen okunuyordu — "aşırı hızlı" bunun içindi. Küçük
             bir es kulağa daha rahat geliyor.
           */
-          if (document.visibilityState === "visible") {
-            await new Promise<void>((r) => afterMs(GAP_MS, r));
+          if (!ok || document.visibilityState === "visible") {
+            await new Promise<void>((r) => afterMs(ok ? GAP_MS : CORRECTION_GAP_MS, r));
             if (!alive()) return;
           }
         }
