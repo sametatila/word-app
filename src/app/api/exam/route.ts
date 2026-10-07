@@ -3,7 +3,7 @@ import { clampDay } from "@/lib/award";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
-import { buildExam, COUNTS as EXAM_COUNTS, examHistory, finishExam, modulePrereq, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
+import { buildExam, COUNTS as EXAM_COUNTS, examById, examHistory, finishExam, modulePrereq, reviewedThisWeek, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
 import { moduleExamPlan, hasModuleExams } from "@/lib/conversations/module-exam";
 import { LEVEL_SECONDS, MODULE_SECONDS, SECTION_ORDER } from "@/lib/exam-types";
 import { localiseExam, nativeExamText } from "@/lib/conversations/native-server";
@@ -226,6 +226,23 @@ export async function POST(req: Request) {
        * geçmiş sınav ve sertifika oluyordu.
        */
       let verified = false;
+      /* TEK KULLANIMLIK DENEME (güvenlik denetimi 2026-10-07). Bitiş cevap
+         anahtarını döndürüyor: aynı jetonla ikinci bitiş reddediliyor; anahtarın
+         görüldüğü haftada yeniden başlatılan (aynı kâğıt) sınav pratik sayılıyor,
+         doğrulanmış sonuç ve sertifika vermiyor. */
+      let reviewedBefore = false;
+      if (key && responses) {
+        const prior = await reviewedThisWeek(userId, kind, level as CefrLevel, moduleNo, day);
+        /* Aynı jetonla ikinci bitiş yeniden puanlanmıyor: ilk bitişin kayıtlı
+           sonucu dönüyor (ağ hatasında istemcinin yeniden denemesi bozulmasın). */
+        const doneId = key.j ? prior.jtis.get(key.j) : undefined;
+        if (doneId !== undefined) {
+          const done = await examById(userId, doneId);
+          if (done) return NextResponse.json({ ...done, review: objectiveReview(key) });
+          return NextResponse.json({ error: "already_finished" }, { status: 409 });
+        }
+        reviewedBefore = prior.any;
+      }
       if (key && responses) {
         const graded = gradeObjective(key, responses);
         const sw = resolveSpokenWritten(key, userId, body.writingScoreToken, body.speakingScoreTokens);
@@ -242,7 +259,7 @@ export async function POST(req: Request) {
         sub.sections = SECTION_ORDER.filter((id) => totals[id].total > 0).map((id) => ({ id, ...totals[id] }));
         sub.speakingScore = sw.speakingScore;
         if (sw.writingScore !== null) sub.writingScore = sw.writingScore;
-        verified = key.writingIds.length === 0 || sw.writingScore !== null;
+        verified = (key.writingIds.length === 0 || sw.writingScore !== null) && !reviewedBefore;
       }
       // Kelime cevapları SRS'e: sınav da bir tekrar (hatalar tipleriyle).
       if (vocabAnswers.length) await submitAnswers(userId, vocabAnswers, day, Math.min(sub.seconds, 3600));
@@ -251,7 +268,11 @@ export async function POST(req: Request) {
       // ön koşulsuz bir "geçti"yi roadmap tacına saydıramaz.
       const trial =
         moduleNo === null ? false : !(await modulePrereq(userId, profile.course ?? "de", level as CefrLevel, moduleNo));
-      const result = await finishExam(userId, { kind, level, module: moduleNo, trial }, sub, day, { verified });
+      const result = await finishExam(userId, { kind, level, module: moduleNo, trial }, sub, day, {
+        verified,
+        keyJti: key?.j,
+        reviewed: Boolean(key && responses),
+      });
       // Kör modda istemci döküm/review'ı kâğıttan kuramaz (cevaplar yoktu);
       // sunucu doğru cevapları BİTİŞTE döndürüyor (artık sömürüye yaramaz).
       return NextResponse.json(key && responses ? { ...result, review: objectiveReview(key) } : result);

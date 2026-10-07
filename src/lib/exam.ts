@@ -391,25 +391,70 @@ export async function finishExam(
   paper: Pick<ExamPaper, "kind" | "level" | "module" | "trial">,
   sub: ExamSubmission,
   day: string,
-  opts: { verified: boolean },
+  /** `keyJti`: bitişi yapan anahtarın deneme kimliği; `reviewed`: bu bitiş cevap anahtarını döndürdü. */
+  opts: { verified: boolean; keyJti?: string; reviewed?: boolean },
 ): Promise<ExamResult> {
   const { sections, total, passed } = scoreSections(sub, paper.kind);
   const key = examKindKey(paper.kind, paper.level, paper.module);
-  const answers = { sections, passed, trial: paper.trial, verified: opts.verified, seconds: sub.seconds, vocab: sub.vocabAnswers ?? [] };
+  const answers = {
+    sections, passed, trial: paper.trial, verified: opts.verified, seconds: sub.seconds, vocab: sub.vocabAnswers ?? [],
+    ...(opts.keyJti ? { keyJti: opts.keyJti } : {}),
+    ...(opts.reviewed ? { reviewed: true } : {}),
+  };
   const correct = Math.round(sections.reduce((a, s) => a + s.correct, 0));
   const items = sections.reduce((a, s) => a + s.total, 0);
-  const [row] = await db
+  /* Doğrulanmamış sonuç (pratik, eski istemci) aynı günün DOĞRULANMIŞ GEÇİŞİNİN
+     üstüne yazılmıyor: geçmiş sınavı yeniden çözen kullanıcı sertifikasını
+     kaybetmesin (güvenlik denetimi 2026-10-07, anahtar görülmüş hafta). */
+  const keepPass = sql`not (coalesce(${exams.answers}->>'verified', 'true') <> 'false' and coalesce(${exams.answers}->>'trial', 'false') <> 'true' and ${exams.answers}->>'passed' = 'true')`;
+  let [row] = await db
     .insert(exams)
     .values({ userId, kind: key, week: day, level: paper.level, score: total, correct, total: items, answers })
     .onConflictDoUpdate({
       target: [exams.userId, exams.kind, exams.week],
       set: { score: total, correct, total: items, answers },
+      ...(opts.verified ? {} : { setWhere: keepPass }),
     })
     .returning({ id: exams.id, at: exams.createdAt });
+  if (!row) {
+    [row] = await db
+      .select({ id: exams.id, at: exams.createdAt })
+      .from(exams)
+      .where(and(eq(exams.userId, userId), eq(exams.kind, key), eq(exams.week, day)));
+  }
   await track(userId, "exam_finish", day, total, `${paper.kind}:${paper.level}`);
   /* İstemciye `trial` "sayılmaz" anlamında gidiyor: doğrulanmamış sonuç da
      sertifika düğmesi göstermesin (eski istemciler `verified`'ı bilmiyor). */
   return { id: row.id, kind: paper.kind, level: paper.level, module: paper.module, trial: paper.trial || !opts.verified, sections, total, passed, at: row.at.toISOString() };
+}
+
+/**
+ * BU HAFTA CEVAP ANAHTARI AÇIKLANMIŞ DENEMELER (güvenlik denetimi 2026-10-07).
+ *
+ * Kâğıt kullanıcı + tür + HAFTA başına sabit (`buildExam` tohumu), kayıt ise
+ * gün başına. Bitiş cevap anahtarını döndürdüğü için aynı hafta yeniden
+ * başlatılan sınav aynı soruları, cevapları bilinen hâlde getiriyor. Dönen
+ * `jtis` aynı jetonun tekrarını, `any` anahtar görülmüş haftayı yakalıyor.
+ */
+export async function reviewedThisWeek(
+  userId: string,
+  kind: ExamKind,
+  level: CefrLevel,
+  module: number | null,
+  day: string,
+): Promise<{ any: boolean; jtis: Map<string, number> }> {
+  const rows = await db
+    .select({ id: exams.id, answers: exams.answers })
+    .from(exams)
+    .where(and(eq(exams.userId, userId), eq(exams.kind, examKindKey(kind, level, module)), sql`${exams.week} >= ${weekStart(day)}`));
+  const jtis = new Map<string, number>();
+  let any = false;
+  for (const r of rows) {
+    const a = r.answers as { reviewed?: boolean; keyJti?: string } | null;
+    if (a?.reviewed) any = true;
+    if (a?.keyJti) jtis.set(a.keyJti, r.id);
+  }
+  return { any, jtis };
 }
 
 export async function examHistory(userId: string, limit = 10): Promise<ExamResult[]> {

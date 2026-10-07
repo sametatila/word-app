@@ -38,6 +38,13 @@ export type ObjectiveKey = {
   module: number | null;
   /** Son kullanma (ms, epoch). */
   exp: number;
+  /**
+   * Deneme kimliği (güvenlik denetimi 2026-10-07). Bitiş cevap anahtarını
+   * (`objectiveReview`) döndürüyor; aynı jetonla ikinci bitiş açıklanmış
+   * cevaplarla "doğrulanmış" tam puan alıyordu. İlk bitiş bu kimliği kayda
+   * yazıyor, ikincisi reddediliyor. Eski jetonlarda yok.
+   */
+  j?: string;
   /** Kelime bölümünün madde sayısı — bölüm SRS-bulanık, doğruyu istemci sayar ama toplamı kâğıt belirler. */
   vocabTotal: number;
   grammar: ({ kind: "cell"; answer: number } | { kind: "judge"; answer: boolean })[];
@@ -83,6 +90,7 @@ export function buildAnswerKey(
     kind: paper.kind,
     module: paper.module ?? null,
     exp: now + KEY_TTL_MS,
+    j: randomBytes(12).toString("base64url"),
     vocabTotal: paper.sections.vocab.length,
     grammar: paper.sections.grammar.map((g) =>
       g.kind === "cell" ? { kind: "cell", answer: g.answer } : { kind: "judge", answer: g.answer },
