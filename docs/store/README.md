@@ -277,7 +277,7 @@ Premium aylık ya da yıllık, otomatik yenilenen bir aboneliktir; aynı hesapla
 Aynı yapıda İngilizce kursu: A1'den C1'e 7.000'den fazla kelime, 900'den fazla alıştırma ve 50'den fazla deneme sınavı.
 
 HESAPSIZ BAŞLA
-Hesap açmadan başlarsın; hesap açınca ilerlemen taşınır, telefonda, tablette ve web'de devam edersin. Lig, yapay zekâ sohbeti ve değerlendirmesi ile Premium hesap ister; hesapsız Konuşma adımı hazır bir sohbetle sürer. Metnin yapay zekâya ancak iznini verirsen gider. Mikrofon yalnız konuşarak cevap verdiğinde açılır. Sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz. Yazılı sohbet geçmişin 30 gün sonra silinir. Lernomi sunucuları AB'de; yapay zekâ ve ses tanıma için dış sağlayıcılar kullanılır.
+Hesap açmadan başlarsın; hesap açınca ilerlemen taşınır, telefonda, tablette ve web'de devam edersin. Lig, yapay zekâ sohbeti ve değerlendirmesi ile Premium hesap ister; hesapsız Konuşma adımının yapay zekâ sohbet bölümü atlanır. Metnin yapay zekâya ancak iznini verirsen gider. Mikrofon yalnız konuşarak cevap verdiğinde açılır. Sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz. Yazılı sohbet geçmişin 30 gün sonra silinir. Lernomi sunucuları AB'de; yapay zekâ ve ses tanıma için dış sağlayıcılar kullanılır.
 
 Modül ve seviye sınavlarını geçince paylaşabileceğin bir başarı belgesi alırsın. Deneme sınavlarını Lernomi hazırladı; Lernomi hiçbir sınav kurumuyla bağlantılı değildir, belgeler resmî bir sertifika yerine geçmez.
 
@@ -320,7 +320,7 @@ Premium opens every AI speaking and writing task in Path and Skills right away, 
 Premium is a monthly or yearly auto-renewing subscription and works on phone, tablet and the web. New subscribers get the first month free; cancel before the trial ends and you won't be charged. We remind you by notification and email 2 days before the trial ends. It renews unless canceled at least 24 hours before the end of the period; manage or cancel it in the account settings of the store you bought it from.
 
 START WITHOUT AN ACCOUNT
-Start without an account; create one later and your progress moves with you to phone, tablet and the web. Leagues, AI chat, AI feedback and Premium need an account; without one, the Speaking step uses a prepared conversation. Your text is only sent to the AI if you allow it. The microphone opens only when you answer by speaking. Audio reaches the server only with your permission, and the recording is not kept. Your chat history is deleted after 30 days. Lernomi's servers are in the EU; external providers handle AI and speech recognition.
+Start without an account; create one later and your progress moves with you to phone, tablet and the web. Leagues, AI chat, AI feedback and Premium need an account; without one, the Speaking step skips its AI chat part. Your text is only sent to the AI if you allow it. The microphone opens only when you answer by speaking. Audio reaches the server only with your permission, and the recording is not kept. Your chat history is deleted after 30 days. Lernomi's servers are in the EU; external providers handle AI and speech recognition.
 
 Pass module and level exams to earn a certificate of achievement you can share, showing what you can do. The mock exams are Lernomi's own; Lernomi is not affiliated with any exam provider, and certificates of achievement are not official certificates.
 
@@ -356,7 +356,7 @@ Premium öffnet sofort alle KI-Sprech- und Schreibaufgaben in Pfad und Fertigkei
 Premium ist ein sich automatisch verlängerndes Monats- oder Jahresabo für Handy, Tablet und Web. Neue Abonnenten bekommen den ersten Monat kostenlos; kündigst du vor Ende der Testphase, zahlst du nichts. Wir erinnern dich 2 Tage vorher per Mitteilung und E-Mail. Es verlängert sich, wenn du nicht mindestens 24 Stunden vor Ende des Zeitraums kündigst; verwalten und kündigen kannst du es in den Kontoeinstellungen deines Stores.
 
 OHNE KONTO STARTEN
-Starte ohne Konto; mit Konto kommt dein Fortschritt mit, auf Handy, Tablet und im Web. Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne läuft der Sprechen-Schritt als vorbereitetes Gespräch. Dein Text geht nur mit deiner Erlaubnis an die KI. Das Mikrofon öffnet sich nur, wenn du sprechend antwortest. Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert. Dein Chatverlauf wird nach 30 Tagen gelöscht. Lernomis Server stehen in der EU; für KI und Spracherkennung nutzen wir externe Anbieter.
+Starte ohne Konto; mit Konto kommt dein Fortschritt mit, auf Handy, Tablet und im Web. Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne Konto entfällt beim Sprechen-Schritt der KI-Chat. Dein Text geht nur mit deiner Erlaubnis an die KI. Das Mikrofon öffnet sich nur, wenn du sprechend antwortest. Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert. Dein Chatverlauf wird nach 30 Tagen gelöscht. Lernomis Server stehen in der EU; für KI und Spracherkennung nutzen wir externe Anbieter.
 
 Bestandene Modul- und Niveauprüfungen bringen dir einen teilbaren Leistungsnachweis. Die Probeprüfungen stammen von Lernomi; Lernomi ist mit keinem Prüfungsanbieter verbunden, ein Leistungsnachweis ersetzt kein offizielles Zertifikat.
 

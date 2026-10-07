@@ -517,7 +517,7 @@ const en: LandingCopy = {
   fine: {
     accountTitle: "Your account and your data",
     account: [
-      "You can start without an account. Friends and leagues, AI conversation, AI feedback and Premium need one; without an account, the Speaking step runs as a prepared conversation.",
+      "You can start without an account. Friends and leagues, AI conversation, AI feedback and Premium need one; without an account, the Speaking step skips its AI chat part.",
       "Your text is only sent to the AI if you allow it.",
       "The microphone opens only when you answer by speaking. Audio reaches the server only with your permission, and the recording is not kept.",
       "Your chat history is deleted after 30 days. Lernomi's servers are in the EU; external providers handle AI and speech recognition.",
@@ -699,7 +699,7 @@ const de: LandingCopy = {
   fine: {
     accountTitle: "Dein Konto, deine Daten",
     account: [
-      "Du kannst ohne Konto loslegen. Freunde und Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne Konto läuft der Sprechen-Schritt als vorbereitetes Gespräch.",
+      "Du kannst ohne Konto loslegen. Freunde und Liga, KI-Gespräche, KI-Feedback und Premium brauchen ein Konto; ohne Konto entfällt beim Sprechen-Schritt der KI-Chat.",
       "Dein Text geht nur mit deiner Erlaubnis an die KI.",
       "Das Mikrofon öffnet sich nur, wenn du sprechend antwortest. Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert.",
       "Dein Chatverlauf wird nach 30 Tagen gelöscht. Lernomis Server stehen in der EU; für KI und Spracherkennung nutzen wir externe Anbieter.",
