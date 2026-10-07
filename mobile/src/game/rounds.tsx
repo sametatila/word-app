@@ -1523,8 +1523,26 @@ function tasi<T>(list: T[], from: number, to: number): T[] {
   return arr;
 }
 
+/**
+ * ÇOK KELİMELİ CEVAPTA KELİME SINIRI (Samet, 2026-10-07: "sich leisten"de harfler
+ * boşluksuz diziliyordu). Boşluksuz harf dizisinde yeni kelimenin başladığı
+ * indeksler; yuvalar arasına boşluk ve "Senin" satırına kelime aralığı buradan.
+ * Web `games/scramble-game` aynı.
+ */
+function wordStarts(word: string): Set<number> {
+  const out = new Set<number>();
+  let n = 0;
+  for (const part of word.trim().split(/\s+/)) {
+    if (n > 0) out.add(n);
+    n += Array.from(part).length;
+  }
+  return out;
+}
+const spaced = (chars: string[], starts: Set<number>) => chars.map((c, i) => (starts.has(i) ? ` ${c}` : c)).join("");
+
 function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const target = React.useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
+  const starts = React.useMemo(() => wordStarts(word.de), [word.de]);
   // Harf döşemeleri boşluksuz diziliyor; karşılaştırma da boşluksuz biçimde.
   const compareTarget = React.useMemo(() => foldTight(word.de, currentTargetLang()), [word.de]);
   /* DİZİLİŞ TOHUMDAN, `Math.random()`TAN DEĞİL.
@@ -1551,7 +1569,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     if (np.length === target.length) {
       const ok = foldTight(np.map((x) => x.char).join(""), currentTargetLang()) === compareTarget;
       markAnswer(ok, withArtikel(word)); // tamamlanınca doğru kelimeyi oku
-      setFb({ correct: ok, answer: word.de, speak: withArtikel(word), meaning: glossOf(word).text, you: np.map((x) => x.char).join(""), why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join(""), targetLang: currentTargetLang() }) });
+      setFb({ correct: ok, answer: word.de, speak: withArtikel(word), meaning: glossOf(word).text, you: spaced(np.map((x) => x.char), starts), why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join(""), targetLang: currentTargetLang() }) });
     } else {
       sfx("tap");
     }
@@ -1575,12 +1593,31 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "spelling", placed.map((x) => x.char).join("")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.order_letters")} big={glossOf(word).text} sub={glossOf(word).sub} colors={colors} />
       <View>
-        <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => (
-            <View key={i} onLayout={(e) => drop.yuvaOlc(i, e.nativeEvent.layout)}>
-              <Tile label={t.char} undoKey="rounds.undo_letter" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (fb) return; if (drop.icinde(x, y)) setPlaced((p) => tasi(p, i, drop.hedefIndex(x, y, p.length))); else setPlaced((p) => p.filter((_, j) => j !== i)); } }} />
-            </View>
-          ))}
+        {/* YUVALAR SABİT, web gibi: yerleştirilen harfin ardından boş yuvalar; çok kelimeli
+            cevapta kelimeler arasında boşluk (`wordStarts`). Sürükleme indeksi yalnız dolu yuvalardan. */}
+        <View ref={drop.ref} onLayout={drop.olc} collapsable={false} accessibilityLabel={tx("rounds.tap_letters")} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+          {target.map((_slot, i) => {
+            const t = placed[i];
+            const gap = starts.has(i) ? <View style={{ width: spacing.md }} /> : null;
+            if (!t) {
+              return (
+                <React.Fragment key={`e${i}`}>
+                  {gap}
+                  <View style={{ paddingHorizontal: 14, paddingVertical: spacing.md, borderRadius: radii.md, borderWidth: 1, borderStyle: "dashed", borderColor: colors.hairline }}>
+                    <Text variant="bodyStrong" style={{ opacity: 0 }}>M</Text>
+                  </View>
+                </React.Fragment>
+              );
+            }
+            return (
+              <React.Fragment key={i}>
+                {gap}
+                <View onLayout={(e) => drop.yuvaOlc(i, e.nativeEvent.layout)}>
+                  <Tile label={t.char} undoKey="rounds.undo_letter" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (fb) return; if (drop.icinde(x, y)) setPlaced((p) => tasi(p, i, drop.hedefIndex(x, y, p.length))); else setPlaced((p) => p.filter((_, j) => j !== i)); } }} />
+                </View>
+              </React.Fragment>
+            );
+          })}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
           {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (drop.icinde(x, y)) dropPool(t, drop.hedefIndex(x, y, placed.length)); } }} />)}

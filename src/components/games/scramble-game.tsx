@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { currentTargetLang } from "@/components/games/types";
 import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
@@ -32,6 +32,23 @@ type Tile = { id: number; char: string };
  * Tohum tura özel: aynı kelime başka bir turda başka türlü diziliyor, aynı
  * turda ise bileşen yeniden çizilse bile diziliş sabit kalıyor.
  */
+/**
+ * ÇOK KELİMELİ CEVAPTA KELİME SINIRI (Samet, 2026-10-07: "sich leisten"de harfler
+ * boşluksuz diziliyordu, iki kelime olduğu görünmüyordu). Boşluksuz harf dizisinde
+ * yeni kelimenin başladığı indeksler; yuvalar arasına boşluk ve "Senin" satırına
+ * kelime aralığı buradan. Mobil `game/rounds` `ScrambleRound` aynı.
+ */
+function wordStarts(word: string): Set<number> {
+  const out = new Set<number>();
+  let n = 0;
+  for (const part of word.trim().split(/\s+/)) {
+    if (n > 0) out.add(n);
+    n += Array.from(part).length;
+  }
+  return out;
+}
+const spaced = (chars: string[], starts: Set<number>) => chars.map((c, i) => (starts.has(i) ? ` ${c}` : c)).join("");
+
 function makePool(word: string, seed: string): Tile[] {
   const letters = Array.from(word).filter((c) => c !== " ");
   return seededShuffle(letters.map((char, id) => ({ id, char })), seed);
@@ -51,6 +68,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
   const { word } = round;
 
   const targetLetters = useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
+  const starts = useMemo(() => wordStarts(word.de), [word.de]);
   // Harf döşemeleri boşluksuz diziliyor; karşılaştırma da boşluksuz biçimde.
   // `normalize` artık tireyi de boşluğa çeviriyor (bkz. `games/types` PUNCT) ve
   // düz karşılaştırma iki tarafa aynı boşluğu koyduğu için tesadüfen çalışıyordu;
@@ -208,7 +226,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
               answer: word.de,
               speak: withArtikel(word),
               meaning: meaningOf(word, lang),
-              you: placed.map((t) => t.char).join(""),
+              you: spaced(placed.map((t) => t.char), starts),
               why:
                 status === "wrong"
                   ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join(""), targetLang: currentTargetLang() }, lang)
@@ -243,11 +261,13 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
           {targetLetters.map((_, i) => {
             const tile = placed[i];
             return (
-              /* Sürükleme/bırakma SARMALAYICIDA: boş yuvanın düğmesi
+              <Fragment key={i}>
+              {/* Kelime sınırı: yuvalar arasında bir harflik boşluk. */}
+              {starts.has(i) ? <span aria-hidden className={compact ? "w-3" : "w-5"} /> : null}
+              {/* Sürükleme/bırakma SARMALAYICIDA: boş yuvanın düğmesi
                  `disabled` ve devre dışı bir düğme bırakma olayı almıyor —
-                 oysa boş yuva tam da bırakılmak istenen yer. */
+                 oysa boş yuva tam da bırakılmak istenen yer. */}
               <span
-                key={i}
                 draggable={!!tile && status === "playing"}
                 onDragStart={(e) => e.dataTransfer.setData("text/plain", `p:${i}`)}
                 onDragOver={(e) => { if (status === "playing") e.preventDefault(); }}
@@ -269,6 +289,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
                   {tile?.char ?? ""}
                 </button>
               </span>
+              </Fragment>
             );
           })}
         </div>
