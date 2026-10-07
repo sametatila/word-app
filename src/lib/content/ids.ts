@@ -74,8 +74,10 @@ export function isContentHash(v: unknown): v is string {
  * `quiznative/` haftalık quizin anadil sözlüğü: premium değil ama quizin
  * açıklamalarını (cevabın gerekçesini) taşıyor ve quiz onları gönderimden
  * önce hiçbir istemciye vermiyor (bkz. `content/packs` `quizNativePack`).
+ * `mocknative/` deneme sınavı sözlüğünün gerekçe/rubrik yarısı (bkz.
+ * `content/packs` `mockNativePack`).
  */
-const GATED_PREFIXES = ["papers/", "quiznative/"];
+const GATED_PREFIXES = ["papers/", "quiznative/", "mocknative/"];
 
 export function isGatedPack(pack: string): boolean {
   return GATED_PREFIXES.some((prefix) => pack.startsWith(prefix));

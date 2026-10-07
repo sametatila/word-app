@@ -16,6 +16,20 @@ import {
 import { resolveEnConversation, deKey, type DeDict } from "./native-de";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 import { packObject } from "@/lib/content/serve";
+import { mockNativePack } from "@/lib/content/packs";
+
+/**
+ * Deneme sınavı sözlüğünün kapılı yarısını (`mocknative/<dil>`: gerekçe,
+ * rubrik, beklenen cevap) açık paketin `mock` alanına ekler. Açık pakette
+ * yalnız liste satırının tema karşılığı var (bkz. `content/packs`
+ * `mockNativePack`). Kapılı yarı yoksa (eski yayın) açık paket olduğu gibi.
+ */
+async function withGatedMock<T>(lang: "en" | "de", built: T): Promise<T> {
+  const gated = await packObject<{ mock?: Record<string, string> }>(mockNativePack(lang));
+  if (!gated?.mock) return built;
+  const open = (built as { mock?: Record<string, string> }).mock ?? {};
+  return { ...built, mock: { ...open, ...gated.mock } };
+}
 
 /**
  * Anlatım sözlüğünü SUNUCUDA, yalnız gerektiğinde yükler.
@@ -64,7 +78,7 @@ async function nativeDict(): Promise<NativeDict | null> {
     missAt = Date.now();
     return null;
   }
-  cache = built as unknown as NativeDict;
+  cache = (await withGatedMock("en", built)) as unknown as NativeDict;
   return cache;
 }
 
@@ -91,7 +105,7 @@ async function deDict(): Promise<DeDict | null> {
     missDeAt = Date.now();
     return null;
   }
-  cacheDe = built as unknown as DeDict;
+  cacheDe = (await withGatedMock("de", built)) as unknown as DeDict;
   return cacheDe;
 }
 

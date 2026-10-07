@@ -29,7 +29,7 @@ import { buildSkillDump } from "./dump-skills-mobile";
 import { buildPaperDump } from "./dump-mock-exams-mobile";
 import { buildNativeDump } from "./dump-native-mobile";
 import { ORDER_ITEM } from "../src/lib/content/ids";
-import { conversationPack, mockIndexPack, paperPack, quizNativePack, skillPack, type PackCourse } from "../src/lib/content/packs";
+import { conversationPack, mockIndexPack, mockNativePack, MOCK_PUBLIC_KINDS, paperPack, quizNativePack, skillPack, type PackCourse } from "../src/lib/content/packs";
 import { catalogEntry } from "../src/lib/mock-exams/deliver";
 import { KEEP_RELEASES, prune, publish, type PackInput } from "../src/lib/content/publish";
 
@@ -137,6 +137,19 @@ function collect(): Map<string, PackInput> {
       if (key === "quiz") {
         if (value && typeof value === "object" && Object.keys(value).length > 0)
           packs.set(quizNativePack(lang), new Map([["quiz", value]]));
+        continue;
+      }
+      /* DENEME SINAVI SÖZLÜĞÜ BÖLÜNÜYOR (güvenlik denetimi 2026-10-07). Gerekçe,
+         rubrik ve beklenen cevaplar kapılı `mocknative/<dil>`e; açık pakette
+         yalnız liste satırının tema karşılığı kalıyor (bkz. `content/packs`). */
+      if (key === "mock" && value && typeof value === "object") {
+        const open: Record<string, unknown> = {};
+        const gated: Record<string, unknown> = {};
+        for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
+          (MOCK_PUBLIC_KINDS.has(k.split("\u0000")[0]) ? open : gated)[k] = v;
+        }
+        if (Object.keys(gated).length > 0) packs.set(mockNativePack(lang), new Map([["mock", gated]]));
+        items.set(key, open);
         continue;
       }
       items.set(key, value);

@@ -58,6 +58,23 @@ export function quizNativePack(lang: "en" | "de"): string {
 }
 
 /**
+ * Deneme sınavı ANA DİL sözlüğünün KAPILI yarısı — `mocknative/en`, `mocknative/de`.
+ *
+ * Sözlüğün `mock` alanı kâğıtların gerekçelerini (`explain`: cevabın kendisi,
+ * bkz. `mock-exams/deliver`), rubriklerini ve beklenen cevaplarını taşıyor;
+ * herkese açık `native/<dil>` içinde girişsiz indirilebiliyordu (güvenlik
+ * denetimi 2026-10-07). Açık pakette yalnız liste satırının tema karşılığı
+ * (`themeTr`, `MOCK_PUBLIC_KINDS`) kalıyor; gerisi burada ve yalnız sunucu
+ * okuyor (`conversations/native-server`).
+ */
+export function mockNativePack(lang: "en" | "de"): string {
+  return `mocknative/${lang}`;
+}
+
+/** `mock` sözlüğünde açık pakette kalan türler: liste satırı (`nativeMockText`). */
+export const MOCK_PUBLIC_KINDS: ReadonlySet<string> = new Set(["themeTr"]);
+
+/**
  * Kimlikten seviye — üç biçim de dolaşıyor ve hiçbiri seviyeyi sabit konumda
  * tutmuyor: "a1-u1-r1", "de-a1-lib-r1", "en-c1-u2-w1". Kapalı bir kalıp aramak
  * konuma güvenmekten sağlam.
