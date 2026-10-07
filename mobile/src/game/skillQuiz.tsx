@@ -356,13 +356,19 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
   const [fails, setFails] = useState(0);
   const accepted = useMemo(() => [t.answer, ...(t.alternatives ?? [])].map(normalizeBuilt), [t]);
 
+  /* SONUÇ KONTROLDE KAYDEDİLİYOR (Samet, 2026-10-07: "Kontrole tıkladım sonra devam et
+     butonunun olması çok anlamsız"). Kartlar alt alta duruyor; "Devam" bir yere götürmüyor,
+     yalnız sonucu yazıyordu. Doğruda ya da iki yanlıştan sonra cevap açılınca hemen
+     `onSettle` (ses/titreşim de o anda, `WritingList` `settle`). Web tek görev gösterdiği için
+     orada "Devam" sonrakine geçiriyor, kalıyor. Yeniden Yaz kartı baştan böyle. */
   function check() {
     const assembled = chosen.map((i) => tokens[i]).join(" ");
-    if (accepted.includes(normalizeBuilt(assembled))) { setPhase("correct"); return; }
+    if (accepted.includes(normalizeBuilt(assembled))) { setPhase("correct"); if (!done) onSettle(true); return; }
     const f = fails + 1;
     setFails(f);
-    haptic("wrong");
     if (f >= 2) setPhase("revealed");
+    if (f < 2) haptic("wrong");
+    else if (!done) onSettle(false);
   }
   const locked = phase !== "editing";
 
@@ -407,12 +413,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
       ) : null}
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
-        {locked ? (
-          <PressableScale onPress={() => { if (!done) onSettle(phase === "correct"); }}
-            style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-            <Text variant="bodyStrong" color={colors.onPrimary}>{tx("common.continue")}</Text>
-          </PressableScale>
-        ) : (
+        {locked ? null : (
           <>
             <PressableScale onPress={check} disabled={chosen.length !== tokens.length}
               style={{ backgroundColor: chosen.length === tokens.length ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
