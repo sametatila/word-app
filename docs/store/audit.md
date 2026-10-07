@@ -40,7 +40,7 @@ ASC salt okuma dökümünden güncellendi.
 | Madde | Konu | Durum | Kanıt / kalan |
 |---|---|---|---|
 | S1 | promo-2m herkese varsayılan deneme olabilir | ✅ | İki teklife `rc-ignore-offer` etiketi (Play API) ve yorumlar (fc39525f). 2026-09-27 Samet build 9 Android dahili testte doğruladı: paywall "1 ay ücretsiz". (Fiyat TRY görünüyor: Play fiyat ülkesini Google hesabının Play ülkesinden alıyor, konumdan değil; kod hatası değil) |
-| S2 | Mağaza satın alması uçtan uca denenmedi | ⏳ Samet + Claude | Premium'suz demo hesapla TestFlight sandbox + Play lisans testçisi; ardından DB'de `source='store'`, `store_environment='sandbox'` satırı |
+| S2 | Mağaza satın alması uçtan uca | ✅ iOS | 2026-10-07: TestFlight build 21, Apple satın alma penceresi (1 ay deneme 0 TL, sonra 199,99 TL/ay) → RevenueCat → `store_events` `purchase` `lernomi_premium_monthly` ios sandbox TRY → hesapta Premium `store_provider=revenuecat`, `store_state=trial`, sandbox; uygulama "satın alma başarılı". Android (Play lisans testçisi) henüz denenmedi |
 | S3 | iOS'ta Google yalnız kalabilir (4.8) | ✅ | 168d9f87: iOS'ta Google düğmesi yalnız Apple da açıkken |
 | S4 | Demo hesapta "Hediye Premium" görünüyor | ✅ | İnceleme notuna "sunucuda yalnız inceleme için verildi" cümlesi (f1b75548) |
 | S5 | iOS arayüzünde "Android" adı | ✅ | e0a13164 |
