@@ -157,8 +157,14 @@ export async function purgeUserData(userId: string): Promise<void> {
        geçme oranı geçmişe dönük değişmesin, kişi gider. Belge saklanmıyor;
        kalan sütunların hiçbiri kimseye işaret etmiyor. */
     await tx.update(guestAttestations).set({ userId: null }).where(eq(guestAttestations.userId, userId));
-    // Davet zinciri: bu kullanıcının tarafı boşalır, karşı tarafın kaydı durur.
+    /* Davet zinciri: bu kullanıcının tarafı boşalır, karşı tarafın kaydı durur.
+       Davetli tarafı boş dizge DEĞİL `deleted:<satır>`: invitee_user_id benzersiz
+       (referrals_invitee_idx), ilk silinen davetli '' alınca sonraki her davetli
+       silmesi çakışıp işlemi geri alıyordu (güvenlik denetimi 2026-10-07). */
     await tx.update(referrals).set({ inviterUserId: "" }).where(eq(referrals.inviterUserId, userId));
-    await tx.update(referrals).set({ inviteeUserId: "" }).where(eq(referrals.inviteeUserId, userId));
+    await tx
+      .update(referrals)
+      .set({ inviteeUserId: sql`'deleted:' || ${referrals.id}::text` })
+      .where(eq(referrals.inviteeUserId, userId));
   });
 }
