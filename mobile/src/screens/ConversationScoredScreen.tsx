@@ -132,6 +132,20 @@ export function ConversationScoredScreen() {
   const [cando, setCando] = useState<string[]>([]);
   const scored = useRef(false);
   const mounted = useRef(true);
+  /*
+   * ANLIK DURUM REF'TE (2026-10-08). Mikrofon sonucu dinlemenin BAŞLADIĞI
+   * çizimin `send`ini çağırıyor: o arada yazılıp gönderilen tur `busy`/`turns`
+   * state'inde görünmüyordu (iki /api/chat isteği aynı anda, biri geçmişten
+   * düşüyordu), süre bitip puanlama başlamışsa da tur yine gidiyordu. `run`
+   * sınavın kaçıncı kez kurulduğu: "Tekrar dene"den önceki isteğin cevabı ve
+   * 6 sn'lik puanlama zamanlayıcısı yeni sınava karışmasın.
+   */
+  const busyRef = useRef(false);
+  const turnsRef = useRef<Turn[]>([]);
+  const phaseRef = useRef<Phase>(phase);
+  phaseRef.current = phase;
+  const run = useRef(0);
+  const putTurns = (t: Turn[]) => { turnsRef.current = t; setTurns(t); };
   const scrollRef = useRef<any>(null);
   const userTurns = turns.filter((x) => x.role === "user").length;
 
@@ -157,7 +171,8 @@ export function ConversationScoredScreen() {
   }, [conversation]);
 
   const score = useCallback(async (all: Turn[]) => {
-    if (scored.current || !conversation) return;
+    /* Ekrandan çıkıldıysa puanlanmıyor (6 sn'lik zamanlayıcı ayrıldıktan sonra da düşebiliyor). */
+    if (scored.current || !conversation || !mounted.current) return;
     scored.current = true;
     setPhase("scoring");
     const said = all.filter((x) => x.role === "user").map((x) => x.content);
@@ -234,10 +249,14 @@ export function ConversationScoredScreen() {
   const restart = useCallback(() => {
     scored.current = false;
     deadline.current = 0;
+    run.current++;
+    busyRef.current = false;
+    setBusy(false);
     setResult(null);
     setResultId(null);
     setGateNote(null);
     setConsentOff(false);
+    turnsRef.current = [];
     setTurns([]);
     setDraft("");
     setLeft(SCORED_SECONDS);
@@ -290,31 +309,37 @@ export function ConversationScoredScreen() {
   function start() {
     track("nav", 0, "conversation_scored:start");
     const opening: Turn = { role: "assistant", content: conversation!.chat.opening };
-    setTurns([opening]);
+    putTurns([opening]);
     setPhase("talk");
     speakTarget(conversation!.chat.opening);
   }
 
   async function send(text: string) {
     const clean = text.trim();
-    if (!clean || busy || phase !== "talk") return;
+    /* State değil ref: mikrofon sonucu eski çizimden geliyor (bkz. `busyRef`). */
+    if (!clean || busyRef.current || scored.current || phaseRef.current !== "talk") return;
+    const my = run.current;
     setDraft("");
+    busyRef.current = true;
     setBusy(true);
-    const next: Turn[] = [...turns, { role: "user", content: clean }];
-    setTurns(next);
+    const next: Turn[] = [...turnsRef.current, { role: "user", content: clean }];
+    putTurns(next);
     const n = next.filter((x) => x.role === "user").length;
     try {
       const raw = await sendChat(conversation!.id, next as ChatMsg[], "scored");
       // Sınav isteminde işaret satırı olmamalı; olursa yine de ayıklanır.
       const body = parseReply(raw).body.trim() || raw.trim();
       const all: Turn[] = [...next, { role: "assistant", content: body }];
-      if (!mounted.current) return;
-      setTurns(all);
+      if (!mounted.current || my !== run.current) return;
+      putTurns(all);
+      busyRef.current = false;
       setBusy(false);
-      speakTarget(body);
-      if (n >= SCORED_TURNS) setTimeout(() => void score(all), 6000);
+      // Süre bu cevabı beklerken bittiyse puanlama ekranında okunmuyor.
+      if (!scored.current) speakTarget(body);
+      if (n >= SCORED_TURNS) setTimeout(() => { if (my === run.current) void score(all); }, 6000);
     } catch (e) {
-      if (!mounted.current) return;
+      if (!mounted.current || my !== run.current) return;
+      busyRef.current = false;
       setBusy(false);
       /* İzin ekranında "hayır" dendiyse ya da daha önce denmişse cümle
          sağlayıcıya gitmedi. Akış öteki arızalarla aynı; değişen yalnız cümle. */

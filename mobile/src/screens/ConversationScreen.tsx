@@ -28,7 +28,7 @@ import { foldEnglishSpelling } from "../lib/en-spelling";
 import { sendChat, chatAvailability, parseReply, patternUsed, type ChatMsg } from "../game/chat";
 import { isAiConsentDeclined } from "../lib/aiConsent";
 import { markItemDone, newFinishId, queueConversationResult, loadConversationResume, saveConversationResume, clearConversationResume, type ConversationResume } from "../game/pathProgress";
-import { speakTarget, speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
+import { speakTarget, speakAndWaitVoiced, currentVoiceId, stopSpeaking } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
@@ -230,8 +230,19 @@ export function ConversationScreen() {
   const bubbleId = useRef(0);
   const [cursor, setCursor] = useState(0);        // anlatımda beklenen adım
   const [correct, setCorrect] = useState(0);
-  const [tries, setTries] = useState(0);          // üretim adımında deneme sayısı
+  const [triesShown, setTries] = useState(0);     // üretim adımında deneme sayısı (çizim için; hüküm `triesRef`ten)
   const [answered, setAnswered] = useState(false); // doğru/yanlış cevaplandı mı
+  /*
+   * ADIMIN ANLIK DURUMU REF'TE (2026-10-08). Mikrofon sonucu, dinleme BAŞLADIĞI
+   * çizimin kapanışıyla geliyor; o arada yazılan cevap deneme sayısını artırmış ya da
+   * adımı bitirmiş olabiliyor. State'ten okuyunca sayaç takılıyor, doğru sözlü
+   * cevap ilk deneme sayılıyor, adım iki kez puanlanıp iki ilerleme zamanlayıcısı
+   * kuruluyordu. `cursorRef` `presentFrom`da EŞZAMANLI yazılıyor; `settled` o
+   * adımın sonuçlandığını (doğru, tavan ya da doğru/yanlış cevabı) tutuyor.
+   */
+  const cursorRef = useRef(0);
+  const triesRef = useRef(0);
+  const settled = useRef<number | null>(null);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);        // chat bekleme
   /*
@@ -256,6 +267,14 @@ export function ConversationScreen() {
   const handsFreeRef = useRef(true);
   const [roleTurns, setRoleTurns] = useState(0);
   const [roleMsgs, setRoleMsgs] = useState<ChatMsg[]>([]);
+  /* Sohbet geçmişi ve tur sayısı ref'te de: mikrofon sonucu eski çizimin
+     `sendRole`unu çağırıyor; dinlerken öneri çipiyle giden tur state'ten okunsa
+     düşüyordu ve iki /api/chat isteği aynı anda gidiyordu (`sending`). */
+  const roleMsgsRef = useRef<ChatMsg[]>([]);
+  const roleTurnsRef = useRef(0);
+  const sending = useRef(false);
+  const putRoleMsgs = (m: ChatMsg[]) => { roleMsgsRef.current = m; setRoleMsgs(m); };
+  const putRoleTurns = (n: number) => { roleTurnsRef.current = n; setRoleTurns(n); };
   /*
    * SOHBETİN DÜZELTMELERİ AYRI TUTULUYOR (denetim T16).
    *
@@ -330,6 +349,9 @@ export function ConversationScreen() {
   const ekranAcik = useRef(true);
   useEffect(() => { ekranAcik.current = true; return () => { ekranAcik.current = false; }; }, []);
   const [listening, setListening] = useState(false);
+  /* Eşzamanlı bayrak: öğretmen okurken elle açılan mikrofonun üstüne eller
+     serbest dinlemesi ikinci kez açılmasın (state bir çizim geriden geliyor). */
+  const listeningRef = useRef(false);
   // "Yazarak cevapla" seçildi mi. Adım başına SIFIRLANMIYOR: bir kez yazmaya
   // geçen öğrenci her adımda o düğmeyi yeniden aramasın.
   const [typing, setTyping] = useState(false);
@@ -441,7 +463,10 @@ export function ConversationScreen() {
     }
     if (add.length) setFeed((f) => [...f, ...add]);
     setCursor(k);
+    cursorRef.current = k;
     setTries(0);
+    triesRef.current = 0;
+    settled.current = null;
     setAnswered(false);
     const spoken = add.map((b) => (b.role === "teacher" ? targetText(b.segments) : "")).filter(Boolean).join(". ");
     const bekleyen = conversation.lecture[k]?.expect;
@@ -451,8 +476,18 @@ export function ConversationScreen() {
       void (async () => {
         try { await speakAndWaitVoiced(spoken, currentVoiceId()); } catch { /* ses yoksa yazıdan okunur */ }
         if (!ekranAcik.current || sttOkRef.current === false) return;
-        if (bekleyen.kind === "repeat") void speakRepeat();
-        else void speakProduce();
+        /* SON ÇİZİMİN İŞLEYİCİSİ (`live`): bu kapanış adım değişmeden ÖNCEKİ çizimin
+           `expect`/`tries`ini tutuyor; doğrudan `speakRepeat()` söyleneni bir önceki
+           adımın hedefiyle karşılaştırıyordu ("heißen" adımında "Heißen" → yanlış,
+           sonraki adımda "Try again (2/3)"; App Review kaydı, 2026-10-08). Okuma
+           sürerken adım değiştiyse (atla) dinleme açılmıyor. Ses hemen düşerse yeni
+           çizim henüz işlenmemiş olabilir: kısa bir süre onu bekliyor. */
+        for (let i = 0; i < 20 && live.current.cursor < k; i++) await new Promise((r) => setTimeout(r, 25));
+        if (!ekranAcik.current || live.current.cursor !== k) return;
+        /* Okuma sürerken eller serbest kapatıldıysa ya da yazmaya geçildiyse mikrofon açılmıyor. */
+        if (!handsFreeRef.current || live.current.typing) return;
+        if (bekleyen.kind === "repeat") void live.current.speakRepeat();
+        else void live.current.speakProduce();
       })();
     } else if (spoken) {
       speakTarget(spoken);
@@ -464,7 +499,20 @@ export function ConversationScreen() {
   const current = conversation && cursor < conversation.lecture.length ? conversation.lecture[cursor] : null;
   const expect = current?.expect;
 
-  function advance() { presentFrom(cursor + 1); }
+  /* Yalnız hâlâ bu adımdaysa: çift dokunuş ya da gecikmeli ilerlemeden önce
+     basılan "atla" aynı sonraki adımı iki kez açmasın (çift baloncuk ve okuma). */
+  function advance() {
+    if (cursorRef.current !== cursor) return;
+    presentFrom(cursor + 1);
+  }
+
+  /** Sonuçtan `ms` sonra ilerle — o arada adım değiştiyse ya da ekrandan çıkıldıysa hiçbir şey yapmaz. */
+  function advanceLater(ms: number) {
+    const at = cursor;
+    setTimeout(() => {
+      if (ekranAcik.current && cursorRef.current === at) presentFrom(at + 1);
+    }, ms);
+  }
 
   function onConfirm() { advance(); }
 
@@ -476,9 +524,11 @@ export function ConversationScreen() {
    */
   function skipStep() {
     const k = expect?.kind;
-    if (k && k !== "confirm") track("conversation_step", 0, `${k}:skip`);
+    /* Sonuçlanmış adım (ilerleme beklemesinde) atlanmış sayılmıyor; yalnız hemen geçiliyor. */
+    if (k && k !== "confirm" && settled.current !== cursor) track("conversation_step", 0, `${k}:skip`);
     stopListening();
     setTries(0);
+    triesRef.current = 0;
     advance();
   }
 
@@ -487,9 +537,10 @@ export function ConversationScreen() {
    * yazma yoluna geçer — reddedilen izin her adımda yeniden sorulmaz.
    */
   async function dinle(): Promise<string[] | null> {
-    if (listening) return null;
+    if (listeningRef.current) return null;
+    listeningRef.current = true;
     const izin = await ensureMicPermission();
-    if (!izin) { setSttOk(false); sttOkRef.current = false; setSttSebep("denied"); return null; }
+    if (!izin) { listeningRef.current = false; setSttOk(false); sttOkRef.current = false; setSttSebep("denied"); return null; }
     setListening(true);
     /* Mikrofon açıldığında kısa "seni dinliyorum" sesi — web `cueListen`
        (`lib/conversations/cues`, 660→880 Hz) karşılığı mobilin `micon`u.
@@ -501,6 +552,7 @@ export function ConversationScreen() {
       return await listenOnce(currentTargetLocale(), LISTEN_CEILING_MS);
     } finally {
       clearTimeout(miconTimer);
+      listeningRef.current = false;
       setListening(false);
     }
   }
@@ -517,34 +569,46 @@ export function ConversationScreen() {
    * duyurulup geçiliyor ki konuşma takılmasın.
    */
   function gradeRepeat(shown: string, ok: boolean, via: Via) {
-    if (expect?.kind !== "repeat") return;
+    /* Adım başına tek hüküm: dinlerken yazılan cevap adımı bitirdiyse geç gelen mikrofon sonucu yok sayılıyor. */
+    if (expect?.kind !== "repeat" || settled.current === cursor) return;
+    const tries = triesRef.current; // state değil: dinlerken yazılan deneme de sayılsın
     push({ role: "student", text: shown, ok });
     haptic(ok ? "correct" : "wrong");
     if (ok) {
+      settled.current = cursor;
       track("conversation_step", tries === 0 ? 2 : 1, `repeat:${via}`);
       speakTarget(expect.target);
-      setTimeout(advance, 500);
+      advanceLater(500);
       scrollDown();
       return;
     }
     const t = tries + 1;
+    triesRef.current = t;
     setTries(t);
     if (t >= CONVERSATION_TRY_CEILING) {
+      settled.current = cursor;
       /* Adım geçilemedi. Web de sıfırı YALNIZ burada yazıyor: her yanlış
          denemeye ayrı bir sıfır yazmak, bir adımı üç başarısız adım gibi
          gösterirdi. */
       track("conversation_step", 0, `repeat:${via}`);
       push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
       speakTarget(expect.target);
-      setTimeout(advance, 900);
+      advanceLater(900);
     }
     scrollDown();
   }
 
-  async function speakRepeat() {
-    if (expect?.kind !== "repeat") return;
+  /* `manual`: düğmeyle açıldı. Öğretmen hâlâ okuyorsa susturuluyor: mikrofon
+     onun sesini duymasın; eller serbest dinlemesi de mikrofon açık diye çekiliyor. */
+  async function speakRepeat(manual = false) {
+    if (expect?.kind !== "repeat" || settled.current === cursor || listeningRef.current) return;
+    if (manual) stopSpeaking();
+    const at = cursor;
     const duyulan = await dinle();
-    if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
+    /* Dinlerken adım değiştiyse (atla) ya da ekrandan çıkıldıysa sonuç yazılmıyor. */
+    if (!ekranAcik.current || cursorRef.current !== at) return;
+    /* İzin bu dinlemede reddedildiyse "duyamadım" denmiyor (yazma yolu ve notu açılıyor). */
+    if (!duyulan?.length) { if (sttOkRef.current !== false) duyulmadi(); return; }
     gradeRepeat(duyulan[0], spokenMatches(fc(duyulan), fc([expect.target])), "mic");
   }
 
@@ -557,10 +621,13 @@ export function ConversationScreen() {
     gradeRepeat(text, matches(text, expect.target), "typed");
   }
 
-  async function speakProduce() {
-    if (expect?.kind !== "produce") return;
+  async function speakProduce(manual = false) {
+    if (expect?.kind !== "produce" || settled.current === cursor || listeningRef.current) return;
+    if (manual) stopSpeaking();
+    const at = cursor;
     const duyulan = await dinle();
-    if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
+    if (!ekranAcik.current || cursorRef.current !== at) return;
+    if (!duyulan?.length) { if (sttOkRef.current !== false) duyulmadi(); return; }
     // Söylenen cevap tanıyıcı çıktısıyla karşılaştırılıyor (sayı/noktalama
     // katlaması dahil); yazılan cevap düz karşılaştırmadan geçiyor.
     gradeProduce(duyulan[0], spokenMatches(fc(duyulan), fc([expect.target, ...(expect.accept ?? [])])), "mic");
@@ -576,15 +643,26 @@ export function ConversationScreen() {
 
   /** Konuşma fazında mikrofon — duyulan replik doğrudan gönderilir. */
   async function speakRole() {
+    if (listeningRef.current) return;
+    stopSpeaking(); // karşı tarafın okuması mikrofona girmesin (bkz. `speakRepeat`)
     const duyulan = await dinle();
-    if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
+    /* Dinlerken ekrandan çıkıldıysa ya da konuşma bitirildiyse cümle gönderilmiyor. */
+    if (!ekranAcik.current || live.current.phase !== "chat") return;
+    if (!duyulan?.length) { if (sttOkRef.current !== false) duyulmadi(); return; }
     void sendRole(duyulan[0]);
   }
 
+  /* Gecikmeli çağrılar (seslendirme bitince açılan eller serbest dinlemesi) için son
+     çizimin adımı ve işleyicileri; bkz. `presentFrom`. */
+  const live = useRef({ cursor, phase, typing, speakRepeat, speakProduce });
+  useEffect(() => { live.current = { cursor, phase, typing, speakRepeat, speakProduce }; });
+
   function gradeProduce(text: string, ok: boolean, via: Via) {
-    if (expect?.kind !== "produce") return;
+    if (expect?.kind !== "produce" || settled.current === cursor) return;
+    const tries = triesRef.current; // state değil: dinlerken yazılan deneme de sayılsın
     push({ role: "student", text, ok });
     if (ok) {
+      settled.current = cursor;
       track("conversation_step", tries === 0 ? 2 : 1, `produce:${via}`);
       haptic("correct");
       /*
@@ -603,12 +681,14 @@ export function ConversationScreen() {
       if (tries === 0) setCorrect((c) => c + 1);
       push({ role: "teacher", segments: [{ lang: "tr", text: tx(PRAISE_KEYS[correct % PRAISE_KEYS.length]) }] });
       speakTarget(expect.target);
-      setTimeout(advance, 500);
+      advanceLater(500);
     } else {
       haptic("wrong");
       const t = tries + 1;
+      triesRef.current = t;
       setTries(t);
       if (t >= CONVERSATION_TRY_CEILING) {
+        settled.current = cursor;
         track("conversation_step", 0, `produce:${via}`);
         // Doğru cevap balonu: dil etiketi KURSTAN gelir. Sabit "de" yazıyordu;
         // çizim `lang !== "tr"` diye baktığı için görünürde bir şey bozulmuyordu
@@ -616,7 +696,7 @@ export function ConversationScreen() {
         // bir okuyucu eklendiği anda sessizce yanlış sonuç verirdi.
         push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
         speakTarget(expect.target);
-        setTimeout(advance, 900);
+        advanceLater(900);
       } else if (produceMiss(text, expect.target, expect.accept) === "other") {
         /* Cevap hedefin bozulmuş hâli değil, BAŞKA bir cümle: adımın kural
            ipucu ("'weil'den sonra fiil en sona gider") burada yanlış teşhis
@@ -631,7 +711,8 @@ export function ConversationScreen() {
   }
 
   function answerTrueFalse(pick: boolean) {
-    if (expect?.kind !== "truefalse" || answered) return;
+    if (expect?.kind !== "truefalse" || answered || settled.current === cursor) return;
+    settled.current = cursor;
     setAnswered(true);
     const ok = pick === expect.answer;
     /* Yol "tap": bu adım iki düğmeyle cevaplanıyor, tek deneme var (`answered`
@@ -641,7 +722,7 @@ export function ConversationScreen() {
     haptic(ok ? "correct" : "wrong");
     if (ok) setCorrect((c) => c + 1);
     push({ role: "teacher", segments: expect.why, tone: "why" });
-    setTimeout(advance, 1100);
+    advanceLater(1100);
     scrollDown();
   }
 
@@ -661,7 +742,7 @@ export function ConversationScreen() {
     const opening = conversation.chat.opening;
     if (opening) {
       push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(conversation.chat.openingTr ? [{ lang: "tr" as const, text: conversation.chat.openingTr }] : [])], content: { sub: "0", snapshot: { phase: "chat", opening } } });
-      setRoleMsgs([{ role: "assistant", content: opening }]);
+      putRoleMsgs([{ role: "assistant", content: opening }]);
       speakTarget(opening);
     }
     scrollDown();
@@ -673,6 +754,7 @@ export function ConversationScreen() {
     track("conversation_start", 1, conversation.id);
     setCorrect(r.correct);
     setCursor(conversation.lecture.length);
+    cursorRef.current = conversation.lecture.length;
     setPhase("chat");
     setFeed([]);
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: conversation.chat.scene }) }] });
@@ -686,8 +768,8 @@ export function ConversationScreen() {
       else push({ role: "teacher", segments: [{ lang: "de", text: m.content }], report: userTurns > 0 ? { ref: `${conversation.id}:${userTurns}`, text: m.content } : undefined });
     }
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.resumed") }], tone: "hint" });
-    setRoleMsgs(msgs);
-    setRoleTurns(r.roleTurns ?? msgs.filter((m) => m.role === "user").length);
+    putRoleMsgs(msgs);
+    putRoleTurns(r.roleTurns ?? msgs.filter((m) => m.role === "user").length);
     /* Eski kayıtta alan yok: düzeltmeler o zaman kaybolmuştu, boş başlıyor. */
     setCorrections(Array.isArray(r.corrections) ? r.corrections : []);
     if (waivedRef.current) push(waivedNote(chatGate === "account" ? "account" : "consent"));
@@ -695,24 +777,27 @@ export function ConversationScreen() {
   }
 
   async function sendRole(textArg?: string, attempt = 0) {
-    if (!conversation || busy || waivedRef.current) return;
+    /* Tek istek uçuşta (`sending`); geçmiş ve sayaç ref'ten (bkz. `roleMsgsRef`). */
+    if (!conversation || sending.current || waivedRef.current) return;
     const text = (textArg ?? input).trim();
     if (!text) return;
+    sending.current = true;
     setFailed(null);
     push({ role: "student", text });
     setInput("");
     setSuggestions([]);
     setBusy(true);
-    const next: ChatMsg[] = [...roleMsgs, { role: "user", content: text }];
-    setRoleMsgs(next);
-    const turn = roleTurns + 1;
-    setRoleTurns(turn);
+    const prev = roleMsgsRef.current;
+    const next: ChatMsg[] = [...prev, { role: "user", content: text }];
+    putRoleMsgs(next);
+    const turn = roleTurnsRef.current + 1;
+    putRoleTurns(turn);
     scrollDown();
     /* Gönderilmeyen tur sayılmıyor ve akışta kalmıyor: sayaç, modele giden
        geçmiş ve öğrenci baloncuğu geri alınıyor (web `conversation-player` aynı). */
     const undoTurn = () => {
-      setRoleTurns(turn - 1);
-      setRoleMsgs(roleMsgs);
+      putRoleTurns(turn - 1);
+      putRoleMsgs(prev);
       setFeed((f) => {
         const i = f.map((b) => b.role).lastIndexOf("student");
         return i < 0 ? f : [...f.slice(0, i), ...f.slice(i + 1)];
@@ -722,12 +807,12 @@ export function ConversationScreen() {
       const reply = await sendChat(conversation.id, next);
       const parsed = parseReply(reply || "…");
       const bodyText = parsed.body || reply || "…";
-      setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
+      putRoleMsgs([...next, { role: "assistant", content: bodyText }]);
       push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined, report: { ref: `${conversation.id}:${turn}`, text: reply } });
       setSuggestions(parsed.suggestions);
       /* Düzeltme balonda gösterildiği anda özete de yazılıyor (bkz. `corrections`). */
       if (parsed.corrections.length) setCorrections((c) => [...c, ...parsed.corrections]);
-      if (bodyText) speakTarget(bodyText);
+      if (bodyText && ekranAcik.current) speakTarget(bodyText);
     } catch (e) {
       undoTurn();
       if (isAiConsentDeclined(e) || isAccountRequired(e)) {
@@ -756,6 +841,7 @@ export function ConversationScreen() {
         setFailed({ text, kind, attempt, retryIn: RETRY_DELAYS[attempt] ?? null });
       }
     } finally {
+      sending.current = false;
       setBusy(false);
       scrollDown();
     }
@@ -1059,9 +1145,9 @@ export function ConversationScreen() {
           {/* Alt eylem alanı — tek el için ekranın altında. */}
           <View ref={dockRef} collapsable={false} style={{ paddingHorizontal: spacing.lg, paddingBottom: Math.max(dockLift, insets.bottom + spacing.md), paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
             {phase === "lecture" ? (
-              <LectureControls expect={expect} tries={tries} input={input} setInput={setInput}
-                onConfirm={onConfirm} onSpeakRepeat={() => void speakRepeat()} onTypedRepeat={submitRepeatTyped}
-                onSpeakProduce={() => void speakProduce()} onProduce={submitProduce} onTrueFalse={answerTrueFalse}
+              <LectureControls expect={expect} tries={triesShown} input={input} setInput={setInput}
+                onConfirm={onConfirm} onSpeakRepeat={() => void speakRepeat(true)} onTypedRepeat={submitRepeatTyped}
+                onSpeakProduce={() => void speakProduce(true)} onProduce={submitProduce} onTrueFalse={answerTrueFalse}
                 sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping}
                 onSkip={skipStep} colors={colors} />
             ) : (
