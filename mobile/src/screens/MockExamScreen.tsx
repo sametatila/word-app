@@ -272,8 +272,17 @@ export function MockExamScreen() {
     return () => clearInterval(id);
   }, [phase]);
 
+  /* Dinleme çalışmasının jetonu: görev geçince eski diyaloğun bitişi yeni
+     görevin `speaking` durumunu silmesin. */
+  const playRun = useRef(0);
   const advance = useCallback((auto: boolean) => {
     if (!part) return;
+    /* GÖREV GEÇİNCE SES SUSUYOR. Eski diyalog sonraki görevin (ya da sonuç
+       ekranının) üstünde sonuna kadar okunuyordu ve `speaking` dolu kaldığı
+       için yeni görevin Dinle düğmesi o bitene kadar ölüydü. */
+    playRun.current++;
+    stopSpeaking();
+    setSpeaking(null);
     setAutoNext(auto);
     if (ix >= part.tasks.length - 1) { setPhase("sonuc"); return; }
     const next = ix + 1;
@@ -461,6 +470,7 @@ export function MockExamScreen() {
     async (st: Extract<MockStimulus, { kind: "audio" }>) => {
       if (speaking) return;
       if ((plays[st.id] ?? 0) >= st.plays) return;
+      const my = ++playRun.current;
       setSpeaking(st.id);
       /* KADRO KÂĞIDIN KURSUNDAN, cihazınkinden DEĞİL. `currentCourseId()`
          kullanılıyordu: Almanca kursa kayıtlı biri İngilizce kâğıt açtığında
@@ -472,7 +482,7 @@ export function MockExamScreen() {
       await speakDialogue(course, st.segments, {
         onStart: () => setPlays((p) => ({ ...p, [st.id]: (p[st.id] ?? 0) + 1 })),
       });
-      if (alive.current) setSpeaking(null);
+      if (alive.current && playRun.current === my) setSpeaking(null);
     },
     [plays, speaking, course],
   );
@@ -1174,7 +1184,7 @@ function SpeakingTask({
       if (got?.[0]) said.push(got[0]);
     } else {
       for (const [i, tn] of exchange.entries()) {
-        if (!alive.current) return;
+        if (!alive.current) break;
         setTurn(i);
         if (tn.who === "partner") {
           try { await speakAndWaitVoiced(tn.de, partnerVoice); } catch { /* ses yoksa yazıdan okunur */ }
@@ -1184,7 +1194,11 @@ function SpeakingTask({
         }
       }
     }
-    if (!alive.current) return;
+    /* SÜRE KONUŞURKEN DOLDUYSA söylenen yine kaydediliyor. Görev sayacı hazırlık
+       dahil işliyor; dolunca görev kendiliğinden geçiyor, bu bileşen kalkıyor ve
+       döküm hiç yazılmıyordu. Kalkışta dinleme durduruluyor, son parça yine
+       geliyor (bkz. `stopListening`); `onOpen` ebeveynin durumuna yazıyor. */
+    if (!alive.current) { if (said.length) onOpen(task.id, said.join("\n")); return; }
     setHeard(said);
     onOpen(task.id, said.join("\n"));
     setStep("done");

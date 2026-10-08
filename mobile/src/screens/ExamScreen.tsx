@@ -387,6 +387,10 @@ export function ExamScreen() {
 
 
   function sectionDone(id: SectionId, correct: number) {
+    /* Sınav gönderildiyse (süre doldu) geç gelen bölüm bitişi yok sayılıyor: şıkkın
+       550 ms gecikmesi süre dolumuna denk gelince sonraki bölümün girişi sonuç
+       ekranının üstüne açılıyordu. */
+    if (sent.current) return;
     score.current[id].correct = correct;
     const list = filledSections();
     const i = list.indexOf(id);
@@ -839,6 +843,12 @@ function SectionBody({
   const [idx, setIdx] = useState(0);
   const correctRef = useRef(0);
   const pad = { paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md };
+  /* MADDE BAŞINA TEK BİTİŞ. Turların "Devam"ı ve kendi kendine ilerleyen
+     yolları bir kez basılmaya kilitli değil; ikinci çağrı aynı `idx` ile
+     geliyor, doğruyu ve kaçanı iki kez sayıyor, son maddede bölümü iki kez
+     bitiriyordu. */
+  const settled = useRef(-1);
+  const once = () => { if (settled.current === idx) return false; settled.current = idx; return true; };
 
   function advance(ok: boolean, count: number) {
     if (ok) correctRef.current += 1;
@@ -859,6 +869,7 @@ function SectionBody({
           key={r.id}
           round={r}
           onDone={(ok, extra) => {
+            if (!once()) return;
             /* Sunucunun süzgeci `wordId`, `game` ve `correct` istiyor; ötekiler
                isteğe bağlı. "Bunu zaten biliyorum" (skip) yolunda cevap
                KAYDEDİLMİYOR - web de öyle. Çok kelimeli tur (eşleştirme)
@@ -898,6 +909,7 @@ function SectionBody({
             answerIdx={it.answer}
             colors={colors}
             onPick={(ok, pick) => {
+              if (!once()) return;
               sealed.responses.grammar[idx] = pick;
               if (!ok) onMiss({ section: "grammar", prompt: `${it.sheet} · ${it.label}`, answer: it.options[it.answer], given: it.options[pick], id: it.id });
               advance(ok, paper.sections.grammar.length);
@@ -911,6 +923,7 @@ function SectionBody({
             answerIdx={it.answer ? 0 : 1}
             colors={colors}
             onPick={(ok, pick) => {
+              if (!once()) return;
               sealed.responses.grammar[idx] = pick;
               if (!ok) onMiss({ section: "grammar", prompt: it.statement, answer: t(it.answer ? "common.true" : "common.false"), given: t(pick === 0 ? "common.true" : "common.false"), id: it.id });
               advance(ok, paper.sections.grammar.length);
@@ -924,6 +937,7 @@ function SectionBody({
   if (id === "produce") {
     const it = paper.sections.produce[idx];
     return <Produce key={it.id} it={it} idx={idx} total={paper.sections.produce.length} colors={colors} pad={pad} onDone={(ok, given) => {
+      if (!once()) return;
       sealed.responses.produce[idx] = given;
       if (!ok) onMiss({ section: "produce", prompt: it.prompt, answer: it.de, given, id: it.id });
       advance(ok, paper.sections.produce.length);
@@ -934,7 +948,7 @@ function SectionBody({
     const items = paper.sections[id];
     return <TextSection key={items[idx].id} it={items[idx]} spoken={id === "listening"} colors={colors} pad={pad}
       onMiss={(q, given) => onMiss({ section: id, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given, id: items[idx].id })}
-      onDone={(c, _total, picks) => { sealed.responses[id][idx] = picks; correctRef.current += c; onTick(correctRef.current); if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current); }} />;
+      onDone={(c, _total, picks) => { if (!once()) return; sealed.responses[id][idx] = picks; correctRef.current += c; onTick(correctRef.current); if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current); }} />;
   }
 
   if (id === "speaking") {
@@ -942,6 +956,7 @@ function SectionBody({
     return <Speak key={it.id} it={it} colors={colors} pad={pad} examToken={sealed.keyToken}
       onToken={(tk) => { sealed.speakingTokens[idx] = tk; /* maddenin son denemesi (web aynı) */ }}
       onDone={(ok, score) => {
+        if (!once()) return;
         if (!ok) onMiss({ section: "speaking", prompt: it.situation ?? t("exam.pronunciation"), answer: it.de, id: it.id });
         onSpeakScore(score);
         advance(ok, paper.sections.speaking.length);
@@ -951,7 +966,7 @@ function SectionBody({
   const w = paper.sections.writing[0];
   return <Write w={w} level={paper.level} colors={colors} pad={pad} examToken={sealed.keyToken}
     onToken={(tk) => { sealed.writingToken = tk; }}
-    onDone={(ok, sc) => { if (sc !== null) onWriteScore(sc); onTick(ok ? 1 : 0); onDone(ok ? 1 : 0); }} />;
+    onDone={(ok, sc) => { if (!once()) return; if (sc !== null) onWriteScore(sc); onTick(ok ? 1 : 0); onDone(ok ? 1 : 0); }} />;
 }
 
 /**
@@ -975,6 +990,9 @@ function wordAnswer(r: Round): string {
 
 function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string; options: string[]; answerIdx: number; colors: Palette; onPick: (ok: boolean, pick: number) => void }) {
   const [pick, setPick] = useState<number | null>(null);
+  // Bekleyen ilerleme ekran kalkınca iptal (sonuç ekranına geç seçim düşmesin).
+  const pickTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (pickTimer.current) clearTimeout(pickTimer.current); }, []);
   return (
     <Card padded style={{ gap: spacing.sm }}>
       <Text variant="bodyStrong">{prompt}</Text>
@@ -989,7 +1007,7 @@ function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string
       {options.map((o, i) => {
         const secili = pick === i;
         return (
-          <PressableScale key={i} disabled={pick !== null} onPress={() => { setPick(i); setTimeout(() => onPick(i === answerIdx, i), 550); }}
+          <PressableScale key={i} disabled={pick !== null} onPress={() => { setPick(i); pickTimer.current = setTimeout(() => onPick(i === answerIdx, i), 550); }}
             accessibilityRole="radio" accessibilityState={{ selected: secili }}
             style={{ backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: secili ? colors.primary : colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
             {/* Seçildi, henüz kontrol edilmedi: dolgu yok, turuncu kenar + yazı (2026-09-29 Samet: seçim B). */}
