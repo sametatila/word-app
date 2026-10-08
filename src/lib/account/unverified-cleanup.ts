@@ -47,15 +47,28 @@ export async function purgeStaleUnverifiedAccounts(limit = 50): Promise<number> 
       limit ${limit}`)) as unknown;
     const rows = (Array.isArray(res) ? res : (res as { rows?: unknown[] }).rows ?? []) as { id: string; created_at: string }[];
     for (const r of rows) {
-      await purgeUserData(r.id);
-      /* Koşul silme anında yeniden sınanıyor: bu arada doğrulanan ya da giriş
-         yapan kayıt gitmesin. */
-      const gone = (await db.execute(sql`
-        delete from "user" u where u.id = ${r.id} and u."emailVerified" = false
-          and not exists (select 1 from session s where s."userId" = u.id)`)) as unknown as { rowCount?: number };
-      if ((gone.rowCount ?? 0) > 0) {
-        done++;
-        await recordDeletion({ source: "unverified", createdAt: r.created_at });
+      /* Koşul VERİ SİLİNMEDEN ÖNCE yeniden sınanıyor (güvenlik denetimi 2026-10-07):
+         eskiden yalnız `user` satırı silinirken bakılıyordu; seçimle silme arasında
+         doğrulayan ya da giriş yapan kullanıcının hesabı kalıyor ama verisi
+         gidiyordu. Bir hesaptaki hata turun kalanını durdurmuyor. */
+      try {
+        const still = (await db.execute(sql`
+          select 1 from "user" u where u.id = ${r.id} and u."emailVerified" = false
+            and not exists (select 1 from session s where s."userId" = u.id)
+            and not exists (select 1 from daily_stats d where d.user_id = u.id)`)) as unknown;
+        const stillRows = Array.isArray(still) ? still : ((still as { rows?: unknown[] }).rows ?? []);
+        if (!stillRows.length) continue;
+        await purgeUserData(r.id);
+        /* Silme anında bir kez daha: aradaki milisaniyelerde doğrulanan kayıt gitmesin. */
+        const gone = (await db.execute(sql`
+          delete from "user" u where u.id = ${r.id} and u."emailVerified" = false
+            and not exists (select 1 from session s where s."userId" = u.id)`)) as unknown as { rowCount?: number };
+        if ((gone.rowCount ?? 0) > 0) {
+          done++;
+          await recordDeletion({ source: "unverified", createdAt: r.created_at });
+        }
+      } catch (err) {
+        console.error("[unverified-cleanup]", r.id, err);
       }
     }
   } catch (err) {
