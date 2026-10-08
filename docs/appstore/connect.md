@@ -22,6 +22,8 @@ yüzden ana hesap Premium. Premium hesapta paywall plan listesini göstermez ve 
 bulamaz (2.1); satın alma sandbox'ta ikinci hesapla yapılır. Parolalar yalnız Connect'te ve
 TestFlight beta notunda; bu belgeye yazılmaz. Hesaplar üretimde, e-postaları doğrulanmış, seviye A1.
 
+**2026-10-08: Apple 2.1 bilgi talebinden sonra not `docs/appstore/review-2026-10-08.md` §3 bloğuyla değişti; aşağıdaki blok tarihçe.**
+
 Aşağıdaki blok 2026-09-30'da build 12'ye göre güncellendi ve Connect'e API'yle girildi (3. madde:
 inceleme hesapları Turnstile'dan muaf, `CAPTCHA_EXEMPT_EMAILS`; 5. madde: Profil'in yeri, Community'nin akışı).
 Önceki güncelleme 2026-09-29'da uygulamaya göre yapılmıştı (Community sekmesi, puanlı konuşma,
