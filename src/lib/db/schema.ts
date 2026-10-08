@@ -803,7 +803,7 @@ export const accountSuspensions = pgTable(
  */
 export const accountDeletions = pgTable("account_deletions", {
   id: serial("id").primaryKey(),
-  /** self · admin · guest · unverified (doğrulanmamış kayıt temizliği) */
+  /** self · admin · guest · unverified (doğrulanmamış kayıt temizliği) · testlab (Play robotu, `test-lab-cleanup`) */
   source: text("source").notNull(),
   adminEmail: text("admin_email"),
   reason: text("reason"),

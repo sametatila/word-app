@@ -9,15 +9,19 @@ import { sql, type SQL, type SQLWrapper } from "drizzle-orm";
  * misafir açıyor: kullanıcı listesi, kayıt, aktif kullanıcı ve huni sayıları
  * gerçek olmayan hesaplarla şişiyordu.
  *
- * TANIMA: Test Lab cihazında sistem ayarı `firebase.test.lab` "true"
- * (mobil `lib/integrity` `isTestLabDevice`). Mobil o cihazda her isteğe
- * `x-lernomi-test-lab: 1` ekliyor, `/api/me` `user_clients.test_lab`i
- * yapışkan olarak true yapıyor (`lib/app-control` recordClient). Hesap, HERHANGİ
- * bir platform satırı işaretliyse Test Lab sayılıyor.
+ * TANIMA, iki yol; biri yeter:
+ *   - Cihaz: Test Lab cihazında sistem ayarı `firebase.test.lab` "true" (mobil
+ *     `lib/integrity` `isTestLabDevice`), mobil her isteğe `x-lernomi-test-lab: 1`
+ *     ekliyor. Build 15–22'de hiçbir robotta tetiklenmedi (2026-10-08).
+ *   - Ağ: Android isteği Google'ın kendi adreslerinden (`lib/google-networks`).
+ * `/api/me` `user_clients.test_lab`i yapışkan olarak true yapıyor
+ * (`lib/app-control` recordClient). Hesap, HERHANGİ bir platform satırı
+ * işaretliyse Test Lab sayılıyor.
  *
- * BU DOSYA HİÇBİR ŞEY SİLMİYOR. Başlığı herkes gönderebilir; gönderen yalnız
- * kendini ölçümden düşürür. Silme kararı insanın: panelde kullanıcılar →
- * "Test Lab" süzgeci (docs/play/console.md).
+ * BU DOSYA HİÇBİR ŞEY SİLMİYOR. Silme ayrı ve dar: 7 gündür sessiz, ertesi gün
+ * hiç dönmemiş, satın alması olmayan işaretli hesap günlük cron'da gidiyor
+ * (`lib/account/test-lab-cleanup`, Samet 2026-10-08). Başlığı herkes
+ * gönderebilir; gönderen yalnız kendi hesabını etkiler.
  *
  * Yalnız drizzle'a bağlı (veritabanı istemcisi yok): her yerden ve
  * veritabanısız testlerden içe aktarılabilir.

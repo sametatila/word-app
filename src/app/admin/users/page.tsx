@@ -77,7 +77,7 @@ export default async function AdminUsersPage({ searchParams }: { searchParams: P
                 {u.noProfile ? <Badge tone="warn">profil yok</Badge> : null}
                 {u.premium ? <Badge tone="ok">premium</Badge> : null}
                 {u.suspended ? <Badge tone="bad">askıda</Badge> : null}
-                {/* Play yayın öncesi raporu robotu (lib/test-lab): ölçümde sayılmıyor, silme elle. */}
+                {/* Play yayın öncesi raporu robotu (lib/test-lab): ölçümde sayılmıyor, 7 gün sessiz kalınca cron siliyor (lib/account/test-lab-cleanup). */}
                 {u.testLab ? <Badge tone="warn">Test Lab</Badge> : null}
               </div>
               {u.email && u.name ? <div className="muted">{u.email}</div> : null}

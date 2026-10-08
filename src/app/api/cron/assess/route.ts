@@ -8,6 +8,7 @@ import { purgeExpiredGuestAttestations } from "@/lib/auth/play-integrity";
 import { purgeExpiredAnswerBatches } from "@/lib/answer-batches";
 import { purgeClientErrorGroups } from "@/lib/client-errors";
 import { purgeStaleUnverifiedAccounts } from "@/lib/account/unverified-cleanup";
+import { purgeStaleTestLabAccounts } from "@/lib/account/test-lab-cleanup";
 import { purgeExpiredSessions, purgeHeardTranscripts } from "@/lib/account/retention";
 import { retryRevenueCatDeletions } from "@/lib/account/revenuecat-delete";
 
@@ -32,6 +33,8 @@ export const maxDuration = 60;
  *     (Gizlilik §9 "hata grubu giderilene kadar"; `lib/client-errors`)
  *   - 30 gündür doğrulanmamış, hiç kullanılmamış kayıtlar
  *     (`lib/account/unverified-cleanup`)
+ *   - 7 gündür sessiz Play robotu (Test Lab) hesapları
+ *     (`lib/account/test-lab-cleanup`)
  *   - süresi 7 günden önce dolmuş oturum kayıtları (IP, cihaz) ve 30 günü
  *     geçen yürüyüş modu tanınan metni (Gizlilik §9; `lib/account/retention`)
  *   - hesap silmede düşen RevenueCat müşteri silmelerinin yeniden denenmesi
@@ -58,16 +61,17 @@ export async function GET(req: Request) {
     return 0;
   });
   const purgedUnverified = await purgeStaleUnverifiedAccounts();
+  const purgedTestLab = await purgeStaleTestLabAccounts();
   const purgedSessions = await purgeExpiredSessions();
   const purgedHeard = await purgeHeardTranscripts();
   const vendorDeleted = await retryRevenueCatDeletions();
   try {
     const result = await runAssessQueue(20);
     /* Cümle tek yerde (bkz. cron/reminders). */
-    const ozet = `bekleyen ${result.pending} · puanlanan ${result.done} · başarısız ${result.failed} · silinen konuşma kaydı ${purgedLogs} · silinen şikâyet ${purgedReports.content + purgedReports.user} · silinen cihaz doğrulaması ${purgedAttestations} · silinen cevap kimliği ${purgedBatches} · silinen hata grubu ${purgedErrors} · silinen doğrulanmamış kayıt ${purgedUnverified} · silinen oturum ${purgedSessions} · boşaltılan tanınan metin ${purgedHeard} · tamamlanan RevenueCat silmesi ${vendorDeleted}`;
+    const ozet = `bekleyen ${result.pending} · puanlanan ${result.done} · başarısız ${result.failed} · silinen konuşma kaydı ${purgedLogs} · silinen şikâyet ${purgedReports.content + purgedReports.user} · silinen cihaz doğrulaması ${purgedAttestations} · silinen cevap kimliği ${purgedBatches} · silinen hata grubu ${purgedErrors} · silinen doğrulanmamış kayıt ${purgedUnverified} · silinen Test Lab hesabı ${purgedTestLab} · silinen oturum ${purgedSessions} · boşaltılan tanınan metin ${purgedHeard} · tamamlanan RevenueCat silmesi ${vendorDeleted}`;
     console.log(`[cron/assess] ${ozet}`);
     void recordCronRun("assess", true, Date.now() - basladi, ozet);
-    return NextResponse.json({ ...result, purgedLogs, purgedReports, purgedAttestations, purgedBatches, purgedErrors, purgedUnverified, purgedSessions, purgedHeard, vendorDeleted });
+    return NextResponse.json({ ...result, purgedLogs, purgedReports, purgedAttestations, purgedBatches, purgedErrors, purgedUnverified, purgedTestLab, purgedSessions, purgedHeard, vendorDeleted });
   } catch (err) {
     console.error("[cron/assess]", err);
     void recordCronRun("assess", false, Date.now() - basladi, String((err as Error).message ?? err));

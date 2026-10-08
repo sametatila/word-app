@@ -114,12 +114,17 @@ uyarı çiziliyor: servissiz arka plan kaydı yok.
 ## 4. Yayın öncesi raporu (pre-launch report) robotları: Test Lab hesapları
 
 Play her yeni build'i Firebase Test Lab cihazlarında robotlarla çalıştırıyor. Robotlar Google test
-hesaplarıyla giriyor (ör. `…@gmail.com`, UA `okhttp/…`, IP 66.249.x / 74.125.x) ve misafir açıyor;
-kullanıcı listesi ve ölçümler kirleniyordu.
+hesaplarıyla giriyor (ör. `…@gmail.com`, UA `okhttp/…`, IP 66.102.8.x / 66.249.x / 74.125.x / 192.178.15.x)
+ve misafir açıyor; kullanıcı listesi ve ölçümler kirleniyordu. ENGELLENMİYORLAR (rapor girişten sonrasını
+gezebilmeli; Samet 2026-10-08): ölçümden düşüyor, bir hafta sonra siliniyorlar.
 
 - **Tanıma (Android):** Test Lab cihazında sistem ayarı `firebase.test.lab` = `"true"` (Firebase'in
   belgelediği sinyal). `LernomiIntegrityModule.isTestLab` okuyor, `mobile/src/lib/integrity`
-  `isTestLabDevice`; iOS ve eski build'ler hep false. Uygulamanın davranışı değişmiyor.
+  `isTestLabDevice`; iOS ve eski build'ler hep false. Uygulamanın davranışı değişmiyor. Build 15–22'de
+  hiçbir robotta tetiklenmedi (2026-10-08: 45 cihaz kaydının sıfırı işaretli).
+- **Tanıma (sunucu, 2026-10-08):** Android isteği Google'ın kendi adreslerinden (goog.json'da var,
+  cloud.json'da yok) → Test Lab (`src/lib/google-networks.ts`). Aralıklar üretilmiş dosyada,
+  yenileme `npm run google-networks`.
 - **Taşıma:** o cihazda her istekte `x-lernomi-test-lab: 1` (`mobile/src/api/client`; giriş ve misafir
   açılışı da aynı yoldan). Ad sunucudaki `TEST_LAB_HEADER` ile aynı, kapı `check:parity`.
 - **İşaret:** `/api/me` `user_clients.test_lab`i true yapıyor; YAPIŞKAN, kod hiç geri almıyor. Misafir
@@ -128,7 +133,9 @@ kullanıcı listesi ve ölçümler kirleniyordu.
   kapsam sayfası, sürüm dağılımı) ve haftalık özet bildirimi bu hesapları saymıyor; tek tanım
   `src/lib/test-lab.ts` (`real`, `notTestLab`). Gelir zaten sandbox'ı düşüyor; uyarılar (çökme,
   5xx, yapay zekâ) kasten süzülmüyor: robotta görülen çökme gerçek çökme.
-- **Temizlik ELLE:** otomatik silme yok. Panel › Kullanıcılar › süzgeç **Test Lab** (satırda rozet,
-  ayrıntıda "Uygulama sürümü" tablosunda `test_lab`). Başlığı herkes gönderebilir: silmeden önce
-  e-posta ve katılma tarihine bakılır. Bu mekanizmadan önce açılmış robot hesapları işaretsiz; onlar
-  e-posta ve oturum IP'sine bakılarak elle bulunur.
+- **Temizlik OTOMATİK (2026-10-08):** günlük cron (`api/cron/assess`) işaretli hesabı siliyor, ama
+  yalnız 7 gündür sessizse (oturum ve uygulama kaydı yok), açıldığı günden sonra hiç öğrenme günü
+  yoksa ve mağaza satın alması yoksa (`src/lib/account/test-lab-cleanup.ts`; kayıt
+  `account_deletions` `testlab`). Gerçek kullanıcı yanlış işaretlense de uygulamayı ikinci gün
+  kullandığı an silinmekten çıkar. Panel › Kullanıcılar › süzgeç **Test Lab** (satırda rozet, ayrıntıda
+  "Uygulama sürümü" tablosunda `test_lab`) beklerken görmek için.

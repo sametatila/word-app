@@ -42,8 +42,8 @@ export type UserRow = {
   noProfile: boolean;
   /**
    * Firebase Test Lab cihazından açılmış (Play'in yayın öncesi raporu robotu;
-   * `lib/test-lab`). Ölçümlerde sayılmıyor; silme bu listeden ELLE. Başlığı
-   * herkes gönderebilir: silmeden önce e-posta ve katılma tarihine bakılır.
+   * `lib/test-lab`). Ölçümlerde sayılmıyor; 7 gün sessiz kalınca günlük cron
+   * siliyor (`lib/account/test-lab-cleanup`).
    */
   testLab: boolean;
 };
