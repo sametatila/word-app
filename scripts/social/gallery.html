@@ -1,0 +1,364 @@
+<title>Lernomi Video Atölyesi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Atölye: üç yaklaşım (satır) × üç tema (sütun) matrisi; kart açılınca oynatıcı. Videolar kendi renklerini taşır, sayfa nötr. */
+:root{
+  --bg:#f5f4f2;--fg:#19191b;--sub:#6b6966;--line:#e1dfdb;--card:#ffffff;--acc:#d9600a;--chip:#efedea;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Bricolage Grotesque",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111113;--fg:#f2f2f0;--sub:#9d9ca3;--line:#2a2a2f;--card:#18181b;--acc:#fb8f2a;--chip:#222226;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111113;--fg:#f2f2f0;--sub:#9d9ca3;--line:#2a2a2f;--card:#18181b;--acc:#fb8f2a;--chip:#222226;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,.cell:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.page{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:40px 80px}
+header h1{font-family:var(--display);font-size:clamp(30px,5vw,46px);font-weight:800;font-stretch:84%;letter-spacing:-.02em;line-height:1;margin:0;text-wrap:balance}
+header p{color:var(--sub);max-width:68ch;margin:14px 0 0}
+h2{font-family:var(--display);font-size:24px;font-weight:800;font-stretch:88%;letter-spacing:-.01em;margin:0}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+
+/* matris */
+.matrix{display:grid;grid-template-columns:160px repeat(4,minmax(0,1fr));gap:18px 18px;margin-top:40px;align-items:start}
+.colhead{display:flex;align-items:center;gap:10px;padding-bottom:4px}
+.sw{width:22px;height:22px;border-radius:7px;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.sw.turuncu{background:linear-gradient(135deg,#f87612 0 50%,#fffaf5 50%)}
+.colhead b{font-family:var(--display);font-size:18px;font-weight:800;font-stretch:90%}
+.rowhead{padding-top:6px;min-width:0}
+.rowhead b{display:block;font-family:var(--display);font-size:20px;font-weight:800;font-stretch:88%;line-height:1.1}
+.rowhead span{display:block;color:var(--sub);font-size:13px;margin-top:6px}
+.cell{display:flex;flex-direction:column;gap:10px;background:none;border:0;padding:0;text-align:left;min-width:0}
+.thumb{position:relative;width:100%;max-width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 18px 40px -24px rgba(0,0,0,.45);transition:transform .2s}
+.cell:hover .thumb{transform:translateY(-3px)}
+.thumb .host,.thumb img{position:absolute;inset:0;width:100%;height:100%}
+.thumb img{object-fit:cover;display:block}
+.thumb .play{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;background:rgba(255,255,255,.94);color:#141416;display:grid;place-items:center;font-size:20px;padding-left:4px;opacity:0;transition:opacity .2s;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.cell:hover .play,.cell:focus-visible .play{opacity:1}
+.cell.empty .thumb{background:var(--chip)}
+.thumb .err{position:absolute;inset:0;padding:12px;font:12px/1.4 ui-monospace,monospace;color:#c0392b;background:var(--chip);overflow:auto}
+.cell .t{font-weight:700;font-size:15px;line-height:1.25}
+.cell .m{display:flex;gap:6px;flex-wrap:wrap;font-size:12px;color:var(--sub)}
+.tag{background:var(--chip);border-radius:999px;padding:2px 9px;font-weight:600}
+.tag.now{background:var(--acc);color:#fff}
+/* masaüstünde satır ve şerit ızgaraya karışır; telefonda her yaklaşım yana kayan bir şerit */
+.mrow,.strip{display:contents}
+@media (max-width:820px){
+  .matrix{display:block}
+  .corner,.colhead{display:none}
+  .mrow{display:block;padding-top:20px;margin-top:20px;border-top:1px solid var(--line)}
+  .strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 16px 8px;margin:0 -16px;scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .strip .cell{flex:0 0 42%;scroll-snap-align:start}
+  .cell .t{font-size:14px}
+}
+
+/* standart */
+.std{margin-top:72px;display:grid;gap:22px}
+.themes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.th{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.th .sw{width:100%;height:56px;border-radius:12px}
+.th b{font-family:var(--display);font-size:18px;font-weight:800}
+.th p{margin:0;color:var(--sub);font-size:14px}
+.th .verdict{font-size:13px;font-weight:700;color:var(--acc)}
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.rules li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
+.rules b{display:block;font-size:14px;margin-bottom:4px}
+.rules span{font-size:13.5px;color:var(--sub)}
+@media (max-width:820px){.themes,.rules{grid-template-columns:1fr}}
+
+/* oynatıcı */
+.pv{position:fixed;inset:0;z-index:20;background:var(--bg);display:flex;justify-content:center;align-items:flex-start;overflow:auto;padding:max(16px,env(safe-area-inset-top,0px)) 16px 24px}
+.pv[hidden]{display:none}
+.pv-in{display:flex;gap:36px;align-items:flex-start;width:100%;max-width:1060px}
+.pv-col{display:flex;flex-direction:column;gap:12px;align-items:center;flex:none}
+.pv-dev{position:relative;height:min(calc(100vh - 110px),900px);aspect-ratio:9/16;max-width:calc(100vw - 32px);border-radius:24px;overflow:hidden;background:#000;box-shadow:0 0 0 1px var(--line),0 30px 80px -24px rgba(0,0,0,.6);cursor:pointer}
+.pv-dev .host{position:absolute;inset:0}
+.pv-big{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:#141416;font-size:30px;padding-left:6px;box-shadow:0 10px 36px rgba(0,0,0,.45);transition:opacity .2s}
+.pv.playing .pv-big{opacity:0;pointer-events:none}
+.pv-ctl{display:flex;gap:10px;align-items:center;width:100%}
+.pv-ctl button{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:13px;font-weight:700}
+.pv-ctl button.on{border-color:var(--acc);color:var(--acc)}
+#pv-scrub{flex:1;min-width:0;accent-color:var(--acc)}
+#pv-time{font-variant-numeric:tabular-nums;font-size:12px;color:var(--sub);min-width:76px;text-align:right}
+.pv-notes{flex:1;min-width:0;padding-top:4px}
+.pv-top{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.pv-top .nav{display:flex;gap:6px}
+.pv-top button{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700}
+.pv-notes h3{font-family:var(--display);font-size:28px;font-weight:800;font-stretch:86%;letter-spacing:-.01em;line-height:1.05;margin:0}
+.pv-notes .meta{color:var(--sub);font-size:13px;margin:8px 0 22px}
+.beats{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.beat{display:flex;gap:12px;padding:9px 12px;border-radius:12px;cursor:pointer;border:0;background:none;text-align:left;width:100%}
+.beat:hover{background:var(--chip)}
+.beat.on{background:var(--chip);box-shadow:inset 3px 0 0 var(--acc)}
+.beat time{font-variant-numeric:tabular-nums;color:var(--acc);font-size:13px;font-weight:700;min-width:34px;padding-top:2px}
+.beat b{display:block;font-size:14.5px}
+.beat span{display:block;font-size:13px;color:var(--sub);line-height:1.45}
+.cap{position:relative;white-space:pre-wrap;font-size:14px;line-height:1.55;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:48px 16px 14px;margin-top:8px;user-select:text}
+.cap button{position:absolute;right:10px;top:10px;background:var(--chip);border:0;border-radius:8px;padding:4px 10px;font-size:12px;font-weight:700}
+.pv h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin:22px 0 8px}
+@media (max-width:900px){.pv-in{flex-direction:column;align-items:center}.pv-dev{height:auto;width:min(420px,calc(100vw - 32px))}.pv-notes{width:100%;max-width:560px}}
+@media (prefers-reduced-motion:reduce){.thumb,.cell:hover .thumb{transition:none;transform:none}}
+</style>
+
+<div class="page">
+  <header>
+    <h1>Lernomi Video Atölyesi</h1>
+    <p>Beş video yaklaşımı, dört temada: 20 tasarım. İçerik gerçek: kelimeler, artikeller, örnek cümleler ve Türkçeleri Lernomi'nin kelime bankasından, telaffuz Defne'nin kayıtlarından. Üzerine gelince sessiz önizleme oynar, tıklayınca sesli açılır. Oynatıcıdaki <b>Arayüz</b> düğmesi sırayla TikTok'un ve Instagram Reels'in düğmelerini üstüne koyar.</p>
+  </header>
+
+  <section class="matrix" id="matrix" aria-label="Video matrisi">
+    <div class="corner"></div>
+    <div class="colhead"><i class="sw" style="background:#141416"></i><b>Gece</b></div>
+    <div class="colhead"><i class="sw" style="background:#f1f0ec"></i><b>Kâğıt</b></div>
+    <div class="colhead"><i class="sw turuncu"></i><b>Turuncu kutu</b></div>
+    <div class="colhead"><i class="sw" style="background:#101a36"></i><b>Lacivert</b></div>
+  </section>
+
+  <section class="std" aria-labelledby="std-h">
+    <div><div class="eyebrow">Öneri</div><h2 id="std-h">Tasarım standardı</h2></div>
+    <div class="themes">
+      <div class="th"><i class="sw" style="background:#141416"></i><b>Gece</b><p>Logo koyu zeminde en net. Artikel renkleri ve turuncu vurgu parlıyor, TikTok'un koyu arayüzüyle bütünleşiyor. Tahmin ve tempo isteyen seriler için.</p><span class="verdict">Varsayılan tema</span></div>
+      <div class="th"><i class="sw" style="background:#f1f0ec"></i><b>Kâğıt</b><p>Uzun cümle ve çeviri en rahat burada okunuyor, sakin ve güven veren bir his var. Akışta koyu videolar arasında öne çıkıyor.</p><span class="verdict">Diyalog ve sözlük serileri</span></div>
+      <div class="th"><i class="sw" style="background:#101a36"></i><b>Lacivert</b><p>Turuncunun tamamlayıcısı: logo ve turuncu vurgular en çok burada parlıyor. Gece'den daha sıcak ve daha "marka" duruyor.</p><span class="verdict">Yeni formatlar ve özel seriler</span></div>
+      <div class="th"><i class="sw turuncu"></i><b>Turuncu kutu</b><p>Marka akışta hemen tanınıyor, ama turuncu yalnız çerçeve olmalı: içerik ve logo açık panelin içinde. Panel ekranın alanını daralttığı için uzun metne uygun değil.</p><span class="verdict">Kısa, vurucu seriler, haftada bir</span></div>
+    </div>
+    <ul class="rules">
+      <li><b>Her seri tek tema</b><span>İzleyici seriyi ilk karede tanısın: artikel Gece'de, diyalog Kâğıt'ta. Bir serinin teması değişmez.</span></li>
+      <li><b>Logo hep kutuda</b><span>İmza kendi kutusunda durur. Kutunun köşesi logoyla eş merkezli: logo köşesi 20, dolgu 12, kutu 32. Turuncu zemine doğrudan logo konmaz.</span></li>
+      <li><b>Standart kapanış</b><span>Özetin altında hep aynı sıra ve yer: seri sözü (y 1176), yorum sorusu, kutulu imza. Ekranda en az 2,5 sn kalır.</span></li>
+      <li><b>Izgara</b><span>Yazı alanı x 96–930 (sağda TikTok düğmeleri), ortalanan her şey 513 ekseninde, dikeyde 250–1530 arası. Kenar boşluğu her videoda aynı.</span></li>
+      <li><b>Köşe ve boşluk</b><span>Boşluklar 8'in katları. Kart köşesi 48, kutu 32, hap yüksekliğin yarısı. Kutu içinde yazıya en az 24 px yatay dolgu.</span></li>
+      <li><b>Kanca</b><span>İlk karede soru ya da dert. Satır aralığı yazı boyunun 1,16 katı, sığmayan satır otomatik küçülür. Logo ve açılış animasyonu yok.</span></li>
+      <li><b>Kalan belli</b><span>Üstteki bölüm çubuğu kaç tur kaldığını gösterir. Son kare zemine kararır, video kesintisiz döner.</span></li>
+      <li><b>Müzik</b><span>Yirmi tarz, her videoda başka biri: lofi, pulse, keys, pluck, bounce, house, ambient, trap, chip, bossa, afro, garage, cinema, jazz, dembow, harp, funk, synthpop, folk, disco. Konuşmada müzik kısılır.</span></li>
+      <li><b>Turuncu tema</b><span>Turuncu yalnız çerçeve. İçerik, özet ve kapanış açık panelin içinde, panel ekranda simetrik.</span></li>
+    </ul>
+  </section>
+</div>
+
+<div class="pv" id="pv" hidden role="dialog" aria-modal="true" aria-labelledby="pv-title">
+  <div class="pv-in">
+    <div class="pv-col">
+      <div class="pv-dev" id="pv-dev"><div class="host" id="pv-host"></div><button class="pv-big" id="pv-big" aria-label="Oynat">▶</button></div>
+      <div class="pv-ctl">
+        <button id="pv-play" aria-label="Oynat ya da durdur">▶</button>
+        <input id="pv-scrub" type="range" min="0" max="1000" value="0" aria-label="Zaman">
+        <span id="pv-time">0.0</span>
+        <button id="pv-ui" aria-pressed="false">Arayüz</button>
+      </div>
+    </div>
+    <div class="pv-notes">
+      <div class="pv-top"><div class="nav"><button id="pv-prev" aria-label="Önceki video">←</button><button id="pv-next" aria-label="Sonraki video">→</button></div><button id="pv-close">Kapat</button></div>
+      <div class="eyebrow" id="pv-eyebrow"></div>
+      <h3 id="pv-title"></h3>
+      <p class="meta" id="pv-meta"></p>
+      <h4>Kurgu</h4>
+      <ol class="beats" id="pv-beats"></ol>
+      <h4>Paylaşım metni</h4>
+      <div class="cap"><button id="pv-copy">Kopyala</button><span id="pv-cap"></span></div>
+    </div>
+  </div>
+</div>
+
+<script>/*ENGINE*/</script>
+<script>/*DATA*/</script>
+<script>/*VIDEOS*/</script>
+<script>
+(() => {
+  const APPROACH = {
+    artikel: ["Artikel tahmini", "3 saniyelik geri sayım, cevap sesle"],
+    diyalog: ["Gerçek durum, gerçek cümle", "Sahneler, karaoke altyazı, sesli tekrar"],
+    kelime: ["Kelime destesi", "Önce kelime, düşünme süresi, sonra anlam ve örnek"],
+    duy: ["Hangisini duydun?", "Tek harfle anlamı değişen kelime çiftleri, kulakla ayırt et"],
+    kur: ["Cümleyi kur", "Karışık kelimeler, doğru sıra, sesli cümle"],
+  };
+  const THEMES = ["gece", "kagit", "turuncu", "lacivert"];
+  const CURRENT = new Set(["artikel-gece", "diyalog-kagit", "kelime-turuncu"]);
+  const order = [];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hoverable = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  // başlık bölümden (copy.title); yoksa şablonun adı
+  const titleOf = (V) => (E.data[V.id] && E.data[V.id].copy && E.data[V.id].copy.title) || V.title;
+  const fmt = (t) => t.toFixed(1);
+
+  async function start() {
+    try { await Promise.all(["800 100px 'Bricolage Grotesque'", "700 100px 'Bricolage Grotesque'", "600 100px 'Bricolage Grotesque'", "500 100px 'DM Mono'"].map((f) => document.fonts.load(f, "ÄÖÜäöüßğışçİ"))); } catch {}
+    const M = document.getElementById("matrix");
+    for (const ap of Object.keys(APPROACH)) {
+      const row = document.createElement("div");
+      row.className = "mrow";
+      const rh = document.createElement("div");
+      rh.className = "rowhead";
+      rh.innerHTML = `<b>${APPROACH[ap][0]}</b><span>${APPROACH[ap][1]}</span>`;
+      const strip = document.createElement("div");
+      strip.className = "strip";
+      row.append(rh, strip);
+      M.appendChild(row);
+      for (const th of THEMES) {
+        const V = Object.values(E.videos).find((v) => v.approach === ap && v.theme === th);
+        if (!V) { strip.appendChild(Object.assign(document.createElement("div"), { className: "cell empty", innerHTML: '<div class="thumb"></div><span class="t">Hazırlanıyor</span>' })); continue; }
+        const cell = document.createElement("button");
+        cell.className = "cell";
+        cell.type = "button";
+        // kapak gömülü JPEG (build.mjs); yoksa canlı sahne. Canlı önizleme yalnız fareli cihazda, üstündeyken.
+        const P = E.POSTERS && E.POSTERS[V.id];
+        cell.innerHTML = `<div class="thumb">${P ? `<img src="${P.src}" alt="">` : '<div class="host"></div>'}<span class="play">▶</span></div><span class="t">${titleOf(V)}</span><span class="m"><span class="tag">${E.THEMES[th].name}</span>${CURRENT.has(V.id) ? '<span class="tag now">ilk sürüm</span>' : ""}</span>`;
+        strip.appendChild(cell);
+        order.push(V.id);
+        // bir şablonun hatası (eksik copy vb.) bütün galeriyi düşürmesin: hücrede göster, devam et
+        let inst = null;
+        if (!P) {
+          try { inst = E.mount(cell.querySelector(".host"), V.id); }
+          catch (err) { console.error(V.id, err); cell.querySelector(".thumb").innerHTML = `<div class="err">${V.id}<br>${String(err.message || err)}</div>`; cell.disabled = true; continue; }
+        }
+        cell.querySelector(".m").insertAdjacentHTML("beforeend", `<span>${fmt(P ? P.dur : inst.plan.duration)} sn</span>`);
+        let raf = 0;
+        let t0 = 0;
+        let live = null;
+        const loop = (now) => {
+          const I = live || inst;
+          I.render(((now - t0) / 1000) % I.plan.duration);
+          raf = requestAnimationFrame(loop);
+        };
+        if (!reduce && hoverable) {
+          cell.addEventListener("pointerenter", () => {
+            if (P) { const hst = document.createElement("div"); hst.className = "host"; cell.querySelector(".thumb").insertBefore(hst, cell.querySelector(".play")); live = E.mount(hst, V.id); }
+            t0 = performance.now();
+            raf = requestAnimationFrame(loop);
+          });
+          cell.addEventListener("pointerleave", () => {
+            cancelAnimationFrame(raf);
+            if (live) { cell.querySelector(".thumb .host")?.remove(); live = null; } else inst.render(inst.plan.poster);
+          });
+        }
+        cell.addEventListener("click", () => openPlayer(V.id));
+      }
+    }
+    if (location.hash.length > 1 && E.videos[location.hash.slice(1)]) openPlayer(location.hash.slice(1));
+    window.READY = true;
+  }
+
+  // ---- oynatıcı ----
+  const pv = document.getElementById("pv");
+  const $ = (id) => document.getElementById(id);
+  const audioCache = {};
+  let cur = null;
+  let ac = null;
+  let src = null;
+  let playing = false;
+  let offset = 0;
+  let startedAt = 0;
+  let audio = null;
+  let token = 0;
+
+  const now = () => (playing ? ac.currentTime - startedAt : offset);
+  function stopSrc() { if (src) { try { src.stop(); } catch {} src = null; } }
+  function play(from) {
+    ac ||= new AudioContext({ sampleRate: 48000 });
+    ac.resume();
+    stopSrc();
+    if (audio) { src = ac.createBufferSource(); src.buffer = audio; src.connect(ac.destination); src.start(0, from); }
+    startedAt = ac.currentTime - from;
+    playing = true;
+    pv.classList.add("playing");
+    $("pv-play").textContent = "❚❚";
+  }
+  function pause() { offset = now(); stopSrc(); playing = false; pv.classList.remove("playing"); $("pv-play").textContent = "▶"; }
+  function toggle() { if (!audio) return; playing ? pause() : play(offset >= cur.plan.duration - 0.05 ? 0 : offset); }
+  function seek(t) { offset = E.clamp(t, 0, cur.plan.duration); if (playing) play(offset); else cur.render(offset); }
+  window.__seek = seek; // denetim betikleri için
+
+  // hazır ses dosyası (galeri derlenirken üretilen −14 LUFS karışım); okunamazsa tarayıcıda sentez
+  async function loadAudio(id, plan) {
+    const url = E.AUDIO && E.AUDIO[id];
+    if (url) {
+      try {
+        const r = await fetch(url);
+        if (!r.ok) throw new Error(`${r.status}`);
+        ac ||= new AudioContext({ sampleRate: 48000 });
+        return await ac.decodeAudioData(await r.arrayBuffer());
+      } catch (e) {
+        console.warn("ses dosyası okunamadı, sentezleniyor:", url, e.message);
+      }
+    }
+    return E.soundtrack(plan);
+  }
+  async function openPlayer(id) {
+    pause();
+    offset = 0;
+    pv.hidden = false;
+    pv.scrollTop = 0; // telefonda oynatıcı hep en üstten başlasın
+    document.body.style.overflow = "hidden";
+    const host = $("pv-host");
+    host.replaceWith(host.cloneNode(false)); // eski gölge kökü bırakılır
+    cur = E.mount($("pv-host"), id);
+    $("pv-ui").setAttribute("aria-pressed", "false");
+    $("pv-ui").classList.remove("on");
+    $("pv-ui").textContent = "Arayüz";
+    const V = cur.V;
+    $("pv-eyebrow").textContent = `${APPROACH[V.approach][0]} · ${E.THEMES[V.theme].name}`;
+    $("pv-title").textContent = titleOf(V);
+    $("pv-meta").textContent = `${fmt(cur.plan.duration)} sn · 1080×1920 · döngüde oynar · Boşluk: oynat, ←/→: sar`;
+    $("pv-beats").innerHTML = cur.plan.notes.map((b, i) => `<li><button class="beat" data-t="${b.t}" data-e="${cur.plan.notes[i + 1]?.t ?? cur.plan.duration}"><time>${fmt(b.t)}</time><div><b>${b.title}</b><span>${b.why}</span></div></button></li>`).join("");
+    $("pv-beats").querySelectorAll(".beat").forEach((b) => b.addEventListener("click", () => seek(+b.dataset.t)));
+    $("pv-cap").textContent = cur.plan.caption;
+    try { history.replaceState(null, "", "#" + id); } catch {}
+    const my = ++token;
+    audio = null;
+    $("pv-big").textContent = "…";
+    audioCache[id] ||= loadAudio(id, cur.plan);
+    try { const a = await audioCache[id]; if (my === token) audio = a; } catch (e) { console.error(e); }
+    if (my === token) $("pv-big").textContent = "▶";
+    $("pv-close").focus({ preventScroll: true });
+  }
+  function closePlayer() {
+    pause();
+    pv.hidden = true;
+    document.body.style.overflow = "";
+    try { history.replaceState(null, "", location.pathname); } catch {}
+  }
+  function step(d) { const i = order.indexOf(cur.id); openPlayer(order[(i + d + order.length) % order.length]); }
+
+  $("pv-big").onclick = $("pv-play").onclick = (e) => { e.stopPropagation(); toggle(); };
+  $("pv-dev").onclick = toggle;
+  $("pv-scrub").oninput = () => seek(($("pv-scrub").value / 1000) * cur.plan.duration);
+  $("pv-close").onclick = closePlayer;
+  $("pv-prev").onclick = () => step(-1);
+  $("pv-next").onclick = () => step(1);
+  // Arayüz düğmesi sırayla: kapalı → TikTok → Instagram Reels → kapalı
+  $("pv-ui").onclick = () => {
+    const st = cur.ui.hidden ? "tt" : cur.ui.dataset.v === "tt" ? "ig" : "off";
+    cur.ui.hidden = st === "off";
+    if (st !== "off") cur.ui.dataset.v = st;
+    $("pv-ui").textContent = st === "tt" ? "TikTok" : st === "ig" ? "Instagram" : "Arayüz";
+    $("pv-ui").classList.toggle("on", st !== "off");
+    $("pv-ui").setAttribute("aria-pressed", String(st !== "off"));
+  };
+  $("pv-copy").onclick = async () => {
+    try { await navigator.clipboard.writeText(cur.plan.caption); $("pv-copy").textContent = "Kopyalandı"; }
+    catch { const r = document.createRange(); r.selectNodeContents($("pv-cap")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $("pv-copy").textContent = "Seçildi, kopyala"; }
+    setTimeout(() => ($("pv-copy").textContent = "Kopyala"), 1800);
+  };
+  addEventListener("keydown", (e) => {
+    if (pv.hidden) return;
+    if (e.key === "Escape") closePlayer();
+    if (e.code === "Space" && e.target.tagName !== "INPUT") { e.preventDefault(); toggle(); }
+    if (e.key === "ArrowRight") seek(now() + 1);
+    if (e.key === "ArrowLeft") seek(now() - 1);
+  });
+  (function loop() {
+    if (cur && !pv.hidden) {
+      let t = now();
+      if (playing && t >= cur.plan.duration) { play(0); t = 0; }
+      if (playing) cur.render(t);
+      $("pv-scrub").value = Math.round((t / cur.plan.duration) * 1000);
+      $("pv-time").textContent = `${fmt(t)} / ${fmt(cur.plan.duration)}`;
+      $("pv-beats").querySelectorAll(".beat").forEach((b) => b.classList.toggle("on", t >= +b.dataset.t && t < +b.dataset.e));
+    }
+    requestAnimationFrame(loop);
+  })();
+  start();
+})();
+</script>

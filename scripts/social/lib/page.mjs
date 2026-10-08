@@ -1,0 +1,67 @@
+/*
+  Sayfa birleştirici: motor + veri + şablonlar tek HTML'de (atölye galerisi ve kare kare dışa aktarma aynı motoru
+  kullanır). Her şablon ayrı <script>: birinin hatası ötekileri düşürmesin; sözdizimi bozuk olan uyarıyla atlanır.
+*/
+import fs from "node:fs";
+import path from "node:path";
+import { spawnSync } from "node:child_process";
+import { createRequire } from "node:module";
+import { ROOT } from "./content.mjs";
+import { TPL_DIR } from "./episodes.mjs";
+
+export const SRC = path.join(ROOT, "scripts/social");
+export const OUT = path.join(ROOT, ".shots/social"); // git dışı
+export const CHROME = process.env.CHROME_PATH || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+export const playwright = () => createRequire(import.meta.url)(path.join(ROOT, "node_modules/playwright-core"));
+
+const esc = (s) => s.replaceAll("</script", "<\\/script");
+
+/** Uygulama ikonu (imza ve TikTok katmanı), 160 px PNG veri adresi. */
+export function iconUri() {
+  const png = path.join(OUT, "cache/icon-160.png");
+  if (!fs.existsSync(png)) {
+    fs.mkdirSync(path.dirname(png), { recursive: true });
+    spawnSync("sips", ["-Z", "160", path.join(ROOT, "mobile/ios/Lernomi/Images.xcassets/AppIcon.appiconset/AppIcon-1024.png"), "--out", png]);
+  }
+  return `data:image/png;base64,${fs.readFileSync(png).toString("base64")}`;
+}
+
+/** Şablon betikleri; dönüş: { html, ok: [şablon] }. */
+export function templateScripts(templates) {
+  const ok = [];
+  const html = [...new Set(templates)]
+    .sort()
+    .map((t) => {
+      const src = fs.readFileSync(path.join(TPL_DIR, `${t}.js`), "utf8");
+      try {
+        new Function(src);
+      } catch (e) {
+        console.warn(`! sözdizimi hatası, atlandı: ${t}.js: ${e.message}`);
+        return "";
+      }
+      ok.push(t);
+      return esc(src);
+    })
+    .filter(Boolean)
+    .join("\n</script>\n<script>\n");
+  return { html, ok };
+}
+
+/**
+ * shell: scripts/social/ altındaki kabuk (gallery.html / render.html), yer tutucular /*ENGINE*\/, /*DATA*\/, /*VIDEOS*\/.
+ * data: şablon kimliği → içerik (sayfada E.data); meta: sayfaya ek alanlar (E.POSTERS, E.EPISODES…).
+ */
+export function buildPage(shell, { data, clips, templates, meta = {} }) {
+  const { html, ok } = templateScripts(templates);
+  for (const t of Object.keys(data)) if (!ok.includes(t)) delete data[t];
+  const extra = Object.entries(meta).map(([k, v]) => `E.${k}=${JSON.stringify(v)};`).join("");
+  const page = fs
+    .readFileSync(path.join(SRC, shell), "utf8")
+    .replace("/*ENGINE*/", () => esc(fs.readFileSync(path.join(SRC, "engine.js"), "utf8")))
+    .replace("/*DATA*/", () => esc(`window.CLIPS=${JSON.stringify(clips)};E.data=${JSON.stringify(data)};E.ICON=${JSON.stringify(iconUri())};${extra}`))
+    .replace("/*VIDEOS*/", () => html);
+  return { page, ok };
+}
+
+/** Yerelde açılacak tam belge (yayında iskeleti Artifact ekliyor). */
+export const localDoc = (page) => `<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>\n${page}\n</body></html>`;
