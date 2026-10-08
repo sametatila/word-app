@@ -94,6 +94,9 @@ export function PlacementScreen() {
   const inTest = phase === "self" || phase === "cards" || phase === "items";
   const back = useBackConfirm(inTest);
   const startedAt = useRef(Date.now());
+  /* Cevaplanmış maddenin kimliği: aynı madde iki yoldan (şık zamanlayıcısı +
+     "Bilmiyorum"/"Şu an dinleyemiyorum") iki kez cevaplanıp sonraki atlanmasın. */
+  const settled = useRef<string | null>(null);
 
   function start() {
     track("exam_start", 0, "placement:v2");
@@ -105,6 +108,7 @@ export function PlacementScreen() {
     if (!level) { setChosen("A1"); setPhase("zero"); return; }
     cards.current = sampleCards(bank.cards);
     session.current = newSession(level, cards.current, {}, true);
+    settled.current = null;
     setCardIdx(0);
     setPhase("cards");
   }
@@ -134,7 +138,8 @@ export function PlacementScreen() {
 
   function answerItem(choice: number | "dontknow") {
     const s = session.current;
-    if (!s || !item) return;
+    if (!s || !item || settled.current === item.id) return;
+    settled.current = item.id;
     stopSpeaking();
     s.responses.push({ id: item.id, choice });
     advance();
@@ -143,7 +148,8 @@ export function PlacementScreen() {
   /* "Şu an dinleyemiyorum": dinleme maddesi cevapsız atlanır, kalan test sessiz sürer. */
   function cantListen() {
     const s = session.current;
-    if (!s) return;
+    if (!s || !item || settled.current === item.id) return;
+    settled.current = item.id;
     stopSpeaking();
     s.audio = false;
     advance();

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { View, Animated } from "react-native";
 import { Text } from "../ui/Text";
 import { promptFit, promptSize } from "../ui/fontFit";
@@ -39,9 +39,17 @@ export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRoun
   const [picked, setPicked] = useState<string | null>(null);
   /* Giriş ortak parçada (`ui/EnterView`); öteki turlar da aynı değerle giriyor. */
   const { opacity: fade, translateY: slide } = useEnterAnim(round.wordId);
+  /* Bekleyen onDone zamanlayıcısı: tur değişince ya da ekran kapanınca iptal.
+     İptalsiz zamanlayıcı ESKİ turun cevabını sonraki tura yazıyordu (yerleştirmede
+     şık + "Bilmiyorum" 500 ms içinde → aynı madde iki kez cevaplanıp sonraki atlanıyordu). */
+  const doneTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setPicked(null);
+    return () => {
+      if (doneTimer.current) clearTimeout(doneTimer.current);
+      doneTimer.current = null;
+    };
   }, [round.wordId]);
 
   function choose(opt: string) {
@@ -51,7 +59,7 @@ export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRoun
     haptic(reveal ? (correct ? "correct" : "wrong") : "tap"); // haptik + SFX (tüm oyunlarla aynı geri bildirim)
     /* Ölçüm kipinde gecikme de SABİT: doğruda 700, yanlışta 1150 ms beklemek
        cevabı süreyle söylüyordu. */
-    setTimeout(() => onDone(correct), reveal ? (correct ? 700 : 1150) : 500);
+    doneTimer.current = setTimeout(() => { doneTimer.current = null; onDone(correct); }, reveal ? (correct ? 700 : 1150) : 500);
   }
 
   return (
