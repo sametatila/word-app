@@ -382,6 +382,20 @@ function ConversationPlayerBody({
   useEffect(() => setAsrAvailable(recognitionCtor() !== null), []);
 
   const recognition = useRef<Recognition | null>(null);
+  /**
+   * Dinleme oturumu. Her `capture` yeni numara alıyor; bilerek kesilen
+   * dinleme (atla, düğmeyle cevap, yazılı cevap, adım değişimi, bitiş,
+   * sökülme) numarayı ilerletiyor ve o dinlemenin sonradan gelen sözü ATILIYOR.
+   * Eskiden `abort` tanıyıcının `onend`ini tetikliyor, o ana kadar duyulan da
+   * teslim ediliyordu: düğmeye basmadan hemen önce söylenen söz bir sonraki
+   * adıma karşı değerlendiriliyor, doğru/yanlış iki kez sayılıyor, bitişten
+   * sonra sohbete bir tur daha gidiyordu.
+   */
+  const captureToken = useRef(0);
+  /** Geçerli adım karara bağlandı (geçildi/atlandı): geç gelen ikinci cevap sayılmaz. */
+  const settled = useRef(false);
+  /** Bitiş bir kez: kapanış okuması ve "bitir" düğmesi sonucu iki kez göndermesin. */
+  const finished = useRef(false);
   const silence = useRef<ReturnType<typeof setTimeout> | null>(null);
   /** Dört saniyelik "yazma alanını aç" sayacı ve bu dinlemede ses duyuldu mu. */
   const typeNudge = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -466,6 +480,8 @@ function ConversationPlayerBody({
   }, []);
   useEffect(
     () => () => {
+      captureToken.current++;
+      speechToken.current++;
       recognition.current?.abort();
       cancelSpeech.current?.();
       stopSpeaking();
@@ -548,12 +564,23 @@ function ConversationPlayerBody({
 
   // ─────────────────────────── anlatım motoru ───────────────────────────
 
-  const clearSilence = () => {
+  const clearSilence = useCallback(() => {
     if (silence.current) clearTimeout(silence.current);
     silence.current = null;
     if (typeNudge.current) clearTimeout(typeNudge.current);
     typeNudge.current = null;
-  };
+  }, []);
+
+  /** Süren dinlemeyi keser ve duyduğunu ATAR (bkz. `captureToken`). */
+  const cancelCapture = useCallback(() => {
+    captureToken.current++;
+    const rec = recognition.current;
+    recognition.current = null;
+    rec?.abort();
+    clearSilence();
+    setListening(false);
+    setPartial("");
+  }, [clearSilence]);
 
   /**
    * Tanımayı başlatır — dil, adımın beklentisinden geliyor.
@@ -572,12 +599,17 @@ function ConversationPlayerBody({
     async (lang: string, onHeard: (alternatives: string[]) => void, auto: boolean) => {
       const Ctor = recognitionCtor();
       if (!Ctor) return;
+      // Yeni dinleme eskisinin yerini alıyor: eskisinin geç gelen sözü atılır.
+      const token = ++captureToken.current;
       const permission = await requestMicrophone();
+      if (captureToken.current !== token) return; // izin beklenirken iptal edildi
       if (permission === "denied") {
         setError(t("conversationp.mic_denied"));
         return;
       }
       recognition.current?.abort();
+      // Eskisinin sayaçları da gidiyor (kesilen dinleme artık kendininkini temizlemiyor).
+      clearSilence();
       const rec = new Ctor();
       recognition.current = rec;
       rec.lang = lang;
@@ -601,8 +633,12 @@ function ConversationPlayerBody({
       const deliver = () => {
         if (delivered) return;
         delivered = true;
-        clearSilence();
         clearPause();
+        // Kesilmiş dinleme: söz atılıyor, yenisinin sayaçlarına ve durumuna da dokunulmuyor.
+        if (captureToken.current !== token) return;
+        if (recognition.current === rec) recognition.current = null;
+        setListening(false);
+        clearSilence();
         setPartial("");
         const joined = collected.join(" ").trim();
         if (!joined) return;
@@ -611,6 +647,7 @@ function ConversationPlayerBody({
       };
 
       rec.onresult = (e) => {
+        if (captureToken.current !== token) return;
         heard.current = true;
         collected = [];
         for (let i = 0; i < e.results.length; i++) {
@@ -633,14 +670,8 @@ function ConversationPlayerBody({
         clearPause();
         pauseTimer = setTimeout(() => rec.stop(), PAUSE_MS);
       };
-      rec.onerror = () => {
-        setListening(false);
-        deliver();
-      };
-      rec.onend = () => {
-        setListening(false);
-        deliver();
-      };
+      rec.onerror = deliver;
+      rec.onend = deliver;
       setListening(true);
       setHintKey(null);
       setPartial("");
@@ -655,6 +686,7 @@ function ConversationPlayerBody({
         if (auto) {
           clearSilence();
           silence.current = setTimeout(() => {
+            if (captureToken.current !== token) return;
             rec.stop();
             setListening(false);
             setHintKey({ key: "conversationp.not_heard" });
@@ -670,7 +702,7 @@ function ConversationPlayerBody({
         setListening(false);
       }
     },
-    [t],
+    [t, clearSilence],
   );
 
   /**
@@ -705,6 +737,11 @@ function ConversationPlayerBody({
         startChat();
         return;
       }
+      // Önceki adımın dinlemesi bu adıma taşmasın: açık mikrofon okumayı
+      // yankı olarak duyup yeni adıma karşı değerlendiriyordu.
+      cancelCapture();
+      settled.current = false;
+      stepIndexRef.current = index;
       attempts.current = 0;
       setTryCount(0);
       setAwaiting(false);
@@ -745,7 +782,7 @@ function ConversationPlayerBody({
     },
     // startChat aşağıda tanımlı; ref üzerinden çağrılıyor.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [conversation, ttsAvailable, asrAvailable, capture, langFor],
+    [conversation, ttsAvailable, asrAvailable, capture, cancelCapture, langFor],
   );
   const runStepRef = useRef(runStep);
   useEffect(() => {
@@ -807,7 +844,7 @@ function ConversationPlayerBody({
     (alternatives: string[]) => {
       const s = conversation.lecture[stepIndexRef.current];
       const e = s?.expect;
-      if (!e) return;
+      if (!e || settled.current) return;
       const said = alternatives[0] ?? "";
       if (!said.trim()) return;
       setFeed((f) => [...f, { id: ++feedSeq.current, role: "user", text: said }]);
@@ -818,6 +855,7 @@ function ConversationPlayerBody({
       inputMode.current = "mic";
 
       if (e.kind === "confirm") {
+        settled.current = true;
         runStepRef.current(stepIndexRef.current + 1);
         return;
       }
@@ -829,6 +867,7 @@ function ConversationPlayerBody({
           return;
         }
         const ok = judgment === e.answer;
+        settled.current = true;
         track("conversation_step", ok ? (isFirstTry ? 2 : 1) : 0, `truefalse:${via}`);
         if (ok && isFirstTry) setCorrectCount((n) => n + 1);
         vibrate(ok ? "correct" : "wrong");
@@ -850,6 +889,7 @@ function ConversationPlayerBody({
       const best = verdicts.find((v) => v.kind === "correct") ?? verdicts[0];
 
       if (best.kind === "correct") {
+        settled.current = true;
         track("conversation_step", isFirstTry ? 2 : 1, `${e.kind}:${via}`);
         if (e.kind === "produce" && isFirstTry) setCorrectCount((n) => n + 1);
         vibrate("correct");
@@ -882,6 +922,7 @@ function ConversationPlayerBody({
         elle `3` yaziliydi.
       */
       if (attempts.current >= CONVERSATION_TRY_CEILING) {
+        settled.current = true;
         track("conversation_step", 0, `${e.kind}:${via}`);
         interject(
           [nar("common.answer_is"), { lang: "de", text: e.target }],
@@ -941,7 +982,7 @@ function ConversationPlayerBody({
   function skipStep() {
     const k = conversation.lecture[stepIndex]?.expect?.kind;
     if (k && k !== "confirm") track("conversation_step", 0, `${k}:skip`);
-    recognition.current?.abort();
+    cancelCapture();
     attempts.current = 0;
     setTryCount(0);
     runStep(stepIndex + 1);
@@ -952,6 +993,9 @@ function ConversationPlayerBody({
     const clean = draft.trim();
     if (!clean) return;
     setDraft("");
+    // Yazılan cevap dinlemeyi kapatıyor: açık kalan mikrofon sıradaki adımın
+    // okumasını duyup cevap sayıyor, 12 sn'lik sayacı da yeni adımda "duyamadım" diyordu.
+    cancelCapture();
     inputMode.current = "typed";
     evaluate([clean]);
   }
@@ -959,7 +1003,7 @@ function ConversationPlayerBody({
   // ─────────────────────────── sohbet ───────────────────────────
 
   function startChat() {
-    recognition.current?.abort();
+    cancelCapture();
     cancelSpeech.current?.();
     setAwaiting(false);
     setPhase("chat");
@@ -1080,6 +1124,8 @@ function ConversationPlayerBody({
           setTurns([...next, { role: "assistant", content: acc }]);
         }
         const { body } = parseReply(acc);
+        // Cevap gelirken konuşma bitirildiyse özette okunmuyor, mikrofon da açılmıyor.
+        if (finished.current) return;
         if (ttsAvailable && body.trim()) {
           const token = ++speechToken.current;
           setSpeakingTurn(next.length);
@@ -1201,11 +1247,19 @@ function ConversationPlayerBody({
   useEffect(() => {
     finishRef.current = () => void finish();
   });
+  // Özetten "konuşmaya dön"le çıkılınca yeniden bitirilebilir.
+  useEffect(() => {
+    if (phase !== "summary") finished.current = false;
+  }, [phase]);
 
   // ─────────────────────────── bitiş ───────────────────────────
 
   async function finish() {
-    recognition.current?.abort();
+    if (finished.current) return;
+    finished.current = true;
+    cancelCapture();
+    // Okumanın bitiş geri çağrısı özette mikrofonu yeniden açmasın.
+    speechToken.current++;
     cancelSpeech.current?.();
     stopSpeaking();
     setSpeakingId(null);
@@ -1447,7 +1501,7 @@ function ConversationPlayerBody({
                   <button
                     type="button"
                     onClick={() => {
-                      recognition.current?.abort();
+                      cancelCapture();
                       // İzin en baştan, kullanıcı hareketiyle isteniyor: ilk
                       // eller serbest açılış izin istemine takılıp gecikmesin.
                       if (handsFree) void requestMicrophone();
@@ -1473,7 +1527,7 @@ function ConversationPlayerBody({
                   <button
                     type="button"
                     onClick={() => {
-                      recognition.current?.abort();
+                      cancelCapture();
                       inputMode.current = "tap";
                       evaluate([TRUE_WORD[lang]]);
                     }}
@@ -1486,7 +1540,7 @@ function ConversationPlayerBody({
                   <button
                     type="button"
                     onClick={() => {
-                      recognition.current?.abort();
+                      cancelCapture();
                       inputMode.current = "tap";
                       evaluate([FALSE_WORD[lang]]);
                     }}

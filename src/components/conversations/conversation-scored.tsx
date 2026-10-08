@@ -82,12 +82,66 @@ export function ConversationScored({
   /** Bildirilen muhatap yanıtı (içerik denetimi CNT-6; konuşma sohbetiyle aynı yol). */
   const [reported, setReported] = useState<{ ref: string; text: string } | null>(null);
   const rec = useRef<Recognition | null>(null);
+  /*
+   * GEÇ GELEN SONUÇLAR İÇİN REF'LER. Mikrofonun `onend`i ve muhatabın cevabı
+   * çizimden bağımsız zamanda geliyor; eskiden ikisi de kendi çizimlerinin
+   * `phase`/`busy`/`turns`unu görüyordu: süre dolup puanlama başlamışken tur
+   * yine gönderiliyor, dinlerken "Gönder"e basılınca iki sohbet isteği aynı
+   * anda gidiyor ve biri ötekinin turunu siliyordu.
+   *   turnsRef  son turlar (gönderim bunun üstüne kuruluyor)
+   *   phaseRef  geçerli faz
+   *   inFlight  gönderim sürüyor — `busy`nin eşzamanlı kopyası
+   *   attempt   sınavın kaçıncı kurulumu: "Tekrar dene" önceki denemenin
+   *             cevabını, okumasını ve 6 sn'lik yedek sayacını geçersiz kılıyor
+   *   micToken  dinleme oturumu: kesilen dinlemenin sözü gönderilmiyor
+   *   fallback  son turdan sonra okuma bitmezse puanlamayı başlatan sayaç
+   */
+  const turnsRef = useRef<Turn[]>([]);
+  const phaseRef = useRef<Phase>("intro");
+  const inFlight = useRef(false);
+  const attempt = useRef(0);
+  const micToken = useRef(0);
+  const fallback = useRef<ReturnType<typeof setTimeout> | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
   const userTurns = turns.filter((t) => t.role === "user").length;
 
   useEffect(() => {
     setAsr(Boolean(recognitionCtor()));
   }, []);
+  useEffect(() => {
+    phaseRef.current = phase;
+  }, [phase]);
+
+  /** Tur listesini ref'le birlikte yazar. */
+  const putTurns = (v: Turn[]) => {
+    turnsRef.current = v;
+    setTurns(v);
+  };
+
+  /** Süren dinlemeyi keser; duyduğu gönderilmez (bkz. `micToken`). */
+  const stopMic = () => {
+    micToken.current++;
+    const r = rec.current;
+    rec.current = null;
+    r?.abort();
+    setListening(false);
+  };
+
+  const clearFallback = () => {
+    if (fallback.current) clearTimeout(fallback.current);
+    fallback.current = null;
+  };
+
+  // Sökülürken mikrofon ve yedek sayaç da bırakılıyor.
+  useEffect(
+    () => () => {
+      micToken.current++;
+      attempt.current++;
+      rec.current?.abort();
+      if (fallback.current) clearTimeout(fallback.current);
+    },
+    [],
+  );
 
   /*
    * Süre: konuşma fazında saniyede bir; sıfırda konuşma biter ve puanlanır.
@@ -108,7 +162,7 @@ export function ConversationScored({
     return () => clearInterval(t);
   }, [phase]);
   useEffect(() => {
-    if (phase === "talk" && left <= 0) void score(turns);
+    if (phase === "talk" && left <= 0) void score(turnsRef.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [left, phase]);
 
@@ -119,18 +173,22 @@ export function ConversationScored({
   function start() {
     track("nav", 0, "conversation_scored:start");
     const opening: Turn = { role: "assistant", content: conversation.chat.opening };
-    setTurns([opening]);
+    putTurns([opening]);
     setPhase("talk");
     speakGerman(conversation.chat.opening);
   }
 
   async function send(text: string) {
     const clean = text.trim();
-    if (!clean || busy || phase !== "talk") return;
+    if (!clean || inFlight.current || scored.current || phaseRef.current !== "talk") return;
+    // Dinlerken "Gönder"e basıldıysa tanıyıcının sözü ikinci tur olmasın.
+    stopMic();
+    const run = attempt.current;
     setDraft("");
+    inFlight.current = true;
     setBusy(true);
-    const next: Turn[] = [...turns, { role: "user", content: clean }];
-    setTurns(next);
+    const next: Turn[] = [...turnsRef.current, { role: "user", content: clean }];
+    putTurns(next);
     const n = next.filter((t) => t.role === "user").length;
     try {
       const res = await apiFetch("/api/chat", {
@@ -148,6 +206,7 @@ export function ConversationScored({
          sağlayıcıya gitmedi. Akış öteki arızalarla aynı (iki turdan sonra
          eldeki puanlanır, önce ise sınav kurulamaz); değişen yalnız cümle. */
       if (res.status === 403 && (await res.clone().json().catch(() => null))?.error === "premium_required") {
+        inFlight.current = false;
         setBusy(false);
         setLocked(true);
         return;
@@ -164,16 +223,27 @@ export function ConversationScored({
       }
       // Sınav isteminde işaret satırı olmamalı; olursa yine de ayıklanır.
       const body = parseReply(acc).body.trim() || acc.trim();
-      const all: Turn[] = [...next, { role: "assistant", content: body }];
-      setTurns(all);
+      inFlight.current = false;
       setBusy(false);
+      // Cevap gelene kadar sınav yeniden kurulduysa ya da puanlama başladıysa bu cevap artık yok.
+      if (attempt.current !== run || scored.current) return;
+      const all: Turn[] = [...next, { role: "assistant", content: body }];
+      putTurns(all);
       if (n >= SCORED_TURNS) {
-        speakGerman(body, () => void score(all));
-        setTimeout(() => void score(all), 6000);
+        speakGerman(body, () => {
+          if (attempt.current === run) void score(all);
+        });
+        clearFallback();
+        fallback.current = setTimeout(() => {
+          fallback.current = null;
+          if (attempt.current === run) void score(all);
+        }, 6000);
       } else speakGerman(body);
     } catch (err) {
       console.error("[conversation-scored]", err);
+      inFlight.current = false;
       setBusy(false);
+      if (attempt.current !== run || scored.current) return;
       if (n >= 2) void score(next);
       else setPhase("error");
     }
@@ -194,6 +264,17 @@ export function ConversationScored({
    * (hata dali ve sonuc ekrani).
    */
   const restart = useCallback(() => {
+    // Önceki denemenin geç gelen cevabı, okuması ve yedek sayacı yeni denemeye karışmasın.
+    attempt.current++;
+    micToken.current++;
+    rec.current?.abort();
+    rec.current = null;
+    setListening(false);
+    if (fallback.current) clearTimeout(fallback.current);
+    fallback.current = null;
+    inFlight.current = false;
+    setBusy(false);
+    turnsRef.current = [];
     scored.current = false;
     deadline.current = 0;
     setResult(null);
@@ -208,6 +289,10 @@ export function ConversationScored({
   async function score(all: Turn[]) {
     if (scored.current) return;
     scored.current = true;
+    const run = attempt.current;
+    clearFallback();
+    // Puanlama başladıktan sonra söylenen tur gönderilmiyor.
+    stopMic();
     stopSpeaking();
     setPhase("scoring");
     const said = all.filter((t) => t.role === "user").map((t) => t.content);
@@ -229,6 +314,7 @@ export function ConversationScored({
     /* Konuşmanın tamamı gönderiliyor: tavan tek cümlelik değerlendirmeden
        uzun (bkz. `lib/assess-client`). */
     const ai = await askAssess(req, { timeoutMs: ASSESS_CHAT_TIMEOUT_MS });
+    if (attempt.current !== run) return; // puanlanırken sayfadan çıkıldı
     if (ai.ok) setResult(ai.result);
     else {
       setResult(fallbackAssessment(req, t));
@@ -239,13 +325,15 @@ export function ConversationScored({
   }
 
   async function listen() {
-    if (listening || busy) return;
+    if (listening || inFlight.current || phaseRef.current !== "talk") return;
     const Ctor = recognitionCtor();
     if (!Ctor) return;
+    const token = ++micToken.current;
     if ((await requestMicrophone()) !== "granted") {
       setAsr(false);
       return;
     }
+    if (micToken.current !== token) return; // izin beklenirken kesildi ya da ikinci dokunuş
     const r = new Ctor();
     // Yerel kod kurs kayıt defterinden: elle yazılan ternary İngilizce kursta
     // tanıyıcıyı Almancaya kuruyordu (bkz. `lib/courses` `speechLocale`).
@@ -255,13 +343,18 @@ export function ConversationScored({
     r.continuous = false;
     let finalText = "";
     r.onresult = (e) => {
+      if (micToken.current !== token) return;
       let s = "";
       for (let i = 0; i < e.results.length; i++) s += e.results[i][0].transcript + " ";
       finalText = s.trim();
       setDraft(finalText);
     };
-    r.onerror = () => setListening(false);
+    r.onerror = () => {
+      if (micToken.current === token) setListening(false);
+    };
     r.onend = () => {
+      // Kesilen dinleme (Gönder, puanlama, tekrar dene) sözünü göndermiyor.
+      if (micToken.current !== token) return;
       setListening(false);
       rec.current = null;
       if (finalText) void send(finalText);
