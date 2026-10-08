@@ -5,6 +5,7 @@ import { sendToUser, type PushPayload } from "@/lib/push";
 import { track } from "@/lib/events";
 import { serverToday } from "./dates";
 import { publicUsers } from "./stats";
+import { hiddenThirdParties, maskThirdParty } from "./third-party";
 import type { NotificationType, PublicUser } from "./types";
 import { profiles } from "@/lib/db/schema";
 import { translate, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
@@ -216,12 +217,15 @@ export async function listNotifications(
   const questMap = new Map(quests.map((q) => [q.id, q]));
   const nudgeMap = new Map(nudgeRows.map((n) => [n.id, n]));
   const reactionMap = new Map(reactions.map((r) => [`${r.eventId}:${r.fromUserId}`, r.kind]));
+  /* Olay yükündeki üçüncü kişi akıştaki gibi maskeli (gizli/yalnız arkadaşlar/engel;
+     bkz. `third-party`). Bildirim kutusu yükü ham döndürüyordu (güvenlik denetimi 2026-10-07). */
+  const hiddenThird = await hiddenThirdParties(userId, events.map((e) => e.payload));
 
   const items: NotificationView[] = page.map((r) => {
     const detail: Record<string, unknown> = {};
     if (r.refType === "event" && r.refId) {
       const e = eventMap.get(r.refId);
-      if (e) { detail.eventType = e.type; detail.payload = e.payload; }
+      if (e) { detail.eventType = e.type; detail.payload = maskThirdParty((e.payload ?? {}) as Record<string, unknown>, hiddenThird); }
       if (r.actorId) detail.reaction = reactionMap.get(`${r.refId}:${r.actorId}`) ?? null;
     } else if (r.refType === "quest" && r.refId) {
       const q = questMap.get(r.refId);
