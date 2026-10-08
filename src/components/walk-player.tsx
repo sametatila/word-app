@@ -382,9 +382,10 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
    */
   const announce = useRef<string | null>(null);
   /**
-   * Oturum başında cebe kondu: cep anonsu SIRADAKİ kelimeden ÖNCE okunmalı.
-   * `announce` bir sonraki `hearOnce`'ta (kelimeden SONRA) okunuyor; başlangıçta
-   * bu "önce kelime, sonra cebe konuldu" sırasını veriyordu (bkz. darken/loop).
+   * Dinleme DIŞINDA cebe kondu (oturum başında ya da iki dinleme arasında): cep
+   * anonsu SIRADAKİ kelimeden ÖNCE okunmalı. `announce` bir sonraki `hearOnce`'ta
+   * (kelimeden SONRA) okunuyor; bu "önce kelime, sonra cebe konuldu" sırasını
+   * veriyordu (bkz. darken/loop).
    */
   const pocketPreroll = useRef(false);
   /** Duraklatılmış turdan dönülüyor: döngü ilk okumasında "Devam ediyoruz" der. */
@@ -395,8 +396,22 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
   const ended = useRef(false);
   /** `?diag=1`: son dinlemelerin yolu ve sonucu ekranda — telefonda bir bakışta. */
   const [diag, setDiag] = useState<string[] | null>(null);
-  /** Bu yürüyüşte sorulan kelimeler — devam turunda tekrar sorulmasın diye. */
+  /** Bu yürüyüşte sorulan kelimeler — devam turunda tekrar sorulmasın diye.
+      Duraklatıp dönmek yeni bir yürüyüş DEĞİL: liste bileşen ömrü boyunca tutuluyor. */
   const askedIds = useRef<Set<number>>(new Set());
+  /**
+   * Duraklatılan turun dönüş noktası: hükmü VERİLMEMİŞ ilk tur.
+   *
+   * Eskiden dönüş `index`ten (o an çalan tur) başlıyordu. Geri bildirim okunurken
+   * ya da "devam edelim mi?" sorusunda duraklatılınca cevabı alınmış kelime
+   * yeniden soruluyordu: sayaç, bitiş ekranı ve paylaşım iki kez sayıyor, son
+   * kelime SRS'e ikinci kez gidiyor, `session_done` iki kez yazılıyordu.
+   */
+  const resumeAt = useRef(0);
+  /** Oturumun bitişi (`finish` sesi + `session_done`) yazıldı mı — onay sorusunda duraklatıp dönünce tekrar yazılmasın. */
+  const finished = useRef(false);
+  /** Duraklamanın başladığı an — dönüşte `startedAt` bu kadar ileri kayıyor, gönderilen süre yalnız ETKİN süre. */
+  const pausedAt = useRef<number | null>(null);
   /**
    * Turu durduran işlev, ref üzerinden.
    *
@@ -470,12 +485,20 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       const data = (await res.json()) as SessionPayload & { resume?: SessionProgress | null };
       if (!data.rounds.length) return setStatus("empty");
       setSession(data);
-      const at = data.resume?.index ?? 0;
-      setIndex(Math.min(at, data.rounds.length - 1));
+      const at = Math.min(data.resume?.index ?? 0, data.rounds.length - 1);
+      setIndex(at);
+      resumeAt.current = at;
+      finished.current = false;
       if (data.resume) {
         tallyRef.current = { correct: data.resume.correct, total: data.resume.total };
         setTally(tallyRef.current);
         missed.current = data.resume.missed;
+      } else {
+        /* Bitiş ekranındaki "Devam" yeni oturumu buradan yüklüyor: önceki oturumun
+           sayıları sonraki oturumun sesli özetine karışmasın. */
+        tallyRef.current = { correct: 0, total: 0 };
+        setTally(tallyRef.current);
+        missed.current = [];
       }
       setStatus("ready");
     } catch {
@@ -689,6 +712,10 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
         windowMs + HEAR_SLACK_MS,
         null as string[] | null,
       );
+      /* Dinleme bitti: denetleyici bırakılıyor. Kalırsa `darken` iki dinleme
+         arasında da "dinleme sürüyor" sanıp yeniden sorma işareti bırakıyordu ve
+         sonraki DOĞRU cevap atılıp kelime bir kez daha soruluyordu. */
+      if (hearCtl.current === ctl) hearCtl.current = null;
       /* MİKROFON KAPANDI SESİ YOK (Samet, 2026-09-17). Kapanışı duyuran ton,
          hemen ardından gelen doğru/yanlış sesiyle art arda çalıyor ve akışı
          ağırlaştırıyordu; kararın sesi zaten kapanışı da haber veriyor.
@@ -866,6 +893,14 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           CONFIRM_SILENCE_MS,
           (alts) => parseConfirm(alts[0] ?? "", lang) !== null,
         );
+        /* Onay dinlenirken cebe kondu: kesik dinleme bir deneme sayılmıyor (ikinci
+           denemede "anlaşılmadı" sayılıp turu bitirmesin), işaret de sonraki
+           oturumun ilk cevabına sızmasın. Anons sonraki dinlemeden önce okunuyor. */
+        if (reask.current) {
+          reask.current = false;
+          attempt--;
+          continue;
+        }
         const intent = parseConfirm(heard[0] ?? "", lang);
         if (intent === "yes") return "yes";
         if (intent === "no") return "no";
@@ -892,6 +927,13 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       // edilebiliyor — modun bütün anlamı zaten bu.
       let current = rounds;
       let start = from;
+
+      // Geri bildirim okunurken duraklatıldıysa o turun cevabı kuyrukta kaldı
+      // (bkz. settle): önce o gidiyor. Oturumun son turuysa süre de onunla.
+      if (pending.current.length) {
+        await flush(start >= current.length);
+        if (!alive()) return;
+      }
 
       // Oturum başı, bir kez okunuyor (devam turları while'ın içinde):
       //   • Cebe kondu ise ("Cebe koy, başla") çıkış anonsu — SIRADAKİ kelimeden
@@ -929,10 +971,28 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
         setIndex(i);
         const round = current[i];
         const results: Answer[] = [];
+        const words = wordsOf(round);
+        /*
+          Turun SON kelimesi hükme bağlandı: cevaplar kuyruğa, dönüş noktası bir
+          ileri. Geri bildirimden ÖNCE çağrılıyor ve sayaçla aynı eşzamanlı blokta:
+          okuma ya da es sırasında duraklatılırsa dönüşte bu tur yeniden sorulmuyor,
+          cevap da kaybolmuyor (döngü girişinde ya da çıkışta gönderiliyor).
+        */
+        const settle = (word: RoundWord) => {
+          if (word !== words[words.length - 1]) return;
+          pending.current.push(...results);
+          results.length = 0;
+          resumeAt.current = i + 1;
+        };
 
-        for (const word of wordsOf(round)) {
+        for (const word of words) {
           if (!alive()) return;
           const target = withArtikel(word);
+          /* İki dinleme arasında cebe kondu: anons bu kelimeden ÖNCE (bkz. darken). */
+          const pocketNote: SpeechSegment[] = pocketPreroll.current
+            ? [{ lang, narration: true, text: t("walk.pocket_announce") }]
+            : [];
+          pocketPreroll.current = false;
           // Sesli anlamı aynı öteki kelimeler de doğru cevap ("o" → er / es); sunucu `buildWalk` kuruyor.
           const accepted = [target, word.de, ...(round.game === "speak" ? round.alternatives ?? [] : [])];
 
@@ -942,6 +1002,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
             setVerdict(null);
             setPhase("speaking");
             await say([
+              ...pocketNote,
               { lang, narration: true, text: t("walk.new_word") },
               targetSegment(target),
               glossSegment(word, lang),
@@ -956,6 +1017,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
               hintUsed: true,
             });
             taught.current += 1;
+            settle(word);
             continue;
           }
 
@@ -969,7 +1031,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
 
           // Soru: Türkçe karşılık okunuyor, ardından mikrofon açılıyor.
           setPhase("speaking");
-          await say([glossSegment(word, lang)]);
+          await say([...pocketNote, glossSegment(word, lang)]);
           if (!alive()) return;
 
           setPhase("listening");
@@ -988,7 +1050,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           if (!alive()) return;
           // "Cebe koy" dinlemenin ortasına denk geldi: önce kısa duyuru, sonra
           // KELİME yeniden okunuyor (kullanıcı basarken kaçırmasın), sonra dinleme.
-          if (reask.current) {
+          // Döngü: yeniden dinlemede de basılırsa işaret sonraki kelimeye sızmasın.
+          while (reask.current) {
             reask.current = false;
             setPhase("speaking");
             const pre = announce.current;
@@ -1026,6 +1089,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           // "Bilmiyorum": tekrar planına DOKUNMA (yanlış değil), doğrusunu oku.
           if (skipped) {
             setVerdict("skip");
+            settle(word);
             await say([
               // İki ayrı parça: her biri kendi kaydıyla (birleşik metin tabloda yok, bkz. scripts/tts-walk-jobs).
               { lang, narration: true, text: encourage(t) },
@@ -1065,6 +1129,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
               return;
             }
 
+            settle(word);
             await say([
               { lang, narration: true, text: t("walk.not_heard") },
               targetSegment(target),
@@ -1101,6 +1166,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           // Ekranda yürüyüşün toplamı görünüyor: kullanıcı için anlamlı olan
           // "bu yürüyüşte ne yaptım", sunucudaki oturumun sayacı değil.
           setTally({ correct: walkRef.current.correct, total: walkRef.current.total });
+          settle(word);
 
           if (!ok) {
             if (!missed.current.some((m) => m.id === word.id)) {
@@ -1130,18 +1196,21 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           }
         }
 
-        pending.current.push(...results);
         const last = i >= current.length - 1;
         await flush(last);
         if (!alive()) return;
       }
 
       if (!alive()) return;
-      play("finish");
-      /* Yürüyüş turunun bitişi de KİND taşıyor: kind'sız yazıldığında rapor
-         onu karışık turlarla aynı kovaya koyuyordu. Mobil `WalkModeScreen`
-         bu olayı HİÇ yazmıyor - orası ayrı bir eksik (bkz. §11.31). */
-      track("session_done", tallyRef.current.correct, "walk");
+      /* Onay sorusunda duraklatılıp dönülünce döngü buraya düşüyor: bitiş bir kez yazılır. */
+      if (!finished.current) {
+        finished.current = true;
+        play("finish");
+        /* Yürüyüş turunun bitişi de KİND taşıyor: kind'sız yazıldığında rapor
+           onu karışık turlarla aynı kovaya koyuyordu. Mobil `WalkModeScreen`
+           bu olayı HİÇ yazmıyor - orası ayrı bir eksik (bkz. §11.31). */
+        track("session_done", tallyRef.current.correct, "walk");
+      }
 
       const again = await askContinue(tallyRef.current.correct, tallyRef.current.total);
       if (!alive()) return;
@@ -1183,6 +1252,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       // Sunucudaki oturum sayacı sıfırlanıyor, yürüyüşün toplamı devam ediyor.
       current = next.rounds;
       start = 0;
+      resumeAt.current = 0;
+      finished.current = false;
       setSession(next);
       setIndex(0);
       tallyRef.current = { correct: 0, total: 0 };
@@ -1215,7 +1286,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
        olarak onu okuyor ve ardından kelimeyi — araya kelime karışmıyor. */
     if (status === "paused") resumePreroll.current = true;
     if (mode === "pocket") darken();
-    void start(index);
+    void start(resumeAt.current);
   }
 
   async function start(from: number) {
@@ -1245,8 +1316,11 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     sharedAudioContext();
     resetCombo();
     heardLog.current = [];
-    askedIds.current = new Set();
-    startedAt.current = Date.now();
+    /* Duraklamadan dönüş aynı oturum: saat sıfırlanmıyor, duraklama kadar
+       ileri kayıyor (sunucuya giden süre etkin süre). `askedIds` de korunuyor. */
+    if (pausedAt.current !== null) startedAt.current += Date.now() - pausedAt.current;
+    else startedAt.current = Date.now();
+    pausedAt.current = null;
     if (walkBegan.current === null) walkBegan.current = Date.now();
     endedAt.current = null;
     setNoMore(false);
@@ -1284,14 +1358,17 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     if (hearCtl.current && !hearCtl.current.signal.aborted) {
       // Kelime DİNLENİRKEN cebe kondu: süren dinleme iptal edilip önce anons,
       // sonra kelime tekrar okunup yeniden dinleniyor (reask) — kullanıcı
-      // darken'a basarken kelimeyi kaçırmasın.
+      // darken'a basarken kelimeyi kaçırmasın. Tanıyıcı da DURDURULUYOR:
+      // işaret yalnız döngüye gidiyordu, tanıyıcı açık kalıp cevabı alıyor,
+      // döngü de onu atıp kelimeyi yeniden soruyordu.
       announce.current = t("walk.pocket_announce");
       reask.current = true;
       hearCtl.current.abort();
+      cancel();
     } else {
-      // Başlangıçta ("Cebe koy, başla") cebe kondu: anons SIRADAKİ kelimeden
-      // ÖNCE okunmalı, döngü başında (bkz. loop) — yoksa "önce kelime, sonra
-      // cebe konuldu" sırası oluyordu.
+      // Başlangıçta ("Cebe koy, başla") ya da iki dinleme arasında cebe kondu:
+      // anons SIRADAKİ kelimeden ÖNCE okunmalı (bkz. loop) — yoksa "önce
+      // kelime, sonra cebe konuldu" sırası oluyordu.
       pocketPreroll.current = true;
     }
   }
@@ -1333,6 +1410,12 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     pauseRef.current = () => pause();
   });
 
+  /* Duraklamanın her yolu (düğme, ekran kapandı, mikrofon susuyor, tanıyıcı
+     öldü) buradan geçiyor: başlangıç anı tek yerde yazılıyor (bkz. `pausedAt`). */
+  useEffect(() => {
+    if (status === "paused" && pausedAt.current === null) pausedAt.current = Date.now();
+  }, [status]);
+
   /* Turu KAPATMAK ile ekrandan CIKMAK ayri: kenar cubugundan bir bagantiya
      gidildiginde turun sesi, mikrofonu ve tam ekrani kapanmali ama gidilecek
      yer `onExit`in yeri degil, tiklanan bagantidir. */
@@ -1342,6 +1425,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     stopAll();
     void release();
     exitFullscreen();
+    // Geri bildirim okunurken duraklatılıp çıkıldıysa o turun cevabı kuyrukta (bkz. settle).
+    void flush(false);
   }
 
   function leave() {
@@ -1480,7 +1565,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       <FlowColumn>
         <StateBody title={t("walk.denied_title")} body={t("walk.denied_sub")} />
         <FlowActions
-          primary={{ label: t("common.try_again"), onClick: () => void start(index) }}
+          primary={{ label: t("common.try_again"), onClick: () => void start(resumeAt.current) }}
           close={leave}
         />
       </FlowColumn>

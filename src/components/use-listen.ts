@@ -76,20 +76,27 @@ export type ListenOptions = {
 
 export function useListen() {
   const rec = useRef<Recognition | null>(null);
+  /**
+   * Süren dinlemenin iptali. İPTAL EDİLEN DİNLEME SÖZ TESLİM ETMİYOR: eskiden
+   * `abort` tanıyıcının `onend`ini tetikliyor ve o ana kadar duyulan metin
+   * normal sonuç gibi dönüyordu — iptalden sonra gelen söz, artık bir sonraki
+   * sorunun cevabı sayılabiliyordu. İptal edilen dinleme boş adaylarla ve
+   * `error: "aborted"` ile hemen dönüyor.
+   */
+  const abortCurrent = useRef<(() => void) | null>(null);
   const stopped = useRef(false);
 
   useEffect(
     () => () => {
       stopped.current = true;
-      rec.current?.abort();
+      abortCurrent.current?.();
     },
     [],
   );
 
   /** Tanıyıcıyı susturur — okuma başlarken ya da ekrandan çıkarken. */
   const cancel = useCallback(() => {
-    rec.current?.abort();
-    rec.current = null;
+    abortCurrent.current?.();
   }, []);
 
   const listen = useCallback(
@@ -104,6 +111,8 @@ export function useListen() {
       const Ctor = recognitionCtor();
       if (!Ctor) return Promise.resolve({ alternatives: [], confidences: [] });
 
+      // Üst üste açılan dinlemede eskisi iptal: iki tanıyıcı aynı mikrofonda yarışmasın.
+      abortCurrent.current?.();
       return new Promise<ListenResult>((resolve) => {
         const r = new Ctor();
         rec.current = r;
@@ -134,9 +143,26 @@ export function useListen() {
           if (delivered) return;
           delivered = true;
           clear();
-          rec.current = null;
+          // Yalnız KENDİ tanıyıcısını bırakır: iptalin ardından aynı turda açılan
+          // yeni dinlemenin tutamacını eskisinin geç gelen `onend`i silmesin.
+          if (rec.current === r) rec.current = null;
+          if (abortCurrent.current === abort) abortCurrent.current = null;
           resolve({ alternatives: best, confidences, error, silent: silent || undefined });
         };
+        /* İptal: duyulan atılıyor, sonuç hemen "aborted". Tanıyıcının sonradan
+           gelen `onend`/`onerror`u `delivered` yüzünden etkisiz. */
+        const abort = () => {
+          best = [];
+          confidences = [];
+          error = "aborted";
+          try {
+            r.abort();
+          } catch {
+            /* zaten kapanmışsa önemsiz */
+          }
+          deliver();
+        };
+        abortCurrent.current = abort;
 
         r.onresult = (e) => {
           const last = e.results[e.results.length - 1];
