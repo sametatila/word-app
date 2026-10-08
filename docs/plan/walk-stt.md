@@ -51,6 +51,43 @@ sessizlikte uydurmuyor; ama Deepgram'ın yerini tutmuyor. Kaliteyi korumanın yo
 - Azure F0: düz tanımada 15/15 doğru, sessizlikte uydurma yok, saniye başı ücret.
 - İstemci güven eşiği 0,4 (`pocket-mic.ts` `MIN_CONFIDENCE`).
 
+## Cihazda konuşma algılama (VAD) — ölçüm 2026-10-08, native'e henüz geçmedi
+
+Bugün ekran kapalıyken kelime başına sabit 3 sn (evet/hayır 4 sn) kaydediliyor ve tamamı Azure'a gidiyor.
+Canlıda son 30 gün: 155 klip, 650 sn; klip başına 4,2 sn (kabul edilmeyende ikinci istek, 6 sn); 31 klip boş.
+Öneri: kayıt sırasında cihazda VAD, Azure'a yalnız konuşma + pay. Referans algoritma `scripts/lib/walk-vad.ts`
+(native kopyaları buna birebir uymalı), ölçüm `scripts/walk-vad-eval.ts` (`--azure` üretimdeki Azure yolu: telaffuz
+değerlendirmesi, kabul yoksa düz tanıma).
+
+Algoritma: 20 ms dilim; enerji 300 Hz yüksek geçirenden sonra (rüzgâr, adım); ilk 300 ms karar dışı ("micon"
+kayda sızıyor, ~0,26 sn); gürültü tabanı aşağı hızlı, yukarı yavaş; başlangıç taban + 10 dB'de 3 dilim ve en az 2'si
+**sesli** (80–400 Hz normalize öz-ilinti ≥ 0,5); bitiş 650 ms sessizlik; başlamak için 5 sn, konuşma en çok 4 sn;
+gönderilen konuşmadan 500 ms önce → 500 ms sonra; konuşma yoksa yükleme yok.
+
+Sahneler sentetik (macOS `say`, 7 Almanca + 4 İngilizce ses, Türkçe sesle okunan dahil; gerçek kullanıcı sesi yok):
+40 ifade × 3 = 120 konuşmalı + 18 yalnız gürültü; koşullar temiz, yürüyüş (adım + pembe gürültü), rüzgâr, trafik,
+cep (boğuk ses + kumaş hışırtısı), kısık ses; başlama anı 0,35–2,3 sn; her sahnede "micon".
+
+| | Bugün (3 sn) | VAD |
+|---|---|---|
+| Azure doğru kabul | 95/120 | 95/120 |
+| Başlama ≤ 1,6 sn | 75/96 | 76/96 |
+| Gönderilen ses (konuşmalı) | 456 sn | 247 sn |
+| Yalnız gürültü sahneleri | 108 sn gönderildi | hiç gönderilmedi |
+| Toplam gönderilen | 564 sn | 247 sn (−%56) |
+| Kararın verildiği an (medyan, mikrofon açılışından) | 3,0 sn + yükleme | 2,5 sn; konuşma bitiminden 0,64 sn |
+
+- Yalnız enerjiyle (seslilik denetimi yok) cepte kumaş hışırtısı ve adımlar 4,3 sn "konuşma" sayılıyordu, rüzgârda
+  yedek pencere boşuna tetikleniyordu; 300 Hz filtre + seslilik ikisini de sıfırladı.
+- Pay 300 ms'de 93/120 (−%66), 500 ms'de 95/120: fark kenardaki sahnelerde iki yönlü dalgalanma, güvenli taraf 500.
+- VAD'in kazandıkları geç başlayanlar (bugün 3. saniyede kesiliyor); kaybettikleri kenar sahneler. Kaçan tek konuşma
+  rüzgârda 160 ms'lik sentetik "acht".
+- İkinci istek (kabul yoksa düz tanıma) telaffuz değerlendirmesinin metniyle DEĞİŞTİRİLEMEZ: 50 çiftin 20'sinde o
+  metin beklenen kelimeyi yazıyor (referansa yaslanıyor), düz tanıma boş ya da başka bir şey duyuyor.
+
+Kalan: Android/iOS native kopya (`startRecording` yerine VAD'li kayıt, eski yol yedek), cihazda gerçek ses
+(Bluetooth mikrofonu dahil) ile eşik kontrolü; mobil build başka ajanda.
+
 ## Teslim
 Cevabı bilmeyen "weiter", "weiß nicht" ya da "keine Ahnung" der (`parseSkipDe`, `lib/voice-intent.ts`,
 mobil `voiceMatch.ts`); yalnız cevap hedefe uymadığında aranır. Girişte bir kez okunur.
