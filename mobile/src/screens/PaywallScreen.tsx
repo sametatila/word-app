@@ -121,7 +121,9 @@ function termsLine(pkg: PurchasesPackage, trial: string | null): string {
   const renew = trial
     ? t(IOS ? "paywall.renew_trial_appstore" : "paywall.renew_trial_play")
     : t(IOS ? "paywall.renew_plain_appstore" : "paywall.renew_plain_play");
-  return `${priceLine(pkg, trial)}; ${renew}`;
+  /* ABONELİĞİN ADI satın almadan önce (App Store 3.1.2: ad, süre, fiyat): kartlarda yalnız
+     "Yıllık/Aylık" yazıyordu, "Lernomi Premium" yalnız abone olmuşun ekranındaydı. */
+  return `${t("paywall.plan_title", { plan: planLabel(pkg) })}: ${priceLine(pkg, trial)}; ${renew}`;
 }
 
 /**
@@ -425,7 +427,10 @@ export function PaywallScreen() {
               ))}
             </View>
           ) : (
-            <View accessibilityRole="radiogroup" style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm + 2, paddingTop: spacing.xs + 2 }}>
+            <>
+            {/* Planların başlığı: aboneliğin adı (bkz. `termsLine`). */}
+            <Text variant="bodyStrong" style={{ marginBottom: -spacing.xs }}>{t("paywall.nomi_premium")}</Text>
+            <View accessibilityRole="radiogroup" accessibilityLabel={t("paywall.nomi_premium")} style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm + 2, paddingTop: spacing.xs + 2 }}>
               {pkgs.map((p) => {
                 const active = selected === p.identifier;
                 const annual = p.packageType === "ANNUAL";
@@ -454,6 +459,7 @@ export function PaywallScreen() {
                 );
               })}
             </View>
+            </>
           )}
 
           {/* Cayma ve iade satırı (şartlar §7): satışı mağaza yapıyor, metin yolu söylüyor. */}
@@ -758,7 +764,7 @@ function CodeSheet({
                 <>
                   {pkg ? (
                     <Text variant="micro" color={colors.textMuted} style={{ fontWeight: "500", letterSpacing: 0 }}>
-                      {priceLine(pkg, t("paywall.trial_months", { n: 2 }))} · {t("grupkod.terms")}
+                      {t("paywall.plan_title", { plan: planLabel(pkg) })}: {priceLine(pkg, t("paywall.trial_months", { n: 2 }))} · {t("grupkod.terms")}
                     </Text>
                   ) : null}
                   <PrimaryButton label={t("grupkod.start")} onPress={begin} disabled={!code.trim()} busy={busy} />

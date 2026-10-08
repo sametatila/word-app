@@ -1086,6 +1086,7 @@ export const trBase: Record<string, string> = {
   "paywall.trial_years": "{n} yıl",
   "paywall.trial_years.one": "{n} yıl",
   "paywall.nomi_premium": "Lernomi Premium",
+  "paywall.plan_title": "Lernomi Premium ({plan})",
   "paywall.pitch_exams": "Cepte yürüyüş, tüm deneme sınavları ve seri beklemeden bütün Konuşma ve Yazma adımları",
   "paywall.pitch": "Cepte yürüyüş ve seri beklemeden bütün Konuşma ve Yazma adımları",
   "paywall.withdrawal_appstore": "Premium satın aldığın anda açılır. İade ve cayma talepleri App Store üzerinden, Apple'ın kurallarına göre yapılır. Tüketici olarak yasal hakların saklıdır.",

@@ -145,10 +145,12 @@ export function PremiumPaywall({
   const trialLabel =
     plans.trialDays <= 0 ? null : plans.trialDays >= 28 && plans.trialDays <= 31 ? t("paywall.trial_months", { n: 1 }) : t("paywall.trial_days", { n: plans.trialDays });
   const shown = price ? (yearly ? price.yearly : price.monthly) : null;
+  /* ABONELİĞİN ADI şart satırında (App Store 3.1.2; mobil `PaywallScreen` `termsLine` aynı). */
+  const planTitle = t("paywall.plan_title", { plan: t(yearly ? "paywall.yearly" : "paywall.monthly") });
   const terms = shown
-    ? trialLabel
+    ? planTitle + ": " + (trialLabel
       ? `${t(yearly ? "paywall.trial_then_year" : "paywall.trial_then_month", { duration: trialLabel, price: shown })}; ${t("paywall.renew_trial_store")}`
-      : `${t(yearly ? "paywall.price_year" : "paywall.price_month", { price: shown })}. ${t("paywall.renew_note_web")}`
+      : `${t(yearly ? "paywall.price_year" : "paywall.price_month", { price: shown })}. ${t("paywall.renew_note_web")}`)
     : null;
 
   return (
@@ -177,8 +179,9 @@ export function PremiumPaywall({
 
         <aside className="flex flex-col gap-4 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <div className="card flex flex-col gap-4 p-5">
+            {price && <h2 className="text-strong">{t("paywall.nomi_premium")}</h2>}
             {price && (
-              <div role="radiogroup" aria-label={t("paywall.yearly") + " / " + t("paywall.monthly")} className="grid grid-cols-2 gap-2.5 pt-2">
+              <div role="radiogroup" aria-label={t("paywall.nomi_premium")} className="-mt-2 grid grid-cols-2 gap-2.5 pt-2">
                 <PlanCard
                   selected={yearly}
                   onSelect={() => setYearly(true)}

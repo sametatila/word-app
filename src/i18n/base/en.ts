@@ -1086,6 +1086,7 @@ export const enBase: Record<string, string> = {
   "paywall.trial_years": "{n} years",
   "paywall.trial_years.one": "{n} year",
   "paywall.nomi_premium": "Lernomi Premium",
+  "paywall.plan_title": "Lernomi Premium ({plan})",
   "paywall.pitch_exams": "Pocket Walking, every mock exam and every Speaking and Writing step without waiting for a streak",
   "paywall.pitch": "Pocket Walking and every Speaking and Writing step without waiting for a streak",
   "paywall.withdrawal_appstore": "Premium starts as soon as you buy. Refund and withdrawal requests go through the App Store, under Apple's rules. Your statutory rights as a consumer are not affected.",

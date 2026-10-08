@@ -1086,6 +1086,7 @@ export const deBase: Record<string, string> = {
   "paywall.trial_years": "{n} Jahre",
   "paywall.trial_years.one": "{n} Jahr",
   "paywall.nomi_premium": "Lernomi Premium",
+  "paywall.plan_title": "Lernomi Premium ({plan})",
   "paywall.pitch_exams": "Taschen-Gehmodus, alle Probeprüfungen und alle Sprechen- und Schreiben-Schritte ohne Warten auf eine Serie",
   "paywall.pitch": "Taschen-Gehmodus und alle Sprechen- und Schreiben-Schritte ohne Warten auf eine Serie",
   "paywall.withdrawal_appstore": "Premium ist sofort nach dem Kauf verfügbar. Erstattung und Widerruf laufen über den App Store nach den Regeln von Apple. Deine gesetzlichen Rechte als Verbraucher bleiben unberührt.",
