@@ -22,7 +22,7 @@ import path from "node:path";
 import { spawn } from "node:child_process";
 import { loadEpisodes } from "./lib/episodes.mjs";
 import { OUT, CHROME, playwright } from "./lib/page.mjs";
-import { run, loudness, renderDoc, soundtrackWav } from "./lib/audio.mjs";
+import { run, loudness, normalize, renderDoc, soundtrackWav } from "./lib/audio.mjs";
 
 const FPS = 30;
 const args = process.argv.slice(2);
@@ -86,7 +86,18 @@ for (const id of ids) {
   await pg.close();
   if (errs.length) throw new Error(`${id}: sayfa hatası: ${errs.join(" | ")}`);
   const mb = (fs.statSync(mp4).size / 1e6).toFixed(1);
-  const fin = loudness(mp4); // AAC'den sonra, yüklenecek dosyanın kendisi
+  // AAC'den sonra, yüklenecek dosyanın kendisi; tepe aşıldıysa ses daha sıkı sınırlanıp yeniden konur (görüntüye dokunmadan)
+  let fin = loudness(mp4);
+  for (let peak = -1, k = 0; fin.TP > -1 && k < 3; k++) {
+    peak -= fin.TP + 1.2;
+    const norm3 = path.join(tmp, "ses-sikti.wav");
+    normalize(loud.raw, norm3, peak);
+    const fixed = path.join(tmp, "duzeltilmis.mp4");
+    run("ffmpeg", ["-y", "-hide_banner", "-i", mp4, "-i", norm3, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", fixed]);
+    fs.renameSync(fixed, mp4);
+    fin = loudness(mp4);
+  }
+  if (fin.TP > -1) console.warn(`\n! ${id}: gerçek tepe ${fin.TP} dBTP, −1'in üstünde`);
   console.log(`\r✓ ${id}: ${plan.duration.toFixed(1)} sn, ${frames} kare, ${mb} MB, ses ${loud.input_i} → ${fin.I} LUFS (gerçek tepe ${fin.TP} dBTP), ${((Date.now() - t0) / 1000).toFixed(0)} sn → ${path.relative(process.cwd(), dir)}/`);
 }
 await browser.close();

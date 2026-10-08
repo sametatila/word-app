@@ -24,10 +24,11 @@ export function loudness(file) {
  * −14 LUFS'a eşitleme: kazanç + sert sınırlayıcı (tavan −2 dBFS, AAC'nin taşmasına pay), ölç, düzelt.
  * loudnorm'un doğrusal modu tepe sınırına takılıp hedefin altında kalıyordu, dinamik modu tepeyi aşıyordu.
  * Sınırlayıcı örnek tepesini keser, örnekler arası (gerçek) tepeyi görmez: ölçülen gerçek tepe −1 dBTP'yi
- * aşarsa tavan aradaki fark kadar indirilir (2026-10-08: 8 bölüm −0,1…−0,7 dBTP çıkmıştı).
+ * aşarsa tavan aradaki fark kadar indirilir (2026-10-08: 8 bölüm −0,1…−0,7 dBTP çıkmıştı). AAC kodlaması tepeyi
+ * yeniden yükseltebilir: render.mjs son dosyayı ölçer, gerekirse daha düşük `peak` ile sesi yeniden koyar.
  */
 export const AUDIO_VERSION = 2; // eşitleme değişince artır: galerinin ses önbelleği yenilensin
-export function normalize(inWav, outWav) {
+export function normalize(inWav, outWav, peak = -1) {
   const before = loudness(inWav);
   let gain = -14 - before.I;
   let limit = 0.79;
@@ -36,9 +37,9 @@ export function normalize(inWav, outWav) {
     run("ffmpeg", ["-y", "-hide_banner", "-i", inWav, "-af", `volume=${gain.toFixed(2)}dB,alimiter=limit=${limit.toFixed(3)}:attack=1:release=50:level=disabled`, "-ar", "48000", outWav]);
     after = loudness(outWav);
     const loudOk = Math.abs(after.I + 14) <= 0.5;
-    const peakOk = after.TP <= -1;
+    const peakOk = after.TP <= peak;
     if (loudOk && peakOk) break;
-    if (!peakOk) limit *= 10 ** ((-1.3 - after.TP) / 20);
+    if (!peakOk) limit *= 10 ** ((peak - 0.3 - after.TP) / 20);
     gain += -14 - after.I;
   }
   return { input_i: before.I, output_i: after.I, output_tp: after.TP };
@@ -58,10 +59,10 @@ export function renderDoc(ep, clips, dir) {
 }
 
 /** Açık render sayfasından ses izini alıp −14 LUFS WAV yazar. */
-export async function soundtrackWav(pg, dir, { noMusic = false } = {}) {
+export async function soundtrackWav(pg, dir, { noMusic = false, peak = -1 } = {}) {
   const tag = noMusic ? "ses-muziksiz" : "ses";
   const raw = path.join(dir, `${tag}.wav`);
   const norm = path.join(dir, `${tag}-14lufs.wav`);
   fs.writeFileSync(raw, Buffer.from(await pg.evaluate((n) => window.wav(n), noMusic), "base64"));
-  return { file: norm, ...normalize(raw, norm) };
+  return { file: norm, raw, ...normalize(raw, norm, peak) };
 }
