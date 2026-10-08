@@ -5,7 +5,7 @@
   npm run social:gallery [-- --no-posters] [-- --no-audio] [-- --open]
 
   Çıktı (git dışı) .shots/social/gallery/: atolye.html (yayın; iskeleti Artifact ekler), atolye.local.html (yerel),
-  ses/<şablon>.m4a (yayında atolye.html'in yanındaki dosyalar: Artifact `files`).
+  ses/<şablon>.mp4 (yalnız ses, AAC; yayında atolye.html'in yanındaki dosyalar: Artifact `files`).
   Kapaklar Chrome'da çekilip JPEG gömülür: galeri 20 canlı sahne kurarsa iPhone'da (3x) bellek biter ve sayfa çöker.
   Ses de burada üretilir (MP4'teki −14 LUFS karışımın aynısı, AAC): telefonda Safari 40 sn'lik müziği kendisi
   sentezlerken çöküyordu. Ses dosyası okunamazsa (file:// ile yerel açılış) oynatıcı sesi tarayıcıda sentezler.
@@ -91,8 +91,8 @@ async function renderAudio() {
       await pg.close();
       run("ffmpeg", ["-y", "-hide_banner", "-i", file, "-c:a", "aac", "-b:a", "96k", "-ar", "48000", "-movflags", "+faststart", cached]);
     }
-    fs.copyFileSync(cached, path.join(outDir, `${ep.template}.m4a`));
-    out[ep.template] = `ses/${ep.template}.m4a?v=${hash}`;
+    fs.copyFileSync(cached, path.join(outDir, `${ep.template}.mp4`));
+    out[ep.template] = `ses/${ep.template}.mp4?v=${hash}`;
   }
   if (b) await b.close();
   return out;

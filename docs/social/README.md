@@ -18,7 +18,7 @@ açısından üçü de bizim (ses: `tts-test/LICENSES.md`, yazı tipleri OFL).
 | `scripts/social/{check,gallery,audit,render}.mjs` | Komutlar (aşağıda) | ✓ |
 | `scripts/social/{gallery,render}.html` | Atölye sayfası ve kare kare çıktı sayfası kabukları | ✓ |
 | `data/social/episodes/<şablon>-<NNN>.mjs` | **Bölümler**: bir şablon + içeriği + ekran metinleri. Tek içerik kaynağı | ✓ |
-| `.shots/social/gallery/` | Atölye: `atolye.html` + yanında `ses/<şablon>.m4a` (artifact, `files` ile) | ✗ |
+| `.shots/social/gallery/` | Atölye: `atolye.html` + yanında `ses/<şablon>.mp4` (artifact, `files` ile) | ✗ |
 | `.shots/social/out/<bölüm>/` | Paylaşılacak dosyalar: MP4, kapaklar, açıklama | ✗ |
 
 Başka yere dosya yazılmaz. Geçici dosyalar `.shots/social/render/` ve `cache/` altında.
@@ -37,7 +37,7 @@ npm run social:render -- <id> --muziksiz  # ek olarak müziksiz sürüm (platfor
 WebKit bir kez kurulur: `node node_modules/playwright-core/cli.js install webkit`.
 
 **Atölyeyi yayınlamak:** Artifact `file_path=.shots/social/gallery/atolye.html`, `url=https://claude.ai/artifact/CUyTS2ZwL4XQa83j6WHs3y`,
-`files` = her `ses/<şablon>.m4a` (yayın yolu aynı). Galeri sesi derlerken bir kez üretir (MP4'teki karışımın aynısı;
+`files` = her `ses/<şablon>.mp4` (yalnız ses; Artifact `.m4a` sunmuyor, `.mp4` sunuyor; yayın yolu aynı). Galeri sesi derlerken bir kez üretir (MP4'teki karışımın aynısı;
 `.shots/social/cache/audio/` önbellekli): telefonda Safari 40 sn'lik müziği kendisi sentezlerken çöküyordu
 (2026-10-08, WebKit iPhone 15 benzetimi). Dosya okunamazsa (yerelde `file://`) oynatıcı sesi tarayıcıda sentezler;
 yerel telefon testi için klasörü `python3 -m http.server` ile sun.
