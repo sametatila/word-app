@@ -283,12 +283,15 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
   const [gateNote, setGateNote] = useState<string | null>(null);
   const [showSample, setShowSample] = useState(false);
   const recording = useRef(false);
+  /** Kayıt oturumu: yeniden başlatılan kaydın döngüsü eskisinin geç gelen parçasını almasın. */
+  const recRun = useRef(0);
   const textRef = useRef("");
 
   useEffect(() => {
     let alive = true;
+    const run = recRun; // ref NESNESİ: temizlik çıkış anındaki değeri artırır
     sttAvailable().then((v) => { if (alive) setSttOk(v); }).catch(() => { if (alive) setSttOk(false); });
-    return () => { alive = false; recording.current = false; stopListening(); };
+    return () => { alive = false; recording.current = false; run.current++; stopListening(); };
   }, []);
 
   useEffect(() => {
@@ -310,13 +313,19 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
     setPhase("record");
     if (!izin || sttOk === false) return;
     recording.current = true;
+    const my = ++recRun.current;
     // Döngü: tanıyıcı her sessizlikte kapanır, biz yeniden açarız.
     while (recording.current) {
       const h = await listenOnce(currentTargetLocale(), MONOLOGUE_CHUNK_MS);
-      if (!recording.current) break;
+      if (recRun.current !== my) break;
+      /* "Bitir"den hemen önce söylenen cümle durdurmadan SONRA geliyor (tanıyıcı
+         son parçayı kapanırken veriyor) ve eskiden `recording` kapalı diye
+         atılıyordu. Artık ekleniyor; gözden geçirmede düzenlenen metin ezilmesin
+         diye ekranın o anki metninin sonuna. */
       if (h?.[0]) {
-        textRef.current = `${textRef.current} ${h[0]}`.replace(/\s+/g, " ").trim();
-        setTranscript(textRef.current);
+        const parca = h[0];
+        textRef.current = `${textRef.current} ${parca}`.replace(/\s+/g, " ").trim();
+        setTranscript((cur) => `${cur} ${parca}`.replace(/\s+/g, " ").trim());
       }
     }
   }

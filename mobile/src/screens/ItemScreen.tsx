@@ -313,6 +313,10 @@ export function ItemScreen() {
   /** Rubrik puanı (yazma, monolog): bandın ana sayısı doğru/toplam değil bu. */
   const [lastScore, setLastScore] = useState<number | undefined>(undefined);
   const [round, setRound] = useState(0);
+  /* Kaydın jetonu: "Tekrar dene" yanıt gelmeden basılırsa eski kaydın XP'si ya
+     da "kuyruğa alındı" notu YENİ turun ekranına yazılıyordu. Kayıt (ve kuyruk)
+     yine yapılıyor; yalnız ekrana yazan satırlar tur değiştiyse atlanıyor. */
+  const saveRun = useRef(0);
 
   const kind = params.kind as ItemKind;
   const tint = kindFill(kind);
@@ -326,6 +330,8 @@ export function ItemScreen() {
     setTimeout(() => sfx("finish"), 600); // son cevabın sesinden sonra tamamlanma sesi
     if (!exercise || saved.current) return;
     saved.current = true;
+    const my = saveRun.current;
+    const live = () => saveRun.current === my;
     /* "BITTI" PUANA BAGLI. Once egzersiz biter bitmez isaretleniyordu: sifir
        dogru yapan da yesil onay aliyordu. Esigin sahibi sunucu
        (`SKILL_DONE_PCT`, web `lib/score-bands.ts`); burada ayni formulle
@@ -339,9 +345,11 @@ export function ItemScreen() {
       });
       if (res.ok) {
         const d = (await res.json()) as { xpGained?: number; repeat?: boolean; currentStreak?: number; lastScore?: number };
-        if (typeof d.xpGained === "number") setEarnedXp(d.xpGained);
-        setRepeatNoXp(d.repeat === true && d.xpGained === 0);
-        if (typeof d.currentStreak === "number") setStreak(d.currentStreak);
+        if (live()) {
+          if (typeof d.xpGained === "number") setEarnedXp(d.xpGained);
+          setRepeatNoXp(d.repeat === true && d.xpGained === 0);
+          if (typeof d.currentStreak === "number") setStreak(d.currentStreak);
+        }
         /* Puan yerele de yazılıyor: Beceriler listesi rozeti bundan çiziyor
            ve sunucu durumu bir sonraki açılışta zaten üzerine gelecek. */
         if (typeof d.lastScore === "number") {
@@ -357,14 +365,14 @@ export function ItemScreen() {
            alıştırmayı önermeye devam ediyordu. Kuyruğa alınıp sonra gönderiliyor.
            400 (bilinmeyen/kapatılmış alıştırma) ve 403 (kilit) yeniden denense de geçmez. */
         void queueItemRecord(exercise.id, c, total, score);
-        setQueued(true);
+        if (live()) setQueued(true);
       }
     } catch {
       /* ÇEVRİMDIŞI: sonuç kuyruğa alınıyor ve bir sonraki bağlantıda
          taşınıyor. Eskiden yalnız yerel işaret kalıyordu ve sunucu bu
          egzersizi HİÇ öğrenmiyordu - cihaz değişince gidiyordu. */
       void queueItemRecord(exercise.id, c, total, score);
-      setQueued(true);
+      if (live()) setQueued(true);
     }
   }
 
@@ -374,6 +382,7 @@ export function ItemScreen() {
     setRepeatNoXp(false);
     setQueued(false);
     setLastScore(undefined);
+    saveRun.current++;
     saved.current = false;
     setFinished(false);
     setCorrect(0);

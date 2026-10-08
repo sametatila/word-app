@@ -1745,6 +1745,13 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
    */
   const judged = useRef<SentenceMatch | null>(null);
   const [checking, setChecking] = useState(false);
+  /* Model cevabı geç gelebilir: o arada süre biter, tur değişir ya da ekran
+     kapanırsa eski cümlenin hükmü (titreşim + okuma) sonraki ekranın üstüne
+     düşüyordu. Dönüşte tur hâlâ bu mu, bakılıyor. */
+  const alive = useRef(true);
+  useEffect(() => () => { alive.current = false; }, []);
+  const roundNow = useRef(round);
+  roundNow.current = round;
   async function check() {
     if (fb || checking) return;
     const typed = val.trim();
@@ -1797,8 +1804,9 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
       } catch {
         /* model yoksa ya da geç kaldıysa yerel hüküm geçerli */
       } finally {
-        setChecking(false);
+        if (alive.current) setChecking(false);
       }
+      if (!alive.current || roundNow.current !== round) return;
     }
     judged.current = m;
     Keyboard.dismiss();
