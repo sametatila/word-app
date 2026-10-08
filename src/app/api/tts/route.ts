@@ -128,7 +128,10 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "bad_voice" }, { status: 400 });
   }
   if (!sameOrigin(req)) {
-    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+    /* no-store: yanıt önbellek anahtarında olmayan Origin/Referer'a bağlı (anahtar
+       yalnız adres). Bugün nginx yalnız 200 saklıyor; kural değişse de bir 403
+       bir kelimenin sesinin yerine geçmesin (güvenlik denetimi 2026-10-07). */
+    return NextResponse.json({ error: "forbidden" }, { status: 403, headers: { "cache-control": "no-store" } });
   }
   // Kendi karakter seslerimiz (`lib/tts/own`): önceden üretilmiş statik dosya. Sentez yok, maliyet
   // yok — oturum ve günlük tavan kapısı yalnız üretilmemiş metinde kalıyor (plan bölüm 4 "Yetki").
