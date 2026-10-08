@@ -434,6 +434,7 @@ jobs:
           npm run test:chat-usage
           npm run test:ai-budget
           npm run test:lifetime
+          npm run test:test-lab
           npm run test:stt-pa
           npm run test:placement
           npm run test:level

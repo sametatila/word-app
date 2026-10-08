@@ -34,6 +34,8 @@
     "test:chat-usage": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-chat-usage.ts",
     "test:ai-budget": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-ai-budget.ts",
     "test:lifetime": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-lifetime.ts",
+    "test:test-lab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-test-lab.ts",
+    "google-networks": "tsx scripts/google-networks.ts",
     "test:stt-pa": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-stt-pa.ts",
     "test:stt-quality": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/stt-quality-eval.ts",
     "test:placement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts && tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts --bank de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-placement-engine.ts --bank en",

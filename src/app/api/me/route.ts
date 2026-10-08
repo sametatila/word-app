@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { recordClient } from "@/lib/app-control";
 import { CLIENT_HEADER, TEST_LAB_HEADER, parseTestLabHeader } from "@/lib/app-control-shared";
 import { getUserInfo } from "@/lib/auth/server";
+import { isTestLabNetwork } from "@/lib/google-networks";
 import { backfillNativeLang, ensureProfile, getProgress, newWordsLeft, termsUpdateFor } from "@/lib/session";
 import { parseAvatar } from "@/lib/avatar-config";
 
@@ -29,9 +30,12 @@ export async function GET() {
        kesin çağrılan uç bu. Yazma koşullu (build değişti ya da 6 saat geçti)
        ve beklenmiyor: sürüm kaydı özeti geciktirmesin. Test Lab başlığı da
        burada yazılıyor (yapışkan işaret, bkz. lib/test-lab): mobil girişten ve
-       misafir açılışından hemen sonra ana ekranda bu ucu çağırıyor. */
+       misafir açılışından hemen sonra ana ekranda bu ucu çağırıyor. Cihaz
+       sinyali robotlarda tetiklenmediği için Google ağından gelen Android
+       isteği de Test Lab sayılıyor (`lib/google-networks`, 2026-10-08). */
     const h = await headers();
-    void recordClient(userId, h.get(CLIENT_HEADER), parseTestLabHeader(h.get(TEST_LAB_HEADER)));
+    const testLab = parseTestLabHeader(h.get(TEST_LAB_HEADER)) || isTestLabNetwork(h.get(CLIENT_HEADER), h.get("x-real-ip"));
+    void recordClient(userId, h.get(CLIENT_HEADER), testLab);
     /*
       AD DA VERİLİYOR. Burası MOBİLİN açılışta kesin çağırdığı uç ve
       `ensureProfile` adsız çağrılıyordu: `profiles.display_name` boş kalıyor,
