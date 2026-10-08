@@ -169,8 +169,9 @@ export async function purchase(pkg: PurchasesPackage): Promise<PurchaseOutcome> 
 /**
  * Play'deki grup teklifi (`promo-2m`, etiket sunucudan: `offerTag`).
  *
- * Teklif "geliştiricinin belirlediği uygunluk" ile açık, ama Play bu tür
- * teklifleri de her kullanıcıya döndürüyor ve RevenueCat varsayılan seçenekte
+ * Teklifin uygunluğu "hiç abonelik almamış" (2026-10-08, güvenlik denetimi
+ * O10; önce "geliştirici belirler"di). Play onu uygun her kullanıcıya
+ * döndürüyor ve RevenueCat varsayılan seçenekte
  * en uzun ücretsiz denemeyi seçiyor. Normal satın almanın 2 aylık denemeye
  * kaymaması için teklif Play'de ayrıca `rc-ignore-offer` etiketini taşıyor
  * (2026-09-25, denetim S1): SDK onu varsayılana hiç almıyor. Etiketi taşıyan

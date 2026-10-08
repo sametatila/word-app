@@ -51,6 +51,7 @@ ASC salt okuma dökümünden güncellendi.
 | S10 | Android promo kodu kutusu: ücretsiz dağıtım teyidi | ⏳ Samet | Kodlar satılmıyorsa sorun yok; teyit bekleniyor (AND-6) |
 | S11 | Play'de "24 saat önce iptal" cümlesi | ✅ | 5e5310a2 |
 | S12 | Web'de GB/CH ziyaretçisi USD görüyor | ✅ | b80ad229 |
+| S13 | Grup teklifi (promo-2m) tekrar alınabilir (güvenlik denetimi O10) | ✅ | 2026-10-08: Samet Play Console'da iki `promo-2m` teklifinin uygunluğunu "Hiç abonelik almamış" yaptı; Play API geri okuma: dört teklifin (iki `free-trial-1m`, iki `promo-2m`) hepsi `acquisitionRule.scope.anySubscriptionInApp`, `promo-2m` etiketleri `promo2m,rc-ignore-offer` duruyor |
 
 ### İ — İçerik, yapay zekâ, fikri mülkiyet
 

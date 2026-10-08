@@ -21,7 +21,7 @@ import { normalizeCode, randomCode } from "./promo";
  *
  * PLATFORMA GÖRE İKİ YOL — VE İKİSİ BİLEREK FARKLI YERDE:
  *   Android  UYGULAMA İÇİNDE. Play'de her temel planın `promo-2m` teklifi
- *            (geliştiricinin belirlediği uygunluk, etiketler `promo2m` +
+ *            (uygunluk "hiç abonelik almamış", etiketler `promo2m` +
  *            `rc-ignore-offer`). Uygulama kodu `claimStoreTrial` ile talep edip
  *            o seçeneği satın alıyor. Play teklifi herkese döndürüyor; normal
  *            satın almada seçilmemesini `rc-ignore-offer` sağlıyor (denetim S1),
@@ -97,10 +97,13 @@ const success = (plan: TrialPlan, code: string): ClaimResult => ({ ok: true, pla
  * YARIŞ KORUMASI `redeemCode` ile aynı: sayaç koşullu UPDATE ile artıyor
  * (`uses < max_uses`), grup kodları da aynı anda yüzlerce kişiye gidiyor.
  *
- * KÖTÜYE KULLANIM SINIRI: Play'deki teklif "geliştiricinin belirlediği
- * uygunluk" ile açık, yani Play kimin kaçıncı kez aldığını SORMUYOR — kapı
- * bizim. Hesap başına bir grup denemesi (`trial_used`); denemesini bitirmiş
- * biri başka grubun koduyla ikinci iki ayı alamıyor.
+ * KÖTÜYE KULLANIM SINIRI İKİ KAT. Bizde hesap başına bir grup denemesi
+ * (`trial_used`); denemesini bitirmiş biri başka grubun koduyla ikinci iki ayı
+ * alamıyor. Play'de teklifin uygunluğu 2026-10-08'den beri "hiç abonelik
+ * almamış" (`anySubscriptionInApp`; güvenlik denetimi O10): önce "geliştirici
+ * belirler"di, Play kimin kaçıncı kez aldığını sormuyordu ve yeni bir Lernomi
+ * hesabıyla aynı Google hesabı iki ayı yeniden alabiliyordu. Bedeli: normal
+ * denemeyi kullanmış biri grup teklifini göremiyor (mobil `no_offer`).
  */
 export async function claimStoreTrial(
   userId: string,
