@@ -117,12 +117,12 @@ export class WalkVad {
     const i = this.i++;
     const p = this.p;
     if (this.ms(i + 1) <= p.skipMs) return false;
+    if (Number.isNaN(this.floor)) this.floor = Math.min(e, p.floorCapDbfs);
     const above = e > this.floor + p.holdDb;
     if (!above) this.softStart = -1;
     else if (this.softStart < 0) this.softStart = i;
     const voiced = above && this.periodicity() >= p.voicedR;
     if (voiced) this.lastPeriodic = i;
-    if (Number.isNaN(this.floor)) this.floor = Math.min(e, p.floorCapDbfs);
 
     if (this.state === "wait") {
       if (e > Math.max(this.floor + p.onsetDb, p.minDbfs)) {

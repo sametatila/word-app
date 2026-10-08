@@ -1,7 +1,7 @@
 /**
  * Yürüyüş modu, ekran kapalı dinleme: sabit 3 sn pencere ↔ cihazda VAD — ölçüm.
  *
- *   npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/walk-vad-eval.ts <çalışma dizini> [--azure] [--wav]
+ *   npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/walk-vad-eval.ts <çalışma dizini> [--azure] [--wav] [--dump <dizin>]
  *
  * Sahneler sentetik (gerçek kullanıcı sesi YOK): macOS `say` ile kelime (Almanca/İngilizce
  * sesler, Türkçe sesle okunan = kaba aksan), mikrofon açılış sesi ("micon", iOS
@@ -400,6 +400,13 @@ async function main() {
   const params: VadParams = { ...WALK_VAD, ...(process.env.VAD ? (JSON.parse(process.env.VAD) as Partial<VadParams>) : {}) };
   const rows = analyse(scenes, params);
   offlineReport(rows);
+  const dump = process.argv.indexOf("--dump");
+  if (dump > 0) {
+    /* Native parite girdisi (`walk-vad-native-parity.ts`): sahnenin tamamı, ham 16 bit. */
+    const to = process.argv[dump + 1];
+    mkdirSync(to, { recursive: true });
+    for (const s of scenes) writeFileSync(join(to, `${s.id}.raw`), Buffer.from(s.pcm.buffer, s.pcm.byteOffset, s.pcm.byteLength));
+  }
   if (process.argv.includes("--wav")) {
     mkdirSync(join(dir, "wav"), { recursive: true });
     for (const r of rows) {
