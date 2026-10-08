@@ -69,22 +69,29 @@ Ayrıca yeniden üretim: yukarıdaki "açmadan önce" maddeleri (okunuşu deği�
 kayıtları, 163 karışık anlatım satırı). Kapsam dışı: sohbet (yapay zekâ cevabı, Edge) ve Zürih (gsw-zh).
 Ölçek: 4090 kiralamada önceki hesap ses başına ~104 sa için 35–60 $ → bu envanter ≈ 60–105 $; Mac'te haftalar.
 
-## DURUM — dinleme ve okuma katmanı: açmadan önce (2026-10-05)
+## DURUM — dinleme ve okuma katmanı: AÇIK (2026-10-08)
 
-`TTS_OWN_LAYERS` canlıda boş: bu katmanlar Edge'den çalıyor. Tablodaki katman kayıtları Linux döneminden ve eksik
-(2026-10-05 ölçümü, `tts-listening-jobs.ts` / `tts-reading-jobs.ts` × canlı tablo): dinleme 13.174 işin 6.037'si
-tabloda (eksik: Aras 4.566, Defne 1.806, Mira 471, Can 294), okuma 4.127 işin 2.757'si (eksik Defne 1.370).
-Açmadan önce, karakter karakter (`l:defne` …):
-1. Kapsam TAM olmalı (yoksa aynı diyalogda ses satır satır değişir; bkz. `ownLayerEnabled`).
-2. Okunuş kuralları değişti (tts-test `text_norm.py`, 2026-10-05: büyük harfli başlık, B1/CO2, başı sıfırlı numara,
-   saat aralığı, İngilizce 24 saat, tarife duraklaması). Tablodaki katman kayıtlarından yeni kuralla farklı
-   okunacak olanlar (2026-10-05'te 435 anahtar) yeniden üretilir: eski ve yeni `normalize` çıktısı farklı olan her anahtar.
-3. Kulak kontrolünde reddedilen katman kayıtları (`tts_reviews` verdict=redo: büyük harfli başlıklar, tarifeler)
-   yeniden üretilir; onaylılara dokunulmaz.
-4. İçerikteki Türkçe kişi adları 2026-10-05'te değişti (`data/names/rename-2026-10-05.json`): eski adlı katman
-   kayıtları artık hiçbir isteğe karşılık gelmiyor, yeni metinler eksiklerin içinde.
-5. Konuşma katmanı için: 163 Türkçe anlatım satırında işaretsiz hedef dil cümlesi var; karışık sentez gerekir
-   (tts-test `DEVIR.md`).
+Sunucu `TTS_OWN_LAYERS="l:mira,l:can,l:defne,l:aras,r:aras,r:defne"`: dinleme ve okuma bütün kadroda kendi
+sesimizden, Edge'e yalnız 3. koltuğun perde kaydırılmış sesi (`LAYER_SECOND_SEAT` dışı) ve tabloda olmayan yeni
+metin düşüyor. Açılıştaki ölçüm (`tts-listening-jobs.ts` / `tts-reading-jobs.ts` × canlı tablo, asıl kayıt +
+`#listen` + `#listenSlow`): dinleme Defne 7.342, Aras 5.063, Mira 471, Can 294; okuma Defne ve Aras 4.127'şer —
+hepsi tam. Okumanın eksik yavaş sürümleri (Aras 5, Defne 2.114 kayıt) canlı m4a'dan atempo ile eklendi
+(tts-test `yayin_kodla.encode_tempo`, `anlam_yayin` ile aynı kodlama). Her açılışta nginx TTS önbelleği
+boşaltıldı: aynı adresin karşılığı Edge'den karaktere döndü.
+
+Sürüyor: `tempo_defne` (tts-test `tempo_mac.sh`, Mac) Defne'nin dinleme/okuma kayıtlarını yeniden üretip
+`--yenile` ile yerine koyuyor; yavaş sürümleri de yeniliyor. Tablo dakikada bir tazelendiği için açık katmanda
+kendiliğinden yürürlüğe giriyor, önbellek boşaltmak gerekmiyor (`max-age` bir gün + ETag).
+
+Yeni katman açarken ölçüt aynı: karakterin o katmandaki kapsamı TAM olmadan açılırsa aynı diyalogda ses satır
+satır değişir (`ownLayerEnabled`). Açınca `/var/cache/nginx/lernomi-tts` boşaltılır.
+
+**Konuşma katmanı (henüz yok, Edge):** anadili Türkçe kullanıcının konuşmaları (`tts-conversation-jobs.ts`,
+47.435 parça) Defne'yle üretildi ve tabloda TAM (2026-10-08 ölçümü). Uygulama bu istekleri işaretsiz
+gönderiyor; açmak için istemci (web + mobil) konuşma parçalarına `k=c` ve anadili eklemeli, sunucu yalnız
+anadili Türkçe isteği tablodan vermeli (İngilizce/Almanca anadil anlatımı üretilmedi). Kalite notu:
+~394 konuşma kaydı uyarılı (karışık Türkçe + hedef dil satırlarında bilinen hatalar, tts-test
+`DEVIR-2026-10-07.md` §6).
 
 ## 1. Envanter (sohbet hariç, benzersiz metin)
 
