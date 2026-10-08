@@ -359,6 +359,25 @@ async function main() {
     else process.env.REVENUECAT_WEBHOOK_AUTH = prevSecret;
   }
 
+  /* ───────── TAŞIMADAN SONRA GELEN ESKİ OLAY (güvenlik denetimi 2026-10-07) ───────── */
+  console.log("\nTaşıma sonrası gecikmiş olay: eski sahibe premium geri açılmıyor");
+  {
+    const c = uid("tr-c");
+    const d = uid("tr-d");
+    created.push(c, d);
+    const t0 = Date.now() - 60 * 60_000;
+    await applyStoreEvent(storeEvent(c, { eventId: `trl-buy-${c}`, ref: `trl-sub-${c}`, eventAt: new Date(t0) }));
+    const moved = await applyStoreTransfer({ provider: "revenuecat", eventId: `trl-tr-${c}`, from: [c], to: d, eventAt: new Date(t0 + 10 * 60_000) });
+    check("taşıma uygulandı (C → D)", moved.applied && moved.moved, JSON.stringify(moved));
+    const late = await applyStoreEvent(storeEvent(c, { eventId: `trl-late-${c}`, ref: `trl-sub-${c}`, eventAt: new Date(t0 + 5 * 60_000) }));
+    check("taşımadan önce üretilip sonra gelen olay C'ye yazılmıyor", !late.applied, JSON.stringify(late));
+    check("C mağazadan premium değil", (await resolveEntitlement(c)).source !== "store");
+    check("D mağazadan premium", (await resolveEntitlement(d)).source === "store");
+    const fresh = await applyStoreEvent(storeEvent(c, { eventId: `trl-new-${c}`, ref: `trl-sub2-${c}`, eventAt: new Date(t0 + 20 * 60_000) }));
+    check("taşımadan SONRAKİ yeni satın alım C'ye yazılıyor", fresh.applied && (await resolveEntitlement(c)).source === "store", JSON.stringify(fresh));
+
+  }
+
   /* ───────── KOTA TAVANI: paralel patlama (güvenlik denetimi #1) ───────── */
   console.log("\nKota tavanı: aynı anda gelen istekler");
   {

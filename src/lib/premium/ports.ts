@@ -135,6 +135,13 @@ export type StoreTransfer = {
   from: string[];
   /** Aboneliğin geçtiği kullanıcı. */
   to: string;
+  /**
+   * Sağlayıcının olay zamanı (sıra işareti). Aktarım kaynak satırların
+   * `store_event_at`ini buna ilerletiyor: aktarımdan ÖNCE üretilip SONRA gelen
+   * (gecikmiş/yeniden denenen) bir olay eski sahibe premium'u yeniden açamasın
+   * (güvenlik denetimi 2026-10-07, D7'nin kalan yolu). Yoksa alındığı an.
+   */
+  eventAt?: Date | null;
 };
 
 /** Webhook'un sonucu — uç bunu HTTP durumuna çeviriyor. */

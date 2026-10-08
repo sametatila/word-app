@@ -378,6 +378,12 @@ export async function applyStoreTransfer(tr: StoreTransfer): Promise<{ applied: 
       if (!source) return { applied: true, moved: false };
 
       const now = Date.now();
+      /* SIRA İŞARETİ (güvenlik denetimi 2026-10-07). Aktarım anı kaynakların
+         işaretine yazılıyor; hedefte aktarımdan YENİ bir durum varsa bayat aktarım
+         onu ezmiyor. */
+      const at = tr.eventAt ?? new Date(now);
+      const later = (a: Date | null | undefined, b: Date) => (a && a.getTime() > b.getTime() ? a : b);
+      const toNewer = !!toRow?.storeEventAt && toRow.storeEventAt.getTime() > at.getTime();
       const next = {
         storeUntil: source.storeUntil,
         storeProvider: source.storeProvider,
@@ -387,21 +393,23 @@ export async function applyStoreTransfer(tr: StoreTransfer): Promise<{ applied: 
         storeRef: source.storeRef,
         storePaidAt: toRow?.storePaidAt ?? source.storePaidAt,
         storeEnvironment: source.storeEnvironment,
-        storeEventAt: source.storeEventAt,
+        storeEventAt: later(source.storeEventAt, at),
         updatedAt: new Date(),
       };
-      await tx
-        .insert(entitlements)
-        .values({ userId: tr.to, ...emptyRow(), ...next })
-        .onConflictDoUpdate({ target: entitlements.userId, set: next });
+      if (!toNewer) {
+        await tx
+          .insert(entitlements)
+          .values({ userId: tr.to, ...emptyRow(), ...next })
+          .onConflictDoUpdate({ target: entitlements.userId, set: next });
 
-      const grants = !!source.storeState && STATE_GRANTS.has(source.storeState as StoreState) && active(source.storeUntil, now);
-      if (grants && !active(toRow?.storeUntil, now)) await returnRunningBonus(tx, tr.to);
+        const grants = !!source.storeState && STATE_GRANTS.has(source.storeState as StoreState) && active(source.storeUntil, now);
+        if (grants && !active(toRow?.storeUntil, now)) await returnRunningBonus(tx, tr.to);
+      }
 
       for (const r of rows.filter((x) => x.userId !== tr.to && x.storeProvider)) {
         await tx
           .update(entitlements)
-          .set({ storeUntil: null, storeState: "expired", storeRef: null, updatedAt: new Date() })
+          .set({ storeUntil: null, storeState: "expired", storeRef: null, storeEventAt: later(r.storeEventAt, at), updatedAt: new Date() })
           .where(eq(entitlements.userId, r.userId));
         await tx
           .insert(premiumGrants)

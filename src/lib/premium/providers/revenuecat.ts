@@ -204,7 +204,11 @@ export const revenuecat: StoreAdapter = {
       const to = (ev.transferred_to ?? []).filter((x) => typeof x === "string" && x);
       if (!from.length || to.length !== 1) return { ok: false, status: 400, reason: "bad_transfer" };
       if (!ev.id) return { ok: false, status: 400, reason: "no_event_id" };
-      return { ok: true, transfer: { provider: "revenuecat", eventId: ev.id, from, to: to[0] } };
+      const eventAt =
+        typeof ev.event_timestamp_ms === "number" && Number.isFinite(ev.event_timestamp_ms) && ev.event_timestamp_ms > 0
+          ? new Date(ev.event_timestamp_ms)
+          : null;
+      return { ok: true, transfer: { provider: "revenuecat", eventId: ev.id, from, to: to[0], eventAt } };
     }
 
     const state = STATE_BY_TYPE[type];
