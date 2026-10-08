@@ -97,11 +97,13 @@ baloncukları işaretsiz, Edge). Katman anadil başına: yalnız Türkçe anadil
 uyarılı sesler; o satır Edge'e düşüyor. Yalnız tablodaki dosya hâlâ listedeki dosyaysa bekletiliyor: kayıt temiz
 üretilip yerine konunca kendiliğinden açılıyor. Yazan tts-test `uyari_ayir.py` (girdi `uyarili_canli.py`: yerel
 manifestlerdeki uyarılı kayıtlardan canlı tabloda hâlâ o dosyayla duranlar, onaylılar hariç). 2026-10-08: yayında
-675 uyarılı; 278'i bizim hatamız (hazırlık cümlesi sızması 160, bozuk okuma 82, sessizlik 33, başa ses sızması 3)
-→ Mac'te yeni tohumla yeniden üretim (tts-test `uyari_mac.sh`, tempo_defne bitince kendiliğinden başlar, yayın
-`--yenile --temiz`); 397'si Whisper'ın yazım farkı ya da belirsiz → Samet'in kulak kontrolü (artifact "Kulak
-Kontrolü 3", kararlar sayfanın veritabanında, Claude `tts_reviews`e aktarır). Bekletilen: bizim hatamız olanların
-hepsi + kulak bekleyen konuşma kayıtları (423).
+675 uyarılı. 266'sı Whisper'ın yanlış alarmı (rakam yazımı, aynısını duyduğu "kesik", İngilizce ad yazımı): geçiyor,
+kimseye gösterilmiyor (Samet: "gereksiz uyarıları benim kontrolüme sunman gereksiz"). 409'u Mac'te yeni tohumla
+yeniden üretiliyor (tts-test `uyari_mac.sh`, tempo_defne bitince kendiliğinden, yayın `--yenile --temiz`): kesin
+hatalar (hazırlık cümlesi sızması 160, bozuk okuma 75, sonu yutulmuş 34, sessiz 33, başa sözcük/ses sızması 24) ve
+belirsizler. Kulak kontrolüne (artifact "Kulak Kontrolü 3") YALNIZ yeniden üretimde de uyarılı kalan belirsizler
+gidiyor; kararlar sayfanın veritabanında, Claude `tts_reviews`e aktarır. Bekletilen: kesin hatalar + konuşmadaki
+belirsizler (389).
 
 ## 1. Envanter (sohbet hariç, benzersiz metin)
 
