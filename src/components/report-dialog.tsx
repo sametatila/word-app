@@ -31,6 +31,11 @@ import { useT, useLang } from "@/lib/i18n/client";
  * kez bildirilirse sunucu `duplicate` diyor ve teşekkür yerine
  * `report.already` görünüyor.
  */
+/* Başlık ve giriş türden: kişi bildiriminde "yapay zekâ yanıtı" metni çıkıyordu (lig
+   satırı, profil; App Review kaydı 2026-10-08). Mobil `ui/ReportSheet` aynı eşleme. */
+const TITLE: Record<ReportKind, string> = { content: "reportsheet.content_title", user: "reportsheet.user_title", assessment: "reportsheet.assessment_title", chat: "reportsheet.report_this_content" };
+const LEAD: Record<ReportKind, string> = { content: "reportsheet.content_lead", user: "reportsheet.user_lead", assessment: "reportsheet.assessment_lead", chat: "reportsheet.if_ai_reply_felt_inappropriate" };
+
 export function ReportDialog({
   open,
   kind,
@@ -131,8 +136,8 @@ export function ReportDialog({
         </div>
       ) : (
         <>
-          <h2 id={basligId} className="text-h2">{t(isContent ? "reportsheet.content_title" : "reportsheet.report_this_content")}</h2>
-          <p className="muted mt-1 text-caption">{t(isContent ? "reportsheet.content_lead" : "reportsheet.if_ai_reply_felt_inappropriate")}</p>
+          <h2 id={basligId} className="text-h2">{t(TITLE[kind])}</h2>
+          <p className="muted mt-1 text-caption">{t(LEAD[kind])}</p>
 
           {/* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR. `aria-pressed` bir AÇ/KAPA
               düğmesi anlatıyor: ekran okuyucu "düğme, basılı" diyor ve

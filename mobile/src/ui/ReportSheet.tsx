@@ -22,6 +22,11 @@ import { FIELD, Field } from "./Field";
  * Sunucu aynı hedefi 24 saat içinde ikinci kez görürse `duplicate` diyor;
  * kullanıcıya "zaten bildirdin" gösteriliyor, hata değil.
  */
+/* Başlık ve giriş türden: kişi bildiriminde "yapay zekâ yanıtı" metni çıkıyordu (lig
+   satırı, profil; App Review kaydı 2026-10-08). Web `report-dialog` aynı eşleme. */
+const TITLE: Record<ReportKind, string> = { content: "reportsheet.content_title", user: "reportsheet.user_title", assessment: "reportsheet.assessment_title", chat: "reportsheet.report_this_content" };
+const LEAD: Record<ReportKind, string> = { content: "reportsheet.content_lead", user: "reportsheet.user_lead", assessment: "reportsheet.assessment_lead", chat: "reportsheet.if_ai_reply_felt_inappropriate" };
+
 export function ReportSheet({ visible, kind, refId, content, surface, target, onClose }: {
   visible: boolean; kind: ReportKind; refId: string; content: string;
   surface?: ReportSurface; target?: ReportTarget; onClose: () => void;
@@ -60,7 +65,7 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
           accessibilityViewIsModal
           accessibilityRole="alert"
           /* Adı başlıktan — bkz. `ui/ConfirmDialog` içindeki not. */
-          accessibilityLabel={isContent ? t("reportsheet.content_title") : t("reportsheet.report_this_content")}
+          accessibilityLabel={t(TITLE[kind])}
           style={[{ width: "100%", maxWidth: DIALOG_MAX_WIDTH, maxHeight: Math.max(240, frame.height - kb - spacing.xl * 2), backgroundColor: colors.surface, borderRadius: radii.xl, overflow: "hidden" }, softShadow("#000000", 24)]}>
           <ScrollView automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ padding: spacing.xl, gap: spacing.sm }} bounces={false}>
           {state === "done" ? (
@@ -75,8 +80,8 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
             </View>
           ) : (
             <>
-              <Text variant="h2">{isContent ? t("reportsheet.content_title") : t("reportsheet.report_this_content")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{isContent ? t("reportsheet.content_lead") : t("reportsheet.if_ai_reply_felt_inappropriate")}</Text>
+              <Text variant="h2">{t(TITLE[kind])}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t(LEAD[kind])}</Text>
               <View accessibilityRole="radiogroup" style={{ gap: spacing.xs, marginTop: spacing.sm }}>
                 {reasonsFor(kind).map((r) => {
                   const active = reason === r.key;
