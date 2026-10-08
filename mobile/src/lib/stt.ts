@@ -133,28 +133,49 @@ export async function sttAvailable(locale = currentTargetLocale()): Promise<bool
 }
 
 /**
+ * OTURUM KİMLİĞİ. Olaylar (Results/Partial/End/Error) oturum taşımıyor, yani
+ * açıkta kalan eski bir `listenOnce` yenisinin olaylarını da duyuyordu: yürüyüşte
+ * "Atla"dan sonra eski dinleme abone kalıyor, sonraki kelimenin sonucunu kapıyor
+ * ve kendi zamanlayıcısıyla `destroy()` çağırıp YENİ oturumu öldürüyordu (kelime
+ * "duyamadım"). Artık yeni oturum eskisini hemen kapatır (null, destroy yok) ve
+ * yalnız en yeni oturum native tanıyıcıyı yok edebilir.
+ */
+let sttSession = 0;
+let activeListen: { id: number; supersede: () => void; stopped: () => void } | null = null;
+/** `stopListening`ten sonra sonuç gelmezse oturumun en geç kapandığı süre (en iyi partial döner). */
+const STOP_GRACE_MS = 1500;
+
+/**
  * Kelime başına TEK oturum. Final sonuç gelince döner; final gelmezse en iyi
  * ara-sonuç (partial); hata/sessizlik/timeout olursa en iyi partial ya da null.
  * Bitişte modül yok edilir (destroy) — sonraki kelime taze bir başlatma alır.
+ * Yeni bir `listenOnce` açılırsa süren oturum hemen `null` döner.
  */
 export function listenOnce(locale = currentTargetLocale(), windowMs = 9000): Promise<string[] | null> {
   return new Promise((resolve) => {
     if (!Native || !emitter) { resolve(null); return; }
+    activeListen?.supersede();
+    const my = ++sttSession;
     let done = false;
     let best = "";
     let endTimer: ReturnType<typeof setTimeout> | null = null;
     let quietTimer: ReturnType<typeof setTimeout> | null = null;
+    let stopTimer: ReturnType<typeof setTimeout> | null = null;
 
     // TÜM adayları döndür — kısa kelimede doğru cevap çoğu zaman ilk aday değil
     // (ör. "er" için ["ja","ja im","er","eher"]); çağıran hepsini eşleştirir.
-    const finish = (vals: string[] | null) => {
+    const finish = (vals: string[] | null, superseded = false) => {
       if (done) return;
       done = true;
       clearTimeout(timer);
       if (endTimer) clearTimeout(endTimer);
       if (quietTimer) clearTimeout(quietTimer);
+      if (stopTimer) clearTimeout(stopTimer);
       subs.forEach((s) => s.remove());
-      try { Native.destroy(); } catch { /* yut */ }
+      if (activeListen?.id === my) activeListen = null;
+      // Yerini yeni oturuma bıraktı: tanıyıcı artık onun, dokunma (start eskisini zaten yok ediyor).
+      if (superseded) { resolve(null); return; }
+      if (my === sttSession) { try { Native.destroy(); } catch { /* yut */ } }
       resolve(vals && vals.length ? vals : best ? [best] : null);
     };
 
@@ -181,11 +202,18 @@ export function listenOnce(locale = currentTargetLocale(), windowMs = 9000): Pro
     ];
 
     const timer = setTimeout(() => finish(null), windowMs); // güvenlik üst sınırı
+    activeListen = {
+      id: my,
+      supersede: () => finish(null, true),
+      // Durdurulan oturum son sonucu (final/partial) bekler ama pencere sonuna kadar değil.
+      stopped: () => { if (!stopTimer) stopTimer = setTimeout(() => finish(null), STOP_GRACE_MS); },
+    };
     Native.start(locale).catch(() => finish(null));
   });
 }
 
 export function stopListening(): void {
+  activeListen?.stopped();
   try { Native?.stop(); } catch { /* yut */ }
 }
 

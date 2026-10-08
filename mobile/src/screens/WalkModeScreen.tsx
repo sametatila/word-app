@@ -207,6 +207,13 @@ export function WalkModeScreen() {
   const manualResolve = useRef<((v: boolean | "skip" | "resume") => void) | null>(null);
   /** Kelime, premium kapısı kapalı olduğu için ekranın açılmasını bekliyor (bkz. judgeSpeak). */
   const gateWaitRef = useRef(false);
+  /**
+   * Devamın başlayacağı tur: sonucu YAZILAN tur geçilir. `idx` turun başında
+   * ilerliyor; hüküm ile sonraki tur arasındaki esde duraklatınca (ya da Bildir)
+   * sonuç SRS'e ve sayaca yazılmış ama `idx` aynı kalıyordu: devam aynı kelimeyi
+   * yeniden soruyor, sayaç ve XP çift sayıyordu.
+   */
+  const resumeIdx = useRef(0);
   const pulse = useRef(new Animated.Value(0)).current;
 
   // İlerleme — walk STATELESS: cevaplar SRS'e yazılır (progress YOK). Sorulanları skip için biriktir.
@@ -661,9 +668,11 @@ export function WalkModeScreen() {
     const alive = () => my === runToken.current && mounted.current;
     let lastIntroId = -1; // az önce intro'da öğretilen kelime → sonraki speak'te "Şimdi sen söyle"
     let corrected = false;
+    resumeIdx.current = startIdx;
     for (let i = startIdx; i < rs.length; i++) {
       if (!alive()) return;
       setIdx(i);
+      resumeIdx.current = i;
       // Kilit ekranı oynatıcısı: telefon cepteyken turun nerede olduğu ve kaç doğru.
       setWalkNowPlaying(
         tx("walk.np_title", { n: i + 1, total: rs.length }),
@@ -681,6 +690,7 @@ export function WalkModeScreen() {
         if (status === "stopped" || !alive()) return;
         corrected = status === "corrected";
       }
+      resumeIdx.current = i + 1; // sonuç yazıldı: duraklatılırsa devam sonraki turdan
       await gap(corrected ? CORRECTION_GAP_MS : ROUND_GAP_MS); // turlar arası nefes; düzeltmeden sonra uzun
       corrected = false;
     }
@@ -793,8 +803,14 @@ export function WalkModeScreen() {
     tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current);
     taughtRef.current = 0; endedAt.current = null;
     unheardWin.current = [];
+    resumeIdx.current = 0;
     sfx("start"); // yürüyüşün açılışı — web `walk-player` aynı yerde çalıyor
     if (greet) {
+      /* KARŞILAMANIN DA JETONU VAR: karşılama sırasında Duraklat, kilit ekranından
+         Durdur ya da çıkış karşılamayı kesmiyordu; kalan cümleler okunuyor ve
+         ardından tur kendiliğinden başlıyordu. */
+      const my = ++runToken.current;
+      const alive = () => my === runToken.current && mounted.current;
       // Kısa TTS karşılama — doğrudan ilk kelimeye dalmadan.
       setVerdict(null); setHeard(""); setGreeting(true); setPhase("speaking");
       await sayNative(tx("walk.greeting", { lang: targetLangName() }));
@@ -802,11 +818,11 @@ export function WalkModeScreen() {
          (`parseSkip`) ama varlığı hiçbir yerde YAZMIYOR ve SÖYLENMİYORDU:
          bilmediği kelimede tıkanan kullanıcı ya susuyor (duyulmadı sayılıyor)
          ya da yanlış bir şey söylüyordu. Web girişte bir kez okuyor. */
-      await sayNative(tx("walk.skip_hint_before"));
-      await sayTarget(skipWord());
-      await sayNative(tx("walk.skip_hint_after"));
+      if (alive()) await sayNative(tx("walk.skip_hint_before"));
+      if (alive()) await sayTarget(skipWord());
+      if (alive()) await sayNative(tx("walk.skip_hint_after"));
       setGreeting(false);
-      if (!mounted.current) return;
+      if (!alive()) return;
     }
     void runLoop(rs, 0);
   }
@@ -926,9 +942,10 @@ export function WalkModeScreen() {
     stopListening();
     nativeListeningRef.current = false;
     manualResolve.current = null;
+    gateWaitRef.current = false; // kapı beklemesi de bitti: sonra ekran açılınca başka dinleme "atla" sayılmasın
     cancelAzureListen();
     stopSpeaking(); // köprü + native oynatıcı + çok parçalı zincir
-    setVerdict(null); setHeard("");
+    setVerdict(null); setHeard(""); setGreeting(false);
     setPhase("paused");
     void sayNative(tx("walk.paused_spoken"));
   }
@@ -942,7 +959,7 @@ export function WalkModeScreen() {
       // Duyuru okunurken kullanıcı yine duraklattıysa ya da çıktıysa tur açılmıyor.
       if (!mounted.current || runToken.current !== my) return;
       unheardWin.current = [];
-      void runLoop(rounds, idx);
+      void runLoop(rounds, resumeIdx.current);
     })();
   }
 
@@ -954,7 +971,8 @@ export function WalkModeScreen() {
   stopFromNotification.current = () => {
     endWalk(6); runToken.current++;
     stopListening(); cancelAzureListen(); stopSpeaking();
-    nativeListeningRef.current = false; manualResolve.current = null;
+    nativeListeningRef.current = false; manualResolve.current = null; gateWaitRef.current = false;
+    setGreeting(false);
     flush(true); finishDone();
   };
   useEffect(() => onWalkStop(() => stopFromNotification.current()), []);
@@ -1168,7 +1186,7 @@ export function WalkModeScreen() {
         inPlayer(
           <StateBody title={tx("walkmode.i_paused_round")} body={tx("walkmode.i_haven_t_heard_you_for_while")} />,
           <FlowActions
-            primary={{ label: tx("common.continue"), onPress: () => { unheardWin.current = []; void runLoop(rounds, idx); } }}
+            primary={{ label: tx("common.continue"), onPress: () => { unheardWin.current = []; void runLoop(rounds, resumeIdx.current); } }}
             tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
           />,
         )
