@@ -21,6 +21,8 @@ export const deWeb: Record<string, string> = {
   "invitew.lead": "Such dir eine Sprache aus und lass uns zusammen lernen.",
   "invitew.how": "Sobald du ein Konto erstellst, geht eine Freundschaftsanfrage an {name}. Wird sie angenommen, beginnt eure gemeinsame Serie: Sie wächst an jedem Tag, an dem ihr beide übt.",
   "invitew.cta": "Konto erstellen",
+  "invitew.accept": "Einladung annehmen",
+  "invitew.how_signed": "Wenn du annimmst, geht eine Freundschaftsanfrage an {name}. Sobald sie angenommen wird, beginnt eure gemeinsame Serie.",
   "invitew.browse": "Lernomi ansehen",
   "invitew.bad_title": "Dieser Einladungslink funktioniert nicht",
   "invitew.bad_lead": "Der Link ist unvollständig oder nicht mehr gültig. Bitte die Person, die dich eingeladen hat, um einen neuen.",

@@ -1,5 +1,8 @@
 import "server-only";
 import { attachReferral, userIdByReferralCode, type AttachResult } from "@/lib/premium/referral";
+import { and, eq } from "drizzle-orm";
+import { db } from "@/lib/db";
+import { friendships } from "@/lib/db/schema";
 import { sendRequest } from "@/lib/social/friends";
 
 /**
@@ -40,6 +43,18 @@ export async function applyReferralLink(inviteeUserId: string, code: string): Pr
 
   const inviter = await userIdByReferralCode(code);
   if (!inviter) return "linked";
+
+  /* DAVET EDENİN BEKLEYEN İSTEĞİ KENDİLİĞİNDEN KABUL EDİLMİYOR (güvenlik
+     denetimi 2026-10-07). `sendRequest` karşı taraftan gelen bekleyen isteği
+     kabul ediyor; bağlantı başka bir uygulamadan (dışa açık MainActivity) ya da
+     siteden zorlanınca saldırgan önce istek atıp kurbanı onaysız arkadaşı
+     yapabiliyordu. İstek davet edilenin kutusunda onayını bekliyor. */
+  const [pending] = await db
+    .select({ id: friendships.id })
+    .from(friendships)
+    .where(and(eq(friendships.requesterId, inviter), eq(friendships.addresseeId, inviteeUserId), eq(friendships.status, "pending")))
+    .limit(1);
+  if (pending) return "ok";
 
   try {
     await sendRequest(inviteeUserId, inviter);

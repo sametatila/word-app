@@ -18,10 +18,17 @@ export function InviteLanding({
   code,
   inviter,
   t,
+  accept = false,
 }: {
   code: string;
   inviter: { name: string | null; avatar: string | null; userId: string } | null;
   t: { title: string; lead: string; how: string; cta: string; browse: string; pitch: string };
+  /**
+   * Giriş yapmış ziyaretçi BAŞKA BİR SİTEDEN geldi: bağ sayfa açılınca kurulmuyor,
+   * düğme aynı adrese kendi sitemizden gidiyor (bkz. `page.tsx`). Düz `<a>`:
+   * `Link` görünür bağlantıyı önceden yükleyip bağı tıklamasız kurardı.
+   */
+  accept?: boolean;
 }) {
   /* Kayıttan sonra buraya DÖNÜYOR: bağ ancak hesap varken kurulabiliyor. */
   const next = code ? `/login?next=${encodeURIComponent(`/r/${code}`)}` : "/login";
@@ -43,12 +50,18 @@ export function InviteLanding({
         </p>
       )}
 
-      <Link
-        href={next}
-        className="btn btn-primary mt-7 w-full px-5 py-4"
-      >
-        {inviter ? t.cta : t.browse}
-      </Link>
+      {accept && inviter ? (
+        <a href={`/r/${code}`} className="btn btn-primary mt-7 w-full px-5 py-4">
+          {t.cta}
+        </a>
+      ) : (
+        <Link
+          href={next}
+          className="btn btn-primary mt-7 w-full px-5 py-4"
+        >
+          {inviter ? t.cta : t.browse}
+        </Link>
+      )}
 
       <p className="muted mt-7 max-w-[38ch] text-caption">{t.pitch}</p>
     </main>

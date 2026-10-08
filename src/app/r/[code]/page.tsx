@@ -89,8 +89,20 @@ export default async function InvitePage({ params }: { params: Promise<{ code: s
   }
   const code = normalizeReferral(ham);
   const userId = await getAccountUserId();
+  /*
+   * BAŞKA SİTEDEN ZORLANAN GEZİNME BAĞ KURMUYOR (güvenlik denetimi 2026-10-07).
+   * Oturum çerezi Lax: herhangi bir site giriş yapmış ziyaretçiyi buraya
+   * yönlendirip bağı (kalıcı, ilk gelen kazanır) ve arkadaşlık isteğini onun
+   * adına kurdurabiliyordu. Tarayıcının `Sec-Fetch-Site` başlığı yalnız kendi
+   * sitemizden (`same-origin`) ya da kullanıcının kendi açtığı adreste (`none`:
+   * adres çubuğu, yer imi, dış uygulama) bağı hemen kuruyor; öbür durumda davet
+   * sayfası "kabul et" düğmesiyle gösteriliyor. Başlığı göndermeyen eski
+   * tarayıcıda davranış eskisi gibi.
+   */
+  const site = (await headers()).get("sec-fetch-site");
+  const crossSite = site !== null && site !== "same-origin" && site !== "none";
 
-  if (userId) {
+  if (userId && !crossSite) {
     if (!code) redirect("/premium?ref=unknown");
     /* Davetin VARIŞI ölçülüyor — mobil `App.tsx` aynı olay adını yazıyor. */
     const today = new Date().toISOString().slice(0, 10);
@@ -113,16 +125,18 @@ export default async function InvitePage({ params }: { params: Promise<{ code: s
      (`social.unnamed`) — sıralamalarda ve profillerde de aynı metin. */
   const ad = inviter ? inviter.name || t("social.unnamed") : "";
   const catalogSeed = inviter ? await avatarCatalogSeed((await headers()).get("host")).catch(() => null) : null;
+  const accept = Boolean(userId);
   return (
     <AvatarCatalogProvider seed={catalogSeed}>
     <InviteLanding
       code={code}
       inviter={inviter}
+      accept={accept}
       t={{
         title: inviter ? t("invitew.title", { name: ad }) : t("invitew.bad_title"),
         lead: inviter ? t("invitew.lead") : t("invitew.bad_lead"),
-        how: t("invitew.how", { name: ad }),
-        cta: t("invitew.cta"),
+        how: t(accept ? "invitew.how_signed" : "invitew.how", { name: ad }),
+        cta: t(accept ? "invitew.accept" : "invitew.cta"),
         browse: t("invitew.browse"),
         pitch: t("invitew.pitch"),
       }}

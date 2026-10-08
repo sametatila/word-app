@@ -21,6 +21,8 @@ export const enWeb: Record<string, string> = {
   "invitew.lead": "Pick a language and let's study together.",
   "invitew.how": "When you create an account, a friend request goes to {name}. Once they accept, your shared streak begins: it grows on every day you both practice.",
   "invitew.cta": "Create account",
+  "invitew.accept": "Accept invite",
+  "invitew.how_signed": "If you accept, a friend request goes to {name}. Once they accept, your shared streak starts.",
   "invitew.browse": "Take a look at Lernomi",
   "invitew.bad_title": "This invite link doesn't work",
   "invitew.bad_lead": "The link is incomplete or no longer valid. Ask whoever invited you for a new one.",

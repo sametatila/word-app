@@ -21,6 +21,8 @@ export const trWeb: Record<string, string> = {
   "invitew.lead": "İstediğin dili seç, birlikte çalışalım.",
   "invitew.how": "Hesap oluşturduğunda {name} kişisine arkadaşlık isteği gidecek. Kabul ederse ortak seriniz başlar: aynı gün ikiniz de çalıştıkça seri büyür.",
   "invitew.cta": "Hesap oluştur",
+  "invitew.accept": "Daveti kabul et",
+  "invitew.how_signed": "Kabul edersen {name} kişisine arkadaşlık isteği gider. O da kabul ederse ortak seriniz başlar.",
   "invitew.browse": "Lernomi'ye göz at",
   "invitew.bad_title": "Bu davet bağlantısı çalışmıyor",
   "invitew.bad_lead": "Bağlantı eksik ya da artık geçerli değil. Seni davet eden kişiden yenisini isteyebilirsin.",
