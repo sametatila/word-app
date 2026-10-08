@@ -10,6 +10,7 @@ import { xpBetween } from "./stats";
 import { LEAGUE_TIERS, type LeagueOutcome } from "./types";
 import { ensureUsernames } from "./usernames";
 import { blockedSet } from "./blocks";
+import { friendIds } from "./stats";
 
 /**
  * Haftalık ligler.
@@ -228,12 +229,18 @@ export async function leagueBoard(userId: string, today: string): Promise<League
     kendisine açık.
   */
   const priv = new Set(prof.filter((p) => p.visibility === "private").map((p) => p.userId));
+  /* "Yalnız arkadaşlar" profilinin SERİSİ arkadaş olmayana gizli (istatistik; profil
+     ve arama ile aynı kural). Adı ve avatarı ligde kalıyor: lig herkese açık bir
+     yarış, gizlenmek isteyen profili gizli yapar (güvenlik denetimi 2026-10-07). */
+  const friendsOnly = prof.filter((p) => p.visibility === "friends" && p.userId !== userId);
+  const myFriends = friendsOnly.length ? new Set(await friendIds(userId)) : new Set<string>();
+  const hideStreak = new Set(friendsOnly.filter((p) => !myFriends.has(p.userId)).map((p) => p.userId));
   const rows = prof
     .map((p) => ({ userId: p.userId, name: p.name, username: p.username, avatar: p.avatar, level: p.level, xp: xp.get(p.userId) ?? 0, streak: p.streak, isMe: p.userId === userId }))
     .sort((a, b) => b.xp - a.xp || b.streak - a.streak || (a.name ?? "").localeCompare(b.name ?? "", "tr"))
     .map((r, i) => (blocked.has(r.userId) || (priv.has(r.userId) && !r.isMe)
       ? { rank: i + 1, ...r, name: null, username: null, avatar: null, streak: priv.has(r.userId) ? 0 : r.streak, hidden: true }
-      : { rank: i + 1, ...r }));
+      : { rank: i + 1, ...r, streak: hideStreak.has(r.userId) ? 0 : r.streak }));
   const { promote, demote } = moveCounts(rows.length, me.tier);
   return { weekStart: ws, tier: me.tier, daysLeft: daysLeftInWeek(today), rows, promote, demote, result };
 }

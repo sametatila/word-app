@@ -321,6 +321,11 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
     }
   }
   const eligible = (visibility: string, show: boolean) => show && visibility !== "private";
+  /* Öneriler hep arkadaş OLMAYAN kişiler: "yalnız arkadaşlar" profilinin serisi ve
+     ortak arkadaş sayısı istatistik sayılıyor, ona gösterilmiyor (profil sayfası
+     ve arama ile aynı kural, D3; güvenlik denetimi 2026-10-07). Sıralama ham
+     değerle yapılıyor, yalnız gönderilen değer gizleniyor. */
+  const statsOpen = (visibility: string) => visibility === "public";
 
   const out: Suggestion[] = [];
   const seen = new Set<string>();
@@ -333,16 +338,17 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
       .where(inArray(profiles.userId, ids));
     for (const r of rows) {
       if (!eligible(r.visibility, r.show)) continue;
-      out.push({ userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, mutual: mutual.get(r.userId) ?? 0, reason: "mutual", currentStreak: r.currentStreak });
+      const open = statsOpen(r.visibility);
+      out.push({ userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, mutual: open ? (mutual.get(r.userId) ?? 0) : 0, reason: "mutual", currentStreak: open ? r.currentStreak : 0 });
       seen.add(r.userId);
     }
-    out.sort((a, b) => b.mutual - a.mutual || b.currentStreak - a.currentStreak);
+    out.sort((a, b) => (mutual.get(b.userId) ?? 0) - (mutual.get(a.userId) ?? 0) || b.currentStreak - a.currentStreak);
   }
   if (out.length < limit) {
     const level = meProfile[0]?.level ?? "A1";
     const excludeList = [...excluded, ...seen];
     const rows = await db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak, visibility: profiles.visibility })
       .from(profiles)
       .where(
         and(
@@ -364,7 +370,7 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
       for (const r of rows) if (!r.username) r.username = map.get(r.userId) ?? null;
     }
     for (const r of rows) {
-      out.push({ userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, mutual: 0, reason: r.level === level ? "level" : "active", currentStreak: r.currentStreak });
+      out.push({ userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, mutual: 0, reason: r.level === level ? "level" : "active", currentStreak: statsOpen(r.visibility) ? r.currentStreak : 0 });
     }
   }
   return out.slice(0, limit);
