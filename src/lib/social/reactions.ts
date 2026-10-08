@@ -131,5 +131,12 @@ function reactionUrl(type: string, p: Record<string, unknown>): string {
 
 export async function unreact(me: string, eventId: number): Promise<ReactionSummary> {
   await db.delete(eventReactions).where(and(eq(eventReactions.eventId, eventId), eq(eventReactions.fromUserId, me)));
-  return (await reactionSummaries([eventId], me)).get(eventId) ?? { counts: {}, total: 0, mine: null, names: [] };
+  const empty: ReactionSummary = { counts: {}, total: 0, mine: null, names: [] };
+  /* Özet (sayılar + tepki verenlerin adları) yalnız olayı görebilene: kendi olayı
+     ya da engelsiz arkadaşınki — react() ile aynı kapı. Eskiden herhangi bir
+     olay kimliği için ad listesi dönüyordu (güvenlik denetimi 2026-10-07). */
+  const [ev] = await db.select({ userId: activityEvents.userId }).from(activityEvents).where(eq(activityEvents.id, eventId)).limit(1);
+  if (!ev) return empty;
+  if (ev.userId !== me && ((await blockedEitherWay(me, ev.userId)) || !(await friendIds(me)).includes(ev.userId))) return empty;
+  return (await reactionSummaries([eventId], me)).get(eventId) ?? empty;
 }
