@@ -135,7 +135,8 @@ gezebilmeli; Samet 2026-10-08): ölçümden düşüyor, bir hafta sonra siliniyo
   5xx, yapay zekâ) kasten süzülmüyor: robotta görülen çökme gerçek çökme.
 - **Temizlik OTOMATİK (2026-10-08):** günlük cron (`api/cron/assess`) işaretli hesabı siliyor, ama
   yalnız 7 gündür sessizse (oturum ve uygulama kaydı yok), açıldığı günden sonra hiç öğrenme günü
-  yoksa ve mağaza satın alması yoksa (`src/lib/account/test-lab-cleanup.ts`; kayıt
-  `account_deletions` `testlab`). Gerçek kullanıcı yanlış işaretlense de uygulamayı ikinci gün
+  yoksa, mağaza satın alması ve Premium'u yoksa (`src/lib/account/test-lab-cleanup.ts`; kayıt
+  `account_deletions` `testlab`). `@lernomi.app` ve `CAPTCHA_EXEMPT_EMAILS` hesapları HİÇ silinmez:
+  Play inceleme ekibi de Google ağından giriyor, `google-review@` işaretlenebilir. Gerçek kullanıcı yanlış işaretlense de uygulamayı ikinci gün
   kullandığı an silinmekten çıkar. Panel › Kullanıcılar › süzgeç **Test Lab** (satırda rozet, ayrıntıda
   "Uygulama sürümü" tablosunda `test_lab`) beklerken görmek için.
