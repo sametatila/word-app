@@ -49,6 +49,13 @@ export async function GET(req: Request) {
   if (!c) return new Response("bad request", { status: 400 });
   const [bg, ...layers] = (u.searchParams.get("l") ?? "").split(",");
   if (layers.length > 12 || (bg && !c.ok.has(bg)) || layers.some((f) => !c.ok.has(f)) || layers[0] !== c.cat.taban) return new Response("bad request", { status: 400 });
+  /* Önbellek anahtarı adresin tamamı (nginx): tekrarlı katman ya da fazladan sorgu
+     parametresiyle girişsiz biri sınırsız farklı adres üretip her birinde tam tuval
+     çizdirebiliyordu (güvenlik denetimi 2026-10-07). İstemci (`avatarImageUrl`)
+     ikisini de üretmiyor. */
+  if (new Set(layers).size !== layers.length || [...u.searchParams.keys()].some((k) => k !== "v" && k !== "s" && k !== "l")) {
+    return new Response("bad request", { status: 400 });
+  }
 
   const { w, h } = catalogSize(c.cat);
   const [x, y, side] = circleBox(c.cat);
