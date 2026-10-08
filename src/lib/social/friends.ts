@@ -187,13 +187,19 @@ export async function respondRequest(me: string, friendshipId: number, action: "
   await track(me, "friend_accept", serverToday());
 }
 
-/** Arkadaşlıktan çıkar ya da bekleyen isteği iptal et/reddet — sessiz. */
+/**
+ * Arkadaşlıktan çıkar ya da bekleyen isteği iptal et/reddet — sessiz.
+ *
+ * İsteyenin REDDEDİLMİŞ satırı silinmiyor: 7 günlük bekleme (DECLINE_COOLDOWN_DAYS)
+ * yalnız o satırda yaşıyor; silinseydi reddedilen kişi DELETE + POST ile aynı
+ * gün yeniden istek ve bildirim gönderebilirdi (güvenlik denetimi 2026-10-07).
+ */
 export async function removeFriend(me: string, other: string): Promise<void> {
   await db
     .delete(friendships)
     .where(
       or(
-        and(eq(friendships.requesterId, me), eq(friendships.addresseeId, other)),
+        and(eq(friendships.requesterId, me), eq(friendships.addresseeId, other), ne(friendships.status, "declined")),
         and(eq(friendships.requesterId, other), eq(friendships.addresseeId, me)),
       ),
     );
