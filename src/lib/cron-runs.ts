@@ -27,14 +27,31 @@ const KEEP_DAYS = 30;
 
 export type CronName = "reminders" | "assess" | "summary" | "streak-alert" | "weekly-reminder" | "alerts" | "lifetime";
 
+/**
+ * YETKİSİZ ÇAĞRI SEYREKLEŞTİRİLİYOR (güvenlik denetimi 2026-10-07). Uçlar
+ * internetten erişilebilir; sırsız her istek bir satır yazıp ardından
+ * indekssiz (ran_at) bir silme koşturuyordu: kimliksiz biri tabloyu ve
+ * veritabanı işini istediği kadar büyütebiliyordu. `denied` artık örnek
+ * başına iş başına 10 dakikada en çok bir satır (panel "reddedildi" görmeye
+ * devam ediyor, sayısı örneklem) ve süpürme yalnız gerçek koşuda.
+ */
+const DENIED_EVERY_MS = 10 * 60_000;
+const deniedAt = new Map<CronName, number>();
+
 export async function recordCronRun(
   name: CronName,
   ok: boolean,
   ms: number,
   detail?: string,
 ): Promise<void> {
+  if (detail === "denied") {
+    const now = Date.now();
+    if (now - (deniedAt.get(name) ?? 0) < DENIED_EVERY_MS) return;
+    deniedAt.set(name, now);
+  }
   try {
     await db.insert(cronRuns).values({ name, ok, ms: Math.max(0, Math.round(ms)), detail: detail?.slice(0, 300) ?? null });
+    if (detail === "denied") return;
     /* Kendi kendini süpürüyor: beş iş günde birkaç satır bırakıyor, yani
        tablo küçük kalıyor ama sınırsız da büyümemeli. */
     await db.delete(cronRuns).where(lt(cronRuns.ranAt, new Date(Date.now() - KEEP_DAYS * 86_400_000)));
