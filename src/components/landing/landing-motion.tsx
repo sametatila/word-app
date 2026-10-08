@@ -32,6 +32,8 @@ export function LandingMotion({
     const base = svg?.querySelector<SVGPathElement>(`.${classes.base}`);
     const walk = svg?.querySelector<SVGPathElement>(`.${classes.walk}`);
     if (!svg || !base || !walk) return;
+    // SVG yol ölçümü olmayan tarayıcı/bot (2026-10-08, hata 60ddc0ca): süs animasyonu sessizce atlanır.
+    if (typeof walk.getTotalLength !== "function" || typeof walk.getPointAtLength !== "function") return;
     const legs = [...scope.querySelectorAll<HTMLElement>("[data-leg]")];
     const reduce = matchMedia("(prefers-reduced-motion: reduce)");
     let total = 0;
