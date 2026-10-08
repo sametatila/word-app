@@ -54,9 +54,9 @@ export function parseVitalsRows(rows: Row[], rateMetric: string, weightedMetric:
   return { points, latest28d: last?.rate28d ?? null, latestDay: last?.day ?? null };
 }
 
-function post(url: string, headers: Record<string, string>, body: string): Promise<{ status: number; json: unknown }> {
+function post(url: string, headers: Record<string, string>, body: string | null): Promise<{ status: number; json: unknown }> {
   return new Promise((resolve, reject) => {
-    const req = https.request(url, { method: "POST", headers, family: 4, timeout: 15_000 }, (res) => {
+    const req = https.request(url, { method: body === null ? "GET" : "POST", headers, family: 4, timeout: 15_000 }, (res) => {
       const chunks: Buffer[] = [];
       res.on("data", (c: Buffer) => chunks.push(c));
       res.on("end", () => {
@@ -71,7 +71,7 @@ function post(url: string, headers: Record<string, string>, body: string): Promi
     });
     req.on("timeout", () => req.destroy(new Error("timeout")));
     req.on("error", reject);
-    req.write(body);
+    if (body !== null) req.write(body);
     req.end();
   });
 }
@@ -101,22 +101,29 @@ export async function androidVitals(fresh = false): Promise<AndroidVitals> {
     const access = (tok.json as { access_token?: string } | null)?.access_token;
     if (!access) throw new Error(`Google OAuth HTTP ${tok.status}`);
 
-    // Veri 1-2 gün geriden geliyor; 30 günlük pencere, bitiş iki gün önce. Saat dilimi API'nin istediği.
+    // 30 günlük pencere; bitiş, metrik kümesinin bildirdiği en son günlük veri günü. Veri 1-3 gün geriden geliyor
+    // ve gecikme değişiyor: sabit "iki gün önce" bitişi, veri üç gün geride kalınca HTTP 400 veriyordu
+    // ("end_date should be at most the current freshness", 2026-10-08). Saat dilimi API'nin istediği.
     const d = (ms: number) => {
       const x = new Date(ms);
       return { year: x.getUTCFullYear(), month: x.getUTCMonth() + 1, day: x.getUTCDate(), timeZone: { id: "America/Los_Angeles" } };
     };
-    const spec = { aggregationPeriod: "DAILY", startTime: d(Date.now() - 32 * 86_400_000), endTime: d(Date.now() - 2 * 86_400_000) };
+    const base = `https://playdeveloperreporting.googleapis.com/v1beta1/apps/${PLAY_PACKAGE}`;
+    const auth = { authorization: `Bearer ${access}`, "content-type": "application/json" };
+    type Day = { year: number; month: number; day: number };
     const query = async (set: string, metrics: string[]) => {
-      // Sorgu yalnız okuyor (POST biçiminde): tekrarlamak güvenli.
-      const r = await withRetry(() =>
-        post(
-          `https://playdeveloperreporting.googleapis.com/v1beta1/apps/${PLAY_PACKAGE}/${set}:query`,
-          { authorization: `Bearer ${access}`, "content-type": "application/json" },
-          JSON.stringify({ timelineSpec: spec, metrics }),
-        ),
-      );
-      if (r.status !== 200) throw new Error(`Play Reporting ${set} HTTP ${r.status}`);
+      // İkisi de yalnız okuyor (sorgu POST biçiminde): tekrarlamak güvenli.
+      const m = await withRetry(() => post(`${base}/${set}`, auth, null));
+      if (m.status !== 200) throw new Error(`Play Reporting ${set} HTTP ${m.status}`);
+      const fresh = (m.json as { freshnessInfo?: { freshnesses?: { aggregationPeriod?: string; latestEndTime?: Day }[] } } | null)
+        ?.freshnessInfo?.freshnesses?.find((f) => f.aggregationPeriod === "DAILY")?.latestEndTime;
+      const endMs = fresh ? Date.UTC(fresh.year, fresh.month - 1, fresh.day) : Date.now() - 3 * 86_400_000;
+      const spec = { aggregationPeriod: "DAILY", startTime: d(endMs - 30 * 86_400_000), endTime: d(endMs) };
+      const r = await withRetry(() => post(`${base}/${set}:query`, auth, JSON.stringify({ timelineSpec: spec, metrics })));
+      if (r.status !== 200) {
+        const msg = (r.json as { error?: { message?: string } } | null)?.error?.message;
+        throw new Error(`Play Reporting ${set} HTTP ${r.status}${msg ? `: ${msg.slice(0, 160)}` : ""}`);
+      }
       return ((r.json as { rows?: Row[] } | null)?.rows ?? []) as Row[];
     };
     const [crashRows, anrRows] = await Promise.all([
