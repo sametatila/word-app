@@ -1,5 +1,6 @@
 import "server-only";
 import { sql, type SQL } from "drizzle-orm";
+import { ANSWERS_DAILY_XP_CAP } from "@/lib/xp";
 import { db } from "@/lib/db";
 import { shiftDay } from "@/lib/award";
 import { purgeUserData } from "@/lib/account/purge";
@@ -139,11 +140,14 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
     },
     { table: "reviews", statements: [sql`update reviews set user_id = ${T} where user_id = ${G}`] },
     {
-      /* Aynı günün istatistikleri TOPLANIYOR: iki kimlikte de o gün çalışıldı. */
+      /* Aynı günün istatistikleri TOPLANIYOR: iki kimlikte de o gün çalışıldı.
+         XP günlük tavanla sınırlı (ANSWERS_DAILY_XP_CAP): sınırsız toplam, birden çok
+         misafiri aynı hesaba birleştirerek lige tavanın katlarını yazmak demekti
+         (güvenlik denetimi 2026-10-07). */
       table: "daily_stats",
       statements: [
         sql`update daily_stats t set reviews = t.reviews + g.reviews, correct = t.correct + g.correct,
-              new_words = t.new_words + g.new_words, xp = t.xp + g.xp, seconds = t.seconds + g.seconds
+              new_words = t.new_words + g.new_words, xp = least(t.xp + g.xp, ${ANSWERS_DAILY_XP_CAP}), seconds = t.seconds + g.seconds
             from daily_stats g where t.user_id = ${T} and g.user_id = ${G} and g.day = t.day`,
         sql`delete from daily_stats g using daily_stats t where g.user_id = ${G} and t.user_id = ${T} and t.day = g.day`,
         sql`update daily_stats set user_id = ${T} where user_id = ${G}`,
