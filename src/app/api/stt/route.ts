@@ -56,6 +56,19 @@ export async function POST(req: Request) {
   const consent = await aiConsentGate(userId, "ai_voice");
   if (consent) return consent;
 
+  /*
+    GÖVDE BELLEĞE ALINMADAN önce boyut (güvenlik denetimi 2026-10-07):
+    `formData()` bütün gövdeyi okuyor, MAX_BYTES ise ancak sonra bakılıyordu;
+    nginx 15 MB'a izin verdiği için ücretsiz bir hesap her istekte o kadarını
+    belleğe yazdırabiliyordu. Biçim alanları ve sınırlar için küçük bir pay.
+    Content-Length yoksa (nginx gövdeyi tamponlayıp başlığı koyuyor) aşağıdaki
+    kontrol yine geçerli.
+  */
+  const declared = Number(req.headers.get("content-length") ?? "");
+  if (Number.isFinite(declared) && declared > MAX_BYTES + 16_384) {
+    return NextResponse.json({ error: "too_large" }, { status: 413 });
+  }
+
   let file: File | null = null;
   let language = "de";
   /** Beklenen cevap — yalnızca kayda geçiyor, karara etki etmiyor. */
