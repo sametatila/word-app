@@ -2343,12 +2343,18 @@ export async function submitAnswers(
     repaired: streakRepaired,
   } = nextStreak(profile, today);
 
+  /* `lastActiveDay` yalnızca İLERİ gider (`award.ts` awardActivity ile aynı kural).
+     Gün istemciden geliyor ve dün de kabul ediliyor: sırayla dün/bugün göndermek
+     kaydı geri alıp her çiftte seriyi bir artırıyordu (güvenlik denetimi
+     2026-10-07; seri ücretsiz katmanın kilit açma ölçüsü). */
+  const lastActiveDay = profile.lastActiveDay && today < profile.lastActiveDay ? profile.lastActiveDay : today;
+
   await db
     .update(profiles)
     .set({
       currentStreak,
       longestStreak,
-      lastActiveDay: today,
+      lastActiveDay,
       totalXp: profile.totalXp + xpGained,
       ...(streakRepaired ? { streakRepairAt: today } : {}),
     })
