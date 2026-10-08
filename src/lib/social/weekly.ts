@@ -2,7 +2,7 @@ import { and, desc, gte, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats } from "@/lib/db/schema";
 import { emitActivity } from "./activity";
-import { shiftDay, weekStart } from "./dates";
+import { notAhead, shiftDay, weekStart } from "./dates";
 import { closeLeagueWeek } from "./leagues";
 import { finalizeExpiredQuests } from "./quests";
 import { claimOnce, releaseClaim } from "./ratelimit";
@@ -15,7 +15,8 @@ import { notGuest } from "@/lib/auth/guest-user";
  * kişiye verir. Yapılan: geçen haftanın liglerini kapatma (sıra, terfi,
  * düşme), ilk üçüne akış olayı, süresi dolan ortak görevleri kapatma.
  */
-export async function closeWeekIfNeeded(today: string): Promise<void> {
+export async function closeWeekIfNeeded(day: string): Promise<void> {
+  const today = notAhead(day);
   const thisWeek = weekStart(today);
   const lastWeek = shiftDay(thisWeek, -7);
   const mine = await claimOnce(`weekly_close:${lastWeek}`, 60 * 86_400);

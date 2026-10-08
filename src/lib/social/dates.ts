@@ -22,6 +22,18 @@ export function serverToday(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
+/**
+ * Haftayı KAPATAN işler için gün: istemcinin gününü sunucu gününün ilerisine
+ * geçirmez. `dayParam` saat dilimi payı için yarını da kabul ediyor; UTC pazar
+ * günü `day=pazartesi` canlı haftayı erken kapatıp bütün ortak görevleri
+ * başarısız sayıyordu (güvenlik denetimi 2026-10-07). Okuma için istemci günü
+ * kalıyor, kapanış için en çok bugün.
+ */
+export function notAhead(day: string): string {
+  const today = serverToday();
+  return day > today ? today : day;
+}
+
 export function daysBetween(a: string, b: string): number {
   return Math.round((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86_400_000);
 }

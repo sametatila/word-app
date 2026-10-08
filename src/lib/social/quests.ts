@@ -4,7 +4,7 @@ import { friendQuests } from "@/lib/db/schema";
 import { track } from "@/lib/events";
 import { emitActivity } from "./activity";
 import { blockedEitherWay } from "./blocks";
-import { daysLeftInWeek, serverToday, shiftDay, weekStart } from "./dates";
+import { daysLeftInWeek, notAhead, serverToday, shiftDay, weekStart } from "./dates";
 import { SocialError } from "./errors";
 import { notify } from "./notify";
 import { limited } from "./ratelimit";
@@ -38,8 +38,8 @@ function isWeekOver(questWeek: string, today: string): boolean {
 }
 
 /** Süresi dolmuş görevleri kapatır — cron yok, ilk okuyan yapar; idempotent. */
-export async function finalizeExpiredQuests(today: string): Promise<void> {
-  const ws = weekStart(today);
+export async function finalizeExpiredQuests(day: string): Promise<void> {
+  const ws = weekStart(notAhead(day));
   await db.update(friendQuests).set({ status: "failed" }).where(and(eq(friendQuests.status, "active"), lt(friendQuests.weekStart, ws)));
   await db.update(friendQuests).set({ status: "cancelled" }).where(and(eq(friendQuests.status, "invited"), lt(friendQuests.weekStart, ws)));
 }
