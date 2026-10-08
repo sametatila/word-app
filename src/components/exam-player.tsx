@@ -184,6 +184,12 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const [spkUnsupported, setSpkUnsupported] = useState(false);
   const [showMisses, setShowMisses] = useState(false);
   const capture = useRef<SpeechCapture | null>(null);
+  /* Kaydın 12 sn tavanı. Saklanmıyordu: cümle 1 elle durdurulup cümle 2'de
+     kayıt açılınca eski zamanlayıcı yeni kaydı yarıda kesiyor ve onu cümle
+     1'e göre puanlayıp `speakingScores[0]`ın üstüne yazıyordu. */
+  const recTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  /** Kelime bölümünde sonucu alınmış son madde: aynı tur iki kez `onDone` derse sayılmasın. */
+  const vocabDoneIdx = useRef(-1);
   const speakingScores = useRef<number[]>([]);
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<ExamResult | null>(null);
@@ -208,7 +214,16 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const startedAt = useRef(Date.now());
   const finished = useRef(false);
 
-  useEffect(() => () => stopSpeaking(), []);
+  useEffect(
+    () => () => {
+      stopSpeaking();
+      // Sayfadan çıkılınca açık kayıt da kapanıyor (mikrofon açık kalmasın).
+      if (recTimer.current) clearTimeout(recTimer.current);
+      void capture.current?.stop();
+      capture.current = null;
+    },
+    [],
+  );
 
   async function start() {
     setPhase("loading");
@@ -240,10 +255,13 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     setPicked(null);
     setTyped("");
     setChunks([]);
+    vocabDoneIdx.current = -1;
     setPhase("intro");
   }
 
   function nextSection() {
+    // Süre dolup sınav gönderildiyse geciken bir geçiş sonuç ekranını ezmesin.
+    if (finished.current) return;
     const list = present(paper!);
     const at = list.indexOf(section);
     if (at + 1 < list.length) openSection(list[at + 1]);
@@ -321,6 +339,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   /* ---------------------------------------------------------------- bölümler */
 
   function onVocabDone(round: Round, results: GameResult[]) {
+    /* `idx` bu turun çiziminden; çıkış animasyonunda eski tur hâlâ ekranda.
+       Aynı tur ikinci kez biterse doğru sayısı ikiye katlanıyordu. */
+    if (idx <= vocabDoneIdx.current) return;
+    vocabDoneIdx.current = idx;
     for (const r of results) {
       if (r.correct) score.current.vocab.correct++;
       else misses.current.push({ section: "vocab", prompt: wordPrompt(round, t, lang), answer: wordAnswer(round), target: roundTarget(round) });
@@ -661,7 +683,11 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           disabled={picked !== null}
           onClick={() => {
             setPicked(i);
-            setTimeout(() => onPick(i), 140);
+            /* 140 ms içinde süre dolup sınav gönderilirse geçiş yapılmıyor:
+               bir sonraki bölümün girişi sonuç ekranının üstüne açılıyordu. */
+            setTimeout(() => {
+              if (!finished.current) onPick(i);
+            }, 140);
           }}
           className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-picked" : ""}`}
         >
@@ -756,7 +782,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             {item.text}
           </div>
         ) : null}
-        {item.segments ? <DialogPlayer segments={item.segments} /> : null}
+        {/* Anahtar maddeye bağlı: madde değişince oynatıcı yeniden kuruluyor ve
+            söküm sesi kesiyor. Anahtarsız önceki diyalog sonraki dinleme
+            maddesinde çalmayı sürdürüp kendi repliklerini vurguluyordu. */}
+        {item.segments ? <DialogPlayer key={item.id} segments={item.segments} /> : null}
         <p className="mt-3 text-strong" lang={course}>
           {q.text}
         </p>
@@ -783,12 +812,19 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       }
       capture.current = cap;
       setSpk("rec");
-      setTimeout(() => void stopRec(), SPEAK_MAX_MS + 50);
+      if (recTimer.current) clearTimeout(recTimer.current);
+      // Tavan YALNIZ bu kaydı kapatır; arada başka kayıt açıldıysa dokunmaz.
+      recTimer.current = setTimeout(() => {
+        recTimer.current = null;
+        if (capture.current === cap) void stopRec();
+      }, SPEAK_MAX_MS + 50);
     };
     const stopRec = async () => {
       const cap = capture.current;
       if (!cap) return;
       capture.current = null;
+      if (recTimer.current) clearTimeout(recTimer.current);
+      recTimer.current = null;
       setSpk("scoring");
       const heard = await cap.stop();
       // Tanıyıcı oturum içinde öldüyse boş döküm puanlanmıyor: arıza, sessizlik değil.
@@ -1070,11 +1106,11 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
   */
   const [cast, setCast] = useState<SpeechSegment[]>([]);
   useEffect(() => {
-    /* Yeni diyalog geldiğinde VURGU da sıfırlanmalı. Bu bileşen maddeler
-       arasında yeniden kurulmuyor (anahtarı yok), ve `speakGerman`in bitiş
-       geri çağrısı okuma başka bir okumayla kesildiğinde hiç çağrılmıyor —
-       ikisi birleşince önceki maddenin repliği vurgulu kalıyor ve düğme
-       "Durdur" yazıyordu. */
+    /* Yeni diyalog geldiğinde VURGU da sıfırlanmalı. Çağıran artık maddeye
+       anahtar veriyor (madde değişince yeniden kuruluyor, söküm sesi kesiyor);
+       bu sıfırlama anahtarsız bir kullanım için yedek: `speakGerman`in bitiş
+       geri çağrısı okuma başka bir okumayla kesildiğinde hiç çağrılmıyor ve
+       önceki maddenin repliği vurgulu kalıp düğme "Durdur" yazıyordu. */
     setAt(null);
     const built = dialogueSegments(readLocal(COURSE_KEY) ?? "de", segments);
     setCast(built);

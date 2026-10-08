@@ -64,6 +64,28 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
     setAsr(Boolean(recognitionCtor()));
   }, []);
 
+  /* Sayfadan çıkılınca kayıt kapanıyor. Söküm yoktu: kayıt sürerken çıkan
+     kullanıcının tanıyıcısı `onend`de kendini sonsuza dek yeniden açıyor,
+     mikrofon açık kalıyordu. */
+  useEffect(
+    () => () => {
+      stopping.current = true;
+      try {
+        rec.current?.abort();
+      } catch {
+        /* zaten kapalı */
+      }
+      rec.current = null;
+      try {
+        recorder.current?.stop();
+      } catch {
+        /* kayıt yoktu */
+      }
+      recorder.current = null;
+    },
+    [],
+  );
+
   /*
    * HAZIRLIK GERİ SAYIMI KALKTI.
    *
@@ -96,6 +118,11 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
     // Ses kaydı: yedek katman (kendi kaydını dinle). Tanıyıcıdan bağımsız.
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // İzin beklenirken durduruldu ya da sayfadan çıkıldı: akış açık kalmasın.
+      if (stopping.current) {
+        stream.getTracks().forEach((t) => t.stop());
+        return;
+      }
       const mr = new MediaRecorder(stream);
       chunks.current = [];
       mr.ondataavailable = (e) => e.data.size && chunks.current.push(e.data);
@@ -114,6 +141,8 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       setAsr(false);
       return;
     }
+    // Beklerken durdurulduysa tanıyıcı açılmıyor (açılsa kendini yeniden açar).
+    if (stopping.current) return;
     const start = () => {
       const r = new Ctor();
       r.lang = exercise.course === "gsw-zh" ? "de-CH" : localeOf(lang);

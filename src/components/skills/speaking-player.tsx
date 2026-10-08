@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { SkillExercise, SpeakingTask } from "@/lib/skills/types";
 import type { PronounceScore } from "@/lib/pronounce";
 import { askPronounce } from "@/lib/pronounce-client";
@@ -53,7 +53,21 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
   const [reason, setReason] = useState<string | null>(null);
   const [passedCount, setPassedCount] = useState(0);
   const capture = useRef<SpeechCapture | null>(null);
+  /* Kaydın tavanı saklanıyor: saklanmayan zamanlayıcı "Bir daha oku"da ya da
+     sonraki cümlede açılan YENİ kaydı yarıda kesip eski cümleye göre
+     puanlıyordu. */
+  const recTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const scores = useRef<number[]>([]);
+
+  // Sayfadan çıkılınca açık kayıt kapanıyor (mikrofon açık kalmasın).
+  useEffect(
+    () => () => {
+      if (recTimer.current) clearTimeout(recTimer.current);
+      void capture.current?.stop();
+      capture.current = null;
+    },
+    [],
+  );
 
   const task = tasks[idx];
   const isLast = idx + 1 >= tasks.length;
@@ -71,13 +85,20 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
     }
     capture.current = cap;
     setPhase("rec");
-    setTimeout(() => void stopRec(), MAX_MS + 50);
+    if (recTimer.current) clearTimeout(recTimer.current);
+    // Tavan YALNIZ bu kaydı kapatır; arada başka kayıt açıldıysa dokunmaz.
+    recTimer.current = setTimeout(() => {
+      recTimer.current = null;
+      if (capture.current === cap) void stopRec();
+    }, MAX_MS + 50);
   }
 
   async function stopRec() {
     const cap = capture.current;
     if (!cap) return;
     capture.current = null;
+    if (recTimer.current) clearTimeout(recTimer.current);
+    recTimer.current = null;
     setPhase("scoring");
     const heard = await cap.stop();
     /* Tanıyıcı oturum içinde öldüyse (izin geri alındı, mikrofon başka

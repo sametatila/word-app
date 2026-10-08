@@ -261,6 +261,11 @@ export function MockExamPlayer({ paper, part }: { paper: PlayerPaper; part: Mock
   openNow.current = open;
   const scoresNow = useRef(openScores);
   scoresNow.current = openScores;
+  /* Görevden çıkılırken (süre doldu ya da "Sonraki görev") konuşma görevi
+     o ana kadar duyulanı söküm sırasında teslim ediyor (bkz. `SpeakingTask`
+     `run`). Son görevde bitiriş bu teslimi bekliyor, yoksa döküm bitirişten
+     sonra gelir ve görev puansız kalırdı. */
+  const openPending = useRef<Set<Promise<void>>>(new Set());
   const [plays, setPlays] = useState<Record<string, number>>({});
   /** Şu an çalan dinleme metni — iki kez basmayı ve iki hakkı birden yakmayı engelliyor. */
   const [playing, setPlaying] = useState<string | null>(null);
@@ -438,6 +443,11 @@ export function MockExamPlayer({ paper, part }: { paper: PlayerPaper; part: Mock
     void (async () => {
       setBusy(true);
       setFinishFail(null);
+      if (openPending.current.size) {
+        // Tavanlı: teslim takılırsa bitiriş sonsuza dek beklemesin.
+        await Promise.race([Promise.allSettled([...openPending.current]), new Promise((r) => setTimeout(r, 3000))]);
+        if (dead) return;
+      }
       /*
         PUAN YALNIZ SUNUCUDA (güvenlik denetimi 2026-10-03, Y2).
 
@@ -651,7 +661,15 @@ export function MockExamPlayer({ paper, part }: { paper: PlayerPaper; part: Mock
         attemptId={attempt?.id ?? null}
         onAnnounce={() => announce(`task:${task.id}`, task.prompt)}
         onAnswer={(id, v) => setAnswers((a) => ({ ...a, [id]: v }))}
-        onOpen={(id, v) => setOpen((o) => ({ ...o, [id]: v }))}
+        onOpen={(id, v) => {
+          // Ref de hemen: bitiriş, teslimden sonraki çizimi beklemeden okuyor.
+          openNow.current = { ...openNow.current, [id]: v };
+          setOpen((o) => ({ ...o, [id]: v }));
+        }}
+        onPending={(p) => {
+          openPending.current.add(p);
+          void p.finally(() => openPending.current.delete(p));
+        }}
         onOpenScore={(id, v) => setOpenScores((s) => ({ ...s, [id]: v }))}
         /*
           DİNLEME — üç şey aynı anda düzeldi.
@@ -700,7 +718,7 @@ export function MockExamPlayer({ paper, part }: { paper: PlayerPaper; part: Mock
 /* ── görev ────────────────────────────────────────────────────────────────── */
 
 function TaskView({
-  course, task, answers, open, openScores, plays, playing, attemptId, onAnnounce, onAnswer, onOpen, onOpenScore, onPlay,
+  course, task, answers, open, openScores, plays, playing, attemptId, onAnnounce, onAnswer, onOpen, onOpenScore, onPending, onPlay,
 }: {
   course: MockCourse;
   task: MockTask;
@@ -714,6 +732,7 @@ function TaskView({
   onAnswer: (id: string, v: string) => void;
   onOpen: (id: string, v: string) => void;
   onOpenScore: (id: string, v: OpenScore) => void;
+  onPending: (p: Promise<void>) => void;
   onPlay: (st: Extract<MockStimulus, { kind: "audio" }>) => void;
 }) {
   useEffect(() => { onAnnounce(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -750,7 +769,7 @@ function TaskView({
       {task.format === "writing" ? (
         <OpenTask course={course} task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
       ) : task.format === "speaking" ? (
-        <SpeakingTask course={course} task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
+        <SpeakingTask course={course} task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} onPending={onPending} />
       ) : null}
     </div>
   );
@@ -1002,7 +1021,7 @@ function OpenTask({
  * çalışmazsa aynı alana doğrudan yazılabiliyor. Ses hiçbir yerde saklanmıyor.
  */
 function SpeakingTask({
-  course, task, value, score, attemptId, onOpen, onOpenScore,
+  course, task, value, score, attemptId, onOpen, onOpenScore, onPending,
 }: {
   course: MockCourse;
   task: MockTask;
@@ -1011,6 +1030,8 @@ function SpeakingTask({
   attemptId: number | null;
   onOpen: (id: string, v: string) => void;
   onOpenScore: (id: string, v: OpenScore) => void;
+  /** Söküm sırasında süren teslim — bitiriş bunu bekliyor. */
+  onPending: (p: Promise<void>) => void;
 }) {
   const t = useT();
   const [step, setStep] = useState<"waiting" | "prep" | "speaking" | "done">("waiting");
@@ -1057,7 +1078,10 @@ function SpeakingTask({
       const finish = () => { if (!done) { done = true; resolve(); } };
       // Ses hiç çalmazsa görev asılı kalmasın: üst sınır konuşma uzunluğuna göre.
       const guard = setTimeout(finish, Math.min(30_000, 2500 + text.length * 90));
-      sayIn(course, text, () => { clearTimeout(guard); finish(); }, partnerVoice(course));
+      /* Görevden çıkılınca (söküm `endTurn`ü çağırıyor) beklemeden dönülüyor:
+         kesilen okuma `onEnd` vermiyor ve döküm 30 sn'lik tavanı beklerdi. */
+      endTurn.current = () => { clearTimeout(guard); endTurn.current = null; finish(); };
+      sayIn(course, text, () => { clearTimeout(guard); endTurn.current = null; finish(); }, partnerVoice(course));
     });
 
   /**
@@ -1108,7 +1132,7 @@ function SpeakingTask({
       if (got) said.push(got);
     } else {
       for (const [i, tn] of exchange.entries()) {
-        if (!alive.current) return;
+        if (!alive.current) break;
         /* Mikrofon ya da tanıyıcı yoksa kalan turlar için mikrofon açılmıyor:
            dinleyecek bir şey yok. Konuşma yazıyla sürüyor. */
         if (micOffRef.current) break;
@@ -1122,7 +1146,15 @@ function SpeakingTask({
         }
       }
     }
-    if (!alive.current) return;
+    /* GÖREV KONUŞURKEN KAPANDIYSA (görev süresi doldu ya da "Sonraki görev")
+       o ana kadar duyulan TESLİM EDİLİYOR. Görev saati görev açılınca
+       başlıyor; hazırlık + konuşma onu aşınca kendiliğinden geçiş bileşeni
+       söküyor ve döküm atılıyordu: söylenen cevap hiç kaydedilmiyordu.
+       Hiçbir şey duyulmadıysa var olan metne dokunulmuyor. */
+    if (!alive.current) {
+      if (said.length) onOpen(task.id, said.join("\n"));
+      return;
+    }
     onOpen(task.id, said.join("\n"));
     setStep("done");
   }
@@ -1130,7 +1162,7 @@ function SpeakingTask({
   // Hazırlık bitince kendiliğinden konuşmaya geçer — dijital oturumda fazlar
   // otomatik akar.
   useEffect(() => {
-    if (step === "prep" && count === 0) void run();
+    if (step === "prep" && count === 0) onPending(run());
   }, [step, count]); // eslint-disable-line react-hooks/exhaustive-deps
 
   /* Döküm kaç KELIME: kapı karakter saymiyor artik (bkz. düğmenin yanindaki
