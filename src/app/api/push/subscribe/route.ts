@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireAccount } from "@/lib/auth/guest";
-import { and, eq } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles, pushSubscriptions } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
@@ -9,6 +9,16 @@ import { pushEnabled, sendToUser } from "@/lib/push";
 import { langOf } from "@/lib/social/notify";
 import { translate } from "@/lib/i18n/dict";
 import { isPushEndpoint } from "@/lib/push-endpoint";
+import { consume } from "@/lib/social/ratelimit";
+
+/**
+ * Hesap başına en çok bu kadar tarayıcı aboneliği (en yeniler) ve saatte en çok
+ * bu kadar deneme bildirimi. İkisi de sınırsızdı: uydurma uç noktalarla açılan
+ * satırlar her PUT'ta ve her hatırlatma turunda eşzamanlı gönderime dönüşüyordu
+ * (güvenlik denetimi 2026-10-07).
+ */
+const MAX_SUBSCRIPTIONS_PER_USER = 10;
+const TEST_PUSH_PER_HOUR = 5;
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs"; // web-push Node API'lerine dayanıyor
@@ -77,6 +87,10 @@ export async function POST(req: Request) {
         target: pushSubscriptions.endpoint,
         set: { userId, p256dh, auth, failures: 0 },
       });
+    await db.execute(sql`
+      delete from push_subscriptions where user_id = ${userId} and id not in (
+        select id from push_subscriptions where user_id = ${userId} order by id desc limit ${MAX_SUBSCRIPTIONS_PER_USER}
+      )`);
 
     // Saat dilimi buradan geliyor: hatırlatmayı gönderen sunucu, kullanıcının
     // "akşam 8"inin ne zaman olduğunu ancak böyle bilebiliyor.
@@ -175,6 +189,10 @@ export async function PUT(req: Request) {
   const who = await requireAccount();
   if (who instanceof NextResponse) return who;
   const userId = who;
+
+  if (!(await consume(`push-test:${userId}`, TEST_PUSH_PER_HOUR, 3600)).ok) {
+    return NextResponse.json({ error: "rate_limited" }, { status: 429 });
+  }
 
   try {
     const [profile] = await db

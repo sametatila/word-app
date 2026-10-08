@@ -196,22 +196,37 @@ export async function sendFcmRows(rows: DeviceRow[], payload: FcmPayload): Promi
     }),
   );
 
-  if (dead.length) await db.delete(deviceTokens).where(inArray(deviceTokens.token, dead));
-  if (failed.length) {
+  /* Liste parça parça: tek `inArray` Postgres'in 65.535 parametre sınırını
+     aşarsa sorgu düşer ve ölü jetonlar hiç silinmezdi (güvenlik denetimi 2026-10-07). */
+  for (const part of chunks(dead)) await db.delete(deviceTokens).where(inArray(deviceTokens.token, part));
+  for (const part of chunks(failed)) {
     await db
       .update(deviceTokens)
       .set({ failures: sql`${deviceTokens.failures} + 1` })
-      .where(inArray(deviceTokens.token, failed));
+      .where(inArray(deviceTokens.token, part));
     // Geçici hata silmeyi hak etmiyor ama ısrar ederse jeton ölmüştür.
-    await db.delete(deviceTokens).where(and(inArray(deviceTokens.token, failed), sql`${deviceTokens.failures} >= ${MAX_FAILURES}`));
+    await db.delete(deviceTokens).where(and(inArray(deviceTokens.token, part), sql`${deviceTokens.failures} >= ${MAX_FAILURES}`));
   }
   // Sayaç YALNIZ başarılı jetonlarda sıfırlanıyor. Önce kullanıcının bütün
   // jetonları sıfırlanıyordu: iki cihazdan biri sürekli hata verse bile sayaç
   // her turda siliniyor, jeton eşiğe hiç ulaşmıyor ve ölü cihaz sonsuza dek
   // tabloda kalıyordu.
-  if (ok.length) await db.update(deviceTokens).set({ failures: 0 }).where(inArray(deviceTokens.token, ok));
+  for (const part of chunks(ok)) await db.update(deviceTokens).set({ failures: 0 }).where(inArray(deviceTokens.token, part));
   return ok.length;
 }
+
+function chunks<T>(list: T[], size = 1000): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < list.length; i += size) out.push(list.slice(i, i + size));
+  return out;
+}
+
+/**
+ * Hesap başına en çok bu kadar cihaz jetonu (en son görülenler). Sınır yoktu:
+ * bir hesap uydurma jetonlarla binlerce satır açıp her bildirim turunda o kadar
+ * eşzamanlı FCM isteği tetikleyebiliyordu (güvenlik denetimi 2026-10-07).
+ */
+const MAX_DEVICES_PER_USER = 10;
 
 /** Cihaz jetonunu kaydeder ya da tazeler. Jeton başka hesaptaysa el değiştirir. */
 export async function registerDevice(userId: string, token: string, platform: "ios" | "android"): Promise<void> {
@@ -222,6 +237,10 @@ export async function registerDevice(userId: string, token: string, platform: "i
       target: deviceTokens.token,
       set: { userId, platform, failures: 0, seenAt: new Date() },
     });
+  await db.execute(sql`
+    delete from device_tokens where user_id = ${userId} and token not in (
+      select token from device_tokens where user_id = ${userId} order by seen_at desc limit ${MAX_DEVICES_PER_USER}
+    )`);
 }
 
 /**
