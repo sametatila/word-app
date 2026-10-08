@@ -176,6 +176,12 @@ function SessionRound() {
   /** Süren istek — t("common.start") gerekirse bunu bekliyor. */
   const inflight = useRef<Promise<SessionPayload | null> | null>(null);
   const pending = useRef<Answer[]>([]);
+  /* Sonucu alınmış son turun sırası. Tur `onDone`u iki kez verebiliyor: son
+     turda `flush(true)` ağı beklerken "Devam" açık kalıyor, ara turlarda da
+     çıkış animasyonu boyunca eski tur ekranda. İkinci çağrı cevabı ikinci
+     kez kuyruğa koyuyor, yeni toplu kimlikle bir `/api/answers` daha gidiyor
+     ve `session_done` iki kez sayılıyordu. Yeni kuyrukta -1'e iner. */
+  const settledIndex = useRef(-1);
   const sessionXp = useRef(0);
   const missed = useRef<MissedWord[]>([]);
   // Cevapların doğru/yanlış sırası — paylaşılan özetteki kareler bu.
@@ -291,6 +297,7 @@ function SessionRound() {
     // "Devam" yeni turu yüklüyor ama kimse başlatmıyordu — ekran "hazır"
     // durumunda, yani yükleme kartında asılı kalıyordu.
     autoStarted.current = false;
+    settledIndex.current = -1;
     setIndex(0);
     setTally({ correct: 0, total: 0, xp: 0 });
     setResult(null);
@@ -465,6 +472,7 @@ function SessionRound() {
   function resume() {
     const resumable = resumeRef.current;
     if (!resumable) return;
+    settledIndex.current = -1;
     setIndex(resumable.index);
     setTally({ correct: resumable.correct, total: resumable.total, xp: resumable.xp });
     sessionXp.current = resumable.xp;
@@ -501,6 +509,7 @@ function SessionRound() {
       const data = await load({ fresh: true });
       if (!data?.rounds.length) return; // load hata/boş durumunu zaten gösterdi
     }
+    settledIndex.current = -1;
     setIndex(0);
     setTally({ correct: 0, total: 0, xp: 0 });
     sessionXp.current = 0;
@@ -634,6 +643,9 @@ function SessionRound() {
 
   const handleDone = useCallback(
     async (round: Round, results: GameResult[]) => {
+      // `index` bu turun çiziminden: aynı turun (ya da öncekinin) geç gelen çağrısı sayılmıyor.
+      if (index <= settledIndex.current) return;
+      settledIndex.current = index;
       const enriched: Answer[] = results.map((r) => ({ ...r, game: round.game }));
       pending.current.push(...enriched);
       marks.current.push(...results.map((r) => r.correct));

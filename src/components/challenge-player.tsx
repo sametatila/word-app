@@ -108,6 +108,10 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   }, []);
   const pending = useRef<Answer[]>([]);
   const finished = useRef(false);
+  /* Sonucu alınmış son turun sırası. 120 ms'lik çıkış animasyonunda eski
+     turun "Devam"ı ve Enter dinleyicisi hâlâ canlı: ikinci basış cevabı iki
+     kez kuyruğa koyuyor, süre ödülünü ikiye katlıyor ve bir turu atlatıyordu. */
+  const settledIndex = useRef(-1);
   /** Bitiş geri sayımdan da tetiklenebildiği için puan ref'ten okunur. */
   const scoreRef = useRef(0);
 
@@ -208,12 +212,16 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     setCombo(0);
     setBestCombo(0);
     setTally({ correct: 0, total: 0 });
+    settledIndex.current = -1;
     setIndex(0);
     setStatus("playing");
   }
 
   function handleDone(round: Round, results: GameResult[]) {
     if (finished.current) return;
+    // `index` bu turun çiziminden: aynı turun ikinci çağrısı sayılmıyor.
+    if (index <= settledIndex.current) return;
+    settledIndex.current = index;
     pending.current.push(...results.map((r) => ({ ...r, game: round.game })));
 
     const tier = data?.tiers[index] ?? 1;

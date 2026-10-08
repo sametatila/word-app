@@ -32,6 +32,12 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
      turların bağlantısı burada hiç çıkmıyordu. Sınavda kapsam yok, bayrak da yok. */
   const report = useRoundReport();
   const started = useRef(Date.now());
+  /* Tur bir kez biter. "Bunu zaten biliyorum" isteği sürerken "Anladım"a
+     basılırsa geç gelen `onDone([])` sıradaki turun üstüne düşüyor: sayaç ve
+     seri geri sarılıyor, etap kartı ya da son tur kaydı yinelenebiliyordu.
+     `live` ekrandaki turun kimliği; söküm ve tur değişimi onu boşaltıyor. */
+  const done = useRef(false);
+  const live = useRef<string | null>(null);
   const example = firstExample(word.beispiel);
   /* Örneğin çevirisi ANADİLDE (`exampleFor`): Türkçe ve İngilizce satır herkese birlikte basılıyordu. */
   const exampleNative = exampleFor(
@@ -41,12 +47,15 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
 
   useEffect(() => {
     started.current = Date.now();
+    done.current = false;
+    live.current = round.id;
     setRevealed(false);
     setSkipping(false);
     const t = setTimeout(() => setRevealed(true), 900);
     // Yeni kelimeyi bir kez sesli oku: öğrencinin ilk sorusu "nasıl okunuyor?"
     const s = setTimeout(() => speakWord(withArtikel(round.word)), 350);
     return () => {
+      live.current = null;
       clearTimeout(t);
       clearTimeout(s);
     };
@@ -133,7 +142,9 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
 
       <div className="mx-auto mt-4 w-full max-w-md space-y-2">
         <button
-          onClick={() =>
+          onClick={() => {
+            if (done.current) return;
+            done.current = true;
             onDone([
               {
                 wordId: word.id,
@@ -141,14 +152,16 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
                 latencyMs: Date.now() - started.current,
                 hintUsed: true,
               },
-            ])
-          }
+            ]);
+          }}
           className="btn btn-primary w-full px-6 py-3 text-h3"
         >
           {tx("rounds.understood", { word: withArtikel(word) })}
         </button>
         <button
           onClick={async () => {
+            if (done.current) return;
+            const id = round.id;
             setSkipping(true);
             try {
               await apiFetch("/api/words/known", {
@@ -159,6 +172,9 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
             } catch {
               /* çevrimdışıysa yine de devam et */
             }
+            // Beklerken tur bittiyse ya da değiştiyse geç cevap yutuluyor.
+            if (done.current || live.current !== id) return;
+            done.current = true;
             onDone([]); // cevap kaydedilmez, kelime pekişmiş sayılır
           }}
           disabled={skipping}

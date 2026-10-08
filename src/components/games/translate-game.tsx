@@ -63,6 +63,10 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
   const [aiAccepted, setAiAccepted] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const started = useRef(Date.now());
+  /* Ekrandaki turun kimliği; söküm ve tur değişimi boşaltıyor. Model
+     sorulurken süre biterse ya da kullanıcı çıkarsa geç gelen karar eski
+     cümleyi sonraki ekranın üstünde titreşimle okutuyordu. */
+  const live = useRef<string | null>(null);
   const { speak } = useRoundExit();
   /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
   const [pending, setPending] = useState<GameResult | null>(null);
@@ -77,6 +81,10 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     started.current = Date.now();
     focusOnFine(inputRef.current);
     prefetchWord(sentence.de);
+    live.current = round.id;
+    return () => {
+      live.current = null;
+    };
   }, [round.id, sentence.de]);
 
   const targetWords = sentence.de.replace(/[.!?…]+$/, "").split(/\s+/).filter(Boolean);
@@ -92,6 +100,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
 
     if (m.verdict === "wrong" && typed.split(/\s+/).length >= 3) {
       // Yerel hakem "yanlış": bir de modele sor, ama tur akışını tutmayacak kadar.
+      const id = round.id;
       setStatus("checking");
       const ai = await askAssess(
         {
@@ -106,6 +115,8 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         },
         { timeoutMs: ASSESS_WAIT_MS },
       );
+      // Beklerken tur değiştiyse ya da ekran kapandıysa karar yutuluyor.
+      if (live.current !== id) return;
       if (ai.ok && ai.result.score.overall >= ASSESS_ACCEPT && ai.result.score.task >= 3) {
         accepted = true;
         quality = 4;
