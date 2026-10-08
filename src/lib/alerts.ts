@@ -160,6 +160,12 @@ export function criticalRouteAlerts(reqs: ApiReq[]): Alert[] {
 }
 
 /** Bütün kontroller. Her biri kendi hatasını yutuyor: bir kontrolün düşmesi ötekileri susturmasın. */
+/** Bildirim grup anahtarının yalnız tür öneki (`word:…` → `word`); serbest metin taşımaz. */
+function reportTargetType(g: unknown): string {
+  const head = String(g ?? "").split(":")[0];
+  return /^[a-z_]{1,24}$/.test(head) ? head : "?";
+}
+
 export async function collectAlerts(): Promise<Alert[]> {
   const alerts: Alert[] = [];
   const guard = async (name: string, fn: () => Promise<void>) => {
@@ -443,7 +449,11 @@ export async function collectAlerts(): Promise<Alert[]> {
       const total = fresh.reduce((a, r) => a + num(r.n), 0);
       if (total > 0) {
         const last = Math.max(...fresh.map((r) => num(r.last)));
-        const top = fresh.slice(0, 3).map((r) => `${String(r.g).slice(0, 60)} ×${num(r.n)}`).join(", ");
+        /* Hedef METNİ değil yalnız TÜRÜ (word, conversation…): grup anahtarı bildirenin
+           yazdığı kimlikten kuruluyor (misafir dahil herkes, 120 karakter) ve O3
+           kuralı alçak güvenli uçtan gelen metni Telegram'a taşımıyor; ayrıntı panelde
+           (güvenlik denetimi 2026-10-07). */
+        const top = fresh.slice(0, 3).map((r) => `${reportTargetType(r.g)} ×${num(r.n)}`).join(", ");
         alerts.push({ key: `err-reportnew:${last}`, level: "uyari", text: `${total} yeni içerik bildirimi (${fresh.length} hedef): ${top}${fresh.length > 3 ? " …" : ""}` });
       }
       const hot = await rows(sql`
@@ -455,7 +465,7 @@ export async function collectAlerts(): Promise<Alert[]> {
         having count(*) >= 3 and bool_or(r.status = 'open')
         order by n desc limit 5`);
       for (const r of hot) {
-        alerts.push({ key: `err-reporthot:${String(r.g)}`, level: "uyari", text: `Aynı hedef 24 saatte ${num(r.n)} kez bildirildi (en sık: ${REASON_LABEL[String(r.reason)] ?? String(r.reason)}): ${String(r.g).slice(0, 120)}` });
+        alerts.push({ key: `err-reporthot:${String(r.g)}`, level: "uyari", text: `Aynı hedef 24 saatte ${num(r.n)} kez bildirildi (en sık: ${REASON_LABEL[String(r.reason)] ?? String(r.reason)}): ${reportTargetType(r.g)} (ayrıntı panelde)` });
       }
     }),
     guard("mail", async () => {
