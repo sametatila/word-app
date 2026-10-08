@@ -113,7 +113,7 @@ söyle", "Kaç tane bildin? Yorumlara yaz", "Bu 4 cümle yetiyor". Açıklamanı
 | | Değer | Neden |
 |---|---|---|
 | Görüntü | 1080×1920, 9:16, 30 fps, H.264 High, yuv420p (BT.709), CRF 18, 2 sn'de bir anahtar kare | İki platformun önerdiği; yeniden sıkıştırmada kayıp az |
-| Ses | AAC 192k 48 kHz, ≈ −14 LUFS, tepe ≤ −1 dBFS | Platformlar bu civara çekiyor; yüksek verilen kısılır, çok düşük kalan sessiz duyulur |
+| Ses | AAC 192k 48 kHz, ≈ −14 LUFS, gerçek tepe ≤ −1 dBTP (yüklenecek dosyada ölçülür) | Platformlar bu civara çekiyor; yüksek verilen kısılır, çok düşük kalan sessiz duyulur |
 | Süre | 28–43 sn (şimdiki bölümler) | Bkz. eleştiri: 30 sn altı hedef |
 | Kapak | `kapak.jpg` (9:16) yüklenir | Akışta ve profilde görünen kare |
 | Profil ızgarası | `kapak-3x4.jpg` (orta 1080×1440) kontrol için | İki platform profilde 3:4 kesit gösteriyor; kanca bu bölgede okunmalı |

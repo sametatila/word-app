@@ -16,7 +16,7 @@ import crypto from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { loadEpisodes, duplicates } from "./lib/episodes.mjs";
 import { buildPage, localDoc, OUT, CHROME, playwright } from "./lib/page.mjs";
-import { run, renderDoc, soundtrackWav } from "./lib/audio.mjs";
+import { run, renderDoc, soundtrackWav, AUDIO_VERSION } from "./lib/audio.mjs";
 
 const DIR = path.join(OUT, "gallery");
 const LOCAL = path.join(DIR, "atolye.local.html");
@@ -80,7 +80,7 @@ async function renderAudio() {
     if (!ok.includes(ep.template)) continue;
     const tmp = path.join(OUT, "render", ep.id);
     const html = renderDoc(ep, clips, tmp);
-    const hash = crypto.createHash("sha1").update(fs.readFileSync(html)).digest("hex").slice(0, 10);
+    const hash = crypto.createHash("sha1").update(`${AUDIO_VERSION}`).update(fs.readFileSync(html)).digest("hex").slice(0, 10);
     const cached = path.join(cache, `${hash}.m4a`);
     if (!fs.existsSync(cached)) {
       b ||= await playwright().chromium.launch({ executablePath: CHROME });

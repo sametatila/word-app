@@ -9,7 +9,7 @@
 
   Çıktı (git dışı) .shots/social/out/<bölüm-id>/:
     <bölüm-id>.mp4   1080×1920, 30 fps, H.264 High yuv420p (CRF 18, 2 sn'de bir anahtar kare), AAC 192k 48 kHz,
-                     ses −14 LUFS / tepe −1,5 dBTP (iki platform da bu seviyeye çekiyor; daha yüksek verilirse kısılır),
+                     ses −14 LUFS / gerçek tepe ≤ −1 dBTP, AAC sonrası ölçülür (iki platform da bu seviyeye çekiyor; daha yüksek verilirse kısılır),
                      +faststart (yükleme sırasında önizleme)
     kapak.jpg        9:16 kapak (plan.poster karesi): TikTok ve Reels'te kapak seçerken yüklenir
     kapak-3x4.jpg    profil ızgarasının gösterdiği orta 3:4 kesit (1080×1440, y 240–1680): kanca burada okunmalı
@@ -22,7 +22,7 @@ import path from "node:path";
 import { spawn } from "node:child_process";
 import { loadEpisodes } from "./lib/episodes.mjs";
 import { OUT, CHROME, playwright } from "./lib/page.mjs";
-import { run, renderDoc, soundtrackWav } from "./lib/audio.mjs";
+import { run, loudness, renderDoc, soundtrackWav } from "./lib/audio.mjs";
 
 const FPS = 30;
 const args = process.argv.slice(2);
@@ -86,6 +86,7 @@ for (const id of ids) {
   await pg.close();
   if (errs.length) throw new Error(`${id}: sayfa hatası: ${errs.join(" | ")}`);
   const mb = (fs.statSync(mp4).size / 1e6).toFixed(1);
-  console.log(`\r✓ ${id}: ${plan.duration.toFixed(1)} sn, ${frames} kare, ${mb} MB, ses ${loud.input_i} → ${loud.output_i} LUFS (tepe ${loud.output_tp} dBFS), ${((Date.now() - t0) / 1000).toFixed(0)} sn → ${path.relative(process.cwd(), dir)}/`);
+  const fin = loudness(mp4); // AAC'den sonra, yüklenecek dosyanın kendisi
+  console.log(`\r✓ ${id}: ${plan.duration.toFixed(1)} sn, ${frames} kare, ${mb} MB, ses ${loud.input_i} → ${fin.I} LUFS (gerçek tepe ${fin.TP} dBTP), ${((Date.now() - t0) / 1000).toFixed(0)} sn → ${path.relative(process.cwd(), dir)}/`);
 }
 await browser.close();

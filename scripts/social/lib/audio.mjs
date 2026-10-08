@@ -21,17 +21,24 @@ export function loudness(file) {
 }
 
 /**
- * −14 LUFS'a eşitleme: kazanç + sert sınırlayıcı (tavan −2 dBFS, AAC'nin taşmasına pay), ölç, bir kez düzelt.
+ * −14 LUFS'a eşitleme: kazanç + sert sınırlayıcı (tavan −2 dBFS, AAC'nin taşmasına pay), ölç, düzelt.
  * loudnorm'un doğrusal modu tepe sınırına takılıp hedefin altında kalıyordu, dinamik modu tepeyi aşıyordu.
+ * Sınırlayıcı örnek tepesini keser, örnekler arası (gerçek) tepeyi görmez: ölçülen gerçek tepe −1 dBTP'yi
+ * aşarsa tavan aradaki fark kadar indirilir (2026-10-08: 8 bölüm −0,1…−0,7 dBTP çıkmıştı).
  */
+export const AUDIO_VERSION = 2; // eşitleme değişince artır: galerinin ses önbelleği yenilensin
 export function normalize(inWav, outWav) {
   const before = loudness(inWav);
   let gain = -14 - before.I;
+  let limit = 0.79;
   let after;
-  for (let k = 0; k < 5; k++) {
-    run("ffmpeg", ["-y", "-hide_banner", "-i", inWav, "-af", `volume=${gain.toFixed(2)}dB,alimiter=limit=0.79:attack=1:release=50:level=disabled`, "-ar", "48000", outWav]);
+  for (let k = 0; k < 6; k++) {
+    run("ffmpeg", ["-y", "-hide_banner", "-i", inWav, "-af", `volume=${gain.toFixed(2)}dB,alimiter=limit=${limit.toFixed(3)}:attack=1:release=50:level=disabled`, "-ar", "48000", outWav]);
     after = loudness(outWav);
-    if (Math.abs(after.I + 14) <= 0.5) break;
+    const loudOk = Math.abs(after.I + 14) <= 0.5;
+    const peakOk = after.TP <= -1;
+    if (loudOk && peakOk) break;
+    if (!peakOk) limit *= 10 ** ((-1.3 - after.TP) / 20);
     gain += -14 - after.I;
   }
   return { input_i: before.I, output_i: after.I, output_tp: after.TP };
