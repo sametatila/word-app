@@ -86,12 +86,22 @@ kendiliğinden yürürlüğe giriyor, önbellek boşaltmak gerekmiyor (`max-age`
 Yeni katman açarken ölçüt aynı: karakterin o katmandaki kapsamı TAM olmadan açılırsa aynı diyalogda ses satır
 satır değişir (`ownLayerEnabled`). Açınca `/var/cache/nginx/lernomi-tts` boşaltılır.
 
-**Konuşma katmanı (henüz yok, Edge):** anadili Türkçe kullanıcının konuşmaları (`tts-conversation-jobs.ts`,
-47.435 parça) Defne'yle üretildi ve tabloda TAM (2026-10-08 ölçümü). Uygulama bu istekleri işaretsiz
-gönderiyor; açmak için istemci (web + mobil) konuşma parçalarına `k=c` ve anadili eklemeli, sunucu yalnız
-anadili Türkçe isteği tablodan vermeli (İngilizce/Almanca anadil anlatımı üretilmedi). Kalite notu:
-~394 konuşma kaydı uyarılı (karışık Türkçe + hedef dil satırlarında bilinen hatalar, tts-test
-`DEVIR-2026-10-07.md` §6).
+**Konuşma katmanı: AÇIK, anadil Türkçe (2026-10-08).** Sunucu `TTS_OWN_LAYERS` `c:defne:tr`. Web konuşma oynatıcısı
+ders adımlarını, ipucu/düzeltme baloncuklarını ve onların ön indirmesini `k=c&n=<anadil>` ile istiyor (sohbet
+baloncukları işaretsiz, Edge). Katman anadil başına: yalnız Türkçe anadilli konuşmalar üretildi
+(`tts-conversation-jobs.ts`, 47.435 parça, hepsi tabloda); başka anadilde anlatım Edge'den, hedef cümle Defne'den
+çalıp karışmasın. Konuşmanın sesi seçilen karaktere bağlı: Aras seçen tutarlı olarak Edge'de (`konusma_tr_aras`
+üretilmedi). Mobil konuşma ekranı anlatımı okumuyor (yalnız hedef cümle), mobil değişikliği yok.
+
+**Bekletme listesi** (`TTS_OWN_DIR/tts-hold.json`, anahtar → dosya; `lib/tts/own`): katmanlarda (l, r, c) verilmeyen
+uyarılı sesler; o satır Edge'e düşüyor. Yalnız tablodaki dosya hâlâ listedeki dosyaysa bekletiliyor: kayıt temiz
+üretilip yerine konunca kendiliğinden açılıyor. Yazan tts-test `uyari_ayir.py` (girdi `uyarili_canli.py`: yerel
+manifestlerdeki uyarılı kayıtlardan canlı tabloda hâlâ o dosyayla duranlar, onaylılar hariç). 2026-10-08: yayında
+675 uyarılı; 278'i bizim hatamız (hazırlık cümlesi sızması 160, bozuk okuma 82, sessizlik 33, başa ses sızması 3)
+→ Mac'te yeni tohumla yeniden üretim (tts-test `uyari_mac.sh`, tempo_defne bitince kendiliğinden başlar, yayın
+`--yenile --temiz`); 397'si Whisper'ın yazım farkı ya da belirsiz → Samet'in kulak kontrolü (artifact "Kulak
+Kontrolü 3", kararlar sayfanın veritabanında, Claude `tts_reviews`e aktarır). Bekletilen: bizim hatamız olanların
+hepsi + kulak bekleyen konuşma kayıtları (423).
 
 ## 1. Envanter (sohbet hariç, benzersiz metin)
 
