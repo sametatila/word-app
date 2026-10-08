@@ -557,11 +557,17 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
       self.request?.append(buffer)
       self.captureLock.lock()
       let on = self.captureOn
+      let vadOn = self.vadActive
+      let gen = self.vadGen
       self.captureLock.unlock()
-      if on, let pcm = self.convertForCapture(buffer) {
-        self.captureLock.lock()
-        if self.captureOn { self.captureData.append(pcm) }
-        self.captureLock.unlock()
+      if on || vadOn, let pcm = self.convertForCapture(buffer) {
+        if on {
+          self.captureLock.lock()
+          if self.captureOn { self.captureData.append(pcm) }
+          self.captureLock.unlock()
+        }
+        // VAD dinleyici thread'inde değil, kendi seri kuyruğunda (dinleyici bekletilmez).
+        if vadOn { self.vadQueue.async { self.feedVad(pcm, gen) } }
       }
     }
     audioEngine.prepare()
@@ -577,6 +583,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
 
   private func stopWalkEngine() {
     captureLock.lock(); captureOn = false; captureData = Data(); captureLock.unlock()
+    cancelVad()
     guard walkEngineRunning else { return }
     walkEngineRunning = false
     audioEngine.stop()
@@ -638,6 +645,100 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     do { try (header + pcm).write(to: url, options: .atomic); return true } catch { return false }
   }
 
+  // --- Konuşma algılamalı kayıt (ekran kapalı yürüyüş) ---
+  //
+  // Sabit pencere yerine cihazda VAD (`WalkVad`, referans `scripts/lib/walk-vad.ts`): yürüyüş
+  // motorunun akışından beslenir, konuşma bitince ~0,65 sn sonra kendisi karar verir, WAV'a
+  // yalnız konuşma + 500 ms pay yazılır. Konuşma yoksa dosya yok: sunucuya hiçbir şey gitmez.
+  // Motor yoksa (eski AVAudioRecorder yedeği) "unsupported" döner, JS sabit pencereye düşer.
+  // Gerekçe ve ölçüm: docs/plan/walk-stt.md "Cihazda konuşma algılama".
+  private let vadQueue = DispatchQueue(label: "app.lernomi.walkvad")
+  /// captureLock altında: dinleyici VAD'i beslesin mi; kuşak, bir önceki dinlemenin
+  /// kuyrukta kalmış parçası yenisine karışmasın diye.
+  private var vadActive = false
+  private var vadGen = 0
+  // Aşağıdakiler yalnız vadQueue'da.
+  private var vad: WalkVad?
+  private var vadCarry = [Int16]()
+  private var vadSamples = [Int16]()
+  private var vadResolve: RCTPromiseResolveBlock?
+
+  @objc(recordUtterance:rejecter:)
+  func recordUtterance(_ resolve: @escaping RCTPromiseResolveBlock,
+                       rejecter reject: @escaping RCTPromiseRejectBlock) {
+    DispatchQueue.main.async {
+      guard self.walkSessionHeld && (self.walkEngineRunning || self.startWalkEngine()) else {
+        resolve(["kind": "unsupported"])
+        return
+      }
+      self.vadQueue.async {
+        // Önceki bekleyen varsa (olmamalı) boşta kalmasın.
+        self.vadResolve?(nil)
+        self.vad = WalkVad()
+        self.vadCarry = []
+        self.vadSamples = []
+        self.vadResolve = resolve
+        self.captureLock.lock(); self.vadGen += 1; self.vadActive = true; self.captureLock.unlock()
+      }
+    }
+  }
+
+  /// vadQueue: dönüştürülmüş 16 kHz Int16 parçayı biriktirir, tam dilimleri VAD'e verir.
+  private func feedVad(_ pcm: Data, _ gen: Int) {
+    captureLock.lock(); let current = vadGen; captureLock.unlock()
+    guard gen == current, let vad = vad, vadResolve != nil else { return }
+    var chunk = [Int16](repeating: 0, count: pcm.count / 2)
+    chunk.withUnsafeMutableBytes { dst in _ = pcm.copyBytes(to: dst) }
+    vadSamples.append(contentsOf: chunk)
+    vadCarry.append(contentsOf: chunk)
+    var off = 0
+    var done = false
+    vadCarry.withUnsafeBufferPointer { p in
+      while off + vad.frame <= p.count {
+        let stop = vad.push(p, off)
+        off += vad.frame
+        if stop { done = true; break }
+      }
+    }
+    vadCarry.removeFirst(off)
+    if done, let r = vad.result { finishVad(r) }
+  }
+
+  /// vadQueue: karar verildi — besleme durur, parça WAV'a yazılır, söz çözülür.
+  private func finishVad(_ r: WalkVad.Result) {
+    captureLock.lock(); vadActive = false; captureLock.unlock()
+    let resolve = vadResolve
+    vadResolve = nil
+    vad = nil
+    vadCarry = []
+    var out: [String: Any] = ["kind": r.kind, "path": NSNull(), "seconds": 0.0]
+    let end = Swift.min(r.end, vadSamples.count)
+    let start = Swift.min(r.start, end)
+    if r.kind != "none" && end > start {
+      let data = vadSamples[start..<end].withUnsafeBufferPointer { Data(buffer: $0) }
+      let url = FileManager.default.temporaryDirectory.appendingPathComponent("walk_clip.wav")
+      if Self.writeWav(data, to: url) {
+        out["path"] = url.path
+        out["seconds"] = Double(end - start) / Double(WalkVad.RATE)
+      }
+    }
+    vadSamples = []
+    resolve?(out)
+  }
+
+  /// İptal (durdurma, motor kapandı): bekleyen söz nil'le çözülür.
+  private func cancelVad() {
+    captureLock.lock(); vadActive = false; captureLock.unlock()
+    vadQueue.async {
+      self.captureLock.lock(); self.vadActive = false; self.captureLock.unlock()
+      self.vadResolve?(nil)
+      self.vadResolve = nil
+      self.vad = nil
+      self.vadCarry = []
+      self.vadSamples = []
+    }
+  }
+
   // --- Ham ses kaydı (Azure/sunucu STT için): 16 kHz mono WAV. Ekran-kapalı/cepte yolu. ---
   private var audioRecorder: AVAudioRecorder?
   private var recordURL: URL?
@@ -686,6 +787,8 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   func stopRecording(_ resolve: @escaping RCTPromiseResolveBlock,
                      rejecter reject: @escaping RCTPromiseRejectBlock) {
     DispatchQueue.main.async {
+      // VAD'li kayıt sürüyorsa iptal: sözü nil'le çözülür, dosya yazılmaz.
+      self.cancelVad()
       self.captureLock.lock()
       let wasCapturing = self.captureOn
       let pcm = self.captureData

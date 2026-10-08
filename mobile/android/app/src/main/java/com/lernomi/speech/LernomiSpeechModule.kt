@@ -140,7 +140,7 @@ class LernomiSpeechModule(private val reactCtx: ReactApplicationContext) :
       val ar = AudioRecord(MediaRecorder.AudioSource.VOICE_RECOGNITION, sampleRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, Math.max(minBuf, 8192))
       if (ar.state != AudioRecord.STATE_INITIALIZED) { ar.release(); promise.reject("init", "AudioRecord başlatılamadı"); return }
       val out = java.io.ByteArrayOutputStream()
-      pcm = out; recorder = ar; recording = true
+      pcm = out; synchronized(recorderLock) { recorder = ar }; recording = true
       ar.startRecording()
       recordThread = Thread {
         val buf = ByteArray(8192)
@@ -151,6 +151,89 @@ class LernomiSpeechModule(private val reactCtx: ReactApplicationContext) :
       }.also { it.start() }
       promise.resolve(true)
     } catch (e: Exception) { recording = false; promise.reject("record", e.message, e) }
+  }
+
+  /** Kayıt cihazını bir kez bırakır: iptal (`stopRecording`) ile VAD kararı aynı anda gelebilir. */
+  private val recorderLock = Any()
+  private fun releaseRecorder() {
+    val ar = synchronized(recorderLock) { val r = recorder; recorder = null; r } ?: return
+    try { ar.stop() } catch (_: Exception) {}
+    try { ar.release() } catch (_: Exception) {}
+  }
+
+  /** VAD'li kaydın bekleyen sözü; tek seferlik çözülür (karar, iptal ya da hata). */
+  private val utterance = java.util.concurrent.atomic.AtomicReference<Promise?>(null)
+
+  /**
+   * KONUŞMA ALGILAMALI KAYIT (ekran kapalı yürüyüş). Sabit pencere yerine cihazda VAD
+   * ([WalkVad], referans `scripts/lib/walk-vad.ts`): kayıt konuşma bitince ~0,65 sn sonra
+   * kendisi durur, WAV'a yalnız konuşma + 500 ms pay yazılır. Konuşma yoksa dosya yok:
+   * sunucuya hiçbir şey gitmez. Çözülen: {kind: speech|fallback|none, path: String?,
+   * seconds: Double} ya da null (zaten kayıtta, iptal, okuma hatası). İptal: [stopRecording].
+   * Ölçüm ve gerekçe: docs/plan/walk-stt.md "Cihazda konuşma algılama".
+   */
+  @ReactMethod
+  fun recordUtterance(promise: Promise) {
+    try {
+      if (recording) { promise.resolve(null); return }
+      val minBuf = AudioRecord.getMinBufferSize(sampleRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT)
+      @Suppress("MissingPermission")
+      val ar = AudioRecord(MediaRecorder.AudioSource.VOICE_RECOGNITION, sampleRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, Math.max(minBuf, 8192))
+      if (ar.state != AudioRecord.STATE_INITIALIZED) { ar.release(); promise.reject("init", "AudioRecord başlatılamadı"); return }
+      pcm = null
+      synchronized(recorderLock) { recorder = ar }
+      recording = true
+      utterance.set(promise)
+      ar.startRecording()
+      recordThread = Thread {
+        val vad = WalkVad()
+        val frame = ShortArray(vad.frame)
+        var fill = 0
+        var samples = ShortArray(sampleRate * 10)
+        var count = 0
+        val buf = ShortArray(4096)
+        var result: WalkVad.Result? = null
+        try {
+          while (recording && result == null) {
+            val n = ar.read(buf, 0, buf.size)
+            if (n < 0) break
+            for (k in 0 until n) {
+              if (count == samples.size) samples = samples.copyOf(samples.size * 2)
+              samples[count++] = buf[k]
+              frame[fill++] = buf[k]
+              if (fill == frame.size) {
+                fill = 0
+                if (vad.push(frame)) { result = vad.result; break }
+              }
+            }
+          }
+        } catch (e: Exception) { android.util.Log.e("LernomiWalk", "recordUtterance ${e.message}") }
+        val cancelled = !recording
+        recording = false
+        releaseRecorder()
+        val p = utterance.getAndSet(null) ?: return@Thread
+        val r = result
+        if (cancelled || r == null) { p.resolve(null); return@Thread }
+        val out = Arguments.createMap()
+        out.putString("kind", r.kind)
+        val end = Math.min(r.end, count)
+        val start = Math.min(r.start, end)
+        if (r.kind != "none" && end > start) {
+          try {
+            val bytes = ByteArray((end - start) * 2)
+            for (k in start until end) { val v = samples[k].toInt(); bytes[(k - start) * 2] = (v and 0xff).toByte(); bytes[(k - start) * 2 + 1] = ((v shr 8) and 0xff).toByte() }
+            val file = java.io.File(reactCtx.cacheDir, "walk_clip.wav")
+            file.writeBytes(wavFromPcm(bytes, sampleRate))
+            out.putString("path", file.absolutePath)
+            out.putDouble("seconds", (end - start).toDouble() / sampleRate)
+          } catch (e: Exception) { out.putNull("path"); out.putDouble("seconds", 0.0) }
+        } else {
+          out.putNull("path")
+          out.putDouble("seconds", 0.0)
+        }
+        p.resolve(out)
+      }.also { it.start() }
+    } catch (e: Exception) { recording = false; releaseRecorder(); utterance.set(null); promise.reject("record", e.message, e) }
   }
 
   /** Kaydı durdur, WAV'ı cache'e yaz, dosya yolunu döndür (JS FormData ile /api/stt'e gönderir). */
@@ -222,9 +305,9 @@ class LernomiSpeechModule(private val reactCtx: ReactApplicationContext) :
       recording = false
       try { recordThread?.join(600) } catch (_: Exception) {}
       recordThread = null
-      val ar = recorder; recorder = null
-      try { ar?.stop() } catch (_: Exception) {}
-      try { ar?.release() } catch (_: Exception) {}
+      releaseRecorder()
+      // VAD'li kayıt sürüyorsa iptal: sözü null'la çözülür (thread kendisi de deniyor, tek seferlik).
+      utterance.getAndSet(null)?.resolve(null)
       val out = pcm; pcm = null
       if (out == null) { promise.resolve(null); return }
       val data = synchronized(out) { out.toByteArray() }

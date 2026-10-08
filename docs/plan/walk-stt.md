@@ -12,7 +12,7 @@ Sahibin şartları: (1) Azure'a giden ses doğruluktan ödün vermeden en aza in
 | Web, tanıyıcı yok ya da oturumda öldü | mod açılmıyor / duruyor, sebebi söyleniyor; sunucuya ses yedeği YOK (2026-09-27) | `walk-player.tsx` |
 | Web, ekran gerçekten kapandı | tur durur, sebebi sesle söylenir (kilitli ekranda mikrofon alınamıyor) | `walk-player.tsx` |
 | Mobil, ekran açık | cihazın native tanıyıcısı (ücretsiz) | `mobile/src/lib/stt.ts` `listenOnce` |
-| Mobil, cep / ekran kapalı | native 16 kHz mono WAV kayıt → `/api/stt` `mode=walk`, POST native tarafta | `mobile/src/lib/stt.ts` |
+| Mobil, cep / ekran kapalı | native 16 kHz mono kayıt, cihazda konuşma algılama (VAD; eski yapıda sabit pencere) → WAV → `/api/stt` `mode=walk`, POST native tarafta | `mobile/src/lib/stt.ts` `azureListenOnce` |
 
 Web'in ekran-kapalı cep yolu (sürekli kayıt, sessiz döngü, halka tampon, `lib/vad`) 2026-09-17'de
 kaldırıldı: cihaz testinde (HyperOS) sistem ekran kapanınca mikrofonu susturuyordu.
@@ -51,7 +51,7 @@ sessizlikte uydurmuyor; ama Deepgram'ın yerini tutmuyor. Kaliteyi korumanın yo
 - Azure F0: düz tanımada 15/15 doğru, sessizlikte uydurma yok, saniye başı ücret.
 - İstemci güven eşiği 0,4 (`pocket-mic.ts` `MIN_CONFIDENCE`).
 
-## Cihazda konuşma algılama (VAD) — ölçüm 2026-10-08, native'e henüz geçmedi
+## Cihazda konuşma algılama (VAD) — ölçüm 2026-10-08, native kod 2026-10-09 (yeni build bekliyor, audit T22)
 
 Bugün ekran kapalıyken kelime başına sabit 3 sn (evet/hayır 4 sn) kaydediliyor ve tamamı Azure'a gidiyor.
 Canlıda son 30 gün: 155 klip, 650 sn; klip başına 4,2 sn (kabul edilmeyende ikinci istek, 6 sn); 31 klip boş.
@@ -85,8 +85,18 @@ cep (boğuk ses + kumaş hışırtısı), kısık ses; başlama anı 0,35–2,3 
 - İkinci istek (kabul yoksa düz tanıma) telaffuz değerlendirmesinin metniyle DEĞİŞTİRİLEMEZ: 50 çiftin 20'sinde o
   metin beklenen kelimeyi yazıyor (referansa yaslanıyor), düz tanıma boş ya da başka bir şey duyuyor.
 
-Kalan: Android/iOS native kopya (`startRecording` yerine VAD'li kayıt, eski yol yedek), cihazda gerçek ses
-(Bluetooth mikrofonu dahil) ile eşik kontrolü; mobil build başka ajanda.
+Native: `mobile/android/.../speech/WalkVad.kt`, `mobile/ios/Lernomi/WalkVad.swift`, yeni yöntem `recordUtterance`
+(Android kendi `AudioRecord` thread'i; iOS yürüyüş motorunun akışından, ayrı seri kuyrukta). JS `azureListenOnce`:
+yöntem varsa VAD, yoksa (eski yapı) ya da iOS'ta motor kurulamadıysa (`unsupported`) eski sabit pencere; 10,5 sn
+emniyet tavanı (ses hiç akmazsa). `walk_listen` ölçüsü artık gerçekten gönderilen saniye.
+
+**Üç kopya birebir aynı kalmalı.** VAD'e dokunan değişiklik üçünü birden değiştirir, sonra:
+`npm run check:parity` (CI: 23 sabit + JS tavanı) ve yerelde
+`npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/walk-vad-native-parity.ts [sahneler]`
+(swiftc + Gradle önbelleğindeki Kotlin derleyicisi; 400 zorlama akışı + `walk-vad-eval.ts --dump` sahneleri;
+tür, başlangıç, bitiş, durma örneği birebir). 2026-10-09: 538 akışta birebir; bozulmuş tek eşik (0,2 dB) yakalanıyor.
+
+Kalan: cihazda gerçek sesle (Bluetooth mikrofonu dahil) eşik kontrolü; mobil build başka ajanda.
 
 ## Teslim
 Cevabı bilmeyen "weiter", "weiß nicht" ya da "keine Ahnung" der (`parseSkipDe`, `lib/voice-intent.ts`,

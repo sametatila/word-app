@@ -19,7 +19,7 @@ import { usePremiumStatus, notePremiumGate, refreshPremium, isPremiumRefusal, is
 import { walkLine } from "../lib/unlock";
 import { glossVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
-import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, cancelAzureListen, startWalkService, stopWalkService, setWalkNowPlaying, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, cancelAzureListen, lastAzureSeconds, startWalkService, stopWalkService, setWalkNowPlaying, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { apiBase } from "../api/client";
 import { spokenMatches, parseSkip, skipWord, encourage, parseConfirm } from "../lib/voiceMatch";
@@ -42,9 +42,10 @@ const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır
    aynı düzeltme esi; kısa es web'de 450 (her cümle orada ayrı ses isteği), bilerek farklı ad. */
 const ROUND_GAP_MS = 320;
 const CORRECTION_GAP_MS = 1200;
-/* Azure'a gönderilen kayıt penceresi. Sabit yazılıydı ve iki yerde ayrı ayrı
-   duruyordu; ölçüm (`walk_listen` değeri = gönderilen saniye) buna baktığı için
-   tek ada bağlandı — pencere değişirse ölçü kendiliğinden onunla değişir. */
+/* Azure'a gönderilen SABİT kayıt penceresi — yalnız konuşma algılaması (cihazda VAD,
+   `azureListenOnce`) olmayan eski yapılarda ve iOS'ta ses motoru kurulamadığında.
+   VAD'de kayıt konuşma bitince kendisi durur. Ölçüm (`walk_listen` değeri) gerçekten
+   gönderilen saniyeyi `lastAzureSeconds()`ten alıyor. */
 const AZURE_WINDOW_MS = 3000;
 /* GEÇİCİ ÖLÇÜM (cihaz testi): okumanın ne zaman başlayıp bittiği loga yazılıyor.
    YALNIZ __DEV__: bu loglar kullanıcının söylediklerini (STT adayları) içeriyor ve
@@ -115,8 +116,8 @@ const mapRounds = (rs: Round[]): WalkRound[] =>
  * kalırdı. Ad web'dekiyle birebir aynı, o yüzden ayrışmayı "ortak sayısal
  * sabitler" kapısı kendiliğinden yakalıyor.
  *
- * Ekran KAPALI yolun kendi penceresi var (`azureListenOnce`, 4000): orada VAD
- * yok, sabit pencere kaydediliyor ve webin böyle bir kipi hiç yok.
+ * Ekran KAPALI yolun kendi dinlemesi var (`azureListenOnce`): cihazda konuşma
+ * algılama (VAD), yoksa sabit pencere; webin böyle bir kipi hiç yok.
  */
 const ANSWER_WINDOW_MS = 8000;
 const CONFIRM_SILENCE_MS = 7000;
@@ -547,7 +548,7 @@ export function WalkModeScreen() {
           azureListenOnce(withArtikel(w), AZURE_WINDOW_MS).then((h) => ({ k: "v" as const, heard: h ?? [] })),
           waitManual().then(() => ({ k: "m" as const })),
         ]);
-        noteHeard("azure", res, AZURE_WINDOW_MS / 1000);
+        noteHeard("azure", res, lastAzureSeconds());
         break;
       }
       res = await listenNative();

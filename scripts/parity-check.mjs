@@ -22113,6 +22113,35 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
   sameList("cevap gonderimi tekrar kimligi tasiyor", kimliksiz.length ? kimliksiz : ["hepsi"], ["hepsi"], "eksik", "beklenen");
 }
 
+/* YURUYUS VAD'I: uc kopya (TS referansi `scripts/lib/walk-vad.ts`, Android
+ * `WalkVad.kt`, iOS `WalkVad.swift`). Ekran kapali dinlemede sunucuya ne
+ * gidecegine cihaz karar veriyor; kopyalar ayrisirsa iki platform ayni sese
+ * farkli davranir ve olcum (docs/plan/walk-stt.md) hicbirini temsil etmez.
+ * Burada SABITLER: referanstaki her ad (camelCase -> UPPER_SNAKE) iki native
+ * kopyada ayni sayi. Davranisin kendisi (ayni akista ayni karar) yerelde
+ * `scripts/walk-vad-native-parity.ts` ile (swiftc + Kotlin derleyicisi CI'da yok).
+ * JS'in emniyet tavani da native sinirlardan turuyor (mobil `lib/stt`). */
+{
+  const ref = read("scripts/lib/walk-vad.ts");
+  const kt = read("mobile/android/app/src/main/java/com/lernomi/speech/WalkVad.kt");
+  const sw = read("mobile/ios/Lernomi/WalkVad.swift");
+  const blok = (ref.match(/export const WALK_VAD = \{([\s\S]*?)\n\};/) ?? [])[1] ?? "";
+  const sayi = (v) => String(Number(String(v).replace(/_/g, "")));
+  const refler = [...blok.matchAll(/^\s*(\w+):\s*([-\d_.]+),/gm)].map((m) => [m[1].replace(/([A-Z])/g, "_$1").toUpperCase(), sayi(m[2])]);
+  const bul = (src, re) => (name) => { const m = src.match(re(name)); return m ? sayi(m[1]) : "YOK"; };
+  const ktDeger = bul(kt, (n) => new RegExp("const val " + n + " = ([-\\d_.]+)"));
+  const swDeger = bul(sw, (n) => new RegExp("static let " + n + " = ([-\\d_.]+)"));
+  sameList("yuruyus VAD sabitleri: android", refler.map(([n]) => n + "=" + ktDeger(n)), refler.map(([n, v]) => n + "=" + v), "kotlin", "referans");
+  sameList("yuruyus VAD sabitleri: ios", refler.map(([n]) => n + "=" + swDeger(n)), refler.map(([n, v]) => n + "=" + v), "swift", "referans");
+  const ktSay = (kt.match(/const val [A-Z_0-9]+ = /g) ?? []).length;
+  const swSay = (sw.match(/static let [A-Z_0-9]+ = /g) ?? []).length;
+  sameList("yuruyus VAD sabit sayisi", ["kotlin=" + ktSay, "swift=" + swSay], ["kotlin=" + refler.length, "swift=" + refler.length], "native", "referans");
+  const js = read("mobile/src/lib/stt.ts");
+  const tavan = (js.match(/const VAD_GUARD_MS = (\d+) \+ (\d+) \+ \d+;/) ?? []).slice(1, 3).join("+");
+  const deger = (n) => (refler.find(([k]) => k === n) ?? [])[1];
+  sameList("yuruyus VAD emniyet tavani", ["js=" + (tavan || "YOK")], ["js=" + deger("MAX_WAIT_MS") + "+" + deger("MAX_SPEECH_MS")], "mobil", "referans");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

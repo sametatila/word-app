@@ -28,6 +28,8 @@ type SpeechNative = {
   setKeepAwake(on: boolean): void;
   startRecording(): Promise<boolean>;
   stopRecording(): Promise<string | null>;
+  /** Konuşma algılamalı kayıt (cihazda VAD). Eski yapılarda yok; iOS'ta motor yoksa kind "unsupported". */
+  recordUtterance?(): Promise<{ kind: string; path?: string | null; seconds?: number } | null>;
   startWalkService(): void;
   stopWalkService(): void;
   setWalkNowPlaying?(title: string, subtitle: string): void;
@@ -295,7 +297,12 @@ export function onScreenState(cb: (off: boolean) => void): () => void {
  * Sunucu (Azure) STT — ekran-kapalı/cepte yolu. Ham ses kaydeder (16 kHz mono WAV),
  * /api/stt'e (mode=walk, Azure önde) gönderir, metni döndürür. Ekran AÇIKken ücretsiz
  * native kullanılır (bkz. listenOnce); bu YALNIZ cepte/ekran-kapalı için (paralı).
- * VAD yok — sabit pencere kaydeder; kullanıcı o sürede söyler. Auth çerezle (paylaşımlı jar).
+ *
+ * KONUŞMA ALGILAMA (cihazda VAD, `recordUtterance`): kayıt konuşma bitince kendisi durur,
+ * sunucuya yalnız konuşma + 500 ms pay gider; konuşma yoksa hiçbir şey gitmez ("duyamadım").
+ * Kullanıcıya başlamak için 5 sn, konuşmaya 4 sn. Ölçüm (docs/plan/walk-stt.md): Azure kabulü
+ * sabit pencereyle aynı, gönderilen ses −%56. Native yöntem yoksa (eski yapı) ya da iOS'ta
+ * ses motoru kurulamadıysa eski SABİT PENCERE (`windowMs`) aynen çalışır. Auth çerezle (paylaşımlı jar).
  */
 /* `lang` HEDEF DİL DEĞİL, tanıyıcının dil kodu: yürüyüş modunda ekran
    kapalıyken Türkçe evet/hayır dinleniyor ve buraya "tr" geçiyor.
@@ -308,6 +315,16 @@ export function onScreenState(cb: (off: boolean) => void): () => void {
  * 3 sn'lik kayıt bitiyor ve kullanıcı turu durdurduktan SONRA sunucuya yükleniyordu.
  */
 let azureGen = 0;
+/** Son dinlemede sunucuya giden ses (sn): ölçüm (`walk_listen`). Konuşma yoksa 0. */
+let azureSentSeconds = 0;
+export function lastAzureSeconds(): number { return azureSentSeconds; }
+/**
+ * VAD'li kaydın emniyet tavanı. Native taraf en geç başlama beklemesi (5 sn) + en uzun
+ * konuşma (4 sn) sonra karar veriyor (`WalkVad` MAX_WAIT_MS + MAX_SPEECH_MS, referans
+ * `scripts/lib/walk-vad.ts`; eşitliği `check:parity` denetliyor) — ses hiç akmazsa (iOS
+ * kesintisi) söz asılı kalmasın diye 1,5 sn pay.
+ */
+const VAD_GUARD_MS = 5000 + 4000 + 1500;
 export function cancelAzureListen(): void {
   azureGen++;
   try { void Native?.stopRecording().catch(() => null); } catch { /* yut */ }
@@ -316,13 +333,35 @@ export function cancelAzureListen(): void {
 export async function azureListenOnce(target: string, windowMs = 3000, lang: string = currentTargetLang()): Promise<string[] | null> {
   if (!Native) return null;
   const gen = ++azureGen;
+  azureSentSeconds = 0;
   try {
+    if (Native.recordUtterance) {
+      const r = await Promise.race([
+        Native.recordUtterance().catch(() => null),
+        nativeDelay(VAD_GUARD_MS).then(() => "timeout" as const),
+      ]);
+      if (gen !== azureGen) return null; // iptal edildi: kayıt cancelAzureListen'de kesildi, yükleme yok
+      if (r === "timeout") {
+        try { void Native.stopRecording().catch(() => null); } catch { /* yut */ }
+        return null;
+      }
+      if (!r) return null;
+      if (r.kind !== "unsupported") {
+        // Konuşma yok: sunucuya hiçbir şey gitmiyor, "duyamadım".
+        if (!r.path) return null;
+        azureSentSeconds = r.seconds ?? 0;
+        const text = await Native.uploadStt(`${apiBase()}/api/stt`, r.path, lang, target ?? "").catch(() => null);
+        return text ? [text.trim()] : null;
+      }
+      // iOS'ta ses motoru yok: aşağıdaki sabit pencere.
+    }
     const ok = await Native.startRecording().catch(() => false);
     if (!ok || gen !== azureGen) return null;
     await nativeDelay(windowMs);
     if (gen !== azureGen) return null; // iptal edildi: kayıt cancelAzureListen'de kesildi, yükleme yok
     const path = await Native.stopRecording().catch(() => null);
     if (!path || gen !== azureGen) return null;
+    azureSentSeconds = windowMs / 1000;
     // POST'u NATIVE yap — RN fetch ekran-kapalı (arka plan) takılıyor; native thread çalışır.
     const text = await Native.uploadStt(`${apiBase()}/api/stt`, path, lang, target ?? "").catch(() => null);
     return text ? [text.trim()] : null;

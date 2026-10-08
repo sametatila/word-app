@@ -20,6 +20,8 @@ RCT_EXTERN_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(stopRecording:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(recordUtterance:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(setApiBase:(NSString *)base)
 RCT_EXTERN_METHOD(uploadStt:(NSString *)url
                   wavPath:(NSString *)wavPath
