@@ -117,9 +117,13 @@ export async function GET(req: Request) {
   const narration = url.searchParams.get("k") === "n";
   /* DİNLEME (`k=l`) VE OKUMA (`k=r`) KATMANI (2026-09-29). İstek Edge sesiyle geliyor (diyalog kadrosu, okuma sesi);
      `TTS_OWN_LAYERS` o katmanda o karakteri açtıysa ve metin (o hızda) tabloda varsa karakterin dosyası, yoksa Edge.
-     İşaretsiz istek (sohbet, konuşma) hiç etkilenmiyor: tabloda aynı metin olsa da Edge'de kalıyor. */
+     İşaretsiz istek (sohbet) hiç etkilenmiyor: tabloda aynı metin olsa da Edge'de kalıyor. */
+  /* KONUŞMA ANLATIMI (`k=c&n=<anadil>`, 2026-10-08): Patika konuşmasının ders adımları. Katman anadil başına açılıyor
+     (`c:defne:tr`), çünkü yalnız Türkçe anadilli kullanıcının konuşmaları üretildi (bkz. `ownLayerEnabled`). */
   const kParam = url.searchParams.get("k");
-  const layer: OwnLayer | null = kParam === "l" || kParam === "r" ? kParam : null;
+  const layer: OwnLayer | null = kParam === "l" || kParam === "r" || kParam === "c" ? kParam : null;
+  const nParam = url.searchParams.get("n");
+  const native = nParam === "tr" || nParam === "en" || nParam === "de" ? nParam : null;
 
   if (!text || text.length > MAX_TEXT) {
     return NextResponse.json({ error: "bad_text" }, { status: 400 });
@@ -141,7 +145,7 @@ export async function GET(req: Request) {
   const own = word || narration
     ? await ownVoiceAudio(text, voice as VoiceId, slow, pitch)
     : layer
-      ? await ownLayerAudio(layer, text, voice as VoiceId, slow, pitch)
+      ? await ownLayerAudio(layer, text, voice as VoiceId, slow, pitch, native)
       : null;
   if (own) return ownResponse(req, own.audio, own.name);
   if (word && isOwnVoice(voice) && ownVoicesLive()) {

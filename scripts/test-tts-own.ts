@@ -6,6 +6,7 @@
  *      kurs değişince aynı karakter (Zürih'te Leni/Jan) — kimsenin seçimi sessizce varsayılana dönmüyor.
  *   2. DÜŞÜŞ YOK. Kelime isteği (`k=w`) tabloda varsa karakterin dosyası, yoksa 404; Edge'e gitmiyor.
  *   3. ÖNBELLEK. Karakter dosyası bir gün + ETag (değişebilir: uyarılı kayıt yeniden üretilince), iOS için aralık.
+ *   4. KONUŞMA KATMANI (`k=c&n=`): anadil başına açılıyor, bekletilen uyarılı kayıt (`tts-hold.json`) Edge'de.
  */
 import assert from "node:assert/strict";
 import { mkdtempSync, mkdirSync, writeFileSync } from "node:fs";
@@ -87,8 +88,10 @@ async function endpoint() {
   writeFileSync(path.join(dir, "m4a", "defne", "abc123.m4a"), audio);
   writeFileSync(
     path.join(dir, "tts-map.json"),
-    JSON.stringify({ "defne|de|der Hund": "defne/abc123.m4a" }),
+    JSON.stringify({ "defne|de|der Hund": "defne/abc123.m4a", "defne|tr|Merhaba!": "defne/abc123.m4a", "defne|tr|Bozuk okundu.": "defne/abc123.m4a" }),
   );
+  // Bekletilen uyarılı kayıt: tablodaki dosya buysa katmanda verilmiyor.
+  writeFileSync(path.join(dir, "tts-hold.json"), JSON.stringify({ "defne|tr|Bozuk okundu.": "defne/abc123.m4a" }));
   process.env.TTS_OWN_DIR = dir;
 
   const { GET } = await import("../src/app/api/tts/route");
@@ -155,6 +158,31 @@ async function endpoint() {
   });
   assert.equal(res.status, 403);
   ok("başka kökenden istek 403 (karakter dosyası da)");
+
+  // 4. Konuşma katmanı (k=c, 2026-10-08): anadil başına, bekletilen uyarılı kayıt verilmiyor.
+  process.env.TTS_OWN_LAYERS = "l:defne,c:defne:tr";
+  res = await req("v=tr-TR-EmelNeural&t=Merhaba!&k=c&n=tr");
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get("x-tts-source"), "own");
+  ok("konuşma katmanı açık, anadil tr: Defne'nin dosyası");
+
+  res = await req("v=tr-TR-EmelNeural&t=Merhaba!&k=c&n=en");
+  assert.equal(res.status, 401);
+  ok("başka anadil: katman kapalı, sentez yoluna (oturumsuz: 401)");
+
+  res = await req("v=tr-TR-EmelNeural&t=Merhaba!&k=c");
+  assert.equal(res.status, 401);
+  ok("anadilsiz konuşma isteği: katman kapalı");
+
+  res = await req("v=tr-TR-EmelNeural&t=Bozuk%20okundu.&k=c&n=tr");
+  assert.equal(res.status, 401);
+  ok("bekletilen uyarılı kayıt (tts-hold.json) verilmiyor");
+
+  process.env.TTS_OWN_LAYERS = "l:defne";
+  res = await req("v=tr-TR-EmelNeural&t=Merhaba!&k=c&n=tr");
+  assert.equal(res.status, 401);
+  ok("konuşma katmanı kapalı: Edge");
+  delete process.env.TTS_OWN_LAYERS;
 
   res = await req("v=xx-XX-Kimse&t=der%20Hund&k=w");
   assert.equal(res.status, 400);

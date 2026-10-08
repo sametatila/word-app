@@ -21,7 +21,7 @@ import { OWN_VOICES, ownCastFor, type Pace, type Pitch, type VoiceId } from "./v
  * günlük tur ve pratikte `slow`/`p` taşıyan kelime çağrısı yok); gelirse tabloda bulunmuyor sayılıyor.
  */
 
-type Table = { dir: string; map: Record<string, string>; mtimeMs: number; checked: number };
+type Table = { dir: string; map: Record<string, string>; mtimeMs: number; checked: number; hold: Record<string, string>; holdMtimeMs: number };
 let table: Table | null = null;
 const RECHECK_MS = 60_000;
 
@@ -32,9 +32,23 @@ async function load(dir: string): Promise<Record<string, string>> {
   const file = path.join(dir, "tts-map.json");
   const { mtimeMs } = await stat(file);
   if (!table || table.dir !== dir || table.mtimeMs !== mtimeMs) {
-    table = { dir, map: JSON.parse(await readFile(file, "utf8")), mtimeMs, checked: now };
+    table = { dir, map: JSON.parse(await readFile(file, "utf8")), mtimeMs, checked: now, hold: table?.hold ?? {}, holdMtimeMs: table?.holdMtimeMs ?? -1 };
   }
   table.checked = now;
+  /* BEKLETİLEN KAYITLAR (`tts-hold.json`, 2026-10-08): katmanda verilmeyecek uyarılı sesler — anahtar → dosya.
+     Yalnız tablodaki dosya hâlâ O dosyaysa bekletiliyor: kayıt yeniden üretilip yerine temiz ses konunca kendiliğinden
+     açılıyor. Dosya yoksa ya da bozuksa boş liste (bekletme bir güvenlik değil, kalite süzgeci). Yazan: tts-test
+     `uyari_ayir.py` (yayındaki uyarılılardan bizim hatamız olanlar + kulak kontrolü bekleyen konuşma kayıtları). */
+  try {
+    const h = await stat(path.join(dir, "tts-hold.json"));
+    if (h.mtimeMs !== table.holdMtimeMs) {
+      table.hold = JSON.parse(await readFile(path.join(dir, "tts-hold.json"), "utf8"));
+      table.holdMtimeMs = h.mtimeMs;
+    }
+  } catch {
+    table.hold = {};
+    table.holdMtimeMs = -1;
+  }
   return table.map;
 }
 
@@ -63,8 +77,8 @@ export async function ownVoiceAudio(text: string, voice: VoiceId, pace: Pace, pi
   }
 }
 
-/** Dinleme (`l`) ve okuma (`r`) katmanı — adres `k=l` / `k=r` taşıyor. */
-export type OwnLayer = "l" | "r";
+/** Dinleme (`l`), okuma (`r`) ve konuşma anlatımı (`c`) katmanı — adres `k=l` / `k=r` / `k=c` taşıyor. */
+export type OwnLayer = "l" | "r" | "c";
 
 /**
  * KATMAN ANAHTARI (2026-09-29): `TTS_OWN_LAYERS="l:defne,r:defne"` — hangi katmanda hangi karakterin dosyası
@@ -72,11 +86,15 @@ export type OwnLayer = "l" | "r";
  * kapsamı TAMAMLANMADAN açılırsa aynı diyalogda/parçada o kişinin sesi satır satır değişir (dosya var → kendi ses,
  * yok → Edge). Kapsam: `scripts/tts-listening-jobs.ts` / `tts-reading-jobs.ts` ile sunucu tablosu karşılaştırılır.
  */
-export function ownLayerEnabled(layer: OwnLayer, character: string): boolean {
+export function ownLayerEnabled(layer: OwnLayer, character: string, native?: string | null): boolean {
+  /* KONUŞMA katmanı anadil başına (2026-10-08): `c:defne:tr`. Konuşma anlatımı anadilde; yalnız Türkçe anadilli
+     kullanıcının konuşmaları üretildi. Anadil koşulu olmasaydı İngilizce anadilli kullanıcının anlatımı Edge'den,
+     hedef dil cümleleri (tabloda var) Defne'den çalardı: aynı baloncukta iki ses. */
+  const token = layer === "c" ? `c:${character}:${native ?? ""}` : `${layer}:${character}`;
   return (process.env.TTS_OWN_LAYERS ?? "")
     .split(",")
     .map((s) => s.trim())
-    .includes(`${layer}:${character}`);
+    .includes(token);
 }
 
 /**
@@ -105,15 +123,20 @@ const LAYER_SECOND_SEAT: Partial<Record<VoiceId, { character: string; lang: "de"
  * (2. koltukta `LAYER_SECOND_SEAT` ile) bulunuyor. Anahtar kapalıysa, perde kaydırılmışsa (kadronun 3.+ koltuğu), hız üretilmemişse ya da metin tabloda
  * yoksa `null` → çağıran Edge'le sürüyor. Katman DÜŞÜŞLÜ: kelime katmanı gibi 404 değil.
  */
-export async function ownLayerAudio(layer: OwnLayer, text: string, edgeVoice: VoiceId, pace: Pace, pitch: Pitch): Promise<OwnAudio | null> {
+export async function ownLayerAudio(layer: OwnLayer, text: string, edgeVoice: VoiceId, pace: Pace, pitch: Pitch, native?: string | null): Promise<OwnAudio | null> {
   const dir = process.env.TTS_OWN_DIR;
   const ownId = ownCastFor(edgeVoice);
-  const own = (ownId ? OWN_VOICES[ownId] : undefined) ?? LAYER_SECOND_SEAT[edgeVoice];
-  const suffix = LAYER_PACE[pace];
-  if (!dir || !own || pitch !== "mid" || suffix === undefined || !ownLayerEnabled(layer, own.character)) return null;
+  const own = (ownId ? OWN_VOICES[ownId] : undefined) ?? (layer === "c" ? undefined : LAYER_SECOND_SEAT[edgeVoice]);
+  // Konuşma yalnız normal hızda üretildi (yavaş sürümü yok).
+  const suffix = layer === "c" ? (pace === "normal" ? "" : undefined) : LAYER_PACE[pace];
+  if (!dir || !own || pitch !== "mid" || suffix === undefined || !ownLayerEnabled(layer, own.character, native)) return null;
   try {
-    const name = (await load(dir))[`${own.character}|${own.lang}|${cleanForSpeech(text)}${suffix}`];
+    const key = `${own.character}|${own.lang}|${cleanForSpeech(text)}`;
+    const map = await load(dir);
+    const name = map[`${key}${suffix}`];
     if (!name) return null;
+    /* Bekletilen uyarılı kayıt (asıl kaydın dosyasına bakılıyor; yavaş sürümler ondan türetildi). */
+    if (table?.hold[key] && table.hold[key] === map[key]) return null;
     return { audio: await readFile(path.join(dir, "m4a", name)), name };
   } catch (err) {
     console.error("[tts-own]", err);

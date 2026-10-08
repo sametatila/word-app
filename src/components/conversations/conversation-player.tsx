@@ -216,6 +216,16 @@ function narFor(lang: NativeLang) {
   });
 }
 
+/**
+ * DERS PARÇASI — konuşma katmanı (`k=c`, 2026-10-08). Ders adımlarının ve ipucu/düzeltme baloncuklarının sesi
+ * sunucuda önceden üretilmiş karakter dosyasından gelebiliyor (`TTS_OWN_LAYERS` `c:defne:tr`); anadil adreste,
+ * çünkü katman anadil başına açılıyor. Üretim listesi `scripts/tts-conversation-jobs.ts`. Sohbet (yapay zekâ)
+ * baloncukları işaretsiz: onların metni önceden üretilemez.
+ */
+function asLesson(segments: Segment[], native: NativeLang): (Segment & { layer: "c"; layerNative: NativeLang })[] {
+  return segments.map((s) => ({ ...s, layer: "c" as const, layerNative: native }));
+}
+
 /** `doğru`/`yanlış` düğmeleri hükmü metin olarak veriyor — dilde karşılığı. */
 /** Anlatım tarafının tanıyıcı etiketi — arayüz dili neyse o dinleniyor. */
 const NATIVE_TAG: Record<NativeLang, string> = { tr: "tr-TR", en: "en-US", de: "de-DE" };
@@ -547,20 +557,20 @@ function ConversationPlayerBody({
   useEffect(() => {
     for (let i = stepIndex; i < Math.min(stepIndex + 3, conversation.lecture.length); i++) {
       const s = conversation.lecture[i];
-      prefetchSegments(s.say);
+      prefetchSegments(asLesson(s.say, lang));
       const prev = conversation.lecture[i - 1]?.expect?.kind;
       if (prev === "repeat" || prev === "produce") {
-        prefetchSegments([nar(PRAISE_KEYS[(i - 1) % PRAISE_KEYS.length]), ...s.say]);
+        prefetchSegments(asLesson([nar(PRAISE_KEYS[(i - 1) % PRAISE_KEYS.length]), ...s.say], lang));
       }
       const e = s.expect;
-      if (e?.kind === "produce") prefetchSegments(e.hint);
+      if (e?.kind === "produce") prefetchSegments(asLesson(e.hint, lang));
       if (e?.kind === "truefalse") {
-        prefetchSegments([nar(PRAISE_KEYS[i % PRAISE_KEYS.length]), ...e.why]);
-        prefetchSegments([nar("conversationp.not_quite"), ...e.why]);
+        prefetchSegments(asLesson([nar(PRAISE_KEYS[i % PRAISE_KEYS.length]), ...e.why], lang));
+        prefetchSegments(asLesson([nar("conversationp.not_quite"), ...e.why], lang));
       }
     }
     prefetchGerman(conversation.chat.opening);
-  }, [conversation, stepIndex, nar]);
+  }, [conversation, stepIndex, nar, lang]);
 
   // ─────────────────────────── anlatım motoru ───────────────────────────
 
@@ -748,7 +758,7 @@ function ConversationPlayerBody({
       setStepIndex(index);
       setTyping(false);
       setSpeakingId(null);
-      const segments = [...(prefix ?? []), ...s.say];
+      const segments = asLesson([...(prefix ?? []), ...s.say], lang);
       const id = ++feedSeq.current;
       // Baloncuk "yazıyor" olarak doğuyor; metin sesten bir nefes önce
       // açılıyor (speakSegments onStart). Öncekilerden askıda kalan varsa
@@ -782,7 +792,7 @@ function ConversationPlayerBody({
     },
     // startChat aşağıda tanımlı; ref üzerinden çağrılıyor.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [conversation, ttsAvailable, asrAvailable, capture, cancelCapture, langFor],
+    [conversation, ttsAvailable, asrAvailable, capture, cancelCapture, langFor, lang],
   );
   const runStepRef = useRef(runStep);
   useEffect(() => {
@@ -791,7 +801,8 @@ function ConversationPlayerBody({
 
   /** Yalnızca konuşan bir ara baloncuk: ipucu, düzeltme, teselli. */
   const interject = useCallback(
-    (segments: Segment[], then?: () => void, tone: "hint" | undefined = "hint") => {
+    (said: Segment[], then?: () => void, tone: "hint" | undefined = "hint") => {
+      const segments = asLesson(said, lang);
       setAwaiting(false);
       setSpeakingId(null);
       const id = ++feedSeq.current;
@@ -814,7 +825,7 @@ function ConversationPlayerBody({
       if (ttsAvailable) cancelSpeech.current = speakSegments(segments, after, reveal);
       else after();
     },
-    [ttsAvailable],
+    [ttsAvailable, lang],
   );
 
   /** Aynı adım için mikrofonu yeniden açar (ipucundan sonra). */
