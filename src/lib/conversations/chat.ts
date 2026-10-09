@@ -514,7 +514,9 @@ export async function* streamChat(
       let attempt = 0;
       return ensureRoleText(
         () => splitInlineMarkers(stripModelTokenStream(streamSystem(system, messages, onMeta, report, attempt++))),
-        1,
+        // İki yeniden deneme (birincil → yedek → birincil): yedek kotası doluysa ikinci
+        // deneme yine birincile düşüyor ve Gemma'nın ikinci denemesi çoğu zaman tutuyor.
+        2,
         () => console.warn("[chat] rol metni yok, tur öteki sağlayıcıyla yeniden üretiliyor"),
       );
     })(),

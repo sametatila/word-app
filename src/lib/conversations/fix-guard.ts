@@ -214,6 +214,36 @@ function bothRightVariant(left: string[], right: string[]): boolean {
   });
 }
 
+/**
+ * GELECEK İÇİN ŞİMDİKİ ZAMAN (QA panel #57): "ich studiere bald in Dortmund → ich werde
+ * bald in Dortmund studieren (Futur I)". Almancada (ve "bald/morgen" gibi zaman sözüyle)
+ * şimdiki zaman geleceği anlatır; sağa yalnız "werden" ekleyip fiili sona taşıyan düzeltme
+ * hata düzeltmesi değil.
+ */
+const WERDEN = new Set(["werde", "wirst", "wird", "werden", "werdet"]);
+function addsFuturOnly(left: string[], right: string[], label: string): boolean {
+  if (!/futur|future|gelecek/i.test(label)) return false;
+  return right.some((w) => WERDEN.has(w)) && !left.some((w) => WERDEN.has(w)) && right.length === left.length + 1;
+}
+
+/**
+ * BİLEŞİK İSMİ KISALTMA (QA panel #59): "Wann kommt die Müllabfuhr? → Wann kommt der Müll?
+ * (Wortwahl)". Tek sözcük, soldaki sağdakini içeren daha uzun bir bileşik: anlam daralıyor
+ * ya da bozuluyor; doğru bileşik ismin yerine kısasını koymak düzeltme değil.
+ */
+function shortensCompound(left: string[], right: string[]): boolean {
+  if (left.length !== right.length) return false;
+  let diff = 0;
+  for (let i = 0; i < left.length; i++) {
+    if (left[i] === right[i]) continue;
+    // artikel değişimi (die → der) bileşik kısaltmanın parçası olabilir
+    if (["der", "die", "das", "den", "dem", "des"].includes(left[i]) && ["der", "die", "das", "den", "dem", "des"].includes(right[i])) continue;
+    diff++;
+    if (!(left[i].length >= right[i].length + 3 && left[i].startsWith(right[i]))) return false;
+  }
+  return diff === 1;
+}
+
 /** "Uni → Universität": tek sözcük, sağdaki soldakiyle başlıyor ve yalnız uzuyor. */
 function expandsAbbreviation(left: string[], right: string[]): boolean {
   if (left.length !== right.length) return false;
@@ -277,7 +307,14 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
     return { keep: false, reason: "label_mismatch" };
   }
 
-  if (STYLE_LABEL.test(label) || expandsAbbreviation(left, right) || onlyParticleMoved(left, right) || bothRightVariant(left, right)) {
+  if (
+    STYLE_LABEL.test(label) ||
+    expandsAbbreviation(left, right) ||
+    shortensCompound(left, right) ||
+    onlyParticleMoved(left, right) ||
+    bothRightVariant(left, right) ||
+    addsFuturOnly(left, right, label)
+  ) {
     return { keep: false, reason: "style" };
   }
   if (lang === "de" && addsArticleToMassNoun(left, right)) return { keep: false, reason: "mass_noun" };

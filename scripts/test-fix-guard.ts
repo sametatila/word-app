@@ -104,6 +104,8 @@ console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 
     ["trinke Wasser → trinke ein Wasser (Artikel)", "Ich trinke Wasser.", {}, "mass_noun"],
     ["Halten Sie bitte hier → Bitte halten Sie hier (Satzstellung)", "Halten Sie bitte hier.", {}, "style"],
     ["gegenüber vom Bahnhof → gegenüber dem Bahnhof (Präposition)", "Ist es gegenüber vom Bahnhof?", {}, "style"],
+    ["ich studiere bald in Dortmund → ich werde bald in Dortmund studieren (Futur I)", "Ich studiere bald in Dortmund.", {}, "style"],
+    ["Wann kommt die Müllabfuhr? → Wann kommt der Müll? (Wortwahl)", "Wann kommt die Müllabfuhr?", {}, "style"],
   ];
   for (const [line, s, ctx, reason] of cases) {
     const v = judgeCorrection(line, said(s), ctx);
