@@ -1,0 +1,17 @@
+{
+ "_not": "check:content-names için: eşlemedeki ya da listedeki bir adın KİŞİ değil SÖZCÜK olarak geçtiği kalıplar (düzenli ifade, dosyanın ham metninde aranır; eşleşen aralıktaki ad sayılmaz). Kalıplar dar tutulur ki ad olarak kullanım yine yakalansın. 2026-10-05 ad değişikliği bu sözcüklerin bazılarını yanlışlıkla ada çevirmişti (Dilek kipi → Leonie kipi, Emir cümlesi → Uwe cümlesi, Uzun sıfatlar → Collins sıfatlar); 2026-10-09'da geri alındı.",
+ "anlamlar": {
+  "Emir": ["Emir (?:kip|cümle|verme|zincir|olumsuz|ve yönergede|gibi durmuyor|kısmını)"],
+  "Dilek": ["Dilek (?:kip|yan cümle|anlatır|ne, karar|net söylenmiş|ve kutlama)"],
+  "Can": ["Can (?:I|you|we|he|she|they|it|someone|anyone|everyone|the|a|my|your|this|that|there)\\b", "Can-do", "Can't", "Can (?:sıkı|alıcı)", "Can ile başla"],
+  "Metin": ["Metin(?! [A-ZÇĞİÖŞÜ])"],
+  "Uzun": ["Uzun (?:sıfat|bir|süre)"],
+  "Yağmur": ["Yağmur (?:başla|yağ)"],
+  "Deniz": ["Deniz kenar"],
+  "Yalın": ["Yalın hâl"],
+  "Rıza": ["Rıza her zaman geri alınabilir"],
+  "Bade": ["Bades\\b"],
+  "Buse": ["Buses\\b"],
+  "Alp": ["Alps\\b"]
+ }
+}
