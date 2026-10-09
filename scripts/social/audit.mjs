@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /*
-  Yerleşim denetimi: galerideki şablonları 0,2 sn'de bir tarar, görünen her öğeyi ölçer.
+  Yerleşim denetimi: bölümleri 0,2 sn'de bir tarar, görünen her öğeyi ölçer.
 
-  npm run social:audit [-- <şablon> …] [-- --engine webkit|chromium|both]   (varsayılan both)
+  npm run social:audit [-- <bölüm-id | şablon> …] [-- --engine webkit|chromium|both]   (varsayılan both)
+  Bölüm verilmezse bütün bölümler; şablon adı o şablonun bütün bölümleri demek.
 
   Kurallar (sahne koordinatı, 1080×1920):
     GÜVENLİ ALAN DIŞI  yazı x 90–934, y 180–1535 dışına taşıyor (sağda TikTok/Reels düğmeleri, altta açıklama)
@@ -15,14 +16,26 @@
   açılırken kırpılan artikel, bulanık zemin ışıkları, fişin henüz basılmamış kısmı) aşağıdaki listede atlanır.
   Gerekçesiz yeni istisna eklenmez.
 */
+import fs from "node:fs";
 import path from "node:path";
-import { OUT, CHROME, playwright } from "./lib/page.mjs";
+import { OUT, CHROME, playwright, buildPage, localDoc } from "./lib/page.mjs";
+import { loadEpisodes } from "./lib/episodes.mjs";
 
 const args = process.argv.slice(2);
 const engArg = args.includes("--engine") ? args[args.indexOf("--engine") + 1] : "both";
 const only = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--engine");
 const engines = engArg === "both" ? ["chromium", "webkit"] : [engArg];
-const LOCAL = path.join(OUT, "gallery/atolye.local.html");
+const all = (await loadEpisodes()).episodes;
+const picked = only.length ? all.filter((e) => only.includes(e.id) || only.includes(e.template)) : all;
+const missing = only.filter((a) => !all.some((e) => e.id === a || e.template === a));
+if (missing.length) throw new Error(`bölüm/şablon yok: ${missing.join(", ")}`);
+const { clips } = await loadEpisodes(picked.map((e) => e.id));
+const EPISODES = Object.fromEntries(picked.map((e) => [e.id, { template: e.template, data: e.data }]));
+const { page, ok } = buildPage("audit.html", { data: {}, clips, templates: picked.map((e) => e.template), meta: { EPISODES } });
+for (const e of picked) if (!ok.includes(e.template)) throw new Error(`şablon yüklenemedi: ${e.template}`);
+const LOCAL = path.join(OUT, `render/audit-${process.pid}.html`); // koşuya özel: paralel denetimler birbirini ezmesin
+fs.mkdirSync(path.dirname(LOCAL), { recursive: true });
+fs.writeFileSync(LOCAL, localDoc(page));
 
 // bilerek yapılan durumlar (sınıf adı): gerekçe yanında
 const SKIP = {
@@ -38,7 +51,7 @@ for (const eng of engines) {
   const pg = await b.newPage({ viewport: { width: 1200, height: 1000 } });
   await pg.goto(`file://${LOCAL}`);
   await pg.waitForFunction(() => window.READY === true, null, { timeout: 60000 });
-  const ids = only.length ? only : await pg.evaluate(() => Object.keys(E.data).sort());
+  const ids = picked.map((e) => e.id);
   for (const id of ids) {
     const res = await pg.evaluate(
       ([id, SKIP]) => {
@@ -47,7 +60,7 @@ for (const eng of engines) {
         document.body.appendChild(d);
         let I;
         try {
-          I = E.mount(d, id);
+          I = E.mount(d, E.EPISODES[id].template, E.EPISODES[id].data);
         } catch (e) {
           d.remove();
           return [`KURULAMADI ${e.message}`];
@@ -150,5 +163,6 @@ for (const eng of engines) {
   }
   await b.close();
 }
+fs.rmSync(LOCAL, { force: true });
 console.log(total ? `\n${total} sorun` : "\nsorun yok");
 process.exitCode = total ? 1 : 0;

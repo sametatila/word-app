@@ -150,6 +150,7 @@
     "social:gallery": "node scripts/social/gallery.mjs",
     "social:audit": "node scripts/social/audit.mjs",
     "social:render": "node scripts/social/render.mjs",
+    "social:plan": "node scripts/social/plan.mjs",
     "db:check": "tsx scripts/schema-check.ts",
     "db:verify": "tsx scripts/verify-live.ts",
     "test:chat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/chat-eval.ts",
