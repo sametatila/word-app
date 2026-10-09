@@ -132,6 +132,11 @@ function GameRound() {
    * metni gösteriyor (`session-player` `saveWarning`).
    */
   const [saveWarning, setSaveWarning] = useState<null | "queued" | "dropped">(null);
+  /* Özet açılırken kayıt hâlâ yolda mıydı (`FINISH_WAIT_MS` aşıldı)? O zaman
+     cevaba bağlı notlar (pekişen, kurtarılan seri, bahis, uyarı, misafir
+     kartı) okunan kartların ÜSTÜNE girip onları itmesin diye en alta
+     yazılıyor (QA F-0070 sınıfı). */
+  const [lateSave, setLateSave] = useState(false);
   const [combo, setCombo] = useState(0);
   /** Etap kartındaki "en uzun seri" ve etabın kendi sayacı. */
   const bestCombo = useRef(0);
@@ -267,7 +272,7 @@ function GameRound() {
         pratik kartı + "karışık tura dön").
       */
       if (list.length === 0) {
-        setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setResult(null);
+        setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setResult(null); setLateSave(false);
         setPhase(onlyGame ? "no_words" : "goal_done");
       }
       else { sfx("start"); setPhase("playing"); } // turun açılışı — web `session-player` aynı yerde çalıyor
@@ -421,6 +426,7 @@ function GameRound() {
     if (submitted.current) { setPhase("done"); return; }
     submitted.current = true;
     setSaveWarning(null);
+    setLateSave(false);
     /*
      * SON ETABIN BAHSİ BURADA KAPANIYOR.
      *
@@ -443,6 +449,7 @@ function GameRound() {
        aşılırsa açılıyor ve geç gelen seri anı atlanıyor — özetin ortasında
        sahne açılmaz. */
     let open = false;
+    let settled = false;
     const save = (async () => {
       try {
         if (answers.current.length || wager) {
@@ -456,10 +463,15 @@ function GameRound() {
         }
       } catch (e) {
         setSaveWarning(isPermanentError(e) ? "dropped" : "queued");
+      } finally {
+        settled = true;
       }
     })();
     await Promise.race([save, new Promise((res) => setTimeout(res, FINISH_WAIT_MS))]);
     open = true;
+    /* Kayıt hâlâ yoldaysa notların yeri İLK ÇİZİMDE en alt: sonradan
+       gelen not okunan kartları itmiyor, var olan not da yer değiştirmiyor. */
+    if (!settled) setLateSave(true);
     setPhase("done");
   }
 
@@ -559,6 +571,20 @@ function GameRound() {
        Kapanış SESİ de bu ölçütten çıkıyor (yukarıdaki etki). */
     const deserved = doneDeserved;
     const xp = result?.xpGained ?? 0;
+    /* Tek satırlık notlar: kazanılan, uyarılan, kurtarılan — hepsi aynı biçimde. */
+    const notes = (
+      <>
+        {mastered > 0 ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={t("sessionw.n_mastered", { n: mastered })} /> : null}
+        {wagerResult !== null ? (
+          <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<XpIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
+        ) : null}
+        {repaired !== null ? <FlowNote tone="warn" icon={<StreakIcon color={colors.streakText} size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: repaired })}`} /> : null}
+        {/* Misafirin serisi üç güne çıktı: kaybedilecek alışkanlık artık var. */}
+        <GuestMilestoneCard milestone="streak_3" when={(result?.currentStreak ?? 0) >= 3} />
+        {/* Bu bir UYARI, hata değil — tur oynandı, yalnız kaydı bekliyor. */}
+        {saveWarning ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
+      </>
+    );
     /*
       SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
       altta sabit düğmeler. Eskiden maskot, halka, başlık, XP, sayılar ve beş
@@ -603,16 +629,7 @@ function GameRound() {
           ]} />
         ) : null}
 
-        {/* Tek satırlık notlar: kazanılan, uyarılan, kurtarılan — hepsi aynı biçimde. */}
-        {mastered > 0 ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={t("sessionw.n_mastered", { n: mastered })} /> : null}
-        {wagerResult !== null ? (
-          <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<XpIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
-        ) : null}
-        {repaired !== null ? <FlowNote tone="warn" icon={<StreakIcon color={colors.streakText} size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: repaired })}`} /> : null}
-        {/* Misafirin serisi üç güne çıktı: kaybedilecek alışkanlık artık var. */}
-        <GuestMilestoneCard milestone="streak_3" when={(result?.currentStreak ?? 0) >= 3} />
-        {/* Bu bir UYARI, hata değil — tur oynandı, yalnız kaydı bekliyor. */}
-        {saveWarning ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
+        {lateSave ? null : notes}
 
         {/* ZORLANDIKLARIN — en çok altı satır; gerisi "Kelimelerim"de. */}
         {missed.current.length ? (
@@ -636,6 +653,8 @@ function GameRound() {
             <Text variant="caption" color={colors.textMuted}>{`${result.reviewsToday} / ${result.dailyGoal}`}</Text>
           </DetailCard>
         ) : null}
+        {/* Kayıt geç döndüyse notlar burada: okunan kartlar yerinde kalıyor. */}
+        {lateSave ? notes : null}
       </FlowScreen>
     );
   }

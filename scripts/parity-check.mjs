@@ -4734,7 +4734,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      `actions` prop'unda, kaynakta icerikten ONCE ama ekranda en altta:
      `actionsSona` onlari dilimin sonuna tasiyor. Blok yorumlar da siliniyor. */
   const web = dilim(read("src/components/session-player.tsx"), "function SummaryCard(", "\n}\n").replace(/\/\*[\s\S]*?\*\//g, " ");
-  const mob = actionsSona(dilim(read("mobile/src/screens/GameScreen.tsx"), "if (phase === \"done\") {", "\n/**"));
+  /* Mobilde tek satirlik notlar `notes` degiskeninde: kayit ozet acilirken
+     hala yoldaysa en alta yaziliyor, okunan kartlari itmesin (QA F-0070
+     sinifi). Sira VARSAYILAN yuvasindan (`{lateSave ? null : notes}`)
+     olculuyor: tanim o yuvaya tasiniyor. */
+  const notlarYuvada = (src) => {
+    const m = src.match(/const notes = \(([\s\S]*?)\n {4}\);\n/);
+    return m && src.includes("{lateSave ? null : notes}") ? src.replace(m[0], "").replace("{lateSave ? null : notes}", m[1]) : src;
+  };
+  const mob = actionsSona(notlarYuvada(dilim(read("mobile/src/screens/GameScreen.tsx"), "if (phase === \"done\") {", "\n/**")));
 
   sameList("tur ozetinin bolum sirasi", sira(mob, 1), sira(web, 0));
 }
