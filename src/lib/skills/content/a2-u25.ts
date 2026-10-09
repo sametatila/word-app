@@ -299,7 +299,7 @@ export const a2U25: SkillExercise[] = [
         explain: "Amir her şeyi değil, neredeyse her şeyi anlamış: „Nicht alles — aber fast.“",
       },
       {
-        text: "Was war Ecems Problem beim Sprechen?",
+        text: "Was war Ediths Problem beim Sprechen?",
         options: [
           "Sie kannte zu wenige Wörter.",
           "Sie wollte immer erst den perfekten Satz.",

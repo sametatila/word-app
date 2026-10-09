@@ -116,7 +116,7 @@ export const enB2U20: SkillExercise[] = [
     unit: 20,
     title: "A letter about a pension",
     genre: "letter",
-    intro: "Bir okur mektubu ve para köşesinin cevabı. Sevgi neden endişeli, ona ne öneriliyor?",
+    intro: "Bir okur mektubu ve para köşesinin cevabı. Norah neden endişeli, ona ne öneriliyor?",
     gloss: [
       { de: "burst", tr: "patlamak" },
       { de: "independent", tr: "bağımsız" },

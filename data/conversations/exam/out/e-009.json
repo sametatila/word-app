@@ -120,7 +120,7 @@
  { "tr": "Bir iş ilanına başvuru mektubu (Anschreiben) yaz.", "kind": "writing.prompt", "en": "Write a cover letter (Anschreiben) for a job posting." },
  { "tr": "Burada iki yıldır o meslekte çalıştığım hâlde mi?", "kind": "turn", "en": "Even though I have been working in that profession here for two years?" },
  { "tr": "Cevap gelmezse gönderen ne yapacağını bildiriyor?", "kind": "question", "en": "What does the sender say they will do if no reply comes?" },
- { "tr": "Deniz neden „Doch, sehr gern“ diye cevap veriyor?", "kind": "question", "en": "Why does Sascha answer with “Doch, sehr gern”?" },
+ { "tr": "Sascha neden „Doch, sehr gern“ diye cevap veriyor?", "kind": "question", "en": "Why does Sascha answer with “Doch, sehr gern”?" },
  { "tr": "Doktorda kendini nasıl hissettiğini anlatıyorsun.", "kind": "speaking.situation", "en": "You are describing how you feel at the doctor's." },
  { "tr": "Fiyatta bize yaklaşırsanız miktarı artırabiliriz.", "kind": "speaking", "en": "If you were to meet us on the price, we could increase the quantity." },
  { "tr": "Hayır ama çok halsiz hissediyorum ve öksürüyorum.", "kind": "turn", "en": "No, but I feel very run down and I have a cough." },

@@ -339,7 +339,7 @@ export const c1U05: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Wie hat Frau Lehmann Tunas Mail verstanden?",
+        text: "Wie hat Frau Lehmann Patricks Mail verstanden?",
         options: [
           "Als Scherz",
           "Als Frage",

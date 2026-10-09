@@ -50,7 +50,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "What was Callum doing when it started to rain?", tr: "Yağmur başladığında Callum ne yapıyordu?", options: ["He was cooking", "He was waiting for the bus", "He was sleeping", "He was playing soccer"], answer: 1 },
         { de: "How did Callum hurt his arm?", tr: "Callum kolunu nasıl incitti?", options: ["He fell down on the street", "He fell down at home", "He was playing soccer", "He was carrying a box"], answer: 0 },
-        { de: "How long did Callum stay at the doctor?", tr: "Onur doktorda ne kadar kaldı?", options: ["Twenty minutes", "One hour", "One day", "One week"], answer: 1 },
+        { de: "How long did Callum stay at the doctor?", tr: "Callum doktorda ne kadar kaldı?", options: ["Twenty minutes", "One hour", "One day", "One week"], answer: 1 },
       ],
     },
     reading: {

@@ -68,7 +68,7 @@ export const deC1P10: SkillExercise[] = [
         options: [
           "aus einer nie dokumentierten Umstellung",
           "aus einem defekten Gerät",
-          "aus Nurays eigener Eingabe",
+          "aus Maikes eigener Eingabe",
         ],
         answer: 0,
         explain: "Altı yıl önce yapılmış ve hiç belgelenmemiş bir değişiklikten.",

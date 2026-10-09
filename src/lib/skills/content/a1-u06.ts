@@ -109,7 +109,7 @@ export const a1U06: SkillExercise[] = [
       },
       {
         text: "Wer trinkt Kakao?",
-        options: ["Elifs Kinder", "Mia", "Tom"],
+        options: ["Paulas Kinder", "Mia", "Tom"],
         answer: 0,
         explain: "„Meine Kinder trinken Kakao.“",
       },

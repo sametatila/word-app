@@ -141,7 +141,7 @@ export const deB2P16: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Warum ist Frau Aksoys Lage besser, als sie denkt?",
+        text: "Warum ist Frau Thiels Lage besser, als sie denkt?",
         options: [
           "weil ihr Freund schon einen Teil gezahlt hat",
           "weil sie die Überweisung beweisen kann",

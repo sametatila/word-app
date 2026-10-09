@@ -422,7 +422,7 @@ export const enB2U24: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Ekibin yeni görev dağılımı kartını doldur.",
-        facts: "Müşteri aramaları Fiona'da kalıyor; çevrimiçi siparişleri Ege devralıyor; Madrid'deki ortaklardan gelen mesajları Fay yanıtlıyor; şikâyetler önce Ian'a gidiyor.",
+        facts: "Müşteri aramaları Fiona'da kalıyor; çevrimiçi siparişleri Louis devralıyor; Madrid'deki ortaklardan gelen mesajları Fay yanıtlıyor; şikâyetler önce Ian'a gidiyor.",
         fields: [
           { label: "Customer calls", answer: "Fiona", accept: ["Fiona keeps them"] },
           { label: "Online orders", answer: "Louis", accept: ["Louis takes them over"] },

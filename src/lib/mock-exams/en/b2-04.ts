@@ -563,7 +563,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               text: "Which text describes a skill that is rarely taught?",
               answer: "c",
               explain:
-                "Onur eksik beceriyi adlandırıyor: kaydı kimin yazdığını sormak. «That is the harder skill and we barely teach it» ve gerekçesini de veriyor: yavaş ve tartışmaya elverişsiz.",
+                "Callum eksik beceriyi adlandırıyor: kaydı kimin yazdığını sormak. «That is the harder skill and we barely teach it» ve gerekçesini de veriyor: yavaş ve tartışmaya elverişsiz.",
             },
             {
               kind: "match",

@@ -200,7 +200,7 @@ export const enB1U08: SkillExercise[] = [
       { speaker: "Ellie", text: "That is the woman whose car is outside. The blue one with the broken light." },
       { speaker: "Henry", text: "Katie. The car has been broken for a year and she says it gives her character." },
       { speaker: "Ellie", text: "The friendly one with the beard?" },
-      { speaker: "Henry", text: "Can. He is friendly for the first two hours. After that he is honest, which is better." },
+      { speaker: "Henry", text: "Tyler. He is friendly for the first two hours. After that he is honest, which is better." },
       { speaker: "Ellie", text: "And the fifth person?" },
       { speaker: "Henry", text: "That is me. Behind the man who wears glasses, so you can see half of my face." },
       { speaker: "Ellie", text: "Which half?" },

@@ -61,7 +61,7 @@ export const enA1U01: SkillExercise[] = [
         text: "Who is a teacher?",
         options: ["Ana", "Charlie", "Tom"],
         answer: 0,
-        explain: "„I am a teacher.“ satırı Ana'nın paragrafında. Deniz öğrenci, Tom ne olduğunu söylemiyor.",
+        explain: "„I am a teacher.“ satırı Ana'nın paragrafında. Charlie öğrenci, Tom ne olduğunu söylemiyor.",
       },
       {
         kind: "truefalse",

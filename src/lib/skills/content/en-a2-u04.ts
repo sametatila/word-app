@@ -255,7 +255,7 @@ export const enA2U04: SkillExercise[] = [
     unit: 4,
     title: "Two plans for the weekend",
     genre: "monologue",
-    intro: "Deniz arkadaşına sesli mesaj bırakıyor. Hangi plan önceden yapılmış, hangi karar şimdi verildi?",
+    intro: "Charlie arkadaşına sesli mesaj bırakıyor. Hangi plan önceden yapılmış, hangi karar şimdi verildi?",
     gloss: [
       { de: "apartment", tr: "daire" },
       { de: "hopefully", tr: "umarım" },

@@ -196,7 +196,7 @@ export const enA1U05: SkillExercise[] = [
         text: "Who is quiet?",
         options: ["Harry", "Tyler", "Erin"],
         answer: 0,
-        explain: "„He is quiet, but he is very strong.“ Can ise „never quiet“.",
+        explain: "„He is quiet, but he is very strong.“ Tyler ise „never quiet“.",
       },
       {
         kind: "truefalse",
@@ -239,7 +239,7 @@ export const enA1U05: SkillExercise[] = [
     unit: 5,
     title: "Relatives in a photo",
     genre: "dialogue",
-    intro: "Deniz fotoğraftaki akrabalarını tanıtıyor. Kim kimin nesi?",
+    intro: "Charlie fotoğraftaki akrabalarını tanıtıyor. Kim kimin nesi?",
     gloss: [
       { de: "photo", tr: "fotoğraf" },
       { de: "grandparents", tr: "büyükanne ve büyükbaba" },

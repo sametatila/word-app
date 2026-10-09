@@ -186,7 +186,7 @@ export const a2U13: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Wie bewertet Frau Petrow Sinans Arbeit?",
+        text: "Wie bewertet Frau Petrow Elias' Arbeit?",
         options: ["Sehr sorgfältig", "Zu langsam", "Nicht ausreichend"],
         answer: 0,
         explain: "„Sie arbeiten sehr sorgfältig, und die Kunden sagen, dass Sie immer respektvoll sind.“",

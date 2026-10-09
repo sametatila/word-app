@@ -128,7 +128,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "Warum fällt der Abend aus?", tr: "Akşamki etkinlik neden iptal oldu?", options: ["Wegen Krankheit", "Weil die Halle gesperrt ist", "Wegen zu weniger Gäste", "Wegen des Wetters"], answer: 1 },
         { de: "Was drückt Miras Satz „Das hättest du mir doch früher sagen können“ aus?", tr: "Mira'nın „Das hättest du mir doch früher sagen können“ cümlesi ne bildiriyor?", options: ["Eine Bitte", "Einen Vorwurf", "Ein Lob", "Eine Vermutung"], answer: 1 },
-        { de: "Warum antwortet Sascha mit „Doch, sehr gern“?", tr: "Deniz neden „Doch, sehr gern“ diye cevap veriyor?", options: ["Weil die Frage verneint war", "Weil er ablehnt", "Weil er unsicher ist", "Weil er die Frage nicht verstanden hat"], answer: 0 },
+        { de: "Warum antwortet Sascha mit „Doch, sehr gern“?", tr: "Sascha neden „Doch, sehr gern“ diye cevap veriyor?", options: ["Weil die Frage verneint war", "Weil er ablehnt", "Weil er unsicher ist", "Weil er die Frage nicht verstanden hat"], answer: 0 },
       ],
     },
     reading: {
@@ -278,7 +278,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Warum will Luisa nicht das teure Modell?", tr: "Luisa neden pahalı modeli istemiyor?", options: ["Es gefällt ihr nicht", "Sie ist diesen Monat knapp bei Kasse", "Es ist nicht lieferbar", "Jonas hat es verboten"], answer: 1 },
-        { de: "Was bedeutet Selins Satz „Die Farbe ist mir völlig Wurst“?", tr: "Luisa'nın „Die Farbe ist mir völlig Wurst“ cümlesi ne demek?", options: ["Sie mag die Farbe", "Die Farbe ist ihr gleichgültig", "Sie will eine andere Farbe", "Die Farbe ist teuer"], answer: 1 },
+        { de: "Was bedeutet Luisas Satz „Die Farbe ist mir völlig Wurst“?", tr: "Luisa'nın „Die Farbe ist mir völlig Wurst“ cümlesi ne demek?", options: ["Sie mag die Farbe", "Die Farbe ist ihr gleichgültig", "Sie will eine andere Farbe", "Die Farbe ist teuer"], answer: 1 },
         { de: "Wie bewertet Jonas das mittlere Modell?", tr: "Jonas ortadaki modeli nasıl değerlendiriyor?", options: ["Als das Beste überhaupt", "Als nicht ideal, aber solide", "Als Geldverschwendung", "Als zu billig"], answer: 1 },
       ],
     },

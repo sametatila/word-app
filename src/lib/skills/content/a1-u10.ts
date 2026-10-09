@@ -42,7 +42,7 @@ export const a1U10: SkillExercise[] = [
       "Meine Arbeit fängt um acht Uhr an. Ich komme immer schon um zehn vor acht an meinem Arbeitsplatz an.\n\nAm Vormittag habe ich viele Aufgaben. Um halb eins mache ich eine Pause und esse mit meinen Kollegen zusammen.\n\nAm Nachmittag telefoniere ich viel. Manchmal telefoniere ich eine Stunde.\n\nIch höre um fünf Uhr auf. Dann ist endlich Feierabend! Nach der Arbeit gehe ich spazieren oder sitze zu Hause und sehe fern.\n\nAm Freitag bin ich immer sehr müde, aber am Samstag habe ich frei.",
     questions: [
       {
-        text: "Wann fängt Elifs Arbeit an?",
+        text: "Wann fängt Paulas Arbeit an?",
         options: ["um acht Uhr", "um zehn vor acht", "um halb eins"],
         answer: 0,
         explain: "„Meine Arbeit fängt um acht Uhr an.“ Zehn vor acht işe VARDIĞI saat.",
@@ -114,7 +114,7 @@ export const a1U10: SkillExercise[] = [
         explain: "Yanlış: „Ich habe keine Lust auf einen Ausflug.“",
       },
       {
-        text: "Warum haben Elifs Kinder Zeit?",
+        text: "Warum haben Paulas Kinder Zeit?",
         options: ["Sie haben Ferien", "Sie sind krank", "Sie machen ein Praktikum"],
         answer: 0,
         explain: "„Meine Kinder haben Ferien.“",

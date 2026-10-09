@@ -72,7 +72,7 @@ export const b1U01: SkillExercise[] = [
         explain: "„Voraussetzung ist eine abgeschlossene Ausbildung und mindestens zwei Jahre Erfahrung im Büro.“",
       },
       {
-        text: "Warum passt Yasemins Erfahrung?",
+        text: "Warum passt Ramonas Erfahrung?",
         options: ["Weil sie im Lager gearbeitet hat", "Weil sie seit vier Jahren im Büro arbeitet", "Weil sie den Computer gut kennt"],
         answer: 1,
         explain: "„Ich arbeite seit vier Jahren im Büro, also habe ich genug Erfahrung.“ — seit + Dativ.",
@@ -142,13 +142,13 @@ export const b1U01: SkillExercise[] = [
         explain: "„Seine Leistung war gut, aber er suchte eine neue Herausforderung.“",
       },
       {
-        text: "Wie lange dauerte Leylas Weg zur ersten Stelle?",
+        text: "Wie lange dauerte Johannas Weg zur ersten Stelle?",
         options: ["Zwei Monate", "Fast zwei Jahre", "Fünf Jahre"],
         answer: 1,
         explain: "„Das dauerte fast zwei Jahre und brauchte viel Geduld.“",
       },
       {
-        text: "Was sagen Leylas Kollegen über sie?",
+        text: "Was sagen Johannas Kollegen über sie?",
         options: ["Sie sei kreativ und ordentlich", "Sie sei müde", "Sie sei neu"],
         answer: 0,
         explain: "„Ihre Kollegen sagen, sie sei kreativ und ordentlich.“",

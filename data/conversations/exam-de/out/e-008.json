@@ -2,7 +2,7 @@
  { "tr": "Gelen yazıya tarih ve dosya numarasıyla atıf yap", "kind": "writing.checklist", "de": "Nimm mit Datum und Aktenzeichen Bezug auf das Schreiben" },
  { "tr": "Hangi iş için yazdığını ve nereden gördüğünü yaz", "kind": "writing.checklist", "de": "Schreib, für welche Stelle du schreibst und wo du sie gesehen hast" },
  { "tr": "İyi akşamlar. Üç gece iki kişilik oda, doğru mu?", "kind": "turn", "de": "Guten Abend. Ein Doppelzimmer für drei Nächte, richtig?" },
- { "tr": "Mülakatı yapan kişi Lucy'nin kuzenine ne söyledi?", "kind": "question", "de": "Was hat die Interviewerin Elas Cousine gesagt?" },
+ { "tr": "Mülakatı yapan kişi Lucy'nin kuzenine ne söyledi?", "kind": "question", "de": "Was hat die Interviewerin Lucys Cousine gesagt?" },
  { "tr": "Ne yapacağını yaz (doktora gitmek, haber vermek)", "kind": "writing.checklist", "de": "Schreib, was du tun wirst (zum Arzt gehen, Bescheid geben)" },
  { "tr": "Rehber neden „ikinci maddeyi iki kez oku“ diyor?", "kind": "question", "de": "Warum sagt der Ratgeber „read clause two twice“?" },
  { "tr": "Şimdiye kadar ne yapıldığını edilgen yapıyla yaz", "kind": "writing.checklist", "de": "Schreib im Passiv, was bisher getan wurde" },

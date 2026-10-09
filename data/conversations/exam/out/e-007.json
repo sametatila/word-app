@@ -66,7 +66,7 @@
  { "tr": "Bu kadar açık veriyi nadiren gördüm.", "kind": "speaking", "en": "Rarely have I seen data as clear as this." },
  { "tr": "Bugün neden yine konserve yapılıyor?", "kind": "question", "en": "Why is food being preserved again today?" },
  { "tr": "Davet cümlesi kur („Möchtest du …?“)", "kind": "writing.checklist", "en": "Form an invitation (“Möchtest du …?”)" },
- { "tr": "Demir ailesi hangi dairede oturuyor?", "kind": "question", "en": "Which apartment does the Böhm family live in?" },
+ { "tr": "Böhm ailesi hangi dairede oturuyor?", "kind": "question", "en": "Which apartment does the Böhm family live in?" },
  { "tr": "Domatesler ile başparmaklar arasında", "kind": "reading.title", "en": "Between tomatoes and thumbs" },
  { "tr": "Eseri ve nerede gördüğünü baştan yaz", "kind": "writing.checklist", "en": "Name the work and where you saw it at the start" },
  { "tr": "Fotoğraftaki kişiyi tarif ediyorsun.", "kind": "speaking.situation", "en": "You are describing the person in the photo." },

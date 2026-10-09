@@ -226,7 +226,7 @@ export const enA2U08: SkillExercise[] = [
         text: "Lucy has had the cold for almost a week.",
         options: ["True", "False"],
         answer: 0,
-        explain: "Deniz üç gün diyor, Lucy düzeltiyor: „Almost a week. It started on Friday.“",
+        explain: "Charlie üç gün diyor, Lucy düzeltiyor: „Almost a week. It started on Friday.“",
       },
       {
         kind: "gapfill",

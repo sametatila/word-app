@@ -190,7 +190,7 @@ export const enA2U20: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Ellie", text: "Hi. Nice to meet you. I'm Ellie." },
-      { speaker: "Tyler", text: "Can. Nice to meet you too. How do you know Katie?" },
+      { speaker: "Tyler", text: "Tyler. Nice to meet you too. How do you know Katie?" },
       { speaker: "Ellie", text: "We work together. Four years now. And you?" },
       { speaker: "Tyler", text: "School. We were in the same class and we still have the same jokes." },
       { speaker: "Ellie", text: "Have you been here before?" },

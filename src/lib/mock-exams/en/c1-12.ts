@@ -1031,7 +1031,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 2,
               explain:
-                "Hale sonucu öngörüyor: kırık denirse kimin kırdığı sorulur, cevap «nobody» olur «and the conversation will stop».",
+                "Naomi sonucu öngörüyor: kırık denirse kimin kırdığı sorulur, cevap «nobody» olur «and the conversation will stop».",
             },
             {
               kind: "mcq",
@@ -1047,7 +1047,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 0,
               explain:
-                "Hale kendi beklentisini açıklıyor: «I began this review expecting to find one», ama dosyada, aynı kurallarla kendisinin yapmayacağı bir şey yapan kimse yok.",
+                "Naomi kendi beklentisini açıklıyor: «I began this review expecting to find one», ama dosyada, aynı kurallarla kendisinin yapmayacağı bir şey yapan kimse yok.",
             },
             {
               kind: "mcq",
@@ -1063,7 +1063,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 2,
               explain:
-                "Hale eksiği adlandırıyor: «What nobody modeled was who declines dates», cevap esnek olmayan işlerde çalışan ve çocuk bakımı desteği olmayan kişiler.",
+                "Naomi eksiği adlandırıyor: «What nobody modeled was who declines dates», cevap esnek olmayan işlerde çalışan ve çocuk bakımı desteği olmayan kişiler.",
             },
             {
               kind: "mcq",
@@ -1079,7 +1079,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 1,
               explain:
-                "Hale sonucu kuruyor: kabul edilmeyen her teklif aleyhe sayılırsa hizmetler kısa süre kala randevu vermeyi bırakır, «You would remove a visible unfairness and create an invisible one».",
+                "Naomi sonucu kuruyor: kabul edilmeyen her teklif aleyhe sayılırsa hizmetler kısa süre kala randevu vermeyi bırakır, «You would remove a visible unfairness and create an invisible one».",
             },
             {
               kind: "mcq",
@@ -1111,7 +1111,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 2,
               explain:
-                "Hale karşı oyu övüyor: «her note is the most useful thing in the volume», ve sayfa dengesizliğini kabul ediyor.",
+                "Naomi karşı oyu övüyor: «her note is the most useful thing in the volume», ve sayfa dengesizliğini kabul ediyor.",
             },
             {
               kind: "mcq",
@@ -1127,7 +1127,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 3,
               explain:
-                "Hale engeli adlandırıyor: bu iş «requires somebody to own a problem that currently belongs to no department», ve söz vermeyeceğini söylüyor.",
+                "Naomi engeli adlandırıyor: bu iş «requires somebody to own a problem that currently belongs to no department», ve söz vermeyeceğini söylüyor.",
             },
           ],
         },

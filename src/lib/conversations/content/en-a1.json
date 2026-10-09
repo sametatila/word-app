@@ -11742,7 +11742,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi en önemli kısım. Türkçede 'Ali'nin kuzeni' dersin, değil mi? İngilizcede de sahibi başa koyarsın ve sonuna kesme işareti artı s eklersin:"
+      "text": "Şimdi en önemli kısım. Türkçede 'Harry'nin kuzeni' dersin, değil mi? İngilizcede de sahibi başa koyarsın ve sonuna kesme işareti artı s eklersin:"
      },
      {
       "lang": "en",
@@ -11802,14 +11802,14 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende. 'Ali'nin kuzeni' nasıl denir? Kendin kur."
+      "text": "Şimdi sıra sende. 'Harry'nin kuzeni' nasıl denir? Kendin kur."
      }
     ],
     "expect": {
      "kind": "produce",
      "target": "Harry's cousin",
      "accept": [
-      "Alis cousin"
+      "Harrys cousin"
      ],
      "hint": [
       {

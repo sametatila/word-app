@@ -147,7 +147,7 @@ export const DE_B2_W03: QuizWeek = {
         "Er wählt die Sprache je nach Thema.",
       ],
       answer: 3,
-      why: "Deniz dili konuya göre seçiyor: duygular Türkçe, iş daha çok Almanca. `eher` 'daha çok' demek, kesin bir kural değil. Tek bir örneği (anne babayla konuşmayı) genellemek konuşmadaki ince ayrımı siliyor.",
+      why: "Sascha dili konuya göre seçiyor: duygular Türkçe, iş daha çok Almanca. `eher` 'daha çok' demek, kesin bir kural değil. Tek bir örneği (anne babayla konuşmayı) genellemek konuşmadaki ince ayrımı siliyor.",
       targets: ["hoeren.detail"],
     },
     {
@@ -162,7 +162,7 @@ export const DE_B2_W03: QuizWeek = {
         "Sascha findet es schwach, Emma gefällt es.",
       ],
       answer: 3,
-      why: "`Da bin ich anderer Meinung` karşıt bir görüş açıyor: Deniz sonu zayıf buluyor, Emma açık sonu beğeniyor. `zu schnell` diyen şık görüşlerin sahiplerini yer değiştiriyor; iki kişilik bir tartışmada asıl iş kimin ne dediğini takip etmek.",
+      why: "`Da bin ich anderer Meinung` karşıt bir görüş açıyor: Sascha sonu zayıf buluyor, Emma açık sonu beğeniyor. `zu schnell` diyen şık görüşlerin sahiplerini yer değiştiriyor; iki kişilik bir tartışmada asıl iş kimin ne dediğini takip etmek.",
       targets: ["hoeren.zusammenhang"],
     },
 

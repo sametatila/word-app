@@ -180,7 +180,7 @@ export const a2U03: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Was ist Fatmas Hauptnachricht?",
+        text: "Was ist Imkes Hauptnachricht?",
         options: ["Sie hat die Prüfung bestanden.", "Sie bekommt ein Stipendium.", "Sie zieht nach Berlin."],
         answer: 1,
         explain: "Sınavı da geçmiş ama „das ist nicht alles“ diyor: asıl haber bursun gelmesi.",
@@ -195,7 +195,7 @@ export const a2U03: SkillExercise[] = [
       },
       {
         text: "Wer hat am Telefon gejubelt?",
-        options: ["Leon", "Fatmas Mutter", "Imke"],
+        options: ["Leon", "Imkes Mutter", "Imke"],
         answer: 1,
         explain: "„Meine Mutter hat am Telefon gejubelt.“",
       },
@@ -261,7 +261,7 @@ export const a2U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was ist Aylins Bruder von Beruf?",
+        text: "Was ist Helenes Bruder von Beruf?",
         options: [],
         answer: 0,
         accept: ["Pilot", "Er ist Pilot"],

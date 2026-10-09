@@ -244,7 +244,7 @@ export const b2U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ein Jahr", "zwölf Monate", "ein Jahr Puffer"],
-        explain: "„…Eigenkapital und ein Jahr Puffer.“ Tuna altı ay hesaplamıştı.",
+        explain: "„…Eigenkapital und ein Jahr Puffer.“ Patrick altı ay hesaplamıştı.",
       },
       {
         text: "Warum ist der Preisvorteil gefährlich?",

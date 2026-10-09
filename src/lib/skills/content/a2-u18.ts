@@ -275,7 +275,7 @@ export const a2U18: SkillExercise[] = [
       },
       {
         text: "Woher bekommen sie mehr Teller?",
-        options: ["Sie kaufen neue.", "Kaans Mutter leiht welche.", "Der Besuch bringt Teller mit."],
+        options: ["Sie kaufen neue.", "Ingos Mutter leiht welche.", "Der Besuch bringt Teller mit."],
         answer: 1,
         explain: "„Ich glaube, dass meine Mutter uns welche leiht.“",
       },

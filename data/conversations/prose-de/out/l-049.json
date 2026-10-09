@@ -123,7 +123,7 @@
  { "tr": "işine yarıyor. Şimdi bunları gişede kullanalım.", "kind": "say.tr", "de": "nützen dir. Jetzt benutzen wir das am Schalter." },
  { "tr": "İşte gerçek hayattaki hâli tam olarak bu kadar.", "kind": "say.tr", "de": "Genau so klingt es im echten Leben." },
  { "tr": "Karşındakine de sorabilmelisin. Soru kalıbı şu:", "kind": "say.tr", "de": "Du musst auch fragen können. Die Fragewendung ist die:" },
- { "tr": "Kaya adına rezervasyonum var. Lütfen tekrar et.", "kind": "say.tr", "de": "Ich habe eine Reservierung auf den Namen Archie. Bitte wiederhole." },
+ { "tr": "Archie adına rezervasyonum var. Lütfen tekrar et.", "kind": "say.tr", "de": "Ich habe eine Reservierung auf den Namen Archie. Bitte wiederhole." },
  { "tr": "Kelime sesli harfle başlıyorsa a değil an olur:", "kind": "say.tr", "de": "Beginnt das Wort mit einem Vokal, wird aus a ein an:" },
  { "tr": "Kısa bir kontrol. Şu cümle doğru mu, yanlış mı?", "kind": "say.tr", "de": "Eine kurze Kontrolle. Ist dieser Satz richtig oder falsch?" },
  { "tr": "koyuyoruz. Yani her zaman: apply for something.", "kind": "say.tr", "de": ". Also immer: apply for something." },

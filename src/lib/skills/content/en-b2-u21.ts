@@ -261,7 +261,7 @@ export const enB2U21: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["What really hurt was not the rage.", "What really hurt was not the rage"],
-        explain: "Bahar asıl sebebin öfke olmadığını baştan söylüyor; sebebi bir sonraki cümlede veriyor.",
+        explain: "Gwen asıl sebebin öfke olmadığını baştan söylüyor; sebebi bir sonraki cümlede veriyor.",
       },
       {
         kind: "short_answer",

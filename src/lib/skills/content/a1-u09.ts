@@ -119,7 +119,7 @@ export const a1U09: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Elifs Ehemann macht die Tür ___.",
+        text: "Paulas Ehemann macht die Tür ___.",
         options: [],
         answer: 0,
         accept: ["auf"],

@@ -257,7 +257,7 @@ export const enA2U03: SkillExercise[] = [
     unit: 3,
     title: "A family that travels",
     genre: "monologue",
-    intro: "Nil ailesinin yolculuklarını anlatıyor. Kim hâlâ uzakta, kim döndü?",
+    intro: "Katie, ailesinin yolculuklarını anlatıyor. Kim hâlâ uzakta, kim döndü?",
     gloss: [
       { de: "south", tr: "güney" },
       { de: "journey", tr: "seyahat" },

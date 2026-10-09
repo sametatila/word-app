@@ -185,7 +185,7 @@ export const deA1B10: Conversation[] = [
         expect: { kind: "repeat", target: "Kann ich mit Frau Berger sprechen" },
       },
       {
-        say: [tr("Şimdi sen: 'Ali'yle görüşebilir miyim?' demek için ne dersin?")],
+        say: [tr("Şimdi sen: 'Moritz'le görüşebilir miyim?' demek için ne dersin?")],
         expect: {
           kind: "produce",
           target: "Kann ich mit Moritz sprechen",

@@ -121,7 +121,7 @@ export const enB1U24: SkillExercise[] = [
     unit: 24,
     title: "A letter about a brother",
     genre: "letter",
-    intro: "Bir okur mektubu ve danışmanın cevabı. Deniz ne yapmalı?",
+    intro: "Bir okur mektubu ve danışmanın cevabı. Charlie ne yapmalı?",
     gloss: [
       { de: "borrowed", tr: "ödünç aldı" },
       { de: "paid it back", tr: "geri ödedi" },

@@ -1592,7 +1592,7 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Wie schreibt man das" },
       },
       {
-        say: [tr("Sıra sende: 'Kaya nasıl yazılıyor?' diye sor.")],
+        say: [tr("Sıra sende: 'Eckhard nasıl yazılıyor?' diye sor.")],
         expect: {
           kind: "produce",
           target: "Wie schreibt man Eckhard",

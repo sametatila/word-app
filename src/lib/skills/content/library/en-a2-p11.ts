@@ -39,14 +39,14 @@ export const enA2P11: SkillExercise[] = [
     text:
       "TWO WEEKS IN SOMEONE ELSE'S HOME\n\n" +
       "Last summer the Morgan family from Bursa tried something new: they swapped homes with a family from Lyon for " +
-      "two weeks. Nobody paid any money. The French family stayed in the Kayas' apartment, and the Kayas stayed in a small " +
+      "two weeks. Nobody paid any money. The French family stayed in the Morgans' apartment, and the Morgans stayed in a small " +
       "house with a yard in Lyon.\n\n" +
       "“We found them on a website in March,” says Charlie Morgan. “We wrote to each other for two months before we said yes.”\n\n" +
       "Not everything was easy. On the first evening the family was having dinner outside when all the lights in the " +
       "house went off. They looked for the switch for an hour. In the end, the man next door showed them where it was.\n\n" +
       "“The best part was the neighbors,” says Charlie. “While we were living there, they invited us to dinner three times.”\n\n" +
       "The French family had a good time, too. They left a thank-you card and a jar of honey on the kitchen table.\n\n" +
-      "Would the Kayas do it again? “Yes, but next time we will ask more questions before we arrive.”",
+      "Would the Morgans do it again? “Yes, but next time we will ask more questions before we arrive.”",
     questions: [
       {
         text: "What is the article about?",
@@ -70,7 +70,7 @@ export const enA2P11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The Kayas paid the French family for the house.",
+        text: "The Morgans paid the French family for the house.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Nobody paid any money.“ — takasta para ödenmedi.",
@@ -92,7 +92,7 @@ export const enA2P11: SkillExercise[] = [
         explain: "„They left a thank-you card and a jar of honey on the kitchen table.“",
       },
       {
-        text: "What will the Kayas do differently next time?",
+        text: "What will the Morgans do differently next time?",
         options: [
           "ask more questions before they go",
           "stay for a shorter time",

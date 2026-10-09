@@ -88,7 +88,7 @@ export const b1U10: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was ist an Frau Kayas Brieftasche kaputt?",
+        text: "Was ist an Frau Arnolds Brieftasche kaputt?",
         options: [],
         answer: 0,
         accept: ["der Verschluss", "Verschluss"],

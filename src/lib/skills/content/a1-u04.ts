@@ -58,7 +58,7 @@ export const a1U04: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Das Pferd von Elifs Oma heißt ___.",
+        text: "Das Pferd von Paulas Oma heißt ___.",
         options: [],
         answer: 0,
         accept: ["Luna"],

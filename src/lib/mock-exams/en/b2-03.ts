@@ -550,7 +550,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               text: "Which text claims that a real cost is invisible at the point of sale?",
               answer: "c",
               explain:
-                "Devrim maliyeti ve görünmezliğini birlikte veriyor: «Nobody pays that bill at the checkout, so nobody sees it». Su, toprak ve sağlık faturası fiyatın dışında kalıyor.",
+                "Jamie maliyeti ve görünmezliğini birlikte veriyor: «Nobody pays that bill at the checkout, so nobody sees it». Su, toprak ve sağlık faturası fiyatın dışında kalıyor.",
             },
             {
               kind: "match",

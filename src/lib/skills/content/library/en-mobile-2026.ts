@@ -25,7 +25,7 @@ export const enMobile2026: SkillExercise[] = [
     "skill": "reading",
     "title": "Movies on Saturday",
     "genre": "message",
-    "intro": "Deniz ile Emma'nın sinema planı yaptığı mesajlaşmayı okuyacaksın.",
+    "intro": "Charlie ile Emma'nın sinema planı yaptığı mesajlaşmayı okuyacaksın.",
     "gloss": [
       {
         "de": "movie theater",
@@ -5624,7 +5624,7 @@ export const enMobile2026: SkillExercise[] = [
           "Four nights"
         ],
         "answer": 1,
-        "explain": "Deniz telefonda \"I'd like to book a room for two nights, please\" diyor, yani iki gece kalacak."
+        "explain": "Charlie telefonda \"I'd like to book a room for two nights, please\" diyor, yani iki gece kalacak."
       },
       {
         "text": "Breakfast is not included in the price.",

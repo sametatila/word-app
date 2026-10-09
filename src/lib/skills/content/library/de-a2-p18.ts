@@ -148,7 +148,7 @@ export const deA2P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Dileks Cousine heiratet am ___.",
+        text: "Leonies Cousine heiratet am ___.",
         options: [],
         answer: 0,
         accept: ["einundzwanzigsten", "21.", "21"],

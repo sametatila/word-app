@@ -130,7 +130,7 @@
  { "tr": "kuralı vurgulayarak reddetmek", "kind": "focus", "de": "unter Verweis auf die Regel ablehnen" },
  { "tr": "Martta gecikmeye ne yol açtı?", "kind": "question", "de": "Was führte im März zur Verzögerung?" },
  { "tr": "Never has turnout been so low", "kind": "focus", "de": "Never has turnout been so low" },
- { "tr": "Onur doktorda ne kadar kaldı?", "kind": "question", "de": "Wie lange war Callum beim Arzt?" },
+ { "tr": "Callum doktorda ne kadar kaldı?", "kind": "question", "de": "Wie lange war Callum beim Arzt?" },
  { "tr": "Raporu tek bir bulguyla kapat", "kind": "writing.checklist", "de": "Schließe den Bericht mit einem Befund" },
  { "tr": "Son paragraftaki eleştiri ne?", "kind": "question", "de": "Was kritisiert der letzte Absatz?" },
  { "tr": "Tahminin kesinliğini işaretle", "kind": "writing.checklist", "de": "Markiere, wie sicher die Prognose ist" },

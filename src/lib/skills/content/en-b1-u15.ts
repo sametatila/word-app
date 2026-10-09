@@ -257,7 +257,7 @@ export const enB1U15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Under what condition would Can work with the group again?",
+        text: "Under what condition would Tyler work with the group again?",
         options: [],
         answer: 0,
         accept: ["if they keep the rule", "with the editing rule", "if the rule stays"],

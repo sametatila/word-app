@@ -111,7 +111,7 @@ export const a1U07: SkillExercise[] = [
         explain: "Doğru: „Ich mag Fleisch nicht.“ — sebze ve pirinci tercih ediyor.",
       },
       {
-        text: "Was essen Elifs Kinder lieber?",
+        text: "Was essen Paulas Kinder lieber?",
         options: ["Kartoffeln", "Salat", "Schokolade"],
         answer: 0,
         explain: "„sie essen lieber Kartoffeln“ — salatayı sevmiyorlar.",

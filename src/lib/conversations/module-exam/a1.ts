@@ -120,7 +120,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Heiko", de: "Nein, ich habe keinen Bruder. Aber wir haben einen Hund!", tr: "Hayır, erkek kardeşim yok. Ama bir köpeğimiz var!" },
       ],
       questions: [
-        { de: "Wer ist auf dem Foto?", tr: "Fotoğrafta kim var?", options: ["Ahmets Familie", "Lenas Eltern", "Ahmets Kollegen", "Ahmets Nachbarn"], answer: 0 },
+        { de: "Wer ist auf dem Foto?", tr: "Fotoğrafta kim var?", options: ["Heikos Familie", "Lenas Eltern", "Heikos Kollegen", "Heikos Nachbarn"], answer: 0 },
         { de: "Wie alt ist Svenja?", tr: "Svenja kaç yaşında?", options: ["Zehn", "Zwölf", "Zwanzig", "Dreißig"], answer: 2 },
         { de: "Hat Heiko einen Bruder?", tr: "Heiko'nun erkek kardeşi var mı?", options: ["Ja, einen", "Ja, zwei", "Nein, keinen", "Nein, aber zwei Schwestern"], answer: 2 },
       ],
@@ -481,7 +481,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Was ist kaputt?", tr: "Ne bozuk?", options: ["Die Heizung", "Die Lampe im Flur", "Der Wasserhahn", "Das Licht im Bad"], answer: 1 },
-        { de: "In welcher Wohnung wohnt Familie Böhm?", tr: "Demir ailesi hangi dairede oturuyor?", options: ["In Wohnung zwei", "In Wohnung zehn", "In Wohnung zwölf", "Im Keller"], answer: 2 },
+        { de: "In welcher Wohnung wohnt Familie Böhm?", tr: "Böhm ailesi hangi dairede oturuyor?", options: ["In Wohnung zwei", "In Wohnung zehn", "In Wohnung zwölf", "Im Keller"], answer: 2 },
         { de: "Wann kommt der Hausmeister?", tr: "Görevli ne zaman geliyor?", options: ["Heute um zehn", "Morgen um zehn", "Heute Abend", "Am Wochenende"], answer: 1 },
       ],
     },

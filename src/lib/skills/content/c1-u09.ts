@@ -348,7 +348,7 @@ export const c1U09: SkillExercise[] = [
           "Sie hat eine neue Stelle",
         ],
         answer: 1,
-        explain: "Deniz ona evlenme teklif etmiş; Wiebke bu yüzden bulutların üstünde.",
+        explain: "Sascha ona evlenme teklif etmiş; Wiebke bu yüzden bulutların üstünde.",
       },
       {
         kind: "gapfill",

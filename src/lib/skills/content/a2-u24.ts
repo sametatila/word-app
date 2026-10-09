@@ -314,7 +314,7 @@ export const a2U24: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was will Yusufs Vater?",
+        text: "Was will Fabians Vater?",
         options: [],
         answer: 0,
         accept: [
