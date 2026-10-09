@@ -108,6 +108,16 @@ console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 
     ["gegenüber vom Bahnhof → gegenüber dem Bahnhof (Präposition)", "Ist es gegenüber vom Bahnhof?", {}, "style"],
     ["ich studiere bald in Dortmund → ich werde bald in Dortmund studieren (Futur I)", "Ich studiere bald in Dortmund.", {}, "style"],
     ["Wann kommt die Müllabfuhr? → Wann kommt der Müll? (Wortwahl)", "Wann kommt die Müllabfuhr?", {}, "style"],
+    ["Die Serie ist spannend, weil sie viele Überraschungen hat → Die Serie klingt spannend, weil sie viele Überraschungen hat (Kontext/Logik)", "Die Serie ist spannend, weil sie viele Überraschungen hat.", {}, "style"],
+    ["Ich finde Nachrichten langweilig → Ich finde die Nachrichten langweilig (Artikel)", "Ich finde Nachrichten langweilig.", {}, "style"],
+    ["Um acht oder um neun? → Beginnt sie um acht oder um neun? (Satzbau/Fragesatz)", "Um acht oder um neun?", {}, "style"],
+    ["am Samstag nicht → am Samstag nicht kommen (Verb-Endstellung)", "Leider am Samstag nicht.", {}, "label_mismatch"],
+    ["Am Mittwoch hätte ich Zeit → Am Mittwoch habe ich Zeit (Konjunktiv II yerine Indikativ kullanımı A1 seviyesi için daha uygundur)", "Am Mittwoch hätte ich Zeit.", {}, "style"],
+    ["seit zwei Tagen Schmerzen im Hals → Ich habe seit zwei Tagen Schmerzen im Hals (Verb fehlt)", "Seit zwei Tagen Schmerzen im Hals.", {}, "style"],
+    ["Frau Doktor → Herr Doktor (Gender/Role)", "Guten Tag, Frau Doktor.", {}, "style"],
+    ["Muss ich Tabletten nehmen? → Müssen Sie Tabletten nehmen? (Verb-Subjekt-Kongruenz)", "Muss ich Tabletten nehmen?", {}, "person_change"],
+    ["Ich habe einen Termin um zehn Uhr → Ich möchte einen Termin um zehn Uhr (Wortwahl)", "Ich habe einen Termin um zehn Uhr.", {}, "style"],
+    ["Kann ich am Mittwoch noch einmal kommen? → Kann ich am Mittwoch kommen? (Semantik/Kontext)", "Kann ich am Mittwoch noch einmal kommen?", {}, "style"],
   ];
   for (const [line, s, ctx, reason] of cases) {
     const v = judgeCorrection(line, said(s), ctx);
@@ -120,6 +130,10 @@ console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 
     ["Ich bin 24 Jahre → Ich bin 24 Jahre alt (Wortwahl)", "Ich bin 24 Jahre.", {}],
     ["Ich habe Hund → Ich habe einen Hund (Artikel)", "Ich habe Hund.", {}],
     ["ein Kaffee → einen Kaffee (Akkusativ)", "Ich möchte ein Kaffee.", {}],
+    ["Ich bin Hunger → Ich habe Hunger (Verb)", "Ich bin Hunger.", {}],
+    ["Ich gehe in Schule → Ich gehe in die Schule (Artikel)", "Ich gehe in Schule.", {}],
+    ["Ich lese Buch → Ich lese das Buch (Artikel)", "Ich lese Buch.", {}],
+    ["weil ich habe Zeit → weil ich Zeit habe (Verb-Endstellung)", "Ich komme, weil ich habe Zeit.", {}],
     ["du arbeitet → du arbeitest (Konjugation)", "Du arbeitet viel.", { register: "du" }],
     ["Heute ich lerne → Heute lerne ich (V2-Regel)", "Heute ich lerne Deutsch.", {}],
   ];

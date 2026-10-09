@@ -1,6 +1,7 @@
 import { CORRECTION_MARK, breakInlineMarkers } from "@/lib/chat-format";
 import { foldSentence } from "@/lib/sentence-match";
 import MASS_NOUNS from "./mass-nouns.generated.json";
+import NOUN_GENDER from "./noun-gender.generated.json";
 
 /**
  * Düzeltme satırı süzgeci — sunucuda, akış öğrenciye gitmeden önce.
@@ -161,13 +162,59 @@ const DU_FORM = /(?<![\p{L}])(du|dich|dir|dein\p{L}*)(?![\p{L}])/iu;
 const SIE_FORM = /(?<![\p{L}])(Ihnen|Ihre?\p{L}*)(?![\p{L}])|(?<![.!?]\s*|^\s*)(?<![\p{L}])Sie(?![\p{L}])/u;
 
 /** Sözcük sırası kuralı adı (etiket bunu diyorsa değişiklik bir yer değiştirme olmalı). */
-const ORDER_LABEL = /v2|verb[\s\u2010-\u2014-]*(zweit|stellung|position)|wort[\s\u2010-\u2014-]*stellung|satz[\s\u2010-\u2014-]*stellung|wortfolge|inversion|word\s+order|s[öo]zc[üu]k\s+s[ıi]ras[ıi]|kelime\s+s[ıi]ras[ıi]/i;
+const ORDER_LABEL = /v2|verb[\s\u2010-\u2014-]*(zweit|stellung|position)|end[\s\u2010-\u2014-]*stellung|wort[\s\u2010-\u2014-]*stellung|satz[\s\u2010-\u2014-]*stellung|wortfolge|inversion|word\s+order|s[öo]zc[üu]k\s+s[ıi]ras[ıi]|kelime\s+s[ıi]ras[ıi]/i;
 
 /**
  * Dilbilgisi değil, üslup ya da içerik olduğunu söyleyen etiketler. "Wortwahl"
  * bilerek yok: yanlış sözcük gerçek hata olabilir (kısaltma açma ayrıca yakalanıyor).
  */
-const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik/i;
+const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik|kontext|context|logik|logic|semantik|semantic|gender|geschlecht|\brole\b|\brolle\b|daha\s+(uygun|doğal|iyi)|uygundur|angemessen|besser\b/i;
+
+/**
+ * GÜNDE EN SIK ÇEKİMLİ FİİLLER — eksiltili cümleyi (fiilsiz parça) tam cümleden ayırmak için
+ * (QA panel #69 #72 #75). Listede olmayan fiil "fiil yok" sayılır; o zaman yalnız BAŞA ya da
+ * SONA ekleme yapan düzeltme siliniyor, ortaya ekleme (Ich habe Hund → einen Hund) kalıyor.
+ */
+const FINITE = new Set([
+  "bin", "bist", "ist", "sind", "seid", "war", "warst", "waren", "habe", "hast", "hat", "haben", "habt", "hatte",
+  "kann", "kannst", "können", "muss", "musst", "müssen", "will", "willst", "wollen", "möchte", "möchtest", "möchten",
+  "mag", "magst", "darf", "darfst", "soll", "sollst", "gehe", "gehst", "geht", "gehen", "komme", "kommst", "kommt",
+  "kommen", "mache", "machst", "macht", "machen", "heiße", "heißt", "wohne", "wohnst", "wohnt", "arbeite", "arbeitest",
+  "arbeitet", "brauche", "brauchst", "braucht", "finde", "findest", "findet", "gibt", "nehme", "nimmst", "nimmt",
+  "fahre", "fährst", "fährt", "esse", "isst", "trinke", "trinkst", "trinkt", "spiele", "spielst", "spielt", "lerne",
+  "lernst", "lernt", "sehe", "siehst", "sieht", "weiß", "weißt", "beginnt", "fängt", "kostet", "liegt", "steht",
+  "am", "is", "are", "was", "were", "have", "has", "do", "does", "can", "will", "would", "go", "goes",
+].map((w) => w.replace(/ß/g, "ss")));
+const MODAL = new Set(["möchte", "möchtest", "möchten", "will", "willst", "wollen", "kann", "kannst", "können", "muss", "musst", "müssen", "darf", "darfst", "dürfen", "soll", "sollst", "sollen"].map((w) => w.replace(/ß/g, "ss")));
+const PREP = new Set(["in", "an", "auf", "zu", "mit", "von", "bei", "nach", "aus", "für", "über", "unter", "vor", "hinter", "neben", "zwischen", "durch", "gegen", "ohne", "um"]);
+
+/** Sol taraf sağın içinde bitişik duruyor ve ekleme yalnız başta/sonda: fiilsiz parçayı tamamlama. */
+function completesFragment(left: string[], right: string[]): boolean {
+  if (right.length <= left.length || left.some((w) => FINITE.has(w))) return false;
+  for (let k = 0; k + left.length <= right.length; k++) {
+    if (left.every((w, i) => right[k + i] === w)) return true;
+  }
+  return false;
+}
+
+/** Genel çoğula belirli artikel ekleme ("Nachrichten → die Nachrichten"); edattan sonra değil, tekil sözlük isminde değil. */
+function addsDefiniteToBareNoun(left: string[], right: string[], isSingularNoun: (w: string) => boolean): boolean {
+  if (right.length !== left.length + 1) return false;
+  let i = 0;
+  while (i < left.length && left[i] === right[i]) i++;
+  if (!["der", "die", "das", "den", "dem"].includes(right[i])) return false;
+  if (left.slice(i).join(" ") !== right.slice(i + 1).join(" ")) return false;
+  if (i > 0 && PREP.has(right[i - 1])) return false;
+  const noun = right[i + 1];
+  return !!noun && !isSingularNoun(noun);
+}
+
+/** Kip fiilini değiştiren tek sözcük (habe → möchte, kann → muss): anlam tercihi. */
+function swapsModal(left: string[], right: string[]): boolean {
+  if (left.length !== right.length) return false;
+  const diffs = left.map((w, i) => [w, right[i]] as const).filter(([a, b]) => a !== b);
+  return diffs.length === 1 && FINITE.has(diffs[0][0]) && (MODAL.has(diffs[0][0]) || MODAL.has(diffs[0][1])) && FINITE.has(diffs[0][1]);
+}
 
 /**
  * SAYILAMAYAN İSİM (QA F-0008, 2026-10-09): "Ich brauche Zahnpasta → Ich brauche eine
@@ -328,6 +375,9 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
   // Kişi: iki taraf da kişi zamiri taşıyor ve kişiler farklı (du ↔ Sie hitap kuralına kalıyor).
   const pl = persons(left);
   const pr = persons(right);
+  // Resmî "Sie" de bir kişi ("Muss ich → Müssen Sie"); du ↔ Sie hitap kuralına kalıyor.
+  if (sie(parts[0]) && !pl.has("2s")) pl.add("F");
+  if (sie(rightText) && !pr.has("2s") && !pl.has("2s")) pr.add("F");
   if (pl.size && pr.size && [...pl].sort().join() !== [...pr].sort().join()) return { keep: false, reason: "person_change" };
 
   // Sıra kuralı yazılmış ama değişiklik bir yer değiştirme değil.
@@ -342,7 +392,10 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
     swapsDefiniteness(left, right) ||
     onlyParticleMoved(left, right) ||
     bothRightVariant(left, right) ||
-    addsFuturOnly(left, right, label)
+    addsFuturOnly(left, right, label) ||
+    completesFragment(left, right) ||
+    swapsModal(left, right) ||
+    (lang === "de" && addsDefiniteToBareNoun(left, right, (w) => w in NOUN_GENDER))
   ) {
     return { keep: false, reason: "style" };
   }
