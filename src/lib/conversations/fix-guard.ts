@@ -1,5 +1,6 @@
 import { CORRECTION_MARK, breakInlineMarkers } from "@/lib/chat-format";
 import { foldSentence } from "@/lib/sentence-match";
+import MASS_NOUNS from "./mass-nouns.generated.json";
 
 /**
  * Düzeltme satırı süzgeci — sunucuda, akış öğrenciye gitmeden önce.
@@ -68,7 +69,8 @@ export type FixVerdict =
         | "person_change"
         | "register"
         | "label_mismatch"
-        | "style";
+        | "style"
+        | "mass_noun";
     };
 
 /** Sahnenin bilinen bağlamı: hitap (yalnız Almanca) ve hedef dil. */
@@ -161,6 +163,23 @@ const ORDER_LABEL = /v2|verb[\s\u2010-\u2014-]*(zweit|stellung|position)|wort[\s
  */
 const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik/i;
 
+/**
+ * SAYILAMAYAN İSİM (QA F-0008, 2026-10-09): "Ich brauche Zahnpasta → Ich brauche eine
+ * Zahnpasta (Artikel)". Liste data/app/words.json'daki "(Sg.)" isimler
+ * (`scripts/gen-mass-nouns.mjs`). Yalnız belirsiz artikelin EKLENDİĞİ düzeltme siliniyor;
+ * var olan artikelin hâl düzeltmesi ("ein Kaffee → einen Kaffee") gerçek hata, kalıyor.
+ */
+const MASS = new Set<string>(MASS_NOUNS as string[]);
+const INDEF = new Set(["ein", "eine", "einen", "einem", "einer", "eines"]);
+function addsArticleToMassNoun(left: string[], right: string[]): boolean {
+  if (right.length !== left.length + 1) return false;
+  let i = 0;
+  while (i < left.length && left[i] === right[i]) i++;
+  if (!INDEF.has(right[i]) || left.slice(i).join(" ") !== right.slice(i + 1).join(" ")) return false;
+  // artikelden sonraki ilk iki sözcükten biri (araya sıfat girebilir) sayılamayan isim
+  return right.slice(i + 1, i + 3).some((w) => MASS.has(w));
+}
+
 /** "Uni → Universität": tek sözcük, sağdaki soldakiyle başlıyor ve yalnız uzuyor. */
 function expandsAbbreviation(left: string[], right: string[]): boolean {
   if (left.length !== right.length) return false;
@@ -225,6 +244,7 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
   }
 
   if (STYLE_LABEL.test(label) || expandsAbbreviation(left, right)) return { keep: false, reason: "style" };
+  if (lang === "de" && addsArticleToMassNoun(left, right)) return { keep: false, reason: "mass_noun" };
   return { keep: true };
 }
 
@@ -316,6 +336,19 @@ export async function* ensureRoleText(
       if (sawBody || mode === "body") out.push(line);
       else held += line;
       line = "";
+    }
+    /* Model rol cümlesini de öneri gibi işaretlediyse (QA F-0002, "[SAY] Zwei Pfund Äpfel,
+       sehr gerne." + üç öneri): dördüncü öneri satırı yok sayılmaz; ilki rol metnidir,
+       işareti kaldırılıp gövdeye alınıyor (yeniden üretmeye gerek yok). */
+    if (!sawBody) {
+      const lines = held.split("\n");
+      const says = lines.filter((l) => l.trim().startsWith("[SAY]"));
+      if (says.length >= 4) {
+        const first = lines.findIndex((l) => l.trim().startsWith("[SAY]"));
+        lines[first] = lines[first].trim().slice("[SAY]".length).trim();
+        held = lines.join("\n");
+        sawBody = true;
+      }
     }
     if (sawBody || attempt >= retries) {
       flushHeld();

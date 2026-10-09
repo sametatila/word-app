@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { ensureRoleText, filterCorrectionLines, guardCorrections, judgeCorrection, splitInlineMarkers } from "../src/lib/conversations/fix-guard";
 import { breakInlineMarkers } from "../src/lib/chat-format";
@@ -99,6 +100,8 @@ console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 
     ["weil ich in Dortmund studieren möchte → weil ich in Dortmund studieren will (V2-Regel)", "Ich lerne Deutsch, weil ich in Dortmund studieren möchte.", {}, "label_mismatch"],
     ["zur Uni → zur Universität (Wortwahl)", "Ich gehe jeden Tag zur Uni.", {}, "style"],
     ["bis fünf → bis fünf Uhr (Präzision)", "Ich arbeite bis fünf.", {}, "style"],
+    ["Ich brauche Zahnpasta → Ich brauche eine Zahnpasta (Artikel)", "Ich brauche Zahnpasta.", {}, "mass_noun"],
+    ["trinke Wasser → trinke ein Wasser (Artikel)", "Ich trinke Wasser.", {}, "mass_noun"],
   ];
   for (const [line, s, ctx, reason] of cases) {
     const v = judgeCorrection(line, said(s), ctx);
@@ -110,6 +113,7 @@ console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 
     ["hilf mich → hilf mir (Dativ)", "Kannst du hilf mich?", {}],
     ["Ich bin 24 Jahre → Ich bin 24 Jahre alt (Wortwahl)", "Ich bin 24 Jahre.", {}],
     ["Ich habe Hund → Ich habe einen Hund (Artikel)", "Ich habe Hund.", {}],
+    ["ein Kaffee → einen Kaffee (Akkusativ)", "Ich möchte ein Kaffee.", {}],
     ["du arbeitet → du arbeitest (Konjugation)", "Du arbeitet viel.", { register: "du" }],
     ["Heute ich lerne → Heute lerne ich (V2-Regel)", "Heute ich lerne Deutsch.", {}],
   ];
@@ -244,6 +248,16 @@ async function streamTests() {
   const ONLY = `${SUGGESTION_MARK} Ich habe Größe M.\n${SUGGESTION_MARK} Meine Größe ist M.\n${SUGGESTION_MARK} Ich brauche M.`;
   const r1 = await role([[...ONLY], [...NORMAL]]);
   check("yalnız öneri → yeniden üretiliyor, ikinci deneme gidiyor", r1.out === NORMAL && r1.tries === 2, JSON.stringify(r1));
+  // Rol cümlesi de [SAY] ile işaretlenmiş (QA F-0002): dört öneri satırı → ilki gövde, yeniden üretim yok.
+  const FOUR = `${SUGGESTION_MARK} Zwei Pfund Äpfel, sehr gerne.\n${SUGGESTION_MARK} Ich nehme auch Birnen.\n${SUGGESTION_MARK} Was kostet das?\n${SUGGESTION_MARK} Danke, das ist alles.`;
+  const r3 = await role([[...FOUR], [...NORMAL]]);
+  const p3 = parseReply(r3.out);
+  check("dört öneri satırı → ilki rol metni, tek deneme", r3.tries === 1 && p3.body === "Zwei Pfund Äpfel, sehr gerne." && p3.suggestions.length === 3, JSON.stringify(r3));
+
+  // Sayılamayan isim listesi güncel mi (scripts/gen-mass-nouns.mjs)?
+  const { massNouns } = (await import("./gen-mass-nouns.mjs")) as { massNouns: () => string[] };
+  const committed = JSON.parse(readFileSync("src/lib/conversations/mass-nouns.generated.json", "utf8")) as string[];
+  check("sayılamayan isim listesi words.json ile güncel", JSON.stringify(massNouns()) === JSON.stringify(committed), "node scripts/gen-mass-nouns.mjs");
   const r2 = await role([[...ONLY], [...ONLY]]);
   check("iki denemede de rol metni yok → öneriler yine gidiyor", r2.out === ONLY && r2.tries === 2, JSON.stringify(r2));
 }

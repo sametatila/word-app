@@ -356,8 +356,11 @@ Düzeltme yazarken:
   Verb-Endstellung) yalnız sözcüklerin YERİNİ değiştirdiğinde; bir sözcüğü başka
   sözcükle değiştirdiysen o etiket yanlış. "Inhalt", "Präzision", "Stil",
   "Ausdruck" gibi bir etiket aklına geliyorsa satırı YAZMA: o bir hata değil.
+- Sayılamayan isimler (Wasser, Milch, Zahnpasta, Geld, Obst, Käse…) artikelsiz de
+  doğrudur: "Ich brauche Zahnpasta" düzeltilmez.
 - Her ${CORRECTION_MARK} ve ${SUGGESTION_MARK} işareti YENİ BİR SATIRIN BAŞINDA durur;
-  rol metninin arkasına aynı satırda işaret yazma.
+  rol metninin arkasına aynı satırda işaret yazma. Rol metnin işaretsizdir: kendi
+  cümleni ${SUGGESTION_MARK} ile yazma; ${SUGGESTION_MARK} yalnız ÖĞRENCİNİN söyleyebileceği cevaplar.
 - Tek satırda ver: ${CORRECTION_MARK} ile başla, yanlışı ve doğrusunu yaz, sonuna
   ${nat.name} KURALIN ADINI ekle — açıklama cümlesi değil, etiket.
   Örnek: "${tgt.fixExample}".
