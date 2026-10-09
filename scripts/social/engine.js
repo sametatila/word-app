@@ -73,7 +73,8 @@
     });
   };
   /** Baştan görünen kelimelerde vurgu dalgası: sırayla hafif kabarıp yerine oturur; `out` verilirse söner. */
-  E.wordsPulse = (spans, t, start, { stagger = 0.08, dur = 0.5, lift = 14, grow = 0.08, out = null } = {}) => {
+  // Büyütme (grow) varsayılan 0: %8 büyüyen uzun kelime aradaki boşluğu yutuyordu ("Oturmaizninbitiyor.", 2026-10-09).
+  E.wordsPulse = (spans, t, start, { stagger = 0.08, dur = 0.5, lift = 14, grow = 0, out = null } = {}) => {
     spans.forEach((sp, i) => {
       const k = E.p(t, start + i * stagger, dur);
       const bump = Math.sin(Math.PI * k);
