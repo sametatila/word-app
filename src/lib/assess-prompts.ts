@@ -213,7 +213,7 @@ RUBRİK (her ölçüt 0–4):
 - structure: cümle kurma ve bağlama (cümle için: kelime sırası ve cümlenin bütünlüğü; metin için: akış, bağlaçlar, kayıt).
 
 HATA LİSTESİ: her gerçek hata için bir madde. "wrong" alanı öğrencinin metninden BİREBİR kopya (değiştirme, kısaltma), "fix" doğru biçim, "why_tr" ${anadil} tek cümle gerekçe — kuralı söyle, sadece doğrusunu değil ("Dativ ister çünkü 'mit' her zaman Dativ alır"). type şu listeden: ${ERROR_TYPES.join(", ")}.
-- article: yanlış/eksik artikel. plural: çoğul biçim. case: hâl (Dativ/Akkusativ/Genitiv) hatası. verb_position: çekimli fiilin yeri — ana cümlede ikinci sırada değilse VE yan cümlede (weil, dass, wenn…) sonda değilse. Başta bir öğe varken özne fiilden önce gelmişse ("Heute ich gehe", "Erst ich schicke") bu verb_position'dır, word_order değil; fix: "Heute gehe ich". conjugation: fiil çekimi/zaman. spelling: yazım (büyük harf dâhil; konuşma dökümünde sayma). meaning: yanlış kelime/anlam. word_order: fiil dışı öğelerin sırası. pronunciation: yalnız konuşmada. listening: kullanma.
+- article: yanlış/eksik artikel. plural: çoğul biçim. case: hâl (Dativ/Akkusativ/Genitiv) hatası. verb_position: çekimli fiilin yeri — ana cümlede ikinci sırada değilse VE yan cümlede (weil, dass, wenn…) sonda değilse. Başta bir öğe varken özne fiilden önce gelmişse ("Heute ich gehe", "Erst ich schicke") bu verb_position'dır, word_order değil; fix: "Heute gehe ich". Ayrılabilir fiilin (abbiegen, anrufen, aufstehen, einkaufen, mitbringen, umsteigen…) öneki ana cümlede cümlenin SONUNA gelir; önek hiç yazılmamışsa ("Ich biege an der Ampel rechts" → "Ich biege an der Ampel rechts ab", "Ich rufe dich morgen" → "Ich rufe dich morgen an") bu da verb_position hatasıdır: cümle okunaklı olsa da fiilin bir parçası eksiktir, grammar 4 olamaz. Öneksiz fiil kendi başına doğru bir anlam taşıyorsa ("Ich stehe an der Haltestelle", "Ich steige in den Zug") hata değildir. conjugation: fiil çekimi/zaman. spelling: yazım (büyük harf dâhil; konuşma dökümünde sayma). meaning: yanlış kelime/anlam. word_order: fiil dışı öğelerin sırası. pronunciation: yalnız konuşmada. listening: kullanma.
 - Doğru olanı hata yazma: bir hata yazmadan önce cümleyi baştan sona yeniden oku; doğru cümleye hata yazmak, hatayı kaçırmaktan daha kötüdür ("und man kann leicht einen Job finden" doğrudur; "Zweitens sind die Verkehrsmittel gut" doğrudur). Emin değilsen yazma. Üslup tercihini hata sayma (und/oder, deshalb/darum gibi eşdeğer seçimler, "daha doğal olurdu" düzeyindeki öneriler); gerekiyorsa next_tip_tr'de söyle.
 
 corrected: öğrencinin metninin düzeltilmiş hâli — anlamı ve yapısını koru, yeniden yazma. Hata yoksa metni olduğu gibi ver. Öğrencinin başa koyduğu öğe başta KALIR: fiil ikinci sıraya gelir, özne fiilin arkasına geçer ("Erst ich schicke den Brief" → "Erst schicke ich den Brief"). İlk öğeyi cümlenin başka yerine taşıma ya da eşanlamlısıyla değiştirme: anlam değişir ("Ich schicke den Brief erst" başka bir şey söyler).
@@ -288,8 +288,14 @@ function lengthLine(req: AssessRequest): string | null {
     : `${head}; hedef en az ${min} kelime → hedef karşılanmadı (${min - n} kelime eksik).`;
 }
 
-/** Kullanıcı mesajı: görev + cevap; cevap işaretler arasında. */
-export function assessUserMessage(req: AssessRequest): string {
+/**
+ * Kullanıcı mesajı: görev + cevap; cevap işaretler arasında.
+ *
+ * `notes`: kodun cevapta bulduğu şüpheli yerler (ör. `lib/separable-check`,
+ * kalıbın ayrılabilir fiili öneksiz). Görev satırlarıyla birlikte, öğrenci
+ * metninden ÖNCE gider; karar yine modelin.
+ */
+export function assessUserMessage(req: AssessRequest, notes: string[] = []): string {
   const t = req.task;
   const lines = [`GÖREV: ${t.prompt}`];
   if (t.target) lines.push(`HEDEF: ${t.target}`);
@@ -297,6 +303,7 @@ export function assessUserMessage(req: AssessRequest): string {
   if (t.constraints?.length) lines.push(`KISITLAR: ${t.constraints.join("; ")}`);
   const uzunluk = lengthLine(req);
   if (uzunluk) lines.push(uzunluk);
+  lines.push(...notes);
   lines.push("", "ÖĞRENCİNİN CEVABI:", fenceStudentText(req.answer.text.trim()));
   if (req.kind === "speaking" && req.answer.transcript && req.answer.transcript.length > 1) {
     lines.push("", "TANIYICININ DİĞER ADAYLARI:", fenceStudentText(req.answer.transcript.slice(1, 4).join(" | ")));

@@ -22,6 +22,7 @@ import {
   type AssessRequest,
   type Assessment,
 } from "@/lib/assess-prompts";
+import { enforceSeparable, findSeparableMisses, separableNotes } from "@/lib/separable-check";
 
 /**
  * AI değerlendirme servisi (plan WP-03) — tek giriş noktası.
@@ -55,7 +56,7 @@ const ASSESS_RETRY_WITHIN_MS = 10_000;
 const CACHE_HOURS = 24;
 
 /** Görev + cevap özeti: aynı şey yeniden gönderilirse önbellek tutar. */
-export function assessHash(req: AssessRequest): string {
+export function assessHash(req: AssessRequest, notes = 0): string {
   const h = createHash("sha256");
   h.update(
     JSON.stringify({
@@ -78,6 +79,9 @@ export function assessHash(req: AssessRequest): string {
       // Çeviri kurtarması 2026-10-05'ten beri ayrı istemle (`lib/translate-check`):
       // eski tam rubrik sonucu önbellekten dönmesin.
       c: isTranslateCheck(req) ? 1 : undefined,
+      // Kodun istemde not düştüğü cevaplar (2026-10-09, `lib/separable-check`):
+      // notsuz önceki sonuç önbellekten dönmesin. Notsuz cevapların özeti değişmiyor.
+      s: notes ? 1 : undefined,
     }),
   );
   return h.digest("hex").slice(0, 40);
@@ -98,7 +102,11 @@ export async function assess(
      Almanca olan kullanıcı yazma ve konuşma değerlendirmesini Türkçe
      alıyordu. Profil tek doğruluk kaynağı. */
   const clean: AssessRequest = { ...req, native: await langOf(userId), answer: { ...req.answer, text } };
-  const hash = assessHash(clean);
+  /* Kalıbın ayrılabilir fiili öneksiz mi (QA F-0072): modele not, kalıbın
+     çerçevesindeyse model yazmasa da hata (`lib/separable-check`). */
+  const separable = isTranslateCheck(clean) ? [] : findSeparableMisses(text, clean);
+  const notes = separableNotes(separable);
+  const hash = assessHash(clean, notes.length);
 
   // Önbellek: aynı kullanıcının aynı cevabı — "bir daha dene"de değişmemiş
   // metni yeniden göndermek olağan; ikinci çağrı ücretsiz ve anında.
@@ -156,12 +164,13 @@ export async function assess(
       const rubric = async (avoid?: ProviderName) => {
         raw = await completeChat(
           assessSystemPrompt(clean.kind, clean.level, clean.lang, clean.native),
-          [{ role: "user", content: assessUserMessage(clean) }],
+          [{ role: "user", content: assessUserMessage(clean, notes) }],
           ASSESS_MAX_TOKENS,
           reportAndRemember,
           avoid,
         );
-        return parseAssessment(raw, text, clean.kind, minWordsFrom(clean.task.constraints));
+        const parsed = parseAssessment(raw, text, clean.kind, minWordsFrom(clean.task.constraints));
+        return parsed && enforceSeparable(parsed, separable, clean.native);
       };
       result = await rubric();
       /* OKUNAMAYAN ÇIKTIYA BİR KEZ DAHA, ÖTEKİ SAĞLAYICIDAN (QA F-0061).

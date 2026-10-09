@@ -450,6 +450,7 @@ jobs:
           npm run test:rules
           npm run test:match
           npm run test:fix-guard
+          npm run test:separable
           npm run test:translate-check-unit
           npm run test:moderation
           npm run test:rc-delete
