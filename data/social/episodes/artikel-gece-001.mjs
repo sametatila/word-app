@@ -3,6 +3,7 @@ const episode = {
   template: "artikel-gece",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-12 07:30",
   content: ({ quiz }) => ({
     items: quiz(["der Löffel", "die Gabel", "das Messer", "das Mädchen"], { Löffel: { icon: "spoon" }, Gabel: { icon: "fork" }, Messer: { icon: "knife" } }),
     copy: {

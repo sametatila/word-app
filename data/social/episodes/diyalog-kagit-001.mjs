@@ -3,6 +3,7 @@ const episode = {
   template: "diyalog-kagit",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-13 18:30",
   content: ({ line }) => ({
     lines: [
       { scene: "phone", who: "me", key: "ändern" },

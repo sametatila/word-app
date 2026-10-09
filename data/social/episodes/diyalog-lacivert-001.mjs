@@ -3,6 +3,7 @@ const episode = {
   template: "diyalog-lacivert",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-15 18:30",
   content: ({ line }) => ({
     lines: [
       { who: "them", key: "sich verspäten", board: "+20 MIN" },

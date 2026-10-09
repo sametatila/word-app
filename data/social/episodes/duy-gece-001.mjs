@@ -3,6 +3,7 @@ const episode = {
   template: "duy-gece",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-17 18:30",
   content: ({ pair }) => ({
     rounds: [pair("schon", "schön", 1), pair("drucken", "drücken", 0), pair("zahlen", "zählen", 1), pair("sagen", "sägen", 1)],
     copy: {

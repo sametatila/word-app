@@ -3,6 +3,7 @@ const episode = {
   template: "kelime-kagit",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-12 12:30",
   content: ({ deck }) => ({
     items: deck(["das Anmeldeformular", "die Unterlagen", "die Frist"]),
     copy: {

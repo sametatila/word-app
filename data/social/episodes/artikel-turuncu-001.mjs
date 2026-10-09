@@ -3,6 +3,7 @@ const episode = {
   template: "artikel-turuncu",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-14 07:30",
   content: ({ quiz }) => ({
     items: quiz(["der Montag", "der Januar", "der Sommer", "das Wochenende"]),
     copy: {

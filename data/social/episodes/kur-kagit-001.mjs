@@ -3,6 +3,7 @@ const episode = {
   template: "kur-kagit",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-17 12:30",
   content: ({ sentence }) => ({
     copy: {
       title: "İş yerinde 3 cümle, sen kur",

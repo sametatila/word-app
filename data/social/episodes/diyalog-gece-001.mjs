@@ -3,6 +3,7 @@ const episode = {
   template: "diyalog-gece",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-14 18:30",
   content: ({ line }) => ({
     lines: [
       { who: "me", key: "die Heizung" },

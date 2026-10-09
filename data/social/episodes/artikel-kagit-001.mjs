@@ -3,6 +3,7 @@ const episode = {
   template: "artikel-kagit",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-16 07:30",
   content: ({ quiz }) => ({
     items: quiz(["die Wohnung", "die Zeitung", "die Rechnung", "die Meinung"]),
     copy: {

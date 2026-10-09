@@ -3,6 +3,7 @@ const episode = {
   template: "kur-lacivert",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-18 07:30",
   content: ({ sentence }) => ({
     copy: {
       title: "Telefonda 3 cümle, sen yaz",

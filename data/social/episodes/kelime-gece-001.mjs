@@ -3,6 +3,7 @@ const episode = {
   template: "kelime-gece",
   status: "hazır",
   created: "2026-10-08",
+  slot: "2026-10-16 12:30",
   content: ({ deck }) => ({
     items: deck(["das Vorstellungsgespräch", "die Probezeit", "die Gehaltserhöhung"]),
     copy: {
