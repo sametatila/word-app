@@ -8,7 +8,7 @@
  *
  * 1. translate: kelime turundaki çeviri kurtarma. Bugünkü yol (tam rubrik,
  *    Gemma, `overall ≥ 75 && task ≥ 3`) · kısa Gemma istemi · Clef-flash · Clef.
- *    Yalnız `matchSentence`in "yanlış" dediği ve en az 3 kelimelik cevaplar
+ *    Yalnız `matchSentence`in "yanlış" ya da "sıra" dediği ve en az 3 kelimelik cevaplar
  *    modele gidiyor; küme de buna göre süzülüyor.
  * 2. chat: A1 sohbet turu — 2026-10-06'da çıkarıldı. Taban çizgisi çevrimdışı
  *    senaryo motoruydu ve motor kaldırıldı; sonuçlar Clef raporunda.
@@ -188,9 +188,10 @@ function clefQuestions(lang: "de" | "en") {
 async function runTranslate() {
   const items = TRANSLATE.filter((x) => {
     const m = matchSentence(x.student, x.target, [], x.lang);
-    return m.verdict === "wrong" && x.student.split(/\s+/).length >= 3;
+    // İstemciler "sıra" hükmünde de soruyor (2026-10-09).
+    return (m.verdict === "wrong" || m.verdict === "order") && x.student.split(/\s+/).length >= 3;
   });
-  console.log(`\n== 1. Çeviri kurtarma: ${TRANSLATE.length} örnek, modele giden (matchSentence "wrong", ≥3 kelime): ${items.length}`);
+  console.log(`\n== 1. Çeviri kurtarma: ${TRANSLATE.length} örnek, modele giden (matchSentence "wrong"/"order", ≥3 kelime): ${items.length}`);
 
   const rows = await pool(items, 4, async (x) => {
     const req = { kind: "sentence" as const, level: x.level, lang: x.lang, native: "tr" as const, task: { prompt: `Çevir: ${x.source}`, target: x.target }, answer: { text: x.student } };

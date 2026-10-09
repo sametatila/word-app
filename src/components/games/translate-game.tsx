@@ -98,8 +98,12 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     let accepted = m.quality >= 3 && m.verdict !== "order";
     let quality: number = m.quality;
 
-    if (m.verdict === "wrong" && typed.split(/\s+/).length >= 3) {
-      // Yerel hakem "yanlış": bir de modele sor, ama tur akışını tutmayacak kadar.
+    /* SIRA HÜKMÜ DE SORULUYOR (QA 2026-10-09): "Wir sind zusammen sehr
+       glücklich." hedef "Wir sind sehr glücklich zusammen." için "sıra hatası"
+       sayıldı; oysa geçerli bir başka diziliş. Yerel hakem sırayı yalnız hedefle
+       karşılaştırabiliyor, geçerli mi diye model karar veriyor. */
+    if ((m.verdict === "wrong" || m.verdict === "order") && typed.split(/\s+/).length >= 3) {
+      // Yerel hakem "yanlış"/"sıra": bir de modele sor, ama tur akışını tutmayacak kadar.
       const id = round.id;
       setStatus("checking");
       const ai = await askAssess(

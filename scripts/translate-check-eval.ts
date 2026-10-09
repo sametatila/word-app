@@ -8,8 +8,9 @@
  * Elle yazılmış, etiketli çeviriler (canlı kullanıcı metni YOK). Etiket: öğretmen
  * bu çeviriyi kabul eder mi? Anlam korunmuş (eşanlamlı, geçerli başka sıra ya da
  * yapı, kaynakta belirsiz zaman/cinsiyetin geçerli karşılığı serbest) VE
- * dilbilgisi doğru. Yalnız `matchSentence`in "yanlış" dediği ve en az 3 kelimelik
- * cevaplar modele gidiyor; küme de öyle süzülüyor.
+ * dilbilgisi doğru. Yalnız `matchSentence`in "yanlış" ya da "sıra" dediği ve en az
+ * 3 kelimelik cevaplar modele gidiyor; küme de öyle süzülüyor. `--new` yalnız son
+ * ayrılmış kümeyi koşar.
  *
  * İki küme: AYAR (istem bunlara bakılarak yazıldı) ve AYRILMIŞ (istem yazıldıktan
  * sonra, sonucu görmeden yazıldı). İstem değişirse yeni bir ayrılmış küme ekle.
@@ -162,6 +163,30 @@ export const HOLDOUT3: TItem[] = [
   T("en", "A2", "Kuzenim Kanada'da okuyor.", "My cousin studies in Canada.", "My cousin study in Canada.", false, "3. tekil -s"),
 ];
 
+/* Dördüncü ayrılmış küme (2026-10-09): kontrol artık konuşma anlatımında yazılan
+   üretimde, cümle kurma/dizmede ve yerel "sıra" hükmünde de soruluyor. Başka
+   doğru kuruluş ve geçerli başka diziliş kabul; V2/çekim hatası ret. Sonucu
+   görmeden yazıldı. */
+export const HOLDOUT4: TItem[] = [
+  T("de", "A1", "Annemle babam bayrama geliyor.", "Meine Eltern kommen zum Fest.", "Meine Mutter und mein Vater kommen zum Fest.", true, "başka kuruluş"),
+  T("de", "A1", "İki şişe su istiyorum.", "Ich hätte gern zwei Flaschen Wasser.", "Zwei Flaschen Wasser, bitte.", true, "kısa sipariş"),
+  T("de", "A1", "Kahvaltıda çay içiyorum.", "Zum Frühstück trinke ich einen Tee.", "Zum Frühstück ich trinke einen Tee.", false, "V2"),
+  T("de", "A1", "Kahvaltıda çay içiyorum.", "Zum Frühstück trinke ich einen Tee.", "Ich trinke zum Frühstück einen Tee.", true, "geçerli başka sıra"),
+  T("de", "A1", "Yarın alışveriş yapıyorum.", "Ich kaufe morgen ein.", "Morgen kaufe ich ein.", true, "geçerli başka sıra (dizme)"),
+  T("de", "A1", "Yarın alışveriş yapıyorum.", "Ich kaufe morgen ein.", "Morgen ich kaufe ein.", false, "V2 (dizme)"),
+  T("de", "A1", "Yarın alışveriş yapıyorum.", "Ich kaufe morgen ein.", "Ich kaufe ein morgen.", false, "ayrılan parça sonda değil"),
+  T("de", "A2", "Birlikte çok mutluyuz.", "Wir sind sehr glücklich zusammen.", "Wir sind zusammen sehr glücklich.", true, "QA: geçerli başka sıra"),
+  T("de", "A2", "Birlikte çok mutluyuz.", "Wir sind sehr glücklich zusammen.", "Wir zusammen sind sehr glücklich.", false, "V2"),
+  T("de", "A1", "Bu hangi beden?", "Welche Größe ist das?", "Was für eine Größe ist das?", true, "başka soru kalıbı"),
+  T("de", "A1", "Bu hangi beden?", "Welche Größe ist das?", "Welche Größe das ist?", false, "soru sırası"),
+  T("de", "A1", "Kedim yok.", "Ich habe keine Katze.", "Ich habe kein Katze.", false, "QA: çekim"),
+  T("de", "A1", "Nerelisiniz?", "Woher kommen Sie?", "Woher kommst Sie?", false, "QA: çekim"),
+  T("de", "A1", "Bunu deneyebilir miyim?", "Kann ich das anprobieren?", "Darf ich das anprobieren?", true, "modal eşanlamlı"),
+  T("de", "A1", "Bunu deneyebilir miyim?", "Kann ich das anprobieren?", "Kann ich anprobieren das?", false, "fiil sonda değil"),
+  T("en", "A2", "Hafta sonu sinemaya gidiyoruz.", "We are going to the cinema on the weekend.", "On the weekend we are going to the movies.", true, "başka sıra + eşanlamlı"),
+  T("en", "A2", "Hafta sonu sinemaya gidiyoruz.", "We are going to the cinema on the weekend.", "We going to the cinema on the weekend.", false, "yardımcı fiil eksik"),
+];
+
 const PRICE: Record<string, { in: number; out: number }> = {
   cloudflare: { in: 0.1, out: 0.3 },
   groq: { in: 0.15, out: 0.6 },
@@ -209,7 +234,11 @@ async function pool<T, R>(items: T[], n: number, fn: (x: T) => Promise<R>): Prom
 }
 
 async function evaluate(name: string, set: TItem[], withOld: boolean) {
-  const items = set.filter((x) => matchSentence(x.student, x.target, [], x.lang).verdict === "wrong" && x.student.split(/\s+/).length >= 3);
+  /* Model yerel hüküm "yanlış" ya da "sıra" olduğunda soruluyor (istemciler 2026-10-09'dan beri ikisinde). */
+  const items = set.filter((x) => {
+    const v = matchSentence(x.student, x.target, [], x.lang).verdict;
+    return (v === "wrong" || v === "order") && x.student.split(/\s+/).length >= 3;
+  });
   const conc = process.env.CHAT_PROVIDER === "groq" ? 1 : 4;
   const rows = await pool(items, conc, async (x) => {
     const req = toReq(x);
@@ -263,10 +292,13 @@ async function evaluate(name: string, set: TItem[], withOld: boolean) {
 async function main() {
   const withOld = process.argv.includes("--old");
   let failures = 0;
-  failures += await evaluate("AYAR", TUNE, withOld);
-  failures += await evaluate("AYRILMIŞ", HOLDOUT, withOld);
-  failures += await evaluate("AYRILMIŞ 2", HOLDOUT2, withOld);
-  failures += await evaluate("AYRILMIŞ 3", HOLDOUT3, withOld);
+  if (!process.argv.includes("--new")) {
+    failures += await evaluate("AYAR", TUNE, withOld);
+    failures += await evaluate("AYRILMIŞ", HOLDOUT, withOld);
+    failures += await evaluate("AYRILMIŞ 2", HOLDOUT2, withOld);
+    failures += await evaluate("AYRILMIŞ 3", HOLDOUT3, withOld);
+  }
+  failures += await evaluate("AYRILMIŞ 4 (ders, dizme, sıra)", HOLDOUT4, withOld);
   /* Kapı: yanlış kabul ya da okunamayan çıktı varsa kırmızı. */
   if (failures) {
     console.log(`\nKIRMIZI: ${failures} yanlış kabul / okunamayan çıktı`);

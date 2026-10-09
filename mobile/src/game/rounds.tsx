@@ -1762,7 +1762,9 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
        olur - web `translate-game` ile aynı eşikler. */
     let rescued = false;
     /* Misafirde model yok (uç 403): istek atılmıyor, yerel hüküm geçerli. */
-    if (!ok && !guest && m.verdict === "wrong" && typed.split(/\s+/).length >= 3) {
+    /* "Sıra" hükmü de soruluyor: geçerli başka bir diziliş olabilir ("Wir sind
+       zusammen sehr glücklich."; web `translate-game` aynı koşul). */
+    if (!ok && !guest && (m.verdict === "wrong" || m.verdict === "order") && typed.split(/\s+/).length >= 3) {
       setChecking(true);
       try {
         const d = await api<{ result?: { score?: { overall?: number; task?: number } } }>(
