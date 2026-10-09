@@ -864,6 +864,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Dienstag habe ich keine Zeit",
+          accept: ["Ich habe am Dienstag keine Zeit"],
           hint: [
             tr("Gün için kullandığımız kelimeyi hatırla ve olumsuzu sona ekle:"),
             de("Am Dienstag habe ich keine Zeit."),
@@ -886,6 +887,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Sonntag arbeite ich nicht",
+          accept: ["Ich arbeite am Sonntag nicht"],
           hint: [
             tr("Gün başa gelince fiil hemen arkasından gelir:"),
             de("Am Sonntag arbeite ich nicht."),
@@ -910,6 +912,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Samstag arbeite ich nie",
+          accept: ["Ich arbeite am Samstag nie"],
           hint: [
             tr("Gün başa geçince fiil hemen arkasından gelir, olumsuzluk sözcüğü sona kalır:"),
             de("Am Samstag arbeite ich nie."),
@@ -1095,6 +1098,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Morgen lerne ich Deutsch",
+          accept: ["Ich lerne morgen Deutsch"],
           hint: [
             tr("Başa zaman gelince özne fiilin arkasına geçer:"),
             de("Morgen lerne ich Deutsch."),
@@ -1117,6 +1121,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Wochenende arbeite ich manchmal",
+          accept: ["Ich arbeite am Wochenende manchmal"],
           hint: [
             tr("Hafta sonu başta, fiil hemen arkasında:"),
             de("Am Wochenende arbeite ich manchmal."),
@@ -1139,6 +1144,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Heute lerne ich noch",
+          accept: ["Ich lerne heute noch"],
           hint: [
             tr(
               "Zaman ifadesi başa geçince fiil hemen arkasından geliyor, özne üçüncü sıraya kayıyor:",
@@ -1349,6 +1355,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Dann ziehe ich mich schnell an",
+          accept: ["Ich ziehe mich dann schnell an"],
           hint: [
             tr("'Hızlı' kelimesi ortada kalır, ayrılan parça en sonda:"),
             de("Dann ziehe ich mich schnell an."),
@@ -1373,6 +1380,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Danach frühstücke ich früh",
+          accept: ["Ich frühstücke danach früh"],
           hint: [
             tr("Sıra sözcüğü başta, fiil hemen arkasında:"),
             de("Danach frühstücke ich früh."),
@@ -1784,6 +1792,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Nach der Arbeit sehe ich fern",
+          accept: ["Ich sehe nach der Arbeit fern"],
           hint: [
             tr("Fiilin ayrılan parçası cümlenin sonuna gider:"),
             de("Nach der Arbeit sehe ich fern."),
@@ -1813,6 +1822,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Abend gehe ich lieber spazieren",
+          accept: ["Ich gehe am Abend lieber spazieren"],
           hint: [
             tr("Akşam başta olduğu için fiil hemen arkasından gelir:"),
             de("Am Abend gehe ich lieber spazieren."),
@@ -2011,6 +2021,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Samstag habe ich frei",
+          accept: ["Ich habe am Samstag frei"],
           hint: [
             tr("Gün başta, fiil hemen arkasında:"),
             de("Am Samstag habe ich frei."),
@@ -2035,6 +2046,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Vielleicht mache ich einen Ausflug",
+          accept: ["Ich mache vielleicht einen Ausflug"],
           hint: [
             tr("'Belki' kelimesi başta olduğu için fiil hemen arkasından gelir:"),
             de("Vielleicht mache ich einen Ausflug."),
@@ -2057,6 +2069,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Im Urlaub wandere ich",
+          accept: ["In den Ferien wandere ich", "Ich wandere im Urlaub", "Ich wandere in den Ferien"],
           hint: [
             tr("Zaman ifadesi başa geçince fiil hemen arkasından geliyor:"),
             de("Im Urlaub wandere ich."),
@@ -2297,6 +2310,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Vormittag habe ich Zeit",
+          accept: ["Ich habe am Vormittag Zeit"],
           hint: [
             tr("Günün bölümü için de"),
             de("am"),

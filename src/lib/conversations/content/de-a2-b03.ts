@@ -1788,7 +1788,7 @@ export const deA2B03: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Wochenende möchte ich mich ausschlafen",
-          accept: ["Am Wochenende will ich mich ausschlafen"],
+          accept: ["Am Wochenende will ich mich ausschlafen", "Ich möchte mich am Wochenende ausschlafen", "Ich will mich am Wochenende ausschlafen"],
           hint: [
             tr("Zaman ifadesi başta olunca özne arkaya düşer, zamir hemen onun ardından gelir:"),
             de("Am Wochenende möchte ich mich ausschlafen."),

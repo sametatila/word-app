@@ -896,6 +896,7 @@ export const deA1B10: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich möchte die Gäste morgen einladen",
+          accept: ["Morgen möchte ich die Gäste einladen", "Ich möchte morgen die Gäste einladen"],
           hint: [
             tr(
               "Kip fiili ikinci sırada, asıl fiil mastar hâlinde sonda; nesne ve zaman zarfı araya giriyor:",
@@ -1493,6 +1494,7 @@ export const deA1B10: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Dann habe ich einen Kaffee getrunken",
+          accept: ["Ich habe dann einen Kaffee getrunken"],
           hint: [
             tr("İçmek yer değiştirme bildirmez, o yüzden diğer yardımcı fiili alır:"),
             de("Dann habe ich einen Kaffee getrunken."),
@@ -1515,6 +1517,7 @@ export const deA1B10: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Abend habe ich Pizza gegessen",
+          accept: ["Ich habe am Abend Pizza gegessen"],
           hint: [
             tr("Zaman başta, yardımcı fiil ikinci sırada, geçmiş biçim en sonda:"),
             de("Am Abend habe ich Pizza gegessen."),
@@ -1699,6 +1702,7 @@ export const deA1B10: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Sonntag habe ich meine Familie besucht",
+          accept: ["Ich habe am Sonntag meine Familie besucht"],
           hint: [
             tr("Gün başta, yardımcı fiil ikinci sırada, geçmiş biçim en sonda:"),
             de("Am Sonntag habe ich meine Familie besucht."),

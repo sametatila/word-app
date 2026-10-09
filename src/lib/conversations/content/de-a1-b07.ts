@@ -1366,6 +1366,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich überweise die Miete jeden Monat",
+          accept: ["Jeden Monat überweise ich die Miete", "Ich überweise jeden Monat die Miete"],
           hint: [
             tr("Fiil ikinci sırada, zaman ifadesi nesneden sonra geliyor:"),
             de("Ich überweise die Miete jeden Monat."),
@@ -1593,6 +1594,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich räume den Kühlschrank morgen auf",
+          accept: ["Morgen räume ich den Kühlschrank auf", "Ich räume morgen den Kühlschrank auf"],
           hint: [
             tr(
               "Ayrılabilen fiilin öneki en sona gidiyor; zaman zarfı nesneyle önekin arasında kalıyor:",

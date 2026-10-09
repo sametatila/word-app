@@ -988,7 +988,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Zuerst renovieren wir den Fußboden",
-          accept: ["Zuerst erneuern wir den Fußboden"],
+          accept: ["Zuerst erneuern wir den Fußboden", "Wir renovieren zuerst den Fußboden", "Wir erneuern zuerst den Fußboden"],
           hint: [
             tr("Sıra kelimesi başta olduğu için özne fiilin arkasına düşer:"),
             de("Zuerst renovieren wir den Fußboden."),

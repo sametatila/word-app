@@ -1815,6 +1815,7 @@ export const deA2B02: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Ende habe ich alles gestanden",
+          accept: ["Ich habe am Ende alles gestanden"],
           hint: [
             de("gestehen"),
             tr("kuralsız bir fiil ve zaman ifadesi başta olunca özne fiilin arkasına düşer:"),

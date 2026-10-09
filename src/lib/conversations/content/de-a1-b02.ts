@@ -1361,8 +1361,8 @@ export const deA1B02: Conversation[] = [
     minutes: 8,
     focusId: "Sein-Haben",
     vocab: [
-      { de: "groß", tr: "uzun boylu" },
-      { de: "klein", tr: "kısa boylu" },
+      { de: "groß", tr: "büyük" },
+      { de: "klein", tr: "küçük" },
       { de: "das Haar", tr: "saç" },
       { de: "aussehen", tr: "görünmek" },
       { de: "tragen", tr: "giymek" },
@@ -2191,6 +2191,7 @@ export const deA1B02: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Meine Eltern kommen zum Fest",
+          accept: ["Meine Mutter und mein Vater kommen zum Fest", "Mein Vater und meine Mutter kommen zum Fest"],
           hint: [
             tr("Anne baba çoğul bir kelime; iyelik uzar ve fiil de çoğul biçiminde kalır:"),
             de("Meine Eltern kommen zum Fest."),

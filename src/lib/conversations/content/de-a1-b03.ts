@@ -453,7 +453,9 @@ export const deA1B03: Conversation[] = [
             de("der Tee"),
             tr("de eril, yani nesne olunca"),
             de("einen"),
-            tr("alır; zaman ifadesi de sona gider:"),
+            tr("alır. Zamanla başlarsan fiil yine ikinci sırada kalır, özne fiilin arkasına geçer:"),
+            de("Zum Frühstück trinke ich einen Tee."),
+            tr("Özneyle başlamak da doğru:"),
             de("Ich trinke einen Tee zum Frühstück."),
             tr("Tekrar dene."),
           ],
@@ -885,6 +887,7 @@ export const deA1B03: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich hätte gern die Speisekarte",
+          accept: ["Ich hätte gerne die Speisekarte", "Ich möchte die Speisekarte", "Die Speisekarte, bitte"],
           hint: [
             tr("Kalıbı olduğu gibi bırak, sonuna istediğin şeyi ekle:"),
             de("Ich hätte gern die Speisekarte."),
@@ -906,6 +909,13 @@ export const deA1B03: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich hätte gern eine Suppe als Vorspeise",
+          accept: [
+            "Ich hätte gerne eine Suppe als Vorspeise",
+            "Ich möchte eine Suppe als Vorspeise",
+            "Als Vorspeise hätte ich gern eine Suppe",
+            "Als Vorspeise möchte ich eine Suppe",
+            "Eine Suppe als Vorspeise, bitte",
+          ],
           hint: [
             tr("Önce isteğini söyle, sonra başlangıç olduğunu ekle:"),
             de("Ich hätte gern eine Suppe als Vorspeise."),
@@ -1638,6 +1648,12 @@ export const deA1B03: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich hätte gern zwei Flaschen Wasser",
+          accept: [
+            "Ich hätte gerne zwei Flaschen Wasser",
+            "Ich möchte zwei Flaschen Wasser",
+            "Ich möchte bitte zwei Flaschen Wasser",
+            "Zwei Flaschen Wasser, bitte",
+          ],
           hint: [
             de("die Flasche"),
             tr("dişil olduğu için çoğulu"),

@@ -160,6 +160,7 @@ export const deA2B08: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Wochenende haben wir eine große Familienfeier",
+          accept: ["Wir haben am Wochenende eine große Familienfeier"],
           hint: [
             tr("Zaman ifadesi başta olduğu için özne fiilin arkasına düşer ve sıfat ek alır:"),
             de("Am Wochenende haben wir eine große Familienfeier."),

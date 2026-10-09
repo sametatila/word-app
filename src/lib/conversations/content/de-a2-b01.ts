@@ -163,6 +163,7 @@ export const deA2B01: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Sonntag bin ich zurückgekommen",
+          accept: ["Ich bin am Sonntag zurückgekommen"],
           hint: [
             de("zurückkommen"),
             tr("de yer değiştiren bir fiil, o yüzden yardımcı fiil aynı kalıyor ve ortaç sonda duruyor:"),
@@ -644,6 +645,7 @@ export const deA2B01: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Gestern Abend sind wir ausgegangen",
+          accept: ["Wir sind gestern Abend ausgegangen"],
           hint: [
             de("ausgehen"),
             tr("yer değiştiren bir fiil, o yüzden birinci yardımcı fiili alır:"),
@@ -1670,6 +1672,7 @@ export const deA2B01: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Danach war ich erleichtert",
+          accept: ["Ich war danach erleichtert"],
           hint: [
             tr("Duygu yine olmak fiilinin kısa geçmişiyle kurulur ve zaman kelimesi başta:"),
             de("Danach war ich erleichtert."),

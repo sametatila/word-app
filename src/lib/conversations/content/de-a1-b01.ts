@@ -1382,7 +1382,7 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Meine Nummer ist siebzehn achtundzwanzig" },
       },
       {
-        say: [tr("Numaran otuz iki elli olsun. Nasıl söylersin?")],
+        say: [tr("Numaran otuz iki elli olsun: 'Numaram otuz iki elli.' demek için ne dersin?")],
         expect: {
           kind: "produce",
           target: "Meine Nummer ist zweiunddreißig fünfzig",

@@ -185,6 +185,7 @@ export const deA2B05: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Morgen habe ich ein Bewerbungsgespräch",
+          accept: ["Ich habe morgen ein Bewerbungsgespräch"],
           hint: [
             tr("Zaman ifadesi başta olduğu için özne fiilin arkasına düşer:"),
             de("Morgen habe ich ein Bewerbungsgespräch."),
@@ -1790,6 +1791,7 @@ export const deA2B05: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich verschicke das Dokument heute",
+          accept: ["Heute verschicke ich das Dokument", "Ich verschicke heute das Dokument"],
           hint: [
             tr("Vurgusuz ön ekle başlayan fiil düz çekilir ve nesne belirtme hâlinde durur:"),
             de("Ich verschicke das Dokument heute."),

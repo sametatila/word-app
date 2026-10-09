@@ -1785,6 +1785,7 @@ export const deA2B09: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Im Unterricht schreibe ich immer mit",
+          accept: ["Ich schreibe im Unterricht immer mit"],
           hint: [
             tr("Yer ifadesi başta olduğu için özne fiilin arkasına düşer ve ön ek sona gider:"),
             de("Im Unterricht schreibe ich immer mit."),
@@ -1966,7 +1967,7 @@ export const deA2B09: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Am Nachmittag sind wir durch den Park spaziert",
-          accept: ["Am Nachmittag sind wir im Park spazieren gegangen"],
+          accept: ["Am Nachmittag sind wir im Park spazieren gegangen", "Wir sind am Nachmittag durch den Park spaziert", "Wir sind am Nachmittag im Park spazieren gegangen"],
           hint: [
             tr("Zaman ifadesi başta olduğu için özne yardımcı fiilin arkasına düşer ve ortaç sona gider:"),
             de("Am Nachmittag sind wir durch den Park spaziert."),
