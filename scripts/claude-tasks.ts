@@ -4,6 +4,9 @@
  *   npm run claude:tasks -- list            bekleyenler, en yakın son tarih önce, ayrıntılarıyla
  *   npm run claude:tasks -- list --done     "Claude bitirdi", Samet'in kontrolünü bekleyenler
  *   npm run claude:tasks -- done <id> <not> işi bitti say, ne yapıldığını yaz
+ *   npm run claude:tasks -- take-open [not]  açık bildirimlerin hepsini Claude'a bırak (Samet'in "Claude'a bırak"ı)
+ *   npm run claude:tasks -- close <id> resolved|dismissed <not>   düzeltme canlıda: bildirimi kapat, bildirene sonuç
+ *   npm run claude:tasks -- hold <id> <build> <not>   düzeltme mobil build'de: "Sonraki sürümde düzelecek"
  *
  * Sunucuda: `cd /opt/lernomi/$(cat /opt/lernomi/active) && /opt/lernomi/asapp npm run claude:tasks -- list`
  *
@@ -13,11 +16,21 @@
  * kullanıcıya bir şey göndermez: iş Samet'e "Claude bitirdi, kontrol et" diye
  * döner, kapatma onun kararı. Bu aracın üretimde yazdığı tek şey görevin durumu
  * ve notu (Samet'in izni, 2026-10-06).
+ *
+ * BIRAK + KAPAT (Samet, 2026-10-09: "bildirimleri Claude'a bırak yapıp sen ilgilenip
+ * kapatmalısın"): `take-open` paneldeki "Claude'a bırak" düğmesinin, `close` ve `hold`
+ * grup kapatma ve "Sonraki sürümde düzelecek" düğmelerinin aynısını yapar (aynı
+ * kütüphane işlevleri; bildirene sonuç gelen kutusuna aynı yoldan gider). `close`
+ * yalnız düzeltme CANLIDAYKEN (deploy OK) kullanılır; mobil build'e bağlı düzeltme
+ * `hold` ile bekler. Her yazma `admin_audit`e "claude-ops" adıyla düşer. Kullanıcı
+ * şikâyeti (`user_report`) bu yoldan kapatılmaz: kişi hakkında karar Samet'in.
  */
 import "dotenv/config";
 import { sql } from "drizzle-orm";
 import { db } from "../src/lib/db";
-import { claudeQueue, markClaudeDone, type ClaudeTask } from "../src/lib/claude-tasks";
+import { assignToClaude, claudeQueue, markClaudeDone, type ClaudeTask } from "../src/lib/claude-tasks";
+import { closeContentGroup, closeReport } from "../src/lib/moderation-admin";
+import { holdForRelease } from "../src/lib/release-holds";
 import { RESPONSE_SLA } from "../src/lib/response-sla";
 import { reporterRecords, type ReporterRecord } from "../src/lib/moderation-admin";
 
@@ -122,9 +135,85 @@ async function list(done: boolean): Promise<void> {
   }
 }
 
+const ACTOR = "claude-ops";
+
+async function audit(action: string, target: string, detail: Record<string, unknown>): Promise<void> {
+  await db.execute(sql`insert into admin_audit (admin_email, action, target, detail, ip)
+    values (${ACTOR}, ${action}, ${target}, ${JSON.stringify(detail)}::jsonb, null)`);
+}
+
+async function task(id: number): Promise<ClaudeTask> {
+  const [r] = await rows(sql`select id, queue, ref, status, note, result, assigned_by, created_at, done_at from claude_tasks where id = ${id}`);
+  if (!r) {
+    console.error(`#${id} yok.`);
+    process.exit(1);
+  }
+  return {
+    id: Number(r.id), queue: r.queue as ClaudeTask["queue"], ref: String(r.ref), status: r.status as ClaudeTask["status"],
+    note: (r.note as string) ?? null, result: (r.result as string) ?? null, assignedBy: (r.assigned_by as string) ?? null,
+    createdAt: String(r.created_at), doneAt: r.done_at ? String(r.done_at) : null,
+  };
+}
+
+/** Açık içerik grupları ve yapay zekâ bildirimleri → Claude'a bırak (zaten bırakılmışlar atlanır). */
+async function takeOpen(note: string | null): Promise<void> {
+  const groups = await rows(sql`
+    select coalesce(group_key, 'legacy:' || kind || ':' || ref) k from content_reports
+    where status = 'open' and kind = 'content' group by 1`);
+  const ai = await rows(sql`select id from content_reports where status = 'open' and kind in ('chat', 'assessment')`);
+  const open = await rows(sql`select queue, ref from claude_tasks where status in ('waiting', 'done')`);
+  const have = new Set(open.map((r) => `${r.queue}:${r.ref}`));
+  let n = 0;
+  for (const [queue, ref] of [
+    ...groups.map((g) => ["content_feedback", String(g.k)] as const),
+    ...ai.map((a) => ["ai_report", String(a.id)] as const),
+  ]) {
+    if (have.has(`${queue}:${ref}`)) continue;
+    const t = await assignToClaude(queue, ref, note, ACTOR);
+    await audit("moderation.claude_assign", ref, { queue, ...(note ? { note } : {}) });
+    console.log(`[${t.id}] ${queue}:${ref}`);
+    n++;
+  }
+  console.log(`${n} bildirim Claude'a bırakıldı. Ayrıntı: list`);
+}
+
 async function main(): Promise<void> {
   const [cmd, ...rest] = process.argv.slice(2);
   if (cmd === "list" || !cmd) return list(rest.includes("--done"));
+  if (cmd === "take-open") return takeOpen(rest.join(" ").trim() || null);
+  if (cmd === "close" || cmd === "hold") {
+    const id = Number(rest[0]);
+    const arg = rest[1];
+    const note = rest.slice(2).join(" ").trim();
+    const build = Number(arg);
+    const ok = Number.isInteger(id) && id > 0 && note && (cmd === "close" ? arg === "resolved" || arg === "dismissed" : Number.isInteger(build) && build > 0);
+    if (!ok) {
+      console.error("Kullanım: close <id> resolved|dismissed <not>  ·  hold <id> <build> <not>");
+      process.exit(2);
+    }
+    const t = await task(id);
+    if (t.queue === "user_report") {
+      console.error("Kullanıcı şikâyeti bu yoldan kapatılmaz (kişi hakkında karar Samet'in).");
+      process.exit(2);
+    }
+    if (t.status === "waiting") await markClaudeDone(id, note);
+    if (cmd === "hold") {
+      const r = await holdForRelease(t.queue, t.ref, build, note, ACTOR);
+      await audit("moderation.release_hold", t.ref, { queue: t.queue, build, note: note.slice(0, 120) });
+      console.log(`#${id} build ${build}'e bağlandı: bildirenin uygulaması o build'e geçince kapanır (${JSON.stringify(r)}).`);
+      return;
+    }
+    const decision = arg as "resolved" | "dismissed";
+    if (t.queue === "content_feedback") {
+      const r = await closeContentGroup(t.ref, decision, ACTOR, note);
+      console.log(`#${id} kapandı: ${r.closed} bildirim, ${r.notified} kişiye sonuç.`);
+    } else {
+      await closeReport("content_report", Number(t.ref), decision, ACTOR, note);
+      console.log(`#${id} kapandı.`);
+    }
+    await audit(t.queue === "content_feedback" ? "moderation.close_group" : "moderation.resolved", t.ref, { decision, note: note.slice(0, 120) });
+    return;
+  }
   if (cmd === "done") {
     const id = Number(rest[0]);
     const note = rest.slice(1).join(" ").trim();
@@ -140,7 +229,7 @@ async function main(): Promise<void> {
     console.log(`#${id} bitti olarak işaretlendi; panelde "Claude bitirdi, kontrol et" diye öne çıkacak.`);
     return;
   }
-  console.error(`Bilinmeyen komut: ${cmd}. list | list --done | done <id> <not>`);
+  console.error(`Bilinmeyen komut: ${cmd}. list | list --done | done <id> <not> | take-open [not] | close <id> resolved|dismissed <not> | hold <id> <build> <not>`);
   process.exit(2);
 }
 
