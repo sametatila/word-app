@@ -874,6 +874,7 @@ export const deA1B09: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Du musst sofort zum Arzt",
+          accept: ["Du musst sofort zum Arzt gehen", "Du musst gleich zum Arzt", "Du musst gleich zum Arzt gehen", "Du musst sofort zum Doktor", "Du musst sofort zum Doktor gehen"],
           hint: [
             tr("Burada da asıl fiili söylemene gerek yok:"),
             de("Du musst sofort zum Arzt."),

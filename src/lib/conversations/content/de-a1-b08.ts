@@ -1361,7 +1361,7 @@ export const deA1B08: Conversation[] = [
 ],
     patterns: [
       { de: "Es gibt einen See.", tr: "bir yerde ne olduğunu söylerken kullanılır" },
-      { de: "Wir machen ein Picknick.", tr: "birlikte plan yaparken kullanılır" },
+      { de: "Wir machen ein Picknick.", tr: "birlikte ne yapacağınızı (bir etkinlik) söyler" },
       { de: "Wir sitzen auf der Wiese.", tr: "nerede olduğunuzu söylerken kullanılır" },
     ],
     lecture: [
@@ -2143,6 +2143,7 @@ export const deA1B08: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Das klappt diesmal nicht",
+          accept: ["Es klappt diesmal nicht", "Diesmal klappt es nicht", "Diesmal klappt das nicht", "Leider kann ich nicht, das klappt diesmal nicht", "Leider kann ich nicht, es klappt diesmal nicht", "Leider kann ich nicht, diesmal klappt es nicht", "Leider kann ich nicht, diesmal klappt das nicht", "Ich kann leider nicht, das klappt diesmal nicht", "Ich kann leider nicht, es klappt diesmal nicht"],
           hint: [
             tr("Önce konu, sonra fiil, olumsuzluk en sonda:"),
             de("Das klappt diesmal nicht."),
