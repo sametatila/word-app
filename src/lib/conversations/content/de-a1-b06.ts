@@ -1258,6 +1258,8 @@ export const deA1B06: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Das sind zehn Minuten zu Fuß",
+          // Türkçe istem fiilsiz kısa cevap; "Uzak mı?"ya Almancada da çerçevesiz cevap doğal (QA F-0066).
+          accept: ["Zehn Minuten zu Fuß", "Es sind zehn Minuten zu Fuß"],
           hint: [
             tr("Süre ortada, yürümek en sonda kalır:"),
             de("Das sind zehn Minuten zu Fuß."),

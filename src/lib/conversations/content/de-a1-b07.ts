@@ -420,6 +420,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Hier ist der Flur",
+          accept: ["Der Flur ist hier"],
           hint: [
             tr("Bu kelime kendi artikelini taşıyor:"),
             de("Hier ist der Flur."),

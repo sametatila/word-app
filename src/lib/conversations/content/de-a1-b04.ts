@@ -407,7 +407,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Es ist sieben Uhr",
-          accept: ["Es ist sieben"],
+          accept: ["Es ist sieben", "Sieben Uhr"],
           hint: [
             tr("Kalıp hazır, sadece sayıyı değiştir:"),
             de("Es ist sieben Uhr."),
@@ -439,6 +439,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Es ist halb vier",
+          accept: ["Halb vier"],
           hint: [
             tr("Üç buçuk için dörde yarım saat kaldığını söylüyorsun:"),
             de("Es ist halb vier."),
