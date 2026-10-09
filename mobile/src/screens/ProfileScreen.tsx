@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { SettingsIcon, AccountIcon, BackIcon, ChevronNextIcon, CorrectIcon, EditIcon, MyWordsIcon, MyWritingsIcon, PremiumIcon, StreakIcon } from "../ui/icons";
 import { AvatarStage, derivedAvatar } from "../ui/Avatar";
-import { Skeleton, SkeletonLine } from "../ui/Skeleton";
+import { Skeleton, SkeletonCard, SkeletonLine, SkeletonText } from "../ui/Skeleton";
 import { AchievementIcon } from "../ui/achievementIcon";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
@@ -57,7 +57,7 @@ export function ProfileScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
   const { me, loading: meLoading } = useMe();
-  const { status: premiumStatus } = usePremiumStatus();
+  const { status: premiumStatus, loading: premiumLoading } = usePremiumStatus();
   const premium = !!premiumStatus?.premium;
   const guest = Boolean(user?.guest);
   const local = useAvatar();
@@ -191,6 +191,18 @@ export function ProfileScreen() {
               </View>
               <ChevronNextIcon color={colors.onPrimary} size={22} />
             </PressableScale>
+          ) : premiumLoading ? (
+            /* Durum yoldayken kartın yeri tutuluyor: kart cevaptan sonra araya
+               girip misafirin silme satırını itiyordu (QA F-0070 sınıfı). Durum
+               oturum açılınca önceden çekiliyor (`App`); bu yalnız ilk saniye. */
+            <SkeletonCard label={t("common.loading")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.xl, padding: spacing.lg }}>
+              <Skeleton height={24} width={24} radius={radii.sm} />
+              <View style={{ flex: 1 }}>
+                {/* Kartın kendi metinleri görünmez ölçülüyor: satır sayısı gerçeğiyle aynı. */}
+                <SkeletonText variant="h3" text={t("profile.go_premium")} />
+                <SkeletonText variant="caption" text={t(hasMockExams(currentCourseId()) ? "profile.premium_band_exams" : "profile.premium_band")} />
+              </View>
+            </SkeletonCard>
           ) : null}
 
           {/* DAVET Premium ekranından buraya taşındı (paywall yeniden tasarımı,

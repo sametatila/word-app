@@ -31,6 +31,7 @@ import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 import { UnlockCelebration } from "./src/ui/UnlockCelebration";
+import { refreshPremium } from "./src/lib/premium";
 import { GuestClaimNotice } from "./src/ui/GuestClaimNotice";
 import { VerifiedNotice } from "./src/ui/VerifiedNotice";
 import { TermsUpdateNotice } from "./src/ui/TermsUpdateNotice";
@@ -319,6 +320,21 @@ function Nav() {
   }, [loading, user, guestGone]);
 
   useEffect(() => { if (user) { void flushPendingAnswers(); void flushPendingConversations(); void flushPendingPathItems(); } }, [user]);
+
+  /*
+    PREMIUM DURUMU ÖNCEDEN OKUNUYOR.
+
+    Premium durumu yalnız onu soran bir ekran açılınca çekiliyordu; Patika ve
+    ünitedeki hak notu (`PathQuota`), Profil'deki Premium kartı ve Beceriler'in
+    kota notu ilk açılışta cevaptan sonra araya girip altlarını itiyordu (QA
+    F-0070 sınıfı). Oturum belli olur olmaz bir kez soruluyor; ekranlar
+    açıldığında durum çoğunlukla bellekte.
+  */
+  const userId = user?.id ?? null;
+  useEffect(() => {
+    if (!userId) return;
+    void refreshPremium();
+  }, [userId]);
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {

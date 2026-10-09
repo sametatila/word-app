@@ -11,7 +11,8 @@ import { tieredCopy } from "../lib/unlock";
 import { FlowNote } from "./flow";
 import { UnlockProgress } from "./UnlockProgress";
 import { ConversationIcon, SkillWritingIcon } from "./icons";
-import { useTheme, spacing } from "../theme";
+import { Skeleton, textHeight } from "./Skeleton";
+import { useTheme, spacing, radii } from "../theme";
 
 /**
  * Patika'da seviyenin yapay zekâ hakları — Konuşma ve Yazma AYRI sayaç.
@@ -27,9 +28,24 @@ export function PathQuota({ level }: { level: string }) {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
   const guest = !user || Boolean(user.guest);
-  const { status } = usePremiumStatus();
+  const { status, loading } = usePremiumStatus();
   const declined = useAiDeclined(!guest);
   const lv = status?.unlock?.levels[level];
+  /*
+   * DURUM YOLDAYKEN YERİ TUTULUYOR. Notlar Premium durumu gelince araya girip
+   * öne çıkan üniteyi ve modül listesini aşağı itiyordu (QA F-0070 sınıfı).
+   * Durum artık oturum açılınca önceden çekiliyor (`App`); hâlâ yoldaysa
+   * ücretsiz hesabın iki notu (Konuşma + Yazma) boyunda iskelet duruyor.
+   */
+  if (!guest && !status && loading) {
+    const h = textHeight("caption") + spacing.sm * 2;
+    return (
+      <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={{ gap: spacing.sm, marginBottom: spacing.lg }}>
+        <Skeleton height={h} radius={radii.md} />
+        <Skeleton height={h} radius={radii.md} />
+      </View>
+    );
+  }
   if (guest || !lv) return null;
   const conv = tieredCopy(lv.conversation, "conv");
   const write = tieredCopy(lv.pathWriting, "write");
