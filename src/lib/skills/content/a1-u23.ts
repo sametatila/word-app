@@ -291,10 +291,10 @@ export const a1U23: SkillExercise[] = [
     tasks: [
       {
         kind: "rewrite",
-        prompt: "Telefon konuşmasını bitir.",
+        prompt: "Bu veda yüz yüze söylenir. Telefonda söylenen hâliyle yeniden yaz.",
         source: "Auf Wiedersehen!",
         answer: "Auf Wiederhören!",
-        alternatives: ["Auf Wiederhören"],
+        alternatives: ["Auf Wiederhören", "Auf Wiederhören, bis bald!", "Tschüss, auf Wiederhören!"],
         why:
           "hören = duymak, sehen = görmek. Telefonda karşındakini GÖRMEZSİN. „Auf Wiedersehen“ yüz yüze vedadır; telefonda söylemek öğrencinin en sık hatasıdır.",
       },

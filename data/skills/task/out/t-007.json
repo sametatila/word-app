@@ -121,7 +121,7 @@
  { "tr": "Sıfat çekimlerini düzelt.", "kind": "rewrite.prompt", "en": "Correct the adjective endings." },
  { "tr": "Değişim edatlarını düzelt.", "kind": "rewrite.prompt", "en": "Correct the prepositions of change." },
  { "tr": "Dönüşlü zamiri yerine koy.", "kind": "rewrite.prompt", "en": "Put the reflexive pronoun in." },
- { "tr": "Telefon konuşmasını bitir.", "kind": "rewrite.prompt", "en": "End the telephone call." },
+ { "tr": "Bu veda yüz yüze söylenir. Telefonda söylenen hâliyle yeniden yaz.", "kind": "rewrite.prompt", "en": "This goodbye is said face to face. Rewrite it the way you say it on the phone." },
  { "tr": "Ulacı zu'lu mastara çevir.", "kind": "rewrite.prompt", "en": "Turn the clause into an infinitive with zu." },
  { "tr": "„aufhören“ yapısını düzelt.", "kind": "rewrite.prompt", "en": "Correct the „aufhören“ structure." },
  { "tr": "Bileşik isimleri birleştir.", "kind": "rewrite.prompt", "en": "Write the compound nouns as single words." },
