@@ -1618,6 +1618,8 @@ export const trBase: Record<string, string> = {
   "social.notif_default": "Yeni bildirim",
   "social.notif_report_closed": "Bildirimin incelendi ve kapatıldı. Teşekkürler.",
   "social.notif_report_note": "Notun: “{note}”",
+  "social.notif_report_about_chat": "Sohbetteki bir yanıt",
+  "social.notif_report_about_assessment": "Bir değerlendirme sonucu",
   "social.notif_report_resolved": "Bildirimin incelendi ve gereği yapıldı. Teşekkürler.",
   "social.notif_report_dismissed": "Bildirimin incelendi; kurallarımıza aykırı bir durum bulunmadı. İtiraz için Destek sayfasına bakabilirsin.",
   "social.notif_content_fixed": "Bildirdiğin içerik düzeltildi. Teşekkürler.",

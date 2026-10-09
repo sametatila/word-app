@@ -109,16 +109,42 @@ export async function notifyMany(userIds: string[], n: NotifyInput): Promise<voi
   );
 }
 
-/** Bildirilen içeriğin tanınır parçası: anlık görüntüdeki kelime ya da soru cümlesi. */
-const SUBJECT_KEYS = ["word", "q", "prompt", "sentence", "text", "title", "front"];
+/**
+ * Bildirilen içeriğin tanınır parçası: anlık görüntüdeki kelime, madde ya da cümle.
+ *
+ * SIRA ÖNEMLİ (QA F-0043, 2026-10-09): `q` / `prompt` çoğu zaman YÖNERGE
+ * ("Cümleyi doğru sıraya diz.", "Richtig oder falsch? …") ve gelen kutusunda
+ * hangi maddenin bildirildiğini söylemiyordu; Patika konuşmasının görüntüsü ise
+ * iç içe (`step.expect.target`) ve hiç okunmuyordu, satır boş kalıyordu. Önce
+ * maddeye özgü alanlar, sonra dizme/kurma maddelerinde doğru cümle, en son
+ * soru/yönerge.
+ */
+const SUBJECT_KEYS = ["word", "item", "source", "stem", "q", "prompt", "sentence", "text", "title", "front"];
+const ORDER_KINDS = new Set(["order", "build", "scramble"]);
+const str = (v: unknown): string | null => (typeof v === "string" && v.trim() ? v.trim() : null);
 export function reportSubject(snapshot: string | null | undefined): string | null {
   if (!snapshot) return null;
   try {
     const o = JSON.parse(snapshot) as Record<string, unknown>;
-    for (const k of SUBJECT_KEYS) {
-      const v = o?.[k];
-      if (typeof v === "string" && v.trim()) return clip(v.trim(), 80);
+    if (!o || typeof o !== "object") return null;
+    const word = str(o.word);
+    if (word) return clip(word, 80);
+    /* Dizme/kurma maddesinin `q`su yönerge; madde doğru cümlenin kendisi. */
+    if (ORDER_KINDS.has(String(o.kind ?? ""))) {
+      const c = Array.isArray(o.correct) ? o.correct.filter((x) => typeof x === "string").join(" ") : str(o.correct);
+      if (c) return clip(c, 80);
     }
+    for (const k of SUBJECT_KEYS) {
+      const v = str(o[k]);
+      if (v) return clip(v, 80);
+    }
+    /* Patika konuşması: adımın beklediği cümle, yoksa adımın hedef dildeki ilk repliği. */
+    const step = o.step as { expect?: { target?: unknown }; say?: { lang?: unknown; text?: unknown }[] } | undefined;
+    const target = str(step?.expect?.target);
+    if (target) return clip(target, 80);
+    const say = Array.isArray(step?.say) ? step.say : [];
+    const line = say.find((x) => x && x.lang !== "tr" && str(x.text)) ?? say.find((x) => x && str(x.text));
+    if (line) return clip(String(line.text).trim(), 80);
   } catch {
     /* düz metin görüntü: başlık olarak kullanılmıyor (uzun, bağlamsız) */
   }

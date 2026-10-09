@@ -6,7 +6,7 @@ import { AddFriendIcon, ChevronNextIcon, CorrectIcon, InboxIcon, LeagueUpIcon, Q
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
-import { errorText, notificationText, reportContext, social, timeAgo, type NotificationView } from "@/lib/social/client";
+import { errorText, notificationText, reportContext, reportOpensSupport, social, timeAgo, type NotificationView } from "@/lib/social/client";
 import { REACTION_TONE, REACTION_FILL, ReactionGlyph, softFill } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
 import { achievementHref } from "@/lib/achievement-groups";
@@ -21,7 +21,7 @@ function reactedAchievementId(n: NotificationView): string | null {
 }
 
 /** Bildirimin götürdüğü yer — her satırın bir işi var. */
-function hrefFor(n: NotificationView): string {
+function hrefFor(n: NotificationView): string | null {
   switch (n.type) {
     /* HEDEFLER ANDROID'IN SEKME YAPISINDAN. "Gelen istekler" ve "bu haftanin
        ortak gorevi" artik kendi sekmelerinde degil, arkadas listesinin
@@ -52,10 +52,11 @@ function hrefFor(n: NotificationView): string {
       const id = reactedAchievementId(n);
       return id ? achievementHref(id) : "/friends?tab=feed";
     }
-    /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir); destek
-       sayfası itiraz yolunu anlatıyor. */
+    /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir). Yalnız
+       "aykırı bir şey yok" sonucu itiraz yolunu anlatan Destek'e gidiyor;
+       ötekiler bağlantı DEĞİL (`reportOpensSupport`, Android aynı kural). */
     case "report_closed":
-      return "/support";
+      return reportOpensSupport(n) ? "/support" : null;
     default:
       return "/friends?tab=feed";
   }
@@ -181,9 +182,10 @@ export function Inbox() {
         {items.map((n) => {
           const { Icon, tint, fill } = tileFor(n);
           const reaction = n.type === "reaction" && typeof n.detail.reaction === "string" ? (n.detail.reaction as ReactionKind) : null;
-          return (
-            <li key={n.id}>
-              <Link href={hrefFor(n)} prefetch={false} className="flex items-center gap-3 px-4 py-3">
+          const href = hrefFor(n);
+          const context = reportContext(n, lang);
+          const body = (
+            <>
                 {n.actor ? (
                   <Avatar userId={n.actor.userId} name={n.actor.name} avatar={n.actor.avatar} size={40} />
                 ) : (
@@ -198,7 +200,7 @@ export function Inbox() {
                   {/* Okunmamış satır KALIN. Tek işaret satırın arka planıydı ve
                       Android okunmamışı yazı ağırlığı + nokta ile söylüyor. */}
                   <span className={`block ${n.read ? "text-body" : "text-strong"}`}>{notificationText(n, lang)}</span>
-                  {reportContext(n, lang) ? <span className="muted mt-0.5 block line-clamp-3 break-words text-caption">{reportContext(n, lang)}</span> : null}
+                  {context ? <span className="muted mt-0.5 block line-clamp-3 break-words text-caption">{context}</span> : null}
                   <span className="block text-micro" style={{ color: "var(--text-faint)" }}>{timeAgo(n.createdAt, lang)}</span>
                 </span>
                 {reaction ? (
@@ -209,13 +211,24 @@ export function Inbox() {
                   <RowGlyph tint={tint} fill={fill}>
                     <Icon size={18} />
                   </RowGlyph>
-                ) : (
+                ) : href ? (
                   <span className="shrink-0" style={{ color: "var(--text-faint)" }}>
                     <ChevronNextIcon size={20} />
                   </span>
-                )}
+                ) : null}
                 {!n.read ? <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: "var(--color-brand)" }} /> : null}
-              </Link>
+            </>
+          );
+          /* Gidecek yeri olmayan satır (şikâyet sonucu) bağlantı DEĞİL: ok da yok. */
+          return (
+            <li key={n.id}>
+              {href ? (
+                <Link href={href} prefetch={false} className="flex items-center gap-3 px-4 py-3">
+                  {body}
+                </Link>
+              ) : (
+                <div className="flex items-center gap-3 px-4 py-3">{body}</div>
+              )}
             </li>
           );
         })}

@@ -253,10 +253,27 @@ export function feedText(item: FeedItem, lang: NativeLang): string {
   }
 }
 
+/**
+ * Şikâyet sonucunun GİDECEK YERİ: yalnız "kurallara aykırı bir şey bulunmadı"
+ * sonucu bir yere götürüyor, çünkü cümlesi itiraz için Destek'i gösteriyor.
+ * Öteki sonuçların gidecek yeri yok (içerik kaldırılmış olabilir): satır
+ * basılabilir DURMUYOR. Eskiden Android'de satır basılıyor ama hiçbir şey
+ * olmuyordu, web ise her sonucu Destek'e götürüyordu (QA F-0043). İki taraf aynı kural.
+ */
+export function reportOpensSupport(n: NotificationView): boolean {
+  return n.type === "report_closed" && n.detail.decision === "dismissed" && n.detail.reportKind !== "content";
+}
+
 /** Şikâyet sonucunun alt satırı: neyin bildirildiği + bildirenin notu (mobil `api/social` `reportContext`). */
 export function reportContext(n: NotificationView, lang: NativeLang): string | null {
   if (n.type !== "report_closed") return null;
-  const subject = typeof n.detail.subject === "string" && n.detail.subject ? `«${n.detail.subject}»` : null;
+  /* Yapay zekâ bildiriminde çıktı yazılmıyor (CNT-7); yerine NEYİN bildirildiği
+     türüyle söyleniyor. Satır boş kalıyordu: QA F-0043. */
+  const subject = typeof n.detail.subject === "string" && n.detail.subject
+    ? `«${n.detail.subject}»`
+    : n.detail.reportKind === "chat" ? translate(lang, "social.notif_report_about_chat")
+    : n.detail.reportKind === "assessment" ? translate(lang, "social.notif_report_about_assessment")
+    : null;
   const note = typeof n.detail.yourNote === "string" && n.detail.yourNote ? translate(lang, "social.notif_report_note", { note: n.detail.yourNote }) : null;
   return [subject, note].filter(Boolean).join(" · ") || null;
 }

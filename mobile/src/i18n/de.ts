@@ -1616,6 +1616,8 @@ export const de: Record<string, string> = {
   "social.notif_default": "Neue Mitteilung",
   "social.notif_report_closed": "Deine Meldung wurde geprüft und abgeschlossen. Danke.",
   "social.notif_report_note": "Deine Notiz: „{note}“",
+  "social.notif_report_about_chat": "Eine Antwort im Chat",
+  "social.notif_report_about_assessment": "Ein Bewertungsergebnis",
   "social.notif_report_resolved": "Deine Meldung wurde geprüft und es wurden Maßnahmen ergriffen. Danke.",
   "social.notif_report_dismissed": "Deine Meldung wurde geprüft; wir haben keinen Verstoß gegen unsere Regeln festgestellt. Einspruch ist über die Support-Seite möglich.",
   "social.notif_content_fixed": "Der Inhalt, den du gemeldet hast, wurde korrigiert. Danke.",

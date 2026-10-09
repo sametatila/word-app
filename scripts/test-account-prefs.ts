@@ -106,6 +106,10 @@ async function main() {
   const chat = page.items.find((n) => n.ref?.type === "content_report" && n.ref.id === cr.id);
   check("yapay zekâ bildiriminde çıktı yazılmıyor (subject yok)", chat != null && chat.detail.subject == null);
   check("görüntüden konu: soru cümlesi, düz metin yok sayılır", reportSubject(JSON.stringify({ q: "Zehn Minuten." })) === "Zehn Minuten." && reportSubject("düz metin") === null);
+  /* QA F-0043: yönerge değil madde; konuşma görüntüsü iç içe. */
+  check("görüntüden konu: dizme maddesinde doğru cümle (yönerge değil)", reportSubject(JSON.stringify({ q: "Cümleyi doğru sıraya diz.", kind: "order", correct: ["Ich", "kaufe", "ein"] })) === "Ich kaufe ein");
+  check("görüntüden konu: deneme maddesi yönergeden önce", reportSubject(JSON.stringify({ prompt: "Richtig oder falsch?", item: "Herr Kovac soll kommen." })) === "Herr Kovac soll kommen.");
+  check("görüntüden konu: konuşma adımının beklediği cümle", reportSubject(JSON.stringify({ phase: "lecture", step: { say: [{ lang: "tr", text: "Şimdi sen dene" }], expect: { kind: "produce", target: "Ich hätte gern Wasser" } } })) === "Ich hätte gern Wasser");
 
   console.log("\nLEG-17 — kapanıştan 1 yıl sonra silme");
   const [open] = await db.insert(contentReports).values({ userId: R, kind: "chat", ref: "x:2", reason: "other", createdAt: new Date("2024-01-01") }).returning({ id: contentReports.id });

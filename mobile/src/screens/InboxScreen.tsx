@@ -6,7 +6,8 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { RootStackParams } from "../navigation/RootStack";
 import { goFriends } from "../lib/goFriends";
-import { social, errorText, notificationText, reportContext, timeAgo, type NotificationView, type ReactionKind } from "../api/social";
+import { social, errorText, notificationText, reportContext, reportOpensSupport, timeAgo, type NotificationView, type ReactionKind } from "../api/social";
+import { openLegal } from "../lib/legal";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
@@ -96,8 +97,10 @@ export function InboxScreen() {
         break;
       }
       /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir); satır
-         kendini anlatıyor (alt satırda neyin bildirildiği ve notun), ok da çizilmiyor. */
-      case "report_closed": break;
+         kendini anlatıyor (alt satırda neyin bildirildiği ve notun). Yalnız
+         "aykırı bir şey yok" sonucu itiraz için Destek'i açıyor; ötekiler
+         basılabilir değil (`reportOpensSupport`, web aynı kural; QA F-0043). */
+      case "report_closed": if (reportOpensSupport(n)) openLegal("support"); break;
       default: goFriends(nav, "feed");
     }
   }
@@ -133,10 +136,12 @@ export function InboxScreen() {
                 const { icon, tint } = tileFor(n, colors);
                 const reaction = n.type === "reaction" && typeof n.detail.reaction === "string" ? (n.detail.reaction as ReactionKind) : null;
                 const context = reportContext(n);
-                /* Gidecek yeri olmayan satırda ok yok: ok "dokun, bir yere gider" diyor. */
-                const goes = n.type !== "report_closed";
+                /* Gidecek yeri olmayan satır BASILABİLİR DEĞİL ve oku yok: basılıp
+                   hiçbir şey olmaması, bozuk bir düğme gibi okunuyordu (QA F-0043). */
+                const goes = n.type !== "report_closed" || reportOpensSupport(n);
+                const Row = goes ? PressableScale : View;
                 return (
-                  <PressableScale key={n.id} onPress={() => open(n)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === items.length - 1 ? 0 : 1, borderBottomColor: colors.hairline }}>
+                  <Row key={n.id} {...(goes ? { onPress: () => open(n) } : {})} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === items.length - 1 ? 0 : 1, borderBottomColor: colors.hairline }}>
                     {n.actor ? <Avatar userId={n.actor.userId} name={n.actor.name} avatar={n.actor.avatar} size={40} /> : <IconTile icon={icon} tint={tint} size={40} />}
                     <View style={{ flex: 1 }}>
                       <Text variant={n.read ? "body" : "bodyStrong"}>{notificationText(n)}</Text>
@@ -151,7 +156,7 @@ export function InboxScreen() {
                       <View style={{ width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint, colors) }}>{React.createElement(icon, { color: onTint(tint, colors), size: 18 })}</View>
                     ) : goes ? <ChevronNextIcon color={colors.textFaint} size={20} /> : null}
                     {!n.read ? <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: colors.primary }} /> : null}
-                  </PressableScale>
+                  </Row>
                 );
               })}
             </Card>
