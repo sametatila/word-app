@@ -72,6 +72,15 @@
       E.set(sp, { o: Math.min(ease.outCubic(k * 1.6), o), y: (1 - ease.spring(k)) * dy - (out ? ease.inCubic(E.p(t, out, 0.25)) * 40 : 0), blur: (1 - ease.outCubic(k)) * 14 });
     });
   };
+  /** Baştan görünen kelimelerde vurgu dalgası: sırayla hafif kabarıp yerine oturur; `out` verilirse söner. */
+  E.wordsPulse = (spans, t, start, { stagger = 0.08, dur = 0.5, lift = 14, grow = 0.08, out = null } = {}) => {
+    spans.forEach((sp, i) => {
+      const k = E.p(t, start + i * stagger, dur);
+      const bump = Math.sin(Math.PI * k);
+      const ko = out ? E.p(t, out, 0.25) : 0;
+      E.set(sp, { o: 1 - ko, y: -bump * lift - ease.inCubic(ko) * 40, s: 1 + bump * grow, blur: 0 });
+    });
+  };
   /** Karaoke: konuşulan kelime vurgulu, geçenler dolu, gelenler soluk; süre harf sayısına göre. */
   E.karaoke = (spans, t, start, dur) => {
     const wts = spans.map((s) => s.textContent.length + 2);
@@ -101,8 +110,10 @@
   E.G = { L: 96, R: 930, W: 834, CX: 513, TOP: 250, BOT: 1530 };
   /**
    * KANCA: satırlar alt alta, satır aralığı yazı boyunun 1,16 katı, blok dikeyde `center` etrafında ortalanır.
-   * Sığmayan satır 834 px'e küçülür. lines: [{ t, size, color, weight }]. render(t, start, out): satırlar
-   * 0,4 sn arayla, kelime kelime gelir.
+   * Sığmayan satır 834 px'e küçülür. lines: [{ t, size, color, weight }]. render(t, start, out): metin 0. karede
+   * tam okunur (akışta otomatik oynayan ilk kare ve kapak; kaydırma kararı ilk saniyede), hareket yalnız vurgu:
+   * satırlar 0,4 sn arayla, kelime kelime kısa bir kabarma dalgası (2026-10-09; önceden kelimeler bulanıktan
+   * 0,4–1 sn'de geliyordu ve ilk kare boştu).
    */
   E.hook = (parent, lines, { center = 780, gap = 1.16 } = {}) => {
     const els = lines.map((l) => {
@@ -133,7 +144,7 @@
         });
       },
       render(t, start, out) {
-        els.forEach((x, i) => E.wordsIn(x.spans, t, start + (x.delay ?? i * 0.42), { out }));
+        els.forEach((x, i) => E.wordsPulse(x.spans, t, start + (x.delay ?? i * 0.42), { out }));
       },
     };
   };
