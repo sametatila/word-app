@@ -32,6 +32,8 @@ import { candoForExercise, candoForConversation } from "../src/lib/cando-map";
 // @ts-ignore — .mjs, tip bildirimi yok
 import { contains } from "../data/meanings/contains.mjs";
 import { cleanHeadword } from "../src/lib/headword";
+import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
+import { QUIZ_WEEKS } from "../src/lib/weekly-quiz";
 
 const ROOT = path.resolve(__dirname, "..");
 const BASELINE = path.join(ROOT, "data/content/baseline.json");
@@ -706,11 +708,38 @@ function checkHeadwords() {
   }
 }
 
+/**
+ * SAYILAMAYAN İSİMLE "WIE VIELE" (QA F-0060, 2026-10-09).
+ *
+ * A1 okumasında "Wie viele Zahnpasta sind im Warenkorb?" yayına çıktı:
+ * Zahnpasta tekil-yalnız (sözlükte "(Sg.)"), doğrusu "Wie viele Tuben
+ * Zahnpasta …". Liste `mass-nouns.generated.json` (words.json "(Sg.)"
+ * isimleri, küçük harf); "wie viele" + (isteğe bağlı sıfat) + o isim hata.
+ * Almanca kurs içeriğinin hepsi: beceri, konuşma, deneme kâğıdı, haftalık
+ * sınav. Ölçü birimiyle kurulan soru ("Wie viele Tonnen Lebensmittel")
+ * geçer: birim sayılabilir.
+ */
+function checkCountability() {
+  const mass = new Set<string>(JSON.parse(readFileSync(path.join(ROOT, "src/lib/conversations/mass-nouns.generated.json"), "utf8")) as string[]);
+  const WIE_VIELE = /\b[Ww]ie viele\s+(?:[a-zäöüß]+(?:e|en|er|es|em)\s+)?([A-ZÄÖÜ][\p{L}-]*)/gu;
+  const scan = (where: string, value: unknown) => {
+    const text = JSON.stringify(value);
+    for (const m of text.matchAll(WIE_VIELE))
+      if (mass.has(m[1].toLocaleLowerCase("de-DE")))
+        E(where, `"${m[0]}" — ${m[1]} sayılamaz (Sg.); ölçü birimiyle sor ("Wie viele Tuben ${m[1]}") ya da "wie viel"`);
+  };
+  for (const e of BUNDLED_EXERCISES) if ((e.course ?? "de") === "de") scan(`[skills] ${e.id}`, e);
+  for (const c of CONVERSATIONS) if (c.course === "de") scan(`[conversations] ${c.id}`, c);
+  for (const p of MOCK_PAPERS) if (p.course === "de") scan(`[mock] ${p.id}`, p);
+  for (const w of QUIZ_WEEKS) if (w.course === "de") scan(`[quiz] ${w.id}`, w);
+}
+
 /* ───────────── çalıştır ───────────── */
 const kinds = only ? [only] : ["skills", "conversations", "words"];
 if (kinds.includes("skills")) checkSkills(BUNDLED_EXERCISES);
 if (kinds.includes("conversations")) checkConversations(CONVERSATIONS);
 if (kinds.includes("words")) checkHeadwords();
+if (kinds.includes("skills")) checkCountability();
 
 // Muafiyet listesi bayatladıysa söyle: artık eşiği aşmayan bir kimlik listede
 // durursa bir sonraki okuyan onu gerçek bir kusur sanır.
