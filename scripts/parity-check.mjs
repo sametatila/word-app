@@ -22171,6 +22171,82 @@ console.log("\n" + C.b + "SINAV BITISI SOZLESMESI" + C.off);
   sameList("mobil duz govdeyi de okuyor", [String(/setResult\(d\.result \?\? d\)/.test(mob))], ["true"], "mobil", "beklenen");
 }
 
+/* ── yazilan ve dizilen cevap hakemi ─────────────────────────────────────
+ * QA 2026-10-09: konusma anlatiminda YAZILAN cevap web'de kelime torbasindan
+ * (`judgeSpeech`, sira yok sayilir: "Zum Fruehstueck ich trinke einen Tee"
+ * gecti), mobilde katlanmis tam esitlikten geciyordu (dogru baska kurulus
+ * reddedildi). Cumle kurma ve dizme yalniz hedef + yazili alternatifi kabul
+ * ediyordu. Kural artik tek: cumle hakemi + yapay zeka kontrolu (ceviri
+ * turunun istegi, ayni esik ve bekleme). Yardimcilar elle tutulan iki kopya;
+ * govdeler ve kullananlar burada olculuyor. */
+console.log("\n" + C.b + "YAZILAN CEVAP HAKEMI" + C.off);
+{
+  const govde = (p, bas) => {
+    const src = read(p);
+    const i = src.indexOf(bas);
+    if (i < 0) return [bas + " YOK"];
+    return src.slice(i).split("\n").map((l) => l.trimEnd()).filter((l) => !/^import /.test(l));
+  };
+  sameList("yazilan cevap yardimcisi", govde("mobile/src/lib/typedAnswer.ts", "export const RESCUE_MIN_WORDS"), govde("src/lib/typed-answer.ts", "export const RESCUE_MIN_WORDS"));
+  sameList("dizilis yardimcisi", govde("mobile/src/lib/arrange.ts", "/** Parça karşılaştırma"), govde("src/lib/arrange.ts", "/** Parça karşılaştırma"));
+  sameList("uretim kaynagi", govde("mobile/src/lib/produceSource.ts", "type Seg"), govde("src/lib/conversations/produce-source.ts", "type Seg"));
+
+  const sayi = (src, ad) => (src.match(new RegExp(ad + "\\s*=\\s*(\\d+)")) ?? [])[1] ?? "yok";
+  const kurtar = (p) => {
+    const src = read(p);
+    return [
+      "bekleme=" + sayi(src, "RESCUE_WAIT_MS"),
+      "esik=" + sayi(src, "RESCUE_ACCEPT"),
+      "gorev=" + (/\.task\s*(?:\?\?\s*0\))?\s*>=\s*3/.test(src) ? "3" : "yok"),
+      "istem=" + ((src.match(/prompt:\s*\w+\(("[\w.]+")/) ?? [])[1] ?? "yok"),
+      "dil=" + (/\blang: o\.lang\b/.test(src) ? "var" : "YOK"),
+    ];
+  };
+  sameList("yapay zeka kontrolu istegi", kurtar("mobile/src/lib/sentenceRescue.ts"), kurtar("src/lib/sentence-rescue.ts"));
+  /* Ceviri turuyla ayni sayilar: ayni cevap bir yuzeyde kabul, otekinde ret olmasin. */
+  const tg = read("src/components/games/translate-game.tsx");
+  sameList(
+    "kontrol ceviri turuyla ayni",
+    ["bekleme=" + sayi(read("src/lib/sentence-rescue.ts"), "RESCUE_WAIT_MS"), "esik=" + sayi(read("src/lib/sentence-rescue.ts"), "RESCUE_ACCEPT")],
+    ["bekleme=" + sayi(tg, "ASSESS_WAIT_MS"), "esik=" + sayi(tg, "ASSESS_ACCEPT")],
+    "kontrol",
+    "ceviri turu",
+  );
+
+  /* Kullananlar: fonksiyon govdesinde hakem ve kontrol cagriliyor mu. */
+  const fnGovde = (src, ad) => {
+    const i = src.search(new RegExp("function " + ad + "\\b"));
+    if (i < 0) return "";
+    const j = src.indexOf("\n}\n", i);
+    const k = src.indexOf("\n  }\n", i);
+    return src.slice(i, Math.min(...[j, k].filter((x) => x > 0)));
+  };
+  const kullanim = (src, ad) => {
+    const b = fnGovde(src, ad);
+    return ad + ": " + ["judgeTyped", "arrangedAccepted", "arrangedRescuable", "rescueSentence"].filter((x) => b.includes(x + "(")).join("+");
+  };
+  const webK = read("src/components/conversations/conversation-player.tsx");
+  const mobK = read("mobile/src/screens/ConversationScreen.tsx");
+  sameList("ders uretimi (yazilan)", [kullanim(mobK, "submitProduce").replace("submitProduce", "uretim")], [kullanim(webK, "submitTyped").replace("submitTyped", "uretim")]);
+  sameList("ders tekrari (yazilan)", [/judgeTyped\(text, expect\.target, \[\]/.test(fnGovde(mobK, "submitRepeatTyped")) ? "hakem" : "YOK"], [/judgeTyped\(clean, e\.target, e\.kind === "produce"/.test(webK) ? "hakem" : "YOK"]);
+  const webQ = read("src/components/skills/quiz.tsx");
+  const mobQ = read("mobile/src/game/skillQuiz.tsx");
+  const webW = read("src/components/skills/writing-player.tsx");
+  sameList("dizme sorusu", [kullanim(mobQ, "OrderInput")], [kullanim(webQ, "OrderInput")]);
+  sameList("cumle kurma", [kullanim(mobQ, "BuildCard").replace("BuildCard", "kur")], [kullanim(webW, "BuildTask").replace("BuildTask", "kur")]);
+
+  /* Gramer dizme sorusunun sonuc satiri: konusmanin ADI degil, cumlenin anadildeki karsiligi (QA F-0030). */
+  const gramer = (p) => {
+    const src = read(p);
+    return [
+      "baslik satirda=" + (/explain: `„\$\{[\w.]+\}“ — \$\{conversation\.title\}`/.test(src) ? "EVET" : "hayir"),
+      "kaynak=" + (/quotedSource\(/.test(src) ? "tirnakli cumle" : "YOK"),
+      "alternatif=" + (/orderAlternatives\(/.test(src) ? "accept" : "YOK"),
+    ];
+  };
+  sameList("gramer dizme satiri", gramer("mobile/src/game/immersionQuiz.ts"), gramer("src/lib/immersion/grammar.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
