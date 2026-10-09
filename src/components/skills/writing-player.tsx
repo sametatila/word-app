@@ -11,7 +11,7 @@ import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { glossTitle } from "./gloss-entry";
 import { AiNotice } from "@/components/ai-notice";
-import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
+import { askAssess, fallbackAssessment, isOutage, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { CheckIcon, CorrectIcon } from "@/components/icons";
@@ -437,7 +437,7 @@ function FreeTask({
     } else {
       setResult(fallbackAssessment(req, t));
       setFailure(ai.reason);
-      if (ai.reason === "not_configured" || ai.reason === "upstream" || ai.reason === "timeout") {
+      if (isOutage(ai.reason)) {
         // Metin kaybolmasın: sunucu kuyruğa alır, servis dönünce puanlar.
         // İzin reddi (`consent`) bu listede YOK ve olmamalı: kuyruk metni
         // sonradan yine dil modeline gönderiyor, "hayır" diyenin metni

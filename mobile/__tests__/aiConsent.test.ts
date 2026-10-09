@@ -1,5 +1,5 @@
 import { api, fetchWithTimeout, setAiConsentHandler, ApiError, AI_CONSENT_DECLINED } from "../src/api/client";
-import { assessFailure, fallbackNoteKey } from "../src/lib/assessFail";
+import { assessFailure, fallbackNoteKey, isOutage } from "../src/lib/assessFail";
 import { registerAiConsentHost, requestAiConsent } from "../src/lib/aiConsent";
 
 /**
@@ -97,6 +97,15 @@ describe("yedek cümlesi", () => {
     expect(assessFailure(e)).toBe("consent");
     expect(fallbackNoteKey(e, "estimate", "assess.fail_offline")).toBe("assess.estimate_only");
     expect(fallbackNoteKey(new ApiError(503, "upstream"), "estimate", "assess.fail_offline")).toBe("assess.fail_offline");
+  });
+  /* QA F-0061: sağlayıcı cevap verdi ama çıktı okunamadı (502) — kesinti değil. */
+  it("okunamayan çıktı 'servis kapalı' demez, kuyruğa gitmez", () => {
+    const e = new ApiError(502, "invalid");
+    expect(assessFailure(e)).toBe("invalid");
+    expect(isOutage(assessFailure(e))).toBe(false);
+    expect(fallbackNoteKey(e, "unscored", "assess.fail_unscored")).toBe("assess.not_scored");
+    expect(isOutage(assessFailure(new ApiError(503, "upstream")))).toBe(true);
+    expect(isOutage(assessFailure(new Error("timeout")))).toBe(true);
   });
 });
 

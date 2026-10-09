@@ -17,7 +17,7 @@ import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
-import { assessFailKey } from "../lib/assessFail";
+import { assessFailKey, assessFailure, fallbackNoteKey, isOutage } from "../lib/assessFail";
 import { isAiConsentDeclined } from "../lib/aiConsent";
 import { spacing, radii, type Palette, ds } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
@@ -663,12 +663,16 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       } else {
         /* Sağlayıcı/ağ yok: metin kaybolmasın diye sunucu kuyruğuna bırakılıyor
            (uç kendi sınırlarını yine uyguluyor). Kuyruk da tutmazsa kullanıcı
-           en azından sebebini görüyor. */
-        setNote(`${tx(assessFailKey(e))} ${tx("assess.fail_unscored")}`);
-        try {
-          await api("/api/assess/queue", { method: "POST", body: JSON.stringify(body()) });
-          setQueued(true);
-        } catch { /* kuyruk da yoksa yapacak bir şey yok */ }
+           en azından sebebini görüyor. YALNIZ GERÇEK KESİNTİDE (`isOutage`,
+           web `writing-player` ile aynı kural, QA F-0061): okunamayan çıktıda
+           "servis kapalı" denmiyor ve metin kuyruğa atılmıyor. */
+        setNote(`${tx(assessFailKey(e))} ${tx(fallbackNoteKey(e, "unscored", "assess.fail_unscored"))}`);
+        if (isOutage(assessFailure(e))) {
+          try {
+            await api("/api/assess/queue", { method: "POST", body: JSON.stringify(body()) });
+            setQueued(true);
+          } catch { /* kuyruk da yoksa yapacak bir şey yok */ }
+        }
       }
       /* Puan verilemedi ama görev yapıldı: alıştırma durmuyor (webde de
          yedek kural aynı kararı veriyor). */

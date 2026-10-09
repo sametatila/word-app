@@ -86,12 +86,28 @@ export function assessFailKey(e: unknown): string {
  * Yedek cümleleri ("servis şu an kapalı; bu puan geçici bir tahmin") arıza
  * içindir. İzin verilmediğinde servis kapalı değil, metin bilerek gönderilmedi;
  * aynı cümle "izin vermedin … servis kapalı" diye kendisiyle çelişirdi. İzin
- * dalı yalnız yedeğin NE olduğunu söylüyor.
+ * dalı yalnız yedeğin NE olduğunu söylüyor. Arıza cümlesi yalnız gerçek
+ * kesintide (`isOutage`); okunamayan çıktı, uzun metin ya da bozuk istek
+ * "servis kapalı" demez (QA F-0061).
  */
 export function fallbackNoteKey(e: unknown, kind: "estimate" | "unscored", arizaKey: string): string {
-  const f = assessFailure(e);
-  if (f !== "consent" && f !== "account") return arizaKey;
+  if (isOutage(assessFailure(e))) return arizaKey;
   return kind === "estimate" ? "assess.estimate_only" : "assess.not_scored";
+}
+
+/**
+ * Servis GERÇEKTEN cevap vermedi mi — web `lib/assess-client` `isOutage`.
+ *
+ * Yalnız bu üç sebepte "servis şu an kapalı" denir ve metin kuyruğa bırakılır
+ * (kuyruk servis dönünce puanlıyor). Okunamayan çıktı (`invalid`, 502) bir
+ * kesinti değil: sağlayıcı cevap verdi, sunucu zaten bir kez öteki
+ * sağlayıcıyla yeniden sordu (`lib/assess`). QA F-0061: yazma kartı bu
+ * durumda "servis şu an kapalı" yazıp metni kuyruğa da atıyordu (web
+ * atmıyordu); aynı metin hemen ardından %93 aldı, kuyruk satırı gece ikinci
+ * kez puanlanacaktı.
+ */
+export function isOutage(f: AssessFailure): boolean {
+  return f === "not_configured" || f === "upstream" || f === "timeout";
 }
 
 /**
