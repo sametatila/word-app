@@ -998,7 +998,7 @@ export const deBase: Record<string, string> = {
   "notifications.daily_reminder": "Tägliche Erinnerung",
   "notifications.weekly_test": "Wochenquiz",
   "notifications.reminders": "Erinnerungen",
-  "notifications.every_evening_at_8_30_pm_don_t": "Jeden Abend um 20:30",
+  "notifications.every_evening_at_8_30_pm_don_t": "Jeden Abend um {time}",
   "notifications.every_sunday_measure_your": "Jeden Sonntag · miss deinen Fortschritt",
   "notifications.permission_off": "Benachrichtigungen sind nicht erlaubt. Unten kannst du die Systemeinstellungen öffnen.",
   "notifications.streak_saver": "Serie sichern",

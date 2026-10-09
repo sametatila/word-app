@@ -8,13 +8,21 @@ import { SettingRowSlot, SwitchSlot } from "@/components/settings-skeleton";
 import { PushSettings } from "@/components/push-settings";
 import { useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
-import { REMINDER_HOURS } from "@/lib/profile-limits";
+import { REMINDER_HOURS, STREAK_ALERT_TIME } from "@/lib/profile-limits";
+import { formatClock, type NativeLang } from "@/lib/i18n/dict";
+import { useLang } from "@/lib/i18n/client";
 
 type Prefs = { daily: boolean; hour: number; streak: boolean; weekly: boolean };
 
 /* Saatler tek kaynaktan: mobil `NotificationsScreen` ve bildirim izni ekranı
    da aynı listeyi okuyor (bkz. `lib/profile-limits` `REMINDER_HOURS`). */
 const HOURS = REMINDER_HOURS;
+
+/** Seri koruma saati ortak kaynaktan, arayüz dilinde (sözlükte sabit "20.30" vardı, QA F-0036). */
+const streakTime = (lang: NativeLang) => {
+  const [h, m] = STREAK_ALERT_TIME.split(":").map(Number);
+  return formatClock(h, m, lang);
+};
 
 /**
  * Hatırlatma ayarları — mobil `NotificationsScreen`in web karşılığı.
@@ -48,6 +56,7 @@ const HOURS = REMINDER_HOURS;
  */
 export function NotificationSettings() {
   const t = useT();
+  const lang = useLang();
   const [prefs, setPrefs] = useState<Prefs | null>(null);
   /* Okunamadıysa yer tutucu sonsuza dek beklemesin: anahtarlar çizilmiyor. */
   const [prefsFailed, setPrefsFailed] = useState(false);
@@ -111,7 +120,7 @@ export function NotificationSettings() {
                 title={t("notifications.daily_reminder")}
                 sub={
                   prefs.daily
-                    ? t("notifications.daily_on", { time: `${String(prefs.hour).padStart(2, "0")}:00` })
+                    ? t("notifications.daily_on", { time: formatClock(prefs.hour, 0, lang) })
                     : t("notifications.daily_off")
                 }
               >
@@ -142,7 +151,7 @@ export function NotificationSettings() {
                         aria-checked={prefs.hour === h}
                         className={`chip px-3 py-1.5 text-caption ${prefs.hour === h ? "chip-active" : ""}`}
                       >
-                        {String(h).padStart(2, "0")}:00
+                        {formatClock(h, 0, lang)}
                       </button>
                     ))}
                   </div>
@@ -152,7 +161,7 @@ export function NotificationSettings() {
 
             <SettingRow
               title={t("notifications.streak_saver")}
-              sub={t("notifications.every_evening_at_8_30_pm_don_t")}
+              sub={t("notifications.every_evening_at_8_30_pm_don_t", { time: streakTime(lang) })}
             >
               <Switch
                 on={prefs.streak}
@@ -194,12 +203,13 @@ export function NotificationSettings() {
  */
 export function RemindersSlot() {
   const t = useT();
+  const lang = useLang();
   return (
     <>
       <SettingRowSlot title={t("notifications.daily_reminder")} sub={t("notifications.daily_off")}>
         <SwitchSlot />
       </SettingRowSlot>
-      <SettingRowSlot title={t("notifications.streak_saver")} sub={t("notifications.every_evening_at_8_30_pm_don_t")}>
+      <SettingRowSlot title={t("notifications.streak_saver")} sub={t("notifications.every_evening_at_8_30_pm_don_t", { time: streakTime(lang) })}>
         <SwitchSlot />
       </SettingRowSlot>
       <SettingRowSlot title={t("notifications.weekly_test")} sub={t("notifications.every_sunday_measure_your")}>

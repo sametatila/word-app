@@ -155,6 +155,24 @@ export function formatDecimal(n: number, digits = 1): string {
   return n.toLocaleString(dateLocale(), { minimumFractionDigits: digits, maximumFractionDigits: digits });
 }
 
+/**
+ * SAAT, arayüz dilinde: Türkçe ve Almanca "20:30", İngilizce "8:30 PM".
+ *
+ * Saat her yerde elle kuruluyordu: hatırlatma çipleri `HH:00` yazıyor, seri
+ * koruma satırı ise sözlükte sabit "20.30" diyordu — aynı ekranda iki biçim
+ * (QA F-0036). Tek yer burası; web karşılığı `lib/i18n/dict` `formatClock`.
+ * 24 saatlik dillerde saat iki haneli ("09:00", çipler öyleydi); İngilizcede
+ * "9:00 AM". Girdi "HH:MM" dizgisi ya da saat (+ dakika).
+ */
+export function formatClock(time: string | number, minute = 0): string {
+  const [h, m] = typeof time === "string" ? time.split(":").map((x) => parseInt(x, 10) || 0) : [time, minute];
+  try {
+    return new Intl.DateTimeFormat(dateLocale(), { hour: dateLocale().startsWith("en") ? "numeric" : "2-digit", minute: "2-digit" }).format(new Date(2000, 0, 1, h, m ?? 0));
+  } catch {
+    return `${String(h).padStart(2, "0")}:${String(m ?? 0).padStart(2, "0")}`;
+  }
+}
+
 export function currentLang(): NativeLang {
   return lang;
 }

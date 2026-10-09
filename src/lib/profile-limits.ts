@@ -39,6 +39,15 @@ export const PROFILE_LIMITS = {
 export const REMINDER_HOURS = [9, 12, 15, 19, 21] as const;
 
 /**
+ * SERİ KORUMA HATIRLATMASININ SAATİ (yerel), "HH:MM". Mobil yerel bildirimi bu
+ * saatte kuruyor; sunucu push'u kullanıcının saatiyle 20'den sonra gönderiyor
+ * (`lib/push` `runStreakAlerts`). Ayarlardaki satır saati sözlükten değil
+ * buradan, arayüz dilinde yazıyor (`formatClock`; sözlükte sabit "20.30"
+ * duruyordu, QA F-0036). Mobil karşılığı `lib/notifications` `STREAK_TIME`.
+ */
+export const STREAK_ALERT_TIME = "20:30";
+
+/**
  * BİLDİRİM İZNİ ERTELEME PENCERESİ — gün.
  *
  * Kartı kapatan ("sonra") kullanıcıya soru üç hafta sonra yeniden geliyor:

@@ -998,7 +998,7 @@ export const enBase: Record<string, string> = {
   "notifications.daily_reminder": "Daily reminder",
   "notifications.weekly_test": "Weekly quiz",
   "notifications.reminders": "Reminders",
-  "notifications.every_evening_at_8_30_pm_don_t": "Every evening at 8:30 PM",
+  "notifications.every_evening_at_8_30_pm_don_t": "Every evening at {time}",
   "notifications.every_sunday_measure_your": "Every Sunday · measure your progress",
   "notifications.permission_off": "Notification permission is off. You can open system settings below.",
   "notifications.streak_saver": "Streak saver",

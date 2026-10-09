@@ -1001,7 +1001,7 @@ export const tr: Record<string, string> = {
   "notifications.daily_reminder": "Günlük hatırlatma",
   "notifications.weekly_test": "Haftalık test",
   "notifications.reminders": "Hatırlatmalar",
-  "notifications.every_evening_at_8_30_pm_don_t": "Her akşam 20.30",
+  "notifications.every_evening_at_8_30_pm_don_t": "Her akşam {time}",
   "notifications.every_sunday_measure_your": "Her pazar · ilerlemeni ölç",
   "notifications.permission_off": "Bildirim izni kapalı. Aşağıdan sistem ayarlarını açabilirsin.",
   "notifications.streak_saver": "Seri koruma",

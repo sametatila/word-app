@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { t as tx } from "../lib/i18n";
+import { t as tx, formatClock } from "../lib/i18n";
 import { Platform, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -156,13 +156,13 @@ export function NotifPrimeScreen() {
           {times().map((t) => {
             const on = time === t.value;
             return (
-              <PressableScale key={t.value} onPress={() => setTime(t.value)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${t.label} ${t.value}`} style={{ flex: 1, paddingVertical: 14, borderRadius: radii.lg, alignItems: "center", borderWidth: 1, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primary : colors.surface }}>
+              <PressableScale key={t.value} onPress={() => setTime(t.value)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${t.label} ${formatClock(t.value)}`} style={{ flex: 1, paddingVertical: 14, borderRadius: radii.lg, alignItems: "center", borderWidth: 1, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primary : colors.surface }}>
                 {/* Tekli seçimin işareti uygulamanın her yerinde aynı nokta (`ui/RadioDot`).
                     Saat seçimi küçük seçim: seçiliyken DOLU turuncu + beyaz
                     (2026-09-29 Samet: seçim B, dolu turuncu çip). */}
                 <View style={{ marginBottom: spacing.xs }}><RadioDot selected={on} onFill={on} /></View>
                 <Text variant="bodyStrong" color={on ? colors.onPrimary : colors.text}>{t.label}</Text>
-                <Text variant="caption" color={on ? colors.onPrimaryMuted : colors.textMuted}>{t.value}</Text>
+                <Text variant="caption" color={on ? colors.onPrimaryMuted : colors.textMuted}>{formatClock(t.value)}</Text>
               </PressableScale>
             );
           })}

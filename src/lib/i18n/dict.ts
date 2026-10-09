@@ -128,6 +128,22 @@ export function formatPercent(n: number, lang: NativeLang): string {
 }
 
 /**
+ * SAAT, arayüz dilinde: Türkçe ve Almanca "20:30", İngilizce "8:30 PM".
+ *
+ * Saat her yerde elle kuruluyordu: hatırlatma çipleri `HH:00` yazıyor, seri
+ * koruma satırı ise sözlükte sabit "20.30" diyordu — aynı ekranda iki biçim
+ * (QA F-0036). Tek yer burası; Android karşılığı `lib/i18n` `formatClock`.
+ * 24 saatlik dillerde saat iki haneli ("09:00"); İngilizcede "9:00 AM".
+ */
+export function formatClock(hour: number, minute: number, lang: NativeLang): string {
+  try {
+    return new Intl.DateTimeFormat(localeOf(lang), { hour: localeOf(lang).startsWith("en") ? "numeric" : "2-digit", minute: "2-digit" }).format(new Date(2000, 0, 1, hour, minute));
+  } catch {
+    return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+  }
+}
+
+/**
  * Ondalıklı sayı — sayaçlar için (`8,3 sn`).
  *
  * `toFixed` SABİT NOKTA yazıyor: meydan okuma ve boss sayaçları Türkçe ve

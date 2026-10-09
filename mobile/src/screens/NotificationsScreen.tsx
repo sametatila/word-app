@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t as tx } from "../lib/i18n";
+import { t as tx, formatClock } from "../lib/i18n";
 import { View, ScrollView, Switch } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
@@ -12,7 +12,7 @@ import { ScreenHeader } from "../social/common";
 import {
   loadPrefs, enableDailyReminder, disableReminder,
   setStreakAlert, setWeeklyReminder,
-  showTestNotification, openNotificationSettings,
+  showTestNotification, openNotificationSettings, STREAK_ALERT_TIME,
 } from "../lib/notifications";
 import { pushPermissionDenied } from "../lib/pushDevice";
 import { track } from "../lib/track";
@@ -22,6 +22,8 @@ import { useAuth } from "../lib/AuthContext";
 import { FlowNote } from "../ui/flow";
 import { SkeletonPill, SkeletonText } from "../ui/Skeleton";
 
+/* Değer "HH:00" (yerel bildirimin ve sunucunun anahtarı); EKRANA yazılan
+   `formatClock` ile arayüz dilinde (QA F-0036: "19:00" ile "20.30" yan yana). */
 const hhmmOf = (h: number) => `${String(h).padStart(2, "0")}:00`;
 
 /* Saatler tek kaynaktan: izin ekranı da aynı listeyi okuyor (bkz.
@@ -167,18 +169,18 @@ export function NotificationsScreen() {
         {guest ? <View style={{ marginBottom: spacing.lg }}><FlowNote icon={<RemindersIcon color={colors.textMuted} size={16} />} text={tx("guest.reminders_local")} /></View> : null}
 
         <ToggleGroup colors={colors}>
-          <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors} pending={!ready}>
+          <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: formatClock(dailyTime) }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors} pending={!ready}>
             {dailyOn && (
               <View style={{ marginTop: spacing.md }}>
                 <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("notifications.hour")}</Text>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-                  {TIMES.map((t) => <Chip key={t} role="radio" label={t} active={dailyTime === t} onPress={() => pickTime(t)} />)}
+                  {TIMES.map((t) => <Chip key={t} role="radio" label={formatClock(t)} active={dailyTime === t} onPress={() => pickTime(t)} />)}
                 </View>
               </View>
             )}
           </ToggleRow>
 
-          <ToggleRow title={tx("notifications.streak_saver")} subtitle={tx("notifications.every_evening_at_8_30_pm_don_t")} value={streakOn} onValueChange={toggleStreak} colors={colors} pending={!ready} />
+          <ToggleRow title={tx("notifications.streak_saver")} subtitle={tx("notifications.every_evening_at_8_30_pm_don_t", { time: formatClock(STREAK_ALERT_TIME) })} value={streakOn} onValueChange={toggleStreak} colors={colors} pending={!ready} />
 
           <ToggleRow title={tx("notifications.weekly_test")} subtitle={tx("notifications.every_sunday_measure_your")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} pending={!ready} />
         </ToggleGroup>

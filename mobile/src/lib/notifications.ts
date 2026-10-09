@@ -174,7 +174,11 @@ const KEY_WEEKLY = "lernomi:notif:weekly"; // "1" | ""
  * (web yalnız push alıyor) ve sunucudaki systemd timer penceresi de ona göre
  * kurulu (Pazar 15-19 UTC; İstanbul için yerel 18:00 = 15:00 UTC).
  */
+/* Hatırlatmalar ekranı saati buradan, arayüz dilinde yazıyor (`formatClock`;
+   sözlükte sabit "20.30" duruyordu, QA F-0036). Web karşılığı
+   `lib/profile-limits` `STREAK_ALERT_TIME`. */
 const STREAK_TIME = "20:30";
+export const STREAK_ALERT_TIME = STREAK_TIME;
 const WEEKLY_DAY = 0; // 0 = Pazar
 const WEEKLY_TIME = "18:00";
 
