@@ -250,7 +250,11 @@ function compare(typedRaw: string, targetRaw: string, lang: TargetLang, loose: b
   const typo = count(targetMarks, "typo");
   const same = count(targetMarks, "same");
   // Yakınlık: eşleşen + yer değiştirmiş + yazım hatalı kelime oranı — aday seçimi için.
-  const score = t.length ? (same + moved + typo * 0.8 - missing * 0.5 - extra * 0.5) / t.length : 0;
+  // Yer değiştirmiş kelime tam eşleşmeden AZ sayılıyor: ikisi eşit sayılınca sıra
+  // farkıyla ayrışan adaylar ("Ich höre um sechs auf" / "Um sechs höre ich auf")
+  // berabere kalıyor ve ilk aday kazanıyordu; öğrencinin birebir yazdığı kabul
+  // edilen biçim "sıra hatası" diye işaretlendi (QA, modül sınavı 2026-10-09).
+  const score = t.length ? (same + moved * 0.9 + typo * 0.8 - missing * 0.5 - extra * 0.5) / t.length : 0;
   return { t, u, targetMarks, typedMarks, typoPair, missing, extra, moved, typo, same, score };
 }
 
