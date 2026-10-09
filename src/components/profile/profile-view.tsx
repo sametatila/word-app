@@ -8,6 +8,7 @@ import { BadgeIcon, TIER_COLOR } from "@/components/achievement-badge";
 import { achievementHref } from "@/lib/achievement-groups";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
+import { SkeletonLine } from "@/components/skeleton";
 import { useShell } from "@/components/app-shell";
 import { supportsMockExams } from "@/lib/mock-exams";
 import { courseName } from "@/lib/courses";
@@ -51,14 +52,22 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
   const cfg = useAvatar() ?? parseAvatar(avatar) ?? derivedAvatar(userId || stats.name);
   const [league, setLeague] = useState<LeagueView | null>(null);
   const [ach, setAch] = useState<{ rows: Ach[]; unlockedCount: number; total: number } | null>(null);
+  /* Başarım satırı gelene kadar yeri İSKELETLE tutuluyor: sonradan araya
+     girip Premium kartını ve daveti aşağı itiyordu (QA F-0070 sınıfı; mobil
+     `ProfileScreen` aynı). İstek düşerse satır kalkıyor. */
+  const [achFailed, setAchFailed] = useState(false);
 
   useEffect(() => {
     let alive = true;
     social.league().then((l) => { if (alive) setLeague(l); }).catch(() => {});
     apiFetch("/api/achievements", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : null))
-      .then((d) => { if (alive && d && Array.isArray(d.rows) && typeof d.total === "number") setAch({ rows: d.rows, unlockedCount: d.unlockedCount ?? 0, total: d.total }); })
-      .catch(() => {});
+      .then((d) => {
+        if (!alive) return;
+        if (d && Array.isArray(d.rows) && typeof d.total === "number") setAch({ rows: d.rows, unlockedCount: d.unlockedCount ?? 0, total: d.total });
+        else setAchFailed(true);
+      })
+      .catch(() => { if (alive) setAchFailed(true); });
     return () => { alive = false; };
   }, []);
 
@@ -136,7 +145,16 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
             (`achievementHref`); duvarın başına düşmek "neden buraya geldim" dedirtiyordu. */}
         <section className="space-y-2">
           <Head title={t("profile.achievements")} href="/profile/achievements" action={ach ? `${ach.unlockedCount}/${ach.total}` : t("profile.see_all")} />
-          {recent.length ? (
+          {!ach && !achFailed ? (
+            <div role="status" aria-busy="true" aria-label={t("common.loading")} className="grid grid-cols-3 gap-2">
+              {[0, 1, 2].map((i) => (
+                <span key={i} className="flex flex-col items-center gap-1.5">
+                  <span className="h-14 w-14 animate-pulse rounded-full surface-2" />
+                  <SkeletonLine variant="micro" width="70%" />
+                </span>
+              ))}
+            </div>
+          ) : recent.length ? (
             <div className="grid grid-cols-3 gap-2">
               {recent.map((a) => (
                 <Link key={a.id} href={achievementHref(a.id)} prefetch={false} className="pressable flex flex-col items-center gap-1.5 text-center">

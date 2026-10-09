@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { SettingsIcon, AccountIcon, BackIcon, ChevronNextIcon, CorrectIcon, EditIcon, MyWordsIcon, MyWritingsIcon, PremiumIcon, StreakIcon } from "../ui/icons";
 import { AvatarStage, derivedAvatar } from "../ui/Avatar";
-import { SkeletonLine } from "../ui/Skeleton";
+import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { AchievementIcon } from "../ui/achievementIcon";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
@@ -43,6 +43,14 @@ import { ReferralCard } from "../ui/ReferralCard";
  */
 type Board = { rows: Achievement[]; unlockedCount: number; total: number };
 
+/*
+ * SON BAŞARIM TAHTASI BELLEKTE (kullanıcı başına). Satır sunucu cevabından
+ * sonra araya giriyor ve altındaki Premium kartını, daveti ve silme satırını
+ * ~90 dp aşağı itiyordu (QA F-0070 sınıfı). Artık profile ikinci girişte
+ * hemen çiziliyor (arkada tazeleniyor); ilk girişte yeri iskelet tutuyor.
+ */
+let lastBoard: { uid: string; board: Board } | null = null;
+
 export function ProfileScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -58,7 +66,8 @@ export function ProfileScreen() {
 
   const [username, setUsername] = useState<string | null>(null);
   const [league, setLeague] = useState<LeagueView | null>(null);
-  const [board, setBoard] = useState<Board | null>(null);
+  const [board, setBoard] = useState<Board | null>(() => (user && lastBoard?.uid === user.id ? lastBoard.board : null));
+  const [boardFailed, setBoardFailed] = useState(false);
   useEffect(() => {
     if (!user || guest) return;
     let alive = true;
@@ -70,8 +79,13 @@ export function ProfileScreen() {
     if (!user) return;
     let alive = true;
     api<Partial<Board>>("/api/achievements")
-      .then((d) => { if (alive && Array.isArray(d?.rows) && typeof d.total === "number" && typeof d.unlockedCount === "number") setBoard({ rows: d.rows, unlockedCount: d.unlockedCount, total: d.total }); })
-      .catch(() => {});
+      .then((d) => {
+        if (!(Array.isArray(d?.rows) && typeof d.total === "number" && typeof d.unlockedCount === "number")) throw new Error("board");
+        const b = { rows: d.rows, unlockedCount: d.unlockedCount, total: d.total };
+        lastBoard = { uid: user.id, board: b };
+        if (alive) setBoard(b);
+      })
+      .catch(() => { if (alive) setBoardFailed(true); });
     return () => { alive = false; };
   }, [user]);
 
@@ -135,7 +149,16 @@ export function ProfileScreen() {
               rozet duvarı KENDİSİNE kaydırarak açıyor (`focus`), başına değil. */}
           <View style={{ gap: spacing.sm }}>
             <Head title={t("profile.achievements")} action={board ? `${board.unlockedCount}/${board.total}` : t("profile.see_all")} onAction={() => nav.navigate("Achievements")} colors={colors} />
-            {recent.length ? (
+            {!board && !boardFailed ? (
+              <View accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ flexDirection: "row", gap: spacing.sm }}>
+                {[0, 1, 2].map((i) => (
+                  <View key={i} style={{ flex: 1, alignItems: "center", gap: 6 }}>
+                    <Skeleton height={56} width={56} radius={28} />
+                    <SkeletonLine variant="micro" width="70%" />
+                  </View>
+                ))}
+              </View>
+            ) : recent.length ? (
               <View style={{ flexDirection: "row", gap: spacing.sm }}>
                 {recent.map((a) => (
                   <PressableScale key={a.id} onPress={() => nav.navigate("Achievements", { focus: a.id })} accessibilityLabel={a.title} style={{ flex: 1, alignItems: "center", gap: 6 }}>
