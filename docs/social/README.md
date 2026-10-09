@@ -213,7 +213,7 @@ yapabilmeli").
   panele 404). E-posta doğrulanmış olmalı; kaydetme/onay için hesapta iki adımlı doğrulama açık olmalı. Her yazma
   `admin_audit`e `studio.*` olarak düşer. Kod: `src/lib/studio-auth.ts`.
 - **Akış:** Claude bölümü depoda yazar → sunucu işçisi aktarır → stüdyoda düzenle (canlı önizleme, sunucuyla aynı
-  motor) → Kaydet (yeni sürüm) → Onayla ve üret → video sunucuda (1–3 dk) → MP4 / kapak / açıklama KAYIPSIZ indirilir
+  motor) → Kaydet (yeni sürüm) → Onayla ve üret → video sunucuda (30 sn video ≈ 5 dk, düşük öncelikle) → MP4 / kapak / açıklama KAYIPSIZ indirilir
   (sunucudaki dosyanın baytları) → platform zamanlayıcısı → takvimde "zamanlandı / yayında".
 - **İstisnasız:** ekrandaki her yazı ya bölüm verisinden ya şablonun `meta.ui` sabit yazılarından gelir (bölüm
   `copy.ui` ile ezer). Kapı: `npm run social:texts` (veriye/ui'ye dayanmayan yazı = hata). Yeni şablonda gömülü yazı
@@ -229,7 +229,12 @@ yapabilmeli").
   arşivlenir), takılan üretimi kapatma, kuyruktaki bir üretim (Defne ve yerleşim yeniden denetlenir). Çıktı
   `SOCIAL_DIR/out/<bölüm>/r<sürüm>-<üretim>/`; aynı bölümün eski videosunun dosyaları silinir. Aktarım durumu
   `SOCIAL_DIR/import-state.json`.
-- **Tablolar:** `social_episodes` (veri, saat, onay), `social_revisions`, `social_renders`, `social_posts` (platform).
+- **Takvim:** açılışta bugünün haftası; plan sürükle-bırakla değişir (`/api/studio/plan`, `lib/studio` moveEpisode):
+  dolu saate bırakılan iki bölüm yer değiştirir, geçmiş saate bırakılamaz, takvim dışına bırakılan bölümün saati
+  kalkar; sonuç, takvim uyarıları ve "Geri al" bildirimde. Editörde "dinle" düğmesi alanın Defne kaydını çalar.
+- **Sunucu tarayıcısı:** Playwright'ın tam Chromium'u (`launchBrowser`, headless shell değil; Mac'le aynı çizim),
+  sRGB sabit; `/opt/lernomi/social/browsers`. 30 sn'lik video ≈ 5 dk (Nice 10, en çok 2 çekirdek).
+- **Tablolar:** `social_episodes` (veri, saat, onay), `social_revisions`, `social_renders`, `social_requests` (talepler), `social_posts` (platform).
 
 **Claude yeni parti yazarken:** stüdyoda değişen saatleri ve metinleri görmek için önce canlı takvime bak
 (`ssh lernomi` + `psql` okuma: `select id, slot, edited from social_episodes where archived_at is null order by slot`).
