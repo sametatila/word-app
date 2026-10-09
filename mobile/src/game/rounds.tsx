@@ -1496,6 +1496,9 @@ function Tile({ label, undoKey, onPress, dim, colors, drag }: {
   );
 }
 
+/** Dinle turunda düğme ile kelime satırının paylaştığı yuva yüksekliği. */
+const LISTEN_SLOT = 84;
+
 function ListenRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
@@ -1520,16 +1523,22 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "listening", picked), hintUsed: replays >= 2 })} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.listen_pick_meaning")}</Text>
-        {hideWord ? (
-          <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => { setReplays((n) => n + 1); speakTarget(withArtikel(word), { word: true }); }} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
-            <SpeakerIcon color={colors.onPrimary} size={38} />
-          </PressableScale>
-        ) : (
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginTop: spacing.sm }}>
-            <Text variant={promptSize(withArtikel(word)).variant} {...promptFit(withArtikel(word))} style={[{ textAlign: "center" }, promptSize(withArtikel(word)).fontSize ? { fontSize: promptSize(withArtikel(word)).fontSize } : null]}>{withArtikel(word)}</Text>
-            <SpeakButton text={withArtikel(word)} colors={colors} size={24} />
-          </View>
-        )}
+        {/* SABİT YUVA (QA F-0085). Büyük dinle düğmesi (84) cevaptan sonra
+            kelime satırına dönüşüyordu; satır daha kısa olduğu için kart
+            küçülüyor, şıklar ~136 px yukarı kayıp dokunulan şık parmağın
+            altından kaçıyordu. İki hâl aynı yüksekliği kaplıyor. */}
+        <View style={{ marginTop: spacing.lg, minHeight: LISTEN_SLOT, alignSelf: "stretch", alignItems: "center", justifyContent: "center" }}>
+          {hideWord ? (
+            <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => { setReplays((n) => n + 1); speakTarget(withArtikel(word), { word: true }); }} style={[{ width: LISTEN_SLOT, height: LISTEN_SLOT, borderRadius: LISTEN_SLOT / 2, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 12)]}>
+              <SpeakerIcon color={colors.onPrimary} size={38} />
+            </PressableScale>
+          ) : (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+              <Text variant={promptSize(withArtikel(word)).variant} {...promptFit(withArtikel(word))} style={[{ textAlign: "center", flexShrink: 1 }, promptSize(withArtikel(word)).fontSize ? { fontSize: promptSize(withArtikel(word)).fontSize } : null]}>{withArtikel(word)}</Text>
+              <SpeakButton text={withArtikel(word)} colors={colors} size={24} />
+            </View>
+          )}
+        </View>
       </View>
       <View style={{ gap: spacing.md }}>
         {optionCards(round).map((o) => {
