@@ -89,7 +89,7 @@
  { "tr": "Şunu sen kur: annenden söz ediyorsun ve 'Onun adı Rachel.' demek istiyorsun.", "kind": "say.tr", "de": "Bilde du das: Du sprichst von deiner Mutter und willst „Sie heißt Rachel.“ sagen." },
  { "tr": "The news are demiyoruz. Ayrıca a news de yok; tek bir habere story dersin.", "kind": "say.tr", "de": "The news are sagen wir nicht. Und a news gibt es nicht; eine Meldung heißt story." },
  { "tr": "Türkçesi -den daha demek. \"Benden daha uzun\" derken o -den var ya, işte o.", "kind": "say.tr", "de": "Auf Deutsch heißt es „als“. Das als in „größer als ich“, genau das." },
- { "tr": "Türkçesi 'şimdi' demek. Bu ikisi bugünkü konunun iki ucu: eskiden ve şimdi. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „jetzt“. Die zwei sind die Pole des heutigen Themas: früher und jetzt. Bitte" },
+ { "tr": "Türkçede 'şimdi' demek. Bu ikisi bugünkü konunun iki ucu: eskiden ve şimdi. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „jetzt“. Die zwei sind die Pole des heutigen Themas: früher und jetzt. Bitte" },
  { "tr": "Was mı were mi? Çok basit: I, he, she, it ile was. You, we, they ile were.", "kind": "say.tr", "de": "Was oder were? Ganz einfach: I, he, she, it mit was. You, we, they mit were." },
  { "tr": "Yani \"ya sen?\". İki kelime, ama konuşmayı devam ettiren şey tam olarak bu.", "kind": "say.tr", "de": "Also „und du?“. Zwei Wörter, aber genau sie halten das Gespräch am Laufen." },
  { "tr": "yani ama. Önce özür, sonra dert. İngilizcede kibar şikâyetin sırası budur.", "kind": "say.tr", "de": "also aber. Erst die Entschuldigung, dann das Problem. So geht die höfliche Beschwerde." },

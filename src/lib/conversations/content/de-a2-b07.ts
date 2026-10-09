@@ -58,7 +58,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("der Reiseplan"),
-          tr("Türkçesi 'seyahat planı' demek. Lütfen"),
+          tr("Türkçede 'seyahat planı' demek. Lütfen"),
           de("der Reiseplan"),
           tr("de."),
         ],
@@ -68,7 +68,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("die Landkarte"),
-          tr("Türkçesi 'harita' demek. Lütfen"),
+          tr("Türkçede 'harita' demek. Lütfen"),
           de("die Landkarte"),
           tr("de."),
         ],
@@ -78,7 +78,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("die Anreise"),
-          tr("Türkçesi 'gidiş yolculuğu' demek. Lütfen"),
+          tr("Türkçede 'gidiş yolculuğu' demek. Lütfen"),
           de("die Anreise"),
           tr("de."),
         ],
@@ -88,7 +88,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("die Abreise"),
-          tr("Türkçesi 'yola çıkış, ayrılış' demek. Lütfen"),
+          tr("Türkçede 'yola çıkış, ayrılış' demek. Lütfen"),
           de("die Abreise"),
           tr("de."),
         ],
@@ -98,7 +98,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("der Zwischenstopp"),
-          tr("Türkçesi 'ara durak' demek. Lütfen"),
+          tr("Türkçede 'ara durak' demek. Lütfen"),
           de("der Zwischenstopp"),
           tr("de."),
         ],
@@ -108,7 +108,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("das Verkehrsmittel"),
-          tr("Türkçesi 'ulaşım aracı' demek. Lütfen"),
+          tr("Türkçede 'ulaşım aracı' demek. Lütfen"),
           de("das Verkehrsmittel"),
           tr("de."),
         ],
@@ -118,7 +118,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("der Hinweg"),
-          tr("Türkçesi 'gidiş yolu' demek. Lütfen"),
+          tr("Türkçede 'gidiş yolu' demek. Lütfen"),
           de("der Hinweg"),
           tr("de."),
         ],
@@ -128,7 +128,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("wegfahren"),
-          tr("Türkçesi 'yola çıkıp gitmek' demek. Lütfen"),
+          tr("Türkçede 'yola çıkıp gitmek' demek. Lütfen"),
           de("wegfahren"),
           tr("de."),
         ],
@@ -266,7 +266,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("das Hotelzimmer"),
-          tr("Türkçesi 'otel odası' demek. Lütfen"),
+          tr("Türkçede 'otel odası' demek. Lütfen"),
           de("das Hotelzimmer"),
           tr("de."),
         ],
@@ -276,7 +276,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("der Zimmerschlüssel"),
-          tr("Türkçesi 'oda anahtarı' demek. Lütfen"),
+          tr("Türkçede 'oda anahtarı' demek. Lütfen"),
           de("der Zimmerschlüssel"),
           tr("de."),
         ],
@@ -286,7 +286,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("das Doppelbett"),
-          tr("Türkçesi 'çift kişilik yatak' demek. Lütfen"),
+          tr("Türkçede 'çift kişilik yatak' demek. Lütfen"),
           de("das Doppelbett"),
           tr("de."),
         ],
@@ -296,7 +296,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("die Unterkunft"),
-          tr("Türkçesi 'kalacak yer' demek. Lütfen"),
+          tr("Türkçede 'kalacak yer' demek. Lütfen"),
           de("die Unterkunft"),
           tr("de."),
         ],
@@ -306,7 +306,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("die Jugendherberge"),
-          tr("Türkçesi 'gençlik yurdu' demek; ucuz bir konaklama biçimi. Lütfen"),
+          tr("Türkçede 'gençlik yurdu' demek; ucuz bir konaklama biçimi. Lütfen"),
           de("die Jugendherberge"),
           tr("de."),
         ],
@@ -316,7 +316,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("reservieren"),
-          tr("Türkçesi 'ayırtmak' demek. Lütfen"),
+          tr("Türkçede 'ayırtmak' demek. Lütfen"),
           de("reservieren"),
           tr("de."),
         ],
@@ -326,7 +326,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("buchen"),
-          tr("Türkçesi 'rezervasyon yapmak' demek. Lütfen"),
+          tr("Türkçede 'rezervasyon yapmak' demek. Lütfen"),
           de("buchen"),
           tr("de."),
         ],
@@ -336,7 +336,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("einchecken"),
-          tr("Türkçesi 'giriş yapmak' demek. Lütfen"),
+          tr("Türkçede 'giriş yapmak' demek. Lütfen"),
           de("einchecken"),
           tr("de."),
         ],
@@ -467,7 +467,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("die Reisetasche"),
-          tr("Türkçesi 'seyahat çantası' demek. Lütfen"),
+          tr("Türkçede 'seyahat çantası' demek. Lütfen"),
           de("die Reisetasche"),
           tr("de."),
         ],
@@ -477,7 +477,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("das Handgepäck"),
-          tr("Türkçesi 'el bagajı' demek. Lütfen"),
+          tr("Türkçede 'el bagajı' demek. Lütfen"),
           de("das Handgepäck"),
           tr("de."),
         ],
@@ -487,7 +487,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("die Wäsche"),
-          tr("Türkçesi 'çamaşır' demek. Lütfen"),
+          tr("Türkçede 'çamaşır' demek. Lütfen"),
           de("die Wäsche"),
           tr("de."),
         ],
@@ -497,7 +497,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("verstauen"),
-          tr("Türkçesi 'yerleştirmek, sığdırmak' demek. Lütfen"),
+          tr("Türkçede 'yerleştirmek, sığdırmak' demek. Lütfen"),
           de("verstauen"),
           tr("de."),
         ],
@@ -507,7 +507,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("die Badehose"),
-          tr("Türkçesi 'mayo' demek. Lütfen"),
+          tr("Türkçede 'mayo' demek. Lütfen"),
           de("die Badehose"),
           tr("de."),
         ],
@@ -517,7 +517,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("füllen"),
-          tr("Türkçesi 'doldurmak' demek. Lütfen"),
+          tr("Türkçede 'doldurmak' demek. Lütfen"),
           de("füllen"),
           tr("de."),
         ],
@@ -527,7 +527,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("der Laptop"),
-          tr("Türkçesi 'dizüstü bilgisayar' demek. Lütfen"),
+          tr("Türkçede 'dizüstü bilgisayar' demek. Lütfen"),
           de("der Laptop"),
           tr("de."),
         ],
@@ -537,7 +537,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("aufbewahren"),
-          tr("Türkçesi 'saklamak, muhafaza etmek' demek. Lütfen"),
+          tr("Türkçede 'saklamak, muhafaza etmek' demek. Lütfen"),
           de("aufbewahren"),
           tr("de."),
         ],
@@ -667,7 +667,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("die Bordkarte"),
-          tr("Türkçesi 'biniş kartı' demek. Lütfen"),
+          tr("Türkçede 'biniş kartı' demek. Lütfen"),
           de("die Bordkarte"),
           tr("de."),
         ],
@@ -677,7 +677,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("die Passkontrolle"),
-          tr("Türkçesi 'pasaport kontrolü' demek. Lütfen"),
+          tr("Türkçede 'pasaport kontrolü' demek. Lütfen"),
           de("die Passkontrolle"),
           tr("de."),
         ],
@@ -687,7 +687,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("die Sicherheitskontrolle"),
-          tr("Türkçesi 'güvenlik kontrolü' demek. Lütfen"),
+          tr("Türkçede 'güvenlik kontrolü' demek. Lütfen"),
           de("die Sicherheitskontrolle"),
           tr("de."),
         ],
@@ -697,7 +697,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("der Flugbegleiter"),
-          tr("Türkçesi 'kabin görevlisi' demek. Lütfen"),
+          tr("Türkçede 'kabin görevlisi' demek. Lütfen"),
           de("der Flugbegleiter"),
           tr("de."),
         ],
@@ -707,7 +707,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("der Flug"),
-          tr("Türkçesi 'uçuş' demek. Lütfen"),
+          tr("Türkçede 'uçuş' demek. Lütfen"),
           de("der Flug"),
           tr("de."),
         ],
@@ -717,7 +717,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("der Sitzplatz"),
-          tr("Türkçesi 'oturacak yer' demek. Lütfen"),
+          tr("Türkçede 'oturacak yer' demek. Lütfen"),
           de("der Sitzplatz"),
           tr("de."),
         ],
@@ -727,7 +727,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("die Ankunftszeit"),
-          tr("Türkçesi 'varış saati' demek. Lütfen"),
+          tr("Türkçede 'varış saati' demek. Lütfen"),
           de("die Ankunftszeit"),
           tr("de."),
         ],
@@ -737,7 +737,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("der Rückflug"),
-          tr("Türkçesi 'dönüş uçuşu' demek. Lütfen"),
+          tr("Türkçede 'dönüş uçuşu' demek. Lütfen"),
           de("der Rückflug"),
           tr("de."),
         ],
@@ -868,7 +868,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("bewölkt"),
-          tr("Türkçesi 'bulutlu' demek. Lütfen"),
+          tr("Türkçede 'bulutlu' demek. Lütfen"),
           de("bewölkt"),
           tr("de."),
         ],
@@ -878,7 +878,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("sonnig"),
-          tr("Türkçesi 'güneşli' demek. Lütfen"),
+          tr("Türkçede 'güneşli' demek. Lütfen"),
           de("sonnig"),
           tr("de."),
         ],
@@ -888,7 +888,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("neblig"),
-          tr("Türkçesi 'sisli' demek. Lütfen"),
+          tr("Türkçede 'sisli' demek. Lütfen"),
           de("neblig"),
           tr("de."),
         ],
@@ -898,7 +898,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("windig"),
-          tr("Türkçesi 'rüzgârlı' demek. Lütfen"),
+          tr("Türkçede 'rüzgârlı' demek. Lütfen"),
           de("windig"),
           tr("de."),
         ],
@@ -908,7 +908,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("schneien"),
-          tr("Türkçesi 'kar yağmak' demek. Lütfen"),
+          tr("Türkçede 'kar yağmak' demek. Lütfen"),
           de("schneien"),
           tr("de."),
         ],
@@ -918,7 +918,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("das Gewitter"),
-          tr("Türkçesi 'gök gürültülü fırtına' demek. Lütfen"),
+          tr("Türkçede 'gök gürültülü fırtına' demek. Lütfen"),
           de("das Gewitter"),
           tr("de."),
         ],
@@ -928,7 +928,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("stürmisch"),
-          tr("Türkçesi 'fırtınalı' demek. Lütfen"),
+          tr("Türkçede 'fırtınalı' demek. Lütfen"),
           de("stürmisch"),
           tr("de."),
         ],
@@ -938,7 +938,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("die Wolke"),
-          tr("Türkçesi 'bulut' demek. Lütfen"),
+          tr("Türkçede 'bulut' demek. Lütfen"),
           de("die Wolke"),
           tr("de."),
         ],
@@ -1068,7 +1068,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("der Spaziergang"),
-          tr("Türkçesi 'yürüyüş' demek; gezinti anlamında. Lütfen"),
+          tr("Türkçede 'yürüyüş' demek; gezinti anlamında. Lütfen"),
           de("der Spaziergang"),
           tr("de."),
         ],
@@ -1078,7 +1078,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("die Bootsfahrt"),
-          tr("Türkçesi 'tekne gezisi' demek. Lütfen"),
+          tr("Türkçede 'tekne gezisi' demek. Lütfen"),
           de("die Bootsfahrt"),
           tr("de."),
         ],
@@ -1088,7 +1088,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("der Freizeitpark"),
-          tr("Türkçesi 'lunapark' demek. Lütfen"),
+          tr("Türkçede 'lunapark' demek. Lütfen"),
           de("der Freizeitpark"),
           tr("de."),
         ],
@@ -1098,7 +1098,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("der Zoo"),
-          tr("Türkçesi 'hayvanat bahçesi' demek. Lütfen"),
+          tr("Türkçede 'hayvanat bahçesi' demek. Lütfen"),
           de("der Zoo"),
           tr("de."),
         ],
@@ -1108,7 +1108,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("die Raststätte"),
-          tr("Türkçesi 'dinlenme tesisi' demek; otoyol üstündeki mola yeri. Lütfen"),
+          tr("Türkçede 'dinlenme tesisi' demek; otoyol üstündeki mola yeri. Lütfen"),
           de("die Raststätte"),
           tr("de."),
         ],
@@ -1118,7 +1118,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("die Eintrittskarte"),
-          tr("Türkçesi 'giriş bileti' demek. Lütfen"),
+          tr("Türkçede 'giriş bileti' demek. Lütfen"),
           de("die Eintrittskarte"),
           tr("de."),
         ],
@@ -1128,7 +1128,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("die Tour"),
-          tr("Türkçesi 'tur' demek. Lütfen"),
+          tr("Türkçede 'tur' demek. Lütfen"),
           de("die Tour"),
           tr("de."),
         ],
@@ -1138,7 +1138,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("bummeln"),
-          tr("Türkçesi 'oyalanarak dolaşmak' demek. Lütfen"),
+          tr("Türkçede 'oyalanarak dolaşmak' demek. Lütfen"),
           de("bummeln"),
           tr("de."),
         ],
@@ -1269,7 +1269,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("der Campingplatz"),
-          tr("Türkçesi 'kamp alanı' demek. Lütfen"),
+          tr("Türkçede 'kamp alanı' demek. Lütfen"),
           de("der Campingplatz"),
           tr("de."),
         ],
@@ -1279,7 +1279,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("das Zelt"),
-          tr("Türkçesi 'çadır' demek. Lütfen"),
+          tr("Türkçede 'çadır' demek. Lütfen"),
           de("das Zelt"),
           tr("de."),
         ],
@@ -1289,7 +1289,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("das Lagerfeuer"),
-          tr("Türkçesi 'kamp ateşi' demek. Lütfen"),
+          tr("Türkçede 'kamp ateşi' demek. Lütfen"),
           de("das Lagerfeuer"),
           tr("de."),
         ],
@@ -1299,7 +1299,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("das Wohnmobil"),
-          tr("Türkçesi 'karavan' demek. Lütfen"),
+          tr("Türkçede 'karavan' demek. Lütfen"),
           de("das Wohnmobil"),
           tr("de."),
         ],
@@ -1309,7 +1309,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("angeln"),
-          tr("Türkçesi 'balık tutmak' demek. Lütfen"),
+          tr("Türkçede 'balık tutmak' demek. Lütfen"),
           de("angeln"),
           tr("de."),
         ],
@@ -1319,7 +1319,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("das Messer"),
-          tr("Türkçesi 'bıçak' demek. Lütfen"),
+          tr("Türkçede 'bıçak' demek. Lütfen"),
           de("das Messer"),
           tr("de."),
         ],
@@ -1329,7 +1329,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("der Bach"),
-          tr("Türkçesi 'dere' demek. Lütfen"),
+          tr("Türkçede 'dere' demek. Lütfen"),
           de("der Bach"),
           tr("de."),
         ],
@@ -1339,7 +1339,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("braten"),
-          tr("Türkçesi 'kızartmak' demek. Lütfen"),
+          tr("Türkçede 'kızartmak' demek. Lütfen"),
           de("braten"),
           tr("de."),
         ],
@@ -1469,7 +1469,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("die Kunst"),
-          tr("Türkçesi 'sanat' demek. Lütfen"),
+          tr("Türkçede 'sanat' demek. Lütfen"),
           de("die Kunst"),
           tr("de."),
         ],
@@ -1479,7 +1479,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("das Schloss"),
-          tr("Türkçesi 'şato, saray' demek. Lütfen"),
+          tr("Türkçede 'şato, saray' demek. Lütfen"),
           de("das Schloss"),
           tr("de."),
         ],
@@ -1489,7 +1489,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("der Teich"),
-          tr("Türkçesi 'gölet' demek. Lütfen"),
+          tr("Türkçede 'gölet' demek. Lütfen"),
           de("der Teich"),
           tr("de."),
         ],
@@ -1499,7 +1499,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("die Ausstellung"),
-          tr("Türkçesi 'sergi' demek. Lütfen"),
+          tr("Türkçede 'sergi' demek. Lütfen"),
           de("die Ausstellung"),
           tr("de."),
         ],
@@ -1509,7 +1509,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("golden"),
-          tr("Türkçesi 'altın' demek. Lütfen"),
+          tr("Türkçede 'altın' demek. Lütfen"),
           de("golden"),
           tr("de."),
         ],
@@ -1519,7 +1519,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("der Brunnen"),
-          tr("Türkçesi 'çeşme' demek. Lütfen"),
+          tr("Türkçede 'çeşme' demek. Lütfen"),
           de("der Brunnen"),
           tr("de."),
         ],
@@ -1529,7 +1529,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("der Rückweg"),
-          tr("Türkçesi 'dönüş yolu' demek. Lütfen"),
+          tr("Türkçede 'dönüş yolu' demek. Lütfen"),
           de("der Rückweg"),
           tr("de."),
         ],
@@ -1539,7 +1539,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("der Tourist"),
-          tr("Türkçesi 'turist' demek. Lütfen"),
+          tr("Türkçede 'turist' demek. Lütfen"),
           de("der Tourist"),
           tr("de."),
         ],
@@ -1668,7 +1668,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("das Andenken"),
-          tr("Türkçesi 'hatıra eşyası' demek. Lütfen"),
+          tr("Türkçede 'hatıra eşyası' demek. Lütfen"),
           de("das Andenken"),
           tr("de."),
         ],
@@ -1678,7 +1678,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("typisch"),
-          tr("Türkçesi 'tipik, ona özgü' demek. Lütfen"),
+          tr("Türkçede 'tipik, ona özgü' demek. Lütfen"),
           de("typisch"),
           tr("de."),
         ],
@@ -1688,7 +1688,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("originell"),
-          tr("Türkçesi 'özgün, sıra dışı' demek. Lütfen"),
+          tr("Türkçede 'özgün, sıra dışı' demek. Lütfen"),
           de("originell"),
           tr("de."),
         ],
@@ -1698,7 +1698,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("handlich"),
-          tr("Türkçesi 'kullanışlı, taşıması kolay' demek. Lütfen"),
+          tr("Türkçede 'kullanışlı, taşıması kolay' demek. Lütfen"),
           de("handlich"),
           tr("de."),
         ],
@@ -1708,7 +1708,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("der Becher"),
-          tr("Türkçesi 'kupa' demek. Lütfen"),
+          tr("Türkçede 'kupa' demek. Lütfen"),
           de("der Becher"),
           tr("de."),
         ],
@@ -1718,7 +1718,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("die Kette"),
-          tr("Türkçesi 'kolye' demek. Lütfen"),
+          tr("Türkçede 'kolye' demek. Lütfen"),
           de("die Kette"),
           tr("de."),
         ],
@@ -1728,7 +1728,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("das Wechselgeld"),
-          tr("Türkçesi 'para üstü' demek. Lütfen"),
+          tr("Türkçede 'para üstü' demek. Lütfen"),
           de("das Wechselgeld"),
           tr("de."),
         ],
@@ -1738,7 +1738,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("die Kosmetik"),
-          tr("Türkçesi 'kozmetik' demek. Lütfen"),
+          tr("Türkçede 'kozmetik' demek. Lütfen"),
           de("die Kosmetik"),
           tr("de."),
         ],
@@ -1867,7 +1867,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("abreisen"),
-          tr("Türkçesi 'yola çıkmak' demek. Lütfen"),
+          tr("Türkçede 'yola çıkmak' demek. Lütfen"),
           de("abreisen"),
           tr("de."),
         ],
@@ -1877,7 +1877,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("eintreffen"),
-          tr("Türkçesi 'varmak, ulaşmak' demek. Lütfen"),
+          tr("Türkçede 'varmak, ulaşmak' demek. Lütfen"),
           de("eintreffen"),
           tr("de."),
         ],
@@ -1887,7 +1887,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("umkehren"),
-          tr("Türkçesi 'geri dönmek' demek. Lütfen"),
+          tr("Türkçede 'geri dönmek' demek. Lütfen"),
           de("umkehren"),
           tr("de."),
         ],
@@ -1897,7 +1897,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("der Fahrschein"),
-          tr("Türkçesi 'bilet' demek. Lütfen"),
+          tr("Türkçede 'bilet' demek. Lütfen"),
           de("der Fahrschein"),
           tr("de."),
         ],
@@ -1907,7 +1907,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Beşinci kelimemiz:"),
           de("der Schaffner"),
-          tr("Türkçesi 'kondüktör' demek. Lütfen"),
+          tr("Türkçede 'kondüktör' demek. Lütfen"),
           de("der Schaffner"),
           tr("de."),
         ],
@@ -1917,7 +1917,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Altıncı kelimemiz:"),
           de("das Abteil"),
-          tr("Türkçesi 'kompartıman' demek. Lütfen"),
+          tr("Türkçede 'kompartıman' demek. Lütfen"),
           de("das Abteil"),
           tr("de."),
         ],
@@ -1927,7 +1927,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Yedinci kelimemiz:"),
           de("die Endstation"),
-          tr("Türkçesi 'son durak' demek. Lütfen"),
+          tr("Türkçede 'son durak' demek. Lütfen"),
           de("die Endstation"),
           tr("de."),
         ],
@@ -1937,7 +1937,7 @@ export const deA2B07: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("die Zugfahrt"),
-          tr("Türkçesi 'tren yolculuğu' demek. Lütfen"),
+          tr("Türkçede 'tren yolculuğu' demek. Lütfen"),
           de("die Zugfahrt"),
           tr("de."),
         ],

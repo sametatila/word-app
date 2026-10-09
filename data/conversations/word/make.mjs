@@ -80,14 +80,15 @@ export function extractWord() {
   }
 
   /*
-    İKİ ÇERÇEVE. 28 dosya "'X' demek. Lütfen" yazmış, 10 dosya "Türkçesi 'X'
-    demek. Lütfen". Fark yalnız üslup; İngilizcesi de iki ayrı dize olmak
-    zorunda değil ama kaynağı iki tuttuğu için ikisi de soruluyor.
+    İKİ ÇERÇEVE. 38 dosya "'X' demek. Lütfen" yazıyor. İkincisi ("Türkçesi 'X'
+    demek — not. Lütfen", B1 b01–b02, b11–b18) bozuk Türkçeydi ve 2026-10-09'da
+    birinciye çevrildi (not ayrı cümle oldu). Çerçeve satırı yine duruyor: çözücü
+    (web + mobil `FRAME_B`) onu tanıyor, eski yayın ve eski mobil sürüm için.
     Yer tutucu `{}` — karşılık yazılırken olduğu gibi korunuyor.
   */
   const frames = [
-    { tr: "'{}' demek.{not} Lütfen", kind: "frame", n: 28, ctx: ["28 dosya (B1 b03–b10, B2, C1)"], conversations: [] },
-    { tr: "Türkçesi '{}' demek{ — not}. Lütfen", kind: "frame", n: 10, ctx: ["10 dosya (B1 b01–b02, b11–b18)"], conversations: [] },
+    { tr: "'{}' demek.{not} Lütfen", kind: "frame", n: 38, ctx: ["38 dosya (B1, B2, C1)"], conversations: [] },
+    { tr: "Türkçesi '{}' demek{ — not}. Lütfen", kind: "frame", n: 0, ctx: ["kaynakta yok (2026-10-09); çözücü eski yayın için tanıyor"], conversations: [] },
   ];
 
   // Sıra KARARLI: önce çerçeveler, sonra sıra sözcükleri, sonra notlar

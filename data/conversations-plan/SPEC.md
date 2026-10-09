@@ -75,8 +75,11 @@ az olamaz.
 1. **Onay** (`confirm`): konuşmanın vaadini somut söyler, "Başlamaya hazır mısın?"
 2. **Çerçeve** (beklentisiz `say`): kalıpların ne işe yaradığı; sonu kelimelere köprü.
 3. **8 kelime, her biri kendi `repeat` adımıyla:** sıra sözü ("İlk kelimemiz:",
-   "Sıradaki", "Son kelimemiz:") + hedef dil segmenti + "Türkçesi '…' demek" +
-   tekrar isteği. Aynı kelime aynı konuşmada iki kez "yeni" diye öğretilmez.
+   "Sıradaki", "Son kelimemiz:") + hedef dil segmenti + "Türkçede '…' demek." (ya da
+   "'…' demek.") + tekrar isteği. "Türkçesi '…' demek" yazılmaz: iki kalıbın karışımı, bozuk
+   Türkçe (QA, 2026-10-09). Hedef dil segmentinden sonra yeni cümle başlıyorsa noktalama
+   segmentin kendisinde olmalı: ekran parçaları boşlukla birleştiriyor ("Jott. Bir de …").
+   Aynı kelime aynı konuşmada iki kez "yeni" diye öğretilmez.
 4. **Kalıp blokları:** açıklama `say` → örnek `repeat` → `produce`.
 5. **`truefalse`:** yargılanan cümlenin tamamı adımın hedef dil segmentinde geçer.
 6. **Kapanış** (beklentisiz): tek cümle özet + sohbet sahnesine köprü.

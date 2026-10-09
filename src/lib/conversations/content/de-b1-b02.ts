@@ -21,8 +21,8 @@ import { de, tr, type LectureStep, type Conversation } from "../types";
  * çalışıyor.
  */
 /**
- * Standart kelime adımı — b03…b10 ile aynı desen, metni b01in eskisiyle birebir
- * aynı. Sözlükçe 5ten 8e çıkarken aynı adımı on kez elle yazmak diffi
+ * Standart kelime adımı — b03…b10 ile aynı desen ve aynı metin (2026-10-09: eski
+ * "Türkçede 'X' demek — not" bozuk Türkçeydi; not artık ayrı bir cümle). Sözlükçe 5ten 8e çıkarken aynı adımı on kez elle yazmak diffi
  * okunamaz hâle getiriyordu.
  */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
@@ -30,7 +30,7 @@ function word(n: string, w: { de: string; tr: string }, note?: string): LectureS
     say: [
       tr(`${n} kelimemiz:`),
       de(w.de),
-      tr(`Türkçesi '${w.tr}' demek${note ? ` — ${note}` : ""}. Lütfen`),
+      tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`),
       de(w.de),
       tr("de."),
     ],

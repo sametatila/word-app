@@ -145,7 +145,7 @@
  { "tr": "İlk beş kelimeyi bir daha duyalım:", "kind": "say.tr", "de": "Hören wir die ersten fünf Wörter noch einmal:" },
  { "tr": "Daha kibar bir seçenek de var:", "kind": "say.tr", "de": "Es gibt auch eine höflichere Möglichkeit:" },
  { "tr": "Lütfen benimle birlikte söyle:", "kind": "say.tr", "de": "Bitte sag es zusammen mit mir:" },
- { "tr": "Türkçesi 'ağrımak' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „wehtun“. Bitte" },
+ { "tr": "Türkçede 'ağrımak' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „wehtun“. Bitte" },
  { "tr": "Şimdi sen söyle. Lütfen tekrar et:", "kind": "say.tr", "de": "Jetzt sag du. Bitte wiederhole:" },
- { "tr": "Türkçesi '-den beri' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „seit“. Bitte" }
+ { "tr": "Türkçede '-den beri' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „seit“. Bitte" }
 ]

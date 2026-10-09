@@ -8,7 +8,7 @@
  { "tr": "Şimdi sen kur. Arkadaşını gördün ve doğum gününü kutluyorsun. Nasıl dersin?", "kind": "say.tr", "de": "Jetzt bildest du den Satz. Du siehst deinen Freund und gratulierst ihm zum Geburtstag. Wie geht das?" },
  { "tr": "Tam bir cümle deneyelim: burası eski mahallemden daha kalabalık. Lütfen de:", "kind": "say.tr", "de": "Probieren wir einen ganzen Satz: Hier ist es voller als in meinem alten Viertel. Bitte sag:" },
  { "tr": "Türkçede 'pazartesi günü' derken 'günü' diyoruz ya; İngilizcede o iş on'un.", "kind": "say.tr", "de": "Im Deutschen sagen wir „am Montag“; im Englischen macht on diese Arbeit." },
- { "tr": ". Türkçesi 'ilk, önce' demek. Sıralamanın başına koyarsın. Lütfen sen de de:", "kind": "say.tr", "de": ". Auf Deutsch heißt es „zuerst“. Es steht am Anfang der Reihe. Bitte sag du auch:" },
+ { "tr": ". Türkçede 'ilk, önce' demek. Sıralamanın başına koyarsın. Lütfen sen de de:", "kind": "say.tr", "de": ". Auf Deutsch heißt es „zuerst“. Es steht am Anfang der Reihe. Bitte sag du auch:" },
  { "tr": "'İyi misin?' demek. Karşındaki yorgun ya da üzgün görünüyorsa bunu sorarsın.", "kind": "say.tr", "de": "„Geht es dir gut?“ heißt das. Wirkt dein Gegenüber müde oder traurig, fragst du das." },
  { "tr": "'Tap' musluk demek. Yabancı bir misafirin ilk soracağı şeylerden biri budur.", "kind": "say.tr", "de": "„Tap“ heißt Wasserhahn. Das ist eine der ersten Fragen von Gästen aus dem Ausland." },
  { "tr": "\"Anlamıyorum.\" Olumsuz yaparken yine aynı küçük yardımcıyı kullandık: don't.", "kind": "say.tr", "de": "„Ich verstehe nicht.“ Für die Verneinung wieder derselbe kleine Helfer: don't." },

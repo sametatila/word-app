@@ -56,9 +56,9 @@
  { "tr": "Modülü bitirdin. Şimdi bir kariyer fuarındasın ve bir şirket standına yaklaşıyorsun.", "en": "You have finished the module. Now you are at a career fair walking up to a company booth." },
  { "tr": "Sıfat hem karşılaştırma ekini hem de çoğul ismin önünde durduğu için son ekini alır:", "en": "The adjective takes both the comparative ending and its ending before a plural noun:" },
  { "tr": "Son: 'Herkes tebrik ettikten sonra salonu topluyoruz.' Sonrayı gösteren bağlacı kullan.", "en": "Last: 'After everyone has congratulated them, we tidy the hall.' Use the conjunction for after." },
- { "tr": "Türkçesi 'bir şeyler yapmak' demek; gezmek, çıkmak, program yapmak anlamında. Lütfen", "en": "It means 'to do something'; going out, making plans. Please say" },
- { "tr": "Türkçesi 'garnitür' demek; ana yemeğin yanındaki pilav, patates ya da salata. Lütfen", "en": "It means 'a side dish'; the rice, potatoes or salad with the main course. Please say" },
- { "tr": "Türkçesi 'olduğu yerde durmak' demek; yürüyen biri ya da duran bir saat için. Lütfen", "en": "It means 'to stand still'; for a walker or a clock that has stopped. Please say" },
+ { "tr": "Türkçede 'bir şeyler yapmak' demek; gezmek, çıkmak, program yapmak anlamında. Lütfen", "en": "It means 'to do something'; going out, making plans. Please say" },
+ { "tr": "Türkçede 'garnitür' demek; ana yemeğin yanındaki pilav, patates ya da salata. Lütfen", "en": "It means 'a side dish'; the rice, potatoes or salad with the main course. Please say" },
+ { "tr": "Türkçede 'olduğu yerde durmak' demek; yürüyen biri ya da duran bir saat için. Lütfen", "en": "It means 'to stand still'; for a walker or a clock that has stopped. Please say" },
  { "tr": "Yan cümle arkada, o yüzden ana cümle hiç değişmedi; yalnız yan cümlenin fiili sonda.", "en": "The subclause is at the back, so the main clause did not change; only its verb is last." },
  { "tr": "Yan cümlede fiil en sonda; geçmiş zaman olduğu için kısa geçmiş biçimi kullanılıyor.", "en": "The verb is last in the subclause; it is past, so the simple past form is used." },
  { "tr": "'Önce' demek ve cümlenin başına gelir. Başa geldiği için fiil hemen arkasından gelir.", "en": "It means 'first' and comes at the start. Being first, the verb follows right after." },
@@ -139,7 +139,7 @@
  { "tr": "Sonu belirli bir heceyle biten yabancı kökenli fiiller ortacın hecesini almaz. Doğrusu:", "en": "Loan verbs ending in a certain syllable take no participle syllable. It should be:" },
  { "tr": "Şimdi eki duy. Sıfatın sonuna bir hece geliyor ve bazı kısa sıfatlarda sesli harf değişiyor:", "en": "Now hear the ending. A syllable comes onto the adjective and in some short adjectives the vowel changes:" },
  { "tr": "Tercih bildiren kelime fiilden hemen sonra durur ve iki seçenek arasından birini seçer.", "en": "The word of preference stands right after the verb and picks one of two options." },
- { "tr": "Türkçesi 'meslek eğitimi' demek; Almanya'da çıraklıkla okulu birleştiren sistem. Lütfen", "en": "It means 'vocational training'; the German system joining apprenticeship and school. Please say" },
+ { "tr": "Türkçede 'meslek eğitimi' demek; Almanya'da çıraklıkla okulu birleştiren sistem. Lütfen", "en": "It means 'vocational training'; the German system joining apprenticeship and school. Please say" },
  { "tr": "Yani 'birkaç çocuk'. Başındaki kelime tekil gibi görünse de arkasından hep çoğul gelir.", "en": "That is, 'a few children'. The word in front looks singular but a plural always follows." },
  { "tr": "Ağrıyan yer özne olur ve fiil ayrılabilen bir fiildir; şimdiki zamanda ön ek sona düşer.", "en": "The sore part becomes the subject and the verb is separable; in the present the prefix falls last." }
 ]

@@ -112,7 +112,7 @@
  { "tr": "Şunlar benim kitaplarım. Lütfen tekrar et.", "kind": "say.tr", "de": "Das da sind meine Bücher. Bitte wiederhole." },
  { "tr": "Şunu birlikte söyleyelim: 'Bir amcam var.'", "kind": "say.tr", "de": "Sagen wir das zusammen: „Ich habe einen Onkel.“" },
  { "tr": "Tur ne kadar sürüyor? Lütfen sen de söyle.", "kind": "say.tr", "de": "Wie lange dauert die Tour? Bitte sag du auch." },
- { "tr": "Türkçesi 'mal olmak, tutmak' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „kosten“. Bitte" },
+ { "tr": "Türkçede 'mal olmak, tutmak' demek. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „kosten“. Bitte" },
  { "tr": "Türkçesi bozuk demek. Lütfen sen de söyle:", "kind": "say.tr", "de": "Auf Deutsch heißt es kaputt. Bitte sag du auch:" },
  { "tr": "Türkçesi ilaç demek. Lütfen benimle söyle:", "kind": "say.tr", "de": "Auf Deutsch heißt es Medikament. Bitte sag mit mir:" },
  { "tr": "Üçüncü kalıbımız kimlerin olduğunu söyler:", "kind": "say.tr", "de": "Unsere dritte Wendung sagt, wen du hast:" },

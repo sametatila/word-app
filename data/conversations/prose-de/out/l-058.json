@@ -24,7 +24,7 @@
  { "tr": "Yani: Hizmetle ilgili bir şikâyette bulunmak istiyorum. Söyle:", "kind": "say.tr", "de": "Also: Ich möchte mich über den Service beschweren. Sag:" },
  { "tr": ". İngilizcede sahiplik kelimenin önüne gelir, sonuna ek gelmez.", "kind": "say.tr", "de": ". Im Englischen steht der Besitz vor dem Wort, keine Endung." },
  { "tr": ". İnternet paketindeki veri. Mağazada en çok soracağın soru bu:", "kind": "say.tr", "de": ". Die Daten im Internetpaket. Im Laden fragst du am häufigsten das:" },
- { "tr": ". Türkçesi 'basmak' demek. Bir düğmeye, bir tuşa basmak. Lütfen", "kind": "say.tr", "de": ". Auf Deutsch heißt es „drücken“. Auf einen Knopf, auf eine Taste. Bitte" },
+ { "tr": ". Türkçede 'basmak' demek. Bir düğmeye, bir tuşa basmak. Lütfen", "kind": "say.tr", "de": ". Auf Deutsch heißt es „drücken“. Auf einen Knopf, auf eine Taste. Bitte" },
  { "tr": "'Nakit mi, kart mı?' Kulağın alışsın diye sen de bir kez söyle.", "kind": "say.tr", "de": "„Bar oder Karte?“ Damit dein Ohr sich gewöhnt, sag es einmal." },
  { "tr": "Bir de olayı anlatman gerekebilir. En sık kullanılan iki cümle:", "kind": "say.tr", "de": "Manchmal musst du den Vorfall schildern. Die zwei häufigsten Sätze:" },
  { "tr": "Bir mağazada hediye seçiyormuş gibi ilerleyeceğiz. Hazır mısın?", "kind": "say.tr", "de": "Wir gehen vor, als wähltest du im Laden ein Geschenk. Bist du bereit?" },

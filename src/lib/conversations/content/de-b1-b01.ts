@@ -24,8 +24,8 @@ import { de, tr, type LectureStep, type Conversation } from "../types";
  * resmî metinler konuşma dilinin Perfekt'ini kullanmıyor.
  */
 /**
- * Standart kelime adımı — b03…b10 ile aynı desen, metni b01in eskisiyle birebir
- * aynı. Sözlükçe 5ten 8e çıkarken aynı adımı on kez elle yazmak diffi
+ * Standart kelime adımı — b03…b10 ile aynı desen ve aynı metin (2026-10-09: eski
+ * "Türkçede 'X' demek — not" bozuk Türkçeydi; not artık ayrı bir cümle). Sözlükçe 5ten 8e çıkarken aynı adımı on kez elle yazmak diffi
  * okunamaz hâle getiriyordu.
  */
 function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
@@ -33,7 +33,7 @@ function word(n: string, w: { de: string; tr: string }, note?: string): LectureS
     say: [
       tr(`${n} kelimemiz:`),
       de(w.de),
-      tr(`Türkçesi '${w.tr}' demek${note ? ` — ${note}` : ""}. Lütfen`),
+      tr(`'${w.tr}' demek.${note ? ` ${note}` : ""} Lütfen`),
       de(w.de),
       tr("de."),
     ],
@@ -86,7 +86,7 @@ export const deB1B01: Conversation[] = [
       word("İkinci", { de: "die Stärke", tr: "güçlü yön" }),
       word("Üçüncü", { de: "der Lebenslauf", tr: "özgeçmiş" }),
       word("Dördüncü", { de: "die Erfahrung", tr: "deneyim" }),
-      word("Beşinci", { de: "die Voraussetzung", tr: "ön koşul" }, "iş ilanlarında 'aranan nitelikler' başlığı altında geçer"),
+      word("Beşinci", { de: "die Voraussetzung", tr: "ön koşul" }, "İş ilanlarında 'aranan nitelikler' başlığı altında geçer."),
       word("Altıncı", { de: "die Fähigkeit", tr: "yeti" }),
       word("Yedinci", { de: "verantwortlich", tr: "sorumlu" }),
       word("Son", { de: "die Gelegenheit", tr: "fırsat" }),
@@ -243,7 +243,7 @@ export const deB1B01: Conversation[] = [
       word("Dördüncü", { de: "die Karriere", tr: "kariyer" }),
       word("Beşinci", { de: "die Abteilung", tr: "departman" }),
       word("Altıncı", { de: "beruflich", tr: "mesleki" }),
-      word("Yedinci", { de: "die Qualifikation", tr: "nitelik" }, "diploma ve sertifikaların toplamı"),
+      word("Yedinci", { de: "die Qualifikation", tr: "nitelik" }, "Diploma ve sertifikaların toplamı."),
       word("Son", { de: "die Leistung", tr: "performans" }),
       {
         say: [
@@ -715,7 +715,7 @@ export const deB1B01: Conversation[] = [
       },
       word("İlk", { de: "sich wenden", tr: "başvurmak / birine yönelmek" }),
       word("İkinci", { de: "unsicher", tr: "emin olmayan" }),
-      word("Üçüncü", { de: "der Praktikant", tr: "stajyer" }, "kadın biçimi -in ekiyle kurulur"),
+      word("Üçüncü", { de: "der Praktikant", tr: "stajyer" }, "Kadın biçimi -in ekiyle kurulur."),
       word("Dördüncü", { de: "die Kollegin", tr: "kadın meslektaş" }),
       word("Beşinci", { de: "das Personal", tr: "personel" }),
       word("Altıncı", { de: "die Besprechung", tr: "toplantı" }),
@@ -871,7 +871,7 @@ export const deB1B01: Conversation[] = [
       word("İlk", { de: "die Überstunde", tr: "fazla mesai" }),
       word("İkinci", { de: "flexibel", tr: "esnek" }),
       word("Üçüncü", { de: "der Feierabend", tr: "iş çıkışı" }),
-      word("Dördüncü", { de: "die Vollzeit", tr: "tam zamanlı çalışma" }, "yarım gün çalışmanın karşıtı"),
+      word("Dördüncü", { de: "die Vollzeit", tr: "tam zamanlı çalışma" }, "Yarım gün çalışmanın karşıtı."),
       word("Beşinci", { de: "die Erholung", tr: "dinlenme" }),
       word("Altıncı", { de: "der Antrag", tr: "dilekçe / başvuru" }),
       word("Yedinci", { de: "gelten", tr: "geçerli olmak" }),
@@ -1032,11 +1032,11 @@ export const deB1B01: Conversation[] = [
         ],
       },
       word("İlk", { de: "das Gehalt", tr: "maaş" }),
-      word("İkinci", { de: "der Lohn", tr: "ücret" }, "saat başı ödenen ücret; aylık sabit olanı maaş"),
+      word("İkinci", { de: "der Lohn", tr: "ücret" }, "Saat başı ödenen ücret; aylık sabit olanı maaş."),
       word("Üçüncü", { de: "das Einkommen", tr: "gelir" }),
       word("Dördüncü", { de: "erhöhen", tr: "artırmak" }),
       word("Beşinci", { de: "fordern", tr: "talep etmek" }),
-      word("Altıncı", { de: "die Kosten", tr: "masraf" }, "hep çoğul kullanılır"),
+      word("Altıncı", { de: "die Kosten", tr: "masraf" }, "Hep çoğul kullanılır."),
       word("Yedinci", { de: "die Steuer", tr: "vergi" }),
       word("Son", { de: "die Rente", tr: "emekli maaşı" }),
       {
@@ -1196,7 +1196,7 @@ export const deB1B01: Conversation[] = [
       },
       word("İlk", { de: "nachdem", tr: "-dikten sonra" }),
       word("İkinci", { de: "der Versuch", tr: "deneme" }),
-      word("Üçüncü", { de: "melden", tr: "bildirmek / haber vermek" }, "dönüşlü kullanıldığında 'dönüş yapmak' demek"),
+      word("Üçüncü", { de: "melden", tr: "bildirmek / haber vermek" }, "Dönüşlü kullanıldığında 'dönüş yapmak' demek."),
       word("Dördüncü", { de: "die Absage", tr: "ret cevabı" }),
       word("Beşinci", { de: "die Enttäuschung", tr: "hayal kırıklığı" }),
       word("Altıncı", { de: "die Hoffnung", tr: "umut" }),
@@ -1359,7 +1359,7 @@ export const deB1B01: Conversation[] = [
       },
       word("İlk", { de: "die Frist", tr: "süre / ihbar süresi" }),
       word("İkinci", { de: "kündigen", tr: "istifa etmek" }),
-      word("Üçüncü", { de: "entlassen", tr: "işten çıkarmak" }, "işveren yapar; çalışanın kendi ayrılması bu değil"),
+      word("Üçüncü", { de: "entlassen", tr: "işten çıkarmak" }, "İşveren yapar; çalışanın kendi ayrılması bu değil."),
       word("Dördüncü", { de: "die Bedingung", tr: "şart" }),
       word("Beşinci", { de: "der Auftrag", tr: "görev" }),
       word("Altıncı", { de: "die Sorge", tr: "endişe" }),
@@ -1517,7 +1517,7 @@ export const deB1B01: Conversation[] = [
       word("İlk", { de: "sich beschäftigen", tr: "bir işle uğraşmak" }),
       word("İkinci", { de: "die Branche", tr: "sektör" }),
       word("Üçüncü", { de: "der Kontakt", tr: "bağlantı / temas" }),
-      word("Dördüncü", { de: "die Verbindung", tr: "bağlantı" }, "insan bağlantısı da, ulaşım bağlantısı da"),
+      word("Dördüncü", { de: "die Verbindung", tr: "bağlantı" }, "İnsan bağlantısı da, ulaşım bağlantısı da."),
       word("Beşinci", { de: "ansprechen", tr: "konuşmaya başlamak" }),
       word("Altıncı", { de: "die Visitenkarte", tr: "kartvizit" }),
       word("Yedinci", { de: "die Unterhaltung", tr: "sohbet" }),
