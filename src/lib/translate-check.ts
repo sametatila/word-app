@@ -123,6 +123,46 @@ export function noteShowsNoError(note: string, studentText: string): boolean {
   return !!should && hasSequence(said, words(should[1]));
 }
 
+/** Almanca düz cümlede özne olabilen zamirler (V2 denetimi). */
+const SUBJECT = new Set(["ich", "du", "er", "sie", "es", "wir", "ihr", "man"]);
+/** Cümle başında sayılmayan bağlaçlar ("Und ich trinke…": fiil yine ikinci). */
+const LEADING_CONJ = new Set(["und", "aber", "oder", "denn", "sondern"]);
+
+/**
+ * Almanca düz ana cümlede çekimli fiil İKİNCİ yerde mi (V2)? Model bu hatayı
+ * kaçırabiliyor: ölçümde "Wir zusammen sind sehr glücklich." kabul edildi
+ * (2026-10-09, ayrılmış küme 4). Kontrol yerel "sıra" hükmüne de açılınca
+ * bu tip cevaplar modele çok daha sık gidiyor; kural ucuz ve kesin olduğu
+ * için modelden ÖNCE yerelde bakılıyor.
+ *
+ * Yalnız güvenle bakılabilen durum: hedef düz cümle (soru, ünlem, virgüllü yan
+ * cümle değil), hedefte bir özne zamiri var ve fiil onun hemen yanında (özne
+ * başta → fiil ikinci; değilse fiil öznenin hemen önünde). Öğrencinin cümlesinde
+ * aynı zamir ve aynı fiil varsa ikisinden biri doğru olmalı: özne başta ve fiil
+ * ikinci, ya da fiil öznenin hemen önünde ve başta değil. Belirsiz her durumda
+ * `false` (karar modele kalır).
+ */
+export function v2Broken(student: string, target: string): boolean {
+  if (/[?!]\s*$/.test(target.trim()) || /[,;:]/.test(target) || /[,;:?]/.test(student)) return false;
+  const t = words(target);
+  let s = words(student);
+  while (s.length && LEADING_CONJ.has(s[0])) s = s.slice(1);
+  const p = t.findIndex((w) => SUBJECT.has(w));
+  if (p < 0) return false;
+  const verb = p === 0 ? t[1] : t[p - 1];
+  if (!verb || SUBJECT.has(verb)) return false;
+  const q = s.indexOf(t[p]);
+  const v = s.indexOf(verb);
+  if (q < 0 || v < 0) return false;
+  return !((q === 0 && v === 1) || (v >= 1 && v === q - 1));
+}
+
+const V2_NOTE: Record<NativeLang, string> = {
+  tr: "çekimli fiil ikinci sırada olmalı",
+  en: "the conjugated verb must come second",
+  de: "das konjugierte Verb muss an zweiter Stelle stehen",
+};
+
 export type TranslateVerdict = { meaningOk: boolean; grammarOk: boolean; meaningNote: string; grammarNote: string };
 
 /**
@@ -214,6 +254,9 @@ export type CompleteFn = (system: string, user: string, maxTokens: number) => Pr
  * Okunamayan sonuç null: çağıran "invalid" döner, istemci yerel hükümde kalır.
  */
 export async function runTranslateCheck(req: AssessRequest, complete: CompleteFn): Promise<TranslateVerdict | null> {
+  /* Yerel V2 denetimi modelden önce (bkz. `v2Broken`): kesin hata, model sorulmaz. */
+  if (req.lang !== "en" && v2Broken(req.answer.text, String(req.task.target ?? "")))
+    return { meaningOk: true, grammarOk: false, meaningNote: "", grammarNote: V2_NOTE[req.native ?? "tr"] ?? V2_NOTE.tr };
   const system = translateCheckSystem(req.lang, req.native);
   const user = translateCheckUser(req);
   let v = parseTranslateCheck(await complete(system, user, TRANSLATE_CHECK_MAX_TOKENS));

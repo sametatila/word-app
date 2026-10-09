@@ -1,5 +1,5 @@
 import type { AssessRequest } from "../src/lib/assess-prompts";
-import { isTranslateCheck, noteShowsNoError, parseTranslateCheck, sameBothSides, translateAccepted, translateCheckAssessment } from "../src/lib/translate-check";
+import { isTranslateCheck, noteShowsNoError, v2Broken, parseTranslateCheck, sameBothSides, translateAccepted, translateCheckAssessment } from "../src/lib/translate-check";
 
 /**
  * Çeviri kurtarma kontrolü — `npm run test:translate-check-unit`. Dil modeli istemez.
@@ -96,6 +96,19 @@ check("ikisi de yanlış → ret", !clientAccepts(false, false));
 const rejected = translateCheckAssessment(req, { meaningOk: false, grammarOk: true, meaningNote: "olumsuzluk eksik", grammarNote: "yok" });
 check("retle düzeltme örnek çeviri", rejected.corrected === "Ich bin müde.");
 check("retle not ipucunda", rejected.next_tip_tr === "olumsuzluk eksik", rejected.next_tip_tr);
+
+console.log("\nV2 denetimi (modelden önce)");
+check("Wir zusammen sind … → bozuk", v2Broken("Wir zusammen sind sehr glücklich.", "Wir sind sehr glücklich zusammen."));
+check("Zum Frühstück ich trinke … → bozuk", v2Broken("Zum Frühstück ich trinke einen Tee.", "Zum Frühstück trinke ich einen Tee."));
+check("Morgen ich kaufe ein → bozuk", v2Broken("Morgen ich kaufe ein.", "Ich kaufe morgen ein."));
+check("Ich trinke zum Frühstück … → geçerli", !v2Broken("Ich trinke zum Frühstück einen Tee.", "Zum Frühstück trinke ich einen Tee."));
+check("Morgen kaufe ich ein → geçerli", !v2Broken("Morgen kaufe ich ein.", "Ich kaufe morgen ein."));
+check("Wir sind zusammen sehr glücklich → geçerli", !v2Broken("Wir sind zusammen sehr glücklich.", "Wir sind sehr glücklich zusammen."));
+check("Zum Frühstück trinke ich (çok sözcüklü ilk öğe) → geçerli", !v2Broken("Zum Frühstück trinke ich Tee.", "Ich trinke Tee zum Frühstück."));
+check("Und ich trinke … (bağlaç) → geçerli", !v2Broken("Und ich trinke Tee.", "Ich trinke Tee."));
+check("soru hedefi → bakılmaz", !v2Broken("Welche Größe das ist?", "Welche Größe ist das?"));
+check("öznesiz hedef → bakılmaz", !v2Broken("Zum Fest kommen meine Eltern.", "Meine Eltern kommen zum Fest."));
+check("başka fiil → bakılmaz", !v2Broken("Ich habe morgen Zeit.", "Ich kaufe morgen ein."));
 
 if (fails) {
   console.log(`\n${fails} başarısız`);
