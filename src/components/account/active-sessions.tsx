@@ -6,7 +6,7 @@ import { SettingRow } from "@/components/setting-row";
 import { SessionRowSkeleton } from "@/components/settings-skeleton";
 import { authApi } from "@/lib/auth/api";
 import { useT, useLang } from "@/lib/i18n/client";
-import { formatDay, localeOf } from "@/lib/i18n/dict";
+import { formatDay } from "@/lib/i18n/dict";
 import { Row } from "@/components/settings-section";
 
 /**
