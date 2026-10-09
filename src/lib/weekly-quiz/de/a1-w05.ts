@@ -169,7 +169,7 @@ export const DE_A1_W05: QuizWeek = {
             "Um 6 Uhr ich stehe auf.",
           ],
           answer: 2,
-          why: "Türkçede \"Saat 6'da ben kalkıyorum\" sıralaması doğal, o yüzden `Um 6 Uhr ich stehe auf` doğru görünür. Almancada özne fiilden sonra gelmek zorunda.",
+          why: "İki kural birlikte işliyor. Ayrılabilir fiilin öneki sona gider: „Ich aufstehe“ yanlış, „Ich stehe auf um 6 Uhr“ da öneki sona koymadığı için yanlış (doğrusu „Ich stehe um 6 Uhr auf“). Cümle zamanla başlarsa çekimli fiil ikinci sırada kalır ve özne fiilin ARKASINA geçer: „Um 6 Uhr ich stehe auf“ yanlış. Türkçede \"Saat 6'da ben kalkıyorum\" sırası doğal olduğu için bu son şık doğru görünür.",
         },
         en: {
           options: [
@@ -195,7 +195,7 @@ export const DE_A1_W05: QuizWeek = {
     {
       id: "de-a1-w05-g5",
       block: "grammar",
-      stem: "___ kommst du?",
+      stem: "— ___ kommst du? — Aus Spanien.",
       options: ["Wann", "Wo", "Woher", "Wohin"],
       answer: 2,
       why: "`kommen` kaynağı ister: `woher` (nereden). `wohin` yönü (nereye), `wo` sabit yeri (nerede) sorar — İngilizcede üçü de `where` ile kurulduğu için ayrım kolayca kayboluyor.",
