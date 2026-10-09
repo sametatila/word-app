@@ -218,7 +218,7 @@ HATA LİSTESİ: her gerçek hata için bir madde. "wrong" alanı öğrencinin me
 
 corrected: öğrencinin metninin düzeltilmiş hâli — anlamı ve yapısını koru, yeniden yazma. Hata yoksa metni olduğu gibi ver. Öğrencinin başa koyduğu öğe başta KALIR: fiil ikinci sıraya gelir, özne fiilin arkasına geçer ("Erst ich schicke den Brief" → "Erst schicke ich den Brief"). İlk öğeyi cümlenin başka yerine taşıma ya da eşanlamlısıyla değiştirme: anlam değişir ("Ich schicke den Brief erst" başka bir şey söyler).
 praise_tr: ${anadil}, tek cümle, somut: neyi iyi yaptı (kalıp, yapı, kelime). Boş övgü yok.
-next_tip_tr: ${anadil}, tek cümle: bir sonraki denemede yapacağı EN önemli tek şey.
+next_tip_tr: ${anadil}, tek cümle: bir sonraki denemede yapacağı EN önemli tek şey. Hata listesindeki bir hataya dayanmalı; hata yoksa bir üst adıma taşıyan somut bir öneri ver (yeni bir bağlaç, daha zengin bir yapı, bir ayrıntı daha). Metinde olmayan bir hatayı ima etme ("umlautlara dikkat et", "artikellere dikkat et" gibi).
 
 ÇIKTI: yalnızca aşağıdaki JSON, başka hiçbir şey (açıklama, markdown, kod bloğu yok). JSON dizelerinin İÇİNDE çift tırnak (") KULLANMA — kelime alıntılarken „…“ ya da tek tırnak kullan: "why_tr":"„Tisch“ eril bir isimdir". Aksi hâlde çıktı okunamaz.
 {"score":{"task":0,"grammar":0,"vocab":0,"structure":0},"errors":[{"wrong":"","type":"","fix":"","why_tr":""}],"corrected":"","praise_tr":"","next_tip_tr":""}`;
@@ -547,6 +547,19 @@ export function isLengthAdvice(s: string): boolean {
 }
 
 /**
+ * HATASIZ METNE HATA İMA EDEN İPUCU (QA 2026-10-09, panel #43): deneme sınavı yazmasında
+ * hata listesi boş ve düzeltilmiş metin aynıyken ipucu "Almancadaki umlaut harflerine ve
+ * yazımına dikkat etmelisin" dedi; metinde tek umlaut hatası yoktu. Bu tür bir ipucu
+ * öğrenciye var olmayan bir hatayı arattırıyor. Hata yokken yalnız biçim/yazım/artikel
+ * uyarısı taşıyan ipucu düşüyor (istem de hata yoksa ilerleme önerisi istiyor).
+ */
+const ERROR_ADVICE = /umlaut|[äöü] harf|yaz[ıi]m|imla|büyük harf|küçük harf|noktalama|artikel|article|spelling|capitali[sz]|punctuation|rechtschreib|gro(ß|ss)schreib|zeichensetzung/i;
+
+export function isUnfoundedErrorAdvice(tip: string, errorCount: number, answer: string, corrected: string): boolean {
+  return errorCount === 0 && norm(corrected || answer) === norm(answer) && ERROR_ADVICE.test(tip);
+}
+
+/**
  * Model çıktısını doğrulanmış değerlendirmeye çevirir; şema tutmuyorsa null.
  *
  * Toleranslı ama sınırlı: eksik `overall` hesaplanır, eksik `errors` boş
@@ -602,6 +615,7 @@ export function parseAssessment(raw: string, answerText: string, kind: AssessKin
   const corrected = typeof data.corrected === "string" ? data.corrected.trim().slice(0, ASSESS_MAX_CHARS) : "";
   let tip = str(data.next_tip_tr ?? data.next_tip ?? data.tip_tr, 300);
   if (minWords && countWords(answerText) >= minWords && isLengthAdvice(tip)) tip = "";
+  if (isUnfoundedErrorAdvice(tip, errors.length, answerText, corrected)) tip = "";
   return {
     score,
     errors,

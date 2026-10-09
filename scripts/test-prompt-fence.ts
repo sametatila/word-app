@@ -88,5 +88,17 @@ for (const tip of ["Your email is under the word limit; add one more sentence.",
   check(`uzunluk ipucu tanınıyor: ${tip.slice(0, 30)}`, isLengthAdvice(tip));
 }
 
+// QA 2026-10-09 (panel #43): hatasız metne "umlautlara dikkat" ipucu düşüyor; hata varken kalıyor.
+{
+  const metin = "Sehr geehrte Damen und Herren, ich möchte im Juli nach Hamburg fahren und habe einige Fragen.";
+  const temiz = (tip: string, errors = "[]", corrected = metin) =>
+    JSON.stringify({ score: { task: 4, grammar: 4, vocab: 4, structure: 4 }, errors: JSON.parse(errors), corrected, praise_tr: "İyi.", next_tip_tr: tip });
+  const umlaut = "Almancadaki umlaut (ä, ö, ü) harflerine ve bunların yazımına dikkat etmelisin.";
+  check("hatasız metinde umlaut ipucu düşüyor", parseAssessment(temiz(umlaut), metin, "writing")?.next_tip_tr === "");
+  check("hatasız metinde ilerleme ipucu kalıyor", parseAssessment(temiz("Bir dahaki sefere deshalb gibi bir bağlaç dene."), metin, "writing")?.next_tip_tr === "Bir dahaki sefere deshalb gibi bir bağlaç dene.");
+  const hata = '[{"wrong":"fahren","type":"spelling","fix":"fahren","why_tr":"x"},{"wrong":"Fragen","type":"article","fix":"die Fragen","why_tr":"Artikel"}]';
+  check("hata varken yazım ipucu kalıyor", parseAssessment(temiz(umlaut, hata), metin, "writing")?.next_tip_tr === umlaut);
+}
+
 console.log(fails === 0 ? "\ntamam: hepsi geçti" : `\nKALDI: ${fails}`);
 process.exit(fails === 0 ? 0 : 1);
