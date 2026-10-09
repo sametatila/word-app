@@ -633,6 +633,7 @@ export const deA1B09: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Geht es am Samstag um neun Uhr",
+          accept: ["Geht es am Samstag um neun"],
           hint: [
             tr("Önce gün, sonra saat; her birinin kendi edatı var:"),
             de("Geht es am Samstag um neun Uhr?"),

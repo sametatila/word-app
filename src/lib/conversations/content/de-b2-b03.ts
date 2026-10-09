@@ -176,7 +176,7 @@ export const deB2B03: Conversation[] = [
       word("Son", { de: "beseitigen", tr: "gidermek" }),
       { say: [tr("Kalıbımız iki cümle:"), de("Die Tür wird geöffnet."), tr("süreç;"), de("Die Tür ist geöffnet."), tr("durum.")] },
       { say: [tr("Tekrar et:"), de("Die Tür wird geöffnet, und danach ist sie geöffnet")], expect: repeat("Die Tür wird geöffnet, und danach ist sie geöffnet") },
-      { say: [tr("Sıra sende, süreci söyle: 'Mağaza saat altıda kapatılıyor.'")], expect: produce("Der Laden wird um sechs geschlossen", [tr("Bir şeyin olması werden ile:"), de("Der Laden wird um sechs geschlossen."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende, süreci söyle: 'Mağaza saat altıda kapatılıyor.'")], expect: produce("Der Laden wird um sechs geschlossen", [tr("Bir şeyin olması werden ile:"), de("Der Laden wird um sechs geschlossen."), tr("Tekrar dene.")], ["Der Laden wird um sechs Uhr geschlossen", "Um sechs wird der Laden geschlossen", "Um sechs Uhr wird der Laden geschlossen"]) },
       { say: [tr("Şimdi durumu söyle: 'Mağaza pazar günleri kapalı.'")], expect: produce("Der Laden ist sonntags geschlossen", [tr("Var olan hâl sein ile:"), de("Der Laden ist sonntags geschlossen."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Tesis çalışmaya hazır.'")], expect: produce("Die Anlage ist betriebsbereit", [tr("Bu bir durum, süreç değil:"), de("Die Anlage ist betriebsbereit."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Anlage wird seit einer Stunde betriebsbereit."), tr("cümlesi doğru mu?")], expect: truefalse("Die Anlage wird seit einer Stunde betriebsbereit.", false, [tr("Bir saattir süren şey bir durumdur, süreç değil:"), de("Die Anlage ist seit einer Stunde betriebsbereit.")]) },
@@ -396,7 +396,7 @@ export const deB2B03: Conversation[] = [
       { say: [tr("Şimdi: 'Yol iki saat kapatıldı.'")], expect: produce("Die Fahrbahn wurde zwei Stunden gesperrt", [tr("Süre ortaçtan önce:"), de("Die Fahrbahn wurde zwei Stunden gesperrt."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha, şimdiki zamanda: 'Tanıklar aranıyor.'")], expect: produce("Zeugen werden gesucht", [tr("Belirteçsiz çoğul özne, şimdiki zaman edilgeni:"), de("Zeugen werden gesucht."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Der Fahrer wurde ins Krankenhaus gebracht worden."), tr("cümlesi doğru mu?")], expect: truefalse("Der Fahrer wurde ins Krankenhaus gebracht worden.", false, [tr("İki edilgen zaman üst üste binmiş; biri seçilmeli:"), de("Der Fahrer wurde ins Krankenhaus gebracht.")]) },
-      { say: [tr("Son: 'Kaza yeri saat yedide yeniden açıldı.'")], expect: produce("Die Unfallstelle wurde um sieben freigegeben", [tr("Saat ortaçtan önce:"), de("Die Unfallstelle wurde um sieben freigegeben."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Kaza yeri saat yedide yeniden açıldı.'")], expect: produce("Die Unfallstelle wurde um sieben freigegeben", [tr("Saat ortaçtan önce:"), de("Die Unfallstelle wurde um sieben freigegeben."), tr("Tekrar dene.")], ["Die Unfallstelle wurde um sieben Uhr freigegeben", "Um sieben wurde die Unfallstelle freigegeben", "Um sieben Uhr wurde die Unfallstelle freigegeben"]) },
       { say: [tr("Hazırsın. Sohbette bir polis memuruna tanık olduğun kazayı anlatacaksın.")] },
     ],
     chat: {

@@ -162,6 +162,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Mein Tag beginnt um acht",
+          accept: ["Mein Tag beginnt um acht Uhr", "Um acht beginnt mein Tag", "Um acht Uhr beginnt mein Tag", "Mein Tag fängt um acht an", "Mein Tag fängt um acht Uhr an"],
           hint: [
             tr("Saat kalıbın sonuna gelir:"),
             de("Mein Tag beginnt um acht."),
@@ -219,6 +220,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Mein Abend beginnt um sechs",
+          accept: ["Mein Abend beginnt um sechs Uhr", "Um sechs beginnt mein Abend", "Um sechs Uhr beginnt mein Abend", "Mein Abend fängt um sechs an", "Mein Abend fängt um sechs Uhr an"],
           hint: [
             tr("Kalıp aynı, sadece günün yerine akşamı koyuyorsun:"),
             de("Mein Abend beginnt um sechs."),
@@ -634,6 +636,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich stehe um sieben auf",
+          accept: ["Ich stehe um sieben Uhr auf", "Um sieben stehe ich auf", "Um sieben Uhr stehe ich auf"],
           hint: [
             tr("Baştaki parça cümlenin sonuna gider:"),
             de("Ich stehe um sieben auf."),
@@ -1565,6 +1568,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Die Arbeit fängt um acht an",
+          accept: ["Die Arbeit fängt um acht Uhr an", "Um acht fängt die Arbeit an", "Um acht Uhr fängt die Arbeit an", "Die Arbeit beginnt um acht", "Die Arbeit beginnt um acht Uhr", "Um acht beginnt die Arbeit", "Um acht Uhr beginnt die Arbeit"],
           hint: [
             tr("Ortadaki ses değişiyor ve parça en sona gidiyor:"),
             de("Die Arbeit fängt um acht an."),
@@ -1587,6 +1591,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich höre um sechs auf",
+          accept: ["Ich höre um sechs Uhr auf", "Um sechs höre ich auf", "Um sechs Uhr höre ich auf"],
           hint: [
             tr("Saat ortada, ayrılan parça en sonda:"),
             de("Ich höre um sechs auf."),
@@ -1609,6 +1614,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Das Praktikum fängt im September an",
+          accept: ["Im September fängt das Praktikum an", "Das Praktikum beginnt im September", "Im September beginnt das Praktikum"],
           hint: [
             tr("Ayrılabilen fiilin öneki cümlenin sonuna gidiyor:"),
             de("Das Praktikum fängt im September an."),

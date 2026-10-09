@@ -1896,6 +1896,7 @@ export const deA2B01: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Das Konzert hat am Samstag stattgefunden",
+          accept: ["Am Samstag hat das Konzert stattgefunden"],
           hint: [
             tr("Etkinlik özne oluyor ve ortaç sona gidiyor:"),
             de("Das Konzert hat am Samstag stattgefunden."),

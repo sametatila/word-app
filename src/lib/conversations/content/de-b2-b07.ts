@@ -338,7 +338,7 @@ export const deB2B07: Conversation[] = [
       word("Son", { de: "anfeuern", tr: "tezahürat yapmak" }),
       { say: [tr("Kalıbımız:"), de("der gefeierte Sieger"), tr("Yani 'kutlanan galip'. Ortaç eril tekilde -e ekini alıyor.")] },
       { say: [tr("Örnek:"), de("Der gefeierte Sieger wirkt erschöpft."), tr("Tekrar et:"), de("Der gefeierte Sieger wirkt erschöpft")], expect: repeat("Der gefeierte Sieger wirkt erschöpft") },
-      { say: [tr("Sıra sende: 'Belirleyici turnuva yarın başlıyor.'")], expect: produce("Das entscheidende Turnier beginnt morgen", [tr("Belirtili nötr tekilde ortaç -e ekini alır:"), de("Das entscheidende Turnier beginnt morgen."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Belirleyici turnuva yarın başlıyor.'")], expect: produce("Das entscheidende Turnier beginnt morgen", [tr("Belirtili nötr tekilde ortaç -e ekini alır:"), de("Das entscheidende Turnier beginnt morgen."), tr("Tekrar dene.")], ["Morgen beginnt das entscheidende Turnier"]) },
       { say: [tr("Şimdi soruyu sor: 'Takımımız favoriyi yendi mi?'")], expect: produce("Hat unsere Mannschaft den Favoriten besiegt", [tr("Yardımcı fiil başta soru; ortaç en sonda:"), de("Hat unsere Mannschaft den Favoriten besiegt?"), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Şampiyona çoktan belli oldu.'")], expect: produce("Die Meisterschaft ist längst entschieden", [tr("Durum bildiren edilgen; ortaç sonda:"), de("Die Meisterschaft ist längst entschieden."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Meisterschaft ist längst entschieden."), tr("cümlesi doğru mu?")], expect: truefalse("Die Meisterschaft ist längst entschieden.", true, [tr("Doğru. Bu bir durum edilgeni: karar çoktan verilmiş ve öyle duruyor.")]) },

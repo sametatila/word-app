@@ -1591,6 +1591,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Meine Bestellung kommt morgen",
+          accept: ["Morgen kommt meine Bestellung"],
           hint: [
             tr("Gelecekteki bir olay için şimdiki zaman yeter, zaman kelimesi bunu belli eder:"),
             de("Meine Bestellung kommt morgen."),

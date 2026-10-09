@@ -1078,6 +1078,7 @@ export const deA1B08: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich hole dich um acht ab",
+          accept: ["Ich hole dich um acht Uhr ab", "Um acht hole ich dich ab", "Um acht Uhr hole ich dich ab"],
           hint: [
             tr("Fiilin ikinci parçası cümlenin en sonunda kalır:"),
             de("Ich hole dich um acht ab."),
@@ -1960,6 +1961,7 @@ export const deA1B08: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Die Serie beginnt um neun",
+          accept: ["Die Serie beginnt um neun Uhr", "Um neun beginnt die Serie", "Um neun Uhr beginnt die Serie", "Die Serie fängt um neun an", "Die Serie fängt um neun Uhr an"],
           hint: [
             tr("Önce program, sonra fiil, en sonda saat:"),
             de("Die Serie beginnt um neun."),

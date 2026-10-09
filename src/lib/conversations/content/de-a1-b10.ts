@@ -656,6 +656,7 @@ export const deA1B10: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Der Termin ist nächste Woche",
+          accept: ["Nächste Woche ist der Termin"],
           hint: [
             tr("Bu zaman ifadesinde ayrı bir edat gerekmez:"),
             de("Der Termin ist nächste Woche."),
