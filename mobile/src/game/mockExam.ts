@@ -75,7 +75,8 @@ export type Attempt = {
 };
 
 export type MockTodo = { title: string; why: string; how: string };
-export type MockFeedback = { summary: string; strengths: string[]; todo: MockTodo[]; source: "ai" | "rules" };
+/** `perfect`: bölümde hiç hata yok, liste boş (sunucu `mockFlawless`, QA F-0063). */
+export type MockFeedback = { summary: string; strengths: string[]; todo: MockTodo[]; source: "ai" | "rules" | "perfect" };
 
 export type ScoredItem = {
   /**

@@ -63,7 +63,7 @@ type OpenScore = {
 };
 type Attempt = { id: number; answers: Answers; open: Record<string, string>; openScores: Record<string, OpenScore>; taskIx: number; secondsLeft: number; plays: Record<string, number> };
 type Todo = { title: string; why: string; how: string };
-type Feedback = { summary: string; strengths: string[]; todo: Todo[]; source: "ai" | "rules" };
+type Feedback = { summary: string; strengths: string[]; todo: Todo[]; source: "ai" | "rules" | "perfect" };
 /** `explain` sonuçla geliyor: kâğıt gerekçe taşımadan iniyor (`lib/mock-exams/deliver`). */
 type ScoredItem = { id: string; no: number; goal: string; correct: boolean; given: string; expected: string; explain?: string };
 type Score = {
@@ -1556,8 +1556,11 @@ function Result({
           </DetailCard>
         ) : null}
 
+        {/* Hiç hatası olmayan bölümde (`source: "perfect"`) yapılacak iş yok; başlık
+            "YAPILACAKLAR" değil "Kusursuz" (QA F-0063). Kural sunucuda, `mockFlawless`;
+            Android `MockExamScreen` aynı. */}
         {ai ? (
-          <DetailCard title={t("mockexam.todo")}>
+          <DetailCard title={ai.source === "perfect" ? t("skillp.result_perfect") : t("mockexam.todo")}>
             <p className="text-body leading-relaxed">{ai.summary}</p>
             {ai.strengths.length ? (
               <p className="text-body" style={{ color: "var(--color-success)" }}>

@@ -1597,8 +1597,11 @@ function ResultView({
         </DetailCard>
       ) : null}
 
+      {/* Hiç hatası olmayan bölümde (`source: "perfect"`) yapılacak iş yok; başlık
+          "YAPILACAKLAR" değil "Kusursuz" (QA F-0063). Kural sunucuda, `mockFlawless`;
+          web `mock-exam-player` aynı. */}
       {ai ? (
-        <DetailCard title={t("mockexam.todo")}>
+        <DetailCard title={ai.source === "perfect" ? t("skillp.result_perfect") : t("mockexam.todo")}>
           <Text variant="body">{ai.summary}</Text>
           {ai.strengths.length ? (
             <Text variant="caption" color={colors.successText}>
