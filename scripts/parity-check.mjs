@@ -22280,6 +22280,26 @@ console.log("\n" + C.b + "PRATIK DIZME OYUNU" + C.off);
   sameList("dizme oyununda yapay zeka kontrolu", has(mob), has(web));
 }
 
+/* ── anlatim parca arasi ─────────────────────────────────────────────────
+ * QA F-0009 (2026-10-09): anlatim balonunda hedef dildeki parca noktasiz
+ * bitince cumle sonu kayboluyordu ("… Vau, Jott Bir de …"). Ara kurali
+ * (bosluk / nokta) iki kopyada tek; iki balon da yardimciyi cagiriyor. */
+console.log("\n" + C.b + "ANLATIM PARCA ARASI" + C.off);
+{
+  const govde = (p, bas) => {
+    const src = read(p);
+    const i = src.indexOf(bas);
+    if (i < 0) return [bas + " YOK"];
+    return src.slice(i).split("\n").map((l) => l.trimEnd());
+  };
+  sameList("parca arasi yardimcisi", govde("mobile/src/lib/segmentText.ts", "type Seg"), govde("src/lib/conversations/segment-text.ts", "type Seg"));
+  sameList(
+    "balonlar yardimciyi kullaniyor",
+    [/\{s\.text\}\{segmentGap\(b\.segments, i\)\}/.test(read("mobile/src/screens/ConversationScreen.tsx")) ? "evet" : "YOK"],
+    [/segmentGap\(item\.segments, i\)/.test(read("src/components/conversations/conversation-player.tsx")) ? "evet" : "YOK"],
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

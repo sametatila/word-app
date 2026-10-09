@@ -43,6 +43,7 @@ import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "../lib/learningR
 import { produceMiss } from "../lib/sentenceMatch";
 import { judgeTyped } from "../lib/typedAnswer";
 import { produceSource } from "../lib/produceSource";
+import { segmentGap } from "../lib/segmentText";
 import { rescueSentence } from "../lib/sentenceRescue";
 import { track } from "../lib/track";
 import { reduceMotion } from "../lib/reduceMotion";
@@ -1279,10 +1280,11 @@ function BubbleView({ b, colors, onReport, conversationId }: { b: Bubble; colors
         <Text variant="body">
           {b.segments.map((s, i) => (
             <Text key={i} variant="body" color={s.lang !== "tr" ? colors.text : colors.textMuted} style={s.lang !== "tr" ? { fontWeight: "700" } : undefined}>
-              {/* Parçalar arasına boşluk konur — ama sonraki parça noktalama ile
-                  başlıyorsa konmaz, yoksa ekranda "then . Sonra demek" gibi
-                  noktadan önce boşluk çıkıyor. */}
-              {s.text}{i < b.segments.length - 1 && !/^[.,!?;:…]/.test(b.segments[i + 1].text) ? " " : ""}
+              {/* Parçalar arasına boşluk konur — sonraki parça noktalama ile
+                  başlıyorsa konmaz ("then . Sonra" olmasın); hedef dildeki
+                  parçadan sonra yeni cümle başlıyorsa nokta konur ("Jott. Bir
+                  de …", QA F-0009). Kural web ile tek: `lib/segmentText`. */}
+              {s.text}{segmentGap(b.segments, i)}
             </Text>
           ))}
         </Text>

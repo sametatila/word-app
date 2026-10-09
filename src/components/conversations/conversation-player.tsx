@@ -36,6 +36,7 @@ import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "@/lib/conversati
 import { produceMiss } from "@/lib/sentence-match";
 import { judgeTyped } from "@/lib/typed-answer";
 import { produceSource } from "@/lib/conversations/produce-source";
+import { segmentGap } from "@/lib/conversations/segment-text";
 import { rescueSentence } from "@/lib/sentence-rescue";
 import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
@@ -2339,7 +2340,9 @@ function LectureBubble({
                   ) : (
                     seg.text
                   )}
-                  {i < item.segments.length - 1 ? " " : null}
+                  {/* Ara: boşluk, ya da hedef dildeki parçadan sonra yeni cümle
+                      başlıyorsa nokta (QA F-0009; mobil `BubbleView` aynı yardımcı). */}
+                  {segmentGap(item.segments, i) || null}
                 </span>
               ))}
             </motion.span>
