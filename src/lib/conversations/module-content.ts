@@ -68,11 +68,27 @@ export function taughtSense<T extends { de: string; tr: string }>(rows: T[], ite
  * Liste kapalı ve elle yazılı: kalıba uymayan yönerge kırpılmadan geçer.
  * Yanlış kırpmak, kırpmamaktan pahalı — cümlenin yarısını yutan bir düzenli
  * ifade soruyu cevaplanamaz hâle getirir.
+ *
+ * NOKTALI ÇERÇEVE DE ÇERÇEVE (2026-10-09). Liste yalnız iki noktalı biçimi
+ * tanıyordu ("Sıra sende:"); konuşmalar aynı sözü çoğu kez ayrı bir cümle
+ * olarak yazıyor ("Şimdi sıra sende. Şunu İngilizce kur: …") ve sınav kâğıdı
+ * "Şimdi sıra sende." diye başlıyordu. Ölçüldü (bütün kurslar, üç anadil, 6684
+ * madde): Türkçede 65, Almanca yönergede 76 "Jetzt bist du dran.", İngilizcede
+ * ~900 "Last:/One more:/Now:" — sonuncular Türkçede zaten kırpılan
+ * "Son:/Bir tane daha:" satırlarının çevirisi, yani aynı madde anadile göre
+ * farklı görünüyordu. Kırpma artık TEKRARLI: "Şimdi sıra sende. Deneyelim: …"
+ * gibi üst üste iki çerçeve de düşer. Çerçeveden sonra kalan gerçek yönerge
+ * ("Şunu İngilizce kur:", "Bilde auf Englisch:") KALIR — ipucu değil, görev.
+ * Kırpınca geriye bir şey kalmıyorsa kırpılmaz. Kapı: `scripts/check-exams.ts`.
  */
 const LEAD_INS = [
   "Şimdi sıra sende:",
+  "Şimdi sıra sende.",
   "Sıra sende:",
   "Sıra sende.",
+  "Sıra sende,",
+  "Sırada sen varsın.",
+  "Deneme sırası sende:",
   "Şimdi sen söyle:",
   "Şimdi sen sor:",
   "Şimdi sen anlat:",
@@ -80,32 +96,89 @@ const LEAD_INS = [
   "Şimdi sen kur:",
   "Şimdi sen:",
   "Şimdi sen",
+  "Şimdi küçük bir alıştırma.",
+  "Şimdi:",
+  "Deneyelim.",
+  "Deneyelim:",
+  "Deneme zamanı.",
+  "Küçük bir alıştırma.",
+  "Küçük bir deneme.",
+  "Son alıştırma.",
+  "Son alıştırma:",
+  "Son bir alıştırma.",
+  "Son bir alıştırma:",
+  "Son üretim alıştırması.",
+  "Son üretim.",
+  "Son üretim:",
+  "Son bir üretim.",
+  "Son bir soru:",
   "Bir üretim daha:",
   "Bir tane daha:",
+  "Bir tane daha.",
   "Son bir tane:",
+  "Son bir tane.",
   "Son:",
   "Peki",
   /* ÇEVRİLMİŞ YÖNERGELER. Anadili İngilizce/Almanca olan öğrencinin kâğıdı
      çevrilmiş konuşmadan kuruluyor (`moduleProduce`); çerçeve orada da var.
      Sıklığa göre ölçüldü (`data/conversations/lecture/out`, `prose-de/out`),
      uzun olan önce. */
+  "Now it is your turn:",
+  "Now it's your turn.",
   "Now your turn:",
+  "Now your turn,",
+  "Now your turn.",
   "Now you say it:",
   "Now you ask:",
   "Now you:",
+  "Now:",
   "Your turn:",
+  "Your turn.",
+  "Your turn,",
+  "Let us try:",
+  "Let's try.",
+  "A little exercise.",
+  "One last exercise.",
+  "Last exercise.",
+  "One last question:",
+  "One last one:",
+  "Last one:",
+  "Last:",
+  "One more:",
   "Jetzt bist du dran:",
+  "Jetzt bist du dran.",
+  "Jetzt bist du dran,",
   "Jetzt bildest du:",
   "Jetzt fragst du:",
   "Jetzt sag du:",
   "Jetzt du:",
+  "Jetzt du.",
+  "Jetzt eine kleine Übung.",
   "Du bist dran:",
   "Du bist dran.",
+  "Probieren wir es.",
+  "Probieren wir es:",
+  "Probieren wir:",
+  "Zeit zum Üben.",
+  "Eine kleine Übung.",
+  "Ein kleiner Versuch.",
+  "Letzte Produktionsübung.",
+  "Eine letzte Übung.",
+  "Eine letzte Übung:",
+  "Letzte Übung.",
+  "Letzte Übung:",
+  "Noch eins:",
+  "Noch einer:",
+  "Noch einer.",
 ];
 
 /** Yönergenin sonuna eklenmiş konuşma ipuçları — sınavda kırpılır. */
 const HINT_CLAUSES = ["Küçük bir ipucu:", "Küçük bir bilgi:", "İpucu:", "Unutma:", "Hatırlatma:"];
 
+/* Sonda kalan soru çerçevesi. Çevrilmiş yönergelerde tire ya da virgülle
+   bağlı biçimi var ("'…' — what do you say?", "…, wie sagst du das?"); tek
+   başına "What do you say?" bilerek yok: ondan önce bir sahne olabilir ve
+   sahne tek başına görev söylemez. */
 const TAIL_OUTS = [
   "nasıl dersin?",
   "nasıl söylersin?",
@@ -117,26 +190,46 @@ const TAIL_OUTS = [
   "Lütfen söyle.",
   "Lütfen söyleyin.",
   "Lütfen deyin.",
+  "— what do you say?",
+  "— how do you say it?",
+  ", wie sagst du das auf Englisch?",
+  ", wie sagst du das?",
 ];
+
+/* Kuyruk soru çerçevesi kırpılınca önünde asılı kalan dil zarfı:
+   "Bunu İngilizce nasıl söylersin?" → "Bunu İngilizce". Yalnız kuyruk
+   kırpıldıysa ve yalnız bu sözcükler. */
+const DANGLING_LANG = /(?:[\s,]+(?:bunu|Bunu))?(?:[\s,]+(?:İngilizcede|Almancada|İngilizce|Almanca))?\s*$/u;
+const DANGLING_BUNU = /[\s,]+(?:bunu|Bunu)\s*$/u;
+
+/* Ortada kalan sıra çerçevesi: yönerge önce bir açıklama cümlesi verip sonra
+   "Sıra sende:" diyor ("Ülke yerine şehir de söyleyebilirsin. Sıra sende: …").
+   Yalnız cümle sınırından sonra ve yalnız bu sözler; çevresi kalır. */
+const MID_TURN = /(?<=[.!?]\s)(?:Şimdi sıra sende|Sıra sende|Jetzt bist du dran|Du bist dran|Now it is your turn|Now it's your turn|Now your turn|Your turn)[.:,]\s*/gu;
 
 export function examStem(say: Segment[], native: NativeLang = DEFAULT_NATIVE): string {
   // Büyük harf kuralı dile göre: "i" Türkçede "İ", İngilizcede "I".
   const locale = native === "tr" ? "tr-TR" : native === "de" ? "de-DE" : "en-US";
   let text = say
-    .map((s) => (s.lang === "tr" ? s.text : s.text))
+    .map((s) => s.text)
     .join(" ")
     .replace(/\s+/g, " ")
     .trim();
-  for (const lead of LEAD_INS) {
-    if (text.startsWith(lead)) {
-      text = text.slice(lead.length).trim();
-      break;
-    }
+  text = text.replace(MID_TURN, "");
+  // Üst üste çerçeve olabilir ("Şimdi sıra sende. Deneyelim: …"); her tur
+  // en fazla bir çerçeve, geriye bir şey kalmıyorsa durur.
+  for (let round = 0; round < 3; round++) {
+    const lead = LEAD_INS.find((l) => text.startsWith(l));
+    if (!lead) break;
+    const rest = text.slice(lead.length).replace(/^[,;:–—-]\s*/, "").trim();
+    if (!/\p{L}/u.test(rest)) break;
+    text = rest;
   }
   for (const tail of TAIL_OUTS) {
     const at = text.toLocaleLowerCase("tr-TR").lastIndexOf(tail.toLocaleLowerCase("tr-TR"));
     if (at >= 0 && at > text.length - tail.length - 3) {
-      text = text.slice(0, at).trim();
+      const rest = text.slice(0, at).trim().replace(DANGLING_LANG, "").replace(DANGLING_BUNU, "").trim();
+      if (/\p{L}/u.test(rest)) text = rest;
       break;
     }
   }

@@ -10,9 +10,17 @@
  * Bu betik kâğıdı üretmeden önce üretilebilir olduğunu kanıtlıyor:
  * `npm run test:exams`.
  */
-import { targetLangOf } from "../src/lib/courses";
-import { danglingReference, examProduceUsable } from "../src/lib/conversations/module-content";
-import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/conversations/module-content-source";
+import { existsSync, readFileSync } from "node:fs";
+import { targetLangOf, type NativeLang } from "../src/lib/courses";
+import { buildModuleContent, danglingReference, examProduceUsable, examStem } from "../src/lib/conversations/module-content";
+import {
+  sourceAllModules as allModules,
+  sourceModuleContent as moduleContent,
+  sourceModuleConversations as moduleConversations,
+} from "../src/lib/conversations/module-content-source";
+import { resolveConversation, type NativeDict } from "../src/lib/conversations/native";
+import { resolveEnConversation, type DeDict } from "../src/lib/conversations/native-de";
+import type { Conversation } from "../src/lib/conversations/types";
 import { courseExams, EXAM_COURSES, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/conversations/module-exam";
 import { foldSentence } from "../src/lib/sentence-match";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
@@ -142,6 +150,78 @@ for (const course of COURSES) {
   }
   console.log("");
 }
+
+/* ------------------------------------------------- yönerge çerçevesi (examStem) */
+
+/*
+  SINAV MADDESİ ÇERÇEVEYLE BAŞLAMAZ (2026-10-09).
+
+  Üretim maddesinin yönergesi konuşma adımından geliyor ve konuşmanın öğretmen
+  ağzı ("Şimdi sıra sende.", "Jetzt bist du dran.", "One more:") kâğıda
+  geçiyordu: liste yalnız iki noktalı "Sıra sende:" biçimini tanıyordu. Önce
+  sabit örnekler (kırpma kuralının kendisi), sonra bütün kurslar ve anadiller
+  üzerinde kâğıda girebilecek her madde.
+*/
+const seg = (text: string) => [{ lang: "tr" as const, text }];
+const STEM_CASES: { native: NativeLang; say: string; want: string }[] = [
+  { native: "tr", say: "Şimdi sıra sende. Şunu İngilizce kur: 'Bir kedim var.'", want: "Şunu İngilizce kur: 'Bir kedim var.'" },
+  { native: "tr", say: "Sıra sende. 'Bir kedim var.' nasıl söylersin?", want: "'Bir kedim var.'" },
+  { native: "tr", say: "Şimdi sıra sende: 'Bir kedim var.'", want: "'Bir kedim var.'" },
+  { native: "tr", say: "Şimdi sıra sende. Deneyelim: 'Bir kedim var.'", want: "'Bir kedim var.'" },
+  { native: "tr", say: "Sıra sende, kısa biçimle: 'Sanki hiçbir şey olmamış gibi.'", want: "Kısa biçimle: 'Sanki hiçbir şey olmamış gibi.'" },
+  { native: "tr", say: "Şimdi sıra sende. Ekranın kırıldı. Bunu İngilizce nasıl söylersin?", want: "Ekranın kırıldı." },
+  { native: "tr", say: "Ülke yerine şehir de söyleyebilirsin. Sıra sende: \"Ankaralıyım\" cümlesini İngilizce kur.", want: "Ülke yerine şehir de söyleyebilirsin. \"Ankaralıyım\" cümlesini İngilizce kur." },
+  { native: "tr", say: "Şimdi sıra sende.", want: "Şimdi sıra sende." },
+  { native: "en", say: "One more: 'Will you call me this evening?' — what do you say?", want: "'Will you call me this evening?'" },
+  { native: "en", say: "Your turn. You ask: 'What size is this?' — how do you say it?", want: "You ask: 'What size is this?'" },
+  { native: "en", say: "Your turn, in the short form: 'As if nothing had happened.'", want: "In the short form: 'As if nothing had happened.'" },
+  { native: "de", say: "Jetzt bist du dran. Bilde auf Englisch: „Ich habe eine Katze.“", want: "Bilde auf Englisch: „Ich habe eine Katze.“" },
+  { native: "de", say: "Jetzt bist du dran. Ich habe eine Schwester, wie sagst du das?", want: "Ich habe eine Schwester" },
+  { native: "de", say: "Noch eins: Wir hätten geduldiger sein müssen.", want: "Wir hätten geduldiger sein müssen." },
+];
+for (const c of STEM_CASES) {
+  const got = examStem(seg(c.say), c.native);
+  if (got !== c.want) fail(`examStem(${c.native})`, `"${c.say}" → "${got}", beklenen "${c.want}"`);
+}
+
+/** Kâğıtta kalmaması gereken başlangıç: sıra/deneme çerçevesi, üç dilde. */
+const FRAME_START =
+  /^(Şimdi sıra sende|Sıra sende|Sırada sen varsın|Deneyelim[.:]|Son (bir )?alıştırma[.:]|Jetzt bist du dran|Du bist dran|Probieren wir( es)?[.:]|(Eine )?[Ll]etzte Übung[.:]|Noch eins:|(Now )?(it is |it's )?your turn\b|Your turn\b|Last:|One more:|Now:)/u;
+/** Kuyruk soru çerçevesi kırpılınca asılı kalan dil zarfı ("… Bunu İngilizce"). */
+const DANGLING_END = /(\s(bunu|Bunu)|\s(İngilizce|Almanca|İngilizcede|Almancada))$/u;
+
+const loadDict = <T,>(file: string): T | null => (existsSync(file) ? (JSON.parse(readFileSync(file, "utf8")) as T) : null);
+const DICT_EN = loadDict<NativeDict>("src/lib/conversations/generated/native-en.json");
+const DICT_DE = loadDict<DeDict>("src/lib/conversations/generated/native-de.json");
+if (!DICT_EN || !DICT_DE) fail("çerçeve", "anadil sözlüğü yok — önce `npm run conversations:apply && npm run conversations:apply-de`");
+/** Kursun kâğıdı hangi anadillerde kuruluyor (çevrilmiş yönergeyle, `moduleProduce`). */
+const NATIVES: Record<string, { native: NativeLang; localise: (c: Conversation) => Conversation | null }[]> = {
+  de: [
+    { native: "tr", localise: (c) => c },
+    { native: "en", localise: (c) => (DICT_EN ? resolveConversation(DICT_EN, c) : null) },
+  ],
+  en: [
+    { native: "tr", localise: (c) => c },
+    { native: "de", localise: (c) => (DICT_DE ? resolveEnConversation(DICT_DE, c) : null) },
+  ],
+};
+let framed = 0;
+let stems = 0;
+for (const course of COURSES) {
+  for (const { native, localise } of NATIVES[course] ?? []) {
+    for (const m of allModules(course)) {
+      const convs = moduleConversations(course, m.level, m.index).map((c) => localise(c) ?? c);
+      for (const p of examProduceUsable(buildModuleContent(course, m.level, m.index, convs, native).produce)) {
+        stems++;
+        if (FRAME_START.test(p.prompt) || DANGLING_END.test(p.prompt)) {
+          if (++framed <= 8) fail(`${course}·${native}·${p.id}`, `yönerge çerçeveyle başlıyor ya da asılı bitiyor: "${p.prompt}" — LEAD_INS/TAIL_OUTS (module-content)`);
+        }
+      }
+    }
+  }
+}
+if (framed > 8) fail("çerçeve", `${framed - 8} madde daha`);
+console.log(`Yönerge çerçevesi: ${stems} madde (iki kurs, üç anadil), ${STEM_CASES.length} sabit örnek${framed ? `, ${framed} çerçeveli` : ", temiz"}.\n`);
 
 // Seviye sınavı beceri bankasından soru çeker (exam.ts, pickTexts). Sınav kâğıdı
 // soruyu YALNIZ şıklara basarak çiziyor; boşluk doldurma / kısa cevap / dikte
