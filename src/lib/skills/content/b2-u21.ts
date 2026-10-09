@@ -49,7 +49,6 @@ export const b2U21: SkillExercise[] = [
       { de: "die Veränderung", tr: "değişim", en: "change" },
       { de: "offen", tr: "açık", en: "open" },
       { de: "interessant", tr: "ilginç", en: "interesting" },
-      { de: "wischen", tr: "paspaslamak", en: "to mop" },
       { de: "normal", tr: "normal", en: "normal" },
       { de: "kulturell", tr: "kültürel", en: "cultural" },
       { de: "genau", tr: "tam olarak", en: "exactly" },

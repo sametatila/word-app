@@ -36,7 +36,7 @@ export const c1U07: SkillExercise[] = [
       { de: "improvisieren", tr: "doğaçlama yapmak", en: "to improvise" },
       { de: "die Denkpause", tr: "düşünme molası", en: "pause for thought" },
       { de: "gliedern", tr: "bölümlemek", en: "to structure" },
-      { de: "routiniert", tr: "alışkanlıkla / deneyimli", en: "practiced" },
+      { de: "routiniert", tr: "deneyimli / tecrübeli", en: "practiced" },
       { de: "das Manuskript", tr: "yazılı metin", en: "manuscript" },
       { de: "die Rhetorik", tr: "retorik", en: "rhetoric" },
       { de: "einfallen", tr: "aklına gelmek", en: "to occur to someone" },

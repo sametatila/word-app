@@ -20,9 +20,9 @@
   "de": "Es heißt \"The warranty is two years, so this isn't a problem.\""
  },
  {
-  "tr": "\"We danced until two in the morning.\" Düğün Bursa'daydı.",
+  "tr": "\"We danced until two in the morning.\" Sabah saat ikiye kadar dans etmişler.",
   "kind": "explain",
-  "de": "\"We danced until two in the morning.\" Die Hochzeit war in Bursa."
+  "de": "\"We danced until two in the morning.\" Sie haben bis zwei Uhr morgens getanzt."
  },
  {
   "tr": "\"It's 60 euros a night, and the price includes breakfast.\"",
@@ -60,9 +60,9 @@
   "de": "\"You should sleep at least eight hours\" — zurzeit schläft sie fünf Stunden."
  },
  {
-  "tr": "\"The apartment is on the third floor of a quiet building.\" Asansör yok.",
+  "tr": "\"The apartment is on the third floor of a quiet building.\" Daire üçüncü katta; asansör olmadığı için merdivenle çıkılıyor.",
   "kind": "explain",
-  "de": "\"The apartment is on the third floor of a quiet building.\" Einen Aufzug gibt es nicht."
+  "de": "\"The apartment is on the third floor of a quiet building.\" Die Wohnung liegt im dritten Stock; es gibt keinen Aufzug, man nimmt die Treppe."
  },
  {
   "tr": "\"My father was a fisherman\" — Holly yazları teknede ona yardım ederdi.",

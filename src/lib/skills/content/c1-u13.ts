@@ -47,7 +47,7 @@ export const c1U13: SkillExercise[] = [
       { de: "unzulässig", tr: "kabul edilemez", en: "inadmissible" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "außen", tr: "dıştan", en: "on the outside" },
-      { de: "suggerieren", tr: "telkin etmek", en: "to imply" },
+      { de: "suggerieren", tr: "ima etmek / izlenimi vermek", en: "to imply" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "fremd", tr: "başkasına ait", en: "someone else's" },
       { de: "die Auslassung", tr: "atlama", en: "omission" },

@@ -304,7 +304,7 @@ export const c1U19: SkillExercise[] = [
       { de: "die Mathematik", tr: "matematik", en: "math" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "lehren", tr: "ders vermek", en: "to teach" },
-      { de: "voraus", tr: "önden", en: "ahead" },
+      { de: "voraussetzen", tr: "gerektirmek / ön koşul olmak", en: "to presuppose" },
       { de: "ausbilden", tr: "yetiştirmek", en: "to train" },
       { de: "also", tr: "yani", en: "so" },
     ],

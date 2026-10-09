@@ -152,7 +152,7 @@ export const deA1P13: SkillExercise[] = [
         text: "Wann kommt das Taxi?",
         options: ["heute Abend", "um halb sieben", "morgen um sieben Uhr"],
         answer: 2,
-        explain: "„Kann ich für morgen früh ein Taxi bestellen? Um sieben Uhr?“ — resepsiyon siparişi veriyor.",
+        explain: "„Kann ich für morgen früh ein Taxi bestellen? Um sieben Uhr?“ — resepsiyonist taksiyi onun için çağırıyor.",
       },
     ],
   },

@@ -303,7 +303,7 @@ export const enB1U22: SkillExercise[] = [
       { de: "signed", tr: "imzaladı" },
       { de: "twice a day", tr: "günde iki kez" },
       { de: "in the end", tr: "sonunda" },
-      { de: "learned", tr: "öğrenildi" },
+      { de: "learned", tr: "öğrendim / öğrendiğim" },
     ],
     minutes: 6,
     segments: [

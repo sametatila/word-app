@@ -226,7 +226,7 @@ export const c1U02: SkillExercise[] = [
       { de: "der Rückhalt", tr: "arka çıkma / destek", en: "backing" },
       { de: "die Befugnis", tr: "yetki", en: "authority" },
       { de: "das Ermessen", tr: "takdir yetkisi", en: "discretion" },
-      { de: "schief", tr: "eğri", en: "crooked" },
+      { de: "schiefgehen", tr: "ters gitmek", en: "to go wrong" },
       { de: "leicht", tr: "kolay", en: "easy" },
       { de: "formulieren", tr: "ifade etmek", en: "to phrase" },
     ],

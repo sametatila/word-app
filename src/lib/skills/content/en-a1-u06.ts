@@ -75,7 +75,7 @@ export const enA1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["five", "5"],
-        explain: "„Soup of the day: 5 euros“ — menünün en pahalı tek maddesi.",
+        explain: "„Soup of the day: 5 euros“ — günün çorbası 5 avro.",
       },
       {
         kind: "short_answer",
@@ -83,7 +83,7 @@ export const enA1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["eight euros", "8 euros", "eight"],
-        explain: "„Breakfast: 8 euros.“ — tek tek alsan daha pahalı olurdu.",
+        explain: "„Breakfast: 8 euros.“ — yumurta, ekmek, tereyağı, peynir ve çay ya da kahve bu fiyata dahil.",
       },
     ],
   },

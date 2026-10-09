@@ -47,7 +47,7 @@ export const c1U23: SkillExercise[] = [
       { de: "die Pünktlichkeit", tr: "dakiklik", en: "punctuality" },
       { de: "interessant", tr: "ilginç", en: "interesting" },
       { de: "erzeugen", tr: "üretmek", en: "to generate" },
-      { de: "schief", tr: "eğri", en: "crooked" },
+      { de: "schief", tr: "çarpık", en: "skewed" },
       { de: "die Bilanz", tr: "bilanço", en: "balance sheet" },
       { de: "passt", tr: "tamam", en: "fine" },
       { de: "schließen", tr: "sonuç çıkarmak", en: "to conclude" },

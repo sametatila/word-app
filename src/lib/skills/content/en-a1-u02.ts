@@ -236,7 +236,7 @@ export const enA1U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["I speak a little English.", "I speak a little English"],
-        explain: "„I speak a little English.“ — „a little“ tek parça ve „English“ büyük harfle yazılır.",
+        explain: "„I speak a little English.“ — „a little“ iki ayrı sözcük, „English“ ise büyük harfle yazılır.",
       },
       {
         kind: "short_answer",

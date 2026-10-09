@@ -68,7 +68,7 @@ export const a2U20: SkillExercise[] = [
         text: "Welches Kompliment ist unter Kollegen problematisch?",
         options: ["Über die Arbeit", "Über das Aussehen", "Über die Jacke"],
         answer: 1,
-        explain: "„Du siehst heute attraktiv aus“ klingt unter Kollegen schnell zu persönlich.",
+        explain: "„Du siehst heute attraktiv aus“ — dış görünüşe dair iltifat iş arkadaşları arasında çabuk fazla kişisel kaçıyor.",
       },
       {
         kind: "short_answer",

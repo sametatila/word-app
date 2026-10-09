@@ -164,7 +164,7 @@ export const a2U15: SkillExercise[] = [
       { de: "die Gebühr", tr: "ücret", en: "fee" },
       { de: "sparen", tr: "biriktirmek", en: "to save" },
       { de: "der Kredit", tr: "kredi", en: "loan" },
-      { de: "das Sparbuch", tr: "tasarruf cüzdanı", en: "savings passbook" },
+      { de: "das Sparbuch", tr: "tasarruf hesabı / banka cüzdanı", en: "savings passbook" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "normal", tr: "normal", en: "normal" },
       { de: "also", tr: "yani", en: "so" },

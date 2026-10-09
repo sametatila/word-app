@@ -179,7 +179,7 @@ export const enA2P11: SkillExercise[] = [
           "The café is open all day.",
         ],
         answer: 1,
-        explain: "„They are two euros cheaper here than on the bus.“ Kafe de on buçukta kapanıyor.",
+        explain: "„They are two euros cheaper here than on the bus.“ Yani orada daha ucuz; kafe ise bütün gün açık değil, on buçukta kapanıyor.",
       },
     ],
   },

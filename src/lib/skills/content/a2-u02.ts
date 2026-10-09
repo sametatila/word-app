@@ -180,7 +180,7 @@ export const a2U02: SkillExercise[] = [
         text: "Wie lange hat Lena gewartet?",
         options: ["Zwanzig Minuten", "Vierzig Minuten", "Eine Stunde"],
         answer: 1,
-        explain: "„Ich warte seit vierzig Minuten.“ Yarım saat trenin durduğu süre.",
+        explain: "„Ich warte seit vierzig Minuten.“ Lena kırk dakikadır bekliyor; yarım saat ise trenin yolda durduğu süre.",
       },
       {
         kind: "gapfill",

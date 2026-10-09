@@ -116,7 +116,7 @@ export const b1U21: SkillExercise[] = [
       { de: "das Kraftwerk", tr: "santral", en: "power plant" },
       { de: "elektrisch", tr: "elektrikli", en: "electric" },
       { de: "Grad", tr: "derece", en: "degree" },
-      { de: "kippen", tr: "yana yatırmak", en: "to tilt" },
+      { de: "kippen", tr: "vasistas açmak", en: "to tilt open" },
       { de: "kühl", tr: "serin", en: "cool" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
     ],

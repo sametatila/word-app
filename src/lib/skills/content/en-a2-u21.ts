@@ -216,7 +216,7 @@ export const enA2U21: SkillExercise[] = [
         text: "Lucy does not think the series is as good as people say.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I don't think it is as good as people say.“ — olumsuz „think“e takılıyor.",
+        explain: "„I don't think it is as good as people say.“ — İngilizcede olumsuzluk „think“ fiiline geliyor.",
       },
       {
         kind: "gapfill",

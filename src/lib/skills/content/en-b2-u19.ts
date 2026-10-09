@@ -299,7 +299,7 @@ export const enB2U19: SkillExercise[] = [
     gloss: [
       { de: "talent", tr: "yetenek" },
       { de: "the workload", tr: "iş yükü" },
-      { de: "in pairs", tr: "ikişerli" },
+      { de: "in pairs", tr: "ikişer ikişer" },
       { de: "a participant", tr: "katılımcı" },
       { de: "coach", tr: "koçluk yapmak" },
     ],

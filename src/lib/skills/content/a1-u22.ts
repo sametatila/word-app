@@ -59,7 +59,7 @@ export const a1U22: SkillExercise[] = [
         options: ["nur in der Apotheke", "auch in der Drogerie", "im Supermarkt"],
         answer: 0,
         explain:
-          "„Tabletten mit Rezept bekommen Sie nur in der Apotheke, nicht in der Drogerie.“ Almanya'da Drogerie ilaç satmaz — sabun ve şampuan satar.",
+          "„Tabletten mit Rezept bekommen Sie nur in der Apotheke, nicht in der Drogerie.“ Reçeteli ilaç yalnız eczanede satılıyor; Drogerie'de ya da süpermarkette yok.",
       },
       {
         kind: "gapfill",

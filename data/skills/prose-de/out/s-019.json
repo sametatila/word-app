@@ -135,9 +135,9 @@
   "de": "Im Restaurant ist die Reihenfolge immer gleich: Tisch, Bestellung, Essen, Rechnung."
  },
  {
-  "tr": "„Breakfast: 8 euros.“ — tek tek alsan daha pahalı olurdu.",
+  "tr": "„Breakfast: 8 euros.“ — yumurta, ekmek, tereyağı, peynir ve çay ya da kahve bu fiyata dahil.",
   "kind": "explain",
-  "de": "„Breakfast: 8 euros.“ — einzeln bestellt wäre es teurer."
+  "de": "„Breakfast: 8 euros.“ — Ei, Brot, Butter, Käse und Tee oder Kaffee sind im Preis enthalten."
  },
  {
   "tr": "„I have a cat and a fish.“ — at ve kuş hayvanat bahçesinde.",
@@ -155,9 +155,9 @@
   "de": "„My mother always takes our photos.“ — deshalb ist die Mutter nicht auf dem Foto."
  },
  {
-  "tr": "„Soup of the day: 5 euros“ — menünün en pahalı tek maddesi.",
+  "tr": "„Soup of the day: 5 euros“ — günün çorbası 5 avro.",
   "kind": "explain",
-  "de": "„Soup of the day: 5 euros“ — der teuerste Einzelposten der Karte."
+  "de": "„Soup of the day: 5 euros“ — die Tagessuppe kostet 5 Euro."
  },
  {
   "tr": "„He is quiet, but he is very strong.“ Tyler ise „never quiet“.",

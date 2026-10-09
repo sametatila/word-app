@@ -138,7 +138,7 @@ export const b2U18: SkillExercise[] = [
       { de: "die Kaufkraft", tr: "satın alma gücü", en: "purchasing power" },
       { de: "das Produkt", tr: "ürün", en: "product" },
       { de: "passen", tr: "uymak", en: "to fit, to suit" },
-      { de: "der Ertrag", tr: "verim", en: "yield" },
+      { de: "der Ertrag", tr: "getiri", en: "return" },
     ],
     minutes: 6,
     text:
@@ -206,7 +206,7 @@ export const b2U18: SkillExercise[] = [
     gloss: [
       { de: "der Reiseveranstalter", tr: "tur operatörü", en: "tour operator" },
       { de: "die Pauschalreise", tr: "paket tur", en: "package tour" },
-      { de: "die Besichtigung", tr: "gezme", en: "sightseeing" },
+      { de: "die Besichtigung", tr: "gezip görme / gezi", en: "sightseeing" },
       { de: "der Fremdenverkehr", tr: "turist hareketliliği", en: "tourism" },
       { de: "abgelegen", tr: "ücra", en: "remote" },
       { de: "unberührt", tr: "el değmemiş", en: "untouched" },

@@ -1,4 +1,5 @@
 [
+ {"head": "would rather", "tr": "tercih etmek", "de": "lieber möchten"},
  {"head": "alarm", "tr": "alarm", "de": "Alarm"},
  {"head": "disclosure", "tr": "açıklama", "de": "die Offenlegung"},
  {"head": "disagreement", "tr": "anlaşmazlık", "de": "die Meinungsverschiedenheit"},
@@ -485,7 +486,6 @@
  {"head": "involve", "tr": "içermek", "de": "betreffen"},
  {"head": "a stroke", "tr": "çizgi", "de": "der Strich"},
  {"head": "tied to", "tr": "bağlı", "de": "gebunden an"},
- {"head": "reverse", "tr": "geri çevirmek", "de": "rückgängig machen"},
  {"head": "a supporter", "tr": "destekçi", "de": "der Befürworter"},
  {"head": "fertile", "tr": "verimli", "de": "fruchtbar"},
  {"head": "a volume", "tr": "hacim", "de": "die Menge"},

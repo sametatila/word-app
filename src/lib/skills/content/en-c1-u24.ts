@@ -151,7 +151,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "currency", tr: "para birimi" },
       { de: "unsettles", tr: "huzursuz ediyor" },
       { de: "a maxim", tr: "ilke" },
-      { de: "without doubt", tr: "kuşkuya uğramadan" },
+      { de: "without doubt", tr: "sorgulanmadan" },
       { de: "a conclusion", tr: "sonuç" },
       { de: "equal", tr: "eşit" },
       { de: "a survivor", tr: "sağ kalan" },

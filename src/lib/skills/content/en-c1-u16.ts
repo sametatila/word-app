@@ -154,7 +154,7 @@ export const enC1U16: SkillExercise[] = [
       { de: "a creek", tr: "dere" },
       { de: "sink into", tr: "içine sızmak" },
       { de: "a brochure", tr: "broşür" },
-      { de: "reverse", tr: "geri çevirmek" },
+      { de: "reverse", tr: "geri almak / tersine çevirmek" },
     ],
     minutes: 12,
     text:

@@ -277,7 +277,7 @@ export const c1U08: SkillExercise[] = [
           "Dass Nele mit niemandem darüber spricht",
         ],
         answer: 1,
-        explain: "„du machst daraus keine Mücke einen Elefanten“ — sonra kalıbı kendisi düzeltiyor.",
+        explain: "„du machst daraus keine Mücke einen Elefanten“ — yani eleştirisini büyütmemesini, pireyi deve yapmamasını istiyor; deyimi sonra kendisi düzeltiyor.",
       },
       {
         kind: "short_answer",
@@ -302,7 +302,7 @@ export const c1U08: SkillExercise[] = [
     genre: "dialogue",
     intro: "Ağustos izin planı neredeyse hazır; tek sorun fuar haftası. İki meslektaş bunu nasıl çözüyor?",
     gloss: [
-      { de: "Tomaten auf den Augen haben", tr: "göz göre göre görmemek", en: "to be blind to the obvious" },
+      { de: "Tomaten auf den Augen haben", tr: "apaçık olanı görmemek", en: "to be blind to the obvious" },
       { de: "Das ist mir Wurst", tr: "umurumda değil", en: "I could not care less" },
       { de: "in den sauren Apfel beißen", tr: "acı lokmayı yutmak", en: "to bite the bullet" },
       { de: "die Extrawurst", tr: "ayrıcalık", en: "special treatment" },

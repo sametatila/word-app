@@ -166,7 +166,7 @@ export const b1U07: SkillExercise[] = [
     intro: "İki kişi yola çıkmadan önce işleri paylaşıyor. Ne önce, ne aynı anda?",
     minutes: 4,
     gloss: [
-      { de: "los", tr: "hadi / yola", en: "off" },
+      { de: "los", tr: "yola çıkmak / hadi", en: "off (to set off)" },
       { de: "gleichzeitig", tr: "aynı anda", en: "at the same time" },
       { de: "dabei", tr: "bu sırada / yanında", en: "with it" },
       { de: "etwa", tr: "yaklaşık", en: "about" },

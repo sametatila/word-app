@@ -106,7 +106,7 @@ export const b1U35: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "der Raucher", tr: "sigara içen", en: "smoker" },
-      { de: "der Nichtraucher", tr: "içmeyen", en: "non-smoker" },
+      { de: "der Nichtraucher", tr: "sigara içmeyen", en: "non-smoker" },
       { de: "das Suchtmittel", tr: "bağımlılık yapan madde", en: "addictive substance" },
       { de: "sich verstecken", tr: "saklanmak", en: "to hide" },
       { de: "das Opfer", tr: "kurban", en: "victim" },
@@ -300,7 +300,7 @@ export const b1U35: SkillExercise[] = [
     minutes: 8,
     gloss: [
       { de: "der Raucher", tr: "sigara içen", en: "smoker" },
-      { de: "der Nichtraucher", tr: "içmeyen", en: "non-smoker" },
+      { de: "der Nichtraucher", tr: "sigara içmeyen", en: "non-smoker" },
       { de: "das Suchtmittel", tr: "bağımlılık maddesi", en: "addictive substance" },
       { de: "die Drogerie", tr: "kozmetik market", en: "drugstore" },
       { de: "aufgehen", tr: "doğmak", en: "to rise" },

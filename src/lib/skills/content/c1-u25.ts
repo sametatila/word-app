@@ -219,7 +219,7 @@ export const c1U25: SkillExercise[] = [
     intro: "Öğrendiğini aktarmak: hangi öğüt işe yarar?",
     gloss: [
       { de: "weitergeben", tr: "aktarmak", en: "to pass on" },
-      { de: "der Rückschlag", tr: "geri tepme / aksilik", en: "setback" },
+      { de: "der Rückschlag", tr: "aksilik / gerileme", en: "setback" },
       { de: "ermutigen", tr: "cesaretlendirmek", en: "to encourage" },
       { de: "die Geduld", tr: "sabır", en: "patience" },
       { de: "der Aufstieg", tr: "yükseliş", en: "ascent" },

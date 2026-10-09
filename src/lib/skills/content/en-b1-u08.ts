@@ -122,7 +122,7 @@ export const enB1U08: SkillExercise[] = [
       { de: "sign in", tr: "girişte imza atmak" },
       { de: "on the wall", tr: "duvarda" },
       { de: "twice in a row", tr: "üst üste iki kez" },
-      { de: "rather", tr: "tercihen" },
+      { de: "would rather", tr: "tercih etmek" },
     ],
     minutes: 7,
     text:

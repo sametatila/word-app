@@ -2151,7 +2151,7 @@ export const enMobile2026: SkillExercise[] = [
           "thirty",
           "30"
         ],
-        "explain": "\"It's forty dollars. The green one is thirty dollars.\" Müşteri siyahı alıyor."
+        "explain": "\"It's forty dollars. The green one is thirty dollars.\" Kırk dolar, müşterinin aldığı siyah ceketin fiyatı; yeşil ceket otuz dolar."
       },
       {
         "kind": "short_answer",
@@ -4149,7 +4149,7 @@ export const enMobile2026: SkillExercise[] = [
           "third",
           "3rd"
         ],
-        "explain": "\"The apartment is on the third floor of a quiet building.\" Asansör yok."
+        "explain": "\"The apartment is on the third floor of a quiet building.\" Daire üçüncü katta; asansör olmadığı için merdivenle çıkılıyor."
       },
       {
         "kind": "short_answer",
@@ -5129,7 +5129,7 @@ export const enMobile2026: SkillExercise[] = [
           "two",
           "2"
         ],
-        "explain": "\"We danced until two in the morning.\" Düğün Bursa'daydı."
+        "explain": "\"We danced until two in the morning.\" Sabah saat ikiye kadar dans etmişler."
       },
       {
         "kind": "short_answer",

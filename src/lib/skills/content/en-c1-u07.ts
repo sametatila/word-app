@@ -51,7 +51,7 @@ export const enC1U07: SkillExercise[] = [
       { de: "the edge", tr: "kenar" },
       { de: "an owner", tr: "sahip" },
       { de: "a disaster", tr: "felaket" },
-      { de: "unhurt", tr: "yarasız" },
+      { de: "unhurt", tr: "yara almadan" },
       { de: "a burn", tr: "yanık" },
       { de: "regional", tr: "bölgesel" },
       { de: "an image", tr: "görüntü" },

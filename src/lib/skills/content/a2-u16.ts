@@ -341,7 +341,7 @@ export const a2U16: SkillExercise[] = [
       { de: "das Doppelbett", tr: "çift kişilik yatak", en: "double bed" },
       { de: "einchecken", tr: "giriş yapmak", en: "to check in" },
       { de: "die Anreise", tr: "geliş", en: "arrival" },
-      { de: "voraus", tr: "önden", en: "ahead" },
+      { de: "im Voraus", tr: "şimdiden", en: "in advance" },
       { de: "das Einzelzimmer", tr: "tek kişilik oda", en: "single room" },
       { de: "der Parkplatz", tr: "otopark", en: "parking lot" },
       { de: "also", tr: "yani", en: "so" },

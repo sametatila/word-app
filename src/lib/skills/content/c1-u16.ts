@@ -45,7 +45,7 @@ export const c1U16: SkillExercise[] = [
       { de: "die Bürgerinitiative", tr: "yurttaş girişimi", en: "citizens' action group" },
       { de: "ersatzlos", tr: "yerine bir şey konmadan", en: "without replacement" },
       { de: "die Wende", tr: "dönüm noktası", en: "turning point" },
-      { de: "das Blockheizkraftwerk", tr: "ortak ısı ve elektrik santrali", en: "combined heat and power plant" },
+      { de: "das Blockheizkraftwerk", tr: "kojenerasyon santrali", en: "combined heat and power plant" },
       { de: "veranschlagen", tr: "öngörmek", en: "to estimate" },
       { de: "das Becken", tr: "havuz", en: "pool" },
       { de: "die Tribüne", tr: "tribün", en: "stand" },

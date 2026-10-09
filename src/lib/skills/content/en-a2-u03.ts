@@ -138,7 +138,7 @@ export const enA2U03: SkillExercise[] = [
         text: "Katie has been abroad.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„I have never been abroad.“ — yurt dışına giden kardeşi.",
+        explain: "„I have never been abroad.“ — yurt dışına giden Katie değil, kardeşi.",
       },
       {
         kind: "gapfill",
@@ -282,7 +282,7 @@ export const enA2U03: SkillExercise[] = [
         text: "How many countries has Katie's sister visited?",
         options: ["six", "two", "many"],
         answer: 0,
-        explain: "„My sister has visited six countries.“ — iki, annenin Almanya sayısı.",
+        explain: "„My sister has visited six countries.“ — iki ise annenin Almanya'ya gidiş sayısı.",
       },
       {
         kind: "truefalse",

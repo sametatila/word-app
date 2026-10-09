@@ -175,7 +175,7 @@ export const a1U25: SkillExercise[] = [
       { de: "aufgestanden", tr: "kalkmış", en: "got up", note: "yataktan" },
       { de: "die Hausaufgabe", tr: "ödev", en: "homework" },
       { de: "vorgestern", tr: "evvelsi gün", en: "the day before yesterday" },
-      { de: "hatte", tr: "sahiptim", en: "had", note: "haben fiilinin geçmişi" },
+      { de: "hatte", tr: "vardı", en: "had", note: "haben fiilinin geçmişi" },
     ],
     minutes: 2,
     segments: [

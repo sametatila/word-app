@@ -257,7 +257,7 @@ export const a2U03: SkillExercise[] = [
         text: "Warum ist Helene nicht Tierärztin geworden?",
         options: ["Sie musste sofort arbeiten.", "Sie mochte keine Tiere.", "Die Schule war zu teuer."],
         answer: 0,
-        explain: "„ich musste nach der Schule sofort arbeiten“ — zorunluluk fiilinin kısa geçmişi.",
+        explain: "„ich musste nach der Schule sofort arbeiten“ — okuldan hemen sonra çalışmak zorunda kaldığı için.",
       },
       {
         kind: "short_answer",

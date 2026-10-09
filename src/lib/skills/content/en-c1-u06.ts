@@ -53,7 +53,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "withdrawn", tr: "geri çekilmiş" },
       { de: "a tow truck", tr: "çekici" },
       { de: "outvote", tr: "oylamada yenmek" },
-      { de: "sworn in", tr: "yemin ettirilmiş" },
+      { de: "sworn in", tr: "yemin ederek göreve başlamış" },
       { de: "enact", tr: "yürürlüğe koymak" },
       { de: "enforce", tr: "uygulatmak" },
       { de: "discretion", tr: "takdir yetkisi" },

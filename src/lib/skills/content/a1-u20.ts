@@ -49,7 +49,7 @@ export const a1U20: SkillExercise[] = [
         text: "Wie viel kostet der Eintritt?",
         options: ["nichts", "zwei Euro", "nur für Kinder nichts"],
         answer: 0,
-        explain: "„Der Eintritt ist frei.“ — Almanya'da şehir parkları ücretsizdir.",
+        explain: "„Der Eintritt ist frei.“ Giriş ücretsiz, yani hiçbir şey ödenmiyor.",
       },
       {
         text: "Darf man im See schwimmen?",

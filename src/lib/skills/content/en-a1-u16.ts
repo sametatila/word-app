@@ -96,7 +96,7 @@ export const enA1U16: SkillExercise[] = [
       { de: "something", tr: "bir şey" },
       { de: "call", tr: "aramak" },
       { de: "listen", tr: "dinlemek" },
-      { de: "let me", tr: "izin ver" },
+      { de: "let me look", tr: "bir bakayım" },
     ],
     minutes: 4,
     text:

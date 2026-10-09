@@ -80,9 +80,9 @@
   "en": "It says \"The warranty is two years, so this isn't a problem.\""
  },
  {
-  "tr": "\"We danced until two in the morning.\" Düğün Bursa'daydı.",
+  "tr": "\"We danced until two in the morning.\" Sabah saat ikiye kadar dans etmişler.",
   "kind": "explain",
-  "en": "\"We danced until two in the morning.\" The wedding was in Bursa."
+  "en": "\"We danced until two in the morning.\" They danced until two in the morning."
  },
  {
   "tr": "\"Then turn left at the bank.\" Sağa değil, sola dönülüyor.",
@@ -150,9 +150,9 @@
   "en": "\"He has an exam on Monday.\" That is why Isaac is not coming."
  },
  {
-  "tr": "\"The apartment is on the third floor of a quiet building.\" Asansör yok.",
+  "tr": "\"The apartment is on the third floor of a quiet building.\" Daire üçüncü katta; asansör olmadığı için merdivenle çıkılıyor.",
   "kind": "explain",
-  "en": "\"The apartment is on the third floor of a quiet building.\" There is no elevator."
+  "en": "\"The apartment is on the third floor of a quiet building.\" The apartment is on the third floor; there is no elevator, so you take the stairs."
  },
  {
   "tr": "\"My father was a fisherman\" — Holly yazları teknede ona yardım ederdi.",
@@ -230,9 +230,9 @@
   "en": "\"Henry is a student. Anna works in a hospital.\" The phone number is Anna's too."
  },
  {
-  "tr": "\"It's forty dollars. The green one is thirty dollars.\" Müşteri siyahı alıyor.",
+  "tr": "\"It's forty dollars. The green one is thirty dollars.\" Kırk dolar, müşterinin aldığı siyah ceketin fiyatı; yeşil ceket otuz dolar.",
   "kind": "explain",
-  "en": "\"It's forty dollars. The green one is thirty dollars.\" The customer takes the black one."
+  "en": "\"It's forty dollars. The green one is thirty dollars.\" Forty dollars is the price of the black jacket the customer buys; the green one is thirty dollars."
  },
  {
   "tr": "\"I've already taken a food safety course.\" Büyük mutfak deneyimi yok ama kurs var.",

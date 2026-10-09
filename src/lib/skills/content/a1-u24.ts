@@ -79,7 +79,7 @@ export const a1U24: SkillExercise[] = [
         options: ["etwas Kleines, zum Beispiel Saft", "nichts", "ein großes Geschenk"],
         answer: 0,
         explain:
-          "„Nichts Großes! Vielleicht einen Saft oder etwas Süßes.“ Almanya'da bir şey götürmek beklenir; eli boş gitmek ayıp sayılır.",
+          "„Nichts Großes! Vielleicht einen Saft oder etwas Süßes.“ Büyük bir hediye değil ama eli boş da değil: meyve suyu ya da tatlı gibi küçük bir şey.",
       },
       {
         text: "Darf man den Partner mitbringen?",

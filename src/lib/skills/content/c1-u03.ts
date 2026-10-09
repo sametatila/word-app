@@ -141,7 +141,7 @@ export const c1U03: SkillExercise[] = [
       { de: "solche", tr: "böyle", en: "such" },
       { de: "die Anhörung", tr: "dinleme oturumu", en: "hearing" },
       { de: "die Moderation", tr: "moderatörlük", en: "moderation" },
-      { de: "fällen", tr: "devirmek", en: "to fell" },
+      { de: "in vergleichbaren Fällen", tr: "benzer durumlarda", en: "in comparable cases" },
       { de: "sich bewähren", tr: "kendini kanıtlamak", en: "to prove itself" },
       { de: "zugespitzt", tr: "keskinleşmiş", en: "intensified" },
     ],

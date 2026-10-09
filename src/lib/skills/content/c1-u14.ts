@@ -370,7 +370,7 @@ export const c1U14: SkillExercise[] = [
           "Konjunktiv I: sie habe gesehen, bestehe eine Lücke",
           "als Wiedergabe im Konjunktiv",
         ],
-        explain: "„Die Zeugin erklärt, sie habe … bestehe …“ — tutanak taraf tutmuyor.",
+        explain: "„Die Zeugin erklärt, sie habe … bestehe …“ — dolaylı anlatımla (Konjunktiv I): tutanak ifadeyi aktarıyor, doğruluğunu onaylamıyor.",
       },
     ],
   },

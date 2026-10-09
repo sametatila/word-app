@@ -97,7 +97,7 @@ export const enA1U20: SkillExercise[] = [
     gloss: [
       { de: "problem", tr: "sorun" },
       { de: "Maybe next time", tr: "belki başka zaman" },
-      { de: "I'm afraid I can't", tr: "korkarım olmaz" },
+      { de: "I'm afraid I can't", tr: "maalesef yapamam / gelemem" },
     ],
     minutes: 4,
     text:

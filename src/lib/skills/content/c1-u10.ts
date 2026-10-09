@@ -38,7 +38,7 @@ export const c1U10: SkillExercise[] = [
     gloss: [
       { de: "den Ton angeben", tr: "havayı belirlemek", en: "to call the tune" },
       { de: "nach jemandes Pfeife tanzen", tr: "birinin dediğini yapmak", en: "to dance to someone's tune" },
-      { de: "die erste Geige spielen", tr: "birinci kemanı çalmak", en: "to play first fiddle" },
+      { de: "die erste Geige spielen", tr: "başı çekmek / belirleyici olmak", en: "to play first fiddle" },
       { de: "Musik in meinen Ohren", tr: "kulağa hoş gelen", en: "music to my ears" },
       { de: "die Kosten im Griff haben", tr: "maliyeti kontrol altında tutmak", en: "to have costs under control" },
       { de: "ein Vermögen kosten", tr: "servet değerinde olmak", en: "to cost a fortune" },

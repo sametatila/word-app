@@ -98,7 +98,7 @@ export const deA1P3: SkillExercise[] = [
       { de: "die Brille", tr: "gözlük", en: "glasses" },
       { de: "das Handtuch", tr: "havlu", en: "towel" },
       { de: "die Kasse", tr: "kasa", en: "ticket counter" },
-      { de: "das Becken", tr: "havuz teknesi", en: "pool basin" },
+      { de: "das Becken", tr: "havuz", en: "pool" },
     ],
     minutes: 4,
     segments: [
@@ -114,13 +114,13 @@ export const deA1P3: SkillExercise[] = [
         text: "Wo hört man diesen Text?",
         options: ["im Freibad", "im Supermarkt", "am Bahnhof"],
         answer: 0,
-        explain: "„Am Freitag bleibt das Freibad zu“ ve duş, soyunma odası, havuz teknesi — sahne açık havuz.",
+        explain: "„Am Freitag bleibt das Freibad zu“; duşlar, soyunma odası ve büyük havuz da geçiyor — sahne açık havuz.",
       },
       {
         text: "Wann müssen die Gäste aus dem Wasser?",
         options: ["um zehn vor acht", "um halb neun", "um sieben Uhr"],
         answer: 0,
-        explain: "„Bitte verlassen Sie das Wasser um zehn vor acht.“ Sekiz buçuğa kadar duşlar açık kalıyor.",
+        explain: "„Bitte verlassen Sie das Wasser um zehn vor acht.“ Sekiz buçuk ise duşların ve soyunma odasının kapanış saati.",
       },
       {
         kind: "truefalse",
@@ -149,7 +149,7 @@ export const deA1P3: SkillExercise[] = [
         text: "Warum ist das Freibad am Freitag zu?",
         options: ["Man putzt das große Becken.", "Das Wetter ist dann zu kalt.", "Die Duschen sind kaputt."],
         answer: 0,
-        explain: "„Wir putzen dann das große Becken.“ Hava yarın sıcak ve güneşli olacak.",
+        explain: "„Wir putzen dann das große Becken.“ Sebep büyük havuzun temizliği; anons soğuk havadan ya da bozuk duşlardan söz etmiyor.",
       },
     ],
   },

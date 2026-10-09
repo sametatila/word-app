@@ -53,7 +53,7 @@ export const enB2U24: SkillExercise[] = [
       { de: "pressure", tr: "baskı" },
       { de: "whoever", tr: "kim olursa" },
       { de: "certainly", tr: "kesinlikle" },
-      { de: "rather", tr: "tercihen" },
+      { de: "would rather", tr: "tercih etmek" },
       { de: "print out", tr: "yazdırmak" },
       { de: "recycling", tr: "geri dönüşüm" },
       { de: "sixth", tr: "altıncı" },

@@ -81,7 +81,7 @@ export const a2U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["bis Freitag", "Freitag"],
-        explain: "„hat mich bis Freitag krankgeschrieben“ — cuma günü tekrar haber verecek.",
+        explain: "„hat mich bis Freitag krankgeschrieben“ — doktor cumaya kadar rapor vermiş.",
       },
       {
         text: "Elias hat seine Termine noch nicht abgesagt.",

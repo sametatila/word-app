@@ -143,7 +143,7 @@ export const deB2P15: SkillExercise[] = [
         text: "Wie viele Sterne sieht man im Sternenpark mit bloßem Auge?",
         options: ["ein paar Dutzend", "mehrere tausend", "etwa zwanzig"],
         answer: 1,
-        explain: "„dass man mit bloßem Auge mehrere tausend Sterne sieht“; birkaç düzine şehirde görülenler.",
+        explain: "„dass man mit bloßem Auge mehrere tausend Sterne sieht“; birkaç düzine ise şehirde görülen sayı.",
       },
       {
         text: "Was sollen die Bewohner mit ihren Lampen tun?",

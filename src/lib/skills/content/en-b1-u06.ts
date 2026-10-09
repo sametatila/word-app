@@ -263,7 +263,7 @@ export const enB1U06: SkillExercise[] = [
     intro: "Sözleşmeye tek satır eklenmiş. Cevap nasıl yazılıyor?",
     gloss: [
       { de: "materials", tr: "malzeme" },
-      { de: "by more than", tr: "şu kadardan fazla" },
+      { de: "by more than", tr: "-den fazla" },
       { de: "a hope", tr: "temenni" },
       { de: "add", tr: "eklemek" },
       { de: "sentence", tr: "cümle" },

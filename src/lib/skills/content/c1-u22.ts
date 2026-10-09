@@ -206,7 +206,7 @@ export const c1U22: SkillExercise[] = [
           "ein knappes Danke, das freut mich",
           "Danke",
         ],
-        explain: "„Ach, das war nichts“ gereğinden fazla küçültüyor.",
+        explain: "Önerilen, kısa bir „Danke, das freut mich“; „Ach, das war nichts“ ise gereğinden fazla küçültücü.",
       },
       {
         kind: "short_answer",

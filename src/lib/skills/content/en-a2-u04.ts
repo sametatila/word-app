@@ -61,7 +61,7 @@ export const enA2U04: SkillExercise[] = [
         text: "How long have they known each other?",
         options: ["nine years", "eleven years", "ten years"],
         answer: 0,
-        explain: "„We have known each other for nine years now.“ — on bir kasaba, on şehir.",
+        explain: "„We have known each other for nine years now.“ — on bir yıl kasabada, on yıl şehirde geçen süre.",
       },
       {
         kind: "truefalse",
@@ -276,7 +276,7 @@ export const enA2U04: SkillExercise[] = [
         text: "When is Charlie going to visit his sister?",
         options: ["on Sunday", "on Saturday", "just now"],
         answer: 0,
-        explain: "„First, I'm going to visit my sister on Sunday.“ — karar geçen hafta verilmiş.",
+        explain: "„First, I'm going to visit my sister on Sunday.“ — cumartesi ise temizlik günü; ziyaret kararı geçen hafta verildi.",
       },
       {
         text: "When did Charlie decide to clean the apartment?",
