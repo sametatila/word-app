@@ -121,6 +121,7 @@ export function WordsScreen() {
   useEffect(() => { setPage(0); setOpen(null); }, [q, filter, level]);
 
   const list = useMemo(() => remote ?? [], [remote]);
+  const seen = me?.levels ? me.levels.reduce((a, l) => a + l.seen, 0) : null;
   const { me, loading: meLoading } = useMe();
 
   return (
@@ -129,7 +130,10 @@ export function WordsScreen() {
           `useMe` içinde geliyor, ek istek yok. */}
       <ScreenHeader
         title={t("words.my_words")}
-        subtitle={me ? t("words.progress_summary", { mastered: formatNumber(me.mastered), seen: formatNumber(me.totalWords), due: me.dueCount ?? 0 }) : undefined}
+        /* "görüldü" = ÇALIŞILMIŞ kelime (seviye kırılımının `seen` toplamı), web
+           `/words` ve Gelişim ile aynı sayı. `totalWords` sözlüğün TAMAMI ve burada
+           "8.695 görüldü" yazıyordu (QA F-0041). Kırılım yoksa (eski uç) satır yok. */
+        subtitle={me && seen !== null ? t("words.progress_summary", { mastered: formatNumber(me.mastered), seen: formatNumber(seen), due: me.dueCount ?? 0 }) : undefined}
         /* `me` inerken satırın yeri tipik sayılarla kurulmuş cümlenin iskeleti: başlık büyüyüp liste kaymasın. */
         subtitlePending={meLoading ? t("words.progress_summary", { mastered: formatNumber(120), seen: formatNumber(480), due: 12 }) : null}
       />
