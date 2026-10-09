@@ -136,6 +136,19 @@ function ModuleExamRow({ m, colors, onPress }: { m: { index: number; code: strin
   );
 }
 
+/** `ModuleExamRow`un iskeleti: aynı kart, aynı dolgu, iki satır. */
+function ModuleExamRowSkeleton() {
+  return (
+    <SkeletonCard style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
+      <SkeletonTile size={18} radius={4} />
+      <View style={{ flex: 1 }}>
+        <SkeletonLine variant="bodyStrong" width="70%" />
+        <SkeletonLine variant="caption" width="55%" />
+      </View>
+    </SkeletonCard>
+  );
+}
+
 /** İki panelin açıldığı en küçük kolon genişliği (dp). Yatay tabletlerin
  *  kolonu bunu aşıyor (bkz. `contentWidthFor`), Split View gibi dar pencereler
  *  aşmıyor. */
@@ -218,13 +231,20 @@ export function PathScreen() {
   const arayuzDili = currentLang();
   const modulAnahtari = seviye ? `${seviye}|${kurs}|${arayuzDili}` : "";
   const moduller = modulListesi.anahtar === modulAnahtari ? modulListesi.liste : [];
+  /* Liste bu anahtar için henüz gelmediyse her modülün sınav satırının yeri
+     iskeletle tutuluyor: satırlar ızgaradan sonra gelip altlarındaki bütün
+     modülleri ~70 dp'şer itiyordu (QA F-0070 sınıfı). İki kursun da her
+     seviyesinde modül sınavı var (sunucu `module-exam` `COURSE_PLANS`), yani
+     iskelet hemen her zaman gerçek satıra dönüyor. */
+  const modulBekleniyor = !!seviye && modulListesi.anahtar !== modulAnahtari;
   useEffect(() => {
     if (!seviye) return;
     let iptal = false;
     const anahtar = `${seviye}|${kurs}|${arayuzDili}`;
     api<{ modules?: ModulSinavi[] }>(`/api/exam?level=${seviye}&course=${kurs}&lang=${arayuzDili}`)
       .then((d) => { if (!iptal) setModulListesi({ anahtar, liste: d.modules ?? [] }); })
-      .catch(() => { /* çevrimdışı: bölüm gösterilmez */ });
+      /* Çevrimdışı: bölüm gösterilmez (iskelet de kalkar); bu anahtarın listesi zaten varsa kalıyor. */
+      .catch(() => { if (!iptal) setModulListesi((prev) => (prev.anahtar === anahtar ? prev : { anahtar, liste: [] })); });
     return () => { iptal = true; };
     // `path`: patikanın her tazelenişinde (odak, kurs/anadil değişimi) liste de tazelensin.
   }, [seviye, kurs, arayuzDili, path]);
@@ -415,7 +435,7 @@ export function PathScreen() {
                 </PressableScale>
               ))}
             </CardGrid>
-            {sinav ? <ModuleExamRow m={sinav} colors={colors} onPress={() => nav.navigate("Exam", { level: path.level, module: sinav.index })} /> : null}
+            {sinav ? <ModuleExamRow m={sinav} colors={colors} onPress={() => nav.navigate("Exam", { level: path.level, module: sinav.index })} /> : modulBekleniyor ? <ModuleExamRowSkeleton /> : null}
           </View>
         );
       })}
