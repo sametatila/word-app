@@ -1407,6 +1407,7 @@ export const deBase: Record<string, string> = {
   "requests.decline": "Ablehnen",
   "chat.stream_dropped": "Die Verbindung ist abgebrochen. Versuch es noch einmal.",
   "rounds.checking": "Wird geprüft…",
+  "rounds.rescue_taught": "Das geht auch. Die geübte Form:",
   "rounds.a11y_correct": "Richtige Antwort",
   "rounds.a11y_wrong": "Falsche Antwort",
   "rounds.answer_is": "Richtig: ",

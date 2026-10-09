@@ -1410,6 +1410,7 @@ export const tr: Record<string, string> = {
   "requests.decline": "Reddet",
   "chat.stream_dropped": "Bağlantı koptu. Tekrar dene.",
   "rounds.checking": "Kontrol ediliyor…",
+  "rounds.rescue_taught": "Bu da doğru. Öğretilen kalıp:",
   "rounds.a11y_correct": "Doğru cevap",
   "rounds.a11y_wrong": "Yanlış cevap",
   "rounds.answer_is": "Doğrusu: ",

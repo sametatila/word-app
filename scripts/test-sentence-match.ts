@@ -5,6 +5,9 @@
 import { foldSentence, matchSentence, produceMiss, typoOnly } from "../src/lib/sentence-match";
 import { foldCompare } from "../src/components/games/types";
 import { levenshtein } from "../src/lib/errors";
+import { judgeTyped, arrangedRescuable } from "../src/lib/typed-answer";
+import { arrangedAccepted, orderAlternatives, sameTiles } from "../src/lib/arrange";
+import { produceSource, quotedSource } from "../src/lib/conversations/produce-source";
 
 let failures = 0;
 function check(name: string, cond: boolean, detail = "") {
@@ -128,6 +131,32 @@ check("Wohnug → Wohnung geçer", writtenOk("Wohnug", "Wohnung"));
 check("Shule → Schule geçer", writtenOk("Shule", "Schule"));
 check("Montga → Montag geçmez (iki harf, eski kural da)", !writtenOk("Montga", "Montag"));
 check("Strasse ↔ Straße tam", writtenOk("Strasse", "Straße"));
+
+/* Konuşma anlatımında YAZILAN cevap: iki platformda tek kural (QA 2026-10-09). */
+console.log("\n10) Yazılan ders cevabı (judgeTyped)");
+const jt = (typed: string, target: string, accept: string[] = [], lang: "de" | "en" = "de") => judgeTyped(typed, target, accept, lang);
+check("V2 hatası geçmez, kontrole gider", !jt("Zum Frühstück ich trinke einen Tee", "Zum Frühstück trinke ich einen Tee").pass && jt("Zum Frühstück ich trinke einen Tee", "Zum Frühstück trinke ich einen Tee").rescuable);
+check("başka kuruluş yerelde geçmez, kontrole gider", jt("Meine Mutter und mein Vater kommen zum Fest", "Meine Eltern kommen zum Fest").rescuable);
+check("tam doğru geçer", jt("ich hätte gern zwei Flaschen Wasser", "Ich hätte gern zwei Flaschen Wasser.").pass);
+check("eşdeğer cevap (accept) geçer", jt("Zwei Flaschen Wasser, bitte.", "Ich hätte gern zwei Flaschen Wasser", ["Zwei Flaschen Wasser, bitte"]).pass);
+check("yazım hatası geçer", jt("Ich hätte gern zwei Flaschen Wasesr", "Ich hätte gern zwei Flaschen Wasser").pass);
+check("çekim hatası geçmez", !jt("Ich habe kein Katze", "Ich habe keine Katze").pass);
+check("kesmesiz İngilizce (dont) geçer", jt("I dont know", "I don't know", [], "en").pass);
+check("iki kelime kontrole gitmez", !jt("Hallo du", "Guten Tag").rescuable);
+
+console.log("\n11) Dizme (arrange) ve üretim kaynağı");
+check("aynı parçalar → sameTiles", sameTiles("Morgen kaufe ich ein", "Ich kaufe morgen ein."));
+check("başka sözcük → sameTiles değil", !sameTiles("Morgen kaufe ich nichts", "Ich kaufe morgen ein"));
+check("alternatif dizilişi kabul", arrangedAccepted("Morgen kaufe ich ein", ["Ich kaufe morgen ein", "Morgen kaufe ich ein."]));
+check("yazılı değilse kabul değil", !arrangedAccepted("Morgen kaufe ich ein", ["Ich kaufe morgen ein"]));
+check("cümle dizme kontrole gider", arrangedRescuable("Morgen kaufe ich ein", "Ich kaufe morgen ein", ["Ich", "kaufe", "morgen", "ein"]));
+check("olay sıralaması kontrole gitmez", !arrangedRescuable("Er isst. Er steht auf. Er geht.", "Er steht auf. Er isst. Er geht.", ["Er steht auf.", "Er isst.", "Er geht."]));
+check("accept'ten dizme alternatifi", JSON.stringify(orderAlternatives("Ich kaufe morgen ein", ["Morgen kaufe ich ein", "Ich gehe morgen einkaufen"])) === JSON.stringify(["Morgen kaufe ich ein"]));
+const SAY = [{ lang: "tr", text: "Şimdi sen: 'Yarın alışveriş yapıyorum.' demek için ne dersin?" }];
+check("tırnaklı anadil cümlesi", quotedSource(SAY, "de") === "Yarın alışveriş yapıyorum.", String(quotedSource(SAY, "de")));
+check("hedef dil parçası kaynak değil", quotedSource([{ lang: "tr", text: "İkinci kalıp:" }, { lang: "de", text: "'Ich kaufe ein'" }], "de") === null);
+check("ek almış kesme işareti tırnak sayılmaz", quotedSource([{ lang: "tr", text: "Ali'nin evi nerede, nasıl sorarsın?" }], "de") === null);
+check("tırnak yoksa anlatımın tamamı kaynak", produceSource([{ lang: "tr", text: "Gömleği deneyebilir misin diye sor." }], "de") === "Gömleği deneyebilir misin diye sor.");
 
 console.log(failures === 0 ? "\nTÜM TESTLER GEÇTİ" : `\n${failures} TEST BAŞARISIZ`);
 process.exit(failures === 0 ? 0 : 1);

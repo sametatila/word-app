@@ -1407,6 +1407,7 @@ export const enBase: Record<string, string> = {
   "requests.decline": "Decline",
   "chat.stream_dropped": "The connection dropped. Try again.",
   "rounds.checking": "Checking…",
+  "rounds.rescue_taught": "That works too. The pattern taught here:",
   "rounds.a11y_correct": "Correct answer",
   "rounds.a11y_wrong": "Wrong answer",
   "rounds.answer_is": "The answer: ",
