@@ -1,8 +1,8 @@
 import "server-only";
-import { and, desc, eq, gte, isNotNull, sql } from "drizzle-orm";
+import { and, desc, eq, gte, inArray, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { reviews, words } from "@/lib/db/schema";
-import { errorLabel, ERROR_TARGET_GAME, isErrorType, type ErrorType } from "@/lib/errors";
+import { CONFUSION_GAMES, confusionKind, errorLabel, ERROR_TARGET_GAME, isErrorType, type ErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { weakRules } from "@/lib/conversations/progress";
 import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
@@ -53,6 +53,9 @@ export type ErrorReport = {
   weakRules: string[];
 };
 
+/** Yazılan ayrıntının başındaki artikel: sözlükte kelime artikelsiz duruyor. */
+const ARTICLE_PREFIX = /^(?:der|die|das|den|dem|des|ein|eine|einen|einem|einer|the|a|an|to)\s+/i;
+
 export async function errorReport(
   userId: string,
   course: string,
@@ -94,6 +97,7 @@ export async function errorReport(
   const conf = await db
     .select({
       wordId: reviews.wordId,
+      game: reviews.game,
       detail: reviews.detail,
       n: sql<number>`count(*)::int`,
       de: words.de,
@@ -104,15 +108,50 @@ export async function errorReport(
     })
     .from(reviews)
     .innerJoin(words, eq(words.id, reviews.wordId))
-    .where(and(eq(reviews.userId, userId), eq(reviews.correct, false), eq(reviews.errorType, "meaning"), isNotNull(reviews.detail), gte(reviews.createdAt, since)))
-    .groupBy(reviews.wordId, reviews.detail, words.de, words.artikel, words.tr, words.en, words.deGloss)
+    .where(
+      and(
+        eq(reviews.userId, userId),
+        eq(reviews.correct, false),
+        eq(reviews.errorType, "meaning"),
+        isNotNull(reviews.detail),
+        inArray(reviews.game, CONFUSION_GAMES),
+        gte(reviews.createdAt, since),
+      ),
+    )
+    .groupBy(reviews.wordId, reviews.game, reviews.detail, words.de, words.artikel, words.tr, words.en, words.deGloss)
     .orderBy(desc(sql`count(*)`))
-    .limit(8);
+    .limit(60);
   const locale = lang === "tr" ? "tr-TR" : lang === "de" ? "de-DE" : "en-US";
-  const confusions: ConfusionPair[] = conf
-    .map((c) => ({ ...c, gloss: glossFor(c, lang)?.text ?? c.tr }))
-    .filter((c) => c.detail && c.detail.toLocaleLowerCase(locale) !== c.gloss.toLocaleLowerCase(locale))
-    .map((c) => ({ wordId: c.wordId, de: c.de, artikel: c.artikel, tr: c.tr, gloss: c.gloss, with: c.detail!, n: c.n }));
+  /*
+    YALNIZ İKİ KELİME ARASINDAKİ KARIŞTIRMA (QA F-0059). "hallo = merhaba, x
+    değil", "das Land = ülke, Hallo, wie geht's? değil" çıkıyordu: çeviri
+    turunun cümlesi ve yazılan anlamsız harfler de çift sayılıyordu. Ölçü
+    `confusionKind` (kayıtla aynı); yazılan ayrıntı ayrıca SÖZLÜKTE olmalı
+    (artikelsiz, büyük/küçük harf farkı yok) — "x", "jfjf" kelime değil. Eski
+    kayıtlar okurken süzülüyor, silinmiyor. Aynı çift iki oyundan gelirse
+    sayıları toplanıyor.
+  */
+  const bare = (d: string) => d.trim().replace(ARTICLE_PREFIX, "").toLocaleLowerCase("de-DE");
+  const typed = [...new Set(conf.filter((c) => confusionKind(c.game, c.detail) === "typed").map((c) => bare(c.detail!)))];
+  const known = new Set(
+    typed.length
+      ? (await db.select({ de: sql<string>`lower(${words.de})` }).from(words).where(inArray(sql`lower(${words.de})`, typed))).map((r) => r.de)
+      : [],
+  );
+  const merged = new Map<string, ConfusionPair>();
+  for (const c of conf) {
+    const kind = confusionKind(c.game, c.detail);
+    if (!kind || (kind === "typed" && !known.has(bare(c.detail!)))) continue;
+    const gloss = glossFor(c, lang)?.text ?? c.tr;
+    const detail = c.detail!.replace(/\s+/g, " ").trim();
+    if (detail.toLocaleLowerCase(locale) === gloss.toLocaleLowerCase(locale)) continue;
+    if (bare(detail) === c.de.toLocaleLowerCase("de-DE")) continue;
+    const key = `${c.wordId}\u0000${detail.toLocaleLowerCase(locale)}`;
+    const prev = merged.get(key);
+    if (prev) prev.n += c.n;
+    else merged.set(key, { wordId: c.wordId, de: c.de, artikel: c.artikel, tr: c.tr, gloss, with: detail, n: c.n });
+  }
+  const confusions = [...merged.values()].sort((a, b) => b.n - a.n).slice(0, 8);
 
   let rules: string[] = [];
   try {

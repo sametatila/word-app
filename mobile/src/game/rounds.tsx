@@ -724,8 +724,11 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
     markAnswer(ok, null); // Almanca zaten mount'ta okundu
     setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, why: ok ? null : whyFor({ type: "meaning", word, detail: round.isTrue ? null : (round.claim?.text ?? null), detailOf: round.isTrue ? null : (round.claim?.of ?? null) }) });
   }
+  /* Kayıttaki ayrıntı: karıştırma yalnız YANLIŞ eşleşmeyi kabul edince var
+     (QA F-0059); doğru eşleşmeyi reddedenin karıştırdığı bir karşılık yok.
+     Web `truefalse-game` aynı. */
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", round.claim?.text ?? null))} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", round.isTrue ? null : (round.claim?.text ?? null)))} colors={colors} /> : undefined}>
       {/*
         SORULAN ŞEY İDDİANIN KENDİSİ, o yüzden iddia da soru kadar büyük.
 

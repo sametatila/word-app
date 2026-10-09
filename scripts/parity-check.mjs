@@ -22249,6 +22249,22 @@ console.log("\n" + C.b + "SINAV BITISI SOZLESMESI" + C.off);
   sameList("mobil duz govdeyi de okuyor", [String(/setResult\(d\.result \?\? d\)/.test(mob))], ["true"], "mobil", "beklenen");
 }
 
+/* ── karistirma ayrintisi: dogru/yanlis turu ────────────────────────────────
+ * "Karistirdiklarin" anlam hatasinin ayrintisindan cikiyor (QA F-0059). Dogru
+ * eslesmeyi reddeden ogrencinin karistirdigi bir karsilik yok: iddia metni
+ * yalniz iddia YANLISKEN ayrinti. Sunucu okurken de suzuyor (`confusionKind`),
+ * ama kayit iki platformda ayni kalmali. */
+console.log("\n" + C.b + "KARISTIRMA AYRINTISI" + C.off);
+{
+  const web = read("src/components/games/truefalse-game.tsx");
+  const mob = read("mobile/src/game/rounds.tsx");
+  sameList(
+    "dogru/yanlis ayrintisi yalniz yanlis iddiada",
+    [String(/miss\(fb\.correct, "meaning", round\.isTrue \? null : \(round\.claim\?\.text \?\? null\)\)/.test(mob))],
+    [String(/miss\(isCorrect, "meaning", isTrue \? null : claim\.text\)/.test(web))],
+  );
+}
+
 /* ── yazilan ve dizilen cevap hakemi ─────────────────────────────────────
  * QA 2026-10-09: konusma anlatiminda YAZILAN cevap web'de kelime torbasindan
  * (`judgeSpeech`, sira yok sayilir: "Zum Fruehstueck ich trinke einen Tee"

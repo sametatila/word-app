@@ -56,7 +56,10 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
     const latencyMs = Date.now() - started.current;
     // Yanlış eşleşmede gerçek karşılığı okumaya vakit gerekir.
     vibrate(isCorrect ? "correct" : "wrong");
-    setPending({ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "meaning", claim.text) });
+    /* Karıştırma yalnız YANLIŞ eşleşmeyi kabul edince var (QA F-0059): doğru
+       eşleşmeyi reddeden öğrencinin "karıştırdığı" bir karşılık yok, iddia
+       metni kelimenin kendi karşılığı. Mobil `TrueFalseRound` aynı. */
+    setPending({ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "meaning", isTrue ? null : claim.text) });
   }
 
   const settled = answered !== null;

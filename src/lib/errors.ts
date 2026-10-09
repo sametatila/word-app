@@ -108,6 +108,37 @@ export function cleanDetail(v: unknown): string | null {
 }
 
 /**
+ * KARIŞTIRMA ÇİFTİNE GİREBİLECEK AYRINTI (QA F-0059).
+ *
+ * Gelişim'in "Karıştırdıkların"ı "anlam" hatasının ayrıntısını kelimenin
+ * karşılığıyla yan yana koyuyor: "das Land = ülke, şehir değil". Ayrıntı her
+ * oyundan alınıyordu ve ekrana saçma çiftler düştü: "hallo = merhaba, x
+ * değil" (çeviri turunda yazılan "x"), "das Land = ülke, Hallo, wie geht's?
+ * değil" (yazma turunda cümle). Karıştırma ancak iki KELİME arasında:
+ *   - "picked": şık seçilen oyunlar (çoktan seçmeli, doğru/yanlış) — ayrıntı
+ *     başka bir kelimenin karşılığı ya da kendisi, tanımı gereği gerçek;
+ *   - "typed": kelime yazılan oyunlar (yazarak hatırla, boşluk doldurma) —
+ *     ayrıntı tek kelime ya da kısa öbek olmalı (cümle noktalaması yok, en çok
+ *     üç sözcük); gerçek bir kelime mi, okuma tarafı sözlükten bakıyor
+ *     (`lib/error-analytics`);
+ *   - cümle oyunları (çeviri, serbest cümle) ve geri kalanlar → yok.
+ * Kayıt (`/api/answers`) "anlam" hatasında yalnız aday ayrıntıyı saklıyor;
+ * okuma eski kayıtları aynı ölçüyle süzüyor (veri silinmiyor).
+ */
+const CONFUSION_PICKED = new Set(["choice", "truefalse"]);
+const CONFUSION_TYPED = new Set(["typing", "cloze"]);
+export const CONFUSION_GAMES = [...CONFUSION_PICKED, ...CONFUSION_TYPED];
+
+export function confusionKind(game: string, detail: string | null | undefined): "picked" | "typed" | null {
+  const d = (detail ?? "").replace(/\s+/g, " ").trim();
+  if ([...d].filter((ch) => /\p{L}/u.test(ch)).length < 2) return null;
+  if (CONFUSION_PICKED.has(game)) return "picked";
+  if (!CONFUSION_TYPED.has(game)) return null;
+  if (/[.!?,;:]/.test(d) || d.split(" ").length > 3) return null;
+  return "typed";
+}
+
+/**
  * Oyun sonucuna eklenecek hata alanları. Doğru cevapta boş nesne: doğru
  * cevabın hata tipi olmaz ve alanlar hiç gönderilmez.
  */

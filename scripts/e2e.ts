@@ -2217,6 +2217,18 @@ async function main() {
   check("karıştırma çifti: kelime ↔ 'kapı' ×2", rep.confusions.length === 1 && rep.confusions[0].with === "kapı" && rep.confusions[0].n === 2 && rep.confusions[0].wordId === eaWords[6].id);
   const freq = await frequentErrorTypes(USER);
   check("sık hata tipi: artikel (≥5), anlam değil (2)", freq.has("article") && !freq.has("meaning"));
+  // QA F-0059: yalnız iki kelime arasındaki karıştırma — cümle, anlamsız harf ve sözlükte olmayan yazı çift değil.
+  const realWord = eaWords[0];
+  await submitAnswers(USER, [
+    { wordId: eaWords[7].id, game: "typing", correct: false, latencyMs: 2000, errorType: "meaning", detail: "x" },
+    { wordId: eaWords[7].id, game: "typing", correct: false, latencyMs: 2000, errorType: "meaning", detail: "jfjf" },
+    { wordId: eaWords[7].id, game: "typing", correct: false, latencyMs: 2000, errorType: "meaning", detail: "Hallo, wie geht's?" },
+    { wordId: eaWords[7].id, game: "translate", correct: false, latencyMs: 2000, errorType: "meaning", detail: "Ich kaufe neue Kamera" },
+    { wordId: eaWords[7].id, game: "typing", correct: false, latencyMs: 2000, errorType: "meaning", detail: `${realWord.artikel} ${realWord.de}` },
+  ], monday, 20);
+  const rep2 = await errorReport(USER, "de");
+  const withs = rep2.confusions.filter((c) => c.wordId === eaWords[7].id).map((c) => c.with);
+  check("karıştırma: yalnız sözlükteki yazılan kelime çift (x, jfjf, cümle, çeviri yok)", withs.length === 1 && withs[0] === `${realWord.artikel} ${realWord.de}`, JSON.stringify(withs));
   // Ağırlık: artikel hatası olan, tekrar evresindeki bir kelime doğru bilinince aralık ×0,75 ve olay
   await db.update(userWords).set({ state: 2, intervalDays: 20, ease: 2.5, reps: 4, correctStreak: 2, lastReviewedAt: new Date(Date.now() - 2 * 86400000) }).where(and(eq(userWords.userId, USER), eq(userWords.wordId, eaWords[0].id)));
   await submitAnswers(USER, [{ wordId: eaWords[0].id, game: "artikel", correct: true, latencyMs: 2000 }], monday, 10);

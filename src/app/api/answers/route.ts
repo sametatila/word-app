@@ -3,7 +3,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
 import { clampDay } from "@/lib/award";
-import { cleanDetail, isErrorType } from "@/lib/errors";
+import { cleanDetail, confusionKind, isErrorType } from "@/lib/errors";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { consume } from "@/lib/social/ratelimit";
@@ -136,7 +136,13 @@ function parseBody(body: unknown) {
       ...(selfMiss ? { selfMiss: true } : {}),
       // Hata tipi yalnız yanlış cevapta ve yalnız listeden; gerisi düşer.
       errorType: a.correct === false && !selfMiss && isErrorType(a.errorType) ? a.errorType : undefined,
-      detail: a.correct === false && !selfMiss ? (cleanDetail(a.detail) ?? undefined) : undefined,
+      /* "Anlam" hatasında ayrıntı karıştırma çiftinin kaynağı: yalnız iki kelime
+         arasındaki karıştırma saklanıyor (QA F-0059; çeviri cümlesi, "x" gibi
+         ayrıntılar "Karıştırdıkların"a düşüyordu). */
+      detail:
+        a.correct === false && !selfMiss && (a.errorType !== "meaning" || confusionKind(a.game, cleanDetail(a.detail)))
+          ? (cleanDetail(a.detail) ?? undefined)
+          : undefined,
     });
   }
 
