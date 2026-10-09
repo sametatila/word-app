@@ -1393,6 +1393,7 @@ export const trBase: Record<string, string> = {
   "reportsheet.reported": "Bildirildi",
   "reportsheet.report_this_content": "Bu içeriği bildir",
   "reportsheet.couldn_t_send_try_again": "Gönderilemedi, tekrar dene.",
+  "reportsheet.too_fast": "Çok hızlı bildirdin. Bir dakika sonra yeniden dene.",
   "reportsheet.thanks_we_ll_look_into_it": "Teşekkürler, inceleyeceğiz.",
   "reportsheet.if_ai_reply_felt_inappropriate": "Yapay zekâ yanıtı sana uygunsuz ya da yanlış geldiyse sebebini seç. Metin bizimle paylaşılır, kimliğin başkalarıyla paylaşılmaz.",
   "reportsheet.user_title": "Bu kişiyi bildir",

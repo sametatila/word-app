@@ -1,5 +1,5 @@
 import { Platform } from "react-native";
-import { api } from "../api/client";
+import { ApiError, api } from "../api/client";
 import { t, currentLang } from "./i18n";
 import { currentCourseId } from "./courses";
 import { contentRelease } from "../content/store";
@@ -129,8 +129,9 @@ export function buildReportBody(kind: Exclude<ReportKind, "user">, ref: string, 
   return body;
 }
 
-/** "ok" yeni kayıt, "duplicate" aynı hedef 24 saat içinde zaten bildirilmiş. */
-export type ReportOutcome = "ok" | "duplicate" | "error";
+/** "ok" yeni kayıt, "duplicate" aynı hedef 24 saat içinde zaten bildirilmiş,
+ *  "too_fast" sel koruması (dakikalık; günlük kota yok). */
+export type ReportOutcome = "ok" | "duplicate" | "too_fast" | "error";
 
 export async function sendReport(kind: ReportKind, ref: string, reason: ReportReason, content: string, extra: ReportExtra = {}): Promise<ReportOutcome> {
   try {
@@ -141,7 +142,7 @@ export async function sendReport(kind: ReportKind, ref: string, reason: ReportRe
     }
     const res = await api<{ duplicate?: boolean } | null>("/api/reports", { method: "POST", body: JSON.stringify(buildReportBody(kind, ref, reason, content, extra)) });
     return res?.duplicate ? "duplicate" : "ok";
-  } catch {
-    return "error";
+  } catch (e) {
+    return e instanceof ApiError && e.status === 429 ? "too_fast" : "error";
   }
 }

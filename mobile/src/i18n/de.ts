@@ -1391,6 +1391,7 @@ export const de: Record<string, string> = {
   "reportsheet.reported": "Gemeldet",
   "reportsheet.report_this_content": "Diesen Inhalt melden",
   "reportsheet.couldn_t_send_try_again": "Konnte nicht gesendet werden, versuch es noch mal.",
+  "reportsheet.too_fast": "Du meldest zu schnell. Versuch es in einer Minute noch mal.",
   "reportsheet.thanks_we_ll_look_into_it": "Danke, wir schauen es uns an.",
   "reportsheet.if_ai_reply_felt_inappropriate": "Wenn dir die KI-Antwort unpassend oder falsch vorkommt, wähl den Grund aus. Der Text wird mit uns geteilt, deine Identität nicht mit anderen.",
   "reportsheet.user_title": "Diese Person melden",

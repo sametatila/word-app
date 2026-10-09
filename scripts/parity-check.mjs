@@ -7299,8 +7299,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ],
     [
       "bildirim kutusu hatasi",
-      () => (/state === "error" \? <Text accessibilityLiveRegion="polite"/.test(d("mobile/src/ui/ReportSheet.tsx")) ? "duyuruyor" : "sessiz"),
-      () => (/state === "error" \? \( <p role="alert"/.test(d("src/components/report-dialog.tsx")) ? "duyuruyor" : "sessiz"),
+      () => (/state === "error"(?: \|\| state === "too_fast")? \? <Text accessibilityLiveRegion="polite"/.test(d("mobile/src/ui/ReportSheet.tsx")) ? "duyuruyor" : "sessiz"),
+      () => (/state === "error"(?: \|\| state === "too_fast")? \? \( <p role="alert"/.test(d("src/components/report-dialog.tsx")) ? "duyuruyor" : "sessiz"),
     ],
     [
       "sinav ses hatasi",

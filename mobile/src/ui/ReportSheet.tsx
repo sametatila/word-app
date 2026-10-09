@@ -37,7 +37,7 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
   const stacked = dialogActionsStacked(t("common.discard"), sendLabel);
   const [reason, setReason] = useState<ReportReason | null>(null);
   const [detail, setDetail] = useState("");
-  const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [state, setState] = useState<"idle" | "sending" | "done" | "error" | "too_fast">("idle");
   const [duplicate, setDuplicate] = useState(false);
   /* Ayrıntı alanı klavyeyi açıyor: kart klavyenin üstünde kalsın, sığmazsa
      içi kaysın (küçük telefon + büyük yazı). */
@@ -51,8 +51,8 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
     setState("sending");
     const out = await sendReport(kind, refId, reason, content, isContent ? { surface, target, detail } : {});
     setDuplicate(out === "duplicate");
-    setState(out === "error" ? "error" : "done");
-    if (out !== "error") setTimeout(onClose, 1300);
+    setState(out === "error" || out === "too_fast" ? out : "done");
+    if (out === "ok" || out === "duplicate") setTimeout(onClose, 1300);
   }
 
   return (
@@ -115,7 +115,7 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
                   />
                 </Field>
               ) : null}
-              {state === "error" ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.dangerText}>{t("reportsheet.couldn_t_send_try_again")}</Text> : null}
+              {state === "error" || state === "too_fast" ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.dangerText}>{t(state === "too_fast" ? "reportsheet.too_fast" : "reportsheet.couldn_t_send_try_again")}</Text> : null}
               {/* Onay kutusuyla aynı kural (bkz. `ConfirmDialog`): uzun etikette alt alta. */}
               <View style={{ flexDirection: stacked ? "column" : "row", gap: stacked ? spacing.sm : spacing.md, marginTop: spacing.md }}>
                 <PressableScale onPress={onClose} style={{ flex: stacked ? undefined : 1, paddingHorizontal: spacing.md, borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, alignItems: "center" }}>

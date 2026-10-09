@@ -1393,6 +1393,7 @@ export const enBase: Record<string, string> = {
   "reportsheet.reported": "Reported",
   "reportsheet.report_this_content": "Report this content",
   "reportsheet.couldn_t_send_try_again": "Couldn't send, try again.",
+  "reportsheet.too_fast": "You're reporting too fast. Try again in a minute.",
   "reportsheet.thanks_we_ll_look_into_it": "Thanks, we'll look into it.",
   "reportsheet.if_ai_reply_felt_inappropriate": "If the AI reply felt inappropriate or wrong, pick a reason. The text is shared with us; your identity isn't shared with anyone else.",
   "reportsheet.user_title": "Report this person",

@@ -69,7 +69,7 @@ export function ReportDialog({
   const basligId = useId();
   const ref = useRef<HTMLDialogElement>(null);
   const [reason, setReason] = useState<ReportReason | null>(null);
-  const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [state, setState] = useState<"idle" | "sending" | "done" | "error" | "too_fast">("idle");
   const [detail, setDetail] = useState("");
   const [duplicate, setDuplicate] = useState(false);
 
@@ -98,7 +98,7 @@ export function ReportDialog({
       isContent ? { surface, target, detail, context: { course, nativeLang: lang } } : undefined,
     );
     setDuplicate(res === "duplicate");
-    setState(res === "error" ? "error" : "done");
+    setState(res === "error" || res === "too_fast" ? res : "done");
   }
 
   return (
@@ -217,9 +217,9 @@ export function ReportDialog({
             </label>
           ) : null}
 
-          {state === "error" ? (
+          {state === "error" || state === "too_fast" ? (
             <p role="alert" className="mt-2 text-caption" style={{ color: "var(--color-rose)" }}>
-              {t("reportsheet.couldn_t_send_try_again")}
+              {t(state === "too_fast" ? "reportsheet.too_fast" : "reportsheet.couldn_t_send_try_again")}
             </p>
           ) : null}
 

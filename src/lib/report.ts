@@ -87,7 +87,7 @@ export type ReportContext = {
 };
 
 /** Gönderimin sonucu: `duplicate` = aynı hedef 24 saat içinde zaten bildirilmiş. */
-export type ReportResult = "ok" | "duplicate" | "error";
+export type ReportResult = "ok" | "duplicate" | "too_fast" | "error";
 
 /** Serbest ayrıntının üst sınırı — sunucu da aynı sınırı uyguluyor. */
 export const REPORT_DETAIL_MAX = 500;
@@ -180,6 +180,8 @@ export async function sendReport(
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),
     });
+    /* 429 yalnız sel korumasından gelir (günlük kota yok): "biraz bekle", genel hata değil. */
+    if (res.status === 429) return "too_fast";
     if (!res.ok) return "error";
     const data = (await res.json().catch(() => null)) as { duplicate?: boolean } | null;
     return data?.duplicate ? "duplicate" : "ok";
