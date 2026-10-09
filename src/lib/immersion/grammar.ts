@@ -2,6 +2,9 @@ import type { Conversation } from "@/lib/conversations/types";
 import type { SkillQuestion } from "@/lib/skills/types";
 import { flatten } from "@/lib/conversations/module-content";
 import { seededShuffle } from "@/lib/shuffle";
+import { quotedSource } from "@/lib/conversations/produce-source";
+import { orderAlternatives } from "@/lib/arrange";
+import { targetLangOf } from "@/lib/courses";
 
 /**
  * Ünitenin gramer adımını KONUŞMALARINDAN türetir.
@@ -71,13 +74,26 @@ export function deriveGrammar(unitId: string, conversations: Conversation[], cou
         // Üç sözcükten kısa cümlede dizecek bir şey yok; sekizden uzun olan
         // ekranda kaydırma istiyor ve dizme oyunu okunmaz hâle geliyor.
         if (parts.length < 4 || parts.length > 8) continue;
+        /*
+         * SONUÇ SATIRI CÜMLENİN ANLAMI, KONUŞMANIN ADI DEĞİL (QA F-0030). Satır
+         * `„hedef“ — ${konuşma başlığı}` idi; A1 başlıkları Almanca cümle
+         * ("Ich stehe früh auf", "Zuerst dusche ich") olduğu için öğrenci
+         * alakasız bir cümle görüyordu. Artık anlatımın tırnakla verdiği
+         * anadildeki cümle ("Yarın alışveriş yapıyorum."); yoksa yalnız hedef.
+         * Aynı cümle yapay zekâ kontrolünün kaynağı (`source`); adımın eşdeğer
+         * cevaplarından aynı parçalarla kurulanlar geçerli başka diziliş.
+         */
+        const native = quotedSource(step.say, targetLangOf(conversation.course));
+        const alternatives = orderAlternatives(step.expect.target, step.expect.accept);
         orders.push({
           kind: "order",
           text: step.expect.target.endsWith("?") ? say.orderQuestion : say.orderSentence,
           options: [],
           answer: 0,
           items: parts,
-          explain: `„${step.expect.target}“ — ${conversation.title}`,
+          explain: native ? `„${step.expect.target}“ — ${native}` : `„${step.expect.target}“`,
+          ...(native ? { source: native } : {}),
+          ...(alternatives.length ? { alternatives } : {}),
         });
       }
     }

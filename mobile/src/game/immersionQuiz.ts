@@ -9,7 +9,9 @@ import { conversationsForLevel } from "../data/conversations";
 import { seededShuffle } from "../lib/shuffle";
 import { moduleTheme } from "../data/moduleThemes";
 import { t, targetLangName } from "../lib/i18n";
-import { currentCourseId } from "../lib/courses";
+import { currentCourseId, currentTargetLang } from "../lib/courses";
+import { quotedSource } from "../lib/produceSource";
+import { orderAlternatives } from "../lib/arrange";
 import { MOCK_LABELS } from "../data/exams";
 import type { SkillQuestion } from "../data/skills";
 
@@ -316,9 +318,9 @@ export function deriveGrammar(level: string, unitIndex: number, count = 8): Skil
   const judges: SkillQuestion[] = [];
   const orders: SkillQuestion[] = [];
 
-  for (const conversation of conversations as { title: string; lecture?: { expect?: Record<string, unknown> }[] }[]) {
+  for (const conversation of conversations as { title: string; lecture?: { say?: { lang: string; text: string }[]; expect?: Record<string, unknown> }[] }[]) {
     for (const step of conversation.lecture ?? []) {
-      const e = step.expect as { kind?: string; statement?: string; answer?: boolean; why?: { text: string }[]; target?: string } | undefined;
+      const e = step.expect as { kind?: string; statement?: string; answer?: boolean; why?: { text: string }[]; target?: string; accept?: string[] } | undefined;
       if (e?.kind === "truefalse" && e.statement) {
         judges.push({
           kind: "truefalse",
@@ -334,13 +336,20 @@ export function deriveGrammar(level: string, unitIndex: number, count = 8): Skil
       } else if (e?.kind === "produce" && e.target) {
         const parts = e.target.trim().replace(/\s+/g, " ").split(" ");
         if (parts.length < 4 || parts.length > 8) continue;
+        /* Sonuç satırı cümlenin anadildeki anlamı, konuşmanın adı değil (QA F-0030:
+           A1 başlıkları Almanca cümle, alakasız cümle gibi görünüyordu). Web
+           `immersion/grammar` aynı satır, aynı kaynak ve alternatifler. */
+        const native = quotedSource(step.say ?? [], currentTargetLang());
+        const alternatives = orderAlternatives(e.target, e.accept);
         orders.push({
           kind: "order",
           text: e.target.endsWith("?") ? t("quiz.order_question") : t("quiz.order_sentence"),
           options: [],
           answer: 0,
           items: parts,
-          explain: `„${e.target}“ — ${conversation.title}`,
+          explain: native ? `„${e.target}“ — ${native}` : `„${e.target}“`,
+          ...(native ? { source: native } : {}),
+          ...(alternatives.length ? { alternatives } : {}),
         });
       }
     }
