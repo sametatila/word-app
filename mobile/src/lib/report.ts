@@ -1,5 +1,5 @@
 import { Platform } from "react-native";
-import { ApiError, api } from "../api/client";
+import { api } from "../api/client";
 import { t, currentLang } from "./i18n";
 import { currentCourseId } from "./courses";
 import { contentRelease } from "../content/store";
@@ -143,6 +143,7 @@ export async function sendReport(kind: ReportKind, ref: string, reason: ReportRe
     const res = await api<{ duplicate?: boolean } | null>("/api/reports", { method: "POST", body: JSON.stringify(buildReportBody(kind, ref, reason, content, extra)) });
     return res?.duplicate ? "duplicate" : "ok";
   } catch (e) {
-    return e instanceof ApiError && e.status === 429 ? "too_fast" : "error";
+    /* `status` alanına bak, sınıfa değil: testler istemciyi taklit ediyor (ApiError yok). */
+    return (e as { status?: unknown } | null)?.status === 429 ? "too_fast" : "error";
   }
 }
