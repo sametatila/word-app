@@ -18,6 +18,8 @@ import { refreshPremium, usePremiumStatus } from "../lib/premium";
 import { tieredCopy } from "../lib/unlock";
 import { UnlockProgress } from "../ui/UnlockProgress";
 import { useMe } from "../lib/useMe";
+import { useAuth } from "../lib/AuthContext";
+import { useBoundedWait } from "../lib/useBoundedWait";
 import { ensureSkills, listOwnSkillMeta, type SkillMeta, type SkillKey } from "../data/skills";
 import { getDoneItems, getItemScores, syncItemProgress } from "../game/pathProgress";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
@@ -81,10 +83,21 @@ function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last, loc
  * kümesi) ve tek bir "sıradaki" önerisi: tamamlanma oranı en düşük becerinin
  * ilk bitmemiş egzersizi. Seviyedeki her şey bittiyse öneri bir üst seviye.
  */
+/*
+ * SON KİLİT CEVABI BELLEKTE (kullanıcı başına). Kota notu ve kilitler cevaptan
+ * SONRA beliriyordu: not seçili becerinin listesinin üstüne girip satırları
+ * aşağı itiyordu, öneri kartı da kilitli egzersizden açık olana atlıyordu (QA
+ * F-0070 sınıfı). Artık liste ilk açılışta kilidi ve Premium durumunu da
+ * bekliyor (en çok 1,5 sn), sonraki açılışta bellekteki cevapla hemen çiziliyor.
+ */
+let lastAccess: { uid: string; access: SkillAccess | null } | null = null;
+
 export function SkillsScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { me, loading: meLoading } = useMe();
+  const { user } = useAuth();
+  const uid = user?.id ?? null;
   const [guestLevel, setGuestLevel] = useState<string | null>(null);
   const [prefsRead, setPrefsRead] = useState(false);
   const [level, setLevel] = useState<string | null>(null);
@@ -94,7 +107,8 @@ export function SkillsScreen() {
   /* Premium kilidi (yazma + B1+ konuşma; bkz. lib/skillAccess). Liste bugüne
      kadar her şeyi açık çiziyordu. Odaklanmada tazelenir: değerlendirme hak
      düşürdüyse dönünce not güncel olsun. */
-  const [access, setAccess] = useState<SkillAccess | null>(null);
+  const [accessRaw, setAccess] = useState<SkillAccess | null | undefined>(() => (uid && lastAccess?.uid === uid ? lastAccess.access : undefined));
+  const access = accessRaw ?? null;
   /* Seçili beceri: null iken önerinin becerisi (en geride kalan). Seviye
      değişince seçim korunuyor — "B1'in dil bilgisine bakayım" doğal bir akış. */
   const [picked, setPicked] = useState<SkillKey | null>(null);
@@ -114,11 +128,13 @@ export function SkillsScreen() {
       if (alive) { setDone(new Set(s)); setScores({ ...p }); }
     });
     void oku().then(() => syncItemProgress()).then(oku);
-    void fetchSkillAccess().then((a) => { if (alive) setAccess(a); });
+    void fetchSkillAccess().then((a) => { if (uid) lastAccess = { uid, access: a }; if (alive) setAccess(a); });
     void refreshPremium();
     return () => { alive = false; };
-  }, []));
-  const { status: premiumStatus } = usePremiumStatus();
+  }, [uid]));
+  const { status: premiumStatus, loading: premiumLoading } = usePremiumStatus();
+  /* Not ve kilit kaynakları yolda mı (ilk açılış): liste iskelette bekliyor. */
+  const quotaPending = useBoundedWait(accessRaw === undefined || (!premiumStatus && premiumLoading), uid ?? "anon");
   const activeLevel = level ?? me?.level ?? guestLevel ?? "A1";
   // Seviye bilinmeden liste çizilmez: A1 listesini gösterip A2'ye atlamak
   // ekranı boyundan boyuna değiştiriyordu (kayan konteynerlerin kaynağı).
@@ -228,7 +244,7 @@ export function SkillsScreen() {
         </>
       )}
 
-      {!levelReady || !poolsReady ? (
+      {!levelReady || !poolsReady || quotaPending ? (
         /* İskelet yüklenmiş ekranın SIRASIYLA ve KAPLARIYLA: öneri kartı, beş
            karo, liste. Karonun yüksekliği elle hesaplanıyordu ve öneri
            kartının yeri yoktu; içerik gelince her şey aşağı kayıyordu. Artık
