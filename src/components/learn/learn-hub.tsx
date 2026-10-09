@@ -11,6 +11,7 @@ import { CardGrid } from "@/components/layout";
 import { LearnHeader } from "@/components/app-header";
 import { Mascot, MASCOT_CARD } from "@/components/mascot";
 import { useT } from "@/lib/i18n/client";
+import { goalCount } from "@/lib/daily-goal";
 import {
   DailyRoundIcon,
   ForwardIcon,
@@ -153,7 +154,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
             <div className="mb-1.5 flex justify-between text-micro opacity-85">
               <span>{t("learn.daily_goal")}</span>
               <span className="tabular-nums">
-                {reviewsToday}/{dailyGoal}
+                {goalCount(reviewsToday, dailyGoal)}
               </span>
             </div>
             <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "color-mix(in srgb, currentColor 30%, transparent)" }}>

@@ -24,6 +24,7 @@ import { FriendPulse } from "../social/FriendPulse";
 import { useTheme, spacing, radii, softShadow, fillOf } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
 import { barPct } from "../ui/Bar";
+import { goalCount } from "../lib/dailyGoal";
 
 /** Alt aksiyon satırı — dil odaklı, sade. */
 function ActionRow({ title, subtitle, tint, icon: Icon, onPress }: { title: string; subtitle: string; tint: string; icon: (p: { color: string; size: number }) => React.ReactElement; onPress?: () => void }) {
@@ -158,7 +159,7 @@ export function LearnScreen() {
             <View style={{ paddingHorizontal: spacing.xl, paddingBottom: spacing.lg, marginTop: -spacing.sm }}>
               <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 6 }}>
                 <Text variant="micro" color="#ffffffdd">{t("learn.daily_goal")}</Text>
-                <Text variant="micro" color="#ffffffdd">{reviewsToday}/{dailyGoal}</Text>
+                <Text variant="micro" color="#ffffffdd">{goalCount(reviewsToday, dailyGoal)}</Text>
               </View>
               <View style={{ height: 6, borderRadius: 3, backgroundColor: "#ffffff40", overflow: "hidden" }}>
                 <View style={{ height: "100%", width: `${barPct(goalPct, 3)}%`, backgroundColor: "#fff", borderRadius: 3 }} />

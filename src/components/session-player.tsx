@@ -45,6 +45,7 @@ import { formatPercent } from "@/lib/i18n/dict";
 import { CountUp } from "@/components/celebrate";
 import { StreakMoment } from "@/components/streak-moment";
 import { IconLine } from "@/components/icon-line";
+import { goalCount } from "@/lib/daily-goal";
 
 /**
  * `/api/answers` yanıtı + seri anı bayrağı. `streakUp`: seri BU istekte
@@ -1455,7 +1456,7 @@ function SummaryCard({
             />
           </div>
           <p className="muted text-caption tabular-nums">
-            {result.reviewsToday} / {result.dailyGoal}
+            {goalCount(result.reviewsToday, result.dailyGoal)}
           </p>
         </DetailCard>
       ) : null}

@@ -29,6 +29,7 @@ import { useBackConfirm } from "../lib/useBackConfirm";
 import { CountUp } from "../ui/CountUp";
 import { StreakMoment } from "../ui/StreakMoment";
 import { IconLine } from "../ui/IconLine";
+import { goalCount } from "../lib/dailyGoal";
 
 /**
  * `/api/answers` yanıtı + seri anı bayrağı. `streakUp`: seri BU kayıtta arttı
@@ -650,7 +651,7 @@ function GameRound() {
             <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
               <View style={{ height: "100%", width: `${Math.min(100, Math.round((result.reviewsToday / result.dailyGoal) * 100))}%`, backgroundColor: colors.success, borderRadius: 4 }} />
             </View>
-            <Text variant="caption" color={colors.textMuted}>{`${result.reviewsToday} / ${result.dailyGoal}`}</Text>
+            <Text variant="caption" color={colors.textMuted}>{goalCount(result.reviewsToday, result.dailyGoal)}</Text>
           </DetailCard>
         ) : null}
         {/* Kayıt geç döndüyse notlar burada: okunan kartlar yerinde kalıyor. */}
