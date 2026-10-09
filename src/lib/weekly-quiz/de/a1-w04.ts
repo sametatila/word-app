@@ -176,7 +176,7 @@ export const DE_A1_W04: QuizWeek = {
     {
       id: "de-a1-w04-g5",
       block: "grammar",
-      stem: "___ gehst du?",
+      stem: "— ___ gehst du? — Ins Kino.",
       options: ["Wo", "Wohin", "Woher", "Wann"],
       answer: 1,
       why: "`gehen` hareket bildiriyor, yani yön soruluyor: `wohin`. `wo` sabit yeri, `woher` kaynağı sorar.",

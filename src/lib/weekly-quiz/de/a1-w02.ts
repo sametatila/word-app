@@ -195,7 +195,7 @@ export const DE_A1_W02: QuizWeek = {
     {
       id: "de-a1-w02-g5",
       block: "grammar",
-      stem: "___ stehst du auf?",
+      stem: "— ___ stehst du auf? — Um sieben Uhr.",
       options: ["Wo", "Was", "Wer", "Wann"],
       answer: 3,
       why: "Cevap bir saat olduğuna göre soru zamanı soruyor: `wann`. `wo` yeri, `wer` kişiyi sorar.",

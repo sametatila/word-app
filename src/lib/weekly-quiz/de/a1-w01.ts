@@ -212,7 +212,7 @@ export const DE_A1_W01: QuizWeek = {
     {
       id: "de-a1-w01-g5",
       block: "grammar",
-      stem: "___ kommst du?",
+      stem: "— ___ kommst du? — Aus der Türkei.",
       options: ["Wo", "Wohin", "Wer", "Woher"],
       answer: 3,
       why: "`woher` kaynağı sorar (nereden), `wo` yeri (nerede), `wohin` yönü (nereye). `kommen` fiili kaynak istiyor.",
