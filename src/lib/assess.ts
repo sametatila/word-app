@@ -7,7 +7,7 @@ import { and, desc, eq, gte, isNotNull, isNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { assessments, profiles, userConsents } from "@/lib/db/schema";
 import { AI_CONSENT_VERSIONS } from "@/lib/ai-consent-shared";
-import { chatConfigured, completeChat, type CallReport } from "@/lib/chat-providers";
+import { chatConfigured, completeChat, type CallReport, type ProviderName } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { isTranslateCheck, runTranslateCheck, translateCheckAssessment } from "@/lib/translate-check";
@@ -47,6 +47,9 @@ export function dailyLimit(): number {
   const n = Number(process.env.ASSESS_DAILY_LIMIT);
   return Number.isFinite(n) && n > 0 ? Math.round(n) : 60;
 }
+
+/** Okunamayan rubrik çıktısı ancak ilk çağrı bu süreden kısa sürdüyse yeniden sorulur (QA F-0061). */
+const ASSESS_RETRY_WITHIN_MS = 10_000;
 
 /** Aynı görev+cevap için önbellek ömrü. */
 const CACHE_HOURS = 24;
@@ -124,8 +127,13 @@ export async function assess(
   if (n >= dailyLimit()) return { ok: false, reason: "quota" };
 
   let provider: string | null = null;
+  /** Son başarılı (200) cevabı veren sağlayıcı: çıktısı okunamazsa ikinci deneme ondan kaçar. */
+  let answered: ProviderName | undefined;
   const reportAndRemember: CallReport = (r) => {
-    if (r.ok) provider = `${r.provider}/${r.model}`;
+    if (r.ok) {
+      provider = `${r.provider}/${r.model}`;
+      answered = r.provider;
+    }
     report?.(r);
   };
 
@@ -144,13 +152,30 @@ export async function assess(
       });
       result = verdict ? translateCheckAssessment(clean, verdict) : null;
     } else {
-      raw = await completeChat(
-        assessSystemPrompt(clean.kind, clean.level, clean.lang, clean.native),
-        [{ role: "user", content: assessUserMessage(clean) }],
-        ASSESS_MAX_TOKENS,
-        reportAndRemember,
-      );
-      result = parseAssessment(raw, text, clean.kind, minWordsFrom(clean.task.constraints));
+      const started = Date.now();
+      const rubric = async (avoid?: ProviderName) => {
+        raw = await completeChat(
+          assessSystemPrompt(clean.kind, clean.level, clean.lang, clean.native),
+          [{ role: "user", content: assessUserMessage(clean) }],
+          ASSESS_MAX_TOKENS,
+          reportAndRemember,
+          avoid,
+        );
+        return parseAssessment(raw, text, clean.kind, minWordsFrom(clean.task.constraints));
+      };
+      result = await rubric();
+      /* OKUNAMAYAN ÇIKTIYA BİR KEZ DAHA, ÖTEKİ SAĞLAYICIDAN (QA F-0061).
+         Sağlayıcı 200 dönüp bozuk JSON verebiliyor (2026-10-09: Gemma hata
+         nesnesinin `}`ini unuttu); zincir yalnız HTTP hatasında yedeğe
+         düştüğü için istek 502 `invalid` oluyor, kullanıcı "servis kapalı"
+         görüyordu, aynı metin hemen sonra %93 aldı. Çeviri kurtarması
+         (`runTranslateCheck`) zaten bir kez yeniden soruyor; rubrik de öyle.
+         Süre sınırlı: istemci 20 sn bekliyor (`ASSESS_TIMEOUT_MS`), ilk
+         çağrı uzun sürdüyse ikinci çağrının cevabı istemciye yetişmezdi. */
+      if (!result && Date.now() - started < ASSESS_RETRY_WITHIN_MS) {
+        console.error("[assess] geçersiz çıktı, yeniden deneniyor", answered, raw.slice(0, 300));
+        result = await rubric(answered);
+      }
     }
   } catch (err) {
     return { ok: false, reason: "upstream", detail: (err as Error).message };

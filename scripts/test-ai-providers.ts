@@ -51,6 +51,17 @@ async function main() {
   check("hesap kimliği yoksa Cloudflare etkin değil", roles("chat") === "groq", roles("chat"));
   check("hesap kimliği yoksa Cloudflare ses zincirinde de yok", roles("stt") === "azure,deepgram,groq", roles("stt"));
 
+  /* QA F-0061: okunamayan çıktıdan sonra ikinci deneme öteki modelden gelsin,
+     ama tek sağlayıcı varsa yine o denensin (sona atılır, düşürülmez). */
+  console.log("\nOkunamayan çıktıdan sonra sağlayıcı sırası");
+  const { chatProviders, avoidLast } = await import("../src/lib/chat-providers");
+  const names = (avoid?: "cloudflare" | "groq") => avoidLast(chatProviders(), avoid).map((p) => p.name).join(",");
+  check("tek sağlayıcı varsa kaçınılan yine denenir", names("groq") === "groq", names("groq"));
+  process.env.CLOUDFLARE_ACCOUNT_ID = "acc";
+  check("kaçınma yoksa sıra aynı", names() === "cloudflare,groq", names());
+  check("Cloudflare'den kaçınınca önce Groq", names("cloudflare") === "groq,cloudflare", names("cloudflare"));
+  check("Groq'tan kaçınınca önce Cloudflare", names("groq") === "cloudflare,groq", names("groq"));
+
   console.log("\nDeepgram kredisi bitince");
   const { noteDeepgramFailure, deepgramResting } = await import("../src/lib/stt");
   const t0 = 1_000_000;

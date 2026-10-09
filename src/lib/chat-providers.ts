@@ -575,6 +575,12 @@ export function chatChain(): { name: ProviderName; model: string }[] {
   return chatChainNames().map((name) => ({ name, model: modelFor(name) }));
 }
 
+/** `avoid` adlı sağlayıcıyı sona atar; öteki sıra korunur (bkz. `completeChat`). */
+export function avoidLast<T extends { name: ProviderName }>(providers: T[], avoid?: ProviderName): T[] {
+  if (!avoid) return providers;
+  return [...providers.filter((p) => p.name !== avoid), ...providers.filter((p) => p.name === avoid)];
+}
+
 export function chatConfigured(): boolean {
   return chatProviders().length > 0;
 }
@@ -672,8 +678,15 @@ export async function completeChat(
   messages: ChatMessage[],
   maxTokens?: number,
   report?: CallReport,
+  /**
+   * Bu sağlayıcı sıranın SONUNA atılır (listeden çıkarılmaz; tek sağlayıcı
+   * varsa yine o denenir). Kullanım: sağlayıcı 200 döndü ama çıktısı
+   * okunamadı, ikinci deneme öteki modelden gelsin (QA F-0061,
+   * `lib/assess` `retryProvider`).
+   */
+  avoid?: ProviderName,
 ): Promise<string> {
-  const providers = chatProviders();
+  const providers = avoidLast(chatProviders(), avoid);
   if (!providers.length) throw new Error("Sohbet sağlayıcısı tanımlı değil");
 
   const failures: string[] = [];
