@@ -129,6 +129,7 @@ const LEAD_INS = [
   "Now your turn,",
   "Now your turn.",
   "Now you say it:",
+  "Now you say:",
   "Now you ask:",
   "Now you:",
   "Now:",
@@ -170,6 +171,12 @@ const LEAD_INS = [
   "Noch eins:",
   "Noch einer:",
   "Noch einer.",
+  /* Sıra cümlesi düşünce başa gelen ipucu etiketi ("Son bir cümle kuralım.
+     İpucu: Kartımı çoktan yükledim."); eskiden `HINT_CLAUSES` görevi de
+     yutuyor ve kâğıtta yalnız "Son bir cümle kuralım." kalıyordu. */
+  "İpucu:",
+  "Tipp:",
+  "Hint:",
 ];
 
 /** Yönergenin sonuna eklenmiş konuşma ipuçları — sınavda kırpılır. */
@@ -207,6 +214,163 @@ const DANGLING_BUNU = /[\s,]+(?:bunu|Bunu)\s*$/u;
    Yalnız cümle sınırından sonra ve yalnız bu sözler; çevresi kalır. */
 const MID_TURN = /(?<=[.!?]\s)(?:Şimdi sıra sende|Sıra sende|Jetzt bist du dran|Du bist dran|Now it is your turn|Now it's your turn|Now your turn|Your turn)[.:,]\s*/gu;
 
+/*
+  ANLATIMIN SIRA CÜMLESİ VE ÖNCEKİ ADIMA YASLANAN AÇIKLAMA (QA F-0057 ikinci
+  tur, 2026-10-09).
+
+  Konuşmada üretim adımı çoğu kez bir açıklamayla başlıyor ve görevi ancak
+  sonra veriyor: "Arkasına aradığın yeri eklersin. Şimdi sen söyle: 'Garı
+  arıyorum.'" — "Arkasına" bir önceki adımın kalıbını gösteriyor; sınavda
+  maddeler karışık geldiği için orada hiçbir şeyi göstermiyor. Ölçüldü
+  (iki kurs × üç anadil, kâğıda girebilecek 6642 madde): ~600 madde birden
+  çok cümleli, bunların büyük kısmı İngilizce kursta "Kur.", "Son bir cümle
+  kuralım.", "Şimdi olumsuzunu sen kur.", "Bilden wir einen letzten Satz."
+  gibi YALNIZ SIRA VEREN bir cümleyle başlıyor. Kurallar (`dropLecture`):
+
+  1. SIRA İŞARETİ ortadaysa ("… Şimdi sen söyle: …", "… Şunu kur: …",
+     "… Bilde jetzt du: …") önündeki her şey düşer: işaret, anlatımın bittiği
+     ve görevin başladığı yer. İşaret, yalnız `FRAME_WORDS` sözcüklerinden
+     oluşup iki noktayla biten cümle başı; ardından harf gelmeli.
+  2. Baştaki SIRA CÜMLESİ düşer: tırnaksız, iki noktasız ve bütün sözcükleri
+     `FRAME_WORDS` içinde olan cümle ("Kur.", "Şimdi aynı cümlenin tersini
+     sen kur.", "Jetzt bildest du den Satz."). İçerik taşıyan bir sözcük
+     ("Şimdi aynı soruyu ekmek için sen sor.") cümleyi korur — yanlış
+     kırpmak, kırpmamaktan pahalı.
+  3. Görev cümlesi TIRNAKLA ya da "nasıl dersin" sorusuyla geliyorsa
+     ("Karşındaki öksürüyor. 'Bu öksürük ne zamandır var?' diye nasıl
+     sorarsın?", "Your number is thirty-two fifty. How do you say 'My number
+     is thirty-two fifty.'?") önündeki tırnaksız açıklama düşer: kurulacak
+     cümle tırnağın içinde tam olarak yazılı. Önünde tırnak varsa (örnek
+     cümle, "'o' bir kadın" gibi bağlam) dokunulmaz.
+  4. ÖNCEKİ ADIMA YASLANAN SÖZ (`BACKREF`: "Şimdi tersini söyle:", "Bir
+     önceki konuşmadaki kalıpla …:", "Frag mit derselben Wendung:") görevi
+     açan iki noktalı girişteyse giriş, baş cümledeyse cümle, cümlenin
+     içindeyse ("… cümlesini bu kalıpla kur.") yalnız o söz düşer. Düşen
+     cümle Türkçe "o"nun cinsiyetini taşıyorsa not olarak sona eklenir.
+  5. Sondaki gönderme ipucu ("İlk kelimemizi present perfect ile kullan.") düşer.
+
+  Sonuç (2026-10-09): 371 madde değişti, hepsi gözle okundu; örnek cümlesi
+  kırpılınca 4 madde ilk kez kâğıda girebiliyor (cevap artık soruda yazılı değil).
+
+  Kapı: `scripts/check-exams.ts` (sabit örnekler + bütün kâğıtta önceki adıma
+  yaslanan söz taraması, `leansOnLecture`).
+*/
+const FRAME_WORDS = new Set(
+  (
+    /* Türkçe */
+    "şimdi hadi haydi son olarak bir de da sen sende sıra kendin yine tekrar kez daha cümle cümleyi cümleni cümlenin " +
+    "tane tanesini soru kur kuralım kuracaksın kurmanı kurmayı istiyorum dene deneyelim sor bakalım söyle söylemeni " +
+    "iste cevap cevabı ver birleştir birleştirelim birleştiriyoruz ikisini iki yeni görev senden en önemli bu bunu " +
+    "şunu ilk tam cümleyle olumsuzunu tersini aynı resmî hâlini kibar isteği aynen öyle hangisi bilgiyi hepsini " +
+    "ingilizce almanca " +
+    /* Deutsch */
+    "jetzt los und bilde bilden bildest wir du den die das einen eine ein letzten letzter letzte satz frage noch " +
+    "selbst mal auch probier probierst probieren es frag fragst bittest antwortest verbinde verbinden beide zwei sag " +
+    "sagst erzähl in einem baust setzen alles zusammen wichtigsten neue aufgabe genau bist dran wieder ich möchte von " +
+    "dir ganzen verneinung gegenteil umgekehrten förmliche höfliche form deinen ersten englisch auf " +
+    /* English */
+    "now you build ask try say one more sentence which last the other person a it your turn let's us english german"
+  ).split(" "),
+);
+/** Tırnak işareti — sözcük içi kesme ("let's", "Holly'nin") sayılmaz. */
+const QUOTE_CHAR = /(?<!\p{L})['‘’]|['‘’](?!\p{L})|["“”„«»‚]/u;
+const frameOnly = (s: string): boolean => {
+  const words = s
+    .replace(/[.!?…,:;–—-]+/g, " ")
+    .trim()
+    .toLocaleLowerCase("tr-TR")
+    .split(/\s+/)
+    .filter(Boolean);
+  // "tr-TR" küçültmesi "I"yı "ı" yapar: İngilizce/Almanca sözcük için ikinci deneme.
+  return words.length > 0 && words.every((w) => FRAME_WORDS.has(w) || FRAME_WORDS.has(w.replace(/ı/g, "i")));
+};
+
+/**
+ * ÖNCEKİ ADIMA YASLANAN SÖZ — yönergenin kendisinde (tırnak dışında). Yalnız
+ * sıra veren bir yönerge ("Son bir cümle kuralım.") de görevsiz sayılır.
+ *
+ * "Şimdi tersini söyle", "Bir önceki konuşmadaki kalıpla", "Frag mit derselben
+ * Wendung", "Nimm unser erstes Wort": konuşmada bir önceki adımı gösteriyor,
+ * sınavda hiçbir şeyi. Yalnız yönerge kalıpları; içerik cümlesindeki "aynı
+ * şey", "dieselbe Angst", "wieder" bilerek yok (kurulacak cümlenin parçası).
+ * Kırpma (`dropLecture` kural 4–5) ve kapı (`scripts/check-exams.ts`) aynı listeyi kullanıyor.
+ */
+const BACKREF =
+  /(?<!\p{L})(?:[Aa]ynı mantıkla|mit dieser Wendung|[Aa]ynı (?:soruyu|cümleyi|cümlenin|kalı[bp]\p{L}*|kural\p{L}*|yapı\p{L}*|isteği)|[Tt]ersini|[Oo]lumsuzunu|ikisini|ilk cümleni|\p{L}*kelimemiz\p{L}*|\p{L}*kalıbımız\p{L}*|Arkasına|önceki konuşma\p{L}*|Aynen öyle|kalıbı hatırla|bu kalıpla|bu kuralı|the same (?:question|sentence|pattern|rule|structure)|the last conversation|the opposite|our (?:first|second|third|fourth|new) (?:word|pattern)|dieselbe (?:Frage|Wendung|Regel|Struktur)|denselben Satz|derselben (?:Wendung|Logik|Regel|Form|Struktur)|die Verneinung|den umgekehrten Satz|unser(?:em)? (?:erstes|zweites|drittes|viertes|neues) Wort|Verbinden wir (?:jetzt )?beide|Verbinde (?:jetzt )?beide)(?!\p{L})/u;
+/** Cümle içinde kalan, düşünce cümleyi bozmayan gönderme sözleri (kural 4c). */
+const INLINE_BACKREF =
+  /^[Aa]ynı mantıkla\s+|\s(?:bu|aynı) kalıpla(?=\s)|\s(?:nach|mit) derselben (?:Logik|Wendung)(?=[\s?.!,])|\smit dieser Wendung(?=[.!?])/gu;
+/** Tırnak içi (kurulacak ya da örnek cümle) — önceki adıma yaslanma orada sayılmaz. */
+const QUOTED_SPAN = /["“„«‚][^"“”„«»‚‘]*["”“»‘]|(?<!\p{L})'[^']*'(?!\p{L})/gu;
+const backRef = (s: string) => BACKREF.test(s.replace(QUOTED_SPAN, " "));
+export function leansOnLecture(prompt: string): boolean {
+  return backRef(prompt) || frameOnly(prompt);
+}
+
+/** Metnin ilk cümlesi; ilk cümlede tırnak varsa yalnız eşli „…“/"…" ise bölünür. */
+function firstSentence(text: string): { head: string; rest: string } | null {
+  const m = /^(.+?[.!?…])\s+(?=\S)/u.exec(text);
+  if (!m) return null;
+  const head = m[1];
+  if (QUOTE_CHAR.test(head.replace(QUOTED_SPAN, " "))) return null;
+  return { head, rest: text.slice(m[0].length) };
+}
+/** Görev cümlesinin başladığı yer: tırnakla ya da "nasıl dersin" sorusuyla açılan cümle (kural 3). */
+const QUOTED_TASK =
+  /^(?:['"“„‘‚«]|(?:How do you say|How would you say|What do you say for|What sentence do you use|Wie sagst du|Wie heißt|Wie fragst du|Wie bittest du)\s+['"“„‘‚«])/u;
+/** Düşen cümlede kalan cinsiyet bilgisi (Türkçe "o" ikisini de karşılıyor). */
+const GENDER_NOTES: [RegExp, string][] = [
+  [/(?<!\p{L})erkek(?:ler)? için(?!\p{L})/u, "Bir erkekten bahsediyorsun."],
+  [/(?<!\p{L})kadın(?:lar)? için(?!\p{L})/u, "Bir kadından bahsediyorsun."],
+];
+/** En az iki sözcüklük bir görev kalıyor mu — kırpma bunu hiç bozmaz. */
+const enough = (s: string) => /\p{L}{2,}.*\s\S/u.test(s);
+
+function dropLecture(text: string): string {
+  // 1. Ortadaki sıra işareti: SONUNCUSU, önündekiyle birlikte. Cümle sınırı
+  //    kapanan tırnaktan sonra da olabilir ("… aydınlık." Şimdi sen kur: …").
+  let cut = -1;
+  for (const m of text.matchAll(/(?<=[.!?…]['"”“’»]?\s)[^.!?…:'"“”„‘’«»]{1,60}:\s*(?=\S)/gu))
+    if (frameOnly(m[0]) && /\p{L}/u.test(text.slice(m.index! + m[0].length))) cut = m.index!;
+  if (cut > 0) text = text.slice(cut);
+  // 4a. Önceki adıma yaslanan GİRİŞ iki noktayla bitiyorsa ("Şimdi tersini
+  //     söyle: 'Bu uygun fiyatlı.'", "Frag mit derselben Wendung: Haben Sie …")
+  //     iki noktadan sonrası görevin kendisi.
+  //     Yalnız iki noktayı açan cümle ölçülür; daha öndeki sıra cümlesi
+  //     ("Şimdi ikisini birleştir. Arkadaşın … Ona şunu söyle: …") kural 2'nin işi.
+  const colon = text.lastIndexOf(":");
+  const clause = text.slice(0, Math.max(colon, 0)).split(/(?<=[.!?…])\s+/u).pop() ?? "";
+  if (colon > 0 && backRef(clause) && !QUOTE_CHAR.test(clause) && enough(text.slice(colon + 1)))
+    text = text.slice(colon + 1).trim();
+  // 4c. Cümlenin içindeki gönderme sözü: "'Dişim ağrıyor' cümlesini bu kalıpla kur."
+  text = text.replace(INLINE_BACKREF, "").trim();
+  const notes: string[] = [];
+  // 2–3–4b. Baştaki sıra cümlesi, tırnaklı görevin önündeki açıklama ve
+  //     önceki adıma yaslanan baş cümle ("Şimdi aynı soruyu ekmek için sen sor. Ekmek var mı?").
+  for (let round = 0; round < 4; round++) {
+    const s = firstSentence(text);
+    if (!s || !enough(s.rest)) break;
+    if (/:/.test(s.head)) break;
+    const quoteless = !QUOTE_CHAR.test(s.head);
+    // Gönderme cümlesindeki tırnak yalnız tek sözcük olabilir ("Bilde dieselbe
+    // Struktur mit „send“."); tırnakta bir cümle varsa görev o cümlenin içinde.
+    const quotedWord = (s.head.match(QUOTED_SPAN) ?? []).every((q) => !/\s/.test(q.trim()));
+    if ((quoteless && frameOnly(s.head)) || (QUOTED_TASK.test(s.rest) && quoteless) || (quotedWord && backRef(s.head))) {
+      // Düşen cümle Türkçe "o"nun cinsiyetini taşıyorsa ("Aynı kuralı erkek
+      // için deneyelim. O bu uygulamayı kullanıyor") bilgi görevin yanına geçer.
+      for (const [re, note] of GENDER_NOTES) if (re.test(s.head) && !re.test(s.rest)) notes.push(note);
+      text = s.rest;
+    } else break;
+  }
+  // 5. Sonda önceki adıma yaslanan ipucu ("İlk kelimemizi present perfect ile kullan.").
+  for (let round = 0; round < 2; round++) {
+    const m = /^(.*[.!?…]['"”“’»]?)\s+([^'"“”„‘’«»]+)$/u.exec(text);
+    if (!m || !backRef(m[2]) || !enough(m[1])) break;
+    text = m[1];
+  }
+  return notes.length ? `${text} ${notes.join(" ")}` : text;
+}
+
 export function examStem(say: Segment[], native: NativeLang = DEFAULT_NATIVE): string {
   // Büyük harf kuralı dile göre: "i" Türkçede "İ", İngilizcede "I".
   const locale = native === "tr" ? "tr-TR" : native === "de" ? "de-DE" : "en-US";
@@ -215,7 +379,10 @@ export function examStem(say: Segment[], native: NativeLang = DEFAULT_NATIVE): s
     .join(" ")
     .replace(/\s+/g, " ")
     .trim();
-  text = text.replace(MID_TURN, "");
+  // Önce iki noktalı sıra işareti ("… Sıra sende: …" dahil), sonra noktalı
+  // "Şimdi sıra sende." düşünce açığa çıkan baştaki anlatım.
+  text = dropLecture(text).replace(MID_TURN, "");
+  text = dropLecture(text);
   // Üst üste çerçeve olabilir ("Şimdi sıra sende. Deneyelim: …"); her tur
   // en fazla bir çerçeve, geriye bir şey kalmıyorsa durur.
   for (let round = 0; round < 3; round++) {

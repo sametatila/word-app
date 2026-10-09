@@ -12,7 +12,7 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 import { targetLangOf, type NativeLang } from "../src/lib/courses";
-import { buildModuleContent, danglingReference, examProduceUsable, examStem } from "../src/lib/conversations/module-content";
+import { buildModuleContent, danglingReference, examProduceUsable, examStem, leansOnLecture } from "../src/lib/conversations/module-content";
 import {
   sourceAllModules as allModules,
   sourceModuleContent as moduleContent,
@@ -170,7 +170,8 @@ const STEM_CASES: { native: NativeLang; say: string; want: string }[] = [
   { native: "tr", say: "Şimdi sıra sende. Deneyelim: 'Bir kedim var.'", want: "'Bir kedim var.'" },
   { native: "tr", say: "Sıra sende, kısa biçimle: 'Sanki hiçbir şey olmamış gibi.'", want: "Kısa biçimle: 'Sanki hiçbir şey olmamış gibi.'" },
   { native: "tr", say: "Şimdi sıra sende. Ekranın kırıldı. Bunu İngilizce nasıl söylersin?", want: "Ekranın kırıldı." },
-  { native: "tr", say: "Ülke yerine şehir de söyleyebilirsin. Sıra sende: \"Ankaralıyım\" cümlesini İngilizce kur.", want: "Ülke yerine şehir de söyleyebilirsin. \"Ankaralıyım\" cümlesini İngilizce kur." },
+  /* Sıra işaretinden önceki açıklama anlatıma ait (QA F-0057 ikinci tur). */
+  { native: "tr", say: "Ülke yerine şehir de söyleyebilirsin. Sıra sende: \"Ankaralıyım\" cümlesini İngilizce kur.", want: "\"Ankaralıyım\" cümlesini İngilizce kur." },
   { native: "tr", say: "Şimdi sıra sende.", want: "Şimdi sıra sende." },
   { native: "en", say: "One more: 'Will you call me this evening?' — what do you say?", want: "'Will you call me this evening?'" },
   { native: "en", say: "Your turn. You ask: 'What size is this?' — how do you say it?", want: "You ask: 'What size is this?'" },
@@ -178,6 +179,33 @@ const STEM_CASES: { native: NativeLang; say: string; want: string }[] = [
   { native: "de", say: "Jetzt bist du dran. Bilde auf Englisch: „Ich habe eine Katze.“", want: "Bilde auf Englisch: „Ich habe eine Katze.“" },
   { native: "de", say: "Jetzt bist du dran. Ich habe eine Schwester, wie sagst du das?", want: "Ich habe eine Schwester" },
   { native: "de", say: "Noch eins: Wir hätten geduldiger sein müssen.", want: "Wir hätten geduldiger sein müssen." },
+  /* ÖNCEKİ ADIMA YASLANAN AÇIKLAMA VE SIRA CÜMLESİ (QA F-0057 ikinci tur). Kâğıtta görülen madde ilk sırada. */
+  { native: "tr", say: "Arkasına aradığın yeri eklersin. Şimdi sen söyle: 'Garı arıyorum.'", want: "'Garı arıyorum.'" },
+  { native: "en", say: "You add the place you want after it. Now you say: 'I am looking for the station.'", want: "'I am looking for the station.'" },
+  { native: "tr", say: "Karar verdin, alıyorsun. Bunu İngilizcede genelde will ile, kısaltarak söyleriz. Şimdi sen söyle: 'Bunu alacağım.'", want: "'Bunu alacağım.'" },
+  { native: "tr", say: "Üçüncü kalıbımız bu: My kitchen is brighter than the living room. \"Mutfağım oturma odasından daha aydınlık.\" Şimdi sen kur: \"Odam oturma odasından daha sessiz.\"", want: "\"Odam oturma odasından daha sessiz.\"" },
+  { native: "de", say: "Du musst auch fragen können. Die Fragewendung ist die: How often do you…? „Wie oft schaust du in deine Mails?“ Jetzt frag du: „Wie oft gehst du ans Telefon?“", want: "Jetzt frag du: „Wie oft gehst du ans Telefon?“" },
+  { native: "tr", say: "Aynen öyle. Bazen dosya henüz hazır değildir; o zaman gelecekten söz edersin. Şunu kur: 'Dosyayı yarın göndereceğim.'", want: "Şunu kur: 'Dosyayı yarın göndereceğim.'" },
+  { native: "tr", say: "Kur. \"O beni tanımıyor\" cümlesini İngilizce söyle. Bir kadından bahsediyorsun.", want: "\"O beni tanımıyor\" cümlesini İngilizce söyle. Bir kadından bahsediyorsun." },
+  { native: "tr", say: "Son bir cümle kuralım. Sabah dokuzda başlarım.", want: "Sabah dokuzda başlarım." },
+  /* Eskiden kâğıtta yalnız "Son bir cümle kuralım." kalıyordu: ipucu kırpması görevi de yutuyordu. */
+  { native: "tr", say: "Son bir cümle kuralım. İpucu: Kartımı çoktan yükledim.", want: "Kartımı çoktan yükledim." },
+  { native: "tr", say: "Şimdi olumsuzunu sen kur. 'Hiç yurt dışına çıkmadım.'", want: "'Hiç yurt dışına çıkmadım.'" },
+  { native: "de", say: "Bilden wir einen letzten Satz. Wie sagst du „Ich besuche meine Familie“?", want: "Wie sagst du „Ich besuche meine Familie“?" },
+  { native: "en", say: "Your number is thirty-two fifty. How do you say 'My number is thirty-two fifty.'?", want: "How do you say 'My number is thirty-two fifty.'?" },
+  { native: "tr", say: "Şimdi tersini söyle: 'Bu uygun fiyatlı.'", want: "'Bu uygun fiyatlı.'" },
+  { native: "tr", say: "Sebep her zaman beden olmak zorunda değil. Bir önceki konuşmadaki kalıpla başka bir sebep söyle: 'Renk hoşuma gitmiyor.'", want: "'Renk hoşuma gitmiyor.'" },
+  { native: "tr", say: "Şimdi aynı soruyu ekmek için sen sor. Ekmek var mı?", want: "Ekmek var mı?" },
+  { native: "tr", say: "Aynı kuralı erkek için deneyelim. O bu uygulamayı kullanıyor, nasıl denir?", want: "O bu uygulamayı kullanıyor, nasıl denir? Bir erkekten bahsediyorsun." },
+  { native: "tr", say: "Sabah erken kalkamıyorsun, daha geç bir saat istiyorsun. Aynı kalıpla sor: Daha geç bir saatiniz var mı?", want: "Daha geç bir saatiniz var mı?" },
+  { native: "tr", say: "Şimdi ikisini birleştir. Arkadaşın işe girdiğini söyledi. Ona İngilizce şunu söyle: Tebrikler! Harika haber.", want: "Arkadaşın işe girdiğini söyledi. Ona İngilizce şunu söyle: Tebrikler! Harika haber." },
+  { native: "tr", say: "İyi haberi ver: \"Toparlandım, iyileştim.\" İlk kelimemizi present perfect ile kullan.", want: "İyi haberi ver: \"Toparlandım, iyileştim.\"" },
+  { native: "tr", say: "Sıra sende. 'Dişim ağrıyor' cümlesini bu kalıpla kur.", want: "'Dişim ağrıyor' cümlesini kur." },
+  { native: "de", say: "Wie heißt „Ist es kalt?“ nach derselben Logik? Bilde du es.", want: "Wie heißt „Ist es kalt?“? Bilde du es." },
+  /* İçerik taşıyan cümle düşmez: sahne bağlamı ve "'o' bir kadın" gibi çözücü bilgi kalır. */
+  { native: "tr", say: "Arkadaşın çok yorgun görünüyor. Ona \"uyumalısın\" de.", want: "Arkadaşın çok yorgun görünüyor. Ona \"uyumalısın\" de." },
+  { native: "tr", say: "Tek başına taşındıysan 'Buraya yeni taşındım.' dersin. Bunun Almancası ne olur?", want: "Tek başına taşındıysan 'Buraya yeni taşındım.' dersin. Bunun Almancası ne olur?" },
+  { native: "de", say: "Ist die Kaution noch dieselbe?", want: "Ist die Kaution noch dieselbe?" },
 ];
 for (const c of STEM_CASES) {
   const got = examStem(seg(c.say), c.native);
@@ -206,6 +234,7 @@ const NATIVES: Record<string, { native: NativeLang; localise: (c: Conversation) 
   ],
 };
 let framed = 0;
+let leaning = 0;
 let stems = 0;
 for (const course of COURSES) {
   for (const { native, localise } of NATIVES[course] ?? []) {
@@ -216,12 +245,19 @@ for (const course of COURSES) {
         if (FRAME_START.test(p.prompt) || DANGLING_END.test(p.prompt)) {
           if (++framed <= 8) fail(`${course}·${native}·${p.id}`, `yönerge çerçeveyle başlıyor ya da asılı bitiyor: "${p.prompt}" — LEAD_INS/TAIL_OUTS (module-content)`);
         }
+        /* Madde tek başına anlaşılmalı (QA F-0057): önceki adıma yaslanan söz kalmaz ve görev boş değil. */
+        if (leansOnLecture(p.prompt) || !/\p{L}{3,}/u.test(p.prompt)) {
+          if (++leaning <= 8) fail(`${course}·${native}·${p.id}`, `yönerge önceki adıma yaslanıyor ya da görev yok: "${p.prompt}" — dropLecture/BACKREF (module-content)`);
+        }
       }
     }
   }
 }
 if (framed > 8) fail("çerçeve", `${framed - 8} madde daha`);
-console.log(`Yönerge çerçevesi: ${stems} madde (iki kurs, üç anadil), ${STEM_CASES.length} sabit örnek${framed ? `, ${framed} çerçeveli` : ", temiz"}.\n`);
+if (leaning > 8) fail("önceki adım", `${leaning - 8} madde daha`);
+console.log(
+  `Yönerge çerçevesi: ${stems} madde (iki kurs, üç anadil), ${STEM_CASES.length} sabit örnek${framed ? `, ${framed} çerçeveli` : ", temiz"}${leaning ? `, ${leaning} önceki adıma yaslanıyor` : ""}.\n`,
+);
 
 // Seviye sınavı beceri bankasından soru çeker (exam.ts, pickTexts). Sınav kâğıdı
 // soruyu YALNIZ şıklara basarak çiziyor; boşluk doldurma / kısa cevap / dikte
