@@ -143,6 +143,24 @@ const KOLLEGE: Step[] = [
   { say: "Ich habe ein Termin um drei Uhr.", expectFix: "einen" },
 ];
 
+/**
+ * Rol karışması (QA F-0037, 2026-10-09): A1 "Welche Größe haben Sie?" sahnesinde
+ * satış görevlisi rolündeki model müşteriye "Wo sind denn die Umkleidekabinen?"
+ * diye sordu — sahne metnindeki "kabinin yerini sor" öğrencinin görevi. Beklenen:
+ * görevli kabinin yerini SORMAZ (`ROLE_SLIPS`); öğrenci sorunca söyler.
+ */
+const GROESSE: Step[] = [
+  { say: "Ich habe Größe M.", expectClean: true },
+  { say: "Kann ich die Jacke anprobieren?", expectClean: true },
+  { say: "Die Jacke ist schön, aber sie ist zu klein.", expectClean: true },
+  { say: "Haben Sie die Jacke auch in L?", expectClean: true },
+];
+
+/** Rol metninde bu soru geçerse karakter öğrencinin görevini üstlenmiş demektir. */
+const ROLE_SLIPS: Record<string, RegExp> = {
+  "de-a1-groesse/tr": /\bwo\b[^?]*\b(umkleide|kabine)[^?]*\?/i,
+};
+
 type Scenario = { id: string; conversation: Conversation; native: NativeLang; script: Step[] };
 
 /**
@@ -157,6 +175,7 @@ const SCENARIOS: Scenario[] = [
   { id: "de-b1-bewerbung/tr", conversation: findConversation("de-b1-bewerbung")!, native: "tr", script: BEWERBUNG },
   { id: "de-b1-lebenslauf/tr", conversation: findConversation("de-b1-lebenslauf")!, native: "tr", script: LEBENSLAUF },
   { id: "de-a1-wie-gehts/tr", conversation: findConversation("de-a1-wie-gehts")!, native: "tr", script: KOLLEGE },
+  { id: "de-a1-groesse/tr", conversation: findConversation("de-a1-groesse")!, native: "tr", script: GROESSE },
   { id: "de-b1-bewerbung/en", conversation: findConversation("de-b1-bewerbung")!, native: "en", script: BEWERBUNG },
   { id: "en-a2-interview/tr", conversation: findConversation("en-a2-interview")!, native: "tr", script: INTERVIEW_EN },
   { id: "en-a2-interview/de", conversation: findConversation("en-a2-interview")!, native: "de", script: INTERVIEW_EN },
@@ -283,6 +302,8 @@ type Score = {
   glitches: string[];
   /** Öğrencinin cümlesini ya da birinci kişi kalıbını kendi ağzından kuran rol cümleleri. */
   echoes: string[];
+  /** Rol karışması: karakter öğrencinin görevindeki soruyu kendisi sordu (`ROLE_SLIPS`). */
+  roleSlips: string[];
   turkishOk: boolean | null;
   overLevel: string[];
   firstTokenMs: number[];
@@ -324,6 +345,7 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
     guarded: { caught: 0, falseFixes: 0, wrong: [] },
     glitches: [],
     echoes: [],
+    roleSlips: [],
     turkishOk: null,
     overLevel: [],
     firstTokenMs: [],
@@ -381,6 +403,8 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
     tally(s.guarded, step, corrections);
     const echo = echoOf(body, step.say) ?? patternInRole(body, sc.conversation.patterns);
     if (echo) s.echoes.push(echo);
+    const slip = ROLE_SLIPS[sc.id];
+    if (slip && slip.test(body)) s.roleSlips.push(body.split("\n")[0].slice(0, 160));
     if (step.expectTurkish) s.turkishOk = TURKISH_MARKERS.test(body);
 
     s.overLevel.push(...overLevel(body, pools));
@@ -464,6 +488,12 @@ async function main() {
       `  yankı           : ${s.echoes.length ? `✗ ${s.echoes.length}/${s.turns} turda karakter öğrencinin ağzından konuştu` : "✓ yok"}`,
     );
     for (const e of s.echoes) console.log(`      ✗ ${e}`);
+    if (ROLE_SLIPS[s.scenario]) {
+      console.log(
+        `  rol karışması   : ${s.roleSlips.length ? `✗ ${s.roleSlips.length}/${s.turns} turda öğrencinin sorusunu karakter sordu` : "✓ yok"}`,
+      );
+      for (const e of s.roleSlips) console.log(`      ✗ ${e}`);
+    }
     console.log(
       `  Türkçe'ye geçiş : ${s.turkishOk === null ? "—" : s.turkishOk ? "✓" : "✗ Türkçe açıklama gelmedi"}`,
     );

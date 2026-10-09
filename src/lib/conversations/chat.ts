@@ -390,7 +390,7 @@ ${phaseBlock(phase)}`;
  */
 function roleSplit(conversation: Conversation): string {
   return `Öğrencinin görevi (öğrenciye "sen" diye yazıldı; buradaki "sen" ÖĞRENCİ, sen değilsin): ${conversation.chat.scene}
-Rol ayrımı: sen yalnız ${conversation.chat.partner} olarak konuşursun. Yukarıda öğrenciye verilen işleri (sormak, istemek, söylemek, anlatmak) öğrenci yapar; sen o soruları kendin sormazsın, öğrencinin sorusuna rolüne uygun cevap verirsin ve sorması için yer açarsın. Örnek: görevde "kabinin yerini sor" yazıyorsa kabinin yerini sen sormazsın; öğrenci sorunca nerede olduğunu söylersin.`;
+Rol ayrımı: sen yalnız ${conversation.chat.partner} olarak konuşursun. Yukarıda öğrenciye verilen işleri (sormak, istemek, söylemek, anlatmak) öğrenci yapar; sen o soruları kendin sormazsın, öğrencinin sorusuna rolüne uygun cevap verirsin ve sorması için yer açarsın. Sahnenin yerini, ürünlerini, fiyatlarını, saatlerini ve kurallarını BİLEN taraf sensin: bunları öğrenciye sormazsın, o sorunca söylersin. Örnek: görevde "kabinin yerini sor" yazıyorsa "Wo ist die Umkleide?" diye sen sormazsın; öğrenci sorunca nerede olduğunu söylersin.`;
 }
 
 /**
