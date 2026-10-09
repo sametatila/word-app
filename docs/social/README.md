@@ -86,6 +86,8 @@ Yeni şablon gerekirse (yeni format ya da tema): `templates/` altına, mevcut bi
 - **"Hangisini duydun?" çiftleri:** iki kelime aynı türde ve aynı artikelle (yoksa sesteki artikel cevabı ele verir),
   ikisinin de sesi var, ikisi de günlük kelime. Veride 815 aday var ama çoğu zayıf; en kıt kaynak bu, idareli kullan.
 - **"Cümleyi kur" cümleleri:** 4–7 kelime, A1–B1, tek bir dilbilgisi fikri. İpucu iki noktasız ve kesin.
+- **Kelime destesi:** 3 kelime (~30 sn; şablon 3–6 kabul eder ama kart başına ~7 sn). Kanca, başlık ve özet
+  sayıyla uyumlu ("bu 3 kelime"). Fazlası bir sonraki bölüme: "1/2, 2/2" seri olarak.
 
 **Türkçe ekran metni:** Türk bir içerik üreticisinin konuşma diliyle. Çeviri kokan, iki nokta üst üsteli, robotik
 kalıp yok. Kötü: "Sıra sende: sesli söyle", "Skorunu yorumlara yaz: _ / 4", "4 cümleyle hallet". İyi: "Şimdi sen
@@ -96,7 +98,8 @@ söyle", "Kaç tane bildin? Yorumlara yaz", "Bu 4 cümle yetiyor". Açıklamanı
 
 - **Izgara:** yazı alanı x 96–930 (sağda düğme sütunu), ortalananlar 513 ekseninde, dikey 250–1530 (üstte sekmeler,
   altta açıklama). Boşluk 8'in katları; köşe kart 48, kutu 32, hap yüksekliğin yarısı; kutuda yazıya ≥24 px dolgu.
-- **Kanca:** ilk karede soru ya da dert. `E.hook` satırları yazı boyunun 1,16 katı aralıkla dizer, sığmayanı küçültür.
+- **Kanca:** ilk karede soru ya da dert, 0. karede tam okunur (hareket yalnız vurgu dalgası). `E.hook` satırları yazı
+  boyunun 1,16 katı aralıkla dizer, sığmayanı küçültür.
 - **Kapanış (`E.outro`):** özetin altında seri sözü, yorum sorusu, kutulu imza. Uzun metin önce tek satıra sığacak
   kadar küçülür, sığmazsa alttan yukarı dizilir; imza hep en altta, logonun köşesiyle eş merkezli kutuda.
 - **Tema:** Gece, Kâğıt, Turuncu kutu, Lacivert. Turuncu yalnız çerçeve: logo turuncu zeminde kaybolur, içerik açık
@@ -114,7 +117,7 @@ söyle", "Kaç tane bildin? Yorumlara yaz", "Bu 4 cümle yetiyor". Açıklamanı
 |---|---|---|
 | Görüntü | 1080×1920, 9:16, 30 fps, H.264 High, yuv420p (BT.709), CRF 18, 2 sn'de bir anahtar kare | İki platformun önerdiği; yeniden sıkıştırmada kayıp az |
 | Ses | AAC 192k 48 kHz, ≈ −14 LUFS, gerçek tepe ≤ −1 dBTP (yüklenecek dosyada ölçülür) | Platformlar bu civara çekiyor; yüksek verilen kısılır, çok düşük kalan sessiz duyulur |
-| Süre | 28–43 sn (şimdiki bölümler) | Bkz. eleştiri: 30 sn altı hedef |
+| Süre | 28–38 sn (şimdiki bölümler; kelime desteleri 3 kelime, ~30 sn) | Bkz. eleştiri 2: 30 sn civarı hedef |
 | Kapak | `kapak.jpg` (9:16) yüklenir | Akışta ve profilde görünen kare |
 | Profil ızgarası | `kapak-3x4.jpg` (orta 1080×1440) kontrol için | İki platform profilde 3:4 kesit gösteriyor; kanca bu bölgede okunmalı |
 | Açıklama | `aciklama.txt`: ilk satır aranabilir cümle + 5–6 etiket | Instagram'da 3–5 etiket yeterli, fazlası işe yaramıyor |
@@ -136,9 +139,12 @@ Zayıf yanlar, etki sırasıyla:
 1. **İlk saniye boş başlıyor.** Kanca kelime kelime 0,4–1 sn'de geliyor; akışta otomatik oynayan ilk kare neredeyse
    düz zemin. Kaydırma kararı ilk saniyede veriliyor. → Kanca 0. karede okunur olmalı (hareket vurgu olarak sonra),
    ya da ilk karede ses (soru ya da kelime) başlamalı.
+   **Uygulandı (2026-10-09):** kanca 20 şablonda 0. karede tam okunur, kelimeler sırayla kabararak vurgulanır.
 2. **Süre uzun.** Kelime desteleri 42–43 sn, diyaloglar 28–34 sn. Eğitici kısa videoda bitirme oranı 30 sn'den sonra
    hızla düşüyor ve bitirme oranı dağıtımın ana sinyali. → Desteler 3–4 kelime (~30 sn) ya da "1/2, 2/2" bölümler
    (seri takibi de getirir). Kapanış 5 sn sürüyor; özet + kapanış 3 sn'ye inerse döngü (ikinci izleme) artar.
+   **Uygulandı (2026-10-09):** kelime desteleri 3 kelime, 28–30 sn (kart başına ~7 sn: 4 kelime ~36 sn ederdi).
+   Kapanış kısaltması henüz yapılmadı.
 3. **Yüzsüz, şablon görünümü.** Sadece ekran ve sentez ses; akışta "otomatik üretilmiş" hissi riski var, güven ve
    takip düşük kalabilir. Instagram yeniden paylaşılan/özgün olmayan içeriğin erişimini kısıyor; bizimki özgün ama
    her gün aynı kalıp yorgunluk yaratır. → Her 4 videodan biri insan yüzlü (Samet ya da bir öğretmen: aynı içeriğin
@@ -165,7 +171,7 @@ Zayıf yanlar, etki sırasıyla:
 |---|---|---|---|
 | Artikel | Gece | haftada 2 | Kural serisi: her bölüm bir kural ya da tema (mutfak, ev, iş…) |
 | Gerçek durum (diyalog) | Kâğıt | haftada 2 | Her bölüm bir Almanya durumu; yorumlardan konu seçtir |
-| Kelime destesi | Lacivert | haftada 1 | 3–4 kelimeye kısalt (bkz. eleştiri 2) |
+| Kelime destesi | Lacivert | haftada 1 | 3 kelime, ~30 sn (bkz. eleştiri 2) |
 | Hangisini duydun? | Lacivert | haftada 1 | Kıt kaynak: idareli |
 | Cümleyi kur | Gece / Turuncu | haftada 1 | Turuncu haftada en çok bir |
 
