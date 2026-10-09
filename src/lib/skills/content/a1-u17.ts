@@ -315,6 +315,7 @@ export const a1U17: SkillExercise[] = [
         kind: "build",
         tr: "Kirayı her ay havale ediyorum.",
         answer: "Ich überweise die Miete jeden Monat",
+        alternatives: ["Jeden Monat überweise ich die Miete", "Ich überweise jeden Monat die Miete"],
         hint: "„überweisen“ banka havalesi demek; „bezahlen“ genel ödeme.",
       },
       {

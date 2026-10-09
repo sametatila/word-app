@@ -51,7 +51,7 @@ export const deA1P14: SkillExercise[] = [
         text: "An welchem Tag gibt es Fisch?",
         options: ["am Dienstag", "am Freitag", "am Donnerstag"],
         answer: 2,
-        explain: "„Donnerstag: Fisch mit Kartoffeln und Gemüse.“ Salı günü piliç var.",
+        explain: "„Donnerstag: Fisch mit Kartoffeln und Gemüse.“ Balık perşembe; salı günü ise piliç var.",
       },
       {
         kind: "truefalse",

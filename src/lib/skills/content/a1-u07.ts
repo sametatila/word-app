@@ -304,6 +304,7 @@ export const a1U07: SkillExercise[] = [
         kind: "build",
         tr: "Bugün birlikte yemek pişiriyoruz.",
         answer: "Heute kochen wir zusammen",
+        alternatives: ["Wir kochen heute zusammen"],
         hint: "Cümle zaman bilgisiyle başlayınca fiil İKİNCİ sırada kalır, özne fiilden sonra gelir.",
       },
       {

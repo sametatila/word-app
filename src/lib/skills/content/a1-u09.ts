@@ -44,7 +44,7 @@ export const a1U09: SkillExercise[] = [
         text: "Wann steht Tom früh auf?",
         options: ["am Montag", "am Sonntag", "am Samstag"],
         answer: 0,
-        explain: "„Am Montag stehe ich früh auf.“ Pazar günü asla erken kalkmıyor.",
+        explain: "„Am Montag stehe ich früh auf.“ Pazartesi erken kalkıyor; pazar günü ise asla erken kalkmıyor.",
       },
       {
         text: "Richtig oder falsch? Tom steht am Sonntag früh auf.",
@@ -276,6 +276,7 @@ export const a1U09: SkillExercise[] = [
         kind: "build",
         tr: "Bugün Almanca öğreniyorum.",
         answer: "Heute lerne ich Deutsch",
+        alternatives: ["Ich lerne heute Deutsch"],
         hint: "Cümle zaman bilgisiyle başlarsa fiil İKİNCİ sırada kalır, özne fiilden sonra gelir: „Heute lerne ich“ — „Heute ich lerne“ DEĞİL.",
       },
       {
@@ -307,6 +308,7 @@ export const a1U09: SkillExercise[] = [
         kind: "build",
         tr: "Pazar günü asla erken kalkmam.",
         answer: "Am Sonntag stehe ich nie früh auf",
+        alternatives: ["Ich stehe am Sonntag nie früh auf"],
         hint: "Üç kural bir arada: zaman önde → fiil ikinci → ayrılabilir ön ek sonda.",
       },
       {

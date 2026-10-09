@@ -105,7 +105,7 @@ export const a1U10: SkillExercise[] = [
         text: "Was macht Tom am Samstag?",
         options: ["einen Ausflug", "er schläft aus", "er sieht fern"],
         answer: 0,
-        explain: "„Am Samstag mache ich einen Ausflug.“ Pazar günü geç kalkıyor.",
+        explain: "„Am Samstag mache ich einen Ausflug.“ Cumartesi geziye çıkıyor; geç kalkmak pazar günü.",
       },
       {
         text: "Richtig oder falsch? Mia möchte einen Ausflug machen.",
@@ -272,6 +272,7 @@ export const a1U10: SkillExercise[] = [
         kind: "build",
         tr: "İşim saat sekizde başlıyor.",
         answer: "Meine Arbeit fängt um acht Uhr an",
+        alternatives: ["Um acht Uhr fängt meine Arbeit an"],
         hint: "anfangen ayrılabilir: „fängt … an“. Ayrıca a → ä değişir: ich fange, er fängt.",
       },
       {
@@ -309,6 +310,7 @@ export const a1U10: SkillExercise[] = [
         kind: "build",
         tr: "Cumartesi izinliyim.",
         answer: "Am Samstag habe ich frei",
+        alternatives: ["Ich habe am Samstag frei"],
         hint: "Zaman önde → fiil ikinci sırada: „Am Samstag HABE ich frei“.",
       },
       {

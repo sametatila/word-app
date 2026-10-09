@@ -308,6 +308,7 @@ export const a1U24: SkillExercise[] = [
         kind: "build",
         tr: "Dün bir kazak satın aldım.",
         answer: "Gestern habe ich einen Pullover gekauft",
+        alternatives: ["Ich habe gestern einen Pullover gekauft"],
         hint:
           "CÜMLE KISKACI: „habe“ ikinci sırada, ortaç „gekauft“ EN SONDA; aradaki her şey ikisinin arasında kalır. „kaufen“ hareket değil → haben.",
       },
@@ -321,6 +322,7 @@ export const a1U24: SkillExercise[] = [
         kind: "build",
         tr: "Dün evde kaldım.",
         answer: "Gestern bin ich zu Hause geblieben",
+        alternatives: ["Ich bin gestern zu Hause geblieben"],
         hint:
           "KURALDIŞI: „bleiben“de hareket YOK ama yardımcı fiil yine „sein“. Öğrencinin en sık takıldığı yer burasıdır — ezberle.",
       },

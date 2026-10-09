@@ -351,6 +351,7 @@ export const a2U25: SkillExercise[] = [
         kind: "build",
         tr: "Burada her şey bizdekinden daha temiz.",
         answer: "Hier ist alles sauberer als bei uns",
+        alternatives: ["Alles ist hier sauberer als bei uns"],
         hint: "Karşılaştırma: sıfat + -er, sonra als.",
       },
       {

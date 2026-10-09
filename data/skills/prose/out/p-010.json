@@ -365,9 +365,9 @@
   "en": "False: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“"
  },
  {
-  "tr": "„Am Montag stehe ich früh auf.“ Pazar günü asla erken kalkmıyor.",
+  "tr": "„Am Montag stehe ich früh auf.“ Pazartesi erken kalkıyor; pazar günü ise asla erken kalkmıyor.",
   "kind": "explain",
-  "en": "„Am Montag stehe ich früh auf.“ On Sunday he never gets up early."
+  "en": "„Am Montag stehe ich früh auf.“ He gets up early on Monday; on Sunday he never does."
  },
  {
   "tr": "„An der Ampel biegen Sie rechts ab.“ Kavşak ondan sonra geliyor.",

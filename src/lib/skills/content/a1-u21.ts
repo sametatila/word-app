@@ -321,6 +321,7 @@ export const a1U21: SkillExercise[] = [
         kind: "build",
         tr: "Yarın için bir randevuya ihtiyacım var.",
         answer: "Ich brauche einen Termin für morgen",
+        alternatives: ["Für morgen brauche ich einen Termin"],
         hint: "„brauchen“ Akkusativ ister: einen Termin. Telefonda randevu almanın standart açılışı.",
       },
       {

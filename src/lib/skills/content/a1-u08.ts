@@ -304,6 +304,7 @@ export const a1U08: SkillExercise[] = [
         kind: "build",
         tr: "Günüm saat yedide başlıyor.",
         answer: "Mein Tag beginnt um sieben Uhr",
+        alternatives: ["Um sieben Uhr beginnt mein Tag"],
         hint: "Saat bildirirken „um“ kullanılır: um sieben Uhr, um halb acht.",
       },
       {
