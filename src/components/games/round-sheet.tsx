@@ -9,6 +9,7 @@ import { CheckIcon, CloseIcon } from "@/components/icons";
 import { ReportFlag, useRoundReport } from "@/components/report-flag";
 import { SpeakButton } from "@/components/speak-button";
 import { useCourse } from "@/components/app-shell";
+import { targetLangOf } from "@/lib/courses";
 import { useStill } from "@/lib/use-still";
 import { useBlindAnswers } from "./no-hints";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -384,7 +385,7 @@ function SheetBody({ data }: { data: SheetData }) {
             ) : null}
             {showDiffs && data.diffs ? (
               <SheetRow label={t("sheet.diffs")}>
-                <DiffLines target={data.diffs.target} typed={data.diffs.typed} />
+                <DiffLines target={data.diffs.target} typed={data.diffs.typed} lang={targetLangOf(course)} />
               </SheetRow>
             ) : null}
             {showWhy && data.why ? (

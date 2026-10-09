@@ -2,7 +2,8 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import type { DiffSeg } from "@/lib/why";
-import type { TokenMark } from "@/lib/sentence-match";
+import { diffLines, type DiffLine, type DiffLineKind, type TokenMark } from "@/lib/sentence-match";
+import type { TargetLang } from "@/lib/courses";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -28,13 +29,6 @@ const TITLE_KEYS: Record<Mark, string> = {
   extra: "diff.extra",
   moved: "diff.moved",
   typo: "diff.typo",
-};
-
-const CHIP_KEYS: Record<Mark, string> = {
-  missing: "diff.missing",
-  moved: "diff.chip_moved",
-  typo: "diff.typo",
-  extra: "diff.extra",
 };
 
 /** İşaretin mürekkebi ve yumuşak zemini. */
@@ -138,29 +132,48 @@ export function Chip({ label, tone }: { label: ReactNode; tone?: TokenMark }) {
   );
 }
 
+/** Satır türünün etiketi ve rengi: biçim yazımın sarısı, başka kelime eksiğin kırmızısı. */
+const LINE_CHIP: Record<DiffLineKind, { key: string; tone: Mark }> = {
+  missing: { key: "diff.missing", tone: "missing" },
+  typo: { key: "diff.typo", tone: "typo" },
+  form: { key: "diff.chip_form", tone: "typo" },
+  word: { key: "diff.chip_word", tone: "missing" },
+  moved: { key: "diff.chip_moved", tone: "moved" },
+  extra: { key: "diff.extra", tone: "extra" },
+};
+
 /**
  * Farklar, düz dille ve satır satır: "herunterfahren yazılmamış", "Kinno →
- * Kino", "fahren fazla". Sıra: eksik, yazım, yanlış yer, fazla — önce cevapta
- * olması gereken, sonra yazılıp gereksiz olan.
+ * Kino", "Tag → Tage", "fahren fazla". Satırlar hakemin eşlemesinden
+ * (`diffLines`): aynı yerdeki eksik ve fazla kelime tek satır — biçim farkı
+ * "biçim", başka kelime "kelime" etiketiyle (QA F-0020). Sıra hedef cümlenin
+ * sırası, fazlalar sonda. Konuşmadaki üretim adımı `DiffLineList`i doğrudan
+ * çiziyor. Mobil `ui/TokenDiff` aynı iki bileşen.
  */
-export function DiffLines({ target, typed }: { target: MarkedToken[]; typed: MarkedToken[] }) {
+export function DiffLines({ target, typed, lang = "de" }: { target: MarkedToken[]; typed: MarkedToken[]; lang?: TargetLang }) {
+  return <DiffLineList lines={diffLines(target, typed, lang)} />;
+}
+
+export function DiffLineList({ lines }: { lines: DiffLine[] }) {
   const t = useT();
-  const lines: { mark: Mark; text: string }[] = [
-    ...target.filter((k) => k.mark === "missing").map((k) => ({ mark: "missing" as const, text: t("diff.line_missing", { word: k.text }) })),
-    ...target
-      .filter((k) => k.mark === "typo")
-      .map((k) => ({ mark: "typo" as const, text: k.typed ? t("diff.line_typo", { typed: k.typed, word: k.text }) : k.text })),
-    ...target.filter((k) => k.mark === "moved").map((k) => ({ mark: "moved" as const, text: t("diff.line_moved", { word: k.text }) })),
-    ...typed.filter((k) => k.mark === "extra").map((k) => ({ mark: "extra" as const, text: t("diff.line_extra", { word: k.text }) })),
-  ];
   if (!lines.length) return null;
+  const text = (l: DiffLine) =>
+    l.kind === "missing"
+      ? t("diff.line_missing", { word: l.word })
+      : l.kind === "moved"
+        ? t("diff.line_moved", { word: l.word })
+        : l.kind === "extra"
+          ? t("diff.line_extra", { word: l.word })
+          : l.typed
+            ? t("diff.line_typo", { typed: l.typed, word: l.word })
+            : l.word;
   return (
     <ul className="flex flex-col gap-1">
       {lines.map((l, i) => (
         <li key={i} className="flex flex-wrap items-center gap-1.5">
-          <Chip label={t(CHIP_KEYS[l.mark])} tone={l.mark} />
+          <Chip label={t(LINE_CHIP[l.kind].key)} tone={LINE_CHIP[l.kind].tone} />
           <span className="text-caption" style={{ color: "var(--text)" }}>
-            {l.text}
+            {text(l)}
           </span>
         </li>
       ))}

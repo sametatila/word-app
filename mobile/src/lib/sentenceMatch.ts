@@ -3,6 +3,7 @@ import { foldContractions } from "./contractions";
 import { foldEnglishSpelling } from "./en-spelling";
 import { foldNumbers } from "./numbers";
 import { currentTargetLang, type TargetLang } from "./courses";
+import { FORM_CUES, ORDER_CUES } from "./hintCues";
 
 /**
  * Cümle eşleştirme — "Çevir" turunun hakemi (plan WP-10).
@@ -351,4 +352,124 @@ export function produceMiss(typed: string, target: string, alternatives: string[
   if (extra >= 2 && missing >= 2) return "other";
   if (extra >= 2 && missing === 0 && moved === 0) return "other";
   return "hint";
+}
+
+/**
+ * Farklar, satır satır ve EŞLENMİŞ (QA F-0020).
+ *
+ * Hakemin işaretleri kelime başına: "Die Lieferung dauert zwei Tage." istenirken
+ * "… zwei Tag." yazana hedefte `Tage` eksik, yazılanda `Tag` fazla diyordu —
+ * iki ayrı satır ("Tage yazılmamış", "Tag fazla"). Oysa hata tek: Tag → Tage.
+ * Aynı boşlukta (iki ortak kelime arasında) kalan eksik ve fazla kelime
+ * eşleniyor:
+ *   - dilbilgisel çift (çekim eki, umlaut, artikel/zamir; `grammaticalPair`)
+ *     → "form": kelime doğru, biçimi yanlış;
+ *   - boşlukta tek eksik ve tek fazla kaldıysa → "word": o yere başka kelime
+ *     yazılmış ("nach → in");
+ *   - kalanlar eksik / fazla.
+ * Sıra hedef cümlenin sırası, eşlenmemiş fazlalar sonda. Saf ve iki platformda
+ * aynı gövde: sonuç katmanının "Farklar"ı ve konuşmadaki üretim adımının
+ * geri bildirimi bunu çiziyor.
+ */
+export type DiffLineKind = "missing" | "typo" | "form" | "word" | "moved" | "extra";
+export type DiffLine = { kind: DiffLineKind; word: string; typed?: string };
+type DiffToken = { text: string; mark: TokenMark; typed?: string };
+
+export function diffLines(target: DiffToken[], typed: DiffToken[], lang: TargetLang = currentTargetLang()): DiffLine[] {
+  /* LCS çiftleri sıralı: hedefteki k. ortak kelime yazılandaki k. ortak
+     kelimeyle eşleşmiş. Boşluk g = (g-1). ile g. ortak kelime arası. */
+  const gapsOf = (list: DiffToken[]) => {
+    const gaps: number[][] = [[]];
+    list.forEach((k, i) => (k.mark === "same" ? gaps.push([]) : gaps[gaps.length - 1].push(i)));
+    return gaps;
+  };
+  const tg = gapsOf(target);
+  const ug = gapsOf(typed);
+  const pairOf = new Map<number, { typed: string; kind: "form" | "word" }>();
+  const pairedTyped = new Set<number>();
+  tg.forEach((gap, g) => {
+    const miss = gap.filter((i) => target[i].mark === "missing");
+    const free = (ug[g] ?? []).filter((j) => typed[j].mark === "extra");
+    for (const i of miss) {
+      const a = foldSentence(target[i].text, lang);
+      const at = free.findIndex((j) => grammaticalPair(foldSentence(typed[j].text, lang), a, lang));
+      if (at < 0) continue;
+      const j = free.splice(at, 1)[0];
+      pairOf.set(i, { typed: typed[j].text, kind: "form" });
+      pairedTyped.add(j);
+    }
+    const left = miss.filter((i) => !pairOf.has(i));
+    if (left.length === 1 && free.length === 1) {
+      pairOf.set(left[0], { typed: typed[free[0]].text, kind: "word" });
+      pairedTyped.add(free[0]);
+    }
+  });
+  const lines: DiffLine[] = [];
+  target.forEach((k, i) => {
+    if (k.mark === "missing") {
+      const p = pairOf.get(i);
+      lines.push(p ? { kind: p.kind, word: k.text, typed: p.typed } : { kind: "missing", word: k.text });
+    } else if (k.mark === "typo") lines.push(k.typed ? { kind: "typo", word: k.text, typed: k.typed } : { kind: "typo", word: k.text });
+    else if (k.mark === "moved") lines.push({ kind: "moved", word: k.text });
+  });
+  typed.forEach((k, j) => {
+    if (k.mark === "extra" && !pairedTyped.has(j)) lines.push({ kind: "extra", word: k.text });
+  });
+  return lines;
+}
+
+/**
+ * Üretim ipucunun KONUSU: sıra mı, biçim mi (QA F-0020).
+ *
+ * Adımın elle yazılmış ipucu çoğu zaman tek bir şeyi anlatıyor: "Önce
+ * teslimat, sonra fiil, en sonda süre" (sıra) ya da "Anne dişil bir kelime,
+ * iyelik sonuna bir harf alır" (biçim). Oynatıcı ipucunu her yanlışta
+ * okuyordu: "zwei Tag" yazan öğrenciye kelime sırası anlatıldı, hatası çoğul
+ * ekiydi. İpucu artık yalnız hatanın türüne uyuyorsa okunuyor; uymuyorsa
+ * hakemin farkı ("Tag → Tage") ve doğru cümle yeter.
+ *
+ * Ölçü anlatım dilindeki ipucu metninde (Türkçe, İngilizce, Almanca) konum
+ * sözcükleri: başta/sonda/önce…sonra, first/at the end, am Ende/zuerst.
+ * Biçim sözcükleri (dişil, çoğul, hâl, ek; plural, case, ending; Plural,
+ * Dativ, Endung) ipucunu karma yapar. Konum sözcüğü olmayan ipucu biçim/genel
+ * sayılır — eski davranış, yanlış teşhis riski yalnız sıra ipucunda.
+ */
+export type HintFocus = { order: boolean; form: boolean };
+
+export function hintFocus(text: string): HintFocus {
+  const order = ORDER_CUES.test(text);
+  return { order, form: !order || FORM_CUES.test(text) };
+}
+
+/**
+ * Üretim adımında yanlış cevabın geri bildirimi (QA F-0020; `produceMiss`in
+ * üstünde).
+ *
+ *   - "other": cevap başka bir cümle — "istenen cümleden farklı, istenen şu".
+ *   - "diff": hedefin bozulmuş hâli — hakemin farkı (`diffLines`) gösteriliyor;
+ *     `hint` adımın ipucu da okunsun mu: ipucu hatanın türüne uyuyorsa (sıra
+ *     ipucu yalnız sıra hatasında, biçim/genel ipucu yalnız kelime/biçim
+ *     hatasında). Cevap bir eşdeğer biçime (`accept`) daha yakınsa ipucu o
+ *     biçimi anlatmıyor: `matched` doğru cümle olarak gösteriliyor.
+ *
+ * `hintText`: ipucunun anlatım dilindeki metni (hedef dildeki örnekler hariç).
+ */
+export type ProduceFeedback = { kind: "other" } | { kind: "diff"; lines: DiffLine[]; matched: string; hint: boolean };
+
+export function produceFeedback(
+  typed: string,
+  target: string,
+  alternatives: string[],
+  hintText: string,
+  lang: TargetLang = currentTargetLang(),
+): ProduceFeedback {
+  if (produceMiss(typed, target, alternatives, lang) === "other") return { kind: "other" };
+  const m = matchSentence(typed, target, alternatives, lang);
+  const lines = diffLines(m.target, m.typed, lang);
+  if (!lines.length) return { kind: "diff", lines, matched: target, hint: true };
+  const order = lines.some((l) => l.kind === "moved");
+  const other = lines.some((l) => l.kind !== "moved");
+  const f = hintFocus(hintText);
+  const hint = m.matched === target && ((order && f.order) || (other && f.form));
+  return { kind: "diff", lines, matched: m.matched, hint };
 }

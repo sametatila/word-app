@@ -3,7 +3,7 @@ import { Text as RNText, View } from "react-native";
 import { t } from "../lib/i18n";
 import { useTheme, soft, spacing } from "../theme";
 import { Text } from "./Text";
-import type { TokenMark } from "../lib/sentenceMatch";
+import { diffLines, type DiffLine, type DiffLineKind, type TokenMark } from "../lib/sentenceMatch";
 
 /**
  * Fark vurgusu — web `components/feedback/diff-text` karşılığı.
@@ -97,11 +97,14 @@ export function CharMarked({ segs, side }: { segs: { text: string; kind: "same" 
   );
 }
 
-const CHIP_KEYS: Record<Exclude<TokenMark, "same">, string> = {
-  missing: "diff.missing",
-  moved: "diff.chip_moved",
-  typo: "diff.typo",
-  extra: "diff.extra",
+/** Satır türünün etiketi ve rengi: biçim yazımın sarısı, başka kelime eksiğin kırmızısı. */
+const LINE_CHIP: Record<DiffLineKind, { key: string; tone: Exclude<TokenMark, "same"> }> = {
+  missing: { key: "diff.missing", tone: "missing" },
+  typo: { key: "diff.typo", tone: "typo" },
+  form: { key: "diff.chip_form", tone: "typo" },
+  word: { key: "diff.chip_word", tone: "missing" },
+  moved: { key: "diff.chip_moved", tone: "moved" },
+  extra: { key: "diff.extra", tone: "extra" },
 };
 
 /** Küçük etiket — farkın ya da hata tipinin adı. */
@@ -115,26 +118,37 @@ export function MarkTag({ label, fg, bg }: { label: string; fg: string; bg: stri
 
 /**
  * Farklar, düz dille ve satır satır: "herunterfahren yazılmamış", "Kinno →
- * Kino", "fahren fazla". Sıra: eksik, yazım, yanlış yer, fazla — önce cevapta
- * olması gereken, sonra yazılıp gereksiz olan.
+ * Kino", "Tag → Tage", "fahren fazla". Satırlar hakemin eşlemesinden
+ * (`diffLines`): aynı yerdeki eksik ve fazla kelime tek satır — biçim farkı
+ * "biçim", başka kelime "kelime" etiketiyle (QA F-0020). Sıra hedef cümlenin
+ * sırası, fazlalar sonda. Konuşmadaki üretim adımı `DiffLineList`i doğrudan
+ * çiziyor. Web `components/feedback/marked` aynı iki bileşen.
  */
 export function DiffLines({ target, typed }: { target: MarkedToken[]; typed: MarkedToken[] }) {
+  return <DiffLineList lines={diffLines(target, typed)} />;
+}
+
+export function DiffLineList({ lines }: { lines: DiffLine[] }) {
   const { colors } = useTheme();
-  const lines: { mark: Exclude<TokenMark, "same">; text: string }[] = [
-    ...target.filter((k) => k.mark === "missing").map((k) => ({ mark: "missing" as const, text: t("diff.line_missing", { word: k.text }) })),
-    ...target.filter((k) => k.mark === "typo").map((k) => ({ mark: "typo" as const, text: k.typed ? t("diff.line_typo", { typed: k.typed, word: k.text }) : k.text })),
-    ...target.filter((k) => k.mark === "moved").map((k) => ({ mark: "moved" as const, text: t("diff.line_moved", { word: k.text }) })),
-    ...typed.filter((k) => k.mark === "extra").map((k) => ({ mark: "extra" as const, text: t("diff.line_extra", { word: k.text }) })),
-  ];
   if (!lines.length) return null;
+  const text = (l: DiffLine) =>
+    l.kind === "missing"
+      ? t("diff.line_missing", { word: l.word })
+      : l.kind === "moved"
+        ? t("diff.line_moved", { word: l.word })
+        : l.kind === "extra"
+          ? t("diff.line_extra", { word: l.word })
+          : l.typed
+            ? t("diff.line_typo", { typed: l.typed, word: l.word })
+            : l.word;
   return (
     <View style={{ gap: spacing.xs }}>
       {lines.map((l, i) => {
-        const tone = markTone(l.mark, colors);
+        const tone = markTone(LINE_CHIP[l.kind].tone, colors);
         return (
           <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
-            <MarkTag label={t(CHIP_KEYS[l.mark])} fg={tone.fg} bg={tone.soft} />
-            <Text variant="caption" color={colors.text}>{l.text}</Text>
+            <MarkTag label={t(LINE_CHIP[l.kind].key)} fg={tone.fg} bg={tone.soft} />
+            <Text variant="caption" color={colors.text}>{text(l)}</Text>
           </View>
         );
       })}

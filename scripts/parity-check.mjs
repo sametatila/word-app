@@ -806,6 +806,10 @@ console.log("\n" + C.b + "17. CUMLE HAKEMI" + C.off);
       .map((l) => l.replace(/lang: (?:TargetLang|string)( = (?:"de"|currentTargetLang\(\)))?/g, "lang"));
   };
   sameList("hakem govdesi", body("mobile/src/lib/sentenceMatch.ts"), body("src/lib/sentence-match.ts"));
+  /* Uretim ipucunun konusunu taniyan sozcukler (QA F-0020, `hintFocus`): veri
+     dosyasi, iki kopya birebir. Ayrisirsa ayni ipucu bir platformda okunur,
+     otekinde okunmaz. */
+  sameList("ipucu konu sozcukleri", read("mobile/src/lib/hintCues.ts").split("\n"), read("src/lib/hint-cues.ts").split("\n"));
 
   /* Kisa yazili cevap (`written`: bosluk doldurma, kisa cevap, dikte, form)
      ayni yazim olcutunden geciyor: tek harf sapma YALNIZ dilbilgisel degilse
@@ -14512,7 +14516,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * gecmesi. 10/9 turla biten, 2/3 yapan konusma "en az 9 tur gerekiyor"
    * dedi. Esik (`CONVERSATION_PASS_RATIO`) iki tarafta adli sabit; "yarim"
    * yalniz tur eksikse, isabet notu ayri. Uretim adiminda baska bir cumleye
-   * kural ipucu yerine "istenen cumleden farkli" deniyor (`produceMiss`,
+   * kural ipucu yerine "istenen cumleden farkli" deniyor (`produceFeedback`,
    * govdesi 17. bolumde hakemle birlikte karsilastiriliyor). */
   {
     const dm = sil(read("mobile/src/screens/ConversationScreen.tsx"));
@@ -14533,7 +14537,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "yarim=" + (/const unfinished = !turnsDone;/.test(dm) && /const chatReady = roleTurns >= minTurns \|\| waived;/.test(dm) ? "yalniz tur, muaf degil" : "BASKA"),
         "isabet notu=" + (/scoreLow \?[\s\S]{0,200}conversationp\.score_low_note_unfinished" : "conversationp\.score_low_note"/.test(dm) ? "var" : "YOK"),
         "isabet bandi=" + (/conversationp\.pill_score_low/.test(dm) ? "var" : "YOK"),
-        "uretim ipucu=" + (/produceMiss\([\s\S]{0,120}=== "other"[\s\S]{0,800}conversationp\.produce_other/.test(dm) ? "hakemden" : "YOK"),
+        "uretim ipucu=" + (/produceFeedback\([\s\S]{0,120}fb\.kind === "other"[\s\S]{0,300}conversationp\.produce_other/.test(dm) ? "hakemden" : "YOK"),
+        /* QA F-0020: yanlista hakemin farki baloncukta; ipucu yalniz hatanin
+           turune uyuyorsa (`fb.hint`), uymuyorsa "Dogrusu: … Tekrar dene". */
+        "uretim farki=" + (/fb\.hint[\s\S]{0,200}common\.answer_is[\s\S]{0,200}conversationp\.produce_retry[\s\S]{0,200}fb\.lines/.test(dm) && /<DiffLineList lines=\{\w+\.diff\} \/>/.test(dm) ? "var" : "YOK"),
       ],
       [
         "esik=" + ((sw.match(/CONVERSATION_PASS_RATIO = ([\d.]+)/) ?? [])[1] ?? "YOK"),
@@ -14541,7 +14548,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "yarim=" + (/const unfinished = !chatDone && !waived;/.test(dw) ? "yalniz tur, muaf degil" : "BASKA"),
         "isabet notu=" + (/scoreLow \?[\s\S]{0,200}conversationp\.score_low_note_unfinished" : "conversationp\.score_low_note"/.test(dw) ? "var" : "YOK"),
         "isabet bandi=" + (/conversationp\.pill_score_low/.test(dw) ? "var" : "YOK"),
-        "uretim ipucu=" + (/produceMiss\([\s\S]{0,120}=== "other"[\s\S]{0,800}conversationp\.produce_other/.test(dw) ? "hakemden" : "YOK"),
+        "uretim ipucu=" + (/produceFeedback\([\s\S]{0,120}fb\.kind === "other"[\s\S]{0,300}conversationp\.produce_other/.test(dw) ? "hakemden" : "YOK"),
+        /* QA F-0020: yanlista hakemin farki baloncukta; ipucu yalniz hatanin
+           turune uyuyorsa (`fb.hint`), uymuyorsa "Dogrusu: … Tekrar dene". */
+        "uretim farki=" + (/fb\.hint[\s\S]{0,200}common\.answer_is[\s\S]{0,200}conversationp\.produce_retry[\s\S]{0,200}fb\.lines/.test(dw) && /<DiffLineList lines=\{\w+\.diff\} \/>/.test(dw) ? "var" : "YOK"),
       ],
       "mobil",
       "web",

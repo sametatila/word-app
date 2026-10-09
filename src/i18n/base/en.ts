@@ -2138,6 +2138,8 @@ export const enBase: Record<string, string> = {
   "diff.line_moved": "{word} is in the wrong place",
   "diff.line_typo": "{typed} → {word}",
   "diff.line_extra": "{word} is extra",
+  "diff.chip_form": "form",
+  "diff.chip_word": "word",
   "session.chip_new": "new",
   "session.chip_review": "review",
   /* Tur BOŞ döndüğünde ne yazacağı. Mobil ikisini de "Tur bitti 0/0"
@@ -2297,6 +2299,7 @@ export const enBase: Record<string, string> = {
   "conversationp.stat_review": "Review in",
   "conversationp.pill_min_turns": "At least {n} turns needed",
   "conversationp.produce_other": "That's a different sentence from the one asked for here. The one asked for:",
+  "conversationp.produce_retry": "Try again.",
   "conversationp.pill_score_low": "{need}/{total} correct needed for a longer interval",
   "conversationp.score_low_note": "The conversation is complete and counts on your Path. You got {correct}/{total} of the explanation exercises right on the first try; for the review interval to grow you need at least {need}/{total}, so this conversation will come back soon.",
   "conversationp.score_low_note_unfinished": "In the explanation exercises you also got {correct}/{total} right on the first try; for the review interval to grow you need at least {need}/{total}.",

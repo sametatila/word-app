@@ -40,7 +40,8 @@ import { fetchCando } from "../game/cando";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { sfx } from "../lib/sfx";
 import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "../lib/learningRules";
-import { produceMiss } from "../lib/sentenceMatch";
+import { produceFeedback, type DiffLine } from "../lib/sentenceMatch";
+import { DiffLineList } from "../ui/TokenDiff";
 import { judgeTyped } from "../lib/typedAnswer";
 import { produceSource } from "../lib/produceSource";
 import { segmentGap } from "../lib/segmentText";
@@ -91,7 +92,7 @@ type ReportRef = { ref: string; text: string };
  */
 type ContentRef = { sub: string; snapshot: Record<string, unknown> };
 type BubbleData =
-  | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why"; fix?: string[]; report?: ReportRef; content?: ContentRef }
+  | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why"; fix?: string[]; report?: ReportRef; content?: ContentRef; diff?: DiffLine[] }
   | { role: "student"; text: string; ok?: boolean };
 type Bubble = BubbleData & { id: number };
 
@@ -728,14 +729,31 @@ export function ConversationScreen() {
         push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
         speakTarget(expect.target);
         advanceLater(900);
-      } else if (produceMiss(text, expect.target, expect.accept) === "other") {
+      } else {
         /* Cevap hedefin bozulmuş hâli değil, BAŞKA bir cümle: adımın kural
            ipucu ("'weil'den sonra fiil en sona gider") burada yanlış teşhis
            olurdu — öğrenci kuralı uygulamış olabilir (denetim T16). İstenen
-           cümle söyleniyor. Web `conversation-player` aynı hakemle aynı dal. */
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.produce_other") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
-      } else if (expect.hint?.length) {
-        push({ role: "teacher", segments: expect.hint, tone: "hint" });
+           cümle söyleniyor.
+           Bozulmuş hâliyse HATANIN KENDİSİ gösteriliyor (QA F-0020): "zwei Tag"
+           yazana kelime sırası ipucu çıkıyordu, hatası çoğul ekiydi. Balonda
+           hakemin farkı ("Tag → Tage"); ipucu yalnız hatanın türüne uyuyorsa,
+           uymuyorsa "Doğrusu: … Tekrar dene." Web `conversation-player` aynı
+           hakemle aynı dal (`produceFeedback`). */
+        const tl = currentTargetLang();
+        const hintText = (expect.hint ?? []).filter((x) => x.lang !== tl).map((x) => x.text).join(" ");
+        const fb = produceFeedback(text, expect.target, expect.accept ?? [], hintText, tl);
+        if (fb.kind === "other") {
+          push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.produce_other") }, { lang: tl as Segment["lang"], text: expect.target }], tone: "hint" });
+        } else {
+          push({
+            role: "teacher",
+            segments: fb.hint && expect.hint?.length
+              ? expect.hint
+              : [{ lang: "tr", text: tx("common.answer_is") }, { lang: tl as Segment["lang"], text: fb.matched }, { lang: "tr", text: tx("conversationp.produce_retry") }],
+            tone: "hint",
+            ...(fb.lines.length ? { diff: fb.lines } : {}),
+          });
+        }
       }
     }
     scrollDown();
@@ -1290,6 +1308,8 @@ function BubbleView({ b, colors, onReport, conversationId }: { b: Bubble; colors
   return (
     <View style={{ alignSelf: "flex-start", maxWidth: "88%", marginBottom: spacing.md }}>
       <View style={{ borderRadius: radii.lg, borderBottomLeftRadius: radii.sm, paddingVertical: 10, paddingHorizontal: spacing.md, backgroundColor: bg, borderWidth: 1, borderColor: colors.hairline }}>
+        {/* Üretim adımının yanlışı: önce hatanın kendisi (QA F-0020). */}
+        {b.diff?.length ? <View style={{ marginBottom: 6 }}><DiffLineList lines={b.diff} /></View> : null}
         <Text variant="body">
           {b.segments.map((s, i) => (
             <Text key={i} variant="body" color={s.lang !== "tr" ? colors.text : colors.textMuted} style={s.lang !== "tr" ? { fontWeight: "700" } : undefined}>

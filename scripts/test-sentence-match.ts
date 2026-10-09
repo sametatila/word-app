@@ -2,7 +2,7 @@
  * Cümle eşleştirme birim testi — `npm run test:match` (WP-10, adım 3).
  * Veritabanı yok; `lib/sentence-match` saf.
  */
-import { foldSentence, matchSentence, produceMiss, typoOnly } from "../src/lib/sentence-match";
+import { diffLines, foldSentence, hintFocus, matchSentence, produceFeedback, produceMiss, typoOnly } from "../src/lib/sentence-match";
 import { foldCompare } from "../src/components/games/types";
 import { levenshtein } from "../src/lib/errors";
 import { judgeTyped, arrangedRescuable } from "../src/lib/typed-answer";
@@ -157,6 +157,33 @@ check("tırnaklı anadil cümlesi", quotedSource(SAY, "de") === "Yarın alışve
 check("hedef dil parçası kaynak değil", quotedSource([{ lang: "tr", text: "İkinci kalıp:" }, { lang: "de", text: "'Ich kaufe ein'" }], "de") === null);
 check("ek almış kesme işareti tırnak sayılmaz", quotedSource([{ lang: "tr", text: "Ali'nin evi nerede, nasıl sorarsın?" }], "de") === null);
 check("tırnak yoksa anlatımın tamamı kaynak", produceSource([{ lang: "tr", text: "Gömleği deneyebilir misin diye sor." }], "de") === "Gömleği deneyebilir misin diye sor.");
+
+// QA F-0020: üretim adımının yanlışında hakemin farkı; ipucu yalnız hatanın türüne uyuyorsa.
+const lines = (typed: string, target: string, lang: "de" | "en" = "de") => {
+  const m = matchSentence(typed, target, [], lang);
+  return diffLines(m.target, m.typed, lang).map((l) => `${l.kind}:${l.typed ? l.typed + ">" : ""}${l.word}`).join(" ");
+};
+check("çekim eki eşleniyor (Tag → Tage)", lines("Die Lieferung dauert zwei Tag.", "Die Lieferung dauert zwei Tage.") === "form:Tag>Tage", lines("Die Lieferung dauert zwei Tag.", "Die Lieferung dauert zwei Tage."));
+check("artikel çifti biçim", lines("Ich sehe der Mann", "Ich sehe den Mann") === "form:der>den", lines("Ich sehe der Mann", "Ich sehe den Mann"));
+check("aynı yerde başka kelime → word", lines("Ich wohne nach Berlin", "Ich wohne in Berlin") === "word:nach>in", lines("Ich wohne nach Berlin", "Ich wohne in Berlin"));
+check("eksik + fazla ayrı boşlukta eşlenmez", lines("Ich muss zu arbeiten", "Ich muss arbeiten") === "extra:zu", lines("Ich muss zu arbeiten", "Ich muss arbeiten"));
+check("yazım hatası typo satırı", lines("Ich gehe ins Kinno", "Ich gehe ins Kino") === "typo:Kinno>Kino", lines("Ich gehe ins Kinno", "Ich gehe ins Kino"));
+check("sıra hatası moved", /moved:/.test(lines("Heute ich gehe ins Kino", "Heute gehe ich ins Kino")), lines("Heute ich gehe ins Kino", "Heute gehe ich ins Kino"));
+check("sıra ipucu", JSON.stringify(hintFocus("Önce teslimat, sonra fiil, en sonda süre:")) === JSON.stringify({ order: true, form: false }));
+check("biçim ipucu", JSON.stringify(hintFocus("Anne dişil bir kelime, bu yüzden iyelik sonuna bir harf alır:")) === JSON.stringify({ order: false, form: true }));
+check("karma ipucu", JSON.stringify(hintFocus("Yardımcı fiil ikinci sırada kalır, geçmiş biçim en sona gider:")) === JSON.stringify({ order: true, form: true }));
+check("İngilizce sıra ipucu", hintFocus("First you, then the verb, the duration at the end:").order && !hintFocus("First you, then the verb, the duration at the end:").form);
+check("Almanca biçim ipucu", !hintFocus("Mutter ist feminin, das Possessiv bekommt eine Endung:").order);
+const ORDER_HINT = "Önce teslimat, sonra fiil, en sonda süre:";
+const pf1 = produceFeedback("Die Lieferung dauert zwei Tag.", "Die Lieferung dauert zwei Tage.", [], ORDER_HINT);
+check("F-0020: çoğul hatasında sıra ipucu yok, fark var", pf1.kind === "diff" && !pf1.hint && pf1.lines.length === 1 && pf1.lines[0].kind === "form", JSON.stringify(pf1));
+const pf2 = produceFeedback("Die Lieferung zwei Tage dauert.", "Die Lieferung dauert zwei Tage.", [], ORDER_HINT);
+check("F-0020: sıra hatasında sıra ipucu var", pf2.kind === "diff" && pf2.hint, JSON.stringify(pf2));
+const pf3 = produceFeedback("Das ist mein Mutter", "Das ist meine Mutter", [], "Anne dişil bir kelime, bu yüzden iyelik sonuna bir harf alır:");
+check("F-0020: biçim hatasında biçim ipucu var", pf3.kind === "diff" && pf3.hint, JSON.stringify(pf3));
+const pf4 = produceFeedback("Mutter ist das meine", "Das ist meine Mutter", [], "Anne dişil bir kelime, bu yüzden iyelik sonuna bir harf alır:");
+check("F-0020: yalnız sıra hatasında biçim ipucu yok", pf4.kind === "diff" && !pf4.hint, JSON.stringify(pf4));
+check("F-0020: başka cümle → other", produceFeedback("Bu pozisyonu istiyorum", W, WA, ORDER_HINT).kind === "other");
 
 console.log(failures === 0 ? "\nTÜM TESTLER GEÇTİ" : `\n${failures} TEST BAŞARISIZ`);
 process.exit(failures === 0 ? 0 : 1);

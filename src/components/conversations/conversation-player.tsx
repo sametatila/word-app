@@ -33,7 +33,8 @@ import type { SurfaceView } from "@/lib/premium/unlock-copy";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 import { RoundExit } from "@/components/round-exit";
 import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "@/lib/conversations/chat-const";
-import { produceMiss } from "@/lib/sentence-match";
+import { produceFeedback, type DiffLine } from "@/lib/sentence-match";
+import { DiffLineList } from "@/components/feedback/marked";
 import { judgeTyped } from "@/lib/typed-answer";
 import { produceSource } from "@/lib/conversations/produce-source";
 import { segmentGap } from "@/lib/conversations/segment-text";
@@ -84,6 +85,8 @@ type FeedItem =
       role: "assistant";
       segments: Segment[];
       tone?: "hint";
+      /** Üretim adımının yanlışında hakemin farkı ("Tag → Tage"; QA F-0020). Okunmuyor, yalnız görünüyor. */
+      diff?: DiffLine[];
       pending?: boolean;
       /** Yazılı ders adımının sırası (0'dan) — içerik bildiriminin hedefi. Ara baloncuklarda yok. */
       step?: number;
@@ -816,14 +819,14 @@ function ConversationPlayerBody({
 
   /** Yalnızca konuşan bir ara baloncuk: ipucu, düzeltme, teselli. */
   const interject = useCallback(
-    (said: Segment[], then?: () => void, tone: "hint" | undefined = "hint") => {
+    (said: Segment[], then?: () => void, tone: "hint" | undefined = "hint", diff?: DiffLine[]) => {
       const segments = asLesson(said, lang);
       setAwaiting(false);
       setSpeakingId(null);
       const id = ++feedSeq.current;
       setFeed((f) => [
         ...f.map((it) => ("pending" in it && it.pending ? { ...it, pending: false } : it)),
-        { id, role: "assistant", segments, tone, pending: ttsAvailable },
+        { id, role: "assistant", segments, tone, pending: ttsAvailable, ...(diff?.length ? { diff } : {}) },
       ]);
       const token = ++speechToken.current;
       cancelSpeech.current?.();
@@ -981,14 +984,26 @@ function ConversationPlayerBody({
         /* Cevap hedefin bozulmuş hâli değil de BAŞKA bir cümleyse adımın kural
            ipucu ("'weil'den sonra fiil en sona gider") yanlış teşhis olurdu —
            öğrenci kuralı uygulamış olabilir (denetim T16). O zaman istenen
-           cümle söyleniyor. Hüküm hakemin hizalamasından (`produceMiss`);
-           mobil `ConversationScreen` aynı dal. */
-        interject(
-          produceMiss(said, e.target, e.accept ?? [], targetLangOf(conversation.course)) === "other"
-            ? [nar("conversationp.produce_other"), { lang: "de", text: e.target }]
-            : e.hint,
-          reopen,
-        );
+           cümle söyleniyor.
+
+           Bozulmuş hâliyse HATANIN KENDİSİ gösteriliyor (QA F-0020): "zwei Tag"
+           yazana kelime sırası ipucu okunuyordu ("Önce teslimat, sonra fiil, en
+           sonda süre"), hatası çoğul ekiydi. Baloncukta hakemin farkı ("Tag →
+           Tage", `diffLines`); adımın ipucu yalnız hatanın türüne uyuyorsa
+           (sıra ipucu sıra hatasında, biçim ipucu kelime/biçim hatasında),
+           uymuyorsa "Doğrusu: … Tekrar dene." Hüküm `produceFeedback`; mobil
+           `ConversationScreen` aynı dal. */
+        const tl = targetLangOf(conversation.course);
+        const hintText = e.hint.filter((x) => x.lang !== tl).map((x) => x.text).join(" ");
+        const fb = produceFeedback(said, e.target, e.accept ?? [], hintText, tl);
+        if (fb.kind === "other") interject([nar("conversationp.produce_other"), { lang: tl, text: e.target }], reopen);
+        else
+          interject(
+            fb.hint ? e.hint : [nar("common.answer_is"), { lang: tl, text: fb.matched }, nar("conversationp.produce_retry")],
+            reopen,
+            "hint",
+            fb.lines,
+          );
       } else {
         const missing =
           best.kind === "partial" || best.kind === "different" ? best.missing : [];
@@ -2330,29 +2345,37 @@ function LectureBubble({
           {item.pending ? (
             <TypingDots />
           ) : (
-            <motion.span
-              className="inline"
-              {...(still
-                ? {}
-                : {
-                    initial: { opacity: 0, y: 4 },
-                    animate: { opacity: 1, y: 0 },
-                    transition: { duration: 0.22, ease: "easeOut" as const },
-                  })}
-            >
-              {item.segments.map((seg, i) => (
-                <span key={i}>
-                  {seg.lang !== "tr" ? (
-                    <span className="brand-text font-bold">{seg.text}</span>
-                  ) : (
-                    seg.text
-                  )}
-                  {/* Ara: boşluk, ya da hedef dildeki parçadan sonra yeni cümle
-                      başlıyorsa nokta (QA F-0009; mobil `BubbleView` aynı yardımcı). */}
-                  {segmentGap(item.segments, i) || null}
-                </span>
-              ))}
-            </motion.span>
+            <>
+              {/* Üretim adımının yanlışı: önce hatanın kendisi (QA F-0020). */}
+              {item.diff ? (
+                <div className="mb-1.5">
+                  <DiffLineList lines={item.diff} />
+                </div>
+              ) : null}
+              <motion.span
+                className="inline"
+                {...(still
+                  ? {}
+                  : {
+                      initial: { opacity: 0, y: 4 },
+                      animate: { opacity: 1, y: 0 },
+                      transition: { duration: 0.22, ease: "easeOut" as const },
+                    })}
+              >
+                {item.segments.map((seg, i) => (
+                  <span key={i}>
+                    {seg.lang !== "tr" ? (
+                      <span className="brand-text font-bold">{seg.text}</span>
+                    ) : (
+                      seg.text
+                    )}
+                    {/* Ara: boşluk, ya da hedef dildeki parçadan sonra yeni cümle
+                        başlıyorsa nokta (QA F-0009; mobil `BubbleView` aynı yardımcı). */}
+                    {segmentGap(item.segments, i) || null}
+                  </span>
+                ))}
+              </motion.span>
+            </>
           )}
         </div>
         {item.pending ? null : speaking ? (

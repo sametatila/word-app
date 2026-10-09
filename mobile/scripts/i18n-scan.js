@@ -113,6 +113,11 @@ const SKIP_CONTENT = [
   // olarak dosyanın içinde. Webde karşılığı `lib/immersion/content` (web tarayıcısının
   // SKIP listesinde). Kapısı: `check:parity` "de-a1-u01 verisi" (VERİ BAŞI–VERİ SONU birebir).
   "data/authoredUnits.ts",
+  // Üretim ipucunun konusunu tanıyan sözcükler (başta/sonda, dişil/çoğul;
+  // first/plural; zuerst/Endung) — ekrana basılmıyor, ipucu metnini ölçüyor.
+  // Webde `src/lib/hint-cues.ts` (web tarayıcısının SKIP listesinde).
+  // Kapısı: `check:parity` "ipucu konu sozcukleri".
+  "lib/hintCues.ts",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
 /**

@@ -69,6 +69,9 @@ const SKIP = [
   "lib/assess-prompts.ts",
   /* Çeviri kurtarma kontrolünün model istemi (assess-prompts gibi): ekrana basılmıyor. */
   "lib/translate-check.ts",
+  /* Üretim ipucunun konusunu tanıyan sözcükler (QA F-0020): ekrana basılmıyor,
+     ipucu metnini ölçüyor. Mobil `lib/hintCues.ts` aynı; kapısı `check:parity`. */
+  "lib/hint-cues.ts",
   "lib/numbers.ts",
   "lib/moderation.ts",
   /*
