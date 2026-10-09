@@ -1116,6 +1116,24 @@
    "voiced": [],
    "reason": "'Cuma eve daha erken gidiyorum' Türkçede kulağa eksik ve tuhaf geliyor; 'Am Freitag' doğal olarak 'Cuma günü' diye aktarılır.",
    "applied": "2026-10-04"
+  },
+  {
+   "id": 127,
+   "de": "entschuldigen",
+   "severity": "orta",
+   "before": {
+    "tr": "affetmek",
+    "beispielTr": "Lütfen hatamı affedin!"
+   },
+   "after": {
+    "tr": "mazur görmek",
+    "beispielTr": "Lütfen hatamı mazur görün!"
+   },
+   "voiced": [
+    "tr"
+   ],
+   "reason": "QA F-0056 (2026-10-09): \"affetmek\" verzeihen'in (ve vergeben'in) asıl karşılığı; entschuldigen kartı onu taşıyınca \"affetmek\" yazma isteminde verzeihen yanlış sayıldı ve öğrenci entschuldigen = affetmek ezberledi. Kartın cümlesi (\"Bitte entschuldigen Sie meinen Fehler!\") ve İngilizcesi (to excuse) mazur görmek anlamında. 'mazur görmek' Defne/Aras kaydı canlı tabloda zaten var (iki ses).",
+   "applied": "2026-10-09"
   }
  ]
 }

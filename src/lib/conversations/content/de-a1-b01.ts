@@ -511,7 +511,7 @@ export const deA1B01: Conversation[] = [
       { de: "die Dame", tr: "hanım" },
       { de: "freundlich", tr: "güler yüzlü" },
       { de: "nett", tr: "cana yakın" },
-      { de: "entschuldigen", tr: "affetmek" },
+      { de: "entschuldigen", tr: "mazur görmek" },
 ],
     patterns: [
       { de: "Wie heißt du?", tr: "arkadaşına adını sorar" },
@@ -608,7 +608,7 @@ export const deA1B01: Conversation[] = [
         say: [
           tr("Son kelimemiz:"),
           de("entschuldigen"),
-          tr("Türkçede 'affetmek' ya da 'kusura bakmamak' demek. Lütfen"),
+          tr("Türkçede 'mazur görmek' ya da 'kusura bakmamak' demek. Lütfen"),
           de("entschuldigen"),
           tr("de."),
         ],
