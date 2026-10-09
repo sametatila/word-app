@@ -262,6 +262,23 @@ const SPELLING_HINTS_EN: [RegExp, string][] = [
   [/[A-Z]/, "sphint.en-caps"],
 ];
 
+/**
+ * Almanca ipucu seçiminde iki BAĞLAM kuralı (QA F-0047, "noch" yerine "nohc"):
+ * farktaki harfe bakmak yetmiyordu — "c" ile "h"nin yer değiştirmesi farkta
+ * yalnız "h" bırakıyor ve uzatma h'si kuralı ("ünlüden sonraki h okunmaz")
+ * çıkıyordu, oysa kelimede uzatma h'si yok, bozulan şey "ch" kümesi.
+ *   1. Hedefteki "ch" yazıda eksik kaldıysa (harfler ayrıldı ya da düştü)
+ *      ipucu ch/sch kuralı.
+ *   2. Uzatma h'si kuralı yalnız hedefte gerçekten ünlü + h (ardından ünlü
+ *      gelmeyen) varsa: Bahn, sehr, wohnen.
+ */
+const DEHNUNG_H = /[aeiouäöü]h(?![aeiouäöü])/i;
+const chCount = (s: string) => (s.toLocaleLowerCase("de-DE").match(/ch/g) ?? []).length;
+function spellingHintDe(target: string, typed: string, changed: string): string | undefined {
+  if (typed && chCount(target) > chCount(typed)) return "sphint.sch";
+  return SPELLING_HINTS.find(([re, key]) => (key !== "sphint.h" || DEHNUNG_H.test(target)) && re.test(changed))?.[1];
+}
+
 function whySpelling(word: WhyWord, typed?: string | null, targetLang: string = "de"): Why {
   const target = word.de;
   const diff = charDiff(typed ?? "", target);
@@ -273,7 +290,7 @@ function whySpelling(word: WhyWord, typed?: string | null, targetLang: string = 
   // gerekçe): "know" yerine "now" yazanın farkı yalnız "k" ve tek başına bir
   // şey söylemiyor.
   const hint =
-    table.find(([re]) => re.test(changed))?.[1] ??
+    (targetLang === "en" ? table.find(([re]) => re.test(changed))?.[1] : spellingHintDe(target, typed ?? "", changed)) ??
     (targetLang === "en" ? SPELLING_HINTS_EN.find(([re]) => re.test(target))?.[1] : undefined);
   // Fark şeritte harf harf çiziliyor (FeedbackLine); metin yalnız ipucu.
   const text = tx(hint ?? "sphint.compare");
