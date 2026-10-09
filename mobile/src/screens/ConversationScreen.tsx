@@ -1619,7 +1619,10 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
   */
   return (
     <View style={{ flex: 1 }}>
-      <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg, gap: spacing.md }} showsVerticalScrollIndicator={false}>
+      {/* Kaydırma alanı düğmelerin ÜSTÜNDE kalan yüksekliği alıyor (`flex: 1`,
+          `FlowScreen` ile aynı) ve içerik orada kayıyor: uzun özette son kart
+          (düzeltmeler, kelimeler) sabit düğmelerin arkasında kalmıyor (QA F-0003). */}
+      <KeyboardAwareScroll style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg, gap: spacing.md }} showsVerticalScrollIndicator={false}>
         <ResultHero
           eyebrow={`${tx("unitkind.conversation")} · ${conversation.title}`}
           title={tx(unfinished ? "conversationp.conversation_unfinished" : "conversation.conversation_complete")}
@@ -1648,6 +1651,17 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
         {/* Misafirin ilk tamamlanan konuşması: kaybedecek bir şeyi olduğu ilk an. */}
         <GuestMilestoneCard milestone="first_conversation" when={!unfinished} />
         {!corrections.length && talked ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
+
+        {/* DÜZELTMELER TOPLU — konuşmada balon balon geçiyor, kapanışta bir
+            arada. Kalıplardan ÖNCE: öğrencinin kendi cümlelerine dair tek kart,
+            uzun özette ekranın dibine itilmesin (QA F-0003; web aynı sıra). */}
+        {corrections.length ? (
+          <DetailCard title={tx("conversationp.corrections")}>
+            {corrections.map((c, i) => (
+              <Text key={i} variant="caption" color={colors.text}>{c}</Text>
+            ))}
+          </DetailCard>
+        ) : null}
 
         {conversation.patterns?.length ? (
           <DetailCard title={tx("conversation.patterns_you_learned")}>
@@ -1681,15 +1695,6 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
                 </View>
               );
             })}
-          </DetailCard>
-        ) : null}
-
-        {/* DÜZELTMELER TOPLU — konuşmada balon balon geçiyor, kapanışta bir arada. */}
-        {corrections.length ? (
-          <DetailCard title={tx("conversationp.corrections")}>
-            {corrections.map((c, i) => (
-              <Text key={i} variant="caption" color={colors.text}>{c}</Text>
-            ))}
           </DetailCard>
         ) : null}
 

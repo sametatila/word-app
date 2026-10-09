@@ -2026,6 +2026,20 @@ function ConversationPlayerBody({
                 <FlowNote tone="ok" icon={<CorrectIcon size={16} />} text={t("conversationp.no_corrections")} />
               ) : null}
 
+              {/* Düzeltmeler kalıplardan ÖNCE: öğrencinin kendi cümlelerine dair
+                  tek kart (mobil `Summary` aynı sıra, QA F-0003). */}
+              {corrections.length ? (
+                <DetailCard title={t("conversationp.corrections")}>
+                  <ul className="space-y-1">
+                    {corrections.map((c, i) => (
+                      <li key={i} className="text-caption leading-relaxed">
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </DetailCard>
+              ) : null}
+
               {/* Kullanılan kalıplar (WP-62): konuşmada geçen kalıp yeşil tik,
                   geçmeyen soluk — konuşmanın asıl amacı kalıbı kullanmak. Konuşma
                   hiç olmadıysa işaret yok (yanlış bir "yapmadın" damgası). */}
@@ -2054,18 +2068,6 @@ function ConversationPlayerBody({
                       </div>
                     );
                   })}
-                </DetailCard>
-              ) : null}
-
-              {corrections.length ? (
-                <DetailCard title={t("conversationp.corrections")}>
-                  <ul className="space-y-1">
-                    {corrections.map((c, i) => (
-                      <li key={i} className="text-caption leading-relaxed">
-                        {c}
-                      </li>
-                    ))}
-                  </ul>
                 </DetailCard>
               ) : null}
 
