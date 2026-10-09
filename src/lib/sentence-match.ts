@@ -122,12 +122,11 @@ const CLOSED_STEMS: Record<string, { stems: string[]; endings: string[]; words: 
   en: {
     stems: [],
     endings: [],
-    words: [
-      "a", "an", "the", "this", "that", "these", "those",
-      "i", "me", "my", "mine", "you", "your", "yours", "he", "him", "his", "she", "her", "hers", "it", "its",
-      "we", "us", "our", "ours", "they", "them", "their", "theirs",
-      "is", "am", "are", "was", "were", "be", "been", "being", "has", "have", "had", "do", "does", "did",
-    ],
+    /* Tek dizgi: ham metin taraması tek başına "her"i Türkçe sanıyor. */
+    words: (
+      "a an the this that these those i me my mine you your yours he him his she her hers it its " +
+      "we us our ours they them their theirs is am are was were be been being has have had do does did"
+    ).split(" "),
   },
 };
 const CLOSED: Record<string, Set<string>> = Object.fromEntries(
