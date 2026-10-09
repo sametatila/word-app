@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { t as tx, formatClock } from "../lib/i18n";
-import { View, ScrollView, Switch } from "react-native";
+import { View, ScrollView, Switch, Pressable } from "react-native";
+import { MIN_TOUCH } from "../ui/touch";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
 import { Chip } from "../ui/Chip";
@@ -62,17 +63,27 @@ function ToggleGroup({ colors, children }: { colors: Palette; children: React.Re
 function ToggleRow({ title, subtitle, value, onValueChange, colors, pending = false, children }: { title: string; subtitle: string; value: boolean; onValueChange: (v: boolean) => void; colors: Palette; pending?: boolean; children?: React.ReactNode }) {
   return (
     <View>
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+      {/* SATIRIN TAMAMI ANAHTAR (QA F-0051): RN `Switch`in `hitSlop`u yok ve
+          dokunma yalnız 51×31'lik anahtarda çalışıyordu. `ui/SwitchRow` ile
+          aynı kalıp (satır tek "switch", anahtar okuyucudan gizli); burada
+          başlık `h3` ve iskelet alt satır olduğu için satır yerinde kuruluyor. */}
+      <Pressable
+        onPress={() => { if (!pending) onValueChange(!value); }}
+        disabled={pending}
+        accessibilityRole="switch"
+        accessibilityLabel={title}
+        accessibilityHint={subtitle}
+        accessibilityState={{ checked: value, disabled: pending }}
+        style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", minHeight: MIN_TOUCH }}
+      >
         <View style={{ flex: 1, paddingRight: spacing.md }}>
           <Text variant="h3">{title}</Text>
           {pending ? <SkeletonText variant="caption" text={subtitle} /> : <Text variant="caption" color={colors.textMuted}>{subtitle}</Text>}
         </View>
-        {/* Anahtarın ADI satırın başlığı (bkz. SocialSettings): yanındaki
-            metin kendiliğinden ilişkilendirilmiyor. */}
         {pending ? <SkeletonPill width={51} height={31} /> : (
-          <Switch value={value} onValueChange={onValueChange} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" />
+          <Switch value={value} onValueChange={onValueChange} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" />
         )}
-      </View>
+      </Pressable>
       {children}
     </View>
   );
