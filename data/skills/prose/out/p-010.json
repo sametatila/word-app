@@ -40,24 +40,24 @@
   "en": "wegen takes the genitive: des Unwetters. The everyday register's preposition of cause."
  },
  {
-  "tr": "Yanlış: „…es ist kein Zeitvertreib, es ist eine Leidenschaft.“",
+  "tr": "İfade yanlış: „…es ist kein Zeitvertreib, es ist eine Leidenschaft.“",
   "kind": "explain",
-  "en": "False: „…es ist kein Zeitvertreib, es ist eine Leidenschaft.“"
+  "en": "The statement is false: „…es ist kein Zeitvertreib, es ist eine Leidenschaft.“"
  },
  {
-  "tr": "Yanlış: „…mit einem Komponisten, dessen Name mir nichts sagt.“",
+  "tr": "İfade yanlış: „…mit einem Komponisten, dessen Name mir nichts sagt.“",
   "kind": "explain",
-  "en": "False: „…mit einem Komponisten, dessen Name mir nichts sagt.“"
+  "en": "The statement is false: „…mit einem Komponisten, dessen Name mir nichts sagt.“"
  },
  {
-  "tr": "Yanlış: „die Kollegin am Schalter war freundlich und schnell“.",
+  "tr": "İfade yanlış: „die Kollegin am Schalter war freundlich und schnell“.",
   "kind": "explain",
-  "en": "False: „die Kollegin am Schalter war freundlich und schnell“."
+  "en": "The statement is false: „die Kollegin am Schalter war freundlich und schnell“."
  },
  {
-  "tr": "Yanlış: kökeni belgeli ama yararlı olup olmadığını söylemiyor.",
+  "tr": "İfade yanlış: kökeni belgeli ama yararlı olup olmadığını söylemiyor.",
   "kind": "explain",
-  "en": "False: the origin is documented, but that says nothing about whether it is useful."
+  "en": "The statement is false: the origin is documented, but that says nothing about whether it is useful."
  },
  {
   "tr": "„…Eigenkapital und ein Jahr Puffer.“ Patrick altı ay hesaplamıştı.",
@@ -350,19 +350,19 @@
   "en": "weder … noch rules out both options; the structure is already negative."
  },
  {
-  "tr": "Yanlış: „Beliebt sind beide“ — yalnız müşteri kitleleri farklı.",
+  "tr": "İfade yanlış: „Beliebt sind beide“ — yalnız müşteri kitleleri farklı.",
   "kind": "explain",
-  "en": "False: „Beliebt sind beide“ — only the customer bases differ."
+  "en": "The statement is false: „Beliebt sind beide“ — only the customer bases differ."
  },
  {
-  "tr": "Yanlış: „Die U-Bahn fährt dort nicht. Nur Bus und Straßenbahn.“",
+  "tr": "İfade yanlış: „Die U-Bahn fährt dort nicht. Nur Bus und Straßenbahn.“",
   "kind": "explain",
-  "en": "False: „Die U-Bahn fährt dort nicht. Nur Bus und Straßenbahn.“"
+  "en": "The statement is false: „Die U-Bahn fährt dort nicht. Nur Bus und Straßenbahn.“"
  },
  {
-  "tr": "Yanlış: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“",
+  "tr": "İfade yanlış: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“",
   "kind": "explain",
-  "en": "False: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“"
+  "en": "The statement is false: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“"
  },
  {
   "tr": "„Am Montag stehe ich früh auf.“ Pazartesi erken kalkıyor; pazar günü ise asla erken kalkmıyor.",
@@ -690,8 +690,8 @@
   "en": "Only one element can stand in the Vorfeld; the subject moves after the verb."
  },
  {
-  "tr": "Yanlış: „Am Sonntag stehe ich nie früh auf.“ — „nie“ asla demek.",
+  "tr": "İfade yanlış: „Am Sonntag stehe ich nie früh auf.“ — „nie“ asla demek.",
   "kind": "explain",
-  "en": "False: „Am Sonntag stehe ich nie früh auf.“ — „nie“ means never."
+  "en": "The statement is false: „Am Sonntag stehe ich nie früh auf.“ — „nie“ means never."
  }
 ]

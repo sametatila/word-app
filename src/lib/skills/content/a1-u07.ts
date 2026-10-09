@@ -49,7 +49,7 @@ export const a1U07: SkillExercise[] = [
         text: "Richtig oder falsch? Tom braucht kein Obst.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Obst brauchen wir nicht, wir haben noch Äpfel, Birnen und Bananen.“",
+        explain: "İfade doğru: „Obst brauchen wir nicht, wir haben noch Äpfel, Birnen und Bananen.“",
       },
       {
         text: "Was kocht Tom heute?",
@@ -108,7 +108,7 @@ export const a1U07: SkillExercise[] = [
         text: "Richtig oder falsch? Tom isst nicht gern Fleisch.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ich mag Fleisch nicht.“ — sebze ve pirinci tercih ediyor.",
+        explain: "İfade doğru: „Ich mag Fleisch nicht.“ — sebze ve pirinci tercih ediyor.",
       },
       {
         text: "Was essen Paulas Kinder lieber?",
@@ -178,7 +178,7 @@ export const a1U07: SkillExercise[] = [
         text: "Richtig oder falsch? Das Geschäft hat Mineralwasser.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ja, eine Flasche kostet 0,80 Euro.“",
+        explain: "İfade doğru: „Ja, eine Flasche kostet 0,80 Euro.“",
       },
           {
         kind: "gapfill",

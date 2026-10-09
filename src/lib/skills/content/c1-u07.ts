@@ -201,7 +201,7 @@ export const c1U07: SkillExercise[] = [
         text: "Der Text empfiehlt, wenige lebendige Details zu schildern.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Wer alles beschreibt, beschreibt nichts.“ Tek canlı ayrıntı beşten etkili.",
+        explain: "İfade doğru: „Wer alles beschreibt, beschreibt nichts.“ Tek canlı ayrıntı beşten etkili.",
       },
     ],
   },

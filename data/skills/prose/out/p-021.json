@@ -50,9 +50,9 @@
   "en": "The single Turkish future ending splits in two in English, and the choice depends on when the decision was made."
  },
  {
-  "tr": "Yanlış: „Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.“",
+  "tr": "İfade yanlış: „Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.“",
   "kind": "explain",
-  "en": "False: „Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.“"
+  "en": "The statement is false: „Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.“"
  },
  {
   "tr": "\"Call me back tonight\" diyor. Taksiyi zaten kendisi ayırtmış: \"I have already booked a taxi for us.\"",
@@ -450,9 +450,9 @@
   "en": "The verb warten takes auf and the accusative after it; Turkish has no preposition there, so it gets left out."
  },
  {
-  "tr": "Yanlış: „…nicht dadurch, dass sie recht hat, sondern indem sie über Jahre zu denselben Sitzungen geht.“",
+  "tr": "İfade yanlış: „…nicht dadurch, dass sie recht hat, sondern indem sie über Jahre zu denselben Sitzungen geht.“",
   "kind": "explain",
-  "en": "False: „…nicht dadurch, dass sie recht hat, sondern indem sie über Jahre zu denselben Sitzungen geht.“"
+  "en": "The statement is false: „…nicht dadurch, dass sie recht hat, sondern indem sie über Jahre zu denselben Sitzungen geht.“"
  },
  {
   "tr": "Yazılışı benzeyen iki ses: „ei“ hep „ay“, „ie“ hep uzun „ii“. Yedi cümlede ikisini karıştırmadan söyle.",

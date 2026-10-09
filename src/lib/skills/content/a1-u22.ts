@@ -80,7 +80,7 @@ export const a1U22: SkillExercise[] = [
         text: "Richtig oder falsch? Am Sonntag ist die Apotheke auf.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Sonntag: zu“.",
+        explain: "İfade yanlış: „Sonntag: zu“.",
       },
           {
         kind: "gapfill",

@@ -48,7 +48,7 @@ export const a1U06: SkillExercise[] = [
         text: "Richtig oder falsch? Man kann hier kein Bier bestellen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Wein und Bier gibt es nicht.“ Burası kafe, lokanta değil.",
+        explain: "İfade doğru: „Wein und Bier gibt es nicht.“ Burası kafe, lokanta değil.",
       },
       {
         text: "Was ist im Frühstück?",
@@ -105,7 +105,7 @@ export const a1U06: SkillExercise[] = [
         text: "Richtig oder falsch? Tom isst nichts zum Frühstück.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ich habe morgens keinen Hunger.“ — sadece su içiyor.",
+        explain: "İfade doğru: „Ich habe morgens keinen Hunger.“ — sadece su içiyor.",
       },
       {
         text: "Wer trinkt Kakao?",
@@ -178,7 +178,7 @@ export const a1U06: SkillExercise[] = [
         text: "Richtig oder falsch? Die Person möchte Marmelade.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ja, bitte.“ diyor — tereyağı ve reçel istiyor.",
+        explain: "İfade doğru: „Ja, bitte.“ diyor — tereyağı ve reçel istiyor.",
       },
           {
         kind: "gapfill",
@@ -235,7 +235,7 @@ export const a1U06: SkillExercise[] = [
         text: "Richtig oder falsch? Die Person bestellt ein Wasser.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ja, ein Wasser bitte.“",
+        explain: "İfade doğru: „Ja, ein Wasser bitte.“",
       },
           {
         kind: "gapfill",

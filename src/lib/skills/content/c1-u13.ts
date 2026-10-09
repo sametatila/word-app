@@ -213,7 +213,7 @@ export const c1U13: SkillExercise[] = [
         text: "Der Text hält Verträge vor allem für sprachlich schwer lesbar.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Sie sind schwer zu gewichten“ — sorun okumak değil, tartmak.",
+        explain: "İfade yanlış: „Sie sind schwer zu gewichten“ — sorun okumak değil, tartmak.",
       },
     ],
   },

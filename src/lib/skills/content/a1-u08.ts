@@ -48,7 +48,7 @@ export const a1U08: SkillExercise[] = [
         text: "Richtig oder falsch? Tarek isst kein Ei.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ich esse auch kein Ei — Eier vertrage ich nicht.“",
+        explain: "İfade doğru: „Ich esse auch kein Ei — Eier vertrage ich nicht.“",
       },
       {
         text: "Warum isst Tarek keinen Schinken?",
@@ -178,7 +178,7 @@ export const a1U08: SkillExercise[] = [
         text: "Richtig oder falsch? Der Kurs beginnt gleich.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Mein Kurs beginnt gleich.“ — henüz başlamadı.",
+        explain: "İfade doğru: „Mein Kurs beginnt gleich.“ — henüz başlamadı.",
       },
           {
         kind: "gapfill",
@@ -236,7 +236,7 @@ export const a1U08: SkillExercise[] = [
         text: "Richtig oder falsch? Im Eis sind Nüsse.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „das Eis ist ohne Nüsse.“",
+        explain: "İfade yanlış: „das Eis ist ohne Nüsse.“",
       },
           {
         kind: "gapfill",

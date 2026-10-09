@@ -74,7 +74,7 @@ export const a1U13: SkillExercise[] = [
         text: "Richtig oder falsch? Man kann auch mit der U-Bahn fahren.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Die U-Bahn fährt dort nicht. Nur Bus und Straßenbahn.“",
+        explain: "İfade yanlış: „Die U-Bahn fährt dort nicht. Nur Bus und Straßenbahn.“",
       },
           {
         kind: "gapfill",
@@ -250,7 +250,7 @@ export const a1U13: SkillExercise[] = [
         text: "Richtig oder falsch? Zahnpasta und Seife sind zusammen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Zahnpasta und Seife sind da rechts.“ — ikisi de sağda.",
+        explain: "İfade doğru: „Zahnpasta und Seife sind da rechts.“ — ikisi de sağda.",
       },
           {
         kind: "gapfill",

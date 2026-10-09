@@ -52,7 +52,7 @@ export const a1U02: SkillExercise[] = [
         text: "Richtig oder falsch? Man zahlt einmal.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Sie zahlen einmal, nicht jeden Monat.“ — bir kez ödeniyor.",
+        explain: "İfade doğru: „Sie zahlen einmal, nicht jeden Monat.“ — bir kez ödeniyor.",
       },
       {
         text: "Wie viele Personen sind mindestens in einer Gruppe?",
@@ -113,7 +113,7 @@ export const a1U02: SkillExercise[] = [
         text: "Richtig oder falsch? Paula ist im Moment arbeitslos.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Im Moment bin ich arbeitslos.“ — şu an işsiz.",
+        explain: "İfade doğru: „Im Moment bin ich arbeitslos.“ — şu an işsiz.",
       },
       {
         text: "Wer spricht nur ein bisschen Deutsch?",
@@ -234,7 +234,7 @@ export const a1U02: SkillExercise[] = [
         text: "Richtig oder falsch? Ein Fehler ist kein Problem.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ein Fehler ist kein Problem!“ — hata sorun değil.",
+        explain: "İfade doğru: „Ein Fehler ist kein Problem!“ — hata sorun değil.",
       },
           {
         kind: "gapfill",

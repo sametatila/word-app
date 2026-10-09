@@ -71,7 +71,7 @@ export const a1U10: SkillExercise[] = [
         text: "Richtig oder falsch? Am Samstag arbeitet Paula.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „am Samstag habe ich frei.“",
+        explain: "İfade yanlış: „am Samstag habe ich frei.“",
       },
           {
         kind: "gapfill",
@@ -111,7 +111,7 @@ export const a1U10: SkillExercise[] = [
         text: "Richtig oder falsch? Mia möchte einen Ausflug machen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Ich habe keine Lust auf einen Ausflug.“",
+        explain: "İfade yanlış: „Ich habe keine Lust auf einen Ausflug.“",
       },
       {
         text: "Warum haben Paulas Kinder Zeit?",
@@ -183,7 +183,7 @@ export const a1U10: SkillExercise[] = [
         text: "Richtig oder falsch? Der Vormittag passt der Person.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Am Vormittag arbeite ich. Leider kann ich nicht.“",
+        explain: "İfade yanlış: „Am Vormittag arbeite ich. Leider kann ich nicht.“",
       },
           {
         kind: "gapfill",
@@ -241,7 +241,7 @@ export const a1U10: SkillExercise[] = [
         text: "Richtig oder falsch? Sie gehen heute zusammen spazieren.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Heute nicht.“ — belki yarın.",
+        explain: "İfade yanlış: „Heute nicht.“ — belki yarın.",
       },
           {
         kind: "gapfill",

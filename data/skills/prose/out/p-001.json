@@ -20,9 +20,9 @@
   "en": "Asking is not a weakness."
  },
  {
-  "tr": "Yanlış: „Sonntag: zu“.",
+  "tr": "İfade yanlış: „Sonntag: zu“.",
   "kind": "explain",
-  "en": "False: „Sonntag: zu“."
+  "en": "The statement is false: „Sonntag: zu“."
  },
  {
   "tr": "„promise“ mastar ister.",
@@ -50,9 +50,9 @@
   "en": "Write the phrases for making an appointment."
  },
  {
-  "tr": "Yanlış: „Ja, das passt.“",
+  "tr": "İfade yanlış: „Ja, das passt.“",
   "kind": "explain",
-  "en": "False: „Ja, das passt.“"
+  "en": "The statement is false: „Ja, das passt.“"
  },
  {
   "tr": "Ne giymeyi sevdiğini yaz.",
@@ -290,9 +290,9 @@
   "en": "„Ich bin Ärztin.“ — a woman doctor."
  },
  {
-  "tr": "Doğru: „Zwei Wochen, jedes Jahr.“",
+  "tr": "İfade doğru: „Zwei Wochen, jedes Jahr.“",
   "kind": "explain",
-  "en": "True: „Zwei Wochen, jedes Jahr.“"
+  "en": "The statement is true: „Zwei Wochen, jedes Jahr.“"
  },
  {
   "tr": "Ev arkadaşına alışveriş notu yaz.",
@@ -340,14 +340,14 @@
   "en": "Stem + e in the third person singular: er komme."
  },
  {
-  "tr": "Yanlış: „Da hilft keine Technik.“",
+  "tr": "İfade yanlış: „Da hilft keine Technik.“",
   "kind": "explain",
-  "en": "False: „Da hilft keine Technik.“"
+  "en": "The statement is false: „Da hilft keine Technik.“"
  },
  {
-  "tr": "Yanlış: „das Eis ist ohne Nüsse.“",
+  "tr": "İfade yanlış: „das Eis ist ohne Nüsse.“",
   "kind": "explain",
-  "en": "False: „das Eis ist ohne Nüsse.“"
+  "en": "The statement is false: „das Eis ist ohne Nüsse.“"
  },
  {
   "tr": "„20 Euro.“ 14.20 ise kalkış saati.",
@@ -460,14 +460,14 @@
   "en": "The misunderstanding works in both directions."
  },
  {
-  "tr": "Yanlış: „am Samstag habe ich frei.“",
+  "tr": "İfade yanlış: „am Samstag habe ich frei.“",
   "kind": "explain",
-  "en": "False: „am Samstag habe ich frei.“"
+  "en": "The statement is false: „am Samstag habe ich frei.“"
  },
  {
-  "tr": "Yanlış: „Ehrlich, nicht feierlich.“",
+  "tr": "İfade yanlış: „Ehrlich, nicht feierlich.“",
   "kind": "explain",
-  "en": "False: „Ehrlich, nicht feierlich.“"
+  "en": "The statement is false: „Ehrlich, nicht feierlich.“"
  },
  {
   "tr": "„And the cake?“ — „Robyn is baking.“",
@@ -540,14 +540,14 @@
   "en": "All three are in the text, not in the voice."
  },
  {
-  "tr": "Yanlış: „Kostenlos, auch bei Regen!“",
+  "tr": "İfade yanlış: „Kostenlos, auch bei Regen!“",
   "kind": "explain",
-  "en": "False: „Kostenlos, auch bei Regen!“"
+  "en": "The statement is false: „Kostenlos, auch bei Regen!“"
  },
  {
-  "tr": "Yanlış: „Nein, zehn Minuten zu Fuß.“",
+  "tr": "İfade yanlış: „Nein, zehn Minuten zu Fuß.“",
   "kind": "explain",
-  "en": "False: „Nein, zehn Minuten zu Fuß.“"
+  "en": "The statement is false: „Nein, zehn Minuten zu Fuß.“"
  },
  {
   "tr": "„Both big, please.“ — ikisi de büyük.",
@@ -610,14 +610,14 @@
   "en": "Three people write what they like to wear."
  },
  {
-  "tr": "Yanlış: „Das schließe ich nicht aus.“",
+  "tr": "İfade yanlış: „Das schließe ich nicht aus.“",
   "kind": "explain",
-  "en": "False: „Das schließe ich nicht aus.“"
+  "en": "The statement is false: „Das schließe ich nicht aus.“"
  },
  {
-  "tr": "Yanlış: „Heute nicht.“ — belki yarın.",
+  "tr": "İfade yanlış: „Heute nicht.“ — belki yarın.",
   "kind": "explain",
-  "en": "False: „Heute nicht.“ — perhaps tomorrow."
+  "en": "The statement is false: „Heute nicht.“ — perhaps tomorrow."
  },
  {
   "tr": "Yeniden ifade kalıbı: in other words.",

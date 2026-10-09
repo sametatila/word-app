@@ -207,7 +207,7 @@ export const c1U15: SkillExercise[] = [
         text: "Der Text hält Bürgschaften grundsätzlich für einen Fehler.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Gleichwohl ist die Bürgschaft kein Fehler an sich.“",
+        explain: "İfade yanlış: „Gleichwohl ist die Bürgschaft kein Fehler an sich.“",
       },
     ],
   },

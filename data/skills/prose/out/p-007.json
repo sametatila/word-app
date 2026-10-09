@@ -250,14 +250,14 @@
   "en": "The POINT reached → auf. For an amount of increase it would be „um“."
  },
  {
-  "tr": "Yanlış: „…wird nicht besser, sondern nur empfindlicher.“",
+  "tr": "İfade yanlış: „…wird nicht besser, sondern nur empfindlicher.“",
   "kind": "explain",
-  "en": "False: „…wird nicht besser, sondern nur empfindlicher.“"
+  "en": "The statement is false: „…wird nicht besser, sondern nur empfindlicher.“"
  },
  {
-  "tr": "Yanlış: „Meine Termine am Donnerstag habe ich abgesagt.“",
+  "tr": "İfade yanlış: „Meine Termine am Donnerstag habe ich abgesagt.“",
   "kind": "explain",
-  "en": "False: „Meine Termine am Donnerstag habe ich abgesagt.“"
+  "en": "The statement is false: „Meine Termine am Donnerstag habe ich abgesagt.“"
  },
  {
   "tr": "„-bar“ eki olanak bildirir: lesbar = kann gelesen werden.",
@@ -365,9 +365,9 @@
   "en": "A plural subject needs a plural auxiliary: werden … geschickt."
  },
  {
-  "tr": "Doğru: „Ich esse auch kein Ei — Eier vertrage ich nicht.“",
+  "tr": "İfade doğru: „Ich esse auch kein Ei — Eier vertrage ich nicht.“",
   "kind": "explain",
-  "en": "True: „Ich esse auch kein Ei — Eier vertrage ich nicht.“"
+  "en": "The statement is true: „Ich esse auch kein Ei — Eier vertrage ich nicht.“"
  },
  {
   "tr": "dürfte tahmin bildirir: 'kıl payı olacak gibi görünüyor'.",

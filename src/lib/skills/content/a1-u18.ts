@@ -70,7 +70,7 @@ export const a1U18: SkillExercise[] = [
         text: "Richtig oder falsch? Paula übt viel.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Tanzen kann ich gut, aber ich übe nicht viel.“",
+        explain: "İfade yanlış: „Tanzen kann ich gut, aber ich übe nicht viel.“",
       },
           {
         kind: "gapfill",
@@ -184,7 +184,7 @@ export const a1U18: SkillExercise[] = [
         text: "Richtig oder falsch? 10 Uhr passt Frau Arnold nicht.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Ja, das passt.“",
+        explain: "İfade yanlış: „Ja, das passt.“",
       },
           {
         kind: "gapfill",

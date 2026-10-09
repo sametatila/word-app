@@ -206,7 +206,7 @@ export const c1U02: SkillExercise[] = [
         text: "Die Gegenseite zeigt sich bei der Haftungsobergrenze weiterhin unnachgiebig.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „zeigt sich … weiterhin unnachgiebig“.",
+        explain: "İfade doğru: „zeigt sich … weiterhin unnachgiebig“.",
       },
     ],
   },

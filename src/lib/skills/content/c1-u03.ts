@@ -203,7 +203,7 @@ export const c1U03: SkillExercise[] = [
         text: "Der Bericht rät davon ab, das Gespräch mit einer allgemeinen Formel zu beschwichtigen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“",
+        explain: "İfade doğru: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“",
       },
     ],
   },

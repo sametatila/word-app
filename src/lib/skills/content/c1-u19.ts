@@ -199,7 +199,7 @@ export const c1U19: SkillExercise[] = [
         text: "Der Text sagt, der Ursprung des Begriffs entscheide über seinen Wert.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: kökeni belgeli ama yararlı olup olmadığını söylemiyor.",
+        explain: "İfade yanlış: kökeni belgeli ama yararlı olup olmadığını söylemiyor.",
       },
     ],
   },

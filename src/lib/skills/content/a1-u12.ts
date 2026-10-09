@@ -69,7 +69,7 @@ export const a1U12: SkillExercise[] = [
         text: "Richtig oder falsch? Tom weiß, welches Parfüm Mia mag.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „ich weiß nicht, was ihr gefällt.“",
+        explain: "İfade yanlış: „ich weiß nicht, was ihr gefällt.“",
       },
           {
         kind: "gapfill",
@@ -246,7 +246,7 @@ export const a1U12: SkillExercise[] = [
         text: "Richtig oder falsch? Sie kaufen den Koffer.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „dann kaufe ich den Rucksack.“",
+        explain: "İfade yanlış: „dann kaufe ich den Rucksack.“",
       },
           {
         kind: "gapfill",

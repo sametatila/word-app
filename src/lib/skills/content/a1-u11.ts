@@ -53,7 +53,7 @@ export const a1U11: SkillExercise[] = [
         text: "Richtig oder falsch? Mäntel sind auch im Angebot.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“",
+        explain: "İfade yanlış: „Mäntel und Kleider sind diese Woche NICHT im Angebot.“",
       },
       {
         kind: "gapfill",
@@ -111,7 +111,7 @@ export const a1U11: SkillExercise[] = [
         text: "Richtig oder falsch? Paula kauft gern teure Kleidung.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot.“",
+        explain: "İfade yanlış: „teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot.“",
       },
       {
         kind: "gapfill",

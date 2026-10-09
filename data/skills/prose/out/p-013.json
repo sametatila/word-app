@@ -20,9 +20,9 @@
   "en": "The clause comes first, so the main clause goes on with the verb: kann ich."
  },
  {
-  "tr": "Yanlış: „Abgeschlossene Vorgänge werden archiviert, nicht gelöscht.“",
+  "tr": "İfade yanlış: „Abgeschlossene Vorgänge werden archiviert, nicht gelöscht.“",
   "kind": "explain",
-  "en": "False: „Abgeschlossene Vorgänge werden archiviert, nicht gelöscht.“"
+  "en": "The statement is false: „Abgeschlossene Vorgänge werden archiviert, nicht gelöscht.“"
  },
  {
   "tr": "Yetkinin sayısal sınırı; bu cümle olmadan devretme belirsiz kalıyor.",
@@ -155,9 +155,9 @@
   "en": "Describe your languages. 'more' is irregular in German and is not built to a pattern."
  },
  {
-  "tr": "Doğru: „aber ich bin sofort eingeschlafen“ ve televizyon hâlâ açıktı.",
+  "tr": "İfade doğru: „aber ich bin sofort eingeschlafen“ ve televizyon hâlâ açıktı.",
   "kind": "explain",
-  "en": "True: „aber ich bin sofort eingeschlafen“ and the television was still on."
+  "en": "The statement is true: „aber ich bin sofort eingeschlafen“ and the television was still on."
  },
  {
   "tr": "Dolaylı soru: soru sözcüğü yan cümleyi açar, çekimli fiil sona gider.",
@@ -255,14 +255,14 @@
   "en": "The thing that suits is the subject; the person complimented stands beside it in the dative."
  },
  {
-  "tr": "Yanlış: „Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.“",
+  "tr": "İfade yanlış: „Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.“",
   "kind": "explain",
-  "en": "False: „Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.“"
+  "en": "The statement is false: „Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.“"
  },
  {
-  "tr": "Yanlış: „Sie sind schwer zu gewichten“ — sorun okumak değil, tartmak.",
+  "tr": "İfade yanlış: „Sie sind schwer zu gewichten“ — sorun okumak değil, tartmak.",
   "kind": "explain",
-  "en": "False: „Sie sind schwer zu gewichten“ — the trouble is not reading them but weighing them."
+  "en": "The statement is false: „Sie sind schwer zu gewichten“ — the trouble is not reading them but weighing them."
  },
  {
   "tr": "Yer soruluyor, dişil kelimenin Dativ artikeli der'dir: in der Tasche.",
@@ -385,14 +385,14 @@
   "en": "You are going to hear an announcement at a language school. Catch the course number and the figures."
  },
  {
-  "tr": "Doğru: „Ich habe zwei Geschwister“ — Max (Bruder) ve Nora (Schwester).",
+  "tr": "İfade doğru: „Ich habe zwei Geschwister“ — Max (Bruder) ve Nora (Schwester).",
   "kind": "explain",
-  "en": "True: „Ich habe zwei Geschwister“ — Max (Bruder) and Nora (Schwester)."
+  "en": "The statement is true: „Ich habe zwei Geschwister“ — Max (Bruder) and Nora (Schwester)."
  },
  {
-  "tr": "Doğru: cümle reddi yumuşatıyor, yani ret sebebini başvurudan ayırıyor.",
+  "tr": "İfade doğru: cümle reddi yumuşatıyor, yani ret sebebini başvurudan ayırıyor.",
   "kind": "explain",
-  "en": "True: the sentence softens the refusal by separating its reason from the application."
+  "en": "The statement is true: the sentence softens the refusal by separating its reason from the application."
  },
  {
   "tr": "Doktora durumunu anlat. Bir işi başkasına yaptırırken 'lassen' kullan.",
@@ -510,14 +510,14 @@
   "en": "In a clause the auxiliary of the past tense goes right at the end: gelernt habe."
  },
  {
-  "tr": "Yanlış: „Nein. Aber einmal im Monat offline zu sein, das ist machbar.“",
+  "tr": "İfade yanlış: „Nein. Aber einmal im Monat offline zu sein, das ist machbar.“",
   "kind": "explain",
-  "en": "False: „Nein. Aber einmal im Monat offline zu sein, das ist machbar.“"
+  "en": "The statement is false: „Nein. Aber einmal im Monat offline zu sein, das ist machbar.“"
  },
  {
-  "tr": "Yanlış: „teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot.“",
+  "tr": "İfade yanlış: „teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot.“",
   "kind": "explain",
-  "en": "False: „teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot.“"
+  "en": "The statement is false: „teure Kleidung kaufe ich nicht. Ich suche immer ein Angebot.“"
  },
  {
   "tr": "Yıllık sözleşme pazarlığı. Teklif ne zaman karar, ne zaman öneri olur?",

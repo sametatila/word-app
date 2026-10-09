@@ -65,29 +65,29 @@
   "en": "Correct the wrong sentences and describe a person."
  },
  {
-  "tr": "Yanlış: „meine Schwester findet sie furchtbar“.",
+  "tr": "İfade yanlış: „meine Schwester findet sie furchtbar“.",
   "kind": "explain",
-  "en": "False: „meine Schwester findet sie furchtbar“."
+  "en": "The statement is false: „meine Schwester findet sie furchtbar“."
  },
  {
-  "tr": "Yanlış: „Meistens nicht. Ich arbeite kabellos.“",
+  "tr": "İfade yanlış: „Meistens nicht. Ich arbeite kabellos.“",
   "kind": "explain",
-  "en": "False: „Meistens nicht. Ich arbeite kabellos.“"
+  "en": "The statement is false: „Meistens nicht. Ich arbeite kabellos.“"
  },
  {
-  "tr": "Yanlış: „Schaden gab es aber keinen, nur Lärm.“",
+  "tr": "İfade yanlış: „Schaden gab es aber keinen, nur Lärm.“",
   "kind": "explain",
-  "en": "False: „Schaden gab es aber keinen, nur Lärm.“"
+  "en": "The statement is false: „Schaden gab es aber keinen, nur Lärm.“"
  },
  {
-  "tr": "Yanlış: cuma „Beilage: Salat“. Sebze salı günü.",
+  "tr": "İfade yanlış: cuma „Beilage: Salat“. Sebze salı günü.",
   "kind": "explain",
-  "en": "False: on Friday „Beilage: Salat“. Vegetables are on Tuesday."
+  "en": "The statement is false: on Friday „Beilage: Salat“. Vegetables are on Tuesday."
  },
  {
-  "tr": "Yanlış: orada işleme sözleşmenin ifasına dâhil.",
+  "tr": "İfade yanlış: orada işleme sözleşmenin ifasına dâhil.",
   "kind": "explain",
-  "en": "False: there the processing is part of performing the contract."
+  "en": "The statement is false: there the processing is part of performing the contract."
  },
  {
   "tr": "Zorunluluk dışarıdan, yasadan geliyor: have to.",
@@ -300,14 +300,14 @@
   "en": "während takes the genitive and marks a span of time."
  },
  {
-  "tr": "Yanlış: „Ich habe keine Lust auf einen Ausflug.“",
+  "tr": "İfade yanlış: „Ich habe keine Lust auf einen Ausflug.“",
   "kind": "explain",
-  "en": "False: „Ich habe keine Lust auf einen Ausflug.“"
+  "en": "The statement is false: „Ich habe keine Lust auf einen Ausflug.“"
  },
  {
-  "tr": "Yanlış: „Kein Doppelbett, zwei einzelne Betten“.",
+  "tr": "İfade yanlış: „Kein Doppelbett, zwei einzelne Betten“.",
   "kind": "explain",
-  "en": "False: „Kein Doppelbett, zwei einzelne Betten“."
+  "en": "The statement is false: „Kein Doppelbett, zwei einzelne Betten“."
  },
  {
   "tr": "Yürürlüğe koymak yetkiyi ve süreci değiştiriyor.",
@@ -465,9 +465,9 @@
   "en": "If the function of the sentence is not carried over, neither is the sense."
  },
  {
-  "tr": "Doğru: „Manchmal schlafe ich am Sonntag bis elf.“",
+  "tr": "İfade doğru: „Manchmal schlafe ich am Sonntag bis elf.“",
   "kind": "explain",
-  "en": "True: „Manchmal schlafe ich am Sonntag bis elf.“"
+  "en": "The statement is true: „Manchmal schlafe ich am Sonntag bis elf.“"
  },
  {
   "tr": "Dört heceli sıfat ek almaz: the most interesting.",
@@ -565,14 +565,14 @@
   "en": "An account of a morning that went wrong. What happened, in order?"
  },
  {
-  "tr": "Yanlış: „Herzlich willkommen!“ diyor — çok nazik.",
+  "tr": "İfade yanlış: „Herzlich willkommen!“ diyor — çok nazik.",
   "kind": "explain",
-  "en": "False: they say „Herzlich willkommen!“ — very kind."
+  "en": "The statement is false: they say „Herzlich willkommen!“ — very kind."
  },
  {
-  "tr": "Yanlış: „Kinder unter 6 Jahren fahren kostenlos.“",
+  "tr": "İfade yanlış: „Kinder unter 6 Jahren fahren kostenlos.“",
   "kind": "explain",
-  "en": "False: „Kinder unter 6 Jahren fahren kostenlos.“"
+  "en": "The statement is false: „Kinder unter 6 Jahren fahren kostenlos.“"
  },
  {
   "tr": "Yemek masasında bir konuk ve ev sahibi konuşuyor.",

@@ -65,7 +65,7 @@ export const a1U15: SkillExercise[] = [
         text: "Richtig oder falsch? Kinder bezahlen auch 8 Euro.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „für Kinder ist es kostenlos.“",
+        explain: "İfade yanlış: „für Kinder ist es kostenlos.“",
       },
       {
         text: "Wie lange dauert es mit der Bahn zu den Dörfern?",
@@ -184,7 +184,7 @@ export const a1U15: SkillExercise[] = [
         text: "Richtig oder falsch? Die Altstadt ist sehr weit.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Nein, zehn Minuten zu Fuß.“",
+        explain: "İfade yanlış: „Nein, zehn Minuten zu Fuß.“",
       },
           {
         kind: "gapfill",

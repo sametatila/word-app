@@ -63,7 +63,7 @@ export const a1U14: SkillExercise[] = [
         text: "Richtig oder falsch? Kleine Kinder bezahlen auch.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Kinder unter 6 Jahren fahren kostenlos.“",
+        explain: "İfade yanlış: „Kinder unter 6 Jahren fahren kostenlos.“",
       },
       {
         text: "Wo kann man fragen?",

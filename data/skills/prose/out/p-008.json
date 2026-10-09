@@ -140,14 +140,14 @@
   "en": "The nested sentence from unit 16 does direct damage here."
  },
  {
-  "tr": "Yanlış: „Am Vormittag arbeite ich. Leider kann ich nicht.“",
+  "tr": "İfade yanlış: „Am Vormittag arbeite ich. Leider kann ich nicht.“",
   "kind": "explain",
-  "en": "False: „Am Vormittag arbeite ich. Leider kann ich nicht.“"
+  "en": "The statement is false: „Am Vormittag arbeite ich. Leider kann ich nicht.“"
  },
  {
-  "tr": "Yanlış: „Krankenversicherung, Rücklage, dann Investition.“",
+  "tr": "İfade yanlış: „Krankenversicherung, Rücklage, dann Investition.“",
   "kind": "explain",
-  "en": "False: „Krankenversicherung, Rücklage, dann Investition.“"
+  "en": "The statement is false: „Krankenversicherung, Rücklage, dann Investition.“"
  },
  {
   "tr": "Yönetmelik cümlesini vatandaşın okuyacağı bildirime çevir.",
@@ -300,9 +300,9 @@
   "en": "Introduce yourself on the course forum: your job and your languages."
  },
  {
-  "tr": "Doğru: „Ich habe beim letzten Mal zu optimistisch geplant.“",
+  "tr": "İfade doğru: „Ich habe beim letzten Mal zu optimistisch geplant.“",
   "kind": "explain",
-  "en": "True: „Ich habe beim letzten Mal zu optimistisch geplant.“"
+  "en": "The statement is true: „Ich habe beim letzten Mal zu optimistisch geplant.“"
  },
  {
   "tr": "Eczanede standart kapanış — hastaya bunu söylemek beklenir.",

@@ -57,7 +57,7 @@ export const a1U16: SkillExercise[] = [
         text: "Richtig oder falsch? Es gibt einen Aufzug.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Es gibt keinen Aufzug — Sie gehen die Treppe.“",
+        explain: "İfade yanlış: „Es gibt keinen Aufzug — Sie gehen die Treppe.“",
       },
       {
         text: "Was ist in der Wohnung NICHT da?",
@@ -242,7 +242,7 @@ export const a1U16: SkillExercise[] = [
         text: "Richtig oder falsch? Die Nachbarin ist nicht nett.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Herzlich willkommen!“ diyor — çok nazik.",
+        explain: "İfade yanlış: „Herzlich willkommen!“ diyor — çok nazik.",
       },
           {
         kind: "gapfill",

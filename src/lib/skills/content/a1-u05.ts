@@ -52,7 +52,7 @@ export const a1U05: SkillExercise[] = [
         text: "Richtig oder falsch? Nora und Jonas treffen sich oft.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Wir treffen uns oft.“ — sık sık buluşuyorlar.",
+        explain: "İfade doğru: „Wir treffen uns oft.“ — sık sık buluşuyorlar.",
       },
       {
         text: "Wo haben sie sich kennengelernt?",
@@ -112,7 +112,7 @@ export const a1U05: SkillExercise[] = [
         text: "Richtig oder falsch? Die Gäste sollen keine großen Geschenke bringen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Bitte bringt keine großen Geschenke.“ Kek ve şekerleme isteniyor.",
+        explain: "İfade doğru: „Bitte bringt keine großen Geschenke.“ Kek ve şekerleme isteniyor.",
       },
       {
         kind: "gapfill",
@@ -169,7 +169,7 @@ export const a1U05: SkillExercise[] = [
         text: "Richtig oder falsch? Max ist klein.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: ilk bilgi düzeltiliyor — „Nein, das stimmt nicht! Max ist groß.“",
+        explain: "İfade yanlış: ilk bilgi düzeltiliyor — „Nein, das stimmt nicht! Max ist groß.“",
       },
       {
         kind: "gapfill",
@@ -236,7 +236,7 @@ export const a1U05: SkillExercise[] = [
         text: "Richtig oder falsch? Die Süßigkeiten sind für die Kinder.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „für die Kinder“ — çocuklar için.",
+        explain: "İfade doğru: „für die Kinder“ — çocuklar için.",
       },
           {
         kind: "gapfill",

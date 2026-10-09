@@ -160,9 +160,9 @@
   "en": "A feminine job title takes -in: Ingenieur → Ingenieurin."
  },
  {
-  "tr": "Doğru: „Kunst aus der Region, etwa vierzig Bilder“.",
+  "tr": "İfade doğru: „Kunst aus der Region, etwa vierzig Bilder“.",
   "kind": "explain",
-  "en": "True: „Kunst aus der Region, etwa vierzig Bilder“."
+  "en": "The statement is true: „Kunst aus der Region, etwa vierzig Bilder“."
  },
  {
   "tr": "Eril nesne Akkusativ'de -en alır: meinen Schlüssel.",
@@ -240,24 +240,24 @@
   "en": "When the clause goes to the end, a placeholder „es“ comes first."
  },
  {
-  "tr": "Yanlış: „…mit einem Satz, ohne Begründungspflicht.“",
+  "tr": "İfade yanlış: „…mit einem Satz, ohne Begründungspflicht.“",
   "kind": "explain",
-  "en": "False: „…mit einem Satz, ohne Begründungspflicht.“"
+  "en": "The statement is false: „…mit einem Satz, ohne Begründungspflicht.“"
  },
  {
-  "tr": "Yanlış: „Die Wertsteigerung ist keineswegs sicher.“",
+  "tr": "İfade yanlış: „Die Wertsteigerung ist keineswegs sicher.“",
   "kind": "explain",
-  "en": "False: „Die Wertsteigerung ist keineswegs sicher.“"
+  "en": "The statement is false: „Die Wertsteigerung ist keineswegs sicher.“"
  },
  {
-  "tr": "Yanlış: „Vier Wege, und nur einer davon geradeaus.“",
+  "tr": "İfade yanlış: „Vier Wege, und nur einer davon geradeaus.“",
   "kind": "explain",
-  "en": "False: „Vier Wege, und nur einer davon geradeaus.“"
+  "en": "The statement is false: „Vier Wege, und nur einer davon geradeaus.“"
  },
  {
-  "tr": "Yanlış: kayıt ücretsiz; beş avro ikinci belge için.",
+  "tr": "İfade yanlış: kayıt ücretsiz; beş avro ikinci belge için.",
   "kind": "explain",
-  "en": "False: registering is free; five euros is for the second document."
+  "en": "The statement is false: registering is free; five euros is for the second document."
  },
  {
   "tr": "Yeni taşınan biri yol soruyor. Hangi yol daha kısa?",
@@ -465,14 +465,14 @@
   "en": "Traveling by train. Which service to where, and how long a break?"
  },
  {
-  "tr": "Yanlış: „…die Beratung im Vorfeld ist gebührenfrei.“",
+  "tr": "İfade yanlış: „…die Beratung im Vorfeld ist gebührenfrei.“",
   "kind": "explain",
-  "en": "False: „…die Beratung im Vorfeld ist gebührenfrei.“"
+  "en": "The statement is false: „…die Beratung im Vorfeld ist gebührenfrei.“"
  },
  {
-  "tr": "Yanlış: „Nach dem Essen bleibt man noch eine Weile.“",
+  "tr": "İfade yanlış: „Nach dem Essen bleibt man noch eine Weile.“",
   "kind": "explain",
-  "en": "False: „Nach dem Essen bleibt man noch eine Weile.“"
+  "en": "The statement is false: „Nach dem Essen bleibt man noch eine Weile.“"
  },
  {
   "tr": "Yetenek anlatılıyor ve „can“ hiçbir kişide değişmez.",

@@ -90,14 +90,14 @@
   "en": "würdigen: to give something its due. Unlike praising, it offers detail rather than a claim."
  },
  {
-  "tr": "Yanlış: „Dann brauchen wir einen Plan dafür. Sonst ist es nur eine Hoffnung.“",
+  "tr": "İfade yanlış: „Dann brauchen wir einen Plan dafür. Sonst ist es nur eine Hoffnung.“",
   "kind": "explain",
-  "en": "False: „Dann brauchen wir einen Plan dafür. Sonst ist es nur eine Hoffnung.“"
+  "en": "The statement is false: „Dann brauchen wir einen Plan dafür. Sonst ist es nur eine Hoffnung.“"
  },
  {
-  "tr": "Yanlış: „Getränke und Torte machen wir.“ Misafirler isterse salata getiriyor.",
+  "tr": "İfade yanlış: „Getränke und Torte machen wir.“ Misafirler isterse salata getiriyor.",
   "kind": "explain",
-  "en": "False: „Getränke und Torte machen wir.“ The guests bring a salad if they want to."
+  "en": "The statement is false: „Getränke und Torte machen wir.“ The guests bring a salad if they want to."
  },
  {
   "tr": "Zaman iki kez işaretlenmez: „did“ geçmişi üstlenince fiil yalın hâline döner.",
@@ -280,24 +280,24 @@
   "en": "An article about how we argue. Watch the sentences that name both sides at once."
  },
  {
-  "tr": "Yanlış: „Deshalb sind hier feste Rotationen wichtiger als zusätzliche Pausen.“",
+  "tr": "İfade yanlış: „Deshalb sind hier feste Rotationen wichtiger als zusätzliche Pausen.“",
   "kind": "explain",
-  "en": "False: „Deshalb sind hier feste Rotationen wichtiger als zusätzliche Pausen.“"
+  "en": "The statement is false: „Deshalb sind hier feste Rotationen wichtiger als zusätzliche Pausen.“"
  },
  {
-  "tr": "Yanlış: „Fragen Sie in der Personalabteilung nach, nicht bei einem Vertreter.“",
+  "tr": "İfade yanlış: „Fragen Sie in der Personalabteilung nach, nicht bei einem Vertreter.“",
   "kind": "explain",
-  "en": "False: „Fragen Sie in der Personalabteilung nach, nicht bei einem Vertreter.“"
+  "en": "The statement is false: „Fragen Sie in der Personalabteilung nach, nicht bei einem Vertreter.“"
  },
  {
-  "tr": "Yanlış: „Keinen Tag. Aber die ersten drei Monate nach dem Wechsel waren hart.“",
+  "tr": "İfade yanlış: „Keinen Tag. Aber die ersten drei Monate nach dem Wechsel waren hart.“",
   "kind": "explain",
-  "en": "False: „Keinen Tag. Aber die ersten drei Monate nach dem Wechsel waren hart.“"
+  "en": "The statement is false: „Keinen Tag. Aber die ersten drei Monate nach dem Wechsel waren hart.“"
  },
  {
-  "tr": "Yanlış: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Sahte değil, eski.",
+  "tr": "İfade yanlış: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Sahte değil, eski.",
   "kind": "explain",
-  "en": "False: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Not fake but old."
+  "en": "The statement is false: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Not fake but old."
  },
  {
   "tr": "„anhalten“ hem ayrılabilen hem kuralsız: ortaç angehalten. Durmak yer değiştirme olmadığı için yardımcı fiil „hat“.",
@@ -515,19 +515,19 @@
   "en": "And the witness says so herself — it does not weaken the statement, it makes it usable."
  },
  {
-  "tr": "Yanlış: „Ich muss dann nichts anmahnen, sondern umplanen — das ist mir lieber.“",
+  "tr": "İfade yanlış: „Ich muss dann nichts anmahnen, sondern umplanen — das ist mir lieber.“",
   "kind": "explain",
-  "en": "False: „Ich muss dann nichts anmahnen, sondern umplanen — das ist mir lieber.“"
+  "en": "The statement is false: „Ich muss dann nichts anmahnen, sondern umplanen — das ist mir lieber.“"
  },
  {
-  "tr": "Yanlış: „Nicht mehr über die Sprache lernen, sondern in ihr etwas anderes tun.“",
+  "tr": "İfade yanlış: „Nicht mehr über die Sprache lernen, sondern in ihr etwas anderes tun.“",
   "kind": "explain",
-  "en": "False: „Nicht mehr über die Sprache lernen, sondern in ihr etwas anderes tun.“"
+  "en": "The statement is false: „Nicht mehr über die Sprache lernen, sondern in ihr etwas anderes tun.“"
  },
  {
-  "tr": "Yanlış: „Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit.“",
+  "tr": "İfade yanlış: „Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit.“",
   "kind": "explain",
-  "en": "False: „Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit.“"
+  "en": "The statement is false: „Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit.“"
  },
  {
   "tr": "Yanlış. Metinde Connor için \"He is nine years old.\" yazıyor, yani dokuz yaşında.",

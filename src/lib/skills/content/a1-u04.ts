@@ -54,7 +54,7 @@ export const a1U04: SkillExercise[] = [
         text: "Richtig oder falsch? Paula hat kein Tier.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ich habe leider kein Tier.“ At büyükannesinin, kendisinin değil.",
+        explain: "İfade doğru: „Ich habe leider kein Tier.“ At büyükannesinin, kendisinin değil.",
       },
       {
         kind: "gapfill",
@@ -179,7 +179,7 @@ export const a1U04: SkillExercise[] = [
         text: "Richtig oder falsch? Das ist kein Problem.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Kein Problem!“ diyor — sorun değil.",
+        explain: "İfade doğru: „Kein Problem!“ diyor — sorun değil.",
       },
           {
         kind: "gapfill",
@@ -236,7 +236,7 @@ export const a1U04: SkillExercise[] = [
         text: "Richtig oder falsch? Die Familie hat keine Katze.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Eine Katze haben wir nicht.“",
+        explain: "İfade doğru: „Eine Katze haben wir nicht.“",
       },
           {
         kind: "gapfill",

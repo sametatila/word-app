@@ -130,7 +130,7 @@ export const a1U20: SkillExercise[] = [
         text: "Richtig oder falsch? Um 20:15 Uhr beginnen drei Sendungen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: Film, Serie ve çocuk programı — üçü de 20.15. Almanya'da 20.15 klasik akşam saatidir.",
+        explain: "İfade doğru: Film, Serie ve çocuk programı — üçü de 20.15. Almanya'da 20.15 klasik akşam saatidir.",
       },
           {
         kind: "gapfill",

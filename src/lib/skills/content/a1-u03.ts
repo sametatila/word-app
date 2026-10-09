@@ -54,7 +54,7 @@ export const a1U03: SkillExercise[] = [
         text: "Richtig oder falsch? Lena hat einen Bruder und eine Schwester.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Ich habe zwei Geschwister“ — Max (Bruder) ve Nora (Schwester).",
+        explain: "İfade doğru: „Ich habe zwei Geschwister“ — Max (Bruder) ve Nora (Schwester).",
       },
       {
         text: "Woher kommen die Großeltern?",
@@ -125,7 +125,7 @@ export const a1U03: SkillExercise[] = [
         text: "Richtig oder falsch? Amir ist verheiratet.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Familienstand: verheiratet“ — evli.",
+        explain: "İfade doğru: „Familienstand: verheiratet“ — evli.",
       },
           {
         kind: "gapfill",
@@ -183,7 +183,7 @@ export const a1U03: SkillExercise[] = [
         text: "Richtig oder falsch? Jonas ist zwanzig Jahre alt.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: Jonas zwanzig, kardeşi zehn. İki sayıyı karıştırmamak gerek.",
+        explain: "İfade doğru: Jonas zwanzig, kardeşi zehn. İki sayıyı karıştırmamak gerek.",
       },
           {
         kind: "gapfill",
@@ -242,7 +242,7 @@ export const a1U03: SkillExercise[] = [
         text: "Richtig oder falsch? Die Person soll das Formular ausfüllen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru, ilk cümle: „Füllen Sie bitte das Formular aus.“",
+        explain: "İfade doğru, ilk cümle: „Füllen Sie bitte das Formular aus.“",
       },
           {
         kind: "gapfill",

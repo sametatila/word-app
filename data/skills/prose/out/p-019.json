@@ -195,14 +195,14 @@
   "en": "Describe somebody you know. In each sentence work out the case of the relative pronoun from its job in the clause."
  },
  {
-  "tr": "Yanlış: „Andere wissen nicht einmal den Titel der Folge und schauen trotzdem jede Woche.“",
+  "tr": "İfade yanlış: „Andere wissen nicht einmal den Titel der Folge und schauen trotzdem jede Woche.“",
   "kind": "explain",
-  "en": "False: „Andere wissen nicht einmal den Titel der Folge und schauen trotzdem jede Woche.“"
+  "en": "The statement is false: „Andere wissen nicht einmal den Titel der Folge und schauen trotzdem jede Woche.“"
  },
  {
-  "tr": "Yanlış: „Ein höherer Satz bringt nicht automatisch mehr ein, weil sich Verhalten ändert.“",
+  "tr": "İfade yanlış: „Ein höherer Satz bringt nicht automatisch mehr ein, weil sich Verhalten ändert.“",
   "kind": "explain",
-  "en": "False: „Ein höherer Satz bringt nicht automatisch mehr ein, weil sich Verhalten ändert.“"
+  "en": "The statement is false: „Ein höherer Satz bringt nicht automatisch mehr ein, weil sich Verhalten ändert.“"
  },
  {
   "tr": "„Am Freitag bleibt das Freibad zu.“ — zaman ifadesi başta olunca fiil ikinci sırada kalır.",
@@ -295,19 +295,19 @@
   "en": "Three figures plus „Das ist gelöst, aber nicht billig“ — evidence and a named weakness of its own."
  },
  {
-  "tr": "Yanlış: „Die Frage lautet also selten ‚Stadt oder Land‘, sondern ‚angebunden oder nicht‘.“",
+  "tr": "İfade yanlış: „Die Frage lautet also selten ‚Stadt oder Land‘, sondern ‚angebunden oder nicht‘.“",
   "kind": "explain",
-  "en": "False: „Die Frage lautet also selten ‚Stadt oder Land‘, sondern ‚angebunden oder nicht‘.“"
+  "en": "The statement is false: „Die Frage lautet also selten ‚Stadt oder Land‘, sondern ‚angebunden oder nicht‘.“"
  },
  {
-  "tr": "Yanlış: „Die Lesung nächste Woche im Literaturhaus ist übrigens seit gestern ausverkauft.“",
+  "tr": "İfade yanlış: „Die Lesung nächste Woche im Literaturhaus ist übrigens seit gestern ausverkauft.“",
   "kind": "explain",
-  "en": "False: „Die Lesung nächste Woche im Literaturhaus ist übrigens seit gestern ausverkauft.“"
+  "en": "The statement is false: „Die Lesung nächste Woche im Literaturhaus ist übrigens seit gestern ausverkauft.“"
  },
  {
-  "tr": "Yanlış: „Sie wirken erst nach Jahren — und genau deshalb werden sie … selten beschlossen.“",
+  "tr": "İfade yanlış: „Sie wirken erst nach Jahren — und genau deshalb werden sie … selten beschlossen.“",
   "kind": "explain",
-  "en": "False: „Sie wirken erst nach Jahren — und genau deshalb werden sie … selten beschlossen.“"
+  "en": "The statement is false: „Sie wirken erst nach Jahren — und genau deshalb werden sie … selten beschlossen.“"
  },
  {
   "tr": "„Am Freitag bleibt das Freibad zu“ ve duş, soyunma odası, havuz teknesi — sahne açık havuz.",
@@ -495,9 +495,9 @@
   "en": "The subjunctive turns the offer from a decision into a suggestion; the other side keeps its room."
  },
  {
-  "tr": "Doğru: Film, Serie ve çocuk programı — üçü de 20.15. Almanya'da 20.15 klasik akşam saatidir.",
+  "tr": "İfade doğru: Film, Serie ve çocuk programı — üçü de 20.15. Almanya'da 20.15 klasik akşam saatidir.",
   "kind": "explain",
-  "en": "True: a movie, a series and a children's program — all three at 20:15. In Germany 20:15 is the classic evening slot."
+  "en": "The statement is true: a movie, a series and a children's program — all three at 20:15. In Germany 20:15 is the classic evening slot."
  },
  {
   "tr": "Doktor 'No, stay at home for two days.' diyor; yani yarın işe gidemez, iki gün evde kalacak.",
@@ -555,9 +555,9 @@
   "en": "The clause first with its verb last; the main clause starts right away with the verb: Wenn ich Zeit hätte, käme ich."
  },
  {
-  "tr": "Yanlış: „Ein Wendepunkt für deine Persönlichkeit wird es sowieso, ob du gehst oder bleibst.“",
+  "tr": "İfade yanlış: „Ein Wendepunkt für deine Persönlichkeit wird es sowieso, ob du gehst oder bleibst.“",
   "kind": "explain",
-  "en": "False: „Ein Wendepunkt für deine Persönlichkeit wird es sowieso, ob du gehst oder bleibst.“"
+  "en": "The statement is false: „Ein Wendepunkt für deine Persönlichkeit wird es sowieso, ob du gehst oder bleibst.“"
  },
  {
   "tr": "Yerel bir haber okuyacaksın: pazar neden taşınıyor, kim itiraz ediyor, şehir ne söz veriyor.",

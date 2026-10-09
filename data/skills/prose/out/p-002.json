@@ -40,14 +40,14 @@
   "en": "The cleaning is shared out. Who does what?"
  },
  {
-  "tr": "Yanlış: „dann kaufe ich den Rucksack.“",
+  "tr": "İfade yanlış: „dann kaufe ich den Rucksack.“",
   "kind": "explain",
-  "en": "False: „dann kaufe ich den Rucksack.“"
+  "en": "The statement is false: „dann kaufe ich den Rucksack.“"
  },
  {
-  "tr": "Yanlış: „für Kinder ist es kostenlos.“",
+  "tr": "İfade yanlış: „für Kinder ist es kostenlos.“",
   "kind": "explain",
-  "en": "False: „für Kinder ist es kostenlos.“"
+  "en": "The statement is false: „für Kinder ist es kostenlos.“"
  },
  {
   "tr": "Yük tek yöne değil, iki yöne dağılmış.",
@@ -175,9 +175,9 @@
   "en": "Three people write what they eat for breakfast."
  },
  {
-  "tr": "Yanlış: „Noten lesen lernen Sie nicht.“",
+  "tr": "İfade yanlış: „Noten lesen lernen Sie nicht.“",
   "kind": "explain",
-  "en": "False: „Noten lesen lernen Sie nicht.“"
+  "en": "The statement is false: „Noten lesen lernen Sie nicht.“"
  },
  {
   "tr": "„20:15 Serie: Familie Berger“ — Kanal 2.",
@@ -535,19 +535,19 @@
   "en": "The data are gone. What is done, and what is not?"
  },
  {
-  "tr": "Yanlış: „Am Wochenende ist die Praxis zu.“",
+  "tr": "İfade yanlış: „Am Wochenende ist die Praxis zu.“",
   "kind": "explain",
-  "en": "False: „Am Wochenende ist die Praxis zu.“"
+  "en": "The statement is false: „Am Wochenende ist die Praxis zu.“"
  },
  {
-  "tr": "Yanlış: „Es klang hohl, kaum war es raus.“",
+  "tr": "İfade yanlış: „Es klang hohl, kaum war es raus.“",
   "kind": "explain",
-  "en": "False: „Es klang hohl, kaum war es raus.“"
+  "en": "The statement is false: „Es klang hohl, kaum war es raus.“"
  },
  {
-  "tr": "Yanlış: „ich weiß nicht, was ihr gefällt.“",
+  "tr": "İfade yanlış: „ich weiß nicht, was ihr gefällt.“",
   "kind": "explain",
-  "en": "False: „ich weiß nicht, was ihr gefällt.“"
+  "en": "The statement is false: „ich weiß nicht, was ihr gefällt.“"
  },
  {
   "tr": "„analyze“ fiilinin ad biçimi „analysis“tir.",

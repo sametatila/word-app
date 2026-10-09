@@ -1,437 +1,437 @@
 [
  {
-  "tr": "Doğru: „Ja, ein Wasser bitte.“",
+  "tr": "İfade doğru: „Ja, ein Wasser bitte.“",
   "kind": "explain",
-  "en": "True: „Ja, ein Wasser bitte.“"
+  "en": "The statement is true: „Ja, ein Wasser bitte.“"
  },
  {
-  "tr": "Doğru: „Die lassen sich nachrüsten.“",
+  "tr": "İfade doğru: „Die lassen sich nachrüsten.“",
   "kind": "explain",
-  "en": "True: „Die lassen sich nachrüsten.“"
+  "en": "The statement is true: „Die lassen sich nachrüsten.“"
  },
  {
-  "tr": "Doğru: „Eine Katze haben wir nicht.“",
+  "tr": "İfade doğru: „Eine Katze haben wir nicht.“",
   "kind": "explain",
-  "en": "True: „Eine Katze haben wir nicht.“"
+  "en": "The statement is true: „Eine Katze haben wir nicht.“"
  },
  {
-  "tr": "Doğru: „Harmlos ist kein Arzneimittel.“",
+  "tr": "İfade doğru: „Harmlos ist kein Arzneimittel.“",
   "kind": "explain",
-  "en": "True: „Harmlos ist kein Arzneimittel.“"
+  "en": "The statement is true: „Harmlos ist kein Arzneimittel.“"
  },
  {
-  "tr": "Doğru: „für die Kinder“ — çocuklar için.",
+  "tr": "İfade doğru: „für die Kinder“ — çocuklar için.",
   "kind": "explain",
-  "en": "True: „für die Kinder“ — for the children."
+  "en": "The statement is true: „für die Kinder“ — for the children."
  },
  {
-  "tr": "Doğru: „Wertschätzung ist kein Vorwort.“",
+  "tr": "İfade doğru: „Wertschätzung ist kein Vorwort.“",
   "kind": "explain",
-  "en": "True: „Wertschätzung ist kein Vorwort.“"
+  "en": "The statement is true: „Wertschätzung ist kein Vorwort.“"
  },
  {
-  "tr": "Doğru: „Am Sonntag bin ich zurückgekommen.“",
+  "tr": "İfade doğru: „Am Sonntag bin ich zurückgekommen.“",
   "kind": "explain",
-  "en": "True: „Am Sonntag bin ich zurückgekommen.“"
+  "en": "The statement is true: „Am Sonntag bin ich zurückgekommen.“"
  },
  {
-  "tr": "Doğru: „Das höre ich nicht zum ersten Mal.“",
+  "tr": "İfade doğru: „Das höre ich nicht zum ersten Mal.“",
   "kind": "explain",
-  "en": "True: „Das höre ich nicht zum ersten Mal.“"
+  "en": "The statement is true: „Das höre ich nicht zum ersten Mal.“"
  },
  {
-  "tr": "Doğru: „Familienstand: verheiratet“ — evli.",
+  "tr": "İfade doğru: „Familienstand: verheiratet“ — evli.",
   "kind": "explain",
-  "en": "True: „Familienstand: verheiratet“ — married."
+  "en": "The statement is true: „Familienstand: verheiratet“ — married."
  },
  {
-  "tr": "Doğru: „Ja, eine Flasche kostet 0,80 Euro.“",
+  "tr": "İfade doğru: „Ja, eine Flasche kostet 0,80 Euro.“",
   "kind": "explain",
-  "en": "True: „Ja, eine Flasche kostet 0,80 Euro.“"
+  "en": "The statement is true: „Ja, eine Flasche kostet 0,80 Euro.“"
  },
  {
-  "tr": "Doğru: „Kein Problem!“ diyor — sorun değil.",
+  "tr": "İfade doğru: „Kein Problem!“ diyor — sorun değil.",
   "kind": "explain",
-  "en": "True: they say „Kein Problem!“ — no problem."
+  "en": "The statement is true: they say „Kein Problem!“ — no problem."
  },
  {
-  "tr": "Doğru: „Ja, und die beiden Reparaturbelege.“",
+  "tr": "İfade doğru: „Ja, und die beiden Reparaturbelege.“",
   "kind": "explain",
-  "en": "True: „Ja, und die beiden Reparaturbelege.“"
+  "en": "The statement is true: „Ja, und die beiden Reparaturbelege.“"
  },
  {
-  "tr": "Doğru: „zeigt sich … weiterhin unnachgiebig“.",
+  "tr": "İfade doğru: „zeigt sich … weiterhin unnachgiebig“.",
   "kind": "explain",
-  "en": "True: „zeigt sich … weiterhin unnachgiebig“."
+  "en": "The statement is true: „zeigt sich … weiterhin unnachgiebig“."
  },
  {
-  "tr": "Doğru: „sag Bescheid — ich helfe dir gern aus“.",
+  "tr": "İfade doğru: „sag Bescheid — ich helfe dir gern aus“.",
   "kind": "explain",
-  "en": "True: „sag Bescheid — ich helfe dir gern aus“."
+  "en": "The statement is true: „sag Bescheid — ich helfe dir gern aus“."
  },
  {
-  "tr": "Doğru: „Die Hälfte. Danach bin ich eingeschlafen.“",
+  "tr": "İfade doğru: „Die Hälfte. Danach bin ich eingeschlafen.“",
   "kind": "explain",
-  "en": "True: „Die Hälfte. Danach bin ich eingeschlafen.“"
+  "en": "The statement is true: „Die Hälfte. Danach bin ich eingeschlafen.“"
  },
  {
-  "tr": "Doğru: „Klare Ansagen sind freundlicher als vage.“",
+  "tr": "İfade doğru: „Klare Ansagen sind freundlicher als vage.“",
   "kind": "explain",
-  "en": "True: „Klare Ansagen sind freundlicher als vage.“"
+  "en": "The statement is true: „Klare Ansagen sind freundlicher als vage.“"
  },
  {
-  "tr": "Doğru: „Aber sie ist drinnen, nicht auf dem Balkon.“",
+  "tr": "İfade doğru: „Aber sie ist drinnen, nicht auf dem Balkon.“",
   "kind": "explain",
-  "en": "True: „Aber sie ist drinnen, nicht auf dem Balkon.“"
+  "en": "The statement is true: „Aber sie ist drinnen, nicht auf dem Balkon.“"
  },
  {
-  "tr": "Doğru: „auch wenn man sich gesund fühlt und fit ist“.",
+  "tr": "İfade doğru: „auch wenn man sich gesund fühlt und fit ist“.",
   "kind": "explain",
-  "en": "True: „auch wenn man sich gesund fühlt und fit ist“."
+  "en": "The statement is true: „auch wenn man sich gesund fühlt und fit ist“."
  },
  {
-  "tr": "Doğru: „Im Moment bin ich arbeitslos.“ — şu an işsiz.",
+  "tr": "İfade doğru: „Im Moment bin ich arbeitslos.“ — şu an işsiz.",
   "kind": "explain",
-  "en": "True: „Im Moment bin ich arbeitslos.“ — out of work just now."
+  "en": "The statement is true: „Im Moment bin ich arbeitslos.“ — out of work just now."
  },
  {
-  "tr": "Doğru: „Mein Kurs beginnt gleich.“ — henüz başlamadı.",
+  "tr": "İfade doğru: „Mein Kurs beginnt gleich.“ — henüz başlamadı.",
   "kind": "explain",
-  "en": "True: „Mein Kurs beginnt gleich.“ — it has not started yet."
+  "en": "The statement is true: „Mein Kurs beginnt gleich.“ — it has not started yet."
  },
  {
-  "tr": "Doğru: „Sie ist kein Gericht und kostet fast nichts.“",
+  "tr": "İfade doğru: „Sie ist kein Gericht und kostet fast nichts.“",
   "kind": "explain",
-  "en": "True: „Sie ist kein Gericht und kostet fast nichts.“"
+  "en": "The statement is true: „Sie ist kein Gericht und kostet fast nichts.“"
  },
  {
-  "tr": "Doğru: „Wir treffen uns oft.“ — sık sık buluşuyorlar.",
+  "tr": "İfade doğru: „Wir treffen uns oft.“ — sık sık buluşuyorlar.",
   "kind": "explain",
-  "en": "True: „Wir treffen uns oft.“ — they meet often."
+  "en": "The statement is true: „Wir treffen uns oft.“ — they meet often."
  },
  {
-  "tr": "Doğru: „Ja, bitte.“ diyor — tereyağı ve reçel istiyor.",
+  "tr": "İfade doğru: „Ja, bitte.“ diyor — tereyağı ve reçel istiyor.",
   "kind": "explain",
-  "en": "True: they say „Ja, bitte.“ — they do want butter and jam."
+  "en": "The statement is true: they say „Ja, bitte.“ — they do want butter and jam."
  },
  {
-  "tr": "Doğru: „mit einem großen Glas Wasser, nicht mit Kaffee“.",
+  "tr": "İfade doğru: „mit einem großen Glas Wasser, nicht mit Kaffee“.",
   "kind": "explain",
-  "en": "True: „mit einem großen Glas Wasser, nicht mit Kaffee“."
+  "en": "The statement is true: „mit einem großen Glas Wasser, nicht mit Kaffee“."
  },
  {
-  "tr": "Doğru: „Ursprünglich stammt es aus der Forstwirtschaft.“",
+  "tr": "İfade doğru: „Ursprünglich stammt es aus der Forstwirtschaft.“",
   "kind": "explain",
-  "en": "True: „Ursprünglich stammt es aus der Forstwirtschaft.“"
+  "en": "The statement is true: „Ursprünglich stammt es aus der Forstwirtschaft.“"
  },
  {
-  "tr": "Doğru: „Das ist angeblich so, ja. Gesagt hat es niemand.“",
+  "tr": "İfade doğru: „Das ist angeblich so, ja. Gesagt hat es niemand.“",
   "kind": "explain",
-  "en": "True: „Das ist angeblich so, ja. Gesagt hat es niemand.“"
+  "en": "The statement is true: „Das ist angeblich so, ja. Gesagt hat es niemand.“"
  },
  {
-  "tr": "Doğru: „Ein Fehler ist kein Problem!“ — hata sorun değil.",
+  "tr": "İfade doğru: „Ein Fehler ist kein Problem!“ — hata sorun değil.",
   "kind": "explain",
-  "en": "True: „Ein Fehler ist kein Problem!“ — a mistake is no problem."
+  "en": "The statement is true: „Ein Fehler ist kein Problem!“ — a mistake is no problem."
  },
  {
-  "tr": "Doğru: „Jetzt ist die Erleichterung größer als der Ärger.“",
+  "tr": "İfade doğru: „Jetzt ist die Erleichterung größer als der Ärger.“",
   "kind": "explain",
-  "en": "True: „Jetzt ist die Erleichterung größer als der Ärger.“"
+  "en": "The statement is true: „Jetzt ist die Erleichterung größer als der Ärger.“"
  },
  {
-  "tr": "Doğru: „Das entscheidet die Staatsanwaltschaft, nicht ich.“",
+  "tr": "İfade doğru: „Das entscheidet die Staatsanwaltschaft, nicht ich.“",
   "kind": "explain",
-  "en": "True: „Das entscheidet die Staatsanwaltschaft, nicht ich.“"
+  "en": "The statement is true: „Das entscheidet die Staatsanwaltschaft, nicht ich.“"
  },
  {
-  "tr": "Doğru: „Das kostet keine Zeit, verfälscht aber die Zahlen.“",
+  "tr": "İfade doğru: „Das kostet keine Zeit, verfälscht aber die Zahlen.“",
   "kind": "explain",
-  "en": "True: „Das kostet keine Zeit, verfälscht aber die Zahlen.“"
+  "en": "The statement is true: „Das kostet keine Zeit, verfälscht aber die Zahlen.“"
  },
  {
-  "tr": "Doğru: „Einzelne Moleküle sieht man damit natürlich nicht.“",
+  "tr": "İfade doğru: „Einzelne Moleküle sieht man damit natürlich nicht.“",
   "kind": "explain",
-  "en": "True: „Einzelne Moleküle sieht man damit natürlich nicht.“"
+  "en": "The statement is true: „Einzelne Moleküle sieht man damit natürlich nicht.“"
  },
  {
-  "tr": "Yanlış: ilk bilgi düzeltiliyor — „Nein, das stimmt nicht! Max ist groß.“",
+  "tr": "İfade yanlış: ilk bilgi düzeltiliyor — „Nein, das stimmt nicht! Max ist groß.“",
   "kind": "explain",
-  "en": "False: the first piece of information is corrected — „Nein, das stimmt nicht! Max ist groß.“"
+  "en": "The statement is false: the first piece of information is corrected — „Nein, das stimmt nicht! Max ist groß.“"
  },
  {
-  "tr": "Doğru: „Ich habe morgens keinen Hunger.“ — sadece su içiyor.",
+  "tr": "İfade doğru: „Ich habe morgens keinen Hunger.“ — sadece su içiyor.",
   "kind": "explain",
-  "en": "True: „Ich habe morgens keinen Hunger.“ — he only drinks water."
+  "en": "The statement is true: „Ich habe morgens keinen Hunger.“ — he only drinks water."
  },
  {
-  "tr": "Doğru: „Bringen Sie bitte diese Karte und Ihren Ausweis mit.“",
+  "tr": "İfade doğru: „Bringen Sie bitte diese Karte und Ihren Ausweis mit.“",
   "kind": "explain",
-  "en": "True: „Bringen Sie bitte diese Karte und Ihren Ausweis mit.“"
+  "en": "The statement is true: „Bringen Sie bitte diese Karte und Ihren Ausweis mit.“"
  },
  {
-  "tr": "Doğru: „Die Dringlichkeit war ohnehin eher gefühlt als echt.“",
+  "tr": "İfade doğru: „Die Dringlichkeit war ohnehin eher gefühlt als echt.“",
   "kind": "explain",
-  "en": "True: „Die Dringlichkeit war ohnehin eher gefühlt als echt.“"
+  "en": "The statement is true: „Die Dringlichkeit war ohnehin eher gefühlt als echt.“"
  },
  {
-  "tr": "Doğru: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“",
+  "tr": "İfade doğru: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“",
   "kind": "explain",
-  "en": "True: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“"
+  "en": "The statement is true: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“"
  },
  {
-  "tr": "Doğru: „…eine Neuerung um der Neuerung willen zahle ich nicht.“",
+  "tr": "İfade doğru: „…eine Neuerung um der Neuerung willen zahle ich nicht.“",
   "kind": "explain",
-  "en": "True: „…eine Neuerung um der Neuerung willen zahle ich nicht.“"
+  "en": "The statement is true: „…eine Neuerung um der Neuerung willen zahle ich nicht.“"
  },
  {
-  "tr": "Doğru: „Ich leite das Protokoll erst nach der Freigabe weiter.“",
+  "tr": "İfade doğru: „Ich leite das Protokoll erst nach der Freigabe weiter.“",
   "kind": "explain",
-  "en": "True: „Ich leite das Protokoll erst nach der Freigabe weiter.“"
+  "en": "The statement is true: „Ich leite das Protokoll erst nach der Freigabe weiter.“"
  },
  {
-  "tr": "Doğru: „Vor einer Behandlung untersuchen wir Sie immer zuerst.“",
+  "tr": "İfade doğru: „Vor einer Behandlung untersuchen wir Sie immer zuerst.“",
   "kind": "explain",
-  "en": "True: „Vor einer Behandlung untersuchen wir Sie immer zuerst.“"
+  "en": "The statement is true: „Vor einer Behandlung untersuchen wir Sie immer zuerst.“"
  },
  {
-  "tr": "Doğru: „…das Innere dagegen ist konsequent modernisiert worden.“",
+  "tr": "İfade doğru: „…das Innere dagegen ist konsequent modernisiert worden.“",
   "kind": "explain",
-  "en": "True: „…das Innere dagegen ist konsequent modernisiert worden.“"
+  "en": "The statement is true: „…das Innere dagegen ist konsequent modernisiert worden.“"
  },
  {
-  "tr": "Doğru: „Das war teurer, hat uns aber zwei große Kunden gebracht.“",
+  "tr": "İfade doğru: „Das war teurer, hat uns aber zwei große Kunden gebracht.“",
   "kind": "explain",
-  "en": "True: „Das war teurer, hat uns aber zwei große Kunden gebracht.“"
+  "en": "The statement is true: „Das war teurer, hat uns aber zwei große Kunden gebracht.“"
  },
  {
-  "tr": "Doğru: „Eine Massage ist schön, aber sie löst das Problem nicht.“",
+  "tr": "İfade doğru: „Eine Massage ist schön, aber sie löst das Problem nicht.“",
   "kind": "explain",
-  "en": "True: „Eine Massage ist schön, aber sie löst das Problem nicht.“"
+  "en": "The statement is true: „Eine Massage ist schön, aber sie löst das Problem nicht.“"
  },
  {
-  "tr": "Doğru: „Ich mag Fleisch nicht.“ — sebze ve pirinci tercih ediyor.",
+  "tr": "İfade doğru: „Ich mag Fleisch nicht.“ — sebze ve pirinci tercih ediyor.",
   "kind": "explain",
-  "en": "True: „Ich mag Fleisch nicht.“ — he prefers vegetables and rice."
+  "en": "The statement is true: „Ich mag Fleisch nicht.“ — he prefers vegetables and rice."
  },
  {
-  "tr": "Doğru: „Wein und Bier gibt es nicht.“ Burası kafe, lokanta değil.",
+  "tr": "İfade doğru: „Wein und Bier gibt es nicht.“ Burası kafe, lokanta değil.",
   "kind": "explain",
-  "en": "True: „Wein und Bier gibt es nicht.“ This is a café, not a restaurant."
+  "en": "The statement is true: „Wein und Bier gibt es nicht.“ This is a café, not a restaurant."
  },
  {
-  "tr": "Doğru: „Ein schlecht strukturierter wird durch Folien nur länger.“",
+  "tr": "İfade doğru: „Ein schlecht strukturierter wird durch Folien nur länger.“",
   "kind": "explain",
-  "en": "True: „Ein schlecht strukturierter wird durch Folien nur länger.“"
+  "en": "The statement is true: „Ein schlecht strukturierter wird durch Folien nur länger.“"
  },
  {
-  "tr": "Doğru: „in vielen Ländern normale Fragen, hier Grenzverletzungen“.",
+  "tr": "İfade doğru: „in vielen Ländern normale Fragen, hier Grenzverletzungen“.",
   "kind": "explain",
-  "en": "True: „in vielen Ländern normale Fragen, hier Grenzverletzungen“."
+  "en": "The statement is true: „in vielen Ländern normale Fragen, hier Grenzverletzungen“."
  },
  {
-  "tr": "Doğru: „Sie zahlen einmal, nicht jeden Monat.“ — bir kez ödeniyor.",
+  "tr": "İfade doğru: „Sie zahlen einmal, nicht jeden Monat.“ — bir kez ödeniyor.",
   "kind": "explain",
-  "en": "True: „Sie zahlen einmal, nicht jeden Monat.“ — you pay once."
+  "en": "The statement is true: „Sie zahlen einmal, nicht jeden Monat.“ — you pay once."
  },
  {
-  "tr": "Doğru: Jonas zwanzig, kardeşi zehn. İki sayıyı karıştırmamak gerek.",
+  "tr": "İfade doğru: Jonas zwanzig, kardeşi zehn. İki sayıyı karıştırmamak gerek.",
   "kind": "explain",
-  "en": "True: Jonas is zwanzig and his brother zehn. Do not mix up the two numbers."
+  "en": "The statement is true: Jonas is zwanzig and his brother zehn. Do not mix up the two numbers."
  },
  {
-  "tr": "Doğru: „…eine E-Mail genügt; ein Grund muss nicht angegeben werden.“",
+  "tr": "İfade doğru: „…eine E-Mail genügt; ein Grund muss nicht angegeben werden.“",
   "kind": "explain",
-  "en": "True: „…eine E-Mail genügt; ein Grund muss nicht angegeben werden.“"
+  "en": "The statement is true: „…eine E-Mail genügt; ein Grund muss nicht angegeben werden.“"
  },
  {
-  "tr": "Doğru: „Die neue Arbeit ist nicht leichter“ — ama ilerleme sağlıyor.",
+  "tr": "İfade doğru: „Die neue Arbeit ist nicht leichter“ — ama ilerleme sağlıyor.",
   "kind": "explain",
-  "en": "True: „Die neue Arbeit ist nicht leichter“ — but it helps him get ahead."
+  "en": "The statement is true: „Die neue Arbeit ist nicht leichter“ — but it helps him get ahead."
  },
  {
-  "tr": "Doğru: „Ob das stimmt, weiß ich nicht — aber schaden kann es nicht.“",
+  "tr": "İfade doğru: „Ob das stimmt, weiß ich nicht — aber schaden kann es nicht.“",
   "kind": "explain",
-  "en": "True: „Ob das stimmt, weiß ich nicht — aber schaden kann es nicht.“"
+  "en": "The statement is true: „Ob das stimmt, weiß ich nicht — aber schaden kann es nicht.“"
  },
  {
-  "tr": "Doğru: „Der Bürgermeister war in diesen Wochen jeden Tag im Rathaus.“",
+  "tr": "İfade doğru: „Der Bürgermeister war in diesen Wochen jeden Tag im Rathaus.“",
   "kind": "explain",
-  "en": "True: „Der Bürgermeister war in diesen Wochen jeden Tag im Rathaus.“"
+  "en": "The statement is true: „Der Bürgermeister war in diesen Wochen jeden Tag im Rathaus.“"
  },
  {
-  "tr": "Doğru: „Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen.“",
+  "tr": "İfade doğru: „Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen.“",
   "kind": "explain",
-  "en": "True: „Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen.“"
+  "en": "The statement is true: „Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen.“"
  },
  {
-  "tr": "Doğru: „Reich waren sie nicht.“ Beş çocuğu tek başlarına büyütmüşler.",
+  "tr": "İfade doğru: „Reich waren sie nicht.“ Beş çocuğu tek başlarına büyütmüşler.",
   "kind": "explain",
-  "en": "True: „Reich waren sie nicht.“ They brought up five children on their own."
+  "en": "The statement is true: „Reich waren sie nicht.“ They brought up five children on their own."
  },
  {
-  "tr": "Doğru: „Ich kenne die Wörter, aber ich kann sie nicht gut aussprechen“.",
+  "tr": "İfade doğru: „Ich kenne die Wörter, aber ich kann sie nicht gut aussprechen“.",
   "kind": "explain",
-  "en": "True: „Ich kenne die Wörter, aber ich kann sie nicht gut aussprechen“."
+  "en": "The statement is true: „Ich kenne die Wörter, aber ich kann sie nicht gut aussprechen“."
  },
  {
-  "tr": "Doğru: „Zuvor habe ich in einem Dorf gewohnt, mit dreihundert Leuten.“",
+  "tr": "İfade doğru: „Zuvor habe ich in einem Dorf gewohnt, mit dreihundert Leuten.“",
   "kind": "explain",
-  "en": "True: „Zuvor habe ich in einem Dorf gewohnt, mit dreihundert Leuten.“"
+  "en": "The statement is true: „Zuvor habe ich in einem Dorf gewohnt, mit dreihundert Leuten.“"
  },
  {
-  "tr": "Doğru: „Das ist selten gelogen und trotzdem selten die ganze Wahrheit.“",
+  "tr": "İfade doğru: „Das ist selten gelogen und trotzdem selten die ganze Wahrheit.“",
   "kind": "explain",
-  "en": "True: „Das ist selten gelogen und trotzdem selten die ganze Wahrheit.“"
+  "en": "The statement is true: „Das ist selten gelogen und trotzdem selten die ganze Wahrheit.“"
  },
  {
-  "tr": "Doğru: „Noch nicht. Genau das schlage ich für die nächste Version vor.“",
+  "tr": "İfade doğru: „Noch nicht. Genau das schlage ich für die nächste Version vor.“",
   "kind": "explain",
-  "en": "True: „Noch nicht. Genau das schlage ich für die nächste Version vor.“"
+  "en": "The statement is true: „Noch nicht. Genau das schlage ich für die nächste Version vor.“"
  },
  {
-  "tr": "Doğru: „die Möbel von damals findet Frau Bergmann gar nicht altmodisch“.",
+  "tr": "İfade doğru: „die Möbel von damals findet Frau Bergmann gar nicht altmodisch“.",
   "kind": "explain",
-  "en": "True: „die Möbel von damals findet Frau Bergmann gar nicht altmodisch“."
+  "en": "The statement is true: „die Möbel von damals findet Frau Bergmann gar nicht altmodisch“."
  },
  {
-  "tr": "Doğru: „Ich habe leider kein Tier.“ At büyükannesinin, kendisinin değil.",
+  "tr": "İfade doğru: „Ich habe leider kein Tier.“ At büyükannesinin, kendisinin değil.",
   "kind": "explain",
-  "en": "True: „Ich habe leider kein Tier.“ The horse is her grandmother's, not hers."
+  "en": "The statement is true: „Ich habe leider kein Tier.“ The horse is her grandmother's, not hers."
  },
  {
-  "tr": "Doğru: „Überteuert war Ihr Angebot ohnehin nie, das war nie mein Punkt.“",
+  "tr": "İfade doğru: „Überteuert war Ihr Angebot ohnehin nie, das war nie mein Punkt.“",
   "kind": "explain",
-  "en": "True: „Überteuert war Ihr Angebot ohnehin nie, das war nie mein Punkt.“"
+  "en": "The statement is true: „Überteuert war Ihr Angebot ohnehin nie, das war nie mein Punkt.“"
  },
  {
-  "tr": "Doğru: „Bitte bringt keine großen Geschenke.“ Kek ve şekerleme isteniyor.",
+  "tr": "İfade doğru: „Bitte bringt keine großen Geschenke.“ Kek ve şekerleme isteniyor.",
   "kind": "explain",
-  "en": "True: „Bitte bringt keine großen Geschenke.“ Cake and candy are wanted."
+  "en": "The statement is true: „Bitte bringt keine großen Geschenke.“ Cake and candy are wanted."
  },
  {
-  "tr": "Doğru: „Mein Chef hat nichts gesagt.“ Metinde kızgınlıktan söz edilmiyor.",
+  "tr": "İfade doğru: „Mein Chef hat nichts gesagt.“ Metinde kızgınlıktan söz edilmiyor.",
   "kind": "explain",
-  "en": "True: „Mein Chef hat nichts gesagt.“ The text says nothing about anger."
+  "en": "The statement is true: „Mein Chef hat nichts gesagt.“ The text says nothing about anger."
  },
  {
-  "tr": "Doğru: „Aber er war fair: Wer eine Frage hatte, bekam immer eine Antwort.“",
+  "tr": "İfade doğru: „Aber er war fair: Wer eine Frage hatte, bekam immer eine Antwort.“",
   "kind": "explain",
-  "en": "True: „Aber er war fair: Wer eine Frage hatte, bekam immer eine Antwort.“"
+  "en": "The statement is true: „Aber er war fair: Wer eine Frage hatte, bekam immer eine Antwort.“"
  },
  {
-  "tr": "Doğru: „Ich habe in einer kleinen Stadt gewohnt, nicht in der Hauptstadt.“",
+  "tr": "İfade doğru: „Ich habe in einer kleinen Stadt gewohnt, nicht in der Hauptstadt.“",
   "kind": "explain",
-  "en": "True: „Ich habe in einer kleinen Stadt gewohnt, nicht in der Hauptstadt.“"
+  "en": "The statement is true: „Ich habe in einer kleinen Stadt gewohnt, nicht in der Hauptstadt.“"
  },
  {
-  "tr": "Doğru: „Und wir bleiben unter dreißig Minuten, das war der andere Wunsch.“",
+  "tr": "İfade doğru: „Und wir bleiben unter dreißig Minuten, das war der andere Wunsch.“",
   "kind": "explain",
-  "en": "True: „Und wir bleiben unter dreißig Minuten, das war der andere Wunsch.“"
+  "en": "The statement is true: „Und wir bleiben unter dreißig Minuten, das war der andere Wunsch.“"
  },
  {
-  "tr": "Doğru: „Wenigstens war das Wochenende ruhig.“ İki gün hiçbir şey yapmamış.",
+  "tr": "İfade doğru: „Wenigstens war das Wochenende ruhig.“ İki gün hiçbir şey yapmamış.",
   "kind": "explain",
-  "en": "True: „Wenigstens war das Wochenende ruhig.“ She did nothing for two days."
+  "en": "The statement is true: „Wenigstens war das Wochenende ruhig.“ She did nothing for two days."
  },
  {
-  "tr": "Doğru: „Ja, ich habe die Aufnahme.“ Sorun alıntıda değil, haberi çıkarmakta.",
+  "tr": "İfade doğru: „Ja, ich habe die Aufnahme.“ Sorun alıntıda değil, haberi çıkarmakta.",
   "kind": "explain",
-  "en": "True: „Ja, ich habe die Aufnahme.“ The trouble is not the quotation but running the story."
+  "en": "The statement is true: „Ja, ich habe die Aufnahme.“ The trouble is not the quotation but running the story."
  },
  {
-  "tr": "Doğru: „Das macht der Kundendienst automatisch, Sie müssen nichts beantragen.“",
+  "tr": "İfade doğru: „Das macht der Kundendienst automatisch, Sie müssen nichts beantragen.“",
   "kind": "explain",
-  "en": "True: „Das macht der Kundendienst automatisch, Sie müssen nichts beantragen.“"
+  "en": "The statement is true: „Das macht der Kundendienst automatisch, Sie müssen nichts beantragen.“"
  },
  {
-  "tr": "Doğru: „Rechenleistung ersetzt kein Ziel … das muss jemand vorher definieren.“",
+  "tr": "İfade doğru: „Rechenleistung ersetzt kein Ziel … das muss jemand vorher definieren.“",
   "kind": "explain",
-  "en": "True: „Rechenleistung ersetzt kein Ziel … das muss jemand vorher definieren.“"
+  "en": "The statement is true: „Rechenleistung ersetzt kein Ziel … das muss jemand vorher definieren.“"
  },
  {
-  "tr": "Doğru: „Ich habe leider keine Karte dabei, aber ich schreibe Ihnen heute Abend.“",
+  "tr": "İfade doğru: „Ich habe leider keine Karte dabei, aber ich schreibe Ihnen heute Abend.“",
   "kind": "explain",
-  "en": "True: „Ich habe leider keine Karte dabei, aber ich schreibe Ihnen heute Abend.“"
+  "en": "The statement is true: „Ich habe leider keine Karte dabei, aber ich schreibe Ihnen heute Abend.“"
  },
  {
-  "tr": "Doğru: „…das kann nicht am Vortag passieren“, sipariş çarşambaya kadar verilmeli.",
+  "tr": "İfade doğru: „…das kann nicht am Vortag passieren“, sipariş çarşambaya kadar verilmeli.",
   "kind": "explain",
-  "en": "True: „…das kann nicht am Vortag passieren“, the order has to be in by Wednesday."
+  "en": "The statement is true: „…das kann nicht am Vortag passieren“, the order has to be in by Wednesday."
  },
  {
-  "tr": "Doğru: „Dann gilt die Kündigung trotzdem, sofern sie nachweislich zugegangen ist.“",
+  "tr": "İfade doğru: „Dann gilt die Kündigung trotzdem, sofern sie nachweislich zugegangen ist.“",
   "kind": "explain",
-  "en": "True: „Dann gilt die Kündigung trotzdem, sofern sie nachweislich zugegangen ist.“"
+  "en": "The statement is true: „Dann gilt die Kündigung trotzdem, sofern sie nachweislich zugegangen ist.“"
  },
  {
-  "tr": "Doğru: „Wer alles beschreibt, beschreibt nichts.“ Tek canlı ayrıntı beşten etkili.",
+  "tr": "İfade doğru: „Wer alles beschreibt, beschreibt nichts.“ Tek canlı ayrıntı beşten etkili.",
   "kind": "explain",
-  "en": "True: „Wer alles beschreibt, beschreibt nichts.“ One vivid detail beats five."
+  "en": "The statement is true: „Wer alles beschreibt, beschreibt nichts.“ One vivid detail beats five."
  },
  {
-  "tr": "Doğru: „…nicht, weil ich Ihre Zeitung schlecht finde, sondern weil ich sie brauche.“",
+  "tr": "İfade doğru: „…nicht, weil ich Ihre Zeitung schlecht finde, sondern weil ich sie brauche.“",
   "kind": "explain",
-  "en": "True: „…nicht, weil ich Ihre Zeitung schlecht finde, sondern weil ich sie brauche.“"
+  "en": "The statement is true: „…nicht, weil ich Ihre Zeitung schlecht finde, sondern weil ich sie brauche.“"
  },
  {
-  "tr": "Doğru: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“",
+  "tr": "İfade doğru: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“",
   "kind": "explain",
-  "en": "True: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“"
+  "en": "The statement is true: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“"
  },
  {
-  "tr": "Doğru: dışarıda hemen park edilebiliyor, „Im Zentrum sucht man dafür eine halbe Stunde“.",
+  "tr": "İfade doğru: dışarıda hemen park edilebiliyor, „Im Zentrum sucht man dafür eine halbe Stunde“.",
   "kind": "explain",
-  "en": "True: outside you can park at once, „Im Zentrum sucht man dafür eine halbe Stunde“."
+  "en": "The statement is true: outside you can park at once, „Im Zentrum sucht man dafür eine halbe Stunde“."
  },
  {
-  "tr": "Doğru: „Sie sagt nichts darüber, wie oft ein Team sich sieht. Das bleibt Sache der Teams.“",
+  "tr": "İfade doğru: „Sie sagt nichts darüber, wie oft ein Team sich sieht. Das bleibt Sache der Teams.“",
   "kind": "explain",
-  "en": "True: „Sie sagt nichts darüber, wie oft ein Team sich sieht. Das bleibt Sache der Teams.“"
+  "en": "The statement is true: „Sie sagt nichts darüber, wie oft ein Team sich sieht. Das bleibt Sache der Teams.“"
  },
  {
-  "tr": "Doğru: „Es handelt sich also um eine Meinungsumfrage, nicht um eine Messung des Verhaltens.“",
+  "tr": "İfade doğru: „Es handelt sich also um eine Meinungsumfrage, nicht um eine Messung des Verhaltens.“",
   "kind": "explain",
-  "en": "True: „Es handelt sich also um eine Meinungsumfrage, nicht um eine Messung des Verhaltens.“"
+  "en": "The statement is true: „Es handelt sich also um eine Meinungsumfrage, nicht um eine Messung des Verhaltens.“"
  },
  {
-  "tr": "Doğru: „Ein Foto mit Datum ist kein Beweis vor Gericht, aber es beendet die meisten Diskussionen.“",
+  "tr": "İfade doğru: „Ein Foto mit Datum ist kein Beweis vor Gericht, aber es beendet die meisten Diskussionen.“",
   "kind": "explain",
-  "en": "True: „Ein Foto mit Datum ist kein Beweis vor Gericht, aber es beendet die meisten Diskussionen.“"
+  "en": "The statement is true: „Ein Foto mit Datum ist kein Beweis vor Gericht, aber es beendet die meisten Diskussionen.“"
  },
  {
-  "tr": "Doğru: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — soslar da dâhil.",
+  "tr": "İfade doğru: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — soslar da dâhil.",
   "kind": "explain",
-  "en": "True: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — the sauces included."
+  "en": "The statement is true: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — the sauces included."
  },
  {
-  "tr": "Doğru: Şubattaki şikâyete ve kasımdan beri süren yazışmaya atıf yapıyor, ayrıca iki kez ihtar göndermiş.",
+  "tr": "İfade doğru: Şubattaki şikâyete ve kasımdan beri süren yazışmaya atıf yapıyor, ayrıca iki kez ihtar göndermiş.",
   "kind": "explain",
-  "en": "True: it refers to the complaint in February and to correspondence going on since November, and two reminders were sent."
+  "en": "The statement is true: it refers to the complaint in February and to correspondence going on since November, and two reminders were sent."
  },
  {
-  "tr": "Doğru: „Erst im dritten Schritt kommt die Gemeinde ins Spiel, und zwar nur bei wiederholter Ruhestörung.“",
+  "tr": "İfade doğru: „Erst im dritten Schritt kommt die Gemeinde ins Spiel, und zwar nur bei wiederholter Ruhestörung.“",
   "kind": "explain",
-  "en": "True: „Erst im dritten Schritt kommt die Gemeinde ins Spiel, und zwar nur bei wiederholter Ruhestörung.“"
+  "en": "The statement is true: „Erst im dritten Schritt kommt die Gemeinde ins Spiel, und zwar nur bei wiederholter Ruhestörung.“"
  },
  {
-  "tr": "Doğru: „…muss nach der geltenden Rechtsprechung trotzdem kennzeichnen, sobald ein Gegenwert im Spiel ist.“",
+  "tr": "İfade doğru: „…muss nach der geltenden Rechtsprechung trotzdem kennzeichnen, sobald ein Gegenwert im Spiel ist.“",
   "kind": "explain",
-  "en": "True: „…muss nach der geltenden Rechtsprechung trotzdem kennzeichnen, sobald ein Gegenwert im Spiel ist.“"
+  "en": "The statement is true: „…muss nach der geltenden Rechtsprechung trotzdem kennzeichnen, sobald ein Gegenwert im Spiel ist.“"
  },
  {
-  "tr": "Doğru: „Eine Auswahl ist nie objektiv — schon die Entscheidung, worüber berichtet wird, ist eine Wertung.“",
+  "tr": "İfade doğru: „Eine Auswahl ist nie objektiv — schon die Entscheidung, worüber berichtet wird, ist eine Wertung.“",
   "kind": "explain",
-  "en": "True: „Eine Auswahl ist nie objektiv — schon die Entscheidung, worüber berichtet wird, ist eine Wertung.“"
+  "en": "The statement is true: „Eine Auswahl ist nie objektiv — schon die Entscheidung, worüber berichtet wird, ist eine Wertung.“"
  },
  {
-  "tr": "Doğru: „Eine höfliche Rückfrage ist keine Störung, sondern der einzige Weg, ein Missverständnis zu klären.“",
+  "tr": "İfade doğru: „Eine höfliche Rückfrage ist keine Störung, sondern der einzige Weg, ein Missverständnis zu klären.“",
   "kind": "explain",
-  "en": "True: „Eine höfliche Rückfrage ist keine Störung, sondern der einzige Weg, ein Missverständnis zu klären.“"
+  "en": "The statement is true: „Eine höfliche Rückfrage ist keine Störung, sondern der einzige Weg, ein Missverständnis zu klären.“"
  },
  {
-  "tr": "Doğru: „Die Liste wird jedes Jahr aus diesen Einträgen ergänzt — deshalb ist sie inzwischen vier Seiten lang.“",
+  "tr": "İfade doğru: „Die Liste wird jedes Jahr aus diesen Einträgen ergänzt — deshalb ist sie inzwischen vier Seiten lang.“",
   "kind": "explain",
-  "en": "True: „Die Liste wird jedes Jahr aus diesen Einträgen ergänzt — deshalb ist sie inzwischen vier Seiten lang.“"
+  "en": "The statement is true: „Die Liste wird jedes Jahr aus diesen Einträgen ergänzt — deshalb ist sie inzwischen vier Seiten lang.“"
  }
 ]

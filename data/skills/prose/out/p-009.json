@@ -25,14 +25,14 @@
   "en": "wenngleich and gleichwohl: grant the reason, keep the decision."
  },
  {
-  "tr": "Yanlış: „Gleichwohl ist die Bürgschaft kein Fehler an sich.“",
+  "tr": "İfade yanlış: „Gleichwohl ist die Bürgschaft kein Fehler an sich.“",
   "kind": "explain",
-  "en": "False: „Gleichwohl ist die Bürgschaft kein Fehler an sich.“"
+  "en": "The statement is false: „Gleichwohl ist die Bürgschaft kein Fehler an sich.“"
  },
  {
-  "tr": "Yanlış: „Grün und Rot sind schön — nur nicht am ersten Tag.“",
+  "tr": "İfade yanlış: „Grün und Rot sind schön — nur nicht am ersten Tag.“",
   "kind": "explain",
-  "en": "False: „Grün und Rot sind schön — nur nicht am ersten Tag.“"
+  "en": "The statement is false: „Grün und Rot sind schön — nur nicht am ersten Tag.“"
  },
  {
   "tr": "„backen“ yer değişimi değil; haben doğru, ortacı da gebacken.",
@@ -240,9 +240,9 @@
   "en": "Turn down the invitation: what is the reason, how sorry are you, what do you suggest?"
  },
  {
-  "tr": "Doğru: „Erwartet worden ist er allerdings auch letztes Jahr.“",
+  "tr": "İfade doğru: „Erwartet worden ist er allerdings auch letztes Jahr.“",
   "kind": "explain",
-  "en": "True: „Erwartet worden ist er allerdings auch letztes Jahr.“"
+  "en": "The statement is true: „Erwartet worden ist er allerdings auch letztes Jahr.“"
  },
  {
   "tr": "Doldurulmuş bir kayıt formunu okuyacaksın. Bilgiler doğru mu?",
@@ -440,14 +440,14 @@
   "en": "A fire is a means or a cause, not a person: durch ein Feuer."
  },
  {
-  "tr": "Yanlış: „…weniger über Stile streiten, mehr über Grundrisse.“",
+  "tr": "İfade yanlış: „…weniger über Stile streiten, mehr über Grundrisse.“",
   "kind": "explain",
-  "en": "False: „…weniger über Stile streiten, mehr über Grundrisse.“"
+  "en": "The statement is false: „…weniger über Stile streiten, mehr über Grundrisse.“"
  },
  {
-  "tr": "Yanlış: „nicht alle, es steht im Vertrag“ — sözleşmeye bağlı.",
+  "tr": "İfade yanlış: „nicht alle, es steht im Vertrag“ — sözleşmeye bağlı.",
   "kind": "explain",
-  "en": "False: „nicht alle, es steht im Vertrag“ — it depends on the contract."
+  "en": "The statement is false: „nicht alle, es steht im Vertrag“ — it depends on the contract."
  },
  {
   "tr": "„am Abend gibt es ein Gewitter“ — cumartesi bölümünde geçiyor.",
@@ -585,14 +585,14 @@
   "en": "An article about improvising. What does an unprepared speaker fall back on?"
  },
  {
-  "tr": "Doğru: „In den Bergen über 1200 Meter wird es sogar schneien.“",
+  "tr": "İfade doğru: „In den Bergen über 1200 Meter wird es sogar schneien.“",
   "kind": "explain",
-  "en": "True: „In den Bergen über 1200 Meter wird es sogar schneien.“"
+  "en": "The statement is true: „In den Bergen über 1200 Meter wird es sogar schneien.“"
  },
  {
-  "tr": "Doğru: „Zahnpasta und Seife sind da rechts.“ — ikisi de sağda.",
+  "tr": "İfade doğru: „Zahnpasta und Seife sind da rechts.“ — ikisi de sağda.",
   "kind": "explain",
-  "en": "True: „Zahnpasta und Seife sind da rechts.“ — both of them on the right."
+  "en": "The statement is true: „Zahnpasta und Seife sind da rechts.“ — both of them on the right."
  },
  {
   "tr": "Dört kişi mesleğini nasıl seçtiğini anlatıyor. Yol hep düz mü?",

@@ -68,7 +68,7 @@ export const a1U19: SkillExercise[] = [
         text: "Richtig oder falsch? Bei Regen gibt es kein Joggen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Kostenlos, auch bei Regen!“",
+        explain: "İfade yanlış: „Kostenlos, auch bei Regen!“",
       },
       {
         text: "Wann ist das Fitnessstudio auf?",
@@ -120,7 +120,7 @@ export const a1U19: SkillExercise[] = [
         text: "Richtig oder falsch? Paula spielt Gitarre.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Ich spiele nicht Gitarre und nicht Klavier.“",
+        explain: "İfade yanlış: „Ich spiele nicht Gitarre und nicht Klavier.“",
       },
       {
         kind: "gapfill",

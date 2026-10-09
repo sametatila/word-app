@@ -57,7 +57,7 @@ export const a1U17: SkillExercise[] = [
         text: "Richtig oder falsch? Man darf Kartons im Flur stellen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Im Flur darf man keine Möbel, keine Kartons und kein Gepäck stellen.“",
+        explain: "İfade yanlış: „Im Flur darf man keine Möbel, keine Kartons und kein Gepäck stellen.“",
       },
       {
         kind: "gapfill",
@@ -126,7 +126,7 @@ export const a1U17: SkillExercise[] = [
         text: "Richtig oder falsch? Die Waschmaschine kostet mehr Geld.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“",
+        explain: "İfade yanlış: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“",
       },
           {
         kind: "gapfill",

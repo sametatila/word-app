@@ -205,9 +205,9 @@
   "en": "The inversion is missing: „Not only was he late, but he also forgot the files.“"
  },
  {
-  "tr": "Doğru: „Ein Lokalreporter, der einfach den Originalbericht gelesen hat.“",
+  "tr": "İfade doğru: „Ein Lokalreporter, der einfach den Originalbericht gelesen hat.“",
   "kind": "explain",
-  "en": "True: „Ein Lokalreporter, der einfach den Originalbericht gelesen hat.“"
+  "en": "The statement is true: „Ein Lokalreporter, der einfach den Originalbericht gelesen hat.“"
  },
  {
   "tr": "Doğum günü 3 Mayıs ama çarşamba; kutlama „am Samstag, dem sechsten Mai“.",
@@ -335,9 +335,9 @@
   "en": "Idioms of the body in a real conversation. How much closeness does each of them need?"
  },
  {
-  "tr": "Yanlış: „Vertrautheit schlägt Qualität — jedenfalls beim Lieblingslied.“",
+  "tr": "İfade yanlış: „Vertrautheit schlägt Qualität — jedenfalls beim Lieblingslied.“",
   "kind": "explain",
-  "en": "False: „Vertrautheit schlägt Qualität — jedenfalls beim Lieblingslied.“"
+  "en": "The statement is false: „Vertrautheit schlägt Qualität — jedenfalls beim Lieblingslied.“"
  },
  {
   "tr": "Yarın yapılacak bir İŞ söz konusu: Vorgangspassiv, werden + Partizip II.",
@@ -540,19 +540,19 @@
   "en": "A lasting state is told like a habit: present simple, plural subject."
  },
  {
-  "tr": "Yanlış: „Den habe ich verpasst. Nach zwei Tagen Festival war ich fertig.“",
+  "tr": "İfade yanlış: „Den habe ich verpasst. Nach zwei Tagen Festival war ich fertig.“",
   "kind": "explain",
-  "en": "False: „Den habe ich verpasst. Nach zwei Tagen Festival war ich fertig.“"
+  "en": "The statement is false: „Den habe ich verpasst. Nach zwei Tagen Festival war ich fertig.“"
  },
  {
-  "tr": "Yanlış: „Nicht alles ist besser, nicht alles ist schlechter. Nur anders.“",
+  "tr": "İfade yanlış: „Nicht alles ist besser, nicht alles ist schlechter. Nur anders.“",
   "kind": "explain",
-  "en": "False: „Nicht alles ist besser, nicht alles ist schlechter. Nur anders.“"
+  "en": "The statement is false: „Nicht alles ist besser, nicht alles ist schlechter. Nur anders.“"
  },
  {
-  "tr": "Yanlış: „Technisch längst möglich, rechtlich in weiten Teilen ungeklärt.“",
+  "tr": "İfade yanlış: „Technisch längst möglich, rechtlich in weiten Teilen ungeklärt.“",
   "kind": "explain",
-  "en": "False: „Technisch längst möglich, rechtlich in weiten Teilen ungeklärt.“"
+  "en": "The statement is false: „Technisch längst möglich, rechtlich in weiten Teilen ungeklärt.“"
  },
  {
   "tr": "„at the moment“ continuous ister; olumsuz „not“ be ile fiil arasına girer.",

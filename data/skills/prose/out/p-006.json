@@ -55,14 +55,14 @@
   "en": "The wir form leaves the stem alone and ends in -en: wir fahren."
  },
  {
-  "tr": "Yanlış: „Dieser Saal wurde 1904 als Lesesaal gebaut.“",
+  "tr": "İfade yanlış: „Dieser Saal wurde 1904 als Lesesaal gebaut.“",
   "kind": "explain",
-  "en": "False: „Dieser Saal wurde 1904 als Lesesaal gebaut.“"
+  "en": "The statement is false: „Dieser Saal wurde 1904 als Lesesaal gebaut.“"
  },
  {
-  "tr": "Yanlış: „Ich spiele nicht Gitarre und nicht Klavier.“",
+  "tr": "İfade yanlış: „Ich spiele nicht Gitarre und nicht Klavier.“",
   "kind": "explain",
-  "en": "False: „Ich spiele nicht Gitarre und nicht Klavier.“"
+  "en": "The statement is false: „Ich spiele nicht Gitarre und nicht Klavier.“"
  },
  {
   "tr": "Yeni yaya bölgesi konuşuluyor. Kim memnun, kim değil?",
@@ -170,9 +170,9 @@
   "en": "The idiom carries a judgment, and the judgment lands on people in the room."
  },
  {
-  "tr": "Doğru, ilk cümle: „Füllen Sie bitte das Formular aus.“",
+  "tr": "İfade doğru, ilk cümle: „Füllen Sie bitte das Formular aus.“",
   "kind": "explain",
-  "en": "True, the first sentence: „Füllen Sie bitte das Formular aus.“"
+  "en": "The statement is true, the first sentence: „Füllen Sie bitte das Formular aus.“"
  },
  {
   "tr": "Doğrudan eleştiri, kısık övgü — ve ikisinin birleşimi.",
@@ -320,19 +320,19 @@
   "en": "The wir form leaves the stem alone and ends in -en; the sentence is right."
  },
  {
-  "tr": "Yanlış: „die ersten Leute kamen schon um halb sieben“.",
+  "tr": "İfade yanlış: „die ersten Leute kamen schon um halb sieben“.",
   "kind": "explain",
-  "en": "False: „die ersten Leute kamen schon um halb sieben“."
+  "en": "The statement is false: „die ersten Leute kamen schon um halb sieben“."
  },
  {
-  "tr": "Yanlış: „Ich erkenne ihn, aber ich benutze ihn nicht.“",
+  "tr": "İfade yanlış: „Ich erkenne ihn, aber ich benutze ihn nicht.“",
   "kind": "explain",
-  "en": "False: „Ich erkenne ihn, aber ich benutze ihn nicht.“"
+  "en": "The statement is false: „Ich erkenne ihn, aber ich benutze ihn nicht.“"
  },
  {
-  "tr": "Yanlış: „Ich glaube ja.“ — emin değil, arayıp soracak.",
+  "tr": "İfade yanlış: „Ich glaube ja.“ — emin değil, arayıp soracak.",
   "kind": "explain",
-  "en": "False: „Ich glaube ja.“ — not sure, they will call and ask."
+  "en": "The statement is false: „Ich glaube ja.“ — not sure, they will call and ask."
  },
  {
   "tr": "Yıl boyunca hangi kutlamalar var, hangisi resmî tatil?",
@@ -630,19 +630,19 @@
   "en": "The language of data protection: what makes consent valid?"
  },
  {
-  "tr": "Yanlış: „Es gibt keinen Aufzug — Sie gehen die Treppe.“",
+  "tr": "İfade yanlış: „Es gibt keinen Aufzug — Sie gehen die Treppe.“",
   "kind": "explain",
-  "en": "False: „Es gibt keinen Aufzug — Sie gehen die Treppe.“"
+  "en": "The statement is false: „Es gibt keinen Aufzug — Sie gehen die Treppe.“"
  },
  {
-  "tr": "Yanlış: „Tanzen kann ich gut, aber ich übe nicht viel.“",
+  "tr": "İfade yanlış: „Tanzen kann ich gut, aber ich übe nicht viel.“",
   "kind": "explain",
-  "en": "False: „Tanzen kann ich gut, aber ich übe nicht viel.“"
+  "en": "The statement is false: „Tanzen kann ich gut, aber ich übe nicht viel.“"
  },
  {
-  "tr": "Yanlış: „Wenn es später wird, melden wir uns trotzdem.“",
+  "tr": "İfade yanlış: „Wenn es später wird, melden wir uns trotzdem.“",
   "kind": "explain",
-  "en": "False: „Wenn es später wird, melden wir uns trotzdem.“"
+  "en": "The statement is false: „Wenn es später wird, melden wir uns trotzdem.“"
  },
  {
   "tr": "Yöneticiyle izin görüşmesi. Hangi tarihte anlaşıyorlar?",

@@ -200,7 +200,7 @@ export const c1U14: SkillExercise[] = [
         text: "Beim Kauf selbst braucht es laut Text eine Einwilligung.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: orada işleme sözleşmenin ifasına dâhil.",
+        explain: "İfade yanlış: orada işleme sözleşmenin ifasına dâhil.",
       },
     ],
   },

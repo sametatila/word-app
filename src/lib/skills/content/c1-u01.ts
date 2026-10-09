@@ -208,7 +208,7 @@ export const c1U01: SkillExercise[] = [
         text: "Der Satz „Der Grund liegt nicht in der Qualität des Antrags“ dient dazu, die Absage zu relativieren.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: cümle reddi yumuşatıyor, yani ret sebebini başvurudan ayırıyor.",
+        explain: "İfade doğru: cümle reddi yumuşatıyor, yani ret sebebini başvurudan ayırıyor.",
       },
     ],
   },

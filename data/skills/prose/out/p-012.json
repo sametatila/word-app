@@ -130,9 +130,9 @@
   "en": "A big change is discussed. Watch the conditions and the hesitation."
  },
  {
-  "tr": "Doğru: „Technisch ja. Aber das muss vorher noch abgesegnet werden.“",
+  "tr": "İfade doğru: „Technisch ja. Aber das muss vorher noch abgesegnet werden.“",
   "kind": "explain",
-  "en": "True: „Technisch ja. Aber das muss vorher noch abgesegnet werden.“"
+  "en": "The statement is true: „Technisch ja. Aber das muss vorher noch abgesegnet werden.“"
  },
  {
   "tr": "Düğünde iki misafir sohbet ediyor. Kim kimin nesi, konuşma nasıldı?",
@@ -365,14 +365,14 @@
   "en": "The denial covers that claim alone; nothing else is being rejected."
  },
  {
-  "tr": "Yanlış: „…eine Hochrechnung am Wahlabend ist keine Umfrage vorher.“",
+  "tr": "İfade yanlış: „…eine Hochrechnung am Wahlabend ist keine Umfrage vorher.“",
   "kind": "explain",
-  "en": "False: „…eine Hochrechnung am Wahlabend ist keine Umfrage vorher.“"
+  "en": "The statement is false: „…eine Hochrechnung am Wahlabend ist keine Umfrage vorher.“"
  },
  {
-  "tr": "Yanlış: „Man wirkt aufgeschlossen, indem man zuhört und nachfragt.“",
+  "tr": "İfade yanlış: „Man wirkt aufgeschlossen, indem man zuhört und nachfragt.“",
   "kind": "explain",
-  "en": "False: „Man wirkt aufgeschlossen, indem man zuhört und nachfragt.“"
+  "en": "The statement is false: „Man wirkt aufgeschlossen, indem man zuhört und nachfragt.“"
  },
  {
   "tr": "Zor bir geri bildirim. Gözlem, öneri ve soru hangi sırayla geliyor?",
@@ -560,9 +560,9 @@
   "en": "A feminine noun takes an -en plural and the article stays die: die Zeitungen."
  },
  {
-  "tr": "Doğru: „…über sie wird innerhalb von zehn Arbeitstagen entschieden.“",
+  "tr": "İfade doğru: „…über sie wird innerhalb von zehn Arbeitstagen entschieden.“",
   "kind": "explain",
-  "en": "True: „…über sie wird innerhalb von zehn Arbeitstagen entschieden.“"
+  "en": "The statement is true: „…über sie wird innerhalb von zehn Arbeitstagen entschieden.“"
  },
  {
   "tr": "Duruşma sahnesi. İfade nasıl kaydediliyor, karar nasıl bildiriliyor?",

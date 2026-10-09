@@ -414,7 +414,7 @@ export const deB1P17: SkillExercise[] = [
         text: "„Er lässt sich jeden Monat die Haare schneiden.“ — Bu cümle doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: saçı başkası kesiyor, „sich“ işin kişinin kendisi için yapıldığını gösteriyor.",
+        explain: "İfade doğru: saçı başkası kesiyor, „sich“ işin kişinin kendisi için yapıldığını gösteriyor.",
       },
     ],
   },

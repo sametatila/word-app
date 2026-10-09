@@ -335,9 +335,9 @@
   "en": "The verb of the clause is at the end („ist“), so the connector has to be obwohl."
  },
  {
-  "tr": "Yanlış: „Beides ist Heimat, und ich muss mich nicht entscheiden.“",
+  "tr": "İfade yanlış: „Beides ist Heimat, und ich muss mich nicht entscheiden.“",
   "kind": "explain",
-  "en": "False: „Beides ist Heimat, und ich muss mich nicht entscheiden.“"
+  "en": "The statement is false: „Beides ist Heimat, und ich muss mich nicht entscheiden.“"
  },
  {
   "tr": "zwar … jedoch: önce taviz, sonra itiraz. İkinci bölüm ağır basar.",
@@ -645,28 +645,28 @@
   "en": "In the clause the main verb (schlafen) comes first and the modal (kann) goes RIGHT at the end."
  },
  {
-  "tr": "Yanlış: „…ehrlich gesagt weiß ich nicht mehr, wer was gesagt hat.“",
+  "tr": "İfade yanlış: „…ehrlich gesagt weiß ich nicht mehr, wer was gesagt hat.“",
   "kind": "explain",
-  "en": "False: „…ehrlich gesagt weiß ich nicht mehr, wer was gesagt hat.“"
+  "en": "The statement is false: „…ehrlich gesagt weiß ich nicht mehr, wer was gesagt hat.“"
  },
  {
-  "tr": "Yanlış: „Aber launisch ist er nicht, das war ein einzelner Abend.“",
+  "tr": "İfade yanlış: „Aber launisch ist er nicht, das war ein einzelner Abend.“",
   "kind": "explain",
-  "en": "False: „Aber launisch ist er nicht, das war ein einzelner Abend.“"
+  "en": "The statement is false: „Aber launisch ist er nicht, das war ein einzelner Abend.“"
  },
  {
-  "tr": "Yanlış: „Bei mir ist es eher Überforderung als fehlender Ehrgeiz.“",
+  "tr": "İfade yanlış: „Bei mir ist es eher Überforderung als fehlender Ehrgeiz.“",
   "kind": "explain",
-  "en": "False: „Bei mir ist es eher Überforderung als fehlender Ehrgeiz.“"
+  "en": "The statement is false: „Bei mir ist es eher Überforderung als fehlender Ehrgeiz.“"
  },
  {
-  "tr": "Yanlış: „Was am Ende auftaucht, muss vorher schon dagewesen sein.“",
+  "tr": "İfade yanlış: „Was am Ende auftaucht, muss vorher schon dagewesen sein.“",
   "kind": "explain",
-  "en": "False: „Was am Ende auftaucht, muss vorher schon dagewesen sein.“"
+  "en": "The statement is false: „Was am Ende auftaucht, muss vorher schon dagewesen sein.“"
  },
  {
-  "tr": "Yanlış: kahvaltısız oda ayırtanlar altı avroya sonradan ekletiyor.",
+  "tr": "İfade yanlış: kahvaltısız oda ayırtanlar altı avroya sonradan ekletiyor.",
   "kind": "explain",
-  "en": "False: those who book a room without breakfast add it later for six euros."
+  "en": "The statement is false: those who book a room without breakfast add it later for six euros."
  }
 ]

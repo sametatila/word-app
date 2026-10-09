@@ -210,7 +210,7 @@ export const c1U05: SkillExercise[] = [
         text: "Der Text hält Fragen nach Gehalt und Gesundheit hier für Grenzverletzungen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „in vielen Ländern normale Fragen, hier Grenzverletzungen“.",
+        explain: "İfade doğru: „in vielen Ländern normale Fragen, hier Grenzverletzungen“.",
       },
     ],
   },

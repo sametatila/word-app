@@ -75,19 +75,19 @@
   "en": "In a clause the auxiliary of the past tense goes AFTER the participle, right at the end."
  },
  {
-  "tr": "Yanlış: „Frau Klein denkt, dass es funktioniert.“ Şüpheli olan Herr Nowak.",
+  "tr": "İfade yanlış: „Frau Klein denkt, dass es funktioniert.“ Şüpheli olan Herr Nowak.",
   "kind": "explain",
-  "en": "False: „Frau Klein denkt, dass es funktioniert.“ It is Herr Nowak who is doubtful."
+  "en": "The statement is false: „Frau Klein denkt, dass es funktioniert.“ It is Herr Nowak who is doubtful."
  },
  {
-  "tr": "Yanlış: „Wer wenig Videos schaut, ist mit Basis am günstigsten unterwegs.“",
+  "tr": "İfade yanlış: „Wer wenig Videos schaut, ist mit Basis am günstigsten unterwegs.“",
   "kind": "explain",
-  "en": "False: „Wer wenig Videos schaut, ist mit Basis am günstigsten unterwegs.“"
+  "en": "The statement is false: „Wer wenig Videos schaut, ist mit Basis am günstigsten unterwegs.“"
  },
  {
-  "tr": "Yanlış: mütevazı ama „der andere weiß dann nicht, was er noch sagen soll“.",
+  "tr": "İfade yanlış: mütevazı ama „der andere weiß dann nicht, was er noch sagen soll“.",
   "kind": "explain",
-  "en": "False: it is modest, but „der andere weiß dann nicht, was er noch sagen soll“."
+  "en": "The statement is false: it is modest, but „der andere weiß dann nicht, was er noch sagen soll“."
  },
  {
   "tr": "Yıllık gider hesabı geldi ve tutar yüksek. Neyin nasıl hesaplandığını oku.",
@@ -285,9 +285,9 @@
   "en": "The subject of „helfen“ in the clause is that person, so it takes the masculine nominative: der."
  },
  {
-  "tr": "Yanlış: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“",
+  "tr": "İfade yanlış: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“",
   "kind": "explain",
-  "en": "False: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“"
+  "en": "The statement is false: „Die Waschmaschine im Keller ist kostenlos, das ist in den Nebenkosten dabei.“"
  },
  {
   "tr": "Yer için „where“ kullanılır; „which“ olsaydı arkasından bir edat gerekirdi.",

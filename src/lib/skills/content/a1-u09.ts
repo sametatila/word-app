@@ -50,7 +50,7 @@ export const a1U09: SkillExercise[] = [
         text: "Richtig oder falsch? Tom steht am Sonntag früh auf.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Am Sonntag stehe ich nie früh auf.“ — „nie“ asla demek.",
+        explain: "İfade yanlış: „Am Sonntag stehe ich nie früh auf.“ — „nie“ asla demek.",
       },
       {
         text: "Von wann bis wann geht der Deutschkurs?",
@@ -115,7 +115,7 @@ export const a1U09: SkillExercise[] = [
         text: "Richtig oder falsch? Paula duscht jeden Morgen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.“",
+        explain: "İfade yanlış: „Ich dusche nicht jeden Morgen — manchmal bade ich am Abend.“",
       },
       {
         kind: "gapfill",
@@ -181,7 +181,7 @@ export const a1U09: SkillExercise[] = [
         text: "Richtig oder falsch? Am Sonntag schläft die Person manchmal bis elf.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Manchmal schlafe ich am Sonntag bis elf.“",
+        explain: "İfade doğru: „Manchmal schlafe ich am Sonntag bis elf.“",
       },
           {
         kind: "gapfill",
@@ -239,7 +239,7 @@ export const a1U09: SkillExercise[] = [
         text: "Richtig oder falsch? Die Schwester kommt sicher mit.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Ich glaube ja.“ — emin değil, arayıp soracak.",
+        explain: "İfade yanlış: „Ich glaube ja.“ — emin değil, arayıp soracak.",
       },
           {
         kind: "gapfill",
