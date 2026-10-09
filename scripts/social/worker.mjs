@@ -22,7 +22,7 @@ import crypto from "node:crypto";
 import { spawnSync } from "node:child_process";
 import pg from "pg";
 import { loadEpisodes, EP_DIR } from "./lib/episodes.mjs";
-import { buildPage, localDoc, playwright, CHROME } from "./lib/page.mjs";
+import { buildPage, localDoc, launchBrowser } from "./lib/page.mjs";
 import { renderDoc } from "./lib/audio.mjs";
 import { renderVideo } from "./lib/render.mjs";
 import { resolveClips } from "./lib/clips.mjs";
@@ -195,7 +195,7 @@ async function renderNext() {
   if (!job) return;
   const t0 = Date.now();
   log(`üretim #${job.id} ${job.episode_id} r${job.revision}`);
-  const browser = await playwright().chromium.launch({ executablePath: CHROME });
+  const browser = await launchBrowser();
   const tmp = path.join(SOCIAL_DIR, "tmp", `r${job.id}`);
   try {
     const ep = (await q("select template from social_episodes where id = $1", [job.episode_id])).rows[0];

@@ -19,7 +19,7 @@
 */
 import path from "node:path";
 import { loadEpisodes } from "./lib/episodes.mjs";
-import { OUT, CHROME, playwright } from "./lib/page.mjs";
+import { OUT, launchBrowser } from "./lib/page.mjs";
 import { renderDoc } from "./lib/audio.mjs";
 import { renderVideo } from "./lib/render.mjs";
 
@@ -34,7 +34,7 @@ if (!ids.length) {
   process.exit(1);
 }
 
-const browser = await playwright().chromium.launch({ executablePath: CHROME });
+const browser = await launchBrowser();
 for (const id of ids) {
   const t0 = Date.now();
   const { episodes, clips } = await loadEpisodes([id]);

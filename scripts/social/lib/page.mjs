@@ -14,6 +14,11 @@ export const OUT = path.join(ROOT, ".shots/social"); // git dışı
 // Mac'te sistem Chrome'u; sunucuda (Linux) Playwright'ın kendi tarayıcısı (PLAYWRIGHT_BROWSERS_PATH), executablePath yok.
 export const CHROME = process.env.CHROME_PATH || (process.platform === "darwin" ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" : undefined);
 export const playwright = () => createRequire(import.meta.url)(path.join(ROOT, "node_modules/playwright-core"));
+/**
+ * Video üretimi ve denetim için tarayıcı. Mac: sistem Chrome'u; Linux sunucusu: Playwright'ın TAM Chromium'u
+ * (channel "chromium"; sadeleştirilmiş headless shell degil, Mac'le aynı çizim). Renk profili iki yerde de sRGB sabit.
+ */
+export const launchBrowser = () => playwright().chromium.launch({ ...(CHROME ? { executablePath: CHROME } : { channel: "chromium" }), args: ["--force-color-profile=srgb"] });
 
 const esc = (s) => s.replaceAll("</script", "<\\/script");
 
