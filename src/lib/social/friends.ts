@@ -1,5 +1,6 @@
 import { and, desc, eq, gte, inArray, ne, notInArray, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { shownStreakSql } from "@/lib/streak-live";
 import { friendQuests, friendships, profiles, userBlocks } from "@/lib/db/schema";
 import { track } from "@/lib/events";
 import { emitActivity } from "./activity";
@@ -226,7 +227,7 @@ export async function listFriends(me: string, today: string): Promise<FriendRow[
     weeklyXpFor(ids, today),
     friendStreaks(me, ids, today),
     db
-      .select({ userId: profiles.userId, currentStreak: profiles.currentStreak, lastActiveDay: profiles.lastActiveDay })
+      .select({ userId: profiles.userId, currentStreak: shownStreakSql(), lastActiveDay: profiles.lastActiveDay })
       .from(profiles)
       .where(inArray(profiles.userId, ids)),
   ]);
@@ -333,7 +334,7 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
     const ids = [...mutual.keys()];
     await ensureUsernames(ids);
     const rows = await db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, visibility: profiles.visibility, show: profiles.showInSuggestions, currentStreak: profiles.currentStreak })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, visibility: profiles.visibility, show: profiles.showInSuggestions, currentStreak: shownStreakSql() })
       .from(profiles)
       .where(inArray(profiles.userId, ids));
     for (const r of rows) {
@@ -348,7 +349,7 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
     const level = meProfile[0]?.level ?? "A1";
     const excludeList = [...excluded, ...seen];
     const rows = await db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak, visibility: profiles.visibility })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: shownStreakSql(), visibility: profiles.visibility })
       .from(profiles)
       .where(
         and(
@@ -360,7 +361,7 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
           excludeList.length ? notInArray(profiles.userId, excludeList) : sql`true`,
         ),
       )
-      .orderBy(sql`case when ${profiles.level} = ${level} then 0 else 1 end`, desc(profiles.currentStreak))
+      .orderBy(sql`case when ${profiles.level} = ${level} then 0 else 1 end`, sql`${shownStreakSql()} desc`)
       .limit(limit - out.length);
     const nameless = rows.filter((r) => !r.username).map((r) => r.userId);
     if (nameless.length) {

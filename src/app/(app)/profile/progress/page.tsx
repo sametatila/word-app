@@ -7,6 +7,7 @@ import { getT } from "@/lib/i18n/server";
 import { EmptyCard } from "@/components/empty-card";
 import { StreakIcon } from "@/components/icons";
 import Link from "next/link";
+import { shownStreak } from "@/lib/streak-live";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("progress.progress");
@@ -39,7 +40,7 @@ export default async function ProgressPage() {
           correct: d.correct,
           xp: d.xp,
         }))}
-        streak={profile.currentStreak}
+        streak={shownStreak(profile)}
         longestStreak={profile.longestStreak}
         seconds={data.seconds}
         mastered={mastered}

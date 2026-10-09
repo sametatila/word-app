@@ -12,6 +12,7 @@ import { getSessionRead, authEnabled } from "@/lib/auth/server";
 import { backfillNativeLang, ensureProfile, termsUpdateFor } from "@/lib/session";
 import { AccountSync } from "@/components/account-sync";
 import { LangSync } from "@/components/lang-sync";
+import { shownStreak } from "@/lib/streak-live";
 
 export const dynamic = "force-dynamic";
 
@@ -61,7 +62,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   try {
     // Anadili boş eski hesap: istek dilinden (çerez/tarayıcı) geri doldurulur.
     const profile = await backfillNativeLang(await ensureProfile(user.id, user.name));
-    streak = profile?.currentStreak ?? 0;
+    streak = profile ? shownStreak(profile) : 0;
     xp = profile?.totalXp ?? 0;
     course = profile?.course ?? "de";
     voice = profile?.voice ?? null;

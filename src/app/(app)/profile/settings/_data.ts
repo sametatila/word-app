@@ -7,6 +7,7 @@ import { courseName } from "@/lib/courses";
 import { APP_VERSION } from "@/lib/version";
 import { socialMe } from "@/lib/social/profile";
 import type { SettingsValues } from "@/components/settings-nav";
+import { shownStreak } from "@/lib/streak-live";
 
 /**
  * Ayar sayfalarının ortak verisi — liste değerleri, form başlangıcı, sosyal
@@ -44,7 +45,7 @@ export async function loadSettings(withSocial: boolean) {
           level: profile.level,
           course: profile.course,
           voice: profile.voice ?? null,
-          currentStreak: profile.currentStreak,
+          currentStreak: shownStreak(profile),
           longestStreak: profile.longestStreak,
           totalXp: profile.totalXp,
         },

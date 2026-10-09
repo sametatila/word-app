@@ -1,5 +1,6 @@
 import { inArray } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { shownStreakSql } from "@/lib/streak-live";
 import { profiles } from "@/lib/db/schema";
 import { daysLeftInWeek, weekStart } from "./dates";
 import { friendIds, weeklyXpFor } from "./stats";
@@ -30,7 +31,7 @@ export async function friendsLeaderboard(me: string, today: string): Promise<{ r
   const [weekly, prof] = await Promise.all([
     weeklyXpFor(ids, today),
     db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: profiles.currentStreak })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: shownStreakSql() })
       .from(profiles)
       .where(inArray(profiles.userId, ids)),
   ]);

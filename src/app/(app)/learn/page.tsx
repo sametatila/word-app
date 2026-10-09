@@ -6,6 +6,7 @@ import { placementNudge } from "@/lib/placement-nudge";
 import { levelStatus } from "@/lib/level-readiness";
 import { supportsMockExams } from "@/lib/mock-exams";
 import { titleMeta } from "@/lib/page-meta";
+import { shownStreak } from "@/lib/streak-live";
 
 export const dynamic = "force-dynamic";
 
@@ -73,7 +74,7 @@ export default async function LearnPage({
       mastered: progress ? progress.levels.reduce((s, l) => s + l.mastered, 0) : 0,
       totalWords: progress ? progress.levels.reduce((s, l) => s + l.total, 0) : 0,
       xp: profile.totalXp,
-      streak: profile.currentStreak,
+      streak: shownStreak(profile),
       dailyGoal: profile.dailyGoal,
       reviewsToday: todayStat?.reviews ?? 0,
       /* Şerit ancak ilerleme gerçekten okunduysa çiziliyor: yoksa "0/20"

@@ -6,6 +6,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { isTestLabNetwork } from "@/lib/google-networks";
 import { backfillNativeLang, ensureProfile, getProgress, newWordsLeft, termsUpdateFor } from "@/lib/session";
 import { parseAvatar } from "@/lib/avatar-config";
+import { shownStreak } from "@/lib/streak-live";
 
 export const dynamic = "force-dynamic";
 
@@ -75,7 +76,7 @@ export async function GET() {
         // varsayılanını (cihaz dili) korusun diye null olarak gidiyor,
         // sunucuda "tr" diye uydurulmuyor.
         nativeLang: profile.nativeLang,
-        streak: profile.currentStreak,
+        streak: shownStreak(profile),
         /* SON ÇALIŞILAN GÜN (istemcinin yerel günü, `award`). Mobil, uzak bildirimi
            olmayan cihazda kurduğu yedek hatırlatmayı buna bakıp o gün çalışıldıysa
            yarına kaydırıyor: "seri yapıldı ama hatırlatma geldi" (Samet, 2026-10-06). */

@@ -1,5 +1,6 @@
 import { and, eq, ilike, inArray, ne, notInArray, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { shownStreak, shownStreakSql } from "@/lib/streak-live";
 import { profiles } from "@/lib/db/schema";
 import { achievementCount } from "@/lib/achievements";
 import { usernameAllowed } from "@/lib/moderation";
@@ -199,7 +200,7 @@ export async function publicProfile(viewer: string, usernameRaw: string): Promis
     joined: new Date(p.createdAt).toISOString(),
     stats: canSee
       ? {
-          currentStreak: p.currentStreak,
+          currentStreak: shownStreak(p),
           longestStreak: p.longestStreak,
           totalXp: p.totalXp,
           weeklyXp: weekly.get(uid) ?? 0,
@@ -228,7 +229,7 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
   const blocked = [...(await blockedSet(me)), me];
   const like = likeContains(q);
   const rows = await db
-    .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak, visibility: profiles.visibility })
+    .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: shownStreakSql(), visibility: profiles.visibility })
     .from(profiles)
     .where(
       and(
@@ -243,7 +244,7 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
         ),
       ),
     )
-    .orderBy(sql`case when ${profiles.username} = ${uq} then 0 else 1 end`, sql`${profiles.currentStreak} desc`)
+    .orderBy(sql`case when ${profiles.username} = ${uq} then 0 else 1 end`, sql`${shownStreakSql()} desc`)
     .limit(20);
   // Adı olmayan eski hesaplara burada ad verilir; sonuç satırı adıyla döner.
   const nameless = rows.filter((r) => !r.username).map((r) => r.userId);

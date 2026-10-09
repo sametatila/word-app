@@ -1,5 +1,6 @@
 import { and, asc, eq, inArray, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { shownStreakSql } from "@/lib/streak-live";
 import { leagueMembers, profiles } from "@/lib/db/schema";
 import { track } from "@/lib/events";
 import { translate } from "@/lib/i18n/dict";
@@ -210,7 +211,7 @@ export async function leagueBoard(userId: string, today: string): Promise<League
   const [xp, prof, result, blocked] = await Promise.all([
     xpBetween(ids, ws, shiftDay(ws, 7)),
     db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: profiles.currentStreak, visibility: profiles.visibility })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: shownStreakSql(), visibility: profiles.visibility })
       .from(profiles)
       .where(inArray(profiles.userId, ids)),
     pendingResult(userId, ws),

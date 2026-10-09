@@ -21,6 +21,7 @@ import { acceptsPair, nativeOf, type NativeLang } from "@/lib/courses";
 import { requestLang } from "@/lib/i18n/server";
 import { exampleGlossFor, glossFor, hasGloss, meaningParts, optionLabel, sharesMeaning, spokenGloss, withArtikel } from "@/lib/option-label";
 import { pluralChoices } from "@/lib/german";
+import { shownStreak } from "@/lib/streak-live";
 import type {
   Answer,
   AnswerResult,
@@ -720,7 +721,7 @@ export async function buildSession(
     newToday,
     reviewsToday,
     dailyGoal: profile.dailyGoal,
-    currentStreak: profile.currentStreak,
+    currentStreak: shownStreak(profile),
     totalXp: profile.totalXp,
     displayName: profile.displayName,
     level: band.level,

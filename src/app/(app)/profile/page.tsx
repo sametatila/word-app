@@ -8,6 +8,7 @@ import { ProfileView } from "@/components/profile/profile-view";
 import { titleMeta } from "@/lib/page-meta";
 import { RetryButton } from "@/components/retry-button";
 import { FlowColumn, StateBody } from "@/components/flow";
+import { shownStreak } from "@/lib/streak-live";
 
 export const dynamic = "force-dynamic";
 
@@ -54,7 +55,7 @@ export default async function ProfilePage() {
               web dogrudan "Ogrenci" yaziyordu.
           */
           name: profile.displayName || user.name || user.email?.split("@")[0] || t("profile.student"),
-          streak: profile.currentStreak,
+          streak: shownStreak(profile),
           xp: profile.totalXp,
           premium: await isPremium(user.id),
           username: social?.username ?? null,

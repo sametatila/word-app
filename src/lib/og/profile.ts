@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
 import { isGuestUser } from "@/lib/auth/guest-user";
 import { normalizeUsername } from "@/lib/social/username";
+import { shownStreakSql } from "@/lib/streak-live";
 
 export type ProfileCard = {
   username: string;
@@ -31,7 +32,7 @@ export async function publicProfileCard(raw: string): Promise<ProfileCard | null
       name: profiles.displayName,
       avatar: profiles.avatar,
       level: profiles.level,
-      streak: profiles.currentStreak,
+      streak: shownStreakSql(),
     })
     .from(profiles)
     .where(and(eq(profiles.username, username), eq(profiles.visibility, "public")))
