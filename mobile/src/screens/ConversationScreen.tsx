@@ -288,6 +288,15 @@ export function ConversationScreen() {
   useEffect(() => { waivedRef.current = waived; }, [waived]);
   /** Gönderilemeyen cümle (bkz. `SendFailure`): sohbet akışına girmiyor, panelde bekliyor. */
   const [failed, setFailed] = useState<SendFailure | null>(null);
+  /*
+    GÜNLÜK SOHBET TAVANI DOLDU (429). Uyarı balonu her denemede yeniden
+    basılıyordu: kutuda kalan cümle tekrar gönderilince aynı balon ikinci kez
+    geliyordu (QA F-0040). Tavan dolunca uyarı BİR KEZ yazılıyor ve gönderme
+    yolu (kutu, mikrofon, öneriler) kapanıyor; çıkış ("Şimdilik bırak") kalıyor.
+    Web `conversation-player` aynı (`quotaHit`).
+  */
+  const [quotaHit, setQuotaHit] = useState(false);
+  const quotaRef = useRef(false);
   const [countdown, setCountdown] = useState<number | null>(null);
   const waivedNote = (gate: "consent" | "account"): BubbleData => ({
     role: "teacher",
@@ -800,7 +809,7 @@ export function ConversationScreen() {
 
   async function sendRole(textArg?: string, attempt = 0) {
     /* Tek istek uçuşta (`sending`); geçmiş ve sayaç ref'ten (bkz. `roleMsgsRef`). */
-    if (!conversation || sending.current || waivedRef.current) return;
+    if (!conversation || sending.current || waivedRef.current || quotaRef.current) return;
     const text = (textArg ?? input).trim();
     if (!text) return;
     sending.current = true;
@@ -852,7 +861,11 @@ export function ConversationScreen() {
         /* Günlük sohbet mesajı tavanı (kötüye kullanım sınırı) — "bağlantı
            sorunu" DEĞİL, yarın sürüyor. */
         setInput(text);
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
+        if (!quotaRef.current) {
+          quotaRef.current = true;
+          setQuotaHit(true);
+          push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
+        }
       } else {
         /* GÖNDERİLEMEDİ: sebebi doğru söyle, cümleyi tut, kendiliğinden yeniden dene.
            Sunucu cevap verdiyse (5xx) sorun bizde; zaman aşımı `ApiError(0)`;
@@ -1177,7 +1190,7 @@ export function ConversationScreen() {
                 onSpeak={() => void speakRole()}
                 suggestions={suggestions} onSuggest={(s) => sendRole(s)}
                 ready={chatReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)} onLeave={() => void finish(false)}
-                waived={waived} failed={failed} countdown={countdown} onRetry={() => { if (failed) void sendRole(failed.text, failed.attempt); }}
+                waived={waived} quotaHit={quotaHit} failed={failed} countdown={countdown} onRetry={() => { if (failed) void sendRole(failed.text, failed.attempt); }}
                 sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping} colors={colors} />
             )}
           </View>
@@ -1463,12 +1476,14 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   );
 }
 
-function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, onLeave, waived, failed, countdown, onRetry, sttOk, sttSebep, listening, typing, setTyping, colors }: {
+function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, onLeave, waived, quotaHit, failed, countdown, onRetry, sttOk, sttSebep, listening, typing, setTyping, colors }: {
   input: string; setInput: (s: string) => void; busy: boolean; onSend: () => void; onSpeak: () => void;
   suggestions: string[]; onSuggest: (s: string) => void;
   ready: boolean; turns: number; minTurns: number; onFinish: () => void; onLeave: () => void;
   /** Sohbet atlandı (izin yok ya da misafir): yalnız "konuşmayı bitir". */
   waived: boolean;
+  /** Günlük sohbet tavanı doldu: gönderme yolu kapalı, uyarı akışta bir kez yazılı. */
+  quotaHit: boolean;
   failed: SendFailure | null; countdown: number | null; onRetry: () => void;
   sttOk: boolean | null; sttSebep: "denied" | "unavailable" | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void; colors: Palette;
 }) {
@@ -1510,7 +1525,7 @@ function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onS
         </View>
       ) : null}
       {sttNotu}
-      {!busy && suggestions.length > 0 && (
+      {!busy && !quotaHit && suggestions.length > 0 && (
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs }}>
           {suggestions.map((s, i) => (
             <PressableScale key={i} onPress={() => onSuggest(s)} style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderWidth: 1, borderColor: colors.primary }}>
@@ -1534,7 +1549,7 @@ function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onS
           ) : null}
         </View>
       )}
-      {yaziYolu ? (
+      {quotaHit ? null : yaziYolu ? (
         <TypedRow value={input} onChange={setInput} onSubmit={onSend} placeholder={tx("conversation.type_in", { lang: targetLangName() })} colors={colors} disabled={busy} />
       ) : (
         <>

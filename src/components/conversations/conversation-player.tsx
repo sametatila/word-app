@@ -385,6 +385,10 @@ function ConversationPlayerBody({
   const [chatGate, setChatGate] = useState<"ai" | "consent" | "account">("ai");
   const waived = chatGate !== "ai";
   const [failed, setFailed] = useState<SendFailure | null>(null);
+  /* Günlük sohbet tavanı doldu (429): uyarı bir kez, gönderme yolu kapalı
+     (QA F-0040; mobil `ConversationScreen` `quotaHit`). Her yeni deneme uyarıyı
+     silip yeniden yazıyordu ve "Gönder" açık kalıyordu. */
+  const [quotaHit, setQuotaHit] = useState(false);
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
   /* Konuşmanın süresi: `/api/conversation` `seconds` alanını istiyor ve web onu HİÇ
@@ -1095,7 +1099,7 @@ function ConversationPlayerBody({
   const send = useCallback(
     async (text: string, attempt = 0) => {
       const clean = text.trim();
-      if (!clean || busy) return;
+      if (!clean || busy || quotaHit) return;
       setDraft("");
       setError(null);
       setFailed(null);
@@ -1154,6 +1158,7 @@ function ConversationPlayerBody({
           /* Günlük sohbet mesajı tavanı (kötüye kullanım önlemi). Sebebi doğru
              söyle: "bağlantı yok" demek kullanıcıyı ağına baktırırdı. */
           undoTurn();
+          setQuotaHit(true);
           setError(t("conversationp.chat_quota", { n: DAILY_QUOTAS.chatTurns }));
           return;
         }
@@ -1228,7 +1233,7 @@ function ConversationPlayerBody({
     },
     // `listenChat` aşağıda tanımlı; bağımlılığa alınırsa döngü oluşur.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [turns, busy, conversation.id, ttsAvailable],
+    [turns, busy, quotaHit, conversation.id, ttsAvailable],
   );
   useEffect(() => {
     sendRef.current = (t: string) => void send(t);
@@ -1844,7 +1849,7 @@ function ConversationPlayerBody({
               ) : null}
             </div>
 
-            {suggestions.length && !waived ? (
+            {suggestions.length && !waived && !quotaHit ? (
               <div className="flex shrink-0 flex-wrap gap-2 px-4 pb-2">
                 {suggestions.map((s) => (
                   <button
@@ -1874,7 +1879,7 @@ function ConversationPlayerBody({
                       setSpeakingTurn(null);
                       void listenChat();
                     }}
-                    disabled={busy || waived}
+                    disabled={busy || waived || quotaHit}
                     aria-label={t(listening ? "exam.stop_recording" : "conversationp.start_speaking")}
                     className={`${typing ? "hidden" : "flex"} h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-60 short:h-14 short:w-14`}
                     style={{
@@ -1942,7 +1947,7 @@ function ConversationPlayerBody({
                   <button
                     type="button"
                     onClick={() => void send(draft)}
-                    disabled={busy || waived || !draft.trim()}
+                    disabled={busy || waived || quotaHit || !draft.trim()}
                     className="btn btn-primary h-11 shrink-0 px-4 text-body disabled:opacity-60"
                   >
                     {t("common.send")}
