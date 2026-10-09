@@ -29,7 +29,8 @@ Başka yere dosya yazılmaz. Geçici dosyalar `.shots/social/render/` ve `cache/
 npm run social:check                      # bölümler yükleniyor mu, aynı içerik tekrar ediyor mu, liste
 npm run social:gallery [-- --no-posters] [-- --no-audio]  # atölye: her şablonun en yeni bölümü (.shots/social/gallery/)
 npm run social:audit [-- <bölüm|şablon> …]  # yerleşim denetimi, Chrome + Safari motoru (WebKit); verilmezse bütün bölümler
-npm run social:plan [-- --write]          # yayın takvimi + takvim kuralları; --write: data/social/plan.json (admin bunu gösterir)
+npm run social:plan                       # depodaki takvim + takvim kuralları (canlı takvim stüdyoda)
+npm run social:texts [-- <bölüm|şablon> …]  # ekrandaki her yazı düzenlenebilir mi (veri ya da şablon ui'si)
 npm run social:render -- <bölüm-id> …     # MP4 + kapaklar + açıklama (.shots/social/out/<bölüm>/)
 npm run social:render -- --status hazır   # durumu "hazır" olan bütün bölümler
 npm run social:render -- <id> --muziksiz  # ek olarak müziksiz sürüm (platform müziği eklemek için)
@@ -69,8 +70,8 @@ yerel telefon testi için klasörü `python3 -m http.server` ile sun.
    Denetim aracı taşma, çakışma, kutu dışı yazı ve güvenli alanı ölçer, ama "anlamlı mı, doğal mı" sorusunu ölçmez:
    metni yüksek sesle oku.
 6. **Üret:** `npm run social:render -- <bölüm-id>`. Çıktı satırında süre, ses (−14 LUFS civarı) ve sayfa hatası yok.
-7. **Durumu "hazır" yap**, `npm run social:plan -- --write`, bölüm dosyalarını ve `data/social/plan.json`'u commit et.
-   Deploy sonrası admin › İçerik › Sosyal medya yeni partiyi gösterir.
+7. **Durumu "hazır" yap**, `npm run social:texts -- <bölüm-id>` (hepsi düzenlenebilir), bölüm dosyalarını commit et.
+   Deploy sonrası sunucu işçisi aktarır, stüdyo takvimi yeni partiyi gösterir; video stüdyoda onayla sunucuda üretilir.
 8. **Yayın durumu** depoda değil, panelde (`social_posts`): Samet "zamanlandı / yayında" işaretler, bağlantıyı yazar.
    Yayındaki (saati geçmiş) bölümün içeriği değiştirilmez.
 
@@ -202,16 +203,38 @@ için tema kilitlenir. Bir saat dilimi sürekli geride kalırsa günde 2'ye inil
 **Faz 3, düzenli üretim:** iki haftada bir 42 bölüm. Plan bitmeden ~7 gün önce panel uyarır; Samet Claude'dan yeni
 partiyi ister. Ayda bir bu belgedeki eleştiri ve plan veriyle güncellenir.
 
-## Panel (admin › İçerik › Sosyal medya)
+## Stüdyo (lernomi.app/studio)
 
-`/admin/social`: haftalık ızgara (gün × 3 saat), her hücrede TikTok ve Instagram durumu (planlandı, zamanlandı, yayında,
-atlandı, saati geçti). Hücre: kanca, açıklama (kopyala), dosya yolu, platform başına durum + bağlantı + not. Haftanın
-planlananlarını tek düğmeyle "zamanlandı" işaretleme. Uyarılar: saati geçip yayında işaretlenmeyen, planın bitmesine
-7 günden az.
+Samet ve sosyal medya editörü (2026-10-09, Samet: "videodaki tüm metinleri istisnasız düzenleyebilmeli ve videoya
+dönüştürmeden preview yapabilmeli; onay verirse video sunucuda üretilmeli, kalite kaybı olmadan alıp planlamayı
+yapabilmeli").
 
-- Plan: `data/social/plan.json` (derleme anında içe alınır; deploy ile güncellenir). Panel planı değiştirmez.
-- Durum: `social_posts` tablosu (`src/lib/social-posts.ts`, uç `/api/admin/social`, yazma 2FA + `admin_audit`).
-- Saati geçmiş "zamanlandı" kendiliğinden "yayında" sayılmaz: platform zamanlayıcısı başarısız olabilir.
+- **Roller:** `ADMIN_EMAILS` panelin tamamı + stüdyo; `SOCIAL_EDITOR_EMAILS` YALNIZ stüdyo (kullanıcı verisi içeren
+  panele 404). E-posta doğrulanmış olmalı; kaydetme/onay için hesapta iki adımlı doğrulama açık olmalı. Her yazma
+  `admin_audit`e `studio.*` olarak düşer. Kod: `src/lib/studio-auth.ts`.
+- **Akış:** Claude bölümü depoda yazar → sunucu işçisi aktarır → stüdyoda düzenle (canlı önizleme, sunucuyla aynı
+  motor) → Kaydet (yeni sürüm) → Onayla ve üret → video sunucuda (1–3 dk) → MP4 / kapak / açıklama KAYIPSIZ indirilir
+  (sunucudaki dosyanın baytları) → platform zamanlayıcısı → takvimde "zamanlandı / yayında".
+- **İstisnasız:** ekrandaki her yazı ya bölüm verisinden ya şablonun `meta.ui` sabit yazılarından gelir (bölüm
+  `copy.ui` ile ezer). Kapı: `npm run social:texts` (veriye/ui'ye dayanmayan yazı = hata). Yeni şablonda gömülü yazı
+  bırakılmaz.
+- **Kurallar (`src/lib/studio.ts`):** yalnız metin değişir (yapı, öğe sayısı, kimlik alanları `who/icon/avatar/key/typ`
+  ve satırdaki `scene` kilitli); her kayıt sürüm, geri dönüş yeni sürüm; eşzamanlı düzenlemede 409; onaydan sonra metin
+  değişirse onay düşer, kuyruktaki üretim iptal. Saat: aynı saate iki bölüm yok (hata), diğer takvim kuralları uyarı.
+- **Ses (Samet: "yalnız Defne"):** seslendirilen Almanca metin değişirse Defne kaydı gerekir; kaydı yoksa onay kapalı.
+  Ses bekçisi (`scripts/tts-own-watch.ts`, gece + deploy) stüdyo metinlerini `eksik.jsonl`e yazar (`word_social` /
+  `example_social`), Mac `eksik_mac.sh` sabah 08:40'ta üretip yayınlar; stüdyo kaydı görünce onay açılır.
+- **Sunucu işçisi (`scripts/social/worker.mjs`):** `lernomi-social-worker.timer` ~20 sn'de bir: depo değiştiyse
+  aktarım (düzenlenmiş veriye dokunmaz, `origin_changed` der; stüdyoda değişen saati korur; depodan kalkan bölüm
+  arşivlenir), takılan üretimi kapatma, kuyruktaki bir üretim (Defne ve yerleşim yeniden denetlenir). Çıktı
+  `SOCIAL_DIR/out/<bölüm>/r<sürüm>-<üretim>/`; aynı bölümün eski videosunun dosyaları silinir. Aktarım durumu
+  `SOCIAL_DIR/import-state.json`.
+- **Tablolar:** `social_episodes` (veri, saat, onay), `social_revisions`, `social_renders`, `social_posts` (platform).
+
+**Claude yeni parti yazarken:** stüdyoda değişen saatleri ve metinleri görmek için önce canlı takvime bak
+(`ssh lernomi` + `psql` okuma: `select id, slot, edited from social_episodes where archived_at is null order by slot`).
+Depodaki bir bölümü değiştirmek stüdyoda düzenlenmişse onu ezmez (editöre "Claude güncelledi" çıkar); düzenlenmemişse
+yeni sürüm olarak gelir ve onayı düşer.
 
 ## Platform API'leri (araştırma 2026-10-09, resmi belgeler)
 
