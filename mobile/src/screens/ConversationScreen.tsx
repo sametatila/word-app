@@ -22,7 +22,6 @@ import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, Det
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { ensureConversations, findConversation, conversationLevelOf, scoredSteps, type Conversation, type Segment, type Expectation, type LectureStep } from "../data/conversations";
 import { nativeContentReady, waitNativeContent } from "../lib/nativeContent";
-import { foldCompare, foldTight } from "../lib/textFold";
 import { foldContractions } from "../lib/contractions";
 import { foldEnglishSpelling } from "../lib/en-spelling";
 import { sendChat, chatAvailability, parseReply, patternUsed, type ChatMsg } from "../game/chat";
@@ -42,6 +41,9 @@ import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme
 import { sfx } from "../lib/sfx";
 import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "../lib/learningRules";
 import { produceMiss } from "../lib/sentenceMatch";
+import { judgeTyped } from "../lib/typedAnswer";
+import { produceSource } from "../lib/produceSource";
+import { rescueSentence } from "../lib/sentenceRescue";
 import { track } from "../lib/track";
 import { reduceMotion } from "../lib/reduceMotion";
 import { MicPulse, TypingDots } from "../ui/ConversationFx";
@@ -95,30 +97,9 @@ type Bubble = BubbleData & { id: number };
 /** Segmentlerin HEDEF dil kısmı (anlatım "tr" dışındakiler) — okunacak/denetlenecek metin. */
 const targetText = (segs: Segment[]): string => segs.filter((s) => s.lang !== "tr").map((s) => s.text).join(" ").trim();
 
-/**
- * Cevap karşılaştırması — noktalama, büyük/küçük, (Almancada) umlaut/ß ve sayı
- * toleranslı. Sabit umlaut katlaması yazılıydı; ortak katlama hedef dile bakıyor.
- */
 /** Kısaltmaları açılmış liste — konuşma karşılaştırmasının iki tarafı da. */
 const fc = (xs: string[]): string[] =>
   xs.map((x) => foldEnglishSpelling(foldContractions(x, currentTargetLang()), currentTargetLang()));
-
-function sn(x: string): string {
-  const lang = currentTargetLang();
-  // Kısaltma açılıyor: "I'm" ile "I am" aynı cevap (web `lib/contractions.ts`).
-  // `foldTight` yedeği BİLEREK ham girdiyle çalışıyor — kesmesiz yazan
-  // ("dont") oradan geçiyor ve açılım onu bozardı.
-  return foldCompare(foldEnglishSpelling(foldContractions(x, lang), lang), lang);
-}
-function matches(input: string, target: string, accept?: string[]): boolean {
-  const cands = [target, ...(accept ?? [])];
-  if (new Set(cands.map(sn)).has(sn(input))) return true;
-  // Yedek: boşluksuz. Kesme işareti boşluğa döndüğü için "don't" → "don t";
-  // kesmesiz yazan ("dont") aksi halde reddedilirdi.
-  const lang = currentTargetLang();
-  const tight = foldTight(input, lang);
-  return !!tight && new Set(cands.map((c) => foldTight(c, lang))).has(tight);
-}
 
 /** Adım türü → ilerleme rengi (web STEP_TONE ile aynı dil). */
 function stepTone(step: LectureStep, colors: Palette): string {
@@ -244,6 +225,9 @@ export function ConversationScreen() {
   const triesRef = useRef(0);
   const settled = useRef<number | null>(null);
   const [input, setInput] = useState("");
+  /** Yazılan üretim cevabı yapay zekâya soruluyor (`submitProduce`). */
+  const [checking, setChecking] = useState(false);
+  const checkingRef = useRef(false);
   const [busy, setBusy] = useState(false);        // chat bekleme
   /*
    * ELLER SERBEST — mobilde HİÇ YOKTU.
@@ -618,7 +602,8 @@ export function ConversationScreen() {
     const text = input.trim();
     if (!text) return;
     setInput("");
-    gradeRepeat(text, matches(text, expect.target), "typed");
+    /* Yazılan cevap cümle hakeminden (web `submitTyped` ile aynı kural, `lib/typedAnswer`). */
+    gradeRepeat(text, judgeTyped(text, expect.target, [], currentTargetLang()).pass, "typed");
   }
 
   async function speakProduce(manual = false) {
@@ -633,12 +618,43 @@ export function ConversationScreen() {
     gradeProduce(duyulan[0], spokenMatches(fc(duyulan), fc([expect.target, ...(expect.accept ?? [])])), "mic");
   }
 
-  function submitProduce() {
-    if (expect?.kind !== "produce") return;
+  /**
+   * YAZILAN CEVAP: cümle hakemi (tam ya da yalnız yazım geçer; sıra ve yanlış
+   * "henüz değil"), üç kelimeden uzun cevap yerelde düşerse yapay zekâya
+   * sorulur. Burada katlanmış TAM EŞİTLİK vardı: "Meine Mutter und mein Vater
+   * kommen zum Fest" gibi doğru bir başka kuruluş reddediliyordu; web ise
+   * kelime torbası kullanıp sırası bozuk cümleyi geçiriyordu (QA 2026-10-09).
+   * Kural artık iki platformda tek (web `conversation-player` `submitTyped`).
+   */
+  async function submitProduce() {
+    if (expect?.kind !== "produce" || checkingRef.current || !conversation) return;
     const text = input.trim();
     if (!text) return;
     setInput("");
-    gradeProduce(text, matches(text, expect.target, expect.accept), "typed");
+    const lang = currentTargetLang();
+    const j = judgeTyped(text, expect.target, expect.accept ?? [], lang);
+    if (j.pass || !j.rescuable || settled.current === cursor) {
+      gradeProduce(text, j.pass, "typed");
+      return;
+    }
+    const at = cursor;
+    const target = expect.target;
+    checkingRef.current = true;
+    setChecking(true);
+    const ok = await rescueSentence({
+      source: produceSource(conversation.lecture[at]?.say ?? [], lang),
+      target,
+      typed: text,
+      level: conversation.level,
+      lang,
+      guest: isGuest,
+    });
+    checkingRef.current = false;
+    if (!ekranAcik.current) return;
+    setChecking(false);
+    // Beklerken adım atlandıysa karar yutuluyor.
+    if (cursorRef.current !== at) return;
+    gradeProduce(text, ok, "typed", ok);
   }
 
   /** Konuşma fazında mikrofon — duyulan replik doğrudan gönderilir. */
@@ -657,7 +673,8 @@ export function ConversationScreen() {
   const live = useRef({ cursor, phase, typing, speakRepeat, speakProduce });
   useEffect(() => { live.current = { cursor, phase, typing, speakRepeat, speakProduce }; });
 
-  function gradeProduce(text: string, ok: boolean, via: Via) {
+  /** `rescued`: yerel hakem düşürdü, yapay zekâ kabul etti (`submitProduce`). */
+  function gradeProduce(text: string, ok: boolean, via: Via, rescued = false) {
     if (expect?.kind !== "produce" || settled.current === cursor) return;
     const tries = triesRef.current; // state değil: dinlerken yazılan deneme de sayılsın
     push({ role: "student", text, ok });
@@ -679,7 +696,11 @@ export function ConversationScreen() {
        * kilidi), yani doğru cevap zaten hep ilk denemede geliyor.
        */
       if (tries === 0) setCorrect((c) => c + 1);
-      push({ role: "teacher", segments: [{ lang: "tr", text: tx(PRAISE_KEYS[correct % PRAISE_KEYS.length]) }] });
+      /* Yapay zekâ başka bir doğru kuruluşu kabul ettiyse övgü yerine dersin
+         kalıbı: cevap doğru, öğretilen biçim bu (web aynı satır). */
+      push({ role: "teacher", segments: rescued
+        ? [{ lang: "tr", text: tx("rounds.rescue_taught") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }]
+        : [{ lang: "tr", text: tx(PRAISE_KEYS[correct % PRAISE_KEYS.length]) }] });
       speakTarget(expect.target);
       advanceLater(500);
     } else {
@@ -1135,7 +1156,7 @@ export function ConversationScreen() {
             {/* Karşı taraf yanıt hazırlarken baloncuk içinde "yazıyor" noktaları
                 (web `conversation-player` `TypingDots`); dönen çark bekleme
                 gibi görünüyordu, noktalar karşı tarafın yazması gibi. */}
-            {busy && (
+            {(busy || checking) && (
               <View style={{ alignSelf: "flex-start", marginTop: spacing.xs, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
                 <TypingDots />
               </View>
@@ -1147,7 +1168,7 @@ export function ConversationScreen() {
             {phase === "lecture" ? (
               <LectureControls expect={expect} tries={triesShown} input={input} setInput={setInput}
                 onConfirm={onConfirm} onSpeakRepeat={() => void speakRepeat(true)} onTypedRepeat={submitRepeatTyped}
-                onSpeakProduce={() => void speakProduce(true)} onProduce={submitProduce} onTrueFalse={answerTrueFalse}
+                onSpeakProduce={() => void speakProduce(true)} onProduce={() => void submitProduce()} onTrueFalse={answerTrueFalse}
                 sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping}
                 onSkip={skipStep} colors={colors} />
             ) : (

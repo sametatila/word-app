@@ -24,7 +24,7 @@ import { DetailCard, FlowActions, FlowColumn, FlowNote, ResultHero, StatRow, Sta
 import { reducedMotion, vibrate } from "@/lib/fx";
 import { useStill } from "@/lib/use-still";
 import { cueListen, startThinking } from "@/lib/conversations/cues";
-import { judgeSpeech } from "@/lib/speech";
+import { judgeSpeech, type SpeechVerdict } from "@/lib/speech";
 import { type Expectation, type Conversation, type Segment } from "@/lib/conversations/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ReportDialog } from "@/components/report-dialog";
@@ -34,6 +34,9 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
 import { RoundExit } from "@/components/round-exit";
 import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "@/lib/conversations/chat-const";
 import { produceMiss } from "@/lib/sentence-match";
+import { judgeTyped } from "@/lib/typed-answer";
+import { produceSource } from "@/lib/conversations/produce-source";
+import { rescueSentence } from "@/lib/sentence-rescue";
 import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
@@ -58,6 +61,11 @@ import { IconLine } from "@/components/icon-line";
  */
 
 type Phase = "lecture" | "chat" | "summary";
+/**
+ * Yazılan cevabın hükmü (`submitTyped`): `rescued` yapay zekâ kabul etti,
+ * `shown` öğrencinin baloncuğu beklerken zaten eklendi.
+ */
+type TypedVerdict = { ok: boolean; missing: string[]; rescued?: boolean; shown?: boolean };
 type Turn = { role: "user" | "assistant"; content: string };
 
 /**
@@ -339,6 +347,8 @@ function ConversationPlayerBody({
   // ── Konuşma durumu ──
   const [turns, setTurns] = useState<Turn[]>([]);
   const [draft, setDraft] = useState("");
+  /** Yazılan cevap yapay zekâya soruluyor (`submitTyped`): gönder kapalı. */
+  const [checking, setChecking] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [listening, setListening] = useState(false);
@@ -852,13 +862,13 @@ function ConversationPlayerBody({
    * bırakıp sınava dönüşmek olurdu.
    */
   const evaluate = useCallback(
-    (alternatives: string[]) => {
+    (alternatives: string[], typed?: TypedVerdict) => {
       const s = conversation.lecture[stepIndexRef.current];
       const e = s?.expect;
       if (!e || settled.current) return;
       const said = alternatives[0] ?? "";
       if (!said.trim()) return;
-      setFeed((f) => [...f, { id: ++feedSeq.current, role: "user", text: said }]);
+      if (!typed?.shown) setFeed((f) => [...f, { id: ++feedSeq.current, role: "user", text: said }]);
       const praise = nar(PRAISE_KEYS[stepIndexRef.current % PRAISE_KEYS.length]);
       const next = () => runStepRef.current(stepIndexRef.current + 1, [praise]);
       const isFirstTry = attempts.current === 0;
@@ -893,18 +903,36 @@ function ConversationPlayerBody({
       // repeat | produce — hedef dille karşılaştırma. Dil PARAMETRE olarak
       // gidiyor: `judgeSpeech` varsayılanı "de" ve İngilizce konuşma Almanca
       // kuralıyla yargılanıyordu (sayı katlaması ve kısaltma açma çalışmıyordu).
-      const targets = [e.target, ...(e.kind === "produce" ? (e.accept ?? []) : [])];
-      const verdicts = targets.map((t) =>
-        judgeSpeech(t, alternatives, [], [], targetLangOf(conversation.course)),
-      );
-      const best = verdicts.find((v) => v.kind === "correct") ?? verdicts[0];
+      /* YAZILAN cevabın hükmü çağırandan geliyor (`submitTyped`: cümle hakemi +
+         yapay zekâ kontrolü, `lib/typed-answer`); SESLİ cevap tanıyıcı hakeminde
+         kalıyor. Yazılan cevap da kelime torbasından geçiyordu ve sırası bozuk
+         cümleyi ("Zum Frühstück ich trinke einen Tee") doğru sayıyordu (QA
+         2026-10-09); mobil tam eşitlik istiyordu — iki platform iki kural. */
+      const best: SpeechVerdict = typed
+        ? typed.ok
+          ? { kind: "correct", heard: said }
+          : { kind: "different", heard: said, missing: typed.missing }
+        : (() => {
+            const targets = [e.target, ...(e.kind === "produce" ? (e.accept ?? []) : [])];
+            const verdicts = targets.map((t) =>
+              judgeSpeech(t, alternatives, [], [], targetLangOf(conversation.course)),
+            );
+            return verdicts.find((v) => v.kind === "correct") ?? verdicts[0];
+          })();
 
       if (best.kind === "correct") {
         settled.current = true;
         track("conversation_step", isFirstTry ? 2 : 1, `${e.kind}:${via}`);
         if (e.kind === "produce" && isFirstTry) setCorrectCount((n) => n + 1);
         vibrate("correct");
-        next();
+        /* Yapay zekâ başka bir doğru kuruluşu kabul ettiyse övgü yerine dersin
+           kalıbı gösteriliyor: cevap doğru, ama öğretilen biçim bu. */
+        if (typed?.rescued)
+          runStepRef.current(stepIndexRef.current + 1, [
+            nar("rounds.rescue_taught"),
+            { lang: targetLangOf(conversation.course), text: e.target },
+          ]);
+        else next();
         return;
       }
 
@@ -999,16 +1027,46 @@ function ConversationPlayerBody({
     runStep(stepIndex + 1);
   }
 
-  /** Yazılan cevap da sesli cevapla aynı kapıdan geçiyor. */
-  function submitTyped() {
+  /**
+   * Yazılan cevap: hüküm cümle hakeminden (tam ya da yalnız yazım geçer; sıra
+   * ve yanlış "henüz değil"), üretim adımında üç kelimeden uzun cevap yerelde
+   * düşerse yapay zekâya sorulur — anlamca doğru başka bir kuruluş ("Meine
+   * Mutter und mein Vater kommen zum Fest") haksız yere yanlış sayılmasın.
+   * Mobil `ConversationScreen` `submitProduce`/`submitRepeatTyped` aynı kural.
+   */
+  async function submitTyped() {
     const clean = draft.trim();
-    if (!clean) return;
+    if (!clean || checking) return;
     setDraft("");
     // Yazılan cevap dinlemeyi kapatıyor: açık kalan mikrofon sıradaki adımın
     // okumasını duyup cevap sayıyor, 12 sn'lik sayacı da yeni adımda "duyamadım" diyordu.
     cancelCapture();
     inputMode.current = "typed";
-    evaluate([clean]);
+    const at = stepIndexRef.current;
+    const step = conversation.lecture[at];
+    const e = step?.expect;
+    if (!e || (e.kind !== "repeat" && e.kind !== "produce")) {
+      evaluate([clean]);
+      return;
+    }
+    const tl = targetLangOf(conversation.course);
+    const j = judgeTyped(clean, e.target, e.kind === "produce" ? (e.accept ?? []) : [], tl);
+    const missing = j.match.target.filter((x) => x.mark === "missing" || x.mark === "typo").map((x) => x.text);
+    if (j.pass || e.kind !== "produce" || !j.rescuable || settled.current) {
+      evaluate([clean], { ok: j.pass, missing });
+      return;
+    }
+    setFeed((f) => [...f, { id: ++feedSeq.current, role: "user", text: clean }]);
+    setChecking(true);
+    const ok = await rescueSentence(
+      { source: produceSource(step.say, tl), target: e.target, typed: clean, level: conversation.level, lang: tl },
+      t,
+    );
+    setChecking(false);
+    // Beklerken adım atlandıysa karar yutuluyor.
+    if (stepIndexRef.current !== at || settled.current) return;
+    inputMode.current = "typed";
+    evaluate([clean], { ok, rescued: ok, missing, shown: true });
   }
 
   // ─────────────────────────── sohbet ───────────────────────────
@@ -1661,7 +1719,7 @@ function ConversationPlayerBody({
                     onKeyDown={(e) => {
                       if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
                         e.preventDefault();
-                        submitTyped();
+                        void submitTyped();
                       }
                     }}
                     rows={1}
@@ -1680,11 +1738,11 @@ function ConversationPlayerBody({
                   />
                   <button
                     type="button"
-                    onClick={submitTyped}
-                    disabled={!draft.trim()}
+                    onClick={() => void submitTyped()}
+                    disabled={!draft.trim() || checking}
                     className="btn btn-primary h-11 shrink-0 px-4 text-body disabled:opacity-60"
                   >
-                    {t("common.send")}
+                    {t(checking ? "rounds.checking" : "common.send")}
                   </button>
                 </div>
               ) : null}
