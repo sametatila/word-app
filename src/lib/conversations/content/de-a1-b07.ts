@@ -212,6 +212,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Im Zimmer gibt es zwei Fenster",
+          accept: ["Es gibt zwei Fenster im Zimmer", "Das Zimmer hat zwei Fenster"],
           hint: [
             tr(
               "Yer ifadesi başa geçince fiil hemen arkasından geliyor ve sözde özne üçüncü sıraya kayıyor:",
@@ -906,6 +907,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Der Aufzug ist im dritten Stock",
+          accept: ["Der Fahrstuhl ist im dritten Stock"],
           hint: [
             tr("Kat söylerken"),
             de("im"),
@@ -1093,6 +1095,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Man darf hier nicht parken",
+          accept: ["Hier darf man nicht parken", "Parken ist hier verboten", "Hier ist Parken verboten"],
           hint: [
             tr("Kalıp aynı, sadece son fiil değişiyor:"),
             de("Man darf hier nicht parken."),
@@ -1125,6 +1128,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Der Müll kommt in den Keller",
+          accept: ["Der Müll gehört in den Keller"],
           hint: [
             tr("Bodruma doğru bir hareket var, o yüzden artikel değişiyor:"),
             de("Der Müll kommt in den Keller."),
@@ -1137,6 +1141,14 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Man darf im Keller nicht laut sein",
+          accept: [
+            "Im Keller darf man nicht laut sein",
+            "Man darf im Keller keinen Lärm machen",
+            "Im Keller darf man keinen Lärm machen",
+            "Im Keller ist Lärm verboten",
+            "Lärm ist im Keller verboten",
+            "Es ist verboten, im Keller Lärm zu machen",
+          ],
           hint: [
             tr("Olumsuzluk sözcüğü sıfattan hemen önce duruyor, mastar sona kalıyor:"),
             de("Man darf im Keller nicht laut sein."),
@@ -1347,6 +1359,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Sind die Nebenkosten dabei",
+          accept: ["Sind die Nebenkosten inklusive", "Sind die Nebenkosten inbegriffen"],
           hint: [
             tr("Bu kelime çoğul olduğu için fiil de çoğul biçimini alır:"),
             de("Sind die Nebenkosten dabei?"),
@@ -1842,8 +1855,21 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Kannst du das Gepäck hierherlegen",
+          accept: [
+            "Kannst du das Gepäck hierhinlegen",
+            "Kannst du das Gepäck hierhin legen",
+            "Kannst du das Gepäck hierher legen",
+            "Kannst du das Gepäck hier hinlegen",
+            "Kannst du das Gepäck hierhinstellen",
+            "Kannst du das Gepäck hierhin stellen",
+            "Kannst du das Gepäck hier abstellen",
+          ],
           hint: [
-            tr("Kip fiili başa geçiyor, asıl fiil mastar hâlinde sonda kalıyor:"),
+            tr("Kip fiili başa geçiyor, asıl fiil sonda kalıyor. 'Buraya' yön bildiriyor, bunun için"),
+            de("hierher"),
+            tr("ya da"),
+            de("hierhin"),
+            tr("kullanılır, ikisi de doğru:"),
             de("Kannst du das Gepäck hierherlegen?"),
             tr("Tekrar dene."),
           ],
@@ -2074,6 +2100,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich sitze gern im Garten",
+          accept: ["Im Garten sitze ich gern"],
           hint: [
             tr("Bahçe için yer bildiren biçim yine kısalıyor:"),
             de("Ich sitze gern im Garten."),
@@ -2086,6 +2113,7 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Auf dem Balkon scheint die Sonne",
+          accept: ["Die Sonne scheint auf dem Balkon"],
           hint: [
             tr("Yer ifadesi başa geçince fiil hemen arkasından geliyor, özne sonra:"),
             de("Auf dem Balkon scheint die Sonne."),

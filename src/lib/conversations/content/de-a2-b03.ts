@@ -1769,6 +1769,7 @@ export const deA2B03: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich muss mich eine Stunde hinlegen",
+          accept: ["Ich muss mich für eine Stunde hinlegen"],
           hint: [
             tr("Dönüşlü zamir kip fiilinden hemen sonra durur, asıl fiil sona gider:"),
             de("Ich muss mich eine Stunde hinlegen."),

@@ -190,6 +190,7 @@ export const deA1B08: Conversation[] = [
         expect: {
           kind: "produce",
           target: "In meiner Freizeit male ich",
+          accept: ["Ich male in meiner Freizeit"],
           hint: [
             tr("Zaman ifadesi baştaysa fiil ikinci sıraya geçer, sen fiilin arkasında kalırsın:"),
             de("In meiner Freizeit male ich."),
