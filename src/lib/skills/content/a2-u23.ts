@@ -366,7 +366,12 @@ export const a2U23: SkillExercise[] = [
         prompt: "Cümleyi resmî hâle çevir: burada bir memurla konuşuluyor.",
         source: "Lies das Formular noch einmal durch.",
         answer: "Lesen Sie das Formular noch einmal durch.",
-        alternatives: ["Lesen Sie das Formular noch einmal durch"],
+        alternatives: [
+          "Lesen Sie das Formular noch einmal durch",
+          "Bitte lesen Sie das Formular noch einmal durch.",
+          "Lesen Sie bitte das Formular noch einmal durch.",
+          "Lesen Sie das Formular bitte noch einmal durch.",
+        ],
         why: "Resmî emirde fiil tam biçimini alır ve Sie söylenir; du biçimi resmî ortamda kaba durur.",
       },
     ],

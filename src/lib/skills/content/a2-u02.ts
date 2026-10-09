@@ -303,7 +303,7 @@ export const a2U02: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Cümleyi geçmiş zamana çevir.",
+        prompt: "Cümleyi geçmiş zamana çevir: sein ve haben için Präteritum kullan.",
         source: "Ich bin nervös und habe keine Zeit.",
         answer: "Ich war nervös und hatte keine Zeit.",
         alternatives: ["Ich war nervös und hatte keine Zeit"],

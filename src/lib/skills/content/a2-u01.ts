@@ -297,7 +297,7 @@ export const a2U01: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Cümleyi geçmiş zamana çevir.",
+        prompt: "Cümleyi Perfekt ile geçmiş zamana çevir.",
         source: "Ich verliere meinen Schlüssel.",
         answer: "Ich habe meinen Schlüssel verloren.",
         alternatives: ["Ich habe meinen Schlüssel verloren"],

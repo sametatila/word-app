@@ -393,7 +393,10 @@ export const b2U07: SkillExercise[] = [
         prompt: "Cümleyi edilgen Perfekt'e çevir; anlamı değiştirme.",
         source: "Die Stadt hat die Fassaden nach alten Fotos wiederhergestellt.",
         answer: "Die Fassaden sind nach alten Fotos wiederhergestellt worden.",
-        alternatives: ["Die Fassaden sind nach alten Fotos wiederhergestellt worden"],
+        alternatives: [
+          "Die Fassaden sind nach alten Fotos wiederhergestellt worden",
+          "Die Fassaden sind von der Stadt nach alten Fotos wiederhergestellt worden.",
+        ],
         why: "Etken Perfekt haben ile kurulur, edilgen Perfekt sein ile. Nesne özneye geçer ve geworden yerine kısalmış worden gelir. Fail (die Stadt) burada zaten önemsiz olduğu için düşürülüyor — edilgenin asıl işi bu.",
       },
     ],

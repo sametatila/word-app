@@ -401,7 +401,10 @@ export const b2U12: SkillExercise[] = [
         prompt: "Adlaştırılmış yöntem belirtecini indem'li yan cümleye çevir.",
         source: "Durch dreimaliges Wiegen haben wir die Toleranz ausgeglichen.",
         answer: "Wir haben die Toleranz ausgeglichen, indem wir dreimal gewogen haben.",
-        alternatives: ["Wir haben die Toleranz ausgeglichen, indem wir dreimal gewogen haben"],
+        alternatives: [
+          "Wir haben die Toleranz ausgeglichen, indem wir dreimal gewogen haben",
+          "Indem wir dreimal gewogen haben, haben wir die Toleranz ausgeglichen.",
+        ],
         why: "Almanca adlaştırılmış bir yöntem belirtecini (durch dreimaliges Wiegen) indem'li yan cümleye çevirebilir; bu biçim daha okunur ve kimin ne yaptığını söyler. Türkçedeki '-erek' ulacı özneyi tekrarlamaz, Almanca ise yan cümlede özneyi zorunlu kılar.",
       },
     ],

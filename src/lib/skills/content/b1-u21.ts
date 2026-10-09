@@ -421,6 +421,11 @@ export const b1U21: SkillExercise[] = [
         prompt: "„statt“ cümlesini mastara çevir.",
         source: "Statt ich fahre mit dem Auto, nehme ich das Rad.",
         answer: "Statt mit dem Auto zu fahren, nehme ich das Rad.",
+        alternatives: [
+          "Anstatt mit dem Auto zu fahren, nehme ich das Rad.",
+          "Ich nehme das Rad, statt mit dem Auto zu fahren.",
+          "Ich nehme das Rad, anstatt mit dem Auto zu fahren.",
+        ],
         why: "Türkçe '-mek yerine' tek kalıptır ve fiil çekimsizdir ('gitmek yerine'), ama öğrenci Almancada 'statt'ı bir bağlaç sanıp arkasına çekimli cümle koyuyor. Almanca burada zu'lu MASTAR ister: statt zu fahren, statt zu schätzen, statt Angst zu haben. Özne yalnız ana cümlede söylenir.",
       },
     ],

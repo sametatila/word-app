@@ -321,7 +321,7 @@ export const a1U25: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Cümleyi geçmiş zamana çevir.",
+        prompt: "Cümleyi Perfekt ile geçmiş zamana çevir.",
         source: "Ich esse mit Paula.",
         answer: "Ich habe mit Paula gegessen",
         alternatives: ["Ich habe mit Paula gegessen."],

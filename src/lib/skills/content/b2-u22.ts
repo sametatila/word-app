@@ -380,11 +380,13 @@ export const b2U22: SkillExercise[] = [
       },
       {
         kind: "rewrite",
-        prompt: "Teselli cümlesini empati sorusuna çevir.",
+        prompt: "Teselli etme; Hannes'in önerdiği gibi Konjunktiv II ile bir empati sorusu kur: işini kaybeden arkadaşının yerinde olsan nasıl hissederdin?",
         source: "Du findest bestimmt schnell etwas Neues.",
         answer: "Wie würdest du dich an ihrer Stelle fühlen?",
         alternatives: [
           "Wie würdest du dich an ihrer Stelle fühlen",
+          "Wie würdest du dich fühlen, wenn du an ihrer Stelle wärst?",
+          "Wie würde ich mich an ihrer Stelle fühlen?",
           "Wie geht es dir damit?",
         ],
         why: "Teselli cümlesi konuşanın rahatlamasına yarar, dinleyenin değil; üstelik geleceğe dair bir vaat verir ve o vaadi tutamaz. Konjunktiv II ile kurulan soru ise karşı tarafı kendi durumunun içine davet eder; Türkçedeki 'onun yerinde olsan' kalıbıyla aynı işi görür ve orada da kip değişir.",

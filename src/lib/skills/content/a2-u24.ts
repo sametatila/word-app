@@ -365,7 +365,7 @@ export const a2U24: SkillExercise[] = [
         prompt: "Cümleyi günlük dile çevir: zaman zarfı varken werden gereksiz ağırlık yapıyor.",
         source: "Nächste Woche werde ich anfangen.",
         answer: "Nächste Woche fange ich an.",
-        alternatives: ["Nächste Woche fange ich an"],
+        alternatives: ["Nächste Woche fange ich an", "Ich fange nächste Woche an."],
         why: "Zaman zarfı geleceği zaten gösterdiği için Almanca günlük dilde şimdiki zaman kullanılır; werden'i her cümleye koymak dili resmîleştirir.",
       },
     ],
