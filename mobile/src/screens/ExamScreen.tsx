@@ -22,7 +22,7 @@ import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, Det
 import { RoundView } from "../game/rounds";
 import { ReportFlag } from "../ui/ReportFlag";
 import { NoHints } from "../game/noHints";
-import { written } from "../game/skillQuiz";
+import { matchSentence } from "../lib/sentenceMatch";
 import { prefetchDialogue, speakDialogue, speakTarget, stopSpeaking } from "../lib/tts";
 import { dialogueCast } from "../lib/speakers";
 import { ensureMicPermission, listenOnce } from "../lib/stt";
@@ -1032,7 +1032,12 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
   const [typed, setTyped] = useState("");
   const [parts, setParts] = useState<string[]>([]);
   const answer = it.mode === "order" ? parts.map((p) => p.split(":").slice(1).join(":")).join(" ") : typed;
-  const ok = written(answer, [it.de, ...it.accept]);
+  /* HÜKÜM WEB VE SUNUCUYLA AYNI: cümle hakemi, tam ya da yalnız yazım sapması
+     geçer, sıra hatası geçmez (`exam-player` `submitProduce`, `lib/exam-grade`
+     `gradeObjective`). Burada bütün dizede tek harf toleransı (`written`)
+     vardı: iki harflik yazım hatası Androidde yanlış, webde doğruydu. */
+  const verdict = matchSentence(answer, it.de, it.accept, currentTargetLang()).verdict;
+  const ok = verdict === "exact" || verdict === "spelling";
   /*
     HAZIRLIK KURALI IKI PLATFORMDA AYNI. Burada yalniz `answer.trim()`
     vardi: siralama kipinde bes parcanin biri yerlestirilmis bir "cumle"

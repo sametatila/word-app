@@ -2,7 +2,9 @@
  * Cümle eşleştirme birim testi — `npm run test:match` (WP-10, adım 3).
  * Veritabanı yok; `lib/sentence-match` saf.
  */
-import { foldSentence, matchSentence, produceMiss } from "../src/lib/sentence-match";
+import { foldSentence, matchSentence, produceMiss, typoOnly } from "../src/lib/sentence-match";
+import { foldCompare } from "../src/components/games/types";
+import { levenshtein } from "../src/lib/errors";
 
 let failures = 0;
 function check(name: string, cond: boolean, detail = "") {
@@ -73,6 +75,59 @@ check("sıra bozuk + eklenmiş kelimeler → hint", produceMiss("Ich möchte die
 check("tek kelime farkı (çekim) → hint", produceMiss("Ich wohne seit ein Jahr hier", "Ich wohne seit einem Jahr hier") === "hint");
 check("fazladan tek kelime (zu) → hint", produceMiss("Ich muss zu arbeiten", "Ich muss arbeiten") === "hint");
 check("yarım cümle → hint", produceMiss("Ich möchte die Stelle", W, WA) === "hint");
+
+/* Dilbilgisi farkı yazım hatası değil (QA 2026-10-09): yeniden yaz görevinde
+   çekim hatası "küçük yazım hatası" diye geçiyordu. */
+console.log("\n8) Dilbilgisi farkı yazım sayılmaz");
+const notSpelling = (typed: string, target: string, lang: "de" | "en" = "de") => {
+  const r = matchSentence(typed, target, [], lang);
+  return r.verdict !== "exact" && r.verdict !== "spelling";
+};
+check("QA: kein ↔ keine (olumsuz yeniden yaz)", notSpelling("Ich habe kein Katze.", "Ich habe keine Katze."));
+check("QA: kommst ↔ kommen (resmî yeniden yaz)", notSpelling("Woher kommst Sie?", "Woher kommen Sie?"));
+check("artikel: den ↔ dem", notSpelling("Ich fahre mit den Bus.", "Ich fahre mit dem Bus."));
+check("artikel: einen ↔ einem", notSpelling("Ich wohne in einen Haus.", "Ich wohne in einem Haus."));
+check("iyelik: meine ↔ meinem", notSpelling("Ich spreche mit meine Mutter.", "Ich spreche mit meiner Mutter."));
+check("dies-: diese ↔ dieser", notSpelling("Ich kaufe dieser Jacke.", "Ich kaufe diese Jacke."));
+check("zamir: mich ↔ mir", notSpelling("Kannst du mich helfen?", "Kannst du mir helfen?"));
+check("am ↔ im", notSpelling("Ich bin am Büro.", "Ich bin im Büro."));
+check("umlaut: schon ↔ schön", notSpelling("Das ist schon.", "Das ist schön."));
+check("umlaut: Mutter ↔ Mütter", notSpelling("Die Mutter sind hier.", "Die Mütter sind hier."));
+check("umlaut: Bruder ↔ Brüder", notSpelling("Meine Bruder spielen Fußball.", "Meine Brüder spielen Fußball."));
+check("çekim eki: Katze ↔ Katzen", notSpelling("Ich habe zwei Katze.", "Ich habe zwei Katzen."));
+check("çekim eki: mache ↔ machst", notSpelling("Was machst ich heute?", "Was mache ich heute?"));
+check("çekim eki: hat ↔ hast", notSpelling("Du hat ein Auto.", "Du hast ein Auto."));
+check("İngilizce: go ↔ goes", notSpelling("She go to school.", "She goes to school.", "en"));
+check("İngilizce: a ↔ an", notSpelling("I eat a apple.", "I eat an apple.", "en"));
+check("İngilizce: is ↔ are", notSpelling("They is happy.", "They are happy.", "en"));
+const spelled = (typed: string, target: string, lang: "de" | "en" = "de") => matchSentence(typed, target, [], lang).verdict === "spelling";
+check("gerçek yazım: Shule → Schule", spelled("Ich gehe in die Shule.", "Ich gehe in die Schule."));
+check("gerçek yazım: Wohnug → Wohnung", spelled("Meine Wohnug ist klein.", "Meine Wohnung ist klein."));
+check("gerçek yazım: harf yer değişimi (Frühstcük → Frühstück)", spelled("Ich esse Frühstcük.", "Ich esse Frühstück."));
+check("gerçek yazım: Kinno → Kino", spelled("Ich gehe heute ins Kinno", T));
+check("gerçek yazım: İngilizce recieve → receive", spelled("I receive a letter.", "I recieve a letter.", "en"));
+check("gerçek yazım: Strasse ↔ Straße tam", matchSentence("Die Strasse ist lang.", "Die Straße ist lang.").verdict === "exact");
+/* Telaffuz puanı eski toleransı istiyor: tanıyıcı çekim sonunu yutabiliyor. */
+check("loose: çekim farkı yakın kalır (telaffuz)", matchSentence("Ich habe kein Katze", "Ich habe keine Katze", [], "de", { loose: true }).verdict === "spelling");
+check("produceMiss: çekim farkı hâlâ ipucu", produceMiss("Woher kommst Sie?", "Woher kommen Sie?") === "hint");
+
+/* Kısa yazılı cevaplar (`written`: boşluk doldurma, kısa cevap, dikte, form):
+   aynı ölçüt, bütün dizede (QA #36: "Hunden" istenirken "Hunde" doğru sayıldı).
+   Kural `skills/quiz` `written` ile birebir. */
+console.log("\n9) Kısa yazılı cevap (written)");
+const writtenOk = (typed: string, answer: string, lang: "de" | "en" = "de") => {
+  const t = foldCompare(typed, lang);
+  const f = foldCompare(answer, lang);
+  return f === t || (f.length >= 5 && levenshtein(f, t) <= 1 && typoOnly(t, f, lang));
+};
+check("QA #36: Hunde ↔ Hunden geçmez", !writtenOk("Hunde", "Hunden"));
+check("Katze ↔ Katzen geçmez", !writtenOk("Katze", "Katzen"));
+check("schon ↔ schön geçmez", !writtenOk("schon", "schön"));
+check("çok kelimede çekim farkı geçmez (einen Hund ↔ einem Hund)", !writtenOk("mit einen Hund", "mit einem Hund"));
+check("Wohnug → Wohnung geçer", writtenOk("Wohnug", "Wohnung"));
+check("Shule → Schule geçer", writtenOk("Shule", "Schule"));
+check("Montga → Montag geçmez (iki harf, eski kural da)", !writtenOk("Montga", "Montag"));
+check("Strasse ↔ Straße tam", writtenOk("Strasse", "Straße"));
 
 console.log(failures === 0 ? "\nTÜM TESTLER GEÇTİ" : `\n${failures} TEST BAŞARISIZ`);
 process.exit(failures === 0 ? 0 : 1);

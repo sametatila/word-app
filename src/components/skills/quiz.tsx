@@ -14,6 +14,7 @@ import { GlossEntry } from "./gloss-entry";
 import { speakGerman } from "@/components/speak-button";
 import { CorrectIcon, InfoIcon, SpeakerIcon, WrongIcon } from "@/components/icons";
 import { levenshtein } from "@/lib/errors";
+import { typoOnly } from "@/lib/sentence-match";
 import { useT } from "@/lib/i18n/client";
 import { vibrate } from "@/lib/fx";
 
@@ -183,7 +184,8 @@ export function written(typed: string, accept: string[], lang: TargetLang = curr
   return accept.some((a) => {
     const f = fold(a, lang);
     if (f === t) return true;
-    return f.length >= 5 && levenshtein(f, t) <= 1;
+    /* Tek harf sapma yazım hatasıysa geçer; çekim/umlaut farkı geçmez (`typoOnly`). */
+    return f.length >= 5 && levenshtein(f, t) <= 1 && typoOnly(t, f, lang);
   });
 }
 

@@ -807,6 +807,23 @@ console.log("\n" + C.b + "17. CUMLE HAKEMI" + C.off);
   };
   sameList("hakem govdesi", body("mobile/src/lib/sentenceMatch.ts"), body("src/lib/sentence-match.ts"));
 
+  /* Kisa yazili cevap (`written`: bosluk doldurma, kisa cevap, dikte, form)
+     ayni yazim olcutunden geciyor: tek harf sapma YALNIZ dilbilgisel degilse
+     (`typoOnly`; QA #36 "Hunde" ↔ "Hunden"). Sinavin uretim bolumu iki
+     platformda da cumle hakemiyle, ayni gecme kuraliyla (mobil `written`
+     kullaniyordu: tam dizede tek harf). */
+  const writtenRule = (src) => {
+    const i = src.indexOf("export function written");
+    const b = i < 0 ? "" : src.slice(i, src.indexOf("\n}", i));
+    return ["tek harf=" + /levenshtein\(f, t\) <= 1/.test(b), "dilbilgisi degil=" + /typoOnly\(t, f, /.test(b)];
+  };
+  sameList("kisa yazili cevap yazim olcutu", writtenRule(read("mobile/src/game/skillQuiz.tsx")), writtenRule(read("src/components/skills/quiz.tsx")));
+  const examProduce = (src) => [
+    "hakem=" + /matchSentence\(answer, (?:it|item)\.de, (?:it|item)\.accept/.test(src),
+    "gecer=" + /verdict === "exact" \|\| (?:m\.)?verdict === "spelling"/.test(src),
+  ];
+  sameList("sinav uretim hukmu", examProduce(read("mobile/src/screens/ExamScreen.tsx")), examProduce(read("src/components/exam-player.tsx")));
+
   /* Saf yardimcilar: adlandirilmis islev govdesi. */
   const fn = (src, name) => {
     const i = src.indexOf(`export function ${name}`);

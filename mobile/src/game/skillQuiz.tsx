@@ -11,7 +11,7 @@ import { currentTargetLang } from "../lib/courses";
 import { foldCompare } from "../lib/textFold";
 import { foldContractions } from "../lib/contractions";
 import { foldEnglishSpelling } from "../lib/en-spelling";
-import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
+import { matchSentence, typoOnly, type SentenceMatch } from "../lib/sentenceMatch";
 import { seededShuffle } from "../lib/shuffle";
 import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
@@ -86,7 +86,8 @@ export function written(typed: string, accept: string[]): boolean {
   return accept.some((a) => {
     const f = fold(a);
     if (f === t) return true;
-    return f.length >= 5 && levenshtein(f, t) <= 1;
+    /* Tek harf sapma yazım hatasıysa geçer; çekim/umlaut farkı geçmez (`typoOnly`, web `skills/quiz` ile aynı). */
+    return f.length >= 5 && levenshtein(f, t) <= 1 && typoOnly(t, f, currentTargetLang());
   });
 }
 

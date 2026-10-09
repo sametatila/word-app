@@ -90,12 +90,103 @@ const showTokens = (s: string) => tokens(s.replace(/[.,!?;:„“”"()]/g, " ")
  * hâline geliyordu ve yazım hatası sayılıyordu: öğrenci yanlış saati yazıp
  * kalite 4 (yazım) alıyordu, oysa yanlış olan şey cümlenin BİLGİSİ. Rakam
  * ile rakam arasındaki fark hiçbir zaman yazım hatası değildir.
+ *
+ * DİLBİLGİSİ FARKI DA YAZIM HATASI DEĞİL (QA 2026-10-09). Tolerans yalnız
+ * harf sayısına bakıyordu ve çekim hatalarını "küçük yazım hatası" diye
+ * geçiriyordu: "Ich habe keine Katze." istenirken "Ich habe kein Katze.",
+ * "Woher kommen Sie?" istenirken "Woher kommst Sie?" doğru sayıldı — yeniden
+ * yaz görevinin ölçtüğü şey tam da bu çekim. Üç fark artık yazım değil:
+ *   1. yalnız umlaut farkı (schon/schön, Mutter/Mütter): ayrı kelime/biçim;
+ *   2. iki kapalı sınıf sözcüğü (artikel, kein, iyelik, dies-/jed-, şahıs
+ *      zamiri, sein/haben/werden çekimi, am/im/zum…): biri ötekinin yerine
+ *      yazılmışsa seçilen biçim yanlış, harf değil;
+ *   3. aynı gövde, yalnız çekim eki farklı (kommst/kommen, Katze/Katzen,
+ *      mache/machst; İngilizcede s/es/ed/ing).
+ * Gerçek yazım hataları (Shule, Wohnug, Kinno, harf yer değişimi) yine yazım.
+ * `loose` eski davranış: telaffuz puanı tanıyıcının çekim sapmasını "yakın"
+ * saymaya devam ediyor (`lib/pronounce`), orada ölçülen anlaşılırlık.
  */
-function nearlySame(a: string, b: string): boolean {
+const CLOSED_STEMS: Record<string, { stems: string[]; endings: string[]; words: string[] }> = {
+  de: {
+    stems: ["ein", "kein", "mein", "dein", "sein", "ihr", "unser", "eur", "euer", "dies", "jed", "welch", "manch", "solch", "jen", "all"],
+    endings: ["", "e", "en", "em", "er", "es"],
+    words: [
+      "der", "die", "das", "den", "dem", "des",
+      "ich", "mich", "mir", "du", "dich", "dir", "er", "ihn", "ihm", "sie", "es", "wir", "uns", "euch", "ihnen", "man",
+      "bin", "bist", "ist", "sind", "seid", "war", "warst", "waren", "wart",
+      "habe", "hast", "hat", "haben", "habt", "hatte", "hattest", "hatten", "hattet",
+      "werde", "wirst", "wird", "werden", "werdet", "wurde", "wurdest", "wurden", "wurdet",
+      "an", "am", "ans", "in", "im", "ins", "zu", "zum", "zur", "von", "vom", "bei", "beim",
+    ],
+  },
+  en: {
+    stems: [],
+    endings: [],
+    words: [
+      "a", "an", "the", "this", "that", "these", "those",
+      "i", "me", "my", "mine", "you", "your", "yours", "he", "him", "his", "she", "her", "hers", "it", "its",
+      "we", "us", "our", "ours", "they", "them", "their", "theirs",
+      "is", "am", "are", "was", "were", "be", "been", "being", "has", "have", "had", "do", "does", "did",
+    ],
+  },
+};
+const CLOSED: Record<string, Set<string>> = Object.fromEntries(
+  Object.entries(CLOSED_STEMS).map(([l, c]) => [l, new Set([...c.words, ...c.stems.flatMap((s) => c.endings.map((e) => s + e))])]),
+);
+const ENDINGS: Record<string, Set<string>> = {
+  de: new Set(["", "e", "en", "er", "es", "em", "n", "s", "st", "t", "et", "est", "te", "ten", "tet", "test", "tes"]),
+  en: new Set(["", "s", "es", "ed", "d", "ing", "e", "y", "ies", "ied", "er", "est"]),
+};
+
+/** Aynı gövde (en az iki harf), iki ayrı çekim eki: kommst/kommen, Katze/Katzen. */
+function sameStem(a: string, b: string, endings: Set<string>): boolean {
+  let p = 0;
+  while (p < a.length && p < b.length && a[p] === b[p]) p++;
+  for (let s = p; s >= 2; s--) {
+    const ea = a.slice(s);
+    const eb = b.slice(s);
+    if (ea !== eb && endings.has(ea) && endings.has(eb)) return true;
+  }
+  return false;
+}
+
+/** Fark dilbilgisel mi (umlaut, kapalı sınıf, çekim eki)? Katlanmış kelimelerde. */
+function grammaticalPair(a: string, b: string, lang: string): boolean {
+  const closed = CLOSED[lang];
+  if (closed && closed.has(a) && closed.has(b)) return true;
+  const endings = ENDINGS[lang];
+  if (endings && sameStem(a, b, endings)) return true;
+  if (lang === "de") {
+    const plain = (x: string) => x.replace(/ae/g, "a").replace(/oe/g, "o").replace(/ue/g, "u");
+    const pa = plain(a);
+    const pb = plain(b);
+    if (pa === pb || (endings && sameStem(pa, pb, endings))) return true;
+  }
+  return false;
+}
+
+function nearlySame(a: string, b: string, lang: string, loose = false): boolean {
   if (a === b) return false;
   if (/^\d+(st|nd|rd|th)?$/.test(a) || /^\d+(st|nd|rd|th)?$/.test(b)) return false;
   const tol = Math.max(a.length, b.length) >= 6 ? 2 : 1;
-  return levenshtein(a, b) <= tol;
+  if (levenshtein(a, b) > tol) return false;
+  return loose || !grammaticalPair(a, b, lang);
+}
+
+/**
+ * Bütün cevapta küçük sapma YAZIM mı, DİLBİLGİSİ mi? Tek kelimelik/kısa yazılı
+ * cevaplar (boşluk doldurma, kısa cevap, dikte, form alanı: `written`) bütün
+ * dizede tek harf toleransı veriyordu ve "Hunden" istenirken "Hunde" doğru
+ * sayıldı (QA #36) — cümle hakemindeki aynı kusur. Ölçüt `nearlySame`inkiyle
+ * aynı: katlanmış iki metnin farklı kelimeleri arasında dilbilgisel bir çift
+ * (umlaut, kapalı sınıf, çekim eki) varsa yazım hatası değil. Kelime sayısı
+ * farklıysa (boşluk unutulmuş) yazım sayılır.
+ */
+export function typoOnly(typedFolded: string, targetFolded: string, lang: string): boolean {
+  const a = typedFolded.split(/\s+/).filter(Boolean);
+  const b = targetFolded.split(/\s+/).filter(Boolean);
+  if (a.length !== b.length) return true;
+  return a.every((w, i) => w === b[i] || !grammaticalPair(w, b[i], lang));
 }
 
 /** En uzun ortak alt dizi: hedef ve yazılan dizinin hizalı indeks çiftleri. */
@@ -120,7 +211,7 @@ function lcs(a: string[], b: string[]): [number, number][] {
   return pairs;
 }
 
-function compare(typedRaw: string, targetRaw: string, lang: TargetLang) {
+function compare(typedRaw: string, targetRaw: string, lang: TargetLang, loose: boolean) {
   const t = foldTokens(targetRaw, lang);
   const u = foldTokens(typedRaw, lang);
   const targetMarks: TokenMark[] = new Array(t.length).fill("missing");
@@ -145,7 +236,7 @@ function compare(typedRaw: string, targetRaw: string, lang: TargetLang) {
   }
   for (let i = 0; i < t.length; i++) {
     if (targetMarks[i] !== "missing") continue;
-    const near = [...freeTyped].find((j) => nearlySame(u[j], t[i]));
+    const near = [...freeTyped].find((j) => nearlySame(u[j], t[i], lang, loose));
     if (near !== undefined) {
       targetMarks[i] = "typo";
       typedMarks[near] = "typo";
@@ -172,12 +263,15 @@ function compare(typedRaw: string, targetRaw: string, lang: TargetLang) {
  * aynı, eksik/fazla/yazım yok, sıra farklı) → yanlış. Karma durumlar (hem
  * sıra hem yazım) sıraya sayılır: kelimeler bilinmiş, cümle kurulamamış.
  */
-export function matchSentence(typed: string, target: string, alternatives: string[] = [], lang: TargetLang = "de"): SentenceMatch {
+/** `loose`: çekim/umlaut farkını da yakın say (yalnız telaffuz puanı; bkz. `nearlySame`). */
+export type MatchOptions = { loose?: boolean };
+
+export function matchSentence(typed: string, target: string, alternatives: string[] = [], lang: TargetLang = "de", opts: MatchOptions = {}): SentenceMatch {
   const candidates = [target, ...alternatives.filter((a) => a && a.trim())];
   const typedShown = showTokens(typed);
   let best: { cand: string; c: ReturnType<typeof compare> } | null = null;
   for (const cand of candidates) {
-    const c = compare(typed, cand, lang);
+    const c = compare(typed, cand, lang, opts.loose === true);
     if (!best || c.score > best.c.score) best = { cand, c };
   }
   const { cand, c } = best!;

@@ -73,7 +73,8 @@ export function scorePronunciation(
     const words: WordScore[] = target.split(/\s+/).filter(Boolean).map((w) => ({ word: w, status: "missing" }));
     return { overall: 0, wordAccuracy: 0, completeness: 0, fluency: 0, words, extra: [], rate: null, pauses: 0, transcript: "", passed: false };
   }
-  const m = matchSentence(text, target, [], opts.lang ?? "de");
+  /* Telaffuzda çekim sapması "yakın" kalıyor (tanıyıcı sonu yutabiliyor): `loose`. */
+  const m = matchSentence(text, target, [], opts.lang ?? "de", { loose: true });
   const heardTokens = m.typed.map((t) => t.text);
   /* SAPMA ÖBEK OLABİLİR. Eşleşme yalnız TEK SÖZCÜK karşılaştırıyordu:
      `heard` girdisi tanıyıcının bir jetonuna birebir eşit olmak zorundaydı.
