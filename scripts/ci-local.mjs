@@ -95,6 +95,9 @@ const AGIR = [
   { desen: /^npm ci$/m, neden: "yerelde kurulum zaten var" },
   { desen: /next build/, neden: "dakikalar sürüyor" },
   { desen: /migrate-all|schema-check|test:entitlement|test:legal-db/, neden: "veritabanı istiyor" },
+  /* Uçtan uca adım tohumluyor ve içerik yayınlıyor (db:seed, content:publish): yerelde
+     test veritabanı olmadan kırmızı yanıyor ve yanlış veritabanına yazma riski var. */
+  { desen: /db:seed|content:publish|test:e2e/, neden: "tohumlu test veritabanı istiyor" },
 ];
 
 const argv = process.argv.slice(2);
