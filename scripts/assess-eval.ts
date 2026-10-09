@@ -6,7 +6,7 @@
  *   npm run test:assess -- --json                                 (ham çıktıyı da bas)
  *   npm run test:assess -- --only a2-w-mixed                     (tek örnek)
  *
- * 26 örnek cevap (A1–B2, doğru/yanlış/karışık, dört tür). Her örnekte insan
+ * 32 örnek cevap (A1–B2, doğru/yanlış/karışık, dört tür). Her örnekte insan
  * değerlendirmesi (rubrik puanları ve beklenen hata tipleri) önceden yazılı;
  * betik modelin puanını bununla karşılaştırır: alt puan farkı ±1 içinde mi,
  * beklenen hata tipleri yakalandı mı, hata span'leri metinde doğru yeri
@@ -28,6 +28,7 @@ import {
   type AssessRequest,
 } from "../src/lib/assess-prompts";
 import type { ErrorType } from "../src/lib/errors";
+import { enforceSeparable, findSeparableMisses, separableNotes } from "../src/lib/separable-check";
 
 type Sample = {
   id: string;
@@ -71,6 +72,10 @@ const S = (
   expectSpans,
 });
 
+const VERLAUFEN_SCENE = "Kaybolduğunu fark ettin ve bir dükkâna girip yardım istedin. Durumunu anlat, nereye gitmek istediğini söyle, tarifi dinle ve emin olmak için tekrar et.";
+const VERLAUFEN_PARTNER = "sakin sakin tarif eden, sabırlı bir dükkân sahibi";
+const VERLAUFEN_TARGETS = ["Ich habe mich verlaufen.", "Nehmen Sie die zweite Straße.", "Biegen Sie an der Ampel rechts ab."];
+
 export const SAMPLES: Sample[] = [
   // ── A1 cümle ─────────────────────────────────────────────────────
   S("a1-s-ok", "sentence", "A1", "Çevir: Ben kahve içiyorum.", "Ich trinke Kaffee.", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { target: "Ich trinke Kaffee." }),
@@ -102,6 +107,16 @@ export const SAMPLES: Sample[] = [
   S("a2-w-einladung", "writing", "A2", "Arkadaşını doğum gününe davet et: tarih, saat, yer, ne getirsin? (en az 40 kelime)", "Liebe Lena, ich habe am Samstag Geburtstag und möchte dich zu meiner Party einladen. Die Party beginnt um 19 Uhr bei mir zu Hause. Kannst du bitte einen Salat mitbringen? Sag mir bis Donnerstag Bescheid, ob du kommen kannst. Ich freue mich auf dich! Liebe Grüße, Mehmet", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { constraints: ["en az 40 kelime"] }),
   S("b1-w-beschwerde", "writing", "B1", "Komşuna gürültü hakkında kibar bir not yaz. (en az 50 kelime)", "Lieber Herr Schmidt, ich schreibe Ihnen, weil ich in den letzten Wochen oft nachts nicht schlafen kann. Die Musik aus Ihrer Wohnung ist sehr laut, besonders am Wochenende. Ich verstehe, dass Sie gern Musik hören, aber ich muss früh aufstehen. Könnten Sie die Musik nach 22 Uhr leiser machen? Vielen Dank für Ihr Verständnis. Mit freundlichen Grüßen, Ayşe Demir", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { constraints: ["en az 50 kelime", "kibar"] }),
   S("b1-w-meinung-weak", "writing", "B1", "Görüşün: Ev ofisi mi, ofis mi? Sebep ver. (en az 60 kelime)", "Ich denke Homeoffice ist besser weil man muss nicht fahren. Man kann mehr schlafen und mit Familie sein. Aber manchmal ist langweilig und man hat keine Kollegen. Im Büro ist mehr Kontakt aber auch mehr Stress. Für mich Homeoffice ist besser.", { task: 3, grammar: 2, vocab: 2, structure: 2 }, ["verb_position"], { constraints: ["en az 60 kelime"] }, ["man muss"]),
+  // ── Ayrılabilir fiil (QA F-0072, 2026-10-09) ─────────────────────
+  /* Puanlı konuşma, Ü15 "Ich habe mich verlaufen", QA'nın cevabı birebir: 3. turda
+     "abbiegen"in öneki yok. Rubrik hata bulmamıştı (Dil bilgisi 4/4, %100; düzeltilmiş
+     metne "ab"ı sessizce eklemiş ama hata listesine yazmamıştı). İstem kuralı + kod notu +
+     çerçevede zorlama (`lib/separable-check`); üretimle aynı yoldan ölçülüyor. */
+  S("a1-rp-trennbar-miss", "chat", "A1", `${VERLAUFEN_SCENE} (Sınav: ${VERLAUFEN_PARTNER} ile konuşma)`, "Ja, ich habe mich verlaufen. Ich suche den Bahnhof.\nOkay, ich gehe geradeaus. Und dann?\nIch nehme die zweite Strasse und biege an der Ampel rechts.\nDanke, jetzt verstehe ich das.\nIch gehe an der Post vorbei und biege rechts ab. Vielen Dank!", { task: 4, grammar: 3, vocab: 4, structure: 4 }, ["verb_position"], { targets: VERLAUFEN_TARGETS, constraints: ["5 tur", "yardım yok"] }, ["biege"]),
+  S("a1-rp-trennbar-ok", "chat", "A1", `${VERLAUFEN_SCENE} (Sınav: ${VERLAUFEN_PARTNER} ile konuşma)`, "Ja, ich habe mich verlaufen. Ich suche den Bahnhof.\nOkay, ich gehe geradeaus. Und dann?\nIch nehme die zweite Straße und biege an der Ampel rechts ab.\nDanke, jetzt verstehe ich das.\nIch gehe an der Post vorbei und biege rechts ab. Vielen Dank!", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { targets: VERLAUFEN_TARGETS, constraints: ["5 tur", "yardım yok"] }),
+  /* Öneksiz gövde kendi anlamıyla doğru: kural bunu hata saymamalı. */
+  S("a1-rp-steigen-ok", "chat", "A1", "Gardaki danışmada Berlin trenini sor: aktarma var mı, hangi peron? (Sınav: danışma memuru ile konuşma)", "Guten Tag, ich möchte nach Berlin fahren.\nMuss ich umsteigen?\nGut, ich steige in Hannover um.\nUnd dann steige ich in den Zug nach Berlin.\nDanke schön!", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { targets: ["Muss ich umsteigen?", "Ich steige in Hannover um.", "Fährt der Zug direkt?"] }),
+  S("a1-s-anrufen-miss", "sentence", "A1", "Çevir: Seni yarın ararım.", "Ich rufe dich morgen.", { task: 3, grammar: 2, vocab: 4, structure: 3 }, ["verb_position"], { target: "Ich rufe dich morgen an." }, ["rufe"]),
   // ── B2 ───────────────────────────────────────────────────────────
   S("b2-s-passiv", "sentence", "B2", "Passiv'e çevir: Man renoviert das Haus.", "Das Haus wird renoviert.", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { target: "Das Haus wird renoviert." }),
   S("b2-w-formal", "writing", "B2", "Resmî şikâyet e-postası: aldığın ürün bozuk çıktı; iade ya da değişim iste. (en az 80 kelime)", "Sehr geehrte Damen und Herren, ich habe am 3. Mai bei Ihnen einen Staubsauger bestellt, der am 10. Mai geliefert wurde. Leider musste ich feststellen, dass das Gerät nicht funktioniert: Der Motor läuft zwar an, aber es wird keine Saugleistung erzeugt. Da es sich offensichtlich um einen Produktionsfehler handelt, bitte ich Sie, das Gerät umzutauschen oder mir den Kaufpreis zu erstatten. Die Rechnung habe ich beigefügt. Ich wäre Ihnen dankbar, wenn Sie sich innerhalb der nächsten Woche bei mir melden könnten. Mit freundlichen Grüßen, Mehmet Yilmaz", { task: 4, grammar: 4, vocab: 4, structure: 4 }, [], { constraints: ["en az 80 kelime", "resmî kayıt"] }),
@@ -145,14 +160,17 @@ async function main() {
   let within = 0, subscores = 0, errorsHit = 0, errorsExpected = 0, spansOk = 0, spansExpected = 0, parsed = 0, extraErrorsOnClean = 0, lengthClean = 0, lengthExpected = 0, correctedOk = 0, correctedExpected = 0;
   for (const s of samples) {
     const started = Date.now();
+    /* Üretimle aynı ön ve son işlem (`lib/assess`): kodun notu isteme, çerçevedeki eksik önek sonuca. */
+    const separable = findSeparableMisses(s.req.answer.text, s.req);
     let raw = "";
     try {
-      raw = await completeChat(assessSystemPrompt(s.req.kind, s.req.level, s.req.lang, s.req.native), [{ role: "user", content: assessUserMessage(s.req) }], ASSESS_MAX_TOKENS);
+      raw = await completeChat(assessSystemPrompt(s.req.kind, s.req.level, s.req.lang, s.req.native), [{ role: "user", content: assessUserMessage(s.req, separableNotes(separable)) }], ASSESS_MAX_TOKENS);
     } catch (err) {
       console.log(`✗ ${s.id}: sağlayıcı hatası — ${(err as Error).message}`);
       continue;
     }
-    const a = parseAssessment(raw, s.req.answer.text, s.req.kind, minWordsFrom(s.req.task.constraints));
+    const got = parseAssessment(raw, s.req.answer.text, s.req.kind, minWordsFrom(s.req.task.constraints));
+    const a = got && enforceSeparable(got, separable, s.req.native);
     if (!a) {
       // Ham çıktı tam basılıyor: kırpılmış hâlinden ayrıştırma hatasının
       // sebebi anlaşılmıyordu (tırnak, kesik JSON, tek tırnak kapanış…).
@@ -178,6 +196,7 @@ async function main() {
     console.log(
       `${mark} ${s.id.padEnd(18)} insan ${Object.values(s.human).join("/")}  model ${[a.score.task, a.score.grammar, a.score.vocab, a.score.structure].join("/")}  genel ${String(a.score.overall).padStart(3)}  hatalar [${a.errors.map((e) => e.type).join(", ")}]  ${Date.now() - started}ms`,
     );
+    if (got && a !== got) console.log(`     (kod: model eksik öneki yazmadı, ayrılabilir fiil denetimi ekledi; modelin dil bilgisi puanı ${got.score.grammar})`);
     if (a.errors.length) for (const e of a.errors) console.log(`     · ${e.type}: "${e.wrong}" → "${e.fix}" — ${e.why_tr}`);
     console.log(`     övgü: ${a.praise_tr}\n     ipucu: ${a.next_tip_tr}`);
     if (s.expectCorrected) {
