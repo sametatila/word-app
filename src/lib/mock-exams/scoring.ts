@@ -65,6 +65,13 @@ export type ScoredItem = {
   correct: boolean;
   /** Öğrencinin verdiği cevap, ham hâliyle. */
   given: string;
+  /**
+   * Verilen cevabın okunur hâli (şıklı maddede şıkkın metni, doğru/yanlışta
+   * kâğıdın etiketi, eşleştirmede harf + metin); boş bırakılan maddede "".
+   * Yapay zekâ geri bildirimi ham dizini ("0") görüyordu ve "ilk söyleneni
+   * seçiyor" gibi uydurma örüntüler çıkarıyordu (QA F-0050).
+   */
+  givenLabel?: string;
   /** Doğru cevabın okunur hâli — dökümde gösterilir. */
   expected: string;
   /**
@@ -157,6 +164,23 @@ function expectedLabel(item: MockItem, task: MockTask, course: MockCourse): stri
   return item.accept[0];
 }
 
+function givenLabel(item: MockItem, task: MockTask, course: MockCourse, raw: string | undefined): string {
+  if (raw == null || !raw.trim()) return "";
+  if (item.kind === "mcq") {
+    const n = Number(raw);
+    return Number.isInteger(n) ? (item.options[n] ?? raw) : raw;
+  }
+  if (item.kind === "bool") {
+    const [yes, no] = mockBoolLabels(course, task.format);
+    return raw === "true" ? yes : raw === "false" ? no : raw;
+  }
+  if (item.kind === "match") {
+    const o = task.options?.find((x) => x.key === raw);
+    return o ? `${o.key}) ${o.label}` : raw;
+  }
+  return raw;
+}
+
 export function findPart(paper: MockPaper, skill: MockSkill): MockPart | null {
   return paper.parts.find((p) => p.skill === skill) ?? null;
 }
@@ -206,6 +230,7 @@ export function scorePart(
         goal: task.goal,
         correct: ok,
         given: answers[it.id] ?? "",
+        givenLabel: givenLabel(it, task, paper.course, answers[it.id]),
         expected: expectedLabel(it, task, paper.course),
       });
     }
