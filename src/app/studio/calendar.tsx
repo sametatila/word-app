@@ -341,7 +341,7 @@ function Card({ e, shown, drag, movable, setDrag, setOver, compact }: { e: Ep; s
               const s = shown(e, p.key);
               const c = POST_STATE[s].tone;
               return (
-                <span key={p.key} title={`${p.label}: ${POST_STATE[s].label}`} className={`grid size-5 place-items-center rounded-full text-[9px] text-strong ${c ? "on-fill" : "muted"}`} style={{ background: c ? TONE[c] : "var(--surface-2)" }}>
+                <span key={p.key} title={`${p.label}: ${POST_STATE[s].label}`} className={`grid size-5 place-items-center rounded-full text-micro ${c ? "on-fill" : "muted"}`} style={{ background: c ? TONE[c] : "var(--surface-2)" }}>
                   {p.short[0]}
                 </span>
               );
