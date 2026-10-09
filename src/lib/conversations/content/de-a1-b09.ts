@@ -1293,6 +1293,7 @@ export const deA1B09: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich komme morgen wieder",
+          accept: ["Morgen komme ich wieder"],
           hint: [
             tr("Önce zaman, sonra tekrar kelimesi gelir:"),
             de("Ich komme morgen wieder."),

@@ -566,6 +566,7 @@ export const deA2B05: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich kann heute nicht kommen, denn ich habe Nachtschicht",
+          accept: ["Heute kann ich nicht kommen, denn ich habe Nachtschicht"],
           hint: [
             tr("Bu bağlaçtan sonra fiil ikinci sırada kalır, sona gitmez:"),
             de("Ich kann heute nicht kommen, denn ich habe Nachtschicht."),
@@ -1191,6 +1192,7 @@ export const deA2B05: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Sie können mich heute im Büro erreichen",
+          accept: ["Heute können Sie mich im Büro erreichen"],
           hint: [
             tr("Ulaşılan kişi belirtme hâlinde ve asıl fiil sonda:"),
             de("Sie können mich heute im Büro erreichen."),

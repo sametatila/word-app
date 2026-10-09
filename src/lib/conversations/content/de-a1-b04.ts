@@ -656,6 +656,7 @@ export const deA1B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich kaufe morgen ein",
+          accept: ["Morgen kaufe ich ein"],
           hint: [
             tr("Zaman ortada kalır, parça en sonda:"),
             de("Ich kaufe morgen ein."),
