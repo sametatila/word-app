@@ -32,6 +32,7 @@ import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 import { UnlockCelebration } from "./src/ui/UnlockCelebration";
 import { refreshPremium } from "./src/lib/premium";
+import { primeGuestMilestones } from "./src/ui/GuestMilestoneCard";
 import { GuestClaimNotice } from "./src/ui/GuestClaimNotice";
 import { VerifiedNotice } from "./src/ui/VerifiedNotice";
 import { TermsUpdateNotice } from "./src/ui/TermsUpdateNotice";
@@ -322,19 +323,23 @@ function Nav() {
   useEffect(() => { if (user) { void flushPendingAnswers(); void flushPendingConversations(); void flushPendingPathItems(); } }, [user]);
 
   /*
-    PREMIUM DURUMU ÖNCEDEN OKUNUYOR.
+    ÖNCEDEN OKUNANLAR: PREMIUM DURUMU, MİSAFİR KİLOMETRE TAŞLARI.
 
     Premium durumu yalnız onu soran bir ekran açılınca çekiliyordu; Patika ve
     ünitedeki hak notu (`PathQuota`), Profil'deki Premium kartı ve Beceriler'in
     kota notu ilk açılışta cevaptan sonra araya girip altlarını itiyordu (QA
     F-0070 sınıfı). Oturum belli olur olmaz bir kez soruluyor; ekranlar
-    açıldığında durum çoğunlukla bellekte.
+    açıldığında durum çoğunlukla bellekte. Kilometre taşı kartı da aynı sebeple
+    (`ui/GuestMilestoneCard`): görülenler bellekte, sonuç ekranı kartı ilk
+    çizimde gösteriyor.
   */
   const userId = user?.id ?? null;
+  const isGuest = Boolean(user?.guest);
   useEffect(() => {
     if (!userId) return;
     void refreshPremium();
-  }, [userId]);
+    if (isGuest) void primeGuestMilestones(userId);
+  }, [userId, isGuest]);
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {
