@@ -55,7 +55,7 @@ const quizParts = (x: string) => new Set(x.split(/[,;/]/).map(quizNorm).filter(B
    söylerken kullanılır" diye bitiyor; bunlar ortak diye iki not aynı şeyi
    söylemiş olmaz. */
 const QUIZ_FRAME = new Set([
-  "kullanılır", "söylerken", "söyler", "sorarken", "sorar", "anlatırken", "anlatır", "bildirir", "bildirirken",
+  "kullanılır", "söylerken", "söyler", "sunarken", "sunar", "sorarken", "sorar", "anlatırken", "anlatır", "bildirir", "bildirirken",
   "için", "olan", "olarak", "gibi", "daha", "birine", "birini", "şeyi", "şeyin", "etmek", "olmak", "yapmak", "eder",
   "eine", "einen", "einem", "einer", "wird", "werden", "oder", "auch", "nicht", "sagt", "wenn", "dass", "sich", "etwas", "benutzt",
   "with", "that", "this", "from", "when", "used", "says", "something", "someone", "your", "about",
@@ -80,6 +80,16 @@ const QUIZ_NEAR: [string, string][] = [
   ["hinnehmen", "in kauf nehmen"],
 ];
 
+/* AYNI SORU SÖZCÜĞÜ (QA F-0062, 2026-10-09). "«bir şeyin nerede olduğunu
+   sorarken kullanılır» Almanca nasıl denir?" sorusunda doğru "Wo finde ich
+   …?" iken "Wo ist die Haltestelle?" de doğruydu: iki not ortak sözcük
+   taşımıyor ("nerede olduğunu" / "yerini"), ama iki kalıp da aynı soru
+   sözcüğüyle aynı işi soruyor. Soru kalıbında (metinde "?") ilk soru
+   sözcüğü aynıysa ikisi aynı şık sayılır; çeldirici başka işlevden gelir. */
+const QUIZ_WH =
+  /(?:^|[^\p{L}])(wo|wohin|woher|wann|wie|was|wer|wen|wem|wessen|warum|wieso|weshalb|welch(?:e|er|es|en|em)?|where|when|how|what|who|whom|whose|why|which)(?!\p{L})/u;
+const quizWh = (x: string) => (x.includes("?") ? (quizNorm(x).match(QUIZ_WH)?.[1] ?? "").replace(/^welch\w*/, "welch") : "");
+
 /**
  * İKİNCİ DOĞRU ŞIK. Aday şu durumlarda elenir:
  *  - metni ya da başlığı aynı; anlam parçaları (virgül, noktalı virgül, eğik
@@ -90,20 +100,36 @@ const QUIZ_NEAR: [string, string][] = [
  *    sorusunda başka bir Präteritum kalıbı da doğru okunuyordu;
  *  - anlamlar çerçeve dışı iki sözcük paylaşıyor ("kaynağı söylemeden bir
  *    iddiayı aktarır" / "aktarır ve kaynağı açık bırakır"), tek sözcüklüyse bir;
- *  - başlıklar `QUIZ_NEAR` eş anlamlı listesinde.
+ *  - başlıklar `QUIZ_NEAR` eş anlamlı listesinde;
+ *  - iki soru kalıbı aynı soru sözcüğüyle başlıyor (`quizWh`);
+ *  - notun `;` ile ayrılmış bir kısmı tek anlam sözcüğünü ötekiyle paylaşıyor.
  */
 function quizClash(a: QuizCand, b: QuizCand): boolean {
   const ha = quizHead(a.head), hb = quizHead(b.head);
   if (quizNorm(a.text) === quizNorm(b.text) || ha === hb || quizRoot(ha, hb)) return true;
   if (a.focus && a.focus === b.focus) return true;
   if (QUIZ_NEAR.some(([x, y]) => (x === ha && y === hb) || (x === hb && y === ha))) return true;
+  const wa = quizWh(a.head);
+  if (wa && wa === quizWh(b.head)) return true;
   const own = quizParts(a.mean), other = quizParts(b.mean);
   for (const m of other) if (own.has(m)) return true;
   for (const x of own) for (const y of other) if (quizRoot(x, y)) return true;
   const sa = quizStems(a.mean), sb = quizStems(b.mean);
   let shared = 0;
   for (const w of sb) if (sa.has(w)) shared++;
-  return shared >= 2 || (shared >= 1 && Math.min(sa.size, sb.size) <= 1);
+  if (shared >= 2 || (shared >= 1 && Math.min(sa.size, sb.size) <= 1)) return true;
+  /* Tek sözcüklü kural NOTUN İLK KISMINDA da: "kibarca öneri sorarken
+     kullanılır; how about'tan sonra fiile -ing gelir" ile "bir öneri sunarken
+     kullanılır" aynı işi söylüyor, ama ikinci kısım sözcük sayısını
+     büyüttüğü için tek ortak sözcük ("öneri") elemeye yetmiyordu (F-0062). */
+  const clauses = (x: string) => x.split(";").map(quizStems).filter((c) => c.size > 0);
+  for (const ca of clauses(a.mean))
+    for (const cb of clauses(b.mean)) {
+      let n = 0;
+      for (const w of cb) if (ca.has(w)) n++;
+      if (n >= 1 && Math.min(ca.size, cb.size) <= 1) return true;
+    }
+  return false;
 }
 /* YAKINLIK SONU */
 

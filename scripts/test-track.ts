@@ -287,6 +287,33 @@ const eşQuiz = deriveQuiz(eşBrief, qpool, 12, reviewPool, say);
 check("aynı quizde iki soru aynı doğru cevabı taşımaz", new Set(eşQuiz.map((q) => q.options[q.answer])).size === eşQuiz.length);
 
 /*
+  İKİNCİ DOĞRU ŞIK, KALIP SORUSU (QA F-0062). "«bir şeyin nerede olduğunu
+  sorarken kullanılır» Almanca nasıl denir?" sorusunda "Wo ist die
+  Haltestelle?" de doğruydu (aynı soru sözcüğü); İngilizce kursta "kibarca
+  öneri sorarken kullanılır; …" doğruyken "bir öneri sunarken kullanılır"
+  çeldiriciydi. Havuzda başka her kalıp varken ikisi de şık olmamalı.
+*/
+const yerPool = {
+  vocab: qpool.vocab,
+  patterns: [
+    { de: "Wo finde ich …?", tr: "bir şeyin nerede olduğunu sorarken kullanılır", focus: "f1" },
+    { de: "Wo ist die Haltestelle?", tr: "durağın yerini sorarken kullanılır", focus: "f2" },
+    { de: "How about taking a bus tour?", tr: "kibarca öneri sorarken kullanılır; how about'tan sonra fiile -ing gelir", focus: "f3" },
+    { de: "Shall we go?", tr: "bir öneri sunarken kullanılır", focus: "f4" },
+    ...Array.from({ length: 8 }, (_, k) => ({ de: `Satz ${k}.`, tr: `alan${k}xyz konusunu anlatır`, focus: `g${k}` })),
+  ],
+};
+let ikinciDogru = 0;
+for (let u = 1; u <= 30; u++) {
+  const b = { ...briefs[0], unitId: `de-a1-u${u}`, vocab: [], patterns: [yerPool.patterns[0], yerPool.patterns[2]] };
+  for (const q of deriveQuiz(b, yerPool, 2, undefined, say))
+    if (q.options[q.answer] === "Wo finde ich …?" && q.options.includes("Wo ist die Haltestelle?")) ikinciDogru++;
+  for (const q of deriveQuiz(b, yerPool, 2, undefined, say, "meaning"))
+    if (q.options[q.answer].startsWith("kibarca öneri") && q.options.includes("bir öneri sunarken kullanılır")) ikinciDogru++;
+}
+check("kalıp sorusunda aynı işi gören ikinci şık yok (soru sözcüğü, notun ilk kısmı)", ikinciDogru === 0);
+
+/*
   ELLE YAZILMIŞ ÜNİTE ANADİLE GÖRE. A1 Ünite 1'in soruları Türkçe yazılmıştı
   ve her cevap A şıkkıydı; İngilizce anadilde soru kökü de açıklama da Türkçe
   çıkıyordu.
