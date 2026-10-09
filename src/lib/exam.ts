@@ -14,7 +14,7 @@ import {
   moduleProduce,
   taughtSense,
   conversationModuleCount,
-  selfAnswering,
+  examProduceUsable,
   type ProduceItem as ConversationProduceItem,
 } from "@/lib/conversations/module-content";
 import { courseExams, moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/conversations/module-exam";
@@ -145,7 +145,7 @@ export async function modulePrereq(userId: string, course: string, level: CefrLe
 
 /** Üretim adımlarından sınav maddesi: bir kısmı yazma, bir kısmı dizme. */
 function produceItems(source: ConversationProduceItem[], seed: string, count: number): ProduceExamItem[] {
-  const usable = source.filter((p) => !selfAnswering(p) && p.de.trim().split(/\s+/).length >= 2);
+  const usable = examProduceUsable(source);
   const picked = seededShuffle(usable, `${seed}|produce`).slice(0, count);
   return picked.map((p, i) => {
     const words = p.de.trim().split(/\s+/);

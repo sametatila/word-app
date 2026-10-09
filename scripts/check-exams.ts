@@ -11,7 +11,7 @@
  * `npm run test:exams`.
  */
 import { targetLangOf } from "../src/lib/courses";
-import { selfAnswering } from "../src/lib/conversations/module-content";
+import { danglingReference, examProduceUsable } from "../src/lib/conversations/module-content";
 import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/conversations/module-content-source";
 import { courseExams, EXAM_COURSES, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/conversations/module-exam";
 import { foldSentence } from "../src/lib/sentence-match";
@@ -128,8 +128,11 @@ for (const course of COURSES) {
     checkPlan(course, plan);
 
     // Türetilen maddeler kâğıdı doldurabiliyor mu?
-    const produce = content.produce.filter((p) => !selfAnswering(p) && p.de.trim().split(/\s+/).length >= 2);
+    const produce = examProduceUsable(content.produce);
     if (produce.length < NEED.produce) fail(where, `üretim maddesi ${produce.length} (en az ${NEED.produce})`);
+    /* Sınav maddesi kendi başına durmalı (QA F-0057): "aynı soruyu … sor" gibi önceki adıma yaslanan yönerge. */
+    for (const p of produce)
+      if (danglingReference(p.prompt)) fail(where, `üretim maddesi önceki adıma yaslanıyor (${p.id}): "${p.prompt}" — kurulacak cümleyi yönergeye yaz`);
     if (content.judge.length < NEED.judge) fail(where, `hüküm maddesi ${content.judge.length} (en az ${NEED.judge})`);
     if (content.words.length < NEED.words) fail(where, `kelime ${content.words.length} (en az ${NEED.words})`);
 

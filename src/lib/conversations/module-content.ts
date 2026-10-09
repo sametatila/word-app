@@ -178,6 +178,47 @@ export function selfAnswering(item: { prompt: string; de: string }): boolean {
   return longest / words.length >= 0.7;
 }
 
+/**
+ * ÖNCEKİ ADIMA YASLANAN YÖNERGE (QA F-0057, 2026-10-09).
+ *
+ * Konuşmada üretim adımı bir öncekinin hemen ardından geliyor ve "aynı soruyu
+ * tanımadığın birine kibar biçimde sor" orada anlaşılır. Sınavda maddeler
+ * karışık ve tek tek geliyor: "aynı soru" hiçbir şeyi göstermiyordu, iki ayrı
+ * konuşmadan gelen iki madde birebir aynı yönergeyle (farklı hedefle) aynı
+ * kâğıda düştü. Kural: göndermeli ifade ("aynı soruyu", "şu cümleyi", "şunu",
+ * "kalıbı hatırla", "tersini") yönergenin SON cümlesindeyse ve ardından
+ * kurulacak cümle gelmiyorsa (tırnak yok, iki noktadan sonra cümle yok), madde kendi başına
+ * cevaplanamaz. Kaynak (Türkçe) yönergede ölçülür; kapı `scripts/check-exams.ts`.
+ * "bunu" bilerek yok: "Yürüyüş yapmayı sever misin? Bunu İngilizce sor."
+ * yönergenin içindeki cümleyi gösteriyor.
+ */
+const DANGLING = /(?<!\p{L})(aynı (soruyu|cümleyi|şeyi|isteği)|şu (cümleyi|soruyu)|şunu|kalıbı hatırla|tersini|olumsuzunu)(?!\p{L})/iu;
+export function danglingReference(prompt: string): boolean {
+  if (/['"“”„‘’«»]/.test(prompt)) return false;
+  /* İki noktadan sonrası kurulacak cümle ("Şu cümleyi kur: Bu ceket …"); ölçülen o kısım. */
+  const tail = prompt.slice(prompt.lastIndexOf(":") + 1);
+  const sentences = tail.split(/(?<=[.!?…])\s+/).filter(Boolean);
+  return DANGLING.test(sentences[sentences.length - 1] ?? "");
+}
+
+/**
+ * Sınava girebilecek üretim maddeleri: cevabı ele vermeyen, en az iki kelimelik
+ * ve HEDEFİ TEKRARSIZ olanlar. Aynı cümle (ör. "I'd like a tea, please.") bir
+ * modülün iki konuşmasında da üretiliyor; ikisi aynı kâğıda düşünce öğrenci
+ * aynı görevi iki kez görüyordu. Kâğıt kurucusu (`lib/exam`) ve kapı
+ * (`scripts/check-exams.ts`) aynı süzgeci kullanıyor.
+ */
+export function examProduceUsable<T extends { prompt: string; de: string }>(items: T[]): T[] {
+  const seen = new Set<string>();
+  return items.filter((p) => {
+    if (selfAnswering(p) || p.de.trim().split(/\s+/).length < 2) return false;
+    const key = foldSentence(p.de);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 /** Segment dizisini düz metne çevirir — Almanca parçalar korunur. */
 export function flatten(segments: Segment[]): string {
   return segments.map((s) => s.text).join(" ").replace(/\s+([.,!?;:])/g, "$1").replace(/\s+/g, " ").trim();
