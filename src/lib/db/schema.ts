@@ -2341,3 +2341,34 @@ export const ttsReviews = pgTable(
     index("tts_reviews_file_idx").on(t.file),
   ],
 );
+
+/**
+ * Sosyal medya yayın kaydı (panel › İçerik › Sosyal medya, 2026-10-09). Plan (hangi bölüm hangi saatte) depoda:
+ * `data/social/plan.json` (`npm run social:plan -- --write`). Bu tablo yalnız platformdaki DURUMU tutar: bölüm × platform
+ * başına bir satır; satır yoksa "planlandı". Metrikler API eşitlemesinden ya da elle. `episode_id` boş satır: platformda
+ * bulunan ama planda olmayan gönderi (eşitleme). Kullanıcıya bağlı değil.
+ */
+export const socialPosts = pgTable(
+  "social_posts",
+  {
+    id: serial("id").primaryKey(),
+    /** `data/social/episodes/<id>.mjs`; boşsa planda olmayan gönderi */
+    episodeId: text("episode_id"),
+    /** tiktok · instagram */
+    platform: text("platform").notNull(),
+    /** scheduled (platformun zamanlayıcısında) · published · skipped */
+    status: text("status").notNull(),
+    /** Platformdaki gönderi kimliği (eşitleme) */
+    externalId: text("external_id"),
+    url: text("url"),
+    publishedAt: timestamp("published_at", { withTimezone: true }),
+    /** { views, likes, comments, shares, saves, avgWatchSec, completionPct, reach, … } (platformun verdiği) */
+    metrics: jsonb("metrics").$type<Record<string, number>>(),
+    metricsAt: timestamp("metrics_at", { withTimezone: true }),
+    note: text("note"),
+    updatedBy: text("updated_by"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("social_posts_episode_uq").on(t.episodeId, t.platform), uniqueIndex("social_posts_external_uq").on(t.platform, t.externalId)],
+);

@@ -589,6 +589,13 @@
       "when": 1791520000000,
       "tag": "0083_release_holds",
       "breakpoints": true
+    },
+    {
+      "idx": 84,
+      "version": "7",
+      "when": 1791530000000,
+      "tag": "0084_social_posts",
+      "breakpoints": true
     }
   ]
 }

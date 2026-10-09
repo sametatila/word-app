@@ -154,6 +154,7 @@ const WEB_ONLY_METHOD = {
   "GET /api/admin/moderation/export": "yonetim panosu (icerik geri bildirimi CSV'si)",
   "POST /api/admin/app": "yonetim panosu",
   "POST /api/admin/avatar": "yonetim panosu (avatar envanteri)",
+  "POST /api/admin/social": "yonetim panosu (sosyal medya takvimi)",
   "POST /api/admin/users": "yonetim panosu",
   "POST /api/admin/content": "yonetim panosu",
 };
@@ -165,6 +166,7 @@ const WEB_ONLY = {
   "/api/admin/moderation/export": "yonetim panosu CSV'si — mobilde yok, olmayacak",
   "/api/admin/app": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/avatar": "yonetim panosu (avatar envanteri) — mobilde yok, olmayacak",
+  "/api/admin/social": "yonetim panosu (sosyal medya takvimi) — mobilde yok, olmayacak",
   "/api/admin/users": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/content": "yonetim panosu — mobilde yok, olmayacak",
   "/api/push/subscribe": "TARAYICI push aboneligi; mobil FCM ile /api/push/device cagiriyor",
