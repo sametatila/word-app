@@ -9,6 +9,7 @@ import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { dialogueDone, targetsUsed } from "@/lib/dialogue";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 import { ensureRoleText, guardCorrections, splitInlineMarkers, stripModelTokenStream } from "./fix-guard";
+import { articleFixes } from "./article-check";
 
 /**
  * Sohbet — konuşmanın son ve asıl parçası.
@@ -504,6 +505,9 @@ export async function* streamChat(
   // yanlış düzeltmeyi azaltıyor, kesin yanlış olan biçimleri süzgeç siliyor.
   // Günlüğe yalnız neden yazılıyor, öğrencinin sözü değil.
   const said = messages.at(-1)?.content ?? "";
+  // Kesin artikel hataları sunucuda düzeltiliyor (QA F-0084; `article-check`), modelden önce.
+  const ownFixes = mode === "practice" && conversation.course !== "en" ? articleFixes(said) : [];
+  if (ownFixes.length) yield ownFixes.map((f) => `${CORRECTION_MARK} ${f}\n`).join("");
   // Satır içine düşen işaretler önce kendi satırına alınıyor (süzgeç ve istemciler
   // işareti satır başında arıyor).
   // Rol metni olmayan cevap (yalnız öneriler) bir kez yeniden üretiliyor (`ensureRoleText`).
@@ -522,7 +526,11 @@ export async function* streamChat(
     })(),
     said,
     (reason) => console.warn(`[chat] düzeltme süzüldü: ${reason}`),
-    { register: chatRegister(conversation), lang: conversation.course === "en" ? "en" : "de" },
+    {
+      register: chatRegister(conversation),
+      lang: conversation.course === "en" ? "en" : "de",
+      injected: ownFixes.map((f) => f.split("→")[0]),
+    },
   );
 }
 

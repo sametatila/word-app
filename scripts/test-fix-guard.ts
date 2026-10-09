@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { ensureRoleText, filterCorrectionLines, guardCorrections, judgeCorrection, splitInlineMarkers, stripModelTokenStream } from "../src/lib/conversations/fix-guard";
 import { breakInlineMarkers } from "../src/lib/chat-format";
+import { articleFixes } from "../src/lib/conversations/article-check";
 
 /**
  * Düzeltme süzgeci — `npm run test:fix-guard`. Dil modeli istemez.
@@ -125,6 +126,31 @@ console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 
     const v = judgeCorrection(line, s, ctx);
     check(`kalıyor: ${line.slice(0, 48)}`, v.keep, JSON.stringify(v));
   }
+}
+
+console.log("\nartikel denetimi (QA F-0084) ve belirlilik (panel #66)");
+{
+  const yes: [string, string][] = [
+    ["Und das ist die Schlafzimmer.", "die Schlafzimmer → das Schlafzimmer (Artikel)"],
+    ["Hier ist das Küche.", "das Küche → die Küche (Artikel)"],
+    ["Das ist eine Tisch.", "eine Tisch → ein Tisch (Artikel)"],
+    ["Die Tisch ist groß.", "Die Tisch → Der Tisch (Artikel)"],
+  ];
+  for (const [said, want] of yes) {
+    const got = articleFixes(said);
+    check(`yakalanıyor: ${said}`, got.includes(want), JSON.stringify(got));
+  }
+  const no = [
+    "Das ist das Schlafzimmer.", "Das sind die Schlafzimmer.", "Die Kinder sind hier.", "Das ist Anna.",
+    "Ich sehe die Schlafzimmer.", "Das ist der Tisch von Paul.", "Hier ist ein Bad.", "Wo ist die Küche?",
+  ];
+  for (const said of no) check(`susuyor: ${said}`, articleFixes(said).length === 0, JSON.stringify(articleFixes(said)));
+  const v = judgeCorrection("unter dem Baum → unter einem Baum (Dativ nach Präposition)", "Ich sitze unter dem Baum.");
+  check("belirlilik değişimi siliniyor", !v.keep && v.reason === "style", JSON.stringify(v));
+  const d = judgeCorrection("die Schlafzimmer → das Schlafzimmer (Genus)", "Und das ist die Schlafzimmer.", { injected: ["die Schlafzimmer "] });
+  check("sunucunun düzeltmesini model tekrarlarsa siliniyor", !d.keep && d.reason === "duplicate", JSON.stringify(d));
+  const k = judgeCorrection("ich habe ein Bruder → ich habe einen Bruder (Akkusativ)", "Ich habe ein Bruder.", { injected: ["die Schlafzimmer "] });
+  check("başka düzeltme kalıyor", k.keep, JSON.stringify(k));
 }
 
 console.log("\nsatır içi işaretler (panel #12)");
@@ -261,6 +287,9 @@ async function streamTests() {
   // Sayılamayan isim listesi güncel mi (scripts/gen-mass-nouns.mjs)?
   const { massNouns } = (await import("./gen-mass-nouns.mjs")) as { massNouns: () => string[] };
   const committed = JSON.parse(readFileSync("src/lib/conversations/mass-nouns.generated.json", "utf8")) as string[];
+  const { nounGender } = (await import("./gen-noun-gender.mjs")) as { nounGender: () => Record<string, string> };
+  const gCommitted = JSON.parse(readFileSync("src/lib/conversations/noun-gender.generated.json", "utf8"));
+  check("artikel sözlüğü words.json ile güncel", JSON.stringify(nounGender()) === JSON.stringify(gCommitted), "node scripts/gen-noun-gender.mjs");
   check("sayılamayan isim listesi words.json ile güncel", JSON.stringify(massNouns()) === JSON.stringify(committed), "node scripts/gen-mass-nouns.mjs");
   // Modelin özel işaretleri (QA F-0065): her bölmede silinmiş, metin aynen.
   const LEAK = "<|channel>thought\n<channel|>Gut, dann nehmen Sie den Zug um acht.\n[SAY] Danke!";

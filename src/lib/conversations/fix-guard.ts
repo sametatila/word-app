@@ -70,11 +70,17 @@ export type FixVerdict =
         | "register"
         | "label_mismatch"
         | "style"
-        | "mass_noun";
+        | "mass_noun"
+        | "duplicate";
     };
 
 /** Sahnenin bilinen bağlamı: hitap (yalnız Almanca) ve hedef dil. */
-export type FixContext = { register?: "du" | "Sie"; lang?: "de" | "en" };
+export type FixContext = {
+  register?: "du" | "Sie";
+  lang?: "de" | "en";
+  /** Sunucunun kendi eklediği düzeltmelerin sol tarafları (`article-check`): model aynısını yazarsa silinir. */
+  injected?: string[];
+};
 
 /** Karşılaştırma için sözcüklere ayırma: küçük harf, ß=ss, harf/rakam dışı ayırıcı. */
 function words(text: string): string[] {
@@ -244,6 +250,23 @@ function shortensCompound(left: string[], right: string[]): boolean {
   return diff === 1;
 }
 
+/**
+ * BELİRLİLİK DEĞİŞİMİ (QA panel #66): "unter dem Baum → unter einem Baum (Dativ nach
+ * Präposition)". İki taraf da aynı hâlde; belirli/belirsiz seçimi anlam tercihidir,
+ * dilbilgisi hatası değil (etiket ayrıca hâli gerekçe gösteriyor, yanlış).
+ */
+const DEF_INDEF: [string, string][] = [["der", "ein"], ["der", "einer"], ["die", "eine"], ["das", "ein"], ["den", "einen"], ["dem", "einem"], ["des", "eines"], ["den", "einer"]];
+function swapsDefiniteness(left: string[], right: string[]): boolean {
+  if (left.length !== right.length) return false;
+  let diff = 0;
+  for (let i = 0; i < left.length; i++) {
+    if (left[i] === right[i]) continue;
+    diff++;
+    if (!DEF_INDEF.some(([d, n]) => (left[i] === d && right[i] === n) || (left[i] === n && right[i] === d))) return false;
+  }
+  return diff === 1;
+}
+
 /** "Uni → Universität": tek sözcük, sağdaki soldakiyle başlıyor ve yalnız uzuyor. */
 function expandsAbbreviation(left: string[], right: string[]): boolean {
   if (left.length !== right.length) return false;
@@ -274,6 +297,9 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
   if (!left.length) return { keep: true };
 
   if (left.join(" ") === right.join(" ")) return { keep: false, reason: "same" };
+  if (ctx.injected?.some((x) => words(x).join(" ") === left.join(" ") || words(x).slice(-1)[0] === left.slice(-1)[0])) {
+    return { keep: false, reason: "duplicate" };
+  }
   const lang = ctx.lang ?? "de";
   if (foldSentence(parts[0], lang) === foldSentence(rightText, lang)) return { keep: false, reason: "form_only" };
 
@@ -311,6 +337,7 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
     STYLE_LABEL.test(label) ||
     expandsAbbreviation(left, right) ||
     shortensCompound(left, right) ||
+    swapsDefiniteness(left, right) ||
     onlyParticleMoved(left, right) ||
     bothRightVariant(left, right) ||
     addsFuturOnly(left, right, label)
