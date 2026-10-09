@@ -69,6 +69,9 @@ const SKIP = [
   "lib/assess-prompts.ts",
   /* Çeviri kurtarma kontrolünün model istemi (assess-prompts gibi): ekrana basılmıyor. */
   "lib/translate-check.ts",
+  /* Ayrılabilir fiil denetiminin model notu ve gerekçesi (QA F-0072, assess-prompts gibi):
+     modele gidiyor, ekrana basılmıyor. */
+  "lib/separable-check.ts",
   /* Üretim ipucunun konusunu tanıyan sözcükler (QA F-0020): ekrana basılmıyor,
      ipucu metnini ölçüyor. Mobil `lib/hintCues.ts` aynı; kapısı `check:parity`. */
   "lib/hint-cues.ts",
