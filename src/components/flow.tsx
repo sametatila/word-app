@@ -87,8 +87,8 @@ export function FlowActions({ primary, secondary, tertiary, close }: { primary?:
           className="btn w-full border px-5 py-4 text-strong disabled:opacity-60"
         />
       ) : null}
-      {tertiary ? <ActionEl a={tertiary} className="btn muted w-full px-5 py-2.5 text-strong" /> : null}
-      {closeAction ? <ActionEl a={closeAction} className="btn muted w-full px-5 py-2.5 text-strong" /> : null}
+      {tertiary ? <ActionEl a={tertiary} className="btn muted min-h-11 w-full px-5 py-2.5 text-strong" /> : null}
+      {closeAction ? <ActionEl a={closeAction} className="btn muted min-h-11 w-full px-5 py-2.5 text-strong" /> : null}
     </div>
   );
 }

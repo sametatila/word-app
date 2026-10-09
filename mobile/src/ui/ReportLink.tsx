@@ -7,6 +7,7 @@ import { ReportSheet } from "./ReportSheet";
 import { ReportIcon } from "./icons";
 import type { ReportKind } from "../lib/report";
 import { useTheme, spacing } from "../theme";
+import { hitSlopFor } from "./touch";
 
 /**
  * "Bildir" bağlantısı + kendi bildirim kartı — bir yapay zekâ çıktısının altına
@@ -52,7 +53,9 @@ export function ReportButton({ onPress, label, style }: {
   return (
     <PressableScale
       onPress={onPress}
-      hitSlop={{ top: 10, bottom: 10, left: 8, right: 8 }}
+      /* Görünen yükseklik: micro satırı (18) + 2×4 dolgu = 26; pay 48'e tamamlıyor
+         (eskisi 10 → 46, QA F-0051). Etiket+bayrak zaten 48'den geniş, yanlara 8. */
+      hitSlop={{ ...hitSlopFor(0, 26), left: 8, right: 8 }}
       accessibilityRole="button"
       accessibilityLabel={label}
       style={[{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingVertical: spacing.xs, flexShrink: 0 }, style]}

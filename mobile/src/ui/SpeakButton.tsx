@@ -4,6 +4,7 @@ import { PressableScale } from "./PressableScale";
 import { SpeakerIcon } from "./icons";
 import { useTheme, radii } from "../theme";
 import { speakTarget } from "../lib/tts";
+import { hitSlopFor } from "./touch";
 
 /**
  * Hoparlör düğmesi — Almanca metni kullanıcının seçtiği sesle okur.
@@ -36,7 +37,8 @@ export function SpeakButton({
   return (
     <PressableScale
       accessibilityLabel={t("speakbutton.read_aloud")}
-      hitSlop={8}
+      /* 22'lik düğme 8'lik payla 38'de kalıyordu (QA F-0051): pay boyuttan hesaplanıyor. */
+      hitSlop={hitSlopFor(size)}
       onPress={() => speakTarget(text, { slow, word })}
       style={{
         width: size,

@@ -17,6 +17,7 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
 import { EmptyCard, IconTile, Pill, SectionTitle } from "./common";
 import { LeagueUp, leagueUpFor } from "./LeagueBoardUp";
 import { useAuth } from "../lib/AuthContext";
+import { hitSlopFor } from "../ui/touch";
 
 /**
  * Haftalık lig — Sıralama ekranının asıl tablosu.
@@ -207,7 +208,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
       {/* GÖRÜNÜR BİLDİR (denetim İ9): uzun basış keşfedilmiyordu; profildeki
           "Engelle / Bildir"e ek olarak satırın kendisinde de bir düğme. */}
       {quiet ? null : (
-        <PressableScale onPress={onReport} hitSlop={10} accessibilityRole="button" accessibilityLabel={`${t("user.report")}: ${row.name ?? t("social.student")}`} style={{ padding: spacing.xs }}>
+        <PressableScale onPress={onReport} hitSlop={hitSlopFor(24)} accessibilityRole="button" accessibilityLabel={`${t("user.report")}: ${row.name ?? t("social.student")}`} style={{ padding: spacing.xs }}>
           <ReportIcon color={colors.textFaint} size={16} />
         </PressableScale>
       )}

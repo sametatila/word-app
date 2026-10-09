@@ -1109,10 +1109,17 @@
   .hit-8 {
     position: relative;
   }
+  /* Dokunma alanı her eksende 8 px büyüyor VE en az 44 px (QA F-0051): sabit
+     `inset: -8px` 24'lük "Bildir" bayrağını ve ligdeki şikâyet bayrağını 40'ta
+     bırakıyordu. Android karşılığı `mobile/src/ui/touch` `hitSlopFor` (48 dp). */
   .hit-8::after {
     content: "";
     position: absolute;
-    inset: -8px;
+    top: 50%;
+    left: 50%;
+    width: max(calc(100% + 16px), 44px);
+    height: max(calc(100% + 16px), 44px);
+    transform: translate(-50%, -50%);
   }
   .option {
     border: 1px solid var(--border);

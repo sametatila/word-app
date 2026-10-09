@@ -18,6 +18,7 @@ import { bumpStats, useStatsBump } from "../lib/statsSignal";
 import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { barPct } from "./Bar";
+import { hitSlopFor } from "./touch";
 
 /**
  * Görevin GÖTÜRDÜĞÜ yer.
@@ -34,6 +35,9 @@ import { barPct } from "./Bar";
  * satır dokunulabilir görünmemeli. Tanınmayan kimlik de `null` - sunucudan
  * yeni bir görev gelirse satır çizilir, yalnız dokunulmaz.
  */
+/* "+N XP al" görünen 36 yüksek (caption 20 + 2×8); dokunma alanı 48'e (QA F-0051). */
+const CLAIM_SLOP = hitSlopFor(0, 36);
+
 const QUEST_TAB: Record<string, keyof RootTabParams> = {
   skill1: "Skills",
   conversation1: "Path",
@@ -56,7 +60,7 @@ function QuestRow({ q, colors, onClaim, busy, onOpen, last }: { q: Quest; colors
       </View>
       <View style={{ flex: 1 }}>
         {onOpen && !complete ? (
-          <PressableScale onPress={onOpen} accessibilityRole="link" hitSlop={4}>
+          <PressableScale onPress={onOpen} accessibilityRole="link" hitSlop={hitSlopFor(0, 21)}>
             <Text variant="bodyStrong" color={colors.primaryText} numberOfLines={1}>{q.label}</Text>
           </PressableScale>
         ) : (
@@ -75,7 +79,7 @@ function QuestRow({ q, colors, onClaim, busy, onOpen, last }: { q: Quest; colors
         alındı → "+N XP", tamam → "al" düğmesi, sürüyor → ilerleme.
       */}
       {complete && !q.claimed ? (
-        <PressableScale onPress={onClaim} disabled={busy} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+        <PressableScale onPress={onClaim} disabled={busy} accessibilityRole="button" hitSlop={CLAIM_SLOP} style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
           <Text variant="caption" color={colors.onPrimary}>{busy ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}</Text>
         </PressableScale>
       ) : (
@@ -239,7 +243,7 @@ export function DailyQuests() {
             {board.allClaimed ? (
               <Text variant="caption" color={colors.successText}>+{ALL_DONE_XP} XP</Text>
             ) : (
-              <PressableScale onPress={() => void claim(ALL_DONE_ID)} disabled={claiming === ALL_DONE_ID} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+              <PressableScale onPress={() => void claim(ALL_DONE_ID)} disabled={claiming === ALL_DONE_ID} accessibilityRole="button" hitSlop={CLAIM_SLOP} style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
                 <Text variant="caption" color={colors.onPrimary}>{claiming === ALL_DONE_ID ? "…" : t("dailyquests.claim_xp", { xp: ALL_DONE_XP })}</Text>
               </PressableScale>
             )}

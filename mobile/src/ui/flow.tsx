@@ -13,6 +13,7 @@ import { t } from "../lib/i18n";
 import { useTheme, spacing, radii, softShadow, soft, onSolid, type Palette, ds } from "../theme";
 import { READABLE_TEXT_MAX } from "../lib/useLayout";
 import { IconLine, lineInset } from "./IconLine";
+import { MIN_TOUCH } from "./touch";
 
 /**
  * AKIŞ ŞABLONLARI — kapak, sonuç, etap kartı ve durum ekranı tek dilde.
@@ -50,8 +51,11 @@ export type FlowAction = { label: string; onPress: () => void; disabled?: boolea
  */
 export function FlowActions({ primary, secondary, tertiary, close }: { primary?: FlowAction | null; secondary?: FlowAction | null; tertiary?: FlowAction | null; close?: (() => void) | null }) {
   const { colors } = useTheme();
+  /* Metin düğmesi ("Kapat", "Burada bırak"): kutusu 37 yüksekti, dokunma alanı
+     yalnız `hitSlop` ile büyüyordu ve erişilebilirlik ölçümü kutuyu görüyor
+     (QA F-0051). Kutu artık en az `MIN_TOUCH`; yazı ortada, görünüm aynı. */
   const text = (a: FlowAction) => (
-    <PressableScale onPress={a.onPress} disabled={a.disabled} accessibilityLabel={a.a11yLabel ?? a.label} accessibilityHint={a.a11yHint} hitSlop={6} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
+    <PressableScale onPress={a.onPress} disabled={a.disabled} accessibilityLabel={a.a11yLabel ?? a.label} accessibilityHint={a.a11yHint} style={{ alignItems: "center", justifyContent: "center", minHeight: MIN_TOUCH, paddingVertical: spacing.xs }}>
       <Text variant="bodyStrong" color={colors.textMuted}>{a.label}</Text>
     </PressableScale>
   );

@@ -72,7 +72,8 @@ export function Switch({
       aria-label={label}
       disabled={disabled}
       onClick={() => onChange(!on)}
-      className="relative h-7 w-12 shrink-0 rounded-full transition-opacity disabled:opacity-60"
+      /* 28 px ray; `hit-8` dokunma alanını 44'e tamamlıyor (QA F-0051). */
+      className="hit-8 relative h-7 w-12 shrink-0 rounded-full transition-opacity disabled:opacity-60"
       /* AÇIK RAY ANDROID'İN `primary`Sİ. Web 600'ü kullanıyordu, Android
          `colors.primary` (açıkta 500, koyuda 400) - webde aynı değeri
          taşıyan jeton `--brand-fill`. Kapalı ray iki tarafta da `surface2`
