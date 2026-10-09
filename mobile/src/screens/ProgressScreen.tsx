@@ -14,7 +14,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "../ui/icons";
 import { WeakSpots } from "../ui/WeakSpots";
 import { GrowthTrends, HowAmIDoing, HowAmIDoingHead, useGrowth } from "../ui/GrowthPanel";
-import { Skeleton, SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
+import { Skeleton, SkeletonBar, SkeletonCard, SkeletonLine, SkeletonText, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { bumpStats } from "../lib/statsSignal";
 import { EmptyCard, ScreenHeader } from "../social/common";
@@ -402,7 +402,19 @@ export function ProgressScreen() {
           </SkeletonCard>
         )}
 
-        {me?.days ? <ActivityStrip rows={me.days} today={today} colors={colors} /> : null}
+        {/* Şerit `/api/me` ile geliyor: yüklenirken yeri tutuluyor, yoksa
+            sonradan araya girip zayıf noktaları ve gidişatı ~115 dp itiyordu
+            (QA F-0070 sınıfı). Kart kalıbı `ActivityStrip`in aynısı. */}
+        {me?.days ? <ActivityStrip rows={me.days} today={today} colors={colors} /> : !me && loading ? (
+          <SkeletonCard label={t("common.loading")}>
+            <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.md, marginBottom: spacing.sm }}>
+              <SkeletonText variant="h3" text={t("progress.last_two_weeks")} />
+              <SkeletonLine variant="caption" width={110} />
+            </View>
+            <Skeleton height={44} radius={3} />
+            <SkeletonLine variant="micro" style={{ marginTop: 6 }} />
+          </SkeletonCard>
+        ) : null}
 
         {/* ZAYIF NOKTALAR kendi kartında (web aynı). */}
         <WeakSpots />

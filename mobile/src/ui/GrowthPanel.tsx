@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useStatsBump } from "../lib/statsSignal";
+import { useAuth } from "../lib/AuthContext";
 import { flushPendingItems } from "../game/pathProgress";
 import { DECAY_DAYS } from "../lib/learningRules";
 import { View } from "react-native";
@@ -60,8 +61,19 @@ export type Growth = {
  * çekiyor). Önce çevrimdışı bekleyen sonuçlar gidiyor. Tazelemede eski rapor ekranda
  * kalıyor; hata eski raporu silmiyor.
  */
+/*
+ * SON RAPOR BELLEKTE (kullanıcı başına). İskelet altı beceri satırı + sıradaki
+ * adım boyunda (~300 dp); yeni kullanıcının boş kartı ~140 dp ve ölçülen beceri
+ * az olan kullanıcının kartı da kısa. Rapor her açılışta gelince kart
+ * küçülüyor, altındaki karolar ve tekrar kuyruğu yukarı zıplıyordu (QA F-0070
+ * sınıfı). Web aynı raporu yerel önbellekten anında çiziyor (`useCachedJson`);
+ * mobil de artık ikinci açılıştan itibaren son raporu hemen çiziyor.
+ */
+let lastGrowth: { uid: string; data: Growth | null } | null = null;
+
 export function useGrowth(): Growth | null | undefined {
-  const [data, setData] = useState<Growth | null | undefined>(undefined);
+  const uid = useAuth().user?.id ?? "";
+  const [data, setData] = useState<Growth | null | undefined>(() => (lastGrowth?.uid === uid ? lastGrowth.data : undefined));
   const bump = useStatsBump();
   useFocusEffect(
     useCallback(() => {
@@ -73,10 +85,12 @@ export function useGrowth(): Growth | null | undefined {
         if (!alive) return;
         /* Gövde doğrulanıyor: 200 dönen ama biçimi tutmayan bir cevapta
            `proficiency.map` patlıyor ve kart değil bütün ekran iniyor. */
-        setData(Array.isArray(g?.proficiency) ? (g as Growth) : null);
+        const next = Array.isArray(g?.proficiency) ? (g as Growth) : null;
+        lastGrowth = { uid, data: next };
+        setData(next);
       })().catch(() => { if (alive) setData((prev) => prev ?? null); });
       return () => { alive = false; };
-    }, [bump]),
+    }, [bump, uid]),
   );
   return data;
 }
