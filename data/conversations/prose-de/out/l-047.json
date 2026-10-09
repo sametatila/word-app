@@ -50,7 +50,7 @@
  { "tr": "Şimdi küçük bir kontrol. Bu cümle doğru mu?", "kind": "say.tr", "de": "Jetzt eine kleine Kontrolle. Stimmt dieser Satz?" },
  { "tr": "Şimdi sen sor: Eskiden futbol oynar mıydın?", "kind": "say.tr", "de": "Jetzt fragst du: Hast du früher Fußball gespielt?" },
  { "tr": "Şimdi sen sor: ne kadar beklemem gerekiyor?", "kind": "say.tr", "de": "Jetzt fragst du: Wie lange muss ich warten?" },
- { "tr": "Şimdi sıra sende. Şu cümleyi İngilizce kur.", "kind": "say.tr", "de": "Jetzt bist du dran. Bilde diesen Satz auf Englisch." },
+ { "tr": "Şimdi sıra sende. Şu cümleyi İngilizce kur: Bu ceket, şundan daha pahalı.", "kind": "say.tr", "de": "Jetzt bist du dran. Bilde diesen Satz auf Englisch: Diese Jacke ist teurer als die da." },
  { "tr": "Şimdi soru soralım. Soruda have başa geçer:", "kind": "say.tr", "de": "Jetzt fragen wir. In der Frage rückt have nach vorn:" },
  { "tr": "Şimdi tam bir cümle kuralım. Bu benim elim:", "kind": "say.tr", "de": "Bilden wir jetzt einen ganzen Satz. Das ist meine Hand:" },
  { "tr": "Tahlil verdiysen sonucunu beklersin. Sonuç:", "kind": "say.tr", "de": "Nach einer Untersuchung wartest du aufs Ergebnis. Ergebnis:" },

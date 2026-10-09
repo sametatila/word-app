@@ -133,7 +133,7 @@
  { "tr": "Her zaman para geri istemezsin; bazen sadece değişim istersin. Değiştirmek demek:", "kind": "say.tr", "de": "Du willst nicht immer Geld zurück; manchmal nur den Umtausch. Tauschen heißt:" },
  { "tr": "ile fiili arka arkaya söylersin, arada bir şey yok. Bu çok rahatlatıcı, değil mi?", "kind": "say.tr", "de": "meistens direkt das Verb, nichts dazwischen. Sehr entspannend, oder?" },
  { "tr": "Küçük ama önemli bir kural. İngilizcede mesleğin önüne küçük bir kelime konur: a.", "kind": "say.tr", "de": "Eine kleine, aber wichtige Regel. Im Englischen steht vor dem Beruf ein kleines Wort: a." },
- { "tr": "Küçük bir alıştırma. İki kahve denedin, biri daha lezzetli. Şunu İngilizce söyle.", "kind": "say.tr", "de": "Eine kleine Übung. Du hast zwei Kaffees probiert, einer schmeckt besser. Sag das auf Englisch." },
+ { "tr": "Küçük bir alıştırma. İki kahve denedin, biri daha lezzetli. Şunu İngilizce söyle: Bu kahve daha iyi.", "kind": "say.tr", "de": "Eine kleine Übung. Du hast zwei Kaffees probiert, einer schmeckt besser. Sag auf Englisch: Dieser Kaffee ist besser." },
  { "tr": "Küçük bir kontrol yapalım. Sana bir cümle söyleyeceğim, doğru mu yanlış mı söyle.", "kind": "say.tr", "de": "Machen wir eine kleine Kontrolle. Ich sage einen Satz, sag richtig oder falsch." },
  { "tr": "Pilim çok az. Bugün şarj ettin mi? Hayır, henüz değil. Kapat ve bir saat şarj et.", "kind": "say.tr", "de": "Mein Akku ist fast leer. Hast du heute geladen? Nein, noch nicht. Schalt es aus und lad es eine Stunde." },
  { "tr": "Randevu tarihi belli olunca en önemli soru şu: yanında ne götüreceksin? Fiilimiz:", "kind": "say.tr", "de": "Steht der Termin, kommt die wichtigste Frage: Was bringst du mit? Unser Verb:" },

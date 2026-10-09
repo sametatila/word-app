@@ -669,7 +669,7 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Sind Sie Herr Meyer" },
       },
       {
-        say: [tr("Şimdi aynı soruyu arkadaşına sor: 'Sen Moritz misin?'")],
+        say: [tr("Şimdi arkadaşına sor: 'Sen Moritz misin?'")],
         expect: {
           kind: "produce",
           target: "Bist du Moritz",
@@ -868,7 +868,7 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Woher kommst du" },
       },
       {
-        say: [tr("Sıra sende: aynı soruyu tanımadığın birine, kibar biçimde sor.")],
+        say: [tr("Sıra sende: 'Nerelisiniz?' sorusunu tanımadığın birine, kibar biçimde sor.")],
         expect: {
           kind: "produce",
           target: "Woher kommen Sie",
@@ -2069,7 +2069,7 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Wie alt bist du" },
       },
       {
-        say: [tr("Şimdi aynı soruyu tanımadığın birine, kibar biçimde sor.")],
+        say: [tr("Şimdi 'Kaç yaşındasınız?' sorusunu tanımadığın birine, kibar biçimde sor.")],
         expect: {
           kind: "produce",
           target: "Wie alt sind Sie",

@@ -38043,7 +38043,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende. Şu cümleyi İngilizce kur."
+      "text": "Şimdi sıra sende. Şu cümleyi İngilizce kur: Bu ceket, şundan daha pahalı."
      }
     ],
     "expect": {
@@ -38100,7 +38100,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir alıştırma. İki kahve denedin, biri daha lezzetli. Şunu İngilizce söyle."
+      "text": "Küçük bir alıştırma. İki kahve denedin, biri daha lezzetli. Şunu İngilizce söyle: Bu kahve daha iyi."
      }
     ],
     "expect": {
