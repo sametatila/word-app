@@ -240,7 +240,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       prompt={
         <span className="brand-text text-h2 sm:text-h1">
           {meaningOf(word, lang)}
-          {meaningSubOf(word, lang) ? (
+          {!noHints && meaningSubOf(word, lang) ? (
             <span className="block text-body opacity-60" lang="en">
               {meaningSubOf(word, lang)}
             </span>

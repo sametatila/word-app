@@ -240,7 +240,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
               başka bir kelimeyle çakışıyorsa İngilizce satır ayırıyor. */}
           {/* İkinci satır anadile bağlı çözücüden (`meaningSubOf`): `word.en` anadili İngilizce olana
               ana satırın aynısını ikinci kez basıyordu. */}
-          {meaningSubOf(word, lang) ? (
+          {!noHints && meaningSubOf(word, lang) ? (
             <span className="block text-body opacity-60" lang="en">
               {meaningSubOf(word, lang)}
             </span>

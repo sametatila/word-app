@@ -209,7 +209,9 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           {meaningOf(word, lang)}
           {/* İkinci satır anadile bağlı çözücüden (`meaningSubOf`): `word.en` anadili İngilizce olana
               ana satırın aynısını ikinci kez basıyordu. */}
-          {meaningSubOf(word, lang) ? (
+          {/* Sınavda (`noHints`) İngilizce satır yok: Almanca yazdıran maddede İngilizce karşılık
+              ipucu, kapak "ipucu yok" diyor (QA F-0064). Aynı anlamlı kelime (`sameGloss`) yine doğru. */}
+          {!noHints && meaningSubOf(word, lang) ? (
             <span className="block text-body opacity-60" lang="en">
               {meaningSubOf(word, lang)}
             </span>

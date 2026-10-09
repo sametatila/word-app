@@ -561,13 +561,16 @@ function useAutoSpeak(text: string | null | undefined, key: string | number) {
 
 function Prompt({ label, big, sub, meta, speakText, colors }: { label: string; big: string; sub?: string | null; meta?: string | null; speakText?: string | null; colors: Palette }) {
   const kompakt = React.useContext(KeyboardOpen);
+  /* Sınavda (`NoHints`) İngilizce ikinci satır yok: Almanca yazdıran maddede İngilizce karşılık
+     ipucu, kapak "ipucu yok" diyor (QA F-0064; web oyunları aynı). Alıştırmada ayırt edici kalıyor. */
+  const noHints = useNoHints();
   const size = promptSize(big);
   return (
     <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: kompakt ? spacing.md : spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: kompakt ? spacing.sm : spacing.md }, cardShadow(colors, 10)]}>
       {kompakt ? null : <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>}
       <Text variant={size.variant} {...promptFit(big)} style={[{ marginTop: kompakt ? 0 : spacing.sm, textAlign: "center" }, size.fontSize ? { fontSize: size.fontSize } : null]}>{big}</Text>
       {speakText && !kompakt ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
-      {sub ? <Text variant={kompakt ? "caption" : "body"} color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{sub}</Text> : null}
+      {sub && !noHints ? <Text variant={kompakt ? "caption" : "body"} color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{sub}</Text> : null}
       {meta && !kompakt ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{meta}</Text> : null}
     </View>
   );

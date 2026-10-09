@@ -230,7 +230,9 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
       prompt={
         <span className="text-h2 sm:text-h1">
           {source}
-          {sourceSub ? (
+          {/* Sınavda (`noHints`) İngilizce cümle yok: çevrilecek cümlenin İngilizcesi Almancaya
+              ipucu, kapak "ipucu yok" diyor (QA F-0064). */}
+          {!noHints && sourceSub ? (
             <span className="block text-body opacity-60" lang="en">
               {sourceSub}
             </span>

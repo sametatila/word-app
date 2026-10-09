@@ -13,6 +13,9 @@ import React, { createContext, useContext } from "react";
  * Bayrağı bütün turlara ayrı ayrı geçirmek yerine bağlam: ipucu düğmesi olan
  * dört tur bunu okuyor, kalanları hiç bilmiyor ve varsayılan (false) her
  * çağrı yerinde bugünkü davranışı koruyor.
+ *
+ * Sorunun İngilizce ikinci satırı da (anadil Türkçe/Almancayken ayırt edici) sınavda
+ * çizilmiyor: Almanca yazdıran maddede İngilizce karşılık ipucu (QA F-0064).
  */
 const NoHintsContext = createContext(false);
 
