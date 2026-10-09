@@ -14,6 +14,7 @@ import { translate } from "@/lib/i18n/dict";
 import { localiseExercise, localiseConversation } from "@/lib/conversations/native-server";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { takeUsage } from "@/lib/premium";
+import { isChatQuotaExempt } from "@/lib/quota-exempt";
 import { claimTiered } from "@/lib/premium/access";
 import { aiConsentGate, aiConsentStateFor } from "@/lib/ai-consent";
 
@@ -83,7 +84,7 @@ export async function POST(req: Request) {
   const consent = await aiConsentGate(userId, "ai_text");
   if (consent) return consent;
 
-  if (!(await underDailyLimit(userId))) {
+  if (!(await underDailyLimit(userId)) && !(await isChatQuotaExempt(userId))) {
     return NextResponse.json({ error: "quota" }, { status: 429 });
   }
 
@@ -154,7 +155,7 @@ export async function POST(req: Request) {
 
   // Paralel patlamaya karşı atomik sayaç — gerekçesi `/api/stt`'de aynı yerde.
   // Gövde doğrulandıktan SONRA: bozuk istek hak yakmasın.
-  if (!(await takeUsage(userId, "chat_turns", "day", CHAT_DAILY_LIMIT))) {
+  if (!(await takeUsage(userId, "chat_turns", "day", CHAT_DAILY_LIMIT)) && !(await isChatQuotaExempt(userId))) {
     return NextResponse.json({ error: "quota" }, { status: 429 });
   }
 
