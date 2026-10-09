@@ -56,7 +56,16 @@ export function QuizScreen() {
     setPackReady(false);
     /* Sorular konuşmaların anadil yüzünden türüyor: sözlük de kısa süre
        bekleniyor ki anadili İngilizce/Almanca olana Türkçe soru kurulmasın. */
+    let timer: ReturnType<typeof setTimeout> | null = null;
     void Promise.all([ensureConversations(params.level), waitNativeContent()]).then(([ok]) => {
+      if (dead) return;
+      /* SORULAR BİR KARE SONRA (QA F-0080). Paket önbellekteyken bu blok
+         dokunuşla aynı JS turunda koşuyor ve türetme (bütün seviye havuzu)
+         bitene kadar ne geçiş ne yükleniyor görünüyordu: ünite testinde 3-5 sn
+         donma. Ekran önce iskeletini çiziyor, sorular ardından geliyor. */
+      timer = setTimeout(() => build(ok), 16);
+    });
+    function build(ok: boolean) {
       if (dead) return;
       setPackReady(true);
       setPackFailed(!ok);
@@ -78,8 +87,8 @@ export function QuizScreen() {
               earlierPool(params.level, params.unitIndex),
             )),
       );
-    });
-    return () => { dead = true; };
+    }
+    return () => { dead = true; if (timer) clearTimeout(timer); };
   }, [params.level, params.unitIndex, isUnitQuiz, isGrammar]);
 
   function recordAndFinish(c: number) {
