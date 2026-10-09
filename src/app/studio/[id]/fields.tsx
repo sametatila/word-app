@@ -258,6 +258,7 @@ function VoiceButton({ value, spoken }: { value: string; spoken: string[] }) {
     <button
       type="button"
       title={`Defne: „${text}“`}
+      aria-label={`Defne: „${text}“`}
       className="inline-flex h-5 items-center rounded-chip px-1.5 text-micro hover:opacity-80"
       style={{ color: st === "missing" ? "var(--color-flame)" : "var(--color-brand)", background: `color-mix(in srgb, ${st === "missing" ? "var(--color-flame)" : "var(--color-brand)"} 12%, transparent)` }}
       onClick={async (e) => {

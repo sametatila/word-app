@@ -330,7 +330,7 @@ function Card({ e, shown, drag, movable, setDrag, setOver, compact }: { e: Ep; s
       className={`group flex min-w-0 overflow-hidden rounded-tile border text-left shadow-sm transition hover:shadow-md ${movable ? "cursor-grab active:cursor-grabbing" : ""} ${compact ? "w-56" : "h-full"}`}
       style={{ borderColor: "var(--border)", background: "var(--surface)", opacity: drag === e.id ? 0.4 : 1 }}
     >
-      <span className="w-1.5 shrink-0" style={{ background: THEME_SWATCH[e.theme] ?? "var(--border)" }} title={`Tema: ${THEME_TR[e.theme] ?? e.theme}`} />
+      <span className="w-1.5 shrink-0" style={{ background: THEME_SWATCH[e.theme] ?? "var(--border)" }} title={`Tema: ${THEME_TR[e.theme] ?? e.theme}`} role="img" aria-label={`Tema: ${THEME_TR[e.theme] ?? e.theme}`} />
       <span className="flex min-w-0 flex-1 flex-col gap-1.5 p-2">
         <span className="muted truncate text-micro uppercase tracking-eyebrow">{APPROACH_SHORT[e.approach] ?? e.approach} · {THEME_TR[e.theme] ?? e.theme}</span>
         <span className="line-clamp-2 text-caption text-strong">{e.title}</span>
@@ -341,7 +341,7 @@ function Card({ e, shown, drag, movable, setDrag, setOver, compact }: { e: Ep; s
               const s = shown(e, p.key);
               const c = POST_STATE[s].tone;
               return (
-                <span key={p.key} title={`${p.label}: ${POST_STATE[s].label}`} className={`grid size-5 place-items-center rounded-full text-micro ${c ? "on-fill" : "muted"}`} style={{ background: c ? TONE[c] : "var(--surface-2)" }}>
+                <span key={p.key} title={`${p.label}: ${POST_STATE[s].label}`} aria-label={`${p.label}: ${POST_STATE[s].label}`} className={`grid size-5 place-items-center rounded-full text-micro ${c ? "on-fill" : "muted"}`} style={{ background: c ? TONE[c] : "var(--surface-2)" }}>
                   {p.short[0]}
                 </span>
               );
