@@ -46,10 +46,26 @@ export type QuizPool = { vocab: VocabItem[]; patterns: QuizPattern[] };
 type QuizCand = { text: string; mean: string; head: string; focus?: string };
 
 /* YAKINLIK BAŞI — mobil `game/immersionQuiz` ile BİREBİR aynı (`check:parity`). */
-const quizNorm = (x: string) =>
-  x.toLowerCase().replace(/i̇/g, "i").replace(/[…«»"“”„]/g, "").replace(/\s+/g, " ").trim();
-const quizHead = (x: string) => quizNorm(x).replace(/^(der|die|das|the|to|sich)\s+/, "");
-const quizParts = (x: string) => new Set(x.split(/[,;/]/).map(quizNorm).filter(Boolean));
+/* ÖNBELLEKLİ (QA F-0080, 2026-10-09). Her soru bütün seviye havuzunu
+   (A1'de ~800 kelime, B1'de ~1440) bu yardımcılardan geçiriyor; aynı metinler
+   yüzlerce kez yeniden normalleştiriliyordu. Mobilde ünite testi 3-5 sn donuyordu.
+   Saf işlevler, sonuç aynı; dönen kümeler salt okunur kullanılıyor. */
+const quizMemo = <T,>(f: (x: string) => T) => {
+  const m = new Map<string, T>();
+  return (x: string): T => {
+    let v = m.get(x);
+    if (v === undefined) {
+      if (m.size > 20000) m.clear();
+      v = f(x);
+      m.set(x, v);
+    }
+    return v;
+  };
+};
+const quizNorm = quizMemo((x: string) =>
+  x.toLowerCase().replace(/i̇/g, "i").replace(/[…«»"“”„]/g, "").replace(/\s+/g, " ").trim());
+const quizHead = quizMemo((x: string) => quizNorm(x).replace(/^(der|die|das|the|to|sich)\s+/, ""));
+const quizParts = quizMemo((x: string) => new Set(x.split(/[,;/]/).map(quizNorm).filter(Boolean)));
 
 /* Anlam sözcüğü sayılmayan çerçeve sözcükleri: kalıp notlarının çoğu "…
    söylerken kullanılır" diye bitiyor; bunlar ortak diye iki not aynı şeyi
@@ -60,8 +76,8 @@ const QUIZ_FRAME = new Set([
   "eine", "einen", "einem", "einer", "wird", "werden", "oder", "auch", "nicht", "sagt", "wenn", "dass", "sich", "etwas", "benutzt",
   "with", "that", "this", "from", "when", "used", "says", "something", "someone", "your", "about",
 ]);
-const quizStems = (x: string) =>
-  new Set(quizNorm(x).split(/[^\p{L}]+/u).filter((w) => w.length >= 4 && !QUIZ_FRAME.has(w)).map((w) => w.slice(0, 5)));
+const quizStems = quizMemo((x: string) =>
+  new Set(quizNorm(x).split(/[^\p{L}]+/u).filter((w) => w.length >= 4 && !QUIZ_FRAME.has(w)).map((w) => w.slice(0, 5))));
 const quizVerb = (w: string) => w.replace(/(mak|mek)$/, "");
 /** Tek sözcüklü iki biçim aynı kökten mi: abwägen / Abwägung, hedef / hedeflemek. */
 function quizRoot(a: string, b: string): boolean {
@@ -141,9 +157,14 @@ function pickDistractors(correct: QuizCand, pool: QuizCand[], seed: string, n = 
   const means = pool.filter((c) => quizHead(c.head) === head).map((c) => c.mean);
   correct = { ...correct, mean: [correct.mean, ...means].join("; ") };
   const uniqPool: QuizCand[] = [];
+  /* Metin tekliği kümeyle: listede `some` aramak havuz başına karesel işti. */
+  const seenText = new Set<string>();
   for (const c of pool) {
     if (!c.text || quizClash(correct, c)) continue;
-    if (!uniqPool.some((u) => quizNorm(u.text) === quizNorm(c.text))) uniqPool.push(c);
+    const k = quizNorm(c.text);
+    if (seenText.has(k)) continue;
+    seenText.add(k);
+    uniqPool.push(c);
   }
   const out: QuizCand[] = [];
   for (const cand of seededShuffle(uniqPool, seed)) {
