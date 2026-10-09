@@ -4,6 +4,7 @@ import type { MockScore, OpenScoreEntry } from "./scoring";
 import type { MockCourse } from "./types";
 import { translate, formatPercent, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { EN_VARIETY, EN_FEEDBACK } from "@/lib/assess-prompts";
+import { plainQuotes } from "@/lib/plain-quotes";
 
 /**
  * Deneme sınavından sonra yapılacaklar listesi.
@@ -234,12 +235,13 @@ function parse(raw: string): MockFeedback | null {
     const t = raw as { title?: unknown; why?: unknown; how?: unknown };
     if (typeof t.title !== "string" || typeof t.why !== "string" || typeof t.how !== "string") return null;
     if (!t.title.trim() || !t.how.trim()) return null;
-    todo.push({ title: t.title.trim(), why: t.why.trim(), how: t.how.trim() });
+    todo.push({ title: plainQuotes(t.title.trim()), why: plainQuotes(t.why.trim()), how: plainQuotes(t.how.trim()) });
   }
   const strengths = Array.isArray(d.strengths)
-    ? d.strengths.filter((x): x is string => typeof x === "string" && !!x.trim()).slice(0, 4)
+    ? d.strengths.filter((x): x is string => typeof x === "string" && !!x.trim()).slice(0, 4).map((x) => plainQuotes(x))
     : [];
-  return { summary: d.summary.trim(), strengths, todo, source: "ai" };
+  /* Model gerekçelerdeki ters tırnağı (`…`) cevabına taşıyor; ekran düz metin (`lib/plain-quotes`). */
+  return { summary: plainQuotes(d.summary.trim()), strengths, todo, source: "ai" };
 }
 
 /**

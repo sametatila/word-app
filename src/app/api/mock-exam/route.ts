@@ -25,6 +25,7 @@ import { isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { ensureProfile } from "@/lib/session";
 import { localiseMockPaper } from "@/lib/conversations/native-server";
 import { aiConsentGate, hasAiConsent } from "@/lib/ai-consent";
+import { plainQuotes } from "@/lib/plain-quotes";
 
 export const dynamic = "force-dynamic";
 
@@ -371,7 +372,7 @@ async function scoreWithExplains(row: Attempt, lang: NativeLang) {
   if (!part) return score;
   const explains = new Map<string, string>();
   for (const task of part.tasks) for (const it of task.items) explains.set(it.id, it.explain);
-  for (const it of score.items) it.explain = explains.get(it.id);
+  for (const it of score.items) it.explain = plainQuotes(explains.get(it.id));
   return score;
 }
 
@@ -604,7 +605,7 @@ async function finish(userId: string, body: Record<string, unknown>) {
   for (const t of part.tasks) for (const it of t.items) explains[it.id] = it.explain;
   /* Aynı gerekçeler SONUCA da yazılıyor: istemci artık onları kâğıttan
      okuyamıyor, çünkü kâğıt `explain` taşımadan iniyor. */
-  for (const it of score.items) it.explain = explains[it.id];
+  for (const it of score.items) it.explain = plainQuotes(explains[it.id]);
   /*
     YAPAY ZEKÂ GERİ BİLDİRİMİ İZNE BAĞLI, SINAVIN BİTMESİ DEĞİL. Özet dil
     modelinde üretiliyor; izin yoksa model çağrılmıyor ve sağlayıcı kapalıyken

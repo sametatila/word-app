@@ -1,4 +1,5 @@
 import type { QuizBlock, QuizItem, QuizNative, QuizWeek } from "./types";
+import { plainQuotes } from "@/lib/plain-quotes";
 
 /**
  * Quiz puanlaması — SAF ve SUNUCUDA.
@@ -121,7 +122,8 @@ export function scoreQuiz(
       chosen,
       answer: it.answer,
       correct: chosen === it.answer,
-      why: it.why,
+      // Ters tırnak işaretlemesi istemciye ham gitmiyor (`lib/plain-quotes`).
+      why: plainQuotes(it.why),
       targets: it.targets,
     };
   });
