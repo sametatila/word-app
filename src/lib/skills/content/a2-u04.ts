@@ -126,7 +126,7 @@ export const a2U04: SkillExercise[] = [
         text: "___ habe ich auf zwölf Anzeigen geschrieben.",
         options: [],
         answer: 0,
-        accept: ["Bislang", "bislang"],
+        accept: ["Bislang", "bislang", "Bisher"],
         explain: "„bislang“ = şimdiye kadar; başta durduğu için özne fiilin arkasına düşüyor.",
       },
       {

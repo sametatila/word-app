@@ -118,7 +118,7 @@ export const a1U11: SkillExercise[] = [
         text: "Ein Hemd für 9 Euro ist ___.",
         options: [],
         answer: 0,
-        accept: ["billig"],
+        accept: ["billig", "günstig"],
         explain: "„Ein Hemd für 9 Euro ist billig und gut!“",
       },
           {

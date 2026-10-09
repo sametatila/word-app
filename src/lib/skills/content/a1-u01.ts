@@ -286,7 +286,7 @@ export const a1U01: SkillExercise[] = [
         text: "Und wo wohnen Sie ___?",
         options: [],
         answer: 0,
-        accept: ["jetzt"],
+        accept: ["jetzt", "nun"],
         explain: "„Und wo wohnen Sie jetzt?“",
       },
 ],

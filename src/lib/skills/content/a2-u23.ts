@@ -226,7 +226,7 @@ export const a2U23: SkillExercise[] = [
         text: "___ Sie mich nicht hören, schreiben Sie bitte im Chat.",
         options: [],
         answer: 0,
-        accept: ["Wenn"],
+        accept: ["Wenn", "Falls"],
         explain: "Koşul yan cümlesi başta; ana cümle emir biçimiyle devam ediyor.",
       },
       {
@@ -299,7 +299,7 @@ export const a2U23: SkillExercise[] = [
         text: "Bitte schreiben Sie ___.",
         options: [],
         answer: 0,
-        accept: ["leserlich"],
+        accept: ["leserlich", "deutlich"],
         explain: "Formda en sık duyulan uyarı: okunaklı yaz, özellikle rakamlarda.",
       },
       {

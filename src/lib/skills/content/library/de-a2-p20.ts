@@ -411,7 +411,7 @@ export const deA2P20: SkillExercise[] = [
         text: "Hast du ___ gegessen? — Ja, um zwölf. (schon / erst)",
         options: [],
         answer: 0,
-        accept: ["schon"],
+        accept: ["schon", "bereits"],
         explain: "Olmuş bir şey soruluyor: schon.",
       },
       {

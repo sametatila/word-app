@@ -243,7 +243,7 @@ export const a1U08: SkillExercise[] = [
         text: "Möchtest du ein Eis ___?",
         options: [],
         answer: 0,
-        accept: ["probieren"],
+        accept: ["probieren", "essen", "kosten"],
         explain: "„Möchtest du ein Eis probieren?“",
       },
 ],

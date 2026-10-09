@@ -253,7 +253,7 @@ export const a1U17: SkillExercise[] = [
         text: "Heute ___ wir die Wohnung.",
         options: [],
         answer: 0,
-        accept: ["putzen"],
+        accept: ["putzen", "reinigen", "sauber machen", "saubermachen"],
         explain: "„Heute putzen wir die Wohnung.“",
       },
 ],

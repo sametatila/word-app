@@ -63,7 +63,7 @@ export const a2U06: SkillExercise[] = [
         text: "Am Mittwochnachmittag bleibt die Praxis ___.",
         options: [],
         answer: 0,
-        accept: ["geschlossen"],
+        accept: ["geschlossen", "zu"],
         explain: "„Am Mittwochnachmittag bleibt die Praxis geschlossen.“",
       },
       {
@@ -190,7 +190,7 @@ export const a2U06: SkillExercise[] = [
         text: "Mir ist ___.",
         options: [],
         answer: 0,
-        accept: ["übel", "schwindlig"],
+        accept: ["übel", "schwindlig", "schlecht"],
         explain: "Bu belirtide kişi özne olmaz, yönelme hâlinde durur: „Mir ist schwindlig“, „Ich bin schwindlig“ değil.",
       },
       {

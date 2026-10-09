@@ -249,7 +249,7 @@ export const a1U16: SkillExercise[] = [
         text: "Eine Frage: Funktioniert der ___?",
         options: [],
         answer: 0,
-        accept: ["Aufzug"],
+        accept: ["Aufzug", "Lift", "Fahrstuhl"],
         explain: "„Eine Frage: Funktioniert der Aufzug?“",
       },
 ],

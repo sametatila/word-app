@@ -219,7 +219,7 @@ export const a1U24: SkillExercise[] = [
         text: "Ich möchte meinen Termin ___.",
         options: [],
         answer: 0,
-        accept: ["verschieben"],
+        accept: ["verschieben", "verlegen"],
         explain: "„Ich möchte meinen Termin verschieben.“",
       },
 ],

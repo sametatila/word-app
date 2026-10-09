@@ -181,7 +181,7 @@ export const a1U12: SkillExercise[] = [
         text: "Die Person hat den ___.",
         options: [],
         answer: 0,
-        accept: ["Kassenbon"],
+        accept: ["Kassenbon", "Kassenzettel", "Bon", "Beleg"],
         explain: "„Haben Sie den Kassenbon?“ — „Ja, hier bitte.“",
       },
       {
@@ -195,7 +195,7 @@ export const a1U12: SkillExercise[] = [
         text: "Guten Tag, ich möchte diese Hose ___.",
         options: [],
         answer: 0,
-        accept: ["umtauschen"],
+        accept: ["umtauschen", "tauschen"],
         explain: "„Guten Tag, ich möchte diese Hose umtauschen.“",
       },
 ],
@@ -239,7 +239,7 @@ export const a1U12: SkillExercise[] = [
         text: "Der Koffer gefällt der Person ___ nicht.",
         options: [],
         answer: 0,
-        accept: ["gar"],
+        accept: ["gar", "überhaupt"],
         explain: "„Der Koffer gefällt mir gar nicht.“ — „gar nicht“ = hiç.",
       },
       {

@@ -198,7 +198,7 @@ export const a2U17: SkillExercise[] = [
         text: "___ das Wetter gut ist, machen wir eine Bootsfahrt.",
         options: [],
         answer: 0,
-        accept: ["Wenn"],
+        accept: ["Wenn", "Falls"],
         explain: "Koşul yan cümlesi wenn ile başlar ve fiili sona atar.",
       },
       {

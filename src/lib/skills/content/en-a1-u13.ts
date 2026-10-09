@@ -76,7 +76,7 @@ export const enA1U13: SkillExercise[] = [
         text: "Lucy needs ten ___.",
         options: [],
         answer: 0,
-        accept: ["Band-Aids"],
+        accept: ["Band-Aids", "bandages", "plasters"],
         explain: "„Do you have Band-Aids? … Ten, please.“",
       },
       {
@@ -278,7 +278,7 @@ export const enA1U13: SkillExercise[] = [
         text: "There is ___ on the train.",
         options: [],
         answer: 0,
-        accept: ["wifi"],
+        accept: ["wifi", "Wi-Fi"],
         explain: "„I read or I use my computer. There is wifi on the train.“",
       },
       {

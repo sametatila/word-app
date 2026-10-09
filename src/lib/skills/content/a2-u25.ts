@@ -69,7 +69,7 @@ export const a2U25: SkillExercise[] = [
         text: "Ich möchte Programmiererin bleiben, ___ ich gern allein und konzentriert arbeite.",
         options: [],
         answer: 0,
-        accept: ["weil"],
+        accept: ["weil", "da"],
         explain: "Gerekçe weil ile verilir ve çekimli fiil (arbeite) sona gider.",
       },
       {

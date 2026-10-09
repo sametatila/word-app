@@ -229,7 +229,7 @@ export const enA2U22: SkillExercise[] = [
         text: "Be careful with public ___.",
         options: [],
         answer: 0,
-        accept: ["wifi"],
+        accept: ["wifi", "Wi-Fi"],
         explain: "„Be careful with public wifi. Not for the news — for the bank.“",
       },
       {

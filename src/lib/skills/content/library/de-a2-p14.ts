@@ -409,7 +409,7 @@ export const deA2P14: SkillExercise[] = [
         text: "Die Wohnung ist zu teuer. ___ suchen wir eine neue. (weil / darum)",
         options: [],
         answer: 0,
-        accept: ["Darum", "darum"],
+        accept: ["Darum", "darum", "Deshalb", "Deswegen", "Daher"],
         explain: "Arkasından hemen fiil geliyor ve cümle sonucu söylüyor: Darum. weil fiili sona atardı.",
       },
       {
@@ -417,7 +417,7 @@ export const deA2P14: SkillExercise[] = [
         text: "Ich bin krank, ___ bleibe ich im Bett. (weil / deshalb)",
         options: [],
         answer: 0,
-        accept: ["deshalb"],
+        accept: ["deshalb", "deswegen", "darum", "daher"],
         explain: "Fiil ikinci sırada ve cümle sonucu söylüyor: deshalb. weil fiili sona atardı.",
       },
       {

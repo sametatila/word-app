@@ -259,7 +259,7 @@ export const a2U14: SkillExercise[] = [
         text: "Haben Sie den ___ dabei?",
         options: [],
         answer: 0,
-        accept: ["Kassenzettel"],
+        accept: ["Kassenzettel", "Kassenbon", "Bon", "Beleg"],
         explain: "İadenin ilk şartı fiş; Frau Roth yanında getirmiş.",
       },
       {

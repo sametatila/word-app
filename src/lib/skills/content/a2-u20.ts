@@ -275,7 +275,7 @@ export const a2U20: SkillExercise[] = [
         text: "Das ist schwer, aber ___.",
         options: [],
         answer: 0,
-        accept: ["machbar"],
+        accept: ["machbar", "möglich"],
         explain: "Jonas'ın önerisi: hedef zor olsun ama yapılabilir kalsın.",
       },
       {

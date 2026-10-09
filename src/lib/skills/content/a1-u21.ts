@@ -86,7 +86,7 @@ export const a1U21: SkillExercise[] = [
         text: "Am Wochenende ist die ___ zu.",
         options: [],
         answer: 0,
-        accept: ["Praxis"],
+        accept: ["Praxis", "Arztpraxis"],
         explain: "„Am Wochenende ist die Praxis zu.“",
       },
 ],
@@ -245,7 +245,7 @@ export const a1U21: SkillExercise[] = [
         text: "„Dann musst du ___ zum Arzt!“",
         options: [],
         answer: 0,
-        accept: ["sofort"],
+        accept: ["sofort", "gleich"],
         explain: "„Dann musst du sofort zum Arzt!“",
       },
       {

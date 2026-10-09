@@ -129,7 +129,7 @@ export const a1U04: SkillExercise[] = [
         text: "Auf dem ___ sind viele Leute: meine Familie.",
         options: [],
         answer: 0,
-        accept: ["Bild"],
+        accept: ["Bild", "Foto"],
         explain: "„Auf dem Bild sind viele Leute: meine Familie.“",
       },
 ],

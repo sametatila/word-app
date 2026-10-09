@@ -209,7 +209,7 @@ export const a1U23: SkillExercise[] = [
         text: "Sie ruft Sie ___ zurück.",
         options: [],
         answer: 0,
-        accept: ["später"],
+        accept: ["später", "nachher"],
         explain: "„Sie ruft Sie später zurück.“",
       },
 ],

@@ -70,7 +70,7 @@ export const deA2: SkillExercise[] = [
         text: "Der Eintritt ist ___.",
         options: [],
         answer: 0,
-        accept: ["kostenlos", "frei"],
+        accept: ["kostenlos", "frei", "gratis", "umsonst"],
         explain: "„Der Eintritt ist kostenlos.“ Yalnız kahve ve kek iki avro tutuyor.",
       },
       {

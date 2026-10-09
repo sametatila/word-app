@@ -268,7 +268,7 @@ export const a2U19: SkillExercise[] = [
         text: "Ich kann nicht kommen, ___ ich arbeiten muss.",
         options: [],
         answer: 0,
-        accept: ["weil"],
+        accept: ["weil", "da"],
         explain: "Gerekçe weil ile verilir ve çekimli fiil (muss) en sona gider.",
       },
       {

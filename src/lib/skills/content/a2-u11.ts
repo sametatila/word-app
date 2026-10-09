@@ -132,7 +132,7 @@ export const a2U11: SkillExercise[] = [
         text: "___ meiner neuen Stelle brauche ich mindestens B1.",
         options: [],
         answer: 0,
-        accept: ["Wegen", "wegen"],
+        accept: ["Wegen", "wegen", "Aufgrund"],
         explain: "Bu bir edat: yan cümle kurmaz, fiil sona gitmez. Başta olduğu için özne fiilin arkasına düşer.",
       },
       {

@@ -243,7 +243,7 @@ export const a1U20: SkillExercise[] = [
         text: "„Diesmal ___ es nicht.“",
         options: [],
         answer: 0,
-        accept: ["klappt"],
+        accept: ["klappt", "geht", "funktioniert"],
         explain: "„Diesmal klappt es nicht.“ — özne ES, kişi değil.",
       },
       {

@@ -131,7 +131,7 @@ export const a1U18: SkillExercise[] = [
         text: "die Lampe im Flur ist ___.",
         options: [],
         answer: 0,
-        accept: ["kaputt"],
+        accept: ["kaputt", "defekt"],
         explain: "„die Lampe im Flur ist kaputt.“",
       },
 ],

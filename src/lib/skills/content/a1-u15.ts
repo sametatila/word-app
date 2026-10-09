@@ -52,7 +52,7 @@ export const a1U15: SkillExercise[] = [
         text: "Der Turm ist sehr ___.",
         options: [],
         answer: 0,
-        accept: ["groß"],
+        accept: ["groß", "hoch"],
         explain: "„Der Turm ist sehr groß.“",
       },
       {
@@ -250,7 +250,7 @@ export const a1U15: SkillExercise[] = [
         text: "Ich möchte ein Fahrrad ___.",
         options: [],
         answer: 0,
-        accept: ["leihen"],
+        accept: ["leihen", "mieten", "ausleihen"],
         explain: "„Ich möchte ein Fahrrad leihen.“",
       },
 ],

@@ -64,7 +64,7 @@ export const a2U07: SkillExercise[] = [
         text: "Tabletten ___ man am besten mit einem großen Glas Wasser.",
         options: [],
         answer: 0,
-        accept: ["schluckt"],
+        accept: ["schluckt", "nimmt"],
         explain: "Belirsiz özne „man“ tekil çekim alır: schluckt.",
       },
       {

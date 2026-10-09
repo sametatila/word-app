@@ -66,7 +66,7 @@ export const a2U10: SkillExercise[] = [
         text: "Meine ___ funktioniert übrigens noch nicht.",
         options: [],
         answer: 0,
-        accept: ["Türklingel"],
+        accept: ["Türklingel", "Klingel"],
         explain: "Bu yüzden Kim „bitte einfach klopfen“ diye ekliyor.",
       },
       {

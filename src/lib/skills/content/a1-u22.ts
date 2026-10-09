@@ -205,7 +205,7 @@ export const a1U22: SkillExercise[] = [
         text: "Dreimal ___, immer nach dem Essen.",
         options: [],
         answer: 0,
-        accept: ["täglich"],
+        accept: ["täglich", "am Tag", "pro Tag"],
         explain: "„Dreimal täglich, immer nach dem Essen.“",
       },
 ],
