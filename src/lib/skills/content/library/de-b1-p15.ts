@@ -378,7 +378,7 @@ export const deB1P15: SkillExercise[] = [
         text: "Viele Mitglieder sind an ___ Kurs interessiert. (der)",
         options: [],
         answer: 0,
-        accept: ["dem"],
+        accept: ["dem", "einem"],
         explain: "„interessiert an“ Dativ ister; der Kurs → an dem Kurs.",
       },
       {

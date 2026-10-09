@@ -388,7 +388,7 @@ export const deA1P16: SkillExercise[] = [
         text: "Wir sitzen um ___ Tisch. (der Tisch)",
         options: [],
         answer: 0,
-        accept: ["den"],
+        accept: ["den", "einen"],
         explain: "„um“ belirtme hâli ister: der Tisch → um den Tisch.",
       },
       {

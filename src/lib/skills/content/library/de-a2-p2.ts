@@ -370,7 +370,7 @@ export const deA2P2: SkillExercise[] = [
         text: "Die Lampe hängt über ___ Sofa. (das Sofa)",
         options: [],
         answer: 0,
-        accept: ["dem"],
+        accept: ["dem", "einem"],
         explain: "Asılı durma bir durumdur, soru wo? — nötr kelimede Dativ: dem Sofa.",
       },
       {
@@ -378,7 +378,7 @@ export const deA2P2: SkillExercise[] = [
         text: "Häng das Bild bitte an ___ Wand. (die Wand)",
         options: [],
         answer: 0,
-        accept: ["die"],
+        accept: ["die", "eine"],
         explain: "Burada asma eylemi bir harekettir, soru wohin? — dişil Akkusativ: die Wand.",
       },
       {
@@ -386,7 +386,7 @@ export const deA2P2: SkillExercise[] = [
         text: "Der Schlüssel liegt in ___ Tasche. (die Tasche)",
         options: [],
         answer: 0,
-        accept: ["der"],
+        accept: ["der", "einer"],
         explain: "Yer soruluyor, dişil kelimenin Dativ artikeli der'dir: in der Tasche.",
       },
       {
@@ -394,7 +394,7 @@ export const deA2P2: SkillExercise[] = [
         text: "Stell die Flasche bitte in ___ Kühlschrank. (der Kühlschrank)",
         options: [],
         answer: 0,
-        accept: ["den"],
+        accept: ["den", "einen"],
         explain: "„stellen“ hareket bildirir; eril Akkusativ: in den Kühlschrank.",
       },
       {

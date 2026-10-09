@@ -160,9 +160,9 @@
   "en": "The heading says „Kartoffelsuppe für vier Personen“."
  },
  {
-  "tr": "Belirli artikel eril nesnede der → den: den Tee.",
+  "tr": "Eril nesnede der → den, ein → einen: „den Tee“ (çayı) da „einen Tee“ (bir çay) da doğru.",
   "kind": "explain",
-  "en": "The definite article for a masculine object goes der → den: den Tee."
+  "en": "For a masculine object der → den and ein → einen: both „den Tee“ (the tea) and „einen Tee“ (a tea) are correct."
  },
  {
   "tr": "Biçimsel olarak doğru, pratikte nadiren geçerli.",
@@ -675,9 +675,9 @@
   "en": "The preposition goes IN FRONT of the pronoun: „in dem“ — not to the end."
  },
  {
-  "tr": "Eril kelime nesne olunca ein → einen: einen Apfel.",
+  "tr": "Eril kelime nesne olunca artikel değişir: ein → einen, der → den. „einen Apfel“ (bir elma) da „den Apfel“ (elmayı) da doğru.",
   "kind": "explain",
-  "en": "A masculine word as an object goes ein → einen: einen Apfel."
+  "en": "A masculine word as an object changes its article: ein → einen, der → den. Both „einen Apfel“ (an apple) and „den Apfel“ (the apple) are correct."
  },
  {
   "tr": "Gaf yapıldı. Silinebilen ile silinemeyeni ayırmak.",
