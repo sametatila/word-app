@@ -1076,6 +1076,27 @@
     return [...bad];
   };
 
+  /**
+   * Videonun ekranda görünen yazıları ve İLK göründükleri an ({ s, t }, 0,25 sn'de bir). Editör görünmeyen veri alanını
+   * ayırır, alana tıklanınca önizlemeyi o ana götürür.
+   */
+  E.texts = (host, I) => {
+    const scene = host.shadowRoot.getElementById("scene");
+    const out = new Map();
+    for (let t = 0; t <= I.plan.duration; t += 0.25) {
+      I.render(t);
+      const w = document.createTreeWalker(scene, NodeFilter.SHOW_TEXT);
+      for (let n = w.nextNode(); n; n = w.nextNode()) {
+        const s = n.textContent.trim();
+        if (!s || out.has(s) || n.parentElement.closest("style")) continue;
+        let o = 1;
+        for (let e = n.parentElement; e && e !== scene; e = e.parentElement) o *= +getComputedStyle(e).opacity;
+        if (o > 0.5) out.set(s, Math.round(t * 100) / 100);
+      }
+    }
+    return [...out].map(([s, t]) => ({ s, t }));
+  };
+
   /** Bir videoyu host içine kurar; host genişliğine göre ölçeklenir. */
   E.mount = (host, id, data = E.data[id]) => {
     const V = E.videos[id];

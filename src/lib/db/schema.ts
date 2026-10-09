@@ -2343,8 +2343,8 @@ export const ttsReviews = pgTable(
 );
 
 /**
- * Sosyal medya yayın kaydı (panel › İçerik › Sosyal medya, 2026-10-09). Plan (hangi bölüm hangi saatte) depoda:
- * `data/social/plan.json` (`npm run social:plan -- --write`). Bu tablo yalnız platformdaki DURUMU tutar: bölüm × platform
+ * Sosyal medya yayın kaydı (stüdyo, /studio; 2026-10-09). Bölüm ve saat `social_episodes`ta; bu tablo yalnız
+ * platformdaki DURUMU tutar: bölüm × platform
  * başına bir satır; satır yoksa "planlandı". Metrikler API eşitlemesinden ya da elle. `episode_id` boş satır: platformda
  * bulunan ama planda olmayan gönderi (eşitleme). Kullanıcıya bağlı değil.
  */
@@ -2371,4 +2371,121 @@ export const socialPosts = pgTable(
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [uniqueIndex("social_posts_episode_uq").on(t.episodeId, t.platform), uniqueIndex("social_posts_external_uq").on(t.platform, t.externalId)],
+);
+
+/**
+ * Sosyal video bölümleri, STÜDYO (lernomi.app/studio, 2026-10-09). Claude bölümleri depoda yazar
+ * (`data/social/episodes/*.mjs`); sunucudaki işçi (`scripts/social/worker.mjs`) her değişiklikte çözülmüş veriyi
+ * buraya aktarır. Stüdyoda düzenlenen bölümün doğruluk kaynağı bu satırdır: aktarım düzenlenmiş veriyi ezmez,
+ * yalnız `origin`i günceller ve `origin_changed` der. `data`: şablonun okuduğu çözülmüş içerik (copy ve copy.ui
+ * dahil); `spoken`: seslendirilen Almanca metinler (Defne kaydı olmadan onay yok). Kullanıcıya bağlı değil.
+ */
+export const socialEpisodes = pgTable(
+  "social_episodes",
+  {
+    /** `<şablon>-<NNN>` */
+    id: text("id").primaryKey(),
+    template: text("template").notNull(),
+    /** Berlin yerel saati "YYYY-AA-GG SS:DD" (07:30 / 12:30 / 18:30); boşsa takvimde değil */
+    slot: text("slot"),
+    data: jsonb("data").$type<Record<string, unknown>>().notNull(),
+    revision: integer("revision").notNull().default(1),
+    spoken: jsonb("spoken").$type<string[]>().notNull().default([]),
+    /** Depodaki son sürüm (aktarım) */
+    origin: jsonb("origin").$type<Record<string, unknown>>().notNull(),
+    originHash: text("origin_hash").notNull(),
+    originSlot: text("origin_slot"),
+    originSpoken: jsonb("origin_spoken").$type<string[]>().notNull().default([]),
+    /** Tekrar engeli için kelime kayıtları (`w:<id>`), aktarımdan */
+    used: jsonb("used").$type<string[]>().notNull().default([]),
+    /** Stüdyoda düzenlendi (aktarım `data`ya dokunmaz) */
+    edited: boolean("edited").notNull().default(false),
+    /** Düzenlenmişken depodaki sürüm değişti */
+    originChanged: boolean("origin_changed").notNull().default(false),
+    approvedRevision: integer("approved_revision"),
+    approvedBy: text("approved_by"),
+    approvedAt: timestamp("approved_at", { withTimezone: true }),
+    updatedBy: text("updated_by"),
+    /** Depodan kalktı (silinmez: yayınlanmış olabilir) */
+    archivedAt: timestamp("archived_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("social_episodes_slot_idx").on(t.slot)],
+);
+
+/** Bölüm sürümleri: her kayıt (aktarım ya da stüdyo) bir satır; geri dönüş ve "kim neyi değiştirdi" için. */
+export const socialRevisions = pgTable(
+  "social_revisions",
+  {
+    id: serial("id").primaryKey(),
+    episodeId: text("episode_id").notNull(),
+    revision: integer("revision").notNull(),
+    data: jsonb("data").$type<Record<string, unknown>>().notNull(),
+    spoken: jsonb("spoken").$type<string[]>().notNull().default([]),
+    slot: text("slot"),
+    /** e-posta ya da "claude" (depodan aktarım) */
+    author: text("author").notNull(),
+    note: text("note"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("social_revisions_uq").on(t.episodeId, t.revision)],
+);
+
+/**
+ * Sunucuda video üretimi (onaydan sonra). İşçi `queued` satırı alır, sürümün verisiyle kare kare üretir,
+ * dosyaları `/opt/lernomi/social/out/<bölüm>/r<sürüm>/`e yazar. Aynı bölümün eski `done` üretiminin dosyaları
+ * yenisi bitince silinir (satır iz olarak kalır, `dir` boşalır).
+ */
+export const socialRenders = pgTable(
+  "social_renders",
+  {
+    id: serial("id").primaryKey(),
+    episodeId: text("episode_id").notNull(),
+    revision: integer("revision").notNull(),
+    /** queued · running · done · failed · cancelled */
+    status: text("status").notNull().default("queued"),
+    requestedBy: text("requested_by"),
+    error: text("error"),
+    duration: real("duration"),
+    bytes: integer("bytes"),
+    lufs: real("lufs"),
+    truePeak: real("true_peak"),
+    dir: text("dir"),
+    /** 0–1, işçi her saniyede bir yazar */
+    progress: real("progress"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    startedAt: timestamp("started_at", { withTimezone: true }),
+    finishedAt: timestamp("finished_at", { withTimezone: true }),
+    heartbeatAt: timestamp("heartbeat_at", { withTimezone: true }),
+  },
+  (t) => [index("social_renders_status_idx").on(t.status, t.createdAt), index("social_renders_episode_idx").on(t.episodeId, t.createdAt)],
+);
+
+/**
+ * Stüdyo TALEPLERİ (süreç yönetimi, 2026-10-09; Samet: "editör hesabıysa Samet'e gönder imkânı olmalı, adminse bana
+ * bilgi vermeli"). Şimdilik tür `audio`: seslendirilen Almanca metnin Defne kaydı yok (Edge'e düşüş YOK). Akış:
+ * open (editör gönderdi, Samet'e Telegram) → in_progress (Samet işleme aldı; işçi ses bekçisini hemen koşturur,
+ * metin Mac'in üretim listesine girer) → done (kayıtların hepsi gelince kendiliğinden) | rejected (gerekçeyle) |
+ * cancelled (talep eden geri çekti). history: her adım { at, by, status, note }. requester_seen: talep eden son
+ * değişikliği gördü mü (stüdyo rozeti). Kullanıcıya bağlı değil (e-posta yalnız iz).
+ */
+export const socialRequests = pgTable(
+  "social_requests",
+  {
+    id: serial("id").primaryKey(),
+    episodeId: text("episode_id").notNull(),
+    kind: text("kind").notNull().default("audio"),
+    texts: jsonb("texts").$type<string[]>().notNull().default([]),
+    status: text("status").notNull().default("open"),
+    requestedBy: text("requested_by").notNull(),
+    note: text("note"),
+    reply: text("reply"),
+    history: jsonb("history").$type<{ at: string; by: string; status: string; note?: string | null }[]>().notNull().default([]),
+    requesterSeen: boolean("requester_seen").notNull().default(true),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    resolvedAt: timestamp("resolved_at", { withTimezone: true }),
+  },
+  (t) => [index("social_requests_status_idx").on(t.status, t.updatedAt), index("social_requests_episode_idx").on(t.episodeId)],
 );

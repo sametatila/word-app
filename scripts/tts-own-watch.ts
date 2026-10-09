@@ -14,6 +14,10 @@
  * eksik her gece tekrar bildirilmesin diye ölçüt "yeni", toplam yalnız bağlam olarak yazılıyor.
  *
  * Yürüyüş anlatımı (`walk_*`) eksikse susmuyor, Edge karşılığı çalıyor (`k=n`); o yüzden ayrı sayılıyor.
+ *
+ * SOSYAL VİDEO STÜDYOSU (2026-10-09): stüdyoda düzenlenen bölümlerin seslendirilen Almanca metinleri
+ * (`social_episodes.spoken`, arşivlenmemiş) de ihtiyaç listesine girer (alan `word_social` / `example_social`: Mac kelime kayıtlarını alanın ilk parçasından tanır).
+ * Samet'in kararı "yalnız Defne": kaydı olmayan metnin bölümü onaylanamaz; Mac'in sabah turu üretince açılır.
  */
 import "dotenv/config";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
@@ -30,10 +34,23 @@ async function main() {
   const { rows } = await pool.query<WordRow>(
     `select id, de, artikel, tr, en, formen, typ, niveau, beispiel, de_gloss, rank, course from words where course in ('de', 'en')`,
   );
+  // stüdyo: seslendirilen metinler (tablo yoksa ya da göç uygulanmadıysa sessizce atla)
+  let social: string[] = [];
+  try {
+    const r = await pool.query<{ text: string }>(
+      `select distinct jsonb_array_elements_text(spoken) as text from social_episodes where archived_at is null`,
+    );
+    social = r.rows.map((x) => x.text).filter(Boolean);
+  } catch {
+    /* social_episodes yok */
+  }
   await pool.end();
 
   const map: Record<string, string> = JSON.parse(readFileSync(path.join(dir, "tts-map.json"), "utf8"));
-  const { missing, jobs, needed } = coverage(ownNeeds(rows), map);
+  const SOCIAL_ROW: WordRow = { id: 0, de: "", artikel: null, tr: "", en: null, formen: null, typ: "", niveau: "B1", beispiel: null, de_gloss: null, rank: null, course: "social" };
+  // kısa metin (kelime, artikelli kelime) kelime gibi, cümle örnek cümle gibi okunur (Mac'in kayıt kapıları alana göre)
+  const socialNeeds = social.map((text) => ({ lang: "de", text, field: text.split(/\s+/).length <= 3 && !/[.!?]$/.test(text) ? "word_social" : "example_social", w: SOCIAL_ROW }));
+  const { missing, jobs, needed } = coverage([...ownNeeds(rows), ...socialNeeds], map);
 
   const lines = jobLines(jobs);
   writeFileSync(path.join(dir, "eksik.jsonl"), lines.join("\n") + (lines.length ? "\n" : ""));

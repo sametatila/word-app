@@ -12,7 +12,8 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 
 export const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../../..");
-export const TTS = process.env.TTS_DIR || path.join(process.env.HOME, "Workspace/tts-test/yayin");
+// Mac: tts-test yayın klasörü; sunucu: TTS_OWN_DIR (/opt/lernomi/tts-own, aynı düzen). TTS_DIR ikisini de ezer.
+export const TTS = process.env.TTS_DIR || process.env.TTS_OWN_DIR || path.join(process.env.HOME, "Workspace/tts-test/yayin");
 
 let cache = null;
 function load() {
