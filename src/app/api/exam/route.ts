@@ -238,7 +238,7 @@ export async function POST(req: Request) {
         const doneId = key.j ? prior.jtis.get(key.j) : undefined;
         if (doneId !== undefined) {
           const done = await examById(userId, doneId);
-          if (done) return NextResponse.json({ ...done, review: objectiveReview(key) });
+          if (done) return NextResponse.json({ ...done, result: done, review: objectiveReview(key) });
           return NextResponse.json({ error: "already_finished" }, { status: 409 });
         }
         reviewedBefore = prior.any;
@@ -275,7 +275,10 @@ export async function POST(req: Request) {
       });
       // Kör modda istemci döküm/review'ı kâğıttan kuramaz (cevaplar yoktu);
       // sunucu doğru cevapları BİTİŞTE döndürüyor (artık sömürüye yaramaz).
-      return NextResponse.json(key && responses ? { ...result, review: objectiveReview(key) } : result);
+      /* `result`: mobil build ≤ 22 sonucu `d.result`ta arıyordu, düz gövdede bulamayınca
+         kaydedilmiş sınavı "Sonuç gönderilemedi, %0" diye gösteriyordu (QA F-0016,
+         2026-10-09). Web düz gövdeyi okuyor; ikisi birlikte dönüyor. */
+      return NextResponse.json(key && responses ? { ...result, result, review: objectiveReview(key) } : { ...result, result });
     }
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   } catch (err) {

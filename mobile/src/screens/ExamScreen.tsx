@@ -324,7 +324,11 @@ export function ExamScreen() {
       ? Math.round(speakScores.current.reduce((a, b) => a + b, 0) / speakScores.current.length)
       : null;
     try {
-      const d = await api<{ result: Result }>("/api/exam", {
+      /* Sunucu sonucu DÜZ döndürüyor ({ id, total, passed, sections, … }); mobil
+         `d.result` okuyordu ve her bitiş kaydedildiği hâlde "Sonuç gönderilemedi, %0"
+         görünüyordu (QA F-0016, 2026-10-09). Sunucu geriye uyum için `result`
+         alanını da ekliyor; ikisi de okunuyor. */
+      const d = await api<Result & { result?: Result }>("/api/exam", {
         method: "POST",
         body: JSON.stringify({
           action: "finish", level, module: moduleIx, day: todayStr(),
@@ -341,7 +345,7 @@ export function ExamScreen() {
           seconds: Math.round((Date.now() - startedAt.current) / 1000),
         }),
       });
-      setResult(d.result);
+      setResult(d.result ?? d);
     } catch {
       setResult(null);
       const total = sections.reduce((a, x) => a + x.total, 0);

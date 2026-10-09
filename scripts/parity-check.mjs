@@ -22159,6 +22159,18 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
   sameList("yuruyus VAD emniyet tavani", ["js=" + (tavan || "YOK")], ["js=" + deger("MAX_WAIT_MS") + "+" + deger("MAX_SPEECH_MS")], "mobil", "referans");
 }
 
+/* ── sinav bitisi sozlesmesi ────────────────────────────────────────────────
+ * `/api/exam` finish sonucu DUZ donduruyor; mobil `d.result` okuyordu ve kaydedilmis
+ * her sinavi "Sonuc gonderilemedi, %0" diye gosteriyordu (QA F-0016, 2026-10-09).
+ * Sunucu geriye uyum icin `result` alanini da ekliyor, mobil ikisini de okuyor. */
+console.log("\n" + C.b + "SINAV BITISI SOZLESMESI" + C.off);
+{
+  const route = read("src/app/api/exam/route.ts");
+  const mob = read("mobile/src/screens/ExamScreen.tsx");
+  sameList("sunucu sonucu result alaniyla da donuyor", [String((route.match(/\{ \.\.\.result, result/g) ?? []).length >= 2)], ["true"], "sunucu", "beklenen");
+  sameList("mobil duz govdeyi de okuyor", [String(/setResult\(d\.result \?\? d\)/.test(mob))], ["true"], "mobil", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
