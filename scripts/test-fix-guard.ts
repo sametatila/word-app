@@ -1,5 +1,5 @@
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
-import { filterCorrectionLines, guardCorrections, judgeCorrection, splitInlineMarkers } from "../src/lib/conversations/fix-guard";
+import { ensureRoleText, filterCorrectionLines, guardCorrections, judgeCorrection, splitInlineMarkers } from "../src/lib/conversations/fix-guard";
 import { breakInlineMarkers } from "../src/lib/chat-format";
 
 /**
@@ -219,6 +219,33 @@ async function streamTests() {
   }
   check("satır içi işaret akışta her bölmede aynı", ibad === 0, String(ibad));
   check("satır içi işaret karakter karakter", (await split([...INLINE])) === want, JSON.stringify(await split([...INLINE])));
+
+  // Rol metni olmayan cevap (panel #39): yeniden üretiliyor; rol metinli cevap birebir geçiyor.
+  async function role(attempts: string[][], retries = 1): Promise<{ out: string; tries: number }> {
+    let tries = 0;
+    let out = "";
+    const make = () => {
+      const chunks = attempts[Math.min(tries, attempts.length - 1)];
+      tries++;
+      return (async function* () {
+        for (const c of chunks) yield c;
+      })();
+    };
+    for await (const d of ensureRoleText(make, retries)) out += d;
+    return { out, tries };
+  }
+  const NORMAL = `${CORRECTION_MARK} ${GOOD}\nDas ist super! Wie lange?\n${SUGGESTION_MARK} Seit fünf Jahren.\n${SUGGESTION_MARK} Lange.\n${SUGGESTION_MARK} Kurz.`;
+  let rbad2 = 0;
+  for (let i = 0; i <= NORMAL.length; i++) {
+    const r = await role([[NORMAL.slice(0, i), NORMAL.slice(i)].filter(Boolean)]);
+    if (r.out !== NORMAL || r.tries !== 1) rbad2++;
+  }
+  check("rol metinli cevap her bölmede birebir, tek deneme", rbad2 === 0, String(rbad2));
+  const ONLY = `${SUGGESTION_MARK} Ich habe Größe M.\n${SUGGESTION_MARK} Meine Größe ist M.\n${SUGGESTION_MARK} Ich brauche M.`;
+  const r1 = await role([[...ONLY], [...NORMAL]]);
+  check("yalnız öneri → yeniden üretiliyor, ikinci deneme gidiyor", r1.out === NORMAL && r1.tries === 2, JSON.stringify(r1));
+  const r2 = await role([[...ONLY], [...ONLY]]);
+  check("iki denemede de rol metni yok → öneriler yine gidiyor", r2.out === ONLY && r2.tries === 2, JSON.stringify(r2));
 }
 
 streamTests().then(() => {

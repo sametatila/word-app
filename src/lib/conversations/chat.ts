@@ -8,7 +8,7 @@ import { SCORED_TURNS } from "./chat-const";
 import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { dialogueDone, targetsUsed } from "@/lib/dialogue";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
-import { guardCorrections, splitInlineMarkers } from "./fix-guard";
+import { ensureRoleText, guardCorrections, splitInlineMarkers } from "./fix-guard";
 
 /**
  * Sohbet — konuşmanın son ve asıl parçası.
@@ -371,13 +371,26 @@ ${charsNote(tgt.chars, nat.chars)}
 BU KONUŞMA
 Seviye ${conversation.level}: rol metninde ve önerilerde bu seviyenin üstünde yapı ve kelime kullanma.
 Rolün: adın ${who.name}; ${conversation.chat.partner} — ${who.note}. Adın sorulursa söyle; cümle içinde zorlama.
-Sahne: ${conversation.chat.scene}${registerNote(chatRegister(conversation)) ? `\n${registerNote(chatRegister(conversation))}` : ""}
+${roleSplit(conversation)}${registerNote(chatRegister(conversation)) ? `\n${registerNote(chatRegister(conversation))}` : ""}
 Amaç (buraya varınca konuşma biter; her turda bir adım yaklaş, konu dağıtma): ${conversation.chat.goal}
 Yay: ${conversation.chat.minTurns} turluk bir sahne. Açılışta sahneyi kur, ortada amaca götüren ayrıntıları konuş (miktar, zaman, tercih, sebep, koşul), sonda açık noktayı kapatıp sonuçlandır ve veda et.
 Bu adımın kalıpları (öğrencinin cümleleri; öğrenci az önce öğrendi):
 ${patterns}
 Bu adımın kelimeleri (konuşmayı geçebilecekleri yere sür): ${vocab}
 ${phaseBlock(phase)}`;
+}
+
+/**
+ * Sahne metni ÖĞRENCİYE yazılmış ("Bedenini söyle, kabinin yerini sor") ve
+ * istemde olduğu gibi "Sahne:" diye verildiğinde model oradaki "sen"i kendisi
+ * sanıyordu: satış görevlisi rolündeki model müşteriye "Wo sind denn die
+ * Umkleidekabinen?" diye sordu (QA F-0037, A1 de-a1-groesse). Sahne aynı
+ * kalıyor (öğrenciye de bu metin gösteriliyor); istem kimin kim olduğunu ve
+ * sahnedeki görevlerin ÖĞRENCİNİN işi olduğunu açıkça söylüyor.
+ */
+function roleSplit(conversation: Conversation): string {
+  return `Öğrencinin görevi (öğrenciye "sen" diye yazıldı; buradaki "sen" ÖĞRENCİ, sen değilsin): ${conversation.chat.scene}
+Rol ayrımı: sen yalnız ${conversation.chat.partner} olarak konuşursun. Yukarıda öğrenciye verilen işleri (sormak, istemek, söylemek, anlatmak) öğrenci yapar; sen o soruları kendin sormazsın, öğrencinin sorusuna rolüne uygun cevap verirsin ve sorması için yer açarsın. Örnek: görevde "kabinin yerini sor" yazıyorsa kabinin yerini sen sormazsın; öğrenci sorunca nerede olduğunu söylersin.`;
 }
 
 /**
@@ -434,7 +447,7 @@ ROLÜN
 Adın ${who.name}. ${conversation.chat.partner} rolündesin — ${who.note}. Gerçek bir kişi gibi davran.
 
 SAHNE
-${conversation.chat.scene}
+${roleSplit(conversation)}
 
 KONUŞMANIN AMACI — buraya varınca konuşma biter
 ${conversation.chat.goal}
@@ -506,8 +519,11 @@ export async function* streamChat(
   const said = messages.at(-1)?.content ?? "";
   // Satır içine düşen işaretler önce kendi satırına alınıyor (süzgeç ve istemciler
   // işareti satır başında arıyor).
+  // Rol metni olmayan cevap (yalnız öneriler) bir kez yeniden üretiliyor (`ensureRoleText`).
   yield* guardCorrections(
-    splitInlineMarkers(streamSystem(system, messages, onMeta, report)),
+    ensureRoleText(() => splitInlineMarkers(streamSystem(system, messages, onMeta, report)), 1, () =>
+      console.warn("[chat] rol metni yok, tur yeniden üretiliyor"),
+    ),
     said,
     (reason) => console.warn(`[chat] düzeltme süzüldü: ${reason}`),
     { register: chatRegister(conversation), lang: conversation.course === "en" ? "en" : "de" },

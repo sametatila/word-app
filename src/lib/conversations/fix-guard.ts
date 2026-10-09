@@ -251,6 +251,82 @@ function judgeLine(line: string, said: string, ctx: FixContext): FixVerdict {
 }
 
 /**
+ * ROL METNİ OLMAYAN CEVAP (QA 2026-10-09, panel #39): model bazen yalnız üç öneri
+ * döndürüyor ("[SAY] Ich habe Größe M. [SAY] …"); karakter hiçbir şey söylememiş
+ * oluyor. İşaret satırları ([FIX]/[SAY]) ilk rol cümlesi görünene kadar tutuluyor;
+ * düz metin beklemeden akıyor (gecikme yok). Cevap rol metni olmadan biterse tur
+ * `retries` kez yeniden üretiliyor; yine yoksa tutulan satırlar gönderiliyor
+ * (en azından öneri düğmeleri). `make` her denemede yeni bir akış kurar.
+ */
+export async function* ensureRoleText(
+  make: () => AsyncIterable<string>,
+  retries = 1,
+  onRetry?: () => void,
+): AsyncGenerator<string> {
+  for (let attempt = 0; ; attempt++) {
+    let sawBody = false;
+    let held = ""; // tutulan işaret satırları (rol metninden önce)
+    let line = ""; // içinde bulunulan satırın başı (sınıflanana kadar)
+    let mode: "unknown" | "body" | "mark" = "unknown";
+    const out: string[] = [];
+    const flushHeld = () => {
+      if (held) out.push(held);
+      held = "";
+    };
+    for await (const delta of make()) {
+      for (const ch of delta) {
+        if (mode === "body") {
+          out.push(ch);
+          if (ch === "\n") mode = "unknown";
+          continue;
+        }
+        line += ch;
+        if (mode === "unknown") {
+          const lead = line.trimStart();
+          if (ch === "\n" && !lead) {
+            // boş satır: rol metninden önceyse tutuluyor, sonra akıyor
+            if (sawBody) out.push(line);
+            else held += line;
+            line = "";
+            continue;
+          }
+          if (!lead) continue;
+          const marks = [CORRECTION_MARK, "[SAY]"];
+          if (marks.some((m) => lead.startsWith(m))) mode = "mark";
+          else if (!marks.some((m) => m.startsWith(lead))) {
+            mode = "body";
+            sawBody = true;
+            flushHeld();
+            out.push(line);
+            line = "";
+            if (ch === "\n") mode = "unknown";
+            continue;
+          }
+        }
+        if (mode === "mark" && ch === "\n") {
+          if (sawBody) out.push(line);
+          else held += line;
+          line = "";
+          mode = "unknown";
+        }
+      }
+      if (out.length) yield out.splice(0).join("");
+    }
+    if (line) {
+      if (sawBody || mode === "body") out.push(line);
+      else held += line;
+      line = "";
+    }
+    if (sawBody || attempt >= retries) {
+      flushHeld();
+      if (out.length) yield out.join("");
+      return;
+    }
+    onRetry?.();
+  }
+}
+
+/**
  * İŞARETİ SATIR BAŞINA AL — akışta (QA 2026-10-09, panel #12). Model önerileri
  * bazen rol metninin arkasına aynı satırda yazıyor ("…Woher kommen Sie?   [SAY] Ich
  * komme aus der Türkei.   [SAY] …"); istemciler işareti yalnız satır başında
