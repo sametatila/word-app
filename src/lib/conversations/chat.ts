@@ -131,13 +131,9 @@ export function chatRegister(conversation: Conversation): "du" | "Sie" | undefin
 
 /** İstemdeki hitap satırı; hitap bilinmiyorsa boş. */
 function registerNote(register: "du" | "Sie" | undefined): string {
-  if (register === "du") {
-    return `Hitap: bu sahnede "du" (samimi). Sen "du" kullan; öğrencinin "du" demesi DOĞRUDUR, onu "Sie"ye düzeltme. Karakter notundaki konuşma tarzı hitabı değiştirmez.`;
-  }
-  if (register === "Sie") {
-    return `Hitap: bu sahnede "Sie" (resmî). Sen "Sie" kullan ve öğrenciye örnek ol. Öğrencinin "du" ya da "Sie" demesi dilbilgisi hatası DEĞİLDİR: hitap için düzeltme satırı yazma.`;
-  }
-  return "";
+  /* KISA (2026-10-09 ölçümü): hitabı ve düzeltmeyi anlatan uzun satır Gemma'yı rol metnini
+     atlayıp yalnız öneri yazmaya itiyordu. Hitap düzeltmesini süzgeç zaten siliyor. */
+  return register ? `Hitap: "${register}".` : "";
 }
 
 /*
@@ -346,24 +342,6 @@ düzeltme satırı yok — bunun yerine söylediği şeye cevap ver.
 Düzeltme yazarken:
 - Öğrencinin söylemediği kelimeleri ekleme, anlamını değiştirme. Düzeltme onun
   cümlesinin doğru hâli olmalı, başka bir cümle değil.
-- KİMİN ne yaptığını değiştirme: "Du kochst jetzt die Suppe" öğrencinin cümlesi;
-  onu "Ich koche …" yapmak düzeltme değil, başka bir cümle. Sahneyle uyuşmuyorsa
-  rol metninde cevap ver, düzeltme satırı yazma.
-- Sayıyı sözle söylemek (siebzehn achtundzwanzig) hata değil; rakama çevirme.
-  Kısaltmayı açma (Uni → Universität), ayrıntı ekleme (bis fünf → bis fünf Uhr),
-  eş anlamlıya geçme (möchte → will): bunlar üslup, düzeltme değil.
-- Etiket yaptığın değişikliği anlatmalı. Sözcük sırası etiketi (V2-Regel,
-  Verb-Endstellung) yalnız sözcüklerin YERİNİ değiştirdiğinde; bir sözcüğü başka
-  sözcükle değiştirdiysen o etiket yanlış. "Inhalt", "Präzision", "Stil",
-  "Ausdruck" gibi bir etiket aklına geliyorsa satırı YAZMA: o bir hata değil.
-- Sayılamayan isimler (Wasser, Milch, Zahnpasta, Geld, Obst, Käse…) artikelsiz de
-  doğrudur: "Ich brauche Zahnpasta" düzeltilmez.
-- "bitte", "auch", "doch", "mal", "gern" gibi sözcükler cümlede birkaç yerde durabilir:
-  "Halten Sie bitte hier" doğrudur, yerlerini değiştiren düzeltme yazma. İki biçimi de
-  doğru olanı da düzeltme ("gegenüber vom Bahnhof" = "gegenüber dem Bahnhof").
-- Her ${CORRECTION_MARK} ve ${SUGGESTION_MARK} işareti YENİ BİR SATIRIN BAŞINDA durur;
-  rol metninin arkasına aynı satırda işaret yazma. Rol metnin işaretsizdir: kendi
-  cümleni ${SUGGESTION_MARK} ile yazma; ${SUGGESTION_MARK} yalnız ÖĞRENCİNİN söyleyebileceği cevaplar.
 - Tek satırda ver: ${CORRECTION_MARK} ile başla, yanlışı ve doğrusunu yaz, sonuna
   ${nat.name} KURALIN ADINI ekle — açıklama cümlesi değil, etiket.
   Örnek: "${tgt.fixExample}".
@@ -387,16 +365,19 @@ ${phaseBlock(phase)}`;
 }
 
 /**
- * Sahne metni ÖĞRENCİYE yazılmış ("Bedenini söyle, kabinin yerini sor") ve
- * istemde olduğu gibi "Sahne:" diye verildiğinde model oradaki "sen"i kendisi
- * sanıyordu: satış görevlisi rolündeki model müşteriye "Wo sind denn die
- * Umkleidekabinen?" diye sordu (QA F-0037, A1 de-a1-groesse). Sahne aynı
- * kalıyor (öğrenciye de bu metin gösteriliyor); istem kimin kim olduğunu ve
- * sahnedeki görevlerin ÖĞRENCİNİN işi olduğunu açıkça söylüyor.
+ * SAHNE SATIRI — BİLEREK SADE (2026-10-09 ölçümü, Gemma, ilk tur 12'şer deneme).
+ *
+ * Sahne metni öğrenciye yazılmış ("Bedenini söyle, kabinin yerini sor") ve satıcı rolündeki
+ * model bir kez müşteriye "Wo sind denn die Umkleidekabinen?" diye sordu (QA F-0037).
+ * Bunu istemde açıklamayı denedik ("buradaki 'sen' öğrenci", uzun rol ayrımı paragrafı,
+ * "bilgiler sende, öğrenciye sorma"): her biri modeli öğrencinin yerine koydu ve rol
+ * cümlesi yazmayıp yalnız öneri satırları döndürmesine yol açtı (de-a1-groesse ilk turda
+ * 12/12, de-a1-familienfest çok turda 10/12; QA F-0002). Sade "Sahne:" + kısa hitap satırıyla
+ * groesse 1/12, rol karışması `test:chat`te yok. Kalan rol metnisiz cevapları sunucu öteki
+ * sağlayıcıyla yeniden üretiyor (`ensureRoleText`). Bu satırı uzatmadan önce ölç.
  */
 function roleSplit(conversation: Conversation): string {
-  return `Öğrencinin görevi (öğrenciye "sen" diye yazıldı; buradaki "sen" ÖĞRENCİ, sen değilsin): ${conversation.chat.scene}
-Rol ayrımı: sen yalnız ${conversation.chat.partner} olarak konuşursun. Yukarıda öğrenciye verilen işleri (sormak, istemek, söylemek, anlatmak) öğrenci yapar; sen o soruları kendin sormazsın, öğrencinin sorusuna rolüne uygun cevap verirsin ve sorması için yer açarsın. Sahnenin yerini, ürünlerini, fiyatlarını, saatlerini ve kurallarını BİLEN taraf sensin: bunları öğrenciye sormazsın, o sorunca söylersin. Örnek: görevde "kabinin yerini sor" yazıyorsa "Wo ist die Umkleide?" diye sen sormazsın; öğrenci sorunca nerede olduğunu söylersin.`;
+  return `Sahne: ${conversation.chat.scene}`;
 }
 
 /**
@@ -527,9 +508,16 @@ export async function* streamChat(
   // işareti satır başında arıyor).
   // Rol metni olmayan cevap (yalnız öneriler) bir kez yeniden üretiliyor (`ensureRoleText`).
   yield* guardCorrections(
-    ensureRoleText(() => splitInlineMarkers(stripModelTokenStream(streamSystem(system, messages, onMeta, report))), 1, () =>
-      console.warn("[chat] rol metni yok, tur yeniden üretiliyor"),
-    ),
+    (() => {
+      /* Rol metni olmayan cevabı aynı model aynı sahnede tekrarlıyordu (Gemma, de-a1-familienfest:
+         4 turun 2'si yalnız öneri): yeniden üretim öteki sağlayıcıdan. */
+      let attempt = 0;
+      return ensureRoleText(
+        () => splitInlineMarkers(stripModelTokenStream(streamSystem(system, messages, onMeta, report, attempt++))),
+        1,
+        () => console.warn("[chat] rol metni yok, tur öteki sağlayıcıyla yeniden üretiliyor"),
+      );
+    })(),
     said,
     (reason) => console.warn(`[chat] düzeltme süzüldü: ${reason}`),
     { register: chatRegister(conversation), lang: conversation.course === "en" ? "en" : "de" },
@@ -624,8 +612,12 @@ async function* streamSystem(
   messages: ChatTurn[],
   onMeta?: (meta: ProviderMeta) => void,
   report?: CallReport,
+  /** Yeniden üretimde sıra çevriliyor: aynı model aynı turda aynı hatayı tekrar ediyor (QA F-0002). */
+  rotate = 0,
 ): AsyncGenerator<string> {
-  const providers = chatProviders();
+  const base = chatProviders();
+  const k = base.length ? rotate % base.length : 0;
+  const providers = [...base.slice(k), ...base.slice(0, k)];
   if (!providers.length) throw new Error("Sağlayıcı tanımlı değil");
   const failures: string[] = [];
 
