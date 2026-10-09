@@ -54,7 +54,7 @@ Sunucu `pack`/`item`i (içerik hattı, `content_flags` ile eşleşme için) hede
 (item = paper id), quiz_item → `quiz/<course>`. Türetemezse boş bırakır.
 
 **Sunucu kuralları.** Aynı kullanıcı + aynı hedef (+ sub) 24 saat içinde ikinci kez gelirse yeni satır
-açılmaz, `{ ok: true, duplicate: true }` döner. Günlük tavan `DAILY_QUOTAS.reports`. Misafir bildirebilir.
+açılmaz, `{ ok: true, duplicate: true }` döner. Günlük tavan yok (2026-10-09); yalnız sel koruması, dakikada 12 (`REPORT_BURST`, aşan 429 `too_fast`). Misafir bildirebilir.
 `detail` kaba dil süzgecinden geçmez ama uzunluğu sınırlıdır; panelde düz metin gösterilir (HTML yok).
 
 ## Arayüz

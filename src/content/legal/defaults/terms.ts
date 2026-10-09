@@ -111,7 +111,7 @@ Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcın
 
 ## 7a. Adil kullanım
 
-Yapay zekâ ve konuşma tanıma sağlayıcı kotalarını herkes için korumak amacıyla hesap başına günlük sınırlar uygulanır: yapay zekâ sohbeti {{fairUse:chatTurnsPerDay}} mesaj, sunucu konuşma tanıma {{fairUse:sttRequestsPerDay}} istek, telaffuz puanı {{fairUse:pronounceRequestsPerDay}} istek, içerik bildirimi {{fairUse:reportsPerDay}}. Sınıra ulaşınca uygulama bunu gösterir ve ertesi gün açılır. Sınırlar dürüst ağır kullanımın çok üstündedir; yalnız otomasyon ve kötüye kullanımı engellemek içindir ve gerektiğinde güncellenebilir.
+Yapay zekâ ve konuşma tanıma sağlayıcı kotalarını herkes için korumak amacıyla hesap başına günlük sınırlar uygulanır: yapay zekâ sohbeti {{fairUse:chatTurnsPerDay}} mesaj, sunucu konuşma tanıma {{fairUse:sttRequestsPerDay}} istek, telaffuz puanı {{fairUse:pronounceRequestsPerDay}} istek. İçerik bildiriminde günlük sınır yoktur. Sınıra ulaşınca uygulama bunu gösterir ve ertesi gün açılır. Sınırlar dürüst ağır kullanımın çok üstündedir; yalnız otomasyon ve kötüye kullanımı engellemek içindir ve gerektiğinde güncellenebilir.
 
 Ücretsiz hesapta yapay zekâyla çalışan bazı özelliklerin hakları sınırlıdır: Patika'daki Konuşma ve Yazma adımları, Beceriler'deki konuşma ve yazma değerlendirmesi ve deneme sınavları seviye başına belirli sayıda açıktır; yürüyüş modu ekran açıkken ve günde belirli sayıda turla kullanılır. Yeni haklar, açık olanları bitirip serini sürdürdükçe açılır. Hakların sayısı ve nasıl açıldığı **uygulamadaki Premium sayfasında** yazılıdır. Başladığın bir adım ya da alıştırma, hakların bitse de açık kalır.
 
@@ -248,7 +248,7 @@ If you see content that is unlawful or breaches these terms (another user's name
 
 ## 7a. Fair use
 
-To protect AI and speech recognition provider quotas for everyone, daily per-account limits apply: {{fairUse:chatTurnsPerDay}} AI conversation messages, {{fairUse:sttRequestsPerDay}} server speech recognition requests, {{fairUse:pronounceRequestsPerDay}} pronunciation scoring requests and {{fairUse:reportsPerDay}} content reports. When you reach a limit the app says so and it reopens the next day. The limits sit far above honest heavy use; they exist only to stop automation and abuse and may be updated when needed.
+To protect AI and speech recognition provider quotas for everyone, daily per-account limits apply: {{fairUse:chatTurnsPerDay}} AI conversation messages, {{fairUse:sttRequestsPerDay}} server speech recognition requests and {{fairUse:pronounceRequestsPerDay}} pronunciation scoring requests. Content reports have no daily limit. When you reach a limit the app says so and it reopens the next day. The limits sit far above honest heavy use; they exist only to stop automation and abuse and may be updated when needed.
 
 On a free account, some AI-powered features have limited allowances: the Speaking and Writing steps in Path, speaking and writing assessments in Skills, and mock exams are open in a set number per level; walk mode is used with the screen on and for a set number of rounds a day. New allowances unlock as you finish what is open and keep your streak going. The numbers and how they unlock are written **on the Premium page in the app**. A step or exercise you have started stays open even when your allowance runs out.
 
@@ -385,7 +385,7 @@ Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt sie
 
 ## 7a. Fair Use
 
-Um die Kontingente der KI- und Spracherkennungsanbieter für alle zu schützen, gelten tägliche Grenzen pro Konto: {{fairUse:chatTurnsPerDay}} Nachrichten im KI-Gespräch, {{fairUse:sttRequestsPerDay}} serverseitige Spracherkennungsanfragen, {{fairUse:pronounceRequestsPerDay}} Anfragen zur Aussprachebewertung und {{fairUse:reportsPerDay}} Inhaltsmeldungen. Ist eine Grenze erreicht, zeigt die App es an, und am nächsten Tag ist sie wieder offen. Die Grenzen liegen weit über ehrlicher intensiver Nutzung; sie bestehen nur, um Automatisierung und Missbrauch zu verhindern, und können bei Bedarf angepasst werden.
+Um die Kontingente der KI- und Spracherkennungsanbieter für alle zu schützen, gelten tägliche Grenzen pro Konto: {{fairUse:chatTurnsPerDay}} Nachrichten im KI-Gespräch, {{fairUse:sttRequestsPerDay}} serverseitige Spracherkennungsanfragen und {{fairUse:pronounceRequestsPerDay}} Anfragen zur Aussprachebewertung. Für Inhaltsmeldungen gibt es keine tägliche Grenze. Ist eine Grenze erreicht, zeigt die App es an, und am nächsten Tag ist sie wieder offen. Die Grenzen liegen weit über ehrlicher intensiver Nutzung; sie bestehen nur, um Automatisierung und Missbrauch zu verhindern, und können bei Bedarf angepasst werden.
 
 Mit einem kostenlosen Konto sind einige KI-gestützte Funktionen begrenzt: Die Schritte Sprechen und Schreiben im Pfad, Sprech- und Schreibbewertungen bei den Fähigkeiten und Probeprüfungen stehen pro Niveau in einer bestimmten Anzahl offen; den Gehmodus nutzt du bei eingeschaltetem Bildschirm und für eine bestimmte Zahl von Runden pro Tag. Neue Kontingente werden frei, wenn du Offenes abschließt und deine Serie fortsetzt. Wie viele es sind und wie sie frei werden, steht **auf der Premium-Seite in der App**. Ein begonnener Schritt oder eine begonnene Übung bleibt offen, auch wenn dein Kontingent aufgebraucht ist.
 

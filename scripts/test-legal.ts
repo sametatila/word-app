@@ -252,13 +252,11 @@ console.log("\nAdil kullanım");
     { path: "src/app/api/chat/route.ts", field: "chatTurns" },
     { path: "src/app/api/stt/route.ts", field: "sttRequests" },
     { path: "src/app/api/pronounce/route.ts", field: "pronounceRequests" },
-    { path: "src/app/api/reports/route.ts", field: "reports" },
   ];
   const PAIRS: [keyof typeof FAIR_USE, keyof typeof DAILY_QUOTAS][] = [
     ["chatTurnsPerDay", "chatTurns"],
     ["sttRequestsPerDay", "sttRequests"],
     ["pronounceRequestsPerDay", "pronounceRequests"],
-    ["reportsPerDay", "reports"],
   ];
   for (const [legalKey, quotaKey] of PAIRS) {
     check(

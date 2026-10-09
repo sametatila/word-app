@@ -19,6 +19,8 @@ export const DAILY_QUOTAS = {
   sttRequests: 400,
   /** Telaffuz puanlama isteği. */
   pronounceRequests: 120,
-  /** İçerik bildirimi. */
-  reports: 20,
 } as const;
+/* İçerik bildiriminin günlük kotası YOK (Samet, 2026-10-09): her bildirim
+   içeriği düzeltmenin yolu; 20'lik sınır hata bulan kullanıcıyı ve QA hesabını
+   susturuyordu. Otomasyona karşı yalnız dakikalık sel koruması var
+   (`app/api/reports` `REPORT_BURST`), şartlarda sayı olarak geçmiyor. */

@@ -211,9 +211,12 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * 1.10.1 (2026-10-06) yama basamağı: izin vermeyen kullanıcıda konuşmalar artık
  * senaryoyla ilerlemiyor, sohbet bölümü atlanıyor (çevrimdışı senaryolu sohbet
  * kalktı, Samet). Veri, alıcı ve amaç aynı; yalnız izinsiz akışın anlatımı.
+ *
+ * 1.10.2 (2026-10-09) yama basamağı: içerik bildiriminin günlük sınırı kalktı
+ * (Samet), şartlar 7a'daki sayı düştü. Kullanıcı lehine; veri, alıcı ve amaç aynı.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-10-06";
-export const LEGAL_VERSION = "1.10.1";
+export const LEGAL_EFFECTIVE_DATE = "2026-10-09";
+export const LEGAL_VERSION = "1.10.2";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -320,7 +323,6 @@ export const FAIR_USE = {
   chatTurnsPerDay: DAILY_QUOTAS.chatTurns,
   sttRequestsPerDay: DAILY_QUOTAS.sttRequests,
   pronounceRequestsPerDay: DAILY_QUOTAS.pronounceRequests,
-  reportsPerDay: DAILY_QUOTAS.reports,
 } as const;
 
 export type LegalField = keyof typeof LEGAL_ENTITY;
@@ -445,6 +447,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: içerik bildiriminin günlük sınırı kalktı. Veri ve alıcı aynı. */
+    version: "1.10.2",
+    date: "2026-10-09",
+    changes: {
+      tr: [
+        "İçerik bildiriminde günlük sınır kalktı: içerikteki hataları istediğin kadar bildirebilirsin. Adil kullanım maddesinden bu sayı çıkarıldı. Toplanan veri ve alıcılar değişmedi.",
+      ],
+      en: [
+        "There is no longer a daily limit on content reports: you can report as many content errors as you find. The number was removed from the fair use section. The data collected and the recipients did not change.",
+      ],
+      de: [
+        "Für Inhaltsmeldungen gibt es keine tägliche Grenze mehr: Du kannst so viele Fehler melden, wie du findest. Die Zahl wurde aus dem Abschnitt zur fairen Nutzung entfernt. Erhobene Daten und Empfänger haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: izinsiz akışın anlatımı (senaryolu sohbet kalktı). Veri ve alıcı aynı. */
     version: "1.10.1",

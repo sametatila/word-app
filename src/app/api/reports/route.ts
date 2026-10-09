@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
-import { DAILY_QUOTAS } from "@/lib/quotas";
 import { and, eq, gte, sql } from "drizzle-orm";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { db } from "@/lib/db";
 import { contentReports } from "@/lib/db/schema";
 import { reportUser } from "@/lib/social/blocks";
-import { limited } from "@/lib/social/ratelimit";
+import { consume, limited } from "@/lib/social/ratelimit";
 import type { ReportReason } from "@/lib/social/types";
 import { derivePackItem, parseReportBody } from "@/lib/content-feedback";
 import { APP_VERSION } from "@/lib/version";
@@ -36,10 +35,15 @@ export const dynamic = "force-dynamic";
  * ikinci kez bildirirse satır açılmaz: `{ ok: true, duplicate: true }`.
  *
  * Yaptırım otomatik değil: kayıt yönetim panosunda (lernomi.app/admin/moderation)
- * insan okur. Günde kullanıcı başına `DAILY_QUOTAS.reports` bildirim (kötüye
- * kullanım sınırı). Misafir de bildirebilir.
+ * insan okur. Misafir de bildirebilir.
+ *
+ * GÜNLÜK KOTA YOK (2026-10-09, Samet): her bildirim bir içerik düzeltmesinin
+ * yolu; günde 20'lik sınır hatayı en çok bulan kullanıcıyı susturuyordu.
+ * Otomasyona karşı yalnız sel koruması: bir dakikada `REPORT_BURST.limit`
+ * bildirim. Ekranı okuyup sebep seçen bir insan buna ulaşamaz; aşan istek 429
+ * `too_fast` alır ve istemci "biraz bekle" der.
  */
-const DAILY_LIMIT = DAILY_QUOTAS.reports;
+const REPORT_BURST = { limit: 12, windowSec: 60 } as const;
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
@@ -79,6 +83,11 @@ export async function POST(req: Request) {
   /* Tekrar denetimi: yeni gövdede grup anahtarı, eski gövdede tür + ref. */
   const same = r.groupKey ? eq(contentReports.groupKey, r.groupKey) : and(eq(contentReports.kind, kind), eq(contentReports.ref, ref));
 
+  const burst = await consume(`content-report:${userId}`, REPORT_BURST.limit, REPORT_BURST.windowSec);
+  if (!burst.ok) {
+    return NextResponse.json({ error: "too_fast" }, { status: 429, headers: { "retry-after": String(burst.retryAfterSec) } });
+  }
+
   try {
     const out = await db.transaction(async (tx) => {
       /* Aynı kişi + aynı hedef için eşzamanlı iki istek (çift dokunuş) iki satır
@@ -90,12 +99,6 @@ export async function POST(req: Request) {
         .where(and(eq(contentReports.userId, userId), same, gte(contentReports.createdAt, sql`now() - interval '1 day'`)))
         .limit(1);
       if (dup.length) return "duplicate" as const;
-
-      const [row] = await tx
-        .select({ n: sql<number>`count(*)::int` })
-        .from(contentReports)
-        .where(and(eq(contentReports.userId, userId), gte(contentReports.createdAt, sql`now() - interval '1 day'`)));
-      if ((row?.n ?? 0) >= DAILY_LIMIT) return "quota" as const;
 
       await tx.insert(contentReports).values({
         userId,
@@ -122,7 +125,6 @@ export async function POST(req: Request) {
       });
       return "ok" as const;
     });
-    if (out === "quota") return NextResponse.json({ error: "quota" }, { status: 429 });
     if (out === "duplicate") return NextResponse.json({ ok: true, duplicate: true });
     return NextResponse.json({ ok: true });
   } catch (err) {

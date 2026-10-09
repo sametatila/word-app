@@ -243,7 +243,6 @@ export function parseLegalConfig(raw: unknown): LegalConfig {
       chatTurnsPerDay: int(fu.chatTurnsPerDay, d.fairUse.chatTurnsPerDay, 1, 100_000),
       sttRequestsPerDay: int(fu.sttRequestsPerDay, d.fairUse.sttRequestsPerDay, 1, 100_000),
       pronounceRequestsPerDay: int(fu.pronounceRequestsPerDay, d.fairUse.pronounceRequestsPerDay, 1, 100_000),
-      reportsPerDay: int(fu.reportsPerDay, d.fairUse.reportsPerDay, 1, 100_000),
     },
     hosting: trio(o.hosting, d.hosting, 200),
     processors: processors.length ? processors : d.processors,
