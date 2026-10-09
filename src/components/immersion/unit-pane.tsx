@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { fillStyle } from "@/lib/motion";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 import type { HubItem, HubUnit } from "@/components/immersion/immersion-hub";
@@ -155,6 +156,17 @@ export function UnitPane({
   const hasConversation = items.some((i) => i.kind === "conversation");
   const hasWrite = items.some((i) => i.kind === "write");
 
+  /* KİLİTLİ ADIMA TIKLAMA CEVAPSIZ KALMIYOR (QA F-0026, Android'de görüldü):
+     kartın altında nedeni ve sıradaki adımın adı, birkaç saniye. Mobil
+     `UnitScreen` aynı satır. */
+  const [lockedTap, setLockedTap] = useState<string | null>(null);
+  useEffect(() => {
+    if (!lockedTap) return;
+    const id = setTimeout(() => setLockedTap(null), 4000);
+    return () => clearTimeout(id);
+  }, [lockedTap]);
+  const currentTitle = items.find((i) => i.id === currentId)?.title ?? null;
+
   const list = counted(items);
   const doneCount = list.filter((i) => i.done).length;
   const pct = list.length ? Math.round((doneCount / list.length) * 100) : 0;
@@ -258,11 +270,36 @@ export function UnitPane({
             borderColor: "var(--hairline)",
           };
 
-          return openable ? (
-            <Link key={it.id} href={it.href!} prefetch={false} className={`pressable ${cls}`} style={style}>
-              {inner}
-            </Link>
-          ) : (
+          if (openable) {
+            return (
+              <Link key={it.id} href={it.href!} prefetch={false} className={`pressable ${cls}`} style={style}>
+                {inner}
+              </Link>
+            );
+          }
+          if (!it.open) {
+            return (
+              <div key={it.id} className="space-y-1">
+                <button
+                  type="button"
+                  onClick={() => setLockedTap(it.id)}
+                  aria-disabled="true"
+                  className={`${cls} w-full text-left`}
+                  style={style}
+                >
+                  {inner}
+                  <span className="sr-only">{t("unit.locked")}</span>
+                </button>
+                {lockedTap === it.id ? (
+                  <p role="status" className="muted flex items-center gap-1.5 px-2 text-caption">
+                    <LockedIcon size={14} className="shrink-0" />
+                    <span>{currentTitle ? t("unit.locked_step", { title: currentTitle }) : t("unit.locked")}</span>
+                  </p>
+                ) : null}
+              </div>
+            );
+          }
+          return (
             <div key={it.id} className={cls} style={style}>
               {inner}
             </div>

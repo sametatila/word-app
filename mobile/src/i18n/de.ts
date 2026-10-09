@@ -1695,6 +1695,8 @@ export const de: Record<string, string> = {
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Jetzt",
   "unit.steps_done": "{n}/{total} Schritte erledigt",
+  "unit.locked_step": "Dieser Schritt ist gesperrt. Schließe zuerst den aktuellen Schritt ab: {title}",
+  "unit.locked": "Gesperrt",
   "unitkind.unit_quiz": "Einheiten-Quiz",
   "unitkind.grammar": "Grammatik",
   "unitkind.conversation": "Sprechen",

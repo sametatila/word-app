@@ -1700,6 +1700,8 @@ export const tr: Record<string, string> = {
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Şimdi",
   "unit.steps_done": "{n}/{total} adım tamam",
+  "unit.locked_step": "Bu adım kilitli. Önce sıradaki adımı bitir: {title}",
+  "unit.locked": "Kilitli",
   "unitkind.unit_quiz": "Ünite testi",
   "unitkind.grammar": "Dil bilgisi",
   "unitkind.conversation": "Konuşma",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { kindIcon, kindFill } from "../ui/unitKind";
 import { formatPercent, t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
@@ -20,6 +20,7 @@ import { useAiDeclined } from "../lib/useAiDeclined";
 import { conversationLocked, pathWritingSpent } from "../lib/unlock";
 import { PathQuota } from "../ui/PathQuota";
 import { ScreenHeader } from "../social/common";
+import { haptic } from "../lib/haptics";
 
 
 /**
@@ -85,6 +86,22 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
   const convLocked = (ref: string | null) => Boolean(ref) && conversationLocked(premium?.unlock, ref!, level, { guest, aiDeclined });
   const writeSpent = (id: string) => pathWritingSpent(premium?.unlock, id, level, guest);
 
+  /*
+    KİLİTLİ ADIMA DOKUNUŞ CEVAPSIZ KALMIYOR (QA F-0026). Kapalı adım hiçbir
+    şey yapmıyordu: kilit simgesi küçük ve soluk, ekran okuyucu kartı
+    "dokunulabilir" diye okuyordu, öğrenci üç kez dokunup bozuk sandı.
+    Artık kartın altında kısa bir satır nedenini ve sıradaki adımın adını
+    söylüyor (birkaç saniye sonra kalkıyor); kart "kilitli" diye okunuyor.
+    Web `immersion/unit-pane` aynı satır.
+  */
+  const [lockedTap, setLockedTap] = useState<string | null>(null);
+  useEffect(() => {
+    if (!lockedTap) return;
+    const id = setTimeout(() => setLockedTap(null), 4000);
+    return () => clearTimeout(id);
+  }, [lockedTap]);
+  const currentTitle = items.find((i) => i.current)?.title ?? null;
+
   const counted = items.filter((i) => i.playable);
   const done = counted.filter((i) => i.done).length;
   const pct = counted.length ? Math.round((done / counted.length) * 100) : 0;
@@ -92,7 +109,7 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
   function openItem(it: (typeof items)[number]) {
     // Kapalı adım açılmaz: kullanıcı sıradakine geçebilir ama daha sonrakine
     // geçemez — pencere ilerledikçe kendiliğinden kayar.
-    if (!it.open) return;
+    if (!it.open) { haptic("tap"); setLockedTap(it.id); return; }
     if (it.kind === "conversation") { if (it.ref) nav.navigate("Conversation", { id: it.ref, result: it.result, done: it.done }); return; }
     if (!it.playable) return;
     // Gramer de ünite kimliğinden TÜRETİLİYOR (immersionQuiz.deriveGrammar),
@@ -131,7 +148,13 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
             const aiLock = !it.done && it.kind === "conversation" && convLocked(it.ref);
             const aiSpent = !it.done && it.kind === "write" && writeSpent(it.ref ?? it.id);
             return (
-              <PressableScale key={it.id} onPress={() => openItem(it)}>
+              <View key={it.id} style={{ gap: spacing.xs }}>
+              <PressableScale
+                onPress={() => openItem(it)}
+                accessibilityRole="button"
+                accessibilityState={{ disabled: !it.open }}
+                accessibilityHint={it.open ? undefined : t("unit.locked")}
+              >
                 <Card padded style={{ opacity: it.open ? 1 : 0.55, flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: 1, borderColor: colors.hairline }}>
                   <View style={[{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     <Icon color="#fff" size={22} />
@@ -167,6 +190,15 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
                   )}
                 </Card>
               </PressableScale>
+              {lockedTap === it.id ? (
+                <View accessibilityLiveRegion="polite" style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingHorizontal: spacing.sm }}>
+                  <LockedIcon color={colors.textMuted} size={14} />
+                  <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>
+                    {currentTitle ? t("unit.locked_step", { title: currentTitle }) : t("unit.locked")}
+                  </Text>
+                </View>
+              ) : null}
+              </View>
             );
           })}
         </View>

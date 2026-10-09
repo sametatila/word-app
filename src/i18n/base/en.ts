@@ -1697,6 +1697,8 @@ export const enBase: Record<string, string> = {
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Now",
   "unit.steps_done": "{n}/{total} steps done",
+  "unit.locked_step": "This step is locked. Finish the current step first: {title}",
+  "unit.locked": "Locked",
   "unitkind.unit_quiz": "Unit quiz",
   "unitkind.grammar": "Grammar",
   "unitkind.conversation": "Speaking",

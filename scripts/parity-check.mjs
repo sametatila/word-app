@@ -22340,6 +22340,23 @@ console.log("\n" + C.b + "SINAVDA CEVAP SONUNDA" + C.off);
   );
 }
 
+/* ── kilitli patika adimi ───────────────────────────────────────────────
+ * QA F-0026 (2026-10-09): unitedeki kapali adima dokunus hicbir sey
+ * yapmiyordu. Iki ekran da dokunusa kartin altinda nedeni ve siradaki adimin
+ * adini yaziyor; kart "kilitli" diye okunuyor. */
+console.log("\n" + C.b + "KILITLI PATIKA ADIMI" + C.off);
+{
+  const olc = (p) => {
+    const src = read(p);
+    return [
+      "neden satiri=" + (/t\("unit\.locked_step", \{ title: currentTitle \}\)/.test(src) ? "var" : "YOK"),
+      "kilitli adi=" + (/t\("unit\.locked"\)/.test(src) ? "var" : "YOK"),
+      "kendiliginden kalkiyor=" + (/setTimeout\(\(\) => setLockedTap\(null\), 4000\)/.test(src) ? "4 sn" : "YOK"),
+    ];
+  };
+  sameList("kilitli adima dokunus", olc("mobile/src/screens/UnitScreen.tsx"), olc("src/components/immersion/unit-pane.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
