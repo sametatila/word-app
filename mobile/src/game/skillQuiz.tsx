@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useMemo, useRef, useState } from "react";
 import { todayStr } from "./session";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { View, TextInput } from "react-native";
@@ -329,17 +329,30 @@ type FormTask = { kind: "form"; prompt: string; facts?: string; fields: { label:
 export type WritingTask = BuildTask | FreeTask | RewriteTask | FormTask;
 
 /** Yazma egzersizi görevleri — de içeriğinde iki tür: build (TR→DE cümle) ve free. */
-export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { tasks: WritingTask[]; level: string; exerciseId: string; onAllDone: (correct: number) => void; colors: Palette }) {
+export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { tasks: WritingTask[]; level: string; exerciseId: string; onAllDone: (correct: number, score?: number) => void; colors: Palette }) {
   const [results, setResults] = useState<(boolean | null)[]>(() => tasks.map(() => null));
+  /*
+    RUBRİK PUANLARI (QA F-0083). Serbest görevin yapay zekâ puanı (ör. %88)
+    egzersizin puanına hiç gitmiyordu: liste yalnız doğru/toplamı bildiriyordu,
+    %88 alan metin "doğru" sayılıp adım kartı %100 yazıyordu, oysa sonuç
+    ekranında %88 okunmuştu. Web `writing-player` ile aynı kural: puanlanan
+    görevlerin ortalaması `score` olarak kayda gider; hiçbiri puanlanmadıysa
+    doğru/toplam.
+  */
+  const scores = useRef<(number | null)[]>(tasks.map(() => null));
   /* Kaydedilmemiş emek: çıkış onaya bağlı (bkz. `lib/unsavedWork`, QA F-0054). */
   useUnsavedWork(results.some((r) => r !== null) && results.some((r) => r === null));
   /* `near`: yazım sapmasıyla geçti ("Neredeyse") — tam doğrunun parlak sesi
      değil, yumuşak "near" (bkz. `game/rounds` `markAnswer`). */
-  function settle(i: number, ok: boolean, near = false) {
+  function settle(i: number, ok: boolean, near = false, score?: number) {
     if (results[i] !== null) return;
     haptic(ok ? (near ? "near" : "correct") : "wrong");
+    scores.current[i] = typeof score === "number" ? score : null;
     const n = [...results]; n[i] = ok; setResults(n);
-    if (n.every((r) => r !== null)) onAllDone(n.filter(Boolean).length);
+    if (n.every((r) => r !== null)) {
+      const scored = scores.current.filter((x): x is number => x !== null);
+      onAllDone(n.filter(Boolean).length, scored.length ? Math.round(scored.reduce((a, b) => a + b, 0) / scored.length) : undefined);
+    }
   }
   return (
     <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
@@ -357,7 +370,7 @@ export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { t
         yüzeyiyle çiziyor (`skills/writing-player`).
       */}
       {tasks.map((t, i) => {
-        const shared = { n: i + 1, done: results[i] !== null, onSettle: (ok: boolean, near?: boolean) => settle(i, ok, near), colors };
+        const shared = { n: i + 1, done: results[i] !== null, onSettle: (ok: boolean, near?: boolean, score?: number) => settle(i, ok, near, score), colors };
         if (t.kind === "build") return <BuildCard key={i} t={t} level={level} {...shared} />;
         if (t.kind === "rewrite") return <RewriteCard key={i} t={t} {...shared} />;
         if (t.kind === "form") return <FormCard key={i} t={t} {...shared} />;
@@ -597,7 +610,7 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
  * sunucu servis dönünce puanlıyor ve bildirim gönderiyor. Web bunu yapıyordu,
  * mobilde metin hiç puanlanmadan kalıyordu (kayıt defteri §11.12).
  */
-function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: FreeTask; n: number; done: boolean; level: string; exerciseId: string; onSettle: (ok: boolean) => void; colors: Palette }) {
+function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: FreeTask; n: number; done: boolean; level: string; exerciseId: string; onSettle: (ok: boolean, near?: boolean, score?: number) => void; colors: Palette }) {
   /* Misafir: tek deneme hakkı varsa değerlendirme gerçekten yapılıyor, yoksa
      istek atılmıyor (bkz. sunucu lib/auth/guest `GUEST_AI_TRIALS`). */
   const guest = Boolean(useAuth().user?.guest);
@@ -688,7 +701,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
      `writing-player` de öyle: puan gösteriliyor, altında "Devam" ve "Bir daha
      dene" duruyor. Önce `evaluate` içinde kapatılıyordu, yani düşük puan alan
      öğrencinin tekrar deneme yolu hiç yoktu. */
-  const settleNow = () => onSettle(unscored ? true : (score?.overall ?? 0) >= RUBRIC_PASS_PCT);
+  const settleNow = () => onSettle(unscored ? true : (score?.overall ?? 0) >= RUBRIC_PASS_PCT, false, unscored || !score ? undefined : score.overall);
   const retry = () => { setScore(null); setNote(null); setQueued(false); setUnscored(false); setReveal(false); };
   return (
     <Card padded>
