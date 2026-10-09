@@ -8,7 +8,7 @@ import { SCORED_TURNS } from "./chat-const";
 import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { dialogueDone, targetsUsed } from "@/lib/dialogue";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
-import { guardCorrections } from "./fix-guard";
+import { guardCorrections, splitInlineMarkers } from "./fix-guard";
 
 /**
  * Sohbet — konuşmanın son ve asıl parçası.
@@ -104,6 +104,41 @@ function targetLang(course: string | undefined): { name: string; dialect: string
 }
 
 const DE_FIX_EXAMPLE = "Am Wochenende ich gehe → Am Wochenende gehe ich (V2-Regel)";
+
+/**
+ * SAHNENİN HİTABI (QA 2026-10-09, panel #13): iş arkadaşı sahnesinde öğrencinin
+ * doğru "Möchtest du auch einen Kaffee?" sorusu "Möchten Sie …? (Höflichkeitsform)"
+ * diye düzeltildi. Sahne verisinde hitap alanı yok; tek güvenilir sinyal karakterin
+ * AÇILIŞ cümlesi ("Sag mal, wann beginnt dein Tag?" → du; "Was darf es sein? …
+ * Sie" → Sie). İstemde hitap yazıyor; hitap dilbilgisi hatası değil, karakter doğru
+ * hitabı kendi cümlelerinde kullanarak örnek oluyor. Süzgeç (`fix-guard`) hitabı
+ * bilinen sahnede du ↔ Sie düzeltmesini siliyor (`test:chat` de-a1-hallo: resmî
+ * sahnede "Was machst du gern → Was machen Sie gern (Höflichkeitsform)" sahte
+ * düzeltme sayıldı). Açılış belirsizse (iki biçim de yok) hiçbiri uygulanmıyor.
+ * Yalnız Almanca: İngilizcede hitap ayrımı yok.
+ */
+export function chatRegister(conversation: Conversation): "du" | "Sie" | undefined {
+  if (conversation.course === "en") return undefined;
+  const t = conversation.chat.opening ?? "";
+  const du = (t.match(/(?<![\p{L}])(du|dich|dir|dein\p{L}*)(?![\p{L}])/giu) ?? []).length;
+  const sie =
+    (t.match(/(?<![\p{L}])(Ihnen|Ihre?\p{L}*)(?![\p{L}])/gu) ?? []).length +
+    (t.match(/(?<![.!?]\s*|^\s*)(?<![\p{L}])Sie(?![\p{L}])/gu) ?? []).length;
+  if (du > sie) return "du";
+  if (sie > du) return "Sie";
+  return undefined;
+}
+
+/** İstemdeki hitap satırı; hitap bilinmiyorsa boş. */
+function registerNote(register: "du" | "Sie" | undefined): string {
+  if (register === "du") {
+    return `Hitap: bu sahnede "du" (samimi). Sen "du" kullan; öğrencinin "du" demesi DOĞRUDUR, onu "Sie"ye düzeltme. Karakter notundaki konuşma tarzı hitabı değiştirmez.`;
+  }
+  if (register === "Sie") {
+    return `Hitap: bu sahnede "Sie" (resmî). Sen "Sie" kullan ve öğrenciye örnek ol. Öğrencinin "du" ya da "Sie" demesi dilbilgisi hatası DEĞİLDİR: hitap için düzeltme satırı yazma.`;
+  }
+  return "";
+}
 
 /*
   DÜZELTMENİN DİLE ÖZGÜ KURALLARI. Genel kurallar (yalnız gerçek hata, en küçük
@@ -311,6 +346,18 @@ düzeltme satırı yok — bunun yerine söylediği şeye cevap ver.
 Düzeltme yazarken:
 - Öğrencinin söylemediği kelimeleri ekleme, anlamını değiştirme. Düzeltme onun
   cümlesinin doğru hâli olmalı, başka bir cümle değil.
+- KİMİN ne yaptığını değiştirme: "Du kochst jetzt die Suppe" öğrencinin cümlesi;
+  onu "Ich koche …" yapmak düzeltme değil, başka bir cümle. Sahneyle uyuşmuyorsa
+  rol metninde cevap ver, düzeltme satırı yazma.
+- Sayıyı sözle söylemek (siebzehn achtundzwanzig) hata değil; rakama çevirme.
+  Kısaltmayı açma (Uni → Universität), ayrıntı ekleme (bis fünf → bis fünf Uhr),
+  eş anlamlıya geçme (möchte → will): bunlar üslup, düzeltme değil.
+- Etiket yaptığın değişikliği anlatmalı. Sözcük sırası etiketi (V2-Regel,
+  Verb-Endstellung) yalnız sözcüklerin YERİNİ değiştirdiğinde; bir sözcüğü başka
+  sözcükle değiştirdiysen o etiket yanlış. "Inhalt", "Präzision", "Stil",
+  "Ausdruck" gibi bir etiket aklına geliyorsa satırı YAZMA: o bir hata değil.
+- Her ${CORRECTION_MARK} ve ${SUGGESTION_MARK} işareti YENİ BİR SATIRIN BAŞINDA durur;
+  rol metninin arkasına aynı satırda işaret yazma.
 - Tek satırda ver: ${CORRECTION_MARK} ile başla, yanlışı ve doğrusunu yaz, sonuna
   ${nat.name} KURALIN ADINI ekle — açıklama cümlesi değil, etiket.
   Örnek: "${tgt.fixExample}".
@@ -324,7 +371,7 @@ ${charsNote(tgt.chars, nat.chars)}
 BU KONUŞMA
 Seviye ${conversation.level}: rol metninde ve önerilerde bu seviyenin üstünde yapı ve kelime kullanma.
 Rolün: adın ${who.name}; ${conversation.chat.partner} — ${who.note}. Adın sorulursa söyle; cümle içinde zorlama.
-Sahne: ${conversation.chat.scene}
+Sahne: ${conversation.chat.scene}${registerNote(chatRegister(conversation)) ? `\n${registerNote(chatRegister(conversation))}` : ""}
 Amaç (buraya varınca konuşma biter; her turda bir adım yaklaş, konu dağıtma): ${conversation.chat.goal}
 Yay: ${conversation.chat.minTurns} turluk bir sahne. Açılışta sahneyi kur, ortada amaca götüren ayrıntıları konuş (miktar, zaman, tercih, sebep, koşul), sonda açık noktayı kapatıp sonuçlandır ve veda et.
 Bu adımın kalıpları (öğrencinin cümleleri; öğrenci az önce öğrendi):
@@ -457,8 +504,13 @@ export async function* streamChat(
   // yanlış düzeltmeyi azaltıyor, kesin yanlış olan biçimleri süzgeç siliyor.
   // Günlüğe yalnız neden yazılıyor, öğrencinin sözü değil.
   const said = messages.at(-1)?.content ?? "";
-  yield* guardCorrections(streamSystem(system, messages, onMeta, report), said, (reason) =>
-    console.warn(`[chat] düzeltme süzüldü: ${reason}`),
+  // Satır içine düşen işaretler önce kendi satırına alınıyor (süzgeç ve istemciler
+  // işareti satır başında arıyor).
+  yield* guardCorrections(
+    splitInlineMarkers(streamSystem(system, messages, onMeta, report)),
+    said,
+    (reason) => console.warn(`[chat] düzeltme süzüldü: ${reason}`),
+    { register: chatRegister(conversation), lang: conversation.course === "en" ? "en" : "de" },
   );
 }
 

@@ -1,5 +1,6 @@
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
-import { filterCorrectionLines, guardCorrections, judgeCorrection } from "../src/lib/conversations/fix-guard";
+import { filterCorrectionLines, guardCorrections, judgeCorrection, splitInlineMarkers } from "../src/lib/conversations/fix-guard";
+import { breakInlineMarkers } from "../src/lib/chat-format";
 
 /**
  * Düzeltme süzgeci — `npm run test:fix-guard`. Dil modeli istemez.
@@ -87,7 +88,50 @@ console.log("\nuydurma ve boş düzeltmeler");
   check("İngilizce: and + fiil sonda siliniyor", !e.keep, JSON.stringify(e));
 }
 
-console.log("\ntam metin");
+console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 #15 #16 #28)");
+{
+  const said = (t: string) => t;
+  const cases: [string, string, Parameters<typeof judgeCorrection>[2], string][] = [
+    ["Was machst du gern → Was machen Sie gern (Höflichkeitsform)", "Was machst du gern am Abend?", { register: "Sie" }, "register"],
+    ["siebzehn achtundzwanzig → 17 28 (Zahlen)", "Meine Nummer ist siebzehn achtundzwanzig.", {}, "form_only"],
+    ["Du kochst jetzt die Suppe → Ich koche jetzt die Suppe (Inhaltliche Korrektur)", "Du kochst jetzt die Suppe und ich schneide das Brot.", {}, "person_change"],
+    ["Möchtest du auch einen Kaffee? → Möchten Sie auch einen Kaffee? (Höflichkeitsform)", "Möchtest du auch einen Kaffee?", { register: "du" }, "register"],
+    ["weil ich in Dortmund studieren möchte → weil ich in Dortmund studieren will (V2-Regel)", "Ich lerne Deutsch, weil ich in Dortmund studieren möchte.", {}, "label_mismatch"],
+    ["zur Uni → zur Universität (Wortwahl)", "Ich gehe jeden Tag zur Uni.", {}, "style"],
+    ["bis fünf → bis fünf Uhr (Präzision)", "Ich arbeite bis fünf.", {}, "style"],
+  ];
+  for (const [line, s, ctx, reason] of cases) {
+    const v = judgeCorrection(line, said(s), ctx);
+    check(`siliniyor (${reason}): ${line.slice(0, 44)}`, !v.keep && v.reason === reason, JSON.stringify(v));
+  }
+  // Gerçek düzeltmeler bu kurallardan geçmeli.
+  const keep: [string, string, Parameters<typeof judgeCorrection>[2]][] = [
+    ["Wie heißt du → Wie heißen Sie (Höflichkeitsform)", "Wie heißt du?", {}],
+    ["hilf mich → hilf mir (Dativ)", "Kannst du hilf mich?", {}],
+    ["Ich bin 24 Jahre → Ich bin 24 Jahre alt (Wortwahl)", "Ich bin 24 Jahre.", {}],
+    ["Ich habe Hund → Ich habe einen Hund (Artikel)", "Ich habe Hund.", {}],
+    ["du arbeitet → du arbeitest (Konjugation)", "Du arbeitet viel.", { register: "du" }],
+    ["Heute ich lerne → Heute lerne ich (V2-Regel)", "Heute ich lerne Deutsch.", {}],
+  ];
+  for (const [line, s, ctx] of keep) {
+    const v = judgeCorrection(line, s, ctx);
+    check(`kalıyor: ${line.slice(0, 48)}`, v.keep, JSON.stringify(v));
+  }
+}
+
+console.log("\nsatır içi işaretler (panel #12)");
+{
+  const inline = "Ich freue mich, Sie kennenzulernen, Deniz. Woher kommen Sie?   [SAY] Ich komme aus der Türkei.   [SAY] Ich komme aus Istanbul.   [SAY] Ich komme aus einem kleinen Dorf.";
+  const p = parseReply(inline);
+  check("gövde işaretsiz", p.body === "Ich freue mich, Sie kennenzulernen, Deniz. Woher kommen Sie?", JSON.stringify(p.body));
+  check("üç öneri", p.suggestions.length === 3 && p.suggestions[1] === "Ich komme aus Istanbul.", JSON.stringify(p.suggestions));
+  const bullets = parseReply("Wie geht's?\n- [SAY] Gut.\n2. [SAY] Sehr gut.\n• [SAY] Es geht.");
+  check("madde işaretli öneriler", bullets.suggestions.join("|") === "Gut.|Sehr gut.|Es geht.", JSON.stringify(bullets));
+  const sep = parseReply("[FIX] ich habe ein Hund → ich habe einen Hund (Akkusativ)\u2028Schön! Wie heißt er?\u2028[SAY] Er heißt Max.");
+  check("Unicode satır ayırıcısı", sep.corrections.length === 1 && sep.suggestions.length === 1 && sep.body === "Schön! Wie heißt er?", JSON.stringify(sep));
+  check("düz metin dokunulmuyor", breakInlineMarkers("Ich habe 2 Katzen. [Fenster] auf.") === "Ich habe 2 Katzen. [Fenster] auf.");
+}
+
 const REPLY = [
   `${CORRECTION_MARK} ${GOOD}`,
   `${CORRECTION_MARK} ${BAD}`,
@@ -156,6 +200,25 @@ async function streamTests() {
   // "[F" ile başlayıp işarete dönüşmeyen satır kaybolmuyor.
   const near = "[Fenster] ist offen.\nOk";
   check("işarete benzeyen düz satır korunuyor", (await collect([...near], "x")) === near);
+  // Satır içi işaretlerin akışta bölünmesi: her bölme noktasında dizge sürümüyle aynı.
+  const INLINE = "Woher kommen Sie? [SAY] Aus der Türkei. - [SAY] Aus Istanbul.\n[SAY] Aus Bonn.";
+  const want = breakInlineMarkers(INLINE);
+  async function split(chunks: string[]): Promise<string> {
+    async function* src() {
+      for (const c of chunks) yield c;
+    }
+    let out = "";
+    for await (const d of splitInlineMarkers(src())) out += d;
+    return out;
+  }
+  let ibad = 0;
+  for (let i = 0; i <= INLINE.length; i++) {
+    for (let j = i; j <= INLINE.length; j += 3) {
+      if ((await split([INLINE.slice(0, i), INLINE.slice(i, j), INLINE.slice(j)].filter(Boolean))) !== want) ibad++;
+    }
+  }
+  check("satır içi işaret akışta her bölmede aynı", ibad === 0, String(ibad));
+  check("satır içi işaret karakter karakter", (await split([...INLINE])) === want, JSON.stringify(await split([...INLINE])));
 }
 
 streamTests().then(() => {

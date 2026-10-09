@@ -95,12 +95,28 @@ function isCosmetic(correction: string): boolean {
   return left.length > 0 && left === right;
 }
 
+/**
+ * Satır içine düşmüş işaretleri kendi satırına alır (QA 2026-10-09, panel #12).
+ *
+ * Model önerileri bazen rol metninin arkasına, aynı satırda boşlukla ya da madde
+ * işaretiyle yazıyor ("…Woher kommen Sie?   [SAY] Ich komme …", "- [SAY] …").
+ * Ayrıştırıcı işareti yalnız satır başında tanıdığı için ham "[SAY]" balona
+ * düşüyordu. Sunucu akışı zaten bölüyor (`fix-guard` `splitInlineMarkers`); bu
+ * istemcideki ikinci kat ve eski kayıtlar için. Mobil kopyası `game/chat.ts`.
+ */
+export function breakInlineMarkers(text: string): string {
+  return text
+    .replace(/[\u2028\u2029\u0085]/g, "\n")
+    .replace(/([^\n])[ \t]*(?:[-•*]|\d{1,2}[.)])?[ \t]*(\[(?:FIX|SAY)\])/g, "$1\n$2")
+    .replace(/^[ \t]*(?:[-•*]|\d{1,2}[.)])[ \t]*(\[(?:FIX|SAY)\])/gm, "$1");
+}
+
 export function parseReply(text: string): ParsedReply {
   const body: string[] = [];
   const corrections: string[] = [];
   const suggestions: string[] = [];
 
-  for (const line of text.split("\n")) {
+  for (const line of breakInlineMarkers(text).split("\n")) {
     const trimmed = line.trim();
     if (trimmed.startsWith(CORRECTION_MARK)) {
       const value = stripEmphasis(trimmed.slice(CORRECTION_MARK.length).trim());

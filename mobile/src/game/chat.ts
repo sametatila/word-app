@@ -88,11 +88,23 @@ function isCosmetic(correction: string): boolean {
 
 export type ParsedReply = { body: string; corrections: string[]; suggestions: string[] };
 
+/**
+ * Satır içine düşmüş işaretleri kendi satırına alır — web `chat-format`
+ * `breakInlineMarkers` ile AYNI (QA 2026-10-09: "…Woher kommen Sie?   [SAY] …"
+ * balona ham düşüyordu). Sunucu akışı zaten bölüyor; bu ikinci kat.
+ */
+export function breakInlineMarkers(text: string): string {
+  return text
+    .replace(/[\u2028\u2029\u0085]/g, "\n")
+    .replace(/([^\n])[ \t]*(?:[-•*]|\d{1,2}[.)])?[ \t]*(\[(?:FIX|SAY)\])/g, "$1\n$2")
+    .replace(/^[ \t]*(?:[-•*]|\d{1,2}[.)])[ \t]*(\[(?:FIX|SAY)\])/gm, "$1");
+}
+
 export function parseReply(text: string): ParsedReply {
   const body: string[] = [];
   const corrections: string[] = [];
   const suggestions: string[] = [];
-  for (const line of text.split("\n")) {
+  for (const line of breakInlineMarkers(text).split("\n")) {
     const trimmed = line.trim();
     if (trimmed.startsWith(CORRECTION_MARK)) {
       const value = stripEmphasis(trimmed.slice(CORRECTION_MARK.length).trim());

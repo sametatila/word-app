@@ -22159,6 +22159,27 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
   sameList("yuruyus VAD emniyet tavani", ["js=" + (tavan || "YOK")], ["js=" + deger("MAX_WAIT_MS") + "+" + deger("MAX_SPEECH_MS")], "mobil", "referans");
 }
 
+/* ── sohbet cevabi ayristiricisi ───────────────────────────────────────────
+ * Web `chat-format` ile mobil `game/chat` `parseReply` ve `breakInlineMarkers`
+ * elle tutulan iki kopya. QA 2026-10-09: model onerileri rol metninin arkasina ayni
+ * satirda yazinca ("… Woher kommen Sie?   [SAY] …") ham "[SAY]" balona dusuyordu;
+ * bolme iki kopyada ayni kalmali, yoksa bir platform onerileri yine kaybeder. */
+console.log("\n" + C.b + "SOHBET CEVABI AYRISTIRICISI" + C.off);
+{
+  const fn = (src, ad) => {
+    const i = src.indexOf("export function " + ad + "(");
+    if (i === -1) return "YOK";
+    const j = src.indexOf("\n}\n", i);
+    return src.slice(src.indexOf("{", src.indexOf(")", i)), j).replace(/\s+/g, " ").trim();
+  };
+  const web = read("src/lib/chat-format.ts");
+  const mob = read("mobile/src/game/chat.ts");
+  sameList("satir ici isaret bolme govdesi", [fn(mob, "breakInlineMarkers")], [fn(web, "breakInlineMarkers")]);
+  const dongu = (src) => (fn(src, "parseReply").match(/for \(const line of (.+?)\) \{/) ?? [])[1] ?? "YOK";
+  sameList("ayristirici bolunmus metni okuyor", [dongu(mob)], ['breakInlineMarkers(text).split("\\n")']);
+  sameList("ayristirici bolunmus metni okuyor (web)", [dongu(web)], ['breakInlineMarkers(text).split("\\n")'], "web", "beklenen");
+}
+
 /* ── sinav bitisi sozlesmesi ────────────────────────────────────────────────
  * `/api/exam` finish sonucu DUZ donduruyor; mobil `d.result` okuyordu ve kaydedilmis
  * her sinavi "Sonuc gonderilemedi, %0" diye gosteriyordu (QA F-0016, 2026-10-09).

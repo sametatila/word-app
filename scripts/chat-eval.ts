@@ -36,7 +36,7 @@ import { chatProviders, type ChatMessage, type Provider } from "../src/lib/chat-
 
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { sourceFindConversation as findConversation } from "../src/lib/conversations/source";
-import { chatPrompt } from "../src/lib/conversations/chat";
+import { chatPrompt, chatRegister } from "../src/lib/conversations/chat";
 import { filterCorrectionLines } from "../src/lib/conversations/fix-guard";
 import type { Conversation } from "../src/lib/conversations/types";
 import type { NativeLang } from "../src/lib/courses";
@@ -129,6 +129,20 @@ const LEBENSLAUF: Step[] = [
   { say: "Ich habe BWL studiert, und danach ich bin nach Deutschland gekommen.", expectFix: "bin ich", forbidFix: COORD_FIX },
 ];
 
+/**
+ * QA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 #15 #16 #28): iş
+ * arkadaşı sahnesinde (hitap du) doğru cümleler "Höflichkeitsform", "Zahlen",
+ * "V2-Regel" ve "Inhaltliche Korrektur" etiketleriyle düzeltildi. Hepsi doğru;
+ * beklenen: düzeltme yok. Tek gerçek hata (Akkusativ) yakalanmalı.
+ */
+const KOLLEGE: Step[] = [
+  { say: "Mir geht es gut, danke. Möchtest du auch einen Kaffee?", expectClean: true },
+  { say: "Meine Nummer ist siebzehn achtundzwanzig.", expectClean: true },
+  { say: "Ich lerne Deutsch, weil ich in Dortmund studieren möchte.", expectClean: true },
+  { say: "Ich gehe jeden Tag zur Uni und arbeite bis fünf.", expectClean: true },
+  { say: "Ich habe ein Termin um drei Uhr.", expectFix: "einen" },
+];
+
 type Scenario = { id: string; conversation: Conversation; native: NativeLang; script: Step[] };
 
 /**
@@ -142,6 +156,7 @@ const SCENARIOS: Scenario[] = [
   { id: "de-a1-hallo/tr", conversation: findConversation("de-a1-hallo")!, native: "tr", script: SCRIPT },
   { id: "de-b1-bewerbung/tr", conversation: findConversation("de-b1-bewerbung")!, native: "tr", script: BEWERBUNG },
   { id: "de-b1-lebenslauf/tr", conversation: findConversation("de-b1-lebenslauf")!, native: "tr", script: LEBENSLAUF },
+  { id: "de-a1-wie-gehts/tr", conversation: findConversation("de-a1-wie-gehts")!, native: "tr", script: KOLLEGE },
   { id: "de-b1-bewerbung/en", conversation: findConversation("de-b1-bewerbung")!, native: "en", script: BEWERBUNG },
   { id: "en-a2-interview/tr", conversation: findConversation("en-a2-interview")!, native: "tr", script: INTERVIEW_EN },
   { id: "en-a2-interview/de", conversation: findConversation("en-a2-interview")!, native: "de", script: INTERVIEW_EN },
@@ -352,7 +367,7 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
     s.firstTokenMs.push(first);
     s.totalMs.push(Date.now() - started);
     // Öğrencinin gördüğü (ve istemcinin geçmişte geri gönderdiği) metin süzülmüş olan.
-    const shown = filterCorrectionLines(text, step.say).text;
+    const shown = filterCorrectionLines(text, step.say, { register: chatRegister(sc.conversation), lang: sc.conversation.course === "en" ? "en" : "de" }).text;
     history.push({ role: "assistant", content: shown });
 
     const rawCorrections = parseReply(text).corrections;
