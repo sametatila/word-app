@@ -28,7 +28,8 @@ Başka yere dosya yazılmaz. Geçici dosyalar `.shots/social/render/` ve `cache/
 ```bash
 npm run social:check                      # bölümler yükleniyor mu, aynı içerik tekrar ediyor mu, liste
 npm run social:gallery [-- --no-posters] [-- --no-audio]  # atölye: her şablonun en yeni bölümü (.shots/social/gallery/)
-npm run social:audit [-- <şablon> …]      # yerleşim denetimi, Chrome + Safari motoru (WebKit)
+npm run social:audit [-- <bölüm|şablon> …]  # yerleşim denetimi, Chrome + Safari motoru (WebKit); verilmezse bütün bölümler
+npm run social:plan [-- --write]          # yayın takvimi + takvim kuralları; --write: data/social/plan.json (admin bunu gösterir)
 npm run social:render -- <bölüm-id> …     # MP4 + kapaklar + açıklama (.shots/social/out/<bölüm>/)
 npm run social:render -- --status hazır   # durumu "hazır" olan bütün bölümler
 npm run social:render -- <id> --muziksiz  # ek olarak müziksiz sürüm (platform müziği eklemek için)
@@ -55,6 +56,7 @@ yerel telefon testi için klasörü `python3 -m http.server` ile sun.
      template: "kelime-lacivert",
      status: "taslak", // taslak → hazır → yayında
      created: "2026-10-12",
+     slot: "2026-10-26 07:30", // Berlin; yalnız 07:30 / 12:30 / 18:30
      content: ({ deck }) => ({
        items: deck(["…", "…"]),
        copy: { title: "…", hook: ["…", "…"], caption: "…\n\n#…", outro: { series: "…", ask: "…" } /* + şablona özgü */ },
@@ -62,14 +64,18 @@ yerel telefon testi için klasörü `python3 -m http.server` ile sun.
    };
    export default episode;
    ```
-5. **Denetle:** `npm run social:check` (hata yok) → `npm run social:gallery -- --no-posters` →
-   `npm run social:audit -- <şablon>` (sorun yok) → kareleri gözle gör (oynatıcıda ya da ekran görüntüsüyle).
+5. **Denetle:** `npm run social:check` ve `npm run social:plan` (hata yok) →
+   `npm run social:audit -- <bölüm-id>` (sorun yok) → kareleri gözle gör (oynatıcıda ya da ekran görüntüsüyle).
    Denetim aracı taşma, çakışma, kutu dışı yazı ve güvenli alanı ölçer, ama "anlamlı mı, doğal mı" sorusunu ölçmez:
    metni yüksek sesle oku.
 6. **Üret:** `npm run social:render -- <bölüm-id>`. Çıktı satırında süre, ses (−14 LUFS civarı) ve sayfa hatası yok.
-7. **Durumu "hazır" yap**, yalnız bölüm dosyasını commit et.
-8. **Yayından sonra** (Samet söyleyince): `status: "yayında"`, `published: "YYYY-AA-GG"`, istenirse `links` ve
-   `metrics` (aşağıda). Yayındaki bölümün içeriği değiştirilmez.
+7. **Durumu "hazır" yap**, `npm run social:plan -- --write`, bölüm dosyalarını ve `data/social/plan.json`'u commit et.
+   Deploy sonrası admin › İçerik › Sosyal medya yeni partiyi gösterir.
+8. **Yayın durumu** depoda değil, panelde (`social_posts`): Samet "zamanlandı / yayında" işaretler, bağlantıyı yazar.
+   Yayındaki (saati geçmiş) bölümün içeriği değiştirilmez.
+
+**Takvim kuralları** (`social:check` ve `social:plan` denetler): bir saate tek bölüm; aynı gün aynı yaklaşım yok;
+art arda iki bölüm aynı temada değil; farklı yaklaşımlarda ortak kelime 30 günden yakınsa hata.
 
 Yeni şablon gerekirse (yeni format ya da tema): `templates/` altına, mevcut bir şablonu örnek alarak. Kurallar
 "Tasarım standardı"nda; `social:audit` iki motorda temiz olmadan galeriye girmez.
@@ -84,7 +90,8 @@ Yeni şablon gerekirse (yeni format ya da tema): `templates/` altına, mevcut bi
 - **Tekrar yok.** Aynı yaklaşımda bir kelime iki bölümde kullanılamaz (`social:check` hata verir). Farklı
   yaklaşımlar arasında ortak kelime uyarıdır: bilerek pekiştirme değilse başka kelime seç.
 - **"Hangisini duydun?" çiftleri:** iki kelime aynı türde ve aynı artikelle (yoksa sesteki artikel cevabı ele verir),
-  ikisinin de sesi var, ikisi de günlük kelime. Veride 815 aday var ama çoğu zayıf; en kıt kaynak bu, idareli kullan.
+  ikisinin de sesi var, ikisi de günlük kelime. Bölüm başına bir ses karşıtlığı (ü/i, e/i, a/e, b/p…), 3 çift (~28 sn).
+  Kaynak bol (bkz. Kapasite); sınırlayan `confusables.json`daki aynı tür/artikel koşulu.
 - **"Cümleyi kur" cümleleri:** 4–7 kelime, A1–B1, tek bir dilbilgisi fikri. İpucu iki noktasız ve kesin.
 - **Kelime destesi:** 3 kelime (~30 sn; şablon 3–6 kabul eder ama kart başına ~7 sn). Kanca, başlık ve özet
   sayıyla uyumlu ("bu 3 kelime"). Fazlası bir sonraki bölüme: "1/2, 2/2" seri olarak.
@@ -172,28 +179,58 @@ Zayıf yanlar, etki sırasıyla:
 | Artikel | Gece | haftada 2 | Kural serisi: her bölüm bir kural ya da tema (mutfak, ev, iş…) |
 | Gerçek durum (diyalog) | Kâğıt | haftada 2 | Her bölüm bir Almanya durumu; yorumlardan konu seçtir |
 | Kelime destesi | Lacivert | haftada 1 | 3 kelime, ~30 sn (bkz. eleştiri 2) |
-| Hangisini duydun? | Lacivert | haftada 1 | Kıt kaynak: idareli |
+| Hangisini duydun? | Lacivert | haftada 1 | Kaynak bol; bölüm başına bir ses karşıtlığı |
 | Cümleyi kur | Gece / Turuncu | haftada 1 | Turuncu haftada en çok bir |
 
-**Faz 1, pilot (2 hafta, günde 1, 14 video):**
-- Hafta 1: her yaklaşım en az iki kez, farklı temalarla (aynı içerik iki kez yayınlanmaz).
-- Hafta 2: eleştirideki 1 ve 2 numaralı değişiklikler uygulanmış sürümlerle aynı ritim.
-- Aynı dosya TikTok ve Reels'e, aynı gün; saat ~18:30 Berlin (Almanya'daki Türk izleyici + Türkiye akşamı).
-- İnsan yüzlü 2–3 video (Samet çeker).
+**Ritim (Samet, 2026-10-09):** günde 3 video, iki platforma aynı dosya; saatler Berlin 07:30, 12:30, 18:30. Yeni kısa
+format yok, mevcut 20 tasarım. Claude iki haftalık parti (42 bölüm) üretir; Samet iki platformun kendi zamanlayıcısına
+iki hafta ileriye koyar ve panelde "zamanlandı" işaretler (haftayı tek düğmeyle). İnsan yüzlü video pilotta yok; izlenme
+iyi ama takip/kurulum zayıf kalırsa 2–3 tanesi deneme olarak çekilir.
 
-**Faz 2, karar (3. hafta):** her bölüm için ölçümler bölüm dosyasına yazılır, seri başına karşılaştırılır:
-3 sn tutma, ortalama izleme yüzdesi, bitirme, 1000 izlenme başına kaydetme / paylaşma / yorum, profil ziyareti,
-takip, kampanya bağlantısından kurulum. En zayıf yaklaşım bırakılır, en güçlü ikisi haftada 2'ye çıkar, tema kilitlenir.
+**Faz 1, pilot (12–25 Ekim 2026, 42 video):**
+- Hafta 1 (12–18 Ekim): 20 tasarımın her biri bir kez (001 bölümleri) + 1 diyalog. Tema karşılaştırması ilk haftadan.
+- Hafta 2 (19–25 Ekim): aynı 20 tasarım yeni içerikle (002) + 1 diyalog; gün sırası 3 gün kaydırıldı (gün etkisi
+  karışmasın). Her tasarımdan iki veri noktası.
+- Roller: 07:30 hızlı test (artikel, duy), 12:30 kaydetmelik (kelime, kur), 18:30 ana video (diyalog); kurallar izin
+  verdiğince.
 
-**Faz 3, düzenli üretim:** haftada 7 bölüm. Claude Code her pazartesi haftanın bölümlerini yazar, denetler, üretir
-(`--status hazır`); Samet yükler ve yayından sonra durum ile ölçümleri bildirir. Ayda bir bu belgedeki eleştiri ve
-plan veriyle güncellenir.
+**Faz 2, karar (26 Ekim haftası):** her bölüm için metrikler (`social_posts.metrics`) seri ve tema başına karşılaştırılır:
+3 sn tutma (Instagram `reels_skip_rate`), ortalama izlenme, bitirme, 1000 izlenme başına kaydetme / paylaşma / yorum,
+profil ziyareti, takip, kampanya bağlantısından kurulum. En zayıf yaklaşım azaltılır, en güçlü ikisi artar, her yaklaşım
+için tema kilitlenir. Bir saat dilimi sürekli geride kalırsa günde 2'ye inilir.
 
-**Ölçüm alanı (bölüm dosyasında, yayından ~7 gün sonra):**
-```js
-metrics: { tiktok: { views, avgWatchPct, completionPct, likes, comments, shares, saves, follows }, reels: { … }, installs: { tiktok, reels } },
-```
+**Faz 3, düzenli üretim:** iki haftada bir 42 bölüm. Plan bitmeden ~7 gün önce panel uyarır; Samet Claude'dan yeni
+partiyi ister. Ayda bir bu belgedeki eleştiri ve plan veriyle güncellenir.
+
+## Panel (admin › İçerik › Sosyal medya)
+
+`/admin/social`: haftalık ızgara (gün × 3 saat), her hücrede TikTok ve Instagram durumu (planlandı, zamanlandı, yayında,
+atlandı, saati geçti). Hücre: kanca, açıklama (kopyala), dosya yolu, platform başına durum + bağlantı + not. Haftanın
+planlananlarını tek düğmeyle "zamanlandı" işaretleme. Uyarılar: saati geçip yayında işaretlenmeyen, planın bitmesine
+7 günden az.
+
+- Plan: `data/social/plan.json` (derleme anında içe alınır; deploy ile güncellenir). Panel planı değiştirmez.
+- Durum: `social_posts` tablosu (`src/lib/social-posts.ts`, uç `/api/admin/social`, yazma 2FA + `admin_audit`).
+- Saati geçmiş "zamanlandı" kendiliğinden "yayında" sayılmaz: platform zamanlayıcısı başarısız olabilir.
+
+## Platform API'leri (araştırma 2026-10-09, resmi belgeler)
+
+| | Metrik okuma | Yayınlama | Zamanlanmışları okuma |
+|---|---|---|---|
+| **Instagram** | Var. "Instagram API with Instagram Login", `instagram_business_basic` + `instagram_business_manage_insights`, Standard Access: kendi hesabımız için **inceleme yok**, Facebook sayfası gerekmez. Reels: `views`, `reach`, `likes`, `comments`, `saved`, `shares`, `ig_reels_avg_watch_time`, `reels_skip_rate`… (48 sa gecikme) | Var (`instagram_business_content_publish`, inceleme yok, `is_ai_generated`), ama **ileri tarih parametresi yok**: kendi cron'umuzla yayınlanır | Yok |
+| **TikTok** | Display API (`video.list`): yalnız sayılar (izlenme, beğeni, yorum, paylaşım); sandbox'ta incelemesiz çalışıp çalışmadığı denenmeli. İzlenme süresi ve tamamlama için TikTok API for Business (`video.insights`), uygulama onayı gerekir | Pratikte yok: denetimsiz uygulamada gönderi gizli kalır; "kendi hesabına yükleme aracı" denetimden geçemez (yönergeler) | Yok |
+
+Belirteçler: Instagram uzun ömürlü belirteç 60 gün, `refresh_access_token` ile yenilenir (sunucuda ~30 günde bir cron).
+TikTok erişim belirteci 24 saat, yenileme belirteci 365 gün.
+
+**Sıra:** (1) Instagram metrik eşitlemesi (Samet: hesabı Professional yap, developers.facebook.com'da Business uygulaması +
+Instagram ürünü "API setup with Instagram login", Lernomi hesabını tester ekle, belirteci `.secrets/` altına koy; Claude
+sunucuya, `social_posts` eşitleme cron'una ve belirteç yenilemeye bağlar; gönderiler açıklama + saatle bölüme eşlenir).
+(2) TikTok Display API sandbox'ı dene; yetmezse Business API başvurusu. (3) İstenirse Instagram'a otomatik yayın
+(kendi cron'umuz). TikTok'ta yayın elle kalır.
 
 **Kapasite (2026-10-08 ölçümü):** cümleyi kur için 1795 kısa sesli cümle, kelime destesi için 2754 sesli kelime,
-artikel için 2343 sesli isim (yalnız -ung → die 215 kelime): yıllarca yeter. "Hangisini duydun?" için 815 aday çiftin
-çoğu zayıf; elle seçildiğinde birkaç düzine bölüm. Ses kapsamı Defne kayıtları arttıkça büyür.
+artikel için 2343 sesli isim (yalnız -ung → die 215 kelime): yıllarca yeter. "Hangisini duydun?" için `confusables.json`daki
+1527 çiftin 1483'ünde iki kelimenin de sesi var; listede olmayan, 1–2 harf farklı sesli 464 çift daha var; Türk kulağına
+zor karşıtlıklı (uzun/kısa ünlü, ä/e, ch/sch, b/p…) kaba sayım ~600. Bölüm başına 3–4 çiftle yüzlerce bölüm eder.
+Defne kapsamı 4528/8704 kelime ve büyüyor; kapsam arttıkça aday da artar.
