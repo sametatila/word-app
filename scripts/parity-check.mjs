@@ -22300,6 +22300,32 @@ console.log("\n" + C.b + "ANLATIM PARCA ARASI" + C.off);
   );
 }
 
+/* ── sinavda cevap sonunda ──────────────────────────────────────────────
+ * QA F-0017 (2026-10-09): kapak "cevaplar sinav bitince acilir", dinleme
+ * karti "metni goremezsin" diyordu; kelime bolumu "Kontrol et"te dogru cevabi
+ * aciyor, Android dinlemede diyalogun metni ekrandaydi. Iki oynatici kelime
+ * turunu `BlindAnswers` ile sariyor, yazma ve ceviri turu baglami okuyor,
+ * dinleme metni sinavda cizilmiyor ve sonucta "Kaydin metni" kartinda. */
+console.log("\n" + C.b + "SINAVDA CEVAP SONUNDA" + C.off);
+{
+  const sil = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const web = sil(read("src/components/exam-player.tsx"));
+  const mob = sil(read("mobile/src/screens/ExamScreen.tsx"));
+  const sarili = (src) => (/<BlindAnswers>[\s\S]{0,200}(?:<GameSwitch|<RoundView)/.test(src) ? "sarili" : "YOK");
+  sameList("kelime turu cevapsiz", [sarili(mob)], [sarili(web)]);
+  const okur = (p) => (/useBlindAnswers\(\)/.test(sil(read(p))) ? "okuyor" : "YOK");
+  sameList(
+    "turlar baglami okuyor",
+    ["yazma=" + okur("mobile/src/game/rounds.tsx"), "katman=" + (/const blind = useBlindAnswers\(\);[\s\S]{0,200}if \(blind\) onContinue\(\)/.test(sil(read("mobile/src/game/rounds.tsx"))) ? "kapali" : "ACIK")],
+    ["yazma=" + (okur("src/components/games/typing-game.tsx") === "okuyor" && okur("src/components/games/translate-game.tsx") === "okuyor" ? "okuyor" : "YOK"), "katman=" + (/if \(blind && open\) onContinue/.test(sil(read("src/components/games/round-sheet.tsx"))) ? "kapali" : "ACIK")],
+  );
+  sameList(
+    "dinleme metni sinavda yok, sonucta var",
+    ["sinavda=" + (/spoken \? \(s\.speaker/.test(mob) ? "VAR" : "yok"), "sonucta=" + (/mockexam\.transcript/.test(mob) ? "var" : "YOK")],
+    ["sinavda=yok", "sonucta=" + (/mockexam\.transcript/.test(web) ? "var" : "YOK")],
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
