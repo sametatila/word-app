@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t as tx, formatClock } from "../lib/i18n";
 import { View, ScrollView, Switch, Pressable } from "react-native";
 import { MIN_TOUCH } from "../ui/touch";
@@ -89,32 +89,52 @@ function ToggleRow({ title, subtitle, value, onValueChange, colors, pending = fa
   );
 }
 
+/*
+ * SON OKUNAN TERCİHLER BELLEKTE. Saat çipleri tercihler okununca beliriyor ve
+ * Seri koruyucu / Haftalık sınav satırlarını ~75 dp aşağı itiyordu (QA F-0070
+ * sınıfı). İkinci açılışta son değerler hemen çiziliyor (arkada yeniden
+ * okunuyor); ilk açılışta çip satırının yeri iskeletle tutuluyor — günlük
+ * hatırlatma varsayılan olarak açık, satır çoğu kullanıcıda geliyor.
+ */
+type Prefs = { daily: boolean; hour: string; streak: boolean; weekly: boolean };
+let lastPrefs: { uid: string; prefs: Prefs } | null = null;
+
 export function NotificationsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const [dailyOn, setDailyOn] = useState(false);
+  const user = useAuth().user;
+  const uid = user?.id ?? "";
+  const cached = lastPrefs?.uid === uid ? lastPrefs.prefs : null;
+  /* Kullanıcı bir şeyi çevirdiyse geç dönen okuma onu geri almasın. */
+  const touched = useRef(false);
+  const [dailyOn, setDailyOn] = useState(cached?.daily ?? false);
   /* Başlangıç değeri yalnız ilk çizim için; gerçek saat `loadPrefs`ten
      geliyor (sunucunun kayıtlı saati — bkz. `ReminderPrefs.hour`). Sayı
      şemanın varsayılanından (`PROFILE_DEFAULTS.reminderHour`), elle
      yazılmıyor: "12:00" burada sabitti ve şema değişse sessizce eskirdi. */
-  const [dailyTime, setDailyTime] = useState(hhmmOf(PROFILE_DEFAULTS.reminderHour));
-  const [streakOn, setStreakOn] = useState(false);
-  const [weeklyOn, setWeeklyOn] = useState(false);
+  const [dailyTime, setDailyTime] = useState(cached?.hour ?? hhmmOf(PROFILE_DEFAULTS.reminderHour));
+  const [streakOn, setStreakOn] = useState(cached?.streak ?? false);
+  const [weeklyOn, setWeeklyOn] = useState(cached?.weekly ?? false);
   /* Tercihler okundu mu — okunana kadar anahtarlar iskelet (bkz. `ToggleRow`). */
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(cached !== null);
   const [denied, setDenied] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   /* MİSAFİRE DE AÇIK. Hatırlatma telefona kuruluyor ve sunucu istemiyor;
      ilk günlerde uygulamaya geri getiren şey tam olarak bu. Misafirde yalnız
      sunucu tercihi yazılmıyor (bkz. lib/notifications `setReminderServerSync`)
      ve hatırlatmanın bu telefona bağlı olduğu söyleniyor. */
-  const guest = Boolean(useAuth().user?.guest);
+  const guest = Boolean(user?.guest);
+  /* Bellekteki kopya ekrandakiyle aynı kalsın (sonraki açılış onu çiziyor). */
+  useEffect(() => {
+    if (ready) lastPrefs = { uid, prefs: { daily: dailyOn, hour: dailyTime, streak: streakOn, weekly: weeklyOn } };
+  }, [ready, uid, dailyOn, dailyTime, streakOn, weeklyOn]);
 
   useEffect(() => {
     /* Karar verilmemiş kategori sunucudaki değerle çiziliyor; bkz. `loadPrefs`. */
     loadPrefs().then((p) => {
+      if (touched.current) return;
       setDailyTime(p.hour);
-      if (p.daily) setDailyOn(true);
+      setDailyOn(Boolean(p.daily));
       setStreakOn(p.streak);
       setWeeklyOn(p.weekly);
     }).catch(() => { /* okunamazsa kapalı çiziliyor; kullanıcı yine çevirebilir */ }).finally(() => setReady(true));
@@ -144,20 +164,24 @@ export function NotificationsScreen() {
    * davranmak "kaç kişi saatini değiştirdi" sorusunu yarım cevaplardı.
    */
   async function toggleDaily(on: boolean) {
+    touched.current = true;
     setMsg(null);
     if (on) { const ok = await enableDailyReminder(dailyTime); if (ok) { setDailyOn(true); setDenied(false); track("setting_change", 1, "remind_daily"); } else fail(); }
     else { await disableReminder(); setDailyOn(false); track("setting_change", 0, "remind_daily"); }
   }
   async function pickTime(t: string) {
+    touched.current = true;
     setDailyTime(t);
     if (dailyOn) { const ok = await enableDailyReminder(t); if (!ok) fail(); }
   }
   async function toggleStreak(on: boolean) {
+    touched.current = true;
     setMsg(null);
     const ok = await setStreakAlert(on);
     if (ok) { setStreakOn(on); setDenied(false); track("setting_change", on ? 1 : 0, "remind_streak"); } else fail();
   }
   async function toggleWeekly(on: boolean) {
+    touched.current = true;
     setMsg(null);
     const ok = await setWeeklyReminder(on);
     if (ok) { setWeeklyOn(on); setDenied(false); track("setting_change", on ? 1 : 0, "remind_weekly"); } else fail();
@@ -181,7 +205,19 @@ export function NotificationsScreen() {
 
         <ToggleGroup colors={colors}>
           <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: formatClock(dailyTime) }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors} pending={!ready}>
-            {dailyOn && (
+            {!ready ? (
+              /* Çip satırının iskeleti: başlık ve çipler kendi metinleri ve kaplarıyla (`Chip` seçim kalıbı). */
+              <View style={{ marginTop: spacing.md }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+                <SkeletonText variant="caption" text={tx("notifications.hour")} style={{ marginBottom: spacing.sm }} />
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+                  {TIMES.map((t) => (
+                    <View key={t} style={{ paddingHorizontal: spacing.lg, paddingVertical: 9, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border }}>
+                      <SkeletonText variant="bodyStrong" text={formatClock(t)} />
+                    </View>
+                  ))}
+                </View>
+              </View>
+            ) : dailyOn && (
               <View style={{ marginTop: spacing.md }}>
                 <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("notifications.hour")}</Text>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>

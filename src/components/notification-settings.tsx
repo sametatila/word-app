@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { NotificationsIcon } from "@/components/icons";
 import { SettingRow, Switch } from "@/components/setting-row";
-import { SettingRowSlot, SwitchSlot } from "@/components/settings-skeleton";
+import { Btn, SettingRowSlot, SwitchSlot, Words } from "@/components/settings-skeleton";
 import { PushSettings } from "@/components/push-settings";
 import { useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
@@ -17,6 +17,8 @@ type Prefs = { daily: boolean; hour: number; streak: boolean; weekly: boolean };
 /* Saatler tek kaynaktan: mobil `NotificationsScreen` ve bildirim izni ekranı
    da aynı listeyi okuyor (bkz. `lib/profile-limits` `REMINDER_HOURS`). */
 const HOURS = REMINDER_HOURS;
+/* Şemanın varsayılan saati (`profiles.reminder_hour`, mobil `PROFILE_DEFAULTS.reminderHour`); yalnız yer tutucu metni için. */
+const DEFAULT_REMINDER_HOUR = 12;
 
 /** Seri koruma saati ortak kaynaktan, arayüz dilinde (sözlükte sabit "20.30" vardı, QA F-0036). */
 const streakTime = (lang: NativeLang) => {
@@ -197,18 +199,33 @@ export function NotificationSettings() {
 
 /**
  * Üç anahtarın yeri, tercihler gelene kadar — gerçek başlık ve alt satır
- * görünmez. Günlük satırın alt satırı kayıtlı saate bağlı: "kapalı" metni
- * (saat çipleri de ancak anahtar açıksa geliyor). Rota iskeleti de bunu
- * çiziyor (`profile/settings/skeleton.tsx`).
+ * görünmez. Rota iskeleti de bunu çiziyor (`profile/settings/skeleton.tsx`).
+ *
+ * GÜNLÜK SATIR AÇIK HÂLİYLE, SAAT ÇİPLERİYLE. Günlük hatırlatma varsayılan
+ * olarak açık (`profiles.reminders_enabled`), yani çip satırı çoğu kullanıcıda
+ * geliyor. Yer tutucu "kapalı" çiziliyordu; tercihler gelince çipler araya
+ * girip seri koruma ve haftalık quiz satırlarını aşağı itiyordu (QA F-0070
+ * sınıfı; mobil `NotificationsScreen` aynı iskeleti çiziyor). Saat şemanın
+ * varsayılanı (12).
  */
 export function RemindersSlot() {
   const t = useT();
   const lang = useLang();
   return (
     <>
-      <SettingRowSlot title={t("notifications.daily_reminder")} sub={t("notifications.daily_off")}>
-        <SwitchSlot />
-      </SettingRowSlot>
+      <div>
+        <SettingRowSlot title={t("notifications.daily_reminder")} sub={t("notifications.daily_on", { time: formatClock(DEFAULT_REMINDER_HOUR, 0, lang) })}>
+          <SwitchSlot />
+        </SettingRowSlot>
+        <div className="px-4 pb-3">
+          <Words as="p" className="mb-2 text-caption tracking-wide" text={t("notifications.hour")} />
+          <div className="flex flex-wrap gap-1.5">
+            {HOURS.map((h) => (
+              <Btn key={h} className="chip px-3 py-1.5 text-caption" text={formatClock(h, 0, lang)} />
+            ))}
+          </div>
+        </div>
+      </div>
       <SettingRowSlot title={t("notifications.streak_saver")} sub={t("notifications.every_evening_at_8_30_pm_don_t", { time: streakTime(lang) })}>
         <SwitchSlot />
       </SettingRowSlot>
