@@ -95,6 +95,7 @@ console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 
   const said = (t: string) => t;
   const cases: [string, string, Parameters<typeof judgeCorrection>[2], string][] = [
     ["Was machst du gern → Was machen Sie gern (Höflichkeitsform)", "Was machst du gern am Abend?", { register: "Sie" }, "register"],
+    ["du → Sie (höfliche Anrede)", "Was machst du gern am Abend?", { register: "Sie" }, "register"],
     ["siebzehn achtundzwanzig → 17 28 (Zahlen)", "Meine Nummer ist siebzehn achtundzwanzig.", {}, "form_only"],
     ["Du kochst jetzt die Suppe → Ich koche jetzt die Suppe (Inhaltliche Korrektur)", "Du kochst jetzt die Suppe und ich schneide das Brot.", {}, "person_change"],
     ["Möchtest du auch einen Kaffee? → Möchten Sie auch einen Kaffee? (Höflichkeitsform)", "Möchtest du auch einen Kaffee?", { register: "du" }, "register"],

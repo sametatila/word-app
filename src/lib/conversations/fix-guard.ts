@@ -318,9 +318,11 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
 
   // Hitap (du ↔ Sie) dilbilgisi hatası değil: hitabı bilinen sahnede hiçbir yönde
   // düzeltilmiyor; karakter doğru hitabı kendisi kullanarak örnek oluyor.
+  // Tek başına "Sie" (cümle başı sayılmasın diye SIE_FORM'un dışında kalıyor) da hitap biçimi.
+  const sie = (t: string) => SIE_FORM.test(t) || /^\s*Sie\s*$/.test(t);
   const swap =
-    (DU_FORM.test(parts[0]) && SIE_FORM.test(rightText) && !DU_FORM.test(rightText)) ||
-    (SIE_FORM.test(parts[0]) && DU_FORM.test(rightText) && !SIE_FORM.test(rightText));
+    (DU_FORM.test(parts[0]) && sie(rightText) && !DU_FORM.test(rightText)) ||
+    (sie(parts[0]) && DU_FORM.test(rightText) && !sie(rightText));
   if (ctx.register && swap) return { keep: false, reason: "register" };
 
   // Kişi: iki taraf da kişi zamiri taşıyor ve kişiler farklı (du ↔ Sie hitap kuralına kalıyor).
