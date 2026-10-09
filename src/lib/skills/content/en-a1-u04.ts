@@ -362,7 +362,7 @@ export const enA1U04: SkillExercise[] = [
         kind: "build",
         tr: "Kuşu unutma!",
         answer: "Don't forget the bird!",
-        hint: "Ethan olumsuzu „Don't“ ile başlar; özne yazılmaz.",
+        hint: "Emir olumsuzu „Don't“ ile başlar; özne yazılmaz.",
       },
       {
         kind: "build",

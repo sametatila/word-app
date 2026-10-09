@@ -299,7 +299,7 @@ export const b1U04: SkillExercise[] = [
     unit: 4,
     title: "Ein Zettel an die Nachbarn",
     genre: "message",
-    intro: "Aynı şikâyeti kibar biçimde yaz. Leonie kipi burada nezaket değil, işe yarama meselesi.",
+    intro: "Aynı şikâyeti kibar biçimde yaz. Dilek kipi burada nezaket değil, işe yarama meselesi.",
     minutes: 8,
     gloss: [
       { de: "der Lärm", tr: "gürültü", en: "noise" },

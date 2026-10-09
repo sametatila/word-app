@@ -130,9 +130,9 @@ export const deB1B11: Conversation[] = [
       { say: [tr("Örnek:"), de("Ich hätte gern das Menü mit Suppe."), tr("Tekrar et:"), de("Ich hätte gern das Menü mit Suppe")], expect: repeat("Ich hätte gern das Menü mit Suppe") },
       { say: [tr("Sıra sende: 'Bir masa rezervasyonum var.'")], expect: produce("Ich habe eine Reservierung", [tr("Burada nezaket gerekmiyor, bilgi veriyorsun:"), de("Ich habe eine Reservierung."), tr("Tekrar dene.")], ["Ich habe eine Reservierung für zwei Personen"]) },
       { say: [tr("İkinci kalıbımız rica: yapabilmek fiilinin dilek kipi ile soru. Bu biçim garsondan bir şey isterken standarttır.")] },
-      { say: [tr("Şimdi: 'Bana menüyü getirebilir misiniz?'")], expect: produce("Könnten Sie mir die Speisekarte bringen", [tr("Leonie kipi başta, mastar sonda:"), de("Könnten Sie mir die Speisekarte bringen?"), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi: 'Bana menüyü getirebilir misiniz?'")], expect: produce("Könnten Sie mir die Speisekarte bringen", [tr("Dilek kipi başta, mastar sonda:"), de("Könnten Sie mir die Speisekarte bringen?"), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ich hätte gern zahlen."), tr("cümlesi doğru mu?")], expect: truefalse("Ich hätte gern zahlen.", false, [tr("Bu kalıp bir NESNE ister, fiil değil. Ödeme isteği başka bir yardımcı fiille kurulur:"), de("Ich würde gern zahlen.")]) },
-      { say: [tr("Son: 'Hesabı ödemek istiyoruz.' Kibar biçimini kullan.")], expect: produce("Wir würden gern zahlen", [tr("Leonie kipindeki yardımcı fiil artı hoşuma gider zarfı, mastar sonda:"), de("Wir würden gern zahlen."), tr("Tekrar dene.")], ["Wir möchten gern zahlen"]) },
+      { say: [tr("Son: 'Hesabı ödemek istiyoruz.' Kibar biçimini kullan.")], expect: produce("Wir würden gern zahlen", [tr("Dilek kipindeki yardımcı fiil artı hoşuma gider zarfı, mastar sonda:"), de("Wir würden gern zahlen."), tr("Tekrar dene.")], ["Wir möchten gern zahlen"]) },
       { say: [tr("Hazırsın. Şimdi bir lokantadasın: masaya oturacak, sipariş verecek ve sonunda hesabı isteyeceksin.")] },
     ],
     chat: {
@@ -185,7 +185,7 @@ export const deB1B11: Conversation[] = [
       { say: [tr("İkinci kalıbımız en üstün derece: bir edat ve sıfatın en üstün biçimi. Bir grubun içinde tek bir şeyi öne çıkarır.")] },
       { say: [tr("Şimdi: 'Kampanya en uygunu.'")], expect: produce("Das Sonderangebot ist am günstigsten", [tr("En üstün derece edatla kurulur:"), de("Das Sonderangebot ist am günstigsten."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Frucht ist mehr frisch als die Dose."), tr("cümlesi doğru mu?")], expect: truefalse("Die Frucht ist mehr frisch als die Dose.", false, [tr("Almancada karşılaştırma ayrı bir zarfla değil, sıfata gelen ekle yapılır:"), de("Die Frucht ist frischer als die Dose.")]) },
-      { say: [tr("Son: 'Bunu tartabilir misiniz?' Kibar biçimi kullan.")], expect: produce("Könnten Sie das bitte wiegen", [tr("Leonie kipi başta, mastar sonda:"), de("Könnten Sie das bitte wiegen?"), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Bunu tartabilir misiniz?' Kibar biçimi kullan.")], expect: produce("Könnten Sie das bitte wiegen", [tr("Dilek kipi başta, mastar sonda:"), de("Könnten Sie das bitte wiegen?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Şimdi pazardasın: iki tezgâhı karşılaştıracak, seçimini gerekçesiyle söyleyeceksin.")] },
     ],
     chat: {

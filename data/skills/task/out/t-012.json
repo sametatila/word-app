@@ -75,7 +75,7 @@
  { "tr": "Ad ve tür söylenmiş mi?", "kind": "free.checklist", "en": "Have the name and the kind been given?" },
  { "tr": "Bir risk düşünülmüş mü?", "kind": "free.checklist", "en": "Has a risk been thought about?" },
  { "tr": "Denenenler sayılmış mı?", "kind": "free.checklist", "en": "Have the things tried been listed?" },
- { "tr": "Leonie net söylenmiş mi?", "kind": "free.checklist", "en": "Has the wish been stated clearly?" },
+ { "tr": "Dilek net söylenmiş mi?", "kind": "free.checklist", "en": "Has the wish been stated clearly?" },
  { "tr": "Etkinlik ve yer net mi?", "kind": "free.checklist", "en": "Are the event and the place clear?" },
  { "tr": "İş somut anlatılmış mı?", "kind": "free.checklist", "en": "Has the work been described concretely?" },
  { "tr": "Konu net tanıtılmış mı?", "kind": "free.checklist", "en": "Is the subject clearly introduced?" },

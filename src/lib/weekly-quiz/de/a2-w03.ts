@@ -166,7 +166,7 @@ export const DE_A2_W03: QuizWeek = {
       stem: "Frau Vogel schreibt an Frau Brandt. Welcher Satz ist richtig?",
       options: ["Aussteigen Sie am Rathaus!", "Steig Sie am Rathaus aus!", "Steigen Sie am Rathaus aus!", "Steigen aus Sie am Rathaus!"],
       answer: 2,
-      why: "Uwe kipinde de ayrılabilir fiilin öneki cümlenin sonuna gider: `Steigen Sie … aus!`. Kibar emirde fiil `-en` ile biter ve `Sie` hemen arkasında durur; `steig` yalnız `du` emrinde kullanılır.",
+      why: "Emir kipinde de ayrılabilir fiilin öneki cümlenin sonuna gider: `Steigen Sie … aus!`. Kibar emirde fiil `-en` ile biter ve `Sie` hemen arkasında durur; `steig` yalnız `du` emrinde kullanılır.",
       targets: ["imperativ.sie", "verb.trennbar"],
       byNative: {
         en: {

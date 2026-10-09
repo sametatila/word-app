@@ -348,7 +348,7 @@ export const enA2U07: SkillExercise[] = [
         kind: "build",
         tr: "Günde iki kez bir tablet al.",
         answer: "Take one tablet twice a day.",
-        hint: "Ethan cümlesi öznesiz başlıyor; sıklık en sonda: twice a day.",
+        hint: "Emir cümlesi öznesiz başlıyor; sıklık en sonda: twice a day.",
       },
       {
         kind: "build",

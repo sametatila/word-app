@@ -395,7 +395,7 @@ export const deB1B08: Conversation[] = [
       { say: [tr("Şimdi: 'Kız kardeşime içimi döktüm.'")], expect: produce("Ich habe mich meiner Schwester anvertraut", [tr("Bu fiil yönelme ister ve dönüşlüdür; ortaç en sonda:"), de("Ich habe mich meiner Schwester anvertraut."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Konuşmak beni rahatlattı.'")], expect: produce("Das Gespräch hat mich entlastet", [tr("Yardımcı fiil ikinci sırada, ortaç sonda:"), de("Das Gespräch hat mich entlastet."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ich mache mir Sorgen um meinen Vater."), tr("cümlesi doğru mu?")], expect: truefalse("Ich mache mir Sorgen um meinen Vater.", true, [tr("Doğru. Dönüşlü zamir yönelme hâlinde, edattan sonraki nesne belirtme hâlinde.")]) },
-      { say: [tr("Son: 'Bir terapi bana iyi gelebilir.'")], expect: produce("Eine Therapie könnte mir guttun", [tr("Leonie kipiyle olasılık, mastar en sonda:"), de("Eine Therapie könnte mir guttun."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Bir terapi bana iyi gelebilir.'")], expect: produce("Eine Therapie könnte mir guttun", [tr("Dilek kipiyle olasılık, mastar en sonda:"), de("Eine Therapie könnte mir guttun."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette güvendiğin birine zorlandığını anlatacaksın: ne ağır geliyor, ne yardımcı oluyor.")] },
     ],
     chat: {

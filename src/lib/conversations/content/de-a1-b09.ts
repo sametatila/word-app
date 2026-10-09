@@ -1386,7 +1386,7 @@ export const deA1B09: Conversation[] = [
       {
         say: [
           tr(
-            "Merhaba! Uwe kipinin ikinci yüzünü öğreneceğiz. Eczacının kibar biçimini biliyorsun; bugün arkadaşına öğüt verirken kullanacağın senli biçimi alacağız. Hazır mısın?",
+            "Merhaba! Emir kipinin ikinci yüzünü öğreneceğiz. Eczacının kibar biçimini biliyorsun; bugün arkadaşına öğüt verirken kullanacağın senli biçimi alacağız. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },

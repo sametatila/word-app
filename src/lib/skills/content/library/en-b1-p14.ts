@@ -347,7 +347,7 @@ export const enB1P14: SkillExercise[] = [
       },
       {
         heading: "Üç özel durum",
-        tr: "„I am“ cümlesinin eki „aren't I?“ olur. Ethan cümlesine „will you?“, „Let's“ ile başlayan öneriye „shall we?“ eklenir. Ekte ses alçalırsa konuşan onay bekler, yükselirse gerçekten soruyordur.",
+        tr: "„I am“ cümlesinin eki „aren't I?“ olur. Emir cümlesine „will you?“, „Let's“ ile başlayan öneriye „shall we?“ eklenir. Ekte ses alçalırsa konuşan onay bekler, yükselirse gerçekten soruyordur.",
         examples: [
           { de: "I'm late, aren't I?", tr: "Geç kaldım, değil mi?", note: "I am → aren't I" },
           { de: "Close the window, will you?", tr: "Pencereyi kapatır mısın?", note: "emir → will you" },

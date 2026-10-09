@@ -40,7 +40,7 @@
  { "tr": "„These two are not alternatives.“ — ikisi birlikte yürüyecek.", "kind": "explain", "de": "„These two are not alternatives.“ — beides läuft parallel." },
  { "tr": "„will“ aktarımda „would“ olur ve arkasından yalın fiil gelir.", "kind": "explain", "de": "„will“ wird in der Wiedergabe zu „would“, und dahinter kommt das Verb in der Grundform." },
  { "tr": "E-postada \"My aunt Lydia is a nurse.\" diyor. Lydia hemşire.", "kind": "explain", "de": "In der Mail steht \"My aunt Lydia is a nurse.\" Lydia ist Krankenschwester." },
- { "tr": "Ethan kipinde özne yazılmaz ve fiil yalın hâliyle başta durur.", "kind": "explain", "de": "Im Befehl schreibt man kein Subjekt, und das Verb steht in der Grundform am Anfang." },
+ { "tr": "Emir kipinde özne yazılmaz ve fiil yalın hâliyle başta durur.", "kind": "explain", "de": "Im Befehl schreibt man kein Subjekt, und das Verb steht in der Grundform am Anfang." },
  { "tr": "Görünen bir kanıt var (bulutlar), bu yüzden „going to“ gelir.", "kind": "explain", "de": "Es gibt einen sichtbaren Beleg (die Wolken), darum kommt „going to“." },
  { "tr": "Odalar kendileri temizlemiyor, temizleniyor: be + üçüncü hâl.", "kind": "explain", "de": "Die Zimmer putzen nicht selbst, sie werden geputzt: be + dritte Form." },
  { "tr": "Randevu kesinleşmiş; plan için present continuous kullanılır.", "kind": "explain", "de": "Der Termin steht fest; für einen Plan nimmt man present continuous." },
@@ -145,7 +145,7 @@
  { "tr": "„The price is twenty-two euros.“ İki avro, söylenen fiyattan olan farktır.", "kind": "explain", "de": "„The price is twenty-two euros.“ Zwei Euro sind der Abstand zum genannten Preis." },
  { "tr": "„var“ için „have“ kullanılmaz; doğrusu „There are two chairs in the room.“", "kind": "explain", "de": "Fürs Vorhandensein nimmt man kein „have“; richtig ist „There are two chairs in the room.“" },
  { "tr": "Doktorun son cümlesi \"And come back in two weeks.\" — yani iki hafta sonra.", "kind": "explain", "de": "Der letzte Satz des Arztes lautet \"And come back in two weeks.\" — also in zwei Wochen." },
- { "tr": "Ethan kipinde özne yoktur ve fiil yalındır; „please“ cümleyi nazikleştirir.", "kind": "explain", "de": "Im Befehl gibt es kein Subjekt und das Verb steht in der Grundform; „please“ macht den Satz höflich." },
+ { "tr": "Emir kipinde özne yoktur ve fiil yalındır; „please“ cümleyi nazikleştirir.", "kind": "explain", "de": "Im Befehl gibt es kein Subjekt und das Verb steht in der Grundform; „please“ macht den Satz höflich." },
  { "tr": "Sayılamayan bir şeyi saymak için araya bir birim girer: a bottle of water.", "kind": "explain", "de": "Um Unzählbares zu zählen, tritt eine Einheit dazwischen: a bottle of water." },
  { "tr": "„It's black, with a small red flower on it.“ Küçük olan çanta değil, çiçek.", "kind": "explain", "de": "„It's black, with a small red flower on it.“ Klein ist nicht die Tasche, sondern die Blume." }
 ]

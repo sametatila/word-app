@@ -237,7 +237,7 @@ export const deA2P17: SkillExercise[] = [
     skill: "speaking",
     title: "Bitte oder Befehl?",
     genre: "pronounce",
-    intro: "Uwe kipi Almancada kaba değildir; kibarlığı „bitte, mal, doch“ ve yumuşak bir ezgi taşır. Altı cümlede ricayı rica gibi söyle.",
+    intro: "Emir kipi Almancada kaba değildir; kibarlığı „bitte, mal, doch“ ve yumuşak bir ezgi taşır. Altı cümlede ricayı rica gibi söyle.",
     gloss: [
       { de: "das Fenster", tr: "pencere", en: "window" },
       { de: "vorbeikommen", tr: "uğramak", en: "to come by" },

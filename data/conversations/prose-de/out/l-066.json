@@ -92,7 +92,7 @@
  { "tr": "Şimdi aynı cümlenin tersini sen kur. 'Standart daha ucuz ama daha yavaş.' Nasıl dersin?", "kind": "say.tr", "de": "Bilde jetzt den umgekehrten Satz. „Standard ist billiger, aber langsamer.“ Wie geht das?" },
  { "tr": "Şimdi sıra sende. \"Üye olmak istiyorum\" cümlesini İngilizce kur. Kibar kalıbı kullan ve", "kind": "say.tr", "de": "Jetzt bist du dran. Bilde „Ich möchte Mitglied werden“ auf Englisch. Nimm die höfliche Wendung und füge das Verb" },
  { "tr": "Şimdi soruyu kuralım. İngilizcede yaş sorusu kelime kelime \"ne kadar yaşlısın\" gibidir:", "kind": "say.tr", "de": "Bilden wir die Frage. Die englische Altersfrage lautet Wort für Wort „wie alt bist du“:" },
- { "tr": "Toparlayalım. Kısa sıfatta the ve -est: the oldest, the biggest. Collins sıfatta the most:", "kind": "say.tr", "de": "Fassen wir zusammen. Kurzes Adjektiv the und -est: the oldest, the biggest. Langes the most:" },
+ { "tr": "Toparlayalım. Kısa sıfatta the ve -est: the oldest, the biggest. Uzun sıfatta the most:", "kind": "say.tr", "de": "Fassen wir zusammen. Kurzes Adjektiv the und -est: the oldest, the biggest. Langes the most:" },
  { "tr": "Türkçesi 'heyecan verici' demek. Bir deneyimi anlattıktan sonra çok işine yarar. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „spannend“. Nach einer Erfahrung sehr nützlich. Bitte" },
  { "tr": "Türkçesi 'varmak, gelmek' demek. Sipariş kapına geldiğinde bu fiili kullanırsın. Lütfen", "kind": "say.tr", "de": "Auf Deutsch heißt es „ankommen“. Kommt die Bestellung an die Tür, nimmst du es. Bitte" },
  { "tr": "Sessiz bir yerdeysen harika, çünkü bol bol sesli tekrar yapacağız. Hazır mısın?", "kind": "say.tr", "de": "Wenn du an einem ruhigen Ort bist, prima, denn wir sprechen viel laut nach. Bist du bereit?" },

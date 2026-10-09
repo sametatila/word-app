@@ -274,7 +274,7 @@ export const a1U15: SkillExercise[] = [
         kind: "build",
         tr: "Trafik ışığında sağa dönün.",
         answer: "Biegen Sie an der Ampel rechts ab",
-        hint: "abbiegen ayrılabilir: „Biegen Sie … ab“. Uwe kipinde de ön ek SONDA kalır.",
+        hint: "abbiegen ayrılabilir: „Biegen Sie … ab“. Emir kipinde de ön ek SONDA kalır.",
       },
       {
         kind: "build",

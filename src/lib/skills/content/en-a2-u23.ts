@@ -341,7 +341,7 @@ export const enA2U23: SkillExercise[] = [
     unit: 23,
     title: "A registration form",
     genre: "info",
-    intro: "Ethan zinciri. Özne yok, sırayı zarflar kuruyor.",
+    intro: "Emir zinciri. Özne yok, sırayı zarflar kuruyor.",
     gloss: [
       { de: "press", tr: "basmak" },
       { de: "choose", tr: "seçmek" },
@@ -354,7 +354,7 @@ export const enA2U23: SkillExercise[] = [
         tr: "Önce soldaki düğmeye bas.",
         answer: "First, press the button on the left.",
         alternatives: ["First press the button on the left."],
-        hint: "Ethan cümlesi öznesiz; sırayı „first“ açıyor.",
+        hint: "Emir cümlesi öznesiz; sırayı „first“ açıyor.",
       },
       {
         kind: "build",

@@ -179,7 +179,7 @@ export const deB1B07: Conversation[] = [
       { say: [tr("Kalıbımız:"), de("Da wäre ich vorsichtig."), tr("Düz kipte söylenseydi kesin bir hüküm olurdu; dilek kipi onu bir çekinceye çeviriyor.")] },
       { say: [tr("Örnek:"), de("Da wäre ich vorsichtig, das sehe ich etwas anders."), tr("Tekrar et:"), de("Da wäre ich vorsichtig, das sehe ich etwas anders")], expect: repeat("Da wäre ich vorsichtig, das sehe ich etwas anders") },
       { say: [tr("Sıra sende: 'Söylediğini anlayabiliyorum ama sadece kısmen.'")], expect: produce("Ich kann das nachvollziehen, aber nur teilweise", [tr("Modal fiil çekimli, mastar en sonda:"), de("Ich kann das nachvollziehen, aber nur teilweise."), tr("Tekrar dene.")]) },
-      { say: [tr("Şimdi itirazı soruya çevir: 'Tam tersi de olamaz mı?'")], expect: produce("Könnte es nicht sein, dass es umgekehrt ist", [tr("Leonie kipiyle soru, yan cümlede fiil sonda:"), de("Könnte es nicht sein, dass es umgekehrt ist?"), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi itirazı soruya çevir: 'Tam tersi de olamaz mı?'")], expect: produce("Könnte es nicht sein, dass es umgekehrt ist", [tr("Dilek kipiyle soru, yan cümlede fiil sonda:"), de("Könnte es nicht sein, dass es umgekehrt ist?"), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Küçük bir itirazım var.'")], expect: produce("Ich hätte da einen kleinen Einwand", [tr("Sahip olma fiilinin dilek kipi; nesne belirtme hâlinde:"), de("Ich hätte da einen kleinen Einwand."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Da ich wäre vorsichtig."), tr("cümlesi doğru mu?")], expect: truefalse("Da ich wäre vorsichtig.", false, [tr("Cümle bir zarfla başlıyor, fiil ikinci sırada:"), de("Da wäre ich vorsichtig.")]) },
       { say: [tr("Son: 'Bir uzlaşma bulabilir miyiz?'")], expect: produce("Könnten wir einen Kompromiss finden", [tr("Kibar soruda dilek kipi, mastar sonda:"), de("Könnten wir einen Kompromiss finden?"), tr("Tekrar dene.")]) },
@@ -329,7 +329,7 @@ export const deB1B07: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün bir yapımı değerlendireceğiz. İyi bir yorum tek yönlü olmaz: beğendiğin ve beğenmediğin yan yana durur. Bunun bağlacı zıtlıktır. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Bir de beklenti kalıbı öğreneceğiz: olmasını istediğin ama olmayan şey. Leonie kipiyle kuruluyor. Önce kelimeler.")] },
+      { say: [tr("Bir de beklenti kalıbı öğreneceğiz: olmasını istediğin ama olmayan şey. Dilek kipiyle kuruluyor. Önce kelimeler.")] },
       word("İlk", { de: "die Folge", tr: "bölüm" }),
       word("İkinci", { de: "die Figur", tr: "karakter" }),
       word("Üçüncü", { de: "die Serie", tr: "dizi" }),

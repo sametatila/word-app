@@ -80,7 +80,7 @@
  { "tr": "„provided that“ ve „as long as“ koşul kurar ve „if“ten daha vurguludur.", "kind": "build.hint", "de": "„provided that“ und „as long as“ bilden eine Bedingung und sind betonter als „if“." },
  { "tr": "„the majority of“ arkasından çoğul isim gelir ve fiil de çoğul çekilir.", "kind": "build.hint", "de": "Nach „the majority of“ steht ein Nomen im Plural, und das Verb steht ebenfalls im Plural." },
  { "tr": "Süren bir durum ve süre bildiriliyor: present perfect continuous + for.", "kind": "build.hint", "de": "Ein andauernder Zustand und eine Dauer: present perfect continuous + for." },
- { "tr": "Ethan kipi + zaman yan cümlesi; „before“ arkasından present simple gelir.", "kind": "build.hint", "de": "Imperativ + Temporalsatz; nach „before“ steht present simple." },
+ { "tr": "Emir kipi + zaman yan cümlesi; „before“ arkasından present simple gelir.", "kind": "build.hint", "de": "Imperativ + Temporalsatz; nach „before“ steht present simple." },
  { "tr": "„needn't have + üçüncü biçim“ yapılmış ama gereksiz olan bir şeyi bildirir.", "kind": "build.hint", "de": "„needn't have + dritte Form“ nennt etwas, das getan wurde und unnötig war." },
  { "tr": "Geçmiş bir olayda „as soon as“ arkasından geçmiş zaman gelir; gelecek için present kullanılır.", "kind": "build.hint", "de": "Bei einem vergangenen Ereignis steht nach „as soon as“ die Vergangenheit; für die Zukunft nimmt man present." },
  { "tr": "„should have + üçüncü biçim“ yapılmayan ama yapılması gereken şeyi bildirir.", "kind": "build.hint", "de": "„should have + dritte Form“ nennt etwas, das nicht getan wurde, aber nötig gewesen wäre." },

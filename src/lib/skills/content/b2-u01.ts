@@ -233,7 +233,7 @@ export const b2U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Könnten wir festhalten, dass wir um zwei Wochen verschieben?"],
-        explain: "Leonie kipiyle sorulan bu soru kararı kayda geçirir ve karşı tarafa hâlâ itiraz alanı bırakır.",
+        explain: "Dilek kipiyle sorulan bu soru kararı kayda geçirir ve karşı tarafa hâlâ itiraz alanı bırakır.",
       },
       {
         kind: "short_answer",
@@ -376,7 +376,7 @@ export const b2U01: SkillExercise[] = [
         tr: "Cuma günü için kısa bir toplantı çağırmayı öneririm.",
         answer: "Ich würde vorschlagen, für Freitag eine kurze Sitzung einzuberufen",
         alternatives: ["Ich würde vorschlagen, eine kurze Sitzung für Freitag einzuberufen"],
-        hint: "Leonie kipi ana cümlede; ayrılabilen fiilde zu öneğin ardına girer.",
+        hint: "Dilek kipi ana cümlede; ayrılabilen fiilde zu öneğin ardına girer.",
       },
       {
         kind: "build",

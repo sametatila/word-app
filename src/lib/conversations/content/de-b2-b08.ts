@@ -69,7 +69,7 @@ export const deB2B08: Conversation[] = [
       { say: [tr("Örnek:"), de("Ich hätte mir eine Gehaltserhöhung um fünf Prozent vorgestellt."), tr("Tekrar et:"), de("Ich hätte mir eine Gehaltserhöhung um fünf Prozent vorgestellt")], expect: repeat("Ich hätte mir eine Gehaltserhöhung um fünf Prozent vorgestellt") },
       { say: [tr("Sıra sende: 'Performansıma göre bu makul olurdu.'")], expect: produce("Gemessen an meiner Leistung wäre das angemessen", [tr("Bu edat yönelme hâli ister; dilek kipi ikinci sırada:"), de("Gemessen an meiner Leistung wäre das angemessen."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Toplu iş sözleşmesi daha fazlasını öngörüyor.'")], expect: produce("Der Tarifvertrag sieht mehr vor", [tr("Ayrılabilen fiilin öneki en sonda:"), de("Der Tarifvertrag sieht mehr vor."), tr("Tekrar dene.")]) },
-      { say: [tr("Bir tane daha: 'Ücretlendirme hakkında konuşmak isterim.'")], expect: produce("Ich würde gern über die Vergütung sprechen", [tr("Leonie kipi ricayı yumuşatır; mastar sonda:"), de("Ich würde gern über die Vergütung sprechen."), tr("Tekrar dene.")]) },
+      { say: [tr("Bir tane daha: 'Ücretlendirme hakkında konuşmak isterim.'")], expect: produce("Ich würde gern über die Vergütung sprechen", [tr("Dilek kipi ricayı yumuşatır; mastar sonda:"), de("Ich würde gern über die Vergütung sprechen."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Gemessen an meine Leistung wäre das angemessen."), tr("cümlesi doğru mu?")], expect: truefalse("Gemessen an meine Leistung wäre das angemessen.", false, [tr("Bu kalıptaki edat yönelme hâli ister:"), de("Gemessen an meiner Leistung wäre das angemessen.")]) },
       { say: [tr("Son bir soru: 'Prim ne kadar?'")], expect: produce("Wie hoch ist die Prämie", [tr("Soru öbeği başta, fiil ikinci sırada:"), de("Wie hoch ist die Prämie?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette şefinle maaşını konuşacaksın: beklentini söyle, gerekçelendir ve bir sonuca bağla.")] },
@@ -341,7 +341,7 @@ export const deB2B08: Conversation[] = [
       { say: [tr("Şimdi: 'İyi iş kulaktan kulağa yayılır.'")], expect: produce("Gute Arbeit spricht sich herum", [tr("Dönüşlü fiil; ayrılabilen önek sonda:"), de("Gute Arbeit spricht sich herum."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Yeni elemanlar tavsiye yoluyla toplanıyor.'")], expect: produce("Neue Leute werden über Empfehlungen angeworben", [tr("Şimdiki zaman edilgeni; çoğul özne werden alır:"), de("Neue Leute werden über Empfehlungen angeworben."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Kontakte lassen sich überall aufbauen."), tr("cümlesi doğru mu?")], expect: truefalse("Kontakte lassen sich überall aufbauen.", true, [tr("Doğru. lassen artı dönüşlü zamir edilgen anlamı taşıyor ve mastar cümlenin sonunda duruyor.")]) },
-      { say: [tr("Son bir soru: 'Bana bir referans yazar mısınız?'")], expect: produce("Würden Sie mir eine Referenz ausstellen", [tr("Leonie kipiyle kibar soru; ayrılabilen mastar sonda:"), de("Würden Sie mir eine Referenz ausstellen?"), tr("Tekrar dene.")]) },
+      { say: [tr("Son bir soru: 'Bana bir referans yazar mısınız?'")], expect: produce("Würden Sie mir eine Referenz ausstellen", [tr("Dilek kipiyle kibar soru; ayrılabilen mastar sonda:"), de("Würden Sie mir eine Referenz ausstellen?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Sohbette bir tanıdıktan tavsiye isteyeceksin.")] },
     ],
     chat: {

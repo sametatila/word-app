@@ -398,7 +398,7 @@ export const enA1U07: SkillExercise[] = [
     unit: 7,
     title: "A simple recipe",
     genre: "personal",
-    intro: "Tarif yaz. Ethan kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
+    intro: "Tarif yaz. Emir kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
     gloss: [
       { de: "Cut the tomatoes.", tr: "domatesleri kes" },
       { de: "Don't touch it.", tr: "ona dokunma" },

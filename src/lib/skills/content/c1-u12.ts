@@ -258,7 +258,7 @@ export const c1U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["einwenden"],
-        explain: "Leonie kipi itirazı kişiselleştirmeden ortaya koyuyor.",
+        explain: "Dilek kipi itirazı kişiselleştirmeden ortaya koyuyor.",
       },
       {
         text: "Was ist Dr. Webers eigentlicher Einwand?",

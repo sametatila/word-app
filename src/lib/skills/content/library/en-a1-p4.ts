@@ -330,8 +330,8 @@ export const enA1P4: SkillExercise[] = [
         ],
       },
       {
-        heading: "Ethan kipi: yalın fiil",
-        tr: "Ethan ve yönergede özne yazılmaz ve fiil yalın hâliyle başta durur: Come in. Olumsuz için başa „Don't“ gelir: Don't be late. Nazikleştirmek için „please“ eklenir.",
+        heading: "Emir kipi: yalın fiil",
+        tr: "Emir ve yönergede özne yazılmaz ve fiil yalın hâliyle başta durur: Come in. Olumsuz için başa „Don't“ gelir: Don't be late. Nazikleştirmek için „please“ eklenir.",
         examples: [
           { de: "Come in and sit down.", tr: "İçeri gel ve otur." },
           { de: "Don't forget your ticket.", tr: "Biletini unutma." },
@@ -372,7 +372,7 @@ export const enA1P4: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Come", "come"],
-        explain: "Ethan kipinde özne yazılmaz ve fiil yalın hâliyle başta durur.",
+        explain: "Emir kipinde özne yazılmaz ve fiil yalın hâliyle başta durur.",
       },
       {
         kind: "gapfill",
@@ -410,7 +410,7 @@ export const enA1P4: SkillExercise[] = [
         text: "„Please close the door.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
-        explain: "Ethan kipinde özne yoktur ve fiil yalındır; „please“ cümleyi nazikleştirir.",
+        explain: "Emir kipinde özne yoktur ve fiil yalındır; „please“ cümleyi nazikleştirir.",
       },
     ],
   },

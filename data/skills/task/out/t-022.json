@@ -10,7 +10,7 @@
  { "tr": "„hiermit“ birinci öğe: fiil hemen arkasından, önek sonda.", "kind": "build.hint", "en": "„hiermit“ is the first element: the verb straight after it, the prefix at the end." },
  { "tr": "„sein“ sonrası yalın hâl: ein guter, „einen guten“ değil.", "kind": "build.hint", "en": "The nominative after „sein“: ein guter, not „einen guten“." },
  { "tr": "Artikelsiz şehir → nach; artikelli ülke → in + Akkusativ.", "kind": "build.hint", "en": "A city with no article → nach; a country with an article → in + Akkusativ." },
- { "tr": "Leonie kipinde sahte özne es; koşul cümlesinde fiil sonda.", "kind": "build.hint", "en": "A dummy es in the subjunctive; in the conditional clause the verb goes last." },
+ { "tr": "Dilek kipinde sahte özne es; koşul cümlesinde fiil sonda.", "kind": "build.hint", "en": "A dummy es in the subjunctive; in the conditional clause the verb goes last." },
  { "tr": "gemessen an ölçütü verir; ana cümlede yine Konjunktiv II.", "kind": "build.hint", "en": "gemessen an gives the yardstick; the main clause is in the Konjunktiv II again." },
  { "tr": "Konjunktiv II talebi soruya çevirir; dolaylı soru ob ile.", "kind": "build.hint", "en": "The Konjunktiv II turns the demand into a question; the indirect question with ob." },
  { "tr": "Manşet dili: fiil yok, artikel yok, yer belirteci arkada.", "kind": "build.hint", "en": "Headline language: no verb, no article, the place adverbial at the back." },
@@ -94,7 +94,7 @@
  { "tr": "Zarf öne çekilince fiil ikinci sırada kalır ve özne arkaya geçer.", "kind": "build.hint", "en": "When the adverb is fronted the verb stays in second position and the subject moves back." },
  { "tr": "„zurückrufen“ AYRILIR: ön ek cümlenin SONUNA gider — rufe … zurück.", "kind": "build.hint", "en": "„zurückrufen“ SEPARATES: the prefix goes to the END of the sentence — rufe … zurück." },
  { "tr": "Anlatıda sein fiilinin geçmişi Perfekt değil, tek kelimelik biçim.", "kind": "build.hint", "en": "In narrative the past of sein is not the Perfekt but the one-word form." },
- { "tr": "Leonie kipi ana cümlede; ayrılabilen fiilde zu öneğin ardına girer.", "kind": "build.hint", "en": "The subjunctive in the main clause; with a separable verb the zu goes behind the prefix." },
+ { "tr": "Dilek kipi ana cümlede; ayrılabilen fiilde zu öneğin ardına girer.", "kind": "build.hint", "en": "The subjunctive in the main clause; with a separable verb the zu goes behind the prefix." },
  { "tr": "gleichwohl zarf: ana cümlede birinci konumda, fiil hemen ardından.", "kind": "build.hint", "en": "gleichwohl is an adverb: first position in the main clause, the verb straight after it." },
  { "tr": "Kibar öneri için Konjunktiv II; dönüşlü zamir fiilden hemen sonra.", "kind": "build.hint", "en": "The Konjunktiv II for a polite suggestion; the reflexive pronoun straight after the verb." },
  { "tr": "Kişisiz dilek kipi ve koşul yan cümlesi; ikisinde de Konjunktiv II.", "kind": "build.hint", "en": "An impersonal subjunctive and a conditional clause; the Konjunktiv II in both." },
@@ -148,5 +148,5 @@
  { "tr": "Yine „war“ — „ist gewesen“ değil. „alles“ tekil sayılır: war, waren değil.", "kind": "build.hint", "en": "„war“ again — not „ist gewesen“. „alles“ counts as singular: war, not waren." },
  { "tr": "„Das Wetter ist …“ — sıfatlar cümle sonunda ve çekimsiz kalır: schön, warm.", "kind": "build.hint", "en": "„Das Wetter ist …“ — the adjectives stand at the end of the sentence and take no ending: schön, warm." },
  { "tr": "„mal“ cümleyi gündelikleştirir ve sertliği alır; anlamı „bir kez“ değildir.", "kind": "build.hint", "en": "„mal“ makes the sentence casual and takes the edge off it; it does not mean „once“." },
- { "tr": "abbiegen ayrılabilir: „Biegen Sie … ab“. Uwe kipinde de ön ek SONDA kalır.", "kind": "build.hint", "en": "abbiegen is separable: „Biegen Sie … ab“. In the imperative too the prefix stays at the END." }
+ { "tr": "abbiegen ayrılabilir: „Biegen Sie … ab“. Emir kipinde de ön ek SONDA kalır.", "kind": "build.hint", "en": "abbiegen is separable: „Biegen Sie … ab“. In the imperative too the prefix stays at the END." }
 ]

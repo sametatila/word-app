@@ -338,7 +338,7 @@ export const deC1P12: SkillExercise[] = [
     minutes: 12,
     explanation: [
       {
-        heading: "Leonie ve kutlama: es lebe, möge",
+        heading: "Dilek ve kutlama: es lebe, möge",
         tr: "Ana cümlede üçüncü tekil Konjunktiv I bir dilek ya da kutlama bildirir: „Es lebe die Musik!“ (Yaşasın müzik!), „Gott sei Dank“. Burada kimsenin sözü aktarılmaz; B2'deki dolaylı aktarımdan farkı budur: konuşan kendi dileğini söyler. „möge“ ile kurulan biçim resmî konuşmalarda ve kutlamalarda duyulur.",
         examples: [
           { de: "Es lebe die Musik!", tr: "Yaşasın müzik!", note: "kutlama" },
@@ -348,7 +348,7 @@ export const deC1P12: SkillExercise[] = [
       },
       {
         heading: "Talimat: man nehme, man beachte",
-        tr: "„man“ ile kurulan Konjunktiv I bir talimat verir: „Man nehme zwei Eier“ tarif dilinden bilinir. Resmî ve bilimsel metinde okuru yönlendirir: „Man beachte …“, „Man vergleiche Seite 12“. Uwe kipinin kişisiz ve mesafeli karşılığıdır; kimseye doğrudan seslenmez.",
+        tr: "„man“ ile kurulan Konjunktiv I bir talimat verir: „Man nehme zwei Eier“ tarif dilinden bilinir. Resmî ve bilimsel metinde okuru yönlendirir: „Man beachte …“, „Man vergleiche Seite 12“. Emir kipinin kişisiz ve mesafeli karşılığıdır; kimseye doğrudan seslenmez.",
         examples: [
           { de: "Man beachte die lange Pause vor dem Schlussakkord.", tr: "Son akordan önceki uzun sessizliğe dikkat edilsin.", note: "okura talimat" },
           { de: "Man vergleiche dazu die Anmerkung im Programmheft.", tr: "Bunun için program kitapçığındaki nota bakılsın.", note: "gönderme" },

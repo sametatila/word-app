@@ -298,7 +298,7 @@ export const deA2P5: SkillExercise[] = [
       {
         de: "Steh bitte etwas früher auf.",
         tr: "Lütfen biraz daha erken kalk.",
-        hint: "Uwe cümlesinde de ayrılan ön ek sonda ve vurgulu kalır: … früher AUF.",
+        hint: "Emir cümlesinde de ayrılan ön ek sonda ve vurgulu kalır: … früher AUF.",
         confusions: [
           { heard: ["aufsteh bitte"], fix: "Ön ek fiile geri yapışmaz ve vurgu onda kalır: şteh … AUF.", expected: "auf" },
         ],

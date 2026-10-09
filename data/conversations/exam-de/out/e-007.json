@@ -148,5 +148,5 @@
  { "tr": "Bir konuk otelde giriş yapıyor ve odayı soruyor.", "kind": "listening.situation", "de": "Ein Gast checkt im Hotel ein und fragt nach dem Zimmer." },
  { "tr": "Cuma maalesef olmaz. Takımımla futbol oynuyorum.", "kind": "turn", "de": "Am Freitag geht es leider nicht. Ich spiele mit meiner Mannschaft Fußball." },
  { "tr": "Cumartesi sinemaya gittim, pazar da uzun uyudum.", "kind": "speaking", "de": "Am Samstag war ich im Kino und am Sonntag habe ich lange geschlafen." },
- { "tr": "Sandy kipiyle talebini koy („We request that …“)", "kind": "writing.checklist", "de": "Formuliere deine Forderung im Konjunktiv („We request that …“)" }
+ { "tr": "Dilek kipiyle talebini koy („We request that …“)", "kind": "writing.checklist", "de": "Formuliere deine Forderung im Konjunktiv („We request that …“)" }
 ]

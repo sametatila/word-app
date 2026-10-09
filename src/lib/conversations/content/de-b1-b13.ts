@@ -481,7 +481,7 @@ export const deB1B13: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Yolda bir şey ters gitti ve birinin ne yapacağını bilmesi gerekiyor. Tavsiye vermenin en kibar yolu dilek kipi. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Leonie kipiyle verilen tavsiye emir gibi durmaz; öneri gibi durur. Panik anında bu fark önemli. Önce kelimeler.")] },
+      { say: [tr("Dilek kipiyle verilen tavsiye emir gibi durmaz; öneri gibi durur. Panik anında bu fark önemli. Önce kelimeler.")] },
       word("İlk", { de: "der Notfall", tr: "acil durum" }),
       word("İkinci", { de: "der Alarm", tr: "alarm" }),
       word("Üçüncü", { de: "die Feuerwehr", tr: "itfaiye" }),
@@ -492,7 +492,7 @@ export const deB1B13: Conversation[] = [
       word("Son", { de: "der Blitz", tr: "şimşek" }),
       { say: [tr("İlk kalıbımız yerine geçerek tavsiye veriyor: bir edat öbeği, sonra dilek kipi ve sonda mastar.")] },
       { say: [tr("Örnek:"), de("An deiner Stelle würde ich sofort die Feuerwehr rufen."), tr("Tekrar et:"), de("An deiner Stelle würde ich sofort die Feuerwehr rufen")], expect: repeat("An deiner Stelle würde ich sofort die Feuerwehr rufen") },
-      { say: [tr("Sıra sende: 'Senin yerinde olsam alarmı çalıştırırdım.'")], expect: produce("An deiner Stelle würde ich den Alarm auslösen", [tr("Leonie kipi ikinci sırada, mastar sonda:"), de("An deiner Stelle würde ich den Alarm auslösen."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Senin yerinde olsam alarmı çalıştırırdım.'")], expect: produce("An deiner Stelle würde ich den Alarm auslösen", [tr("Dilek kipi ikinci sırada, mastar sonda:"), de("An deiner Stelle würde ich den Alarm auslösen."), tr("Tekrar dene.")]) },
       { say: [tr("İkinci kalıbımız daha iyi olanı söylüyor: kişisiz bir dilek kipi ve koşul yan cümlesi.")] },
       { say: [tr("Şimdi: 'Aracı depoya çekseler daha iyi olurdu.'")], expect: produce("Es wäre besser, wenn sie das Fahrzeug ins Lager bringen würden", [tr("Yan cümlede dilek kipi ve fiil sonda:"), de("Es wäre besser, wenn sie das Fahrzeug ins Lager bringen würden."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Es wäre besser, wenn wir rufen die Feuerwehr."), tr("cümlesi doğru mu?")], expect: truefalse("Es wäre besser, wenn wir rufen die Feuerwehr.", false, [tr("Koşul bağlacından sonra çekimli fiil cümlenin en sonuna gider:"), de("Es wäre besser, wenn wir die Feuerwehr rufen.")]) },

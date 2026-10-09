@@ -230,7 +230,7 @@
   "de": "„can't“ heißt hier nicht Unfähigkeit, sondern keine Erlaubnis."
  },
  {
-  "tr": "Ethan cümlesi öznesiz; sırayı „first“ açıyor.",
+  "tr": "Emir cümlesi öznesiz; sırayı „first“ açıyor.",
   "kind": "build.hint",
   "de": "Der Imperativ steht ohne Subjekt; „first“ eröffnet die Reihe."
  },

@@ -403,7 +403,7 @@ export const enA2U16: SkillExercise[] = [
         kind: "build",
         tr: "Dosdoğru git ve köşeden sola dön.",
         answer: "Go straight and turn left at the corner.",
-        hint: "Ethan cümlesi öznesiz; noktayı „at the corner“ gösteriyor.",
+        hint: "Emir cümlesi öznesiz; noktayı „at the corner“ gösteriyor.",
       },
       {
         kind: "build",

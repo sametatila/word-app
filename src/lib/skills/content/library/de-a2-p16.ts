@@ -285,7 +285,7 @@ export const deA2P16: SkillExercise[] = [
         confusions: [
           {
             heard: [],
-            fix: "Uwe kısmını soru gibi yükseltme; yükselme yalnız virgülden önceki parçada.",
+            fix: "Emir kısmını soru gibi yükseltme; yükselme yalnız virgülden önceki parçada.",
             expected: "Zeit",
           },
         ],

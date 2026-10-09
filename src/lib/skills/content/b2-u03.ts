@@ -293,7 +293,7 @@ export const b2U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Wir könnten uns einen Preisnachlass von zehn Prozent vorstellen, bei gleicher Menge."],
-        explain: "Leonie kipi teklifi bir karara değil bir öneriye çeviriyor; karşı tarafın alanı açık kalıyor.",
+        explain: "Dilek kipi teklifi bir karara değil bir öneriye çeviriyor; karşı tarafın alanı açık kalıyor.",
       },
       {
         text: "Worauf einigen sich beide?",
@@ -368,7 +368,7 @@ export const b2U03: SkillExercise[] = [
         tr: "Yüzde altılık bir fiyat indirimi düşünebiliriz.",
         answer: "Wir könnten uns einen Preisnachlass von sechs Prozent vorstellen",
         alternatives: ["Einen Preisnachlass von sechs Prozent könnten wir uns vorstellen"],
-        hint: "Leonie kipi teklifi öneri hâline getirir; dönüşlü zamir fiilden hemen sonra.",
+        hint: "Dilek kipi teklifi öneri hâline getirir; dönüşlü zamir fiilden hemen sonra.",
       },
       {
         kind: "build",

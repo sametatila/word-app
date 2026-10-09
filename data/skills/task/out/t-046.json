@@ -17,7 +17,7 @@
  { "tr": "Hm'yi kısa ve yükselen söylersen „efendim?“ gibi duyulur; düz ve uzun tut.", "kind": "drill.fix", "en": "If you say Hm short and rising, it sounds like „sorry?“; keep it level and long." },
  { "tr": "schlank'ın sonundaki k düşerse sıfat tanınmaz; nk'yı sert bir k ile bitir.", "kind": "drill.fix", "en": "If the k at the end of schlank drops, the adjective is not recognized; finish the nk with a hard k." },
  { "tr": "Sessizlik isterken kendin bağırma; alçak sesle ama net söyle, sebebi ekle.", "kind": "drill.fix", "en": "When asking for quiet, do not shout yourself; say it quietly but clearly, and add the reason." },
- { "tr": "Uwe kısmını soru gibi yükseltme; yükselme yalnız virgülden önceki parçada.", "kind": "drill.fix", "en": "Do not raise the command part like a question; the rise is only in the part before the comma." },
+ { "tr": "Emir kısmını soru gibi yükseltme; yükselme yalnız virgülden önceki parçada.", "kind": "drill.fix", "en": "Do not raise the command part like a question; the rise is only in the part before the comma." },
  { "tr": "Sie'li emir zaten kibardır; sesi yükseltip sert bitirirsen komut gibi olur.", "kind": "drill.fix", "en": "A command with Sie is already polite; if you raise your voice and end sharply, it becomes an order." },
  { "tr": "Son hece silikleşirse on üç otuza döner; sondaki TSEEN'i uzat ve net bitir.", "kind": "drill.fix", "en": "If the last syllable fades, thirteen turns into thirty; stretch the final TSAYN and finish it clearly." },
  { "tr": "„doch“u vurgularsan itiraz gibi duyulur; vurgu vorbei'de, doch ve mal hafif.", "kind": "drill.fix", "en": "If you stress „doch“ it sounds like an objection; the stress is on vorbei, and doch and mal are light." },

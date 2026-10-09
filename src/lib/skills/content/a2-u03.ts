@@ -205,7 +205,7 @@ export const a2U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Hallo Leon! Rate mal, was passiert ist!"],
-        explain: "Uwe cümlesi artı yan cümle: yan cümlede fiil sona gider — „was passiert ist“.",
+        explain: "Emir cümlesi artı yan cümle: yan cümlede fiil sona gider — „was passiert ist“.",
       },
     ],
   },

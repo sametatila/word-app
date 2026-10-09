@@ -338,7 +338,7 @@ export const enA2P3: SkillExercise[] = [
         ],
       },
       {
-        heading: "Collins sıfatlar: more ve the most",
+        heading: "Uzun sıfatlar: more ve the most",
         tr: "Öteki iki heceli sıfatlarda ve üç ya da daha çok heceli sıfatlarda ek gelmez, önüne kelime gelir: expensive → more expensive → the most expensive. Ekle kelimeyi birlikte kullanmak („more bigger“) yaygın bir hatadır.",
         examples: [
           { de: "This phone is more expensive.", tr: "Bu telefon daha pahalı." },

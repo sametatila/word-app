@@ -240,7 +240,7 @@ Die Schule freut sich, denn vor dem Tor stehen morgens weniger Autos. Das war fr
               ],
               answer: 1,
               explain:
-                "Arne bunu açıkça söylüyor: \"Das ist kein Bus mit Motor. Eine erwachsene Person geht zu Fuß und sammelt auf dem Weg Kinder ein.\"",
+                "Metin bunu açıkça söylüyor: \"Das ist kein Bus mit Motor. Eine erwachsene Person geht zu Fuß und sammelt auf dem Weg Kinder ein.\"",
             },
             {
               kind: "mcq",

@@ -304,7 +304,7 @@ export const b2U04: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Wäre es hilfreich, wenn ich Ihnen morgen früh einen festen Termin gebe, mit Namen und Uhrzeit?"],
-        explain: "Leonie kipinde sahte özne; çözüm dayatılmıyor, teklif ediliyor ve kontrol karşı tarafta kalıyor.",
+        explain: "Dilek kipinde sahte özne; çözüm dayatılmıyor, teklif ediliyor ve kontrol karşı tarafta kalıyor.",
       },
       {
         text: "Was macht Jonas als Erstes?",
@@ -383,7 +383,7 @@ export const b2U04: SkillExercise[] = [
         kind: "build",
         tr: "Size yarın sabit bir randevu versem yardımcı olur mu?",
         answer: "Wäre es hilfreich, wenn ich Ihnen morgen einen festen Termin gebe",
-        hint: "Leonie kipinde sahte özne es; koşul cümlesinde fiil sonda.",
+        hint: "Dilek kipinde sahte özne es; koşul cümlesinde fiil sonda.",
       },
       {
         kind: "rewrite",

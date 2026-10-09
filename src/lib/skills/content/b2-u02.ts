@@ -231,7 +231,7 @@ export const b2U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Hätten Sie diese Woche kurz Zeit?"],
-        explain: "Leonie kipi ricayı yumuşatır. Düz kipteki „Haben Sie Zeit?“ bir talep gibi durur.",
+        explain: "Dilek kipi ricayı yumuşatır. Düz kipteki „Haben Sie Zeit?“ bir talep gibi durur.",
       },
       {
         text: "Worum geht es Ilir?",

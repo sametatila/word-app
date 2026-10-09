@@ -263,7 +263,7 @@ export const c1U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["hätte"],
-        explain: "Leonie kipi itirazı yumuşatıyor: „Ich habe einen Einwand“ karşı çıkma, „Ich hätte“ ise kapı aralama.",
+        explain: "Dilek kipi itirazı yumuşatıyor: „Ich habe einen Einwand“ karşı çıkma, „Ich hätte“ ise kapı aralama.",
       },
       {
         text: "Was macht Herr Haas wirklich?",
