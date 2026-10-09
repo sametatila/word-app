@@ -45,6 +45,7 @@ function diff(a, b) {
 export function helpers(clips) {
   const { words, map, hold, confusables } = load();
   const used = new Set();
+  const spoken = new Set(); // bu bölümün klipleri (clips bölümler arasında paylaşılıyor)
 
   /** Kelime kaydı: "der Löffel" ya da "frühestens". */
   function word(full) {
@@ -58,6 +59,7 @@ export function helpers(clips) {
 
   /** Defne'nin kaydı; yoksa ya da bekletiliyorsa durur. */
   function clip(text) {
+    spoken.add(text);
     if (clips[text]) return clips[text];
     const key = `defne|de|${text}`;
     const file = map[key];
@@ -107,5 +109,5 @@ export function helpers(clips) {
     return { de: w.beispiel, tr: w.beispielTr, tip: { mark, text } };
   }
 
-  return { H: { word, label, clip, line, quiz, deck, pair, sentence, confusables }, used };
+  return { H: { word, label, clip, line, quiz, deck, pair, sentence, confusables }, used, spoken };
 }

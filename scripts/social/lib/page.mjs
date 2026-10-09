@@ -11,10 +11,20 @@ import { TPL_DIR } from "./episodes.mjs";
 
 export const SRC = path.join(ROOT, "scripts/social");
 export const OUT = path.join(ROOT, ".shots/social"); // git dışı
-export const CHROME = process.env.CHROME_PATH || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+// Mac'te sistem Chrome'u; sunucuda (Linux) Playwright'ın kendi tarayıcısı (PLAYWRIGHT_BROWSERS_PATH), executablePath yok.
+export const CHROME = process.env.CHROME_PATH || (process.platform === "darwin" ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" : undefined);
 export const playwright = () => createRequire(import.meta.url)(path.join(ROOT, "node_modules/playwright-core"));
 
 const esc = (s) => s.replaceAll("</script", "<\\/script");
+
+/**
+ * Yazı tipleri, sayfaya gömülü (public/social/fonts, web stüdyosuyla aynı dosyalar). Dış ağ yok: sunucudaki üretim ve
+ * yerel araçlar her yerde aynı kareyi çizer; Google Fonts yanıt vermese de video bozulmaz.
+ */
+export function fontCss() {
+  const dir = path.join(ROOT, "public/social/fonts");
+  return fs.readFileSync(path.join(dir, "fonts.css"), "utf8").replace(/url\(([\w.-]+\.woff2)\)/g, (m, f) => `url(data:font/woff2;base64,${fs.readFileSync(path.join(dir, f)).toString("base64")})`);
+}
 
 /** Uygulama ikonu (imza ve TikTok katmanı), 160 px PNG veri adresi. */
 export function iconUri() {
@@ -57,6 +67,7 @@ export function buildPage(shell, { data, clips, templates, meta = {} }) {
   const extra = Object.entries(meta).map(([k, v]) => `E.${k}=${JSON.stringify(v)};`).join("");
   const page = fs
     .readFileSync(path.join(SRC, shell), "utf8")
+    .replace("/*FONTS*/", () => fontCss())
     .replace("/*ENGINE*/", () => esc(fs.readFileSync(path.join(SRC, "engine.js"), "utf8")))
     .replace("/*DATA*/", () => esc(`window.CLIPS=${JSON.stringify(clips)};E.data=${JSON.stringify(data)};E.ICON=${JSON.stringify(iconUri())};${extra}`))
     .replace("/*VIDEOS*/", () => html);

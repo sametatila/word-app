@@ -31,13 +31,13 @@ export async function loadEpisodes(only = null) {
     if (!ep?.template || typeof ep.content !== "function") throw new Error(`${f}: template ve content(H) gerekli`);
     if (!id.startsWith(`${ep.template}-`)) throw new Error(`${f}: dosya adı şablonla başlamalı (${ep.template}-NNN)`);
     if (!fs.existsSync(path.join(TPL_DIR, `${ep.template}.js`))) throw new Error(`${f}: şablon yok: ${ep.template}`);
-    const { H, used } = helpers(clips);
+    const { H, used, spoken } = helpers(clips);
     const data = ep.content(H);
     if (ep.slot !== undefined) {
       const m = String(ep.slot).match(SLOT_RE);
       if (!m || !SLOTS.includes(m[2])) throw new Error(`${f}: slot "${ep.slot}" geçersiz: "YYYY-AA-GG SS:DD", saat ${SLOTS.join(" / ")}`);
     }
-    out.push({ id, template: ep.template, approach: approachOf(ep.template), theme: themeOf(ep.template), status: ep.status || "taslak", created: ep.created, slot: ep.slot, published: ep.published, data, used: [...used] });
+    out.push({ id, template: ep.template, approach: approachOf(ep.template), theme: themeOf(ep.template), status: ep.status || "taslak", created: ep.created, slot: ep.slot, published: ep.published, data, used: [...used], spoken: [...spoken] });
   }
   if (only) for (const id of only) if (!out.some((e) => e.id === id)) throw new Error(`bölüm yok: ${id}`);
   return { episodes: out, clips };

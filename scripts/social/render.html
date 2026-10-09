@@ -1,7 +1,5 @@
 <title>Lernomi video çıktısı</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&display=swap">
+<style>/*FONTS*/</style>
 <style>html,body{margin:0;background:#000;overflow:hidden}#host{position:fixed;left:0;top:0;width:1080px;height:1920px}</style>
 <div id="host"></div>
 <script>/*ENGINE*/</script>
@@ -11,7 +9,12 @@
 // Kare kare dışa aktarma: render.mjs window.I.render(t) çağırıp ekran görüntüsü alır, sesi window.wav() ile çeker.
 (async () => {
   await Promise.all(["800 100px 'Bricolage Grotesque'", "700 100px 'Bricolage Grotesque'", "600 100px 'Bricolage Grotesque'", "500 100px 'DM Mono'"].map((f) => document.fonts.load(f, "ÄÖÜäöüßğışçİ")));
-  window.I = E.mount(document.getElementById("host"), E.TEMPLATE);
+  try {
+    window.I = E.mount(document.getElementById("host"), E.TEMPLATE);
+  } catch (e) {
+    window.FAILED = e.message; // renderVideo hemen hata versin, 60 sn beklemesin
+    return;
+  }
   /** Ses izi → 16 bit PCM WAV, base64. */
   window.wav = async (noMusic = false) => {
     const plan = window.I.plan;
