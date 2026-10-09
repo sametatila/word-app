@@ -559,7 +559,7 @@ zahlen alle nur 3 €.`,
               plays: 1,
               segments: [
                 {
-                  text: "Herr Daniel Kovac, gebucht nach Wien, bitte sofort zum Ausgang B zwölf. Ihr Flug schließt in fünf Minuten.",
+                  text: "Herr Daniel Kovac, gebucht nach Wien, bitte sofort zum Ausgang B zwölf. Der Ausgang schließt in fünf Minuten.",
                 },
               ],
             },
@@ -606,7 +606,7 @@ zahlen alle nur 3 €.`,
               text: "Herr Kovac soll sofort zum Ausgang kommen.",
               answer: true,
               explain:
-                "Anons adıyla çağırıyor: \"bitte sofort zum Ausgang B zwölf\". Uçuşu beş dakika içinde kapanıyor.",
+                "Anons adıyla çağırıyor: \"bitte sofort zum Ausgang B zwölf\". Kapı beş dakika içinde kapanıyor.",
             },
             {
               kind: "bool",
