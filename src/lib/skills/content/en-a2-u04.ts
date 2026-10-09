@@ -416,7 +416,7 @@ export const enA2U04: SkillExercise[] = [
         kind: "build",
         tr: "Pazar günü kardeşimi ziyaret edeceğim.",
         answer: "I'm going to visit my sister on Sunday.",
-        alternatives: ["I am going to visit my sister on Sunday."],
+        alternatives: ["I am going to visit my sister on Sunday.", "On Sunday I'm going to visit my sister."],
         hint: "Önceden yapılmış plan: „going to“.",
       },
       {

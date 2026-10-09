@@ -210,7 +210,7 @@ export const deA2: SkillExercise[] = [
         kind: "build",
         tr: "Cumartesi günü arkadaşlarımla tiyatroya gittim.",
         answer: "Am Samstag bin ich mit meinen Freunden ins Theater gegangen.",
-        alternatives: ["Ich bin am Samstag mit meinen Freunden ins Theater gegangen."],
+        alternatives: ["Ich bin am Samstag mit meinen Freunden ins Theater gegangen.", "Mit meinen Freunden bin ich am Samstag ins Theater gegangen."],
         hint: "„gehen“ bir yer değişimi, o yüzden Perfekt'i „sein“ ile kurulur: bin … gegangen. Zaman başa gelince fiil yine ikinci sırada.",
       },
       {

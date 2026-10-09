@@ -410,6 +410,7 @@ export const enA2U20: SkillExercise[] = [
         kind: "build",
         tr: "2015'te evlendiler.",
         answer: "They got married in 2015.",
+        alternatives: ["In 2015 they got married."],
         hint: "„get married“ evlenme ANI; yıl verildiği için simple past.",
       },
       {

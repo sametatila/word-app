@@ -270,6 +270,7 @@ export const a1U09: SkillExercise[] = [
         kind: "build",
         tr: "Saat altıda kalkıyorum.",
         answer: "Ich stehe um sechs auf",
+        alternatives: ["Um sechs stehe ich auf"],
         hint: "AYRILABİLİR FİİL: aufstehen → „stehe … auf“. Ön ek cümlenin SONUNA gider.",
       },
       {

@@ -195,7 +195,7 @@ export const deA2P6: SkillExercise[] = [
         kind: "build",
         tr: "Zaten iki kez onlarla konuştum.",
         answer: "Ich habe schon zweimal mit ihnen gesprochen.",
-        alternatives: ["Zweimal habe ich schon mit ihnen gesprochen."],
+        alternatives: ["Zweimal habe ich schon mit ihnen gesprochen.", "Ich habe mit ihnen schon zweimal gesprochen."],
         hint: "Perfekt: „habe“ ikinci sırada, Partizip cümlenin sonunda; „mit“ Dativ ister → ihnen.",
       },
       {

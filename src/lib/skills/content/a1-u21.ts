@@ -289,6 +289,7 @@ export const a1U21: SkillExercise[] = [
         kind: "build",
         tr: "Boğazım ağrıyor.",
         answer: "Der Hals tut mir weh",
+        alternatives: ["Mir tut der Hals weh"],
         hint: "İkinci biçim: kişi DATİFTE („mir“), organ artikelle gelir. „Mein Hals tut weh“ da doğrudur, ikisi de kullanılır.",
       },
       {

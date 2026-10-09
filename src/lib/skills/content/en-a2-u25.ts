@@ -352,6 +352,7 @@ export const enA2U25: SkillExercise[] = [
         kind: "build",
         tr: "Çöpü pazartesileri topluyorlar.",
         answer: "They collect the trash on Mondays.",
+        alternatives: ["On Mondays they collect the trash."],
         hint: "Buradaki „they“ belirsiz: belediye. Türkçe edilgen kurardı, İngilizce özneyi boş bırakmıyor.",
       },
       {

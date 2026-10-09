@@ -293,6 +293,7 @@ export const a2U09: SkillExercise[] = [
         kind: "build",
         tr: "Anahtar çekmecede duruyor.",
         answer: "Der Schlüssel liegt in der Schublade",
+        alternatives: ["In der Schublade liegt der Schlüssel"],
         hint: "Soru NEREDE → yönelme hâli (in der). Yatan bir nesne için „liegen“ kullanılır.",
       },
       {

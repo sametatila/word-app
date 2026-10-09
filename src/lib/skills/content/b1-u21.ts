@@ -378,6 +378,7 @@ export const b1U21: SkillExercise[] = [
         kind: "build",
         tr: "Arabayla gitmek yerine bisiklete biniyorum.",
         answer: "Statt mit dem Auto zu fahren, nehme ich das Rad.",
+        alternatives: ["Ich nehme das Rad, statt mit dem Auto zu fahren."],
         hint: "„statt“ + zu'lu mastar; yan cümle önde, ana cümle fiille başlar.",
       },
       {

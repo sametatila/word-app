@@ -185,7 +185,7 @@ export const deA2P2: SkillExercise[] = [
         kind: "build",
         tr: "Cüzdanı dün akşam parkta buldum.",
         answer: "Ich habe die Geldbörse gestern Abend im Park gefunden.",
-        alternatives: ["Gestern Abend habe ich die Geldbörse im Park gefunden."],
+        alternatives: ["Gestern Abend habe ich die Geldbörse im Park gefunden.", "Ich habe gestern Abend die Geldbörse im Park gefunden.", "Ich habe gestern Abend im Park die Geldbörse gefunden.", "Gestern Abend habe ich im Park die Geldbörse gefunden."],
         hint: "Perfekt iki parçalıdır: yardımcı fiil (habe) ikinci sırada, Partizip II (gefunden) en sonda.",
       },
       {

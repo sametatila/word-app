@@ -185,7 +185,7 @@ export const deA2P15: SkillExercise[] = [
         kind: "build",
         tr: "Bu sabah köpeğimle ormanda yürüyüşe çıktım.",
         answer: "Ich bin heute Morgen mit meinem Hund im Wald spazieren gegangen.",
-        alternatives: ["Heute Morgen bin ich mit meinem Hund im Wald spazieren gegangen."],
+        alternatives: ["Heute Morgen bin ich mit meinem Hund im Wald spazieren gegangen.", "Mit meinem Hund bin ich heute Morgen im Wald spazieren gegangen."],
         hint: "Orta alanda sıra zaman – tarz – yer: heute Morgen, mit meinem Hund, im Wald. Perfekt: bin … spazieren gegangen.",
       },
       {

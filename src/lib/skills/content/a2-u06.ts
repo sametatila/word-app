@@ -302,6 +302,7 @@ export const a2U06: SkillExercise[] = [
         kind: "build",
         tr: "Bu öksürüğe iyi gelir.",
         answer: "Das hilft gegen Husten",
+        alternatives: ["Gegen Husten hilft das"],
         hint: "Neye iyi geldiği „gegen“ ile söylenir ve bu edat belirtme hâlini getirir.",
       },
       {

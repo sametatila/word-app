@@ -325,12 +325,14 @@ export const a2U20: SkillExercise[] = [
         kind: "build",
         tr: "Pantolon artık bana olmuyor.",
         answer: "Die Hose passt mir nicht mehr",
+        alternatives: ["Mir passt die Hose nicht mehr"],
         hint: "Uyan şey öznedir: die Hose passt, kişi mir.",
       },
       {
         kind: "build",
         tr: "Bu ceket hoşuma gidiyor.",
         answer: "Diese Jacke gefällt mir",
+        alternatives: ["Mir gefällt diese Jacke"],
         hint: "gefallen fiilinde beğenilen şey özne olur, beğenen kişi mir.",
       },
       {

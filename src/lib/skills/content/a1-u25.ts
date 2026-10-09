@@ -316,6 +316,7 @@ export const a1U25: SkillExercise[] = [
         kind: "build",
         tr: "Saat yedide kalktım.",
         answer: "Ich bin um sieben aufgestanden",
+        alternatives: ["Um sieben bin ich aufgestanden"],
         hint:
           "Ayrılabilen fiilin ortacında „ge-“ ön ekle kökün ARASINA girer: auf·GE·standen. „geaufstanden“ diye bir şey yoktur. Ve kalkmak yer değiştirmedir → sein.",
       },
@@ -352,6 +353,7 @@ export const a1U25: SkillExercise[] = [
         kind: "build",
         tr: "Başlangıçta her şey zordu.",
         answer: "Am Anfang war alles schwer",
+        alternatives: ["Alles war am Anfang schwer"],
         hint: "Yine „war“ — „ist gewesen“ değil. „alles“ tekil sayılır: war, waren değil.",
       },
       {

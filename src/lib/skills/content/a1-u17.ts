@@ -277,6 +277,7 @@ export const a1U17: SkillExercise[] = [
         kind: "build",
         tr: "Koridorda mobilya koymak yasak.",
         answer: "Im Flur darf man keine Möbel stellen",
+        alternatives: ["Man darf im Flur keine Möbel stellen"],
         hint: "„man darf nicht/kein…“ genel yasak bildirir. Kişi belli değilse „man“ kullanılır.",
       },
       {

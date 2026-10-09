@@ -273,12 +273,14 @@ export const a1U16: SkillExercise[] = [
         kind: "build",
         tr: "Kanepe köşede duruyor.",
         answer: "Das Sofa steht in der Ecke",
+        alternatives: ["In der Ecke steht das Sofa"],
         hint: "Almancada „duruyor“ için üç fiil var: DİK duranlar stehen, YATAN şeyler liegen, ASILI olanlar hängen. Kanepe dik durur.",
       },
       {
         kind: "build",
         tr: "Binada asansör yok.",
         answer: "Es gibt keinen Aufzug im Haus",
+        alternatives: ["Im Haus gibt es keinen Aufzug"],
         hint: "„Es gibt“ + Akkusativ: es gibt einen/keinen Aufzug. Türkçedeki „var/yok“un karşılığı.",
       },
       {

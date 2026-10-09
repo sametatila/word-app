@@ -302,6 +302,7 @@ export const a1U23: SkillExercise[] = [
         kind: "build",
         tr: "Seni sonra geri ararım.",
         answer: "Ich rufe dich später zurück",
+        alternatives: ["Später rufe ich dich zurück"],
         hint: "„zurückrufen“ AYRILIR: ön ek cümlenin SONUNA gider — rufe … zurück.",
       },
       {

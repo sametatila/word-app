@@ -180,7 +180,7 @@ export const deA1P17: SkillExercise[] = [
         kind: "build",
         tr: "Haftada üç kez parkta koşuyorum.",
         answer: "Ich laufe dreimal pro Woche im Park.",
-        alternatives: ["Dreimal pro Woche laufe ich im Park."],
+        alternatives: ["Dreimal pro Woche laufe ich im Park.", "Im Park laufe ich dreimal pro Woche."],
         hint: "Sıklık ifadesi başa gelince fiil ikinci sırada kalır ve özne arkasına geçer.",
       },
       {

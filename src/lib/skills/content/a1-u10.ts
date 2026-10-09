@@ -279,6 +279,7 @@ export const a1U10: SkillExercise[] = [
         kind: "build",
         tr: "Saat üç bana uyuyor.",
         answer: "Um drei passt es mir",
+        alternatives: ["Es passt mir um drei"],
         hint: "Kalıp: „Um … passt es mir.“ — „passen“ Dativ ister: mir, dir, Ihnen.",
       },
       {

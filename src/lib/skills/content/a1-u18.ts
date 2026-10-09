@@ -310,6 +310,7 @@ export const a1U18: SkillExercise[] = [
         kind: "build",
         tr: "Balkondaki ışık çalışmıyor.",
         answer: "Das Licht auf dem Balkon funktioniert nicht",
+        alternatives: ["Auf dem Balkon funktioniert das Licht nicht"],
         hint: "„funktionieren“ makine ve elektrik için kullanılır; „funktioniert nicht“, „ist kaputt“ ile aynı anlama gelir.",
       },
       {

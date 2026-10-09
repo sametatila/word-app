@@ -179,7 +179,7 @@ export const deA1P19: SkillExercise[] = [
         kind: "build",
         tr: "Mayıstan beri Blumenstraße'de oturuyoruz.",
         answer: "Wir wohnen seit Mai in der Blumenstraße.",
-        alternatives: ["Seit Mai wohnen wir in der Blumenstraße."],
+        alternatives: ["Seit Mai wohnen wir in der Blumenstraße.", "In der Blumenstraße wohnen wir seit Mai."],
         hint: "Bir süredir devam eden durum Almancada şimdiki zaman + „seit“ ile söylenir; fiil yine ikinci sırada.",
       },
       {

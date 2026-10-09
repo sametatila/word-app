@@ -276,6 +276,7 @@ export const a1U19: SkillExercise[] = [
         kind: "build",
         tr: "Haftada iki kez spor yapıyorum.",
         answer: "Ich mache zweimal pro Woche Sport",
+        alternatives: ["Zweimal pro Woche mache ich Sport"],
         hint: "Sıklık kalıbı: „zweimal pro Woche“. „Sport machen“ artikelsiz kurulur.",
       },
       {

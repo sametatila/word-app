@@ -297,7 +297,7 @@ export const a2U07: SkillExercise[] = [
         kind: "build",
         tr: "Futbolda ayak bileğimi incittim.",
         answer: "Beim Fußball habe ich mir den Knöchel verletzt",
-        alternatives: ["Ich habe mir beim Fußball den Knöchel verletzt"],
+        alternatives: ["Ich habe mir beim Fußball den Knöchel verletzt", "Ich habe mir den Knöchel beim Fußball verletzt"],
         hint: "Dönüşlü zamir YÖNELME hâlinde (mir) ve incinen yerin önünde iyelik değil belirlilik takısı var (den).",
       },
       {

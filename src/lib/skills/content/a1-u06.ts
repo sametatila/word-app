@@ -314,7 +314,7 @@ export const a1U06: SkillExercise[] = [
         kind: "build",
         tr: "Kahvaltıda ekmek ve peynir yerim.",
         answer: "Ich esse zum Frühstück Brot und Käse",
-        alternatives: ["Ich esse Brot und Käse zum Frühstück", "Zum Frühstück esse ich Brot und Käse"],
+        alternatives: ["Ich esse Brot und Käse zum Frühstück", "Zum Frühstück esse ich Brot und Käse", "Brot und Käse esse ich zum Frühstück"],
         hint: "Fiil hep ikinci sırada. „zum Frühstück“ çoğunlukla nesneden önce gelir ama sonda da durabilir; cümleye onunla başlarsan özne fiilin arkasına geçer: „Zum Frühstück esse ich …“.",
       },
       {

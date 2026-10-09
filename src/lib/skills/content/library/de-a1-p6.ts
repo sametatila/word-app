@@ -187,7 +187,7 @@ export const deA1P6: SkillExercise[] = [
         kind: "build",
         tr: "Haftada iki kez antrenmana gitmek istiyorum.",
         answer: "Ich möchte zweimal pro Woche zum Training gehen.",
-        alternatives: ["Ich möchte zweimal in der Woche zum Training gehen."],
+        alternatives: ["Ich möchte zweimal in der Woche zum Training gehen.", "Zweimal pro Woche möchte ich zum Training gehen."],
         hint: "„möchte“ modal fiil: ikinci sırada durur, asıl fiil („gehen“) cümlenin sonuna gider.",
       },
       {

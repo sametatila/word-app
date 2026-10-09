@@ -175,7 +175,7 @@ export const deA1P3: SkillExercise[] = [
         kind: "build",
         tr: "Temmuzda bir hafta için bir daire arıyoruz.",
         answer: "Wir suchen eine Wohnung für eine Woche im Juli.",
-        alternatives: ["Im Juli suchen wir eine Wohnung für eine Woche."],
+        alternatives: ["Im Juli suchen wir eine Wohnung für eine Woche.", "Wir suchen im Juli eine Wohnung für eine Woche.", "Wir suchen für eine Woche im Juli eine Wohnung.", "Im Juli suchen wir für eine Woche eine Wohnung."],
         hint: "„für“ edatından sonra Akkusativ gelir: für eine Woche. Ay adı „im“ ile: im Juli.",
       },
       {

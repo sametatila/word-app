@@ -197,14 +197,14 @@ export const deA2P18: SkillExercise[] = [
         kind: "build",
         tr: "Artık her sabah dört buçukta kalkıyorum.",
         answer: "Jetzt stehe ich jeden Morgen um halb fünf auf.",
-        alternatives: ["Ich stehe jetzt jeden Morgen um halb fünf auf."],
+        alternatives: ["Ich stehe jetzt jeden Morgen um halb fünf auf.", "Jeden Morgen stehe ich jetzt um halb fünf auf."],
         hint: "aufstehen ayrılabilen bir fiil: stehe … auf, ön ek en sonda. „halb fünf“ dört buçuk demektir.",
       },
       {
         kind: "build",
         tr: "Öğleden sonra bir saat uyuyorum, çünkü çok yorgunum.",
         answer: "Nachmittags schlafe ich eine Stunde, weil ich sehr müde bin.",
-        alternatives: ["Weil ich sehr müde bin, schlafe ich nachmittags eine Stunde."],
+        alternatives: ["Weil ich sehr müde bin, schlafe ich nachmittags eine Stunde.", "Ich schlafe nachmittags eine Stunde, weil ich sehr müde bin."],
         hint: "„weil“ cümlesinde fiil sona gider; yan cümle başa geçerse ana cümle fiille başlar.",
       },
       {

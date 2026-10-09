@@ -277,6 +277,7 @@ export const a1U12: SkillExercise[] = [
         kind: "build",
         tr: "Ceket hoşuma gidiyor.",
         answer: "Die Jacke gefällt mir",
+        alternatives: ["Mir gefällt die Jacke"],
         hint: "DİKKAT: Türkçedeki „beğenmek“ ile özne TERS. Beğenen kişi Dativ'de (mir), beğenilen şey ÖZNE: „Die Jacke gefällt mir“ — „Ich gefalle die Jacke“ DEĞİL.",
       },
       {
@@ -320,6 +321,7 @@ export const a1U12: SkillExercise[] = [
         kind: "build",
         tr: "Çanta daha çok hoşuma gidiyor.",
         answer: "Mir gefällt die Tasche besser",
+        alternatives: ["Die Tasche gefällt mir besser"],
         hint: "Cümle „Mir“ ile başlayabilir: „Mir gefällt …“ — fiil yine ikinci sırada.",
       },
       {

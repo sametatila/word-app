@@ -282,12 +282,14 @@ export const a1U20: SkillExercise[] = [
         kind: "build",
         tr: "Maalesef gelemiyorum.",
         answer: "Leider kann ich nicht kommen",
+        alternatives: ["Ich kann leider nicht kommen"],
         hint: "„Leider“ başa gelince fiil hemen arkasından gelir: Leider KANN ich … Bu Almancanın ikinci-konum kuralı.",
       },
       {
         kind: "build",
         tr: "Bu sefer olmuyor.",
         answer: "Diesmal klappt es nicht",
+        alternatives: ["Es klappt diesmal nicht"],
         hint: "DİKKAT: özne „es“ — „ich klappe nicht“ DENMEZ. Olayın olup olmadığını anlatır, kişinin değil.",
       },
       {
@@ -373,6 +375,7 @@ export const a1U20: SkillExercise[] = [
         kind: "build",
         tr: "Bir dahaki sefere mutlaka geleceğim.",
         answer: "Das nächste Mal komme ich unbedingt",
+        alternatives: ["Ich komme das nächste Mal unbedingt"],
         hint: "Zaman ifadesi başa gelince yine fiil ikinci sırada: Das nächste Mal KOMME ich …",
       },
       {
