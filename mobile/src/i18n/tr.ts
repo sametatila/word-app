@@ -842,7 +842,7 @@ export const tr: Record<string, string> = {
   "learn.due_count": "{n} tekrar",
   "learn.due_count.one": "{n} tekrar",
   "learn.new_count": "{n} yeni",
-  "conversation.accuracy": "başarı",
+  "conversation.accuracy": "alıştırmalar: ilk denemede doğru",
   "conversation.start_over": "Baştan başla",
   "conversation.report": "Bildir",
   "conversation.this_conversation_wasn_t_found": "Bu konuşma bulunamadı.",

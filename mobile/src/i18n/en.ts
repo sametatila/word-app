@@ -837,7 +837,7 @@ export const en: Record<string, string> = {
   "learn.due_count": "{n} reviews",
   "learn.due_count.one": "{n} review",
   "learn.new_count": "{n} new",
-  "conversation.accuracy": "accuracy",
+  "conversation.accuracy": "exercises: right first try",
   "conversation.start_over": "Start over",
   "conversation.report": "Report",
   "conversation.this_conversation_wasn_t_found": "This Speaking step wasn't found.",

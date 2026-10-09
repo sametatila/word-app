@@ -839,7 +839,7 @@ export const deBase: Record<string, string> = {
   "learn.due_count": "{n} Wiederholungen",
   "learn.due_count.one": "{n} Wiederholung",
   "learn.new_count": "{n} neu",
-  "conversation.accuracy": "Trefferquote",
+  "conversation.accuracy": "Übungen: beim 1. Versuch richtig",
   "conversation.start_over": "Von vorn beginnen",
   "conversation.report": "Melden",
   "conversation.this_conversation_wasn_t_found": "Dieser Sprechen-Schritt wurde nicht gefunden.",
