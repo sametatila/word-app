@@ -14,7 +14,7 @@ import { accountRequiredError } from "../lib/guest";
 import { useAuth } from "../lib/AuthContext";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
-import { Animated, Easing, Keyboard, PanResponder, Platform, ScrollView, TextInput, useWindowDimensions, View } from "react-native";
+import { Animated, Easing, Keyboard, PanResponder, Platform, ScrollView, TextInput, useWindowDimensions, View, type ScrollViewInstance } from "react-native";
 import { Text } from "../ui/Text";
 import { promptFit, promptSize } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
@@ -276,9 +276,11 @@ const SHEET_H = 44 + spacing.md + 30 + spacing.sm + 50 + spacing.md;
  * hiçbir işe yaramayan bir boşluktu. Katman zaten turun BİTTİĞİNİ söylüyor,
  * yani altında kalanın üstüne binmesinde bir sakınca yok.
  *
- * Cevaptan sonra da pay EKLENMİYOR: içerik `flexGrow` ile dağıldığı için
- * sonradan eklenen bir dip payı esneyen boşlukları kısar ve tam cevap anında
- * her şeyi yukarı kaydırırdı — düzeltilmek istenen kaymanın ta kendisi.
+ * Cevaptan sonra da ESNEYEN pay eklenmiyor: içerik `flexGrow` ile dağıldığı
+ * için sonradan eklenen bir dip payı esneyen boşlukları kısar ve tam cevap
+ * anında her şeyi yukarı kaydırırdı — düzeltilmek istenen kaymanın ta
+ * kendisi. Katmanın örttüğü kadar boşluk içerik eski boyunda KİLİTLİYKEN
+ * altına ekleniyor ve kap yalnız gerekirse kayıyor (QA F-0069, `RoundShell`).
  */
 /**
  * Klavye açık mı — soru kartı buna bakıp KOMPAKT çiziliyor.
@@ -333,18 +335,51 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
     (esas boy içerikten): `flex: 1` uzun içeriği sıfır esastan ezebilirdi.
     Web: `session-player` ~949.
   */
-  const content = <EnterView enterKey={0} style={scroll ? { flexGrow: 1 } : { flex: 1 }}>{children}</EnterView>;
+  /*
+    KATMAN ŞIKLARI ÖRTMÜYOR (QA F-0069). Katman içeriğin üstüne biniyor ve
+    yer baştan ayrılmıyor (yukarıdaki not); ama dört şıklı turda yanlış
+    cevabın katmanı ("Senin", "Neden" satırlarıyla) son şıkkın yarısını
+    örtüyordu — öğrenci doğru şıkkı göremiyordu. Düzen yine KIMILDAMIYOR:
+    içerik eski boyunda kilitleniyor (`minHeight`), altına katmanın taştığı
+    kadar boşluk ekleniyor ve kap yalnız içeriğin SONU katmanın altında
+    kalıyorsa o kadar, yumuşakça kaydırılıyor. Kısa turda hiçbir şey olmuyor.
+    Ölçüler: kabın boyu, kaydırma alanının dibi, katmanın boyu ve içeriğin
+    doğal sonu (son çocuktan sonraki sıfır yükseklikli işaret).
+  */
+  const scrollRef = useRef<ScrollViewInstance>(null);
+  const scrollY = useRef(0);
+  const [shellH, setShellH] = useState(0);
+  const [view, setView] = useState({ h: 0, bottom: 0 });
+  const [sheetH, setSheetH] = useState(0);
+  const [endY, setEndY] = useState(0);
+  const overlap = scroll && sheet && sheetH && shellH && view.h ? Math.max(0, Math.ceil(sheetH - (shellH - view.bottom))) : 0;
+  useEffect(() => {
+    if (!overlap) return;
+    const target = endY + spacing.md - (view.h - overlap);
+    if (target > scrollY.current) scrollRef.current?.scrollTo({ y: target, animated: !reduceMotion() });
+  }, [overlap, endY, view.h]);
+  const content = (
+    <EnterView enterKey={0} style={scroll ? [{ flexGrow: 1 }, overlap ? { minHeight: view.h } : null] : { flex: 1 }}>
+      {children}
+      {scroll ? <View pointerEvents="none" onLayout={(e) => setEndY(e.nativeEvent.layout.y)} /> : null}
+    </EnterView>
+  );
   return (
     <KeyboardOpen.Provider value={kbOpen}>
-    <View ref={shellRef} collapsable={false} style={{ flex: 1 }}>
+    <View ref={shellRef} collapsable={false} style={{ flex: 1 }} onLayout={(e) => setShellH(e.nativeEvent.layout.height)}>
       {scroll ? (
         <ScrollView
+          ref={scrollRef}
           style={{ flex: 1 }}
           contentContainerStyle={{ flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
+          onLayout={(e) => { const l = e.nativeEvent.layout; setView({ h: l.height, bottom: l.y + l.height }); }}
+          onScroll={(e) => { scrollY.current = e.nativeEvent.contentOffset.y; }}
+          scrollEventThrottle={32}
         >
           {content}
+          {overlap ? <View style={{ height: overlap }} /> : null}
         </ScrollView>
       ) : (
         <View style={{ flex: 1 }}>{content}</View>
@@ -352,7 +387,7 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
       {/* Sonuç katmanı açıkken dip görünmez ama yerini koruyor: katmanın yuvarlak
           köşelerinin arkasından turuncu "Kontrol et" kenarları taşıyordu. */}
       {footer ? <View pointerEvents={sheet ? "none" : "auto"} style={{ marginBottom: lift, paddingTop: kbOpen ? spacing.sm : spacing.md, opacity: sheet ? 0 : 1 }}>{footer}</View> : null}
-      {sheet ? <SheetLayer>{sheet}</SheetLayer> : null}
+      {sheet ? <SheetLayer onHeight={setSheetH}>{sheet}</SheetLayer> : null}
     </View>
     </KeyboardOpen.Provider>
   );
@@ -366,7 +401,7 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
  * o riski her turda tekrar eden bir öğede almaya değmez. Katman hissini
  * gölge ve köşe yarıçapı kuruyor (bkz. FeedbackFooter).
  */
-function SheetLayer({ children }: { children: React.ReactNode }) {
+function SheetLayer({ children, onHeight }: { children: React.ReactNode; onHeight?: (h: number) => void }) {
   const slide = useRef(new Animated.Value(1)).current;
   useEffect(() => {
     /* "Hareketi azalt": tur yerinde beliriyor. */
@@ -376,6 +411,7 @@ function SheetLayer({ children }: { children: React.ReactNode }) {
   }, [slide]);
   return (
     <Animated.View
+      onLayout={onHeight ? (e) => onHeight(e.nativeEvent.layout.height) : undefined}
       style={{
         position: "absolute",
         left: 0,

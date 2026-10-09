@@ -1,7 +1,68 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import { RoundSheet, type SheetData } from "./round-sheet";
+import { useStill } from "@/lib/use-still";
+
+/** En yakın dikey kaydırma kabı (oyunlarda `FitBox`). */
+function scrollParent(el: HTMLElement | null): HTMLElement | null {
+  for (let p = el?.parentElement ?? null; p; p = p.parentElement) {
+    const o = getComputedStyle(p).overflowY;
+    if (o === "auto" || o === "scroll") return p;
+  }
+  return null;
+}
+
+/**
+ * KATMAN ŞIKLARI ÖRTMÜYOR (QA F-0069; mobil `rounds` `RoundShell` aynı).
+ *
+ * Katman içeriğin üstüne biniyor ve dört şıklı turda yanlış cevabın katmanı
+ * ("Senin", "Neden" satırlarıyla) son şıkkı örtüyordu: öğrenci doğru şıkkı
+ * göremiyordu. Düzen KIMILDAMIYOR: kart açıldığı andaki boyunda kilitleniyor
+ * (esneyen boşluklar kısılmasın), altına katmanın kaydırma kabına taştığı
+ * kadar boşluk ekleniyor ve kap yalnız içeriğin SONU katmanın altında
+ * kalıyorsa o kadar, yumuşakça kaydırılıyor. Kısa turda hiçbir şey olmuyor.
+ * Katmanın üst kenarı kabından (`#round-sheet-host`) okunuyor: kabın kendisi
+ * dönüşümsüz, kayan animasyon onun çocuğunda.
+ */
+function useSheetClearance(open: boolean, rootRef: RefObject<HTMLDivElement | null>, endRef: RefObject<HTMLDivElement | null>) {
+  const still = useStill();
+  const [lockH, setLockH] = useState<number | null>(null);
+  const [pad, setPad] = useState(0);
+  useLayoutEffect(() => {
+    if (!open) {
+      setLockH(null);
+      setPad(0);
+      return;
+    }
+    setLockH(rootRef.current?.offsetHeight ?? null);
+  }, [open, rootRef]);
+  useEffect(() => {
+    if (!open) return;
+    const host = document.getElementById("round-sheet-host");
+    const scroller = scrollParent(rootRef.current);
+    if (!host || !scroller) return;
+    const measure = () => {
+      const top = host.getBoundingClientRect().top;
+      setPad(host.offsetHeight ? Math.max(0, Math.ceil(scroller.getBoundingClientRect().bottom - top)) : 0);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(host);
+    return () => ro.disconnect();
+  }, [open, rootRef]);
+  /* Kaydırma boşluk DOM'a girdikten sonra (yoksa kap kaydıracak yer bulamaz). */
+  useEffect(() => {
+    if (!pad) return;
+    const host = document.getElementById("round-sheet-host");
+    const scroller = scrollParent(rootRef.current);
+    const end = endRef.current?.getBoundingClientRect().bottom;
+    if (!host || !scroller || end == null) return;
+    const hidden = end + 12 - host.getBoundingClientRect().top;
+    if (hidden > 0) scroller.scrollBy({ top: hidden, behavior: still ? "auto" : "smooth" });
+  }, [pad, rootRef, endRef, still]);
+  return { lockH, pad };
+}
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -109,8 +170,12 @@ export function GameShell({
    */
   onContinue?: () => void;
 }) {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const endRef = useRef<HTMLDivElement>(null);
+  const { lockH, pad } = useSheetClearance(sheet != null, rootRef, endRef);
   return (
-    <div className="mx-auto flex w-full max-w-md flex-1 flex-col md:block">
+    <>
+    <div ref={rootRef} className="mx-auto flex w-full max-w-md flex-1 flex-col md:block" style={lockH ? { minHeight: lockH } : undefined}>
       {/* SORU KARTI — mobil `rounds.tsx` › `Prompt` ile aynı: kendi yüzeyi,
           kenarlığı ve gölgesi var. Önce etiket dolgulu bir çipti ve soru
           sayfa zemininde duruyordu; okuma bölgesinin nerede bittiği yalnızca
@@ -134,6 +199,7 @@ export function GameShell({
 
       <div className="md:mt-5">{children}</div>
       {footer ? <div className="mt-4">{footer}</div> : null}
+      <div ref={endRef} aria-hidden />
 
       {/* Dokunma bölgesiyle ekranın dibi arasındaki pay. En az sınırı yok:
           sıkışık ekranda tamamen kapanıp yeri içeriğe bırakıyor. */}
@@ -141,5 +207,8 @@ export function GameShell({
 
       <RoundSheet sheet={sheet} onContinue={onContinue} />
     </div>
+    {/* Kabın DIŞINDA: içinde olsaydı esneyen boşlukları kısıp şıkları kaydırırdı. */}
+    {pad ? <div aria-hidden className="shrink-0" style={{ height: pad }} /> : null}
+    </>
   );
 }
