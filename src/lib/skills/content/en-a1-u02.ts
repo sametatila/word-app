@@ -192,7 +192,7 @@ export const enA1U02: SkillExercise[] = [
       { speaker: "Clerk", text: "Good morning, City Language School." },
       { speaker: "Owen", text: "Good morning. My name is Owen. I want a place in the A1 course." },
       { speaker: "Clerk", text: "How do you spell your name?" },
-      { speaker: "Owen", text: "E, M, R, E. Owen." },
+      { speaker: "Owen", text: "O, W, E, N. Owen." },
       { speaker: "Clerk", text: "Thank you. And how old are you?" },
       { speaker: "Owen", text: "I am twenty-two years old." },
       { speaker: "Clerk", text: "How much English do you speak?" },

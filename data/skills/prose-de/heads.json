@@ -154,7 +154,6 @@
  {"head": "property", "tr": "mülk", "de": "die Immobilie"},
  {"head": "free", "tr": "müsait", "de": "frei"},
  {"head": "customer", "tr": "müşteri", "de": "Kunde"},
- {"head": "dot", "tr": "nokta", "de": "Punkt"},
  {"head": "grade", "tr": "not", "de": "die Note"},
  {"head": "event", "tr": "olay", "de": "Ereignis"},
  {"head": "incident", "tr": "olay", "de": "Vorfall"},

@@ -262,7 +262,6 @@ export const enA2U23: SkillExercise[] = [
     intro: "Form doldurma. Hangi bilgi nereye yazılıyor?",
     gloss: [
       { de: "spell", tr: "harf harf söylemek" },
-      { de: "dot", tr: "nokta" },
       { de: "that line is mine", tr: "o satır benim" },
     ],
     minutes: 4,
@@ -270,7 +269,7 @@ export const enA2U23: SkillExercise[] = [
       { speaker: "Assistant", text: "Your last name, please." },
       { speaker: "Lucy", text: "Hayes." },
       { speaker: "Assistant", text: "Could you spell that, please?" },
-      { speaker: "Lucy", text: "Y, I with no dot, L, M, A, Z." },
+      { speaker: "Lucy", text: "H, A, Y, E, S." },
       { speaker: "Assistant", text: "Thank you. Date of birth?" },
       { speaker: "Lucy", text: "The third of June, nineteen ninety-four." },
       { speaker: "Assistant", text: "Place of birth?" },
