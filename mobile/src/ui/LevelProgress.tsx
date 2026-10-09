@@ -13,6 +13,7 @@ import { Card } from "./Card";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { useTheme, spacing, radii } from "../theme";
+import { SkeletonCard, SkeletonLine, Skeleton } from "./Skeleton";
 
 /* "Şimdilik kalsın" denen geçiş bir daha sorulmaz (aynı hedef seviye için). */
 const DISMISS_KEY = "lernomi:level-advance-dismissed";
@@ -27,24 +28,52 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
  *   geçiş     seviye sınavı geçildiyse "B2'ye geçelim mi?" — seviye yalnız kabulde değişir.
  * Web karşılığı `components/learn/level-progress`.
  */
+/*
+ * SON DURUM BELLEKTE (kullanıcı başına). Kart sunucudan gelene kadar hiç
+ * çizilmiyordu ve ~170 dp'lik kart Öğren ekranı açıldıktan sonra araya
+ * girip günün görevlerini, öne çıkanları ve ızgarayı aşağı itiyordu
+ * (QA F-0070 sınıfı). Artık ikinci açılıştan itibaren son durum hemen
+ * çiziliyor (arkada tazeleniyor); ilk açılışta yeri iskelet tutuyor.
+ */
+let lastStatus: { uid: string; st: LevelStatus } | null = null;
+
 export function LevelProgress() {
   const { user } = useAuth();
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const bump = useStatsBump();
-  const [st, setSt] = useState<LevelStatus | null>(null);
+  const [st, setSt] = useState<LevelStatus | null>(() => (user && lastStatus?.uid === user.id ? lastStatus.st : null));
+  /* İstek düştüyse kart (ve iskeleti) kalkıyor: kart opsiyonel. */
+  const [failed, setFailed] = useState(false);
   const [dismissed, setDismissed] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     if (!user) return;
     let alive = true;
-    fetchLevelStatus().then((s) => { if (alive) setSt(s); }).catch(() => { /* kart opsiyonel */ });
+    fetchLevelStatus()
+      .then((s) => { lastStatus = { uid: user.id, st: s }; if (alive) { setSt(s); setFailed(false); } })
+      .catch(() => { if (alive) setFailed(true); /* kart opsiyonel */ });
     AsyncStorage.getItem(DISMISS_KEY).then((v) => { if (alive) setDismissed(v); }).catch(() => {});
     return () => { alive = false; };
   }, [user, bump]);
 
-  if (!st) return null;
+  if (!st) {
+    if (!user || failed) return null;
+    /* Hazırlık kartının iskeleti: başlık + yüzde, çubuk, iki satır, bağlantı. */
+    return (
+      <SkeletonCard label={t("common.loading")} style={{ gap: spacing.sm, marginBottom: spacing.lg }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <SkeletonLine variant="h3" width="55%" />
+          <SkeletonLine variant="bodyStrong" width={40} />
+        </View>
+        <Skeleton height={8} radius={4} />
+        <SkeletonLine variant="caption" width="70%" />
+        <SkeletonLine variant="caption" width="90%" />
+        <SkeletonLine variant="caption" width="50%" style={{ marginVertical: spacing.xs }} />
+      </SkeletonCard>
+    );
+  }
 
   if (st.advance && st.advance !== dismissed) {
     const passed = LEVELS[LEVELS.indexOf(st.advance) - 1] ?? st.level;

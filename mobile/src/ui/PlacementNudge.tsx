@@ -15,17 +15,26 @@ import { useTheme, spacing, radii } from "../theme";
  * karar (geç / kalsın) profile yazılır, seviye ancak kabulde değişir. Web karşılığı
  * `components/learn/placement-nudge`.
  */
+/*
+ * SON CEVAP BELLEKTE (kullanıcı başına): kart her Öğren açılışında sunucu
+ * cevabından sonra araya giriyor ve altındaki her şeyi itiyordu (QA F-0070
+ * sınıfı). İkinci açılıştan itibaren son cevap hemen çiziliyor. İlk açılışta
+ * iskelet YOK: öneri kullanıcıların çoğuna hiç gelmiyor, boş yer tutmak
+ * herkese ters yönde bir kayma olurdu.
+ */
+let lastNudge: { uid: string; nudge: Nudge | null } | null = null;
+
 export function PlacementNudge() {
   const { user } = useAuth();
   const { colors } = useTheme();
-  const [nudge, setNudge] = useState<Nudge | null>(null);
+  const [nudge, setNudge] = useState<Nudge | null>(() => (user && lastNudge?.uid === user.id ? lastNudge.nudge : null));
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     if (!user) return;
     let alive = true;
     fetchPlacementStatus()
-      .then((st) => { if (alive) setNudge(st.nudge ?? null); })
+      .then((st) => { lastNudge = { uid: user.id, nudge: st.nudge ?? null }; if (alive) setNudge(st.nudge ?? null); })
       .catch(() => { /* öneri opsiyonel */ });
     return () => { alive = false; };
   }, [user]);
@@ -41,6 +50,7 @@ export function PlacementNudge() {
       if (accept) bumpStats(); // seviye değişti: ekranlar profili yeniden çeksin
     } catch { /* kart kapanır; öneri bir sonraki açılışta yeniden gelebilir */ }
     setBusy(false);
+    if (user) lastNudge = { uid: user.id, nudge: null };
     setNudge(null);
   }
 
