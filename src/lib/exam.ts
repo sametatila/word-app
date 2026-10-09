@@ -58,7 +58,7 @@ import { translate } from "@/lib/i18n/dict";
  *
  *   Bölüm        madde  ağırlık  kaynak
  *   Wortschatz     6      %12    modülün kelimeleri → çeviri / yazma
- *   Grammatik      6      %18    modülün odak tabloları + konuşmaların hüküm cümleleri
+ *   Grammatik      —      —      2026-08'den beri kâğıtta yok (immersion'da yeniden; bkz. COUNTS)
  *   Satzbau        5      %25    konuşmaların ÜRETİM adımları (Türkçe → Almanca)
  *   Lesen          2      %8     modül temalı yazılı metin (elle yazılı)
  *   Hören          3      %12    modül sahnesinde geçen diyalog (elle yazılı)
@@ -106,10 +106,19 @@ export {
 
 
 /* Kapak da bu sayıları okuyor (`/api/exam` GET): madde sayısı kâğıt
-   üretilmeden bilinebiliyor ve kapağı açmak haftanın kâğıdını harcamamalı. */
+   üretilmeden bilinebiliyor ve kapağı açmak haftanın kâğıdını harcamamalı.
+
+   KAPAK KÂĞIDI SÖYLER (QA F-0074, 2026-10-09). Dilbilgisi bölümü 2026-08'de
+   kâğıttan bilerek kaldırıldı (cheatsheet gitti, dilbilgisi immersion'da
+   yeniden kurulacak) ama sayısı burada 6/12 kaldı: web ve Android kapağı her
+   modül ve seviye sınavında "Grammatik · Dil bilgisi (6)" yazıyor, kâğıt ise
+   Teil 1/6 Wortschatz'dan Teil 6/6 Schreiben'e geçiyor ve sonuçta bölüm yok.
+   Kapaklar sayısı 0 olan bölümü listelemiyor; bölüm geri geldiği gün sayı
+   da buraya geri gelir. Kapı: `scripts/exam-dryrun.ts` (her kâğıt kapağıyla
+   bölüm bölüm aynı). */
 export const COUNTS: Record<ExamKind, { vocab: number; grammar: number; produce: number; text: number; speaking: number; writing: number }> = {
-  module: { vocab: 6, grammar: 6, produce: 5, text: 1, speaking: 2, writing: 1 },
-  level: { vocab: 12, grammar: 12, produce: 6, text: 2, speaking: 3, writing: 1 },
+  module: { vocab: 6, grammar: 0, produce: 5, text: 1, speaking: 2, writing: 1 },
+  level: { vocab: 12, grammar: 0, produce: 6, text: 2, speaking: 3, writing: 1 },
 };
 
 /** Dilbilgisi hücresinin cevabı bu uzunluğu aşarsa madde değil örnektir. */

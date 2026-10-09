@@ -57,8 +57,35 @@ const fail = (where: string, msg: string) => {
   console.error(`✗ ${where}: ${msg}`);
 };
 
+/**
+ * KAPAK = KÂĞIT (QA F-0074, 2026-10-09).
+ *
+ * Kapak bölümleri ve madde sayılarını kâğıt üretilmeden `COUNTS`tan okuyor
+ * (`/api/exam` GET, web ve Android aynı süzgeç: sayısı 0 olan bölüm yok).
+ * Dilbilgisi 2026-08'de kâğıttan kalktı, sayısı kalmadı: kapak her sınavda
+ * "Grammatik (6)" yazdı, kâğıt o bölümü hiç göstermedi. Burada kurulan HER
+ * kâğıt (modül ve seviye, iki kurs) kapağın söylediğiyle bölüm bölüm
+ * karşılaştırılıyor. Yazma bölümü yapay zekâ sağlayıcısına bağlı; sağlayıcı
+ * yoksa kâğıtta yok, kapakta var — o tek fark sayılmıyor.
+ */
+function coverMatchesPaper(
+  where: string,
+  counts: { vocab: number; grammar: number; produce: number; text: number; speaking: number; writing: number },
+  s: { vocab: unknown[]; grammar: unknown[]; produce: unknown[]; reading: unknown[]; listening: unknown[]; speaking: unknown[]; writing: unknown[] },
+  aiConfigured: boolean,
+) {
+  const ids = ["vocab", "grammar", "produce", "reading", "listening", "speaking", "writing"] as const;
+  for (const id of ids) {
+    const said = counts[id === "reading" || id === "listening" ? "text" : id];
+    const built = s[id].length;
+    if (id === "writing" && !aiConfigured && built === 0) continue;
+    if (said !== built) fail(where, `kapak ${id} (${said}) diyor, kâğıtta ${built} madde`);
+  }
+}
+
 async function main() {
-  const { buildExam } = await import("../src/lib/exam");
+  const { buildExam, COUNTS } = await import("../src/lib/exam");
+  const { chatConfigured } = await import("../src/lib/chat-providers");
   const { scoreSections, SECTION_ORDER } = await import("../src/lib/exam-types");
   console.log(`Kelime havuzu: ${FAKE_WORDS.length} satır.\n`);
 
@@ -68,6 +95,7 @@ async function main() {
     const s = paper.sections;
     const conversations = moduleContent(course, m.level, m.index).conversations.map((l) => l.id);
 
+    coverMatchesPaper(where, COUNTS.module, s, chatConfigured());
     if (s.vocab.length !== 6) fail(where, `kelime ${s.vocab.length} (6 olmalı)`);
     // Dilbilgisi bölümü 2026-08'de BİLEREK kaldırıldı (`exam.ts`: "cheatsheet
     // gitti, immersion'da yeniden") ve `buildPaper` artık hiç madde üretmiyor.
@@ -122,6 +150,17 @@ async function main() {
     const modes = s.produce.map((p) => p.mode).join(",");
     console.log(`${where.padEnd(10)} ${paper.cover?.titleDe.padEnd(34)} bölümler ${SECTION_ORDER.filter((id) => (id === "reading" ? s.reading.length : id === "listening" ? s.listening.length : id === "speaking" ? s.speaking.length : id === "writing" ? s.writing.length : id === "vocab" ? s.vocab.length : id === "grammar" ? s.grammar.length : s.produce.length) > 0).length} · üretim [${modes}]`);
   }
+
+  // Seviye sınavı: kapağı da `COUNTS.level`ten (`?kind=level`).
+  let levels = 0;
+  for (const course of COURSES) {
+    for (const level of [...new Set(allModules(course).map((m) => m.level))]) {
+      const paper = await buildExam("dry", course, level as CefrLevel, null, "2026-08-24");
+      coverMatchesPaper(`${course}·${level} seviye`, COUNTS.level, paper.sections, chatConfigured());
+      levels++;
+    }
+  }
+  console.log(`\nSeviye sınavı: ${levels} kâğıt kapağıyla karşılaştırıldı.`);
 
   const total = COURSES.reduce((a, c) => a + allModules(c).length, 0);
   console.log(`\n${errors ? `✗ ${errors} hata` : `✓ ${COURSES.length} kursta ${total} modülün kâğıdı kuruldu, hata yok`}.`);
