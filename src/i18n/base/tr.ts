@@ -1273,6 +1273,7 @@ export const trBase: Record<string, string> = {
   "progress.seen_of_total": "{seen} / {total} kelime · {mastered} pekişmiş",
   "progress.bar_note": "Koyu bölüm pekişmiş ({days}+ gün aralık), açık bölüm görülmüş kelimeleri gösterir. Toplam {seen}/{total}.",
   "progress.last_two_weeks": "Son iki hafta",
+  "progress.weekdays_short": "Pt Sa Ça Pe Cu Ct Pz",
   "progress.n_reviews": "{n} tekrar",
   "progress.n_reviews.one": "{n} tekrar",
   "progress.studied": "çalışıldı",

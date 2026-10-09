@@ -10,7 +10,7 @@ import { GrowthTrends, HowAmIDoing, HowAmIDoingHead, useGrowth } from "@/compone
 import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "@/components/icons";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
-import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
+import { formatNumber } from "@/lib/i18n/dict";
 
 type LevelRow = {
   niveau: string;
@@ -293,7 +293,7 @@ function StreakHero({
   const lang = useLang();
   const week = weekDays(today, (d) => (byDay.get(d)?.reviews ?? 0) > 0);
   const studied = week.filter((d) => d.studied).length;
-  const names = weekdayNames(lang);
+  const names = weekdayNames(t);
   return (
     <div
       className="overflow-hidden rounded-card glow-tint-lg"
@@ -430,25 +430,19 @@ const STRIP_FLOOR_PCT = 14;
  */
 const HEAT_RAMP: [number, number][] = [[8, 28], [16, 50], [32, 72], [Infinity, 100]];
 
-/*
-  İki harf, tek harf değil. Tek harfle şerit "P C C P P S Ç" oluyor ve bu
-  okunmuyor: Pazartesi, Perşembe ve Pazar aynı harfe, Cuma ile Cumartesi de
-  aynı harfe düşüyor. Şeridin altına gün adı koymanın tek sebebi hafta sonu
-  ritmini görünür kılmaktı; ayırt edilemeyen bir harf o işi yapmıyor.
-*/
 /**
- * Gün kısaltmaları elle yazılıydı ("Pt, Sa, Ça…") ve İngilizce arayüzde de
- * Türkçe çıkıyordu. Artık yerelden üretiliyor; hafta pazartesiyle başlıyor
- * (2024-01-01 bir pazartesi).
+ * Gün kısaltmaları — Gelişim'in İKİ satırında (bu hafta, son iki hafta) TEK
+ * kaynak (QA F-0058). Üstteki satır yerelin kısa adını ("Pzt, Sal, Çar…"),
+ * şerit onun ilk iki harfini ("Pz, Sa, Ça… Cm, Pa") yazıyordu: aynı ekranda
+ * aynı gün iki ayrı adla. Şeride üç harf sığmıyor (14 sütun, 375 px'te
+ * ~20 px; "Cmt" komşusuna biniyordu), tek harf de Pazartesi/Perşembe/Pazar'ı
+ * aynı harfe düşürüyor — ortak biçim iki harf. Kesmek Türkçede yerleşik
+ * kısaltmayı vermiyor (Pazar "Pa", Cumartesi "Cm"); liste sözlükte, dil
+ * başına elle: "Pt Sa Ça Pe Cu Ct Pz", "Mo Tu We…", "Mo Di Mi…". Hafta
+ * pazartesiyle başlıyor. Mobil `ProgressScreen` aynı anahtar.
  */
-/** Şerit etiketi: kısa adın ilk iki harfi, nokta atılarak ("Cmt" → "Cm", "Mo." → "Mo"). */
-function stripDay(short: string): string {
-  return short.replace(/\./g, "").slice(0, 2);
-}
-
-function weekdayNames(lang: NativeLang): string[] {
-  const fmt = new Intl.DateTimeFormat(localeOf(lang), { weekday: "short" });
-  return Array.from({ length: 7 }, (_, i) => fmt.format(new Date(Date.UTC(2024, 0, 1 + i))));
+function weekdayNames(t: (key: string) => string): string[] {
+  return t("progress.weekdays_short").split(" ");
 }
 
 /**
@@ -485,6 +479,7 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
   const peak = Math.max(1, ...days.map((d) => d.reviews));
   const active = days.filter((d) => d.reviews > 0).length;
   const total = days.reduce((s, d) => s + d.reviews, 0);
+  const names = weekdayNames(t);
 
   return (
     <section className="card p-4">
@@ -547,11 +542,8 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
               d.day === today ? "font-bold" : d.weekday >= 5 ? "muted opacity-60" : "muted"
             }`}
           >
-            {/* İKİ HARF: 14 sütunluk şeritte sütun 375 px'te ~22 px; üç harfli
-                kısa ad ("Cmt") sığmıyor, komşusuyla birleşiyordu. Tek harf
-                Pazartesi/Perşembe/Pazar'ı aynı harfe düşürür; iki harf yedi
-                günü üç dilde de ayırıyor. Mobil `ProgressScreen` ile aynı. */}
-            {stripDay(weekdayNames(lang)[d.weekday])}
+            {/* Üstteki "bu hafta" satırıyla aynı ad (`weekdayNames`, QA F-0058). */}
+            {names[d.weekday]}
           </span>
         ))}
       </div>

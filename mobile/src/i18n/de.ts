@@ -1271,6 +1271,7 @@ export const de: Record<string, string> = {
   "progress.seen_of_total": "{seen} / {total} Wörter · {mastered} gefestigt",
   "progress.bar_note": "Der dunkle Teil ist gefestigt (Intervall ab {days} Tagen), der helle Teil gesehene Wörter. Gesamt {seen}/{total}.",
   "progress.last_two_weeks": "Die letzten zwei Wochen",
+  "progress.weekdays_short": "Mo Di Mi Do Fr Sa So",
   "progress.n_reviews": "{n} Wiederholungen",
   "progress.n_reviews.one": "{n} Wiederholung",
   "progress.studied": "gelernt",

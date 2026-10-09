@@ -42,13 +42,17 @@ const STRIP_FLOOR_PCT = 14;
 const HEAT_RAMP: [number, number][] = [[8, 28], [16, 50], [32, 72], [Infinity, 100]];
 
 /**
- * Gün kısaltmaları yerelden üretiliyor; hafta pazartesiyle başlıyor
- * (2024-01-01 bir pazartesi). İki harf, tek harf değil: tek harfle şerit
- * "P C C P P S Ç" oluyor ve Pazartesi/Perşembe/Pazar aynı harfe düşüyor.
+ * Gün kısaltmaları — Gelişim'in İKİ satırında (bu hafta, son iki hafta) TEK
+ * kaynak (QA F-0058). Üstteki satır yerelin kısa adını ("Pzt, Sal, Çar…"),
+ * şerit onun ilk iki harfini ("Pz, Sa, Ça… Cm, Pa") yazıyordu: aynı ekranda
+ * aynı gün iki ayrı adla. Şeride üç harf sığmıyor (14 sütun), tek harf de
+ * Pazartesi/Perşembe/Pazar'ı aynı harfe düşürüyor — ortak biçim iki harf.
+ * Kesmek Türkçede yerleşik kısaltmayı vermiyor (Pazar "Pa", Cumartesi "Cm");
+ * liste sözlükte, dil başına elle. Hafta pazartesiyle başlıyor. Web
+ * `progress-view` aynı anahtar.
  */
 function weekdayNames(): string[] {
-  const fmt = new Intl.DateTimeFormat(dateLocale(), { weekday: "short" });
-  return Array.from({ length: 7 }, (_, i) => fmt.format(new Date(Date.UTC(2024, 0, 1 + i))));
+  return t("progress.weekdays_short").split(" ");
 }
 
 /**
@@ -73,9 +77,8 @@ function ActivityStrip({ rows, today, colors }: { rows: { day: string; reviews: 
   const peak = Math.max(1, ...days.map((d) => d.reviews));
   const active = days.filter((d) => d.reviews > 0).length;
   const total = days.reduce((s, d) => s + d.reviews, 0);
-  /* İKİ HARF: 14 sütunda üç harfli kısa ad sığmıyor ("Cmt" komşusuna
-     biniyordu); tek harf Pzt/Per/Paz'ı karıştırıyor. Web `ActivityStrip` ile aynı. */
-  const names = weekdayNames().map((n) => n.replace(/\./g, "").slice(0, 2));
+  /* Üstteki "bu hafta" satırıyla aynı ad (`weekdayNames`, QA F-0058). */
+  const names = weekdayNames();
 
   return (
     <Card padded>

@@ -2389,6 +2389,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     return m ? [m[1].replace(/\s+/g, "")] : ["bulunamadi: " + p];
   };
   sameList("isi basamaklari", rampa("mobile/src/screens/ProgressScreen.tsx"), rampa("src/components/progress-view.tsx"));
+  /* Gun kisaltmalari (QA F-0058): "bu hafta" satiri yerelin kisa adini (Pzt),
+     serit ilk iki harfini (Pz, Cm, Pa) yaziyordu. Iki satir, iki platform tek
+     sozluk anahtarindan; her dilde yedi ayri iki harfli ad. */
+  const gunler = (p) => {
+    const src = read(p);
+    return [
+      "kaynak=" + (/function weekdayNames\(.*\): string\[\] \{\s*return t\("progress\.weekdays_short"\)\.split\(" "\);/.test(src) ? "sozluk" : "BASKA"),
+      "Intl gun adi=" + /weekday: "(?:short|narrow|long)"/.test(src),
+      "kesme=" + /\.slice\(0, 2\)/.test(src),
+      "iki satir=" + (src.match(/\{names\[d\.weekday\]\}/g) ?? []).length,
+    ];
+  };
+  sameList("gun kisaltmalari", gunler("mobile/src/screens/ProgressScreen.tsx"), gunler("src/components/progress-view.tsx"));
+  for (const dil of ["tr", "en", "de"]) {
+    const v = (read(`mobile/src/i18n/${dil}.ts`).match(/"progress\.weekdays_short": "([^"]*)"/) ?? [])[1] ?? "";
+    const adlar = v.split(" ");
+    sameList(`gun kisaltmalari (${dil})`, ["yedi ayri iki harf=" + (adlar.length === 7 && new Set(adlar).size === 7 && adlar.every((a) => [...a].length === 2))], ["yedi ayri iki harf=true"], "sozluk", "beklenen");
+  }
 }
 
 /* ── 47. yapabildiklerim: beceri kodu -> etiket anahtari ──────────────────

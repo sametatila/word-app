@@ -1273,6 +1273,7 @@ export const enBase: Record<string, string> = {
   "progress.seen_of_total": "{seen} / {total} words · {mastered} mastered",
   "progress.bar_note": "The dark part is mastered ({days}+ day interval), the light part words you've seen. Total {seen}/{total}.",
   "progress.last_two_weeks": "The last two weeks",
+  "progress.weekdays_short": "Mo Tu We Th Fr Sa Su",
   "progress.n_reviews": "{n} reviews",
   "progress.n_reviews.one": "{n} review",
   "progress.studied": "studied",
