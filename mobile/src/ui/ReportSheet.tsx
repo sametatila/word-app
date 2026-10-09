@@ -9,6 +9,7 @@ import { RadioDot } from "./RadioDot";
 import { CorrectIcon } from "./icons";
 import { REPORT_DETAIL_MAX, reasonsFor, sendReport, type ReportKind, type ReportReason, type ReportSurface, type ReportTarget } from "../lib/report";
 import { useModalKeyboard } from "../lib/useKeyboardHeight";
+import { reduceMotion } from "../lib/reduceMotion";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import { DIALOG_MAX_WIDTH, dialogActionsStacked } from "../lib/useLayout";
 import { FIELD, Field } from "./Field";
@@ -130,7 +131,7 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
                     placeholderTextColor={colors.textFaint}
                     accessibilityLabel={t("reportsheet.detail_label")}
                     /* Odakta alan ve altındaki düğmeler görünsün: kart küçülünce içerik sona kayıyor. */
-                    onFocus={() => { mk.focus.onFocus(); setTimeout(() => scroll.current?.scrollToEnd({ animated: true }), 250); }}
+                    onFocus={() => { mk.focus.onFocus(); setTimeout(() => scroll.current?.scrollToEnd({ animated: !reduceMotion() }), 250); }}
                     onBlur={mk.focus.onBlur}
                     style={{ minHeight: 72, maxHeight: 140, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, color: colors.text, fontSize: 15 }}
                   />
