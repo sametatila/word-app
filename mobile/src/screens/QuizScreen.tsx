@@ -19,6 +19,10 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii } from "../theme";
 import { FlowActions, ContentLoadingBody, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { sfx } from "../lib/sfx";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { UnsavedWorkScope } from "../lib/unsavedWork";
+import { useBackConfirm } from "../lib/useBackConfirm";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 /** Geçme eşiği — web `PRACTICE_PASS_PCT` (`lib/score-bands.ts`) ile aynı sayı. */
 const PASS_PCT = 60;
@@ -39,6 +43,20 @@ export function QuizScreen() {
   const [finished, setFinished] = useState(false);
   const [round, setRound] = useState(0);
   const [review, setReview] = useState(params.result ?? null);
+  /*
+    YARIM TESTTEN ÇIKIŞ ONAYA BAĞLI (QA F-0054, 2026-10-09). Ünite testi ve
+    dil bilgisi turu kapat düğmesinde, donanım geri tuşunda ve iOS kenar
+    hareketinde sormadan çıkıyordu; verilen cevaplar kaydedilmiyor, test
+    baştan açılıyor. `ItemScreen`le aynı kalıp: sorular kaydedilmemiş cevabı
+    `useUnsavedWork` ile bildiriyor, hareket yalnız o sırada kapalı. Web
+    `immersion/quiz-player` aynı (`useLeaveGuard`).
+  */
+  const nav2 = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const [unsaved, setUnsaved] = useState(false);
+  const guard = unsaved && !finished && !review;
+  const back = useBackConfirm(guard);
+  useEffect(() => { nav2.setOptions({ gestureEnabled: !guard }); }, [nav2, guard]);
+  const close = () => (guard ? back.ask() : nav.goBack());
 
   const isGrammar = params.kind === "grammar";
   /* Sorular konuşmalardan türüyor ve konuşmalar A1 dışında ikilide değil: seviye
@@ -123,8 +141,18 @@ export function QuizScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <ConfirmDialog
+        visible={back.visible}
+        title={t("item.leave_title")}
+        message={t("item.leave_body")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue")}
+        destructive
+        onConfirm={() => { back.cancel(); nav.goBack(); }}
+        onCancel={back.cancel}
+      />
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={close} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <CloseIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
@@ -154,7 +182,9 @@ export function QuizScreen() {
           </View>
         ) : (
           <SkillReportContext.Provider value={{ surface: "path", id: params.itemId }}>
-            <QuestionList key={round} questions={questions} onAllAnswered={recordAndFinish} colors={colors} />
+            <UnsavedWorkScope onChange={setUnsaved}>
+              <QuestionList key={round} questions={questions} onAllAnswered={recordAndFinish} colors={colors} />
+            </UnsavedWorkScope>
           </SkillReportContext.Provider>
         )}
 

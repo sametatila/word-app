@@ -13929,6 +13929,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["deneme-kagidi", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
       /* Beceri/Patika alistirmasi: yazilan metin ve cozulen gorevler (QA F-0054). */
       ["beceri-alistirmasi", "src/components/skills/player-shell.tsx", "mobile/src/screens/ItemScreen.tsx"],
+      /* Unite testi ve dil bilgisi turu: verilen cevaplar (QA F-0054, 2026-10-09). */
+      ["unite-testi", "src/components/immersion/quiz-player.tsx", "mobile/src/screens/QuizScreen.tsx"],
     ];
     const webKoruma = (yol) => {
       const src = sil(read(yol));

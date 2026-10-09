@@ -5,6 +5,9 @@ import { QuestionList } from "@/components/skills/quiz";
 import { ReportFlag, snapshot } from "@/components/report-flag";
 import { KindIconFor, KIND_TINT } from "@/components/immersion/unit-pane";
 import { RoundExit } from "@/components/round-exit";
+import { ConfirmDialog } from "@/components/confirm-dialog";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
+import { UnsavedWorkScope } from "@/components/skills/unsaved-work";
 import { FlowActions, FlowColumn, ResultHero, StatRow, StateBody } from "@/components/flow";
 import type { SkillQuestion } from "@/lib/skills/types";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -77,12 +80,31 @@ export function ImmersionQuizPlayer({
     setRound((r) => r + 1);
   }
 
+  /*
+    YARIM TESTTEN ÇIKIŞ ONAYA BAĞLI (QA F-0054, 2026-10-09). "Kapat" ve kenar
+    çubuğu bağlantıları sormadan çıkıyordu; verilen cevaplar kaydedilmiyor,
+    test baştan açılıyor. Sorular kaydedilmemiş cevabı `useUnsavedWork` ile
+    bildiriyor; `skills/player-shell` ve mobil `QuizScreen` aynı diyalog.
+  */
+  const [dirty, setDirty] = useState(false);
+  const ayril = useLeaveGuard(dirty && score === null);
+
   const tint = KIND_TINT[kind];
   const pct = questions.length ? Math.round(((score ?? 0) / questions.length) * 100) : 0;
   const passed = pct >= PASS_PCT;
 
   return (
     <div className="mx-auto w-full max-w-2xl py-6">
+      <ConfirmDialog
+        open={ayril.pending !== null}
+        title={t("item.leave_title")}
+        message={t("item.leave_body")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue")}
+        destructive
+        onConfirm={ayril.leave}
+        onCancel={ayril.stay}
+      />
       <div className="mb-5 flex items-center gap-3">
         {/* KAPAT, GERİ OKU DEĞİL (2026-09-27): sonuç bu sayfanın dibine
             ekleniyor ve sonuç ekranında çıkış solda çarpı, adı `common.close`
@@ -118,7 +140,9 @@ export function ImmersionQuizPlayer({
           </StateBody>
         </FlowColumn>
       ) : score === null ? (
-        <QuestionList key={round} questions={questions} onAllAnswered={bitir} report={{ exerciseId: itemId, surface: "path" }} />
+        <UnsavedWorkScope onChange={setDirty}>
+          <QuestionList key={round} questions={questions} onAllAnswered={bitir} report={{ exerciseId: itemId, surface: "path" }} />
+        </UnsavedWorkScope>
       ) : (
         /*
           SONUÇ ŞABLONU (components/flow): band → üç sayı → düğmeler. Geçemeyen
