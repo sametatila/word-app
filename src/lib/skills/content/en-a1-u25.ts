@@ -204,7 +204,7 @@ export const enA1U25: SkillExercise[] = [
         text: "Where did Liam go?",
         options: ["to a farm", "to his parents", "to the movies"],
         answer: 0,
-        explain: "„I went to a farm near the mountains.“ — anne babayı ziyaret eden Katie.",
+        explain: "„I went to a farm near the mountains.“ — anne babasını ziyaret eden ise Liam değil, Katie.",
       },
       {
         text: "What did Katie do?",
@@ -280,7 +280,7 @@ export const enA1U25: SkillExercise[] = [
         text: "What is Lucy going to do?",
         options: ["call every week", "send a message every day", "stay here"],
         answer: 0,
-        explain: "„But I'll call you every week.“ — her gün mesaj atacak olan Liam.",
+        explain: "„But I'll call you every week.“ — her gün mesaj atacak olan ise Lucy değil, Liam.",
       },
       {
         text: "When do they meet again?",

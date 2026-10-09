@@ -120,9 +120,9 @@
   "de": "„The cat's name is Zeyno.“ — der Fisch hat keinen Namen."
  },
  {
-  "tr": "„He doesn't like cheese.“ — peyniri yiyen Charlie.",
+  "tr": "„He doesn't like cheese.“ — peyniri yiyen ise kardeşi değil, Charlie.",
   "kind": "explain",
-  "de": "„He doesn't like cheese.“ — Käse isst Charlie."
+  "de": "„He doesn't like cheese.“ — Käse isst Charlie, nicht sein Bruder."
  },
  {
   "tr": "„But I don't have a brother. I only have two sisters.“",
@@ -275,9 +275,9 @@
   "de": "„But can I have a spoon? There is only a knife here.“ — kein Löffel, nur ein Messer."
  },
  {
-  "tr": "„Liam is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
+  "tr": "„Liam is not quiet. He is funny, and he talks a lot.“ Sessiz olan ise Liam değil, kuzeni Ada.",
   "kind": "explain",
-  "de": "„Liam is not quiet. He is funny, and he talks a lot.“ Still ist seine Cousine Ada."
+  "de": "„Liam is not quiet. He is funny, and he talks a lot.“ Ruhig ist seine Cousine Ada, nicht Liam."
  },
  {
   "tr": "„I don't have an animal at home.“ — „an“ sesli harfle başlayan sözcükten önce.",

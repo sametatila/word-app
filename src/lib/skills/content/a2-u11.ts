@@ -139,7 +139,7 @@ export const a2U11: SkillExercise[] = [
         text: "Was findet Lennart am schwersten?",
         options: ["Die Vokabeln", "Die Grammatik", "Das Sprechen"],
         answer: 1,
-        explain: "„Am schwersten finde ich die Grammatik — Vokabeln lerne ich gern.“ Konuşmak Yara'nın sorunu.",
+        explain: "„Am schwersten finde ich die Grammatik — Vokabeln lerne ich gern.“ Konuşmak ise Lennart'ın değil, Yara'nın sorunu.",
       },
       {
         kind: "short_answer",

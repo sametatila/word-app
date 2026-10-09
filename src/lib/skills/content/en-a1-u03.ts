@@ -196,7 +196,7 @@ export const enA1U03: SkillExercise[] = [
         text: "How old is Mia's daughter?",
         options: ["six", "one", "twelve"],
         answer: 0,
-        explain: "„Her name is Lucy. She is six.“ — bir yaşında olan Aaron'un erkek kardeşi.",
+        explain: "„Her name is Lucy. She is six.“ — bir yaşında olan ise Mia'nın kızı değil, Aaron'un erkek kardeşi.",
       },
       {
         kind: "truefalse",

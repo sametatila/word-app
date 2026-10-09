@@ -208,7 +208,7 @@ export const enA2U20: SkillExercise[] = [
         text: "How does Ellie know Katie?",
         options: ["they work together", "from school", "from a party"],
         answer: 0,
-        explain: "„We work together. Four years now.“ — okul Tyler'in yolu.",
+        explain: "„We work together. Four years now.“ — Katie'yi okuldan tanıyan ise Ellie değil, Tyler.",
       },
       {
         text: "How many people are at the party?",

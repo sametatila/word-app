@@ -40,9 +40,9 @@
   "en": "Shopping at the kiosk. Catch the prices and the total."
  },
  {
-  "tr": "„He doesn't like cheese.“ — peyniri yiyen Charlie.",
+  "tr": "„He doesn't like cheese.“ — peyniri yiyen ise kardeşi değil, Charlie.",
   "kind": "explain",
-  "en": "„He doesn't like cheese.“ — the one who eats cheese is Charlie."
+  "en": "„He doesn't like cheese.“ — the one who eats cheese is Charlie, not his brother."
  },
  {
   "tr": "„But I don't have a brother. I only have two sisters.“",
@@ -230,9 +230,9 @@
   "en": "„But can I have a spoon? There is only a knife here.“ — no spoon, only a knife."
  },
  {
-  "tr": "„Liam is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
+  "tr": "„Liam is not quiet. He is funny, and he talks a lot.“ Sessiz olan ise Liam değil, kuzeni Ada.",
   "kind": "explain",
-  "en": "„Liam is not quiet. He is funny, and he talks a lot.“ The quiet one is his cousin Ada."
+  "en": "„Liam is not quiet. He is funny, and he talks a lot.“ The quiet one is his cousin Ada, not Liam."
  },
  {
   "tr": "„some“ olumlu cümlede, „any“ soru ve olumsuzda. Türkçede böyle bir ayrım yok.",

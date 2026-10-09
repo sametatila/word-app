@@ -284,7 +284,7 @@ export const enA1U09: SkillExercise[] = [
         text: "Liam works on the weekend.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Never! I work Monday through Friday.“ — hafta sonu çalışan Katie.",
+        explain: "„Never! I work Monday through Friday.“ — hafta sonu çalışan ise Liam değil, Katie.",
       },
       {
         kind: "gapfill",

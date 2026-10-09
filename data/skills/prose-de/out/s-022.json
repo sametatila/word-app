@@ -145,9 +145,9 @@
   "de": "„Yes, two hours is good.“ — fünf Minuten ist der Weg zur Kirche."
  },
  {
-  "tr": "„I go by bike. It is fast and I see the city.“ — trenle giden Katie.",
+  "tr": "„I go by bike. It is fast and I see the city.“ — trenle giden ise Tyler değil, Katie.",
   "kind": "explain",
-  "de": "„I go by bike. It is fast and I see the city.“ — mit dem Zug fährt Katie."
+  "de": "„I go by bike. It is fast and I see the city.“ — mit dem Zug fährt Katie, nicht Tyler."
  },
  {
   "tr": "„The museum opens at ten. It closes at six.“ — üç, kursun saati.",
@@ -220,9 +220,9 @@
   "de": "Zuerst wird um Hilfe gebeten, dann nach dem Ziel gefragt, dann kommt der erste Schritt, dann der zweite."
  },
  {
-  "tr": "„medicine for a cold… I need soap and a toothbrush too.“ Yara bandı da alıyor.",
+  "tr": "„medicine for a cold… I need soap and a toothbrush too.“ Yara bandını ise sonradan, oğlu için ayrıca soruyor.",
   "kind": "explain",
-  "de": "„medicine for a cold… I need soap and a toothbrush too.“ Pflaster nimmt sie auch mit."
+  "de": "„medicine for a cold… I need soap and a toothbrush too.“ Nach den Pflastern fragt sie erst später und extra, für ihren Sohn."
  },
  {
   "tr": "„Then take bus number four.“ — dört hem hattın numarası hem durağın sırası.",

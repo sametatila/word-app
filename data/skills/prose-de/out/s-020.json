@@ -165,9 +165,9 @@
   "de": "„I usually walk to work.“ — in der dritten Person Singular ein „-s“: he walks."
  },
  {
-  "tr": "„I'd like a juice… Apple, please.“ — bira Liam'ın, su Charlie'nin.",
+  "tr": "„I'd like a juice… Apple, please.“ — bira ise Lucy'nin değil, Liam'ın; su da Charlie'nin.",
   "kind": "explain",
-  "de": "„I'd like a juice… Apple, please.“ — das Bier ist von Liam, das Wasser von Charlie."
+  "de": "„I'd like a juice… Apple, please.“ — das Bier ist für Liam, nicht für Lucy, und das Wasser für Charlie."
  },
  {
   "tr": "„Tomatoes are cheap this week — they're on sale.“ — pahalı olan et.",
@@ -175,9 +175,9 @@
   "de": "„Tomatoes are cheap this week — they're on sale.“ — teuer ist das Fleisch."
  },
  {
-  "tr": "„Never! I work Monday through Friday.“ — hafta sonu çalışan Katie.",
+  "tr": "„Never! I work Monday through Friday.“ — hafta sonu çalışan ise Liam değil, Katie.",
   "kind": "explain",
-  "de": "„Never! I work Monday through Friday.“ — am Wochenende arbeitet Katie."
+  "de": "„Never! I work Monday through Friday.“ — am Wochenende arbeitet Katie, nicht Liam."
  },
  {
   "tr": "„Two euros a kilo.“ — yarım avro muzun fiyatı, dokuz avro toplam.",

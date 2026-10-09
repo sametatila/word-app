@@ -108,7 +108,7 @@ export const a1U19: SkillExercise[] = [
         text: "Was spielt Tom?",
         options: ["Klavier", "Gitarre", "kein Instrument"],
         answer: 0,
-        explain: "„Ich spiele Klavier, seit ich zehn bin.“ Gitar çalan Mia.",
+        explain: "„Ich spiele Klavier, seit ich zehn bin.“ Gitarı ise Tom değil, Mia çalıyor.",
       },
       {
         text: "Wo ist das Konzert von Toms Band?",

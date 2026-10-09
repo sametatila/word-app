@@ -200,7 +200,7 @@ export const enA1U18: SkillExercise[] = [
         text: "What is Tyler's hobby?",
         options: ["painting", "music", "collecting videos"],
         answer: 0,
-        explain: "„I enjoy painting. I paint every weekend.“ — müzik ve video Katie'nin.",
+        explain: "„I enjoy painting. I paint every weekend.“ — müzik ve video ise Tyler'ın değil, Katie'nin hobisi.",
       },
       {
         text: "What instrument does Katie play?",
@@ -213,7 +213,7 @@ export const enA1U18: SkillExercise[] = [
         text: "Katie cannot draw.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I can't draw. My hobby is music…“ — çizen Tyler.",
+        explain: "„I can't draw.“ — çizen ise Katie değil, Tyler.",
       },
       {
         kind: "gapfill",
@@ -276,7 +276,7 @@ export const enA1U18: SkillExercise[] = [
         text: "What does Harry's sister play?",
         options: ["tennis and basketball", "soccer", "nothing"],
         answer: 0,
-        explain: "„My sister plays tennis and basketball.“ — futbol Harry'nin.",
+        explain: "„My sister plays tennis and basketball.“ — futbol ise kız kardeşin değil, Harry'nin sporu.",
       },
       {
         kind: "truefalse",

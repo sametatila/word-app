@@ -25,9 +25,9 @@
   "en": "A garden and a balcony are described. What is there, what is broken?"
  },
  {
-  "tr": "„I can't draw. My hobby is music…“ — çizen Tyler.",
+  "tr": "„I can't draw.“ — çizen ise Katie değil, Tyler.",
   "kind": "explain",
-  "en": "„I can't draw. My hobby is music…“ — the one who draws is Tyler."
+  "en": "„I can't draw.“ — the one who draws is Tyler, not Katie."
  },
  {
   "tr": "Apartman kuralları. Ne yasak, ne serbest, ne zaman?",
@@ -90,9 +90,9 @@
   "en": "„I water the plants every morning.“ — „water“ is a verb here."
  },
  {
-  "tr": "„My sister plays tennis and basketball.“ — futbol Harry'nin.",
+  "tr": "„My sister plays tennis and basketball.“ — futbol ise kız kardeşin değil, Harry'nin sporu.",
   "kind": "explain",
-  "en": "„My sister plays tennis and basketball.“ — soccer is Harry's."
+  "en": "„My sister plays tennis and basketball.“ — soccer is Harry's sport, not his sister's."
  },
  {
   "tr": "„I hear the television through the wall.“ — yani adam evde.",
@@ -140,9 +140,9 @@
   "en": "„A party has to end at eleven.“ — „has to“ also states a duty."
  },
  {
-  "tr": "„I enjoy painting. I paint every weekend.“ — müzik ve video Katie'nin.",
+  "tr": "„I enjoy painting. I paint every weekend.“ — müzik ve video ise Tyler'ın değil, Katie'nin hobisi.",
   "kind": "explain",
-  "en": "„I enjoy painting. I paint every weekend.“ — music and videos belong to Katie."
+  "en": "„I enjoy painting. I paint every weekend.“ — music and videos are Katie's hobbies, not Tyler's."
  },
  {
   "tr": "„The electricity bill comes every three months.“ — her ay gelen kira.",

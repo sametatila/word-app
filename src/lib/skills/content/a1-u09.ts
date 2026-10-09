@@ -109,7 +109,7 @@ export const a1U09: SkillExercise[] = [
         text: "Was macht Paula zuerst?",
         options: ["Sie frühstückt", "Sie wäscht sich", "Sie duscht"],
         answer: 0,
-        explain: "„Zuerst frühstücke ich, dann wasche ich mich.“ Mia'nın tam tersi sıra.",
+        explain: "„Zuerst frühstücke ich, dann wasche ich mich.“ Paula'nın sırası Mia'nınkinin tersi: Mia önce duş alıyor, kahvaltıyı sonra yapıyor.",
       },
       {
         text: "Richtig oder falsch? Paula duscht jeden Morgen.",

@@ -253,7 +253,7 @@ export const a2U02: SkillExercise[] = [
         text: "Wie war Noras Bruder als Kind?",
         options: ["Sehr brav", "Sehr schüchtern", "Sehr verspielt"],
         answer: 2,
-        explain: "„Er war sehr verspielt und nie brav.“ Utangaç olan Nora'ydı.",
+        explain: "„Er war sehr verspielt und nie brav.“ Utangaç olan ise kardeşi değil, Nora'nın kendisiydi.",
       },
       {
         kind: "short_answer",

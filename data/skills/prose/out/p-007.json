@@ -275,9 +275,9 @@
   "en": "„Die Lieferung ist kostenlos.“ 17 euros is the total for the items."
  },
  {
-  "tr": "„Ich spiele Klavier, seit ich zehn bin.“ Gitar çalan Mia.",
+  "tr": "„Ich spiele Klavier, seit ich zehn bin.“ Gitarı ise Tom değil, Mia çalıyor.",
   "kind": "explain",
-  "en": "„Ich spiele Klavier, seit ich zehn bin.“ Mia is the one who plays the guitar."
+  "en": "„Ich spiele Klavier, seit ich zehn bin.“ The guitar player is Mia, not Tom."
  },
  {
   "tr": "„je … desto“ ikilisi: ilk yarıda je, ikinci yarıda desto.",

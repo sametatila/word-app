@@ -56,7 +56,7 @@ export const enA1U13: SkillExercise[] = [
         text: "What does Lucy need?",
         options: ["medicine, soap and a toothbrush", "only medicine", "a computer"],
         answer: 0,
-        explain: "„medicine for a cold… I need soap and a toothbrush too.“ Yara bandı da alıyor.",
+        explain: "„medicine for a cold… I need soap and a toothbrush too.“ Yara bandını ise sonradan, oğlu için ayrıca soruyor.",
       },
       {
         text: "Where are the toothbrushes?",

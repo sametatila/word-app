@@ -288,7 +288,7 @@ export const enA1U07: SkillExercise[] = [
         text: "What does Lucy drink?",
         options: ["apple juice", "beer", "water"],
         answer: 0,
-        explain: "„I'd like a juice… Apple, please.“ — bira Liam'ın, su Charlie'nin.",
+        explain: "„I'd like a juice… Apple, please.“ — bira ise Lucy'nin değil, Liam'ın; su da Charlie'nin.",
       },
       {
         text: "How much is the beer?",

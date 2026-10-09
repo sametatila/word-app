@@ -197,7 +197,7 @@ export const enA2U02: SkillExercise[] = [
         text: "What did Lucy use to do?",
         options: ["play the guitar", "play soccer", "make dinners"],
         answer: 0,
-        explain: "„Yes, when I was a child. I used to play every day.“ — futbol Henry'nin.",
+        explain: "„Yes, when I was a child. I used to play every day.“ — futbol oynayan ise Lucy değil, Henry.",
       },
       {
         text: "Why did Henry play soccer?",

@@ -201,7 +201,7 @@ export const enA1U15: SkillExercise[] = [
         text: "How does Tyler get to work?",
         options: ["by bike", "by train", "by boat"],
         answer: 0,
-        explain: "„I go by bike. It is fast and I see the city.“ — trenle giden Katie.",
+        explain: "„I go by bike. It is fast and I see the city.“ — trenle giden ise Tyler değil, Katie.",
       },
       {
         text: "Where is the gym?",

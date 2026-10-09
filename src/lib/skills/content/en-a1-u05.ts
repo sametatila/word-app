@@ -61,7 +61,7 @@ export const enA1U05: SkillExercise[] = [
         text: "Liam talks a lot.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Liam is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
+        explain: "„Liam is not quiet. He is funny, and he talks a lot.“ Sessiz olan ise Liam değil, kuzeni Ada.",
       },
       {
         kind: "gapfill",

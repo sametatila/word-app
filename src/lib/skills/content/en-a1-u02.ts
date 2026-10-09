@@ -122,13 +122,13 @@ export const enA1U02: SkillExercise[] = [
         text: "What is Sam's job?",
         options: ["a doctor", "a singer", "a music teacher"],
         answer: 0,
-        explain: "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan Ana.",
+        explain: "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan ise Sam değil, Ana.",
       },
       {
         text: "How old is Ana?",
         options: ["twenty-nine", "forty", "nineteen"],
         answer: 0,
-        explain: "„I am twenty-nine years old.“ Kırk yaşında olan Sam.",
+        explain: "„I am twenty-nine years old.“ Kırk yaşında olan ise Ana değil, Sam.",
       },
       {
         kind: "truefalse",
@@ -228,7 +228,7 @@ export const enA1U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["hundred"],
-        explain: "„One hundred euros.“ Owen de duyduğuna inanamayıp tekrar soruyor.",
+        explain: "„One hundred euros.“ Tutar iki kez geçiyor: Owen emin olmak için tekrar soruyor.",
       },
       {
         kind: "dictation",

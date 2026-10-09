@@ -240,9 +240,9 @@
   "de": "„I'm not feeling well. I can't come to work today.“ — ein Medikament hat er."
  },
  {
-  "tr": "„But I'll call you every week.“ — her gün mesaj atacak olan Liam.",
+  "tr": "„But I'll call you every week.“ — her gün mesaj atacak olan ise Lucy değil, Liam.",
   "kind": "explain",
-  "de": "„But I'll call you every week.“ — jeden Tag schreibt Liam."
+  "de": "„But I'll call you every week.“ — jeden Tag eine Nachricht schickt Liam, nicht Lucy."
  },
  {
   "tr": "„But for bad news I always call.“ — kötü haber mesajla verilmiyor.",
@@ -285,9 +285,9 @@
   "de": "„I didn't win, but it was good.“ — nach „didn't“ steht „win“ in der Grundform."
  },
  {
-  "tr": "„I went to a farm near the mountains.“ — anne babayı ziyaret eden Katie.",
+  "tr": "„I went to a farm near the mountains.“ — anne babasını ziyaret eden ise Liam değil, Katie.",
   "kind": "explain",
-  "de": "„I went to a farm near the mountains.“ — die Eltern besucht Katie."
+  "de": "„I went to a farm near the mountains.“ — ihre Eltern besucht hat Katie, nicht Liam."
  },
  {
   "tr": "„Can I speak to Mr. Adams, please?“ — „speak to“ biriyle konuşmak demek.",

@@ -130,7 +130,7 @@ export const a2U05: SkillExercise[] = [
         text: "Was hat der Autor beim Backen gemacht?",
         options: ["Den Teig gerührt", "Die Suppe gekocht", "Den Kamin angemacht"],
         answer: 0,
-        explain: "„Ich durfte den Teig rühren.“ Çorbayı büyükanne pişiriyordu.",
+        explain: "„Ich durfte den Teig rühren.“ Çorbayı ise yazar değil, büyükanne pişiriyordu; şömineyi de yazın kimse yakmıyordu.",
       },
       {
         kind: "short_answer",

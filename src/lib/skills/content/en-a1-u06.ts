@@ -288,7 +288,7 @@ export const enA1U06: SkillExercise[] = [
         text: "Charlie's brother likes cheese.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„He doesn't like cheese.“ — peyniri yiyen Charlie.",
+        explain: "„He doesn't like cheese.“ — peyniri yiyen ise kardeşi değil, Charlie.",
       },
       {
         kind: "gapfill",

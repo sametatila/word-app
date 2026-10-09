@@ -200,7 +200,7 @@ export const enA1U10: SkillExercise[] = [
         text: "What is Ellie going to do on the weekend?",
         options: ["visit her parents", "work", "walk in the city"],
         answer: 0,
-        explain: "„I'm going to visit my parents.“ — şehirde yürüyen Liam.",
+        explain: "„I'm going to visit my parents.“ — şehirde yürüyecek olan ise Ellie değil, Liam.",
       },
       {
         text: "Why is Ellie's brother not going to come?",

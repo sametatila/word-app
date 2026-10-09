@@ -60,7 +60,7 @@ export const a1U03: SkillExercise[] = [
         text: "Woher kommen die Großeltern?",
         options: ["aus Polen", "aus Bremen", "aus Deutschland"],
         answer: 0,
-        explain: "„Sie kommen aus Polen.“ Bremen Lena'nın oturduğu şehir.",
+        explain: "„Sie kommen aus Polen.“ Bremen ise büyükanneyle büyükbabanın değil, Lena'nın oturduğu şehir.",
       },
       {
         kind: "gapfill",

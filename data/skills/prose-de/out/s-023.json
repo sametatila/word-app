@@ -105,9 +105,9 @@
   "de": "„It is on the first floor.“ — der Keller liegt unten."
  },
  {
-  "tr": "„I can't draw. My hobby is music…“ — çizen Tyler.",
+  "tr": "„I can't draw.“ — çizen ise Katie değil, Tyler.",
   "kind": "explain",
-  "de": "„I can't draw. My hobby is music…“ — wer zeichnet, ist Tyler."
+  "de": "„I can't draw.“ — zeichnen kann Tyler, nicht Katie."
  },
  {
   "tr": "„In a fire: don't take the elevator. Go down the stairs.“",
@@ -145,9 +145,9 @@
   "de": "„I water the plants every morning.“ — „water“ ist hier ein Verb."
  },
  {
-  "tr": "„My sister plays tennis and basketball.“ — futbol Harry'nin.",
+  "tr": "„My sister plays tennis and basketball.“ — futbol ise kız kardeşin değil, Harry'nin sporu.",
   "kind": "explain",
-  "de": "„My sister plays tennis and basketball.“ — Fußball spielt Harry."
+  "de": "„My sister plays tennis and basketball.“ — Fußball ist Harrys Sport, nicht der seiner Schwester."
  },
  {
   "tr": "„I hear the television through the wall.“ — yani adam evde.",
@@ -180,9 +180,9 @@
   "de": "„A party has to end at eleven.“ — auch „has to“ drückt eine Pflicht aus."
  },
  {
-  "tr": "„I enjoy painting. I paint every weekend.“ — müzik ve video Katie'nin.",
+  "tr": "„I enjoy painting. I paint every weekend.“ — müzik ve video ise Tyler'ın değil, Katie'nin hobisi.",
   "kind": "explain",
-  "de": "„I enjoy painting. I paint every weekend.“ — Musik und Videos gehören Katie."
+  "de": "„I enjoy painting. I paint every weekend.“ — Musik und Videos sind Katies Hobbys, nicht Tylers."
  },
  {
   "tr": "„The electricity bill comes every three months.“ — her ay gelen kira.",

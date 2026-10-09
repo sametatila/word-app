@@ -70,7 +70,7 @@ export const a2U03: SkillExercise[] = [
         text: "Was hat Claudia noch nicht gemacht?",
         options: ["Die Zahlen fertig gemacht", "Die Liste durchgegangen", "Das Meeting vorbereitet"],
         answer: 1,
-        explain: "„Die Liste mit den offenen Fragen bin ich noch nicht durchgegangen.“ Rakamları çarşamba bitirmiş.",
+        explain: "„Die Liste mit den offenen Fragen bin ich noch nicht durchgegangen.“ Rakamları ise çarşamba bitirmiş; liste pazartesiye kaldı.",
       },
       {
         kind: "short_answer",

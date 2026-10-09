@@ -46,7 +46,7 @@ export const a1U05: SkillExercise[] = [
         text: "Was ist Nora von Beruf?",
         options: ["Lehrerin", "Verkäuferin", "Ärztin"],
         answer: 0,
-        explain: "„Nora ist Lehrerin.“ Verkäufer olan Jonas'ın kendisi.",
+        explain: "„Nora ist Lehrerin.“ Verkäufer olan ise Nora değil, metni yazan kişi.",
       },
       {
         text: "Richtig oder falsch? Nora und Jonas treffen sich oft.",

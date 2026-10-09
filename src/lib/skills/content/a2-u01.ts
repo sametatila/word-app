@@ -63,7 +63,7 @@ export const a2U01: SkillExercise[] = [
         text: "Was hat Luisa am Dienstag verloren?",
         options: ["Ihren Schlüssel", "Ihre Sonnenbrille", "Ihr Handy"],
         answer: 1,
-        explain: "„Am Dienstag habe ich meine Sonnenbrille verloren.“ Sonra bir çocuk bulmuş.",
+        explain: "„Am Dienstag habe ich meine Sonnenbrille verloren.“ Gözlüğü sonra bir çocuk bulmuş; anahtardan ya da telefondan hiç söz edilmiyor.",
       },
       {
         kind: "short_answer",

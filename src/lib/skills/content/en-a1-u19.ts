@@ -185,7 +185,7 @@ export const enA1U19: SkillExercise[] = [
         text: "What music does Harry prefer?",
         options: ["pop music", "old songs", "piano music"],
         answer: 0,
-        explain: "„I prefer pop music.“ — eski şarkılar Katie'nin.",
+        explain: "„I prefer pop music.“ — eski şarkıları seven ise Harry değil, Katie.",
       },
       {
         text: "What does Katie play?",

@@ -125,7 +125,7 @@ export const a1U15: SkillExercise[] = [
         text: "Wo ist der Ausgang zur Stadt?",
         options: ["hinten links", "gegenüber", "am Bahnsteig 1"],
         answer: 0,
-        explain: "„Der Ausgang zur Stadt ist hinten links.“ Taksiler karşıda.",
+        explain: "„Der Ausgang zur Stadt ist hinten links.“ Karşıda (gegenüber) ise çıkış değil, taksiler var.",
       },
           {
         kind: "gapfill",

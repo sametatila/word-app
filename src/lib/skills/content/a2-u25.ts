@@ -62,7 +62,7 @@ export const a2U25: SkillExercise[] = [
         text: "Was wollte Maria ursprünglich werden?",
         options: ["Programmiererin", "Chirurgin", "Beraterin"],
         answer: 1,
-        explain: "„Ich wollte Chirurgin werden, ehrlich.“ Yazılım işi on yedisinde başlamış.",
+        explain: "„Ich wollte Chirurgin werden, ehrlich.“ Programcılık sonradan geldi: on yedisinde bir web sitesi yapınca başlamış.",
       },
       {
         kind: "gapfill",

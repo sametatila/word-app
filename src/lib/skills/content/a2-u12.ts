@@ -85,7 +85,7 @@ export const a2U12: SkillExercise[] = [
         text: "Frau Klein hält Timos Vorschlag für unmöglich.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "İfade yanlış: „Frau Klein denkt, dass es funktioniert.“ Şüpheli olan Herr Nowak.",
+        explain: "İfade yanlış: „Frau Klein denkt, dass es funktioniert.“ Şüpheli olan ise Frau Klein değil, Herr Nowak.",
       },
     ],
   },

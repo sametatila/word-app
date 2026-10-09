@@ -70,9 +70,9 @@
   "en": "„I am seven years old.“ — seventy-two is the grandma's age."
  },
  {
-  "tr": "„I am twenty-nine years old.“ Kırk yaşında olan Sam.",
+  "tr": "„I am twenty-nine years old.“ Kırk yaşında olan ise Ana değil, Sam.",
   "kind": "explain",
-  "en": "„I am twenty-nine years old.“ Sam is the one who is forty."
+  "en": "„I am twenty-nine years old.“ The one who is forty is Sam, not Ana."
  },
  {
   "tr": "„My birthday is in June.“ — ay adından önce „in“ geliyor.",
@@ -95,9 +95,9 @@
   "en": "„he is one year old“ — because there is only one, „year“ stays singular."
  },
  {
-  "tr": "„One hundred euros.“ Owen de duyduğuna inanamayıp tekrar soruyor.",
+  "tr": "„One hundred euros.“ Tutar iki kez geçiyor: Owen emin olmak için tekrar soruyor.",
   "kind": "explain",
-  "en": "„One hundred euros.“ Owen cannot believe his ears and asks again."
+  "en": "„One hundred euros.“ The amount comes up twice: Owen asks again to be sure."
  },
  {
   "tr": "„I have two sisters and one brother.“ — bir olan erkek kardeş.",
@@ -155,9 +155,9 @@
   "en": "„We are there in May, for my grandma's birthday.“ — the name of the month is capitalized."
  },
  {
-  "tr": "„Her name is Lucy. She is six.“ — bir yaşında olan Aaron'un erkek kardeşi.",
+  "tr": "„Her name is Lucy. She is six.“ — bir yaşında olan ise Mia'nın kızı değil, Aaron'un erkek kardeşi.",
   "kind": "explain",
-  "en": "„Her name is Lucy. She is six.“ — the one-year-old is Aaron's brother."
+  "en": "„Her name is Lucy. She is six.“ — the one who is one year old is Aaron's brother, not Mia's daughter."
  },
  {
   "tr": "„The course is one hundred euros for three months.“ — üç, ayların sayısı.",
@@ -190,9 +190,9 @@
   "en": "First Fiona (a doctor) speaks, then Ben (a singer), last Iona (a coach)."
  },
  {
-  "tr": "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan Ana.",
+  "tr": "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan ise Sam değil, Ana.",
   "kind": "explain",
-  "en": "„I am a doctor. I work in a big hospital.“ — the singer and music teacher is Ana."
+  "en": "„I am a doctor. I work in a big hospital.“ — the singer and music teacher is Ana, not Sam."
  },
  {
   "tr": "„We start on Monday, September 7.“ — bir ay fiyatın süresi, başlangıç günü değil.",
