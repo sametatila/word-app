@@ -4,7 +4,7 @@ import { conversationStepDone } from "@/lib/conversations/chat-const";
 import { db } from "@/lib/db";
 import { practiceWordsOf } from "@/lib/practice-words";
 import { moduleClears, words } from "@/lib/db/schema";
-import { ensureProfile, makeRound, toRoundWord } from "@/lib/session";
+import { attachTypingSynonyms, ensureProfile, makeRound, toRoundWord } from "@/lib/session";
 import { conversationsForLevel } from "./index";
 import { conversationBoard } from "./progress";
 import { MODULE_SIZE, moduleTheme } from "./modules";
@@ -186,6 +186,8 @@ export async function buildModuleBoss(
     const round = makeRound(game, toRoundWord(word, false), distractors, nextId, "solid", native);
     if (round) rounds.push(round);
   }
+  /* Eş anlamlı da doğru (günlük turla aynı kural, QA F-0056). */
+  await attachTypingSynonyms(rounds, course, native);
 
   return { meta, rounds, pool: rows.length };
 }

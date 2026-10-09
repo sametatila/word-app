@@ -19,7 +19,7 @@ import {
 } from "@/lib/conversations/module-content";
 import { courseExams, moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/conversations/module-exam";
 import { localiseExam, localiseExercise } from "@/lib/conversations/native-server";
-import { makeRound, toRoundWord, weekStart , ensureProfile } from "@/lib/session";
+import { attachTypingSynonyms, makeRound, toRoundWord, weekStart , ensureProfile } from "@/lib/session";
 import { seededShuffle } from "@/lib/shuffle";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
 import {
@@ -259,6 +259,8 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
     const r = makeRound(vocab.length % 2 === 0 ? "translate" : "typing", word, pool, nextId, "strong", native) ?? makeRound("typing", word, pool, nextId, "strong", native);
     if (r) vocab.push(r);
   }
+  /* Eş anlamlı da doğru (günlük turla aynı kural, QA F-0056: "affetmek" isteminde verzeihen yanlış sayılıyordu). */
+  await attachTypingSynonyms(vocab, course, native);
 
   // Dilbilgisi kaldırıldı (2026-08): cheatsheet gitti, immersion'da yeniden.
   const grammar: GrammarItem[] = [];

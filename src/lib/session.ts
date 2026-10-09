@@ -873,48 +873,59 @@ export async function buildSession(
 
   const rounds = composeRounds(dueWords, newWords, pool, native, only, skipGames);
 
-  // Yazma turlarında aynı anlama sahip diğer hedef dil kelimeleri de kabul
-  // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak
-  // haksız. Anlam ANADİLDE eşleşiyor — istem kullanıcıya hangi dilde
-  // gösterildiyse o. Ama anadil karşılığının aynı olması tek başına eşanlam
-  // değil: sesteşler de aynı karşılığı taşıyor ("story" = Stockwerk ve
-  // Geschichte, "yüz" = Gesicht ve hundert) ve biri yazılınca öteki doğru
-  // sayılıyordu. Kabul için istemin ALT SATIRINDAKİ karşılık da aynı olmalı:
-  // Türkçe ve Almanca anadilde istemin altında İngilizce duruyor, sesteşi o
-  // ayırıyor. İngilizce anadilde istemin alt satırı YOK (`glossFor` sub null):
-  // Türkçeyi şart koşmak öğrenciyi göremediği bir ayrımla yanlış sayıyordu
-  // ("me" isteminde mir yazan mich beklenirken yanlış alıyordu). Orada ölçüt
-  // yalnız görünen karşılık; sesteşin çaresi karşılığın kendisi (Stockwerk
-  // "floor", Geschichte "story").
-  const typing = rounds.filter((r) => r.game === "typing");
-  if (typing.length) {
-    const col = native === "en" ? words.en : native === "de" ? words.deGloss : words.tr;
-    const keys = [...new Set(typing.map((r) => glossFor(r.word, native)?.text).filter((x): x is string => Boolean(x)))];
-    const synonyms = keys.length
-      ? await db
-          .select({ de: words.de, tr: words.tr, en: words.en, deGloss: words.deGloss, gloss: col })
-          .from(words)
-          .where(and(practiceWordsOf(course), inArray(col, keys)))
-      : [];
-    const second = (w: { tr: string; en: string | null; deGloss?: string | null }) =>
-      native === "en" ? null : native === "de" ? w.en : (w.en ?? w.deGloss ?? null);
-    for (const r of rounds) {
-      if (r.game !== "typing") continue;
-      const key = glossFor(r.word, native)?.text;
-      const own = second(r.word);
-      r.alternatives = synonyms
-        .filter((s) => s.gloss === key && s.de !== r.word.de && second(s) === own)
-        .map((s) => s.de)
-        .slice(0, 6);
-      const other = synonyms
-        .filter((s) => s.gloss === key && s.de !== r.word.de && second(s) !== own)
-        .map((s) => ({ de: s.de, sub: second(s) }))
-        .slice(0, 6);
-      if (other.length) r.sameGloss = other;
-    }
-  }
+  await attachTypingSynonyms(rounds, course, native);
 
   return { rounds, resume: null, meta };
+}
+
+/**
+ * Yazma turlarına eş anlamlıları ekler: `alternatives` (tam kabul) ve `sameGloss` (cezasız "Neredeyse").
+ *
+ * Yazma turlarında aynı anlama sahip diğer hedef dil kelimeleri de kabul
+ * edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak
+ * haksız. Anlam ANADİLDE eşleşiyor — istem kullanıcıya hangi dilde
+ * gösterildiyse o. Ama anadil karşılığının aynı olması tek başına eşanlam
+ * değil: sesteşler de aynı karşılığı taşıyor ("story" = Stockwerk ve
+ * Geschichte, "yüz" = Gesicht ve hundert) ve biri yazılınca öteki doğru
+ * sayılıyordu. Kabul için istemin ALT SATIRINDAKİ karşılık da aynı olmalı:
+ * Türkçe ve Almanca anadilde istemin altında İngilizce duruyor, sesteşi o
+ * ayırıyor. İngilizce anadilde istemin alt satırı YOK (`glossFor` sub null):
+ * Türkçeyi şart koşmak öğrenciyi göremediği bir ayrımla yanlış sayıyordu
+ * ("me" isteminde mir yazan mich beklenirken yanlış alıyordu). Orada ölçüt
+ * yalnız görünen karşılık; sesteşin çaresi karşılığın kendisi (Stockwerk
+ * "floor", Geschichte "story").
+ *
+ * Dışa açık, çünkü yazma turu yalnız günlük turda kurulmuyor: modül sınavı,
+ * seviye sınavı (`lib/exam`) ve modül boss turu (`conversations/boss`) da
+ * `makeRound("typing")` ile kuruyor ve eş anlamlıyı hiç almıyordu. QA F-0056:
+ * Modül 1 sınavında "affetmek" istemine verzeihen yazan "başka bir kelimenin
+ * karşılığı" diye yanlış aldı; aynı istem günlük turda "Neredeyse" derdi.
+ */
+export async function attachTypingSynonyms(rounds: Round[], course: string, native: NativeLang): Promise<void> {
+  const typing = rounds.filter((r): r is Extract<Round, { game: "typing" }> => r.game === "typing");
+  if (!typing.length) return;
+  const col = native === "en" ? words.en : native === "de" ? words.deGloss : words.tr;
+  const keys = [...new Set(typing.map((r) => glossFor(r.word, native)?.text).filter((x): x is string => Boolean(x)))];
+  if (!keys.length) return;
+  const synonyms = await db
+    .select({ de: words.de, tr: words.tr, en: words.en, deGloss: words.deGloss, gloss: col })
+    .from(words)
+    .where(and(practiceWordsOf(course), inArray(col, keys)));
+  const second = (w: { tr: string; en: string | null; deGloss?: string | null }) =>
+    native === "en" ? null : native === "de" ? w.en : (w.en ?? w.deGloss ?? null);
+  for (const r of typing) {
+    const key = glossFor(r.word, native)?.text;
+    const own = second(r.word);
+    r.alternatives = synonyms
+      .filter((s) => s.gloss === key && s.de !== r.word.de && second(s) === own)
+      .map((s) => s.de)
+      .slice(0, 6);
+    const other = synonyms
+      .filter((s) => s.gloss === key && s.de !== r.word.de && second(s) !== own)
+      .map((s) => ({ de: s.de, sub: second(s) }))
+      .slice(0, 6);
+    if (other.length) r.sameGloss = other;
+  }
 }
 
 /**
