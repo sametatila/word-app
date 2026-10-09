@@ -37,7 +37,7 @@ export const deA1P2: SkillExercise[] = [
       "Mittwoch: Wir basteln Lampen aus Papier.\n" +
       "Donnerstag: Kinotag. Die Gruppe wählt den Film zusammen.\n" +
       "Freitag: Grillfest im Garten. Eltern und Geschwister sind auch willkommen.\n\n" +
-      "Alle Tage sind kostenlos. Nur die Fahrradtour kostet drei Euro.\n\n" +
+      "Die Fahrradtour kostet drei Euro. Alle anderen Tage sind kostenlos.\n\n" +
       "Anmeldung bis Freitag im Büro oder am Telefon: 030 44 12 09. " +
       "Das Jugendhaus ist von neun bis achtzehn Uhr offen.",
     questions: [
@@ -58,7 +58,7 @@ export const deA1P2: SkillExercise[] = [
         text: "Nur ein Tag im Programm kostet Geld.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "„Alle Tage sind kostenlos. Nur die Fahrradtour kostet drei Euro.“ — para yalnız bir gün için isteniyor.",
+        explain: "„Die Fahrradtour kostet drei Euro. Alle anderen Tage sind kostenlos.“ — para yalnız bir gün için isteniyor.",
       },
       {
         kind: "gapfill",
