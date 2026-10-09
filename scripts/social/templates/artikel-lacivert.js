@@ -12,10 +12,15 @@
     rules    zorunlu  tam 2 kural: [{ label: "-heit · -keit", sfx: ["heit", "keit"], artikel: "die" }, …]
     caption  zorunlu  paylaşım metni + etiketler
     outro    zorunlu  { series, ask }
-    pill     isteğe bağlı  kancadaki hap (varsayılan "Kartı doğru kutuya at")
-    endKicker isteğe bağlı  son ekran başlığı (varsayılan "Aklında kalsın")
+    pill     isteğe bağlı  kancadaki hap (yoksa ui.pill)
+    endKicker isteğe bağlı  son ekran başlığı (yoksa ui.endKicker)
+  ui (sabit yazılar, copy.ui ile ezilir):
+    pill       "Kartı doğru kutuya at"   kancadaki hap (copy.pill yoksa)
+    soru       "Hangi kutuya?"           her turda kartın altındaki soru
+    endKicker  "Aklında kalsın"          son ekran başlığı (copy.endKicker yoksa)
+    der / die / das                      kutu etiketleri
 */
-E.register("artikel-lacivert", { title: "İki ek kuralı · kutuya at", approach: "artikel", theme: "lacivert" }, (X) => {
+E.register("artikel-lacivert", { title: "İki ek kuralı · kutuya at", approach: "artikel", theme: "lacivert", ui: { pill: "Kartı doğru kutuya at", soru: "Hangi kutuya?", endKicker: "Aklında kalsın", der: "der", die: "die", das: "das" } }, (X) => {
   const { h, set, p, ease, segments } = E;
   const D = X.data;
   const C = D.copy || {};
@@ -113,9 +118,9 @@ E.register("artikel-lacivert", { title: "İki ek kuralı · kutuya at", approach
       el.g2 = h("div", "glow", root);
       el.segs = segments(root, D.items.length);
       el.hook = E.hook(root, [{ t: C.hook[0], size: 112 }, { t: C.hook[1], size: 112, color: T.acc, delay: 0.45 }], { center: 600 });
-      el.pill = h("div", "pill", root, C.pill || "Kartı doğru kutuya at");
+      el.pill = h("div", "pill", root, C.pill || X.ui("pill"));
       el.bins = ARTS.map((a, k) => {
-        const b = h("div", "bin", root, `<i class="bar" style="background:${COL[a]}"></i><b style="color:${COL[a]}">${a}</b><div class="got"></div>`);
+        const b = h("div", "bin", root, `<i class="bar" style="background:${COL[a]}"></i><b style="color:${COL[a]}">${X.ui(a)}</b><div class="got"></div>`);
         b.style.left = `${binX(k)}px`;
         return { a, b, got: b.querySelector(".got"), chips: [] };
       });
@@ -129,14 +134,14 @@ E.register("artikel-lacivert", { title: "İki ek kuralı · kutuya at", approach
         r.sx = r.wd.querySelector(".sx");
         r.tr = h("div", "tr", r.card, it.tr);
         r.fuse = h("div", "fuse", r.card, "<i></i>").firstChild;
-        r.ask = h("div", "ask", root, "Hangi kutuya?");
+        r.ask = h("div", "ask", root, X.ui("soru"));
         r.rule = h("div", "rule", root, `<span>${ruleFor(it).label}</span><span>→</span><span>${it.artikel}</span>`);
         r.rule.style.background = COL[it.artikel];
         const bin = el.bins[r.k];
         r.chip = h("span", null, bin.got, `${it.de}`);
         return r;
       });
-      el.e1 = h("div", "e1", root, C.endKicker || "Aklında kalsın");
+      el.e1 = h("div", "e1", root, C.endKicker || X.ui("endKicker"));
       const byRule = C.rules.map((r) => ({ k: r.label, a: r.artikel, ex: D.items.filter((x) => r.sfx.includes(x.sfx)) }));
       el.rcs = byRule.map((g, i) => {
         const c = h("div", "rc", root, `<div class="k"><span>${g.k}</span><i>→</i><span style="color:${COL[g.a]}">${g.a}</span></div><div class="ex">${g.ex.map((x) => `<span>${x.artikel} ${x.de}</span>`).join("")}</div>`);

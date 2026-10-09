@@ -13,8 +13,14 @@
     runningHead    sayfanın üst başlığı, büyük harf (ör. "RESMÎ İŞLER")
     summaryKicker  kapanışın küçük üst satırı (ör. "Kaydet, dairede lazım olacak")
     summaryTitle   kapanış başlığı (ör. "5 kelimelik mini sözlük")
+  ui anahtarları (sabit yazılar, copy.ui ile ezilir; sözlük satırı words.json typ/formen'den bunlarla kurulur):
+    typeNoun       Nomen kelime türü ("isim")
+    typeVerb       Verb kelime türü ("fiil"); başka türler verideki adıyla yazılır
+    pluralSuffix   çoğul eki, {ek} = formen'deki ek ("çoğul {ek}" → "çoğul -en")
+    pluralOnly     yalnız çoğul kullanılan isim ("yalnız çoğul")
+    pluralNone     çoğulu olmayan isim ("çoğulu yok")
 */
-E.register("kelime-kagit", { title: "Kelime destesi · küçük sözlük", approach: "kelime", theme: "kagit" }, (X) => {
+E.register("kelime-kagit", { title: "Kelime destesi · küçük sözlük", approach: "kelime", theme: "kagit", ui: { typeNoun: "isim", typeVerb: "fiil", pluralSuffix: "çoğul {ek}", pluralOnly: "yalnız çoğul", pluralNone: "çoğulu yok" } }, (X) => {
   const { h, set, p, ease, words, karaoke, segments } = E;
   const D = X.data;
   const C = D.copy;
@@ -42,13 +48,13 @@ E.register("kelime-kagit", { title: "Kelime destesi · küçük sözlük", appro
   let DUR = 0;
   let el = {};
   const lab = (w) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
-  const TYP = { Nomen: "isim", Verb: "fiil" };
+  const TYP = { Nomen: X.ui("typeNoun"), Verb: X.ui("typeVerb") };
   /** words.json `formen` → sözlük satırı (yalnız verideki bilgi). */
   const plural = (f) => {
     if (!f) return "";
-    if (f === "(Pl.)") return "yalnız çoğul";
-    if (f === "(Sg.)") return "çoğulu yok";
-    return `çoğul ${f.replace(/^die /, "")}`;
+    if (f === "(Pl.)") return X.ui("pluralOnly");
+    if (f === "(Sg.)") return X.ui("pluralNone");
+    return X.ui("pluralSuffix", { ek: f.replace(/^die /, "") });
   };
 
   return {

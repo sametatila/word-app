@@ -14,9 +14,10 @@
              them (karşı tarafın balon etiketi, ör. "Sekreter"),
              endTitle (kapanış başlığı, ör. "Kaydet, lazım olacak."),
              options (kapanışta 1–3 seçenek hapı: sıradaki konu)
-    isteğe bağlı: me (senin balon etiketin, varsayılan "Sen"); scenes.<sahne>.me / .them (o sahnede etiket, ör. "Sen, iş yerine")
+    isteğe bağlı: me (senin balon etiketin; yoksa ui.me); scenes.<sahne>.me / .them (o sahnede etiket, ör. "Sen, iş yerine")
+  sabit yazılar (copy.ui ile ezilir): me "Sen" (balon etiketi, copy.me / scenes.<sahne>.me yoksa), sayNow "Şimdi sen söyle"
 */
-E.register("diyalog-kagit", { title: "Sahneli diyalog", approach: "diyalog", theme: "kagit" }, (X) => {
+E.register("diyalog-kagit", { title: "Sahneli diyalog", approach: "diyalog", theme: "kagit", ui: { me: "Sen", sayNow: "Şimdi sen söyle" } }, (X) => {
   const { h, set, p, ease, words, wordsIn, karaoke, segments } = E;
   const D = X.data;
   const C = D.copy;
@@ -38,7 +39,7 @@ E.register("diyalog-kagit", { title: "Sahneli diyalog", approach: "diyalog", the
   };
   const icon = (k, c = "currentColor") => `<svg viewBox="0 0 24 24"><path d="${SVG[k]}" fill="${c}"/></svg>`;
   const sceneIcon = (k) => (SVG[C.scenes[k].icon] ? C.scenes[k].icon : "phone");
-  const WHO = (l) => (l.who === "me" ? C.scenes[l.scene].me || C.me || "Sen" : C.scenes[l.scene].them || C.them);
+  const WHO = (l) => (l.who === "me" ? C.scenes[l.scene].me || C.me || X.ui("me") : C.scenes[l.scene].them || C.them);
   const SCENES = [...new Set(D.lines.map((l) => l.scene))]; // satır sırasıyla
 
   const HOOK = 2.6;
@@ -177,7 +178,7 @@ E.register("diyalog-kagit", { title: "Sahneli diyalog", approach: "diyalog", the
         const key = h("span", "key", b, `<b>${l.keyDe}</b> = ${l.keyTr}`);
         return { l, b, sp, tr, key, r: T[i] };
       });
-      el.mic = h("div", "mic", root, `<div class="rg"></div><div class="rg"></div><div class="disc">${icon("mic")}</div><span>Şimdi sen söyle</span><div class="bar"><i></i></div>`);
+      el.mic = h("div", "mic", root, `<div class="rg"></div><div class="rg"></div><div class="disc">${icon("mic")}</div><span>${X.ui("sayNow")}</span><div class="bar"><i></i></div>`);
       el.rg = [...el.mic.querySelectorAll(".rg")];
       el.bar = el.mic.querySelector(".bar i");
       // kapanış

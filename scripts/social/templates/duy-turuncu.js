@@ -7,6 +7,7 @@
   copy anahtarları (hepsi zorunlu): title, hook [2 satır: beyaz, koyu], recap (kapanış özet başlığı),
   caption, outro { series, ask }.
   Tur: 3–5 (rounds). Arayüz (A/B etiketleri, düğme, ok) şablonda.
+  ui: yok (ekrandaki yazıların hepsi bölümden; A/B tek harf).
 */
 E.register("duy-turuncu", { title: "Bunlar aynı değil", approach: "duy", theme: "turuncu" }, (X) => {
   const { h, set, p, ease, words, wordsIn, segments } = E;

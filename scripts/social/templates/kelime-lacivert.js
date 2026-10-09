@@ -13,8 +13,10 @@
     cardLabel      kartın sol üst etiketi, büyük harf (ör. "ANZEIGE")
     summaryKicker  kapanışın küçük üst satırı (ör. "Kaydet, ev bakarken lazım olacak")
     summaryTitle   kapanış başlığı (ör. "İlandaki 5 kelime")
+  ui anahtarları (sabit yazılar, copy.ui ile ezilir):
+    ask            düşünme çubuğunun sorusu ("Ne demek?")
 */
-E.register("kelime-lacivert", { title: "Kelime destesi · ilan kartı", approach: "kelime", theme: "lacivert" }, (X) => {
+E.register("kelime-lacivert", { title: "Kelime destesi · ilan kartı", approach: "kelime", theme: "lacivert", ui: { ask: "Ne demek?" } }, (X) => {
   const { h, set, p, ease, words, karaoke, segments } = E;
   const D = X.data;
   const C = D.copy;
@@ -133,7 +135,7 @@ E.register("kelime-lacivert", { title: "Kelime destesi · ilan kartı", approach
       });
       el.exs = D.items.map((w) => {
         const x = h("div", "ex", root);
-        const ask = h("span", "ask", x, "Ne demek?");
+        const ask = h("span", "ask", x, X.ui("ask"));
         const tb = h("span", "tb", x, "<i></i>").firstChild;
         const mean = h("span", "mean", x, w.tr);
         const sent = h("span", "sent", x);

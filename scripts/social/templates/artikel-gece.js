@@ -12,10 +12,15 @@
     rule     zorunlu  son turdaki kural kartı (HTML; <b> vurgu, <br> satır sonu)
     caption  zorunlu  paylaşım metni + etiketler
     outro    zorunlu  { series, ask }
-    pill     isteğe bağlı  kancadaki hap (varsayılan "3 saniyen var")
-    endTitle isteğe bağlı  özet başlığı (varsayılan "İşte cevaplar")
+    pill     isteğe bağlı  kancadaki hap (yoksa ui.pill)
+    endTitle isteğe bağlı  özet başlığı (yoksa ui.endTitle)
+  ui (sabit yazılar, copy.ui ile ezilir):
+    pill      "3 saniyen var"   kancadaki hap (copy.pill yoksa)
+    tuzak     "TUZAK SORU"      4. turun etiketi
+    endTitle  "İşte cevaplar"   özet başlığı (copy.endTitle yoksa)
+    der / die / das             şık çipleri
 */
-E.register("artikel-gece", { title: "Artikel tahmini · simgeli tabak", approach: "artikel", theme: "gece" }, (X) => {
+E.register("artikel-gece", { title: "Artikel tahmini · simgeli tabak", approach: "artikel", theme: "gece", ui: { pill: "3 saniyen var", tuzak: "TUZAK SORU", endTitle: "İşte cevaplar", der: "der", die: "die", das: "das" } }, (X) => {
   const { h, set, p, lerp, ease, words, wordsIn, segments } = E;
   const D = X.data;
   const C = D.copy || {};
@@ -122,10 +127,10 @@ E.register("artikel-gece", { title: "Artikel tahmini · simgeli tabak", approach
         x.style.left = `${G.CX - 85 + (i - (all.length - 1) / 2) * 250}px`;
         return x;
       });
-      el.pill = h("div", "pill", root, C.pill || "3 saniyen var");
+      el.pill = h("div", "pill", root, C.pill || X.ui("pill"));
       rounds = D.items.map((it, i) => {
         const r = { it, root: h("div", "rd", root) };
-        r.tag = h("div", "tag", r.root, i === 3 ? "TUZAK SORU" : `${i + 1} / 4`);
+        r.tag = h("div", "tag", r.root, i === 3 ? X.ui("tuzak") : `${i + 1} / 4`);
         r.tag.style.background = i === 3 ? COL.die : "rgba(255,255,255,.1)";
         r.plate = h("div", "plate", r.root);
         r.ic = it.icon ? h("div", "ic", r.plate, ICON[it.icon]) : h("div", "q", r.plate, "?");
@@ -136,7 +141,7 @@ E.register("artikel-gece", { title: "Artikel tahmini · simgeli tabak", approach
         r.wd = h("div", "wd", r.root, it.de);
         r.tr = h("div", "tr", r.root, it.tr);
         r.chip = ["der", "die", "das"].map((a, k) => {
-          const c = h("div", "chip", r.root, a);
+          const c = h("div", "chip", r.root, X.ui(a));
           c.style.left = `${G.CX - 120 + (k - 1) * 264}px`;
           return c;
         });
@@ -144,7 +149,7 @@ E.register("artikel-gece", { title: "Artikel tahmini · simgeli tabak", approach
         return r;
       });
       el.end1 = h("div", "end1 flow", root);
-      el.ew = words(el.end1, C.endTitle || "İşte cevaplar");
+      el.ew = words(el.end1, C.endTitle || X.ui("endTitle"));
       el.recap = D.items.map((it, i) => {
         const x = h("div", "recap", root, `<i style="color:${COL[it.artikel]}">${it.artikel}</i><span>${it.de}</span><small>${it.tr}</small>`);
         x.style.top = `${500 + i * 136}px`;

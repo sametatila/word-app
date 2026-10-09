@@ -13,9 +13,12 @@
     rule     zorunlu  { kicker, text, examples }: kural kartının üst satırı, ana metni (HTML; <i> vurgu, <br>), örnekler
     caption  zorunlu  paylaşım metni + etiketler
     outro    zorunlu  { series, ask }
-    endKicker isteğe bağlı  formülün üstündeki küçük başlık (varsayılan "Kural")
+    endKicker isteğe bağlı  formülün üstündeki küçük başlık (yoksa ui.endKicker)
+  ui (sabit yazılar, copy.ui ile ezilir):
+    endKicker  "Kural"   formülün üstündeki küçük başlık (copy.endKicker yoksa)
+    der / die / das      anket şıkları
 */
-E.register("artikel-kagit", { title: "Ortak ek kuralı · anket", approach: "artikel", theme: "kagit" }, (X) => {
+E.register("artikel-kagit", { title: "Ortak ek kuralı · anket", approach: "artikel", theme: "kagit", ui: { endKicker: "Kural", der: "der", die: "die", das: "das" } }, (X) => {
   const { h, set, p, ease, segments } = E;
   const D = X.data;
   const C = D.copy || {};
@@ -119,14 +122,14 @@ E.register("artikel-kagit", { title: "Ortak ek kuralı · anket", approach: "art
         r.sfx = r.wd.querySelector(".sfx");
         r.tr = h("div", "tr", r.card, it.tr);
         r.opts = ["der", "die", "das"].map((a, k) => {
-          const o = h("div", "opt", r.root, `<div class="fill"></div><b>${a}</b><em>✓</em>`);
+          const o = h("div", "opt", r.root, `<div class="fill"></div><b>${X.ui(a)}</b><em>✓</em>`);
           o.style.top = `${828 + k * 152}px`;
           return { a, o, fill: o.querySelector(".fill"), b: o.querySelector("b"), em: o.querySelector("em") };
         });
         if (i === 3) r.rule = h("div", "rule", r.root, `<small>${C.rule.kicker}</small><b>${C.rule.text}</b><span>${C.rule.examples}</span>`);
         return r;
       });
-      el.e1 = h("div", "e1", root, C.endKicker || "Kural");
+      el.e1 = h("div", "e1", root, C.endKicker || X.ui("endKicker"));
       el.e2 = h("div", "e2", root, `-${C.suffix} = <i>${ART}</i>`);
       el.chips = h("div", "chips", root, D.items.map((it) => `<span><i>${it.artikel}</i>${it.de}</span>`).join(""));
       el.chipEls = [...el.chips.children];

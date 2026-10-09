@@ -10,8 +10,18 @@
              callee (ekrandaki aranan adı, ör. "Ev sahibi"), calleeTag (konuşan etiketi, büyük harf, ör. "EV SAHİBİ"),
              endTitle (kapanış başlığı, ör. "3 cümlede hallettin.")
     isteğe bağlı: avatar ("home" | "person" | "clinic" | "work" | "shop", varsayılan "person")
+  sabit yazılar (copy.ui ile ezilir): calling "Aranıyor…", ended "Arama bitti", endedTime "Arama bitti · {sure}"
+    (sure: "00:18"), sayNow "Şimdi sen söyle", me "SEN", meAlt "SEN · YA DA"
 */
-E.register("diyalog-gece", { title: "Telefon araması", approach: "diyalog", theme: "gece" }, (X) => {
+E.register(
+  "diyalog-gece",
+  {
+    title: "Telefon araması",
+    approach: "diyalog",
+    theme: "gece",
+    ui: { calling: "Aranıyor…", ended: "Arama bitti", endedTime: "Arama bitti · {sure}", sayNow: "Şimdi sen söyle", me: "SEN", meAlt: "SEN · YA DA" },
+  },
+  (X) => {
   const { h, set, p, ease, words, karaoke } = E;
   const D = X.data;
   const C = D.copy;
@@ -124,7 +134,7 @@ E.register("diyalog-gece", { title: "Telefon araması", approach: "diyalog", the
       el.rips = [h("div", "rip", el.call), h("div", "rip", el.call)];
       el.av = h("div", "av", el.call, icon(SVG[C.avatar] ? C.avatar : "person", OR));
       el.nm = h("div", "nm", el.call, C.callee);
-      el.st = h("div", "st", el.call, "Aranıyor…");
+      el.st = h("div", "st", el.call, X.ui("calling"));
       el.wave = h("div", "wave", el.call);
       el.bars = Array.from({ length: 30 }, () => h("i", null, el.wave));
       el.who = h("div", "who", el.call);
@@ -136,7 +146,7 @@ E.register("diyalog-gece", { title: "Telefon araması", approach: "diyalog", the
         const key = h("span", "key", s, `<b>${l.keyDe}</b> = ${l.keyTr}`);
         return { s, sp, tr, key };
       });
-      el.rep = h("div", "rep", el.call, `${icon("mic", OR)}<span>Şimdi sen söyle</span><i class="bar"></i>`);
+      el.rep = h("div", "rep", el.call, `${icon("mic", OR)}<span>${X.ui("sayNow")}</span><i class="bar"></i>`);
       el.repBar = el.rep.querySelector(".bar");
       el.ctl = h("div", "ctl", el.call, `<div>${icon("mic")}</div><div>${icon("spk")}</div><div class="end">${icon("end")}</div>`);
       el.endBtn = el.ctl.querySelector(".end");
@@ -167,11 +177,11 @@ E.register("diyalog-gece", { title: "Telefon araması", approach: "diyalog", the
         set(r, { o: t < CONNECT && t > HOOK ? (1 - ph) * 0.7 : 0, s: 1 + ph * 0.7 });
       });
       set(el.av, { s: t < CONNECT ? 1 + Math.sin(t * 9) * 0.02 : 1 });
-      if (t < CONNECT) el.st.textContent = "Aranıyor…";
+      if (t < CONNECT) el.st.textContent = X.ui("calling");
       else if (t < END - 0.25) {
         const s = Math.floor(t - CONNECT);
         el.st.textContent = `00:${String(s).padStart(2, "0")}`;
-      } else el.st.textContent = "Arama bitti";
+      } else el.st.textContent = X.ui("ended");
 
       const li = L.findIndex((r, i) => t >= r.a && t < (L[i + 1]?.a ?? END));
       const l = li >= 0 ? D.lines[li] : null;
@@ -184,7 +194,7 @@ E.register("diyalog-gece", { title: "Telefon araması", approach: "diyalog", the
         b.style.background = talking ? (l.who === "me" ? OR : "#fff") : "rgba(255,255,255,.25)";
       });
       if (l) {
-        el.who.textContent = l.who === "me" ? (l.alt ? "SEN · YA DA" : "SEN") : C.calleeTag;
+        el.who.textContent = l.who === "me" ? X.ui(l.alt ? "meAlt" : "me") : C.calleeTag;
         el.who.style.background = l.who === "me" ? OR : "#fff";
         el.who.style.color = "#141416";
       }
@@ -221,7 +231,7 @@ E.register("diyalog-gece", { title: "Telefon araması", approach: "diyalog", the
 
       {
         const s = Math.floor(END - 0.25 - CONNECT);
-        el.e1.textContent = `Arama bitti · 00:${String(s).padStart(2, "0")}`;
+        el.e1.textContent = X.ui("endedTime", { sure: `00:${String(s).padStart(2, "0")}` });
         set(el.e1, { o: p(t, END + 0.3, 0.4) });
         const k = p(t, END + 0.35, 0.55);
         set(el.e2, { o: ease.outCubic(k * 2), y: (1 - ease.spring(k)) * 60 });

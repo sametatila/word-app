@@ -6,9 +6,17 @@
   çalınıyor → özet + standart kapanış.
   copy anahtarları (hepsi zorunlu): title, hook [2 satır: büyük beyaz, küçük turuncu], recap (kapanış özet
   başlığı), caption, outro { series, ask }.
-  Tur: 3–5 (rounds). Arayüz metinleri (ekran yazıları "dinle…", "A mı, B mi?", "Şimdi öbür istasyon") şablonda.
+  Tur: 3–5 (rounds).
+  ui (sabit yazılar; bölüm copy.ui ile ezer): listen "dinle…" ve ask "A mı, B mi?" (ekranın büyük yazısı),
+  hint "Şimdi öbür istasyon", station "FM {f}  ·  {n}/{total}" (tur sırasında ekranın üst satırı; f iğnenin
+  frekansı), stationIdle "FM {f}" (turlar dışında, f = 98.0).
 */
-E.register("duy-lacivert", { title: "Frekansı yakala", approach: "duy", theme: "lacivert" }, (X) => {
+E.register("duy-lacivert", {
+  title: "Frekansı yakala",
+  approach: "duy",
+  theme: "lacivert",
+  ui: { listen: "dinle…", ask: "A mı, B mi?", hint: "Şimdi öbür istasyon", station: "FM {f}  ·  {n}/{total}", stationIdle: "FM {f}" },
+}, (X) => {
   const { h, set, p, lerp, ease, words, wordsIn, segments } = E;
   const D = X.data;
   // copy: bölüm dosyasından gelen ekran metinleri (sözleşme başlıktaki yorumda)
@@ -141,7 +149,7 @@ E.register("duy-lacivert", { title: "Frekansı yakala", approach: "duy", theme: 
           return { c, ab: c.querySelector(".ab"), wb: c.querySelector(".wbox b"), tr: c.querySelector(".tr") };
         }),
       }));
-      el.hint = h("div", "hint", root, "Şimdi öbür istasyon");
+      el.hint = h("div", "hint", root, X.ui("hint"));
       el.e1 = h("div", "e1 flow", root);
       el.ew = words(el.e1, C.recap);
       el.rows = D.rounds.map((r, i) => {
@@ -198,14 +206,14 @@ E.register("duy-lacivert", { title: "Frekansı yakala", approach: "duy", theme: 
         const o = el.rounds[ri];
         const tgt = o.r.play ? o.r.b : o.r.a;
         const oth = o.r.play ? o.r.a : o.r.b;
-        el.fm.textContent = `FM ${(88 + ((nx - DL) / (DR - DL)) * 20).toFixed(1)}  ·  ${ri + 1}/${R.length}`;
-        const txt = t < cur.think ? "dinle…" : t < cur.rev ? "A mı, B mi?" : t < cur.v2 - 0.45 ? `${tgt.de} = ${tgt.tr}` : `${oth.de} = ${oth.tr}`;
+        el.fm.textContent = X.ui("station", { f: (88 + ((nx - DL) / (DR - DL)) * 20).toFixed(1), n: ri + 1, total: R.length });
+        const txt = t < cur.think ? X.ui("listen") : t < cur.rev ? X.ui("ask") : t < cur.v2 - 0.45 ? `${tgt.de} = ${tgt.tr}` : `${oth.de} = ${oth.tr}`;
         if (el.big.textContent !== txt) el.big.textContent = txt;
         const w = el.big.scrollWidth;
         el.big.style.transform = w > G.W - 152 ? `scale(${((G.W - 152) / w).toFixed(3)})` : "none";
         el.big.style.transformOrigin = "0 50%";
       } else {
-        el.fm.textContent = "FM 98.0";
+        el.fm.textContent = X.ui("stationIdle", { f: "98.0" });
         el.big.textContent = "…";
         el.big.style.transform = "none";
       }

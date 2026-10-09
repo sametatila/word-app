@@ -10,9 +10,19 @@
              them (karşı tarafın fiş etiketi, büyük harf, ör. "KASİYER"),
              receiptNo (fişin üst satırı, ör. "KASSE 3"), receiptTitle (fiş başlığı, ör. "Markette kasada"),
              saveLine (paneldeki üst satır, ör. "Kaydet, kasada işine yarar."), endTitle (panel başlığı, ör. "Bugünün 4 kelimesi")
-    isteğe bağlı: thanks (fişin son satırı, varsayılan "DANKE · TEŞEKKÜRLER")
+    isteğe bağlı: thanks (fişin son satırı; yoksa ui.thanks)
+  sabit yazılar (copy.ui ile ezilir): me "SEN", meAlt "SEN · YA DA", sayNow "şimdi sen söyle", total "TOPLAM",
+    totalCount "{n} cümle", thanks "DANKE · TEŞEKKÜRLER"
 */
-E.register("diyalog-turuncu", { title: "Fişe basılan diyalog", approach: "diyalog", theme: "turuncu" }, (X) => {
+E.register(
+  "diyalog-turuncu",
+  {
+    title: "Fişe basılan diyalog",
+    approach: "diyalog",
+    theme: "turuncu",
+    ui: { me: "SEN", meAlt: "SEN · YA DA", sayNow: "şimdi sen söyle", total: "TOPLAM", totalCount: "{n} cümle", thanks: "DANKE · TEŞEKKÜRLER" },
+  },
+  (X) => {
   const { h, set, p, ease, words, karaoke, segments } = E;
   const D = X.data;
   const T = X.theme;
@@ -24,7 +34,7 @@ E.register("diyalog-turuncu", { title: "Fişe basılan diyalog", approach: "diya
   const C = D.copy;
   for (const k of ["title", "hook", "caption", "outro", "them", "receiptNo", "receiptTitle", "saveLine", "endTitle"]) if (C?.[k] == null) throw new Error(`diyalog-turuncu: copy.${k} eksik`);
   if (!Array.isArray(C.hook) || C.hook.length !== 2) throw new Error("diyalog-turuncu: copy.hook tam 2 satır olmalı");
-  const WHO = (l) => (l.who === "me" ? (l.alt ? "SEN · YA DA" : "SEN") : C.them);
+  const WHO = (l) => (l.who === "me" ? X.ui(l.alt ? "meAlt" : "me") : C.them);
   let L = [];
   let END = 0;
   let DUR = 0;
@@ -116,7 +126,7 @@ E.register("diyalog-turuncu", { title: "Fişe basılan diyalog", approach: "diya
       el.head = h("div", "blk", inner, `<div class="hd">${C.receiptNo}</div><div class="ttl">${C.receiptTitle}</div><div class="dash"></div>`);
       el.blocks = D.lines.map((l, i) => {
         const b = h("div", "blk", inner);
-        const lab = h("div", "lab", b, `<span>${WHO(l)}</span>${l.who === "me" ? `<span class="say"><i class="dot"></i>şimdi sen söyle</span>` : ""}`);
+        const lab = h("div", "lab", b, `<span>${WHO(l)}</span>${l.who === "me" ? `<span class="say"><i class="dot"></i>${X.ui("sayNow")}</span>` : ""}`);
         const de = h("span", "de", b);
         const sp = words(de, l.de);
         const tr = h("span", "trl", b, l.tr);
@@ -124,7 +134,7 @@ E.register("diyalog-turuncu", { title: "Fişe basılan diyalog", approach: "diya
         if (i < D.lines.length - 1) h("div", "dash", b);
         return { b, sp, tr, item, say: lab.querySelector(".say"), dot: lab.querySelector(".dot") };
       });
-      el.tail = h("div", "blk", inner, `<div class="dash"></div><div class="tot"><b>TOPLAM</b><i></i><span>${D.lines.length} cümle</span></div><div class="bye">${C.thanks || "DANKE · TEŞEKKÜRLER"}</div>`);
+      el.tail = h("div", "blk", inner, `<div class="dash"></div><div class="tot"><b>${X.ui("total")}</b><i></i><span>${X.ui("totalCount", { n: D.lines.length })}</span></div><div class="bye">${C.thanks || X.ui("thanks")}</div>`);
       el.zig = h("div", "zig", el.clip);
       el.slot = h("div", "slot", root);
       el.panel = E.panel(root);

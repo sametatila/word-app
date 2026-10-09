@@ -10,16 +10,26 @@
     zorunlu: title, hook (tam 2 satır: 1. büyük, 2. küçük turuncu), caption, outro { series, ask },
              board { time, dest, track } (tabelanın üst satırı, ör. "14:32", "KÖLN", " 3"; uzunsa hücreler küçülür),
              them (anons etiketi, büyük harf, ör. "ANONS"), recapTitle (özet üst satırı), endTitle (özet başlığı)
-    isteğe bağlı: boardLabels (4 alan adı, varsayılan ["ZEIT", "ZIEL", "GLEIS", "HINWEIS"])
+    isteğe bağlı: boardLabels (4 alan adı; yoksa ui.labelTime/labelDest/labelTrack/labelNote)
+  sabit yazılar (copy.ui ile ezilir): labelTime "ZEIT", labelDest "ZIEL", labelTrack "GLEIS", labelNote "HINWEIS"
+    (tabela alan adları), sayNow "Şimdi sen söyle", me "SEN" (canlı etiket)
 */
-E.register("diyalog-lacivert", { title: "Anons panosu", approach: "diyalog", theme: "lacivert" }, (X) => {
+E.register(
+  "diyalog-lacivert",
+  {
+    title: "Anons panosu",
+    approach: "diyalog",
+    theme: "lacivert",
+    ui: { labelTime: "ZEIT", labelDest: "ZIEL", labelTrack: "GLEIS", labelNote: "HINWEIS", sayNow: "Şimdi sen söyle", me: "SEN" },
+  },
+  (X) => {
   const { h, set, p, ease, words, karaoke, segments } = E;
   const D = X.data;
   const C = D.copy;
   for (const k of ["title", "hook", "caption", "outro", "board", "them", "recapTitle", "endTitle"]) if (C?.[k] == null) throw new Error(`diyalog-lacivert: copy.${k} eksik`);
   if (!Array.isArray(C.hook) || C.hook.length !== 2) throw new Error("diyalog-lacivert: copy.hook tam 2 satır olmalı");
   for (const k of ["time", "dest", "track"]) if (typeof C.board[k] !== "string") throw new Error(`diyalog-lacivert: copy.board.${k} eksik`);
-  const LAB = C.boardLabels || ["ZEIT", "ZIEL", "GLEIS", "HINWEIS"];
+  const LAB = C.boardLabels || [X.ui("labelTime"), X.ui("labelDest"), X.ui("labelTrack"), X.ui("labelNote")];
   const T = X.theme;
   const G = E.G;
   const MONO = '"DM Mono", ui-monospace, Menlo, monospace';
@@ -181,7 +191,7 @@ E.register("diyalog-lacivert", { title: "Anons panosu", approach: "diyalog", the
         return { s, sp, tr, key };
       });
       const mic = `<svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 003-3V5a3 3 0 00-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.9V21h2v-3.1A7 7 0 0019 11z" fill="${T.acc}"/></svg>`;
-      el.rep = h("div", "rep", root, `${mic}<span>Şimdi sen söyle</span><i class="bar"></i>`);
+      el.rep = h("div", "rep", root, `${mic}<span>${X.ui("sayNow")}</span><i class="bar"></i>`);
       el.repBar = el.rep.querySelector(".bar");
       el.e1 = h("div", "e1", root, C.recapTitle);
       el.e2 = h("div", "e2", root, `<span>${C.endTitle}</span>`);
@@ -240,7 +250,7 @@ E.register("diyalog-lacivert", { title: "Anons panosu", approach: "diyalog", the
         const r = L[li];
         const talking = t >= r.v && t < r.v + r.d;
         const wave = [0, 1, 2].map((k) => `<path d="M${14 + k * 3.2} ${8 - k * 2.2}a${6 + k * 3} ${6 + k * 3} 0 010 ${8 + k * 4.4}" stroke="${T.bg}" stroke-width="2" fill="none" opacity="${talking ? (0.35 + 0.65 * Math.abs(Math.sin(t * 7 - k))).toFixed(2) : 0.35}"/>`).join("");
-        const html = l.who === "me" ? `<span>SEN</span>` : `<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z" fill="${T.bg}"/>${wave}</svg><span>${C.them}</span>`;
+        const html = l.who === "me" ? `<span>${X.ui("me")}</span>` : `<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z" fill="${T.bg}"/>${wave}</svg><span>${C.them}</span>`;
         if (el.live.dataset.k !== `${li}-${talking ? Math.floor(t * 12) : "s"}`) {
           el.live.innerHTML = html;
           el.live.dataset.k = `${li}-${talking ? Math.floor(t * 12) : "s"}`;

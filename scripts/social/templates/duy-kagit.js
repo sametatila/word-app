@@ -5,9 +5,17 @@
   yanlış söner, Türkçeler kartın dibinde → kartlar kayarak değişir → özet + standart kapanış.
   copy anahtarları (hepsi zorunlu): title, hook [2 satır: siyah, turuncu], pill (kancanın altındaki koyu hap),
   recap (kapanış özet başlığı), caption, outro { series, ask }.
-  Tur: 3–5 (rounds). Arayüz metinleri ("Dinle", "A mı, B mi?", "Cevap: …", "Bir de …'yı dinle") şablonda.
+  Tur: 3–5 (rounds).
+  ui (sabit yazılar, hoparlör altındaki durum yazısı; bölüm copy.ui ile ezer): listen "Dinle", ask "A mı, B mi?",
+  answerA "Cevap: A", answerB "Cevap: B", againA "Bir de A'yı dinle", againB "Bir de B'yi dinle" (ek uyumu harfe
+  göre değiştiği için A ve B ayrı).
 */
-E.register("duy-kagit", { title: "Kulağına güveniyor musun?", approach: "duy", theme: "kagit" }, (X) => {
+E.register("duy-kagit", {
+  title: "Kulağına güveniyor musun?",
+  approach: "duy",
+  theme: "kagit",
+  ui: { listen: "Dinle", ask: "A mı, B mi?", answerA: "Cevap: A", answerB: "Cevap: B", againA: "Bir de A'yı dinle", againB: "Bir de B'yi dinle" },
+}, (X) => {
   const { h, set, p, ease, words, wordsIn, segments } = E;
   const D = X.data;
   // copy: bölüm dosyasından gelen ekran metinleri (sözleşme başlıktaki yorumda)
@@ -191,8 +199,7 @@ E.register("duy-kagit", { title: "Kulağına güveniyor musun?", approach: "duy"
       let st = "";
       if (cur) {
         const oth = cur && (el.rounds[ri].r.play ? "A" : "B");
-        st = t < cur.think ? "Dinle" : t < cur.rev ? "A mı, B mi?" : t < cur.v2 - 0.2 ? `Cevap: ${el.rounds[ri].r.play ? "B" : "A"}` : `Bir de ${oth}'yı dinle`;
-        if (oth === "B" && t >= cur.v2 - 0.2) st = "Bir de B'yi dinle";
+        st = X.ui(t < cur.think ? "listen" : t < cur.rev ? "ask" : t < cur.v2 - 0.2 ? (el.rounds[ri].r.play ? "answerB" : "answerA") : `again${oth}`);
       }
       if (el.st.textContent !== st) el.st.textContent = st;
       set(el.st, { o: on * (cur ? 1 : 0) });

@@ -4,13 +4,15 @@
   yapışkan notlar dağınık asılı → izleyen kafasında kuruyor → notlar defter çizgisine sırayla iniyor → cümle
   sesle okunurken fosforlu kalem notların altından geçiyor → ipucu kenar notu olarak düşüyor → özet + kapanış.
 */
-E.register("kur-kagit", { title: "Cümleyi kur · defter", approach: "kur", theme: "kagit" }, (X) => {
+E.register("kur-kagit", { title: "Cümleyi kur · defter", approach: "kur", theme: "kagit", ui: { task: "{n}/{total} · ALMANCA NASIL DERSİN?", tip: "KÜÇÜK NOT", summary: "{scene} {total} cümle" } }, (X) => {
   const { h, set, p, ease, karaoke, segments } = E;
   const D = X.data;
   /*
     copy anahtarları (bölüm dosyası, D.copy):
       zorunlu    title, hook (3 satır: 1. gri 92 px, 2. siyah 128 px, 3. turuncu 128 px), caption, outro { series, ask }, scene (sahne adı, ör. "Kafede")
       isteğe bağlı summary (kapanış başlığı; yoksa "<scene> <cümle sayısı> cümle")
+      ui (sabit yazılar; bölüm copy.ui ile ezer): task "{n}/{total} · ALMANCA NASIL DERSİN?", tip "KÜÇÜK NOT",
+                 summary "{scene} {total} cümle" (copy.summary yoksa)
     cümle sayısı: 2–4; cümle uzunluğu: en çok 8 kelime (daha uzunu yerleşime sığmıyor)
   */
   const C = D.copy;
@@ -23,7 +25,7 @@ E.register("kur-kagit", { title: "Cümleyi kur · defter", approach: "kur", them
   need(C.outro && C.outro.series && C.outro.ask, "copy.outro.series ve copy.outro.ask gerekli");
   need(Array.isArray(D.lines) && D.lines.length >= 2 && D.lines.length <= 4, "2–4 cümle olmalı");
   for (const l of D.lines) need(l.de.split(" ").length <= 8, `cümle en çok 8 kelime: ${l.de}`);
-  const SUMMARY = C.summary || `${C.scene} ${D.lines.length} cümle`;
+  const SUMMARY = C.summary || X.ui("summary", { scene: C.scene, total: D.lines.length });
   const T = X.theme;
   const G = E.G;
   const OR = T.acc;
@@ -159,14 +161,14 @@ E.register("kur-kagit", { title: "Cümleyi kur · defter", approach: "kur", them
       el.hook = E.hook(root, [{ t: C.hook[0], size: 92, weight: 700, color: T.sub }, { t: C.hook[1], size: 128, delay: 0.4 }, { t: C.hook[2], size: 128, color: OR, delay: 0.85 }], { center: 760 });
       rounds = D.lines.map((l, i) => {
         const r = { l, root: h("div", "rd", root), tk: tok(l.de), plan: L[i] };
-        r.task = h("div", "task", r.root, `<small>${i + 1}/${D.lines.length} · ALMANCA NASIL DERSİN?</small><b>${l.tr}</b><div class="bar"><i></i></div>`);
+        r.task = h("div", "task", r.root, `<small>${X.ui("task", { n: i + 1, total: D.lines.length })}</small><b>${l.tr}</b><div class="bar"><i></i></div>`);
         r.bar = r.task.querySelector(".bar i");
         r.rules = [];
         r.notes = r.tk.w.map((w) => {
           const n = h("div", "note", r.root, `<i class="tape"></i><span></span><i class="mk"></i>`);
           return { n, sp: n.querySelector("span"), w };
         });
-        r.tip = h("div", "tip", r.root, `<small>KÜÇÜK NOT</small><span>${l.tip.text}</span>`);
+        r.tip = h("div", "tip", r.root, `<small>${X.ui("tip")}</small><span>${l.tip.text}</span>`);
         return r;
       });
       el.e1 = h("div", "e1", root, SUMMARY);

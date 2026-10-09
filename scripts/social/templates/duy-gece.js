@@ -6,9 +6,11 @@
   ile öteki kelime çalınıyor (fark kulağa yerleşiyor) → özet + standart kapanış.
   copy anahtarları (hepsi zorunlu): title (galeri/kayıt adı), hook [2 satır: büyük beyaz, küçük turuncu],
   recap (kapanış özet başlığı), caption (paylaşım metni + etiketler), outro { series, ask }.
-  Tur: 3–5 (rounds). Arayüz metinleri ("NE DUYDUN?", "Bir de şunu dinle") şablonda.
+  Tur: 3–5 (rounds).
+  ui (sabit yazılar; bölüm copy.ui ile ezer): roundTag "{n} / {total} · NE DUYDUN?" (tur etiketi),
+  hint "Bir de şunu dinle" (öteki kelime çalınırken).
 */
-E.register("duy-gece", { title: "Kulaklığını tak: tek harf", approach: "duy", theme: "gece" }, (X) => {
+E.register("duy-gece", { title: "Kulaklığını tak: tek harf", approach: "duy", theme: "gece", ui: { roundTag: "{n} / {total} · NE DUYDUN?", hint: "Bir de şunu dinle" } }, (X) => {
   const { h, set, p, ease, words, wordsIn, segments } = E;
   const D = X.data;
   // copy: bölüm dosyasından gelen ekran metinleri (sözleşme başlıktaki yorumda)
@@ -123,7 +125,7 @@ E.register("duy-gece", { title: "Kulaklığını tak: tek harf", approach: "duy"
       el.coreIcon = el.core.querySelector("svg");
       el.coreTxt = el.core.querySelector("b");
       el.rounds = D.rounds.map((r, i) => {
-        const o = { r, tag: h("div", "tag", root, `${i + 1} / ${D.rounds.length} · NE DUYDUN?`) };
+        const o = { r, tag: h("div", "tag", root, X.ui("roundTag", { n: i + 1, total: D.rounds.length })) };
         o.cards = [r.a, r.b].map((w, k) => {
           const c = h("div", "card", root, `<div class="ab">${k ? "B" : "A"}</div><div class="ok">✓</div><div class="wbox">${wordHTML(w)}</div><div class="tr">${w.tr}</div>`);
           c.style.left = `${k ? G.R - 400 : G.L}px`;
@@ -131,7 +133,7 @@ E.register("duy-gece", { title: "Kulaklığını tak: tek harf", approach: "duy"
         });
         return o;
       });
-      el.hint = h("div", "hint", root, "Bir de şunu dinle");
+      el.hint = h("div", "hint", root, X.ui("hint"));
       el.e1 = h("div", "e1 flow", root);
       el.ew = words(el.e1, C.recap);
       el.rows = D.rounds.map((r, i) => {

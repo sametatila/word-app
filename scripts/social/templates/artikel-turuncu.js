@@ -11,9 +11,14 @@
     rule     zorunlu  tuzak kartı (HTML; <br> satır sonu, artikel renkleri için class="der|die|das")
     caption  zorunlu  paylaşım metni + etiketler
     outro    zorunlu  { series, ask }
-    endTitle isteğe bağlı  özet başlığı (varsayılan "Kaçını bildin?")
+    endTitle isteğe bağlı  özet başlığı (yoksa ui.endTitle)
+  ui (sabit yazılar, copy.ui ile ezilir):
+    tahminEt  "TAHMİN ET · {n}/{total}"   1–3. turların etiketi
+    tuzak     "TUZAK SORU"                4. turun etiketi
+    endTitle  "Kaçını bildin?"            özet başlığı (copy.endTitle yoksa)
+    der / die / das                       şık kareleri
 */
-E.register("artikel-turuncu", { title: "Artikel tahmini · kategori damgası", approach: "artikel", theme: "turuncu" }, (X) => {
+E.register("artikel-turuncu", { title: "Artikel tahmini · kategori damgası", approach: "artikel", theme: "turuncu", ui: { tahminEt: "TAHMİN ET · {n}/{total}", tuzak: "TUZAK SORU", endTitle: "Kaçını bildin?", der: "der", die: "die", das: "das" } }, (X) => {
   const { h, set, p, ease, words, wordsIn, segments } = E;
   const D = X.data;
   const C = D.copy || {};
@@ -95,12 +100,12 @@ E.register("artikel-turuncu", { title: "Artikel tahmini · kategori damgası", a
       el.segs = segments(root, 4);
       rounds = D.items.map((it, i) => {
         const r = { it, root: h("div", "rd", root) };
-        r.lab = h("div", `lab${i === 3 ? " trap" : ""}`, r.root, i === 3 ? "TUZAK SORU" : `TAHMİN ET · ${i + 1}/4`);
+        r.lab = h("div", `lab${i === 3 ? " trap" : ""}`, r.root, i === 3 ? X.ui("tuzak") : X.ui("tahminEt", { n: i + 1, total: 4 }));
         r.cd = h("div", "cd", r.root, "3");
         r.wd = h("div", "wd", r.root, it.de);
         r.tr = h("div", "tr", r.root, it.tr);
         r.tiles = ["der", "die", "das"].map((a, k) => {
-          const x = h("div", "tile", r.root, a);
+          const x = h("div", "tile", r.root, X.ui(a));
           x.style.left = `${CX - 118 + (k - 1) * 262}px`;
           return { a, x };
         });
@@ -109,7 +114,7 @@ E.register("artikel-turuncu", { title: "Artikel tahmini · kategori damgası", a
         return r;
       });
       el.e1 = h("div", "e1 flow", root);
-      el.ew = words(el.e1, C.endTitle || "Kaçını bildin?");
+      el.ew = words(el.e1, C.endTitle || X.ui("endTitle"));
       el.rows = D.items.map((it, i) => {
         const x = h("div", "row", root, `<i style="color:${COL[it.artikel]}">${it.artikel}</i><span>${it.de}</span><small>${it.tr}</small>`);
         x.style.top = `${500 + i * 140}px`;

@@ -5,13 +5,15 @@
   "gönder" → mesaj balonu sohbete çıkıyor ve sesle okunuyor → Türkçesi altında, ipucu sistem notu gibi →
   sohbet turdan tura birikiyor (ilerleme hissi) → özet + kapanış.
 */
-E.register("kur-lacivert", { title: "Cümleyi kur · mesaj", approach: "kur", theme: "lacivert" }, (X) => {
+E.register("kur-lacivert", { title: "Cümleyi kur · mesaj", approach: "kur", theme: "lacivert", ui: { tip: "İPUCU", placeholder: "Mesaj yaz…", summary: "{scene} {total} cümle" } }, (X) => {
   const { h, set, p, ease, words, karaoke, segments } = E;
   const D = X.data;
   /*
     copy anahtarları (bölüm dosyası, D.copy):
       zorunlu    title, hook (3 satır: 1. beyaz 128 px, 2. turuncu 128 px, 3. gri 72 px), caption, outro { series, ask }, scene (sahne adı, ör. "Kafede"); scene sohbet başlığında da görünür
       isteğe bağlı summary (kapanış başlığı; yoksa "<scene> <cümle sayısı> cümle")
+      ui (sabit yazılar; bölüm copy.ui ile ezer): tip "İPUCU", placeholder "Mesaj yaz…" (yazı kutusu),
+                 summary "{scene} {total} cümle" (copy.summary yoksa)
     cümle sayısı: 2–4; cümle uzunluğu: en çok 8 kelime (daha uzunu yerleşime sığmıyor)
   */
   const C = D.copy;
@@ -24,7 +26,7 @@ E.register("kur-lacivert", { title: "Cümleyi kur · mesaj", approach: "kur", th
   need(C.outro && C.outro.series && C.outro.ask, "copy.outro.series ve copy.outro.ask gerekli");
   need(Array.isArray(D.lines) && D.lines.length >= 2 && D.lines.length <= 4, "2–4 cümle olmalı");
   for (const l of D.lines) need(l.de.split(" ").length <= 8, `cümle en çok 8 kelime: ${l.de}`);
-  const SUMMARY = C.summary || `${C.scene} ${D.lines.length} cümle`;
+  const SUMMARY = C.summary || X.ui("summary", { scene: C.scene, total: D.lines.length });
   const T = X.theme;
   const G = E.G;
   const OR = T.acc;
@@ -174,11 +176,11 @@ E.register("kur-lacivert", { title: "Cümleyi kur · mesaj", approach: "kur", th
         const tx = h("div", "tx2", r.bub);
         r.sp = words(tx, l.de);
         r.btr = h("div", "btr", r.blk, l.tr);
-        r.note = h("div", "note", r.blk, `<small>İPUCU</small>${l.tip.text}`);
+        r.note = h("div", "note", r.blk, `<small>${X.ui("tip")}</small>${l.tip.text}`);
         r.chips = r.tk.w.map((w, k) => ({ el: h("div", "chip", el.ui, k === 0 ? w.toLocaleLowerCase("de") : w), w }));
         return r;
       });
-      el.inp = h("div", "inp", el.ui, `<span class="ph">Mesaj yaz…</span><span class="tx"><span class="t"></span><i class="car"></i></span>`);
+      el.inp = h("div", "inp", el.ui, `<span class="ph">${X.ui("placeholder")}</span><span class="tx"><span class="t"></span><i class="car"></i></span>`);
       el.ph = el.inp.querySelector(".ph");
       el.tx = el.inp.querySelector(".tx");
       el.txt = el.inp.querySelector(".t");

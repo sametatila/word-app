@@ -12,8 +12,10 @@
     caption  paylaşım metni + etiketler
     outro    { series, ask }
     summary  kapanış listesinin üstündeki başlık (ör. "İş görüşmesinden zamma")
+  ui anahtarları (sabit yazılar, copy.ui ile ezilir):
+    ask      kart altındaki düşünme sorusu ("Ne demek?")
 */
-E.register("kelime-gece", { title: "Kelime destesi · zaman çizgisi", approach: "kelime", theme: "gece" }, (X) => {
+E.register("kelime-gece", { title: "Kelime destesi · zaman çizgisi", approach: "kelime", theme: "gece", ui: { ask: "Ne demek?" } }, (X) => {
   const { h, set, p, ease, words, karaoke } = E;
   const D = X.data;
   const C = D.copy;
@@ -126,7 +128,7 @@ E.register("kelime-gece", { title: "Kelime destesi · zaman çizgisi", approach:
         const lvl = h("div", "lvl", c, w.niveau);
         const art = w.artikel ? h("div", "art", c, w.artikel) : null;
         const wd = h("div", "wd", c, w.de);
-        const ask = h("div", "ask", c, "Ne demek?");
+        const ask = h("div", "ask", c, X.ui("ask"));
         const tb = h("div", "tb", c, "<i></i>").firstChild;
         const mean = h("div", "mean", c, w.tr);
         const ex = h("div", "ex", c);

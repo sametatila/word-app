@@ -11,8 +11,10 @@
     caption  paylaşım metni + etiketler
     outro    { series, ask }
     summary  kapanış panelinin başlığı (ör. "Kaçını biliyordun?")
+  ui anahtarları (sabit yazılar, copy.ui ile ezilir):
+    ask      kart ön yüzündeki düşünme sorusu ("Ne demek?")
 */
-E.register("kelime-turuncu", { title: "Kelime destesi · kart çevirme", approach: "kelime", theme: "turuncu" }, (X) => {
+E.register("kelime-turuncu", { title: "Kelime destesi · kart çevirme", approach: "kelime", theme: "turuncu", ui: { ask: "Ne demek?" } }, (X) => {
   const { h, set, p, ease, words, wordsIn, karaoke, segments } = E;
   const D = X.data;
   const C = D.copy;
@@ -134,7 +136,7 @@ E.register("kelime-turuncu", { title: "Kelime destesi · kart çevirme", approac
         h("div", "num", front, `${i + 1}/${D.items.length}`);
         if (w.artikel) h("div", "art", front, w.artikel);
         h("div", "wd", front, w.de);
-        h("div", "ask", front, "Ne demek?");
+        h("div", "ask", front, X.ui("ask"));
         const tb = h("div", "tb", front, "<i></i>").firstChild;
         const back = h("div", "face back", c);
         h("div", "lvl", back, w.niveau);

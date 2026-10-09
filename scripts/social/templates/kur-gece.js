@@ -4,13 +4,15 @@
   → üstte kum saati çubuğu, izleyen kafasında diziyor → kartlar "tık" sesiyle doğru sıraya yapışıyor → cümle
   sesle kelime kelime yanıyor, Türkçesi geliyor → ipucu kartı kuralı tek cümleyle söylüyor → özet + kapanış.
 */
-E.register("kur-gece", { title: "Cümleyi kur · mıknatıs", approach: "kur", theme: "gece" }, (X) => {
+E.register("kur-gece", { title: "Cümleyi kur · mıknatıs", approach: "kur", theme: "gece", ui: { counter: "{scene} · {n}/{total}", tip: "İPUCU", summary: "{scene} {total} cümle" } }, (X) => {
   const { h, set, p, ease, karaoke, segments } = E;
   const D = X.data;
   /*
     copy anahtarları (bölüm dosyası, D.copy):
       zorunlu    title, hook (2 satır: 1. beyaz 104 px, 2. turuncu 128 px), caption, outro { series, ask }, scene (sahne adı, ör. "Kafede")
       isteğe bağlı summary (kapanış başlığı; yoksa "<scene> <cümle sayısı> cümle")
+      ui (sabit yazılar; bölüm copy.ui ile ezer): counter "{scene} · {n}/{total}" (sahne büyük harfle), tip "İPUCU",
+                 summary "{scene} {total} cümle" (copy.summary yoksa)
     cümle sayısı: 2–4; cümle uzunluğu: en çok 8 kelime (daha uzunu yerleşime sığmıyor)
   */
   const C = D.copy;
@@ -23,7 +25,7 @@ E.register("kur-gece", { title: "Cümleyi kur · mıknatıs", approach: "kur", t
   need(C.outro && C.outro.series && C.outro.ask, "copy.outro.series ve copy.outro.ask gerekli");
   need(Array.isArray(D.lines) && D.lines.length >= 2 && D.lines.length <= 4, "2–4 cümle olmalı");
   for (const l of D.lines) need(l.de.split(" ").length <= 8, `cümle en çok 8 kelime: ${l.de}`);
-  const SUMMARY = C.summary || `${C.scene} ${D.lines.length} cümle`;
+  const SUMMARY = C.summary || X.ui("summary", { scene: C.scene, total: D.lines.length });
   const T = X.theme;
   const G = E.G;
   const HOOK = 2.6;
@@ -157,7 +159,7 @@ E.register("kur-gece", { title: "Cümleyi kur · mıknatıs", approach: "kur", t
       el.hook = E.hook(root, [{ t: C.hook[0], size: 104 }, { t: C.hook[1], size: 128, color: T.acc, delay: 0.5 }], { center: 760 });
       rounds = D.lines.map((l, i) => {
         const r = { l, root: h("div", "rd", root), tk: tok(l.de), plan: L[i] };
-        r.chip = h("div", "chip", r.root, `${C.scene.toLocaleUpperCase("tr")} · ${i + 1}/${D.lines.length}`);
+        r.chip = h("div", "chip", r.root, X.ui("counter", { scene: C.scene.toLocaleUpperCase("tr"), n: i + 1, total: D.lines.length }));
         r.bar = h("div", "bar", r.root, "<i></i>").firstChild;
         r.mags = r.tk.w.map((w, k) => {
           const m = h("div", "mag", r.root);
@@ -166,7 +168,7 @@ E.register("kur-gece", { title: "Cümleyi kur · mıknatıs", approach: "kur", t
           return { m, sp, w };
         });
         r.tr = h("div", "tr", r.root, l.tr);
-        r.tip = h("div", "tip", r.root, `<small>İPUCU</small><span>${l.tip.text}</span>`);
+        r.tip = h("div", "tip", r.root, `<small>${X.ui("tip")}</small><span>${l.tip.text}</span>`);
         return r;
       });
       el.e1 = h("div", "e1", root, SUMMARY);
