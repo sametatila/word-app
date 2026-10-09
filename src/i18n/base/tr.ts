@@ -2309,7 +2309,7 @@ export const trBase: Record<string, string> = {
   "conversationp.resume_where": "Kaldığın yer",
   "conversationp.resume_turns": "{n}/{min} tur",
   "conversationp.stat_turns": "Tur",
-  "conversationp.stat_review": "Tekrar",
+  "conversationp.stat_review": "Sonraki tekrar",
   "conversationp.pill_min_turns": "En az {n} tur gerekiyor",
   "conversationp.produce_other": "Bu, burada istenen cümleden farklı bir cümle. İstenen:",
   "conversationp.produce_retry": "Tekrar dene.",
