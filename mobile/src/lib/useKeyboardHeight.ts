@@ -85,3 +85,29 @@ export function useKeyboardLift(anchor: RefObject<ComponentRef<typeof View> | nu
   }, [inset, top, gap, anchor]);
   return inset > 0 ? lift : 0;
 }
+
+/**
+ * MODAL İÇİNDE KLAVYE (QA F-0082, 2026-10-09).
+ *
+ * Android'de `Modal` ayrı bir pencere (Dialog). Klavye olayları ise ana
+ * pencerenin kök görünümünden geliyor (RN `ReactRootView.checkForKeyboardEvents`
+ * kendi penceresinin IME inset'ine bakıyor): klavye Modal'ın penceresine
+ * açılınca ana pencere bir şey görmüyor, `useKeyboardInset` 0 kalıyor. Kenardan
+ * kenara (edgeToEdgeEnabled) açıkken Dialog'un `adjustResize`ı da pencereyi
+ * küçültmüyor. Sonuç: Bildir kartının "Gönder / Vazgeç" düğmeleri klavyenin
+ * altında kalıyor, kart sığdığı için kaydırılamıyordu.
+ *
+ * Bu kanca alanın odağını izliyor: Android'de odak var ama ölçü yoksa `blind`
+ * doğru döner ve çağıran kartı/sayfayı EKRANIN ÜST YARISINA yerleştirir (klavye
+ * hiçbir telefonda ekranın yarısından fazlasını kaplamıyor). Ölçü gelirse
+ * (iOS, ya da olayların geldiği bir Android) `inset` kullanılır, `blind` yanlış.
+ */
+export function useModalKeyboard(): { inset: number; blind: boolean; focus: { onFocus: () => void; onBlur: () => void } } {
+  const inset = useKeyboardInset();
+  const [focused, setFocused] = useState(false);
+  return {
+    inset,
+    blind: Platform.OS === "android" && focused && inset <= 0,
+    focus: { onFocus: () => setFocused(true), onBlur: () => setFocused(false) },
+  };
+}

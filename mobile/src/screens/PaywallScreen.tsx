@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { t, formatDay } from "../lib/i18n";
 import { View, AppState, Platform, TextInput, ScrollView, Modal, Pressable, KeyboardAvoidingView, useWindowDimensions, type NativeSyntheticEvent, type NativeScrollEvent } from "react-native";
 import { useLayout } from "../lib/useLayout";
+import { useModalKeyboard } from "../lib/useKeyboardHeight";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
@@ -657,6 +658,9 @@ function CodeSheet({
   onOutcome: (o: PurchaseOutcome) => void;
 }) {
   const insets = useSafeAreaInsets();
+  /* Android'de Modal'ın klavyesi ölçülemiyor: kod kutusu klavyenin altında
+     kalmasın diye odaktayken sayfa üste çıkıyor (`useModalKeyboard`, QA F-0082). */
+  const mk = useModalKeyboard();
   const [code, setCode] = useState(initialGroup.toUpperCase());
   const [mode, setMode] = useState<"code" | "group">(initialGroup ? "group" : "code");
   const [group, setGroup] = useState<string | null>(null);
@@ -732,9 +736,11 @@ function CodeSheet({
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose} statusBarTranslucent>
-      <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
+      <KeyboardAvoidingView behavior="height" style={{ flex: 1, flexDirection: mk.blind ? "column-reverse" : "column" }}>
         <Pressable accessibilityRole="button" accessibilityLabel={t("common.close")} onPress={onClose} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.4)" }} />
-        <View accessibilityViewIsModal style={{ backgroundColor: colors.bg, borderTopLeftRadius: radii.xl, borderTopRightRadius: radii.xl, padding: spacing.xl, paddingBottom: insets.bottom + spacing.xl, gap: spacing.md }}>
+        <View accessibilityViewIsModal style={mk.blind
+          ? { backgroundColor: colors.bg, borderBottomLeftRadius: radii.xl, borderBottomRightRadius: radii.xl, padding: spacing.xl, paddingTop: insets.top + spacing.xl, gap: spacing.md }
+          : { backgroundColor: colors.bg, borderTopLeftRadius: radii.xl, borderTopRightRadius: radii.xl, padding: spacing.xl, paddingBottom: insets.bottom + spacing.xl, gap: spacing.md }}>
           <Text accessibilityRole="header" variant="h3">{t("promo.title")}</Text>
           {guest ? (
             <>
@@ -754,6 +760,7 @@ function CodeSheet({
                   autoCapitalize="characters"
                   autoCorrect={false}
                   autoFocus={!initialGroup}
+                  {...mk.focus}
                   returnKeyType="done"
                   onSubmitEditing={() => { if (!busy && code.trim()) void (mode === "group" ? begin() : apply()); }}
                   style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.md, color: colors.text, letterSpacing: 2 }}

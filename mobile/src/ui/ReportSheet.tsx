@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t } from "../lib/i18n";
 import { View, Modal, Pressable, ScrollView, TextInput } from "react-native";
-import { useSafeAreaFrame } from "react-native-safe-area-context";
+import type { ScrollViewInstance } from "react-native";
+import { useSafeAreaFrame, useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { RadioDot } from "./RadioDot";
 import { CorrectIcon } from "./icons";
 import { REPORT_DETAIL_MAX, reasonsFor, sendReport, type ReportKind, type ReportReason, type ReportSurface, type ReportTarget } from "../lib/report";
-import { useKeyboardInset } from "../lib/useKeyboardHeight";
+import { useModalKeyboard } from "../lib/useKeyboardHeight";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import { DIALOG_MAX_WIDTH, dialogActionsStacked } from "../lib/useLayout";
 import { FIELD, Field } from "./Field";
@@ -27,6 +28,11 @@ import { FIELD, Field } from "./Field";
 const TITLE: Record<ReportKind, string> = { content: "reportsheet.content_title", user: "reportsheet.user_title", assessment: "reportsheet.assessment_title", chat: "reportsheet.report_this_content" };
 const LEAD: Record<ReportKind, string> = { content: "reportsheet.content_lead", user: "reportsheet.user_lead", assessment: "reportsheet.assessment_lead", chat: "reportsheet.if_ai_reply_felt_inappropriate" };
 
+/* YAZILAN AYRINTI KAYBOLMUYOR (QA F-0082). Geri tuşu kartı kapatıyor ve
+   ayrıntı siliniyordu; aynı hedef yeniden açılınca sebep ve metin geri gelir.
+   Gönderilince silinir. Yalnız bellekte (uygulama kapanınca gider). */
+const drafts = new Map<string, { reason: ReportReason | null; detail: string }>();
+
 export function ReportSheet({ visible, kind, refId, content, surface, target, onClose }: {
   visible: boolean; kind: ReportKind; refId: string; content: string;
   surface?: ReportSurface; target?: ReportTarget; onClose: () => void;
@@ -35,29 +41,41 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
   const isContent = kind === "content";
   const sendLabel = isContent ? t("reportsheet.send") : t("common.send");
   const stacked = dialogActionsStacked(t("common.discard"), sendLabel);
+  const draftKey = `${kind}:${refId}`;
   const [reason, setReason] = useState<ReportReason | null>(null);
   const [detail, setDetail] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "done" | "error" | "too_fast">("idle");
   const [duplicate, setDuplicate] = useState(false);
   /* Ayrıntı alanı klavyeyi açıyor: kart klavyenin üstünde kalsın, sığmazsa
-     içi kaysın (küçük telefon + büyük yazı). */
-  const kb = useKeyboardInset();
+     içi kaysın (küçük telefon + büyük yazı). Android'de Modal'ın klavyesi
+     ölçülemiyor; o zaman kart ekranın üst yarısına çıkıyor (`useModalKeyboard`). */
+  const mk = useModalKeyboard();
+  const kb = mk.inset;
   const frame = useSafeAreaFrame();
+  const insets = useSafeAreaInsets();
+  const scroll = useRef<ScrollViewInstance>(null);
 
-  useEffect(() => { if (visible) { setReason(null); setDetail(""); setDuplicate(false); setState("idle"); } }, [visible]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (visible) { const d = drafts.get(draftKey); setReason(d?.reason ?? null); setDetail(d?.detail ?? ""); setDuplicate(false); setState("idle"); } }, [visible]);
+  useEffect(() => {
+    if (!visible || state === "done") return;
+    if (detail.trim()) drafts.set(draftKey, { reason, detail });
+    else drafts.delete(draftKey);
+  }, [visible, draftKey, reason, detail, state]);
 
   async function submit() {
     if (!reason || state === "sending") return;
     setState("sending");
     const out = await sendReport(kind, refId, reason, content, isContent ? { surface, target, detail } : {});
     setDuplicate(out === "duplicate");
+    if (out === "ok" || out === "duplicate") drafts.delete(draftKey);
     setState(out === "error" || out === "too_fast" ? out : "done");
     if (out === "ok" || out === "duplicate") setTimeout(onClose, 1300);
   }
 
   return (
     <Modal visible={visible} transparent animationType="fade" statusBarTranslucent onRequestClose={onClose}>
-      <Pressable onPress={onClose} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: "center", padding: spacing.xl, paddingBottom: spacing.xl + kb }}>
+      <Pressable onPress={onClose} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: mk.blind ? "flex-start" : "center", padding: spacing.xl, paddingTop: mk.blind ? insets.top + spacing.md : spacing.xl, paddingBottom: spacing.xl + kb }}>
         {/* Arka plan erişilebilirlik ağacından çıkıyor — bkz. `ConfirmDialog`
             içindeki not. */}
         <Pressable
@@ -66,8 +84,8 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
           accessibilityRole="alert"
           /* Adı başlıktan — bkz. `ui/ConfirmDialog` içindeki not. */
           accessibilityLabel={t(TITLE[kind])}
-          style={[{ width: "100%", maxWidth: DIALOG_MAX_WIDTH, maxHeight: Math.max(240, frame.height - kb - spacing.xl * 2), backgroundColor: colors.surface, borderRadius: radii.xl, overflow: "hidden" }, softShadow("#000000", 24)]}>
-          <ScrollView automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ padding: spacing.xl, gap: spacing.sm }} bounces={false}>
+          style={[{ width: "100%", maxWidth: DIALOG_MAX_WIDTH, maxHeight: mk.blind ? Math.max(220, Math.round(frame.height / 2) - insets.top - spacing.md) : Math.max(240, frame.height - kb - spacing.xl * 2), backgroundColor: colors.surface, borderRadius: radii.xl, overflow: "hidden" }, softShadow("#000000", 24)]}>
+          <ScrollView ref={scroll} automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ padding: spacing.xl, gap: spacing.sm }} bounces={false}>
           {state === "done" ? (
             /* Sonuç duyuruluyor — web `report-dialog` içindeki nota bak:
                kutu açık kalıyor, içi yerinde değişiyor. */
@@ -111,6 +129,9 @@ export function ReportSheet({ visible, kind, refId, content, surface, target, on
                     placeholder={t("reportsheet.detail_placeholder")}
                     placeholderTextColor={colors.textFaint}
                     accessibilityLabel={t("reportsheet.detail_label")}
+                    /* Odakta alan ve altındaki düğmeler görünsün: kart küçülünce içerik sona kayıyor. */
+                    onFocus={() => { mk.focus.onFocus(); setTimeout(() => scroll.current?.scrollToEnd({ animated: true }), 250); }}
+                    onBlur={mk.focus.onBlur}
                     style={{ minHeight: 72, maxHeight: 140, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, color: colors.text, fontSize: 15 }}
                   />
                 </Field>
