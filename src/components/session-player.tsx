@@ -26,7 +26,7 @@ import { play, resetCombo } from "@/lib/sfx";
 import { vibrate } from "@/lib/fx";
 import { track } from "@/lib/track";
 import { FitBox } from "@/components/fit-box";
-import { PushOptIn } from "@/components/push-optin";
+import { PushOptIn, primePushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
 import { CoachLine } from "@/components/coach-line";
 import { LearnHeader } from "@/components/app-header";
@@ -281,6 +281,8 @@ function SessionRound() {
      burada da her başarılı gönderimde çağrılıyor. */
   useEffect(() => {
     void flushPendingAnswers();
+    /* Özetteki izin kartının hâli şimdiden (sonradan belirip "Devam"ı itmesin). */
+    primePushOptIn();
   }, []);
 
   const load = useCallback(

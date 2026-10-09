@@ -34,31 +34,46 @@ const DISMISS_KEY = "lernomi:push-dismissed";
 
 type State = "hidden" | "ask" | "busy" | "done" | "ios";
 
+/*
+ * ABONELİK SORUSU ÖNCEDEN SORULUYOR. Kart, servis çalışanından gelen cevabı
+ * bekleyip SONRADAN beliriyordu ve tur özetinde altındaki "Devam" düğmesini
+ * tam basılacağı an aşağı itiyordu (QA F-0070 sınıfı). Tur oynatıcısı açılırken
+ * `primePushOptIn` cevabı alıyor; özet açıldığında kartın hâli ilk çizimde belli.
+ */
+let subscribed: boolean | null = null;
+let probe: Promise<void> | null = null;
+
+export function primePushOptIn(): void {
+  if (probe || typeof window === "undefined" || !vapidKey) return;
+  if (iosNeedsInstall() || !pushSupported() || permissionDenied()) return;
+  probe = currentSubscription()
+    .then((sub) => { subscribed = !!sub; })
+    .catch(() => { subscribed = false; });
+}
+
+/** Kartın ilk hâli; `null` = abonelik cevabı henüz yok (eski yol: sonra karar). */
+function initialState(): State | null {
+  if (typeof window === "undefined" || !vapidKey) return "hidden"; // anahtar yoksa özellik yok; kart da yok
+  try {
+    const at = Number(localStorage.getItem(DISMISS_KEY) ?? 0);
+    if (at > Date.now() - PUSH_PRIME_SNOOZE_DAYS * 86400000) return "hidden";
+  } catch {
+    /* depolama kapalı olabilir */
+  }
+  // iPhone'da Safari sekmesinde PushManager hiç tanımlı olmuyor; izin
+  // istemek imkânsız, yapılacak tek şey kurulumu anlatmak.
+  if (iosNeedsInstall()) return "ios";
+  if (!pushSupported() || permissionDenied()) return "hidden";
+  if (subscribed !== null) return subscribed ? "hidden" : "ask";
+  return null;
+}
+
 export function PushOptIn({ streak }: { streak: number }) {
   const t = useT();
-  const [state, setState] = useState<State>("hidden");
+  const [state, setState] = useState<State>(() => initialState() ?? "hidden");
 
   useEffect(() => {
-    if (!vapidKey) return; // anahtar yoksa özellik yok; kart da yok
-
-    let dismissed = false;
-    try {
-      const at = Number(localStorage.getItem(DISMISS_KEY) ?? 0);
-      dismissed = at > Date.now() - PUSH_PRIME_SNOOZE_DAYS * 86400000;
-    } catch {
-      /* depolama kapalı olabilir */
-    }
-    if (dismissed) return;
-
-    // iPhone'da Safari sekmesinde PushManager hiç tanımlı olmuyor; izin
-    // istemek imkânsız, yapılacak tek şey kurulumu anlatmak.
-    if (iosNeedsInstall()) {
-      setState("ios");
-      return;
-    }
-
-    if (!pushSupported() || permissionDenied()) return;
-
+    if (initialState() !== null) return;
     void currentSubscription()
       .then((sub) => setState(sub ? "hidden" : "ask"))
       .catch(() => setState("ask"));
