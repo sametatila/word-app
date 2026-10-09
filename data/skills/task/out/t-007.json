@@ -90,7 +90,7 @@
  { "tr": "Fazladan 'zu'yu kaldır.", "kind": "rewrite.prompt", "en": "Remove the extra 'zu'." },
  { "tr": "Yan cümledeki fiil sırasını düzelt.", "kind": "rewrite.prompt", "en": "Correct the verb order in the subordinate clause." },
  { "tr": "Eksik özneyi ekle.", "kind": "rewrite.prompt", "en": "Add the missing subject." },
- { "tr": "Rengi sorarak yaz.", "kind": "rewrite.prompt", "en": "Write it asking about the color." },
+ { "tr": "Satıcıya bu kazağın başka bir renkte de olup olmadığını SOR (rengi sen seç).", "kind": "rewrite.prompt", "en": "ASK the salesperson whether this sweater also comes in another color (you pick the color)." },
  { "tr": "Resmî hitapla yaz.", "kind": "rewrite.prompt", "en": "Write it in the formal form." },
  { "tr": "Resmî emri tamamla.", "kind": "rewrite.prompt", "en": "Complete the formal instruction." },
  { "tr": "Cümleyi olumsuz yap.", "kind": "rewrite.prompt", "en": "Make the sentence negative." },
