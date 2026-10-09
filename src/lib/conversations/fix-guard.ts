@@ -406,7 +406,60 @@ const SPECIAL_TOKEN = /<\|[a-z_]{1,24}\|?>|<[a-z_]{1,24}\|>/gi;
 export function stripModelTokens(text: string): string {
   return text.replace(CHANNEL_BLOCK, "").replace(SPECIAL_TOKEN, "");
 }
+
+/**
+ * İÇ NOT (QA F-0075, 2026-10-09): model cevabın sonuna istemden söz eden bir not
+ * ekleyebiliyor ("(Not: Kullanıcı … dediğinde … [FIX] satırı yazılmadı. Ancak sistem
+ * gereği [SAY] satırları …"); içindeki işaretler satırlara bölününce iç talimat öneri
+ * düğmesine bile dönüşüyordu. Satır başında "(Not:" / "Not:" / "Note:" / "Hinweis:" /
+ * "Anmerkung:" ile açılan not ve arkasındaki her şey kesiliyor. Kapanmamış düşünme
+ * kanalının adı ("thought") cevabın ilk satırıysa o da düşüyor.
+ */
+const META_NOTE = /(^|\n)[ \t]*\(?[ \t]*(?:Not|Note|Hinweis|Anmerkung|Açıklama)[ \t]*:/i;
+const LEAD_THOUGHT = /^\s*(?:thought|thinking|analysis)[ \t]*\n/i;
 export async function* stripModelTokenStream(source: AsyncIterable<string>): AsyncGenerator<string> {
+  for await (const piece of cutMetaNotes(stripTokenStream(source))) yield piece;
+}
+
+/** Baştaki "thought" satırı ve iç not (bkz. META_NOTE); not başlayınca akış orada biter. */
+async function* cutMetaNotes(source: AsyncIterable<string>): AsyncGenerator<string> {
+  let buf = "";
+  let head = true; // ilk satır henüz belirlenmedi
+  let sent = "";
+  for await (const delta of source) {
+    buf += delta;
+    if (head) {
+      if (!buf.includes("\n") && buf.length < 20) continue;
+      buf = buf.replace(LEAD_THOUGHT, "");
+      head = false;
+    }
+    const m = (sent.slice(-1) + buf).match(META_NOTE);
+    if (m && m.index !== undefined) {
+      const at = Math.max(0, m.index - (sent ? 1 : 0));
+      const ready = buf.slice(0, at).replace(/\s+$/, "");
+      if (ready) yield ready;
+      return; // notun kendisi ve arkası gönderilmiyor
+    }
+    // Sonda yarım bir not başı ("(No", "Hinw") olabilir: yalnız SATIR BAŞINDAKİ kısa parça tutuluyor;
+    // rol metni gecikmeden akıyor.
+    const nl = buf.lastIndexOf("\n");
+    const lineStart = nl !== -1 || !sent || sent.endsWith("\n");
+    const last = nl === -1 ? buf : buf.slice(nl + 1);
+    const keep = lineStart && /^[ \t]*\(?[ \t]*[\p{L}]{0,10}$/u.test(last) ? last.length : 0;
+    const ready = buf.slice(0, buf.length - keep);
+    buf = buf.slice(buf.length - keep);
+    if (ready) {
+      sent += ready;
+      yield ready;
+    }
+  }
+  if (head) buf = buf.replace(LEAD_THOUGHT, "");
+  const m = (sent.slice(-1) + buf).match(META_NOTE);
+  if (m && m.index !== undefined) buf = buf.slice(0, Math.max(0, m.index - (sent ? 1 : 0))).replace(/\s+$/, "");
+  if (buf) yield buf;
+}
+
+async function* stripTokenStream(source: AsyncIterable<string>): AsyncGenerator<string> {
   let buf = "";
   for await (const delta of source) {
     buf += delta;

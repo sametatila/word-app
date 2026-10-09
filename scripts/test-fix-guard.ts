@@ -273,6 +273,15 @@ async function streamTests() {
   check("model işaretleri her bölmede siliniyor", sbad === 0, String(sbad));
   check("model işaretleri karakter karakter", (await strip([...LEAK])) === CLEAN, JSON.stringify(await strip([...LEAK])));
   check("işaretsiz metin aynen", (await strip([..."Ich bin 3 < 5 und a|b."])) === "Ich bin 3 < 5 und a|b.");
+  // İç not ve baştaki "thought" (QA F-0075): her bölmede kesiliyor; düz metin aynen akıyor.
+  const NOTE = "thought\n[SAY] Das Wohnzimmer hat zwei Fenster.\nSchön! Wie groß ist es?\n[SAY] Sehr groß.\n\n(Not: Kullanıcı doğru söyledi. Bu yüzden\n[FIX] satırı yazılmadı. Ancak sistem gereği\n[SAY] satırları";
+  const NOTE_OK = "[SAY] Das Wohnzimmer hat zwei Fenster.\nSchön! Wie groß ist es?\n[SAY] Sehr groß.";
+  let nbad = 0;
+  // Sondaki boş satırlar önemsiz (ayrıştırıcı kırpıyor).
+  for (let i = 0; i <= NOTE.length; i++) if ((await strip([NOTE.slice(0, i), NOTE.slice(i)].filter(Boolean))).trimEnd() !== NOTE_OK) nbad++;
+  check("iç not ve thought her bölmede kesiliyor", nbad === 0, `${nbad} · ${JSON.stringify(await strip([...NOTE]))}`);
+  const PLAIN = "Natürlich! Die Notaufnahme ist links.\nNotiz: keine.\n[SAY] Danke.";
+  check("'Not' ile başlayan sözcükler kesilmiyor", (await strip([...PLAIN])) === PLAIN.replace("\nNotiz: keine.", "\nNotiz: keine."), JSON.stringify(await strip([...PLAIN])));
   const r2 = await role([[...ONLY], [...ONLY]]);
   check("iki denemede de rol metni yok → öneriler yine gidiyor", r2.out === ONLY && r2.tries === 2, JSON.stringify(r2));
 }
