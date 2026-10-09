@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { View, TextInput, ActivityIndicator } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -17,7 +17,7 @@ import { ensureConversations, findConversation, conversationLevelOf, type Conver
 import { nativeContentReady, useNativeContentVersion, waitNativeContent } from "../lib/nativeContent";
 import { sendChat, parseReply, type ChatMsg } from "../game/chat";
 import { candoIdsForConversation } from "../game/candoMap";
-import { fetchCando } from "../game/cando";
+import { useCandoLabels } from "../game/cando";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { currentTargetLocale, currentTargetLang } from "../lib/courses";
@@ -129,7 +129,12 @@ export function ConversationScoredScreen() {
    * söylenmeli ve nereden açılacağı belli olmalı (web `conversation-scored` ile aynı).
    */
   const [consentOff, setConsentOff] = useState(false);
-  const [cando, setCando] = useState<string[]>([]);
+  /* Yapabilirlik etiketi: kimlikler konuşmadan (`candoMap`), METNİ `/api/cando`dan.
+     Web 213 satırlık veri dosyasından okuyor; mobil o listeyi zaten çekiyor.
+     Sınav açılırken çekiliyor, sonuç ekranına gelindiğinde hazır (konuşma özeti
+     ile aynı kanca, `game/cando` `useCandoLabels`). */
+  const candoIds = useMemo(() => (conversation ? candoIdsForConversation(conversation) : null), [conversation]);
+  const cando = useCandoLabels(candoIds) ?? [];
   const scored = useRef(false);
   const mounted = useRef(true);
   /*
@@ -155,20 +160,6 @@ export function ConversationScoredScreen() {
     return () => { mounted.current = false; stopListening(); };
   }, []);
 
-  /* Yapabilirlik etiketi: kimlikler konuşmadan (`candoMap`), METNİ `/api/cando`dan.
-     Web 213 satırlık veri dosyasından okuyor; mobil o listeyi zaten çekiyor. */
-  useEffect(() => {
-    if (!conversation) return;
-    const want = candoIdsForConversation(conversation);
-    if (!want.length) return;
-    fetchCando()
-      .then((d) => {
-        if (!mounted.current) return;
-        const byId = new Map(d.items.map((it) => [it.cando.id, it.cando.tr]));
-        setCando(want.map((c) => byId.get(c)).filter((x): x is string => Boolean(x)));
-      })
-      .catch(() => { /* etiket bir süs; alınamazsa satır çizilmez */ });
-  }, [conversation]);
 
   const score = useCallback(async (all: Turn[]) => {
     /* Ekrandan çıkıldıysa puanlanmıyor (6 sn'lik zamanlayıcı ayrıldıktan sonra da düşebiliyor). */

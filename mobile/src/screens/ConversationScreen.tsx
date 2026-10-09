@@ -36,7 +36,7 @@ import { apiBase, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { todayStr } from "../game/session";
 import { candoIdsForConversation } from "../game/candoMap";
-import { fetchCando } from "../game/cando";
+import { useCandoLabels } from "../game/cando";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { sfx } from "../lib/sfx";
 import { CONVERSATION_TRY_CEILING, conversationPassNeed } from "../lib/learningRules";
@@ -249,6 +249,9 @@ export function ConversationScreen() {
   /** Sunucunun hükmü: sohbet bitti VE anlatım isabeti eşiği geçti mi — tekrar
    *  merdivenini yürüten hüküm; "konuşma sayıldı" değil (bkz. `Summary`). */
   const [passed, setPassed] = useState<boolean | null>(null);
+  /* "Yapabildiklerim" etiketleri konuşma AÇILIRKEN çekiliyor, özette değil (QA F-0070). */
+  const candoIds = useMemo(() => (conversation ? candoIdsForConversation(conversation) : null), [conversation]);
+  const cando = useCandoLabels(candoIds);
   const [handsFree, setHandsFree] = useState(true);
   const handsFreeRef = useRef(true);
   const [roleTurns, setRoleTurns] = useState(0);
@@ -1155,7 +1158,7 @@ export function ConversationScreen() {
           </View>
         </>
       ) : phase === "summary" ? (
-        <Summary conversation={conversation} correct={correct} total={scoreTotal} next={nextConversation} roleMsgs={roleMsgs} corrections={corrections} nextDays={nextDays} colors={colors} insets={insets}
+        <Summary conversation={conversation} cando={cando} correct={correct} total={scoreTotal} next={nextConversation} roleMsgs={roleMsgs} corrections={corrections} nextDays={nextDays} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
           onNext={nextConversation ? () => nav.replace("Conversation", { id: nextConversation.id }) : undefined}
           passed={passed}
@@ -1594,8 +1597,11 @@ function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onS
   );
 }
 
-function Summary({ conversation, correct, total, next, roleMsgs, corrections, nextDays, passed, turnsDone, skipped, colors, insets, onBack, onNext, onExam, onResume }: {
-  conversation: Conversation; correct: number; total: number; next: Conversation | null; roleMsgs: ChatMsg[]; corrections: string[]; nextDays: number | null; colors: Palette;
+function Summary({ conversation, cando, correct, total, next, roleMsgs, corrections, nextDays, passed, turnsDone, skipped, colors, insets, onBack, onNext, onExam, onResume }: {
+  conversation: Conversation;
+  /** "Yapabildiklerim" etiketleri; `null` hâlâ yükleniyor (satırın yeri iskeletle tutuluyor). */
+  cando: string[] | null;
+  correct: number; total: number; next: Conversation | null; roleMsgs: ChatMsg[]; corrections: string[]; nextDays: number | null; colors: Palette;
   passed: boolean | null;
   /** Yerel hüküm: asgari tur doldu mu. Sunucu yanıtı gelmezse (çevrimdışı) başlık buna bakıyor. */
   turnsDone: boolean;
@@ -1612,21 +1618,11 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
    * Kimlikler konuşmadan (`candoMap`), metni `/api/cando`dan — sohbet
    * sınavındaki yolun aynısı (`ConversationScoredScreen`). Alınamazsa satır
    * çizilmiyor: etiket bir süs, konuşma özeti ona bağlı değil.
+   *
+   * ÖZET AÇILDIKTAN SONRA ARAYA GİRMİYOR (QA F-0070): etiketler özet açılınca
+   * çekiliyordu ve satır sonradan gelip altındaki her şeyi aşağı itiyordu.
+   * Artık ekran açılırken çekiliyor; hâlâ yolda ise yeri iskeletle tutuluyor.
    */
-  const [cando, setCando] = useState<string[]>([]);
-  useEffect(() => {
-    let alive = true;
-    const want = candoIdsForConversation(conversation);
-    if (!want.length) return;
-    fetchCando()
-      .then((d) => {
-        if (!alive) return;
-        const byId = new Map(d.items.map((it) => [it.cando.id, it.cando.tr]));
-        setCando(want.map((c) => byId.get(c)).filter((x): x is string => Boolean(x)));
-      })
-      .catch(() => { /* etiket alınamadı */ });
-    return () => { alive = false; };
-  }, [conversation]);
   /* Düzeltmeler sohbet sırasında toplanıyor (bkz. ekranın `corrections`
      durumu): `roleMsgs` temizlenmiş gövdeyi tuttuğu için buradan yeniden
      çıkarmak her zaman sıfır veriyordu. Web aynı listeyi ham cevaplardan,
@@ -1695,7 +1691,9 @@ function Summary({ conversation, correct, total, next, roleMsgs, corrections, ne
         {/* İSABET EŞİĞİN ALTINDA — tur notundan AYRI: konuşma sayıldıysa bunu
             söylüyor, yalnız tekrar aralığının neden uzamadığını açıklıyor. */}
         {scoreLow ? <FlowNote tone="warn" icon={<WarningIcon color={colors.streakText} size={16} />} text={tx(unfinished ? "conversationp.score_low_note_unfinished" : "conversationp.score_low_note", { correct, total, need })} /> : null}
-        {cando.length ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
+        {cando === null ? (
+          <Skeleton height={textHeight("caption") + spacing.sm * 2} radius={radii.md} />
+        ) : cando.length ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
         {/* Misafirin ilk tamamlanan konuşması: kaybedecek bir şeyi olduğu ilk an. */}
         <GuestMilestoneCard milestone="first_conversation" when={!unfinished} />
         {!corrections.length && talked ? <FlowNote tone="ok" icon={<CorrectIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
