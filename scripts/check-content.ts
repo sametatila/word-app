@@ -460,6 +460,14 @@ function checkSkills(list: SkillExercise[]) {
           const kok = q.text.toLocaleLowerCase("tr").split(/[^\p{L}]+/u).find((w) => SAYI[w] != null);
           if (kok && q.items && SAYI[kok] !== q.items.length)
             E(qw, `order kökü "${kok}" diyor, ${q.items.length} madde var`);
+          /* Başka geçerli diziliş (`alternatives`) AYNI maddelerden kurulu
+             olmalı: oyuncu yalnız maddeleri yer değiştiriyor, başka sözcüğü
+             içeren bir "alternatif" hiçbir zaman dizilemez. */
+          for (const alt of q.alternatives ?? []) {
+            const bag = (x: string) => x.toLocaleLowerCase("de-DE").replace(/[.,!?;:„“”"]/g, " ").split(/\s+/).filter(Boolean).sort().join(" ");
+            if (!q.items || bag(alt) !== bag(q.items.join(" "))) E(qw, `order alternatifi maddelerden kurulamıyor: "${alt}"`);
+            else if (bag(alt) && alt.trim() === q.items.join(" ").trim()) W(qw, `order alternatifi hedefin aynısı: "${alt}"`);
+          }
         } else {
           if (!q.options || q.options.length < 2 || q.options.length > 4) E(qw, `şık sayısı ${q.options?.length ?? 0}`);
           if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= (q.options?.length ?? 0)) E(qw, `answer indeksi aralık dışı: ${q.answer}`);

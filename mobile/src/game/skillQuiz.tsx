@@ -28,6 +28,9 @@ import { ReportLink, assessmentRef } from "../ui/ReportLink";
 import { ReportFlag } from "../ui/ReportFlag";
 import type { ReportSurface } from "../lib/report";
 import { IconLine } from "../ui/IconLine";
+import { arrangedAccepted } from "../lib/arrange";
+import { arrangedRescuable } from "../lib/typedAnswer";
+import { rescueSentence } from "../lib/sentenceRescue";
 
 /**
  * Soruların içerik bildirimi — hangi alıştırma, hangi yüzey. Sağlayan ekran
@@ -98,11 +101,6 @@ export function written(typed: string, accept: string[]): boolean {
  * "yanlış", sıra hatası da "yanlış" oluyordu ve öğrenci hangisini yaptığını
  * hiçbir yerden öğrenmiyordu.
  */
-/** Kurulan cümlenin karşılaştırma biçimi — web `writing-player` `normalize`. */
-function normalizeBuilt(x: string): string {
-  return x.toLocaleLowerCase("de-DE").replace(/[.!?,]/g, "").replace(/\s+/g, " ").trim();
-}
-
 function isPass(m: SentenceMatch): boolean {
   return m.verdict === "exact" || m.verdict === "spelling";
 }
@@ -224,10 +222,32 @@ function OrderInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: boo
     return rotated.every((v, i) => v === i) ? idx.reverse() : rotated;
   });
   const [picked, setPicked] = useState<number | null>(null);
-  const correct = order.every((v, i) => v === i);
+  const guest = Boolean(useAuth().user?.guest);
+  /** `ok`: hedef ya da yazılı alternatif; `rescued`: yapay zekâ kabul etti. */
+  const [verdict, setVerdict] = useState<"ok" | "rescued" | "wrong" | null>(null);
+  const [checking, setChecking] = useState(false);
+  const canonical = items.join(" ");
+
+  /* Geçerli başka diziliş de doğru (web `skills/quiz` `OrderInput` aynı kural):
+     hedef + `alternatives`; cümle dizmede başka diziliş yapay zekâya soruluyor.
+     Hüküm `order.every((v, i) => v === i)` idi (QA 2026-10-09). */
+  async function check() {
+    if (done || checking) return;
+    const arranged = order.map((v) => items[v]).join(" ");
+    if (arrangedAccepted(arranged, [canonical, ...(q.alternatives ?? [])])) { setVerdict("ok"); onSettle(true); return; }
+    if (arrangedRescuable(arranged, canonical, items)) {
+      setChecking(true);
+      const ok = await rescueSentence({ source: q.source ?? canonical, target: canonical, typed: arranged, lang: currentTargetLang(), guest });
+      setChecking(false);
+      if (ok) { setVerdict("rescued"); onSettle(true); return; }
+    }
+    setVerdict("wrong");
+    onSettle(false);
+  }
+  const passed = verdict === "ok" || verdict === "rescued";
 
   function tap(pos: number) {
-    if (done) return;
+    if (done || checking) return;
     if (picked === null) { setPicked(pos); return; }
     const next = [...order];
     [next[picked], next[pos]] = [next[pos], next[picked]];
@@ -239,7 +259,7 @@ function OrderInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: boo
       <Text variant="caption" color={colors.textMuted}>{tx("skillquiz.put_these_in_right_order_tap_two")}</Text>
       <View style={{ marginTop: spacing.sm, gap: 6 }}>
         {order.map((v, pos) => {
-          const bc = done ? (v === pos ? colors.success : colors.danger) : picked === pos ? colors.primary : colors.border;
+          const bc = done ? (passed || v === pos ? colors.success : colors.danger) : picked === pos ? colors.primary : colors.border;
           return (
             /* Iki ogeyi degistirmek icin once birini seciyorsun; o secim de
                renkten baska bir seyle soylenmeli (webde `aria-pressed`). */
@@ -250,9 +270,12 @@ function OrderInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: boo
           );
         })}
       </View>
+      {verdict === "rescued" ? (
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("rounds.rescue_taught")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{canonical}</Text></Text>
+      ) : null}
       {!done ? (
-        <PressableScale onPress={() => onSettle(correct)} style={{ marginTop: spacing.sm, alignSelf: "flex-start", backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{tx("skillquiz.check")}</Text>
+        <PressableScale onPress={() => void check()} disabled={checking} style={{ marginTop: spacing.sm, alignSelf: "flex-start", backgroundColor: checking ? colors.surface2 : colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
+          <Text variant="bodyStrong" color={checking ? colors.textFaint : colors.onPrimary}>{tx(checking ? "rounds.checking" : "skillquiz.check")}</Text>
         </PressableScale>
       ) : null}
     </View>
@@ -329,7 +352,7 @@ export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { t
       */}
       {tasks.map((t, i) => {
         const shared = { n: i + 1, done: results[i] !== null, onSettle: (ok: boolean, near?: boolean) => settle(i, ok, near), colors };
-        if (t.kind === "build") return <BuildCard key={i} t={t} {...shared} />;
+        if (t.kind === "build") return <BuildCard key={i} t={t} level={level} {...shared} />;
         if (t.kind === "rewrite") return <RewriteCard key={i} t={t} {...shared} />;
         if (t.kind === "form") return <FormCard key={i} t={t} {...shared} />;
         return <FreeCard key={i} t={t} level={level} exerciseId={exerciseId} {...shared} />;
@@ -350,21 +373,35 @@ export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { t
  * tohumlu karıştırma veriyor, yani ekran yeniden çizilince parçalar yerinden
  * oynamıyor.
  */
-function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
+function BuildCard({ t, n, level, done, onSettle, colors }: { t: BuildTask; n: number; level: string; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
   const tokens = useMemo(() => seededShuffle(t.answer.replace(/[.!?]$/, "").split(" "), `${n}|${t.answer}`), [t.answer, n]);
   const [chosen, setChosen] = useState<number[]>([]);
   const [phase, setPhase] = useState<"editing" | "correct" | "revealed">("editing");
   const [fails, setFails] = useState(0);
-  const accepted = useMemo(() => [t.answer, ...(t.alternatives ?? [])].map(normalizeBuilt), [t]);
+  const guest = Boolean(useAuth().user?.guest);
+  /** Yapay zekâ soruluyor: düğmeler kapalı. */
+  const [checking, setChecking] = useState(false);
+  /** Kabul yapay zekâdan: kurulan cümle doğru, öğretilen biçim ayrıca gösteriliyor. */
+  const [rescued, setRescued] = useState<string | null>(null);
 
   /* SONUÇ KONTROLDE KAYDEDİLİYOR (Samet, 2026-10-07: "Kontrole tıkladım sonra devam et
      butonunun olması çok anlamsız"). Kartlar alt alta duruyor; "Devam" bir yere götürmüyor,
      yalnız sonucu yazıyordu. Doğruda ya da iki yanlıştan sonra cevap açılınca hemen
      `onSettle` (ses/titreşim de o anda, `WritingList` `settle`). Web tek görev gösterdiği için
      orada "Devam" sonrakine geçiriyor, kalıyor. Yeniden Yaz kartı baştan böyle. */
-  function check() {
+  /* GEÇERLİ BAŞKA DİZİLİŞ DE DOĞRU (QA 2026-10-09; web `BuildTask` aynı kural):
+     aynı parçalar başka sırada geldiyse ve yazılı alternatif değilse yapay
+     zekâya soruluyor (V2 hatası sunucuda modelden önce eleniyor). */
+  async function check() {
+    if (checking) return;
     const assembled = chosen.map((i) => tokens[i]).join(" ");
-    if (accepted.includes(normalizeBuilt(assembled))) { setPhase("correct"); if (!done) onSettle(true); return; }
+    if (arrangedAccepted(assembled, [t.answer, ...(t.alternatives ?? [])])) { setPhase("correct"); if (!done) onSettle(true); return; }
+    if (arrangedRescuable(assembled, t.answer, tokens)) {
+      setChecking(true);
+      const ok = await rescueSentence({ source: t.tr, target: t.answer, typed: assembled, level, lang: currentTargetLang(), guest });
+      setChecking(false);
+      if (ok) { setRescued(assembled); setPhase("correct"); if (!done) onSettle(true); return; }
+    }
     const f = fails + 1;
     setFails(f);
     if (f >= 2) setPhase("revealed");
@@ -406,8 +443,11 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
       {phase === "correct" ? (
         <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.sm, alignItems: "flex-start" }}>
           <IconLine variant="bodyStrong"><CorrectIcon color={colors.successText} size={16} /></IconLine>
-          <Text variant="bodyStrong" color={colors.successText} style={{ flex: 1 }}>{t.answer}</Text>
+          <Text variant="bodyStrong" color={colors.successText} style={{ flex: 1 }}>{rescued ?? t.answer}</Text>
         </View>
+      ) : null}
+      {phase === "correct" && rescued ? (
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("rounds.rescue_taught")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text>
       ) : null}
       {phase === "revealed" ? (
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("rounds.answer_is")}<Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text>
@@ -416,9 +456,9 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
         {locked ? null : (
           <>
-            <PressableScale onPress={check} disabled={chosen.length !== tokens.length}
-              style={{ backgroundColor: chosen.length === tokens.length ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-              <Text variant="bodyStrong" color={chosen.length === tokens.length ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
+            <PressableScale onPress={() => void check()} disabled={chosen.length !== tokens.length || checking}
+              style={{ backgroundColor: chosen.length === tokens.length && !checking ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
+              <Text variant="bodyStrong" color={chosen.length === tokens.length && !checking ? colors.onPrimary : colors.textFaint}>{tx(checking ? "rounds.checking" : "skillquiz.check")}</Text>
             </PressableScale>
             {chosen.length > 0 ? (
               <PressableScale onPress={() => setChosen([])} style={{ paddingHorizontal: spacing.md, paddingVertical: 11 }}>

@@ -28,6 +28,10 @@ export type Gloss = { de: string; tr: string; en?: string; hd?: string; note?: s
 export type SkillQuestion = {
   kind?: "mcq" | "truefalse" | "gapfill" | "produce" | "short_answer" | "order" | "dictation";
   text: string; options: string[]; answer: number; accept?: string[]; items?: string[]; explain: string;
+  /** `order`: başka geçerli diziliş(ler), maddeler boşlukla birleşik (web `SkillQuestion.alternatives`). */
+  alternatives?: string[];
+  /** `order` (cümle dizme): anadildeki karşılığı — yapay zekâ kontrolünün kaynağı. */
+  source?: string;
 };
 export type ListeningSegment = { speaker?: string; text: string; audio?: string };
 export type SkillKey = "reading" | "listening" | "writing" | "speaking" | "grammar";

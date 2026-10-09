@@ -15,6 +15,9 @@ import { speakGerman } from "@/components/speak-button";
 import { CorrectIcon, InfoIcon, SpeakerIcon, WrongIcon } from "@/components/icons";
 import { levenshtein } from "@/lib/errors";
 import { typoOnly } from "@/lib/sentence-match";
+import { arrangedAccepted } from "@/lib/arrange";
+import { arrangedRescuable } from "@/lib/typed-answer";
+import { rescueSentence } from "@/lib/sentence-rescue";
 import { useT } from "@/lib/i18n/client";
 import { vibrate } from "@/lib/fx";
 
@@ -279,10 +282,42 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
     return rotated.every((v, i) => v === i) ? idx.reverse() : rotated;
   });
   const [picked, setPicked] = useState<number | null>(null);
-  const correct = order.every((v, i) => v === i);
+  /** `ok`: hedef ya da yazılı alternatif; `rescued`: yapay zekâ kabul etti. */
+  const [verdict, setVerdict] = useState<"ok" | "rescued" | "wrong" | null>(null);
+  const [checking, setChecking] = useState(false);
+  const canonical = items.join(" ");
+
+  /*
+   * GEÇERLİ BAŞKA DİZİLİŞ (QA 2026-10-09). Hüküm `order.every((v, i) => v === i)`
+   * idi: "Ich kaufe morgen ein" dizmesinde "Morgen kaufe ich ein" yanlış
+   * sayılıyordu. Kabul artık hedef + `alternatives`; cümle dizmede (maddeler
+   * sözcük) başka bir diziliş yapay zekâya soruluyor. Mobil `OrderInput` aynı.
+   */
+  async function check() {
+    if (done || checking) return;
+    const arranged = order.map((v) => items[v]).join(" ");
+    if (arrangedAccepted(arranged, [canonical, ...(q.alternatives ?? [])])) {
+      setVerdict("ok");
+      onSettle(true);
+      return;
+    }
+    if (arrangedRescuable(arranged, canonical, items)) {
+      setChecking(true);
+      const ok = await rescueSentence({ source: q.source ?? canonical, target: canonical, typed: arranged, lang }, t);
+      setChecking(false);
+      if (ok) {
+        setVerdict("rescued");
+        onSettle(true);
+        return;
+      }
+    }
+    setVerdict("wrong");
+    onSettle(false);
+  }
+  const passed = verdict === "ok" || verdict === "rescued";
 
   function tap(pos: number) {
-    if (done) return;
+    if (done || checking) return;
     if (picked === null) return setPicked(pos);
     const next = [...order];
     [next[picked], next[pos]] = [next[pos], next[picked]];
@@ -303,7 +338,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
               aria-pressed={picked === pos}
               disabled={done}
               onClick={() => tap(pos)}
-              className={`option flex w-full items-center gap-2 px-3 py-2 text-left text-body ${picked === pos ? "option-picked" : ""} ${done ? (v === pos ? "option-correct" : "option-wrong") : ""}`}
+              className={`option flex w-full items-center gap-2 px-3 py-2 text-left text-body ${picked === pos ? "option-picked" : ""} ${done ? (passed || v === pos ? "option-correct" : "option-wrong") : ""}`}
             >
               <span className="muted w-5 shrink-0 text-caption">{pos + 1}.</span>
               <span lang={lang}>{items[v]}</span>
@@ -311,9 +346,14 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
           </li>
         ))}
       </ol>
+      {verdict === "rescued" ? (
+        <p className="mt-2 text-caption">
+          <span className="muted">{t("rounds.rescue_taught")}</span> <strong lang={lang}>{canonical}</strong>
+        </p>
+      ) : null}
       {!done ? (
-        <button type="button" onClick={() => onSettle(correct)} className="btn btn-primary mt-2 min-h-11 px-3.5 py-2 text-body">
-          {t("skillquiz.check")}
+        <button type="button" disabled={checking} onClick={() => void check()} className="btn btn-primary mt-2 min-h-11 px-3.5 py-2 text-body disabled:opacity-60">
+          {t(checking ? "rounds.checking" : "skillquiz.check")}
         </button>
       ) : null}
     </div>

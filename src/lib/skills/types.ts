@@ -72,6 +72,15 @@ export type SkillQuestion = {
   accept?: string[];
   /** `order`: doğru sıra — oyuncu karışık gösterir. */
   items?: string[];
+  /**
+   * `order`: başka geçerli diziliş(ler), maddeler boşlukla birleşik tam metin
+   * ("Morgen kaufe ich ein"). Aynı maddelerden kurulu olmalı (`check:content`).
+   * Cümle dizmede (madde = sözcük) yazılı olmayan başka diziliş yapay zekâya
+   * sorulur; madde sıralamasında (olay sırası) yalnız bunlar geçer.
+   */
+  alternatives?: string[];
+  /** `order` (cümle dizme): cümlenin anadildeki karşılığı — yapay zekâ kontrolünün kaynağı. */
+  source?: string;
   /** Cevaptan sonra gösterilen Türkçe açıklama: neden doğru, metinde nerede. */
   explain: string;
 };

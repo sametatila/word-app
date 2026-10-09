@@ -24,6 +24,9 @@ import { RUBRIC_PASS_PCT, SCORE_MID_PCT, SKILL_DONE_PCT } from "@/lib/score-band
 import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
 import { vibrate } from "@/lib/fx";
 import { IconLine } from "@/components/icon-line";
+import { arrangedAccepted } from "@/lib/arrange";
+import { arrangedRescuable } from "@/lib/typed-answer";
+import { rescueSentence } from "@/lib/sentence-rescue";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -120,6 +123,7 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
             key={`${round}-${step}`}
             task={active}
             seed={`${round}-${step}`}
+            level={exercise.level}
             onDone={completeTask}
           />
         ) : active.kind === "sentence" ? (
@@ -157,24 +161,18 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
   );
 }
 
-/** Noktalama ve büyük/küçük harf farkı cümle kurmayı geçersiz kılmasın. */
-function normalize(s: string) {
-  return s
-    .toLocaleLowerCase("de-DE")
-    .replace(/[.!?,]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 /** Karışık parçalardan cümle kurma — iki yanlıştan sonra doğru cevap açıklanır. */
 function BuildTask({
   task,
   seed,
+  level,
   onDone,
 }: {
   task: BuildTaskData;
   /** Parçaların dizilişini belirleyen tohum — bkz. aşağıdaki not. */
   seed: string;
+  /** Yapay zekâ kontrolünün seviyesi (egzersizin seviyesi). */
+  level: string;
   onDone: (ok: boolean) => void;
 }) {
   const t = useT();
@@ -198,16 +196,34 @@ function BuildTask({
   const [fails, setFails] = useState(0);
   const [shaking, setShaking] = useState(false);
 
-  const accepted = useMemo(
-    () => [task.answer, ...(task.alternatives ?? [])].map(normalize),
-    [task],
-  );
+  /** Yapay zekâ soruluyor: düğmeler kapalı. */
+  const [checking, setChecking] = useState(false);
+  /** Kabul yapay zekâdan: kurulan cümle doğru, öğretilen biçim ayrıca gösteriliyor. */
+  const [rescued, setRescued] = useState<string | null>(null);
 
-  function check() {
+  /*
+   * GEÇERLİ BAŞKA DİZİLİŞ DE DOĞRU (QA 2026-10-09). Kabul yalnız hedef ve
+   * içerikte yazılı alternatiflerdi: "Morgen kaufe ich ein" gibi doğru bir
+   * diziliş, alternatif yazılmadıysa yanlış sayılıyordu. Aynı parçalar başka
+   * sırada geldiyse önce yapay zekâya soruluyor (çeviri turunun kontrolü;
+   * V2 hatası sunucuda modelden önce eleniyor). Mobil `BuildCard` aynı kural.
+   */
+  async function check() {
+    if (checking) return;
     const assembled = chosen.map((i) => tokens[i]).join(" ");
-    if (accepted.includes(normalize(assembled))) {
+    if (arrangedAccepted(assembled, [task.answer, ...(task.alternatives ?? [])])) {
       setPhase("correct");
       return;
+    }
+    if (arrangedRescuable(assembled, task.answer, tokens)) {
+      setChecking(true);
+      const ok = await rescueSentence({ source: task.tr, target: task.answer, typed: assembled, level, lang }, t);
+      setChecking(false);
+      if (ok) {
+        setRescued(assembled);
+        setPhase("correct");
+        return;
+      }
     }
     const n = fails + 1;
     setFails(n);
@@ -276,7 +292,13 @@ function BuildTask({
           <IconLine>
             <CorrectIcon size={17} />
           </IconLine>
-          <span lang={lang}>{task.answer}</span>
+          <span lang={lang}>{rescued ?? task.answer}</span>
+        </p>
+      ) : null}
+      {phase === "correct" && rescued ? (
+        <p className="mt-1.5 text-body">
+          <span className="muted">{t("rounds.rescue_taught")}</span>{" "}
+          <strong lang={lang}>{task.answer}</strong>
         </p>
       ) : null}
       {phase === "revealed" ? (
@@ -299,11 +321,11 @@ function BuildTask({
           <>
             <button
               type="button"
-              disabled={chosen.length !== tokens.length}
-              onClick={check}
+              disabled={chosen.length !== tokens.length || checking}
+              onClick={() => void check()}
               className="btn btn-primary px-6 py-2.5 disabled:opacity-60"
             >
-              {t("skillquiz.check")}
+              {t(checking ? "rounds.checking" : "skillquiz.check")}
             </button>
             {chosen.length > 0 ? (
               <button
