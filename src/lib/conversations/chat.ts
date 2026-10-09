@@ -8,7 +8,7 @@ import { SCORED_TURNS } from "./chat-const";
 import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { dialogueDone, targetsUsed } from "@/lib/dialogue";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
-import { ensureRoleText, guardCorrections, splitInlineMarkers } from "./fix-guard";
+import { ensureRoleText, guardCorrections, splitInlineMarkers, stripModelTokenStream } from "./fix-guard";
 
 /**
  * Sohbet — konuşmanın son ve asıl parçası.
@@ -358,6 +358,9 @@ Düzeltme yazarken:
   "Ausdruck" gibi bir etiket aklına geliyorsa satırı YAZMA: o bir hata değil.
 - Sayılamayan isimler (Wasser, Milch, Zahnpasta, Geld, Obst, Käse…) artikelsiz de
   doğrudur: "Ich brauche Zahnpasta" düzeltilmez.
+- "bitte", "auch", "doch", "mal", "gern" gibi sözcükler cümlede birkaç yerde durabilir:
+  "Halten Sie bitte hier" doğrudur, yerlerini değiştiren düzeltme yazma. İki biçimi de
+  doğru olanı da düzeltme ("gegenüber vom Bahnhof" = "gegenüber dem Bahnhof").
 - Her ${CORRECTION_MARK} ve ${SUGGESTION_MARK} işareti YENİ BİR SATIRIN BAŞINDA durur;
   rol metninin arkasına aynı satırda işaret yazma. Rol metnin işaretsizdir: kendi
   cümleni ${SUGGESTION_MARK} ile yazma; ${SUGGESTION_MARK} yalnız ÖĞRENCİNİN söyleyebileceği cevaplar.
@@ -524,7 +527,7 @@ export async function* streamChat(
   // işareti satır başında arıyor).
   // Rol metni olmayan cevap (yalnız öneriler) bir kez yeniden üretiliyor (`ensureRoleText`).
   yield* guardCorrections(
-    ensureRoleText(() => splitInlineMarkers(streamSystem(system, messages, onMeta, report)), 1, () =>
+    ensureRoleText(() => splitInlineMarkers(stripModelTokenStream(streamSystem(system, messages, onMeta, report))), 1, () =>
       console.warn("[chat] rol metni yok, tur yeniden üretiliyor"),
     ),
     said,
@@ -612,7 +615,7 @@ export async function* streamDialogue(
 ): AsyncGenerator<string> {
   const said = messages.filter((m) => m.role === "user").map((m) => m.content);
   const closing = dialogueDone(said.length, targetsUsed(ex.targets, said).length);
-  yield* streamSystem(dialoguePrompt(ex, closing, native), messages, onMeta, report);
+  yield* stripModelTokenStream(streamSystem(dialoguePrompt(ex, closing, native), messages, onMeta, report));
 }
 
 /** Ortak akış: sağlayıcı zinciri, ilk parça gelmeden düşerse yedeğe geçer. */

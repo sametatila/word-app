@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
-import { ensureRoleText, filterCorrectionLines, guardCorrections, judgeCorrection, splitInlineMarkers } from "../src/lib/conversations/fix-guard";
+import { ensureRoleText, filterCorrectionLines, guardCorrections, judgeCorrection, splitInlineMarkers, stripModelTokenStream } from "../src/lib/conversations/fix-guard";
 import { breakInlineMarkers } from "../src/lib/chat-format";
 
 /**
@@ -102,6 +102,8 @@ console.log("\nQA kullanıcısının sahte düzeltmeleri (2026-10-09, panel #13 
     ["bis fünf → bis fünf Uhr (Präzision)", "Ich arbeite bis fünf.", {}, "style"],
     ["Ich brauche Zahnpasta → Ich brauche eine Zahnpasta (Artikel)", "Ich brauche Zahnpasta.", {}, "mass_noun"],
     ["trinke Wasser → trinke ein Wasser (Artikel)", "Ich trinke Wasser.", {}, "mass_noun"],
+    ["Halten Sie bitte hier → Bitte halten Sie hier (Satzstellung)", "Halten Sie bitte hier.", {}, "style"],
+    ["gegenüber vom Bahnhof → gegenüber dem Bahnhof (Präposition)", "Ist es gegenüber vom Bahnhof?", {}, "style"],
   ];
   for (const [line, s, ctx, reason] of cases) {
     const v = judgeCorrection(line, said(s), ctx);
@@ -258,6 +260,19 @@ async function streamTests() {
   const { massNouns } = (await import("./gen-mass-nouns.mjs")) as { massNouns: () => string[] };
   const committed = JSON.parse(readFileSync("src/lib/conversations/mass-nouns.generated.json", "utf8")) as string[];
   check("sayılamayan isim listesi words.json ile güncel", JSON.stringify(massNouns()) === JSON.stringify(committed), "node scripts/gen-mass-nouns.mjs");
+  // Modelin özel işaretleri (QA F-0065): her bölmede silinmiş, metin aynen.
+  const LEAK = "<|channel>thought\n<channel|>Gut, dann nehmen Sie den Zug um acht.\n[SAY] Danke!";
+  const CLEAN = "Gut, dann nehmen Sie den Zug um acht.\n[SAY] Danke!";
+  async function strip(chunks: string[]): Promise<string> {
+    let out = "";
+    for await (const d of stripModelTokenStream((async function* () { for (const c of chunks) yield c; })())) out += d;
+    return out;
+  }
+  let sbad = 0;
+  for (let i = 0; i <= LEAK.length; i++) if ((await strip([LEAK.slice(0, i), LEAK.slice(i)].filter(Boolean))) !== CLEAN) sbad++;
+  check("model işaretleri her bölmede siliniyor", sbad === 0, String(sbad));
+  check("model işaretleri karakter karakter", (await strip([...LEAK])) === CLEAN, JSON.stringify(await strip([...LEAK])));
+  check("işaretsiz metin aynen", (await strip([..."Ich bin 3 < 5 und a|b."])) === "Ich bin 3 < 5 und a|b.");
   const r2 = await role([[...ONLY], [...ONLY]]);
   check("iki denemede de rol metni yok → öneriler yine gidiyor", r2.out === ONLY && r2.tries === 2, JSON.stringify(r2));
 }

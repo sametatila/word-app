@@ -180,6 +180,40 @@ function addsArticleToMassNoun(left: string[], right: string[]): boolean {
   return right.slice(i + 1, i + 3).some((w) => MASS.has(w));
 }
 
+/**
+ * SERBEST KONUMLU İLGEÇ (QA F-0008, 2026-10-09): "Halten Sie bitte hier → Bitte halten
+ * Sie hier (Satzstellung)". bitte, auch, doch, mal, gern… cümlede birkaç yerde durabilir;
+ * yalnız onların yeri değişiyorsa bu bir tercih, düzeltme değil.
+ */
+const FREE_PARTICLES = new Set(["bitte", "auch", "doch", "mal", "ja", "denn", "gern", "gerne", "schon", "noch", "eben", "halt", "wohl", "vielleicht", "eigentlich", "also", "dann", "jetzt", "please", "too", "also", "just", "really"]);
+function onlyParticleMoved(left: string[], right: string[]): boolean {
+  if ([...left].sort().join(" ") !== [...right].sort().join(" ") || left.join(" ") === right.join(" ")) return false;
+  const core = (ws: string[]) => ws.filter((w) => !FREE_PARTICLES.has(w)).join(" ");
+  return core(left) === core(right);
+}
+
+/**
+ * İKİSİ DE DOĞRU DEĞİŞKENLER (QA F-0008): "gegenüber vom Bahnhof → gegenüber dem
+ * Bahnhof (Präposition)". Sol ve sağ yalnız bu çiftlerden biriyle ayrılıyorsa düzeltme yok.
+ */
+const BOTH_RIGHT: [string, string][] = [
+  ["gegenüber vom", "gegenüber dem"],
+  ["gegenüber von der", "gegenüber der"],
+  ["gegenüber von den", "gegenüber den"],
+  ["gern", "gerne"],
+  ["heute abend", "heute am abend"],
+  ["nach hause", "nachhause"],
+  ["zu hause", "zuhause"],
+];
+function bothRightVariant(left: string[], right: string[]): boolean {
+  const l = ` ${left.join(" ")} `;
+  const r = ` ${right.join(" ")} `;
+  return BOTH_RIGHT.some(([a, b]) => {
+    const swap = (s: string, x: string, y: string) => s.split(` ${x} `).join(` ${y} `);
+    return swap(l, a, b) === r || swap(l, b, a) === r;
+  });
+}
+
 /** "Uni → Universität": tek sözcük, sağdaki soldakiyle başlıyor ve yalnız uzuyor. */
 function expandsAbbreviation(left: string[], right: string[]): boolean {
   if (left.length !== right.length) return false;
@@ -243,7 +277,9 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
     return { keep: false, reason: "label_mismatch" };
   }
 
-  if (STYLE_LABEL.test(label) || expandsAbbreviation(left, right)) return { keep: false, reason: "style" };
+  if (STYLE_LABEL.test(label) || expandsAbbreviation(left, right) || onlyParticleMoved(left, right) || bothRightVariant(left, right)) {
+    return { keep: false, reason: "style" };
+  }
   if (lang === "de" && addsArticleToMassNoun(left, right)) return { keep: false, reason: "mass_noun" };
   return { keep: true };
 }
@@ -356,6 +392,42 @@ export async function* ensureRoleText(
       return;
     }
     onRetry?.();
+  }
+}
+
+/**
+ * MODELİN ÖZEL İŞARETLERİ (QA F-0065, 2026-10-09): Gemma bazen düşünme kanalının
+ * işaretlerini düz metne döküyor ("<|channel>thought\n<channel|>"); balona ham düşüyordu.
+ * `<|channel>…<channel|>` bloğu içeriğiyle, öteki `<|…|>` / `<…|>` / `<|…>` işaretleri
+ * tek başına siliniyor. Yarım kalabilecek kuyruk ("<|cha") bir sonraki parçayı bekliyor.
+ */
+const CHANNEL_BLOCK = /<\|channel\|?>[\s\S]*?<\|?channel\|>\s*/g;
+const SPECIAL_TOKEN = /<\|[a-z_]{1,24}\|?>|<[a-z_]{1,24}\|>/gi;
+export function stripModelTokens(text: string): string {
+  return text.replace(CHANNEL_BLOCK, "").replace(SPECIAL_TOKEN, "");
+}
+export async function* stripModelTokenStream(source: AsyncIterable<string>): AsyncGenerator<string> {
+  let buf = "";
+  for await (const delta of source) {
+    buf += delta;
+    // Açık kanal bloğu kapanmadıysa bekle (en çok 2.000 karakter: bozuk akış metni yutmasın).
+    const open = buf.search(/<\|channel\|?>/);
+    if (open !== -1 && !/<\|?channel\|>/.test(buf.slice(open + 9)) && buf.length - open < 2000) {
+      const ready = stripModelTokens(buf.slice(0, open));
+      buf = buf.slice(open);
+      if (ready) yield ready;
+      continue;
+    }
+    const cleaned = stripModelTokens(buf);
+    // Sonda yarım bir "<|…" ya da "<…" olabilir: onu tut.
+    const tail = cleaned.match(/<\|?[a-z_]{0,24}\|?$/i);
+    const cut = tail ? cleaned.length - tail[0].length : cleaned.length;
+    buf = cleaned.slice(cut);
+    if (cut) yield cleaned.slice(0, cut);
+  }
+  if (buf) {
+    const rest = stripModelTokens(buf);
+    if (rest) yield rest;
   }
 }
 
