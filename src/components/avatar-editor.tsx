@@ -137,7 +137,11 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
 
       <div className="relative -mx-4 -mt-6 rounded-t-[1.5rem] px-4 pt-4 sm:mx-0" style={{ background: "var(--bg)" }}>
         {/* YUVA SEKMELERİ */}
-        <div role="tablist" aria-label={t("avatar.your_avatar")} className="no-scrollbar flex gap-1.5 overflow-x-auto pb-2">
+        {/* Şerit ekran kenarına kadar kayıyor ve iki uçta 16'lık pay bırakıyor
+            (`-mx-4 px-4`): `px-4` kabın içinde kesiliyor, son sekme kabın
+            kenarına yapışıyordu. Sekme en az 44 yüksek, yazı tek satır
+            (QA F-0052, Android `AvatarScreen` ile aynı). */}
+        <div role="tablist" aria-label={t("avatar.your_avatar")} className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0">
           {slots.map((s) => (
             <button
               key={s}
@@ -145,7 +149,7 @@ export function AvatarEditor({ locked }: { locked: Record<string, string> }) {
               type="button"
               aria-selected={s === slot}
               onClick={() => { setSlot(s); setHint(null); }}
-              className="pressable shrink-0 rounded-tile px-3.5 py-2 text-strong"
+              className="pressable min-h-11 shrink-0 whitespace-nowrap rounded-tile px-3.5 py-2 text-strong"
               /* Yuva sekmesi küçük seçim: dolu turuncu + beyaz (2026-09-29 Samet: seçim B). */
               style={s === slot ? { background: "var(--brand-fill)", color: "var(--on-brand)" } : { background: "var(--surface-2)", color: "var(--text-muted)" }}
             >

@@ -5,6 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { hitSlopFor } from "../ui/touch";
 import { CheckIcon, CloseIcon, LockedIcon, UndoIcon } from "../ui/icons";
 import { PrimaryButton } from "../ui/PrimaryButton";
 import { AvatarStage, derivedAvatar } from "../ui/Avatar";
@@ -167,14 +168,20 @@ export function AvatarScreen() {
       </AvatarStage>
 
       <View style={{ flex: 1, marginTop: -22, borderTopLeftRadius: radii.xl, borderTopRightRadius: radii.xl, backgroundColor: colors.bg }}>
-        {/* YUVA SEKMELERİ */}
-        <ScrollView accessibilityRole="tablist" horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.xs, paddingHorizontal: spacing.md, paddingTop: spacing.md, paddingBottom: spacing.sm }} style={{ flexGrow: 0 }}>
+        {/* YUVA SEKMELERİ.
+            QA F-0052 (build 22): sekmelerin yazısı yarıdan kesiliyordu ve "Yüz"
+            ekran kenarına yapışıktı. Sebep: yatay ScrollView'un varsayılan
+            `flexShrink: 1`i — altındaki parça listesi (o da ScrollView) yer
+            isteyince şerit yüksekliğinden veriyordu. Şerit artık küçülmüyor
+            (`flexShrink: 0`), kenar payı ekranın 16'lık oluğu (alt düğme şeridi
+            ve web `px-4` ile aynı), sekme en az 44 yüksek ve yazı tek satır. */}
+        <ScrollView accessibilityRole="tablist" horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: spacing.sm }} style={{ flexGrow: 0, flexShrink: 0 }}>
           {slots.map((s) => {
             const on = s === slot;
             return (
-              <PressableScale key={s} accessibilityRole="tab" accessibilityState={{ selected: on }} onPress={() => { setSlot(s); setHint(null); }} style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: on ? colors.primary : colors.surface2 }}>
+              <PressableScale key={s} accessibilityRole="tab" accessibilityState={{ selected: on }} onPress={() => { setSlot(s); setHint(null); }} style={{ minHeight: 44, justifyContent: "center", paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: on ? colors.primary : colors.surface2 }}>
                 {/* Yuva sekmesi küçük seçim: dolu turuncu + beyaz (2026-09-29 Samet: seçim B). */}
-                <Text variant="bodyStrong" color={on ? colors.onPrimary : colors.textMuted}>{t(SLOT_LABEL[s])}</Text>
+                <Text variant="bodyStrong" numberOfLines={1} color={on ? colors.onPrimary : colors.textMuted}>{t(SLOT_LABEL[s])}</Text>
               </PressableScale>
             );
           })}
@@ -186,7 +193,7 @@ export function AvatarScreen() {
               <Text variant="caption" color={colors.textMuted}>{t("avatar.color")}</Text>
               {palette.map((col) => {
                 const sel = colorNow === col;
-                return <PressableScale key={col} hitSlop={4} accessibilityRole="radio" accessibilityState={{ selected: sel }} accessibilityLabel={`${t("avatar.color")} ${col}`} onPress={() => setColor(col)} style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : colors.bg }} />;
+                return <PressableScale key={col} hitSlop={hitSlopFor(30, 30, spacing.sm / 2)} accessibilityRole="radio" accessibilityState={{ selected: sel }} accessibilityLabel={`${t("avatar.color")} ${col}`} onPress={() => setColor(col)} style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : colors.bg }} />;
               })}
             </View>
           ) : null}
