@@ -37,6 +37,8 @@ import type { ContentReport, ReportSurface } from "../lib/report";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
 import { tileSpeech } from "../lib/ttsText";
+import { arrangedRescuable } from "../lib/typedAnswer";
+import { rescueSentence } from "../lib/sentenceRescue";
 import { useTheme, spacing, radii, softShadow, cardShadow, motion, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
@@ -1665,16 +1667,43 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
      Sınavda görünmüyor (bkz. `game/noHints`). */
   const [hintUsed, setHintUsed] = useState(false);
   const noHints = useNoHints();
+  const guest = Boolean(useAuth().user?.guest);
+  const [checking, setChecking] = useState(false);
+  /* Geç gelen yapay zekâ cevabı tur değiştiyse düşmesin. */
+  const roundNow = useRef(round);
+  roundNow.current = round;
   const usedIds = new Set(placed.map((t) => t.id));
+  function settleOrder(np: { id: number; text: string }[], ok: boolean, rescued: boolean) {
+    const you = `${np.map((x) => x.text).join(" ")}${tail}`;
+    markAnswer(ok, rescued ? you : full); // tamamlanınca tam cümleyi oku
+    setFb({
+      correct: ok, answer: rescued ? you : full, speak: rescued ? you : full, meaning: exampleOf(round)?.text ?? glossOf(word).text, you,
+      why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail, currentTargetLang()), word, answer, tail, targetLang: currentTargetLang() }),
+      extra: rescued ? <Text variant="caption" color={colors.textMuted}>{tx("rounds.rescue_taught")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{full}</Text></Text> : null,
+    });
+  }
   function tap(t: { id: number; text: string }, at = placed.length) {
-    if (fb || usedIds.has(t.id) || placed.length >= answer.length) return;
+    if (fb || checking || usedIds.has(t.id) || placed.length >= answer.length) return;
     const np = [...placed];
     np.splice(Math.max(0, Math.min(at, np.length)), 0, t);
     setPlaced(np);
     if (np.length === answer.length) {
-      const ok = np.map((x) => x.text).join(" ") === answer.join(" ");
-      markAnswer(ok, full); // tamamlanınca tam cümleyi oku
-      setFb({ correct: ok, answer: full, speak: full, meaning: exampleOf(round)?.text ?? glossOf(word).text, you: `${np.map((x) => x.text).join(" ")}${tail}`, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail, currentTargetLang()), word, answer, tail, targetLang: currentTargetLang() }) });
+      const arranged = np.map((x) => x.text).join(" ");
+      const ok = arranged === answer.join(" ");
+      /* GEÇERLİ BAŞKA DİZİLİŞ (QA 2026-10-09, panel #46): web `order-game` ile aynı kural —
+         aynı kelimeler başka sırada geldiyse yapay zekâ kontrolü (V2 hatası sunucuda elenir). */
+      const source = exampleOf(round)?.text;
+      if (!ok && source && arrangedRescuable(arranged, answer.join(" "), round.tokens ?? [])) {
+        const at0 = round;
+        setChecking(true);
+        void rescueSentence({ source, target: full, typed: `${arranged}${tail}`, lang: currentTargetLang(), guest }).then((yes) => {
+          setChecking(false);
+          if (roundNow.current !== at0) return;
+          settleOrder(np, yes, yes);
+        });
+        return;
+      }
+      settleOrder(np, ok, false);
     } else {
       sfx("tap");
       speakTarget(tileSpeech(t.text), { word: true }); // web: her yerleştirilen kelimeyi oku (kutunun kendi kaydı, bkz. ttsText `tileSpeech`)

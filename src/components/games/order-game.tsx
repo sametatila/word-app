@@ -17,9 +17,11 @@ import { prefetchWord, speakWord } from "@/components/speak-button";
 import { tileSpeech } from "@/lib/tts/text";
 import { useT, useLang } from "@/lib/i18n/client";
 import { play } from "@/lib/sfx";
+import { arrangedRescuable } from "@/lib/typed-answer";
+import { rescueSentence } from "@/lib/sentence-rescue";
 
 type OrderRound = Extract<Round, { game: "order" }>;
-type Status = "playing" | "correct" | "wrong";
+type Status = "playing" | "checking" | "correct" | "wrong";
 /** Aynı kelime cümlede iki kez geçebildiği için kutular kimlikle taşınır. */
 type Token = { id: number; text: string };
 
@@ -49,6 +51,11 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   const [placed, setPlaced] = useState<Token[]>([]);
   const [status, setStatus] = useState<Status>("playing");
   const [hintUsed, setHintUsed] = useState(false);
+  /** Yapay zekânın kabul ettiği başka diziliş (öğretilen biçim ayrıca gösteriliyor). */
+  const [rescued, setRescued] = useState<string | null>(null);
+  /** Tur değişti mi: geç gelen yapay zekâ cevabı yeni turun üstüne düşmesin. */
+  const roundNow = useRef(round.id);
+  roundNow.current = round.id;
 
   const started = useRef(Date.now());
   const resolved = useRef(false);
@@ -72,6 +79,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     setStatus("playing");
     setPending(null);
     setHintUsed(false);
+    setRescued(null);
     started.current = Date.now();
     resolved.current = false;
     // Yeni tur açılırken önceki turun bekleyen okuması/sayacı iptal ediliyor.
@@ -83,7 +91,30 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     if (placed.length !== answer.length) return;
     resolved.current = true;
 
-    const isCorrect = placed.map((t) => t.text).join(" ") === answer.join(" ");
+    const arranged = placed.map((t) => t.text).join(" ");
+    const exact = arranged === answer.join(" ");
+    /*
+     * GEÇERLİ BAŞKA DİZİLİŞ (QA 2026-10-09, panel #46): "Nur vormittags arbeitet Frau
+     * Weber." doğru Almanca ama tek sıra kabul ediliyordu. Aynı kelimeler başka
+     * sırada geldiyse beceri dizmesiyle aynı yapay zekâ kontrolü (`sentence-rescue`;
+     * V2 hatası sunucuda modelden önce eleniyor). Mobil `OrderRound` aynı kural.
+     */
+    if (!exact && example?.text && arrangedRescuable(arranged, answer.join(" "), tokens)) {
+      const id = round.id;
+      setStatus("checking");
+      void rescueSentence({ source: example.text, target: `${answer.join(" ")}${tail}`, typed: `${arranged}${tail}`, lang: currentTargetLang() }, tx).then((ok) => {
+        if (roundNow.current !== id) return;
+        if (ok) setRescued(`${arranged}${tail}`);
+        settle(ok);
+      });
+      return;
+    }
+    settle(exact);
+  // `settle` her render'da yeniden kuruluyor; bağımlılık listesi aşağıdaki gibi kalıyor.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [placed, status, answer, tail, word.id, hintUsed, speak]);
+
+  function settle(isCorrect: boolean) {
     const latencyMs = Date.now() - started.current;
     setStatus(isCorrect ? "correct" : "wrong");
     // Cümle tamamlanınca DOĞRU hâli bütün olarak okunuyor. Tek tek kelimeler
@@ -107,7 +138,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       ),
     });
     speak(full, { maxWaitMs: 12000 });
-  }, [placed, status, answer, tail, word.id, hintUsed, speak]);
+  }
 
   const usedIds = new Set(placed.map((t) => t.id));
 
@@ -182,13 +213,18 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       label={tx("rounds.put_sentence_in_order")}
       onContinue={pending ? () => onDoneRef.current([pending]) : undefined}
       sheet={
-        status === "playing"
+        status === "playing" || status === "checking"
           ? null
           : {
               correct: status === "correct",
-              answer: `${answer.join(" ")}${tail}`,
+              answer: rescued ?? `${answer.join(" ")}${tail}`,
               meaning: example?.text ?? meaningOf(word, lang),
               you: `${placed.map((t) => t.text).join(" ")}${tail}`,
+              extra: rescued ? (
+                <span className="text-caption">
+                  <span className="muted">{tx("rounds.rescue_taught")}</span> <strong lang={currentTargetLang()}>{`${answer.join(" ")}${tail}`}</strong>
+                </span>
+              ) : null,
               why:
                 status === "wrong"
                   ? whyFor({

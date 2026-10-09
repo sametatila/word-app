@@ -22268,6 +22268,18 @@ console.log("\n" + C.b + "YAZILAN CEVAP HAKEMI" + C.off);
   sameList("gramer dizme satiri", gramer("mobile/src/game/immersionQuiz.ts"), gramer("src/lib/immersion/grammar.ts"));
 }
 
+/* ── pratik dizme oyunu: gecerli baska dizilis ─────────────────────────────
+ * QA 2026-10-09 (panel #46): "Nur vormittags arbeitet Frau Weber." tek sira kabul
+ * edildigi icin yanlis sayiliyordu. Web `order-game` ve mobil `OrderRound` ayni
+ * parcalar baska siradaysa ayni yapay zeka kontrolune soruyor. */
+console.log("\n" + C.b + "PRATIK DIZME OYUNU" + C.off);
+{
+  const web = read("src/components/games/order-game.tsx");
+  const mob = read("mobile/src/game/rounds.tsx").split("function OrderRound(")[1]?.split("\nfunction ")[0] ?? "";
+  const has = (src) => ["arrangedRescuable(", "rescueSentence(", "rounds.rescue_taught"].map((k) => k + "=" + src.includes(k));
+  sameList("dizme oyununda yapay zeka kontrolu", has(mob), has(web));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
