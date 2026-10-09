@@ -642,8 +642,10 @@ export const deA1B05: Conversation[] = [
       },
       {
         say: [
+          tr("Şimdi dikkat: renk eşyanın önüne gelince ek alır. 'Kırmızı ceket' Almancada şöyle:"),
+          de("die rote Jacke"),
           tr(
-            "Şimdi dikkat: rengi kelimenin önüne koymak işi zorlaştırır. 'Kırmızı ceket' derken renge ek gelir ve o ekler şu an için erken. Neyse ki mağazada kimse öyle konuşmuyor; herkes şu küçük numarayı kullanıyor:",
+            "Bu çok yaygın bir biçim; o ekleri ileride ayrıca çalışacağız. Mağazada bir rengi istemenin ek gerektirmeyen kolay bir yolu da var:",
           ),
           de("die Jacke in Rot"),
           tr("Yani 'ceketin kırmızısı'. Renk yine hiç değişmiyor."),
