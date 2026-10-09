@@ -1,17 +1,15 @@
 import "server-only";
 import { and, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { socialPosts } from "@/lib/db/schema";
-import plan from "../../data/social/plan.json";
+import { socialEpisodes, socialPosts } from "@/lib/db/schema";
 
 /**
  * SOSYAL MEDYA TAKVİMİ (panel › İçerik › Sosyal medya, 2026-10-09; Samet: "bir takvimde neyin planlandığını, nasıl
  * yayınlandığını takip edebiliriz").
  *
  * İki kaynak:
- *  - PLAN depoda: `data/social/plan.json` (bölüm, saat, başlık, açıklama). Claude bölümleri yazınca
- *    `npm run social:plan -- --write` ile üretir; deploy ile panele gelir. Panel planı DEĞİŞTİRMEZ.
- *  - DURUM veritabanında: `social_posts`, bölüm × platform başına bir satır. Satır yoksa "planlandı".
+ *  - BÖLÜM ve SAAT: `social_episodes` (stüdyo, `lib/studio`; depodan sunucu işçisiyle aktarılır).
+ *  - PLATFORM DURUMU: `social_posts`, bölüm × platform başına bir satır. Satır yoksa "planlandı".
  *    Samet platformun zamanlayıcısına koyunca "zamanlandı", yayından sonra bağlantıyla "yayında" der;
  *    metrikler ileride API eşitlemesinden gelir (Instagram: inceleme gerektirmiyor, TikTok: Display API).
  *
@@ -23,23 +21,6 @@ export type SocialPlatform = "tiktok" | "instagram";
 export const SOCIAL_PLATFORMS: SocialPlatform[] = ["tiktok", "instagram"];
 export type SocialStatus = "scheduled" | "published" | "skipped";
 export const SOCIAL_STATUSES: SocialStatus[] = ["scheduled", "published", "skipped"];
-
-export type PlanEpisode = {
-  id: string;
-  template: string;
-  approach: string;
-  theme: string;
-  title: string;
-  hook: string;
-  caption: string;
-  /** Berlin yerel saati "YYYY-AA-GG SS:DD" */
-  slot: string;
-  /** ISO, saat dilimi farkıyla */
-  at: string;
-  status: string;
-  published: string | null;
-  duration: number | null;
-};
 
 export type SocialPost = {
   episodeId: string | null;
@@ -55,8 +36,11 @@ export type SocialPost = {
   updatedAt: string;
 };
 
-export const socialPlan = (): PlanEpisode[] => (plan as { episodes: PlanEpisode[] }).episodes;
-const planIds = () => new Set(socialPlan().map((e) => e.id));
+async function knownIds(ids: string[]): Promise<Set<string>> {
+  if (!ids.length) return new Set();
+  const rows = await db.select({ id: socialEpisodes.id }).from(socialEpisodes).where(inArray(socialEpisodes.id, ids));
+  return new Set(rows.map((r) => r.id));
+}
 
 export const isSocialPlatform = (v: unknown): v is SocialPlatform => typeof v === "string" && (SOCIAL_PLATFORMS as string[]).includes(v);
 /** "planned" satırın silinmesi demek. */
@@ -111,7 +95,7 @@ export async function setSocialPost(input: { episodeId: unknown; platform: unkno
   const episodeId = String(input.episodeId ?? "");
   const { platform, status } = input;
   if (!isSocialPlatform(platform) || !isSocialStatus(status)) return { ok: false, error: "bad_input" };
-  if (!planIds().has(episodeId)) return { ok: false, error: "not_found" };
+  if (!(await knownIds([episodeId])).has(episodeId)) return { ok: false, error: "not_found" };
   if (status === "planned") {
     await db.delete(socialPosts).where(and(eq(socialPosts.episodeId, episodeId), eq(socialPosts.platform, platform)));
     return { ok: true, post: null };
@@ -134,7 +118,7 @@ export async function setSocialPost(input: { episodeId: unknown; platform: unkno
 /** Toplu işaretleme (ör. iki haftayı TikTok zamanlayıcısına koyduktan sonra). Yalnız durumu değiştirir. */
 export async function setSocialPostsBulk(input: { episodeIds: unknown; platform: unknown; status: unknown }, actor: string): Promise<{ ok: true; count: number } | { ok: false; error: "bad_input" }> {
   const ids = Array.isArray(input.episodeIds) ? input.episodeIds.map(String) : [];
-  const known = planIds();
+  const known = await knownIds(ids);
   if (!ids.length || ids.length > 200 || ids.some((id) => !known.has(id))) return { ok: false, error: "bad_input" };
   const { platform, status } = input;
   if (!isSocialPlatform(platform) || !isSocialStatus(status)) return { ok: false, error: "bad_input" };

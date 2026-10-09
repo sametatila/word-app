@@ -85,6 +85,8 @@ const SKIP = [
   // `lib/moderation.ts` ile — süzgecin konusu, arayüzün metni değil.
   "lib/auth/password-policy.ts",
   "app/admin",
+  // Sosyal video stüdyosu: panelin parçası (admin + sosyal medya editörü), tek dilli Türkçe (2026-10-09).
+  "app/studio",
   // Yönetim panelinin veri katmanı: `app/admin` ile aynı sınıf. Panel yalnız
   // ADMIN_EMAILS'e açık ve tek dilli; buradaki etiketler (cron adları, karar
   // notları) son kullanıcıya hiç gitmiyor.
@@ -95,6 +97,9 @@ const SKIP = [
   "lib/release-holds.ts",
   "lib/content-feedback-labels.ts",
   "lib/admin-app.ts",
+  // Stüdyonun veri katmanı (sürüm notları, takvim uyarıları, talep süreci): yalnız stüdyoda görünür.
+  "lib/studio.ts",
+  "lib/studio-requests.ts",
   // Panonun haftalık karşılaştırma etiketleri: yalnız panelde görünüyor.
   "lib/admin-trends.ts",
   // İçerik sürümü ve madde analizi: panel etiketleri ve sunucu hata metni.

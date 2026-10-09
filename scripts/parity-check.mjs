@@ -2482,7 +2482,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const MUAF = ["mobile/src/ui/Avatar.tsx", "src/components/avatar.tsx"];
   /* Huni sayfasi da yonetime kapali (`adminGate`) ve yalniz Turkce: metinleri
      koda gomulu, kullaniciya acik degil - yonetim panosuyla ayni sebep. */
-  const MUAF_KLASOR = ["src/app/admin/", "src/app/(app)/analytics/"];
+  const MUAF_KLASOR = ["src/app/admin/", "src/app/studio/", "src/app/(app)/analytics/"]; // stüdyo: panelin parçası, tek dilli (2026-10-09)
   /* ARANAN sey dar: CEVIRMEN CIKTISINA uygulanan harf cevirisi (metin) ve
      .tsx icinde elle yazilmis "tr-TR" buyutmesi (arayuzde cizilen sey).
      Veri uzerindeki `toLowerCase()` (e-posta, kullanici adi, eslestirme)
@@ -5498,7 +5498,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const yerelsiz = [];
   for (const kok of ["src/components", "src/app", "mobile/src"]) {
     for (const f of walkAll(kok)) {
-      if (f.startsWith("src/app/admin")) continue;
+      if (f.startsWith("src/app/admin") || f.startsWith("src/app/studio")) continue; // stüdyo da tek dilli panel
       const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
       /* Argument penceresi: `[^,)]*` ile kesmek `dateLocale()`in kendi
          kapanis parantezinde duruyordu ve kapi dogru cagrilari "yerelsiz"
@@ -12901,7 +12901,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const kipsiz = [];
     for (const [kok, etiketler] of [["src", ["<input", "<textarea"]], ["mobile/src", ["<TextInput"]]]) {
       for (const y of tsxler(kok)) {
-        if (/\/admin\//.test(y)) continue;
+        if (/\/(admin|studio)\//.test(y)) continue;
         const src = sil(read(y));
         for (const etiket of etiketler) {
           let i = -1;
@@ -13481,7 +13481,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Kullaniciya gorunen sayida SABIT NOKTA yok (MUTLAK).
        Cizim (`svg` yol verileri, avatar aci hesabi) ve gunluk satiri bu
        eksene ait degil: onlar ekrana SAYI olarak dusmuyor. */
-    const CIZIM = /progress-panel|GrowthPanel|Avatar|walk-player|dashboard|admin/;
+    const CIZIM = /progress-panel|GrowthPanel|Avatar|walk-player|dashboard|admin|studio/;
     const sabitNokta = [];
     for (const y of TUM) {
       if (CIZIM.test(y)) continue;
@@ -17890,7 +17890,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        Yonetim panosu disarida - Turkce tek dilli ve bilerek. */
     const gomulu = [];
     for (const f of yuruTsx3("src")) {
-      if (f.startsWith("src/app/admin/")) continue;
+      if (f.startsWith("src/app/admin/") || f.startsWith("src/app/studio/")) continue; // stüdyo: tek dilli panel
       const src = sil(read(f));
       for (const m of src.matchAll(/\}\s(dk|sa|sn)\b/g)) {
         /* TANI SATIRLARI DISARIDA: `note(...)` yuruyus ekranindaki gelistirici

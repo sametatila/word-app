@@ -60,7 +60,7 @@ export const NAV: NavSection[] = [
       { href: "/admin/quiz", label: "Haftalık quiz" },
       { href: "/admin/content", label: "İçerik sürümü" },
       { href: "/admin/avatar", label: "Avatar parçaları" },
-      { href: "/admin/social", label: "Sosyal medya" },
+      { href: "/studio", label: "Sosyal medya (stüdyo)" },
     ],
   },
   {
