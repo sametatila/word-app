@@ -24,7 +24,9 @@
  */
 import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
 import { MOCK_KEY_FIELDS, deliverPart } from "../src/lib/mock-exams/deliver";
-import { foldAnswer } from "../src/lib/mock-exams/scoring";
+import { foldAnswer, scorePart, type MockScore } from "../src/lib/mock-exams/scoring";
+import { mockFlawless, rulesFeedback } from "../src/lib/mock-exams/feedback";
+import { translate } from "../src/lib/i18n/dict";
 import {
   MOCK_SKILL_ORDER,
   partPoints,
@@ -603,6 +605,65 @@ for (const paper of MOCK_PAPERS) {
       if (text.includes(`"${field}":`)) fail(paper.id, `${part.skill}: teslim edilen gövdede "${field}" kaldı`);
     }
   }
+}
+
+/*
+  KUSURSUZ BÖLÜMDE ZAYIF YER YOK (QA F-0063). 15/15 alan öğrenciye "En çok
+  zorlandığın yer" ve "… üzerine çalış" yazılıyordu: kural tabanlı liste en
+  düşük hedefi eşiksiz seçiyordu. Her kâğıdın nesnel bölümleri hepsi doğru
+  cevaplarla puanlanıyor: liste boş, kaynak `perfect`, özette "zorlandığın"
+  cümlesi yok. Tek yanlışta liste yalnız o yanlışın hedefini gösteriyor.
+*/
+{
+  const key = (it: MockItem): string =>
+    it.kind === "mcq" || it.kind === "bool" ? String(it.answer) : it.kind === "match" ? it.answer : it.accept[0];
+  const hardest = translate("tr", "mockfb.hardest").split("{")[0];
+  for (const paper of MOCK_PAPERS) {
+    for (const part of paper.parts) {
+      const answers: Record<string, string> = {};
+      for (const task of part.tasks) for (const it of task.items ?? []) answers[it.id] = key(it);
+      const perfect = scorePart(paper, part.skill, answers);
+      if (!perfect || perfect.total === 0) continue;
+      const where = `${paper.id} ${part.skill}`;
+      if (perfect.correct !== perfect.total) {
+        fail(where, `doğru anahtarla ${perfect.correct}/${perfect.total} (sınama cevabı kurulamadı)`);
+        continue;
+      }
+      const fb = rulesFeedback(perfect, paper.course, "tr");
+      if (!mockFlawless(perfect)) fail(where, "hepsi doğru bölüm kusursuz sayılmadı");
+      if (fb.todo.length) fail(where, `hepsi doğru bölümde yapılacak var: ${fb.todo[0].title}`);
+      if (fb.source !== "perfect") fail(where, `hepsi doğru bölümde kaynak ${fb.source}`);
+      if (fb.summary.includes(hardest)) fail(where, `hepsi doğru bölümde özet zorlandığın yeri söylüyor: ${fb.summary}`);
+
+      const wrong = perfect.items[0];
+      const one = scorePart(paper, part.skill, { ...answers, [wrong.id]: "" }) as MockScore;
+      const fb1 = rulesFeedback(one, paper.course, "tr");
+      if (mockFlawless(one)) fail(where, "tek yanlışlı bölüm kusursuz sayıldı");
+      if (fb1.source !== "rules") fail(where, `tek yanlışta kaynak ${fb1.source}`);
+      const goals = new Set(one.byGoal.filter((g) => g.correct < g.total).map((g) => g.goal));
+      if (fb1.todo.length !== 1 || !goals.has(wrong.goal))
+        fail(where, `tek yanlışta liste ${fb1.todo.length} madde (beklenen 1, hedef ${wrong.goal})`);
+    }
+  }
+  /* Açık görevli bölüm: iki görev de %100 ve hatasızsa kusursuz; biri hata listeliyse ya da boşsa değil. */
+  const open = (pcts: [number | null, "scored" | "empty" | "unscored"][]): MockScore => ({
+    paperId: "t", level: "B1", skill: "writing", correct: 100, total: 1, pct: 100, passed: true, byGoal: [], byTask: [], items: [],
+    open: {
+      tasks: pcts.map(([pct, state], i) => ({ taskId: `t${i}`, taskNo: i + 1, goal: "production", format: "writing", state, pct })),
+      scored: pcts.filter(([, st]) => st === "scored").length,
+      empty: pcts.filter(([, st]) => st === "empty").length,
+      unscored: pcts.filter(([, st]) => st === "unscored").length,
+    },
+  });
+  const both = open([[100, "scored"], [100, "scored"]]);
+  if (!mockFlawless(both)) fail("açık bölüm", "iki görev %100 hatasız ama kusursuz sayılmadı");
+  const fbOpen = rulesFeedback(both, "de", "tr");
+  if (fbOpen.todo.length || fbOpen.source !== "perfect") fail("açık bölüm", `%100 görevlerde liste ${fbOpen.todo.length}, kaynak ${fbOpen.source}`);
+  if (mockFlawless(both, { t1: { score: 100, errors: [{ wrong: "a", fix: "b" }] } })) fail("açık bölüm", "hata listeli görev kusursuz sayıldı");
+  if (mockFlawless(open([[100, "scored"], [0, "empty"]]))) fail("açık bölüm", "boş görevli bölüm kusursuz sayıldı");
+  if (mockFlawless(open([[100, "scored"], [null, "unscored"]]))) fail("açık bölüm", "puansız görevli bölüm kusursuz sayıldı");
+  const fb90 = rulesFeedback(open([[100, "scored"], [90, "scored"]]), "de", "tr");
+  if (fb90.todo.length !== 1 || fb90.source !== "rules") fail("açık bölüm", `%90 görevde liste ${fb90.todo.length}, kaynak ${fb90.source}`);
 }
 
 const rows = MOCK_PAPERS.map((p) => {

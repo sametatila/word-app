@@ -36,7 +36,12 @@ export type MockFeedback = {
   /** Gerçekten iyi giden yanlar; yoksa boş kalır, uydurulmaz. */
   strengths: string[];
   todo: MockTodo[];
-  source: "ai" | "rules";
+  /**
+   * `perfect`: bölümde hiç hata yok (`mockFlawless`); liste boş, model
+   * çağrılmadı ve çağrılmasına gerek de yoktu — "kural tabanlı üretildi,
+   * yapay zekâ kullanılamıyor" notu bu yüzden çıkmıyor (QA F-0063).
+   */
+  source: "ai" | "rules" | "perfect";
 };
 
 /**
@@ -95,11 +100,42 @@ const SKILL_KEYS: Record<string, string> = {
 };
 
 /**
+ * Bölümde hiç hata yok mu.
+ *
+ * HATA YOKSA ZAYIF YER DE YOK (QA F-0063). 15/15 alan öğrenci "En çok
+ * zorlandığın yer: tek bir bilgiyi bulma (%100)" ve "tek bir bilgiyi bulma
+ * üzerine çalış" görüyordu: liste en düşük hedefi eşiksiz seçiyordu ve hepsi
+ * %100 iken sıralamanın ilki de "en zayıf" sayılıyordu. Kusursuz bölümde
+ * yapılacak iş uydurulmuyor; model de çağrılmıyor (önüne koyacak hata yok,
+ * şemayı doldurmak için uydururdu).
+ *
+ * Açık görevli bölümde (yazma/konuşma) kusursuz demek: her görev puanlı,
+ * %100 ve değerlendirmenin hata listesi boş. Boş ya da puansız görev
+ * kusursuz sayılmıyor — orada bir şey ölçülmedi.
+ */
+export function mockFlawless(
+  score: MockScore,
+  openScores: Record<string, OpenScoreEntry | undefined> = {},
+): boolean {
+  if (score.total === 0 || score.items.some((i) => !i.correct)) return false;
+  if (!score.open) return score.correct === score.total;
+  return score.open.tasks.every(
+    (t) =>
+      (t.state === "objective" || t.state === "scored") &&
+      t.pct !== null &&
+      Math.round(t.pct) >= 100 &&
+      !(openScores[t.taskId]?.errors?.length),
+  );
+}
+
+/**
  * Kural tabanlı liste: en zayıf iki-üç hedef.
  *
  * Eşik %70 — altındaki hedef "çalışılacak" sayılıyor. Hiçbiri eşiğin altında
  * değilse tek bir madde veriliyor (en düşük hedef), çünkü boş bir liste de
- * öğrenciye bir şey söylemez.
+ * öğrenciye bir şey söylemez. AMA yalnız o hedefte yanlış varsa: yanlışı
+ * olmayan hedef "en zayıf" değil (QA F-0063, `mockFlawless`); hiç yanlış
+ * yoksa liste boş kalıyor ve ekran onu "Kusursuz" diye gösteriyor.
  */
 export function rulesFeedback(
   score: MockScore,
@@ -115,8 +151,9 @@ export function rulesFeedback(
     .sort((a, b) => a.pct - b.pct);
 
   const weak = ranked.filter((g) => g.pct < 70).slice(0, 3);
-  const picked = weak.length ? weak : ranked.slice(0, 1);
+  const picked = weak.length ? weak : ranked.filter((g) => g.correct < g.total).slice(0, 1);
   const strong = ranked.filter((g) => g.pct >= 80);
+  const flawless = mockFlawless(score, openScores);
 
   return {
     summary:
@@ -127,13 +164,15 @@ export function rulesFeedback(
             total: score.total,
             pct: formatPercent(score.pct, lang),
           }) +
-          " " +
           (picked.length
-            ? translate(lang, "mockfb.hardest", {
+            ? " " +
+              translate(lang, "mockfb.hardest", {
                 goal: goalName(picked[0].goal, lang),
                 pct: formatPercent(picked[0].pct, lang),
               })
-            : translate(lang, "mockfb.balanced"))
+            : flawless
+              ? ""
+              : " " + translate(lang, "mockfb.balanced"))
         : translate(lang, "mockexam.not_scored"),
     strengths: strong.map(
       (g) => `${goalName(g.goal, lang)} (${formatPercent(g.pct, lang)})`,
@@ -147,7 +186,7 @@ export function rulesFeedback(
       }),
       how: how[g.goal] ? translate(lang, how[g.goal]) : translate(lang, "mockfb.how_fallback"),
     })),
-    source: "rules",
+    source: flawless ? "perfect" : "rules",
   };
 }
 
@@ -172,13 +211,14 @@ function openRules(
     .map((t) => ({ ...t, pct: Math.round(t.pct) }));
   const ranked = [...counted].sort((a, b) => a.pct - b.pct);
   const weak = ranked.filter((t) => t.pct < 70).slice(0, 3);
-  const picked = weak.length ? weak : ranked.slice(0, 1);
+  // %100 alan görev "en düşük" diye listeye girmiyor (QA F-0063, `mockFlawless`).
+  const picked = weak.length ? weak : ranked.filter((t) => t.pct < 100).slice(0, 1);
   const lowest = ranked[0];
   return {
     summary:
       `${translate(lang, SKILL_KEYS[score.skill] ?? score.skill)}: ` +
       translate(lang, "mockfb.open_summary", { n: counted.length, pct: formatPercent(score.pct, lang) }) +
-      (lowest && counted.length > 1
+      (lowest && counted.length > 1 && lowest.pct < 100
         ? " " + translate(lang, "mockfb.open_lowest", { no: lowest.taskNo, pct: formatPercent(lowest.pct, lang) })
         : ""),
     strengths: ranked.filter((t) => t.pct >= 80).map((t) => `Teil ${t.taskNo} (${formatPercent(t.pct, lang)})`),
@@ -193,7 +233,7 @@ function openRules(
         how: tip || (how[t.goal] ? translate(lang, how[t.goal]) : translate(lang, "mockfb.how_fallback")),
       };
     }),
-    source: "rules",
+    source: mockFlawless(score, openScores) ? "perfect" : "rules",
   };
 }
 
@@ -336,7 +376,9 @@ export async function mockFeedback(
   lang: NativeLang = DEFAULT_NATIVE,
   openScores: Record<string, OpenScoreEntry | undefined> = {},
 ): Promise<MockFeedback> {
-  if (!chatConfigured() || score.total === 0) return rulesFeedback(score, course, lang, openScores);
+  // Kusursuz bölümde model yok: yanlışı olmayana yapılacak iş uydururdu (QA F-0063).
+  if (!chatConfigured() || score.total === 0 || mockFlawless(score, openScores))
+    return rulesFeedback(score, course, lang, openScores);
 
   const dil = course === "en" ? "İngilizce" : "Almanca";
   // Modelin CEVABI kullanıcının dilinde olmalı: liste doğrudan ekrana çıkıyor

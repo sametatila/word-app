@@ -18,7 +18,7 @@ import { takeUsage } from "@/lib/premium";
 import { findPart, isOpenTask, scoreSection, type OpenScoreEntry } from "@/lib/mock-exams/scoring";
 import { deliverPart } from "@/lib/mock-exams/deliver";
 import { paperDisabled, pointer } from "@/lib/content/read";
-import { mockFeedback, rulesFeedback } from "@/lib/mock-exams/feedback";
+import { mockFeedback, mockFlawless, rulesFeedback } from "@/lib/mock-exams/feedback";
 import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
 import { isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
@@ -630,8 +630,11 @@ async function finish(userId: string, body: Record<string, unknown>) {
    * çağrı, bütçe hesabındaki "bölüm başına bir geri bildirim".
    */
   const unscoredOpen = !!score.open && score.total === 0;
+  /* Kusursuz bölümde model çağrılmıyor (QA F-0063, `mockFlawless`): kotadan da
+     yemiyor, özeti kural tabanlı liste veriyor (yapılacak iş yok). */
   const aiAllowed =
     !unscoredOpen &&
+    !mockFlawless(score, openScores) &&
     (await hasAiConsent(userId, "ai_text")) &&
     (await takeUsage(userId, MOCK_AI_KEY, "day", MOCK_AI_DAILY_CEILING));
   const ai = unscoredOpen
