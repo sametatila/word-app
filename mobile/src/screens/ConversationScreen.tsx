@@ -835,6 +835,10 @@ export function ConversationScreen() {
   async function sendRole(textArg?: string, attempt = 0) {
     /* Tek istek uçuşta (`sending`); geçmiş ve sayaç ref'ten (bkz. `roleMsgsRef`). */
     if (!conversation || sending.current || waivedRef.current || quotaRef.current) return;
+    /* KAPANIŞTAN SONRA TUR YOK (QA F-0078): alt sınırdaki tur kapanış cevabını
+       alıyor ve sohbet orada bitiyor. Giriş ve öneri düğmeleri açık kaldığı için
+       yedinci tur gidiyor, özet "7/6" diyordu. Web `conversation-player` aynı kural. */
+    if (roleTurnsRef.current >= conversation.chat.minTurns) return;
     const text = (textArg ?? input).trim();
     if (!text) return;
     sending.current = true;
@@ -1561,7 +1565,7 @@ function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onS
         </View>
       ) : null}
       {sttNotu}
-      {!busy && !quotaHit && suggestions.length > 0 && (
+      {!busy && !quotaHit && !ready && suggestions.length > 0 && (
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs }}>
           {suggestions.map((s, i) => (
             <PressableScale key={i} onPress={() => onSuggest(s)} style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderWidth: 1, borderColor: colors.primary }}>
@@ -1585,7 +1589,8 @@ function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onS
           ) : null}
         </View>
       )}
-      {quotaHit ? null : yaziYolu ? (
+      {/* Alt sınırdaki tur gittiyse giriş kapalı: kalan tek yol "Konuşmayı bitir". */}
+      {quotaHit || ready ? null : yaziYolu ? (
         <TypedRow value={input} onChange={setInput} onSubmit={onSend} placeholder={tx("conversation.type_in", { lang: targetLangName() })} colors={colors} disabled={busy} />
       ) : (
         <>
@@ -1671,7 +1676,7 @@ function Summary({ conversation, cando, correct, total, next, roleMsgs, correcti
           eyebrow={`${tx("unitkind.conversation")} · ${conversation.title}`}
           title={tx(unfinished ? "conversationp.conversation_unfinished" : "conversation.conversation_complete")}
           figure={total ? `${correct}/${total}` : null}
-          sub={skipped ? tx("conversationp.chat_skipped") : tx("conversationp.n_turns", { n: userTurns })}
+          sub={skipped ? tx("conversationp.chat_skipped") : tx("conversationp.n_turns", { n: Math.min(userTurns, conversation.chat.minTurns) })}
           quiet={unfinished}
           pill={unfinished ? { text: tx("conversationp.pill_min_turns", { n: conversation.chat.minTurns }), tone: "bad" } : scoreLow ? { text: tx("conversationp.pill_score_low", { need, total }), tone: "brand" } : null}
         />
@@ -1682,7 +1687,7 @@ function Summary({ conversation, cando, correct, total, next, roleMsgs, correcti
           { value: formatPercent(pct), label: tx("conversation.accuracy"), tone: scoreLow ? "bad" : null },
           skipped
             ? { value: "—", label: tx("conversationp.chat_skipped") }
-            : { value: `${userTurns}/${conversation.chat.minTurns}`, label: tx("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
+            : { value: `${Math.min(userTurns, conversation.chat.minTurns)}/${conversation.chat.minTurns}`, label: tx("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
           ...(!unfinished && nextDays !== null ? [{ value: tx("profile.days", { n: nextDays }), label: tx("conversationp.stat_review") }] : []),
         ]} />
 

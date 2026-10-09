@@ -1115,6 +1115,12 @@ function ConversationPlayerBody({
     async (text: string, attempt = 0) => {
       const clean = text.trim();
       if (!clean || busy || quotaHit) return;
+      /* KAPANIŞTAN SONRA TUR YOK (QA F-0078): alt sınırdaki tur kapanış cevabını
+         alıyor ve sohbet orada bitiyor. Okuma yarıda kesilince (mikrofona dokunma,
+         başka bir okuma) ya da özetten konuşmaya dönülünce kendiliğinden bitiş
+         çalışmıyordu; giriş açık kaldığı için yedinci tur gidiyor ve özet "7/6"
+         diyordu. Mobil `ConversationScreen` aynı kural. */
+      if (turns.filter((m) => m.role === "user").length >= conversation.chat.minTurns) return;
       setDraft("");
       setError(null);
       setFailed(null);
@@ -1327,6 +1333,9 @@ function ConversationPlayerBody({
 
   const userTurns = turns.filter((t) => t.role === "user").length;
   const chatDone = userTurns >= conversation.chat.minTurns;
+  /* Gösterilen tur sayısı hedefte duruyor: eski bir kayıtta fazladan tur olsa da
+     "7/6" yazılmıyor (QA F-0078). */
+  const shownTurns = Math.min(userTurns, conversation.chat.minTurns);
 
   /**
    * `finish` her çizimde tazelenen bir ref üzerinden çağrılıyor: kapanış
@@ -1423,8 +1432,10 @@ function ConversationPlayerBody({
     .filter((t) => t.role === "assistant")
     .flatMap((t) => parseReply(t.content).corrections);
 
+  /* Kapanış cevabı model kuralı çiğneyip öneri satırı yazsa da öneri düğmesi
+     çıkmıyor: sohbet bitti (bkz. `send`). */
   const suggestions =
-    !busy && turns.at(-1)?.role === "assistant"
+    !busy && !chatDone && turns.at(-1)?.role === "assistant"
       ? parseReply(turns.at(-1)!.content).suggestions
       : [];
 
@@ -1811,7 +1822,7 @@ function ConversationPlayerBody({
               {waived ? <ChatWaivedNote gate={chatGate} className="mt-2" /> : null}
               <div className="mt-2 flex items-center justify-between gap-2">
                 <span className="muted text-caption tabular-nums">
-                  {t("conversationw.turns", { n: userTurns, total: conversation.chat.minTurns })}
+                  {t("conversationw.turns", { n: shownTurns, total: conversation.chat.minTurns })}
                 </span>
                 {ttsAvailable || asrAvailable ? (
                   <button
@@ -1879,103 +1890,107 @@ function ConversationPlayerBody({
               </div>
             ) : null}
 
-            <div className="shrink-0 border-t p-4 short:p-3" style={{ borderColor: "var(--border)" }}>
-              {asrAvailable ? (
-                <div className="flex flex-col items-center gap-2">
-                  <motion.button
-                    type="button"
-                    whileTap={{ scale: 0.96 }}
-                    onClick={() => {
-                      if (listening) {
-                        stopListening();
-                        return;
-                      }
-                      stopSpeaking();
-                      setSpeakingTurn(null);
-                      void listenChat();
-                    }}
-                    disabled={busy || waived || quotaHit}
-                    aria-label={t(listening ? "exam.stop_recording" : "conversationp.start_speaking")}
-                    className={`${typing ? "hidden" : "flex"} h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-60 short:h-14 short:w-14`}
-                    style={{
-                      background: listening ? "var(--color-rose)" : "var(--color-brand)",
-                    }}
-                  >
-                    <motion.span
-                      animate={listening ? { scale: [1, 1.15, 1] } : { scale: 1 }}
-                      transition={{ repeat: listening ? Infinity : 0, duration: 1.1 }}
+            {/* Alt sınırdaki tur gittiyse giriş kapalı: sohbet kapanış cevabıyla bitiyor,
+                kalan tek yol "Konuşmayı bitir" (bkz. `send`, QA F-0078). */}
+            {chatDone ? null : (
+              <div className="shrink-0 border-t p-4 short:p-3" style={{ borderColor: "var(--border)" }}>
+                {asrAvailable ? (
+                  <div className="flex flex-col items-center gap-2">
+                    <motion.button
+                      type="button"
+                      whileTap={{ scale: 0.96 }}
+                      onClick={() => {
+                        if (listening) {
+                          stopListening();
+                          return;
+                        }
+                        stopSpeaking();
+                        setSpeakingTurn(null);
+                        void listenChat();
+                      }}
+                      disabled={busy || waived || quotaHit}
+                      aria-label={t(listening ? "exam.stop_recording" : "conversationp.start_speaking")}
+                      className={`${typing ? "hidden" : "flex"} h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-60 short:h-14 short:w-14`}
+                      style={{
+                        background: listening ? "var(--color-rose)" : "var(--color-brand)",
+                      }}
                     >
-                      <SkillSpeakingIcon size={24} />
-                    </motion.span>
-                  </motion.button>
-                  <p
-                    className={`${typing ? "hidden" : ""} text-center text-caption`}
-                    style={{
-                      color:
-                        hint && !listening && !busy
-                          ? "var(--color-flame)"
-                          : "var(--text-muted)",
-                    }}
-                  >
-                    {micLabel}
+                      <motion.span
+                        animate={listening ? { scale: [1, 1.15, 1] } : { scale: 1 }}
+                        transition={{ repeat: listening ? Infinity : 0, duration: 1.1 }}
+                      >
+                        <SkillSpeakingIcon size={24} />
+                      </motion.span>
+                    </motion.button>
+                    <p
+                      className={`${typing ? "hidden" : ""} text-center text-caption`}
+                      style={{
+                        color:
+                          hint && !listening && !busy
+                            ? "var(--color-flame)"
+                            : "var(--text-muted)",
+                      }}
+                    >
+                      {micLabel}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setTyping((v) => !v)}
+                      className="btn btn-ghost px-3 py-1 text-caption"
+                    >
+                      {t(typing ? "conversationp.close_typing" : "conversation.answer_by_typing")}
+                    </button>
+                  </div>
+                ) : (
+                  <p className="muted mb-2 text-center text-caption">
+                    {t("conversation.no_asr")}
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => setTyping((v) => !v)}
-                    className="btn btn-ghost px-3 py-1 text-caption"
-                  >
-                    {t(typing ? "conversationp.close_typing" : "conversation.answer_by_typing")}
-                  </button>
-                </div>
-              ) : (
-                <p className="muted mb-2 text-center text-caption">
-                  {t("conversation.no_asr")}
-                </p>
-              )}
+                )}
 
-              {typing || !asrAvailable ? (
-                <div className="mt-3 flex items-end gap-2">
-                  <textarea
-                    value={draft}
-                    onChange={(e) => setDraft(e.target.value)}
-                    enterKeyHint="send"
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
-                        e.preventDefault();
-                        void send(draft);
-                      }
-                    }}
-                    rows={1}
-                    /* KLAVYE DAVRANIŞI ANDROID İLE AYNI: hedef dilde CÜMLE
-                       yazılıyor, o yüzden cümle başı büyük ve otomatik
-                       düzeltme kapalı (`ConversationScreen`: `sentences`). Alan
-                       hiçbirini söylemiyordu; tarayıcı varsayılanı düzeltme
-                       AÇIK ve İngilizce klavye Almanca sözcükleri
-                       "düzeltiyor". */
-                    autoCapitalize="sentences"
-                    autoCorrect="off"
-                    spellCheck={false}
-                    placeholder={t("conversation.type_in", { lang: courseName(conversation.course, lang) })}
-                    aria-label={t("conversation.type_in", { lang: courseName(conversation.course, lang) })}
-                    className="input max-h-28 min-w-0 flex-1 resize-none py-2 text-body"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => void send(draft)}
-                    disabled={busy || waived || quotaHit || !draft.trim()}
-                    className="btn btn-primary h-11 shrink-0 px-4 text-body disabled:opacity-60"
-                  >
-                    {t("common.send")}
-                  </button>
-                </div>
-              ) : null}
-            </div>
+                {typing || !asrAvailable ? (
+                  <div className="mt-3 flex items-end gap-2">
+                    <textarea
+                      value={draft}
+                      onChange={(e) => setDraft(e.target.value)}
+                      enterKeyHint="send"
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+                          e.preventDefault();
+                          void send(draft);
+                        }
+                      }}
+                      rows={1}
+                      /* KLAVYE DAVRANIŞI ANDROID İLE AYNI: hedef dilde CÜMLE
+                         yazılıyor, o yüzden cümle başı büyük ve otomatik
+                         düzeltme kapalı (`ConversationScreen`: `sentences`). Alan
+                         hiçbirini söylemiyordu; tarayıcı varsayılanı düzeltme
+                         AÇIK ve İngilizce klavye Almanca sözcükleri
+                         "düzeltiyor". */
+                      autoCapitalize="sentences"
+                      autoCorrect="off"
+                      spellCheck={false}
+                      placeholder={t("conversation.type_in", { lang: courseName(conversation.course, lang) })}
+                      aria-label={t("conversation.type_in", { lang: courseName(conversation.course, lang) })}
+                      className="input max-h-28 min-w-0 flex-1 resize-none py-2 text-body"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => void send(draft)}
+                      disabled={busy || waived || quotaHit || !draft.trim()}
+                      className="btn btn-primary h-11 shrink-0 px-4 text-body disabled:opacity-60"
+                    >
+                      {t("common.send")}
+                    </button>
+                  </div>
+                ) : null}
+              </div>
+            )}
 
             <div className="shrink-0 border-t p-3" style={{ borderColor: "var(--border)" }}>
               <button
                 type="button"
                 onClick={() => void finish()}
-                className="btn btn-ghost w-full py-2.5 text-body"
+                className={`btn ${chatDone ? "btn-primary" : "btn-ghost"} w-full py-2.5 text-body`}
               >
                 {t(chatDone || waived ? "conversationp.end_conversation" : "conversationp.leave_for_now")}
               </button>
@@ -2005,7 +2020,7 @@ function ConversationPlayerBody({
                 eyebrow={`${t("unitkind.conversation")} · ${conversation.title}`}
                 title={t(unfinished ? "conversationp.conversation_unfinished" : "conversation.conversation_complete")}
                 figure={scoredTotal ? `${correctCount}/${scoredTotal}` : null}
-                sub={waived && !chatDone ? t("conversationp.chat_skipped") : t("conversationp.n_turns", { n: userTurns })}
+                sub={waived && !chatDone ? t("conversationp.chat_skipped") : t("conversationp.n_turns", { n: shownTurns })}
                 quiet={unfinished}
                 pill={
                   unfinished
@@ -2022,7 +2037,7 @@ function ConversationPlayerBody({
                   { value: formatPercent(pct, lang), label: t("conversation.accuracy"), tone: scoreLow ? "bad" : null },
                   waived && !chatDone
                     ? { value: "—", label: t("conversationp.chat_skipped") }
-                    : { value: `${userTurns}/${conversation.chat.minTurns}`, label: t("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
+                    : { value: `${shownTurns}/${conversation.chat.minTurns}`, label: t("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
                   ...(!unfinished && saved ? [{ value: t("profile.days", { n: saved.nextDays }), label: t("conversationp.stat_review") }] : []),
                 ]}
               />
