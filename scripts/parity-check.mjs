@@ -22202,6 +22202,21 @@ console.log("\n" + C.b + "SOHBET CEVABI AYRISTIRICISI" + C.off);
   const dongu = (src) => (fn(src, "parseReply").match(/for \(const line of (.+?)\) \{/) ?? [])[1] ?? "YOK";
   sameList("ayristirici bolunmus metni okuyor", [dongu(mob)], ['breakInlineMarkers(text).split("\\n")']);
   sameList("ayristirici bolunmus metni okuyor (web)", [dongu(web)], ['breakInlineMarkers(text).split("\\n")'], "web", "beklenen");
+
+  /* QA F-0002 (istemci): govdesiz cevapta (yalniz oneri satiri) balona HAM metin
+     dusmuyor. Mobil `parsed.body || reply` ile isaretli metni ciziyordu, web bos
+     gri balon. Sohbette govde yoksa balon yok (duzeltme varsa yalniz o); puanli
+     sohbette ham metin yerine isaretsiz oneri metni. */
+  const mobChat = read("mobile/src/screens/ConversationScreen.tsx");
+  const webChat = read("src/components/conversations/conversation-player.tsx");
+  const webScored = read("src/components/conversations/conversation-scored.tsx");
+  const mobScored = read("mobile/src/screens/ConversationScoredScreen.tsx");
+  const hamYok = (src) => !/\.body(?:\.trim\(\))? \|\| (?:reply|raw|acc)\b/.test(src.replace(/content: bodyText \|\| reply \|\| "…"/, ""));
+  sameList(
+    "govdesiz cevapta ham metin yok",
+    ["sohbet=" + hamYok(mobChat), "geri kurma=" + /parseReply\(m\.content\)\.body/.test(mobChat), "puanli=" + hamYok(mobScored)],
+    ["sohbet=" + (hamYok(webChat) && /if \(!hasBody && !pending && !corrections\.length\) return null;/.test(webChat)), "geri kurma=true", "puanli=" + hamYok(webScored)],
+  );
 }
 
 /* ── sinav bitisi sozlesmesi ────────────────────────────────────────────────

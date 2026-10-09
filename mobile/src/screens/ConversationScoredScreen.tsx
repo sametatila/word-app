@@ -327,8 +327,12 @@ export function ConversationScoredScreen() {
     const n = next.filter((x) => x.role === "user").length;
     try {
       const raw = await sendChat(conversation!.id, next as ChatMsg[], "scored");
-      // Sınav isteminde işaret satırı olmamalı; olursa yine de ayıklanır.
-      const body = parseReply(raw).body.trim() || raw.trim();
+      /* Sınav isteminde işaret satırı olmamalı; olursa yine de ayıklanır. Gövde
+         boşsa ham metne DÜŞÜLMÜYOR (QA F-0002: balonda "[SAY] …" görünüyordu):
+         işaretsiz istemde işaretli satır rolün kendi cümlesi, işaretsiz alınıyor.
+         Web `conversation-scored` aynı kural. */
+      const parsedRaw = parseReply(raw);
+      const body = parsedRaw.body.trim() || parsedRaw.suggestions.join(" ").trim();
       const all: Turn[] = [...next, { role: "assistant", content: body }];
       if (!mounted.current || my !== run.current) return;
       putTurns(all);

@@ -814,7 +814,11 @@ export function ConversationScreen() {
     let userTurns = 0;
     for (const m of msgs) {
       if (m.role === "user") { userTurns++; push({ role: "student", text: m.content }); }
-      else push({ role: "teacher", segments: [{ lang: "de", text: m.content }], report: userTurns > 0 ? { ref: `${conversation.id}:${userTurns}`, text: m.content } : undefined });
+      else {
+        /* Kayıtta gövdesiz (yalnız işaretli) cevap kalmış olabilir: ham metin çizilmez (QA F-0002). */
+        const body = parseReply(m.content).body;
+        if (body) push({ role: "teacher", segments: [{ lang: "de", text: body }], report: userTurns > 0 ? { ref: `${conversation.id}:${userTurns}`, text: m.content } : undefined });
+      }
     }
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.resumed") }], tone: "hint" });
     putRoleMsgs(msgs);
@@ -854,10 +858,17 @@ export function ConversationScreen() {
     };
     try {
       const reply = await sendChat(conversation.id, next);
-      const parsed = parseReply(reply || "…");
-      const bodyText = parsed.body || reply || "…";
-      putRoleMsgs([...next, { role: "assistant", content: bodyText }]);
-      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined, report: { ref: `${conversation.id}:${turn}`, text: reply } });
+      const parsed = parseReply(reply || "");
+      const bodyText = parsed.body;
+      /* GÖVDESİZ CEVAPTA HAM METİN YOK (QA F-0002). Model yalnız öneri satırı
+         yazınca ("[SAY] Zwei Pfund Äpfel, sehr gerne.") gövde boş kalıyor ve
+         balona HAM cevap düşüyordu, işaretleriyle birlikte. Sunucu bu durumların
+         çoğunu onarıyor; istemci yine de işaretli metni hiç çizmiyor: gövde
+         yoksa balon yok (düzeltme varsa yalnız o), öneriler düğmelerde. Modele
+         giden geçmişte boş mesaj olmasın diye orada ham cevap kalıyor; geri
+         kurulurken (`resumeChat`) aynı ayrıştırma. Web `Bubble` aynı kural. */
+      putRoleMsgs([...next, { role: "assistant", content: bodyText || reply || "…" }]);
+      if (bodyText || parsed.corrections.length) push({ role: "teacher", segments: bodyText ? [{ lang: "de", text: bodyText }] : [], fix: parsed.corrections.length ? parsed.corrections : undefined, report: { ref: `${conversation.id}:${turn}`, text: reply } });
       setSuggestions(parsed.suggestions);
       /* Düzeltme balonda gösterildiği anda özete de yazılıyor (bkz. `corrections`). */
       if (parsed.corrections.length) setCorrections((c) => [...c, ...parsed.corrections]);
@@ -1310,19 +1321,21 @@ function BubbleView({ b, colors, onReport, conversationId }: { b: Bubble; colors
       <View style={{ borderRadius: radii.lg, borderBottomLeftRadius: radii.sm, paddingVertical: 10, paddingHorizontal: spacing.md, backgroundColor: bg, borderWidth: 1, borderColor: colors.hairline }}>
         {/* Üretim adımının yanlışı: önce hatanın kendisi (QA F-0020). */}
         {b.diff?.length ? <View style={{ marginBottom: 6 }}><DiffLineList lines={b.diff} /></View> : null}
-        <Text variant="body">
-          {b.segments.map((s, i) => (
-            <Text key={i} variant="body" color={s.lang !== "tr" ? colors.text : colors.textMuted} style={s.lang !== "tr" ? { fontWeight: "700" } : undefined}>
-              {/* Parçalar arasına boşluk konur — sonraki parça noktalama ile
-                  başlıyorsa konmaz ("then . Sonra" olmasın); hedef dildeki
-                  parçadan sonra yeni cümle başlıyorsa nokta konur ("Jott. Bir
-                  de …", QA F-0009). Kural web ile tek: `lib/segmentText`. */}
-              {s.text}{segmentGap(b.segments, i)}
-            </Text>
-          ))}
-        </Text>
+        {b.segments.length ? (
+          <Text variant="body">
+            {b.segments.map((s, i) => (
+              <Text key={i} variant="body" color={s.lang !== "tr" ? colors.text : colors.textMuted} style={s.lang !== "tr" ? { fontWeight: "700" } : undefined}>
+                {/* Parçalar arasına boşluk konur — sonraki parça noktalama ile
+                    başlıyorsa konmaz ("then . Sonra" olmasın); hedef dildeki
+                    parçadan sonra yeni cümle başlıyorsa nokta konur ("Jott. Bir
+                    de …", QA F-0009). Kural web ile tek: `lib/segmentText`. */}
+                {s.text}{segmentGap(b.segments, i)}
+              </Text>
+            ))}
+          </Text>
+        ) : null}
         {b.fix?.length ? (
-          <View style={{ marginTop: spacing.sm, gap: 2, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: 6 }}>
+          <View style={b.segments.length ? { marginTop: spacing.sm, gap: 2, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: 6 } : { gap: 2 }}>
             {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>{tx("conversation.fix", { text: f })}</Text>)}
           </View>
         ) : null}

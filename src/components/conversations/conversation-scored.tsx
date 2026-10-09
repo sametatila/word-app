@@ -221,8 +221,12 @@ export function ConversationScored({
         if (done) break;
         acc += dec.decode(value, { stream: true });
       }
-      // Sınav isteminde işaret satırı olmamalı; olursa yine de ayıklanır.
-      const body = parseReply(acc).body.trim() || acc.trim();
+      /* Sınav isteminde işaret satırı olmamalı; olursa yine de ayıklanır. Gövde
+         boşsa ham metne DÜŞÜLMÜYOR (QA F-0002: balonda "[SAY] …" görünüyordu):
+         işaretsiz istemde işaretli satır rolün kendi cümlesi, işaretsiz alınıyor.
+         Mobil `ConversationScoredScreen` aynı kural. */
+      const parsedAcc = parseReply(acc);
+      const body = parsedAcc.body.trim() || parsedAcc.suggestions.join(" ").trim();
       inFlight.current = false;
       setBusy(false);
       // Cevap gelene kadar sınav yeniden kurulduysa ya da puanlama başladıysa bu cevap artık yok.

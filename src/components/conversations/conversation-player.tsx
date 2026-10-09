@@ -2440,29 +2440,38 @@ function Bubble({
   }
 
   const { body, corrections } = parseReply(turn.content);
+  /* GÖVDESİZ CEVAPTA BOŞ BALON YOK (QA F-0002). Model yalnız öneri satırı
+     yazınca gövde boş kalıyor; balon boş gri bir kutu olarak çiziliyordu
+     (mobil HAM metni, işaretleriyle gösteriyordu). Sunucu bu durumların
+     çoğunu onarıyor; istemci yine de: gövde yoksa balon yok, düzeltme varsa
+     yalnız o, öneriler düğmelerde. Mobil `ConversationScreen` aynı kural. */
+  const hasBody = body.trim().length > 0;
+  if (!hasBody && !pending && !corrections.length) return null;
   return (
     <motion.div {...bubbleEntrance(still)} className="flex flex-col items-start gap-1.5">
-      <div
-        className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-body"
-        style={{ background: "var(--surface-2)" }}
-      >
-        {body.trim() ? body : pending ? <TypingDots /> : ""}
-        {ttsAvailable && body.trim() ? (
-          speaking ? (
-            <SpeakingBars inline />
-          ) : (
-            <motion.button
-              type="button"
-              whileTap={{ scale: 0.96 }}
-              onClick={() => speakGerman(body)}
-              aria-label={t("conversationp.listen_again")}
-              className="btn btn-ghost hit-8 ml-1 h-7 w-7 shrink-0 align-middle"
-            >
-              <SpeakerIcon size={13} />
-            </motion.button>
-          )
-        ) : null}
-      </div>
+      {hasBody || pending ? (
+        <div
+          className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-body"
+          style={{ background: "var(--surface-2)" }}
+        >
+          {hasBody ? body : <TypingDots />}
+          {ttsAvailable && body.trim() ? (
+            speaking ? (
+              <SpeakingBars inline />
+            ) : (
+              <motion.button
+                type="button"
+                whileTap={{ scale: 0.96 }}
+                onClick={() => speakGerman(body)}
+                aria-label={t("conversationp.listen_again")}
+                className="btn btn-ghost hit-8 ml-1 h-7 w-7 shrink-0 align-middle"
+              >
+                <SpeakerIcon size={13} />
+              </motion.button>
+            )
+          ) : null}
+        </div>
+      ) : null}
       {corrections.map((c, i) => (
         <p
           key={i}
