@@ -195,7 +195,13 @@ for (const abs of walk(path.join(ROOT, "mobile", "src"))) {
       const satir = src.slice(0, m.index).split("\n").length;
       const muaf = (MOBIL_ALLOW.get(rel) ?? []).find(([parca]) => acilis.includes(parca));
       if (muaf) continue;
-      const slop = Number((acilis.match(/hitSlop=\{?(\d+)/) ?? [])[1] ?? 0);
+      /* `hitSlopFor(g[, y])` (mobile/src/ui/touch, QA F-0051): pay görünen ölçüden
+         hesaplanıyor, en dar eksen 48'e tamamlanıyor. Literal sayı aranırken bu
+         çağrı 0 okunuyordu. */
+      const hsf = acilis.match(/hitSlop=\{(?:\{\s*\.\.\.)?hitSlopFor\((\d+)(?:,\s*(\d+))?/);
+      const slop = hsf
+        ? Math.max(0, Math.ceil((48 - Math.min(Number(hsf[1]) || 48, Number(hsf[2] ?? hsf[1]) || 48)) / 2))
+        : Number((acilis.match(/hitSlop=\{?(\d+)/) ?? [])[1] ?? 0);
       const w = (acilis.match(/\bwidth:\s*(\d+)/) ?? [])[1];
       const h = (acilis.match(/\bheight:\s*(\d+)/) ?? [])[1];
       const pv = (acilis.match(/paddingVertical:\s*(\d+)/) ?? [])[1];
