@@ -121,41 +121,129 @@ export type PreviewState = {
 
 const fmt = (t: number) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
 
-/** focus: alana tıklanınca önizleme o ana gider (n her tıklamada artar). */
+/**
+ * OYNATICI. Tek bir çalma belirteci (`token`): her oynat/duraklat/sar yeni belirteç açar, eski çalmanın bekleyen
+ * işleri (ses hazırlığı, kare döngüsü) kendini iptal eder; üst üste ses ya da iki kare döngüsü olamaz. Sürüklerken
+ * duraklar, bırakınca kaldığı yerden sürer. Müzik açılıp kapanınca aynı saniyeden yeni karışımla devam eder. Ses
+ * izi (konuşma + efekt + isteğe bağlı müzik) metin değiştikçe arka planda hazırlanır; hazır değilse "ses hazırlanıyor".
+ */
 export function Preview({ template, data, onState, focus }: { template: string; data: Record<string, unknown>; onState: (s: PreviewState) => void; focus?: { t: number; n: number } }) {
   const frame = useRef<HTMLDivElement>(null);
   const inst = useRef<Instance | null>(null);
   const [t, setT] = useState(0);
   const tRef = useRef(0);
   const [playing, setPlaying] = useState(false);
+  const playingRef = useRef(false);
+  const [preparing, setPreparing] = useState(false);
   const [overlay, setOverlay] = useState<"off" | "tt" | "ig">("off");
   const [music, setMusic] = useState(true);
+  const musicRef = useRef(true);
   const [duration, setDuration] = useState(0);
+  const durRef = useRef(0);
   const [loading, setLoading] = useState(true);
-  const audio = useRef<{ ctx: AudioContext | null; src: AudioBufferSourceNode | null; startedAt: number; buf: AudioBuffer | null; key: string }>({ ctx: null, src: null, startedAt: 0, buf: null, key: "" });
+  const ctx = useRef<AudioContext | null>(null);
+  const src = useRef<AudioBufferSourceNode | null>(null);
+  const startedAt = useRef(0);
+  const token = useRef(0);
   const raf = useRef(0);
+  const buffers = useRef(new Map<string, Promise<AudioBuffer>>());
+  const scrub = useRef<{ wasPlaying: boolean } | null>(null);
   const state = useRef<PreviewState>({ ready: false, error: null, spoken: [], missing: [], uiUsed: [], uiDefaults: {}, audit: { running: false, issues: null, forKey: null }, visible: null, voice: [], duration: 0 });
   const push = useCallback((p: Partial<PreviewState>) => {
     state.current = { ...state.current, ...p };
     onState(state.current);
   }, [onState]);
   const dataKey = JSON.stringify(data);
+  const keyRef = useRef(dataKey);
 
   // telefonda müzik sentezi ağır (Safari çöküyordu): dar ekranda varsayılan yalnız konuşma
   useEffect(() => {
-    if (window.matchMedia("(max-width: 700px)").matches) setMusic(false);
+    if (window.matchMedia("(max-width: 700px)").matches) {
+      musicRef.current = false;
+      setMusic(false);
+    }
   }, []);
 
-  const stop = useCallback(() => {
+  /** Ses izi (önbellekli): o anki metin + müzik ayarı. */
+  const buffer = useCallback((withMusic: boolean): Promise<AudioBuffer> | null => {
+    const I = inst.current;
+    const E = window.E;
+    if (!I || !E) return null;
+    const k = `${keyRef.current}|${withMusic}`;
+    let p = buffers.current.get(k);
+    if (!p) {
+      p = E.soundtrack(withMusic ? I.plan : { ...I.plan, music: { ...(I.plan.music ?? { gain: 0 }), gain: 0 } });
+      p.catch(() => buffers.current.delete(k));
+      buffers.current.set(k, p);
+    }
+    return p;
+  }, []);
+
+  const halt = useCallback(() => {
+    token.current++;
     cancelAnimationFrame(raf.current);
     try {
-      audio.current.src?.stop();
+      src.current?.stop();
     } catch {
       /* zaten durmuş */
     }
-    audio.current.src = null;
-    setPlaying(false);
+    src.current = null;
   }, []);
+  const pause = useCallback(() => {
+    halt();
+    playingRef.current = false;
+    setPlaying(false);
+    setPreparing(false);
+  }, [halt]);
+
+  const show = (at: number) => {
+    tRef.current = at;
+    setT(at);
+    inst.current?.render(at);
+  };
+
+  const play = useCallback(async (from: number) => {
+    const I = inst.current;
+    if (!I) return;
+    halt();
+    const my = token.current;
+    playingRef.current = true;
+    setPlaying(true);
+    const p = buffer(musicRef.current);
+    if (!p) return;
+    setPreparing(true);
+    let buf: AudioBuffer;
+    try {
+      buf = await p;
+    } catch {
+      if (my === token.current) pause();
+      return;
+    }
+    if (my !== token.current) return; // bu arada duraklatıldı, sarıldı ya da metin değişti
+    setPreparing(false);
+    ctx.current ||= new AudioContext({ sampleRate: 48000 });
+    await ctx.current.resume();
+    if (my !== token.current) return;
+    const s = ctx.current.createBufferSource();
+    s.buffer = buf;
+    s.connect(ctx.current.destination);
+    const at = Math.min(from, Math.max(0, durRef.current - 0.05));
+    s.start(0, at);
+    src.current = s;
+    startedAt.current = ctx.current.currentTime - at;
+    const tick = () => {
+      if (my !== token.current) return;
+      const now = (ctx.current as AudioContext).currentTime - startedAt.current;
+      if (now >= durRef.current) {
+        show(durRef.current);
+        pause();
+        return;
+      }
+      show(now);
+      raf.current = requestAnimationFrame(tick);
+    };
+    raf.current = requestAnimationFrame(tick);
+  }, [buffer, halt, pause]);
 
   // sahneyi kur (metin değişince, ~300 ms sonra)
   useEffect(() => {
@@ -168,20 +256,29 @@ export function Preview({ template, data, onState, focus }: { template: string; 
         const { clips, missing } = await ensureClips(spoken);
         if (dead || !frame.current) return;
         window.CLIPS = { ...(window.CLIPS ?? {}), ...clips };
-        stop();
+        pause();
+        keyRef.current = dataKey;
+        buffers.current.clear();
         const host = document.createElement("div");
         host.style.cssText = "position:absolute;inset:0";
         frame.current.replaceChildren(host);
         const I = E.mount(host, template, data);
         inst.current = I;
         const d = I.plan.duration;
+        durRef.current = d;
         setDuration(d);
-        const at = Math.min(tRef.current, d);
-        I.render(at);
+        show(Math.min(tRef.current, d));
         I.ui.hidden = overlay === "off";
         if (overlay !== "off") I.ui.dataset.v = overlay;
         setLoading(false);
         push({ ready: true, error: null, spoken, missing, uiUsed: [...I.uiUsed], uiDefaults: E.videos[template]?.ui ?? {}, voice: I.plan.voice ?? [], duration: d });
+        // iki ses izini de önceden hazırla (oynat'a basınca ve müzik düğmesinde beklemesin)
+        setTimeout(() => {
+          if (dead) return;
+          void buffer(musicRef.current)
+            ?.then(() => (dead ? undefined : buffer(!musicRef.current)))
+            .catch(() => undefined);
+        }, 400);
       } catch (err) {
         if (!dead) {
           setLoading(false);
@@ -193,7 +290,7 @@ export function Preview({ template, data, onState, focus }: { template: string; 
       dead = true;
       clearTimeout(timer);
     };
-    // overlay/music burada bilerek yok: sahneyi yeniden kurmaz
+    // overlay burada bilerek yok: sahneyi yeniden kurmaz
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [template, dataKey]);
 
@@ -204,7 +301,6 @@ export function Preview({ template, data, onState, focus }: { template: string; 
     const timer = setTimeout(async () => {
       try {
         const E = await loadEngine();
-        // klipler önizleme kurulumunda yüklendi; denetim aynı CLIPS'i kullanır
         await ensureClips(E.spoken(template, data)).then(({ clips }) => (window.CLIPS = { ...(window.CLIPS ?? {}), ...clips }));
         if (dead) return;
         const host = document.createElement("div");
@@ -229,63 +325,30 @@ export function Preview({ template, data, onState, focus }: { template: string; 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [template, dataKey]);
 
-  useEffect(() => () => stop(), [stop]);
+  useEffect(() => () => halt(), [halt]);
 
+  // alana tıklanınca o ana git (duraklatır)
   useEffect(() => {
     if (!focus || !inst.current) return;
-    stop();
-    const at = Math.max(0, Math.min(focus.t, duration));
-    tRef.current = at;
-    setT(at);
-    inst.current.render(at);
+    pause();
+    show(Math.max(0, Math.min(focus.t, durRef.current)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focus?.n]);
 
-  const seek = (v: number) => {
-    const at = Math.max(0, Math.min(v, duration));
-    tRef.current = at;
-    setT(at);
-    inst.current?.render(at);
-    if (playing) void play(at);
+  const toggle = () => (playing ? pause() : void play(tRef.current >= durRef.current - 0.05 ? 0 : tRef.current));
+  /** Çalarken: yeni karışım hazır olana kadar eskisi çalar, sonra aynı saniyeden geçer (takılma yok). */
+  const setMusicOn = (on: boolean) => {
+    musicRef.current = on;
+    setMusic(on);
+    const p = buffer(on);
+    if (!p) return;
+    const my = token.current;
+    void p
+      .then(() => {
+        if (playingRef.current && my === token.current && musicRef.current === on) void play(tRef.current);
+      })
+      .catch(() => undefined);
   };
-
-  async function play(from = tRef.current >= duration - 0.05 ? 0 : tRef.current) {
-    const I = inst.current;
-    const E = window.E;
-    if (!I || !E) return;
-    stop();
-    const a = audio.current;
-    a.ctx ||= new AudioContext({ sampleRate: 48000 });
-    await a.ctx.resume();
-    const k = `${dataKey}|${music}`;
-    if (a.key !== k || !a.buf) {
-      a.buf = await E.soundtrack(music ? I.plan : { ...I.plan, music: { ...(I.plan.music ?? { gain: 0 }), gain: 0 } });
-      a.key = k;
-    }
-    const src = a.ctx.createBufferSource();
-    src.buffer = a.buf;
-    src.connect(a.ctx.destination);
-    src.start(0, from);
-    a.src = src;
-    a.startedAt = a.ctx.currentTime - from;
-    setPlaying(true);
-    const tick = () => {
-      const now = (a.ctx as AudioContext).currentTime - a.startedAt;
-      if (now >= duration) {
-        tRef.current = duration;
-        setT(duration);
-        I.render(duration);
-        stop();
-        return;
-      }
-      tRef.current = now;
-      setT(now);
-      I.render(now);
-      raf.current = requestAnimationFrame(tick);
-    };
-    raf.current = requestAnimationFrame(tick);
-  }
-
   const cycleOverlay = () => {
     const next = overlay === "off" ? "tt" : overlay === "tt" ? "ig" : "off";
     setOverlay(next);
@@ -300,18 +363,59 @@ export function Preview({ template, data, onState, focus }: { template: string; 
     <div className="space-y-2">
       <div className="relative mx-auto overflow-hidden rounded-[28px] border" style={{ width: "min(100%, 340px)", aspectRatio: "9 / 16", borderColor: "var(--border)", background: "#000" }}>
         <div ref={frame} className="absolute inset-0" />
-        <button type="button" aria-label={playing ? "Duraklat" : "Oynat"} className="absolute inset-0 cursor-pointer" onClick={() => (playing ? stop() : void play())} />
-        {loading ? <div className="absolute inset-0 grid place-items-center text-caption text-white/70">Önizleme hazırlanıyor…</div> : null}
+        <button type="button" aria-label={playing ? "Duraklat" : "Oynat"} className="absolute inset-0 cursor-pointer" onClick={toggle} />
+        {loading ? <div className="pointer-events-none absolute inset-0 grid place-items-center text-caption text-white/70">Önizleme hazırlanıyor…</div> : null}
+        {preparing ? <div className="pointer-events-none absolute inset-x-0 bottom-3 text-center text-caption text-white/80">Ses hazırlanıyor…</div> : null}
       </div>
       <div className="mx-auto flex items-center gap-2" style={{ width: "min(100%, 340px)" }}>
-        <button type="button" className={BTN.small} onClick={() => (playing ? stop() : void play())} aria-label={playing ? "Duraklat" : "Oynat"}>{playing ? "❚❚" : "▶"}</button>
-        <input type="range" aria-label="Zaman" className="min-w-0 flex-1" min={0} max={1000} value={duration ? Math.round((t / duration) * 1000) : 0} onChange={(ev) => seek((Number(ev.target.value) / 1000) * duration)} />
+        <button type="button" className={BTN.small} onClick={toggle} aria-label={playing ? "Duraklat" : "Oynat"}>{playing ? "❚❚" : "▶"}</button>
+        <input
+          type="range"
+          aria-label="Zaman"
+          className="min-w-0 flex-1"
+          min={0}
+          max={1000}
+          value={duration ? Math.round((t / duration) * 1000) : 0}
+          onPointerDown={() => {
+            scrub.current = { wasPlaying: playing };
+            if (playing) pause();
+          }}
+          onChange={(ev) => show((Number(ev.target.value) / 1000) * durRef.current)}
+          onPointerUp={() => {
+            const s = scrub.current;
+            scrub.current = null;
+            if (s?.wasPlaying) void play(tRef.current);
+          }}
+          onKeyUp={() => {
+            if (playing) void play(tRef.current);
+          }}
+        />
         <span className="muted shrink-0 font-mono text-caption tabular-nums">{fmt(t)} / {fmt(duration)}</span>
       </div>
       <div className="mx-auto flex flex-wrap items-center justify-center gap-2" style={{ width: "min(100%, 340px)" }}>
         <button type="button" className={BTN.small} onClick={cycleOverlay}>{overlay === "off" ? "Arayüz: kapalı" : overlay === "tt" ? "Arayüz: TikTok" : "Arayüz: Instagram"}</button>
-        <button type="button" className={BTN.small} onClick={() => { stop(); setMusic((m) => !m); }}>{music ? "Müzik: açık" : "Müzik: kapalı"}</button>
+        <button type="button" className={BTN.small} aria-pressed={music} onClick={() => setMusicOn(!music)}>{music ? "Müzik: açık" : "Müzik: kapalı"}</button>
       </div>
     </div>
   );
+}
+
+/** Tek bir metnin Defne kaydını çal (alanlardaki "sesli" düğmesi). Aynı anda tek ses. */
+let clipPlayer: HTMLAudioElement | null = null;
+/** Döner: ses BİTİNCE "ok" (düğme o ana kadar "çalıyor"), kayıt yoksa "missing". */
+export async function playClip(text: string): Promise<"ok" | "missing"> {
+  clipPlayer?.pause();
+  const r = await apiFetch(`/api/studio/clip?t=${encodeURIComponent(text)}`);
+  if (!r.ok) return "missing";
+  const url = URL.createObjectURL(await r.blob());
+  const a = new Audio(url);
+  clipPlayer = a;
+  const ended = new Promise<"ok">((resolve) => {
+    a.onended = a.onpause = () => {
+      URL.revokeObjectURL(url);
+      resolve("ok");
+    };
+  });
+  await a.play();
+  return ended;
 }

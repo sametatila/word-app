@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FIELD, FIELD_AREA, FIELD_STYLE } from "../../admin/_ui/ui";
+import { playClip } from "./preview";
 
 /**
  * İÇERİK FORMU — videonun akış sırasıyla: ① Açılış (kanca) → ② kartlar/turlar/satırlar (her biri kendi kutusunda)
@@ -92,7 +93,7 @@ export function Fields(p: Props) {
   const num = () => ++step;
   return (
     <div className="space-y-6">
-      <p className="faint text-caption">Bir alana tıkla: önizleme o yazının göründüğü ana gider. <Chip tone="voice">sesli</Chip> etiketli Almanca metinler seslendiriliyor; değişirse Defne&apos;nin yeni kaydı gerekir (Mac her sabah üretir, sonra onay açılır).</p>
+      <p className="faint text-caption">Bir alana tıkla: önizleme o yazının göründüğü ana gider. <Chip tone="voice">dinle</Chip> düğmesi Defne&apos;nin kaydını çalar; bu Almanca metinler seslendiriliyor, değişirse Defne&apos;nin yeni kaydı gerekir (Mac her sabah üretir, sonra onay açılır).</p>
 
       {hook.length ? (
         <Section n={num()} title="Açılış" hint="İlk karede okunan kanca: kaydırmayı durduran cümle.">
@@ -248,6 +249,30 @@ function Chip({ children, tone }: { children: React.ReactNode; tone: "voice" | "
   return <span className="inline-flex h-5 items-center rounded-chip px-1.5 text-micro" style={{ color: c, background: `color-mix(in srgb, ${c} 12%, transparent)` }}>{tone === "voice" ? <Speaker /> : "● "}{children}</span>;
 }
 
+/** "Sesli" düğmesi: alanın içinde geçtiği seslendirilen metnin Defne kaydını çalar (tam eşleşme önce). */
+function VoiceButton({ value, spoken }: { value: string; spoken: string[] }) {
+  const [st, setSt] = useState<"idle" | "playing" | "missing">("idle");
+  const text = spoken.find((x) => norm(x) === norm(value)) ?? spoken.find((x) => norm(x).includes(norm(value)));
+  if (!text) return null;
+  return (
+    <button
+      type="button"
+      title={`Defne: „${text}“`}
+      className="inline-flex h-5 items-center rounded-chip px-1.5 text-micro hover:opacity-80"
+      style={{ color: st === "missing" ? "var(--color-flame)" : "var(--color-brand)", background: `color-mix(in srgb, ${st === "missing" ? "var(--color-flame)" : "var(--color-brand)"} 12%, transparent)` }}
+      onClick={async (e) => {
+        e.preventDefault(); // etiketin içinde: alana odaklanmasın
+        setSt("playing");
+        const r = await playClip(text).catch(() => "missing" as const);
+        setSt(r === "missing" ? "missing" : "idle");
+      }}
+    >
+      <Speaker />
+      {st === "playing" ? "çalıyor…" : st === "missing" ? "Defne kaydı yok" : "dinle"}
+    </button>
+  );
+}
+
 function Field({ leaf, label, data, saved, spoken, onChange, onFocusText, disabled, big, wide, counter }: Props & { leaf: Leaf; label: string; big?: boolean; wide?: boolean; counter?: number }) {
   const changed = getAt(saved, leaf.path) !== leaf.value;
   const voice = isSpoken(leaf.value, spoken);
@@ -257,7 +282,7 @@ function Field({ leaf, label, data, saved, spoken, onChange, onFocusText, disabl
     <label className={`flex min-w-0 flex-col gap-1 text-caption ${wide ? "@lg:col-span-2" : ""}`}>
       <span className="flex flex-wrap items-center gap-1.5">
         <span className="muted">{label}</span>
-        {voice ? <Chip tone="voice">sesli</Chip> : null}
+        {voice ? <VoiceButton value={leaf.value} spoken={spoken} /> : null}
         {changed ? <Chip tone="dirty">değişti</Chip> : null}
         {counter ? <span className="faint ml-auto tabular-nums">{leaf.value.length}/{counter}</span> : null}
       </span>

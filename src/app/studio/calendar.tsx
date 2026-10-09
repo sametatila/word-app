@@ -1,22 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { EpisodeSummary } from "@/lib/studio";
 import type { SocialPlatform, SocialPost } from "@/lib/social-posts";
 import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, BTN, Badge, Empty, Notice, PageHeader, Panel, Stat, Stats, TONE, type Tone } from "../admin/_ui/ui";
+import { AdminPage, BTN, Notice, TONE, type Tone } from "../admin/_ui/ui";
 import { TwoStep } from "../admin/_ui/two-step";
-import { APPROACH_SHORT, CONTENT_STATE, PLATFORMS, POST_STATE, THEME_TR, contentState, dayLabel, postState, type PostShown } from "./shared";
+import { APPROACH_SHORT, CONTENT_STATE, PLATFORMS, POST_STATE, THEME_TR, contentState, postState, type PostShown } from "./shared";
 
 /**
- * Stüdyo takvimi: gün × 3 saat (Berlin). Her hücrede İÇERİK durumu (Claude taslağı → düzenlendi → onaylandı →
- * video hazır) ve iki platformun durumu. Hücre editörü açar. Uyarılar: yakında yayınlanacak ama videosu
- * hazır olmayan, saati geçip yayında işaretlenmeyen, planın sonu.
+ * STÜDYO TAKVİMİ. Açılışta BUGÜNÜN haftası (Samet: "bugünün olduğu haftaya otomatik kaysın"); hafta hafta serbest
+ * gezinme. Plan SÜRÜKLE-BIRAK ile değişir: kart boş ya da dolu bir saate bırakılır (doluysa iki bölüm yer
+ * değiştirir), takvim dışına bırakılırsa saati kalkar. Geçmiş saatler bırakmayı kabul etmez. Her taşıma sunucuda
+ * doğrulanır (`lib/studio` moveEpisode); sonuç, takvim uyarıları ve "Geri al" alttaki bildirimde. Saatler Berlin.
  */
 const SLOTS = ["07:30", "12:30", "18:30"];
 const TZ = "Europe/Berlin";
+type Ep = EpisodeSummary;
 
 const key = (episodeId: string, p: SocialPlatform) => `${episodeId}|${p}`;
 function monday(day: string): string {
@@ -40,47 +42,102 @@ function slotMs(slot: string): number {
   const m = off.match(/GMT([+-])(\d{2}):(\d{2})/);
   return guess.getTime() - (m ? (m[1] === "+" ? 1 : -1) * (Number(m[2]) * 60 + Number(m[3])) : 0) * 60_000;
 }
+const weekday = (day: string) => new Date(`${day}T12:00:00Z`).toLocaleDateString("tr-TR", { weekday: "short", timeZone: "UTC" });
+const dayNum = (day: string) => new Date(`${day}T12:00:00Z`).getUTCDate();
+const rangeLabel = (a: string, b: string) => {
+  const f = (d: string, o: Intl.DateTimeFormatOptions) => new Date(`${d}T12:00:00Z`).toLocaleDateString("tr-TR", { ...o, timeZone: "UTC" });
+  return `${f(a, { day: "numeric", month: a.slice(5, 7) === b.slice(5, 7) ? undefined : "long" })} – ${f(b, { day: "numeric", month: "long", year: "numeric" })}`;
+};
+const slotLabel = (slot: string) => `${weekday(slot.slice(0, 10))} ${dayNum(slot.slice(0, 10))} · ${slot.slice(11)}`;
+/** Videonun teması (kartın sol şeridi): video tasarımının kendi renkleri. */
+const THEME_SWATCH: Record<string, string> = { gece: "#1b1b1f", kagit: "#e9dcc4", turuncu: "#f37021", lacivert: "#1f3a8a" };
 
-export function StudioCalendar({ episodes, posts: initial, missing, now }: { episodes: EpisodeSummary[]; posts: SocialPost[]; missing: boolean; now: string }) {
-  const [posts, setPosts] = useState(() => new Map(initial.filter((p) => p.episodeId).map((p) => [key(p.episodeId as string, p.platform), p])));
+type Toast = { tone: Tone; text: string; detail?: string[]; undo?: () => void } | null;
+
+export function StudioCalendar({ episodes: initial, posts: initialPosts, missing, now }: { episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string }) {
+  const [episodes, setEpisodes] = useState(initial);
+  const [posts, setPosts] = useState(() => new Map(initialPosts.filter((p) => p.episodeId).map((p) => [key(p.episodeId as string, p.platform), p])));
   const nowMs = new Date(now).getTime();
   const today = berlinDay(now);
-  const planned = useMemo(() => episodes.filter((e) => e.slot) as (EpisodeSummary & { slot: string })[], [episodes]);
-  const loose = episodes.filter((e) => !e.slot);
-  const weeks = useMemo(() => [...new Set(planned.map((e) => monday(e.slot.slice(0, 10))))].sort(), [planned]);
-  const [week, setWeek] = useState(() => {
-    const cur = monday(today);
-    return weeks.includes(cur) ? cur : (weeks.find((w) => w > cur) ?? weeks[weeks.length - 1] ?? cur);
-  });
+  const [week, setWeek] = useState(() => monday(today));
+  const [drag, setDrag] = useState<string | null>(null);
+  const [over, setOver] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const [msg, setMsg] = useState<{ tone: Tone; text: string } | null>(null);
+  const [toast, setToast] = useState<Toast>(null);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    if (!toast) return;
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast(null), toast.tone === "bad" ? 9000 : toast.detail?.length ? 12000 : 7000);
+  }, [toast]);
 
-  const bySlot = useMemo(() => new Map(planned.map((e) => [e.slot, e])), [planned]);
+  const planned = useMemo(() => episodes.filter((e) => e.slot).sort((a, b) => (a.slot as string).localeCompare(b.slot as string)), [episodes]);
+  const loose = episodes.filter((e) => !e.slot);
+  const bySlot = useMemo(() => new Map(planned.map((e) => [e.slot as string, e])), [planned]);
   const days = Array.from({ length: 7 }, (_, i) => addDays(week, i));
-  const weekEps = planned.filter((e) => days.includes(e.slot.slice(0, 10)));
-  const shown = (e: EpisodeSummary & { slot: string }, p: SocialPlatform): PostShown => postState(posts.get(key(e.id, p))?.status, slotMs(e.slot) < nowMs);
-  const count = (eps: (EpisodeSummary & { slot: string })[], p: SocialPlatform, ...st: PostShown[]) => eps.filter((e) => st.includes(shown(e, p))).length;
+  const weekEps = planned.filter((e) => days.includes((e.slot as string).slice(0, 10)));
+  const shown = (e: Ep, p: SocialPlatform): PostShown => postState(posts.get(key(e.id, p))?.status, !!e.slot && slotMs(e.slot) < nowMs);
+  const count = (eps: Ep[], p: SocialPlatform, ...st: PostShown[]) => eps.filter((e) => st.includes(shown(e, p))).length;
+  const past = (slot: string) => slotMs(slot) <= nowMs;
+  const movable = (e: Ep) => !(e.slot && past(e.slot)) || PLATFORMS.every((p) => shown(e, p.key) !== "published");
 
   const overdue = planned.filter((e) => PLATFORMS.some((p) => shown(e, p.key) === "overdue"));
-  // 3 gün içinde yayınlanacak ama indirilebilir videosu bu sürümden değil (ya da hiç yok)
   const notReady = planned.filter((e) => {
-    const t = slotMs(e.slot);
+    const t = slotMs(e.slot as string);
     return t > nowMs && t - nowMs < 3 * 86_400_000 && !(e.render?.status === "done" && e.render.hasFiles);
   });
   const last = planned[planned.length - 1];
-  const daysLeft = last ? Math.floor((slotMs(last.slot) - nowMs) / 86_400_000) : -1;
+  const daysLeft = last ? Math.floor((slotMs(last.slot as string) - nowMs) / 86_400_000) : -1;
+
+  /** Yerelde uygula (sunucu onaylayınca kalıcı; hata olursa geri). */
+  function applyMove(id: string, slot: string | null, from: string | null, swapped: string | null) {
+    setEpisodes((xs) => xs.map((e) => (e.id === id ? { ...e, slot } : swapped && e.id === swapped ? { ...e, slot: from } : e)));
+  }
+
+  async function move(id: string, slot: string | null, opts: { undo?: boolean } = {}) {
+    const ep = episodes.find((e) => e.id === id);
+    if (!ep || busy || ep.slot === slot) return;
+    const from = ep.slot;
+    const occupant = slot ? bySlot.get(slot) : undefined;
+    applyMove(id, slot, from, occupant?.id ?? null); // iyimser
+    setBusy(true);
+    let data: { error?: string; detail?: unknown; warnings?: string[]; swapped?: string | null; from?: string | null } = {};
+    let ok = false;
+    try {
+      const res = await apiFetch("/api/studio/plan", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "move", id, slot }) });
+      data = await res.json().catch(() => ({}));
+      ok = res.ok;
+    } catch {
+      data = { error: "network" };
+    }
+    setBusy(false);
+    if (!ok) {
+      setEpisodes((xs) => xs.map((e) => (e.id === id ? { ...e, slot: from } : occupant && e.id === occupant.id ? { ...e, slot } : e))); // geri al
+      const text = data.error === "past" ? String(data.detail) : data.error === "admin_2fa_required" ? adminErrorText(data.error) : `Taşınamadı: ${adminErrorText(data.error ?? "failed")}`;
+      setToast({ tone: "bad", text });
+      return;
+    }
+    const swapped = data.swapped ?? null;
+    if (swapped !== (occupant?.id ?? null)) applyMove(id, slot, from, swapped); // sunucunun gördüğü (başkası değiştirdiyse)
+    const what = `„${ep.title}“`;
+    const text = opts.undo
+      ? `Geri alındı: ${what} ${from ? slotLabel(from) : "takvim dışı"} → ${slot ? slotLabel(slot) : "takvim dışı"}`
+      : slot
+        ? `${what} → ${slotLabel(slot)}${swapped ? ` (yer değiştirdi: „${episodes.find((e) => e.id === swapped)?.title ?? swapped}“ → ${from ? slotLabel(from) : "takvim dışı"})` : ""}`
+        : `${what} takvim dışına alındı`;
+    setToast({ tone: data.warnings?.length ? "warn" : "ok", text, detail: data.warnings, undo: opts.undo ? undefined : () => void move(id, from, { undo: true }) });
+  }
 
   async function bulk(platform: SocialPlatform) {
     const ids = weekEps.filter((e) => shown(e, platform) === "planned").map((e) => e.id);
     if (!ids.length) return;
     setBusy(true);
-    setMsg(null);
     try {
       const res = await apiFetch("/api/studio/posts", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "bulk", episodeIds: ids, platform, status: "scheduled" }) });
       const data = (await res.json().catch(() => ({}))) as { error?: string };
-      if (!res.ok) return setMsg({ tone: "bad", text: adminErrorText(data.error ?? res.status) });
+      if (!res.ok) return setToast({ tone: "bad", text: adminErrorText(data.error ?? res.status) });
     } catch {
-      return setMsg({ tone: "bad", text: adminErrorText("network") });
+      return setToast({ tone: "bad", text: adminErrorText("network") });
     } finally {
       setBusy(false);
     }
@@ -90,122 +147,208 @@ export function StudioCalendar({ episodes, posts: initial, missing, now }: { epi
       for (const id of ids) n.set(key(id, platform), { ...(n.get(key(id, platform)) ?? { episodeId: id, platform, url: null, externalId: null, publishedAt: null, metrics: null, metricsAt: null, note: null, updatedBy: null }), status: "scheduled", updatedAt: at });
       return n;
     });
-    setMsg({ tone: "ok", text: `${ids.length} bölüm ${PLATFORMS.find((p) => p.key === platform)?.label}'ta zamanlandı olarak işaretlendi.` });
+    setToast({ tone: "ok", text: `${ids.length} bölüm ${PLATFORMS.find((p) => p.key === platform)?.label}'ta zamanlandı olarak işaretlendi.` });
   }
 
-  const wi = weeks.indexOf(week);
-  const jump = (list: (EpisodeSummary & { slot: string })[]) =>
-    list.slice(0, 6).map((e, i) => (
-      <span key={e.id}>
-        {i ? " · " : " "}
-        <Link className="underline underline-offset-2" href={`/studio/${e.id}`}>{e.slot.slice(5)} {e.title}</Link>
-      </span>
-    ));
+  const drop = (slot: string | null) => (ev: React.DragEvent) => {
+    ev.preventDefault();
+    const id = ev.dataTransfer.getData("text/x-episode") || drag;
+    setDrag(null);
+    setOver(null);
+    if (id) void move(id, slot);
+  };
+  const allow = (slot: string | null) => (ev: React.DragEvent) => {
+    if (!drag) return;
+    if (slot && past(slot)) return; // geçmiş saat: bırakılamaz (imleç "yasak" gösterir)
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "move";
+    setOver(slot ?? "loose");
+  };
+  const readyCount = weekEps.filter((e) => e.render?.status === "done" && e.render.hasFiles).length;
 
   return (
     <AdminPage>
-      <PageHeader
-        title="Sosyal medya takvimi"
-        description="TikTok ve Instagram Reels: günde 3 video, iki platforma aynı dosya. Bölüme tıkla: metinleri düzenle, önizle, onayla; video sunucuda üretilir, buradan kayıpsız indirilir. Saatler Berlin saati."
-        meta={planned.length ? <>Plan: <b>{planned.length}</b> bölüm, {dayLabel(planned[0].slot.slice(0, 10))} – {dayLabel(last.slot.slice(0, 10))}</> : "Plan boş"}
-      />
+      {/* başlık: hafta ve gezinme */}
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p className="muted text-caption">Sosyal medya takvimi · günde 3 video · Berlin saati</p>
+          <h1 className="text-h2">{rangeLabel(days[0], days[6])}</h1>
+        </div>
+        <div className="flex items-center gap-1">
+          <button type="button" className={BTN.small} aria-label="Önceki hafta" onClick={() => setWeek(addDays(week, -7))}>‹</button>
+          <button type="button" className={BTN.small} aria-pressed={week === monday(today)} onClick={() => setWeek(monday(today))}>Bugün</button>
+          <button type="button" className={BTN.small} aria-label="Sonraki hafta" onClick={() => setWeek(addDays(week, 7))}>›</button>
+        </div>
+      </div>
+
+      {/* haftanın özeti */}
+      <div className="flex flex-wrap gap-2 text-caption">
+        <Pill label="Bu hafta" value={`${weekEps.length} video`} />
+        <Pill label="Video hazır" value={`${readyCount}/${weekEps.length}`} tone={weekEps.length && readyCount < weekEps.length ? "warn" : weekEps.length ? "ok" : undefined} />
+        {PLATFORMS.map((p) => (
+          <Pill key={p.key} label={p.label} value={`${count(weekEps, p.key, "scheduled", "published")}/${weekEps.length} zamanlandı`} tone={count(weekEps, p.key, "planned") ? "warn" : weekEps.length ? "ok" : undefined} />
+        ))}
+        {PLATFORMS.map((p) => {
+          const n = count(weekEps, p.key, "planned");
+          return n ? <TwoStep key={p.key} small danger={false} disabled={busy || missing} label={`${p.label}: ${n} videoyu zamanlandı işaretle`} confirm={`Evet, ${n} video ${p.label}'ta zamanlandı`} onConfirm={() => void bulk(p.key)} /> : null;
+        })}
+      </div>
+
       {missing ? <Notice tone="bad" title="Stüdyo tabloları okunamadı">Göç uygulanmamış olabilir (drizzle/0085_social_studio.sql).</Notice> : null}
-      {msg ? <Notice tone={msg.tone}>{msg.text}</Notice> : null}
-      {notReady.length ? (
-        <Notice tone="warn" title={`3 gün içinde yayınlanacak, videosu hazır değil: ${notReady.length} bölüm`}>
-          Onaylanmamış, sesi bekleyen ya da metni onaydan sonra değişmiş bölümler. Zamanlayıcıya koymadan önce onaylayıp videoyu indir.{jump(notReady)}
-        </Notice>
-      ) : null}
-      {overdue.length ? (
-        <Notice tone="warn" title={`Saati geçmiş, yayında işaretlenmemiş: ${overdue.length} bölüm`}>
-          Platformda gerçekten yayınlandı mı bak; yayınlandıysa bağlantıyla &quot;Yayında&quot;, yayınlanmadıysa &quot;Atlandı&quot; işaretle.{jump(overdue)}
-        </Notice>
-      ) : null}
-      {last && daysLeft < 7 ? (
-        <Notice tone={daysLeft < 3 ? "bad" : "warn"} title={daysLeft < 0 ? "Plan bitti" : `Plan ${daysLeft} gün sonra bitiyor`}>
-          Claude&apos;dan yeni iki haftalık parti iste.
-        </Notice>
-      ) : null}
+      {notReady.length ? <Alert tone="warn" title={`3 gün içinde yayınlanacak, videosu hazır değil: ${notReady.length}`} items={notReady} hint="Onaylanmamış, sesi bekleyen ya da metni onaydan sonra değişmiş." /> : null}
+      {overdue.length ? <Alert tone="warn" title={`Saati geçti, yayında işaretlenmedi: ${overdue.length}`} items={overdue} hint="Platformda yayınlandıysa bağlantıyla “Yayında”, yayınlanmadıysa “Atlandı” işaretle." /> : null}
+      {last && daysLeft < 7 ? <Notice tone={daysLeft < 3 ? "bad" : "warn"} title={daysLeft < 0 ? "Plan bitti" : `Plan ${daysLeft} gün sonra bitiyor`}>Claude&apos;dan yeni iki haftalık parti iste.</Notice> : null}
 
-      <Panel title="Bu hafta">
-        <Stats cols={5}>
-          <Stat label="Planlanan" value={weekEps.length} sub={`${weeks.length} haftalık plan`} />
-          <Stat label="Video hazır" value={`${weekEps.filter((e) => e.render?.status === "done" && e.render.hasFiles).length}/${weekEps.length}`} tone={weekEps.every((e) => e.render?.status === "done") ? "ok" : "warn"} />
-          {PLATFORMS.map((p) => (
-            <Stat key={p.key} label={`${p.label} zamanlandı`} value={`${count(weekEps, p.key, "scheduled", "published")}/${weekEps.length}`} tone={count(weekEps, p.key, "planned") ? "warn" : "ok"} sub={count(weekEps, p.key, "published") ? `${count(weekEps, p.key, "published")} yayında` : undefined} />
+      {/* ızgara */}
+      <div className="overflow-x-auto rounded-panel border" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+        <div className="grid min-w-[62rem]" style={{ gridTemplateColumns: "3.5rem repeat(7, minmax(0, 1fr))" }}>
+          <div className="border-b" style={{ borderColor: "var(--border)" }} />
+          {days.map((d) => {
+            const isToday = d === today;
+            return (
+              <div key={d} className="flex items-center gap-2 border-b border-l px-3 py-2" style={{ borderColor: "var(--border)", background: isToday ? "var(--brand-soft)" : undefined, opacity: d < today ? 0.6 : 1 }}>
+                <span className="muted text-micro uppercase tracking-eyebrow">{weekday(d)}</span>
+                <span className={`grid size-7 place-items-center rounded-full text-caption text-strong ${isToday ? "on-fill" : ""}`} style={isToday ? { background: TONE.info } : undefined}>{dayNum(d)}</span>
+                {isToday ? <span className="text-micro" style={{ color: TONE.info }}>bugün</span> : null}
+              </div>
+            );
+          })}
+          {SLOTS.map((t) => (
+            <Row key={t} t={t} days={days} today={today} bySlot={bySlot} shown={shown} past={past} drag={drag} over={over} movable={movable} setDrag={setDrag} setOver={setOver} allow={allow} drop={drop} />
           ))}
-          <Stat label="Saati geçti" value={PLATFORMS.reduce((a, p) => a + count(weekEps, p.key, "overdue"), 0)} tone={PLATFORMS.some((p) => count(weekEps, p.key, "overdue")) ? "warn" : undefined} />
-        </Stats>
-      </Panel>
+        </div>
+      </div>
 
-      <Panel
-        title={`Hafta: ${dayLabel(days[0])} – ${dayLabel(days[6])}`}
-        hint="Üst rozet içeriğin durumu, alttakiler platformlar (TT TikTok, IG Instagram). Mavi zamanlandı, yeşil yayında / video hazır, turuncu dikkat."
-        actions={
-          <>
-            <button type="button" className={BTN.small} disabled={wi <= 0} onClick={() => setWeek(weeks[wi - 1])}>← Önceki</button>
-            <button type="button" className={BTN.small} disabled={wi < 0 || wi >= weeks.length - 1} onClick={() => setWeek(weeks[wi + 1])}>Sonraki →</button>
-            {PLATFORMS.map((p) => {
-              const n = count(weekEps, p.key, "planned");
-              return n ? <TwoStep key={p.key} small danger={false} disabled={busy || missing} label={`${p.label}: ${n} bölümü zamanlandı işaretle`} confirm={`Evet, ${n} bölüm ${p.label}'ta zamanlandı`} onConfirm={() => void bulk(p.key)} /> : null;
-            })}
-          </>
-        }
+      {/* takvim dışı */}
+      <div
+        className="rounded-panel border border-dashed p-3 transition-colors"
+        style={{ borderColor: over === "loose" ? TONE.info : "var(--border)", background: over === "loose" ? "var(--brand-soft)" : "transparent" }}
+        onDragOver={allow(null)}
+        onDragLeave={() => setOver(null)}
+        onDrop={drop(null)}
       >
-        {weekEps.length ? (
-          <div className="overflow-x-auto">
-            <div className="grid min-w-[60rem] gap-2" style={{ gridTemplateColumns: "4rem repeat(7, minmax(0, 1fr))" }}>
-              <div />
-              {days.map((d) => (
-                <div key={d} className="text-caption text-strong" style={d === today ? { color: TONE.info } : undefined}>{dayLabel(d)}{d === today ? " · bugün" : ""}</div>
-              ))}
-              {SLOTS.map((t) => (
-                <Row key={t} t={t} days={days} bySlot={bySlot} shown={shown} />
-              ))}
-            </div>
-          </div>
-        ) : (
-          <Empty>Bu haftada planlanmış bölüm yok.</Empty>
-        )}
-      </Panel>
+        <p className="muted mb-2 text-caption">Takvim dışı ({loose.length}) · bir videoyu takvimden çıkarmak için buraya bırak, buradan bir saate sürükle.</p>
+        <div className="flex flex-wrap gap-2">
+          {loose.map((e) => <Card key={e.id} e={e} shown={shown} drag={drag} movable setDrag={setDrag} setOver={setOver} compact />)}
+        </div>
+      </div>
 
-      {loose.length ? (
-        <Panel title={`Takvim dışı: ${loose.length} bölüm`} hint="Saati olmayan bölümler. Editörde boş bir saate yerleştirilebilir.">
-          <div className="flex flex-wrap gap-2">
-            {loose.map((e) => (
-              <Link key={e.id} href={`/studio/${e.id}`} className="rounded-tile border px-3 py-2 text-caption" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
-                <span className="muted">{APPROACH_SHORT[e.approach] ?? e.approach} · {THEME_TR[e.theme] ?? e.theme}</span> · {e.title}
-              </Link>
-            ))}
+      <p className="faint text-caption">Kartı tutup başka bir saate sürükle: o saat doluysa iki video yer değiştirir. Geçmiş saatlere bırakılamaz. Karta tıkla: metinleri düzenle, önizle, onayla.</p>
+
+      {toast ? (
+        <div role={toast.tone === "bad" ? "alert" : "status"} className="fixed inset-x-0 bottom-4 z-50 mx-auto w-[min(92vw,34rem)] rounded-panel border p-3 shadow-lg" style={{ borderColor: TONE[toast.tone], background: "var(--surface)" }}>
+          <div className="flex items-start gap-3">
+            <span className="mt-1 size-2.5 shrink-0 rounded-full" style={{ background: TONE[toast.tone] }} />
+            <div className="min-w-0 flex-1 text-caption">
+              <p className="text-strong">{toast.text}</p>
+              {toast.detail?.length ? <ul className="muted mt-1 list-disc pl-4">{toast.detail.map((d) => <li key={d}>{d}</li>)}</ul> : null}
+            </div>
+            {toast.undo ? <button type="button" className={BTN.small} onClick={() => { const u = toast.undo; setToast(null); u?.(); }}>Geri al</button> : null}
+            <button type="button" className={BTN.small} aria-label="Kapat" onClick={() => setToast(null)}>×</button>
           </div>
-        </Panel>
+        </div>
       ) : null}
     </AdminPage>
   );
 }
 
-function Row({ t, days, bySlot, shown }: { t: string; days: string[]; bySlot: Map<string, EpisodeSummary & { slot: string }>; shown: (e: EpisodeSummary & { slot: string }, p: SocialPlatform) => PostShown }) {
+function Pill({ label, value, tone }: { label: string; value: string; tone?: Tone }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1" style={{ borderColor: tone ? TONE[tone] : "var(--border)", background: "var(--surface)" }}>
+      <span className="muted">{label}</span>
+      <span className="text-strong" style={tone ? { color: TONE[tone] } : undefined}>{value}</span>
+    </span>
+  );
+}
+
+function Alert({ tone, title, items, hint }: { tone: Tone; title: string; items: Ep[]; hint: string }) {
+  return (
+    <Notice tone={tone} title={title}>
+      {hint}{" "}
+      {items.slice(0, 6).map((e, i) => (
+        <span key={e.id}>
+          {i ? " · " : ""}
+          <Link className="underline underline-offset-2" href={`/studio/${e.id}`}>{e.slot ? slotLabel(e.slot) : ""} {e.title}</Link>
+        </span>
+      ))}
+    </Notice>
+  );
+}
+
+function Row({ t, days, today, bySlot, shown, past, drag, over, movable, setDrag, setOver, allow, drop }: {
+  t: string; days: string[]; today: string; bySlot: Map<string, Ep>; shown: (e: Ep, p: SocialPlatform) => PostShown; past: (slot: string) => boolean;
+  drag: string | null; over: string | null; movable: (e: Ep) => boolean; setDrag: (id: string | null) => void; setOver: (s: string | null) => void;
+  allow: (slot: string | null) => (ev: React.DragEvent) => void; drop: (slot: string | null) => (ev: React.DragEvent) => void;
+}) {
   return (
     <>
-      <div className="muted pt-2 font-mono text-caption">{t}</div>
+      <div className="muted border-t px-2 pt-3 text-right font-mono text-micro" style={{ borderColor: "var(--border)" }}>{t}</div>
       {days.map((d) => {
-        const e = bySlot.get(`${d} ${t}`);
-        if (!e) return <div key={d} className="rounded-tile border border-dashed" style={{ borderColor: "var(--border)", minHeight: "6.5rem" }} />;
-        const cs = contentState(e);
+        const slot = `${d} ${t}`;
+        const e = bySlot.get(slot);
+        const isPast = past(slot);
+        const target = over === slot;
         return (
-          <Link key={d} href={`/studio/${e.id}`} className="flex min-w-0 flex-col gap-1 rounded-tile border p-2 text-left hover:border-[var(--color-brand)]" style={{ borderColor: "var(--border)", background: "var(--surface-2)", minHeight: "6.5rem" }}>
-            <span className="muted truncate text-micro uppercase tracking-eyebrow">{APPROACH_SHORT[e.approach] ?? e.approach} · {THEME_TR[e.theme] ?? e.theme}</span>
-            <span className="line-clamp-2 text-caption text-strong">{e.title}</span>
-            <span className="mt-auto flex flex-wrap gap-1">
-              <Badge tone={CONTENT_STATE[cs.key].tone}>{cs.label}</Badge>
-              {PLATFORMS.map((p) => {
-                const s = shown(e, p.key);
-                return <Badge key={p.key} tone={POST_STATE[s].tone}>{p.short} · {POST_STATE[s].label}</Badge>;
-              })}
-            </span>
-          </Link>
+          <div
+            key={d}
+            className="min-h-[7.5rem] border-l border-t p-1.5 transition-colors"
+            style={{
+              borderColor: "var(--border)",
+              background: target ? "var(--brand-soft)" : d === today ? "color-mix(in srgb, var(--brand-soft) 45%, transparent)" : undefined,
+              outline: target ? `2px dashed ${TONE.info}` : undefined,
+              outlineOffset: -4,
+              opacity: drag && isPast ? 0.45 : 1,
+            }}
+            onDragOver={allow(slot)}
+            onDragLeave={() => over === slot && setOver(null)}
+            onDrop={drop(slot)}
+          >
+            {e ? <Card e={e} shown={shown} drag={drag} movable={movable(e)} setDrag={setDrag} setOver={setOver} /> : drag && !isPast ? <div className="faint grid h-full min-h-[6.5rem] place-items-center text-micro">buraya bırak</div> : null}
+          </div>
         );
       })}
     </>
+  );
+}
+
+function Card({ e, shown, drag, movable, setDrag, setOver, compact }: { e: Ep; shown: (e: Ep, p: SocialPlatform) => PostShown; drag: string | null; movable: boolean; setDrag: (id: string | null) => void; setOver: (s: string | null) => void; compact?: boolean }) {
+  const cs = contentState(e);
+  const tone = CONTENT_STATE[cs.key].tone;
+  return (
+    <Link
+      href={`/studio/${e.id}`}
+      draggable={movable}
+      onDragStart={(ev) => {
+        ev.dataTransfer.setData("text/x-episode", e.id);
+        ev.dataTransfer.effectAllowed = "move";
+        setDrag(e.id);
+      }}
+      onDragEnd={() => {
+        setDrag(null);
+        setOver(null);
+      }}
+      className={`group flex min-w-0 overflow-hidden rounded-tile border text-left shadow-sm transition hover:shadow-md ${movable ? "cursor-grab active:cursor-grabbing" : ""} ${compact ? "w-56" : "h-full"}`}
+      style={{ borderColor: "var(--border)", background: "var(--surface)", opacity: drag === e.id ? 0.4 : 1 }}
+    >
+      <span className="w-1.5 shrink-0" style={{ background: THEME_SWATCH[e.theme] ?? "var(--border)" }} title={`Tema: ${THEME_TR[e.theme] ?? e.theme}`} />
+      <span className="flex min-w-0 flex-1 flex-col gap-1.5 p-2">
+        <span className="muted truncate text-micro uppercase tracking-eyebrow">{APPROACH_SHORT[e.approach] ?? e.approach} · {THEME_TR[e.theme] ?? e.theme}</span>
+        <span className="line-clamp-2 text-caption text-strong">{e.title}</span>
+        <span className="mt-auto flex items-center justify-between gap-1">
+          <span className="truncate rounded-full px-2 py-0.5 text-micro" style={{ color: tone ? TONE[tone] : "var(--text-muted)", background: `color-mix(in srgb, ${tone ? TONE[tone] : "var(--text-muted)"} 12%, transparent)` }}>{cs.label}</span>
+          <span className="flex shrink-0 gap-1">
+            {PLATFORMS.map((p) => {
+              const s = shown(e, p.key);
+              const c = POST_STATE[s].tone;
+              return (
+                <span key={p.key} title={`${p.label}: ${POST_STATE[s].label}`} className={`grid size-5 place-items-center rounded-full text-[9px] text-strong ${c ? "on-fill" : "muted"}`} style={{ background: c ? TONE[c] : "var(--surface-2)" }}>
+                  {p.short[0]}
+                </span>
+              );
+            })}
+          </span>
+        </span>
+      </span>
+    </Link>
   );
 }

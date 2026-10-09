@@ -154,7 +154,7 @@ export function StudioEditor({ initial, posts: initialPosts, role, email, reques
     setBusy(false);
     if (!r.ok) return setMsg({ tone: "bad", text: errorText(r.data) });
     await reload();
-    setMsg({ tone: "ok", text: "Onaylandı: video sunucuda üretiliyor (yaklaşık 1–3 dakika)." });
+    setMsg({ tone: "ok", text: "Onaylandı: video sunucuda üretiliyor (30 sn’lik video için yaklaşık 5 dakika; sırada başka video varsa daha uzun). Sayfayı kapatabilirsin." });
   }
   async function restore(to: number | "origin") {
     setBusy(true);
@@ -355,7 +355,7 @@ function StatusBox({ ep, pv, dirty, auditFresh, blockers, canApprove, busy, onAp
           {!r || r.status === "cancelled" ? (
             <div className="space-y-2">
               <button type="button" className={`${BTN.primary} w-full`} disabled={!canApprove || busy} onClick={onApprove}>Onayla ve videoyu üret</button>
-              <p className="muted">{blockers.length ? blockers.join(" ") : "Video sunucuda 1–3 dakikada üretilir (1080×1920, 30 fps)."}</p>
+              <p className="muted">{blockers.length ? blockers.join(" ") : "Video sunucuda üretilir: 30 sn’lik video için yaklaşık 5 dakika (1080×1920, 30 fps). Sayfayı açık tutman gerekmez."}</p>
             </div>
           ) : r.status === "queued" ? (
             <div className="flex flex-wrap items-center gap-2"><Badge tone="info">Sırada</Badge><span className="muted">{r.requestedBy}</span><button type="button" className={BTN.small} onClick={() => onCancel(r.id)}>İptal</button></div>

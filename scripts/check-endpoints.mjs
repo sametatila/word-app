@@ -161,6 +161,7 @@ const WEB_ONLY_METHOD = {
   "POST /api/studio/posts": "stüdyo (sosyal medya videoları, /studio)",
   "GET /api/studio/requests": "stüdyo (sosyal medya videoları, /studio)",
   "POST /api/studio/requests": "stüdyo (sosyal medya videoları, /studio)",
+  "POST /api/studio/plan": "stüdyo (sosyal medya videoları, /studio)",
   "POST /api/admin/users": "yonetim panosu",
   "POST /api/admin/content": "yonetim panosu",
 };
@@ -178,6 +179,7 @@ const WEB_ONLY = {
   "/api/studio/file/[id]": "stüdyo (sosyal medya videoları, /studio) — mobilde yok, olmayacak",
   "/api/studio/posts": "stüdyo (sosyal medya videoları, /studio) — mobilde yok, olmayacak",
   "/api/studio/requests": "stüdyo (sosyal medya videoları, /studio) — mobilde yok, olmayacak",
+  "/api/studio/plan": "stüdyo (sosyal medya videoları, /studio) — mobilde yok, olmayacak",
   "/api/admin/users": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/content": "yonetim panosu — mobilde yok, olmayacak",
   "/api/push/subscribe": "TARAYICI push aboneligi; mobil FCM ile /api/push/device cagiriyor",

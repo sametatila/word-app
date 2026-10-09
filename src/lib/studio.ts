@@ -420,3 +420,41 @@ export async function postsFor(ids: string[]) {
   if (!ids.length) return [];
   return db.select().from(socialPosts).where(inArray(socialPosts.episodeId, ids));
 }
+
+/**
+ * Takvimde sürükle-bırak: bölümü bir saate (ya da takvim dışına, null) taşı. Saat doluysa iki bölüm YER DEĞİŞTİRİR
+ * (tek işlem). Geçmiş saate taşınamaz; geçmiş saatteki bir bölüm dolu bir gelecek saatle yer değiştiremez (öteki
+ * bölüm geçmişe düşerdi). Dönüş: uyarılar (takvim kuralları, taşınan iki bölüm için), yer değiştirilen bölüm, eski saat
+ * (istemcinin "Geri al"ı aynı uçla eski saate taşır).
+ */
+export async function moveEpisode(id: string, slot: unknown, actor: string): Promise<Ok<{ from: string | null; swapped: string | null; warnings: string[] }> | StudioError> {
+  if (slot !== null && (typeof slot !== "string" || !SLOT_RE.test(slot))) return fail(400, "bad_input");
+  const now = Date.now();
+  const r = await db.transaction(async (tx) => {
+    const [e] = await tx.select().from(socialEpisodes).where(eq(socialEpisodes.id, id)).for("update");
+    if (!e) return fail(404, "not_found");
+    if (slot === e.slot) return { ok: true as const, from: e.slot, swapped: null };
+    if (slot !== null && berlinMs(slot) <= now) return fail(409, "past", "Geçmiş bir saate taşınamaz.");
+    let swapped: string | null = null;
+    if (slot !== null) {
+      const [other] = await tx
+        .select({ id: socialEpisodes.id })
+        .from(socialEpisodes)
+        .where(sql`${socialEpisodes.slot} = ${slot} and ${socialEpisodes.archivedAt} is null and ${socialEpisodes.id} <> ${id}`)
+        .for("update");
+      if (other) {
+        if (e.slot && berlinMs(e.slot) <= now) return fail(409, "past", "Bu saat dolu; geçmişteki bir bölümle yer değiştirilemez.");
+        await tx.update(socialEpisodes).set({ slot: null }).where(eq(socialEpisodes.id, id)); // geçici: aynı saate iki satır olmasın
+        await tx.update(socialEpisodes).set({ slot: e.slot, updatedBy: actor, updatedAt: new Date() }).where(eq(socialEpisodes.id, other.id));
+        swapped = other.id;
+      }
+    }
+    await tx.update(socialEpisodes).set({ slot, updatedBy: actor, updatedAt: new Date() }).where(eq(socialEpisodes.id, id));
+    return { ok: true as const, from: e.slot, swapped };
+  });
+  if (!r.ok) return r;
+  const warnings: string[] = [];
+  if (slot) for (const w of (await checkSlot(id, slot)).warnings) warnings.push(w);
+  if (r.swapped && r.from) for (const w of (await checkSlot(r.swapped, r.from)).warnings) warnings.push(`${r.swapped}: ${w}`);
+  return { ok: true, from: r.from, swapped: r.swapped, warnings: [...new Set(warnings)] };
+}
