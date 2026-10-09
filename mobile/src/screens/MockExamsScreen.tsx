@@ -18,11 +18,11 @@ import { Skeleton, SkeletonCard, SkeletonLine, SkeletonText, textHeight } from "
 import { useMe } from "../lib/useMe";
 import { useAuth } from "../lib/AuthContext";
 import { currentCourseId } from "../lib/courses";
-import { mockSkillLabel, type MockLevel, type MockSkill } from "../data/exams";
+import { mockCourseOf, mockSkillLabel, type MockLevel, type MockSkill } from "../data/exams";
 import { mockCatalogFor, type MockCatalogEntry } from "../content/mockCatalog";
 import { useNativeContentVersion } from "../lib/nativeContent";
 import { localPartStates, type PartState } from "../game/mockExamLocal";
-import { fetchMockAccess, type MockAccess } from "../game/mockExam";
+import { fetchMockAccess, fetchMockStats, type MockAccess } from "../game/mockExam";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii } from "../theme";
 
@@ -140,9 +140,42 @@ export function MockExamsScreen() {
       if (!dead) setStates(out);
     })();
     return () => { dead = true; };
-    // `papers` seviyeye bağlı ve her çizimde yeni dizi; kimliği seviyeden alıyoruz.
-  }, [level]); // eslint-disable-line react-hooks/exhaustive-deps
+    /* `papers`e BAĞLI: künye odaktan SONRA iniyor ve yalnız `level`e bağlıyken
+       durumlar boş listeyle okunup öyle kalıyordu — çözülmüş bölümler, ekrana
+       yeniden girilene dek çözülmemiş görünüyordu (QA F-0048). `papers` bir
+       durum: kimliği yalnız künye inince değişiyor. */
+  }, [papers]);
   useFocusEffect(readStates);
+
+  /*
+   * SUNUCUDAKİ SONUÇLAR DA. Cihaz kaydı yalnız BU cihazda çözüleni biliyor:
+   * webde ya da başka telefonda çözülen bölüm burada çözülmemiş görünüyordu
+   * (QA F-0048). Web listesi durumu sunucudan çiziyor; burası ikisini
+   * birleştiriyor (`mergedState`). Okunamazsa yalnız cihaz kaydı.
+   */
+  const [serverStates, setServerStates] = useState<Record<string, PartState>>({});
+  useFocusEffect(useCallback(() => {
+    if (!me) { setServerStates({}); return; }
+    let dead = false;
+    void fetchMockStats(mockCourseOf(currentCourseId())).then((st) => {
+      if (dead) return;
+      const out: Record<string, PartState> = {};
+      // `recent` yeniden eskiye: ilk kayıt bölümün son denemesi.
+      for (const r of st.recent) {
+        const k = `${r.paperId}:${r.skill}`;
+        if (!(k in out)) out[k] = { pct: r.score, passed: r.passed, synced: true, scored: r.total > 0 };
+      }
+      for (const r of st.running) out[`${r.paperId}:${r.skill}`] = "running";
+      setServerStates(out);
+    }).catch(() => { /* ağ yok: cihaz kaydı yeter */ });
+    return () => { dead = true; };
+  }, [me]));
+  const stateOf = (paperId: string): Record<string, PartState> => {
+    const local = states[paperId] ?? {};
+    const out: Record<string, PartState> = {};
+    for (const p of papers.find((x) => x.id === paperId)?.parts ?? []) out[p.skill] = mergedState(local[p.skill] ?? null, serverStates[`${paperId}:${p.skill}`] ?? null);
+    return out;
+  };
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -269,7 +302,7 @@ export function MockExamsScreen() {
               <PaperCard
                 key={p.id}
                 paper={p}
-                states={states[p.id] ?? {}}
+                states={stateOf(p.id)}
                 locked={isLocked(p.id)}
                 hint={lockedHint}
                 showPlans={!access?.premium}
@@ -360,6 +393,17 @@ function PaperCard({ paper, states, locked, hint, showPlans, onOpen, onPlans }: 
       ) : null}
     </Card>
   );
+}
+
+/**
+ * Cihaz kaydı ile sunucu birleşimi: bu cihazda YARIM kalan ya da henüz
+ * gönderilemeyen (yalnız cihazda puanlanan) sonuç daha yeni, o kazanıyor;
+ * yoksa sunucunun son denemesi, o da yoksa cihaz kaydı.
+ */
+function mergedState(local: PartState, server: PartState): PartState {
+  if (local === "running") return local;
+  if (local && !local.synced) return local;
+  return server ?? local;
 }
 
 /** Bölüm rozeti: yarım kaldı · puan · yalnız cihazda hesaplanmış puan. */
