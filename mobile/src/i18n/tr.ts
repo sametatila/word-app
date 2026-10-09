@@ -821,6 +821,8 @@ export const tr: Record<string, string> = {
   "quiz.order_question": "Soruyu doğru sıraya diz.",
   "quiz.grammar": "Dil bilgisi",
   "item.try_again": "Tekrar dene",
+  "item.leave_title": "Alıştırmadan çıkılsın mı?",
+  "item.leave_body": "Yazdıkların ve çözdüğün görevler kaydedilmiyor; alıştırma baştan açılır.",
   "leaderboard.sign_in_for_friends_board": "Arkadaş tablosu için giriş yap.",
   "leaderboard.report_hint": "{name}, bildirmek için basılı tut",
   "leaderboard.leaderboard": "Sıralama",

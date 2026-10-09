@@ -31,6 +31,7 @@ import { IconLine } from "../ui/IconLine";
 import { arrangedAccepted } from "../lib/arrange";
 import { arrangedRescuable } from "../lib/typedAnswer";
 import { rescueSentence } from "../lib/sentenceRescue";
+import { useUnsavedWork } from "../lib/unsavedWork";
 
 /**
  * Soruların içerik bildirimi — hangi alıştırma, hangi yüzey. Sağlayan ekran
@@ -115,6 +116,8 @@ export function QuestionList({ questions, onAllAnswered, colors }: {
   questions: SkillQuestion[]; onAllAnswered: (correct: number) => void; colors: Palette;
 }) {
   const [results, setResults] = useState<(boolean | null)[]>(() => questions.map(() => null));
+  /* Kaydedilmemiş emek: çıkış onaya bağlı (bkz. `lib/unsavedWork`, QA F-0054). */
+  useUnsavedWork(results.some((r) => r !== null) && results.some((r) => r === null));
 
   function settle(qi: number, ok: boolean) {
     if (results[qi] !== null) return;
@@ -181,6 +184,7 @@ function ChoiceInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: bo
 
 function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; kind: string; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
   const [typed, setTyped] = useState("");
+  useUnsavedWork(!done && typed.trim().length > 0);
   const accept = q.accept ?? [];
   const ok = done && written(typed, accept);
   return (
@@ -327,6 +331,8 @@ export type WritingTask = BuildTask | FreeTask | RewriteTask | FormTask;
 /** Yazma egzersizi görevleri — de içeriğinde iki tür: build (TR→DE cümle) ve free. */
 export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { tasks: WritingTask[]; level: string; exerciseId: string; onAllDone: (correct: number) => void; colors: Palette }) {
   const [results, setResults] = useState<(boolean | null)[]>(() => tasks.map(() => null));
+  /* Kaydedilmemiş emek: çıkış onaya bağlı (bkz. `lib/unsavedWork`, QA F-0054). */
+  useUnsavedWork(results.some((r) => r !== null) && results.some((r) => r === null));
   /* `near`: yazım sapmasıyla geçti ("Neredeyse") — tam doğrunun parlak sesi
      değil, yumuşak "near" (bkz. `game/rounds` `markAnswer`). */
   function settle(i: number, ok: boolean, near = false) {
@@ -378,6 +384,7 @@ function BuildCard({ t, n, level, done, onSettle, colors }: { t: BuildTask; n: n
   const [chosen, setChosen] = useState<number[]>([]);
   const [phase, setPhase] = useState<"editing" | "correct" | "revealed">("editing");
   const [fails, setFails] = useState(0);
+  useUnsavedWork(!done && phase === "editing" && chosen.length > 0);
   const guest = Boolean(useAuth().user?.guest);
   /** Yapay zekâ soruluyor: düğmeler kapalı. */
   const [checking, setChecking] = useState(false);
@@ -481,6 +488,7 @@ function BuildCard({ t, n, level, done, onSettle, colors }: { t: BuildTask; n: n
 function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: number; done: boolean; onSettle: (ok: boolean, near?: boolean) => void; colors: Palette }) {
   const [typed, setTyped] = useState("");
   const [match, setMatch] = useState<SentenceMatch | null>(null);
+  useUnsavedWork(!done && typed.trim().length > 0);
   const ok = match ? isPass(match) : false;
   function check() {
     if (done || !typed.trim()) return;
@@ -529,6 +537,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
  */
 function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
   const [vals, setVals] = useState<string[]>(() => t.fields.map(() => ""));
+  useUnsavedWork(!done && vals.some((v) => v.trim()));
   const okOf = (i: number) => written(vals[i] ?? "", [t.fields[i].answer, ...(t.fields[i].accept ?? [])]);
   const filled = vals.every((v) => v.trim());
   return (
@@ -597,6 +606,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
   const [typed, setTyped] = useState("");
   const [reveal, setReveal] = useState(false);
   const [busy, setBusy] = useState(false);
+  useUnsavedWork(!done && typed.trim().length > 0);
   const [score, setScore] = useState<{ overall: number; praise: string; tip: string; corrected: string; id: number | null } | null>(null);
   const [note, setNote] = useState<string | null>(null);
   const [queued, setQueued] = useState(false);

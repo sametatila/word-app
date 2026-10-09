@@ -167,7 +167,8 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
     );
 
   return (
-    <PlayerShell exercise={exercise} backHref={backHref}>
+    /* Geçilen cümleler kaydedilmemiş emek (QA F-0054; mobil `SpeakingDrill` aynı). */
+    <PlayerShell exercise={exercise} backHref={backHref} unsaved={state.phase === "idle" && idx > 0}>
       <p className="muted px-1 text-body">{exercise.intro}</p>
       <GlossPanel gloss={exercise.gloss} />
 

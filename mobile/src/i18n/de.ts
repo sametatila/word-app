@@ -816,6 +816,8 @@ export const de: Record<string, string> = {
   "quiz.order_question": "Bring die Frage in die richtige Reihenfolge.",
   "quiz.grammar": "Grammatik",
   "item.try_again": "Erneut versuchen",
+  "item.leave_title": "Übung verlassen?",
+  "item.leave_body": "Was du geschrieben und gelöst hast, wird nicht gespeichert; die Übung beginnt von vorn.",
   "leaderboard.sign_in_for_friends_board": "Melde dich für die Freunde-Rangliste an.",
   "leaderboard.report_hint": "{name}, zum Melden gedrückt halten",
   "leaderboard.leaderboard": "Rangliste",

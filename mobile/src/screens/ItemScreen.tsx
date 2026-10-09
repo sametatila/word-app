@@ -37,6 +37,9 @@ import { UnlockProgress } from "../ui/UnlockProgress";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 import { IconLine } from "../ui/IconLine";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { useBackConfirm } from "../lib/useBackConfirm";
+import { UnsavedWorkScope } from "../lib/unsavedWork";
 
 /** Sonuç bandının başlığındaki beceri adı — Beceriler sekmesiyle aynı anahtarlar. */
 const SKILL_KEY: Record<string, string> = { reading: "skills.reading", listening: "skills.listening", writing: "skills.writing", speaking: "skills.speaking", grammar: "skills.grammar" };
@@ -317,6 +320,20 @@ export function ItemScreen() {
      da "kuyruğa alındı" notu YENİ turun ekranına yazılıyordu. Kayıt (ve kuyruk)
      yine yapılıyor; yalnız ekrana yazan satırlar tur değiştiyse atlanıyor. */
   const saveRun = useRef(0);
+  /*
+    YARIM ALIŞTIRMADAN ÇIKIŞ ONAYA BAĞLI (QA F-0054). "Kapat" ve geri tuşu
+    sormadan çıkıyordu; yazılan metin ve çözülen görevler hiçbir yere
+    kaydedilmiyor, alıştırma baştan açılıyordu. Kartlar kaydedilmemiş bir şey
+    olduğunu `useUnsavedWork` ile bildiriyor; sonuç çıkınca (`finished`) emek
+    kaydedilmiş sayılıyor. iOS'ta kenardan kaydırma yalnız o sırada kapalı
+    (`gestureEnabled`), boş alıştırmada geri hareketi duruyor. Web
+    `skills/player-shell` aynı (`useLeaveGuard`).
+  */
+  const [unsaved, setUnsaved] = useState(false);
+  const guard = unsaved && !finished;
+  const back = useBackConfirm(guard);
+  useEffect(() => { nav2.setOptions({ gestureEnabled: !guard }); }, [nav2, guard]);
+  const close = () => (guard ? back.ask() : nav.goBack());
 
   const kind = params.kind as ItemKind;
   const tint = kindFill(kind);
@@ -528,8 +545,18 @@ export function ItemScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <ConfirmDialog
+        visible={back.visible}
+        title={t("item.leave_title")}
+        message={t("item.leave_body")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue")}
+        destructive
+        onConfirm={() => { back.cancel(); nav.goBack(); }}
+        onCancel={back.cancel}
+      />
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={close} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <CloseIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
@@ -541,6 +568,7 @@ export function ItemScreen() {
         </View>
       </View>
       <SkillReportContext.Provider value={reportAs}>
+      <UnsavedWorkScope onChange={setUnsaved}>
 
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted}>{exercise.intro}</Text>
@@ -583,6 +611,7 @@ export function ItemScreen() {
         {/* Monologda düğmeler geri bildirimin altında, akışın içinde kalıyor. */}
         {finished && isMono ? <View style={{ marginTop: spacing.md }}>{resultActions}</View> : null}
       </KeyboardAwareScroll>
+      </UnsavedWorkScope>
       </SkillReportContext.Provider>
       {/* Öteki sonuçlardaki gibi düğmeler altta sabit (`FlowScreen` düğme alanı ölçüsünde). */}
       {finished && !isMono ? <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>{resultActions}</View> : null}

@@ -165,6 +165,8 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Leaderboard" component={LeaderboardScreen} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} />
+      {/* Geri hareketi KOŞULLU: `ItemScreen` kaydedilmemiş emek varken kendisi
+          kapatıyor (`setOptions`, QA F-0054); boş alıştırmada açık. */}
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Boss" component={BossScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />

@@ -248,7 +248,9 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
   const mm = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
   return (
-    <PlayerShell exercise={exercise} backHref={backHref}>
+    /* Söylenen/yazılan metin değerlendirme gelene kadar kaydedilmemiş emek
+       (QA F-0054; mobil `MonologueBody` aynı). */
+    <PlayerShell exercise={exercise} backHref={backHref} unsaved={state.phase === "idle" && !result && transcript.trim().length > 0}>
       <p className="muted px-1 text-body">{exercise.intro}</p>
       {/* Monolog metni sunucuda rubrikle puanlanıyor (ses gitmiyor); puanı
           kimin verdiği konuşmadan önce söyleniyor — mobilde de öyle. */}

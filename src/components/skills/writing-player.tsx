@@ -27,6 +27,7 @@ import { IconLine } from "@/components/icon-line";
 import { arrangedAccepted } from "@/lib/arrange";
 import { arrangedRescuable } from "@/lib/typed-answer";
 import { rescueSentence } from "@/lib/sentence-rescue";
+import { useUnsavedWork } from "./unsaved-work";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -94,7 +95,8 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
   }
 
   return (
-    <PlayerShell exercise={exercise} backHref={backHref}>
+    /* Çözülen görevler kaydedilmemiş emek (QA F-0054); kartlardaki yazı ayrıca. */
+    <PlayerShell exercise={exercise} backHref={backHref} unsaved={state.phase === "idle" && step > 0}>
       <p className="muted px-1 text-body">{exercise.intro}</p>
       {/* Yazma görevleri sunucuda dil modeliyle puanlanıyor; kimin
           değerlendirdiği yazmaya başlamadan önce söyleniyor (mobilde de öyle). */}
@@ -195,6 +197,7 @@ function BuildTask({
   const [phase, setPhase] = useState<"editing" | "correct" | "revealed">("editing");
   const [fails, setFails] = useState(0);
   const [shaking, setShaking] = useState(false);
+  useUnsavedWork(phase === "editing" && chosen.length > 0);
 
   /** Yapay zekâ soruluyor: düğmeler kapalı. */
   const [checking, setChecking] = useState(false);
@@ -367,6 +370,7 @@ function FreeTask({
   // taslak mount sonrasında yüklenir ve yüklenene kadar kayıt yapılmaz.
   const [text, setText] = useState("");
   const loaded = useRef(false);
+  useUnsavedWork(text.trim().length > 0);
   const [checks, setChecks] = useState<boolean[]>(() => task.checklist.map(() => false));
   const [showSample, setShowSample] = useState(false);
   const areaRef = useRef<HTMLTextAreaElement>(null);
@@ -672,6 +676,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
   const [result, setResult] = useState<Assessment | FallbackAssessment | null>(null);
   const [failure, setFailure] = useState<AssessFailure | null>(null);
   const [ok, setOk] = useState(false);
+  useUnsavedWork(!ok && text.trim().length > 0);
   const areaRef = useRef<HTMLTextAreaElement>(null);
   const cumleSozcuk = text.trim() ? text.trim().split(/\s+/).filter(Boolean).length : 0;
 
@@ -804,6 +809,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
   const lang = useTargetLang();
   const [values, setValues] = useState<string[]>(() => task.fields.map(() => ""));
   const [checked, setChecked] = useState(false);
+  useUnsavedWork(values.some((v) => v.trim()));
   const results = task.fields.map((f, i) => fieldOk(values[i], f.answer, f.accept, lang));
   const okCount = results.filter(Boolean).length;
   const ok = okCount >= Math.ceil(task.fields.length * 0.7);
@@ -878,6 +884,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
   const lang = useTargetLang();
   const [text, setText] = useState("");
   const [match, setMatch] = useState<SentenceMatch | null>(null);
+  useUnsavedWork(text.trim().length > 0);
   const ok = match ? match.verdict === "exact" || match.verdict === "spelling" : false;
   /* Kontrol sesi — mobil `skillQuiz` RewriteCard ile aynı: tam → doğru,
      yalnız yazım → neredeyse, gerisi → yanlış. */

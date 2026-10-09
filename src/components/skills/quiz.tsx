@@ -20,6 +20,7 @@ import { arrangedRescuable } from "@/lib/typed-answer";
 import { rescueSentence } from "@/lib/sentence-rescue";
 import { useT } from "@/lib/i18n/client";
 import { vibrate } from "@/lib/fx";
+import { useUnsavedWork } from "./unsaved-work";
 
 /**
  * Anlama soruları — sınav kâğıdı gibi hepsi alt alta. Şık seçilince kilitlenir,
@@ -49,6 +50,8 @@ export function QuestionList({
   const frameSurface = useReportSurface();
   /** Soru başına sonuç: null = cevaplanmadı; true/false = doğru/yanlış. */
   const [results, setResults] = useState<(boolean | null)[]>(() => questions.map(() => null));
+  /* Kaydedilmemiş emek: çıkış onaya bağlı (bkz. `unsaved-work`, QA F-0054). */
+  useUnsavedWork(results.some((r) => r !== null) && results.some((r) => r === null));
 
   function settle(qi: number, ok: boolean) {
     if (results[qi] !== null) return;
@@ -206,6 +209,7 @@ function WrittenInput({
   const t = useT();
   const lang = useTargetLang();
   const [typed, setTyped] = useState("");
+  useUnsavedWork(!done && typed.trim().length > 0);
   const accept = q.accept ?? [];
   const ok = done && written(typed, accept);
   function check() {

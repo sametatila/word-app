@@ -818,6 +818,8 @@ export const enBase: Record<string, string> = {
   "quiz.order_question": "Put the question in the right order.",
   "quiz.grammar": "Grammar",
   "item.try_again": "Try again",
+  "item.leave_title": "Leave this exercise?",
+  "item.leave_body": "What you have written and the tasks you have solved are not saved; the exercise starts over.",
   "leaderboard.sign_in_for_friends_board": "Sign in for the friends board.",
   "leaderboard.report_hint": "{name}, long-press to report",
   "leaderboard.leaderboard": "Leaderboard",

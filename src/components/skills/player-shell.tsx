@@ -11,6 +11,9 @@ import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
 import { OfflineIcon } from "@/components/icons";
 import { RoundExit } from "@/components/round-exit";
+import { ConfirmDialog } from "@/components/confirm-dialog";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
+import { UnsavedWorkScope } from "./unsaved-work";
 import { FlowActions, FlowColumn, FlowNote, ResultHero, StatRow } from "@/components/flow";
 import { isSkillDone, RUBRIC_PASS_PCT, scoreOf, SKILL_DONE_PCT } from "@/lib/score-bands";
 import { LEVEL_TONE } from "./theme";
@@ -109,17 +112,42 @@ export function PlayerShell({
   exercise,
   children,
   backHref,
+  unsaved = false,
 }: {
   exercise: SkillExercise;
   children: ReactNode;
   /** Nereye dönülecek. Verilmezse çerçeve bağlamından (rota sayfası) gelir. */
   backHref?: string;
+  /**
+   * Oynatıcının kendi ilerlemesi kaydedilmemiş (çözülen görevler, söylenen
+   * cümleler). Kartların içindeki yazı `useUnsavedWork` ile ayrıca bildiriliyor.
+   */
+  unsaved?: boolean;
 }) {
   const t = useT();
   const frame = usePlayerFrame();
   const back = backHref ?? frame.backHref;
+  /*
+    YARIM ALIŞTIRMADAN ÇIKIŞ ONAYA BAĞLI (QA F-0054, Android'de görüldü).
+    "Kapat" ve kenar çubuğu bağlantıları sormadan çıkıyordu; yazılan metin ve
+    çözülen görevler kaydedilmiyor, alıştırma baştan açılıyordu. Tur ve sınav
+    oynatıcılarıyla aynı kanca (`useLeaveGuard`: uygulama içi bağlantı +
+    sekme kapatma); mobil `ItemScreen` aynı diyalog ve metin.
+  */
+  const [cardsDirty, setCardsDirty] = useState(false);
+  const ayril = useLeaveGuard(unsaved || cardsDirty);
   return (
     <div className="mx-auto w-full max-w-2xl">
+      <ConfirmDialog
+        open={ayril.pending !== null}
+        title={t("item.leave_title")}
+        message={t("item.leave_body")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue")}
+        destructive
+        onConfirm={ayril.leave}
+        onCancel={ayril.stay}
+      />
       <div className="mb-5 flex items-center gap-3">
         {/* KAPAT, GERİ OKU DEĞİL (2026-09-27): sonuç bu sayfanın dibine
             ekleniyor ve sonuç ekranında çıkış solda çarpı, adı `common.close`
@@ -141,7 +169,9 @@ export function PlayerShell({
           <h1 className="truncate text-h3">{exercise.title}</h1>
         </div>
       </div>
-      <ShellExercise.Provider value={exercise}>{children}</ShellExercise.Provider>
+      <ShellExercise.Provider value={exercise}>
+        <UnsavedWorkScope onChange={setCardsDirty}>{children}</UnsavedWorkScope>
+      </ShellExercise.Provider>
     </div>
   );
 }

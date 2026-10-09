@@ -26,6 +26,7 @@ import { RUBRIC_PASS_PCT } from "../lib/learningRules";
 import { ReportLink, assessmentRef } from "../ui/ReportLink";
 import { QuestionReport } from "./skillQuiz";
 import { IconLine, lineInset } from "../ui/IconLine";
+import { useUnsavedWork } from "../lib/unsavedWork";
 
 /**
  * Beceriler kütüphanesinin (2026-09) mobil oynatıcı parçaları: dil bilgisi
@@ -96,6 +97,8 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
   const [heard, setHeard] = useState<string>("");
   const [passed, setPassed] = useState(0);
   const [sttOk, setSttOk] = useState<boolean | null>(null);
+  /* Kaydedilmemiş emek: çıkış onaya bağlı (bkz. `lib/unsavedWork`, QA F-0054). */
+  useUnsavedWork(idx > 0 && idx < tasks.length);
   const task = tasks[idx];
   const last = idx + 1 >= tasks.length;
   /* Ekrandan çıkılınca ya da cümle değişince süren okuma/dinleme sonucu yok sayılıyor. */
@@ -273,6 +276,8 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
   const [checks, setChecks] = useState<boolean[]>(() => mono.bulletsTr.map(() => false));
   const [result, setResult] = useState<{ overall: number; praise: string; tip: string; corrected: string; id: number | null } | null>(null);
   const [failed, setFailed] = useState(false);
+  /* Kaydedilmemiş emek: söylenen/yazılan metin, değerlendirme gelene kadar (QA F-0054). */
+  useUnsavedWork(!result && transcript.trim().length > 0);
   /**
    * Sunucu bir KAPI yüzünden reddettiyse gösterilecek not.
    *

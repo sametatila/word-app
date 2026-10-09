@@ -7944,8 +7944,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       return out.sort();
     })();
 
-    /* `gestureEnabled: false` verilen rotalar. */
-    const kapali = [...yigin.matchAll(/<Stack\.Screen name="(\w+)"[^>]*gestureEnabled: false/g)].map((m) => m[1]).sort();
+    /* `gestureEnabled: false` verilen rotalar. KOSULLU KAPATAN ekran da
+       sayiliyor: `ItemScreen` hareketi yalniz kaydedilmemis emek varken
+       kapatiyor (`setOptions({ gestureEnabled: !guard })`, QA F-0054) — bos
+       alistirmada iOS geri hareketi kalsin diye. Kosul kancanin kosuluyla
+       AYNI degisken olmali, yoksa biri acikken oteki kapali kalir. */
+    const kosullu = [];
+    for (const e of readdirSync(new URL("../mobile/src/screens", import.meta.url))) {
+      if (!e.endsWith(".tsx")) continue;
+      const src = sil(read("mobile/src/screens/" + e));
+      const kanca = src.match(/useBackConfirm\((\w+)\)/);
+      const hareket = src.match(/setOptions\(\{ gestureEnabled: !(\w+) \}\)/);
+      if (kanca && hareket && kanca[1] === hareket[1]) kosullu.push(rotaAdi.get(e.replace(/\.tsx$/, "")) ?? "ROTA YOK:" + e);
+    }
+    const kapali = [...[...yigin.matchAll(/<Stack\.Screen name="(\w+)"[^>]*gestureEnabled: false/g)].map((m) => m[1]), ...kosullu].sort();
 
     /* Once SAYI: iki liste de okunabilmis olmali, yoksa bos-bos esitlenir. */
     sameList(
@@ -13883,6 +13895,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["yerlestirme", "src/components/placement/placement-test.tsx", "mobile/src/screens/PlacementScreen.tsx"],
       ["yuruyus", "src/components/walk-player.tsx", "mobile/src/screens/WalkModeScreen.tsx"],
       ["deneme-kagidi", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
+      /* Beceri/Patika alistirmasi: yazilan metin ve cozulen gorevler (QA F-0054). */
+      ["beceri-alistirmasi", "src/components/skills/player-shell.tsx", "mobile/src/screens/ItemScreen.tsx"],
     ];
     const webKoruma = (yol) => {
       const src = sil(read(yol));
