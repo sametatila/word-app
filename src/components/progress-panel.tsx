@@ -10,7 +10,7 @@ import { useCachedJson } from "@/lib/use-cached";
 import type { GrowthReport, WeekPoint } from "@/lib/growth";
 import { trendOf, verdictOf, type Trend } from "@/lib/growth-verdict";
 import { useT, useLang } from "@/lib/i18n/client";
-import { localeOf } from "@/lib/i18n/dict";
+import { formatDay } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
 import { barPct } from "@/lib/motion";
 
@@ -256,7 +256,7 @@ export function GrowthTrends({ data }: { data: GrowthReport | null | undefined }
                     {/* TARİH ARAYÜZ DİLİNDE; gün-yalnız dizgi `T00:00:00` ile
                         okunuyor, yoksa UTC kayması tarihi bir gün geri alıyor. */}
                     <span className="muted shrink-0 text-caption tabular-nums">
-                      {new Date(`${m.at}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" })}
+                      {formatDay(m.at, lang, { year: true })}
                     </span>
                     <span>{m.text}</span>
                   </li>

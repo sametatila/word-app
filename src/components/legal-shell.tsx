@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "@/components/icons";
+import { formatDay } from "@/lib/i18n/dict";
 import { LegalLanguageRow } from "@/components/legal-language-row";
 import { LEGAL_LOCALES, legalPath, type LegalLocale } from "@/lib/legal";
 import { legalConfig } from "@/lib/legal/config";
@@ -103,7 +104,7 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
       <h1 className="text-display tracking-tight">{page.title}</h1>
       {isContract ? (
         <p className="muted mt-2 text-body">
-          {c.effective}: {cfg.effectiveDate} · {c.version} {cfg.version}
+          {c.effective}: {formatDay(cfg.effectiveDate, locale, { year: true, month: "long" })} · {c.version} {cfg.version}
         </p>
       ) : null}
       <LegalLanguageRow label={c.languageLabel} locales={LEGAL_LOCALES} current={locale} names={c.names} href={(l) => legalPath(doc, l)} />
@@ -128,7 +129,7 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
             <p className="muted" style={{ fontSize: "0.85rem" }}>{c.changelogNote}</p>
             {changelog.map((entry) => (
               <div key={entry.version}>
-                <h3>{c.version} {entry.version} · {entry.date}</h3>
+                <h3>{c.version} {entry.version} · {formatDay(entry.date, locale, { year: true, month: "long" })}</h3>
                 <ul>{entry.changes[locale].map((x) => <li key={x}>{x}</li>)}</ul>
               </div>
             ))}

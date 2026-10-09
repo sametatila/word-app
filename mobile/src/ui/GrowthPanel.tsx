@@ -7,7 +7,7 @@ import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { routeFromHref } from "../lib/pushRoute";
-import { t, dateLocale } from "../lib/i18n";
+import { t, formatDay } from "../lib/i18n";
 import { api } from "../api/client";
 import { todayStr } from "../game/session";
 import { trendOf, verdictOf, type Trend } from "../lib/growthVerdict";
@@ -327,7 +327,7 @@ export function GrowthTrends({ data }: { data: Growth | null | undefined }) {
                 <View key={`${m.at}-${m.text}`} style={{ flexDirection: "row", alignItems: "baseline", gap: spacing.sm, marginTop: spacing.xs }}>
                   {/* Tarih arayüz dilinde; gün-yalnız dizgi `T00:00:00` ile okunuyor. */}
                   <Text variant="caption" color={colors.textMuted}>
-                    {new Date(`${m.at}T00:00:00`).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" })}
+                    {formatDay(m.at, { year: true })}
                   </Text>
                   <Text variant="body" color={colors.text} style={{ flex: 1 }}>{m.text}</Text>
                 </View>

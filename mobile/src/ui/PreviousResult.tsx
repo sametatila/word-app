@@ -1,5 +1,5 @@
 import React from "react";
-import { t, dateLocale, formatPercent } from "../lib/i18n";
+import { t, formatDay, formatPercent } from "../lib/i18n";
 import type { ItemResult } from "../game/pathProgress";
 import { FlowActions, FlowScreen, ResultHero, StatRow } from "./flow";
 
@@ -25,7 +25,7 @@ export function PreviousResult({ eyebrow, result, passed, onRetry, onClose }: {
   const items = [
     { value: formatPercent(result.best), label: t("prev.best"), tone: passed ? ("ok" as const) : null },
     { value: String(result.attempts), label: t("prev.attempts") },
-    at && !Number.isNaN(at.getTime()) ? { value: at.toLocaleDateString(dateLocale(), { day: "numeric", month: "short" }), label: t("prev.last_at") } : null,
+    at && !Number.isNaN(at.getTime()) ? { value: formatDay(at.toISOString()), label: t("prev.last_at") } : null,
   ].filter((x): x is NonNullable<typeof x> => x !== null);
   return (
     <FlowScreen center actions={<FlowActions primary={{ label: t("prev.retry"), onPress: onRetry }} close={onClose} />}>

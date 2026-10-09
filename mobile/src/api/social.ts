@@ -1,6 +1,6 @@
 import { api, ApiError } from "./client";
 import { SOCIAL_LIMITS } from "../lib/profileDefaults";
-import { t, dateLocale, formatNumber } from "../lib/i18n";
+import { t, formatDay, formatNumber } from "../lib/i18n";
 import type { UnlockedPart } from "../lib/avatarLayers";
 
 /**
@@ -143,7 +143,7 @@ export function timeAgo(iso: string, now = Date.now()): string {
   if (h < 24) return t("social.ago_hour", { n: h });
   const d = Math.round(h / 24);
   if (d < 7) return t("social.ago_day", { n: d });
-  return new Date(iso).toLocaleDateString(dateLocale(), { day: "numeric", month: "short" });
+  return formatDay(iso);
 }
 
 /**

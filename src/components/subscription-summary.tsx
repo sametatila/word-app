@@ -5,7 +5,7 @@ import { Group, Row } from "@/components/settings-section";
 import { PremiumIcon } from "@/components/icons";
 import { useShell } from "@/components/app-shell";
 import { useLang, useT } from "@/lib/i18n/client";
-import { localeOf } from "@/lib/i18n/dict";
+import { formatDay } from "@/lib/i18n/dict";
 import { supportsMockExams } from "@/lib/mock-exams";
 import { premiumManageKey, premiumStateKey, type PremiumStatusView } from "@/lib/premium/state-copy";
 
@@ -31,7 +31,7 @@ export function SubscriptionSummary({ status }: { status: PremiumStatusView | nu
   const state = premiumStateKey(status);
   /* Tarih arayüz dilinde (bkz. `premium-paywall` `date`). */
   const date = status?.until
-    ? new Date(status.until).toLocaleDateString(localeOf(lang), { day: "numeric", month: "long", year: "numeric" })
+    ? formatDay(status.until, lang, { year: true, month: "long" })
     : "";
   const manage = premiumManageKey(status);
   return (

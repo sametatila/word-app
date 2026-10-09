@@ -1,7 +1,7 @@
 import type { UnlockedPart } from "@/lib/avatar-layers";
 import { LEAGUE_TIERS, type FeedItem, type FriendRow, type LeagueOutcome, type PublicUser, type QuestView, type ReactionKind, type ReactionSummary, type Relation } from "./types";
 import { USERNAME_CHANGE_COOLDOWN_DAYS } from "@/lib/social/username";
-import { translate, localeOf, formatNumber, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { translate, formatDay, formatNumber, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { readLangCookie } from "@/lib/i18n/set-lang";
 import { apiFetch } from "@/lib/api-fetch";
 
@@ -214,7 +214,7 @@ export function timeAgo(iso: string, lang: NativeLang, now = Date.now()): string
   if (h < 24) return translate(lang, "social.ago_hour", { n: h });
   const d = Math.round(h / 24);
   if (d < 7) return translate(lang, "social.ago_day", { n: d });
-  return new Date(iso).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" });
+  return formatDay(iso, lang);
 }
 
 /** Akış olayının cümlesi — sunucudaki describeEvent ile aynı anlam, burada özne dahil. */

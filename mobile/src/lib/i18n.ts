@@ -173,6 +173,26 @@ export function formatClock(time: string | number, minute = 0): string {
   }
 }
 
+/**
+ * GÜN, arayüz dilinde: Türkçe "9 Eki", İngilizce "Oct 9", Almanca "9. Okt.".
+ * Yıl yalnız bu yılın dışındaysa eklenir ("9 Eki 2025"); `year: true` hep ekler.
+ *
+ * Günler kimi yerde ham ISO basılıyordu ("2026-10-09", QA F-0067: Yazılarım
+ * kartı) ve kimi yerde elle `toLocaleDateString` ile kuruluyordu; tek yer
+ * burası. Girdi "YYYY-MM-DD" (yerel gün, saat dilimi kaydırmadan) ya da tam
+ * ISO zaman damgası. Web karşılığı `lib/i18n/dict` `formatDay`.
+ */
+export function formatDay(day: string, opts: { year?: boolean; month?: "short" | "long" } = {}): string {
+  const d = /^\d{4}-\d{2}-\d{2}$/.test(day) ? new Date(`${day}T00:00:00`) : new Date(day);
+  if (Number.isNaN(d.getTime())) return day;
+  const year = opts.year || d.getFullYear() !== new Date().getFullYear();
+  try {
+    return d.toLocaleDateString(dateLocale(), { day: "numeric", month: opts.month ?? "short", ...(year ? { year: "numeric" } : {}) });
+  } catch {
+    return day;
+  }
+}
+
 export function currentLang(): NativeLang {
   return lang;
 }

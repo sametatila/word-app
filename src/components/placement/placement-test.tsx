@@ -15,7 +15,7 @@ import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { courseOrDefault } from "@/lib/courses";
 import { readOnboardingPrefs, saveOnboardingPrefs } from "@/lib/onboarding-prefs";
-import { localeOf, type NativeLang } from "@/lib/i18n/dict";
+import { formatDay, type NativeLang } from "@/lib/i18n/dict";
 import { useLang } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
 import { track } from "@/lib/track";
@@ -183,7 +183,7 @@ export function PlacementTest({ signedIn, canRetake = true, retakeDays = 30, las
         <StateBody title={t("placement.title")} body={t("placement.retake_in", { n: retakeDays })} />
         {last ? (
           <p className="muted text-center text-caption">
-            {`${t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(localeOf(ui), { day: "numeric", month: "short", year: "numeric" }) })} ${last.suggested}${last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}`}
+            {`${t("placement.last_taken", { date: formatDay(last.at, ui, { year: true }) })} ${last.suggested}${last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}`}
           </p>
         ) : null}
         <FlowActions primary={{ label: t("common.close"), onClick: leave }} />

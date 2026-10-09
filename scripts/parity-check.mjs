@@ -15988,7 +15988,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            `localeOf(lang)`in kapanisi, yani sinif orada duruyor. Iki taraf
            da "YOK" dedi - iki tarafin AYNI sekilde basarisiz olmasi kusurun
            kodda degil olcumde oldugunun isareti. */
-        /toLocaleDateString\([\s\S]{0,40}day: "numeric", month: "short"/.test(g) ? "kisa tarih" : "YOK",
+        /* Kisa tarih artik tek yerden (`formatDay`, QA F-0067). */
+        /toLocaleDateString\([\s\S]{0,40}day: "numeric", month: "short"|return formatDay\(iso(, lang)?\)/.test(g) ? "kisa tarih" : "YOK",
       ];
       return esik.join("+");
     };
@@ -20161,7 +20162,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const webPlc = silO(read("src/components/placement/placement-test.tsx")).replace(/\s+/g, " ");
   const mobPlc = silO(read("mobile/src/screens/PlacementScreen.tsx")).replace(/\s+/g, " ");
   const satir = (src, son) => [
-    "tarih=" + (new RegExp(`placement\\.last_taken", \\{ date: new Date\\(${son}\\.at\\)`).test(src) ? "var" : "YOK"),
+    "tarih=" + (new RegExp(`placement\\.last_taken", \\{ date: formatDay\\(${son}\\.at`).test(src) ? "var" : "YOK"),
     "onerilen=" + (new RegExp(`\\$\\{${son}\\.suggested\\}`).test(src) ? "var" : "YOK"),
     "kabul edilen=" + (new RegExp(`placement\\.you_chose", \\{ level: ${son}\\.accepted \\}`).test(src) ? "var" : "YOK"),
   ];

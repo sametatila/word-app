@@ -7,7 +7,7 @@ import { supportsMockExams } from "@/lib/mock-exams";
 import { useCourse } from "@/components/app-shell";
 import { track } from "@/lib/track";
 import { useLang, useT } from "@/lib/i18n/client";
-import { localeOf } from "@/lib/i18n/dict";
+import { formatDay } from "@/lib/i18n/dict";
 import { CheckIcon, PremiumIcon } from "@/components/icons";
 import type { FreeLimits, PlanPrice } from "@/lib/premium/gates";
 import { PremiumStoreCta } from "@/components/premium-store-cta";
@@ -79,7 +79,7 @@ export function PremiumPaywall({
 
   /* Tarih ARAYÜZ dilinde, tarayıcının dilinde değil (`localeOf`). */
   const date = (iso: string | null) =>
-    iso ? new Date(iso).toLocaleDateString(localeOf(lang), { day: "numeric", month: "long", year: "numeric" }) : "";
+    iso ? formatDay(iso, lang, { year: true, month: "long" }) : "";
   const state = premiumStateKey(status);
   const stateLine = t(state.key, state.dated ? { date: date(status?.until ?? null) } : undefined);
   const manageKey = premiumManageKey(status);

@@ -10,7 +10,7 @@ import { GrowthTrends, HowAmIDoing, HowAmIDoingHead, useGrowth } from "@/compone
 import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "@/components/icons";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
-import { formatNumber } from "@/lib/i18n/dict";
+import { formatDay, formatNumber } from "@/lib/i18n/dict";
 
 type LevelRow = {
   niveau: string;
@@ -324,7 +324,7 @@ function StreakHero({
             <li key={d.day} className="flex flex-1 flex-col items-center gap-1">
               <span
                 role="img"
-                aria-label={`${d.day}: ${d.studied ? t("progress.studied") : t("progress.no_study")}`}
+                aria-label={`${formatDay(d.day, lang)}: ${d.studied ? t("progress.studied") : t("progress.no_study")}`}
                 className={`h-6 w-6 rounded-full ${d.studied ? "bg-white" : d.future ? "border border-white/40" : "bg-white/25"}`}
               />
               <span className={`text-micro leading-none ${d.day === today ? "font-bold" : "opacity-80"}`}>{names[d.weekday]}</span>
@@ -513,16 +513,16 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
                      aynı çubuğa `accessibilityLabel` koyuyor (`ProgressScreen`)
                      ve metin birebir aynı. */
                   role="img"
-                  aria-label={`${d.day}: ${t("progress.n_reviews", { n: d.reviews })}`}
-                  title={`${d.day}: ${t("progress.n_reviews", { n: d.reviews })}`}
+                  aria-label={`${formatDay(d.day, lang)}: ${t("progress.n_reviews", { n: d.reviews })}`}
+                  title={`${formatDay(d.day, lang)}: ${t("progress.n_reviews", { n: d.reviews })}`}
                   className={`w-full origin-bottom rounded-[3px] ${isToday ? "brand-gradient" : ""}`}
                   style={isToday ? { height: `${pct}%` } : { height: `${pct}%`, background: heatColor(d.reviews) }}
                 />
               ) : (
                 <div
                   role="img"
-                  aria-label={`${d.day}: ${t("progress.no_study")}`}
-                  title={`${d.day}: ${t("progress.no_study")}`}
+                  aria-label={`${formatDay(d.day, lang)}: ${t("progress.no_study")}`}
+                  title={`${formatDay(d.day, lang)}: ${t("progress.no_study")}`}
                   className="w-full rounded-full surface-2"
                   style={{ height: 3 }}
                 />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t, dateLocale } from "../lib/i18n";
+import { t, formatDay } from "../lib/i18n";
 import { View, AppState, Platform, TextInput, ScrollView, Modal, Pressable, KeyboardAvoidingView, useWindowDimensions, type NativeSyntheticEvent, type NativeScrollEvent } from "react-native";
 import { useLayout } from "../lib/useLayout";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -338,7 +338,7 @@ export function PaywallScreen() {
    */
   if (status?.premium) {
     /* Tarih ARAYÜZ dilinde (`dateLocale`), cihazın dilinde değil. */
-    const until = status.until ? new Date(status.until).toLocaleDateString(dateLocale(), { day: "numeric", month: "long", year: "numeric" }) : "";
+    const until = status.until ? formatDay(status.until, { year: true, month: "long" }) : "";
     const line =
       status.source === "bonus"
         ? t("premiumstate.bonus_until", { date: until })

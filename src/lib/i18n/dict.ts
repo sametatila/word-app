@@ -144,6 +144,26 @@ export function formatClock(hour: number, minute: number, lang: NativeLang): str
 }
 
 /**
+ * GÜN, arayüz dilinde: Türkçe "9 Eki", İngilizce "Oct 9", Almanca "9. Okt.".
+ * Yıl yalnız bu yılın dışındaysa eklenir ("9 Eki 2025"); `year: true` hep ekler.
+ *
+ * Günler kimi yerde ham ISO basılıyordu ("2026-10-09", QA F-0067: Yazılarım
+ * kartı) ve kimi yerde elle `toLocaleDateString` ile kuruluyordu; tek yer
+ * burası. Girdi "YYYY-MM-DD" (yerel gün, saat dilimi kaydırmadan) ya da tam
+ * ISO zaman damgası. Android karşılığı `lib/i18n` `formatDay`.
+ */
+export function formatDay(day: string, lang: NativeLang, opts: { year?: boolean; month?: "short" | "long" } = {}): string {
+  const d = /^\d{4}-\d{2}-\d{2}$/.test(day) ? new Date(`${day}T00:00:00`) : new Date(day);
+  if (Number.isNaN(d.getTime())) return day;
+  const year = opts.year || d.getFullYear() !== new Date().getFullYear();
+  try {
+    return d.toLocaleDateString(localeOf(lang), { day: "numeric", month: opts.month ?? "short", ...(year ? { year: "numeric" } : {}) });
+  } catch {
+    return day;
+  }
+}
+
+/**
  * Ondalıklı sayı — sayaçlar için (`8,3 sn`).
  *
  * `toFixed` SABİT NOKTA yazıyor: meydan okuma ve boss sayaçları Türkçe ve

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t, dateLocale, formatNumber } from "../lib/i18n";
+import { t, formatDay, dateLocale, formatNumber } from "../lib/i18n";
 import { ScrollView, View } from "react-native";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -155,7 +155,7 @@ export function UserScreen() {
               bakılan şey; onsuz dürtme körlemesine gidiyordu.
             */}
             <StatTile value={String(data.stats.longestStreak)} label={t("user.longest_streak")} color={colors.streakText} colors={colors} />
-            <StatTile value={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(dateLocale(), { day: "numeric", month: "short" }) : "—"} label={t("user.last_active")} color={colors.textMuted} colors={colors} />
+            <StatTile value={data.stats.lastActiveDay ? formatDay(data.stats.lastActiveDay) : "—"} label={t("user.last_active")} color={colors.textMuted} colors={colors} />
           </CardGrid>
         ) : (
           <View style={{ marginBottom: spacing.lg }}>

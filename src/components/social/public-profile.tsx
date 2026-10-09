@@ -10,7 +10,7 @@ import type { Relation } from "@/lib/social/types";
 import { FeedCard } from "./feed";
 import { UserAction } from "./user-action";
 import { useT, useLang } from "@/lib/i18n/client";
-import { formatNumber, localeOf } from "@/lib/i18n/dict";
+import { formatDay, formatNumber, localeOf } from "@/lib/i18n/dict";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { ReportDialog } from "@/components/report-dialog";
 
@@ -147,7 +147,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
           <Stat label={t("user.total_xp")} value={data.stats.totalXp} tone="var(--color-brand)" />
           <Stat label={t("user.longest_streak")} value={data.stats.longestStreak} tone="var(--color-flame)" />
           <Stat label={t("user.badge")} value={data.stats.achievements} icon={<AchievementsIcon size={14} />} tone="var(--color-violet)" />
-          <Stat label={t("user.last_active")} text={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" }) : "—"} tone="var(--text-muted)" />
+          <Stat label={t("user.last_active")} text={data.stats.lastActiveDay ? formatDay(data.stats.lastActiveDay, lang) : "—"} tone="var(--text-muted)" />
         </section>
       ) : (
         /* Başlık ve gövde ROLLERİ karışmıştı: web `user.private_profile`i

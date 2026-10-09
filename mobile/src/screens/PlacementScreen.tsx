@@ -3,7 +3,7 @@ import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { t, dateLocale, targetLangName } from "../lib/i18n";
+import { t, formatDay, targetLangName } from "../lib/i18n";
 import { track } from "../lib/track";
 import { currentTargetLang } from "../lib/courses";
 import { Text } from "../ui/Text";
@@ -212,7 +212,7 @@ export function PlacementScreen() {
         <StateBody title={t("placement.title")} body={t("placement.retake_in", { n: status.retakeDays })}>
           {status.last ? (
             <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>
-              {`${t("placement.last_taken", { date: new Date(status.last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} ${status.last.suggested}${status.last.accepted ? ` ${t("placement.you_chose", { level: status.last.accepted })}` : ""}`}
+              {`${t("placement.last_taken", { date: formatDay(status.last.at, { year: true }) })} ${status.last.suggested}${status.last.accepted ? ` ${t("placement.you_chose", { level: status.last.accepted })}` : ""}`}
             </Text>
           ) : null}
         </StateBody>

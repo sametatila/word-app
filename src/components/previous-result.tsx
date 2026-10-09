@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { useLang, useT } from "@/lib/i18n/client";
-import { formatPercent, localeOf } from "@/lib/i18n/dict";
+import { formatDay, formatPercent } from "@/lib/i18n/dict";
 import type { ItemResult } from "@/lib/immersion/state";
 import { FlowActions, FlowColumn, ResultHero, StatRow } from "@/components/flow";
 
@@ -28,7 +28,7 @@ export function PreviousResult({ eyebrow, result, passed, onRetry, close }: {
     { value: formatPercent(result.best, lang), label: t("prev.best"), tone: passed ? ("ok" as const) : null },
     { value: String(result.attempts), label: t("prev.attempts") },
     at && !Number.isNaN(at.getTime())
-      ? { value: at.toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" }), label: t("prev.last_at") }
+      ? { value: formatDay(at.toISOString(), lang), label: t("prev.last_at") }
       : null,
   ].filter((x): x is NonNullable<typeof x> => x !== null);
   return (

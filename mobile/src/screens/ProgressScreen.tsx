@@ -1,6 +1,6 @@
 import React from "react";
 import { MASTERED_DAYS } from "../lib/learningRules";
-import { t, dateLocale, formatNumber } from "../lib/i18n";
+import { t, dateLocale, formatDay, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -97,12 +97,12 @@ function ActivityStrip({ rows, today, colors }: { rows: { day: string; reviews: 
           return d.reviews > 0 ? (
             /* Karışımı webdeki `color-mix` gibi kuruyoruz: alttaki `surface2`
                dolgusunun üstüne aynı yüzdede saydam marka rengi. */
-            <View key={d.day} accessibilityLabel={`${d.day}: ${label}`} style={{ flex: 1, height: `${pct}%`, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
+            <View key={d.day} accessibilityLabel={`${formatDay(d.day)}: ${label}`} style={{ flex: 1, height: `${pct}%`, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
               {/* BUGÜN TAM MARKA RENGİ (web bugünün sütununu marka gradyanıyla çiziyor). */}
               <View style={{ flex: 1, backgroundColor: colors.primary, opacity: d.day === today ? 1 : mix / 100 }} />
             </View>
           ) : (
-            <View key={d.day} accessibilityLabel={`${d.day}: ${label}`} style={{ flex: 1, height: 3, borderRadius: 3, backgroundColor: colors.surface2 }} />
+            <View key={d.day} accessibilityLabel={`${formatDay(d.day)}: ${label}`} style={{ flex: 1, height: 3, borderRadius: 3, backgroundColor: colors.surface2 }} />
           );
         })}
       </View>
@@ -235,7 +235,7 @@ function StreakHero({ streak, longest, days, today, colors }: { streak: number |
             <View key={d.day} style={{ flex: 1, alignItems: "center", gap: spacing.xs }}>
               <View
                 accessible
-                accessibilityLabel={`${d.day}: ${d.studied ? t("progress.studied") : t("progress.no_study")}`}
+                accessibilityLabel={`${formatDay(d.day)}: ${d.studied ? t("progress.studied") : t("progress.no_study")}`}
                 style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: ready && d.studied ? "#ffffff" : d.future ? "transparent" : "#ffffff40", borderWidth: d.future ? 1 : 0, borderColor: "#ffffff66" }}
               />
               <Text variant="micro" color={d.day === today ? colors.onPrimary : colors.onPrimaryMuted}>{names[d.weekday]}</Text>
