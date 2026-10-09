@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { MASTERED_DAYS } from "@/lib/srs";
-import { coarseStatus } from "@/lib/word-status";
+import { coarseStatus, parseStatusFilter } from "@/lib/word-status";
+import { statusFilterSql } from "@/lib/word-status-sql";
 import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
@@ -24,7 +24,7 @@ export async function GET(req: Request) {
   const sp = new URL(req.url).searchParams;
   const q = (sp.get("q") ?? "").trim().slice(0, 40);
   const level = ["A1", "A2", "B1", "B2", "C1"].includes(sp.get("level") ?? "") ? sp.get("level")! : "";
-  const status = ["new", "learning", "mastered"].includes(sp.get("status") ?? "") ? sp.get("status")! : "";
+  const status = parseStatusFilter(sp.get("status"));
   const page = Math.max(0, Number(sp.get("page") ?? 0) || 0);
 
   const filters: SQL[] = [];
@@ -40,9 +40,9 @@ export async function GET(req: Request) {
     if (cond) filters.push(cond);
   }
   if (level) filters.push(eq(words.niveau, level));
-  if (status === "new") filters.push(sql`${userWords.wordId} is null`);
-  if (status === "learning") filters.push(sql`${userWords.wordId} is not null and ${userWords.intervalDays} < ${MASTERED_DAYS}`);
-  if (status === "mastered") filters.push(sql`${userWords.intervalDays} >= ${MASTERED_DAYS}`);
+  /* Durum süzgeci etiketle aynı beş bant (`lib/word-status-sql`, QA F-0053). */
+  const statusSql = statusFilterSql(status);
+  if (statusSql) filters.push(statusSql);
 
   try {
     const rows = await db

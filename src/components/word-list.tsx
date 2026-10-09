@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
-import { wordStatus, type WordStatus as WordStatusId } from "@/lib/word-status";
+import { WORD_STATUS_FILTERS, wordStatus, type WordStatus as WordStatusId } from "@/lib/word-status";
 import { useT, useLang } from "@/lib/i18n/client";
 import { exampleFor, glossFor } from "@/lib/option-label";
 import { LANG_LABEL, formatNumber } from "@/lib/i18n/dict";
@@ -51,10 +51,11 @@ const ARTIKEL_TONE: Record<string, string> = {
 
 /** Seviye süzgeci — "Tümü" dışındakiler zaten dilden bağımsız (CEFR kodu). */
 const LEVELS = [
-  /* Sifirlama cipi "Seviye" diyor, "Tumu" degil: iki grup yan yanayken iki
-     ayri "Tumu" cipi cikiyordu ve hangisinin neyi sifirladigi okunmuyordu.
-     Android baslangictan beri grubu adiyla adlandiriyor (`WordsScreen`). */
-  { id: "", labelKey: "words.filter_level" },
+  /* Sifirlama cipi "Tum seviyeler": iki grup yan yanayken iki ayri "Tumu"
+     cipi hangisinin neyi sifirladigini soylemiyordu; "Seviye" ise SECILI bir
+     cip gibi duruyordu, sanki bir seviye secilmis gibi (QA F-0053). Android
+     `WordsScreen` ayni etiket. */
+  { id: "", labelKey: "words.filter_all_levels" },
   { id: "A1", labelKey: "" },
   { id: "A2", labelKey: "" },
   { id: "B1", labelKey: "" },
@@ -62,11 +63,11 @@ const LEVELS = [
   { id: "C1", labelKey: "" },
 ];
 
+/* Süzgeç çipleri satır etiketleriyle AYNI beş bant (`lib/word-status`
+   `WORD_STATUS_FILTERS`); "tanıdık" ve "zorlanıyorsun" çipte yoktu (QA F-0053). */
 const STATUSES = [
   { id: "", labelKey: "words.filter_all" },
-  { id: "new", labelKey: "words.status_new" },
-  { id: "learning", labelKey: "words.status_learning" },
-  { id: "mastered", labelKey: "words.status_mastered" },
+  ...WORD_STATUS_FILTERS.map((id) => ({ id, labelKey: `words.status_${id}` })),
 ];
 
 /** Etiket ve ton — bant kararı TEK KAYNAKTAN (`lib/word-status`), ton burada. */

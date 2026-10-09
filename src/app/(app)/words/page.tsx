@@ -1,5 +1,4 @@
 import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
-import { MASTERED_DAYS } from "@/lib/srs";
 import { titleMeta } from "@/lib/page-meta";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
@@ -8,6 +7,8 @@ import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { WordProgress } from "@/components/progress-view";
 import { WordList, type WordRow } from "@/components/word-list";
+import { parseStatusFilter } from "@/lib/word-status";
+import { statusFilterSql } from "@/lib/word-status-sql";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatNumber } from "@/lib/i18n/dict";
 import { RetryButton } from "@/components/retry-button";
@@ -35,7 +36,7 @@ export default async function WordsPage({
   // B2 ve C1 listeye eklendiğinde bu beyaz liste güncellenmemişti: o iki çipe
   // basınca filtre sessizce yok sayılıyor, tüm kelimeler geliyordu.
   const level = ["A1", "A2", "B1", "B2", "C1"].includes(sp.level ?? "") ? sp.level! : "";
-  const status = ["new", "learning", "mastered"].includes(sp.status ?? "") ? sp.status! : "";
+  const status = parseStatusFilter(sp.status);
   const page = Math.max(0, Number(sp.page ?? 0) || 0);
 
   const filters: SQL[] = [];
@@ -56,10 +57,9 @@ export default async function WordsPage({
     if (cond) filters.push(cond);
   }
   if (level) filters.push(eq(words.niveau, level));
-  if (status === "new") filters.push(sql`${userWords.wordId} is null`);
-  if (status === "learning")
-    filters.push(sql`${userWords.wordId} is not null and ${userWords.intervalDays} < 21`);
-  if (status === "mastered") filters.push(sql`${userWords.intervalDays} >= ${MASTERED_DAYS}`);
+  /* Durum süzgeci etiketle aynı beş bant (`lib/word-status-sql`, QA F-0053). */
+  const statusSql = statusFilterSql(status);
+  if (statusSql) filters.push(statusSql);
 
   try {
     const rows = await db

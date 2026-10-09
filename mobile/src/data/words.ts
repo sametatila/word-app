@@ -65,6 +65,13 @@ export function dueLabelKey(dueAt: string | null | undefined): { key: string; n?
   return { key: "words.due_in_days", n: days };
 }
 
+/**
+ * Süzgeç çipleri satır etiketleriyle AYNI beş bant — web `lib/word-status`
+ * `WORD_STATUS_FILTERS`, aynı sıra. Çiplerde yalnız üçü vardı; satırda
+ * "tanıdık" yazan kelimeyi süzmenin yolu yoktu (QA F-0053).
+ */
+export const WORD_STATUS_FILTERS: readonly WordStatus[] = ["new", "learning", "familiar", "mastered", "leech"];
+
 /** Durum -> sözlük anahtarı; etiket kullanım anında t() ile çözülür. */
 export const STATUS_KEY: Record<WordStatus, string> = {
   new: "words.status_new",

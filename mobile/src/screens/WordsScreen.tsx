@@ -16,17 +16,16 @@ import { useLayout } from "../lib/useLayout";
 import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
-import { STATUS_KEY, statusOf, dueLabelKey, type WordRow, type WordStatus } from "../data/words";
+import { STATUS_KEY, WORD_STATUS_FILTERS, statusOf, dueLabelKey, type WordRow, type WordStatus } from "../data/words";
 import { grammarLine } from "../game/wordGrammar";
 import { firstExample } from "../data/example";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
-/** Filtreler — etiket ANAHTAR tutar (durum etiketleriyle aynı sözlük girdileri). */
+/** Filtreler — etiket ANAHTAR tutar (durum etiketleriyle aynı sözlük girdileri).
+    Beş bant, satırın yazabildiği her etiket (QA F-0053: "tanıdık" çipte yoktu). */
 const FILTERS: { key: "" | WordStatus; label: string }[] = [
   { key: "", label: "words.filter_all" },
-  { key: "new", label: "words.status_new" },
-  { key: "learning", label: "words.status_learning" },
-  { key: "mastered", label: "words.status_mastered" },
+  ...WORD_STATUS_FILTERS.map((key) => ({ key, label: STATUS_KEY[key] })),
 ];
 
 /** Seviye süzgeci — boş "hepsi" demek; uç aynı beş değeri kabul ediyor. */
@@ -121,8 +120,8 @@ export function WordsScreen() {
   useEffect(() => { setPage(0); setOpen(null); }, [q, filter, level]);
 
   const list = useMemo(() => remote ?? [], [remote]);
-  const seen = me?.levels ? me.levels.reduce((a, l) => a + l.seen, 0) : null;
   const { me, loading: meLoading } = useMe();
+  const seen = me?.levels ? me.levels.reduce((a, l) => a + l.seen, 0) : null;
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -153,10 +152,11 @@ export function WordsScreen() {
         {/* Seviye şeridi — web listesindeki seviye süzgecinin karşılığı. */}
         <View style={{ flexDirection: "row", gap: spacing.sm, flexWrap: "wrap" }}>
           {LEVELS.map((lv) => (
-            <Chip key={lv || "all"} variant="filter" tone="info" role="radio" active={level === lv} onPress={() => setLevel(lv)} label={lv || t("words.filter_level")} />
+            <Chip key={lv || "all"} variant="filter" tone="info" role="radio" active={level === lv} onPress={() => setLevel(lv)} label={lv || t("words.filter_all_levels")} />
           ))}
         </View>
-        <View style={{ flexDirection: "row", gap: spacing.sm }}>
+        {/* Beş durum + "Tümü" dar ekrana sığmıyor: şerit SARILIYOR (seviye şeridi gibi). */}
+        <View style={{ flexDirection: "row", gap: spacing.sm, flexWrap: "wrap" }}>
           {FILTERS.map((f) => (
             <Chip key={f.key || "all"} variant="filter" tone="primary" role="radio" active={filter === f.key} onPress={() => setFilter(f.key)} label={t(f.label)} />
           ))}
@@ -196,7 +196,6 @@ export function WordsScreen() {
                       </View>
                       <SkeletonTile size={34} radius={17} />
                       <Skeleton height={textHeight("micro") + 4} width={30} radius={radii.sm} />
-                      <Skeleton height={9} width={9} radius={5} />
                       <SkeletonLine variant="micro" width={40} />
                     </View>
                   ))}
@@ -278,7 +277,9 @@ export function WordsScreen() {
                 <View style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 7, paddingVertical: 2 }}>
                   <Text variant="micro" color={colors.textMuted}>{w.niveau}</Text>
                 </View>
-                <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: sc }} />
+                {/* Durum yalnız RENKLİ ETİKET: önündeki 9 dp'lik nokta etiketin
+                    rengini tekrar ediyordu ve tek başına ne olduğu okunmuyordu
+                    (QA F-0053). Web satırı da yalnız etiket yazıyor. */}
                 <Text variant="micro" color={sc}>{t(STATUS_KEY[st])}</Text>
               </PressableScale>
               {/* ÖRNEK CÜMLE. Web satırı dokununca açılıyor ve örneği

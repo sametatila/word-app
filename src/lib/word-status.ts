@@ -39,3 +39,19 @@ export function wordStatus(row: { intervalDays: number | null; leech: boolean })
   if (coarse !== "learning") return coarse;
   return (row.intervalDays ?? 0) >= FAMILIAR_DAYS ? "familiar" : "learning";
 }
+
+/**
+ * SÜZGEÇ ÇİPLERİ = ETİKETLER. Liste satırları beş etiket yazıyor ama çipler
+ * yalnız üçünü (Yeni / Öğreniyor / Pekişti) sunuyordu: "tanıdık" ve
+ * "zorlanıyorsun" diye etiketlenmiş bir kelimeyi süzmenin yolu yoktu ve
+ * "Öğreniyor" çipi tanıdık kelimeleri de getiriyordu (QA F-0053). Süzgeç artık
+ * etiketle AYNI beş bant; SQL karşılığı `lib/word-status-sql`. Sıra satırdaki
+ * ilerleme sırası, `leech` en sonda (ayrı bir sorun bandı). Android
+ * `data/words` `FILTERS` aynı sıra.
+ */
+export const WORD_STATUS_FILTERS = ["new", "learning", "familiar", "mastered", "leech"] as const satisfies readonly WordStatus[];
+
+/** Sorgu dizgisinden süzgeç; bilinmeyen değer "hepsi" (boş). */
+export function parseStatusFilter(v: string | null | undefined): WordStatus | "" {
+  return (WORD_STATUS_FILTERS as readonly string[]).includes(v ?? "") ? (v as WordStatus) : "";
+}
