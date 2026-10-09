@@ -64,7 +64,10 @@ export function germanSurface(e: LooseExercise): string {
   // Şıklar Türkçe olabiliyor ("samimi (du)"); Almanca ölçümüne sokmuyoruz.
   for (const q of e.questions || []) {
     if (q.text && !türkçeMi(q.text)) out.push(q.text);
-    for (const a of q.accept || []) out.push(a);
+    /* Yalnız ASIL cevap (ilk kabul): öğrenciye o gösteriliyor. Öteki kabul edilen
+       eş anlamlılar (Aufzug için "Lift") ekrana çıkmıyor; öğrenci onları ancak kendisi
+       yazarsa görüyor. Saymak kursa olmayan bir sözcük borcu yazıyordu (QA F-0071). */
+    if (q.accept?.[0]) out.push(q.accept[0]);
   }
   for (const t of e.tasks || []) {
     // Konuşma görevinin söylenecek metni `de` alanında; ölçüm dışında kalıyordu.
@@ -97,18 +100,18 @@ export function englishSurface(e: SkillExercise): string {
     for (const q of e.questions) {
       if (!tr(q.text)) out.push(q.text);
       for (const o of q.options ?? []) if (!tr(o)) out.push(o);
-      for (const a of q.accept ?? []) out.push(a);
+      if (q.accept?.[0]) out.push(q.accept[0]); // yalnız asıl cevap gösteriliyor (Almanca yüzey notu)
       for (const i of q.items ?? []) if (!tr(i)) out.push(i);
     }
   }
   if (e.skill === "writing") {
     for (const t of e.tasks) {
       if ("answer" in t && t.answer) out.push(t.answer);
-      if ("alternatives" in t) out.push(...(t.alternatives ?? []));
+      // `alternatives` gösterilmiyor (kabul edilen öteki biçimler), yüzeye girmiyor.
       if ("sample" in t && t.sample) out.push(t.sample);
       if ("stimulus" in t && t.stimulus) out.push(t.stimulus);
       if ("source" in t && t.source) out.push(t.source);
-      if ("fields" in t) for (const f of t.fields) out.push(f.answer, ...(f.accept ?? []));
+      if ("fields" in t) for (const f of t.fields) out.push(f.answer);
       if ("phrases" in t) for (const p of t.phrases) out.push(p.de);
       if ("words" in t) for (const p of t.words) out.push(p.de);
     }
