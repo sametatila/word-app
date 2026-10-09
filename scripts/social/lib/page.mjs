@@ -28,10 +28,14 @@ export function fontCss() {
 
 /** Uygulama ikonu (imza ve TikTok katmanı), 160 px PNG veri adresi. */
 export function iconUri() {
-  const png = path.join(OUT, "cache/icon-160.png");
+  // sunucuda (SOCIAL_DIR) checkout'a yazılmaz; Mac'te .shots/social/cache
+  const png = path.join(process.env.SOCIAL_DIR ? path.join(process.env.SOCIAL_DIR, "cache") : path.join(OUT, "cache"), "icon-160.png");
   if (!fs.existsSync(png)) {
     fs.mkdirSync(path.dirname(png), { recursive: true });
-    spawnSync("sips", ["-Z", "160", path.join(ROOT, "mobile/ios/Lernomi/Images.xcassets/AppIcon.appiconset/AppIcon-1024.png"), "--out", png]);
+    const src = path.join(ROOT, "mobile/ios/Lernomi/Images.xcassets/AppIcon.appiconset/AppIcon-1024.png");
+    // macOS: sips (önceki videolarla birebir aynı ikon); Linux sunucusu: ffmpeg (sips yok)
+    const r = process.platform === "darwin" ? spawnSync("sips", ["-Z", "160", src, "--out", png]) : spawnSync("ffmpeg", ["-y", "-loglevel", "error", "-i", src, "-vf", "scale=160:160:flags=lanczos", png]);
+    if (r.status !== 0 || !fs.existsSync(png)) throw new Error(`ikon küçültülemedi: ${r.stderr?.toString() || r.error?.message || ""}`);
   }
   return `data:image/png;base64,${fs.readFileSync(png).toString("base64")}`;
 }
