@@ -343,7 +343,8 @@ export function deriveGrammar(level: string, unitIndex: number, count = 8): Skil
         const alternatives = orderAlternatives(e.target, e.accept);
         orders.push({
           kind: "order",
-          text: e.target.endsWith("?") ? t("quiz.order_question") : t("quiz.order_sentence"),
+          /* Anlam soruda da (QA, 2026-10-09): sayı ya da zarf sırası anlamsız bilinemiyordu. Web aynı. */
+          text: `${e.target.endsWith("?") ? t("quiz.order_question") : t("quiz.order_sentence")}${native ? ` „${native}“` : ""}`,
           options: [],
           answer: 0,
           items: parts,

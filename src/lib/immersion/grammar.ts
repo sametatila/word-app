@@ -87,7 +87,9 @@ export function deriveGrammar(unitId: string, conversations: Conversation[], cou
         const alternatives = orderAlternatives(step.expect.target, step.expect.accept);
         orders.push({
           kind: "order",
-          text: step.expect.target.endsWith("?") ? say.orderQuestion : say.orderSentence,
+          /* Anlam soruda da (QA, 2026-10-09): "Meine Nummer ist zweiunddreißig fünfzig"
+             parçalarında hangi sayının önce geldiği anlamsız bilinemiyordu. Mobil aynı. */
+          text: `${step.expect.target.endsWith("?") ? say.orderQuestion : say.orderSentence}${native ? ` „${native}“` : ""}`,
           options: [],
           answer: 0,
           items: parts,
