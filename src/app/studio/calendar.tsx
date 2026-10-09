@@ -295,7 +295,7 @@ function Row({ t, days, today, bySlot, shown, past, drag, over, movable, setDrag
             style={{
               borderColor: "var(--border)",
               background: target ? "var(--brand-soft)" : d === today ? "color-mix(in srgb, var(--brand-soft) 45%, transparent)" : undefined,
-              outline: target ? `2px dashed ${TONE.info}` : undefined,
+              outline: target ? `1px dashed ${TONE.info}` : undefined,
               outlineOffset: -4,
               opacity: drag && isPast ? 0.45 : 1,
             }}
