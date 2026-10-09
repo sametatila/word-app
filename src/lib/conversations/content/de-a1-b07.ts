@@ -398,6 +398,8 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Das ist das Schlafzimmer",
+          /* "Burası …" yer de gösterir; aynı konuşmanın ikinci kalıbı "Hier ist …" (QA F-0076). */
+          accept: ["Hier ist das Schlafzimmer"],
           hint: [
             tr("Oda ile biten kelimeler aynı artikeli alır:"),
             de("Das ist das Schlafzimmer."),
@@ -443,6 +445,8 @@ export const deA1B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Das ist der Eingang",
+          /* Panel bildirimi (QA F-0076): "Hier ist der Eingang." reddediliyordu; kalıp bu konuşmada öğretiliyor. */
+          accept: ["Hier ist der Eingang"],
           hint: [
             tr("Bu kelime eril, o yüzden işaret cümlesinde de eril artikel geliyor:"),
             de("Das ist der Eingang."),
