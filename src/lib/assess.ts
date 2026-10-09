@@ -198,6 +198,14 @@ export async function assess(
     provider,
     hash,
   }).returning({ id: assessments.id });
+  /* AYNI METNİN KUYRUKTAKİ KOPYASI DÜŞER (QA F-0061). Anlık deneme düşünce
+     istemci metni kuyruğa bırakıyor; öğrenci "Bir daha dene" ile aynı metni
+     hemen puanlatınca kuyruk satırı kalıyordu ve gece yeniden puanlanıp
+     ikinci bir "yazın değerlendirildi" bildirimi gönderiyordu. Eşleşme özetle
+     değil metinle: kuyruğun özeti anadili içermiyor (`queueAssessment`). */
+  await db
+    .delete(assessments)
+    .where(and(eq(assessments.userId, userId), eq(assessments.kind, clean.kind), eq(assessments.answer, text), isNull(assessments.result)));
   await track(userId, "production_attempt", day, result.score.overall, productionKind(clean.kind));
 
   return { ok: true, result, cached: false, provider, id: saved?.id ?? null };
