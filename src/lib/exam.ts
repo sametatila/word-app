@@ -42,6 +42,7 @@ import {
 import type { CefrLevel, WritingTask, SkillExercise } from "@/lib/skills/types";
 import type { Round } from "@/lib/types";
 import { nativeOf, type NativeLang } from "@/lib/courses";
+import { translate } from "@/lib/i18n/dict";
 
 /**
  * Modül ve seviye sınavı (plan WP-41, v3).
@@ -310,13 +311,20 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   // Yazma: modülün kendi görevi; seviyede bankadan serbest görev. Sağlayıcı
   // yoksa bölüm kâğıtta hiç yok.
   const writing: WritingItem[] = [];
+  /* ALT SINIR GÖREVİN METNİNDE (QA, 2026-10-09). Hakem "en az 30 kelime"yi ölçüyordu ama A1 modül görevinin
+     metni bunu hiç söylemiyordu: dört maddeyi de yazan öğrenci "Görev 2/4" aldı. Sayı `minWords`ten, metin
+     hakemin kullandığı aynı anahtardan (`assess.ai_min_words`); metin sayıyı zaten söylüyorsa eklenmiyor. */
+  const withMin = (t: Extract<WritingTask, { kind: "free" }>) =>
+    !t.minWords || new RegExp(`(?<!\\d)${t.minWords}(?!\\d)`).test(t.prompt)
+      ? t
+      : { ...t, prompt: `${t.prompt} (${translate(native, "assess.ai_min_words", { n: t.minWords })})` };
   if (chatConfigured()) {
     if (plan) {
-      writing.push({ id: `w:${plan.code}`, task: { kind: "free", ...plan.writing } });
+      writing.push({ id: `w:${plan.code}`, task: withMin({ kind: "free", ...plan.writing }) });
     } else {
       const tasks = bank
         .filter((e) => e.skill === "writing")
-        .flatMap((e) => (e.skill === "writing" ? e.tasks.filter((t): t is Extract<WritingTask, { kind: "free" }> => t.kind === "free").map((t, i) => ({ id: `w:${e.id}:${i}`, task: t })) : []));
+        .flatMap((e) => (e.skill === "writing" ? e.tasks.filter((t): t is Extract<WritingTask, { kind: "free" }> => t.kind === "free").map((t, i) => ({ id: `w:${e.id}:${i}`, task: withMin(t) })) : []));
       writing.push(...seededShuffle(tasks, `${seed}|writing`).slice(0, c.writing));
     }
   }
