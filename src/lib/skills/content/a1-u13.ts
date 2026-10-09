@@ -99,6 +99,7 @@ export const a1U13: SkillExercise[] = [
       { de: "kostenlos", tr: "ücretsiz", en: "free" },
       { de: "das Paket", tr: "kargo paketi", en: "package" },
       { de: "klicken", tr: "tıklamak", en: "to click" },
+      { de: "die Tube", tr: "tüp", en: "tube" },
     ],
     minutes: 3,
     text:
@@ -125,7 +126,7 @@ export const a1U13: SkillExercise[] = [
         explain: "„Dann geht das Paket zur Post.“",
       },
       {
-        text: "Wie viele Zahnpasta sind im Warenkorb?",
+        text: "Wie viele Tuben Zahnpasta sind im Warenkorb?",
         options: ["zwei", "eine", "drei"],
         answer: 0,
         explain: "„2× Zahnpasta“.",

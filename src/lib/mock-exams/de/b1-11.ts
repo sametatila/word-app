@@ -815,7 +815,7 @@ Die Kisten stehen freitags von 14 bis 19 Uhr bereit. Nicht abgeholte Kisten gebe
               id: "de-b1-11-h1-6",
               no: 6,
               ref: "h3",
-              text: "Wie viel Lebensmittel landeten im Müll?",
+              text: "Wie viele Tonnen Lebensmittel landeten im Müll?",
               options: ["Rund 11.000 Tonnen.", "Rund 60.000 Tonnen.", "Rund 1.100 Tonnen."],
               answer: 0,
               explain:
