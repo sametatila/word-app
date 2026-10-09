@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, formatDay } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -8,9 +8,10 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ReportSheet } from "../ui/ReportSheet";
+import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
+import { hitSlopFor } from "../ui/touch";
 import { AiNotice } from "../ui/AiNotice";
-import { MyWritingsIcon } from "../ui/icons";
+import { ChevronNextIcon, MyWritingsIcon } from "../ui/icons";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { Skeleton, SkeletonCard, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
@@ -57,44 +58,87 @@ function scoreFill(score: number | null, colors: Palette): string {
   return band === "good" ? colors.success : band === "mid" ? colors.streak : colors.danger;
 }
 
-function WritingCard({ w, colors, onReport, onDelete }: { w: Writing; colors: Palette; onReport: (w: Writing) => void; onDelete: (w: Writing) => void }) {
+/**
+ * Kayıttaki değerlendirme, `AssessmentCard`ın beklediği biçimde. Eski satırlarda
+ * alanlar eksik olabiliyor (`errors` yok); kart çökmesin, puan yoksa hiç çizilmesin.
+ */
+function assessmentOf(w: Writing): AssessmentResult | null {
+  const r = w.result as Partial<AssessmentResult> | null;
+  if (!r || typeof r.score?.overall !== "number") return null;
+  return { ...r, score: r.score, errors: Array.isArray(r.errors) ? r.errors : [] };
+}
+
+/*
+ * KART AÇILINCA DEĞERLENDİRMENİN KENDİSİ (QA F-0068). Dokunmak yalnız
+ * "Bildir / Sil" satırını açıyordu: metnin tamamı ve yapay zekânın geri
+ * bildirimi (hatalar, düzeltilmiş metin, övgü, ipucu) hiçbir yerde
+ * görünmüyordu, yani arşiv yalnız bir puan listesiydi. Web kartı açılınca
+ * aynı `AssessmentCard`ı çiziyor; burada da o.
+ *
+ * Dokunulan yer yalnız ÜST KISIM: açılan geri bildirim okunurken ona
+ * dokunmak kartı kapatmasın. Alt satır ne olacağını söylüyor ("Geri
+ * bildirimi gör" / "Gizle") — kartın açıldığı tahmin edilmek zorunda değil.
+ *
+ * PUANSIZ KAYIT AÇIKÇA SÖYLENİYOR: puan kutusunda "…" duruyordu ve bir
+ * yüklenme sanılıyordu. Kutuda yazı simgesi, başlığın altında "Puan
+ * bekliyor"; açılınca metnin tamamı ve ne olacağı (puanlanınca bildirim).
+ *
+ * GÜN TEK YERDE ve uygulamanın biçiminde ("9 Eki", QA F-0067): başlık
+ * satırında ISO gün ("2026-10-09") vardı, kartın altında bir kez daha.
+ */
+function WritingCard({ w, colors, onDelete }: { w: Writing; colors: Palette; onDelete: (w: Writing) => void }) {
   const [open, setOpen] = useState(false);
-  const score = w.result?.score?.overall ?? null;
+  const result = assessmentOf(w);
+  const score = result?.score.overall ?? null;
   const tone = scoreTone(score, colors);
+  const kind = t(KIND_KEY[w.kind] ?? "") || w.kind;
   return (
-    <PressableScale onPress={() => setOpen((o) => !o)}>
-      <Card padded style={{ marginBottom: spacing.md }}>
+    <Card padded style={{ marginBottom: spacing.md }}>
+      <PressableScale
+        onPress={() => setOpen((o) => !o)}
+        accessibilityRole="button"
+        accessibilityState={{ expanded: open }}
+        accessibilityLabel={`${kind}, ${w.level}, ${formatDay(w.day)}. ${score === null ? t("writ.pending_label") : score}`}
+      >
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
           <View style={{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: score === null ? colors.surface2 : scoreFill(score, colors) + "22" }}>
-            <Text variant="h3" color={tone}>{score ?? "…"}</Text>
+            {score === null ? <MyWritingsIcon size={22} color={colors.textMuted} /> : <Text variant="h3" color={tone}>{score}</Text>}
           </View>
           <View style={{ flex: 1 }}>
             {/* GÜN de yazıyor: "ne zaman yazmıştım" sorusunun cevabı listede
                 olmalı, yoksa satırlar birbirinden ayırt edilemiyor (web aynı
                 üçlüyü gösteriyor: tür · seviye · gün). */}
-            <Text variant="bodyStrong">{t(KIND_KEY[w.kind] ?? "") || w.kind} · {w.level} · {w.day}</Text>
-            <Text variant="caption" color={colors.textMuted} numberOfLines={open ? undefined : 2}>{w.answer}</Text>
+            <Text variant="bodyStrong">{kind} · {w.level} · {formatDay(w.day)}</Text>
+            {score === null ? <Text variant="caption" color={colors.streakText}>{t("writ.pending_label")}</Text> : null}
+            {/* Açıkken önizleme yok: metnin tamamı aşağıda (puanlıysa
+                hataları vurgulanmış hâliyle) duruyor. */}
+            {open ? null : <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{w.answer}</Text>}
           </View>
         </View>
-        {open && score === null ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{t("writings.to_be_graded")}</Text> : null}
-        {/* SİL — uç aylardır duruyor ve web kartı kullanıyordu; mobilde kendi
-            yazısını silmenin hiçbir yolu yoktu. Açılan kartta duruyor ki
-            listede yanlışlıkla dokunulmasın. */}
-        {open ? (
-          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm }}>
-            {score !== null ? (
-              <PressableScale onPress={() => onReport(w)} hitSlop={8} accessibilityLabel={t("writings.report_this_feedback")}>
-                <Text variant="micro" color={colors.textFaint}>{t("writings.report_this_feedback")}</Text>
-              </PressableScale>
-            ) : null}
-            <PressableScale onPress={() => onDelete(w)} hitSlop={8} accessibilityLabel={t("common.delete")}>
-              <Text variant="micro" color={colors.dangerText}>{t("common.delete")}</Text>
-            </PressableScale>
-          </View>
-        ) : null}
-        <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{w.day}</Text>
-      </Card>
-    </PressableScale>
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "flex-end", gap: spacing.xs, marginTop: spacing.sm }}>
+          <Text variant="micro" color={colors.primaryText}>{open ? t("writ.hide") : score === null ? t("writ.see_text") : t("writ.see_feedback")}</Text>
+          <View style={{ transform: [{ rotate: open ? "-90deg" : "90deg" }] }}><ChevronNextIcon size={14} color={colors.primaryText} /></View>
+        </View>
+      </PressableScale>
+      {open ? (
+        <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
+          {result ? (
+            <AssessmentCard answer={w.answer} result={result} reportRef={String(w.id)} />
+          ) : (
+            <>
+              <Text variant="body">{w.answer}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("writ.pending_body")}</Text>
+            </>
+          )}
+          {/* SİL — uç aylardır duruyor ve web kartı kullanıyordu; mobilde kendi
+              yazısını silmenin hiçbir yolu yoktu. Açılan kartta duruyor ki
+              listede yanlışlıkla dokunulmasın. */}
+          <PressableScale onPress={() => onDelete(w)} hitSlop={hitSlopFor(0, 18)} accessibilityRole="button" accessibilityLabel={t("common.delete")} style={{ alignSelf: "flex-start" }}>
+            <Text variant="micro" color={colors.dangerText}>{t("common.delete")}</Text>
+          </PressableScale>
+        </View>
+      ) : null}
+    </Card>
   );
 }
 
@@ -119,7 +163,6 @@ export function WritingsScreen() {
     void deleteWriting(w.id).catch(() => {});
   }
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
-  const [report, setReport] = useState<Writing | null>(null); // "Bildir" açık olan değerlendirme
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
@@ -211,7 +254,7 @@ export function WritingsScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
           <CardGrid>
-            {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onReport={setReport} onDelete={askDelete} />)}
+            {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onDelete={askDelete} />)}
           </CardGrid>
         </ScrollView>
       )}
@@ -224,7 +267,6 @@ export function WritingsScreen() {
         onConfirm={reallyDelete}
         onCancel={() => setPendingDelete(null)}
       />
-      <ReportSheet visible={!!report} kind="assessment" refId={report ? String(report.id) : ""} content={report ? JSON.stringify(report.result ?? {}) : ""} onClose={() => setReport(null)} />
     </View>
   );
 }

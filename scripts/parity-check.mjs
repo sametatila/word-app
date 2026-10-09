@@ -13170,12 +13170,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "yazilar satirinin sirasi ve butcesi",
       [
-        "ilk satir=" + (/variant="bodyStrong">\{t\(KIND_KEY\[w\.kind\]/.test(ym) ? "metadata" : "metin"),
-        "onizleme butcesi=" + (/numberOfLines=\{open \? undefined : 2\}/.test(ym) ? "2 satir, acilinca tam" : "?"),
+        "ilk satir=" + (/variant="bodyStrong">\{(t\(KIND_KEY\[w\.kind\]|kind\}) · \{w\.level\}/.test(ym) ? "metadata" : "metin"),
+        /* QA F-0068: acik kartta metnin tamami GOVDEDE (puanliysa hatalari
+           isaretli degerlendirme kartinda); onizleme ayni metni ikinci kez yazmiyor. */
+        "onizleme butcesi=" + (/\{open \? null : <Text[^>]*numberOfLines=\{2\}>\{w\.answer\}/.test(ym) ? "2 satir, acilinca govdede" : "?"),
       ],
       [
         "ilk satir=" + (/block text-strong">\s*\{\(KIND_LABEL_KEYS/.test(yw) ? "metadata" : "metin"),
-        "onizleme butcesi=" + (/open === it\.id \? "" : "line-clamp-2"/.test(yw) ? "2 satir, acilinca tam" : "?"),
+        "onizleme butcesi=" + (/\{open === it\.id \? null : \(\s*<span className="muted block text-caption line-clamp-2"/.test(yw) ? "2 satir, acilinca govdede" : "?"),
       ],
       "mobil",
       "web",

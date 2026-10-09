@@ -12,7 +12,8 @@ import { SkeletonLine, TextBox, type TextVariant } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { AiNotice } from "@/components/ai-notice";
 import type { Assessment } from "@/lib/assess-prompts";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
+import { formatDay } from "@/lib/i18n/dict";
 import { useCourse } from "@/components/app-shell";
 import { ReportDialog } from "@/components/report-dialog";
 import { ConfirmDialog } from "@/components/confirm-dialog";
@@ -44,6 +45,7 @@ const KIND_LABEL_KEYS: Record<string, string> = {
 export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEmpty?: boolean; hideHeader?: boolean }) {
   const course = useCourse();
   const t = useT();
+  const lang = useLang();
   const [items, setItems] = useState<Item[] | null | undefined>(undefined);
   const [open, setOpen] = useState<number | null>(null);
   const [reported, setReported] = useState<Item | null>(null);
@@ -195,8 +197,13 @@ export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEm
           return (
             <li key={it.id} className="rounded-panel px-3 py-2.5 surface-2">
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-caption text-white" style={{ background: tone }}>
-                  {score ?? "…"}
+                {/* PUANSIZ KAYITTA "…" YOK (QA F-0068): yüklenme sanılıyordu.
+                    Dairede yazı simgesi, başlığın altında "Puan bekliyor". */}
+                <span
+                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-caption ${score === null ? "" : "text-white"}`}
+                  style={{ background: score === null ? "var(--border)" : tone, color: score === null ? "var(--text-muted)" : undefined }}
+                >
+                  {score ?? <MyWritingsIcon size={16} />}
                 </span>
                 {/*
                   SIRA VE SATIR BÜTÇESİ ANDROID'DEN (`WritingsScreen`).
@@ -207,13 +214,28 @@ export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEm
                   Android'de iki; üstelik Android kart açılınca metni TAMAMEN
                   gösteriyor, web hiç göstermiyordu.
                 */}
-                <button type="button" onClick={() => setOpen(open === it.id ? null : it.id)} className="min-w-0 flex-1 text-left">
+                {/* GÜN uygulamanın biçiminde ("9 Eki"), ham ISO değil (QA F-0067). */}
+                <button
+                  type="button"
+                  data-panel="writing"
+                  aria-expanded={open === it.id}
+                  onClick={() => setOpen(open === it.id ? null : it.id)}
+                  className="min-w-0 flex-1 text-left"
+                >
                   <span className="block text-strong">
-                    {(KIND_LABEL_KEYS[it.kind] ? t(KIND_LABEL_KEYS[it.kind]) : it.kind) ?? it.kind} · {it.level} · {it.day}
-                    {score === null ? ` · ${t("writings.to_be_graded")}` : ""}
+                    {(KIND_LABEL_KEYS[it.kind] ? t(KIND_LABEL_KEYS[it.kind]) : it.kind) ?? it.kind} · {it.level} · {formatDay(it.day, lang)}
                   </span>
-                  <span className={`muted block text-caption ${open === it.id ? "" : "line-clamp-2"}`} lang={course}>
-                    {it.answer}
+                  {score === null ? <span className="block text-caption" style={{ color: "var(--color-flame)" }}>{t("writ.pending_label")}</span> : null}
+                  {/* Açıkken önizleme yok: metnin tamamı aşağıda (puanlıysa
+                      hataları işaretli değerlendirme kartında). Aynı metin iki
+                      kez yazılıyordu (QA F-0068; mobil aynı). */}
+                  {open === it.id ? null : (
+                    <span className="muted block text-caption line-clamp-2" lang={course}>
+                      {it.answer}
+                    </span>
+                  )}
+                  <span className="mt-1 block text-micro" style={{ color: "var(--color-brand)" }}>
+                    {open === it.id ? t("writ.hide") : score === null ? t("writ.see_text") : t("writ.see_feedback")}
                   </span>
                 </button>
                 <button type="button" onClick={() => setToDelete(it.id)} className="btn btn-ghost hit-8 shrink-0 px-2 py-1 text-caption">
@@ -230,9 +252,10 @@ export function WritingsCard({ showEmpty = false, hideHeader = false }: { showEm
                   <ReportLink className="mt-2" onClick={() => setReported(it)} label={t("writings.report_this_feedback")} />
                 </div>
               ) : open === it.id ? (
-                <p className="muted mt-2 text-caption" lang={course}>
-                  {it.answer}
-                </p>
+                <div className="mt-2 space-y-1.5">
+                  <p className="text-body" lang={course}>{it.answer}</p>
+                  <p className="muted text-caption">{t("writ.pending_body")}</p>
+                </div>
               ) : null}
             </li>
           );
