@@ -24,6 +24,7 @@ import { useNativeContentVersion } from "../lib/nativeContent";
 import { localPartStates, type PartState } from "../game/mockExamLocal";
 import { fetchMockAccess, fetchMockStats, type MockAccess } from "../game/mockExam";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
+import { useBoundedWait } from "../lib/useBoundedWait";
 import { useTheme, spacing, radii } from "../theme";
 
 /**
@@ -45,6 +46,15 @@ import { useTheme, spacing, radii } from "../theme";
  * "yakında" göstermiyor, olduğu gibi söylüyor — o seviyede henüz sınav yok.
  */
 const LEVELS: MockLevel[] = ["A1", "A2", "B1", "B2", "C1"];
+
+/*
+ * SON ERİŞİM CEVABI BELLEKTE (kullanıcı + seviye başına). Ücretsiz hesabın notu,
+ * açılma ilerlemesi ve kâğıtlardaki kilit cevaptan SONRA beliriyor ve kâğıt
+ * listesini aşağı itiyordu (QA F-0070 sınıfı). Artık liste ilk açılışta cevabı
+ * da bekliyor (iskelet), sonraki açılışlarda bellekteki cevapla hemen çiziliyor
+ * ve arkada tazeleniyor.
+ */
+const accessCache = new Map<string, MockAccess | null>();
 
 export function MockExamsScreen() {
   const { colors } = useTheme();
@@ -112,15 +122,28 @@ export function MockExamsScreen() {
    * soruyor. Okunamazsa (ağ yok, misafir) `null` kalıyor ve hiçbir şey
    * kilitli çizilmiyor: uydurma bir kilit, gerçek bir kilitten daha kötü.
    */
-  const [access, setAccess] = useState<MockAccess | null>(null);
+  const { user } = useAuth();
+  const accessKey = me && user ? `${user.id}:${level}` : null;
+  const [fetched, setFetched] = useState<{ key: string; access: MockAccess | null } | null>(null);
   /* ODAKLANINCA yeniden soruluyor: kâğıt bitirilip dönülünce "bitir" koşulu
      işaretlenmiş ve belki yeni kâğıt açılmış olmalı. */
   useFocusEffect(useCallback(() => {
-    if (!me) { setAccess(null); return; }
+    if (!accessKey) return;
     let dead = false;
-    void fetchMockAccess(level).then((a) => { if (!dead) setAccess(a); }).catch(() => { if (!dead) setAccess(null); });
+    void fetchMockAccess(level)
+      .then((a) => { accessCache.set(accessKey, a); if (!dead) setFetched({ key: accessKey, access: a }); })
+      .catch(() => { if (!dead) setFetched({ key: accessKey, access: accessCache.get(accessKey) ?? null }); });
     return () => { dead = true; };
-  }, [me, level]));
+  }, [accessKey, level]));
+  /* `undefined`: bu seviyenin cevabı henüz hiç gelmedi — liste iskelette bekliyor. */
+  const accessNow: MockAccess | null | undefined = !accessKey
+    ? null
+    : fetched?.key === accessKey
+      ? fetched.access
+      : accessCache.get(accessKey);
+  /* Ağ yavaşsa liste en çok 1,5 sn bekler; cevap sonra gelirse yine çizilir. */
+  const accessPending = useBoundedWait(accessNow === undefined, accessKey);
+  const access = accessNow ?? null;
   const isLocked = (id: string) => (access ? !access.unlocked.includes(id) : false);
   const copy = mockCopy(access?.unlock);
   const freeCopy = access && !access.premium ? copy : null;
@@ -241,7 +264,7 @@ export function MockExamsScreen() {
           })}
         </View>
 
-        {!levelReady || catalog === "loading" ? (
+        {!levelReady || catalog === "loading" || accessPending ? (
           /* Katalog inerken LİSTENİN iskeleti: giriş metni + iki kâğıt kartı
              (`PaperCard`: üst satır, tema, karşılık, süre, dört bölüm satırı).
              Tek kartlık bir başlık + satır çiziliyordu; kâğıtlar gelince
