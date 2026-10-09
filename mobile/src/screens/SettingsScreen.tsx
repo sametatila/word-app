@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, TextInput, Switch } from "react-native";
+import { View, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -46,6 +46,7 @@ import { APP_VERSION } from "../version";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 import { FIELD, insetEdge } from "../ui/Field";
 import { Group, Row } from "../ui/SettingsGroup";
+import { SwitchRow } from "../ui/SwitchRow";
 
 // Diller KENDİ adlarıyla yazılır: arayüz yanlış dildeyken bile kullanıcı kendi
 // dilini tanıyıp seçebilsin diye (çevrilirse tam da aradığı satırı okuyamaz).
@@ -432,35 +433,24 @@ export function SettingsScreen() {
             {/* Katalog KURSA bağlı, kurs da `me` ile geliyor (iskeletin
                 gerekçesi `VoicePickerSkeleton` başında yazılı). */}
             {learningVisible ? <VoicePicker course={course} value={voice} onChange={pickVoice} /> : <VoicePickerSkeleton />}
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("snd.game_sounds")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("snd.game_sounds_sub")}</Text>
-              </View>
-              <Switch
-                value={sounds}
-                onValueChange={(v) => { setSounds(v); void setSoundEnabled(v); track("sound_toggle", v ? 1 : 0); }}
-                accessibilityLabel={t("snd.game_sounds")}
-                trackColor={{ true: colors.primary, false: colors.surface2 }}
-                thumbColor="#fff"
-              />
-            </View>
+            {/* Satırın tamamı anahtar (`ui/SwitchRow`, QA F-0051). */}
+            <SwitchRow
+              title={t("snd.game_sounds")}
+              sub={t("snd.game_sounds_sub")}
+              value={sounds}
+              onValueChange={(v) => { setSounds(v); void setSoundEnabled(v); track("sound_toggle", v ? 1 : 0); }}
+              style={{ paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}
+            />
             {/* TİTREŞİM AYRI (`lib/haptics`): sesi kapatan titreşimi, titreşimi
                 kapatan sesi kaybetmiyor. Açılınca bir kez hafif titreşim - ayarın
                 ne yaptığını hissettiriyor. */}
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("snd.haptics")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("snd.haptics_sub")}</Text>
-              </View>
-              <Switch
-                value={vibes}
-                onValueChange={(v) => { setVibes(v); void setHapticsEnabled(v); if (v) vibrate("tap"); }}
-                accessibilityLabel={t("snd.haptics")}
-                trackColor={{ true: colors.primary, false: colors.surface2 }}
-                thumbColor="#fff"
-              />
-            </View>
+            <SwitchRow
+              title={t("snd.haptics")}
+              sub={t("snd.haptics_sub")}
+              value={vibes}
+              onValueChange={(v) => { setVibes(v); void setHapticsEnabled(v); if (v) vibrate("tap"); }}
+              style={{ paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}
+            />
           </Row>
 
           <Row label={t("settings.appearance")} colors={colors}>
@@ -651,20 +641,21 @@ export function SettingsScreen() {
             {/* Kutu içi liste (`ui/Field`): ilk satır 6, ötekiler 12 taşıyordu;
                 çizginin iki yanı 12, kenarlar kutunun 16'sı. */}
             <View style={insetEdge}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: FIELD.row }}>
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("settings.send_usage_data")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("settings.analytics_sub")}</Text>
-              </View>
-              <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.send_usage_data")} />
-            </View>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("aiconsent.text_title")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t(guest ? "guest.ai_setting_sub" : "aiconsent.settings_text_sub")}</Text>
-              </View>
-              <Switch value={aiText === "granted"} disabled={aiText === null || aiBusy} onValueChange={(v) => { void toggleAiText(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("aiconsent.text_title")} />
-            </View>
+            <SwitchRow
+              title={t("settings.send_usage_data")}
+              sub={t("settings.analytics_sub")}
+              value={analytics}
+              onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }}
+              style={{ paddingVertical: FIELD.row }}
+            />
+            <SwitchRow
+              title={t("aiconsent.text_title")}
+              sub={t(guest ? "guest.ai_setting_sub" : "aiconsent.settings_text_sub")}
+              value={aiText === "granted"}
+              disabled={aiText === null || aiBusy}
+              onValueChange={(v) => { void toggleAiText(v); }}
+              style={{ paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}
+            />
             {micConsent === null ? (
               // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
               // bölümü uzayıp altındaki bağlantıları aşağı itmesin.

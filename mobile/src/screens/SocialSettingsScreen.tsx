@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t as tx } from "../lib/i18n";
-import { Switch, TextInput, View } from "react-native";
+import { TextInput, View } from "react-native";
 import { social, errorText, type PublicUser, type SocialMe, type Visibility } from "../api/social";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
@@ -15,6 +15,7 @@ import { SOCIAL_LIMITS } from "../lib/profileDefaults";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 import { FIELD, Field, insetEdge } from "../ui/Field";
 import { Group, Row } from "../ui/SettingsGroup";
+import { SwitchRow } from "../ui/SwitchRow";
 
 /** Görünürlük seçenekleri — anahtar tutar, çeviri render sırasında çözülür. */
 const VIS: { key: Visibility; label: string; sub: string }[] = [
@@ -154,16 +155,9 @@ export function SocialPrivacy({ children }: { children?: React.ReactNode }) {
   }, [user]);
 
   const toggle = (title: string, sub: string, value: boolean, onChange: (v: boolean) => void, first?: boolean) => (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: first ? 0 : 1, borderTopColor: colors.hairline }}>
-      <View style={{ flex: 1 }}>
-        <Text variant="bodyStrong">{title}</Text>
-        <Text variant="caption" color={colors.textMuted}>{sub}</Text>
-      </View>
-      {/* Anahtarın ADI satırın başlığı: ekran okuyucu onu yanındaki metinle
-          kendiliğinden ilişkilendirmiyor, "açık/kapalı anahtar" diye okuyup
-          neyin anahtarı olduğunu söylemiyordu. */}
-      <Switch value={value} onValueChange={onChange} disabled={busy} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" />
-    </View>
+    /* Satırın tamamı anahtar ve adı satırın başlığı (`ui/SwitchRow`, QA F-0051):
+       ekran okuyucu anahtarı yanındaki metinle kendiliğinden ilişkilendirmiyordu. */
+    <SwitchRow title={title} sub={sub} value={value} onValueChange={onChange} disabled={busy} style={{ paddingVertical: spacing.md, borderTopWidth: first ? 0 : 1, borderTopColor: colors.hairline }} />
   );
 
   if (user?.guest) {
