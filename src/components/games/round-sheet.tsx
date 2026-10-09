@@ -10,6 +10,7 @@ import { ReportFlag, useRoundReport } from "@/components/report-flag";
 import { SpeakButton } from "@/components/speak-button";
 import { useCourse } from "@/components/app-shell";
 import { useStill } from "@/lib/use-still";
+import { useBlindAnswers } from "./no-hints";
 import { useLang, useT } from "@/lib/i18n/client";
 import { whyLabel, type Why } from "@/lib/why";
 
@@ -159,8 +160,16 @@ export function RoundSheet({
   const open = sheet != null;
   const tone = sheet ? sheetTone(sheet) : "ok";
   const report = useRoundReport();
+  /* SINAVDA KATMAN YOK (`BlindAnswers`, QA F-0017): sınavın iki oyunu (yazma,
+     çeviri) hükmü hiç kurmuyor; başka bir oyun sınava girerse de cevap burada
+     gösterilmeden tur kapanıyor. Mobil `FeedbackFooter` aynı. */
+  const blind = useBlindAnswers();
+  useEffect(() => {
+    if (blind && open) onContinue?.();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [blind, open]);
 
-  if (!host) return null;
+  if (!host || blind) return null;
 
   return createPortal(
     <AnimatePresence initial={false}>

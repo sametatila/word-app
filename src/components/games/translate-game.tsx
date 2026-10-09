@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { focusOnFine } from "@/lib/focus-fine";
 import { GameShell } from "./game-shell";
-import { useNoHints } from "./no-hints";
+import { useBlindAnswers, useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import { targetName, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
@@ -51,6 +51,8 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
   const lang = useLang();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
+  /* Sınavda hüküm gösterilmiyor (bkz. no-hints.tsx `BlindAnswers`, QA F-0017). */
+  const blind = useBlindAnswers();
   const { word, sentence, alternatives } = round;
   /* Çevrilecek cümle ANADİLDE (`translateSourceFor`). Sunucu `native`i koyuyor; eski kayıtlı turda
      yalnız Türkçe anadilde `tr`ye düşülüyor. */
@@ -132,6 +134,19 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     setResult(m);
     const correct = accepted;
     setStatus(correct ? "correct" : "wrong");
+    if (blind) {
+      /* Cevap alındı, hüküm yok: ses, titreşim, renk ve katman olmadan
+         sıradaki madde. Yük katmanın "Devam"ının verdiğiyle aynı. */
+      onDone([{
+        wordId: word.id,
+        correct,
+        latencyMs,
+        hintUsed: hintShown,
+        quality: hintShown ? Math.min(quality, 3) : quality,
+        ...(correct ? {} : { errorType: m.errorType ?? "meaning", detail: typed.slice(0, 60) }),
+      }]);
+      return;
+    }
     // Yazım sapmasıyla kabul: katman "neredeyse" tonunda (aşağıda `tone`), ses de
     // öyle — doğru sesi "kusursuz" derdi. Mobil `TranslateRound` aynı `near`.
     vibrate(!correct ? "wrong" : m.verdict === "spelling" ? "near" : "correct");
@@ -186,7 +201,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
          Model kabul ettiyse cevap düz (kuruluş hedefle aynı değildi, işaret
          yanıltırdı). Mobil `TranslateRound` ile aynı alanlar. */
       sheet={
-        result && (status === "correct" || status === "wrong")
+        result && !blind && (status === "correct" || status === "wrong")
           ? {
               correct: status === "correct",
               tone: status === "correct" ? (result.verdict === "spelling" ? "near" : "ok") : "bad",
@@ -250,8 +265,8 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           placeholder={tx("rounds.write_sentence_ph")}
           aria-label={tx("rounds.write_sentence_ph")}
           className={`card min-h-16 w-full resize-none px-4 py-3 text-lg outline-none ${
-            status === "wrong" ? "animate-shake border-[color:var(--color-rose)]" : ""
-          } ${status === "correct" ? "border-[color:var(--color-mint)]" : ""}`}
+            status === "wrong" && !blind ? "animate-shake border-[color:var(--color-rose)]" : ""
+          } ${status === "correct" && !blind ? "border-[color:var(--color-mint)]" : ""}`}
         />
 
         <div className="flex flex-wrap justify-center gap-2">
@@ -284,9 +299,10 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
             disabled={status !== "idle" || value.trim() === ""}
             className="btn btn-primary min-h-12 flex-[2] px-4 text-body"
           >
-            {tx(status === "checking" ? "rounds.checking" : "common.check")}
+            {tx(status === "checking" ? "rounds.checking" : blind ? "exam.answer_and_next" : "common.check")}
           </button>
         </div>
+        {blind ? <p className="muted text-center text-caption">{tx("exam.answers_at_end")}</p> : null}
       </form>
 
       {hintShown ? (

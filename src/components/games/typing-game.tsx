@@ -6,7 +6,7 @@ import { focusOnFine } from "@/lib/focus-fine";
 import { whyFor } from "@/lib/why";
 import { classifyTyping, miss, typoNear } from "@/lib/errors";
 import { GameShell } from "./game-shell";
-import { useNoHints } from "./no-hints";
+import { useBlindAnswers, useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import { grammarLine } from "./grammar-line";
 import { targetName, matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult , meaningOf, meaningSubOf } from "./types";
@@ -54,6 +54,8 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
   const lang = useLang();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
+  /* Sınavda hüküm gösterilmiyor (bkz. no-hints.tsx `BlindAnswers`, QA F-0017). */
+  const blind = useBlindAnswers();
   const { word } = round;
 
   const [value, setValue] = useState("");
@@ -106,6 +108,20 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     const sameHit = !exact ? (round.sameGloss ?? []).find((s) => matchesAnswer(value, [s.de])) ?? null : null;
     const near = !exact && !sameHit && typoNear(value, [word.de, ...(round.alternatives ?? [])]) !== null;
     const correct = exact || near || !!sameHit;
+    if (blind) {
+      /* Cevap alındı, hüküm yok: ses, titreşim, renk ve katman olmadan
+         sıradaki madde. Yük katmanın "Devam"ının verdiğiyle aynı. */
+      setStatus(correct ? "correct" : "wrong");
+      onDone([{
+        wordId: word.id,
+        correct,
+        latencyMs: Date.now() - started.current,
+        hintUsed,
+        ...(near ? { quality: hintUsed ? 3 : 4 } : sameHit ? { quality: 3 } : {}),
+        ...miss(correct, classifyTyping(value, [word.de, ...(round.alternatives ?? [])]), value),
+      }]);
+      return;
+    }
     setTypo(near);
     setSame(sameHit);
     setStatus(correct ? "correct" : "wrong");
@@ -160,7 +176,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
       /* Dil bilgisi satırı (tür + çoğul/çekim) YALNIZ katmanda: soruda
          yalnız tür var, çoğul orada cevabı ele verirdi. */
       sheet={
-        status === "idle"
+        status === "idle" || blind
           ? null
           : {
               correct: status === "correct",
@@ -233,8 +249,8 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           placeholder={tx("rounds.type")}
           aria-label={tx("rounds.type")}
           className={`card min-h-14 w-full px-4 text-lg outline-none ${
-            status === "wrong" ? "animate-shake border-[color:var(--color-rose)]" : ""
-          } ${status === "correct" ? "border-[color:var(--color-mint)]" : ""}`}
+            status === "wrong" && !blind ? "animate-shake border-[color:var(--color-rose)]" : ""
+          } ${status === "correct" && !blind ? "border-[color:var(--color-mint)]" : ""}`}
         />
 
         <div className="flex flex-wrap justify-center gap-2 kb:hidden">
@@ -267,9 +283,10 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
             disabled={status !== "idle" || value.trim() === ""}
             className="btn btn-primary min-h-12 flex-[2] px-4 text-body"
           >
-            {tx("common.check")}
+            {tx(blind ? "exam.answer_and_next" : "common.check")}
           </button>
         </div>
+        {blind ? <p className="muted text-center text-caption">{tx("exam.answers_at_end")}</p> : null}
       </form>
 
       {hintShown ? (

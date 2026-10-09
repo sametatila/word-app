@@ -13,7 +13,7 @@ import { SkeletonBar } from "@/components/skeleton";
 import { AnimatePresence, motion } from "framer-motion";
 import { T, fillStyle } from "@/lib/motion";
 import { GameSwitch } from "@/components/game-switch";
-import { NoHints } from "@/components/games/no-hints";
+import { BlindAnswers, NoHints } from "@/components/games/no-hints";
 import { FitBox } from "@/components/fit-box";
 import { COURSE_KEY, dialogueSegments, prefetchEachSegment, readLocal, speakGerman, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { SpeakerIcon, SkillSpeakingIcon, CheckIcon, LevelExamIcon, DurationIcon, NoGoingBackIcon, ScoreTargetIcon, SkillWritingIcon, WarningIcon } from "@/components/icons";
@@ -594,6 +594,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         showMisses={showMisses}
         onToggleMisses={() => setShowMisses((v) => !v)}
         writingSample={paper?.sections.writing[0]?.task.sample ?? null}
+        listening={paper?.sections.listening ?? []}
       />
     );
   }
@@ -707,7 +708,11 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             <FitBox>
               {/* Kâğıdın kuralı: ipucu yok. */}
               <NoHints>
-                <GameSwitch round={round} onDone={(res) => onVocabDone(round, res)} />
+                {/* Cevap sınav sonunda: oyun hükmü göstermeden sıradakine geçiyor
+                    (QA F-0017; mobil `ExamScreen` aynı sarmalayıcı). */}
+                <BlindAnswers>
+                  <GameSwitch round={round} onDone={(res) => onVocabDone(round, res)} />
+                </BlindAnswers>
               </NoHints>
             </FitBox>
           </motion.div>
@@ -1277,6 +1282,7 @@ function Result({
   showMisses,
   onToggleMisses,
   writingSample,
+  listening,
 }: {
   result: ExamResult;
   level: CefrLevel;
@@ -1289,6 +1295,8 @@ function Result({
   showMisses: boolean;
   onToggleMisses: () => void;
   writingSample: string | null;
+  /** Dinleme maddeleri: diyaloğun metni sınavda gizli, sonuçta açık (QA F-0017). */
+  listening: TextItem[];
 }) {
   const course = useCourse();
   const t = useT();
@@ -1434,6 +1442,28 @@ function Result({
               </p>
             </div>
           ) : null}
+        </DetailCard>
+      ) : null}
+
+      {/* DİNLEMENİN METNİ SONUÇTA. Sınav sırasında diyalog yalnız sesle (bölüm
+          kartının sözü); metin burada, kaçan soruyla karşılaştırılabilsin.
+          Deneme sınavı sonucu aynı kartı çiziyor (`mockexam.transcript`);
+          mobil `ExamScreen` aynı. */}
+      {listening.some((it) => it.segments?.length) ? (
+        <DetailCard title={t("mockexam.transcript")}>
+          {listening.map((it) =>
+            it.segments?.length ? (
+              <div key={it.id} className="space-y-1">
+                <p className="text-strong" lang={course}>{it.title}</p>
+                {it.segments.map((sg, i) => (
+                  <p key={i} className="text-caption" lang={course}>
+                    {sg.speaker ? <span className="font-semibold">{sg.speaker}: </span> : null}
+                    {sg.text}
+                  </p>
+                ))}
+              </div>
+            ) : null,
+          )}
         </DetailCard>
       ) : null}
 

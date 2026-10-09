@@ -21,7 +21,7 @@ import { SpeakerIcon, CheckIcon, LevelExamIcon, DurationIcon, NoGoingBackIcon, S
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { ReportFlag } from "../ui/ReportFlag";
-import { NoHints } from "../game/noHints";
+import { BlindAnswers, NoHints } from "../game/noHints";
 import { matchSentence } from "../lib/sentenceMatch";
 import { prefetchDialogue, speakDialogue, speakTarget, stopSpeaking } from "../lib/tts";
 import { dialogueCast } from "../lib/speakers";
@@ -716,6 +716,25 @@ export function ExamScreen() {
         ) : null}
 
         {/*
+          DİNLEMENİN METNİ SONUÇTA. Sınav sırasında diyalog yalnız sesle
+          (bölüm kartının sözü, QA F-0017); metin burada, kaçan soruyla
+          karşılaştırılabilsin. Deneme sınavının sonucu aynı kartı çiziyor
+          (`MockExamScreen` `mockexam.transcript`); web `exam-player` aynı.
+        */}
+        {paper?.sections.listening.some((it) => it.segments?.length) ? (
+          <DetailCard title={t("mockexam.transcript")}>
+            {paper.sections.listening.map((it) => it.segments?.length ? (
+              <View key={it.id} style={{ gap: spacing.xs }}>
+                <Text variant="bodyStrong">{it.title}</Text>
+                {it.segments.map((s, i) => (
+                  <Text key={i} variant="caption">{s.speaker ? <Text variant="caption" style={{ fontWeight: "700" }}>{s.speaker}: </Text> : null}{s.text}</Text>
+                ))}
+              </View>
+            ) : null)}
+          </DetailCard>
+        ) : null}
+
+        {/*
           YAPABİLİRLİK LİSTESİ. Kâğıdın kapağı bunu taşıyor (`cover.canDo`)
           ve mobil tipi alanı düşürdüğü için liste hiç görünmüyordu. Sonucun
           anlamı puan değil kazanılan iş; sertifikanın gösterilme sebebi de
@@ -869,6 +888,10 @@ function SectionBody({
             düğmesini kaldırıyordu, Android'de duruyordu - aynı kâğıt iki
             platformda iki farklı zorluktaydı. */}
         <NoHints>
+        {/* Cevap sınav sonunda (`BlindAnswers`): "Kontrol et" doğru cevabı ve
+            gerekçeyi gösteriyordu, kapak "cevaplar sınav bitince açılır"
+            derken (QA F-0017). Web `exam-player` aynı sarmalayıcı. */}
+        <BlindAnswers>
         <RoundView
           key={r.id}
           round={r}
@@ -896,6 +919,7 @@ function SectionBody({
             advance(ok, paper.sections.vocab.length);
           }}
         />
+        </BlindAnswers>
         </NoHints>
       </View>
     );
@@ -1149,10 +1173,33 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
             <Text variant="caption" color={colors.primaryText}>{t(playing ? "wquiz.listen_stop" : "wquiz.listen_all")}</Text>
           </PressableScale>
         ) : null}
-        {it.segments?.map((s, i) => (
+        {/*
+          DİNLEMEDE METİN YOK. Bölüm kartı "istediğin kadar dinleyebilirsin
+          ama metni göremezsin" diyor; ekran ise diyaloğun tamamını
+          ("Marco: Hallo! …") soruların üstünde yazıyordu (QA F-0017). Artık
+          her replik yalnız konuşmacısının adıyla bir düğme (dokununca o
+          replik çalıyor), metin sınav bitince sonuç ekranında. Web
+          `exam-player` `DialogPlayer` aynı çipleri çiziyor.
+        */}
+        {spoken && segs ? (
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs, marginTop: spacing.xs }}>
+            {segs.map((s, i) => (
+              <PressableScale
+                key={i}
+                accessibilityRole="button"
+                accessibilityLabel={`${t("item.listen")}: ${s.speaker ?? `${SECTION_WORD[currentTargetLang()] ?? SECTION_WORD.de} ${i + 1}`}`}
+                onPress={() => { stopSpeaking(); setPlaying(false); void speakTarget(s.text, { slow: "listen", voice: cast[i]?.voice, pitch: cast[i]?.pitch }); }}
+                style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, minHeight: 36, borderRadius: radii.pill, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.xs }}
+              >
+                <SpeakerIcon color={colors.textMuted} size={14} />
+                <Text variant="caption">{s.speaker ?? `${SECTION_WORD[currentTargetLang()] ?? SECTION_WORD.de} ${i + 1}`}</Text>
+              </PressableScale>
+            ))}
+          </View>
+        ) : it.segments?.map((s, i) => (
           <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: spacing.xs }}>
             <IconLine variant="body"><PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text, { slow: "listen", voice: cast[i]?.voice, pitch: cast[i]?.pitch })} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale></IconLine>
-            <Text variant="body" style={{ flex: 1 }}>{spoken ? (s.speaker ? `${s.speaker}: ` : "") + s.text : s.text}</Text>
+            <Text variant="body" style={{ flex: 1 }}>{s.text}</Text>
           </View>
         ))}
       </Card>

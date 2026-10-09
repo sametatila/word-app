@@ -34,7 +34,7 @@ import { assessmentRef } from "../ui/ReportLink";
 import { ReportFlag } from "../ui/ReportFlag";
 import { roundReport } from "./roundReport";
 import type { ContentReport, ReportSurface } from "../lib/report";
-import { useNoHints } from "./noHints";
+import { useBlindAnswers, useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
 import { tileSpeech } from "../lib/ttsText";
 import { arrangedRescuable } from "../lib/typedAnswer";
@@ -432,6 +432,15 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
     // Katman her tur bir kez beliriyor; cevap o anki hâliyle.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  /* SINAVDA KATMAN YOK (`BlindAnswers`): sınavın iki turu (yazma, çeviri)
+     hükmü hiç kurmuyor; başka bir tur sınava girerse de cevap burada
+     gösterilmeden tur kapanıyor. */
+  const blind = useBlindAnswers();
+  useEffect(() => {
+    if (blind) onContinue();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  if (blind) return null;
   const hasAnswer = !!(data.answerTokens?.length || (data.why?.diff && wrong) || data.answer);
   return (
     /* SONUÇ DUYURULUYOR: renk ve ikon yalnız görene bir şey söylüyor
@@ -821,8 +830,11 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
   const [typo, setTypo] = useState(false);
   /* Anadilde aynı anlamlı başka kelime (`round.sameGloss`): ceza yok, ayrım söylenir (web aynı). */
   const [same, setSame] = useState(false);
+  /* Sınavda hüküm gösterilmiyor (`BlindAnswers`, QA F-0017). */
+  const blind = useBlindAnswers();
+  const sent = useRef(false);
   function check() {
-    if (fb) return;
+    if (fb || sent.current) return;
     // Boşluksuz yedek: tireli başlıklarda ("t-shirt") tire boşluğa döndüğü için
     // kullanıcının bitişik yazdığı "tshirt" aksi halde reddedilirdi.
     const lang = currentTargetLang();
@@ -846,6 +858,14 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
     const near = !exact && !sameHit && typoNear(val, [word.de, ...(round.alternatives ?? [])]) !== null;
     const ok = exact || near || !!sameHit;
     Keyboard.dismiss();
+    if (blind) {
+      /* Cevap alındı, hüküm yok: ses, titreşim ve katman olmadan sıradaki madde.
+         Yük "Devam"ın verdiğiyle aynı. */
+      sent.current = true;
+      haptic("tap");
+      onDone(ok, { ...miss(ok, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown, ...(near ? { quality: hintShown ? 3 : 4 } : sameHit ? { quality: 3 } : {}) });
+      return;
+    }
     markAnswer(ok, withArtikel(word), near || !!sameHit); // doğru kelimeyi oku (Almanca = cevap); sapma "near"
     /* Hata tipi yazılandan çıkarılıyor - web `typing-game` de aynı: yazım
        hatası ile anlam hatası farklı gerekçe alıyor. */
@@ -873,8 +893,9 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
       />
       <HintRow answer={word.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-        <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
+        <Text variant="h3" color={colors.onPrimary}>{tx(blind ? "exam.answer_and_next" : "common.check")}</Text>
       </PressableScale>
+      {blind ? <BlindNote colors={colors} /> : null}
     </View>
   );
   return (
@@ -1748,6 +1769,11 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
   );
 }
 
+/** Sınavda "Kontrol et"in altında: cevabın neden açılmadığı (web `exam-player` aynı satır). */
+function BlindNote({ colors }: { colors: Palette }) {
+  return <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{tx("exam.answers_at_end")}</Text>;
+}
+
 function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const guest = Boolean(useAuth().user?.guest);
   const s = typeof round.sentence === "object" && round.sentence ? round.sentence : { tr: "", de: "", en: null };
@@ -1781,8 +1807,11 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   useEffect(() => () => { alive.current = false; }, []);
   const roundNow = useRef(round);
   roundNow.current = round;
+  /* Sınavda hüküm gösterilmiyor (`BlindAnswers`, QA F-0017). */
+  const blind = useBlindAnswers();
+  const sent = useRef(false);
   async function check() {
-    if (fb || checking) return;
+    if (fb || checking || sent.current) return;
     const typed = val.trim();
     let m = matchSentence(typed, s.de, alts, currentTargetLang());
     let ok = !!typed && m.quality >= 3 && m.verdict !== "order";
@@ -1841,6 +1870,13 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     }
     judged.current = m;
     Keyboard.dismiss();
+    if (blind) {
+      /* Cevap alındı, hüküm yok: ses, titreşim ve katman olmadan sıradaki madde. */
+      sent.current = true;
+      haptic("tap");
+      onDone(ok, payload(ok));
+      return;
+    }
     markAnswer(ok, s.de, ok && !rescued && m.verdict === "spelling"); // doğru Almanca cümleyi oku; yazım sapması "near"
     /* HÜKÜM TEK İFADE, cevap kendi satırında: "Doğrusu:" iki kez yazılıyordu
        (etiket + `match.wrong` hükmü). Yazım sapmasında katman "neredeyse"
@@ -1878,13 +1914,13 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   }
   /* Yük web `translate-game` ile aynı: kalite hep, hata tipi yalnız yanlışta,
      ipucu kullanıldıysa kalite 3'e kırpılıyor. */
-  const payload = (): DoneExtra => {
+  const payload = (correct = fb?.correct ?? false): DoneExtra => {
     const m = judged.current;
     if (!m) return {};
     return {
       quality: hintShown ? Math.min(m.quality, 3) : m.quality,
       hintUsed: hintShown,
-      ...(fb?.correct ? {} : { errorType: m.errorType ?? "meaning", detail: val.trim().slice(0, 60) }),
+      ...(correct ? {} : { errorType: m.errorType ?? "meaning", detail: val.trim().slice(0, 60) }),
     };
   };
   const inputBlock = (
@@ -1909,8 +1945,9 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
       />
       <WordBankHint answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-        <Text variant="h3" color={colors.onPrimary}>{tx(checking ? "rounds.checking" : "common.check")}</Text>
+        <Text variant="h3" color={colors.onPrimary}>{tx(checking ? "rounds.checking" : blind ? "exam.answer_and_next" : "common.check")}</Text>
       </PressableScale>
+      {blind ? <BlindNote colors={colors} /> : null}
     </View>
   );
   return (
