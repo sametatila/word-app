@@ -12,6 +12,11 @@ import { FlowActions, FlowScreen, ResultHero, StatRow } from "./flow";
  *
  * Görünüm sonuç ekranının kendisi (`ui/flow` `ResultHero` + `StatRow`): öğrenci
  * bitirdiğinde gördüğü şeyi bir sonraki açılışta da görüyor.
+ *
+ * ÜSTTEN BAŞLIYOR, ORTALI DEĞİL (Samet, 2026-10-10): bütün sonuç ekranları üstten başlıyor;
+ * bu ekran `center` ile çiziliyordu ve aynı kutular yeniden açılışta ekranın ortasından
+ * başlıyordu. Ortalı yalnız durum ekranları (yükleniyor, açılamadı). Web
+ * `components/previous-result` zaten üstten. Kapı: `check:parity` "sonuc ekrani ortalanmiyor".
  */
 export function PreviousResult({ eyebrow, result, passed, onRetry, onClose }: {
   eyebrow: string;
@@ -28,7 +33,7 @@ export function PreviousResult({ eyebrow, result, passed, onRetry, onClose }: {
     at && !Number.isNaN(at.getTime()) ? { value: formatDay(at.toISOString()), label: t("prev.last_at") } : null,
   ].filter((x): x is NonNullable<typeof x> => x !== null);
   return (
-    <FlowScreen center actions={<FlowActions primary={{ label: t("prev.retry"), onPress: onRetry }} close={onClose} />}>
+    <FlowScreen actions={<FlowActions primary={{ label: t("prev.retry"), onPress: onRetry }} close={onClose} />}>
       <ResultHero
         eyebrow={eyebrow}
         title={t(passed ? "prev.title_passed" : "prev.title_tried")}

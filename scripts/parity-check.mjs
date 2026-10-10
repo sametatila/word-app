@@ -22429,6 +22429,44 @@ console.log("\n" + C.b + "KILITLI PATIKA ADIMI" + C.off);
   sameList("kilitli adima dokunus", olc("mobile/src/screens/UnitScreen.tsx"), olc("src/components/immersion/unit-pane.tsx"));
 }
 
+/* ── sonuc ekrani ortalanmiyor ──────────────────────────────────────────
+ * Samet (2026-10-10): bitis ekranlari genel olarak tutarli ama bazilarinda
+ * kutular ustten degil ortadan basliyor. Kural: SONUC ekrani (`ResultHero`
+ * cizen `FlowScreen`) ustten baslar; ortali (`center`) yalniz DURUM ekranlari
+ * (yukleniyor, acilamadi, bos). `ui/PreviousResult` ("Onceki sonucun") ortali
+ * ciziliyordu; web karsiligi ustten. Olcu: mobildeki her `<FlowScreen`
+ * etiketinin ozellikleri ve kapanisina kadarki govdesi. */
+console.log("\n" + C.b + "SONUC EKRANI ORTALANMIYOR" + C.off);
+{
+  const dosyalar = [
+    ...readdirSync(new URL("../mobile/src/screens", import.meta.url)).filter((e) => e.endsWith(".tsx")).map((e) => "mobile/src/screens/" + e),
+    ...readdirSync(new URL("../mobile/src/ui", import.meta.url)).filter((e) => e.endsWith(".tsx")).map((e) => "mobile/src/ui/" + e),
+    ...readdirSync(new URL("../mobile/src/game", import.meta.url)).filter((e) => e.endsWith(".tsx")).map((e) => "mobile/src/game/" + e),
+  ];
+  const ortali = [];
+  let sonucSayisi = 0;
+  for (const yol of dosyalar) {
+    const src = read(yol);
+    for (const m of src.matchAll(/<FlowScreen\b/g)) {
+      // Etiketin sonu: suslu parantez derinligi 0 iken ilk ">"
+      let i = m.index + m[0].length, d = 0;
+      for (; i < src.length; i++) {
+        const c = src[i];
+        if (c === "{") d++;
+        else if (c === "}") d--;
+        else if (c === ">" && d === 0) break;
+      }
+      const ozellik = src.slice(m.index, i);
+      const govde = src.slice(i, src.indexOf("</FlowScreen>", i));
+      if (!/<ResultHero\b/.test(govde)) continue;
+      sonucSayisi++;
+      if (/\scenter(\s|=\{true\}|$)/.test(ozellik)) ortali.push(yol.split("/").pop() + ":" + (src.slice(0, m.index).split("\n").length));
+    }
+  }
+  sameList("sonuc ekrani sayisi okunuyor", [sonucSayisi >= 10 ? "okundu" : "OKUNAMADI:" + sonucSayisi], ["okundu"], "olculen", "beklenen");
+  sameList("sonuc ekrani ortalanmiyor", ortali.length ? ortali : ["yok"], ["yok"], "ortali", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
