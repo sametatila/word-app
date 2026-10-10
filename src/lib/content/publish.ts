@@ -195,34 +195,47 @@ export async function publish(packs: Map<string, PackInput>, opts: PublishOption
       .where(and(inArray(contentItems.hash, toGate.slice(i, i + 5_000)), eq(contentItems.gated, false)));
   }
 
+  /*
+    SÜRÜM ÖNCE TASLAK, SATIRLARI YAZILINCA CANLI (QA F-0096, 2026-10-10). Sürüm satırı
+    doğrudan "live" ekleniyordu ve madde satırları ardından 2.000'lik partilerle (saniyeler)
+    yazılıyordu. `pointer()` en yüksek numaralı canlı sürümü seçtiği için o pencerede okuyan
+    süreç YARIM sürümü gördü; `loadPack` boş/eksik paketi süreç ömrü boyunca önbelleğe aldı.
+    18:18–18:25 arasında üç süreçten biri A2 konuşmalarını bulamadı: sohbet turları ve sonuç
+    kaydı 400 döndü, QA'nın bitirdiği konuşma Patika'ya yazılmadı. Artık taslak (goLiveAt boş:
+    zamanlı yayın onu almıyor), satırlar tam yazılınca canlıya alma ve eskiyi emekliye ayırma
+    tek işlemde. Yazım yarıda düşerse taslak silinir: yarım sürüm panelde "canlıya al"ınamasın.
+  */
   const [release] = await db
     .insert(contentReleases)
     .values({
-      status: opts.live === false ? "draft" : "live",
+      status: "draft",
       commit: opts.commit ?? null,
       note: opts.note ?? null,
       publishedBy: opts.by ?? null,
-      goLiveAt: opts.goLiveAt ?? null,
-      liveAt: opts.live === false ? null : new Date(),
+      goLiveAt: opts.live === false ? (opts.goLiveAt ?? null) : null,
+      liveAt: null,
     })
     .returning({ version: contentReleases.version });
 
   const ROWS = 2_000;
-  for (let i = 0; i < prepared.length; i += ROWS) {
-    await db.insert(contentReleaseItems).values(
-      prepared.slice(i, i + ROWS).map((p) => ({
-        release: release.version,
-        pack: p.pack,
-        item: p.item,
-        hash: p.hash,
-      })),
-    );
+  try {
+    for (let i = 0; i < prepared.length; i += ROWS) {
+      await db.insert(contentReleaseItems).values(
+        prepared.slice(i, i + ROWS).map((p) => ({
+          release: release.version,
+          pack: p.pack,
+          item: p.item,
+          hash: p.hash,
+        })),
+      );
+    }
+  } catch (err) {
+    await db.delete(contentReleaseItems).where(eq(contentReleaseItems.release, release.version)).catch(() => {});
+    await db.delete(contentReleases).where(eq(contentReleases.version, release.version)).catch(() => {});
+    throw err;
   }
 
-  /* Eski canlı sürüm ancak yenisinin satırları tam yazıldıktan SONRA
-     emekliye ayrılıyor: arada bir istek gelirse eskisini görsün, yarım
-     yazılmış yenisini değil. */
-  if (opts.live !== false) await retireOthers(release.version);
+  if (opts.live !== false) await goLiveNow(release.version, null);
   invalidatePointer();
 
   return {
@@ -236,11 +249,18 @@ export async function publish(packs: Map<string, PackInput>, opts: PublishOption
   };
 }
 
-async function retireOthers(version: number): Promise<void> {
-  await db
-    .update(contentReleases)
-    .set({ status: "retired" })
-    .where(and(eq(contentReleases.status, "live"), ne(contentReleases.version, version)));
+/** Sürümü canlıya alır ve öbür canlıyı emekliye ayırır — tek işlemde: arada iki canlı ya da hiç canlı yok. */
+async function goLiveNow(version: number, by: string | null): Promise<void> {
+  await db.transaction(async (tx) => {
+    await tx
+      .update(contentReleases)
+      .set({ status: "live", liveAt: new Date(), publishedBy: by ?? sql`${contentReleases.publishedBy}` })
+      .where(eq(contentReleases.version, version));
+    await tx
+      .update(contentReleases)
+      .set({ status: "retired" })
+      .where(and(eq(contentReleases.status, "live"), ne(contentReleases.version, version)));
+  });
 }
 
 /**
@@ -260,11 +280,7 @@ export async function promote(version: number, by: string | null): Promise<boole
     .where(and(eq(contentReleases.version, version), ne(contentReleases.status, "pruned")))
     .limit(1);
   if (!found) return false;
-  await db
-    .update(contentReleases)
-    .set({ status: "live", liveAt: new Date(), publishedBy: by ?? sql`${contentReleases.publishedBy}` })
-    .where(eq(contentReleases.version, version));
-  await retireOthers(version);
+  await goLiveNow(version, by);
   invalidatePointer();
   return true;
 }

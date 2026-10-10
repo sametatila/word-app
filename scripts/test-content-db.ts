@@ -108,6 +108,14 @@ async function main() {
     );
     check("ilk yayın sürüm açıyor", first.version > 0 && !first.unchanged, JSON.stringify(first));
     check("madde sayısı doğru", first.items === 5, `items=${first.items}`);
+    {
+      /* Sürüm satırları yazılınca canlı (QA F-0096): yayın bitince tek canlı var, o da bu sürüm,
+         ve arada kullanılan taslak kalmadı. Yarım sürüm gösterge tarafından hiç seçilmiyor. */
+      const lives = await db.select({ v: contentReleases.version }).from(contentReleases).where(eq(contentReleases.status, "live"));
+      check("yayından sonra tek canlı sürüm, o da yeni", lives.length === 1 && lives[0].v === first.version, JSON.stringify(lives));
+      const [row] = await db.select({ status: contentReleases.status, liveAt: contentReleases.liveAt, goLiveAt: contentReleases.goLiveAt }).from(contentReleases).where(eq(contentReleases.version, first.version));
+      check("yeni sürüm canlı, canlıya alınma zamanı dolu, zamanlı değil", row?.status === "live" && !!row.liveAt && row.goLiveAt === null, JSON.stringify(row));
+    }
 
     /* 2. AYNI İÇERİK: yeni sürüm YOK. Her deploy bir sürüm açsaydı sürüm
        listesi kullanılamaz, geri alma anlamsız olurdu. */

@@ -32,8 +32,22 @@ const packs = new Map<string, Entry>();
 /* Süreç ömrü boyunca duruyor; tavan paket SAYISI, çünkü paketler benzer
    boyda (bir seviyenin konuşmaları ~0,7 MB) ve sayıları otuz civarı. */
 const MAX_PACKS = 40;
+/** Boş paket bu kadar süre önbellekte: yayın yarıdayken okunduysa kendiliğinden düzelsin. */
+const EMPTY_TTL_MS = 30_000;
 
-function remember(key: string, value: unknown[]): void {
+function cached(key: string): unknown[] | undefined {
+  const hit = packs.get(key);
+  if (!hit) return undefined;
+  if (hit.value.length === 0 && Date.now() - hit.at > EMPTY_TTL_MS) {
+    packs.delete(key);
+    return undefined;
+  }
+  return hit.value;
+}
+
+function remember(key: string, loaded: { value: unknown[]; complete: boolean }): void {
+  if (!loaded.complete) return;
+  const value = loaded.value;
   packs.set(key, { at: Date.now(), value });
   while (packs.size > MAX_PACKS) {
     const oldest = packs.keys().next();
@@ -71,15 +85,22 @@ async function loadPackObject(release: number, pack: string): Promise<Record<str
   return Object.keys(out).length ? out : null;
 }
 
-async function loadPack(release: number, pack: string): Promise<unknown[]> {
+/**
+ * `complete`: paketin her gövdesi okundu. Eksik gövdeli ya da boş paket önbelleğe ALINMIYOR
+ * (boş olan en çok `EMPTY_TTL_MS`): yarım yazılmış bir sürümü okuyan süreç onu ömür boyu
+ * tutup her üç istekten birinde "konuşma yok" diyordu (QA F-0096, 2026-10-10; kök neden
+ * `publish`te düzeldi, bu ikinci kat).
+ */
+async function loadPack(release: number, pack: string): Promise<{ value: unknown[]; complete: boolean }> {
   const rows = await db
     .select({ item: contentReleaseItems.item, hash: contentReleaseItems.hash })
     .from(contentReleaseItems)
     .innerJoin(contentItems, eq(contentItems.hash, contentReleaseItems.hash))
     .where(and(eq(contentReleaseItems.release, release), eq(contentReleaseItems.pack, pack)));
-  if (rows.length === 0) return [];
+  if (rows.length === 0) return { value: [], complete: true };
 
   const { gunzipSync } = await import("node:zlib");
+  let complete = true;
   const parse = async (hash: string): Promise<unknown | null> => {
     const found = await body(hash);
     if (!found) return null;
@@ -104,8 +125,9 @@ async function loadPack(release: number, pack: string): Promise<unknown[]> {
   for (const id of ids) {
     const value = await parse(byItem.get(id)!);
     if (value !== null) out.push(value);
+    else complete = false;
   }
-  return out;
+  return { value: out, complete };
 }
 
 /**
@@ -118,12 +140,12 @@ async function loadPack(release: number, pack: string): Promise<unknown[]> {
 export async function packItemsAt<T>(release: number, pack: string): Promise<T[]> {
   if (!release) return [];
   const key = `${release}:${pack}`;
-  const hit = packs.get(key);
-  if (hit) return hit.value as T[];
+  const hit = cached(key);
+  if (hit) return hit as T[];
   try {
-    const value = await loadPack(release, pack);
-    remember(key, value);
-    return value as T[];
+    const loaded = await loadPack(release, pack);
+    remember(key, loaded);
+    return loaded.value as T[];
   } catch (err) {
     console.error("[content] paket okunamadı", pack, err);
     return [];
@@ -135,12 +157,12 @@ export async function packItems<T>(pack: string): Promise<T[]> {
   const { r } = await pointer();
   if (!r) return [];
   const key = `${r}:${pack}`;
-  const hit = packs.get(key);
-  if (hit) return hit.value as T[];
+  const hit = cached(key);
+  if (hit) return hit as T[];
   try {
-    const value = await loadPack(r, pack);
-    remember(key, value);
-    return value as T[];
+    const loaded = await loadPack(r, pack);
+    remember(key, loaded);
+    return loaded.value as T[];
   } catch (err) {
     /* Veritabanı okunamadı: boş dönüyor ve ÖNBELLEĞE ALINMIYOR, yoksa geçici
        bir kesinti paketi süreç ömrü boyunca boş bırakırdı. */
