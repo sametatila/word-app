@@ -166,7 +166,7 @@ async function listMedia(sinceMs) {
     if (!last || Date.parse(last.timestamp) < sinceMs) break;
     next = r.paging?.next || null;
   }
-  return out.filter((m) => Date.parse(m.timestamp) >= sinceMs);
+  return out.filter((m) => m.media_product_type === "REELS" && Date.parse(m.timestamp) >= sinceMs); // fotoğraf/karusel bölüm değil
 }
 
 /** Hesaptaki gönderileri bölümlerle eşleştir; eşleşen satır "published". */
@@ -266,7 +266,8 @@ function mediaUrl(renderId, k) {
 
 /** Kap aç; Instagram MP4'ü (ve kapağı) imzalı adresten olduğu gibi çeker (yeniden kodlama bizde yok). */
 async function createContainer(userId, v) {
-  const params = { media_type: "REELS", video_url: mediaUrl(v.renderId, "mp4"), caption: v.caption, share_to_feed: "true" };
+  // Ses Defne (yapay sentez): elle yüklemedeki "AI info" etiketinin karşılığı; yalnız kap açılırken verilebiliyor
+  const params = { media_type: "REELS", video_url: mediaUrl(v.renderId, "mp4"), caption: v.caption, share_to_feed: "true", is_ai_generated: "true" };
   if (v.cover) params.cover_url = mediaUrl(v.renderId, "kapak");
   const c = await ig("POST", `/${userId}/media`, params);
   return c.id;

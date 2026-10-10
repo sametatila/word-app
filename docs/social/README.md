@@ -264,7 +264,7 @@ login ayarlarının verdiği embed adresinde mesaj/yorum izinleri de var, kullan
 `lernomi`; `.env`'de değil çünkü işçi 7 günde bir yeniler ve dosyaya yazar). Durum `instagram/status.json` (belirteçsiz),
 stüdyo takviminde "Instagram API" etiketi.
 
-- **Eşitleme:** hesabın gönderileri saatinden bölüme eşlenir (gönderi saatten 30 dk önce – 3 sa sonra; her saatte tek
+- **Eşitleme:** hesabın Reels gönderileri (fotoğraf ve karusel sayılmaz) saatinden bölüme eşlenir (gönderi saatten 30 dk önce – 3 sa sonra; her saatte tek
   bölüm), satır "Yayında" olur, bağlantı ve kimlik yazılır. Elle (Instagram uygulamasından ya da Meta zamanlayıcısından)
   paylaşılan video da tanınır.
 - **Metrikler:** `views`, `reach`, `likes`, `comments`, `shares`, `saves`, `interactions`, `avgWatchSec`
@@ -272,7 +272,8 @@ stüdyo takviminde "Instagram API" etiketi.
 - **Otomatik yayın:** Instagram durumu **Otomatik** olan bölüm saatinde yayınlanır (takvimde "N videoyu otomatik yayına
   al", editörde Yayın kutusu). Şart: güncel sürüm onaylı ve videosu sunucuda hazır. Saatten 20 dk önce kap açılır;
   Instagram MP4'ü ve kapağı **imzalı, 3 saatlik adresten** (`/api/studio/file/<üretim>?k=mp4|kapak&exp&sig`,
-  HMAC `BETTER_AUTH_SECRET`) baytı baytına çeker. Bu API dosya yüklemeyi kabul etmiyor: `upload_type=resumable`
+  HMAC `BETTER_AUTH_SECRET`) baytı baytına çeker. Kap `is_ai_generated=true` ile açılır (Defne sesi; elle yüklemedeki
+  "AI info" etiketi, yayından sonra eklenemiyor). Bu API dosya yüklemeyi kabul etmiyor: `upload_type=resumable`
   "The parameter video_url is required" diyor (2026-10-10, v21–v24 denendi). Saat gelince `media_publish`. Video hazır
   değilse saatinde Telegram, 3 saat sonra hâlâ olmadıysa **Yayınlanamadı** + Telegram (yeniden "Otomatik" tekrar dener).
   İki kez yayın yok: yayın adımı satırı "publishing"e kilitler; yarıda kalırsa kabın durumu (`PUBLISHED`/`FINISHED`)
