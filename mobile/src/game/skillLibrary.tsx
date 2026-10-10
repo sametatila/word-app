@@ -440,7 +440,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
                 </View>
               ) : null}
               {/* Yapay zekâ değerlendirmesinin hemen altında "Bildir" (denetim CNT-6). */}
-              <ReportLink kind="assessment" refId={assessmentRef(result.id, `${exerciseId}:mono`)} content={JSON.stringify({ answer: transcript.trim(), ...result })} style={{ alignSelf: "flex-end" }} />
+              <ReportLink kind="assessment" refId={assessmentRef(result.id, `${exerciseId}:mono`)} content={JSON.stringify({ answer: transcript.trim(), ...result })} />
             </>
           ) : (
             <Text variant="body" color={colors.textMuted}>

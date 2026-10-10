@@ -42,12 +42,22 @@ export function assessmentRef(id: unknown, fallback: string): string {
  * yerde aynı biçimde tanıyor. Görünen parça küçük; dokunma alanı dolgu +
  * `hitSlop` ile 44pt'yi geçiyor. Etiket tek satır ve daralmıyor: dar sonuç
  * katmanında "Devam" daralıyor, bağlantı bölünmüyor.
+ *
+ * YERİ HER YERDE BAŞTA (sol uç, 2026-10-10, Samet: "bilinçli tasarım değil,
+ * tutarsız"). Soru açıklamasının, sınav dökümünün, kelime kartının altında
+ * sağda; sohbet balonunun altında solda; web'de çoğunlukla solda, bazı
+ * yerlerde ortadaydı. Kural: bildirdiği içeriğin ALTINDA, sol başta; cevap
+ * çubuğunda Devam'ın solunda (`inline`, satırın ilk öğesi). Hizayı bileşen
+ * veriyor, çağıran ekran vermiyor (`check:parity` "BILDIR BASTA"). Tek
+ * istisna yürüyüş: tek odaklı, ortalı kartta Atla'nın yerinde.
  */
-export function ReportButton({ onPress, label, style }: {
+export function ReportButton({ onPress, label, style, inline }: {
   onPress: () => void;
   /** Ekran okuyucu adı. */
   label: string;
   style?: StyleProp<ViewStyle>;
+  /** Satır içinde (yan yana öğelerle): kendi hizasını vermiyor. Varsayılan: sütunda sol başta. */
+  inline?: boolean;
 }) {
   const { colors } = useTheme();
   return (
@@ -58,7 +68,7 @@ export function ReportButton({ onPress, label, style }: {
       hitSlop={{ ...hitSlopFor(0, 26), left: 8, right: 8 }}
       accessibilityRole="button"
       accessibilityLabel={label}
-      style={[{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingVertical: spacing.xs, flexShrink: 0 }, style]}
+      style={[{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingVertical: spacing.xs, flexShrink: 0 }, inline ? null : { alignSelf: "flex-start" }, style]}
     >
       <ReportIcon color={colors.textFaint} size={13} />
       <Text variant="micro" color={colors.textFaint} numberOfLines={1}>{t("conversation.report")}</Text>
@@ -66,16 +76,17 @@ export function ReportButton({ onPress, label, style }: {
   );
 }
 
-export function ReportLink({ kind, refId, content, style }: {
+export function ReportLink({ kind, refId, content, style, inline }: {
   kind: Exclude<ReportKind, "user">;
   refId: string;
   content: string;
   style?: StyleProp<ViewStyle>;
+  inline?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <ReportButton onPress={() => setOpen(true)} label={t("conversation.report_this_answer")} style={style} />
+      <ReportButton onPress={() => setOpen(true)} label={t("conversation.report_this_answer")} style={style} inline={inline} />
       <ReportSheet visible={open} kind={kind} refId={refId} content={content} onClose={() => setOpen(false)} />
     </>
   );

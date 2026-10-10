@@ -544,7 +544,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
               cevap görüldükten sonra, soru ekranını kalabalıklaştırmadan. Bağlantı
               daralmıyor; dar ekranda Devam daralıyor. */}
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-            {reportFor ? <ReportFlag report={() => reportFor.build(info())} onOpen={reportFor.onOpen} onClose={reportFor.onClose} style={{ paddingHorizontal: spacing.xs }} /> : null}
+            {reportFor ? <ReportFlag report={() => reportFor.build(info())} onOpen={reportFor.onOpen} onClose={reportFor.onClose} style={{ paddingHorizontal: spacing.xs }} inline /> : null}
             <PressableScale onPress={onContinue} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: btnBg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(btnBg, 8)]}>
               <Text variant="h3" color={btnInk}>{tx("common.continue")}</Text>
             </PressableScale>
@@ -1389,14 +1389,13 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   );
   /* "BİLDİR" YENİ KELİME KARTINDA DA (2026-10-06, Samet): kartın sonuç katmanı yok, yani
      öteki turların "Devam" yanındaki bağlantısı burada hiç çıkmıyordu. Kart öğretiyor, cevap
-     yok: bildirim cevapsız gidiyor (`roundReport` null kabul ediyor). Sınavda `ReportFor` yok. */
+     yok: bildirim cevapsız gidiyor (`roundReport` null kabul ediyor). Sınavda `ReportFor` yok.
+     Yeri anlam kartının altı, sol baş (`ui/ReportLink` › `ReportButton` kuralı). */
   const report = reportFor && reveal ? (
-    <View style={{ alignItems: "center", marginTop: spacing.xs }}>
-      <ReportFlag report={() => reportFor.build(null)} onOpen={reportFor.onOpen} onClose={reportFor.onClose} />
-    </View>
+    <ReportFlag style={{ marginTop: spacing.xs }} report={() => reportFor.build(null)} onOpen={reportFor.onOpen} onClose={reportFor.onClose} />
   ) : null;
   return (
-    <RoundShell footer={<>{footer}{report}</>}>
+    <RoundShell footer={footer}>
       <Prompt label={tx(intro ? "rounds.new_word" : "rounds.recall")} big={withArtikel(word)} speakText={withArtikel(word)} sub={typeof round.sentence === "string" ? round.sentence : null} colors={colors} />
       {/*
         TÜR VE ÇOĞUL. Sunucu her kelimede `typ` ve `formen` gönderiyor ve web
@@ -1411,6 +1410,8 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
           <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} deNative={word.beispielDe ?? null} colors={colors} />
         </View>
       ) : null}
+      {/* Kartın "Bildir"i kartın altında, sol başta (her yerdeki yer; eskiden düğmelerin altında ortadaydı). */}
+      {report}
     </RoundShell>
   );
 }

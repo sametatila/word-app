@@ -25,7 +25,8 @@ import { useT } from "@/lib/i18n/client";
  * maddesinde. Sınav sürerken hiçbir yerde yok. Mobil `ReportFlag` aynı yerler.
  *
  * Tek biçim: yapay zekâ çıktılarının altındaki bağlantıyla AYNI görünüş
- * (`ReportLink`). Başlık karosu (`tile`) ve kart içi ikon (`inline`) kalktı.
+ * (`ReportLink`). Başlık karosu (`tile`) ve kart içi ikon kalktı. Yeri de
+ * aynı kural: bildirdiği içeriğin altında sol başta (`ReportLink`).
  */
 export function ReportFlag({
   surface,
@@ -33,6 +34,7 @@ export function ReportFlag({
   content,
   onOpenChange,
   className = "",
+  inline = false,
 }: {
   surface: ReportSurface;
   /** Hedef henüz yoksa (soru yükleniyor) bayrak çizilmiyor. */
@@ -41,6 +43,8 @@ export function ReportFlag({
   /** Pencere açılınca `true`, kapanınca `false` — süreli turlar sayacı bununla durduruyor. */
   onOpenChange?: (open: boolean) => void;
   className?: string;
+  /** Satır içinde (cevap çubuğunda Devam'ın solunda): hizayı satır veriyor. */
+  inline?: boolean;
 }) {
   const t = useT();
   const [open, setOpen] = useState(false);
@@ -59,7 +63,7 @@ export function ReportFlag({
   };
   return (
     <>
-      <ReportLink onClick={openSheet} label={t("report.flag_a11y")} className={className} />
+      <ReportLink onClick={openSheet} label={t("report.flag_a11y")} className={className} inline={inline} />
       <ReportDialog
         open={open}
         kind="content"
@@ -89,16 +93,28 @@ export function ReportFlag({
  * görünen satırı 24'e, `hit-8` dokunma hedefini her eksende 8 px büyütüyor
  * (~40). `whitespace-nowrap` + `shrink-0`: 320 px'te bile etiket bölünmüyor,
  * dar satırda yanındaki öğe daralıyor.
+ *
+ * YERİ HER YERDE BAŞTA (sol uç, 2026-10-10, Samet: "bilinçli tasarım değil,
+ * tutarsız"). Mobilde soru açıklamasının, sınav dökümünün, kelime kartının
+ * altında sağdaydı, sohbet balonunun altında solda; web'de dökümde başlık
+ * satırının sağ ucunda, sonuç ekranında ortadaydı. Kural: bildirdiği içeriğin
+ * ALTINDA, sol başta; cevap çubuğunda Devam'ın solunda (`inline`). Hizayı
+ * bileşen veriyor (`self-start`: esnek sütunda da gerilmiyor), çağıran ekran
+ * vermiyor (`check:parity` "BILDIR BASTA"). Tek istisna yürüyüş: tek odaklı,
+ * ortalı kartta. Mobil `ReportButton` aynı kural.
  */
 export function ReportLink({
   onClick,
   label,
   className = "",
+  inline = false,
 }: {
   onClick: () => void;
   /** Ekran okuyucu adı: ne bildiriliyor. */
   label: string;
   className?: string;
+  /** Satır içinde (yan yana öğelerle): kendi hizasını vermiyor. */
+  inline?: boolean;
 }) {
   const t = useT();
   return (
@@ -107,7 +123,7 @@ export function ReportLink({
       onClick={onClick}
       aria-label={label}
       aria-haspopup="dialog"
-      className={`muted hit-8 inline-flex min-h-6 shrink-0 items-center gap-1 whitespace-nowrap text-micro underline-offset-2 hover:underline ${className}`}
+      className={`muted hit-8 inline-flex min-h-6 shrink-0 items-center gap-1 whitespace-nowrap text-micro underline-offset-2 hover:underline ${inline ? "" : "self-start"} ${className}`}
     >
       <ReportIcon size={12} />
       <span>{t("conversation.report")}</span>

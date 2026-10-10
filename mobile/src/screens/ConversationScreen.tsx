@@ -1356,9 +1356,9 @@ function BubbleView({ b, colors, onReport, conversationId }: { b: Bubble; colors
         {/* Yapay zekâ yanıtının "Bildir"i ve yazılı içeriğin (anlatım adımı,
             senaryo repliği) "Bildir"i aynı görünüm, aynı yer: baloncuğun altı. */}
         {b.report && onReport ? (
-          <ReportButton onPress={() => onReport(b.report!)} label={tx("conversation.report_this_answer")} />
+          <ReportButton onPress={() => onReport(b.report!)} label={tx("conversation.report_this_answer")} inline />
         ) : b.content ? (
-          <ReportFlag report={() => ({ surface: "conversation", target: { type: "conversation", id: conversationId, sub: b.content!.sub }, snapshot: b.content!.snapshot })} />
+          <ReportFlag inline report={() => ({ surface: "conversation", target: { type: "conversation", id: conversationId, sub: b.content!.sub }, snapshot: b.content!.snapshot })} />
         ) : null}
       </View>
     </View>

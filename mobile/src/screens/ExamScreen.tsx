@@ -700,7 +700,7 @@ export function ExamScreen() {
                 {m.why ? <Text variant="caption" color={colors.textMuted}>{m.why}</Text> : null}
                 {/* "Bildir" kaçan maddenin altında: sınav sırasında bildirim yok
                     (dikkat ve sınav düzeni), madde burada, cevabıyla birlikte bildiriliyor. */}
-                {m.id && paper ? <ReportFlag style={{ alignSelf: "flex-end" }} report={{ surface: "exam", target: { type: "exam_item", id: m.id, sub: examSub(paper) }, snapshot: { section: m.section, prompt: m.prompt, correct: m.answer, you: m.given ?? null } }} /> : null}
+                {m.id && paper ? <ReportFlag report={{ surface: "exam", target: { type: "exam_item", id: m.id, sub: examSub(paper) }, snapshot: { section: m.section, prompt: m.prompt, correct: m.answer, you: m.given ?? null } }} /> : null}
               </View>
             )) : null}
             {/* ÖRNEK CEVAP kâğıtta zaten vardı (`task.sample`) ve mobilde hiç

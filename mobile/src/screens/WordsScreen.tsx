@@ -290,7 +290,7 @@ export function WordsScreen() {
                     kendisi (hoparlör, seviye, durum) dar ekranda zaten dolu. */
                 <View style={{ borderTopWidth: 1, borderTopColor: colors.hairline, paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: spacing.xs }}>
                   <ExampleLines de={w.beispiel ?? null} tr={w.beispielTr ?? null} en={w.beispielEn ?? null} deNative={w.beispielDe ?? null} colors={colors} />
-                  <ReportFlag style={{ alignSelf: "flex-end" }} report={{ surface: "words", target: { type: "word", id: String(w.id) }, snapshot: { word: say, meaning: gloss.text, meaningSub: gloss.sub ?? null, grammar: grammarLine(w, w.tr), level: w.niveau, example: w.beispiel ?? null, exampleTr: w.beispielTr ?? null, exampleEn: w.beispielEn ?? null } }} />
+                  <ReportFlag report={{ surface: "words", target: { type: "word", id: String(w.id) }, snapshot: { word: say, meaning: gloss.text, meaningSub: gloss.sub ?? null, grammar: grammarLine(w, w.tr), level: w.niveau, example: w.beispiel ?? null, exampleTr: w.beispielTr ?? null, exampleEn: w.beispielEn ?? null } }} />
                 </View>
               ) : null}
             </View>

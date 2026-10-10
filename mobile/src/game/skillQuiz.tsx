@@ -60,7 +60,7 @@ export function QuestionReport({ n, text, show, snapshot }: { n: number; text: s
   if (!ctx || !show) return null;
   return (
     <ReportFlag
-      style={{ alignSelf: "flex-end", marginTop: spacing.xs }}
+      style={{ marginTop: spacing.xs }}
       report={() => ({ surface: ctx.surface, target: { type: "exercise", id: ctx.id, sub: String(n) }, snapshot: { q: text, ...snapshot() } })}
     />
   );
@@ -771,7 +771,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
             </View>
           ) : null}
           {/* Yapay zekâ değerlendirmesinin hemen altında "Bildir" (denetim CNT-6). */}
-          <ReportLink kind="assessment" refId={assessmentRef(score.id, `${exerciseId}:${n}`)} content={JSON.stringify({ answer: typed.trim(), ...score })} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
+          <ReportLink kind="assessment" refId={assessmentRef(score.id, `${exerciseId}:${n}`)} content={JSON.stringify({ answer: typed.trim(), ...score })} style={{ marginTop: spacing.xs }} />
         </View>
       ) : null}
       {score && score.overall < RUBRIC_PASS_PCT ? (

@@ -100,7 +100,7 @@ export function AssessmentCard({
         </Text>
       ) : null}
       {reportRef ? (
-        <ReportLink kind="assessment" refId={reportRef} content={JSON.stringify({ answer, result })} style={{ alignSelf: "flex-end", marginTop: 2 }} />
+        <ReportLink kind="assessment" refId={reportRef} content={JSON.stringify({ answer, result })} style={{ marginTop: 2 }} />
       ) : null}
     </View>
   );

@@ -139,6 +139,11 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           </motion.p>
         ) : null}
       </motion.div>
+      {/* Kartın "Bildir"i kartın altında, sol başta (her yerdeki yer; eskiden
+          düğmelerin altında ortadaydı). Mobil `IntroRound` aynı. */}
+      {report && revealed ? (
+        <ReportFlag className="mt-2" surface={report.surface} target={report.target} content={report.content} onOpenChange={report.onOpenChange} />
+      ) : null}
 
       <div className="mx-auto mt-4 w-full max-w-md space-y-2">
         <button
@@ -182,11 +187,6 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         >
           {tx(skipping ? "rounds.saving" : "rounds.already_known")}
         </button>
-        {report && revealed ? (
-          <div className="flex justify-center">
-            <ReportFlag surface={report.surface} target={report.target} content={report.content} onOpenChange={report.onOpenChange} />
-          </div>
-        ) : null}
       </div>
     </GameShell>
   );

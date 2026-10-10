@@ -304,23 +304,22 @@ export function WeeklyPlayer() {
             <div className="flex flex-col gap-3">
               {wrong.map((w) => (
                 <div key={w.itemId} className="flex flex-col gap-1 border-b pb-3 last:border-b-0 last:pb-0" style={{ borderColor: "var(--hairline)" }}>
-                  <div className="flex items-center gap-2">
-                    <span className="min-w-0 flex-1 text-micro uppercase tracking-eyebrow muted">{t(BLOCK_KEY[w.block])}</span>
-                    {/* İçerik bildirimi YALNIZ DÖKÜMDE: quiz cevaptan sonra geri
-                        bildirim göstermiyor (şık seçilince sıradaki madde), yani
-                        maddenin "cevaptan sonrası" burası. Yanlış anahtar da
-                        çoğu zaman burada fark ediliyor. */}
-                    <ReportFlag
-                      surface="quiz"
-                      target={{ type: "quiz_item", id: w.itemId }}
-                      content={() => {
-                        const item = quiz?.items.find((x) => x.id === w.itemId);
-                        const stimulus = item?.ref ? quiz?.stimuli.find((x) => x.id === item.ref) : undefined;
-                        return snapshot({ item, stimulus, given: picked[w.itemId], why: w.why, review: true });
-                      }}
-                    />
-                  </div>
+                  <span className="text-micro uppercase tracking-eyebrow muted">{t(BLOCK_KEY[w.block])}</span>
                   <p className="text-body">{w.why}</p>
+                  {/* İçerik bildirimi YALNIZ DÖKÜMDE: quiz cevaptan sonra geri
+                      bildirim göstermiyor (şık seçilince sıradaki madde), yani
+                      maddenin "cevaptan sonrası" burası. Yanlış anahtar da
+                      çoğu zaman burada fark ediliyor. Gerekçenin altında, sol
+                      başta (mobil `WeeklyScreen` aynı yer). */}
+                  <ReportFlag
+                    surface="quiz"
+                    target={{ type: "quiz_item", id: w.itemId }}
+                    content={() => {
+                      const item = quiz?.items.find((x) => x.id === w.itemId);
+                      const stimulus = item?.ref ? quiz?.stimuli.find((x) => x.id === item.ref) : undefined;
+                      return snapshot({ item, stimulus, given: picked[w.itemId], why: w.why, review: true });
+                    }}
+                  />
                 </div>
               ))}
             </div>

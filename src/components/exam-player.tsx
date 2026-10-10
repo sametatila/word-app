@@ -1402,19 +1402,9 @@ function Result({
             <ul className="space-y-2.5">
               {misses.map((m, i) => (
                 <li key={i} className="border-t pt-2 text-body" style={{ borderColor: "var(--hairline)" }}>
-                  <div className="flex items-center gap-2">
-                    <p className="muted min-w-0 flex-1 text-caption">
-                      <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
-                    </p>
-                    {/* İçerik bildirimi YALNIZ DÖKÜMDE: sınav sürerken bildirim
-                        yok (dikkat sınavda); cevap anahtarı hatası da çoğu
-                        zaman burada fark ediliyor. */}
-                    <ReportFlag
-                      surface="exam"
-                      target={m.target}
-                      content={() => snapshot({ section: m.section, prompt: m.prompt, answer: m.answer, given: m.given, review: true })}
-                    />
-                  </div>
+                  <p className="muted text-caption">
+                    <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
+                  </p>
                   <p className="mt-0.5">{m.prompt}</p>
                   <p className="mt-1 font-semibold" lang={course} style={{ color: "var(--color-mint)" }}>
                     {m.answer}
@@ -1430,6 +1420,16 @@ function Result({
                     </p>
                   ) : null}
                   {m.why ? <p className="muted mt-1 text-caption">{m.why}</p> : null}
+                  {/* İçerik bildirimi YALNIZ DÖKÜMDE: sınav sürerken bildirim
+                      yok (dikkat sınavda); cevap anahtarı hatası da çoğu
+                      zaman burada fark ediliyor. Maddenin altında, sol başta
+                      (mobil `ExamScreen` aynı yer). */}
+                  <ReportFlag
+                    className="mt-1"
+                    surface="exam"
+                    target={m.target}
+                    content={() => snapshot({ section: m.section, prompt: m.prompt, answer: m.answer, given: m.given, review: true })}
+                  />
                 </li>
               ))}
             </ul>

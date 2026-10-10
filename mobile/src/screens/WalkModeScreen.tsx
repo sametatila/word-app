@@ -1005,9 +1005,12 @@ export function WalkModeScreen() {
   /* İÇERİK BİLDİRİMİ — kelime kartında, hüküm göründükten sonra (ilerleme
      satırında bayrak yok) ve duraklatılmışken. Sayfa açılırken tur duraklıyor
      (ses ve mikrofon sayfanın arkasında sürmesin); "Devam et" ile kalınan
-     yerden. Anlık görüntü dokunulan anın hâli: `pauseWalk` hükmü silmeden önce. */
+     yerden. Anlık görüntü dokunulan anın hâli: `pauseWalk` hükmü silmeden önce.
+     `inline`: Bildir'in sol baş kuralının tek istisnası; yürüyüş kartı tek odaklı ve
+     ortalı, bağlantı Atla'nın yerinde ya da duraklama satırında kelimenin yanında. */
   const wordReport = () => (
     <ReportFlag
+      inline
       onOpen={canPause ? pauseWalk : undefined}
       report={() => ({ surface: "walk", target: { type: "word", id: String(curWord.id), game: "walk" }, snapshot: { word: withArtikel(curWord), meaning: curGloss.text, meaningSub: curGloss.sub ?? null, heard: heard || null, verdict: verdict ?? null } })}
     />

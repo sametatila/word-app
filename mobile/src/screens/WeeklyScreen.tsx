@@ -271,7 +271,7 @@ export function WeeklyScreen() {
                   <Text variant="micro" color={colors.textMuted}>{t(BLOCK_KEY[w.block]).toLocaleUpperCase(dateLocale())}</Text>
                   <Text variant="body">{w.why}</Text>
                   {/* Maddenin "Bildir"i gerekçenin altında (cevap görüldükten sonra). */}
-                  <ReportFlag style={{ alignSelf: "flex-end" }} report={() => ({ surface: "quiz", target: { type: "quiz_item", id: w.itemId }, snapshot: (() => { const q = quiz?.items.find((x) => x.id === w.itemId); return { block: w.block, stem: q?.stem ?? null, options: q?.options, correct: q?.options[w.answer] ?? w.answer, you: w.chosen == null ? null : q?.options[w.chosen] ?? w.chosen, why: w.why }; })() })} />
+                  <ReportFlag report={() => ({ surface: "quiz", target: { type: "quiz_item", id: w.itemId }, snapshot: (() => { const q = quiz?.items.find((x) => x.id === w.itemId); return { block: w.block, stem: q?.stem ?? null, options: q?.options, correct: q?.options[w.answer] ?? w.answer, you: w.chosen == null ? null : q?.options[w.chosen] ?? w.chosen, why: w.why }; })() })} />
                 </View>
               ))}
             </View>

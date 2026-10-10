@@ -1109,7 +1109,7 @@ function OpenResult({ score, colors, refId, answer }: { score: OpenScore; colors
         </Text>
       ))}
       <AiNotice variant="output" style={{ marginTop: spacing.sm }} />
-      <ReportLink kind="assessment" refId={refId} content={JSON.stringify({ answer, result: score })} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
+      <ReportLink kind="assessment" refId={refId} content={JSON.stringify({ answer, result: score })} style={{ marginTop: spacing.xs }} />
     </View>
   );
 }
@@ -1495,7 +1495,7 @@ function ResultView({
                         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{scored?.explain ?? ""}</Text>
                         {/* Maddenin "Bildir"i dökümde, doğru cevap ve açıklamanın altında. */}
                         <ReportFlag
-                          style={{ alignSelf: "flex-end", marginTop: spacing.xs }}
+                          style={{ marginTop: spacing.xs }}
                           report={() => ({ surface: "mock", target: { type: "mock_task", id: task.id, sub: String(it.no) }, snapshot: { prompt: task.prompt, item: it.text, kind: it.kind, correct: scored?.expected ?? null, explain: scored?.explain ?? null, you: givenLabel, wasCorrect: ok } })}
                         />
                       </View>

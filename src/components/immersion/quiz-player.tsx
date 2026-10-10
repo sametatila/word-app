@@ -168,21 +168,19 @@ export function ImmersionQuizPlayer({
               { value: formatPercent(PASS_PCT, lang), label: t("quiz.stat_pass") },
             ]}
           />
+          {/* İçerik bildirimi, adımın BÜTÜNÜ için: sonucun dibinde, eylemlerin
+              üstünde, sol başta (mobil `ItemScreen` aynı yer). Sorular cevaptan
+              sonra kendi açıklamalarının altında ayrıca bildiriliyor (`QuestionList`). */}
+          <ReportFlag
+            surface="path"
+            target={{ type: "exercise", id: itemId }}
+            content={() => snapshot({ title, kind, questions: questions.length, correct: score })}
+          />
           {passed ? (
             <FlowActions primary={{ label: t("common.close"), href: "/immersion" }} tertiary={{ label: t("quiz.try_again"), onClick: retry }} />
           ) : (
             <FlowActions primary={{ label: t("quiz.try_again"), onClick: retry }} close="/immersion" />
           )}
-          {/* İçerik bildirimi, adımın BÜTÜNÜ için: sonucun dibinde. Sorular
-              cevaptan sonra kendi açıklamalarının altında ayrıca bildiriliyor
-              (`QuestionList`). */}
-          <div className="flex justify-center">
-            <ReportFlag
-              surface="path"
-              target={{ type: "exercise", id: itemId }}
-              content={() => snapshot({ title, kind, questions: questions.length, correct: score })}
-            />
-          </div>
         </FlowColumn>
       )}
     </div>

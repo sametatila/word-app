@@ -214,6 +214,7 @@ export function RoundSheet({
                     content={report.content}
                     onOpenChange={report.onOpenChange}
                     className="px-1"
+                    inline
                   />
                 ) : null}
                 <ContinueButton tone={tone} onContinue={onContinue} />

@@ -14,18 +14,21 @@ import { snapshotText, targetRef, type ContentReport } from "../lib/report";
  * göze batıyordu ve sınav sırasında dikkat dağıtıyordu. Artık sonuç
  * katmanında "Devam"ın solunda, alıştırmanın geri bildirim alanında, sonuç ve
  * gözden geçirme listelerinde duruyor. Görünümü yapay zekâ çıktısının
- * "Bildir"iyle (`ReportLink`) aynı düğme: `ReportButton`.
+ * "Bildir"iyle (`ReportLink`) aynı düğme: `ReportButton`; yeri de onunla
+ * aynı kural (içeriğin altında sol başta, cevap çubuğunda `inline`).
  *
  * `report` bir fonksiyon da olabilir; anlık görüntü (kullanıcının cevabı
  * dahil) ANCAK dokununca kuruluyor. Kart durumunu kendisi tutuyor.
  */
-export function ReportFlag({ report, onOpen, onClose, style }: {
+export function ReportFlag({ report, onOpen, onClose, style, inline }: {
   report: ContentReport | (() => ContentReport);
   /** Sayfa açılırken (ör. yürüyüş turunu ya da süreli turun sayacını duraklatmak için). */
   onOpen?: () => void;
   /** Sayfa kapanınca (gönderildi ya da vazgeçildi): süreli turun sayacı kaldığı yerden. */
   onClose?: () => void;
   style?: StyleProp<ViewStyle>;
+  /** Satır içinde (cevap çubuğu, balonun eylem satırı): hizayı satır veriyor. */
+  inline?: boolean;
 }) {
   const [open, setOpen] = useState<ContentReport | null>(null);
   return (
@@ -34,6 +37,7 @@ export function ReportFlag({ report, onOpen, onClose, style }: {
         onPress={() => { onOpen?.(); setOpen(typeof report === "function" ? report() : report); }}
         label={t("report.flag_a11y")}
         style={style}
+        inline={inline}
       />
       <ReportSheet
         visible={!!open}

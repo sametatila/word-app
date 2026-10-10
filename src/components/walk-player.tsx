@@ -1582,7 +1582,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
   };
   const reportWord = (className: string) =>
     prompt ? (
-      <ReportLink onClick={openWordReport} label={t("report.flag_a11y")} className={className} />
+      /* `inline`: sol baş kuralının tek istisnası (`report-flag` `ReportLink`); yürüyüş kartı ortalı. */
+      <ReportLink onClick={openWordReport} label={t("report.flag_a11y")} className={className} inline />
     ) : null;
 
   if (status === "ready" || status === "paused") {

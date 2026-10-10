@@ -267,6 +267,18 @@ export function ResultCard({
         {state.phase === "offline" ? <FlowNote tone="warn" icon={<OfflineIcon size={16} />} text={t("skillp.saved_offline")} /> : null}
         {state.phase === "saved" && state.repeat && state.xpGained === 0 ? <FlowNote text={t("item.repeat_note")} /> : null}
         {children}
+        {/* İçerik bildirimi, egzersizin BÜTÜNÜ için (metin, ses, yönerge):
+            egzersiz bittikten sonra, sonucun gövdesinin dibinde, sol başta
+            (mobil `ItemScreen` aynı yer). Tek tek sorular kendi açıklamalarının
+            altında ayrıca bildiriliyor (`quiz`). Başlıktaki karo kalktı: soru
+            çözülürken dikkati bölüyordu. */}
+        {exercise ? (
+          <ReportFlag
+            surface={surface}
+            target={{ type: "exercise", id: exercise.id }}
+            content={() => snapshot({ title: exercise.title, skill: exercise.skill, level: exercise.level })}
+          />
+        ) : null}
         {/* Sıradaki: Beceriler kütüphanesinden gelindiyse aynı seviye ve
             becerideki bitmemiş bir sonraki egzersiz. Öğrenci hub'a dönüp
             aramasın; "todo" burada, bitirdiği anda. (Mobilde bu bağlantı yok.) */}
@@ -289,19 +301,6 @@ export function ResultCard({
         ) : (
           <FlowActions primary={retry ?? back} close={retry ? back.href : null} />
         )}
-        {/* İçerik bildirimi, egzersizin BÜTÜNÜ için (metin, ses, yönerge):
-            egzersiz bittikten sonra, sonucun dibinde. Tek tek sorular kendi
-            açıklamalarının altında ayrıca bildiriliyor (`quiz`). Başlıktaki
-            karo kalktı: soru çözülürken dikkati bölüyordu. */}
-        {exercise ? (
-          <div className="flex justify-center">
-            <ReportFlag
-              surface={surface}
-              target={{ type: "exercise", id: exercise.id }}
-              content={() => snapshot({ title: exercise.title, skill: exercise.skill, level: exercise.level })}
-            />
-          </div>
-        ) : null}
       </FlowColumn>
     </motion.div>
   );

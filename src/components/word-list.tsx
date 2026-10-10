@@ -381,15 +381,6 @@ export function WordList({
                         {typLabel(r.typ, r.tr, lang)}
                         {note ? ` · ${note}` : ""}
                       </span>
-                      {/* İçerik bildirimi: açılan kelime kartının eylem satırında,
-                          sağ uçta ("⚑ Bildir", uygulamanın tek bildirim biçimi). */}
-                      <ReportFlag
-                        surface="words"
-                        target={{ type: "word", id: String(r.id) }}
-                        content={() =>
-                          snapshot({ de: r.de, artikel: r.artikel, meaning: meaning?.text, sub: meaning?.sub, formen: r.formen, example, exampleGloss: exampleGloss?.text })
-                        }
-                      />
                     </div>
                     {example ? (
                       <>
@@ -405,6 +396,16 @@ export function WordList({
                       {dueLabel(r.dueAt, tx) ?? tx("words.not_studied")}
                       {r.lapses ? ` · ${tx("words.n_lapses", { n: r.lapses })}` : ""}
                     </p>
+                    {/* İçerik bildirimi: açılan kelime kartının dibinde, sol başta
+                        (uygulamanın tek bildirim yeri; mobil `WordsScreen` aynı). */}
+                    <ReportFlag
+                      className="mt-1"
+                      surface="words"
+                      target={{ type: "word", id: String(r.id) }}
+                      content={() =>
+                        snapshot({ de: r.de, artikel: r.artikel, meaning: meaning?.text, sub: meaning?.sub, formen: r.formen, example, exampleGloss: exampleGloss?.text })
+                      }
+                    />
                   </motion.div>
                 ) : null}
               </motion.li>

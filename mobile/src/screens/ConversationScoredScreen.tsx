@@ -563,32 +563,32 @@ export function ConversationScoredScreen() {
         showsVerticalScrollIndicator={false}
       >
         {turns.map((turn, i) => (
-          <View
-            key={i}
-            style={{
-              alignSelf: turn.role === "user" ? "flex-end" : "flex-start",
-              maxWidth: "88%",
-              backgroundColor: turn.role === "user" ? colors.primary : colors.surface2,
-              borderRadius: radii.lg,
-              /* Kuyruk köşesi konuşan tarafa bakıyor - `CoachBubble` ve konuşma
-                 balonlarıyla aynı biçim. */
-              ...(turn.role === "user" ? { borderBottomRightRadius: radii.sm } : { borderBottomLeftRadius: radii.sm }),
-              paddingHorizontal: spacing.md,
-              paddingVertical: 10,
-              marginBottom: spacing.sm,
-            }}
-          >
-            <Text variant="body" color={turn.role === "user" ? colors.onPrimary : colors.text}>{turn.content}</Text>
+          /* Balon + altındaki "Bildir" bir arada: bağlantı balonun İÇİNDE değil,
+             altında, sol başta (sohbet `ConversationScreen` ve web aynı yer). */
+          <View key={i} style={{ alignSelf: turn.role === "user" ? "flex-end" : "flex-start", maxWidth: "88%", marginBottom: spacing.sm }}>
+            <View
+              style={{
+                backgroundColor: turn.role === "user" ? colors.primary : colors.surface2,
+                borderRadius: radii.lg,
+                /* Kuyruk köşesi konuşan tarafa bakıyor - `CoachBubble` ve konuşma
+                   balonlarıyla aynı biçim. */
+                ...(turn.role === "user" ? { borderBottomRightRadius: radii.sm } : { borderBottomLeftRadius: radii.sm }),
+                paddingHorizontal: spacing.md,
+                paddingVertical: 10,
+              }}
+            >
+              <Text variant="body" color={turn.role === "user" ? colors.onPrimary : colors.text}>{turn.content}</Text>
+            </View>
             {/* Yapay zekâ yanıtının altında "Bildir" (denetim CNT-6; konuşma
                 sohbetindekiyle aynı bağlantı ve ref biçimi, sınav eki ile).
                 İlk balon (i = 0) konuşmanın yazılı açılış cümlesi, model çıktısı
                 değil: onun "Bildir"i İÇERİK bildirimi (senaryo), aynı görünüm ve yer.
                 Süre satırında bayrak yok. */}
             {turn.role === "assistant" && i > 0 ? (
-              <ReportLink kind="chat" refId={`${conversation.id}:scored:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
+              <ReportLink kind="chat" refId={`${conversation.id}:scored:${i}`} content={turn.content} style={{ marginTop: spacing.xs }} />
             ) : turn.role === "assistant" ? (
               <ReportFlag
-                style={{ alignSelf: "flex-end", marginTop: spacing.xs }}
+                style={{ marginTop: spacing.xs }}
                 report={() => ({ surface: "scored", target: { type: "conversation", id: conversation.id, sub: "0" }, snapshot: { title: conversation.title, opener: turn.content } })}
               />
             ) : null}

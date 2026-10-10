@@ -531,7 +531,7 @@ export function ItemScreen() {
       {/* Alıştırmanın BÜTÜNÜ (metin, ses, açıklama) sonuçta bildiriliyor; tek
           tek sorular cevaplandıktan sonra kendi geri bildirimlerinin altında
           (`QuestionReport`). Başlıkta bayrak yok. */}
-      <ReportFlag style={{ alignSelf: "flex-end" }} report={() => ({ surface: reportAs.surface, target: { type: "exercise", id: exercise.id }, snapshot: { title: exercise.title, skill: exercise.skill, level: exercise.level, intro: exercise.intro, score: pct } })} />
+      <ReportFlag report={() => ({ surface: reportAs.surface, target: { type: "exercise", id: exercise.id }, snapshot: { title: exercise.title, skill: exercise.skill, level: exercise.level, intro: exercise.intro, score: pct } })} />
     </View>
   );
   /* Sonuçtan çıkış "Kapat" (2026-09-30; "Patikaya dön" / "Becerilere dön"

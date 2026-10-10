@@ -22467,6 +22467,61 @@ console.log("\n" + C.b + "SONUC EKRANI ORTALANMIYOR" + C.off);
   sameList("sonuc ekrani ortalanmiyor", ortali.length ? ortali : ["yok"], ["yok"], "ortali", "beklenen");
 }
 
+/* BILDIR BASTA (2026-10-10, Samet: "bilinçli tasarım değil, tutarsız").
+ * "⚑ Bildir" mobilde soru açıklamasının, sınav dökümünün, kelime kartının
+ * altında sağdaydı, sohbet balonunun altında solda; web'de dökümde başlık
+ * satırının sağ ucunda, sonuç ekranında ortadaydı. Kural: bildirdiği içeriğin
+ * altında SOL BASTA; hizayı bileşen veriyor (mobil `ReportButton`
+ * `alignSelf: "flex-start"`, web `ReportLink` `self-start`). Çağıran ekran
+ * hizayı değiştiremez; satır içi (`inline`: cevap çubuğunda Devam'ın solu,
+ * sohbet balonunun eylem satırı) yalnız listedeki dosyalarda. Tek istisna
+ * yürüyüş: ortalı, tek odaklı kart. Ölçü: her `<ReportFlag|ReportLink|ReportButton`
+ * etiketinin özellikleri ve hemen önündeki üç satır (sarmalayıcı). */
+console.log("\n" + C.b + "BILDIR BASTA" + C.off);
+{
+  const walk = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      if (e.isDirectory()) walk(d + "/" + e.name, out);
+      else if (e.name.endsWith(".tsx")) out.push(d + "/" + e.name);
+    }
+    return out;
+  };
+  const tanim = new Set(["src/components/report-flag.tsx", "mobile/src/ui/ReportFlag.tsx", "mobile/src/ui/ReportLink.tsx"]);
+  const satirIci = new Set([
+    "src/components/games/round-sheet.tsx", "mobile/src/game/rounds.tsx", // cevap çubuğu: Devam'ın solu
+    "mobile/src/screens/ConversationScreen.tsx", // balonun eylem satırı: Dinle · Bildir
+    "src/components/walk-player.tsx", "mobile/src/screens/WalkModeScreen.tsx", // istisna: ortalı yürüyüş kartı
+  ]);
+  const hizaOzellik = /alignSelf|alignItems|marginLeft: "auto"|\b(self-(end|center)|ml-auto|mx-auto|justify-(center|end)|text-(center|right))\b/;
+  const hizaSarmal = /alignItems: "(center|flex-end)"|justifyContent: "(center|flex-end)"|\b(justify-(center|end)|items-end|text-(center|right))\b/;
+  const bozuk = [];
+  let sayi = 0;
+  for (const yol of [...walk("src/components"), ...walk("mobile/src")]) {
+    if (tanim.has(yol)) continue;
+    const src = read(yol);
+    for (const m of src.matchAll(/<Report(Flag|Link|Button)\b/g)) {
+      let i = m.index + m[0].length, d = 0;
+      for (; i < src.length; i++) {
+        const c = src[i];
+        if (c === "{") d++;
+        else if (c === "}") d--;
+        else if (c === ">" && d === 0) break;
+      }
+      sayi++;
+      const ozellik = src.slice(m.index, i);
+      const satir = src.slice(0, m.index).split("\n").length;
+      const yer = yol.split("/").pop() + ":" + satir;
+      const once = src.slice(0, m.index).split("\n").slice(-4, -1).join("\n");
+      const inline = /\sinline(\s|=\{true\}|$)/.test(ozellik);
+      if (hizaOzellik.test(ozellik)) bozuk.push(yer + " hizayi ekran veriyor");
+      if (inline && !satirIci.has(yol)) bozuk.push(yer + " inline listede degil");
+      if (!satirIci.has(yol) && hizaSarmal.test(once)) bozuk.push(yer + " ortali/sagda sarmalayici");
+    }
+  }
+  sameList("bildir sayisi okunuyor", [sayi >= 25 ? "okundu" : "OKUNAMADI:" + sayi], ["okundu"], "olculen", "beklenen");
+  sameList("bildir sol basta", bozuk.length ? bozuk : ["yok"], ["yok"], "bozuk", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
