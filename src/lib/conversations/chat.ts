@@ -625,9 +625,8 @@ async function* streamSystem(
   /** Yeniden üretimde sıra çevriliyor: aynı model aynı turda aynı hatayı tekrar ediyor (QA F-0002). */
   rotate = 0,
 ): AsyncGenerator<string> {
-  const base = chatProviders();
-  const k = base.length ? rotate % base.length : 0;
-  const providers = [...base.slice(k), ...base.slice(0, k)];
+  // Döndürme yalnız hazır sağlayıcılar arasında (`chatProviders`): soğumadaki yeniden başa gelmesin.
+  const providers = chatProviders(rotate);
   if (!providers.length) throw new Error("Sağlayıcı tanımlı değil");
   const failures: string[] = [];
 

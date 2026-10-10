@@ -62,6 +62,18 @@ async function main() {
   check("Cloudflare'den kaçınınca önce Groq", names("cloudflare") === "groq,cloudflare", names("cloudflare"));
   check("Groq'tan kaçınınca önce Cloudflare", names("groq") === "cloudflare,groq", names("groq"));
 
+  /* Yeniden üretimde döndürme (QA F-0002) yalnız hazır sağlayıcılar arasında: kotası dolup soğumaya
+     alınan Groq her yeniden denemede başa gelip kesin 429 alıyordu (2026-10-10). */
+  console.log("\nYeniden üretimde döndürme ve soğuma");
+  const { rateLimited } = await import("../src/lib/chat-providers");
+  const rot = (r: number, now?: number) => chatProviders(r, now).map((p) => p.name).join(",");
+  check("döndürme yoksa sıra aynı", rot(0) === "cloudflare,groq", rot(0));
+  check("ikinci deneme öteki modelden", rot(1) === "groq,cloudflare", rot(1));
+  rateLimited("groq", new Response(null, { status: 429, headers: { "retry-after": "600" } }));
+  check("soğumadaki Groq döndürmede başa gelmiyor", rot(1) === "cloudflare,groq", rot(1));
+  check("soğumadaki Groq listeden düşmüyor (sonda)", rot(0) === "cloudflare,groq", rot(0));
+  check("soğuma bitince döndürme yine öteki modelden", rot(1, Date.now() + 3_600_000) === "groq,cloudflare", rot(1, Date.now() + 3_600_000));
+
   console.log("\nDeepgram kredisi bitince");
   const { noteDeepgramFailure, deepgramResting } = await import("../src/lib/stt");
   const t0 = 1_000_000;

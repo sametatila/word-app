@@ -202,7 +202,7 @@ function coolDown(name: ProviderName, ms: number): void {
   cooldownUntil.set(name, Date.now() + ms);
 }
 
-function rateLimited(name: ProviderName, res: Response): void {
+export function rateLimited(name: ProviderName, res: Response): void {
   const n = (strikes.get(name) ?? 0) + 1;
   strikes.set(name, n);
   const zeroQuota = res.headers.get("x-ratelimit-limit-req-minute") === "0";
@@ -547,13 +547,18 @@ function build(name: ProviderName): Provider {
  *
  * `CHAT_PROVIDER` verilmişse o başa alınır; anahtarı yoksa ya da tanınmıyorsa
  * yok sayılır — yanlış yazılmış bir değişken sohbeti tamamen kapatmasın.
+ *
+ * `rotate`: yeniden üretimde başka modelden başlamak için (`streamSystem`, QA F-0002). YALNIZ hazır
+ * sağlayıcılar arasında döner; soğumadaki sonda kalır. Eskiden döndürme çağıranda bütün listeye
+ * uygulanıyordu ve günlük kotası dolup soğumaya alınan Groq her yeniden denemede başa geliyordu:
+ * 24 saatte 73 Groq çağrısının 50'si 429 (2026-10-10, Telegram `budget:groq-rejected`).
  */
-export function chatProviders(): Provider[] {
+export function chatProviders(rotate = 0, now = Date.now()): Provider[] {
   const ordered = chatChainNames();
-  const now = Date.now();
   const ready = ordered.filter((n) => (cooldownUntil.get(n) ?? 0) <= now);
   const cooling = ordered.filter((n) => (cooldownUntil.get(n) ?? 0) > now);
-  return [...ready, ...cooling].map(build);
+  const k = ready.length ? rotate % ready.length : 0;
+  return [...ready.slice(k), ...ready.slice(0, k), ...cooling].map(build);
 }
 
 /** Yapılandırılmış zincir, soğumadan bağımsız sırayla (`CHAT_PROVIDER` başa alınmış). */
