@@ -1,7 +1,8 @@
-import { CORRECTION_MARK, breakInlineMarkers } from "@/lib/chat-format";
+import { CORRECTION_MARK, SUGGESTION_MARK, breakInlineMarkers } from "@/lib/chat-format";
 import { foldSentence } from "@/lib/sentence-match";
 import MASS_NOUNS from "./mass-nouns.generated.json";
 import NOUN_GENDER from "./noun-gender.generated.json";
+import { fixPerfektAux } from "./perfekt-aux";
 
 /**
  * Düzeltme satırı süzgeci — sunucuda, akış öğrenciye gitmeden önce.
@@ -414,7 +415,7 @@ export function filterCorrectionLines(text: string, said: string, ctx: FixContex
     if (!verdict.keep) dropped.push(verdict.reason);
     return verdict.keep;
   });
-  return { text: kept.join("\n"), dropped };
+  return { text: kept.map((l) => (ctx.lang === "en" ? l : repairModelSentence(l))).join("\n"), dropped };
 }
 
 /** Satır düzeltme satırı değilse dokunulmuyor; ayrıştırıcıyla aynı tanım (`trim` + işaret). */
@@ -643,6 +644,24 @@ export async function* splitInlineMarkers(source: AsyncIterable<string>): AsyncG
  * Silinen satırın nedeni `onDrop`a gidiyor (içerik değil: öğrencinin sözü
  * günlüğe yazılmasın).
  */
+/**
+ * Modelin öğrenciye MODEL olarak verdiği cümleyi onarıyor: öneri satırı (tamamı) ve düzeltme
+ * satırının sağ tarafı ("doğrusu"; sol taraf öğrencinin sözü, etiket parantezde). Yalnız
+ * belirlenimci, kesin onarımlar: Perfekt yardımcı fiili (`perfekt-aux`, QA F-0090).
+ */
+export function repairModelSentence(line: string): string {
+  const lead = line.match(/^\s*/)![0];
+  const t = line.slice(lead.length);
+  if (t.startsWith(SUGGESTION_MARK)) return lead + SUGGESTION_MARK + fixPerfektAux(t.slice(SUGGESTION_MARK.length));
+  if (!t.startsWith(CORRECTION_MARK)) return line;
+  const arrow = t.indexOf("→");
+  if (arrow === -1) return line;
+  const right = t.slice(arrow + 1);
+  const paren = right.lastIndexOf("(");
+  const sentence = paren === -1 ? right : right.slice(0, paren);
+  return lead + t.slice(0, arrow + 1) + fixPerfektAux(sentence) + (paren === -1 ? "" : right.slice(paren));
+}
+
 export async function* guardCorrections(
   source: AsyncIterable<string>,
   said: string,
@@ -656,7 +675,7 @@ export async function* guardCorrections(
   /** Satırın kendisi ya da silindiyse `null`. */
   const settle = (line: string): string | null => {
     const verdict = judgeLine(line, said, ctx);
-    if (verdict.keep) return line;
+    if (verdict.keep) return ctx.lang === "en" ? line : repairModelSentence(line);
     onDrop?.(verdict.reason);
     return null;
   };
@@ -675,7 +694,8 @@ export async function* guardCorrections(
         held += chunk;
         const lead = held.trimStart();
         // İşaretle başlayabilir mi? Başlayamayacağı anlaşıldığı an satır akmaya başlıyor.
-        const maybeFix = lead.startsWith(CORRECTION_MARK) || CORRECTION_MARK.startsWith(lead);
+        // Öneri satırları da tutuluyor: model cümlesi onarılıyor (`repairModelSentence`).
+        const maybeFix = [CORRECTION_MARK, SUGGESTION_MARK].some((m) => lead.startsWith(m) || m.startsWith(lead));
         if (nl === -1) {
           rest = "";
           if (!maybeFix) {

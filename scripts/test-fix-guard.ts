@@ -3,6 +3,9 @@ import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-fo
 import { ensureRoleText, filterCorrectionLines, guardCorrections, judgeCorrection, splitInlineMarkers, stripModelTokenStream } from "../src/lib/conversations/fix-guard";
 import { breakInlineMarkers } from "../src/lib/chat-format";
 import { articleFixes } from "../src/lib/conversations/article-check";
+import { fixPerfektAux } from "../src/lib/conversations/perfekt-aux";
+import { chatRegister } from "../src/lib/conversations/chat";
+import { sourceFindConversation } from "../src/lib/conversations/source";
 
 /**
  * Düzeltme süzgeci — `npm run test:fix-guard`. Dil modeli istemez.
@@ -197,6 +200,38 @@ const REPLY = [
   check("neden kaydı", dropped.join() === "coord_verb_final", dropped.join());
 }
 
+console.log("\nPerfekt yardımcı fiili (QA F-0090): kesin haben → sein, belirsizde dokunma");
+for (const [inp, want] of [
+  ["Anschließend habe ich im Park spazieren gegangen.", "Anschließend bin ich im Park spazieren gegangen."],
+  ["Hast du gestern ins Kino gegangen?", "Bist du gestern ins Kino gegangen?"],
+  ["Ich habe Pizza gegessen, dann habe ich nach Hause gegangen.", "Ich habe Pizza gegessen, dann bin ich nach Hause gegangen."],
+  ["Wir haben lange geblieben.", "Wir sind lange geblieben."],
+  ["Was hat passiert?", "Was ist passiert?"],
+  ["weil ich spät aufgestanden habe", "weil ich spät aufgestanden bin"],
+  ["Ich habe mit dem Zug nach Berlin gefahren.", "Ich bin mit dem Zug nach Berlin gefahren."],
+  // dokunulmayanlar
+  ["Ich habe das Auto gefahren.", "Ich habe das Auto gefahren."],
+  ["Ich habe ihn nach Hause gefahren.", "Ich habe ihn nach Hause gefahren."],
+  ["Das hat mir gut gefallen.", "Das hat mir gut gefallen."],
+  ["Ich habe gegessen und bin dann gegangen.", "Ich habe gegessen und bin dann gegangen."],
+  ["Ich habe ein Buch gekauft.", "Ich habe ein Buch gekauft."],
+  ["Ich hatte keine Zeit.", "Ich hatte keine Zeit."],
+  ["Ich habe mich umgezogen.", "Ich habe mich umgezogen."],
+] as const) {
+  check(`${inp} → ${want}`, fixPerfektAux(inp) === want, fixPerfektAux(inp));
+}
+
+console.log("\nsahnenin hitabı (QA F-0089): açılış hitapsızsa muhatap tanımı");
+{
+  const reg = (id: string) => {
+    const c = sourceFindConversation(id);
+    return c ? chatRegister(c) : "YOK";
+  };
+  check("de-a1-einladung (arkadaş, hitapsız açılış) → du", reg("de-a1-einladung") === "du", String(reg("de-a1-einladung")));
+  check("de-c1-textsorten (rol değiştiren muhatap) → belirsiz", reg("de-c1-textsorten") === undefined, String(reg("de-c1-textsorten")));
+  check("de-b2-folien (meslektaş) → belirsiz", reg("de-b2-folien") === undefined, String(reg("de-b2-folien")));
+}
+
 console.log("\nakış süzgeci — her bölme noktasında aynı sonuç");
 async function collect(chunks: string[], said: string): Promise<string> {
   async function* src() {
@@ -328,6 +363,12 @@ async function streamTests() {
   check("iç not ve thought her bölmede kesiliyor", nbad === 0, `${nbad} · ${JSON.stringify(await strip([...NOTE]))}`);
   const PLAIN = "Natürlich! Die Notaufnahme ist links.\nNotiz: keine.\n[SAY] Danke.";
   check("'Not' ile başlayan sözcükler kesilmiyor", (await strip([...PLAIN])) === PLAIN.replace("\nNotiz: keine.", "\nNotiz: keine."), JSON.stringify(await strip([...PLAIN])));
+  // Öneri ve düzeltmenin sağ tarafı onarılıyor (QA F-0090), her bölmede aynı; rol metni aynen.
+  const PERF = "Toll! Und was hast du danach gemacht?\n[FIX] ich gehe gestern → ich habe gestern gegangen (Perfekt)\n[SAY] Anschließend habe ich im Park spazieren gegangen.\n[SAY] Ich habe gekocht.";
+  const PERF_OK = "Toll! Und was hast du danach gemacht?\n[FIX] ich gehe gestern → ich bin gestern gegangen (Perfekt)\n[SAY] Anschließend bin ich im Park spazieren gegangen.\n[SAY] Ich habe gekocht.";
+  let pbad = 0;
+  for (let i = 0; i <= PERF.length; i++) if ((await collect([PERF.slice(0, i), PERF.slice(i)].filter(Boolean), "Ich gehe gestern in den Park.")) !== PERF_OK) pbad++;
+  check("öneri ve 'doğrusu' her bölmede onarılıyor", pbad === 0, `${pbad} · ${JSON.stringify(await collect([...PERF], "Ich gehe gestern in den Park."))}`);
   const r2 = await role([[...ONLY], [...ONLY]]);
   check("iki denemede de rol metni yok → öneriler yine gidiyor", r2.out === ONLY && r2.tries === 2, JSON.stringify(r2));
 }
