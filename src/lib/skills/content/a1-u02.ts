@@ -196,7 +196,7 @@ export const a1U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Die Kursnummer",
-    genre: "phone",
+    genre: "info",
     intro: "Dil okulunda bir anons duyacaksın. Kurs numarasını ve sayıları yakala.",
     gloss: [
       { de: "wiederholen", tr: "tekrarlamak", en: "to repeat" },

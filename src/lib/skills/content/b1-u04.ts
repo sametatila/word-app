@@ -99,7 +99,7 @@ export const b1U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Zettel im Treppenhaus",
-    genre: "phone",
+    genre: "message",
     intro: "Merdiven boşluğuna asılmış üç not. Aynı sorun, üç farklı ton. Hangisi işe yarar?",
     minutes: 5,
     gloss: [

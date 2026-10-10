@@ -90,7 +90,7 @@ export const deA1P3: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Durchsage im Freibad",
-    genre: "phone",
+    genre: "info",
     intro: "Açık havuzda kapanış anonsunu dinleyeceksin: saatler, bulunan eşyalar ve yarınla ilgili bilgi.",
     gloss: [
       { de: "das Freibad", tr: "açık havuz", en: "outdoor pool" },

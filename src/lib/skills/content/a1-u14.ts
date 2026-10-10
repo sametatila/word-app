@@ -87,7 +87,7 @@ export const a1U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Der Zug hat Verspätung",
-    genre: "phone",
+    genre: "info",
     intro: "Garda yazılı bir duyuru. Trenler ne durumda?",
     gloss: [
       { de: "die Verspätung", tr: "gecikme", en: "delay" },

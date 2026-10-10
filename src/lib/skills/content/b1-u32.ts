@@ -355,7 +355,7 @@ export const b1U32: SkillExercise[] = [
     skill: "writing",
     unit: 32,
     title: "Wir ziehen um",
-    genre: "phone",
+    genre: "message",
     intro: "Taşınmanı duyur. 'sonra' Almancada iki ayrı sözcüktür.",
     minutes: 12,
     gloss: [

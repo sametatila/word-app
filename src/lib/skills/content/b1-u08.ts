@@ -31,7 +31,7 @@ export const b1U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Entweder Fleisch oder nicht",
-    genre: "phone",
+    genre: "info",
     intro: "Bir yemekhane iki seçenek sunuyor. Kim neyi neden seçiyor?",
     minutes: 5,
     gloss: [

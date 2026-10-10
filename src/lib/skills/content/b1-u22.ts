@@ -34,7 +34,7 @@ export const b1U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Der Garten hinter dem Haus",
-    genre: "phone",
+    genre: "info",
     intro: "Ortak bir bahçe kuruluyor. Kim ne yapıyor, ürün nasıl paylaşılıyor?",
     minutes: 5,
     gloss: [

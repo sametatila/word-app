@@ -33,7 +33,7 @@ export const b2U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Amtliche Bekanntmachung",
-    genre: "phone",
+    genre: "info",
     intro: "Bir belediyenin resmî duyurusu. Aynı bilgi günlük dilde nasıl söylenirdi?",
     gloss: [
       { de: "die Maßnahme", tr: "tedbir", en: "measure" },

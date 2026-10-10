@@ -19,7 +19,7 @@ export const deA2: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "Repair-Café im Stadtteilzentrum",
-    genre: "phone",
+    genre: "ad",
     intro: "Mahalle merkezinin panosundaki duyuruyu okuyacaksın: kim ne tamir ediyor, ne zaman ve hangi kuralla.",
     gloss: [
       { de: "das Werkzeug", tr: "alet", en: "tool" },

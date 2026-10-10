@@ -176,7 +176,7 @@ export const b1U31: SkillExercise[] = [
     skill: "listening",
     unit: 31,
     title: "Vor der Landung",
-    genre: "phone",
+    genre: "dialogue",
     intro: "Uçuşun sonu. Ne söyleniyor, yolcu ne soruyor?",
     minutes: 4,
     gloss: [

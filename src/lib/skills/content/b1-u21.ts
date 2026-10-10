@@ -36,7 +36,7 @@ export const b1U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Welche Tonne für was?",
-    genre: "phone",
+    genre: "info",
     intro: "Atık ayrımı kuralları. Hangi çöp hangi kutuya?",
     minutes: 5,
     gloss: [

@@ -952,7 +952,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Green Park Sports Club",
-    "genre": "phone",
+    "genre": "ad",
     "intro": "Bir spor kulübünün yeni üyeler için astığı duyuruyu okuyacaksın.",
     "gloss": [
       {
@@ -4271,7 +4271,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Returns and Exchanges",
-    "genre": "phone",
+    "genre": "info",
     "intro": "Bir mağazanın kapısına astığı iade ve değişim duyurusunu okuyacaksın.",
     "gloss": [
       {
@@ -5427,7 +5427,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Morning Traffic and Weather",
-    "genre": "phone",
+    "genre": "info",
     "intro": "Radyoda sabah yayınlanan trafik ve hava durumu bültenini dinleyeceksin.",
     "gloss": [
       {
@@ -5689,7 +5689,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Platform Change",
-    "genre": "phone",
+    "genre": "info",
     "intro": "Bir tren istasyonunda peron değişikliğini bildiren anonsu dinleyeceksin.",
     "gloss": [
       {
@@ -6473,7 +6473,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Tech Minute: A Small Idea",
-    "genre": "phone",
+    "genre": "monologue",
     "intro": "Teknoloji üzerine kısa bir podcast bölümünü dinleyeceksin; sunucu genç bir öğrencinin uygulamasını anlatıyor.",
     "gloss": [
       {

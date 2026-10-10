@@ -104,7 +104,7 @@ export const enA2P2: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "The Library System Is Down",
-    genre: "phone",
+    genre: "info",
     intro: "Kütüphanede bir anons dinleyeceksin: sorun ne, bugün ne değişiyor, ne zaman düzelecek.",
     gloss: [
       { de: "announcement", tr: "anons" },

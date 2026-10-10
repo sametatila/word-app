@@ -103,7 +103,7 @@ export const b1U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Im Buchclub",
-    genre: "phone",
+    genre: "review",
     intro: "Bir kitap kulübü ve iki okurun yorumu. Kim neyi beğenmiş?",
     minutes: 5,
     gloss: [
