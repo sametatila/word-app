@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { EpisodeSummary } from "@/lib/studio";
-import type { SocialPlatform, SocialPost } from "@/lib/social-posts";
+import type { InstagramStatus, SocialPlatform, SocialPost, SocialStatus } from "@/lib/social-posts";
 import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, BTN, Notice, TONE, type Tone } from "../admin/_ui/ui";
 import { TwoStep } from "../admin/_ui/two-step";
-import { APPROACH_SHORT, CONTENT_STATE, PLATFORMS, POST_STATE, THEME_TR, contentState, postState, type PostShown } from "./shared";
+import { APPROACH_SHORT, CONTENT_STATE, PLACED, PLATFORMS, POST_STATE, THEME_TR, contentState, postState, type PostShown } from "./shared";
 
 /**
  * STÜDYO TAKVİMİ. Açılışta BUGÜNÜN haftası (Samet: "bugünün olduğu haftaya otomatik kaysın"); hafta hafta serbest
@@ -54,7 +54,7 @@ const THEME_SWATCH: Record<string, string> = { gece: "#1b1b1f", kagit: "#e9dcc4"
 
 type Toast = { tone: Tone; text: string; detail?: string[]; undo?: () => void } | null;
 
-export function StudioCalendar({ episodes: initial, posts: initialPosts, missing, now }: { episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string }) {
+export function StudioCalendar({ episodes: initial, posts: initialPosts, missing, now, ig }: { episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string; ig: InstagramStatus }) {
   const [episodes, setEpisodes] = useState(initial);
   const [posts, setPosts] = useState(() => new Map(initialPosts.filter((p) => p.episodeId).map((p) => [key(p.episodeId as string, p.platform), p])));
   const nowMs = new Date(now).getTime();
@@ -82,6 +82,9 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
   const movable = (e: Ep) => !(e.slot && past(e.slot)) || PLATFORMS.every((p) => shown(e, p.key) !== "published");
 
   const overdue = planned.filter((e) => PLATFORMS.some((p) => shown(e, p.key) === "overdue"));
+  const failed = planned.filter((e) => shown(e, "instagram") === "failed");
+  /** Toplu işaretin hedefi: Instagram bağlıysa otomatik yayın, değilse "zamanlandı" (platformun kendi zamanlayıcısı). */
+  const bulkTarget = (p: SocialPlatform): SocialStatus => (p === "instagram" && ig.connected ? "auto" : "scheduled");
   const notReady = planned.filter((e) => {
     const t = slotMs(e.slot as string);
     return t > nowMs && t - nowMs < 3 * 86_400_000 && !(e.render?.status === "done" && e.render.hasFiles);
@@ -131,11 +134,14 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
   async function bulk(platform: SocialPlatform) {
     const ids = weekEps.filter((e) => shown(e, platform) === "planned").map((e) => e.id);
     if (!ids.length) return;
+    const target = bulkTarget(platform);
+    let done = 0;
     setBusy(true);
     try {
-      const res = await apiFetch("/api/studio/posts", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "bulk", episodeIds: ids, platform, status: "scheduled" }) });
-      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      const res = await apiFetch("/api/studio/posts", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "bulk", episodeIds: ids, platform, status: target }) });
+      const data = (await res.json().catch(() => ({}))) as { error?: string; count?: number };
       if (!res.ok) return setToast({ tone: "bad", text: adminErrorText(data.error ?? res.status) });
+      done = data.count ?? ids.length;
     } catch {
       return setToast({ tone: "bad", text: adminErrorText("network") });
     } finally {
@@ -144,10 +150,11 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
     const at = new Date().toISOString();
     setPosts((m) => {
       const n = new Map(m);
-      for (const id of ids) n.set(key(id, platform), { ...(n.get(key(id, platform)) ?? { episodeId: id, platform, url: null, externalId: null, publishedAt: null, metrics: null, metricsAt: null, note: null, updatedBy: null }), status: "scheduled", updatedAt: at });
+      for (const id of ids) n.set(key(id, platform), { ...(n.get(key(id, platform)) ?? { episodeId: id, platform, url: null, externalId: null, publishedAt: null, metrics: null, metricsAt: null, note: null, job: null, updatedBy: null }), status: target, updatedAt: at });
       return n;
     });
-    setToast({ tone: "ok", text: `${ids.length} bölüm ${PLATFORMS.find((p) => p.key === platform)?.label}'ta zamanlandı olarak işaretlendi.` });
+    const label = PLATFORMS.find((p) => p.key === platform)?.label;
+    setToast({ tone: done < ids.length ? "warn" : "ok", text: target === "auto" ? `${done} video ${label}'da saatinde otomatik yayınlanacak.${done < ids.length ? ` ${ids.length - done} tanesi atlandı (saati geçmiş).` : ""}` : `${done} bölüm ${label}'ta zamanlandı olarak işaretlendi.` });
   }
 
   const drop = (slot: string | null) => (ev: React.DragEvent) => {
@@ -186,16 +193,24 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
         <Pill label="Bu hafta" value={`${weekEps.length} video`} />
         <Pill label="Video hazır" value={`${readyCount}/${weekEps.length}`} tone={weekEps.length && readyCount < weekEps.length ? "warn" : weekEps.length ? "ok" : undefined} />
         {PLATFORMS.map((p) => (
-          <Pill key={p.key} label={p.label} value={`${count(weekEps, p.key, "scheduled", "published")}/${weekEps.length} zamanlandı`} tone={count(weekEps, p.key, "planned") ? "warn" : weekEps.length ? "ok" : undefined} />
+          <Pill key={p.key} label={p.label} value={`${count(weekEps, p.key, ...PLACED)}/${weekEps.length} ${p.key === "instagram" && ig.connected ? "sırada" : "zamanlandı"}`} tone={count(weekEps, p.key, "planned") ? "warn" : weekEps.length ? "ok" : undefined} />
         ))}
+        <IgPill ig={ig} />
         {PLATFORMS.map((p) => {
           const n = count(weekEps, p.key, "planned");
-          return n ? <TwoStep key={p.key} small danger={false} disabled={busy || missing} label={`${p.label}: ${n} videoyu zamanlandı işaretle`} confirm={`Evet, ${n} video ${p.label}'ta zamanlandı`} onConfirm={() => void bulk(p.key)} /> : null;
+          if (!n) return null;
+          return bulkTarget(p.key) === "auto" ? (
+            <TwoStep key={p.key} small danger={false} disabled={busy || missing} label={`${p.label}: ${n} videoyu otomatik yayına al`} confirm={`Evet, ${n} video saatinde yayınlansın`} onConfirm={() => void bulk(p.key)} />
+          ) : (
+            <TwoStep key={p.key} small danger={false} disabled={busy || missing} label={`${p.label}: ${n} videoyu zamanlandı işaretle`} confirm={`Evet, ${n} video ${p.label}'ta zamanlandı`} onConfirm={() => void bulk(p.key)} />
+          );
         })}
       </div>
+      {ig.connected ? <p className="faint text-caption">Instagram otomatik: saatinde Lernomi yayınlar. Şart: güncel sürüm onaylı ve videosu hazır. Hazır değilse 3 saat bekler, sonra “Yayınlanamadı” der ve Telegram&apos;a yazar. Platformda elle paylaşılan video saatinden tanınır, ikinci kez gönderilmez.</p> : null}
 
       {missing ? <Notice tone="bad" title="Stüdyo tabloları okunamadı">Göç uygulanmamış olabilir (drizzle/0085_social_studio.sql).</Notice> : null}
       {notReady.length ? <Alert tone="warn" title={`3 gün içinde yayınlanacak, videosu hazır değil: ${notReady.length}`} items={notReady} hint="Onaylanmamış, sesi bekleyen ya da metni onaydan sonra değişmiş." /> : null}
+      {failed.length ? <Alert tone="bad" title={`Instagram'da otomatik yayınlanamadı: ${failed.length}`} items={failed} hint="Bölümü aç: sebebi Yayın kutusunda. Düzeltip durumu yeniden “Otomatik” yaparsan tekrar dener; elle paylaştıysan bağlantıyla “Yayında”." /> : null}
       {overdue.length ? <Alert tone="warn" title={`Saati geçti, yayında işaretlenmedi: ${overdue.length}`} items={overdue} hint="Platformda yayınlandıysa bağlantıyla “Yayında”, yayınlanmadıysa “Atlandı” işaretle." /> : null}
       {last && daysLeft < 7 ? <Notice tone={daysLeft < 3 ? "bad" : "warn"} title={daysLeft < 0 ? "Plan bitti" : `Plan ${daysLeft} gün sonra bitiyor`}>Claude&apos;dan yeni iki haftalık parti iste.</Notice> : null}
 
@@ -257,6 +272,21 @@ function Pill({ label, value, tone }: { label: string; value: string; tone?: Ton
     <span className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1" style={{ borderColor: tone ? TONE[tone] : "var(--border)", background: "var(--surface)" }}>
       <span className="muted">{label}</span>
       <span className="text-strong" style={tone ? { color: TONE[tone] } : undefined}>{value}</span>
+    </span>
+  );
+}
+
+/** Instagram API bağlantısı (işçinin durum dosyası): bağlı mı, belirteç kaç gün, son eşitleme. */
+function IgPill({ ig }: { ig: InstagramStatus }) {
+  if (!ig.connected) return <Pill label="Instagram API" value="bağlı değil" />;
+  const sync = ig.lastSyncAt ? new Date(ig.lastSyncAt).toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit", timeZone: TZ }) : "—";
+  const bad = !ig.ok || ig.stale;
+  const warn = ig.tokenDays != null && ig.tokenDays < 10;
+  const value = bad ? (ig.stale ? "işçi durmuş" : "bağlantı hatası") : `@${ig.username ?? "?"} · eşitleme ${sync}`;
+  const title = [ig.error, ig.tokenDays != null ? `Belirteç ${ig.tokenDays} gün geçerli (kendiliğinden yenilenir)` : null].filter(Boolean).join(" · ");
+  return (
+    <span title={title} aria-label={`Instagram API: ${value}${title ? ` · ${title}` : ""}`}>
+      <Pill label="Instagram API" value={value} tone={bad ? "bad" : warn ? "warn" : "ok"} />
     </span>
   );
 }

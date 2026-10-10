@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { studioGate } from "@/lib/studio-auth";
 import { listEpisodes, postsFor } from "@/lib/studio";
-import type { SocialPlatform, SocialPost, SocialStatus } from "@/lib/social-posts";
+import { instagramStatus, postView } from "@/lib/social-posts";
 import { AdminDenied } from "../admin/_ui/ui";
 import { StudioCalendar } from "./calendar";
 
@@ -14,18 +14,5 @@ export default async function StudioPage() {
   if (!gate.ok) return <AdminDenied title="Stüdyo" email={gate.email} />;
   const { episodes, missing } = await listEpisodes();
   const rows = missing ? [] : await postsFor(episodes.map((e) => e.id));
-  const posts: SocialPost[] = rows.map((r) => ({
-    episodeId: r.episodeId,
-    platform: r.platform as SocialPlatform,
-    status: r.status as SocialStatus,
-    url: r.url,
-    externalId: r.externalId,
-    publishedAt: r.publishedAt ? r.publishedAt.toISOString() : null,
-    metrics: r.metrics ?? null,
-    metricsAt: r.metricsAt ? r.metricsAt.toISOString() : null,
-    note: r.note,
-    updatedBy: r.updatedBy,
-    updatedAt: r.updatedAt.toISOString(),
-  }));
-  return <StudioCalendar episodes={episodes} posts={posts} missing={missing} now={new Date().toISOString()} />;
+  return <StudioCalendar episodes={episodes} posts={rows.map(postView)} missing={missing} now={new Date().toISOString()} ig={await instagramStatus()} />;
 }

@@ -7,7 +7,8 @@ export const dynamic = "force-dynamic";
 /**
  * Platform durumları (TikTok / Instagram) — stüdyonun yazma ucu (/studio). Eylemler:
  *
- *   set    bir bölümün bir platformdaki durumu (planned · scheduled · published · skipped) + bağlantı + not
+ *   set    bir bölümün bir platformdaki durumu (planned · scheduled · auto · published · skipped) + bağlantı + not;
+ *          auto yalnız Instagram ve gelecekteki saat (işçi saatinde yayınlar); "publishing" sürerken değiştirilemez (409)
  *   bulk   birden çok bölümün durumu (ör. iki haftayı zamanlayıcıya koyduktan sonra "zamanlandı")
  *
  * Yazma iki adımlı doğrulama ister (`studioWriteGate`: admin ya da sosyal medya editörü) ve işlem kaydına düşer.
@@ -25,7 +26,7 @@ export async function POST(req: Request) {
     switch (body.action) {
       case "set": {
         const r = await setSocialPost({ episodeId: body.episodeId, platform: body.platform, status: body.status, url: body.url, note: body.note }, g.writer.email);
-        if (!r.ok) return NextResponse.json({ error: r.error }, { status: r.error === "not_found" ? 404 : 400 });
+        if (!r.ok) return NextResponse.json({ error: r.error }, { status: r.error === "not_found" ? 404 : r.error === "publishing" || r.error === "auto_needs_slot" ? 409 : 400 });
         void logStudioAction(g.writer, "post.set", String(body.episodeId), { platform: body.platform, status: body.status });
         return NextResponse.json({ ok: true, post: r.post });
       }

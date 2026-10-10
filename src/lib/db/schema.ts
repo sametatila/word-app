@@ -2356,7 +2356,10 @@ export const socialPosts = pgTable(
     episodeId: text("episode_id"),
     /** tiktok · instagram */
     platform: text("platform").notNull(),
-    /** scheduled (platformun zamanlayıcısında) · published · skipped */
+    /**
+     * scheduled (platformun zamanlayıcısında) · published · skipped · auto (Instagram: saatinde Lernomi yayınlar,
+     * `scripts/social/instagram.mjs`) · publishing (yayın adımı kilitli) · failed (otomatik yayın olmadı, `job.error`)
+     */
     status: text("status").notNull(),
     /** Platformdaki gönderi kimliği (eşitleme) */
     externalId: text("external_id"),
@@ -2366,6 +2369,8 @@ export const socialPosts = pgTable(
     metrics: jsonb("metrics").$type<Record<string, number>>(),
     metricsAt: timestamp("metrics_at", { withTimezone: true }),
     note: text("note"),
+    /** Otomatik yayın işi (Instagram işçisi): { containerId, renderId, preparedAt, publishAttemptAt, attempts, error, warnedAt } */
+    job: jsonb("job").$type<Record<string, unknown>>(),
     updatedBy: text("updated_by"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),

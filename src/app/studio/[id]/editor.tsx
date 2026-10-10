@@ -11,7 +11,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, BTN, Badge, FIELD, FIELD_STYLE, Field, KeyValue, Notice, PageHeader, Panel, Segmented, TONE, type Tone, when } from "../../admin/_ui/ui";
 import { TwoStep } from "../../admin/_ui/two-step";
-import { APPROACH_TR, CONTENT_STATE, PLATFORMS, POST_STATE, THEME_TR, contentState, dayLabel, postState } from "../shared";
+import { APPROACH_TR, CONTENT_STATE, PLACED, PLATFORMS, POST_STATE, THEME_TR, contentState, dayLabel, postState } from "../shared";
 import { Fields } from "./fields";
 import { Preview, type PreviewState } from "./preview";
 
@@ -42,6 +42,10 @@ function errorText(d: Record<string, unknown>): string {
       return `Defne sesi olmayan metin var: ${(d.detail as string[]).join(" · ")}`;
     case "slot":
       return String(d.detail);
+    case "publishing":
+      return "Şu an Instagram'a gönderiliyor; sonuç gelince yeniden dene.";
+    case "auto_needs_slot":
+      return "Otomatik yayın için bölümün gelecekte bir yayın saati olmalı.";
     case "not_queued":
       return "Üretim artık sırada değil (başlamış ya da bitmiş).";
     case "db":
@@ -53,7 +57,7 @@ function errorText(d: Record<string, unknown>): string {
 
 const mb = (b: number | null) => (b ? `${(b / 1e6).toFixed(1)} MB` : "");
 
-export function StudioEditor({ initial, posts: initialPosts, role, email, requests: initialRequests }: { initial: EpisodeDetail; posts: SocialPost[]; role: StudioRole; email: string; requests: StudioRequest[] }) {
+export function StudioEditor({ initial, posts: initialPosts, igConnected, role, email, requests: initialRequests }: { initial: EpisodeDetail; posts: SocialPost[]; igConnected: boolean; role: StudioRole; email: string; requests: StudioRequest[] }) {
   const [requests, setRequests] = useState(initialRequests);
   const reloadRequests = useCallback(async () => {
     const res = await apiFetch("/api/studio/requests", { cache: "no-store" });
@@ -230,7 +234,7 @@ export function StudioEditor({ initial, posts: initialPosts, role, email, reques
             <Preview template={ep.template} data={draft} onState={setPv} focus={focus} />
           </Panel>
           <StatusBox ep={ep} pv={pv} dirty={dirty} auditFresh={auditFresh} blockers={blockers} canApprove={canApprove} busy={busy} onApprove={() => void approve()} onCancel={(id) => void cancel(id)} audio={<AudioRequest ep={ep} dirty={dirty} role={role} email={email} requests={requests} onChanged={async () => { await reloadRequests(); await reload(); }} />} />
-          <Publish ep={ep} posts={posts} setPosts={setPosts} onSaved={reload} setMsg={setMsg} />
+          <Publish ep={ep} posts={posts} setPosts={setPosts} onSaved={reload} setMsg={setMsg} igConnected={igConnected} />
         </div>
       </div>
     </AdminPage>
@@ -240,7 +244,7 @@ export function StudioEditor({ initial, posts: initialPosts, role, email, reques
 /** Akış: Düzenle → Onayla → Video hazır → Platforma koy. Nerede olduğunu tek bakışta söyler. */
 function Steps({ ep, dirty, posts }: { ep: EpisodeDetail; dirty: boolean; posts: SocialPost[] }) {
   const ready = ep.render?.status === "done" && ep.render.hasFiles;
-  const placed = PLATFORMS.filter((p) => posts.some((x) => x.platform === p.key && (x.status === "scheduled" || x.status === "published"))).length;
+  const placed = PLATFORMS.filter((p) => posts.some((x) => x.platform === p.key && PLACED.includes(x.status))).length;
   const steps = [
     { label: "Düzenle", done: !dirty, sub: dirty ? "kaydedilmedi" : `sürüm ${ep.revision}` },
     { label: "Onayla", done: ep.approved, sub: ep.approved ? (ep.approvedBy ?? "") : ep.missing.length ? "ses bekliyor" : "bekliyor" },
@@ -403,13 +407,14 @@ function files(r: RenderView) {
   );
 }
 
-function Publish({ ep, posts, setPosts, onSaved, setMsg }: { ep: EpisodeDetail; posts: SocialPost[]; setPosts: (f: (xs: SocialPost[]) => SocialPost[]) => void; onSaved: () => Promise<void>; setMsg: (m: Msg) => void }) {
+function Publish({ ep, posts, setPosts, onSaved, setMsg, igConnected }: { ep: EpisodeDetail; posts: SocialPost[]; setPosts: (f: (xs: SocialPost[]) => SocialPost[]) => void; onSaved: () => Promise<void>; setMsg: (m: Msg) => void; igConnected: boolean }) {
+  const ready = ep.approved && ep.render?.status === "done" && !!ep.render.hasFiles;
   return (
-    <Panel title="Yayın" hint="Saat Berlin saati. Platformun zamanlayıcısına koyunca “Zamanlandı”, yayından sonra bağlantıyla “Yayında”.">
+    <Panel title="Yayın" hint={`Saat Berlin saati. Platformun zamanlayıcısına koyunca “Zamanlandı”, yayından sonra bağlantıyla “Yayında”.${igConnected ? " Instagram'da “Otomatik”: saatinde Lernomi yayınlar, bağlantı ve metrikler kendiliğinden gelir." : ""}`}>
       <div className="space-y-4">
         <SlotBox ep={ep} onSaved={onSaved} setMsg={setMsg} />
         {PLATFORMS.map((p) => (
-          <PlatformBox key={p.key} episodeId={ep.id} platform={p.key} label={p.label} post={posts.find((x) => x.platform === p.key) ?? null} onSaved={(post) => setPosts((xs) => [...xs.filter((x) => x.platform !== p.key), ...(post ? [post] : [])])} />
+          <PlatformBox key={p.key} episodeId={ep.id} platform={p.key} label={p.label} auto={p.key === "instagram" && igConnected} ready={ready} post={posts.find((x) => x.platform === p.key) ?? null} onSaved={(post) => setPosts((xs) => [...xs.filter((x) => x.platform !== p.key), ...(post ? [post] : [])])} />
         ))}
       </div>
     </Panel>
@@ -455,9 +460,10 @@ const EDITABLE: readonly (readonly [SocialStatus | "planned", string])[] = [
   ["published", "Yayında"],
   ["skipped", "Atlandı"],
 ];
+const EDITABLE_AUTO: readonly (readonly [SocialStatus | "planned", string])[] = [["planned", "Planlandı"], ["auto", "Otomatik"], ["scheduled", "Zamanlandı"], ["published", "Yayında"], ["skipped", "Atlandı"]];
 const URL_HINT: Record<SocialPlatform, string> = { tiktok: "https://www.tiktok.com/@…/video/…", instagram: "https://www.instagram.com/reel/…" };
 
-function PlatformBox({ episodeId, platform, label, post: saved, onSaved }: { episodeId: string; platform: SocialPlatform; label: string; post: SocialPost | null; onSaved: (p: SocialPost | null) => void }) {
+function PlatformBox({ episodeId, platform, label, auto, ready, post: saved, onSaved }: { episodeId: string; platform: SocialPlatform; label: string; auto: boolean; ready: boolean; post: SocialPost | null; onSaved: (p: SocialPost | null) => void }) {
   const [status, setStatus] = useState<SocialStatus | "planned">(saved?.status ?? "planned");
   const [url, setUrl] = useState(saved?.url ?? "");
   const [note, setNote] = useState(saved?.note ?? "");
@@ -465,6 +471,7 @@ function PlatformBox({ episodeId, platform, label, post: saved, onSaved }: { epi
   const [msg, setMsg] = useState<Msg>(null);
   const dirty = status !== (saved?.status ?? "planned") || url !== (saved?.url ?? "") || note !== (saved?.note ?? "");
   const shown = postState(saved?.status, false);
+  const locked = saved?.status === "publishing";
   async function save() {
     setBusy(true);
     setMsg(null);
@@ -481,7 +488,13 @@ function PlatformBox({ episodeId, platform, label, post: saved, onSaved }: { epi
         <Badge tone={POST_STATE[shown].tone}>{POST_STATE[shown].label}</Badge>
       </div>
       <div className="space-y-2">
-        <Segmented label={`${label} durumu`} items={EDITABLE} value={status} onChange={setStatus} />
+        {locked ? <Notice tone="info">Şu an Instagram&apos;a gönderiliyor; sonuç birkaç dakika içinde burada.</Notice> : <Segmented label={`${label} durumu`} items={auto || status === "auto" ? EDITABLE_AUTO : EDITABLE} value={status} onChange={setStatus} />}
+        {status === "auto" && !locked ? (
+          <Notice tone={ready ? "info" : "warn"}>
+            {ready ? (saved?.job?.preparedAt ? "Video Instagram'a yüklendi, saatini bekliyor." : "Saatinde Lernomi yayınlar (20 dk önce yüklenir).") : "Saatinde yayınlanması için güncel sürüm onaylı ve videosu hazır olmalı."}
+          </Notice>
+        ) : null}
+        {saved?.job?.error && (saved.status === "auto" || saved.status === "failed") ? <Notice tone={saved.status === "failed" ? "bad" : "warn"} title={saved.status === "failed" ? "Otomatik yayın olmadı" : "Son deneme"}>{saved.job.error}{saved.status === "failed" ? " · Düzeltip “Otomatik”i yeniden seçersen tekrar dener." : ""}</Notice> : null}
         <Field label="Gönderi bağlantısı">
           <input aria-label={`${label} gönderi bağlantısı`} className={FIELD} style={FIELD_STYLE} value={url} onChange={(ev) => setUrl(ev.target.value)} placeholder={URL_HINT[platform]} inputMode="url" />
         </Field>
@@ -489,7 +502,7 @@ function PlatformBox({ episodeId, platform, label, post: saved, onSaved }: { epi
           <input aria-label={`${label} notu`} className={FIELD} style={FIELD_STYLE} value={note} onChange={(ev) => setNote(ev.target.value)} placeholder="ör. platform müziği eklendi" />
         </Field>
         <div className="flex flex-wrap items-center gap-2">
-          <button type="button" className={BTN.small} disabled={busy || !dirty} onClick={() => void save()}>{busy ? "…" : "Kaydet"}</button>
+          <button type="button" className={BTN.small} disabled={busy || !dirty || locked} onClick={() => void save()}>{busy ? "…" : "Kaydet"}</button>
           {saved?.url ? <a className="text-caption underline underline-offset-2" href={saved.url} target="_blank" rel="noreferrer">Gönderiyi aç</a> : null}
           {saved ? <span className="muted text-caption">son: {when(saved.updatedAt)}{saved.updatedBy ? ` · ${saved.updatedBy}` : ""}</span> : null}
         </div>

@@ -14,20 +14,28 @@ export const THEME_TR: Record<string, string> = { gece: "Gece", kagit: "Kâğıt
 
 export const dayLabel = (day: string) => new Date(`${day}T12:00:00Z`).toLocaleDateString("tr-TR", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
 
-/** Platform durumu; saati geçmiş ve yayında/atlandı işaretlenmemiş = "overdue". */
+/**
+ * Platform durumu; saati geçmiş ve yayında/atlandı işaretlenmemiş = "overdue". Otomatik yayın (Instagram) saati
+ * geçse de "Otomatik" kalır: işçi 3 saat dener, olmazsa "failed" yazar.
+ */
 export type PostShown = SocialStatus | "planned" | "overdue";
 export const POST_STATE: Record<PostShown, { label: string; tone?: Tone }> = {
   planned: { label: "Planlandı" },
   scheduled: { label: "Zamanlandı", tone: "info" },
+  auto: { label: "Otomatik", tone: "info" },
+  publishing: { label: "Yayınlanıyor", tone: "info" },
   published: { label: "Yayında", tone: "ok" },
+  failed: { label: "Yayınlanamadı", tone: "bad" },
   skipped: { label: "Atlandı" },
   overdue: { label: "Saati geçti", tone: "warn" },
 };
 export function postState(status: SocialStatus | undefined, past: boolean): PostShown {
-  if (status === "published" || status === "skipped") return status;
+  if (status === "published" || status === "skipped" || status === "auto" || status === "publishing" || status === "failed") return status;
   if (past) return "overdue";
   return status ?? "planned";
 }
+/** Platformda yeri belli (zamanlayıcıda, otomatik sırada ya da yayında). */
+export const PLACED: PostShown[] = ["scheduled", "auto", "publishing", "published"];
 
 /** İçerik durumu: önce sorun (hata, ses), sonra ilerleme (üretiliyor, hazır), en son düzenleme. */
 export type ContentKey = "failed" | "audio" | "running" | "queued" | "ready" | "stale" | "edited" | "draft";
