@@ -248,14 +248,43 @@ yeni sürüm olarak gelir ve onayı düşer.
 | **Instagram** | Var. "Instagram API with Instagram Login", `instagram_business_basic` + `instagram_business_manage_insights`, Standard Access: kendi hesabımız için **inceleme yok**, Facebook sayfası gerekmez. Reels: `views`, `reach`, `likes`, `comments`, `saved`, `shares`, `ig_reels_avg_watch_time`, `reels_skip_rate`… (48 sa gecikme) | Var (`instagram_business_content_publish`, inceleme yok, `is_ai_generated`), ama **ileri tarih parametresi yok**: kendi cron'umuzla yayınlanır | Yok |
 | **TikTok** | Display API (`video.list`): yalnız sayılar (izlenme, beğeni, yorum, paylaşım); sandbox'ta incelemesiz çalışıp çalışmadığı denenmeli. İzlenme süresi ve tamamlama için TikTok API for Business (`video.insights`), uygulama onayı gerekir | Pratikte yok: denetimsiz uygulamada gönderi gizli kalır; "kendi hesabına yükleme aracı" denetimden geçemez (yönergeler) | Yok |
 
-Belirteçler: Instagram uzun ömürlü belirteç 60 gün, `refresh_access_token` ile yenilenir (sunucuda ~30 günde bir cron).
-TikTok erişim belirteci 24 saat, yenileme belirteci 365 gün.
+Belirteçler: Instagram uzun ömürlü belirteç 60 gün, `refresh_access_token` ile yenilenir. TikTok erişim belirteci 24 saat,
+yenileme belirteci 365 gün.
 
-**Sıra:** (1) Instagram metrik eşitlemesi (Samet: hesabı Professional yap, developers.facebook.com'da Business uygulaması +
-Instagram ürünü "API setup with Instagram login", Lernomi hesabını tester ekle, belirteci `.secrets/` altına koy; Claude
-sunucuya, `social_posts` eşitleme cron'una ve belirteç yenilemeye bağlar; gönderiler açıklama + saatle bölüme eşlenir).
-(2) TikTok Display API sandbox'ı dene; yetmezse Business API başvurusu. (3) İstenirse Instagram'a otomatik yayın
-(kendi cron'umuz). TikTok'ta yayın elle kalır.
+### Instagram: kurulu (2026-10-10)
+
+Meta uygulaması **Lernomi** (developers.facebook.com, geliştirme modu yeterli: yalnız kendi hesabımız; işletme portföyü
+PraktikaDeutsch), ürün "Instagram API with Instagram Login", hesap **lernomi_app** (içerik üreticisi, Instagram tester).
+İzinler `instagram_business_basic`, `instagram_business_manage_insights`, `instagram_business_content_publish` (Business
+login ayarlarının verdiği embed adresinde mesaj/yorum izinleri de var, kullanılmıyor). Yönlendirme adresi
+`https://www.lernomi.app/`. Yerelde `.secrets/instagram/` (`id`, `api` = uygulama gizli anahtarı, `token`).
+
+İşçi `scripts/social/instagram.mjs` (başındaki yorum ayrıntılı), sunucuda `lernomi-social-ig.timer` dakikada bir →
+`/opt/lernomi/social-ig.sh` (repo dışı, video işçisinin eşi). Belirteç `/opt/lernomi/social/instagram/token.json` (600,
+`lernomi`; `.env`'de değil çünkü işçi 7 günde bir yeniler ve dosyaya yazar). Durum `instagram/status.json` (belirteçsiz),
+stüdyo takviminde "Instagram API" etiketi.
+
+- **Eşitleme:** hesabın gönderileri saatinden bölüme eşlenir (gönderi saatten 30 dk önce – 3 sa sonra; her saatte tek
+  bölüm), satır "Yayında" olur, bağlantı ve kimlik yazılır. Elle (Instagram uygulamasından ya da Meta zamanlayıcısından)
+  paylaşılan video da tanınır.
+- **Metrikler:** `views`, `reach`, `likes`, `comments`, `shares`, `saves`, `interactions`, `avgWatchSec`
+  (`ig_reels_avg_watch_time`). İlk 3 gün saatlik, 30 güne kadar 6 saatte bir, 90 güne kadar günde bir.
+- **Otomatik yayın:** Instagram durumu **Otomatik** olan bölüm saatinde yayınlanır (takvimde "N videoyu otomatik yayına
+  al", editörde Yayın kutusu). Şart: güncel sürüm onaylı ve videosu sunucuda hazır. Saatten 20 dk önce kap açılır;
+  Instagram MP4'ü ve kapağı **imzalı, 3 saatlik adresten** (`/api/studio/file/<üretim>?k=mp4|kapak&exp&sig`,
+  HMAC `BETTER_AUTH_SECRET`) baytı baytına çeker. Bu API dosya yüklemeyi kabul etmiyor: `upload_type=resumable`
+  "The parameter video_url is required" diyor (2026-10-10, v21–v24 denendi). Saat gelince `media_publish`. Video hazır
+  değilse saatinde Telegram, 3 saat sonra hâlâ olmadıysa **Yayınlanamadı** + Telegram (yeniden "Otomatik" tekrar dener).
+  İki kez yayın yok: yayın adımı satırı "publishing"e kilitler; yarıda kalırsa kabın durumu (`PUBLISHED`/`FINISHED`)
+  karar verir. "Zamanlandı" (platformun kendi zamanlayıcısı) satırlarına dokunulmaz; ikisini aynı bölümde kullanma.
+- **Deneme (yayınlamadan):** `node scripts/social/instagram.mjs --dry <bölüm>` kabı açar ve Instagram'ın işlemesini
+  bekler, `media_publish` çağırmaz (kap 24 saatte düşer). `--check` hesap ve belirteç günü.
+- **Belirteç biterse / iptal olursa** (Telegram "[UYARI] Instagram …"): uygulama paneli › Instagram › API setup with
+  Instagram login › Business login settings'teki embed adresiyle yeniden yetki ver ya da "Generate token"; yeni belirteç
+  `token.json`a (`{"token","refreshedAt","expiresAt"}`, 600, sahibi `lernomi`).
+
+**Sıra:** (1) Instagram ✅ (yukarıda). (2) TikTok Display API sandbox'ı dene; yetmezse Business API başvurusu. TikTok'ta
+yayın elle kalır.
 
 **Kapasite (2026-10-08 ölçümü):** cümleyi kur için 1795 kısa sesli cümle, kelime destesi için 2754 sesli kelime,
 artikel için 2343 sesli isim (yalnız -ung → die 215 kelime): yıllarca yeter. "Hangisini duydun?" için `confusables.json`daki
