@@ -115,8 +115,12 @@ const DE_FIX_EXAMPLE = "Am Wochenende ich gehe → Am Wochenende gehe ich (V2-Re
  * hitabı kendi cümlelerinde kullanarak örnek oluyor. Süzgeç (`fix-guard`) hitabı
  * bilinen sahnede du ↔ Sie düzeltmesini siliyor (`test:chat` de-a1-hallo: resmî
  * sahnede "Was machst du gern → Was machen Sie gern (Höflichkeitsform)" sahte
- * düzeltme sayıldı). Açılış belirsizse (iki biçim de yok) hiçbiri uygulanmıyor.
- * Yalnız Almanca: İngilizcede hitap ayrımı yok.
+ * düzeltme sayıldı). Açılış belirsizse (iki biçim de yok) muhatabın tanımına bakılıyor:
+ * arkadaş, kardeş, kuzen, sevgili, yakın → "du" (QA F-0089, 2026-10-10: "Die Einladung"ın
+ * açılışı "Oh, eine Party? Wann ist die denn?" hitapsızdı, arkadaş rolündeki model "Welche
+ * Art von Salat bevorzugen Sie?" diyordu; 580 Almanca sohbetin 131'inde açılış hitapsız).
+ * "iş arkadaşı", meslektaş, komşu belirsiz kalıyor (iki hitap da olağan). Yine belirsizse
+ * hiçbiri uygulanmıyor. Yalnız Almanca: İngilizcede hitap ayrımı yok.
  */
 export function chatRegister(conversation: Conversation): "du" | "Sie" | undefined {
   if (conversation.course === "en") return undefined;
@@ -127,8 +131,14 @@ export function chatRegister(conversation: Conversation): "du" | "Sie" | undefin
     (t.match(/(?<![.!?]\s*|^\s*)(?<![\p{L}])Sie(?![\p{L}])/gu) ?? []).length;
   if (du > sie) return "du";
   if (sie > du) return "Sie";
+  const partner = conversation.chat.partner ?? "";
+  // Rol değiştiren muhatap ("önce resmî üst, sonra yakın arkadaş"): hitap sahnede değişiyor.
+  if (du === 0 && CLOSE_PARTNER.test(partner) && !/resm[îi]|rolüne/iu.test(partner)) return "du";
   return undefined;
 }
+
+/** Hitabı "du" olan muhatap (Türkçe tanım); "iş arkadaşı" hariç. */
+const CLOSE_PARTNER = /(?<!\p{L})(?<!iş\s)(arkadaş|kardeş|kuzen|sevgili|yakın(?!\p{L}))/iu;
 
 /** İstemdeki hitap satırı; hitap bilinmiyorsa boş. */
 function registerNote(register: "du" | "Sie" | undefined): string {
