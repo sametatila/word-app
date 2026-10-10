@@ -2,7 +2,6 @@
  { "tr": "Ve karşındaki hızlı konuşuyorsa iki cümlen hazır olsun:", "en": "And if the other person speaks fast, have two sentences ready:" },
  { "tr": "Yan cümlenin sonunda mastar değil çekimli fiil bulunur:", "en": "At the end of the subclause stands the finite verb, not an infinitive:" },
  { "tr": "Yardım etmek yönelme ister; dişilde yönelme zamiri der:", "en": "To help takes the dative; in the feminine the dative pronoun is der:" },
- { "tr": "yer değiştirmeyen bir fiil, ikinci yardımcı fiili alır:", "en": "is a verb with no movement, so it takes the second auxiliary:" },
  { "tr": "Zaman başa gelirse özne yardımcı fiilin arkasına geçer:", "en": "If time comes first the subject moves behind the auxiliary:" },
  { "tr": "Beğenilen şey başa gelir, sen cümlenin sonunda durursun:", "en": "The thing liked comes first, you stand at the end of the sentence:" },
  { "tr": "Belirtisiz eril yalın hâlde ortaç sıfatı -er ekini alır:", "en": "In the indefinite masculine nominative the participle takes -er:" },
@@ -147,5 +146,7 @@
  { "tr": "Gerçekleşmemiş beklenti dilek kipiyle ve dönüşlü kurulur:", "en": "An expectation that did not happen is built reflexively in the subjunctive:" },
  { "tr": "Günlük hayatın iki hazır cümlesi de bu kelimeyle kurulur:", "en": "Two ready-made phrases of daily life are built with this word:" },
  { "tr": "Günlük konuşmada kısa cevap yeter, sonra soruyu geri sor:", "en": "In everyday talk a short answer is enough, then ask back:" },
- { "tr": "Hazırsın. Sohbette bir 'sen' teklifiyle karşılaşacaksın.", "en": "You are ready. In the chat you will meet an offer to use 'du'." }
+ { "tr": "Hazırsın. Sohbette bir 'sen' teklifiyle karşılaşacaksın.", "en": "You are ready. In the chat you will meet an offer to use 'du'." },
+ { "tr": "yer değiştirmeyen bir fiil,", "en": "is a verb with no movement, so" },
+ { "tr": "ile kurulur:", "en": "is the auxiliary:" }
 ]

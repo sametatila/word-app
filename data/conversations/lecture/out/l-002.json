@@ -99,7 +99,6 @@
  { "tr": "Vurgusuz ön ekle başlayan fiiller ortacın hecesini hiç almaz. Doğrusu:", "en": "Verbs beginning with an unstressed prefix never take the participle syllable. It should be:" },
  { "tr": "Fiilin baştaki parçası yapışık kalmış; cümlenin sonuna gitmeli. Doğrusu", "en": "The front part of the verb has stayed attached; it must go to the end. It should be" },
  { "tr": "Virgülden sonra yan cümle ve fiil en sonda. Ana cümle bozulmadan kalıyor.", "en": "After the comma the subordinate clause, and the verb right at the end. The main clause stays as it is." },
- { "tr": "yer değiştiren bir fiil; ikinci yardımcı fiili değil birinciyi alır. Doğrusu:", "en": "is a verb of movement; it takes the first auxiliary, not the second. It should be:" },
  { "tr": "Doğru. Önce olan iş bir basamak geride, ana cümle normal geçmişte ve fiille başlıyor.", "en": "Correct. The earlier event is one step further back, and the main clause is in the ordinary past and begins with the verb." },
  { "tr": "Doğru. Bu fiil yönelme hâli ister ve tümleç öne alındığı için fiil ikinci sırada duruyor.", "en": "Correct. This verb takes the dative, and because the complement is fronted the verb stands second." },
  { "tr": "İlk kalıbımız iki şeyi birden kapsıyor: hem o hem bu. İki parça da cümlede görünmek zorunda.", "en": "Our first pattern covers two things at once: both this and that. Both halves have to appear in the sentence." },
@@ -149,5 +148,8 @@
  { "tr": "gelir. Doğrusu:", "en": "is what you use. It should be:" },
  { "tr": "ve hava kötüyse", "en": "and if the weather is bad" },
  { "tr": "Yani 'Adın ne?'", "en": "That is, 'What is your name?'" },
- { "tr": "deriz, eril olan", "en": "but with the masculine" }
+ { "tr": "deriz, eril olan", "en": "but with the masculine" },
+ { "tr": "yer değiştiren bir fiil; Perfekt'i", "en": "is a verb of movement; its Perfekt does not take" },
+ { "tr": "ile değil,", "en": "but" },
+ { "tr": "ile kurar. Doğrusu:", "en": "instead. It should be:" }
 ]

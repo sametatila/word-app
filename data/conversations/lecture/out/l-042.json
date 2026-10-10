@@ -127,7 +127,6 @@
  { "tr": "Yanlış. Bu fiil sen biçiminde ortadaki sesini değiştiriyordu. Doğrusu:", "en": "Wrong. This verb changed its middle sound in the you-form. It should be:" },
  { "tr": "Yer bildiren edat yönelme hâlini getirir ve sıfat da ona göre ek alır:", "en": "A preposition of place brings the dative and the adjective takes its ending to match:" },
  { "tr": "yer değiştiren bir fiil: yardımcı fiil doğru ve ortaç ortadan açılmış.", "en": "a verb of movement: the auxiliary is right and the participle opened in the middle." },
- { "tr": "Yer değiştirmeyen fiil ikinci yardımcı fiili alır ve ortaç yine sonda:", "en": "A verb with no movement takes the second auxiliary and the participle is last again:" },
  { "tr": "Bağlaçtan sonra fiil sona giderken ikiye bölünen fiil birleşir. Doğrusu", "en": "After the conjunction the verb goes last and the split verb joins up. It should be" },
  { "tr": "Bir şeyin adını sormanın yolu; soru kelimesi başta, fiil ikinci sırada.", "en": "The way to ask what something is called; the question word first, the verb second." },
  { "tr": "Bir tane daha: 'Ben burada daha çok elektrikli ulaşımı önde görüyorum.'", "en": "One more: 'Here I tend to see electric mobility in the lead.'" },
@@ -149,5 +148,7 @@
  { "tr": "Hazırsın. Sohbette bir Türkçe deyimin Almanca karşılığını arayacaksın.", "en": "You are ready. In the chat you will look for the German equivalent of an English idiom." },
  { "tr": "Hazırsın. Şimdi bir arkadaşınla nerede kalacağınıza karar vereceksiniz.", "en": "You are ready. Now you will decide with a friend where to stay." },
  { "tr": "İki parça da birer tümleçtir, yani ikisinden sonra da fiil hemen gelir.", "en": "Both parts are complements, so the verb comes right after each of them." },
- { "tr": "Kip fiili ikinci sırada, yer tümleci ortada, ortaç ve werden sonda:", "en": "The modal verb second, the place phrase in the middle, the participle and werden last:" }
+ { "tr": "Kip fiili ikinci sırada, yer tümleci ortada, ortaç ve werden sonda:", "en": "The modal verb second, the place phrase in the middle, the participle and werden last:" },
+ { "tr": "Yer değiştirmeyen fiil", "en": "A verb with no movement takes" },
+ { "tr": "ile kurulur, ortaç yine sonda:", "en": "as its auxiliary and the participle is last again:" }
 ]

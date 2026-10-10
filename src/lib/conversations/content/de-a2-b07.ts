@@ -2008,7 +2008,11 @@ export const deA2B07: Conversation[] = [
           answer: false,
           why: [
             de("eintreffen"),
-            tr("yer değiştiren bir fiil; ikinci yardımcı fiili değil birinciyi alır. Doğrusu:"),
+            tr("yer değiştiren bir fiil; Perfekt'i"),
+            de("haben"),
+            tr("ile değil,"),
+            de("sein"),
+            tr("ile kurar. Doğrusu:"),
             de("Der Zug ist pünktlich eingetroffen."),
           ],
         },

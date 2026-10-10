@@ -675,9 +675,11 @@ export const deA2B02: Conversation[] = [
       },
       {
         say: [
-          tr(
-            "Taşınma hikâyesinde iki tür fiil bir arada durur: yer değiştirenler birinci yardımcı fiili, geri kalanlar ikinciyi alır. Bugünkü iki ayrılabilen fiil tam da bu ayrımı gösteriyor. Önce sekiz kelime.",
-          ),
+          tr("Taşınma hikâyesinde iki tür fiil bir arada durur: yer değiştirenler"),
+          de("sein"),
+          tr("ile, geri kalanlar"),
+          de("haben"),
+          tr("ile kurulur. Bugünkü iki ayrılabilen fiil tam da bu ayrımı gösteriyor. Önce sekiz kelime."),
         ],
       },
       {
@@ -764,9 +766,9 @@ export const deA2B02: Conversation[] = [
         say: [
           tr("İlk kalıbımız:"),
           de("Wir sind … eingezogen."),
-          tr(
-            "Bu fiil bir yerden bir yere geçmeyi anlatıyor, o yüzden birinci yardımcı fiili alıyor. Ayrılabilen bir fiil, ortacı ortadan açılıyor.",
-          ),
+          tr("Bu fiil bir yerden bir yere geçmeyi anlatıyor, o yüzden"),
+          de("sein"),
+          tr("ile kurulur. Ayrılabilen bir fiil, ortacı ortadan açılıyor."),
         ],
       },
       {
@@ -796,9 +798,9 @@ export const deA2B02: Conversation[] = [
         say: [
           tr("İkinci kalıbımız:"),
           de("Ich habe … ausgepackt."),
-          tr(
-            "Bu fiil yer değiştirmiyor, o yüzden ikinci yardımcı fiili alıyor. Ön ek aynı, yardımcı fiil farklı.",
-          ),
+          tr("Bu fiil yer değiştirmiyor, o yüzden"),
+          de("haben"),
+          tr("ile kurulur. Ön ek aynı, yardımcı fiil farklı."),
         ],
       },
       {
@@ -809,7 +811,9 @@ export const deA2B02: Conversation[] = [
           accept: ["Ich habe alle Kisten ausgepackt"],
           hint: [
             de("auspacken"),
-            tr("yer değiştirmeyen bir fiil, ikinci yardımcı fiili alır:"),
+            tr("yer değiştirmeyen bir fiil,"),
+            de("haben"),
+            tr("ile kurulur:"),
             de("Ich habe alle Kartons ausgepackt."),
             tr("Tekrar dene."),
           ],

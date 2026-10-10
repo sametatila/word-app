@@ -1225,9 +1225,9 @@ export const deA2B06: Conversation[] = [
           statement: "Das Paket ist beschädigt angekommen.",
           answer: true,
           why: [
-            tr(
-              "Varmak yer değiştiren bir fiil, o yüzden birinci yardımcı fiili almış; hasar bildiren sıfat ise ek almadan durmuş. Cümle doğru.",
-            ),
+            tr("Varmak yer değiştiren bir fiil, o yüzden"),
+            de("sein"),
+            tr("ile kurulmuş; hasar bildiren sıfat ise ek almadan durmuş. Cümle doğru."),
           ],
         },
       },

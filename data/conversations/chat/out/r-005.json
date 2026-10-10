@@ -1,7 +1,7 @@
 [
  {
   "conversation": "de-a2-urlaub",
-  "sceneEn": "You are having a coffee with a friend who is asking about your last vacation. Say where you went with verbs of movement, and what you did there with the other auxiliary.",
+  "sceneEn": "You are having a coffee with a friend who is asking about your last vacation. Say where you went with verbs that take sein, and what you did there with verbs that take haben.",
   "partnerEn": "a friend who loves vacation stories",
   "openingEn": "Hi! You were away, weren't you? Where did you travel to?",
   "goalEn": "Where you went on vacation, when, and what you did there have been described, and your friend has said something about their own vacation."

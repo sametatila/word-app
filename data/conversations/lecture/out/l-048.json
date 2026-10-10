@@ -107,7 +107,6 @@
  { "tr": "Bir de dürüstlük kalıbı: hatırlamadığını söylemek ifadeyi zayıflatmaz, güçlendirir. Önce kelimeler.", "en": "And a pattern of honesty: saying you do not remember does not weaken your statement, it strengthens it. The words first." },
  { "tr": "Bir de olasılık kalıbı öğreneceğiz: olabilir ama olmayabilir. Modal fiille kurulur. Önce kelimeler.", "en": "We will learn a pattern of possibility too: it may happen and it may not. It is built with a modal. The words first." },
  { "tr": "Bu fiil ödünç ALAN için kullanılır ve yanında yönelme hâlinde bir zamir taşır: kendine ödünç almak.", "en": "This verb is used for the one who BORROWS and carries a pronoun in the dative beside it: to borrow for oneself." },
- { "tr": "Bu fiil yer değiştirmiyor, o yüzden ikinci yardımcı fiili alıyor. Ön ek aynı, yardımcı fiil farklı.", "en": "This verb involves no change of place, so it takes the second auxiliary. The same prefix, a different auxiliary." },
  { "tr": "Bugün öğle molasındayız. İki şey arasından birini seçmenin Almanca yolunu öğreneceğiz. Hazır mısın?", "en": "Today we are on the lunch break. We will learn the German way of choosing between two things. Ready?" },
  { "tr": "Doğru. Aktarım kipi kullanılmış: cümle sözcünün, aktaran kişi ona katılıp katılmadığını söylemiyor.", "en": "Correct. The reported mood is used: the sentence belongs to the speaker and the one reporting it does not say whether they agree." },
  { "tr": "Doğru. Deyim kelimelerden değil resimden oluşur; resim başka dile taşınmaz ve çeviri anlamsızlaşır.", "en": "Correct. An idiom is made of a picture, not of words; the picture does not travel into another language and the translation turns to nonsense." },
@@ -146,5 +145,7 @@
  { "tr": "ikiye bölünen fiillerden; bir parçası cümlenin sonuna düşer. Şimdi sen söyle: 'Seni sekizde alırım.'", "en": "one of the verbs that splits in two; one part drops to the end of the sentence. Now you say it: 'I will pick you up at eight.'" },
  { "tr": "İlk kalıbımız hangisinin kolay olduğunu söylüyor: kişi yönelme hâlinde, kolay gelen şey özne oluyor.", "en": "Our first pattern says which one is easy: the person in the dative and the thing that comes easily as the subject." },
  { "tr": "İlk kalıbımız yasağı söylüyor. Yer tümleci başta olduğu için yardımcı fiil hemen arkasından geliyor.", "en": "Our first pattern states the ban. Because the place phrase is first the auxiliary comes right after it." },
- { "tr": "İsim nötr ve belirsiz artikelden sonra geliyor; sıfat da o cinsi gösteren eki almış. Cümle doğru.", "en": "The noun is neuter and comes after an indefinite article; the adjective has taken the ending that shows that gender. The sentence is correct." }
+ { "tr": "İsim nötr ve belirsiz artikelden sonra geliyor; sıfat da o cinsi gösteren eki almış. Cümle doğru.", "en": "The noun is neuter and comes after an indefinite article; the adjective has taken the ending that shows that gender. The sentence is correct." },
+ { "tr": "Bu fiil yer değiştirmiyor, o yüzden", "en": "This verb involves no change of place, so it takes" },
+ { "tr": "ile kurulur. Ön ek aynı, yardımcı fiil farklı.", "en": "as its auxiliary. The same prefix, a different auxiliary." }
 ]

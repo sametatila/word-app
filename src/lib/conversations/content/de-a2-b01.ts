@@ -52,9 +52,11 @@ export const deA2B01: Conversation[] = [
       },
       {
         say: [
-          tr(
-            "Perfekt iki parçadan oluşur: yardımcı fiil ikinci sırada, asıl fiil ortaç hâliyle cümlenin sonunda. Yardımcı fiil hep aynı değil; yer değiştiren fiiller birini, geri kalanı ötekini alır. Bugünkü sekiz kelimeden dördü yer değiştiren fiil. Önce kelimeler.",
-          ),
+          tr("Perfekt iki parçadan oluşur: yardımcı fiil ikinci sırada, asıl fiil ortaç hâliyle cümlenin sonunda. Yardımcı fiil hep aynı değil: yer değiştiren fiiller"),
+          de("sein"),
+          tr("ile, geri kalanı"),
+          de("haben"),
+          tr("ile kurulur. Bugünkü sekiz kelimeden dördü yer değiştiren fiil. Önce kelimeler."),
         ],
       },
       {
@@ -176,9 +178,9 @@ export const deA2B01: Conversation[] = [
         say: [
           tr("İkinci kalıbımız:"),
           de("Wir haben … unternommen."),
-          tr(
-            "Yer değiştirmeyen fiiller öteki yardımcı fiili alır. Bu fiilin ortacında bir şey daha var: başında 'ge' yok. Vurgusuz bir ön ek taşıyan fiiller o heceyi hiç almaz.",
-          ),
+          tr("Yer değiştirmeyen fiiller"),
+          de("haben"),
+          tr("ile kurulur. Bu fiilin ortacında bir şey daha var: başında 'ge' yok. Vurgusuz bir ön ek taşıyan fiiller o heceyi hiç almaz."),
         ],
       },
       {
@@ -197,7 +199,9 @@ export const deA2B01: Conversation[] = [
           kind: "produce",
           target: "In der Natur haben wir viel unternommen",
           hint: [
-            tr("Yer değiştirmeyen fiil ikinci yardımcı fiili alır ve ortaç yine sonda:"),
+            tr("Yer değiştirmeyen fiil"),
+            de("haben"),
+            tr("ile kurulur, ortaç yine sonda:"),
             de("In der Natur haben wir viel unternommen."),
             tr("Tekrar dene."),
           ],
@@ -224,7 +228,11 @@ export const deA2B01: Conversation[] = [
           answer: false,
           why: [
             de("hinfahren"),
-            tr("yer değiştiren bir fiil; ikinci yardımcı fiili değil birinciyi alır. Doğrusu:"),
+            tr("yer değiştiren bir fiil; Perfekt'i"),
+            de("haben"),
+            tr("ile değil,"),
+            de("sein"),
+            tr("ile kurar. Doğrusu:"),
             de("Ich bin nach Berlin hingefahren."),
           ],
         },
@@ -239,7 +247,7 @@ export const deA2B01: Conversation[] = [
     ],
     chat: {
       scene:
-        "Bir arkadaşınla kahve içiyorsun ve sana son tatilini soruyor. Nereye gittiğini yer değiştiren fiillerle, orada ne yaptığını ise ikinci yardımcı fiille anlat.",
+        "Bir arkadaşınla kahve içiyorsun ve sana son tatilini soruyor. Nereye gittiğini sein ile kurulan fiillerle, orada ne yaptığını ise haben ile kurulanlarla anlat.",
       partner: "tatil hikâyelerini seven bir arkadaş",
       opening: "Hallo! Du warst doch weg. Wohin bist du verreist?",
       openingTr: "Selam! Sen yoktun ya. Nereye seyahat ettin?",
@@ -648,7 +656,9 @@ export const deA2B01: Conversation[] = [
           accept: ["Wir sind gestern Abend ausgegangen"],
           hint: [
             de("ausgehen"),
-            tr("yer değiştiren bir fiil, o yüzden birinci yardımcı fiili alır:"),
+            tr("yer değiştiren bir fiil, o yüzden"),
+            de("sein"),
+            tr("ile kurulur:"),
             de("Gestern Abend sind wir ausgegangen."),
             tr("Tekrar dene."),
           ],
