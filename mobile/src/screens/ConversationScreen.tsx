@@ -1478,7 +1478,11 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
     );
   }
   if (expect.kind === "truefalse") {
+    /* "Bu adımı atla" öbür adımlardaki gibi düğmelerin ALTINDA, ortalı (Samet, 2026-10-10):
+       eskiden iki dolu düğmenin yanında üçüncü sütundu; gri küçük yazı iki satıra kırılıp
+       kutunun üstüne yaslanıyor, düğme sırasıyla uyumsuz görünüyordu. Web aynı yerde ayrı satır. */
     return (
+      <View style={{ gap: spacing.sm }}>
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(true)}>
@@ -1494,6 +1498,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
             </View>
           </PressableScale>
         </View>
+      </View>
         {atla}
       </View>
     );
