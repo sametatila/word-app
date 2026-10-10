@@ -66,6 +66,7 @@ ASC salt okuma dökümünden güncellendi.
 | İ7 | Açık kaynak lisans ekranı | ✅ | b01006ea, acbc8cee (`/licenses`, `npm run licenses:gen`) |
 | İ8 | Sıklık listesi ve maskot çiziminin kaynağı | ✅ | Liste FrequencyWords 2018 `de_50k.txt` ile bayt bayt aynı (upstream karşılaştırması 2026-09-26), içerik CC BY-SA 4.0: atıf `/licenses` › Data ve `data/README.md` › Kaynaklar. Maskotu Lernomi ekibi oluşturdu (Samet, 2026-09-26), üçüncü taraf hakkı yok |
 | İ9 | Ligde bildirme yalnız uzun basış | ✅ | 333d7113 |
+| İ10 | QA düzeltmelerinin Defne/Aras sesi (`duzeltme_mac.sh`) | ✅ | 2026-10-10: tts-test `duzeltme_mac.sh` bitti ve yayında: konuşma anlatımı 2.430 (16 uyarılı, `uyarili_anlam.json`), dinleme 5, okuma 6; sonradan eklenen A2 Perfekt sein/haben anlatımı (QA F-0095) 22/22, uyarısız (23:09). Kapsam: `tts-{conversation,listening,reading,walk}-jobs.ts` 66.207 parça sunucu `tts-map.json`a karşı, eksik 0; kelime katmanı bekçisi `eksik.jsonl` boş |
 
 ### G — Gizlilik beyanları
 
