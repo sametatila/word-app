@@ -253,7 +253,7 @@ export const a2U01: SkillExercise[] = [
         text: "Was machen sie zuletzt?",
         options: [],
         answer: 0,
-        accept: ["die Tür abschließen", "abschließen", "die Wohnungstür abschließen"],
+        accept: ["die Tür abschließen", "abschließen", "die Wohnungstür abschließen", "Wohnungstür abschließen", "Tür abschließen", "Sie schließen die Tür ab", "Sie schließen die Wohnungstür ab", "Wir schließen die Tür ab", "Wir schließen die Wohnungstür ab", "Sie schließen ab"],
         explain: "„die Wohnungstür habe ich noch nicht abgeschlossen — das machen wir zuletzt.“",
       },
     ],
