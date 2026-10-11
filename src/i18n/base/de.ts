@@ -912,6 +912,7 @@ export const deBase: Record<string, string> = {
   "conversation.fix": "Korrektur: {text}",
   "conversation.go_back": "Zurück",
   "conversation.i_m_ready": "Bereit →",
+  "conversation.to_chat": "Zum Gespräch →",
   "conversation.type_your_answer": "Schreib deine Antwort auf {lang}…",
   "conversation.type_in": "Auf {lang} schreiben…",
   "conversation.pick_up_where_you_left_off": "Weitermachen?",

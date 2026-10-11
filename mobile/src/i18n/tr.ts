@@ -915,6 +915,7 @@ export const tr: Record<string, string> = {
   "conversation.fix": "Düzeltme: {text}",
   "conversation.go_back": "Geri dön",
   "conversation.i_m_ready": "Hazırım →",
+  "conversation.to_chat": "Konuşmaya geç →",
   "conversation.type_your_answer": "{lang} cevabını yaz…",
   "conversation.type_in": "{lang} yaz…",
   "conversation.pick_up_where_you_left_off": "Kaldığın yerden devam?",

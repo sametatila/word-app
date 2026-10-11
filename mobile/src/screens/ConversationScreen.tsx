@@ -490,7 +490,11 @@ export function ConversationScreen() {
     } else if (spoken) {
       speakTarget(spoken);
     }
-    if (k >= conversation.lecture.length) enterChat();
+    /* Anlatım bitince sohbete KENDİLİĞİNDEN geçilmiyor, "Konuşmaya geç" düğmesi
+       bekliyor (web `conversation-player` aynı düğme). `enterChat` akışı
+       temizliyor: son adım doğru-yanlışsa gerekçesi 1,1 sn sonra, son anlatım
+       balonları ise hiç okunmadan siliniyordu (QA F-0100: "sonuç geri
+       bildirimi görmedim, adım hemen sohbete geçti"). */
     scrollDown();
   }
 
@@ -501,6 +505,10 @@ export function ConversationScreen() {
      basılan "atla" aynı sonraki adımı iki kez açmasın (çift baloncuk ve okuma). */
   function advance() {
     if (cursorRef.current !== cursor) return;
+    if (conversation && cursor >= conversation.lecture.length) {
+      enterChat();
+      return;
+    }
     presentFrom(cursor + 1);
   }
 
@@ -1220,7 +1228,7 @@ export function ConversationScreen() {
                 onConfirm={onConfirm} onSpeakRepeat={() => void speakRepeat(true)} onTypedRepeat={submitRepeatTyped}
                 onSpeakProduce={() => void speakProduce(true)} onProduce={() => void submitProduce()} onTrueFalse={answerTrueFalse}
                 sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping}
-                onSkip={skipStep} colors={colors} />
+                onSkip={skipStep} atEnd={!!conversation && cursor >= conversation.lecture.length} colors={colors} />
             ) : (
               <ChatControls input={input} setInput={setInput} busy={busy} onSend={() => sendRole()}
                 onSpeak={() => void speakRole()}
@@ -1429,12 +1437,12 @@ function TypeToggle({ onPress, colors }: { onPress: () => void; colors: Palette 
   );
 }
 
-function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRepeat, onTypedRepeat, onSpeakProduce, onProduce, onTrueFalse, sttOk, sttSebep, listening, typing, setTyping, onSkip, colors }: {
+function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRepeat, onTypedRepeat, onSpeakProduce, onProduce, onTrueFalse, sttOk, sttSebep, listening, typing, setTyping, onSkip, atEnd, colors }: {
   expect: Expectation | undefined; tries: number; input: string; setInput: (s: string) => void;
   onConfirm: () => void; onSpeakRepeat: () => void; onTypedRepeat: () => void; onSpeakProduce: () => void;
   onProduce: () => void; onTrueFalse: (b: boolean) => void;
   sttOk: boolean | null; sttSebep: "denied" | "unavailable" | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void;
-  onSkip: () => void; colors: Palette;
+  onSkip: () => void; atEnd: boolean; colors: Palette;
 }) {
   // Mikrofon yoksa/izin verilmediyse yazma tek yol — konuşma tamamlanabilir kalmalı.
   const yaziYolu = sttOk === false || typing;
@@ -1455,7 +1463,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
       <Text variant="caption" color={colors.textMuted}>{tx("conversationp.skip_step")}</Text>
     </PressableScale>
   );
-  if (!expect) return <BigButton label={tx("conversation.continue")} onPress={onConfirm} colors={colors} />;
+  if (!expect) return <BigButton label={tx(atEnd ? "conversation.to_chat" : "conversation.continue")} onPress={onConfirm} colors={colors} />;
   if (expect.kind === "confirm") return <BigButton label={tx("conversation.i_m_ready")} onPress={onConfirm} colors={colors} />;
   if (expect.kind === "repeat") {
     return (

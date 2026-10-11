@@ -912,6 +912,7 @@ export const enBase: Record<string, string> = {
   "conversation.fix": "Correction: {text}",
   "conversation.go_back": "Go back",
   "conversation.i_m_ready": "I'm ready →",
+  "conversation.to_chat": "Go to the conversation →",
   "conversation.type_your_answer": "Type your {lang} answer…",
   "conversation.type_in": "Type in {lang}…",
   "conversation.pick_up_where_you_left_off": "Pick up where you left off?",
