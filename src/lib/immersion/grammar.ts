@@ -55,6 +55,22 @@ export type GrammarText = {
   bool: [string, string];
 };
 
+/**
+ * DİL BİLGİSİ SORUSU OLABİLECEK HÜKÜM (QA F-0100, 2026-10-11).
+ *
+ * Hüküm adımlarının çoğu (224 adımda ~210) cümlenin dilbilgisini soruyor ("…
+ * cümlesi doğru mu, yanlış mı?"). Birkaçı başka bir şey soruyor: anlamı
+ * ("anlamca doğru mu", "mantıklı mı"), bağlama uygunluğu ("pazarlık için uygun
+ * mu", "resmî bir yazı için", "doğal duruyor mu") ya da anlatımın verdiği bir
+ * anlamı ("… demek istiyorsun"). Gramer adımı cümleyi SORUSUZ, yalnız
+ * Richtig/Falsch ile gösteriyor; orada "Wir durften nicht rauchen, aber wir
+ * mussten rauchen." dilbilgisi doğru olduğu için "Richtig" seçildi, anahtar
+ * "Falsch", gerekçe "dilbilgisi doğru ama anlam çelişiyor". Bu adımlar gramer
+ * sorusu olmuyor. Soru anlatımın Türkçe kaynağından okunuyor (anadil
+ * çevirileri ayrı katmanda, kaynak hep Türkçe).
+ */
+const CONTEXT_JUDGMENT = /anlam|mantıklı|uygun|resm[iî]|doğal|demek/i;
+
 export function deriveGrammar(unitId: string, conversations: Conversation[], count: number, say: GrammarText): SkillQuestion[] {
   const judges: SkillQuestion[] = [];
   const orders: SkillQuestion[] = [];
@@ -62,6 +78,7 @@ export function deriveGrammar(unitId: string, conversations: Conversation[], cou
   for (const conversation of conversations) {
     for (const step of conversation.lecture) {
       if (step.expect?.kind === "truefalse") {
+        if (CONTEXT_JUDGMENT.test(step.say.filter((x) => x.lang === "tr").map((x) => x.text).join(" "))) continue;
         judges.push({
           kind: "truefalse",
           text: step.expect.statement,
