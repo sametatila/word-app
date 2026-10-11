@@ -246,8 +246,8 @@ export const a2U02: SkillExercise[] = [
         text: "Damals war ich ___.",
         options: [],
         answer: 0,
-        accept: ["blond"],
-        explain: "„Ja, damals war ich blond.“ Olmak fiilinin kısa geçmişi: war.",
+        accept: ["blond", "schüchtern", "furchtbar schüchtern"],
+        explain: "„Ja, damals war ich blond.“ — Nora „ich war furchtbar schüchtern“ da diyor, o da doğru. Olmak fiilinin kısa geçmişi: war.",
       },
       {
         text: "Wie war Noras Bruder als Kind?",
