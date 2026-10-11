@@ -304,6 +304,25 @@ async function streamTests() {
   check("yankı: öneriden sonra gelen ilk rol satırı da düşüyor", (await collect([...fixFirst], ECHO_SAID)) === "[SAY] Ich war froh.\nUnd dann?");
   const short = "Ja, gerne.\nWas noch?";
   check("yankı: kısa söz (≤3 sözcük) karışmıyor", (await collect([...short], "Ja, gerne.")) === short);
+  // Öneri tekrarı (QA F-0101): aynı öneri bir kez, öğrencinin yazdığı cümle hiç.
+  async function collectCtx(chunks: string[], said: string, userSaid: string[]): Promise<string> {
+    async function* src() {
+      for (const c of chunks) yield c;
+    }
+    let out = "";
+    for await (const d of guardCorrections(src(), said, undefined, { userSaid })) out += d;
+    return out;
+  }
+  const dup = "Gute Besserung!\n[SAY] Wie oft darf ich das nehmen?\n[SAY] Ich nehme eine kleine Packung.\n[SAY] wie oft darf ich das nehmen\n[SAY] Danke schön.\n";
+  const history = ["Ich habe Husten.", "Ich nehme eine kleine Packung."];
+  const dupWant = "Gute Besserung!\n[SAY] Wie oft darf ich das nehmen?\n[SAY] Danke schön.\n";
+  let dbad = 0;
+  for (let i = 0; i <= dup.length; i++) {
+    if ((await collectCtx([dup.slice(0, i), dup.slice(i)].filter(Boolean), history.at(-1)!, history)) !== dupWant) dbad++;
+  }
+  check("öneri: yinelenen ve söylenmiş cümle her bölmede düşüyor", dbad === 0, String(dbad));
+  check("öneri: geçmiş verilmezse yalnız son söz sayılıyor",
+    (await collect([..."Ok.\n[SAY] Ich habe Husten.\n[SAY] Danke.\n"], "Ich habe Husten.")) === "Ok.\n[SAY] Danke.\n");
   // Satır içi işaretlerin akışta bölünmesi: her bölme noktasında dizge sürümüyle aynı.
   const INLINE = "Woher kommen Sie? [SAY] Aus der Türkei. - [SAY] Aus Istanbul.\n[SAY] Aus Bonn.";
   const want = breakInlineMarkers(INLINE);

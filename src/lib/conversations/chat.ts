@@ -540,6 +540,7 @@ export async function* streamChat(
       register: chatRegister(conversation),
       lang: conversation.course === "en" ? "en" : "de",
       injected: ownFixes.map((f) => f.split("→")[0]),
+      userSaid: messages.filter((m) => m.role === "user").map((m) => m.content),
     },
   );
 }

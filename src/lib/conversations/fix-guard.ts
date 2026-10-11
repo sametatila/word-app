@@ -82,6 +82,8 @@ export type FixContext = {
   lang?: "de" | "en";
   /** Sunucunun kendi eklediği düzeltmelerin sol tarafları (`article-check`): model aynısını yazarsa silinir. */
   injected?: string[];
+  /** Öğrencinin bu sohbette yazdığı bütün mesajlar: aynısı öneri olarak bir daha sunulmuyor (QA F-0101). */
+  userSaid?: string[];
 };
 
 /** Karşılaştırma için sözcüklere ayırma: küçük harf, ß=ss, harf/rakam dışı ayırıcı. */
@@ -683,12 +685,33 @@ export async function* guardCorrections(
   let echoCheck = saidNorm.split(" ").length >= 4;
   const isMarker = (line: string) => [CORRECTION_MARK, SUGGESTION_MARK].some((m) => line.trimStart().startsWith(m));
 
+  /*
+   * ÖNERİ TEKRARI (QA F-0101, 2026-10-11): model aynı öneriyi bir cevapta iki kez yazabiliyor ve
+   * öğrencinin önceki turlarda zaten gönderdiği cümleyi yeniden öneriyordu (çip satırında
+   * "Wie oft darf ich das nehmen?" iki kez). Sözcük sözcük aynı öneri bir kez geçiyor;
+   * öğrencinin yazdığı bir mesajın aynısı hiç geçmiyor.
+   */
+  const saidBefore = new Set((ctx.userSaid ?? [said]).map((m) => words(m).join(" ")).filter(Boolean));
+  const offered = new Set<string>();
+
   /** Satırın kendisi ya da silindiyse `null`. */
   const settle = (line: string): string | null => {
     const verdict = judgeLine(line, said, ctx);
-    if (verdict.keep) return ctx.lang === "en" ? line : repairModelSentence(line);
-    onDrop?.(verdict.reason);
-    return null;
+    if (!verdict.keep) {
+      onDrop?.(verdict.reason);
+      return null;
+    }
+    const kept = ctx.lang === "en" ? line : repairModelSentence(line);
+    const t = kept.trimStart();
+    if (t.startsWith(SUGGESTION_MARK)) {
+      const key = words(t.slice(SUGGESTION_MARK.length)).join(" ");
+      if (key && (offered.has(key) || saidBefore.has(key))) {
+        onDrop?.(offered.has(key) ? "yinelenen öneri" : "öğrencinin söylediği cümle önerildi");
+        return null;
+      }
+      offered.add(key);
+    }
+    return kept;
   };
 
   for await (const delta of source) {
