@@ -61,7 +61,7 @@
  { "tr": "kelimesinin önünde küçük bir \"a\" var, düşürme. Söyle bakalım:", "kind": "say.tr", "de": "steht ein kleines „a“ davor, lass es nicht weg. Sag mal:" },
  { "tr": "kısmı çok işine yarayacak. Sayıyla sıklık söylerken kalıp şu:", "kind": "say.tr", "de": "wird dir sehr nützen. Mit einer Zahl lautet die Wendung so:" },
  { "tr": "Küçük bir alıştırma. \"Bu en iyi gün\" cümlesini İngilizce kur.", "kind": "say.tr", "de": "Eine kleine Übung. Bilde „Das ist der beste Tag“ auf Englisch." },
- { "tr": "Küçük bir kontrol. Şu iki cümleyi dinle ve mantıklı mı söyle.", "kind": "say.tr", "de": "Eine kleine Kontrolle. Hör die zwei Sätze und sag, ob es passt." },
+ { "tr": "Küçük bir kontrol. Şu iki cümleyi dinle: anlamca doğru mu, yanlış mı?", "kind": "say.tr", "de": "Eine kleine Kontrolle. Hör die zwei Sätze: Sind sie inhaltlich richtig oder falsch?" },
  { "tr": "Merhaba! Bugün İngilizcede olumsuz cümle kurmayı öğreneceğiz.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, im Englischen zu verneinen." },
  { "tr": "Ne zaman olduğunu söyleyeceksen artık geçmiş zamana geçersin:", "kind": "say.tr", "de": "Willst du die Zeit nennen, wechselst du in die Vergangenheit:" },
  { "tr": "Nerede düştüğünü de söyleyelim. Merdiven, İngilizcede stairs.", "kind": "say.tr", "de": "Sagen wir auch, wo du gestürzt bist. Treppe heißt auf Englisch stairs." },

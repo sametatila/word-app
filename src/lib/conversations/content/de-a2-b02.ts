@@ -613,7 +613,7 @@ export const deA2B02: Conversation[] = [
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Wir durften nicht rauchen, aber wir mussten rauchen."),
-          tr("cümlesi anlamlı mı, anlamsız mı?"),
+          tr("cümlesi anlamca doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",

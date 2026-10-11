@@ -18988,7 +18988,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kontrol edelim. Sana bir cümle söyleyeceğim, mantıklı mı değil mi karar ver."
+      "text": "Bir kontrol edelim. Sana bir cümle söyleyeceğim: anlamca doğru mu, yanlış mı, sen karar ver."
      },
      {
       "lang": "en",
@@ -23329,7 +23329,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir kontrol. Şu İngilizce cümleyi dinle ve mantıklı mı söyle:"
+      "text": "Küçük bir kontrol. Şu İngilizce cümleyi dinle; anlamca doğru mu, yanlış mı?"
      },
      {
       "lang": "en",

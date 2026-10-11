@@ -3,7 +3,7 @@
  { "tr": "İngilizcede geçmiş zamanın en kolay yolu fiilin sonuna -ed eklemek.", "kind": "say.tr", "de": "Im Englischen ist der leichteste Weg zur Vergangenheit ein -ed am Ende." },
  { "tr": "Kapanış saatini kendin söyleyebilmen lazım. Benden sonra tekrar et.", "kind": "say.tr", "de": "Die Schließzeit musst du selbst sagen können. Wiederhole nach mir." },
  { "tr": "Küçük bir doğru mu yanlış mı sorusu. Şu cümleyi dinle ve karar ver.", "kind": "say.tr", "de": "Eine kleine Richtig-oder-falsch-Frage. Hör den Satz und entscheide." },
- { "tr": "Küçük bir kontrol. Şu İngilizce cümleyi dinle ve mantıklı mı söyle:", "kind": "say.tr", "de": "Eine kleine Kontrolle. Hör den englischen Satz und sag, ob er passt:" },
+ { "tr": "Küçük bir kontrol. Şu İngilizce cümleyi dinle; anlamca doğru mu, yanlış mı?", "kind": "say.tr", "de": "Eine kleine Kontrolle. Hör den englischen Satz: Ist er inhaltlich richtig oder falsch?" },
  { "tr": "Merhaba, hoş geldin. Bugün bir mağazadasın ve bir tişört alacaksın.", "kind": "say.tr", "de": "Hallo, willkommen. Heute bist du im Laden und kaufst ein T-Shirt." },
  { "tr": "Merhaba! Bugün birini İngilizce davet etmeyi öğreneceğiz: sinemaya.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, jemanden einzuladen: ins Kino." },
  { "tr": "Peki davet edilen kişi kabul ederse ne der? En sık duyacağın cevap:", "kind": "say.tr", "de": "Und was sagt die eingeladene Person bei Zusage? Am häufigsten:" },
