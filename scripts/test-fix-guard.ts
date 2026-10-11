@@ -284,6 +284,26 @@ async function streamTests() {
   // "[F" ile başlayıp işarete dönüşmeyen satır kaybolmuyor.
   const near = "[Fenster] ist offen.\nOk";
   check("işarete benzeyen düz satır korunuyor", (await collect([...near], "x")) === near);
+  // Yankı (QA F-0097): ilk rol satırı öğrencinin cümlesinin aynısıysa düşüyor, her bölmede.
+  const ECHO_SAID = "Zuerst habe ich lange gelernt, danach bin ich zur Uni gefahren.";
+  const echo = `${ECHO_SAID}\nWie hast du dich gefühlt?\n[SAY] Ich war froh.\n`;
+  let ebad = 0;
+  for (let i = 0; i <= echo.length; i++) {
+    if ((await collect([echo.slice(0, i), echo.slice(i)].filter(Boolean), ECHO_SAID)) !== "Wie hast du dich gefühlt?\n[SAY] Ich war froh.\n") ebad++;
+  }
+  check("yankı satırı her bölmede düşüyor", ebad === 0, String(ebad));
+  check("yankı: noktalama/büyük harf farkı da düşüyor",
+    (await collect([..."zuerst habe ich lange gelernt danach bin ich zur Uni gefahren!\nUnd dann?"], ECHO_SAID)) === "Und dann?");
+  const recast = "Zuerst habe ich lange gelernt, danach bin ich zur Uni gegangen.\nUnd dann?";
+  check("yankı: farklı cümle (yeniden kurma) kalıyor", (await collect([...recast], ECHO_SAID)) === recast);
+  const onlyEcho = ECHO_SAID;
+  check("yankı: cevabın tamamıysa kalıyor", (await collect([...onlyEcho], ECHO_SAID)) === onlyEcho);
+  const later = `Schön!\n${ECHO_SAID}\nUnd dann?`;
+  check("yankı: ilk rol satırı değilse kalıyor", (await collect([...later], ECHO_SAID)) === later);
+  const fixFirst = `[SAY] Ich war froh.\n${ECHO_SAID}\nUnd dann?`;
+  check("yankı: öneriden sonra gelen ilk rol satırı da düşüyor", (await collect([...fixFirst], ECHO_SAID)) === "[SAY] Ich war froh.\nUnd dann?");
+  const short = "Ja, gerne.\nWas noch?";
+  check("yankı: kısa söz (≤3 sözcük) karışmıyor", (await collect([...short], "Ja, gerne.")) === short);
   // Satır içi işaretlerin akışta bölünmesi: her bölme noktasında dizge sürümüyle aynı.
   const INLINE = "Woher kommen Sie? [SAY] Aus der Türkei. - [SAY] Aus Istanbul.\n[SAY] Aus Bonn.";
   const want = breakInlineMarkers(INLINE);

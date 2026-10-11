@@ -643,6 +643,13 @@ export async function* splitInlineMarkers(source: AsyncIterable<string>): AsyncG
  *
  * Silinen satırın nedeni `onDrop`a gidiyor (içerik değil: öğrencinin sözü
  * günlüğe yazılmasın).
+ *
+ * YANKI (QA F-0097, 2026-10-11): model rol metnine öğrencinin cümlesini aynen
+ * yazarak başlayabiliyor ("Zuerst habe ich lange gelernt, …" ⏎ "Wie hast du dich
+ * gefühlt …?"); düzeltme etiketi olmadığından öğrenci onu asistanın sözü sanıyor.
+ * İlk rol satırı, öğrencinin en az 4 sözcüklük cümlesinin başıyla örtüştüğü sürece
+ * tutuluyor; satır bitince sözcük sözcük aynıysa ve arkasından başka satır geliyorsa
+ * siliniyor. Ayrıldığı an akmaya başlıyor.
  */
 /**
  * Modelin öğrenciye MODEL olarak verdiği cümleyi onarıyor: öneri satırı (tamamı) ve düzeltme
@@ -671,6 +678,10 @@ export async function* guardCorrections(
   let held = ""; // tutulan (düzeltme olabilecek) satırın başı
   let holding = false;
   let atLineStart = true;
+  const saidNorm = words(said).join(" ");
+  // Yalnız ilk rol satırı yankı olabilir; düzeltme ve öneri satırları bunu kapatmıyor.
+  let echoCheck = saidNorm.split(" ").length >= 4;
+  const isMarker = (line: string) => [CORRECTION_MARK, SUGGESTION_MARK].some((m) => line.trimStart().startsWith(m));
 
   /** Satırın kendisi ya da silindiyse `null`. */
   const settle = (line: string): string | null => {
@@ -696,9 +707,11 @@ export async function* guardCorrections(
         // İşaretle başlayabilir mi? Başlayamayacağı anlaşıldığı an satır akmaya başlıyor.
         // Öneri satırları da tutuluyor: model cümlesi onarılıyor (`repairModelSentence`).
         const maybeFix = [CORRECTION_MARK, SUGGESTION_MARK].some((m) => lead.startsWith(m) || m.startsWith(lead));
+        const maybeEcho = echoCheck && saidNorm.startsWith(words(held).join(" "));
         if (nl === -1) {
           rest = "";
-          if (!maybeFix) {
+          if (!maybeFix && !maybeEcho) {
+            if (lead) echoCheck = false;
             out += held;
             holding = false;
             atLineStart = false;
@@ -706,6 +719,15 @@ export async function* guardCorrections(
           break;
         }
         rest = rest.slice(nl + 1);
+        if (lead && !isMarker(held)) {
+          echoCheck = false;
+          if (maybeEcho && words(held).join(" ") === saidNorm) {
+            onDrop?.("öğrencinin cümlesinin yankısı");
+            holding = false;
+            atLineStart = true;
+            continue;
+          }
+        }
         const kept = settle(held);
         // Silinen satırın satır sonu da gidiyor: arada boş satır kalmasın.
         if (kept !== null) out += kept + "\n";
