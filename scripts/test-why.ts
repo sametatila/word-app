@@ -143,5 +143,11 @@ for (const type of ["case", "conjugation", "meaning", "listening", "pronunciatio
 }
 check("anlam hatası seçileni anıyor", whyFor({ type: "meaning", word: { de: "Katze", artikel: "die", tr: "kedi" }, detail: "köpek" }).text.includes("„köpek“"));
 
+// Panel #82: artikelle başlayan cümle özneyle başlıyor; "„Der“ ile başlayınca özne fiilden sonra" denmez.
+const w82 = whyFor({ type: "verb_position", answer: ["Der", "Mann", "kommt", "heute"], tail: "." }, "tr");
+check("#82: artikelle başlayan cümlede devrik kuralı yok", !w82.text.includes("„Der“"), w82.text);
+const wInv = whyFor({ type: "verb_position", answer: ["Heute", "gehe", "ich", "ins", "Kino"], tail: "." }, "tr");
+check("zarfla başlayan cümlede devrik kuralı", wInv.text.includes("„Heute“"), wInv.text);
+
 console.log(failures === 0 ? "\nTÜM TESTLER GEÇTİ" : `\n${failures} TEST BAŞARISIZ`);
 process.exit(failures === 0 ? 0 : 1);

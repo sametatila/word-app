@@ -5,7 +5,7 @@ import { grammarLine, typLabel } from "./wordGrammar";
 import { firstExample } from "../data/example";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
-import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
+import { matchSentence, orderOnly, withModelErrors, type ModelError, type SentenceMatch } from "../lib/sentenceMatch";
 import { markKnown, optionCards, optionTexts, todayStr } from "./session";
 import { CharMarked, MarkTag, DiffLines, MarkedSentence, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss, typoNear } from "../lib/errors";
@@ -1877,7 +1877,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     if (!ok && !guest && (m.verdict === "wrong" || m.verdict === "order") && typed.split(/\s+/).length >= 3) {
       setChecking(true);
       try {
-        const d = await api<{ result?: { score?: { overall?: number; task?: number } } }>(
+        const d = await api<{ result?: { score?: { overall?: number; task?: number }; errors?: ModelError[] } }>(
           "/api/assess",
           {
             method: "POST",
@@ -1912,6 +1912,9 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
              web `translate-game` baştan beri ayrı bir satır yazıyor. */
           rescued = true;
           m = { ...m, verdict: "exact", quality: 4, errorType: undefined };
+        } else {
+          /* Model de reddetti: hatanın türü ve gerekçesi onun (panel #82). */
+          m = withModelErrors(m, d?.result?.errors);
         }
       } catch {
         /* model yoksa ya da geç kaldıysa yerel hüküm geçerli */
@@ -1936,7 +1939,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     const label = rescued ? tx("sheet.ai_accepted")
       : m.verdict === "exact" ? tx("sheet.correct")
       : m.verdict === "spelling" ? tx("sheet.near_spelling")
-      : m.verdict === "order" ? tx("sheet.order")
+      : orderOnly(m) ? tx("sheet.order")
       : tx("sheet.wrong");
     setFb({
       correct: ok,
@@ -1951,7 +1954,9 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
       /* NEDEN: sıra ve yazım hatası kendi kuralını söylüyor (fiilin yeri gibi);
          anlam hatasında yazılanın tamamı gerekçeye konmuyor. Web
          `translate-game` aynı girdiyle aynı satırı çiziyor. */
-      why: !ok && m.errorType
+      why: !ok && m.errorType && m.modelWhy
+        ? { type: m.errorType, text: m.modelWhy, href: null }
+        : !ok && m.errorType
         ? whyFor({
             type: m.errorType,
             word: round.word ?? null,

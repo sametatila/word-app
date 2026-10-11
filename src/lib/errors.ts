@@ -270,6 +270,29 @@ const W_WORDS = new Set(["wer", "was", "wo", "wann", "wie", "warum", "wohin", "w
  */
 const SUBORDINATORS = new Set(["weil", "dass", "wenn", "ob", "obwohl", "damit", "während", "bevor", "nachdem", "als", "sobald", "falls", "seit", "seitdem", "bis"]);
 
+/**
+ * Artikel ya da edatla başlayan cümlede baştaki öbek TEK sözcük değil: "Ein
+ * Termin am Montag ist möglich." cümlesinde fiil ikinci değil beşinci sözcük.
+ * "İkinci sözcük fiildir" varsayımı burada "Termin"i fiil sanıyordu ve geçerli
+ * "Am Montag ist ein Termin möglich." dizilişi "fiilin yeri" hatası, gerekçesi
+ * "Cümle „Ein“ ile başlayınca…" oluyordu (panel #82, 2026-10-11).
+ */
+const PHRASE_START = /^(der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines|kein\p{L}*|mein\p{L}*|dein\p{L}*|sein\p{L}+|ihr\p{L}+|unser\p{L}*|eue?r\p{L}*|dies\p{L}*|jede\p{L}*|am|im|um|in|an|auf|mit|nach|von|vom|zu|zum|zur|bei|beim|für|ohne|gegen|durch|über|unter|vor|hinter|neben|zwischen|aus|ins|ans)$/u;
+const PHRASE_GLUE = /^(der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines|am|im|um|in|an|auf|mit|nach|von|vom|zu|zum|zur|bei|beim|für|aus|ins|ans)$/i;
+
+/**
+ * Öbeğin sonu: ilk büyük harfli sözcük (isim), fiil hemen ardından. Ardından
+ * yine edat/artikel geliyorsa öbek uzuyor ("am Montag") ve fiilin yeri
+ * sözcük sırasından bilinemiyor: -1, tip "kelime sırası" kalır, fiil kuralı
+ * uydurulmaz.
+ */
+function afterPhrase(answer: string[]): number {
+  const noun = answer.findIndex((w, i) => i > 0 && /^\p{Lu}/u.test(w));
+  const at = noun + 1;
+  if (noun === -1 || at >= answer.length || PHRASE_GLUE.test(answer[at])) return -1;
+  return at;
+}
+
 /** İngilizce yardımcı fiiller — soruda özneden önce gelirler. */
 const EN_AUX = new Set([
   "do", "does", "did", "is", "am", "are", "was", "were", "can", "could", "will",
@@ -312,7 +335,10 @@ export function classifyOrder(
     ? answer.length - 1
     : tail.trim() === "?" && !W_WORDS.has(first)
       ? 0
-      : Math.min(1, answer.length - 1);
+      : PHRASE_START.test(first)
+        ? afterPhrase(answer)
+        : Math.min(1, answer.length - 1);
+  if (verbIdx === -1) return "word_order";
   const verb = answer[verbIdx];
   const placedIdx = placed.indexOf(verb);
   if (placedIdx !== -1 && placedIdx !== verbIdx) return "verb_position";

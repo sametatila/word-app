@@ -1,4 +1,4 @@
-import { classifyOrder, levenshtein, type ErrorType } from "@/lib/errors";
+import { classifyOrder, isErrorType, levenshtein, type ErrorType } from "@/lib/errors";
 import { foldContractions } from "@/lib/contractions";
 import { foldEnglishSpelling } from "@/lib/en-spelling";
 import { foldNumbers } from "@/lib/numbers";
@@ -46,6 +46,8 @@ export type SentenceMatch = {
   typed: { text: string; mark: TokenMark }[];
   /** Eşleşen hedef (alternatifler arasından en yakını). */
   matched: string;
+  /** Model reddettiyse onun gerekçesi (anadilde); varsa yerel kural gerekçesinin yerine geçer. */
+  modelWhy?: string;
 };
 
 /**
@@ -300,6 +302,45 @@ export function matchSentence(typed: string, target: string, alternatives: strin
     return { verdict: "order", quality: 3, errorType, target: targetOut, typed: typedOut, matched: cand };
   }
   return { verdict: "wrong", quality: 1, errorType: "meaning", target: targetOut, typed: typedOut, matched: cand };
+}
+
+/**
+ * "Kelimeler doğru, sıra yanlış" denebilir mi? "Sıra" hükmü karma durumu da
+ * kapsıyor (yer değiştirme + yazım sapması); orada kelimeler doğru DEĞİL
+ * ("eine" ↔ "ein", panel #82). Şerit cümlesi yalnız saf sıra hatasında.
+ */
+export function orderOnly(m: SentenceMatch): boolean {
+  return m.verdict === "order" && !m.target.some((x) => x.mark === "typo");
+}
+
+/** Modelin hata listesinden bir madde (`/api/assess` `result.errors`). */
+export type ModelError = { type?: string; wrong?: string; fix?: string; why_tr?: string };
+
+/**
+ * MODEL DE REDDETTİYSE TEŞHİS MODELİN (panel #82, 2026-10-11).
+ *
+ * Yerel hakem yalnız hedefle karşılaştırabiliyor: "Am Montag ist eine Termin
+ * möglich." hedef "Ein Termin am Montag ist möglich." ile karşılaştırılınca
+ * kelimeler yer değiştirmiş göründüğü için hüküm "sıra" oluyordu. Oysa diziliş
+ * geçerliydi, asıl hata "eine"ydi; öğrenci "Kelimeler doğru, sıra yanlış" ve
+ * fiilin yeri kuralını okudu. Model cümleyi bütün olarak okuyup hatanın türünü
+ * ve gerekçesini veriyor: reddettiyse tip ve gerekçe ondan, sıra hatası
+ * söylemediyse hüküm de "sıra" kalmıyor. Kalite yerel hakemin (kelimeler
+ * bilinmiş). Model yoksa ya da liste boşsa yerel hüküm aynen geçerli.
+ */
+export function withModelErrors(m: SentenceMatch, errors: ModelError[] | null | undefined): SentenceMatch {
+  const known = (errors ?? []).filter((e): e is ModelError & { type: ErrorType } => isErrorType(e.type));
+  if (!known.length) return m;
+  const order = known.find((e) => e.type === "word_order" || e.type === "verb_position");
+  const pick = m.verdict === "order" && order ? order : known[0];
+  const why = pick.why_tr?.trim();
+  const fix = pick.wrong?.trim() && pick.fix?.trim() ? `„${pick.wrong.trim()}“ → „${pick.fix.trim()}“` : "";
+  return {
+    ...m,
+    verdict: m.verdict === "order" && !order ? "wrong" : m.verdict,
+    errorType: pick.type,
+    modelWhy: [why, fix].filter(Boolean).join(" ") || undefined,
+  };
 }
 
 /**

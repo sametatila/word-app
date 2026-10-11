@@ -2,9 +2,9 @@
  * Cümle eşleştirme birim testi — `npm run test:match` (WP-10, adım 3).
  * Veritabanı yok; `lib/sentence-match` saf.
  */
-import { diffLines, foldSentence, hintFocus, matchSentence, produceFeedback, produceMiss, typoOnly } from "../src/lib/sentence-match";
+import { diffLines, foldSentence, hintFocus, matchSentence, orderOnly, produceFeedback, produceMiss, typoOnly, withModelErrors } from "../src/lib/sentence-match";
 import { foldCompare } from "../src/components/games/types";
-import { levenshtein } from "../src/lib/errors";
+import { classifyOrder, levenshtein } from "../src/lib/errors";
 import { judgeTyped, arrangedRescuable } from "../src/lib/typed-answer";
 import { arrangedAccepted, orderAlternatives, sameTiles } from "../src/lib/arrange";
 import { produceSource, quotedSource } from "../src/lib/conversations/produce-source";
@@ -184,6 +184,31 @@ check("F-0020: biçim hatasında biçim ipucu var", pf3.kind === "diff" && pf3.h
 const pf4 = produceFeedback("Mutter ist das meine", "Das ist meine Mutter", [], "Anne dişil bir kelime, bu yüzden iyelik sonuna bir harf alır:");
 check("F-0020: yalnız sıra hatasında biçim ipucu yok", pf4.kind === "diff" && !pf4.hint, JSON.stringify(pf4));
 check("F-0020: başka cümle → other", produceFeedback("Bu pozisyonu istiyorum", W, WA, ORDER_HINT).kind === "other");
+
+
+// Panel #82: geçerli diziliş + artikel hatası build 22'de "sıra" ve "fiilin yeri" sayılıyordu.
+const TERMIN = "Ein Termin am Montag ist möglich.";
+const t82 = matchSentence("Am Montag ist eine Termin möglich.", TERMIN, [], "de");
+check("#82: artikel hatası sıra sayılmıyor", t82.verdict === "wrong", t82.verdict);
+const mix = matchSentence("Am Montag ist ein Termn möglich.", TERMIN, [], "de");
+check("#82: karma hüküm (sıra + yazım) saf sıra değil", mix.verdict === "order" && !orderOnly(mix), mix.verdict);
+check("#82: öbekle başlayan hedefte fiil uydurulmuyor", mix.errorType === "word_order", String(mix.errorType));
+check("geçerli diziliş yerelde sıra (modele sorulur)", matchSentence("Am Montag ist ein Termin möglich.", TERMIN, [], "de").errorType === "word_order");
+check("saf sıra hatası orderOnly", orderOnly(matchSentence("Heute ich gehe ins Kino.", "Heute gehe ich ins Kino.", [], "de")));
+const m82 = withModelErrors(t82, [{ type: "article", wrong: "eine", fix: "ein", why_tr: "„Termin“ eril, „ein“ olur." }]);
+check("#82: tip ve gerekçe modelin", m82.verdict === "wrong" && m82.errorType === "article" && m82.quality === t82.quality, JSON.stringify([m82.verdict, m82.errorType]));
+check("#82: gerekçe metni", m82.modelWhy === "„Termin“ eril, „ein“ olur. „eine“ → „ein“", String(m82.modelWhy));
+const mm = withModelErrors(mix, [{ type: "spelling", wrong: "Termn", fix: "Termin", why_tr: "s" }]);
+check("model sıra demediyse sıra hükmü düşer", mm.verdict === "wrong" && mm.errorType === "spelling");
+const mo = withModelErrors(mix, [{ type: "spelling", wrong: "Termn", fix: "Termin", why_tr: "a" }, { type: "verb_position", wrong: "ist", fix: "ist", why_tr: "b" }]);
+check("model sıra da diyorsa hüküm sıra, sıra gerekçesi", mo.verdict === "order" && mo.errorType === "verb_position" && mo.modelWhy?.startsWith("b") === true);
+check("bilinmeyen tip yok sayılır", withModelErrors(t82, [{ type: "nonsense", why_tr: "x" }]) === t82);
+check("boş liste yerel hüküm", withModelErrors(t82, []) === t82 && withModelErrors(t82, undefined) === t82);
+const toks = (x: string) => x.replace(/[.!?]$/, "").split(" ");
+check("edat öbeği: fiil öbekten sonra", classifyOrder(toks("Am Montag ich habe Zeit"), toks("Am Montag habe ich Zeit"), ".") === "verb_position");
+check("artikel öbeği: fiil isimden sonra", classifyOrder(toks("Der Mann heute kommt"), toks("Der Mann kommt heute"), ".") === "verb_position");
+check("sıfatlı öbek", classifyOrder(toks("Am nächsten Montag ich habe Zeit"), toks("Am nächsten Montag habe ich Zeit"), ".") === "verb_position");
+check("zamirle başlayan eski yol", classifyOrder(toks("Heute ich gehe ins Kino"), toks("Heute gehe ich ins Kino"), ".") === "verb_position");
 
 console.log(failures === 0 ? "\nTÜM TESTLER GEÇTİ" : `\n${failures} TEST BAŞARISIZ`);
 process.exit(failures === 0 ? 0 : 1);

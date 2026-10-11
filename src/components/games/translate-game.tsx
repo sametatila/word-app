@@ -9,7 +9,7 @@ import { targetName, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchWord } from "@/components/speak-button";
-import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
+import { matchSentence, orderOnly, withModelErrors, type SentenceMatch } from "@/lib/sentence-match";
 import { askAssess } from "@/lib/assess-client";
 import { whyFor, type Why } from "@/lib/why";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -128,6 +128,9 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         quality = 4;
         m = { ...m, verdict: "exact", quality: 4, errorType: undefined };
         setAiAccepted(true);
+      } else if (ai.ok) {
+        /* Model de reddetti: hatanın türü ve gerekçesi onun (panel #82). */
+        m = withModelErrors(m, ai.result.errors);
       }
     }
 
@@ -181,7 +184,9 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
   // yalnız hedef kelimenin anlamı hatırlatılır; sıra/yazım gerekçeleri
   // hedef cümlenin kendisinden çıkar.
   const why: Why | null =
-    result && status === "wrong" && result.errorType
+    result && status === "wrong" && result.errorType && result.modelWhy
+      ? { type: result.errorType, text: result.modelWhy, href: null }
+      : result && status === "wrong" && result.errorType
       ? whyFor({
           type: result.errorType,
           word,
@@ -212,7 +217,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
                     ? "sheet.correct"
                     : result.verdict === "spelling"
                       ? "sheet.near_spelling"
-                      : result.verdict === "order"
+                      : orderOnly(result)
                         ? "sheet.order"
                         : "sheet.wrong",
               ),

@@ -11,7 +11,7 @@ import { currentTargetLang } from "../lib/courses";
 import { foldCompare } from "../lib/textFold";
 import { foldContractions } from "../lib/contractions";
 import { foldEnglishSpelling } from "../lib/en-spelling";
-import { matchSentence, typoOnly, type SentenceMatch } from "../lib/sentenceMatch";
+import { matchSentence, orderOnly, typoOnly, type SentenceMatch } from "../lib/sentenceMatch";
 import { seededShuffle } from "../lib/shuffle";
 import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
@@ -108,7 +108,7 @@ function isPass(m: SentenceMatch): boolean {
 
 /** Hüküm satırı — web `writing-player` ile aynı dört metin. */
 function Verdict({ m, ok, colors }: { m: SentenceMatch; ok: boolean; colors: Palette }) {
-  const key = m.verdict === "exact" ? "writp.exact" : m.verdict === "spelling" ? "writp.spelling_only" : m.verdict === "order" ? "writp.order_only" : "conversationp.not_quite";
+  const key = m.verdict === "exact" ? "writp.exact" : m.verdict === "spelling" ? "writp.spelling_only" : orderOnly(m) ? "writp.order_only" : "conversationp.not_quite";
   return <Text variant="bodyStrong" color={ok ? colors.successText : colors.dangerText}>{tx(key)}</Text>;
 }
 

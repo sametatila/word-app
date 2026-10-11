@@ -302,6 +302,8 @@ function whySpelling(word: WhyWord, typed?: string | null, targetLang: string = 
 const W_WORDS = /^(wer|was|wo|wann|wie|warum|wohin|woher|welche[rs]?|wieso|weshalb|wem|wen|wessen)$/i;
 const SUBORDINATORS = /\b(weil|dass|wenn|ob|obwohl|damit|während|bevor|nachdem|als|sobald|falls)\b/i;
 
+const ARTICLE_START = /^(der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines|kein\p{L}*|mein\p{L}*|dein\p{L}*|sein\p{L}+|ihr\p{L}+|unser\p{L}*|eue?r\p{L}*|dies\p{L}*|jede\p{L}*)$/iu;
+
 function whyVerbPosition(answer?: string[] | null, tail?: string | null, targetLang: string = "de"): Why {
   // İngilizcede elle yazılmış Almanca dallar YOK: kural tablosundan geliyor
   // (web `lib/why.ts` ile aynı; gerekçe `whyRules` RULES_EN başında).
@@ -323,7 +325,9 @@ function whyVerbPosition(answer?: string[] | null, tail?: string | null, targetL
   if (tail?.trim() === "?") {
     return { type: "verb_position", text: tx("why.vpos_wfrage"), href };
   }
-  if (answer && answer.length > 1 && !/^(ich|du|er|sie|es|wir|ihr|man)$/i.test(first)) {
+  /* Artikelle başlayan cümle özneyle başlıyor ("Der Mann kommt heute."): "„Der“ ile
+     başlayınca özne fiilden sonra gelir" demek yanlıştı (panel #82). */
+  if (answer && answer.length > 1 && !/^(ich|du|er|sie|es|wir|ihr|man)$/i.test(first) && !ARTICLE_START.test(first)) {
     return { type: "verb_position", text: tx("why.vpos_inversion", { word: answer[0] }), href };
   }
   return { type: "verb_position", text: tx("whyrule.vpos.general"), href };

@@ -16,7 +16,7 @@ import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompt
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { CheckIcon, CorrectIcon } from "@/components/icons";
 import { seededShuffle } from "@/lib/shuffle";
-import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
+import { matchSentence, orderOnly, type SentenceMatch } from "@/lib/sentence-match";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
@@ -904,7 +904,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
       {match ? (
         <div className="mt-3 space-y-2">
           <p className="text-strong" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
-            {t(match.verdict === "exact" ? "writp.exact" : match.verdict === "spelling" ? "writp.spelling_only" : match.verdict === "order" ? "writp.order_only" : "conversationp.not_quite")}
+            {t(match.verdict === "exact" ? "writp.exact" : match.verdict === "spelling" ? "writp.spelling_only" : orderOnly(match) ? "writp.order_only" : "conversationp.not_quite")}
           </p>
           {match.verdict !== "exact" ? (
             <div className="rounded-panel px-3 py-2 text-body surface-2">
