@@ -508,7 +508,7 @@ export const deA2B01: Conversation[] = [
       {
         say: [
           tr(
-            "Bugün ayrılabilen fiillerin geçmişini öğreniyoruz. Bu fiiller şimdiki zamanda ikiye bölünüyordu; geçmişte ise bölünmüyor, ortadan açılıyor. Hazır mısın?",
+            "Bugün ayrılabilen fiillerin geçmişini öğreniyoruz. Şimdiki zamanda bu fiillerin ön eki cümlenin sonuna gidiyordu; geçmişte ön ek fiilden ayrılmıyor, 'ge' hecesi ön ekle kökün arasına giriyor. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -604,7 +604,7 @@ export const deA2B01: Conversation[] = [
         say: [
           tr("Şimdi kuralı gör. Şimdiki zamanda fiil ikiye bölünüyordu:"),
           de("Ich schalte den Fernseher aus."),
-          tr("Geçmişte ise bölünmüyor, ortadan açılıyor:"),
+          tr("Geçmişte ise ön ek ayrılmıyor; 'ge' hecesi ön ekle kökün arasına giriyor:"),
           de("Ich habe den Fernseher ausgeschaltet."),
         ],
       },
@@ -830,7 +830,7 @@ export const deA2B01: Conversation[] = [
         say: [
           tr("İlk kalıbımız:"),
           de("Ich habe … angesehen."),
-          tr("Ne izlediğini anlatır. Fiil ayrılabilen bir fiil, ortacı ortadan açılıyor."),
+          tr("Ne izlediğini anlatır. Ayrılabilen bir fiil olduğu için ortaçta 'ge' hecesi ön ekle kökün arasına girer."),
         ],
       },
       {
@@ -1778,7 +1778,7 @@ export const deA2B01: Conversation[] = [
       {
         say: [
           tr(
-            "Bir haftayı özetlemek tek tek olayları saymak değildir; hangisinin bittiğini, hangisinin gerçekleştiğini söylemektir. Bugünkü fiillerin üçü ayrılabilen fiil ve ortaçları yine ortadan açılıyor.",
+            "Bir haftayı özetlerken olayları tek tek saymıyoruz; neyi bitirdiğini, neyin olduğunu söylüyoruz. Bugünkü fiillerin üçü ayrılabilen fiil: ortaçlarında yine 'ge' hecesi ön ekle kökün arasına giriyor.",
           ),
         ],
       },

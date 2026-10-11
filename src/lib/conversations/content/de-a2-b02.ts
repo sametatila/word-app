@@ -768,7 +768,7 @@ export const deA2B02: Conversation[] = [
           de("Wir sind … eingezogen."),
           tr("Bu fiil bir yerden bir yere geçmeyi anlatıyor, o yüzden"),
           de("sein"),
-          tr("ile kurulur. Ayrılabilen bir fiil, ortacı ortadan açılıyor."),
+          tr("ile kurulur. Ayrılabilen bir fiil olduğu için ortaçta 'ge' hecesi ön ekle kökün arasına girer."),
         ],
       },
       {
@@ -831,7 +831,7 @@ export const deA2B02: Conversation[] = [
           answer: true,
           why: [
             de("einziehen"),
-            tr("yer değiştiren bir fiil: yardımcı fiil doğru ve ortaç ortadan açılmış."),
+            tr("yer değiştiren bir fiil: yardımcı fiil doğru, ortaçta da 'ge' hecesi ön ekle kökün arasında."),
           ],
         },
       },
