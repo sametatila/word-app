@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-13 12:30",
+  ytTitle: "Kafede lazım olan 3 Almanca cümleyi sen kur #almanca #shorts",
   content: ({ sentence }) => ({
     copy: {
       title: "Kafede 3 cümle, sen diz",

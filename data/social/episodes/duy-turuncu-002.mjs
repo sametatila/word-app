@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-20 18:30",
+  ytTitle: "Stelle mi, Stille mi? Almancada e ile i farkı #almanca #shorts",
   content: ({ pair }) => ({
     rounds: [pair("schlecht", "schlicht", 1), pair("die Stelle", "die Stille", 0), pair("der Wert", "der Wirt", 1)],
     copy: {

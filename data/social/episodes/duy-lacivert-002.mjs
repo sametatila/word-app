@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-24 07:30",
+  ytTitle: "Gebäck mi, Gepäck mi? Almancada b ile p farkı #almanca #shorts",
   content: ({ pair }) => ({
     rounds: [pair("das Gebäck", "das Gepäck", 1), pair("singen", "sinken", 1), pair("streichen", "streiken", 0)],
     copy: {

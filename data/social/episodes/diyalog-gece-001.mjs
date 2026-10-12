@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-14 18:30",
+  ytTitle: "Kalorifer bozulunca ev sahibine Almanca ne dersin? #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { who: "me", key: "die Heizung" },

@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-23 07:30",
+  ytTitle: "Almancada fiil isim olunca artikeli ne olur? #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["das Essen", "das Leben", "das Wissen", "der Garten"]),
     copy: {

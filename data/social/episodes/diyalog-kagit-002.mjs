@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-18 18:30",
+  ytTitle: "Restoranda Almanca sipariş vermek için 4 cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { scene: "order", who: "them", key: "die Spezialität" },

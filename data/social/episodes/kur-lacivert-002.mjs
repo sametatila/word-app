@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-22 07:30",
+  ytTitle: "Arkadaşınla buluşmayı Almanca ayarla, 2 cümle #almanca #shorts",
   content: ({ sentence }) => ({
     copy: {
       title: "Buluşma mesajı, 2 cümle",

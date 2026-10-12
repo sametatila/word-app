@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-20 07:30",
+  ytTitle: "-tion ile biten Almanca kelimelerin artikeli hep aynı #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["die Information", "die Situation", "die Portion", "die Rezeption"]),
     copy: {

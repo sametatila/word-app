@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-23 18:30",
+  ytTitle: "Eczanede Almanca ilaç alırken duyacağın cümleler #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { who: "me", key: "die Kopfschmerzen" },

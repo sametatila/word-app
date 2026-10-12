@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-18 12:30",
+  ytTitle: "Almanya'da alışverişte cebini koruyan 3 Almanca kelime #almanca #shorts",
   content: ({ deck }) => ({
     items: deck(["das Pfand", "die Rückgabe", "das Sonderangebot"]),
     copy: {

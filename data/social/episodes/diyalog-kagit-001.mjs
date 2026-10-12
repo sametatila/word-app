@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-13 18:30",
+  ytTitle: "Almanca doktor randevusu almak için 4 cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { scene: "phone", who: "me", key: "ändern" },

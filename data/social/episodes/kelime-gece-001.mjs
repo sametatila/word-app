@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-16 12:30",
+  ytTitle: "Almanya'da iş hayatında bilmen gereken 3 Almanca kelime #almanca #shorts",
   content: ({ deck }) => ({
     items: deck(["das Vorstellungsgespräch", "die Probezeit", "die Gehaltserhöhung"]),
     copy: {

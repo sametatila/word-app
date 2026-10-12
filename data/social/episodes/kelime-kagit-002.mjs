@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-23 12:30",
+  ytTitle: "Almanya'da doktorda lazım olan 3 Almanca kelime #almanca #shorts",
   content: ({ deck }) => ({
     items: deck(["der Augenarzt", "der Patient", "das Schmerzmittel"]),
     copy: {

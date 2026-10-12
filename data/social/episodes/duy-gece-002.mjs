@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-21 18:30",
+  ytTitle: "Dann mı, denn mi? Almancada a ile e farkı #almanca #shorts",
   content: ({ pair }) => ({
     rounds: [pair("dann", "denn", 0), pair("wann", "wenn", 1), pair("fallen", "fällen", 1)],
     copy: {

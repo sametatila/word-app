@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-22 18:30",
+  ytTitle: "Kıyafet değiştirirken ve iade ederken Almanca 3 cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { scene: "shop", who: "me", key: "umtauschen" },

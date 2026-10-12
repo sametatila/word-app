@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-19 18:30",
+  ytTitle: "Havalimanında duyacağın 3 Almanca anons #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { who: "them", key: "der Passagier", board: "BOARDING" },

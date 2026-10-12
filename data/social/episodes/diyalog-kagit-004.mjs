@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-24 18:30",
+  ytTitle: "Almanya'da ev bakarken lazım olan 3 Almanca cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { scene: "phone", who: "me", key: "die Empfehlung" },

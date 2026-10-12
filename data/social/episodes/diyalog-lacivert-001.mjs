@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-15 18:30",
+  ytTitle: "Tren gecikince Almanca anonsu anlıyor musun? #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { who: "them", key: "sich verspäten", board: "+20 MIN" },

@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-16 07:30",
+  ytTitle: "-ung ile biten Almanca kelimelerin artikeli hep aynı #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["die Wohnung", "die Zeitung", "die Rechnung", "die Meinung"]),
     copy: {

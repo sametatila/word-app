@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-25 07:30",
+  ytTitle: "Muz, armut, limon, elma Almancada hangi artikeli alır? #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["die Banane", "die Birne", "die Zitrone", "der Apfel"]),
     copy: {

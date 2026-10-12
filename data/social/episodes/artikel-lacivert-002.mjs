@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-21 07:30",
+  ytTitle: "-schaft ve -ig ile biten kelimelerin Almanca artikeli #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["die Mannschaft", "der Honig", "die Freundschaft", "der König"], {
       Mannschaft: { stem: "Mann", sfx: "schaft" },

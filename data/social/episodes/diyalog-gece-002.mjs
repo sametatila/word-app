@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-25 18:30",
+  ytTitle: "Yabancılar dairesini ararken Almanca 3 cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { who: "me", key: "ablaufen" },

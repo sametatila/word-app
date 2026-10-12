@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-19 12:30",
+  ytTitle: "Kiste mi, Küste mi? Almancada ü sesini duyabiliyor musun? #almanca #shorts",
   content: ({ pair }) => ({
     rounds: [pair("die Kiste", "die Küste", 1), pair("spielen", "spülen", 1), pair("fordern", "fördern", 0)],
     copy: {

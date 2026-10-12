@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-17 07:30",
+  ytTitle: "-heit, -keit ve -ling ile biten kelimelerin Almanca artikeli #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["die Freiheit", "der Frühling", "die Pünktlichkeit", "der Zwilling"], {
       Freiheit: { stem: "Frei", sfx: "heit" },

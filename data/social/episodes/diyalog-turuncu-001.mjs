@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-12 18:30",
+  ytTitle: "Markette kasada lazım olan 4 Almanca cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { who: "me", key: "die EC-Karte" },

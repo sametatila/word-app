@@ -4,6 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-25 12:30",
+  ytTitle: "Faturada ilk bakman gereken 3 Almanca kelime #almanca #shorts",
   content: ({ deck }) => ({
     items: deck(["die Stromrechnung", "die Aufforderung", "die Kontonummer"]),
     copy: {
