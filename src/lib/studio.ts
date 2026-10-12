@@ -73,6 +73,9 @@ export type EpisodeDetail = EpisodeSummary & {
   used: string[];
   revisions: { revision: number; author: string; note: string | null; slot: string | null; createdAt: string }[];
   renders: RenderView[];
+  /** YouTube başlığı (yayın bilgisi, sürüm dışı) ve depodaki hâli */
+  ytTitle: string | null;
+  originYtTitle: string | null;
 };
 
 const approachOf = (t: string) => t.split("-")[0];
@@ -189,6 +192,8 @@ export async function getEpisode(id: string): Promise<EpisodeDetail | null> {
     used: e.used,
     revisions: revs.map((r) => ({ ...r, createdAt: r.createdAt.toISOString() })),
     renders: renders.map(renderView),
+    ytTitle: e.ytTitle,
+    originYtTitle: e.originYtTitle,
   };
 }
 
@@ -213,8 +218,7 @@ export function lockedKey(at: string): boolean {
 }
 /**
  * `next`, `base` ile AYNI YAPIDA mı: aynı anahtarlar, aynı dizi uzunlukları, sayı/boolean/null aynı, dizgi dizgi.
- * Serbest alanlar: `copy.ui` (dizgi → dizgi) ve `copy.ytTitle` (YouTube başlığı; eklenebilir/silinebilir, en çok 100
- * karakter, "<" ">" yok: YouTube kabul etmiyor; yoksa açıklamadan türetilir, engine.js E.ytTitle). Hata: yol + sebep.
+ * Serbest alan: `copy.ui` (dizgi → dizgi). YouTube başlığı veride değil, `setEpisodeYtTitle`. Hata: yol + sebep.
  */
 export function shapeError(base: Json, next: Json, at = ""): string | null {
   if (at === "copy.ui") {
@@ -252,14 +256,6 @@ export function shapeError(base: Json, next: Json, at = ""): string | null {
     if (p === "copy.ui") {
       const e = shapeError(b[k], n[k], p);
       if (e) return e;
-      continue;
-    }
-    if (p === "copy.ytTitle") {
-      const v = n[k];
-      if (v == null) continue;
-      if (typeof v !== "string") return "copy.ytTitle: metin olmalı";
-      if (v.length > 100) return "copy.ytTitle: YouTube başlığı en çok 100 karakter";
-      if (/[<>]/.test(v)) return "copy.ytTitle: YouTube başlığında < ve > olamaz";
       continue;
     }
     if (!(k in b) || !(k in n)) return `${p}: alan eklenemez ya da silinemez`;
@@ -358,6 +354,32 @@ export async function setEpisodeSlot(id: string, slot: unknown, actor: string): 
   const r = await db.update(socialEpisodes).set({ slot, updatedBy: actor, updatedAt: new Date() }).where(eq(socialEpisodes.id, id)).returning({ id: socialEpisodes.id });
   if (!r.length) return fail(404, "not_found");
   return { ok: true, warnings: c.warnings };
+}
+
+/**
+ * YouTube başlığı kuralları (depodaki aynısı `scripts/social/lib/episodes.mjs` ytTitleError): en çok 100 karakter,
+ * "<" ">" yok (YouTube kabul etmiyor), sonu "#shorts".
+ */
+export function ytTitleError(t: string): string | null {
+  if (!t) return "YouTube başlığı boş olamaz";
+  if (t.length > 100) return `YouTube başlığı en çok 100 karakter (${t.length})`;
+  if (/[<>]/.test(t)) return "YouTube başlığında < ve > olamaz";
+  if (!/(^|\s)#shorts$/.test(t)) return "YouTube başlığının sonu “#shorts” olmalı";
+  return null;
+}
+
+/** YouTube başlığı (saat gibi yayın bilgisi: sürüm açmaz, onay etkilenmez). null: depodaki başlığa dön. */
+export async function setEpisodeYtTitle(id: string, title: unknown, actor: string): Promise<Ok<{ ytTitle: string | null }> | StudioError> {
+  if (title !== null && typeof title !== "string") return fail(400, "bad_input");
+  const [e] = await db.select({ origin: socialEpisodes.originYtTitle }).from(socialEpisodes).where(eq(socialEpisodes.id, id));
+  if (!e) return fail(404, "not_found");
+  const next = title === null ? e.origin : title.replace(/\s+/g, " ").trim();
+  if (next !== null) {
+    const err = ytTitleError(next);
+    if (err) return fail(400, "yt_title", err);
+  }
+  await db.update(socialEpisodes).set({ ytTitle: next, updatedBy: actor, updatedAt: new Date() }).where(eq(socialEpisodes.id, id));
+  return { ok: true, ytTitle: next };
 }
 
 /** Onay: o sürüm, Defne sesleri tamamsa, üretim kuyruğuna. */

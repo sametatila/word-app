@@ -17,7 +17,8 @@ type Instance = { plan: Plan; render: (t: number) => void; ui: HTMLElement; uiUs
 type Engine = {
   videos: Record<string, { title: string; ui: Record<string, string> }>;
   spoken: (template: string, data: unknown) => string[];
-  mount: (host: HTMLElement, template: string, data: unknown) => Instance;
+  mount: (host: HTMLElement, template: string, data: unknown, opts?: { ytTitle?: string | null }) => Instance;
+  ytTitle: (own: string | null | undefined, caption: string) => string;
   audit: (host: HTMLElement, I: Instance) => string[];
   texts: (host: HTMLElement, I: Instance) => { s: string; t: number }[];
   soundtrack: (plan: Plan) => Promise<AudioBuffer>;
@@ -127,8 +128,10 @@ const fmt = (t: number) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).p
  * duraklar, bırakınca kaldığı yerden sürer. Müzik açılıp kapanınca aynı saniyeden yeni karışımla devam eder. Ses
  * izi (konuşma + efekt + isteğe bağlı müzik) metin değiştikçe arka planda hazırlanır; hazır değilse "ses hazırlanıyor".
  */
-export function Preview({ template, data, onState, focus }: { template: string; data: Record<string, unknown>; onState: (s: PreviewState) => void; focus?: { t: number; n: number } }) {
+export function Preview({ template, data, ytTitle, onState, focus }: { template: string; data: Record<string, unknown>; ytTitle: string | null; onState: (s: PreviewState) => void; focus?: { t: number; n: number } }) {
   const frame = useRef<HTMLDivElement>(null);
+  const ytRef = useRef(ytTitle);
+  ytRef.current = ytTitle;
   const inst = useRef<Instance | null>(null);
   const [t, setT] = useState(0);
   const tRef = useRef(0);
@@ -262,7 +265,7 @@ export function Preview({ template, data, onState, focus }: { template: string; 
         const host = document.createElement("div");
         host.style.cssText = "position:absolute;inset:0";
         frame.current.replaceChildren(host);
-        const I = E.mount(host, template, data);
+        const I = E.mount(host, template, data, { ytTitle: ytRef.current });
         inst.current = I;
         const d = I.plan.duration;
         durRef.current = d;
@@ -293,6 +296,13 @@ export function Preview({ template, data, onState, focus }: { template: string; 
     // overlay burada bilerek yok: sahneyi yeniden kurmaz
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [template, dataKey]);
+
+  // YouTube başlığı sahneyi yeniden kurmaz: yalnız YouTube katmanındaki yazı değişir
+  useEffect(() => {
+    const I = inst.current;
+    const p = I?.ui.querySelector(".cap.yt p");
+    if (I && p && window.E) p.textContent = window.E.ytTitle(ytTitle, I.plan.caption);
+  }, [ytTitle]);
 
   // yerleşim denetimi: değişiklikten ~1,5 sn sonra, görünmez sahnede
   useEffect(() => {

@@ -3,6 +3,8 @@
   + o şablonun içeriği. Dosya:
     export default { template, status: "taslak" | "hazır" | "yayında", created, slot?, published?, content: (H) => ({...}) }
   slot: yayın saati, Berlin yerel saati "YYYY-AA-GG SS:DD" (yalnız SLOTS saatleri). Takvim kuralları schedule()'da.
+  ytTitle: YouTube başlığı (takvimdeki her bölümde zorunlu; ytTitleError kuralları). Saat gibi yayın bilgisi: içerik
+    değildir, değişince stüdyoda yeni sürüm açılmaz, onay düşmez (aktarım worker.mjs).
 
   TEKRAR ENGELİ: her bölümün kullandığı kelime kayıtları (H yardımcıları yazar) karşılaştırılır.
     - Aynı YAKLAŞIMDA (artikel, diyalog, kelime, duy, kur) bir kelime iki bölümde kullanılamaz → hata.
@@ -18,6 +20,22 @@ export const approachOf = (template) => template.split("-")[0];
 export const themeOf = (template) => template.split("-")[1];
 export const SLOTS = ["07:30", "12:30", "18:30"]; // Berlin; günde 3 video, TikTok + Instagram + YouTube Shorts (Samet, 2026-10-09; YouTube 2026-10-12)
 const SLOT_RE = /^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2})$/;
+
+/**
+ * YouTube başlığı kuralları (stüdyo aynısını `lib/studio` ytTitleError'da denetler): en çok 100 karakter (YouTube
+ * sınırı), "<" ">" yok (YouTube kabul etmiyor), sonu "#shorts" (Shorts rafına girsin; öncesinde konu etiketi olabilir).
+ * Yazım: aranabilir konu başta ("Almanca …", durum, kelime çifti), Shorts akışında ilk ~40 karakter görünür;
+ * tık tuzağı, büyük harfle bağırma, "ücretsiz" yok; açıklamayla aynı cümle değil.
+ */
+export const YT_TITLE_MAX = 100;
+export function ytTitleError(t) {
+  if (typeof t !== "string" || !t.trim()) return "boş";
+  if (t !== t.trim() || /\s{2,}|\n/.test(t)) return "baştaki/sondaki ya da çift boşluk, satır sonu olamaz";
+  if (t.length > YT_TITLE_MAX) return `en çok ${YT_TITLE_MAX} karakter (${t.length})`;
+  if (/[<>]/.test(t)) return "< ve > olamaz";
+  if (!/(^|\s)#shorts$/.test(t)) return 'sonu "#shorts" olmalı';
+  return null;
+}
 
 /** Bütün bölümler (ya da `only` listesindekiler) içerikleriyle; clips bütün bölümlerin sesleri. */
 export async function loadEpisodes(only = null) {
@@ -37,7 +55,11 @@ export async function loadEpisodes(only = null) {
       const m = String(ep.slot).match(SLOT_RE);
       if (!m || !SLOTS.includes(m[2])) throw new Error(`${f}: slot "${ep.slot}" geçersiz: "YYYY-AA-GG SS:DD", saat ${SLOTS.join(" / ")}`);
     }
-    out.push({ id, template: ep.template, approach: approachOf(ep.template), theme: themeOf(ep.template), status: ep.status || "taslak", created: ep.created, slot: ep.slot, published: ep.published, data, used: [...used], spoken: [...spoken] });
+    if (ep.ytTitle !== undefined || ep.slot !== undefined) {
+      const err = ytTitleError(ep.ytTitle);
+      if (err) throw new Error(`${f}: ytTitle (YouTube başlığı) ${err}`);
+    }
+    out.push({ id, template: ep.template, approach: approachOf(ep.template), theme: themeOf(ep.template), status: ep.status || "taslak", created: ep.created, slot: ep.slot, ytTitle: ep.ytTitle ?? null, published: ep.published, data, used: [...used], spoken: [...spoken] });
   }
   if (only) for (const id of only) if (!out.some((e) => e.id === id)) throw new Error(`bölüm yok: ${id}`);
   return { episodes: out, clips };

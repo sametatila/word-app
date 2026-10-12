@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { studioGate, studioWriteGate, logStudioAction } from "@/lib/studio-auth";
-import { approveEpisode, cancelRender, getEpisode, restoreEpisode, saveEpisode, setEpisodeSlot } from "@/lib/studio";
+import { approveEpisode, cancelRender, getEpisode, restoreEpisode, saveEpisode, setEpisodeSlot, setEpisodeYtTitle } from "@/lib/studio";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +9,7 @@ export const dynamic = "force-dynamic";
  *   GET                 bölüm: veri, sürümler, üretimler, eksik Defne sesleri
  *   POST save           metinler (baseRevision + data + spoken + not) → yeni sürüm
  *   POST slot           yayın saati (içerik ve onay etkilenmez)
+ *   POST yt_title       YouTube başlığı (saat gibi: sürüm açmaz, onay etkilenmez; null depodakine döner)
  *   POST approve        o sürümü onayla → sunucuda video üretimi kuyruğa
  *   POST restore        eski sürüme ya da Claude'un sürümüne dön (yeni sürüm olarak)
  *   POST cancel_render  kuyruktaki üretimi iptal
@@ -44,6 +45,10 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
       case "slot":
         r = await setEpisodeSlot(id, body.slot ?? null, actor);
         if (r.ok) void logStudioAction(g.writer, "slot", id, { slot: body.slot ?? null });
+        break;
+      case "yt_title":
+        r = await setEpisodeYtTitle(id, body.ytTitle ?? null, actor);
+        if (r.ok) void logStudioAction(g.writer, "yt_title", id, { ytTitle: r.ytTitle });
         break;
       case "approve":
         r = await approveEpisode(id, body.revision, actor);

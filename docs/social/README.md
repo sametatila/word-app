@@ -58,6 +58,7 @@ yerel telefon testi için klasörü `python3 -m http.server` ile sun.
      status: "taslak", // taslak → hazır → yayında
      created: "2026-10-12",
      slot: "2026-10-26 07:30", // Berlin; yalnız 07:30 / 12:30 / 18:30
+     ytTitle: "Almanya'da ev ilanında göreceğin 3 Almanca kelime #almanca #shorts", // takvimdeki bölümde zorunlu
      content: ({ deck }) => ({
        items: deck(["…", "…"]),
        copy: { title: "…", hook: ["…", "…"], caption: "…\n\n#…", outro: { series: "…", ask: "…" } /* + şablona özgü */ },
@@ -101,7 +102,13 @@ Yeni şablon gerekirse (yeni format ya da tema): `templates/` altına, mevcut bi
 kalıp yok. Kötü: "Sıra sende: sesli söyle", "Skorunu yorumlara yaz: _ / 4", "4 cümleyle hallet". İyi: "Şimdi sen
 söyle", "Kaç tane bildin? Yorumlara yaz", "Bu 4 cümle yetiyor". Açıklamanın ilk satırı aranabilir bir cümle olsun
 ("Almanca doktor randevusu", "Almanca artikel kuralı"): üç platform da arama motoru gibi çalışıyor. YouTube'da
-başlık ayrı alan: `copy.ytTitle` yazılmazsa açıklamanın ilk cümlesi + ilk etiket kullanılır (en çok 100 karakter).
+başlık ayrı alan: bölüm dosyasında `ytTitle` (takvimdeki her bölümde zorunlu, `social:check` denetler).
+
+**YouTube başlığı (`ytTitle`):** en çok 100 karakter, `<` `>` yok (YouTube kuralı), sonu `#shorts` (önünde konu etiketi:
+`#almanca #shorts`). Aranabilir konu başta ("Almanca doktor randevusu…", "Kiste mi, Küste mi?"): Shorts akışında ilk
+~40 karakter görünür. Açıklamanın ilk cümlesinin kopyası değil; tık tuzağı, büyük harfle bağırma, "ücretsiz" yok.
+Saat gibi yayın bilgisidir, içerik değil: stüdyoda ayrı kaydedilir, yeni sürüm açmaz, onayı düşürmez; depoda
+değişirse stüdyoda elle değiştirilmemişse onu izler. YouTube açıklaması = paylaşım metni + `#shorts` (stüdyo kopyalar).
 
 ## Tasarım standardı
 
@@ -131,11 +138,12 @@ açıklama, YouTube başlık + açıklama.
 | Kapak | `kapak.jpg` (9:16) yüklenir | Akışta ve profilde görünen kare |
 | Profil ızgarası | `kapak-3x4.jpg` (orta 1080×1440) kontrol için | TikTok ve Instagram profilde 3:4 kesit gösteriyor; kanca bu bölgede okunmalı |
 | Açıklama | `aciklama.txt`: ilk satır aranabilir cümle + 5–6 etiket (üç platformda aynı) | Instagram'da 3–5 etiket yeterli, fazlası işe yaramıyor; YouTube ilk 3 etiketi başlığın üstünde gösterir |
-| YouTube başlığı | `baslik.txt` (en çok 100 karakter, `<` `>` yok): `copy.ytTitle` ya da açıklamanın ilk cümlesi + ilk etiket (`E.ytTitle`) | YouTube'da başlık ayrı ve aramada en ağır alan; Shorts açıklamasındaki bağlantılar tıklanmıyor |
+| YouTube başlığı | bölümün `ytTitle`ı (en çok 100 karakter, `<` `>` yok, sonu `#shorts`); stüdyoda Paylaşım adımı | YouTube'da başlık ayrı ve aramada en ağır alan; `#shorts` Shorts rafına girmesine yardım eder; Shorts açıklamasındaki bağlantılar tıklanmıyor |
+| YouTube açıklaması | paylaşım metni + `#shorts` (stüdyoda "YouTube açıklaması" Kopyala) | Etiketler üç platformda aynı kalır |
 
 **Yükleme kontrol listesi (Samet):** MP4 ve kapak stüdyoda bölümün indirme düğmelerinde; açıklama ve YouTube başlığı 5. adımda (Paylaşım) "Kopyala" ile.
 - Kapak olarak `kapak.jpg`'yi seç. Açıklamayı Paylaşım'dan kopyalayıp yapıştır.
-- **YouTube Studio:** başlık ve açıklama Paylaşım'daki "Kopyala" düğmelerinden; "Hayır, çocuklara özel değil"; görünürlük
+- **YouTube Studio:** başlık ve "YouTube açıklaması" Paylaşım'daki "Kopyala" düğmelerinden; "Hayır, çocuklara özel değil"; görünürlük
   **Planla** → bölümün saati (Berlin). Takvim zamanlanmış Short'u kendisi bulur, elle işaretleme yok.
 - **Yapay zekâ etiketi:** ses Defne (yapay sentez). TikTok gerçekçi yapay zekâ içeriğine etiket istiyor; etiketi açmak
   güvenli taraf (etiketin dağıtımı kısmadığını söylüyorlar). Instagram'da "AI info" (otomatik yayında işçi koyuyor).
@@ -226,7 +234,7 @@ yapabilmeli").
   `copy.ui` ile ezer). Kapı: `npm run social:texts` (veriye/ui'ye dayanmayan yazı = hata). Yeni şablonda gömülü yazı
   bırakılmaz.
 - **Kurallar (`src/lib/studio.ts`):** yalnız metin değişir (yapı, öğe sayısı, kimlik alanları `who/icon/avatar/key/typ`
-  ve satırdaki `scene` kilitli; serbest alanlar `copy.ui` ve `copy.ytTitle`, YouTube başlığı, en çok 100 karakter); her kayıt sürüm, geri dönüş yeni sürüm; eşzamanlı düzenlemede 409; onaydan sonra metin
+  ve satırdaki `scene` kilitli; serbest alan `copy.ui`; YouTube başlığı veride değil, saat gibi ayrı kaydedilir); her kayıt sürüm, geri dönüş yeni sürüm; eşzamanlı düzenlemede 409; onaydan sonra metin
   değişirse onay düşer, kuyruktaki üretim iptal. Saat: aynı saate iki bölüm yok (hata), diğer takvim kuralları uyarı.
 - **Ses (Samet: "yalnız Defne"):** seslendirilen Almanca metin değişirse Defne kaydı gerekir; kaydı yoksa onay kapalı.
   Ses bekçisi (`scripts/tts-own-watch.ts`, gece + deploy) stüdyo metinlerini `eksik.jsonl`e yazar (`word_social` /

@@ -14,10 +14,11 @@
     kapak.jpg        9:16 kapak (plan.poster karesi): TikTok, Reels ve Shorts'ta kapak seçerken yüklenir
     kapak-3x4.jpg    profil ızgarasının gösterdiği orta 3:4 kesit (1080×1440, y 240–1680): kanca burada okunmalı
     aciklama.txt     paylaşım metni + etiketler (üç platformda aynı; YouTube'da açıklama alanı)
-    baslik.txt       YouTube başlığı (en çok 100 karakter; copy.ytTitle ya da açıklamanın ilk cümlesi, E.ytTitle)
+    baslik.txt       YouTube başlığı (bölümün `ytTitle`ı, #shorts ile; stüdyoda Paylaşım adımında da)
 
   Kareler sayfadaki belirli renderAt(t) ile alınır (aynı t → aynı kare); ses aynı motorun OfflineAudioContext izi.
 */
+import fs from "node:fs";
 import path from "node:path";
 import { loadEpisodes } from "./lib/episodes.mjs";
 import { OUT, launchBrowser } from "./lib/page.mjs";
@@ -43,6 +44,7 @@ for (const id of ids) {
   const tmp = path.join(OUT, "render", id);
   const html = renderDoc(episodes[0], clips, tmp);
   const r = await renderVideo(browser, html, { name: id, dir, tmp, noMusicToo: args.includes("--muziksiz"), onProgress: (f) => process.stdout.write(`\r${id}: ${Math.round(f * 100)}%`) });
+  if (episodes[0].ytTitle) fs.writeFileSync(path.join(dir, "baslik.txt"), `${episodes[0].ytTitle}\n`);
   if (r.truePeak > -1) console.warn(`\n! ${id}: gerçek tepe ${r.truePeak} dBTP, −1'in üstünde`);
   console.log(`\r✓ ${id}: ${r.duration.toFixed(1)} sn, ${r.frames} kare, ${(r.bytes / 1e6).toFixed(1)} MB, ses ${r.inputLufs} → ${r.lufs} LUFS (gerçek tepe ${r.truePeak} dBTP), ${((Date.now() - t0) / 1000).toFixed(0)} sn → ${path.relative(process.cwd(), dir)}/`);
 }

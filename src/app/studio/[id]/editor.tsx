@@ -12,7 +12,7 @@ import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, BTN, Badge, FIELD, FIELD_STYLE, Field, KeyValue, Notice, PageHeader, Panel, Segmented, TONE, type Tone, when } from "../../admin/_ui/ui";
 import { TwoStep } from "../../admin/_ui/two-step";
 import { APPROACH_TR, CONTENT_STATE, PLACED, PLATFORMS, POST_STATE, THEME_TR, contentState, dayLabel, postState } from "../shared";
-import { Fields } from "./fields";
+import { CopyButton, Fields } from "./fields";
 import { Preview, type PreviewState } from "./preview";
 
 /**
@@ -41,6 +41,7 @@ function errorText(d: Record<string, unknown>): string {
     case "audio":
       return `Defne sesi olmayan metin var: ${(d.detail as string[]).join(" · ")}`;
     case "slot":
+    case "yt_title":
       return String(d.detail);
     case "publishing":
       return "Şu an Instagram'a gönderiliyor; sonuç gelince yeniden dene.";
@@ -100,6 +101,7 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
     if (Number.isFinite(t)) setFocus((f) => ({ t, n: (f?.n ?? 0) + 1 }));
   }, [pv, draft]);
   const dirty = useMemo(() => JSON.stringify(draft) !== JSON.stringify(ep.data), [draft, ep.data]);
+  const [ytDraft, setYtDraft] = useState(initial.ytTitle ?? "");
 
   const reload = useCallback(async () => {
     const res = await apiFetch(`/api/studio/episodes/${ep.id}`, { cache: "no-store" });
@@ -215,7 +217,7 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
       <div className="grid gap-5 @5xl:grid-cols-[minmax(0,1fr)_380px]">
         <div className="min-w-0 space-y-5">
           <Panel title="İçerik" hint="Videodaki her yazı, videonun akış sırasıyla. Ctrl/Cmd+S kaydeder.">
-            <Fields data={draft} saved={ep.data} spoken={pv?.spoken ?? ep.spoken} visible={pv?.visible ?? null} uiUsed={pv?.uiUsed ?? []} uiDefaults={pv?.uiDefaults ?? {}} onChange={setDraft} onFocusText={focusText} disabled={busy} />
+            <Fields data={draft} saved={ep.data} spoken={pv?.spoken ?? ep.spoken} visible={pv?.visible ?? null} uiUsed={pv?.uiUsed ?? []} uiDefaults={pv?.uiDefaults ?? {}} onChange={setDraft} onFocusText={focusText} disabled={busy} ytBox={<YtTitleBox ep={ep} caption={String((draft.copy as Record<string, unknown> | undefined)?.caption ?? "")} value={ytDraft} setValue={setYtDraft} onSaved={reload} />} />
             <div className="mt-5 flex flex-wrap items-end gap-2 border-t pt-4" style={{ borderColor: "var(--border)" }}>
               <div className="min-w-[14rem] flex-1">
                 <Field label="Kayıt notu (isteğe bağlı)">
@@ -231,7 +233,7 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
 
         <div className="min-w-0 space-y-5 @5xl:sticky @5xl:top-20 @5xl:self-start">
           <Panel title="Önizleme" hint="Sunucudaki üretimle aynı motor; kaydetmeden de görünür. Videoya dokununca oynar/durur.">
-            <Preview template={ep.template} data={draft} onState={setPv} focus={focus} />
+            <Preview template={ep.template} data={draft} ytTitle={ytDraft} onState={setPv} focus={focus} />
           </Panel>
           <StatusBox ep={ep} pv={pv} dirty={dirty} auditFresh={auditFresh} blockers={blockers} canApprove={canApprove} busy={busy} onApprove={() => void approve()} onCancel={(id) => void cancel(id)} audio={<AudioRequest ep={ep} dirty={dirty} role={role} email={email} requests={requests} onChanged={async () => { await reloadRequests(); await reload(); }} />} />
           <Publish ep={ep} posts={posts} setPosts={setPosts} onSaved={reload} setMsg={setMsg} igConnected={igConnected} />
@@ -417,6 +419,58 @@ function Publish({ ep, posts, setPosts, onSaved, setMsg, igConnected }: { ep: Ep
         ))}
       </div>
     </Panel>
+  );
+}
+
+/**
+ * YouTube başlığı: saat gibi yayın bilgisi, veride değil (sürüm açmaz, onay düşmez). Kurallar `lib/studio` ytTitleError:
+ * en çok 100 karakter, "<" ">" yok, sonu "#shorts". YouTube açıklaması = paylaşım metni + #shorts.
+ */
+function YtTitleBox({ ep, caption, value, setValue, onSaved }: { ep: EpisodeDetail; caption: string; value: string; setValue: (v: string) => void; onSaved: () => Promise<void> }) {
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState<Msg>(null);
+  const saved = ep.ytTitle ?? "";
+  const changed = value.trim() !== saved;
+  const local = !value.trim() ? "YouTube başlığı boş olamaz" : value.length > 100 ? `en çok 100 karakter (${value.length})` : /[<>]/.test(value) ? "< ve > olamaz" : !/(^|\s)#shorts$/.test(value.trim()) ? "sonu “#shorts” olmalı" : null;
+  const ytCaption = caption.trim() ? (/(^|\s)#shorts(\s|$)/i.test(caption) ? caption.trim() : `${caption.trim()} #shorts`) : "";
+  async function save(ytTitle: string | null) {
+    setBusy(true);
+    const r = await call(`/api/studio/episodes/${ep.id}`, { action: "yt_title", ytTitle });
+    setBusy(false);
+    if (!r.ok) return setMsg({ tone: "bad", text: errorText(r.data) });
+    setValue((r.data.ytTitle as string | null) ?? "");
+    await onSaved();
+    setMsg({ tone: "ok", text: "YouTube başlığı kaydedildi." });
+  }
+  return (
+    <div className="flex min-w-0 flex-col gap-1 text-caption">
+      <span className="flex flex-wrap items-center gap-1.5">
+        <span className="muted">YouTube başlığı</span>
+        {changed ? <Badge tone="warn">kaydedilmedi</Badge> : null}
+        {ep.originYtTitle && saved !== ep.originYtTitle ? <span className="faint">Claude&apos;unkinden farklı</span> : null}
+        <span className="faint ml-auto tabular-nums">{value.length}/100</span>
+        <CopyButton text={changed ? "" : saved} />
+      </span>
+      <input aria-label="YouTube başlığı" className={FIELD} style={FIELD_STYLE} value={value} placeholder="Aranabilir konu başta … #almanca #shorts" maxLength={100} onChange={(e) => { setMsg(null); setValue(e.target.value.replace(/[<>\n]/g, "")); }} />
+      <span className="flex flex-wrap items-center gap-2">
+        <span className="faint">YouTube&apos;da başlık ayrı ve aramada en ağır alan; Shorts akışında ilk ~40 karakter görünür. Sonu #shorts.</span>
+        {changed ? (
+          <span className="ml-auto flex gap-2">
+            <button type="button" className={BTN.small} disabled={busy} onClick={() => { setMsg(null); setValue(saved); }}>Vazgeç</button>
+            <button type="button" className={BTN.small} disabled={busy || !!local} onClick={() => void save(value.trim())}>Başlığı kaydet</button>
+          </span>
+        ) : ep.originYtTitle && saved !== ep.originYtTitle ? (
+          <span className="ml-auto"><TwoStep small danger={false} label="Claude'un başlığına dön" confirm="Evet, dön" onConfirm={() => void save(null)} disabled={busy} /></span>
+        ) : null}
+      </span>
+      {changed && local ? <span style={{ color: TONE.bad }}>{local}</span> : null}
+      {msg ? <span style={{ color: TONE[msg.tone] }}>{msg.text}</span> : null}
+      <span className="mt-1 flex flex-wrap items-center gap-2">
+        <span className="muted">YouTube açıklaması</span>
+        <span className="faint">paylaşım metni + #shorts</span>
+        <span className="ml-auto"><CopyButton text={ytCaption} /></span>
+      </span>
+    </div>
   );
 }
 

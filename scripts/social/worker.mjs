@@ -84,21 +84,24 @@ async function importEpisodes(force = false) {
     }
     seen.push(id);
     const hash = hashOf(ep.template, ep.data);
-    const cur = (await q("select revision, origin_hash, edited, slot, origin_slot from social_episodes where id = $1", [id])).rows[0];
+    const cur = (await q("select revision, origin_hash, edited, slot, origin_slot, yt_title, origin_yt_title from social_episodes where id = $1", [id])).rows[0];
     const client = await pool.connect();
     try {
       await client.query("begin");
       if (!cur) {
         await client.query(
-          `insert into social_episodes (id, template, slot, data, revision, spoken, origin, origin_hash, origin_slot, origin_spoken, used, updated_by)
-           values ($1, $2, $3, $4, 1, $5, $4, $6, $3, $5, $7, 'claude')`,
-          [id, ep.template, ep.slot ?? null, ep.data, JSON.stringify(ep.spoken), hash, JSON.stringify(ep.used)],
+          `insert into social_episodes (id, template, slot, data, revision, spoken, origin, origin_hash, origin_slot, origin_spoken, used, yt_title, origin_yt_title, updated_by)
+           values ($1, $2, $3, $4, 1, $5, $4, $6, $3, $5, $7, $8, $8, 'claude')`,
+          [id, ep.template, ep.slot ?? null, ep.data, JSON.stringify(ep.spoken), hash, JSON.stringify(ep.used), ep.ytTitle],
         );
         await client.query("insert into social_revisions (episode_id, revision, data, spoken, slot, author, note) values ($1, 1, $2, $3, $4, 'claude', 'depodan')", [id, ep.data, JSON.stringify(ep.spoken), ep.slot ?? null]);
         counts.new++;
       } else {
         // saat: stüdyoda değiştirilmediyse depodakini izler
         const slot = cur.slot === cur.origin_slot ? (ep.slot ?? null) : cur.slot;
+        // YouTube başlığı da öyle (yayın bilgisi: sürüm açmaz, onaya dokunmaz)
+        const yt = cur.yt_title === cur.origin_yt_title ? ep.ytTitle : cur.yt_title;
+        await client.query("update social_episodes set yt_title = $2, origin_yt_title = $3 where id = $1", [id, yt, ep.ytTitle]);
         if (cur.origin_hash === hash) {
           await client.query("update social_episodes set slot = $2, origin_slot = $3, used = $4, archived_at = null where id = $1", [id, slot, ep.slot ?? null, JSON.stringify(ep.used)]);
           counts.same++;

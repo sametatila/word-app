@@ -1113,28 +1113,27 @@
   };
 
   /**
-   * YOUTUBE BAŞLIĞI (2026-10-12; YouTube'da başlık ve açıklama ayrı, TikTok/Instagram'da tek açıklama). `copy.ytTitle`
-   * yazılmışsa o; yoksa açıklamanın ilk cümlesi + ilk etiketi (sığarsa). En çok 100 karakter, "<" ">" yok (YouTube
-   * kabul etmiyor). Açıklama (aciklama.txt) üç platformda aynı. Üretim baslik.txt'ye yazar; editör de bunu gösterir.
+   * YOUTUBE BAŞLIĞI (2026-10-12; YouTube'da başlık ve açıklama ayrı, TikTok/Instagram'da tek açıklama). Başlık veride
+   * değil, bölümün yayın bilgisi (depoda `ytTitle`, stüdyoda saat gibi ayrı kaydedilir; kurallar lib/episodes.mjs
+   * ytTitleError). Burada yalnız önizleme katmanı için: verilen başlık, yoksa açıklamanın ilk cümlesi + " #shorts".
    */
   E.YT_TITLE_MAX = 100;
-  E.ytTitle = (copy, caption) => {
+  E.ytTitle = (own, caption) => {
     const clean = (s) => String(s || "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
-    const own = clean(copy && copy.ytTitle);
-    if (own) return own.slice(0, E.YT_TITLE_MAX);
-    const text = String(caption || "");
-    const body = clean(text.split("\n").find((l) => l.trim() && !l.trim().startsWith("#")) || "");
+    if (clean(own)) return clean(own).slice(0, E.YT_TITLE_MAX);
+    const tag = " #shorts";
+    const max = E.YT_TITLE_MAX - tag.length;
+    const body = clean(String(caption || "").split("\n").find((l) => l.trim() && !l.trim().startsWith("#")) || "");
     let t = clean((body.match(/^.*?[.!?…](?=\s|$)/) || [body])[0]).replace(/\.$/, "");
-    if (t.length > E.YT_TITLE_MAX) {
-      const cut = t.lastIndexOf(" ", E.YT_TITLE_MAX - 1);
-      t = `${t.slice(0, cut > 40 ? cut : E.YT_TITLE_MAX - 1).replace(/[,:;]$/, "")}…`;
+    if (t.length > max) {
+      const cut = t.lastIndexOf(" ", max - 1);
+      t = `${t.slice(0, cut > 40 ? cut : max - 1).replace(/[,:;]$/, "")}…`;
     }
-    const tag = (text.match(/#[\p{L}\p{N}_]+/u) || [""])[0];
-    return tag && t.length + tag.length + 1 <= E.YT_TITLE_MAX ? `${t} ${tag}` : t;
+    return t + tag;
   };
 
-  /** Bir videoyu host içine kurar; host genişliğine göre ölçeklenir. */
-  E.mount = (host, id, data = E.data[id]) => {
+  /** Bir videoyu host içine kurar; host genişliğine göre ölçeklenir. ytTitle: YouTube katmanında gösterilecek başlık. */
+  E.mount = (host, id, data = E.data[id], { ytTitle } = {}) => {
     const V = E.videos[id];
     const T = E.THEMES[V.theme];
     const sh = host.shadowRoot || host.attachShadow({ mode: "open" });
@@ -1151,7 +1150,7 @@
     const grain = sh.querySelector(".grain");
     const ui = sh.getElementById("ui");
     inst.build(scene, plan);
-    plan.ytTitle = E.ytTitle(data && data.copy, plan.caption);
+    plan.ytTitle = E.ytTitle(ytTitle, plan.caption);
     ui.innerHTML = UI_HTML(plan.caption, plan.ytTitle);
     const fit = () => (stage.style.transform = `scale(${host.clientWidth / E.W})`);
     new ResizeObserver(fit).observe(host);

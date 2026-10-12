@@ -4,7 +4,8 @@
 
   Çıktı (dir): <ad>.mp4 (1080×1920, 30 fps, H.264 High yuv420p BT.709, CRF 18, 2 sn'de bir anahtar kare, AAC 192k
   48 kHz, −14 LUFS, gerçek tepe ≤ −1 dBTP, +faststart), kapak.jpg (9:16), kapak-3x4.jpg (orta 1080×1440),
-  aciklama.txt (üç platformda aynı açıklama), baslik.txt (YouTube başlığı, E.ytTitle); isteğe bağlı <ad>-muziksiz.mp4.
+  aciklama.txt (üç platformda aynı açıklama); isteğe bağlı <ad>-muziksiz.mp4. YouTube başlığı videoya bağlı değil (bölümün
+  yayın bilgisi, stüdyoda Paylaşım adımı).
 */
 import fs from "node:fs";
 import path from "node:path";
@@ -32,7 +33,7 @@ export async function renderVideo(browser, html, { name, dir, tmp, noMusicToo = 
       const issues = await pg.evaluate(() => E.audit(document.getElementById("host"), window.I));
       if (issues.length) throw new Error(`yerleşim sorunu: ${issues.slice(0, 3).join(" | ")}`);
     }
-    const plan = await pg.evaluate(() => ({ duration: window.I.plan.duration, poster: window.I.plan.poster, caption: window.I.plan.caption, ytTitle: window.I.plan.ytTitle }));
+    const plan = await pg.evaluate(() => ({ duration: window.I.plan.duration, poster: window.I.plan.poster, caption: window.I.plan.caption }));
 
     const loud = await soundtrackWav(pg, tmp);
     const mp4 = path.join(dir, `${name}.mp4`);
@@ -60,7 +61,6 @@ export async function renderVideo(browser, html, { name, dir, tmp, noMusicToo = 
     fs.writeFileSync(cover, await pg.screenshot({ type: "jpeg", quality: 92 }));
     run("ffmpeg", ["-y", "-hide_banner", "-i", cover, "-vf", "crop=1080:1440:0:240", "-q:v", "2", path.join(dir, "kapak-3x4.jpg")]);
     fs.writeFileSync(path.join(dir, "aciklama.txt"), `${plan.caption}\n`);
-    fs.writeFileSync(path.join(dir, "baslik.txt"), `${plan.ytTitle}\n`);
     if (errs.length) throw new Error(`sayfa hatası: ${errs.join(" | ")}`);
 
     // AAC'den sonra, yüklenecek dosyanın kendisi; tepe aşıldıysa ses daha sıkı sınırlanıp yeniden konur (görüntüye dokunmadan)

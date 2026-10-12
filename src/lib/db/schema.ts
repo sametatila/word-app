@@ -2400,6 +2400,10 @@ export const socialEpisodes = pgTable(
     origin: jsonb("origin").$type<Record<string, unknown>>().notNull(),
     originHash: text("origin_hash").notNull(),
     originSlot: text("origin_slot"),
+    /** YouTube başlığı (#shorts ile, en çok 100 karakter). Saat gibi yayın bilgisi: değişince sürüm ve onay etkilenmez */
+    ytTitle: text("yt_title"),
+    /** Depodaki YouTube başlığı (aktarım); stüdyoda değiştirilmediyse ytTitle bunu izler */
+    originYtTitle: text("origin_yt_title"),
     originSpoken: jsonb("origin_spoken").$type<string[]>().notNull().default([]),
     /** Tekrar engeli için kelime kayıtları (`w:<id>`), aktarımdan */
     used: jsonb("used").$type<string[]>().notNull().default([]),
