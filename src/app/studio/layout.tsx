@@ -40,13 +40,14 @@ export default async function StudioLayout({ children }: { children: React.React
       {/* Önizleme motorunun yazı tipleri (sitenin kendi dosyaları; video üretimiyle aynı) */}
       <style>{fontCss()}</style>
       <header className="z-30 border-b sm:sticky sm:top-0" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-        <div className="flex h-14 items-center gap-4 px-4 lg:px-5">
+        <div className="flex h-14 items-center gap-2 px-4 sm:gap-4 lg:px-5">
           <Link href="/studio" className="flex shrink-0 items-baseline gap-1.5">
             <span className="text-strong">Lernomi</span>
             <span className="muted text-caption">Stüdyo</span>
           </Link>
-          <nav className="flex items-center gap-1 text-caption">
-            <Link href="/studio" className="rounded-tile px-3 py-1.5 hover:bg-[var(--surface-2)]">Takvim</Link>
+          <nav className="flex min-w-0 items-center gap-1 overflow-x-auto text-caption whitespace-nowrap">
+            <Link href="/studio" className="rounded-tile px-3 py-1.5 hover:bg-[var(--surface-2)]">Genel bakış</Link>
+            <Link href="/studio/takvim" className="rounded-tile px-3 py-1.5 hover:bg-[var(--surface-2)]">Takvim</Link>
             <Link href="/studio/requests" className="flex items-center gap-1.5 rounded-tile px-3 py-1.5 hover:bg-[var(--surface-2)]">
               Talepler
               {badge ? <span className="grid h-5 min-w-5 place-items-center rounded-full px-1 text-micro on-fill" style={{ background: "var(--color-flame)" }}>{badge}</span> : null}
@@ -54,7 +55,7 @@ export default async function StudioLayout({ children }: { children: React.React
           </nav>
           <span className="flex-1" />
           {gate.role === "admin" ? (
-            <Link href="/admin" className="muted text-caption underline-offset-2 hover:underline">Yönetim paneli</Link>
+            <Link href="/admin" className="muted hidden text-caption underline-offset-2 hover:underline sm:inline">Yönetim paneli</Link>
           ) : null}
           {gate.email ? <span className="faint hidden truncate text-caption md:inline">{gate.email}{gate.role === "editor" ? " · editör" : ""}</span> : null}
         </div>

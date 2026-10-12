@@ -192,13 +192,14 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
   return (
     <AdminPage>
       <PageHeader
-        crumb={["/studio", "Takvim"]}
+        crumb={["/studio/takvim", "Takvim"]}
         title={ep.title}
         description={<>{APPROACH_TR[ep.approach] ?? ep.approach} · {THEME_TR[ep.theme] ?? ep.theme} · <span className="font-mono">{ep.id}</span> · sürüm {ep.revision}{ep.updatedBy ? ` (${ep.updatedBy === "claude" ? "Claude" : ep.updatedBy}, ${when(ep.updatedAt)})` : ""}</>}
         meta={<span className="flex flex-wrap items-center gap-2"><Badge tone={CONTENT_STATE[cs.key].tone}>{cs.label}</Badge>{ep.slot ? <span>Yayın: {dayLabel(ep.slot.slice(0, 10))} {ep.slot.slice(11)} (Berlin)</span> : <span>Takvim dışı</span>}</span>}
         actions={
           <>
             {dirty ? <span className="text-caption" style={{ color: "var(--color-flame)" }}>Kaydedilmemiş değişiklik var</span> : null}
+            {posts.some((p) => p.status === "published") ? <Link href={`/studio/${ep.id}/performans`} className={BTN.secondary}>Performans</Link> : null}
             <button type="button" className={BTN.primary} disabled={!dirty || busy || !pv?.ready} onClick={() => void save()}>{busy ? "…" : "Kaydet"}</button>
           </>
         }
@@ -596,7 +597,7 @@ function History({ ep, busy, onRestore }: { ep: EpisodeDetail; busy: boolean; on
           </li>
         ))}
       </ul>
-      <p className="mt-2"><Link className="text-caption underline underline-offset-2" href="/studio">← Takvime dön</Link></p>
+      <p className="mt-2"><Link className="text-caption underline underline-offset-2" href="/studio/takvim">← Takvime dön</Link></p>
     </details>
   );
 }

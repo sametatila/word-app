@@ -224,6 +224,17 @@ Samet ve sosyal medya editörü (2026-10-09, Samet: "videodaki tüm metinleri is
 dönüştürmeden preview yapabilmeli; onay verirse video sunucuda üretilmeli, kalite kaybı olmadan alıp planlamayı
 yapabilmeli").
 
+- **Sayfalar:** `/studio` Genel bakış (üç platformun istatistikleri, ilk sayfa), `/studio/takvim` takvim,
+  `/studio/<bölüm>` editör, `/studio/<bölüm>/performans` videonun performansı, `/studio/requests` Defne talepleri.
+- **İstatistik (2026-10-12; Samet: "3 platformun istatistiklerini doğru harmanlayarak hem genel hem postlara özel"):**
+  hesap `src/lib/social-stats-core.ts` (test `npm run test:social-stats`), okuma `src/lib/social-stats.ts`.
+  Harmanlama: izlenme üç platformda oynatma sayısı → toplanır; etkileşim = beğeni + yorum + paylaşım + kaydetme (hangisi
+  varsa; kaydetme yalnız Instagram); erişim yalnız Instagram (toplanmaz); ortalama izleme Instagram + YouTube'dan,
+  izlenmeyle ağırlıklı (TikTok API'si vermiyor), oran = süre / video süresi. Toplamlar aralıkta yayınlanan videoların
+  bugünkü değeri; günlük grafik o gün KAZANILAN izlenme; yaklaşım / saat / tema karşılaştırması "ilk 24 saat" ile
+  (yaşa göre yanıltmasın). Geçmiş: işçiler her eşitlemeden sonra `scripts/social/lib/stats.mjs` ile
+  `social_post_snapshots` (ilk 7 gün saatte bir, sonra günde bir) ve `social_account_days` (günlük takipçi) yazar;
+  geçmiş 2026-10-12 akşamı başladı.
 - **Roller:** `ADMIN_EMAILS` panelin tamamı + stüdyo; `SOCIAL_EDITOR_EMAILS` YALNIZ stüdyo (kullanıcı verisi içeren
   panele 404). E-posta doğrulanmış olmalı; kaydetme/onay için hesapta iki adımlı doğrulama açık olmalı. Her yazma
   `admin_audit`e `studio.*` olarak düşer. Kod: `src/lib/studio-auth.ts`.

@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { studioGate } from "@/lib/studio-auth";
-import { listEpisodes, postsFor } from "@/lib/studio";
-import { instagramStatus, postView, tiktokStatus, youtubeStatus } from "@/lib/social-posts";
-import { AdminDenied } from "../admin/_ui/ui";
-import { StudioCalendar } from "./calendar";
+import { isRange, studioOverview } from "@/lib/social-stats";
+import { AdminDenied, AdminPage, Notice } from "../admin/_ui/ui";
+import { StudioOverview } from "./stats-ui";
 
-export const metadata: Metadata = { title: "Takvim" };
+export const metadata: Metadata = { title: "Genel bakış" };
 export const dynamic = "force-dynamic";
 
-/** lernomi.app/studio — sosyal medya takvimi (bölümler social_episodes, platform durumları social_posts). */
-export default async function StudioPage() {
+/** lernomi.app/studio — üç platformun istatistikleri (genel + video bazında). Takvim: /studio/takvim. */
+export default async function StudioHome({ searchParams }: { searchParams: Promise<{ aralik?: string }> }) {
   const gate = await studioGate();
   if (!gate.ok) return <AdminDenied title="Stüdyo" email={gate.email} />;
-  const { episodes, missing } = await listEpisodes();
-  const rows = missing ? [] : await postsFor(episodes.map((e) => e.id));
-  return <StudioCalendar episodes={episodes} posts={rows.map(postView)} missing={missing} now={new Date().toISOString()} ig={await instagramStatus()} tt={await tiktokStatus()} yt={await youtubeStatus()} />;
+  const { aralik } = await searchParams;
+  const r = await studioOverview(isRange(aralik) ? aralik : "30");
+  if (r.missing) return <AdminPage><Notice tone="warn" title="İstatistikler okunamadı">Tablolar henüz kurulmamış olabilir (deploy şemayı uygular).</Notice></AdminPage>;
+  return <StudioOverview ov={r.data} />;
 }

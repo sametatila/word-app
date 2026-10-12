@@ -26,7 +26,7 @@ export function RequestsView({ requests: initial, role, email }: { requests: Stu
   return (
     <AdminPage>
       <PageHeader
-        crumb={["/studio", "Takvim"]}
+        crumb={["/studio/takvim", "Takvim"]}
         title="Talepler"
         description={role === "admin" ? "Editörün gönderdiği Defne sesi talepleri. İşleme alınca metin hemen Mac'in üretim listesine girer; Mac sabah turunda (ya da elle eksik_mac.sh) üretir, kayıt gelince talep kendiliğinden kapanır." : "Samet'e gönderdiğin talepler. Ses gelince talep kendiliğinden kapanır ve bölüm onaylanabilir."}
       />
