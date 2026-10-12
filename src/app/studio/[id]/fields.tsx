@@ -40,7 +40,7 @@ const KEY_TR: Record<string, string> = {
   de: "Almanca", tr: "Türkçe", artikel: "Artikel", beispiel: "Örnek cümle", beispielTr: "Örnek cümlenin Türkçesi",
   label: "Etiket", text: "Metin", niveau: "Seviye", formen: "Çoğul", typ: "Tür", keyDe: "Anahtar kelime", keyTr: "Anahtar kelimenin Türkçesi",
   pre: "Baş", mid: "Fark eden harfler", post: "Son", stem: "Kök", sfx: "Ek", a: "A", b: "B", tip: "İpucu", scene: "Sahne", who: "Konuşan",
-  summary: "Özet başlığı", series: "Seri sözü", ask: "Yorum sorusu", title: "Takvimdeki adı", caption: "Paylaşım metni", hook: "Kanca", me: "Sen etiketi",
+  summary: "Özet başlığı", series: "Seri sözü", ask: "Yorum sorusu", title: "Takvimdeki adı", caption: "Paylaşım metni", ytTitle: "YouTube başlığı", hook: "Kanca", me: "Sen etiketi",
 };
 const GROUP_TR: Record<string, string> = { items: "Kartlar", rounds: "Turlar", lines: "Satırlar", sentences: "Cümleler", pairs: "Çiftler", rules: "Kurallar", scenes: "Sahneler" };
 const human = (k: string | number) => (typeof k === "number" ? `${k + 1}.` : KEY_TR[k] ?? k.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (c) => c.toLocaleUpperCase("tr")));
@@ -74,7 +74,7 @@ type Props = {
 
 export function Fields(p: Props) {
   const { data, spoken, visible } = p;
-  const every = leaves(data);
+  const every = leaves(data).filter((l) => !(l.path[0] === "copy" && l.path[1] === "ytTitle")); // kendi alanı var (YtTitleField)
   const share = (l: Leaf) => l.path[0] === "copy" && (l.path[1] === "title" || l.path[1] === "caption");
   const shown = every.filter((l) => share(l) || onScreen(l.value, visible, spoken));
   const hidden = every.filter((l) => !shown.includes(l));
@@ -132,11 +132,11 @@ export function Fields(p: Props) {
       ) : null}
 
       {shareLeaves.length ? (
-        <Section n={num()} title="Paylaşım" hint="Videoda görünmez: açıklama iki platformda aynı; takvimdeki adı yalnız burada.">
+        <Section n={num()} title="Paylaşım" hint="Videoda görünmez. Açıklama TikTok, Instagram ve YouTube'da aynı; YouTube ayrıca başlık ister. Takvimdeki adı yalnız burada.">
           <div className="grid gap-3">
-            {shareLeaves
-              .sort((a) => (a.path[1] === "caption" ? -1 : 1))
-              .map((l) => <Field key={l.path.join(".")} {...p} leaf={l} label={l.path[1] === "caption" ? "Açıklama ve etiketler" : "Takvimdeki adı"} counter={l.path[1] === "caption" ? 2200 : undefined} />)}
+            {shareLeaves.filter((l) => l.path[1] === "caption").map((l) => <Field key="caption" {...p} leaf={l} label="Açıklama ve etiketler" counter={2200} />)}
+            <YtTitleField {...p} copy={copy} />
+            {shareLeaves.filter((l) => l.path[1] === "title").map((l) => <Field key="title" {...p} leaf={l} label="Takvimdeki adı" />)}
           </div>
         </Section>
       ) : null}
@@ -292,6 +292,35 @@ function Field({ leaf, label, data, saved, spoken, onChange, onFocusText, disabl
       ) : (
         <input aria-label={label} disabled={disabled} className={`${FIELD} ${big ? "text-strong" : ""}`} style={FIELD_STYLE} value={leaf.value} onFocus={() => onFocusText(leaf.value, leaf.path)} onChange={(e) => set(e.target.value)} />
       )}
+    </label>
+  );
+}
+
+/**
+ * YouTube başlığı (`copy.ytTitle`, isteğe bağlı; sunucu `lib/studio` shapeError: en çok 100 karakter, "<" ">" yok).
+ * Boşsa üretim açıklamanın ilk cümlesini + ilk etiketi kullanır (engine.js E.ytTitle; önizleme motoru sayfada yüklü,
+ * öneri oradan, aynı kural). Boşaltınca alan silinir: yeniden türetilmiş başlığa döner.
+ */
+function YtTitleField({ data, saved, onChange, onFocusText, disabled, copy }: Props & { copy: Record<string, unknown> }) {
+  const value = typeof copy.ytTitle === "string" ? copy.ytTitle : "";
+  const savedValue = ((saved.copy as Record<string, unknown> | undefined)?.ytTitle as string | undefined) ?? "";
+  const engine = typeof window === "undefined" ? undefined : (window as unknown as { E?: { ytTitle?: (c: unknown, cap: string) => string } }).E;
+  const auto = engine?.ytTitle ? engine.ytTitle({}, String(copy.caption ?? "")) : "";
+  const set = (v: string) => {
+    const c = { ...copy };
+    if (v === "") delete c.ytTitle;
+    else c.ytTitle = v.replace(/[<>]/g, "").slice(0, 100);
+    onChange({ ...data, copy: c });
+  };
+  return (
+    <label className="flex min-w-0 flex-col gap-1 text-caption">
+      <span className="flex flex-wrap items-center gap-1.5">
+        <span className="muted">YouTube başlığı</span>
+        {value !== savedValue ? <Chip tone="dirty">değişti</Chip> : null}
+        {!value ? <span className="faint">boş: açıklamadan türetilir</span> : null}
+        <span className="faint ml-auto tabular-nums">{(value || auto).length}/100</span>
+      </span>
+      <input aria-label="YouTube başlığı" disabled={disabled} className={FIELD} style={FIELD_STYLE} value={value} placeholder={auto || "Açıklamanın ilk cümlesi + ilk etiket"} maxLength={100} onFocus={() => onFocusText(value || auto)} onChange={(e) => set(e.target.value)} />
     </label>
   );
 }

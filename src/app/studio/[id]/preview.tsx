@@ -12,7 +12,7 @@ import { BTN } from "../../admin/_ui/ui";
  */
 
 type Clip = { dur: number; b64: string };
-type Plan = { duration: number; poster: number; caption: string; music?: { gain: number }; voice?: { t: number; text: string }[] };
+type Plan = { duration: number; poster: number; caption: string; ytTitle?: string; music?: { gain: number }; voice?: { t: number; text: string }[] };
 type Instance = { plan: Plan; render: (t: number) => void; ui: HTMLElement; uiUsed: Set<string> };
 type Engine = {
   videos: Record<string, { title: string; ui: Record<string, string> }>;
@@ -135,7 +135,7 @@ export function Preview({ template, data, onState, focus }: { template: string; 
   const [playing, setPlaying] = useState(false);
   const playingRef = useRef(false);
   const [preparing, setPreparing] = useState(false);
-  const [overlay, setOverlay] = useState<"off" | "tt" | "ig">("off");
+  const [overlay, setOverlay] = useState<"off" | "tt" | "ig" | "yt">("off");
   const [music, setMusic] = useState(true);
   const musicRef = useRef(true);
   const [duration, setDuration] = useState(0);
@@ -350,7 +350,7 @@ export function Preview({ template, data, onState, focus }: { template: string; 
       .catch(() => undefined);
   };
   const cycleOverlay = () => {
-    const next = overlay === "off" ? "tt" : overlay === "tt" ? "ig" : "off";
+    const next = overlay === "off" ? "tt" : overlay === "tt" ? "ig" : overlay === "ig" ? "yt" : "off";
     setOverlay(next);
     const I = inst.current;
     if (I) {
@@ -393,7 +393,7 @@ export function Preview({ template, data, onState, focus }: { template: string; 
         <span className="muted shrink-0 font-mono text-caption tabular-nums">{fmt(t)} / {fmt(duration)}</span>
       </div>
       <div className="mx-auto flex flex-wrap items-center justify-center gap-2" style={{ width: "min(100%, 340px)" }}>
-        <button type="button" className={BTN.small} onClick={cycleOverlay}>{overlay === "off" ? "Arayüz: kapalı" : overlay === "tt" ? "Arayüz: TikTok" : "Arayüz: Instagram"}</button>
+        <button type="button" className={BTN.small} onClick={cycleOverlay}>{overlay === "off" ? "Arayüz: kapalı" : overlay === "tt" ? "Arayüz: TikTok" : overlay === "ig" ? "Arayüz: Instagram" : "Arayüz: YouTube"}</button>
         <button type="button" className={BTN.small} aria-pressed={music} onClick={() => setMusicOn(!music)}>{music ? "Müzik: açık" : "Müzik: kapalı"}</button>
       </div>
     </div>

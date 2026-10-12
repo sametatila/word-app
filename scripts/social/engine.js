@@ -918,24 +918,39 @@
     #ui .cap.ig .who{display:flex;align-items:center;gap:18px;font-size:38px}
     #ui .cap.ig .who img{width:72px;height:72px;border-radius:50%;display:block}
     #ui .cap.ig .who span{border:2px solid rgba(255,255,255,.8);border-radius:14px;padding:4px 18px;font-size:30px}
-    #ui .ig-nav{position:absolute;left:0;right:0;bottom:0;height:150px;background:#000}`;
+    #ui .ig-nav{position:absolute;left:0;right:0;bottom:0;height:150px;background:#000}
+    #ui .v-yt{position:absolute;inset:0;display:none}#ui[data-v="yt"] .v-yt{display:block}
+    #ui .yt-top{position:absolute;top:96px;right:44px;display:flex;gap:44px}
+    #ui .rail.yt{bottom:300px;gap:30px}
+    #ui .cap.yt{bottom:190px;right:170px}
+    #ui .cap.yt .who{display:flex;align-items:center;gap:18px;font-size:36px}
+    #ui .cap.yt .who img{width:72px;height:72px;border-radius:50%;display:block}
+    #ui .cap.yt .who span{background:#fff;color:#0f0f0f;border-radius:40px;padding:8px 24px;font-size:30px;font-weight:600}
+    #ui .yt-nav{position:absolute;left:0;right:0;bottom:0;height:150px;background:#0f0f0f}`;
 
   /** Platform arayüzlerinin kabaca konumu (yalnız önizleme; videoya girmez): yazıların düğmelere ve açıklamaya girmediği görülsün. */
-  const UI_HTML = (caption) => {
+  const UI_HTML = (caption, ytTitle) => {
     const ic = (d, c) => `<div class="rb"><svg viewBox="0 0 24 24" width="76" height="76"><path d="${d}" fill="#fff"/></svg><small>${c}</small></div>`;
     const heart = "M12 21s-7.5-4.6-10-9.3C.4 8.4 2.3 4.5 6 4.5c2.1 0 3.5 1.2 4 2.3.5-1.1 1.9-2.3 4-2.3 3.7 0 5.6 3.9 4 7.2C19.5 16.4 12 21 12 21z";
     const bubble = "M12 3C6.5 3 2 6.8 2 11.5c0 2.4 1.2 4.6 3.1 6.1L4.5 21l4-2c1.1.3 2.3.5 3.5.5 5.5 0 10-3.8 10-8.5S17.5 3 12 3z";
     const save = "M6 3h12v18l-6-4-6 4z";
     const share = "M14 4l8 7-8 7v-4c-5 0-8.5 1.5-11 5 1-5 4-9.5 11-10.5z";
     const send = "M2 21l21-9L2 3v7l15 2-15 2z";
+    const thumb = "M2 21h4V9H2v12zm20-11c0-1.1-.9-2-2-2h-6.3l1-4.6c0-.5-.2-.9-.5-1.2L13.2 1 6.6 7.6C6.2 8 6 8.5 6 9v10c0 1.1.9 2 2 2h9c.8 0 1.5-.5 1.8-1.2l3-7.1c.1-.2.2-.5.2-.7v-2z";
+    const thumbDown = "M22 3h-4v12h4V3zM2 14c0 1.1.9 2 2 2h6.3l-1 4.6c0 .5.2.9.5 1.2l1 1.2 6.6-6.6c.4-.4.6-.9.6-1.4V5c0-1.1-.9-2-2-2H7c-.8 0-1.5.5-1.8 1.2l-3 7.1c-.1.2-.2.5-.2.7v2z";
+    const search = "M10 3a7 7 0 015.6 11.2l5.1 5.1-1.4 1.4-5.1-5.1A7 7 0 1110 3zm0 2a5 5 0 100 10 5 5 0 000-10z";
     const first = caption.split("\n")[0];
     return `<div class="v-tt"><div class="tabs"><span>Takip edilenler</span><b>Sana Özel</b></div>
       <div class="rail"><div class="av"><img src="${E.ICON}" alt=""></div>${ic(heart, "12,4 B")}${ic(bubble, "843")}${ic(save, "2.951")}${ic(share, "611")}</div>
-      <div class="cap"><b>@lernomi</b><p>${first}</p><small>♫ orijinal ses · lernomi</small></div></div>
+      <div class="cap"><b>@lernomi_app</b><p>${first}</p><small>♫ orijinal ses · Lernomi App</small></div></div>
       <div class="v-ig"><div class="ig-top"><b>Reels</b></div>
       <div class="rail ig">${ic(heart, "12,4 B")}${ic(bubble, "843")}${ic(send, "611")}${ic(save, "")}</div>
-      <div class="cap ig"><div class="who"><img src="${E.ICON}" alt=""><b>lernomi</b><span>Takip et</span></div><p>${first}</p><small>♫ lernomi · Orijinal ses</small></div>
-      <div class="ig-nav"></div></div>`;
+      <div class="cap ig"><div class="who"><img src="${E.ICON}" alt=""><b>lernomi_app</b><span>Takip et</span></div><p>${first}</p><small>♫ lernomi_app · Orijinal ses</small></div>
+      <div class="ig-nav"></div></div>
+      <div class="v-yt"><div class="yt-top"><svg viewBox="0 0 24 24" width="64" height="64"><path d="${search}" fill="#fff"/></svg></div>
+      <div class="rail yt">${ic(thumb, "12 B")}${ic(thumbDown, "Beğenme")}${ic(bubble, "843")}${ic(share, "Paylaş")}</div>
+      <div class="cap yt"><div class="who"><img src="${E.ICON}" alt=""><b>@lernomiapp</b><span>Abone ol</span></div><p>${ytTitle || first}</p></div>
+      <div class="yt-nav"></div></div>`;
   };
 
   /**
@@ -1097,6 +1112,27 @@
     return [...out].map(([s, t]) => ({ s, t }));
   };
 
+  /**
+   * YOUTUBE BAŞLIĞI (2026-10-12; YouTube'da başlık ve açıklama ayrı, TikTok/Instagram'da tek açıklama). `copy.ytTitle`
+   * yazılmışsa o; yoksa açıklamanın ilk cümlesi + ilk etiketi (sığarsa). En çok 100 karakter, "<" ">" yok (YouTube
+   * kabul etmiyor). Açıklama (aciklama.txt) üç platformda aynı. Üretim baslik.txt'ye yazar; editör de bunu gösterir.
+   */
+  E.YT_TITLE_MAX = 100;
+  E.ytTitle = (copy, caption) => {
+    const clean = (s) => String(s || "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
+    const own = clean(copy && copy.ytTitle);
+    if (own) return own.slice(0, E.YT_TITLE_MAX);
+    const text = String(caption || "");
+    const body = clean(text.split("\n").find((l) => l.trim() && !l.trim().startsWith("#")) || "");
+    let t = clean((body.match(/^.*?[.!?…](?=\s|$)/) || [body])[0]).replace(/\.$/, "");
+    if (t.length > E.YT_TITLE_MAX) {
+      const cut = t.lastIndexOf(" ", E.YT_TITLE_MAX - 1);
+      t = `${t.slice(0, cut > 40 ? cut : E.YT_TITLE_MAX - 1).replace(/[,:;]$/, "")}…`;
+    }
+    const tag = (text.match(/#[\p{L}\p{N}_]+/u) || [""])[0];
+    return tag && t.length + tag.length + 1 <= E.YT_TITLE_MAX ? `${t} ${tag}` : t;
+  };
+
   /** Bir videoyu host içine kurar; host genişliğine göre ölçeklenir. */
   E.mount = (host, id, data = E.data[id]) => {
     const V = E.videos[id];
@@ -1115,7 +1151,8 @@
     const grain = sh.querySelector(".grain");
     const ui = sh.getElementById("ui");
     inst.build(scene, plan);
-    ui.innerHTML = UI_HTML(plan.caption);
+    plan.ytTitle = E.ytTitle(data && data.copy, plan.caption);
+    ui.innerHTML = UI_HTML(plan.caption, plan.ytTitle);
     const fit = () => (stage.style.transform = `scale(${host.clientWidth / E.W})`);
     new ResizeObserver(fit).observe(host);
     fit();

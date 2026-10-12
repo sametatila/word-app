@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
-  Bölümü paylaşılabilir dosyalara çevirir (TikTok + Instagram Reels, ikisi aynı dosyayı kabul eder):
+  Bölümü paylaşılabilir dosyalara çevirir (TikTok, Instagram Reels ve YouTube Shorts aynı dosyayı kabul eder):
 
   npm run social:render -- <bölüm-id> [<bölüm-id> …]     ör. duy-lacivert-001
   npm run social:render -- --status hazır                 durumu "hazır" olan bütün bölümler
@@ -9,11 +9,12 @@
 
   Çıktı (git dışı) .shots/social/out/<bölüm-id>/:
     <bölüm-id>.mp4   1080×1920, 30 fps, H.264 High yuv420p (CRF 18, 2 sn'de bir anahtar kare), AAC 192k 48 kHz,
-                     ses −14 LUFS / gerçek tepe ≤ −1 dBTP, AAC sonrası ölçülür (iki platform da bu seviyeye çekiyor; daha yüksek verilirse kısılır),
+                     ses −14 LUFS / gerçek tepe ≤ −1 dBTP, AAC sonrası ölçülür (platformlar bu seviyeye çekiyor; daha yüksek verilirse kısılır),
                      +faststart (yükleme sırasında önizleme)
-    kapak.jpg        9:16 kapak (plan.poster karesi): TikTok ve Reels'te kapak seçerken yüklenir
+    kapak.jpg        9:16 kapak (plan.poster karesi): TikTok, Reels ve Shorts'ta kapak seçerken yüklenir
     kapak-3x4.jpg    profil ızgarasının gösterdiği orta 3:4 kesit (1080×1440, y 240–1680): kanca burada okunmalı
-    aciklama.txt     paylaşım metni + etiketler
+    aciklama.txt     paylaşım metni + etiketler (üç platformda aynı; YouTube'da açıklama alanı)
+    baslik.txt       YouTube başlığı (en çok 100 karakter; copy.ytTitle ya da açıklamanın ilk cümlesi, E.ytTitle)
 
   Kareler sayfadaki belirli renderAt(t) ile alınır (aynı t → aynı kare); ses aynı motorun OfflineAudioContext izi.
 */

@@ -6,7 +6,7 @@
   Bölüm verilmezse bütün bölümler; şablon adı o şablonun bütün bölümleri demek.
 
   Kurallar (sahne koordinatı, 1080×1920):
-    GÜVENLİ ALAN DIŞI  yazı x 90–934, y 180–1535 dışına taşıyor (sağda TikTok/Reels düğmeleri, altta açıklama)
+    GÜVENLİ ALAN DIŞI  yazı x 90–934, y 180–1535 dışına taşıyor (sağda TikTok/Reels/Shorts düğmeleri, altta açıklama ve başlık)
     ÇAKIŞMA            iki yazı üst üste (aynı metinli iki kopya, ör. çevrilen sayfalar, sayılmaz)
     KUTUDAN TAŞIYOR    yazı kendi kutusunun (en yakın arka planlı ata) kenarına 6 px'ten fazla yaklaşıyor/çıkıyor
     KUTU ALTTAN TAŞIYOR kutu 1540'ın altına iniyor

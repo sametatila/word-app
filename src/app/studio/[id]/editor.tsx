@@ -403,6 +403,7 @@ function files(r: RenderView) {
       <a className={BTN.small} href={u("kapak")}>Kapak</a>
       <a className={BTN.small} href={u("kapak34")}>Kapak 3:4</a>
       <a className={BTN.small} href={u("aciklama")}>Açıklama</a>
+      <a className={BTN.small} href={u("baslik")}>YouTube başlığı</a>
     </div>
   );
 }

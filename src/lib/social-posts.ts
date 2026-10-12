@@ -129,7 +129,7 @@ export async function setSocialPost(input: { episodeId: unknown; platform: unkno
   return { ok: true, post: postView(r) };
 }
 
-/** Toplu işaretleme (ör. iki haftayı TikTok zamanlayıcısına koyduktan sonra). Yalnız durumu değiştirir. */
+/** Toplu işaretleme (ör. iki haftayı TikTok zamanlayıcısına koyduktan sonra; YouTube zamanlananları kendisi bulur). Yalnız durumu değiştirir. */
 export async function setSocialPostsBulk(input: { episodeIds: unknown; platform: unknown; status: unknown }, actor: string): Promise<{ ok: true; count: number } | { ok: false; error: "bad_input" }> {
   const ids = Array.isArray(input.episodeIds) ? input.episodeIds.map(String) : [];
   const known = await knownIds(ids);

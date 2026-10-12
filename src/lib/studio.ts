@@ -213,7 +213,8 @@ export function lockedKey(at: string): boolean {
 }
 /**
  * `next`, `base` ile AYNI YAPIDA mı: aynı anahtarlar, aynı dizi uzunlukları, sayı/boolean/null aynı, dizgi dizgi.
- * Tek serbest alan `copy.ui` (dizgi → dizgi). Hata: yol + sebep.
+ * Serbest alanlar: `copy.ui` (dizgi → dizgi) ve `copy.ytTitle` (YouTube başlığı; eklenebilir/silinebilir, en çok 100
+ * karakter, "<" ">" yok: YouTube kabul etmiyor; yoksa açıklamadan türetilir, engine.js E.ytTitle). Hata: yol + sebep.
  */
 export function shapeError(base: Json, next: Json, at = ""): string | null {
   if (at === "copy.ui") {
@@ -251,6 +252,14 @@ export function shapeError(base: Json, next: Json, at = ""): string | null {
     if (p === "copy.ui") {
       const e = shapeError(b[k], n[k], p);
       if (e) return e;
+      continue;
+    }
+    if (p === "copy.ytTitle") {
+      const v = n[k];
+      if (v == null) continue;
+      if (typeof v !== "string") return "copy.ytTitle: metin olmalı";
+      if (v.length > 100) return "copy.ytTitle: YouTube başlığı en çok 100 karakter";
+      if (/[<>]/.test(v)) return "copy.ytTitle: YouTube başlığında < ve > olamaz";
       continue;
     }
     if (!(k in b) || !(k in n)) return `${p}: alan eklenemez ya da silinemez`;
@@ -415,7 +424,7 @@ export async function cancelRender(renderId: unknown): Promise<Ok<object> | Stud
   return r.length ? { ok: true } : fail(409, "not_queued");
 }
 
-/** Platform durumları (TikTok / Instagram), bölüm başına. */
+/** Platform durumları (TikTok, Instagram, YouTube), bölüm başına. */
 export async function postsFor(ids: string[]) {
   if (!ids.length) return [];
   return db.select().from(socialPosts).where(inArray(socialPosts.episodeId, ids));

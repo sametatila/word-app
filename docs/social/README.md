@@ -100,7 +100,8 @@ Yeni şablon gerekirse (yeni format ya da tema): `templates/` altına, mevcut bi
 **Türkçe ekran metni:** Türk bir içerik üreticisinin konuşma diliyle. Çeviri kokan, iki nokta üst üsteli, robotik
 kalıp yok. Kötü: "Sıra sende: sesli söyle", "Skorunu yorumlara yaz: _ / 4", "4 cümleyle hallet". İyi: "Şimdi sen
 söyle", "Kaç tane bildin? Yorumlara yaz", "Bu 4 cümle yetiyor". Açıklamanın ilk satırı aranabilir bir cümle olsun
-("Almanca doktor randevusu", "Almanca artikel kuralı"): iki platform da arama motoru gibi çalışıyor.
+("Almanca doktor randevusu", "Almanca artikel kuralı"): üç platform da arama motoru gibi çalışıyor. YouTube'da
+başlık ayrı alan: `copy.ytTitle` yazılmazsa açıklamanın ilk cümlesi + ilk etiket kullanılır (en çok 100 karakter).
 
 ## Tasarım standardı
 
@@ -116,24 +117,29 @@ söyle", "Kaç tane bildin? Yorumlara yaz", "Bu 4 cümle yetiyor". Açıklamanı
   Konuşma sırasında müzik kısılır.
 - **Belirlilik:** `render(t)` yalnız t'ye bakar (CSS animasyonu yok): aynı t, aynı kare. MP4 bu sayede kare kare çıkar.
 
-## Format (TikTok + Instagram Reels)
+## Format (TikTok + Instagram Reels + YouTube Shorts)
 
-İki platform aynı dosyayı kabul ediyor; güvenli alan ikisini birden karşılayacak şekilde kuruldu (oynatıcıdaki
-**Arayüz** düğmesi TikTok ve Reels düğmelerini üstüne koyar).
+Üç platform aynı dosyayı kabul ediyor; güvenli alan hepsini karşılayacak şekilde kuruldu (oynatıcıdaki **Arayüz**
+düğmesi sırayla TikTok, Reels ve Shorts düğmelerini üstüne koyar). Fark yalnız metinde: TikTok ve Instagram tek
+açıklama, YouTube başlık + açıklama.
 
 | | Değer | Neden |
 |---|---|---|
-| Görüntü | 1080×1920, 9:16, 30 fps, H.264 High, yuv420p (BT.709), CRF 18, 2 sn'de bir anahtar kare | İki platformun önerdiği; yeniden sıkıştırmada kayıp az |
+| Görüntü | 1080×1920, 9:16, 30 fps, H.264 High, yuv420p (BT.709), CRF 18, 2 sn'de bir anahtar kare | Platformların önerdiği; yeniden sıkıştırmada kayıp az. 9:16 ve 3 dk altı YouTube'da kendiliğinden Short |
 | Ses | AAC 192k 48 kHz, ≈ −14 LUFS, gerçek tepe ≤ −1 dBTP (yüklenecek dosyada ölçülür) | Platformlar bu civara çekiyor; yüksek verilen kısılır, çok düşük kalan sessiz duyulur |
 | Süre | 28–38 sn (şimdiki bölümler; kelime desteleri 3 kelime, ~30 sn) | Bkz. eleştiri 2: 30 sn civarı hedef |
 | Kapak | `kapak.jpg` (9:16) yüklenir | Akışta ve profilde görünen kare |
-| Profil ızgarası | `kapak-3x4.jpg` (orta 1080×1440) kontrol için | İki platform profilde 3:4 kesit gösteriyor; kanca bu bölgede okunmalı |
-| Açıklama | `aciklama.txt`: ilk satır aranabilir cümle + 5–6 etiket | Instagram'da 3–5 etiket yeterli, fazlası işe yaramıyor |
+| Profil ızgarası | `kapak-3x4.jpg` (orta 1080×1440) kontrol için | TikTok ve Instagram profilde 3:4 kesit gösteriyor; kanca bu bölgede okunmalı |
+| Açıklama | `aciklama.txt`: ilk satır aranabilir cümle + 5–6 etiket (üç platformda aynı) | Instagram'da 3–5 etiket yeterli, fazlası işe yaramıyor; YouTube ilk 3 etiketi başlığın üstünde gösterir |
+| YouTube başlığı | `baslik.txt` (en çok 100 karakter, `<` `>` yok): `copy.ytTitle` ya da açıklamanın ilk cümlesi + ilk etiket (`E.ytTitle`) | YouTube'da başlık ayrı ve aramada en ağır alan; Shorts açıklamasındaki bağlantılar tıklanmıyor |
 
-**Yükleme kontrol listesi (Samet):**
+**Yükleme kontrol listesi (Samet):** dosyalar stüdyoda bölümün "MP4 indir / Kapak / Açıklama / YouTube başlığı" düğmelerinde.
 - Kapak olarak `kapak.jpg`'yi seç. Açıklamayı `aciklama.txt`'den yapıştır.
+- **YouTube Studio:** başlık `baslik.txt`, açıklama `aciklama.txt`; "Hayır, çocuklara özel değil"; görünürlük
+  **Planla** → bölümün saati (Berlin). Takvim zamanlanmış Short'u kendisi bulur, elle işaretleme yok.
 - **Yapay zekâ etiketi:** ses Defne (yapay sentez). TikTok gerçekçi yapay zekâ içeriğine etiket istiyor; etiketi açmak
-  güvenli taraf (etiketin dağıtımı kısmadığını söylüyorlar). Instagram'da "AI info".
+  güvenli taraf (etiketin dağıtımı kısmadığını söylüyorlar). Instagram'da "AI info" (otomatik yayında işçi koyuyor).
+  YouTube'da "Değiştirilmiş veya yapay içerik: Evet".
 - **Marka bildirimi:** TikTok'ta kendi markanı tanıtıyorsan "İçeriği açıkla → Kendi markan".
 - Platform müziği eklenecekse `--muziksiz` sürümü yükle (iş hesaplarında yalnız ticari kütüphane serbest).
 - Yayından sonra bölüm dosyasında `status: "yayında"`, `published`.
@@ -183,9 +189,10 @@ Zayıf yanlar, etki sırasıyla:
 | Hangisini duydun? | Lacivert | haftada 1 | Kaynak bol; bölüm başına bir ses karşıtlığı |
 | Cümleyi kur | Gece / Turuncu | haftada 1 | Turuncu haftada en çok bir |
 
-**Ritim (Samet, 2026-10-09):** günde 3 video, iki platforma aynı dosya; saatler Berlin 07:30, 12:30, 18:30. Yeni kısa
-format yok, mevcut 20 tasarım. Claude iki haftalık parti (42 bölüm) üretir; Samet iki platformun kendi zamanlayıcısına
-iki hafta ileriye koyar ve panelde "zamanlandı" işaretler (haftayı tek düğmeyle). İnsan yüzlü video pilotta yok; izlenme
+**Ritim (Samet, 2026-10-09; YouTube 2026-10-12):** günde 3 video, üç platforma aynı dosya; saatler Berlin 07:30, 12:30,
+18:30. Yeni kısa format yok, mevcut 20 tasarım. Claude iki haftalık parti (42 bölüm) üretir; Samet TikTok'un ve
+YouTube'un kendi zamanlayıcısına iki hafta ileriye koyar, Instagram'ı stüdyoda "Otomatik" yapar. TikTok'u panelde
+"zamanlandı" işaretler (haftayı tek düğmeyle); YouTube zamanlananları takvim kendisi bulur. İnsan yüzlü video pilotta yok; izlenme
 iyi ama takip/kurulum zayıf kalırsa 2–3 tanesi deneme olarak çekilir.
 
 **Faz 1, pilot (12–25 Ekim 2026, 42 video):**
@@ -214,12 +221,12 @@ yapabilmeli").
   `admin_audit`e `studio.*` olarak düşer. Kod: `src/lib/studio-auth.ts`.
 - **Akış:** Claude bölümü depoda yazar → sunucu işçisi aktarır → stüdyoda düzenle (canlı önizleme, sunucuyla aynı
   motor) → Kaydet (yeni sürüm) → Onayla ve üret → video sunucuda (30 sn video ≈ 5 dk, düşük öncelikle) → MP4 / kapak / açıklama KAYIPSIZ indirilir
-  (sunucudaki dosyanın baytları) → platform zamanlayıcısı → takvimde "zamanlandı / yayında".
+  (sunucudaki dosyanın baytları; YouTube başlığı `baslik.txt` ayrı düğmede) → platform zamanlayıcısı → takvimde "zamanlandı / yayında".
 - **İstisnasız:** ekrandaki her yazı ya bölüm verisinden ya şablonun `meta.ui` sabit yazılarından gelir (bölüm
   `copy.ui` ile ezer). Kapı: `npm run social:texts` (veriye/ui'ye dayanmayan yazı = hata). Yeni şablonda gömülü yazı
   bırakılmaz.
 - **Kurallar (`src/lib/studio.ts`):** yalnız metin değişir (yapı, öğe sayısı, kimlik alanları `who/icon/avatar/key/typ`
-  ve satırdaki `scene` kilitli); her kayıt sürüm, geri dönüş yeni sürüm; eşzamanlı düzenlemede 409; onaydan sonra metin
+  ve satırdaki `scene` kilitli; serbest alanlar `copy.ui` ve `copy.ytTitle`, YouTube başlığı, en çok 100 karakter); her kayıt sürüm, geri dönüş yeni sürüm; eşzamanlı düzenlemede 409; onaydan sonra metin
   değişirse onay düşer, kuyruktaki üretim iptal. Saat: aynı saate iki bölüm yok (hata), diğer takvim kuralları uyarı.
 - **Ses (Samet: "yalnız Defne"):** seslendirilen Almanca metin değişirse Defne kaydı gerekir; kaydı yoksa onay kapalı.
   Ses bekçisi (`scripts/tts-own-watch.ts`, gece + deploy) stüdyo metinlerini `eksik.jsonl`e yazar (`word_social` /

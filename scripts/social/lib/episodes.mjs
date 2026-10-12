@@ -16,7 +16,7 @@ export const EP_DIR = path.join(ROOT, "data/social/episodes");
 export const TPL_DIR = path.join(ROOT, "scripts/social/templates");
 export const approachOf = (template) => template.split("-")[0];
 export const themeOf = (template) => template.split("-")[1];
-export const SLOTS = ["07:30", "12:30", "18:30"]; // Berlin; günde 3 video, iki platform (Samet, 2026-10-09)
+export const SLOTS = ["07:30", "12:30", "18:30"]; // Berlin; günde 3 video, TikTok + Instagram + YouTube Shorts (Samet, 2026-10-09; YouTube 2026-10-12)
 const SLOT_RE = /^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2})$/;
 
 /** Bütün bölümler (ya da `only` listesindekiler) içerikleriyle; clips bütün bölümlerin sesleri. */

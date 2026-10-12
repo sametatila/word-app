@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 /**
  * Üretilen dosyalar, KAYIPSIZ: sunucunun ürettiği dosyanın baytları aynen (yeniden kodlama yok).
- *   GET /api/studio/file/<üretim>?k=mp4|kapak|kapak34|aciklama
+ *   GET /api/studio/file/<üretim>?k=mp4|kapak|kapak34|aciklama|baslik (baslik: YouTube başlığı, 2026-10-12 öncesi üretimlerde yok)
  *
  * İMZALI ADRES (Instagram, 2026-10-10): Instagram API'si (Instagram girişi) dosya yüklemeyi kabul etmiyor, videoyu ve
  * kapağı kendisi bir adresten çekiyor. Instagram işçisi (`scripts/social/instagram.mjs` mediaUrl) `exp` (en çok 6 sa
@@ -21,6 +21,7 @@ const KINDS: Record<string, { file: (id: string) => string; type: string; ext: s
   kapak: { file: () => "kapak.jpg", type: "image/jpeg", ext: "jpg" },
   kapak34: { file: () => "kapak-3x4.jpg", type: "image/jpeg", ext: "jpg" },
   aciklama: { file: () => "aciklama.txt", type: "text/plain; charset=utf-8", ext: "txt" },
+  baslik: { file: () => "baslik.txt", type: "text/plain; charset=utf-8", ext: "txt" },
 };
 
 function signedOk(id: string, k: string, sp: URLSearchParams): boolean {

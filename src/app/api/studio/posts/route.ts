@@ -5,7 +5,7 @@ import { setSocialPost, setSocialPostsBulk } from "@/lib/social-posts";
 export const dynamic = "force-dynamic";
 
 /**
- * Platform durumları (TikTok / Instagram) — stüdyonun yazma ucu (/studio). Eylemler:
+ * Platform durumları (TikTok, Instagram, YouTube) — stüdyonun yazma ucu (/studio). Eylemler:
  *
  *   set    bir bölümün bir platformdaki durumu (planned · scheduled · auto · published · skipped) + bağlantı + not;
  *          auto yalnız Instagram ve gelecekteki saat (işçi saatinde yayınlar); "publishing" sürerken değiştirilemez (409)
