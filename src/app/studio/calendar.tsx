@@ -54,7 +54,7 @@ const THEME_SWATCH: Record<string, string> = { gece: "#1b1b1f", kagit: "#e9dcc4"
 
 type Toast = { tone: Tone; text: string; detail?: string[]; undo?: () => void } | null;
 
-export function StudioCalendar({ episodes: initial, posts: initialPosts, missing, now, ig, tt }: { episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string; ig: PlatformApiStatus; tt: PlatformApiStatus }) {
+export function StudioCalendar({ episodes: initial, posts: initialPosts, missing, now, ig, tt, yt }: { episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string; ig: PlatformApiStatus; tt: PlatformApiStatus; yt: PlatformApiStatus }) {
   const [episodes, setEpisodes] = useState(initial);
   const [posts, setPosts] = useState(() => new Map(initialPosts.filter((p) => p.episodeId).map((p) => [key(p.episodeId as string, p.platform), p])));
   const nowMs = new Date(now).getTime();
@@ -197,6 +197,7 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
         ))}
         <ApiPill name="Instagram API" s={ig} at="@" />
         <ApiPill name="TikTok API" s={tt} at="" />
+        <ApiPill name="YouTube API" s={yt} at="" />
         {PLATFORMS.map((p) => {
           const n = count(weekEps, p.key, "planned");
           if (!n) return null;

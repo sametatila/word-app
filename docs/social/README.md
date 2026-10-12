@@ -1,4 +1,4 @@
-# Sosyal videolar (TikTok + Instagram Reels)
+# Sosyal videolar (TikTok + Instagram Reels + YouTube Shorts)
 
 Lernomi'nin kısa videoları. Reklam değil, işe yarayan Almanca içerik: video izleyene bir şey öğretir,
 Lernomi yalnız kaynak ve kapanıştaki küçük imzadır. Üretimi Claude Code yapar, yayını Samet.
@@ -306,7 +306,32 @@ takviminde "TikTok API" etiketi.
   `token.json` biçimine (`clientKey, clientSecret, accessToken, refreshToken, expiresAt, refreshExpiresAt`).
 - `node scripts/social/tiktok.mjs --check` hesap ve belirteç; `--check <bağlantı>` tek videonun oEmbed durumu.
 
+### YouTube Shorts: okuma kurulu (2026-10-12)
+
+Google Cloud projesi **nomi-507213**: YouTube Data API v3 + YouTube Analytics API açık, OAuth istemcisi
+**lernomi-youtube** (Desktop; onay Mac'te yerel adresle alındı), izin ekranı **In production** (2026-10-12'de Testing'ten
+alındı: Testing'te yenileme belirteci 7 günde düşer). Kanal **Lernomi (@lernomiapp)**, `UCrN2aZ1K-GBa6ncnC5bdMyw`.
+İzinler `youtube.readonly`, `yt-analytics.readonly`, `youtube.upload`. Yerelde `.secrets/youtube/` (`client.json`,
+`token.json`). İşçi `scripts/social/youtube.mjs` (başındaki yorum ayrıntılı), sunucuda `lernomi-social-yt.timer` 10
+dakikada bir → `/opt/lernomi/social-yt.sh` (repo dışı). Belirteç `/opt/lernomi/social/youtube/token.json` (600,
+`lernomi`). Durum `youtube/status.json`, stüdyo takviminde "YouTube API" etiketi.
+
+- **Eşitleme:** kanal sahibi zamanlanmış videoları da görür. YouTube Studio'da bölümün saatine zamanlanan Short
+  (`publishAt`, saatten 30 dk önce – 3 sa sonra) kendiliğinden **Zamanlandı** + bağlantı; herkese açılınca **Yayında**.
+  Liste dışı ve taslak videolar sayılmaz.
+- **Metrikler:** videos.list saatte bir (`views`, `likes`, `comments`; anlık) + Analytics API 6 saatte bir (`watchMin`,
+  `avgWatchSec`, `avgViewPct`, `shares`, `subsGained`; 1–2 gün gecikmeli). Kanal: abone sayısı.
+- **Denetim:** "Zamanlandı" saatinden 20 dk sonra hâlâ herkese açık değilse bir kez Telegram.
+- **Yükleme (henüz yok):** API ile yükleme ve gerçek zamanlama (`status.publishAt`, `containsSyntheticMedia`) mümkün,
+  ama doğrulanmamış projeden yüklenen video "gizli"ye kilitlenir: YouTube API Services denetimi (audit) gerekir. Onaya
+  kadar Short'lar YouTube Studio'dan elle zamanlanır. Kota: yükleme ~1.600 birim, günlük 10.000.
+- `node scripts/social/youtube.mjs --check` kanal ve son yüklemeler.
+- **Yeniden yetki** (Telegram "[UYARI] YouTube …"; şifre değişimi, izin iptali): Desktop istemcisiyle yerel adresli
+  OAuth (PKCE, `access_type=offline`, `prompt=consent`), çıkan yenileme belirteci `token.json`a
+  (`clientId, clientSecret, refreshToken`).
+
 **Sıra:** (1) Instagram ✅ (yukarıda). (2) TikTok ✅ (sandbox, metrik + yayın denetimi). TikTok'ta yayın elle kalır.
+(3) YouTube okuma ✅; yükleme için denetim başvurusu.
 
 **Kapasite (2026-10-08 ölçümü):** cümleyi kur için 1795 kısa sesli cümle, kelime destesi için 2754 sesli kelime,
 artikel için 2343 sesli isim (yalnız -ung → die 215 kelime): yıllarca yeter. "Hangisini duydun?" için `confusables.json`daki

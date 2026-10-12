@@ -13,7 +13,7 @@ import { socialEpisodes, socialPosts } from "@/lib/db/schema";
  *  - BÖLÜM ve SAAT: `social_episodes` (stüdyo, `lib/studio`; depodan sunucu işçisiyle aktarılır).
  *  - PLATFORM DURUMU: `social_posts`, bölüm × platform başına bir satır. Satır yoksa "planlandı".
  *    Samet platformun zamanlayıcısına koyunca "zamanlandı", yayından sonra bağlantıyla "yayında" der;
- *    metrikler API eşitlemesinden gelir (Instagram: `scripts/social/instagram.mjs`, 2026-10-10; TikTok: `scripts/social/tiktok.mjs`, 2026-10-12).
+ *    metrikler API eşitlemesinden gelir (Instagram: `scripts/social/instagram.mjs`, 2026-10-10; TikTok: `scripts/social/tiktok.mjs`, YouTube: `scripts/social/youtube.mjs`, 2026-10-12).
  *  - INSTAGRAM OTOMATİK YAYIN: durum "auto" → işçi saatinde yayınlar (güncel sürüm onaylı ve videosu hazırsa);
  *    "publishing" yayın adımı kilitli (elle değiştirilemez), "failed" olmadı (`job.error`; yeniden "auto" tekrar dener).
  *
@@ -21,8 +21,8 @@ import { socialEpisodes, socialPosts } from "@/lib/db/schema";
  * Panel bunu ayrı gösterir ("saati geçti").
  */
 
-export type SocialPlatform = "tiktok" | "instagram";
-export const SOCIAL_PLATFORMS: SocialPlatform[] = ["tiktok", "instagram"];
+export type SocialPlatform = "tiktok" | "instagram" | "youtube";
+export const SOCIAL_PLATFORMS: SocialPlatform[] = ["tiktok", "instagram", "youtube"];
 export type SocialStatus = "scheduled" | "published" | "skipped" | "auto" | "publishing" | "failed";
 /** Elle seçilebilenler ("publishing" ve "failed" yalnız işçinin). */
 export const SOCIAL_STATUSES: SocialStatus[] = ["scheduled", "published", "skipped", "auto"];
@@ -157,12 +157,13 @@ function slotPast(slot: string): boolean {
 
 /**
  * Platform API bağlantısı (işçinin yazdığı `SOCIAL_DIR/<platform>/status.json`; belirteç içermez). Dosya yoksa bağlı değil.
- * `stale`: işçi koşmadı (Instagram dakikada bir, TikTok 5 dakikada bir koşuyor). TikTok'ta `tokenDays` yenileme belirtecinin günü.
+ * `stale`: işçi koşmadı (Instagram dakikada bir, TikTok 5, YouTube 10 dakikada bir koşuyor). TikTok'ta `tokenDays` yenileme belirtecinin günü.
  */
 export type InstagramStatus = { connected: boolean; ok: boolean; username: string | null; followers: number | null; tokenDays: number | null; lastSyncAt: string | null; error: string | null; stale: boolean };
 export type PlatformApiStatus = InstagramStatus;
 export const instagramStatus = () => apiStatus("instagram", 10 * 60_000);
 export const tiktokStatus = () => apiStatus("tiktok", 20 * 60_000);
+export const youtubeStatus = () => apiStatus("youtube", 40 * 60_000);
 async function apiStatus(platform: SocialPlatform, staleMs: number): Promise<PlatformApiStatus> {
   const off: PlatformApiStatus = { connected: false, ok: false, username: null, followers: null, tokenDays: null, lastSyncAt: null, error: null, stale: false };
   try {

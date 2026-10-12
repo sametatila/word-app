@@ -7,6 +7,7 @@ import type { Tone } from "../admin/_ui/ui";
 export const PLATFORMS: { key: SocialPlatform; label: string; short: string }[] = [
   { key: "tiktok", label: "TikTok", short: "TT" },
   { key: "instagram", label: "Instagram", short: "IG" },
+  { key: "youtube", label: "YouTube", short: "YT" },
 ];
 export const APPROACH_TR: Record<string, string> = { artikel: "Artikel", diyalog: "Diyalog", kelime: "Kelime destesi", duy: "Hangisini duydun?", kur: "Cümleyi kur" };
 export const APPROACH_SHORT: Record<string, string> = { artikel: "Artikel", diyalog: "Diyalog", kelime: "Kelime", duy: "Duy", kur: "Kur" };

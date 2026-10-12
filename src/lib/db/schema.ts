@@ -2354,7 +2354,7 @@ export const socialPosts = pgTable(
     id: serial("id").primaryKey(),
     /** `data/social/episodes/<id>.mjs`; boşsa planda olmayan gönderi */
     episodeId: text("episode_id"),
-    /** tiktok · instagram */
+    /** tiktok · instagram · youtube */
     platform: text("platform").notNull(),
     /**
      * scheduled (platformun zamanlayıcısında) · published · skipped · auto (Instagram: saatinde Lernomi yayınlar,

@@ -410,7 +410,7 @@ function files(r: RenderView) {
 function Publish({ ep, posts, setPosts, onSaved, setMsg, igConnected }: { ep: EpisodeDetail; posts: SocialPost[]; setPosts: (f: (xs: SocialPost[]) => SocialPost[]) => void; onSaved: () => Promise<void>; setMsg: (m: Msg) => void; igConnected: boolean }) {
   const ready = ep.approved && ep.render?.status === "done" && !!ep.render.hasFiles;
   return (
-    <Panel title="Yayın" hint={`Saat Berlin saati. Platformun zamanlayıcısına koyunca “Zamanlandı”, yayından sonra bağlantıyla “Yayında”. TikTok'ta “Zamanlandı” + bağlantı: saatinde yayına çıktığı kendiliğinden denetlenir.${igConnected ? " Instagram'da “Otomatik”: saatinde Lernomi yayınlar, bağlantı ve metrikler kendiliğinden gelir." : ""}`}>
+    <Panel title="Yayın" hint={`Saat Berlin saati. Platformun zamanlayıcısına koyunca “Zamanlandı”, yayından sonra bağlantıyla “Yayında”. TikTok'ta “Zamanlandı” + bağlantı: saatinde yayına çıktığı kendiliğinden denetlenir. YouTube Studio'da zamanlanan Short saatinden bulunur, kendiliğinden “Zamanlandı” olur.${igConnected ? " Instagram'da “Otomatik”: saatinde Lernomi yayınlar, bağlantı ve metrikler kendiliğinden gelir." : ""}`}>
       <div className="space-y-4">
         <SlotBox ep={ep} onSaved={onSaved} setMsg={setMsg} />
         {PLATFORMS.map((p) => (
@@ -461,7 +461,7 @@ const EDITABLE: readonly (readonly [SocialStatus | "planned", string])[] = [
   ["skipped", "Atlandı"],
 ];
 const EDITABLE_AUTO: readonly (readonly [SocialStatus | "planned", string])[] = [["planned", "Planlandı"], ["auto", "Otomatik"], ["scheduled", "Zamanlandı"], ["published", "Yayında"], ["skipped", "Atlandı"]];
-const URL_HINT: Record<SocialPlatform, string> = { tiktok: "https://www.tiktok.com/@…/video/…", instagram: "https://www.instagram.com/reel/…" };
+const URL_HINT: Record<SocialPlatform, string> = { tiktok: "https://www.tiktok.com/@…/video/…", instagram: "https://www.instagram.com/reel/…", youtube: "https://www.youtube.com/shorts/…" };
 
 function PlatformBox({ episodeId, platform, label, auto, ready, post: saved, onSaved }: { episodeId: string; platform: SocialPlatform; label: string; auto: boolean; ready: boolean; post: SocialPost | null; onSaved: (p: SocialPost | null) => void }) {
   const [status, setStatus] = useState<SocialStatus | "planned">(saved?.status ?? "planned");
@@ -496,6 +496,9 @@ function PlatformBox({ episodeId, platform, label, auto, ready, post: saved, onS
         ) : null}
         {platform === "tiktok" && status === "scheduled" ? (
           <Notice tone={url.trim() ? "info" : "warn"}>{url.trim() ? "Saatinden itibaren bağlantı denetlenir: video yayına çıkınca “Yayında” olur, 20 dk içinde çıkmazsa Telegram'a uyarı gider." : "Bağlantıyı yaz: TikTok'ta zamanlanan videonun bağlantısı olmadan yayına çıktığı denetlenemez."}</Notice>
+        ) : null}
+        {platform === "youtube" && (status === "scheduled" || status === "planned") ? (
+          <Notice tone="info">YouTube Studio&apos;da bu saate zamanlanan Short kendiliğinden bulunur: “Zamanlandı” olur, bağlantısı yazılır, yayına çıkınca “Yayında”. 20 dk içinde çıkmazsa Telegram&apos;a uyarı gider.</Notice>
         ) : null}
         {saved?.job?.error && saved.status === "scheduled" && status === "scheduled" ? <Notice tone="warn" title="Denetim">{saved.job.error}</Notice> : null}
         {saved?.job?.error && (saved.status === "auto" || saved.status === "failed") ? <Notice tone={saved.status === "failed" ? "bad" : "warn"} title={saved.status === "failed" ? "Otomatik yayın olmadı" : "Son deneme"}>{saved.job.error}{saved.status === "failed" ? " · Düzeltip “Otomatik”i yeniden seçersen tekrar dener." : ""}</Notice> : null}
