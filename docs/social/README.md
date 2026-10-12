@@ -284,18 +284,29 @@ stüdyo takviminde "Instagram API" etiketi.
   Instagram login › Business login settings'teki embed adresiyle yeniden yetki ver ya da "Generate token"; yeni belirteç
   `token.json`a (`{"token","refreshedAt","expiresAt"}`, 600, sahibi `lernomi`).
 
-### TikTok: yayın denetimi (2026-10-12)
+### TikTok: API kurulu (2026-10-12)
 
-TikTok'ta yayın elle ya da TikTok'un zamanlayıcısıyla. Bölüm **Zamanlandı** + videonun bağlantısı yazılınca
-`scripts/social/tiktok.mjs` (sunucuda `lernomi-social-tt.timer`, 5 dakikada bir → `/opt/lernomi/social-tt.sh`, repo
-dışı) bağlantıyı TikTok'un herkese açık oEmbed adresiyle yoklar (`https://www.tiktok.com/oembed?url=…`; uygulama ve
-belirteç gerekmez): zamanlanmış/gizli video **400**, yayındaki video **200** (2026-10-12 denendi, sunucudan da).
-Saatten 1 sa önce – 3 gün sonra: 200 → **Yayında** (`published_at` görüldüğü an, kimlik bağlantıdan). Saatten 20 dk
-sonra hâlâ 400 → bir kez Telegram; bağlantı yoksa saatinde bir kez Telegram. Uyarı `job.error`da, editörde "Denetim"
-kutusu; elle değişiklik siler. Metrik vermez. Tek bağlantı: `node scripts/social/tiktok.mjs --check <bağlantı>`.
+TikTok for Developers uygulaması **Lernomi**, **sandbox** (inceleme yok; hedef kullanıcı @lernomi_app, gerçek veri
+dönüyor), Login Kit + `user.info.basic`, `user.info.stats`, `video.list` (yayın ürünleri bilerek yok: denetimden
+geçmez). Yönlendirme `https://www.lernomi.app/`. Yerelde `.secrets/tiktok/` (`key`, `secret`, logo). İşçi
+`scripts/social/tiktok.mjs` (başındaki yorum ayrıntılı), sunucuda `lernomi-social-tt.timer` 5 dakikada bir →
+`/opt/lernomi/social-tt.sh` (repo dışı). Belirteç `/opt/lernomi/social/tiktok/token.json` (600, `lernomi`; uygulama
+anahtarları da içinde, yenileme onları ister; erişim 24 sa, yenileme 365 gün). Durum `tiktok/status.json`, stüdyo
+takviminde "TikTok API" etiketi.
 
-**Sıra:** (1) Instagram ✅ (yukarıda). (2) TikTok Display API sandbox'ı dene (metrik); yetmezse Business API başvurusu.
-TikTok'ta yayın elle kalır (denetim yukarıda).
+- **Eşitleme:** yalnız yayındaki videolar listede (zamanlanmış görünmez). Önce Samet'in yazdığı bağlantıdaki kimlikle,
+  yoksa saatinden bölüme eşlenir (saatten 30 dk önce – 3 sa sonra); satır **Yayında** olur.
+- **Metrikler:** `views`, `likes`, `comments`, `shares` (Display API bu kadar; izlenme süresi/tamamlama yok, onlar
+  TikTok Studio'da ya da Business API onayıyla). Tek istekte bütün videolar: 90 güne kadar saatte bir. Hesap: takipçi,
+  video sayısı.
+- **Yayın denetimi:** "Zamanlandı" satırı saatten 20 dk sonra hâlâ yayında değilse bir kez Telegram. API çalışmıyorsa
+  herkese açık oEmbed'e düşer (`https://www.tiktok.com/oembed?url=…`: zamanlanmış/gizli video 400, yayındaki 200).
+- **Yeniden yetki** (Telegram "[UYARI] TikTok …"; 365 günde bir ya da iptal): `https://www.tiktok.com/v2/auth/authorize/?client_key=<key>&scope=user.info.basic,user.info.stats,video.list&response_type=code&redirect_uri=https%3A%2F%2Fwww.lernomi.app%2F&state=<rastgele>`,
+  dönen `code` → `POST https://open.tiktokapis.com/v2/oauth/token/` (`grant_type=authorization_code`), sonuç
+  `token.json` biçimine (`clientKey, clientSecret, accessToken, refreshToken, expiresAt, refreshExpiresAt`).
+- `node scripts/social/tiktok.mjs --check` hesap ve belirteç; `--check <bağlantı>` tek videonun oEmbed durumu.
+
+**Sıra:** (1) Instagram ✅ (yukarıda). (2) TikTok ✅ (sandbox, metrik + yayın denetimi). TikTok'ta yayın elle kalır.
 
 **Kapasite (2026-10-08 ölçümü):** cümleyi kur için 1795 kısa sesli cümle, kelime destesi için 2754 sesli kelime,
 artikel için 2343 sesli isim (yalnız -ung → die 215 kelime): yıllarca yeter. "Hangisini duydun?" için `confusables.json`daki

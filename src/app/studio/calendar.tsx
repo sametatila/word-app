@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { EpisodeSummary } from "@/lib/studio";
-import type { InstagramStatus, SocialPlatform, SocialPost, SocialStatus } from "@/lib/social-posts";
+import type { PlatformApiStatus, SocialPlatform, SocialPost, SocialStatus } from "@/lib/social-posts";
 import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, BTN, Notice, TONE, type Tone } from "../admin/_ui/ui";
@@ -54,7 +54,7 @@ const THEME_SWATCH: Record<string, string> = { gece: "#1b1b1f", kagit: "#e9dcc4"
 
 type Toast = { tone: Tone; text: string; detail?: string[]; undo?: () => void } | null;
 
-export function StudioCalendar({ episodes: initial, posts: initialPosts, missing, now, ig }: { episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string; ig: InstagramStatus }) {
+export function StudioCalendar({ episodes: initial, posts: initialPosts, missing, now, ig, tt }: { episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string; ig: PlatformApiStatus; tt: PlatformApiStatus }) {
   const [episodes, setEpisodes] = useState(initial);
   const [posts, setPosts] = useState(() => new Map(initialPosts.filter((p) => p.episodeId).map((p) => [key(p.episodeId as string, p.platform), p])));
   const nowMs = new Date(now).getTime();
@@ -195,7 +195,8 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
         {PLATFORMS.map((p) => (
           <Pill key={p.key} label={p.label} value={`${count(weekEps, p.key, ...PLACED)}/${weekEps.length} ${p.key === "instagram" && ig.connected ? "sırada" : "zamanlandı"}`} tone={count(weekEps, p.key, "planned") ? "warn" : weekEps.length ? "ok" : undefined} />
         ))}
-        <IgPill ig={ig} />
+        <ApiPill name="Instagram API" s={ig} at="@" />
+        <ApiPill name="TikTok API" s={tt} at="" />
         {PLATFORMS.map((p) => {
           const n = count(weekEps, p.key, "planned");
           if (!n) return null;
@@ -276,17 +277,17 @@ function Pill({ label, value, tone }: { label: string; value: string; tone?: Ton
   );
 }
 
-/** Instagram API bağlantısı (işçinin durum dosyası): bağlı mı, belirteç kaç gün, son eşitleme. */
-function IgPill({ ig }: { ig: InstagramStatus }) {
-  if (!ig.connected) return <Pill label="Instagram API" value="bağlı değil" />;
+/** Platform API bağlantısı (işçinin durum dosyası): bağlı mı, belirteç kaç gün, son eşitleme. */
+function ApiPill({ name, s: ig, at }: { name: string; s: PlatformApiStatus; at: string }) {
+  if (!ig.connected) return <Pill label={name} value="bağlı değil" />;
   const sync = ig.lastSyncAt ? new Date(ig.lastSyncAt).toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit", timeZone: TZ }) : "—";
   const bad = !ig.ok || ig.stale;
   const warn = ig.tokenDays != null && ig.tokenDays < 10;
-  const value = bad ? (ig.stale ? "işçi durmuş" : "bağlantı hatası") : `@${ig.username ?? "?"} · eşitleme ${sync}`;
+  const value = bad ? (ig.stale ? "işçi durmuş" : "bağlantı hatası") : `${at}${ig.username ?? "?"} · eşitleme ${sync}`;
   const title = [ig.error, ig.tokenDays != null ? `Belirteç ${ig.tokenDays} gün geçerli (kendiliğinden yenilenir)` : null].filter(Boolean).join(" · ");
   return (
-    <span title={title} aria-label={`Instagram API: ${value}${title ? ` · ${title}` : ""}`}>
-      <Pill label="Instagram API" value={value} tone={bad ? "bad" : warn ? "warn" : "ok"} />
+    <span title={title} aria-label={`${name}: ${value}${title ? ` · ${title}` : ""}`}>
+      <Pill label={name} value={value} tone={bad ? "bad" : warn ? "warn" : "ok"} />
     </span>
   );
 }

@@ -13,7 +13,7 @@ import { socialEpisodes, socialPosts } from "@/lib/db/schema";
  *  - BÖLÜM ve SAAT: `social_episodes` (stüdyo, `lib/studio`; depodan sunucu işçisiyle aktarılır).
  *  - PLATFORM DURUMU: `social_posts`, bölüm × platform başına bir satır. Satır yoksa "planlandı".
  *    Samet platformun zamanlayıcısına koyunca "zamanlandı", yayından sonra bağlantıyla "yayında" der;
- *    metrikler API eşitlemesinden gelir (Instagram: `scripts/social/instagram.mjs`, 2026-10-10; TikTok: ileride).
+ *    metrikler API eşitlemesinden gelir (Instagram: `scripts/social/instagram.mjs`, 2026-10-10; TikTok: `scripts/social/tiktok.mjs`, 2026-10-12).
  *  - INSTAGRAM OTOMATİK YAYIN: durum "auto" → işçi saatinde yayınlar (güncel sürüm onaylı ve videosu hazırsa);
  *    "publishing" yayın adımı kilitli (elle değiştirilemez), "failed" olmadı (`job.error`; yeniden "auto" tekrar dener).
  *
@@ -156,14 +156,17 @@ function slotPast(slot: string): boolean {
 }
 
 /**
- * Instagram bağlantısı (işçinin yazdığı `SOCIAL_DIR/instagram/status.json`; belirteç içermez). Dosya yoksa bağlı değil.
- * `stale`: işçi 10 dakikadır koşmadı (zamanlayıcı durmuş).
+ * Platform API bağlantısı (işçinin yazdığı `SOCIAL_DIR/<platform>/status.json`; belirteç içermez). Dosya yoksa bağlı değil.
+ * `stale`: işçi koşmadı (Instagram dakikada bir, TikTok 5 dakikada bir koşuyor). TikTok'ta `tokenDays` yenileme belirtecinin günü.
  */
 export type InstagramStatus = { connected: boolean; ok: boolean; username: string | null; followers: number | null; tokenDays: number | null; lastSyncAt: string | null; error: string | null; stale: boolean };
-export async function instagramStatus(): Promise<InstagramStatus> {
-  const off: InstagramStatus = { connected: false, ok: false, username: null, followers: null, tokenDays: null, lastSyncAt: null, error: null, stale: false };
+export type PlatformApiStatus = InstagramStatus;
+export const instagramStatus = () => apiStatus("instagram", 10 * 60_000);
+export const tiktokStatus = () => apiStatus("tiktok", 20 * 60_000);
+async function apiStatus(platform: SocialPlatform, staleMs: number): Promise<PlatformApiStatus> {
+  const off: PlatformApiStatus = { connected: false, ok: false, username: null, followers: null, tokenDays: null, lastSyncAt: null, error: null, stale: false };
   try {
-    const s = JSON.parse(await fs.readFile(path.join(process.env.SOCIAL_DIR || "/opt/lernomi/social", "instagram", "status.json"), "utf8")) as Record<string, unknown>;
+    const s = JSON.parse(await fs.readFile(path.join(process.env.SOCIAL_DIR || "/opt/lernomi/social", platform, "status.json"), "utf8")) as Record<string, unknown>;
     const str = (v: unknown) => (typeof v === "string" ? v : null);
     const exp = Date.parse(str(s.tokenExpiresAt) ?? "");
     return {
@@ -174,7 +177,7 @@ export async function instagramStatus(): Promise<InstagramStatus> {
       tokenDays: Number.isFinite(exp) ? Math.floor((exp - Date.now()) / 86_400_000) : null,
       lastSyncAt: str(s.lastSyncAt),
       error: str(s.error) ?? str(s.tokenError),
-      stale: Date.now() - Date.parse(str(s.lastRunAt) ?? "") > 10 * 60_000,
+      stale: Date.now() - Date.parse(str(s.lastRunAt) ?? "") > staleMs,
     };
   } catch {
     return off;
