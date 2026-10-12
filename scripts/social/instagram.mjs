@@ -32,6 +32,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import pg from "pg";
+import { recordStats } from "./lib/stats.mjs";
 
 const SOCIAL_DIR = process.env.SOCIAL_DIR || "/opt/lernomi/social";
 const IG_DIR = path.join(SOCIAL_DIR, "instagram");
@@ -456,6 +457,7 @@ try {
     await publishDue(me.user_id, status);
     if (Date.now() - Date.parse(status.lastSyncAt || 0) > 15 * MIN - 10_000) await syncMedia(status);
     await syncMetrics();
+    await recordStats(q, "instagram", status.followers, log);
   }
 } catch (e) {
   log("hata:", e.message);

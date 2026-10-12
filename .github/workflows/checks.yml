@@ -445,6 +445,7 @@ jobs:
           npm run test:contractions
           npm run test:events
           npm run test:numbers
+          npm run test:social-stats
           npm run test:options
           npm run test:pronounce
           npm run test:rules

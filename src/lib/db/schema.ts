@@ -2379,6 +2379,35 @@ export const socialPosts = pgTable(
 );
 
 /**
+ * Gönderi metriklerinin geçmişi (stüdyo Genel bakış, 2026-10-12): her işçi eşitlemeden sonra metriği değişen
+ * gönderinin o anki metriklerini yazar (`scripts/social/lib/stats.mjs`; ilk 7 gün en çok saatte bir, sonra günde
+ * bir). Günlük kazanılan izlenme ve "ilk 24 saat" buradan. Kullanıcı verisi değil.
+ */
+export const socialPostSnapshots = pgTable(
+  "social_post_snapshots",
+  {
+    id: serial("id").primaryKey(),
+    postId: integer("post_id").notNull(),
+    platform: text("platform").notNull(),
+    metrics: jsonb("metrics").$type<Record<string, number>>().notNull(),
+    at: timestamp("at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("social_post_snapshots_post_idx").on(t.postId, t.at)],
+);
+
+/** Platform hesabının günlük takipçi sayısı (Berlin günü başına bir satır, gün içindeki son değer; aynı betik). */
+export const socialAccountDays = pgTable(
+  "social_account_days",
+  {
+    platform: text("platform").notNull(),
+    day: date("day", { mode: "string" }).notNull(),
+    followers: integer("followers").notNull(),
+    at: timestamp("at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.platform, t.day] })],
+);
+
+/**
  * Sosyal video bölümleri, STÜDYO (lernomi.app/studio, 2026-10-09). Claude bölümleri depoda yazar
  * (`data/social/episodes/*.mjs`); sunucudaki işçi (`scripts/social/worker.mjs`) her değişiklikte çözülmüş veriyi
  * buraya aktarır. Stüdyoda düzenlenen bölümün doğruluk kaynağı bu satırdır: aktarım düzenlenmiş veriyi ezmez,

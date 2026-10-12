@@ -25,6 +25,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import pg from "pg";
+import { recordStats } from "./lib/stats.mjs";
 
 const SOCIAL_DIR = process.env.SOCIAL_DIR || "/opt/lernomi/social";
 const YT_DIR = path.join(SOCIAL_DIR, "youtube");
@@ -226,6 +227,7 @@ try {
       const get = client(await accessToken(t));
       await sync(get);
       await analytics(get).catch((e) => log("analitik okunamadı:", e.message));
+      await recordStats(q, "youtube", status.followers, log);
       await watchScheduled(); // yalnız eşitleme başarılıysa: yoksa yayındaki video "çıkmadı" sanılır
       delete status.failingSince;
     } catch (e) {

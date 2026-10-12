@@ -25,6 +25,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import pg from "pg";
+import { recordStats } from "./lib/stats.mjs";
 
 const SOCIAL_DIR = process.env.SOCIAL_DIR || "/opt/lernomi/social";
 const TT_DIR = path.join(SOCIAL_DIR, "tiktok");
@@ -259,6 +260,7 @@ try {
         await telegram(`<b>[UYARI] TikTok belirtecinin süresi doluyor</b>\nYenileme belirteci ${esc(t.refreshExpiresAt)} tarihinde bitiyor: yeniden yetki gerekir. docs/social/README.md "TikTok"`);
       }
       live = await syncApi(t);
+      await recordStats(q, "tiktok", status.followers, log);
       delete status.failingSince;
     } catch (e) {
       log("API hatası (oEmbed ile devam):", e.message);
