@@ -410,7 +410,7 @@ function files(r: RenderView) {
 function Publish({ ep, posts, setPosts, onSaved, setMsg, igConnected }: { ep: EpisodeDetail; posts: SocialPost[]; setPosts: (f: (xs: SocialPost[]) => SocialPost[]) => void; onSaved: () => Promise<void>; setMsg: (m: Msg) => void; igConnected: boolean }) {
   const ready = ep.approved && ep.render?.status === "done" && !!ep.render.hasFiles;
   return (
-    <Panel title="Yayın" hint={`Saat Berlin saati. Platformun zamanlayıcısına koyunca “Zamanlandı”, yayından sonra bağlantıyla “Yayında”.${igConnected ? " Instagram'da “Otomatik”: saatinde Lernomi yayınlar, bağlantı ve metrikler kendiliğinden gelir." : ""}`}>
+    <Panel title="Yayın" hint={`Saat Berlin saati. Platformun zamanlayıcısına koyunca “Zamanlandı”, yayından sonra bağlantıyla “Yayında”. TikTok'ta “Zamanlandı” + bağlantı: saatinde yayına çıktığı kendiliğinden denetlenir.${igConnected ? " Instagram'da “Otomatik”: saatinde Lernomi yayınlar, bağlantı ve metrikler kendiliğinden gelir." : ""}`}>
       <div className="space-y-4">
         <SlotBox ep={ep} onSaved={onSaved} setMsg={setMsg} />
         {PLATFORMS.map((p) => (
@@ -475,7 +475,7 @@ function PlatformBox({ episodeId, platform, label, auto, ready, post: saved, onS
   async function save() {
     setBusy(true);
     setMsg(null);
-    const r = await call("/api/studio/posts", { action: "set", episodeId, platform, status, url, note });
+    const r = await call("/api/studio/posts", { action: "set", episodeId, platform, status, url: status === "auto" ? undefined : url, note });
     setBusy(false);
     if (!r.ok) return setMsg({ tone: "bad", text: errorText(r.data) });
     onSaved((r.data.post as SocialPost | null) ?? null);
@@ -491,13 +491,19 @@ function PlatformBox({ episodeId, platform, label, auto, ready, post: saved, onS
         {locked ? <Notice tone="info">Şu an Instagram&apos;a gönderiliyor; sonuç birkaç dakika içinde burada.</Notice> : <Segmented label={`${label} durumu`} items={auto || status === "auto" ? EDITABLE_AUTO : EDITABLE} value={status} onChange={setStatus} />}
         {status === "auto" && !locked ? (
           <Notice tone={ready ? "info" : "warn"}>
-            {ready ? (saved?.job?.preparedAt ? "Video Instagram'a yüklendi, saatini bekliyor." : "Saatinde Lernomi yayınlar (20 dk önce yüklenir).") : "Saatinde yayınlanması için güncel sürüm onaylı ve videosu hazır olmalı."}
+            {ready ? (saved?.job?.preparedAt ? "Video Instagram'a yüklendi, saatini bekliyor." : "Saatinde Lernomi yayınlar (20 dk önce yüklenir).") + " Bağlantı yayından sonra kendiliğinden yazılır." : "Saatinde yayınlanması için güncel sürüm onaylı ve videosu hazır olmalı."}
           </Notice>
         ) : null}
+        {platform === "tiktok" && status === "scheduled" ? (
+          <Notice tone={url.trim() ? "info" : "warn"}>{url.trim() ? "Saatinden itibaren bağlantı denetlenir: video yayına çıkınca “Yayında” olur, 20 dk içinde çıkmazsa Telegram'a uyarı gider." : "Bağlantıyı yaz: TikTok'ta zamanlanan videonun bağlantısı olmadan yayına çıktığı denetlenemez."}</Notice>
+        ) : null}
+        {saved?.job?.error && saved.status === "scheduled" && status === "scheduled" ? <Notice tone="warn" title="Denetim">{saved.job.error}</Notice> : null}
         {saved?.job?.error && (saved.status === "auto" || saved.status === "failed") ? <Notice tone={saved.status === "failed" ? "bad" : "warn"} title={saved.status === "failed" ? "Otomatik yayın olmadı" : "Son deneme"}>{saved.job.error}{saved.status === "failed" ? " · Düzeltip “Otomatik”i yeniden seçersen tekrar dener." : ""}</Notice> : null}
-        <Field label="Gönderi bağlantısı">
-          <input aria-label={`${label} gönderi bağlantısı`} className={FIELD} style={FIELD_STYLE} value={url} onChange={(ev) => setUrl(ev.target.value)} placeholder={URL_HINT[platform]} inputMode="url" />
-        </Field>
+        {status === "auto" || locked ? null : (
+          <Field label="Gönderi bağlantısı">
+            <input aria-label={`${label} gönderi bağlantısı`} className={FIELD} style={FIELD_STYLE} value={url} onChange={(ev) => setUrl(ev.target.value)} placeholder={URL_HINT[platform]} inputMode="url" />
+          </Field>
+        )}
         <Field label="Not">
           <input aria-label={`${label} notu`} className={FIELD} style={FIELD_STYLE} value={note} onChange={(ev) => setNote(ev.target.value)} placeholder="ör. platform müziği eklendi" />
         </Field>

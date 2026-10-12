@@ -284,8 +284,18 @@ stüdyo takviminde "Instagram API" etiketi.
   Instagram login › Business login settings'teki embed adresiyle yeniden yetki ver ya da "Generate token"; yeni belirteç
   `token.json`a (`{"token","refreshedAt","expiresAt"}`, 600, sahibi `lernomi`).
 
-**Sıra:** (1) Instagram ✅ (yukarıda). (2) TikTok Display API sandbox'ı dene; yetmezse Business API başvurusu. TikTok'ta
-yayın elle kalır.
+### TikTok: yayın denetimi (2026-10-12)
+
+TikTok'ta yayın elle ya da TikTok'un zamanlayıcısıyla. Bölüm **Zamanlandı** + videonun bağlantısı yazılınca
+`scripts/social/tiktok.mjs` (sunucuda `lernomi-social-tt.timer`, 5 dakikada bir → `/opt/lernomi/social-tt.sh`, repo
+dışı) bağlantıyı TikTok'un herkese açık oEmbed adresiyle yoklar (`https://www.tiktok.com/oembed?url=…`; uygulama ve
+belirteç gerekmez): zamanlanmış/gizli video **400**, yayındaki video **200** (2026-10-12 denendi, sunucudan da).
+Saatten 1 sa önce – 3 gün sonra: 200 → **Yayında** (`published_at` görüldüğü an, kimlik bağlantıdan). Saatten 20 dk
+sonra hâlâ 400 → bir kez Telegram; bağlantı yoksa saatinde bir kez Telegram. Uyarı `job.error`da, editörde "Denetim"
+kutusu; elle değişiklik siler. Metrik vermez. Tek bağlantı: `node scripts/social/tiktok.mjs --check <bağlantı>`.
+
+**Sıra:** (1) Instagram ✅ (yukarıda). (2) TikTok Display API sandbox'ı dene (metrik); yetmezse Business API başvurusu.
+TikTok'ta yayın elle kalır (denetim yukarıda).
 
 **Kapasite (2026-10-08 ölçümü):** cümleyi kur için 1795 kısa sesli cümle, kelime destesi için 2754 sesli kelime,
 artikel için 2343 sesli isim (yalnız -ung → die 215 kelime): yıllarca yeter. "Hangisini duydun?" için `confusables.json`daki
