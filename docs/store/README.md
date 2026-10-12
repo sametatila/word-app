@@ -25,6 +25,12 @@ Türkçe anlatım); sınav bu eğitimin sonucu olarak ikinci katman. Sınava haz
 (tarihi olan öğrenci) ayrıca WhatsApp/Telegram grup kampanyasıyla (2 ay) hedefleniyor;
 kampanya vitrinde YOK (görselde fiyat/süreli teklif olmaz), grup sayfasında.
 
+**Karelerde ücretsiz/fiyat yok (App Review 2.3.7 reddi, 2026-10-11).** Apple "free" ve indirimli hizmeti de fiyat
+sayıyor: deneme sınavı ve yürüyüş karelerinin alt satırındaki "her seviyede 1'i ücretsiz" / "Günde 3 tur ücretsiz"
+yüzünden build 22 reddedildi. Alt satırlar ekranı anlatıyor (deneme sınavı: "sonuç ölçüm hedeflerine göre",
+yürüyüş: "Türkçe ipucunu duyarsın, Almancasını söylersin"). Kare metninde ücretsiz/gratis/free, fiyat, deneme süresi
+ve hak sayısı yazılmaz; bunlar yalnız açıklamada. "Premium" etiketi fiyat değil, kalabilir.
+
 **Altyazı / tek cümle:** **"Konuş, anla, sınava hazırlan"** (tr, 28 karakter; iOS subtitle. Play kısa
 açıklaması 2026-10-06'dan beri altyazıyı tekrarlamıyor, farkı söylüyor; aşağıda). en-US: **"Speak, understand, settle in"** (28) ·
 de-DE: **"Sprechen, verstehen, bis C1"** (27). 2026-10-05 (prova 3. tur, Samet'in kararı): en ve de

@@ -40,18 +40,18 @@
     },
     "mock-result": {
       "caption": {
-        "tr": { "h": "Dört becerili deneme sınavı", "s": "Konuşma ve yazma da puanlanır; her seviyede 1'i ücretsiz, fazlası Premium'da" },
-        "en": { "h": "Speaking and writing get scored too", "s": "1 free per level, more with Premium" },
-        "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "1 pro Niveau gratis, mehr mit Premium" }
+        "tr": { "h": "Dört becerili deneme sınavı", "s": "Konuşma ve yazma da puanlanır; sonuç ölçüm hedeflerine göre" },
+        "en": { "h": "Speaking and writing get scored too", "s": "Results broken down by what each part measures" },
+        "de": { "h": "Auch Sprechen und Schreiben werden bewertet", "s": "Ergebnis nach Prüfungsziel aufgeschlüsselt" }
       },
       "callout": { "anchor": "^(ÖLÇÜM HEDEFLERİNE GÖRE|BY WHAT IT MEASURES|NACH PRÜFUNGSZIEL)$", "card": true, "zoom": 1.25 }
     },
     "walk": {
       "premium": false,
       "caption": {
-        "tr": { "h": "Ekrana bakmadan, yolda çalış", "s": "Günde 3 tur ücretsiz, ekran kapalıyken Premium" },
-        "en": { "h": "Eyes off the screen, learn on the go", "s": "3 free rounds a day, screen-off with Premium" },
-        "de": { "h": "Unterwegs lernen, ohne hinzusehen", "s": "3 Runden täglich gratis, Bildschirm aus mit Premium" }
+        "tr": { "h": "Ekrana bakmadan, yolda çalış", "s": "Türkçe ipucunu duyarsın, Almancasını söylersin" },
+        "en": { "h": "Eyes off the screen, learn on the go", "s": "Hear the cue, say it in German" },
+        "de": { "h": "Unterwegs lernen, ohne hinzusehen", "s": "Du hörst den Hinweis und sagst es auf Englisch" }
       },
       "callout": [
         { "source": "walk", "anchor": "(Yürürken çalış|Practice while walking|Üben beim Gehen)", "card": true, "zoom": 1.6 },
