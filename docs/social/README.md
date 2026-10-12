@@ -133,9 +133,9 @@ açıklama, YouTube başlık + açıklama.
 | Açıklama | `aciklama.txt`: ilk satır aranabilir cümle + 5–6 etiket (üç platformda aynı) | Instagram'da 3–5 etiket yeterli, fazlası işe yaramıyor; YouTube ilk 3 etiketi başlığın üstünde gösterir |
 | YouTube başlığı | `baslik.txt` (en çok 100 karakter, `<` `>` yok): `copy.ytTitle` ya da açıklamanın ilk cümlesi + ilk etiket (`E.ytTitle`) | YouTube'da başlık ayrı ve aramada en ağır alan; Shorts açıklamasındaki bağlantılar tıklanmıyor |
 
-**Yükleme kontrol listesi (Samet):** dosyalar stüdyoda bölümün "MP4 indir / Kapak / Açıklama / YouTube başlığı" düğmelerinde.
-- Kapak olarak `kapak.jpg`'yi seç. Açıklamayı `aciklama.txt`'den yapıştır.
-- **YouTube Studio:** başlık `baslik.txt`, açıklama `aciklama.txt`; "Hayır, çocuklara özel değil"; görünürlük
+**Yükleme kontrol listesi (Samet):** MP4 ve kapak stüdyoda bölümün indirme düğmelerinde; açıklama ve YouTube başlığı 5. adımda (Paylaşım) "Kopyala" ile.
+- Kapak olarak `kapak.jpg`'yi seç. Açıklamayı Paylaşım'dan kopyalayıp yapıştır.
+- **YouTube Studio:** başlık ve açıklama Paylaşım'daki "Kopyala" düğmelerinden; "Hayır, çocuklara özel değil"; görünürlük
   **Planla** → bölümün saati (Berlin). Takvim zamanlanmış Short'u kendisi bulur, elle işaretleme yok.
 - **Yapay zekâ etiketi:** ses Defne (yapay sentez). TikTok gerçekçi yapay zekâ içeriğine etiket istiyor; etiketi açmak
   güvenli taraf (etiketin dağıtımı kısmadığını söylüyorlar). Instagram'da "AI info" (otomatik yayında işçi koyuyor).
@@ -221,7 +221,7 @@ yapabilmeli").
   `admin_audit`e `studio.*` olarak düşer. Kod: `src/lib/studio-auth.ts`.
 - **Akış:** Claude bölümü depoda yazar → sunucu işçisi aktarır → stüdyoda düzenle (canlı önizleme, sunucuyla aynı
   motor) → Kaydet (yeni sürüm) → Onayla ve üret → video sunucuda (30 sn video ≈ 5 dk, düşük öncelikle) → MP4 / kapak / açıklama KAYIPSIZ indirilir
-  (sunucudaki dosyanın baytları; YouTube başlığı `baslik.txt` ayrı düğmede) → platform zamanlayıcısı → takvimde "zamanlandı / yayında".
+  (sunucudaki dosyanın baytları; açıklama ve YouTube başlığı Paylaşım'da "Kopyala") → platform zamanlayıcısı → takvimde "zamanlandı / yayında".
 - **İstisnasız:** ekrandaki her yazı ya bölüm verisinden ya şablonun `meta.ui` sabit yazılarından gelir (bölüm
   `copy.ui` ile ezer). Kapı: `npm run social:texts` (veriye/ui'ye dayanmayan yazı = hata). Yeni şablonda gömülü yazı
   bırakılmaz.

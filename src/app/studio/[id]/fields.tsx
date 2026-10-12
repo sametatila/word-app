@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FIELD, FIELD_AREA, FIELD_STYLE } from "../../admin/_ui/ui";
+import { BTN, FIELD, FIELD_AREA, FIELD_STYLE } from "../../admin/_ui/ui";
 import { playClip } from "./preview";
 
 /**
@@ -134,7 +134,7 @@ export function Fields(p: Props) {
       {shareLeaves.length ? (
         <Section n={num()} title="Paylaşım" hint="Videoda görünmez. Açıklama TikTok, Instagram ve YouTube'da aynı; YouTube ayrıca başlık ister. Takvimdeki adı yalnız burada.">
           <div className="grid gap-3">
-            {shareLeaves.filter((l) => l.path[1] === "caption").map((l) => <Field key="caption" {...p} leaf={l} label="Açıklama ve etiketler" counter={2200} />)}
+            {shareLeaves.filter((l) => l.path[1] === "caption").map((l) => <Field key="caption" {...p} leaf={l} label="Açıklama ve etiketler" counter={2200} copyable />)}
             <YtTitleField {...p} copy={copy} />
             {shareLeaves.filter((l) => l.path[1] === "title").map((l) => <Field key="title" {...p} leaf={l} label="Takvimdeki adı" />)}
           </div>
@@ -274,7 +274,31 @@ function VoiceButton({ value, spoken }: { value: string; spoken: string[] }) {
   );
 }
 
-function Field({ leaf, label, data, saved, spoken, onChange, onFocusText, disabled, big, wide, counter }: Props & { leaf: Leaf; label: string; big?: boolean; wide?: boolean; counter?: number }) {
+/** Platforma yapıştırılacak metin için (açıklama, YouTube başlığı): txt indirmek yerine panoya kopyala. */
+function CopyButton({ text }: { text: string }) {
+  const [done, setDone] = useState(false);
+  return (
+    <button
+      type="button"
+      className={`${BTN.small} h-7 px-2`}
+      disabled={!text}
+      onClick={async (e) => {
+        e.preventDefault();
+        try {
+          await navigator.clipboard.writeText(text);
+          setDone(true);
+          setTimeout(() => setDone(false), 1500);
+        } catch {
+          setDone(false);
+        }
+      }}
+    >
+      {done ? "Kopyalandı ✓" : "Kopyala"}
+    </button>
+  );
+}
+
+function Field({ leaf, label, data, saved, spoken, onChange, onFocusText, disabled, big, wide, counter, copyable }: Props & { leaf: Leaf; label: string; big?: boolean; wide?: boolean; counter?: number; copyable?: boolean }) {
   const changed = getAt(saved, leaf.path) !== leaf.value;
   const voice = isSpoken(leaf.value, spoken);
   const long = leaf.value.length > 70 || leaf.value.includes("\n");
@@ -286,6 +310,7 @@ function Field({ leaf, label, data, saved, spoken, onChange, onFocusText, disabl
         {voice ? <VoiceButton value={leaf.value} spoken={spoken} /> : null}
         {changed ? <Chip tone="dirty">değişti</Chip> : null}
         {counter ? <span className="faint ml-auto tabular-nums">{leaf.value.length}/{counter}</span> : null}
+        {copyable ? <CopyButton text={leaf.value} /> : null}
       </span>
       {long ? (
         <textarea aria-label={label} disabled={disabled} className={FIELD_AREA} style={FIELD_STYLE} rows={Math.min(10, Math.max(2, Math.ceil(leaf.value.length / 70) + (leaf.value.match(/\n/g)?.length ?? 0)))} value={leaf.value} onFocus={() => onFocusText(leaf.value, leaf.path)} onChange={(e) => set(e.target.value)} />
@@ -319,6 +344,7 @@ function YtTitleField({ data, saved, onChange, onFocusText, disabled, copy }: Pr
         {value !== savedValue ? <Chip tone="dirty">değişti</Chip> : null}
         {!value ? <span className="faint">boş: açıklamadan türetilir</span> : null}
         <span className="faint ml-auto tabular-nums">{(value || auto).length}/100</span>
+        <CopyButton text={value || auto} />
       </span>
       <input aria-label="YouTube başlığı" disabled={disabled} className={FIELD} style={FIELD_STYLE} value={value} placeholder={auto || "Açıklamanın ilk cümlesi + ilk etiket"} maxLength={100} onFocus={() => onFocusText(value || auto)} onChange={(e) => set(e.target.value)} />
     </label>

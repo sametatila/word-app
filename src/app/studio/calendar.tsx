@@ -209,7 +209,7 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
         })}
       </div>
       {ig.connected ? <p className="faint text-caption">Instagram otomatik: saatinde Lernomi yayınlar. Şart: güncel sürüm onaylı ve videosu hazır. Hazır değilse 3 saat bekler, sonra “Yayınlanamadı” der ve Telegram&apos;a yazar. Platformda elle paylaşılan video saatinden tanınır, ikinci kez gönderilmez.</p> : null}
-      <p className="faint text-caption">TikTok: zamanlayıcıya koyunca “Zamanlandı” + bağlantı; yayına çıkınca kendiliğinden “Yayında”.{yt.connected ? " YouTube: Short'u YouTube Studio'da bölümün saatine zamanla (başlık ve açıklama bölümün indirme düğmelerinde); takvim kendiliğinden “Zamanlandı”, sonra “Yayında” olur." : ""} Üçünde de saatinden 20 dk sonra yayında değilse Telegram&apos;a uyarı gider.</p>
+      <p className="faint text-caption">TikTok: zamanlayıcıya koyunca “Zamanlandı” + bağlantı; yayına çıkınca kendiliğinden “Yayında”.{yt.connected ? " YouTube: Short'u YouTube Studio'da bölümün saatine zamanla (başlık ve açıklama bölümün Paylaşım adımında “Kopyala”); takvim kendiliğinden “Zamanlandı”, sonra “Yayında” olur." : ""} Üçünde de saatinden 20 dk sonra yayında değilse Telegram&apos;a uyarı gider.</p>
 
       {missing ? <Notice tone="bad" title="Stüdyo tabloları okunamadı">Göç uygulanmamış olabilir (drizzle/0085_social_studio.sql).</Notice> : null}
       {notReady.length ? <Alert tone="warn" title={`3 gün içinde yayınlanacak, videosu hazır değil: ${notReady.length}`} items={notReady} hint="Onaylanmamış, sesi bekleyen ya da metni onaydan sonra değişmiş." /> : null}
