@@ -218,6 +218,52 @@ için tema kilitlenir. Bir saat dilimi sürekli geride kalırsa günde 2'ye inil
 **Faz 3, düzenli üretim:** iki haftada bir 42 bölüm. Plan bitmeden ~7 gün önce panel uyarır; Samet Claude'dan yeni
 partiyi ister. Ayda bir bu belgedeki eleştiri ve plan veriyle güncellenir.
 
+## Yatay: YouTube uzun video (2026-10-13)
+
+Samet (2026-10-13): haftada 2 uzun video (10–15 dk, 1920×1080), yalnız YouTube (TikTok'a tek tük deneme). Yüz yok;
+sesler Mac'te Defne, Aras, Can ve Mira. Uygulama ekran kaydı değil, dikey videolardaki gibi tasarlanmış sahne. Akış:
+Claude yazar → editör stüdyoda düzeltir (önizleme, video üretmeden) → Samet seslendirir → onay → sunucuda video.
+
+| Yer | Ne |
+|---|---|
+| `scripts/social/yatay/motor.js` | Yatay motor (`window.Y`): 12 sütunlu ızgara, sabit bölgeler (bölüm şeridi, künye, içerik alanı, iki satırlık altyazı), sahne sistemi, ortak sahneler (bölüm kartı, uygulama kartı, 20 sn bitiş ekranı), yerleşim denetimi |
+| `scripts/social/yatay/sablonlar/<seri>.js` | Seri şablonları: `yuru` (Yürürken Almanca, Lacivert) · `sinav` (A1 Sınavı, Kâğıt) · `duy` (Hangisini Duydun?, Gece) · `gunluk` (Almanya'da Günlük Hayat, Turuncu) · `artikel` (Artikel Kuralları, Kâğıt) · `hikaye` (Yavaş Almanca Hikâyeler, Lacivert) |
+| `data/social/yatay/<seri>-<NNN>.mjs` | Bölümler; stüdyoda kimlik `yatay-<seri>-<NNN>` (format "yatay") |
+| `scripts/social/yatay/{icerik,sayfa,uret,aciklama,arac}.mjs` | Yükleme ve kurallar · sayfa · üretim (MP4, kapak 1280×720, açıklama) · YouTube açıklaması · yerel araç |
+| `~/Workspace/tts-test/yatay_mac.sh <talep>` | Mac: talepteki satırları dört karakterle üretir, canlı tabloya ekler |
+
+```bash
+npm run social:yatay                                   # yatay bölümler: yükleniyor mu, tekrar/takvim, eksik ses
+npm run social:yatay -- <id> --sunucudan --cizelge     # süre, bölümler, YouTube açıklaması (sesler sunucudan okunur)
+npm run social:yatay -- <id> --denetle --kare 3,40     # yerleşim denetimi + kareler (.shots/social/yatay/<id>/)
+npm run social:yatay:render -- <id> --sure 30          # yerel deneme üretimi (ilk 30 sn)
+```
+
+**Satır:** seslendirilen her metin bölüm verisinde `{ v: ses, l: dil, t: metin, x?: tür }` (`x: "listen"` sınav dinleme
+kaydı). Ses anahtarı `ses|dil|metin[#tür]`; motor kaydın süresini kullanır, kaydı yoksa süreyi metinden tahmin eder ve
+altyazı etiketi kesikli çizilir (önizleme). Kayıt gelince çizelge kendiliğinden kayar. Stüdyoda `v`, `l`, `x` kilitli,
+yalnız metin değişir; değişen metin yeni kayıt ister. Şablonun sabit yazıları (`ui`) bölüm verisine kopyalanır: ekrandaki
+her yazı düzenlenebilir.
+
+**Ses talebi (bölüm başına tek talep):** editör "Seslendirmeye gönder" der → Telegram + Talepler (ses ve dile göre
+gruplu) → Samet Mac'te `yatay_mac.sh <talep>` → kayıtlar tabloya eklenir, talep kendiliğinden kapanır.
+
+**Takvim:** saat serbest (önerilen 19:00 Berlin), günde tek uzun video (hata), art arda aynı seri uyarı; dikey
+kurallarına girmez (saat, tema, 30 gün ortak kelime). Takvimde üç saatin altında "uzun" şeridi. Platform işçileri 3
+dakikadan uzun videoyu yalnız yatay bölümle, kısa videoyu yalnız dikeyle eşler (19:00'daki uzun video 18:30 Short'unun
+penceresine düşüyordu); Instagram yatayı hiç eşlemez.
+
+**Üretim:** sunucuda ayrı birim: `lernomi-social-render.timer` → `/opt/lernomi/social-render.sh` →
+`worker.mjs --uzun` (zaman aşımı 4 sa, `render.lock`). 1920×1080, 30 fps, CRF 18, −14 LUFS; ses Node tarafında karışır
+(kayıtlar zamanlarına, efektler motorla aynı formülle). Mac'te 30 sn ≈ 40 sn; 11 dk'lık video sunucuda ~1 saat.
+Kapak 1280×720 (YouTube küçük resmi), açıklama: bölümün metni + bölüm listesi (motorun zamanlarından; ilk 0:00, her
+bölüm ≥ 10 sn) + kampanya bağlantısı (`utm_source=youtube&utm_campaign=<bölüm>`) + etiketler. YouTube başlığında
+`#shorts` yok. Son 20 sn bitiş ekranı: soldaki daireye "abone ol", sağdaki 16:9 kutuya "video" öğesi.
+
+**Plan (Samet, 2026-10-13: 16 Ekim başlangıç, 8 video / 4 hafta):** salı ve cuma 19:00 (Berlin). Sınav ve Yürürken
+ikişer, Günlük hayat, Hangisini duydun, Artikel ve Hikâye birer. Her hafta bir "dinle, tekrar et" türü, bir
+etkileşimli tür. Ölçüt (4 hafta sonra): ortalama izleme süresi, abone kazanımı, açıklamadaki bağlantıdan kurulum.
+
 ## Stüdyo (lernomi.app/studio)
 
 Samet ve sosyal medya editörü (2026-10-09, Samet: "videodaki tüm metinleri istisnasız düzenleyebilmeli ve videoya
