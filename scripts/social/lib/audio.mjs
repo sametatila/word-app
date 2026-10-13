@@ -17,7 +17,12 @@ export const run = (cmd, a) => {
 export function loudness(file) {
   const e = run("ffmpeg", ["-hide_banner", "-i", file, "-af", "ebur128=peak=true", "-f", "null", "-"]);
   const tail = e.slice(e.lastIndexOf("Summary:"));
-  return { I: Number(tail.match(/I:\s+(-?[\d.]+) LUFS/)[1]), TP: Number(tail.match(/Peak:\s+(-?[\d.]+) dBFS/)[1]) };
+  // tamamen sessiz izde ebur128 "-inf" yazar: −70 sayılır (yoksa ayrıştırma düşüyordu, 2026-10-14)
+  const num = (re) => {
+    const m = tail.match(re);
+    return !m || /inf/.test(m[1]) ? -70 : Number(m[1]);
+  };
+  return { I: num(/I:\s+(-?inf|-?[\d.]+) LUFS/), TP: num(/Peak:\s+(-?inf|-?[\d.]+) dBFS/) };
 }
 
 /**
