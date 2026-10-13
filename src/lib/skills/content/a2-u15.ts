@@ -139,7 +139,7 @@ export const a2U15: SkillExercise[] = [
         text: "Warum hat sich das Fahrrad nicht verkauft?",
         options: [],
         answer: 0,
-        accept: ["es ist rostig", "weil es rostig ist", "rostig"],
+        accept: ["es ist rostig", "weil es rostig ist", "rostig", "es war rostig", "weil es rostig war", "das Fahrrad ist rostig", "das Fahrrad war rostig", "weil das Fahrrad rostig ist", "weil das Fahrrad rostig war"],
         explain: "„Gebraucht ist gut, rostig ist zu viel.“ — ikinci el sorun değil, pas sorun.",
       },
       {
