@@ -34,6 +34,8 @@ export function ytTitleError(t) {
 
 let words = null;
 const W = () => (words ||= JSON.parse(fs.readFileSync(path.join(ROOT, "data/app/words.json"), "utf8")));
+let conf = null;
+const confusables = () => (conf ||= JSON.parse(fs.readFileSync(path.join(ROOT, "data/content/confusables.json"), "utf8")).pairs);
 
 /** İçerik yardımcıları; `used`: kullanılan kelime kayıtları ("w:<id>"). */
 export function helpers() {
@@ -57,7 +59,18 @@ export function helpers() {
     const w = word(full);
     return { de: L(de, "de", label(w)), tr: L("defne", "tr", w.tr), ex: L(de, "de", w.beispiel), exTr: w.beispielTr, lv: w.niveau };
   };
-  return { H: { L, word, label, walk }, used };
+  /**
+   * "Hangisini duydun?" çifti: confusables.json'da olmalı, iki kelime aynı türde ve aynı artikelle (sesteki artikel
+   * cevabı ele vermesin). play: çalınan (0 = a, 1 = b). Ses Defne'nin kelime kaydı.
+   */
+  const pair = (la, lb, play) => {
+    const a = word(la);
+    const b = word(lb);
+    if (a.typ !== b.typ || (a.artikel || "") !== (b.artikel || "")) throw new Error(`çift aynı tür/artikel değil: ${la} / ${lb}`);
+    if (!confusables().some((p) => (p.a === a.de && p.b === b.de) || (p.a === b.de && p.b === a.de))) throw new Error(`confusables'ta yok: ${la} / ${lb}`);
+    return { a: { w: L("defne", "de", label(a)), tr: a.tr }, b: { w: L("defne", "de", label(b)), tr: b.tr }, play };
+  };
+  return { H: { L, word, label, walk, pair }, used };
 }
 
 /** Bütün yatay bölümler (ya da `only`). */
