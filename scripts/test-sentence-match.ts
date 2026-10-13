@@ -216,7 +216,10 @@ check("eş: Nachts brauche ich … → Ich brauche nachts …", v2Variants("Nach
 check("eş: ters yön, noktalama korunur", v2Variants("Ich habe leider keine Zeit.", "de")[0] === "Leider habe ich keine Zeit.");
 check("eş: Sie büyük kalır", v2Variants("Sonst müssen Sie warten", "de")[0] === "Sie müssen sonst warten");
 check("eş yok: soru", v2Variants("Morgen kommst du?", "de").length === 0);
-check("eş yok: listede olmayan ilk öğe", v2Variants("Am Montag habe ich Zeit", "de").length === 0);
+check("eş: iki kelimelik öbek (Morgen früh)", v2Variants("Morgen früh fahren wir weg", "de")[0] === "Wir fahren morgen früh weg");
+check("eş: Am Montag ↔ öznesi başta", v2Variants("Am Montag habe ich Zeit", "de")[0] === "Ich habe am Montag Zeit");
+check("eş: ters yön, iki kelimelik öbek", v2Variants("Wir fahren im Sommer ans Meer", "de")[0] === "Im Sommer fahren wir ans Meer");
+check("eş yok: öbekten sonra özne yok", v2Variants("Am Montag kommt der Techniker", "de").length === 0);
 check("eş yok: İngilizce", v2Variants("Tomorrow I go home", "en").length === 0);
 check("hakem: öznesi başta doğru cevap exact", matchSentence("Ich brauche nachts etwas Ruhe.", "Nachts brauche ich etwas Ruhe", [], "de").verdict === "exact");
 check("hakem: V2 bozuk yine geçmez", matchSentence("Nachts ich brauche etwas Ruhe.", "Nachts brauche ich etwas Ruhe", [], "de").verdict !== "exact");
