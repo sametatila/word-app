@@ -1409,7 +1409,7 @@ export const deA2B06: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ist der Router dabei",
-          accept: ["Ist der Router inklusive", "Ist der Router inbegriffen"],
+          accept: ["Ist der Router inklusive", "Ist der Router inbegriffen", "Ist das Modem dabei", "Ist das Modem inklusive", "Ist das Modem inbegriffen"],
           hint: [
             tr("Fiil başta, zarf sonda:"),
             de("Ist der Router dabei?"),
