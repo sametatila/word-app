@@ -592,6 +592,7 @@ export const deA2B06: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich nehme entweder den Rock oder den Anzug",
+          accept: ["Ich nehme entweder den Anzug oder den Rock"],
           hint: [
             tr("İki seçenek de nesne olduğu için ikisi de belirtme hâline girer:"),
             de("Ich nehme entweder den Rock oder den Anzug."),
