@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run conversations:apply && npm run conversations:apply-de && next build",
+    "build": "npm run conversations:apply && npm run conversations:apply-de && NODE_OPTIONS=--max-old-space-size=4096 next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
     "typecheck:scripts": "tsc --noEmit -p scripts/tsconfig.e2e.json",

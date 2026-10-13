@@ -614,6 +614,8 @@ jobs:
         env:
           # Derleme sırasında veritabanına gidilmiyor; sırlar gerekmez.
           NEXT_TELEMETRY_DISABLED: "1"
+          # Tip denetimi ~2,5 GB (2026-10-13 ölçümü); Node'un varsayılan yığını sunucuda 2 GB'ta kesiyordu
+          NODE_OPTIONS: --max-old-space-size=4096
 
   mobile:
     runs-on: ubuntu-latest
