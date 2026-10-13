@@ -8,6 +8,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, BTN, Notice, TONE, type Tone } from "../admin/_ui/ui";
 import { TwoStep } from "../admin/_ui/two-step";
+import { ApiStatus } from "./api-status";
 import { APPROACH_SHORT, CONTENT_STATE, PLACED, PLATFORMS, POST_STATE, THEME_TR, contentState, postState, type PostShown } from "./shared";
 
 /**
@@ -175,11 +176,14 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
 
   return (
     <AdminPage>
-      {/* başlık: hafta ve gezinme */}
+      {/* başlık: hafta, gezinme, API bağlantıları */}
       <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <p className="muted text-caption">Sosyal medya takvimi · günde 3 video · Berlin saati</p>
+        <div className="min-w-0">
           <h1 className="text-h2">{rangeLabel(days[0], days[6])}</h1>
+          <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span className="muted text-caption">Günde 3 video · Berlin saati</span>
+            <ApiStatus items={[{ platform: "tiktok", ...tt }, { platform: "instagram", ...ig }, { platform: "youtube", ...yt }]} />
+          </div>
         </div>
         <div className="flex items-center gap-1">
           <button type="button" className={BTN.small} aria-label="Önceki hafta" onClick={() => setWeek(addDays(week, -7))}>‹</button>
@@ -188,28 +192,31 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
         </div>
       </div>
 
-      {/* haftanın özeti */}
-      <div className="flex flex-wrap gap-2 text-caption">
-        <Pill label="Bu hafta" value={`${weekEps.length} video`} />
-        <Pill label="Video hazır" value={`${readyCount}/${weekEps.length}`} tone={weekEps.length && readyCount < weekEps.length ? "warn" : weekEps.length ? "ok" : undefined} />
-        {PLATFORMS.map((p) => (
-          <Pill key={p.key} label={p.label} value={`${count(weekEps, p.key, ...PLACED)}/${weekEps.length} ${p.key === "instagram" && ig.connected ? "sırada" : "zamanlandı"}`} tone={count(weekEps, p.key, "planned") ? "warn" : weekEps.length ? "ok" : undefined} />
-        ))}
-        <ApiPill name="Instagram API" s={ig} at="@" />
-        <ApiPill name="TikTok API" s={tt} at="" />
-        <ApiPill name="YouTube API" s={yt} at="" />
-        {PLATFORMS.map((p) => {
-          const n = count(weekEps, p.key, "planned");
-          if (!n || (p.key === "youtube" && yt.connected)) return null; // YouTube'da zamanlanan Short kendiliğinden bulunur: elle işaret gerekmez
-          return bulkTarget(p.key) === "auto" ? (
-            <TwoStep key={p.key} small danger={false} disabled={busy || missing} label={`${p.label}: ${n} videoyu otomatik yayına al`} confirm={`Evet, ${n} video saatinde yayınlansın`} onConfirm={() => void bulk(p.key)} />
-          ) : (
-            <TwoStep key={p.key} small danger={false} disabled={busy || missing} label={`${p.label}: ${n} videoyu zamanlandı işaretle`} confirm={`Evet, ${n} video ${p.label}'ta zamanlandı`} onConfirm={() => void bulk(p.key)} />
-          );
-        })}
-      </div>
-      {ig.connected ? <p className="faint text-caption">Instagram otomatik: saatinde Lernomi yayınlar. Şart: güncel sürüm onaylı ve videosu hazır. Hazır değilse 3 saat bekler, sonra “Yayınlanamadı” der ve Telegram&apos;a yazar. Platformda elle paylaşılan video saatinden tanınır, ikinci kez gönderilmez.</p> : null}
-      <p className="faint text-caption">TikTok: zamanlayıcıya koyunca “Zamanlandı” + bağlantı; yayına çıkınca kendiliğinden “Yayında”.{yt.connected ? " YouTube: Short'u YouTube Studio'da bölümün saatine zamanla (başlık ve açıklama bölümün Paylaşım adımında “Kopyala”); takvim kendiliğinden “Zamanlandı”, sonra “Yayında” olur." : ""} Üçünde de saatinden 20 dk sonra yayında değilse Telegram&apos;a uyarı gider.</p>
+      {/* haftanın özeti: video hazır + platform başına ilerleme; kalanlar için toplu işlem hücrenin içinde */}
+      <section aria-label="Bu hafta" className="overflow-hidden rounded-panel border" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+        {/* 1 px aralık + kenarlık rengi zemin: hücre çizgileri her kırılımda doğru */}
+        <div className="grid grid-cols-2 gap-px @3xl:grid-cols-4" style={{ background: "var(--border)" }}>
+          <WeekCell label="Video hazır" done={readyCount} total={weekEps.length} unit="hazır" />
+          {PLATFORMS.map((p) => {
+            const n = count(weekEps, p.key, "planned");
+            const auto = bulkTarget(p.key) === "auto";
+            // YouTube'da zamanlanan Short kendiliğinden bulunur: elle işaret gerekmez
+            const action = !n || (p.key === "youtube" && yt.connected) ? null : (
+              <TwoStep small danger={false} disabled={busy || missing} label={auto ? `Otomatiğe al (${n})` : `Zamanlandı yap (${n})`} confirm={auto ? `Evet, ${n} video saatinde yayınlansın` : `Evet, ${n} video zamanlandı`} onConfirm={() => void bulk(p.key)} />
+            );
+            return <WeekCell key={p.key} label={p.label} done={count(weekEps, p.key, ...PLACED)} total={weekEps.length} unit={p.key === "instagram" && ig.connected ? "sırada" : "zamanlandı"} action={action} />;
+          })}
+        </div>
+        <details className="border-t px-4 py-2 text-caption" style={{ borderColor: "var(--border)" }}>
+          <summary className="muted cursor-pointer">Platformlar nasıl işliyor?</summary>
+          <ul className="muted mt-2 list-disc space-y-1 pl-4">
+            {ig.connected ? <li><span className="text-strong">Instagram</span> “Otomatik”: saatinde Lernomi yayınlar. Şart: güncel sürüm onaylı ve videosu hazır; değilse 3 saat bekler, sonra “Yayınlanamadı” der ve Telegram&apos;a yazar. Elle paylaşılan video saatinden tanınır, ikinci kez gönderilmez.</li> : null}
+            <li><span className="text-strong">TikTok</span>: zamanlayıcıya koyunca “Zamanlandı” + bağlantı; yayına çıkınca kendiliğinden “Yayında”.</li>
+            {yt.connected ? <li><span className="text-strong">YouTube</span>: Short&apos;u YouTube Studio&apos;da bölümün saatine zamanla (başlık ve açıklama bölümün Paylaşım sekmesinde); takvim kendiliğinden “Zamanlandı”, sonra “Yayında” olur.</li> : null}
+            <li>Üçünde de saatinden 20 dk sonra yayında değilse Telegram&apos;a uyarı gider.</li>
+          </ul>
+        </details>
+      </section>
 
       {missing ? <Notice tone="bad" title="Stüdyo tabloları okunamadı">Göç uygulanmamış olabilir (drizzle/0085_social_studio.sql).</Notice> : null}
       {notReady.length ? <Alert tone="warn" title={`3 gün içinde yayınlanacak, videosu hazır değil: ${notReady.length}`} items={notReady} hint="Onaylanmamış, sesi bekleyen ya da metni onaydan sonra değişmiş." /> : null}
@@ -270,40 +277,39 @@ export function StudioCalendar({ episodes: initial, posts: initialPosts, missing
   );
 }
 
-function Pill({ label, value, tone }: { label: string; value: string; tone?: Tone }) {
+/** Haftanın bir göstergesi: "5/21 zamanlandı" + ince ilerleme çubuğu; eksik varsa turuncu, tamamsa yeşil. */
+function WeekCell({ label, done, total, unit, action }: { label: string; done: number; total: number; unit: string; action?: React.ReactNode }) {
+  const tone: Tone | undefined = !total ? undefined : done < total ? "warn" : "ok";
+  const color = tone ? TONE[tone] : "var(--text-muted)";
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1" style={{ borderColor: tone ? TONE[tone] : "var(--border)", background: "var(--surface)" }}>
-      <span className="muted">{label}</span>
-      <span className="text-strong" style={tone ? { color: TONE[tone] } : undefined}>{value}</span>
-    </span>
-  );
-}
-
-/** Platform API bağlantısı (işçinin durum dosyası): bağlı mı, belirteç kaç gün, son eşitleme. */
-function ApiPill({ name, s: ig, at }: { name: string; s: PlatformApiStatus; at: string }) {
-  if (!ig.connected) return <Pill label={name} value="bağlı değil" />;
-  const sync = ig.lastSyncAt ? new Date(ig.lastSyncAt).toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit", timeZone: TZ }) : "—";
-  const bad = !ig.ok || ig.stale;
-  const warn = ig.tokenDays != null && ig.tokenDays < 10;
-  const value = bad ? (ig.stale ? "işçi durmuş" : "bağlantı hatası") : `${at}${ig.username ?? "?"} · eşitleme ${sync}`;
-  const title = [ig.error, ig.tokenDays != null ? `Belirteç ${ig.tokenDays} gün geçerli (kendiliğinden yenilenir)` : null].filter(Boolean).join(" · ");
-  return (
-    <span title={title} aria-label={`${name}: ${value}${title ? ` · ${title}` : ""}`}>
-      <Pill label={name} value={value} tone={bad ? "bad" : warn ? "warn" : "ok"} />
-    </span>
+    <div className="flex min-w-0 flex-col gap-1.5 px-4 py-3" style={{ background: "var(--surface)" }}>
+      <span className="muted text-caption">{label}</span>
+      <span className="flex items-baseline gap-1.5">
+        <span className="text-h3 tabular-nums" style={{ color }}>{done}</span>
+        <span className="muted text-caption tabular-nums">/ {total} {unit}</span>
+      </span>
+      <span className="h-1.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+        <span className="block h-full rounded-full" style={{ width: total ? `${Math.round((done / total) * 100)}%` : 0, background: color }} />
+      </span>
+      {action ? <span className="pt-0.5">{action}</span> : null}
+    </div>
   );
 }
 
 function Alert({ tone, title, items, hint }: { tone: Tone; title: string; items: Ep[]; hint: string }) {
+  const max = 6;
   return (
     <Notice tone={tone} title={title}>
-      {hint}{" "}
-      {items.slice(0, 6).map((e, i) => (
-        <span key={e.id}>
-          {i ? " · " : ""}
-          <Link className="underline underline-offset-2" href={`/studio/${e.id}`}>{e.slot ? slotLabel(e.slot) : ""} {e.title}</Link>
-        </span>
-      ))}
+      <p className="muted text-caption">{hint}</p>
+      <ul className="mt-2 grid gap-x-4 gap-y-1 text-caption @2xl:grid-cols-2 @5xl:grid-cols-3">
+        {items.slice(0, max).map((e) => (
+          <li key={e.id} className="flex min-w-0 items-baseline gap-2">
+            <span className="muted shrink-0 tabular-nums">{e.slot ? slotLabel(e.slot) : ""}</span>
+            <Link className="truncate underline underline-offset-2" href={`/studio/${e.id}`}>{e.title}</Link>
+          </li>
+        ))}
+        {items.length > max ? <li className="muted">+{items.length - max} daha</li> : null}
+      </ul>
     </Notice>
   );
 }

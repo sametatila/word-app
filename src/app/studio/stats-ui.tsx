@@ -8,6 +8,7 @@ import { AdminPage, BTN, Badge, Notice, PageHeader, Panel, Segmented, Stat, Stat
 import { BarList, Sparkline, StackedDaily } from "../admin/_ui/charts";
 import { DataTable } from "../admin/_ui/table";
 import { APPROACH_TR, PLATFORMS, POST_STATE, THEME_TR, dayLabel } from "./shared";
+import { ApiStatus } from "./api-status";
 
 /**
  * STÜDYO İSTATİSTİKLERİ: Genel bakış (stüdyonun ilk sayfası) ve bölüm performansı. Hesap ve harmanlama kuralları
@@ -79,20 +80,7 @@ function Definitions() {
 }
 
 function ApiLine({ ov }: { ov: Overview }) {
-  return (
-    <span className="flex flex-wrap gap-x-3 gap-y-1">
-      {ov.platforms.map((p) => {
-        const a = p.account;
-        const tone = !a?.connected ? undefined : !a.ok || a.stale ? "warn" : "ok";
-        return (
-          <span key={p.platform} className="inline-flex items-center gap-1.5">
-            <PlatformName p={p.platform} />
-            <Badge tone={tone}>{!a?.connected ? "bağlı değil" : !a.ok ? "hata" : a.stale ? "işçi durdu" : `eşitleme ${ago(a.lastSyncAt)}`}</Badge>
-          </span>
-        );
-      })}
-    </span>
-  );
+  return <ApiStatus items={ov.platforms.map((p) => ({ platform: p.platform, connected: !!p.account?.connected, ok: !!p.account?.ok, stale: !!p.account?.stale, lastSyncAt: p.account?.lastSyncAt ?? null, error: p.account?.error }))} />;
 }
 
 const GROUP_LABEL = (kind: "approach" | "slot" | "theme", k: string) => (kind === "approach" ? APPROACH_TR[k] ?? k : kind === "theme" ? THEME_TR[k] ?? k : `${k} (Berlin)`);
