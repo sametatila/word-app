@@ -1012,6 +1012,7 @@ export const deA2B02: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Wir sind seit fünf Jahren befreundet",
+          accept: ["Wir sind seit fünf Jahren Freunde", "Wir sind schon seit fünf Jahren befreundet", "Wir sind schon seit fünf Jahren Freunde"],
           hint: [
             tr("Süre bildiren edat kendinden sonraki ismi yönelme hâline sokar:"),
             de("Wir sind seit fünf Jahren befreundet."),

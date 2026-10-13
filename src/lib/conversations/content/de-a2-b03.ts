@@ -582,6 +582,7 @@ export const deA2B03: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Das ist schädlich für die Gesundheit",
+          accept: ["Das ist schlecht für die Gesundheit", "Das schadet der Gesundheit", "Das ist ungesund"],
           hint: [
             tr("Neye zararlı olduğu bir edatla söylenir ve o edat belirtme hâlini getirir:"),
             de("Das ist schädlich für die Gesundheit."),

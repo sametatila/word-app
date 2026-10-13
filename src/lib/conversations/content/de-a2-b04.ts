@@ -769,6 +769,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich stapele die Kartons in den Keller",
+          accept: ["Ich stapele die Kisten in den Keller", "Ich staple die Kartons in den Keller", "Ich staple die Kisten in den Keller"],
           hint: [
             tr("Hareket olduğu için edat belirtme hâlini getirir:"),
             de("Ich stapele die Kartons in den Keller."),
@@ -788,6 +789,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Komm bitte mal her",
+          accept: ["Komm bitte her", "Komm mal bitte her", "Komm bitte hierher", "Komm bitte mal hierher"],
           hint: [
             tr("Konuşana doğru hareket için ikinci küçük kelime kullanılır ve sonda durur:"),
             de("Komm bitte mal her."),
@@ -969,6 +971,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Das Zimmer ist mir zu dunkel",
+          accept: ["Das Zimmer kommt mir zu dunkel vor", "Mir ist das Zimmer zu dunkel"],
           hint: [
             tr("Kişiye göre bir değerlendirme yapılırken kişi yönelme hâlinde durur:"),
             de("Das Zimmer ist mir zu dunkel."),
@@ -988,7 +991,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Zuerst renovieren wir den Fußboden",
-          accept: ["Zuerst erneuern wir den Fußboden", "Wir renovieren zuerst den Fußboden", "Wir erneuern zuerst den Fußboden"],
+          accept: ["Zuerst erneuern wir den Fußboden", "Wir renovieren zuerst den Fußboden", "Wir erneuern zuerst den Fußboden", "Zuerst wollen wir den Fußboden renovieren", "Zuerst werden wir den Fußboden renovieren", "Wir wollen zuerst den Fußboden renovieren", "Wir werden zuerst den Fußboden renovieren"],
           hint: [
             tr("Sıra kelimesi başta olduğu için özne fiilin arkasına düşer:"),
             de("Zuerst renovieren wir den Fußboden."),
@@ -1369,6 +1372,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Können Sie mir weiterhelfen",
+          accept: ["Können Sie mir bitte weiterhelfen", "Könnten Sie mir weiterhelfen", "Könnten Sie mir bitte weiterhelfen", "Können Sie mir helfen", "Können Sie mir bitte helfen", "Könnten Sie mir helfen", "Könnten Sie mir bitte helfen"],
           hint: [
             tr("Yardım edilen kişi yönelme hâlinde ve asıl fiil sonda:"),
             de("Können Sie mir weiterhelfen?"),
@@ -1571,7 +1575,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Der Postbote trägt die Pakete am Vormittag aus",
-          accept: ["Der Postbote trägt die Pakete vormittags aus", "Der Postbote trägt die Pakete morgens aus"],
+          accept: ["Der Postbote trägt die Pakete vormittags aus", "Der Postbote trägt die Pakete morgens aus", "Der Postbote trägt am Vormittag die Pakete aus", "Der Postbote trägt vormittags die Pakete aus", "Der Postbote trägt morgens die Pakete aus", "Vormittags trägt der Postbote die Pakete aus", "Morgens trägt der Postbote die Pakete aus"],
           hint: [
             tr("Ayrılabilen fiilin ön eki şimdiki zamanda cümlenin sonuna düşer:"),
             de("Der Postbote trägt die Pakete am Vormittag aus."),
@@ -1795,6 +1799,7 @@ export const deA2B04: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Nachts brauche ich etwas Ruhe",
+          accept: ["Ich brauche nachts etwas Ruhe"],
           hint: [
             tr("Zaman zarfı başta olduğu için özne fiilin arkasına düşer:"),
             de("Nachts brauche ich etwas Ruhe."),
