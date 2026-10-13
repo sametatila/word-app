@@ -62,14 +62,14 @@
       const S = scn(X, a, b);
       const W = S.rg(0, 12);
       S.add(el(W, "lab", esc(d.format.lab)), 0);
-      const tt = S.add(el(W, "dsp t1", esc(d.format.title), "margin-top:24px"), 0.06);
+      const tt = S.add(el(W, "dsp t2", esc(d.format.title), "margin-top:20px"), 0.06);
       X.L.push(() => fit(tt, SPAN(12), 64));
-      const row = S.add(el(W, "row", "", "margin-top:48px;gap:32px;align-items:stretch"), 0);
+      const row = S.add(el(W, "row", "", "margin-top:40px;gap:32px;align-items:stretch"), 0);
       const n = d.format.parts.length;
       const span = Math.floor(12 / n);
       d.format.parts.forEach((p, i) => {
-        S.add(el(row, "card", `<div class="row" style="justify-content:space-between"><span class="mono" style="font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:${i ? "var(--sub)" : "var(--acc)"}">${esc(p.name)}</span>${i ? "" : `<span class="pill" style="height:44px;font-size:22px;padding:0 18px">${esc(u(d, "now"))}</span>`}</div><div class="row" style="align-items:baseline;gap:16px;margin-top:20px"><span class="dsp d2">${esc(p.count)}</span><span class="b1" style="font-weight:700">${esc(u(d, "question"))}</span></div><div style="font-size:40px;font-weight:700;margin-top:16px;line-height:1.15">${esc(p.what)}</div><div class="b2" style="margin-top:8px">${esc(p.how)}</div><div class="row" style="gap:12px;margin-top:auto;padding-top:32px;border-top:2px solid var(--ln)">${`<span style="width:44px;height:44px;border-radius:22px;background:var(--sf2);color:var(--ink);display:grid;place-items:center">${ICONS.play}</span>`.repeat(p.plays)}<span style="font-size:30px;font-weight:650;margin-left:8px">${esc(u(d, p.plays === 2 ? "playsTwo" : "playsOne"))}</span></div>`,
-          `width:${SPAN(span)}px;padding:40px 44px;display:flex;flex-direction:column;${i ? "" : "box-shadow:var(--sh),inset 0 0 0 2px var(--accLine)"}`), 0.2 + i * 0.12, { dy: 28 });
+        S.add(el(row, "card", `<div class="row" style="justify-content:space-between"><span class="mono" style="font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:${i ? "var(--sub)" : "var(--acc)"}">${esc(p.name)}</span>${i ? "" : `<span class="pill" style="height:44px;font-size:22px;padding:0 18px">${esc(u(d, "now"))}</span>`}</div><div class="row" style="align-items:baseline;gap:16px;margin-top:20px"><span class="dsp d2">${esc(p.count)}</span><span class="b1" style="font-weight:700">${esc(u(d, "question"))}</span></div><div style="font-size:40px;font-weight:700;margin-top:16px;line-height:1.15">${esc(p.what)}</div><div class="b2" style="margin-top:8px">${esc(p.how)}</div><div class="row" style="gap:12px;margin-top:auto;padding-top:24px;border-top:2px solid var(--ln)">${`<span style="width:44px;height:44px;border-radius:22px;background:var(--sf2);color:var(--ink);display:grid;place-items:center">${ICONS.play}</span>`.repeat(p.plays)}<span style="font-size:30px;font-weight:650;margin-left:8px">${esc(u(d, p.plays === 2 ? "playsTwo" : "playsOne"))}</span></div>`,
+          `width:${SPAN(span)}px;padding:32px 40px;display:flex;flex-direction:column;${i ? "" : "box-shadow:var(--sh),inset 0 0 0 2px var(--accLine)"}`), 0.2 + i * 0.12, { dy: 28 });
       });
       t = b;
     }
@@ -263,7 +263,7 @@
     X.cover.innerHTML = `<div class="abs" style="inset:0;background:#f1efe9"></div><div class="abs" style="inset:0;background:radial-gradient(1200px 800px at 75% 20%,#fff,transparent 70%)"></div>
       <div class="abs lab" style="left:112px;top:120px;font-size:30px;color:#7a6a5c">${esc(d.cover.lab)}</div>
       <div class="abs dsp cl" style="left:104px;top:200px;font-size:240px;line-height:.9;color:#1f1b18">${esc(d.cover.lines[0])}</div>
-      <div class="abs dsp c2" style="left:112px;top:640px;font-size:120px;color:#e46a12">${esc(d.cover.lines[1])}</div>
+      <div class="abs dsp c2" style="left:112px;top:470px;font-size:132px;color:#e46a12">${esc(d.cover.lines[1])}</div>
       <div class="abs card" style="left:1180px;top:170px;width:620px;padding:48px 52px;transform:rotate(-3deg);background:#fff;color:#1f1b18">${sheetMini(head(d.parts[0]), all.slice(0, 4).map((it, i) => (i < 3 ? it.ans : -1)))}</div>
       ${Y.sig("left:112px;top:900px;box-shadow:0 10px 24px -16px rgba(60,40,20,.4)")}`;
     X.L.push(() => {
