@@ -1,4 +1,4 @@
-/* Hangisini Duydun? 1: Türk kulağını zorlayan Almanca kelime çiftleri, beş tur (38 çift). Çiftler
+/* Hangisini Duydun? 1: Türk kulağını zorlayan Almanca kelime çiftleri, beş tur (37 çift). Çiftler
    data/content/confusables.json'dan, iki kelime aynı tür ve aynı artikel; anlamlar words.json'dan; sesler Defne'nin
    kelime kayıtları. Yeni seslendirme yalnız Türkçe anlatım. */
 const episode = {
@@ -6,15 +6,15 @@ const episode = {
   status: "taslak",
   created: "2026-10-14",
   slot: "2026-10-23 19:00",
-  ytTitle: "Hangisini duydun? Türk kulağını zorlayan 38 Almanca kelime çifti (dinleme testi)",
+  ytTitle: "Hangisini duydun? Türk kulağını zorlayan 37 Almanca kelime çifti (dinleme testi)",
   content: ({ L, pair }) => ({
     series: "Hangisini Duydun?",
-    ep: "1. bölüm · 38 çift",
+    ep: "1. bölüm · 37 çift",
     hook: {
-      lab: "Dinleme testi · 5 tur · 38 çift",
+      lab: "Dinleme testi · 5 tur · 37 çift",
       lines: ["Hangisini duydun?", "Tek ses farkı, tek doğru."],
       demo: ["der Herd", "der Herr"],
-      say: L("defne", "tr", "İki kelime göreceksin, ben yalnız birini söyleyeceğim. Hangisini duyduysan onu seç. Beş tur, otuz sekiz çift."),
+      say: L("defne", "tr", "İki kelime göreceksin, ben yalnız birini söyleyeceğim. Hangisini duyduysan onu seç. Beş tur, otuz yedi çift."),
     },
     how: {
       lab: "Kurallar",
@@ -29,7 +29,7 @@ const episode = {
     rounds: [
       {
         name: "Tek ünsüz",
-        sub: "r ile l, n ile l, d ile r",
+        sub: "r ile l, n ile l, d ile r, r ile s",
         say: L("defne", "tr", "Birinci tur, ısınma. Kelimeler yalnız tek bir ünsüzde ayrılıyor."),
         pairs: [
           pair("das Glas", "das Gras", 1),
@@ -40,6 +40,7 @@ const episode = {
           pair("das Kilo", "das Kino", 0),
           pair("das Gedicht", "das Gericht", 1),
           pair("der Keller", "der Kellner", 0),
+          pair("der Kurs", "der Kuss", 1),
         ],
       },
       {
@@ -81,8 +82,6 @@ const episode = {
           pair("die Miete", "die Mitte", 0),
           pair("fühlen", "füllen", 1),
           pair("stellen", "stehlen", 1),
-          pair("das Tablet", "das Tablett", 0),
-          pair("der Kurs", "der Kuss", 1),
         ],
       },
       {
@@ -105,7 +104,7 @@ const episode = {
     score: {
       lab: "Puan",
       title: "Kaç çift doğru?",
-      sub: "38 üzerinden puanını yorumlara yaz.",
+      sub: "37 üzerinden puanını yorumlara yaz.",
       say: L("defne", "tr", "Kaç çifti doğru bildin? Puanını yorumlara yaz; en çok hangi turda zorlandığını da yaz."),
     },
     app: {
@@ -125,9 +124,9 @@ const episode = {
       slot: "Sıradaki video",
       say: L("defne", "tr", "Puanın kaç? Yorumlara yaz. Bir sonraki videoda yabancılar dairesindeyiz."),
     },
-    cover: { lines: ["Hangisini", "duydun?"], pill: "38 çift · kaç puan?" },
+    cover: { lines: ["Hangisini", "duydun?"], pill: "37 çift · kaç puan?" },
     yt: {
-      desc: "Almanca dinleme testi: tek sesle ayrılan 38 kelime çifti, beş turda. Defne iki kelimeden birini söylüyor, sen hangisi olduğunu seçiyorsun. Turlar: tek ünsüz, e ile i, a, e ve ä, uzun ve kısa ünlü, umlaut ve ch. Puanını yorumlara yaz.",
+      desc: "Almanca dinleme testi: tek sesle ayrılan 37 kelime çifti, beş turda. Defne iki kelimeden birini söylüyor, sen hangisi olduğunu seçiyorsun. Turlar: tek ünsüz, e ile i, a, e ve ä, uzun ve kısa ünlü, umlaut ve ch. Puanını yorumlara yaz.",
       tags: "#almanca #almancaöğren #almancatelaffuz #almancadinleme",
     },
     ui: {},

@@ -73,7 +73,7 @@ const episode = {
       title: "Bileşik isimler",
       lab: "Bonus · bileşik isimler",
       sub: "Son kelime belirler",
-      say: L("defne", "tr", "Kurallar yetmediğinde işe yarayan en güçlü bilgi: bileşik isimlerde artikeli her zaman son kelime belirler. Ev das, kapı die; ev kapısı da die olur."),
+      say: L("defne", "tr", "Kurallar yetmediğinde işe yarayan en güçlü bilgi: bileşik isimlerde artikeli neredeyse her zaman son kelime belirler. Ev das, kapı die; ev kapısı da die olur."),
       items: [
         { last: art("das Haus"), whole: art("das Krankenhaus") },
         { first: art("das Haus"), last: art("die Tür"), whole: art("die Haustür") },
