@@ -428,6 +428,25 @@ check("[FIX] ile düzeltme arasında boş satır → aynı iki taraf siliniyor",
 check("denn → weil (bağlaç tercihi) → siliniyor", !judgeCorrection("Ich komme etwa dreißig Minuten später, denn ich stehe im Stau. → Ich komme etwa dreißig Minuten später, weil ich im Stau stehe. (Konjunktion)", "Ich komme etwa dreißig Minuten später, denn ich stehe im Stau.").keep);
 check("weil + V2 hatası düzeliyor → kalıyor", judgeCorrection("weil ich habe keine Zeit → weil ich keine Zeit habe (Verbendstellung)", "Ich komme nicht, weil ich habe keine Zeit.").keep);
 check("'Stilistik' etiketi → üslup", !judgeCorrection("blaues Hemd, aber ohne Muster → blaues Hemd ohne Muster (Stilistik)", "Ich suche ein blaues Hemd, aber ohne Muster.").keep);
+// 2026-10-13 ölçümü (7 günlük canlı kayıt): sahte "Wortwahl"/"Satzbau"/zamir/es/karşılaştırma düzeltmeleri.
+for (const [said, fix] of [
+  ["Nein, ich möchte lieber eine bunte Tapete an die Wand kleben.", "eine bunte Tapete an die Wand kleben → eine bunte Tapete an die Wand bringen (Wortwahl)"],
+  ["Können Sie mir einen besseren Preis machen?", "einen besseren Preis machen → einen besseren Preis geben (Wortwahl)"],
+  ["Sie können mich morgen anrufen, ich bin ab neun Uhr im Büro.", "Sie können mich morgen anrufen, ich bin ab neun Uhr im Büro. → Sie können mich morgen ab neun Uhr im Büro anrufen (Satzbau)"],
+  ["Wem gehört der Stiefel?", "Wem gehört der Stiefel? → Wem gehört dieser Stiefel? (Demonstrativpronomen)"],
+  ["Ich suche ein hellblaues Hemd. Haben Sie es in Größe M?", "Haben Sie es in Größe M? → Haben Sie das auch in Größe M? (Artikel/Pronomen)"],
+  ["Ja, die Sendungsverfolgung ist gut. Wie viel kostet sie?", "Wie viel kostet sie? → Wie viel kostet das? (Pronomen-Bezug)"],
+  ["Morgen früh passt mir gut. Ich bringe alles pünktlich zurück.", "Morgen früh passt mir gut → Morgen früh passt es mir gut (Pronomen-Ergänzung)"],
+  ["Um elf Uhr geht gut.", "Um elf Uhr geht gut → Um elf Uhr geht es gut (Subjekt fehlt)"],
+  ["Ich möchte die Haare kürzer als vorher, aber nicht zu kurz.", "Ich möchte die Haare kürzer als vorher → Ich möchte die Haare kürzer als beim letzten Mal (Vergleich)"],
+]) check(`sahte düzeltme siliniyor: ${fix.slice(0, 50)}`, !judgeCorrection(fix, said).keep);
+for (const [said, fix] of [
+  ["Nein, das teurere Modell ist nicht preiswerter, aber es ist guter als das andere.", "es ist guter als das andere → es ist besser als das andere (Komparativ)"],
+  ["Sie ist besser wie die rote Jacke.", "besser wie die rote Jacke → besser als die rote Jacke (Komparativ)"],
+  ["Er ist größer als mich.", "größer als mich → größer als ich (Nominativ nach als)"],
+  ["Hier gibt viele Leute.", "Hier gibt viele Leute → Hier gibt es viele Leute (Subjekt fehlt)"],
+  ["Das Auto ist neu, sie ist schnell.", "sie ist schnell → es ist schnell (Pronomen)"],
+]) check(`gerçek düzeltme kalıyor: ${fix.slice(0, 50)}`, judgeCorrection(fix, said).keep);
 check("V2 etiketi ama fiil yerinde → siliniyor", !judgeCorrection("Ab zehn Uhr abends ist es wirklich zu laut → Ab abends zehn Uhr ist es wirklich zu laut (V2-Regel)", "Ab zehn Uhr abends ist es wirklich zu laut.").keep);
 check("V2: fiil gerçekten taşınıyor → kalıyor", judgeCorrection("Am Montag ich habe Zeit → Am Montag habe ich Zeit (V2-Regel)", "Am Montag ich habe Zeit.").keep);
 check("fehlt + Nominativ'e Akkusativ düzeltmesi → siliniyor", !judgeCorrection("ein Schraubenzieher → einen Schraubenzieher (Akkusativ)", "Ich baue ein Regal auf, aber mir fehlt ein Schraubenzieher.").keep);

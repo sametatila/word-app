@@ -189,10 +189,19 @@ const SIE_FORM = /(?<![\p{L}])(Ihnen|Ihre?\p{L}*)(?![\p{L}])|(?<![.!?]\s*|^\s*)(
 const ORDER_LABEL = /v2|verb[\s\u2010-\u2014-]*(zweit|stellung|position)|end[\s\u2010-\u2014-]*stellung|wort[\s\u2010-\u2014-]*stellung|satz[\s\u2010-\u2014-]*stellung|wortfolge|inversion|word\s+order|s[öo]zc[üu]k\s+s[ıi]ras[ıi]|kelime\s+s[ıi]ras[ıi]/i;
 
 /**
- * Dilbilgisi değil, üslup ya da içerik olduğunu söyleyen etiketler. "Wortwahl"
- * bilerek yok: yanlış sözcük gerçek hata olabilir (kısaltma açma ayrıca yakalanıyor).
+ * Dilbilgisi değil, üslup ya da içerik olduğunu söyleyen etiketler.
+ *
+ * "Wortwahl" / "Wortschatz" / "Satzbau" / "Demonstrativ" 2026-10-13'te eklendi (panel #98
+ * #110 #111): önce "yanlış sözcük gerçek hata olabilir" diye bilerek dışarıdaydı. Ölçüm
+ * (canlı sohbet kayıtları, 7 gün): 22 "Wortwahl" düzeltmesinin 18'i doğru cümleyi tercihe
+ * göre değiştiriyor ya da anlamını bozuyordu (zahle → bezahle, Oma → Großmutter, Sport machen
+ * → treiben, einen Preis machen → geben, Tapete kleben → bringen), 4'ü sınırda iyileştirme,
+ * hiçbiri dilbilgisi hatası değildi; 3 "Satzbau"nun 3'ü de sahteydi. Dilbilgisi hatası
+ * kendi etiketiyle geliyor (Akkusativ, V2, Komparativ …); onlar etkilenmiyor.
  */
-const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|stilisti|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik|kontext|context|logik|logic|semantik|semantic|gender|geschlecht|\brole\b|\brolle\b|daha\s+(uygun|doğal|iyi)|uygundur|angemessen|besser\b|konvention|convention|gelenek|keine?\s+fehler|fehlerfrei|no\s+(?:error|mistake)s?|hata\s+yok/i;
+/** Sözcük seçimi etiketi: yalnız sözcüğü DEĞİŞTİREN düzeltmede üslup (eksik sözcüğü ekleyen "24 Jahre → 24 Jahre alt" kalıyor). */
+const WORDCHOICE_LABEL = /wortwahl|wortschatz|word\s+choice|kelime\s+se[çc]imi/i;
+const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|stilisti|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik|kontext|context|logik|logic|semantik|semantic|gender|geschlecht|\brole\b|\brolle\b|daha\s+(uygun|doğal|iyi)|uygundur|angemessen|besser\b|konvention|convention|gelenek|satzbau|demonstrativ|keine?\s+fehler|fehlerfrei|no\s+(?:error|mistake)s?|hata\s+yok/i;
 
 /**
  * GÜNDE EN SIK ÇEKİMLİ FİİLLER — eksiltili cümleyi (fiilsiz parça) tam cümleden ayırmak için
@@ -372,6 +381,48 @@ function swapsCausalConjunction(left: string[], right: string[]): boolean {
   return lc.length === 1 && rc.length === 1 && lc[0] !== rc[0] && [...l].sort().join(" ") === [...r].sort().join(" ");
 }
 
+/**
+ * KİŞİ ZAMİRİNİ "das" YAPMA (panel #114): "Haben Sie es in Größe M? → Haben Sie das auch in
+ * Größe M? (Artikel/Pronomen)", "Wie viel kostet sie? → Wie viel kostet das? (Pronomen-Bezug)"
+ * (sie = die Sendungsverfolgung, doğru). Gösterme zamiri "das" her isme gider; onu seçmek
+ * cinsiyet hatasını düzeltmek değil, tercih. Yanına serbest ilgeç (auch, bitte …) eklenebilir.
+ */
+const PERSONAL_3 = new Set(["er", "sie", "es", "ihn"]);
+function pronounToDas(left: string[], right: string[]): boolean {
+  const core = (ws: string[]) => ws.filter((w) => !FREE_PARTICLES.has(w));
+  const l = core(left);
+  const r = core(right);
+  if (l.length !== r.length) return false;
+  const diffs = l.map((w, i) => i).filter((i) => l[i] !== r[i]);
+  return diffs.length === 1 && PERSONAL_3.has(l[diffs[0]]) && ["das", "dies"].includes(r[diffs[0]]);
+}
+
+/**
+ * "passt/geht/klappt"tan sonra "es" EKLEME (panel #101): "Morgen früh passt mir gut → Morgen
+ * früh passt es mir gut (Pronomen-Ergänzung)", "Um elf Uhr geht gut → … geht es gut (Subjekt
+ * fehlt)". Öne alınmış zaman öbeği bu fiillerin öznesi olabiliyor; "es" yalnız bir seçenek.
+ */
+const ES_OPTIONAL = new Set(["passt", "geht", "klappt", "reicht", "passen", "gehen"]);
+function insertsEsAfterVerb(left: string[], right: string[]): boolean {
+  if (right.length !== left.length + 1) return false;
+  let i = 0;
+  while (i < left.length && left[i] === right[i]) i++;
+  return right[i] === "es" && i > 0 && ES_OPTIONAL.has(right[i - 1]) && left.slice(i).join(" ") === right.slice(i + 1).join(" ");
+}
+
+/**
+ * KARŞILAŞTIRILANI DEĞİŞTİRME (panel #116): "kürzer als vorher → kürzer als beim letzten Mal
+ * (Vergleich)". Komparatif ve "als" iki tarafta aynı; yalnız "als"tan sonrası değişiyorsa bu
+ * içerik tercihi. Gerçek karşılaştırma hatası (wie → als, guter → besser) "als"tan ÖNCE.
+ */
+function changesComparedOnly(left: string[], right: string[]): boolean {
+  const li = left.indexOf("als");
+  const ri = right.indexOf("als");
+  if (!(li > 0 && li === ri && left.slice(0, li + 1).join(" ") === right.slice(0, ri + 1).join(" ") && left.join(" ") !== right.join(" "))) return false;
+  // "größer als mich → als ich": zamirin hâli gerçek hata, ona dokunulmuyor.
+  return ![...left.slice(li + 1), ...right.slice(ri + 1)].some((w) => w in PERSON || SUBJECT.has(w));
+}
+
 /** "Uni → Universität": tek sözcük, sağdaki soldakiyle başlıyor ve yalnız uzuyor. */
 function expandsAbbreviation(left: string[], right: string[]): boolean {
   if (left.length !== right.length) return false;
@@ -469,6 +520,7 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
 
   if (
     STYLE_LABEL.test(label) ||
+    (WORDCHOICE_LABEL.test(label) && !(right.length > left.length && inOrder(left, right))) ||
     expandsAbbreviation(left, right) ||
     shortensCompound(left, right) ||
     swapsDefiniteness(left, right) ||
@@ -479,6 +531,9 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
     swapsModal(left, right) ||
     dropsPronounPhrase(left, right) ||
     (lang === "de" && swapsCausalConjunction(left, right)) ||
+    (lang === "de" && pronounToDas(left, right)) ||
+    (lang === "de" && insertsEsAfterVerb(left, right)) ||
+    (lang === "de" && changesComparedOnly(left, right)) ||
     (lang === "de" && addsDefiniteToBareNoun(left, right, (w) => w in NOUN_GENDER))
   ) {
     return { keep: false, reason: "style" };
