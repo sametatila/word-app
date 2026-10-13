@@ -70,7 +70,25 @@ export function helpers() {
     if (!confusables().some((p) => (p.a === a.de && p.b === b.de) || (p.a === b.de && p.b === a.de))) throw new Error(`confusables'ta yok: ${la} / ${lb}`);
     return { a: { w: L("defne", "de", label(a)), tr: a.tr }, b: { w: L("defne", "de", label(b)), tr: b.tr }, play };
   };
-  return { H: { L, word, label, walk, pair }, used };
+  /**
+   * Artikel kuralı sayımı (uygulamanın sözlüğünden): sufs ile biten isimler (en az suf + 2 harf), en sık artikel ve
+   * istisnalar. expect { hit, all }: anlatımdaki sayı sözlükle tutmuyorsa durur (sözlük değişince seslendirme bayatlamasın).
+   */
+  const stats = (sufs, expect) => {
+    const xs = W().filter((w) => w.typ === "Nomen" && w.artikel && sufs.some((sf) => w.de.toLowerCase().endsWith(sf) && w.de.length >= sf.length + 2));
+    const by = {};
+    for (const w of xs) by[w.artikel] = (by[w.artikel] || 0) + 1;
+    const art = Object.keys(by).sort((p, q) => by[q] - by[p])[0];
+    const out = { art, hit: by[art] || 0, all: xs.length, exceptions: xs.filter((w) => w.artikel !== art).map(label) };
+    if (expect && (expect.hit !== out.hit || expect.all !== out.all)) throw new Error(`artikel sayımı değişti (${sufs.join("/")}): ${out.hit}/${out.all}, beklenen ${expect.hit}/${expect.all}`);
+    return out;
+  };
+  /** Artikel örneği: kelimenin kaydı (Defne, artikelle) ve Türkçesi. */
+  const art = (full) => {
+    const w = word(full);
+    return { w: L("defne", "de", label(w)), tr: w.tr };
+  };
+  return { H: { L, word, label, walk, pair, stats, art }, used };
 }
 
 /** Bütün yatay bölümler (ya da `only`). */

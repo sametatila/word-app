@@ -233,8 +233,8 @@ type Json = unknown;
 export function lockedKey(at: string, format = "dikey"): boolean {
   const last = at.replace(/\[\d+\]$/, "").split(".").pop() ?? "";
   if (["who", "icon", "avatar", "key", "typ"].includes(last)) return true;
-  // yatay satır nesnesi { v: ses, l: dil, t: metin, x?: kayıt türü }: ses, dil ve tür kimlik; yalnız t metin
-  if (format === "yatay" && ["v", "l", "x", "lv"].includes(last)) return true;
+  // yatay satır nesnesi { v: ses, l: dil, t: metin, x?: kayıt türü }: ses, dil ve tür kimlik; yalnız t metin. art: artikel (renk sınıfı)
+  if (format === "yatay" && ["v", "l", "x", "lv", "art"].includes(last)) return true;
   return last === "scene" && /\[\d+\]\.scene$/.test(at);
 }
 /**
