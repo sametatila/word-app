@@ -3,7 +3,7 @@ const episode = {
   template: "artikel-gece",
   status: "hazır",
   created: "2026-10-08",
-  slot: "2026-10-12 07:30",
+  slot: "2026-10-27 07:30",
   ytTitle: "Kaşık, çatal, bıçak Almancada hangi artikeli alır? #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["der Löffel", "die Gabel", "das Messer", "das Mädchen"], { Löffel: { icon: "spoon" }, Gabel: { icon: "fork" }, Messer: { icon: "knife" } }),
