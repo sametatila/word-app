@@ -72,10 +72,10 @@ const episode = {
     end: {
       lab: "Sıradaki",
       line: "Kaç tanesini ilk seferde söyledin?",
-      ask: "Yorumlara yaz. Sıradaki videoda ev ve kira kelimeleri var.",
+      ask: "Yorumlara yaz; bir sonraki konuyu da sen seç.",
       sub: "Her salı ve cuma yeni video",
       slot: "Sıradaki video",
-      say: L("defne", "tr", "Kaç tanesini ilk seferde söyledin? Yorumlara yaz. Sıradaki videoda ev ve kira kelimeleri var."),
+      say: L("defne", "tr", "Kaç tanesini ilk seferde söyledin? Yorumlara yaz; bir sonraki konuyu da sen seç."),
     },
     cover: { lab: "Dinle · söyle · tekrar et", lines: ["Doktorda", "Almanca"], pill: "50 kelime · örnek cümleyle", words: ["der Termin", "verschreiben"] },
     yt: {
