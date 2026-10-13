@@ -9,6 +9,7 @@ import { requestBadge } from "@/lib/studio-requests";
 import { APP_LINKS } from "@/lib/admin-links";
 import { Linkify } from "../admin/_ui/ui";
 import { StudioNav } from "./nav";
+import { StudioRefresh } from "./refresh";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: { default: "Stüdyo", template: "%s · Stüdyo" }, robots: { index: false, follow: false } };
@@ -59,6 +60,7 @@ export default async function StudioLayout({ children }: { children: React.React
           <Linkify text={strip.text} />
         </div>
       ) : null}
+      <StudioRefresh />
       <main className="min-w-0">{children}</main>
     </div>
   );

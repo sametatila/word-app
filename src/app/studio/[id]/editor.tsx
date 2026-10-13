@@ -48,6 +48,8 @@ function errorText(d: Record<string, unknown>): string {
       return String(d.detail);
     case "publishing":
       return "Şu an Instagram'a gönderiliyor; sonuç gelince yeniden dene.";
+    case "stale":
+      return "Bu arada değişti (platform işçisi ya da başka biri). Güncel durum yüklendi; değiştirmek istiyorsan yeniden kaydet.";
     case "auto_needs_slot":
       return "Otomatik yayın için bölümün gelecekte bir yayın saati olmalı.";
     case "not_queued":
@@ -111,6 +113,14 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
   }, [pv, draft]);
   const dirty = useMemo(() => JSON.stringify(draft) !== JSON.stringify(ep.data), [draft, ep.data]);
   const [ytDraft, setYtDraft] = useState(initial.ytTitle ?? "");
+  // sayfa tazelenince (StudioRefresh) güncel bölüm ve platform durumları; kaydedilmemiş metin varken bölüm verisi
+  // alınmaz (taslak ezilmesin, kaydederken çakışma uyarısı zaten gelir)
+  const [fresh, setFresh] = useState({ initial, initialPosts });
+  if (fresh.initial !== initial || fresh.initialPosts !== initialPosts) {
+    setFresh({ initial, initialPosts });
+    if (fresh.initialPosts !== initialPosts) setPosts(initialPosts);
+    if (fresh.initial !== initial && !dirty && !busy) setEp(initial);
+  }
 
   const reload = useCallback(async () => {
     const res = await apiFetch(`/api/studio/episodes/${ep.id}`, { cache: "no-store" });
@@ -633,14 +643,27 @@ function PlatformBox({ episodeId, platform, label, auto, ready, copies, post: sa
   const [note, setNote] = useState(saved?.note ?? "");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<Msg>(null);
+  // kayıtlı satır değişince (işçi "Yayında" yaptı, bağlantı yazdı; sayfa tazelendi) dokunulmamış alanlar ona geçer,
+  // elle değiştirilen alan korunur
+  const [base, setBase] = useState(saved);
+  if (base !== saved) {
+    if (status === (base?.status ?? "planned")) setStatus(saved?.status ?? "planned");
+    if (url === (base?.url ?? "")) setUrl(saved?.url ?? "");
+    if (note === (base?.note ?? "")) setNote(saved?.note ?? "");
+    setBase(saved);
+  }
   const dirty = status !== (saved?.status ?? "planned") || url !== (saved?.url ?? "") || note !== (saved?.note ?? "");
   const shown = postState(saved?.status, false);
   const locked = saved?.status === "publishing";
   async function save() {
     setBusy(true);
     setMsg(null);
-    const r = await call("/api/studio/posts", { action: "set", episodeId, platform, status, url: status === "auto" ? undefined : url, note });
+    const r = await call("/api/studio/posts", { action: "set", episodeId, platform, status, url: status === "auto" ? undefined : url, note, base: saved?.updatedAt ?? null });
     setBusy(false);
+    if (!r.ok && r.data.error === "stale") {
+      onSaved((r.data.post as SocialPost | null) ?? null);
+      return setMsg({ tone: "warn", text: errorText(r.data) });
+    }
     if (!r.ok) return setMsg({ tone: "bad", text: errorText(r.data) });
     onSaved((r.data.post as SocialPost | null) ?? null);
     setMsg({ tone: "ok", text: "Kaydedildi." });

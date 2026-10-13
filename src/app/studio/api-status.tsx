@@ -29,10 +29,11 @@ export function ApiStatus({ items }: { items: ApiHealth[] }) {
         const value = problem ?? short(s.lastSyncAt);
         const title = [s.username ? `@${s.username.replace(/^@/, "")}` : null, s.lastSyncAt ? `son eşitleme ${new Date(s.lastSyncAt).toLocaleString("tr-TR", { timeZone: "Europe/Berlin" })}` : null, s.tokenDays != null ? `belirteç ${s.tokenDays} gün (kendiliğinden yenilenir)` : null, s.error].filter(Boolean).join(" · ");
         return (
-          <span key={s.platform} className="inline-flex items-center gap-1.5" title={title || undefined} aria-label={`${label}: ${value}${title ? ` · ${title}` : ""}`}>
+          <span key={s.platform} className="inline-flex items-center gap-1.5" suppressHydrationWarning title={title || undefined} aria-label={`${label}: ${value}${title ? ` · ${title}` : ""}`}>
             <span aria-hidden className="size-2 shrink-0 rounded-full" style={{ background: color }} />
             <span>{label}</span>
-            <span className="tabular-nums" style={problem ? { color } : { color: "var(--text-muted)" }}>{value}</span>
+            {/* göreli süre sunucuda ve tarayıcıda ayrı hesaplanıyor: dakika sınırında fark olabilir */}
+            <span className="tabular-nums" style={problem ? { color } : { color: "var(--text-muted)" }} suppressHydrationWarning>{value}</span>
           </span>
         );
       })}

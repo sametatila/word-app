@@ -226,6 +226,12 @@ yapabilmeli").
 
 - **Sayfalar:** `/studio` Genel bakış (üç platformun istatistikleri, ilk sayfa), `/studio/takvim` takvim,
   `/studio/<bölüm>` editör (iki sekme: İçerik ve onay · Paylaşım; onaylı ve videosu hazır bölüm Paylaşım'da açılır: video ve indirme, kopyalanacak açıklama + YouTube başlığı/açıklaması, yayın saati, platform başına durum ve o platformun Kopyala düğmeleri; `?sekme=paylasim`), `/studio/<bölüm>/performans` videonun performansı, `/studio/requests` Defne talepleri.
+- **Tazeleme ve eski sayfa (2026-10-13; Samet: "yenileme yapıldığında değişiklik etki etmiyor"):** işçiler durumu ve
+  metrikleri arka planda yazıyor; stüdyo sayfaları sekme görünürken dakikada bir, sekmeye dönünce ve geri/ileri
+  düğmesinden sonra kendiliğinden tazelenir (`src/app/studio/refresh.tsx`). Takvim ve editör yeni veriyi taslağı ezmeden
+  alır (kaydedilmemiş metin, elle değiştirilmiş platform alanı korunur). Platform durumu kaydı formun gördüğü
+  `updatedAt`ı taşır: satır o arada değiştiyse (işçi "Yayında" yaptı) yazılmaz, güncel durum yüklenir. Toplu işaret
+  yalnız satırı olmayan ("Planlandı") bölümlere yazar.
 - **İstatistik (2026-10-12; Samet: "3 platformun istatistiklerini doğru harmanlayarak hem genel hem postlara özel"):**
   hesap `src/lib/social-stats-core.ts` (test `npm run test:social-stats`), okuma `src/lib/social-stats.ts`.
   Harmanlama: izlenme üç platformda oynatma sayısı → toplanır; etkileşim = beğeni + yorum + paylaşım + kaydetme (hangisi

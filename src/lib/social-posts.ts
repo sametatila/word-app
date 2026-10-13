@@ -94,20 +94,23 @@ function cleanUrl(v: unknown): string | null | "bad" {
   }
 }
 
-export type SetResult = { ok: true; post: SocialPost | null } | { ok: false; error: "bad_input" | "not_found" | "publishing" | "auto_needs_slot" };
+export type SetResult = { ok: true; post: SocialPost | null } | { ok: false; error: "bad_input" | "not_found" | "publishing" | "auto_needs_slot" } | { ok: false; error: "stale"; post: SocialPost | null };
 
 /**
  * Bir bölümün bir platformdaki durumu. `planned` satırı siler. Bağlantı ve not verilmezse eskisi korunur
  * (toplu "zamanlandı" işaretlemesi elle yazılmış bağlantıyı silmesin); boş dizgi siler.
+ * `base`: formun gördüğü satırın `updatedAt`ı (satır yoksa null). Satır o arada değiştiyse (işçi "Yayında" yaptı,
+ * başkası kaydetti) yazılmaz, `stale` + güncel satır döner: açık kalmış eski sayfa işçinin sonucunu ezmesin.
  */
-export async function setSocialPost(input: { episodeId: unknown; platform: unknown; status: unknown; url?: unknown; note?: unknown }, actor: string): Promise<SetResult> {
+export async function setSocialPost(input: { episodeId: unknown; platform: unknown; status: unknown; url?: unknown; note?: unknown; base?: unknown }, actor: string): Promise<SetResult> {
   const episodeId = String(input.episodeId ?? "");
   const { platform, status } = input;
   if (!isSocialPlatform(platform) || !isSocialStatus(status)) return { ok: false, error: "bad_input" };
   const [ep] = await db.select({ slot: socialEpisodes.slot }).from(socialEpisodes).where(eq(socialEpisodes.id, episodeId));
   if (!ep) return { ok: false, error: "not_found" };
-  const [cur] = await db.select({ status: socialPosts.status }).from(socialPosts).where(and(eq(socialPosts.episodeId, episodeId), eq(socialPosts.platform, platform)));
+  const [cur] = await db.select().from(socialPosts).where(and(eq(socialPosts.episodeId, episodeId), eq(socialPosts.platform, platform)));
   if (cur?.status === "publishing") return { ok: false, error: "publishing" }; // yayın adımı sürüyor: sonucu işçi yazar
+  if (input.base !== undefined && (cur ? cur.updatedAt.toISOString() : null) !== (input.base ?? null)) return { ok: false, error: "stale", post: cur ? postView(cur) : null };
   if (status === "auto" && (platform !== "instagram" || !ep.slot || slotPast(ep.slot))) return { ok: false, error: platform !== "instagram" ? "bad_input" : "auto_needs_slot" };
   if (status === "planned") {
     await db.delete(socialPosts).where(and(eq(socialPosts.episodeId, episodeId), eq(socialPosts.platform, platform)));
@@ -129,7 +132,11 @@ export async function setSocialPost(input: { episodeId: unknown; platform: unkno
   return { ok: true, post: postView(r) };
 }
 
-/** Toplu işaretleme (ör. iki haftayı TikTok zamanlayıcısına koyduktan sonra; YouTube zamanlananları kendisi bulur). Yalnız durumu değiştirir. */
+/**
+ * Toplu işaretleme (ör. iki haftayı TikTok zamanlayıcısına koyduktan sonra; YouTube zamanlananları kendisi bulur). Yalnız
+ * durumu değiştirir ve yalnız henüz satırı olmayan ("Planlandı") bölümlere yazar: takvim o arada eskidiyse işçinin
+ * "Yayında"/"Zamanlandı" yaptığı satır geri alınmaz.
+ */
 export async function setSocialPostsBulk(input: { episodeIds: unknown; platform: unknown; status: unknown }, actor: string): Promise<{ ok: true; count: number } | { ok: false; error: "bad_input" }> {
   const ids = Array.isArray(input.episodeIds) ? input.episodeIds.map(String) : [];
   const known = await knownIds(ids);
@@ -141,7 +148,7 @@ export async function setSocialPostsBulk(input: { episodeIds: unknown; platform:
     return { ok: true, count: r.length };
   }
   let count = 0;
-  for (const episodeId of ids) if ((await setSocialPost({ episodeId, platform, status }, actor)).ok) count++; // "auto": saati geçmiş ya da yayınlanan atlanır
+  for (const episodeId of ids) if ((await setSocialPost({ episodeId, platform, status, base: null }, actor)).ok) count++; // satırı olan ya da "auto" için saati geçmiş atlanır
   return { ok: true, count };
 }
 
