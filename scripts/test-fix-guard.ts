@@ -425,6 +425,8 @@ check("zamirli edat öbeğini silme → üslup", !judgeCorrection("einen Schraub
 check("tek sözcük silme (nach zu Hause) → kalıyor", judgeCorrection("nach zu Hause → nach Hause (Präposition)", "Ich gehe nach zu Hause.").keep);
 check("'keine Fehler' etiketi → siliniyor", !judgeCorrection("Was können Sie mir empfehlen? → Was können Sie mir dagegen empfehlen? (keine Fehler)", "Ich habe auch Kopfschmerzen. Was können Sie mir empfehlen?").keep);
 check("[FIX] ile düzeltme arasında boş satır → aynı iki taraf siliniyor", filterCorrectionLines("[FIX]\n\nHaben Sie etwas dagegen? → Haben Sie etwas dagegen? (keine Fehler)\n\nIch empfehle Hustensaft.", "Haben Sie etwas dagegen?").dropped.length === 1);
+check("denn → weil (bağlaç tercihi) → siliniyor", !judgeCorrection("Ich komme etwa dreißig Minuten später, denn ich stehe im Stau. → Ich komme etwa dreißig Minuten später, weil ich im Stau stehe. (Konjunktion)", "Ich komme etwa dreißig Minuten später, denn ich stehe im Stau.").keep);
+check("weil + V2 hatası düzeliyor → kalıyor", judgeCorrection("weil ich habe keine Zeit → weil ich keine Zeit habe (Verbendstellung)", "Ich komme nicht, weil ich habe keine Zeit.").keep);
 check("V2 etiketi ama fiil yerinde → siliniyor", !judgeCorrection("Ab zehn Uhr abends ist es wirklich zu laut → Ab abends zehn Uhr ist es wirklich zu laut (V2-Regel)", "Ab zehn Uhr abends ist es wirklich zu laut.").keep);
 check("V2: fiil gerçekten taşınıyor → kalıyor", judgeCorrection("Am Montag ich habe Zeit → Am Montag habe ich Zeit (V2-Regel)", "Am Montag ich habe Zeit.").keep);
 check("fehlt + Nominativ'e Akkusativ düzeltmesi → siliniyor", !judgeCorrection("ein Schraubenzieher → einen Schraubenzieher (Akkusativ)", "Ich baue ein Regal auf, aber mir fehlt ein Schraubenzieher.").keep);

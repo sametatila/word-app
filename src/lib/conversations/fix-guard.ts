@@ -356,6 +356,22 @@ function dropsPronounPhrase(left: string[], right: string[]): boolean {
 const NOMINATIVE_SLOT = new Set(["ist", "sind", "bin", "bist", "seid", "war", "waren", "wird", "werden", "bleibt", "bleiben", "heisst", "heissen", "fehlt", "fehlen"]);
 const ACC_FORM = new Set(["einen", "den", "keinen", "meinen", "deinen", "seinen", "ihren", "unseren", "euren", "diesen", "welchen"]);
 
+/**
+ * SEBEP BAĞLACI TERCİHİ (panel #108): "…, denn ich stehe im Stau → …, weil ich im Stau
+ * stehe (Konjunktion)". denn (ana cümle) ile weil/da (yan cümle, fiil sonda) ikisi de doğru;
+ * bağlacı değiştirip fiili ona göre taşıyan düzeltme hata düzeltmesi değil. Sözcükler bağlaç
+ * dışında aynı (yalnız yer değiştirmiş) olmalı.
+ */
+const CAUSAL = new Set(["denn", "weil", "da"]);
+function swapsCausalConjunction(left: string[], right: string[]): boolean {
+  if (left.length !== right.length) return false;
+  const l = left.filter((w) => !CAUSAL.has(w));
+  const r = right.filter((w) => !CAUSAL.has(w));
+  const lc = left.filter((w) => CAUSAL.has(w));
+  const rc = right.filter((w) => CAUSAL.has(w));
+  return lc.length === 1 && rc.length === 1 && lc[0] !== rc[0] && [...l].sort().join(" ") === [...r].sort().join(" ");
+}
+
 /** "Uni → Universität": tek sözcük, sağdaki soldakiyle başlıyor ve yalnız uzuyor. */
 function expandsAbbreviation(left: string[], right: string[]): boolean {
   if (left.length !== right.length) return false;
@@ -462,6 +478,7 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
     completesFragment(left, right) ||
     swapsModal(left, right) ||
     dropsPronounPhrase(left, right) ||
+    (lang === "de" && swapsCausalConjunction(left, right)) ||
     (lang === "de" && addsDefiniteToBareNoun(left, right, (w) => w in NOUN_GENDER))
   ) {
     return { keep: false, reason: "style" };
