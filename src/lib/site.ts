@@ -20,7 +20,7 @@ export const PRIMARY_ORIGIN = "https://www.lernomi.app";
 /**
  * YEDEK KÖKEN — aynı Next uygulaması, aynı sunucu, ikinci alan adı.
  *
- * Bazı kurum ağları (ör. TU Dortmund Wi-Fi) www.lernomi.app'e giden bağlantıyı
+ * Bazı kurum ağları www.lernomi.app'e giden bağlantıyı
  * SNI'ya bakıp sıfırlıyor: alan adı 2026-09-04'te kaydedildi ve "yeni alan
  * adı" filtresine takılıyor. rumpuskit.com daha eski (2026-07-02). Mobil
  * uygulama asıl adrese ağ hatası alıp internetin açık olduğunu görünce bu

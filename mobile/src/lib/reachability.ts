@@ -1,7 +1,7 @@
 /**
  * AĞ TEŞHİSİ: sunucumuza ulaşılamadığında sebep cihazda mı, ağda mı?
  *
- * Bazı kurumsal ve üniversite ağları (ör. TU Dortmund Wi-Fi) www.lernomi.app'e
+ * Bazı kurumsal ve üniversite ağları www.lernomi.app'e
  * giden bağlantıyı SNI'ya bakıp sıfırlıyor: alan adı yeni (2026-09-04) ve
  * "yeni alan adı" filtresine takılıyor. Uygulama o zaman "İnternetini kontrol
  * et" diyordu, kullanıcı da sorunu kendi cihazında arıyordu.

@@ -4,7 +4,7 @@ import { diagnoseNetwork, type NetworkDiagnosis } from "../lib/reachability";
 /**
  * API TABANI: asıl adres mi, yedek adres mi?
  *
- * Bazı kurum ağları (ör. TU Dortmund Wi-Fi) www.lernomi.app'e giden bağlantıyı
+ * Bazı kurum ağları www.lernomi.app'e giden bağlantıyı
  * SNI'ya bakıp sıfırlıyor: alan adı yeni (2026-09-04) ve "yeni alan adı"
  * filtresine takılıyor. Aynı uygulama aynı sunucuda ikinci bir adreste de
  * servis ediliyor (sunucu `lib/site` FALLBACK_ORIGIN): rumpuskit.com daha eski
