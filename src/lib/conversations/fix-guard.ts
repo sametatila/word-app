@@ -192,7 +192,7 @@ const ORDER_LABEL = /v2|verb[\s\u2010-\u2014-]*(zweit|stellung|position)|end[\s\
  * Dilbilgisi değil, üslup ya da içerik olduğunu söyleyen etiketler. "Wortwahl"
  * bilerek yok: yanlış sözcük gerçek hata olabilir (kısaltma açma ayrıca yakalanıyor).
  */
-const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik|kontext|context|logik|logic|semantik|semantic|gender|geschlecht|\brole\b|\brolle\b|daha\s+(uygun|doğal|iyi)|uygundur|angemessen|besser\b|konvention|convention|gelenek/i;
+const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik|kontext|context|logik|logic|semantik|semantic|gender|geschlecht|\brole\b|\brolle\b|daha\s+(uygun|doğal|iyi)|uygundur|angemessen|besser\b|konvention|convention|gelenek|keine?\s+fehler|fehlerfrei|no\s+(?:error|mistake)s?|hata\s+yok/i;
 
 /**
  * GÜNDE EN SIK ÇEKİMLİ FİİLLER — eksiltili cümleyi (fiilsiz parça) tam cümleden ayırmak için
@@ -490,7 +490,7 @@ export function filterCorrectionLines(text: string, said: string, ctx: FixContex
  * süzgeç düzeltmeyi hiç görmüyordu ("X → X (V2-Regel)" öğrenciye gitti). İkisi tek satır.
  */
 function joinBareMarker(text: string): string {
-  return text.replace(/^([ \t]*\[FIX\])[ \t]*\n[ \t]*/gm, "$1 ");
+  return text.replace(/^([ \t]*\[FIX\])[ \t]*(?:\n[ \t]*)+/gm, "$1 ");
 }
 
 /** Satır düzeltme satırı değilse dokunulmuyor; ayrıştırıcıyla aynı tanım (`trim` + işaret). */
