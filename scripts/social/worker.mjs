@@ -9,9 +9,15 @@
     3. ÜRETİM: kuyruktaki en eski onaylı sürümü alır, Defne seslerini ve yerleşimi bir kez daha denetler, MP4 +
        kapaklar + açıklama üretir (lib/render.mjs, yerel üretimle birebir aynı ayarlar). Aynı bölümün eski
        videosunun dosyaları silinir (satır iz olarak kalır).
+       YATAY bölüm (data/social/yatay, format "yatay"; 2026-10-13): yatay/uret.mjs (1920×1080, dört karakterin
+       kayıtları, kapak 1280×720, bölüm listeli YouTube açıklaması). 12 dakikalık video sunucuda ~1 saat.
+  Yatay üretim AYRI birimde: `--uzun` (sunucuda lernomi-social-render.timer → /opt/lernomi/social-render.sh, zaman
+  aşımı 4 sa, kilit SOCIAL_DIR/render.lock, üretim her saniye tazeler). `--once` yalnız dikey üretir: uzun bir yatay
+  üretim sürerken aktarım, ses talepleri ve kısa videolar beklemez.
 
   node scripts/social/worker.mjs --once            (sunucuda: /opt/lernomi/social-worker.sh)
   node scripts/social/worker.mjs --once --import   yalnız aktarım
+  node scripts/social/worker.mjs --uzun            yalnız sıradaki yatay üretim (sunucuda: /opt/lernomi/social-render.sh)
 
   Ortam: DATABASE_URL, TTS_OWN_DIR (Defne kayıtları), SOCIAL_DIR (çıktı; varsayılan /opt/lernomi/social),
   PLAYWRIGHT_BROWSERS_PATH (sunucuda Chromium). Aynı anda tek işçi: SOCIAL_DIR/worker.lock.
@@ -27,6 +33,8 @@ import { renderDoc } from "./lib/audio.mjs";
 import { renderVideo } from "./lib/render.mjs";
 import { resolveClips } from "./lib/clips.mjs";
 import { ROOT, TTS } from "./lib/content.mjs";
+import { DIR as LONG_DIR, loadLong } from "./yatay/icerik.mjs";
+import { renderLong } from "./yatay/uret.mjs";
 
 const SOCIAL_DIR = process.env.SOCIAL_DIR || "/opt/lernomi/social";
 const STALE_MS = 3 * 60_000;
@@ -34,13 +42,23 @@ const log = (...a) => console.log(new Date().toISOString(), ...a);
 
 fs.mkdirSync(SOCIAL_DIR, { recursive: true });
 const LOCK = path.join(SOCIAL_DIR, "worker.lock");
-try {
-  fs.mkdirSync(LOCK);
-} catch {
-  // kilit 30 dakikadan eskiyse öncekinin kalıntısı (öldürülmüş işçi): kaldır, bu turu atla
-  if (Date.now() - fs.statSync(LOCK).mtimeMs > 30 * 60_000) fs.rmSync(LOCK, { recursive: true, force: true });
-  process.exit(0);
+const RENDER_LOCK = path.join(SOCIAL_DIR, "render.lock");
+/** Kilit al; 30 dakikadır tazelenmemişse öncekinin kalıntısı (öldürülmüş işçi): kaldır, bu turu atla. */
+function takeLock(dir) {
+  try {
+    fs.mkdirSync(dir);
+    return true;
+  } catch {
+    try {
+      if (Date.now() - fs.statSync(dir).mtimeMs > 30 * 60_000) fs.rmSync(dir, { recursive: true, force: true });
+    } catch {
+      /* bu arada kalktı */
+    }
+    return false;
+  }
 }
+const LONG = process.argv.includes("--uzun");
+if (!takeLock(LONG ? RENDER_LOCK : LOCK)) process.exit(0);
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 2 });
 const q = (text, params) => pool.query(text, params);
 
@@ -48,6 +66,7 @@ const q = (text, params) => pool.query(text, params);
 function sourceHash() {
   const h = crypto.createHash("sha1");
   for (const f of fs.readdirSync(EP_DIR).filter((x) => x.endsWith(".mjs")).sort()) h.update(f).update(fs.readFileSync(path.join(EP_DIR, f)));
+  if (fs.existsSync(LONG_DIR)) for (const f of fs.readdirSync(LONG_DIR).filter((x) => x.endsWith(".mjs")).sort()) h.update(`yatay/${f}`).update(fs.readFileSync(path.join(LONG_DIR, f)));
   h.update(fs.readFileSync(path.join(ROOT, "data/app/words.json")));
   for (const f of ["tts-map.json", "tts-hold.json"]) {
     const p = path.join(TTS, f);
@@ -70,13 +89,14 @@ async function importEpisodes(force = false) {
   if (!force && prev.hash === src) return;
   const errors = [];
   const counts = { new: 0, updated: 0, conflict: 0, archived: 0, same: 0 };
-  // bölüm bölüm yükle: biri bozuksa ötekiler aktarılsın
+  // bölüm bölüm yükle: biri bozuksa ötekiler aktarılsın (yatay bölümler "yatay-" önekli kimlikle)
   const ids = fs.readdirSync(EP_DIR).filter((x) => x.endsWith(".mjs")).map((x) => x.slice(0, -4)).sort();
+  const longIds = fs.existsSync(LONG_DIR) ? fs.readdirSync(LONG_DIR).filter((x) => x.endsWith(".mjs")).map((x) => `yatay-${x.slice(0, -4)}`).sort() : [];
   const seen = [];
-  for (const id of ids) {
+  for (const id of [...ids, ...longIds]) {
     let ep;
     try {
-      ep = (await loadEpisodes([id])).episodes[0];
+      ep = id.startsWith("yatay-") ? (await loadLong([id]))[0] : (await loadEpisodes([id])).episodes[0];
     } catch (e) {
       errors.push(`${id}: ${e.message}`);
       seen.push(id); // yüklenemedi diye arşivlenmesin
@@ -90,9 +110,9 @@ async function importEpisodes(force = false) {
       await client.query("begin");
       if (!cur) {
         await client.query(
-          `insert into social_episodes (id, template, slot, data, revision, spoken, origin, origin_hash, origin_slot, origin_spoken, used, yt_title, origin_yt_title, updated_by)
-           values ($1, $2, $3, $4, 1, $5, $4, $6, $3, $5, $7, $8, $8, 'claude')`,
-          [id, ep.template, ep.slot ?? null, ep.data, JSON.stringify(ep.spoken), hash, JSON.stringify(ep.used), ep.ytTitle],
+          `insert into social_episodes (id, template, format, slot, data, revision, spoken, origin, origin_hash, origin_slot, origin_spoken, used, yt_title, origin_yt_title, updated_by)
+           values ($1, $2, $9, $3, $4, 1, $5, $4, $6, $3, $5, $7, $8, $8, 'claude')`,
+          [id, ep.template, ep.slot ?? null, ep.data, JSON.stringify(ep.spoken), hash, JSON.stringify(ep.used), ep.ytTitle, ep.format === "yatay" ? "yatay" : "dikey"],
         );
         await client.query("insert into social_revisions (episode_id, revision, data, spoken, slot, author, note) values ($1, 1, $2, $3, $4, 'claude', 'depodan')", [id, ep.data, JSON.stringify(ep.spoken), ep.slot ?? null]);
         counts.new++;
@@ -188,11 +208,28 @@ async function spokenOf(browser, template, data) {
   }
 }
 
-async function renderNext() {
+/** Üretim bitti: satır "done", aynı bölümün eski videolarının dosyaları silinir (satır iz olarak kalır). */
+async function finish(job, r, rel, t0) {
+  await q(
+    "update social_renders set status = 'done', progress = 1, finished_at = now(), duration = $2, bytes = $3, lufs = $4, true_peak = $5, dir = $6, error = null where id = $1",
+    [job.id, r.duration, r.bytes, r.lufs, r.truePeak, rel],
+  );
+  const old = await q("select id, dir from social_renders where episode_id = $1 and status = 'done' and id <> $2 and dir is not null", [job.episode_id, job.id]);
+  for (const o of old.rows) {
+    fs.rmSync(path.join(SOCIAL_DIR, o.dir), { recursive: true, force: true });
+    await q("update social_renders set dir = null where id = $1", [o.id]);
+  }
+  log(`✓ #${job.id} ${job.episode_id}: ${r.duration.toFixed(1)} sn, ${(r.bytes / 1e6).toFixed(1)} MB, ${r.lufs} LUFS, tepe ${r.truePeak} dBTP, ${((Date.now() - t0) / 1000).toFixed(0)} sn`);
+}
+
+/** long: yalnız yatay bölümlerin üretimi (ayrı birim), değilse yalnız dikey. */
+async function renderNext(long) {
   const job = (
     await q(
       `update social_renders set status = 'running', started_at = now(), heartbeat_at = now(), progress = 0
-       where id = (select id from social_renders where status = 'queued' order by created_at limit 1 for update skip locked) returning *`,
+       where id = (select r.id from social_renders r join social_episodes e on e.id = r.episode_id
+                   where r.status = 'queued' and (e.format = 'yatay') = $1 order by r.created_at limit 1 for update of r skip locked) returning *`,
+      [long],
     )
   ).rows[0];
   if (!job) return;
@@ -201,37 +238,29 @@ async function renderNext() {
   const browser = await launchBrowser();
   const tmp = path.join(SOCIAL_DIR, "tmp", `r${job.id}`);
   try {
-    const ep = (await q("select template from social_episodes where id = $1", [job.episode_id])).rows[0];
+    const ep = (await q("select template, format from social_episodes where id = $1", [job.episode_id])).rows[0];
     const rev = (await q("select data from social_revisions where episode_id = $1 and revision = $2", [job.episode_id, job.revision])).rows[0];
     if (!ep || !rev) throw new Error("bölüm ya da sürüm bulunamadı");
+    const rel = path.join("out", job.episode_id, `r${job.revision}-${job.id}`);
+    let last = 0;
+    const onProgress = async (f) => {
+      if (Date.now() - last < 1000) return;
+      last = Date.now();
+      const now = new Date();
+      fs.utimesSync(long ? RENDER_LOCK : LOCK, now, now); // kilit tazelemesi: uzun üretimde "kalıntı" sanılmasın
+      await q("update social_renders set progress = $2, heartbeat_at = now() where id = $1", [job.id, Math.round(f * 1000) / 1000]);
+    };
+    if (ep.format === "yatay") {
+      const r = await renderLong(browser, { id: job.episode_id, template: ep.template, data: rev.data }, { dir: path.join(SOCIAL_DIR, rel), tmp, check: true, onProgress });
+      await finish(job, r, rel, t0);
+      return;
+    }
     const spoken = await spokenOf(browser, ep.template, rev.data);
     const { clips, missing } = resolveClips(spoken);
     if (missing.length) throw new Error(`Defne sesi yok: ${missing.join(" · ")}`);
     const html = renderDoc({ template: ep.template, data: rev.data }, clips, tmp);
-    const rel = path.join("out", job.episode_id, `r${job.revision}-${job.id}`);
-    let last = 0;
-    const r = await renderVideo(browser, html, {
-      name: job.episode_id,
-      dir: path.join(SOCIAL_DIR, rel),
-      tmp,
-      check: true,
-      onProgress: async (f) => {
-        if (Date.now() - last < 1000) return;
-        last = Date.now();
-        await q("update social_renders set progress = $2, heartbeat_at = now() where id = $1", [job.id, Math.round(f * 1000) / 1000]);
-      },
-    });
-    await q(
-      "update social_renders set status = 'done', progress = 1, finished_at = now(), duration = $2, bytes = $3, lufs = $4, true_peak = $5, dir = $6, error = null where id = $1",
-      [job.id, r.duration, r.bytes, r.lufs, r.truePeak, rel],
-    );
-    // aynı bölümün eski videoları: dosyalar silinir, satır iz olarak kalır
-    const old = await q("select id, dir from social_renders where episode_id = $1 and status = 'done' and id <> $2 and dir is not null", [job.episode_id, job.id]);
-    for (const o of old.rows) {
-      fs.rmSync(path.join(SOCIAL_DIR, o.dir), { recursive: true, force: true });
-      await q("update social_renders set dir = null where id = $1", [o.id]);
-    }
-    log(`✓ #${job.id} ${job.episode_id}: ${r.duration.toFixed(1)} sn, ${(r.bytes / 1e6).toFixed(1)} MB, ${r.lufs} LUFS, tepe ${r.truePeak} dBTP, ${((Date.now() - t0) / 1000).toFixed(0)} sn`);
+    const r = await renderVideo(browser, html, { name: job.episode_id, dir: path.join(SOCIAL_DIR, rel), tmp, check: true, onProgress });
+    await finish(job, r, rel, t0);
   } catch (e) {
     log(`✗ #${job.id} ${job.episode_id}: ${e.message}`);
     await q("update social_renders set status = 'failed', error = $2, finished_at = now() where id = $1", [job.id, String(e.message).slice(0, 2000)]);
@@ -242,16 +271,19 @@ async function renderNext() {
 }
 
 try {
-  await importEpisodes(process.argv.includes("--force-import"));
-  if (!process.argv.includes("--import")) {
-    await audioRequests();
-    await recoverStale();
-    await renderNext();
+  if (LONG) await renderNext(true);
+  else {
+    await importEpisodes(process.argv.includes("--force-import"));
+    if (!process.argv.includes("--import")) {
+      await audioRequests();
+      await recoverStale();
+      await renderNext(false);
+    }
   }
 } catch (e) {
   log("işçi hatası:", e.stack || e.message);
   process.exitCode = 1;
 } finally {
   await pool.end();
-  fs.rmSync(LOCK, { recursive: true, force: true });
+  fs.rmSync(LONG ? RENDER_LOCK : LOCK, { recursive: true, force: true });
 }

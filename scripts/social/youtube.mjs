@@ -75,6 +75,14 @@ function slotMs(slot) {
 /** youtube.com/shorts/<id>, watch?v=<id>, youtu.be/<id> */
 const videoIdOf = (url) => /(?:shorts\/|[?&]v=|youtu\.be\/)([\w-]{11})/.exec(url || "")?.[1] ?? null;
 const shortUrl = (id) => `https://www.youtube.com/shorts/${id}`;
+/** ISO 8601 süre ("PT11M5S") → saniye. */
+const isoSec = (d) => {
+  const m = String(d || "").match(/^P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/);
+  return m ? (+m[1] || 0) * 86400 + (+m[2] || 0) * 3600 + (+m[3] || 0) * 60 + (+m[4] || 0) : 0;
+};
+/** 3 dakikadan uzun video: uzun video (yatay bölüm); Shorts en çok 3 dk. */
+const isLong = (v) => isoSec(v.contentDetails?.duration) > 180;
+const urlOf = (v) => (isLong(v) ? `https://www.youtube.com/watch?v=${v.id}` : shortUrl(v.id));
 
 async function accessToken(t) {
   const r = await fetch("https://oauth2.googleapis.com/token", {
@@ -109,7 +117,7 @@ async function fetchChannel(get) {
   }
   const videos = [];
   for (let i = 0; i < ids.length; i += 50) {
-    const v = await get(`/videos?part=snippet,status,statistics&id=${ids.slice(i, i + 50).join(",")}`);
+    const v = await get(`/videos?part=snippet,status,statistics,contentDetails&id=${ids.slice(i, i + 50).join(",")}`);
     videos.push(...(v.items || []));
   }
   return { ch, videos };
@@ -148,7 +156,9 @@ async function sync(get) {
   const { ch, videos } = await fetchChannel(get);
   Object.assign(status, { ok: true, username: ch.snippet.customUrl || ch.snippet.title, followers: Number(ch.statistics.subscriberCount), videoCount: Number(ch.statistics.videoCount), error: null, lastSyncAt: new Date().toISOString() });
 
-  const eps = (await q("select id, slot from social_episodes where archived_at is null and slot is not null")).rows.map((r) => ({ id: r.id, slot: r.slot, at: slotMs(r.slot) }));
+  // uzun video (yatay bölüm, 2026-10-13) yalnız yatay bölümle, Short yalnız dikeyle eşleşir: 19:00'daki uzun video
+  // 18:30 Short'unun penceresine (30 dk önce – 3 sa sonra) düşüyor
+  const eps = (await q("select id, slot, format from social_episodes where archived_at is null and slot is not null")).rows.map((r) => ({ id: r.id, slot: r.slot, at: slotMs(r.slot), long: r.format === "yatay" }));
   let rows = (await q(ROW)).rows;
   const now = Date.now();
   // zamanlanmış satırın videosu silindiyse ya da zamanlaması kaldırıldıysa (taslak/gizli) bağ çözülür: yeniden yüklenen
@@ -168,7 +178,7 @@ async function sync(get) {
     const ts = timeOf(v);
     let row = rows.find((r) => r.external_id === v.id || videoIdOf(r.url) === v.id);
     if (!row) {
-      const cand = eps.filter((e) => ts >= e.at - 30 * MIN && ts <= e.at + 3 * HOUR).sort((a, b) => Math.abs(ts - a.at) - Math.abs(ts - b.at))[0];
+      const cand = eps.filter((e) => e.long === isLong(v) && ts >= e.at - 30 * MIN && ts <= e.at + 3 * HOUR).sort((a, b) => Math.abs(ts - a.at) - Math.abs(ts - b.at))[0];
       if (!cand) continue; // planda olmayan video
       const cur = rows.find((r) => r.episode_id === cand.id);
       if (cur && (cur.status === "skipped" || (cur.external_id && cur.external_id !== v.id) || (videoIdOf(cur.url) && videoIdOf(cur.url) !== v.id))) continue;
@@ -180,16 +190,16 @@ async function sync(get) {
     if (isPublic(v) && (row.status !== "published" || row.external_id !== v.id)) {
       await q(
         "update social_posts set status = 'published', external_id = $2, url = coalesce(url, $3), published_at = $4, job = null, updated_by = 'youtube', updated_at = now() where id = $1",
-        [row.id, v.id, shortUrl(v.id), new Date(v.snippet.publishedAt)],
+        [row.id, v.id, urlOf(v), new Date(v.snippet.publishedAt)],
       );
-      log(`✓ yayında: ${row.episode_id} ${shortUrl(v.id)}`);
-      if (row.job?.warnedAt) await telegram(`<b>[BİLGİ] YouTube: geç de olsa yayında</b>\n${esc(row.episode_id)}\n${shortUrl(v.id)}`);
+      log(`✓ yayında: ${row.episode_id} ${urlOf(v)}`);
+      if (row.job?.warnedAt) await telegram(`<b>[BİLGİ] YouTube: geç de olsa yayında</b>\n${esc(row.episode_id)}\n${urlOf(v)}`);
       row.status = "published";
     } else if (isScheduled(v) && row.status !== "scheduled" && row.status !== "published" && row.status !== "skipped") {
-      await q("update social_posts set status = 'scheduled', external_id = $2, url = coalesce(url, $3), updated_by = 'youtube', updated_at = now() where id = $1", [row.id, v.id, shortUrl(v.id)]);
+      await q("update social_posts set status = 'scheduled', external_id = $2, url = coalesce(url, $3), updated_by = 'youtube', updated_at = now() where id = $1", [row.id, v.id, urlOf(v)]);
       log(`zamanlandı: ${row.episode_id} → ${v.status.publishAt}`);
     } else if (!row.external_id) {
-      await q("update social_posts set external_id = $2, url = coalesce(url, $3) where id = $1", [row.id, v.id, shortUrl(v.id)]);
+      await q("update social_posts set external_id = $2, url = coalesce(url, $3) where id = $1", [row.id, v.id, urlOf(v)]);
     }
     if (isPublic(v) && now - ts < METRICS_FOR && now - (row.metrics_at ? row.metrics_at.getTime() : 0) > HOUR - MIN) {
       const s = v.statistics || {};
@@ -228,7 +238,7 @@ async function watchScheduled() {
     const at = slotMs(r.slot);
     if (now < at + WARN_AFTER || now > at + 3 * DAY || r.job?.warnedAt) continue;
     await q("update social_posts set job = $2 where id = $1", [r.id, { ...(r.job || {}), warnedAt: new Date().toISOString(), error: "saatinde yayına çıkmadı (YouTube Studio'da zamanlamaya ve görünürlüğe bak)" }]);
-    await telegram(`<b>[UYARI] YouTube: zamanlanan Short saatinde yayına çıkmadı</b>\n${esc(r.episode_id)} (${esc(r.slot)} Berlin, ${Math.round((now - at) / MIN)} dk geçti)\nYouTube Studio'da zamanlamaya ve görünürlüğe bak. Çıkınca kendiliğinden "Yayında" olur.\n${r.url ? `${esc(r.url)}\n` : ""}https://www.lernomi.app/studio/${esc(r.episode_id)}`);
+    await telegram(`<b>[UYARI] YouTube: zamanlanan video saatinde yayına çıkmadı</b>\n${esc(r.episode_id)} (${esc(r.slot)} Berlin, ${Math.round((now - at) / MIN)} dk geçti)\nYouTube Studio'da zamanlamaya ve görünürlüğe bak. Çıkınca kendiliğinden "Yayında" olur.\n${r.url ? `${esc(r.url)}\n` : ""}https://www.lernomi.app/studio/${esc(r.episode_id)}`);
     log(`uyarı: ${r.episode_id} saatinde yayında değil`);
   }
 }

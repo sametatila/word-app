@@ -132,7 +132,7 @@ async function listVideos(token) {
   const out = [];
   let cursor;
   for (let page = 0; page < 10; page++) {
-    const d = await tt("POST", "/video/list/?fields=id,create_time,share_url,view_count,like_count,comment_count,share_count", token, { max_count: 20, ...(cursor ? { cursor } : {}) });
+    const d = await tt("POST", "/video/list/?fields=id,create_time,share_url,view_count,like_count,comment_count,share_count,duration", token, { max_count: 20, ...(cursor ? { cursor } : {}) });
     out.push(...(d.videos || []));
     if (!d.has_more) break;
     cursor = d.cursor;
@@ -182,7 +182,9 @@ async function syncApi(t) {
   const videos = await listVideos(t.accessToken);
   Object.assign(status, { ok: true, username: u.display_name, followers: u.follower_count, videoCount: u.video_count, error: null, lastSyncAt: new Date().toISOString() });
 
-  const eps = (await q("select id, slot from social_episodes where archived_at is null and slot is not null")).rows.map((r) => ({ id: r.id, slot: r.slot, at: slotMs(r.slot) }));
+  // 3 dakikadan uzun video (yatay denemesi, 2026-10-13) yalnız yatay bölümle, kısa video yalnız dikeyle eşleşir:
+  // 19:00'daki uzun video 18:30 Short'unun penceresine düşüyor
+  const eps = (await q("select id, slot, format from social_episodes where archived_at is null and slot is not null")).rows.map((r) => ({ id: r.id, slot: r.slot, at: slotMs(r.slot), long: r.format === "yatay" }));
   const rows = (await q("select id, episode_id, status, url, external_id, metrics_at from social_posts where platform = 'tiktok'")).rows;
   const byExt = new Map(rows.filter((r) => r.external_id).map((r) => [r.external_id, r]));
   const byUrlId = new Map(rows.filter((r) => videoIdOf(r.url)).map((r) => [videoIdOf(r.url), r]));
@@ -191,7 +193,8 @@ async function syncApi(t) {
     const ts = v.create_time * 1000;
     let row = byExt.get(v.id) || byUrlId.get(v.id);
     if (!row) {
-      const cand = eps.filter((e) => ts >= e.at - 30 * MIN && ts <= e.at + 3 * HOUR).sort((a, b) => Math.abs(ts - a.at) - Math.abs(ts - b.at))[0];
+      const long = (v.duration ?? 0) > 180;
+      const cand = eps.filter((e) => e.long === long && ts >= e.at - 30 * MIN && ts <= e.at + 3 * HOUR).sort((a, b) => Math.abs(ts - a.at) - Math.abs(ts - b.at))[0];
       if (!cand) continue; // planda olmayan video
       const cur = rows.find((r) => r.episode_id === cand.id);
       if (cur?.external_id && cur.external_id !== v.id) continue; // bölüm başka videoyla eşleşmiş

@@ -151,9 +151,9 @@ async function refreshToken(t, status) {
 }
 
 // ---------- eşitleme ----------
-/** Planlı bölümler: saat → bölüm. */
+/** Planlı bölümler: saat → bölüm. Yalnız dikey: yatay (YouTube uzun video) Instagram'a girmez. */
 async function episodesBySlot() {
-  const rows = (await q("select id, slot from social_episodes where archived_at is null and slot is not null")).rows;
+  const rows = (await q("select id, slot from social_episodes where archived_at is null and slot is not null and format = 'dikey'")).rows;
   return rows.map((r) => ({ id: r.id, slot: r.slot, at: slotMs(r.slot) }));
 }
 
