@@ -160,6 +160,27 @@ const PERSON: Record<string, string> = {
 };
 const persons = (ws: string[]) => new Set(ws.map((w) => PERSON[w]).filter(Boolean));
 
+/**
+ * ÖZNENİN KİŞİSİ (panel #104): "Wann kann ich es Ihnen bringen? → Wann können Sie es mir
+ * bringen? (Pronomen-Fehler)". İki tarafta da "ben" ve "siz" var, kişi kümesi aynı; ama
+ * özne değişmiş, yani düzeltme cümlenin anlamını tersine çeviriyor. Yalnız belirsiz olmayan
+ * özne zamirleri: ich, du, wir, er ve cümle başında olmayan büyük "Sie" (sie/es/ihr hem
+ * özne hem nesne olabildiği için sayılmıyor).
+ */
+function subjectPerson(text: string): string | null {
+  const toks = text.split(/[^\p{L}]+/u).filter(Boolean);
+  for (let i = 0; i < toks.length; i++) {
+    const t = toks[i];
+    const low = t.toLocaleLowerCase("de-DE");
+    if (low === "ich") return "1s";
+    if (low === "du") return "2s";
+    if (low === "wir") return "1p";
+    if (low === "er") return "3m";
+    if (t === "Sie" && i > 0) return "F";
+  }
+  return null;
+}
+
 /** Hitap biçimleri: "du" ailesi ve büyük harfli "Sie" ailesi (cümle başındaki "Sie" belirsiz, sayılmaz). */
 const DU_FORM = /(?<![\p{L}])(du|dich|dir|dein\p{L}*)(?![\p{L}])/iu;
 const SIE_FORM = /(?<![\p{L}])(Ihnen|Ihre?\p{L}*)(?![\p{L}])|(?<![.!?]\s*|^\s*)(?<![\p{L}])Sie(?![\p{L}])/u;
@@ -171,7 +192,7 @@ const ORDER_LABEL = /v2|verb[\s\u2010-\u2014-]*(zweit|stellung|position)|end[\s\
  * Dilbilgisi değil, üslup ya da içerik olduğunu söyleyen etiketler. "Wortwahl"
  * bilerek yok: yanlış sözcük gerçek hata olabilir (kısaltma açma ayrıca yakalanıyor).
  */
-const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik|kontext|context|logik|logic|semantik|semantic|gender|geschlecht|\brole\b|\brolle\b|daha\s+(uygun|doğal|iyi)|uygundur|angemessen|besser\b/i;
+const STYLE_LABEL = /pr[äa]zision|genauigkeit|inhalt|content|stil\b|style|ausdruck|nat[üu]rlich|formulierung|klarheit|umgangssprach|idiomati|üslup|anlam\s+düzelt|i[çc]erik|kontext|context|logik|logic|semantik|semantic|gender|geschlecht|\brole\b|\brolle\b|daha\s+(uygun|doğal|iyi)|uygundur|angemessen|besser\b|konvention|convention|gelenek/i;
 
 /**
  * GÜNDE EN SIK ÇEKİMLİ FİİLLER — eksiltili cümleyi (fiilsiz parça) tam cümleden ayırmak için
@@ -317,6 +338,20 @@ function swapsDefiniteness(left: string[], right: string[]): boolean {
   return diff === 1;
 }
 
+/**
+ * ZAMİRLİ EDAT ÖBEĞİNİ SİLME (panel #101): "einen Schraubenzieher von Ihnen ausleihen →
+ * einen Schraubenzieher ausleihen (Präpositionalobjekt)". Sağ taraf, soldan bitişik bir
+ * "edat + kişi zamiri" çıkarılmış hâli: öbek fazlalık olabilir ama dilbilgisi hatası değil.
+ * Tek sözcüklük silme ("nach zu Hause → nach Hause") gerçek hata olabilir, ona dokunulmuyor.
+ */
+const PRONOUN_OBJ = new Set(["mir", "dir", "ihm", "ihr", "uns", "euch", "ihnen", "mich", "dich", "ihn"]);
+function dropsPronounPhrase(left: string[], right: string[]): boolean {
+  if (left.length !== right.length + 2) return false;
+  let i = 0;
+  while (i < right.length && left[i] === right[i]) i++;
+  return PREP.has(left[i]) && PRONOUN_OBJ.has(left[i + 1]) && left.slice(i + 2).join(" ") === right.slice(i).join(" ");
+}
+
 /** "Uni → Universität": tek sözcük, sağdaki soldakiyle başlıyor ve yalnız uzuyor. */
 function expandsAbbreviation(left: string[], right: string[]): boolean {
   if (left.length !== right.length) return false;
@@ -382,6 +417,10 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
   if (sie(parts[0]) && !pl.has("2s")) pl.add("F");
   if (sie(rightText) && !pr.has("2s") && !pl.has("2s")) pr.add("F");
   if (pl.size && pr.size && [...pl].sort().join() !== [...pr].sort().join()) return { keep: false, reason: "person_change" };
+  const sl = subjectPerson(parts[0]);
+  const sr = subjectPerson(rightText);
+  // du ↔ Sie hitap kuralına kalıyor (yukarıda, yalnız sahnenin hitabı biliniyorsa).
+  if (sl && sr && sl !== sr && !(new Set([sl, sr]).has("2s") && new Set([sl, sr]).has("F"))) return { keep: false, reason: "person_change" };
 
   // Sıra kuralı yazılmış ama değişiklik bir yer değiştirme değil.
   if (ORDER_LABEL.test(label) && [...left].sort().join(" ") !== [...right].sort().join(" ")) {
@@ -398,6 +437,7 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
     addsFuturOnly(left, right, label) ||
     completesFragment(left, right) ||
     swapsModal(left, right) ||
+    dropsPronounPhrase(left, right) ||
     (lang === "de" && addsDefiniteToBareNoun(left, right, (w) => w in NOUN_GENDER))
   ) {
     return { keep: false, reason: "style" };
@@ -412,12 +452,21 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
  */
 export function filterCorrectionLines(text: string, said: string, ctx: FixContext = {}): { text: string; dropped: string[] } {
   const dropped: string[] = [];
-  const kept = breakInlineMarkers(text).split("\n").filter((line) => {
+  const kept = joinBareMarker(breakInlineMarkers(text)).split("\n").filter((line) => {
     const verdict = judgeLine(line, said, ctx);
     if (!verdict.keep) dropped.push(verdict.reason);
     return verdict.keep;
   });
   return { text: kept.map((l) => (ctx.lang === "en" ? l : repairModelSentence(l))).join("\n"), dropped };
+}
+
+/**
+ * TEK BAŞINA İŞARET SATIRI (panel #107): model "[FIX]" yazıp düzeltmeyi alt satıra
+ * koyabiliyor. İşaret satırı boş bir düzeltme, alt satır da düz rol metni sayılıyor ve
+ * süzgeç düzeltmeyi hiç görmüyordu ("X → X (V2-Regel)" öğrenciye gitti). İkisi tek satır.
+ */
+function joinBareMarker(text: string): string {
+  return text.replace(/^([ \t]*\[FIX\])[ \t]*\n[ \t]*/gm, "$1 ");
 }
 
 /** Satır düzeltme satırı değilse dokunulmuyor; ayrıştırıcıyla aynı tanım (`trim` + işaret). */
@@ -742,6 +791,11 @@ export async function* guardCorrections(
           break;
         }
         rest = rest.slice(nl + 1);
+        // Yalnız işaretten oluşan satır alt satırla birleşiyor (bkz. `joinBareMarker`).
+        if (lead.trim() === CORRECTION_MARK) {
+          held = held.trimEnd() + " ";
+          continue;
+        }
         if (lead && !isMarker(held)) {
           echoCheck = false;
           if (maybeEcho && words(held).join(" ") === saidNorm) {

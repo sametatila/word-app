@@ -408,9 +408,22 @@ async function streamTests() {
   let pbad = 0;
   for (let i = 0; i <= PERF.length; i++) if ((await collect([PERF.slice(0, i), PERF.slice(i)].filter(Boolean), "Ich gehe gestern in den Park.")) !== PERF_OK) pbad++;
   check("öneri ve 'doğrusu' her bölmede onarılıyor", pbad === 0, `${pbad} · ${JSON.stringify(await collect([...PERF], "Ich gehe gestern in den Park."))}`);
+  // Tek başına "[FIX]" satırı alt satırla birleşiyor (panel #107), her bölmede.
+  const BARE = "[FIX]\nDer Wasserhahn tropft seit einer Woche → Der Wasserhahn tropft seit einer Woche (V2-Regel)\nDas ist ärgerlich.\n[SAY] Ja.";
+  let bbad = 0;
+  for (let i = 0; i <= BARE.length; i++) if ((await collect([BARE.slice(0, i), BARE.slice(i)].filter(Boolean), "Der Wasserhahn tropft seit einer Woche.")) !== "Das ist ärgerlich.\n[SAY] Ja.") bbad++;
+  check("tek başına [FIX] satırı: aynı iki taraf her bölmede siliniyor", bbad === 0, `${bbad}`);
   const r2 = await role([[...ONLY], [...ONLY]]);
   check("iki denemede de rol metni yok → öneriler yine gidiyor", r2.out === ONLY && r2.tries === 2, JSON.stringify(r2));
 }
+
+// Panel #101 #104 #106 (2026-10-13): kesin olarak düzeltme olmayan üç biçim; gerçek düzeltmeler kalıyor.
+check("özne değişiyor (ich…Ihnen → Sie…mir) → siliniyor", !judgeCorrection("Wann kann ich es Ihnen bringen? → Wann können Sie es mir bringen? (Pronomen-Fehler)", "Es ist ein kleines Paket. Wann kann ich es Ihnen bringen?").keep);
+check("özne aynı, nesne hâli düzeliyor (mich → mir) → kalıyor", judgeCorrection("Können Sie mich helfen → Können Sie mir helfen (Dativ)", "Können Sie mich helfen?").keep);
+check("Konvention etiketi → üslup", !judgeCorrection("nach zehn Uhr → nach 22 Uhr (Uhrzeit-Konvention)", "Es ist die Musik, besonders nach zehn Uhr.").keep);
+check("zamirli edat öbeğini silme → üslup", !judgeCorrection("einen Schraubenzieher von Ihnen ausleihen → einen Schraubenzieher ausleihen (Präpositionalobjekt)", "Kann ich mir einen Schraubenzieher von Ihnen ausleihen?").keep);
+check("tek sözcük silme (nach zu Hause) → kalıyor", judgeCorrection("nach zu Hause → nach Hause (Präposition)", "Ich gehe nach zu Hause.").keep);
+check("öbek değil artikelli isim silme → kalıyor", judgeCorrection("mit dem Bus mit dem Auto → mit dem Auto (Doppelung)", "Ich fahre mit dem Bus mit dem Auto.").keep);
 
 streamTests().then(() => {
   console.log(fails === 0 ? "\ntamam: hepsi geçti" : `\nKALDI: ${fails}`);
