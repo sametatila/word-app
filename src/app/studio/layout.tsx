@@ -8,6 +8,7 @@ import { studioGate } from "@/lib/studio-auth";
 import { requestBadge } from "@/lib/studio-requests";
 import { APP_LINKS } from "@/lib/admin-links";
 import { Linkify } from "../admin/_ui/ui";
+import { StudioNav } from "./nav";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: { default: "Stüdyo", template: "%s · Stüdyo" }, robots: { index: false, follow: false } };
@@ -45,14 +46,7 @@ export default async function StudioLayout({ children }: { children: React.React
             <span className="text-strong">Lernomi</span>
             <span className="muted text-caption">Stüdyo</span>
           </Link>
-          <nav className="flex min-w-0 items-center gap-1 overflow-x-auto text-caption whitespace-nowrap">
-            <Link href="/studio" className="rounded-tile px-3 py-1.5 hover:bg-[var(--surface-2)]">Genel bakış</Link>
-            <Link href="/studio/takvim" className="rounded-tile px-3 py-1.5 hover:bg-[var(--surface-2)]">Takvim</Link>
-            <Link href="/studio/requests" className="flex items-center gap-1.5 rounded-tile px-3 py-1.5 hover:bg-[var(--surface-2)]">
-              Talepler
-              {badge ? <span className="grid h-5 min-w-5 place-items-center rounded-full px-1 text-micro on-fill" style={{ background: "var(--color-flame)" }}>{badge}</span> : null}
-            </Link>
-          </nav>
+          <StudioNav badge={badge} />
           <span className="flex-1" />
           {gate.role === "admin" ? (
             <Link href="/admin" className="muted hidden text-caption underline-offset-2 hover:underline sm:inline">Yönetim paneli</Link>
