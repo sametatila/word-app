@@ -183,7 +183,7 @@ export const deA2B07: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Morgen früh fahren wir weg",
-          accept: ["Wir fahren morgen früh weg"],
+          accept: ["Wir fahren morgen früh weg", "Morgen früh fahren wir los", "Wir fahren morgen früh los"],
           hint: [
             tr("Zaman ifadesi başta olduğu için özne fiilin arkasına düşer ve ayrılabilen ön ek sona gider:"),
             de("Morgen früh fahren wir weg."),
