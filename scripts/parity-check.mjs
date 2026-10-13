@@ -810,6 +810,10 @@ console.log("\n" + C.b + "17. CUMLE HAKEMI" + C.off);
      dosyasi, iki kopya birebir. Ayrisirsa ayni ipucu bir platformda okunur,
      otekinde okunmaz. */
   sameList("ipucu konu sozcukleri", read("mobile/src/lib/hintCues.ts").split("\n"), read("src/lib/hint-cues.ts").split("\n"));
+  /* Zarfla baslayan hedefin ozneyle baslayan esi (panel #89): hakemin aday listesi iki
+     platformda ayni olmali. Import ve ayna satiri disinda govde birebir. */
+  const v2Body = (f) => { const l = read(f).split("\n"); return l.slice(l.findIndex((x) => x.startsWith("const ADVERBS"))); };
+  sameList("v2 esleri", v2Body("mobile/src/lib/v2Variants.ts"), v2Body("src/lib/v2-variants.ts"));
 
   /* Kisa yazili cevap (`written`: bosluk doldurma, kisa cevap, dikte, form)
      ayni yazim olcutunden geciyor: tek harf sapma YALNIZ dilbilgisel degilse

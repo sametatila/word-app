@@ -75,6 +75,10 @@ const SKIP = [
   /* Üretim ipucunun konusunu tanıyan sözcükler (QA F-0020): ekrana basılmıyor,
      ipucu metnini ölçüyor. Mobil `lib/hintCues.ts` aynı; kapısı `check:parity`. */
   "lib/hint-cues.ts",
+  /* Zarfla başlayan cümlenin özneyle başlayan eşi için Almanca zarf listesi (panel #89):
+     ekrana basılmıyor, hakemin aday listesini genişletiyor. Mobil `lib/v2Variants.ts`
+     aynı; kapısı `check:parity` "v2 esleri". */
+  "lib/v2-variants.ts",
   "lib/numbers.ts",
   "lib/moderation.ts",
   /*

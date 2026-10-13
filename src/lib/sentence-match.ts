@@ -4,6 +4,7 @@ import { foldEnglishSpelling } from "@/lib/en-spelling";
 import { foldNumbers } from "@/lib/numbers";
 import type { TargetLang } from "@/lib/courses";
 import { FORM_CUES, ORDER_CUES } from "@/lib/hint-cues";
+import { withV2Variants } from "@/lib/v2-variants";
 
 /**
  * Cümle eşleştirme — "Çevir" turunun hakemi (plan WP-10).
@@ -273,7 +274,8 @@ function compare(typedRaw: string, targetRaw: string, lang: TargetLang, loose: b
 export type MatchOptions = { loose?: boolean };
 
 export function matchSentence(typed: string, target: string, alternatives: string[] = [], lang: TargetLang = "de", opts: MatchOptions = {}): SentenceMatch {
-  const candidates = [target, ...alternatives.filter((a) => a && a.trim())];
+  /* Zarfla başlayan hedefin özneyle başlayan eşi de aday (bkz. `v2Variants`). */
+  const candidates = withV2Variants([target, ...alternatives.filter((a) => a && a.trim())], lang);
   const typedShown = showTokens(typed);
   let best: { cand: string; c: ReturnType<typeof compare> } | null = null;
   for (const cand of candidates) {

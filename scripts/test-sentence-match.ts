@@ -3,11 +3,12 @@
  * Veritabanı yok; `lib/sentence-match` saf.
  */
 import { diffLines, foldSentence, hintFocus, matchSentence, orderOnly, produceFeedback, produceMiss, typoOnly, withModelErrors } from "../src/lib/sentence-match";
-import { foldCompare } from "../src/components/games/types";
+import { foldCompare, spokenMatches } from "../src/components/games/types";
 import { classifyOrder, levenshtein } from "../src/lib/errors";
 import { judgeTyped, arrangedRescuable } from "../src/lib/typed-answer";
 import { arrangedAccepted, orderAlternatives, sameTiles } from "../src/lib/arrange";
 import { produceSource, quotedSource } from "../src/lib/conversations/produce-source";
+import { v2Variants } from "../src/lib/v2-variants";
 
 let failures = 0;
 function check(name: string, cond: boolean, detail = "") {
@@ -209,6 +210,17 @@ check("edat öbeği: fiil öbekten sonra", classifyOrder(toks("Am Montag ich hab
 check("artikel öbeği: fiil isimden sonra", classifyOrder(toks("Der Mann heute kommt"), toks("Der Mann kommt heute"), ".") === "verb_position");
 check("sıfatlı öbek", classifyOrder(toks("Am nächsten Montag ich habe Zeit"), toks("Am nächsten Montag habe ich Zeit"), ".") === "verb_position");
 check("zamirle başlayan eski yol", classifyOrder(toks("Heute ich gehe ins Kino"), toks("Heute gehe ich ins Kino"), ".") === "verb_position");
+
+// Zarfla başlayan hedefin özneyle başlayan eşi (panel #89, QA F-0076).
+check("eş: Nachts brauche ich … → Ich brauche nachts …", v2Variants("Nachts brauche ich etwas Ruhe", "de")[0] === "Ich brauche nachts etwas Ruhe");
+check("eş: ters yön, noktalama korunur", v2Variants("Ich habe leider keine Zeit.", "de")[0] === "Leider habe ich keine Zeit.");
+check("eş: Sie büyük kalır", v2Variants("Sonst müssen Sie warten", "de")[0] === "Sie müssen sonst warten");
+check("eş yok: soru", v2Variants("Morgen kommst du?", "de").length === 0);
+check("eş yok: listede olmayan ilk öğe", v2Variants("Am Montag habe ich Zeit", "de").length === 0);
+check("eş yok: İngilizce", v2Variants("Tomorrow I go home", "en").length === 0);
+check("hakem: öznesi başta doğru cevap exact", matchSentence("Ich brauche nachts etwas Ruhe.", "Nachts brauche ich etwas Ruhe", [], "de").verdict === "exact");
+check("hakem: V2 bozuk yine geçmez", matchSentence("Nachts ich brauche etwas Ruhe.", "Nachts brauche ich etwas Ruhe", [], "de").verdict !== "exact");
+check("ses: öznesi başta doğru cevap", spokenMatches(["ich brauche nachts etwas ruhe"], ["Nachts brauche ich etwas Ruhe"], "de"));
 
 console.log(failures === 0 ? "\nTÜM TESTLER GEÇTİ" : `\n${failures} TEST BAŞARISIZ`);
 process.exit(failures === 0 ? 0 : 1);

@@ -5,6 +5,7 @@
 import { currentTargetLang } from "./courses";
 import { currentLang, t } from "./i18n";
 import { foldCompare, foldLetters } from "./textFold";
+import { withV2Variants } from "./v2Variants";
 
 /**
  * Hedef dilin tanımlıkları — eşleştirmede atılır ki "die Katze" ile "Katze"
@@ -122,7 +123,7 @@ export function spokenMatches(heard: string[], candidates: string[]): boolean {
     if (f) return f;
     return (s || "").toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US").replace(/[.,!?;:"'’]/g, " ").replace(/\s+/g, " ").trim();
   };
-  const forms = candidates.flatMap(acceptedForms).map(foldKeep).filter(Boolean);
+  const forms = withV2Variants(candidates, lang).flatMap(acceptedForms).map(foldKeep).filter(Boolean);
   if (!forms.length) return false;
   // Boşluktan bağımsız ikinci biçim: tanıyıcı Almanca bileşikleri ayırıyor
   // ("Anrufbeantworter" → "Anruf Beantworter", havuzda 2313 uzun bileşik) ve

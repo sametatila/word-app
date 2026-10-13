@@ -118,6 +118,11 @@ const SKIP_CONTENT = [
   // Webde `src/lib/hint-cues.ts` (web tarayıcısının SKIP listesinde).
   // Kapısı: `check:parity` "ipucu konu sozcukleri".
   "lib/hintCues.ts",
+  // Zarfla başlayan cümlenin özneyle başlayan eşi için Almanca zarf listesi
+  // (panel #89) — ekrana basılmıyor, hakemin aday listesini genişletiyor.
+  // Webde `src/lib/v2-variants.ts` (web tarayıcısının SKIP listesinde).
+  // Kapısı: `check:parity` "v2 esleri".
+  "lib/v2Variants.ts",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
 /**

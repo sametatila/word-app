@@ -8,6 +8,7 @@ import { foldNumbers } from "@/lib/numbers";
 import { foldEnglishSpelling } from "@/lib/en-spelling";
 import { usageCodes } from "@/lib/usage";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
+import { withV2Variants } from "@/lib/v2-variants";
 
 export type GameResult = {
   wordId: number;
@@ -376,7 +377,7 @@ const CONTAINS_MIN = 3;
 const TIGHT_CONTAINS_MIN = 12;
 
 export function spokenMatches(heard: string[], candidates: string[], lang: TargetLang = currentTargetLang()): boolean {
-  const forms = candidates
+  const forms = withV2Variants(candidates, lang)
     .flatMap((c) => acceptedForms(c, lang))
     .map((f) => foldKeep(f, lang))
     .filter(Boolean);
