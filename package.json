@@ -154,6 +154,8 @@
     "social:render": "node scripts/social/render.mjs",
     "social:plan": "node scripts/social/plan.mjs",
     "social:texts": "node scripts/social/texts.mjs",
+    "social:yatay": "node scripts/social/yatay/arac.mjs",
+    "social:yatay:render": "node scripts/social/yatay/uret.mjs",
     "db:check": "tsx scripts/schema-check.ts",
     "db:verify": "tsx scripts/verify-live.ts",
     "test:chat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/chat-eval.ts",
