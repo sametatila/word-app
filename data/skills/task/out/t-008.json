@@ -18,7 +18,7 @@
  { "tr": "„es gibt“ sonrasındaki hâli düzelt.", "kind": "rewrite.prompt", "en": "Correct the case after „es gibt“." },
  { "tr": "Cümleyi düzelt: burada hareket var.", "kind": "rewrite.prompt", "en": "Correct the sentence: there is movement here." },
  { "tr": "Tek yön bilet isteğini gidiş dönüş bilet isteğine dönüştür.", "kind": "rewrite.prompt", "en": "Turn the request for a one-way ticket into a request for a round-trip ticket." },
- { "tr": "Cümleyi „seit“ ile süre bildiren biçime dönüştür: hâlâ orada oturuyorsun.", "kind": "rewrite.prompt", "en": "Turn the sentence into a duration form with „seit“: you still live there." },
+ { "tr": "Cümleyi „seit“ ile süre bildiren biçime dönüştür: hâlâ burada oturuyorum.", "kind": "rewrite.prompt", "en": "Turn the sentence into a duration form with „seit“: I still live here." },
  { "tr": "İki cümleyi je-desto ile birleştir.", "kind": "rewrite.prompt", "en": "Join the two sentences with je-desto." },
  { "tr": "İlgi cümlesindeki edatı yerine koy.", "kind": "rewrite.prompt", "en": "Put the preposition into the relative clause." },
  { "tr": "Sayılardan sonraki isimleri düzelt.", "kind": "rewrite.prompt", "en": "Correct the nouns after the numbers." },

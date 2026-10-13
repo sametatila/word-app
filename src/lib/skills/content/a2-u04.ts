@@ -301,12 +301,12 @@ export const a2U04: SkillExercise[] = [
         kind: "build",
         tr: "Beş yıldır arkadaşız.",
         answer: "Wir sind seit fünf Jahren befreundet",
-        alternatives: ["Seit fünf Jahren sind wir befreundet"],
+        alternatives: ["Seit fünf Jahren sind wir befreundet", "Wir sind seit fünf Jahren Freunde", "Seit fünf Jahren sind wir Freunde"],
         hint: "Yine süren bir durum: „seit“ + şimdiki zaman. Sıfat yüklem olduğu için ek almaz.",
       },
       {
         kind: "rewrite",
-        prompt: "Cümleyi „seit“ ile süre bildiren biçime dönüştür: hâlâ orada oturuyorsun.",
+        prompt: "Cümleyi „seit“ ile süre bildiren biçime dönüştür: hâlâ burada oturuyorum.",
         source: "Vor einem Jahr bin ich eingezogen.",
         answer: "Ich wohne seit einem Jahr hier.",
         alternatives: [
