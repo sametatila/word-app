@@ -610,6 +610,13 @@
       "when": 1791550000000,
       "tag": "0086_social_post_job",
       "breakpoints": true
+    },
+    {
+      "idx": 87,
+      "version": "7",
+      "when": 1791560000000,
+      "tag": "0087_social_stats",
+      "breakpoints": true
     }
   ]
 }
