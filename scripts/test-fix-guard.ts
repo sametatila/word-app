@@ -423,6 +423,10 @@ check("özne aynı, nesne hâli düzeliyor (mich → mir) → kalıyor", judgeCo
 check("Konvention etiketi → üslup", !judgeCorrection("nach zehn Uhr → nach 22 Uhr (Uhrzeit-Konvention)", "Es ist die Musik, besonders nach zehn Uhr.").keep);
 check("zamirli edat öbeğini silme → üslup", !judgeCorrection("einen Schraubenzieher von Ihnen ausleihen → einen Schraubenzieher ausleihen (Präpositionalobjekt)", "Kann ich mir einen Schraubenzieher von Ihnen ausleihen?").keep);
 check("tek sözcük silme (nach zu Hause) → kalıyor", judgeCorrection("nach zu Hause → nach Hause (Präposition)", "Ich gehe nach zu Hause.").keep);
+check("V2 etiketi ama fiil yerinde → siliniyor", !judgeCorrection("Ab zehn Uhr abends ist es wirklich zu laut → Ab abends zehn Uhr ist es wirklich zu laut (V2-Regel)", "Ab zehn Uhr abends ist es wirklich zu laut.").keep);
+check("V2: fiil gerçekten taşınıyor → kalıyor", judgeCorrection("Am Montag ich habe Zeit → Am Montag habe ich Zeit (V2-Regel)", "Am Montag ich habe Zeit.").keep);
+check("fehlt + Nominativ'e Akkusativ düzeltmesi → siliniyor", !judgeCorrection("ein Schraubenzieher → einen Schraubenzieher (Akkusativ)", "Ich baue ein Regal auf, aber mir fehlt ein Schraubenzieher.").keep);
+check("brauchen + Akkusativ düzeltmesi → kalıyor", judgeCorrection("ein Schraubenzieher → einen Schraubenzieher (Akkusativ)", "Ich brauche ein Schraubenzieher.").keep);
 check("öbek değil artikelli isim silme → kalıyor", judgeCorrection("mit dem Bus mit dem Auto → mit dem Auto (Doppelung)", "Ich fahre mit dem Bus mit dem Auto.").keep);
 
 streamTests().then(() => {

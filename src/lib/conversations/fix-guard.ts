@@ -352,6 +352,10 @@ function dropsPronounPhrase(left: string[], right: string[]): boolean {
   return PREP.has(left[i]) && PRONOUN_OBJ.has(left[i + 1]) && left.slice(i + 2).join(" ") === right.slice(i).join(" ");
 }
 
+/** Ardından gelen isim öbeğinin nominatif olduğu fiiller ve -en/-n almış belirtme hâli biçimleri. */
+const NOMINATIVE_SLOT = new Set(["ist", "sind", "bin", "bist", "seid", "war", "waren", "wird", "werden", "bleibt", "bleiben", "heisst", "heissen", "fehlt", "fehlen"]);
+const ACC_FORM = new Set(["einen", "den", "keinen", "meinen", "deinen", "seinen", "ihren", "unseren", "euren", "diesen", "welchen"]);
+
 /** "Uni → Universität": tek sözcük, sağdaki soldakiyle başlıyor ve yalnız uzuyor. */
 function expandsAbbreviation(left: string[], right: string[]): boolean {
   if (left.length !== right.length) return false;
@@ -425,6 +429,26 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
   // Sıra kuralı yazılmış ama değişiklik bir yer değiştirme değil.
   if (ORDER_LABEL.test(label) && [...left].sort().join(" ") !== [...right].sort().join(" ")) {
     return { keep: false, reason: "label_mismatch" };
+  }
+  // Sıra kuralı yazılmış, sözcükler yer değiştirmiş ama çekimli fiil yerinden oynamamış
+  // (panel #103: "Ab zehn Uhr abends ist es … → Ab abends zehn Uhr ist es … (V2-Regel)").
+  // V2 ve "fiil sonda" düzeltmeleri hep fiili taşır; taşımayan düzeltmenin gerekçesi yanlış.
+  if (ORDER_LABEL.test(label) && left.length === right.length) {
+    const fin = left.map((w, i) => (FINITE.has(w) ? i : -1)).filter((i) => i >= 0);
+    if (fin.length && fin.every((i) => right[i] === left[i]) && right.every((w, i) => !FINITE.has(w) || left[i] === w)) {
+      return { keep: false, reason: "label_mismatch" };
+    }
+  }
+
+  // "Akkusativ" düzeltmesi ama öbek NOMİNATİF yerde: "sein/werden/bleiben/heißen" ya da
+  // "fehlen"in hemen ardından (panel #99: "mir fehlt ein Schraubenzieher → einen
+  // Schraubenzieher (Akkusativ)"). Orada isim öbeği öznedir ya da yüklem adıdır.
+  if (lang === "de" && /akkusativ|accusative|belirtme/i.test(label) && left.length === right.length) {
+    const diffs = left.map((w, i) => i).filter((i) => left[i] !== right[i]);
+    const at = heard.findIndex((_, k) => left.every((w, j) => heard[k + j] === w));
+    if (diffs.length === 1 && ACC_FORM.has(right[diffs[0]]) && at > 0 && NOMINATIVE_SLOT.has(heard[at - 1])) {
+      return { keep: false, reason: "label_mismatch" };
+    }
   }
 
   if (
