@@ -1592,7 +1592,7 @@ export const deA2B05: Conversation[] = [
         expect: {
           kind: "produce",
           target: "Ich kann frühestens am Freitag kommen",
-          accept: ["Frühestens am Freitag kann ich kommen"],
+          accept: ["Frühestens am Freitag kann ich kommen", "Ich kann am Freitag frühestens kommen", "Am Freitag kann ich frühestens kommen"],
           hint: [
             tr("Zaman zarfı kip fiilinden sonra, asıl fiil sonda:"),
             de("Ich kann frühestens am Freitag kommen."),
