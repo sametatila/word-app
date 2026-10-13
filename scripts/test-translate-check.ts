@@ -109,6 +109,10 @@ check("Und ich trinke … (bağlaç) → geçerli", !v2Broken("Und ich trinke Te
 check("soru hedefi → bakılmaz", !v2Broken("Welche Größe das ist?", "Welche Größe ist das?"));
 check("öznesiz hedef → bakılmaz", !v2Broken("Zum Fest kommen meine Eltern.", "Meine Eltern kommen zum Fest."));
 check("başka fiil → bakılmaz", !v2Broken("Ich habe morgen Zeit.", "Ich kaufe morgen ein."));
+// QA F-0076: kip fiiliyle hedefin fiili sona gidiyor; çekimli fiil yine ikinci.
+check("Zuerst wollen wir … renovieren (kip fiili) → bakılmaz", !v2Broken("Zuerst wollen wir den Fußboden renovieren.", "Zuerst renovieren wir den Fußboden."));
+check("Wir wollen … renovieren (özne başta, kip fiili) → bakılmaz", !v2Broken("Wir wollen den Fußboden renovieren.", "Zuerst renovieren wir den Fußboden."));
+check("Zuerst wir renovieren … (fiil sonda değil) → bozuk", v2Broken("Zuerst wir renovieren den Fußboden.", "Zuerst renovieren wir den Fußboden."));
 
 if (fails) {
   console.log(`\n${fails} başarısız`);

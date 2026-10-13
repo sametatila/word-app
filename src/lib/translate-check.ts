@@ -154,6 +154,10 @@ export function v2Broken(student: string, target: string): boolean {
   const q = s.indexOf(t[p]);
   const v = s.indexOf(verb);
   if (q < 0 || v < 0) return false;
+  /* Hedefin fiili öğrencide SONDAYSA çekimli fiil başka bir kelime olabilir:
+     kip fiili ya da yardımcı fiil ("Zuerst wollen wir den Fußboden renovieren",
+     QA F-0076). Yerelde bilinemiyor, karar modele kalıyor. */
+  if (v === s.length - 1) return false;
   return !((q === 0 && v === 1) || (v >= 1 && v === q - 1));
 }
 
