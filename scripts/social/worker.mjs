@@ -18,6 +18,12 @@
   node scripts/social/worker.mjs --once            (sunucuda: /opt/lernomi/social-worker.sh)
   node scripts/social/worker.mjs --once --import   yalnız aktarım
   node scripts/social/worker.mjs --uzun            yalnız sıradaki yatay üretim (sunucuda: /opt/lernomi/social-render.sh)
+  MAC'TE ÜRETİM (2026-10-14, stüdyoda "Mac'te üret"; Mac `scripts/social/yatay/mac.mjs` ssh ile çağırır,
+  sunucuda /opt/lernomi/social-mac.sh <komut>; kilit almaz):
+    --mac-claim                 Mac görüldü (mac-status.json); sıradaki "mac" işini al → JSON (iş, veri, motor kaynağı)
+    --mac-beat <iş> <0–1>       ilerleme ve kalp atışı
+    --mac-done <iş> <b64 json>  dosyalar SOCIAL_DIR/out/<bölüm>/r<sürüm>-<iş>/ altına yüklendi → "done"
+    --mac-fail <iş> <b64 metin> üretim düştü
 
   Ortam: DATABASE_URL, TTS_OWN_DIR (Defne kayıtları), SOCIAL_DIR (çıktı; varsayılan /opt/lernomi/social),
   PLAYWRIGHT_BROWSERS_PATH (sunucuda Chromium). Aynı anda tek işçi: SOCIAL_DIR/worker.lock.
@@ -35,6 +41,7 @@ import { resolveClips } from "./lib/clips.mjs";
 import { ROOT, TTS } from "./lib/content.mjs";
 import { DIR as LONG_DIR, loadLong } from "./yatay/icerik.mjs";
 import { renderLong } from "./yatay/uret.mjs";
+import { engineSource } from "./yatay/sayfa.mjs";
 
 const SOCIAL_DIR = process.env.SOCIAL_DIR || "/opt/lernomi/social";
 const STALE_MS = 3 * 60_000;
@@ -58,7 +65,8 @@ function takeLock(dir) {
   }
 }
 const LONG = process.argv.includes("--uzun");
-if (!takeLock(LONG ? RENDER_LOCK : LOCK)) process.exit(0);
+const MAC = process.argv.find((a) => a.startsWith("--mac-"));
+if (!MAC && !takeLock(LONG ? RENDER_LOCK : LOCK)) process.exit(0);
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 2 });
 const q = (text, params) => pool.query(text, params);
 
@@ -222,13 +230,65 @@ async function finish(job, r, rel, t0) {
   log(`✓ #${job.id} ${job.episode_id}: ${r.duration.toFixed(1)} sn, ${(r.bytes / 1e6).toFixed(1)} MB, ${r.lufs} LUFS, tepe ${r.truePeak} dBTP, ${((Date.now() - t0) / 1000).toFixed(0)} sn`);
 }
 
+/** Mac komutları (bkz. dosya başı). Çıktı stdout'a JSON. */
+async function macCommand(cmd) {
+  const arg = (i) => process.argv[process.argv.indexOf(cmd) + i];
+  const status = (busy) => fs.writeFileSync(path.join(SOCIAL_DIR, "mac-status.json"), JSON.stringify({ seenAt: new Date().toISOString(), busy }));
+  if (cmd === "--mac-claim") {
+    const job = (
+      await q(
+        `update social_renders set status = 'running', started_at = now(), heartbeat_at = now(), progress = 0
+         where id = (select id from social_renders where status = 'queued' and target = 'mac' order by created_at limit 1 for update skip locked) returning *`,
+      )
+    ).rows[0];
+    const busy = (await q("select 1 from social_renders where status = 'running' and target = 'mac' limit 1")).rowCount > 0;
+    status(busy);
+    if (!job) return console.log("{}");
+    const ep = (await q("select template, format from social_episodes where id = $1", [job.episode_id])).rows[0];
+    const rev = (await q("select data from social_revisions where episode_id = $1 and revision = $2", [job.episode_id, job.revision])).rows[0];
+    if (!ep || !rev || ep.format !== "yatay") {
+      await q("update social_renders set status = 'failed', error = 'Mac: bölüm, sürüm ya da biçim uygun değil', finished_at = now() where id = $1", [job.id]);
+      return console.log("{}");
+    }
+    console.error(`Mac işi aldı: #${job.id} ${job.episode_id} r${job.revision}`);
+    return console.log(JSON.stringify({ id: job.id, episodeId: job.episode_id, revision: job.revision, template: ep.template, data: rev.data, engine: engineSource([ep.template]), dir: path.join("out", job.episode_id, `r${job.revision}-${job.id}`) }));
+  }
+  const id = Number(arg(1));
+  if (!Number.isInteger(id)) throw new Error("iş numarası yok");
+  const job = (await q("select * from social_renders where id = $1 and target = 'mac'", [id])).rows[0];
+  if (!job) throw new Error(`Mac işi yok: ${id}`);
+  if (cmd === "--mac-beat") {
+    status(true);
+    await q("update social_renders set progress = $2, heartbeat_at = now() where id = $1 and status = 'running'", [id, Math.max(0, Math.min(1, Number(arg(2)) || 0))]);
+    return console.log("{}");
+  }
+  if (cmd === "--mac-fail") {
+    status(false);
+    const msg = Buffer.from(String(arg(2) || ""), "base64").toString("utf8").slice(0, 1800);
+    await q("update social_renders set status = 'failed', error = $2, finished_at = now() where id = $1 and status = 'running'", [id, `Mac: ${msg}`]);
+    console.error(`✗ Mac #${id}: ${msg}`);
+    return console.log("{}");
+  }
+  if (cmd === "--mac-done") {
+    status(false);
+    const r = JSON.parse(Buffer.from(String(arg(2) || ""), "base64").toString("utf8"));
+    const rel = path.join("out", job.episode_id, `r${job.revision}-${job.id}`);
+    const mp4 = path.join(SOCIAL_DIR, rel, `${job.episode_id}.mp4`);
+    if (job.status !== "running") throw new Error(`iş artık çalışmıyor (${job.status}); dosyalar silinmedi: ${rel}`);
+    if (!fs.existsSync(mp4) || !fs.existsSync(path.join(SOCIAL_DIR, rel, "kapak.jpg"))) throw new Error(`dosyalar eksik: ${rel}`);
+    await finish(job, { duration: Number(r.duration), bytes: fs.statSync(mp4).size, lufs: Number(r.lufs), truePeak: Number(r.truePeak) }, rel, Date.parse(job.started_at));
+    return console.log("{}");
+  }
+  throw new Error(`bilinmeyen komut: ${cmd}`);
+}
+
 /** long: yalnız yatay bölümlerin üretimi (ayrı birim), değilse yalnız dikey. */
 async function renderNext(long) {
   const job = (
     await q(
       `update social_renders set status = 'running', started_at = now(), heartbeat_at = now(), progress = 0
        where id = (select r.id from social_renders r join social_episodes e on e.id = r.episode_id
-                   where r.status = 'queued' and (e.format = 'yatay') = $1 order by r.created_at limit 1 for update of r skip locked) returning *`,
+                   where r.status = 'queued' and r.target = 'server' and (e.format = 'yatay') = $1 order by r.created_at limit 1 for update of r skip locked) returning *`,
       [long],
     )
   ).rows[0];
@@ -271,7 +331,8 @@ async function renderNext(long) {
 }
 
 try {
-  if (LONG) await renderNext(true);
+  if (MAC) await macCommand(MAC);
+  else if (LONG) await renderNext(true);
   else {
     await importEpisodes(process.argv.includes("--force-import"));
     if (!process.argv.includes("--import")) {
@@ -285,5 +346,5 @@ try {
   process.exitCode = 1;
 } finally {
   await pool.end();
-  fs.rmSync(LONG ? RENDER_LOCK : LOCK, { recursive: true, force: true });
+  if (!MAC) fs.rmSync(LONG ? RENDER_LOCK : LOCK, { recursive: true, force: true });
 }

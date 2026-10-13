@@ -79,12 +79,12 @@ export function engineSource(templates) {
 
 /**
  * Üretim sayfası (1920×1080, kenar boşluğu yok). window.I = Y.mount(...) hazır olunca window.READY. Kapak için
- * window.I.showCover(true).
+ * window.I.showCover(true). engine: motor + şablon kaynağı (Mac'te üretim sunucunun kodunu kullanır).
  */
-export function renderPage({ template, data, clips }) {
+export function renderPage({ template, data, clips, engine = null }) {
   return `<!doctype html><html lang="tr"><head><meta charset="utf-8"><style>${fontCss()}</style><style>html,body{margin:0;background:#000;overflow:hidden}#host{position:fixed;left:0;top:0;width:1920px;height:1080px}</style></head><body><div id="host"></div>
 <script>window.Y={ICON:${JSON.stringify(iconUri())}};window.CLIPS=${esc(JSON.stringify(clips))};window.DATA=${esc(JSON.stringify(data))};window.TEMPLATE=${JSON.stringify(template)};</script>
-<script>${esc(engineSource([template]))}</script>
+<script>${esc(engine || engineSource([template]))}</script>
 <script>
 (async () => {
   try {

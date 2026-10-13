@@ -2488,6 +2488,11 @@ export const socialRenders = pgTable(
     revision: integer("revision").notNull(),
     /** queued · running · done · failed · cancelled */
     status: text("status").notNull().default("queued"),
+    /**
+     * Nerede üretilir: server (sunucu işçisi) · mac (Samet'in Mac'i, yalnız yatay; 2026-10-14, Samet: "Mac'te üret butonu").
+     * Mac `scripts/social/yatay/mac.mjs` ile işi ssh üzerinden alır, üretir, dosyaları sunucuya yükler.
+     */
+    target: text("target").notNull().default("server"),
     requestedBy: text("requested_by"),
     error: text("error"),
     duration: real("duration"),

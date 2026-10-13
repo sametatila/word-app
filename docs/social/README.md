@@ -246,16 +246,29 @@ yalnız metin değişir; değişen metin yeni kayıt ister. Şablonun sabit yaz�
 her yazı düzenlenebilir.
 
 **Ses talebi (bölüm başına tek talep):** editör "Seslendirmeye gönder" der → Telegram + Talepler (ses ve dile göre
-gruplu) → Samet Mac'te `yatay_mac.sh <talep>` → kayıtlar tabloya eklenir, talep kendiliğinden kapanır.
+gruplu) → Samet Mac'te `yatay_mac.sh <talep>` → kayıtlar tabloya eklenir, talep kendiliğinden kapanır. Talep olmadan
+(ör. yeni partinin eksikleri): `yatay_mac.sh --dosya <anahtarlar.txt> <ad>`.
+
+**Türkçe anlatımda Almanca kelime yok** (Türkçe ses bozuk okur): "bu sonla biten" gibi yazılır, Almanca ekranda.
+Kaçınılmazsa (artikeller, "Bürgeramt") `yatay_mac.sh`'ın ALMANCA listesi kelimeyi «…» ile işaretler ve Almanca okutur
+(`kelimeler.synth_mixed`); kayıt anahtarı düz metin. Ortak satırlar (nasıl çalışır, hızlı tekrar, uygulama) bölümler
+arasında aynı metin = aynı kayıt.
 
 **Takvim:** saat serbest (önerilen 19:00 Berlin), günde tek uzun video (hata), art arda aynı seri uyarı; dikey
 kurallarına girmez (saat, tema, 30 gün ortak kelime). Takvimde üç saatin altında "uzun" şeridi. Platform işçileri 3
 dakikadan uzun videoyu yalnız yatay bölümle, kısa videoyu yalnız dikeyle eşler (19:00'daki uzun video 18:30 Short'unun
 penceresine düşüyordu); Instagram yatayı hiç eşlemez.
 
-**Üretim:** sunucuda ayrı birim: `lernomi-social-render.timer` → `/opt/lernomi/social-render.sh` →
-`worker.mjs --uzun` (zaman aşımı 4 sa, `render.lock`). 1920×1080, 30 fps, CRF 18, −14 LUFS; ses Node tarafında karışır
-(kayıtlar zamanlarına, efektler motorla aynı formülle). Mac'te 30 sn ≈ 40 sn; 11 dk'lık video sunucuda ~1 saat.
+**Üretim, iki yol (stüdyoda onay düğmesi seçer):**
+- **Mac'te üret (önerilen, ~15 dk):** iş `social_renders.target = 'mac'`. Mac'te launchd `app.lernomi.yatay-uret`
+  dakikada bir `scripts/social/yatay/mac.mjs`: ssh ile `/opt/lernomi/social-mac.sh --mac-claim` (Mac görüldü →
+  `SOCIAL_DIR/mac-status.json`, stüdyo "Mac açık" der), işi alır, sesleri sunucudan çeker, **sunucunun motor kaynağıyla**
+  üretir (Mac'teki kopya geride kalsa da kare aynı), dosyaları `out/<bölüm>/r<sürüm>-<iş>/`e rsync'ler, `--mac-done`.
+  20 sn'de bir `--mac-beat`; bağlantı koparsa sunucu 3 dk sonra işi "failed" yapar. Mac kapalıysa iş bekler, stüdyoda
+  "Sunucuya al".
+- **Sunucuda üret (~1 sa):** `lernomi-social-render.timer` → `/opt/lernomi/social-render.sh` → `worker.mjs --uzun`
+  (yalnız `target = 'server'`, zaman aşımı 4 sa, `render.lock`). Ölçüm 2026-10-14: 45 sn video 227 sn (≈5×).
+1920×1080, 30 fps, CRF 18, −14 LUFS; ses Node tarafında karışır (kayıtlar zamanlarına, efektler motorla aynı formülle).
 Kapak 1280×720 (YouTube küçük resmi), açıklama: bölümün metni + bölüm listesi (motorun zamanlarından; ilk 0:00, her
 bölüm ≥ 10 sn) + kampanya bağlantısı (`utm_source=youtube&utm_campaign=<bölüm>`) + etiketler. YouTube başlığında
 `#shorts` yok. Son 20 sn bitiş ekranı: soldaki daireye "abone ol", sağdaki 16:9 kutuya "video" öğesi.

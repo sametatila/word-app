@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { studioGate } from "@/lib/studio-auth";
-import { getEpisode, postsFor } from "@/lib/studio";
+import { getEpisode, macStatus, postsFor } from "@/lib/studio";
 import { requestsForEpisode } from "@/lib/studio-requests";
 import { instagramStatus, postView } from "@/lib/social-posts";
 import { AdminDenied } from "../../admin/_ui/ui";
@@ -21,6 +21,6 @@ export default async function StudioEpisodePage({ params, searchParams }: { para
   if (!ep) notFound();
   const tab = sekme === "paylasim" || sekme === "icerik" ? sekme : undefined;
   // yatay (YouTube uzun video): senaryo, 16:9 önizleme, dört karakterin sesleri, YouTube paylaşımı
-  if (ep.format === "yatay") return <LongEditor initial={ep} posts={(await postsFor([id])).map(postView)} role={gate.role} email={gate.email ?? ""} requests={await requestsForEpisode(id)} tab={tab} />;
+  if (ep.format === "yatay") return <LongEditor mac={macStatus()} initial={ep} posts={(await postsFor([id])).map(postView)} role={gate.role} email={gate.email ?? ""} requests={await requestsForEpisode(id)} tab={tab} />;
   return <StudioEditor initial={ep} posts={(await postsFor([id])).map(postView)} igConnected={(await instagramStatus()).connected} role={gate.role} email={gate.email ?? ""} requests={await requestsForEpisode(id)} tab={sekme === "paylasim" || sekme === "icerik" ? sekme : undefined} />;
 }

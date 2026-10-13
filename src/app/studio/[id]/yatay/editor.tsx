@@ -25,9 +25,10 @@ import { Script, VOICE } from "./senaryo";
  */
 
 type Msg = { tone: Tone; text: string } | null;
+type RenderViewLike = { target: "server" | "mac" };
 type Tab = "icerik" | "paylasim";
 
-export function LongEditor({ initial, posts: initialPosts, role, email, requests: initialRequests, tab: initialTab }: { initial: EpisodeDetail; posts: SocialPost[]; role: StudioRole; email: string; requests: StudioRequest[]; tab?: Tab }) {
+export function LongEditor({ initial, posts: initialPosts, role, email, requests: initialRequests, tab: initialTab, mac }: { initial: EpisodeDetail; posts: SocialPost[]; role: StudioRole; email: string; requests: StudioRequest[]; tab?: Tab; mac: { seenAt: string; busy: boolean } | null }) {
   const [tab, setTabState] = useState<Tab>(initialTab ?? (initial.approved && initial.render?.status === "done" && initial.render.hasFiles ? "paylasim" : "icerik"));
   const setTab = useCallback((t: Tab) => {
     setTabState(t);
@@ -109,14 +110,19 @@ export function LongEditor({ initial, posts: initialPosts, role, email, requests
     if (t != null) setFocus((f) => ({ t: (t as number) + 0.05, n: (f?.n ?? 0) + 1 }));
   }, [pv]);
 
-  async function approve() {
+  async function approve(target: "server" | "mac") {
     setBusy(true);
     setMsg(null);
-    const r = await call(`/api/studio/episodes/${ep.id}`, { action: "approve", revision: ep.revision });
+    const r = await call(`/api/studio/episodes/${ep.id}`, { action: "approve", revision: ep.revision, target });
     setBusy(false);
     if (!r.ok) return setMsg({ tone: "bad", text: errorText(r.data) });
     await reload();
-    setMsg({ tone: "ok", text: "Onaylandı: video sunucuda üretiliyor. 12 dakikalık video yaklaşık bir saat sürer; sayfayı kapatabilirsin." });
+    setMsg({ tone: "ok", text: target === "mac" ? "Onaylandı: video Mac'te üretilecek (Mac açıkken bir dakika içinde başlar, 11 dakikalık video ~15 dakika). Sayfayı kapatabilirsin." : "Onaylandı: video sunucuda üretiliyor. 11 dakikalık video yaklaşık bir saat sürer; sayfayı kapatabilirsin." });
+  }
+  async function moveRender(renderId: number, target: "server" | "mac") {
+    const r = await call(`/api/studio/episodes/${ep.id}`, { action: "render_target", renderId, target });
+    if (!r.ok) setMsg({ tone: "bad", text: errorText(r.data) });
+    await reload();
   }
   async function restore(to: number | "origin") {
     setBusy(true);
@@ -218,7 +224,7 @@ export function LongEditor({ initial, posts: initialPosts, role, email, requests
                     <p className="mt-1">Genelde metin kutusuna sığmıyor: kısalt. Saniye sorunun göründüğü sahnenin başı.</p>
                   </Notice>
                 ) : null}
-                <RenderBox ep={ep} blockers={blockers} canApprove={canApprove} busy={busy} onApprove={() => void approve()} onCancel={(id) => void cancel(id)} onShare={() => setTab("paylasim")} />
+                <RenderBox ep={ep} mac={mac} blockers={blockers} canApprove={canApprove} busy={busy} onApprove={(target) => void approve(target)} onMove={(id, target) => void moveRender(id, target)} onCancel={(id) => void cancel(id)} onShare={() => setTab("paylasim")} />
               </div>
             </Panel>
           </div>
@@ -335,27 +341,44 @@ function AudioRequest({ ep, dirty, role, email, requests, onChanged }: { ep: Epi
   );
 }
 
-function RenderBox({ ep, blockers, canApprove, busy, onApprove, onCancel, onShare }: { ep: EpisodeDetail; blockers: string[]; canApprove: boolean; busy: boolean; onApprove: () => void; onCancel: (id: number) => void; onShare: () => void }) {
+/** Mac'in son görülmesi: 3 dakikadan yeniyse açık sayılır (Mac'teki alıcı dakikada bir sorar). */
+function macLabel(mac: { seenAt: string; busy: boolean } | null): { on: boolean; text: string } {
+  if (!mac) return { on: false, text: "Mac henüz hiç bağlanmadı" };
+  const min = Math.round((Date.now() - Date.parse(mac.seenAt)) / 60000);
+  const on = min <= 3;
+  return { on, text: on ? (mac.busy ? "Mac açık, şu an bir video üretiyor" : "Mac açık ve hazır") : `Mac kapalı ya da uykuda (son görülme ${when(mac.seenAt)})` };
+}
+
+function RenderBox({ ep, mac, blockers, canApprove, busy, onApprove, onMove, onCancel, onShare }: { ep: EpisodeDetail; mac: { seenAt: string; busy: boolean } | null; blockers: string[]; canApprove: boolean; busy: boolean; onApprove: (target: "server" | "mac") => void; onMove: (id: number, target: "server" | "mac") => void; onCancel: (id: number) => void; onShare: () => void }) {
   const r = ep.render;
   const old = ep.video && ep.video.revision !== ep.revision ? ep.video : null;
+  const m = macLabel(mac);
+  const where = (x: RenderViewLike) => (x.target === "mac" ? "Mac" : "server");
   return (
     <div className="border-t pt-3" style={{ borderColor: "var(--border)" }}>
-      {!r || r.status === "cancelled" ? (
+      {!r || r.status === "cancelled" || r.status === "failed" ? (
         <div className="space-y-2">
-          <button type="button" className={`${BTN.primary} w-full`} disabled={!canApprove || busy} onClick={onApprove}>Onayla ve videoyu üret</button>
-          <p className="muted">{blockers.length ? blockers.join(" ") : "Video sunucuda üretilir (1920×1080, 30 fps): 12 dakikalık video yaklaşık bir saat. Sayfayı açık tutman gerekmez."}</p>
+          {r?.status === "failed" ? <Notice tone="bad" title="Üretim başarısız">{r.error ?? "bilinmeyen hata"}</Notice> : null}
+          <div className="grid gap-2 @md:grid-cols-2">
+            <button type="button" className={`${BTN.primary} w-full`} disabled={!canApprove || busy} onClick={() => onApprove("mac")}>Onayla, Mac&apos;te üret (~15 dk)</button>
+            <button type="button" className={`${BTN.secondary} w-full`} disabled={!canApprove || busy} onClick={() => onApprove("server")}>Onayla, sunucuda üret (~1 sa)</button>
+          </div>
+          <p className="flex items-center gap-2"><span className="size-2 shrink-0 rounded-full" style={{ background: m.on ? TONE.ok : TONE.warn }} /><span className="muted">{m.text}. Mac kapalıysa iş bekler; sunucuya alabilirsin.</span></p>
+          {blockers.length ? <p className="muted">{blockers.join(" ")}</p> : <p className="faint">1920×1080, 30 fps; dosyalar iki yolda da aynı yere gelir, Paylaşım aynı.</p>}
         </div>
       ) : r.status === "queued" ? (
-        <div className="flex flex-wrap items-center gap-2"><Badge tone="info">Sırada</Badge><span className="muted">{r.requestedBy}</span><button type="button" className={BTN.small} onClick={() => onCancel(r.id)}>İptal</button></div>
+        <div className="space-y-2">
+          <div className="flex flex-wrap items-center gap-2"><Badge tone="info">Sırada · {where(r)}</Badge><span className="muted">{r.requestedBy}</span><button type="button" className={BTN.small} onClick={() => onCancel(r.id)}>İptal</button></div>
+          {r.target === "mac" ? (
+            <p className="flex flex-wrap items-center gap-2"><span className="size-2 shrink-0 rounded-full" style={{ background: m.on ? TONE.ok : TONE.warn }} /><span className="muted">{m.text}.</span><button type="button" className={BTN.small} onClick={() => onMove(r.id, "server")}>Sunucuya al</button></p>
+          ) : (
+            <button type="button" className={BTN.small} onClick={() => onMove(r.id, "mac")}>Mac&apos;e al</button>
+          )}
+        </div>
       ) : r.status === "running" ? (
         <div className="space-y-1">
-          <span>Video üretiliyor… %{Math.round((r.progress ?? 0) * 100)}</span>
+          <span>Video {where(r)} tarafında üretiliyor… %{Math.round((r.progress ?? 0) * 100)}</span>
           <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}><div className="h-full transition-all" style={{ width: `${Math.round((r.progress ?? 0) * 100)}%`, background: "var(--color-brand)" }} /></div>
-        </div>
-      ) : r.status === "failed" ? (
-        <div className="space-y-2">
-          <Notice tone="bad" title="Üretim başarısız">{r.error ?? "bilinmeyen hata"}</Notice>
-          <button type="button" className={`${BTN.primary} w-full`} disabled={!canApprove || busy} onClick={onApprove}>Yeniden dene</button>
         </div>
       ) : r.hasFiles ? (
         <div className="space-y-2">

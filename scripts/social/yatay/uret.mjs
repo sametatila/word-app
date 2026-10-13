@@ -90,7 +90,7 @@ export async function renderLong(browser, ep, { dir, tmp, check = false, limit =
   const { clips, missing } = resolveClips(spokenOf(ep.data));
   if (missing.length && !allowMissing) throw new Error(`ses yok (${missing.length}): ${missing.slice(0, 4).join(" · ")}`);
   const html = path.join(tmp, "sayfa.html");
-  fs.writeFileSync(html, renderPage({ template: ep.template, data: ep.data, clips }));
+  fs.writeFileSync(html, renderPage({ template: ep.template, data: ep.data, clips, engine: ep.engine || null }));
   const pg = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
   const errs = [];
   pg.on("pageerror", (e) => errs.push(String(e)));

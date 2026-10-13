@@ -624,6 +624,13 @@
       "when": 1791570000000,
       "tag": "0088_social_long",
       "breakpoints": true
+    },
+    {
+      "idx": 89,
+      "version": "7",
+      "when": 1791580000000,
+      "tag": "0089_social_render_target",
+      "breakpoints": true
     }
   ]
 }

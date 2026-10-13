@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { studioGate, studioWriteGate, logStudioAction } from "@/lib/studio-auth";
-import { approveEpisode, cancelRender, getEpisode, restoreEpisode, saveEpisode, setEpisodeSlot, setEpisodeYtTitle } from "@/lib/studio";
+import { approveEpisode, cancelRender, getEpisode, restoreEpisode, saveEpisode, setEpisodeSlot, setEpisodeYtTitle, setRenderTarget } from "@/lib/studio";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +10,8 @@ export const dynamic = "force-dynamic";
  *   POST save           metinler (baseRevision + data + spoken + not) → yeni sürüm
  *   POST slot           yayın saati (içerik ve onay etkilenmez)
  *   POST yt_title       YouTube başlığı (saat gibi: sürüm açmaz, onay etkilenmez; null depodakine döner)
- *   POST approve        o sürümü onayla → sunucuda video üretimi kuyruğa
+ *   POST approve        o sürümü onayla → video üretimi kuyruğa (target: server · mac; mac yalnız yatay)
+ *   POST render_target  kuyruktaki üretimin yeri (server · mac)
  *   POST restore        eski sürüme ya da Claude'un sürümüne dön (yeni sürüm olarak)
  *   POST cancel_render  kuyruktaki üretimi iptal
  * Kurallar `lib/studio`; yazma iki adımlı doğrulama ister, işlem kaydına düşer.
@@ -51,8 +52,12 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
         if (r.ok) void logStudioAction(g.writer, "yt_title", id, { ytTitle: r.ytTitle });
         break;
       case "approve":
-        r = await approveEpisode(id, body.revision, actor);
-        if (r.ok) void logStudioAction(g.writer, "approve", id, { revision: body.revision, renderId: r.renderId });
+        r = await approveEpisode(id, body.revision, actor, body.target);
+        if (r.ok) void logStudioAction(g.writer, "approve", id, { revision: body.revision, renderId: r.renderId, target: body.target ?? "server" });
+        break;
+      case "render_target":
+        r = await setRenderTarget(body.renderId, body.target);
+        if (r.ok) void logStudioAction(g.writer, "render_target", id, { renderId: body.renderId, target: body.target });
         break;
       case "restore":
         r = await restoreEpisode(id, { baseRevision: body.baseRevision, to: body.to }, actor);

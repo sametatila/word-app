@@ -37,6 +37,8 @@ const slotOk = (format: string, slot: string) => (format === "yatay" ? LONG_SLOT
 export type RenderView = {
   id: number;
   revision: number;
+  /** server · mac (yatay: Samet'in Mac'i) */
+  target: "server" | "mac";
   status: "queued" | "running" | "done" | "failed" | "cancelled";
   progress: number | null;
   error: string | null;
@@ -139,6 +141,7 @@ function renderView(r: typeof socialRenders.$inferSelect): RenderView {
   return {
     id: r.id,
     revision: r.revision,
+    target: r.target === "mac" ? "mac" : "server",
     status: r.status as RenderView["status"],
     progress: r.progress,
     error: r.error,
@@ -415,8 +418,31 @@ export async function setEpisodeYtTitle(id: string, title: unknown, actor: strin
   return { ok: true, ytTitle: next };
 }
 
-/** Onay: o sürüm, Defne sesleri tamamsa, üretim kuyruğuna. */
-export async function approveEpisode(id: string, revision: unknown, actor: string): Promise<Ok<{ renderId: number }> | StudioError> {
+/**
+ * Mac'in son görülmesi (yatay "Mac'te üret"): Mac'teki iş alıcı her turda SOCIAL_DIR/mac-status.json'u yazar
+ * (`worker.mjs --mac-claim`). null: hiç görülmedi.
+ */
+export function macStatus(): { seenAt: string; busy: boolean } | null {
+  try {
+    return JSON.parse(readFileSync(path.join(process.env.SOCIAL_DIR || "/opt/lernomi/social", "mac-status.json"), "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+/** Kuyruktaki üretimin yerini değiştir (Mac kapalıysa sunucuya al ya da tersi). Yalnız yatay bölümde mac. */
+export async function setRenderTarget(renderId: unknown, target: unknown): Promise<Ok<object> | StudioError> {
+  if (target !== "server" && target !== "mac") return fail(400, "bad_input");
+  const r = await db
+    .update(socialRenders)
+    .set({ target })
+    .where(and(eq(socialRenders.id, Number(renderId)), eq(socialRenders.status, "queued"), sql`${socialRenders.episodeId} like 'yatay-%'`))
+    .returning({ id: socialRenders.id });
+  return r.length ? { ok: true } : fail(409, "not_queued");
+}
+
+/** Onay: o sürüm, Defne sesleri tamamsa, üretim kuyruğuna. target: server · mac (yalnız yatay). */
+export async function approveEpisode(id: string, revision: unknown, actor: string, target: unknown = "server"): Promise<Ok<{ renderId: number }> | StudioError> {
   return db.transaction(async (tx) => {
     const [e] = await tx.select().from(socialEpisodes).where(eq(socialEpisodes.id, id)).for("update");
     if (!e) return fail(404, "not_found");
@@ -429,7 +455,8 @@ export async function approveEpisode(id: string, revision: unknown, actor: strin
       .where(and(eq(socialRenders.episodeId, id), eq(socialRenders.revision, e.revision), inArray(socialRenders.status, ["queued", "running", "done"])));
     await tx.update(socialEpisodes).set({ approvedRevision: e.revision, approvedBy: actor, approvedAt: new Date() }).where(eq(socialEpisodes.id, id));
     if (active.length) return { ok: true as const, renderId: active[0].id };
-    const [r] = await tx.insert(socialRenders).values({ episodeId: id, revision: e.revision, requestedBy: actor }).returning({ id: socialRenders.id });
+    const where = target === "mac" && e.format === "yatay" ? "mac" : "server";
+    const [r] = await tx.insert(socialRenders).values({ episodeId: id, revision: e.revision, requestedBy: actor, target: where }).returning({ id: socialRenders.id });
     return { ok: true as const, renderId: r.id };
   });
 }
