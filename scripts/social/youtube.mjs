@@ -11,7 +11,8 @@
     2. EŞİTLEME: kanalın yüklemeleri (sahibi olarak zamanlanmış/gizli olanlar da görünür). Video önce kimliğiyle (satırdaki
        external_id ya da bağlantı), yoksa saatinden bölüme eşlenir: zamanlanmışta `publishAt`, yayındakinde `publishedAt`
        (saatten 30 dk önce – 3 sa sonra; her saatte tek bölüm). Zamanlanmış (private + publishAt) → "scheduled" + bağlantı;
-       herkese açık → "published". "Atlandı" ve başka videoya bağlı satırlara dokunulmaz.
+       herkese açık → "published". "Atlandı" ve başka videoya bağlı satırlara dokunulmaz. Zamanlanmış satırın videosu
+       silinir ya da zamanlaması kalkarsa bağ çözülür (yeniden yüklenen video saatinden eşleşir).
     3. METRİKLER (90 güne kadar): videos.list istatistikleri saatte bir (views, likes, comments; anlık) + Analytics API
        6 saatte bir (watchMin, avgWatchSec, avgViewPct, shares, subsGained; 1–2 gün gecikmeli). Kanal: abone sayısı.
     4. DENETİM: "scheduled" satır saatten 20 dk sonra hâlâ herkese açık değilse bir kez Telegram.
@@ -150,6 +151,18 @@ async function sync(get) {
   const eps = (await q("select id, slot from social_episodes where archived_at is null and slot is not null")).rows.map((r) => ({ id: r.id, slot: r.slot, at: slotMs(r.slot) }));
   let rows = (await q(ROW)).rows;
   const now = Date.now();
+  // zamanlanmış satırın videosu silindiyse ya da zamanlaması kaldırıldıysa (taslak/gizli) bağ çözülür: yeniden yüklenen
+  // video saatinden eşleşebilsin (yoksa satır eski kimliğe bağlı kalır, yeni video hiç bulunmaz, "çıkmadı" uyarısı gider)
+  const byId = new Map(videos.map((v) => [v.id, v]));
+  const complete = videos.length < 150; // yükleme listesi kesilmediyse "listede yok" = silinmiş
+  for (const r of rows) {
+    if (r.status !== "scheduled" || !r.external_id) continue;
+    const v = byId.get(r.external_id);
+    if (v ? isPublic(v) || isScheduled(v) : !complete) continue;
+    await q("update social_posts set external_id = null, url = case when url like '%' || $2 || '%' then null else url end, updated_by = 'youtube', updated_at = now() where id = $1", [r.id, r.external_id]);
+    log(`bağ çözüldü: ${r.episode_id} (${r.external_id} ${v ? `artık ${v.status.privacyStatus}` : "silinmiş"})`);
+    rows = (await q(ROW)).rows;
+  }
   for (const v of videos) {
     if (!isPublic(v) && !isScheduled(v)) continue; // liste dışı / taslak / gizli: bölüm değil
     const ts = timeOf(v);
