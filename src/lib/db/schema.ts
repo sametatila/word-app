@@ -2417,10 +2417,15 @@ export const socialAccountDays = pgTable(
 export const socialEpisodes = pgTable(
   "social_episodes",
   {
-    /** `<şablon>-<NNN>` */
+    /** `<şablon>-<NNN>` (yatay: `yatay-<şablon>-<NNN>`) */
     id: text("id").primaryKey(),
     template: text("template").notNull(),
-    /** Berlin yerel saati "YYYY-AA-GG SS:DD" (07:30 / 12:30 / 18:30); boşsa takvimde değil */
+    /**
+     * dikey (1080×1920, günde 3, TikTok + Reels + Shorts) · yatay (1920×1080, 10–15 dk YouTube; 2026-10-13). Yatayda
+     * saat serbest, sesler dört karakterden (`spoken` = "ses|dil|metin" anahtarları), takvim kuralları ayrı.
+     */
+    format: text("format").notNull().default("dikey"),
+    /** Berlin yerel saati "YYYY-AA-GG SS:DD" (dikey: 07:30 / 12:30 / 18:30; yatay: serbest); boşsa takvimde değil */
     slot: text("slot"),
     data: jsonb("data").$type<Record<string, unknown>>().notNull(),
     revision: integer("revision").notNull().default(1),

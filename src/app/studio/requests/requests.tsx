@@ -30,7 +30,7 @@ export function RequestsView({ requests: initial, role, email }: { requests: Stu
         title="Talepler"
         description={role === "admin" ? "Editörün gönderdiği Defne sesi talepleri. İşleme alınca metin hemen Mac'in üretim listesine girer; Mac sabah turunda (ya da elle eksik_mac.sh) üretir, kayıt gelince talep kendiliğinden kapanır." : "Samet'e gönderdiğin talepler. Ses gelince talep kendiliğinden kapanır ve bölüm onaylanabilir."}
       />
-      <Notice tone="info">Seslendirmede yalnız Defne kullanılır; geçici ya da başka bir sesle (Edge vb.) üretim yok.</Notice>
+      <Notice tone="info">Kısa videolarda yalnız Defne, uzun videolarda dört karakter (Defne, Aras, Can, Mira) kullanılır; geçici ya da başka bir sesle (Edge vb.) üretim yok.</Notice>
       <Panel title={`Etkin (${pending.length})`}>
         {pending.length ? <List items={pending} role={role} email={email} onDone={reload} /> : <Empty>Bekleyen talep yok.</Empty>}
       </Panel>
@@ -40,6 +40,40 @@ export function RequestsView({ requests: initial, role, email }: { requests: Stu
         </Panel>
       ) : null}
     </AdminPage>
+  );
+}
+
+const KEY_RE = /^(defne|aras|can|mira)\|(de|tr|en)\|(.*?)(#\w+)?$/s;
+const VOICE: Record<string, string> = { defne: "Defne", aras: "Aras", can: "Can", mira: "Mira" };
+const LANG: Record<string, string> = { tr: "Türkçe", de: "Almanca", en: "İngilizce" };
+/** Metinler: dikeyde düz liste (Defne); yatayda ses ve dile göre gruplu + Mac komutu. ✓ kaydı gelmiş. */
+function TextList({ r }: { r: StudioRequest }) {
+  const keyed = r.texts.filter((t) => KEY_RE.test(t));
+  if (!keyed.length)
+    return (
+      <ul className="list-disc pl-5 text-caption">
+        {r.texts.map((t) => <li key={t}>{t}{r.missing.includes(t) ? "" : " ✓"}</li>)}
+      </ul>
+    );
+  const groups = new Map<string, string[]>();
+  for (const k of keyed) {
+    const m = k.match(KEY_RE) as RegExpMatchArray;
+    const g = `${VOICE[m[1]] ?? m[1]} · ${LANG[m[2]] ?? m[2]}${m[4] ? ` (${m[4].slice(1)})` : ""}`;
+    (groups.get(g) ?? groups.set(g, []).get(g))!.push(k);
+  }
+  const done = keyed.length - r.missing.length;
+  return (
+    <div className="space-y-2 text-caption">
+      <p className="muted">{done} / {keyed.length} kayıt hazır · Mac&apos;te: <span className="font-mono">~/Workspace/tts-test/yatay_mac.sh {r.id}</span></p>
+      {[...groups].map(([g, ks]) => (
+        <details key={g} open={ks.some((k) => r.missing.includes(k))}>
+          <summary className="cursor-pointer text-strong">{g} <span className="muted">({ks.filter((k) => !r.missing.includes(k)).length}/{ks.length})</span></summary>
+          <ul className="mt-1 list-disc pl-5">
+            {ks.map((k) => <li key={k}>{(k.match(KEY_RE) as RegExpMatchArray)[3]}{r.missing.includes(k) ? "" : " ✓"}</li>)}
+          </ul>
+        </details>
+      ))}
+    </div>
   );
 }
 
@@ -53,9 +87,7 @@ function List({ items, role, email, onDone }: { items: StudioRequest[]; role: St
             <Link className="text-strong underline-offset-2 hover:underline" href={`/studio/${r.episodeId}`}>{r.episodeTitle}</Link>
             <span className="muted">· {r.requestedBy} · {when(r.createdAt)}</span>
           </div>
-          <ul className="list-disc pl-5 text-caption">
-            {r.texts.map((t) => <li key={t}>{t}{r.missing.includes(t) ? "" : " ✓"}</li>)}
-          </ul>
+          <TextList r={r} />
           {r.note ? <p className="text-caption"><span className="muted">Not:</span> {r.note}</p> : null}
           {r.reply ? <p className="text-caption"><span className="muted">Cevap:</span> {r.reply}</p> : null}
           <details className="text-caption">

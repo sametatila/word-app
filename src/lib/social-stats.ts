@@ -3,6 +3,7 @@ import { desc, eq, inArray } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { socialAccountDays, socialEpisodes, socialPostSnapshots, socialPosts, socialRenders } from "@/lib/db/schema";
 import { instagramStatus, tiktokStatus, youtubeStatus } from "@/lib/social-posts";
+import { LONG_THEME } from "@/lib/studio";
 import { GROWTH_STEPS, PLATFORM_KEYS, growth, overview, viewsAt, type AccountNow, type Overview, type Platform, type StatEpisode, type StatPost, type StatSnapshot } from "@/lib/social-stats-core";
 
 /**
@@ -14,7 +15,7 @@ const iso = (d: Date | null) => (d ? d.toISOString() : null);
 
 async function load() {
   const [eps, posts, renders, snaps, days, ig, tt, yt] = await Promise.all([
-    db.select({ id: socialEpisodes.id, template: socialEpisodes.template, slot: socialEpisodes.slot, data: socialEpisodes.data, ytTitle: socialEpisodes.ytTitle }).from(socialEpisodes),
+    db.select({ id: socialEpisodes.id, template: socialEpisodes.template, format: socialEpisodes.format, slot: socialEpisodes.slot, data: socialEpisodes.data, ytTitle: socialEpisodes.ytTitle }).from(socialEpisodes),
     db.select().from(socialPosts),
     db.select({ episodeId: socialRenders.episodeId, duration: socialRenders.duration }).from(socialRenders).where(eq(socialRenders.status, "done")).orderBy(desc(socialRenders.id)),
     db.select().from(socialPostSnapshots),
@@ -26,6 +27,11 @@ async function load() {
   const duration = new Map<string, number>();
   for (const r of renders) if (r.duration && !duration.has(r.episodeId)) duration.set(r.episodeId, r.duration);
   const episodes: (StatEpisode & { ytTitle: string | null })[] = eps.map((e) => {
+    // yatay (YouTube uzun video): yaklaşım "yatay" (kısa videolarla aynı kefeye konmaz), tema serinin teması
+    if (e.format === "yatay") {
+      const title = [e.data.series, e.data.ep].filter((x) => typeof x === "string" && x).join(": ") || e.id;
+      return { id: e.id, title, slot: e.slot, approach: e.format, theme: LONG_THEME[e.template] ?? e.template, duration: duration.get(e.id) ?? null, ytTitle: e.ytTitle };
+    }
     const t = (e.data.copy as { title?: unknown } | undefined)?.title;
     const [approach, theme] = e.template.split("-");
     return { id: e.id, title: typeof t === "string" && t ? t : e.id, slot: e.slot, approach, theme, duration: duration.get(e.id) ?? null, ytTitle: e.ytTitle };

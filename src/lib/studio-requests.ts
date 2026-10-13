@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { socialEpisodes, socialRequests } from "@/lib/db/schema";
 import { esc, sendTelegram } from "@/lib/telegram";
 import { SITE_URL } from "@/lib/site";
-import { missingAudio } from "@/lib/studio";
+import { clipFile, missingAudio } from "@/lib/studio";
 import type { StudioRole } from "@/lib/studio-auth";
 
 /**
@@ -19,7 +19,14 @@ import type { StudioRole } from "@/lib/studio-auth";
  *
  * Edge ya da başka bir sentezle "geçici ses" YOK: stüdyo, önizleme ve sunucu üretimi yalnız Defne kaydı kullanır.
  * Her adım `history`e (kim, ne zaman, not) ve `admin_audit`e (uç) yazılır.
+ *
+ * YATAY bölüm (2026-10-13, Samet: "bölüm başına tek talep"): talep "ses|dil|metin[#tür]" ANAHTARLARINI taşır (dört
+ * karakter, Türkçe ve Almanca). Samet Mac'te `~/Workspace/tts-test/yatay_mac.sh <talep>` ile üretir, yayın tabloya
+ * ekler; kayıtlar gelince talep kendiliğinden kapanır.
  */
+const KEY_RE = /^(defne|aras|can|mira)\|(de|tr|en)\|/;
+/** Anahtar (yatay) ya da Defne metni (dikey): kaydı olmayanlar. */
+const missingOf = (texts: string[]) => texts.filter((t) => (KEY_RE.test(t) ? !clipFile(t) : missingAudio([t]).length > 0));
 
 export type RequestStatus = "open" | "in_progress" | "done" | "rejected" | "cancelled";
 export type StudioRequest = {
@@ -49,7 +56,7 @@ function view(r: Row, titles: Map<string, string>): StudioRequest {
     episodeTitle: titles.get(r.episodeId) ?? r.episodeId,
     kind: r.kind,
     texts: r.texts,
-    missing: missingAudio(r.texts),
+    missing: missingOf(r.texts),
     status: r.status as RequestStatus,
     requestedBy: r.requestedBy,
     note: r.note,
@@ -63,16 +70,19 @@ function view(r: Row, titles: Map<string, string>): StudioRequest {
 }
 async function titles(ids: string[]): Promise<Map<string, string>> {
   if (!ids.length) return new Map();
-  const rows = await db.select({ id: socialEpisodes.id, data: socialEpisodes.data }).from(socialEpisodes).where(inArray(socialEpisodes.id, ids));
-  return new Map(rows.map((r) => [r.id, String((r.data.copy as { title?: string } | undefined)?.title ?? r.id)]));
+  const rows = await db.select({ id: socialEpisodes.id, data: socialEpisodes.data, format: socialEpisodes.format }).from(socialEpisodes).where(inArray(socialEpisodes.id, ids));
+  return new Map(rows.map((r) => [r.id, titleFor(r.data, r.id, r.format)]));
 }
+
+const titleFor = (data: Record<string, unknown>, id: string, format: string) =>
+  format === "yatay" ? [data.series, data.ep].filter((x) => typeof x === "string" && x).join(": ") || id : String((data.copy as { title?: string } | undefined)?.title ?? id);
 
 /** Açık ses taleplerinden kayıtları gelmiş olanları kapat (okuma sırasında; ucuz: tts-map bellekte). */
 export async function resolveAudioRequests(): Promise<void> {
   const open = await db.select().from(socialRequests).where(and(eq(socialRequests.kind, "audio"), inArray(socialRequests.status, ACTIVE)));
   for (const r of open) {
-    if (missingAudio(r.texts).length) continue;
-    const history = [...r.history, { at: new Date().toISOString(), by: "sistem", status: "done", note: "Defne kayıtları geldi" }];
+    if (missingOf(r.texts).length) continue;
+    const history = [...r.history, { at: new Date().toISOString(), by: "sistem", status: "done", note: r.texts.some((t) => KEY_RE.test(t)) ? "kayıtlar geldi" : "Defne kayıtları geldi" }];
     await db.update(socialRequests).set({ status: "done", history, requesterSeen: false, resolvedAt: new Date(), updatedAt: new Date() }).where(eq(socialRequests.id, r.id));
   }
 }
@@ -110,9 +120,10 @@ const fail = (status: number, error: string, detail?: unknown): Err => ({ ok: fa
 
 /** Editör: bölümün Defne sesi olmayan metinleri için Samet'e talep. Aynı bölümde etkin talep varsa ona eklenir. */
 export async function createAudioRequest(episodeId: string, note: unknown, actor: string): Promise<{ ok: true; id: number } | Err> {
-  const [e] = await db.select({ spoken: socialEpisodes.spoken, data: socialEpisodes.data }).from(socialEpisodes).where(eq(socialEpisodes.id, episodeId));
+  const [e] = await db.select({ spoken: socialEpisodes.spoken, data: socialEpisodes.data, format: socialEpisodes.format }).from(socialEpisodes).where(eq(socialEpisodes.id, episodeId));
   if (!e) return fail(404, "not_found");
-  const missing = missingAudio(e.spoken);
+  const long = e.format === "yatay";
+  const missing = missingAudio(e.spoken, e.format);
   if (!missing.length) return fail(409, "audio_ready");
   const n = typeof note === "string" ? note.trim().slice(0, 1000) || null : null;
   const now = new Date();
@@ -130,13 +141,15 @@ export async function createAudioRequest(episodeId: string, note: unknown, actor
       .returning({ id: socialRequests.id });
     id = r.id;
   }
-  const title = String((e.data.copy as { title?: string } | undefined)?.title ?? episodeId);
+  const title = titleFor(e.data, episodeId, e.format);
+  const byVoice = long ? Object.entries(missing.reduce<Record<string, number>>((m, k) => ((m[k.split("|")[0]] = (m[k.split("|")[0]] ?? 0) + 1), m), {})).map(([v, c]) => `${v} ${c}`).join(" · ") : "";
   void sendTelegram(
     [
-      `<b>[STÜDYO] Defne sesi talebi</b> · ${esc(actor)}`,
-      `${esc(title)} (${esc(episodeId)}): ${missing.length} metin`,
+      `<b>[STÜDYO] ${long ? "Uzun video seslendirme talebi" : "Defne sesi talebi"}</b> · ${esc(actor)}`,
+      `${esc(title)} (${esc(episodeId)}): ${missing.length} metin${byVoice ? ` (${esc(byVoice)})` : ""}`,
       ...missing.slice(0, 6).map((t) => `• ${esc(t.length > 90 ? `${t.slice(0, 87)}…` : t)}`),
       n ? `Not: ${esc(n)}` : "",
+      long ? `Mac: ~/Workspace/tts-test/yatay_mac.sh ${id}` : "",
       `${SITE_URL}/studio/requests`,
     ].filter(Boolean).join("\n"),
   );

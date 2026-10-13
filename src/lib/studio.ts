@@ -22,10 +22,17 @@ import { socialEpisodes, socialPosts, socialRenders, socialRevisions } from "@/l
  *    üretimi kuyruğa koyar. Onaydan sonra metin değişirse onay düşer, kuyruktaki üretim iptal olur.
  *  - Saat: aynı saate iki bölüm konamaz (hata); aynı gün aynı yaklaşım, art arda aynı tema, 30 günden yakın ortak
  *    kelime uyarıdır (planlayan karar verir).
+ *  - YATAY bölüm (format "yatay", YouTube uzun video, 2026-10-13): saat serbest (SS:DD), günde tek yatay video
+ *    (hata), dikey kurallarına girmez; sesler dört karakterden, `spoken` "ses|dil|metin[#tür]" anahtarları; YouTube
+ *    başlığında #shorts yok.
  */
 
 export const SLOTS = ["07:30", "12:30", "18:30"] as const;
 const SLOT_RE = /^(\d{4}-\d{2}-\d{2}) (07:30|12:30|18:30)$/;
+/** Yatay: günün herhangi bir saati (önerilen 19:00). */
+const LONG_SLOT_RE = /^(\d{4}-\d{2}-\d{2}) ([01]\d|2[0-3]):([0-5]\d)$/;
+export type Format = "dikey" | "yatay";
+const slotOk = (format: string, slot: string) => (format === "yatay" ? LONG_SLOT_RE : SLOT_RE).test(slot);
 
 export type RenderView = {
   id: number;
@@ -45,6 +52,7 @@ export type RenderView = {
 
 export type EpisodeSummary = {
   id: string;
+  format: Format;
   template: string;
   approach: string;
   theme: string;
@@ -80,7 +88,14 @@ export type EpisodeDetail = EpisodeSummary & {
 
 const approachOf = (t: string) => t.split("-")[0];
 const themeOf = (t: string) => t.split("-")[1];
-const titleOf = (data: Record<string, unknown>, id: string) => {
+/** Yatay serinin teması (takvim kartının şeridi; şablon dosyasının teması). */
+export const LONG_THEME: Record<string, string> = { yuru: "lacivert", sinav: "kagit", duy: "gece", gunluk: "turuncu", artikel: "kagit", hikaye: "lacivert" };
+const titleOf = (data: Record<string, unknown>, id: string, format = "dikey") => {
+  if (format === "yatay") {
+    const s = typeof data.series === "string" ? data.series : "";
+    const e = typeof data.ep === "string" ? data.ep : "";
+    return [s, e].filter(Boolean).join(": ") || id;
+  }
   const c = data.copy as { title?: unknown } | undefined;
   return typeof c?.title === "string" && c.title ? c.title : id;
 };
@@ -108,14 +123,16 @@ function ttsTables() {
     return null;
   }
 }
-/** Defne kaydının dosya yolu ya da null. */
-export function defneFile(text: string): string | null {
+/** Kaydın dosya yolu ya da null: anahtar "ses|dil|metin[#tür]" (yatay, dört karakter). */
+export function clipFile(key: string): string | null {
   const t = ttsTables();
-  const key = `defne|de|${text}`;
   if (!t || !t.map[key] || t.hold[key]) return null;
   return path.join(process.env.TTS_OWN_DIR as string, "m4a", t.map[key]);
 }
-export const missingAudio = (texts: string[]) => texts.filter((t) => !defneFile(t));
+/** Defne kaydının dosya yolu ya da null (dikey: yalnız Defne, Almanca). */
+export const defneFile = (text: string): string | null => clipFile(`defne|de|${text}`);
+/** Kaydı olmayan seslendirmeler: dikeyde metin (Defne), yatayda anahtar. */
+export const missingAudio = (spoken: string[], format: string = "dikey") => spoken.filter((t) => !(format === "yatay" ? clipFile(t) : defneFile(t)));
 
 // ---------- okuma ----------
 function renderView(r: typeof socialRenders.$inferSelect): RenderView {
@@ -140,12 +157,14 @@ function summary(e: typeof socialEpisodes.$inferSelect, renders: (typeof socialR
   const mine = renders.filter((r) => r.episodeId === e.id);
   const forRev = mine.filter((r) => r.revision === e.revision).sort((a, b) => b.id - a.id)[0];
   const video = mine.filter((r) => r.status === "done" && r.dir).sort((a, b) => b.id - a.id)[0];
+  const long = e.format === "yatay";
   return {
     id: e.id,
+    format: long ? "yatay" : "dikey",
     template: e.template,
-    approach: approachOf(e.template),
-    theme: themeOf(e.template),
-    title: titleOf(e.data, e.id),
+    approach: long ? e.template : approachOf(e.template),
+    theme: long ? (LONG_THEME[e.template] ?? "gece") : themeOf(e.template),
+    title: titleOf(e.data, e.id, e.format),
     slot: e.slot,
     revision: e.revision,
     edited: e.edited,
@@ -153,7 +172,7 @@ function summary(e: typeof socialEpisodes.$inferSelect, renders: (typeof socialR
     approved: e.approvedRevision === e.revision,
     approvedBy: e.approvedRevision === e.revision ? e.approvedBy : null,
     archived: !!e.archivedAt,
-    missingAudio: missingAudio(e.spoken).length,
+    missingAudio: missingAudio(e.spoken, e.format).length,
     updatedBy: e.updatedBy,
     updatedAt: e.updatedAt.toISOString(),
     render: forRev ? renderView(forRev) : null,
@@ -188,7 +207,7 @@ export async function getEpisode(id: string): Promise<EpisodeDetail | null> {
     data: e.data,
     origin: e.origin,
     spoken: e.spoken,
-    missing: missingAudio(e.spoken),
+    missing: missingAudio(e.spoken, e.format),
     used: e.used,
     revisions: revs.map((r) => ({ ...r, createdAt: r.createdAt.toISOString() })),
     renders: renders.map(renderView),
@@ -211,16 +230,18 @@ type Json = unknown;
  * who: me/them (konuşan), icon/avatar: simge adı, key: kelime başvurusu, typ: kelime türü (sabit yazı eşlemesi),
  * dizi öğesindeki scene: copy.scenes anahtarı (copy.scene ise ekranda görünen sahne adı, metin).
  */
-export function lockedKey(at: string): boolean {
+export function lockedKey(at: string, format = "dikey"): boolean {
   const last = at.replace(/\[\d+\]$/, "").split(".").pop() ?? "";
   if (["who", "icon", "avatar", "key", "typ"].includes(last)) return true;
+  // yatay satır nesnesi { v: ses, l: dil, t: metin, x?: kayıt türü }: ses, dil ve tür kimlik; yalnız t metin
+  if (format === "yatay" && ["v", "l", "x", "lv"].includes(last)) return true;
   return last === "scene" && /\[\d+\]\.scene$/.test(at);
 }
 /**
  * `next`, `base` ile AYNI YAPIDA mı: aynı anahtarlar, aynı dizi uzunlukları, sayı/boolean/null aynı, dizgi dizgi.
  * Serbest alan: `copy.ui` (dizgi → dizgi). YouTube başlığı veride değil, `setEpisodeYtTitle`. Hata: yol + sebep.
  */
-export function shapeError(base: Json, next: Json, at = ""): string | null {
+export function shapeError(base: Json, next: Json, at = "", format = "dikey"): string | null {
   if (at === "copy.ui") {
     if (next == null) return null;
     if (typeof next !== "object" || Array.isArray(next)) return "copy.ui nesne olmalı";
@@ -233,7 +254,7 @@ export function shapeError(base: Json, next: Json, at = ""): string | null {
     return null;
   }
   if (typeof base === "string") {
-    if (lockedKey(at)) return next === base ? null : `${at}: bu alan metin değil, değiştirilemez`;
+    if (lockedKey(at, format)) return next === base ? null : `${at}: bu alan metin değil, değiştirilemez`;
     if (typeof next !== "string") return `${at}: metin olmalı`;
     if (next.length > 2000) return `${at}: en çok 2000 karakter`;
     return null;
@@ -242,7 +263,7 @@ export function shapeError(base: Json, next: Json, at = ""): string | null {
   if (Array.isArray(base)) {
     if (!Array.isArray(next) || next.length !== base.length) return `${at}: öğe sayısı değiştirilemez`;
     for (let i = 0; i < base.length; i++) {
-      const e = shapeError(base[i], next[i], `${at}[${i}]`);
+      const e = shapeError(base[i], next[i], `${at}[${i}]`, format);
       if (e) return e;
     }
     return null;
@@ -254,12 +275,12 @@ export function shapeError(base: Json, next: Json, at = ""): string | null {
   for (const k of keys) {
     const p = at ? `${at}.${k}` : k;
     if (p === "copy.ui") {
-      const e = shapeError(b[k], n[k], p);
+      const e = shapeError(b[k], n[k], p, format);
       if (e) return e;
       continue;
     }
     if (!(k in b) || !(k in n)) return `${p}: alan eklenemez ya da silinemez`;
-    const e = shapeError(b[k], n[k], p);
+    const e = shapeError(b[k], n[k], p, format);
     if (e) return e;
   }
   return null;
@@ -278,14 +299,24 @@ const berlinMs = (slot: string) => {
 
 /** Saat kuralları: { error } (aynı saat) ya da { warnings }. */
 export async function checkSlot(id: string, slot: string): Promise<{ error?: string; warnings: string[] }> {
-  if (!SLOT_RE.test(slot)) return { error: "Saat biçimi: YYYY-AA-GG ve 07:30 / 12:30 / 18:30", warnings: [] };
+  const me = await db.select({ template: socialEpisodes.template, used: socialEpisodes.used, format: socialEpisodes.format }).from(socialEpisodes).where(eq(socialEpisodes.id, id));
+  if (!me[0]) return { error: "Bölüm yok", warnings: [] };
+  const fmt = me[0].format;
+  if (!slotOk(fmt, slot)) return { error: fmt === "yatay" ? "Saat biçimi: YYYY-AA-GG SS:DD" : "Saat biçimi: YYYY-AA-GG ve 07:30 / 12:30 / 18:30", warnings: [] };
   const all = await db
-    .select({ id: socialEpisodes.id, template: socialEpisodes.template, slot: socialEpisodes.slot, used: socialEpisodes.used })
+    .select({ id: socialEpisodes.id, template: socialEpisodes.template, slot: socialEpisodes.slot, used: socialEpisodes.used, format: socialEpisodes.format })
     .from(socialEpisodes)
     .where(sql`${socialEpisodes.archivedAt} is null and ${socialEpisodes.slot} is not null`);
-  const me = await db.select({ template: socialEpisodes.template, used: socialEpisodes.used }).from(socialEpisodes).where(eq(socialEpisodes.id, id));
-  if (!me[0]) return { error: "Bölüm yok", warnings: [] };
-  const others = all.filter((e) => e.id !== id) as { id: string; template: string; slot: string; used: string[] }[];
+  // dikey ve yatay ayrı takvim kuralları: biri ötekinin saatini, temasını, kelimesini denetlemez
+  const others = all.filter((e) => e.id !== id && e.format === fmt) as { id: string; template: string; slot: string; used: string[] }[];
+  if (fmt === "yatay") {
+    const same = others.find((e) => e.slot.slice(0, 10) === slot.slice(0, 10));
+    if (same) return { error: `Bu gün zaten bir uzun video var: ${same.id}`, warnings: [] };
+    const ordered = [...others, { id, template: me[0].template, slot, used: [] }].sort((a, b) => a.slot.localeCompare(b.slot));
+    const i = ordered.findIndex((e) => e.id === id);
+    const warnings = [ordered[i - 1], ordered[i + 1]].filter((n) => n && n.template === me[0].template).map((n) => `Art arda aynı seri: ${n.id}`);
+    return { warnings };
+  }
   const clash = others.find((e) => e.slot === slot);
   if (clash) return { error: `Bu saatte zaten bir bölüm var: ${clash.id}`, warnings: [] };
   const warnings: string[] = [];
@@ -311,22 +342,23 @@ export type StudioError = { ok: false; status: number; error: string; detail?: u
 type Ok<T> = { ok: true } & T;
 const fail = (status: number, error: string, detail?: unknown): StudioError => ({ ok: false, status, error, detail });
 
-const cleanSpoken = (v: unknown): string[] | null =>
-  Array.isArray(v) && v.length <= 80 && v.every((x) => typeof x === "string" && x.length > 0 && x.length <= 600) ? [...new Set(v as string[])] : null;
+/** Dikey: en çok 80 metin; yatay (10–15 dk): en çok 800 anahtar. */
+const cleanSpoken = (v: unknown, format = "dikey"): string[] | null =>
+  Array.isArray(v) && v.length <= (format === "yatay" ? 800 : 80) && v.every((x) => typeof x === "string" && x.length > 0 && x.length <= 700) ? [...new Set(v as string[])] : null;
 
 /**
  * Metin kaydı. baseRevision: düzenlemenin başladığı sürüm. spoken: istemcinin motordan hesapladığı seslendirilen
  * metinler (E.spoken; sunucu motoru çalıştıramıyor). İşçi üretimde motora yeniden sorar, yanlış liste videoya geçmez.
  */
 export async function saveEpisode(id: string, input: { baseRevision: unknown; data: unknown; spoken: unknown; note?: unknown }, actor: string): Promise<Ok<{ revision: number }> | StudioError> {
-  const spoken = cleanSpoken(input.spoken);
-  if (!spoken) return fail(400, "bad_input", "spoken");
   const note = typeof input.note === "string" ? input.note.trim().slice(0, 300) || null : null;
   return db.transaction(async (tx) => {
     const [e] = await tx.select().from(socialEpisodes).where(eq(socialEpisodes.id, id)).for("update");
     if (!e) return fail(404, "not_found");
+    const spoken = cleanSpoken(input.spoken, e.format);
+    if (!spoken) return fail(400, "bad_input", "spoken");
     if (Number(input.baseRevision) !== e.revision) return fail(409, "conflict", { revision: e.revision, by: e.updatedBy });
-    const shape = shapeError(e.data, input.data);
+    const shape = shapeError(e.data, input.data, "", e.format);
     if (shape) return fail(400, "shape", shape);
     const data = input.data as Record<string, unknown>;
     if (JSON.stringify(data) === JSON.stringify(e.data)) return { ok: true as const, revision: e.revision };
@@ -360,10 +392,11 @@ export async function setEpisodeSlot(id: string, slot: unknown, actor: string): 
  * YouTube başlığı kuralları (depodaki aynısı `scripts/social/lib/episodes.mjs` ytTitleError): en çok 100 karakter,
  * "<" ">" yok (YouTube kabul etmiyor), sonu "#shorts".
  */
-export function ytTitleError(t: string): string | null {
+export function ytTitleError(t: string, format: string = "dikey"): string | null {
   if (!t) return "YouTube başlığı boş olamaz";
   if (t.length > 100) return `YouTube başlığı en çok 100 karakter (${t.length})`;
   if (/[<>]/.test(t)) return "YouTube başlığında < ve > olamaz";
+  if (format === "yatay") return /#shorts/i.test(t) ? "Uzun videonun başlığında #shorts olmaz" : null;
   if (!/(^|\s)#shorts$/.test(t)) return "YouTube başlığının sonu “#shorts” olmalı";
   return null;
 }
@@ -371,11 +404,11 @@ export function ytTitleError(t: string): string | null {
 /** YouTube başlığı (saat gibi yayın bilgisi: sürüm açmaz, onay etkilenmez). null: depodaki başlığa dön. */
 export async function setEpisodeYtTitle(id: string, title: unknown, actor: string): Promise<Ok<{ ytTitle: string | null }> | StudioError> {
   if (title !== null && typeof title !== "string") return fail(400, "bad_input");
-  const [e] = await db.select({ origin: socialEpisodes.originYtTitle }).from(socialEpisodes).where(eq(socialEpisodes.id, id));
+  const [e] = await db.select({ origin: socialEpisodes.originYtTitle, format: socialEpisodes.format }).from(socialEpisodes).where(eq(socialEpisodes.id, id));
   if (!e) return fail(404, "not_found");
   const next = title === null ? e.origin : title.replace(/\s+/g, " ").trim();
   if (next !== null) {
-    const err = ytTitleError(next);
+    const err = ytTitleError(next, e.format);
     if (err) return fail(400, "yt_title", err);
   }
   await db.update(socialEpisodes).set({ ytTitle: next, updatedBy: actor, updatedAt: new Date() }).where(eq(socialEpisodes.id, id));
@@ -388,7 +421,7 @@ export async function approveEpisode(id: string, revision: unknown, actor: strin
     const [e] = await tx.select().from(socialEpisodes).where(eq(socialEpisodes.id, id)).for("update");
     if (!e) return fail(404, "not_found");
     if (Number(revision) !== e.revision) return fail(409, "conflict", { revision: e.revision, by: e.updatedBy });
-    const missing = missingAudio(e.spoken);
+    const missing = missingAudio(e.spoken, e.format);
     if (missing.length) return fail(409, "audio", missing);
     const active = await tx
       .select({ id: socialRenders.id })
@@ -459,24 +492,32 @@ export async function postsFor(ids: string[]) {
  * (istemcinin "Geri al"ı aynı uçla eski saate taşır).
  */
 export async function moveEpisode(id: string, slot: unknown, actor: string): Promise<Ok<{ from: string | null; swapped: string | null; warnings: string[] }> | StudioError> {
-  if (slot !== null && (typeof slot !== "string" || !SLOT_RE.test(slot))) return fail(400, "bad_input");
+  if (slot !== null && (typeof slot !== "string" || !(SLOT_RE.test(slot) || LONG_SLOT_RE.test(slot)))) return fail(400, "bad_input");
   const now = Date.now();
   const r = await db.transaction(async (tx) => {
     const [e] = await tx.select().from(socialEpisodes).where(eq(socialEpisodes.id, id)).for("update");
     if (!e) return fail(404, "not_found");
     if (slot === e.slot) return { ok: true as const, from: e.slot, swapped: null };
+    if (slot !== null && !slotOk(e.format, slot)) return fail(409, "past", e.format === "yatay" ? "Uzun video yalnız uzun video şeridine taşınır." : "Kısa video yalnız 07:30 / 12:30 / 18:30 saatlerine taşınır.");
     if (slot !== null && berlinMs(slot) <= now) return fail(409, "past", "Geçmiş bir saate taşınamaz.");
     let swapped: string | null = null;
     if (slot !== null) {
+      // yatayda "dolu" = aynı gün başka bir uzun video (saati farklı olsa da): yer değiştirirler
       const [other] = await tx
-        .select({ id: socialEpisodes.id })
+        .select({ id: socialEpisodes.id, slot: socialEpisodes.slot })
         .from(socialEpisodes)
-        .where(sql`${socialEpisodes.slot} = ${slot} and ${socialEpisodes.archivedAt} is null and ${socialEpisodes.id} <> ${id}`)
+        .where(
+          e.format === "yatay"
+            ? sql`${socialEpisodes.format} = 'yatay' and left(${socialEpisodes.slot}, 10) = ${slot.slice(0, 10)} and ${socialEpisodes.archivedAt} is null and ${socialEpisodes.id} <> ${id}`
+            : sql`${socialEpisodes.slot} = ${slot} and ${socialEpisodes.archivedAt} is null and ${socialEpisodes.id} <> ${id}`,
+        )
         .for("update");
       if (other) {
         if (e.slot && berlinMs(e.slot) <= now) return fail(409, "past", "Bu saat dolu; geçmişteki bir bölümle yer değiştirilemez.");
         await tx.update(socialEpisodes).set({ slot: null }).where(eq(socialEpisodes.id, id)); // geçici: aynı saate iki satır olmasın
-        await tx.update(socialEpisodes).set({ slot: e.slot, updatedBy: actor, updatedAt: new Date() }).where(eq(socialEpisodes.id, other.id));
+        // yatay: öteki bölüm bu bölümün gününe kendi saatiyle gider
+        const back = e.slot && e.format === "yatay" && other.slot ? `${e.slot.slice(0, 10)} ${other.slot.slice(11)}` : e.slot;
+        await tx.update(socialEpisodes).set({ slot: back, updatedBy: actor, updatedAt: new Date() }).where(eq(socialEpisodes.id, other.id));
         swapped = other.id;
       }
     }

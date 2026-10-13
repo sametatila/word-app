@@ -27,7 +27,7 @@ type Msg = { tone: Tone; text: string } | null;
 type Tab = "icerik" | "paylasim";
 const SLOTS = ["07:30", "12:30", "18:30"];
 
-async function call(url: string, body: Record<string, unknown>): Promise<{ ok: boolean; data: Record<string, unknown> }> {
+export async function call(url: string, body: Record<string, unknown>): Promise<{ ok: boolean; data: Record<string, unknown> }> {
   try {
     const res = await apiFetch(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
     return { ok: res.ok, data: (await res.json().catch(() => ({}))) as Record<string, unknown> };
@@ -35,7 +35,7 @@ async function call(url: string, body: Record<string, unknown>): Promise<{ ok: b
     return { ok: false, data: { error: "network" } };
   }
 }
-function errorText(d: Record<string, unknown>): string {
+export function errorText(d: Record<string, unknown>): string {
   switch (d.error) {
     case "conflict":
       return `Bu bölüm sen düzenlerken başkası tarafından kaydedildi (${String((d.detail as { by?: string })?.by ?? "")}). Değişikliklerini bir yere kopyala ve sayfayı yenile.`;
@@ -61,7 +61,7 @@ function errorText(d: Record<string, unknown>): string {
   }
 }
 
-const mb = (b: number | null) => (b ? `${(b / 1e6).toFixed(1)} MB` : "");
+export const mb = (b: number | null) => (b ? `${(b / 1e6).toFixed(1)} MB` : "");
 
 export function StudioEditor({ initial, posts: initialPosts, igConnected, role, email, requests: initialRequests, tab: initialTab }: { initial: EpisodeDetail; posts: SocialPost[]; igConnected: boolean; role: StudioRole; email: string; requests: StudioRequest[]; tab?: Tab }) {
   const [tab, setTabState] = useState<Tab>(initialTab ?? (initial.approved && initial.render?.status === "done" && initial.render.hasFiles ? "paylasim" : "icerik"));
@@ -533,13 +533,13 @@ function StatusBox({ ep, pv, dirty, auditFresh, blockers, canApprove, busy, onAp
   );
 }
 
-function files(r: RenderView) {
+export function files(r: RenderView, long = false) {
   const u = (k: string) => `/api/studio/file/${r.id}?k=${k}`;
   return (
     <div className="flex flex-wrap gap-2">
       <a className={BTN.small} href={u("mp4")}>MP4 indir</a>
-      <a className={BTN.small} href={u("kapak")}>Kapak</a>
-      <a className={BTN.small} href={u("kapak34")}>Kapak 3:4</a>
+      <a className={BTN.small} href={u("kapak")}>{long ? "Kapak 1280×720" : "Kapak"}</a>
+      {long ? <a className={BTN.small} href={u("aciklama")}>Açıklama (.txt)</a> : <a className={BTN.small} href={u("kapak34")}>Kapak 3:4</a>}
     </div>
   );
 }
@@ -635,9 +635,10 @@ const EDITABLE: readonly (readonly [SocialStatus | "planned", string])[] = [
   ["skipped", "Atlandı"],
 ];
 const EDITABLE_AUTO: readonly (readonly [SocialStatus | "planned", string])[] = [["planned", "Planlandı"], ["auto", "Otomatik"], ["scheduled", "Zamanlandı"], ["published", "Yayında"], ["skipped", "Atlandı"]];
+const LONG_URL_HINT = "https://www.youtube.com/watch?v=…";
 const URL_HINT: Record<SocialPlatform, string> = { tiktok: "https://www.tiktok.com/@…/video/…", instagram: "https://www.instagram.com/reel/…", youtube: "https://www.youtube.com/shorts/…" };
 
-function PlatformBox({ episodeId, platform, label, auto, ready, copies, post: saved, onSaved }: { episodeId: string; platform: SocialPlatform; label: string; auto: boolean; ready: boolean; copies: { label: string; text: string }[]; post: SocialPost | null; onSaved: (p: SocialPost | null) => void }) {
+export function PlatformBox({ episodeId, platform, label, auto, ready, copies, post: saved, onSaved, long = false }: { episodeId: string; platform: SocialPlatform; label: string; auto: boolean; ready: boolean; copies: { label: string; text: string }[]; post: SocialPost | null; onSaved: (p: SocialPost | null) => void; long?: boolean }) {
   const [status, setStatus] = useState<SocialStatus | "planned">(saved?.status ?? "planned");
   const [url, setUrl] = useState(saved?.url ?? "");
   const [note, setNote] = useState(saved?.note ?? "");
@@ -688,13 +689,13 @@ function PlatformBox({ episodeId, platform, label, auto, ready, copies, post: sa
           <Notice tone={url.trim() ? "info" : "warn"}>{url.trim() ? "Saatinden itibaren bağlantı denetlenir: video yayına çıkınca “Yayında” olur, 20 dk içinde çıkmazsa Telegram'a uyarı gider." : "Bağlantıyı yaz: TikTok'ta zamanlanan videonun bağlantısı olmadan yayına çıktığı denetlenemez."}</Notice>
         ) : null}
         {platform === "youtube" && (status === "scheduled" || status === "planned") ? (
-          <p className="faint">YouTube Studio&apos;da bu saate zamanlanan Short kendiliğinden bulunur, bağlantısı ve durumu yazılır; 20 dk içinde çıkmazsa Telegram&apos;a uyarı.</p>
+          <p className="faint">YouTube Studio&apos;da bu saate zamanlanan {long ? "video" : "Short"} kendiliğinden bulunur, bağlantısı ve durumu yazılır; 20 dk içinde çıkmazsa Telegram&apos;a uyarı.</p>
         ) : null}
         {saved?.job?.error && saved.status === "scheduled" && status === "scheduled" ? <Notice tone="warn" title="Denetim">{saved.job.error}</Notice> : null}
         {saved?.job?.error && (saved.status === "auto" || saved.status === "failed") ? <Notice tone={saved.status === "failed" ? "bad" : "warn"} title={saved.status === "failed" ? "Otomatik yayın olmadı" : "Son deneme"}>{saved.job.error}{saved.status === "failed" ? " · Düzeltip “Otomatik”i yeniden seçersen tekrar dener." : ""}</Notice> : null}
         {status === "auto" || locked ? null : (
           <Field label="Gönderi bağlantısı">
-            <input aria-label={`${label} gönderi bağlantısı`} className={FIELD} style={FIELD_STYLE} value={url} onChange={(ev) => setUrl(ev.target.value)} placeholder={URL_HINT[platform]} inputMode="url" />
+            <input aria-label={`${label} gönderi bağlantısı`} className={FIELD} style={FIELD_STYLE} value={url} onChange={(ev) => setUrl(ev.target.value)} placeholder={long && platform === "youtube" ? LONG_URL_HINT : URL_HINT[platform]} inputMode="url" />
           </Field>
         )}
         <Field label="Not">
@@ -717,7 +718,7 @@ function PlatformBox({ episodeId, platform, label, auto, ready, copies, post: sa
   );
 }
 
-function History({ ep, busy, onRestore }: { ep: EpisodeDetail; busy: boolean; onRestore: (r: number) => void }) {
+export function History({ ep, busy, onRestore }: { ep: EpisodeDetail; busy: boolean; onRestore: (r: number) => void }) {
   return (
     <details className="rounded-panel border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
       <summary className="cursor-pointer text-strong">Geçmiş ({ep.revisions.length} sürüm)</summary>

@@ -9,7 +9,10 @@ export const PLATFORMS: { key: SocialPlatform; label: string; short: string }[] 
   { key: "instagram", label: "Instagram", short: "IG" },
   { key: "youtube", label: "YouTube", short: "YT" },
 ];
-export const APPROACH_TR: Record<string, string> = { artikel: "Artikel", diyalog: "Diyalog", kelime: "Kelime destesi", duy: "Hangisini duydun?", kur: "Cümleyi kur" };
+export const APPROACH_TR: Record<string, string> = { artikel: "Artikel", diyalog: "Diyalog", kelime: "Kelime destesi", duy: "Hangisini duydun?", kur: "Cümleyi kur", yatay: "Uzun video (YouTube)" };
+/** Yatay (YouTube uzun video) serileri: şablon → seri adı (videonun künyesindeki ad bölüm verisinde, burası takvim için). */
+export const LONG_SERIES_TR: Record<string, string> = { yuru: "Yürürken Almanca", sinav: "A1 Sınavı", duy: "Hangisini Duydun?", gunluk: "Almanya'da Günlük Hayat", artikel: "Artikel Kuralları", hikaye: "Yavaş Almanca Hikâyeler" };
+export const LONG_SERIES_SHORT: Record<string, string> = { yuru: "Yürürken", sinav: "Sınav", duy: "Duy", gunluk: "Günlük hayat", artikel: "Artikel", hikaye: "Hikâye" };
 export const APPROACH_SHORT: Record<string, string> = { artikel: "Artikel", diyalog: "Diyalog", kelime: "Kelime", duy: "Duy", kur: "Kur" };
 export const THEME_TR: Record<string, string> = { gece: "Gece", kagit: "Kâğıt", turuncu: "Turuncu", lacivert: "Lacivert" };
 
