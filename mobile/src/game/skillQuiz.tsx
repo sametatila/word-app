@@ -344,11 +344,14 @@ export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { t
   useUnsavedWork(results.some((r) => r !== null) && results.some((r) => r === null));
   /* `near`: yazım sapmasıyla geçti ("Neredeyse") — tam doğrunun parlak sesi
      değil, yumuşak "near" (bkz. `game/rounds` `markAnswer`). */
+  /* Sonuçların güncel kopyası: serbest görev değerlendirmeyi BEKLERKEN başka bir
+     görev kapanabiliyor; `evaluate`in yakaladığı eski `results` onu silmesin. */
+  const latest = useRef(results);
   function settle(i: number, ok: boolean, near = false, score?: number) {
-    if (results[i] !== null) return;
+    if (latest.current[i] !== null) return;
     haptic(ok ? (near ? "near" : "correct") : "wrong");
     scores.current[i] = typeof score === "number" ? score : null;
-    const n = [...results]; n[i] = ok; setResults(n);
+    const n = [...latest.current]; n[i] = ok; latest.current = n; setResults(n);
     if (n.every((r) => r !== null)) {
       const scored = scores.current.filter((x): x is number => x !== null);
       onAllDone(n.filter(Boolean).length, scored.length ? Math.round(scored.reduce((a, b) => a + b, 0) / scored.length) : undefined);
@@ -660,6 +663,13 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       const overall = d.result?.score?.overall ?? 0;
       setScore({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "", id: d.id ?? null });
       setReveal(true);
+      /* GEÇEN PUAN HEMEN KAYDA (QA F-0102). Görev yalnız altındaki "Devam"la
+         kapanıyordu; düğme klavyenin ve örnek cevabın altında kalıyor, %100'ü
+         gören öğrenci üstteki Kapat'a basınca puan hiç kaydedilmiyor, adım
+         "Şimdi"de kalıyordu. Geçen puanda tekrar denemenin anlamı yok (bütün
+         alıştırma sonuç ekranından yine tekrarlanabiliyor); kalan puanda
+         "Devam / Bir daha dene" seçimi duruyor. */
+      if (overall >= RUBRIC_PASS_PCT) onSettle(true, false, overall);
     } catch (e) {
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
         if (isPremiumRefusal(e)) { notePremiumGate("writing"); void refreshPremium(); }
@@ -697,10 +707,10 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
     setBusy(false);
   }
 
-  /* GÖREV SONUÇ EKRANINDA KAPANIYOR, değerlendirme anında değil - web
-     `writing-player` de öyle: puan gösteriliyor, altında "Devam" ve "Bir daha
-     dene" duruyor. Önce `evaluate` içinde kapatılıyordu, yani düşük puan alan
-     öğrencinin tekrar deneme yolu hiç yoktu. */
+  /* KALAN GÖREV SONUÇ EKRANINDA KAPANIYOR, değerlendirme anında değil: puan
+     gösteriliyor, altında "Devam" ve "Bir daha dene" duruyor. Önce `evaluate`
+     içinde her puan kapatılıyordu, yani düşük puan alan öğrencinin tekrar
+     deneme yolu hiç yoktu. Geçen puan `evaluate`te kapanıyor (F-0102). */
   const settleNow = () => onSettle(unscored ? true : (score?.overall ?? 0) >= RUBRIC_PASS_PCT, false, unscored || !score ? undefined : score.overall);
   const retry = () => { setScore(null); setNote(null); setQueued(false); setUnscored(false); setReveal(false); };
   return (
