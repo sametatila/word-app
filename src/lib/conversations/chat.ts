@@ -416,11 +416,17 @@ ve bir sonraki adımı sor. Aynı soruyu farklı kelimelerle sorma.`;
 Amacın gerçekleşmesi için eksik kalan son bilgiyi iste (saat, miktar, ödeme,
 onay, karar — sahnede hangisi eksikse). Yeni bir konu AÇMA. Bittiğini
 hissettir: bu sorudan sonra kapatacağını belli eden kısa bir cümle kur.`;
+  /* "YALNIZ ÖĞRENCİNİN SÖYLEDİKLERİ" (panel #97, 2026-10-13): özet öğrencinin söylemediğini
+     ekliyordu ("Sie machen viel Sport" — son cümlesi "mehr Sport machen, aber wenig Zeit").
+     Ölçüm, aynı geçmişle eski/yeni istem: de-a2-vorsorge 6/6 doğru (eski 3/6 uydurma),
+     de-a2-pause son kararı özetliyor (eski ilk siparişi), de-a2-sport-verletzung kapanışta
+     öneri/iç not sızmıyor (eski 3/3 sızdı), de-a2-adjektiv-ein değişmedi. */
   return `
 ŞU AN: KAPANIŞ TURU — konuşma amacına ulaştı
 Önce AMACI SONUÇLANDIR: ne kararlaştırıldığını, ne alındığını, ne yapılacağını
 tek cümleyle söyle ("Also: zwei Kaffee, Sie zahlen bar."). Sonra rolüne uygun
 kısa bir veda et. Toplam en fazla 2 cümle.
+Sonuç cümlesi YALNIZ öğrencinin bu konuşmada gerçekten söylediklerinden: söylemediği bir şeyi ekleme, son cümlesiyle çelişme.
 SORU SORMA ve öneri satırı (${SUGGESTION_MARK}) YAZMA.
 Düzeltme kuralları geçerli: öğrencinin son cümlesinde gerçek bir hata varsa
 düzeltme satırını yine yaz.`;
