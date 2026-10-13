@@ -19,9 +19,12 @@ import { Preview, type PreviewState } from "./preview";
  * BÖLÜM EDİTÖRÜ. Akış: metni düzenle (önizleme canlı) → Kaydet (yeni sürüm) → Onayla ve üret (Defne sesleri tam,
  * yerleşim temiz) → sunucu videoyu üretir → MP4 / kapak / açıklamayı indir (kayıpsız) → platforma koy, durumu işaretle.
  * Onaydan sonra metin değişirse onay düşer; eski video "eski sürüm" diye indirilebilir kalır.
+ * İki sekme: İçerik (form + önizleme + onay) ve Paylaşım (video, kopyalanacak metinler, yayın saati, platformlar).
+ * Onaylı ve videosu hazır bölüm Paylaşım'da açılır: paylaşan kişi uzun içerik formunu kaydırmak zorunda kalmasın.
  */
 
 type Msg = { tone: Tone; text: string } | null;
+type Tab = "icerik" | "paylasim";
 const SLOTS = ["07:30", "12:30", "18:30"];
 
 async function call(url: string, body: Record<string, unknown>): Promise<{ ok: boolean; data: Record<string, unknown> }> {
@@ -58,7 +61,13 @@ function errorText(d: Record<string, unknown>): string {
 
 const mb = (b: number | null) => (b ? `${(b / 1e6).toFixed(1)} MB` : "");
 
-export function StudioEditor({ initial, posts: initialPosts, igConnected, role, email, requests: initialRequests }: { initial: EpisodeDetail; posts: SocialPost[]; igConnected: boolean; role: StudioRole; email: string; requests: StudioRequest[] }) {
+export function StudioEditor({ initial, posts: initialPosts, igConnected, role, email, requests: initialRequests, tab: initialTab }: { initial: EpisodeDetail; posts: SocialPost[]; igConnected: boolean; role: StudioRole; email: string; requests: StudioRequest[]; tab?: Tab }) {
+  const [tab, setTabState] = useState<Tab>(initialTab ?? (initial.approved && initial.render?.status === "done" && initial.render.hasFiles ? "paylasim" : "icerik"));
+  const setTab = useCallback((t: Tab) => {
+    setTabState(t);
+    window.history.replaceState(null, "", `?sekme=${t}`);
+    window.scrollTo({ top: 0 });
+  }, []);
   const [requests, setRequests] = useState(initialRequests);
   const reloadRequests = useCallback(async () => {
     const res = await apiFetch("/api/studio/requests", { cache: "no-store" });
@@ -188,6 +197,7 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
   const cs = contentState(ep);
   const cur = ep.render;
   const canApprove = !blockers.length && !(cur && ["queued", "running", "done"].includes(cur.status)) && !busy;
+  const ready = ep.approved && cur?.status === "done" && !!cur.hasFiles;
 
   return (
     <AdminPage>
@@ -200,7 +210,7 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
           <>
             {dirty ? <span className="text-caption" style={{ color: "var(--color-flame)" }}>Kaydedilmemiş değişiklik var</span> : null}
             {posts.some((p) => p.status === "published") ? <Link href={`/studio/${ep.id}/performans`} className={BTN.secondary}>Performans</Link> : null}
-            <button type="button" className={BTN.primary} disabled={!dirty || busy || !pv?.ready} onClick={() => void save()}>{busy ? "…" : "Kaydet"}</button>
+            {tab === "icerik" ? <button type="button" className={BTN.primary} disabled={!dirty || busy || !pv?.ready} onClick={() => void save()}>{busy ? "…" : "Kaydet"}</button> : null}
           </>
         }
       />
@@ -213,41 +223,47 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
         </Notice>
       ) : null}
 
-      <Steps ep={ep} dirty={dirty} posts={posts} />
+      <Steps ep={ep} dirty={dirty} posts={posts} onTab={setTab} />
+      <Tabs tab={tab} setTab={setTab} placed={placedCount(posts)} ready={ready} />
 
-      <div className="grid gap-5 @5xl:grid-cols-[minmax(0,1fr)_380px]">
-        <div className="min-w-0 space-y-5">
-          <Panel title="İçerik" hint="Videodaki her yazı, videonun akış sırasıyla. Ctrl/Cmd+S kaydeder.">
-            <Fields data={draft} saved={ep.data} spoken={pv?.spoken ?? ep.spoken} visible={pv?.visible ?? null} uiUsed={pv?.uiUsed ?? []} uiDefaults={pv?.uiDefaults ?? {}} onChange={setDraft} onFocusText={focusText} disabled={busy} ytBox={<YtTitleBox ep={ep} caption={String((draft.copy as Record<string, unknown> | undefined)?.caption ?? "")} value={ytDraft} setValue={setYtDraft} onSaved={reload} />} />
-            <div className="mt-5 flex flex-wrap items-end gap-2 border-t pt-4" style={{ borderColor: "var(--border)" }}>
-              <div className="min-w-[14rem] flex-1">
-                <Field label="Kayıt notu (isteğe bağlı)">
-                  <input aria-label="Kayıt notu" className={FIELD} style={FIELD_STYLE} value={note} onChange={(e) => setNote(e.target.value)} placeholder="ör. kanca kısaltıldı" />
-                </Field>
+      {tab === "paylasim" ? (
+        <Share ep={ep} dirty={dirty} posts={posts} setPosts={setPosts} reload={reload} setMsg={setMsg} igConnected={igConnected} ytDraft={ytDraft} setYtDraft={setYtDraft} onEdit={() => setTab("icerik")} />
+      ) : (
+        <div className="grid gap-5 @5xl:grid-cols-[minmax(0,1fr)_380px]">
+          <div className="min-w-0 space-y-5">
+            <Panel title="İçerik" hint="Videodaki her yazı, videonun akış sırasıyla. Ctrl/Cmd+S kaydeder.">
+              <Fields data={draft} saved={ep.data} spoken={pv?.spoken ?? ep.spoken} visible={pv?.visible ?? null} uiUsed={pv?.uiUsed ?? []} uiDefaults={pv?.uiDefaults ?? {}} onChange={setDraft} onFocusText={focusText} disabled={busy} />
+              <div className="mt-5 flex flex-wrap items-end gap-2 border-t pt-4" style={{ borderColor: "var(--border)" }}>
+                <div className="min-w-[14rem] flex-1">
+                  <Field label="Kayıt notu (isteğe bağlı)">
+                    <input aria-label="Kayıt notu" className={FIELD} style={FIELD_STYLE} value={note} onChange={(e) => setNote(e.target.value)} placeholder="ör. kanca kısaltıldı" />
+                  </Field>
+                </div>
+                <button type="button" className={BTN.secondary} disabled={!dirty || busy} onClick={() => setDraft(ep.data)}>Değişiklikleri at</button>
+                <button type="button" className={BTN.primary} disabled={!dirty || busy || !pv?.ready} onClick={() => void save()}>{busy ? "…" : "Kaydet"}</button>
               </div>
-              <button type="button" className={BTN.secondary} disabled={!dirty || busy} onClick={() => setDraft(ep.data)}>Değişiklikleri at</button>
-              <button type="button" className={BTN.primary} disabled={!dirty || busy || !pv?.ready} onClick={() => void save()}>{busy ? "…" : "Kaydet"}</button>
-            </div>
-          </Panel>
-          <History ep={ep} busy={busy} onRestore={(r) => void restore(r)} />
-        </div>
+            </Panel>
+            <History ep={ep} busy={busy} onRestore={(r) => void restore(r)} />
+          </div>
 
-        <div className="min-w-0 space-y-5 @5xl:sticky @5xl:top-20 @5xl:self-start">
-          <Panel title="Önizleme" hint="Sunucudaki üretimle aynı motor; kaydetmeden de görünür. Videoya dokununca oynar/durur.">
-            <Preview template={ep.template} data={draft} ytTitle={ytDraft} onState={setPv} focus={focus} />
-          </Panel>
-          <StatusBox ep={ep} pv={pv} dirty={dirty} auditFresh={auditFresh} blockers={blockers} canApprove={canApprove} busy={busy} onApprove={() => void approve()} onCancel={(id) => void cancel(id)} audio={<AudioRequest ep={ep} dirty={dirty} role={role} email={email} requests={requests} onChanged={async () => { await reloadRequests(); await reload(); }} />} />
-          <Publish ep={ep} posts={posts} setPosts={setPosts} onSaved={reload} setMsg={setMsg} igConnected={igConnected} />
+          <div className="min-w-0 space-y-5 @5xl:sticky @5xl:top-20 @5xl:self-start">
+            <Panel title="Önizleme" hint="Sunucudaki üretimle aynı motor; kaydetmeden de görünür. Videoya dokununca oynar/durur.">
+              <Preview template={ep.template} data={draft} ytTitle={ytDraft} onState={setPv} focus={focus} />
+            </Panel>
+            <StatusBox ep={ep} pv={pv} dirty={dirty} auditFresh={auditFresh} blockers={blockers} canApprove={canApprove} busy={busy} onApprove={() => void approve()} onCancel={(id) => void cancel(id)} onShare={() => setTab("paylasim")} audio={<AudioRequest ep={ep} dirty={dirty} role={role} email={email} requests={requests} onChanged={async () => { await reloadRequests(); await reload(); }} />} />
+          </div>
         </div>
-      </div>
+      )}
     </AdminPage>
   );
 }
 
 /** Akış: Düzenle → Onayla → Video hazır → Platforma koy. Nerede olduğunu tek bakışta söyler. */
-function Steps({ ep, dirty, posts }: { ep: EpisodeDetail; dirty: boolean; posts: SocialPost[] }) {
+const placedCount = (posts: SocialPost[]) => PLATFORMS.filter((p) => posts.some((x) => x.platform === p.key && PLACED.includes(x.status))).length;
+
+function Steps({ ep, dirty, posts, onTab }: { ep: EpisodeDetail; dirty: boolean; posts: SocialPost[]; onTab: (t: Tab) => void }) {
   const ready = ep.render?.status === "done" && ep.render.hasFiles;
-  const placed = PLATFORMS.filter((p) => posts.some((x) => x.platform === p.key && PLACED.includes(x.status))).length;
+  const placed = placedCount(posts);
   const steps = [
     { label: "Düzenle", done: !dirty, sub: dirty ? "kaydedilmedi" : `sürüm ${ep.revision}` },
     { label: "Onayla", done: ep.approved, sub: ep.approved ? (ep.approvedBy ?? "") : ep.missing.length ? "ses bekliyor" : "bekliyor" },
@@ -261,18 +277,128 @@ function Steps({ ep, dirty, posts }: { ep: EpisodeDetail; dirty: boolean; posts:
         const on = i === current;
         const c = x.done ? TONE.ok : on ? TONE.info : "var(--border)";
         return (
-          <li key={x.label} aria-current={on ? "step" : undefined} className="flex items-center gap-3 rounded-tile border px-3 py-2" style={{ borderColor: c, background: on ? "var(--brand-soft)" : "var(--surface)" }}>
-            <span className={`grid size-7 shrink-0 place-items-center rounded-full text-caption text-strong ${x.done || on ? "on-fill" : "muted"}`} style={{ background: x.done ? TONE.ok : on ? TONE.info : "var(--surface-2)" }}>{x.done ? "✓" : i + 1}</span>
-            <span className="min-w-0">
-              <span className="block text-caption text-strong">{x.label}</span>
-              <span className="muted block truncate text-micro">{x.sub}</span>
-            </span>
+          <li key={x.label} aria-current={on ? "step" : undefined} className="rounded-tile border" style={{ borderColor: c, background: on ? "var(--brand-soft)" : "var(--surface)" }}>
+            <button type="button" onClick={() => onTab(i === 3 ? "paylasim" : "icerik")} className="flex w-full items-center gap-3 px-3 py-2 text-left">
+              <span className={`grid size-7 shrink-0 place-items-center rounded-full text-caption text-strong ${x.done || on ? "on-fill" : "muted"}`} style={{ background: x.done ? TONE.ok : on ? TONE.info : "var(--surface-2)" }}>{x.done ? "✓" : i + 1}</span>
+              <span className="min-w-0">
+                <span className="block text-caption text-strong">{x.label}</span>
+                <span className="muted block truncate text-micro">{x.sub}</span>
+              </span>
+            </button>
           </li>
         );
       })}
     </ol>
   );
 }
+
+/** İki sekme. Paylaşım'ın yanında kaç platforma konduğu; video hazır değilse "video bekliyor". */
+function Tabs({ tab, setTab, placed, ready }: { tab: Tab; setTab: (t: Tab) => void; placed: number; ready: boolean }) {
+  const items: [Tab, string, string][] = [
+    ["icerik", "İçerik ve onay", "metin, önizleme, onay"],
+    ["paylasim", "Paylaşım", ready ? `${placed}/${PLATFORMS.length} platform` : "video bekliyor"],
+  ];
+  return (
+    <div role="tablist" aria-label="Bölüm sekmeleri" className="flex gap-1 border-b pb-2" style={{ borderColor: "var(--border)" }}>
+      {items.map(([k, label, sub]) => {
+        const on = tab === k;
+        return (
+          <button key={k} type="button" role="tab" aria-selected={on} onClick={() => setTab(k)} className="flex items-baseline gap-2 rounded-tile px-3 py-2 text-left transition-colors hover:bg-[var(--surface-2)] hover:text-[var(--text)]" style={on ? { background: "var(--brand-soft)", color: "var(--on-brand-soft)" } : { color: "var(--text-muted)" }}>
+            <span className="text-strong">{label}</span>
+            <span className="hidden text-caption opacity-75 sm:inline">{sub}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
+ * PAYLAŞIM sekmesi: bir platforma koymak için gereken her şey tek ekranda. Solda video ve indirme + yayın saati,
+ * sağda kopyalanacak metinler (kayıtlı sürümden) ve platform başına durum. Platform kartında o platformun istediği
+ * metinlerin Kopyala düğmeleri: indir → kopyala → yapıştır → işaretle.
+ */
+function Share({ ep, dirty, posts, setPosts, reload, setMsg, igConnected, ytDraft, setYtDraft, onEdit }: {
+  ep: EpisodeDetail; dirty: boolean; posts: SocialPost[]; setPosts: (f: (xs: SocialPost[]) => SocialPost[]) => void; reload: () => Promise<void>; setMsg: (m: Msg) => void; igConnected: boolean; ytDraft: string; setYtDraft: (v: string) => void; onEdit: () => void;
+}) {
+  const r = ep.render;
+  const ready = ep.approved && r?.status === "done" && !!r.hasFiles;
+  const old = ep.video && ep.video.revision !== ep.revision ? ep.video : null;
+  const caption = String((ep.data.copy as Record<string, unknown> | undefined)?.caption ?? "").trim();
+  const yt = ytDescription(caption);
+  const copies: Record<SocialPlatform, { label: string; text: string }[]> = {
+    tiktok: [{ label: "Açıklamayı kopyala", text: caption }],
+    instagram: [{ label: "Açıklamayı kopyala", text: caption }],
+    youtube: [{ label: "Başlığı kopyala", text: ep.ytTitle ?? "" }, { label: "Açıklamayı kopyala", text: yt }],
+  };
+  // geniş ekranda videonun altında, dar ekranda en sonda (saat çoğu zaman plandan gelir, paylaşırken az değişir)
+  const slot = (
+    <Panel title="Yayın saati" hint="Berlin saati; değiştirmek sürüm açmaz, onayı düşürmez.">
+      <SlotBox ep={ep} onSaved={reload} setMsg={setMsg} />
+    </Panel>
+  );
+  return (
+    <div className="grid gap-5 @5xl:grid-cols-[340px_minmax(0,1fr)]">
+      <div className="min-w-0 @5xl:sticky @5xl:top-20 @5xl:self-start">
+        <Panel title="Video">
+          <div className="space-y-3 text-caption">
+            {ready && r ? (
+              <>
+                <video className="mx-auto aspect-[9/16] max-h-[60vh] w-full max-w-[300px] rounded-tile bg-black object-contain" controls preload="metadata" poster={`/api/studio/file/${r.id}?k=kapak&inline=1`} src={`/api/studio/file/${r.id}?k=mp4&inline=1`} />
+                {files(r)}
+                <p className="faint">{r.duration?.toFixed(1)} sn · {mb(r.bytes)} · sürüm {r.revision}. İndirilen dosya sunucudakinin aynısı.</p>
+              </>
+            ) : (
+              <Notice tone="warn" title={r?.status === "running" || r?.status === "queued" ? "Video üretiliyor" : "Video hazır değil"}>
+                {r?.status === "running" ? `%${Math.round((r.progress ?? 0) * 100)} · ` : ""}
+                Paylaşmak için güncel sürüm onaylanıp video üretilmeli.{" "}
+                <button type="button" className="underline underline-offset-2" onClick={onEdit}>İçerik ve onaya git</button>
+              </Notice>
+            )}
+            {old ? (
+              <div className="space-y-1 border-t pt-2" style={{ borderColor: "var(--border)" }}>
+                <p className="muted">Önceki sürümün videosu (s{old.revision}); metin o günden beri değişti:</p>
+                {files(old)}
+              </div>
+            ) : null}
+          </div>
+        </Panel>
+        <div className="mt-5 hidden @5xl:block">{slot}</div>
+      </div>
+
+      <div className="min-w-0 space-y-5">
+        {dirty ? <Notice tone="warn">İçerikte kaydedilmemiş değişiklik var; burada kayıtlı sürümün metinleri gösteriliyor.</Notice> : null}
+        <Panel title="Metinler" hint="Üç platformda açıklama aynı; YouTube ayrıca başlık ister.">
+          <div className="space-y-4 text-caption">
+            <div className="space-y-1">
+              <span className="flex flex-wrap items-center gap-1.5">
+                <span className="muted">Açıklama ve etiketler</span>
+                <span className="faint tabular-nums">{caption.length}/2200</span>
+                <span className="ml-auto flex gap-2">
+                  <button type="button" className={`${BTN.small} h-7 px-2`} onClick={onEdit}>Düzenle</button>
+                  <CopyButton text={caption} />
+                </span>
+              </span>
+              <p className="max-h-40 overflow-y-auto whitespace-pre-wrap rounded-tile border px-3 py-2" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>{caption || <span className="faint">boş</span>}</p>
+            </div>
+            <YtTitleBox ep={ep} caption={caption} value={ytDraft} setValue={setYtDraft} onSaved={reload} />
+          </div>
+        </Panel>
+        <Panel title="Platformlar" hint={`Platformun zamanlayıcısına koyunca “Zamanlandı”, yayından sonra bağlantıyla “Yayında”.${igConnected ? " Instagram'da “Otomatik”: saatinde Lernomi yayınlar." : ""}`}>
+          <div className="grid gap-3 @4xl:grid-cols-3">
+            {PLATFORMS.map((p) => (
+              <PlatformBox key={p.key} episodeId={ep.id} platform={p.key} label={p.label} auto={p.key === "instagram" && igConnected} ready={ready} copies={copies[p.key]} post={posts.find((x) => x.platform === p.key) ?? null} onSaved={(post) => setPosts((xs) => [...xs.filter((x) => x.platform !== p.key), ...(post ? [post] : [])])} />
+            ))}
+          </div>
+        </Panel>
+        <div className="@5xl:hidden">{slot}</div>
+      </div>
+    </div>
+  );
+}
+
+/** YouTube açıklaması = paylaşım metni + #shorts (zaten varsa eklenmez). */
+const ytDescription = (caption: string) => (caption.trim() ? (/(^|\s)#shorts(\s|$)/i.test(caption) ? caption.trim() : `${caption.trim()} #shorts`) : "");
 
 /**
  * Defne sesi yok: editör Samet'e talep gönderir (Telegram + Talepler), admin bilgi görür ve talebi işler.
@@ -322,8 +448,8 @@ function AudioRequest({ ep, dirty, role, email, requests, onChanged }: { ep: Epi
   );
 }
 
-function StatusBox({ ep, pv, dirty, auditFresh, blockers, canApprove, busy, onApprove, onCancel, audio }: {
-  ep: EpisodeDetail; pv: PreviewState | null; dirty: boolean; auditFresh: boolean; blockers: string[]; canApprove: boolean; busy: boolean; onApprove: () => void; onCancel: (id: number) => void; audio: React.ReactNode;
+function StatusBox({ ep, pv, dirty, auditFresh, blockers, canApprove, busy, onApprove, onCancel, onShare, audio }: {
+  ep: EpisodeDetail; pv: PreviewState | null; dirty: boolean; auditFresh: boolean; blockers: string[]; canApprove: boolean; busy: boolean; onApprove: () => void; onCancel: (id: number) => void; onShare: () => void; audio: React.ReactNode;
 }) {
   const draftMissing = pv?.missing ?? [];
   // kaydedilmemişse taslağın eksikleri, kayıtlıysa sunucunun saydığı (ikisi aynı veriden; büyük olanı göster)
@@ -380,8 +506,7 @@ function StatusBox({ ep, pv, dirty, auditFresh, blockers, canApprove, busy, onAp
             <div className="space-y-2">
               <p><Badge tone="ok">Video hazır</Badge> <span className="muted">{r.duration?.toFixed(1)} sn · {mb(r.bytes)} · {when(r.finishedAt)}</span></p>
               <video className="w-full rounded-tile" controls preload="metadata" src={`/api/studio/file/${r.id}?k=mp4&inline=1`} />
-              {files(r)}
-              <p className="faint">İndirilen dosya sunucudakinin aynısı (yeniden sıkıştırılmaz).</p>
+              {ep.approved ? <button type="button" className={`${BTN.primary} w-full`} onClick={onShare}>Paylaşıma geç →</button> : files(r)}
             </div>
           ) : (
             <p className="muted">Bu sürümün dosyaları silinmiş (daha yeni bir üretim var).</p>
@@ -409,20 +534,6 @@ function files(r: RenderView) {
   );
 }
 
-function Publish({ ep, posts, setPosts, onSaved, setMsg, igConnected }: { ep: EpisodeDetail; posts: SocialPost[]; setPosts: (f: (xs: SocialPost[]) => SocialPost[]) => void; onSaved: () => Promise<void>; setMsg: (m: Msg) => void; igConnected: boolean }) {
-  const ready = ep.approved && ep.render?.status === "done" && !!ep.render.hasFiles;
-  return (
-    <Panel title="Yayın" hint={`Saat Berlin saati. Platformun zamanlayıcısına koyunca “Zamanlandı”, yayından sonra bağlantıyla “Yayında”. TikTok'ta “Zamanlandı” + bağlantı: saatinde yayına çıktığı kendiliğinden denetlenir. YouTube Studio'da zamanlanan Short saatinden bulunur, kendiliğinden “Zamanlandı” olur.${igConnected ? " Instagram'da “Otomatik”: saatinde Lernomi yayınlar, bağlantı ve metrikler kendiliğinden gelir." : ""}`}>
-      <div className="space-y-4">
-        <SlotBox ep={ep} onSaved={onSaved} setMsg={setMsg} />
-        {PLATFORMS.map((p) => (
-          <PlatformBox key={p.key} episodeId={ep.id} platform={p.key} label={p.label} auto={p.key === "instagram" && igConnected} ready={ready} post={posts.find((x) => x.platform === p.key) ?? null} onSaved={(post) => setPosts((xs) => [...xs.filter((x) => x.platform !== p.key), ...(post ? [post] : [])])} />
-        ))}
-      </div>
-    </Panel>
-  );
-}
-
 /**
  * YouTube başlığı: saat gibi yayın bilgisi, veride değil (sürüm açmaz, onay düşmez). Kurallar `lib/studio` ytTitleError:
  * en çok 100 karakter, "<" ">" yok, sonu "#shorts". YouTube açıklaması = paylaşım metni + #shorts.
@@ -433,7 +544,7 @@ function YtTitleBox({ ep, caption, value, setValue, onSaved }: { ep: EpisodeDeta
   const saved = ep.ytTitle ?? "";
   const changed = value.trim() !== saved;
   const local = !value.trim() ? "YouTube başlığı boş olamaz" : value.length > 100 ? `en çok 100 karakter (${value.length})` : /[<>]/.test(value) ? "< ve > olamaz" : !/(^|\s)#shorts$/.test(value.trim()) ? "sonu “#shorts” olmalı" : null;
-  const ytCaption = caption.trim() ? (/(^|\s)#shorts(\s|$)/i.test(caption) ? caption.trim() : `${caption.trim()} #shorts`) : "";
+  const ytCaption = ytDescription(caption);
   async function save(ytTitle: string | null) {
     setBusy(true);
     const r = await call(`/api/studio/episodes/${ep.id}`, { action: "yt_title", ytTitle });
@@ -492,7 +603,6 @@ function SlotBox({ ep, onSaved, setMsg }: { ep: EpisodeDetail; onSaved: () => Pr
   }
   return (
     <div>
-      <div className="mb-1 text-caption text-strong">Yayın saati</div>
       <div className="flex flex-wrap items-end gap-2">
         <Field label="Gün"><input aria-label="Yayın günü" type="date" className={FIELD} style={FIELD_STYLE} value={day} onChange={(e) => setDay(e.target.value)} /></Field>
         <Field label="Saat">
@@ -517,7 +627,7 @@ const EDITABLE: readonly (readonly [SocialStatus | "planned", string])[] = [
 const EDITABLE_AUTO: readonly (readonly [SocialStatus | "planned", string])[] = [["planned", "Planlandı"], ["auto", "Otomatik"], ["scheduled", "Zamanlandı"], ["published", "Yayında"], ["skipped", "Atlandı"]];
 const URL_HINT: Record<SocialPlatform, string> = { tiktok: "https://www.tiktok.com/@…/video/…", instagram: "https://www.instagram.com/reel/…", youtube: "https://www.youtube.com/shorts/…" };
 
-function PlatformBox({ episodeId, platform, label, auto, ready, post: saved, onSaved }: { episodeId: string; platform: SocialPlatform; label: string; auto: boolean; ready: boolean; post: SocialPost | null; onSaved: (p: SocialPost | null) => void }) {
+function PlatformBox({ episodeId, platform, label, auto, ready, copies, post: saved, onSaved }: { episodeId: string; platform: SocialPlatform; label: string; auto: boolean; ready: boolean; copies: { label: string; text: string }[]; post: SocialPost | null; onSaved: (p: SocialPost | null) => void }) {
   const [status, setStatus] = useState<SocialStatus | "planned">(saved?.status ?? "planned");
   const [url, setUrl] = useState(saved?.url ?? "");
   const [note, setNote] = useState(saved?.note ?? "");
@@ -536,12 +646,15 @@ function PlatformBox({ episodeId, platform, label, auto, ready, post: saved, onS
     setMsg({ tone: "ok", text: "Kaydedildi." });
   }
   return (
-    <div className="space-y-2 border-t pt-3" style={{ borderColor: "var(--border)" }}>
+    <div className="min-w-0 space-y-2 rounded-tile border p-3" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
       <div className="flex items-center justify-between gap-2">
-        <span className="text-caption text-strong">{label}</span>
+        <span className="text-strong">{label}</span>
         <Badge tone={POST_STATE[shown].tone}>{POST_STATE[shown].label}</Badge>
       </div>
-      <div className="space-y-2">
+      {status === "auto" || locked || saved?.status === "published" ? null : (
+        <div className="flex flex-wrap gap-2">{copies.map((c) => <CopyButton key={c.label} text={c.text} label={c.label} />)}</div>
+      )}
+      <div className="space-y-2 text-caption">
         {locked ? <Notice tone="info">Şu an Instagram&apos;a gönderiliyor; sonuç birkaç dakika içinde burada.</Notice> : <Segmented label={`${label} durumu`} items={auto || status === "auto" ? EDITABLE_AUTO : EDITABLE} value={status} onChange={setStatus} />}
         {status === "auto" && !locked ? (
           <Notice tone={ready ? "info" : "warn"}>
@@ -552,7 +665,7 @@ function PlatformBox({ episodeId, platform, label, auto, ready, post: saved, onS
           <Notice tone={url.trim() ? "info" : "warn"}>{url.trim() ? "Saatinden itibaren bağlantı denetlenir: video yayına çıkınca “Yayında” olur, 20 dk içinde çıkmazsa Telegram'a uyarı gider." : "Bağlantıyı yaz: TikTok'ta zamanlanan videonun bağlantısı olmadan yayına çıktığı denetlenemez."}</Notice>
         ) : null}
         {platform === "youtube" && (status === "scheduled" || status === "planned") ? (
-          <Notice tone="info">YouTube Studio&apos;da bu saate zamanlanan Short kendiliğinden bulunur: “Zamanlandı” olur, bağlantısı yazılır, yayına çıkınca “Yayında”. 20 dk içinde çıkmazsa Telegram&apos;a uyarı gider.</Notice>
+          <p className="faint">YouTube Studio&apos;da bu saate zamanlanan Short kendiliğinden bulunur, bağlantısı ve durumu yazılır; 20 dk içinde çıkmazsa Telegram&apos;a uyarı.</p>
         ) : null}
         {saved?.job?.error && saved.status === "scheduled" && status === "scheduled" ? <Notice tone="warn" title="Denetim">{saved.job.error}</Notice> : null}
         {saved?.job?.error && (saved.status === "auto" || saved.status === "failed") ? <Notice tone={saved.status === "failed" ? "bad" : "warn"} title={saved.status === "failed" ? "Otomatik yayın olmadı" : "Son deneme"}>{saved.job.error}{saved.status === "failed" ? " · Düzeltip “Otomatik”i yeniden seçersen tekrar dener." : ""}</Notice> : null}

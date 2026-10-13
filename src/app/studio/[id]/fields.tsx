@@ -70,8 +70,6 @@ type Props = {
   onChange: (next: Record<string, unknown>) => void;
   onFocusText: (value: string, path?: Path) => void;
   disabled: boolean;
-  /** YouTube başlığı kutusu (editörde; veride değil, ayrı kaydedilir) */
-  ytBox?: React.ReactNode;
 };
 
 export function Fields(p: Props) {
@@ -134,10 +132,9 @@ export function Fields(p: Props) {
       ) : null}
 
       {shareLeaves.length ? (
-        <Section n={num()} title="Paylaşım" hint="Videoda görünmez. Açıklama TikTok, Instagram ve YouTube'da aynı; YouTube ayrıca başlık ister (#shorts ile, saat gibi ayrı kaydedilir: sürüm açmaz, onayı düşürmez). Takvimdeki adı yalnız burada.">
+        <Section n={num()} title="Paylaşım" hint="Videoda görünmez. Açıklama TikTok, Instagram ve YouTube'da aynı. YouTube başlığı Paylaşım sekmesinde (ayrı kaydedilir, onayı düşürmez). Takvimdeki adı yalnız burada.">
           <div className="grid gap-3">
             {shareLeaves.filter((l) => l.path[1] === "caption").map((l) => <Field key="caption" {...p} leaf={l} label="Açıklama ve etiketler" counter={2200} copyable />)}
-            {p.ytBox}
             {shareLeaves.filter((l) => l.path[1] === "title").map((l) => <Field key="title" {...p} leaf={l} label="Takvimdeki adı" />)}
           </div>
         </Section>

@@ -225,7 +225,7 @@ dönüştürmeden preview yapabilmeli; onay verirse video sunucuda üretilmeli, 
 yapabilmeli").
 
 - **Sayfalar:** `/studio` Genel bakış (üç platformun istatistikleri, ilk sayfa), `/studio/takvim` takvim,
-  `/studio/<bölüm>` editör, `/studio/<bölüm>/performans` videonun performansı, `/studio/requests` Defne talepleri.
+  `/studio/<bölüm>` editör (iki sekme: İçerik ve onay · Paylaşım; onaylı ve videosu hazır bölüm Paylaşım'da açılır: video ve indirme, kopyalanacak açıklama + YouTube başlığı/açıklaması, yayın saati, platform başına durum ve o platformun Kopyala düğmeleri; `?sekme=paylasim`), `/studio/<bölüm>/performans` videonun performansı, `/studio/requests` Defne talepleri.
 - **İstatistik (2026-10-12; Samet: "3 platformun istatistiklerini doğru harmanlayarak hem genel hem postlara özel"):**
   hesap `src/lib/social-stats-core.ts` (test `npm run test:social-stats`), okuma `src/lib/social-stats.ts`.
   Harmanlama: izlenme üç platformda oynatma sayısı → toplanır; etkileşim = beğeni + yorum + paylaşım + kaydetme (hangisi
